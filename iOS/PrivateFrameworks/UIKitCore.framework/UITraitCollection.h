@@ -15,7 +15,7 @@
 
 @interface UITraitCollection : NSObject <_UIFallbackEnvironment, NSCopying, NSSecureCoding>
 {
-    CDStruct_8ff49dc2 _builtinTraits;
+    CDStruct_3a910e36 _builtinTraits;
     NSDictionary *_clientDefinedTraits;
     NSObject *_environmentWrapper;
 }
@@ -40,9 +40,14 @@
 + (id)_traitCollectionWithContrast:(long long)arg1;
 + (id)_traitCollectionWithDebugHighlight:(long long)arg1;
 + (id)_traitCollectionWithVibrancy:(long long)arg1;
++ (id)_traitCollectionWithPresentationSemanticContext:(long long)arg1;
++ (id)_traitCollectionWithSemanticContext:(long long)arg1;
++ (id)traitCollectionWithArtworkSubtype:(unsigned long long)arg1;
++ (id)traitCollectionWithPrimaryInteractionModel:(unsigned long long)arg1;
++ (id)traitCollectionWithInteractionModel:(unsigned long long)arg1;
++ (id)traitCollectionWithTouchLevel:(long long)arg1;
 + (id)traitCollectionWithUserInterfaceLevel:(long long)arg1;
 + (id)traitCollectionWithAccessibilityContrast:(long long)arg1;
-+ (id)_traitCollectionWithSemanticContext:(long long)arg1;
 + (id)traitCollectionWithLegibilityWeight:(long long)arg1;
 + (id)traitCollectionWithDisplayCornerRadius:(double)arg1;
 + (id)traitCollectionWithForceTouchCapability:(long long)arg1;
@@ -52,10 +57,6 @@
 + (id)traitCollectionWithHorizontalSizeClass:(long long)arg1;
 + (id)traitCollectionWithDisplayGamut:(long long)arg1;
 + (id)traitCollectionWithDisplayScale:(double)arg1;
-+ (id)traitCollectionWithArtworkSubtype:(unsigned long long)arg1;
-+ (id)traitCollectionWithPrimaryInteractionModel:(unsigned long long)arg1;
-+ (id)traitCollectionWithInteractionModel:(unsigned long long)arg1;
-+ (id)traitCollectionWithTouchLevel:(long long)arg1;
 + (id)traitCollectionWithUserInterfaceIdiom:(long long)arg1;
 + (id)traitCollectionWithTraitsFromCollections:(id)arg1;
 + (_Bool)supportsSecureCoding;
@@ -63,8 +64,8 @@
 - (id)imageConfiguration;
 @property(readonly, nonatomic, getter=_imageConfiguration) UIImageConfiguration *_imageConfiguration;
 - (id)_traitCollectionRelevantForImageConfiguration;
-- (id)_traitCollectionWithFallbacksForUnspecifiedThemeTraits;
-- (id)_appearanceName;
+@property(readonly, nonatomic) NSString *_styleEffectAppearanceName;
+@property(readonly, nonatomic) NSString *_appearanceName;
 - (void)_enumerateThemeAppearanceNamesForLookup:(CDUnknownBlockType)arg1;
 - (void)_enumerateThemeKeysForLookup:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=_themeKey) id <_UIThemeKey> _themeKey;
@@ -72,8 +73,8 @@
 - (void)performAsCurrentTraitCollection:(CDUnknownBlockType)arg1;
 - (id)_invertedTraitCollection;
 - (id)_traitCollectionByReplacingValue:(id)arg1 forTraitName:(id)arg2;
-- (id)_environmentWrapper;
 - (long long)_textLegibility;
+- (id)_environmentWrapper;
 @property(readonly, copy, nonatomic) NSString *preferredContentSizeCategory;
 - (id)_traitCollectionWithIncrementedBackgroundLevel;
 - (long long)_themeLevelForKey;
@@ -81,9 +82,14 @@
 - (long long)_contrast;
 - (long long)_debugHighlight;
 - (long long)_vibrancy;
+@property(readonly, nonatomic) long long _presentationSemanticContext;
+@property(readonly, nonatomic) long long _semanticContext;
+- (unsigned long long)artworkSubtype;
+- (unsigned long long)primaryInteractionModel;
+- (unsigned long long)interactionModel;
+- (long long)touchLevel;
 @property(readonly, nonatomic) long long userInterfaceLevel;
 @property(readonly, nonatomic) long long accessibilityContrast;
-@property(readonly, nonatomic) long long _semanticContext;
 @property(readonly, nonatomic) long long legibilityWeight;
 - (double)displayCornerRadius;
 @property(readonly, nonatomic) long long forceTouchCapability;
@@ -93,10 +99,6 @@
 @property(readonly, nonatomic) long long horizontalSizeClass;
 @property(readonly, nonatomic) long long displayGamut;
 @property(readonly, nonatomic) double displayScale;
-- (unsigned long long)artworkSubtype;
-- (unsigned long long)primaryInteractionModel;
-- (unsigned long long)interactionModel;
-- (long long)touchLevel;
 @property(readonly, nonatomic) long long userInterfaceIdiom;
 - (_Bool)_changedContentSizeCategoryFromTraitCollection:(id)arg1;
 - (id)_valueForTraitNamed:(id)arg1;
@@ -117,8 +119,8 @@
 @property(readonly) unsigned long long hash;
 - (void)dealloc;
 - (id)init;
-- (id)_initWithBuiltinTraitStorage:(CDStruct_8ff49dc2 *)arg1 clientDefinedTraits:(id)arg2 environmentWrapper:(id)arg3;
-- (id)_initWithBuiltinTraitStorage:(CDStruct_8ff49dc2 *)arg1 clientDefinedTraits:(id)arg2;
+- (id)_initWithBuiltinTraitStorage:(CDStruct_3a910e36 *)arg1 clientDefinedTraits:(id)arg2 environmentWrapper:(id)arg3;
+- (id)_initWithBuiltinTraitStorage:(CDStruct_3a910e36 *)arg1 clientDefinedTraits:(id)arg2;
 - (id)_fallbackTraitCollection;
 - (id)_namedImageDescription;
 

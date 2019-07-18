@@ -37,7 +37,7 @@
 @property(nonatomic, getter=loadWasSuccessful) _Bool loadSuccessful; // @synthesize loadSuccessful=_loadSuccessful;
 @property(nonatomic) unsigned long long attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) unsigned long long score; // @synthesize score=_score;
-@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(copy) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) double visitTime; // @synthesize visitTime=_visitTime;
 @property(nonatomic) long long origin; // @synthesize origin=_origin;
 @property(nonatomic) __weak WBSHistoryItem *item; // @synthesize item=_item;

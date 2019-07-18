@@ -8,15 +8,12 @@
 
 #import <Silex/SXQuickLookService-Protocol.h>
 
-@class NSOperationQueue, NSString;
+@class NSString;
 
 @interface SXQuickLookService : NSObject <SXQuickLookService>
 {
-    NSOperationQueue *_thumbnailQueue;
 }
 
-@property(readonly, nonatomic) NSOperationQueue *thumbnailQueue; // @synthesize thumbnailQueue=_thumbnailQueue;
-- (void).cxx_destruct;
 - (void)fetchThumbnailForFile:(id)arg1 size:(struct CGSize)arg2 onCompletion:(CDUnknownBlockType)arg3 onError:(CDUnknownBlockType)arg4;
 - (id)init;
 

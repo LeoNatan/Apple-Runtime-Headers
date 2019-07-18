@@ -41,7 +41,7 @@
 - (_Bool)enableProfile:(id)arg1 onChannel:(unsigned char)arg2 error:(id *)arg3;
 - (id)profileStateForChannel:(unsigned char)arg1;
 - (void)handleCINotification:(const struct MIDINotification *)arg1 withHandler:(CDUnknownBlockType)arg2;
-- (_Bool)isEqualTo:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)initWithMIDIEntity:(unsigned int)arg1 dataReadyHandler:(CDUnknownBlockType)arg2;
 - (id)init;

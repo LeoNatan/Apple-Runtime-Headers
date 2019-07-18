@@ -15,6 +15,7 @@
 }
 
 + (id)whitelistedContactsFilterBuilder;
++ (id)managedContactsFilterBuilder;
 @property(nonatomic) _Bool excludeRelationships; // @synthesize excludeRelationships=_excludeRelationships;
 @property(nonatomic) _Bool excludeNote; // @synthesize excludeNote=_excludeNote;
 @property(nonatomic) _Bool excludePhoto; // @synthesize excludePhoto=_excludePhoto;

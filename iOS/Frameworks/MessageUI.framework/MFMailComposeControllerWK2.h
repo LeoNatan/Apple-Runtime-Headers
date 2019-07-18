@@ -24,6 +24,7 @@
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (struct UIEdgeInsets)additionalContentInsetForBodyField:(id)arg1;
+- (id)composeStyleSelectorPresentationContext:(id)arg1;
 - (void)composeStyleSelectorDidDismissFontPicker:(id)arg1;
 - (void)composeStyleSelectorDidPresentColorPicker:(id)arg1;
 - (void)composeStyleSelectorDidCancel:(id)arg1;

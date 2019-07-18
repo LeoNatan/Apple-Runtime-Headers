@@ -80,6 +80,7 @@
 - (struct IMPreviewConstraints)_previewConstraintsForWidth:(float)arg1;
 - (id)_transcodeControllerSharedInstance;
 - (void)generateOOPPreviewForWidth:(float)arg1 orientation:(BOOL)arg2;
+- (void)prewarmPreviewForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (id)previewForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (void)cacheAndPersistPreview:(id)arg1 orientation:(BOOL)arg2;
 - (id)fileSizeString;

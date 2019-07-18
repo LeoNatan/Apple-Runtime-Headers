@@ -6,7 +6,7 @@
 
 #import <PhotosUI/NSObject-Protocol.h>
 
-@class PHContentEditingOutput, PUEditPluginSession;
+@class NSArray, PHContentEditingOutput, PUEditPluginSession;
 
 @protocol PUEditPluginSessionDataSource <NSObject>
 - (void)editPluginSession:(PUEditPluginSession *)arg1 commitContentEditingOutput:(PHContentEditingOutput *)arg2 withCompletionHandler:(void (^)(NSError *))arg3;
@@ -17,5 +17,6 @@
 - (void)editPluginSession:(PUEditPluginSession *)arg1 revertToOriginalWithCompletionHandler:(void (^)(NSError *))arg2;
 - (_Bool)editPluginSessionCanRevertToOriginal:(PUEditPluginSession *)arg1;
 - (void)editPluginSession:(PUEditPluginSession *)arg1 loadThumbnailImageWithSize:(struct CGSize)arg2 loadHandler:(void (^)(UIImage *, NSError *))arg3;
+- (NSArray *)pluginActivitiesForEditPluginSession:(PUEditPluginSession *)arg1;
 @end
 

@@ -8,10 +8,11 @@
 
 #import <PassKitUI/UITableViewDataSource-Protocol.h>
 #import <PassKitUI/UITableViewDelegate-Protocol.h>
+#import <PassKitUI/_PKUIKVisibilityBackdropViewDelegate-Protocol.h>
 
-@class NSIndexPath, NSString, PKPaymentSetupDockView, UILabel, UITableView, UITableViewController, UIView, _UIBackdropView;
+@class NSIndexPath, NSString, PKPaymentSetupDockView, UILabel, UITableView, UITableViewController, UIView, _PKUIKVisibilityBackdropView;
 
-@interface PKPaymentSetupTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PKPaymentSetupTableViewController : UIViewController <_PKUIKVisibilityBackdropViewDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *_tableView;
     UILabel *_footerLabel;
@@ -19,10 +20,8 @@
     UIView *_containerView;
     long long _style;
     PKPaymentSetupDockView *_dockView;
-    _UIBackdropView *_backdropView;
-    long long _backdropStyle;
+    _PKUIKVisibilityBackdropView *_backdropView;
     double _backdropWeight;
-    _Bool _updatingBackdropSettings;
     _Bool _clearsSelectionOnViewWillAppear;
     long long _context;
     NSIndexPath *_selectedIndexPath;
@@ -33,6 +32,7 @@
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) long long context; // @synthesize context=_context;
 - (void).cxx_destruct;
+- (long long)visibilityBackdropView:(id)arg1 preferredStyleForTraitCollection:(id)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
@@ -41,7 +41,6 @@
 - (void)tableViewDidFinishReload:(id)arg1;
 @property(readonly, nonatomic) UILabel *footerLabel;
 @property(readonly, nonatomic) PKPaymentSetupDockView *dockView;
-- (void)_accessibilitySettingsDidChange:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

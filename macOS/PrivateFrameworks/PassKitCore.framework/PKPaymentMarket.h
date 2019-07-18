@@ -40,6 +40,7 @@
 - (double)shortestDistanceFromLocation:(id)arg1;
 - (BOOL)containsLocation:(id)arg1;
 @property(readonly, copy) NSString *name; // @dynamic name;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 forDeviceClass:(id)arg2 version:(id)arg3;

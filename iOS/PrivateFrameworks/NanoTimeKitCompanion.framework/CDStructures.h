@@ -216,10 +216,15 @@ typedef struct {
 } CDStruct_05cddbcc;
 
 typedef struct {
-    float startAltitude;
-    float endAltitude;
-    float fraction;
-} CDStruct_3da3c8f8;
+    double _field1;
+    double _field2;
+} CDStruct_c3b9c2ee;
+
+typedef struct {
+    float _field1;
+    float _field2;
+    float _field3;
+} CDStruct_869f9c67;
 
 typedef struct {
     _Bool smallTicksMatchingMinutes;

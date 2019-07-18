@@ -28,6 +28,7 @@
 + (id)storeLocation;
 + (CDUnknownBlockType)serialQueueProvider;
 + (id)defaultEnvironment;
++ (void)resetFlushCacheValuesIfNeeded;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(readonly, copy, nonatomic) CDUnknownBlockType lockProvider; // @synthesize lockProvider=_lockProvider;
 @property(readonly, copy, nonatomic) CDUnknownBlockType serialQueueProvider; // @synthesize serialQueueProvider=_serialQueueProvider;

@@ -10,6 +10,9 @@
 {
     // Error parsing type: , name: duration
     // Error parsing type: , name: block
+    // Error parsing type: , name: durationWiggleRoom
+    // Error parsing type: , name: updateSubscription
+    // Error parsing type: , name: deadline
 }
 
 - (id)copyWithZone:(void *)arg1;

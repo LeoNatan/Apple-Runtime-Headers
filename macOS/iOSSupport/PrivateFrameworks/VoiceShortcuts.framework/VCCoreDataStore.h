@@ -19,7 +19,6 @@
 }
 
 + (BOOL)destroyPersistentStore:(id)arg1 error:(id *)arg2;
-+ (void)initialize;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSManagedObjectContext *suggestionsContext; // @synthesize suggestionsContext=_suggestionsContext;
 @property(retain, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;

@@ -60,19 +60,15 @@
 }
 
 + (id)_defaultImageColorForState:(unsigned int)arg1 button:(id)arg2;
++ (id)_defaultImageColorForType:(int)arg1 andState:(unsigned int)arg2;
 + (id)_defaultTitleColorForState:(unsigned int)arg1 button:(id)arg2;
 + (id)_defaultBackgroundImageForType:(int)arg1 andState:(unsigned int)arg2;
++ (id)_defaultBackgroundImageColorForType:(int)arg1 andState:(unsigned int)arg2;
++ (id)_defaultBackgroundImageNameForType:(int)arg1 andState:(unsigned int)arg2 compact:(_Bool)arg3;
++ (id)_defaultSymbolConfigurationForType:(int)arg1 andState:(unsigned int)arg2 compact:(_Bool)arg3;
 + (id)_defaultSymbolConfigurationForType:(int)arg1 andState:(unsigned int)arg2;
-+ (id)_defaultImageForType:(int)arg1 andState:(unsigned int)arg2;
-+ (id)_xImage;
-+ (id)_minusImage;
-+ (id)_checkmarkImage;
-+ (id)_questionMarkImage;
-+ (id)_exclamationMarkImage;
-+ (id)_plusImage;
-+ (id)_infoDarkImage;
-+ (id)_infoLightImage;
-+ (id)_detailDisclosureImage;
++ (id)_defaultImageForType:(int)arg1 andState:(unsigned int)arg2 withConfiguration:(id)arg3;
++ (id)_defaultImageNameForType:(int)arg1 andState:(unsigned int)arg2;
 + (id)_selectedIndicatorImage;
 + (void)_setVisuallyHighlighted:(_Bool)arg1 forViews:(id)arg2 initialPress:(_Bool)arg3;
 + (void)_setVisuallyHighlighted:(_Bool)arg1 forViews:(id)arg2 initialPress:(_Bool)arg3 baseAlpha:(float)arg4;
@@ -209,12 +205,13 @@
 - (void)_setContentHuggingPriorities:(struct CGSize)arg1;
 - (_Bool)_contentHuggingDefault_isUsuallyFixedHeight;
 - (_Bool)_contentHuggingDefault_isUsuallyFixedWidth;
-- (void)deriveTitleRect:(struct CGRect *)arg1 imageRect:(struct CGRect *)arg2 fromContentRect:(struct CGRect)arg3 calculatePositionForEmptyTitle:(_Bool)arg4;
+- (void)_deriveTitleRect:(struct CGRect *)arg1 imageRect:(struct CGRect *)arg2 fromContentRect:(struct CGRect)arg3 calculatePositionForEmptyTitle:(_Bool)arg4;
 - (struct CGRect)imageRectForContentRect:(struct CGRect)arg1;
 - (struct CGRect)titleRectForContentRect:(struct CGRect)arg1;
 - (struct CGRect)_titleRectForContentRect:(struct CGRect)arg1 calculatePositionForEmptyTitle:(_Bool)arg2;
 - (struct CGRect)contentRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)backgroundRectForBounds:(struct CGRect)arg1;
+- (id)_currentImageWithResolvedConfiguration;
 @property(readonly, nonatomic) UIImageSymbolConfiguration *currentPreferredSymbolConfiguration;
 @property(readonly, nonatomic) NSAttributedString *currentAttributedTitle;
 @property(readonly, nonatomic) UIImage *currentBackgroundImage;
@@ -272,6 +269,7 @@
 - (_Bool)_imageNeedsCompositingModeWhenSelected;
 - (_Bool)_textNeedsCompositingModeWhenSelected;
 - (void)_setupPressednessForState:(unsigned int)arg1;
+- (_Bool)_highlightsBackgroundImage;
 - (void)_updateMaskState;
 - (_Bool)_hasHighlightColor;
 - (float)_highlightCornerRadius;

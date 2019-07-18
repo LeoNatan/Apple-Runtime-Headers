@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)preflightPaymentSetupProvisioningControllerForFeatures:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)configureWebServiceIfNecessary:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)registrationIsSupportedInCurrentRegionWithWebService:(id)arg1 completion:(CDUnknownBlockType)arg2;
 

@@ -8,17 +8,17 @@
 
 #import <GameCenterUI/_GKStateMachineDelegate-Protocol.h>
 
-@class GKLoadableContentStateMachine, NSArray, NSString, UIActivityIndicatorView;
+@class GKLoadableContentStateMachine, GKUIActivityIndicatorView, NSArray, NSString;
 
 @interface GKLoadingViewController : UXViewController <_GKStateMachineDelegate>
 {
     NSArray *_viewsToHideWhileLoading;
     double _loadingIndicatorDelay;
     GKLoadableContentStateMachine *_loadingMachine;
-    UIActivityIndicatorView *_activityIndicator;
+    GKUIActivityIndicatorView *_activityIndicator;
 }
 
-@property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
+@property(retain, nonatomic) GKUIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) GKLoadableContentStateMachine *loadingMachine; // @synthesize loadingMachine=_loadingMachine;
 @property(nonatomic) double loadingIndicatorDelay; // @synthesize loadingIndicatorDelay=_loadingIndicatorDelay;
 @property(retain, nonatomic) NSArray *viewsToHideWhileLoading; // @synthesize viewsToHideWhileLoading=_viewsToHideWhileLoading;

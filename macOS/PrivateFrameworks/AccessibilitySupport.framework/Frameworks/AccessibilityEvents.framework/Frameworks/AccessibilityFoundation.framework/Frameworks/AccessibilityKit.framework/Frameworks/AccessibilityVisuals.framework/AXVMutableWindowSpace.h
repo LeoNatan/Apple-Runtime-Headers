@@ -6,28 +6,41 @@
 
 #import <AccessibilityVisuals/AXVWindowSpace.h>
 
+#import <AccessibilityVisuals/AXFApplicationManagerDelegate-Protocol.h>
 #import <AccessibilityVisuals/AXFUserSessionObserverDelegate-Protocol.h>
 
-@class NSString;
+@class AXFApplicationManager, NSString;
 
-@interface AXVMutableWindowSpace : AXVWindowSpace <AXFUserSessionObserverDelegate>
+@interface AXVMutableWindowSpace : AXVWindowSpace <AXFUserSessionObserverDelegate, AXFApplicationManagerDelegate>
 {
     BOOL _automaticallyRiseToVoiceOverLevelInLockScreen;
+    BOOL _automaticallyRiseToVoiceOverLevelWhenEncounteringSecurityAgent;
     BOOL __levelTemporarilyRaised;
+    BOOL __lockScreenActive;
+    BOOL __securityAgentActive;
+    AXFApplicationManager *__applicationManager;
     unsigned long long __levelBeforeAutoRaise;
 }
 
 + (id)spaceWithUUID:(id)arg1;
+@property(nonatomic) BOOL _securityAgentActive; // @synthesize _securityAgentActive=__securityAgentActive;
+@property(nonatomic) BOOL _lockScreenActive; // @synthesize _lockScreenActive=__lockScreenActive;
 @property(nonatomic) BOOL _levelTemporarilyRaised; // @synthesize _levelTemporarilyRaised=__levelTemporarilyRaised;
 @property(nonatomic) unsigned long long _levelBeforeAutoRaise; // @synthesize _levelBeforeAutoRaise=__levelBeforeAutoRaise;
+@property(retain, nonatomic) AXFApplicationManager *_applicationManager; // @synthesize _applicationManager=__applicationManager;
+@property(nonatomic) BOOL automaticallyRiseToVoiceOverLevelWhenEncounteringSecurityAgent; // @synthesize automaticallyRiseToVoiceOverLevelWhenEncounteringSecurityAgent=_automaticallyRiseToVoiceOverLevelWhenEncounteringSecurityAgent;
 @property(nonatomic) BOOL automaticallyRiseToVoiceOverLevelInLockScreen; // @synthesize automaticallyRiseToVoiceOverLevelInLockScreen=_automaticallyRiseToVoiceOverLevelInLockScreen;
-- (void)_restoreOriginalLevel;
-- (void)_temporarilyRaiseLevelToVoiceOverLevel;
+- (void).cxx_destruct;
+- (BOOL)_shouldRestoreOriginalLevel;
+- (void)_restoreOriginalLevelIfNeeded;
+- (BOOL)_shouldTemporarilyRaiseLevelToVoiceOverLevel;
+- (void)_temporarilyRaiseLevelToVoiceOverLevelIfNeeded;
 - (void)userSessionObserverSessionDidMoveOffConsole:(id)arg1;
 - (void)userSessionObserverFastUserSwitchEnded:(id)arg1;
 - (void)userSessionObserverFastUserSwitchBegan:(id)arg1;
 - (void)userSessionObserverScreenUnlocked:(id)arg1;
 - (void)userSessionObserverScreenLocked:(id)arg1;
+- (void)applicationManager:(id)arg1 didUpdateRunningApplications:(id)arg2;
 @property(nonatomic) unsigned long long level; // @dynamic level;
 - (id)initWithUUID:(id)arg1;
 

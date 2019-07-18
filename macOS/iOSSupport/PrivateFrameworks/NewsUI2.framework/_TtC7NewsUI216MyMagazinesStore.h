@@ -19,8 +19,11 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: issueReadingHistory
     // Error parsing type: , name: subscriptionController
     // Error parsing type: , name: offlineIssueList
+    // Error parsing type: , name: offlineIssueManager
     // Error parsing type: , name: paidBundleConfigManager
+    // Error parsing type: , name: persistentStore
     // Error parsing type: , name: $__lazy_storage_$_lazyInitializingPromise
+    // Error parsing type: , name: firstFullRefresh
 }
 
 - (void).cxx_destruct;

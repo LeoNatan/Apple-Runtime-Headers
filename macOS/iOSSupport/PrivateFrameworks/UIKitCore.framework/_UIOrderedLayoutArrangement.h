@@ -59,7 +59,7 @@ __attribute__((visibility("hidden")))
 - (void)_activateAndInsertEdgeToEdgeConstraintForGapBetweenPrecedingItem:(id)arg1 followingItem:(id)arg2 isPrecededByVisibleItem:(BOOL)arg3 isFollowedByVisibleItem:(BOOL)arg4 isHidden:(BOOL)arg5;
 - (id)_edgeToEdgeConstraintForGapBetweenPrecedingItem:(id)arg1 followingItem:(id)arg2 isPrecededByVisibleItem:(BOOL)arg3 isFollowedByVisibleItem:(BOOL)arg4;
 - (double)_expectedEdgeToEdgeSpacingForPrecedingItem:(id)arg1 followingItem:(id)arg2 isPrecededByVisibleItem:(BOOL)arg3 isFollowedByVisibleItem:(BOOL)arg4;
-- (long long)_precedingLocationAttributeForGuideConstraintRespectingBaselineRelative:(BOOL)arg1;
+- (long long)_precedingLocationAttributeForGuideConstraint;
 - (long long)_minAttributeForGapConstraint;
 - (long long)_maxAttributeForGapConstraintRespectingBaselineRelative:(BOOL)arg1;
 - (long long)_minAttributeForGapConstraintRespectingBaselineRelative:(BOOL)arg1;
@@ -100,6 +100,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSSet *invalidBaselineConstraints;
 @property(readonly) Class superclass;
 
 @end

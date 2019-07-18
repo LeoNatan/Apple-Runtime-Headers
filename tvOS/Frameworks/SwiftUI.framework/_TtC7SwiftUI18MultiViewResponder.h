@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: _children
     // Error parsing type: , name: cache
+    // Error parsing type: , name: observers
 }
 
 @end

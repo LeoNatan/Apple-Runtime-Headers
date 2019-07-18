@@ -6,10 +6,11 @@
 
 #import <RunningBoard/NSObject-Protocol.h>
 
-@class NSArray, RBProcess, RBProcessState, RBProcessStateChangeSet, RBSProcessIdentity, RBSProcessMonitorConfiguration, RBSProcessPredicate;
-@protocol RBProcessMonitorObserving;
+@class NSArray, NSObject, RBProcess, RBProcessState, RBProcessStateChangeSet, RBSProcessIdentity, RBSProcessMonitorConfiguration, RBSProcessPredicate;
+@protocol OS_dispatch_queue, RBProcessMonitorObserving;
 
 @protocol RBProcessMonitoring <NSObject>
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *monitorSerializationQueue;
 - (void)unsuppressUpdatesForIdentity:(RBSProcessIdentity *)arg1;
 - (void)suppressUpdatesForIdentity:(RBSProcessIdentity *)arg1;
 - (void)removeStateForProcessIdentity:(RBSProcessIdentity *)arg1;

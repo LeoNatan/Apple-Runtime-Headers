@@ -10,7 +10,7 @@
 #import <SpringBoard/SBMedusaDecoratedDeviceApplicationSceneViewControlling-Protocol.h>
 #import <SpringBoard/SBMedusaDecoratedDeviceApplicationSceneViewControlling_Internal-Protocol.h>
 
-@class BSCornerRadiusConfiguration, NSMutableSet, NSString, SBHomeGrabberView, SBSceneHandle, UIDropInteraction, UIView;
+@class BSCornerRadiusConfiguration, NSMutableSet, NSString, SBHomeGrabberView, SBInlineAppExposeContainerViewController, SBSceneHandle, UIDropInteraction, UIView;
 @protocol SBApplicationSceneViewControllingStatusBarDelegate, SBScenePlaceholderContentContext;
 
 @interface SBMainWorkspaceApplicationSceneLayoutElementViewController : SBAppContainerViewController <SBDeviceApplicationSceneHandleObserver, SBMedusaDecoratedDeviceApplicationSceneViewControlling_Internal, SBMedusaDecoratedDeviceApplicationSceneViewControlling>
@@ -24,8 +24,10 @@
     BSCornerRadiusConfiguration *_cornerRadiusConfiguration;
     double _darkenViewAlpha;
     UIDropInteraction *_dropInteraction;
+    SBInlineAppExposeContainerViewController *_inlineAppExposeContainerOverlayViewController;
 }
 
+@property(readonly, nonatomic) SBInlineAppExposeContainerViewController *inlineAppExposeContainerOverlayViewController; // @synthesize inlineAppExposeContainerOverlayViewController=_inlineAppExposeContainerOverlayViewController;
 @property(retain, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(nonatomic) double darkenViewAlpha; // @synthesize darkenViewAlpha=_darkenViewAlpha;
 @property(nonatomic) _Bool clipsToBounds; // @synthesize clipsToBounds=_clipsToBounds;
@@ -43,11 +45,12 @@
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionWillEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidBeginWithTransitionContext:(id)arg2;
+- (void)setInlineAppExposeContainerViewController:(id)arg1;
 - (id)animationControllerForTransitionRequest:(id)arg1;
 @property(readonly, nonatomic) SBHomeGrabberView *homeGrabberView;
 @property(nonatomic, getter=isNubViewHighlighted) _Bool nubViewHighlighted;
 @property(nonatomic, getter=isNubViewHidden) _Bool nubViewHidden;
-- (id)statusBarAssertionWithStatusBarHidden:(_Bool)arg1 nubViewHidden:(_Bool)arg2 atLevel:(unsigned long long)arg3;
+- (id)statusBarAssertionWithStatusBarHidden:(_Bool)arg1 nubViewHidden:(long long)arg2 atLevel:(unsigned long long)arg3;
 - (id)statusBarAssertionWithStatusBarHidden:(_Bool)arg1 atLevel:(unsigned long long)arg2;
 - (long long)statusBarOrientation;
 - (void)sceneHandle:(id)arg1 didChangeEffectiveForegroundness:(_Bool)arg2;
@@ -55,11 +58,14 @@
 - (void)_configureViewController:(id)arg1;
 - (id)_applicationSceneViewControllerForSceneHandle:(id)arg1;
 - (id)_applicationSceneViewController;
+- (void)setContentReferenceSize:(struct CGSize)arg1 withInterfaceOrientation:(long long)arg2;
+- (void)configureWithWorkspaceEntity:(id)arg1 forLayoutElement:(id)arg2 layoutState:(id)arg3 referenceFrame:(struct CGRect)arg4;
 - (_Bool)_shouldDisplayLayoutElementBecomeActive;
 - (unsigned long long)supportedContentInterfaceOrientations;
 - (void)prepareForReuse;
+- (id)_relinquishInlineAppExposeContainerViewController;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 @property(nonatomic) long long homeGrabberDisplayMode;
-- (_Bool)nubViewContainsPoint:(struct CGPoint)arg1;
 - (void)setMaskDisplayCorners:(_Bool)arg1 forReason:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (void)_endRequiringSceneViewMatchMoveAnimationForReason:(id)arg1;

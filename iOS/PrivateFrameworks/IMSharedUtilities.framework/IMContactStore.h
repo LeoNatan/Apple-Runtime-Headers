@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CNContact, CNContactStore, NSData, NSDictionary, NSMutableDictionary;
+@class CNContact, CNContactStore, NSArray, NSData, NSDictionary, NSMutableDictionary;
 
 @interface IMContactStore : NSObject
 {
@@ -19,10 +19,11 @@
     double _lastContactStoreSync;
     double _lastMeContactStoreSync;
     CNContact *_meContact;
+    NSArray *_CNIDsForBatchFetch;
 }
 
-+ (id)sanitizeAndfilterID:(id)arg1;
-+ (id)sanitizeAndfilterIDsForContactsBatchFetch:(id)arg1;
++ (id)validateAndCleanupID:(id)arg1;
++ (id)validateAndFilterIDsForContactsBatchFetch:(id)arg1;
 + (id)descriptionForCNContact:(id)arg1;
 + (_Bool)isCNContactAKnownContact:(id)arg1;
 + (id)dialingCodeForID:(id)arg1;
@@ -31,6 +32,7 @@
 + (id)keysForNicknameHandling;
 + (id)keysForMeContact;
 + (id)keysForCNContact;
++ (id)mePredicate;
 + (id)predicateForID:(id)arg1;
 + (id)createMutableContactWithID:(id)arg1;
 + (_Bool)shouldShowAbbreviatedNames;
@@ -50,9 +52,9 @@
 + (id)kIMCNContactThumbnailImageDataKey;
 + (id)kIMCNContactImageDataKey;
 + (id)kIMCNContactImageDataAvailableKey;
-+ (id)kIMCNContactPostalAddressesKey;
 + (id)kIMCNContactEmailAddressesKey;
 + (id)kIMCNContactPhoneNumbersKey;
++ (id)kIMCNContactLinkIdentifierKey;
 + (id)kIMCNContactIdentifierKey;
 + (Class)IMCNGeminiManagerClass;
 + (Class)IMCNMeCardSharingPickerViewControllerClass;
@@ -63,6 +65,7 @@
 + (Class)IMCNContactFetchRequestClass;
 + (Class)IMCNContactFormatterClass;
 + (id)sharedInstance;
+@property(retain, nonatomic) NSArray *CNIDsForBatchFetch; // @synthesize CNIDsForBatchFetch=_CNIDsForBatchFetch;
 @property(retain, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
 @property(nonatomic) double lastMeContactStoreSync; // @synthesize lastMeContactStoreSync=_lastMeContactStoreSync;
 @property(nonatomic) double lastContactStoreSync; // @synthesize lastContactStoreSync=_lastContactStoreSync;
@@ -75,7 +78,7 @@
 - (void).cxx_destruct;
 - (void)checkForContactStoreChanges;
 - (void)handleDropEverythingEvent;
-- (id)fetchMeContact;
+- (id)fetchMeContactWithKeys:(id)arg1;
 - (void)meCardChanged:(id)arg1;
 - (void)resetMeCard;
 - (void)contactStoreChanged:(id)arg1;

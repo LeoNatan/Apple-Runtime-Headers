@@ -38,6 +38,8 @@
 - (id)registerClass:(Class)arg1 factory:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSString *debugDescription;
 - (id)initAsPrivateContainer;
+- (id)initWithBundleAssemblies:(id)arg1 assemblies:(id)arg2;
+- (id)initWithBundleAssemblies:(id)arg1;
 - (id)initWithFrameworkAssemblies:(id)arg1 assemblies:(id)arg2;
 - (id)initWithFrameworkAssemblies:(id)arg1;
 - (id)initWithAssemblies:(id)arg1;

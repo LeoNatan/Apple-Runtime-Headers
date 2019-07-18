@@ -43,6 +43,7 @@
 - (_Bool)reservePrintInteractionController;
 - (void)updatePrintInfo;
 @property(readonly, nonatomic) UIPrintInfo *printInfo;
+@property(readonly, nonatomic) NSString *suggestedPDFFileName;
 @property(readonly, nonatomic) WBUPrintPageRenderer *printRenderer;
 - (void)clearQueue;
 - (void)resetPrintUISuppression;

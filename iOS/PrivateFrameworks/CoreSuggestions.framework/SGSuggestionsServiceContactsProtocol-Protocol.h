@@ -26,8 +26,10 @@
 - (void)contactFromRecordID:(SGRecordId *)arg1 withCompletion:(void (^)(SGContact *, NSError *))arg2;
 - (void)contactMatchesOrLookupIdByEmailAddress:(NSString *)arg1 withCompletion:(void (^)(SGContactMatchArrayOption *, NSError *))arg2;
 - (void)contactMatchesOrLookupIdByPhoneNumber:(NSString *)arg1 withCompletion:(void (^)(SGContactMatchArrayOption *, NSError *))arg2;
-- (void)namesForUnknownDetail:(NSString *)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 withCompletion:(void (^)(NSArray *, NSError *))arg4;
+- (NSArray *)namesForDetail:(NSString *)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 error:(id *)arg4;
 - (void)namesForDetail:(NSString *)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 withCompletion:(void (^)(NSArray *, NSError *))arg4;
+- (NSArray *)namesForDetail:(NSString *)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 onlySignificant:(_Bool)arg4 error:(id *)arg5;
+- (void)namesForDetail:(NSString *)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 onlySignificant:(_Bool)arg4 withCompletion:(void (^)(NSArray *, NSError *))arg5;
 - (NSArray *)contactMatchesByEmailAddress:(NSString *)arg1 error:(id *)arg2;
 - (void)contactMatchesByEmailAddress:(NSString *)arg1 withCompletion:(void (^)(NSArray *, NSError *))arg2;
 - (NSArray *)contactMatchesByPhoneNumber:(NSString *)arg1 error:(id *)arg2;

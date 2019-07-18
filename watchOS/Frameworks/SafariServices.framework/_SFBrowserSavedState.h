@@ -26,10 +26,11 @@
 @property(retain, nonatomic) NSArray *recentlyClosedTabs; // @synthesize recentlyClosedTabs=_recentlyClosedTabs;
 @property(copy, nonatomic) NSArray *browserWindows; // @synthesize browserWindows=_browserWindows;
 - (void).cxx_destruct;
+- (void)removeRecentlyClosedTabWithStateData:(id)arg1;
 - (void)_removeRecentlyClosedTabStateData:(id)arg1;
 - (void)_readRecentlyClosedTabsStateIfNecessary;
 - (void)_historyItemsWereRemoved:(id)arg1;
-- (void)_notifyThatRecentlyClosedTabsWereRemoved;
+- (void)_notifyThatRecentlyClosedTabsWereRemoved:(id)arg1;
 - (void)clearRecentlyClosedTabs;
 - (void)loadSessionStateDataAndRemoveRecentlyClosedTab:(id)arg1;
 - (void)addRecentlyClosedTabs:(id)arg1;
@@ -39,6 +40,7 @@
 - (void)updateSceneID:(id)arg1;
 - (void)clearAllSavedStatesClosingDatabase:(_Bool)arg1;
 - (void)clearAllSavedStatesAndCloseDatabase;
+- (id)tabStateDataForUUID:(id)arg1;
 - (void)saveTabStateData:(id)arg1;
 - (_Bool)activeDocumentIsValidForBrowserControllerWithUUID:(id)arg1;
 - (void)setActiveDocumentIsValid:(_Bool)arg1 forBrowserControllerWithUUID:(id)arg2;

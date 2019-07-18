@@ -6,11 +6,11 @@
 
 #import <WorkflowKit/WFDynamicEnumerationParameter.h>
 
-#import <ActionKit/WFDynamicEnumerationAsynchronousDataSource-Protocol.h>
+#import <ActionKit/WFDynamicEnumerationDataSource-Protocol.h>
 
 @class NSString;
 
-@interface WFPodcastPickerParameter : WFDynamicEnumerationParameter <WFDynamicEnumerationAsynchronousDataSource>
+@interface WFPodcastPickerParameter : WFDynamicEnumerationParameter <WFDynamicEnumerationDataSource>
 {
 }
 

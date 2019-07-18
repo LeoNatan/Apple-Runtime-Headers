@@ -12,8 +12,6 @@
 
 @interface AKAuthorizationPresentationContext : NSObject <NSSecureCoding>
 {
-    _Bool _isFirstPartyLogin;
-    _Bool _isRapportLogin;
     NSString *_bundleID;
     NSString *_localizedAppName;
     NSString *_informativeText;
@@ -34,8 +32,6 @@
 @property(readonly, copy, nonatomic) NSString *iconName; // @synthesize iconName=_iconName;
 @property(readonly, copy, nonatomic) NSString *informativeText; // @synthesize informativeText=_informativeText;
 @property(readonly, copy, nonatomic) NSString *localizedAppName; // @synthesize localizedAppName=_localizedAppName;
-@property(readonly, nonatomic) _Bool isRapportLogin; // @synthesize isRapportLogin=_isRapportLogin;
-@property(readonly, nonatomic) _Bool isFirstPartyLogin; // @synthesize isFirstPartyLogin=_isFirstPartyLogin;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
 - (int)_iconVariantForScale:(float)arg1;

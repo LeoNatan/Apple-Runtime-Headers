@@ -9,6 +9,7 @@
 @class PXImageRequester;
 
 @protocol PXAssetTile <NSObject>
+@property(nonatomic) double cornerRadius;
 @property(retain, nonatomic) PXImageRequester *imageRequester;
 @end
 

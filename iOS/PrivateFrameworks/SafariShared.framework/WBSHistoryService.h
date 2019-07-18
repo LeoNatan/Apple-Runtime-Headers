@@ -25,7 +25,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *databaseURL;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (_Bool)_connectionIsEntitledToUseService:(id)arg1;
+- (_Bool)_connectionIsEntitledToUseUserDatabase:(id)arg1;
 - (void)_shutdown;
 - (void)_resume;
 - (id)init;

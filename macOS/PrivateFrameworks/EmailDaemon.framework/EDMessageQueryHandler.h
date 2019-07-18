@@ -10,8 +10,8 @@
 #import <EmailDaemon/EFContentProtectionObserver-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDMessageQueryHelper, NSObject, NSString;
-@protocol OS_dispatch_queue;
+@class EDMessageQueryHelper, NSMutableDictionary, NSObject, NSString;
+@protocol EFCancelable, OS_dispatch_queue;
 
 @interface EDMessageQueryHandler : EDMessageRepositoryQueryHandler <EDMessageQueryHelperDelegate, EFLoggable, EFContentProtectionObserver>
 {
@@ -19,14 +19,24 @@
     EDMessageQueryHelper *_currentQueryHelper;
     NSObject<OS_dispatch_queue> *_contentProtectionQueue;
     NSObject<OS_dispatch_queue> *_resultQueue;
+    NSMutableDictionary *_oldestMessageIDsByMailboxObjectIDs;
+    id <EFCancelable> _updateOldestMessagesCancelationToken;
 }
 
 + (id)log;
+@property(retain, nonatomic) id <EFCancelable> updateOldestMessagesCancelationToken; // @synthesize updateOldestMessagesCancelationToken=_updateOldestMessagesCancelationToken;
+@property(readonly, copy, nonatomic) NSMutableDictionary *oldestMessageIDsByMailboxObjectIDs; // @synthesize oldestMessageIDsByMailboxObjectIDs=_oldestMessageIDsByMailboxObjectIDs;
 @property(nonatomic) BOOL didCancel; // @synthesize didCancel=_didCancel;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *resultQueue; // @synthesize resultQueue=_resultQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *contentProtectionQueue; // @synthesize contentProtectionQueue=_contentProtectionQueue;
 @property(retain, nonatomic) EDMessageQueryHelper *currentQueryHelper; // @synthesize currentQueryHelper=_currentQueryHelper;
 - (void).cxx_destruct;
+- (void)_oldestMessagesByMailboxObjectIDsWasUpdated;
+- (id)_oldestItemQueryForMailbox:(id)arg1;
+- (void)_updateOldestMessagesForMailboxes:(id)arg1;
+- (void)_oldestMessagesNeedUpdate;
+- (void)_initializeOldestMessagesByMailbox;
+- (void)queryHelperNeedsRestart:(id)arg1;
 - (void)queryHelperDidFinishRemoteSearch:(id)arg1;
 - (void)queryHelper:(id)arg1 conversationNotificationLevelDidChangeForConversation:(long long)arg2 conversationID:(long long)arg3;
 - (void)queryHelper:(id)arg1 conversationIDDidChangeForMessages:(id)arg2 fromConversationID:(long long)arg3;
@@ -37,14 +47,16 @@
 - (void)queryHelper:(id)arg1 didAddMessages:(id)arg2;
 - (void)queryHelperDidFindAllMessages:(id)arg1;
 - (void)queryHelper:(id)arg1 didFindMessages:(id)arg2;
-- (BOOL)_queryHelperIsCurrent:(id)arg1;
 - (id)_objectIDsAndUnreadObjectIDsFromMessages:(id)arg1 unreadObjectIDs:(id *)arg2;
-- (void)cancel;
 - (void)_contentProtectionChangedToUnlocked;
 - (void)_contentProtectionChangedToLocked;
 - (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
+- (BOOL)_queryHelperIsCurrent:(id)arg1;
 - (void)_createHelper;
-- (void)_start;
+- (void)_restartHelper;
+- (void)dealloc;
+- (void)cancel;
+- (void)start;
 - (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 observer:(id)arg4 observationIdentifier:(id)arg5;
 
 // Remaining properties

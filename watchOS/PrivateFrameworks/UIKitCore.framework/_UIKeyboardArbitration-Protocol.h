@@ -7,8 +7,9 @@
 @class BKSAnimationFenceHandle, BKSHIDEventDeferringToken, NSArray, NSDictionary, NSString, _UIKeyboardChangedInformation;
 
 @protocol _UIKeyboardArbitration
+- (void)signalEventSourceChanged:(int)arg1 completionHandler:(void (^)(void))arg2;
 - (void)setKeyboardTotalDisable:(_Bool)arg1 withFence:(BKSAnimationFenceHandle *)arg2 completionHandler:(void (^)(NSError *))arg3;
-- (void)sceneShouldFocusWithToken:(BKSHIDEventDeferringToken *)arg1 onCompletion:(void (^)(_Bool))arg2;
+- (void)focusApplicationWithProcessIdentifier:(int)arg1 sceneDeferringToken:(BKSHIDEventDeferringToken *)arg2 onCompletion:(void (^)(_Bool))arg3;
 - (void)applicationShouldFocusWithBundle:(NSString *)arg1 onCompletion:(void (^)(_Bool))arg2;
 - (void)transition:(NSString *)arg1 eventStage:(unsigned int)arg2 withInfo:(NSDictionary *)arg3;
 - (void)notifyHostedPIDsOfSuppression:(_Bool)arg1;
@@ -17,8 +18,8 @@
 - (void)signalKeyboardChangeComplete;
 - (void)signalKeyboardChanged:(_UIKeyboardChangedInformation *)arg1 onCompletion:(void (^)(void))arg2;
 - (void)setWantsFencing:(_Bool)arg1;
-- (void)setWindowContextID:(unsigned int)arg1 sceneIdentifier:(NSString *)arg2 forKeyboard:(_Bool)arg3 withLevel:(float)arg4;
-- (void)startArbitrationWithExpectedState:(_UIKeyboardChangedInformation *)arg1 hostingPIDs:(NSArray *)arg2 usingFence:(_Bool)arg3 withSuppression:(int)arg4 onConnected:(void (^)(_UIKeyboardChangedInformation *, _Bool))arg5;
+- (void)setWindowContextID:(unsigned int)arg1 sceneIdentifier:(NSString *)arg2 windowState:(unsigned int)arg3 withLevel:(float)arg4;
+- (void)startArbitrationWithExpectedState:(_UIKeyboardChangedInformation *)arg1 hostingPIDs:(NSArray *)arg2 usingFence:(_Bool)arg3 withSuppression:(int)arg4 onConnected:(void (^)(_UIKeyboardChangedInformation *, int, _Bool))arg5;
 - (void)retrieveMoreDebugInformationWithCompletion:(void (^)(NSArray *))arg1;
 - (void)retrieveDebugInformation:(void (^)(NSString *))arg1;
 @end

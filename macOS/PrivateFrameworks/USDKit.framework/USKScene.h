@@ -17,6 +17,7 @@
 + (id)newSceneWithURL:(id)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)dumpUSDA;
 - (id)nodeIterator;
 - (id)customMetadataWithKey:(id)arg1;

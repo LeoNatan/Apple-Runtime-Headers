@@ -6,26 +6,28 @@
 
 #import <UIKit/UIView.h>
 
-@class IKViewElement, VUIButton, VUIFeaturedCellOverlayLayout, VUILabel, _TVImageView;
+@class IKViewElement, NSArray, VUIAppleTVChannelLogoView, VUIFeaturedCellOverlayLayout, VUILabel, _TVImageView;
 
 __attribute__((visibility("hidden")))
 @interface VUIFeaturedCellOverlayView : UIView
 {
     IKViewElement *_viewElement;
     _TVImageView *_logoImageView;
+    VUIAppleTVChannelLogoView *_appleTVChannelLogoView;
     VUILabel *_titleLabel;
     VUILabel *_subtitleLabel;
     VUILabel *_disclaimerLabel;
-    VUIButton *_button;
+    NSArray *_buttons;
     VUIFeaturedCellOverlayLayout *_overlayLayout;
 }
 
 + (id)featuredCellOverViewFromElement:(id)arg1 overlayType:(long long)arg2 existingView:(id)arg3;
 @property(retain, nonatomic) VUIFeaturedCellOverlayLayout *overlayLayout; // @synthesize overlayLayout=_overlayLayout;
-@property(retain, nonatomic) VUIButton *button; // @synthesize button=_button;
+@property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(retain, nonatomic) VUILabel *disclaimerLabel; // @synthesize disclaimerLabel=_disclaimerLabel;
 @property(retain, nonatomic) VUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) VUIAppleTVChannelLogoView *appleTVChannelLogoView; // @synthesize appleTVChannelLogoView=_appleTVChannelLogoView;
 @property(retain, nonatomic) _TVImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;

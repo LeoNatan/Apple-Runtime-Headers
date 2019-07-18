@@ -10,17 +10,16 @@
 {
 }
 
-+ (id)conversationIdWithMaximalIntersectionWithContactIdentifiers:(id)arg1 storeDirectory:(id)arg2;
-+ (id)interactionsMostRecentForBundleId:(id)arg1 storeDirectory:(id)arg2 resultLimit:(unsigned int)arg3;
-+ (id)interactionsContainingSearchStringInDisplayName:(id)arg1 account:(id)arg2 directions:(id)arg3 bundleIds:(id)arg4 storeDirectory:(id)arg5 fetchLimit:(unsigned int)arg6;
-+ (id)interactionsMatchingAnyHandles:(id)arg1 account:(id)arg2 directions:(id)arg3 bundleIds:(id)arg4 storeDirectory:(id)arg5 fetchLimit:(unsigned int)arg6;
-+ (id)mostRecentInteractionWithSingleRecipientMatchingHandle:(id)arg1 storeDirectory:(id)arg2;
-+ (id)mostRecentInteractionWithSingleRecipientMatchingContactIdentifier:(id)arg1 storeDirectory:(id)arg2;
-+ (id)interactionsHyperRecentFromReferenceDate:(id)arg1 bundleIds:(id)arg2 recencyMargin:(double)arg3 storeDirectory:(id)arg4;
-+ (id)interactionsFromStoreWithDirectory:(id)arg1 referenceDate:(id)arg2 withMechanisms:(id)arg3 withAccount:(id)arg4 withBundleIds:(id)arg5 withTargetBundleIds:(id)arg6 withDirections:(id)arg7 fetchLimit:(unsigned int)arg8;
-+ (id)recentInteractionsWithFromStoreWithDirectory:(id)arg1 bundleIDs:(id)arg2;
-+ (id)interactionBundleIDsFromStoreWithDirectory:(id)arg1;
-+ (id)interactionStoreWithDirectory:(id)arg1;
++ (id)conversationIdWithMaximalIntersectionWithContactIdentifiers:(id)arg1 store:(id)arg2;
++ (id)interactionsMostRecentForBundleId:(id)arg1 store:(id)arg2 resultLimit:(unsigned int)arg3;
++ (id)interactionsContainingSearchStringInDisplayName:(id)arg1 account:(id)arg2 directions:(id)arg3 bundleIds:(id)arg4 store:(id)arg5 fetchLimit:(unsigned int)arg6;
++ (id)interactionsMatchingAnyHandles:(id)arg1 account:(id)arg2 directions:(id)arg3 bundleIds:(id)arg4 store:(id)arg5 fetchLimit:(unsigned int)arg6;
++ (id)mostRecentInteractionWithSingleRecipientMatchingHandle:(id)arg1 store:(id)arg2;
++ (id)mostRecentInteractionWithSingleRecipientMatchingContactIdentifier:(id)arg1 store:(id)arg2;
++ (id)mostRecentInteractionWithSenderOrRecipientMatchingContactIdentifier:(id)arg1 bundleIds:(id)arg2 store:(id)arg3 singleRecipient:(_Bool)arg4;
++ (id)interactionsHyperRecentFromReferenceDate:(id)arg1 bundleIds:(id)arg2 recencyMargin:(double)arg3 store:(id)arg4;
++ (id)interactionsFromStore:(id)arg1 referenceDate:(id)arg2 withMechanisms:(id)arg3 withAccount:(id)arg4 withBundleIds:(id)arg5 withTargetBundleIds:(id)arg6 withDirections:(id)arg7 fetchLimit:(unsigned int)arg8;
++ (id)recentInteractionsFromStore:(id)arg1 bundleIDs:(id)arg2;
 
 @end
 

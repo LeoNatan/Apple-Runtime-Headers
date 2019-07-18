@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) long long conditionType; // @synthesize conditionType=_conditionType;
 - (void).cxx_destruct;
 - (int)_comparatorType;
+- (long long)comparatorMode;
 @property(readonly, nonatomic) long long comparatorParameterType;
 @property(retain, nonatomic) PXLabeledValue *comparatorValue;
 @property(readonly, nonatomic) NSArray *comparatorValues;

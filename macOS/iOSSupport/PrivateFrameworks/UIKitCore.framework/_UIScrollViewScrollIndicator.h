@@ -4,12 +4,33 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/UIImageView.h>
+#import <UIKitCore/UIView.h>
+
+@class UIColor;
 
 __attribute__((visibility("hidden")))
-@interface _UIScrollViewScrollIndicator : UIImageView
+@interface _UIScrollViewScrollIndicator : UIView
 {
+    BOOL _expandedForDirectManipulation;
+    unsigned long long _type;
+    long long _style;
+    UIView *_roundedFillView;
+    UIColor *_foregroundColor;
 }
+
++ (double)_expandedIndicatorDimension;
++ (double)indicatorDimension;
+@property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
+@property(retain, nonatomic) UIView *roundedFillView; // @synthesize roundedFillView=_roundedFillView;
+@property(nonatomic) BOOL expandedForDirectManipulation; // @synthesize expandedForDirectManipulation=_expandedForDirectManipulation;
+@property(nonatomic) long long style; // @synthesize style=_style;
+@property(nonatomic) unsigned long long type; // @synthesize type=_type;
+- (void).cxx_destruct;
+- (void)layoutSubviews;
+- (void)_layoutFillViewAnimated:(BOOL)arg1;
+- (struct CGRect)_offsetFillViewRectForExpandedState:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (id)_colorForStyle:(long long)arg1;
 
 @end
 

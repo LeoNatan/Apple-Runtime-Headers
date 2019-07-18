@@ -25,6 +25,7 @@
 + (id)fetchRequestMatchingBlueprintsForUserWithDSID:(id)arg1 fromOrganization:(id)arg2;
 + (id)fetchRequestMatchingBlueprintsForUserWithDSID:(id)arg1 ofType:(id)arg2;
 + (id)_fetchRequestMatchingBlueprintsForUserWithDSID:(id)arg1;
++ (id)fetchRequestMatchingOneMoreMinuteBlueprints;
 + (id)fetchRequestMatchingDeletedBlueprints;
 + (id)fetchRequestMatchingExpiredBlueprints;
 + (id)defaultAlwaysAllowBundleIDs;
@@ -34,6 +35,7 @@
 + (id)defaultEndTime;
 + (id)defaultStartTime;
 + (BOOL)saveDowntimeForUser:(id)arg1 startTime:(id)arg2 endTime:(id)arg3 scheduleByWeekdayIndex:(id)arg4 enabled:(BOOL)arg5 behaviorType:(unsigned long long)arg6 error:(id *)arg7;
++ (BOOL)deleteManagedUserBlueprintForUser:(id)arg1 error:(id *)arg2;
 + (BOOL)saveManagedUserBlueprintForUser:(id)arg1 error:(id *)arg2;
 + (id)keyPathsForValuesAffectingLimitScheduleText;
 + (void)_createDisplayNameWithItemNames:(id)arg1 itemCount:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -58,8 +60,11 @@
 - (void)setStartTime:(id)arg1 endTime:(id)arg2 forDay:(unsigned long long)arg3;
 - (void)setStartTime:(id)arg1 endTime:(id)arg2;
 @property(getter=isDowntimeEnabled) BOOL downtimeEnabled;
+- (BOOL)permitWebFilterURL:(id)arg1 pageTitle:(id)arg2 error:(id *)arg3;
+- (id)_webFilterBlacklistStringsForURL:(id)arg1;
 @property(readonly, copy) NSString *limitScheduleText;
 @property(readonly, copy) NSString *limitDisplayName;
+@property(getter=isUsageLimitEnabled) BOOL usageLimitEnabled;
 
 // Remaining properties
 @property(retain, nonatomic) NSSet *configurations; // @dynamic configurations;

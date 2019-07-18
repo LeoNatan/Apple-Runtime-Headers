@@ -6,12 +6,10 @@
 
 #import <SpringBoardHome/NSObject-Protocol.h>
 
-@class NSArray, NSString, SBIconListModel, UIFont;
+@class NSArray, NSString, SBHClockIconVisualConfiguration, SBHFloatyFolderVisualConfiguration, SBHFolderIconVisualConfiguration, SBHIconAccessoryVisualConfiguration, SBHIconLabelVisualConfiguration, SBHSidebarVisualConfiguration, SBIconListModel, UIFont;
 
 @protocol SBIconListLayout <NSObject>
 @property(readonly, nonatomic) struct SBIconImageInfo iconImageInfo;
-@property(readonly, nonatomic) struct CGSize folderIconGridCellSpacing;
-@property(readonly, nonatomic) struct CGSize folderIconGridCellSize;
 @property(readonly, nonatomic) unsigned long long maximumIconCount;
 - (struct SBIconCoordinate)iconCoordinateForIndex:(unsigned long long)arg1 forOrientation:(long long)arg2 inList:(SBIconListModel *)arg3;
 - (struct UIEdgeInsets)layoutInsetsForOrientation:(long long)arg1;
@@ -20,14 +18,14 @@
 
 @optional
 @property(readonly, nonatomic) _Bool usesAlternateLayout;
-@property(readonly, nonatomic) double sidebarWidth;
-@property(readonly, nonatomic) struct SBHFolderMetrics folderMetrics;
-@property(readonly, nonatomic) struct SBHClockIconMetrics clockIconMetrics;
-@property(readonly, nonatomic) struct CGPoint accessoryOffset;
-@property(readonly, nonatomic) struct CGSize accessorySize;
+@property(readonly, copy, nonatomic) SBHSidebarVisualConfiguration *sidebarVisualConfiguration;
+@property(readonly, copy, nonatomic) SBHFloatyFolderVisualConfiguration *floatyFolderVisualConfiguration;
+@property(readonly, copy, nonatomic) SBHClockIconVisualConfiguration *clockIconVisualConfiguration;
+@property(readonly, copy, nonatomic) SBHFolderIconVisualConfiguration *folderIconVisualConfiguration;
+@property(readonly, copy, nonatomic) SBHIconAccessoryVisualConfiguration *iconAccessoryVisualConfiguration;
 - (void)noteIcons:(NSArray *)arg1 didDropAtCoordinate:(struct SBIconCoordinate)arg2 inList:(SBIconListModel *)arg3;
-- (UIFont *)accessoryFontForContentSizeCategory:(NSString *)arg1;
-- (double)labelVerticalOffsetForContentSizeCategory:(NSString *)arg1;
-- (UIFont *)labelFontForContentSizeCategory:(NSString *)arg1;
+- (UIFont *)accessoryFontForContentSizeCategory:(NSString *)arg1 options:(unsigned long long)arg2;
+- (SBHIconLabelVisualConfiguration *)labelVisualConfigurationForContentSizeCategory:(NSString *)arg1 options:(unsigned long long)arg2;
+- (UIFont *)labelFontForContentSizeCategory:(NSString *)arg1 options:(unsigned long long)arg2;
 @end
 

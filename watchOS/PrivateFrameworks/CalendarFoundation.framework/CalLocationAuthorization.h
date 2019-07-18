@@ -14,10 +14,10 @@
 @interface CalLocationAuthorization : NSObject <CLLocationManagerDelegate>
 {
     NSObject<OS_dispatch_group> *_initializationGroup;
-    long _initializationToken;
     NSObject<OS_dispatch_queue> *_queue;
     CLLocationManager *_locationManager;
     // Error parsing type: Ai, name: _status
+    _Bool _statusInitialized;
 }
 
 + (int)authorizationStatusForBundleIdentifier:(id)arg1 bundle:(id)arg2;

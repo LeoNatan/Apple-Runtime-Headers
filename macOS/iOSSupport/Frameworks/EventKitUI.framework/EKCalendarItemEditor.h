@@ -10,7 +10,7 @@
 #import <EventKitUI/UIActionSheetDelegate-Protocol.h>
 #import <EventKitUI/UIAlertViewDelegate-Protocol.h>
 
-@class EKCalendarItem, EKCalendarItemEditItem, EKEventStore, EKUIRecurrenceAlertController, NSArray, NSMutableSet, NSString, UIBarButtonItem, UIResponder, _UIAccessDeniedView;
+@class EKCalendarItem, EKCalendarItemEditItem, EKChangeSet, EKEventStore, EKUIRecurrenceAlertController, NSArray, NSMutableSet, NSString, UIBarButtonItem, UIResponder, _UIAccessDeniedView;
 @protocol EKCalendarItemEditorDelegate;
 
 __attribute__((visibility("hidden")))
@@ -46,11 +46,13 @@ __attribute__((visibility("hidden")))
     UIResponder *_responderToRestoreOnAppearence;
     unsigned long long _visibleSectionToRestoreOnAppearence;
     _UIAccessDeniedView *_accessDeniedView;
+    EKChangeSet *_originalChangeSet;
 }
 
 + (id)_doneLocalizedString;
 + (id)_addLocalizedString;
 + (id)defaultTitleForCalendarItem;
+@property(retain, nonatomic) EKChangeSet *originalChangeSet; // @synthesize originalChangeSet=_originalChangeSet;
 @property(retain, nonatomic) _UIAccessDeniedView *accessDeniedView; // @synthesize accessDeniedView=_accessDeniedView;
 @property(nonatomic) BOOL timeImplicitlySet; // @synthesize timeImplicitlySet=_timeImplicitlySet;
 @property(readonly) EKCalendarItemEditItem *currentEditItem; // @synthesize currentEditItem=_currentEditItem;
@@ -150,7 +152,7 @@ __attribute__((visibility("hidden")))
 - (void)completeAndSave;
 - (void)handleTapOutside;
 - (void)done:(id)arg1;
-- (void)cancelEditingWithDelegateNotification:(BOOL)arg1;
+- (void)cancelEditingWithDelegateNotification:(BOOL)arg1 forceCancel:(BOOL)arg2;
 - (void)cancel:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)applicationDidResume;

@@ -27,6 +27,7 @@
     unsigned int _panGestureHandled:1;
     unsigned int _rotationGestureHandled:1;
     unsigned int _pinchGestureHandled:1;
+    double _previousRotation;
     double _initialGestureScale;
     struct CGPoint _panGestureVelocity;
     double _pinchGestureScaleFactor;

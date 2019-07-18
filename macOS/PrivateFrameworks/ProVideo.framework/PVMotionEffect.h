@@ -43,9 +43,11 @@
     struct FigTime _loopTime;
 }
 
++ (id)publishedParameterNameToParameterKeyMap;
++ (id)parameterKeyToPublishedParameterNameMap;
 + (void)clearPreviewStats;
-+ (struct FigTime)liveTitlePickerLoopTime;
-+ (void)setLiveTitlePickerLoopTime:(struct FigTime)arg1;
++ (CDStruct_1b6d18a9)liveTitlePickerLoopTime;
++ (void)setLiveTitlePickerLoopTime:(CDStruct_1b6d18a9)arg1;
 + (void)initializeMotionInternal;
 + (void)initializeMotion;
 + (void)registerEffects;

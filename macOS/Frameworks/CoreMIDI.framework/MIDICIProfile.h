@@ -24,7 +24,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
-- (BOOL)isEqualTo:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (const void *)rawData;
 - (id)description;
 - (id)initWithData:(id)arg1 name:(id)arg2;

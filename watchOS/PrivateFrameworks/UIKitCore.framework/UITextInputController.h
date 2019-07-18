@@ -37,6 +37,7 @@
         unsigned int delegateRespondsToTextInputWillChangeSelectionFromCharacterRangeToCharacterRange:1;
         unsigned int delegateRespondsToTextInputEditorDidChangeSelection:1;
         unsigned int delegateRespondsToTextInputPrepareAttributedTextForInsertion:1;
+        unsigned int delegateRespondsToIsSingleLine:1;
         unsigned int textOrSelectionChangeOriginatesWithKeyboard:1;
         unsigned int showingTextStyleOptions:1;
         unsigned int undoRedoInProgress:1;
@@ -63,6 +64,7 @@
 }
 
 + (_Bool)_pasteboardHasStrings;
++ (id)whitelistedDictationDictionaryFromMetadata:(id)arg1;
 @property(nonatomic) _Bool shouldStartUndoGroup; // @synthesize shouldStartUndoGroup=_shouldStartUndoGroup;
 @property(nonatomic) int currentUndoGroupType; // @synthesize currentUndoGroupType=_currentUndoGroupType;
 @property(nonatomic) struct _NSRange previousSelectedRange; // @synthesize previousSelectedRange=_previousSelectedRange;
@@ -109,7 +111,7 @@
 - (void)decreaseSize:(id)arg1;
 - (void)increaseSize:(id)arg1;
 - (void)_pasteRawAttributedString:(id)arg1 asRichText:(_Bool)arg2;
-- (void)_pasteAttributedString:(id)arg1 toRange:(id)arg2 animator:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_pasteAttributedString:(id)arg1 toRange:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_pasteAttributedString:(id)arg1 pasteAsRichText:(_Bool)arg2;
 - (id)_attributedStringForInsertionOfAttributedString:(id)arg1;
 - (_Bool)_pasteFromPasteboard:(id)arg1 andMatchStyle:(_Bool)arg2;
@@ -389,10 +391,12 @@
 @property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically;
 @property(nonatomic) _Bool enablesReturnKeyOnNonWhiteSpaceContent;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
 @property(nonatomic) _Bool forceDefaultDictationInfo;
 @property(nonatomic) int forceDictationKeyboardType;
 @property(nonatomic) _Bool forceDisableDictation;
 @property(nonatomic) _Bool forceEnableDictation;
+@property(nonatomic) _Bool forceFloatingKeyboard;
 @property(nonatomic) _Bool hasDefaultContents;
 @property(readonly) unsigned int hash;
 @property(nonatomic) _Bool hidePrediction;

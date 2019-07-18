@@ -20,8 +20,10 @@ __attribute__((visibility("hidden")))
     BOOL _changingViewSize;
     BOOL _inactive;
     BOOL _hasRenderedSomething;
+    BOOL _inBackground;
 }
 
+@property(readonly, nonatomic, getter=isInBackground) BOOL inBackground; // @synthesize inBackground=_inBackground;
 @property(nonatomic) BOOL inactive; // @synthesize inactive=_inactive;
 @property(nonatomic) BOOL hasRenderedSomething; // @synthesize hasRenderedSomething=_hasRenderedSomething;
 @property(readonly, nonatomic, getter=isChangingViewSize) BOOL changingViewSize; // @synthesize changingViewSize=_changingViewSize;
@@ -40,6 +42,8 @@ __attribute__((visibility("hidden")))
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)didMoveToWindow;
 - (void)willMoveToWindow:(id)arg1;
+- (void)_unregisterSceneNotifications;
+- (void)_registerSceneNotifications;
 - (void)_updateForCurrentScreen;
 - (void)_updateMapViewHidden;
 - (BOOL)isPointValidForGesturing:(struct CGPoint)arg1;
@@ -49,7 +53,6 @@ __attribute__((visibility("hidden")))
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)_animateCanvasForBounds:(struct CGRect)arg1;
-- (BOOL)_canRender;
 @property(nonatomic) BOOL rendersInBackground;
 - (double)calloutContainerCanvasScale;
 - (struct CGSize)calloutContainerCanvasSize;
@@ -58,8 +61,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 andGlobe:(BOOL)arg2 shouldRasterize:(BOOL)arg3;
 - (void)_finishedSnapshot:(id)arg1;
-- (void)_enterBackground:(id)arg1;
-- (void)_enterForeground:(id)arg1;
+- (void)_updateBackgroundState;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

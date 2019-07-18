@@ -35,6 +35,7 @@
 - (_Bool)_needsWallpaperEffectView;
 - (void)_configureWallpaperEffectViewWithAnimationSettings:(id)arg1;
 - (void)prepareForActivationWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)didInvalidate;
 - (void)configureWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) _Bool shouldInvalidateWhenDeactivated;
 - (id)representedDisplayItem;
@@ -66,6 +67,7 @@
 - (_Bool)hasServiceProcessIdentifier:(int)arg1;
 - (_Bool)handleVolumeDownButtonPress;
 - (_Bool)handleVolumeUpButtonPress;
+- (void)handlePictureInPictureDidBegin;
 - (_Bool)handleLockButtonPress;
 - (_Bool)handleHomeButtonLongPress;
 - (_Bool)handleHomeButtonDoublePress;
@@ -77,6 +79,7 @@
 - (void)endIgnoringAppearanceUpdates;
 - (void)beginIgnoringAppearanceUpdates;
 - (_Bool)allowsStackingOverlayContentAbove;
+- (long long)defaultPreferredInterfaceOrientationForPresentationForRemoteTransientOverlayHostViewController:(id)arg1;
 - (id)remoteTransientOverlayHostViewController:(id)arg1 requestsActionForHandlingButtonEvents:(unsigned long long)arg2;
 - (void)remoteTransientOverlayHostViewController:(id)arg1 requestsWallpaperEffectUpdateWithAnimationSettings:(id)arg2;
 - (void)remoteTransientOverlayHostViewController:(id)arg1 didTerminateWithError:(id)arg2;
@@ -100,6 +103,8 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (id)childViewControllerForScreenEdgesDeferringSystemGestures;
 - (id)childViewControllerForHomeIndicatorAutoHidden;
+- (id)serviceEventDeferringToken;
+- (int)serviceProcessIdentifier;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;

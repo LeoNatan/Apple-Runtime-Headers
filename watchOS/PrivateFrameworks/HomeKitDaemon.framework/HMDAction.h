@@ -22,7 +22,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
 + (id)actionWithDictionaryRepresentation:(id)arg1 home:(id)arg2;
-@property(readonly, nonatomic) __weak HMDActionSet *actionSet; // @synthesize actionSet=_actionSet;
+@property(nonatomic) __weak HMDActionSet *actionSet; // @synthesize actionSet=_actionSet;
 @property(readonly, copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -36,12 +36,14 @@
 @property(readonly, copy, nonatomic) NSUUID *modelParentIdentifier;
 @property(readonly, copy, nonatomic) NSUUID *modelIdentifier;
 @property(readonly) Class modelClass;
+@property(readonly) unsigned int entitlementsForNotification;
 @property(readonly) _Bool requiresDeviceUnlock;
 - (id)modelObjectWithChangeType:(unsigned int)arg1;
 - (void)executeWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 @property(readonly, nonatomic) NSString *stateDump;
 @property(readonly) unsigned int type;
+- (void)updateActionSetIfNil:(id)arg1;
 - (id)initWithUUID:(id)arg1 actionSet:(id)arg2;
 - (id)init;
 

@@ -15,7 +15,7 @@
 #import <SafariServices/_SFWebViewDelegate-Protocol.h>
 #import <SafariServices/_WKInputDelegate-Protocol.h>
 
-@class NSString, WBSOneTimeCodeMonitor, WKWebView, WKWebViewConfiguration, _SFAuthenticationContext, _SFDialogController, _SFFormAutoFillController;
+@class NSString, WKWebView, WKWebViewConfiguration, _SFAuthenticationContext, _SFDialogController, _SFFormAutoFillController;
 @protocol SFWebViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
     _Bool _didFirstLayout;
     _Bool _didFinishDocumentLoad;
     _Bool _shouldSuppressDialogsThatBlockWebProcess;
-    WBSOneTimeCodeMonitor *_oneTimeCodeMonitor;
     NSString *_domainWhereUserDeclinedAutomaticStrongPassword;
     _Bool _loading;
     _Bool _didFirstVisuallyNonEmptyLayout;
@@ -88,8 +87,6 @@ __attribute__((visibility("hidden")))
 - (void)_automaticPasswordInputViewNotification:(id)arg1;
 - (_Bool)formAutoFillControllerShouldShowIconsInPasswordPicker:(id)arg1;
 - (void)formAutoFillControllerGetAuthenticationForAutoFill:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)formAutoFillControllerOneTimeCodeMonitor:(id)arg1;
-- (void)_beginOneTimeCodeMonitoringIfNecessary;
 - (void)formAutoFillControllerUserChoseToUseGeneratedPassword:(id)arg1;
 - (_Bool)formAutoFillControllerDidUserDeclineAutomaticStrongPasswordForCurrentDomain:(id)arg1;
 - (_Bool)formAutoFillControllerShouldDisableStreamlinedLogin:(id)arg1;
@@ -109,6 +106,7 @@ __attribute__((visibility("hidden")))
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 preferences:(id)arg3 decisionHandler:(CDUnknownBlockType)arg4;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)_webViewDidEndNavigationGesture:(id)arg1 withNavigationToBackForwardListItem:(id)arg2;
+- (void)_webView:(id)arg1 decidePolicyForSOAuthorizationLoadWithCurrentPolicy:(long long)arg2 forExtension:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_webView:(id)arg1 navigation:(id)arg2 didSameDocumentNavigation:(long long)arg3;
 - (void)webView:(id)arg1 didCommitNavigation:(id)arg2;
 - (void)_webViewDidCancelClientRedirect:(id)arg1;

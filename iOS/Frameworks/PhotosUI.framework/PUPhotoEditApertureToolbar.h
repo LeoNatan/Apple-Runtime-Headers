@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
     _Bool _useTranslucentBackground;
     id <PUPhotoEditApertureToolbarDelegate> delegate;
     long long _layoutOrientation;
-    double _sliderLength;
+    double _sliderWidth;
     NSString *_backdropViewGroupName;
     CEKApertureSlider *_slider;
     UILabel *_depthEffectLabel;
@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CEKApertureSlider *slider; // @synthesize slider=_slider;
 @property(copy, nonatomic) NSString *backdropViewGroupName; // @synthesize backdropViewGroupName=_backdropViewGroupName;
 @property(nonatomic) _Bool useTranslucentBackground; // @synthesize useTranslucentBackground=_useTranslucentBackground;
-@property(nonatomic) double sliderLength; // @synthesize sliderLength=_sliderLength;
+@property(nonatomic) double sliderWidth; // @synthesize sliderWidth=_sliderWidth;
 @property(readonly, nonatomic) long long layoutOrientation;
 @property(nonatomic) __weak id <PUPhotoEditApertureToolbarDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;

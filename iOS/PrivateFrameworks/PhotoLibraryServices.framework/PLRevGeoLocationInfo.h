@@ -17,6 +17,7 @@
     CNPostalAddress *_postalAddress;
     NSString *_addressString;
     NSString *_countryCode;
+    NSString *_geoServiceProvider;
     PLRevGeoCompoundNameInfo *_compoundNameInfo;
     PLRevGeoCompoundNameInfo *_compoundSecondaryNameInfo;
 }
@@ -33,6 +34,7 @@
 @property(nonatomic) _Bool isHome; // @synthesize isHome=_isHome;
 @property(readonly, nonatomic) PLRevGeoCompoundNameInfo *compoundSecondaryNameInfo; // @synthesize compoundSecondaryNameInfo=_compoundSecondaryNameInfo;
 @property(readonly, nonatomic) PLRevGeoCompoundNameInfo *compoundNameInfo; // @synthesize compoundNameInfo=_compoundNameInfo;
+@property(readonly, nonatomic) NSString *geoServiceProvider; // @synthesize geoServiceProvider=_geoServiceProvider;
 @property(readonly, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(readonly, nonatomic) NSString *addressString; // @synthesize addressString=_addressString;
 @property(readonly, nonatomic) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
@@ -48,8 +50,9 @@
 - (id)localizedDescription;
 - (_Bool)hasMapItem;
 - (id)description;
-- (id)initWithMapItem:(id)arg1 postalAddress:(id)arg2 addressString:(id)arg3 countryCode:(id)arg4 compoundNameInfo:(id)arg5 compoundSecondaryNameInfo:(id)arg6 isHome:(_Bool)arg7;
+- (id)initWithMapItem:(id)arg1 postalAddress:(id)arg2 addressString:(id)arg3 countryCode:(id)arg4 compoundNameInfo:(id)arg5 compoundSecondaryNameInfo:(id)arg6 isHome:(_Bool)arg7 geoServiceProvider:(id)arg8;
 - (id)initWithGEOMapItem:(id)arg1;
+- (_Bool)locationWasResolvedWithBestRevGeoProvider;
 
 @end
 

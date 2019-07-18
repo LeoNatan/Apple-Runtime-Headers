@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isApplicableToUI) _Bool applicableToUI; // @synthesize applicableToUI=_isApplicableToUI;
 - (_Bool)shouldBeVisible;
 - (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;
+- (id)qlPreviewView;
 - (void)dealloc;
 - (void)viewLoaded;
 - (void)initCommon;

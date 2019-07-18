@@ -135,6 +135,7 @@
 - (id)_transactionsWithCloudKitArchivedState:(_Bool)arg1;
 - (id)_transactionsForUniqueIDLocked:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 startDate:(id)arg4 endDate:(id)arg5 orderByDate:(long long)arg6 limit:(unsigned long long)arg7;
 - (void)_trimTransactionsForPassWithUniqueIDLocked:(id)arg1 withPaymentCredentialType:(long long)arg2;
+- (void)_removeTransactionsForPassWithUniqueID:(id)arg1;
 - (void)_removeTransactionWithIdentifier:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)_removeTransactionWithServiceIdentifierLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)_saveTransactionLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
@@ -165,6 +166,7 @@
 - (id)transactionWithServiceIdentifier:(id)arg1;
 - (id)transactionWithIdentifier:(id)arg1;
 - (id)transactionsForPassWithUniqueID:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 startDate:(id)arg4 endDate:(id)arg5 orderedByDate:(long long)arg6 limit:(long long)arg7;
+- (void)removeTransactionsForPassWithUniqueID:(id)arg1;
 - (void)removeTransactionWithIdentifier:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)_saveTransaction:(id)arg1 forPassWithUniqueID:(id)arg2 withPaymentCredentialType:(long long)arg3 shouldTrim:(_Bool)arg4;
 - (void)saveTransaction:(id)arg1 forPass:(id)arg2;

@@ -82,7 +82,6 @@
 @property(readonly, nonatomic) _Bool supportsSIMDReduction;
 @property(readonly, nonatomic) _Bool supportsMirrorClampToEdgeSamplerMode;
 @property(readonly, nonatomic) _Bool supportsBlackOrWhiteSamplerBorderColors;
-@property(readonly, nonatomic) _Bool supportsShaderBarycentricCoordinates;
 @property(readonly, nonatomic) _Bool supportsSIMDShufflesAndBroadcast;
 @property(readonly, nonatomic) _Bool supportsShaderMinLODClamp;
 @property(readonly, nonatomic) _Bool supportsSIMDGroup;
@@ -198,6 +197,7 @@
 - (_MTLIndirectArgumentBufferLayout *)newIndirectArgumentBufferLayoutWithStructType:(MTLStructType *)arg1;
 - (id <MTLCommandQueue>)newCommandQueueWithDescriptor:(MTLCommandQueueDescriptor *)arg1;
 - (_Bool)supportsSampleCount:(unsigned long long)arg1;
+- (_Bool)copyShaderCacheToPath:(NSString *)arg1;
 - (CDStruct_c0454aff)pipelineCacheStats;
 - (CDStruct_c0454aff)libraryCacheStats;
 - (void)unloadShaderCaches;
@@ -213,6 +213,7 @@
 - (NSString *)familyName;
 - (NSString *)vendorName;
 - (void)allowLibrariesFromOtherPlatforms;
+- (NSString *)reportLeaks;
 
 @optional
 @property(readonly, getter=isQuadDataSharingSupported) _Bool quadDataSharingSupported;

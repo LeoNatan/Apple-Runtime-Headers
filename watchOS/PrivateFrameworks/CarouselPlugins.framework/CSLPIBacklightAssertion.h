@@ -11,6 +11,7 @@
 }
 
 + (id)takeAssertionWithIdentifier:(id)arg1 reason:(unsigned int)arg2 flags:(unsigned int)arg3 timeoutSeconds:(double)arg4 timeoutBlock:(CDUnknownBlockType)arg5;
++ (id)takeAssertionWithIdentifier:(id)arg1 reason:(unsigned int)arg2 flags:(unsigned int)arg3 timeoutSeconds:(double)arg4 timeoutBlock:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)dealloc;
 - (id)initWithSpecification:(id)arg1 timeoutBlock:(CDUnknownBlockType)arg2;
 

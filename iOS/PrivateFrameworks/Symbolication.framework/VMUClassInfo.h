@@ -34,13 +34,8 @@
     _Bool _usesSwiftRefcounting;
 }
 
-+ (unsigned long long)sizeofClassStructure:(_Bool)arg1;
++ (unsigned long long)sizeofClassStructure;
 + (id)descriptionForTypeEncoding:(const char *)arg1 ivarName:(const char *)arg2;
-+ (unsigned long long)firstSubclassOfClass:(unsigned long long)arg1 memoryReader:(CDUnknownBlockType)arg2 returnedIsMetaclass:(_Bool *)arg3;
-+ (unsigned long long)nextSiblingOfClass:(unsigned long long)arg1 memoryReader:(CDUnknownBlockType)arg2 returnedIsMetaclass:(_Bool *)arg3;
-+ (unsigned long long)relativeOfClass:(unsigned long long)arg1 sibling:(_Bool)arg2 memoryReader:(CDUnknownBlockType)arg3 returnedIsMetaclass:(_Bool *)arg4;
-+ (unsigned long long)metaclassOfClass:(unsigned long long)arg1 memoryReader:(CDUnknownBlockType)arg2;
-+ (unsigned long long)superclassOfClass:(unsigned long long)arg1 memoryReader:(CDUnknownBlockType)arg2;
 + (id)classInfoWithClassName:(id)arg1 binaryPath:(id)arg2 type:(unsigned int)arg3;
 + (id)_genericBlockByrefInfo;
 + (void)initialize;

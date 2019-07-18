@@ -15,6 +15,7 @@
     _Bool _isAudioPlayingSomewhere;
     _Bool _currentRouteHasVolumeControl;
     _Bool _isFullyMuted;
+    _Bool _isRingerMuted;
     _Bool _isUILocked;
     _Bool _isHostingAppOnLockScreen;
     _Bool _isShowingLockScreenMediaControls;
@@ -24,6 +25,7 @@
 @property(nonatomic, setter=setShowingLockScreenMediaControls:) _Bool isShowingLockScreenMediaControls; // @synthesize isShowingLockScreenMediaControls=_isShowingLockScreenMediaControls;
 @property(nonatomic, setter=setHostingAppOnLockScreen:) _Bool isHostingAppOnLockScreen; // @synthesize isHostingAppOnLockScreen=_isHostingAppOnLockScreen;
 @property(nonatomic, setter=setUILocked:) _Bool isUILocked; // @synthesize isUILocked=_isUILocked;
+@property(nonatomic, setter=setRingerMuted:) _Bool isRingerMuted; // @synthesize isRingerMuted=_isRingerMuted;
 @property(nonatomic, setter=setFullyMuted:) _Bool isFullyMuted; // @synthesize isFullyMuted=_isFullyMuted;
 @property(nonatomic, setter=setCurrentRouteHasVolumeControl:) _Bool currentRouteHasVolumeControl; // @synthesize currentRouteHasVolumeControl=_currentRouteHasVolumeControl;
 @property(nonatomic, setter=setAudioPlayingSomewhere:) _Bool isAudioPlayingSomewhere; // @synthesize isAudioPlayingSomewhere=_isAudioPlayingSomewhere;

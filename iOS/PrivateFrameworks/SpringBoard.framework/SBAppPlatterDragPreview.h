@@ -6,12 +6,13 @@
 
 #import <UIKit/UIView.h>
 
+#import <SpringBoard/BSDescriptionProviding-Protocol.h>
 #import <SpringBoard/SBIconDragPreview-Protocol.h>
 
-@class BSCornerRadiusConfiguration, NSArray, SBApplicationBlurContentView, SBAsymmetricalCornerRadiusWrapperView, SBFView, SBIcon, SBIconView, SBPortalView;
+@class BSCornerRadiusConfiguration, NSArray, NSString, SBApplicationBlurContentView, SBAsymmetricalCornerRadiusWrapperView, SBFView, SBIcon, SBIconView, SBPortalView;
 @protocol SBAppPlatterDragSourceViewProviding;
 
-@interface SBAppPlatterDragPreview : UIView <SBIconDragPreview>
+@interface SBAppPlatterDragPreview : UIView <SBIconDragPreview, BSDescriptionProviding>
 {
     _Bool _isBlurredPlatterReady;
     _Bool _hasAnimatedToBlurredPlatter;
@@ -77,6 +78,11 @@
 @property(nonatomic, getter=isFlocked) _Bool flocked; // @synthesize flocked=_flocked;
 @property(nonatomic) unsigned long long dragState; // @synthesize dragState=_dragState;
 - (void).cxx_destruct;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+@property(readonly, copy) NSString *description;
 - (_Bool)_effectiveIconCanShowCloseBox;
 - (_Bool)_effectiveIconIsHighlighted;
 - (_Bool)_effectiveIconAllowsLabelArea;
@@ -104,6 +110,11 @@
 - (void)invalidateSourceView;
 - (void)updateSourceViewProvider:(id)arg1;
 - (id)initWithReferenceIconView:(id)arg1 sourceViewProvider:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

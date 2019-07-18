@@ -11,9 +11,9 @@
 }
 
 + (id)orderedHighlightTitleSpecTypesForMeaningLabel:(id)arg1;
-+ (id)titleSpecForHolidayEvent;
-+ (id)specPoolsForHolidayEvent:(_Bool)arg1;
-+ (id)specPoolsForBirthday:(_Bool)arg1;
++ (id)titleSpecForHolidayEventIncludingLocationIfPossible:(_Bool)arg1;
++ (id)specPoolsForHolidayEventIncludingLocationIfPossible:(_Bool)arg1 allowAllCities:(_Bool)arg2;
++ (id)specPoolsForBirthdayIncludingLocationIfPossible:(_Bool)arg1 allowAllCities:(_Bool)arg2;
 + (id)specPoolForAOILocation;
 + (id)titleSpecForGenericLocation:(_Bool)arg1;
 + (id)specPoolForGenericLocation:(_Bool)arg1;

@@ -10,7 +10,7 @@ __attribute__((visibility("hidden")))
 @interface WKDownloadProgress : NSProgress
 {
     struct RetainPtr<NSURLSessionDownloadTask> m_task;
-    struct Download *m_download;
+    struct WeakPtr<WebKit::Download> m_download;
     RefPtr_ea257445 m_sandboxExtension;
 }
 
@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)unpublish;
 - (void)publish;
 - (id)initWithDownloadTask:(id)arg1 download:(struct Download *)arg2 URL:(id)arg3 sandboxExtension:(RefPtr_ea257445)arg4;
+- (void)performCancel;
 
 @end
 

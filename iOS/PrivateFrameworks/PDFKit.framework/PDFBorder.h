@@ -31,7 +31,7 @@
 - (const double *)dashPatternRaw;
 - (_Bool)_isRectangular;
 - (void)setAnnotation:(id)arg1;
-- (id)createDictionaryRef;
+- (const struct __CFDictionary *)createDictionaryRef;
 - (id)initWithAnnotationDictionary:(struct CGPDFDictionary *)arg1 forPage:(id)arg2;
 @property(readonly, copy, nonatomic) NSDictionary *borderKeyValues;
 - (void)drawInRect:(struct CGRect)arg1;

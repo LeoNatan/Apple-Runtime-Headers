@@ -28,6 +28,7 @@
 + (id)payloadQueue;
 + (id)payloadManager;
 + (id)payload;
++ (id)oneMoreMinuteManager;
 + (id)mirroring;
 + (id)idsTransport;
 + (id)familySettingsManager;
@@ -36,6 +37,7 @@
 + (id)deviceState;
 + (id)daemon;
 + (id)conversation;
++ (id)managementStateObserver;
 + (id)conduit;
 + (id)cloudkit;
 + (id)checkpoint;

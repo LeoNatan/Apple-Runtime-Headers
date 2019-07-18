@@ -27,8 +27,6 @@
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *storeName; // @synthesize storeName=_storeName;
 - (void).cxx_destruct;
-- (void)systemDidLeaveMemoryPressure;
-- (void)systemDidEnterMemoryPressure;
 - (void)_onIvarQueue_performBlock:(CDUnknownBlockType)arg1 initializeStore:(_Bool)arg2 waitUntilDone:(_Bool)arg3;
 - (void)_onIvarQueue_performBlock:(CDUnknownBlockType)arg1 initializeStore:(_Bool)arg2;
 - (void)deleteDatabase;
@@ -48,7 +46,6 @@
 - (id)_onIvarQueue_serializedValuesUpToLimit:(unsigned int)arg1 valueType:(BOOL)arg2 deleteContext:(id *)arg3;
 - (id)_onIvarQueue_serializedValueForKey:(id)arg1 valueType:(BOOL)arg2;
 - (void)_onIvarQueue_persistSerializedValue:(id)arg1 forKey:(id)arg2 valueType:(BOOL)arg3;
-- (void)dealloc;
 - (id)initWithPath:(id)arg1 storeName:(id)arg2 dataProtectionClass:(unsigned int)arg3;
 
 @end

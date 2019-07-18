@@ -47,7 +47,6 @@
 - (unsigned long long)charIndexForPointWithPinning:(struct CGPoint)arg1 isTail:(_Bool)arg2 selectionType:(int)arg3;
 - (id)repForCharIndex:(unsigned long long)arg1 isStart:(_Bool)arg2;
 - (_Bool)p_doesRep:(id)arg1 containCharIndex:(unsigned long long)arg2 isStart:(_Bool)arg3;
-- (_Bool)shouldBeginEditingWithGesture:(id)arg1;
 - (id)hitRep:(struct CGPoint)arg1 withGesture:(id)arg2 passingTest:(CDUnknownBlockType)arg3;
 - (_Bool)preventClipToColumn;
 - (_Bool)forceTiling;

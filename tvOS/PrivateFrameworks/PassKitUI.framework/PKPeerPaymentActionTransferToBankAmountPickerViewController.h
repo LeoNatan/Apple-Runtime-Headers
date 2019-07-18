@@ -6,15 +6,16 @@
 
 #import <PassKitUI/PKPeerPaymentActionViewController.h>
 
+#import <PassKitUI/PKEnterCurrencyAmountPassViewDelegate-Protocol.h>
 #import <PassKitUI/PKEnterCurrencyAmountViewDelegate-Protocol.h>
 #import <PassKitUI/PKEnterValueNewBalanceViewDelegate-Protocol.h>
 
-@class NSString, PKEnterCurrencyAmountView, PKEnterValueNewBalanceView;
+@class NSString, PKEnterCurrencyAmountPassView, UIScrollView;
 
-@interface PKPeerPaymentActionTransferToBankAmountPickerViewController : PKPeerPaymentActionViewController <PKEnterCurrencyAmountViewDelegate, PKEnterValueNewBalanceViewDelegate>
+@interface PKPeerPaymentActionTransferToBankAmountPickerViewController : PKPeerPaymentActionViewController <PKEnterCurrencyAmountViewDelegate, PKEnterValueNewBalanceViewDelegate, PKEnterCurrencyAmountPassViewDelegate>
 {
-    PKEnterCurrencyAmountView *_enterCurrencyAmountView;
-    PKEnterValueNewBalanceView *_newBalanceView;
+    UIScrollView *_scrollView;
+    PKEnterCurrencyAmountPassView *_amountPassView;
 }
 
 - (void).cxx_destruct;
@@ -32,6 +33,7 @@
 - (void)setMaxLoadAmount:(id)arg1;
 - (void)setMinBalance:(id)arg1;
 - (void)setMaxBalance:(id)arg1;
+- (void)enterCurrencyAmountPassViewDidLoadPassSnapshot:(id)arg1;
 - (void)updateAccountValues;
 - (void)updateFirstResponder;
 - (void)willDismissViewController;

@@ -16,6 +16,7 @@
 @property(readonly) NSArray *formatDescriptionReplacements;
 - (id)segmentForTrackTime:(CDStruct_1b6d18a9)arg1;
 @property(readonly, copy, nonatomic) NSArray *segments;
+- (_Bool)isEnabled;
 - (struct OpaqueFigMutableComposition *)_mutableComposition;
 - (id)description;
 - (void)dealloc;

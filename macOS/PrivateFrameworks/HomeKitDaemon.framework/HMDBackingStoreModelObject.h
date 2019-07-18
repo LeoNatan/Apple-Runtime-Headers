@@ -82,6 +82,8 @@
 - (id)validateType:(id)arg1 path:(id)arg2;
 - (BOOL)_validateType:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) NSSet *dependentUUIDs; // @dynamic dependentUUIDs;
+@property(readonly, nonatomic) BOOL bsoIgnoreModel;
+@property(retain, nonatomic) HMFVersion *bsoIgnoredBefore;
 - (id)backedObjectWithParent:(id)arg1 error:(id *)arg2;
 - (id)initWithUUID:(id)arg1 parentUUID:(id)arg2;
 - (id)initWithUUID:(id)arg1;

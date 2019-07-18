@@ -10,7 +10,6 @@
 {
 }
 
-+ (id)tool;
 + (id)framework;
 
 @end

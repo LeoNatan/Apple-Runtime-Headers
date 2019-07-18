@@ -6,14 +6,23 @@
 
 #import <Preferences/PSListItemsController.h>
 
+#import <SettingsCellularUI/RadiosPreferencesDelegate-Protocol.h>
+
+@class RadiosPreferences;
+
 __attribute__((visibility("hidden")))
-@interface PSUICellularDataListItemsController : PSListItemsController
+@interface PSUICellularDataListItemsController : PSListItemsController <RadiosPreferencesDelegate>
 {
+    RadiosPreferences *_radioPreferences;
 }
 
+@property(retain, nonatomic) RadiosPreferences *radioPreferences; // @synthesize radioPreferences=_radioPreferences;
+- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)specifiers;
 - (void)reloadCache;
+- (void)airplaneModeChanged;
+- (void)dealloc;
 - (id)init;
 
 @end

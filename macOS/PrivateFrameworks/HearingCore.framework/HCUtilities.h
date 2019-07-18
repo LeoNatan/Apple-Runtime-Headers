@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)deviceIsPhone;
 + (BOOL)currentProcessIsPreferences;
 + (BOOL)currentProcessIsHeard;
 + (BOOL)isInternalInstall;

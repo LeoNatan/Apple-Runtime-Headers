@@ -6,17 +6,10 @@
 
 #import <UIKitCore/UIKeyCommand.h>
 
-@class NSString, UIImage;
-
 @interface UIMutableKeyCommand : UIKeyCommand
 {
 }
 
-@property(nonatomic) long long state; // @dynamic state;
-@property(nonatomic, getter=isEnabled) _Bool enabled; // @dynamic enabled;
-@property(copy, nonatomic) NSString *discoverabilityTitle; // @dynamic discoverabilityTitle;
-@property(retain, nonatomic) UIImage *image; // @dynamic image;
-@property(copy, nonatomic) NSString *title; // @dynamic title;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

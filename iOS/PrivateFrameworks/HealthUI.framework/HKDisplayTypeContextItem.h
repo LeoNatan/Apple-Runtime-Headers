@@ -14,6 +14,7 @@
     NSString *_title;
     NSString *_unit;
     NSString *_value;
+    NSString *_valueContext;
     NSAttributedString *_attributedValue;
     NSString *_dateString;
     HKUIMetricColors *_metricColors;
@@ -24,11 +25,14 @@
 @property(retain, nonatomic) HKUIMetricColors *metricColors; // @synthesize metricColors=_metricColors;
 @property(copy, nonatomic) NSString *dateString; // @synthesize dateString=_dateString;
 @property(copy, nonatomic) NSAttributedString *attributedValue; // @synthesize attributedValue=_attributedValue;
+@property(copy, nonatomic) NSString *valueContext; // @synthesize valueContext=_valueContext;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *unit; // @synthesize unit=_unit;
 @property(nonatomic) _Bool infoHidden; // @synthesize infoHidden=_infoHidden;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+- (_Bool)isEqualToContextItem:(id)arg1;
+- (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 
 @end

@@ -7,6 +7,7 @@
 #import <PhotosUICore/NSObject-Protocol.h>
 
 @protocol PXAutoplayTile <NSObject>
+@property(nonatomic) CDStruct_e83c9415 bestPlaybackTimeRange;
 @property(nonatomic) long long desiredPlayState;
 @end
 

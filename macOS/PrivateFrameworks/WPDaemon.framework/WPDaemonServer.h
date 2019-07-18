@@ -75,6 +75,7 @@
 - (struct os_state_data_s *)dumpToLog:(BOOL)arg1 State:(BOOL)arg2;
 - (void)disableScanningForClient:(id)arg1;
 - (void)enableTestMode;
+- (void)enableTestMode:(BOOL)arg1;
 - (void)lockStateUpdate;
 - (void)screenStateUpdate;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

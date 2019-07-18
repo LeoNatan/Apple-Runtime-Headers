@@ -15,6 +15,6 @@
 - (_Bool)containsAttributeWithDomain:(NSString *)arg1 andName:(NSString *)arg2;
 - (NSString *)endowmentNamespaceForDomain:(NSString *)arg1 andName:(NSString *)arg2;
 - (NSSet *)originatorEntitlementsForDomain:(NSString *)arg1 andName:(NSString *)arg2;
-- (NSArray *)attributesForDomain:(NSString *)arg1 andName:(NSString *)arg2 targetProperties:(id <RBBundleProperties>)arg3;
+- (NSArray *)attributesForDomain:(NSString *)arg1 andName:(NSString *)arg2 targetProperties:(id <RBBundleProperties>)arg3 withError:(id *)arg4;
 @end
 

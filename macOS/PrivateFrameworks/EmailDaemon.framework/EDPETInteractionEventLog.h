@@ -10,7 +10,7 @@
 #import <EmailDaemon/EDPBHasher-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class CNContactStore, EDInteractionEventLogSaltProvider, EFLazyCache, NSData, NSFileHandle, NSString, NSURL;
+@class CNContactStore, EDInteractionEventLogSaltProvider, EFLazyCache, EFMutableInt64Set, NSData, NSFileHandle, NSString, NSURL;
 @protocol EMUserProfileProvider, EMVIPManager, OS_dispatch_queue;
 
 @interface EDPETInteractionEventLog : NSObject <EFLoggable, EDPBHasher, EDInteractionEventLog>
@@ -30,10 +30,12 @@
     NSObject<OS_dispatch_queue> *_workQueue;
     NSURL *_directory;
     NSFileHandle *_logFileHandle;
+    EFMutableInt64Set *_currentLogMessageIDs;
 }
 
 + (void)enumerateFramesInData:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (id)log;
+@property(retain, nonatomic) EFMutableInt64Set *currentLogMessageIDs; // @synthesize currentLogMessageIDs=_currentLogMessageIDs;
 // Error parsing type for property shouldLog:
 // Property attributes: TAB,N,V_shouldLog
 
@@ -58,6 +60,7 @@
 - (void)persistEvent:(id)arg1 dataFromMessage:(id)arg2;
 - (void)persistEvent:(id)arg1 date:(id)arg2 conversationID:(long long)arg3 data:(id)arg4;
 - (void)persistEvent:(id)arg1 date:(id)arg2 message:(id)arg3 data:(id)arg4;
+- (id)_messageDataEventForMessage:(id)arg1 account:(id)arg2;
 - (id)hashedMessageHeadersForMessage:(id)arg1;
 - (long long)hashedConversationID:(long long)arg1;
 - (long long)hashedMailboxID:(id)arg1;
@@ -78,7 +81,10 @@
 - (unsigned long long)_estimateStopCount:(id)arg1;
 - (void)_writeQuotaReachedEvent;
 - (void)_writeHeader;
+- (void)_writeMessageDataIfNecessary:(id)arg1 account:(id)arg2;
+- (void)_writeMessageDataIfNecessary:(id)arg1;
 - (void)_writeEvent:(id)arg1;
+- (id)_scanForMessageIDs:(id)arg1 logVersion:(out long long *)arg2;
 - (id)_framedMessage:(id)arg1;
 - (int)_openFileForAppending:(id)arg1;
 - (id)_buildLogFileURLInDir:(id)arg1;

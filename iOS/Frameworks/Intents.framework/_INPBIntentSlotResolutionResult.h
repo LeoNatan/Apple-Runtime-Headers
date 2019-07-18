@@ -15,6 +15,7 @@
 @interface _INPBIntentSlotResolutionResult : PBCodable <_INPBIntentSlotResolutionResult, NSSecureCoding, NSCopying>
 {
     CDStruct_f953fb60 _has;
+    _Bool __encodeLegacyGloryData;
     int _type;
     _INPBPayloadConfirmation *_payloadConfirmation;
     _INPBPayloadNeedsDisambiguation *_payloadNeedsDisambiguation;
@@ -25,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) _INPBPayloadUnsupported *payloadUnsupported; // @synthesize payloadUnsupported=_payloadUnsupported;
 @property(retain, nonatomic) _INPBPayloadSuccess *payloadSuccess; // @synthesize payloadSuccess=_payloadSuccess;

@@ -21,7 +21,6 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)sceneResizeRequestForScene:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 insets:(struct NSEdgeInsets)arg4 fence:(id)arg5;
-+ (id)sceneResizeRequestForScene:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 insets:(struct NSEdgeInsets)arg4 shouldFence:(BOOL)arg5;
 @property(retain, nonatomic) BKSAnimationFenceHandle *fence; // @synthesize fence=_fence;
 @property(nonatomic) struct NSEdgeInsets insets; // @synthesize insets=_insets;
 @property(nonatomic) double scale; // @synthesize scale=_scale;

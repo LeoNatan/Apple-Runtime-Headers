@@ -45,6 +45,7 @@
 - (BOOL)removeMutableProduct;
 - (BOOL)pastPointOfNoReturn;
 - (void)setPastPointOfNoReturn:(BOOL)arg1;
+- (id)iaLogPath;
 - (id)automationFilePath;
 - (id)automationFilePathIfSafe;
 - (BOOL)automationFileIsSafeWithError:(id *)arg1;
@@ -55,6 +56,7 @@
 - (id)productIdentifier;
 - (void)setMaximumValidInstallDistance:(int)arg1;
 - (int)maximumValidInstallDistance;
+- (id)mutableProductPath;
 - (id)mutableProduct;
 - (id)sourceManager;
 - (id)description;

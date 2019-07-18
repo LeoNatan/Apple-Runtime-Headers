@@ -16,6 +16,7 @@
 - (void)searchableIndexSchedulable:(id <EDSearchableIndexSchedulable>)arg1 didGenerateImportantPowerEventWithIdentifier:(NSString *)arg2 eventData:(NSDictionary *)arg3;
 - (void)searchableIndexSchedulable:(id <EDSearchableIndexSchedulable>)arg1 didGeneratePowerEventWithIdentifier:(NSString *)arg2 eventData:(NSDictionary *)arg3;
 - (void)didFinishIndexingBacklogForSearchableIndexSchedulable:(id <EDSearchableIndexSchedulable>)arg1;
+- (void)indexingDidSuspendForSearchableIndexSchedulable:(id <EDSearchableIndexSchedulable>)arg1;
 - (void)indexingDidResumeForSearchableIndexSchedulable:(id <EDSearchableIndexSchedulable>)arg1;
 - (void)searchableIndexSchedulable:(id <EDSearchableIndexSchedulable>)arg1 didIndexItemCount:(int)arg2;
 - (void)searchableIndexSchedulable:(id <EDSearchableIndexSchedulable>)arg1 didIndexForTime:(double)arg2;

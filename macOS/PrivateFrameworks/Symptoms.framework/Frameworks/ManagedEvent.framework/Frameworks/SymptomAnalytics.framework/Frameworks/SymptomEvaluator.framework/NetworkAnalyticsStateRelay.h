@@ -57,6 +57,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)initForInternalType:(long long)arg1;
+- (void)populatePropertiesOnAWDMetric:(id)arg1 ingress:(BOOL)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
 @property(readonly) NSSet *defaultGateways;

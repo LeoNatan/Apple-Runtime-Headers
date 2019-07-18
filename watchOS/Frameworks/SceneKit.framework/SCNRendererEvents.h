@@ -10,5 +10,7 @@
 {
 }
 
+- (void)dealloc;
+
 @end
 

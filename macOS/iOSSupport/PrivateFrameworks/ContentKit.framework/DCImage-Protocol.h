@@ -7,6 +7,7 @@
 @class CIImage, NSBundle, NSData, NSString, UIImage;
 
 @protocol DCImage
++ (UIImage *)imageWithCGImage:(struct CGImage *)arg1;
 + (UIImage *)imageWithCIImage:(CIImage *)arg1;
 + (UIImage *)imageNamed:(NSString *)arg1 inBundle:(NSBundle *)arg2 compatibleWithTraitCollection:(id)arg3;
 + (UIImage *)imageWithData:(NSData *)arg1 scale:(double)arg2;

@@ -32,6 +32,8 @@
 - (_Bool)isRejectedReminder:(id)arg1;
 - (_Bool)isConfirmedReminder:(id)arg1;
 - (_Bool)isValidNewReminder:(id)arg1;
+- (void)removeConfirmationHistoryForEntityWithOpaqueKey:(id)arg1 creationTimestamp:(struct SGUnixTimestamp_)arg2;
+- (void)removeConfirmationHistoryForEvent:(id)arg1;
 - (_Bool)isRejectedEvent:(id)arg1;
 - (_Bool)isConfirmedEvent:(id)arg1;
 - (_Bool)isUpdatableContact:(id)arg1;

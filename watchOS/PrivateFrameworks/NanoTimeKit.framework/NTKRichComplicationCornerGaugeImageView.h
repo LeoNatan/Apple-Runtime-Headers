@@ -15,6 +15,7 @@
 
 + (_Bool)supportsComplicationFamily:(int)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
+@property(readonly, nonatomic) NTKRichComplicationImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;

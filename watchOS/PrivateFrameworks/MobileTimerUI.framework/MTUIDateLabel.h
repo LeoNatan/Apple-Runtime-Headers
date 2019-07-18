@@ -6,13 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-@class NSDate, NSTimeZone, UIColor, UIFont, UILabel;
+@class NSDate, NSString, NSTimeZone, UIColor, UIFont, UILabel;
 
 @interface MTUIDateLabel : UIView
 {
     NSTimeZone *_timeZone;
     NSDate *_date;
     UILabel *_dateLabel;
+    NSString *_dateLabelText;
     UIColor *_textColor;
     UIFont *_font;
     UIFont *_timeDesignatorFont;
@@ -21,15 +22,20 @@
 @property(retain, nonatomic) UIFont *timeDesignatorFont; // @synthesize timeDesignatorFont=_timeDesignatorFont;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
+@property(copy, nonatomic) NSString *dateLabelText; // @synthesize dateLabelText=_dateLabelText;
 @property(readonly, nonatomic) UILabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+- (id)viewForLastBaselineLayout;
+- (id)viewForFirstBaselineLayout;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (id)_fontInfoForBaselineSpacing;
 - (_Bool)_hasFontInfoForVerticalBaselineSpacing;
 - (void)_updateDateString;
+- (void)_updateTextString;
+- (void)_updateLabel;
 @property(retain, nonatomic) NSTimeZone *timeZone;
 - (id)initWithFrame:(struct CGRect)arg1;
 

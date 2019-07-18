@@ -10,7 +10,7 @@
 {
 }
 
-- (id)createRecordingUploaderWithLocalZone:(id)arg1 workQueue:(id)arg2 videoInitData:(id)arg3 targetFragmentDuration:(double)arg4;
+- (id)createUploaderWithLocalZone:(id)arg1 workQueue:(id)arg2 videoInitData:(id)arg3 targetFragmentDuration:(double)arg4;
 - (id)createVideoAnalyzerWithConfiguration:(id)arg1 identifier:(id)arg2;
 
 @end

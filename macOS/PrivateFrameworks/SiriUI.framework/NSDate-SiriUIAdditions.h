@@ -13,6 +13,7 @@
 - (id)_ordinalStringWithFormat:(id)arg1;
 - (id)_nonOrdinalStringForFormat:(id)arg1;
 - (id)sirui_ordinalStringWithFormat:(id)arg1;
+- (id)siriui_endOfDay;
 - (BOOL)siriui_isTomorrow;
 - (BOOL)siriui_isToday;
 - (BOOL)_siriui_isSameDayAsDate:(id)arg1;

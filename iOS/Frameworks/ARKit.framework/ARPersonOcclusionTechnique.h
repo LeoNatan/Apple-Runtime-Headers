@@ -6,11 +6,20 @@
 
 #import <ARKit/ARTechnique.h>
 
+@class ARFilteredMLDepthData, ARMLDepthData, ARPersonDetectionData, ARSegmentationData, NSObject;
+@protocol OS_dispatch_queue, OS_dispatch_semaphore;
+
 @interface ARPersonOcclusionTechnique : ARTechnique
 {
     struct __CVPixelBufferPool *_bgraPixelBufferPool;
     struct __CVPixelBufferPool *_depthPixelBufferPool;
     struct shared_ptr<arkit::RobustExpFilter<float>> _varExpFilter;
+    ARSegmentationData *_segmentationData;
+    ARMLDepthData *_depthData;
+    ARPersonDetectionData *_detectionData;
+    ARFilteredMLDepthData *_resultData;
+    NSObject<OS_dispatch_queue> *_processingQueue;
+    NSObject<OS_dispatch_semaphore> *_processingSemaphore;
 }
 
 - (id).cxx_construct;

@@ -12,6 +12,7 @@
 
 + (BOOL)archiveOrDeleteMutedMessages;
 + (void)setArchiveOrDeleteMutedMessages:(BOOL)arg1;
++ (void)handleMessages:(id)arg1 changeManager:(id)arg2;
 + (void)handleMessages:(id)arg1 store:(id)arg2;
 + (void)handleMutedMessages:(id)arg1 store:(id)arg2;
 

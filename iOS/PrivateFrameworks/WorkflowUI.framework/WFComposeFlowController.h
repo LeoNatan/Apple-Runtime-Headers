@@ -8,7 +8,7 @@
 
 #import <WorkflowUI/WFWorkflowWizardNameViewControllerDelegate-Protocol.h>
 
-@class NSString, UINavigationController, UIViewController, WFDatabase, WFWorkflow;
+@class NSString, UINavigationController, UIViewController, WFDatabase, WFWizardNamePresentationManager, WFWorkflow;
 @protocol WFComposeFlowControllerDelegate;
 
 @interface WFComposeFlowController : NSObject <WFWorkflowWizardNameViewControllerDelegate>
@@ -18,8 +18,10 @@
     UINavigationController *_navigationController;
     WFDatabase *_database;
     WFWorkflow *_workflow;
+    WFWizardNamePresentationManager *_presentationManager;
 }
 
+@property(retain, nonatomic) WFWizardNamePresentationManager *presentationManager; // @synthesize presentationManager=_presentationManager;
 @property(readonly, nonatomic) __weak WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
@@ -29,7 +31,7 @@
 - (void)workflowWizardNameViewController:(id)arg1 didFinishWithName:(id)arg2;
 - (void)finishEditing:(_Bool)arg1;
 - (void)startSaveFlow;
-- (void)startCancelFlow;
+- (void)startCancelFlowWithButton:(id)arg1;
 @property(readonly, nonatomic) _Bool workflowHasContent;
 - (id)initWithPresenter:(id)arg1 navigationController:(id)arg2 database:(id)arg3 workflow:(id)arg4;
 

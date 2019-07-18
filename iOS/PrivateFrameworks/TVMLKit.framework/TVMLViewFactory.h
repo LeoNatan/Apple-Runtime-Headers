@@ -26,7 +26,6 @@
 - (id)_buttonLockupForElement:(id)arg1 existingView:(id)arg2;
 - (id)_buttonForElement:(id)arg1 existingView:(id)arg2;
 - (id)_rowViewForElement:(id)arg1 existingView:(id)arg2;
-- (id)_popoverViewWithElement:(id)arg1 existingView:(id)arg2;
 - (id)_monogramViewForElement:(id)arg1 existingView:(id)arg2;
 - (id)_loadingImageViewForElement:(id)arg1 existingView:(id)arg2;
 - (id)_imageViewForElement:(id)arg1 layout:(id)arg2 existingView:(id)arg3;

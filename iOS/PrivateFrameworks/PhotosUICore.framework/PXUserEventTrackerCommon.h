@@ -13,19 +13,22 @@
     unsigned long long _currentSessionTab;
     double _currentLogStateStartDate;
     double _currentLogSubStateStartDate;
+    double _currentLogSubSubStateStartDate;
     _Bool _applicationIsInForeground;
     unsigned long long _currentTab;
     _Bool _enableDetailedDebugLogging;
     unsigned long long _currentLogState;
     unsigned long long _currentLogSubState;
+    unsigned long long _currentLogSubSubState;
 }
 
+@property(nonatomic) unsigned long long currentLogSubSubState; // @synthesize currentLogSubSubState=_currentLogSubSubState;
 @property(nonatomic) unsigned long long currentLogSubState; // @synthesize currentLogSubState=_currentLogSubState;
 @property(nonatomic) unsigned long long currentLogState; // @synthesize currentLogState=_currentLogState;
 @property(readonly, nonatomic) _Bool enableDetailedDebugLogging; // @synthesize enableDetailedDebugLogging=_enableDetailedDebugLogging;
 @property(nonatomic, setter=setCurrentTab:) unsigned long long currentTab; // @synthesize currentTab=_currentTab;
 - (void).cxx_destruct;
-- (id)PXUserEventSourceDescription:(unsigned long long)arg1;
+- (id)PXLogSubSubStateDescription:(unsigned long long)arg1;
 - (id)PXLogSubStateDescription:(unsigned long long)arg1;
 - (id)PXLogStateDescription:(unsigned long long)arg1;
 - (void)aggregateSetMemoryFeedNumberOfDaysSinceLastVisit:(long long)arg1;
@@ -33,12 +36,17 @@
 - (void)willViewMemoriesFeedView;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationWillEnterForeground:(id)arg1;
+- (void)logImpressionCountForEventSource:(unsigned long long)arg1;
+- (void)logCounterValuesForLogSubSubState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)logCounterValuesForLogState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)logCounterValuesForLogSubState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)logViewCountForLogSubSubState:(unsigned long long)arg1;
+- (void)logViewCountForLogSubState:(unsigned long long)arg1;
 - (void)logViewCountForLogState:(unsigned long long)arg1;
 - (_Bool)isEventSourceSenderAppearingForTheFirstTime:(id)arg1;
-- (void)setCurrentLogState:(unsigned long long)arg1 logSubState:(unsigned long long)arg2 forceLogging:(_Bool)arg3;
+- (void)setCurrentLogState:(unsigned long long)arg1 logSubState:(unsigned long long)arg2 logSubSubState:(unsigned long long)arg3 forceLogging:(_Bool)arg4;
 - (void)_setCurrentSessionSource:(unsigned long long)arg1 sender:(id)arg2 isInForeground:(_Bool)arg3;
+- (void)eventSourceDidChange:(unsigned long long)arg1 sender:(id)arg2;
 - (void)eventSourceWillAppear:(unsigned long long)arg1 sender:(id)arg2;
 - (void)eventSourceDidDisappear:(unsigned long long)arg1 sender:(id)arg2;
 - (id)init;

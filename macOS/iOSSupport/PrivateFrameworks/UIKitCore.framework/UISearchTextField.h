@@ -43,7 +43,6 @@
 @property(nonatomic, setter=_setPreventSelectionViewActivation:) BOOL _preventSelectionViewActivation; // @synthesize _preventSelectionViewActivation=__preventSelectionViewActivation;
 @property(nonatomic, setter=_setSearchBar:) __weak UISearchBar *_searchBar; // @synthesize _searchBar;
 - (void).cxx_destruct;
-- (void)setSearchText:(id)arg1;
 - (id)_customDraggableObjectsForRange:(id)arg1;
 - (id)_rangeOfCustomDraggableObjectsInRange:(id)arg1;
 - (BOOL)allowsDraggingAttachments;
@@ -71,6 +70,7 @@
 - (struct _NSRange)_textRangeForTextStorageRange:(struct _NSRange)arg1;
 - (struct _NSRange)_rangeForSetText;
 - (id)textInRange:(id)arg1;
+- (void)_didSetFont:(id)arg1;
 - (BOOL)drawsAsAtom;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_tokenTapGestureRecognized;

@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidLayoutSubviews;
 @property(readonly, nonatomic) NSArray *displayedCandidates;
 - (_Bool)hidesExpandableButton;
-- (_Bool)isVisibleForInputResponder:(id)arg1;
+- (_Bool)isVisibleForInputDelegate:(id)arg1 inputViews:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

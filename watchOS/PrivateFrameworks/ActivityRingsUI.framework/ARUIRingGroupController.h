@@ -6,13 +6,14 @@
 
 #import <ActivityRingsUI/ARUIAnimatableObject.h>
 
-@class NSArray;
+@class ARUISpriteSheet, NSArray;
 @protocol ARUIRingGroupControllerDelegate;
 
 @interface ARUIRingGroupController : ARUIAnimatableObject
 {
     int *_iconAnimationFrameNumbers;
     int _numberOfRings;
+    ARUISpriteSheet *_spriteSheet;
     float _emptyOpacity;
     float _opacity;
     float _ringDiameter;
@@ -31,6 +32,8 @@
 
 + (id)animationTimingFunction;
 + (double)defaultAnimationDuration;
++ (id)ringGroupControllerConfiguredForCompanionWithRingType:(int)arg1 withIcon:(_Bool)arg2;
++ (id)ringGroupControllerConfiguredForWatchWithRingType:(int)arg1 withIcon:(_Bool)arg2;
 @property(nonatomic) __weak id <ARUIRingGroupControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *rings; // @synthesize rings=_rings;
 @property(nonatomic) float additionalSpacingAtIndex; // @synthesize additionalSpacingAtIndex=_additionalSpacingAtIndex;
@@ -45,12 +48,23 @@
 @property(nonatomic) float opacity; // @synthesize opacity=_opacity;
 @property(nonatomic) float emptyOpacity; // @synthesize emptyOpacity=_emptyOpacity;
 @property(nonatomic) struct CGPoint center; // @synthesize center=_center;
+@property(retain, nonatomic) ARUISpriteSheet *spriteSheet; // @synthesize spriteSheet=_spriteSheet;
 @property(readonly, nonatomic) int numberOfRings; // @synthesize numberOfRings=_numberOfRings;
 - (void).cxx_destruct;
 - (unsigned int)_lastRingFrameNumberForRingAtIndex:(unsigned int)arg1;
 - (void)update:(double)arg1;
 - (id)_newAnimatablePropertyForType:(unsigned int)arg1;
 - (void)addAnimation:(id)arg1 forRingGroupPropertyType:(unsigned int)arg2;
+- (void)_setZRotation:(float)arg1;
+- (void)_setTrackOpacity:(float)arg1;
+- (void)_setRingScale:(float)arg1;
+- (void)_setRingThickness:(float)arg1;
+- (void)_setRingInterspacing:(float)arg1;
+- (void)_setRingIconSize:(float)arg1;
+- (void)_setRingDiameter:(float)arg1;
+- (void)_setOpacity:(float)arg1;
+- (void)_setEmptyOpacity:(float)arg1;
+- (void)_setCenter:(struct CGPoint)arg1;
 - (void)_removeAllRingAnimationsForPropertyType:(unsigned int)arg1;
 - (void)_setNeedsUpdate;
 - (void)dealloc;
@@ -58,6 +72,10 @@
 - (id)init;
 - (void)removeCelebration:(id)arg1 fromRingAtIndex:(int)arg2;
 - (void)addCelebration:(id)arg1 toRingAtIndex:(int)arg2;
+- (void)setActiveEnergyPercentage:(float)arg1 briskPercentage:(float)arg2 movingHoursPercentage:(float)arg3 animated:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)setBriskPercentage:(float)arg1 animated:(_Bool)arg2;
+- (void)setMovingHoursPercentage:(float)arg1 animated:(_Bool)arg2;
+- (void)setActiveEnergyPercentage:(float)arg1 animated:(_Bool)arg2;
 - (_Bool)setFloatValue:(float)arg1 fromCurrentValue:(float)arg2 forRingPropertyType:(unsigned int)arg3 ofRingAtIndex:(int)arg4 animated:(_Bool)arg5 duration:(double)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)_setFloatValue:(float)arg1 forRingPropertyType:(unsigned int)arg2 ofRingAtIndex:(int)arg3 animated:(_Bool)arg4;
 - (_Bool)_setCGPointValue:(struct CGPoint)arg1 forRingPropertyType:(unsigned int)arg2 ofRingAtIndex:(int)arg3 animated:(_Bool)arg4;
@@ -79,11 +97,11 @@
 - (double)_ringPercentageAdjustedForProximityToFull:(double)arg1 withRingDiameter:(double)arg2 thickness:(double)arg3;
 - (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(_Bool)arg3;
-- (void)setIconFirstFrameOrigin:(struct CGPoint)arg1 frameSize:(struct CGSize)arg2 frameCount:(int)arg3 columns:(int)arg4 ofRingAtIndex:(int)arg5;
 -     // Error parsing type: v72@0:4{?=[4]}8, name: setSkewAdjustmentMatrix:
 - (void)setRingBoundsDiameter:(float)arg1;
 - (_Bool)areAnimationsInProgress;
 - (_Bool)ringsAreEmpty;
+- (void)setIconFirstFrameOrigin:(struct CGPoint)arg1 frameSize:(struct CGSize)arg2 frameCount:(int)arg3 columns:(int)arg4 ofRingAtIndex:(int)arg5;
 - (void)setIconDotTextureOrigin:(struct CGPoint)arg1 ofRingAtIndex:(int)arg2;
 - (void)setDotPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(_Bool)arg3;
 

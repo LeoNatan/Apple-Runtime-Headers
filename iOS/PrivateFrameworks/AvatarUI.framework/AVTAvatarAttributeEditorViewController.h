@@ -17,7 +17,7 @@
 #import <AvatarUI/UICollectionViewDataSourcePrefetching-Protocol.h>
 #import <AvatarUI/UICollectionViewDelegateFlowLayout-Protocol.h>
 
-@class AVTAttributeEditorAnimationCoordinator, AVTAvatarAttributeEditorDataSource, AVTAvatarAttributeEditorModelManager, AVTAvatarRecord, AVTCollapsibleHeaderController, AVTGroupDial, AVTImageTransitioningContainerView, AVTShadowView, AVTTransition, AVTUIEnvironment, AVTViewSession, AVTViewSessionProvider, AVTViewThrottler, CALayer, NSString, UICollectionView, UILabel, UITapGestureRecognizer, UIView, _AVTAvatarRecordImageProvider;
+@class AVTAttributeEditorAnimationCoordinator, AVTAvatarAttributeEditorDataSource, AVTAvatarAttributeEditorModelManager, AVTAvatarRecord, AVTCollapsibleHeaderController, AVTGroupDial, AVTImageTransitioningContainerView, AVTShadowView, AVTTransition, AVTUIEnvironment, AVTViewSession, AVTViewSessionProvider, AVTViewThrottler, CALayer, NSDate, NSString, UICollectionView, UILabel, UITapGestureRecognizer, UIView, _AVTAvatarRecordImageProvider;
 @protocol AVTAvatarAttributeEditorLayout, AVTAvatarAttributeEditorViewControllerDelegate, AVTTaskScheduler;
 
 @interface AVTAvatarAttributeEditorViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDataSourcePrefetching, UICollectionViewDelegateFlowLayout, AVTAvatarAttributeEditorControllerSubSelectionDelegate, AVTGroupDialDelegate, AVTCollapsibleHeaderControllerDelegate, AVTTransitionModel, AVTNotifyingContainerViewDelegate, AVTFaceTrackingManagerDelegate, AVTAttributeEditorSectionHeaderViewDelegate>
@@ -47,20 +47,24 @@
     AVTViewThrottler *_avtViewThrottler;
     AVTUIEnvironment *_environment;
     CDUnknownBlockType _postSessionDidBecomeActiveHandler;
-    _AVTAvatarRecordImageProvider *_thumbnailRenderer;
     AVTImageTransitioningContainerView *_transitioningContainer;
     AVTTransition *_currentTransition;
+    NSDate *_lastPosedAvatarImageRenderingTime;
     CDUnknownBlockType _pendingUnhighlightBlock;
+    _AVTAvatarRecordImageProvider *_headerPreviewImageRenderer;
+    id <AVTTaskScheduler> _headerPreviewScheduler;
 }
 
 + (id)attributeRowIdentifier;
 + (id)colorRowIdentifier;
+@property(readonly, nonatomic) id <AVTTaskScheduler> headerPreviewScheduler; // @synthesize headerPreviewScheduler=_headerPreviewScheduler;
+@property(retain, nonatomic) _AVTAvatarRecordImageProvider *headerPreviewImageRenderer; // @synthesize headerPreviewImageRenderer=_headerPreviewImageRenderer;
 @property(nonatomic) _Bool allowFacetracking; // @synthesize allowFacetracking=_allowFacetracking;
 @property(copy, nonatomic) CDUnknownBlockType pendingUnhighlightBlock; // @synthesize pendingUnhighlightBlock=_pendingUnhighlightBlock;
 @property(nonatomic) _Bool isAnimatingHighlight; // @synthesize isAnimatingHighlight=_isAnimatingHighlight;
+@property(retain, nonatomic) NSDate *lastPosedAvatarImageRenderingTime; // @synthesize lastPosedAvatarImageRenderingTime=_lastPosedAvatarImageRenderingTime;
 @property(retain, nonatomic) AVTTransition *currentTransition; // @synthesize currentTransition=_currentTransition;
 @property(retain, nonatomic) AVTImageTransitioningContainerView *transitioningContainer; // @synthesize transitioningContainer=_transitioningContainer;
-@property(retain, nonatomic) _AVTAvatarRecordImageProvider *thumbnailRenderer; // @synthesize thumbnailRenderer=_thumbnailRenderer;
 @property(nonatomic) _Bool hasMadeAnySelection; // @synthesize hasMadeAnySelection=_hasMadeAnySelection;
 @property(readonly, nonatomic) _Bool isCreating; // @synthesize isCreating=_isCreating;
 @property(copy, nonatomic) CDUnknownBlockType postSessionDidBecomeActiveHandler; // @synthesize postSessionDidBecomeActiveHandler=_postSessionDidBecomeActiveHandler;
@@ -130,6 +134,7 @@
 - (void)didTapAvatarView:(id)arg1;
 - (void)tearDownCollapsibleHeaderIfNeeded;
 - (void)setupTapGestureForView:(id)arg1;
+- (void)updateCollapsibleHeaderHeightConstraintsAnimated:(_Bool)arg1;
 - (void)setupCollapsibleHeaderIfNeededForLayout:(id)arg1 withSession:(id)arg2;
 - (void)configureUserInfoLabel;
 - (void)configureAVTViewFromSession:(id)arg1;
@@ -144,7 +149,7 @@
 - (void)transitionLiveViewToFront;
 - (void)transitionStaticViewToFront;
 - (void)transitionToLiveViewAnimated:(_Bool)arg1;
-- (void)updateImageViewWithPosedAvatarRecordForcingRender:(_Bool)arg1;
+- (void)updateImageViewWithPosedAvatarRecordForcingRender:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)prepareForAnimatedTransitionWithLayout:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)notifyingContainerViewDidChangeSize:(struct CGSize)arg1;
 - (void)notifyingContainerViewWillChangeSize:(struct CGSize)arg1;

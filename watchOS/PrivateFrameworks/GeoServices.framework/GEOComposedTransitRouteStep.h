@@ -63,7 +63,7 @@
 @property(readonly, nonatomic) GEOComposedTransitRouteStep *nextTransitStep;
 @property(readonly, nonatomic) GEOComposedTransitRouteStep *previousTransitStep;
 @property(readonly, nonatomic) id <GEOTransitVehicleEntries> vehicleEntries;
-- (id)originalInstructions;
+- (id)instructions;
 @property(readonly, nonatomic) GEOTransitStep *transitStep; // @synthesize transitStep=_transitStep;
 - (unsigned int)distance;
 - (unsigned int)duration;

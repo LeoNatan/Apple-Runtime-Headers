@@ -32,6 +32,7 @@
 @property(nonatomic) BOOL isModified; // @synthesize isModified=_isModified;
 @property(nonatomic) BOOL isNew; // @synthesize isNew=_isNew;
 - (void).cxx_destruct;
+- (BOOL)isEqual:(id)arg1;
 - (id)summary;
 - (id)description;
 - (void)setSkipsPersistentObjectCopy:(BOOL)arg1;

@@ -6,9 +6,10 @@
 
 #import <WeatherFoundation/NSObject-Protocol.h>
 
-@class NSData, NSDateComponents, NSLocale, WFLocation, WFParsedForecastData;
+@class NSData, NSDateComponents, NSLocale, WFLocation, WFParsedForecastData, WFResponseParsingRules;
 
 @protocol WFForecastDataParser <NSObject>
+- (WFParsedForecastData *)parseForecastData:(NSData *)arg1 types:(unsigned long long)arg2 location:(WFLocation *)arg3 locale:(NSLocale *)arg4 date:(NSDateComponents *)arg5 error:(id *)arg6 rules:(WFResponseParsingRules *)arg7;
 - (WFParsedForecastData *)parseForecastData:(NSData *)arg1 types:(unsigned long long)arg2 location:(WFLocation *)arg3 locale:(NSLocale *)arg4 date:(NSDateComponents *)arg5 error:(id *)arg6;
 @end
 

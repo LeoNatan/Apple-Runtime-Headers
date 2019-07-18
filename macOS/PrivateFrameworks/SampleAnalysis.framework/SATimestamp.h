@@ -37,7 +37,7 @@
 - (long long)compare:(id)arg1;
 - (void)writeJSONDictionaryEntriesToStream:(id)arg1;
 - (void)applyMachTimebase:(struct mach_timebase_info)arg1;
-- (void)populateReferencesUsingBuffer:(const void *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
+- (void)populateReferencesUsingBuffer:(const CDStruct_090a3fc3 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
 - (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
 - (BOOL)addSelfToBuffer:(CDStruct_090a3fc3 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;

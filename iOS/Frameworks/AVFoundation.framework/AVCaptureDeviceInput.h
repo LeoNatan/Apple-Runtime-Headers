@@ -16,6 +16,8 @@
 + (id)deviceInputWithDevice:(id)arg1 error:(id *)arg2;
 + (void)initialize;
 - (id)videoDevice;
+- (float)portraitLightingEffectStrength;
+- (void)setPortraitLightingEffectStrength:(float)arg1;
 - (float)simulatedAperture;
 - (void)setSimulatedAperture:(float)arg1;
 - (void)setVisionDataDeliveryEnabled:(_Bool)arg1;
@@ -30,6 +32,8 @@
 - (float)maxGainOverride;
 - (void)setMaxGainOverride:(float)arg1;
 - (_Bool)isMaxGainOverrideSupported;
+- (void)_resetVideoMinFrameDurationOverride;
+- (void)_applyVideoMinFrameDurationOverride;
 @property(nonatomic) CDStruct_1b6d18a9 videoMinFrameDurationOverride;
 - (id)portsWithMediaType:(id)arg1 sourceDeviceType:(id)arg2 sourceDevicePosition:(long long)arg3;
 - (id)multiCamPorts;
@@ -37,11 +41,13 @@
 - (id)notReadyError;
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
+- (void)setSession:(id)arg1;
 @property(nonatomic) _Bool unifiedAutoExposureDefaultsEnabled;
 @property(readonly, nonatomic) AVCaptureDevice *device;
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (void)_resetPortraitLightingEffectStrength;
 - (void)_resetSimulatedAperture;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithDevice:(id)arg1 error:(id *)arg2;

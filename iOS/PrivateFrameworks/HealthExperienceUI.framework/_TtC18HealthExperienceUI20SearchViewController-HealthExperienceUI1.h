@@ -9,7 +9,6 @@
 @interface _TtC18HealthExperienceUI20SearchViewController (HealthExperienceUI1)
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
-- (void)prepareForSegue:(id)arg1 sender:(id)arg2;
 - (void)restoreUserActivityState:(id)arg1;
 @end
 

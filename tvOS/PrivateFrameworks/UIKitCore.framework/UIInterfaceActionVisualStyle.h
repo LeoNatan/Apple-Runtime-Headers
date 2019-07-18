@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (double)contentCornerRadius;
 - (struct UIEdgeInsets)actionSequenceEdgeInsets;
 - (double)actionSectionSpacing;
+- (double)minimumImageGapWidth;
 - (double)verticalImageContentSpacing;
 - (double)horizontalImageContentSpacing;
 - (struct CGSize)minimumActionContentSize;

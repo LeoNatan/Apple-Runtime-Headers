@@ -17,12 +17,14 @@
     struct vector<simd_float4x4, std::__1::allocator<simd_float4x4>> _localTransforms;
     AR3DSkeletonDetectionResult *_liftingResult;
     NSUUID *_identifier;
+    double _estimatedScaleFactor;
     // Error parsing type: {?="columns"[4]}, name: _visionTransform
 }
 
 + (id)jointParentIndices;
 + (id)jointNames;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) double estimatedScaleFactor; // @synthesize estimatedScaleFactor=_estimatedScaleFactor;
 // Error parsing type for property visionTransform:
 // Property attributes: T{?=[4]},N,V_visionTransform
 
@@ -32,6 +34,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (_Bool)isJointTracked:(long long)arg1;
 @property(readonly, nonatomic) AR3DSkeletonDetectionResult *liftedSkeletonData;
 @property(readonly, nonatomic) unsigned long long jointTransformCount;
 @property(readonly, nonatomic) const CDStruct_0c4e353b *localJointTransformsSRT;

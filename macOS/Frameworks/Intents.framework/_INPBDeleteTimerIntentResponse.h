@@ -15,11 +15,13 @@
 @interface _INPBDeleteTimerIntentResponse : PBCodable <_INPBDeleteTimerIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSArray *_deletedTimers;
 }
 
 + (BOOL)supportsSecureCoding;
 + (Class)deletedTimersType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *deletedTimers; // @synthesize deletedTimers=_deletedTimers;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

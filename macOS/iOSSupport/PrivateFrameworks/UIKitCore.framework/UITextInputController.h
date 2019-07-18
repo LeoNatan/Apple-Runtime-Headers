@@ -118,7 +118,7 @@
 - (void)decreaseSize:(id)arg1;
 - (void)increaseSize:(id)arg1;
 - (void)_pasteRawAttributedString:(id)arg1 asRichText:(BOOL)arg2;
-- (void)_pasteAttributedString:(id)arg1 toRange:(id)arg2 animator:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_pasteAttributedString:(id)arg1 toRange:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_pasteAttributedString:(id)arg1 pasteAsRichText:(BOOL)arg2;
 - (id)_attributedStringForInsertionOfAttributedString:(id)arg1;
 - (id)_selectWord:(id)arg1;

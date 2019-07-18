@@ -6,29 +6,31 @@
 
 #import <HMFoundation/HMFObject.h>
 
-#import <HomeKitDaemon/NSCopying-Protocol.h>
+@class CKRecordZoneID, HMBLocalZone, HMDNetworkRouterFirewallRuleCloudZone, NSMutableSet;
 
-@class HMBCloudZoneID, HMBLocalZone, HMDNetworkRouterFirewallRuleCloudZone, NSMutableSet;
-
-@interface HMDNetworkRouterFirewallRuleManagerBackingStoreMirrorZoneInfo : HMFObject <NSCopying>
+@interface HMDNetworkRouterFirewallRuleManagerBackingStoreMirrorZoneInfo : HMFObject
 {
     _Bool _zoneHasChanged;
     _Bool _zoneWasDeleted;
+    _Bool _ignoreChangeToken;
+    CKRecordZoneID *_zoneID;
     NSMutableSet *_recordIDs;
-    HMBCloudZoneID *_cloudZoneID;
     HMDNetworkRouterFirewallRuleCloudZone *_cloudZone;
     HMBLocalZone *_mirroredLocalZone;
 }
 
-@property(nonatomic) _Bool zoneWasDeleted; // @synthesize zoneWasDeleted=_zoneWasDeleted;
-@property(nonatomic) _Bool zoneHasChanged; // @synthesize zoneHasChanged=_zoneHasChanged;
 @property(retain, nonatomic) HMBLocalZone *mirroredLocalZone; // @synthesize mirroredLocalZone=_mirroredLocalZone;
 @property(retain, nonatomic) HMDNetworkRouterFirewallRuleCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
-@property(readonly, nonatomic) HMBCloudZoneID *cloudZoneID; // @synthesize cloudZoneID=_cloudZoneID;
+@property(readonly, nonatomic) _Bool ignoreChangeToken; // @synthesize ignoreChangeToken=_ignoreChangeToken;
+@property(readonly, nonatomic) _Bool zoneWasDeleted; // @synthesize zoneWasDeleted=_zoneWasDeleted;
+@property(readonly, nonatomic) _Bool zoneHasChanged; // @synthesize zoneHasChanged=_zoneHasChanged;
 @property(readonly, nonatomic) NSMutableSet *recordIDs; // @synthesize recordIDs=_recordIDs;
+@property(readonly, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithCloudZoneID:(id)arg1 recordIDs:(id)arg2;
+- (void)forceRefresh;
+- (void)markDeleted;
+- (void)markChanged;
+- (id)initWithZoneID:(id)arg1;
 
 @end
 

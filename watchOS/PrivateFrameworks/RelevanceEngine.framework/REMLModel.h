@@ -19,6 +19,7 @@
     _Bool _allowsExploreExploit;
     float _exploreExploitModulator;
     float _priorMean;
+    float _varianceEpsilon;
     float _simulationExploreExploitModulator;
     id <RERelevanceEngineMetricsRecorder> _metricsRecorder;
     NSString *_metricsInteraction;
@@ -26,10 +27,11 @@
 
 + (unsigned int)maxFeatureCount;
 + (unsigned int)featureBitWidth;
-+ (id)modelWithFeatureSet:(id)arg1 priorMean:(float)arg2;
++ (id)modelWithFeatureSet:(id)arg1 priorMean:(float)arg2 modelVarianceEpsilon:(float)arg3;
 @property(retain, nonatomic) NSString *metricsInteraction; // @synthesize metricsInteraction=_metricsInteraction;
 @property(retain, nonatomic) id <RERelevanceEngineMetricsRecorder> metricsRecorder; // @synthesize metricsRecorder=_metricsRecorder;
 @property(nonatomic) float simulationExploreExploitModulator; // @synthesize simulationExploreExploitModulator=_simulationExploreExploitModulator;
+@property(nonatomic) float varianceEpsilon; // @synthesize varianceEpsilon=_varianceEpsilon;
 @property(nonatomic) float priorMean; // @synthesize priorMean=_priorMean;
 @property(nonatomic) float exploreExploitModulator; // @synthesize exploreExploitModulator=_exploreExploitModulator;
 @property(nonatomic) _Bool allowsExploreExploit; // @synthesize allowsExploreExploit=_allowsExploreExploit;
@@ -39,6 +41,14 @@
 @property(readonly, nonatomic) NSString *name;
 - (void)logCoreAnalyticsMetrics;
 - (_Bool)requiresDirectory;
+- (unsigned int)_getTotalPositiveCount;
+@property(readonly, nonatomic) unsigned int totalPositiveCount;
+- (unsigned int)_getTotalExampleCount;
+@property(readonly, nonatomic) unsigned int totalExampleCount;
+- (float)_getNormalizedEntropy;
+@property(readonly, nonatomic) float normalizedEntropy;
+- (float)_getAveragePrediction;
+@property(readonly, nonatomic) float averagePrediction;
 - (int)_getNumberOfCoordinates;
 @property(readonly, nonatomic) int getNumberOfCoordinates;
 - (void)_clearModel;
@@ -56,7 +66,7 @@
 - (void)trainWithFeatures:(id)arg1 positiveEvent:(id)arg2;
 - (_Bool)wantsPredictionCache;
 - (void)setWantsPredictionCache:(_Bool)arg1;
-- (id)initWithFeatureSet:(id)arg1 priorMean:(float)arg2;
+- (id)initWithFeatureSet:(id)arg1 priorMean:(float)arg2 modelVarianceEpsilon:(float)arg3;
 - (id)init;
 
 @end

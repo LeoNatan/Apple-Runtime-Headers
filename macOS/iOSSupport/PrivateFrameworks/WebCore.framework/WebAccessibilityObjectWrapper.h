@@ -189,6 +189,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_accessibilityIsLandmarkRole:(int)arg1;
 - (BOOL)accessibilityIsDialog;
 - (id)accessibilityLanguage;
+- (id)accessibilityPopupValue;
 - (BOOL)accessibilityHasPopup;
 - (struct CGPath *)_accessibilityPath;
 - (long long)indexOfAccessibilityElement:(id)arg1;

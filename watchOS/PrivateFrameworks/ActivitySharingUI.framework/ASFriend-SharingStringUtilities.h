@@ -7,16 +7,14 @@
 #import <ActivitySharing/ASFriend.h>
 
 @interface ASFriend (SharingStringUtilities)
-- (id)as_competitionLearnMoreReceivedNotificationMessageWithWheelchairUse:(int)arg1;
-- (id)as_competitionLearnMoreSendConfirmationMessageWithWheelchairUse:(int)arg1;
+- (id)as_competitionLearnMorePopupAction;
+- (id)as_competitionAcceptConfirmationMessageForCompetition:(id)arg1;
 - (id)as_competitionLearnMoreFullDescription;
 - (id)as_competitionLearnMoreDetailMessage;
 - (id)as_competitionLearnMoreIntroduction;
 - (id)as_competitionLearnMoreDetailAction;
-- (id)as_competitionLearnMorePopupAction;
 - (id)as_competitionLearnMoreTitle;
 - (id)_competitionStartMessage:(id)arg1 replacingNameAndDatePlaceholdersForCompetitionStartDate:(id)arg2;
-- (id)as_competitionAcceptConfirmationMessageForCompetition:(id)arg1;
 - (id)as_competitionAcceptConfirmationTitle;
 - (id)as_competitionAcceptedNotificationMessageForCompetition:(id)arg1;
 - (id)as_competitionAcceptedNotificationTitle;

@@ -71,6 +71,7 @@
 - (void)startPairingWithConsentRequired:(BOOL)arg1 config:(id)arg2 ownershipToken:(id)arg3;
 - (void)continuePairingUsingWAC;
 - (void)continuePairingAfterAuthPrompt;
+- (BOOL)matchesSetupID:(id)arg1 serverIdentifier:(id)arg2;
 - (BOOL)matchesSetupID:(id)arg1;
 - (id)productData;
 @property(readonly, nonatomic, getter=isPaired) BOOL paired;

@@ -15,6 +15,7 @@
 @interface HKDisplayTypeSectionedContextView : UIView <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 {
     int _style;
+    _Bool _bottomInsetsEnabled;
     UICollectionView *_collectionView;
     UICollectionViewFlowLayout *_collectionViewLayout;
     NSIndexPath *_lastSelectedIndex;
@@ -25,6 +26,7 @@
 @property(nonatomic) __weak id <HKDisplayTypeSectionedContextViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *displayTypeContextSections; // @synthesize displayTypeContextSections=_displayTypeContextSections;
 - (void).cxx_destruct;
+- (float)_maximumHeaderLabelLength;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(int)arg3;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
@@ -38,13 +40,14 @@
 - (int)_rowsForScreenSize;
 - (float)_contentWidth;
 - (float)_contentHeight;
+- (float)_preferredCollectionViewHeightForCount:(int)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)deselectAllItemsAnimated:(_Bool)arg1;
 - (void)selectItemAtIndexPath:(id)arg1 animated:(_Bool)arg2 scrollPosition:(unsigned int)arg3;
 - (id)_buildCollectionViewLayout;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_dynamicUserInterfaceTraitDidChange;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(int)arg1 useBottomInsets:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -39,7 +39,7 @@
 - (double)heightForRow:(long long)arg1;
 - (void)_addComplication:(id)arg1;
 - (void)_commonInit;
-- (id)initWithTableView:(id)arg1 face:(id)arg2 faceView:(id)arg3 inGallery:(_Bool)arg4;
+- (id)initWithTableViewController:(id)arg1 face:(id)arg2 faceView:(id)arg3 inGallery:(_Bool)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

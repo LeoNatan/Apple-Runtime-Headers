@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)updateOfficialViewButtonText;
 - (void)viewDidLoad;
 - (id)initWithMKMapItem:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

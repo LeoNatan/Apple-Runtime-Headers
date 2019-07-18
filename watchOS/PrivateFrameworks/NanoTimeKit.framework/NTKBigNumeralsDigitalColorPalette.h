@@ -11,6 +11,7 @@
 }
 
 + (id)minuteColorForColor:(unsigned int)arg1 device:(id)arg2;
++ (id)standardHourColorForColor:(unsigned int)arg1 shifted:(_Bool)arg2 device:(id)arg3;
 + (id)hourColorForColor:(unsigned int)arg1 device:(id)arg2;
 
 @end

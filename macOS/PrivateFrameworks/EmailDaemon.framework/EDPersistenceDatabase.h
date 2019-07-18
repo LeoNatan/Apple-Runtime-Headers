@@ -24,6 +24,7 @@
     NSString *_fullPath;
 }
 
++ (id)log;
 @property BOOL setupIsComplete; // @synthesize setupIsComplete=_setupIsComplete;
 @property(readonly, nonatomic) NSString *fullPath; // @synthesize fullPath=_fullPath;
 @property(readonly, nonatomic) NSString *databaseName; // @synthesize databaseName=_databaseName;
@@ -35,6 +36,7 @@
 @property(readonly, nonatomic) EFSQLSchema *schema; // @synthesize schema=_schema;
 - (void).cxx_destruct;
 - (id)urlForDatabasePath:(id)arg1 type:(long long)arg2;
+- (void)scheduleRecurringActivity;
 @property(readonly, nonatomic) BOOL enforceDataProtection;
 - (void)reconcileJournalWithCompletionBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL databaseIsCorrupt;
@@ -43,10 +45,10 @@
 - (id)checkOutConnectionIsWriter:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL isNestedDatabaseCall;
 - (void)closeAllConnections;
-- (void)performBlock:(CDUnknownBlockType)arg1 isWriter:(BOOL)arg2 useTransaction:(BOOL)arg3;
-- (void)performDatabaseSetupUsingTransaction:(BOOL)arg1 block:(CDUnknownBlockType)arg2;
-- (void)performWriteBlock:(CDUnknownBlockType)arg1;
-- (void)performReadBlock:(CDUnknownBlockType)arg1;
+- (BOOL)performBlock:(CDUnknownBlockType)arg1 isWriter:(BOOL)arg2 useTransaction:(BOOL)arg3;
+- (BOOL)performDatabaseSetupUsingTransaction:(BOOL)arg1 block:(CDUnknownBlockType)arg2;
+- (BOOL)performWriteBlock:(CDUnknownBlockType)arg1;
+- (BOOL)performReadBlock:(CDUnknownBlockType)arg1;
 - (void)performDatabaseWorkInBlockWithHighPriority:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL writersAreWaiting;
 - (id)initWithBasePath:(id)arg1 databaseName:(id)arg2 maxConcurrentReaders:(unsigned long long)arg3 schema:(id)arg4 protectedSchema:(id)arg5 propertyMapper:(id)arg6 protectedDatabasePersistence:(id)arg7;

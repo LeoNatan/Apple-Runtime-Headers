@@ -18,6 +18,7 @@
     _Bool _pictureInPictureActive;
     _Bool _pictureInPictureSuspended;
     _Bool _otherPictureInPictureActive;
+    _Bool _wantsImmediateAssetInspection;
     _Bool _retainsSourceDuringPictureInPicturePlayback;
     _Bool _allowsPictureInPicturePlayback;
     _Bool _allowsPictureInPictureFromInlineWhenEnteringBackground;
@@ -43,6 +44,7 @@
 @property(nonatomic) _Bool retainsSourceDuringPictureInPicturePlayback; // @synthesize retainsSourceDuringPictureInPicturePlayback=_retainsSourceDuringPictureInPicturePlayback;
 @property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
 @property(readonly, nonatomic) __weak id <AVPictureInPictureContentSource> source; // @synthesize source=_source;
+@property(nonatomic) _Bool wantsImmediateAssetInspection; // @synthesize wantsImmediateAssetInspection=_wantsImmediateAssetInspection;
 @property(nonatomic, getter=isOtherPictureInPictureActive) _Bool otherPictureInPictureActive; // @synthesize otherPictureInPictureActive=_otherPictureInPictureActive;
 @property(retain, nonatomic) id <AVPictureInPictureContentSource> sourceIfRetainedDuringPictureInPicturePlayback; // @synthesize sourceIfRetainedDuringPictureInPicturePlayback=_sourceIfRetainedDuringPictureInPicturePlayback;
 @property(readonly, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;

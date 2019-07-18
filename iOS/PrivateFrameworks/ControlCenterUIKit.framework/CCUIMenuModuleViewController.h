@@ -34,6 +34,7 @@
     _Bool _busy;
     _Bool _shouldProvideOwnPlatter;
     _Bool _useTrailingCheckmarkLayout;
+    _Bool _useTrailingInset;
     _Bool _useTallLayout;
     UIView *_contentView;
     unsigned long long _minimumMenuItems;
@@ -45,6 +46,7 @@
 + (id)checkmarkImage;
 @property(nonatomic) __weak CCUIContentModuleContext *contentModuleContext; // @synthesize contentModuleContext=_contentModuleContext;
 @property(nonatomic) _Bool useTallLayout; // @synthesize useTallLayout=_useTallLayout;
+@property(nonatomic) _Bool useTrailingInset; // @synthesize useTrailingInset=_useTrailingInset;
 @property(nonatomic) _Bool useTrailingCheckmarkLayout; // @synthesize useTrailingCheckmarkLayout=_useTrailingCheckmarkLayout;
 @property(nonatomic) _Bool shouldProvideOwnPlatter; // @synthesize shouldProvideOwnPlatter=_shouldProvideOwnPlatter;
 @property(nonatomic, getter=isBusy) _Bool busy; // @synthesize busy=_busy;
@@ -55,6 +57,7 @@
 - (_Bool)_shouldShowFooterChin;
 - (_Bool)_shouldShowFooterSeparator;
 - (double)_footerHeight;
+- (void)_updateTitleFont;
 - (void)_contentSizeCategoryDidChange;
 - (double)_menuItemsHeightForWidth:(double)arg1;
 - (double)scrollViewContentHeightForWidth:(double)arg1;
@@ -82,6 +85,8 @@
 - (void)_layoutTransformViewForSize:(struct CGSize)arg1;
 - (void)_fadeViewsForExpandedState:(_Bool)arg1;
 - (void)_handleActionTapped:(id)arg1;
+- (void)setGlyphPackageDescription:(id)arg1;
+- (void)setGlyphImage:(id)arg1;
 - (_Bool)shouldBeginTransitionToExpandedContentModule;
 - (void)willTransitionToExpandedContentMode:(_Bool)arg1;
 - (double)preferredExpandedContentHeightWithWidth:(double)arg1;

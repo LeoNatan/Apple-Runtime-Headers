@@ -6,7 +6,7 @@
 
 #import <MapsSupport/MSPSenderStrategy.h>
 
-@class NSMutableDictionary, NSMutableSet;
+@class NSMutableSet;
 @protocol MSPSenderMessageStrategyDelegate;
 
 __attribute__((visibility("hidden")))
@@ -14,10 +14,8 @@ __attribute__((visibility("hidden")))
 {
     id <MSPSenderMessageStrategyDelegate> _delegate;
     NSMutableSet *_messagesParticipants;
-    NSMutableDictionary *_destinationRules;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *destinationRules; // @synthesize destinationRules=_destinationRules;
 @property(retain, nonatomic) NSMutableSet *messagesParticipants; // @synthesize messagesParticipants=_messagesParticipants;
 @property(nonatomic) __weak id <MSPSenderMessageStrategyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

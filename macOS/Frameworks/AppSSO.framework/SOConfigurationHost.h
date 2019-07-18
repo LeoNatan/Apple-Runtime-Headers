@@ -31,11 +31,11 @@
 - (void)_startKeyBagObserverForReloadingConfiguration;
 - (void)_loadConfigForFirstTime;
 @property(readonly, nonatomic) long long configVersion;
-- (long long)willHandleURL:(id)arg1 callerBundleIdentifier:(id)arg2;
+- (long long)willHandleURL:(id)arg1 responseCode:(long long)arg2 callerBundleIdentifier:(id)arg3;
 - (id)realms;
 - (id)profilesWithExtensionBundleIdentifier:(id)arg1;
 - (id)configurationForClientWithError:(id *)arg1;
-- (id)profileForURL:(id)arg1;
+- (id)profileForURL:(id)arg1 responseCode:(long long)arg2;
 - (BOOL)saveConfigurationData:(id)arg1 error:(id *)arg2;
 - (void)dealloc;
 - (id)init;

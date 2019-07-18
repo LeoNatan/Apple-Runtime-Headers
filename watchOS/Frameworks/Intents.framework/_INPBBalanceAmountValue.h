@@ -15,6 +15,7 @@
 @interface _INPBBalanceAmountValue : PBCodable <_INPBBalanceAmountValue, NSSecureCoding, NSCopying>
 {
     CDStruct_f953fb60 _has;
+    _Bool __encodeLegacyGloryData;
     _INPBCurrencyAmountValue *_currencyAmount;
     _INPBDecimalNumberValue *_customAmount;
     int _type;
@@ -22,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) _INPBDecimalNumberValue *customAmount; // @synthesize customAmount=_customAmount;

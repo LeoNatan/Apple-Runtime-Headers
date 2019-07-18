@@ -43,6 +43,7 @@
 - (void)_invalidate;
 - (void)invalidate;
 - (void)activate;
+- (void)addSample:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

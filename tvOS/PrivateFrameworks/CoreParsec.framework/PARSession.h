@@ -35,6 +35,7 @@
 - (void)didUpdateSiriSuggestionsAppWhitelist;
 - (void)sendCBAEngagementFeedback:(id)arg1 query:(unsigned long long)arg2;
 - (void)reportFeedback:(id)arg1 queryId:(unsigned long long)arg2;
+- (void)reportFeedback:(id)arg1;
 - (void)reportEvent:(id)arg1;
 - (void)didSubmitUserReportFeedback:(id)arg1;
 - (void)didReportUserResponseFeedback:(id)arg1;

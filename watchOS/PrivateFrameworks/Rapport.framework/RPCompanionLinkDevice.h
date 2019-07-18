@@ -13,7 +13,6 @@
 @interface RPCompanionLinkDevice : RPEndpoint <NSSecureCoding>
 {
     _Bool _personal;
-    _Bool _btPipeConnected;
     _Bool _changed;
     _Bool _daemon;
     _Bool _uiTriggered;
@@ -47,7 +46,6 @@
 @property(copy, nonatomic) NSUUID *mediaSystemIdentifierEffective; // @synthesize mediaSystemIdentifierEffective=_mediaSystemIdentifierEffective;
 @property(nonatomic) _Bool daemon; // @synthesize daemon=_daemon;
 @property(nonatomic) _Bool changed; // @synthesize changed=_changed;
-@property(nonatomic) _Bool btPipeConnected; // @synthesize btPipeConnected=_btPipeConnected;
 @property(copy, nonatomic) NSString *role; // @synthesize role=_role;
 @property(copy, nonatomic) NSDictionary *siriInfo; // @synthesize siriInfo=_siriInfo;
 @property(copy, nonatomic) NSString *roomName; // @synthesize roomName=_roomName;
@@ -64,6 +62,7 @@
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(copy, nonatomic) NSString *deviceColor; // @synthesize deviceColor=_deviceColor;
 - (void).cxx_destruct;
+- (unsigned int)updateWithSFDevice:(id)arg1;
 - (unsigned int)updateWithBonjourDevice:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *effectiveIdentifier;
 - (id)descriptionWithLevel:(int)arg1;

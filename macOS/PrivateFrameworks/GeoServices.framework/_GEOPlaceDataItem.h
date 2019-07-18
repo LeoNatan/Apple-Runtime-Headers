@@ -46,6 +46,8 @@
 @property(readonly, nonatomic) BOOL hasVenueCapacity;
 @property(readonly, nonatomic, getter=_isInLinkedPlaceRelationship) BOOL inLinkedPlaceRelationship;
 @property(readonly, nonatomic, getter=_containedPlace) GEOMapItemContainedPlace *containedPlace;
+- (id)_bestBrandIconOfType:(int)arg1 size:(struct CGSize)arg2 allowSmaller:(BOOL)arg3;
+- (id)_bestHeroBrandIconURLForSize:(struct CGSize)arg1 allowSmaller:(BOOL)arg2;
 - (id)_bestNavbarBrandIconURLForSize:(struct CGSize)arg1 allowSmaller:(BOOL)arg2;
 - (id)_bestAvatarBrandIconURLForSize:(struct CGSize)arg1 allowSmaller:(BOOL)arg2;
 @property(readonly, nonatomic, getter=_wifiFingerprintLabelStatusCode) int wifiFingerprintLabelStatusCode;
@@ -87,6 +89,7 @@
 @property(readonly, nonatomic, getter=_reviews) NSArray *reviews;
 - (id)_asPlaceInfo;
 @property(readonly, nonatomic, getter=_additionalPlaceInfos) NSArray *additionalPlaceInfos;
+@property(readonly, nonatomic, getter=_mapsCategoryId) NSString *mapsCategoryId;
 @property(readonly, nonatomic, getter=_customIconID) unsigned long long customIconID;
 @property(readonly, nonatomic, getter=_styleAttributes) GEOFeatureStyleAttributes *styleAttributes;
 @property(readonly, nonatomic, getter=_poiCategory) NSString *poiCategory;

@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <VoiceServices/NSCopying-Protocol.h>
 #import <VoiceServices/NSSecureCoding-Protocol.h>
 
 @class NSAttributedString, NSDictionary, NSString, NSURL;
 
-@interface VSSpeechRequest : NSObject <NSSecureCoding>
+@interface VSSpeechRequest : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _shouldCache;
     _Bool _disableCompactVoiceFallback;
@@ -31,6 +32,7 @@
     NSURL *_resourceSearchPathURL;
     NSAttributedString *_attributedText;
     unsigned int _audioQueueFlags;
+    NSString *_utterance;
     NSString *_clientBundleIdentifier;
     CDUnknownBlockType _stopHandler;
     CDUnknownBlockType _pauseHandler;
@@ -49,6 +51,7 @@
 @property(copy, nonatomic) CDUnknownBlockType stopHandler; // @synthesize stopHandler=_stopHandler;
 @property(nonatomic) unsigned long long requestCreatedTimestamp; // @synthesize requestCreatedTimestamp=_requestCreatedTimestamp;
 @property(copy, nonatomic) NSString *clientBundleIdentifier; // @synthesize clientBundleIdentifier=_clientBundleIdentifier;
+@property(copy, nonatomic) NSString *utterance; // @synthesize utterance=_utterance;
 @property(nonatomic) unsigned int audioQueueFlags; // @synthesize audioQueueFlags=_audioQueueFlags;
 @property(nonatomic) _Bool maintainsInput; // @synthesize maintainsInput=_maintainsInput;
 @property(nonatomic) _Bool audioSessionIDIsValid; // @synthesize audioSessionIDIsValid=_audioSessionIDIsValid;
@@ -75,6 +78,7 @@
 - (id)contextInfoString;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isSimilarTo:(id)arg1;
 - (id)description;
 - (id)init;

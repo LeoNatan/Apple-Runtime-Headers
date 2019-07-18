@@ -6,42 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <CloudKit/CKAssetRepairSchedulerDelegate-Protocol.h>
-#import <CloudKit/CKSyncEngineDataSource-Protocol.h>
+@class CKUploadRequestManagerInternals, NSString;
 
-@class CKAssetRepairScheduler, CKContainer, CKRepairContainerOverrides, CKSchedulerActivity, CKSyncEngine, CKUploadRequestManagerStateMachine, CKUploadRequestPersistentStore, NSString;
-@protocol NSObject, OS_dispatch_queue;
-
-@interface CKUploadRequestManager : NSObject <CKAssetRepairSchedulerDelegate, CKSyncEngineDataSource>
+@interface CKUploadRequestManager : NSObject
 {
-    _Bool _ignoringSystemConditions;
-    _Bool _hasRegisteredActivity;
-    _Bool _checkingAccountStatus;
-    _Bool _checkingUserRecordID;
-    _Bool _skipSyncOnFirstLaunch;
-    CKUploadRequestManagerStateMachine *_stateMachine;
-    NSString *_machServiceName;
-    CKContainer *_container;
-    CKContainer *_repairContainer;
-    CKRepairContainerOverrides *_repairContainerOverrides;
-    CKSyncEngine *_repairZoneSyncEngine;
-    NSString *_assignedMachServiceName;
-    CKAssetRepairScheduler *_repairProcessor;
-    CKUploadRequestPersistentStore *_database;
-    NSString *_deviceID;
-    struct __SCNetworkReachability *_reachability;
-    id <NSObject> _accountChangeObserver;
-    CDUnknownBlockType _scheduledAccountStatusCheck;
-    int _fetchAllToken;
-    CDUnknownBlockType _repairActivityHandler;
-    CKSchedulerActivity *_observedRepairActivity;
-    NSObject<OS_dispatch_queue> *_stateMachineQueue;
-    NSObject<OS_dispatch_queue> *_stateQueue;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    CDUnknownBlockType _assetRequestCallback;
-    CDUnknownBlockType _packageRequestCallback;
-    CDUnknownBlockType _didFetchRecordCallback;
-    CDUnknownBlockType _completionCallback;
+    CKUploadRequestManagerInternals *_internals;
 }
 
 + (id)activityIdentifierForSchedulingRepairsInContainer:(id)arg1;
@@ -49,99 +18,25 @@
 + (double)retryableErrorRetryTime;
 + (double)tryAgainLaterRetryTime;
 + (double)initialSyncDelay;
-@property _Bool skipSyncOnFirstLaunch; // @synthesize skipSyncOnFirstLaunch=_skipSyncOnFirstLaunch;
-@property(copy) CDUnknownBlockType completionCallback; // @synthesize completionCallback=_completionCallback;
-@property(copy) CDUnknownBlockType didFetchRecordCallback; // @synthesize didFetchRecordCallback=_didFetchRecordCallback;
-@property(copy) CDUnknownBlockType packageRequestCallback; // @synthesize packageRequestCallback=_packageRequestCallback;
-@property(copy) CDUnknownBlockType assetRequestCallback; // @synthesize assetRequestCallback=_assetRequestCallback;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *stateQueue; // @synthesize stateQueue=_stateQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *stateMachineQueue; // @synthesize stateMachineQueue=_stateMachineQueue;
-@property(nonatomic) _Bool checkingUserRecordID; // @synthesize checkingUserRecordID=_checkingUserRecordID;
-@property(nonatomic) _Bool checkingAccountStatus; // @synthesize checkingAccountStatus=_checkingAccountStatus;
-@property(retain, nonatomic) CKSchedulerActivity *observedRepairActivity; // @synthesize observedRepairActivity=_observedRepairActivity;
-@property(copy, nonatomic) CDUnknownBlockType repairActivityHandler; // @synthesize repairActivityHandler=_repairActivityHandler;
-@property(nonatomic) int fetchAllToken; // @synthesize fetchAllToken=_fetchAllToken;
-@property(copy, nonatomic) CDUnknownBlockType scheduledAccountStatusCheck; // @synthesize scheduledAccountStatusCheck=_scheduledAccountStatusCheck;
-@property(retain, nonatomic) id <NSObject> accountChangeObserver; // @synthesize accountChangeObserver=_accountChangeObserver;
-@property(nonatomic) struct __SCNetworkReachability *reachability; // @synthesize reachability=_reachability;
-@property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
-@property(retain, nonatomic) CKUploadRequestPersistentStore *database; // @synthesize database=_database;
-@property(retain, nonatomic) CKAssetRepairScheduler *repairProcessor; // @synthesize repairProcessor=_repairProcessor;
-@property(nonatomic) _Bool hasRegisteredActivity; // @synthesize hasRegisteredActivity=_hasRegisteredActivity;
-@property(retain, nonatomic) NSString *assignedMachServiceName; // @synthesize assignedMachServiceName=_assignedMachServiceName;
-@property(retain, nonatomic) CKSyncEngine *repairZoneSyncEngine; // @synthesize repairZoneSyncEngine=_repairZoneSyncEngine;
-@property(retain, nonatomic) CKRepairContainerOverrides *repairContainerOverrides; // @synthesize repairContainerOverrides=_repairContainerOverrides;
-@property(retain, nonatomic) CKContainer *repairContainer; // @synthesize repairContainer=_repairContainer;
-@property(nonatomic) __weak CKContainer *container; // @synthesize container=_container;
-@property(readonly, nonatomic) _Bool ignoringSystemConditions; // @synthesize ignoringSystemConditions=_ignoringSystemConditions;
+@property(readonly, nonatomic) CKUploadRequestManagerInternals *internals; // @synthesize internals=_internals;
 - (void).cxx_destruct;
+- (void)setCallback:(CDUnknownBlockType)arg1 forOverridePoint:(int)arg2;
 - (void)cancelAllOperations;
-- (void)manuallyTriggerUploadRequests;
 - (void)fetchServerChanges:(CDUnknownBlockType)arg1;
+- (void)manuallyTriggerUploadRequests;
 - (void)unregister;
 - (void)registerForItemRequests;
-@property(retain, nonatomic) CKUploadRequestManagerStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
-- (id)repairZoneID;
-@property(copy) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
+- (id)database;
+- (id)repairContainer;
+- (id)repairZoneSyncEngine;
+@property _Bool skipSyncOnFirstLaunch;
 @property(readonly, nonatomic) NSString *activityIdentifierForSchedulingRepairs;
-- (void)commonInitWithContainer:(id)arg1 repairContainerOverrides:(id)arg2;
+@property(copy) NSString *machServiceName;
+@property(copy) CDUnknownBlockType packageRequestCallback;
+@property(copy) CDUnknownBlockType assetRequestCallback;
 - (id)initWithContainer:(id)arg1 repairContainerOverrides:(id)arg2 ignoringSystemConditions:(_Bool)arg3;
 - (id)initWithContainer:(id)arg1 repairContainerOverrides:(id)arg2;
 - (void)dealloc;
-- (void)assetRepairSchedulerAllRequestsComplete:(id)arg1;
-- (void)assetRepairScheduler:(id)arg1 preparingRepairWithOperation:(id)arg2;
-- (void)assetRepairScheduler:(id)arg1 completedRepairWithMetadata:(id)arg2 error:(id)arg3;
-- (void)assetRepairScheduler:(id)arg1 completedRequestWithMetadata:(id)arg2 result:(int)arg3;
-- (_Bool)isRepairRecordActionable:(id)arg1;
-- (void)syncEngine:(id)arg1 failedToDeleteRecordWithID:(id)arg2 error:(id)arg3;
-- (void)syncEngine:(id)arg1 didDeleteRecordWithID:(id)arg2;
-- (void)syncEngine:(id)arg1 failedToSaveRecord:(id)arg2 error:(id)arg3;
-- (void)syncEngine:(id)arg1 didSaveRecord:(id)arg2;
-- (id)syncEngine:(id)arg1 recordToSaveForRecordID:(id)arg2;
-- (void)syncEngine:(id)arg1 zoneWithIDWasPurged:(id)arg2;
-- (void)syncEngine:(id)arg1 zoneWithIDWasDeleted:(id)arg2;
-- (void)syncEngine:(id)arg1 zoneWithIDChanged:(id)arg2;
-- (void)syncEngine:(id)arg1 didUpdateMetadata:(id)arg2;
-- (void)syncEngine:(id)arg1 recordWithIDWasDeleted:(id)arg2 recordType:(id)arg3;
-- (void)syncEngine:(id)arg1 didFetchRecord:(id)arg2;
-- (void)performRepairs;
-- (id)nextRepairDateForDate:(id)arg1;
-- (id)repairableAssetsForDate:(id)arg1;
-- (void)scheduleRecordRepair:(id)arg1 withDelay:(double)arg2 increasingCount:(_Bool)arg3;
-- (void)scheduleOrInvokeRepairsNow;
-- (void)scheduleRepairsWithDelay:(double)arg1;
-- (void)attemptLastDitchCleanup;
-- (void)scheduleNextSync;
-- (void)scheduleInitialSync;
-- (void)unregisterFromFetchAllNotifications;
-- (void)registerForFetchAllNotifications;
-- (void)checkAccountID;
-- (void)checkAccountStatus;
-- (void)unregisterFromAccountNotifications;
-- (void)registerForAccountNotifications;
-- (void)checkNetworkReachability;
-- (void)unregisterFromNetworkReachability;
-- (void)registerForNetworkReachability;
-- (void)fetchRepairContainerDeviceIdentifier;
-- (void)closeSyncEngine;
-- (void)openSyncEngine;
-- (void)cancelScheduledEvent;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)finishSchedulerCallbackWithDeferral:(_Bool)arg1;
-- (void)registerForRepairScheduler;
-- (void)dispatchSynchronousEvent:(int)arg1;
-- (_Bool)canPerformFunction:(int)arg1;
-- (void)dispatchEvent:(int)arg1;
-- (void)respondToStateMachineChangeState:(int)arg1 enter:(_Bool)arg2;
-- (void)respondToStateMachineAction:(int)arg1 isRetry:(_Bool)arg2;
-- (id)createStateMachine;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

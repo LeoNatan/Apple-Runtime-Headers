@@ -7,6 +7,6 @@
 #import <WorkflowKit/WFAppInFocusTrigger.h>
 
 @interface WFAppInFocusTrigger (CoreDuetContext)
-+ (id)triggerTypeIconName;
++ (id)triggerTypeIcon;
 @end
 

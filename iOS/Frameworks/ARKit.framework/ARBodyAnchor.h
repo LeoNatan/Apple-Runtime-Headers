@@ -13,6 +13,7 @@
 @interface ARBodyAnchor : ARAnchor <ARTrackable>
 {
     _Bool _tracked;
+    double _estimatedScaleFactor;
     ARCoreRESkeletonResult *_skeletonData;
     ARBody2D *_referenceBody;
     ARSkeleton3D *_skeleton;

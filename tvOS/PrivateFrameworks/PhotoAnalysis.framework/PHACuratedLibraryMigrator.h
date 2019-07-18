@@ -20,6 +20,7 @@
 - (void)graphUpdateIsConsistent;
 - (void)graphUpdateMadeProgress:(double)arg1;
 - (void)migrateCuratedLibraryWithActivity:(id)arg1 executive:(id)arg2;
+- (void)delayMigrateCuratedLibraryActivity:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

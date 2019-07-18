@@ -37,7 +37,6 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)contentSizeCategoryDidChange;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

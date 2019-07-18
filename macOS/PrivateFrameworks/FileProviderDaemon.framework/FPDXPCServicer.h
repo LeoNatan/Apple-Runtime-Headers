@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)didUpdateAlternateContentsDocumentForDocumentAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchAlternateContentsURLForDocumentURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setAlternateContentsURL:(id)arg1 onDocumentURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)reimportItemsBelowItemWithID:(id)arg1 removeCachedItems:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)reimportItemsBelowItemWithID:(id)arg1 removeCachedItems:(BOOL)arg2 markItemDataless:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setEnabled:(BOOL)arg1 forDomainIdentifier:(id)arg2 providerIdentifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)getDomainsForProviderIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeAllDomainsForProviderIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -78,7 +78,7 @@ __attribute__((visibility("hidden")))
 - (void)providerDomainsCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)unpinItemWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)pinItemWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)downloadItemWithID:(id)arg1 downloadPolicy:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setDownloadPolicy:(unsigned long long)arg1 forItemWithID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)evictItemWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)evictItemAtURL:(id)arg1 evenIfEnumeratingFP:(BOOL)arg2 andClearACLForConsumer:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)startProvidingItemAtURL:(id)arg1 fromProviderID:(id)arg2 forConsumerID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

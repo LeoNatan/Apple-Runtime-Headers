@@ -72,7 +72,8 @@
 @property(readonly, nonatomic, getter=isBackdropRequiredEver) BOOL backdropRequiredEver;
 @property(readonly, nonatomic, getter=isBackdropRequiredFinally) BOOL backdropRequiredFinally;
 @property(readonly, nonatomic, getter=isBackdropRequiredInitially) BOOL backdropRequiredInitially;
-- (id)invertedMaterialSettingsInterpolator;
+- (void)finalizeWeighting;
+@property(readonly, nonatomic, getter=isWeightingChanging) BOOL weightingChanging;
 - (id)initWithSettings:(id)arg1 configuration:(id)arg2;
 
 @end

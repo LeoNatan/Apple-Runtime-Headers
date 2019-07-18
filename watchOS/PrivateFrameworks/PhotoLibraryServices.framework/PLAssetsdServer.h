@@ -8,7 +8,7 @@
 
 #import <PhotoLibraryServices/NSXPCListenerDelegate-Protocol.h>
 
-@class NSArray, NSMutableSet, NSString, NSXPCListener, PLBackgroundJobService, PLPhotoLibraryBundleController, PLXPCMessageLogger;
+@class NSArray, NSMutableSet, NSString, NSXPCListener, PLBackgroundJobService, PLDistributedNotificationHandler, PLPhotoLibraryBundleController, PLXPCMessageLogger;
 
 @interface PLAssetsdServer : NSObject <NSXPCListenerDelegate>
 {
@@ -18,6 +18,7 @@
     NSMutableSet *_services;
     PLPhotoLibraryBundleController *_libraryBundleController;
     PLBackgroundJobService *_backgroundJobService;
+    PLDistributedNotificationHandler *_distributedNotificationHandler;
     NSArray *_previewRenderedContentURLs;
     NSArray *_previewAssetLocalIdentifiers;
 }
@@ -34,9 +35,8 @@
 - (void)removeService:(id)arg1;
 - (void)addService:(id)arg1;
 - (void)logStatus;
+- (void)_checkInWithLaunchd;
 - (void)start;
-- (void)shutdown;
-- (void)currentLocalDidChange:(id)arg1;
 - (id)init;
 
 // Remaining properties

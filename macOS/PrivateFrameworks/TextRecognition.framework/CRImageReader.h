@@ -83,6 +83,8 @@
 - (void)enumerateInputsForFeatures:(id)arg1 widthIndex:(long long)arg2 inImage:(id)arg3 options:(id)arg4 usingBlock:(CDUnknownBlockType)arg5;
 - (id)mleTextRecognizerResultsForTextFeatures:(id)arg1 inImage:(id)arg2 options:(id)arg3 withProgressHandler:(CDUnknownBlockType)arg4 title:(id *)arg5;
 - (id)mleTextRecognizerResultsForTextFeatures:(id)arg1 inImage:(id)arg2 options:(id)arg3 title:(id *)arg4;
+- (id)sortedRotateTextFeatures:(id)arg1 center:(struct CGPoint)arg2 radians:(float)arg3;
+- (void)rotatePolygon:(vector_e1abc270 *)arg1 center:(struct CGPoint)arg2 angle:(float)arg3 dest:(vector_e1abc270 *)arg4;
 - (id)combinedLineFeature:(id)arg1 lineFeature:(id)arg2;
 - (vector_8f06c10f)converMLMultiArraytoArray:(id)arg1 targetSize:(struct CGSize)arg2;
 - (vector_f9ed6fc8)convertVImageGeoMapstoArray:(struct vImage_Buffer **)arg1;

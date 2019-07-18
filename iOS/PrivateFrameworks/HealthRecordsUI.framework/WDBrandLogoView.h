@@ -11,13 +11,16 @@
 __attribute__((visibility("hidden")))
 @interface WDBrandLogoView : UIImageView
 {
+    _Bool _isFallback;
     double _size;
     WDCancellationToken *_cancellationToken;
 }
 
+@property(nonatomic) _Bool isFallback; // @synthesize isFallback=_isFallback;
 @property(retain, nonatomic) WDCancellationToken *cancellationToken; // @synthesize cancellationToken=_cancellationToken;
 @property(nonatomic) double size; // @synthesize size=_size;
 - (void).cxx_destruct;
+- (void)_updateStyle;
 - (void)prepareForReuse;
 - (void)fetchBrandable:(id)arg1 dataProvider:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

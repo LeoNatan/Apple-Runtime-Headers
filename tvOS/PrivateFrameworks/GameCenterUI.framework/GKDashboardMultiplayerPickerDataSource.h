@@ -31,12 +31,10 @@
     NSArray *_searchPlayers;
     long long _maxFriendsVisible;
     NSArray *_hiddenPlayers;
-    NSMutableArray *_disabledIndexPaths;
 }
 
 @property(nonatomic) _Bool didLoad; // @synthesize didLoad=_didLoad;
 @property(nonatomic) _Bool browsingForNearbyPlayers; // @synthesize browsingForNearbyPlayers=_browsingForNearbyPlayers;
-@property(retain, nonatomic) NSMutableArray *disabledIndexPaths; // @synthesize disabledIndexPaths=_disabledIndexPaths;
 @property(retain, nonatomic) NSArray *hiddenPlayers; // @synthesize hiddenPlayers=_hiddenPlayers;
 @property(nonatomic) long long maxFriendsVisible; // @synthesize maxFriendsVisible=_maxFriendsVisible;
 @property(retain, nonatomic) NSArray *searchPlayers; // @synthesize searchPlayers=_searchPlayers;

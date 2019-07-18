@@ -12,6 +12,7 @@
 
 - (void)countScenesForBundleIdentifier:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)setApplicationBundleIdentifier:(id)arg1 blockedForScreenTime:(_Bool)arg2;
+- (id)acquireHUDHiddenAssertionForIdentifier:(id)arg1;
 - (void)resetToHomeScreenAnimated:(_Bool)arg1;
 - (void)setOrientationLockEnabled:(_Bool)arg1;
 - (void)setIdleTimerEnabled:(_Bool)arg1;

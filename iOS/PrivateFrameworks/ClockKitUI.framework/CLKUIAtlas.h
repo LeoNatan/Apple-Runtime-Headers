@@ -26,6 +26,7 @@
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+@property(readonly) _Bool isPurgable;
 - (void)decrementInstanceCount;
 - (void)incrementInstanceCount;
 - (id)backing;

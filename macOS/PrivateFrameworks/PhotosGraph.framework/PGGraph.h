@@ -36,10 +36,10 @@
     BOOL _canWrite;
     PGManager *_manager;
     CLSFocusPeopleCache *_focusPeopleIngestCache;
-    unsigned long long _numberOfUtilityAssets;
-    unsigned long long _numberOfDefaultAssets;
-    unsigned long long _numberOfImprovedAssets;
-    unsigned long long _numberOfBetterAssets;
+    long long _numberOfUtilityAssets;
+    long long _numberOfDefaultAssets;
+    long long _numberOfImprovedAssets;
+    long long _numberOfBetterAssets;
     NSString *_geoServiceProviderID;
     unsigned long long _relatedAlgorithmsVersion;
     unsigned long long _curationAlgorithmsVersion;
@@ -51,6 +51,7 @@
     struct PGRoutineInfoStruct _routineInfo;
 }
 
++ (long long)_librarySizeRangeForNumberOfAssets:(unsigned long long)arg1;
 + (BOOL)graphExistsWithName:(id)arg1 parentDirectoryURL:(id)arg2;
 + (id)graphURLForName:(id)arg1 parentDirectoryURL:(id)arg2;
 + (id)assetPropertySetsForIngest;
@@ -98,13 +99,14 @@
 @property(readonly, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) PGMessageProfile *messageProfile; // @synthesize messageProfile=_messageProfile;
 @property(nonatomic) BOOL keepsExistingAssetCurationScores; // @synthesize keepsExistingAssetCurationScores=_keepsExistingAssetCurationScores;
-@property(nonatomic) unsigned long long numberOfBetterAssets; // @synthesize numberOfBetterAssets=_numberOfBetterAssets;
-@property(nonatomic) unsigned long long numberOfImprovedAssets; // @synthesize numberOfImprovedAssets=_numberOfImprovedAssets;
-@property(nonatomic) unsigned long long numberOfDefaultAssets; // @synthesize numberOfDefaultAssets=_numberOfDefaultAssets;
-@property(nonatomic) unsigned long long numberOfUtilityAssets; // @synthesize numberOfUtilityAssets=_numberOfUtilityAssets;
+@property(nonatomic) long long numberOfBetterAssets; // @synthesize numberOfBetterAssets=_numberOfBetterAssets;
+@property(nonatomic) long long numberOfImprovedAssets; // @synthesize numberOfImprovedAssets=_numberOfImprovedAssets;
+@property(nonatomic) long long numberOfDefaultAssets; // @synthesize numberOfDefaultAssets=_numberOfDefaultAssets;
+@property(nonatomic) long long numberOfUtilityAssets; // @synthesize numberOfUtilityAssets=_numberOfUtilityAssets;
 @property(retain, nonatomic) CLSFocusPeopleCache *focusPeopleIngestCache; // @synthesize focusPeopleIngestCache=_focusPeopleIngestCache;
 @property __weak PGManager *manager; // @synthesize manager=_manager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long librarySizeRange;
 @property(readonly, nonatomic) unsigned long long numberOfAssets;
 - (void)uncacheHighlightNodeForHighlightUUID:(id)arg1 checkExistence:(BOOL)arg2;
 - (void)uncacheHighlightNodesForHighlightUUIDs:(id)arg1;
@@ -120,6 +122,7 @@
 @property(nonatomic) double personalGoodAestheticsThreshold; // @synthesize personalGoodAestheticsThreshold=_personalGoodAestheticsThreshold;
 @property(nonatomic) struct PGRoutineInfoStruct routineInfo; // @synthesize routineInfo=_routineInfo;
 @property(nonatomic) BOOL canUseLocationDomain;
+- (void)saveNumberOfAssetsToInfoNode;
 @property(retain, nonatomic) NSString *locale; // @synthesize locale=_locale;
 @property(nonatomic) unsigned long long memoriesAlgorithmsVersion; // @synthesize memoriesAlgorithmsVersion=_memoriesAlgorithmsVersion;
 @property(nonatomic) unsigned long long relatedAlgorithmsVersion; // @synthesize relatedAlgorithmsVersion=_relatedAlgorithmsVersion;
@@ -300,6 +303,7 @@
 - (id)momentNodesConnectedToNode:(id)arg1;
 - (id)nodeLabelForHighlightType:(unsigned short)arg1;
 - (id)onGoingTripNodes;
+- (id)dayHighlightNodes;
 - (id)defaultHighlightNodes;
 - (id)aggregationNodes;
 - (id)allTripNodes;

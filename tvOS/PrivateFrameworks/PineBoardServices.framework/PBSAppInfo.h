@@ -26,6 +26,7 @@
 @property(readonly, copy, nonatomic) NSString *topShelfStaticImageName;
 @property(readonly, nonatomic) long long installFailureReason;
 @property(readonly, nonatomic) long long installType;
+@property(readonly, copy, nonatomic) NSString *liveIconName;
 @property(readonly, copy, nonatomic) NSString *primaryIconName;
 @property(readonly, copy, nonatomic) NSString *iconFile;
 @property(readonly, nonatomic) double installPercentage;

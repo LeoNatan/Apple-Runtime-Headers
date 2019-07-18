@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)editingRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)textRectForBounds:(struct CGRect)arg1;
 - (id)_placeholderColor;
-- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

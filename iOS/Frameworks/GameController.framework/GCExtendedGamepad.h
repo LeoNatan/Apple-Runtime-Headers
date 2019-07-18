@@ -13,6 +13,9 @@
     _Bool _dpadFlippedY;
     _Bool _leftFlippedY;
     _Bool _rightFlippedY;
+    long long _buttonHomeUsage;
+    long long _buttonMenuUsage;
+    long long _buttonOptionsUsage;
     GCMotion *_motion;
     GCControllerButtonInput *_button0;
     GCControllerButtonInput *_button1;
@@ -56,6 +59,7 @@
 - (void)set_motion:(id)arg1;
 - (id)_motion;
 - (void).cxx_destruct;
+- (_Bool)isBluetoothAndUSBMirrored;
 - (void)setStateFromExtendedGamepad:(id)arg1;
 - (void)setHapticMotor:(int)arg1 frequency:(float)arg2;
 - (void)setLightbarColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
@@ -72,12 +76,12 @@
 - (void)setDpad:(id)arg1 x:(double)arg2 y:(double)arg3;
 - (id)saveSnapshot;
 - (void)handleEvent:(struct __IOHIDEvent *)arg1;
-- (void)handleAncillaryButtonEvent:(struct __IOHIDEvent *)arg1;
-- (void)handleLegacyAncillaryButtonEvent:(struct __IOHIDEvent *)arg1;
+- (void)initAuxiliaryButtonsWithInitInfo:(const struct GCExtendedGamepadInitWithControllerInitInfo *)arg1;
 - (id)button3;
 - (id)button2;
 - (id)button1;
 - (id)button0;
+- (void)setControllerForElements;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithController:(id)arg1 initInfo:(const struct GCExtendedGamepadInitWithControllerInitInfo *)arg2;

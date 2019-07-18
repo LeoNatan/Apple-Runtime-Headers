@@ -13,11 +13,13 @@
 
 @interface CWFScanResult : NSObject <NSCopying, NSSecureCoding>
 {
+    BOOL _isMFPRequired;
     NSDictionary *_internal;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSDictionary *internal; // @synthesize internal=_internal;
+@property(readonly, nonatomic) BOOL isMFPRequired; // @synthesize isMFPRequired=_isMFPRequired;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -72,6 +74,7 @@
 @property(readonly, nonatomic) BOOL isAdditionalStepRequiredForAccess; // @dynamic isAdditionalStepRequiredForAccess;
 @property(readonly, nonatomic) BOOL isInternetAccessible; // @dynamic isInternetAccessible;
 @property(readonly, nonatomic) int accessNetworkType; // @dynamic accessNetworkType;
+@property(readonly, nonatomic) BOOL isMFPCapable;
 @property(readonly, nonatomic) BOOL isPasspoint; // @dynamic isPasspoint;
 @property(readonly, nonatomic) BOOL isEAP; // @dynamic isEAP;
 @property(readonly, nonatomic) BOOL isPSK; // @dynamic isPSK;

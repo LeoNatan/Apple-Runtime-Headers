@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class HKActiveWatchFeatureAvailabilityDataSource, HKHealthStore, HKKeyValueDomain, HKMobileCountryCodeManager, HKObserverSet, NSDate, NSNumber, NSUserDefaults;
+@class HKActiveWatchFeatureAvailabilityDataSource, HKHealthStore, HKKeyValueDomain, HKMobileCountryCodeManager, HKObserverSet, NSDate, NSMutableSet, NSNumber, NSUserDefaults;
 
 @interface HKHeartRhythmAvailability : NSObject
 {
     struct os_unfair_lock_s _cacheLock;
+    struct os_unfair_lock_s _onboardingKeysReadLock;
     NSNumber *_isAtrialFibrillationDetectionDisabledCache;
     NSNumber *_isElectrocardiogramDisabledCache;
     HKHealthStore *_healthStore;
@@ -18,6 +19,7 @@
     NSUserDefaults *_heartRhythmUserDefaults;
     HKObserverSet *_heartRhythmAvailabilityObservers;
     HKActiveWatchFeatureAvailabilityDataSource *_availabilityDataSource;
+    NSMutableSet *_onboardingKeysReadSet;
     int _onboardingStateDidChangeNotificationToken;
     int _featureAvailabilityConditionsDidUpdateNotificationToken;
     int _userCharacteristicsDidChangeNotificationToken;
@@ -38,7 +40,7 @@
 + (_Bool)isAtrialFibrillationDetectionStateSupportedOrNeedsGeolocationOnAllWatches;
 + (_Bool)isAtrialFibrillationDetectionStateSupportedOrNeedsGeolocationOnActiveWatch;
 + (_Bool)isAtrialFibrillationDetectionStateSupportedOrNeedsGeolocationOnAnyWatch;
-+ (_Bool)_isAtrialFibrillationDetectionStateSupportedOrNeedsGeolocationOnWatch:(id)arg1;
++ (_Bool)isAtrialFibrillationDetectionStateSupportedOrNeedsGeolocationOnWatch:(id)arg1;
 + (_Bool)isAtrialFibrillationDetectionSettingEnabled;
 + (int)currentElectrocardiogramOnboardingVersion;
 + (_Bool)_isElectrocardiogramDisabledWithDataSource:(id)arg1;
@@ -63,6 +65,7 @@
 @property(nonatomic) int userCharacteristicsDidChangeNotificationToken; // @synthesize userCharacteristicsDidChangeNotificationToken=_userCharacteristicsDidChangeNotificationToken;
 @property(nonatomic) int featureAvailabilityConditionsDidUpdateNotificationToken; // @synthesize featureAvailabilityConditionsDidUpdateNotificationToken=_featureAvailabilityConditionsDidUpdateNotificationToken;
 @property(nonatomic) int onboardingStateDidChangeNotificationToken; // @synthesize onboardingStateDidChangeNotificationToken=_onboardingStateDidChangeNotificationToken;
+@property(retain, nonatomic) NSMutableSet *onboardingKeysReadSet; // @synthesize onboardingKeysReadSet=_onboardingKeysReadSet;
 @property(retain, nonatomic) HKActiveWatchFeatureAvailabilityDataSource *availabilityDataSource; // @synthesize availabilityDataSource=_availabilityDataSource;
 @property(retain, nonatomic) HKObserverSet *heartRhythmAvailabilityObservers; // @synthesize heartRhythmAvailabilityObservers=_heartRhythmAvailabilityObservers;
 @property(retain, nonatomic) NSUserDefaults *heartRhythmUserDefaults; // @synthesize heartRhythmUserDefaults=_heartRhythmUserDefaults;

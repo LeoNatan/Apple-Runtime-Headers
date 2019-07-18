@@ -9,7 +9,6 @@
 #import <ShareSheet/ObjectManipulationDelegate-Protocol.h>
 #import <ShareSheet/SFAirDropViewControllerDelegate-Protocol.h>
 #import <ShareSheet/SFShareSheetSlotManagerDelegate-Protocol.h>
-#import <ShareSheet/UIActionSheetPresentationControllerDelegate-Protocol.h>
 #import <ShareSheet/UIActivityContentDelegate-Protocol.h>
 #import <ShareSheet/UICollectionViewDelegate-Protocol.h>
 #import <ShareSheet/UIViewControllerRestoration-Protocol.h>
@@ -20,7 +19,7 @@
 @class LPLinkMetadata, NSArray, NSDictionary, NSLayoutConstraint, NSMutableDictionary, NSOperationQueue, NSString, NSUserDefaults, ObjectManipulationViewController, SFAirDropViewController, SFShareSheetSlotManager, UIActivity, UIActivityContentViewController, UIAlertAction, UIAlertController, UINavigationController, UISUIActivityViewControllerConfiguration, UIView, _UIActivityHelper, _UICollectionViewDiffableDataSource;
 @protocol UIActivityViewControllerAirDropDelegate, UIActivityViewControllerObjectManipulationDelegate, UIActivityViewControllerPhotosDelegate;
 
-@interface UIActivityViewController : UIViewController <UIViewControllerRestoration, UIActionSheetPresentationControllerDelegate, _UIActivityHelperDelegate, SFAirDropViewControllerDelegate, SFShareSheetSlotManagerDelegate, _UIActivityUserDefaultsViewControllerDelegate, ObjectManipulationDelegate, UICollectionViewDelegate, UIActivityContentDelegate, UIViewControllerTransitioningDelegate>
+@interface UIActivityViewController : UIViewController <UIViewControllerRestoration, _UIActivityHelperDelegate, SFAirDropViewControllerDelegate, SFShareSheetSlotManagerDelegate, _UIActivityUserDefaultsViewControllerDelegate, ObjectManipulationDelegate, UICollectionViewDelegate, UIActivityContentDelegate, UIViewControllerTransitioningDelegate>
 {
     SFShareSheetSlotManager *_slotManager;
     _Bool _airDropOnly;
@@ -203,14 +202,13 @@
 - (id)_activityConfigurationsForActivities:(id)arg1;
 - (id)_newShareUIConfigurationWithMatchingResults:(id)arg1;
 - (id)_newShareUIConfigurationForCurrentState;
-- (void)sendConfigurationToDaemon;
+- (void)sendConfigurationToDaemonSynchronously:(_Bool)arg1;
 - (void)_preheatActivityViewControllerConfiguration;
 - (void)_insertIntoActivitiesByUUID:(id)arg1;
 - (void)_removeFromActivitiesByUUID:(id)arg1;
 - (id)_activityWithActivityUUID:(id)arg1;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
-- (void)actionSheetPresentationControllerDidDismissActionSheet:(id)arg1;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_cancel;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
@@ -237,11 +235,13 @@
 - (void)_updateIsContentManagedForURLs;
 @property(nonatomic) _Bool sourceIsManaged; // @dynamic sourceIsManaged;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)updateSheetPresentationController:(id)arg1;
 - (void)setModalPresentationStyle:(long long)arg1;
+- (void)_presentationControllerDidDismiss:(id)arg1;
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
-- (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
+- (void)_presentationController:(id)arg1 prepareAdaptivePresentationController:(id)arg2;
 - (_Bool)_requiresCustomPresentationController;
+- (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (_Bool)_allowsStylingSheetsAsCards;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)viewSafeAreaInsetsDidChange;
@@ -250,14 +250,17 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)willEnterForeground:(id)arg1;
+- (void)didEnterBackground:(id)arg1;
 - (double)_displayHeight;
 - (void)_presentationOrEmbeddingDidBegin:(_Bool)arg1;
 - (void)_shareSheetReadyToInteractAfterCACommit;
 - (void)_installViewController:(id)arg1 belowView:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLoad;
 - (void)viewWillLayoutSubviews;
-- (void)_updateActivityViewControllerConfiguration;
+- (void)_updateActivityViewControllerConfigurationSynchronously:(_Bool)arg1;
 - (void)updateContentViewControllerHeader;
 - (void)_updateActivityItems:(id)arg1 applicationActivities:(id)arg2;
 - (void)_updateActivityItems:(id)arg1;
@@ -286,7 +289,7 @@
 - (void)optionsButtonTapped;
 - (void)nextButtonTappedWithPeopleProxies:(id)arg1 shareProxies:(id)arg2 actionProxies:(id)arg3 nearbyCountSlotID:(id)arg4;
 - (void)closeButtonTapped;
-- (void)setProgress:(id)arg1 withText:(id)arg2 forNodeWithIdentifier:(id)arg3 shouldPulse:(id)arg4 animated:(_Bool)arg5;
+- (void)setProgress:(id)arg1 withTopText:(id)arg2 bottomText:(id)arg3 forNodeWithIdentifier:(id)arg4 shouldPulse:(id)arg5 animated:(_Bool)arg6;
 - (void)userDefaultsViewController:(id)arg1 didSelectActivityAtIndex:(long long)arg2 activityCategory:(long long)arg3;
 - (void)userDefaultsViewController:(id)arg1 didFavoriteActivity:(_Bool)arg2 atIndex:(long long)arg3;
 - (void)userDefaultsViewController:(id)arg1 didToggleActivityAtIndex:(long long)arg2 activityCategory:(long long)arg3;
@@ -297,7 +300,7 @@
 - (id)requestRefreshedCustomizationGroups;
 - (void)selectedActionAtIndex:(unsigned long long)arg1;
 - (void)selectedAppAtIndex:(unsigned long long)arg1;
-- (void)selectedPersonAtIndex:(unsigned long long)arg1;
+- (void)selectedPersonWithIdentifier:(id)arg1;
 - (void)showScreenTimeRestrictedAlert;
 - (id)fallbackURLForLinkPresentation;
 - (id)requestMetadataValues;
@@ -310,7 +313,6 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)init;
 - (_Bool)isPhotosOrCamera;
-- (_Bool)_shouldUseModernDesign;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

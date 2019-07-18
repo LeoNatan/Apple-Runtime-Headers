@@ -21,6 +21,7 @@
 - (unsigned long long)assetStatus;
 - (void)purgeLocalCache;
 - (void)cancelDownload;
+- (void)requestDownloadWithOptions:(id)arg1;
 - (void)requestDownload;
 - (BOOL)isCloudBacked;
 - (id)initWithAssetID:(id)arg1 assetStatus:(unsigned long long)arg2 localURL:(id)arg3 cloudManager:(id)arg4 contentVersion:(long long)arg5 compatibilityVersion:(long long)arg6;

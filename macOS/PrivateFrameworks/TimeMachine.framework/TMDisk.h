@@ -17,6 +17,7 @@
     NSDictionary *_diskArbDescription;
     unsigned long long _knownTraits;
     unsigned long long _traits;
+    NSString *_volumeUUID;
     long long _lastSnapshotXIDSum;
     long long _lastSnapshotCount;
     long long _lastSnapshotDatalessCount;

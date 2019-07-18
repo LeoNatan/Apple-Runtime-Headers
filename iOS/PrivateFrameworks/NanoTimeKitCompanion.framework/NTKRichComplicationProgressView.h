@@ -16,7 +16,7 @@
 {
     CLKDevice *_device;
     struct NSNumber *_updateToken;
-    _Bool _allowsOverflowProgress;
+    float _currentBackgroundViewAlphaPercentage;
     _Bool _enabled;
     id <CLKMonochromeFilterProvider> _filterProvider;
     NSArray *_gradientColors;
@@ -34,7 +34,6 @@
 @property(retain, nonatomic) CLKGaugeProvider *gaugeProvider; // @synthesize gaugeProvider=_gaugeProvider;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
-@property(nonatomic) _Bool allowsOverflowProgress; // @synthesize allowsOverflowProgress=_allowsOverflowProgress;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) NSArray *gradientColors; // @synthesize gradientColors=_gradientColors;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
@@ -44,6 +43,7 @@
 - (id)filterForView:(id)arg1 style:(long long)arg2;
 - (void)_createRingView;
 - (void)_applyStyle;
+- (void)_adjustBackgroundViewAlphaWithPercentage:(float)arg1;
 - (void)_updateUIFromGaugeProvider;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(double)arg1;

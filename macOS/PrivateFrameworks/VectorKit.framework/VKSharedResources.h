@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class VKIconManager, VKResourceManager;
+@class VKInternalIconManager, VKResourceManager;
 
 __attribute__((visibility("hidden")))
 @interface VKSharedResources : NSObject
 {
-    struct _retain_ptr<VKIconManager *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {
+    struct _retain_ptr<VKInternalIconManager *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {
         CDUnknownFunctionPointerType *_vptr$_retain_ptr;
-        VKIconManager *_obj;
+        VKInternalIconManager *_obj;
         struct _retain_objc _retain;
         struct _release_objc _release;
     } _iconManager;
@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) shared_ptr_dd2d1f5e stylesheetVendor; // @synthesize stylesheetVendor=_stylesheetVendor;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)purgeDecompressSessionCachedBuffers;
 - (void)purge;
 - (BOOL)_hasResourceUsers;
 - (void)_removeResourceUser;
@@ -55,7 +56,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct Device *device;
 @property(readonly, nonatomic) VKResourceManager *resourceManager;
 @property(readonly, nonatomic) shared_ptr_f2399894 textureManager;
-@property(readonly, nonatomic) VKIconManager *iconManager;
+@property(readonly, nonatomic) VKInternalIconManager *iconManager;
 - (const shared_ptr_887a193f *)dataOverrideManager;
 
 @end

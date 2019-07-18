@@ -16,11 +16,13 @@
 {
     CDStruct_f2ecb737 _has;
     BOOL _success;
+    BOOL __encodeLegacyGloryData;
     _INPBString *_entityName;
     _INPBFileProperty *_property;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) BOOL success; // @synthesize success=_success;
 @property(retain, nonatomic) _INPBFileProperty *property; // @synthesize property=_property;
 @property(retain, nonatomic) _INPBString *entityName; // @synthesize entityName=_entityName;

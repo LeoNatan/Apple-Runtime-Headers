@@ -6,34 +6,49 @@
 
 #import <PhotosUICore/PXVideoContentProvider.h>
 
-@class NSObject, NSString, PXMediaProvider;
+#import <PhotosUICore/PXDisplayAssetVideoContentProviderRequestDelegate-Protocol.h>
+
+@class NSMutableDictionary, NSObject, NSString, PXMediaProvider;
 @protocol OS_dispatch_queue, PXDisplayAsset;
 
-@interface PXDisplayAssetVideoContentProvider : PXVideoContentProvider
+@interface PXDisplayAssetVideoContentProvider : PXVideoContentProvider <PXDisplayAssetVideoContentProviderRequestDelegate>
 {
     long long _videoRequestID;
-    BOOL _didBeginLoading;
+    NSObject<OS_dispatch_queue> *_loadingQueue;
     NSObject<OS_dispatch_queue> *_postprocessingQueue;
+    NSMutableDictionary *_loadingQueue_requestsByPriority;
+    long long _loadingQueue_lastRequestedPriority;
+    id <PXDisplayAsset> _loadingQueue_asset;
     NSString *_contentIdentifier;
-    id <PXDisplayAsset> _asset;
     PXMediaProvider *_mediaProvider;
 }
 
 @property(readonly, nonatomic) PXMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
-@property(retain, nonatomic) id <PXDisplayAsset> asset; // @synthesize asset=_asset;
 - (id)contentIdentifier;
 - (void).cxx_destruct;
+- (void)request:(id)arg1 didFinishWithPlayerItem:(id)arg2 info:(id)arg3;
+- (void)requestLoadingProgressDidChange:(id)arg1;
+- (void)_loadingQueue_reloadContent;
+- (void)_postprocessingQueue_performPostprocessingOfItem:(id)arg1 info:(id)arg2;
+- (BOOL)_loadingQueue_needsNewRequestForPriority:(long long)arg1;
+- (void)_loadingQueue_beginRequestForPriorityIfNeeded:(long long)arg1;
+- (void)_loadingQueue_cancelAllRequests;
+- (void)_loadingQueueBeginLoadingWithPriority:(long long)arg1;
+- (void)_loadingQueue_setAsset:(id)arg1;
+- (void)cancelLoading;
+@property(retain, nonatomic) id <PXDisplayAsset> asset;
 - (void)reloadContent;
-- (id)description;
-- (void)_handlePlayerItemResult:(id)arg1 info:(id)arg2;
+@property(readonly, copy) NSString *description;
 - (id)postprocessPlayerItem:(id)arg1;
 @property(readonly, nonatomic) BOOL needsPostprocessing;
-- (void)_handleLoadingProgress:(double)arg1;
-- (void)_postprocessingQueue_performPostprocessingOfItem:(id)arg1 info:(id)arg2;
-- (void)_handleMediaProviderResult:(id)arg1 info:(id)arg2;
-- (void)beginLoading;
+- (void)beginLoadingWithPriority:(long long)arg1;
 - (id)initWithAsset:(id)arg1 mediaProvider:(id)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

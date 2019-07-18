@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) TSDCanvas *canvas; // @synthesize canvas=_canvas;
 - (void).cxx_destruct;
-- (_Bool)isExportingFixedLayoutEPUB;
+- (_Bool)textLayoutMustIncludeAdornments;
 - (_Bool)wantsEditingLayoutsForOffscreenInfos;
 - (struct CGRect)visibleScaledBoundsForClippingRepsOnCanvas:(id)arg1;
 - (id)documentRoot;

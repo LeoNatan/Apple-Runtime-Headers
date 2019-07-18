@@ -33,12 +33,12 @@
 - (void)_test_setAlgorithmsAnalysis:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1 queue:(id)arg2 userInitiated:(_Bool)arg3;
-- (id)_analysisWithAlgorithmsAnalysis:(id)arg1 algorithmsCycles:(id)arg2 recentSymptoms:(unsigned long long)arg3 recentBasalBodyTemperature:(id)arg4 lastLoggedDayIndex:(long long)arg5;
-- (void)_queue_analyzeNow;
+- (id)_analysisWithAlgorithmsAnalysis:(id)arg1 algorithmsCycles:(id)arg2 recentSymptoms:(unsigned long long)arg3 recentBasalBodyTemperature:(id)arg4 lastLoggedDayIndex:(id)arg5 lastMenstrualFlowDayIndex:(id)arg6;
+- (id)_queue_analyzeNowWithError:(id *)arg1;
 - (void)_runMaintenanceOperation;
 - (void)_queue_enqueueMaintenanceOperationIfNeeded;
 - (void)_queue_analyzeIfNeeded;
-- (void)forceAnalysis;
+- (id)analyzeWithError:(id *)arg1;
 @property(readonly, copy, nonatomic) HKMCAnalysis *currentAnalysis;
 - (void)_calendarDayDidChange:(id)arg1;
 - (void)_userCharacteristicsDidChange:(id)arg1;
@@ -47,7 +47,7 @@
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)_startObserving;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
-- (id)initWithProfile:(id)arg1;
+- (id)initWithProfile:(id)arg1 settingsManager:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

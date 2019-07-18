@@ -34,6 +34,7 @@
 - (id)_templatesByDomainWithErrors:(id)arg1;
 - (id)_validatedTemplatesByDomainWithErrors:(id)arg1;
 - (id)templatesByDomain;
+- (id)validDomains;
 - (id)validationErrors;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithPath:(id)arg1;

@@ -10,9 +10,8 @@
 
 @interface UITraitCollection (IC)
 + (void)setIc_alwaysShowLightContent:(_Bool)arg1;
-+ (_Bool)ic_isGlobalDarkModeEnabled;
 + (_Bool)ic_alwaysShowLightContent;
-- (void)ic_becomeCurrentAndPerformBlock:(CDUnknownBlockType)arg1;
+- (void)ic_performAsCurrent:(CDUnknownBlockType)arg1;
 - (id)ic_traitCollectionByAppendingNonNilTraitCollection:(id)arg1;
 @property(readonly, nonatomic) ICAppearanceInfo *ic_appearanceInfo;
 @property(readonly, nonatomic) _Bool ic_isDark;

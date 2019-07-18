@@ -40,6 +40,7 @@
 - (void)eligibleForTruthZoneWithCompletion:(CDUnknownBlockType)arg1;
 - (void)downgradingFromHSA2AndDisablingMOC;
 - (void)enableMOCIfNeeded;
+- (_Bool)signedIntoiCloudAndiMessageAndiCloudAccountMatchesiMessageAccount;
 - (_Bool)iCloudAccountMatchesiMessageAccount;
 - (unsigned long long)_primaryiCloudAccountSecurityLevel;
 - (void)fetchSecurityLevelAndUpdateMiCSwitchEligibilityIfNeededOnImagentLaunch;
@@ -53,7 +54,8 @@
 - (void)_metricForPCSReportManateeStatusWithReason:(id)arg1 linkedFunction:(CDUnknownFunctionPointerType)arg2 timeoutInSec:(double)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)metricForPCSReportManateeStatusWithReason:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)logDumpIsNecessaryAfterSync;
-- (void)noteAllSyncedItemsPriorToSync;
+- (_Bool)logDumpIsExpected;
+- (_Bool)_isRunningInAutomation;
 - (id)ckStatisticCalculations;
 - (void)logDumpAndSendMessageTo:(id)arg1 forHours:(int)arg2 reason:(id)arg3 isInitialSync:(_Bool)arg4 requirePreviousPrompt:(_Bool)arg5 willSendBlock:(CDUnknownBlockType)arg6;
 - (_Bool)_isLogDumpAllowed;

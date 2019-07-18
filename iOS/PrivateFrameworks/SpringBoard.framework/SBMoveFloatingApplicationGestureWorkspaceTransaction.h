@@ -6,11 +6,30 @@
 
 #import <SpringBoard/SBFluidSwitcherGestureWorkspaceTransaction.h>
 
+@class NSMutableDictionary, SBApplicationSceneUpdateTransaction;
+
 @interface SBMoveFloatingApplicationGestureWorkspaceTransaction : SBFluidSwitcherGestureWorkspaceTransaction
 {
+    _Bool _tryPreemptiveFloatingApplicationActivation;
+    _Bool _didAddActivateFloatingApplicationTransaction;
+    SBApplicationSceneUpdateTransaction *_activateFloatingApplicationTransaction;
+    NSMutableDictionary *_statusBarAssertions;
+    struct CGRect _initialFloatingApplicationFrame;
 }
 
+- (void).cxx_destruct;
+- (void)_invalidateStatusBarAssertions;
+- (void)_updateStatusBarAssertionsForGesture;
+- (void)_updateStatusBarAssertionsForLayoutState;
+- (void)_acquireStatusBarAssertions;
+- (void)_performBlockWithLiveContentOverlayUpdatesSuspended:(CDUnknownBlockType)arg1;
+- (id)_transitionRequestForPreemptiveFloatingApplicationActivation;
+- (void)_tryPreemptiveFloatingApplicationActivationIfNecessaryWithGesture:(id)arg1;
+- (void)_finishWithGesture:(id)arg1;
+- (void)_updateWithGesture:(id)arg1;
 - (void)_beginWithGesture:(id)arg1;
+- (void)_didComplete;
+- (void)_begin;
 - (long long)_gestureType;
 
 @end

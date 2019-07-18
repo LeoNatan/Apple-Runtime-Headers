@@ -13,6 +13,7 @@
 @interface WBSParsecSearchSportsAttributionExtraCompletionItem : WBSParsecModel <WBSCompletionListItem>
 {
     SFSearchResult *sfSearchResultValue;
+    long long _parsecQueryID;
     NSString *_label;
     NSURL *_url;
     WBSParsecImageRepresentation *_imageRepresentation;
@@ -22,6 +23,7 @@
 @property(readonly, nonatomic) WBSParsecImageRepresentation *imageRepresentation; // @synthesize imageRepresentation=_imageRepresentation;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(readonly, nonatomic) long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
 @property(readonly, nonatomic) SFSearchResult *sfSearchResultValue; // @synthesize sfSearchResultValue;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long engagementDestination;

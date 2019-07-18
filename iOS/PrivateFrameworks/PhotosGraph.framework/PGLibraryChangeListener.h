@@ -10,7 +10,7 @@
 #import <PhotosGraph/PHPhotoLibraryChangeObserver-Protocol.h>
 
 @class NSCountedSet, NSHashTable, NSMapTable, NSMutableOrderedSet, NSString, PGLibraryChangeListenerStateStore, PHPersistentChangeToken, PHPhotoLibrary;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, PGGraphUpdateHealthRecording;
 
 @interface PGLibraryChangeListener : NSObject <PHPhotoLibraryChangeObserver, PGLibraryChangeProducer>
 {
@@ -27,8 +27,10 @@
     unsigned long long _maximumNumberOfMutationsToFetch;
     unsigned long long _mode;
     PHPersistentChangeToken *_lastReadToken;
+    id <PGGraphUpdateHealthRecording> _updateHealthRecorder;
 }
 
+@property(readonly, nonatomic) id <PGGraphUpdateHealthRecording> updateHealthRecorder; // @synthesize updateHealthRecorder=_updateHealthRecorder;
 @property(retain, nonatomic) PHPersistentChangeToken *lastReadToken; // @synthesize lastReadToken=_lastReadToken;
 @property unsigned long long mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) unsigned long long maximumNumberOfMutationsToFetch; // @synthesize maximumNumberOfMutationsToFetch=_maximumNumberOfMutationsToFetch;

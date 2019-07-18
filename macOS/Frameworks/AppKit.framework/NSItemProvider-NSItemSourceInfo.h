@@ -14,6 +14,7 @@
 - (void)setPreferredPresentationSize:(struct CGSize)arg1;
 - (void)setContainerFrame:(struct CGRect)arg1;
 - (void)setSourceFrame:(struct CGRect)arg1;
+- (id)_ckContainerSetupInfo;
 - (id)_ckContainerID;
 - (id)_ckSourceAppBundleIdentifier;
 - (id)_ckContainerIdentifier;

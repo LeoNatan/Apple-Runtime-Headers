@@ -8,18 +8,19 @@
 
 #import <NewsCore/FCFeedTransforming-Protocol.h>
 
-@class FCPurchaseController, NSString;
+@class NSString;
+@protocol FCPurchaseProviderType;
 
 @interface FCFeedTransformationEndOfArticle : NSObject <FCFeedTransforming>
 {
     unsigned long long _minimumResultHeadlineCount;
     double _paidHeadlineRatio;
     unsigned long long _maxiumInaccessibleHeadlineCount;
-    FCPurchaseController *_purchaseController;
+    id <FCPurchaseProviderType> _purchaseProvider;
 }
 
 + (id)transformationWithConfiguration:(id)arg1 context:(id)arg2;
-@property(retain, nonatomic) FCPurchaseController *purchaseController; // @synthesize purchaseController=_purchaseController;
+@property(retain, nonatomic) id <FCPurchaseProviderType> purchaseProvider; // @synthesize purchaseProvider=_purchaseProvider;
 @property(nonatomic) unsigned long long maxiumInaccessibleHeadlineCount; // @synthesize maxiumInaccessibleHeadlineCount=_maxiumInaccessibleHeadlineCount;
 @property(nonatomic) double paidHeadlineRatio; // @synthesize paidHeadlineRatio=_paidHeadlineRatio;
 @property(nonatomic) unsigned long long minimumResultHeadlineCount; // @synthesize minimumResultHeadlineCount=_minimumResultHeadlineCount;

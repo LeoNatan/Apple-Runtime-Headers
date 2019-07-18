@@ -22,6 +22,7 @@
 @property int state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 - (void).cxx_destruct;
+- (id)taskStatesToString:(int)arg1;
 - (void)failWithError:(id)arg1 taskContext:(id)arg2;
 - (void)completeWithTaskContext:(id)arg1;
 - (void)suspendWithTaskContext:(id)arg1;

@@ -31,6 +31,7 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)dealloc;
 - (id)initWithController:(id)arg1 setupDelegate:(id)arg2 context:(int)arg3 applyPage:(id)arg4;
 
 // Remaining properties

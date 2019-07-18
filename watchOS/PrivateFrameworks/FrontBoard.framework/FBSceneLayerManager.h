@@ -8,16 +8,16 @@
 
 #import <FrontBoard/BSDescriptionProviding-Protocol.h>
 
-@class NSHashTable, NSMutableOrderedSet, NSOrderedSet, NSString;
+@class NSHashTable, NSOrderedSet, NSString;
 
 @interface FBSceneLayerManager : NSObject <BSDescriptionProviding>
 {
-    NSHashTable *_observers;
-    NSMutableOrderedSet *_orderedLayers;
     NSString *_identifier;
+    NSOrderedSet *_layers;
+    NSHashTable *_observers;
 }
 
-@property(readonly, nonatomic) NSOrderedSet *layers; // @synthesize layers=_orderedLayers;
+@property(readonly, nonatomic) NSOrderedSet *layers; // @synthesize layers=_layers;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (void)_observer_didRepositionLayer:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
@@ -25,6 +25,8 @@
 - (void)_observer_didStartTrackingLayers;
 - (void)_observer_willStartTrackingLayers;
 - (void)_enumerateObserversWithBlock:(CDUnknownBlockType)arg1;
+- (void)_setLayers:(id)arg1;
+- (id)_initWithIdentifier:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -33,9 +35,6 @@
 - (id)layerWithContextID:(unsigned int)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (void)removeLayer:(id)arg1;
-- (void)addLayer:(id)arg1;
-- (id)initWithScene:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     _Bool _excludeShareActivity;
     id <PXActivitySharingControllerDelegate> _delegate;
     PUActivitySharingViewModel *_viewModel;
+    NSDictionary *_assetsFetchResultsByAssetCollection;
     PHPerson *_person;
     NSArray *_excludedActivityTypes;
     NSArray *_activities;
@@ -39,11 +40,13 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *excludedActivityTypes; // @synthesize excludedActivityTypes=_excludedActivityTypes;
 @property(retain, nonatomic) PHPerson *person; // @synthesize person=_person;
 @property(nonatomic) _Bool allowAirPlayActivity; // @synthesize allowAirPlayActivity=_allowAirPlayActivity;
+@property(copy, nonatomic) NSDictionary *assetsFetchResultsByAssetCollection; // @synthesize assetsFetchResultsByAssetCollection=_assetsFetchResultsByAssetCollection;
 @property(retain, nonatomic) PUActivitySharingViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) __weak id <PXActivitySharingControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)presentationControllerDidDismiss:(id)arg1;
+- (void)carouselSharingViewController:(id)arg1 replaceAssetItem:(id)arg2 withAssetItem:(id)arg3;
 - (void)carouselSharingViewController:(id)arg1 setAssetItems:(id)arg2;
 - (void)carouselSharingViewController:(id)arg1 removeAssetItem:(id)arg2;
 - (void)carouselSharingViewController:(id)arg1 addAssetItem:(id)arg2;
@@ -63,6 +66,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PXSelectionSnapshot *selectionSnapshot;
 - (id)photosDataSource;
 @property(readonly, nonatomic) UIActivityViewController<PXActivityViewController> *activityViewController;
+- (void)_createCarouselSharingViewControllerIfNeeded;
 - (void)dealloc;
 - (id)initWithActivitySharingConfiguration:(id)arg1;
 - (id)new;

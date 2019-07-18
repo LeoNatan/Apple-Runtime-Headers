@@ -18,9 +18,11 @@
     CPLEngineLibrary *_engineLibrary;
     CPLSyncSession *_session;
     id <NSCoding> _transportUserIdentifier;
+    NSString *_phaseDescription;
 }
 
 + (id)taskWithEngineLibrary:(id)arg1 session:(id)arg2;
+@property(readonly) NSString *phaseDescription; // @synthesize phaseDescription=_phaseDescription;
 @property(getter=isCancelled, setter=_setCancelled:) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic) _Bool forceSync; // @synthesize forceSync=_forceSync;
 @property(nonatomic) _Bool foreground; // @synthesize foreground=_foreground;

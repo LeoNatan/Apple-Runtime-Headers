@@ -18,6 +18,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)updateFlightsForEntry:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (_Bool)_updateGateIfNeededForEntry:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_updateFlightsForEntry:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)_getGateMapItemForFlightEntry:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)_getTerminalMapItemForFlightEntry:(id)arg1 handler:(CDUnknownBlockType)arg2;

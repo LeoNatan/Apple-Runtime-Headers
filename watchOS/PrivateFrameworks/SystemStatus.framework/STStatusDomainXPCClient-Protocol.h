@@ -6,11 +6,13 @@
 
 #import <SystemStatus/NSObject-Protocol.h>
 
-@class STBatteryStatusDomainData, STBatteryStatusDomainDataDiff, STTelephonyStatusDomainData, STTelephonyStatusDomainDataDiff, STWifiStatusDomainData, STWifiStatusDomainDataDiff;
+@class STBatteryStatusDomainData, STBatteryStatusDomainDataDiff, STTelephonyStatusDomainData, STTelephonyStatusDomainDataDiff, STVoiceControlStatusDomainData, STVoiceControlStatusDomainDataDiff, STWifiStatusDomainData, STWifiStatusDomainDataDiff;
 
 @protocol STStatusDomainXPCClient <NSObject>
 - (void)observeWifiDataDiff:(STWifiStatusDomainDataDiff *)arg1;
 - (void)observeWifiData:(STWifiStatusDomainData *)arg1;
+- (void)observeVoiceControlDataDiff:(STVoiceControlStatusDomainDataDiff *)arg1;
+- (void)observeVoiceControlData:(STVoiceControlStatusDomainData *)arg1;
 - (void)observeTelephonyDataDiff:(STTelephonyStatusDomainDataDiff *)arg1;
 - (void)observeTelephonyData:(STTelephonyStatusDomainData *)arg1;
 - (void)observeBatteryDataDiff:(STBatteryStatusDomainDataDiff *)arg1;

@@ -6,12 +6,9 @@
 
 #import <HealthRecordsUI/NSObject-Protocol.h>
 
-@class HKConcept, HKConceptStore, NSArray;
+@class HKConceptStore;
 
 @protocol HKConceptStoreObserver <NSObject>
 - (void)conceptStore:(HKConceptStore *)arg1 indexManagerDidChangeState:(unsigned long long)arg2;
-- (void)newConceptsAssociatedWithUserRecords:(NSArray *)arg1;
-- (void)conceptRecordAssociationCountChanged:(HKConcept *)arg1;
-- (void)conceptAssociationsRemovedFromUserRecords:(NSArray *)arg1;
 @end
 

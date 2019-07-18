@@ -68,13 +68,12 @@
 - (void)navigationSession:(id)arg1 currentStepIndex:(unsigned long long)arg2 didUpdateDistanceUntilSign:(double)arg3 timeUntilSign:(double)arg4;
 - (void)navigationSession:(id)arg1 proceedToRouteDistance:(double)arg2 displayString:(id)arg3 closestStepIndex:(unsigned long long)arg4;
 - (void)navigationSession:(id)arg1 didUpdateAlternateRoutes:(id)arg2;
-- (void)navigationSession:(id)arg1 failedRerouteWithErrorCode:(long long)arg2;
+- (void)navigationSession:(id)arg1 didFailRerouteWithError:(id)arg2;
 - (void)navigationSession:(id)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(id)arg3;
 - (void)navigationSession:(id)arg1 didReroute:(id)arg2 withLocation:(id)arg3 withAlternateRoutes:(id)arg4;
 - (void)navigationSessionDidCancelReroute:(id)arg1;
 - (void)navigationSessionWillReroute:(id)arg1;
 - (void)navigationSession:(id)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
-- (void)navigationSession:(id)arg1 didUpdateTraffic:(id)arg2;
 - (void)navigationSession:(id)arg1 didUpdateETAResponseForRoute:(id)arg2;
 - (void)navigationSession:(id)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
 - (void)navigationSession:(id)arg1 didUpdateDisplayETA:(id)arg2 displayRemainingMinutes:(unsigned long long)arg3 forRoute:(id)arg4;
@@ -96,6 +95,8 @@
 - (void)updateManager:(id)arg1 didReceiveTransitError:(id)arg2;
 - (void)updateManager:(id)arg1 didReceiveTransitUpdates:(id)arg2;
 - (void)updateManager:(id)arg1 willSendTransitUpdateRequestForRouteIDs:(id)arg2;
+- (void)updateManager:(id)arg1 didReceiveTransitUpdateResponse:(id)arg2;
+- (void)updateManager:(id)arg1 willSendTransitUpdateRequests:(id)arg2;
 - (void)resumeRealtimeUpdatesForSubscriber:(id)arg1;
 - (void)pauseRealtimeUpdatesForSubscriber:(id)arg1;
 - (void)setIsNavigatingInLowGuidance:(_Bool)arg1;

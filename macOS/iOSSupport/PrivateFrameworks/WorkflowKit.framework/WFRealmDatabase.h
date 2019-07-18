@@ -44,6 +44,7 @@
 - (id)logRunOfWorkflow:(id)arg1 withSource:(id)arg2 triggerID:(id)arg3;
 - (void)setConflictingReference:(id)arg1 forReference:(id)arg2;
 - (id)conflictingReferenceForReference:(id)arg1;
+- (id)latestRunEvent;
 - (id)sortedRunEventsForTriggerID:(id)arg1;
 - (id)sortedRunEventsWithSource:(id)arg1;
 - (id)allConfiguredTriggers;

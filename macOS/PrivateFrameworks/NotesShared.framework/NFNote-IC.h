@@ -15,6 +15,7 @@
 @property(readonly, nonatomic) NSString *identifier;
 - (id)dataForTypeIdentifier:(id)arg1;
 - (id)searchableItemAttributeSet;
+- (id)userActivityContentAttributeSet;
 - (id)searchDomainIdentifier;
 - (id)searchIndexingIdentifier;
 - (id)contentIdentifier;

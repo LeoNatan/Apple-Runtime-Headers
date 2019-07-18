@@ -25,27 +25,23 @@
 @property(nonatomic) unsigned int edges; // @synthesize edges=_edges;
 - (void).cxx_destruct;
 - (id)debugDictionary;
-- (void)setRecognizeAlongEdge:(_Bool)arg1;
 - (unsigned int)touchedEdges;
-- (_Bool)recognizeAlongEdge;
 - (void)setMinimumNumberOfTouches:(unsigned int)arg1;
 - (void)_setHysteresis:(float)arg1;
 - (void)_setEdgeRegionSize:(float)arg1;
 - (float)_edgeRegionSize;
+- (void)_setBottomEdgeRegionSize:(float)arg1;
+- (float)_bottomEdgeRegionSize;
 - (void)featureDidChangeState:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (_Bool)_shouldTryToBeginWithEvent:(id)arg1;
 - (void)reset;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (_Bool)_shouldUseGrapeFlags;
 - (int)_touchInterfaceOrientation;
-- (struct CGPoint)_locationForTouch:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 type:(int)arg3 options:(unsigned int)arg4;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2 type:(int)arg3 maxTouches:(unsigned int)arg4;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2 type:(int)arg3;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 
 // Remaining properties

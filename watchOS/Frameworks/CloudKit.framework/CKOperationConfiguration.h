@@ -22,6 +22,7 @@
     _Bool _discretionarySchedulingForEntireOperation;
     _Bool _allowsBackgroundNetworking;
     _Bool _shouldSkipZonePCSUpdate;
+    _Bool _isCloudKitSupportOperation;
     _Bool _hasContainer;
     _Bool _hasAllowsCellularAccess;
     _Bool _hasLongLived;
@@ -39,6 +40,7 @@
     _Bool _hasSourceApplicationSecondaryIdentifier;
     _Bool _hasAdditionalRequestHTTPHeaders;
     _Bool _hasShouldSkipZonePCSUpdate;
+    _Bool _hasIsCloudKitSupportOperation;
     _Bool _hasQualityOfService;
     CKContainer *_container;
     int _qualityOfService;
@@ -55,6 +57,7 @@
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool hasQualityOfService; // @synthesize hasQualityOfService=_hasQualityOfService;
 @property(retain, nonatomic) CKSchedulerActivity *schedulerActivity; // @synthesize schedulerActivity=_schedulerActivity;
+@property(nonatomic) _Bool hasIsCloudKitSupportOperation; // @synthesize hasIsCloudKitSupportOperation=_hasIsCloudKitSupportOperation;
 @property(nonatomic) _Bool hasShouldSkipZonePCSUpdate; // @synthesize hasShouldSkipZonePCSUpdate=_hasShouldSkipZonePCSUpdate;
 @property(nonatomic) _Bool hasAdditionalRequestHTTPHeaders; // @synthesize hasAdditionalRequestHTTPHeaders=_hasAdditionalRequestHTTPHeaders;
 @property(nonatomic) _Bool hasSourceApplicationSecondaryIdentifier; // @synthesize hasSourceApplicationSecondaryIdentifier=_hasSourceApplicationSecondaryIdentifier;
@@ -83,6 +86,7 @@
 @property(retain, nonatomic) NSString *sourceApplicationSecondaryIdentifier; // @synthesize sourceApplicationSecondaryIdentifier=_sourceApplicationSecondaryIdentifier;
 @property(retain, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
 @property(nonatomic) _Bool allowsBackgroundNetworking; // @synthesize allowsBackgroundNetworking=_allowsBackgroundNetworking;
+@property(nonatomic) _Bool isCloudKitSupportOperation; // @synthesize isCloudKitSupportOperation=_isCloudKitSupportOperation;
 @property(nonatomic) _Bool shouldSkipZonePCSUpdate; // @synthesize shouldSkipZonePCSUpdate=_shouldSkipZonePCSUpdate;
 @property(nonatomic) _Bool preferAnonymousRequests; // @synthesize preferAnonymousRequests=_preferAnonymousRequests;
 @property(nonatomic) _Bool discretionarySchedulingForEntireOperation; // @synthesize discretionarySchedulingForEntireOperation=_discretionarySchedulingForEntireOperation;

@@ -9,7 +9,7 @@
 @interface _TtC12NewsArticlesP33_7501DEB503DA7F1A343A2945C45780758BarHider : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: navigationController
-    // Error parsing type: , name: statusBar
+    // Error parsing type: , name: hideStatusBar
 }
 
 @end

@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <NanoTimeKitCompanion/NTKColorCurve.h>
+#import <NanoTimeKitCompanion/NTKCubicColorCurve.h>
 
-@interface NTKAltitudeColorCurve : NTKColorCurve
+@interface NTKAltitudeColorCurve : NTKCubicColorCurve
 {
 }
 
-- (id)colorForAltitude:(CDStruct_3da3c8f8)arg1;
+- (id)colorForAltitude:(CDStruct_869f9c67)arg1;
 
 @end
 

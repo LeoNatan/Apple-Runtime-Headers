@@ -9,6 +9,7 @@
 @class NSDictionary;
 
 @protocol VUIJSMetricsInterface <JSExport>
+- (void)recordLogEvent:(NSDictionary *)arg1;
 - (void)recordPerfEvent:(NSDictionary *)arg1;
 - (void)recordEvent:(NSDictionary *)arg1;
 @end

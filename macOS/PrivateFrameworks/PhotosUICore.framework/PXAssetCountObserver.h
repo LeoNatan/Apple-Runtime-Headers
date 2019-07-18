@@ -8,7 +8,7 @@
 
 #import <PhotosUICore/PXPhotoLibraryUIChangeObserver-Protocol.h>
 
-@class NSPredicate, NSString, PHFetchResult, PHPhotoLibrary;
+@class NSString, PHFetchResult, PHPhotoLibrary;
 @protocol OS_dispatch_queue, PXAssetCountObserverDelegate;
 
 @interface PXAssetCountObserver : NSObject <PXPhotoLibraryUIChangeObserver>
@@ -16,20 +16,22 @@
     PHPhotoLibrary *_photoLibrary;
     unsigned long long _numberOfAssets;
     NSObject<OS_dispatch_queue> *_serialQueue;
-    id <PXAssetCountObserverDelegate> delegate;
-    NSPredicate *_internalFetchPredicate;
+    id <PXAssetCountObserverDelegate> _delegate;
     PHFetchResult *_fetchResult;
 }
 
 @property(retain, nonatomic) PHFetchResult *fetchResult; // @synthesize fetchResult=_fetchResult;
-@property(retain, nonatomic) NSPredicate *internalFetchPredicate; // @synthesize internalFetchPredicate=_internalFetchPredicate;
-@property(nonatomic) __weak id <PXAssetCountObserverDelegate> delegate; // @synthesize delegate;
+@property(nonatomic) unsigned long long numberOfAssets; // @synthesize numberOfAssets=_numberOfAssets;
+@property(nonatomic) __weak id <PXAssetCountObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
-@property(nonatomic) unsigned long long numberOfAssets;
-- (void)_serialQueue_updateInternalFetchPredicate:(id)arg1;
-- (id)initWithPhotoLibrary:(id)arg1;
+- (void)_serialQueue_observeInternalFetchPredicate:(id)arg1;
+- (void)_serialQueue_observeReferencedAssets;
+- (id)_fetchOptions;
+- (void)observeInternalFetchPredicate:(id)arg1;
+- (void)observeReferencedAssets;
+- (id)initWithPhotoLibrary:(id)arg1 qosClass:(unsigned int)arg2;
 - (id)init;
 
 // Remaining properties

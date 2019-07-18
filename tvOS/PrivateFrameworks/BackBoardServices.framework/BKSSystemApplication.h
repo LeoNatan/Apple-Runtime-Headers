@@ -27,7 +27,6 @@
 - (_Bool)clientIsAliveForWatchdog:(id)arg1;
 - (void)sendActions:(id)arg1;
 - (void)finishBooting;
-- (void)restart;
 - (void)start;
 - (void)bootstrap;
 - (void)dealloc;

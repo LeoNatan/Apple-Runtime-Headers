@@ -50,6 +50,7 @@
 - (_Bool)isProvidingCustomFeature;
 - (_Bool)_shouldDeselectWhenDragged;
 - (void)dealloc;
+- (_Bool)updateCalloutViewIfNeededAnimated:(_Bool)arg1;
 - (void)_setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setDragState:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (void)_configureAnimated:(_Bool)arg1 fromState:(long long)arg2 toState:(long long)arg3;

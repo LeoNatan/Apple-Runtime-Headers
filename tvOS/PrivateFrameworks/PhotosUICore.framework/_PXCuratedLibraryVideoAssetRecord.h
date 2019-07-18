@@ -6,11 +6,11 @@
 
 #import <PhotosUICore/PXGridInlinePlaybackRecord.h>
 
-#import <PhotosUICore/PXGVideoSessionProvider-Protocol.h>
+#import <PhotosUICore/PXGVideoSessionPixelBufferSourceDelegate-Protocol.h>
 
 @class NSString, PXGSpriteReference, PXGVideoSessionPixelBufferSource;
 
-@interface _PXCuratedLibraryVideoAssetRecord : PXGridInlinePlaybackRecord <PXGVideoSessionProvider>
+@interface _PXCuratedLibraryVideoAssetRecord : PXGridInlinePlaybackRecord <PXGVideoSessionPixelBufferSourceDelegate>
 {
     PXGVideoSessionPixelBufferSource *_pixelBufferSource;
 }
@@ -18,7 +18,7 @@
 @property(readonly, nonatomic) PXGVideoSessionPixelBufferSource *pixelBufferSource; // @synthesize pixelBufferSource=_pixelBufferSource;
 - (void).cxx_destruct;
 - (void)pixelBufferSource:(id)arg1 updateVideoSession:(id)arg2;
-- (id)createVideoSessionForPixelBufferSource:(id)arg1;
+- (void)_configureVideoSession:(id)arg1;
 - (void)prepareForInactive;
 - (long long)desiredPlayState;
 - (void)setDesiredPlayState:(long long)arg1;

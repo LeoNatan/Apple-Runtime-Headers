@@ -4,21 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSSaveAccessoryAdapter.h>
-
-@class NSArray;
+#import <AppKit/_NSNewSchoolAdapter.h>
 
 __attribute__((visibility("hidden")))
-@interface _NSNewSchoolCenteringAdapter : NSSaveAccessoryAdapter
+@interface _NSNewSchoolCenteringAdapter : _NSNewSchoolAdapter
 {
-    NSArray *_trackedConstraints;
 }
 
-@property(retain, nonatomic) NSArray *trackedConstraints; // @synthesize trackedConstraints=_trackedConstraints;
-- (void)willRemoveSubview:(id)arg1;
-- (void)accFrameChanged:(id)arg1;
-- (void)adapt:(id)arg1 andTrackConstraints:(id)arg2;
-- (void)dealloc;
+- (void)constrainAccessoryToSelf:(id)arg1;
 
 @end
 

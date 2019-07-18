@@ -8,11 +8,12 @@
 
 #import <iWorkImport/TSUURLWrapper-Protocol.h>
 
-@class NSString;
+@class NSString, NSUUID, TSUSandboxedURL;
 
 @interface NSURL (TSUAdditions) <TSUURLWrapper>
 + (id)tsu_fileURLWithPath:(id)arg1;
 + (id)tsp_iWorkAVAssetURLWithUUID:(id)arg1 filename:(id)arg2 contentTypeUTI:(id)arg3;
++ (id)sheetHyperlinkURLScheme;
 - (id)tsu_URLExceptPrivate;
 - (id)tsu_pathExceptPrivate;
 - (id)tsu_contentModificationDateWithLogContext:(id)arg1;
@@ -40,6 +41,7 @@
 - (_Bool)tsu_conformsToAnyUTI:(id)arg1;
 - (_Bool)tsu_conformsToUTI:(id)arg1;
 @property(readonly, nonatomic) NSString *tsu_UTI;
+@property(readonly) TSUSandboxedURL *sandboxedURL;
 @property(readonly) NSURL *URL;
 - (id)tsp_queryDictionary;
 - (_Bool)tsp_getIsUbiquitousValue:(_Bool *)arg1 promised:(_Bool)arg2 error:(id *)arg3;
@@ -49,6 +51,10 @@
 - (_Bool)tsp_matchesURL:(id)arg1 canCompareFileID:(_Bool)arg2;
 - (_Bool)tsp_matchesURL:(id)arg1;
 - (_Bool)tsp_isIWorkAVAssetURL;
+- (id)initWithDefaultSheetURLForDocumentRoot:(id)arg1;
+- (id)initWithSheet:(id)arg1;
+@property(readonly, nonatomic) NSUUID *sheetUUID;
+@property(readonly, nonatomic) _Bool isSheetURL;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

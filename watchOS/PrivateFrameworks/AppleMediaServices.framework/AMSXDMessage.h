@@ -17,12 +17,12 @@
     _Bool _isReply;
     NSString *_objectClassName;
     NSString *_messageID;
-    AMSXDDevice *_origin;
     NSDate *_receiptDate;
     AMSXDDevice *_destination;
     NSString *_identifier;
     NSString *_logKey;
     id <NSObject><NSSecureCoding> _object;
+    AMSXDDevice *_origin;
     int _purpose;
     double _expirationInterval;
 }
@@ -30,13 +30,13 @@
 + (_Bool)supportsSecureCoding;
 + (id)messageFromProtoMessage:(id)arg1;
 @property(nonatomic) int purpose; // @synthesize purpose=_purpose;
+@property(retain, nonatomic) AMSXDDevice *origin; // @synthesize origin=_origin;
 @property(retain, nonatomic) id <NSObject><NSSecureCoding> object; // @synthesize object=_object;
 @property(retain, nonatomic) NSString *logKey; // @synthesize logKey=_logKey;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) double expirationInterval; // @synthesize expirationInterval=_expirationInterval;
 @property(retain, nonatomic) AMSXDDevice *destination; // @synthesize destination=_destination;
 @property(retain, nonatomic) NSDate *receiptDate; // @synthesize receiptDate=_receiptDate;
-@property(retain, nonatomic) AMSXDDevice *origin; // @synthesize origin=_origin;
 @property(retain, nonatomic) NSString *messageID; // @synthesize messageID=_messageID;
 @property(nonatomic) _Bool isReply; // @synthesize isReply=_isReply;
 @property(retain, nonatomic) NSString *objectClassName; // @synthesize objectClassName=_objectClassName;

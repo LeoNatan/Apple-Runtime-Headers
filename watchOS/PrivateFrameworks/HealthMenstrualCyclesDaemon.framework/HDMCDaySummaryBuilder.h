@@ -22,16 +22,14 @@
 
 @property(readonly, nonatomic) int dayIndex; // @synthesize dayIndex=_dayIndex;
 - (void).cxx_destruct;
-- (id)createDaySummaryWithDevice:(id)arg1;
+- (id)createDaySummaryWithDevice:(id)arg1 calendarCache:(id)arg2;
 - (id)_basalBodyTemperature;
 - (int)_cervicalMucusQuality;
 - (int)_ovulationTestResult;
 - (int)_sexualActivity;
 - (unsigned int)_symptoms;
 - (_Bool)_intermenstrualBleeding;
-- (int)_menstrualFlowModificationDay;
-- (int)_menstrualFlow;
-- (id)_menstrualFlowSample;
+- (int)_menstrualFlowWithCalendarCache:(id)arg1 modificationDay:(int *)arg2 startOfCycleFromCycleTracking:(id *)arg3;
 - (void)addCycleTrackingSample:(id)arg1;
 - (id)initWithDayIndex:(int)arg1;
 

@@ -6,7 +6,6 @@
 
 #import <IconServices/ISIcon.h>
 
-__attribute__((visibility("hidden")))
 @interface ISIconFactory : ISIcon
 {
 }

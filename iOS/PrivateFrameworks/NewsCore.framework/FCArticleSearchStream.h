@@ -14,6 +14,8 @@
 {
     _Bool _fetching;
     _Bool _finished;
+    NSString *_keyboardInputMode;
+    double _scale;
     NSString *_query;
     SFMoreResults *_moreResults;
     SFRankingFeedback *_rankingFeedback;
@@ -28,6 +30,8 @@
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 @property(nonatomic, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
 @property(nonatomic) _Bool fetching; // @synthesize fetching=_fetching;
+@property(nonatomic) double scale; // @synthesize scale=_scale;
+@property(nonatomic) NSString *keyboardInputMode; // @synthesize keyboardInputMode=_keyboardInputMode;
 - (void).cxx_destruct;
 - (id)fetchMoreResultsWithLimit:(unsigned long long)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)init;

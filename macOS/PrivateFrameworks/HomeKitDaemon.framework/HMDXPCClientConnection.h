@@ -9,7 +9,7 @@
 #import <HomeKitDaemon/HMDaemonConnection-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDApplicationRegistry, HMDProcessInfo, HMDXPCRequestTracker, NSDictionary, NSObject, NSSet, NSString, NSXPCConnection;
+@class HMDApplicationRegistry, HMDProcessInfo, HMDXPCRequestTracker, NSObject, NSSet, NSString, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
 @interface HMDXPCClientConnection : HMFMessageTransport <HMDaemonConnection, HMFLogging>
@@ -17,6 +17,7 @@
     BOOL _entitledForAPIAccess;
     BOOL _entitledForBackgroundMode;
     BOOL _entitledForCameraClipsAccess;
+    BOOL _entitledForMultiUserSetupAccess;
     BOOL _activated;
     NSXPCConnection *_xpcConnection;
     HMDProcessInfo *_processInfo;
@@ -24,18 +25,17 @@
     NSString *_clientName;
     HMDXPCRequestTracker *_requestTracker;
     NSObject<OS_dispatch_queue> *_workQueue;
-    NSDictionary *_privateAccessEntitlement;
     HMDApplicationRegistry *_appRegistry;
 }
 
 + (id)logCategory;
 + (unsigned long long)entitlementsForConnection:(id)arg1;
 @property(nonatomic) __weak HMDApplicationRegistry *appRegistry; // @synthesize appRegistry=_appRegistry;
-@property(retain, nonatomic) NSDictionary *privateAccessEntitlement; // @synthesize privateAccessEntitlement=_privateAccessEntitlement;
 @property(nonatomic) BOOL activated; // @synthesize activated=_activated;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) HMDXPCRequestTracker *requestTracker; // @synthesize requestTracker=_requestTracker;
 @property(retain, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
+@property(readonly, nonatomic, getter=isEntitledForMultiUserSetupAccess) BOOL entitledForMultiUserSetupAccess; // @synthesize entitledForMultiUserSetupAccess=_entitledForMultiUserSetupAccess;
 @property(readonly, nonatomic, getter=isEntitledForCameraClipsAccess) BOOL entitledForCameraClipsAccess; // @synthesize entitledForCameraClipsAccess=_entitledForCameraClipsAccess;
 @property(readonly, nonatomic, getter=isEntitledForBackgroundMode) BOOL entitledForBackgroundMode; // @synthesize entitledForBackgroundMode=_entitledForBackgroundMode;
 @property(readonly, nonatomic, getter=isEntitledForAPIAccess) BOOL entitledForAPIAccess; // @synthesize entitledForAPIAccess=_entitledForAPIAccess;
@@ -46,8 +46,8 @@
 - (id)logIdentifier;
 - (void)sendMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)checkinWithName:(id)arg1;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
+- (void)handleMessage:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
+- (void)handleMessage:(id)arg1;
 - (BOOL)canSendMessage:(id)arg1;
 - (void)_notifyOfNewIncomingClientMessage;
 - (BOOL)shouldSendResponseForMessageIdentifier:(id)arg1;
@@ -57,7 +57,6 @@
 @property(readonly, nonatomic) id remoteProxy;
 - (id)_extractBundleIdentifier;
 - (id)extractTeamIdentifier;
-@property(readonly, nonatomic) NSString *effectiveLocationBundleIdentifier;
 @property(readonly, nonatomic) NSString *teamIdentifier;
 @property(readonly, nonatomic) NSString *companionAppBundleIdentifier;
 @property(readonly, nonatomic) NSString *applicationBundleIdentifier;

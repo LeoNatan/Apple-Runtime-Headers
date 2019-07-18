@@ -9,59 +9,57 @@
 #import <PencilKit/PKEdgeLocatable-Protocol.h>
 #import <PencilKit/PKPalettePopoverDismissing-Protocol.h>
 #import <PencilKit/PKPaletteViewSizeScaling-Protocol.h>
+#import <PencilKit/PKPaletteViewStateObserving-Protocol.h>
 
-@class NSLayoutConstraint, NSString, PKPaletteAdditionalOptionsView, PKPaletteColorPickerView, PKPaletteToolPickerContainerView, PKPaletteToolPickerView, PKPaletteUndoRedoView, UIStackView;
+@class NSLayoutConstraint, NSString, PKPaletteAdditionalOptionsView, PKPaletteColorPickerView, PKPaletteToolPickerAndColorPickerView, PKPaletteToolPickerView, PKPaletteUndoRedoView, UIStackView;
+@protocol PKPaletteViewStateObservable;
 
-@interface PKPaletteContentView : UIView <PKEdgeLocatable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling>
+@interface PKPaletteContentView : UIView <PKEdgeLocatable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling, PKPaletteViewStateObserving>
 {
     unsigned long long _edgeLocation;
     double _scalingFactor;
     PKPaletteUndoRedoView *_undoRedoView;
-    PKPaletteColorPickerView *_colorPickerView;
     PKPaletteAdditionalOptionsView *_additionalOptionsView;
-    long long _contextEditingMode;
-    UIStackView *_stackView;
     UIView *_contextualEditingView;
-    PKPaletteToolPickerContainerView *_toolPickerContainerView;
+    id <PKPaletteViewStateObservable> _paletteViewState;
+    UIStackView *_stackView;
+    PKPaletteToolPickerAndColorPickerView *_toolAndColorPickerContainerView;
     NSLayoutConstraint *_stackViewTopConstraint;
     NSLayoutConstraint *_stackViewBottomConstraint;
     NSLayoutConstraint *_stackViewLeftConstraint;
     NSLayoutConstraint *_stackViewRightConstraint;
-    NSLayoutConstraint *_toolPickerContainerViewWidthConstraint;
-    NSLayoutConstraint *_toolPickerContainerViewHeightConstraint;
-    NSLayoutConstraint *_compactToolPickerContainerViewWidthConstraint;
 }
 
-@property(retain, nonatomic) NSLayoutConstraint *compactToolPickerContainerViewWidthConstraint; // @synthesize compactToolPickerContainerViewWidthConstraint=_compactToolPickerContainerViewWidthConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *toolPickerContainerViewHeightConstraint; // @synthesize toolPickerContainerViewHeightConstraint=_toolPickerContainerViewHeightConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *toolPickerContainerViewWidthConstraint; // @synthesize toolPickerContainerViewWidthConstraint=_toolPickerContainerViewWidthConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewRightConstraint; // @synthesize stackViewRightConstraint=_stackViewRightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewLeftConstraint; // @synthesize stackViewLeftConstraint=_stackViewLeftConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewBottomConstraint; // @synthesize stackViewBottomConstraint=_stackViewBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewTopConstraint; // @synthesize stackViewTopConstraint=_stackViewTopConstraint;
-@property(retain, nonatomic) PKPaletteToolPickerContainerView *toolPickerContainerView; // @synthesize toolPickerContainerView=_toolPickerContainerView;
-@property(retain, nonatomic) UIView *contextualEditingView; // @synthesize contextualEditingView=_contextualEditingView;
+@property(retain, nonatomic) PKPaletteToolPickerAndColorPickerView *toolAndColorPickerContainerView; // @synthesize toolAndColorPickerContainerView=_toolAndColorPickerContainerView;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
-@property(nonatomic) long long contextEditingMode; // @synthesize contextEditingMode=_contextEditingMode;
+@property(nonatomic) __weak id <PKPaletteViewStateObservable> paletteViewState; // @synthesize paletteViewState=_paletteViewState;
+@property(retain, nonatomic) UIView *contextualEditingView; // @synthesize contextualEditingView=_contextualEditingView;
 @property(readonly, nonatomic) PKPaletteAdditionalOptionsView *additionalOptionsView; // @synthesize additionalOptionsView=_additionalOptionsView;
-@property(readonly, nonatomic) PKPaletteColorPickerView *colorPickerView; // @synthesize colorPickerView=_colorPickerView;
 @property(readonly, nonatomic) PKPaletteUndoRedoView *undoRedoView; // @synthesize undoRedoView=_undoRedoView;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
 - (void).cxx_destruct;
+- (void)didChangeAnnotationSupport:(id)arg1;
 - (void)_dismissPalettePopoverUsingConfirmationBlock:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (struct CGRect)plusButtonFrame;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateUI;
 - (void)traitCollectionDidChange:(id)arg1;
-@property(readonly, nonatomic) PKPaletteToolPickerView *toolPickerView;
+- (void)_updateContextEditingViewVisibility;
+@property(nonatomic) long long contextEditingMode;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)safeAreaInsetsDidChange;
+- (void)_installContextualEditingView;
 - (void)_installAdditionalOptionsView;
-- (void)_installColorPickerView;
-- (void)_installToolPickerView;
+@property(readonly, nonatomic) PKPaletteColorPickerView *colorPickerView;
+@property(readonly, nonatomic) PKPaletteToolPickerView *toolPickerView;
 - (void)_installUndoRedoButtonsView;
 - (void)_installStackView;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithPaletteViewStateObservable:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

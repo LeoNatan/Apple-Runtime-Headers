@@ -16,7 +16,7 @@
 - (id)_backgroundColor;
 - (void)applyToLabel:(id)arg1;
 - (void)_applyToTitleLabel:(id)arg1;
-- (id)barBackgroundImage;
+- (id)barBackgroundImageForUserInterfaceStyle:(long long)arg1;
 - (id)init;
 
 @end

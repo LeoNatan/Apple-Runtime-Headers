@@ -8,13 +8,14 @@
 
 #import <GeoServices/NSSecureCoding-Protocol.h>
 
-@class NSData, NSString;
+@class NSData, NSString, geo_isolater;
 
 @interface GEOApplicationAuditToken : NSObject <NSSecureCoding>
 {
     NSData *_tokenData;
     NSString *_proxiedBundleId;
     NSString *_resolvedBundleId;
+    geo_isolater *_isolater;
 }
 
 + (_Bool)supportsSecureCoding;

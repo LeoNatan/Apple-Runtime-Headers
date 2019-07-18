@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class NSMutableArray, NSMutableSet, NSString, NSTrackingArea, UINSCursor, UINSInputView, USSLayerHost;
+@class NSArray, NSMutableArray, NSMutableSet, NSString, NSTrackingArea, UINSCursor, UINSInputView, USSLayerHost;
 
 __attribute__((visibility("hidden")))
 @interface UINSSceneView : NSView
@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
     NSString *_sceneIdentifier;
     double _scaleFactor;
     double _rasterizationScale;
-    NSString *_filter;
+    NSString *_scalingFilter;
     NSMutableArray *_dropSessions;
     CDUnknownBlockType _resizeBlock;
     struct CGSize _sceneSize;
@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *dropSessions; // @synthesize dropSessions=_dropSessions;
 @property(nonatomic) BOOL isSimAccessibilityEnabled; // @synthesize isSimAccessibilityEnabled=_isSimAccessibilityEnabled;
 @property(nonatomic) struct CGSize sceneSize; // @synthesize sceneSize=_sceneSize;
-@property(copy, nonatomic) NSString *filter; // @synthesize filter=_filter;
+@property(copy, nonatomic) NSString *scalingFilter; // @synthesize scalingFilter=_scalingFilter;
 @property(nonatomic) double rasterizationScale; // @synthesize rasterizationScale=_rasterizationScale;
 @property(nonatomic) BOOL shouldRasterize; // @synthesize shouldRasterize=_shouldRasterize;
 @property(nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UINSInputView *inputView; // @synthesize inputView=_inputView;
 @property(nonatomic) unsigned int contextId; // @synthesize contextId=_contextId;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *uiWindows;
 - (BOOL)mouseDownCanMoveWindow;
 - (void)viewDidMoveToWindow;
 - (void)updateDragContextRegistrations;
@@ -67,7 +68,8 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)convertPointFromScene:(struct CGPoint)arg1;
 - (struct CGPoint)convertPointToScene:(struct CGPoint)arg1;
 - (void)updateLayer;
-- (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
+- (void)layout;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_resizeUIKitScene;
 - (void)setLaunchedSceneSize:(struct CGSize)arg1;
 - (void)cursorUpdate:(id)arg1;

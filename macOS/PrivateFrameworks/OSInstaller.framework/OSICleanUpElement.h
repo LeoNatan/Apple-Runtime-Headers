@@ -29,8 +29,9 @@
 - (void)_addRunningLanguageAndDirToGlobalPreferences;
 - (void)_writeAutoLanguageChooserCookie;
 - (void)_copyDiagnosticReportsToTarget;
+- (void)_copyFSCKLogToTarget;
 - (void)_copyAPFSConverterLogToTarget;
-- (void)_copyInstallLogToTarget;
+- (void)_flushIALogToTarget;
 - (void)removeCleanupInstallerPlist:(id)arg1;
 - (double)estimatedTimeToComplete;
 - (BOOL)okayToSkip;

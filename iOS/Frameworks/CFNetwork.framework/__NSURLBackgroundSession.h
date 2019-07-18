@@ -106,6 +106,8 @@
 - (void)validateUploadFile:(id)arg1;
 - (void)validateSerializabilityForRequest:(id)arg1 completion:(id)arg2;
 - (id)_onqueue_dummyTaskForClass:(Class)arg1 withRequest:(id)arg2 error:(id)arg3;
+- (id)requestWithCookiesApplied:(id)arg1;
+- (void)setCookiesFromResponse:(id)arg1 forOriginalRequest:(id)arg2 partitionIdentifier:(id)arg3;
 - (void)_onqueue_disavowTask:(id)arg1;
 - (id)taskForIdentifier:(unsigned long long)arg1;
 - (void)_useTLSSessionCacheFromSession:(id)arg1;

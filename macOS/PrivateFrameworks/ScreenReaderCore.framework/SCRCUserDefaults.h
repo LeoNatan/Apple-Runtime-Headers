@@ -205,9 +205,11 @@
 - (unsigned long long)archiveTypeOfFileAtPath:(id)arg1;
 - (unsigned long long)_getArchiveTypeFromDictionary:(id)arg1;
 - (void)addPronunciation:(id)arg1 forKey:(id)arg2;
+- (void)initializePronunciationsFromSharedUserDefaults;
 - (id)_generatePrimaryKey;
 - (void)resetNonCustomPreferences;
 - (void)resetAllPreferences;
+- (void)_clearPreferencesForDomain:(id)arg1;
 - (void)resetPreferencesForDomain:(id)arg1;
 - (id)preferenceDomains;
 

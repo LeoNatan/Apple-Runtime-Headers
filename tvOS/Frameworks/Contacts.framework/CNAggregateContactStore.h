@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)registerChangeHistoryClientIdentifier:(id)arg1 error:(id *)arg2;
 - (id)userActivityUserInfoForContact:(id)arg1;
 - (id)contactWithUserActivityUserInfo:(id)arg1 keysToFetch:(id)arg2;
+- (id)enumeratorForChangeHistoryFetchRequest:(id)arg1 error:(id *)arg2;
+- (id)enumeratorForContactFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)executeFetchRequest:(id)arg1 progressiveResults:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)executeSaveRequest:(id)arg1 error:(id *)arg2;
 - (_Bool)supportsSaveRequest:(id)arg1;

@@ -11,6 +11,7 @@
 @protocol UITextInputControllerDelegate <NSObject>
 
 @optional
+@property(readonly, nonatomic) _Bool isSingleLineDocument;
 - (void)textInputDidAnimatePaste:(UITextInputController *)arg1;
 - (void)textInputWillAnimatePaste:(UITextInputController *)arg1;
 - (void)textInputDidChangeSelection:(UITextInputController *)arg1;

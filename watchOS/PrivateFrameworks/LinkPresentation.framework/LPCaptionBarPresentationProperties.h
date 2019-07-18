@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class LPCaptionRowPresentationProperties, LPImage, LPImagePresentationProperties, NSArray, NSNumber, UIColor;
+@class LPCaptionRowPresentationProperties, LPImage, LPImagePresentationProperties, NSArray, NSNumber;
 
 @interface LPCaptionBarPresentationProperties : NSObject
 {
@@ -15,15 +15,11 @@
     LPCaptionRowPresentationProperties *_bottom;
     LPCaptionRowPresentationProperties *_belowBottom;
     LPImage *_leadingIcon;
-    UIColor *_leadingIconMaskColor;
     NSArray *_additionalLeadingIcons;
     LPImagePresentationProperties *_leadingIconProperties;
     LPImage *_trailingIcon;
-    UIColor *_trailingIconMaskColor;
     NSArray *_additionalTrailingIcons;
     LPImagePresentationProperties *_trailingIconProperties;
-    LPImage *_belowLeadingIcon;
-    UIColor *_belowLeadingIconMaskColor;
     int _leadingAccessoryType;
     int _trailingAccessoryType;
     NSNumber *_minimumHeight;
@@ -34,24 +30,18 @@
 @property(retain, nonatomic) NSNumber *minimumHeight; // @synthesize minimumHeight=_minimumHeight;
 @property(nonatomic) int trailingAccessoryType; // @synthesize trailingAccessoryType=_trailingAccessoryType;
 @property(nonatomic) int leadingAccessoryType; // @synthesize leadingAccessoryType=_leadingAccessoryType;
-@property(retain, nonatomic) UIColor *belowLeadingIconMaskColor; // @synthesize belowLeadingIconMaskColor=_belowLeadingIconMaskColor;
-@property(retain, nonatomic) LPImage *belowLeadingIcon; // @synthesize belowLeadingIcon=_belowLeadingIcon;
 @property(retain, nonatomic) LPImagePresentationProperties *trailingIconProperties; // @synthesize trailingIconProperties=_trailingIconProperties;
 @property(retain, nonatomic) NSArray *additionalTrailingIcons; // @synthesize additionalTrailingIcons=_additionalTrailingIcons;
 @property(nonatomic) struct CGSize trailingIconSize; // @synthesize trailingIconSize=_trailingIconSize;
-@property(retain, nonatomic) UIColor *trailingIconMaskColor; // @synthesize trailingIconMaskColor=_trailingIconMaskColor;
 @property(retain, nonatomic) LPImage *trailingIcon; // @synthesize trailingIcon=_trailingIcon;
 @property(retain, nonatomic) LPImagePresentationProperties *leadingIconProperties; // @synthesize leadingIconProperties=_leadingIconProperties;
 @property(retain, nonatomic) NSArray *additionalLeadingIcons; // @synthesize additionalLeadingIcons=_additionalLeadingIcons;
 @property(nonatomic) struct CGSize leadingIconSize; // @synthesize leadingIconSize=_leadingIconSize;
-@property(retain, nonatomic) UIColor *leadingIconMaskColor; // @synthesize leadingIconMaskColor=_leadingIconMaskColor;
 @property(retain, nonatomic) LPImage *leadingIcon; // @synthesize leadingIcon=_leadingIcon;
 - (void).cxx_destruct;
 - (int)rightAccessoryType;
 - (int)leftAccessoryType;
-- (id)rightIconMaskColor;
 - (id)rightIcon;
-- (id)leftIconMaskColor;
 - (id)leftIcon;
 - (void)applyToAllCaptions:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool hasAnyContent;

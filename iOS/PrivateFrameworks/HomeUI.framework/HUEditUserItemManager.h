@@ -6,16 +6,16 @@
 
 #import <Home/HFItemManager.h>
 
+#import <HomeUI/HULocationDeviceManagerObserver-Protocol.h>
 #import <HomeUI/HUUserItemManager-Protocol.h>
 
 @class HFItem, HFUserItem, HMHome, HMUser, HUAccessorySettingsItemModule, HULocationDeviceManager, NSArray, NSString;
 
-@interface HUEditUserItemManager : HFItemManager <HUUserItemManager>
+@interface HUEditUserItemManager : HFItemManager <HULocationDeviceManagerObserver, HUUserItemManager>
 {
     HFItem *_localAccessItem;
     HFItem *_remoteAccessItem;
     HFItem *_allowEditingItem;
-    HFItem *_allowEditingFooterItem;
     HFItem *_camerasItem;
     HFItem *_pendingAccessoriesItem;
     HFItem *_personalRequestsItem;
@@ -40,15 +40,15 @@
 @property(retain, nonatomic) HFItem *personalRequestsItem; // @synthesize personalRequestsItem=_personalRequestsItem;
 @property(retain, nonatomic) HFItem *pendingAccessoriesItem; // @synthesize pendingAccessoriesItem=_pendingAccessoriesItem;
 @property(retain, nonatomic) HFItem *camerasItem; // @synthesize camerasItem=_camerasItem;
-@property(retain, nonatomic) HFItem *allowEditingFooterItem; // @synthesize allowEditingFooterItem=_allowEditingFooterItem;
 @property(retain, nonatomic) HFItem *allowEditingItem; // @synthesize allowEditingItem=_allowEditingItem;
 @property(retain, nonatomic) HFItem *remoteAccessItem; // @synthesize remoteAccessItem=_remoteAccessItem;
 @property(retain, nonatomic) HFItem *localAccessItem; // @synthesize localAccessItem=_localAccessItem;
 - (void).cxx_destruct;
+- (void)locationDeviceManager:(id)arg1 didUpdateActiveLocationDevice:(id)arg2;
 - (_Bool)_isVoiceIDEnabled:(id)arg1;
 - (_Bool)_isTVViewingProfilesEnabledForUser;
 - (_Bool)_isPersonalRequestsEnabledForUser;
-- (_Bool)_isAllowedToEditTargetUser;
+- (_Bool)_canModifyUserBeingEditedPermissions;
 - (_Bool)_hasPendingAccessories;
 - (_Bool)_hasTVViewingProfilesDevice;
 - (_Bool)_hasPersonalRequestsDevice;
@@ -64,7 +64,9 @@
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (id)_homeFuture;
 - (id)reuseIdentifierForFooterViewInSection:(unsigned long long)arg1;
-@property(readonly, nonatomic) HMUser *user;
+@property(readonly, nonatomic) HMUser *userBeingEdited;
+- (void)_unregisterForExternalUpdates;
+- (void)_registerForExternalUpdates;
 - (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2;
 - (id)initWithHome:(id)arg1 userItem:(id)arg2 delegate:(id)arg3;
 

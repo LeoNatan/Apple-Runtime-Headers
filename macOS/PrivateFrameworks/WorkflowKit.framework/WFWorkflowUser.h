@@ -8,7 +8,7 @@
 
 #import <WorkflowKit/MTLJSONSerializing-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSNumber, NSString, NSURL, NSUUID;
+@class NSDate, NSDictionary, NSNumber, NSString, NSURL, NSUUID;
 
 @interface WFWorkflowUser : MTLModel <MTLJSONSerializing>
 {
@@ -21,12 +21,10 @@
     NSDate *_dateJoined;
     NSNumber *_isAdmin;
     long long _mainIdentity;
-    NSArray *_devices;
 }
 
 + (id)mainIdentityJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
-@property(readonly, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(readonly, nonatomic) long long mainIdentity; // @synthesize mainIdentity=_mainIdentity;
 @property(readonly, nonatomic) NSNumber *isAdmin; // @synthesize isAdmin=_isAdmin;
 @property(readonly, nonatomic) NSDate *dateJoined; // @synthesize dateJoined=_dateJoined;

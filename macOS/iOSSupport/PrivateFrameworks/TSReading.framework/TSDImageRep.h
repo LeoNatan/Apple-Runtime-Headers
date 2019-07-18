@@ -151,6 +151,7 @@
 - (id)maskInfo;
 - (id)imageLayout;
 - (id)imageInfo;
+@property(readonly, nonatomic) struct CGImage *imageRef;
 - (void)dealloc;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 

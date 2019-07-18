@@ -26,8 +26,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)outputContextExistsWithRemoteOutputDevice;
 + (void)resetOutputDeviceForAllOutputContexts;
 + (struct OpaqueFigEndpointPicker *)copySystemVideoPicker;
-+ (_Bool)supportsSecureCoding;
-+ (id)outputContextImplForID:(id)arg1;
++ (id)outputContextImplForID:(id)arg1 type:(id)arg2;
 + (id)outputContextImplForControllingOutputDeviceGroupWithID:(id)arg1 options:(id)arg2;
 + (id)iTunesAudioContext;
 + (id)sharedSystemScreenContext;
@@ -46,7 +45,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) _Bool canSetVolume;
 @property(readonly) float volume;
 @property(readonly) _Bool providesControlForAllVolumeFeatures;
-- (void)removeOutputDevice:(id)arg1;
+- (void)removeOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)addOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setOutputDevices:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setOutputDevices:(id)arg1;
@@ -67,8 +66,6 @@ __attribute__((visibility("hidden")))
 - (void)_addFigEndpointPickerNotifications;
 - (void)_handlePickerServerConnectionDiedNotification;
 - (long)_configureFigEndpointPickerWithFeature:(unsigned int)arg1 options:(id)arg2;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithFeature:(unsigned int)arg1 options:(id)arg2;
 - (id)initWithContextUUID:(id)arg1;
 - (id)init;

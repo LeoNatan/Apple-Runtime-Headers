@@ -10,6 +10,7 @@
 
 @protocol TBCacheProvider <NSObject>
 - (void)removeWithFetchRequest:(id <TBFetchRequest>)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)prune3BarsNetworks:(unsigned long long)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)removeAllWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)cacheFetchResponse:(id <TBFetchResponse>)arg1 completionHandler:(void (^)(NSError *))arg2;
 @end

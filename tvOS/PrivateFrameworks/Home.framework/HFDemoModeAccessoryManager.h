@@ -15,6 +15,13 @@
     NSArray *_demoAccessories;
 }
 
++ (id)_eventsFromString:(id)arg1 startDate:(id)arg2;
++ (id)_clipStartDateFromComponents:(id)arg1 today:(id)arg2;
++ (id)_cameraClipForProfile:(id)arg1 url:(id)arg2 duration:(double)arg3;
++ (id)clipsForCameraProfile:(id)arg1;
++ (id)demoURLWithCameraName:(id)arg1 fileName:(id)arg2 extension:(id)arg3;
++ (id)demoLiveStreamURLForCameraName:(id)arg1;
++ (id)demoSnapshotURLForCameraName:(id)arg1;
 + (id)imageIconDescriptorFromDictionary:(id)arg1;
 + (_Bool)isPressDemoModeEnabled;
 + (id)demoModeDirectoryURL;

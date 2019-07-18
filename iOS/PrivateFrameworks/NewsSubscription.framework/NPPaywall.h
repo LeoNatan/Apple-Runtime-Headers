@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-@property(nonatomic, retain) id <NPPaywallDelegate> delegate; // @synthesize delegate;
+@property(nonatomic) __weak id <NPPaywallDelegate> delegate; // @synthesize delegate;
 @property(nonatomic, readonly) UIViewController *paywallViewController;
 @property(nonatomic, readonly) NPDeferredHardPaywallHeightProvider *deferredHardPaywallHeightProvider; // @synthesize deferredHardPaywallHeightProvider;
 @property(nonatomic, readonly) NPSoftPaywallHeightProvider *softPaywallHeightProvider; // @synthesize softPaywallHeightProvider;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MXSessionManager;
+@class MXSessionManager, NSString;
 @protocol OS_dispatch_queue;
 
 @interface MXPlayerSession : NSObject
@@ -18,6 +18,7 @@
     MXSessionManager *_mxSessionManager;
     vector_85eef765 _ioControllers;
     vector_c6bb1d04 _virtualPorts;
+    NSString *_clientName;
 }
 
 + (struct DerivedBehaviors)behaviorsFromState:(id)arg1;

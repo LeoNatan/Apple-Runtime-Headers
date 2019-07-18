@@ -40,6 +40,7 @@
     TUCallServicesInterface *_callServicesInterface;
     TUVideoCallAttributes *_videoCallAttributes;
     int _verificationStatus;
+    int _priority;
     int _provisionalHoldStatus;
     NSString *_isoCountryCode;
     int _transitionStatus;
@@ -75,6 +76,7 @@
 @property(nonatomic) int transitionStatus; // @synthesize transitionStatus=_transitionStatus;
 @property(copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(nonatomic) int provisionalHoldStatus; // @synthesize provisionalHoldStatus=_provisionalHoldStatus;
+@property(nonatomic) int priority; // @synthesize priority=_priority;
 @property(nonatomic) int verificationStatus; // @synthesize verificationStatus=_verificationStatus;
 @property(retain, nonatomic) TUVideoCallAttributes *videoCallAttributes; // @synthesize videoCallAttributes=_videoCallAttributes;
 @property(nonatomic) __weak TUCallServicesInterface *callServicesInterface; // @synthesize callServicesInterface=_callServicesInterface;

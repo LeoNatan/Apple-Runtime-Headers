@@ -95,6 +95,7 @@
 - (_Bool)_isDataProtected;
 - (void)_protectedDataDidBecomeAvailable;
 - (void)receivedAlarmNamed:(id)arg1;
+- (void)didRegisterForAlarms;
 - (void)handleDarwinNotification:(id)arg1;
 - (void)start;
 - (void)dealloc;

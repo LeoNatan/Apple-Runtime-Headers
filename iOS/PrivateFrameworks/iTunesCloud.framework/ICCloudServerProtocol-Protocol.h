@@ -40,6 +40,7 @@
 - (void)createPlaylistWithPersistentID:(long long)arg1 properties:(NSDictionary *)arg2 trackList:(ICCloudItemIDList *)arg3 configuration:(ICConnectionConfiguration *)arg4 completion:(void (^)(unsigned long long, NSError *))arg5;
 - (void)addGeniusPlaylistWithPersistentID:(long long)arg1 name:(NSString *)arg2 seedItemSagaIDs:(NSArray *)arg3 itemSagaIDs:(NSArray *)arg4 configuration:(ICConnectionConfiguration *)arg5 completion:(void (^)(unsigned long long, NSError *))arg6;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 configuration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
+- (void)loadMissingArtworkForConfiguration:(ICConnectionConfiguration *)arg1;
 - (void)loadArtworkInfoForSubscriptionContainerPersistentIDs:(NSArray *)arg1 configuration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSError *, NSArray *))arg3;
 - (void)loadScreenshotInfoForSubscriptionPersistentIDs:(NSArray *)arg1 configuration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSError *, NSArray *))arg3;
 - (void)loadArtworkInfoForSubscriptionItemPersistentIDs:(NSArray *)arg1 configuration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSError *, NSArray *))arg3;

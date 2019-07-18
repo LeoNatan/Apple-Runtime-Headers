@@ -31,10 +31,10 @@
 + (id)_assetUUIDFromIncomingFilename:(id)arg1;
 + (id)_pathsByAssetUUIDFromIncomingCrashRecoveryPaths:(id)arg1;
 + (BOOL)setAdjustmentsForNewPhoto:(id)arg1 withEffectFilterName:(id)arg2 cameraAdjustmentData:(id)arg3 adjustmentDataPath:(id)arg4 filteredImagePath:(id)arg5 isSubstandardRender:(BOOL)arg6;
-+ (id)_assetAdjustmentsFromCameraAdjustmentData:(id)arg1 exportProperties:(id)arg2;
-+ (id)_assetAdjustmentsFromCameraAdjustments:(id)arg1 exportProperties:(id)arg2;
++ (id)assetAdjustmentsFromCameraAdjustmentData:(id)arg1 exportProperties:(id)arg2;
++ (id)assetAdjustmentsFromCameraAdjustments:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsFromCameraAdjustmentsFileAtPath:(id)arg1 exportProperties:(id)arg2;
-+ (id)_assetAdjustmentsFromCameraFilters:(id)arg1 portraitMetadata:(id)arg2 exportProperties:(id)arg3;
++ (id)assetAdjustmentsFromCameraFilters:(id)arg1 portraitMetadata:(id)arg2 exportProperties:(id)arg3;
 + (id)_assetAdjustmentsFromCompositionController:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsWithEffectFilterName:(id)arg1 exportProperties:(id)arg2;
 + (BOOL)_requiresIndicatorFileForJobType:(id)arg1;
@@ -44,7 +44,7 @@
 - (BOOL)imageWriterJob:(id)arg1 hasValidPathsWithConnection:(id)arg2;
 - (void)_processJob:(id)arg1;
 - (void)_processVideoSaveJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_setAdjustmentsForNewVideo:(id)arg1 withAdjustmentsDictionary:(id)arg2 renderedContentPath:(id)arg3;
+- (void)_setAdjustmentsForNewVideo:(id)arg1 withAdjustmentsDictionary:(id)arg2 cameraAdjustments:(id)arg3 renderedContentPath:(id)arg4;
 - (void)_processVideoJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)_transferVideoFromIncomingPath:(id)arg1 toDestinationPath:(id)arg2 shouldRemoveIncoming:(char *)arg3 error:(id *)arg4;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext *)arg2;

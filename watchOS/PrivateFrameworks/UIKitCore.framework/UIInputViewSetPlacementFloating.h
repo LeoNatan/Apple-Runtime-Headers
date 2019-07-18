@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     UIInputViewSetPlacementFloatingShadow *_cachedSecondaryPlacement;
 }
 
-+ (float)_keyboardHeaderForInputViews:(id)arg1;
 + (id)infoWithPoint:(struct CGPoint)arg1 forOwner:(id)arg2;
 + (_Bool)supportsSecureCoding;
++ (struct CGRect)frameAtOffset:(struct CGPoint)arg1 keyboardSize:(struct CGSize)arg2 screenSize:(struct CGSize)arg3;
 + (id)placementWithUndockedOffset:(struct CGPoint)arg1 chromeBuffer:(struct UIEdgeInsets)arg2 floatingWidth:(float)arg3;
 @property(nonatomic) float floatingWidth; // @synthesize floatingWidth=_floatingWidth;
 @property(nonatomic) UIResponder *responderToFollow; // @synthesize responderToFollow=_responderToFollow;

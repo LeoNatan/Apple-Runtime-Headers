@@ -12,6 +12,7 @@
 #import <InfoKit/_TPSXPCExportable-Protocol.h>
 
 @class INKContent, NSArray, NSDate, NSHashTable, NSString, TPSDuetEventsProvider, _TPSXPCConnection;
+@protocol OS_dispatch_queue;
 
 @interface INKContentController : NSObject <INKContentViewDelegate, INKTipContentHintViewDelegate, TPSEventsProviderDelegate, _TPSXPCExportable>
 {
@@ -24,6 +25,7 @@
     NSDate *_nextAllowedCheckDate;
     NSDate *_lastContentValidateDate;
     NSArray *_currentContext;
+    NSObject<OS_dispatch_queue> *_checkQueue;
     TPSDuetEventsProvider *_duetEventsProvider;
     _Bool _contentDismissedByUser;
     long long _state;
@@ -69,14 +71,13 @@
 - (void)_destroyXPCConnection;
 - (id)createContentViewWithContent:(id)arg1;
 - (id)contentViewWithContent:(id)arg1;
-- (void)contentDidDismiss:(id)arg1;
-- (void)contentDidDisplay:(id)arg1;
+- (void)_contentDidDismiss:(id)arg1;
+- (void)_contentDidDisplay:(id)arg1;
+- (void)checkForContentForBundleID:(id)arg1;
 - (void)checkForContent;
 - (void)applicationWillEnterForeground;
 - (void)showTestContent;
 - (void)unregisterEnterForegroundNotification;
-- (void)unregisterObserver:(id)arg1;
-- (void)registerObserver:(id)arg1;
 - (void)removeObserver:(id)arg1 content:(id)arg2;
 - (void)addObserver:(id)arg1 content:(id)arg2;
 - (id)initWithContext:(id)arg1;

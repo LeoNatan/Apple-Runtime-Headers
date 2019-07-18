@@ -15,6 +15,7 @@
 
 @interface BLTBulletinDistributor : NSObject <BLTBulletinDistributorSubscriberDeviceDelegate, BBObserverDelegate, BLTCompanionServer, NSXPCListenerDelegate>
 {
+    unsigned long long _stateHandler;
     _Bool _standaloneTestModeEnabled;
     BLTRemoteGizmoClient *_gizmoConnection;
     BBObserver *_bbObserver;
@@ -55,6 +56,7 @@
 @property(retain, nonatomic) BBObserver *bbObserver; // @synthesize bbObserver=_bbObserver;
 @property(retain, nonatomic) BLTRemoteGizmoClient *gizmoConnection; // @synthesize gizmoConnection=_gizmoConnection;
 - (void).cxx_destruct;
+- (id)_stateDescription;
 - (void)_addBulletin:(id)arg1 forFeed:(unsigned long long)arg2 playLightsAndSirens:(_Bool)arg3 attachment:(id)arg4 attachmentType:(long long)arg5 alwaysSend:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)willSendLightsAndSirensWithPublisherBulletinID:(id)arg1 recordID:(id)arg2 inPhoneSection:(id)arg3 systemApp:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (_Bool)shouldSuppressLightsAndSirensNow;

@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (id)_removeOutstandingAssertionStatusUpdaterWithUUID:(id)arg1;
 - (void)_addOutstandingAssertionStatusUpdater:(id)arg1 withAssertType:(int)arg2;
-- (id)_outstandingAssertionStatusUpdaterWithRequest:(id)arg1 assertionUUID:(id)arg2;
+- (id)_outstandingAssertionStatusUpdaterWithRequest:(id)arg1 assertionType:(unsigned int)arg2 assertionUUID:(id)arg3;
 - (id)_IDSSendOptions;
 - (id)_sendAssertionRequest:(id)arg1;
 - (id)assertionsUUIDsOfType:(unsigned int)arg1;

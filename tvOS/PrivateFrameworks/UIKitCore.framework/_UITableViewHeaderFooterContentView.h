@@ -14,6 +14,8 @@ __attribute__((visibility("hidden")))
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(_Bool)arg1;
 - (void)_updateConstraintsIfNeededWithViewForVariableChangeNotifications:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (struct UIEdgeInsets)_concreteDefaultLayoutMargins;
+- (id)_headerFooterView;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -20,6 +20,7 @@
 @property(retain, nonatomic) UIFont *emojiOverrideFont; // @synthesize emojiOverrideFont=_emojiOverrideFont;
 @property(nonatomic) _Bool clearsZeroWhenTyping; // @synthesize clearsZeroWhenTyping=_clearsZeroWhenTyping;
 - (void).cxx_destruct;
+- (struct CGRect)accessibilityFrame;
 - (void)wf_applyEmojiOverrideFont;
 - (void)paste:(id)arg1;
 - (void)insertText:(id)arg1;

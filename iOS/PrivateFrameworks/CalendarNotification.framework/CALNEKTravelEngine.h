@@ -33,8 +33,10 @@
 - (void)requestHypothesisRefreshAtDate:(id)arg1 forEventWithExternalURL:(id)arg2;
 - (void)protectedDataDidBecomeAvailable;
 - (void)receivedAlarmNamed:(id)arg1;
+- (void)didRegisterForAlarms;
 - (void)receivedNotificationNamed:(id)arg1;
 - (void)handleBTAJob:(id)arg1 named:(const char *)arg2;
+- (void)didRegisterForBackgroundTaskAgentJobs;
 - (void)deactivate;
 - (void)activate;
 - (id)initWithTravelEngine:(id)arg1;

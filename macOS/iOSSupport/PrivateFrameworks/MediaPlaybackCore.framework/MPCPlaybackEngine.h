@@ -19,6 +19,7 @@
     BOOL _stateRestorationSupported;
     BOOL _scheduledPlaybackStatePreservation;
     BOOL _systemMusicApplication;
+    BOOL _audioAnalyzerEnabled;
     NSString *_playerID;
     id <MPCPlaybackEngineDelegate> _delegate;
     MPCPlaybackIntent *_fallbackPlaybackIntent;
@@ -35,6 +36,8 @@
 
 + (BOOL)requiresMainThread;
 + (void)preheatPlayback;
+@property(readonly, nonatomic) MPCAudioSpectrumAnalyzer *audioAnalyzer; // @synthesize audioAnalyzer=_audioAnalyzer;
+@property(nonatomic, getter=isAudioAnalyzerEnabled) BOOL audioAnalyzerEnabled; // @synthesize audioAnalyzerEnabled=_audioAnalyzerEnabled;
 @property(nonatomic) unsigned long long audioSessionOptions; // @synthesize audioSessionOptions=_audioSessionOptions;
 @property(copy, nonatomic) NSString *audioSessionCategory; // @synthesize audioSessionCategory=_audioSessionCategory;
 @property(nonatomic, getter=isSystemMusicApplication) BOOL systemMusicApplication; // @synthesize systemMusicApplication=_systemMusicApplication;
@@ -58,8 +61,8 @@
 - (void)_initializePlaybackStack;
 - (void)schedulePlaybackStatePreservation;
 @property(readonly, nonatomic) UIView *videoView;
-- (void)_playerDidBecomeReady:(id)arg1;
-@property(readonly, nonatomic) MPCAudioSpectrumAnalyzer *audioAnalyzer;
+- (void)_itemInsertedNotification:(id)arg1;
+- (void)_itemAssetLoadedNotification:(id)arg1;
 @property(readonly, nonatomic) MPCPlayerPath *playerPath;
 - (void)reportUserSeekFromTime:(double)arg1 toTime:(double)arg2;
 - (void)removeEngineObserver:(id)arg1;

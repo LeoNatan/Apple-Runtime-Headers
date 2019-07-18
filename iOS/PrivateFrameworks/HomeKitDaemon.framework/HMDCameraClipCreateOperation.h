@@ -10,16 +10,16 @@
 
 @interface HMDCameraClipCreateOperation : HMDCameraClipModelOperation
 {
-    NSDate *_startDate;
     NSNumber *_targetFragmentDuration;
+    NSDate *_clipStartDate;
 }
 
 + (id)logCategory;
+@property(readonly) NSDate *clipStartDate; // @synthesize clipStartDate=_clipStartDate;
 @property(readonly) NSNumber *targetFragmentDuration; // @synthesize targetFragmentDuration=_targetFragmentDuration;
-@property(readonly) NSDate *startDate; // @synthesize startDate=_startDate;
 - (void).cxx_destruct;
 - (void)main;
-- (id)initWithLocalZone:(id)arg1 targetFragmentDuration:(double)arg2 startDate:(id)arg3;
+- (id)initWithLocalZone:(id)arg1 targetFragmentDuration:(double)arg2 startDate:(id)arg3 dataSource:(id)arg4;
 
 @end
 

@@ -10,7 +10,7 @@
 #import <OSInstaller/OSIPowerControllerDelegate-Protocol.h>
 #import <OSInstaller/SKManagerListener-Protocol.h>
 
-@class IASUnifiedProgressClient, NSDate, NSError, NSMutableArray, NSNumber, NSString, NSTimer, OSIDebuggerTool, OSIPersonalizedManifests, OSIPowerButtonMonitor, OSIPowerController, OSInstallOptions, PKDistributionController, SMPaths;
+@class IASUnifiedProgressClient, NSDate, NSError, NSMutableArray, NSMutableSet, NSNumber, NSString, NSTimer, OSIDebuggerTool, OSIPersonalizedManifests, OSIPowerButtonMonitor, OSIPowerController, OSInstallOptions, PKDistributionController, SMPaths;
 @protocol OSInstallControllerDelegate, OS_dispatch_queue;
 
 @interface OSInstallController : NSObject <OSIPowerControllerDelegate, OSIPowerButtonMonitorDelegate, SKManagerListener>
@@ -53,6 +53,8 @@
     OSIDebuggerTool *_osiDebuggerTool;
     NSMutableArray *_distControllers;
     NSMutableArray *_distContainers;
+    NSMutableArray *_productTypesToInstallInOrder;
+    NSMutableSet *_disabledDistributionControllers;
     NSMutableArray *_thirdPartyProductsToInstall;
     PKDistributionController *_firmwareDistributionController;
     NSMutableArray *_customizationOptions;
@@ -66,6 +68,8 @@
 @property int numOfCPIOExtractionRetries; // @synthesize numOfCPIOExtractionRetries=_numOfCPIOExtractionRetries;
 @property(retain) PKDistributionController *firmwareDistributionController; // @synthesize firmwareDistributionController=_firmwareDistributionController;
 @property(retain) NSMutableArray *thirdPartyProductsToInstall; // @synthesize thirdPartyProductsToInstall=_thirdPartyProductsToInstall;
+@property(retain) NSMutableSet *disabledDistributionControllers; // @synthesize disabledDistributionControllers=_disabledDistributionControllers;
+@property(retain) NSMutableArray *productTypesToInstallInOrder; // @synthesize productTypesToInstallInOrder=_productTypesToInstallInOrder;
 @property(retain) NSMutableArray *distContainers; // @synthesize distContainers=_distContainers;
 @property(retain) NSMutableArray *distControllers; // @synthesize distControllers=_distControllers;
 @property(retain) OSIDebuggerTool *osiDebuggerTool; // @synthesize osiDebuggerTool=_osiDebuggerTool;

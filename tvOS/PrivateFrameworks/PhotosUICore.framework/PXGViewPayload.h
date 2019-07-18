@@ -8,15 +8,15 @@
 
 #import <PhotosUICore/NSCopying-Protocol.h>
 
-@protocol NSCopying;
+@protocol PXGViewUserData;
 
 @interface PXGViewPayload : NSObject <NSCopying>
 {
     Class _viewClass;
-    id <NSCopying> _userData;
+    id <PXGViewUserData> _userData;
 }
 
-@property(readonly, copy, nonatomic) id <NSCopying> userData; // @synthesize userData=_userData;
+@property(readonly, copy, nonatomic) id <PXGViewUserData> userData; // @synthesize userData=_userData;
 @property(readonly, nonatomic) Class viewClass; // @synthesize viewClass=_viewClass;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

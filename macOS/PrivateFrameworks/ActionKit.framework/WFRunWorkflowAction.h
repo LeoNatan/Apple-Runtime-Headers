@@ -8,18 +8,15 @@
 
 #import <ActionKit/WFWorkflowControllerDelegate-Protocol.h>
 
-@class NSString, WFWorkflow, WFWorkflowController;
+@class NSString, WFWorkflowController;
 
 @interface WFRunWorkflowAction : WFAction <WFWorkflowControllerDelegate>
 {
-    WFWorkflow *_runningWorkflow;
     WFWorkflowController *_workflowController;
 }
 
 @property(nonatomic) __weak WFWorkflowController *workflowController; // @synthesize workflowController=_workflowController;
-@property(nonatomic) __weak WFWorkflow *runningWorkflow; // @synthesize runningWorkflow=_runningWorkflow;
 - (void).cxx_destruct;
-- (id)appIdentifier;
 - (id)workflowController:(id)arg1 userInterfaceForAction:(id)arg2;
 - (BOOL)workflowController:(id)arg1 handleUnsupportedEnvironmentForAction:(id)arg2 currentState:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)workflowController:(id)arg1 handleUnsupportedUserInterfaceForAction:(id)arg2 currentState:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -28,6 +25,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)finishRunningWithError:(id)arg1;
 - (void)cancel;
+- (void)stop;
 - (void)runWorkflowWithInput:(id)arg1;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 - (void)getHandoffWorkflowControllerState:(CDUnknownBlockType)arg1;

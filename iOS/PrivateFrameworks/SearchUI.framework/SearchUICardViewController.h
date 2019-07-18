@@ -11,7 +11,6 @@
 
 @interface SearchUICardViewController : UIViewController
 {
-    SFCard *_card;
     NUIContainerBoxView *_loadingView;
     UIActivityIndicatorView *_loadingSpinner;
     TLKLabel *_loadingLabel;
@@ -26,13 +25,13 @@
 @property(retain, nonatomic) TLKLabel *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
 @property(retain, nonatomic) UIActivityIndicatorView *loadingSpinner; // @synthesize loadingSpinner=_loadingSpinner;
 @property(retain, nonatomic) NUIContainerBoxView *loadingView; // @synthesize loadingView=_loadingView;
-@property(retain, nonatomic) SFCard *card; // @synthesize card=_card;
 - (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (id)testingTableViewController;
 @property(nonatomic) _Bool threeDTouchEnabled;
 - (void)updateWithCardSections:(id)arg1;
 - (void)updateTimerAndCardSections:(id)arg1;
+@property(retain, nonatomic) SFCard *card;
 - (void)cardViewDidAppear;
 - (void)prepareLoadingView;
 - (void)displayLoadingViewAfterDelay:(double)arg1 withSpinner:(_Bool)arg2;

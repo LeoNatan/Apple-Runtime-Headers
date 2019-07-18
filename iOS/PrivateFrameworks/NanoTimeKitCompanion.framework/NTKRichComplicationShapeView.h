@@ -8,29 +8,34 @@
 
 #import <NanoTimeKitCompanion/CLKMonochromeComplicationView-Protocol.h>
 
-@class CAGradientLayer, CAShapeLayer, CLKDevice, NSArray, NSString;
+@class CAGradientLayer, CALayer, CAShapeLayer, CLKDevice, NSArray, NSString;
 @protocol CLKMonochromeFilterProvider;
 
 @interface NTKRichComplicationShapeView : UIView <CLKMonochromeComplicationView>
 {
     CLKDevice *_device;
     struct CGRect _previousBounds;
+    _Bool _willUnfreezeForTransaction;
+    UIView *_filterView;
+    CALayer *_freezeLayer;
     CAShapeLayer *_shapeLayer;
     CAGradientLayer *_gradientLayer;
-    NSArray *_gradientLocations;
-    _Bool _allowsOverflowProgress;
-    id <CLKMonochromeFilterProvider> _filterProvider;
     NSArray *_gradientColors;
+    NSArray *_filteredGradientColors;
+    NSArray *_gradientLocations;
+    double _monochromeFraction;
+    id <CLKMonochromeFilterProvider> _filterProvider;
     double _progress;
     long long _filterStyle;
 }
 
 @property(readonly, nonatomic) long long filterStyle; // @synthesize filterStyle=_filterStyle;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
-@property(nonatomic) _Bool allowsOverflowProgress; // @synthesize allowsOverflowProgress=_allowsOverflowProgress;
 @property(retain, nonatomic) NSArray *gradientColors; // @synthesize gradientColors=_gradientColors;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
+- (id)shapeLayer;
+- (id)gradientLayer;
 - (id)device;
 - (_Bool)_shouldReverseGradient;
 - (struct CGPath *)_generatePath;
@@ -39,12 +44,14 @@
 - (double)_shapeLineWidth;
 - (void)_setupGradientLayer:(id)arg1;
 - (void)_setupShapeLayer:(id)arg1;
+- (id)_shapeStrokeColor;
 - (void)_updateGradient;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)_updatePath;
 - (struct CGPoint)pointAtProgress:(float)arg1;
 - (void)setGradientColors:(id)arg1 locations:(id)arg2;
+- (void)unfreezeForTransaction;
 - (void)layoutSubviews;
 - (id)initForDevice:(id)arg1 withFilterStyle:(long long)arg2;
 

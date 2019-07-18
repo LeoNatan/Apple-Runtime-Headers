@@ -18,6 +18,7 @@
     NSString *_identifier;
     NSString *_informativeText;
     NSString *_logKey;
+    NSString *_centerBundleIdentifier;
     NSString *_subtitle;
     NSString *_title;
     NSMutableDictionary *_userInfo;
@@ -40,6 +41,7 @@
 @property(retain) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) NSString *subtitle; // @synthesize subtitle=_subtitle;
+@property(retain) NSString *centerBundleIdentifier; // @synthesize centerBundleIdentifier=_centerBundleIdentifier;
 @property(retain) NSString *logKey; // @synthesize logKey=_logKey;
 @property(retain) NSString *informativeText; // @synthesize informativeText=_informativeText;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;

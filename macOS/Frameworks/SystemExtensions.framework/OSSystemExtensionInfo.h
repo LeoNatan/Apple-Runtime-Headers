@@ -31,6 +31,7 @@
     NSURL *_containingAppURL;
     NSURL *_stagedBundleURL;
     NSString *_stagedCdhash;
+    NSString *_stateString;
     NSDictionary *_additionalLaunchdPlistEntries;
 }
 
@@ -38,6 +39,7 @@
 @property BOOL modified; // @synthesize modified=_modified;
 @property BOOL rebootRequired; // @synthesize rebootRequired=_rebootRequired;
 @property(retain) NSDictionary *additionalLaunchdPlistEntries; // @synthesize additionalLaunchdPlistEntries=_additionalLaunchdPlistEntries;
+@property(retain) NSString *stateString; // @synthesize stateString=_stateString;
 @property BOOL active; // @synthesize active=_active;
 @property(retain) NSString *stagedCdhash; // @synthesize stagedCdhash=_stagedCdhash;
 @property(retain) NSURL *stagedBundleURL; // @synthesize stagedBundleURL=_stagedBundleURL;

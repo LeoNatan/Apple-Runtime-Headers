@@ -13,7 +13,7 @@
 #import <AvatarUI/UICollectionViewDelegate-Protocol.h>
 #import <AvatarUI/UICollectionViewDelegateFlowLayout-Protocol.h>
 
-@class AVTAvatarListImageItem, AVTCenteringCollectionViewDelegate, AVTEngagementLayout, AVTFunCamAvatarPickerCollectionViewLayout, AVTFunCamAvatarPickerStyle, AVTRenderingScope, AVTUIEnvironment, NSArray, NSString, UICollectionView, UICollectionViewFlowLayout, UIView, _AVTAvatarRecordImageProvider;
+@class AVTAvatarListImageItem, AVTCenteringCollectionViewDelegate, AVTFunCamAvatarPickerCollectionViewLayout, AVTFunCamAvatarPickerStyle, AVTRenderingScope, AVTUIEnvironment, NSArray, NSString, UICollectionView, UICollectionViewFlowLayout, UIView, _AVTAvatarRecordImageProvider;
 @protocol AVTAvatarPickerDelegate, AVTAvatarRecord, AVTAvatarStoreInternal, AVTPresenterDelegate, AVTUILogger, NSObject;
 
 @interface AVTFunCamAvatarPickerController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, AVTViewSessionProviderDelegate, AVTObjectViewController, AVTAvatarPicker>
@@ -22,11 +22,11 @@
     id <AVTAvatarPickerDelegate> avatarPickerDelegate;
     unsigned long long _mode;
     AVTFunCamAvatarPickerStyle *_style;
-    UIView *_container;
     UICollectionView *_collectionView;
-    UIView *_listBottomClippingView;
+    UIView *_titlesContainer;
+    UICollectionView *_titlesCollectionView;
+    UIView *_titlesClippingView;
     id <AVTAvatarRecord> _selectedAvatarRecord;
-    AVTEngagementLayout *_engagementLayout;
     AVTFunCamAvatarPickerCollectionViewLayout *_listLayout;
     UICollectionViewFlowLayout *_gridLayout;
     AVTCenteringCollectionViewDelegate *_centeringDelegate;
@@ -63,12 +63,12 @@
 @property(retain, nonatomic) AVTCenteringCollectionViewDelegate *centeringDelegate; // @synthesize centeringDelegate=_centeringDelegate;
 @property(retain, nonatomic) UICollectionViewFlowLayout *gridLayout; // @synthesize gridLayout=_gridLayout;
 @property(retain, nonatomic) AVTFunCamAvatarPickerCollectionViewLayout *listLayout; // @synthesize listLayout=_listLayout;
-@property(retain, nonatomic) AVTEngagementLayout *engagementLayout; // @synthesize engagementLayout=_engagementLayout;
 @property(retain, nonatomic) id <AVTAvatarRecord> selectedAvatarRecord; // @synthesize selectedAvatarRecord=_selectedAvatarRecord;
 @property(nonatomic) struct CGRect lastUpdateViewBounds; // @synthesize lastUpdateViewBounds=_lastUpdateViewBounds;
-@property(retain, nonatomic) UIView *listBottomClippingView; // @synthesize listBottomClippingView=_listBottomClippingView;
+@property(retain, nonatomic) UIView *titlesClippingView; // @synthesize titlesClippingView=_titlesClippingView;
+@property(retain, nonatomic) UICollectionView *titlesCollectionView; // @synthesize titlesCollectionView=_titlesCollectionView;
+@property(retain, nonatomic) UIView *titlesContainer; // @synthesize titlesContainer=_titlesContainer;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-@property(retain, nonatomic) UIView *container; // @synthesize container=_container;
 @property(copy, nonatomic) AVTFunCamAvatarPickerStyle *style; // @synthesize style=_style;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <AVTAvatarPickerDelegate> avatarPickerDelegate; // @synthesize avatarPickerDelegate;
@@ -79,6 +79,7 @@
 - (void)sessionProviderDidEndCameraSession:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
@@ -99,8 +100,9 @@
 - (void)reloadData;
 - (void)startObservingChangesIfNeeded;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)updateClippingViewMask;
+- (void)updateTitlesClippingViewMask;
 - (void)buildCollectionView;
+- (id)buildTitlesCollectionViewLayout;
 - (id)buildCollectionViewLayout;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLayoutSubviews;

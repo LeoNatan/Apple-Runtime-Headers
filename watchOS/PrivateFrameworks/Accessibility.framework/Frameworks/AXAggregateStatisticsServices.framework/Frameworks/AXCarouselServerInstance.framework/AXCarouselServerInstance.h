@@ -11,12 +11,14 @@
 @interface AXCarouselServerInstance : NSObject
 {
     _Bool _systemAppServerRunning;
+    _Bool _voiceOverIsEnabled;
     AXCarouselServiceProvider *_serviceProvider;
     AXIPCServer *_server;
 }
 
 + (id)sharedInstance;
 + (void)initialize;
+@property(nonatomic) _Bool voiceOverIsEnabled; // @synthesize voiceOverIsEnabled=_voiceOverIsEnabled;
 @property(retain, nonatomic) AXIPCServer *server; // @synthesize server=_server;
 @property(nonatomic, getter=isSystemAppServerRunning) _Bool systemAppServerRunning; // @synthesize systemAppServerRunning=_systemAppServerRunning;
 @property(retain, nonatomic) AXCarouselServiceProvider *serviceProvider; // @synthesize serviceProvider=_serviceProvider;
@@ -29,9 +31,11 @@
 - (id)_canShowNotificationCenter:(id)arg1;
 - (id)_isNotificationCenterVisible:(id)arg1;
 - (id)_systemAppPID:(id)arg1;
+- (void)_voiceOverStatusChanged;
 - (void)_startSystemAppServerIfNeeded;
 - (_Bool)_shouldStartupSystemServer;
 - (void)_updateAccessibilityProductStatus;
+- (_Bool)_supportsSiriSpeaks;
 - (void)dealloc;
 - (id)init;
 

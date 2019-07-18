@@ -24,10 +24,6 @@
 - (void)drawForPage:(id)arg1 withBox:(int)arg2 active:(_Bool)arg3 inContext:(struct CGContext *)arg4;
 - (void)setForceBreaks:(_Bool)arg1;
 - (_Bool)forceBreaks;
-- (void)setInactiveColor:(id)arg1;
-- (id)inactiveColor;
-- (void)setActiveColor:(id)arg1;
-- (id)activeColor;
 - (id)rtfdData;
 - (id)webArchive;
 - (id)html;
@@ -47,7 +43,7 @@
 - (void)addSelectionNoNormalize:(id)arg1;
 - (struct CGPDFSelection *)cgSelectionForPage:(id)arg1;
 - (id)cgSelectionPages;
-- (struct __CFArray *)cgSelections;
+- (const struct __CFArray *)cgSelections;
 - (void)addCGSelection:(struct CGPDFSelection *)arg1 forPage:(id)arg2;
 - (id)boundsArrayForPage:(id)arg1;
 - (long long)compare:(id)arg1;

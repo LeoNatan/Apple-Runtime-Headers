@@ -10,6 +10,7 @@
 {
 }
 
+- (id)fmipRegisterInfo;
 - (id)settingsConfiguration;
 - (id)trackingAvoidanceService;
 - (id)privateOwnerSession;

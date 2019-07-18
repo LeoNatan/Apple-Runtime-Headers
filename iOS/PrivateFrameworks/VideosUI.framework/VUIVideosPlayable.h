@@ -22,12 +22,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSURL *previewArtwork; // @synthesize previewArtwork=_previewArtwork;
 @property(readonly, nonatomic) NSString *bookmarkID; // @synthesize bookmarkID=_bookmarkID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isSharedPurchase) _Bool sharedPurchase;
 @property(readonly, nonatomic) NSNumber *frequencyOfAgeConfirmation;
 @property(readonly, nonatomic) NSNumber *requiredAgeForPlayback;
 @property(readonly, nonatomic) NSURL *tvAppDeeplinkURL;
 @property(readonly, nonatomic) VUIExtrasInfo *extrasInfo;
 @property(readonly, nonatomic) NSString *referenceID;
 @property(readonly, nonatomic) _Bool disableScrubbing;
+@property(readonly, nonatomic) NSString *externalServiceID;
 @property(readonly, nonatomic) NSString *liveStreamServiceID;
 @property(readonly, nonatomic) NSDictionary *tokenServerParams;
 @property(readonly, nonatomic) NSURL *stopURL;
@@ -46,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *externalID;
 @property(readonly, nonatomic) NSDate *resumeTimeTimeStamp;
 @property(readonly, nonatomic) NSNumber *resumeTime;
-@property(readonly, nonatomic) NSNumber *ratingValue;
 @property(readonly, nonatomic) NSString *mediaType;
 @property(readonly, nonatomic) NSURL *scrubVideoURL;
 @property(readonly, nonatomic) NSString *buyParams;

@@ -19,6 +19,7 @@
 @property(retain, nonatomic) __UIDiffableDataSource *impl; // @synthesize impl=_impl;
 - (void).cxx_destruct;
 - (_Bool)_isDiffableDataSource;
+- (void)_applySnapshot:(id)arg1 animatingDifferences:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
@@ -26,6 +27,7 @@
 - (id)indexPathForItemIdentifier:(id)arg1;
 - (id)itemIdentifierForIndexPath:(id)arg1;
 @property(nonatomic) long long defaultRowAnimation;
+- (void)applySnapshot:(id)arg1 animatingDifferences:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)applySnapshot:(id)arg1 animatingDifferences:(_Bool)arg2;
 - (id)snapshot;
 @property(readonly, copy) NSString *description;

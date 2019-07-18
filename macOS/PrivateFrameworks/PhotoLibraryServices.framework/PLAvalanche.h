@@ -34,14 +34,15 @@
 + (unsigned long long)_calculateStackAssetForAssetCount:(unsigned long long)arg1 autoPicks:(id)arg2 userFavorites:(id)arg3;
 + (id)_assetAmongAssets:(id)arg1 fromIndexes:(id)arg2 excludingIndexes:(id)arg3;
 + (id)_visibleIndexesAmongAssets:(id)arg1 fromUserFavoriteIndexes:(id)arg2 stackIndex:(unsigned long long)arg3;
++ (BOOL)_allowMPSmodificationForBurstChangesOnLibrary:(id)arg1;
 + (void)_updateMembershipForAssets:(id)arg1 autoPicks:(id)arg2 stackAsset:(id)arg3 userFavorites:(id)arg4 deleteNonPicks:(BOOL)arg5 allowDissolve:(BOOL)arg6 inLibrary:(id)arg7;
 + (id)_updatePropertiesForAssets:(id)arg1 autoPicks:(id)arg2 stackAsset:(id)arg3 userFavorites:(id)arg4 deleteNonPicks:(BOOL)arg5 setFirstPick:(BOOL)arg6 allowDissolve:(BOOL)arg7;
 + (void)_handleUpdatesForContextWillSave:(id)arg1;
 + (id)revalidateAvalancheAssets:(id)arg1 inLibrary:(id)arg2 deleteNonPicks:(BOOL)arg3 allowDissolve:(BOOL)arg4;
-+ (void)disolveBurstForAssets:(id)arg1;
++ (void)disolveBurstForAssets:(id)arg1 permanently:(BOOL)arg2;
 + (BOOL)isValidBurstWithAssets:(id)arg1;
-+ (unsigned long long)countForAvalancheUUID:(id)arg1 inLibrary:(id)arg2;
-+ (id)assetsWithAvalancheUUID:(id)arg1 inManagedObjectContext:(id)arg2;
++ (unsigned long long)countForNonMPSAssetsWithAvalancheUUID:(id)arg1 inLibrary:(id)arg2;
++ (id)nonMPSAssetsWithAvalancheUUID:(id)arg1 inManagedObjectContext:(id)arg2;
 @property(copy, nonatomic, setter=_setCompletionHandler:) CDUnknownBlockType _completionHandler; // @synthesize _completionHandler=__completionHandler;
 @property(retain, nonatomic, setter=_setAnOldPick:) PLManagedAsset *_anOldPick; // @synthesize _anOldPick=__anOldPick;
 @property(retain, nonatomic, setter=_setANewPick:) PLManagedAsset *_aNewPick; // @synthesize _aNewPick=__aNewPick;

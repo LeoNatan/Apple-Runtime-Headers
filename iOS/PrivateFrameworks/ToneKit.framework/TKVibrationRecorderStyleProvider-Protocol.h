@@ -17,6 +17,7 @@
 @property(readonly, nonatomic) UIColor *vibrationRecorderRippleViewBackgroundColor;
 @property(readonly, nonatomic) double vibrationRecorderProgressViewAccessibilityAdditionalHeight;
 @property(readonly, nonatomic) UIImage *vibrationRecorderProgressViewResizableDotImage;
+@property(readonly, nonatomic) UIColor *vibrationRecorderProgressViewDotTintColor;
 @property(readonly, nonatomic) double vibrationRecorderProgressViewDotHorizontalInset;
 @property(readonly, nonatomic) UIColor *vibrationRecorderProgressViewTrackColor;
 @property(readonly, nonatomic) double vibrationRecorderProgressViewHeight;

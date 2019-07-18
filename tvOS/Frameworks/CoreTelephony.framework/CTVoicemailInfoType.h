@@ -32,7 +32,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToCTVoicemailInfoType:(id)arg1;
-- (id)initWithParam:(id)arg1 available:(_Bool)arg2 count:(id)arg3 isNetworkOriginated:(_Bool)arg4;
+- (id)initWithParam:(id)arg1 available:(_Bool)arg2 count:(id)arg3 isNetworkOriginated:(_Bool)arg4 isVoiceMailMWI:(_Bool)arg5;
 - (id)init;
 - (id)description;
 

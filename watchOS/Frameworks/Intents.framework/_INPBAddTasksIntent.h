@@ -18,6 +18,7 @@
         unsigned int priority:1;
         unsigned int taskReference:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     _INPBContactEventTrigger *_contactEventTrigger;
     _INPBIntent *_intent;
     _INPBIntentMetadata *_intentMetadata;
@@ -33,6 +34,7 @@
 + (_Bool)supportsSecureCoding;
 + (Class)taskTitlesType;
 + (Class)targetTaskListMembersType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBTemporalEventTrigger *temporalEventTrigger; // @synthesize temporalEventTrigger=_temporalEventTrigger;
 @property(copy, nonatomic) NSArray *taskTitles; // @synthesize taskTitles=_taskTitles;
 @property(nonatomic) int taskReference; // @synthesize taskReference=_taskReference;

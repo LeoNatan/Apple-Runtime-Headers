@@ -69,6 +69,7 @@
 - (id)newTrashCollection;
 - (id)newFavoritesCollection;
 - (id)newCollectionWithItemID:(id)arg1;
+- (id)trashCollectionForProviderDomain:(id)arg1;
 - (id)collectionForFolderItem:(id)arg1;
 - (id)rootCollectionForProviderDomain:(id)arg1;
 - (id)rootCollectionForProvider:(id)arg1;

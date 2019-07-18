@@ -14,7 +14,7 @@
 {
 }
 
-- (id)modifyDOM:(id)arg1 context:(id)arg2;
+- (void)modifyDOM:(id)arg1 context:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

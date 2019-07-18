@@ -25,6 +25,7 @@
 @property(readonly) HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly) HDXPCClient *XPCClient; // @synthesize XPCClient=_XPCClient;
 - (void).cxx_destruct;
+- (_Bool)verifyHealthRecordsPermissionGrantedWithError:(id *)arg1;
 - (id)sourceVersionWithDaemon:(id)arg1;
 - (_Bool)hasPrivateMetadataAccess;
 - (_Bool)shouldBypassAuthorization;

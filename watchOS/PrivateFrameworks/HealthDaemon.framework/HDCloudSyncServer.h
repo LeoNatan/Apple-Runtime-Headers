@@ -21,6 +21,7 @@
 - (id)remote_disableCloudSyncAndDeleteAllCloudDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)remote_fetchCloudSyncStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (id)remote_fetchCloudDescriptionWithCompletion:(CDUnknownBlockType)arg1;
+- (id)remote_forceCloudSyncDataUploadForProfileWithCompletion:(CDUnknownBlockType)arg1;
 - (id)remote_forceCloudResetWithCompletion:(CDUnknownBlockType)arg1;
 - (id)remote_forceCloudSyncWithOptions:(unsigned int)arg1 reason:(int)arg2 completion:(CDUnknownBlockType)arg3;
 

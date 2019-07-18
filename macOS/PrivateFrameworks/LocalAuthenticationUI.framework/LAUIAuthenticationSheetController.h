@@ -38,7 +38,6 @@
     NSString *_scPamService;
     NSData *_scPamToken;
     BOOL _shouldExpandOnCardInsert;
-    NSTextField *_engineeringLabel;
     BOOL _canAuthenticateAsAnyAdmin;
     BOOL _enableUserNameField;
     BOOL _fallbackToAppPassword;
@@ -66,6 +65,8 @@
     NSData *_pamToken;
     NSDictionary *_backoffStateDict;
     long long _authorizationType;
+    NSString *_callerIconBundlePath;
+    NSString *_localizedCallerName;
     NSImageView *_appIcon;
     NSImageView *_authIcon;
     NSTextField *_authTitleLabel;
@@ -98,6 +99,8 @@
 @property(nonatomic) __weak NSTextField *authTitleLabel; // @synthesize authTitleLabel=_authTitleLabel;
 @property(nonatomic) __weak NSImageView *authIcon; // @synthesize authIcon=_authIcon;
 @property(nonatomic) __weak NSImageView *appIcon; // @synthesize appIcon=_appIcon;
+@property(copy, nonatomic) NSString *localizedCallerName; // @synthesize localizedCallerName=_localizedCallerName;
+@property(copy, nonatomic) NSString *callerIconBundlePath; // @synthesize callerIconBundlePath=_callerIconBundlePath;
 @property(readonly) long long authorizationType; // @synthesize authorizationType=_authorizationType;
 @property(retain, nonatomic) NSDictionary *backoffStateDict; // @synthesize backoffStateDict=_backoffStateDict;
 @property(retain, nonatomic) NSData *pamToken; // @synthesize pamToken=_pamToken;

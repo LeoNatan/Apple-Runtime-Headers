@@ -39,6 +39,7 @@
 - (void)receivedDragGesture:(id)arg1;
 - (void)doubleClickOnPreviewContent;
 - (void)receivedDoubleClickGesture:(id)arg1;
+- (void)updateFullScreenFromMagnification:(double)arg1;
 - (BOOL)windowSupportsRemoteViews;
 @property(readonly) id <QLUIServiceBaseHostViewControllerProtocol> hostViewController;
 - (void)loadView;

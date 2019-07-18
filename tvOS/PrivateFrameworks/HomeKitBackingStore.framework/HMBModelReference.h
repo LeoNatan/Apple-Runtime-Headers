@@ -9,17 +9,14 @@
 #import <HomeKitBackingStore/NSSecureCoding-Protocol.h>
 
 @class HMBLocalZone, NSUUID;
-@protocol HMBLocalZoneID;
 
 @interface HMBModelReference : HMFObject <NSSecureCoding>
 {
     NSUUID *_hmbModelID;
     HMBLocalZone *_localZone;
-    id <HMBLocalZoneID> _zoneID;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) id <HMBLocalZoneID> zoneID; // @synthesize zoneID=_zoneID;
 @property(nonatomic) __weak HMBLocalZone *localZone; // @synthesize localZone=_localZone;
 @property(retain, nonatomic) NSUUID *hmbModelID; // @synthesize hmbModelID=_hmbModelID;
 - (void).cxx_destruct;

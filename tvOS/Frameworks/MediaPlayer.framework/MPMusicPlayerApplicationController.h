@@ -38,7 +38,7 @@
 - (void)endGeneratingPlaybackNotifications;
 - (void)beginGeneratingPlaybackNotifications;
 - (void)prepareToPlay;
-- (id)_init;
+- (id)_initWithClientIdentifier:(id)arg1;
 - (void)_queueDidChangeWithResponse:(id)arg1;
 
 @end

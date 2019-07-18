@@ -24,6 +24,7 @@
 + (void)_getSize:(out struct CGSize *)arg1 titleFrame:(out struct CGRect *)arg2 iconFrame:(out struct CGRect *)arg3 forConfiguration:(id)arg4 title:(id)arg5;
 + (struct CGSize)sizeWithConfiguration:(id)arg1;
 + (struct CGSize)_sizeOfTitle:(id)arg1 withFont:(struct NSFont *)arg2;
++ (id)roundedCornerMaskImage:(CDStruct_2bd92d94)arg1 size:(struct CGSize)arg2;
 + (id)buttonSizeCache;
 + (id)titleSizeCache;
 @property(retain, nonatomic) UXLabel *titleLabel; // @synthesize titleLabel=_titleLabel;

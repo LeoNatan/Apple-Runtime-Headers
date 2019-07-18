@@ -7,9 +7,12 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (FPFSHelpers)
-+ (id)fp_homeDirectoryForUserID:(unsigned int)arg1;
-+ (id)fp_homeDirectory;
 + (id)fp_supportDirectory;
++ (id)fp_cloudStorageDirectory;
++ (id)fp_tempDirectory;
++ (id)fp_homeDirectoryForUserID:(unsigned int)arg1;
++ (id)fp_homeDirectoryPathForUserID:(unsigned int)arg1;
++ (id)fp_homeDirectory;
 + (void)fp_createEmptyTempPackageWithName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)fp_createEmptyTempFileWithName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)_fp_createInTempDirectoryWithName:(id)arg1 creationBlock:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
@@ -32,10 +35,12 @@
 - (id)fp_existingURLOfChildWithName:(id)arg1 notMatchingFileID:(id)arg2;
 - (id)fp_existingURLOfChildWithName:(id)arg1;
 - (CDUnknownBlockType)fp_defaultMoverBlock;
+- (id)fp_matchesUbiquitousHeuristics;
 - (_Bool)fp_matchesFileProviderHeuristics:(unsigned int)arg1;
+- (_Bool)fp_isInSyncableRootFast;
 - (id)fp_fpfsRootURL;
 - (_Bool)fp_matchesAlternateContentsURL:(id)arg1;
-- (_Bool)fp_matchesLocalStorageURL:(id)arg1;
+- (_Bool)fp_matchesApplicationContainerURL:(id)arg1;
 - (_Bool)fp_isAppInboxOrDescendants;
 - (_Bool)_fp_partOfAppInboxWithURLComponents:(id)arg1;
 - (id)_fp_componentsRelativeToRoot:(id)arg1;

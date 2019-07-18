@@ -60,7 +60,7 @@ __attribute__((visibility("hidden")))
 - (void)startGridAnimationFromRect:(id)arg1;
 - (void)updateGridLayerFromRect:(id)arg1;
 - (void)updateRectangleLayerFromRect:(id)arg1;
-- (id)yellowColorWithAlpha:(double)arg1;
+- (id)tintColorWithAlpha:(double)arg1;
 - (id)extrudedRectFromRect:(id)arg1;
 - (struct CGPath *)newGridPathFromRect:(id)arg1;
 - (struct CGPath *)newPathFromRect:(id)arg1;

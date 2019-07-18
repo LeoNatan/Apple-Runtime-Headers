@@ -23,7 +23,6 @@
     NSLayoutConstraint *__contentViewBottomConstraint;
     NSArray *_compactSizeClassHorizontalConstraints;
     NSArray *_regularSizeClassHorizontalConstraints;
-    _Bool _displayBottomSeparator;
     _Bool _displaysBottomSeparator;
     _Bool __accessbilitySizeCategory;
     INKContent *_content;
@@ -37,7 +36,6 @@
 @property(nonatomic, getter=_isAccessbilitySizeCategory) _Bool _accessbilitySizeCategory; // @synthesize _accessbilitySizeCategory=__accessbilitySizeCategory;
 @property(copy, nonatomic) INKContent *content; // @synthesize content=_content;
 @property(nonatomic) _Bool displaysBottomSeparator; // @synthesize displaysBottomSeparator=_displaysBottomSeparator;
-@property(nonatomic) _Bool displayBottomSeparator; // @synthesize displayBottomSeparator=_displayBottomSeparator;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 - (void).cxx_destruct;
 - (void)willMoveToWindow:(id)arg1;

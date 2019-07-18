@@ -8,11 +8,12 @@
 
 #import <SyncedDefaults/SYDClientProtocol-Protocol.h>
 
-@class NSData, NSObject, NSString, NSURL, NSXPCConnection;
+@class NSObject, NSString, NSURL, NSXPCConnection;
 @protocol OS_dispatch_queue, SYDDaemonProtocol;
 
 @interface SYDClientToDaemonConnection : SYDRemotePreferencesSource <SYDClientProtocol>
 {
+    _Bool _forceNilChangeDictionaryResponse;
     NSString *_storeIdentifier;
     long long _storeType;
     NSXPCConnection *_xpcConnection;
@@ -23,6 +24,7 @@
 
 + (void)processAccountChangesWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)changeTokenURLForStoreIdentifier:(id)arg1;
+@property(nonatomic) _Bool forceNilChangeDictionaryResponse; // @synthesize forceNilChangeDictionaryResponse=_forceNilChangeDictionaryResponse;
 @property(retain, nonatomic) NSURL *changeTokenURL; // @synthesize changeTokenURL=_changeTokenURL;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -51,7 +53,8 @@
 - (void)processChangeDictionary:(id)arg1;
 - (unsigned char)synchronizeForced:(unsigned char)arg1;
 - (unsigned char)synchronize;
-@property(copy, nonatomic) NSData *changeToken;
+- (id)changeToken;
+- (void)setChangeToken:(id)arg1;
 - (struct __CFDictionary *)copyDictionary;
 - (id)dictionaryRepresentation;
 - (void *)getValueForKey:(struct __CFString *)arg1;

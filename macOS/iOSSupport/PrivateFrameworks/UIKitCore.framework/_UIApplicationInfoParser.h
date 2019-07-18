@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     int _ignoredOverrides;
     long long _requestedStatusBarStyle;
     long long _interfaceOrientation;
+    long long _launchingInterfaceOrientationForSpringBoard;
     unsigned long long _supportedInterfaceOrientations;
     long long _backgroundStyle;
     long long _whitePointAdaptivityStyle;
@@ -56,6 +57,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int ignoredOverrides; // @synthesize ignoredOverrides=_ignoredOverrides;
 @property(readonly, nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(readonly, nonatomic) unsigned long long supportedInterfaceOrientations; // @synthesize supportedInterfaceOrientations=_supportedInterfaceOrientations;
+@property(readonly, nonatomic) long long launchingInterfaceOrientationForSpringBoard; // @synthesize launchingInterfaceOrientationForSpringBoard=_launchingInterfaceOrientationForSpringBoard;
 @property(readonly, nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(readonly, nonatomic) long long requestedStatusBarStyle; // @synthesize requestedStatusBarStyle=_requestedStatusBarStyle;
 - (void).cxx_destruct;

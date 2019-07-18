@@ -64,6 +64,7 @@
 }
 
 + (_Bool)_pasteboardHasStrings;
++ (id)whitelistedDictationDictionaryFromMetadata:(id)arg1;
 @property(nonatomic) _Bool shouldStartUndoGroup; // @synthesize shouldStartUndoGroup=_shouldStartUndoGroup;
 @property(nonatomic) int currentUndoGroupType; // @synthesize currentUndoGroupType=_currentUndoGroupType;
 @property(nonatomic) struct _NSRange previousSelectedRange; // @synthesize previousSelectedRange=_previousSelectedRange;
@@ -110,7 +111,7 @@
 - (void)decreaseSize:(id)arg1;
 - (void)increaseSize:(id)arg1;
 - (void)_pasteRawAttributedString:(id)arg1 asRichText:(_Bool)arg2;
-- (void)_pasteAttributedString:(id)arg1 toRange:(id)arg2 animator:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_pasteAttributedString:(id)arg1 toRange:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_pasteAttributedString:(id)arg1 pasteAsRichText:(_Bool)arg2;
 - (id)_attributedStringForInsertionOfAttributedString:(id)arg1;
 - (void)pasteItemProviders:(id)arg1;

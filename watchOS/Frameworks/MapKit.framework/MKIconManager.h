@@ -50,7 +50,6 @@
 + (struct CGColor *)newHaloColorForStyleAttributes:(id)arg1 forScale:(float)arg2;
 + (struct CGColor *)newFillColorForStyleAttributes:(id)arg1 forScale:(float)arg2;
 + (id)iconManager;
-+ (void)setUseSharedCaches;
 + (void)setDiskCacheURL:(id)arg1;
 
 @end

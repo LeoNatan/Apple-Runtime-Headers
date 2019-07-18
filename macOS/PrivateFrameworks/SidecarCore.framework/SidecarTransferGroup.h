@@ -13,10 +13,12 @@ __attribute__((visibility("hidden")))
 {
     long long _completedItems;
     NSArray *_mutableItems;
+    long long _type;
 }
 
 - (void).cxx_destruct;
 - (_Bool)handleMessage:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic) long long type;
 @property(readonly, nonatomic) NSArray *items;
 @property(readonly, nonatomic, getter=isComplete) _Bool complete;
 - (id)initWithMessage:(id)arg1;

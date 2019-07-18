@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSString, UIPasteboard;
-@protocol _UIServicesMenuDataProviding;
+@class NSString, UIPasteboard;
+@protocol UINSCopyConfiguration, _UIServicesMenuDataProviding;
 
 @protocol _UIServicesMenuDataProviding
-- (NSArray *)_objectsForServicesAndSharing;
+@property(readonly, nonatomic) id <UINSCopyConfiguration> _copyConfigurationForServicesMenu;
 - (BOOL)_readServicesMenuDataFromPasteboard:(UIPasteboard *)arg1;
 - (id <_UIServicesMenuDataProviding>)_servicesMenuProviderForReturnType:(NSString *)arg1;
 @end

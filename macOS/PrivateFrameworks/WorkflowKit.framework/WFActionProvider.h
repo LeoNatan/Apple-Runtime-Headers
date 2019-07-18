@@ -6,10 +6,15 @@
 
 #import <objc/NSObject.h>
 
+@protocol WFActionProviderDelegate;
+
 @interface WFActionProvider : NSObject
 {
+    id <WFActionProviderDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <WFActionProviderDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)deleteCache;
 - (void)updateCache:(CDUnknownBlockType)arg1;
 - (id)createAllAvailableActions;

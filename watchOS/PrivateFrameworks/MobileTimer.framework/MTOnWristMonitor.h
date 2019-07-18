@@ -18,19 +18,22 @@
     MTObserverStore *_observers;
     NSObject<OS_dispatch_queue> *_queue;
     NSDate *_lastOnWristDate;
+    NSDate *_lastOffWristDate;
 }
 
-+ (void)setLastOnWristState:(int)arg1;
-+ (int)lastOnWristState;
 + (id)sharedInstance;
+@property(retain) NSDate *lastOffWristDate; // @synthesize lastOffWristDate=_lastOffWristDate;
 @property(retain) NSDate *lastOnWristDate; // @synthesize lastOnWristDate=_lastOnWristDate;
 - (void).cxx_destruct;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (void)onWristMonitor:(id)arg1 didUpdateOnWristState:(id)arg2 fromState:(id)arg3;
+@property(nonatomic) int lastOnWristState;
 - (_Bool)containsObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (id)isOffWrist;
+- (id)isOnWrist;
 - (id)init;
 
 // Remaining properties

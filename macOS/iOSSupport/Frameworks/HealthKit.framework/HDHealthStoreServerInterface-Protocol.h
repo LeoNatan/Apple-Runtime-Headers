@@ -23,9 +23,6 @@
 - (void)remote_fetchServerURLForAssetType:(NSString *)arg1 completion:(void (^)(NSURL *, NSError *))arg2;
 - (void)remote_getHealthLiteValueForKey:(NSString *)arg1 completion:(void (^)(NSNumber *, NSError *))arg2;
 - (void)remote_setHealthLiteValue:(NSNumber *)arg1 forKey:(NSString *)arg2 completion:(void (^)(BOOL, NSError *))arg3;
-- (void)remote_removeDefaultForKey:(NSString *)arg1 withCompletion:(void (^)(BOOL, NSError *))arg2;
-- (void)remote_setDefaultValue:(id)arg1 forKey:(NSString *)arg2 withCompletion:(void (^)(BOOL, NSError *))arg3;
-- (void)remote_getDefaultForKey:(NSString *)arg1 withHandler:(void (^)(id, NSError *))arg2;
 - (void)remote_setCharacteristic:(id)arg1 forDataType:(HKCharacteristicType *)arg2 handler:(void (^)(BOOL, NSError *))arg3;
 - (void)remote_fetchCharacteristicWithDataType:(HKObjectType *)arg1 handler:(void (^)(id, NSError *))arg2;
 - (void)remote_invalidateActivityAlertSuppressionForIdentifier:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;

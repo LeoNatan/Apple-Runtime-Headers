@@ -34,6 +34,7 @@
 @property(retain, nonatomic) NSNumber *volume; // @synthesize volume=_volume;
 @property(copy, nonatomic) NSSet *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
 - (void).cxx_destruct;
+- (id)modelObjectWithUpdatedMediaProfiles:(id)arg1;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
 - (void)_processPlaybackActionModelUpdated:(id)arg1 message:(id)arg2;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;

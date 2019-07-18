@@ -51,6 +51,7 @@
 - (id)__collectJetsamFallbackLogsWithReason:(id)arg1 compress:(BOOL)arg2;
 - (BOOL)__tarballWithSource:(id)arg1 destination:(id)arg2 error:(id *)arg3;
 - (id)__mostRecentInDirectories:(id)arg1 include:(id)arg2 exclude:(id)arg3 maxAge:(double)arg4;
+- (void)__purgeFilesInDirectory:(id)arg1 matching:(id)arg2 maxAge:(unsigned long long)arg3 maxCount:(unsigned long long)arg4;
 - (id)runDiagnosticsTests:(id)arg1 peer:(id)arg2 update:(CDUnknownBlockType)arg3 reply:(CDUnknownBlockType)arg4;
 - (id)runDiagnostics:(id)arg1 configuration:(id)arg2 update:(CDUnknownBlockType)arg3 error:(out id *)arg4;
 - (id)runDiagnostics:(id)arg1 configuration:(id)arg2 update:(CDUnknownBlockType)arg3 reply:(CDUnknownBlockType)arg4;

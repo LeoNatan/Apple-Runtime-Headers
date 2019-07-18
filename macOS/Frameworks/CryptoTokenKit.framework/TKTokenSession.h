@@ -34,6 +34,7 @@
 - (void)terminate;
 - (void)getAdvertisedItemsWithReply:(CDUnknownBlockType)arg1;
 - (void)objectID:(id)arg1 operation:(long long)arg2 inputData:(id)arg3 algorithms:(id)arg4 parameters:(id)arg5 reply:(CDUnknownBlockType)arg6;
+- (id)errorWithResult:(id)arg1 operation:(id)arg2 forError:(id)arg3;
 - (void)evaluateAccessControl:(id)arg1 forOperation:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)evaluateAuthOperation:(id)arg1 retry:(BOOL)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)finalizeAuthOperation:(id)arg1 evaluatedAuthOperation:(id)arg2 reply:(CDUnknownBlockType)arg3;

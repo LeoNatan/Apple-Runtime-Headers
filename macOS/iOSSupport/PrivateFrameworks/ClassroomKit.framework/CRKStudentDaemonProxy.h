@@ -19,6 +19,7 @@
     long long mConnectionAttempt;
     BOOL mConnecting;
     BOOL _connected;
+    BOOL _userExpectsReconnect;
     long long _maxConnectionAttempts;
 }
 
@@ -26,6 +27,7 @@
 + (void)studentDidAuthenticate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)setActiveStudentIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)studentDaemonConnection;
+@property(nonatomic) BOOL userExpectsReconnect; // @synthesize userExpectsReconnect=_userExpectsReconnect;
 @property(nonatomic, getter=isConnected) BOOL connected; // @synthesize connected=_connected;
 @property(nonatomic) long long maxConnectionAttempts; // @synthesize maxConnectionAttempts=_maxConnectionAttempts;
 - (void).cxx_destruct;

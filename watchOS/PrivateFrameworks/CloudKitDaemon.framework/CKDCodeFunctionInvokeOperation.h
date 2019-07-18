@@ -6,7 +6,7 @@
 
 #import <CloudKitDaemon/CKDDatabaseOperation.h>
 
-@class CKDProtocolTranslator, NSArray, NSData, NSString, PCCKey;
+@class CKDProtocolTranslator, NSArray, NSData, NSString, NSURL, PCCKey;
 
 __attribute__((visibility("hidden")))
 @interface CKDCodeFunctionInvokeOperation : CKDDatabaseOperation
@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSArray *_requestLocalSerializations;
     NSArray *_requestLocalEnvelopes;
     NSData *_permittedRemoteMeasurement;
+    NSURL *_explicitBaseURL;
     NSArray *_requestRecords;
     NSArray *_requestEnvelopes;
     NSData *_serializedArguments;
@@ -44,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *requestRecords; // @synthesize requestRecords=_requestRecords;
 @property(nonatomic) _Bool shouldFetchAssetContentInMemory; // @synthesize shouldFetchAssetContentInMemory=_shouldFetchAssetContentInMemory;
 @property(nonatomic) _Bool local; // @synthesize local=_local;
+@property(copy, nonatomic) NSURL *explicitBaseURL; // @synthesize explicitBaseURL=_explicitBaseURL;
 @property(copy, nonatomic) NSData *permittedRemoteMeasurement; // @synthesize permittedRemoteMeasurement=_permittedRemoteMeasurement;
 @property(copy, nonatomic) NSArray *requestLocalEnvelopes; // @synthesize requestLocalEnvelopes=_requestLocalEnvelopes;
 @property(copy, nonatomic) NSArray *requestLocalSerializations; // @synthesize requestLocalSerializations=_requestLocalSerializations;

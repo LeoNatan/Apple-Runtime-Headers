@@ -27,6 +27,7 @@
 - (id)_queue_region:(id)arg1;
 - (id)_queue_regions;
 - (_Bool)_queue_supportedForOSVersion:(id)arg1 inRegion:(id)arg2 deviceClass:(id)arg3 platform:(id)arg4;
+- (_Bool)shouldPaymentSetupFeaturesUseStrictProductsCheckForRegion:(id)arg1;
 - (_Bool)deviceCheckInDisabledForRegion:(id)arg1;
 - (double)deviceCheckInIntervalForRegion:(id)arg1;
 - (id)marketGeoRegionNotificationNetworkThresholdsForRegion:(id)arg1;

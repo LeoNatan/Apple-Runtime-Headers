@@ -17,6 +17,7 @@
     BOOL _shouldOmitYear;
     BOOL _shouldAvoidOverlapWithSecondaryToolbar;
     BOOL _wantsInlineHeader;
+    BOOL _requiresTitleRenderedAsView;
     BOOL _swapTitleWithSubtitle;
     BOOL _shouldFadeOutWhenReachingTop;
     BOOL _shouldAccomdateAccessibilityButtonLayout;
@@ -57,6 +58,7 @@
 @property(nonatomic) BOOL shouldFadeOutWhenReachingTop; // @synthesize shouldFadeOutWhenReachingTop=_shouldFadeOutWhenReachingTop;
 @property(nonatomic) BOOL swapTitleWithSubtitle; // @synthesize swapTitleWithSubtitle=_swapTitleWithSubtitle;
 @property(nonatomic) unsigned long long inlineHeaderStyle; // @synthesize inlineHeaderStyle=_inlineHeaderStyle;
+@property(nonatomic) BOOL requiresTitleRenderedAsView; // @synthesize requiresTitleRenderedAsView=_requiresTitleRenderedAsView;
 @property(nonatomic) BOOL wantsInlineHeader; // @synthesize wantsInlineHeader=_wantsInlineHeader;
 @property(copy, nonatomic) PXTitleSubtitleLabelSpec *debugNonInterestingTitleSubtitleLabelSpec; // @synthesize debugNonInterestingTitleSubtitleLabelSpec=_debugNonInterestingTitleSubtitleLabelSpec;
 @property(copy, nonatomic) PXTitleSubtitleLabelSpec *debugInterestingTitleSubtitleLabelSpec; // @synthesize debugInterestingTitleSubtitleLabelSpec=_debugInterestingTitleSubtitleLabelSpec;

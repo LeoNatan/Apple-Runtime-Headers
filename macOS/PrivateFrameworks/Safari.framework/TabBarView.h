@@ -88,6 +88,7 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityContents;
 - (void)setAccessibilityContents:(id)arg1;
 - (id)accessibilityValue;
+- (id)accessibilityIdentifier;
 - (void)setAccessibilityValue:(id)arg1;
 - (unsigned long long)_dragOperationForDraggingInfo:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;

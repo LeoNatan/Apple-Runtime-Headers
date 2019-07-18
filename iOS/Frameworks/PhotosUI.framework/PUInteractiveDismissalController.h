@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
         _Bool respondsToTilingView;
         _Bool respondsToDesignatedTileController;
     } _delegateFlags;
+    _Bool _isHandlingDismissalInteraction;
     _Bool __needsUpdateGestureRecognizers;
     id <PUInteractiveDismissalControllerDelegate> _delegate;
     UIViewController *__viewController;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setInterruptibleViewControllerTransition:) id <PUInterruptibleViewControllerTransition> _interruptibleViewControllerTransition; // @synthesize _interruptibleViewControllerTransition=__interruptibleViewControllerTransition;
 @property(retain, nonatomic, setter=_setViewHostingGestureRecognizers:) UIView *_viewHostingGestureRecognizers; // @synthesize _viewHostingGestureRecognizers=__viewHostingGestureRecognizers;
 @property(nonatomic, setter=_setViewController:) __weak UIViewController *_viewController; // @synthesize _viewController=__viewController;
+@property(readonly, nonatomic) _Bool isHandlingDismissalInteraction; // @synthesize isHandlingDismissalInteraction=_isHandlingDismissalInteraction;
 @property(nonatomic) __weak id <PUInteractiveDismissalControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_updateInterruptibleViewControllerTransitionIfNeeded;

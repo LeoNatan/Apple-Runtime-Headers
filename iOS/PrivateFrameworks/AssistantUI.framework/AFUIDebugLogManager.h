@@ -29,6 +29,7 @@
 - (void)_captureLogsAtURL:(id)arg1 logName:(id)arg2 sinceTime:(double)arg3 pattern:(id)arg4 mimeType:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)_captureLogsAtURL:(id)arg1 logName:(id)arg2 sinceTime:(double)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)capturePreviousConversationWithCompletion:(CDUnknownBlockType)arg1;
+- (void)captureSiriTTSAudioWithCompletion:(CDUnknownBlockType)arg1;
 - (void)captureSiriRemembersLogWithCompletion:(CDUnknownBlockType)arg1;
 - (void)captureSiriVoiceTriggerLogsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)captureSiriSpeechLogsWithCompletion:(CDUnknownBlockType)arg1;

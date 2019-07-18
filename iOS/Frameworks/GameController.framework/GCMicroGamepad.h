@@ -36,6 +36,7 @@
 - (void)set_motion:(id)arg1;
 - (id)_motion;
 - (void).cxx_destruct;
+- (_Bool)isBluetoothAndUSBMirrored;
 - (void)setStateFromMicroGamepad:(id)arg1;
 - (id)productCategory;
 - (_Bool)supportsDpadTaps;
@@ -51,6 +52,7 @@
 - (id)buttonB;
 - (id)button1;
 - (id)button0;
+- (void)setControllerForElements;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithController:(id)arg1 dpadFlippedY:(_Bool)arg2;

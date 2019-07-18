@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUICore/NSCopying-Protocol.h>
-#import <PhotosUICore/NSObject-Protocol.h>
+#import <PhotosUICore/PXDisplayThumbnailAsset-Protocol.h>
 
 @class NSDate, NSString;
 @protocol PXAssetdestinationAssetCopyProperties, PXDisplayAsset;
 
-@protocol PXDisplayAsset <NSObject, NSCopying>
+@protocol PXDisplayAsset <PXDisplayThumbnailAsset>
 @property(readonly, nonatomic) Class defaultImageProviderClass;
 @property(readonly, nonatomic) unsigned long long pixelHeight;
 @property(readonly, nonatomic) unsigned long long pixelWidth;
+@property(readonly, nonatomic) _Bool isEligibleForAutoPlayback;
 @property(readonly, nonatomic) _Bool isInCloud;
 @property(readonly, nonatomic) _Bool representsBurst;
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite;
@@ -27,7 +27,7 @@
 @property(readonly, nonatomic) NSDate *importDate;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly, nonatomic) unsigned long long burstSelectionTypes;
-@property(readonly, nonatomic) float hdrGain;
+@property(readonly, nonatomic) double hdrGain;
 @property(readonly, nonatomic) NSString *uuid;
 @property(readonly, nonatomic) unsigned long long thumbnailVersion;
 @property(readonly, nonatomic) double aspectRatio;

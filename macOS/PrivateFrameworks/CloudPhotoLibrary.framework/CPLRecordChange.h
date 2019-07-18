@@ -62,6 +62,8 @@
 @property(copy, nonatomic) NSDate *recordModificationDate; // @synthesize recordModificationDate=_recordModificationDate;
 @property(copy, nonatomic) CPLScopedIdentifier *scopedIdentifier; // @synthesize scopedIdentifier=_scopedIdentifier;
 - (void).cxx_destruct;
+- (BOOL)isAssetChange;
+- (BOOL)isMasterChange;
 - (id)copyChangeType:(unsigned long long)arg1;
 - (void)copyDerivativesFromRecordIfPossible:(id)arg1;
 - (void)copyDerivatives:(unsigned long long *)arg1 count:(int)arg2 avoidResourceType:(unsigned long long)arg3 fromRecord:(id)arg4 inResourcePerType:(id)arg5;
@@ -106,6 +108,7 @@
 - (BOOL)resourceChangeWillOnlyChangeDerivatives:(id)arg1;
 - (id)realRecordChangeFromRecordChange:(id)arg1 direction:(unsigned long long)arg2 newRecord:(id *)arg3;
 - (id)realRecordChangeFromRecordChange:(id)arg1 direction:(unsigned long long)arg2 newRecord:(id *)arg3 updatedProperties:(id *)arg4;
+- (id)realRecordChangeFromRecordChange:(id)arg1 direction:(unsigned long long)arg2 newRecord:(id *)arg3 changeType:(unsigned long long)arg4 updatedProperties:(id *)arg5;
 - (BOOL)applyChange:(id)arg1 copyPropertiesToFinalChange:(id)arg2 forChangeType:(unsigned long long)arg3 direction:(unsigned long long)arg4 updatedProperty:(id *)arg5;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

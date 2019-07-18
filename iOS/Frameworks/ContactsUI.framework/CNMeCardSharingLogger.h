@@ -17,17 +17,18 @@ __attribute__((visibility("hidden")))
 + (id)log;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
+- (void)logErrorGeneratingAvatarForPhotoPickerWithDescription:(id)arg1;
 - (void)logSettingsSuccessSavingContact;
 - (void)logSettingsErrorSettingMeContactWithDescription:(id)arg1;
 - (void)logSettingsSettingMeContact;
 - (void)logSettingsErrorSavingContactWithDescription:(id)arg1;
-- (void)logSettingsSavingContact;
+- (void)logSettingsSavingContact:(id)arg1;
 - (void)logOnboardingAvatarCarouselErrorCreatingContactImageWithDescription:(id)arg1;
 - (void)logOnboardingSuccessSavingContact;
 - (void)logOnboardingErrorSettingMeContactWithDescription:(id)arg1;
 - (void)logOnboardingSettingMeContact;
 - (void)logOnboardingErrorSavingContactWithDescription:(id)arg1;
-- (void)logOnboardingSavingContact;
+- (void)logOnboardingSavingContact:(id)arg1;
 - (id)init;
 
 @end

@@ -15,7 +15,7 @@
     BSAtomicSignal *_invalidationSignal;
     NSObject<OS_xpc_object> *_serverEndpoint;
     NSString *_serviceName;
-    _Bool _clientInvalidated;
+    int _clientInvalidated;
     int _notifyToken;
     NSObject<OS_xpc_object> *_connection;
     _Bool _suspended;

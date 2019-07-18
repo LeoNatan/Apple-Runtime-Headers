@@ -26,6 +26,7 @@
     BOOL _wantsStatsDebugHUD;
     BOOL _wantsRectDiagnosticsDebugHUD;
     BOOL _enableAnchoringRectDiagnostics;
+    BOOL _enableAssetsRectDiagnostics;
     BOOL _enableRectDiagnosticsForUndefinedSprites;
     BOOL _enableRectDiagnosticsForNamedImageSprites;
     BOOL _enableRectDiagnosticsForDisplayAssetSprites;
@@ -39,6 +40,9 @@
     BOOL _wantsPerspectiveDebug;
     long long _sampleCount;
     long long _blockOnMissingThumbnailsAtSpeedRegime;
+    long long _videoAllowedAtOrBelowSpeed;
+    long long _videoAllowedAtOrBelowSpeedForLowSpec;
+    long long _lowSpecProcessorCountLimit;
     double _slowAnimationsSpeed;
     double _maxCornerRadius;
     double _cameraZoomFactor;
@@ -59,6 +63,7 @@
 @property(nonatomic) BOOL enableRectDiagnosticsForDisplayAssetSprites; // @synthesize enableRectDiagnosticsForDisplayAssetSprites=_enableRectDiagnosticsForDisplayAssetSprites;
 @property(nonatomic) BOOL enableRectDiagnosticsForNamedImageSprites; // @synthesize enableRectDiagnosticsForNamedImageSprites=_enableRectDiagnosticsForNamedImageSprites;
 @property(nonatomic) BOOL enableRectDiagnosticsForUndefinedSprites; // @synthesize enableRectDiagnosticsForUndefinedSprites=_enableRectDiagnosticsForUndefinedSprites;
+@property(nonatomic) BOOL enableAssetsRectDiagnostics; // @synthesize enableAssetsRectDiagnostics=_enableAssetsRectDiagnostics;
 @property(nonatomic) BOOL enableAnchoringRectDiagnostics; // @synthesize enableAnchoringRectDiagnostics=_enableAnchoringRectDiagnostics;
 @property(nonatomic) BOOL wantsRectDiagnosticsDebugHUD; // @synthesize wantsRectDiagnosticsDebugHUD=_wantsRectDiagnosticsDebugHUD;
 @property(nonatomic) BOOL wantsStatsDebugHUD; // @synthesize wantsStatsDebugHUD=_wantsStatsDebugHUD;
@@ -67,6 +72,9 @@
 @property(nonatomic) double maxCornerRadius; // @synthesize maxCornerRadius=_maxCornerRadius;
 @property(nonatomic) double slowAnimationsSpeed; // @synthesize slowAnimationsSpeed=_slowAnimationsSpeed;
 @property(nonatomic) BOOL allowBlockingDueToFences; // @synthesize allowBlockingDueToFences=_allowBlockingDueToFences;
+@property(nonatomic) long long lowSpecProcessorCountLimit; // @synthesize lowSpecProcessorCountLimit=_lowSpecProcessorCountLimit;
+@property(nonatomic) long long videoAllowedAtOrBelowSpeedForLowSpec; // @synthesize videoAllowedAtOrBelowSpeedForLowSpec=_videoAllowedAtOrBelowSpeedForLowSpec;
+@property(nonatomic) long long videoAllowedAtOrBelowSpeed; // @synthesize videoAllowedAtOrBelowSpeed=_videoAllowedAtOrBelowSpeed;
 @property(nonatomic) long long blockOnMissingThumbnailsAtSpeedRegime; // @synthesize blockOnMissingThumbnailsAtSpeedRegime=_blockOnMissingThumbnailsAtSpeedRegime;
 @property(nonatomic) BOOL allowBlockingDuringScrolling; // @synthesize allowBlockingDuringScrolling=_allowBlockingDuringScrolling;
 @property(nonatomic) BOOL requestMasterThumbsOnly; // @synthesize requestMasterThumbsOnly=_requestMasterThumbsOnly;
@@ -83,7 +91,7 @@
 @property(nonatomic) BOOL enableMetalRenderer; // @synthesize enableMetalRenderer=_enableMetalRenderer;
 @property(nonatomic) BOOL pauseWhenIdle; // @synthesize pauseWhenIdle=_pauseWhenIdle;
 - (void)setDefaultValues;
-- (BOOL)anyRectDiagnosticsEnabled;
+- (BOOL)anySpritesRectDiagnosticsEnabled;
 - (id)parentSettings;
 
 @end

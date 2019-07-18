@@ -6,16 +6,13 @@
 
 #import <FrontBoardServices/NSObject-Protocol.h>
 
-@class BSServiceConnectionEndpoint, FBSScene, FBSSceneClientSettings, FBSSceneClientSettingsDiff, FBSSceneLayer, FBSSceneMessage, FBSSceneTransitionContext, FBSSerialQueue, NSSet;
+@class BSServiceConnectionEndpoint, FBSScene, FBSSceneClientSettings, FBSSceneClientSettingsDiff, FBSSceneMessage, FBSSceneTransitionContext, FBSSerialQueue, NSSet;
 @protocol FBSProcess;
 
 @protocol FBSSceneUpdater <NSObject>
 - (void)scene:(FBSScene *)arg1 sendMessage:(FBSSceneMessage *)arg2 withResponse:(void (^)(FBSSceneMessage *, NSError *))arg3;
 - (void)scene:(FBSScene *)arg1 didReceiveActions:(NSSet *)arg2;
 - (void)scene:(FBSScene *)arg1 didUpdateClientSettings:(FBSSceneClientSettings *)arg2 withDiff:(FBSSceneClientSettingsDiff *)arg3 transitionContext:(FBSSceneTransitionContext *)arg4;
-- (void)scene:(FBSScene *)arg1 didDetachLayer:(FBSSceneLayer *)arg2;
-- (void)scene:(FBSScene *)arg1 didUpdateLayer:(FBSSceneLayer *)arg2;
-- (void)scene:(FBSScene *)arg1 didAttachLayer:(FBSSceneLayer *)arg2;
 - (BSServiceConnectionEndpoint *)endpoint;
 - (id <FBSProcess>)hostProcess;
 - (FBSSerialQueue *)callOutQueue;

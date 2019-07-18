@@ -6,8 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class _NSScrollingConcurrentConstantData, _NSScrollingConcurrentSharedData;
-@protocol OS_dispatch_source, _NSScrollStateEventListener;
+@class NSScrollingBehaviorConcurrentVBL, _NSScrollingConcurrentConstantData, _NSScrollingConcurrentSharedData;
+@protocol OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
 @interface _NSScrollingConcurrentMainThreadSynchronizer : NSObject
@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_source> *_dispatchSource;
     _NSScrollingConcurrentSharedData *_sharedData;
     _NSScrollingConcurrentConstantData *_constantData;
-    id <_NSScrollStateEventListener> _scrollStateDelegate;
     CDUnknownBlockType _completionHandler;
     struct {
         unsigned int isSynchronizing:1;
@@ -24,9 +23,10 @@ __attribute__((visibility("hidden")))
         unsigned int reserved:29;
     } _flags;
     struct CGPoint _lastSetOrigin;
+    NSScrollingBehaviorConcurrentVBL *_scrollingBehavior;
 }
 
-@property(nonatomic) id <_NSScrollStateEventListener> scrollStateDelegate; // @synthesize scrollStateDelegate=_scrollStateDelegate;
+@property(nonatomic) NSScrollingBehaviorConcurrentVBL *scrollingBehavior; // @synthesize scrollingBehavior=_scrollingBehavior;
 - (void)scrollView:(id)arg1 boundsChangedForClipView:(id)arg2;
 - (void)_synchronize:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_doIdlePrefetch;

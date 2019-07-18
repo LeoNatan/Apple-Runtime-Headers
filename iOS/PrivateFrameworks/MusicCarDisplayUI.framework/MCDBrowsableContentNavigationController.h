@@ -9,7 +9,7 @@
 #import <MusicCarDisplayUI/MCDPCContainerDelegate-Protocol.h>
 #import <MusicCarDisplayUI/UITabBarControllerDelegate-Protocol.h>
 
-@class MCDPCContainer, MCDPCModel, NSObject, NSString, UIButton;
+@class MCDNowPlayingButtonWrapperView, MCDPCContainer, MCDPCModel, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 @interface MCDBrowsableContentNavigationController : UITabBarController <UITabBarControllerDelegate, MCDPCContainerDelegate>
@@ -23,7 +23,7 @@
     UITabBarController *_hostTabBarController;
     MCDPCModel *_model;
     NSString *_bundleID;
-    UIButton *_nowPlayingButton;
+    MCDNowPlayingButtonWrapperView *_nowPlayingButtonView;
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
@@ -32,7 +32,7 @@
 @property(nonatomic) _Bool didFinishInitialViewAppear; // @synthesize didFinishInitialViewAppear=_didFinishInitialViewAppear;
 @property(nonatomic) _Bool didFinishInitialLoad; // @synthesize didFinishInitialLoad=_didFinishInitialLoad;
 @property(nonatomic) _Bool hasCarScreen; // @synthesize hasCarScreen=_hasCarScreen;
-@property(retain, nonatomic) UIButton *nowPlayingButton; // @synthesize nowPlayingButton=_nowPlayingButton;
+@property(retain, nonatomic) MCDNowPlayingButtonWrapperView *nowPlayingButtonView; // @synthesize nowPlayingButtonView=_nowPlayingButtonView;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain, nonatomic) MCDPCModel *model; // @synthesize model=_model;
 @property(nonatomic) __weak UITabBarController *hostTabBarController; // @synthesize hostTabBarController=_hostTabBarController;

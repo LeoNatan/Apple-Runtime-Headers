@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _centerAttributeIndex;
 }
 
++ (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3 textureFlipped:(_Bool)arg4 includeCenterAttribute:(_Bool)arg5 addTransparentBorder:(_Bool)arg6 device:(id)arg7;
 + (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3 textureFlipped:(_Bool)arg4 includeCenterAttribute:(_Bool)arg5 device:(id)arg6;
 + (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3 textureFlipped:(_Bool)arg4 device:(id)arg5;
 + (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3 device:(id)arg4;
@@ -54,6 +55,8 @@ __attribute__((visibility("hidden")))
 + (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2;
 + (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3;
 + (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3 textureFlipped:(_Bool)arg4;
++ (void)p_addTransparentBorderInsetToTextureRect:(struct CGRect *)arg1 vertexRect:(struct CGRect *)arg2;
++ (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3 textureFlipped:(_Bool)arg4 includeCenterAttribute:(_Bool)arg5 addTransparentBorder:(_Bool)arg6;
 + (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3 textureFlipped:(_Bool)arg4 includeCenterAttribute:(_Bool)arg5;
 + (id)newDataBufferWithVertexAttributes:(id)arg1 quadParticleCount:(unsigned long long)arg2;
 + (id)newDataBufferWithVertexAttributes:(id)arg1 meshSize:(struct CGSize)arg2;
@@ -103,7 +106,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)teardown;
 - (void)enableDataBuffer;
-- (id)initWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3 textureFlipped:(_Bool)arg4 includeCenterAttribute:(_Bool)arg5;
+- (id)initWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3 textureFlipped:(_Bool)arg4 includeCenterAttribute:(_Bool)arg5 addTransparentBorder:(_Bool)arg6;
 - (id)initWithVertexAttributes:(id)arg1 meshSize:(struct CGSize)arg2 bufferCount:(unsigned long long)arg3;
 - (id)initWithVertexAttributes:(id)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 bufferCount:(unsigned long long)arg4;
 - (void)p_setupGLElementArrayBufferIfNecessary;

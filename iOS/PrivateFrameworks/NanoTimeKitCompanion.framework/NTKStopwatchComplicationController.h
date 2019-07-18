@@ -6,24 +6,27 @@
 
 #import <NanoTimeKitCompanion/NTKComplicationController.h>
 
+#import <NanoTimeKitCompanion/NTKTimeTravel-Protocol.h>
+
+@class NSDate;
 @protocol NTKStopwatchComplicationDisplay;
 
-@interface NTKStopwatchComplicationController : NTKComplicationController
+@interface NTKStopwatchComplicationController : NTKComplicationController <NTKTimeTravel>
 {
+    NSDate *_timeTravelDate;
 }
 
 + (_Bool)_acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
-- (void)_handleTimeFormatChange;
-- (void)_handleLocaleChange;
-- (void)_handleReloadNotification;
+@property(retain, nonatomic) NSDate *timeTravelDate; // @synthesize timeTravelDate=_timeTravelDate;
+- (void).cxx_destruct;
+- (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
 - (void)_updateDisplay;
+- (void)_handleStopwatchChange;
 - (void)setDataMode:(long long)arg1 forDisplayWrapper:(id)arg2;
 - (id)complicationApplicationIdentifier;
 - (void)performTapAction;
 - (_Bool)hasTapAction;
 - (void)_configureForLegacyDisplay:(id)arg1;
-- (void)_stopStopwatchTimerUpdates;
-- (void)_startStopwatchTimerUpdates;
 - (void)_deactivate;
 - (void)_activate;
 

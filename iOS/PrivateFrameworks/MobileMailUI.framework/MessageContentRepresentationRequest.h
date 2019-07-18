@@ -6,17 +6,16 @@
 
 #import <objc/NSObject.h>
 
-#import <MobileMailUI/ECSignpostable-Protocol.h>
 #import <MobileMailUI/EFCancelable-Protocol.h>
 #import <MobileMailUI/EFLoggable-Protocol.h>
+#import <MobileMailUI/EFSignpostable-Protocol.h>
 
 @class EFCancelationToken, EFFuture, EFObservable, EMMessage, NSString;
 @protocol EFObserver, EMCollectionItemID, EMContentItemRequestDelegate;
 
-@interface MessageContentRepresentationRequest : NSObject <EFLoggable, EFCancelable, ECSignpostable>
+@interface MessageContentRepresentationRequest : NSObject <EFLoggable, EFCancelable, EFSignpostable>
 {
     id <EMContentItemRequestDelegate> _delegate;
-    EFFuture *_messageFuture;
     EFCancelationToken *_cancelationToken;
     EFObservable<EFObserver> *_inputObservable;
     EFObservable *_contentObservable;
@@ -25,11 +24,13 @@
     _Bool _includeSuggestionItems;
     struct os_unfair_lock_s _contentRepresentationLock;
     id <EMCollectionItemID> _itemID;
+    EFFuture *_messageFuture;
 }
 
 + (id)defaultScheduler;
 + (id)signpostLog;
 + (id)log;
+@property(readonly, nonatomic) EFFuture *messageFuture; // @synthesize messageFuture=_messageFuture;
 @property(readonly, nonatomic) id <EMCollectionItemID> itemID; // @synthesize itemID=_itemID;
 - (void).cxx_destruct;
 - (id)addLoadObserver:(CDUnknownBlockType)arg1;
@@ -45,6 +46,7 @@
 - (void)_issueMessageContentRepresentationRequest;
 @property(readonly, nonatomic) EMMessage *message;
 - (void)cancel;
+- (void)dealloc;
 - (void)_commonInitWithIncludeSuggestionItems:(_Bool)arg1 delegate:(id)arg2;
 - (id)initWithMessageList:(id)arg1 itemIdentifier:(id)arg2 includeSuggestionItems:(_Bool)arg3 delegate:(id)arg4;
 - (id)initWithMessageList:(id)arg1 itemIdentifier:(id)arg2 includeSuggestionItems:(_Bool)arg3;

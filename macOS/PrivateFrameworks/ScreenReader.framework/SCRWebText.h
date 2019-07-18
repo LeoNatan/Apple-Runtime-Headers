@@ -38,7 +38,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)synchKeyboardToVOCursor:(id)arg1;
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;
 - (void)_registerForSelectionChangedNotification;
-- (BOOL)performBrailleRouterActionWithIndex:(unsigned long long)arg1 outputRequest:(id)arg2;
 - (BOOL)openContextualMenu;
 - (void)readCurrentParagraph:(id)arg1;
 - (void)readCurrentSentence:(id)arg1;

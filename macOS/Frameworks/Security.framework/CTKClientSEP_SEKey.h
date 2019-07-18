@@ -44,7 +44,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithKeyType:(id)arg1 accessControl:(struct __SecAccessControl *)arg2 applePayEnabled:(BOOL)arg3 error:(id *)arg4;
 - (id)initWithObjectID:(id)arg1 error:(id *)arg2;
 - (id)init;
-- (id)error:(id *)arg1 withAKSReturn:(int)arg2 ACMContext:(id)arg3 message:(id)arg4;
+- (id)error:(id *)arg1 withAKSReturn:(int)arg2 ACMContext:(id)arg3 AKSOperation:(id)arg4 message:(id)arg5;
 - (id)parametersWithContext:(id)arg1;
 
 @end

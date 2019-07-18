@@ -10,8 +10,8 @@
 {
 }
 
-+ (id)candidateLocalIdentifiersFromAttachments:(id)arg1;
-+ (id)candidateContactsIdentifiersFromAttachments:(id)arg1;
++ (id)candidateLocalIdentifiersFromPhotoSuggestedPeople:(id)arg1;
++ (id)candidateContactsIdentifiersFromPhotoSuggestedPeople:(id)arg1;
 + (id)sceneAnalysisFromAssets:(id)arg1;
 + (id)assetsWithIdentifiers:(id)arg1;
 

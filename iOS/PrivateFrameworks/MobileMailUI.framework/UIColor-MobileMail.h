@@ -7,15 +7,28 @@
 #import <UIKit/UIColor.h>
 
 @interface UIColor (MobileMail)
++ (id)mf_colorFromColor:(id)arg1 toColor:(id)arg2 progress:(float)arg3;
 + (id)mailVIPFilterColor;
 + (id)mailAttachmentsFilterColor;
 + (id)mailTodayFilterColor;
 + (id)mailCardBackgroundColor;
-+ (id)mailConversationBackgroundColor;
-+ (id)mailHeaderSeperaterLayerColor;
-+ (id)mailConversationViewCollapsedCellLabelColor;
-+ (id)mailConversationViewCollapsedCellHighlightedBackgroundColor;
-+ (id)mailConversationViewCollapsedCellBackgroundColor;
++ (id)mailCellSelectionStateColor;
++ (id)mailSplitViewBackgroundColor;
++ (id)mailTransferStackViewBackgroundColor;
++ (id)mailExpandedConversationViewCellDateLabelColor;
++ (id)mailTiltedTabCloseButtonTintColor;
++ (id)mailDockViewShadowGradientColorLocations;
++ (id)mailDockViewShadowGradientColors;
++ (id)mailDockedPlaceholderViewBackgroundColor;
++ (id)mailDockViewDarkBackgroundColor;
++ (id)mailDockViewLightBackgroundColor;
++ (id)mailConversationViewNoSelectedMessageViewBackgroundColor;
++ (id)mailConversationBackgroundColorForPhoneUserInterfaceStyle:(long long)arg1;
++ (id)mailTransferConversationViewBackgroundColor;
++ (id)mailHeaderSeparatorLayerColor;
++ (id)mailConversationViewCollapsedCellLabelColorForUserInterfaceStyle:(long long)arg1;
++ (id)mailConversationViewCollapsedCellHighlightedBackgroundColorForUserInterfaceStyle:(long long)arg1;
++ (id)mailConversationViewCollapsedCellBackgroundColorForUserInterfaceStyle:(long long)arg1;
 + (id)mailConversationViewExpandedCellBackgroundColor;
 + (id)mailSplitViewBoarderColor;
 + (id)mailPreviousDraftPickerHeaderTextColor;
@@ -32,12 +45,8 @@
 + (id)mailSelectedCellColor;
 + (id)mailSystemUltraLightGrayColor;
 + (id)mailSystemLightGrayColor;
-+ (id)mailSiriTransparentLightGrayColor;
-+ (id)mailSiriFlaggedColor;
-+ (id)mailSiriInteractiveColor;
 + (id)mailAppBackgroundColor;
 + (id)mailMoreButtonGrayColor;
-+ (id)mailSubtitleGrayColor;
 + (id)mailDarkGrayColor;
 + (id)mailLightGrayColor;
 + (id)mailTransparentLightGrayColor;

@@ -19,6 +19,7 @@
 + (id)accountingGroupDefinitions;
 + (id)railDefinitions;
 + (void)load;
+- (void)logEntryToAggD:(id)arg1;
 - (unsigned long long)getEnclosureMaterial;
 - (void)logEventNonePairedDeviceConfig;
 - (void)logEventNoneConfig;
@@ -30,6 +31,8 @@
 - (id)basebandFirmware;
 - (id)baseband;
 - (id)deviceName;
+- (id)hardwareModelConfig;
+- (id)getDeviceNameMacOS;
 - (id)deviceShutdownReasons;
 - (id)seedGroup;
 - (id)logLastBackupTime;

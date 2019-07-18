@@ -11,7 +11,7 @@
 #import <UIKitCore/_UINavigationControllerRefreshControlHostDelegate-Protocol.h>
 #import <UIKitCore/_UINavigationItemChangeObserver-Protocol.h>
 
-@class NSString, UIFont, UILabel, UIView, _UIBarBackground, _UINavigationBarContentView, _UINavigationBarLargeTitleView, _UINavigationBarModernPromptView, _UINavigationBarTransitionContext, _UINavigationControllerRefreshControlHost;
+@class NSString, UILabel, UIView, _UIBarBackground, _UINavigationBarContentView, _UINavigationBarLargeTitleView, _UINavigationBarModernPromptView, _UINavigationBarTransitionContext, _UINavigationControllerRefreshControlHost;
 
 __attribute__((visibility("hidden")))
 @interface _UINavigationBarVisualProviderModernIOS : _UINavigationBarVisualProvider <_UINavigationBarContentViewDelegate, _UINavigationItemChangeObserver, _UINavigationControllerRefreshControlHostDelegate, _UIBasicAnimationFactory>
@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
     UIView *_canvasView;
     _UINavigationBarLargeTitleView *_largeTitleView;
     _UINavigationBarModernPromptView *_promptView;
-    UIFont *_cachedLargeTitleFont;
     UILabel *_weeTitleLabel;
     _UINavigationBarTransitionContext *_transitionContext;
     struct CGSize _previousBarSize;
@@ -43,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)_accessibility_controlToActivateForHUDGestureLiftAtPoint:(struct CGPoint)arg1;
 - (id)_accessibility_HUDItemForPoint:(struct CGPoint)arg1;
+- (_Bool)_accessibility_shouldBeginHUDGestureAtPoint:(struct CGPoint)arg1;
 - (void)_shim_setDisableBlurTinting:(_Bool)arg1;
 - (_Bool)_shim_disableBlurTinting;
 - (void)_shim_setShadowAlpha:(float)arg1;
@@ -79,10 +79,7 @@ __attribute__((visibility("hidden")))
 - (void)_computeProvidesExtraSpaceForExcessiveLineHeightsForTopItem:(id)arg1;
 - (void)_didEncounterFirstTitleWithExcessiveHeightChanged:(id)arg1;
 - (void)navigationBarInvalidatedResolvedLayoutMargins;
-- (void)setupTopNavigationItem;
 - (void)_setupTopNavigationItemAnimated:(_Bool)arg1;
-- (void)updateTopNavigationItemTitleView;
-- (void)updateTopNavigationItemAnimated:(_Bool)arg1;
 - (id)restingHeights;
 - (CDStruct_869f9c67)layoutHeightsFittingWidth:(float)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
@@ -116,6 +113,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateModernLayout:(id)arg1 forNavigationItem:(id)arg2 compact:(_Bool)arg3;
 - (void)_updateCanvasView;
 - (void)_layoutInBounds:(struct CGRect)arg1 wantsExtendedContentView:(_Bool)arg2 wantsLargeTitle:(_Bool)arg3;
+- (id)emptyLayout;
 - (void)_ensureLayoutsConfiguredForEntry:(id)arg1;
 - (void)_enforceLayoutOrdering;
 - (void)_updateContentForTopItem:(id)arg1 backItem:(id)arg2;
@@ -145,6 +143,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)wantsExtendedContentView;
 - (void)_updateContentPriorities;
 - (void)_updateTitleViewWithLargeTitle:(_Bool)arg1;
+- (_Bool)_isInInteractiveScroll;
 - (void)_updatePromptViewAndActuallyHide:(_Bool)arg1;
 - (void)updateArchivedSubviews:(id)arg1;
 - (void)provideViewsForContents:(id)arg1 topItem:(id)arg2 backItem:(id)arg3;

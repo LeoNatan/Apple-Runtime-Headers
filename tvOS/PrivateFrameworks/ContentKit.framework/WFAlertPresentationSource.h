@@ -10,6 +10,7 @@
 
 @interface WFAlertPresentationSource : NSObject
 {
+    _Bool _canOverlapSourceViewRect;
     UIView *_sourceView;
     UIBarButtonItem *_barButtonItem;
     unsigned long long _permittedArrowDirections;
@@ -19,6 +20,7 @@
 + (id)sourceWithBarButtonItem:(id)arg1;
 + (id)sourceWithView:(id)arg1 rect:(struct CGRect)arg2;
 + (id)sourceWithView:(id)arg1;
+@property(nonatomic) _Bool canOverlapSourceViewRect; // @synthesize canOverlapSourceViewRect=_canOverlapSourceViewRect;
 @property(nonatomic) unsigned long long permittedArrowDirections; // @synthesize permittedArrowDirections=_permittedArrowDirections;
 @property(readonly, nonatomic) UIBarButtonItem *barButtonItem; // @synthesize barButtonItem=_barButtonItem;
 @property(readonly, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;

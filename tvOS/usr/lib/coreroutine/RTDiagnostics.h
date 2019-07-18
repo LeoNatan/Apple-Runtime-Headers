@@ -16,13 +16,10 @@
 }
 
 + (id)stringFromDateWithFormat;
-+ (void)rolloverSnapshots;
 + (_Bool)createArchiveSourceURL:(id)arg1 destinationURL:(id)arg2 error:(id *)arg3;
 + (id)createDiagnosticsURLWithError:(id *)arg1;
-+ (_Bool)collectArchiveSinceDate:(id)arg1 path:(id)arg2 error:(id *)arg3;
 + (id)crashReports;
 - (void).cxx_destruct;
-- (void)takeSnapshotSinceDate:(id)arg1 description:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)fetchPathToBackupWithHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchPathToBackupWithHandler:(CDUnknownBlockType)arg1;
 - (id)_collectBackupWithError:(id *)arg1;

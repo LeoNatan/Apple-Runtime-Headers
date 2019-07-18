@@ -9,8 +9,8 @@
 @interface NSPredicate (EmailFoundationPredicateAdditions)
 + (id)ef_matchNothingPredicate;
 + (id)ef_matchEverythingPredicate;
-@property(readonly, nonatomic) BOOL ef_isFalsePredicate;
-@property(readonly, nonatomic) BOOL ef_isTruePredicate;
+@property(readonly, nonatomic) BOOL ef_matchesNothing;
+@property(readonly, nonatomic) BOOL ef_matchesEverything;
 - (id)predicateNodeFromPropertyMapper:(id)arg1;
 @end
 

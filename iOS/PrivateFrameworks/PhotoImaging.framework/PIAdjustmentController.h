@@ -11,14 +11,12 @@
 @interface PIAdjustmentController : NSObject
 {
     NSMutableDictionary *_changes;
-    _Bool _canBeEnabled;
     NUIdentifier *_identifier;
     NUAdjustment *_adjustment;
 }
 
 + (id)enabledKey;
 + (id)autoKey;
-@property(readonly, nonatomic) _Bool canBeEnabled; // @synthesize canBeEnabled=_canBeEnabled;
 @property(readonly, nonatomic) NUAdjustment *adjustment; // @synthesize adjustment=_adjustment;
 @property(retain, nonatomic) NUIdentifier *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
@@ -32,6 +30,7 @@
 - (id)visualInputKeys;
 - (CDStruct_198678f7)timeFromInputKey:(id)arg1 timescaleKey:(id)arg2;
 - (void)interpolateFromStart:(id)arg1 toEnd:(id)arg2 progress:(double)arg3;
+- (void)setFromAdjustment:(id)arg1;
 - (id)valuesForArrayInputKey:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
@@ -39,7 +38,9 @@
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)setIsAuto:(_Bool)arg1;
 - (_Bool)isAuto;
+- (_Bool)hasAutoKeyInSchema;
 - (_Bool)canHaveAuto;
+@property(readonly, nonatomic) _Bool canBeEnabled;
 @property(nonatomic) _Bool enabled;
 - (_Bool)hasInputKey:(id)arg1;
 - (id)settingForKey:(id)arg1;

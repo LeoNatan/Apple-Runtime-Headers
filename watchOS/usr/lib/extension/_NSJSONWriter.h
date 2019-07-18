@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
     int totalDataWritten;
 }
 
-- (int)appendString:(id)arg1 range:(struct _NSRange)arg2;
+- (_Bool)appendString:(id)arg1 range:(struct _NSRange)arg2 error:(id *)arg3;
 - (void)resizeTemporaryBuffer:(unsigned long)arg1;
 - (int)writeRootObject:(id)arg1 toStream:(id)arg2 options:(unsigned int)arg3 error:(id *)arg4;
 - (id)dataWithRootObject:(id)arg1 options:(unsigned int)arg2 error:(id *)arg3;

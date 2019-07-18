@@ -71,6 +71,7 @@
     BOOL _iosSettingsNotificationsShowInHistoryEnabled;
     BOOL _iosSettingsNotificationsShowOnLockScreenEnabled;
     BOOL _iosSettingsNotificationsSoundEnabled;
+    BOOL _isDiagnosticsUsageEnabled;
     BOOL _isNewUser;
     BOOL _isPaidSubscriber;
     BOOL _isPaidSubscriberFromAppStore;
@@ -116,6 +117,7 @@
         unsigned int iosSettingsNotificationsShowInHistoryEnabled:1;
         unsigned int iosSettingsNotificationsShowOnLockScreenEnabled:1;
         unsigned int iosSettingsNotificationsSoundEnabled:1;
+        unsigned int isDiagnosticsUsageEnabled:1;
         unsigned int isNewUser:1;
         unsigned int isPaidSubscriber:1;
         unsigned int isPaidSubscriberFromAppStore:1;
@@ -134,6 +136,7 @@
     } _has;
 }
 
+@property(nonatomic) BOOL isDiagnosticsUsageEnabled; // @synthesize isDiagnosticsUsageEnabled=_isDiagnosticsUsageEnabled;
 @property(nonatomic) BOOL isStoreDemoModeEnabled; // @synthesize isStoreDemoModeEnabled=_isStoreDemoModeEnabled;
 @property(nonatomic) BOOL signedIntoITunes; // @synthesize signedIntoITunes=_signedIntoITunes;
 @property(nonatomic) BOOL iosSettingsNotificationsShowAsBannersEnabled; // @synthesize iosSettingsNotificationsShowAsBannersEnabled=_iosSettingsNotificationsShowAsBannersEnabled;
@@ -207,6 +210,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasIsDiagnosticsUsageEnabled;
 @property(nonatomic) BOOL hasIsStoreDemoModeEnabled;
 @property(nonatomic) BOOL hasSignedIntoITunes;
 - (int)StringAsWidgetDisplayModeSessionEnd:(id)arg1;

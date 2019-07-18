@@ -13,7 +13,7 @@
 @class HMBLocalZone, NSMutableDictionary, NSNotificationCenter, NSObject, NSString;
 @protocol HMDNetworkRouterFirewallRuleManager, HMDNetworkRouterFirewallRuleManagerBackingStoreCloudFetchScheduler, HMDNetworkRouterFirewallRuleManagerBackingStoreMirror, OS_dispatch_queue;
 
-@interface HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinator : HMFObject <HMDNetworkRouterFirewallRuleManagerBackingStoreCloudFetchSchedulerDelegate, HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinator, HMFLogging>
+@interface HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinator : HMFObject <HMDNetworkRouterFirewallRuleManagerBackingStoreCloudFetchSchedulerDelegate, HMFLogging, HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinator>
 {
     id <HMDNetworkRouterFirewallRuleManager> _firewallRuleManager;
     id <HMDNetworkRouterFirewallRuleManagerBackingStoreMirror> _mirror;
@@ -24,10 +24,9 @@
     HMBLocalZone *_mirroredLocalZone;
 }
 
++ (id)__createProcessingOptionsWithLabel:(id)arg1;
 + (id)__createProcessingOptionsWithLabel:(id)arg1 qualityOfService:(long long)arg2;
-+ (id)__createRecordIDFromAccessory:(id)arg1;
-+ (id)__createRecordIDFromZoneName:(id)arg1 recordName:(id)arg2;
-+ (id)__uniqueRecordIDsFromAccessories:(id)arg1;
++ (id)__recordIDsFromAccessories:(id)arg1;
 + (id)__jsonFromRecords:(id)arg1 rawOutput:(BOOL)arg2 error:(id *)arg3;
 + (id)__jsonFromDeclarations:(struct NSDictionary *)arg1 rawOutput:(BOOL)arg2 error:(id *)arg3;
 + (id)__jsonStringFromDictionary:(struct NSDictionary *)arg1 rawOutput:(BOOL)arg2 error:(id *)arg3;
@@ -36,6 +35,7 @@
 + (long long)ckContainerEnvironment;
 + (id)ckContainerIdentifier;
 + (id)logCategory;
++ (void)initialize;
 @property(retain, nonatomic) HMBLocalZone *mirroredLocalZone; // @synthesize mirroredLocalZone=_mirroredLocalZone;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *ownerQueue; // @synthesize ownerQueue=_ownerQueue;
 @property(readonly, nonatomic) id <HMDNetworkRouterFirewallRuleManagerBackingStoreCloudFetchScheduler> cloudFetchScheduler; // @synthesize cloudFetchScheduler=_cloudFetchScheduler;
@@ -50,6 +50,7 @@
 - (BOOL)removeAllOverridesWithError:(id *)arg1;
 - (BOOL)addOverrides:(id)arg1 replace:(BOOL)arg2 error:(id *)arg3;
 - (struct NSDictionary *)_fetchAllOverridesForProductGroup:(id)arg1 productNumber:(id)arg2 options:(id)arg3 error:(id *)arg4;
+- (BOOL)removeAllLocalRulesWithError:(id *)arg1;
 - (id)dumpLocalRulesForProductGroup:(id)arg1 productNumber:(id)arg2 firmwareVersion:(id)arg3 ignoreOverrides:(BOOL)arg4 rawOutput:(BOOL)arg5 error:(id *)arg6;
 - (void)dumpCloudRecordsForProductGroup:(id)arg1 productNumber:(id)arg2 rawOutput:(BOOL)arg3 listOnly:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_dumpCloudRecordsForProductGroup:(id)arg1 productNumber:(id)arg2 rawOutput:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;

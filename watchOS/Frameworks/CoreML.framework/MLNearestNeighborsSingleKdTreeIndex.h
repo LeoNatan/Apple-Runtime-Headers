@@ -14,7 +14,7 @@
 @interface MLNearestNeighborsSingleKdTreeIndex : NSObject <MLNearestNeighborsIndex, NSSecureCoding>
 {
     vector_7584168e vData;
-    struct vector<unsigned int, std::__1::allocator<unsigned int>> vIndices;
+    vector_8b7b626a vIndices;
     unsigned int _numDimensions;
     unsigned int _leafSize;
     _KDNode *_root;

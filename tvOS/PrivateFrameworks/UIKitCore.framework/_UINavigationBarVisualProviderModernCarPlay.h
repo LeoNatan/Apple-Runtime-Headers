@@ -9,7 +9,7 @@
 #import <UIKitCore/_UIButtonBarAppearanceDelegate-Protocol.h>
 #import <UIKitCore/_UINavigationItemChangeObserver-Protocol.h>
 
-@class NSArray, NSLayoutConstraint, NSString, UIColor, UIFocusContainerGuide, UIVisualEffectView, _CarTitleView, _UIBarButtonItemAppearanceStorage, _UIButtonBar, _UIButtonBarButton;
+@class NSArray, NSLayoutConstraint, NSString, UIColor, UIFocusContainerGuide, UIView, UIVisualEffectView, _CarTitleView, _UIBarButtonItemAppearanceStorage, _UIButtonBar, _UIButtonBarButton;
 
 __attribute__((visibility("hidden")))
 @interface _UINavigationBarVisualProviderModernCarPlay : _UINavigationBarVisualProvider <_UIButtonBarAppearanceDelegate, _UINavigationItemChangeObserver>
@@ -17,41 +17,48 @@ __attribute__((visibility("hidden")))
     _Bool _compactMetrics;
     _Bool _havePrepared;
     _UIBarButtonItemAppearanceStorage *_appearanceStorage;
+    UIView *_contentView;
     _CarTitleView *_titleView;
-    _UIButtonBar *_leftBar;
-    _UIButtonBar *_rightBar;
+    _UIButtonBar *_leadingBar;
+    _UIButtonBar *_trailingBar;
     _UIButtonBarButton *_backBarButton;
-    NSLayoutConstraint *_leftBarConstraint;
-    NSLayoutConstraint *_leftBarNoItemsConstraint;
-    NSArray *_leftBackButtonConstraints;
-    NSLayoutConstraint *_rightBarConstraint;
-    NSLayoutConstraint *_rightBarNoItemsConstraint;
-    NSArray *_rightBackButtonConstraints;
+    NSLayoutConstraint *_leadingBarConstraint;
+    NSLayoutConstraint *_leadingBarNoItemsConstraint;
+    NSLayoutConstraint *_trailingBarConstraint;
+    NSLayoutConstraint *_trailingBarNoItemsConstraint;
+    NSArray *_backButtonConstraints;
     NSLayoutConstraint *_largeTitleLeadingConstraint;
     NSLayoutConstraint *_largeTitleTrailingConstraint;
     NSLayoutConstraint *_regularTitleConstraint;
+    NSLayoutConstraint *_trailingBarWithTitleLeadingConstraint;
+    NSLayoutConstraint *_trailingBarWithNoTitleLeadingConstraint;
     UIVisualEffectView *_backgroundView;
     UIFocusContainerGuide *_focusContainerGuide;
+    NSArray *_debugViews;
 }
 
+@property(retain, nonatomic) NSArray *debugViews; // @synthesize debugViews=_debugViews;
 @property(retain, nonatomic) UIFocusContainerGuide *focusContainerGuide; // @synthesize focusContainerGuide=_focusContainerGuide;
 @property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
+@property(retain, nonatomic) NSLayoutConstraint *trailingBarWithNoTitleLeadingConstraint; // @synthesize trailingBarWithNoTitleLeadingConstraint=_trailingBarWithNoTitleLeadingConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *trailingBarWithTitleLeadingConstraint; // @synthesize trailingBarWithTitleLeadingConstraint=_trailingBarWithTitleLeadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *regularTitleConstraint; // @synthesize regularTitleConstraint=_regularTitleConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *largeTitleTrailingConstraint; // @synthesize largeTitleTrailingConstraint=_largeTitleTrailingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *largeTitleLeadingConstraint; // @synthesize largeTitleLeadingConstraint=_largeTitleLeadingConstraint;
-@property(retain, nonatomic) NSArray *rightBackButtonConstraints; // @synthesize rightBackButtonConstraints=_rightBackButtonConstraints;
-@property(retain, nonatomic) NSLayoutConstraint *rightBarNoItemsConstraint; // @synthesize rightBarNoItemsConstraint=_rightBarNoItemsConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *rightBarConstraint; // @synthesize rightBarConstraint=_rightBarConstraint;
-@property(retain, nonatomic) NSArray *leftBackButtonConstraints; // @synthesize leftBackButtonConstraints=_leftBackButtonConstraints;
-@property(retain, nonatomic) NSLayoutConstraint *leftBarNoItemsConstraint; // @synthesize leftBarNoItemsConstraint=_leftBarNoItemsConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *leftBarConstraint; // @synthesize leftBarConstraint=_leftBarConstraint;
+@property(retain, nonatomic) NSArray *backButtonConstraints; // @synthesize backButtonConstraints=_backButtonConstraints;
+@property(retain, nonatomic) NSLayoutConstraint *trailingBarNoItemsConstraint; // @synthesize trailingBarNoItemsConstraint=_trailingBarNoItemsConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *trailingBarConstraint; // @synthesize trailingBarConstraint=_trailingBarConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *leadingBarNoItemsConstraint; // @synthesize leadingBarNoItemsConstraint=_leadingBarNoItemsConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *leadingBarConstraint; // @synthesize leadingBarConstraint=_leadingBarConstraint;
 @property(retain, nonatomic) _UIButtonBarButton *backBarButton; // @synthesize backBarButton=_backBarButton;
-@property(retain, nonatomic) _UIButtonBar *rightBar; // @synthesize rightBar=_rightBar;
-@property(retain, nonatomic) _UIButtonBar *leftBar; // @synthesize leftBar=_leftBar;
+@property(retain, nonatomic) _UIButtonBar *trailingBar; // @synthesize trailingBar=_trailingBar;
+@property(retain, nonatomic) _UIButtonBar *leadingBar; // @synthesize leadingBar=_leadingBar;
 @property(retain, nonatomic) _CarTitleView *titleView; // @synthesize titleView=_titleView;
+@property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) _Bool havePrepared; // @synthesize havePrepared=_havePrepared;
 @property(readonly, nonatomic) _Bool compactMetrics; // @synthesize compactMetrics=_compactMetrics;
 - (void).cxx_destruct;
+- (void)_installGradientLayerMaskForClippingView:(id)arg1;
 - (void)_configureBackground;
 - (void)changeAppearance;
 - (double)absorptionForItem:(id)arg1;
@@ -86,8 +93,8 @@ __attribute__((visibility("hidden")))
 - (void)navigationItemUpdatedTitleContent:(id)arg1 animated:(_Bool)arg2;
 - (_Bool)navigationItemIsBackItem:(id)arg1;
 - (_Bool)navigationItemIsTopItem:(id)arg1;
-- (void)_updateContentAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_updateContentForTopItem:(id)arg1 backItem:(id)arg2 animated:(_Bool)arg3;
+- (void)_updateContentAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2 direction:(unsigned long long)arg3;
+- (void)_updateContentForTopItem:(id)arg1 backItem:(id)arg2 animated:(_Bool)arg3 direction:(unsigned long long)arg4;
 - (void)__backButtonAction;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;

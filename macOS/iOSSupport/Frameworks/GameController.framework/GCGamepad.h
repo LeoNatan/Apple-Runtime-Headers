@@ -21,9 +21,11 @@
     GCControllerDirectionPad *_dpad;
     GCControllerButtonInput *_leftShoulder;
     GCControllerButtonInput *_rightShoulder;
+    GCControllerButtonInput *_buttonMenu;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) GCControllerButtonInput *buttonMenu; // @synthesize buttonMenu=_buttonMenu;
 @property(retain, nonatomic) GCControllerButtonInput *rightShoulder; // @synthesize rightShoulder=_rightShoulder;
 @property(retain, nonatomic) GCControllerButtonInput *leftShoulder; // @synthesize leftShoulder=_leftShoulder;
 @property(retain, nonatomic) GCControllerDirectionPad *dpad; // @synthesize dpad=_dpad;

@@ -16,6 +16,8 @@
 
 @interface PKCompactNavigationContainerController : UIViewController <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, PKContentContainerObserver>
 {
+    _Bool _hasExplicitlyDefinedSupportedInterfaceOrientations;
+    unsigned long long _explicitlyDefinedSupportedInterfaceOrientations;
     UIViewController *_presentationContextVC;
     CDStruct_47050b7f _topVCInfo;
     struct CGRect _statusBarFrame;
@@ -42,10 +44,10 @@
 - (void).cxx_destruct;
 - (void)statusBarFrameWillChange:(id)arg1;
 - (id)childViewControllerForWhitePointAdaptivityStyle;
-- (id)childViewControllerForScreenEdgesDeferringSystemGestures;
-- (id)childViewControllerForHomeIndicatorAutoHidden;
-- (id)childViewControllerForStatusBarStyle;
+- (id)childViewControllerForUserInterfaceStyle;
+- (long long)preferredUserInterfaceStyle;
 - (id)childViewControllerForStatusBarHidden;
+- (id)childViewControllerForStatusBarStyle;
 - (void)tapGestureRecognized:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
@@ -61,12 +63,15 @@
 - (_Bool)updateChildViewControllerSizeAnimated:(_Bool)arg1;
 - (id)_backgroundColor;
 - (void)setExclusionRect:(struct CGRect)arg1 withCoordinateSpace:(id)arg2;
+- (void)setSupportedInterfaceOrientations:(unsigned long long)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (struct CGSize)modalPresentationSize;
 - (struct CGSize)childViewControllerSizeForNavigationControllerSize:(struct CGSize)arg1;
 - (struct CGSize)navigationControllerSizeForChildViewControllerPreferredContentSize:(struct CGSize)arg1 isRoot:(_Bool)arg2;
 - (struct CGSize)childViewControllerPreferredContentSizeForSize:(struct CGSize)arg1 isRoot:(_Bool)arg2;
 - (struct CGRect)_targetNavigationControllerFrameForInfo:(CDStruct_47050b7f)arg1;
 - (void)viewWillLayoutSubviews;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;

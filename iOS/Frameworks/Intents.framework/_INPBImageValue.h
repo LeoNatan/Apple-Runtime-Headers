@@ -19,6 +19,7 @@
         unsigned int type:1;
         unsigned int width:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     int _type;
     NSData *_data;
     double _height;
@@ -29,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(copy, nonatomic) NSString *uri; // @synthesize uri=_uri;

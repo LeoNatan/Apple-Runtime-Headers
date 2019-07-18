@@ -50,6 +50,7 @@
 - (void)webViewController:(SFWebViewController *)arg1 didStartProvisionalNavigation:(WKNavigation *)arg2;
 
 @optional
+- (void)webViewController:(SFWebViewController *)arg1 decidePolicyForSOAuthorizationLoadWithCurrentPolicy:(long long)arg2 forExtension:(NSString *)arg3 completionHandler:(void (^)(long long))arg4;
 - (void)webViewControllerDidShowSafeBrowsingWarning:(SFWebViewController *)arg1;
 @end
 

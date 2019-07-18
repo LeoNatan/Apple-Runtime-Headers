@@ -17,7 +17,6 @@
 
 + (id)emptyNowPlayingState;
 @property(readonly, nonatomic) float preferredPlaybackRate; // @synthesize preferredPlaybackRate=_preferredPlaybackRate;
-@property(readonly, nonatomic) NSData *artworkImageData;
 @property(readonly, nonatomic) double rewindTimeInterval;
 @property(readonly, nonatomic) double fastForwardTimeInterval;
 @property(readonly, nonatomic, getter=isSkipBackwardCommandEnabled) _Bool skipBackwardCommandEnabled;

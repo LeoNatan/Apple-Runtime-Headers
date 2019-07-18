@@ -7,7 +7,7 @@
 #import <SpringBoard/NSObject-Protocol.h>
 
 @class NSArray, NSString;
-@protocol CSApplicationInforming, CSAuthenticationManaging, CSCarPlayStatusProviding, CSHomeAffordanceControlling, CSLegibilityProviding, CSMediaControlling, CSModalHomeAffordanceControlling, CSNotificationContentProviderVending, CSNotificationPresenting, CSPowerStatusProviding, CSReachabilityControlling, CSResetRestoreStatusProviding, CSScreenStateProviding, CSStatusBarControlling, CSTelephonyStatusProviding, CSThermalStatusProviding, CSTodayOverlayProviding, CSTouchEnvironmentStatusProviding, CSUnlockRequesting, CSUserSessionControlling, CSWallpaperLogging, CSWallpaperViewProviding, SBFActionProviding, SBFAuthenticationAssertionProviding, SBFAuthenticationStatusProvider, SBFDateProviding, SBFLockOutStatusProvider, SBFPasscodeFieldChangeObserver, SBFScreenWakeAnimationControlling, SBUIBiometricResource;
+@protocol CSApplicationInforming, CSAuthenticationManaging, CSCarPlayStatusProviding, CSHomeAffordanceControlling, CSLegibilityProviding, CSMediaControlling, CSModalHomeAffordanceControlling, CSNotificationPresenting, CSPowerStatusProviding, CSReachabilityControlling, CSResetRestoreStatusProviding, CSScreenStateProviding, CSStatusBarControlling, CSTelephonyStatusProviding, CSThermalStatusProviding, CSTodayOverlayProviding, CSTouchEnvironmentStatusProviding, CSUnlockRequesting, CSUserSessionControlling, CSWallpaperLogging, CSWallpaperViewProviding, SBFActionProviding, SBFAuthenticationAssertionProviding, SBFAuthenticationStatusProvider, SBFDateProviding, SBFLockOutStatusProvider, SBFPasscodeFieldChangeObserver, SBFScreenWakeAnimationControlling, SBUIBiometricResource;
 
 @protocol CSCoverSheetContextProviding <NSObject>
 @property(readonly, nonatomic) id <CSTodayOverlayProviding> todayOverlayProvider;
@@ -16,7 +16,6 @@
 @property(readonly, nonatomic) id <CSUserSessionControlling> userSessionController;
 @property(readonly, nonatomic) id <CSTouchEnvironmentStatusProviding> touchEnvironmentStatusProvider;
 @property(readonly, nonatomic) id <CSNotificationPresenting> notificationPresenter;
-@property(readonly, nonatomic) id <CSNotificationContentProviderVending> notificationContentProviderVendor;
 @property(readonly, nonatomic) id <CSApplicationInforming> applicationInformer;
 @property(readonly, nonatomic) id <SBFActionProviding> contentActionProvider;
 @property(readonly, nonatomic) id <CSWallpaperLogging> wallpaperLogger;

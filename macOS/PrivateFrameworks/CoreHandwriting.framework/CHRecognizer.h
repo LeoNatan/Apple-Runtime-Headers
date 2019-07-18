@@ -95,6 +95,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_setupRecognitionInsightRecording;
+@property(nonatomic) BOOL shouldEnableCachingIfAvailable;
 @property(nonatomic) int contentType;
 @property(copy, nonatomic) NSLocale *locale;
 @property(nonatomic) int recognitionMode;
@@ -108,9 +109,9 @@
 - (void)_applyTransliterationAndSyntheticCandidates:(vector_06f11b7b *)arg1;
 - (id)_applySentenceTransliterationCandidates:(unsigned short *)arg1 codesLen:(int)arg2 codesMax:(int)arg3;
 - (void)_adjustCandidatesForConfusableCharacters:(vector_06f11b7b *)arg1;
-- (void)_adjustCandidatesForRomanPunctuation:(vector_06f11b7b *)arg1 segmentedDrawing:(id)arg2;
+- (void)_adjustCandidatesForRomanPunctuation:(vector_06f11b7b *)arg1 segmentDrawing:(id)arg2;
 - (void)_penalizeCandidatesForRomanPunctuation:(vector_06f11b7b *)arg1 punctuationStrokeCount:(long long)arg2;
-- (void)_adjustCandidatesForChinesePunctuation:(vector_06f11b7b *)arg1 segmentedDrawing:(id)arg2 drawing:(id)arg3 inStrokeIndex:(long long)arg4 outStrokeIndex:(long long)arg5;
+- (void)_adjustCandidatesForChinesePunctuation:(vector_06f11b7b *)arg1 segmentDrawing:(id)arg2 completeDrawing:(id)arg3;
 - (id)recognitionResultsForDrawing:(id)arg1 options:(id)arg2;
 - (id)_legacyTextRecognitionResultsForDrawing:(id)arg1 options:(id)arg2 shouldCancel:(CDUnknownBlockType)arg3;
 - (id)recognitionResultsForDrawing:(id)arg1 options:(id)arg2 shouldCancel:(CDUnknownBlockType)arg3;

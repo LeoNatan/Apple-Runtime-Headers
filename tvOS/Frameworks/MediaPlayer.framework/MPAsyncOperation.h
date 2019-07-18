@@ -6,18 +6,22 @@
 
 #import <Foundation/NSOperation.h>
 
-@class NSError, NSObject;
+#import <MediaPlayer/MPUserIdentityConsuming-Protocol.h>
+
+@class ICUserIdentity, NSError, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MPAsyncOperation : NSOperation
+@interface MPAsyncOperation : NSOperation <MPUserIdentityConsuming>
 {
     NSObject<OS_dispatch_queue> *_accessQueue;
     _Bool _isExecuting;
     _Bool _isFinished;
+    ICUserIdentity *_userIdentity;
     NSError *_error;
 }
 
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error=_error;
+@property(copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (void)finish;
@@ -28,6 +32,12 @@
 - (_Bool)isConcurrent;
 - (_Bool)isAsynchronous;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -13,6 +13,7 @@
 @interface CNContactIconViewModel : NSObject <NSCopying>
 {
     BOOL _selected;
+    BOOL _monogramOnly;
     CNContact *_contact;
     PRLikeness *_likeness;
     unsigned long long _style;
@@ -32,6 +33,7 @@
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) double diameter; // @synthesize diameter=_diameter;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
+@property(nonatomic) BOOL monogramOnly; // @synthesize monogramOnly=_monogramOnly;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) PRLikeness *likeness; // @synthesize likeness=_likeness;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;

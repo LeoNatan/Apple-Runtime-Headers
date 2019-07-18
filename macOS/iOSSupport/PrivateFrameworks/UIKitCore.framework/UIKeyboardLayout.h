@@ -102,7 +102,7 @@
 - (void)triggerSpaceKeyplaneSwitchIfNecessary;
 - (BOOL)_allowContinuousPathUI;
 - (id)currentKeyplane;
-- (void)traitCollectionDidChange:(id)arg1;
+- (void)traitCollectionDidChange;
 - (double)biasedKeyboardWidthRatio;
 - (long long)currentHandBias;
 - (void)cancelTouchesForTwoFingerTapGesture:(id)arg1;
@@ -225,10 +225,12 @@
 - (id)_keyboardLayoutView;
 - (void)longPressAction;
 - (BOOL)isShiftKeyPlaneChooser;
+- (BOOL)isGeometricShiftOrMoreKeyForTouch:(id)arg1;
 - (BOOL)isShiftKeyBeingHeld;
 - (void)setAutoshift:(BOOL)arg1;
 - (void)setShift:(BOOL)arg1;
 - (BOOL)diacriticForwardCompose;
+- (BOOL)isKanaPlane;
 - (BOOL)isAlphabeticPlane;
 - (BOOL)ignoresShiftState;
 - (BOOL)usesAutoShift;

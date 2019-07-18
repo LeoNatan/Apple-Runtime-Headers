@@ -20,6 +20,7 @@
     NSMutableArray *_allowedStorefrontIDs;
     NTPBRecordBase *_base;
     NSMutableArray *_blockedStorefrontIDs;
+    NSMutableArray *_bundleFeaturedArticleIDs;
     NSString *_channelTagID;
     NSString *_coverArticleID;
     NSString *_coverImageURL;
@@ -49,10 +50,12 @@
     } _has;
 }
 
++ (Class)bundleFeaturedArticleIDsType;
 + (Class)topicTagIDsType;
 + (Class)blockedStorefrontIDsType;
 + (Class)allowedStorefrontIDsType;
 + (Class)allArticleIDsType;
+@property(retain, nonatomic) NSMutableArray *bundleFeaturedArticleIDs; // @synthesize bundleFeaturedArticleIDs=_bundleFeaturedArticleIDs;
 @property(retain, nonatomic) NSString *pdfResourceArchiveURL; // @synthesize pdfResourceArchiveURL=_pdfResourceArchiveURL;
 @property(nonatomic) long long minimumNewsVersion; // @synthesize minimumNewsVersion=_minimumNewsVersion;
 @property(retain, nonatomic) NSMutableArray *topicTagIDs; // @synthesize topicTagIDs=_topicTagIDs;
@@ -86,6 +89,10 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)bundleFeaturedArticleIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)bundleFeaturedArticleIDsCount;
+- (void)addBundleFeaturedArticleIDs:(id)arg1;
+- (void)clearBundleFeaturedArticleIDs;
 @property(readonly, nonatomic) BOOL hasPdfResourceArchiveURL;
 @property(nonatomic) BOOL hasMinimumNewsVersion;
 @property(nonatomic) BOOL hasType;

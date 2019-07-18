@@ -58,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)_updateSectionForTouch:(id)arg1 withEvent:(id)arg2;
 - (void)drawRect:(struct CGRect)arg1;
+- (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (struct CGRect)_visibleBoundsForRect:(struct CGRect)arg1 stride:(double *)arg2;
 - (unsigned long long)maximumNumberOfTitlesWithoutTruncationForHeight:(double)arg1;
 @property(readonly, nonatomic) NSString *selectedSectionTitle;

@@ -29,6 +29,7 @@
     long long _activationEvent;
     NSString *_activationDeviceIdentifier;
     NSString *_serverCommandId;
+    long long _endpointerOperationMode;
     double _homeButtonDownEventTime;
     unsigned long long _homeButtonDownEventMachAbsoluteTime;
     double _activationEventTime;
@@ -92,6 +93,7 @@
 @property(nonatomic) unsigned long long homeButtonDownEventMachAbsoluteTime; // @synthesize homeButtonDownEventMachAbsoluteTime=_homeButtonDownEventMachAbsoluteTime;
 @property(nonatomic) double homeButtonDownEventTime; // @synthesize homeButtonDownEventTime=_homeButtonDownEventTime;
 @property(nonatomic) BOOL useStreamingDictation; // @synthesize useStreamingDictation=_useStreamingDictation;
+@property(nonatomic) long long endpointerOperationMode; // @synthesize endpointerOperationMode=_endpointerOperationMode;
 @property(nonatomic) BOOL useAutomaticEndpointing; // @synthesize useAutomaticEndpointing=_useAutomaticEndpointing;
 @property(copy, nonatomic) NSString *serverCommandId; // @synthesize serverCommandId=_serverCommandId;
 @property(nonatomic) BOOL isEyesFree; // @synthesize isEyesFree=_isEyesFree;

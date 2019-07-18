@@ -7,6 +7,7 @@
 #import <Foundation/NSFileManager.h>
 
 @interface NSFileManager (RPExtensions)
+- (_Bool)_srDeviceHasSufficientSpaceForCurrentRecording;
 - (unsigned long long)_srDeviceFreeDiskSpace;
 - (_Bool)_srDeviceHasSufficientFreeSpaceForRecording;
 - (id)_srGetCreationDateForFile:(id)arg1;

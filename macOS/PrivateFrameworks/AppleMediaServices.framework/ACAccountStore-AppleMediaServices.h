@@ -18,6 +18,7 @@
 + (id)ams_sharedAccountStore;
 - (id)ams_iTunesSandboxAccounts;
 - (id)_storeClientIdentifier;
+- (id)_saveAccount:(id)arg1 verifyCredentials:(BOOL)arg2;
 - (BOOL)_isAccountNew:(id)arg1;
 - (void)_createLocalAccount;
 - (id)_correspondingAccountWithAccountTypeIdentifier:(id)arg1 forAccount:(id)arg2;
@@ -45,6 +46,7 @@
 - (id)ams_iCloudAccountForAccount:(id)arg1;
 - (id)ams_cookiesForURL:(id)arg1;
 - (id)ams_fetchGrandSlamTokenForAccount:(id)arg1 withIdentifier:(id)arg2 error:(id *)arg3;
+- (id)ams_accountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3 accountTypeIdentifier:(id)arg4;
 @property(readonly) NSString *ams_mediaType;
 @property(readonly) ACAccount *ams_localiTunesAccount;
 @property(readonly) NSArray *ams_iTunesAccounts;

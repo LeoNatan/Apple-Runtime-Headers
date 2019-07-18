@@ -6,8 +6,14 @@
 
 #import <BaseBoard/NSObject-Protocol.h>
 
+@class NSArray;
+
 @protocol BSProtobufSchemaBuilder <NSObject>
 - (void)addRepeatingField:(const char *)arg1 containsClass:(Class)arg2 forTag:(long long)arg3;
 - (void)addField:(const char *)arg1 forTag:(long long)arg2;
+- (void)addRepeatingField:(const char *)arg1 containsClasses:(NSArray *)arg2;
+- (void)addRepeatingField:(const char *)arg1 containsClass:(Class)arg2;
+- (void)addField:(const char *)arg1 allowedClasses:(NSArray *)arg2;
+- (void)addField:(const char *)arg1;
 @end
 

@@ -20,6 +20,7 @@
 - (void)_setLayoutEmptyRings;
 - (void)_updateForTemplateChange;
 - (void)layoutSubviews;
+- (void)setSecondaryForegroundColor:(id)arg1;
 - (void)setUsesMultiColor:(_Bool)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (double)_overlapStrokeWidth;

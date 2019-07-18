@@ -22,6 +22,8 @@
     PKMetalFramebuffer *_paintFramebufferAccumulator;
     PKMetalFramebuffer *_maskMSAAFramebuffer;
     PKMetalResourceHandler *_resourceHandler;
+    PKMetalFramebuffer *_dummyPaintFramebuffer;
+    PKMetalFramebuffer *_dummyColorFramebuffer;
     struct CGSize _drawingPixelSize;
     struct CGColor *_backgroundColor;
     struct CGSize _actualSize;
@@ -117,6 +119,8 @@
 - (BOOL)canRenderStroke:(id)arg1 combinedWith:(id)arg2;
 - (id)renderCacheItemForStroke:(struct AnimatingStroke *)arg1 bsplineFilter:(struct PKBSplineFilter *)arg2 purgeableResources:(id)arg3 strokeRenderCache:(id)arg4;
 - (id)renderCommandEncoderForCommandBuffer:(id)arg1 backBufferLoadAction:(unsigned long long)arg2 backBufferStoreAction:(unsigned long long)arg3 paintBufferLoadAction:(unsigned long long)arg4 accumulatorBufferLoadAction:(unsigned long long)arg5 accumulatorBufferStoreAction:(unsigned long long)arg6 destinationLoadAction:(unsigned long long)arg7;
+- (id)dummyColorFramebuffer;
+- (id)dummyPaintFramebuffer;
 - (unsigned long long)renderParticleStroke:(struct _PKStrokePointSlice)arg1 animatingStroke:(struct AnimatingStroke *)arg2 starts:(BOOL)arg3 ends:(BOOL)arg4 combinedRendering:(BOOL)arg5 renderEncoder:(id)arg6;
 - (id)generateParticleCacheForStroke:(struct _PKStrokePointSlice)arg1 animatingStroke:(struct AnimatingStroke *)arg2 starts:(BOOL)arg3 ends:(BOOL)arg4;
 -     // Error parsing type: @64@0:8{_PKStrokePointSlice={__wrap_iter<const _PKStrokePoint *>=^{_PKStrokePoint}}{__wrap_iter<const _PKStrokePoint *>=^{_PKStrokePoint}}}16^{AnimatingStroke=@@c{unique_ptr<PKBSplineFilter, std::__1::default_delete<PKBSplineFilter> >={__compressed_pair<PKBSplineFilter *, std::__1::default_delete<PKBSplineFilter> >=^{PKBSplineFilter}}}{unique_ptr<PKOutputTimeFilter, std::__1::default_delete<PKOutputTimeFilter> >={__compressed_pair<PKOutputTimeFilter *, std::__1::default_delete<PKOutputTimeFilter> >=^{PKOutputTimeFilter}}}{unique_ptr<PKMetalInputProvider, std::__1::default_delete<PKMetalInputProvider> >={__compressed_pair<PKMetalInputProvider *, std::__1::default_delete<PKMetalInputProvider> >=^{PKMetalInputProvider}}}{CGAffineTransform=dddddd}qc{CGRect={CGPoint=dd}{CGSize=dd}}{CGRect={CGPoint=dd}{CGSize=dd}}dIcc@?}32r^{vector<int, std::__1::allocator<int> >=^i^i{__compressed_pair<int *, std::__1::allocator<int> >=^i}}40r^48f56f60, name: generatePaintCacheForStroke:animatingStroke:segmentSteps:liveStrokePoints:liveStrokeStartTime:strokeInterval:
@@ -185,7 +189,7 @@
 - (void)teardownRenderStateIfNecessary;
 - (void)setupRenderStateForStrokeRenderingNeedPaintBuffer:(BOOL)arg1 needRenderMask:(BOOL)arg2;
 - (void)setupRenderStateForRenderingStrokes:(id)arg1;
-- (void)setupRenderStateForLiveRenderingDestinationTexture:(id)arg1 destinationLoadAction:(unsigned long long)arg2 accumLoadAction:(unsigned long long)arg3 accumStoreAction:(unsigned long long)arg4 backBufferLoadAction:(unsigned long long)arg5 backBufferStrokeAction:(unsigned long long)arg6;
+- (void)setupRenderStateForLiveRenderingDestinationTexture:(id)arg1 destinationLoadAction:(unsigned long long)arg2 accumLoadAction:(unsigned long long)arg3 accumStoreAction:(unsigned long long)arg4 backBufferLoadAction:(unsigned long long)arg5 backBufferStoreAction:(unsigned long long)arg6;
 - (unsigned long long)renderStrokes:(id)arg1 stopBlock:(CDUnknownBlockType)arg2;
 - (unsigned long long)renderStrokes:(id)arg1 clippedToStrokeSpaceRect:(struct CGRect)arg2 strokeTransform:(struct CGAffineTransform)arg3 stopBlock:(CDUnknownBlockType)arg4;
 - (BOOL)applyStrokeSpaceClipRect:(struct CGRect)arg1 strokeTransform:(struct CGAffineTransform)arg2;

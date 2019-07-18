@@ -8,7 +8,7 @@
 
 @interface GEOLocation (MNExtras)
 + (id)locationWithCLLocation:(id)arg1 course:(double)arg2;
-- (CDStruct_b79ad89f)clientLocation;
+- (CDStruct_a4140ae0)clientLocation;
 - (id)initWithCLLocation:(id)arg1 useMatchInfo:(_Bool)arg2;
 - (id)initWithCLLocation:(id)arg1 course:(double)arg2;
 - (id)initWithCLLocation:(id)arg1;

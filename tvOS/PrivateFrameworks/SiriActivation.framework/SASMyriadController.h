@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <SiriActivation/FBSDisplayLayoutObserver-Protocol.h>
-
-@class CMMotionActivityManager, FBSDisplayLayoutMonitor, NSString, SASLockStateMonitor;
+@class CMMotionActivityManager, FBSDisplayLayoutMonitor, SASLockStateMonitor;
 @protocol OS_dispatch_semaphore;
 
-@interface SASMyriadController : NSObject <FBSDisplayLayoutObserver>
+@interface SASMyriadController : NSObject
 {
     NSObject<OS_dispatch_semaphore> *_myriadFinishedSemaphore;
     _Bool _canceledByMyriad;
@@ -26,16 +24,11 @@
 
 + (id)currentController;
 - (void).cxx_destruct;
-- (void)layoutMonitor:(id)arg1 didUpdateDisplayLayout:(id)arg2 withContext:(id)arg3;
 - (void)_handleCMMotionActivity:(id)arg1;
+- (void)_updateRaiseToWakeTimeForTransition:(id)arg1;
 - (_Bool)activateForRequest:(id)arg1 visible:(_Bool)arg2;
-- (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (void)dealloc;
+- (id)_init;
 
 @end
 

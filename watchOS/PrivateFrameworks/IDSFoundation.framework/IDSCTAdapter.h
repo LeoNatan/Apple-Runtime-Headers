@@ -10,26 +10,30 @@
 #import <IDSFoundation/CoreTelephonyClientDelegate-Protocol.h>
 #import <IDSFoundation/CoreTelephonyClientPNRDelegate-Protocol.h>
 #import <IDSFoundation/CoreTelephonyClientSubscriberDelegate-Protocol.h>
+#import <IDSFoundation/IMSystemMonitorListener-Protocol.h>
 
-@class CoreTelephonyClient, IDSCTAdapterCache, NSHashTable, NSMutableDictionary, NSString;
+@class CoreTelephonyClient, IDSCTAdapterCache, IMSystemMonitor, NSHashTable, NSMutableDictionary, NSString;
 
-@interface IDSCTAdapter : NSObject <CoreTelephonyClientDelegate, CoreTelephonyClientSubscriberDelegate, CoreTelephonyClientPNRDelegate, CoreTelephonyClientCarrierBundleDelegate>
+@interface IDSCTAdapter : NSObject <CoreTelephonyClientDelegate, CoreTelephonyClientSubscriberDelegate, CoreTelephonyClientPNRDelegate, CoreTelephonyClientCarrierBundleDelegate, IMSystemMonitorListener>
 {
     NSHashTable *_listeners;
     id _coreTelephonyClient;
     id _cache;
     NSMutableDictionary *_registrationStateByLabelID;
     struct os_unfair_lock_s _lock;
+    IMSystemMonitor *_systemMonitor;
 }
 
 + (_Bool)isPhoneNumber:(id)arg1 equivalentToExistingPhoneNumber:(id)arg2;
 + (id)sharedInstance;
+@property(retain, nonatomic) IMSystemMonitor *systemMonitor; // @synthesize systemMonitor=_systemMonitor;
 @property(retain, nonatomic) NSMutableDictionary *registrationStateByLabelID; // @synthesize registrationStateByLabelID=_registrationStateByLabelID;
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) IDSCTAdapterCache *cache; // @synthesize cache=_cache;
 @property(retain, nonatomic) CoreTelephonyClient *coreTelephonyClient; // @synthesize coreTelephonyClient=_coreTelephonyClient;
 @property(retain, nonatomic) NSHashTable *listeners; // @synthesize listeners=_listeners;
 - (void).cxx_destruct;
+- (void)systemApplicationDidBecomeActive;
 - (void)operatorBundleChange:(id)arg1;
 - (void)carrierBundleChange:(id)arg1;
 - (void)pnrReadyStateNotification:(id)arg1 regState:(_Bool)arg2;
@@ -56,7 +60,8 @@
 @property(readonly, nonatomic) _Bool isAnySIMInserted;
 @property(readonly, nonatomic) _Bool isAnySIMUsable;
 @property(readonly, nonatomic) _Bool dualSIMCapabilityEnabled;
-- (id)initWithCoreTelephonyClient:(id)arg1;
+- (void)dealloc;
+- (id)initWithCoreTelephonyClient:(id)arg1 systemMonitor:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

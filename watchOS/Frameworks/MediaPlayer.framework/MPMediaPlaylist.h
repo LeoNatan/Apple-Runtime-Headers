@@ -43,7 +43,8 @@
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)initWithMultiverseIdentifier:(id)arg1;
+- (id)initWithMultiverseIdentifier:(id)arg1 library:(id)arg2;
+- (id)initWithPersistentID:(unsigned long long)arg1 mediaLibrary:(id)arg2;
 - (id)initWithPersistentID:(unsigned long long)arg1;
 - (id)artworkCatalogsWithMaximumCount:(unsigned int)arg1;
 - (id)tiledArtworkCatalogWithRows:(unsigned int)arg1 columns:(unsigned int)arg2;

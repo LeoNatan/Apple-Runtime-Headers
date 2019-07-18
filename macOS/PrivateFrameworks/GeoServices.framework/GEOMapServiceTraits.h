@@ -18,6 +18,7 @@
     CDStruct_95bda58d _engineTypes;
     CDStruct_95bda58d _knownClientResolvedTypes;
     CDStruct_95bda58d _supportedAutocompleteListTypes;
+    CDStruct_95bda58d _supportedAutocompleteResultCellTypes;
     CDStruct_95bda58d _supportedChildActions;
     CDStruct_95bda58d _transportTypes;
     struct GEOSessionID _sessionId;
@@ -61,6 +62,7 @@
     unsigned int _timeSinceMapEnteredForeground;
     unsigned int _timeSinceMapViewportChanged;
     BOOL _appDarkMode;
+    BOOL _autocompleteRequestSupportsSectionHeader;
     BOOL _deviceDarkMode;
     BOOL _deviceInVehicle;
     BOOL _isAPICall;
@@ -97,6 +99,7 @@
         unsigned int has_timeSinceMapEnteredForeground:1;
         unsigned int has_timeSinceMapViewportChanged:1;
         unsigned int has_appDarkMode:1;
+        unsigned int has_autocompleteRequestSupportsSectionHeader:1;
         unsigned int has_deviceDarkMode:1;
         unsigned int has_deviceInVehicle:1;
         unsigned int has_isAPICall:1;
@@ -117,6 +120,7 @@
         unsigned int read_engineTypes:1;
         unsigned int read_knownClientResolvedTypes:1;
         unsigned int read_supportedAutocompleteListTypes:1;
+        unsigned int read_supportedAutocompleteResultCellTypes:1;
         unsigned int read_supportedChildActions:1;
         unsigned int read_transportTypes:1;
         unsigned int read_analyticsAppIdentifier:1;
@@ -145,6 +149,7 @@
         unsigned int wrote_engineTypes:1;
         unsigned int wrote_knownClientResolvedTypes:1;
         unsigned int wrote_supportedAutocompleteListTypes:1;
+        unsigned int wrote_supportedAutocompleteResultCellTypes:1;
         unsigned int wrote_supportedChildActions:1;
         unsigned int wrote_transportTypes:1;
         unsigned int wrote_sessionId:1;
@@ -188,6 +193,7 @@
         unsigned int wrote_timeSinceMapEnteredForeground:1;
         unsigned int wrote_timeSinceMapViewportChanged:1;
         unsigned int wrote_appDarkMode:1;
+        unsigned int wrote_autocompleteRequestSupportsSectionHeader:1;
         unsigned int wrote_deviceDarkMode:1;
         unsigned int wrote_deviceInVehicle:1;
         unsigned int wrote_isAPICall:1;
@@ -220,11 +226,24 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
+- (void)clearSensitiveFields;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsSupportedAutocompleteResultCellTypes:(id)arg1;
+- (id)supportedAutocompleteResultCellTypesAsString:(int)arg1;
+- (void)setSupportedAutocompleteResultCellTypes:(int *)arg1 count:(unsigned long long)arg2;
+- (int)supportedAutocompleteResultCellTypeAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsSupportedAutocompleteResultCellType:(int)arg1;
+- (void)addSupportedAutocompleteResultCellType:(int)arg1;
+- (void)clearSupportedAutocompleteResultCellTypes;
+@property(readonly, nonatomic) int *supportedAutocompleteResultCellTypes;
+@property(readonly, nonatomic) unsigned long long supportedAutocompleteResultCellTypesCount;
+- (void)_readSupportedAutocompleteResultCellTypes;
+@property(nonatomic) BOOL hasAutocompleteRequestSupportsSectionHeader;
+@property(nonatomic) BOOL autocompleteRequestSupportsSectionHeader;
 @property(nonatomic) BOOL hasIsRefund;
 @property(nonatomic) BOOL isRefund;
 @property(nonatomic) BOOL hasSupportChildItems;

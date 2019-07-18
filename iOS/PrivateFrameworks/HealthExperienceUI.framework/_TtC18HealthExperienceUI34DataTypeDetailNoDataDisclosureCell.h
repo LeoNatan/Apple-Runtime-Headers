@@ -18,7 +18,10 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)didTapCell;
+@property(nonatomic) _Bool selected;
+- (_Bool)isSelected;
+@property(nonatomic) _Bool highlighted;
+- (_Bool)isHighlighted;
 - (void)awakeFromNib;
 @property(nonatomic) __weak UIImageView *disclosure; // @synthesize disclosure;
 @property(nonatomic) __weak UILabel *mainTextLabel; // @synthesize mainTextLabel;

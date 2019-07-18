@@ -61,6 +61,7 @@
     unsigned long long _metricUncompressibleChunks;
     unsigned int _metricDisconnects;
     unsigned long long _metricRetries;
+    unsigned long long _metricLastFileCompletionTicks;
     unsigned long long _metricFileSizeBuckets[8];
     unsigned int _metricLinkTypeCountAWDL;
     unsigned int _metricLinkTypeCountOther;
@@ -128,9 +129,10 @@
 - (void)_largeFileReceiveTaskRun:(id)arg1 data:(id)arg2 sendFlags:(unsigned int)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)_largeFileReceiveRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)_largeFileSendTaskEnd:(id)arg1 error:(id)arg2;
-- (void)_largeFileSendTaskResponse:(id)arg1 error:(id)arg2 end:(BOOL)arg3;
-- (void)_largeFileSendTaskSend:(id)arg1 data:(id)arg2 end:(BOOL)arg3;
-- (void)_largeFileSendTaskNext:(id)arg1;
+- (void)_largeFileSendTaskResponse:(id)arg1 error:(id)arg2 end:(BOOL)arg3 xid:(unsigned int)arg4;
+- (void)_largeFileSendTaskFailed:(id)arg1 error:(id)arg2;
+- (void)_largeFileSendTaskSend:(id)arg1 data:(id)arg2 end:(BOOL)arg3 xid:(unsigned int)arg4;
+- (void)_largeFileSendTaskNext:(id)arg1 xid:(unsigned int)arg2;
 - (void)_largeFileSendTaskStart:(id)arg1;
 - (id)_largeFileSendTaskCreate;
 - (void)_smallFilesReceiveTaskComplete:(id)arg1 error:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <RealityKit/_TtC10RealityKit24__RKEntityVisibilyAction.h>
+#import <RealityKit/_TtC10RealityKit26__RKEntityVisibilityAction.h>
 
-@interface _TtC10RealityKit20__RKEntityHideAction : _TtC10RealityKit24__RKEntityVisibilyAction
+@interface _TtC10RealityKit20__RKEntityHideAction : _TtC10RealityKit26__RKEntityVisibilityAction
 {
     // Error parsing type: , name: duration
     // Error parsing type: , name: distance
@@ -19,6 +19,9 @@
     // Error parsing type: , name: physicsLinearCoefficient
     // Error parsing type: , name: animationStyle
     // Error parsing type: , name: buildOutAnimationType
+    // Error parsing type: , name: updateSubscription
+    // Error parsing type: , name: fadeSubscription
+    // Error parsing type: , name: deadline
 }
 
 - (id)copyWithZone:(void *)arg1;

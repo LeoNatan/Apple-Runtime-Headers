@@ -7,17 +7,13 @@
 #import <objc/NSObject.h>
 
 @class NSString;
-@protocol OS_dispatch_queue;
+@protocol CSLPISystemSleepObserverDelegate, OS_dispatch_queue;
 
 @interface CSLPISystemSleepObserver : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_identifier;
-    CDUnknownBlockType _willPowerOnBlock;
-    CDUnknownBlockType _hasPoweredOnBlock;
-    CDUnknownBlockType _canSleepBlock;
-    CDUnknownBlockType _willNotSleepBlock;
-    CDUnknownBlockType _willSleepBlock;
+    id <CSLPISystemSleepObserverDelegate> _delegate;
     unsigned int _systemPowerConnection;
     struct IONotificationPort *_systemPowerPort;
     unsigned int _systemPowerNotifier;
@@ -29,7 +25,7 @@
 - (void)_startPowerMonitoring;
 - (void)stop;
 - (void)dealloc;
-- (id)initWithQueue:(id)arg1 identifier:(id)arg2 willPowerOnBlock:(CDUnknownBlockType)arg3 hasPoweredOnBlock:(CDUnknownBlockType)arg4 canSleepBlock:(CDUnknownBlockType)arg5 willNotSleepBlock:(CDUnknownBlockType)arg6 willSleepBlock:(CDUnknownBlockType)arg7;
+- (id)initWithQueue:(id)arg1 identifier:(id)arg2 delegate:(id)arg3;
 
 @end
 

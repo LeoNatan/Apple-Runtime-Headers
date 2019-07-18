@@ -95,7 +95,6 @@
 - (BOOL)collectionView:(id)arg1 layout:(id)arg2 shouldHideItemAtIndexPath:(id)arg3;
 - (void)contentClassesViewController:(id)arg1 didChangeSelectedClasses:(id)arg2;
 - (void)contentClassesToolbarTapped:(id)arg1;
-- (void)emptyViewDidRequestHelp:(id)arg1;
 - (void)emptyViewDidRequestTutorial:(id)arg1;
 - (void)emptyViewDidRequestActionDrawer:(id)arg1;
 - (void)settingsViewControllerWantsWorkflowReload:(id)arg1;

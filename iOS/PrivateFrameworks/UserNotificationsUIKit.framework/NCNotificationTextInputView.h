@@ -31,7 +31,7 @@
 - (double)_maximumTextViewHeight;
 - (double)_textViewWidth;
 - (void)textViewDidChange:(id)arg1;
-- (void)_dynamicUserInterfaceTraitDidChange;
+- (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)isFirstResponder;
 - (_Bool)resignFirstResponder;
 - (_Bool)canResignFirstResponder;

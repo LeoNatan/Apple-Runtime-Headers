@@ -20,6 +20,7 @@
         unsigned int entityType:1;
         unsigned int sceneType:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _deviceType;
     int _entityType;
     int _sceneType;
@@ -33,6 +34,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDataString *zone; // @synthesize zone=_zone;
 @property(nonatomic) int sceneType; // @synthesize sceneType=_sceneType;
 @property(retain, nonatomic) _INPBDataString *room; // @synthesize room=_room;

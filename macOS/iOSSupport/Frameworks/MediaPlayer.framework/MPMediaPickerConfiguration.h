@@ -17,6 +17,7 @@
     BOOL _showsItemsWithProtectedAssets;
     BOOL _picksSingleCollectionEntity;
     BOOL _showsCatalogContent;
+    BOOL _pickingForExternalPlayer;
     unsigned int _watchCompatibilityVersion;
     unsigned long long _mediaTypes;
     NSString *_prompt;
@@ -25,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL pickingForExternalPlayer; // @synthesize pickingForExternalPlayer=_pickingForExternalPlayer;
 @property(nonatomic) BOOL showsCatalogContent; // @synthesize showsCatalogContent=_showsCatalogContent;
 @property(nonatomic) long long selectionMode; // @synthesize selectionMode=_selectionMode;
 @property(copy, nonatomic) NSArray *typeIdentifiers; // @synthesize typeIdentifiers=_typeIdentifiers;

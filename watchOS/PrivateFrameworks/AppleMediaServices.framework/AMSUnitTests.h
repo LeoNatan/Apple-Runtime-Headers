@@ -14,8 +14,6 @@
 + (id)_encryptionKeys;
 + (void)setEncryptionKey:(id)arg1 forDataProtectionClass:(unsigned int)arg2;
 + (id)encryptionKeyForDataProtectionClass:(unsigned int)arg1;
-+ (id)protocolClasses;
-+ (void)setProtocolClasses:(id)arg1;
 + (_Bool)isRunningUnitTests;
 
 @end

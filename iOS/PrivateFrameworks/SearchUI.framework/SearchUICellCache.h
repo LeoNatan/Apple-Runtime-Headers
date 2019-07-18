@@ -6,14 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSCache;
+@class NSCache, NSDate;
 
 @interface SearchUICellCache : NSObject
 {
     NSCache *_cellCache;
+    NSDate *_lastCacheClearTime;
 }
 
 + (id)sharedCache;
+@property(retain, nonatomic) NSDate *lastCacheClearTime; // @synthesize lastCacheClearTime=_lastCacheClearTime;
 @property(retain, nonatomic) NSCache *cellCache; // @synthesize cellCache=_cellCache;
 - (void).cxx_destruct;
 - (id)identifierForResults:(id)arg1;

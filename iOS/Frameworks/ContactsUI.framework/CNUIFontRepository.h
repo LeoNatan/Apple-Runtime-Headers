@@ -24,7 +24,9 @@ __attribute__((visibility("hidden")))
 + (id)carPlayNameViewPrimaryLabelFont;
 + (id)carPlayTableViewCellSubtitleFont;
 + (id)carPlayTableViewCellTitleFont;
++ (id)contactCardPhotoPickerActionButtonFont;
 + (id)contactCardPhotoPickerCaptionFont;
++ (id)contactCardWarningHeaderLabelFont;
 + (id)contactCardRecentBadgeFont;
 + (id)contactStyleDefaultBoldTextFont;
 + (id)contactStyleDefaultItalicTextFont;

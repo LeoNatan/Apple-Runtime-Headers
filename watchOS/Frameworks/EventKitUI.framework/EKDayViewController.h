@@ -42,7 +42,7 @@
     NSDateComponents *_originalDisplayDate;
     double _dayStart;
     double _dayEnd;
-    _Bool _initialLoadHasOccurred;
+    _Bool _needsReload;
     _Bool _shouldScrollToNowOnViewWillAppear;
     _Bool _instigatedDateChange;
     _Bool _viewAppeared;
@@ -68,6 +68,7 @@
     _Bool _shouldAutoscrollAfterAppearance;
     _Bool _notifyWhenTapOtherEventDuringDragging;
     _Bool _preloadExtraDays;
+    _Bool _hasStartingFirstVisibleSecond;
     _Bool _transitionedToSameDay;
     id <EKDayViewControllerDelegate> _delegate;
     id <EKDayViewControllerDataSource> _dataSource;
@@ -76,6 +77,7 @@
     float _gutterWidth;
     UIView *_gestureOccurrenceSuperview;
     EKEventEditViewController *_currentEditor;
+    int _startingFirstVisibleSecond;
     NSTimer *_showNowTimer;
     struct CGPoint _normalizedContentOffset;
 }
@@ -86,6 +88,8 @@
 @property(copy, nonatomic) NSDateComponents *pendingPreviousDate; // @synthesize pendingPreviousDate=_pendingPreviousDate;
 @property(copy, nonatomic) NSDateComponents *pendingNextDate; // @synthesize pendingNextDate=_pendingNextDate;
 @property(nonatomic) struct CGPoint normalizedContentOffset; // @synthesize normalizedContentOffset=_normalizedContentOffset;
+@property(nonatomic) _Bool hasStartingFirstVisibleSecond; // @synthesize hasStartingFirstVisibleSecond=_hasStartingFirstVisibleSecond;
+@property(nonatomic) int startingFirstVisibleSecond; // @synthesize startingFirstVisibleSecond=_startingFirstVisibleSecond;
 @property(retain, nonatomic) EKEventEditViewController *currentEditor; // @synthesize currentEditor=_currentEditor;
 @property(retain, nonatomic) UIView *gestureOccurrenceSuperview; // @synthesize gestureOccurrenceSuperview=_gestureOccurrenceSuperview;
 @property(nonatomic) float gutterWidth; // @synthesize gutterWidth=_gutterWidth;
@@ -149,7 +153,7 @@
 - (void)cleanUpAfterGestureFailureForEventGestureController:(id)arg1;
 - (_Bool)_shouldEndGestureEditingOnTap;
 - (_Bool)eventEditorPopoverActiveWhileDraggingForEventGestureController:(id)arg1;
-- (void)validateInterfaceOrientation;
+- (void)validateInterfaceOrientationWithFutureOrientation:(int)arg1;
 - (void)externallyEndedGestureDragging;
 - (_Bool)didScrollWhenEventGestureController:(id)arg1 scrollTimerFiredToMoveLeft:(_Bool)arg2 right:(_Bool)arg3 vertically:(_Bool)arg4 towardPoint:(struct CGPoint)arg5;
 - (void)eventGestureController:(id)arg1 didSingleTapOccurrence:(id)arg2;
@@ -189,9 +193,13 @@
 - (id)_occurrencesForDayView:(id)arg1;
 - (void)dayView:(id)arg1 didUpdateScrollPosition:(struct CGPoint)arg2;
 - (void)significantTimeChangeOccurred;
-- (void)loadDataBetweenStart:(id)arg1 end:(id)arg2 completionForCurrentDayReload:(CDUnknownBlockType)arg3;
-- (void)loadData:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)loadDataBetweenStart:(id)arg1 end:(id)arg2 withTrigger:(int)arg3 completionForCurrentDayReload:(CDUnknownBlockType)arg4;
+- (void)loadData:(_Bool)arg1 withTrigger:(int)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)reloadData;
+- (void)_performDisplayedOccurrencesChangedDelegateMethodWithTrigger:(int)arg1;
+- (_Bool)_delegateRespondsToDisplayedOccurrencesChangedMethod;
+- (void)reloadDataIfNeeded;
+- (void)setNeedsReload;
 - (id)_eventsForDay:(id)arg1;
 - (id)eventsForStartDate:(id)arg1 endDate:(id)arg2;
 - (void)editorDidCancelEditingEvent:(id)arg1;

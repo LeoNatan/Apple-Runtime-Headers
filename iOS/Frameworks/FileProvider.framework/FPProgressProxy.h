@@ -14,6 +14,7 @@
     NSURL *_fileURL;
     _Bool _shouldStopAccessingURL;
     NSObservation *_observation;
+    _Bool _didSetupParentProgress;
     _Bool _updateFileCount;
     NSString *_publisherKey;
 }
@@ -25,6 +26,7 @@
 - (void)setProgressDidSetupHandler:(CDUnknownBlockType)arg1;
 - (void)stopTrackingIfStarted;
 - (void)startTrackingFileURL:(id)arg1;
+- (void)setCancellationHandler:(CDUnknownBlockType)arg1;
 - (void)_updateWithProgress:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;

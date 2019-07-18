@@ -18,14 +18,16 @@
 - (void)applyArchivedAuthorizationDecisions:(NSData *)arg1 withConfirmationToken:(NSUUID *)arg2 replyBlock:(void (^)(NSError *))arg3;
 - (void)resetAllClientsWithReplyBlock:(void (^)(NSError *))arg1;
 - (void)getLocationForBundleID:(NSString *)arg1 orBundlePath:(NSString *)arg2 dynamicAccuracyReductionEnabled:(BOOL)arg3 allowsAlteredAccessoryLocations:(BOOL)arg4 replyBlock:(void (^)(NSError *, struct))arg5;
+- (void)checkAndExerciseAuthorizationForBundleID:(NSString *)arg1 orBundlePath:(NSString *)arg2 services:(unsigned long long)arg3 replyBlock:(void (^)(NSError *, BOOL))arg4;
 - (void)getMonitoredRegionsForBundleID:(NSString *)arg1 orBundlePath:(NSString *)arg2 replyBlock:(void (^)(NSError *, NSDictionary *))arg3;
 - (void)copyLastLogWithReplyBlock:(void (^)(NSError *))arg1;
 - (void)dumpLogsWithDescription:(NSString *)arg1 replyBlock:(void (^)(NSError *))arg2;
 - (void)displayStatisticsWithReplyBlock:(void (^)(NSError *))arg1;
-- (void)getAuthorizationStatusForService:(unsigned long long)arg1 forBundleID:(NSString *)arg2 orBundlePath:(NSString *)arg3 replyBlock:(void (^)(NSError *, unsigned int))arg4;
 - (void)getAuthorizationStatusForBundleID:(NSString *)arg1 orBundlePath:(NSString *)arg2 replyBlock:(void (^)(NSError *, int))arg3;
 - (void)pingDaemonWithReplyBlock:(void (^)(NSError *))arg1;
 - (void)getGestureServiceEnabledWithReplyBlock:(void (^)(NSError *, BOOL))arg1;
+- (void)getAuthorizationPromptMapDisplayEnabledWithReplyBlock:(void (^)(NSError *, BOOL))arg1;
+- (void)setAuthorizationPromptMapDisplayEnabled:(BOOL)arg1 replyBlock:(void (^)(NSError *))arg2;
 - (void)getLocationServicesEnabledWithReplyBlock:(void (^)(NSError *, int))arg1;
 - (void)setLocationServicesEnabled:(BOOL)arg1 replyBlock:(void (^)(NSError *))arg2;
 - (void)getPrivateMode:(void (^)(NSError *, BOOL))arg1;

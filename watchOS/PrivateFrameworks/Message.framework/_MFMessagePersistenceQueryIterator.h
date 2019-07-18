@@ -6,6 +6,7 @@
 
 #import <EmailDaemon/EDPersistedMessageQueryIterator.h>
 
+#import <Message/EFCancelable-Protocol.h>
 #import <Message/MFSearchResultHandler-Protocol.h>
 #import <Message/QueryProgressMonitor-Protocol.h>
 #import <Message/_MFFlushableMessageSetIterator-Protocol.h>
@@ -13,21 +14,14 @@
 @class NSMutableIndexSet, NSString;
 
 __attribute__((visibility("hidden")))
-@interface _MFMessagePersistenceQueryIterator : EDPersistedMessageQueryIterator <MFSearchResultHandler, QueryProgressMonitor, _MFFlushableMessageSetIterator>
+@interface _MFMessagePersistenceQueryIterator : EDPersistedMessageQueryIterator <MFSearchResultHandler, QueryProgressMonitor, _MFFlushableMessageSetIterator, EFCancelable>
 {
     NSMutableIndexSet *_messageSet;
 }
 
 @property(retain, nonatomic) NSMutableIndexSet *messageSet; // @synthesize messageSet=_messageSet;
 - (void).cxx_destruct;
-- (id)filter;
-- (void)endResult;
-- (void)setResultUnread:(_Bool)arg1;
-- (void)setResultDateRecieved:(double)arg1;
-- (void)setResultSender:(char *)arg1;
-- (void)setResultSubject:(char *)arg1;
-- (void)beginResult:(long long)arg1;
-- (void)handleMessage:(id)arg1;
+- (_Bool)handleMessage:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

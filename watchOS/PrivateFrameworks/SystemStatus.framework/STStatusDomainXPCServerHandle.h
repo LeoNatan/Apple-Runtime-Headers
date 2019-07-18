@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <SystemStatus/BSDescriptionProviding-Protocol.h>
 #import <SystemStatus/STStatusDomainServerHandle-Protocol.h>
 #import <SystemStatus/STStatusDomainXPCClient-Protocol.h>
 
 @class BSMutableIntegerMap, NSMutableDictionary, NSString, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
-@interface STStatusDomainXPCServerHandle : NSObject <STStatusDomainXPCClient, STStatusDomainServerHandle>
+@interface STStatusDomainXPCServerHandle : NSObject <STStatusDomainXPCClient, BSDescriptionProviding, STStatusDomainServerHandle>
 {
     BSMutableIntegerMap *_dataByDomain;
     NSMutableDictionary *_clientsByDomain;
@@ -32,8 +33,15 @@
 - (id)_internalQueue_dataForDomain:(unsigned int)arg1;
 - (void)_observeDataDiff:(id)arg1 forDomain:(unsigned int)arg2;
 - (void)_observeData:(id)arg1 forDomain:(unsigned int)arg2;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+@property(readonly, copy) NSString *description;
 - (void)observeWifiDataDiff:(id)arg1;
 - (void)observeWifiData:(id)arg1;
+- (void)observeVoiceControlDataDiff:(id)arg1;
+- (void)observeVoiceControlData:(id)arg1;
 - (void)observeTelephonyDataDiff:(id)arg1;
 - (void)observeTelephonyData:(id)arg1;
 - (void)observeBatteryDataDiff:(id)arg1;
@@ -45,7 +53,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

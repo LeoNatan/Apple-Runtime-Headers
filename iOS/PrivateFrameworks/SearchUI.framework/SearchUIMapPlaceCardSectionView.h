@@ -20,9 +20,11 @@
 @property(nonatomic) struct CGSize placecardBoundsSize; // @synthesize placecardBoundsSize=_placecardBoundsSize;
 @property(retain) SearchUIMapsViewController *mapViewController; // @synthesize mapViewController=_mapViewController;
 - (void).cxx_destruct;
+- (id)embeddedViewController;
 - (void)placeViewControllerDidUpdateHeight:(id)arg1;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
 - (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize)arg2 forReason:(long long)arg3;
+- (void)tlk_updateForAppearance:(id)arg1;
 - (id)setupContentView;
 
 // Remaining properties

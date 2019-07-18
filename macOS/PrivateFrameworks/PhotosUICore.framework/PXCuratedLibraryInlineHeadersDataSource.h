@@ -12,17 +12,17 @@
 {
     long long _numberOfSections;
     unsigned long long _level;
-    CDStruct_2ec95fd7 *_sectionInfos;
+    CDStruct_68723fc0 *_sectionInfos;
     PXAssetsDataSource *_assetsDataSource;
 }
 
 @property(readonly, nonatomic) PXAssetsDataSource *assetsDataSource; // @synthesize assetsDataSource=_assetsDataSource;
-@property(readonly, nonatomic) CDStruct_2ec95fd7 *sectionInfos; // @synthesize sectionInfos=_sectionInfos;
+@property(readonly, nonatomic) CDStruct_68723fc0 *sectionInfos; // @synthesize sectionInfos=_sectionInfos;
 @property(readonly, nonatomic) unsigned long long level; // @synthesize level=_level;
 @property(readonly, nonatomic) long long numberOfSections; // @synthesize numberOfSections=_numberOfSections;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithAssetsDataSource:(id)arg1 level:(unsigned long long)arg2 numberOfSections:(long long)arg3 sections:(CDStruct_2ec95fd7 *)arg4;
+- (id)initWithAssetsDataSource:(id)arg1 level:(unsigned long long)arg2 numberOfSections:(long long)arg3 sections:(CDStruct_68723fc0 *)arg4;
 
 @end
 

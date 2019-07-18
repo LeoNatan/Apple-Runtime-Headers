@@ -37,14 +37,16 @@
 + (void)refreshCachedCountsOnAllAssetContainersInContext:(id)arg1;
 + (_Bool)canSaveVideoToLibrary:(id)arg1;
 + (id)resourcesInfoFromMoc:(id)arg1;
-+ (void)_getResourceData:(id)arg1 originalsSizeOut:(unsigned long long *)arg2 derivativesSizeOut:(unsigned long long *)arg3 fileBackedThumbnailsSizeOut:(float *)arg4 tableThumbnailsSizeOut:(float *)arg5;
++ (void)_getResourceData:(id)arg1 nonDerivativeSizeOut:(unsigned long long *)arg2 derivativesSizeOut:(unsigned long long *)arg3 fileBackedThumbnailsSizeOut:(float *)arg4 tableThumbnailsSizeOut:(float *)arg5;
 + (int)priorityForFileExtension:(id)arg1;
++ (_Bool)isAdjustmentEnvelopeExtension:(id)arg1;
 + (_Bool)isAudioFileExtension:(id)arg1;
 + (_Bool)isVideoFileExtension:(id)arg1;
 + (_Bool)isNonRawImageFileExtension:(id)arg1;
 + (_Bool)isRawImageFileExtension:(id)arg1;
 + (_Bool)isImageFileExtension:(id)arg1;
 + (void)_loadFileExtensionInformation;
++ (id)masterURLFromSidecarURLs:(id)arg1;
 + (id)photoOutboundSharingTmpDirectoryURL;
 + (void)exitToRelocatePhotoLibrary;
 + (id)_getLibraryPathFromTriggerFile;
@@ -119,7 +121,6 @@
 @property(readonly) PLKeywordManager *keywordManager;
 - (id)assetsdClient;
 - (id)simpleDCIMDirectory;
-- (id)masterURLFromSidecarURLs:(id)arg1;
 - (void)_processPhotoIrisSidecarIfNecessary:(id)arg1 forAsset:(id)arg2;
 - (void)_applyAdjustmentFileInfo:(id)arg1 renderedContentFileInfo:(id)arg2 renderedVideoComplementFileInfo:(id)arg3 toAsset:(id)arg4 withMainFileURL:(id)arg5;
 - (void)_applySideCarFiles:(id)arg1 toAsset:(id)arg2 withMainFileURL:(id)arg3;
@@ -147,6 +148,7 @@
 - (void)recreateMemoriesAndPersonsFromMetadata;
 - (void)recreateAlbumsAndPersonsFromMetadata;
 - (void)setICloudPhotosEnabled:(_Bool)arg1 withClient:(id)arg2;
+- (void)invalidateWithReason:(id)arg1;
 - (id)managedObjectContextStoreUUID;
 - (void)setGlobalValue:(id)arg1 forKey:(id)arg2;
 - (id)globalValueForKey:(id)arg1;

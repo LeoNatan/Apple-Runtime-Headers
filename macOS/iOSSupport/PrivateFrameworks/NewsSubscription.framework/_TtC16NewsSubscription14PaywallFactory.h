@@ -9,7 +9,7 @@
 @interface _TtC16NewsSubscription14PaywallFactory : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: resolver
-    // Error parsing type: , name: purchaseController
+    // Error parsing type: , name: purchaseProvider
     // Error parsing type: , name: paywallTypeProvider
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: configurationManager

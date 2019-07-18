@@ -49,6 +49,7 @@
 - (struct CGSize)contentLayoutSizeFittingSize:(struct CGSize)arg1 forArrangedSubview:(id)arg2;
 - (void)invalidateIntrinsicContentSizeIfNecessary;
 - (void)layout;
+- (void)updateShadow;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;

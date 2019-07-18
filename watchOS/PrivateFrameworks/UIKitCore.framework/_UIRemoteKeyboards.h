@@ -10,7 +10,7 @@
 #import <UIKitCore/_UIRemoteKeyboardControllerDelegate-Protocol.h>
 #import <UIKitCore/_UIRemoteKeyboardDistributedViewSource-Protocol.h>
 
-@class FBSScene, NSArray, NSHashTable, NSMutableArray, NSMutableSet, NSString, NSXPCConnection, UIScreen, UIView, UIWindow, _UIKeyboardChangedInformation;
+@class FBSScene, NSArray, NSHashTable, NSMutableArray, NSMutableSet, NSString, NSXPCConnection, UIScreen, UIView, UIWindow, UIWindowScene, _UIKeyboardChangedInformation;
 @protocol _UIKeyboardArbitration;
 
 @interface _UIRemoteKeyboards : NSObject <_UIRemoteKeyboardDistributedViewSource, _UIKeyboardArbitrationClient, _UIRemoteKeyboardControllerDelegate>
@@ -25,6 +25,7 @@
     int _hostedCount;
     NSString *_focusedSceneIdentifier;
     _Bool _hadFocusBeforeOverlay;
+    UIWindowScene *_suppressedScene;
     _Bool _expectedSuppression;
     int _externalSuppression;
     int _recursionCheck;
@@ -39,6 +40,7 @@
     _Bool _updatingHeight;
     _Bool _handlingRemoteEvent;
     _Bool _shouldFence;
+    int _lastEventSource;
     NSXPCConnection *_connection;
     _UIKeyboardChangedInformation *_currentState;
 }
@@ -55,13 +57,17 @@
 @property(retain) _UIKeyboardChangedInformation *currentState; // @synthesize currentState=_currentState;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) _Bool enableMultiscreenHack; // @synthesize enableMultiscreenHack=_enableMultiscreenHack;
+@property(readonly, nonatomic) int lastEventSource; // @synthesize lastEventSource=_lastEventSource;
 @property(copy, nonatomic) NSString *focusedSceneIdentifier; // @synthesize focusedSceneIdentifier=_focusedSceneIdentifier;
 - (void)didRemoveDeactivationReason:(id)arg1;
 - (void)willAddDeactivationReason:(id)arg1;
 - (_Bool)shouldAllowInputViewsRestoredForId:(id)arg1;
 - (void)restorePreservedInputViewsIfNecessary;
 - (void)peekApplicationEvent:(id)arg1;
+- (void)queue_setLastEventSource:(int)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)updateLastEventSource:(int)arg1;
 - (void)userSelectedSceneWithToken:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
+- (void)userSelectedProcessIdentifier:(int)arg1 sceneDeferringToken:(id)arg2 onCompletion:(CDUnknownBlockType)arg3;
 - (void)userSelectedApp:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
 - (void)forceKeyboardAway;
 - (void)queue_setKeyboardDisabled:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -79,7 +85,7 @@
 @property(readonly) float intersectionHeight;
 @property(readonly) _Bool keyboardVisible;
 - (void)finishWithHostedWindow;
-- (id)prepareForHostedWindow;
+- (id)prepareForHostedWindowWithScene:(id)arg1;
 - (id)_activeScreen;
 - (void)performOnDistributedControllers:(CDUnknownBlockType)arg1;
 - (void)_performOnDistributedControllersExceptSelf:(CDUnknownBlockType)arg1;
@@ -92,14 +98,17 @@
 - (void)completeMoveKeyboardForWindow:(id)arg1;
 - (id)viewHostForWindow:(id)arg1;
 - (void)prepareToMoveKeyboard:(struct CGRect)arg1 withIAV:(struct CGRect)arg2 isIAVRelevant:(_Bool)arg3 showing:(_Bool)arg4 forScene:(id)arg5;
+- (_Bool)wantsToShowKeyboardForViewServiceHostWindow:(id)arg1;
 - (_Bool)wantsToShowKeyboardForWindow:(id)arg1;
 - (_Bool)isOnScreenRotating;
 - (_Bool)allowedToShowKeyboard;
+- (_Bool)needsToShowKeyboardForViewServiceHostWindow:(id)arg1;
 - (_Bool)needsToShowKeyboardForWindow:(id)arg1;
 - (void)applicationResume:(id)arg1;
 - (void)willResume:(id)arg1;
 - (void)didSuspend:(id)arg1;
 - (void)_lostWindow:(id)arg1;
+- (void)setWindowEnabled:(_Bool)arg1 force:(_Bool)arg2;
 - (void)setWindowEnabled:(_Bool)arg1;
 @property(readonly, retain) FBSScene *requiredScene;
 @property(readonly) _Bool oldPathForSnapshot;
@@ -116,6 +125,7 @@
 - (void)queue_keyboardIAVChanged:(float)arg1 onComplete:(CDUnknownBlockType)arg2;
 - (void)queue_keyboardChangedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)queue_keyboardChanged:(id)arg1 onComplete:(CDUnknownBlockType)arg2;
+- (_Bool)isKeyboardExtension;
 - (void)keyboardChangedCompleted;
 - (_Bool)didHandleKeyboardChange:(id)arg1 shouldConsiderSnapshottingKeyboard:(_Bool)arg2 isLocalEvent:(_Bool)arg3;
 - (void)resetSnapshotWithWindowCheck:(_Bool)arg1;

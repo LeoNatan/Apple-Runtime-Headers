@@ -11,7 +11,7 @@
 
 @interface ICAttachmentInlineDrawingModel (UI)
 + (void)generatePreviewsForAttachment:(id)arg1 fromDrawing:(id)arg2;
-+ (struct UIImage *)generateImageForAttachment:(id)arg1 fromDrawing:(id)arg2 fullResolution:(_Bool)arg3;
++ (struct UIImage *)generateImageForAttachment:(id)arg1 fromDrawing:(id)arg2 fullResolution:(_Bool)arg3 appearanceInfo:(id)arg4;
 + (struct UIImage *)previewImageFromDrawing:(id)arg1 fullImage:(struct CGImage *)arg2 scale:(double)arg3;
 + (unsigned short)drawingPreviewVersion;
 - (void)drawPreviewInRect:(struct CGRect)arg1;

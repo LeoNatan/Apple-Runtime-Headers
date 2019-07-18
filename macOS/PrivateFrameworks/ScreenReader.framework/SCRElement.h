@@ -161,7 +161,6 @@
 - (id)altTitleForCommand:(id)arg1;
 - (id)titleForCommand:(id)arg1;
 - (void)_playSoundFromNotification:(id)arg1;
-- (void)_announcementRequested:(id)arg1;
 - (id)_closestUIElementForBounds:(struct CGRect)arg1 withUIChildren:(id)arg2;
 - (void)_focusIntoText:(id)arg1;
 - (BOOL)handleLayoutChangeWithInfo:(id)arg1;
@@ -183,9 +182,6 @@
 - (id)topLevelElement;
 - (BOOL)isTopLevelElement;
 - (id)_ancestorUIElementWithRole:(id)arg1;
-- (BOOL)performBrailleWrapRightWithOutputRequest:(id)arg1;
-- (BOOL)performBrailleWrapLeftWithOutputRequest:(id)arg1;
-- (BOOL)performBrailleRouterActionWithIndex:(unsigned long long)arg1 outputRequest:(id)arg2;
 - (void)handleElementBusyChanged:(id)arg1;
 - (void)handleAnimationOccurred:(id)arg1;
 - (BOOL)handleEvent:(id)arg1 request:(id)arg2;
@@ -362,6 +358,7 @@
 - (id)uiSelectedChildrenElements;
 - (id)uiParent;
 - (id)uiWindow;
+- (id)imageData;
 - (struct CGPoint)activationPoint;
 - (BOOL)supportsActivationPoint;
 - (struct CGPoint)midpoint;

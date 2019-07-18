@@ -34,7 +34,6 @@
     NSArray *_visibleAssets;
     PHFetchResult *_allAssets;
     PHFetchResult *_curationAssets;
-    PHFetchResult *_overviewAssets;
     PHFetchResult *_summaryAssets;
     PHFetchResult *_extendedAssets;
     PHFetchResult *_dejunkAndDedupeAssets;
@@ -70,14 +69,14 @@
     UITextField *_semanticalDedupingThresholdTextField;
     UITextField *_semanticalDedupingThresholdForPeopleTextField;
     UITextField *_semanticalDedupingThresholdForPersonsTextField;
-    UISwitch *_dontSemanticallyDedupePeopleSwitch;
-    UISwitch *_dontSemanticallyDedupePersonsSwitch;
+    UISwitch *_doNotSemanticallyDedupePeopleSwitch;
+    UISwitch *_doNotSemanticallyDedupePersonsSwitch;
     UISwitch *_allowAdaptiveForSemanticalDedupingSwitch;
     UISwitch *_useOnlyScenesForDedupingSwitch;
     UISwitch *_useAllPersonsForDedupingSwitch;
     UISwitch *_useFaceQualityForElectionSwitch;
-    UISwitch *_dontDedupeInterestingVideosSwitch;
-    UISwitch *_dontDedupeInterestingPortraitsAndLivePicturesSwitch;
+    UISwitch *_doNotDedupeVideosSwitch;
+    UISwitch *_doNotDedupeInterestingPortraitsAndLivePicturesSwitch;
     UISwitch *_onlyDedupeContiguousItemsSwitch;
     UISwitch *_doDejunkSwitch;
     UISwitch *_returnDedupedJunkIfOnlyJunkSwitch;
@@ -136,6 +135,7 @@
 - (void)_applySettingsGlobally:(id)arg1;
 - (id)options;
 - (void)_editSettings:(id)arg1;
+- (void)presentTapToRadarIfNeeded;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)showInfo:(id)arg1;
 - (void)toggleCurationComparison:(id)arg1;

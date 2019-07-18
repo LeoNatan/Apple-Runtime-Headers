@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)didMoveToWindow;
-- (void)setStrokColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

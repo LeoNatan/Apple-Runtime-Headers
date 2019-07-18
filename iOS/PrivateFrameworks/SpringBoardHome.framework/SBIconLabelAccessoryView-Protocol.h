@@ -9,6 +9,7 @@
 @class UIFont, _UILegibilitySettings;
 
 @protocol SBIconLabelAccessoryView <SBReusableView>
+@property(readonly, nonatomic) struct UIEdgeInsets alignmentRectInsets;
 @property(readonly, nonatomic) double baselineOffsetFromBottom;
 @property(readonly, nonatomic) _Bool hasBaseline;
 - (void)updateWithLegibilitySettings:(_UILegibilitySettings *)arg1 labelFont:(UIFont *)arg2;

@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 #import <Silex/SXDragManagerDataSource-Protocol.h>
+#import <Silex/SXFullscreenCanvasViewControllerDelegate-Protocol.h>
 #import <Silex/SXFullscreenCaptionViewDelegate-Protocol.h>
 #import <Silex/SXFullscreenImageViewDelegate-Protocol.h>
 #import <Silex/SXFullscreenNavigationBarViewDelegate-Protocol.h>
@@ -18,7 +19,7 @@
 @class NSString, SXDragManager, SXFullscreenCanvasViewController, SXFullscreenCaptionView, SXFullscreenNavigationBarView, SXItemizedScrollView, UIColor, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol SXFullscreenCanvasShowable, SXFullscreenCaptionViewFactory;
 
-@interface SXFullscreenCanvasController : NSObject <UIGestureRecognizerDelegate, UIScrollViewDelegate, SXFullscreenImageViewDelegate, SXItemizedScrollViewDataSource, SXItemizedScrollViewDelegate, SXFullscreenCaptionViewDelegate, SXFullscreenNavigationBarViewDelegate, SXDragManagerDataSource>
+@interface SXFullscreenCanvasController : NSObject <UIGestureRecognizerDelegate, UIScrollViewDelegate, SXFullscreenImageViewDelegate, SXItemizedScrollViewDataSource, SXItemizedScrollViewDelegate, SXFullscreenCaptionViewDelegate, SXFullscreenNavigationBarViewDelegate, SXDragManagerDataSource, SXFullscreenCanvasViewControllerDelegate>
 {
     _Bool _isFullscreen;
     _Bool _isTransitioning;
@@ -93,6 +94,9 @@
 @property(nonatomic) _Bool isFullscreen; // @synthesize isFullscreen=_isFullscreen;
 @property(readonly, nonatomic) __weak id <SXFullscreenCanvasShowable> showable; // @synthesize showable=_showable;
 - (void).cxx_destruct;
+- (void)fullscreenCanvasViewController:(id)arg1 willTransitionToSize:(struct CGSize)arg2 withTransitionCoordinator:(id)arg3;
+- (void)fullScreenCanvasViewControllerWantsToDismiss:(id)arg1;
+- (void)setupKeyCommandsForCanvasViewController:(id)arg1;
 - (void)fullscreenNavigationBarViewDoneButtonPressed:(id)arg1;
 - (_Bool)captionView:(id)arg1 tapGestureRecognizerShouldBegin:(id)arg2;
 - (id)dragManager:(id)arg1 dragableAtLocation:(struct CGPoint)arg2;
@@ -144,7 +148,6 @@
 - (_Bool)otherInteractivityGestureShouldBegin:(id)arg1;
 @property(readonly, nonatomic) unsigned long long activeViewIndex;
 @property(retain, nonatomic) UIColor *backgroundColor; // @dynamic backgroundColor;
-- (void)viewWillTransitionToSize:(struct CGSize)arg1 transitionCoordinator:(id)arg2;
 - (void)transformViewToSize:(struct CGSize)arg1;
 - (void)changeCaptionViewForViewWithIndex:(unsigned long long)arg1 expanded:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)didFinishFullscreenActiveIndex:(unsigned long long)arg1;

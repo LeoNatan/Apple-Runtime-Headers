@@ -66,6 +66,7 @@
 - (id)debugDescription;
 - (unsigned int)hash;
 @property(readonly, nonatomic) _Bool supportsWirelessDisplay;
+@property(readonly, nonatomic, getter=isLowLatencyRoute) _Bool lowLatencyRoute;
 @property(readonly, nonatomic, getter=isB444Route) _Bool b444Route;
 @property(readonly, nonatomic, getter=isW2Route) _Bool w2Route;
 @property(readonly, nonatomic, getter=isH1Route) _Bool h1Route;
@@ -81,6 +82,8 @@
 @property(readonly, nonatomic, getter=isBeatsSoloRoute) _Bool beatsSoloRoute;
 @property(readonly, nonatomic, getter=isPowerbeatsRoute) _Bool powerbeatsRoute;
 @property(readonly, nonatomic, getter=isAirpodsRoute) _Bool airpodsRoute;
+@property(readonly, nonatomic, getter=isHeadphonesRoute) _Bool headphonesRoute;
+@property(readonly, nonatomic, getter=isShareableRoute) _Bool shareableRoute;
 @property(nonatomic) int displayRouteType;
 @property(readonly, nonatomic, getter=isDisplayedAsPicked) _Bool displayAsPicked;
 @property(readonly, nonatomic) int passwordType;

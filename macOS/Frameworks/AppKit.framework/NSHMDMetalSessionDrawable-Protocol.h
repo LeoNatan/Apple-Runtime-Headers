@@ -10,8 +10,6 @@
 @protocol MTLTexture;
 
 @protocol NSHMDMetalSessionDrawable <MTLDrawable>
-@property(readonly, nonatomic) unsigned long long drawableID;
-@property(readonly, nonatomic) double presentedTime;
 @property unsigned long long debugSignpost;
 @property double inputTimeStamp;
 @property(readonly) id <MTLTexture> texture;

@@ -26,7 +26,6 @@
 - (id)sampleTypeForDateRangeUpdates;
 - (void)updateContextItemForDateInterval:(id)arg1 timeScope:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)contextItemForLastUpdate;
-- (id)contextWithDefaultColorsAppropriateFor:(long long)arg1;
 - (id)initWithTitle:(id)arg1 dataSource:(id)arg2 defaultColors:(id)arg3 selectedColors:(id)arg4 verticalAxis:(id)arg5;
 
 @end

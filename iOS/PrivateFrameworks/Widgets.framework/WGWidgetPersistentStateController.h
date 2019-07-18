@@ -16,6 +16,7 @@
     NSXPCListener *_listener;
     WGWidgetDiscoveryController *_discoveryController;
     NSMutableDictionary *_widgetIdentifiersToCachedState;
+    _Bool _canCacheState;
 }
 
 + (id)_persistentStateForWidgetWithIdentifier:(id)arg1 containingBundleIdentifier:(id)arg2;

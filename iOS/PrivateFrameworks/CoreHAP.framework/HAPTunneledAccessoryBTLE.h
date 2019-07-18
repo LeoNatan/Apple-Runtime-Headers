@@ -11,16 +11,16 @@
 #import <CoreHAP/HAPSecuritySessionDelegate-Protocol.h>
 #import <CoreHAP/HMFTimerDelegate-Protocol.h>
 
-@class HAPCharacteristic, HAPSecuritySession, HAPService, HMFExponentialBackoffTimer, HMFTimer, NSMutableArray, NSNumber, NSObject, NSOperationQueue, NSString;
-@protocol HAPKeyStore, OS_dispatch_queue;
+@class HAPCharacteristic, HAPSecuritySession, HAPService, HMFExponentialBackoffTimer, HMFTimer, NSMutableArray, NSNumber, NSOperationQueue, NSString;
+@protocol HAPKeyStore, HMFLocking;
 
 @interface HAPTunneledAccessoryBTLE : HAPAccessory <HAPBTLEControlOutputStreamDelegate, HAPSecuritySessionDelegate, HMFTimerDelegate, HAPAccessoryServerInternalDelegate>
 {
+    id <HMFLocking> _lock;
     _Bool _verified;
     _Bool _securitySessionOpen;
     _Bool _securitySessionOpening;
     _Bool _verifying;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     NSNumber *_stateNumber;
     id <HAPKeyStore> _keyStore;
     HAPService *_tunneledBTLEAccessoryService;
@@ -59,7 +59,6 @@
 @property(nonatomic) __weak HAPService *tunneledBTLEAccessoryService; // @synthesize tunneledBTLEAccessoryService=_tunneledBTLEAccessoryService;
 @property(nonatomic) __weak id <HAPKeyStore> keyStore; // @synthesize keyStore=_keyStore;
 @property(copy, nonatomic) NSNumber *stateNumber; // @synthesize stateNumber=_stateNumber;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 - (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (_Bool)mergeObject:(id)arg1;

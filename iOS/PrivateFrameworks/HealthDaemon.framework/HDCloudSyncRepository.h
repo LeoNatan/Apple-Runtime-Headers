@@ -33,6 +33,7 @@
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
 - (void)cloudKitIdentityUpdated:(id)arg1;
+- (void)_queue_generateRestoreEventSyncCompleteWithPullCompleteDate:(id)arg1;
 - (void)_queue_performWhenDeviceToDeviceEncryptionIsAvailable:(CDUnknownBlockType)arg1;
 - (void)_queue_checkForDeviceToDeviceEncryptionAvailability;
 - (void)_queue_flushPendingDeviceToDeviceEncryptionAvailabilityBlocks;
@@ -52,7 +53,7 @@
 - (void)resetContainer:(id)arg1 withOptions:(unsigned long long)arg2 reason:(long long)arg3 progress:(id)arg4 syncIdentifier:(id)arg5 taskTree:(id)arg6;
 - (void)_updateProgress:(id)arg1 isPrimaryContainer:(_Bool)arg2 forOperationComponent:(unsigned long long)arg3;
 - (id)_startPullOperationForPullZone:(id)arg1 configuration:(id)arg2 fetchOperationResult:(id)arg3 taskTree:(id)arg4;
-- (void)_recordSuccessfulPull;
+- (void)_queue_recordSuccessfulPull;
 - (id)syncWithOptions:(unsigned long long)arg1 reason:(long long)arg2 identifier:(id)arg3 accessibilityAssertion:(id)arg4 taskTree:(id)arg5;
 - (id)syncWithOptions:(unsigned long long)arg1 reason:(long long)arg2 identifier:(id)arg3 taskTree:(id)arg4;
 - (id)syncWithOptions:(unsigned long long)arg1 reason:(long long)arg2 identifier:(id)arg3 completion:(CDUnknownBlockType)arg4;

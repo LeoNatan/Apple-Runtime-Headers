@@ -40,7 +40,7 @@
 @property(readonly, nonatomic) double controlSignalDuration;
 - (void)layoutSubviews;
 @property(nonatomic, getter=isDisplayingControlSignal) _Bool displayControlSignal;
-@property(readonly, nonatomic) NSArray *gridOptions;
+@property(readonly, copy, nonatomic) NSArray *gridOptions;
 @property(readonly, nonatomic) struct CGSize gridSize;
 - (void)_setUpUI;
 - (struct CGSize)intrinsicContentSize;

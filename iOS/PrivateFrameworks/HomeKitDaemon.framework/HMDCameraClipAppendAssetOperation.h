@@ -9,7 +9,6 @@
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
 @class HMDCameraClipSegmentMetadata, HMFTimer, NSData, NSString;
-@protocol HMDCameraRecordingUploaderDataSource;
 
 @interface HMDCameraClipAppendAssetOperation : HMDCameraClipModelOperation <HMFTimerDelegate>
 {
@@ -18,7 +17,6 @@
     NSString *_metadataPropertyName;
     NSData *_segmentData;
     HMDCameraClipSegmentMetadata *_segmentMetadata;
-    id <HMDCameraRecordingUploaderDataSource> _dataSource;
     unsigned long long _state;
     HMFTimer *_retryTimer;
 }
@@ -26,7 +24,6 @@
 + (id)logCategory;
 @property(retain) HMFTimer *retryTimer; // @synthesize retryTimer=_retryTimer;
 @property unsigned long long state; // @synthesize state=_state;
-@property(readonly) id <HMDCameraRecordingUploaderDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly) HMDCameraClipSegmentMetadata *segmentMetadata; // @synthesize segmentMetadata=_segmentMetadata;
 @property(readonly, copy) NSData *segmentData; // @synthesize segmentData=_segmentData;
 @property(readonly, copy) NSString *metadataPropertyName; // @synthesize metadataPropertyName=_metadataPropertyName;

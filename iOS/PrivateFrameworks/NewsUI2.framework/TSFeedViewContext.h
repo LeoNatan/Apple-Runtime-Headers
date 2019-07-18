@@ -25,10 +25,12 @@
     // Error parsing type: , name: referral
     // Error parsing type: , name: previousArticleID
     // Error parsing type: , name: previousArticleVersion
+    // Error parsing type: , name: showSubscribedAlert
 }
 
 - (void).cxx_destruct;
 - (id)init;
+- (void)setWithShowSubscribedAlert:(_Bool)arg1;
 - (void)setWithPreviousArticleVersion:(long long)arg1;
 - (void)setWithPreviousArticleID:(id)arg1;
 - (void)setWithReferral:(id)arg1;
@@ -44,6 +46,7 @@
 - (void)setWithFeedPickerType:(int)arg1;
 - (void)setWithFeedPickerSection:(int)arg1;
 - (void)setWithPresentationReason:(int)arg1;
+@property(nonatomic) _Bool showSubscribedAlert; // @synthesize showSubscribedAlert;
 @property(nonatomic, retain) NSNumber *previousArticleVersion; // @synthesize previousArticleVersion;
 @property(nonatomic, copy) NSString *previousArticleID;
 @property(nonatomic, retain) TSAnalyticsReferral *referral; // @synthesize referral;

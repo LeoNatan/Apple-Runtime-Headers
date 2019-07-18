@@ -14,6 +14,7 @@
 
 @optional
 - (HKInteractiveChartDataFormatter *)formatterForTimescope:(long long)arg1;
+- (NSString *)valueContextString:(NSArray *)arg1 applicationItems:(HKOverlayRoomApplicationItems *)arg2 representativeDisplayType:(HKDisplayType *)arg3;
 - (NSString *)valueString:(NSArray *)arg1 applicationItems:(HKOverlayRoomApplicationItems *)arg2 representativeDisplayType:(HKDisplayType *)arg3;
 @end
 

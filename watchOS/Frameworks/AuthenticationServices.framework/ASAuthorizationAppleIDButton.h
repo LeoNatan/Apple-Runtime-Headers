@@ -6,21 +6,32 @@
 
 #import <UIKit/UIControl.h>
 
-@class UILabel;
+@class CAFilter;
 
 @interface ASAuthorizationAppleIDButton : UIControl
 {
-    UILabel *_titleLabel;
     int _type;
     int _style;
+    CAFilter *_highlightFilter;
     float _cornerRadius;
 }
 
++ (Class)layerClass;
 + (id)buttonWithType:(int)arg1 style:(int)arg2;
 @property(nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
+- (_Bool)isAccessibilityElement;
+- (int)_ak_buttonStyle;
+- (int)_ak_buttonType;
 - (void)setHighlighted:(_Bool)arg1;
-- (id)titleForButton;
+- (void)_performAnimationToSetHighlighted:(_Bool)arg1;
+- (void)_createHighlightFilterIfNecessary;
+- (struct CGSize)intrinsicContentSize;
+- (void)layoutSubviews;
+- (void)_drawRect:(struct CGRect)arg1 inView:(struct UIView *)arg2;
+- (void)drawRect:(struct CGRect)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

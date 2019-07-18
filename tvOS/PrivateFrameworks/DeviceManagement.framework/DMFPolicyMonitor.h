@@ -17,12 +17,14 @@
 }
 
 + (id)remoteInterface;
++ (id)generateOneMoreMinuteDeclarationIdentifier:(id)arg1;
 + (id)policyMonitor;
 @property(readonly, nonatomic) NSMutableDictionary *notificationTokensByPolicyMonitorIdentifier; // @synthesize notificationTokensByPolicyMonitorIdentifier=_notificationTokensByPolicyMonitorIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *registrationCallbackQueue; // @synthesize registrationCallbackQueue=_registrationCallbackQueue;
 @property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
-- (void)requestPolicyIdentifiersForOrganization:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)oneMoreMinutePolicyExistsForIdentifier:(id)arg1 withError:(id *)arg2;
+- (id)requestPoliciesForTypes:(id)arg1 withError:(id *)arg2;
 - (void)requestPoliciesForTypes:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addRegistration:(id)arg1 forPolicyMonitorIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)invalidatePolicyMonitor:(id)arg1;

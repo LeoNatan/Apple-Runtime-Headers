@@ -10,7 +10,7 @@
 
 @protocol PXCMMInvitationParticipant <NSObject>
 @property(readonly, nonatomic) NSString *firstName;
-@property(readonly, nonatomic) NSString *displayName;
+@property(readonly, nonatomic) NSString *localizedName;
 @property(readonly, nonatomic) NSString *phoneNumberString;
 @property(readonly, nonatomic) NSString *emailAddressString;
 @end

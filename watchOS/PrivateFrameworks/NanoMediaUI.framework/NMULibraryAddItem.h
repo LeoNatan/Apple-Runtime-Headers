@@ -22,6 +22,7 @@
 
 @property(copy, nonatomic) CDUnknownBlockType visibilityBlock; // @synthesize visibilityBlock=_visibilityBlock;
 - (void).cxx_destruct;
+- (void)_handleCloudMusicLibraryEnabledStateDidChangeNotification:(id)arg1;
 - (void)_deleteFromLibraryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_addToLibraryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_performAction;

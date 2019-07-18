@@ -71,10 +71,12 @@ __attribute__((visibility("hidden")))
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)acceptVisitor:(id)arg1;
 - (id)childEnumerator;
-@property(readonly, nonatomic) NSArray *childInfos;
+@property(readonly, copy, nonatomic) NSArray *childInfos;
 - (id)endCollectingChanges;
 - (void)willChangeProperty:(int)arg1;
 - (void)beginCollectingChanges;
+- (_Bool)p_canCopy:(id)arg1;
+@property(readonly, nonatomic) _Bool canCopyData;
 @property(readonly, nonatomic) _Bool needsDownload;
 - (_Bool)isThemeContent;
 - (Class)repClass;
@@ -91,12 +93,14 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) TSDInfoGeometry *geometry;
 @property(readonly, nonatomic) unsigned long long itemIndex;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
+- (void)p_willModifyImageData;
 @property(readonly, nonatomic) struct CGSize naturalSize;
 @property(nonatomic) double scale;
 - (id)copyWithContext:(id)arg1;
 - (void)didInitFromSOS;
 - (void)commonInit;
 - (id)initWithContext:(id)arg1 imageData:(id)arg2;
+- (id)initWithContext:(id)arg1 imageData:(id)arg2 thumbnailImageData:(id)arg3;
 - (void)setCaptionStorage:(id)arg1;
 @property(readonly, nonatomic) TSWPStorage *captionStorage;
 
@@ -104,6 +108,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool isMaster;
 @property(nonatomic) _Bool matchesObjectPlaceholderGeometry;
 @property(readonly) Class superclass;
 

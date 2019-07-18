@@ -53,6 +53,7 @@
 - (void).cxx_destruct;
 - (void)_fadeInIcon:(id)arg1 isReplacing:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_fadeOutIcon:(id)arg1 atIndex:(unsigned long long)arg2 isReplacing:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_listLayoutDidChange:(id)arg1;
 - (void)_iconModelDidChange:(id)arg1;
 - (void)_swapIcon:(_Bool)arg1 forPlaceholders:(id)arg2;
 - (void)_placeholdersDidChange:(id)arg1;

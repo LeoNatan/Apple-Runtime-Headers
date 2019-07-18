@@ -16,8 +16,11 @@
 + (id)sharedManager;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+- (void)confirmActivationForAuthToken:(id)arg1 withUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)confirmActivationForToken:(id)arg1 withUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)requestActivationForAuthToken:(id)arg1 withUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)requestActivationForToken:(id)arg1 withUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)requestMetadataForAuthToken:(id)arg1 withUUID:(id)arg2 requestedLocale:(id)arg3 requestInfo:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)requestMetadataForToken:(id)arg1 withUUID:(id)arg2 requestedLocale:(id)arg3 requestInfo:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)_init;
 - (id)init;

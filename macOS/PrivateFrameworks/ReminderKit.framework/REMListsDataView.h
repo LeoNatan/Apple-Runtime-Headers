@@ -32,7 +32,7 @@
 - (id)fetchListsIncludingMarkedForDeleteWithObjectIDs:(id)arg1 error:(id *)arg2;
 - (id)fetchListIncludingMarkedForDeleteWithObjectID:(id)arg1 error:(id *)arg2;
 - (id)fetchListsIncludingSpecialContainersInAccount:(id)arg1 error:(id *)arg2;
-- (id)fetchListWithExternalIdentifier:(id)arg1 error:(id *)arg2;
+- (id)fetchAllListsWithExternalIdentifier:(id)arg1 inAccount:(id)arg2 error:(id *)arg3;
 
 @end
 

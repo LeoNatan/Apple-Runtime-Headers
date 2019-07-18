@@ -8,7 +8,7 @@
 
 #import <NanoTimeKit/NTKUtilityFlatComplicationViewDelegate-Protocol.h>
 
-@class NSString, NTKCaliforniaColorPalette, NTKCaliforniaContentView, NTKRoundedCornerOverlayView, NTKWhistlerAnalogDialView, UIImageView, UIView;
+@class NSString, NTKCaliforniaColorPalette, NTKCaliforniaContentView, NTKCircularAnalogDialView, NTKRoundedCornerOverlayView, UIImageView, UIView;
 
 @interface NTKCaliforniaFaceView : NTKAnalogFaceView <NTKUtilityFlatComplicationViewDelegate>
 {
@@ -20,11 +20,11 @@
     unsigned int _dial;
     NTKCaliforniaColorPalette *_colorPalette;
     UIImageView *_editingNotchBackgroundView;
-    NTKWhistlerAnalogDialView *_dialView;
+    NTKCircularAnalogDialView *_dialView;
 }
 
 + (int)uiSensitivity;
-@property(retain, nonatomic) NTKWhistlerAnalogDialView *dialView; // @synthesize dialView=_dialView;
+@property(retain, nonatomic) NTKCircularAnalogDialView *dialView; // @synthesize dialView=_dialView;
 @property(retain, nonatomic) UIImageView *editingNotchBackgroundView; // @synthesize editingNotchBackgroundView=_editingNotchBackgroundView;
 @property(retain, nonatomic) NTKCaliforniaColorPalette *colorPalette; // @synthesize colorPalette=_colorPalette;
 @property(nonatomic) unsigned int dial; // @synthesize dial=_dial;
@@ -35,9 +35,6 @@
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void).cxx_destruct;
 - (void)applyToForegroundZoomFraction:(float)arg1 faceScale:(float)arg2;
-- (void)complicationDisplayWrapperView:(id)arg1 updateCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5 animationDuration:(double)arg6 animationFraction:(float)arg7;
-- (void)complicationDisplayWrapperView:(id)arg1 prepareCustomDataAnimation:(id)arg2 fromEarlierView:(id)arg3 laterView:(id)arg4 isForward:(_Bool)arg5;
-- (_Bool)complicationDisplayWrapperView:(id)arg1 shouldStartCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5;
 - (float)_editSpeedForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)utilityBezelComplicationView;
 - (float)bezelComplicationTextWidthInRadius;
@@ -64,6 +61,7 @@
 - (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)applyTransitionToCircularDialWithBezelFraction:(float)arg1;
 - (void)_applyTransitionFraction:(float)arg1 fromComplication:(id)arg2 toComplication:(id)arg3 slot:(id)arg4;
+- (void)_applyComplicationColorTransitionFraction:(float)arg1 fromColorPalette:(id)arg2 toColorPalette:(id)arg3;
 - (void)_applyTransitionFraction:(float)arg1 fromColorPalette:(id)arg2 toColorPalette:(id)arg3;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (void)_applyTransitionFraction:(float)arg1 fromStyle:(unsigned int)arg2 toStyle:(unsigned int)arg3;
@@ -73,8 +71,9 @@
 - (float)circleDiameter;
 - (void)setCircularMaskForCircularDialFraction:(float)arg1 circleDiameter:(float)arg2;
 - (void)updateCircularMask;
-- (void)_updateRichCornerComplicationsColor:(id)arg1;
-- (void)_updateSubDialRichComplicationsColor:(id)arg1;
+- (void)_updateDialBezelComplicationColor:(id)arg1;
+- (void)_updateRichCornerComplicationsInnerColor:(id)arg1 outerColor:(id)arg2;
+- (void)_updateSubDialRichComplicationsColor:(id)arg1 alternateColor:(id)arg2;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (float)californiaContentViewScale;
 - (id)backgroundColorForDial:(unsigned int)arg1 palette:(id)arg2;

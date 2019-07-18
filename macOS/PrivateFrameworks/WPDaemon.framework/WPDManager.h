@@ -24,7 +24,6 @@
 
 + (id)cbStateAsString:(long long)arg1;
 + (id)wpStateAsString:(long long)arg1;
-+ (long long)getWPStateFromCBManagerState:(long long)arg1;
 @property(retain, nonatomic) NSSet *cbManagers; // @synthesize cbManagers=_cbManagers;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property __weak WPDaemonServer *server; // @synthesize server=_server;

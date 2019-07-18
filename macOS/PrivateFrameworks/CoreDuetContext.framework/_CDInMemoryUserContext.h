@@ -38,11 +38,18 @@
 - (BOOL)hasMultiDeviceRegistrations;
 - (void)deregisterCallback:(id)arg1;
 - (void)registerCallback:(id)arg1;
+- (id)namedDeviceIDsFromPredicate:(id)arg1;
 - (void)deactivateDevices:(id)arg1 remoteUserContextProxySourceDeviceUUID:(id)arg2;
 - (void)activateDevices:(id)arg1 remoteUserContextProxySourceDeviceUUID:(id)arg2;
+- (id)unsafe_remoteUserContextProxySourceDeviceUUIDs;
 - (id)unsafe_remoteDevicesByDeviceIDForRemoteUserContextProxySourceDeviceUUID:(id)arg1;
+- (id)unsafe_remoteDeviceIDsForRemoteUserContextProxySourceDeviceUUID:(id)arg1;
 - (id)unsafe_remoteDevicesForRemoteUserContextProxySourceDeviceUUID:(id)arg1;
+- (id)unsafe_remoteDeviceIDs;
 - (id)unsafe_remoteDevices;
+- (id)deviceWithDeviceID:(id)arg1 fromDevices:(id)arg2;
+- (id)remoteDeviceIDs;
+- (id)allDeviceIDs;
 - (id)allDevices;
 - (BOOL)addObjects:(id)arg1 andRemoveObjects:(id)arg2 fromArrayAtKeyPath:(id)arg3;
 - (BOOL)removeObjects:(id)arg1 fromArrayAtKeyPath:(id)arg2;

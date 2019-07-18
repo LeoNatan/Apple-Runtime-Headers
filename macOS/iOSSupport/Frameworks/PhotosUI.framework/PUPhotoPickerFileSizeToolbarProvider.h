@@ -7,15 +7,20 @@
 #import <objc/NSObject.h>
 
 #import <PhotosUI/PUPhotosGridViewSupplementalToolbarProvider-Protocol.h>
+#import <PhotosUI/UITableViewDataSource-Protocol.h>
+#import <PhotosUI/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSSet, NSString, PUPhotoPickerResizeTaskDescriptor, UIBarButtonItem;
+@class NSArray, NSMutableDictionary, NSSet, NSString, PUPhotoPickerResizeTaskDescriptor, UIBarButtonItem, UILabel, UITableViewController;
 @protocol PUPhotoPickerFileSizeToolbarProviderDelegate, PUPhotosGridViewSupplementalToolbarDataSource;
 
 __attribute__((visibility("hidden")))
-@interface PUPhotoPickerFileSizeToolbarProvider : NSObject <PUPhotosGridViewSupplementalToolbarProvider>
+@interface PUPhotoPickerFileSizeToolbarProvider : NSObject <UITableViewDataSource, UITableViewDelegate, PUPhotosGridViewSupplementalToolbarProvider>
 {
     id <PUPhotosGridViewSupplementalToolbarDataSource> _dataSource;
     UIBarButtonItem *_sizePickerItem;
+    UILabel *_sizePickerDescriptionLabel;
+    UITableViewController *_sizePickerViewController;
+    BOOL _preparingToPresentSizePickerViewController;
     NSArray *_toolbarItems;
     NSArray *_resizeTaskDescriptors;
     NSSet *_cachedAssetSet;
@@ -26,11 +31,17 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak id <PUPhotoPickerFileSizeToolbarProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)_computeSelectedIndexPath;
+- (void)_updateTableViewSelection;
 - (void)_updateSizePickerItemIfNeeded;
 - (id)_localizedLabelForResizeTaskDescriptor:(id)arg1;
 - (void)_presentSizePicker:(id)arg1;
 - (id)_orderedResizeTaskDescriptorsForCurrentlySelectedAssets;
 - (id)_orderedResizeTaskDescriptors;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)_sizePickerItem;
 @property(readonly, copy, nonatomic) NSArray *toolbarItems;
 @property(readonly, nonatomic) BOOL shouldShowToolbar;
 - (id)initWithDataSource:(id)arg1;

@@ -12,6 +12,7 @@
 @property(readonly, nonatomic) _Bool _layoutShouldFlipHorizontalOrientations;
 @property(readonly, nonatomic) float preferredContentScaleFactor;
 @property(readonly, nonatomic) struct CGRect bounds;
+@property(readonly, nonatomic) _Bool _hasContentGravity;
 @property(readonly, nonatomic) int contentMode;
 @property(readonly, nonatomic) int semanticContentAttribute;
 - (id <_UIImageContentEffect>)_effectForRenderingSource:(id <_UIImageContentLayoutSource>)arg1;

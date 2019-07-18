@@ -23,8 +23,6 @@
     _Bool _supportsSiriZLLButton;
     _Bool _supportsSiriMixable;
     _Bool _manufacturerIconVisible;
-    unsigned long long _nowPlayingAlbumArtMode;
-    long long _userInterfaceStyle;
     NSString *_name;
     NSString *_modelName;
     NSString *_manufacturerName;
@@ -41,14 +39,17 @@
     unsigned long long _limitableUserInterfaces;
     NSString *_endpointIdentifier;
     unsigned long long _voiceTriggerMode;
+    long long _nowPlayingAlbumArtMode;
+    long long _userInterfaceStyle;
     NSString *_manufacturerIconLabel;
     struct NSEdgeInsets _viewAreaInsets;
     struct NSEdgeInsets _dashboardRoundedCorners;
 }
 
 + (unsigned long long)_limitableUserInterfacesFromLimitedUIValues:(id)arg1;
++ (id)descriptionForEdgeInsets:(struct NSEdgeInsets)arg1;
 + (id)descriptionForUserInterfaceStyle:(long long)arg1;
-+ (id)descriptionForCapability:(unsigned long long)arg1;
++ (id)descriptionForCapability:(long long)arg1;
 + (id)_descriptionForTransportType:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool manufacturerIconVisible; // @synthesize manufacturerIconVisible=_manufacturerIconVisible;
 @property(readonly, copy, nonatomic) NSString *manufacturerIconLabel; // @synthesize manufacturerIconLabel=_manufacturerIconLabel;
@@ -56,6 +57,10 @@
 @property(readonly, nonatomic) _Bool supportsSiriZLLButton; // @synthesize supportsSiriZLLButton=_supportsSiriZLLButton;
 @property(readonly, nonatomic) _Bool supportsSiriZLL; // @synthesize supportsSiriZLL=_supportsSiriZLL;
 @property(readonly, nonatomic) _Bool supportsACBack; // @synthesize supportsACBack=_supportsACBack;
+@property(readonly, nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
+@property(readonly, nonatomic) struct NSEdgeInsets dashboardRoundedCorners; // @synthesize dashboardRoundedCorners=_dashboardRoundedCorners;
+@property(readonly, nonatomic) struct NSEdgeInsets viewAreaInsets; // @synthesize viewAreaInsets=_viewAreaInsets;
+@property(readonly, nonatomic) long long nowPlayingAlbumArtMode; // @synthesize nowPlayingAlbumArtMode=_nowPlayingAlbumArtMode;
 @property(readonly, nonatomic) unsigned long long voiceTriggerMode; // @synthesize voiceTriggerMode=_voiceTriggerMode;
 @property(readonly, copy, nonatomic) NSString *endpointIdentifier; // @synthesize endpointIdentifier=_endpointIdentifier;
 @property(readonly, nonatomic) _Bool supportsElectronicTollCollection; // @synthesize supportsElectronicTollCollection=_supportsElectronicTollCollection;
@@ -84,11 +89,7 @@
 - (id)screenInfoForScreenID:(id)arg1;
 - (id)description;
 - (id)valueForUndefinedKey:(id)arg1;
-@property(readonly, nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
-@property(readonly, nonatomic) struct NSEdgeInsets dashboardRoundedCorners; // @synthesize dashboardRoundedCorners=_dashboardRoundedCorners;
-@property(readonly, nonatomic) struct NSEdgeInsets viewAreaInsets; // @synthesize viewAreaInsets=_viewAreaInsets;
-@property(readonly, nonatomic) unsigned long long nowPlayingAlbumArtMode; // @synthesize nowPlayingAlbumArtMode=_nowPlayingAlbumArtMode;
-- (void)updateCarCapabilitiesProperties:(id)arg1;
+- (void)updateCarCapabilities;
 - (id)initWithPropertySupplier:(CDUnknownBlockType)arg1;
 - (id)descriptionForVoiceTriggerMode;
 - (id)descriptionForLimitableUserInterfaces;

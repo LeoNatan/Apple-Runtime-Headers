@@ -6,20 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class NLDataProvider;
+@class NLDataProvider, NLNumberGenerator, NSMutableData;
 
 __attribute__((visibility("hidden")))
 @interface NLDataEnumerator : NSObject
 {
     NLDataProvider *_dataProvider;
     unsigned int _idx;
+    NLNumberGenerator *_generator;
+    NSMutableData *_shuffleData;
 }
 
 - (void).cxx_destruct;
-- (unsigned int)index;
+- (void)shuffle;
+@property(readonly) unsigned int index;
+@property(readonly, retain) NLDataProvider *dataProvider;
+- (void)rewindAndShuffle:(_Bool)arg1;
 - (void)rewind;
+- (id)instanceAtIndex:(unsigned int)arg1;
 - (id)nextInstance;
 - (id)initWithDataProvider:(id)arg1;
+- (id)initWithDataProvider:(id)arg1 numberGenerator:(id)arg2;
 
 @end
 

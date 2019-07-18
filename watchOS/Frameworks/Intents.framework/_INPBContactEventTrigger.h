@@ -15,10 +15,12 @@
 @interface _INPBContactEventTrigger : PBCodable <_INPBContactEventTrigger, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     _INPBContact *_triggerContact;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBContact *triggerContact; // @synthesize triggerContact=_triggerContact;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

@@ -4,12 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString, NSUUID, REMObjectID;
+#import <ReminderKit/REMNullableObjectIDProviding-Protocol.h>
 
-@protocol REMObjectIDProviding
-+ (NSString *)cdEntityName;
-+ (REMObjectID *)objectIDWithUUID:(NSUUID *)arg1;
-+ (REMObjectID *)newObjectID;
+@class REMObjectID;
+
+@protocol REMObjectIDProviding <REMNullableObjectIDProviding>
 @property(readonly, nonatomic) REMObjectID *remObjectID;
 @end
 

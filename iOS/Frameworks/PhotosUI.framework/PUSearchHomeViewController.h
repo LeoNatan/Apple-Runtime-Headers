@@ -24,6 +24,8 @@
 - (void)ppt_prepareForSearchTest:(CDUnknownBlockType)arg1;
 - (void)ppt_prepareForSearchScrollingTestWithSearchText:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)ppt_prepareZeroKeywordRequest:(CDUnknownBlockType)arg1;
+- (long long)scrollAnimationIdentifier;
+- (void)_notifyAnalyticsSearchAction:(unsigned long long)arg1;
 - (void)gadget:(id)arg1 didChange:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSString *navigationIdentifier;
 @property(readonly, nonatomic) NSString *navigationTitle;

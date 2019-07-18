@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CNContactStore, DALocalDBWatcher, NSMutableArray, NSString, NoteContext;
+@class CNContactStore, NSMutableArray, NSString, NoteContext;
 @protocol OS_dispatch_queue;
 
 @interface DALocalDBHelper : NSObject
@@ -19,8 +19,7 @@
     NSString *_familyDelegateAltDSID;
     NSMutableArray *_saveRequests;
     int _abConnectionCount;
-    DALocalDBWatcher *_localDBWatcher;
-    // Error parsing type: ^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}, name: _calDB
+    // Error parsing type: ^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}, name: _calDB
     int _calConnectionCount;
     NSString *_clientIdentifier;
     NoteContext *_noteDB;
@@ -40,9 +39,8 @@
 @property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(nonatomic) int calConnectionCount; // @synthesize calConnectionCount=_calConnectionCount;
 // Error parsing type for property calDB:
-// Property attributes: T^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B},N,V_calDB
+// Property attributes: T^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B},N,V_calDB
 
-@property(retain, nonatomic) DALocalDBWatcher *localDBWatcher; // @synthesize localDBWatcher=_localDBWatcher;
 @property(nonatomic) int abConnectionCount; // @synthesize abConnectionCount=_abConnectionCount;
 @property(retain, nonatomic) NSMutableArray *saveRequests; // @synthesize saveRequests=_saveRequests;
 @property(retain, nonatomic) NSString *familyDelegateAltDSID; // @synthesize familyDelegateAltDSID=_familyDelegateAltDSID;

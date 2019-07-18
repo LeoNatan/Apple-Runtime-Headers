@@ -17,6 +17,14 @@ struct AppendBuffer {
     struct StreamBuffer stream;
 };
 
+struct AttachmentDescriptorSimple {
+    void *texture;
+    unsigned long long level;
+    struct _NSRange sliceRange;
+    struct _NSRange depthPlaneRange;
+    unsigned long long storeAction;
+};
+
 struct BinaryBuffer {
     CDUnknownFunctionPointerType *_vptr$AppendBuffer;
     struct StreamBuffer stream;
@@ -155,6 +163,10 @@ struct _NSRange {
     unsigned long long length;
 };
 
+struct __hash_node_base<std::__1::__hash_node<AttachmentDescriptorSimple, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<AttachmentDescriptorSimple, void *>*> *__next_;
+};
+
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, void *>*> *__next_;
 };
@@ -169,6 +181,10 @@ struct __hash_node_base<std::__1::__hash_node<void *, void *>*> {
 
 struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
     struct __tree_node_base<void *> *_field1;
+};
+
+struct array<AttachmentDescriptorSimple, 8> {
+    struct AttachmentDescriptorSimple __elems_[8];
 };
 
 struct deque<id, std::__1::allocator<id>> {
@@ -219,6 +235,17 @@ struct set<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsig
 struct unique_ptr<ILayerLockingPolicy, std::__1::default_delete<ILayerLockingPolicy>> {
     struct __compressed_pair<ILayerLockingPolicy *, std::__1::default_delete<ILayerLockingPolicy>> {
         struct ILayerLockingPolicy *__value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<AttachmentDescriptorSimple, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<AttachmentDescriptorSimple, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<AttachmentDescriptorSimple, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<AttachmentDescriptorSimple, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<AttachmentDescriptorSimple, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<AttachmentDescriptorSimple, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<AttachmentDescriptorSimple, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
     } __ptr_;
 };
 
@@ -280,6 +307,21 @@ struct unordered_map<unsigned long long, unsigned long long, std::__1::hash<unsi
             unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, unsigned long long>, std::__1::equal_to<unsigned long long>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_multiset<AttachmentDescriptorSimple, AttachmentDescriptorSimple::hash_t, AttachmentDescriptorSimple::equal_t, std::__1::allocator<AttachmentDescriptorSimple>> {
+    struct __hash_table<AttachmentDescriptorSimple, AttachmentDescriptorSimple::hash_t, AttachmentDescriptorSimple::equal_t, std::__1::allocator<AttachmentDescriptorSimple>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<AttachmentDescriptorSimple, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<AttachmentDescriptorSimple, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<AttachmentDescriptorSimple, void *>*>, std::__1::allocator<std::__1::__hash_node<AttachmentDescriptorSimple, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<AttachmentDescriptorSimple, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, AttachmentDescriptorSimple::hash_t> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, AttachmentDescriptorSimple::equal_t> {
             float __value_;
         } __p3_;
     } __table_;

@@ -4,10 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class TSDMetalContext;
+#import <iWorkImport/NSObject-Protocol.h>
 
-@protocol TSDLiveTexturedRectangleSource
+@class TSDMetalContext;
+@protocol MTLTexture;
+
+@protocol TSDLiveTexturedRectangleSource <NSObject>
 - (void)drawToMetalTextureWithContext:(TSDMetalContext *)arg1;
 - (_Bool)shouldDrawToMetalTextureWithContext:(TSDMetalContext *)arg1;
+
+@optional
+- (id <MTLTexture>)metalTextureWithContext:(TSDMetalContext *)arg1;
+- (_Bool)requiresOffscreenPass;
 @end
 

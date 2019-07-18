@@ -6,16 +6,19 @@
 
 #import <PassKitUI/PKDashboardCollectionViewCell.h>
 
-@class NSString, UIButton, UIColor, UILabel;
+@class NSString, PKContinuousButton, UILabel;
 
 @interface PKDashboardBalanceView : PKDashboardCollectionViewCell
 {
     _Bool _isTemplateLayout;
     UILabel *_titleLabel;
     UILabel *_detailLabel;
-    UIButton *_actionButton;
+    UILabel *_availableCreditLabel;
+    NSString *_title;
+    PKContinuousButton *_actionButton;
     _Bool _topUpEnabled;
     NSString *_balance;
+    NSString *_availableCredit;
     NSString *_topUpTitle;
     CDUnknownBlockType _topUpAction;
 }
@@ -23,6 +26,7 @@
 @property(nonatomic) _Bool topUpEnabled; // @synthesize topUpEnabled=_topUpEnabled;
 @property(copy, nonatomic) CDUnknownBlockType topUpAction; // @synthesize topUpAction=_topUpAction;
 @property(copy, nonatomic) NSString *topUpTitle; // @synthesize topUpTitle=_topUpTitle;
+@property(copy, nonatomic) NSString *availableCredit; // @synthesize availableCredit=_availableCredit;
 @property(copy, nonatomic) NSString *balance; // @synthesize balance=_balance;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -30,7 +34,6 @@
 - (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
-@property(copy, nonatomic) UIColor *titleColor;
 @property(copy, nonatomic) NSString *title;
 - (void)resetFonts;
 - (void)createSubviews;

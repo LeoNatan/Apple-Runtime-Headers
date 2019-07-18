@@ -56,7 +56,6 @@
     NSMutableDictionary *_placeholderAssetAvailabilityHandlers;
     struct os_unfair_lock_s _placeholderAssetAvailabilityHandlersLock;
     NSObject<OS_dispatch_queue> *_serialQueue;
-    int _splURLChangeNotificationToken;
     PLCacheDeleteSupport *_cacheDeleteSupport;
     PLLibraryServicesManager *_libraryServicesManager;
     NSNumber *__numberOfPhotosToPush;
@@ -166,7 +165,7 @@
 - (void)downloadAsset:(id)arg1 resourceType:(unsigned long long)arg2 masterResourceOnly:(BOOL)arg3 highPriority:(BOOL)arg4 clientBundleID:(id)arg5 proposedTaskIdentifier:(id)arg6 taskDidBeginHandler:(CDUnknownBlockType)arg7 progressBlock:(CDUnknownBlockType)arg8 completionHandler:(CDUnknownBlockType)arg9;
 - (id)_assetResourceForAsset:(id)arg1 resourceType:(unsigned long long)arg2 masterResourceOnly:(BOOL)arg3 isPhoto:(char *)arg4;
 - (void)downloadResource:(id)arg1 highPriority:(BOOL)arg2 clientBundleID:(id)arg3 proposedTaskIdentifier:(id)arg4 taskDidBeginHandler:(CDUnknownBlockType)arg5 progressBlock:(CDUnknownBlockType)arg6 completionHandler:(CDUnknownBlockType)arg7;
-- (void)fetchPublicURLForAsset:(id)arg1 resourceType:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)getStreamingURLForAsset:(id)arg1 resourceType:(unsigned long long)arg2 intent:(unsigned long long)arg3 hints:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)fetchAdjustmentDataForAsset:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)isResourceTransferTaskAliveWithTaskWithIdentifier:(id)arg1;
 - (void)cancelResourceTransferTaskWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -202,8 +201,9 @@
 - (void)_runAsyncOnIsolationQueueWithTransaction:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_runSyncOnIsolationQueueWithBlock:(CDUnknownBlockType)arg1;
 - (void)_handleModeTransistionAfterDisableiCPL;
-- (void)disableiCPL;
-- (void)_handleSystemLibraryURLChange;
+- (void)_disableiCPL;
+- (void)disableiCPLWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)invalidate;
 - (void)_pause;
 - (void)_doPause;
 - (void)_unpause;
@@ -227,7 +227,7 @@
 - (void)_resetCacheDeleteSupport;
 @property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager;
 @property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
-- (void)enableiCPL;
+- (void)enableiCPLWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (long long)sizeOfResourcesToUploadByCPL:(id *)arg1;
 - (id)initWithLibraryServicesManager:(id)arg1;
 - (id)_debugNameForMode:(unsigned long long)arg1;

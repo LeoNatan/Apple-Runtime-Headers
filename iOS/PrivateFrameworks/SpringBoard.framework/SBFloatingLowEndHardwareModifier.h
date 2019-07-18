@@ -17,6 +17,7 @@
 - (_Bool)_shouldDimAndBlockTouchesToAppsUnderFloating;
 - (_Bool)dimmingViewBlocksTouches;
 - (double)dimmingAlpha;
+- (id)handleTapOutsideToDismissEvent:(id)arg1;
 - (id)handleMainTransitionEvent:(id)arg1;
 - (id)initWithOptions:(unsigned long long)arg1;
 

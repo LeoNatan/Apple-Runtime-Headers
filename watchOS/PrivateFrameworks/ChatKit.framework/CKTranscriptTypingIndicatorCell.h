@@ -23,6 +23,7 @@
 - (void)startPulseAnimation;
 - (void)startGrowAnimation;
 @property(retain, nonatomic) CALayer<IMTypingIndicatorLayerProtocol> *indicatorLayer;
+- (void)setTraitCollection:(id)arg1;
 - (void)ckLayerDidBecomeVisible:(_Bool)arg1;
 - (void)performRemoval:(CDUnknownBlockType)arg1;
 - (void)performInsertion:(CDUnknownBlockType)arg1;

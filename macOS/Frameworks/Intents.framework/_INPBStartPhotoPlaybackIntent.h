@@ -17,6 +17,7 @@
     CDStruct_95bda58d _excludedAttributes;
     CDStruct_95bda58d _includedAttributes;
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBString *_albumName;
     _INPBContactList *_contentPerson;
     _INPBDateTimeRange *_dateCreated;
@@ -28,6 +29,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBStringList *searchTerm; // @synthesize searchTerm=_searchTerm;
 @property(retain, nonatomic) _INPBContactList *peopleInPhoto; // @synthesize peopleInPhoto=_peopleInPhoto;
 @property(retain, nonatomic) _INPBLocation *locationCreated; // @synthesize locationCreated=_locationCreated;

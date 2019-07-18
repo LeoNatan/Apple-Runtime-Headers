@@ -106,7 +106,7 @@
 - (void)fadeFromTargetView:(id)arg1;
 - (BOOL)_isOwnedByView:(id)arg1;
 - (void)_fadeAfterCommand:(SEL)arg1;
-- (void)_showAsContextMenuSharingObjects:(id)arg1;
+- (void)_showAsContextMenuSharingCopyConfiguration:(id)arg1;
 - (void)_endOngoingAppearOrFadeAnimations;
 - (void)appear;
 - (void)show;

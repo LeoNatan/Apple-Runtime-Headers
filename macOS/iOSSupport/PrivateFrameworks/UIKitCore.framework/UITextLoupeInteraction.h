@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
     Class _configuratorClass;
     UIDelayedAction *_delayedLoupeAction;
+    UIDelayedAction *_delayedSelectionAction;
     BOOL _isShiftKeyBeingHeld;
     UITextGestureTuning *_gestureTuning;
     BOOL _hasPerformedInteraction;
@@ -28,8 +29,11 @@ __attribute__((visibility("hidden")))
 - (void)_performGestureType:(long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3;
 - (void)canBeginDragCursor:(id)arg1;
 - (void)delayedDisplayLoupe:(id)arg1;
+- (void)delayedSelectionAction:(id)arg1;
 - (void)delayedLoupeAction:(id)arg1;
+- (void)cancelDelayedLoupeActionIfNecessary;
 - (void)updateOrCancelDelayedLoupeActionWithPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
+- (BOOL)translationIsWithinAllowableMovement:(struct CGPoint)arg1;
 - (void)setupDelayedLoupeActionWithInitialPoint:(struct CGPoint)arg1;
 - (struct CGPoint)touchAlignedPointForPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
 - (void)updateVisibilityOffsetForGesture:(id)arg1;
@@ -47,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)updateInitialPoint:(struct CGPoint)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 @property(readonly, nonatomic) UIResponder *responder;
+- (void)didMoveToView:(id)arg1;
 - (id)initWithConfigurator:(Class)arg1;
 
 @end

@@ -23,6 +23,7 @@
     _Bool _pictureInPictureWasStartedWhenEnteringBackground;
     _Bool _shouldCancelActivePictureInPictureOnStart;
     _Bool _shouldPullCancellationPolicyOnStart;
+    id _windowSceneActivationStateObserver;
     double _playbackProgress;
     double _playbackRate;
     NSArray *_loadedTimeRanges;
@@ -72,6 +73,10 @@
 - (oneway void)pictureInPictureCancelRequestedAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (oneway void)pictureInPictureStopRequestedAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (oneway void)pictureInPictureStartRequestedAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)_stopObservingWindowSceneActivationState;
+- (void)_updateAutoPIPSettingsAndNotifyRemoteObject;
+- (void)_updateAutoPIPSettingsAndNotifyRemoteObjectIfNeeded;
+- (id)_expectedScene;
 - (void)_executeDelegateCallbackBlock:(CDUnknownBlockType)arg1 assumeApplicationActive:(_Bool)arg2;
 - (id)_sourceScene;
 - (_Bool)_isViewControllerWindowSceneActive;

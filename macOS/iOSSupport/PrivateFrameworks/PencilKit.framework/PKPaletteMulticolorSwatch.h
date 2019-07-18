@@ -4,33 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <PencilKit/PKPaletteColorSwatch.h>
 
 #import <PencilKit/PKPaletteMultiColorSwatchProperties-Protocol.h>
 
-@class NSString, PKPaletteColorSwatchSelectedView, UIColor, UIImageView;
+@class NSString, PKSwatchColor;
 
-@interface PKPaletteMulticolorSwatch : UIView <PKPaletteMultiColorSwatchProperties>
+@interface PKPaletteMulticolorSwatch : PKPaletteColorSwatch <PKPaletteMultiColorSwatchProperties>
 {
-    UIColor *_color;
-    UIImageView *_swatchImageView;
-    PKPaletteColorSwatchSelectedView *_selectedView;
 }
 
-@property(retain, nonatomic) PKPaletteColorSwatchSelectedView *selectedView; // @synthesize selectedView=_selectedView;
-@property(retain, nonatomic) UIImageView *swatchImageView; // @synthesize swatchImageView=_swatchImageView;
-- (void).cxx_destruct;
-- (void)setColor:(id)arg1;
-@property(readonly, nonatomic) UIColor *color;
-@property(nonatomic, getter=isSelected) BOOL selected;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (BOOL)wantsColorBulletVisible;
+- (id)newColorBackgroundView;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(nonatomic, getter=isSelected) BOOL selected;
+@property(nonatomic) BOOL showsSelectionHighlight;
 @property(readonly) Class superclass;
+@property(retain, nonatomic) PKSwatchColor *swatchColor;
 
 @end
 

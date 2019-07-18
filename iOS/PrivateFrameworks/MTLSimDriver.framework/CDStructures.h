@@ -49,7 +49,8 @@ struct NSObject {
 struct StorageEntry {
     unsigned long long _field1;
     void *_field2;
-    struct StorageEntry *_field3;
+    id _field3;
+    struct StorageEntry *_field4;
 };
 
 struct _NSRange {

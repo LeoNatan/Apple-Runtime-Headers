@@ -18,7 +18,7 @@
 @property(nonatomic) _Bool hasDisplayedRunningLateMessage; // @dynamic hasDisplayedRunningLateMessage;
 @property(nonatomic) _Bool hasDisplayedLeaveNowMessage; // @dynamic hasDisplayedLeaveNowMessage;
 @property(nonatomic) _Bool hasDisplayedLeaveByMessage; // @dynamic hasDisplayedLeaveByMessage;
-@property(retain, nonatomic) EKTravelEngineHypothesis *hypothesis; // @dynamic hypothesis;
+@property(copy, nonatomic) EKTravelEngineHypothesis *hypothesis; // @dynamic hypothesis;
 @property(copy, nonatomic) NSDate *lastFireTimeOfAlertOffsetFromTravelTime; // @dynamic lastFireTimeOfAlertOffsetFromTravelTime;
 @property(nonatomic) _Bool isOffsetFromTravelTimeStart; // @dynamic isOffsetFromTravelTimeStart;
 @property(copy, nonatomic) NSString *alarmID; // @dynamic alarmID;

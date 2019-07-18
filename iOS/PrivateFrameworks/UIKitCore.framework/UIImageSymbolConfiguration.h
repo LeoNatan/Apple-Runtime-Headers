@@ -11,18 +11,20 @@
 
 @interface UIImageSymbolConfiguration : UIImageConfiguration
 {
+    double _pointSize;
     struct {
-        unsigned int hasPointSize:1;
+        unsigned int hasFixedPointSize:1;
         unsigned int providerUpdates:1;
+        unsigned int ignoresDynamicType:1;
     } _configFlags;
     long long _scale;
-    double _pointSize;
-    double _pointSizeScaleFactor;
+    double _customFontPointSizeMultiplier;
     long long _weight;
     NSString *_textStyle;
     id <UIImageSymbolConfigurationProvider> _provider;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)configurationWithConfiguration:(id)arg1 and:(id)arg2;
 + (id)updatingConfigurationFromProvider:(id)arg1 scale:(long long)arg2;
 + (id)updatingConfigurationFromProvider:(id)arg1;
@@ -43,8 +45,7 @@
 @property(nonatomic, setter=_setProvider:) __weak id <UIImageSymbolConfigurationProvider> provider; // @synthesize provider=_provider;
 @property(copy, nonatomic, setter=_setTextStyle:) NSString *textStyle; // @synthesize textStyle=_textStyle;
 @property(nonatomic, setter=_setWeight:) long long weight; // @synthesize weight=_weight;
-@property(nonatomic, setter=_setPointSizeScaleFactor:) double pointSizeScaleFactor; // @synthesize pointSizeScaleFactor=_pointSizeScaleFactor;
-@property(nonatomic, setter=_setPointSize:) double pointSize; // @synthesize pointSize=_pointSize;
+@property(nonatomic, setter=_setPointSizeScaleFactor:) double customFontPointSizeMultiplier; // @synthesize customFontPointSizeMultiplier=_customFontPointSizeMultiplier;
 @property(nonatomic, setter=_setScale:) long long scale; // @synthesize scale=_scale;
 - (void).cxx_destruct;
 - (void)_deriveGlyphSize:(long long *)arg1 weight:(long long *)arg2 pointSize:(double *)arg3;
@@ -72,7 +73,9 @@
 - (void)_setProvider:(id)arg1 updating:(_Bool)arg2;
 - (_Bool)_hasSpecifiedTextStyle;
 - (_Bool)_hasSpecifiedWeight;
-- (_Bool)_hasSpecifiedPointSize;
+- (_Bool)_hasFixedPointSize;
+@property(nonatomic, setter=_setPointSizeForScalingWithTextStyle:) double pointSizeForScalingWithTextStyle;
+@property(nonatomic, setter=_setFixedPointSize:) double fixedPointSize;
 - (_Bool)_hasSpecifiedScale;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

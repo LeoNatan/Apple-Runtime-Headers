@@ -15,12 +15,14 @@
 @interface _INPBIntentExecutionResult : PBCodable <_INPBIntentExecutionResult, NSSecureCoding, NSCopying>
 {
     CDStruct_a8e956ad _has;
+    _Bool __encodeLegacyGloryData;
     int _encodingFormat;
     NSString *_encodedIntent;
     NSString *_encodedIntentResponse;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int encodingFormat; // @synthesize encodingFormat=_encodingFormat;
 @property(copy, nonatomic) NSString *encodedIntentResponse; // @synthesize encodedIntentResponse=_encodedIntentResponse;
 @property(copy, nonatomic) NSString *encodedIntent; // @synthesize encodedIntent=_encodedIntent;

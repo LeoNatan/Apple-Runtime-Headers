@@ -15,7 +15,9 @@
 }
 
 + (_Bool)unitTesting_insertValues:(id)arg1 quantitySample:(id)arg2 seriesVersion:(int)arg3 profile:(id)arg4 error:(id *)arg5;
++ (long long)unitTesting_insertionEra;
 + (void)unitTesting_updateInsertionEra;
++ (void)_triggerABCForNotFinalSeriesSampleInsert:(id)arg1 reason:(id)arg2;
 + (_Bool)_replaceEntity:(id)arg1 UUIDToDelete:(id)arg2 newEntity:(id)arg3 profile:(id)arg4 error:(id *)arg5;
 + (_Bool)_moveHFDKey:(long long)arg1 fromEntity:(id)arg2 toEntity:(id)arg3 transaction:(id)arg4 error:(id *)arg5;
 + (id)_updatedSampleUUIDForSeries:(id)arg1 originalEntity:(id)arg2 HFDKey:(long long)arg3 transaction:(id)arg4 profile:(id)arg5 error:(id *)arg6;
@@ -52,6 +54,7 @@
 + (id)_insertDataObject:(id)arg1 inDatabase:(id)arg2 persistentID:(id)arg3 error:(id *)arg4;
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id *)arg5;
 + (_Bool)performSeriesWriteTransactionWithProfile:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
++ (long long)_notFinalInserationEra;
 + (long long)_insertionEra;
 + (id)_statisticsProperties;
 + (id)_propertiesToLeftJoin;
@@ -65,6 +68,7 @@
 + (id)foreignKeys;
 + (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned int *)arg1;
 + (id)databaseTable;
+- (_Bool)unitTesting_setInsertionEra:(long long)arg1 profile:(id)arg2 error:(id *)arg3;
 - (_Bool)_setInsertionEra:(long long)arg1 database:(id)arg2 error:(id *)arg3;
 - (int)_hasV1SeriesDataWithDatabase:(id)arg1 error:(id *)arg2;
 - (_Bool)_isSeriesInDatabase:(id)arg1;

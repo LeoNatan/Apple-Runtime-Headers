@@ -17,6 +17,7 @@
     CDUnknownBlockType _validator;
 }
 
++ (id)actionByAppendingAction:(id)arg1 toAction:(id)arg2;
 @property(nonatomic, getter=isConsumed) _Bool consumed; // @synthesize consumed=_consumed;
 @property(copy, nonatomic) CDUnknownBlockType validator; // @synthesize validator=_validator;
 @property(readonly, nonatomic) double delay; // @synthesize delay=_delay;
@@ -26,12 +27,15 @@
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
+- (unsigned long long)leafCount;
+- (void)enumerateLeafActionsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)enumerateActionsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)consumeWithReason:(id)arg1;
 - (void)setDelay:(double)arg1 withValidator:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
+- (id)appendAction:(id)arg1;
 - (id)init;
 - (long long)type;
-- (_Bool)isGroupAction;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,6 +15,7 @@
 @property(readonly, nonatomic) long long baseVersion;
 @property(readonly, copy, nonatomic) NSString *livePhotoPairingIdentifier;
 @property(readonly, copy, nonatomic) PICompositionController *compositionController;
+@property(readonly, nonatomic) PLEditSource *activeEditSource;
 @property(readonly, nonatomic) PLEditSource *editSource;
 @property(readonly, nonatomic) NSProgress *progress;
 - (void)beginLoading;

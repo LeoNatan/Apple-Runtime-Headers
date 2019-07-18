@@ -68,6 +68,8 @@
 - (void)_queue_considerCompletingFlushRequests;
 - (void)_queue_considerSendingBatches;
 - (void)finishWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_queue_insertBatchForDatums:(id)arg1 device:(id)arg2 metadata:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (CDUnknownBlockType)_combineCompletion:(CDUnknownBlockType)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)insertDatums:(id)arg1 device:(id)arg2 metadata:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)initWithHealthStore:(id)arg1 bundleIdentifier:(id)arg2 quantityType:(id)arg3;
 @property(readonly, copy) NSString *description;

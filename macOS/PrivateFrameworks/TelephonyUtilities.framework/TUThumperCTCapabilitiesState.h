@@ -15,6 +15,7 @@
 @interface TUThumperCTCapabilitiesState : TUCTCapabilitiesState <NSSecureCoding, NSCopying, TUPubliclyAccessibleCopying>
 {
     BOOL _approved;
+    BOOL _associated;
     BOOL _supportsDefaultPairedDevice;
     NSSet *_approvedSecondaryDeviceIDs;
     NSString *_accountID;
@@ -25,6 +26,7 @@
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL supportsDefaultPairedDevice; // @synthesize supportsDefaultPairedDevice=_supportsDefaultPairedDevice;
 @property(copy, nonatomic) NSString *localDeviceID; // @synthesize localDeviceID=_localDeviceID;
+@property(nonatomic, getter=isAssociated) BOOL associated; // @synthesize associated=_associated;
 @property(copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 @property(copy, nonatomic) NSSet *approvedSecondaryDeviceIDs; // @synthesize approvedSecondaryDeviceIDs=_approvedSecondaryDeviceIDs;
 @property(nonatomic, getter=isApproved) BOOL approved; // @synthesize approved=_approved;

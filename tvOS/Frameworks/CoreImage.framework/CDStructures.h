@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString;
+@class CIImage, NSString;
 
 #pragma mark Function Pointers and Blocks
 
@@ -96,6 +96,15 @@ struct CIRenderDestinationInternal {
     id _field13;
 };
 
+struct DetectedLineSegment {
+    struct CGPoint _field1;
+    struct CGPoint _field2;
+    double _field3;
+    float _field4;
+    float _field5;
+    float _field6;
+};
+
 struct FastRegistration_Signatures {
     float *piRow;
     unsigned long long nPiRow;
@@ -113,16 +122,7 @@ struct GridROI_t {
 };
 
 struct HoughTransform {
-    float *_field1;
-    unsigned long long _field2;
-    unsigned long long _field3;
-    unsigned long long _field4;
-    float _field5;
-    float *_field6;
-    unsigned long long _field7;
-    unsigned long long _field8;
-    unsigned long long _field9;
-    float _field10;
+    CDUnknownFunctionPointerType *_field1;
 };
 
 struct IPoint {
@@ -145,6 +145,11 @@ struct Projections_meanStdTable {
     float *sumSqTable;
 };
 
+struct PseudoRand {
+    unsigned int u;
+    unsigned int v;
+};
+
 struct Rectangle {
     double _field1;
     double _field2;
@@ -162,6 +167,13 @@ struct SharpnessGridElement_t {
 
 struct Trilean {
     char _field1;
+};
+
+struct UIEdgeInsets {
+    double top;
+    double left;
+    double bottom;
+    double right;
 };
 
 struct __SVMParameters {
@@ -251,10 +263,18 @@ struct vector<CI::KernelArgumentType, std::__1::allocator<CI::KernelArgumentType
     } _field3;
 };
 
-struct vector<HoughLine, std::__1::allocator<HoughLine>> {
+struct vector<CI::Perspective::HoughLine, std::__1::allocator<CI::Perspective::HoughLine>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
-    struct __compressed_pair<HoughLine *, std::__1::allocator<HoughLine>> {
+    struct __compressed_pair<CI::Perspective::HoughLine *, std::__1::allocator<CI::Perspective::HoughLine>> {
+        CDStruct_183601bc *__value_;
+    } __end_cap_;
+};
+
+struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> {
+    CDStruct_183601bc *__begin_;
+    CDStruct_183601bc *__end_;
+    struct __compressed_pair<CI::Perspective::Line *, std::__1::allocator<CI::Perspective::Line>> {
         CDStruct_183601bc *__value_;
     } __end_cap_;
 };
@@ -330,6 +350,15 @@ typedef struct {
 } CDStruct_da2e99ad;
 
 typedef struct {
+    double _field1[4];
+    double _field2[2];
+    unsigned int _field3;
+    double *_field4;
+    double *_field5;
+    double *_field6;
+} CDStruct_bae50541;
+
+typedef struct {
     float _field1[4];
     float _field2[4];
     float _field3[4];
@@ -361,12 +390,10 @@ typedef struct {
 } CDStruct_e5fcc3f9;
 
 typedef struct {
-    double lineSearchRangeV;
-    double lineSearchRangeH;
-    double pitchLimit;
-    double yawLimit;
-    double rollLimit;
-} CDStruct_6256a11b;
+    double _field1;
+    double _field2;
+    _Bool _field3;
+} CDStruct_2815125f;
 
 typedef struct {
     double i;
@@ -377,6 +404,16 @@ typedef struct {
     double variance;
     int nNonZero;
 } CDStruct_fc6961d5;
+
+typedef struct {
+    float focalLength;
+    float lineSearchRangeV;
+    float lineSearchRangeH;
+    float pitchLimit;
+    float yawLimit;
+    float rollLimit;
+    CIImage *saliencyHeatmap;
+} CDStruct_20caa88f;
 
 typedef struct {
     float skinval;
@@ -475,13 +512,6 @@ typedef struct {
     _Bool _field11;
     float _field12;
 } CDStruct_79f2618e;
-
-typedef struct {
-    float theta;
-    float rho;
-    struct CGPoint a;
-    struct CGPoint b;
-} CDStruct_c94878bf;
 
 typedef struct {
     int _field1;

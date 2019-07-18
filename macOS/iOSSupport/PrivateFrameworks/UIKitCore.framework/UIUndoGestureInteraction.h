@@ -127,7 +127,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (BOOL)textEditingOperationsAvailableWithGestureRecognizer:(id)arg1;
 - (BOOL)undoManagerOperationsCutCopyPasteAvailable;
 - (BOOL)undoManagerOperationsUndoRedoAvailable;
 - (id)_undoManagerFlattenedGroupingInfo;

@@ -16,6 +16,7 @@
     _Bool _mirrorVideoOutput;
     _Bool _visionDataOutputEnabled;
     _Bool _enabled;
+    float _maxGainOverride;
     ARVideoFormat *_videoFormat;
     NSString *_metaData;
     NSDictionary *_visionDataOutputParameters;
@@ -24,6 +25,7 @@
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSDictionary *visionDataOutputParameters; // @synthesize visionDataOutputParameters=_visionDataOutputParameters;
 @property(copy, nonatomic) NSString *metaData; // @synthesize metaData=_metaData;
+@property(nonatomic) float maxGainOverride; // @synthesize maxGainOverride=_maxGainOverride;
 @property(nonatomic) _Bool visionDataOutputEnabled; // @synthesize visionDataOutputEnabled=_visionDataOutputEnabled;
 @property(nonatomic) _Bool mirrorVideoOutput; // @synthesize mirrorVideoOutput=_mirrorVideoOutput;
 @property(nonatomic) _Bool autoFocusEnabled; // @synthesize autoFocusEnabled=_autoFocusEnabled;

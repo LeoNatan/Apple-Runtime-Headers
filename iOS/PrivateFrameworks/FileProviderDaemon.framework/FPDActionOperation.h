@@ -43,8 +43,8 @@
 - (void).cxx_destruct;
 - (void)dumpStateTo:(id)arg1;
 - (void)registerFrameworkClient:(id)arg1 operationCompletion:(CDUnknownBlockType)arg2;
-- (void)_sendPastUpdatesToClient:(id)arg1;
-- (void)_unregisterClientsAfterCompletion;
+- (void)sendPastUpdatesToClient:(id)arg1;
+- (void)unregisterClientsAfterCompletion;
 - (void)cancel;
 - (void)cancelRoot:(id)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;

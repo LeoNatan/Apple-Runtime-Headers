@@ -6,11 +6,12 @@
 
 #import <PhotosUICore/PXAssetCollectionActionPerformerDelegate-Protocol.h>
 
-@class PHFetchResult, PXCuratedLibraryActionPerformer;
+@class PHFetchResult, PXActivitySharingContext, PXCuratedLibraryActionPerformer;
 
 @protocol PXCuratedLibraryActionPerformerDelegate <PXAssetCollectionActionPerformerDelegate>
 
 @optional
+- (void)curatedLibraryActionPerformer:(PXCuratedLibraryActionPerformer *)arg1 presentShareSheetWithSharingContext:(PXActivitySharingContext *)arg2;
 - (void)curatedLibraryActionPerformer:(PXCuratedLibraryActionPerformer *)arg1 showMapWithAssetsFetchResult:(PHFetchResult *)arg2;
 @end
 

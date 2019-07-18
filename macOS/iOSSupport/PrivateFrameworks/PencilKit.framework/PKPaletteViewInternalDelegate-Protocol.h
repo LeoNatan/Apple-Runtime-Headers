@@ -7,9 +7,12 @@
 @class PKPaletteView, UIView;
 
 @protocol PKPaletteViewInternalDelegate
+@property(readonly, nonatomic, getter=isPaletteDragging) BOOL paletteDragging;
+@property(readonly, nonatomic, getter=isPaletteMinimized) BOOL paletteMinimized;
+@property(readonly, nonatomic) unsigned long long paletteEdgeLocation;
+@property(readonly, nonatomic) unsigned long long paletteCornerLocation;
 @property(readonly, nonatomic) UIView *hostingView;
-- (struct CGSize)regularPaletteSize;
-- (BOOL)isDraggingPalette;
+- (struct CGSize)paletteSizeForEdge:(unsigned long long)arg1;
 - (void)paletteView:(PKPaletteView *)arg1 didChangeAnnotationSupport:(BOOL)arg2;
 - (void)paletteView:(PKPaletteView *)arg1 didToggleAutoHideOption:(BOOL)arg2;
 @end

@@ -60,10 +60,15 @@
 }
 
 + (id)_defaultImageColorForState:(unsigned long long)arg1 button:(id)arg2;
++ (id)_defaultImageColorForType:(long long)arg1 andState:(unsigned long long)arg2;
 + (id)_defaultTitleColorForState:(unsigned long long)arg1 button:(id)arg2;
 + (id)_defaultBackgroundImageForType:(long long)arg1 andState:(unsigned long long)arg2;
++ (id)_defaultBackgroundImageColorForType:(long long)arg1 andState:(unsigned long long)arg2;
++ (id)_defaultBackgroundImageNameForType:(long long)arg1 andState:(unsigned long long)arg2 compact:(BOOL)arg3;
++ (id)_defaultSymbolConfigurationForType:(long long)arg1 andState:(unsigned long long)arg2 compact:(BOOL)arg3;
 + (id)_defaultSymbolConfigurationForType:(long long)arg1 andState:(unsigned long long)arg2;
 + (id)_defaultImageForType:(long long)arg1 andState:(unsigned long long)arg2 withConfiguration:(id)arg3;
++ (id)_defaultImageNameForType:(long long)arg1 andState:(unsigned long long)arg2;
 + (id)_selectedIndicatorImage;
 + (void)_setVisuallyHighlighted:(BOOL)arg1 forViews:(id)arg2 initialPress:(BOOL)arg3;
 + (void)_setVisuallyHighlighted:(BOOL)arg1 forViews:(id)arg2 initialPress:(BOOL)arg3 baseAlpha:(double)arg4;
@@ -206,6 +211,7 @@
 - (struct CGRect)_titleRectForContentRect:(struct CGRect)arg1 calculatePositionForEmptyTitle:(BOOL)arg2;
 - (struct CGRect)contentRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)backgroundRectForBounds:(struct CGRect)arg1;
+- (id)_currentImageWithResolvedConfiguration;
 @property(readonly, nonatomic) UIImageSymbolConfiguration *currentPreferredSymbolConfiguration;
 @property(readonly, nonatomic) NSAttributedString *currentAttributedTitle;
 @property(readonly, nonatomic) UIImage *currentBackgroundImage;
@@ -265,6 +271,7 @@
 - (BOOL)_imageNeedsCompositingModeWhenSelected;
 - (BOOL)_textNeedsCompositingModeWhenSelected;
 - (void)_setupPressednessForState:(unsigned long long)arg1;
+- (BOOL)_highlightsBackgroundImage;
 - (void)_updateMaskState;
 - (BOOL)_hasHighlightColor;
 - (double)_highlightCornerRadius;
@@ -336,7 +343,6 @@
 - (double)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(long long)arg2 inContainer:(id)arg3 isGuide:(BOOL)arg4;
 - (BOOL)_hasCustomAutolayoutNeighborSpacingForAttribute:(long long *)arg1;
 - (id)_viewForLoweringBaselineLayoutAttribute:(int)arg1;
-- (void)_drawFocusRingMask;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

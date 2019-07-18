@@ -8,7 +8,7 @@
 
 #import <MediaConversionService/PHMediaFormatConversionImplementation-Protocol.h>
 
-@class NSString, PAImageConversionServiceClient, PAVideoConversionServiceClient;
+@class NSSet, NSString, PAImageConversionServiceClient, PAVideoConversionServiceClient;
 
 @interface PHMediaFormatConversionImplementation_MediaConversionService : NSObject <PHMediaFormatConversionImplementation>
 {
@@ -26,6 +26,8 @@
 - (id)submitNonSinglePassVideoConversionRequest:(id)arg1 destination:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)performVideoConversionRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performConversionRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(readonly) NSSet *ut_objectsToBeDeallocatedWithReceiver;
+- (void)dealloc;
 - (id)init;
 @property(readonly) long long transferBehaviorUserPreference;
 

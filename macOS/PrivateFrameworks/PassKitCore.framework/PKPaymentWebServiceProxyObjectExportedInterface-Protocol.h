@@ -12,6 +12,9 @@
 - (void)invalidateRemoteProxyTargetDevice;
 - (void)archiveBackgroundContext:(PKPaymentWebServiceBackgroundContext *)arg1;
 - (void)archiveContext:(PKPaymentWebServiceContext *)arg1;
+- (void)passOwnershipTokenWithIdentifier:(NSString *)arg1 completion:(void (^)(NSString *))arg2;
+- (void)storePassOwnershipToken:(NSString *)arg1 withIdentifier:(NSString *)arg2;
+- (void)performDeviceCheckInWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)deleteApplePayTrustKeyWithIdentifier:(NSString *)arg1 completion:(void (^)(BOOL))arg2;
 - (void)createApplePayTrustKeyWithRequest:(PKApplePayTrustKeyRequest *)arg1 completion:(void (^)(PKApplePayTrustKey *, NSError *))arg2;
 - (void)applePayTrustKeyForIdentifier:(NSString *)arg1 completion:(void (^)(PKApplePayTrustKey *))arg2;
@@ -21,9 +24,11 @@
 - (void)supportedFeatureIdentifiersWithCompletion:(void (^)(NSSet *))arg1;
 - (void)supportsAccountsWithCompletion:(void (^)(BOOL))arg1;
 - (void)updateAccountWithIdentifier:(NSString *)arg1 completion:(void (^)(PKAccount *, NSError *))arg2;
-- (void)noteProvisioningDidEndRequiringUpgradedPasscode;
-- (void)noteProvisioningDidStartRequiringUpgradedPasscode;
+- (void)endRequiringUpgradedPasscodeIfNecessary;
+- (void)startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(BOOL)arg1;
 - (void)enforceUpgradedPasscodePolicyWithCompletion:(void (^)(BOOL, NSError *))arg1;
+- (void)notePasscodeUpgradeFlowDidEnd;
+- (void)notePasscodeUpgradeFlowWillBeginWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)setDefaultPaymentPassUniqueIdentifier:(NSString *)arg1;
 - (void)appleAccountInformationWithCompletion:(void (^)(PKAppleAccountInformation *))arg1;
 - (void)renewAppleAccountWithCompletionHandler:(void (^)(long long, PKAppleAccountInformation *))arg1;

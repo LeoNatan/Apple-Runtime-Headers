@@ -25,7 +25,8 @@
 + (id)keyChordWithKeys:(id)arg1;
 @property(retain, nonatomic) NSArray *keys; // @synthesize keys=_keys;
 - (void).cxx_destruct;
-- (id)_displayValueWithSortedModifiers:(id)arg1;
+- (id)_displayValueWithSortedModifiers:(id)arg1 isUSKeyboard:(_Bool)arg2;
+- (id)displayValueWithStyle:(int)arg1 isUSKeyboard:(_Bool)arg2;
 - (id)displayValueWithStyle:(int)arg1;
 @property(readonly, nonatomic) NSString *displayValue;
 @property(readonly, nonatomic) _Bool isNull;

@@ -10,8 +10,8 @@
 {
 }
 
-+ (id)defaultCloudContainerForAppMasqueradingAsDaemon;
-+ (id)defaultCloudContainerForDaemon;
++ (id)newCloudContainerForAccountID:(id)arg1;
++ (id)defaultCloudContainer;
 + (id)defaultCloudContainerName;
 + (_Bool)isSandboxEnvironment;
 

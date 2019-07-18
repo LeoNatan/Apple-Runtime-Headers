@@ -10,6 +10,7 @@
 {
 }
 
++ (unsigned long long)attemptToReclaimSpaceUsingCacheDeleteWithSpaceRequired:(unsigned long long)arg1;
 + (id)daemonTempDirectoryAppendedWithPath:(id)arg1;
 + (id)daemonCacheDirectoryAppendedWithPath:(id)arg1;
 + (BOOL)systemIsMemberOfReadOnlySystemGroup;

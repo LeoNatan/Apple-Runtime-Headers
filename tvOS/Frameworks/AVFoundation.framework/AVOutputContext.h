@@ -27,7 +27,6 @@
 + (id)auxiliaryOutputContext;
 + (id)sharedAudioPresentationOutputContext;
 + (id)outputContext;
-+ (id)allOutputContextImplClasses;
 + (Class)defaultOutputContextImplClass;
 + (void)initialize;
 - (void)outputContextImpl:(id)arg1 didExpireWithReplacement:(id)arg2;
@@ -48,6 +47,7 @@
 - (void)outputContextImplDidChangeProvidesControlForAllVolumeFeatures:(id)arg1;
 - (_Bool)providesControlForAllVolumeFeatures;
 - (void)removeOutputDevice:(id)arg1;
+- (void)removeOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)addOutputDevice:(id)arg1;
 - (void)addOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setOutputDevices:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -66,6 +66,7 @@
 - (id)outputDevice;
 @property(readonly, nonatomic) NSString *deviceName;
 - (void)setApplicationProcessID:(int)arg1;
+- (_Bool)getApplicationProcessID:(int *)arg1;
 - (int)applicationProcessID;
 - (id)outputContextType;
 - (id)ID;

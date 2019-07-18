@@ -10,6 +10,7 @@
 @class INTask;
 
 @protocol INSetTaskAttributeIntentResponseExport <NSObject, JSExport>
+@property(nonatomic) unsigned int warnings;
 @property(copy, nonatomic) INTask *modifiedTask;
 @property(readonly, nonatomic) int code;
 @end

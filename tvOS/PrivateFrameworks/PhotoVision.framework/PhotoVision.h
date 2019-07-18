@@ -57,7 +57,7 @@
 - (void)stop;
 - (void)startAndSyncClusterCacheWithLibrary:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)initWithPersistenceDelegate:(id)arg1 visionIntegration:(id)arg2 workingDirectoryURL:(id)arg3 faceAlgorithmUmbrellaVersion:(unsigned int)arg4 sceneAlgorithmUmbrellaVersion:(unsigned int)arg5 notificationListener:(id)arg6;
-- (_Bool)buildPersonsWithCanceler:(id)arg1 keyFaceUpdateBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
+- (_Bool)buildPersonsWithCanceler:(id)arg1 keyFaceUpdateBlock:(CDUnknownBlockType)arg2 extendTimeoutBlock:(CDUnknownBlockType)arg3 error:(id *)arg4;
 - (id)context;
 - (void)resetClusterer;
 - (_Bool)clustererIsReadyToReturnSuggestions;

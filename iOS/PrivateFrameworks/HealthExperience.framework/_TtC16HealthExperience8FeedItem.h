@@ -34,6 +34,7 @@
 @property(nonatomic) double relevantRampDownTime; // @dynamic relevantRampDownTime;
 @property(nonatomic) double relevantRampUpTime; // @dynamic relevantRampUpTime;
 @property(nonatomic, copy) NSDate *relevantStartDate; // @dynamic relevantStartDate;
+@property(nonatomic) short searchSectionHintRawValue; // @dynamic searchSectionHintRawValue;
 @property(nonatomic) short searchSectionRawValue; // @dynamic searchSectionRawValue;
 @property(nonatomic) long long sectionSortOrder; // @dynamic sectionSortOrder;
 @property(nonatomic) long long sortHint; // @dynamic sortHint;
@@ -42,6 +43,7 @@
 @property(nonatomic) double suggestionRelevanceScore; // @dynamic suggestionRelevanceScore;
 @property(nonatomic, copy) NSString *uniqueIdentifier; // @dynamic uniqueIdentifier;
 @property(nonatomic, copy) NSData *userData; // @dynamic userData;
+@property(nonatomic, copy) NSString *viewControllerClassName; // @dynamic viewControllerClassName;
 
 @end
 

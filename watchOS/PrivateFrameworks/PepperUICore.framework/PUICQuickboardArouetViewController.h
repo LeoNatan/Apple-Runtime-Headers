@@ -27,7 +27,6 @@
     _Bool _didDisableOrbGesture;
     _Bool _buttonsNeedUpdate;
     _Bool _longDeleteInProgress;
-    int _minTextLengthForEnablingAccept;
     NSString *_textContentType;
     ArouetInputView *_inkView;
     ArouetRecognitionManager *_recognitionManager;
@@ -99,7 +98,6 @@
 @property(retain, nonatomic) ArouetRecognitionManager *recognitionManager; // @synthesize recognitionManager=_recognitionManager;
 @property(retain, nonatomic) ArouetInputView *inkView; // @synthesize inkView=_inkView;
 @property(copy, nonatomic) NSString *textContentType; // @synthesize textContentType=_textContentType;
-@property(nonatomic) int minTextLengthForEnablingAccept; // @synthesize minTextLengthForEnablingAccept=_minTextLengthForEnablingAccept;
 - (void).cxx_destruct;
 - (unsigned int)inputType;
 - (float)relativeTextCursorPosition;
@@ -138,6 +136,7 @@
 - (void)setShowsAcceptButton:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setShowsAcceptButton:(_Bool)arg1;
 - (_Bool)showsAcceptButton;
+- (void)setMinTextLengthForEnablingAccept:(int)arg1;
 @property(nonatomic) _Bool disablesAcceptOnEmptyText;
 - (void)updateControlsInteractionEnabled;
 - (void)updateButtonsIfNeeded;

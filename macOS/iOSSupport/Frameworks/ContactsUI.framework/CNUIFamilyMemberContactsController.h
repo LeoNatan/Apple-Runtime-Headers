@@ -6,15 +6,16 @@
 
 #import <objc/NSObject.h>
 
-#import <ContactsUI/CNContactPickerDelegate-Protocol.h>
+#import <ContactsUI/CNContactPickerPrivateDelegate-Protocol.h>
 #import <ContactsUI/CNContactViewControllerDelegate-Protocol.h>
 #import <ContactsUI/CNFamilyMemberAddContactsOptionsSheetDelegate-Protocol.h>
 #import <ContactsUI/CNUICoreFamilyMemberContactsObserver-Protocol.h>
+#import <ContactsUI/CNUIFamilyMemberDowntimeContactPickerControllerDelegate-Protocol.h>
 
-@class CNContactStore, FAFamilyMember, NSString;
+@class CNContactPickerViewController, CNContactStore, FAFamilyMember, NSString;
 @protocol CNSchedulerProvider, CNUICoreFamilyMemberContactsDataSource, CNUIFamilyMemberContactsControllerDelegate, CNUIFamilyMemberContactsPresentation;
 
-@interface CNUIFamilyMemberContactsController : NSObject <CNContactViewControllerDelegate, CNContactPickerDelegate, CNFamilyMemberAddContactsOptionsSheetDelegate, CNUICoreFamilyMemberContactsObserver>
+@interface CNUIFamilyMemberContactsController : NSObject <CNContactViewControllerDelegate, CNContactPickerPrivateDelegate, CNFamilyMemberAddContactsOptionsSheetDelegate, CNUIFamilyMemberDowntimeContactPickerControllerDelegate, CNUICoreFamilyMemberContactsObserver>
 {
     id <CNUIFamilyMemberContactsPresentation> _familyMemberContactsPresentation;
     FAFamilyMember *_familyMember;
@@ -22,24 +23,30 @@
     CNContactStore *_familyMemberScopedContactStore;
     id <CNUICoreFamilyMemberContactsDataSource> _dataSource;
     id <CNSchedulerProvider> _schedulerProvider;
+    CNContactPickerViewController *_contactPickerViewController;
 }
 
++ (BOOL)isViewController:(id)arg1 presentedByContactPicker:(id)arg2;
+@property(nonatomic) __weak CNContactPickerViewController *contactPickerViewController; // @synthesize contactPickerViewController=_contactPickerViewController;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) id <CNUICoreFamilyMemberContactsDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) CNContactStore *familyMemberScopedContactStore; // @synthesize familyMemberScopedContactStore=_familyMemberScopedContactStore;
 @property(nonatomic) __weak id <CNUIFamilyMemberContactsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 - (void).cxx_destruct;
-- (void)cancelPresentationOfViewController:(id)arg1;
+- (void)downtimePickerController:(id)arg1 didFinishWithContacts:(id)arg2;
 - (void)contactPickerDidCancel:(id)arg1;
-- (void)contactPicker:(id)arg1 didSelectContacts:(id)arg2;
+- (void)pickerDidSelectAddNewContact:(id)arg1;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
+- (void)cancelPresentationOfViewController:(id)arg1;
+- (void)dismissPresentedViewController:(id)arg1;
+- (void)presentViewController:(id)arg1;
 - (void)addContactsOptionsSheetViewControllerDidCancel:(id)arg1;
 - (void)addContactsOptionsSheetViewControllerDidSelectAddNewContact:(id)arg1;
 - (void)addContactsOptionsSheetViewControllerDidSelectAddFromLocalContacts:(id)arg1;
-- (void)performAddFromMainContactsInteraction;
 - (id)anchorViewForAddContactsInteraction;
 - (void)performAddContactsInteraction;
+- (void)performAddFromMainContactsInteraction;
 - (void)performDisplayContactsInteraction;
 - (void)performDefaultInteraction;
 - (void)performInteraction:(long long)arg1;

@@ -19,6 +19,7 @@
     NSString *_senderName;
     double _defaultRevealActionButtonOriginY;
     double _defaultTrashButtonOriginY;
+    double _defaultSeeMoreButtonOriginY;
     UIButton *_trashButton;
     EMCachingContactStore *_contactStore;
     UIButton *_revealActionsButton;
@@ -29,6 +30,7 @@
 @property(retain, nonatomic) UIButton *revealActionsButton; // @synthesize revealActionsButton=_revealActionsButton;
 @property(retain, nonatomic) EMCachingContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) UIButton *trashButton; // @synthesize trashButton=_trashButton;
+@property(nonatomic) double defaultSeeMoreButtonOriginY; // @synthesize defaultSeeMoreButtonOriginY=_defaultSeeMoreButtonOriginY;
 @property(nonatomic) double defaultTrashButtonOriginY; // @synthesize defaultTrashButtonOriginY=_defaultTrashButtonOriginY;
 @property(nonatomic) double defaultRevealActionButtonOriginY; // @synthesize defaultRevealActionButtonOriginY=_defaultRevealActionButtonOriginY;
 @property(nonatomic) _Bool shouldArchiveByDefault; // @synthesize shouldArchiveByDefault=_shouldArchiveByDefault;
@@ -44,8 +46,6 @@
 - (void)layoutActionButtonWithBounds:(struct CGRect)arg1;
 - (void)layoutTrashButtonWithBounds:(struct CGRect)arg1;
 - (void)_fontMetricCacheDidInvalidate:(id)arg1;
-- (id)_attributedButtonTitleWithSenderName:(id)arg1;
-- (void)_updateAttributedTitle;
 - (void)layoutSeeMoreButton;
 - (void)setBounds:(struct CGRect)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;

@@ -59,6 +59,7 @@
 - (void)_invalidateWell;
 - (void)_invalidateThumb;
 - (void)_invalidateControl;
+- (void)setSemanticContentAttribute:(int)arg1;
 - (void)handleLongPress:(id)arg1;
 - (void)_installGestureRecognizers;
 - (void)dealloc;

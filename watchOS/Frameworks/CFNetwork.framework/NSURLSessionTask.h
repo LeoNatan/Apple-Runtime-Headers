@@ -21,6 +21,7 @@
     id <__NSURLSessionTaskGroupForConfiguration> __taskGroup;
 }
 
++ (id)new;
 @property(readonly, retain) id <__NSURLSessionTaskGroupForConfiguration> _taskGroup; // @synthesize _taskGroup=__taskGroup;
 @property(retain) NSObject<OS_nw_activity> *_private_nw_activity; // @synthesize _private_nw_activity;
 @property(retain) NSObject<OS_nw_activity> *_nw_activity; // @synthesize _nw_activity=_nw_activity_ivar;
@@ -110,7 +111,7 @@
 @property(retain, nonatomic, setter=set_extractor:) id <SZExtractor> _extractor; // @dynamic _extractor;
 @property _Bool _extractorFinishedDecoding; // @dynamic _extractorFinishedDecoding;
 @property _Bool _extractorPreparedForExtraction; // @dynamic _extractorPreparedForExtraction;
-@property _Bool _forceDirectNoCellular; // @dynamic _forceDirectNoCellular;
+@property _Bool _forceWatchNoCellular; // @dynamic _forceWatchNoCellular;
 @property(nonatomic) _Bool _hasSZExtractor; // @dynamic _hasSZExtractor;
 @property(copy, nonatomic) CDUnknownBlockType _httpConnectionInfoCompletionBlock; // @dynamic _httpConnectionInfoCompletionBlock;
 @property _Bool _isTopLevelNavigation; // @dynamic _isTopLevelNavigation;

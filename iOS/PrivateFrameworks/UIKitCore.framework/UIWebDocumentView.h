@@ -401,7 +401,6 @@
 - (void)addInputString:(id)arg1 withFlags:(unsigned long long)arg2;
 - (_Bool)handleKeyAppCommandForCurrentEvent;
 - (_Bool)handleKeyTextCommandForCurrentEvent;
-- (_Bool)handleKeyCommandForCurrentEvent;
 - (id)delegate;
 - (void)setContinuousSpellCheckingEnabled:(_Bool)arg1;
 - (void)_setParentTextView:(id)arg1;

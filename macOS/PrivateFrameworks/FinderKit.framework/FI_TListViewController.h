@@ -240,6 +240,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) FI_TBrowserViewDataSource *dataSource;
 - (int)viewStyle;
 - (void)reloadIconsInView;
+- (_Bool)includeBadgeInIconImage;
 - (id)nibName;
 - (void)buildBrowserParentToChildrenMap:(unordered_map_f8b1458f *)arg1 forContainerNode:(const struct TFENode *)arg2;
 - (struct TFENode)nodeAtPoint:(const struct CGPoint *)arg1 includeTarget:(_Bool)arg2;

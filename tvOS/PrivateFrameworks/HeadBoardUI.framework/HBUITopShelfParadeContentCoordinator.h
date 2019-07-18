@@ -6,11 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class HBUITopShelfParadeMusicTitleView, HBUITopShelfParadeStandardTitleView, UIImageView, UIView, UIViewController;
+#import <HeadBoardUI/HBUITopShelfParadeBackgroundViewControllerDelegate-Protocol.h>
+#import <HeadBoardUI/HBUITopShelfParadeContentViewControllerDelegate-Protocol.h>
+
+@class HBUITopShelfParadeMusicTitleView, HBUITopShelfParadePhotosTitleView, HBUITopShelfParadePromotionTitleView, HBUITopShelfParadeStandardTitleView, NSString, UIImageView, UIView, UIViewController;
 @protocol HBUITopShelfParadeBackgroundViewController, HBUITopShelfParadeContentCoordinatorDelegate, HBUITopShelfParadeContentViewController, HBUITopShelfParadeItem;
 
 __attribute__((visibility("hidden")))
-@interface HBUITopShelfParadeContentCoordinator : NSObject
+@interface HBUITopShelfParadeContentCoordinator : NSObject <HBUITopShelfParadeBackgroundViewControllerDelegate, HBUITopShelfParadeContentViewControllerDelegate>
 {
     _Bool _contentHidden;
     _Bool _standardTitleHidden;
@@ -23,12 +26,18 @@ __attribute__((visibility("hidden")))
     id <HBUITopShelfParadeItem> _paradeItem;
     UIImageView *_standardTitleGradientView;
     UIImageView *_actionsDetailsGradientView;
+    UIImageView *_photosGradientView;
     HBUITopShelfParadeStandardTitleView *_standardTitleView;
+    HBUITopShelfParadePromotionTitleView *_promotionTitleView;
     HBUITopShelfParadeMusicTitleView *_musicTitleView;
+    HBUITopShelfParadePhotosTitleView *_photosTitleView;
 }
 
+@property(readonly, nonatomic) HBUITopShelfParadePhotosTitleView *photosTitleView; // @synthesize photosTitleView=_photosTitleView;
 @property(readonly, nonatomic) HBUITopShelfParadeMusicTitleView *musicTitleView; // @synthesize musicTitleView=_musicTitleView;
+@property(readonly, nonatomic) HBUITopShelfParadePromotionTitleView *promotionTitleView; // @synthesize promotionTitleView=_promotionTitleView;
 @property(readonly, nonatomic) HBUITopShelfParadeStandardTitleView *standardTitleView; // @synthesize standardTitleView=_standardTitleView;
+@property(readonly, nonatomic) UIImageView *photosGradientView; // @synthesize photosGradientView=_photosGradientView;
 @property(readonly, nonatomic) UIImageView *actionsDetailsGradientView; // @synthesize actionsDetailsGradientView=_actionsDetailsGradientView;
 @property(readonly, nonatomic) UIImageView *standardTitleGradientView; // @synthesize standardTitleGradientView=_standardTitleGradientView;
 @property(nonatomic, getter=isStandardTitleHidden) _Bool standardTitleHidden; // @synthesize standardTitleHidden=_standardTitleHidden;
@@ -41,9 +50,19 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIViewController<HBUITopShelfParadeBackgroundViewController> *backgroundViewController; // @synthesize backgroundViewController=_backgroundViewController;
 @property(readonly, nonatomic) unsigned long long contentOptions; // @synthesize contentOptions=_contentOptions;
 - (void).cxx_destruct;
+- (void)paradeContentViewController:(id)arg1 didSelectAction:(id)arg2 forItem:(id)arg3;
+- (void)paradeBackgroundViewControllerDidFinish:(id)arg1;
+- (void)paradeBackgroundViewControllerContentStateDidChange:(id)arg1;
+- (_Bool)_promotionVideoIsPlaying;
 - (void)_updateActionsDetailsViewAlpha;
-- (void)_updateStandardTitleViewAlpha;
+- (void)_updateStandardAndPromotionTitleViewAlpha;
 - (id)initWithContentOptions:(unsigned long long)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -26,6 +26,7 @@
 @property(nonatomic) __weak WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(nonatomic) __weak id <WFWorkflowSettingsViewDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)tableView:(id)arg1 helpCellForRow:(long long)arg2;
 - (void)toggledAccessResourceSwitch:(id)arg1;
 - (id)tableView:(id)arg1 accessResourcesCellForRow:(long long)arg2;
 - (long long)accessResourcesCellCount;

@@ -23,8 +23,11 @@
 @property(readonly, nonatomic) double preferredExpandedContentHeight;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
+@property(readonly, nonatomic) _Bool hasGlyph;
 - (void)_buttonTapped:(id)arg1 forEvent:(id)arg2;
 - (void)buttonTapped:(id)arg1 forEvent:(id)arg2;
+- (void)_buttonTouchDown:(id)arg1 forEvent:(id)arg2;
+- (void)buttonTouchDown:(id)arg1 forEvent:(id)arg2;
 @property(readonly, nonatomic) CCUIButtonModuleView *buttonView;
 @property(nonatomic, getter=isSelected) _Bool selected;
 @property(copy, nonatomic) NSString *glyphState;

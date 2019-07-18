@@ -10,7 +10,7 @@
 - (void)transferRemotePlan:(CTRemotePlanIdentifier *)arg1 fromDevice:(CTDeviceIdentifier *)arg2 completion:(void (^)(BOOL, NSError *))arg3;
 - (void)getRemoteDeviceOfType:(unsigned long long)arg1 withEID:(NSString *)arg2 completion:(void (^)(CTRemoteDevice *, NSError *))arg3;
 - (void)getRemoteDevicesOfType:(unsigned long long)arg1 completion:(void (^)(CTRemoteDeviceList *, NSError *))arg2;
-- (void)endPlanTransferWithCompletion:(void (^)(NSError *))arg1;
+- (void)endPlanTransferForEndPoint:(unsigned long long)arg1 completion:(void (^)(NSError *))arg2;
 - (void)isAnyPlanOfTransferCapability:(unsigned long long)arg1 availableForThisDeviceWithCompletion:(void (^)(BOOL, NSError *))arg2;
 - (void)bootstrapPlanTransferForEndpoint:(unsigned long long)arg1 usingMessageSession:(CUMessageSession *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)isAnyPlanTransferableFromThisDeviceWithCompletion:(void (^)(BOOL, NSError *))arg1;
@@ -24,7 +24,7 @@
 - (void)getTransferPlansWithCompletion:(void (^)(CTRemoteDeviceList *, BOOL, NSError *))arg1;
 - (void)getTransferPlanListWithCompletion:(void (^)(CTRemoteDeviceList *, NSError *))arg1;
 - (void)getCameraScanInfoForCardData:(NSString *)arg1 completionHandler:(void (^)(CTCellularPlanManagerCameraScanAction *, NSError *))arg2;
-- (void)addPlanWith:(CTXPCServiceSubscriptionContext *)arg1 request:(CTCellularPlanProvisioningRequest *)arg2 appName:(NSString *)arg3 completionHandler:(void (^)(unsigned long long, NSError *))arg4;
+- (void)addPlanWith:(CTCellularPlanProvisioningRequest *)arg1 appName:(NSString *)arg2 appType:(unsigned long long)arg3 completionHandler:(void (^)(unsigned long long, NSError *))arg4;
 - (void)supportsPlanProvisioning:(CTXPCServiceSubscriptionContext *)arg1 carrierDescriptors:(NSArray *)arg2 smdpUrl:(NSString *)arg3 iccidPrefix:(NSString *)arg4 completionHandler:(void (^)(BOOL))arg5;
 @end
 

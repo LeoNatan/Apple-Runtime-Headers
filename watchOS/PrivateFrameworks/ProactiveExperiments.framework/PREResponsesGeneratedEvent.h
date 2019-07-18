@@ -17,9 +17,11 @@
     NSString *_locale;
     unsigned int _responseTimePerf;
     unsigned int _messageCharCount;
+    int _generationStatus;
     unsigned long long _responseGenerationTime;
 }
 
+@property(nonatomic) int generationStatus; // @synthesize generationStatus=_generationStatus;
 @property(nonatomic) unsigned long long responseGenerationTime; // @synthesize responseGenerationTime=_responseGenerationTime;
 @property(nonatomic) _Bool hasQuestionMark; // @synthesize hasQuestionMark=_hasQuestionMark;
 @property(nonatomic) unsigned int messageCharCount; // @synthesize messageCharCount=_messageCharCount;

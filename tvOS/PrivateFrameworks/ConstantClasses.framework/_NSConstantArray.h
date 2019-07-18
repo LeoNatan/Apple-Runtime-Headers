@@ -11,7 +11,6 @@
 }
 
 + (id)alloc;
-+ (void)load;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateObjectsWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;

@@ -23,6 +23,7 @@
     _Bool _sampleWhileAbsent;
     NSString *_identifier;
     id <NSCopying> _tag;
+    unsigned long long _notificationMask;
     unsigned long long _eventMask;
     unsigned long long _attentionLostEventMask;
     double _samplingInterval;
@@ -40,6 +41,7 @@
 @property(nonatomic) double samplingInterval; // @synthesize samplingInterval=_samplingInterval;
 @property(nonatomic) unsigned long long attentionLostEventMask; // @synthesize attentionLostEventMask=_attentionLostEventMask;
 @property(nonatomic) unsigned long long eventMask; // @synthesize eventMask=_eventMask;
+@property(nonatomic) unsigned long long notificationMask; // @synthesize notificationMask=_notificationMask;
 @property(copy, nonatomic) id <NSCopying> tag; // @synthesize tag=_tag;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
@@ -52,6 +54,7 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
+- (_Bool)validateWithError:(id *)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

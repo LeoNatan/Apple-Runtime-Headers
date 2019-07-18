@@ -10,6 +10,7 @@
 @class INTask;
 
 @protocol INSetTaskAttributeIntentResponseExport <NSObject, JSExport>
+@property(nonatomic) unsigned long long warnings;
 @property(copy, nonatomic) INTask *modifiedTask;
 @property(readonly, nonatomic) long long code;
 @end

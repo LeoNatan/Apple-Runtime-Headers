@@ -8,7 +8,7 @@
 
 #import <OSAnalytics/OSAConcreteReport-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSSet, NSString;
 
 @interface OSAJetsamReport : OSAReport <OSAConcreteReport>
 {
@@ -22,10 +22,11 @@
     NSString *_event_reason;
     unsigned long long _event_code;
     _Bool _aleFlag;
+    NSSet *_visibilityEndowmentState;
 }
 
 + (long)_daysSince1970;
-+ (int)instrumentEventsWithAudioAssertionState:(id)arg1;
++ (int)instrumentEventsWithAudioAssertionState:(id)arg1 visibliltyEndowmentState:(id)arg2;
 + (struct jetsam_snapshot *)fetchSnapshotWithFlags:(unsigned int)arg1 error:(id *)arg2;
 - (void).cxx_destruct;
 - (void)generateLogAtLevel:(_Bool)arg1 withBlock:(CDUnknownBlockType)arg2;
@@ -40,7 +41,7 @@
 - (id)appleCareDetails;
 - (id)problemType;
 - (void)dealloc;
-- (id)initWithIncidentID:(id)arg1;
+- (id)initWithIncidentID:(id)arg1 visibliltyEndowmentState:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

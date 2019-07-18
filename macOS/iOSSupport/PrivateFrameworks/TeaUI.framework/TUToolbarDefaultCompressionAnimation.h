@@ -8,16 +8,14 @@
 
 #import <TeaUI/TUBarCompressionAnimating-Protocol.h>
 
-@class TUAnimationFloatFunction, UIToolbar;
+@class UIToolbar;
 
 @interface TUToolbarDefaultCompressionAnimation : NSObject <TUBarCompressionAnimating>
 {
     double _topOffset;
     UIToolbar *_toolbar;
-    TUAnimationFloatFunction *_opacityFunction;
 }
 
-@property(retain, nonatomic) TUAnimationFloatFunction *opacityFunction; // @synthesize opacityFunction=_opacityFunction;
 @property(retain, nonatomic) UIToolbar *toolbar; // @synthesize toolbar=_toolbar;
 @property(nonatomic) double topOffset; // @synthesize topOffset=_topOffset;
 - (void).cxx_destruct;

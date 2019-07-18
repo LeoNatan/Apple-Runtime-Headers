@@ -11,13 +11,13 @@
 @protocol IMRemoteDaemonProtocol <NSObject>
 - (void)requestScreenTimeAvailability;
 - (void)preWarm;
-- (void)simulateMessageReceive:(NSString *)arg1 serviceName:(NSString *)arg2 handles:(NSArray *)arg3 sender:(NSString *)arg4;
+- (void)simulateMessageReceive:(NSString *)arg1 serviceName:(NSString *)arg2 groupID:(NSString *)arg3 handles:(NSArray *)arg4 sender:(NSString *)arg5;
 - (void)userNicknameForRecordID:(NSString *)arg1 decryptionKey:(NSData *)arg2 requestID:(NSString *)arg3;
 - (void)setNewPersonalNickname:(IMNickname *)arg1;
 - (void)fetchPersonalNickname;
 - (void)nicknamePreferencesDidChange;
 - (void)blacklistHandleIDsForNicknameSharing:(NSSet *)arg1;
-- (void)whitelistHandleIDsForNicknameSharing:(NSSet *)arg1;
+- (void)whitelistHandleIDsForNicknameSharing:(NSSet *)arg1 onChatGUIDs:(NSArray *)arg2;
 - (void)clearPendingNicknameUpdatesForHandleIDs:(NSArray *)arg1;
 - (void)fetchHandleSharingState;
 - (void)fetchNicknames;

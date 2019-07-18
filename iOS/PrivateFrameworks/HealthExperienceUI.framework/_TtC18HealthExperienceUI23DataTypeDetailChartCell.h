@@ -11,11 +11,14 @@
     // Error parsing type: , name: parentViewController
     // Error parsing type: , name: chartViewController
     // Error parsing type: , name: item
+    // Error parsing type: , name: separatorView
+    // Error parsing type: , name: separatorViewHeightConstraint
 }
 
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)awakeFromNib;
 
 @end
 

@@ -13,6 +13,8 @@
 @interface MFAttachment (NSItemProvider) <NSItemProviderWriting>
 + (id)writableTypeIdentifiersForItemProvider;
 + (id)attachmentElementHTMLStringWithAttributes:(id)arg1;
++ (_Bool)canInlineImageType:(id)arg1 data:(id)arg2;
++ (_Bool)_isPDF:(id)arg1;
 + (_Bool)isBasicImageMimeType:(id)arg1;
 - (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSArray *writableTypeIdentifiersForItemProvider;
@@ -42,7 +44,6 @@
 @property(readonly, nonatomic) _Bool isContentOpenable;
 - (_Bool)_isContentTypeDisplayableByMobileMail;
 - (_Bool)isCalendarFile;
-@property(readonly, nonatomic) _Bool isDisplayableSinglePagePDFFile;
 @property(readonly, nonatomic) _Bool isPDFFile;
 @property(readonly, nonatomic) _Bool isMedia;
 - (void)decompressContentsWithCompletion:(CDUnknownBlockType)arg1;

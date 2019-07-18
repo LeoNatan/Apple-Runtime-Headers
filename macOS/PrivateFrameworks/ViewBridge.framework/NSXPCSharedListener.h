@@ -19,10 +19,13 @@
 + (void)warmUpClassNamed:(id)arg1 inServiceNamed:(id)arg2;
 + (void)_failedToWarmUpClassNamed:(id)arg1 inServiceNamed:(id)arg2 dueTo:(id)arg3;
 + (id)sharedServiceListener;
++ (void)connectToService:(id)arg1 instanceIdentifier:(id)arg2 listener:(id)arg3 queue:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)connectToService:(id)arg1 listener:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
++ (void)listenerEndpointForService:(id)arg1 instanceIdentifier:(id)arg2 listener:(id)arg3 queue:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)listenerEndpointForService:(id)arg1 listener:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
++ (id)connectionForListenerNamed:(id)arg1 fromServiceNamed:(id)arg2 instanceIdentifier:(id)arg3;
 + (id)connectionForListenerNamed:(id)arg1 fromServiceNamed:(id)arg2;
-+ (void)endpointForListenerNamed:(id)arg1 fromServiceNamed:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
++ (void)endpointForListenerNamed:(id)arg1 fromServiceNamed:(id)arg2 instanceIdentifier:(id)arg3 queue:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (id)endpointForReply:(id)arg1 withListenerName:(id)arg2;
 @property(retain) NSMutableDictionary *listeners; // @synthesize listeners=_listeners;
 - (void)resumeSubService:(id)arg1;

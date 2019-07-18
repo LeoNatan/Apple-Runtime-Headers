@@ -77,8 +77,10 @@ __attribute__((visibility("hidden")))
 - (void)syncWriteToDisk;
 - (void)syncWriteToDiskAndFlushCache;
 - (void)setPlist:(id)arg1;
-- (void)finishedNonRequestWrite;
-- (CDUnknownBlockType)createDiskWrite;
+- (void)finishedNonRequestWriteWithError:(int)arg1;
+- (void)handleWritingFailureWithError:(int)arg1;
+- (CDUnknownBlockType)createDiskWriteShouldPerformSynchronously:(_Bool *)arg1;
+- (void)cleanUpIfNecessaryAfterCreatingPlist;
 - (void)handleOpenForWritingFailureWithErrno:(int)arg1;
 - (void)setDirty:(_Bool)arg1;
 - (void)updateShmemEntry;

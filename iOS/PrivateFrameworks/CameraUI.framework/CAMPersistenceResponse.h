@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSString, NSURL, UIImage;
+@class CAMCaptureCoordinationInfo, NSDate, NSString, NSURL, UIImage;
 
 @interface CAMPersistenceResponse : NSObject
 {
@@ -15,8 +15,12 @@
     NSURL *_persistenceURL;
     NSDate *_creationDate;
     UIImage *_scrubberImage;
+    CAMCaptureCoordinationInfo *_coordinationInfo;
+    struct CGSize _pixelSize;
 }
 
+@property(readonly, nonatomic) CAMCaptureCoordinationInfo *coordinationInfo; // @synthesize coordinationInfo=_coordinationInfo;
+@property(readonly, nonatomic) struct CGSize pixelSize; // @synthesize pixelSize=_pixelSize;
 @property(readonly, copy, nonatomic) UIImage *scrubberImage; // @synthesize scrubberImage=_scrubberImage;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, copy, nonatomic) NSURL *persistenceURL; // @synthesize persistenceURL=_persistenceURL;
@@ -24,8 +28,7 @@
 @property(readonly, copy, nonatomic) NSString *persistenceUUID; // @synthesize persistenceUUID=_persistenceUUID;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithUUID:(id)arg1 captureSession:(unsigned short)arg2 url:(id)arg3 creationDate:(id)arg4 scubberImage:(id)arg5;
-- (id)init;
+- (id)initWithUUID:(id)arg1 captureSession:(unsigned short)arg2 url:(id)arg3 creationDate:(id)arg4 scrubberImage:(id)arg5 pixelSize:(struct CGSize)arg6 coordinationInfo:(id)arg7;
 
 @end
 

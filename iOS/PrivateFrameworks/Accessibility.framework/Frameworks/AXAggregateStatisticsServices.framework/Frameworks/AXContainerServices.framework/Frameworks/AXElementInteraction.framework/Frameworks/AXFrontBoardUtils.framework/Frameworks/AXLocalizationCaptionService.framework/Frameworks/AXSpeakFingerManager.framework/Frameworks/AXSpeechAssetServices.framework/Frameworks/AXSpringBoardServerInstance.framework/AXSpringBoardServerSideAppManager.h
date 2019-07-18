@@ -38,6 +38,7 @@
 - (void)launchPinnedApplication:(id)arg1 onLeadingSide:(_Bool)arg2;
 - (void)launchApplicationWithFullConfiguration:(id)arg1;
 - (void)launchApplication:(id)arg1;
+- (void)_requestFloatingAppSwitcherVisible;
 - (void)_requestTransactionWithPrimaryEntity:(id)arg1 sideEntity:(id)arg2 floatingEntity:(id)arg3 spaceConfiguration:(long long)arg4 floatingConfiguration:(long long)arg5;
 - (void)_performMedusaGesture:(unsigned long long)arg1;
 - (void)_addResizeGestureRecognizerGesturesIfAllowed:(id)arg1;

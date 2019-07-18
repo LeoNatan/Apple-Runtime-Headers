@@ -6,9 +6,11 @@
 
 #import <NanoTimeKitCompanion/NTKFaceView.h>
 
-@class NTKComplicationDisplayWrapperView, NTKUtilityComplicationFactory, UIColor;
+#import <NanoTimeKitCompanion/NTKVictoryDigitalTimeViewDelegate-Protocol.h>
 
-@interface NTKVictoryDigitalFaceView : NTKFaceView
+@class NSString, NTKComplicationDisplayWrapperView, NTKUtilityComplicationFactory, UIColor;
+
+@interface NTKVictoryDigitalFaceView : NTKFaceView <NTKVictoryDigitalTimeViewDelegate>
 {
     NTKUtilityComplicationFactory *_utilityComplicationFactory;
     UIColor *_complicationForegroundColor;
@@ -24,6 +26,8 @@
 - (void)_endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_scrubToDate:(id)arg1 animated:(_Bool)arg2;
 - (_Bool)_supportsTimeScrubbing;
+- (void)_updateImageToBlur;
+- (void)victoryDigitalTimeViewDidChangeTime:(id)arg1;
 - (double)_timeTravelStatusModuleCaptionConstraintPadding;
 - (void)_layoutTimeTravelCaptionView:(id)arg1;
 - (void)_layoutTimeTravelStatusModule:(id)arg1;
@@ -65,6 +69,12 @@
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: colorPaletteProvider
     // Error parsing type: , name: imageHeadlineViewRenderer
+    // Error parsing type: , name: featuredHeadlineViewRenderer
     // Error parsing type: , name: featuredIssueHeadlineViewRenderer
     // Error parsing type: , name: orderedHeadlineViewRenderer
     // Error parsing type: , name: issueViewRenderer

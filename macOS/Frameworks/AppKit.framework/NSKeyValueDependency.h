@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithContext:(id)arg1 invalidationCount:(unsigned long long)arg2;
 - (id)initWithContext:(id)arg1;
+@property(readonly, getter=isValid) BOOL valid;
 
 @end
 

@@ -8,11 +8,8 @@
 
 @interface _TtC18HealthExperienceUI42ChromeHostViewCellWithPersonalizedTraining : _TtC18HealthExperienceUI18ChromeHostViewCell
 {
-    // Error parsing type: , name: $__lazy_storage_$_tapGestureRecognizer
 }
 
-- (void).cxx_destruct;
-- (void)viewWasTapped;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -34,6 +34,7 @@
 - (id)swizzledAccessibilityAttributeValue:(id)arg1;
 - (BOOL)swizzledAccessibilityIsIgnored;
 - (BOOL)_isPopoverWindow;
+- (void)swizzledOrderFrontRelativeToWindow:(id)arg1;
 - (void)swizzledOrderWindow:(long long)arg1 relativeTo:(long long)arg2;
 - (void)_addViewServiceNameToTitleOfColorPanel:(long long)arg1;
 - (id)_localizedInfoDictionaryObjectForKey:(id)arg1 ifAvailableFromBundle:(id)arg2;

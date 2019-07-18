@@ -9,6 +9,7 @@
 @class HKInteractiveChartAnnotationView, UIView;
 
 @protocol HKInteractiveChartAnnotationViewDataSource <NSObject>
+- (_Bool)showSeparators;
 - (UIView *)valueViewForColumnAtIndex:(int)arg1 orientation:(int)arg2;
 - (int)numberOfValuesForAnnotationView:(HKInteractiveChartAnnotationView *)arg1;
 - (UIView *)leftMarginViewWithOrientation:(int)arg1;

@@ -16,7 +16,6 @@
 + (id)systemHiddenBundleIdentifiers;
 + (id)systemUnblockableBundleIdentifiers;
 + (id)systemBlockableBundleIdentifiers;
-+ (id)currentOSPlatform;
 + (int)currentIOSDevice;
 + (id)systemHiddenBundleIdentifiersForDeviceFamily:(int)arg1;
 + (id)systemUnblockableBundleIdentifiersForDeviceFamily:(int)arg1;

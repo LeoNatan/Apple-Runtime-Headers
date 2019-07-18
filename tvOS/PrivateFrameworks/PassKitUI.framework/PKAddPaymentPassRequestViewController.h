@@ -6,16 +6,19 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class CLInUseAssertion, NSArray, NSObject, NSString, PKAddPaymentPassRequest, PKAddPaymentPassRequestConfiguration, PKPaymentProvisioningController, PKPaymentWebService, PKTableHeaderView;
-@protocol NSObject, OS_dispatch_source, PKAddPaymentPassRequestViewControllerDelegate;
+#import <PassKitUI/PKPaymentSetupViewControllerDelegate-Protocol.h>
 
-@interface PKAddPaymentPassRequestViewController : UITableViewController
+@class CLInUseAssertion, NSArray, NSObject, NSString, PKAddPaymentPassRequest, PKAddPaymentPassRequestConfiguration, PKPasscodeUpgradeFlowController, PKPaymentProvisioningController, PKPaymentWebService, PKTableHeaderView;
+@protocol NSObject, OS_dispatch_source, PKAddPaymentPassRequestViewControllerDelegate, PKPaymentSetupViewControllerDelegate;
+
+@interface PKAddPaymentPassRequestViewController : UITableViewController <PKPaymentSetupViewControllerDelegate>
 {
     NSString *_title;
     NSString *_subtitle;
     NSArray *_details;
     long long _headerState;
     id <NSObject> _notificationToken;
+    PKPasscodeUpgradeFlowController *_passcodeUpgradeFlowController;
     PKPaymentProvisioningController *_provisioningController;
     PKAddPaymentPassRequestConfiguration *_configuration;
     CLInUseAssertion *_passbookForegroundAssertion;
@@ -30,11 +33,13 @@
     _Bool _hidePrivacy;
     _Bool _singleTarget;
     id <PKAddPaymentPassRequestViewControllerDelegate> _delegate;
+    id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
     PKPaymentWebService *_webService;
 }
 
 + (id)backgroundColor;
 @property(readonly, nonatomic) PKPaymentWebService *webService; // @synthesize webService=_webService;
+@property(nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 @property(nonatomic) __weak id <PKAddPaymentPassRequestViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool singleTarget; // @synthesize singleTarget=_singleTarget;
 @property(nonatomic) _Bool hidePrivacy; // @synthesize hidePrivacy=_hidePrivacy;
@@ -49,6 +54,7 @@
 - (void)_performMoreInfoItemPush;
 - (void)_performProvisioning:(id)arg1;
 - (void)_performTerms:(id)arg1;
+- (void)_performPasscodeUpgradeIfNeeded;
 - (void)_performEligibility;
 - (void)_fetchAddRequestWithCertificatesResponse:(id)arg1;
 - (void)_fetchCertificates;
@@ -68,6 +74,7 @@
 - (void)_setHeaderState:(long long)arg1;
 - (void)_setNavigationBarEnabled:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
+- (void)hostApplicationDidEnterBackground;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
@@ -75,6 +82,12 @@
 - (void)loadView;
 - (void)dealloc;
 - (id)initWithPaymentWebService:(id)arg1 configuration:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

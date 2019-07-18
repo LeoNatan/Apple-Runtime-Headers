@@ -8,7 +8,7 @@
 
 #import <Safari/NSFilePresenter-Protocol.h>
 
-@class BrowserWindowController, DownloadFile, NSArray, NSData, NSDate, NSError, NSMutableArray, NSOperationQueue, NSProgress, NSSet, NSString, NSTimer, NSURL, NSURLRequest, NSURLResponse, WBSCoalescedAsynchronousWriter, WBSDownloadFileUnarchiver;
+@class BrowserWindowController, DownloadFile, NSArray, NSData, NSDate, NSError, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSProgress, NSSet, NSString, NSTimer, NSURL, NSURLRequest, NSURLResponse, WBSCoalescedAsynchronousWriter, WBSDownloadFileUnarchiver;
 @protocol DownloadProgressEntryDelegate, OS_dispatch_queue, WBSSandboxExtensionToken, WebDownloadDelegate;
 
 __attribute__((visibility("hidden")))
@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSURLResponse *_response;
     DownloadFile *_downloadFile;
     NSMutableArray *_postDownloadFiles;
+    NSMutableDictionary *_depthForNestedArchive;
     NSString *_identifier;
     NSData *_resumeInformation;
     WBSDownloadFileUnarchiver *_fileUnarchiver;
@@ -101,6 +102,7 @@ __attribute__((visibility("hidden")))
 - (id)_canceledError;
 - (BOOL)_canFinishDownloadWithoutReloading;
 - (void)_addPostDownloadFileWithPath:(id)arg1;
+- (void)_addUnarchivedFiles:(id)arg1;
 - (void)_addPostDownloadFiles:(id)arg1;
 - (void)_saveStateToPListInBundle:(id)arg1;
 - (id)_legalFilenameForDirectoryPath:(id)arg1 filename:(id)arg2;
@@ -118,6 +120,7 @@ __attribute__((visibility("hidden")))
 - (void)_moveFilesFromBundleWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_replaceExistingFile:(id)arg1 atURL:(id)arg2 withFileAtURL:(id)arg3 tags:(id)arg4;
 - (BOOL)_open;
+- (int)_openArchive;
 - (BOOL)_addCertificateToKeyChain;
 - (void)presentedItemDidMoveToURL:(id)arg1;
 @property(readonly, retain) NSOperationQueue *presentedItemOperationQueue;

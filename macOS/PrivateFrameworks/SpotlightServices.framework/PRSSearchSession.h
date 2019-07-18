@@ -34,7 +34,6 @@
 
 + (id)currentInputMethod;
 + (id)currentKeyboardLayout;
-+ (void)initialize;
 @property double retryAfter; // @synthesize retryAfter=_retryAfter;
 @property(retain) NSObject<OS_dispatch_source> *quiescenceTimer; // @synthesize quiescenceTimer=_quiescenceTimer;
 @property BOOL configuredSession; // @synthesize configuredSession=_configuredSession;

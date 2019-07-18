@@ -18,11 +18,13 @@
         unsigned int shouldOpenContainingApplication:1;
     } _has;
     _Bool _shouldOpenContainingApplication;
+    _Bool __encodeLegacyGloryData;
     NSData *_responseMessageData;
     NSString *_responseTypeName;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) _Bool shouldOpenContainingApplication; // @synthesize shouldOpenContainingApplication=_shouldOpenContainingApplication;
 @property(copy, nonatomic) NSString *responseTypeName; // @synthesize responseTypeName=_responseTypeName;
 @property(copy, nonatomic) NSData *responseMessageData; // @synthesize responseMessageData=_responseMessageData;

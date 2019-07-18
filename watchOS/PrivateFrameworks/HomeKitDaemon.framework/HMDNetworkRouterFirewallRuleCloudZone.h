@@ -6,10 +6,13 @@
 
 #import <HomeKitBackingStore/HMBCloudZone.h>
 
-@class NSArray, NSSet;
+@class NSArray, NSMutableSet, NSSet;
 
 @interface HMDNetworkRouterFirewallRuleCloudZone : HMBCloudZone
 {
+    _Bool _useAnonymousRequests;
+    NSSet *_modifiedRecordIDsFromLastPull;
+    NSMutableSet *_uncommittedModifiedRecordIDsFromLastPull;
     NSSet *_watchedRecordIDs;
     NSArray *_signatureVerificationPublicKeys;
 }
@@ -20,18 +23,25 @@
 + (unsigned int)__maxSizeFromPreferenceWithKey:(id)arg1 defaultValue:(unsigned int)arg2;
 @property(readonly, nonatomic) NSArray *signatureVerificationPublicKeys; // @synthesize signatureVerificationPublicKeys=_signatureVerificationPublicKeys;
 @property(readonly, nonatomic) NSSet *watchedRecordIDs; // @synthesize watchedRecordIDs=_watchedRecordIDs;
+@property(readonly, nonatomic) _Bool useAnonymousRequests; // @synthesize useAnonymousRequests=_useAnonymousRequests;
 - (void).cxx_destruct;
 - (void)__retryFetchWithFetchInfo:(id)arg1;
 - (_Bool)__canRecoverFromError:(id)arg1 fetchInfo:(id)arg2;
-- (id)__commitLocalChanges:(id)arg1;
+- (_Bool)__commitLocalChanges:(id)arg1 error:(id *)arg2;
 - (void)__zoneChangesCompleted:(id)arg1 fetchInfo:(id)arg2;
 - (void)__zoneFetchCompletedWithChangeToken:(id)arg1 error:(id)arg2 moreComing:(_Bool)arg3 fetchInfo:(id)arg4;
 - (void)__zoneChangeTokensUpdated:(id)arg1 fetchInfo:(id)arg2;
 - (void)__recordDeleted:(id)arg1 recordType:(id)arg2 fetchInfo:(id)arg3;
 - (void)__recordChanged:(id)arg1 fetchInfo:(id)arg2;
+- (void)__finalizeUpdatedRecordIDs;
+- (void)__noteUpdatedRecordID:(id)arg1;
 - (void)__fetchZoneChangesWithFetchInfo:(id)arg1;
-- (id)lazyPerformCloudPullWithFetchToken:(id)arg1 options:(id)arg2;
-- (id)initWithCloudDatabase:(id)arg1 state:(id)arg2 watchedRecordIDs:(id)arg3 signatureVerificationPublicKeys:(id)arg4;
+- (id)performCloudPullWithFetchToken:(id)arg1 options:(id)arg2;
+- (void)startUpWithLocalZone:(id)arg1;
+@property(retain, nonatomic) NSMutableSet *uncommittedModifiedRecordIDsFromLastPull; // @synthesize uncommittedModifiedRecordIDsFromLastPull=_uncommittedModifiedRecordIDsFromLastPull;
+@property(retain, nonatomic) NSSet *modifiedRecordIDsFromLastPull; // @synthesize modifiedRecordIDsFromLastPull=_modifiedRecordIDsFromLastPull;
+- (id)attributeDescriptions;
+- (id)initWithCloudDatabase:(id)arg1 state:(id)arg2 useAnonymousRequests:(_Bool)arg3 watchedRecordIDs:(id)arg4 signatureVerificationPublicKeys:(id)arg5;
 - (id)decodeModelFrom:(id)arg1 fullyPopulatedRecord:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)__verifyNetworkDeclarationsFromRecord:(id)arg1 baseAccessoryIdentifier:(id *)arg2 networkDeclarationsData:(id *)arg3 error:(id *)arg4;
 - (id)__getNetworkDeclarationsDataFromRecord:(id)arg1 error:(id *)arg2;

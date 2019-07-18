@@ -10,6 +10,7 @@
 {
 }
 
+- (BOOL)shouldOpenAppThroughSiriForIntent:(id)arg1 intentResponse:(id)arg2;
 - (id)generatedIntentWithInput:(id)arg1 error:(id *)arg2;
 - (void)resolveSlot:(id)arg1 withProcessedValue:(id)arg2 parameter:(id)arg3 input:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)errorFromHandleResponse:(id)arg1 intent:(id)arg2;
@@ -25,7 +26,7 @@
 - (id)localizedCallServiceName;
 - (long long)preferredCallProvider;
 - (long long)callCapability;
-- (id)serializedParametersForDonatedIntent:(id)arg1;
+- (id)serializedParametersForDonatedIntent:(id)arg1 allowDroppingUnconfigurableValues:(BOOL)arg2;
 
 @end
 

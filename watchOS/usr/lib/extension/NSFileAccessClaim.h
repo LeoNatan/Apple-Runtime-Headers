@@ -69,7 +69,8 @@ __attribute__((visibility("hidden")))
 - (void)makeProviderOfItemAtLocation:(id)arg1 provideOrAttachPhysicalURLIfNecessaryForPurposeID:(id)arg2 writingOptions:(unsigned int)arg3 thenContinue:(CDUnknownBlockType)arg4;
 - (void)makeProviderOfItemAtLocation:(id)arg1 provideOrAttachPhysicalURLIfNecessaryForPurposeID:(id)arg2 readingOptions:(unsigned int)arg3 thenContinue:(CDUnknownBlockType)arg4;
 - (void)makeProviderOfItemAtLocation:(id)arg1 providePhysicalURLThenContinue:(CDUnknownBlockType)arg2;
-- (void)makeProvidersProvideItemsAtReadingLocations:(id)arg1 options:(unsigned int *)arg2 andParentsOfWritingLocationsIfNecessary:(id)arg3 thenContinue:(CDUnknownBlockType)arg4;
+- (void)makeProvidersProvideItemsForReadingLocations:(id)arg1 options:(unsigned int *)arg2 andWritingLocationsIfNecessary:(id)arg3 options:(unsigned int *)arg4 thenContinue:(CDUnknownBlockType)arg5;
+- (void)_checkIfMovingRequiresProvidingAmongWritingLocations:(id)arg1 options:(unsigned int *)arg2 thenContinue:(CDUnknownBlockType)arg3;
 - (void)makeProviderOfItemAtLocation:(id)arg1 provideIfNecessaryWithOptions:(unsigned int)arg2 thenContinue:(CDUnknownBlockType)arg3;
 - (_Bool)shouldMakeProviderProvideItemAtLocation:(id)arg1 withOptions:(unsigned int)arg2;
 - (void)ensureProvidersOfItemsAtReadingLocations:(id)arg1 writingLocations:(id)arg2 thenContinue:(CDUnknownBlockType)arg3;
@@ -84,6 +85,8 @@ __attribute__((visibility("hidden")))
 - (void)givePriorityToClaim:(id)arg1;
 - (_Bool)isBlockedByClaimWithPurposeID:(id)arg1;
 - (_Bool)claimerInvokingIsBlockedByReactorWithID:(id)arg1;
+- (void)removeBlockingReactorID:(id)arg1;
+- (void)addBlockingReactorID:(id)arg1;
 - (void)whenFinishedPerformProcedure:(CDUnknownBlockType)arg1;
 - (void)whenDevaluedPerformProcedure:(CDUnknownBlockType)arg1;
 - (void)whenRevokedPerformProcedure:(CDUnknownBlockType)arg1;

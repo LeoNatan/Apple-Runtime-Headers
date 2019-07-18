@@ -25,6 +25,9 @@
 + (id)defaultsForMangledID:(id)arg1;
 + (id)_userDefaultsManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool fetchShareRecordsInline;
+@property(readonly, nonatomic) _Bool fetchContentRecordsInline;
+@property(readonly, nonatomic) _Bool isBlacklistedFromFolderSharing;
 @property(readonly, nonatomic) double backgroundDeferTimeInterval;
 @property(readonly, nonatomic) _Bool canSaveRecordsDirectlyWithDeletes;
 @property(readonly, nonatomic) _Bool canSaveRecordsDirectlyForDeltaSync;

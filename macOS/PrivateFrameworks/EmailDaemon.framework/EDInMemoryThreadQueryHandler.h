@@ -15,6 +15,7 @@
 {
     NSMutableOrderedSet *_conversationIDs;
     NSMutableDictionary *_threadsByConversationID;
+    NSMutableDictionary *_oldestThreadsByMailboxObjectIDs;
     EDMessageQueryHelper *_messageQueryHelper;
     NSArray *_threadSortDescriptors;
     NSArray *_messageSortDescriptors;
@@ -23,12 +24,19 @@
 + (id)log;
 @property(readonly, copy, nonatomic) NSArray *messageSortDescriptors; // @synthesize messageSortDescriptors=_messageSortDescriptors;
 @property(readonly, copy, nonatomic) NSArray *threadSortDescriptors; // @synthesize threadSortDescriptors=_threadSortDescriptors;
-@property(readonly, nonatomic) EDMessageQueryHelper *messageQueryHelper; // @synthesize messageQueryHelper=_messageQueryHelper;
+@property(retain, nonatomic) EDMessageQueryHelper *messageQueryHelper; // @synthesize messageQueryHelper=_messageQueryHelper;
 - (void).cxx_destruct;
-- (void)queryHelperDidFinishRemoteSearch:(id)arg1;
 - (BOOL)_messageListItemChangeAffectsSorting:(id)arg1;
 - (id)_inMemoryThreadSortDescriptorsForThreadSortDescriptors:(id)arg1;
 - (id)_messageQueryFromThreadsQuery:(id)arg1;
+- (void)_oldestThreadsByMailboxObjectIDsWasUpdated;
+- (void)_updateOldestThreadsForMailboxes:(id)arg1;
+- (void)_threadsWereDeleted;
+- (void)_didMergeInThreads:(id)arg1;
+- (BOOL)_updateCurrentOldestThreadWithThreadIfApplicable:(id)arg1 forMailbox:(id)arg2;
+- (void)_initializeOldestThreadsByMailbox;
+- (void)queryHelperNeedsRestart:(id)arg1;
+- (void)queryHelperDidFinishRemoteSearch:(id)arg1;
 - (void)_vipsDidChange:(id)arg1;
 - (void)_blockedSendersDidChange:(id)arg1;
 - (void)_removeThreadsForInMemoryThreads:(id)arg1;
@@ -49,7 +57,10 @@
 - (void)queryHelper:(id)arg1 didFindMessages:(id)arg2;
 - (id)messagesForThread:(id)arg1;
 - (id)threadForObjectID:(id)arg1 error:(id *)arg2;
+- (void)_createHelper;
+- (void)_restartHelper;
 - (void)cancel;
+- (void)start;
 - (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 observer:(id)arg4 observationIdentifier:(id)arg5;
 
 // Remaining properties

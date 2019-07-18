@@ -35,7 +35,8 @@
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)endBackgroundDeferralCheck;
-- (void)startBackgroundDeferralCheck:(CDUnknownBlockType)arg1;
+- (BOOL)taskCanContinueForTime:(id)arg1;
+- (void)startBackgroundDeferralCheckForTime:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_backgroundDeferralCheck:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)taskIsDeferred;
 - (BOOL)deferTask;
@@ -49,6 +50,8 @@
 @property(nonatomic) long long gracePeriod;
 @property(nonatomic) long long backgroundTaskRetryCount;
 @property(nonatomic) BOOL requiresNetworkConnectivity;
+@property(nonatomic) BOOL requireClassCData;
+@property(nonatomic) BOOL requireBuddyComplete;
 @property(nonatomic) BOOL isCPUIntensive;
 @property(nonatomic) BOOL isRepeating;
 @property(nonatomic) BOOL requireSleep;

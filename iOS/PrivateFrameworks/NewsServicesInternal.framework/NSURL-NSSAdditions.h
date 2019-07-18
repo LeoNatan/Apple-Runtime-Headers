@@ -31,6 +31,7 @@
 - (id)nss_URLWithCampaignID:(id)arg1;
 - (_Bool)nss_isFollowNewsTagURL;
 - (_Bool)nss_isNewsTagURL;
+- (_Bool)nss_hasRefreshParameter;
 - (_Bool)nss_isNewsArticleVideoURL;
 - (_Bool)nss_isNewsArticleURL;
 - (_Bool)nss_isNewsWidgetVideoPlaylist;

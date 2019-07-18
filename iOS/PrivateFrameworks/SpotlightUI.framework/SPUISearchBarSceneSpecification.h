@@ -11,7 +11,6 @@
 }
 
 - (Class)transitionContextClass;
-- (Class)clientSettingsClass;
 - (Class)settingsClass;
 
 @end

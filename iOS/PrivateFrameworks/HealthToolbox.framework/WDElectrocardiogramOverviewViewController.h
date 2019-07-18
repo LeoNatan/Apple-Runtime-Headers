@@ -12,13 +12,11 @@
 #import <HealthToolbox/HRFeatureRegulatoryReenableFeatureActionDelegate-Protocol.h>
 #import <HealthToolbox/HROnboardingManagerDelegate-Protocol.h>
 #import <HealthToolbox/WDElectrocardiogramFilterDataProviderDelegate-Protocol.h>
-#import <HealthToolbox/WDUserActivityResponder-Protocol.h>
 
 @class HKDisplayType, HKHeartRhythmAvailability, HROnboardingManager, NSString, UITapGestureRecognizer, WDElectrocardiogramFilterDataProvider, WDElectrocardiogramListDataProvider, WDProfile;
 @protocol HKDataMetadataSectionProtocol;
 
-__attribute__((visibility("hidden")))
-@interface WDElectrocardiogramOverviewViewController : HKTableViewController <HKSwitchTableViewCellDelegate, HRFeatureRegulatoryReenableFeatureActionDelegate, HROnboardingManagerDelegate, WDElectrocardiogramFilterDataProviderDelegate, HKOnboardingSetupViewDelegate, WDUserActivityResponder, HKHeartRhythmAvailabilityObserver>
+@interface WDElectrocardiogramOverviewViewController : HKTableViewController <HKSwitchTableViewCellDelegate, HRFeatureRegulatoryReenableFeatureActionDelegate, HROnboardingManagerDelegate, WDElectrocardiogramFilterDataProviderDelegate, HKOnboardingSetupViewDelegate, HKHeartRhythmAvailabilityObserver>
 {
     _Bool _previousElectrocardiogramDisabledCacheValue;
     long long _placeholderCellCount;
@@ -44,9 +42,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long placeholderCellCount; // @synthesize placeholderCellCount=_placeholderCellCount;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
-- (id)applyTransitionActivity:(id)arg1;
-- (void)applyChangeActivity:(id)arg1;
-- (void)_updateActivityForViewDidAppear;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)_showDataSourcesAndAccessController;
 - (id)_dataListViewControllerWithFilterType:(long long)arg1;
@@ -58,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)didSelectReenableFeatureForProductName:(id)arg1;
 - (void)beginOnboardingForOnboardingSetupView:(id)arg1;
 - (void)electrocardiogramFilterDataProvider:(id)arg1 didUpdateCount:(long long)arg2 type:(long long)arg3;
+- (void)isFavorited:(_Bool)arg1;
 - (void)switchCellValueChanged:(id)arg1 value:(_Bool)arg2;
 - (_Bool)_isPrimaryProfile;
 - (long long)_filterTypeForDataSectionRow:(long long)arg1;

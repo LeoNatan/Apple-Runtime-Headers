@@ -47,7 +47,6 @@
 - (unsigned int)deleteInteractionsOlderThanDate:(id)arg1 limit:(unsigned int)arg2;
 - (unsigned int)deleteUnreferencedContacts;
 - (unsigned int)deleteUnreferencedKeywords;
-- (id)queryMessageInteractionBundleIDs:(id *)arg1;
 - (id)interactionCountPerMechanism;
 - (id)histogramContactInteractionsUsingPredicate:(id)arg1 withLimit:(unsigned int)arg2;
 - (id)queryContactInteractionsUsingPredicate:(id)arg1 withLimit:(unsigned int)arg2;

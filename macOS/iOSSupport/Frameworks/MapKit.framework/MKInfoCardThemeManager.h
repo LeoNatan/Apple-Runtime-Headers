@@ -47,6 +47,7 @@
 @property(readonly, nonatomic) UIColor *rowColor;
 @property(readonly, nonatomic) UIColor *separatorLineColor;
 @property(readonly, nonatomic) UIColor *highlightedTintColor;
+@property(readonly, nonatomic) UIColor *tertiaryTextColor;
 @property(readonly, nonatomic) UIColor *lightTextColor;
 @property(readonly, nonatomic) UIColor *textColor;
 @property(readonly, nonatomic) BOOL isDarkTheme;

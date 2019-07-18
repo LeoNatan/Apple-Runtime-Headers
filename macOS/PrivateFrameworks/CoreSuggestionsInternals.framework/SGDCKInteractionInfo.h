@@ -12,12 +12,18 @@
 
 @interface SGDCKInteractionInfo : PBCodable <NSCopying>
 {
+    NSString *_intentResponseUserActivityString;
     NSString *_interactionBundleId;
     NSString *_interactionGroupId;
     NSString *_interactionId;
+    NSString *_interactionTeamId;
+    NSData *_reservationContainerReference;
     NSData *_reservationItemReferences;
 }
 
+@property(retain, nonatomic) NSString *interactionTeamId; // @synthesize interactionTeamId=_interactionTeamId;
+@property(retain, nonatomic) NSString *intentResponseUserActivityString; // @synthesize intentResponseUserActivityString=_intentResponseUserActivityString;
+@property(retain, nonatomic) NSData *reservationContainerReference; // @synthesize reservationContainerReference=_reservationContainerReference;
 @property(retain, nonatomic) NSData *reservationItemReferences; // @synthesize reservationItemReferences=_reservationItemReferences;
 @property(retain, nonatomic) NSString *interactionBundleId; // @synthesize interactionBundleId=_interactionBundleId;
 @property(retain, nonatomic) NSString *interactionGroupId; // @synthesize interactionGroupId=_interactionGroupId;
@@ -32,6 +38,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasInteractionTeamId;
+@property(readonly, nonatomic) BOOL hasIntentResponseUserActivityString;
+@property(readonly, nonatomic) BOOL hasReservationContainerReference;
 @property(readonly, nonatomic) BOOL hasReservationItemReferences;
 @property(readonly, nonatomic) BOOL hasInteractionBundleId;
 @property(readonly, nonatomic) BOOL hasInteractionGroupId;

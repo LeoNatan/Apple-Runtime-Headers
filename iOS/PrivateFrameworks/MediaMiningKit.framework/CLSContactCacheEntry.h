@@ -18,7 +18,7 @@
 // Remaining properties
 @property(nonatomic) NSString *classifiedPersonLocalIdentifierWithFaceModelID; // @dynamic classifiedPersonLocalIdentifierWithFaceModelID;
 @property(nonatomic) NSString *contactIdentifier; // @dynamic contactIdentifier;
-@property(nonatomic) _Bool faceprintWasExtractedAndClassifiedWithFaceModelID; // @dynamic faceprintWasExtractedAndClassifiedWithFaceModelID;
+@property(nonatomic) _Bool hasPicture; // @dynamic hasPicture;
 @property(nonatomic) double updateTimestamp; // @dynamic updateTimestamp;
 
 @end

@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)_refreshAuthorizationViewController;
 - (void)_installViewController:(id)arg1 postModuleBeingDisplayed:(BOOL)arg2;
 @property(readonly, nonatomic) NSViewController<PreferencesViewController> *passwordsViewController; // @synthesize passwordsViewController=_passwordsViewController;
-- (id)helpAnchor;
+- (id)safariHelpAnchor;
 - (void)setMinSize:(struct CGSize)arg1;
 - (struct CGSize)minSize;
 - (void)initializeFromDefaults;

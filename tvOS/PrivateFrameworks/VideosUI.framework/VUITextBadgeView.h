@@ -6,7 +6,8 @@
 
 #import <UIKit/UIView.h>
 
-@class NSAttributedString, UIImage, VUITextBadgeLayout, _TVImageView;
+@class IKViewElement, NSAttributedString, NSTimer, UIImage, VUITextBadgeLayout, _TVImageView;
+@protocol VUITextBadgeViewDelegate;
 
 __attribute__((visibility("hidden")))
 @interface VUITextBadgeView : UIView
@@ -15,13 +16,19 @@ __attribute__((visibility("hidden")))
     UIImage *_backgroundImage;
     _TVImageView *_imageView;
     VUITextBadgeLayout *_badgeLayout;
+    id <VUITextBadgeViewDelegate> _delegate;
     NSAttributedString *_attributedTitle;
+    IKViewElement *_viewElement;
+    NSTimer *_expiryUpdateTimer;
     struct CGSize _glyphSize;
 }
 
 + (_Bool)badgeElementHasContent:(id)arg1;
+@property(retain, nonatomic) NSTimer *expiryUpdateTimer; // @synthesize expiryUpdateTimer=_expiryUpdateTimer;
+@property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(nonatomic) struct CGSize glyphSize; // @synthesize glyphSize=_glyphSize;
 @property(copy, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
+@property(nonatomic) __weak id <VUITextBadgeViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) VUITextBadgeLayout *badgeLayout; // @synthesize badgeLayout=_badgeLayout;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
@@ -29,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_imageLoaded;
 - (struct CGSize)_textSize;
+- (void)_invalidateTimer;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)dealloc;

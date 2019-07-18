@@ -14,14 +14,16 @@ __attribute__((visibility("hidden")))
     BOOL _hidesSourceView;
     BOOL _matchesAlpha;
     BOOL _appliesMinificationFilter;
-    BOOL _didTakeOwnershipOfSourceView;
+    BOOL _allowsUserInteraction;
+    BOOL _shouldTakeOwnershipOfSourceView;
     UITargetedPreview *_sourcePreview;
     _UIPortalView *_portalView;
 }
 
-@property(nonatomic) BOOL didTakeOwnershipOfSourceView; // @synthesize didTakeOwnershipOfSourceView=_didTakeOwnershipOfSourceView;
+@property(nonatomic) BOOL shouldTakeOwnershipOfSourceView; // @synthesize shouldTakeOwnershipOfSourceView=_shouldTakeOwnershipOfSourceView;
 @property(retain, nonatomic) _UIPortalView *portalView; // @synthesize portalView=_portalView;
 @property(retain, nonatomic) UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
+@property(nonatomic) BOOL allowsUserInteraction; // @synthesize allowsUserInteraction=_allowsUserInteraction;
 @property(nonatomic) BOOL appliesMinificationFilter; // @synthesize appliesMinificationFilter=_appliesMinificationFilter;
 @property(nonatomic) BOOL matchesAlpha; // @synthesize matchesAlpha=_matchesAlpha;
 @property(nonatomic) BOOL hidesSourceView; // @synthesize hidesSourceView=_hidesSourceView;

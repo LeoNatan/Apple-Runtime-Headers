@@ -25,6 +25,8 @@
     unsigned int _visibleItems;
     BOOL _observingLocaleChanges;
     BOOL _rejectionReasonCell;
+    BOOL _hideCellSeparator;
+    int _lastPosition;
     BOOL _hasMapItemLaunchOptionFromTimeToLeaveNotification;
     BOOL _showingInlineDayView;
     NSObject<EKEventDetailTitleCellDelegate> *_delegate;
@@ -57,6 +59,8 @@
 - (id)_travelTimeView;
 - (id)_dateTimeViewForLine:(unsigned long long)arg1;
 - (id)_titleView;
+- (void)_updateSeparatorInsets;
+- (void)setHideCellSeparator:(BOOL)arg1;
 - (void)editButtonTapped;
 - (BOOL)update;
 - (void)addLocation:(id)arg1;
@@ -69,6 +73,7 @@
 - (void)_setDateTimeString:(id)arg1 line:(unsigned long long)arg2;
 - (void)setTitle:(id)arg1;
 - (BOOL)_useLargeFonts;
+- (void)layoutMarginsDidChange;
 - (id)initAsRejectionReasonCellWithEvent:(id)arg1;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 style:(long long)arg3;
 - (void)dealloc;

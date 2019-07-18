@@ -9,7 +9,9 @@
 __attribute__((visibility("hidden")))
 @interface _TtC17HealthEducationUI28LinkedTextCollectionViewCell : _TtC17HealthEducationUI27ParagraphCollectionViewCell
 {
-    // Error parsing type: , name: linkAction
+    // Error parsing type: , name: paragraphText
+    // Error parsing type: , name: linkedText
+    // Error parsing type: , name: linkedAction
 }
 
 - (void).cxx_destruct;

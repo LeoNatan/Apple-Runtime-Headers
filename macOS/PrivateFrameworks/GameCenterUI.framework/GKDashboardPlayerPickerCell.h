@@ -6,14 +6,14 @@
 
 #import <GameCenterUI/GKDashboardPlayerCell.h>
 
-@class NSImageView, NSLayoutConstraint, UIButton;
+@class NSButton, NSImageView, NSLayoutConstraint;
 
 @interface GKDashboardPlayerPickerCell : GKDashboardPlayerCell
 {
     BOOL _selectable;
     BOOL _showsLastPlayedStatusText;
     NSImageView *_selectionView;
-    UIButton *_selectionButton;
+    NSButton *_selectionButton;
     NSLayoutConstraint *_nameConstraint;
     NSLayoutConstraint *_selectionHorizontalConstraint;
     NSLayoutConstraint *_selectionVerticalConstraint;
@@ -32,7 +32,7 @@
 @property(nonatomic) NSLayoutConstraint *selectionVerticalConstraint; // @synthesize selectionVerticalConstraint=_selectionVerticalConstraint;
 @property(nonatomic) NSLayoutConstraint *selectionHorizontalConstraint; // @synthesize selectionHorizontalConstraint=_selectionHorizontalConstraint;
 @property(nonatomic) NSLayoutConstraint *nameConstraint; // @synthesize nameConstraint=_nameConstraint;
-@property(nonatomic) UIButton *selectionButton; // @synthesize selectionButton=_selectionButton;
+@property(nonatomic) NSButton *selectionButton; // @synthesize selectionButton=_selectionButton;
 @property(nonatomic) NSImageView *selectionView; // @synthesize selectionView=_selectionView;
 @property(nonatomic) BOOL showsLastPlayedStatusText; // @synthesize showsLastPlayedStatusText=_showsLastPlayedStatusText;
 @property(nonatomic, getter=isSelectable) BOOL selectable; // @synthesize selectable=_selectable;

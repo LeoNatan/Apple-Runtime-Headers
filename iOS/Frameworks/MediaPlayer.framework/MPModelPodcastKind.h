@@ -15,10 +15,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)kindWithEpisodeKind:(id)arg1;
++ (id)identityKind;
 @property(readonly, nonatomic) MPModelPodcastEpisodeKind *episodeKind; // @synthesize episodeKind=_episodeKind;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)humanDescription;
 - (void)applyToView:(shared_ptr_5c01893c)arg1 withContext:(id)arg2;
 

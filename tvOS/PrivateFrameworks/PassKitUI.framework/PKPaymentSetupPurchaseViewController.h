@@ -10,15 +10,16 @@
 #import <PassKitUI/PKPaymentAuthorizationCoordinatorPrivateDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupPurchaseAmountViewDelegate-Protocol.h>
-#import <PassKitUI/PKPaymentSetupRequiresPreflightProtocol-Protocol.h>
 #import <PassKitUI/PKPaymentSetupViewControllerDelegate-Protocol.h>
+#import <PassKitUI/PKViewControllerPreflightable-Protocol.h>
 
 @class NSDecimalNumber, NSString, PKPaymentAuthorizationCoordinator, PKPaymentProvisioningController, PKPaymentProvisioningMethodMetadata, PKPaymentSetupProduct, PKPaymentSetupPurchaseAmountView, PKPaymentSetupPurchaseController, PKServiceProviderPurchase, UIActivityIndicatorView, UIImage, UIImageView, UILabel;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKPaymentSetupPurchaseViewController : UIViewController <PKPaymentSetupPurchaseAmountViewDelegate, PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKPaymentSetupViewControllerDelegate, PKPaymentSetupDelegate, PKPaymentSetupRequiresPreflightProtocol>
+@interface PKPaymentSetupPurchaseViewController : UIViewController <PKPaymentSetupPurchaseAmountViewDelegate, PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKPaymentSetupViewControllerDelegate, PKPaymentSetupDelegate, PKViewControllerPreflightable>
 {
     _Bool _snapshotNeedsCorners;
+    unsigned char _visibility;
     _Bool _fieldsVerified;
     _Bool _acceptedTerms;
     PKPaymentSetupProduct *_product;
@@ -77,6 +78,8 @@
 - (void)shakeCard;
 - (void)preflightWithCompletion:(CDUnknownBlockType)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 product:(id)arg4;

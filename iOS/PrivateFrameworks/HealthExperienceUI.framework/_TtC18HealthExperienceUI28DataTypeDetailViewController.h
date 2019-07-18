@@ -9,7 +9,7 @@
 @interface _TtC18HealthExperienceUI28DataTypeDetailViewController : _TtC18HealthExperienceUI42CompoundDataSourceCollectionViewController
 {
     // Error parsing type: , name: chartContext
-    // Error parsing type: , name: $__lazy_storage_$_personalizedTrainer
+    // Error parsing type: , name: $__lazy_storage_$_personalizedFeedTrainer
 }
 
 - (void).cxx_destruct;

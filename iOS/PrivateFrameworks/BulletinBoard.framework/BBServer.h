@@ -150,6 +150,7 @@
 - (long long)_globalSpokenNotificationSetting;
 - (void)_setSpokenNotificationsSupported:(_Bool)arg1;
 - (_Bool)_isSpokenNotificationsSupported;
+- (void)_saveGlobalSpokenNotificationSettingEnabledEvent;
 - (void)_updateSpokenNotificationControlCenterModuleAvailability;
 - (void)requestCanBeHandledChanged:(_Bool)arg1;
 - (void)hasEligibleSetupChanged:(_Bool)arg1;
@@ -162,6 +163,7 @@
 - (void)_updateGlobalSettings;
 - (void)_updateAllSectionInfos;
 - (long long)_defaultGlobalContentPreviewSetting;
+- (void)getSectionIDsWithHandler:(CDUnknownBlockType)arg1;
 - (void)getEffectiveSectionInfoForSectionIDs:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)getSectionInfoForSectionIDs:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)getEffectiveSectionInfoForSectionID:(id)arg1 withHandler:(CDUnknownBlockType)arg2;

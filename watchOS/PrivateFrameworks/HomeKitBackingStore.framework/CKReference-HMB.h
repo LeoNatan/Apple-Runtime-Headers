@@ -6,7 +6,9 @@
 
 #import <CloudKit/CKReference.h>
 
+@class NSString;
+
 @interface CKReference (HMB)
-- (id)hmbDescription;
+@property(readonly, copy) NSString *hmbDescription;
 @end
 

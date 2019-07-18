@@ -15,10 +15,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)kindWithSeasonKind:(id)arg1;
++ (id)identityKind;
 @property(readonly, copy, nonatomic) MPModelTVSeasonKind *seasonKind; // @synthesize seasonKind=_seasonKind;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (id)humanDescription;
 - (shared_ptr_cf7b8a22)representedSearchScopePredicate;
 - (void)applyToView:(shared_ptr_5c01893c)arg1 withContext:(id)arg2;

@@ -22,7 +22,6 @@
 - (void).cxx_destruct;
 - (_Bool)_accessibilityScrollingEnabled;
 - (_Bool)shouldOccludeAccessibilityElement:(id)arg1;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)accessibilityCustomRotors;
 @property(readonly, nonatomic) _Bool isBouncing;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

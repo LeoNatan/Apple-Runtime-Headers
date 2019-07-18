@@ -61,6 +61,7 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (_Bool)_shouldBeginTrackingAtPoint:(struct CGPoint)arg1 pointInKnob:(struct CGPoint *)arg2 inKnob:(_Bool *)arg3;
 - (_Bool)cancelMouseTracking;
 - (void)_sendDelayedActions;
 - (void)_sliderAnimationDidStop:(_Bool)arg1;

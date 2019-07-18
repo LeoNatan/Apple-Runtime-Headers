@@ -6,7 +6,7 @@
 
 #import <FMFCore/NSObject-Protocol.h>
 
-@class FMFDevice, FMFHandle, FMFLocation, NSArray, NSDictionary, NSError, NSSet, NSString;
+@class FMFDevice, FMFFriendshipRequest, FMFHandle, FMFLocation, NSArray, NSDictionary, NSError, NSSet, NSString;
 
 @protocol FMFSessionDelegate <NSObject>
 
@@ -27,6 +27,7 @@
 - (void)didStartAbilityToGetLocationForHandle:(FMFHandle *)arg1;
 - (void)didStopSharingMyLocationWithHandle:(FMFHandle *)arg1;
 - (void)didStartSharingMyLocationWithHandle:(FMFHandle *)arg1;
+- (void)didReceiveFriendshipRequest:(FMFFriendshipRequest *)arg1;
 - (void)connectionError:(NSError *)arg1;
 - (void)didFailToFetchLocationForHandle:(FMFHandle *)arg1 withError:(NSError *)arg2;
 - (void)didReceiveLocation:(FMFLocation *)arg1;

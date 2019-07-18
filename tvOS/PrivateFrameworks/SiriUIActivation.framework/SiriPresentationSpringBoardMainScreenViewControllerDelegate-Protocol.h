@@ -7,9 +7,10 @@
 #import <SiriUIActivation/SiriPresentationControllerDelegate-Protocol.h>
 
 @class NSString;
+@protocol SiriPresentation;
 
 @protocol SiriPresentationSpringBoardMainScreenViewControllerDelegate <SiriPresentationControllerDelegate>
-- (void)deviceUnlockRequestedWithPassword:(NSString *)arg1;
+- (_Bool)siriPresentation:(id <SiriPresentation>)arg1 requestsDeviceUnlockWithPassword:(NSString *)arg2;
 - (void)screenWakeIdleTimerResetRequested;
 - (void)screenWakeRequested;
 @end

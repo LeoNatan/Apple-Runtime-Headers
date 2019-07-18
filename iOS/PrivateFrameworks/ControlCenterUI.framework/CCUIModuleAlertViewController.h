@@ -40,6 +40,8 @@
 - (void)dismissModulePresentedContentAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 @property(nonatomic) double backgroundViewWeighting; // @dynamic backgroundViewWeighting;
 @property(readonly, nonatomic) UIView *moduleAlertView; // @dynamic moduleAlertView;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)loadView;

@@ -18,10 +18,12 @@
 @property(readonly, nonatomic) NSDictionary *additionalDocumentPropertiesForWrite;
 @property(readonly, nonatomic) _Bool isDocumentSupportTemporary;
 @property(readonly, nonatomic) _Bool ignoreDocumentSupport;
+@property(readonly, nonatomic) long long archiveValidationMode;
 @property(readonly, nonatomic) id <NSFilePresenter> filePresenter;
 - (id)documentProviderInternal;
 - (void)gilligan_data:(TSPData *)arg1 didMoveFromPackageIdentifier:(unsigned char)arg2 packageLocator:(NSString *)arg3 toPackageIdentifier:(unsigned char)arg4 packageLocator:(NSString *)arg5;
 - (_Bool)gilligan_isRemoteData:(TSPData *)arg1;
+- (_Bool)shouldAttemptRecoveryAfterOriginalDocumentURLMismatchForContext:(TSPObjectContext *)arg1;
 - (void)contextDidUpdateDocumentRevision:(TSPObjectContext *)arg1;
 - (_Bool)shouldLoadAllComponentsForContext:(TSPObjectContext *)arg1 documentURL:(NSURL *)arg2;
 - (void)context:(TSPObjectContext *)arg1 willFailToAutosaveDueToDuplicateUUIDs:(NSSet *)arg2 objectReferenceMap:(TSPObjectReferenceMap *)arg3;
@@ -43,7 +45,6 @@
 - (_Bool)areExternalReferencesToDataAllowedAtURL:(NSURL *)arg1;
 - (NSString *)documentPasswordHintForWrite;
 - (NSSet *)additionalResourceRequestsForObjectContext:(TSPObjectContext *)arg1;
-- (NSSet *)preferredResourceRequestTagsForContext:(TSPObjectContext *)arg1;
 - (NSDictionary *)packageDataForWrite;
 - (void)willBeginReadingFromURL:(NSURL *)arg1;
 - (_Bool)retrievePassphraseWithConsumer:(id <TSPPassphraseConsumer>)arg1 error:(id *)arg2;

@@ -42,7 +42,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long titleType; // @synthesize titleType=_titleType;
 - (void).cxx_destruct;
 - (void)adoptLayout:(id)arg1;
-- (void)adoptFinalStateFromTransition:(id)arg1;
+- (void)clearTransitionContext;
+- (void)finalizeStateFromTransition:(id)arg1;
 - (void)ensureBackButtonTruncationOccursWithContext:(id)arg1;
 - (void)recordToStateForTransition:(id)arg1;
 - (void)prepareToRecordToState:(id)arg1;

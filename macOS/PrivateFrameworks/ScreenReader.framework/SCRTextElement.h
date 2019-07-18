@@ -120,6 +120,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)lengthOfRange:(id)arg1;
 - (BOOL)isBoundaryAtOffset:(unsigned long long)arg1 sentence:(BOOL)arg2;
 - (BOOL)isSoftWrapForLineEndPosition:(id)arg1;
+- (BOOL)isSoftWrapForLineStartPosition:(id)arg1;
 - (BOOL)isEmptyLine:(unsigned long long)arg1;
 - (BOOL)inEmptyLine:(id)arg1;
 - (void)echoTypingByWordWithCharacter:(id)arg1 speakCharacter:(BOOL)arg2 request:(id)arg3;
@@ -149,9 +150,6 @@ __attribute__((visibility("hidden")))
 - (void)addContentToRequest:(id)arg1 visibleOnly:(BOOL)arg2;
 - (void)startReadContentsVisibleOnly:(BOOL)arg1;
 - (id)childrenInReadContentsOrder;
-- (BOOL)performBrailleStartEditingWithEvent:(id)arg1 request:(id)arg2;
-- (void)_setInsertionPoint:(id)arg1;
-- (BOOL)performBrailleReplaceTextRangeWithEvent:(id)arg1 request:(id)arg2;
 - (id)brailleCategoryOrderArray;
 - (id)categoryOrderArray;
 - (id)_adjustCategoryOrderArray:(id)arg1;
@@ -189,6 +187,7 @@ __attribute__((visibility("hidden")))
 - (void)_addVisibleLineSummaryToRequest:(id)arg1;
 - (void)_addItemShortNameToRequest:(id)arg1;
 - (BOOL)_shouldIgnoreEvent:(id)arg1;
+- (void)_delayedEchoSharedFocusOwnedElement:(id)arg1;
 - (BOOL)keyboardHandler:(id)arg1 request:(id)arg2;
 - (BOOL)handleOptionRightArrowEvent;
 - (BOOL)interactPageDownCommandWithEvent:(id)arg1 request:(id)arg2;
@@ -229,7 +228,9 @@ __attribute__((visibility("hidden")))
 - (id)_getLinkElementWithAttachmentChildInString:(id)arg1 inRange:(struct _NSRange)arg2 options:(unsigned long long)arg3;
 - (id)_getLinkElementInString:(id)arg1 inRange:(struct _NSRange)arg2 options:(unsigned long long)arg3;
 - (id)getLinkElementInSelectionRange:(id)arg1;
+- (id)linkElementInRange:(id)arg1;
 - (BOOL)_performDefaultActionOnLink:(id)arg1;
+- (id)_closestLinkRangeForRange:(id)arg1 direction:(long long)arg2;
 - (id)_linkUIElementForCurrentLine;
 - (BOOL)hasActivePopupChild;
 - (id)currentAutoCorrectionUIElement;
@@ -259,13 +260,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)readyToHaveKeyboardFocus;
 - (BOOL)synchKeyboardToVOCursor:(id)arg1;
 - (void)selectTextInVOCursor:(id)arg1;
+- (id)voiceoverCursorTextMarkerRange;
 - (id)focusOntoUIElement:(id)arg1 withScrolling:(BOOL)arg2 withSelection:(BOOL)arg3;
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;
-- (BOOL)_brailleWrapHitEdgeWithMarker:(id)arg1 wrapRight:(BOOL)arg2;
-- (BOOL)_brailleWrapHitEmptyLineRange:(id)arg1 wrapRight:(BOOL)arg2;
-- (void)_performBrailleWrapRight:(BOOL)arg1 request:(id)arg2;
-- (BOOL)performBrailleWrapRightWithOutputRequest:(id)arg1;
-- (BOOL)performBrailleWrapLeftWithOutputRequest:(id)arg1;
 - (BOOL)toggleMultipleSelectionWithRequest:(id)arg1;
 - (BOOL)toggleSingleSelectionWithRequest:(id)arg1;
 - (BOOL)performDefaultActionWithRequest:(id)arg1 allowClick:(BOOL)arg2;
@@ -395,8 +392,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)selectLeft;
 - (BOOL)selectAll;
 - (void)_sendBrailleLineWithCurrentSelectionForRange:(id)arg1;
-- (id)_brailleLineRangeAfterSetUpForBrailleRoutingIsInteracting:(BOOL)arg1;
-- (id)brailleLineRangeAfterSetUpForBrailleRouting;
 - (void)sendBrailleLineForEchoRange:(id)arg1 selectionRange:(id)arg2;
 - (BOOL)validateBrailleSelectionRange:(id)arg1;
 - (id)currentBrailleLineWithEchoRange:(id)arg1;

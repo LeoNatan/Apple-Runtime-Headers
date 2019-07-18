@@ -9,7 +9,7 @@
 #import <UserNotificationsUIKit/MTMaterialGrouping-Protocol.h>
 #import <UserNotificationsUIKit/PLContentSizeCategoryAdjusting-Protocol.h>
 
-@class BSUIFontProvider, MTMaterialView, NCNotificationAction, NSString, UILabel, UIView;
+@class BSUIFontProvider, MTMaterialView, NCNotificationAction, NSString, UILabel;
 
 @interface NCNotificationListCellActionButton : UIControl <PLContentSizeCategoryAdjusting, MTMaterialGrouping>
 {
@@ -22,10 +22,8 @@
     BSUIFontProvider *_fontProvider;
     UILabel *_titleLabel;
     MTMaterialView *_backgroundView;
-    UIView *_backgroundHighlightView;
 }
 
-@property(retain, nonatomic) UIView *backgroundHighlightView; // @synthesize backgroundHighlightView=_backgroundHighlightView;
 @property(retain, nonatomic) MTMaterialView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic, getter=_fontProvider, setter=_setFontProvider:) BSUIFontProvider *fontProvider; // @synthesize fontProvider=_fontProvider;
@@ -41,9 +39,7 @@
 - (void)_highlightButton:(id)arg1;
 - (long long)_wordCountForText:(id)arg1;
 - (void)_layoutTitleLabel;
-- (void)_layoutBackgroundHighlightView;
 - (void)_layoutBackgroundView;
-- (void)_configureBackgroundHighlightViewIfNecessary;
 - (void)_configureBackgroundViewIfNecessary;
 - (void)_configureTitleLabelIfNecessary;
 - (void)_configureTitleLabelEffects;

@@ -27,7 +27,7 @@
 - (void)_connectionInterrupted:(id)arg1;
 - (id)_bindToPhotoLibrary;
 - (id)_lazilyBindToPhotoLibrary;
-- (id)_setCachedBindResultIfNotAlreadySet:(id)arg1;
+- (void)_updateCachedBindResult:(id)arg1;
 - (id)_cachedBindResult;
 - (id)_tryToBindToPhotoLibrary;
 - (id)_bindToPhotoLibraryIfNecessary;

@@ -22,6 +22,9 @@
 - (void).cxx_destruct;
 - (void)archiveBackgroundContext:(id)arg1;
 - (void)archiveContext:(id)arg1;
+- (void)paymentWebService:(id)arg1 passOwnershipTokenWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)paymentWebService:(id)arg1 storePassOwnershipToken:(id)arg2 withIdentifier:(id)arg3;
+- (void)performDeviceCheckInWithCompletion:(CDUnknownBlockType)arg1;
 - (void)paymentWebService:(id)arg1 requestPassUpgrade:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)paymentWebService:(id)arg1 setDefaultPaymentPassUniqueIdentifier:(id)arg2;
 - (void)deleteApplePayTrustKeyWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -49,9 +52,11 @@
 - (BOOL)paymentWebService:(id)arg1 hasPassesOfType:(unsigned long long)arg2;
 - (void)paymentWebService:(id)arg1 setNewAuthRandom:(CDUnknownBlockType)arg2;
 - (void)paymentWebService:(id)arg1 setNewAuthRandomIfNecessaryReturningPairingState:(CDUnknownBlockType)arg2;
-- (void)noteProvisioningDidEndRequiringUpgradedPasscode;
-- (void)noteProvisioningDidStartRequiringUpgradedPasscode;
+- (void)endRequiringUpgradedPasscodeIfNecessary;
+- (void)startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(BOOL)arg1;
 - (void)enforceUpgradedPasscodePolicyWithCompletion:(CDUnknownBlockType)arg1;
+- (void)notePasscodeUpgradeFlowDidEnd;
+- (void)notePasscodeUpgradeFlowWillBeginWithCompletion:(CDUnknownBlockType)arg1;
 - (id)secureElementIdentifiers;
 - (void)noteProvisioningDidEnd;
 - (void)noteProvisioningDidBegin;

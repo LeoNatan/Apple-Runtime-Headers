@@ -28,7 +28,6 @@
 @property(readonly, nonatomic) BOOL enableDetailedDebugLogging; // @synthesize enableDetailedDebugLogging=_enableDetailedDebugLogging;
 @property(nonatomic, setter=setCurrentTab:) unsigned long long currentTab; // @synthesize currentTab=_currentTab;
 - (void).cxx_destruct;
-- (id)PXUserEventSourceDescription:(unsigned long long)arg1;
 - (id)PXLogSubSubStateDescription:(unsigned long long)arg1;
 - (id)PXLogSubStateDescription:(unsigned long long)arg1;
 - (id)PXLogStateDescription:(unsigned long long)arg1;
@@ -37,6 +36,7 @@
 - (void)willViewMemoriesFeedView;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationWillEnterForeground:(id)arg1;
+- (void)logImpressionCountForEventSource:(unsigned long long)arg1;
 - (void)logCounterValuesForLogSubSubState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)logCounterValuesForLogState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)logCounterValuesForLogSubState:(unsigned long long)arg1 duration:(double)arg2;

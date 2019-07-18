@@ -12,21 +12,35 @@
 @interface STConversation : NSObject
 {
     NSMapTable *_contextByHandles;
-    NSObject<OS_dispatch_queue> *_policyChangeQueue;
+    NSObject<OS_dispatch_queue> *_stateChangeQueue;
+    NSObject *_didFetchInitialStateLock;
     _Bool _emergencyModeEnabled;
+    _Bool _didFetchInitialScreenTimePolicyState;
+    _Bool _didFetchInitialApplicationState;
+    _Bool _didFetchInitialEmergencyModeState;
     int _policyNotifyToken;
+    int _emergencyModeNotifyToken;
     CNContactStore *_contactsStore;
     CNDowntimeWhitelist *_whitelist;
-    STManagementState *_client;
+    STManagementState *_managementState;
     DMFCommunicationPolicyMonitor *_policyMonitor;
     NSString *_bundleIdentifier;
     long long _generalScreenTimePolicy;
     long long _whileLimitedPolicy;
     unsigned long long _currentApplicationState;
     DMFEmergencyModeMonitor *_emergencyModeMonitor;
+    STConversation *_me;
+    CDUnknownBlockType _conversationCompletionHandler;
 }
 
++ (void)requestConversationWithBundleIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(copy) CDUnknownBlockType conversationCompletionHandler; // @synthesize conversationCompletionHandler=_conversationCompletionHandler;
+@property(retain) STConversation *me; // @synthesize me=_me;
+@property(readonly) int emergencyModeNotifyToken; // @synthesize emergencyModeNotifyToken=_emergencyModeNotifyToken;
 @property(readonly) int policyNotifyToken; // @synthesize policyNotifyToken=_policyNotifyToken;
+@property _Bool didFetchInitialEmergencyModeState; // @synthesize didFetchInitialEmergencyModeState=_didFetchInitialEmergencyModeState;
+@property _Bool didFetchInitialApplicationState; // @synthesize didFetchInitialApplicationState=_didFetchInitialApplicationState;
+@property _Bool didFetchInitialScreenTimePolicyState; // @synthesize didFetchInitialScreenTimePolicyState=_didFetchInitialScreenTimePolicyState;
 @property _Bool emergencyModeEnabled; // @synthesize emergencyModeEnabled=_emergencyModeEnabled;
 @property(retain) DMFEmergencyModeMonitor *emergencyModeMonitor; // @synthesize emergencyModeMonitor=_emergencyModeMonitor;
 @property unsigned long long currentApplicationState; // @synthesize currentApplicationState=_currentApplicationState;
@@ -34,7 +48,7 @@
 @property long long generalScreenTimePolicy; // @synthesize generalScreenTimePolicy=_generalScreenTimePolicy;
 @property(readonly, copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) DMFCommunicationPolicyMonitor *policyMonitor; // @synthesize policyMonitor=_policyMonitor;
-@property(retain) STManagementState *client; // @synthesize client=_client;
+@property(retain) STManagementState *managementState; // @synthesize managementState=_managementState;
 @property(readonly) CNDowntimeWhitelist *whitelist; // @synthesize whitelist=_whitelist;
 @property(readonly) CNContactStore *contactsStore; // @synthesize contactsStore=_contactsStore;
 - (void).cxx_destruct;
@@ -51,7 +65,11 @@
 - (void)_updateContext:(id)arg1 forHandles:(id)arg2 updateGeneral:(_Bool)arg3 updateLimited:(_Bool)arg4 updateCurrentApplicationState:(_Bool)arg5 updateAllowedByContactsHandle:(_Bool)arg6 refreshContacts:(_Bool)arg7 updateEmergencyMode:(_Bool)arg8;
 - (id)allowableByContactsHandles:(id)arg1;
 - (void)dealloc;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)callCompletionHandlerIfNeededWithConversation:(id)arg1 error:(id)arg2;
+- (void)_stConversationCommonInitSetupObservationOfStateChanges;
+- (void)_stConversationCommonInitWithBundleIdentifier:(id)arg1 contactStore:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)initWithBundleIdentifier:(id)arg1 contactStore:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)initSynchronouslyWithBundleIdentifier:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1 contactStore:(id)arg2;
 - (id)initWithBundleIdentifier:(id)arg1;
 

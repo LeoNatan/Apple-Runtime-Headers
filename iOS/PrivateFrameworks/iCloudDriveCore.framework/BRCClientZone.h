@@ -41,6 +41,12 @@ __attribute__((visibility("hidden")))
     BRCSyncBudgetThrottle *_syncUpBudget;
     BRCSyncOperationThrottle *_syncDownThrottle;
     BRCDeadlineSource *_syncDeadlineSource;
+    NSMutableArray *_blockedOperationsOnInitialSync;
+    NSMutableDictionary *_runningListOperations;
+    NSMutableDictionary *_recursiveListOperations;
+    NSMutableDictionary *_fetchParentOperations;
+    NSMutableDictionary *_fetchShareAliasOperations;
+    BRCFetchRecentAndFavoriteDocumentsOperation *_fetchRecentsOperation;
     NSMutableIndexSet *_appliedTombstoneRanks;
     long long _lastInsertedRank;
     NSDate *_lastSyncDownDate;
@@ -59,13 +65,6 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_allItemsDidUploadTrackers;
     float _syncUpBatchSizeMultiplier;
     brc_task_tracker *_taskTracker;
-    NSMutableArray *_blockedOperationsOnInitialSync;
-    NSMutableDictionary *_runningListOperations;
-    NSMutableDictionary *_recursiveListOperations;
-    NSMutableDictionary *_fetchParentOperations;
-    NSMutableDictionary *_fetchShareAliasOperations;
-    BRCFetchRecentAndFavoriteDocumentsOperation *_fetchRecentsOperation;
-    unsigned long long _operationCountPendingSchedule;
     _Bool _needsSave;
     _Bool _t_syncDownBlocked;
     _Bool _t_syncUpBlocked;
@@ -157,6 +156,7 @@ __attribute__((visibility("hidden")))
 - (id)fetchParentChainIfNecessaryWithParentItemID:(id)arg1 isUserWaiting:(_Bool)arg2;
 - (id)fetchRecursiveDirectoryContentsIfNecessary:(id)arg1 isUserWaiting:(_Bool)arg2 rescheduleApply:(_Bool)arg3;
 - (id)fetchDirectoryContentsIfNecessary:(id)arg1 isUserWaiting:(_Bool)arg2 rescheduleApplyScheduler:(_Bool)arg3;
+- (_Bool)_isSideSyncOperationBlockedWithName:(id)arg1;
 - (id)cancelFetchAliasOperationAndReschedule:(id)arg1;
 - (void)_registerFetchAliasOperation:(id)arg1;
 - (id)cancelFetchParentChainOperationAndReschedule:(id)arg1;
@@ -220,7 +220,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqualToClientZone:(id)arg1;
 - (_Bool)isSyncBlockedBecauseOSNeedsUpgrade;
 - (_Bool)isSyncBlockedBecauseAppNotInstalled;
-- (_Bool)isSyncBlockedOrBrokenStructure;
 - (_Bool)isSyncBlocked;
 - (void)clearStateBits:(unsigned int)arg1;
 - (_Bool)setStateBits:(unsigned int)arg1;

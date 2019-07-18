@@ -27,6 +27,8 @@
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 - (id)initForNewObject;
 - (id)init;
+- (void)finalizeRequestWithBatchSuccess:(_Bool)arg1;
+@property(readonly, nonatomic) CDUnknownBlockType concurrentWorkBlock;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
 - (void)encodeToXPCDict:(id)arg1;
 - (void)didMutate;

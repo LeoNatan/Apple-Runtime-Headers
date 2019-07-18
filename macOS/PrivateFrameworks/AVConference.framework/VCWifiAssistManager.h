@@ -10,11 +10,9 @@ __attribute__((visibility("hidden")))
 @interface VCWifiAssistManager : NSObject
 {
     unsigned char _wifiAssistState;
-    BOOL _respectBudgetStatusEnabled;
 }
 
 + (id)sharedInstance;
-@property BOOL respectBudgetStatusEnabled; // @synthesize respectBudgetStatusEnabled=_respectBudgetStatusEnabled;
 @property(readonly) unsigned char wifiAssistState; // @synthesize wifiAssistState=_wifiAssistState;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1;

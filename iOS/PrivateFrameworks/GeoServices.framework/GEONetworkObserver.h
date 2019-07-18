@@ -15,6 +15,7 @@
     NSObject<OS_nw_path> *_currentPath;
     _Bool _initialized;
     _Bool _networkReachable;
+    _Bool _networkConstrained;
 }
 
 + (id)sharedNetworkObserver;
@@ -22,6 +23,7 @@
 @property(readonly, nonatomic, getter=isCellConnection) _Bool cellConnection;
 - (void)removeNetworkReachableObserver:(id)arg1;
 - (void)addNetworkReachableObserver:(id)arg1 selector:(SEL)arg2;
+@property(readonly, nonatomic, getter=isNetworkConstrained) _Bool networkConstrained;
 @property(readonly, nonatomic, getter=isNetworkReachable) _Bool networkReachable;
 - (void)initializeIfNecessary;
 - (void)_networkPathUpdated:(id)arg1;

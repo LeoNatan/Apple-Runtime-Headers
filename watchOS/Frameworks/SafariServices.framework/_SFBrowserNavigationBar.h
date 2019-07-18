@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 + (int)_metricsCategory;
 - (id)newTextField;
 - (float)placeholderHorizontalInset;
-- (void)updateToolbarTintColor:(id)arg1;
 
 @end
 

@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (_Bool)p_usesMetal;
 + (void)p_clearFrameBuffers:(id)arg1;
 + (void)p_drawFrameBuffers:(id)arg1 intoFrameBuffer:(id)arg2 withAlpha:(double)arg3 usingDataBuffer:(id)arg4;
 + (id)p_glOpacityShaderForCurrentContext;
@@ -20,13 +19,17 @@ __attribute__((visibility("hidden")))
 + (id)p_glContextQueue;
 + (id)p_glContextSemaphore;
 + (unsigned long long)p_glContextCount;
++ (void)p_drawColor:(id)arg1 intoContext:(struct CGContext *)arg2 usingImageAsMask:(struct CGImage *)arg3 withRect:(struct CGRect)arg4;
++ (_Bool)brushStrokeUsesMetal;
 + (_Bool)brushStrokeUsesOpenGL;
 + (Class)mutableClass;
 - (struct CGImage *)p_newCGImageFromGLWithWidth:(int)arg1 height:(int)arg2;
 - (id)p_glTextureForCurrentStrokeAndContext;
 - (long long)p_fastElementPercentage:(double *)arg1 forOverallPercentage:(double)arg2 onPath:(id)arg3 withCachedCurrentElementPercentage:(CDStruct_45a6b6f8 *)arg4;
 - (_Bool)p_isFreehandDrawingStrokeWithFixedTileWidth;
-- (_Bool)p_drawsToPDFAsBitmap;
+- (_Bool)p_isDrawingRasterizedIntoPDFWithContext:(struct CGContext *)arg1;
+- (_Bool)p_prefersRasterRenderingInContext:(struct CGContext *)arg1;
+- (_Bool)p_shouldDrawAsVectorInContext:(struct CGContext *)arg1;
 - (void)p_finishOpenGLRenderInContext:(struct CGContext *)arg1 orDirectly:(id)arg2 pathVertexData:(vector_8bba9095 *)arg3 parameterized:(_Bool)arg4 shouldReverseDrawOrder:(_Bool)arg5 withLayoutOptions:(id)arg6;
 - (void)p_rasterRenderSection:(id)arg1 sectionIndex:(unsigned long long)arg2 ontoPath:(id)arg3 inElementRange:(struct _NSRange)arg4 into:(vector_8bba9095 *)arg5 viewScale:(double)arg6 strokeTileLayout:(CDStruct_d2b197d1)arg7 cachedCurrentElementPercentage:(CDStruct_45a6b6f8 *)arg8;
 - (void)p_rasterBrushPath:(struct CGPath *)arg1 inContext:(struct CGContext *)arg2 orDirectly:(id)arg3 parameterized:(_Bool)arg4 shouldReverseDrawOrder:(_Bool)arg5 withLayoutOptions:(id)arg6;

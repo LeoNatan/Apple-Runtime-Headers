@@ -17,8 +17,7 @@
 @property(nonatomic) shared_ptr_883eff98 impl; // @synthesize impl=_impl;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)stopPrewarming;
-- (BOOL)startPrewarmingAndReturnError:(id *)arg1;
+@property(copy, nonatomic) CDUnknownBlockType IOEventBlock;
 - (void)stop;
 - (BOOL)startAsyncAndReturnError:(id *)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)startWithoutWaitingAndReturnError:(id *)arg1;

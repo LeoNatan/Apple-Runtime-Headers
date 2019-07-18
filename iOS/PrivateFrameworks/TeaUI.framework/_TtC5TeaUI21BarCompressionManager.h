@@ -17,11 +17,11 @@
     // Error parsing type: , name: navigationBarAnimation
     // Error parsing type: , name: toolbarAnimation
     // Error parsing type: , name: barState
-    // Error parsing type: , name: statusBarTapManager
     // Error parsing type: , name: applicationStateManager
     // Error parsing type: , name: observingToken
     // Error parsing type: , name: lastContentOffset
     // Error parsing type: , name: initialContentOffset
+    // Error parsing type: , name: scrollDebounce
 }
 
 - (void).cxx_destruct;

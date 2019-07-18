@@ -4,50 +4,36 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
-
-#import <MLFoundation/NSCopying-Protocol.h>
+#import <MLFoundation/MLFoundationGraph.h>
 
 @class MLFoundationLayer, MLFoundationOptimizer, MLFoundationTensor, NSMutableArray;
 
-@interface MLFoundationTrainingGraph : NSObject <NSCopying>
+@interface MLFoundationTrainingGraph : MLFoundationGraph
 {
-    BOOL _synchronousExecution;
-    BOOL _enableProfiling;
-    BOOL _allocateIntermediateTensors;
     MLFoundationOptimizer *_optimizer;
-    MLFoundationLayer *_rootLayer;
-    NSMutableArray *_preprocessingLayerList;
-    NSMutableArray *_graphLayerList;
+    MLFoundationLayer *_lossLayer;
     NSMutableArray *_optimizerUpdateLayerList;
     MLFoundationTensor *_rootSourceGradientTensor;
 }
 
++ (id)trainingGraphWithGraphObjects:(id)arg1 lossLayer:(id)arg2 optimizer:(id)arg3;
 @property(retain, nonatomic) MLFoundationTensor *rootSourceGradientTensor; // @synthesize rootSourceGradientTensor=_rootSourceGradientTensor;
 @property(retain, nonatomic) NSMutableArray *optimizerUpdateLayerList; // @synthesize optimizerUpdateLayerList=_optimizerUpdateLayerList;
-@property(retain, nonatomic) NSMutableArray *graphLayerList; // @synthesize graphLayerList=_graphLayerList;
-@property(retain, nonatomic) NSMutableArray *preprocessingLayerList; // @synthesize preprocessingLayerList=_preprocessingLayerList;
-@property(retain, nonatomic) MLFoundationLayer *rootLayer; // @synthesize rootLayer=_rootLayer;
-@property(nonatomic) BOOL allocateIntermediateTensors; // @synthesize allocateIntermediateTensors=_allocateIntermediateTensors;
-@property(nonatomic) BOOL enableProfiling; // @synthesize enableProfiling=_enableProfiling;
-@property(nonatomic) BOOL synchronousExecution; // @synthesize synchronousExecution=_synchronousExecution;
+@property(readonly, retain, nonatomic) MLFoundationLayer *lossLayer; // @synthesize lossLayer=_lossLayer;
 @property(retain, nonatomic) MLFoundationOptimizer *optimizer; // @synthesize optimizer=_optimizer;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)synchronizeUpdates;
 - (id)resultTensorForLayer:(id)arg1;
 - (id)resultGradientTensorForLayer:(id)arg1;
-- (void)executeWithSourceTensor:(id)arg1 lossLabels:(id)arg2 lossResults:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)writeAsyncToDevice:(id)arg1 dataForTensors:(id)arg2;
+- (void)executeWithOptions:(unsigned long long)arg1 inputTensor:(id)arg2 lossLabels:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)executeGradientWithLastLayerIndex:(unsigned long long)arg1;
+- (void)executeForwardWithLastLayerIndex:(unsigned long long)arg1;
 - (id)description;
 - (unsigned long long)totalDeviceMemorySize;
 - (unsigned long long)resultTensorDeviceMemorySizeForLayer:(id)arg1;
 - (BOOL)compileWithOptions:(unsigned long long)arg1 device:(id)arg2;
-- (id)nodeWithLayer:(id)arg1 sources:(id)arg2;
-- (id)nodeWithLayer:(id)arg1 source:(id)arg2;
-- (id)createGradientSourceTensorWith:(id)arg1 source:(id)arg2;
-- (id)createTensorWith:(id)arg1 source:(id)arg2;
-- (void)dealloc;
-- (id)initWithRootLayer:(id)arg1 optimizer:(id)arg2;
+- (id)initWithGraphObjects:(id)arg1 lossLayer:(id)arg2 optimizer:(id)arg3;
 - (id)init;
 
 @end

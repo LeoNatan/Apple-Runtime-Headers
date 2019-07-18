@@ -60,6 +60,7 @@
 - (void)enumerateDiffWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)computeDiff;
 - (_Bool)computeExpandedBatchWithError:(id *)arg1;
+- (id)_realChangeFromChange:(id)arg1 comparedToStoredRecord:(id)arg2 changeType:(unsigned long long)arg3;
 - (_Bool)hasCloudRecordWithLocalScopedIdentifier:(id)arg1;
 - (id)storedCloudRecordWithLocalScopedIdentifier:(id)arg1;
 - (_Bool)hasClientRecordWithLocalScopedIdentifier:(id)arg1;

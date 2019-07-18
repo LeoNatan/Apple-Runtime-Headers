@@ -78,10 +78,10 @@
 - (BOOL)hasDebitPaymentPass;
 - (BOOL)hasCreditPaymentPass;
 - (BOOL)hasPaymentPass;
-- (void)performPasscodeUpgradeWithVisibleViewController:(id)arg1 isBuddy:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)noteProvisioningDidEndRequiringUpgradedPasscode;
-- (void)noteProvisioningDidStartRequiringUpgradedPasscode;
-- (void)enforceUpgradedPasscodePolicyIfNeededWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_endRequiringUpgradedPasscodeIfNecessary;
+- (void)_startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(BOOL)arg1;
+- (void)passcodeUpgradeCompleted:(BOOL)arg1;
+- (void)preflightPasscodeUpgradeWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) NSArray *allCredentials;
 - (id)associatedCredentialsForDefaultBehaviour;
 - (void)removeDelegate:(id)arg1;
@@ -107,7 +107,6 @@
 - (unsigned long long)_noteProvisioningDidBegin;
 - (void)requestProvisioning:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)resolveProvisioningForCredential:(id)arg1;
-- (void)passcodeUpgradeCompleted:(BOOL)arg1;
 - (void)declineTerms;
 - (void)acceptTerms;
 - (void)_requestEligibility:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -122,6 +121,7 @@
 - (void)_queryEligibilityForCredential:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_queryRequirementsForCredential:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_filterPaymentSetupProducts:(id)arg1;
+- (void)_setupAccountCredentialForProvisioning:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setupAccountCredentialForProvisioning:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setupProductForProvisioning:(id)arg1 includePurchases:(BOOL)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)requestPurchasesForProduct:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -140,9 +140,9 @@
 - (void)associateCredentials:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)updateRemoteCredentials:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)retrieveAllAvailableCredentials:(CDUnknownBlockType)arg1;
-- (id)_newSetupProductForFeatureIdentifier:(unsigned long long)arg1;
 - (void)setupFeatures:(CDUnknownBlockType)arg1;
 - (void)_addAccountToProductMatchingFeatureIdentifier:(unsigned long long)arg1;
+- (id)_fetchOrCreateProductsForIdentifier:(unsigned long long)arg1;
 - (void)retrieveAccountCredentials:(CDUnknownBlockType)arg1;
 - (id)supportedFeatureIdentifierStrings;
 - (void)retrieveRemoteCredentials:(CDUnknownBlockType)arg1;

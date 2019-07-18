@@ -12,8 +12,7 @@
 #import <RTTUI/UITableViewDelegate-Protocol.h>
 #import <RTTUI/UITextViewDelegate-Protocol.h>
 
-@class AXDispatchTimer, CAShapeLayer, DDParsecCollectionViewController, NSDictionary, NSLock, NSMutableArray, NSMutableCharacterSet, NSMutableString, NSObject, NSString, RTTConversation, RTTUITextView, RTTUtterance, TUCall, UIButton, UITableView;
-@protocol OS_dispatch_queue;
+@class AXDispatchTimer, CAShapeLayer, DDParsecCollectionViewController, NSDictionary, NSMutableCharacterSet, NSMutableString, NSString, RTTConversation, RTTUITextView, RTTUtterance, TUCall, UIButton, UITableView;
 
 @interface RTTUIConversationViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, RTTUIUtteranceCellDelegate, UITextViewDelegate, RTTUIServiceCellDelegate>
 {
@@ -21,28 +20,23 @@
     CAShapeLayer *_bubbleLayer;
     UIButton *_gaButton;
     AXDispatchTimer *_ttyPredictionsTimer;
+    AXDispatchTimer *_realTimeTimeout;
     NSMutableCharacterSet *_unsupportedCharacterSet;
     NSDictionary *_asciiSubstitutions;
     AXDispatchTimer *_voAnnouncementTimer;
     NSMutableString *_voAnnouncementBuffer;
-    NSLock *_realtimeSendLock;
-    NSObject<OS_dispatch_queue> *_utteranceRequestQueue;
     _Bool _serviceMessageVisible;
-    _Bool _processingUtteranceBuffer;
     RTTConversation *_conversation;
     NSString *_currentServiceMessage;
     DDParsecCollectionViewController *_lookupController;
     UITableView *_tableView;
     RTTUtterance *_currentUtterance;
     TUCall *_call;
-    NSMutableArray *_utteranceBuffer;
 }
 
 + (_Bool)_validRectangle:(struct CGRect)arg1;
 + (id)viewControllerForConversation:(id)arg1;
 + (id)viewControllerForCall:(id)arg1;
-@property(nonatomic) _Bool processingUtteranceBuffer; // @synthesize processingUtteranceBuffer=_processingUtteranceBuffer;
-@property(retain, nonatomic) NSMutableArray *utteranceBuffer; // @synthesize utteranceBuffer=_utteranceBuffer;
 @property(retain, nonatomic) TUCall *call; // @synthesize call=_call;
 @property(retain, nonatomic) RTTUtterance *currentUtterance; // @synthesize currentUtterance=_currentUtterance;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
@@ -68,18 +62,19 @@
 - (void)updateTableViewSizeAnimated:(_Bool)arg1;
 - (void)updateGAButton:(_Bool)arg1;
 - (void)replyCell:(id)arg1 didActivateWithReplyButtonType:(unsigned long long)arg2;
+- (void)_processRealtimeTimeout;
 - (void)realtimeTextDidChange;
+- (id)lastRowPathForUtterance:(id)arg1;
 - (void)gaButtonPressed:(id)arg1;
 - (void)deviceDidReceiveString:(id)arg1 forUtterance:(id)arg2;
+- (void)_scrollToIndexPathIfNecessary:(id)arg1 animated:(_Bool)arg2;
 - (void)updateVoiceOverAnnouncement:(id)arg1;
 - (id)currentContactPath;
 - (id)cannedResponses;
 - (id)cellAtIndexPath:(id)arg1;
 - (void)setTextViewUtterance:(id)arg1;
 - (id)textViewUtterance;
-- (void)sendNewUtteranceString:(id)arg1;
-- (void)_sendNewUtteranceString:(id)arg1 atIndex:(unsigned long long)arg2 forCellPath:(id)arg3;
-- (void)processUtteranceQueue;
+- (void)updateUtterance:(id)arg1 forIndexPath:(id)arg2;
 - (id)addUtterance:(id)arg1;
 - (void)_updateServiceCellWithString:(id)arg1;
 - (void)updateServiceCellWithString:(id)arg1;

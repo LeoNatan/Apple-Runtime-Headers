@@ -142,6 +142,7 @@
 - (void)_addPinningBehaviorToLayout:(id)arg1 forSection:(long long)arg2;
 - (void)_updateSolver;
 - (void)_prepareSolver;
+- (id)_layoutContainer;
 - (void)_prepareSnapshot;
 - (long long)_numberOfRowsInSection:(long long)arg1;
 - (long long)_numberOfSections;

@@ -14,6 +14,7 @@
 {
     int _ageGroup;
     NSString *_experimentId;
+    int _generationStatus;
     NSString *_hostProcess;
     NSString *_lang;
     NSString *_locale;
@@ -23,6 +24,7 @@
     _Bool _isCached;
     struct {
         unsigned int ageGroup:1;
+        unsigned int generationStatus:1;
         unsigned int isApricotDevice:1;
         unsigned int isCached:1;
     } _has;
@@ -57,6 +59,10 @@
 @property(readonly, nonatomic) _Bool hasTreatmentModelName;
 @property(readonly, nonatomic) _Bool hasTreatmentId;
 @property(readonly, nonatomic) _Bool hasExperimentId;
+- (int)StringAsGenerationStatus:(id)arg1;
+- (id)generationStatusAsString:(int)arg1;
+@property(nonatomic) _Bool hasGenerationStatus;
+@property(nonatomic) int generationStatus; // @synthesize generationStatus=_generationStatus;
 @property(nonatomic) _Bool hasIsCached;
 
 @end

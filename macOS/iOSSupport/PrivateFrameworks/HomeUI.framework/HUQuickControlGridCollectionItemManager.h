@@ -38,6 +38,7 @@
 - (void).cxx_destruct;
 - (id)_composeIdentifierForService:(id)arg1 section:(unsigned long long)arg2;
 - (BOOL)_catchAllLayoutForGridViewProfiles:(id)arg1 supplementaryViewProfiles:(id)arg2;
+- (id)titleForItem:(id)arg1;
 - (id)gridItemProvider;
 - (id)viewControllerForItem:(id)arg1;
 - (id)_generateViewControllersForControlItems:(id)arg1;

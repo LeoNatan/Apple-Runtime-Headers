@@ -20,7 +20,10 @@ __attribute__((visibility("hidden")))
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     NSDate *_singleTapTime;
     VKCompoundAnimation *_panDecelerationAnimationGroup;
+    long long _lastZoomDirection;
+    double _startZoomScale;
     double _lastZoomScale;
+    _Bool _readyToReplayTap;
     _Bool _navigatingEnabled;
     _Bool _panningEnabled;
     _Bool _pinchingEnabled;
@@ -40,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_handlePinch:(id)arg1;
 - (void)_handlePan:(id)arg1;
 - (void)_handleTap:(id)arg1;
+- (void)_moveBackToReplayTap;
 - (id)initWithMuninView:(id)arg1;
 
 // Remaining properties

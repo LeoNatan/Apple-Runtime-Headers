@@ -19,14 +19,12 @@
     NSTimer *_timer;
     unsigned int _frameCount;
     NSCalendar *_calendar;
-    _Bool _backlightOn;
     _Bool _inWindow;
     _Bool _paused;
 }
 
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 - (void).cxx_destruct;
-- (void)backlightDidChange:(id)arg1 from:(int)arg2 to:(int)arg3;
 - (void)_updateWithCalendarUnits:(unsigned int)arg1;
 - (void)_timerFired:(id)arg1;
 - (void)_handleTimeChange:(id)arg1;
@@ -34,6 +32,7 @@
 - (void)_startOrStopUpdatesIfNecessary;
 - (void)layoutSubviews;
 - (void)setHidden:(_Bool)arg1;
+- (void)didMoveToWindow;
 - (void)willMoveToWindow:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

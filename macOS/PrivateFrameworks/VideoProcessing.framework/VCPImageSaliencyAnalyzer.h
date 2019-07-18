@@ -25,10 +25,10 @@
 - (int)generateSalientRegion:(float *)arg1 outHeight:(int)arg2 outWidth:(int)arg3;
 - (float)outputScaling;
 - (float)computeScore:(float *)arg1 width:(int)arg2 height:(int)arg3 posX:(int)arg4 posY:(int)arg5;
-- (int)initializeInput:(float *)arg1 withBuffer:(struct __CVBuffer *)arg2 cnnInputHeight:(int)arg3 cnnInputWidth:(int)arg4;
-- (int)initWithImage:(float *)arg1 image:(struct __CVBuffer *)arg2 forChunk:(int)arg3;
+- (int)scaleImage:(struct __CVBuffer *)arg1 toData:(float *)arg2 withWidth:(int)arg3 andHeight:(int)arg4;
+- (int)copyImage:(struct __CVBuffer *)arg1 toData:(float *)arg2 withChunk:(int)arg3;
 - (float *)getInputBuffer:(int)arg1 srcWidth:(int)arg2 cnnInputHeight:(int *)arg3 cnnInputWidth:(int *)arg4;
-- (int)initializeModel:(int)arg1 srcWidth:(int)arg2;
+- (int)prepareModelForSourceWidth:(int)arg1 andSourceHeight:(int)arg2;
 - (id)initWithMaxNumRegions:(int)arg1 prune:(BOOL)arg2;
 
 @end

@@ -8,24 +8,23 @@
 
 @interface _TtC12NewsArticles27ArticleViewerViewController : UIViewController
 {
+    // Error parsing type: , name: navigationItemStyle
+    // Error parsing type: , name: observableScrollView
     // Error parsing type: , name: styler
     // Error parsing type: , name: eventHandler
     // Error parsing type: , name: pageViewController
     // Error parsing type: , name: pageBlueprintProvider
     // Error parsing type: , name: blueprintProvider
+    // Error parsing type: , name: currentPage
     // Error parsing type: , name: coverViewManager
     // Error parsing type: , name: eventManager
-    // Error parsing type: , name: pageStyler
-    // Error parsing type: , name: navigationItemStyle
     // Error parsing type: , name: prewarm
     // Error parsing type: , name: barCompressionManager
     // Error parsing type: , name: hasPresentedFirstPage
     // Error parsing type: , name: articleViewerImpressionManager
-    // Error parsing type: , name: observableScrollView
     // Error parsing type: , name: featureManager
     // Error parsing type: , name: paidAccessChecker
-    // Error parsing type: , name: articleTextSizeManagerFactory
-    // Error parsing type: , name: currentSharingIntent
+    // Error parsing type: , name: currentPageContext
 }
 
 - (void).cxx_destruct;

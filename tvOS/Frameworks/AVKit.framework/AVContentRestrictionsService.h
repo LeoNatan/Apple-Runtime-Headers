@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PBSRestrictionService *restrictionService;
 - (void)cancelRequest:(id)arg1;
 - (id)validateMediaContentRating:(id)arg1 allowInteraction:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)shouldRevalidateMediaContentRating:(id)arg1 validatedRating:(id)arg2 validatedDate:(id)arg3;
 - (void)_presentDeniedByProfile:(CDUnknownBlockType)arg1;
 - (unsigned long long)_pbsRestrictedContentTypeFromDomain:(long long)arg1;
 - (long long)_restrictionValueFromPBSRestrictionValue:(unsigned long long)arg1;

@@ -31,6 +31,7 @@
 - (double)tableViewSpacingForExtraSeparators:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)didMoveToParentViewController:(id)arg1;
+- (void)willMoveToParentViewController:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidAppear:(_Bool)arg1;

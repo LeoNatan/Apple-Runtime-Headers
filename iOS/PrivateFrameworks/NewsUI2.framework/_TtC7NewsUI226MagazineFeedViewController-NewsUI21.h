@@ -6,8 +6,9 @@
 
 #import <NewsUI2/_TtC7NewsUI226MagazineFeedViewController.h>
 
-@interface _TtC7NewsUI226MagazineFeedViewController (NewsUI21)
-- (void)relayoutWithCompletion:(CDUnknownBlockType)arg1;
-- (void)initializeWithCompletion:(CDUnknownBlockType)arg1;
+#import <NewsUI2/TSTabBarSplitViewAutoObserver-Protocol.h>
+
+@interface _TtC7NewsUI226MagazineFeedViewController (NewsUI21) <TSTabBarSplitViewAutoObserver>
+- (void)tabBarSplitViewDidChangeFocusToFocus:(long long)arg1;
 @end
 

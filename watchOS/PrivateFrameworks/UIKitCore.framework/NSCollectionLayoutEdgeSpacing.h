@@ -26,6 +26,7 @@
 - (id)_spacingForEdge:(unsigned int)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)_hasSpacing;
 @property(readonly, nonatomic) NSCollectionLayoutSpacing *bottom;
 @property(readonly, nonatomic) NSCollectionLayoutSpacing *top;
 @property(readonly, nonatomic) NSCollectionLayoutSpacing *trailing;

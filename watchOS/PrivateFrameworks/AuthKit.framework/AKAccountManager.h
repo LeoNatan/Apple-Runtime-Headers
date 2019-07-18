@@ -31,7 +31,6 @@
 - (id)_altDSIDForiCloudAccount:(id)arg1;
 - (id)_aliasesForiCloudAccount:(id)arg1;
 - (id)transportableAuthKitAccount:(id)arg1;
-- (id)altDSIDforActiveiTunesAccount;
 - (id)altDSIDforPrimaryiCloudAccount;
 - (id)primaryiCloudAccount;
 - (_Bool)isPrimaryiCloudAccountEmailVerified:(id)arg1;
@@ -71,6 +70,8 @@
 - (void)setRepairState:(unsigned int)arg1 forAccount:(id)arg2;
 - (unsigned int)repairStateForAccount:(id)arg1;
 - (_Bool)needsRepairForAccount:(id)arg1;
+- (void)updateSatoriWarmUpTimestampForAccount:(id)arg1;
+- (_Bool)shouldPerformSatoriWarmupVerificationForAccount:(id)arg1;
 - (void)setAuthenticationMode:(unsigned int)arg1 forAccount:(id)arg2;
 - (unsigned int)authenticationModeForAccount:(id)arg1;
 - (void)setSecurityLevel:(unsigned int)arg1 forAccount:(id)arg2;
@@ -92,6 +93,8 @@
 - (id)reachableEmailAddressesForAccount:(id)arg1;
 - (void)setAuthorizationUsed:(_Bool)arg1 forAccount:(id)arg2;
 - (_Bool)authorizationUsedForAccount:(id)arg1;
+- (void)setAgeOfMajority:(id)arg1 forAccount:(id)arg2;
+- (id)ageOfMajorityForAccount:(id)arg1;
 - (void)setUserUnderage:(_Bool)arg1 forAccount:(id)arg2;
 - (_Bool)userUnderAgeForAccount:(id)arg1;
 - (void)setPhoneAsAppleID:(_Bool)arg1 forAccount:(id)arg2;
@@ -100,6 +103,7 @@
 - (_Bool)verifiedPrimaryEmailForAccount:(id)arg1;
 - (_Bool)_setUsername:(id)arg1 forAccount:(id)arg2;
 - (void)updateUsername:(id)arg1 forAccountsWithAltDSID:(id)arg2;
+- (id)formattedUsernameForAccount:(id)arg1;
 - (void)setAliases:(id)arg1 forAccount:(id)arg2;
 - (id)aliasesForAccount:(id)arg1;
 - (void)setDSID:(id)arg1 forAccount:(id)arg2;

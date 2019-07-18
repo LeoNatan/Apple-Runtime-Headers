@@ -8,7 +8,7 @@
 
 #import <CloudKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSString;
+@class NSArray, NSData, NSString, NSURL;
 
 @interface CKCodeFunctionInvokeOperationInfo : CKDatabaseOperationInfo <NSSecureCoding>
 {
@@ -19,11 +19,13 @@
     NSArray *_requestLocalSerializations;
     NSArray *_requestLocalEnvelopes;
     NSData *_permittedRemoteMeasurement;
+    NSURL *_explicitBaseURL;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL shouldFetchAssetContentInMemory; // @synthesize shouldFetchAssetContentInMemory=_shouldFetchAssetContentInMemory;
 @property(nonatomic) BOOL local; // @synthesize local=_local;
+@property(copy, nonatomic) NSURL *explicitBaseURL; // @synthesize explicitBaseURL=_explicitBaseURL;
 @property(copy, nonatomic) NSData *permittedRemoteMeasurement; // @synthesize permittedRemoteMeasurement=_permittedRemoteMeasurement;
 @property(copy, nonatomic) NSArray *requestLocalEnvelopes; // @synthesize requestLocalEnvelopes=_requestLocalEnvelopes;
 @property(copy, nonatomic) NSArray *requestLocalSerializations; // @synthesize requestLocalSerializations=_requestLocalSerializations;

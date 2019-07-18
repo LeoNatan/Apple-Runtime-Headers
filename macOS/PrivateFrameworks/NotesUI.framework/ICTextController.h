@@ -22,11 +22,11 @@
     ICAttachmentInsertionController *_attachmentInsertionController;
     NSMutableDictionary *_trackedToDoParagraphs;
     NSMutableArray *_trackedRangesForAddedExtraNewlines;
+    unsigned long long _overrideAppearanceType;
     unsigned long long _pauseMergeForScrollingCounter;
 }
 
 + (id)attributedStringToPasteWithAdaptedParagraphStyles:(id)arg1 pasteRange:(struct _NSRange)arg2 textStorage:(id)arg3;
-+ (void)filterAttachmentsForPrintingInAttributedString:(id)arg1;
 + (double)extraBulletWidthForNumberedListWithMaxItemNumber:(id)arg1 textFont:(struct NSFont *)arg2;
 + (double)indentForStyle:(id)arg1 range:(struct _NSRange)arg2 attributedString:(id)arg3 textView:(struct NSTextView *)arg4;
 + (double)extraWidthNeededForStyle:(id)arg1 range:(struct _NSRange)arg2 attributedString:(id)arg3 textView:(struct NSTextView *)arg4;
@@ -37,6 +37,7 @@
 @property(nonatomic) BOOL isAutoListInsertionDisabled; // @synthesize isAutoListInsertionDisabled=_isAutoListInsertionDisabled;
 @property(nonatomic) BOOL shouldMergeNoteAfterScrolling; // @synthesize shouldMergeNoteAfterScrolling=_shouldMergeNoteAfterScrolling;
 @property(nonatomic) unsigned long long pauseMergeForScrollingCounter; // @synthesize pauseMergeForScrollingCounter=_pauseMergeForScrollingCounter;
+@property(nonatomic) unsigned long long overrideAppearanceType; // @synthesize overrideAppearanceType=_overrideAppearanceType;
 @property(nonatomic) BOOL isConvertingTables; // @synthesize isConvertingTables=_isConvertingTables;
 @property(nonatomic) BOOL alwaysHighlightAuthorEdits; // @synthesize alwaysHighlightAuthorEdits=_alwaysHighlightAuthorEdits;
 @property(nonatomic) BOOL trackAddedExtraNewlineRanges; // @synthesize trackAddedExtraNewlineRanges=_trackAddedExtraNewlineRanges;
@@ -54,6 +55,7 @@
 - (BOOL)shouldHighlightStyleAsLink:(unsigned int)arg1;
 - (void)styleDataDetectorTypesForPreviewInTextStorage:(id)arg1;
 - (void)styleListsAndIndentsInAttributedString:(id)arg1 inRange:(struct _NSRange)arg2;
+- (void)filterAttachmentsForPrintingInAttributedString:(id)arg1;
 - (void)updateTrackedToDoParagraphsAfterIndex:(unsigned long long)arg1 byDelta:(long long)arg2 excludingSeenParagraphs:(id)arg3;
 - (void)createToDoItemForCharacterRange:(struct _NSRange)arg1 paragraphStyle:(id)arg2 textStorage:(id)arg3;
 - (void)resetTrackedToDoParagraphs;

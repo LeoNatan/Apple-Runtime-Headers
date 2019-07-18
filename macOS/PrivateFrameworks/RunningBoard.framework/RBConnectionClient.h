@@ -65,7 +65,7 @@ __attribute__((visibility("hidden")))
 - (id)limitationsForInstance:(id)arg1 error:(out id *)arg2;
 - (id)lastExitContextForInstance:(id)arg1 error:(out id *)arg2;
 - (BOOL)intendToExit:(id)arg1 withStatus:(id)arg2 error:(out id *)arg3;
-- (id)statesForPredicate:(id)arg1 error:(out id *)arg2;
+- (void)statesForPredicate:(id)arg1 withDescriptor:(id)arg2 withReply:(id)arg3;
 - (void)unsubscribeFromProcessStateChangesWithIdentifier:(unsigned long long)arg1;
 - (BOOL)subscribeToProcessStateChangesWithConfiguration:(id)arg1 error:(out id *)arg2;
 - (id)subscribeToProcessDeath:(id)arg1 error:(out id *)arg2;

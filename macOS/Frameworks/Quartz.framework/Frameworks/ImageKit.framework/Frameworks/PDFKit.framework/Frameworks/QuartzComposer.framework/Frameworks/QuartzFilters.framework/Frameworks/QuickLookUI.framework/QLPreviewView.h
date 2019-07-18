@@ -22,6 +22,7 @@
 {
     QLPreviewViewReserved *_reserved;
     NSMutableSet *_savingDocuments;
+    long long _draggingFormation;
 }
 
 + (id)_descriptionOfDisplayable:(id)arg1;
@@ -78,6 +79,7 @@
 + (void)setVNodeDelegate:(id)arg1;
 + (BOOL)isVNodeURL:(id)arg1;
 + (id)vNodeURLWithPath:(id)arg1;
+@property long long draggingFormation; // @synthesize draggingFormation=_draggingFormation;
 @property(retain) NSMutableSet *savingDocuments; // @synthesize savingDocuments=_savingDocuments;
 - (id)forcedContentTypeUTI;
 - (void)setForcedContentTypeUTI:(id)arg1;
@@ -384,6 +386,7 @@
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)startDragFromGesture:(id)arg1 beganOrFailedHandler:(CDUnknownBlockType)arg2;
 - (void)receivedDragGesture:(id)arg1;
+- (void)receivedPinchGestureWithMagnification:(double)arg1;
 - (void)receivedDoubleClickGesture:(id)arg1;
 - (void)_commonInitWithStyle:(unsigned long long)arg1;
 - (void)_setupLayerIfNeeded;

@@ -9,7 +9,7 @@
 #import <HomeUI/HUCameraSettingsModule-Protocol.h>
 #import <HomeUI/ICQUpgradeFlowManagerDelegate-Protocol.h>
 
-@class HFItem, HFStaticItemProvider, HUCameraUsageOptionItemProvider, NSArray, NSMutableArray, NSSet, NSString, UIViewController;
+@class HFItem, HFStaticItemProvider, HUCameraUsageOptionItemProvider, NSArray, NSSet, NSString, UIViewController;
 
 @interface HUCameraPresenceRecordingSettingsModule : HUExpandableItemModule <ICQUpgradeFlowManagerDelegate, HUCameraSettingsModule>
 {
@@ -23,11 +23,9 @@
     HFStaticItemProvider *_itemProvider;
     UIViewController *_viewController;
     NSArray *_optionItems;
-    NSMutableArray *_failedProfilesForRecordingSetting;
 }
 
 @property(nonatomic) _Bool didCompleteCloudUpgradeOffer; // @synthesize didCompleteCloudUpgradeOffer=_didCompleteCloudUpgradeOffer;
-@property(retain, nonatomic) NSMutableArray *failedProfilesForRecordingSetting; // @synthesize failedProfilesForRecordingSetting=_failedProfilesForRecordingSetting;
 @property(retain, nonatomic) NSArray *optionItems; // @synthesize optionItems=_optionItems;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) HFStaticItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
@@ -45,6 +43,8 @@
 - (id)didSelectItem:(id)arg1;
 - (id)_titleString;
 - (void)_dispatchUpdateForCameraProfile:(id)arg1;
+- (void)presentMissingSupportedHubAlert;
+- (void)presentInsufficientPrivilegesAlert;
 - (void)presentCloudUpgradeFlowWithCameraCount:(unsigned long long)arg1;
 - (id)updateStreamingSetting:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long accessModeSetting;

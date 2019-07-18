@@ -6,21 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class DDAction, NSArray, UIView, UIViewController;
+@class DDAction, NSArray, NSString, UIView, UIViewController;
 
 @interface DDContextMenuAction : NSObject
 {
     DDAction *_defaultAction;
     UIViewController *_viewController;
     NSArray *_menuActions;
+    NSString *_menuTitle;
     UIView *_view;
 }
 
-+ (id)contextMenuPreviewActionGroupForURL:(id)arg1 inView:(id)arg2 context:(id)arg3;
-+     // Error parsing type: @40@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24@32, name: contextMenuPreviewActionGroupForResult:inView:context:
-+ (id)contextMenuPreviewActionGroupForURL:(id)arg1 identifier:(id)arg2 selectedText:(id)arg3 results:(id)arg4 inView:(id)arg5 context:(id)arg6;
-+ (id)contextMenuPreviewActionGroupAtIndex:(unsigned long long)arg1 inTextStorage:(id)arg2 inView:(id)arg3 context:(id)arg4;
++ (id)contextMenuConfigurationWithURL:(id)arg1 inView:(id)arg2 context:(id)arg3 menuIdentifier:(id)arg4;
++     // Error parsing type: @48@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24@32@40, name: contextMenuConfigurationWithResult:inView:context:menuIdentifier:
++ (id)contextMenuConfigurationForURL:(id)arg1 identifier:(id)arg2 selectedText:(id)arg3 results:(id)arg4 inView:(id)arg5 context:(id)arg6 menuIdentifier:(id)arg7;
++ (id)contextMenuConfigurationAtIndex:(unsigned long long)arg1 inTextStorage:(id)arg2 inView:(id)arg3 context:(id)arg4 menuIdentifier:(id)arg5;
++ (id)updateContext:(id)arg1 withSourceRect:(struct CGRect)arg2;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
+@property(readonly, nonatomic) NSString *menuTitle; // @synthesize menuTitle=_menuTitle;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
 -     // Error parsing type: @40@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24@32, name: previewViewControllerForResult:URL:context:
@@ -28,10 +31,11 @@
 -     // Error parsing type: @40@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24@32, name: menuActionsForResult:URL:context:
 @property(readonly, nonatomic) CDUnknownBlockType previewHandler;
 @property(readonly, nonatomic) NSArray *menuActionItems;
+-     // Error parsing type: @56@0:8@16^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}24@32@40@48, name: initWithMenuTitle:result:URL:inView:context:
 -     // Error parsing type: @48@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24@32@40, name: initWithResult:URL:inView:context:
 - (id)initForURL:(id)arg1 inView:(id)arg2 identifier:(id)arg3 selectedText:(id)arg4 results:(id)arg5 context:(id)arg6;
 - (id)initAtIndex:(unsigned long long)arg1 inTextStorage:(id)arg2 inView:(id)arg3 context:(id)arg4;
-- (id)contextMenuPreviewActionGroup;
+- (id)contextMenuConfigurationWithIdentifier:(id)arg1;
 
 @end
 

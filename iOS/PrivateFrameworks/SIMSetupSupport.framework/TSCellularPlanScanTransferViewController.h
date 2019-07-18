@@ -64,6 +64,7 @@
 - (void)_startPendingInstall:(id)arg1;
 - (void)_maybeUpdateTableView;
 - (void)_startPlanTransfer:(id)arg1;
+- (long long)navigationBarScrollToEdgeBehavior;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
@@ -73,7 +74,7 @@
 - (void)enterFauxCardDataManually:(id)arg1;
 - (void)captureOutput:(id)arg1 didOutputMetadataObjects:(id)arg2 fromConnection:(id)arg3;
 - (void)updatePendingInstallItems:(id)arg1;
-- (void)updateTransferList:(id)arg1;
+- (void)updateTransferList:(id)arg1 isInEligiblePlanPresent:(_Bool)arg2;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;

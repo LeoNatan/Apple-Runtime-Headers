@@ -42,6 +42,7 @@
 @property(readonly, nonatomic) _Bool wantsCommentPromptWhenDeclining;
 - (_Bool)remove:(id *)arg1;
 - (_Bool)commit:(id *)arg1;
+- (_Bool)validate:(id *)arg1;
 - (id)description;
 @property(readonly, nonatomic) _Bool syncs;
 @property(readonly, nonatomic) _Bool isSyncing;

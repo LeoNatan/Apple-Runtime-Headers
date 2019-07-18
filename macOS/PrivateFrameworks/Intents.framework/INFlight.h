@@ -22,7 +22,7 @@
     INAirportGate *_arrivalAirportGate;
 }
 
-+ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
 @property(readonly, copy) INAirportGate *arrivalAirportGate; // @synthesize arrivalAirportGate=_arrivalAirportGate;
 @property(readonly, copy) INAirportGate *departureAirportGate; // @synthesize departureAirportGate=_departureAirportGate;
@@ -34,7 +34,7 @@
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
-- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

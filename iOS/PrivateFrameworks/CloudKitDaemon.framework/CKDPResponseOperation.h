@@ -8,7 +8,7 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class CKDPArchiveRecordsResponse, CKDPAssetUploadTokenRetrieveResponse, CKDPBundlesForContainerResponse, CKDPCodeFunctionInvokeResponse, CKDPDeleteCommentResponse, CKDPDeleteContainerResponse, CKDPFetchArchivedRecordsResponse, CKDPGetCommentResponse, CKDPGetCommentsResponse, CKDPGetLikesResponse, CKDPLikeResponse, CKDPMarkAssetBrokenResponse, CKDPMescalCertificateResponse, CKDPMescalSessionInfoResponse, CKDPMescalSignatureResponse, CKDPNotificationMarkReadResponse, CKDPNotificationSyncResponse, CKDPOperation, CKDPPostCommentResponse, CKDPPulseResponse, CKDPQueryRetrieveResponse, CKDPRecordDeleteResponse, CKDPRecordResolveTokenResponse, CKDPRecordRetrieveAncestorsResponse, CKDPRecordRetrieveChangesResponse, CKDPRecordRetrieveResponse, CKDPRecordRetrieveVersionsResponse, CKDPRecordSaveResponse, CKDPResponseOperationHeader, CKDPResponseOperationResult, CKDPSetBadgeCountResponse, CKDPShareAcceptResponse, CKDPShareDeleteResponse, CKDPShareRetrieveResponse, CKDPShareSaveResponse, CKDPShareTokenDeleteResponse, CKDPShareTokenRetrieveResponse, CKDPShareTokenSaveResponse, CKDPShareVettingInitiateResponse, CKDPSubscriptionCreateResponse, CKDPSubscriptionDeleteResponse, CKDPSubscriptionRetrieveResponse, CKDPTokenRegistrationResponse, CKDPTokenUnregistrationResponse, CKDPUnlikeResponse, CKDPUpdateMissingAssetStatusResponse, CKDPUserAvailableQuotaResponse, CKDPUserPrivacySettingsBatchLookupResponse, CKDPUserPrivacySettingsResetResponse, CKDPUserPrivacySettingsRetrieveResponse, CKDPUserPrivacySettingsUpdateResponse, CKDPUserQueryResponse, CKDPUserRetrieveResponse, CKDPWebAuthTokenRetrieveResponse, CKDPZoneDeleteResponse, CKDPZoneRetrieveChangesResponse, CKDPZoneRetrieveResponse, CKDPZoneSaveResponse;
+@class CKDPArchiveRecordsResponse, CKDPAssetUploadTokenRetrieveResponse, CKDPBundlesForContainerResponse, CKDPCodeFunctionInvokeResponse, CKDPDeleteContainerResponse, CKDPFetchArchivedRecordsResponse, CKDPMarkAssetBrokenResponse, CKDPNotificationMarkReadResponse, CKDPNotificationSyncResponse, CKDPOperation, CKDPQueryRetrieveResponse, CKDPRecordDeleteResponse, CKDPRecordResolveTokenResponse, CKDPRecordRetrieveChangesResponse, CKDPRecordRetrieveResponse, CKDPRecordRetrieveVersionsResponse, CKDPRecordSaveResponse, CKDPResponseOperationHeader, CKDPResponseOperationResult, CKDPSetBadgeCountResponse, CKDPShareAcceptResponse, CKDPShareVettingInitiateResponse, CKDPSubscriptionCreateResponse, CKDPSubscriptionDeleteResponse, CKDPSubscriptionRetrieveResponse, CKDPTokenRegistrationResponse, CKDPTokenUnregistrationResponse, CKDPUpdateMissingAssetStatusResponse, CKDPUserAvailableQuotaResponse, CKDPUserPrivacySettingsBatchLookupResponse, CKDPUserPrivacySettingsResetResponse, CKDPUserPrivacySettingsRetrieveResponse, CKDPUserPrivacySettingsUpdateResponse, CKDPUserQueryResponse, CKDPUserRetrieveResponse, CKDPWebAuthTokenRetrieveResponse, CKDPZoneDeleteResponse, CKDPZoneRetrieveChangesResponse, CKDPZoneRetrieveResponse, CKDPZoneSaveResponse;
 
 __attribute__((visibility("hidden")))
 @interface CKDPResponseOperation : PBCodable <NSCopying>
@@ -16,28 +16,17 @@ __attribute__((visibility("hidden")))
     CKDPArchiveRecordsResponse *_archiveRecordsResponse;
     CKDPAssetUploadTokenRetrieveResponse *_assetUploadTokenRetrieveResponse;
     CKDPBundlesForContainerResponse *_bundlesForContainerResponse;
-    CKDPDeleteCommentResponse *_deleteCommentResponse;
     CKDPDeleteContainerResponse *_deleteContainerResponse;
     CKDPFetchArchivedRecordsResponse *_fetchArchivedRecordsResponse;
     CKDPCodeFunctionInvokeResponse *_functionInvokeResponse;
-    CKDPGetCommentResponse *_getCommentResponse;
-    CKDPGetCommentsResponse *_getCommentsResponse;
-    CKDPGetLikesResponse *_getLikesResponse;
     CKDPResponseOperationHeader *_header;
-    CKDPLikeResponse *_likeResponse;
     CKDPMarkAssetBrokenResponse *_markAssetBrokenResponse;
-    CKDPMescalCertificateResponse *_mescalCertificateResponse;
-    CKDPMescalSessionInfoResponse *_mescalSessionInfoResponse;
-    CKDPMescalSignatureResponse *_mescalSignatureResponse;
     CKDPNotificationMarkReadResponse *_notificationMarkReadResponse;
     CKDPNotificationSyncResponse *_notificationSyncResponse;
     unsigned int _operationCost;
-    CKDPPostCommentResponse *_postCommentResponse;
-    CKDPPulseResponse *_pulseResponse;
     CKDPQueryRetrieveResponse *_queryRetrieveResponse;
     CKDPRecordDeleteResponse *_recordDeleteResponse;
     CKDPRecordResolveTokenResponse *_recordResolveTokenResponse;
-    CKDPRecordRetrieveAncestorsResponse *_recordRetrieveAncestorsResponse;
     CKDPRecordRetrieveChangesResponse *_recordRetrieveChangesResponse;
     CKDPRecordRetrieveResponse *_recordRetrieveResponse;
     CKDPRecordRetrieveVersionsResponse *_recordRetrieveVersionsResponse;
@@ -46,19 +35,12 @@ __attribute__((visibility("hidden")))
     CKDPResponseOperationResult *_result;
     CKDPSetBadgeCountResponse *_setBadgeCountResponse;
     CKDPShareAcceptResponse *_shareAcceptResponse;
-    CKDPShareDeleteResponse *_shareDeleteResponse;
-    CKDPShareRetrieveResponse *_shareRetrieveResponse;
-    CKDPShareSaveResponse *_shareSaveResponse;
-    CKDPShareTokenDeleteResponse *_shareTokenDeleteResponse;
-    CKDPShareTokenRetrieveResponse *_shareTokenRetrieveResponse;
-    CKDPShareTokenSaveResponse *_shareTokenSaveResponse;
     CKDPShareVettingInitiateResponse *_shareVettingInitiateResponse;
     CKDPSubscriptionCreateResponse *_subscriptionCreateResponse;
     CKDPSubscriptionDeleteResponse *_subscriptionDeleteResponse;
     CKDPSubscriptionRetrieveResponse *_subscriptionRetrieveResponse;
     CKDPTokenRegistrationResponse *_tokenRegistrationResponse;
     CKDPTokenUnregistrationResponse *_tokenUnregistrationResponse;
-    CKDPUnlikeResponse *_unlikeResponse;
     CKDPUpdateMissingAssetStatusResponse *_updateMissingAssetStatusResponse;
     CKDPUserAvailableQuotaResponse *_userAvailableQuotaResponse;
     CKDPUserPrivacySettingsBatchLookupResponse *_userPrivacySettingsBatchLookupResponse;
@@ -95,20 +77,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasResult;
 @property(readonly, nonatomic) _Bool hasResponse;
 @property(nonatomic) _Bool hasOperationCost;
-@property(retain, nonatomic) CKDPShareSaveResponse *shareSaveResponse;
-@property(readonly, nonatomic) _Bool hasShareSaveResponse;
-@property(retain, nonatomic) CKDPShareRetrieveResponse *shareRetrieveResponse;
-@property(readonly, nonatomic) _Bool hasShareRetrieveResponse;
-@property(retain, nonatomic) CKDPShareDeleteResponse *shareDeleteResponse;
-@property(readonly, nonatomic) _Bool hasShareDeleteResponse;
-@property(retain, nonatomic) CKDPShareAcceptResponse *shareAcceptResponse;
-@property(readonly, nonatomic) _Bool hasShareAcceptResponse;
-@property(retain, nonatomic) CKDPShareTokenSaveResponse *shareTokenSaveResponse;
-@property(readonly, nonatomic) _Bool hasShareTokenSaveResponse;
-@property(retain, nonatomic) CKDPShareTokenRetrieveResponse *shareTokenRetrieveResponse;
-@property(readonly, nonatomic) _Bool hasShareTokenRetrieveResponse;
-@property(retain, nonatomic) CKDPShareTokenDeleteResponse *shareTokenDeleteResponse;
-@property(readonly, nonatomic) _Bool hasShareTokenDeleteResponse;
 @property(retain, nonatomic) CKDPShareVettingInitiateResponse *shareVettingInitiateResponse;
 @property(readonly, nonatomic) _Bool hasShareVettingInitiateResponse;
 @property(retain, nonatomic) CKDPZoneSaveResponse *zoneSaveResponse;
@@ -129,8 +97,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasRecordRetrieveChangesResponse;
 @property(retain, nonatomic) CKDPRecordDeleteResponse *recordDeleteResponse;
 @property(readonly, nonatomic) _Bool hasRecordDeleteResponse;
-@property(retain, nonatomic) CKDPRecordRetrieveAncestorsResponse *recordRetrieveAncestorsResponse;
-@property(readonly, nonatomic) _Bool hasRecordRetrieveAncestorsResponse;
 @property(retain, nonatomic) CKDPRecordResolveTokenResponse *recordResolveTokenResponse;
 @property(readonly, nonatomic) _Bool hasRecordResolveTokenResponse;
 @property(retain, nonatomic) CKDPFetchArchivedRecordsResponse *fetchArchivedRecordsResponse;
@@ -151,24 +117,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasWebAuthTokenRetrieveResponse;
 @property(retain, nonatomic) CKDPUpdateMissingAssetStatusResponse *updateMissingAssetStatusResponse;
 @property(readonly, nonatomic) _Bool hasUpdateMissingAssetStatusResponse;
+@property(retain, nonatomic) CKDPShareAcceptResponse *shareAcceptResponse;
+@property(readonly, nonatomic) _Bool hasShareAcceptResponse;
 @property(retain, nonatomic) CKDPCodeFunctionInvokeResponse *functionInvokeResponse;
 @property(readonly, nonatomic) _Bool hasFunctionInvokeResponse;
-@property(retain, nonatomic) CKDPPostCommentResponse *postCommentResponse;
-@property(readonly, nonatomic) _Bool hasPostCommentResponse;
-@property(retain, nonatomic) CKDPGetCommentsResponse *getCommentsResponse;
-@property(readonly, nonatomic) _Bool hasGetCommentsResponse;
-@property(retain, nonatomic) CKDPGetCommentResponse *getCommentResponse;
-@property(readonly, nonatomic) _Bool hasGetCommentResponse;
-@property(retain, nonatomic) CKDPDeleteCommentResponse *deleteCommentResponse;
-@property(readonly, nonatomic) _Bool hasDeleteCommentResponse;
-@property(retain, nonatomic) CKDPLikeResponse *likeResponse;
-@property(readonly, nonatomic) _Bool hasLikeResponse;
-@property(retain, nonatomic) CKDPUnlikeResponse *unlikeResponse;
-@property(readonly, nonatomic) _Bool hasUnlikeResponse;
-@property(retain, nonatomic) CKDPGetLikesResponse *getLikesResponse;
-@property(readonly, nonatomic) _Bool hasGetLikesResponse;
-@property(retain, nonatomic) CKDPPulseResponse *pulseResponse;
-@property(readonly, nonatomic) _Bool hasPulseResponse;
 @property(retain, nonatomic) CKDPSubscriptionCreateResponse *subscriptionCreateResponse;
 @property(readonly, nonatomic) _Bool hasSubscriptionCreateResponse;
 @property(retain, nonatomic) CKDPSubscriptionRetrieveResponse *subscriptionRetrieveResponse;
@@ -199,12 +151,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasNotificationSyncResponse;
 @property(retain, nonatomic) CKDPNotificationMarkReadResponse *notificationMarkReadResponse;
 @property(readonly, nonatomic) _Bool hasNotificationMarkReadResponse;
-@property(retain, nonatomic) CKDPMescalCertificateResponse *mescalCertificateResponse;
-@property(readonly, nonatomic) _Bool hasMescalCertificateResponse;
-@property(retain, nonatomic) CKDPMescalSessionInfoResponse *mescalSessionInfoResponse;
-@property(readonly, nonatomic) _Bool hasMescalSessionInfoResponse;
-@property(retain, nonatomic) CKDPMescalSignatureResponse *mescalSignatureResponse;
-@property(readonly, nonatomic) _Bool hasMescalSignatureResponse;
 
 @end
 

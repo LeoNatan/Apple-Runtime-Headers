@@ -57,6 +57,7 @@
 - (void)updateFilteredLanguages;
 - (void)updateLanguageFilteredInputSources;
 - (void)updateKeywordFilteredInputSources;
+- (id)validateLanguage:(id)arg1;
 - (void)keywordChanged:(id)arg1;
 - (void)windowDidLoad;
 - (void)closeInputSourcesSheet:(id)arg1;

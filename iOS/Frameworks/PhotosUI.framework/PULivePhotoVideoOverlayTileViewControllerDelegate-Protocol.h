@@ -6,13 +6,13 @@
 
 #import <PhotosUI/NSObject-Protocol.h>
 
-@class PUDisplayTileTransform, PULivePhotoVideoOverlayTileViewController;
+@class PUDisplayTileTransform, PULivePhotoVideoOverlayTileViewController, UIImage;
 
 @protocol PULivePhotoVideoOverlayTileViewControllerDelegate <NSObject>
 - (void)livePhotoVideoPlaybackTileViewControllerDidEndPlaying:(PULivePhotoVideoOverlayTileViewController *)arg1;
-- (void)livePhotoVideoPlaybackTileViewControllerWillEndPlaying:(PULivePhotoVideoOverlayTileViewController *)arg1;
-- (void)livePhotoVideoPlaybackTileViewControllerDidBeginPlaying:(PULivePhotoVideoOverlayTileViewController *)arg1;
 - (void)livePhotoVideoPlaybackTileViewControllerWillBeginPlaying:(PULivePhotoVideoOverlayTileViewController *)arg1;
+- (_Bool)livePhotoVideoPlaybackTileViewControllerCanBeginPlaying:(PULivePhotoVideoOverlayTileViewController *)arg1;
+- (UIImage *)livePhotoVideoPlaybackTileViewControllerCurrentImage:(PULivePhotoVideoOverlayTileViewController *)arg1;
 - (PUDisplayTileTransform *)livePhotoVideoPlaybackTileViewControllerDisplayTileTransform:(PULivePhotoVideoOverlayTileViewController *)arg1;
 @end
 

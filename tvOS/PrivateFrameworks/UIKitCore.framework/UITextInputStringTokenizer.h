@@ -22,7 +22,7 @@
 - (id)positionFromPosition:(id)arg1 toBoundary:(long long)arg2 inDirection:(long long)arg3;
 - (_Bool)isPosition:(id)arg1 atBoundary:(long long)arg2 inDirection:(long long)arg3;
 - (_Bool)_isDownstreamForDirection:(long long)arg1 atPosition:(id)arg2;
-- (struct _NSRange)_getClosestTokenRangeForPosition:(id)arg1 granularity:(long long)arg2 downstream:(_Bool)arg3;
+- (id)_closestTokenSubrangeForPosition:(id)arg1 granularity:(long long)arg2 downstream:(_Bool)arg3;
 - (long long)_indexForTextPosition:(id)arg1;
 - (id)initWithTextInput:(id)arg1;
 

@@ -41,9 +41,14 @@ __attribute__((visibility("hidden")))
     TSWPDocumentRoot *_documentRoot;
 }
 
++ (void)nonUndoableRemoveUnsupportedHyperlinksInInfos:(id)arg1;
++ (void)nonUndoableRemoveUnsupportedHyperlinksInInfos:(id)arg1 forCrossDocumentPaste:(_Bool)arg2;
++ (void)resetAllTextAttributeUUIDStringsInInfos:(id)arg1;
++ (void)resetAllTextAttributeUUIDStringsInInfo:(id)arg1;
 + (Class)classForUnarchiver:(id)arg1;
 + (_Bool)needsObjectUUID;
 + (Class)pStringClassForWPKind:(int)arg1;
++ (_Bool)shouldInvalidateForStylePropertyChangeSet:(id)arg1;
 + (id)filterMarkAttributes:(id)arg1;
 + (id)filterText:(id)arg1 removingAttachments:(_Bool)arg2 removingControlCharacters:(_Bool)arg3;
 + (id)filterText:(id)arg1 removingAttachments:(_Bool)arg2;
@@ -87,7 +92,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasEmptyListAtCharIndex:(unsigned long long)arg1;
 - (_Bool)hasEmptyParagraphFillOrBordersAtCharIndex:(unsigned long long)arg1;
 - (_Bool)hasUserGeneratedVisibleText;
-- (_Bool)hasVisibleText;
+- (_Bool)hasVisibleTextOnlyContentInRange:(struct _NSRange)arg1;
+- (_Bool)hasVisibleTextOnlyContent;
+- (_Bool)hasVisibleContent;
+- (_Bool)p_hasVisibleTextInRange:(struct _NSRange)arg1 graphicalAttachmentsIncluded:(_Bool)arg2;
 - (void)capitalizeWithUndoTransaction:(struct TSWPStorageTransaction *)arg1 locale:(id)arg2;
 - (void)lowercaseWithUndoTransaction:(struct TSWPStorageTransaction *)arg1 locale:(id)arg2;
 - (void)uppercaseWithUndoTransaction:(struct TSWPStorageTransaction *)arg1 locale:(id)arg2;
@@ -95,17 +103,18 @@ __attribute__((visibility("hidden")))
 - (_Bool)isSingleAnchoredDrawableAttachmentForSelection:(id)arg1;
 - (void)didChangeParagraphsInIndexRange:(struct _NSRange)arg1;
 - (void)didChangeParagraphAttributeLocation:(unsigned long long)arg1 delta:(long long)arg2;
-- (void)didChangeRange:(struct _NSRange)arg1 delta:(long long)arg2 broadcastKind:(int)arg3 attributeKindChanges:(id)arg4;
-- (void)didChangeRange:(struct _NSRange)arg1 delta:(long long)arg2 broadcastKind:(int)arg3;
+- (void)didChangeRange:(struct _NSRange)arg1 delta:(long long)arg2 broadcastKind:(unsigned long long)arg3 attributeKindChanges:(id)arg4;
+- (void)didChangeRange:(struct _NSRange)arg1 delta:(long long)arg2 broadcastKind:(unsigned long long)arg3;
 @property(readonly, nonatomic) TSWPCharacterStyle *hyperlinkStyle;
 - (void)afterReplacingReferencedStylesSetStylesheet:(id)arg1;
 - (void)replaceReferencedStylesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)referencedStyles;
 - (id)referencedStylesOfClass:(Class)arg1;
 @property(readonly, nonatomic) TSDDrawableInfo *parentDrawable;
+@property(readonly, nonatomic) _Bool isTopmostContainerInfo;
 - (double)highestScaleFactorForRenderingDrawableInfo:(id)arg1;
 - (id)infoForSelectionPath:(id)arg1;
-@property(readonly, nonatomic) NSArray *childInfos;
+@property(readonly, copy, nonatomic) NSArray *childInfos;
 - (id)copyWithContext:(id)arg1;
 - (_Bool)isThemeContent;
 - (Class)repClass;
@@ -153,6 +162,7 @@ __attribute__((visibility("hidden")))
 - (id)smartFieldsWithAttributeKind:(unsigned long long)arg1 withClass:(Class)arg2 intersectingRange:(struct _NSRange)arg3;
 - (id)smartFieldsWithAttributeKind:(unsigned long long)arg1 intersectingRange:(struct _NSRange)arg2;
 - (void)nonUndoableRemoveUnsupportedHyperlinks;
+- (void)nonUndoableRemoveUnsupportedHyperlinksForCrossDocumentPaste:(_Bool)arg1;
 - (id)smartFieldsWithAttributeKind:(unsigned long long)arg1 intersectingRange:(struct _NSRange)arg2 passingTest:(CDUnknownBlockType)arg3;
 - (void)resetAllTextAttributeUUIDStrings;
 - (void)enumerateSmartFieldsWithAttributeKind:(unsigned long long)arg1 inRange:(struct _NSRange)arg2 usingBlock:(CDUnknownBlockType)arg3;
@@ -167,6 +177,7 @@ __attribute__((visibility("hidden")))
 - (id)extendSelectionToIncludeSmartFields:(id)arg1;
 - (struct _NSRange)p_extendRangeToIncludeSmartFields:(struct _NSRange)arg1 ofKind:(unsigned long long)arg2;
 - (struct _NSRange)p_extendRangeToIncludeSmartFields:(struct _NSRange)arg1;
+- (_Bool)hasAttachmentsRequiring4_1InRange:(struct _NSRange)arg1;
 - (id)attachments;
 - (unsigned long long)charIndexBeforeAnyAnchoredAttachmentsAtCharIndex:(unsigned long long)arg1;
 - (_Bool)anchoredDrawableAttachmentCharacterAtCharIndex:(unsigned long long)arg1;
@@ -358,6 +369,9 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)previousCharacterIndex:(unsigned long long)arg1;
 - (unsigned long long)wordCount;
 - (id)stringForStatisticsInRange:(struct _NSRange)arg1;
+- (id)p_stringWithAttachmentCharacterSubstitutedWithCharacter:(id)arg1;
+- (id)stringWithAttachmentCharacterRemoved;
+- (id)stringWithAttachmentCharacterSubstitution;
 - (id)string;
 - (id)stringValue;
 - (void)getCharacters:(unsigned short *)arg1 range:(struct _NSRange)arg2;
@@ -373,17 +387,24 @@ __attribute__((visibility("hidden")))
 - (struct TSWPParagraphEnumerator)paragraphEnumeratorForCharRange:(struct _NSRange)arg1 styleProvider:(id)arg2;
 - (struct TSWPParagraphEnumerator)paragraphEnumeratorAtCharIndex:(unsigned long long)arg1 styleProvider:(id)arg2;
 - (id)textSourceForLayoutInRange:(struct _NSRange)arg1;
+- (void)nonUndoableFilterInvalidContentForStorage:(id)arg1 keepHighlights:(_Bool)arg2 nestingDepth:(long long)arg3;
 - (void)nonUndoableFilterInvalidContentForStorage:(id)arg1 keepHighlights:(_Bool)arg2;
 - (_Bool)allowsTypographicalFractions;
 - (_Bool)supportsPageBreaks;
 - (void)p_nonUndoableFilterPageBreaksFromStorage:(id)arg1;
 - (void)p_nonUndoableFilterSectionBreaksFromStorage:(id)arg1;
+- (_Bool)pAllowsAttachment:(id)arg1 withNestingDepth:(long long)arg2;
 - (_Bool)allowsSmartFieldKind:(int)arg1;
 - (void)removeDisallowedSmartFieldKind:(int)arg1;
 - (void)addDisallowedSmartFieldKind:(int)arg1;
 - (unsigned int)disallowedSmartFieldKinds;
+- (_Bool)canAcceptAttachmentForDrawableInfo:(id)arg1;
 - (_Bool)canAcceptDrawableAttachments;
+- (_Bool)p_isRotatedInAnyParent;
+- (_Bool)allowsElementKind:(int)arg1 nestingDepth:(long long)arg2;
 - (_Bool)allowsElementKind:(int)arg1;
+- (long long)nestedTextboxDepth;
+- (_Bool)p_nestedInHeaderFooter;
 - (unsigned int)disallowedElementKinds;
 - (void)removeDisallowedElementKind:(int)arg1;
 - (void)addDisallowedElementKind:(int)arg1;
@@ -395,6 +416,7 @@ __attribute__((visibility("hidden")))
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)removeAllObservers;
+- (void)p_repairListLevels;
 - (void)i_repairParagraphArray;
 - (void)unarchiverAppendParagraphBreak:(unsigned short)arg1;
 - (void)saveRange:(struct _NSRange)arg1 toArchiver:(id)arg2 styleProvider:(id)arg3 archiveChanges:(_Bool)arg4 removeDeletedText:(_Bool)arg5 archivePencilAnnotations:(_Bool)arg6;
@@ -440,6 +462,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasDrawableAttachmentOfClass:(Class)arg1;
 - (_Bool)canBeStoredInAStringValueCell;
 - (_Bool)p_passesExtraTablesChecksForStoringInAStringValueCell;
+@property(readonly, nonatomic) _Bool supportsParentRotation;
 - (id)pOverrideObjectBeforeReplacingCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2 withInsertionBehavior:(int)arg3;
 - (id)pOverrideObjectBeforeReplacingCharactersInSelection:(id)arg1 withString:(id)arg2;
 - (id)pFindValidInsertionCharStyleFromCharIndex:(unsigned long long)arg1;
@@ -485,7 +508,6 @@ __attribute__((visibility("hidden")))
 - (void)enumeratePencilAnnotationsInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (struct _NSRange)rangeForPencilAnnotation:(id)arg1;
 - (id)pencilAnnotationsInContainedTextRange:(struct _NSRange)arg1;
-- (struct _NSRange)p_rangeForPencilAnnotationRange:(struct _NSRange)arg1;
 - (void)p_handleChangeSplittingForInsertedRange:(struct _NSRange)arg1 changeSession:(id)arg2 actionBuilder:(struct TSWPStorageActionBuilder *)arg3;
 - (void)p_updateChangeTimestampForDeletedRange:(struct _NSRange)arg1 actionBuilder:(struct TSWPStorageActionBuilder *)arg2;
 - (id)p_replacementsForSelection:(id)arg1 withString:(id)arg2 replaceTextData:(id)arg3 changeSession:(id)arg4 shouldTrackDeletions:(_Bool)arg5;
@@ -559,6 +581,7 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool isMaster;
 @property(nonatomic) _Bool matchesObjectPlaceholderGeometry;
 @property(readonly, nonatomic) _Bool storageChangesInvalidateWrap;
 @property(readonly) Class superclass;

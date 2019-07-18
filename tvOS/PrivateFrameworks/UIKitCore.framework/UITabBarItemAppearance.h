@@ -46,7 +46,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTabBarItemAppearance:(id)arg1;
 - (id)_initWithTabBarItemData:(id)arg1;
-- (id)initWithTabBarItemLayout:(long long)arg1;
 - (id)initWithStyle:(long long)arg1;
 - (id)init;
 - (void)dealloc;

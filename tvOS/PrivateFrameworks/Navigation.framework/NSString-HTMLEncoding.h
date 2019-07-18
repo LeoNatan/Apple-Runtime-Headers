@@ -19,9 +19,9 @@
 + (id)_navigation_formattedStringForPriceValueWithAmount:(id)arg1 currencyCode:(id)arg2;
 + (id)_navigation_formattedStringForPriceValue:(double)arg1 currencyCode:(id)arg2;
 + (id)_navigation_commaListDelimiter;
-+ (id)_navigation_stringWithCountdownValue:(id)arg1 inToken:(id)arg2 options:(CDStruct_22bfdb93)arg3;
-+ (id)_navigation_stringWithTimeStampValues:(id)arg1 options:(CDStruct_22bfdb93)arg2;
-+ (id)_navigation_replacementForFormatToken:(id)arg1 options:(CDStruct_22bfdb93)arg2 overrideVariables:(id)arg3;
++ (id)_navigation_stringWithCountdownValue:(id)arg1 inToken:(id)arg2 options:(CDStruct_ef0b40be)arg3;
++ (id)_navigation_stringWithTimeStampValues:(id)arg1 options:(CDStruct_ef0b40be)arg2;
++ (id)_navigation_replacementForFormatToken:(id)arg1 options:(CDStruct_ef0b40be)arg2 overrideVariables:(id)arg3;
 + (id)_navigation_replacementForFormatToken:(id)arg1 abbreviatedUnits:(_Bool)arg2 detail:(long long)arg3 spoken:(_Bool)arg4 overrideVariables:(id)arg5;
 + (id)_navigation_stringWithMinutes:(unsigned long long)arg1 andAbbreviationType:(unsigned long long)arg2;
 + (id)_navigation_stringWithSeconds:(unsigned long long)arg1 andAbbreviationType:(unsigned long long)arg2;
@@ -32,7 +32,7 @@
 + (id)_navigation_overridenTokenForToken:(id)arg1 overrideVariables:(id)arg2;
 + (id)_navigation_stringForServerFormattedString:(id)arg1 abbreviatedUnits:(_Bool)arg2 detail:(long long)arg3 spoken:(_Bool)arg4 overrideVariables:(id)arg5;
 + (id)_navigation_stringForServerFormattedString:(id)arg1;
-+ (id)_navigation_stringForServerFormattedString:(id)arg1 options:(CDStruct_22bfdb93)arg2 overrideVariables:(id)arg3;
++ (id)_navigation_stringForServerFormattedString:(id)arg1 options:(CDStruct_ef0b40be)arg2 overrideVariables:(id)arg3;
 + (id)_navigation_descriptionForFrequencyRangeWithMinFrequency:(long long)arg1 maxFrequency:(long long)arg2;
 + (id)_navigation_descriptionForFrequencyMinuteValue:(long long)arg1;
 + (id)_navigation_formattedDescriptionForLiveStatus:(long long)arg1 updatedDepartureTimeString:(id)arg2;

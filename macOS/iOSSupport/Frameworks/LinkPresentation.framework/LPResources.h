@@ -12,9 +12,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)clearCachedResources;
-+ (id)mapDirectionsIcon;
++ (id)transportWalkIcon;
++ (id)transportTransitIcon;
++ (id)transportDriveIcon;
 + (id)indeterminateProgressSpinnerDarkInterface;
 + (id)indeterminateProgressSpinner;
++ (id)telephoneIcon;
 + (id)fileIcon;
 + (id)unmuteButton;
 + (id)muteButton;

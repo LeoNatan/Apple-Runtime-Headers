@@ -22,6 +22,7 @@
 - (void)cancel;
 - (void)cancelRoot:(id)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
+- (void)sendPastUpdatesToClient:(id)arg1;
 - (void)main;
 - (id)moveInfo;
 - (id)initWithActionInfo:(id)arg1 request:(id)arg2 server:(id)arg3;

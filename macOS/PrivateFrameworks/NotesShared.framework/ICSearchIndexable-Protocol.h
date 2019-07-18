@@ -9,6 +9,7 @@
 @class CSSearchableItemAttributeSet, NSArray, NSData, NSDate, NSManagedObjectContext, NSManagedObjectID, NSString, NSURL;
 
 @protocol ICSearchIndexable <NSObject>
+- (CSSearchableItemAttributeSet *)userActivityContentAttributeSet;
 - (CSSearchableItemAttributeSet *)searchableItemAttributeSet;
 - (NSString *)searchDomainIdentifier;
 - (NSArray *)authorsExcludingCurrentUser;

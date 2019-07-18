@@ -9,7 +9,7 @@
 #import <NetworkExtension/NEExtensionProviderHostProtocol-Protocol.h>
 #import <NetworkExtension/NEExtensionProviderProtocol-Protocol.h>
 
-@class NEUserNotification, NSString, NSUUID, NSXPCConnection;
+@class NEUserNotification, NSData, NSString, NSUUID, NSXPCConnection;
 @protocol NEExtensionProviderHostDelegate, NEExtensionProviderProtocol;
 
 @interface NEExtensionProviderHostContext : NSExtensionContext <NEExtensionProviderProtocol, NEExtensionProviderHostProtocol>
@@ -38,6 +38,7 @@
 - (void)wake;
 - (void)sleepWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setConfiguration:(id)arg1 extensionIdentifier:(id)arg2;
+@property(readonly) NSData *auditTokenData;
 @property(readonly) NSUUID *uuid;
 @property(readonly) int pid;
 - (id)vendorContext;

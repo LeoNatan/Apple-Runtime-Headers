@@ -6,13 +6,14 @@
 
 #import <AppSupportUI/NUIContainerStackView.h>
 
-@class SFCardSection, SearchUICardSectionRowModel, UIView;
+@class SFCardSection, SearchUICardSectionRowModel, UIView, UIViewController;
 @protocol SearchUIFeedbackDelegate;
 
 @interface SearchUICardSectionView : NUIContainerStackView
 {
     UIView *_contentView;
     SearchUICardSectionRowModel *_rowModel;
+    UIViewController *_embeddedViewController;
     id <SearchUIFeedbackDelegate> _feedbackDelegate;
     UIView *_chevronView;
 }
@@ -25,6 +26,7 @@
 + (double)separatorInsetForLeadingImageForSection:(id)arg1;
 @property(retain, nonatomic) UIView *chevronView; // @synthesize chevronView=_chevronView;
 @property(nonatomic) __weak id <SearchUIFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
+@property(readonly) UIViewController *embeddedViewController; // @synthesize embeddedViewController=_embeddedViewController;
 @property(retain, nonatomic) SearchUICardSectionRowModel *rowModel; // @synthesize rowModel=_rowModel;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;

@@ -73,7 +73,6 @@
 - (id)_audiogramPointMarkerColorForStyle:(long long)arg1;
 - (id)_audiogramLabelColorForStyle:(long long)arg1;
 - (id)_audiogramLineColorForStyle:(long long)arg1;
-- (_Bool)_isLeftEarAverageBetterForSample:(id)arg1;
 - (id)_findNavigationController;
 - (void)_pinView:(id)arg1 toParentGuide:(id)arg2;
 - (void)_addControllerAsChildController:(id)arg1;
@@ -105,6 +104,7 @@
 - (id)_buildContextItem;
 - (id)_averageSectionFromAudiogram:(id)arg1;
 - (id)_sectionsFromAudiogram:(id)arg1;
+- (void)updateController:(id)arg1 didReceiveHighFrequencyUpdateForType:(id)arg2;
 - (void)updateController:(id)arg1 didReceiveUpdateForType:(id)arg2 samplesAdded:(id)arg3 objectsRemoved:(id)arg4;
 - (void)_updateAudiogramSamples:(id)arg1 error:(id)arg2;
 - (void)queryForAudiogramsUsingHealthStore:(id)arg1;

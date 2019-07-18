@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (id)_cacheKeyForFileName:(id)arg1;
 - (id)_lsmDocumentWithContentsInCache;
 - (void)_loadDocumentFromCache;
+- (void)_loadDataAtURL:(id)arg1 withFilename:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_loadDataAtURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_loadFileNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_loadAssetWithCacheKey:(id)arg1 completion:(CDUnknownBlockType)arg2 url:(id)arg3;

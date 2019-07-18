@@ -17,7 +17,6 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-+ (void)initialize;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSPersistentStoreDescription *storeDescription;

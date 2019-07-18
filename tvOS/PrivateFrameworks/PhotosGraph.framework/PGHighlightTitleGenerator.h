@@ -19,6 +19,7 @@
 }
 
 + (id)meaningLabelsSortedByPriority;
++ (_Bool)collectionContainsAppleEvent:(id)arg1;
 + (id)commonMeaningLabelForTitleUsingMomentNodes:(id)arg1;
 @property(nonatomic) _Bool createVerboseTitle; // @synthesize createVerboseTitle=_createVerboseTitle;
 @property(retain, nonatomic) PGTitleTuple *titleTuple; // @synthesize titleTuple=_titleTuple;

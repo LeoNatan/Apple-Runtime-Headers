@@ -127,7 +127,7 @@ __attribute__((visibility("hidden")))
 - (void)updateSupportedAudioRules:(id)arg1;
 - (id)supportedAudioRules;
 - (void)updatePayloadTypesWithConfigProvider:(id)arg1;
-- (BOOL)computeMediaBlob;
+- (BOOL)initializeMediaNegotiator;
 - (id)newMediaNegotiatorAudioConfiguration;
 - (id)multiwayVideoStreamConfigs;
 - (id)multiwayVideoStreamNegotiatorConfigForStreamConfig:(id)arg1 isSubstream:(BOOL)arg2;
@@ -139,7 +139,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)setupAudioStreamWithConfiguration:(id)arg1;
 - (BOOL)setupAudioStreamsWithConfigProvider:(id)arg1;
 - (BOOL)setupAudioStreamsWithConfigProvider:(id)arg1 mediaNegotiatorConfig:(id)arg2;
-- (BOOL)applyMediaNegotiatorConfig:(id)arg1 toMediaStreamConfig:(id)arg2;
+- (BOOL)applyCachedMediaStreams:(id)arg1 toMultiwayConfig:(id)arg2;
 - (BOOL)configureAudioIOWithDeviceRole:(int)arg1;
 - (void)updateMomentsCapabillities:(unsigned int)arg1 imageType:(int)arg2 videoCodec:(int)arg3;
 - (void)updateMediaSettingsWithConfig:(id)arg1;

@@ -121,6 +121,7 @@
 @property(readonly) long long command;
 @property(readonly) NSString *userAgentHeaderString;
 @property(readonly) BOOL wantsUserAgentInHeaders;
+@property(readonly) BOOL requiresPushTokenKeys;
 @property(readonly) NSArray *requiredKeys;
 - (BOOL)hasRequiredKeys:(id *)arg1;
 @property(copy, nonatomic) NSNumber *serverTimestampReceivedDate;

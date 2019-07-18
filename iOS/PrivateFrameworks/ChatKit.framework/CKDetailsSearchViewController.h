@@ -10,17 +10,23 @@
 #import <ChatKit/CKDetailsSearchResultsFooterCellDelegate-Protocol.h>
 #import <ChatKit/QLPreviewControllerDelegate-Protocol.h>
 
-@class CKConversation, CKQLPreviewController, NSArray, NSString;
+@class CKConversation, CKDetailsSearchResultsFooterCell, CKDetailsSearchResultsTitleHeaderCell, CKQLPreviewController, NSArray, NSString;
 @protocol CKDetailsSearchControllerDelegate;
 
 @interface CKDetailsSearchViewController : CKSearchViewController <CKContainerSearchControllerDelegate, QLPreviewControllerDelegate, CKDetailsSearchResultsFooterCellDelegate>
 {
+    _Bool _searchComplete;
     id <CKDetailsSearchControllerDelegate> _detailsDelegate;
     CKConversation *_conversation;
     NSArray *_chatGUIDs;
     CKQLPreviewController *_previewController;
+    CKDetailsSearchResultsTitleHeaderCell *_titleSizingCell;
+    CKDetailsSearchResultsFooterCell *_footerSizingCell;
 }
 
+@property(nonatomic) _Bool searchComplete; // @synthesize searchComplete=_searchComplete;
+@property(retain, nonatomic) CKDetailsSearchResultsFooterCell *footerSizingCell; // @synthesize footerSizingCell=_footerSizingCell;
+@property(retain, nonatomic) CKDetailsSearchResultsTitleHeaderCell *titleSizingCell; // @synthesize titleSizingCell=_titleSizingCell;
 @property(retain, nonatomic) CKQLPreviewController *previewController; // @synthesize previewController=_previewController;
 @property(retain, nonatomic) NSArray *chatGUIDs; // @synthesize chatGUIDs=_chatGUIDs;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
@@ -34,9 +40,16 @@
 - (void)searchDetailsFooterCellShowAllTapped:(id)arg1;
 - (void)collectionView:(id)arg1 willDisplaySupplementaryView:(id)arg2 forElementKind:(id)arg3 atIndexPath:(id)arg4;
 - (Class)_searchResultsHeaderClass;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (id)footerBoundryItemsForController:(id)arg1 withEnvironment:(id)arg2;
+- (id)headerBoundryItemsForController:(id)arg1 withEnvironment:(id)arg2;
+- (id)_newSnapshotForCurrentControllerState;
 - (void)_registerCells;
+- (void)searchControllerContentsDidChange:(id)arg1;
+- (void)searchWithText:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)reloadData;
+- (void)rekickZKWSearchForAttachmentBatchUpdate;
 - (void)viewDidLayoutSubviews;
 - (void)loadView;
 - (id)initWithSearchControllerClasses:(id)arg1;

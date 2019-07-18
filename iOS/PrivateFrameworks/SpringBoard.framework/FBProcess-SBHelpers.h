@@ -7,6 +7,8 @@
 #import <FrontBoard/FBProcess.h>
 
 @interface FBProcess (SBHelpers)
+- (id)sb_identifierForWhitelistCheck;
+- (_Bool)sb_isEntitledToAlwaysGetContexts;
 - (_Bool)sb_isProbablyUIApplication;
 - (id)sb_bundleIdentifierWithFallback;
 @end

@@ -6,9 +6,10 @@
 
 #import <VoiceShortcutClient/NSObject-Protocol.h>
 
-@class INShortcut, NSArray, NSString, WFWorkflowReference;
+@class INShortcut, NSArray, NSString;
 
 @protocol VCVoiceShortcutManagerXPCInterface <NSObject>
+- (void)hasRunEventsInTheLast30DaysWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)runShortcutWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)runShortcutWithName:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)deleteTriggerWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
@@ -19,7 +20,7 @@
 - (void)refreshTriggerWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)getSiriPodcastsDatabaseURLWithCompletion:(void (^)(NSSecurityScopedURLWrapper *, NSError *))arg1;
 - (void)setInteger:(long long)arg1 forKey:(NSString *)arg2 inDomain:(NSString *)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
-- (void)generateSingleUseTokenForWorkflowReference:(WFWorkflowReference *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
+- (void)generateSingleUseTokenForWorkflowIdentifier:(NSString *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (void)getShareSheetWorkflowsForTypeIdentifiers:(NSArray *)arg1 hostBundleIdentifier:(NSString *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned long long)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(NSString *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;

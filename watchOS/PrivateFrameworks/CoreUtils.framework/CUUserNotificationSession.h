@@ -28,6 +28,8 @@
     NSString *_bundleID;
     NSString *_categoryID;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+    unsigned int _flags;
+    NSString *_header;
     NSString *_identifier;
     NSString *_label;
     int _soundAlertType;
@@ -44,6 +46,8 @@
 @property(nonatomic) int soundAlertType; // @synthesize soundAlertType=_soundAlertType;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(copy, nonatomic) NSString *header; // @synthesize header=_header;
+@property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSString *categoryID; // @synthesize categoryID=_categoryID;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;

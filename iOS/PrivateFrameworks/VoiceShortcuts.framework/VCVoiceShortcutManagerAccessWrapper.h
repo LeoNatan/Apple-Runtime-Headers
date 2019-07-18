@@ -9,27 +9,26 @@
 #import <VoiceShortcuts/VCVoiceShortcutManagerXPCInterface-Protocol.h>
 #import <VoiceShortcuts/WFOutOfProcessWorkflowControllerDelegate-Protocol.h>
 
-@class NSArray, NSString, VCAccessSpecifier, VCCoreDuetListener, VCVoiceShortcutManager, WFOutOfProcessWorkflowController, WFTriggerManager;
+@class NSSet, NSString, VCAccessSpecifier, VCCoreDuetListener, VCVoiceShortcutManager, WFOutOfProcessWorkflowController;
 
 @interface VCVoiceShortcutManagerAccessWrapper : NSObject <WFOutOfProcessWorkflowControllerDelegate, VCVoiceShortcutManagerXPCInterface>
 {
     VCAccessSpecifier *_accessSpecifier;
     VCVoiceShortcutManager *_voiceShortcutManager;
     VCCoreDuetListener *_coreDuetListener;
-    WFTriggerManager *_triggerManager;
-    NSArray *_syncDataHandlers;
+    NSSet *_syncDataHandlers;
     WFOutOfProcessWorkflowController *_outOfProcessWorkflowController;
     CDUnknownBlockType _runShortcutCompletionHandler;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType runShortcutCompletionHandler; // @synthesize runShortcutCompletionHandler=_runShortcutCompletionHandler;
 @property(retain, nonatomic) WFOutOfProcessWorkflowController *outOfProcessWorkflowController; // @synthesize outOfProcessWorkflowController=_outOfProcessWorkflowController;
-@property(readonly, copy, nonatomic) NSArray *syncDataHandlers; // @synthesize syncDataHandlers=_syncDataHandlers;
-@property(readonly, nonatomic) WFTriggerManager *triggerManager; // @synthesize triggerManager=_triggerManager;
+@property(readonly, copy, nonatomic) NSSet *syncDataHandlers; // @synthesize syncDataHandlers=_syncDataHandlers;
 @property(readonly, nonatomic) VCCoreDuetListener *coreDuetListener; // @synthesize coreDuetListener=_coreDuetListener;
 @property(readonly, nonatomic) VCVoiceShortcutManager *voiceShortcutManager; // @synthesize voiceShortcutManager=_voiceShortcutManager;
 @property(readonly, copy, nonatomic) VCAccessSpecifier *accessSpecifier; // @synthesize accessSpecifier=_accessSpecifier;
 - (void).cxx_destruct;
+- (void)hasRunEventsInTheLast30DaysWithCompletion:(CDUnknownBlockType)arg1;
 - (void)outOfProcessWorkflowController:(id)arg1 didFinishWithError:(id)arg2 cancelled:(_Bool)arg3;
 - (void)startRunningWorkflow:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)runShortcutWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -42,7 +41,7 @@
 - (void)refreshTriggerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getSiriPodcastsDatabaseURLWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setInteger:(long long)arg1 forKey:(id)arg2 inDomain:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)generateSingleUseTokenForWorkflowReference:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)generateSingleUseTokenForWorkflowIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getShareSheetWorkflowsForTypeIdentifiers:(id)arg1 hostBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)requestDataMigration:(CDUnknownBlockType)arg1;
 - (void)updateShortcutsVocabularyWithCompletion:(CDUnknownBlockType)arg1;
@@ -60,7 +59,7 @@
 - (void)getVoiceShortcutWithPhrase:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getVoiceShortcutWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getNumberOfVoiceShortcutsWithCompletion:(CDUnknownBlockType)arg1;
-- (id)initWithVoiceShortcutManager:(id)arg1 coreDuetListener:(id)arg2 triggerManager:(id)arg3 accessSpecifier:(id)arg4 syncDataHandlers:(id)arg5;
+- (id)initWithVoiceShortcutManager:(id)arg1 coreDuetListener:(id)arg2 accessSpecifier:(id)arg3 syncDataHandlers:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

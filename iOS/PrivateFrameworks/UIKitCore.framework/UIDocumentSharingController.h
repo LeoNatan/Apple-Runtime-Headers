@@ -7,15 +7,17 @@
 #import <UIKitCore/UIViewController.h>
 
 #import <UIKitCore/UIActionSheetPresentationControllerDelegate-Protocol.h>
+#import <UIKitCore/_UIRemoteViewControllerContaining-Protocol.h>
 #import <UIKitCore/_UISharingPublicController-Protocol.h>
 
-@class NSString, UIImage, _UIResilientRemoteViewContainerViewController, _UIShareInvitationRemoteViewController;
+@class NSString, UIImage, _UIRemoteViewController, _UIResilientRemoteViewContainerViewController, _UIShareInvitationRemoteViewController;
 @protocol _UIDocumentSharingControllerDelegate_Private;
 
-@interface UIDocumentSharingController : UIViewController <UIActionSheetPresentationControllerDelegate, _UISharingPublicController>
+@interface UIDocumentSharingController : UIViewController <UIActionSheetPresentationControllerDelegate, _UIRemoteViewControllerContaining, _UISharingPublicController>
 {
     _Bool _collaborationUIEnabled;
     _Bool _showOnlyAddPeople;
+    _Bool _showRootFolder;
     _Bool _legacyAppearance;
     _UIResilientRemoteViewContainerViewController *_childViewController;
     UIViewController *_originalPresentingViewController;
@@ -39,6 +41,7 @@
 @property(copy, nonatomic, getter=_headerActionTitle, setter=_setHeaderActionTitle:) NSString *headerActionTitle; // @synthesize headerActionTitle=_headerActionTitle;
 @property(copy, nonatomic, getter=_headerSubtitle, setter=_setHeaderSubtitle:) NSString *headerSubtitle; // @synthesize headerSubtitle=_headerSubtitle;
 @property(copy, nonatomic, getter=_initialHeaderSubtitle, setter=_setInitialHeaderSubtitle:) NSString *initialHeaderSubtitle; // @synthesize initialHeaderSubtitle=_initialHeaderSubtitle;
+@property(nonatomic, getter=_showRootFolder, setter=_setShowRootFolder:) _Bool showRootFolder; // @synthesize showRootFolder=_showRootFolder;
 @property(nonatomic, getter=_showOnlyAddPeople, setter=_setShowOnlyAddPeople:) _Bool showOnlyAddPeople; // @synthesize showOnlyAddPeople=_showOnlyAddPeople;
 @property(nonatomic, getter=_collaborationUIEnabled, setter=_setCollaborationUIEnabled:) _Bool collaborationUIEnabled; // @synthesize collaborationUIEnabled=_collaborationUIEnabled;
 @property(copy, nonatomic, getter=_mailSubject, setter=_setMailSubject:) NSString *mailSubject; // @synthesize mailSubject=_mailSubject;
@@ -66,6 +69,7 @@
 - (void)_shareDidChange:(id)arg1;
 - (void)_performHeaderActionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performAuxiliaryActionWithCompletion:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 @property(readonly, nonatomic, getter=_remoteViewController) _UIShareInvitationRemoteViewController *remoteViewController;
 - (void)_updatePresentationStyleForLegacyAppearance;
 - (void)dealloc;

@@ -168,12 +168,12 @@ struct CAWindowServerImpl {
 };
 
 struct CGAffineTransform {
-    float _field1;
-    float _field2;
-    float _field3;
-    float _field4;
-    float _field5;
-    float _field6;
+    float a;
+    float b;
+    float c;
+    float d;
+    float tx;
+    float ty;
 };
 
 struct CGColorSpace;
@@ -270,6 +270,7 @@ struct Data {
     unsigned int :4;
     unsigned int :5;
     unsigned int :2;
+    unsigned int :1;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
@@ -554,6 +555,7 @@ struct Server {
     struct Bounds _field19;
     double _field20;
     double _field21;
+    unsigned int _field22;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;

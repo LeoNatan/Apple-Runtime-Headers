@@ -14,7 +14,6 @@
 @interface _SFDownloadManager : NSObject <_SFDownloadDelegate>
 {
     NSMutableArray *_downloads;
-    NSURL *_downloadsRootURL;
     NSURL *_downloadHistoryURL;
     WBSCoalescedAsynchronousWriter *_historyWriter;
     _Bool _loadedDownloadHistory;
@@ -22,6 +21,7 @@
     NSMapTable *_downloadsToDeferAdding;
     NSTimer *_removeDownloadsTimer;
     NSTimer *_updateTotalProgressTimer;
+    NSURL *_downloadsRootURL;
     id <_SFDownloadDelegate> _extraDownloadDelegate;
     _SFDownloadIconCache *_iconCache;
     double _totalProgress;
@@ -33,6 +33,7 @@
 @property(readonly, nonatomic) double totalProgress; // @synthesize totalProgress=_totalProgress;
 @property(readonly, nonatomic) _SFDownloadIconCache *iconCache; // @synthesize iconCache=_iconCache;
 @property(nonatomic) __weak id <_SFDownloadDelegate> extraDownloadDelegate; // @synthesize extraDownloadDelegate=_extraDownloadDelegate;
+@property(readonly, nonatomic) NSURL *downloadsRootURL; // @synthesize downloadsRootURL=_downloadsRootURL;
 - (void).cxx_destruct;
 - (void)downloadWillBeDeleted:(id)arg1;
 - (void)downloadContentsDidChange:(id)arg1;
@@ -55,6 +56,7 @@
 - (void)_removeDeletedDownloads;
 - (void)deferAddingDownloadWhenStarted:(id)arg1;
 - (void)_addDownload:(id)arg1;
+- (void)removeDownloadsStartedAfterDate:(id)arg1;
 - (void)removeDownloads:(id)arg1;
 - (void)_noteDownloadsChanged;
 - (void)getDownloadsWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -65,7 +67,7 @@
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
-- (id)init;
+- (id)initAsReadonly:(_Bool)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

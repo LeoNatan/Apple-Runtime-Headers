@@ -10,7 +10,7 @@
 #import <iAd/ADWebViewActionViewControllerDelegate-Protocol.h>
 #import <iAd/NewsTransparencyViewControllerDelegate-Protocol.h>
 
-@class ADAdActionPublicAttributes, ADAdImpressionPublicAttributes, ADAdSpaceConfiguration, ADContext, ADCreativeController, ADMRAIDAction, ADMediaAnalyticsEventInfo, ADSInternalSize, ADWebViewActionViewController, NSArray, NSString, NSURL, NewsTransparencyViewController, UIViewController;
+@class ADAdActionPublicAttributes, ADAdImpressionPublicAttributes, ADAdSpaceConfiguration, ADContext, ADCreativeController, ADMRAIDAction, ADSInternalSize, ADWebViewActionViewController, NSArray, NSString, NSURL, NewsTransparencyViewController, UIViewController;
 @protocol ADAdRecipient;
 
 @interface ADAdSpace : NSObject <NewsTransparencyViewControllerDelegate, ADWebViewActionViewControllerDelegate, ADCreativeControllerDelegate>
@@ -47,8 +47,6 @@
     ADAdImpressionPublicAttributes *_currentAdImpressionPublicAttributes;
     ADAdActionPublicAttributes *_currentActionPublicAttributes;
     unsigned long long _reUseCount;
-    long long _pendingAnalyticsVideoState;
-    ADMediaAnalyticsEventInfo *_pendingAnalyticsEventInfo;
     ADMRAIDAction *_mraidAction;
     long long _visibility;
     long long _requestOrientation;
@@ -90,8 +88,6 @@
 @property(nonatomic) float lastVolume; // @synthesize lastVolume=_lastVolume;
 @property(nonatomic) float lastPlayTime; // @synthesize lastPlayTime=_lastPlayTime;
 @property(retain, nonatomic) ADMRAIDAction *mraidAction; // @synthesize mraidAction=_mraidAction;
-@property(copy, nonatomic) ADMediaAnalyticsEventInfo *pendingAnalyticsEventInfo; // @synthesize pendingAnalyticsEventInfo=_pendingAnalyticsEventInfo;
-@property(nonatomic) long long pendingAnalyticsVideoState; // @synthesize pendingAnalyticsVideoState=_pendingAnalyticsVideoState;
 @property(nonatomic) unsigned long long reUseCount; // @synthesize reUseCount=_reUseCount;
 @property(nonatomic) _Bool hasImpressed; // @synthesize hasImpressed=_hasImpressed;
 @property(nonatomic) _Bool didInstallCreativeView; // @synthesize didInstallCreativeView=_didInstallCreativeView;

@@ -6,19 +6,22 @@
 
 #import <SpringBoard/SBSwitcherModifier.h>
 
-@class NSString, SBAppLayout;
+@class NSArray, NSString, SBAppLayout;
 @protocol SBFluidSwitcherModifierProviding;
 
 @interface SBAppExposeSwitcherModifier : SBSwitcherModifier
 {
     NSString *_bundleIdentifier;
     SBAppLayout *_activatingAppLayout;
+    unsigned long long _incomingTransitionPhase;
+    NSArray *_appLayoutsToKeepDuringIncomingTransition;
     id <SBFluidSwitcherModifierProviding> _modifierProvider;
     SBSwitcherModifier *_outgoingTransitionModifier;
     _Bool _isFloating;
 }
 
 - (void).cxx_destruct;
+- (_Bool)_shouldFilteringIncludeAppLayout:(id)arg1;
 - (id)appLayoutToScrollToBeforeTransitioning;
 - (id)adjustedAppLayoutsForAppLayouts:(id)arg1;
 - (double)plusButtonAlpha;
@@ -27,6 +30,7 @@
 - (id)handleAppExposeEvent:(id)arg1;
 - (id)handleMainTransitionEvent:(id)arg1;
 - (id)handleEvent:(id)arg1;
+- (id)appLayoutsForInsertionOrRemoval;
 - (id)initWithBundleIdentifier:(id)arg1 modifierProvider:(id)arg2 floating:(_Bool)arg3;
 
 @end

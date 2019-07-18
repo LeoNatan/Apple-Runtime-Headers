@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)beginWrappingToColumn:(id)arg1 target:(id)arg2 hasWrapables:(_Bool *)arg3;
+- (id)beginWrappingToColumn:(id)arg1 columnTransformFromWP:(struct CGAffineTransform)arg2 target:(id)arg3 hasWrappables:(out _Bool *)arg4;
 
 @end
 

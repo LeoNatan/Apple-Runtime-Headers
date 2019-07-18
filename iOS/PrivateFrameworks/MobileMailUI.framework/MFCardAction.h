@@ -11,6 +11,7 @@
 @interface MFCardAction : NSObject
 {
     _Bool _handlerEnabled;
+    _Bool _shouldDismissCardBeforeExecuteHandler;
     NSString *_imageName;
     UIColor *_tintColor;
     NSString *_title;
@@ -19,6 +20,7 @@
 
 + (id)cardActionWithTitle:(id)arg1 imageName:(id)arg2 tintColor:(id)arg3 handlerEnabled:(_Bool)arg4 handler:(CDUnknownBlockType)arg5;
 + (id)cardActionWithTitle:(id)arg1 imageName:(id)arg2 tintColor:(id)arg3 handler:(CDUnknownBlockType)arg4;
+@property(nonatomic) _Bool shouldDismissCardBeforeExecuteHandler; // @synthesize shouldDismissCardBeforeExecuteHandler=_shouldDismissCardBeforeExecuteHandler;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) _Bool handlerEnabled; // @synthesize handlerEnabled=_handlerEnabled;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

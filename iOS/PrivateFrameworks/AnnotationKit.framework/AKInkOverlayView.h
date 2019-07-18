@@ -21,10 +21,13 @@
     id <AKInkOverlayViewDelegate> _delegate;
     id <PKRulerHostingDelegate> _rulerHostingDelegate;
     struct CGSize _canvasSizeInPKDrawingSpace;
+    struct CGRect _previousPageRectInAKModel;
 }
 
++ (struct CGRect)_convertRect:(struct CGRect)arg1 fromPageControllerModelSpace:(id)arg2 toDrawingInCanvasViewSpace:(id)arg3;
 + (id)newDrawingUndoTargetWithPageController:(id)arg1;
 + (id)newAKInkOverlayViewForCurrentPlatformWithPageController:(id)arg1 drawingUndoTarget:(id)arg2;
+@property(nonatomic) struct CGRect previousPageRectInAKModel; // @synthesize previousPageRectInAKModel=_previousPageRectInAKModel;
 @property(nonatomic) __weak id <PKRulerHostingDelegate> rulerHostingDelegate; // @synthesize rulerHostingDelegate=_rulerHostingDelegate;
 @property struct CGSize canvasSizeInPKDrawingSpace; // @synthesize canvasSizeInPKDrawingSpace=_canvasSizeInPKDrawingSpace;
 @property __weak id <AKInkOverlayViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -43,6 +46,8 @@
 - (_Bool)_canvasView:(id)arg1 shouldBeginDrawingWithTouch:(id)arg2;
 - (void)_calculateFixedPixelSize:(struct CGSize *)arg1 drawingScale:(double *)arg2;
 - (void)layoutSubviews;
+- (id)updatedDrawingForPageRectUpdate;
+- (_Bool)canvasNeedsUpdate;
 - (void)setupInkView;
 - (void)didMoveToSuperview;
 - (void)willMoveToSuperview:(id)arg1;

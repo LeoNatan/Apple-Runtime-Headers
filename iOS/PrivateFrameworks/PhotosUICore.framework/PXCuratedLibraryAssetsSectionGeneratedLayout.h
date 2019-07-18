@@ -18,6 +18,7 @@
 @property(nonatomic) struct CGRect presentedKeyAssetRect; // @synthesize presentedKeyAssetRect=_presentedKeyAssetRect;
 @property(retain, nonatomic) id <PXDisplayAsset> presentedKeyAsset; // @synthesize presentedKeyAsset=_presentedKeyAsset;
 - (void).cxx_destruct;
+- (void)enumerateHeroSpritesInRect:(struct CGRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) struct CGRect sectionRect;
 - (void)getSpriteZPosition:(float *)arg1 clippingRect:(struct CGRect *)arg2 forSpriteKind:(long long)arg3;
 @property(readonly, nonatomic) PXCuratedLibrarySectionGeometryDescriptor *presentedGeometryDescriptor;

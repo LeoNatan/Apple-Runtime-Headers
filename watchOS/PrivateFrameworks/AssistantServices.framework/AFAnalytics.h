@@ -27,6 +27,7 @@
 - (void)logEventWithType:(int)arg1 machAbsoluteTime:(unsigned long long)arg2 contextProvider:(CDUnknownBlockType)arg3 contextProvidingQueue:(id)arg4;
 - (void)logEventWithType:(int)arg1 machAbsoluteTime:(unsigned long long)arg2 context:(id)arg3 contextNoCopy:(_Bool)arg4;
 - (void)setService:(id)arg1;
+- (void)boostQueuedEvents:(CDUnknownBlockType)arg1;
 - (void)logInstrumentationOfType:(Class)arg1 machAbsoluteTime:(unsigned long long)arg2 turnIdentifier:(id)arg3;
 - (void)logInstrumentationOfType:(Class)arg1 turnIdentifier:(id)arg2;
 - (void)endEventsGrouping;

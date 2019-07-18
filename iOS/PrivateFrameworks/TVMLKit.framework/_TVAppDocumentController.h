@@ -8,7 +8,6 @@
 
 #import <TVMLKit/IKAppDocumentDelegate-Protocol.h>
 #import <TVMLKit/UIGestureRecognizerDelegate-Protocol.h>
-#import <TVMLKit/UIPopoverPresentationControllerDelegate-Protocol.h>
 #import <TVMLKit/_TVApplicationInspectorDocumentProvider-Protocol.h>
 #import <TVMLKit/_TVIKAppDocumentDelegate-Protocol.h>
 #import <TVMLKit/_TVModalPresenterFocusing-Protocol.h>
@@ -17,7 +16,7 @@
 @class IKAppDocument, NSArray, NSString, TVMediaQueryEvaluator, UITapGestureRecognizer, UIView, UIViewController, _TVPagePerformanceController;
 @protocol UIFocusEnvironment, UIFocusItemContainer, _TVAppDocumentControllerDelegate;
 
-@interface _TVAppDocumentController : TVDocumentViewController <UIGestureRecognizerDelegate, _TVModalPresenterFocusing, _TVPagePerformanceDelegate, _TVApplicationInspectorDocumentProvider, UIPopoverPresentationControllerDelegate, _TVIKAppDocumentDelegate, IKAppDocumentDelegate>
+@interface _TVAppDocumentController : TVDocumentViewController <UIGestureRecognizerDelegate, _TVModalPresenterFocusing, _TVPagePerformanceDelegate, _TVApplicationInspectorDocumentProvider, _TVIKAppDocumentDelegate, IKAppDocumentDelegate>
 {
     struct {
         _Bool hasMediaQueryEvaluator;
@@ -58,13 +57,12 @@
 @property(nonatomic) __weak id <_TVAppDocumentControllerDelegate> appDelegate; // @synthesize appDelegate=_appDelegate;
 @property(retain, nonatomic) IKAppDocument *appDocument; // @synthesize appDocument=_appDocument;
 - (void).cxx_destruct;
+- (void)snapshotImpressions;
+- (id)currentImpressionableElements;
 - (id)activeDocument;
 - (_Bool)ppt_isLoading;
 - (void)pagePerformanceController:(id)arg1 didUpdateMetrics:(id)arg2;
-- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
-- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect *)arg2 inView:(inout id *)arg3;
 - (void)_menuGestureHandler:(id)arg1;
-- (void)tvmlkit_handleEvent:(id)arg1 forElement:(id)arg2 andSourceView:(id)arg3;
 - (void)updatePreferredFocusedViewStateForFocus:(_Bool)arg1;
 - (struct CGSize)formSize;
 - (id)_mediaQueryEvaluator;

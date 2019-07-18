@@ -18,7 +18,7 @@
 + (id)richTextForRichDataItems:(id)arg1;
 + (id)richTextForDataItems:(id)arg1;
 + (id)alignmentsForSFHeaderRow:(id)arg1;
-+ (BOOL)shouldHideViewForSection:(id)arg1;
++ (BOOL)shouldHideViewForRichData:(id)arg1;
 @property(retain, nonatomic) NSMapTable *tableMapping; // @synthesize tableMapping=_tableMapping;
 @property(nonatomic) BOOL isCompactTable; // @synthesize isCompactTable=_isCompactTable;
 @property(retain, nonatomic) TLKGridLayoutManager *gridManager; // @synthesize gridManager=_gridManager;

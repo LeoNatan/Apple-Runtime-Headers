@@ -17,12 +17,15 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)kindWithVariants:(unsigned long long)arg1 playlistEntryKind:(id)arg2 options:(unsigned long long)arg3;
++ (id)identityKind;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) MPModelPlaylistEntryKind *playlistEntryKind; // @synthesize playlistEntryKind=_playlistEntryKind;
 @property(readonly, nonatomic) unsigned long long variants; // @synthesize variants=_variants;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)humanDescription;
 
 @end

@@ -7,7 +7,7 @@
 #import <VectorKit/VKMapSnapshotCreator.h>
 
 @interface VKMapSnapshotCreator (MapKitAdditions)
-- (void)_mapkit_configureWithOptions:(id)arg1 contentSizeCategory:(id)arg2;
+- (void)_mapkit_configureWithOptions:(id)arg1;
 - (void)_mapkit_configureFromDefaults;
 @end
 

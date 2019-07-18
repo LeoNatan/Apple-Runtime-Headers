@@ -6,15 +6,10 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC12NewsArticles22ArticleTextSizeManager : NSObject
 {
-    // Error parsing type: , name: article
-    // Error parsing type: , name: channelTextSizeManager
-    // Error parsing type: , name: observers
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -52,11 +52,12 @@
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
 - (void)_lock_finalizeCodingForValues:(unsigned long long)arg1;
 - (id)_lock_encodedStateForDescriptor:(id)arg1;
 - (void)encodeWithPreviousState:(id)arg1;
 - (_Bool)isDifferentFromState:(id)arg1 significantly:(out _Bool *)arg2;
-@property(readonly, copy, nonatomic) NSSet *assertions; // @dynamic assertions;
+@property(readonly, copy, nonatomic) NSSet *assertions;
 @property(readonly, nonatomic, getter=isPreventedFromLaunching) _Bool preventedFromLaunching;
 @property(readonly, nonatomic, getter=isEmptyState) _Bool emptyState;
 @property(readonly, nonatomic, getter=isDebugging) _Bool debugging;
@@ -66,7 +67,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

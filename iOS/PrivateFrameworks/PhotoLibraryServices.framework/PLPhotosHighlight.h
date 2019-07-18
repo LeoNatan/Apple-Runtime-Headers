@@ -16,12 +16,16 @@
 }
 
 + (id)sortByTimeSortDescriptors;
++ (id)batchFetchPhotosHighlightUUIDsByMomentUUIDsWithMomentUUIDs:(id)arg1 library:(id)arg2 error:(id *)arg3;
++ (id)batchFetchPhotosHighlightUUIDsByAssetUUIDsWithAssetUUIDs:(id)arg1 library:(id)arg2 error:(id *)arg3;
 + (id)predicateForInvalidMonthOrYearHighlights;
 + (id)predicateForInvalidDayGroupHighlights;
 + (id)predicateForInvalidDayHighlights;
 + (id)predicateForInvalidHighlightsOfAllKinds;
++ (id)predicateForEmptyHighlightsOfKind:(unsigned short)arg1;
++ (id)_predicateForHighlightsOfKind:(unsigned short)arg1;
 + (id)predicateForAllAssetsInPhotosHighlight:(id)arg1;
-+ (id)allPhotosHighlightsInManagedObjectContext:(id)arg1 predicate:(id)arg2 error:(id *)arg3;
++ (id)allPhotosHighlightsInManagedObjectContext:(id)arg1 predicate:(id)arg2 keyPathsForPrefetching:(id)arg3 error:(id *)arg4;
 + (id)insertNewPhotosHighlightInManagedObjectContext:(id)arg1 error:(id *)arg2;
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 withUUID:(id)arg2 title:(id)arg3;
@@ -77,7 +81,6 @@
 @property(retain, nonatomic) NSSet *dayGroupExtendedAssets; // @dynamic dayGroupExtendedAssets;
 @property(nonatomic) int dayGroupExtendedAssetsCount; // @dynamic dayGroupExtendedAssetsCount;
 @property(retain, nonatomic) PLManagedAsset *dayGroupKeyAsset; // @dynamic dayGroupKeyAsset;
-@property(retain, nonatomic) NSSet *dayGroupOverviewAssets; // @dynamic dayGroupOverviewAssets;
 @property(retain, nonatomic) NSSet *dayGroupSummaryAssets; // @dynamic dayGroupSummaryAssets;
 @property(nonatomic) int dayGroupSummaryAssetsCount; // @dynamic dayGroupSummaryAssetsCount;
 @property(retain, nonatomic) NSDate *endDate; // @dynamic endDate;
@@ -94,10 +97,7 @@
 @property(retain, nonatomic) NSSet *moments; // @dynamic moments;
 @property(retain, nonatomic) PLManagedAsset *monthFirstAsset; // @dynamic monthFirstAsset;
 @property(retain, nonatomic) PLManagedAsset *monthKeyAsset; // @dynamic monthKeyAsset;
-@property(retain, nonatomic) NSSet *monthOverviewAssets; // @dynamic monthOverviewAssets;
 @property(nonatomic) unsigned long long mood; // @dynamic mood;
-@property(retain, nonatomic) NSSet *overviewAssets; // @dynamic overviewAssets;
-@property(nonatomic) int overviewCount; // @dynamic overviewCount;
 @property(retain, nonatomic) PLPhotosHighlight *parentDayGroupPhotosHighlight; // @dynamic parentDayGroupPhotosHighlight;
 @property(retain, nonatomic) PLPhotosHighlight *parentPhotosHighlight; // @dynamic parentPhotosHighlight;
 @property(nonatomic) double promotionScore; // @dynamic promotionScore;
@@ -113,7 +113,6 @@
 @property(retain, nonatomic) NSString *verboseSmartDescription; // @dynamic verboseSmartDescription;
 @property(nonatomic) unsigned short visibilityState; // @dynamic visibilityState;
 @property(retain, nonatomic) PLManagedAsset *yearKeyAsset; // @dynamic yearKeyAsset;
-@property(retain, nonatomic) NSSet *yearOverviewAssets; // @dynamic yearOverviewAssets;
 
 @end
 

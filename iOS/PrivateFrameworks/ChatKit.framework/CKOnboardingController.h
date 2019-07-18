@@ -10,26 +10,50 @@
 #import <ChatKit/CNMeCardSharingPickerViewControllerDelegate-Protocol.h>
 #import <ChatKit/IMCNMeCardSharingOnboardingAudienceViewControllerDelegate-Protocol.h>
 #import <ChatKit/IMCNMeCardSharingOnboardingEditViewControllerDelegate-Protocol.h>
+#import <ChatKit/UINavigationControllerDelegate-Protocol.h>
 
-@class AVTAvatarStore, NSString, UINavigationController;
+@class AVPlayer, AVPlayerLooper, AVTAvatarStore, IMCloudKitSyncState, NSString, OBWelcomeFullCenterContentController, UINavigationController;
 @protocol AVTAvatarRecord, CKOnboardingControllerDelegate;
 
-@interface CKOnboardingController : NSObject <CNMeCardSharingPickerViewControllerDelegate, AVTAvatarEditorViewControllerDelegate, IMCNMeCardSharingOnboardingEditViewControllerDelegate, IMCNMeCardSharingOnboardingAudienceViewControllerDelegate>
+@interface CKOnboardingController : NSObject <CNMeCardSharingPickerViewControllerDelegate, AVTAvatarEditorViewControllerDelegate, IMCNMeCardSharingOnboardingEditViewControllerDelegate, IMCNMeCardSharingOnboardingAudienceViewControllerDelegate, UINavigationControllerDelegate>
 {
+    int _micLayout;
     id <CKOnboardingControllerDelegate> _delegate;
+    IMCloudKitSyncState *_syncState;
     UINavigationController *_navigationController;
+    OBWelcomeFullCenterContentController *_memojiCreationController;
+    AVPlayer *_memojiVideoPlayer;
+    AVPlayerLooper *_memojiVideoPlayerLooper;
     AVTAvatarStore *_avatarStore;
     id <AVTAvatarRecord> _avatarRecord;
 }
 
 @property(retain, nonatomic) id <AVTAvatarRecord> avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 @property(retain, nonatomic) AVTAvatarStore *avatarStore; // @synthesize avatarStore=_avatarStore;
+@property(retain, nonatomic) AVPlayerLooper *memojiVideoPlayerLooper; // @synthesize memojiVideoPlayerLooper=_memojiVideoPlayerLooper;
+@property(retain, nonatomic) AVPlayer *memojiVideoPlayer; // @synthesize memojiVideoPlayer=_memojiVideoPlayer;
+@property(retain, nonatomic, getter=_memojiCreationController) OBWelcomeFullCenterContentController *memojiCreationController; // @synthesize memojiCreationController=_memojiCreationController;
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
+@property(nonatomic) int micLayout; // @synthesize micLayout=_micLayout;
+@property(retain, nonatomic) IMCloudKitSyncState *syncState; // @synthesize syncState=_syncState;
 @property(nonatomic) __weak id <CKOnboardingControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
+- (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;
+- (void)reportMoCLayoutShown:(int)arg1;
+- (void)_tryToEnableHSA2;
+- (void)_tryToEnableMOC;
+- (void)_onClickMiCNotNow;
+- (void)_onClickMiCOnboard;
+- (void)_beginMOCFlowForState:(id)arg1 rampState:(id)arg2;
+- (void)_beginMiCWelcomeScreen;
+- (id)_micController;
+- (void)_writeDefaultMiCWelcome;
+- (_Bool)_readyToShowNextScreenWithTimeout:(unsigned long long)arg1;
+- (_Bool)readyToShowNextScreen;
+- (_Bool)_shouldPresentMiCWelcome;
 - (void)meCardSharingOnboardingAudienceViewControllerDidFinish:(id)arg1 withSharingAudience:(unsigned long long)arg2;
 - (void)meCardSharingOnboardingEditController:(id)arg1 didFinishWithOnboardingResult:(id)arg2;
-- (void)meCardSharingOnboardingEditController:(id)arg1 didFinishWithContact:(id)arg2;
 - (void)avatarEditorViewControllerDidCancel:(id)arg1;
 - (void)avatarEditorViewController:(id)arg1 didFinishWithAvatarRecord:(id)arg2;
 - (void)sharingPickerDidFinish:(id)arg1;
@@ -51,10 +75,10 @@
 - (void)pushNameAndPhotoSharingConfigSharingPreferenceStep;
 - (void)pushNameAndPhotoSharingConfigDataStep;
 - (void)pushNameAndPhotoSharingIntroStep;
+- (void)pushNameAndPhotoSharingIntroStepIfNeeded;
 - (id)_nameAndPhotoSharingIntroController;
 - (void)presentMemojiSetup;
 - (void)pushMemojiCreationStep;
-- (id)_memojiCreationController;
 - (void)_presentMemojiCreationIfNeeded:(CDUnknownBlockType)arg1 skipAction:(CDUnknownBlockType)arg2;
 - (void)pushMemojiCreationStepIfNeeded;
 - (id)_introController;
@@ -62,6 +86,7 @@
 - (void)prepareForOnboarding;
 - (void)prepareForSuspend;
 - (_Bool)presentNicknameSharingSetupFlow;
+- (_Bool)_shouldShowNicknameOnboardingFlow;
 - (_Bool)presentOnboardingIfNeeded;
 
 // Remaining properties

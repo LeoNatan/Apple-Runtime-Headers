@@ -6,14 +6,16 @@
 
 #import <objc/NSObject.h>
 
+#import <Message/EFCancelable-Protocol.h>
 #import <Message/MFSearchResultHandler-Protocol.h>
 #import <Message/_MFFlushableMessageSetIterator-Protocol.h>
 
 @class NSMutableIndexSet, NSString;
 
 __attribute__((visibility("hidden")))
-@interface _MFPersistedMessageForwardingIterator : NSObject <MFSearchResultHandler, _MFFlushableMessageSetIterator>
+@interface _MFPersistedMessageForwardingIterator : NSObject <MFSearchResultHandler, _MFFlushableMessageSetIterator, EFCancelable>
 {
+    // Error parsing type: AB, name: _cancelled
     CDUnknownBlockType _handler;
     NSMutableIndexSet *_messageSet;
 }
@@ -21,15 +23,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSMutableIndexSet *messageSet; // @synthesize messageSet=_messageSet;
 @property(readonly, copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
-- (id)filter;
 - (void)flush;
-- (void)endResult;
-- (void)setResultUnread:(_Bool)arg1;
-- (void)setResultDateRecieved:(double)arg1;
-- (void)setResultSender:(char *)arg1;
-- (void)setResultSubject:(char *)arg1;
-- (void)beginResult:(long long)arg1;
-- (void)handleMessage:(id)arg1;
+- (void)cancel;
+- (_Bool)handleMessage:(id)arg1;
 - (id)initWithHandler:(CDUnknownBlockType)arg1;
 
 // Remaining properties

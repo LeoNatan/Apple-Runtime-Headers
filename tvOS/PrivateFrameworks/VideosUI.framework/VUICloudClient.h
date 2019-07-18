@@ -6,17 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class HSCloudClient;
-
 __attribute__((visibility("hidden")))
 @interface VUICloudClient : NSObject
 {
-    HSCloudClient *_hsCloudClient;
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) HSCloudClient *hsCloudClient; // @synthesize hsCloudClient=_hsCloudClient;
-- (void).cxx_destruct;
 - (void)loadArtworkURLsForPurchaseHistoryIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end

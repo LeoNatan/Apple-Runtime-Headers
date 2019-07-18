@@ -7,16 +7,16 @@
 #import <objc/NSObject.h>
 
 #import <EmailDaemon/CSSearchableIndexDelegate-Protocol.h>
-#import <EmailDaemon/ECSignpostable-Protocol.h>
 #import <EmailDaemon/EDSearchableIndexSchedulable-Protocol.h>
 #import <EmailDaemon/EDSearchableIndexVerifierDataSource-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
+#import <EmailDaemon/EFSignpostable-Protocol.h>
 #import <EmailDaemon/EMSearchableIndexInterface-Protocol.h>
 
 @class CSSearchableIndex, EFCancelationToken, EFLazyCache, EFObservable, NSMutableArray, NSMutableSet, NSString, _EMSearchableIndexPendingRemovals;
 @protocol EDSearchableIndexDataSource, EDSearchableIndexReasonProvider, EDSearchableIndexSchedulableDelegate, EFScheduler, OS_dispatch_queue, OS_dispatch_source, OS_os_activity;
 
-@interface EDSearchableIndex : NSObject <CSSearchableIndexDelegate, EDSearchableIndexVerifierDataSource, EFLoggable, ECSignpostable, EDSearchableIndexSchedulable, EMSearchableIndexInterface>
+@interface EDSearchableIndex : NSObject <CSSearchableIndexDelegate, EDSearchableIndexVerifierDataSource, EFLoggable, EFSignpostable, EDSearchableIndexSchedulable, EMSearchableIndexInterface>
 {
     NSString *_indexName;
     EFCancelationToken *_cancelationToken;
@@ -29,7 +29,7 @@
     unsigned int _currentMaximumBatchSize;
     NSObject<OS_os_activity> *_batchIndexingActivity;
     NSMutableArray *_pendingItems;
-    NSMutableSet *_preprocessingItems;
+    NSMutableArray *_preprocessingItems;
     NSMutableSet *_pendingDomainRemovals;
     _EMSearchableIndexPendingRemovals *_pendingIdentifierRemovals;
     NSObject<OS_dispatch_queue> *_indexingQueue;
@@ -52,6 +52,7 @@
     _Bool _persistenceAvailable;
     _Bool _skipIndexExclusionCheck;
     _Bool _clientStateFetched;
+    _Bool _enableSpotlightVerification;
     id <EDSearchableIndexDataSource> _dataSource;
     id <EDSearchableIndexReasonProvider> _reasonProvider;
     id <EDSearchableIndexSchedulableDelegate> _schedulableDelegate;
@@ -70,6 +71,7 @@
 + (id)log;
 @property(nonatomic) double coalescingDelaySeconds; // @synthesize coalescingDelaySeconds=_coalescingDelaySeconds;
 @property(copy, nonatomic) NSString *searchableIndexBundleID; // @synthesize searchableIndexBundleID=_searchableIndexBundleID;
+@property(nonatomic) _Bool enableSpotlightVerification; // @synthesize enableSpotlightVerification=_enableSpotlightVerification;
 @property(nonatomic) _Bool clientStateFetched; // @synthesize clientStateFetched=_clientStateFetched;
 @property(nonatomic) _Bool skipIndexExclusionCheck; // @synthesize skipIndexExclusionCheck=_skipIndexExclusionCheck;
 @property(retain, nonatomic) CSSearchableIndex *csIndex; // @synthesize csIndex=_csIndex;
@@ -101,6 +103,7 @@
 - (void)removeItemsForDomainIdentifier:(id)arg1;
 - (void)removeItemsWithIdentifiers:(id)arg1 reasons:(id)arg2 fromRefresh:(_Bool)arg3;
 - (void)removeItemsWithIdentifiers:(id)arg1;
+- (void)_indexItems:(id)arg1 fromRefresh:(_Bool)arg2 immediately:(_Bool)arg3;
 - (void)indexItems:(id)arg1 fromRefresh:(_Bool)arg2 immediately:(_Bool)arg3;
 - (void)indexItems:(id)arg1 immediately:(_Bool)arg2;
 - (void)indexItems:(id)arg1;

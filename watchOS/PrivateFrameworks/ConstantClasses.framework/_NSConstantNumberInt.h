@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)load;
 - (unsigned short)unsignedShortValue;
 - (unsigned long long)unsignedLongLongValue;
 - (unsigned long)unsignedLongValue;

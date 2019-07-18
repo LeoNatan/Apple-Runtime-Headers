@@ -8,34 +8,40 @@
 
 #import <PassKitUI/PKExplanationViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
+#import <PassKitUI/PKViewControllerPreflightable-Protocol.h>
 
-@class NSString, PKApplyController, PKPaymentProvisioningController;
+@class NSString, PKApplyController, PKDynamicProvisioningPageContent, PKPaymentProvisioningController, PKPaymentSetupProduct, UIImage;
 @protocol PKPaymentSetupViewControllerDelegate, PKSetupFlowControllerProtocol;
 
-@interface PKFeatureOnBoardingViewController : PKExplanationViewController <PKPaymentSetupPresentationProtocol, PKExplanationViewControllerDelegate>
+@interface PKFeatureOnBoardingViewController : PKExplanationViewController <PKPaymentSetupPresentationProtocol, PKExplanationViewControllerDelegate, PKViewControllerPreflightable>
 {
     id <PKSetupFlowControllerProtocol> _parentFlowController;
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
     unsigned int _featureIdentifier;
     PKPaymentProvisioningController *_provisioningController;
-    _Bool _preflightComplete;
     PKApplyController *_applyController;
+    PKPaymentSetupProduct *_paymentSetupProduct;
+    UIImage *_heroImage;
+    PKDynamicProvisioningPageContent *_currentPage;
+    _Bool _isMainFeatureOnboardingPage;
 }
 
 - (void).cxx_destruct;
 - (id)paymentSetupMarker;
+- (void)_handleNotifyRequested;
 - (void)_openTermsAndConditions;
 - (void)_checkSecurityCapabilities:(unsigned int)arg1 nextStep:(CDUnknownBlockType)arg2;
 - (void)_handleApplyFlowWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_handleAccountCredential:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_preflightProvisioningControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)terminateSetupFlow;
+- (void)explanationViewDidSelectBodyButton:(id)arg1;
 - (void)explanationViewControllerDidSelectDone:(id)arg1;
 - (void)explanationViewControllerDidSelectCancel:(id)arg1;
+- (void)explanationViewDidSelectSetupLater:(id)arg1;
 - (void)explanationViewDidSelectContinue:(id)arg1;
-- (void)viewWillLayoutSubviews;
+- (void)preflightWithCompletion:(CDUnknownBlockType)arg1;
 - (void)viewDidLoad;
-- (id)initWithParentFlowController:(id)arg1 setupDelegate:(id)arg2 context:(int)arg3 featureIdentifier:(unsigned int)arg4 provisoningController:(id)arg5;
+- (id)initWithParentFlowController:(id)arg1 setupDelegate:(id)arg2 context:(int)arg3 featureIdentifier:(unsigned int)arg4 provisoningController:(id)arg5 paymentSetupProduct:(id)arg6 currentPage:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

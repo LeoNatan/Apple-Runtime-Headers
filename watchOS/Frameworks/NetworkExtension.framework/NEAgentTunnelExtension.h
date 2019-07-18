@@ -13,8 +13,10 @@
 
 @interface NEAgentTunnelExtension : NEAgentExtension <NEExtensionTunnelProviderHostDelegate, NEVPNPluginDriver>
 {
+    _Bool _cancelCalled;
 }
 
+@property _Bool cancelCalled; // @synthesize cancelCalled=_cancelCalled;
 - (void)sendStatus:(int)arg1 withDisconnectError:(id)arg2;
 - (void)sendExtensionFailedWithError:(id)arg1;
 - (void)handleExtensionStartedWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -80,7 +80,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long pageCount; // @synthesize pageCount=_pageCount;
 @property(retain, nonatomic) PKPrinter *printer; // @synthesize printer=_printer;
 - (void).cxx_destruct;
-- (CDUnknownBlockType)_makePrintDocumentGenerator;
 - (void)_dismissParentControllerUIIfPresent;
 - (void)_dismissMacOSPrintPanelWithoutPrinting;
 - (void)_presentPrintPanelMacOS;

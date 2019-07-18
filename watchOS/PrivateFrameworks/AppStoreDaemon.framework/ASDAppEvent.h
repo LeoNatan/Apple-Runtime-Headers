@@ -13,7 +13,9 @@
 
 @interface ASDAppEvent : NSObject <NSCopying, NSSecureCoding>
 {
+    _Bool _hasBeenPosted;
     _Bool _isBeta;
+    NSString *_accountID;
     NSString *_bundleID;
     NSString *_bundleVersion;
     NSString *_cohort;
@@ -30,17 +32,20 @@
     NSString *_shortVersion;
     NSNumber *_startTime;
     NSNumber *_storefront;
+    NSString *_weekStartDate;
     long long _duration;
     long long _foregroundUsage;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *weekStartDate; // @synthesize weekStartDate=_weekStartDate;
 @property(copy, nonatomic) NSNumber *storefront; // @synthesize storefront=_storefront;
 @property(copy, nonatomic) NSNumber *startTime; // @synthesize startTime=_startTime;
 @property(copy, nonatomic) NSString *shortVersion; // @synthesize shortVersion=_shortVersion;
 @property(copy, nonatomic) NSString *itemName; // @synthesize itemName=_itemName;
 @property(copy, nonatomic) NSNumber *itemID; // @synthesize itemID=_itemID;
 @property(nonatomic) _Bool isBeta; // @synthesize isBeta=_isBeta;
+@property(nonatomic) _Bool hasBeenPosted; // @synthesize hasBeenPosted=_hasBeenPosted;
 @property(copy, nonatomic) NSNumber *evid; // @synthesize evid=_evid;
 @property(nonatomic) int eventType; // @synthesize eventType=_eventType;
 @property(copy, nonatomic) NSNumber *eventTime; // @synthesize eventTime=_eventTime;
@@ -54,6 +59,7 @@
 @property(copy, nonatomic) NSString *cohort; // @synthesize cohort=_cohort;
 @property(copy, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
+@property(copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

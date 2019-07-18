@@ -22,8 +22,10 @@
 + (id)predicateForInvalidDayGroupHighlights;
 + (id)predicateForInvalidDayHighlights;
 + (id)predicateForInvalidHighlightsOfAllKinds;
++ (id)predicateForEmptyHighlightsOfKind:(unsigned short)arg1;
++ (id)_predicateForHighlightsOfKind:(unsigned short)arg1;
 + (id)predicateForAllAssetsInPhotosHighlight:(id)arg1;
-+ (id)allPhotosHighlightsInManagedObjectContext:(id)arg1 predicate:(id)arg2 error:(id *)arg3;
++ (id)allPhotosHighlightsInManagedObjectContext:(id)arg1 predicate:(id)arg2 keyPathsForPrefetching:(id)arg3 error:(id *)arg4;
 + (id)insertNewPhotosHighlightInManagedObjectContext:(id)arg1 error:(id *)arg2;
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 withUUID:(id)arg2 title:(id)arg3;

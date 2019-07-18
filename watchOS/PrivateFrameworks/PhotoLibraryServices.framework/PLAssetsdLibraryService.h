@@ -36,6 +36,7 @@
 - (id)postOpenProgressWithReply:(CDUnknownBlockType)arg1;
 - (void)openPhotoLibraryDatabaseWithReply:(CDUnknownBlockType)arg1;
 - (void)createPhotoLibraryDatabaseWithReply:(CDUnknownBlockType)arg1;
+- (id)newLibraryOpener;
 - (void)getCurrentModelVersionWithReply:(CDUnknownBlockType)arg1;
 - (void)launchAssetsd;
 - (id)initWithLibraryServicesManager:(id)arg1 bundleController:(id)arg2 connectionAuthorization:(id)arg3 assetsdService:(id)arg4;

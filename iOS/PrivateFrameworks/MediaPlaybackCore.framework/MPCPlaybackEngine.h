@@ -13,13 +13,13 @@
 
 @interface MPCPlaybackEngine : NSObject <MPCExplicitContentAuthorizationDelegate>
 {
-    _Bool _shouldConnectToAVPlayer;
     MPCAudioSpectrumAnalyzer *_audioAnalyzer;
     _Bool _pictureInPictureSupported;
     _Bool _videoSupported;
     _Bool _stateRestorationSupported;
     _Bool _scheduledPlaybackStatePreservation;
     _Bool _systemMusicApplication;
+    _Bool _audioAnalyzerEnabled;
     NSString *_playerID;
     id <MPCPlaybackEngineDelegate> _delegate;
     MPCPlaybackIntent *_fallbackPlaybackIntent;
@@ -29,15 +29,19 @@
     _MPCReportingController *_reportingController;
     _MPCPlaybackEngineSessionManager *_sessionManager;
     _MPCLeaseManager *_leaseManager;
+    unsigned long long _options;
     NSString *_audioSessionCategory;
     unsigned long long _audioSessionOptions;
 }
 
 + (_Bool)requiresMainThread;
 + (void)preheatPlayback;
+@property(readonly, nonatomic) MPCAudioSpectrumAnalyzer *audioAnalyzer; // @synthesize audioAnalyzer=_audioAnalyzer;
+@property(nonatomic, getter=isAudioAnalyzerEnabled) _Bool audioAnalyzerEnabled; // @synthesize audioAnalyzerEnabled=_audioAnalyzerEnabled;
 @property(nonatomic) unsigned long long audioSessionOptions; // @synthesize audioSessionOptions=_audioSessionOptions;
 @property(copy, nonatomic) NSString *audioSessionCategory; // @synthesize audioSessionCategory=_audioSessionCategory;
 @property(nonatomic, getter=isSystemMusicApplication) _Bool systemMusicApplication; // @synthesize systemMusicApplication=_systemMusicApplication;
+@property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) _MPCLeaseManager *leaseManager; // @synthesize leaseManager=_leaseManager;
 @property(readonly, nonatomic) _MPCPlaybackEngineSessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(readonly, nonatomic) _MPCReportingController *reportingController; // @synthesize reportingController=_reportingController;
@@ -53,11 +57,12 @@
 @property(readonly, copy, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;
 - (void).cxx_destruct;
 - (void)requestAuthorizationForExplicitItem:(id)arg1 reason:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)_shouldIgnorePlaybackSessionError:(id)arg1;
 - (void)_initializePlaybackStack;
 - (void)schedulePlaybackStatePreservation;
 @property(readonly, nonatomic) UIView *videoView;
-- (void)_playerDidBecomeReady:(id)arg1;
-@property(readonly, nonatomic) MPCAudioSpectrumAnalyzer *audioAnalyzer;
+- (void)_itemInsertedNotification:(id)arg1;
+- (void)_itemAssetLoadedNotification:(id)arg1;
 @property(readonly, nonatomic) MPCPlayerPath *playerPath;
 - (void)reportUserSeekFromTime:(double)arg1 toTime:(double)arg2;
 - (void)removeEngineObserver:(id)arg1;

@@ -15,11 +15,13 @@
 @interface _INPBDeleteTasksIntentResponse : PBCodable <_INPBDeleteTasksIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSArray *_deletedTasks;
 }
 
 + (BOOL)supportsSecureCoding;
 + (Class)deletedTasksType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *deletedTasks; // @synthesize deletedTasks=_deletedTasks;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

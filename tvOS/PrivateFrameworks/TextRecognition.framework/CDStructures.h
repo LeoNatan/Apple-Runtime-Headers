@@ -51,6 +51,30 @@ struct CHNeuralNetwork {
     int *_field17;
 };
 
+struct CRCHNetwork {
+    CDStruct_183601bc *_field1;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _field2;
+    unsigned long long _field3;
+    struct vector<CRCHNetworkNode, std::__1::allocator<CRCHNetworkNode>> _field4;
+    struct set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long>> _field5;
+    struct vector<NetworkEdge, std::__1::allocator<NetworkEdge>> _field6;
+    struct vector<const NetworkEdge *, std::__1::allocator<const NetworkEdge *>> _field7;
+    struct CRCHSymbolMap _field8;
+    _Bool _field9;
+    struct map<unsigned long, std::__1::map<unsigned long, unsigned long, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, unsigned long>>>, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::map<unsigned long, unsigned long, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, unsigned long>>>>>> _field10;
+    struct set<CRCHuint128, std::__1::less<CRCHuint128>, std::__1::allocator<CRCHuint128>> _field11;
+    unsigned int *_field12;
+    unsigned long long _field13;
+};
+
+struct CRCHNetworkNode;
+
+struct CRCHSymbolMap {
+    CDUnknownFunctionPointerType *_field1;
+    struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> _field2;
+    struct map<std::__1::basic_string<char>, unsigned long, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, unsigned long>>> _field3;
+};
+
 struct CRCTCPriorityQueue {
     struct priority_queue<CRCtcCandidate, std::__1::vector<CRCtcCandidate, std::__1::allocator<CRCtcCandidate>>, CRCTCPriorityQueue::QueueComparison> _field1;
     _Bool _field2;
@@ -106,25 +130,7 @@ struct Mat {
 
 struct Matrix<short>;
 
-struct Network {
-    CDStruct_183601bc *_field1;
-    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _field2;
-    unsigned long long _field3;
-    struct vector<NetworkNode, std::__1::allocator<NetworkNode>> _field4;
-    struct set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long>> _field5;
-    struct vector<NetworkEdge, std::__1::allocator<NetworkEdge>> _field6;
-    struct vector<const NetworkEdge *, std::__1::allocator<const NetworkEdge *>> _field7;
-    struct SymbolMap _field8;
-    _Bool _field9;
-    struct map<unsigned long, std::__1::map<unsigned long, unsigned long, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, unsigned long>>>, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::map<unsigned long, unsigned long, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, unsigned long>>>>>> _field10;
-    struct set<uint128, std::__1::less<uint128>, std::__1::allocator<uint128>> _field11;
-    unsigned int *_field12;
-    unsigned long long _field13;
-};
-
 struct NetworkEdge;
-
-struct NetworkNode;
 
 struct Node;
 
@@ -281,12 +287,6 @@ struct SmartPtr {
 };
 
 struct Stroke;
-
-struct SymbolMap {
-    CDUnknownFunctionPointerType *_field1;
-    struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> _field2;
-    struct map<std::__1::basic_string<char>, unsigned long, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, unsigned long>>> _field3;
-};
 
 struct Word;
 
@@ -517,6 +517,18 @@ struct priority_queue<CRCtcCandidate, std::__1::vector<CRCtcCandidate, std::__1:
     struct QueueComparison _field2;
 };
 
+struct set<CRCHuint128, std::__1::less<CRCHuint128>, std::__1::allocator<CRCHuint128>> {
+    struct __tree<CRCHuint128, std::__1::less<CRCHuint128>, std::__1::allocator<CRCHuint128>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<CRCHuint128, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::less<CRCHuint128>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
+};
+
 struct set<int, std::__1::less<int>, std::__1::allocator<int>> {
     struct __tree<int, std::__1::less<int>, std::__1::allocator<int>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
@@ -524,18 +536,6 @@ struct set<int, std::__1::less<int>, std::__1::allocator<int>> {
             struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
         } _field2;
         struct __compressed_pair<unsigned long, std::__1::less<int>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
-struct set<uint128, std::__1::less<uint128>, std::__1::allocator<uint128>> {
-    struct __tree<uint128, std::__1::less<uint128>, std::__1::allocator<uint128>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<uint128, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::less<uint128>> {
             unsigned long long _field1;
         } _field3;
     } _field1;
@@ -587,6 +587,22 @@ struct vector<BinarySearchTree<int>::Node, std::__1::allocator<BinarySearchTree<
 
 struct vector<BreakPoint, std::__1::allocator<BreakPoint>>;
 
+struct vector<CGPoint, std::__1::allocator<CGPoint>> {
+    struct CGPoint *_field1;
+    struct CGPoint *_field2;
+    struct __compressed_pair<CGPoint *, std::__1::allocator<CGPoint>> {
+        struct CGPoint *_field1;
+    } _field3;
+};
+
+struct vector<CRCHNetworkNode, std::__1::allocator<CRCHNetworkNode>> {
+    struct CRCHNetworkNode *_field1;
+    struct CRCHNetworkNode *_field2;
+    struct __compressed_pair<CRCHNetworkNode *, std::__1::allocator<CRCHNetworkNode>> {
+        struct CRCHNetworkNode *_field1;
+    } _field3;
+};
+
 struct vector<CRCtcCandidate, std::__1::allocator<CRCtcCandidate>> {
     struct CRCtcCandidate *_field1;
     struct CRCtcCandidate *_field2;
@@ -624,14 +640,6 @@ struct vector<NetworkEdge, std::__1::allocator<NetworkEdge>> {
     struct NetworkEdge *_field2;
     struct __compressed_pair<NetworkEdge *, std::__1::allocator<NetworkEdge>> {
         struct NetworkEdge *_field1;
-    } _field3;
-};
-
-struct vector<NetworkNode, std::__1::allocator<NetworkNode>> {
-    struct NetworkNode *_field1;
-    struct NetworkNode *_field2;
-    struct __compressed_pair<NetworkNode *, std::__1::allocator<NetworkNode>> {
-        struct NetworkNode *_field1;
     } _field3;
 };
 
@@ -849,6 +857,14 @@ typedef struct valarray<float> {
     float *_field1;
     float *_field2;
 } valarray_6968ec29;
+
+typedef struct vector<CGPoint, std::__1::allocator<CGPoint>> {
+    struct CGPoint *_field1;
+    struct CGPoint *_field2;
+    struct __compressed_pair<CGPoint *, std::__1::allocator<CGPoint>> {
+        struct CGPoint *_field1;
+    } _field3;
+} vector_e1abc270;
 
 typedef struct vector<CRCtcCandidate, std::__1::allocator<CRCtcCandidate>> {
     struct CRCtcCandidate *_field1;

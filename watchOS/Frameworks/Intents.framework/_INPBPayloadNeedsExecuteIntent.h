@@ -15,10 +15,12 @@
 @interface _INPBPayloadNeedsExecuteIntent : PBCodable <_INPBPayloadNeedsExecuteIntent, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     _INPBIntentExecutionRequest *_intentExecution;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBIntentExecutionRequest *intentExecution; // @synthesize intentExecution=_intentExecution;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

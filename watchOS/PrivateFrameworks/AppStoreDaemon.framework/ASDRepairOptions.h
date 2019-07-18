@@ -13,6 +13,7 @@
 
 @interface ASDRepairOptions : NSObject <NSCopying, NSSecureCoding>
 {
+    _Bool _forceRevoke;
     _Bool _forceUpsell;
     NSString *_bundleID;
     NSNumber *_accountDSID;
@@ -24,6 +25,7 @@
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool forceUpsell; // @synthesize forceUpsell=_forceUpsell;
+@property(nonatomic) _Bool forceRevoke; // @synthesize forceRevoke=_forceRevoke;
 @property(copy, nonatomic) NSDictionary *relaunchOptions; // @synthesize relaunchOptions=_relaunchOptions;
 @property(nonatomic) long fairplayStatus; // @synthesize fairplayStatus=_fairplayStatus;
 @property(nonatomic) unsigned int exitReason; // @synthesize exitReason=_exitReason;

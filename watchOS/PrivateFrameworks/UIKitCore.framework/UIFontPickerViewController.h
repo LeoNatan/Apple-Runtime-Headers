@@ -41,6 +41,8 @@
 - (id)initWithSelectedFont:(id)arg1 inMode:(unsigned int)arg2;
 - (id)initWithMode:(unsigned int)arg1;
 - (id)initWithConfiguration:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

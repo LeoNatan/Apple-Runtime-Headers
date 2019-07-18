@@ -47,7 +47,6 @@
 - (unsigned long long)minimumTextureBufferAlignmentForPixelFormat:(unsigned long long)arg1;
 - (unsigned long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (BOOL)supportsTextureSampleCount:(unsigned long long)arg1;
-- (BOOL)supportsVersion:(long long)arg1;
 - (BOOL)supportsFamily:(long long)arg1;
 - (BOOL)supportsFeatureSet:(unsigned long long)arg1;
 - (id <MTLFence>)newFence;

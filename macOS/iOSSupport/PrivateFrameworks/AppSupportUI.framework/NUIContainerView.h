@@ -48,6 +48,8 @@
 + (void)initialize;
 + (BOOL)isDebugBoundingBoxesEnabled;
 + (BOOL)requiresConstraintBasedLayout;
++ (void)setEnableAPIMisuseAssertions:(BOOL)arg1;
++ (BOOL)enableAPIMisuseAssertions;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)description;

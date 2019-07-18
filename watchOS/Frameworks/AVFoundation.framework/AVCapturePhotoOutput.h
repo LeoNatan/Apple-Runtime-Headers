@@ -27,7 +27,7 @@
 @property(nonatomic) int maxPhotoQualityPrioritization; // @synthesize maxPhotoQualityPrioritization=_maxPhotoQualityPrioritization;
 - (void)_handleDidFinishCaptureNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (id)_avErrorUserInfoDictionaryForError:(long)arg1 photoRequest:(id)arg2 payload:(id)arg3 isOriginalMovie:(_Bool)arg4;
-- (void)setFigCaptureSessionSectionProperty:(struct __CFString *)arg1 withHostTime:(CDStruct_1b6d18a9)arg2 settingStateVaribleToNoOnFailure:(_Bool *)arg3;
+- (void)setFigCaptureSessionSectionProperty:(struct __CFString *)arg1 withHostTime:(CDStruct_1b6d18a9)arg2 settingStateVariableToNoOnFailure:(_Bool *)arg3;
 - (void)_handleDidFinishRecordingVideoNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleDidFinishRecordingIrisMovieNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleDidRecordIrisMovieNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
@@ -61,8 +61,6 @@
 - (void)_updateMaxBracketedCapturePhotoCountForSourceDevice:(id)arg1;
 - (void)_updateSupportedFlashModesForSourceDevice:(id)arg1;
 - (void)_updateSupportedHDRModesForSourceDevice:(id)arg1;
-- (void)_updateVirtualDeviceConstituentPhotoDeliverySupportedForSourceDevice:(id)arg1;
-- (void)_updateVirtualDeviceFusionSupportedForSourceDevice:(id)arg1;
 - (void)_updateStillImageStabilizationSupportedForSourceDevice:(id)arg1;
 - (void)_updateAvailableRawPhotoFileTypesForSourceDevice:(id)arg1;
 - (_Bool)_HEVCAndHEIFAreAvailableForSourceDevice:(id)arg1;

@@ -9,18 +9,18 @@
 #import <SpringBoardHome/PTSettingsKeyObserver-Protocol.h>
 #import <SpringBoardHome/SBIconAccessoryView-Protocol.h>
 
-@class NSString, SBDarkeningImageView, SBFParallaxSettings, SBIconAccessoryImage;
+@class NSString, SBDarkeningImageView, SBFParallaxSettings, SBIconAccessoryImage, UIImageView;
 @protocol SBIconListLayout;
 
 @interface SBIconBadgeView : UIView <PTSettingsKeyObserver, SBIconAccessoryView>
 {
     NSString *_text;
-    SBDarkeningImageView *_incomingTextView;
+    UIImageView *_incomingTextView;
     _Bool _displayingAccessory;
     SBIconAccessoryImage *_backgroundImage;
     SBDarkeningImageView *_backgroundView;
     SBIconAccessoryImage *_textImage;
-    SBDarkeningImageView *_textView;
+    UIImageView *_textView;
     SBFParallaxSettings *_parallaxSettings;
     id <SBIconListLayout> _listLayout;
 }

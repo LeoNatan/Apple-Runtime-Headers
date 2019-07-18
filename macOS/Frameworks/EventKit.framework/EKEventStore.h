@@ -121,6 +121,8 @@
 - (BOOL)saveEvent:(id)arg1 span:(long long)arg2 commit:(BOOL)arg3 error:(id *)arg4;
 - (BOOL)saveEvent:(id)arg1 span:(long long)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) NSArray *inboxRepliedSectionItems;
+@property(readonly, nonatomic) BOOL inboxRepliedSectionHasContent;
+- (BOOL)eventsExistWithGeneralLookupPredicate:(id)arg1;
 - (id)allEvents;
 - (BOOL)hasImmediatelyEligibleTravelEvents;
 - (id)_predicateForEventsWithStructuredLocationsInCalendars:(id)arg1;

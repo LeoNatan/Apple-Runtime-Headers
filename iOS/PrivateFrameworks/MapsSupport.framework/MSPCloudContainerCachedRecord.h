@@ -15,9 +15,11 @@ __attribute__((visibility("hidden")))
 {
     CKRecord *_record;
     NSNumber *_contentsHash;
+    NSNumber *_positionHash;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSNumber *positionHash; // @synthesize positionHash=_positionHash;
 @property(retain, nonatomic) NSNumber *contentsHash; // @synthesize contentsHash=_contentsHash;
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
 - (void).cxx_destruct;

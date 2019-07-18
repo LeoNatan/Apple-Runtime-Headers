@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UITextRange *base; // @synthesize base=_base;
 - (void).cxx_destruct;
 - (void)smartExtendRangedSelection:(int)arg1 downstream:(BOOL)arg2;
+- (void)setGranularRangedSelectionWithExtentPoint:(struct CGPoint)arg1;
 - (void)setRangedSelectionWithExtentPoint:(struct CGPoint)arg1;
 - (void)setSelectionWithFirstPoint:(struct CGPoint)arg1 secondPoint:(struct CGPoint)arg2;
 - (BOOL)setRangedSelectionExtentPoint:(struct CGPoint)arg1 baseIsStart:(BOOL)arg2;

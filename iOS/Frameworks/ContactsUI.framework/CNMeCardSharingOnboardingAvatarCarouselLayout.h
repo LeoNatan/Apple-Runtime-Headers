@@ -11,6 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)indexPathForNearestItemToCenterWithOffset:(struct CGPoint)arg1 collectionView:(id)arg2 layout:(id)arg3;
+- (id)indexesForElementsInRect:(struct CGRect)arg1 visibleBounds:(struct CGRect)arg2 numberOfItems:(long long)arg3;
+- (struct CGRect)frameForElementAtIndex:(long long)arg1 visibleBounds:(struct CGRect)arg2;
 - (double)pageOffsetForIndex:(long long)arg1;
 - (long long)selectedPageIndex;
 - (double)pagingOrigin;

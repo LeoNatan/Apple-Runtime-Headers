@@ -13,7 +13,7 @@
 #import <CoverSheet/SPUISearchBarDelegate-Protocol.h>
 #import <CoverSheet/WGWidgetGroupViewControllerDelegate-Protocol.h>
 
-@class CSComponent, CSLayoutStrategy, CSPageViewController, CSTodayPageView, NSSet, NSString, SBViewControllerTransitionContext, UIView, WGWidgetGroupViewController, _UILegibilitySettings;
+@class CSComponent, CSLayoutStrategy, CSPaddingHeaderViewController, CSPageViewController, CSTodayPageView, NSSet, NSString, SBViewControllerTransitionContext, UIView, WGWidgetGroupViewController, _UILegibilitySettings;
 @protocol CSPersistentContentLayoutProviding, CSSpotlightPresenting, CSTodayViewControllerDelegate, CSWidgetGroupViewControllerProviding, SBFAuthenticationStatusProvider, SBFLegibilitySettingsProvider, SBFLegibilitySettingsProviderDelegate;
 
 @interface CSTodayViewController : CSCoverSheetViewControllerBase <WGWidgetGroupViewControllerDelegate, CSStatusBarBackgroundIntersecting, SBFLegibilitySettingsProviderDelegate, CSDateViewScrolling, SPUISearchBarDelegate, SBFLegibilitySettingsProvider>
@@ -41,11 +41,13 @@
     SBViewControllerTransitionContext *_transitionContext;
     id <SBFAuthenticationStatusProvider> _authenticationStatusProvider;
     id <CSWidgetGroupViewControllerProviding> _widgetGroupViewControllerProvider;
+    CSPaddingHeaderViewController *_timePaddingViewController;
 }
 
 + (double)verticalSpacingBetweenWidgets;
 + (_Bool)_isPortrait;
 + (Class)viewClass;
+@property(nonatomic) __weak CSPaddingHeaderViewController *timePaddingViewController; // @synthesize timePaddingViewController=_timePaddingViewController;
 @property(retain, nonatomic) id <CSWidgetGroupViewControllerProviding> widgetGroupViewControllerProvider; // @synthesize widgetGroupViewControllerProvider=_widgetGroupViewControllerProvider;
 @property(retain, nonatomic) id <SBFAuthenticationStatusProvider> authenticationStatusProvider; // @synthesize authenticationStatusProvider=_authenticationStatusProvider;
 @property(retain, nonatomic) SBViewControllerTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
@@ -56,6 +58,7 @@
 @property(retain, nonatomic) CSLayoutStrategy *layoutStrategy; // @synthesize layoutStrategy=_layoutStrategy;
 @property(nonatomic) __weak id <SBFLegibilitySettingsProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (struct CGSize)_timePaddingSize;
 - (_Bool)_allowsDateViewScroll;
 - (void)_widgetEditViewDidDisappearImplementation;
 - (void)_widgetEditViewDidDisappear:(id)arg1;
@@ -106,7 +109,6 @@
 - (void)aggregateBehavior:(id)arg1;
 - (void)aggregateAppearance:(id)arg1;
 @property(readonly, nonatomic) _UILegibilitySettings *legibilitySettings;
-- (_Bool)isWidgetExtensionWithIdentifierVisible:(id)arg1;
 - (void)cleanupAfterSpotlightDismissal;
 - (void)resetForSpotlightDismissalAnimated:(_Bool)arg1;
 - (void)updateAccessoryLegibility;

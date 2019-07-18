@@ -24,6 +24,7 @@
 @property(retain, nonatomic) NSMutableArray *tltLeafsArray; // @dynamic tltLeafsArray;
 @property(readonly, nonatomic) unsigned long long tltLeafsArray_Count; // @dynamic tltLeafsArray_Count;
 @property(copy, nonatomic) NSData *vrfKey; // @dynamic vrfKey;
+@property(copy, nonatomic) NSData *vrfPublicKey; // @dynamic vrfPublicKey;
 @property(retain, nonatomic) Signature *vrfSignature; // @dynamic vrfSignature;
 
 @end

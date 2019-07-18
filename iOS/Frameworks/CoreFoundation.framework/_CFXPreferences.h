@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)setAccessRestricted:(_Bool)arg1 forAppIdentifier:(struct __CFString *)arg2;
 - (void)setFileProtectionClass:(int)arg1 identifier:(struct __CFString *)arg2 user:(struct __CFString *)arg3 host:(struct __CFString *)arg4 container:(struct __CFString *)arg5;
 - (void)setBackupDisabled:(_Bool)arg1 identifier:(struct __CFString *)arg2 user:(struct __CFString *)arg3 host:(struct __CFString *)arg4 container:(struct __CFString *)arg5;
+- (void)simulateTimerSynchronizeForTestingForUser:(struct __CFString *)arg1;
 - (void)flushCachesForAppIdentifier:(struct __CFString *)arg1 user:(struct __CFString *)arg2;
 - (void)notifyOfImpendingDeletionOfUser:(struct __CFString *)arg1;
 - (void)setDaemonCacheEnabled:(_Bool)arg1 identifier:(struct __CFString *)arg2 user:(struct __CFString *)arg3 host:(struct __CFString *)arg4 container:(struct __CFString *)arg5;

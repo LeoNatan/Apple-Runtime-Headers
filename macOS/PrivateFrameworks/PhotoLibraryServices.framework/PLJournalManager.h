@@ -21,6 +21,7 @@
 }
 
 + (id)entriesByPayloadClassIDFromHistoryToken:(id)arg1 currentHistoryToken:(id *)arg2 withManagedObjectContext:(id)arg3 payloadIDsToSkipInserts:(id)arg4;
++ (BOOL)existingJournalsCompatibleForRebuild:(id)arg1 error:(id *)arg2;
 + (BOOL)assetJournalExists:(id)arg1;
 + (Class)payloadClassForAdditionalEntityName:(id)arg1;
 + (id)payloadClasses;

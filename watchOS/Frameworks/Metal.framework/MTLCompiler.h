@@ -43,6 +43,7 @@
 - (void)dealloc;
 - (CDStruct_c0454aff)pipelineCacheStats;
 - (CDStruct_c0454aff)libraryCacheStats;
+- (_Bool)copyShaderCacheToPath:(id)arg1;
 - (void *)getShaderCacheKeys;
 - (void)unloadShaderCaches;
 - (id)initWithTargetData:(id)arg1 cacheUUID:(CDStruct_41a22ec7 *)arg2 pluginPath:(id)arg3 device:(id)arg4 compilerFlags:(unsigned int)arg5;

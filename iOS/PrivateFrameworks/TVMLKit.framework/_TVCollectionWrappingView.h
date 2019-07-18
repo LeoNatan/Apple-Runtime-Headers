@@ -52,6 +52,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
 - (void)_updateSubviews;
+- (void)_updateGradientLayer;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)_currentFooterView;
 - (id)_currentHeaderView;
 - (double)_showcaseContentScaleForExpectedWidth:(double)arg1;

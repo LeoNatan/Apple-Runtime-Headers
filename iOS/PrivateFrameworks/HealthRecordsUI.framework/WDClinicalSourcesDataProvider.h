@@ -15,7 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (CDUnknownBlockType)_objectCompletionOnMainQueue:(CDUnknownBlockType)arg1 cancellationToken:(id)arg2;
-@property(readonly, nonatomic) HKHealthRecordsStore *healthRecordsStore; // @synthesize healthRecordsStore=_healthRecordsStore;
++ (CDUnknownBlockType)_logoCompletionOnMainQueue:(CDUnknownBlockType)arg1 cancellationToken:(id)arg2;
+@property(readonly, nonatomic) HKHealthRecordsStore *healthRecordsStore;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) HKHealthStore *healthStore;
 - (id)_orderAccountsForDisplay:(id)arg1;
@@ -39,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (id)accountsForDisplayForGateways:(id)arg1;
 - (id)_accountsForGateways:(id)arg1;
 - (id)fetchAccessedAccountsForDisplayWithCompletion:(CDUnknownBlockType)arg1;
+- (id)fetchAccountsForDisplayWithCompletion:(CDUnknownBlockType)arg1;
 - (id)accountsForDisplay;
 - (_Bool)anyRegisteredAccounts;
 - (void)_fetchAccountsForDisplayWithCompletion:(CDUnknownBlockType)arg1;

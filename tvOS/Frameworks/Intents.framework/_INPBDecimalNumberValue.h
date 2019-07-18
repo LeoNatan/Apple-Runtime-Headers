@@ -20,12 +20,14 @@
         unsigned int mantissa:1;
     } _has;
     _Bool _isNegative;
+    _Bool __encodeLegacyGloryData;
     int _exponent;
     unsigned long long _mantissa;
     _INPBValueMetadata *_valueMetadata;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(nonatomic) unsigned long long mantissa; // @synthesize mantissa=_mantissa;
 @property(nonatomic) _Bool isNegative; // @synthesize isNegative=_isNegative;

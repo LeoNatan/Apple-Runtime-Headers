@@ -4,12 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSNumber, NSString;
+#import <TextInputCore/NSObject-Protocol.h>
 
-@protocol TIUserModelValuesProtocol
+@class NSArray, NSNumber, NSString;
+@protocol TIUserModeling;
+
+@protocol TIUserModelValuesProtocol <NSObject>
 - (NSString *)stringValue:(NSString *)arg1;
 - (NSArray *)counterValueWithWordLength:(NSString *)arg1;
 - (NSNumber *)counterValue:(NSString *)arg1;
-- (NSString *)featureUsage:(NSString *)arg1;
+- (NSString *)featureUsage:(NSString *)arg1 userModel:(id <TIUserModeling>)arg2;
 @end
 

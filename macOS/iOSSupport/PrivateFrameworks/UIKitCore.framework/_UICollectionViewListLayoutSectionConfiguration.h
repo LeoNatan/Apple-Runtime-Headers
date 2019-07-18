@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitCore/UITableConstantsTableProviding-Protocol.h>
+@class NSArray, UICollectionView;
+@protocol NSCollectionLayoutEnvironment_Private, UITableConstants;
 
-@class NSArray, NSString, UICollectionView, UIColor, UIScrollView;
-@protocol UITableConstants;
-
-@interface _UICollectionViewListLayoutSectionConfiguration : NSObject <UITableConstantsTableProviding>
+@interface _UICollectionViewListLayoutSectionConfiguration : NSObject
 {
     long long _appearanceStyle;
     double _rowHeight;
@@ -22,11 +20,13 @@
     double _estimatedSectionFooterHeight;
     long long _separatorStyle;
     UICollectionView *_collectionView;
+    id <NSCollectionLayoutEnvironment_Private> _layoutEnvironment;
     NSArray *_itemHeights;
     struct NSDirectionalEdgeInsets _separatorInset;
 }
 
 @property(copy, nonatomic, getter=_itemHeights, setter=_setItemHeights:) NSArray *itemHeights; // @synthesize itemHeights=_itemHeights;
+@property(readonly, nonatomic, getter=_layoutEnvironment) id <NSCollectionLayoutEnvironment_Private> layoutEnvironment; // @synthesize layoutEnvironment=_layoutEnvironment;
 @property(readonly, nonatomic, getter=_collectionView) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) struct NSDirectionalEdgeInsets separatorInset; // @synthesize separatorInset=_separatorInset;
 @property(nonatomic) long long separatorStyle; // @synthesize separatorStyle=_separatorStyle;
@@ -38,12 +38,9 @@
 @property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
 @property(nonatomic) long long appearanceStyle; // @synthesize appearanceStyle=_appearanceStyle;
 - (void).cxx_destruct;
-@property(readonly, nonatomic, getter=_multiselectCheckmarkColor) UIColor *multiselectCheckmarkColor;
-@property(readonly, nonatomic, getter=_accessoryBaseColor) UIColor *accessoryBaseColor;
-@property(readonly, nonatomic, getter=_sectionContentInsetFollowsLayoutMargins) BOOL sectionContentInsetFollowsLayoutMargins;
-@property(readonly, nonatomic, getter=_tableStyle) long long tableStyle;
-@property(readonly, nonatomic, getter=_scrollView) UIScrollView *scrollView;
 @property(readonly, nonatomic, getter=_constants) id <UITableConstants> constants;
+- (struct NSDirectionalEdgeInsets)_defaultDirectionalLayoutMargins;
+- (struct UIEdgeInsets)_defaultLayoutMargins;
 - (double)_defaultSectionFooterHeight;
 - (double)_defaultSectionHeaderHeight;
 - (double)_defaultCellHeight;
@@ -56,14 +53,9 @@
 - (BOOL)_shouldPinSupplementaries;
 - (struct NSDirectionalEdgeInsets)_sectionInsetsForAppearanceStyle;
 - (void)_addSupplementaryItemsToLayout:(id)arg1;
-- (id)_generateLayoutGroup;
+- (id)_generateLayoutGroup:(id)arg1;
 - (id)initWithCollectionView:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)init;
 
 @end
 

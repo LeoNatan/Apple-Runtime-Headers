@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<WKKeyboardScrollViewAnimator> _keyboardScrollingAnimator;
 }
 
++ (_Bool)web_requiresCustomSnapshotting;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)dataDetectionContextForActionSheetAssistant:(id)arg1;
@@ -44,7 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)actionSheetAssistant:(id)arg1 shareElementWithURL:(id)arg2 rect:(struct CGRect)arg3;
 - (void)actionSheetAssistant:(id)arg1 openElementAtLocation:(struct CGPoint)arg2;
 - (void)actionSheetAssistant:(id)arg1 performAction:(int)arg2;
-- (Optional_ae404958)positionInformationForActionSheetAssistant:(id)arg1;
+- (Optional_48d42d68)positionInformationForActionSheetAssistant:(id)arg1;
 - (void)pdfHostViewControllerExtensionProcessDidCrash:(id)arg1;
 - (void)pdfHostViewController:(id)arg1 didLongPressPageIndex:(long long)arg2 atLocation:(struct CGPoint)arg3 withAnnotationRect:(struct CGRect)arg4;
 - (void)pdfHostViewController:(id)arg1 didLongPressURL:(id)arg2 atLocation:(struct CGPoint)arg3 withAnnotationRect:(struct CGRect)arg4;
@@ -59,6 +60,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool web_isBackground;
 @property(readonly, nonatomic) NSString *web_suggestedFilename;
 @property(readonly, nonatomic) NSData *web_dataRepresentation;
+- (void)web_snapshotRectInContentViewCoordinates:(struct CGRect)arg1 snapshotWidth:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)web_beginAnimatedResizeWithUpdates:(CDUnknownBlockType)arg1;
 - (void)web_scrollViewDidZoom:(id)arg1;
 - (void)web_scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;

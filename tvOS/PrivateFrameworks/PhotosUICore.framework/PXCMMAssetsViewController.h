@@ -20,7 +20,7 @@
 #import <PhotosUICore/PXSwipeSelectionManagerDelegate-Protocol.h>
 #import <PhotosUICore/PXTileSource-Protocol.h>
 
-@class NSArray, NSMutableSet, NSSet, NSString, PXAssetReference, PXBasicTileAnimator, PXCMMBannerTileController, PXCMMFooterViewModel, PXCMMProgressBannerView, PXCMMSendBackBannerView, PXCMMSendBackSuggestionSource, PXCMMSpec, PXCMMSpecManager, PXContextualNotification, PXLayoutGenerator, PXMomentShareStatusPresentation, PXOneUpPresentation, PXPhotosGlobalFooterView, PXSectionedLayoutEngine, PXSwipeSelectionManager, PXTilingController, PXUIAssetsScene, PXUIScrollViewController, PXUITapGestureRecognizer, PXUpdater;
+@class NSArray, NSMutableSet, NSSet, NSString, PXAssetReference, PXBasicTileAnimator, PXCMMBannerTileController, PXCMMFooterViewModel, PXCMMProgressBannerView, PXCMMSendBackBannerView, PXCMMSendBackSuggestionSource, PXCMMSpec, PXCMMSpecManager, PXContextualNotification, PXLayoutGenerator, PXMomentShareStatusPresentation, PXOneUpPresentation, PXPhotosGlobalFooterView, PXSectionedLayoutEngine, PXSwipeSelectionManager, PXTilingController, PXUIAssetsScene, PXUIScrollViewController, PXUITapGestureRecognizer, PXUpdater, UILongPressGestureRecognizer;
 @protocol PXCMMAssetsViewControllerDelegate;
 
 @interface PXCMMAssetsViewController : PXCMMComponentViewController <PXAssetsSceneDelegate, PXTileSource, PXCMMEngineDrivenLayoutDelegate, PXSwipeSelectionManagerDelegate, PXChangeObserver, PXOneUpPresentationDelegate, PXCMMBannerTileControllerDelegate, PXScrollViewControllerObserver, PXPhotosGlobalFooterViewDelegate, PXCMMFooterViewModelActionDelegate, PXContextualNotificationDelegate, PXActionPerformerDelegate, PXCMMProgressBannerViewLayoutDelegate>
@@ -38,6 +38,7 @@
     PXUITapGestureRecognizer *_tapSelectionGesture;
     PXSwipeSelectionManager *_swipeSelectionManager;
     PXUITapGestureRecognizer *_layoutTransitionGesture;
+    UILongPressGestureRecognizer *_longPressGesture;
     PXAssetReference *_navigatedAssetReference;
     PXCMMSpecManager *_specManager;
     PXCMMSpec *_spec;
@@ -156,6 +157,7 @@
 - (struct PXSimpleIndexPath)_assetIndexPathAtLocation:(struct CGPoint)arg1 padding:(struct UIEdgeInsets)arg2;
 - (id)_assetReferenceAtPoint:(struct CGPoint)arg1 padding:(struct UIEdgeInsets)arg2;
 - (void)_toggleAssetSelectionAtIndexPath:(struct PXSimpleIndexPath)arg1;
+- (void)_handleLongPress:(id)arg1;
 - (void)_handleTap:(id)arg1;
 - (void)_transitionLayoutGesture:(id)arg1;
 - (void)_updateGestures;
@@ -191,6 +193,7 @@
 - (void)_performInitialSelectionIfNeeded;
 - (void)_updateSelectionEnabled;
 - (void)_updateAssetsScene;
+- (struct CGSize)_maximumThumbnailSize;
 - (id)initWithSession:(id)arg1;
 
 // Remaining properties

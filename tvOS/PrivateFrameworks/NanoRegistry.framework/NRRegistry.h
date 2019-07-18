@@ -27,6 +27,7 @@
 
 + (int)registerNotifyTokenWithName:(id)arg1 withQueue:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 + (unsigned long long)readNotifyToken:(int)arg1;
++ (void)fixSecurePropertiesWithCollection:(id)arg1 secureProperties:(id)arg2 insecurePropertyNames:(id)arg3;
 + (id)getReferencedSecureProperties:(id)arg1 fromDiff:(id)arg2;
 + (id)getReferencedSecurePropertyIDsFromDiff:(id)arg1;
 + (id)_nextToken;

@@ -8,9 +8,6 @@
 
 @interface NSDictionary (PocketAdditions)
 + (id)pkt_dictionaryByParsingURLEncodedFormString:(id)arg1;
-+ (id)mco_dictionaryWithMCHashMap:(struct HashMap *)arg1;
-+ (id)mco_objectWithMCObject:(struct Object *)arg1;
 - (id)pkt_URLEncodedFormString;
-- (struct HashMap *)mco_mcHashMap;
 @end
 

@@ -23,6 +23,8 @@
 - (void).cxx_destruct;
 - (void)cancelOutstandingRequestsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)checkRequestForAdditionalTimeWithResponseHandler:(CDUnknownBlockType)arg1;
+- (void)_approveExceptionForRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)approveOneMoreMinuteWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)approveAdditionalTime:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestAdditionalTime:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dealloc;

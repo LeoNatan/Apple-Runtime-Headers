@@ -18,6 +18,7 @@
     _Bool _isInternal;
     _Bool _searchInternal;
     _Bool _quotaDisabled;
+    _Bool _isPrivate;
     NSObject<MDIndexer> *_indexer;
     NSObject<OS_xpc_object> *_clientConnection;
     NSObject<OS_dispatch_queue> *_clientQueue;
@@ -27,6 +28,7 @@
     NSString *_protectionClass;
 }
 
+@property(nonatomic) _Bool isPrivate; // @synthesize isPrivate=_isPrivate;
 @property(nonatomic) _Bool quotaDisabled; // @synthesize quotaDisabled=_quotaDisabled;
 @property(nonatomic) _Bool searchInternal; // @synthesize searchInternal=_searchInternal;
 @property(nonatomic) _Bool isInternal; // @synthesize isInternal=_isInternal;

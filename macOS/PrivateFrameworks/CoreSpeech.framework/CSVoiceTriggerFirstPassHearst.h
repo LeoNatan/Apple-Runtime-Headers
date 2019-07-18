@@ -9,7 +9,7 @@
 #import <CoreSpeech/CSActivationEventNotifierDelegate-Protocol.h>
 #import <CoreSpeech/CSSiriClientBehaviorMonitorDelegate-Protocol.h>
 
-@class CSAsset, NSMutableDictionary, NSString;
+@class CSAsset, CSAudioProvider, CSAudioStreamHolding, NSMutableDictionary, NSString;
 @protocol CSVoiceTriggerDelegate, OS_dispatch_queue;
 
 @interface CSVoiceTriggerFirstPassHearst : NSObject <CSActivationEventNotifierDelegate, CSSiriClientBehaviorMonitorDelegate>
@@ -21,8 +21,12 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_hearstSecondPassRequests;
     CSAsset *_currentAsset;
+    CSAudioStreamHolding *_triggeredAudioStreamHolding;
+    CSAudioProvider *_triggeredAudioProvider;
 }
 
+@property(retain, nonatomic) CSAudioProvider *triggeredAudioProvider; // @synthesize triggeredAudioProvider=_triggeredAudioProvider;
+@property(retain, nonatomic) CSAudioStreamHolding *triggeredAudioStreamHolding; // @synthesize triggeredAudioStreamHolding=_triggeredAudioStreamHolding;
 @property(nonatomic) float minimumPhraseLengthForVADGating; // @synthesize minimumPhraseLengthForVADGating=_minimumPhraseLengthForVADGating;
 @property(nonatomic) float remoteMicVADMyriadThreshold; // @synthesize remoteMicVADMyriadThreshold=_remoteMicVADMyriadThreshold;
 @property(nonatomic) float remoteMicVADThreshold; // @synthesize remoteMicVADThreshold=_remoteMicVADThreshold;

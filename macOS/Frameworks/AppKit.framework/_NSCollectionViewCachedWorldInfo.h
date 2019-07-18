@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)description;
 - (void)replaceSectionInfos:(id)arg1;
-- (void)getFlattenedSectionStartIndexes:(long long *)arg1 maxSections:(unsigned long long)arg2;
 - (id)getFlattenedRepresentedObjectList;
 - (BOOL)fetchAllNeededRepresentedObjectsFromObjectBasedDataSource:(id)arg1 forCollectionView:(id)arg2;
 - (void)_invalidateEverything;

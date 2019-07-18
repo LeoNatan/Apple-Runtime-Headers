@@ -28,9 +28,11 @@
     NSDictionary *_fakeEntitlements;
     unsigned long long _mmcsEncryptionSupport;
     NSString *_containerEncryptionServiceName;
+    NSString *_personaIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) NSString *personaIdentifier; // @synthesize personaIdentifier=_personaIdentifier;
 @property(nonatomic) BOOL masqueradeAsThirdPartyApp; // @synthesize masqueradeAsThirdPartyApp=_masqueradeAsThirdPartyApp;
 @property(nonatomic) unsigned int clientSDKVersion; // @synthesize clientSDKVersion=_clientSDKVersion;
 @property(nonatomic) BOOL forceEnableReadOnlyManatee; // @synthesize forceEnableReadOnlyManatee=_forceEnableReadOnlyManatee;

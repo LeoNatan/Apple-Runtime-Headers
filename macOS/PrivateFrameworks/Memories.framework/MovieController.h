@@ -58,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (void)setProjectOnComposition;
 - (void)updateForProjectTimeInSeconds:(double)arg1 asynchronous:(BOOL)arg2 allowUnloading:(BOOL)arg3;
 - (void)dealloc;
+- (void)resetSizeToDefault;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

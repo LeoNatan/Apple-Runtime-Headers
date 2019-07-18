@@ -8,15 +8,14 @@
 
 #import <UIKitCore/UIKBEmojiHitTestResponder-Protocol.h>
 #import <UIKitCore/UIKBResizingKeyplaneCoordinatorCoordinatorDelegate-Protocol.h>
-#import <UIKitCore/UIKeyboardFloatingTransitionControllerDelegate-Protocol.h>
 #import <UIKitCore/UIKeyboardHandBiasTransitionCoordinatorDelegate-Protocol.h>
 #import <UIKitCore/UIKeyboardPinchGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/UIKeyboardTypingStyleEstimatorDelegate-Protocol.h>
 
-@class CADisplayLink, NSDate, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSString, NSTimer, UIButton, UIDelayedAction, UIGestureKeyboardIntroduction, UIImageView, UIKBBackgroundView, UIKBKeyViewAnimator, UIKBKeyplaneView, UIKBRenderConfig, UIKBResizingKeyplaneCoordinator, UIKBTree, UIKeyboardEmojiKeyDisplayController, UIKeyboardFloatingTransitionController, UIKeyboardHandBiasTransitionCoordinator, UIKeyboardPinchGestureRecognizer, UIKeyboardSplitTransitionView, UISelectionFeedbackGenerator, UISwipeGestureRecognizer, UIView, _UIKeyboardTypingSpeedLogger;
+@class CADisplayLink, NSDate, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSString, NSTimer, UIButton, UIDelayedAction, UIGestureKeyboardIntroduction, UIImageView, UIKBBackgroundView, UIKBKeyViewAnimator, UIKBKeyplaneView, UIKBRenderConfig, UIKBResizingKeyplaneCoordinator, UIKBTree, UIKeyboardEmojiKeyDisplayController, UIKeyboardHandBiasTransitionCoordinator, UIKeyboardPinchGestureRecognizer, UIKeyboardSplitTransitionView, UISelectionFeedbackGenerator, UISwipeGestureRecognizer, UIView, _UIKeyboardTypingSpeedLogger;
 
 __attribute__((visibility("hidden")))
-@interface UIKeyboardLayoutStar : UIKeyboardLayout <UIKBEmojiHitTestResponder, UIKeyboardHandBiasTransitionCoordinatorDelegate, UIKBResizingKeyplaneCoordinatorCoordinatorDelegate, UIKeyboardPinchGestureRecognizerDelegate, UIKeyboardTypingStyleEstimatorDelegate, UIKeyboardFloatingTransitionControllerDelegate>
+@interface UIKeyboardLayoutStar : UIKeyboardLayout <UIKBEmojiHitTestResponder, UIKeyboardHandBiasTransitionCoordinatorDelegate, UIKBResizingKeyplaneCoordinatorCoordinatorDelegate, UIKeyboardPinchGestureRecognizerDelegate, UIKeyboardTypingStyleEstimatorDelegate>
 {
     UIKBTree *_keyboard;
     UIKBTree *_keyplane;
@@ -116,6 +115,7 @@ __attribute__((visibility("hidden")))
     double _touchDownTimeSpan;
     NSDate *_prevTouchMoreKeyTime;
     NSDate *_prevProgressiveCandidateRequestTime;
+    NSTimer *_progressiveCandidateUpdateTimer;
     NSString *_lastInputMode;
     _Bool _pendingDictationReload;
     _Bool _hasPeekedGestureKey;
@@ -132,7 +132,6 @@ __attribute__((visibility("hidden")))
     UIView *_keyplaneTransformationAreaView;
     _Bool _externalDictationAndInternationalKeys;
     _Bool _showsPunctuationKeysOnPrimaryKeyplane;
-    UIKeyboardFloatingTransitionController *_floatingTransitionController;
     _Bool _muteNextKeyClickSound;
     int playKeyClickSoundOn;
     UIKBRenderConfig *_renderConfig;
@@ -197,6 +196,7 @@ __attribute__((visibility("hidden")))
 - (int)stateForShiftKey:(id)arg1;
 - (_Bool)diacriticForwardCompose;
 - (_Bool)supportsContinuousPath;
+- (_Bool)isKanaPlane;
 - (_Bool)isAlphabeticPlane;
 - (_Bool)ignoresShiftState;
 - (_Bool)usesAutoShift;
@@ -271,6 +271,7 @@ __attribute__((visibility("hidden")))
 - (double)hitBuffer;
 - (struct CGRect)_paddedKeyUnionFrame;
 - (_Bool)_handleTouchForEmojiInputView;
+- (void)prepareForFloatingTransition:(_Bool)arg1;
 - (void)setSplit:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_autoSplit:(id)arg1;
 - (void)setSplitProgress:(double)arg1;
@@ -286,13 +287,6 @@ __attribute__((visibility("hidden")))
 - (void)finishSplitWithCompletion:(CDUnknownBlockType)arg1;
 - (void)showSplitTransitionView:(_Bool)arg1;
 - (void)prepareForSplitTransition;
-- (_Bool)shouldBeginTransitionForController:(id)arg1;
-- (void)didEndTransitionWithController:(id)arg1;
-- (void)willBeginTransitionWithController:(id)arg1;
-- (id)keyplaneViewForController:(id)arg1;
-- (id)keyboardForController:(id)arg1;
-- (id)keyplaneForController:(id)arg1;
-- (id)inputWindowControllerForController:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1 forHandBiasCoordinator:(id)arg2;
 - (long long)currentHandBiasWithCoordinator:(id)arg1;
 - (void)finishHandBiasTransitionWithFinalBias:(long long)arg1;
@@ -369,7 +363,9 @@ __attribute__((visibility("hidden")))
 - (void)performHitTestForTouchInfo:(id)arg1 touchStage:(int)arg2 executionContextPassingUIKBTree:(id)arg3;
 - (id)unprocessedTouchEventsForTouchInfo:(id)arg1 touchStage:(int)arg2 forcedKeyCode:(int)arg3;
 - (int)keycodeForKey:(id)arg1;
+- (_Bool)shouldIgnoreDistantKey;
 - (_Bool)shouldPreventInputManagerHitTestingForKey:(id)arg1;
+- (_Bool)isGeometricShiftOrMoreKeyForTouch:(id)arg1;
 - (id)keyHitTest:(struct CGPoint)arg1;
 - (id)keyHitTestWithoutCharging:(struct CGPoint)arg1;
 - (id)keyHitTestClosestToPoint:(struct CGPoint)arg1;
@@ -459,7 +455,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)shouldShowDictationKey;
 - (void)updateBackgroundIfNeeded;
 - (void)updateBackgroundCorners;
-- (_Bool)handwritingPlane;
+- (_Bool)isHandwritingPlane;
 - (void)didEndIndirectSelectionGesture:(_Bool)arg1;
 - (_Bool)isDeveloperGestureKeybaord;
 - (void)didEndIndirectSelectionGesture;
@@ -467,7 +463,7 @@ __attribute__((visibility("hidden")))
 - (void)willBeginIndirectSelectionGesture:(_Bool)arg1;
 - (void)willBeginIndirectSelectionGesture;
 - (void)setPasscodeOutlineAlpha:(double)arg1;
-- (void)traitCollectionDidChange:(id)arg1;
+- (void)traitCollectionDidChange;
 - (struct CGImage *)renderedKeyplaneWithToken:(id)arg1 split:(_Bool)arg2;
 - (struct CGImage *)renderedImageWithToken:(id)arg1;
 - (struct CGImage *)renderedImageWithStateFallbacksForToken:(id)arg1;
@@ -505,7 +501,6 @@ __attribute__((visibility("hidden")))
 - (void)removeFromSuperview;
 - (void)clearTransientState;
 - (void)clearUnusedObjects:(_Bool)arg1;
-- (void)didMoveToWindow;
 - (void)willMoveToWindow:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)accessibilitySensitivityChanged;

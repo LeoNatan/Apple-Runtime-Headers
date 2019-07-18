@@ -8,12 +8,13 @@
 
 #import <AppleMediaServices/NSSecureCoding-Protocol.h>
 
-@class AMSDialogAction, AMSMetricsEvent, NSArray, NSDictionary, NSString;
+@class AMSDialogAction, AMSMetricsEvent, NSArray, NSDictionary, NSString, NSURL;
 
 @interface AMSDialogRequest : NSObject <NSSecureCoding>
 {
     NSArray *_buttonActions;
     AMSDialogAction *_defaultAction;
+    NSURL *_iconBundleURL;
     NSString *_identifier;
     NSString *_logKey;
     NSString *_message;
@@ -34,6 +35,7 @@
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *logKey; // @synthesize logKey=_logKey;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(copy, nonatomic) NSURL *iconBundleURL; // @synthesize iconBundleURL=_iconBundleURL;
 @property(retain, nonatomic) AMSDialogAction *defaultAction; // @synthesize defaultAction=_defaultAction;
 @property(copy, nonatomic) NSArray *buttonActions; // @synthesize buttonActions=_buttonActions;
 - (void).cxx_destruct;

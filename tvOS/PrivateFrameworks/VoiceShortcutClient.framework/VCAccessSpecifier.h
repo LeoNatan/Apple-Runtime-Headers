@@ -12,12 +12,9 @@
 
 @interface VCAccessSpecifier : NSObject <NSCopying>
 {
-    _Bool _hasSuggestionReadEntitlement;
-    _Bool _hasShortcutsLibraryReadEntitlement;
-    _Bool _hasBackgroundRunEntitlement;
-    unsigned long long _accessLevel;
     NSString *_associatedAppBundleIdentifier;
     NSString *_bundleIdentifier;
+    long long _entitlements;
 }
 
 + (id)accessSpecifierForTask:(struct __SecTask *)arg1;
@@ -30,13 +27,12 @@
 + (id)accessSpecifierUnrestrictedWithAssociatedAppBundleIdentifier:(id)arg1 bundleIdentifier:(id)arg2;
 + (id)accessSpecifierUnrestricted;
 + (void)initialize;
-@property(nonatomic) _Bool hasBackgroundRunEntitlement; // @synthesize hasBackgroundRunEntitlement=_hasBackgroundRunEntitlement;
-@property(nonatomic) _Bool hasShortcutsLibraryReadEntitlement; // @synthesize hasShortcutsLibraryReadEntitlement=_hasShortcutsLibraryReadEntitlement;
-@property(nonatomic) _Bool hasSuggestionReadEntitlement; // @synthesize hasSuggestionReadEntitlement=_hasSuggestionReadEntitlement;
+@property(readonly, nonatomic) long long entitlements; // @synthesize entitlements=_entitlements;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *associatedAppBundleIdentifier; // @synthesize associatedAppBundleIdentifier=_associatedAppBundleIdentifier;
-@property(readonly, nonatomic) unsigned long long accessLevel; // @synthesize accessLevel=_accessLevel;
 - (void).cxx_destruct;
+- (_Bool)isSettingsApp;
+- (_Bool)allowHomeResidentShortcutRunning;
 - (_Bool)allowBackgroundShortcutRunning;
 - (_Bool)allowReadAccessToPodcastsDatabase;
 - (_Bool)allowReadAccessToShortcutsLibrary;
@@ -44,10 +40,15 @@
 - (_Bool)allowWriteAccessForTriggers;
 - (_Bool)allowReadAccessToSuggestionsWithBundleIdentifier:(id)arg1;
 - (_Bool)allowWriteAccessToSuggestionsWithBundleIdentifier:(id)arg1;
+- (_Bool)allowReadAccessToSingleStepShortcutsWithBundleIdentifier:(id)arg1;
 - (_Bool)allowWriteAccessToVoiceShortcuts;
+- (_Bool)allowUnrestrictedAccess;
+- (_Bool)allowConnection;
+- (_Bool)hasEntitlements:(long long)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithAccessLevel:(unsigned long long)arg1 associatedAppBundleIdentifier:(id)arg2 bundleIdentifier:(id)arg3;
+- (id)initWithBundleIdentifier:(id)arg1 associatedAppBundleIdentifier:(id)arg2 entitlements:(long long)arg3;
+- (id)init;
 
 @end
 

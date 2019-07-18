@@ -33,6 +33,9 @@
 - (id)hf_updateColorPalette:(id)arg1;
 - (id)hf_colorPaletteOfType:(unsigned long long)arg1;
 - (id)hf_colorPalette;
+- (BOOL)hf_userCanCreateTrigger;
+@property(readonly, nonatomic) BOOL hf_userIsAllowedToCreateTrigger;
+@property(readonly, nonatomic) BOOL hf_isAbleToAddTrigger;
 - (void)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;
 - (BOOL)hf_cameraRecordingHasBeenOnboarded;
 - (void)hf_startReprovisioningAccessory:(id)arg1;
@@ -41,10 +44,11 @@
 - (unsigned long long)hf_numberOfHomePods;
 - (BOOL)hf_hasHomePods;
 - (BOOL)hf_hasMediaAccessories;
-- (BOOL)hf_canCreateAutomations;
+- (BOOL)hf_hasAutomatableServices;
 - (BOOL)hf_supportsSharedEventAutomation;
 - (BOOL)hf_isMediaAccessoryProfileValid:(id)arg1;
 - (BOOL)hf_isPresenceAuthorizedForUser:(id)arg1;
+- (id)hf_allNonAdminUsers;
 - (id)hf_allUsersIncludingCurrentUser;
 - (BOOL)hf_supportsMediaActions;
 - (BOOL)hf_supportsRemoteAccessRestrictions;
@@ -67,6 +71,7 @@
 - (id)hf_appleTVs;
 - (id)hf_mediaAccessories;
 - (id)hf_updateAutomaticSoftwareUpdateEnabled:(BOOL)arg1;
+- (id)hf_resetAllNetworkConfigurationProfiles;
 - (id)hf_allHomePodProfiles;
 - (id)hf_allMediaProfiles;
 - (BOOL)hf_hasSecureRecordingCameras;

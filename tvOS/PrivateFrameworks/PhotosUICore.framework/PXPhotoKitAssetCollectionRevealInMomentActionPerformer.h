@@ -11,6 +11,7 @@
 }
 
 + (id)_assetToRevealInAssetCollection:(id)arg1;
++ (id)systemImageNameForAssetCollection:(id)arg1 person:(id)arg2;
 + (id)localizedTitleForUseCase:(unsigned long long)arg1 assetCollection:(id)arg2 person:(id)arg3;
 + (id)createBarButtonItemForAssetCollection:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
 + (_Bool)canPerformOnAssetCollection:(id)arg1 people:(id)arg2;

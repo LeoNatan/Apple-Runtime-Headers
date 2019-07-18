@@ -16,7 +16,6 @@
 
 // Remaining properties
 @property(nonatomic, copy) NSDate *dateUpdated; // @dynamic dateUpdated;
-@property(nonatomic) _Bool isLockedForDisplay; // @dynamic isLockedForDisplay;
 @property(nonatomic, copy) NSString *kindRawValue; // @dynamic kindRawValue;
 @property(nonatomic, retain) NSOrderedSet *sections; // @dynamic sections;
 

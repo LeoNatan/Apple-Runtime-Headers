@@ -10,6 +10,8 @@
 {
 }
 
++ (id)keyPathForDefaultPairedDeviceCellQuality;
++ (id)keyPathForDefaultPairedDeviceWiFiWiredQuality;
 + (id)keyPathForActiveComplications;
 + (id)keyPathForDefaultPairedDeviceForegroundApp;
 + (id)keyPathForWatchForegroundApp;
@@ -24,6 +26,7 @@
 + (id)keyPathForWatchNearbyStatus;
 + (id)keyPathForNetworkingBudgetRemainingStatus;
 + (id)keyPathForEnergyBudgetRemainingStatus;
++ (id)keyPathForNearbyLOIIdentifiers;
 + (id)keyPathForCPUUsageLevel;
 + (id)keyPathForThermalPressureLevel;
 + (id)predicateForPluginStatus:(_Bool)arg1;
@@ -189,6 +192,7 @@
 + (id)userActivityUUID;
 + (id)keyPathForUserActivityDataDictionary;
 + (id)keyPathForNFCTagIdentifiers;
++ (_Bool)isMDCSKeyPath:(id)arg1;
 + (id)keyPathForMDCSDeviceIDsWithProxySourceDeviceUUID:(id)arg1;
 + (id)keyPathForMDCSDevicesWithProxySourceDeviceUUID:(id)arg1;
 + (id)keyPathForMDCSUserIDWithProxySourceDeviceUUID:(id)arg1;

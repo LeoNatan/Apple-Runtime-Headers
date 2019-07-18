@@ -99,7 +99,6 @@
 - (void)deallocBufferSubData:(id)arg1 heapIndex:(short)arg2 bufferIndex:(short)arg3 bufferOffset:(unsigned long long)arg4 length:(unsigned long long)arg5;
 - (id)allocBufferSubDataWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2 alignment:(unsigned long long)arg3 heapIndex:(short *)arg4 bufferIndex:(short *)arg5 bufferOffset:(unsigned long long *)arg6;
 - (short)heapIndexWithOptions:(unsigned long long)arg1;
-@property(readonly, getter=areProgrammableSamplePositionsSupported) BOOL programmableSamplePositionsSupported;
 - (void)updateGPUSelectionProperties;
 - (void)getBuiltInGPUProperties:(unsigned long long *)arg1 transferRate:(unsigned long long *)arg2;
 - (void)getExternalGPUProperties:(unsigned long long *)arg1 transferRate:(unsigned long long *)arg2;

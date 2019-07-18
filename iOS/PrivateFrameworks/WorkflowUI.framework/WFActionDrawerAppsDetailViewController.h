@@ -8,6 +8,7 @@
 
 #import <WorkflowUI/UITableViewDataSource-Protocol.h>
 #import <WorkflowUI/UITableViewDelegate-Protocol.h>
+#import <WorkflowUI/WFActionDrawerActionTableViewCellDelegate-Protocol.h>
 #import <WorkflowUI/WFActionDrawerSiriSuggestionsTableViewCellDelegate-Protocol.h>
 #import <WorkflowUI/WFActionDrawerStateConfigurable-Protocol.h>
 #import <WorkflowUI/WFActionDrawerStateRepresentable-Protocol.h>
@@ -15,7 +16,7 @@
 @class NSString, WFActionDrawerState;
 @protocol WFActionDrawerAppsDetailViewControllerDelegate;
 
-@interface WFActionDrawerAppsDetailViewController : WFActionDrawerCompositeResultsViewController <UITableViewDataSource, UITableViewDelegate, WFActionDrawerSiriSuggestionsTableViewCellDelegate, WFActionDrawerStateRepresentable, WFActionDrawerStateConfigurable>
+@interface WFActionDrawerAppsDetailViewController : WFActionDrawerCompositeResultsViewController <UITableViewDataSource, UITableViewDelegate, WFActionDrawerSiriSuggestionsTableViewCellDelegate, WFActionDrawerActionTableViewCellDelegate, WFActionDrawerStateRepresentable, WFActionDrawerStateConfigurable>
 {
     id <WFActionDrawerAppsDetailViewControllerDelegate> _delegate;
 }
@@ -25,6 +26,8 @@
 - (_Bool)moveToState:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) WFActionDrawerState *state;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)actionCell:(id)arg1 infoButtonTappedForAction:(id)arg2;
+- (void)siriSuggestionsTableViewCell:(id)arg1 infoButtonTappedForSuggestion:(id)arg2;
 - (void)siriSuggestionsTableViewCell:(id)arg1 didSelectAction:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;

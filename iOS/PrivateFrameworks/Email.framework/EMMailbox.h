@@ -29,6 +29,10 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)typeIsValidTransferDestination:(long long)arg1;
 + (_Bool)_isOutgoingMailboxType:(long long)arg1;
++ (_Bool)supportsSelectAllForMailboxes:(id)arg1;
++ (_Bool)shouldArchiveByDefaultForMailboxes:(id)arg1;
++ (_Bool)supportsArchivingForMailboxes:(id)arg1;
++ (_Bool)deleteMovesToTrashForMailboxes:(id)arg1;
 + (id)sortDescriptorForNameAscending:(_Bool)arg1;
 + (id)_predicateForSmartMailboxes:(_Bool)arg1;
 + (id)predicateForRegularMailboxes;
@@ -40,10 +44,6 @@
 + (id)predicateForMailboxAccount:(id)arg1;
 + (id)predicateForMailboxType:(long long)arg1;
 + (id)predicateForMailboxName:(id)arg1;
-+ (_Bool)supportsSelectAllForMailboxes:(id)arg1;
-+ (_Bool)shouldArchiveByDefaultForMailboxes:(id)arg1;
-+ (_Bool)supportsArchivingForMailboxes:(id)arg1;
-+ (_Bool)deleteMovesToTrashForMailboxes:(id)arg1;
 @property(nonatomic) _Bool canArchive; // @synthesize canArchive=_canArchive;
 @property(nonatomic) _Bool canContainMessages; // @synthesize canContainMessages=_canContainMessages;
 @property(nonatomic) long long type; // @synthesize type=_type;
@@ -53,12 +53,14 @@
 @property(readonly, nonatomic) EMObjectID *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(nonatomic) _Bool descriptionUsesRealName; // @synthesize descriptionUsesRealName=_descriptionUsesRealName;
 - (void).cxx_destruct;
+- (_Bool)_canArchiveForMailboxType:(long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy, nonatomic) NSString *redactedName;
+@property(readonly, nonatomic) _Bool supportsSelectAll;
 @property(readonly, nonatomic) _Bool isSentMailbox;
 @property(readonly, nonatomic) _Bool isOutgoingMailbox;
 @property(readonly, nonatomic) _Bool isInboxMailbox;
@@ -70,9 +72,9 @@
 - (void)setRepository:(id)arg1;
 @property(readonly, nonatomic) EMMailboxRepository *repository;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)_commonInitName:(id)arg1 accountIdentifier:(id)arg2 type:(long long)arg3 canContainMessages:(_Bool)arg4 canArchive:(_Bool)arg5 children:(id)arg6 parentID:(id)arg7 builder:(CDUnknownBlockType)arg8;
-- (id)initWithObjectID:(id)arg1 name:(id)arg2 account:(id)arg3 type:(long long)arg4 builder:(CDUnknownBlockType)arg5;
-- (id)initWithObjectID:(id)arg1 repository:(id)arg2 name:(id)arg3 account:(id)arg4 type:(long long)arg5 builder:(CDUnknownBlockType)arg6;
+- (void)_commonInitName:(id)arg1 accountIdentifier:(id)arg2 type:(long long)arg3 canContainMessages:(_Bool)arg4 children:(id)arg5 parentID:(id)arg6 builder:(CDUnknownBlockType)arg7;
+- (id)initWithObjectID:(id)arg1 name:(id)arg2 accountIdentifier:(id)arg3 type:(long long)arg4 builder:(CDUnknownBlockType)arg5;
+- (id)initWithObjectID:(id)arg1 repository:(id)arg2 name:(id)arg3 accountIdentifier:(id)arg4 type:(long long)arg5 builder:(CDUnknownBlockType)arg6;
 - (id)initWithObjectID:(id)arg1;
 
 // Remaining properties

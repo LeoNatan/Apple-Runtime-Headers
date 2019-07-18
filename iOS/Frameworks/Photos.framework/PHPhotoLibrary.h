@@ -180,7 +180,7 @@
 - (id)pl_photoLibraryForCMM;
 @property(readonly) PLPhotoKitVariationCache *variationCache;
 - (void)dealloc;
-- (void)_invalidateEverything;
+- (void)_invalidateEverythingWithReason:(id)arg1;
 - (id)initWithPhotoLibraryBundle:(id)arg1 type:(unsigned short)arg2;
 - (id)initWithPhotoLibraryURL:(id)arg1 type:(unsigned short)arg2;
 - (id)initWithPLPhotoLibrary:(id)arg1 type:(unsigned short)arg2;
@@ -279,7 +279,7 @@
 - (id)deletedAssetUUIDsForAnalysisByWorkerType:(short)arg1 fetchLimit:(unsigned long long)arg2 error:(id *)arg3;
 - (void)requestCountOfAnalysisRecordsForDeletedAssetsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)workInfoForAnalysisWithWorkerType:(short)arg1 additionalStatesToExclude:(id)arg2 fetchLimit:(unsigned long long)arg3 error:(id *)arg4;
-- (double)sceneAnalysisProgressForHighlight:(id)arg1;
+- (double)sceneAnalysisProgressForHighlight:(id)arg1 usingSceneVersion:(unsigned long long)arg2;
 - (id)analysisProgressCountsForWorkerType:(short)arg1;
 - (id)assetUUIDsAllowedForCurationFromAssets:(id)arg1;
 - (double)analysisProgressForHighlight:(id)arg1 workerType:(short)arg2 error:(id *)arg3;

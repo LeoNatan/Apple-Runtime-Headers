@@ -41,6 +41,7 @@
 - (void)clearAllVibrationComponents;
 - (void)vibrationComponentDidEnd;
 - (void)vibrationComponentDidStart;
+- (id)_dotTintColor;
 - (struct UIOffset)_dotInsets;
 - (struct CGSize)_dotSize;
 - (id)_resizableDotImage;

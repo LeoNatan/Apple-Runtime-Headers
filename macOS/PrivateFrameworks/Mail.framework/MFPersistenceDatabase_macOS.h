@@ -17,7 +17,7 @@
 - (void)_handleDatabaseException:(id)arg1;
 - (void)_setDatabaseAttributes;
 - (id)checkOutConnectionIsWriter:(BOOL)arg1;
-- (void)performBlock:(CDUnknownBlockType)arg1 isWriter:(BOOL)arg2 useTransaction:(BOOL)arg3;
+- (BOOL)performBlock:(CDUnknownBlockType)arg1 isWriter:(BOOL)arg2 useTransaction:(BOOL)arg3;
 
 @end
 

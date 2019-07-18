@@ -33,7 +33,7 @@
 + (BOOL)isEventKitSyncEnabledForReminderKit;
 + (BOOL)dataaccessDaemonStopSyncingReminders;
 + (BOOL)notificationsEnabled;
-@property(readonly, nonatomic) REMStore *nonUserInteractiveStore; // @synthesize nonUserInteractiveStore=_nonUserInteractiveStore;
+@property(retain, nonatomic) REMStore *nonUserInteractiveStore; // @synthesize nonUserInteractiveStore=_nonUserInteractiveStore;
 @property(nonatomic) BOOL assertOnMainThreadFetches; // @synthesize assertOnMainThreadFetches=_assertOnMainThreadFetches;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) id <REMDaemonController> daemonController; // @synthesize daemonController=_daemonController;
@@ -97,10 +97,12 @@
 - (void)_respondToCalDAVSharedList:(id)arg1 withResponse:(long long)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)rejectCalDAVSharedList:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)acceptCalDAVSharedList:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)provideChangeTrackingForAccountID:(id)arg1 clientName:(id)arg2 transactionAuthorKeysToExclude:(id)arg3;
 - (id)provideChangeTrackingForAccountID:(id)arg1 clientName:(id)arg2;
-- (id)provideAnonymousChangeTracking;
-- (void)notifyOfInteractionWithPeople:(id)arg1;
+- (id)provideAnonymousChangeTrackingWithTransactionAuthorKeysToExclude:(id)arg1;
+- (void)notifyOfInteractionWithPeople:(id)arg1 force:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)notifyOfUserInterestInSiriSuggestedReminder:(id)arg1;
+- (id)fetchAllRemindersWithExternalIdentifier:(id)arg1 error:(id *)arg2;
 - (id)fetchCompletedRemindersForEventKitBridgingWithCompletionDateFrom:(id)arg1 to:(id)arg2 withListIDs:(id)arg3 error:(id *)arg4;
 - (id)fetchIncompleteRemindersForEventKitBridgingWithDueDateFrom:(id)arg1 to:(id)arg2 withListIDs:(id)arg3 error:(id *)arg4;
 - (id)fetchRemindersForEventKitBridgingWithListIDs:(id)arg1 error:(id *)arg2;
@@ -111,13 +113,12 @@
 - (id)fetchRemindersWithExternalIdentifiers:(id)arg1 inList:(id)arg2 error:(id *)arg3;
 - (id)fetchReminderWithExternalIdentifier:(id)arg1 inList:(id)arg2 error:(id *)arg3;
 - (id)fetchReminderIncludingMarkedForDeleteWithObjectID:(id)arg1 error:(id *)arg2;
-- (id)fetchListWithExternalIdentifier:(id)arg1 error:(id *)arg2;
-- (id)fetchListIncludingSpecialContainerWithExternalIdentifier:(id)arg1 inAccount:(id)arg2 error:(id *)arg3;
 - (id)fetchListIncludingSpecialContainerWithObjectID:(id)arg1 error:(id *)arg2;
 - (id)fetchListIncludingMarkedForDeleteWithObjectID:(id)arg1 error:(id *)arg2;
 - (id)fetchListsIncludingSpecialContainersInAccount:(id)arg1 error:(id *)arg2;
 - (id)fetchAccountsWithExternalIdentifiers:(id)arg1 error:(id *)arg2;
 - (id)fetchAccountWithExternalIdentifier:(id)arg1 error:(id *)arg2;
+- (id)fetchAllListsWithExternalIdentifier:(id)arg1 error:(id *)arg2;
 - (void)requestToDeleteLocalDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)requestToDeleteSyncDataWithAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestToMergeLocalDataIntoSyncDataWithAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -128,6 +129,7 @@
 - (void)updateAccountWithAccountID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateAccountsAndFetchMigrationState:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateAccountsAndSync:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)triggerSyncForDataAccessAccountsWithAccountIDs:(id)arg1;
 - (void)triggerThrottledSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setObjectInDaemonDefaults:(id)arg1 forKey:(id)arg2;
 - (id)objectInDaemonDefaultsForKey:(id)arg1;

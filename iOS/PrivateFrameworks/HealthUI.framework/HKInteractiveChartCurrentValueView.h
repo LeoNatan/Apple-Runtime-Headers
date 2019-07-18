@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSTimer, UIImageView, UILabel;
+@class NSTimer, UIButton, UILabel;
 @protocol HKInteractiveChartCurrentValueViewDataSource, HKInteractiveChartCurrentValueViewDelegate;
 
 @interface HKInteractiveChartCurrentValueView : UIView
@@ -17,12 +17,12 @@
     UILabel *_titleLabel;
     UILabel *_valueLabel;
     UILabel *_secondaryLabel;
-    UIImageView *_accessoryView;
+    UIButton *_infoButton;
     NSTimer *_deferredNoDataTimer;
 }
 
 @property(nonatomic) __weak NSTimer *deferredNoDataTimer; // @synthesize deferredNoDataTimer=_deferredNoDataTimer;
-@property(retain, nonatomic) UIImageView *accessoryView; // @synthesize accessoryView=_accessoryView;
+@property(retain, nonatomic) UIButton *infoButton; // @synthesize infoButton=_infoButton;
 @property(retain, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

@@ -133,9 +133,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldRampUp;
 - (void)checkPaused;
 - (void)checkCongestionStatus;
-- (BOOL)doRateControlWithBasebandStatistics:(CDStruct_b3eb8f4a)arg1;
-- (BOOL)doRateControlWithVCRCStatistics:(CDStruct_b3eb8f4a)arg1;
-- (BOOL)doRateControlWithStatistics:(CDStruct_b3eb8f4a)arg1;
+- (BOOL)doRateControlWithBasebandStatistics:(CDStruct_b21f1e06)arg1;
+- (BOOL)doRateControlWithVCRCStatistics:(CDStruct_b21f1e06)arg1;
+- (BOOL)doRateControlWithStatistics:(CDStruct_b21f1e06)arg1;
 - (void)enableBasebandDump:(void *)arg1;
 - (void)enableLogDump:(void *)arg1 enablePeriodicLogging:(BOOL)arg2;
 - (void)configure:(struct VCRateControlAlgorithmConfig)arg1 restartRequired:(BOOL)arg2;

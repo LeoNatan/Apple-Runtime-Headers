@@ -11,6 +11,8 @@
 
 @interface ICDatabaseVacuum : NSObject
 {
+    CDUnknownBlockType _preVacuumHandler;
+    CDUnknownBlockType _postVacuumHandler;
     NSObject<OS_dispatch_queue> *_queue;
     NSTimer *_timer;
 }
@@ -18,11 +20,14 @@
 + (void)setLastVacuumDate:(id)arg1;
 + (id)lastVacuumDate;
 + (void)startDatabaseVacuumPolicy;
++ (void)startDatabaseVacuumPolicyWithPreVacuumHandler:(CDUnknownBlockType)arg1 postVacuumHandler:(CDUnknownBlockType)arg2;
 + (void)setActiveVacuum:(id)arg1;
 + (id)activeVacuum;
 + (id)activeVacuumQueue;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(copy, nonatomic) CDUnknownBlockType postVacuumHandler; // @synthesize postVacuumHandler=_postVacuumHandler;
+@property(copy, nonatomic) CDUnknownBlockType preVacuumHandler; // @synthesize preVacuumHandler=_preVacuumHandler;
 - (void).cxx_destruct;
 - (void)vacuumHTMLDatabase;
 - (void)vacuum;

@@ -7,12 +7,14 @@
 #import <PhotosUICore/NSObject-Protocol.h>
 
 @class NSArray, NSObject, PXGHitTestResult, PXGLayout;
-@protocol PXAccessibilityView;
+@protocol PXAccessibilityView, PXDisplayAsset;
 
 @protocol PXGAccessibilityRendererDelegate <NSObject>
 @property(readonly, nonatomic) BOOL canSelectAccessibilityGroupElementsChildren;
 @property(readonly, nonatomic) BOOL canSelectAccessibilityGroupElements;
 @property(readonly, nonatomic) PXGLayout *accessibilityRootLayout;
+- (void)axScrollToAsset:(id <PXDisplayAsset>)arg1;
+- (id <PXDisplayAsset>)assetClosestToAsset:(id <PXDisplayAsset>)arg1 inDirection:(unsigned long long)arg2;
 - (NSObject<PXAccessibilityView> *)accessibilityViewForSpriteIndex:(unsigned int)arg1;
 - (PXGHitTestResult *)accessibilityHitTestResultAtPoint:(struct CGPoint)arg1;
 - (BOOL)itemDidShowDefaultUIAtLocation:(struct CGPoint)arg1;

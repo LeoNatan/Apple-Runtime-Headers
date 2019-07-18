@@ -10,12 +10,12 @@
 #import <SpringBoard/SBButtonEventsHandler-Protocol.h>
 #import <SpringBoard/SBFIdleTimerBehaviorProviding-Protocol.h>
 #import <SpringBoard/SBIdleTimerProviding-Protocol.h>
-#import <SpringBoard/SBUIRemoteAlertHostInterface-Protocol.h>
+#import <SpringBoard/SBUIRemoteAlertHostInterface_Internal-Protocol.h>
 
 @class NSMutableSet, NSNumber, NSString, _UILegibilitySettings;
 @protocol SBIdleTimerCoordinating, SBRemoteTransientOverlayHostViewControllerDelegate;
 
-@interface SBRemoteTransientOverlayHostViewController : _UIRemoteViewController <SBUIRemoteAlertHostInterface, BSDescriptionProviding, SBButtonEventsHandler, SBFIdleTimerBehaviorProviding, SBIdleTimerProviding>
+@interface SBRemoteTransientOverlayHostViewController : _UIRemoteViewController <SBUIRemoteAlertHostInterface_Internal, BSDescriptionProviding, SBButtonEventsHandler, SBFIdleTimerBehaviorProviding, SBIdleTimerProviding>
 {
     _Bool _allowsHomeButtonDismissal;
     double _customIdleExpirationTimeout;
@@ -25,8 +25,8 @@
     unsigned long long _preferredHardwareButtonEvents;
     int _preferredStatusBarVisibility;
     NSNumber *_preferredStatusBarStyleValue;
-    long long _preferredWhitePointAdaptivityStyle;
-    NSNumber *_requestedBackgroundStyleValue;
+    NSNumber *_preferredWhitePointAdaptivityStyleValue;
+    long long _requestedBackgroundStyle;
     _Bool _prefersWallpaperTunnelActive;
     _Bool _shouldDisableIdleWarn;
     _Bool _shouldUseLockedIdleTimerDuration;
@@ -40,6 +40,7 @@
     _Bool _shouldDisableOrientationUpdates;
     _Bool _allowsCustomPresentationDismissalAnimations;
     _Bool _shouldIgnoreContentOverlayInsetUpdates;
+    _Bool _shouldInvalidateWhenDeactivated;
     _Bool _isScreenshotMarkup;
     _Bool _switcherEligible;
     _Bool _shouldDisableBanners;
@@ -53,7 +54,7 @@
     id <SBIdleTimerCoordinating> _idleTimerCoordinator;
     long long _preferredLockedGestureDismissalStyle;
     long long _preferredUnlockedGestureDismissalStyle;
-    NSNumber *_preferredBackgroundStyleValue;
+    long long _preferredBackgroundStyle;
     NSNumber *_preferredSceneDeactivationReasonValue;
 }
 
@@ -67,12 +68,13 @@
 @property(readonly, nonatomic) _Bool shouldDisableBanners; // @synthesize shouldDisableBanners=_shouldDisableBanners;
 @property(nonatomic, getter=isSwitcherEligible) _Bool switcherEligible; // @synthesize switcherEligible=_switcherEligible;
 @property(nonatomic) _Bool isScreenshotMarkup; // @synthesize isScreenshotMarkup=_isScreenshotMarkup;
+@property(readonly, nonatomic) _Bool shouldInvalidateWhenDeactivated; // @synthesize shouldInvalidateWhenDeactivated=_shouldInvalidateWhenDeactivated;
 @property(nonatomic) _Bool shouldIgnoreContentOverlayInsetUpdates; // @synthesize shouldIgnoreContentOverlayInsetUpdates=_shouldIgnoreContentOverlayInsetUpdates;
 @property(nonatomic) _Bool allowsCustomPresentationDismissalAnimations; // @synthesize allowsCustomPresentationDismissalAnimations=_allowsCustomPresentationDismissalAnimations;
 @property(readonly, nonatomic) _Bool shouldDisableOrientationUpdates; // @synthesize shouldDisableOrientationUpdates=_shouldDisableOrientationUpdates;
 @property(readonly, nonatomic) int preferredStatusBarStyleOverridesToCancel; // @synthesize preferredStatusBarStyleOverridesToCancel=_preferredStatusBarStyleOverridesToCancel;
 @property(readonly, copy, nonatomic) NSNumber *preferredSceneDeactivationReasonValue; // @synthesize preferredSceneDeactivationReasonValue=_preferredSceneDeactivationReasonValue;
-@property(readonly, copy, nonatomic) NSNumber *preferredBackgroundStyleValue; // @synthesize preferredBackgroundStyleValue=_preferredBackgroundStyleValue;
+@property(readonly, nonatomic) long long preferredBackgroundStyle; // @synthesize preferredBackgroundStyle=_preferredBackgroundStyle;
 @property(readonly, nonatomic) long long preferredUnlockedGestureDismissalStyle; // @synthesize preferredUnlockedGestureDismissalStyle=_preferredUnlockedGestureDismissalStyle;
 @property(readonly, nonatomic) long long preferredLockedGestureDismissalStyle; // @synthesize preferredLockedGestureDismissalStyle=_preferredLockedGestureDismissalStyle;
 @property(nonatomic) _Bool shouldEnableFadeOutAnimation; // @synthesize shouldEnableFadeOutAnimation=_shouldEnableFadeOutAnimation;
@@ -92,8 +94,8 @@
 - (void)restoreInputViewsAnimated:(_Bool)arg1;
 - (void)preserveInputViewsAnimated:(_Bool)arg1;
 - (void)prepareForActivationWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)handlePictureInPictureDidBegin;
 - (void)configureWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic) _Bool shouldInvalidateWhenDeactivated;
 @property(readonly, copy, nonatomic) _UILegibilitySettings *preferredStatusBarLegibilitySettings;
 - (int)_preferredStatusBarVisibility;
 - (void)_updateContentOverlayInsetsFromParentIfNecessary;
@@ -110,6 +112,7 @@
 - (_Bool)canResignFirstResponder;
 - (_Bool)becomeFirstResponder;
 - (_Bool)canBecomeFirstResponder;
+- (void)_participateInSystemAnimationFence:(id)arg1;
 - (void)setSceneDeactivationReason:(id)arg1;
 - (void)setReachabilityDisabled:(_Bool)arg1;
 - (void)setDesiredIdleTimerSettings:(id)arg1;
@@ -145,6 +148,7 @@
 @property(readonly, nonatomic) long long idleWarnMode;
 @property(readonly, nonatomic) long long idleTimerMode;
 @property(readonly, nonatomic) long long idleTimerDuration;
+- (void)didInvalidateForRemoteAlert;
 - (_Bool)handleDoubleHeightStatusBarTap;
 - (_Bool)handleVolumeDownButtonPress;
 - (_Bool)handleVolumeUpButtonPress;

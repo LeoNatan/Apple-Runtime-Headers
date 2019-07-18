@@ -51,6 +51,7 @@
 + (id)fetchType;
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
++ (id)fetchCollectionListsForReferences:(id)arg1 photoLibrary:(id)arg2;
 @property(readonly, nonatomic) NSString *transientIdentifier; // @synthesize transientIdentifier=_transientIdentifier;
 @property(readonly, nonatomic) unsigned int estimatedChildCollectionCount; // @synthesize estimatedChildCollectionCount=_estimatedChildCollectionCount;
 @property(readonly, nonatomic) unsigned int unreadAssetCollectionsCount; // @synthesize unreadAssetCollectionsCount=_unreadAssetCollectionsCount;
@@ -77,6 +78,7 @@
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
 - (Class)changeRequestClass;
 - (id)pl_assetContainerList;
+- (id)objectReference;
 
 @end
 

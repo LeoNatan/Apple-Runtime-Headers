@@ -15,10 +15,12 @@
 @interface _INPBAnswerCallIntent : PBCodable <_INPBAnswerCallIntent, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBIntentMetadata *_intentMetadata;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

@@ -17,6 +17,7 @@
     struct {
         unsigned int resultType:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     _INPBDateTimeRange *_recordDate;
     int _resultType;
     _INPBString *_unit;
@@ -25,6 +26,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)valuesType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(retain, nonatomic) _INPBString *unit; // @synthesize unit=_unit;
 @property(nonatomic) int resultType; // @synthesize resultType=_resultType;

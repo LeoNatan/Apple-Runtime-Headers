@@ -531,7 +531,6 @@ struct nw_parameters_extended_objects {
     id _field13;
     id _field14;
     id _field15;
-    id _field16;
 };
 
 struct nw_parameters_path_value {
@@ -545,6 +544,7 @@ struct nw_parameters_path_value {
     int required_interface_subtype;
     int multipath_service;
     int companion_preference;
+    int companion_link_upgrade_preference;
     unsigned int prohibit_expensive_paths:1;
     unsigned int prohibit_constrained_paths:1;
     unsigned int prohibit_roaming:1;
@@ -640,6 +640,11 @@ struct nw_protocol_identifier {
     char name[32];
     int level;
     int mapping;
+};
+
+struct nw_shoes_statistics {
+    unsigned int ss_max_simultaneous_connections;
+    unsigned int ss_total_connections;
 };
 
 struct nw_timer_entry;

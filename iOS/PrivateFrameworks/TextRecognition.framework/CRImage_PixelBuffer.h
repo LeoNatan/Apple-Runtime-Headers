@@ -38,6 +38,7 @@
 - (struct __CVBuffer *)pixelBufferWithFormat:(unsigned int)arg1;
 - (id)initWithContentsOfURL:(id)arg1 toColorSpace:(int)arg2;
 - (id)initWithCVPixelBuffer:(struct __CVBuffer *)arg1;
+- (struct __CVBuffer *)pixelBuffer;
 - (unsigned long long)width;
 - (unsigned long long)height;
 

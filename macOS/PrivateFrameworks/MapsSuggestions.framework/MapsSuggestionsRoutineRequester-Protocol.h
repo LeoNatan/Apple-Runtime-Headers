@@ -6,16 +6,13 @@
 
 #import <MapsSuggestions/NSObject-Protocol.h>
 
-@class CLLocation, NSDate, NSString, NSUUID;
-@protocol GEOMapItem;
+@class CLLocation, NSDate, NSUUID;
 
 @protocol MapsSuggestionsRoutineRequester <NSObject>
 - (BOOL)isHSA2Enabled;
 - (void)clearAllVehicleEventsWithHandler:(void (^)(void))arg1;
 - (void)stopMonitoringVehicleEvents;
 - (BOOL)startMonitoringVehicleEventsWithHandler:(void (^)(NSArray *, NSError *))arg1;
-- (BOOL)updateLocationOfInterestWithIdentifier:(NSUUID *)arg1 type:(long long)arg2 customLabel:(NSString *)arg3 handler:(void (^)(NSError *))arg4;
-- (BOOL)addLocationOfInterestOfType:(long long)arg1 mapItem:(id <GEOMapItem>)arg2 customLabel:(NSString *)arg3 handler:(void (^)(RTLocationOfInterest *, NSError *))arg4;
 - (BOOL)fetchRoutineModeFromLocation:(CLLocation *)arg1 handler:(void (^)(long long, NSError *))arg2;
 - (BOOL)fetchLocationOfInterestWithIdentifier:(NSUUID *)arg1 handler:(void (^)(RTLocationOfInterest *, NSError *))arg2;
 - (BOOL)fetchLocationsOfInterestVisitedSinceDate:(NSDate *)arg1 handler:(void (^)(NSArray *, NSError *))arg2;

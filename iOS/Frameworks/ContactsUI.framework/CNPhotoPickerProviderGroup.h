@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
 {
     _Bool _allowAddItem;
     _Bool _showCircleMask;
-    _Bool _hasSelectedMonogram;
     long long _groupType;
     id <CNPhotoPickerProviderGroupDelegate> _delegate;
     unsigned long long _itemsPerRow;
@@ -24,19 +23,22 @@ __attribute__((visibility("hidden")))
     NSArray *_displayItems;
     NSArray *_addedItems;
     NSArray *_removedItems;
-    NSArray *_availablePaddingItems;
     NSMutableDictionary *_itemsGroupedByProvider;
+    NSArray *_availablePaddingItems;
+    NSArray *_paddingItems;
     CNPhotoPickerProviderItem *_addItem;
     id <CNScheduler> _workQueue;
     id <CNScheduler> _callbackQueue;
 }
 
++ (id)animojiGroupWithProviders:(id)arg1 environment:(id)arg2 allowAddItem:(_Bool)arg3;
++ (id)suggestionsGroupWithProviders:(id)arg1 environment:(id)arg2 allowAddItem:(_Bool)arg3;
 @property(readonly, nonatomic) id <CNScheduler> callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(readonly, nonatomic) id <CNScheduler> workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) CNPhotoPickerProviderItem *addItem; // @synthesize addItem=_addItem;
-@property(retain, nonatomic) NSMutableDictionary *itemsGroupedByProvider; // @synthesize itemsGroupedByProvider=_itemsGroupedByProvider;
-@property(nonatomic) _Bool hasSelectedMonogram; // @synthesize hasSelectedMonogram=_hasSelectedMonogram;
+@property(retain, nonatomic) NSArray *paddingItems; // @synthesize paddingItems=_paddingItems;
 @property(retain, nonatomic) NSArray *availablePaddingItems; // @synthesize availablePaddingItems=_availablePaddingItems;
+@property(retain, nonatomic) NSMutableDictionary *itemsGroupedByProvider; // @synthesize itemsGroupedByProvider=_itemsGroupedByProvider;
 @property(retain, nonatomic) NSArray *removedItems; // @synthesize removedItems=_removedItems;
 @property(retain, nonatomic) NSArray *addedItems; // @synthesize addedItems=_addedItems;
 @property(retain, nonatomic) NSArray *displayItems; // @synthesize displayItems=_displayItems;
@@ -52,11 +54,10 @@ __attribute__((visibility("hidden")))
 - (long long)addProviderItem:(id)arg1;
 - (id)providerItemAtIndex:(long long)arg1;
 - (long long)numberOfItems;
-- (unsigned long long)maxRecentsAndMonogramsCount;
-- (id)paddedDisplayItems:(id)arg1;
-- (id)providerItems:(id)arg1 withMaxRecentsAndMonogramsCount:(unsigned long long)arg2;
-- (id)removeDuplicateItemsFrom:(id)arg1 withMaxRecentsAndMonogramsCount:(unsigned long long)arg2;
+- (id)addSymbolImageName;
+- (void)prepareDisplayItems:(id)arg1;
 - (void)reloadDisplayItemsNotifyDelegate:(_Bool)arg1;
+- (id)itemsForProviderIdentifier:(id)arg1;
 - (void)loadProvidersItemsForSize:(struct CGSize)arg1 itemsPerRow:(double)arg2 scale:(double)arg3 RTL:(_Bool)arg4;
 - (id)initWithProviders:(id)arg1 groupType:(long long)arg2 environment:(id)arg3 allowAddItem:(_Bool)arg4;
 

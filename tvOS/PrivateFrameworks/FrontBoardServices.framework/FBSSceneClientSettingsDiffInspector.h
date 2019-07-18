@@ -14,6 +14,7 @@
 - (void)observeOcclusionsWithBlock:(CDUnknownBlockType)arg1;
 - (void)observePreferredInterfaceOrientationWithBlock:(CDUnknownBlockType)arg1;
 - (void)observePreferredLevelWithBlock:(CDUnknownBlockType)arg1;
+- (void)observeLayersWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeClassWithBlock:(CDUnknownBlockType)arg1;
 
 @end

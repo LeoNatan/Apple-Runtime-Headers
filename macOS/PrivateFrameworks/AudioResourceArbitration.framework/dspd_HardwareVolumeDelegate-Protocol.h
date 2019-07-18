@@ -7,20 +7,20 @@
 #import <AudioResourceArbitration/NSObject-Protocol.h>
 
 @protocol dspd_HardwareVolumeDelegate <NSObject>
-- (struct expected<std::__1::tuple<unsigned int, unsigned int>, std::__1::error_code>)stereoPanChannels:(unsigned long long)arg1 element:(unsigned int)arg2;
+- (expected_ea5d568f)stereoPanChannels:(unsigned long long)arg1 element:(unsigned int)arg2;
 - (struct error_code)setStereoPan:(unsigned long long)arg1 element:(unsigned int)arg2 stereoPan:(float)arg3;
-- (struct expected<float, std::__1::error_code>)stereoPan:(unsigned long long)arg1 element:(unsigned int)arg2;
-- (struct expected<bool, std::__1::error_code>)stereoPanControlSettable:(unsigned long long)arg1 element:(unsigned int)arg2;
+- (expected_60ac6007)stereoPan:(unsigned long long)arg1 element:(unsigned int)arg2;
+- (expected_1e8b1ea0)stereoPanControlSettable:(unsigned long long)arg1 element:(unsigned int)arg2;
 - (struct error_code)setMute:(unsigned long long)arg1 element:(unsigned int)arg2 isMute:(_Bool)arg3;
-- (struct expected<bool, std::__1::error_code>)mute:(unsigned long long)arg1 element:(unsigned int)arg2;
-- (struct expected<bool, std::__1::error_code>)muteControlSettable:(unsigned long long)arg1 element:(unsigned int)arg2;
-- (struct expected<float, std::__1::error_code>)convertDecibelsToScalar:(unsigned long long)arg1 element:(unsigned int)arg2 decibelVolume:(float)arg3;
-- (struct expected<float, std::__1::error_code>)convertScalarToDecibels:(unsigned long long)arg1 element:(unsigned int)arg2 scalarVolume:(float)arg3;
-- (struct expected<std::__1::tuple<double, double>, std::__1::error_code>)decibelVolumeRange:(unsigned long long)arg1 element:(unsigned int)arg2;
+- (expected_1e8b1ea0)mute:(unsigned long long)arg1 element:(unsigned int)arg2;
+- (expected_1e8b1ea0)muteControlSettable:(unsigned long long)arg1 element:(unsigned int)arg2;
+- (expected_60ac6007)convertDecibelsToScalar:(unsigned long long)arg1 element:(unsigned int)arg2 decibelVolume:(float)arg3;
+- (expected_60ac6007)convertScalarToDecibels:(unsigned long long)arg1 element:(unsigned int)arg2 scalarVolume:(float)arg3;
+- (expected_5f904053)decibelVolumeRange:(unsigned long long)arg1 element:(unsigned int)arg2;
 - (struct error_code)setDecibelVolume:(unsigned long long)arg1 element:(unsigned int)arg2 decibelVolume:(float)arg3;
-- (struct expected<float, std::__1::error_code>)decibelVolume:(unsigned long long)arg1 element:(unsigned int)arg2;
+- (expected_60ac6007)decibelVolume:(unsigned long long)arg1 element:(unsigned int)arg2;
 - (struct error_code)setScalarVolume:(unsigned long long)arg1 element:(unsigned int)arg2 scalarVolume:(float)arg3;
-- (struct expected<float, std::__1::error_code>)scalarVolume:(unsigned long long)arg1 element:(unsigned int)arg2;
-- (struct expected<bool, std::__1::error_code>)levelControlSettable:(unsigned long long)arg1 element:(unsigned int)arg2;
+- (expected_60ac6007)scalarVolume:(unsigned long long)arg1 element:(unsigned int)arg2;
+- (expected_1e8b1ea0)levelControlSettable:(unsigned long long)arg1 element:(unsigned int)arg2;
 @end
 

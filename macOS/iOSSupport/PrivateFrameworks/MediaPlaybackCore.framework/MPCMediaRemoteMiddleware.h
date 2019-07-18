@@ -54,6 +54,7 @@
 - (id)playerModelObject:(id)arg1 propertySet:(id)arg2 atIndexPath:(id)arg3 chain:(id)arg4;
 - (BOOL)playerItemIsPlaceholder:(BOOL)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
 - (long long)playerItemEditingStyleFlags:(long long)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
+- (id)playerItemLocalizedDurationString:(id)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
 - (CDStruct_22c87751)playerItemDuration:(CDStruct_22c87751)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
 - (unsigned long long)playerNumberOfItems:(unsigned long long)arg1 inSection:(unsigned long long)arg2 chain:(id)arg3;
 - (unsigned long long)playerNumberOfSections:(unsigned long long)arg1 chain:(id)arg2;

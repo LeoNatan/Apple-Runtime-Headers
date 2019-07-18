@@ -8,20 +8,31 @@
 
 #import <PencilKit/PKPaletteColorSwatchProperties-Protocol.h>
 
-@class NSString, PKPaletteColorSwatchSelectedView, UIColor;
+@class CAShapeLayer, NSString, PKSwatchColor;
 
 @interface PKPaletteColorSwatch : UIView <PKPaletteColorSwatchProperties>
 {
-    UIColor *_color;
-    PKPaletteColorSwatchSelectedView *_selectedView;
+    BOOL _selected;
+    BOOL _showsSelectionHighlight;
+    PKSwatchColor *_swatchColor;
+    UIView *_colorBackgroundView;
+    CAShapeLayer *_selectionRingMaskLayer;
+    UIView *_colorBulletView;
 }
 
-@property(retain, nonatomic) PKPaletteColorSwatchSelectedView *selectedView; // @synthesize selectedView=_selectedView;
-@property(readonly, nonatomic) UIColor *color; // @synthesize color=_color;
+@property(retain, nonatomic) UIView *colorBulletView; // @synthesize colorBulletView=_colorBulletView;
+@property(retain, nonatomic) CAShapeLayer *selectionRingMaskLayer; // @synthesize selectionRingMaskLayer=_selectionRingMaskLayer;
+@property(retain, nonatomic) UIView *colorBackgroundView; // @synthesize colorBackgroundView=_colorBackgroundView;
+@property(nonatomic) BOOL showsSelectionHighlight; // @synthesize showsSelectionHighlight=_showsSelectionHighlight;
+@property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
+@property(retain, nonatomic) PKSwatchColor *swatchColor; // @synthesize swatchColor=_swatchColor;
 - (void).cxx_destruct;
-@property(nonatomic, getter=isSelected) BOOL selected;
+- (BOOL)wantsColorBulletVisible;
+- (id)newColorBackgroundView;
+- (void)_updateColorBulletView;
+- (void)_updateBackgroundView;
+- (void)_updateSelectionHighlight;
 - (void)layoutSubviews;
-- (id)initWithColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

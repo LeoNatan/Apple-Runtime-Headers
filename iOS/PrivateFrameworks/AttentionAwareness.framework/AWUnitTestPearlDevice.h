@@ -20,17 +20,21 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _displayCallback;
     CDUnknownBlockType _smartCoverCallback;
     _Bool _facePresent;
+    _Bool _pearlError;
     id <BKDevicePearlDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_queue;
     CDStruct_2c6bab44 *_sampleStatsPtr;
 }
 
 + (id)sharedDevice;
+@property _Bool pearlError; // @synthesize pearlError=_pearlError;
 @property _Bool facePresent; // @synthesize facePresent=_facePresent;
 @property CDStruct_2c6bab44 *sampleStatsPtr; // @synthesize sampleStatsPtr=_sampleStatsPtr;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <BKDevicePearlDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)setPearlErrorState:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)setPearlErrorState:(_Bool)arg1;
 - (void)setSmartCoverCallback:(CDUnknownBlockType)arg1;
 - (void)setSmartCoverClosed:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)setSmartCoverClosed:(_Bool)arg1;
@@ -43,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)setSampleState:(_Bool)arg1;
 - (void)resetStats;
 - (void)getStatsWithBlock:(CDUnknownBlockType)arg1;
+- (void)deliverPearlDeviceState:(long long)arg1;
 - (void)deliverPearlDeviceEvent:(long long)arg1;
 - (id)createPresenceDetectOperationWithError:(id *)arg1;
 - (id)init;

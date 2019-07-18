@@ -9,14 +9,14 @@
 #import <VideosUI/VUILibraryCategoryMenuViewModelDelegate-Protocol.h>
 #import <VideosUI/VUIMenuCollectionViewControllerDelegate-Protocol.h>
 
-@class NSIndexPath, NSSet, NSString, VUILibraryCategoryMenuViewModel, VUIMenuCollectionViewController, VUITVGridCollectionViewController, VUITVLibraryView;
+@class NSIndexPath, NSSet, NSString, UIViewController, VUILibraryCategoryMenuViewModel, VUIMenuCollectionViewController, VUITVLibraryView;
 
 __attribute__((visibility("hidden")))
 @interface VUITVLibraryViewController : VUILibraryFetchControllerViewController <VUIMenuCollectionViewControllerDelegate, VUILibraryCategoryMenuViewModelDelegate>
 {
     VUIMenuCollectionViewController *_menuCollectionViewController;
     VUITVLibraryView *_tvLibraryView;
-    VUITVGridCollectionViewController *_gridCollectionViewController;
+    UIViewController *_gridCollectionViewController;
     VUILibraryCategoryMenuViewModel *_categoryMenuViewModel;
     NSIndexPath *_currentlySelectedIndexPath;
     NSSet *_validCategories;
@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSSet *validCategories; // @synthesize validCategories=_validCategories;
 @property(retain, nonatomic) NSIndexPath *currentlySelectedIndexPath; // @synthesize currentlySelectedIndexPath=_currentlySelectedIndexPath;
 @property(retain, nonatomic) VUILibraryCategoryMenuViewModel *categoryMenuViewModel; // @synthesize categoryMenuViewModel=_categoryMenuViewModel;
-@property(retain, nonatomic) VUITVGridCollectionViewController *gridCollectionViewController; // @synthesize gridCollectionViewController=_gridCollectionViewController;
+@property(retain, nonatomic) UIViewController *gridCollectionViewController; // @synthesize gridCollectionViewController=_gridCollectionViewController;
 @property(retain, nonatomic) VUITVLibraryView *tvLibraryView; // @synthesize tvLibraryView=_tvLibraryView;
 @property(retain, nonatomic) VUIMenuCollectionViewController *menuCollectionViewController; // @synthesize menuCollectionViewController=_menuCollectionViewController;
 - (void).cxx_destruct;

@@ -7,6 +7,7 @@
 #import <iWorkImport/TSPObject.h>
 
 #import <iWorkImport/TSDContainerInfo-Protocol.h>
+#import <iWorkImport/TSDLockableInfo-Protocol.h>
 #import <iWorkImport/TSDSelectionStatisticsContributor-Protocol.h>
 #import <iWorkImport/TSWPFlowInfo-Protocol.h>
 #import <iWorkImport/TSWPStorageParent-Protocol.h>
@@ -15,7 +16,7 @@
 @protocol TSDContainerInfo, TSDOwningAttachment;
 
 __attribute__((visibility("hidden")))
-@interface TSWPFlowInfo : TSPObject <TSWPFlowInfo, TSDContainerInfo, TSWPStorageParent, TSDSelectionStatisticsContributor>
+@interface TSWPFlowInfo : TSPObject <TSWPFlowInfo, TSDContainerInfo, TSDLockableInfo, TSWPStorageParent, TSDSelectionStatisticsContributor>
 {
     TSWPStorage *_textStorage;
     NSArray *_textboxes;
@@ -47,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)textIsVerticalAtCharIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool autoListTermination;
 @property(readonly, nonatomic) _Bool autoListRecognition;
+- (_Bool)containsRotatedOrFlippedTextBox;
 - (_Bool)isThemeContent;
 - (_Bool)isSelectable;
 @property(readonly, nonatomic, getter=isAttachedToBodyText) _Bool attachedToBodyText;
@@ -63,7 +65,7 @@ __attribute__((visibility("hidden")))
 - (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
 @property(nonatomic) NSObject<TSDContainerInfo> *parentInfo;
 - (id)copyWithContext:(id)arg1;
-@property(readonly, nonatomic) NSArray *childInfos;
+@property(readonly, copy, nonatomic) NSArray *childInfos;
 - (id)childEnumerator;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
@@ -71,7 +73,9 @@ __attribute__((visibility("hidden")))
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (id)displayNameOfMaxLength:(unsigned long long)arg1 usesEllipsis:(_Bool)arg2;
 - (unsigned long long)indexOfTextBox:(id)arg1;
-@property(readonly, nonatomic) _Bool isLocked;
+- (long long)nestedTextboxDepth;
+@property(readonly, nonatomic) unsigned long long textOrientation;
+@property(readonly, nonatomic, getter=isLocked) _Bool locked;
 @property(readonly, nonatomic) TSUColor *userInterfaceStrokeColor;
 @property(readonly, nonatomic) TSUColor *userInterfaceFillColor;
 - (void)dealloc;
@@ -84,6 +88,8 @@ __attribute__((visibility("hidden")))
 // Remaining properties
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool isLocked;
+@property(readonly, nonatomic) _Bool isMaster;
 @property(nonatomic) _Bool matchesObjectPlaceholderGeometry;
 @property(readonly, nonatomic) _Bool storageChangesInvalidateWrap;
 @property(readonly) Class superclass;

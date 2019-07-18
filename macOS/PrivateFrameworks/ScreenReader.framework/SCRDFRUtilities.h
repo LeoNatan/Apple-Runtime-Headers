@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)dfrElementBounds:(struct CGRect)arg1 fullyContainedInDFRElementBounds:(struct CGRect)arg2;
++ (BOOL)isBoundsInvalid:(struct CGRect)arg1;
 + (BOOL)point:(struct CGPoint)arg1 inDFRElementBounds:(struct CGRect)arg2;
 + (struct CGRect)boundsForElementFromArbitraryThread:(id)arg1;
 

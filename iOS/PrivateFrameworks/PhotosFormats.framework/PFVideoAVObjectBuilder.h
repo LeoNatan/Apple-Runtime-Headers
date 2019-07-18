@@ -27,9 +27,13 @@
 @property(readonly, nonatomic) PFVideoAdjustments *videoAdjustments; // @synthesize videoAdjustments=_videoAdjustments;
 @property(readonly, nonatomic) AVAsset *videoAsset; // @synthesize videoAsset=_videoAsset;
 - (void).cxx_destruct;
+- (void)_synchronouslyLoadSlowMotionPropertiesFromAsset:(id)arg1;
 - (void)requestAVAssetForExport:(_Bool)arg1 withResultHandler:(CDUnknownBlockType)arg2;
+- (void)requestAsynchronousAVAssetWithResultHandler:(CDUnknownBlockType)arg1;
 - (void)requestAVAssetWithResultHandler:(CDUnknownBlockType)arg1;
+- (void)requestAsynchronousExportSessionWithExportPreset:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (void)requestExportSessionWithExportPreset:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
+- (void)requestAsynchronousPlayerItemWithResultHandler:(CDUnknownBlockType)arg1;
 - (void)requestPlayerItemWithResultHandler:(CDUnknownBlockType)arg1;
 - (id)description;
 - (id)initWithAsset:(id)arg1 audioMix:(id)arg2 videoComposition:(id)arg3;

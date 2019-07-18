@@ -6,7 +6,7 @@
 
 #import <FrontBoard/FBProcess.h>
 
-@class BKSProcessAssertion, FBProcessWatchdog, FBProcessWatchdogEventContext, FBSProcessTerminationRequest, FBSProcessWatchdogPolicy, NSMutableArray, RBSAssertion;
+@class BKSProcessAssertion, FBProcessWatchdog, FBProcessWatchdogEventContext, FBSProcessExecutionProvision, FBSProcessTerminationRequest, FBSProcessWatchdogPolicy, NSMutableArray, RBSAssertion;
 
 @interface FBApplicationProcess : FBProcess
 {
@@ -17,6 +17,7 @@
     long long _watchdogReportType;
     FBProcessWatchdog *_watchdog;
     FBSProcessWatchdogPolicy *_sceneCreateWatchdogPolicy;
+    FBSProcessExecutionProvision *_latestViolatedProvision;
     RBSAssertion *_gracefulKillAssertion;
     BKSProcessAssertion *_mediaAssertion;
     BKSProcessAssertion *_audioAssertion;

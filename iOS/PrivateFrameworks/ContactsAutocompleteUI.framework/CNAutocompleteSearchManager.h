@@ -20,6 +20,7 @@
     NSArray *_searchAccounts;
     int _contactSearchAccountChangedToken;
     _Bool _registeredForAddressBookChanges;
+    struct NSNumber *_shouldIncludeGroupResultsImpl;
     NSMutableArray *_corecipientSearchTaskIDs;
     NSString *_sendingAddress;
     _Bool _includeUpcomingEventMembers;
@@ -55,6 +56,7 @@
 - (void)removeRecipientResult:(id)arg1;
 - (void)didSelectRecipient:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)_nextTaskID;
+@property(nonatomic) _Bool shouldIncludeGroupResults;
 - (void)setSearchTypes:(unsigned long long)arg1;
 - (id)init;
 - (id)initWithAutocompleteStore:(id)arg1 searchType:(unsigned long long)arg2;

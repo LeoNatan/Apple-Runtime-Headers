@@ -24,22 +24,21 @@
     id <VCSyncDataEndpoint> _syncDataEndpoint;
 }
 
-+ (void)initialize;
 @property(readonly, nonatomic) id <VCSyncDataEndpoint> syncDataEndpoint; // @synthesize syncDataEndpoint=_syncDataEndpoint;
 @property(readonly, nonatomic) id <VCDatabaseProvider> databaseProvider; // @synthesize databaseProvider=_databaseProvider;
 @property(readonly, nonatomic) NSXPCListener *xpcListener; // @synthesize xpcListener=_xpcListener;
 @property(readonly, nonatomic) struct os_unfair_lock_s migrationLock; // @synthesize migrationLock=_migrationLock;
 @property(readonly, nonatomic) _Bool skipEntitlementsCheck; // @synthesize skipEntitlementsCheck=_skipEntitlementsCheck;
+@property(readonly, nonatomic) WFTriggerManager *triggerManager; // @synthesize triggerManager=_triggerManager;
+@property(readonly, nonatomic) VCCoreDuetListener *coreDuetListener; // @synthesize coreDuetListener=_coreDuetListener;
 - (void).cxx_destruct;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(_Bool)arg3;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-@property(readonly, nonatomic) WFTriggerManager *triggerManager; // @synthesize triggerManager=_triggerManager;
 @property(readonly, nonatomic) VCVoiceShortcutManager *voiceShortcutManager; // @synthesize voiceShortcutManager=_voiceShortcutManager;
-@property(readonly, nonatomic) VCCoreDuetListener *coreDuetListener; // @synthesize coreDuetListener=_coreDuetListener;
 @property(readonly, nonatomic) NSXPCListenerEndpoint *endpoint;
-- (id)initWithXPCListener:(id)arg1 databaseProvider:(id)arg2 syncDataEndpoint:(id)arg3;
+- (id)initWithXPCListener:(id)arg1 databaseProvider:(id)arg2 coreDuetListener:(id)arg3 syncDataEndpoint:(id)arg4;
 - (id)initWithUnsecuredAnonymousListenerAndDatabaseProvider:(id)arg1;
-- (id)initWithDatabaseProvider:(id)arg1 syncDataEndpoint:(id)arg2;
+- (id)initWithDatabaseProvider:(id)arg1 coreDuetListener:(id)arg2 syncDataEndpoint:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

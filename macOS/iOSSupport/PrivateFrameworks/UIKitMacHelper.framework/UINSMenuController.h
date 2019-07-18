@@ -28,7 +28,11 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType performItemAction; // @synthesize performItemAction=_performItemAction;
 @property(readonly, nonatomic) id currentContextMenu; // @synthesize currentContextMenu=_currentContextMenu;
 - (void).cxx_destruct;
-- (void)showContextMenu:(id)arg1 inWindow:(id)arg2 atLocationInWindow:(struct CGPoint)arg3 objectsForServicesAndSharing:(id)arg4;
+- (void)showSharingMenuInNSWindow:(id)arg1 atLocationInWindow:(struct CGPoint)arg2 copyConfiguration:(id)arg3;
+- (void)showContextMenu:(id)arg1 inNSWindow:(id)arg2 atLocationInWindow:(struct CGPoint)arg3 copyConfiguration:(id)arg4;
+- (void)_showContextMenu:(id)arg1 forView:(id)arg2 withEvent:(id)arg3;
+- (id)_prepareToShowContextMenu:(id)arg1 copyConfiguration:(id)arg2;
+- (void)showContextMenu:(id)arg1 inWindow:(id)arg2 atLocationInWindow:(struct CGPoint)arg3 copyConfiguration:(id)arg4;
 - (BOOL)_isItem:(id)arg1 containedInContextMenu:(id)arg2;
 - (BOOL)validateMenuItem:(id)arg1 proxyItem:(id)arg2;
 - (id)_createNSMenu:(id)arg1 forContextMenu:(BOOL)arg2;

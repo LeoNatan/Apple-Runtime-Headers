@@ -10,6 +10,7 @@
 + (id)vcp_exifFromImageURL:(id)arg1;
 - (BOOL)vcp_flashFired;
 - (float)vcp_scaledExposureTime;
+- (BOOL)vcp_streamedVideo;
 - (BOOL)vcp_degraded;
 - (id)vcp_fingerprint;
 - (id)vcp_results;

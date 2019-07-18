@@ -6,14 +6,17 @@
 
 #import <objc/NSObject.h>
 
+#import <iWorkImport/NSCopying-Protocol.h>
+
 @class NSMutableDictionary;
 
 __attribute__((visibility("hidden")))
-@interface TSCH3DShaderEffectsStates : NSObject
+@interface TSCH3DShaderEffectsStates : NSObject <NSCopying>
 {
     NSMutableDictionary *mObjects;
 }
 
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)clear;
 - (void)setState:(id)arg1 forStateInfo:(id)arg2;
 - (id)stateForStateInfo:(id)arg1 createIfNil:(_Bool)arg2;

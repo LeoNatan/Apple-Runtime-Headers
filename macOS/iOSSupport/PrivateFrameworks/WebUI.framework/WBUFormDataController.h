@@ -79,9 +79,11 @@
 - (id)addressBookMatchesForProperty:(id)arg1 key:(id)arg2 label:(id)arg3 contact:(id)arg4;
 - (id)addressBookMatchesForProperty:(id)arg1 key:(id)arg2 label:(id)arg3 partialString:(id)arg4 contact:(id)arg5 allowingIdentifiedAddressBookLabelToOverridePreferredIdentifier:(BOOL)arg6;
 - (id)addressBookMatchesForProperty:(id)arg1 key:(id)arg2 label:(id)arg3;
+- (id)_addressBookMatchesForFamilyNameForContact:(id)arg1;
+- (id)_addressBookMatchesForMiddleNameForContact:(id)arg1;
+- (id)_addressBookMatchesForGivenNameForContact:(id)arg1;
 - (id)_addressBookMatchesForFullNameForContact:(id)arg1;
-- (void)gatherAutoFillDisplayDataWithTextField:(id)arg1 displayedInQuickType:(BOOL)arg2 prefix:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (id)_displayDataWithTextField:(id)arg1 displayedInQuickType:(BOOL)arg2 prefix:(id)arg3;
+- (void)gatherAutoFillDisplayDataWithTextField:(id)arg1 displayedInQuickType:(BOOL)arg2 prefix:(id)arg3 contact:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)saveCompletionDBSoon;
 - (id)completionDBPath;
 - (void)dealloc;

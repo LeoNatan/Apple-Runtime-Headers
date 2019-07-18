@@ -16,10 +16,12 @@
 {
     CDStruct_01ef6375 _has;
     BOOL _value;
+    BOOL __encodeLegacyGloryData;
     _INPBValueMetadata *_valueMetadata;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(nonatomic) BOOL value; // @synthesize value=_value;
 - (void).cxx_destruct;

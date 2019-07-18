@@ -16,14 +16,13 @@
 #import <PassKitUI/PKPaymentSetupViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentVerificationControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPeerPaymentAccountResolutionControllerDelegate-Protocol.h>
-#import <PassKitUI/PKPhysicalCardControllerDelegate-Protocol.h>
 #import <PassKitUI/PKSecureElementObserver-Protocol.h>
 #import <PassKitUI/PKSpendingSummaryFetcherObserver-Protocol.h>
 
 @class NSArray, NSDate, NSDateFormatter, NSError, NSMutableArray, NSMutableSet, NSOrderedSet, NSString, PKAMPEnrollmentManager, PKAccount, PKAccountServiceAccountResolutionController, PKCreditAccountStatement, PKDashboardTransactionFetcher, PKGroup, PKPassGroupView, PKPassPresentationContext, PKPaymentDefaultDataProvider, PKPaymentPass, PKPaymentVerificationController, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentContactResolver, PKPeerPaymentWebService, PKPhysicalCardController, PKSecureElement, PKSpendingSummary, PKSpendingSummaryFetcher, PKTransitBalanceModel;
 @protocol OS_dispatch_source, PKDashboardDataSourceDelegate;
 
-@interface PKDashboardPaymentPassDataSource : NSObject <PKSecureElementObserver, PKPaymentDataProviderDelegate, PKPaymentVerificationControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKForegroundActiveArbiterObserver, PKPhysicalCardControllerDelegate, PKSpendingSummaryFetcherObserver, PKAccountServiceAccountResolutionControllerDelegate, PKDiscoveryObserver, PKPaymentSetupViewControllerDelegate, PKAccountServiceObserver, PKDashboardPassDataSource, PKDashboardTransactionFetcherDelegate>
+@interface PKDashboardPaymentPassDataSource : NSObject <PKSecureElementObserver, PKPaymentDataProviderDelegate, PKPaymentVerificationControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKForegroundActiveArbiterObserver, PKSpendingSummaryFetcherObserver, PKAccountServiceAccountResolutionControllerDelegate, PKDiscoveryObserver, PKPaymentSetupViewControllerDelegate, PKAccountServiceObserver, PKDashboardPassDataSource, PKDashboardTransactionFetcherDelegate>
 {
     PKPassGroupView *_groupView;
     PKGroup *_group;
@@ -93,6 +92,7 @@
 @property(retain, nonatomic) NSArray *months; // @synthesize months=_months;
 @property(retain, nonatomic) NSArray *weeks; // @synthesize weeks=_weeks;
 @property(readonly, nonatomic) PKSpendingSummaryFetcher *summaryFetcher; // @synthesize summaryFetcher=_summaryFetcher;
+@property(readonly, nonatomic) PKDashboardTransactionFetcher *transactionFetcher; // @synthesize transactionFetcher=_transactionFetcher;
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 - (void)viewControllerDidCancelSetupFlow:(id)arg1;
@@ -100,12 +100,10 @@
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
 - (void)scheduledPaymentsChangedForAccountIdentifier:(id)arg1;
 - (void)discoveryServiceDidReceiveUpdatedDiscoveryEngagementMessages:(id)arg1;
-- (void)accountServiceAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(_Bool)arg2;
 - (void)accountServiceAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)invalidatedSummariesAvailable;
 - (void)invalidatedSpendingSummariesOfType:(unsigned int)arg1;
 - (void)invalidatedSpendingSummaryOfType:(unsigned int)arg1 startingWithDate:(id)arg2;
-- (void)physicalCardControllerDidUpdatePhysicalCards:(id)arg1;
 - (void)presentVerificationViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)didChangeVerificationPresentation;
 - (void)_verificationButtonTapped;

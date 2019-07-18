@@ -15,6 +15,7 @@
     NSObject<OS_dispatch_queue> *_targetQueue;
     unsigned long long _stateHandle;
     // Error parsing type: Ai, name: _resumeCount
+    NSString *_logDescriptor;
     NSMutableArray *_latestSuspendBacktraces;
     NSMutableArray *_latestResumeBacktraces;
 }

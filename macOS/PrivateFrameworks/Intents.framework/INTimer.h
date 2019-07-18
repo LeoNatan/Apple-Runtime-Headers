@@ -22,7 +22,7 @@
     long long _type;
 }
 
-+ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
 @property(readonly) long long type; // @synthesize type=_type;
 @property(readonly) long long state; // @synthesize state=_state;
@@ -34,7 +34,7 @@
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
-- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

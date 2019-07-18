@@ -45,11 +45,11 @@
 @property(readonly, nonatomic) NSString *localizedInsufficientPermissionsMessage;
 @property(readonly, nonatomic) NSString *localizedAccessPermissionPromptMessage;
 @property(readonly, nonatomic) NSString *localizedAccessPermissionPromptTitle;
-- (id)updatedPermissionStateForPermissionGranted:(_Bool)arg1;
+- (id)updatedPermissionStateForPermissionGranted:(_Bool)arg1 overridingPreviouslyDeterminedAuthorizations:(_Bool)arg2;
 @property(readonly, nonatomic) unsigned int workflowLevelStatus;
 @property(readonly, nonatomic) unsigned int globalLevelStatus;
 - (void)makeAvailableAtGlobalLevelWithUserInterface:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)setAuthorizedAtWorkflowLevel:(_Bool)arg1 forReference:(id)arg2 inDatabase:(id)arg3;
+- (void)setAuthorizedAtWorkflowLevel:(_Bool)arg1 forReference:(id)arg2 inDatabase:(id)arg3 overridingPreviouslyDeterminedAuthorizations:(_Bool)arg4;
 - (void)persistPermissionState:(id)arg1 forReference:(id)arg2 inDatabase:(id)arg3;
 - (void)refreshCurrentPermissionStateForReference:(id)arg1 inDatabase:(id)arg2;
 - (void)refreshCurrentPermissionState;
@@ -59,7 +59,7 @@
 - (id)loadPersistedPermissionState;
 @property(readonly, nonatomic) WFDatabase *database;
 - (_Bool)isEquivalentToAccessResource:(id)arg1;
-- (void)setAuthorizedAtWorkflowLevel:(_Bool)arg1;
+- (void)setAuthorizedAtWorkflowLevel:(_Bool)arg1 overridingPreviouslyDeterminedAuthorizations:(_Bool)arg2;
 - (void)makeAvailableAtLevel:(unsigned int)arg1 withUserInterface:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)availabilityErrorForLevel:(unsigned int)arg1;
 - (unsigned int)statusAtLevel:(unsigned int)arg1;

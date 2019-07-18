@@ -6,15 +6,10 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <MediaPlayer/MPAVRoutingControllerDelegate-Protocol.h>
-#import <MediaPlayer/MPAVRoutingTableViewCellDelegate-Protocol.h>
-#import <MediaPlayer/UITableViewDataSource-Protocol.h>
-#import <MediaPlayer/UITableViewDelegate-Protocol.h>
-
-@class MPAVClippingTableView, MPAVEndpointRoute, MPAVRoute, MPAVRoutingController, MPAVRoutingViewControllerUpdate, MPSectionedCollection, MPVolumeGroupSliderCoordinator, MPWeakTimer, NSArray, NSMapTable, NSNumber, NSString, UIColor, UITableView;
+@class MPAVClippingTableView, MPAVEndpointRoute, MPAVRoute, MPAVRoutingController, MPAVRoutingViewControllerUpdate, MPSectionedCollection, MPVolumeGroupSliderCoordinator, MPWeakTimer, NSArray, NSMapTable, NSNumber, UIColor, UITableView;
 @protocol MPAVRoutingViewControllerDelegate, MPAVRoutingViewControllerThemeDelegate;
 
-@interface MPAVRoutingViewController : UIViewController <MPAVRoutingControllerDelegate, MPAVRoutingTableViewCellDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface MPAVRoutingViewController : UIViewController
 {
     MPAVClippingTableView *_tableView;
     MPAVRoutingViewControllerUpdate *_pendingUpdate;
@@ -135,12 +130,6 @@
 - (id)_alertControllerForUpdateDisplayedRoutesCrashWithLogFileURL:(id)arg1 exception:(id)arg2;
 - (id)_writeToDiskWithUpdateDisplayedRoutesStatePropertyList:(id)arg1 error:(id *)arg2;
 - (id)_generatePropertyListFromUpdateDisplayedRoutesState:(id)arg1 exception:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

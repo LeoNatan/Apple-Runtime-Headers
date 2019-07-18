@@ -12,6 +12,8 @@
 
 - (void)setLogLocations:(id)arg1 specifier:(id)arg2;
 - (id)logLocations:(id)arg1;
+- (void)deleteEmergencyLocationAsset:(id)arg1;
+- (id)getEmergencyLocationAssetVersion:(id)arg1;
 - (void)launchE911Tester:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (id)specifiers;

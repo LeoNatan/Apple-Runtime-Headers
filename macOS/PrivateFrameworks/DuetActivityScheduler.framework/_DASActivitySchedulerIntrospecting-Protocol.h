@@ -19,6 +19,7 @@
 - (void)forceRunActivities:(NSArray *)arg1;
 - (NSDictionary *)activityRunStatistics;
 - (NSArray *)scoresForActivityWithName:(NSString *)arg1;
+- (BOOL)deferActivities:(NSArray *)arg1;
 - (NSArray *)runningGroupActivities;
 - (NSArray *)delayedRunningActivities;
 - (NSArray *)runningActivities;

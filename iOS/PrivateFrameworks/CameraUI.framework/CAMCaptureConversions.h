@@ -14,6 +14,7 @@
 + (long long)torchModeForFlashMode:(long long)arg1;
 + (long long)CAMPhotoQualityPrioritizationForAVCapturePhotoQualityPrioritization:(long long)arg1;
 + (long long)AVCapturePhotoQualityPrioritizationForCAMPhotoQualityPrioritization:(long long)arg1;
++ (id)AVCaptureDeviceTypeForCAMCaptureDevice:(long long)arg1;
 + (long long)CAMDevicePositionForAVDevicePosition:(long long)arg1;
 + (long long)AVDevicePositionForCAMDevicePosition:(long long)arg1;
 + (long long)stagePreviewStatusForCaptureStatus:(long long)arg1;

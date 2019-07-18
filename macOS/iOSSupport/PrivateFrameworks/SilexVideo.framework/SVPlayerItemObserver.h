@@ -8,18 +8,18 @@
 
 #import <SilexVideo/SVPlayerItemObserving-Protocol.h>
 
-@class AVPlayerItem, NSString, SVKeyValueObserver, SVPlayer;
+@class AVPlayer, AVPlayerItem, NSString, SVKeyValueObserver;
 
 @interface SVPlayerItemObserver : NSObject <SVPlayerItemObserving>
 {
     CDUnknownBlockType _changeBlock;
     AVPlayerItem *_item;
-    SVPlayer *_player;
+    AVPlayer *_player;
     SVKeyValueObserver *_observer;
 }
 
 @property(readonly, nonatomic) SVKeyValueObserver *observer; // @synthesize observer=_observer;
-@property(readonly, nonatomic) SVPlayer *player; // @synthesize player=_player;
+@property(readonly, nonatomic) AVPlayer *player; // @synthesize player=_player;
 @property(nonatomic) __weak AVPlayerItem *item; // @synthesize item=_item;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType changeBlock; // @synthesize changeBlock=_changeBlock;
 - (void).cxx_destruct;

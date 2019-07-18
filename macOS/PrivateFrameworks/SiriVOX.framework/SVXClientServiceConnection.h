@@ -47,7 +47,6 @@
 - (oneway void)notifySessionDidBecomeActiveWithActivationContext:(id)arg1;
 - (oneway void)notifySessionWillBecomeActiveWithActivationContext:(id)arg1;
 - (oneway void)notifySessionDidStopSoundWithID:(long long)arg1 error:(id)arg2;
-- (oneway void)notifySessionDidNotStartSoundWithID:(long long)arg1 error:(id)arg2;
 - (oneway void)notifySessionDidStartSoundWithID:(long long)arg1;
 - (oneway void)notifySessionWillStartSoundWithID:(long long)arg1;
 - (oneway void)notifySessionWillPresentFeedbackWithDialogIdentifier:(id)arg1;

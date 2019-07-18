@@ -11,7 +11,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDBulletinBoard, HMDCameraNotificationCharacteristicsAvailabilityListener, HMDCameraSnapshotManager, HMDHAPAccessory, HMDNotificationRegistration, HMFMessageDispatcher, NSMutableSet, NSObject, NSSet, NSString, NSUUID;
+@class HMDBulletinBoard, HMDCameraNotificationCharacteristicsAvailabilityListener, HMDCameraProfileSettingsModel, HMDCameraSnapshotManager, HMDHAPAccessory, HMDNotificationRegistration, HMFMessageDispatcher, NSMutableSet, NSObject, NSSet, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HMDCameraSnapshotMonitorEvents : HMFObject <HMDHomeMessageReceiver, HMFLogging, HMFTimerDelegate, HMDCameraNotificationCharacteristicsAvailabilityListenerDelegate>
@@ -53,11 +53,12 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
-- (void)handleCameraSettingsDidUpdateNotification:(id)arg1;
-- (void)handleAccessoryReachable:(id)arg1;
-- (void)_sendReleaseSnapshot:(id)arg1;
 - (void)_handleRemoteNotification:(id)arg1;
 - (void)handleRemoteNotificationGenerated:(id)arg1;
+- (void)handleCameraSettingsDidUpdateNotification:(id)arg1;
+- (void)handleAccessoryReachable:(id)arg1;
+@property(readonly) HMDCameraProfileSettingsModel *currentCameraSettings;
+- (void)_sendReleaseSnapshot:(id)arg1;
 - (void)_removeBulletins:(id)arg1 sessionID:(id)arg2;
 - (void)processPostedBulletin:(id)arg1 responseTimer:(id)arg2;
 - (void)timerDidFire:(id)arg1;
@@ -70,9 +71,9 @@
 - (void)_handleUpdatedBulletinSnapshotCharacteristics:(id)arg1;
 - (void)_handleBulletinNotificationEnableStateDidChange:(id)arg1;
 - (void)handleBulletinNotificationEnableStateDidChange:(id)arg1;
-- (void)_enableNotificationsForCharacteristics:(id)arg1 cameraUserSettings:(id)arg2;
+- (void)_enableNotificationsForCharacteristics:(id)arg1 cameraSettings:(id)arg2;
 - (void)listener:(id)arg1 didUpdateAvailableCharacteristics:(id)arg2 previousCharacteristics:(id)arg3;
-- (_Bool)_canEnableNotificationForCharacteristic:(id)arg1 cameraUserSettings:(id)arg2;
+- (_Bool)_canEnableNotificationForCharacteristic:(id)arg1 cameraSettings:(id)arg2;
 - (void)dealloc;
 - (void)registerForMessages;
 - (id)logIdentifier;

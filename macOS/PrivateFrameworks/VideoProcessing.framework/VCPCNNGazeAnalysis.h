@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (int)detectEyeOpennessForFace:(struct CGRect)arg1 inBuffer:(struct __CVBuffer *)arg2 eyeOpenness:(char *)arg3;
 - (int)createInput:(float *)arg1 withBuffer:(struct __CVBuffer *)arg2 cnnInputHeight:(int)arg3 cnnInputWidth:(int)arg4 faceBounds:(struct CGRect)arg5;
-- (int)initWithImage:(float *)arg1 image:(struct __CVBuffer *)arg2;
+- (int)copyImage:(struct __CVBuffer *)arg1 toData:(float *)arg2;
 - (void)dealloc;
 - (id)init;
 

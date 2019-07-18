@@ -20,7 +20,6 @@
     HFItem *_item;
     NSString *_titleText;
     UIFont *_titleFont;
-    long long _compressionResistancePolicy;
     UILabel *_titleLabel;
     NSArray *_titleLabelConstraints;
     NSArray *_valueTextFieldConstraints;
@@ -34,7 +33,6 @@
 @property(retain, nonatomic) NSArray *valueTextFieldConstraints; // @synthesize valueTextFieldConstraints=_valueTextFieldConstraints;
 @property(retain, nonatomic) NSArray *titleLabelConstraints; // @synthesize titleLabelConstraints=_titleLabelConstraints;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property(nonatomic) long long compressionResistancePolicy; // @synthesize compressionResistancePolicy=_compressionResistancePolicy;
 @property(nonatomic) _Bool hideTitle; // @synthesize hideTitle=_hideTitle;
 @property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
@@ -42,7 +40,6 @@
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(readonly, nonatomic) UITextField *valueTextField; // @synthesize valueTextField=_valueTextField;
 - (void).cxx_destruct;
-- (void)_updateCompressionResistance;
 - (void)_updateTitle;
 - (void)_addValueTextField;
 - (void)_addTitleLabel;

@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double gradientAngle; // @synthesize gradientAngle=mAngle;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1;
-- (void)p_paintPath:(struct CGPath *)arg1 inContext:(struct CGContext *)arg2;
+- (void)p_paintPath:(struct CGPath *)arg1 inContext:(struct CGContext *)arg2 naturalBounds:(struct CGRect)arg3;
 - (struct CGAffineTransform)p_shadingTransformForBounds:(struct CGRect)arg1;
 - (void)paintPath:(struct CGPath *)arg1 inContext:(struct CGContext *)arg2;
 - (void)paintPath:(struct CGPath *)arg1 naturalBounds:(struct CGRect)arg2 inContext:(struct CGContext *)arg3 isPDF:(_Bool)arg4;

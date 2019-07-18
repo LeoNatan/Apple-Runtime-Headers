@@ -13,13 +13,13 @@
     NSString *_interfaceName;
 }
 
++ (id)wifiNetworkInterfaces;
 + (id)defaultNetworkInterfaces;
 + (id)activeNetworkInterface;
 + (id)networkInterfaceWithInterface:(id)arg1;
 @property(readonly, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 - (void).cxx_destruct;
 - (id)ipAddressForFamily:(unsigned char)arg1;
-- (id)captiveNetworkInfo;
 @property(readonly, nonatomic) NSString *IPv6Address;
 @property(readonly, nonatomic) NSString *IPv4Address;
 @property(readonly, nonatomic) NSString *BSSID;

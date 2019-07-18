@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
     struct {
         unsigned int _field1;
         unsigned int _field2;
-        CDUnknownBlockType _field3;
-        CDUnknownBlockType _field4;
+        _Bool _field3;
+        unsigned int _field4;
+        CDUnknownBlockType _field5;
+        CDUnknownBlockType _field6;
     } *_transitionTable;
     NSMutableDictionary *_stateChangeObservers;
     unsigned int _state;
@@ -31,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (id)_transitionDescriptions;
 - (void)handleEvent:(unsigned int)arg1 withContext:(id)arg2;
 - (void)setStateChangeObserver:(unsigned int)arg1 observer:(CDUnknownBlockType)arg2;
+- (void)setStaticTransitionFromState:(unsigned int)arg1 withEvent:(unsigned int)arg2 toState:(unsigned int)arg3;
 - (void)setTransitionHandlerForState:(unsigned int)arg1 withEvent:(unsigned int)arg2 transitionHandler:(CDUnknownBlockType)arg3 postTransitionHandler:(CDUnknownBlockType)arg4;
 - (void)setTransitionHandlerForState:(unsigned int)arg1 withEvent:(unsigned int)arg2 transitionHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;

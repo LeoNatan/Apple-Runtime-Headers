@@ -170,6 +170,7 @@ __attribute__((visibility("hidden")))
 - (void)removeWindow:(id)arg1;
 @property(readonly) long long numberOfTabs;
 - (long long)windowCount;
+- (id)_windows;
 - (id)windows;
 @property NSWindow *selectedWindow; // @dynamic selectedWindow;
 - (void)makeActiveStack;

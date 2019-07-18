@@ -20,6 +20,7 @@
         unsigned int workoutLocationType:1;
     } _has;
     BOOL _isOpenEnded;
+    BOOL __encodeLegacyGloryData;
     int _workoutGoalUnitType;
     int _workoutLocationType;
     _INPBDouble *_goalValue;
@@ -28,6 +29,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDataString *workoutName; // @synthesize workoutName=_workoutName;
 @property(nonatomic) int workoutLocationType; // @synthesize workoutLocationType=_workoutLocationType;
 @property(nonatomic) int workoutGoalUnitType; // @synthesize workoutGoalUnitType=_workoutGoalUnitType;

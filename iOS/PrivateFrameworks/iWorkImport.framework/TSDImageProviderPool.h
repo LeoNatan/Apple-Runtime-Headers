@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface TSDImageProviderPool : NSObject <TSPDataCullingListener>
 {
-    TSUPointerKeyDictionary *mImageDataToImageProviderMap;
+    TSUPointerKeyDictionary *mImageDataUniqueIdentifierToImageProviderMap;
     unsigned long long mOpenFileDescriptorLimit;
     _Bool mHaveRaisedFileDescriptorLimit;
 }
@@ -31,9 +31,9 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)p_imageProviderMemoryThreshold;
 - (void)p_freeFileDescriptorsWithProviderCount:(unsigned long long)arg1;
 - (unsigned long long)p_providerLimitForFileDescriptorLimit:(unsigned long long)arg1;
-- (void)p_clearCacheForData:(id)arg1;
-- (void)didReplaceContentsOfData:(id)arg1;
-- (void)willCullData:(id)arg1;
+- (void)p_clearCacheForDataUniqueIdentifier:(id)arg1 flags:(unsigned long long)arg2;
+- (void)didReplaceContentsOfDataWithUniqueIdentifier:(id)arg1 flags:(unsigned long long)arg2;
+- (void)willCullDataWithUniqueIdentifier:(id)arg1 flags:(unsigned long long)arg2;
 - (void)flushImageProviders;
 - (void)p_flushRandomImageProvidersExcludingProvider:(id)arg1;
 - (_Bool)p_rngSaysToFlush;

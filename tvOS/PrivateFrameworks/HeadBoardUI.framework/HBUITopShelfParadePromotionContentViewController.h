@@ -8,7 +8,7 @@
 
 #import <HeadBoardUI/HBUITopShelfParadeContentViewController-Protocol.h>
 
-@class NSString, UIButton, UILabel;
+@class HBUITopShelfParadeButton, NSString, UILabel;
 @protocol HBUITopShelfParadeAction, HBUITopShelfParadeContentViewControllerDelegate, HBUITopShelfParadeItem;
 
 __attribute__((visibility("hidden")))
@@ -16,14 +16,14 @@ __attribute__((visibility("hidden")))
 {
     id <HBUITopShelfParadeItem> _paradeItem;
     id <HBUITopShelfParadeContentViewControllerDelegate> _delegate;
-    UIButton *_primaryActionButton;
+    HBUITopShelfParadeButton *_primaryActionButton;
     UILabel *_primaryActionSubtitleLabel;
     id <HBUITopShelfParadeAction> _primaryAction;
 }
 
 @property(retain, nonatomic) id <HBUITopShelfParadeAction> primaryAction; // @synthesize primaryAction=_primaryAction;
 @property(readonly, nonatomic) UILabel *primaryActionSubtitleLabel; // @synthesize primaryActionSubtitleLabel=_primaryActionSubtitleLabel;
-@property(readonly, nonatomic) UIButton *primaryActionButton; // @synthesize primaryActionButton=_primaryActionButton;
+@property(readonly, nonatomic) HBUITopShelfParadeButton *primaryActionButton; // @synthesize primaryActionButton=_primaryActionButton;
 @property(nonatomic) __weak id <HBUITopShelfParadeContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <HBUITopShelfParadeItem> paradeItem; // @synthesize paradeItem=_paradeItem;
 - (void).cxx_destruct;

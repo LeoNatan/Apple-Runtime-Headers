@@ -24,6 +24,7 @@
 - (id)debugDescription;
 - (id)description;
 @property(readonly, nonatomic) _Bool isComplete;
+- (id)initFiller;
 - (id)initWithMessageID:(id)arg1;
 
 @end

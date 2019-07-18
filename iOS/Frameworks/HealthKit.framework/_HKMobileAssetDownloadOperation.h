@@ -6,36 +6,33 @@
 
 #import <objc/NSObject.h>
 
-@class ASAsset, NSDictionary;
+@class MAAsset, MADownloadOptions;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface _HKMobileAssetDownloadOperation : NSObject
 {
-    ASAsset *_asset;
-    NSDictionary *_downloadOptions;
+    MAAsset *_asset;
+    MADownloadOptions *_downloadOptions;
     long long _state;
     CDUnknownBlockType _completion;
-    long long _attemptCount;
+    long long _retryCount;
+    long long _maxNumberOfRetriesAllowed;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void).cxx_destruct;
-- (void)_queue_assetStateUpdated;
-- (void)_queue_resumeAssetDownload;
-- (void)_handleDownloadProgressWithState:(id)arg1 error:(id)arg2;
-- (void)_queue_assignDownloadHandlerForAsset;
 - (void)_queue_downloadAsset;
 - (void)_queue_transitionToState:(long long)arg1;
 - (void)_queue_transitionToCompleted;
-- (void)_queue_transitionToFailureWithError:(id)arg1;
+- (void)_queue_transitionToFailureWithDownloadResult:(long long)arg1;
 - (void)_queue_transitionToDownloadingAsset;
 - (void)_queue_transitionToInitialized;
 - (void)_queue_callCompletionWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_queue_run;
 - (void)run;
 - (id)description;
-- (id)initWithAsset:(id)arg1 serialQueue:(id)arg2 downloadOptions:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)initWithAsset:(id)arg1 queue:(id)arg2 downloadOptions:(id)arg3 maxNumberOfRetriesAllowed:(long long)arg4 completion:(CDUnknownBlockType)arg5;
 
 @end
 

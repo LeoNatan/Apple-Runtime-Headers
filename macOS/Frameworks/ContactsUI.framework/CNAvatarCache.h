@@ -22,6 +22,8 @@
     CNAvatarCacheChangeListener *_changeHistoryListener;
 }
 
++ (long long)photoAndDefaultProhibitedSources;
++ (long long)defaultProhibitedSources;
 + (id)os_log;
 @property(nonatomic) BOOL liveUpdating; // @synthesize liveUpdating=_liveUpdating;
 @property(readonly, nonatomic) CNAvatarCacheChangeListener *changeHistoryListener; // @synthesize changeHistoryListener=_changeHistoryListener;
@@ -41,6 +43,7 @@
 - (void)invalidate;
 - (id)initWithLikenessResolver:(id)arg1 contactStore:(id)arg2;
 - (id)initWithLikenessResolver:(id)arg1;
+- (id)initWithProhibitedSources:(long long)arg1;
 - (id)init;
 
 // Remaining properties

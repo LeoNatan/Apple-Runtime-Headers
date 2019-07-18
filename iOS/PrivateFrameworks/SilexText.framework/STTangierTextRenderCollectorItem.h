@@ -16,15 +16,15 @@
     STTextTangierStorage *_storage;
     STTextTangierFlowStorage *_flowStorage;
     NSString *_componentIdentifier;
-    STTextTangierTextLayout *_layout;
     UIView<TSDRepDirectLayerHosting> *_directLayerHost;
+    STTextTangierTextLayout *_layout;
     STTextTangierFlowLayout *_flowLayout;
     struct _NSRange _flowRange;
 }
 
 @property(retain, nonatomic) STTextTangierFlowLayout *flowLayout; // @synthesize flowLayout=_flowLayout;
-@property(retain, nonatomic) UIView<TSDRepDirectLayerHosting> *directLayerHost; // @synthesize directLayerHost=_directLayerHost;
 @property(retain, nonatomic) STTextTangierTextLayout *layout; // @synthesize layout=_layout;
+@property(readonly, nonatomic) UIView<TSDRepDirectLayerHosting> *directLayerHost; // @synthesize directLayerHost=_directLayerHost;
 @property(readonly, nonatomic) _Bool selectable; // @synthesize selectable=_selectable;
 @property(readonly, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
 @property(readonly, nonatomic) struct _NSRange flowRange; // @synthesize flowRange=_flowRange;

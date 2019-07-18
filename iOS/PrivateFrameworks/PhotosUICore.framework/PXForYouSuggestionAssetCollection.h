@@ -47,6 +47,7 @@
 @property(readonly, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
 @property(readonly, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 - (void).cxx_destruct;
+- (id)localizedDateDescriptionWithOptions:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 startDate:(id)arg3 endDate:(id)arg4;
 - (id)init;
@@ -82,7 +83,7 @@
 @property(readonly, nonatomic) _Bool px_isRecentlyAddedSmartAlbum;
 @property(readonly, nonatomic) _Bool px_isRecentlyDeletedSmartAlbum;
 @property(readonly, nonatomic) _Bool px_isRecentlyEditedSmartAlbum;
-@property(readonly, nonatomic) _Bool px_isRecentlySavedSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isRecentsSmartAlbum;
 @property(readonly, nonatomic) _Bool px_isRegularAlbum;
 @property(readonly, nonatomic) _Bool px_isRegularFolder;
 @property(readonly, nonatomic) _Bool px_isRootSmartAlbum;

@@ -37,12 +37,14 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_searchResults;
     CNAutocompleteResultsTableViewController *_autocompleteTableViewController;
     CNAutocompleteFetchContext *_fetchContext;
+    _Bool _hasChanges;
     NSString *_searchAccountID;
     id <EKEventAttendeePickerDelegate> _addressValidationDelegate;
 }
 
 + (_Bool)_participantHasResponded:(id)arg1;
 + (id)_addressForRecipient:(id)arg1;
+@property(nonatomic) _Bool hasChanges; // @synthesize hasChanges=_hasChanges;
 @property(nonatomic) __weak id <EKEventAttendeePickerDelegate> addressValidationDelegate; // @synthesize addressValidationDelegate=_addressValidationDelegate;
 @property(copy, nonatomic) NSString *searchAccountID; // @synthesize searchAccountID=_searchAccountID;
 - (void).cxx_destruct;
@@ -92,6 +94,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *addresses;
 @property(readonly, nonatomic) NSString *remainingText;
 - (void)commitRemainingText;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;

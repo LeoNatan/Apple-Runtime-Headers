@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLogMsgEventBatchTrafficProbe, GEOLogMsgEventClientACSuggestions, GEOLogMsgEventCommuteWindow, GEOLogMsgEventDirections, GEOLogMsgEventDisplayAnalytic, GEOLogMsgEventFullNavTrace, GEOLogMsgEventGenericAppError, GEOLogMsgEventGridDuration, GEOLogMsgEventListInteractionSession, GEOLogMsgEventLogFramework, GEOLogMsgEventMapLaunch, GEOLogMsgEventMapsWidgetsInteractionSession, GEOLogMsgEventNetwork, GEOLogMsgEventParkedCar, GEOLogMsgEventPlaceDataCache, GEOLogMsgEventProactiveSuggestionInteractionSession, GEOLogMsgEventRealtimeTrafficProbe, GEOLogMsgEventRefineSearchSession, GEOLogMsgEventStateTiming, GEOLogMsgEventTelemetric, GEOLogMsgEventThrottle, GEOLogMsgEventTileCacheAnalytic, GEOLogMsgEventTileSetState, GEOLogMsgEventTimeToLeaveHypothesis, GEOLogMsgEventTimeToLeaveInitialTravelTime, GEOLogMsgEventTransitAppLaunch, GEOLogMsgEventUserAction, GEOLogMsgEventWifiConnectionQualityProbe, LOGMSGEVENTLogMsgEventRideBookedSession, LOGMSGEVENTLogMsgEventRideBookingSession, LOGMSGEVENTLogMsgEventTableBookedSession, LOGMSGEVENTLogMsgEventTableBookingSession, NSMutableArray, PBDataReader;
+@class GEOLogMsgEventBatchTrafficProbe, GEOLogMsgEventClientACSuggestions, GEOLogMsgEventCommuteWindow, GEOLogMsgEventDirections, GEOLogMsgEventDisplayAnalytic, GEOLogMsgEventFullNavTrace, GEOLogMsgEventGenericAppError, GEOLogMsgEventGridDuration, GEOLogMsgEventListInteractionSession, GEOLogMsgEventLogFramework, GEOLogMsgEventMapKitCounts, GEOLogMsgEventMapLaunch, GEOLogMsgEventMapsWidgetsInteractionSession, GEOLogMsgEventMarcoLiteUsage, GEOLogMsgEventNetwork, GEOLogMsgEventParkedCar, GEOLogMsgEventPlaceDataCache, GEOLogMsgEventPredExTrainingData, GEOLogMsgEventProactiveSuggestionInteractionSession, GEOLogMsgEventRealtimeTrafficProbe, GEOLogMsgEventRefineSearchSession, GEOLogMsgEventStateTiming, GEOLogMsgEventTelemetric, GEOLogMsgEventThrottle, GEOLogMsgEventTileCacheAnalytic, GEOLogMsgEventTileSetState, GEOLogMsgEventTimeToLeaveHypothesis, GEOLogMsgEventTimeToLeaveInitialTravelTime, GEOLogMsgEventTransitAppLaunch, GEOLogMsgEventUserAction, GEOLogMsgEventWifiConnectionQualityProbe, LOGMSGEVENTLogMsgEventRideBookedSession, LOGMSGEVENTLogMsgEventRideBookingSession, LOGMSGEVENTLogMsgEventTableBookedSession, LOGMSGEVENTLogMsgEventTableBookingSession, NSMutableArray, PBDataReader;
 
 @interface GEOLogMsgEvent : PBCodable <NSCopying>
 {
@@ -25,11 +25,14 @@
     GEOLogMsgEventListInteractionSession *_listInteractionSession;
     GEOLogMsgEventLogFramework *_logFrameworkEvent;
     NSMutableArray *_logMsgStates;
+    GEOLogMsgEventMapKitCounts *_mapKitCounts;
     GEOLogMsgEventMapLaunch *_mapLaunchEvent;
     GEOLogMsgEventMapsWidgetsInteractionSession *_mapsWidgetsInteractionSession;
+    GEOLogMsgEventMarcoLiteUsage *_marcoLiteUsage;
     GEOLogMsgEventNetwork *_networkEvent;
     GEOLogMsgEventParkedCar *_parkedCar;
     GEOLogMsgEventPlaceDataCache *_placeDataCacheEvent;
+    GEOLogMsgEventPredExTrainingData *_predExTrainingData;
     GEOLogMsgEventProactiveSuggestionInteractionSession *_proactiveSuggestionInteractionSessionEvent;
     GEOLogMsgEventRealtimeTrafficProbe *_realtimeTrafficProbeCollection;
     GEOLogMsgEventRefineSearchSession *_refineSearchSession;
@@ -63,11 +66,14 @@
         unsigned int read_listInteractionSession:1;
         unsigned int read_logFrameworkEvent:1;
         unsigned int read_logMsgStates:1;
+        unsigned int read_mapKitCounts:1;
         unsigned int read_mapLaunchEvent:1;
         unsigned int read_mapsWidgetsInteractionSession:1;
+        unsigned int read_marcoLiteUsage:1;
         unsigned int read_networkEvent:1;
         unsigned int read_parkedCar:1;
         unsigned int read_placeDataCacheEvent:1;
+        unsigned int read_predExTrainingData:1;
         unsigned int read_proactiveSuggestionInteractionSessionEvent:1;
         unsigned int read_realtimeTrafficProbeCollection:1;
         unsigned int read_refineSearchSession:1;
@@ -96,11 +102,14 @@
         unsigned int wrote_listInteractionSession:1;
         unsigned int wrote_logFrameworkEvent:1;
         unsigned int wrote_logMsgStates:1;
+        unsigned int wrote_mapKitCounts:1;
         unsigned int wrote_mapLaunchEvent:1;
         unsigned int wrote_mapsWidgetsInteractionSession:1;
+        unsigned int wrote_marcoLiteUsage:1;
         unsigned int wrote_networkEvent:1;
         unsigned int wrote_parkedCar:1;
         unsigned int wrote_placeDataCacheEvent:1;
+        unsigned int wrote_predExTrainingData:1;
         unsigned int wrote_proactiveSuggestionInteractionSessionEvent:1;
         unsigned int wrote_realtimeTrafficProbeCollection:1;
         unsigned int wrote_refineSearchSession:1;
@@ -143,6 +152,15 @@
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOLogMsgEventMarcoLiteUsage *marcoLiteUsage;
+@property(readonly, nonatomic) BOOL hasMarcoLiteUsage;
+- (void)_readMarcoLiteUsage;
+@property(retain, nonatomic) GEOLogMsgEventPredExTrainingData *predExTrainingData;
+@property(readonly, nonatomic) BOOL hasPredExTrainingData;
+- (void)_readPredExTrainingData;
+@property(retain, nonatomic) GEOLogMsgEventMapKitCounts *mapKitCounts;
+@property(readonly, nonatomic) BOOL hasMapKitCounts;
+- (void)_readMapKitCounts;
 @property(retain, nonatomic) GEOLogMsgEventThrottle *throttleEvent;
 @property(readonly, nonatomic) BOOL hasThrottleEvent;
 - (void)_readThrottleEvent;

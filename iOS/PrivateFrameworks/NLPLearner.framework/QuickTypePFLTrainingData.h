@@ -13,13 +13,14 @@ __attribute__((visibility("hidden")))
 {
     NSMutableArray *_sentences;
     unsigned long long _iterator;
+    _Bool _processingNewRecord;
     unsigned long long _maxSequenceLength;
 }
 
 + (unsigned long long)defaultMaxSequenceLength;
 + (id)trainingDataFor:(long long)arg1 andLocale:(id)arg2;
-+ (long long)taskFromRecipe:(id)arg1;
 + (void)initialize;
+@property(nonatomic) _Bool processingNewRecord; // @synthesize processingNewRecord=_processingNewRecord;
 @property(nonatomic) unsigned long long iterator; // @synthesize iterator=_iterator;
 @property(retain, nonatomic) NSMutableArray *sentences; // @synthesize sentences=_sentences;
 @property(nonatomic) unsigned long long maxSequenceLength; // @synthesize maxSequenceLength=_maxSequenceLength;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)loadFromCoreDuet:(id)arg1 withLocale:(id)arg2 andTokenizationBlock:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) unsigned long long numTrainingSamples;
 - (void)rewind;
+- (id)getEvaluationDataPoint;
 - (id)getTrainingDataBatch:(unsigned long long)arg1;
 - (_Bool)loadFromCoreDuet:(id)arg1;
 - (id)init;

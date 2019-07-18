@@ -9,6 +9,7 @@
 @class SGStorageReminder;
 
 @protocol SGJournalRemindersObserver <SGJournalBaseObserver>
+- (void)orphanReminder:(SGStorageReminder *)arg1;
 - (void)rejectReminderFromOtherDevice:(SGStorageReminder *)arg1;
 - (void)confirmReminderFromOtherDevice:(SGStorageReminder *)arg1;
 - (void)reminderAlarmTriggeredFromThisDevice:(SGStorageReminder *)arg1;

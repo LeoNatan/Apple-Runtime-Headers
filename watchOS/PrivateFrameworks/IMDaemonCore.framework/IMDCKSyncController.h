@@ -10,7 +10,7 @@
 #import <IMDaemonCore/IMDXPCEventStreamHandlerDelegate-Protocol.h>
 #import <IMDaemonCore/IMSystemMonitorListener-Protocol.h>
 
-@class CKFetchRecordZonesOperation, IMTimer, NSDate, NSString, NSTimer;
+@class IMTimer, NSDate, NSString, NSTimer;
 
 @interface IMDCKSyncController : IMDCKAbstractSyncController <IMDXPCEventStreamHandlerDelegate, IMSystemMonitorListener, IMDCKAbstractSyncControllerDelegate>
 {
@@ -19,7 +19,6 @@
     NSTimer *_longRunningSyncTimer;
     IMTimer *_nightlySyncTimer;
     int _initialSyncAttempts;
-    CKFetchRecordZonesOperation *_cloudKitMetricsFetchOp;
     NSDate *_lastLogDumpDate;
     NSDate *_lastRestoreFailureLogDumpDate;
     NSTimer *_reloadTimer;
@@ -30,7 +29,6 @@
 @property _Bool shouldReloadConversations; // @synthesize shouldReloadConversations=_shouldReloadConversations;
 @property(retain, nonatomic) NSDate *lastRestoreFailureLogDumpDate; // @synthesize lastRestoreFailureLogDumpDate=_lastRestoreFailureLogDumpDate;
 @property(retain, nonatomic) NSDate *lastLogDumpDate; // @synthesize lastLogDumpDate=_lastLogDumpDate;
-@property(retain, nonatomic) CKFetchRecordZonesOperation *cloudKitMetricsFetchOp; // @synthesize cloudKitMetricsFetchOp=_cloudKitMetricsFetchOp;
 @property(nonatomic) int initialSyncAttempts; // @synthesize initialSyncAttempts=_initialSyncAttempts;
 @property(retain, nonatomic) IMTimer *nightlySyncTimer; // @synthesize nightlySyncTimer=_nightlySyncTimer;
 @property(retain, nonatomic) NSTimer *longRunningSyncTimer; // @synthesize longRunningSyncTimer=_longRunningSyncTimer;

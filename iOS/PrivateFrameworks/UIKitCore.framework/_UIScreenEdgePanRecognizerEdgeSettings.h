@@ -6,6 +6,7 @@
 
 #import <UIKitCore/_UISettings.h>
 
+__attribute__((visibility("hidden")))
 @interface _UIScreenEdgePanRecognizerEdgeSettings : _UISettings
 {
     double _hysteresis;

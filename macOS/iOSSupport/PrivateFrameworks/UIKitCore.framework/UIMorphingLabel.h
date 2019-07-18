@@ -40,6 +40,7 @@
     struct CGRect _visibleRect;
 }
 
++ (id)preferredFontWithSize:(double)arg1;
 @property(nonatomic) double rippleDuration; // @synthesize rippleDuration=_rippleDuration;
 @property(nonatomic) double glyphScaleAnimationSpeed; // @synthesize glyphScaleAnimationSpeed=_glyphScaleAnimationSpeed;
 @property(nonatomic) double initialScale; // @synthesize initialScale=_initialScale;
@@ -50,6 +51,7 @@
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
+- (void)contentSizeDidChange:(id)arg1;
 - (double)requiredWidthForText:(id)arg1;
 - (double)flushAmount;
 - (BOOL)canFitText:(id)arg1;

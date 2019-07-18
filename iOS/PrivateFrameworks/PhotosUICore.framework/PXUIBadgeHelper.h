@@ -10,9 +10,10 @@
 {
 }
 
++ (id)_mediumSymbolConfiguration;
 + (id)_smallSymbolConfiguration;
-+ (void)getText:(id *)arg1 textOffset:(struct CGPoint *)arg2 forBadgeInfo:(struct PXAssetBadgeInfo)arg3 style:(long long)arg4;
-+ (void)getImage:(id *)arg1 imageOffset:(struct CGPoint *)arg2 forBadgeInfo:(struct PXAssetBadgeInfo)arg3 style:(long long)arg4 isOverContent:(_Bool)arg5;
++ (id)textForBadgeInfo:(struct PXAssetBadgeInfo)arg1 style:(long long)arg2;
++ (id)imageForBadgeInfo:(struct PXAssetBadgeInfo)arg1 style:(long long)arg2 isOverContent:(_Bool)arg3;
 + (id)debugBackgroundImageWithBadges:(unsigned long long)arg1;
 + (id)suggestionFacesImage;
 + (id)suggestionGreatPhotoImage;
@@ -21,14 +22,13 @@
 + (id)suggestionOnThisDayImage;
 + (id)cloudBadgeImage;
 + (id)panoramaBadgeImage;
++ (id)_favoriteBadgeImageWithSymbolConfiguration:(id)arg1;
 + (id)favoritesCollectionBadgeImage;
 + (id)favoriteBadgeImage;
 + (id)loopingBadgeTemplateImage;
 + (id)loopingBadgeImage;
 + (id)gradientImage;
 + (id)livePhotoBadgeShadowedImage;
-+ (id)stackBadgeImage;
-+ (id)themeForBadgeInfo:(struct PXAssetBadgeInfo)arg1 style:(long long)arg2 wantsImage:(_Bool)arg3 wantsLabel:(_Bool)arg4 interactive:(_Bool)arg5 customTintColor:(id)arg6;
 + (struct PXAssetBadgeInfo)topRightBadgeInfoForBadgeInfo:(struct PXAssetBadgeInfo)arg1;
 + (struct PXAssetBadgeInfo)topLeftSecondaryBadgeInfoForBadgeInfo:(struct PXAssetBadgeInfo)arg1;
 + (struct PXAssetBadgeInfo)topLeftPrimaryBadgeInfoForBadgeInfo:(struct PXAssetBadgeInfo)arg1;

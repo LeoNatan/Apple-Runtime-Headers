@@ -25,6 +25,7 @@
 - (void)saveSubFolderMergeableDataIfNeeded;
 @property(retain, nonatomic) NSData *subFolderOrderMergeableData;
 @property(readonly, nonatomic) NSArray *visibleSubFolders;
+@property(readonly, nonatomic) NSString *containerIdentifier;
 @property(readonly, nonatomic) _Bool isTrashFolder;
 - (_Bool)isModernCustomFolder;
 @property(readonly, nonatomic) _Bool isAllNotesContainer;

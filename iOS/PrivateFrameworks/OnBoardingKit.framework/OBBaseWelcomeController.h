@@ -11,7 +11,8 @@
 }
 
 - (void)_presentationStyleValidationCheck;
-- (_Bool)supportsChromeless;
+- (void)_applyChromelessToBar:(long long)arg1 navigationItem:(id)arg2;
+- (id)navigationItem;
 - (double)autoScrollEdgeTransitionDistance;
 - (long long)navigationBarScrollToEdgeBehavior;
 - (struct NSDirectionalEdgeInsets)insetsForTemplateType:(unsigned long long)arg1;

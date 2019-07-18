@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)numberOfTrainingInstances;
 - (id)customEmbeddingData;
 - (id)labelMap;
+- (unsigned int)systemVersion;
 - (id)configuration;
 - (id)modelData;
 - (void)dealloc;

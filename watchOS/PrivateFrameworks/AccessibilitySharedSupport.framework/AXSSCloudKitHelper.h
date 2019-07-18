@@ -75,6 +75,8 @@
 - (_Bool)_createSchemaIfNecessary:(id *)arg1;
 - (id)testRecordForSchemaCreation:(id)arg1;
 - (_Bool)_createZoneIfNecessary:(id *)arg1;
+- (id)zoneSubscriptionKey;
+- (id)zoneCreatedKey;
 - (_Bool)_checkAccountStatus:(id *)arg1;
 - (void)_initializeCloudkitForObservedStore;
 - (void)observeChangesForManagedContext:(id)arg1;

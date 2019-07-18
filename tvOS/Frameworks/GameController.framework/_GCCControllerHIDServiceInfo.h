@@ -6,11 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSData;
+@class NSData, NSNumber, NSString;
 
 @interface _GCCControllerHIDServiceInfo : NSObject
 {
     struct __IOHIDServiceClient *_service;
+    NSNumber *_registryID;
+    NSString *_name;
     _Bool _isPreallocatedSiriRemote;
     NSData *_inputData;
 }

@@ -7,45 +7,68 @@
 #import <NeutrinoCore/NUAutoCalculator.h>
 
 #import <PhotoImaging/NUTimeBased-Protocol.h>
+#import <PhotoImaging/PIFaceObservingAutoCalculator-Protocol.h>
 
-@class NSNumber, NSString, VNSaliencyImageObservation;
+@class CIImage, NSMutableDictionary, NSNumber, NSString, PIFaceObservationCache, VNSaliencyImageObservation;
 
-@interface PIPerspectiveAutoCalculator : NUAutoCalculator <NUTimeBased>
+@interface PIPerspectiveAutoCalculator : NUAutoCalculator <NUTimeBased, PIFaceObservingAutoCalculator>
 {
     _Bool _disableOnPanos;
     _Bool _disableOnFrontFacingCameraImages;
+    _Bool _shouldRunDetectorsIfNecessary;
+    _Bool _shouldRunBuildingCheck;
+    _Bool _debugFilesEnabled;
+    PIFaceObservationCache *_faceObservationCache;
     NSNumber *_maxAutoYaw;
     NSNumber *_maxAutoPitch;
     NSNumber *_maxAutoAngle;
+    double _minimumConfidence;
     double _maxFaceSize;
     double _minSalientArea;
     double _maxSalientSubjectArea;
     VNSaliencyImageObservation *_saliencyObservation;
     double _angleSeedDegreesCCW;
+    NSString *_debugFilesPrefix;
+    NSMutableDictionary *_debugDiagnostics;
+    CIImage *_debugLineDetectionImage;
 }
 
 + (void)undoOrientation:(long long)arg1 forPitch:(double *)arg2 yaw:(double *)arg3 angle:(double *)arg4;
+@property(retain, nonatomic) CIImage *debugLineDetectionImage; // @synthesize debugLineDetectionImage=_debugLineDetectionImage;
+@property(readonly) NSMutableDictionary *debugDiagnostics; // @synthesize debugDiagnostics=_debugDiagnostics;
+@property(copy) NSString *debugFilesPrefix; // @synthesize debugFilesPrefix=_debugFilesPrefix;
+@property _Bool debugFilesEnabled; // @synthesize debugFilesEnabled=_debugFilesEnabled;
 @property double angleSeedDegreesCCW; // @synthesize angleSeedDegreesCCW=_angleSeedDegreesCCW;
 @property(retain, nonatomic) VNSaliencyImageObservation *saliencyObservation; // @synthesize saliencyObservation=_saliencyObservation;
 @property(nonatomic) double maxSalientSubjectArea; // @synthesize maxSalientSubjectArea=_maxSalientSubjectArea;
 @property(nonatomic) double minSalientArea; // @synthesize minSalientArea=_minSalientArea;
+@property _Bool shouldRunBuildingCheck; // @synthesize shouldRunBuildingCheck=_shouldRunBuildingCheck;
+@property _Bool shouldRunDetectorsIfNecessary; // @synthesize shouldRunDetectorsIfNecessary=_shouldRunDetectorsIfNecessary;
 @property _Bool disableOnFrontFacingCameraImages; // @synthesize disableOnFrontFacingCameraImages=_disableOnFrontFacingCameraImages;
 @property _Bool disableOnPanos; // @synthesize disableOnPanos=_disableOnPanos;
 @property double maxFaceSize; // @synthesize maxFaceSize=_maxFaceSize;
+@property double minimumConfidence; // @synthesize minimumConfidence=_minimumConfidence;
 @property(copy) NSNumber *maxAutoAngle; // @synthesize maxAutoAngle=_maxAutoAngle;
 @property(copy) NSNumber *maxAutoPitch; // @synthesize maxAutoPitch=_maxAutoPitch;
 @property(copy) NSNumber *maxAutoYaw; // @synthesize maxAutoYaw=_maxAutoYaw;
+@property(retain, nonatomic) PIFaceObservationCache *faceObservationCache; // @synthesize faceObservationCache=_faceObservationCache;
 - (void).cxx_destruct;
 - (void)submitVerified:(CDUnknownBlockType)arg1;
+- (_Bool)passesConfidenceCheck:(id)arg1 error:(out id *)arg2;
 - (_Bool)canGenerateNewCropRect:(out id *)arg1;
 - (id)primaryImageProperties:(out id *)arg1;
 - (void)submit:(CDUnknownBlockType)arg1;
-- (_Bool)passesSaliencyCheck;
-- (_Bool)passesImagePropertiesCheck;
+- (_Bool)passesSaliencyCheck:(out id *)arg1;
+- (_Bool)passesImagePropertiesCheck:(out id *)arg1;
 - (_Bool)isFrontFacingCameraImage:(id)arg1 pixelSize:(CDStruct_912cb5d2)arg2;
 - (_Bool)hasFrontFacingCameraDimentions:(CDStruct_912cb5d2)arg1;
-- (_Bool)passesFaceCheck;
+- (_Bool)passesFaceCheck:(out id *)arg1;
 - (float)getSizeOfAllFaces:(id)arg1;
+- (void)writeDebugDiagnosticsToDisk;
+- (id)wrapAsUnexpectedError:(id)arg1;
+- (void)addMethodResultToDiagnostics:(id)arg1 error:(id)arg2 setYawPitchError:(_Bool)arg3;
+- (void)addMethodDiagnostics:(id)arg1 details:(id)arg2;
+- (id)perspectiveErrorFromCoreImage:(id)arg1;
 - (id)initWithComposition:(id)arg1;
 
 // Remaining properties

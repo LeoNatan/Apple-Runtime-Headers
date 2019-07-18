@@ -9,7 +9,7 @@
 #import <AppleMediaServices/AMSBagConsumer-Protocol.h>
 #import <AppleMediaServices/AMSSecurityClientInterface-Protocol.h>
 
-@class ACAccount, AMSURLSession, NSDictionary, NSString;
+@class ACAccount, AMSProcessInfo, AMSURLSession, NSDictionary, NSString;
 @protocol AMSBagProtocol, AMSRequestPresentationDelegate;
 
 @interface AMSBiometricsTokenUpdateTask : AMSTask <AMSSecurityClientInterface, AMSBagConsumer>
@@ -18,6 +18,7 @@
     BOOL _shouldPromptUser;
     ACAccount *_account;
     NSDictionary *_additionalDialogMetrics;
+    AMSProcessInfo *_clientInfo;
     id <AMSRequestPresentationDelegate> _presentationDelegate;
     id <AMSBagProtocol> _bag;
     AMSURLSession *_session;
@@ -31,6 +32,7 @@
 @property(readonly) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property BOOL shouldRequestConfirmation; // @synthesize shouldRequestConfirmation=_shouldRequestConfirmation;
 @property __weak id <AMSRequestPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
+@property(retain) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(retain) NSDictionary *additionalDialogMetrics; // @synthesize additionalDialogMetrics=_additionalDialogMetrics;
 @property(readonly) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;

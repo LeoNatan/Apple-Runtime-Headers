@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     struct unordered_map<TSU::UUIDData<TSP::UUIDData>, TSUPointerKeyDictionary *, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, TSUPointerKeyDictionary *>>> _stringsByTrackedReferenceByTable;
     NSObject<OS_dispatch_queue> *_nrmQueue;
     TSCEReferenceTracker *_referenceTracker;
+    TSCEReferenceTracker *_weakReferenceTracker;
     TSCECalculationEngine *_calcEngine;
     _Bool _markIndirectsDirtyInWritePhase;
 }

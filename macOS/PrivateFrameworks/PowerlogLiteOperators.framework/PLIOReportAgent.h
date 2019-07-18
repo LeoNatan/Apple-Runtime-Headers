@@ -50,7 +50,9 @@
 + (id)entryEventBackwardDefinitionPPMStatsDroopController;
 + (id)entryEventBackwardDefinitionCLPCStatsLimiterControlEffort;
 + (id)entryEventBackwardDefinitionLimiterControlEffort;
++ (id)entryEventBackwardDefinitionCPUStatsLostPerformanceReasons;
 + (id)entryEventBackwardDefinitionCPUStatsCPUComplexThermalUPOLimiting;
++ (BOOL)shouldLogLostPerformanceReasons;
 + (BOOL)shouldLogThermalUPOLimiting;
 + (id)entryEventBackwardDefinitionCPUStatsEvents;
 + (id)entryEventBackwardDefinitionPRLUsageRStandby;
@@ -63,7 +65,8 @@
 + (id)entryEventBackwardDefinitionAOPmuxPower;
 + (id)entryEventBackwardDefinitionAOPAmpPower;
 + (id)entryEventBackwardDefinitionCorePerformanceLevelResidency;
-+ (id)entryEventBackwardDefinitionPreUVLO;
++ (id)entryEventBackwardDefinitionVDDOK2;
++ (id)entryEventBackwardDefinitionVDDOK1;
 + (id)entryEventBackwardDefinitionMultitouchCPUStats;
 + (id)entryEventBackwardDefinitionAOPAOP_Haptics;
 + (id)entryEventBackwardDefinitionActuatorPowerState;
@@ -181,10 +184,10 @@
 @property(retain) PLEntryNotificationOperatorComposition *batteryLevelChangedNotifications; // @synthesize batteryLevelChangedNotifications=_batteryLevelChangedNotifications;
 - (void).cxx_destruct;
 - (void)logSOCHOT0Snapshot;
+- (void)logDroopSnapshot;
 - (void)logIOReportSnapshot;
 - (void)modelPMPAPSocPower:(id)arg1;
 - (void)modelAPSoCPower:(id)arg1;
-- (void)incrementAggdKeyForGroup:(id)arg1 withChannel:(id)arg2 withDelta:(unsigned long long)arg3;
 - (void)logEventBackwardMTRAging;
 - (void)logEventBackwardIOReportWithDelta:(id)arg1 forChannelGroup:(id)arg2;
 - (void)logEventBackwardAOPPowerState:(id)arg1 withChannels:(id)arg2;

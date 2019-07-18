@@ -19,9 +19,10 @@
     NSMutableArray *_parameterCurves;
 }
 
-@property(readonly) NSArray *embeddedURLs; // @synthesize embeddedURLs=_embeddedURLs;
++ (id)eventListFromEvents:(id)arg1 parameters:(id)arg2 parameterCurves:(id)arg3 engine:(id)arg4 privileged:(BOOL)arg5;
 - (void).cxx_destruct;
 - (BOOL)resolveExternalResources:(id)arg1 error:(id *)arg2;
+- (id)eventListFromDictionary:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) double duration;
 - (id)exportDictionaryAndReturnError:(id *)arg1;
 - (id)initWithDictionary:(id)arg1 error:(id *)arg2;

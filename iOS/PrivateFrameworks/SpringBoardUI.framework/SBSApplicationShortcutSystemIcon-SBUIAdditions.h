@@ -11,5 +11,6 @@
 @interface SBSApplicationShortcutSystemIcon (SBUIAdditions)
 + (id)sbui_defaultImage;
 @property(readonly, nonatomic) UIImage *sbui_image;
+@property(readonly, nonatomic) UIImage *sbui_systemImage;
 @end
 

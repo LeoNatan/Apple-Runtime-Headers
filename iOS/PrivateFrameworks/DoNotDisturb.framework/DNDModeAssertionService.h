@@ -36,6 +36,7 @@
 - (_Bool)invalidateAllActiveModeAssertionsWithError:(id *)arg1;
 - (id)latestModeAssertionInvalidationWithError:(id *)arg1;
 - (id)activeModeAssertionWithError:(id *)arg1;
+- (id)invalidateActiveModeAssertionWithInvalidationDetails:(id)arg1 reasonOverride:(unsigned long long)arg2 error:(id *)arg3;
 - (id)invalidateActiveModeAssertionWithError:(id *)arg1;
 - (id)takeModeAssertionWithDetails:(id)arg1 error:(id *)arg2;
 - (id)_initWithClientIdentifier:(id)arg1;

@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 @property(nonatomic) float trailingSeparatorInset;
 @property(nonatomic) float leadingSeparatorInset;
+- (void)infoCardThemeChanged;
 @property(nonatomic) float rightSeparatorInset;
 @property(nonatomic) float leftSeparatorInset;
 @property(nonatomic, getter=isSeparatorHidden) _Bool separatorHidden;

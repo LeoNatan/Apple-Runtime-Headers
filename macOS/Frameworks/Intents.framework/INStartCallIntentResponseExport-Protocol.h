@@ -10,6 +10,7 @@
 @class NSNumber;
 
 @protocol INStartCallIntentResponseExport <NSObject, JSExport>
+@property long long confirmationReason;
 @property(copy) NSNumber *shouldDoEmergencyCountdown;
 @property(readonly) long long code;
 @end

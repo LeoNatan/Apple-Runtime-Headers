@@ -10,6 +10,7 @@
 
 @interface _UIApplicationInfo : FBSApplicationInfo
 {
+    long long _launchingInterfaceOrientation;
     _UIApplicationInfoParser *_plistParser;
     NSArray *_lazy_folderNames;
     NSString *_lazy_fallbackFolderName;
@@ -30,6 +31,7 @@
 }
 
 + (id)_genreNameForID:(long long)arg1;
++ (id)_localizedFolderNameForName:(id)arg1;
 @property(readonly, nonatomic) _Bool fakingRequiresHighResolution; // @synthesize fakingRequiresHighResolution=_fakingRequiresHighResolution;
 @property(readonly, nonatomic) _Bool requiresHighResolution; // @synthesize requiresHighResolution=_requiresHighResolution;
 @property(readonly, nonatomic) long long whitePointAdaptivityStyle; // @synthesize whitePointAdaptivityStyle=_whitePointAdaptivityStyle;
@@ -51,6 +53,7 @@
 @property(readonly, nonatomic) NSString *fallbackFolderName;
 @property(readonly, nonatomic) NSArray *folderNames;
 - (void)_loadFromProxy:(id)arg1;
+- (long long)_launchingInterfaceOrientation;
 
 @end
 

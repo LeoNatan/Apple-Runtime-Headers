@@ -18,6 +18,7 @@
 + (id)_certificatePrivateKeyLabelForOptions:(id)arg1;
 + (id)_primaryConstraintsWithOptions:(id)arg1;
 + (id)_primaryConstraintsForWatch;
++ (id)_primaryConstraintsForMac;
 + (id)_primaryConstraints;
 + (id)_extendedConstraintsWithOptions:(id)arg1;
 + (struct __SecAccessControl *)createAccessControlRefWithOptions:(id)arg1 error:(id *)arg2;

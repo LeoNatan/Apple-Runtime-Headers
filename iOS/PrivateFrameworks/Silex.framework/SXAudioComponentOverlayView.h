@@ -6,19 +6,18 @@
 
 #import <UIKit/UIImageView.h>
 
-@class UIActivityIndicatorView, UIImage, UIView;
-@protocol SXVideoOverlayButton;
+@class UIActivityIndicatorView, UIButton, UIImage;
 
 @interface SXAudioComponentOverlayView : UIImageView
 {
-    UIView<SXVideoOverlayButton> *_playButton;
+    UIButton *_playButton;
     UIImage *_audioIndicatorImage;
     UIActivityIndicatorView *_activityIndicator;
 }
 
 @property(readonly, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(readonly, nonatomic) UIImage *audioIndicatorImage; // @synthesize audioIndicatorImage=_audioIndicatorImage;
-@property(readonly, nonatomic) UIView<SXVideoOverlayButton> *playButton; // @synthesize playButton=_playButton;
+@property(readonly, nonatomic) UIButton *playButton; // @synthesize playButton=_playButton;
 - (void).cxx_destruct;
 - (void)stopActivityIndicator;
 - (void)startActivityIndicator;

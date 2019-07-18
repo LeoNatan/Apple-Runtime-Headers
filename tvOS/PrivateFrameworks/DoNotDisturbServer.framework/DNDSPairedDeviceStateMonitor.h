@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+@class DNDSPairedDevice;
 @protocol DNDSPairedDeviceStateMonitorDelegate;
 
 @interface DNDSPairedDeviceStateMonitor : NSObject
@@ -15,7 +16,8 @@
 
 @property(nonatomic) __weak id <DNDSPairedDeviceStateMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)pairedDeviceWithError:(id *)arg1;
+- (void)resume;
+@property(readonly, copy) DNDSPairedDevice *pairedDevice; // @dynamic pairedDevice;
 
 @end
 

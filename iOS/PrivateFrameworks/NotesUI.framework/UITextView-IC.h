@@ -9,7 +9,10 @@
 @class PKTiledView;
 
 @interface UITextView (IC)
+@property(readonly, nonatomic) struct CGPoint ic_textContainerOrigin;
 @property(readonly, nonatomic) PKTiledView *ic_pkTiledView;
+- (id)ic_imageForRange:(struct _NSRange)arg1;
+- (struct CGRect)ic_rectForRange:(struct _NSRange)arg1;
 - (struct _NSRange)ic_rangeFromRect:(struct CGRect)arg1;
 - (struct _NSRange)ic_visibleRange;
 - (struct _NSRange)ic_characterRangeFromTextPosition:(id)arg1;

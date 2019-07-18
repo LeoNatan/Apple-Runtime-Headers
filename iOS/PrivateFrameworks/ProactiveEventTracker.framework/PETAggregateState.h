@@ -16,6 +16,7 @@
 
 + (unsigned char)hashForString:(id)arg1;
 - (void).cxx_destruct;
+- (_Bool)checkIntegrity;
 - (id)description;
 - (void)enumerateAndResetCounters:(CDUnknownBlockType)arg1 distributions:(CDUnknownBlockType)arg2;
 - (void)reset;

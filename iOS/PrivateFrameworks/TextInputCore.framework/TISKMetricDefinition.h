@@ -14,23 +14,23 @@
     int _metricType;
     NSString *_metricName;
     unsigned long long _positionalSize;
-    CDStruct_cd80b3f2 *_metricDefinition;
+    CDStruct_37a3040a *_metricDefinition;
 }
 
 + (id)metricDefinitions;
 + (id)_makeMetric:(id)arg1 type:(int)arg2;
-+ (id)_makeMetric:(id)arg1 type:(int)arg2 metricDef:(CDStruct_cd80b3f2 *)arg3 isPointMetric:(_Bool)arg4;
-+ (id)_makeMetric:(id)arg1 type:(int)arg2 metricDef:(CDStruct_cd80b3f2 *)arg3;
-+ (id)_makeMetric:(id)arg1 type:(int)arg2 metricDef:(CDStruct_cd80b3f2 *)arg3 size:(unsigned long long)arg4;
-+ (id)_makeMetric:(id)arg1 type:(int)arg2 metricDef:(CDStruct_cd80b3f2 *)arg3 size:(unsigned long long)arg4 isPointMetric:(_Bool)arg5;
++ (id)_makeMetric:(id)arg1 type:(int)arg2 metricDef:(CDStruct_37a3040a *)arg3 isPointMetric:(_Bool)arg4;
++ (id)_makeMetric:(id)arg1 type:(int)arg2 metricDef:(CDStruct_37a3040a *)arg3;
++ (id)_makeMetric:(id)arg1 type:(int)arg2 metricDef:(CDStruct_37a3040a *)arg3 size:(unsigned long long)arg4;
++ (id)_makeMetric:(id)arg1 type:(int)arg2 metricDef:(CDStruct_37a3040a *)arg3 size:(unsigned long long)arg4 isPointMetric:(_Bool)arg5;
 + (double)pointsToMM:(double)arg1;
 @property(readonly, nonatomic) _Bool isPointMetric; // @synthesize isPointMetric=_isPointMetric;
-@property(readonly, nonatomic) CDStruct_cd80b3f2 *metricDefinition; // @synthesize metricDefinition=_metricDefinition;
+@property(readonly, nonatomic) CDStruct_37a3040a *metricDefinition; // @synthesize metricDefinition=_metricDefinition;
 @property(readonly, nonatomic) unsigned long long positionalSize; // @synthesize positionalSize=_positionalSize;
 @property(readonly, nonatomic) int metricType; // @synthesize metricType=_metricType;
 @property(readonly, nonatomic) NSString *metricName; // @synthesize metricName=_metricName;
 - (void).cxx_destruct;
-- (id)init:(id)arg1 type:(int)arg2 metricDef:(CDStruct_cd80b3f2 *)arg3 size:(unsigned long long)arg4 isPointMetric:(_Bool)arg5;
+- (id)init:(id)arg1 type:(int)arg2 metricDef:(CDStruct_37a3040a *)arg3 size:(unsigned long long)arg4 isPointMetric:(_Bool)arg5;
 
 @end
 

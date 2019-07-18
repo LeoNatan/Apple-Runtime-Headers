@@ -32,7 +32,6 @@
 @property(retain, nonatomic) UIPanGestureRecognizer *presentGestureRecognizer; // @synthesize presentGestureRecognizer=_presentGestureRecognizer;
 @property(nonatomic) __weak id <SBCoverSheetSystemGestureDelegatePositionProviding> positionProvider; // @synthesize positionProvider=_positionProvider;
 - (void).cxx_destruct;
-- (void)_speakThisSettingChanged;
 - (_Bool)isAnyGestureActivelyRecognized;
 - (_Bool)_isGestureActivelyRecognized:(id)arg1;
 - (_Bool)_canPresentGestureBegin;
@@ -45,7 +44,6 @@
 - (id)viewForSystemGestureRecognizer:(id)arg1;
 - (_Bool)isPresentGestureActive;
 - (_Bool)isDismissGestureActive;
-- (void)dealloc;
 - (id)initWithViewController:(id)arg1 dismissGestureRecognizer:(id)arg2 dismissAddendumGestureRecognizer:(id)arg3 dismissalPreemptingGestureRecognizer:(id)arg4;
 
 // Remaining properties

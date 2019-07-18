@@ -27,6 +27,7 @@
         unsigned int didReceiveDataFromPeripheral:1;
         unsigned int didDiscoverMultiplePeripherals:1;
         unsigned int didUpdateANCSAuthorizationForPeripheral:1;
+        unsigned int canSendDataToPeripheral:1;
     } _delegateFlags;
     _Bool _isScanning;
     id <CBCentralManagerDelegate> _delegate;
@@ -57,6 +58,7 @@
 - (void)handlePeripheralConnectionStateUpdated:(id)arg1;
 - (void)handleApplicationConnectionEventDidOccur:(id)arg1;
 - (void)handlePeripheralDisconnectionCompleted:(id)arg1;
+- (void)handlePeripheralCLReady:(id)arg1;
 - (void)handlePeripheralConnectionCompleted:(id)arg1;
 - (void)handlePeripheralDiscovered:(id)arg1;
 - (void)handleRestoringState:(id)arg1;

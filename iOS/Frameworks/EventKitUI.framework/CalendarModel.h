@@ -28,6 +28,10 @@
     long long _cachedFakeTodayIndex;
     long long _displayableAccountErrorsCount;
     long long _initialAccountSyncCount;
+    _Bool _showDayAsList;
+    _Bool _showMonthAsDivided;
+    _Bool _suspendSelectedDateChanges;
+    EKCalendarDate *_suspendedSelectedDate;
     _Bool _autoStartNotificationMonitor;
     NSSet *_selectedCalendars;
     NSString *_searchString;
@@ -67,6 +71,8 @@
 - (id)_notificationMonitor;
 - (void)startNotificationMonitor;
 - (_Bool)removeEvent:(id)arg1 withSpan:(long long)arg2 error:(id *)arg3;
+@property(nonatomic) _Bool showMonthAsDivided;
+@property(nonatomic) _Bool showDayAsList;
 - (void)_systemWake;
 - (void)_timeZoneChanged:(id)arg1;
 - (void)_localeChanged:(id)arg1;
@@ -112,6 +118,7 @@
 - (long long)numberOfDaysWithCachedOccurrences;
 - (_Bool)cachedOccurrencesAreLoaded;
 - (_Bool)cachedOccurrencesAreBeingGenerated;
+@property(readonly, nonatomic) _Bool currentlyLocked;
 - (void)setPreferredReloadStartDate:(id)arg1 endDate:(id)arg2;
 - (void)setComponentForExpandingPadding:(unsigned long long)arg1;
 - (void)setComponentForExpandingRequests:(unsigned long long)arg1;
@@ -127,6 +134,7 @@
 - (void)addOccurrenceAwaitingRefresh:(id)arg1;
 - (void)updateSelectedDateTimeZone;
 @property(readonly, nonatomic) EKCalendarDate *selectedDay;
+- (void)setSelectedDateChangesDelayedUntilAfterTransition:(_Bool)arg1;
 - (id)refreshCalendarDataIfNeeded:(_Bool)arg1;
 - (id)refreshAccountListIfNeeded:(_Bool)arg1;
 - (id)defaultCalendarForNewEvents;

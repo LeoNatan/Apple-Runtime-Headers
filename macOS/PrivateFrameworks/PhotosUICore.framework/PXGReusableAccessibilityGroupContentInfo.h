@@ -10,10 +10,17 @@
 {
 }
 
+- (void)_scrollToVisibleAccessibilityContent:(id)arg1;
+- (void)accessibilityPerformScrollToVisible;
+- (id)_siblingInDirection:(unsigned long long)arg1;
+- (id)previousSibling;
+- (id)nextSibling;
 - (void)setAccessibilitySelectedChildren:(id)arg1;
 - (id)accessibilitySelectedChildren;
-- (id)_selectedDescendants;
+- (id)selectedContent;
 - (BOOL)selected;
+- (id)accessibilitySubrole;
+- (id)accessibilityRole;
 
 @end
 

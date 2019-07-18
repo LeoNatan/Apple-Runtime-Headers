@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)_initGenericApp;
 - (id)_initWithIcon:(id)arg1 decorations:(id)arg2;
 - (id)initWithImages:(id)arg1;
 - (id)_initTransparent;

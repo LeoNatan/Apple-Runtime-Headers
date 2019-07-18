@@ -10,6 +10,7 @@
 
 @protocol SBRemoteTransientOverlayHostViewControllerDelegate <NSObject>
 - (SBUIRemoteAlertButtonAction *)remoteTransientOverlayHostViewController:(SBRemoteTransientOverlayHostViewController *)arg1 requestsActionForHandlingButtonEvents:(unsigned long long)arg2;
+- (long long)defaultPreferredInterfaceOrientationForPresentationForRemoteTransientOverlayHostViewController:(SBRemoteTransientOverlayHostViewController *)arg1;
 - (void)remoteTransientOverlayHostViewController:(SBRemoteTransientOverlayHostViewController *)arg1 requestsWallpaperEffectUpdateWithAnimationSettings:(BSAnimationSettings *)arg2;
 - (void)remoteTransientOverlayHostViewController:(SBRemoteTransientOverlayHostViewController *)arg1 didTerminateWithError:(NSError *)arg2;
 - (void)remoteTransientOverlayHostViewControllerRequestsInvalidation:(SBRemoteTransientOverlayHostViewController *)arg1;

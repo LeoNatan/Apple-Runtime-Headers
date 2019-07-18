@@ -11,34 +11,26 @@
 @interface CPKFont : NSObject
 {
     struct __CTFont *_privateCTFont;
-    double _unitScalingFactor;
-    double _lineHeight;
-    unsigned long long _maxUnicharForGlyph;
-    unsigned short _lastMeasuredGlyph;
-    struct CGRect _lastGlyphBoundsUnit;
     NSLock *_privateFontLock;
     BOOL _isEmojiFont;
-    struct CGFont *_cgFont;
     double _fontSize;
 }
 
-+ (id)_defaultFontName;
++ (id)defaultFontName;
 + (id)glyphInfoArrayForAttributedString:(id)arg1;
 + (id)sharedFontWithName:(id)arg1 size:(double)arg2;
 @property(readonly) BOOL isEmojiFont; // @synthesize isEmojiFont=_isEmojiFont;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
-@property(readonly) struct CGFont *cgFont; // @synthesize cgFont=_cgFont;
 - (id)description;
-- (double)_fontSizeForFittingGlyph:(unsigned short)arg1 inRect:(struct CGRect)arg2 preferredFontSize:(double)arg3 useLineHeight:(BOOL)arg4 layoutBounds:(struct CGRect *)arg5;
-- (struct CGRect)layoutBoundsForGlyph:(unsigned short)arg1 inRect:(struct CGRect)arg2 useLineHeight:(BOOL)arg3;
-- (double)fontSizeForFittingGlyph:(unsigned short)arg1 inRect:(struct CGRect)arg2 useLineHeight:(BOOL)arg3 layoutBounds:(struct CGRect *)arg4;
+- (double)_fontSizeForFittingGlyph:(unsigned short)arg1 inRect:(struct CGRect)arg2 preferredFontSize:(double)arg3 layoutBounds:(struct CGRect *)arg4;
+- (struct CGRect)layoutBoundsForGlyph:(unsigned short)arg1 inRect:(struct CGRect)arg2;
+- (double)fontSizeForFittingGlyph:(unsigned short)arg1 inRect:(struct CGRect)arg2 layoutBounds:(struct CGRect *)arg3;
+@property(readonly) double descent;
 @property(readonly) double ascent;
-@property(readonly) double lineHeight;
 - (struct CGRect)boundingRectForGlyph:(unsigned short)arg1;
 @property(readonly) const struct __CTFont *ctFont;
 - (unsigned short)glyphForString:(id)arg1 fallbackFontName:(id *)arg2;
 - (void)dealloc;
-- (id)_initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 size:(double)arg2;
 
 @end

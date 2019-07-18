@@ -4,46 +4,58 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PassKitUI/PKExplanationViewController.h>
+#import <PassKitUI/PKDynamicProvisioningPageViewController.h>
 
 #import <PassKitUI/PKApplyFlowControllerProtocol-Protocol.h>
-#import <PassKitUI/PKExplanationViewControllerDelegate-Protocol.h>
-#import <PassKitUI/PKExplanationViewDelegate-Protocol.h>
 
-@class NSString, PKApplyController, PKApplyPage;
+@class NSString, PKApplyController;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKApplyExplanationViewController : PKExplanationViewController <PKExplanationViewDelegate, PKExplanationViewControllerDelegate, PKApplyFlowControllerProtocol>
+@interface PKApplyExplanationViewController : PKDynamicProvisioningPageViewController <PKApplyFlowControllerProtocol>
 {
-    PKApplyPage *_applyPage;
     _Bool _isLoading;
     PKApplyController *_controller;
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
+    CDUnknownBlockType _continueAction;
+    CDUnknownBlockType _auxiliaryAction;
+    CDUnknownBlockType _learnMoreAction;
+    CDUnknownBlockType _doneAction;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType doneAction; // @synthesize doneAction=_doneAction;
+@property(copy, nonatomic) CDUnknownBlockType learnMoreAction; // @synthesize learnMoreAction=_learnMoreAction;
+@property(copy, nonatomic) CDUnknownBlockType auxiliaryAction; // @synthesize auxiliaryAction=_auxiliaryAction;
+@property(copy, nonatomic) CDUnknownBlockType continueAction; // @synthesize continueAction=_continueAction;
 @property(nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 @property(nonatomic) __weak PKApplyController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
-- (void)explanationViewDidSelectBodyButton:(id)arg1;
-- (void)explanationViewControllerDidSelectDone:(id)arg1;
-- (void)explanationViewControllerDidSelectCancel:(id)arg1;
-- (void)explanationViewDidSelectSetupLater:(id)arg1;
-- (void)explanationViewDidSelectContinue:(id)arg1;
+- (void)_bodyButtonAction;
 - (void)_featureApplicationUpdated;
 - (void)showNavigationBarSpinner:(_Bool)arg1;
 - (void)terminateSetupFlow;
 - (void)handleNextViewController:(id)arg1 displayableError:(id)arg2;
 - (void)handleNextStep;
 - (id)currentPage;
+- (void)_performDoneAction:(_Bool)arg1;
+- (void)_performActionForBlock:(CDUnknownBlockType)arg1;
+- (void)_cancel;
+- (void)_done;
+- (void)_learnMore;
+- (void)_auxiliary;
+- (void)_continue;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)viewDidLoad;
 - (id)initWithController:(id)arg1 setupDelegate:(id)arg2 context:(int)arg3 applyPage:(id)arg4;
 
 // Remaining properties
+@property(copy, nonatomic) CDUnknownBlockType bodyButtonAction; // @dynamic bodyButtonAction;
+@property(copy, nonatomic) CDUnknownBlockType cancelButtonAction; // @dynamic cancelButtonAction;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(copy, nonatomic) CDUnknownBlockType doneButtonAction; // @dynamic doneButtonAction;
 @property(readonly) unsigned int hash;
+@property(copy, nonatomic) CDUnknownBlockType primaryButtonAction; // @dynamic primaryButtonAction;
+@property(copy, nonatomic) CDUnknownBlockType secondaryButtonAction; // @dynamic secondaryButtonAction;
 @property(readonly) Class superclass;
 
 @end

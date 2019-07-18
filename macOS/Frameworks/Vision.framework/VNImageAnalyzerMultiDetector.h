@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     struct unordered_map<unsigned long, std::__1::shared_ptr<std::__1::vector<std::__1::shared_ptr<vision::mod::ImageAnalyzer_CustomClassifier>, std::__1::allocator<std::__1::shared_ptr<vision::mod::ImageAnalyzer_CustomClassifier>>>>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::shared_ptr<std::__1::vector<std::__1::shared_ptr<vision::mod::ImageAnalyzer_CustomClassifier>, std::__1::allocator<std::__1::shared_ptr<vision::mod::ImageAnalyzer_CustomClassifier>>>>>>> _imageAnalyzerJunkCustomClassifiers;
     struct unique_ptr<vision::mod::ImageAnalyzer_PCA, std::__1::default_delete<vision::mod::ImageAnalyzer_PCA>> _imageAnalyzerPCA256;
     _VNImageAnalyzerMultiDetectorSceneOperationPointsCache *_operationPointsCache;
-    shared_ptr_53937872 _pipelineImageCorrectionNeed1CustomClassifier;
+    shared_ptr_53937872 _pipelineImageCorrectionNeed1CustomClassifier_DO_NOT_ACCESS_DIRECTLY;
     vector_950c3afd _cachedAllSceneClassificationsFromLastAnalysis;
 }
 
@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (id)_sceneprintObservationsForLastAnalysisOfSceneprint:(BOOL)arg1 includingLabelsAndConfidencesInSceneprint:(BOOL)arg2 compressedSceneprint:(BOOL)arg3 options:(id)arg4 error:(id *)arg5;
 - (struct ImageAnalyzer_PCA *)_sceneprintCompressorForCompression:(unsigned long long)arg1 error:(id *)arg2;
 - (id)_pipelineImageCorrectionNeed1ForLastAnalysisWithOptions:(id)arg1 error:(id *)arg2;
+- (shared_ptr_53937872)_pipelineImageCorrectionNeed1CustomClassifierForRequestRevision:(unsigned long long)arg1 options:(id)arg2 error:(id *)arg3;
 - (shared_ptr_53937872)_loadPipelineImageCorrectionNeed1CustomClassifierForRequestRevision:(unsigned long long)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)_junkObservationsForLastAnalysisWithOptions:(id)arg1 error:(id *)arg2;
 - (shared_ptr_6ef80be1)_junkCustomClassifiersForRequestRevision:(unsigned long long)arg1 options:(id)arg2 error:(id *)arg3;

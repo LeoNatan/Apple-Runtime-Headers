@@ -12,30 +12,11 @@
 {
 }
 
-+ (id)canvasForScene:(id)arg1 create:(_Bool)arg2;
-+ (id)canvasForScene:(id)arg1;
-+ (id)canvases;
-- (id)canvasToolbar;
-- (void)_setDisplayConfigurationRequest:(id)arg1;
-- (id)_displayConfigurationRequest;
-- (void)_setAVKitRequestedRefreshRate:(double)arg1 HDRMode:(int)arg2 overscanCompensation:(int)arg3;
-- (void)setScreenRequestedOverscanCompensation:(int)arg1;
-- (int)_resolvedOverscanCompensation;
-- (int)screenRequestedOverscanCompensation;
-- (void)_setScreenRequestedDisplayNativePixelSize:(struct CGSize)arg1;
-- (struct CGSize)_screenRequestedDisplayNativePixelSize;
-- (void)setKeepContextAssociationInBackground:(_Bool)arg1;
-- (_Bool)keepContextAssociationInBackground;
-- (id)scene;
-- (void)detachWindow:(id)arg1;
-- (void)attachWindow:(id)arg1;
-- (id)initWithScene:(id)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) _UICanvasDefinition *_definition; // @dynamic _definition;
 @property(readonly, nonatomic, getter=isKeyCanvas) _Bool keyCanvas; // @dynamic keyCanvas;
 @property(readonly, nonatomic, getter=_scene) FBSScene *scene; // @dynamic scene;
 @property(readonly, nonatomic) int state; // @dynamic state;
-
 @end
 

@@ -42,7 +42,6 @@ __attribute__((visibility("hidden")))
 
 + (id)formatterForLocale:(id)arg1;
 + (struct __CFNumberFormatter *)createHarmonizedCFNumberFormatterWithLocale:(id)arg1 style:(long long)arg2;
-+ (id)userVisibleCurrencyCodes;
 + (unsigned long long)groupingSizeForLocale:(id)arg1;
 + (id)percentSymbolForLocale:(id)arg1;
 + (id)currencyGroupingSeparatorForLocale:(id)arg1;
@@ -52,15 +51,9 @@ __attribute__((visibility("hidden")))
 + (id)defaultFormatStringForValueType:(int)arg1;
 + (id)defaultFormatStringForValueType:(int)arg1 negativeStyle:(int)arg2;
 + (id)numberFormatStringSpecialSymbols;
-+ (id)currentLocaleCurrencyDecimalSeparator;
-+ (id)currentLocaleDecimalSeparator;
-+ (id)currentLocaleCurrencyCode;
 + (id)defaultCurrencyCodeForLocale:(id)arg1;
-+ (unsigned short)defaultDecimalPlacesForCurrencyCode:(id)arg1;
 + (id)currencySymbolForCurrencyCode:(id)arg1 locale:(id)arg2;
 + (id)currencySymbolForCurrencyCode:(id)arg1;
-+ (id)displayNameForCurrencyCode:(id)arg1;
-+ (id)availableCurrencyCodes;
 + (void)formatString:(id)arg1 replaceOccurencesOfUnescapedString:(id)arg2 withString:(id)arg3;
 + (id)formatString:(id)arg1 transformedForNegativeStyle:(int)arg2;
 + (int)positionOfMinusSignInNumberFormatSubpattern:(id)arg1;
@@ -90,7 +83,6 @@ __attribute__((visibility("hidden")))
 - (id)halfWidthCurrencySymbolForCurrencyCode:(id)arg1;
 - (id)currencySymbolForCurrencyCode:(id)arg1;
 - (void)p_loadHarmonizedNumberFormatterSymbols;
-- (id)displayNameForCurrencyCode:(id)arg1;
 - (id)p_findCurrencySymbolInString:(id)arg1 additionalCurrencyCode:(id)arg2 successfullString:(id *)arg3 currencyCode:(id *)arg4;
 - (_Bool)p_valueFromString:(id)arg1 formatters:(id)arg2 value:(double *)arg3 formatString:(id *)arg4;
 - (_Bool)fractionFromString:(id)arg1 value:(double *)arg2;

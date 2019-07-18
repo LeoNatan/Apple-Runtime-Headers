@@ -42,7 +42,7 @@
 @property(retain) id <PXPerson> targetPerson; // @synthesize targetPerson=_targetPerson;
 @property(retain) id <PXPerson> sourcePerson; // @synthesize sourcePerson=_sourcePerson;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSString *displayName;
+@property(readonly, nonatomic) NSString *localizedName;
 - (id)init;
 
 @end

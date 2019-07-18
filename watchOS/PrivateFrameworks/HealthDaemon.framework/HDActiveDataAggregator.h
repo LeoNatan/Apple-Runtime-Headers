@@ -30,6 +30,7 @@
 - (_Bool)didPersistObjects:(id)arg1 lastDatum:(id)arg2 collector:(id)arg3 error:(id *)arg4;
 - (id)configurationForCollector:(id)arg1;
 - (void)dataCollector:(id)arg1 didCollectSensorData:(id)arg2 device:(id)arg3;
+- (void)unregisterDataCollector:(id)arg1;
 - (void)_reconsiderDelayedAggregation;
 - (void)_aggregateForCollector:(id)arg1 device:(id)arg2 requestedAggregationDate:(id)arg3 mode:(int)arg4 freezeSeries:(_Bool)arg5;
 - (id)initWithDataCollectionManager:(id)arg1;

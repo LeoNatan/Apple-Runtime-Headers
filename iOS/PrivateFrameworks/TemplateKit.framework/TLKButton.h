@@ -6,22 +6,20 @@
 
 #import <UIKit/UIView.h>
 
-@class CAShapeLayer, TLKImageView, UIButton, UIImage;
+@class CAShapeLayer, TLKImageView, TLKTapContainerButton, UIImage;
 
 @interface TLKButton : UIView
 {
     _Bool _toggled;
     _Bool _indeterminate;
-    UIView *_containerView;
     UIImage *_untoggledImage;
     UIImage *_toggledImage;
     UIImage *_overlayImage;
-    UIButton *_button;
+    TLKTapContainerButton *_button;
     CAShapeLayer *_outerProgressLayer;
     CAShapeLayer *_innerProgressLayer;
     double _progress;
     TLKImageView *_imageView;
-    struct CGSize _forcedSize;
 }
 
 + (CDStruct_afa449f9)_calculateStatistics:(struct CGImage *)arg1 withSize:(struct CGSize)arg2;
@@ -31,16 +29,14 @@
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) CAShapeLayer *innerProgressLayer; // @synthesize innerProgressLayer=_innerProgressLayer;
 @property(retain, nonatomic) CAShapeLayer *outerProgressLayer; // @synthesize outerProgressLayer=_outerProgressLayer;
-@property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
+@property(retain, nonatomic) TLKTapContainerButton *button; // @synthesize button=_button;
 @property(readonly, nonatomic, getter=isIndeterminate) _Bool indeterminate; // @synthesize indeterminate=_indeterminate;
-@property(nonatomic) struct CGSize forcedSize; // @synthesize forcedSize=_forcedSize;
 @property(retain, nonatomic) UIImage *overlayImage; // @synthesize overlayImage=_overlayImage;
 @property(retain, nonatomic) UIImage *toggledImage; // @synthesize toggledImage=_toggledImage;
 @property(retain, nonatomic) UIImage *untoggledImage; // @synthesize untoggledImage=_untoggledImage;
-@property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic, getter=isToggled) _Bool toggled; // @synthesize toggled=_toggled;
 - (void).cxx_destruct;
-- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
+@property(readonly) UIView *hitView;
 - (void)addTarget:(id)arg1 forAction:(SEL)arg2;
 - (id)_newShapeViewWithBounds:(struct CGRect)arg1 lineWidth:(double)arg2;
 - (id)iconColor;
@@ -58,6 +54,7 @@
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
+@property(nonatomic) __weak UIView *containerView;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)didMoveToWindow;
 - (void)_dynamicUserInterfaceTraitDidChange;

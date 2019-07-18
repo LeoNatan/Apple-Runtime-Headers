@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 {
     NSString *_candidateString;
     struct _NSRange _selectedRange;
-    NSString *_stringToCheck;
     NSTextCheckingResult *_result;
     double _openTime;
     double _closeTime;
@@ -25,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (id)dictionaryRepresentation;
 - (void)dealloc;
 - (id)description;
-- (id)initWithString:(id)arg1 range:(struct _NSRange)arg2 inString:(id)arg3;
+- (id)initWithString:(id)arg1 range:(struct _NSRange)arg2;
 
 @end
 

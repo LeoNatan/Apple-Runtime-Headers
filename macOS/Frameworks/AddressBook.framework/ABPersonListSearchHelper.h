@@ -47,6 +47,7 @@
 - (void)fetchLocalContacts;
 - (void)performEntryHandler;
 - (void)performSuggestionSearch:(id)arg1;
+- (void)expandPersonEntriesCacheWithEntry:(id)arg1;
 - (void)performLocalSearch:(id)arg1;
 - (void)searchForString:(id)arg1;
 - (id)initWithPersonListController:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;

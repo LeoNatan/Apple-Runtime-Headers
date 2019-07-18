@@ -15,6 +15,7 @@
 @interface _INPBIntentSupport : PBCodable <_INPBIntentSupport, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSArray *_intentsRestrictedWhileLockeds;
     NSArray *_intentsSupporteds;
     NSArray *_supportedMediaCategories;
@@ -23,6 +24,7 @@
 + (BOOL)supportsSecureCoding;
 + (Class)intentsSupportedType;
 + (Class)intentsRestrictedWhileLockedType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *supportedMediaCategories; // @synthesize supportedMediaCategories=_supportedMediaCategories;
 @property(copy, nonatomic) NSArray *intentsSupporteds; // @synthesize intentsSupporteds=_intentsSupporteds;
 @property(copy, nonatomic) NSArray *intentsRestrictedWhileLockeds; // @synthesize intentsRestrictedWhileLockeds=_intentsRestrictedWhileLockeds;

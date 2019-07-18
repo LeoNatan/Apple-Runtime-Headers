@@ -8,32 +8,29 @@
 
 #import <ContactsUICore/CNUICoreFamilyMemberContactsModelFetching-Protocol.h>
 
-@class CNSchedulerProvider, FAFamilyMember, NSString;
+@class CNSchedulerProvider, NSString;
 @protocol CNScheduler, CNUICoreContactStoreFacade, CNUICoreFamilyInfoFetching;
 
 @interface CNUICoreFamilyMemberContactsModelRetriever : NSObject <CNUICoreFamilyMemberContactsModelFetching>
 {
-    id <CNUICoreContactStoreFacade> _familyMemberScopedContactStore;
-    id <CNUICoreContactStoreFacade> _mainContactStore;
+    id <CNUICoreContactStoreFacade> _contactStore;
     id <CNUICoreFamilyInfoFetching> _familyInfoFetcher;
-    FAFamilyMember *_familyMember;
     CNSchedulerProvider *_schedulerProvider;
 }
 
 + (id)keysToFetch;
 + (long long)contactFormatterStyle;
 @property(readonly, nonatomic) CNSchedulerProvider *schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
-@property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 @property(readonly, nonatomic) id <CNUICoreFamilyInfoFetching> familyInfoFetcher; // @synthesize familyInfoFetcher=_familyInfoFetcher;
-@property(readonly, nonatomic) id <CNUICoreContactStoreFacade> mainContactStore; // @synthesize mainContactStore=_mainContactStore;
-@property(readonly, nonatomic) id <CNUICoreContactStoreFacade> familyMemberScopedContactStore; // @synthesize familyMemberScopedContactStore=_familyMemberScopedContactStore;
+@property(readonly, nonatomic) id <CNUICoreContactStoreFacade> contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
 - (id)allContacts;
 - (id)allContactsModel;
 - (id)whitelistedContactsModel;
 @property(readonly, nonatomic) id <CNScheduler> backgroundOrImmediateScheduler;
-- (id)initWithFamilyMemberScopedContactStoreFacade:(id)arg1 mainContactStoreFacade:(id)arg2 familyInfoFetcher:(id)arg3 familyMember:(id)arg4 schedulerProvider:(id)arg5;
+- (id)initWithContactStoreFacade:(id)arg1 familyInfoFetcher:(id)arg2 schedulerProvider:(id)arg3;
 - (id)initWithFamilyMember:(id)arg1 schedulerProvider:(id)arg2;
+- (id)initWithSchedulerProvider:(id)arg1;
 - (id)init;
 
 // Remaining properties

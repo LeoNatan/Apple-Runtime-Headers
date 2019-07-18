@@ -23,11 +23,13 @@
     PKDashboardBalancePresenter *_balancePresenter;
     PKDashboardBalanceSummaryItemPresenter *_balanceSummaryItemPresenter;
     PKDashboardBalanceItem *_balanceItem;
-    NSArray *_debitItems;
     PKDashboardBalanceSummaryItem *_lastStatementSummaryItem;
     PKDashboardBalanceSummaryItem *_currentSpendingSummaryItem;
     PKDashboardBalanceSummaryItem *_interestSummaryItem;
     PKDashboardBalanceSummaryItem *_paymentsAndCreditsSummaryItem;
+    PKDashboardBalanceSummaryItem *_paymentsSummaryItem;
+    PKDashboardBalanceSummaryItem *_creditsSummaryItem;
+    PKDashboardBalanceSummaryItem *_dailyCashSummaryItem;
     NSArray *_usageItems;
     PKDashboardBalanceSummaryItem *_statementDowloadSummaryItem;
     PKBalanceSummary *_balanceSummary;
@@ -44,6 +46,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)statementsChangedForAccountIdentifier:(id)arg1;
 - (_Bool)_shouldInset;
 - (void)_updateStatements;
@@ -63,7 +66,7 @@
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForFooterInSection:(int)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(int)arg3;
-- (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (_Bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;

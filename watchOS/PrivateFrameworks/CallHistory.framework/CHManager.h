@@ -43,13 +43,16 @@
 @property(retain, nonatomic) NSArray *recentCalls; // @synthesize recentCalls=_recentCalls;
 @property(nonatomic) _Bool generateSyncTransactions; // @synthesize generateSyncTransactions=_generateSyncTransactions;
 - (void).cxx_destruct;
-- (id)latestTelephonyCallMatchingNormalizedRemoteParticipantHandleValues:(id)arg1;
 - (id)latestCallMatchingNormalizedRemoteParticipantHandleValues:(id)arg1;
 - (id)latestRecentCallMatchingPredicate:(id)arg1;
 - (id)coalescedCallsWithPredicate:(id)arg1 limit:(unsigned int)arg2 offset:(unsigned int)arg3 batchSize:(unsigned int)arg4;
 - (unsigned int)coalescedCallCountWithPredicate:(id)arg1;
 - (id)callsWithPredicate:(id)arg1 limit:(unsigned int)arg2 offset:(unsigned int)arg3 batchSize:(unsigned int)arg4;
 - (unsigned int)callCountWithPredicate:(id)arg1;
+- (void)deleteCallsWithPredicate:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (int)deleteCallsWithPredicate:(id)arg1;
+- (void)setRead:(_Bool)arg1 forCallsWithPredicate:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (int)setRead:(_Bool)arg1 forCallsWithPredicate:(id)arg2;
 - (void)addMultipleCallsToCallHistory:(id)arg1;
 - (void)flush;
 - (void)callTimersReset;
@@ -72,7 +75,6 @@
 - (id)getLimitsDictionary;
 - (void)deleteAllCallsSync;
 - (void)deleteCallAtIndex:(unsigned int)arg1;
-- (void)deleteCallsWithPredicate:(id)arg1;
 - (void)deleteCall:(id)arg1;
 - (void)deleteTheseCalls:(id)arg1;
 - (void)deleteTheseCallsSync:(id)arg1;

@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HomeKitDaemon/HMBLocalZoneUpdateProtocol-Protocol.h>
+#import <HomeKitDaemon/NSObject-Protocol.h>
 
-@class HMBLocalZone, HMBProcessingOptions, NAFuture, NSSet, NSUUID;
+@class HMBLocalZone, HMBProcessingResult, NSSet, NSUUID;
 
-@protocol HMBLocalZoneDelegate <HMBLocalZoneUpdateProtocol>
+@protocol HMBLocalZoneDelegate <NSObject>
 
 @optional
-- (void)localZone:(HMBLocalZone *)arg1 processingDidComplete:(HMBProcessingOptions *)arg2 mirrorOutputFuture:(NAFuture *)arg3 actions:(NAFuture *)arg4;
+- (void)localZone:(HMBLocalZone *)arg1 didCompleteProcessingWithResult:(HMBProcessingResult *)arg2;
 - (NSUUID *)localZone:(HMBLocalZone *)arg1 didUpdateFromToken:(NSUUID *)arg2 delta:(NSSet *)arg3;
 @end
 

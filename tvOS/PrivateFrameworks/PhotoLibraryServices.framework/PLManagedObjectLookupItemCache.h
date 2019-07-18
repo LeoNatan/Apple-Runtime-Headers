@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSManagedObjectContext, NSMutableDictionary, PLPhotoLibraryPathManager;
+@class NSMutableDictionary, PLManagedObjectContext, PLPhotoLibraryPathManager;
 
 @interface PLManagedObjectLookupItemCache : NSObject
 {
     NSMutableDictionary *_objectIDsByKey;
-    NSManagedObjectContext *_creationContext;
+    PLManagedObjectContext *_creationContext;
     PLPhotoLibraryPathManager *_pathManager;
     struct os_unfair_lock_s _cacheLock;
 }
@@ -20,6 +20,7 @@
 - (id)createObjectIfNecessaryForKey:(id)arg1 withManagedObjectContext:(id)arg2 createBlock:(CDUnknownBlockType)arg3;
 - (id)objectIDForKey:(id)arg1;
 - (void)setObjectID:(id)arg1 forKey:(id)arg2;
+- (void)invalidateWithReason:(id)arg1;
 - (id)initWithPathManager:(id)arg1;
 
 @end

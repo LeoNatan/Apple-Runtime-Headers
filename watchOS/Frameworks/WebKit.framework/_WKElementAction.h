@@ -17,6 +17,7 @@
     int _type;
 }
 
++ (int)elementActionTypeForUIActionIdentifier:(id)arg1;
 + (id)imageForElementActionType:(int)arg1;
 + (id)elementActionWithType:(int)arg1;
 + (id)elementActionWithType:(int)arg1 customTitle:(id)arg2;
@@ -29,6 +30,7 @@
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)uiActionForElementInfo:(id)arg1;
 - (void)runActionWithElementInfo:(id)arg1;
 - (void)_runActionWithElementInfo:(id)arg1 forActionSheetAssistant:(id)arg2;
 @property(readonly, nonatomic) NSString *title;

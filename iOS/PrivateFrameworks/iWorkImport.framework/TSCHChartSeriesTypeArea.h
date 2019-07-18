@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)userInterfaceName;
 - (id)elementBuilder;
 - (_Bool)supportsSymbolFillForSymbolType:(int)arg1;
 - (_Bool)supportsSymbolDrawing;

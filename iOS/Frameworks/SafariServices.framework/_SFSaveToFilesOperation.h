@@ -9,7 +9,7 @@
 #import <SafariServices/UIDocumentPickerDelegate-Protocol.h>
 #import <SafariServices/_SFDownloadPlaceholderImporter-Protocol.h>
 
-@class NSString, UIDocumentPickerViewController, _SFActivityItemProviderCollection;
+@class NSString, UIDocumentPickerViewController, _SFActivityItemProviderCollection, _SFDownload;
 @protocol _SFSaveToFilesOperationDelegate;
 
 @interface _SFSaveToFilesOperation : NSObject <UIDocumentPickerDelegate, _SFDownloadPlaceholderImporter>
@@ -19,6 +19,7 @@
     UIDocumentPickerViewController *_documentPickerViewController;
     CDUnknownBlockType _downloadPlaceholderCompletionHandler;
     CDUnknownBlockType _prepareDownloadPlaceholderHandler;
+    _SFDownload *_download;
     id <_SFSaveToFilesOperationDelegate> _delegate;
 }
 

@@ -6,7 +6,7 @@
 
 #import <GameCenterUI/GKDetailViewController.h>
 
-@class GKDashboardPlayerPhotoView, GKLeaderboard, GKScore, NSTextField, UIButton;
+@class GKDashboardPlayerPhotoView, GKLeaderboard, GKScore, NSButton, NSTextField;
 
 @interface GKDashboardLeaderboardDetailViewController : GKDetailViewController
 {
@@ -15,18 +15,18 @@
     NSTextField *_descriptionLabel;
     NSTextField *_earnedOnLabel;
     NSTextField *_infoLabel;
-    UIButton *_firstButton;
-    UIButton *_secondButton;
-    UIButton *_reportProblemButton;
+    NSButton *_firstButton;
+    NSButton *_secondButton;
+    NSButton *_reportProblemButton;
     GKLeaderboard *_leaderboard;
     GKScore *_score;
 }
 
 @property(retain, nonatomic) GKScore *score; // @synthesize score=_score;
 @property(retain, nonatomic) GKLeaderboard *leaderboard; // @synthesize leaderboard=_leaderboard;
-@property(nonatomic) UIButton *reportProblemButton; // @synthesize reportProblemButton=_reportProblemButton;
-@property(nonatomic) UIButton *secondButton; // @synthesize secondButton=_secondButton;
-@property(nonatomic) UIButton *firstButton; // @synthesize firstButton=_firstButton;
+@property(nonatomic) NSButton *reportProblemButton; // @synthesize reportProblemButton=_reportProblemButton;
+@property(nonatomic) NSButton *secondButton; // @synthesize secondButton=_secondButton;
+@property(nonatomic) NSButton *firstButton; // @synthesize firstButton=_firstButton;
 @property(nonatomic) NSTextField *infoLabel; // @synthesize infoLabel=_infoLabel;
 @property(nonatomic) NSTextField *earnedOnLabel; // @synthesize earnedOnLabel=_earnedOnLabel;
 @property(nonatomic) NSTextField *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;

@@ -63,6 +63,8 @@
 @property(getter=isWaitingForFirstSync) _Bool waitingForFirstSync; // @synthesize waitingForFirstSync=_waitingForFirstSync;
 - (void).cxx_destruct;
 - (id)_newSyncState;
+- (void)_handleSyncDidResetLocalDataForSyncManager:(id)arg1;
+- (id)_allKnownRecordIDsForSyncManager:(id)arg1;
 - (void)_serialSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (long long)_qualityOfServiceForNextSync;
 - (long long)_qualityOfServiceForFirstSync:(_Bool)arg1;
@@ -80,9 +82,12 @@
 - (id)recordsForRestoringZoneName:(id)arg1;
 - (_Bool)canHelpRestoreZoneName:(id)arg1;
 - (void)loadLocalCachesFromStore;
-- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
+- (id)allKnownRecordNamesWithinRecordZoneWithID:(id)arg1;
+- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
+- (void)handleResetWithReplacementRecords:(id)arg1;
+- (void)handleSyncDidResetLocalDataForRecordZoneWithID:(id)arg1;
 - (void)handleSyncCompletion;
-- (void)manualDirty;
+- (void)markAsDirty;
 @property(readonly, nonatomic, getter=isDirty) _Bool dirty;
 - (void)addCommandToCommandQueue:(id)arg1;
 - (void)removeObserver:(id)arg1;

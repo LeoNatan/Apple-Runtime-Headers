@@ -61,8 +61,10 @@
     NSDate *_firstAudioPacketTimestamp;
     NSObject<OS_dispatch_queue> *_silencePosteriorGeneratorQueue;
     double _elapsedTimeWithNoSpeech;
+    double _trailingSilenceDurationAtEndpoint;
 }
 
+@property(nonatomic) double trailingSilenceDurationAtEndpoint; // @synthesize trailingSilenceDurationAtEndpoint=_trailingSilenceDurationAtEndpoint;
 @property(nonatomic) double elapsedTimeWithNoSpeech; // @synthesize elapsedTimeWithNoSpeech=_elapsedTimeWithNoSpeech;
 @property(nonatomic) _Bool didDetectSpeech; // @synthesize didDetectSpeech=_didDetectSpeech;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *silencePosteriorGeneratorQueue; // @synthesize silencePosteriorGeneratorQueue=_silencePosteriorGeneratorQueue;
@@ -121,7 +123,9 @@
 - (void)reset;
 - (void)_readClientLagParametersFromHEPAsset:(id)arg1;
 - (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(id)arg2 recordSettings:(id)arg3;
+- (void)stopEndpointer;
 - (void)recordingStoppedForReason:(long long)arg1;
+- (void)terminateProcessing;
 - (void)preheat;
 - (void)handleVoiceTriggerWithActivationInfo:(id)arg1;
 - (id)serverFeaturesLatencyDistributionDictionary;

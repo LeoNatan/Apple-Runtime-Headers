@@ -14,7 +14,7 @@
 {
 }
 
-- (id)serializedParametersForDonatedIntent:(id)arg1;
+- (id)serializedParametersForDonatedIntent:(id)arg1 allowDroppingUnconfigurableValues:(BOOL)arg2;
 - (void)sendTextViaMailtoURL:(id)arg1 withUserInterface:(id)arg2;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (void)generateBodyFromCollection:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -42,7 +42,7 @@
     long long _titleTextAlignment;
     NSString *_bodyText;
     NSAttributedString *_attributedBodyText;
-    NSString *_secondaryBodyText;
+    NSAttributedString *_attributedSecondaryBodyText;
     NSString *_bodyButtonText;
     UIView *_bodyView;
     long long _bodyTextAlignment;
@@ -64,7 +64,7 @@
 @property(nonatomic) long long bodyTextAlignment; // @synthesize bodyTextAlignment=_bodyTextAlignment;
 @property(retain, nonatomic) UIView *bodyView; // @synthesize bodyView=_bodyView;
 @property(copy, nonatomic) NSString *bodyButtonText; // @synthesize bodyButtonText=_bodyButtonText;
-@property(copy, nonatomic) NSString *secondaryBodyText; // @synthesize secondaryBodyText=_secondaryBodyText;
+@property(copy, nonatomic) NSAttributedString *attributedSecondaryBodyText; // @synthesize attributedSecondaryBodyText=_attributedSecondaryBodyText;
 @property(copy, nonatomic) NSAttributedString *attributedBodyText; // @synthesize attributedBodyText=_attributedBodyText;
 @property(copy, nonatomic) NSString *bodyText; // @synthesize bodyText=_bodyText;
 @property(nonatomic) long long titleTextAlignment; // @synthesize titleTextAlignment=_titleTextAlignment;
@@ -86,6 +86,9 @@
 - (_Bool)_showTitleLogoImageView;
 - (void)_updateCachedTitleLabelLastLine;
 - (void)_updateTitleLabel;
+- (void)_updateCheckmarkColor;
+- (void)_dynamicUserInterfaceTraitDidChange;
+- (void)tintColorDidChange;
 - (void)_createSubviews;
 - (void)_calculateBlur;
 - (void)scrollViewDidScroll:(id)arg1;

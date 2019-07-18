@@ -11,7 +11,7 @@
 #import <WorkflowUI/WFSlotTemplateTypingTextViewDelegate-Protocol.h>
 #import <WorkflowUI/WFTextAttachmentInteractionDelegate-Protocol.h>
 
-@class NSParagraphStyle, NSString, NSTextContainer, UIColor, UIFont, WFSlotIdentifier, WFSlotTemplateLayoutManager, WFSlotTemplateTextStorage, WFSlotTemplateTypingTextView, WFTextAttachmentInteraction;
+@class NSArray, NSParagraphStyle, NSString, NSTextContainer, UIColor, UIFont, WFSlotIdentifier, WFSlotTemplateLayoutManager, WFSlotTemplateTextStorage, WFSlotTemplateTypingTextView, WFTextAttachmentInteraction;
 @protocol WFSlotTemplateViewDelegate;
 
 @interface WFSlotTemplateView : UIView <WFSlotTemplateTextStorageDelegate, WFSlotTemplateTypingTextViewDelegate, UIGestureRecognizerDelegate, WFTextAttachmentInteractionDelegate>
@@ -31,9 +31,11 @@
     WFSlotTemplateTextStorage *_typingTextStorage;
     WFTextAttachmentInteraction *_typingAttachmentInteraction;
     unsigned long long _lastLayoutManagerLineCount;
+    NSArray *_accessibilityElements;
 }
 
 + (double)heightForWidth:(double)arg1 withContents:(id)arg2 font:(id)arg3 unpopulatedFont:(id)arg4 paragraphStyle:(id)arg5;
+@property(retain, nonatomic) NSArray *accessibilityElements; // @synthesize accessibilityElements=_accessibilityElements;
 @property(nonatomic) unsigned long long lastLayoutManagerLineCount; // @synthesize lastLayoutManagerLineCount=_lastLayoutManagerLineCount;
 @property(nonatomic) _Bool typingAllowsMultipleLines; // @synthesize typingAllowsMultipleLines=_typingAllowsMultipleLines;
 @property(retain, nonatomic) WFTextAttachmentInteraction *typingAttachmentInteraction; // @synthesize typingAttachmentInteraction=_typingAttachmentInteraction;
@@ -50,9 +52,13 @@
 @property(nonatomic) double horizontalPadding; // @synthesize horizontalPadding=_horizontalPadding;
 @property(nonatomic) __weak id <WFSlotTemplateViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)accessibilityShiftFocusBackToView;
+- (void)updateAccessibilityElements;
+- (_Bool)isAccessibilityElement;
 - (void)textViewDidEndEditing:(id)arg1;
 - (_Bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;
 - (void)textViewDidChange:(id)arg1;
+- (void)textViewDidBeginEditing:(id)arg1;
 - (void)resetTextView;
 - (void)endTyping;
 - (void)positionTypingAboveSlot:(id)arg1;
@@ -85,7 +91,9 @@
 - (void)selectSlotWithIdentifier:(id)arg1;
 @property(readonly, nonatomic) WFSlotIdentifier *selectedSlotIdentifier;
 - (id)selectedSlot;
+- (id)firstSlotIdentifierWithParameterKey:(id)arg1;
 - (id)slotWithIdentifier:(id)arg1;
+- (_Bool)hasSlotWithIdentifier:(id)arg1;
 - (void)setContents:(id)arg1 animated:(_Bool)arg2;
 @property(nonatomic) _Bool extendSlotBackgroundOffEdges;
 - (id)typingParagraphStyleForParagraphStyle:(id)arg1;

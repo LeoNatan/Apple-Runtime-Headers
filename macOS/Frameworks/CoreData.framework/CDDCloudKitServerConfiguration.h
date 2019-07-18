@@ -8,16 +8,20 @@
 
 #import <CoreData/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class CKScheduler, NSString, PFCloudKitContainerProvider;
 
 __attribute__((visibility("hidden")))
 @interface CDDCloudKitServerConfiguration : NSObject <NSSecureCoding>
 {
     NSString *_storeDirectoryPath;
     NSString *_machServiceName;
+    PFCloudKitContainerProvider *_containerProvider;
+    CKScheduler *_scheduler;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) CKScheduler *scheduler; // @synthesize scheduler=_scheduler;
+@property(retain, nonatomic) PFCloudKitContainerProvider *containerProvider; // @synthesize containerProvider=_containerProvider;
 @property(retain, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
 @property(retain, nonatomic) NSString *storeDirectoryPath; // @synthesize storeDirectoryPath=_storeDirectoryPath;
 - (void)encodeWithCoder:(id)arg1;

@@ -15,7 +15,10 @@
 }
 
 + (_Bool)compressFilesInQueue:(id)arg1 shouldDefer:(CDUnknownBlockType)arg2;
-+ (void)registerActivity:(id)arg1 withCompressionQueue:(id)arg2;
++ (void)_unregisterXPCActivity;
++ (void)_registerXPCActivity;
++ (void)unregisterXPCActivity;
++ (void)scheduleActivityIfNeeded;
 + (id)log;
 
 // Remaining properties

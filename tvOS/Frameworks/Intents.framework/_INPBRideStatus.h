@@ -17,6 +17,7 @@
     struct {
         unsigned int phase:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     int _phase;
     NSArray *_additionalActionItems;
     _INPBRideCompletionStatus *_completionStatus;
@@ -37,6 +38,7 @@
 + (_Bool)supportsSecureCoding;
 + (Class)waypointsType;
 + (Class)additionalActionItemsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *waypoints; // @synthesize waypoints=_waypoints;
 @property(retain, nonatomic) _INPBRideVehicle *vehicle; // @synthesize vehicle=_vehicle;
 @property(retain, nonatomic) _INPBUserActivity *userActivityForCancelingInApplication; // @synthesize userActivityForCancelingInApplication=_userActivityForCancelingInApplication;

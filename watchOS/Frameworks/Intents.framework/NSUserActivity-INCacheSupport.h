@@ -16,7 +16,7 @@
 + (void)deleteInteractionsWithGroupIdentifier:(id)arg1;
 + (void)deleteInteractionsWithIdentifiers:(id)arg1;
 + (void)deleteAllInteractions;
-+ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 @property(readonly, copy, nonatomic) NSString *cacheIdentifier;
 - (void)generateCachePayloadWithCompletion:(CDUnknownBlockType)arg1;
 - (int)_executionContext;
@@ -34,7 +34,7 @@
 - (id)_initWithIntent:(id)arg1;
 - (void)setInInteraction:(id)arg1;
 - (id)inInteraction;
-- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

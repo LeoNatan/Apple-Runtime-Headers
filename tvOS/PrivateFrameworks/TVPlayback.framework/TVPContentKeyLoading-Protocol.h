@@ -13,5 +13,6 @@
 
 @optional
 - (void)updateOfflineKeyWithIdentifier:(NSURL *)arg1 updatedOfflineKeyData:(NSData *)arg2;
+- (void)loadFairPlayStreamingKeyRequests:(NSArray *)arg1 completion:(void (^)(void))arg2;
 @end
 

@@ -24,7 +24,7 @@
 + (id)_urlFromItem:(id)arg1;
 + (id)sharingServiceNamed:(id)arg1;
 + (void)getSharingServiceNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
-+ (void)getSharingServiceNamed:(id)arg1 allowInactive:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)_getSharingServiceNamed:(id)arg1 allowInactive:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)_sharingServiceNamed:(id)arg1 allowInactive:(BOOL)arg2;
 + (BOOL)_usesItemProvider;
 + (Class)_SHKSharingServicePickerClass;
@@ -69,6 +69,7 @@
 - (void)_setPrimaryCheckboxState:(long long)arg1;
 - (void)_setPrimaryCheckboxTitle:(id)arg1;
 - (void)_setParticipantDetails:(id)arg1;
+- (void)_setSharingApplicationURL:(id)arg1;
 - (void)_setApplicationIcon:(id)arg1;
 - (void)_setLocalizedPasswordActionTitle:(id)arg1;
 - (void)_setIsAddPeopleService:(BOOL)arg1;

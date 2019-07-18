@@ -44,6 +44,7 @@
 + (id)cloudMirroringModel;
 + (_Bool)migrateDatabaseIfNecessary;
 + (id)sharedModelForQueue:(id)arg1;
++ (id)sharedModelForMainQueue;
 + (id)startStoreServers:(CDUnknownBlockType)arg1;
 + (id)currentLocationBasedName;
 @property(readonly, nonatomic) RCSavedRecordingsController *deletedRecordingsController; // @synthesize deletedRecordingsController=_deletedRecordingsController;
@@ -79,7 +80,7 @@
 - (id)recordingsForSpotlightSearch:(id)arg1;
 - (id)_labelPresetsForQuery:(id)arg1;
 - (_Bool)hasExistingRecordingForAudioFile:(id)arg1;
-- (void)mergeRecordings:(id)arg1;
+- (void)mergeRecordings:(id)arg1 allTransactions:(id)arg2;
 - (id)duplicateRecording:(id)arg1 error:(id *)arg2;
 - (void)eraseAllDeleted;
 - (void)eraseRecordingsDeletedBeforeDate:(id)arg1;
@@ -102,6 +103,7 @@
 - (id)enumerateExistingRecordingsSinceChangeToken:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateExistingRecordingsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateRecordingsWithEntityDescription:(id)arg1 propertiesToFetch:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
+- (id)recordingsWithPredicate:(id)arg1;
 - (id)recordingsWithUniqueID:(id)arg1;
 - (id)recordingWithUniqueID:(id)arg1;
 - (id)mostRecentRecording;

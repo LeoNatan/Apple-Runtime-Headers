@@ -5,7 +5,7 @@
 //
 
 @protocol CRCarPlayAppService
-- (void)fetchCarCapabilitiesWithReply:(void (^)(CRCarPlayCapabilities *, NSError *))arg1;
+- (void)requestCarCapabilitiesUpdate;
 - (void)requestBlacklistUpdate;
 @end
 

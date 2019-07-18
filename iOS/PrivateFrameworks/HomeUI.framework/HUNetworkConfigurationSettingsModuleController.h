@@ -10,7 +10,6 @@
 {
 }
 
-- (id)_updateProfiles:(id)arg1 toProtectionMode:(long long)arg2;
 - (unsigned long long)didSelectItem:(id)arg1;
 - (_Bool)canSelectItem:(id)arg1;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 animated:(_Bool)arg3;

@@ -8,12 +8,12 @@
 
 @interface _TtC18HealthExperienceUI24SearchDataSourceProvider : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: $__lazy_storage_$_searchDataSource
     // Error parsing type: , name: $__lazy_storage_$_categoriesDataSource
+    // Error parsing type: , name: $__lazy_storage_$_searchResultsDataSource
     // Error parsing type: , name: mainStore
     // Error parsing type: , name: behaviours
     // Error parsing type: , name: $__lazy_storage_$_searchResultsController
-    // Error parsing type: , name: $__lazy_storage_$_searchCategoriesController
+    // Error parsing type: , name: $__lazy_storage_$_categoriesController
 }
 
 @end

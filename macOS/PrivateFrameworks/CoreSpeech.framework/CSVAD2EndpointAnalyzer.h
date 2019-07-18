@@ -48,8 +48,10 @@
     double _previousSamplesSeen;
     NSObject<OS_dispatch_queue> *_apQueue;
     unsigned long long _vtEndInSampleCount;
+    double _trailingSilenceDurationAtEndpoint;
 }
 
+@property(nonatomic) double trailingSilenceDurationAtEndpoint; // @synthesize trailingSilenceDurationAtEndpoint=_trailingSilenceDurationAtEndpoint;
 @property(nonatomic) unsigned long long vtEndInSampleCount; // @synthesize vtEndInSampleCount=_vtEndInSampleCount;
 @property(nonatomic) BOOL recordingDidStop; // @synthesize recordingDidStop=_recordingDidStop;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *apQueue; // @synthesize apQueue=_apQueue;

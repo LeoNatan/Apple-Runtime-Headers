@@ -42,8 +42,6 @@
 - (void)_relinquishHomeGestureOwnership;
 - (void)_requestHomeGestureOwnership;
 - (void)homeGestureParticipantOwningHomeGestureDidChange:(id)arg1;
-- (unsigned long long)_searchBackdropLowQualityStyleForStyle;
-- (_Bool)_shouldUseDarkTintForStyle;
 - (_Bool)_initiallyTransitioningToSpotlight:(id)arg1;
 - (_Bool)_transitioningIntoSpotlight:(id)arg1;
 - (_Bool)_isTransitioning;

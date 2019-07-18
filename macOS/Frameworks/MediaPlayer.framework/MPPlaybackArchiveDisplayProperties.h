@@ -24,6 +24,8 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)description;
+- (id)copyWithOptions:(unsigned long long)arg1;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 artworkImageData:(id)arg3;
 
 @end

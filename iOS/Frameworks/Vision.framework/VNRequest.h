@@ -20,6 +20,7 @@
     NSDictionary *_options;
     VNWarningRecorder *_warningRecorder;
     VNCanceller *_canceller;
+    _Bool _cancellationTriggered;
     NSObject<OS_dispatch_semaphore> *_cancellationSemaphore;
     NSObject<OS_dispatch_queue> *_cancellationQueue;
     unsigned long long _revision;

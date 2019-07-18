@@ -21,7 +21,7 @@
 - (void)establish:(NSString *)arg1 context:(NSString *)arg2 altDSID:(NSString *)arg3 reply:(void (^)(NSError *))arg4;
 - (void)resetAndEstablish:(NSString *)arg1 context:(NSString *)arg2 altDSID:(NSString *)arg3 reply:(void (^)(NSError *))arg4;
 - (void)startOctagonStateMachine:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
-- (void)fetchTrustStatus:(NSString *)arg1 context:(NSString *)arg2 configuration:(OTOperationConfiguration *)arg3 reply:(void (^)(long long, BOOL, NSNumber *, BOOL, NSError *))arg4;
+- (void)fetchTrustStatus:(NSString *)arg1 context:(NSString *)arg2 configuration:(OTOperationConfiguration *)arg3 reply:(void (^)(long long, NSString *, NSNumber *, BOOL, NSError *))arg4;
 - (void)fetchCliqueStatus:(NSString *)arg1 context:(NSString *)arg2 configuration:(OTOperationConfiguration *)arg3 reply:(void (^)(long long, NSError *))arg4;
 - (void)fetchEgoPeerID:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSString *, NSError *))arg3;
 - (void)status:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSDictionary *, NSError *))arg3;

@@ -6,9 +6,10 @@
 
 #import <SpringBoardHome/NSObject-Protocol.h>
 
-@class NSArray, NSIndexSet, NSSet, SBFolder, SBIconListModel;
+@class NSArray, NSIndexSet, NSSet, SBFolder, SBIcon, SBIconListModel;
 
 @protocol SBFolderObserver <NSObject>
+- (void)folder:(SBFolder *)arg1 didReplaceIcon:(SBIcon *)arg2 withIcon:(SBIcon *)arg3;
 - (void)folder:(SBFolder *)arg1 didAddIcons:(NSSet *)arg2 removedIcons:(NSSet *)arg3;
 - (void)folder:(SBFolder *)arg1 didRemoveLists:(NSArray *)arg2 atIndexes:(NSIndexSet *)arg3;
 - (void)folder:(SBFolder *)arg1 didAddList:(SBIconListModel *)arg2;

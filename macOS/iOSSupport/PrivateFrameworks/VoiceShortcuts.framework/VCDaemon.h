@@ -6,24 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class VCCKNotificationCenter, VCDaemonDatabaseProvider, VCDaemonSyncDataEndpoint, VCDaemonXPCEventHandler, VCWatchSyncCoordinator, VCXPCServer;
+@class VCCKNotificationCenter, VCCoreDuetListener, VCDaemonDatabaseProvider, VCDaemonSyncDataEndpoint, VCDaemonXPCEventHandler, VCSpotlightSyncService, VCWatchSyncCoordinator, VCXPCServer;
 
 @interface VCDaemon : NSObject
 {
     VCXPCServer *_xpcServer;
     VCDaemonDatabaseProvider *_databaseProvider;
-    VCDaemonSyncDataEndpoint *_syncDataEndpoint;
     VCDaemonXPCEventHandler *_xpcEventHandler;
+    VCDaemonSyncDataEndpoint *_syncDataEndpoint;
+    VCCoreDuetListener *_coreDuetListener;
     VCWatchSyncCoordinator *_watchSyncCoordinator;
+    VCSpotlightSyncService *_spotlightLibrarySyncService;
     VCCKNotificationCenter *_cloudKitNotificationCenter;
 }
 
 + (id)sharedDaemon;
-+ (void)initialize;
 @property(retain, nonatomic) VCCKNotificationCenter *cloudKitNotificationCenter; // @synthesize cloudKitNotificationCenter=_cloudKitNotificationCenter;
+@property(readonly, nonatomic) VCSpotlightSyncService *spotlightLibrarySyncService; // @synthesize spotlightLibrarySyncService=_spotlightLibrarySyncService;
 @property(readonly, nonatomic) VCWatchSyncCoordinator *watchSyncCoordinator; // @synthesize watchSyncCoordinator=_watchSyncCoordinator;
-@property(readonly, nonatomic) VCDaemonXPCEventHandler *xpcEventHandler; // @synthesize xpcEventHandler=_xpcEventHandler;
+@property(readonly, nonatomic) VCCoreDuetListener *coreDuetListener; // @synthesize coreDuetListener=_coreDuetListener;
 @property(readonly, nonatomic) VCDaemonSyncDataEndpoint *syncDataEndpoint; // @synthesize syncDataEndpoint=_syncDataEndpoint;
+@property(readonly, nonatomic) VCDaemonXPCEventHandler *xpcEventHandler; // @synthesize xpcEventHandler=_xpcEventHandler;
 @property(readonly, nonatomic) VCDaemonDatabaseProvider *databaseProvider; // @synthesize databaseProvider=_databaseProvider;
 @property(readonly, nonatomic) VCXPCServer *xpcServer; // @synthesize xpcServer=_xpcServer;
 - (void).cxx_destruct;

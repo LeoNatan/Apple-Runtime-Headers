@@ -9,7 +9,7 @@
 #import <PencilKit/UIDragInteractionDelegate_Private-Protocol.h>
 #import <PencilKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CAShapeLayer, NSMutableArray, NSString, PKSelectionController, PKStrokeSelection, UIBezierPath, UIDragInteraction, UIDragPreview, UIImage, UIImageView, UILongPressGestureRecognizer, UITapGestureRecognizer;
+@class CAShapeLayer, NSMutableArray, NSString, PKSelectionController, PKStrokeSelection, UIBezierPath, UIDragInteraction, UIDragPreview, UIImage, UIImageView, UILongPressGestureRecognizer, UIResponder, UITapGestureRecognizer;
 
 @interface PKSelectionView : UIView <UIDragInteractionDelegate_Private, UIGestureRecognizerDelegate>
 {
@@ -31,6 +31,7 @@
     double _startRotation;
     double _startScale;
     struct CGPoint _editMenuLocation;
+    UIResponder *_previousResponder;
     _Bool _isDragging;
     _Bool _wantsDragPlatter;
     PKStrokeSelection *_strokeSelection;

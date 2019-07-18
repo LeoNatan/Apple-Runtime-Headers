@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <AXRuntime/NSCopying-Protocol.h>
 #import <AXRuntime/UIElementProtocol-Protocol.h>
 
 @class NSMutableDictionary, NSString;
 
-@interface AXUIElement : NSObject <UIElementProtocol>
+@interface AXUIElement : NSObject <UIElementProtocol, NSCopying>
 {
     struct __AXUIElement *_axElement;
     long long _cachedRefCount;
@@ -98,6 +99,7 @@
 - (void)dealloc;
 - (id)initWithAXElement:(struct __AXUIElement *)arg1;
 - (id)initWithAXElement:(struct __AXUIElement *)arg1 cache:(id)arg2;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

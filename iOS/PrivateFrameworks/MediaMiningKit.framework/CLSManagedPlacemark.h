@@ -19,6 +19,7 @@
 @property(copy, nonatomic) NSString *administrativeAreaCode; // @dynamic administrativeAreaCode;
 @property(copy, nonatomic) NSString *areasOfInterest; // @dynamic areasOfInterest;
 @property(retain, nonatomic) CLSLocationCacheEntry *entry; // @dynamic entry;
+@property(copy, nonatomic) NSString *geoServiceProvider; // @dynamic geoServiceProvider;
 @property(copy, nonatomic) NSString *inlandWater; // @dynamic inlandWater;
 @property(nonatomic) _Bool isIsland; // @dynamic isIsland;
 @property(copy, nonatomic) NSString *isoCountryCode; // @dynamic isoCountryCode;

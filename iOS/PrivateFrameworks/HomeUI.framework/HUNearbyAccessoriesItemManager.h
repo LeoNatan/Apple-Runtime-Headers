@@ -13,14 +13,16 @@
     HMAccessory *_primaryAccessory;
 }
 
-+ (_Bool)_canDisplayPrimaryServiceType:(id)arg1;
 @property(retain, nonatomic) HMAccessory *primaryAccessory; // @synthesize primaryAccessory=_primaryAccessory;
 - (void).cxx_destruct;
+- (_Bool)_isAPreferredServiceType:(id)arg1;
 - (_Bool)shouldHideItem:(id)arg1;
 - (id)_itemsToHideInSet:(id)arg1;
+- (_Bool)_isServiceItemAssociatedWithPrimaryAccessory:(id)arg1;
+- (CDUnknownBlockType)_comparatorForSectionIdentifier:(id)arg1;
 - (unsigned long long)_numberOfSections;
 - (id)_buildItemProvidersForHome:(id)arg1;
-- (id)initWithPrimaryAccessory:(id)arg1 delegate:(id)arg2;
+- (id)initWithDelegate:(id)arg1 sourceProfileItem:(id)arg2;
 
 @end
 

@@ -19,19 +19,17 @@
     HDDatabaseValueCache *_localSourceForSourceID;
 }
 
-+ (_Bool)_isSpartanDeviceBundleIdentifier:(id)arg1;
 + (_Bool)_isLocalDeviceBundleIdentifier:(id)arg1;
-+ (id)_applicationNameForCompanionBundleIdentifier:(id)arg1;
-+ (id)_applicationNameForBundleIdentifier:(id)arg1;
 - (void).cxx_destruct;
 - (void)_applicationsUninstalledNotification:(id)arg1;
-- (id)_getNameForBundleIdentifier:(id)arg1 isCurrentDevice:(_Bool)arg2;
 - (id)_createSourceEntityForBundleIdentifier:(id)arg1 owningAppBundleIdentifier:(id)arg2 name:(id)arg3 options:(unsigned long long)arg4 isCurrentDevice:(_Bool)arg5 productType:(id)arg6 error:(id *)arg7;
 - (id)_createSourceEntityForSpartanDeviceWithError:(id *)arg1;
 - (id)_createSourceEntityForLocalDeviceWithError:(id *)arg1;
 - (id)_fetchClientSourceForPersistentID:(id)arg1 error:(id *)arg2;
 - (id)_sourcePersistentIDsFromSourceEntities:(id)arg1;
 - (void)_deleteSourceIfNoSampleFoundWithBundleIdentifier:(id)arg1;
+- (id)_localSourcesForBundleIDs:(id)arg1 database:(id)arg2 error:(id *)arg3;
+- (id)_bundleIDsWithoutLocalSourceForSourcesWithPredicate:(id)arg1 database:(id)arg2 error:(id *)arg3;
 - (_Bool)_deleteSourcesWithUUIDs:(id)arg1 localSourceEntityCacheKey:(id)arg2 deleteSamples:(_Bool)arg3 database:(id)arg4 error:(id *)arg5;
 - (id)_sourceUUIDsForBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)deleteSourceWithBundleIdentifier:(id)arg1 error:(id *)arg2;

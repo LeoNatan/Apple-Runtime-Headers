@@ -107,6 +107,7 @@
 - (int)_lockManifestAtPath:(id)arg1;
 - (_Bool)_removeTonesFromManifestAtPath:(id)arg1 fileNames:(id)arg2 shouldSkipReload:(_Bool)arg3 alreadyLockedManifest:(_Bool)arg4 removedEntries:(id *)arg5;
 - (_Bool)_removeToneFromManifestAtPath:(id)arg1 fileName:(id)arg2;
+- (_Bool)_removeToneWithIdentifier:(id)arg1 orSyncIdentifier:(id)arg2;
 - (_Bool)_removeToneWithIdentifier:(id)arg1;
 - (id)_addToneEntries:(id)arg1 toManifestAtPath:(id)arg2 mediaDirectory:(id)arg3 shouldSkipReload:(_Bool)arg4;
 - (id)_addToneToManifestAtPath:(id)arg1 metadata:(id)arg2 fileName:(id)arg3 mediaDirectory:(id)arg4;

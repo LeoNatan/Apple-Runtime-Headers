@@ -15,6 +15,7 @@
 
 - (void).cxx_destruct;
 - (void)invalidatePredictionsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)donateHeroAppPredictionsWithBundleIds:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)donateHeroAppPredictions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)init;

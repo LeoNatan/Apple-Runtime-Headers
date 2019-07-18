@@ -15,11 +15,11 @@
 
 @interface _UISheetPresentationController : UIPresentationController <_UISheetLayoutInfoDelegate, _UISheetInteractionDelegate, UIDragInteractionDelegate>
 {
-    _Bool _shouldDismissWhenTappedOutside;
     _Bool __shouldPresentedViewControllerControlStatusBarAppearance;
     _Bool __didAttemptToStartDismiss;
     _Bool __didTearOff;
     _Bool __remoteDismissing;
+    _Bool __dimmingViewTapDismissing;
     _Bool __isRemote;
     _Bool __presentsAtStandardHalfHeight;
     _Bool __allowsTearOff;
@@ -43,6 +43,7 @@
 @property(nonatomic, setter=_setIsRemote:) _Bool _isRemote; // @synthesize _isRemote=__isRemote;
 @property(readonly, nonatomic) UIDimmingView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(readonly, nonatomic) UIDropShadowView *dropShadowView; // @synthesize dropShadowView=_dropShadowView;
+@property(nonatomic) _Bool _dimmingViewTapDismissing; // @synthesize _dimmingViewTapDismissing=__dimmingViewTapDismissing;
 @property(nonatomic) _Bool _remoteDismissing; // @synthesize _remoteDismissing=__remoteDismissing;
 @property(readonly, nonatomic) _UIRemoteViewController *_connectedRemoteViewController; // @synthesize _connectedRemoteViewController=__connectedRemoteViewController;
 @property(retain, nonatomic, setter=_setTearOffActivity:) NSUserActivity *_tearOffActivity; // @synthesize _tearOffActivity=__tearOffActivity;
@@ -56,7 +57,6 @@
 @property(nonatomic, setter=_setShouldPresentedViewControllerControlStatusBarAppearance:) _Bool _shouldPresentedViewControllerControlStatusBarAppearance; // @synthesize _shouldPresentedViewControllerControlStatusBarAppearance=__shouldPresentedViewControllerControlStatusBarAppearance;
 @property(readonly, nonatomic) UIDimmingView *_confinedDimmingView; // @synthesize _confinedDimmingView=__confinedDimmingView;
 @property(readonly, nonatomic) _UISheetLayoutInfo *_layoutInfo; // @synthesize _layoutInfo=__layoutInfo;
-@property(nonatomic, getter=_shouldDismissWhenTappedOutside, setter=_setShouldDismissWhenTappedOutside:) _Bool shouldDismissWhenTappedOutside; // @synthesize shouldDismissWhenTappedOutside=_shouldDismissWhenTappedOutside;
 @property(nonatomic) struct CGRect frameOfPresentedViewInContainerView; // @synthesize frameOfPresentedViewInContainerView=_frameOfPresentedViewInContainerView;
 - (void).cxx_destruct;
 - (id)dragInteraction:(id)arg1 previewForLiftingItem:(id)arg2 session:(id)arg3;
@@ -67,6 +67,7 @@
 - (void)_completeInteractiveTransitionFromRemote:(_Bool)arg1 immediately:(_Bool)arg2 duration:(double)arg3 timingCurve:(id)arg4;
 - (void)_updateInteractiveTransitionFromRemoteWithProgress:(double)arg1;
 - (void)_startInteractiveTransitionFromRemoteWithProgress:(double)arg1;
+- (struct CGPoint)offsetForInterruptedAnimationInSheetInteraction:(id)arg1;
 - (void)sheetInteraction:(id)arg1 didChangeOffset:(struct CGPoint)arg2;
 - (void)_completeInteractiveTransition:(_Bool)arg1 immediately:(_Bool)arg2 duration:(double)arg3 timingCurve:(id)arg4;
 - (void)_updateInteractiveTransitionWithProgress:(double)arg1;
@@ -90,6 +91,7 @@
 - (void)_keyboardAboutToHide:(id)arg1;
 - (void)_keyboardAboutToChangeFrame:(id)arg1;
 - (void)_keyboardAboutToShow:(id)arg1;
+- (void)_layoutPresentedViewAndContainerViewIfNeeded;
 - (void)_avoidKeyboardAndAnimateSheetForNotification:(id)arg1;
 - (void)presentationTransitionWillBegin;
 @property(readonly, nonatomic) _UISheetPresentationController *_childSheetPresentationController;
@@ -104,14 +106,18 @@
 - (void)_containerViewBoundsDidChange;
 - (void)_tryToConnectToRemoteViewController:(id)arg1;
 @property(readonly, nonatomic) _UIRemoteViewController *_expectedRemoteViewController;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 @property(retain, nonatomic, setter=_setConfiguration:) _UISheetPresentationControllerConfiguration *_configuration;
 @property(nonatomic, setter=_setMode:) long long _mode;
 - (void)_realSourceViewGeometryDidChange;
 @property(retain, nonatomic, setter=_setSourceView:) UIView *_sourceView;
+@property(nonatomic, getter=_shouldDismissWhenTappedOutside, setter=_setShouldDismissWhenTappedOutside:) _Bool shouldDismissWhenTappedOutside;
 @property(nonatomic, setter=_setIndexOfLastUndimmedDetent:) long long _indexOfLastUndimmedDetent;
 @property(nonatomic, setter=_setIndexOfCurrentDetent:) long long _indexOfCurrentDetent;
 @property(copy, nonatomic, setter=_setDetents:) NSArray *_detents;
+@property(nonatomic, setter=_setWidthFollowsPreferredContentSizeWhenBottomAttached:) _Bool _widthFollowsPreferredContentSizeWhenBottomAttached;
 @property(nonatomic) double _cornerRadiusForPresentationAndDismissal;
+@property(nonatomic, setter=_setWantsGrabber:) _Bool _wantsGrabber;
 @property(nonatomic, setter=_setWantsBottomAttachedInCompactHeight:) _Bool _wantsBottomAttachedInCompactHeight;
 @property(nonatomic, setter=_setWantsBottomAttached:) _Bool _wantsBottomAttached;
 @property(nonatomic, setter=_setWantsFullScreen:) _Bool _wantsFullScreen;

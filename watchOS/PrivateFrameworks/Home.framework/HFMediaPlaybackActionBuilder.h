@@ -6,7 +6,7 @@
 
 #import <Home/HFActionBuilder.h>
 
-@class HMMediaPlaybackAction, MPPlaybackArchive, NSNumber, NSSet, NSString;
+@class HFPlaybackArchive, HMMediaPlaybackAction, NSNumber, NSSet, NSString;
 
 @interface HFMediaPlaybackActionBuilder : HFActionBuilder
 {
@@ -14,13 +14,13 @@
     int _targetPlayState;
     NSNumber *_targetVolume;
     int _targetOptions;
-    MPPlaybackArchive *_playbackArchive;
+    HFPlaybackArchive *_playbackArchive;
     NSSet *_accessories;
 }
 
 + (Class)homeKitRepresentationClass;
 @property(copy, nonatomic) NSSet *accessories; // @synthesize accessories=_accessories;
-@property(retain, nonatomic) MPPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
+@property(retain, nonatomic) HFPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(nonatomic) int targetOptions; // @synthesize targetOptions=_targetOptions;
 @property(retain, nonatomic) NSNumber *targetVolume; // @synthesize targetVolume=_targetVolume;
 @property(nonatomic) int targetPlayState; // @synthesize targetPlayState=_targetPlayState;
@@ -28,7 +28,7 @@
 - (void).cxx_destruct;
 - (id)commitItem;
 - (id)_performValidation;
-- (_Bool)isMediaActionValid;
+- (_Bool)isMediaActionValid:(id *)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedDescription;
 - (void)clearPlayStateRelatedProperties;
 - (id)copyForCreatingNewAction;

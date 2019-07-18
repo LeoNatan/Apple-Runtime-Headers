@@ -18,6 +18,7 @@
 @property(retain, nonatomic) __NSDiffableDataSource *impl; // @synthesize impl=_impl;
 - (void).cxx_destruct;
 - (BOOL)_isDiffableDataSource;
+- (void)_applySnapshot:(id)arg1 animatingDifferences:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 itemForRepresentedObjectAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

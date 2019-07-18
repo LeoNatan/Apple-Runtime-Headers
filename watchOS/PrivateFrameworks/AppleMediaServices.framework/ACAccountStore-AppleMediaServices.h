@@ -16,6 +16,7 @@
 + (id)ams_sharedAccountStore;
 - (id)ams_iTunesSandboxAccounts;
 - (id)_storeClientIdentifier;
+- (id)_saveAccount:(id)arg1 verifyCredentials:(_Bool)arg2;
 - (_Bool)_isAccountNew:(id)arg1;
 - (void)_createLocalAccount;
 - (id)_correspondingAccountWithAccountTypeIdentifier:(id)arg1 forAccount:(id)arg2;
@@ -28,7 +29,9 @@
 - (_Bool)ams_addCookiesForResponse:(id)arg1 account:(id)arg2 error:(id *)arg3;
 - (_Bool)ams_setSecureToken:(id)arg1 forAccount:(id)arg2 error:(id *)arg3;
 - (id)ams_secureTokenForAccount:(id)arg1;
+- (id)ams_saveAccount:(id)arg1 withOptions:(int)arg2;
 - (id)ams_saveAccount:(id)arg1 verifyCredentials:(_Bool)arg2;
+- (id)ams_saveAccount:(id)arg1;
 - (id)ams_iTunesAccountWithUsername:(id)arg1;
 - (id)ams_iTunesAccountWithDSID:(id)arg1;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3;
@@ -40,6 +43,7 @@
 - (id)ams_iCloudAccountForAccount:(id)arg1;
 - (id)ams_cookiesForURL:(id)arg1;
 - (id)ams_fetchGrandSlamTokenForAccount:(id)arg1 withIdentifier:(id)arg2 error:(id *)arg3;
+- (id)ams_accountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3 accountTypeIdentifier:(id)arg4;
 @property(readonly, nonatomic) NSString *ams_mediaType;
 @property(readonly, nonatomic) ACAccount *ams_localiTunesAccount;
 @property(readonly, nonatomic) NSArray *ams_iTunesAccounts;

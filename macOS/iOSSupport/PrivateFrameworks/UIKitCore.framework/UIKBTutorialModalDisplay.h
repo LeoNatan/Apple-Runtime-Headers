@@ -11,10 +11,10 @@
 __attribute__((visibility("hidden")))
 @interface UIKBTutorialModalDisplay : UIView
 {
+    long long _appearance;
     UIView *_containerView;
     UIView *_mediaView;
     UIButton *_button;
-    long long _appearance;
     UIKBTutorialModalDisplayStyling *_styling;
     UIVisualEffectView *_backgroundBlurView;
     NSLayoutConstraint *_containerViewTopConstraits;
@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSLayoutConstraint *containerViewTopConstraits; // @synthesize containerViewTopConstraits=_containerViewTopConstraits;
 @property(retain, nonatomic) UIVisualEffectView *backgroundBlurView; // @synthesize backgroundBlurView=_backgroundBlurView;
 @property(retain, nonatomic) UIKBTutorialModalDisplayStyling *styling; // @synthesize styling=_styling;
-@property(nonatomic) long long appearance; // @synthesize appearance=_appearance;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) UIView *mediaView; // @synthesize mediaView=_mediaView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
+@property(nonatomic) long long appearance; // @synthesize appearance=_appearance;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long textBodyMaxLines;
 @property(readonly, nonatomic) double mediaLayoutWidthAdjustment;

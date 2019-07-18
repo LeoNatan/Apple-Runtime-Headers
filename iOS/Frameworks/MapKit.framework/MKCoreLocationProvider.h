@@ -10,7 +10,7 @@
 #import <MapKit/CLLocationManagerVehicleDelegate-Protocol.h>
 #import <MapKit/MKLocationProvider-Protocol.h>
 
-@class CLLocation, CLLocationManager, NSBundle, NSString;
+@class CLLocation, CLLocationManager, NSBundle, NSString, geo_isolater;
 @protocol MKLocationProviderDelegate, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -25,9 +25,14 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _authorizationRequestBlock;
     _Bool _waitingForAuthorization;
     _Bool _hasQueriedAuthorization;
-    NSObject<OS_dispatch_queue> *_authorizationQueue;
-    _Bool _alternate;
     double _expectedGpsUpdateInterval;
+    geo_isolater *_isolation;
+    NSObject<OS_dispatch_queue> *_coreLocationQueue;
+    double _desiredAccuracy;
+    long long _activityType;
+    double _distanceFilter;
+    _Bool _matchInfoEnabled;
+    int _headingOrientation;
 }
 
 @property(readonly, nonatomic) double expectedGpsUpdateInterval; // @synthesize expectedGpsUpdateInterval=_expectedGpsUpdateInterval;

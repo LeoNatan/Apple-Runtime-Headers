@@ -8,31 +8,39 @@
 
 #import <SpringBoard/SBSwitcherLiveContentOverlay-Protocol.h>
 
-@class NSMutableDictionary, NSString, SBAsynchronousRenderingAssertion, SBFHomeGrabberSettings, SBMainDisplaySceneLayoutViewController, SBOrientationTransformWrapperView, SBWindowSelfHostWrapper, UIView;
+@class NSMutableDictionary, NSString, SBFHomeGrabberSettings, SBMainDisplaySceneLayoutViewController, SBOrientationTransformWrapperView, SBWindowSelfHostWrapper, UIView;
 
 @interface SBSceneLayoutLiveContentOverlay : NSObject <SBSwitcherLiveContentOverlay>
 {
+    _Bool _rendersAsynchronously;
+    _Bool _wantsMinificationFilter;
+    _Bool _asynchronousRenderingTemporarilyDisabled;
     long long _containerOrientation;
     SBMainDisplaySceneLayoutViewController *_sceneLayoutViewController;
     SBWindowSelfHostWrapper *_sceneLayoutWindowHostWrapper;
     SBOrientationTransformWrapperView *_sceneLayoutOrientationWrapperView;
     SBFHomeGrabberSettings *_grabberSettings;
     NSMutableDictionary *_statusBarAssertions;
-    SBAsynchronousRenderingAssertion *_asyncRenderingAssertion;
 }
 
-@property(retain, nonatomic) SBAsynchronousRenderingAssertion *asyncRenderingAssertion; // @synthesize asyncRenderingAssertion=_asyncRenderingAssertion;
+@property(readonly, nonatomic) _Bool asynchronousRenderingTemporarilyDisabled; // @synthesize asynchronousRenderingTemporarilyDisabled=_asynchronousRenderingTemporarilyDisabled;
+@property(readonly, nonatomic) _Bool wantsMinificationFilter; // @synthesize wantsMinificationFilter=_wantsMinificationFilter;
 @property(retain, nonatomic) NSMutableDictionary *statusBarAssertions; // @synthesize statusBarAssertions=_statusBarAssertions;
 @property(readonly, nonatomic) SBFHomeGrabberSettings *grabberSettings; // @synthesize grabberSettings=_grabberSettings;
 @property(readonly, nonatomic) SBOrientationTransformWrapperView *sceneLayoutOrientationWrapperView; // @synthesize sceneLayoutOrientationWrapperView=_sceneLayoutOrientationWrapperView;
 @property(readonly, nonatomic) SBWindowSelfHostWrapper *sceneLayoutWindowHostWrapper; // @synthesize sceneLayoutWindowHostWrapper=_sceneLayoutWindowHostWrapper;
 @property(readonly, nonatomic) __weak SBMainDisplaySceneLayoutViewController *sceneLayoutViewController; // @synthesize sceneLayoutViewController=_sceneLayoutViewController;
+@property(readonly, nonatomic) _Bool rendersAsynchronously; // @synthesize rendersAsynchronously=_rendersAsynchronously;
 @property(nonatomic) long long containerOrientation; // @synthesize containerOrientation=_containerOrientation;
 - (void).cxx_destruct;
+- (void)_evaluateAsynchronousRenderingEnablement;
+- (void)disableAsynchronousRenderingForNextCommit;
+- (void)setRendersAsynchronously:(_Bool)arg1 withMinificationFilterEnabled:(_Bool)arg2;
+- (void)setRendersAsynchronously:(_Bool)arg1;
+- (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
 - (void)setUsesBrightSceneViewBackgroundMaterial:(_Bool)arg1;
 - (void)setHomeGrabberHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setStatusBarHidden:(_Bool)arg1 nubViewHidden:(_Bool)arg2 animator:(CDUnknownBlockType)arg3;
-- (void)setRendersAsynchronously:(_Bool)arg1 withMinificationFilterEnabled:(_Bool)arg2;
 @property(readonly, nonatomic) UIView *contentOverlayView;
 - (void)dealloc;
 - (id)initWithSceneLayoutViewController:(id)arg1;

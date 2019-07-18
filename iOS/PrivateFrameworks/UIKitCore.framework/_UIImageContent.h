@@ -12,12 +12,13 @@ __attribute__((visibility("hidden")))
 @interface _UIImageContent : NSObject
 {
     double _scale;
-    struct CGImage *_imageRef;
+    _Bool _isDecompressing;
     struct CGSize _sizeInPixels;
 }
 
 + (_Bool)content:(id)arg1 isEqualToContent:(id)arg2;
 + (id)empty;
+@property(nonatomic) _Bool isDecompressing; // @synthesize isDecompressing=_isDecompressing;
 @property(readonly, nonatomic) struct CGSize sizeInPixels; // @synthesize sizeInPixels=_sizeInPixels;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 - (id)debugQuickLookObject;
@@ -27,8 +28,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)_drawInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2 effect:(id)arg3;
 - (void)_prepareforDrawingInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2;
 - (struct CGAffineTransform)_transformForCGContextWithSize:(struct CGSize)arg1 scale:(double)arg2;
-- (id)_decompressor;
-- (_Bool)_isDecompressing;
 - (id)renditionWithSize:(struct CGSize)arg1 scale:(double)arg2 applyingEffect:(id)arg3;
 - (id)renditionApplyingEffect:(id)arg1;
 - (id)contentWithCGImage:(struct CGImage *)arg1;

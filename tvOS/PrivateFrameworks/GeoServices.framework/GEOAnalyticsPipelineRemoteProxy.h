@@ -23,11 +23,13 @@ __attribute__((visibility("hidden")))
 - (void)initiateUploadOfType:(int)arg1;
 - (void)flushEvalData;
 - (void)setEvalMode:(_Bool)arg1;
+- (void)reportMapKitCountType:(int)arg1 appId:(id)arg2 completion:(CDUnknownBlockType)arg3 completionQueue:(id)arg4;
 - (void)reportLogMsgType:(int)arg1 eventType:(int)arg2 logMsg:(id)arg3 completion:(CDUnknownBlockType)arg4 completionQueue:(id)arg5;
 - (void)setShortSessionValues:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)shortSessionValuesWithCompletion:(CDUnknownBlockType)arg1;
 - (id)init;
 - (void)_reportLogMsgType:(int)arg1 eventType:(int)arg2 logMsg:(id)arg3 completion:(CDUnknownBlockType)arg4 completionQueue:(id)arg5;
+- (void)_reportMapKitCountType:(int)arg1 appId:(id)arg2 completion:(CDUnknownBlockType)arg3 completionQueue:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

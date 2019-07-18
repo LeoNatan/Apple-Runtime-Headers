@@ -10,7 +10,8 @@
 {
 }
 
-+ (void)setPendingRouteWithRouteDescription:(id)arg1 error:(id *)arg2;
++ (void)stopSuppressingRoutePrediction;
++ (_Bool)setPendingRouteWithRouteDescription:(id)arg1 error:(id *)arg2;
 
 @end
 

@@ -20,6 +20,7 @@
         unsigned int unseen:1;
     } _has;
     BOOL _unseen;
+    BOOL __encodeLegacyGloryData;
     int _callCapability;
     int _callType;
     _INPBCallMetrics *_callMetrics;
@@ -30,6 +31,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) BOOL unseen; // @synthesize unseen=_unseen;
 @property(retain, nonatomic) _INPBInteger *numberOfCalls; // @synthesize numberOfCalls=_numberOfCalls;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

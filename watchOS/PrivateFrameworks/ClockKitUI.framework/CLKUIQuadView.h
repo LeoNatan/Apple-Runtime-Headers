@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class CLKUIQuadViewDisplayLink, NSArray, NSMutableArray;
+@class CLKUIQuadViewDisplayLink, NSArray, NSMutableArray, NSString;
 @protocol CLKUIQuadViewDelegate;
 
 @interface CLKUIQuadView : UIView
@@ -17,20 +17,21 @@
         unsigned int quadViewWillDisplay:1;
     } _delegateRespondsTo;
     unsigned long long _frameNum;
-    unsigned int _debugIdentifier;
+    unsigned int _debugId;
     id <CLKUIQuadViewDelegate> _delegate;
+    NSString *_debugIdentifier;
 }
 
 + (id)quadViewWithFrame:(struct CGRect)arg1;
 + (id)quadViewWithFrame:(struct CGRect)arg1 options:(unsigned int)arg2;
 + (id)quadViewWithFrame:(struct CGRect)arg1 options:(unsigned int)arg2 colorSpace:(int)arg3;
+@property(retain, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 @property(nonatomic) __weak id <CLKUIQuadViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)discardContents;
 - (void)_handleQuadArrayChange:(id)arg1;
 - (_Bool)_displayWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_snapshotInRect:(struct CGRect)arg1 scale:(float)arg2 time:(double)arg3;
-- (void)setDebugIdentifier:(id)arg1;
 - (id)snapshotInRect:(struct CGRect)arg1 scale:(float)arg2 time:(double)arg3;
 - (void)_prerenderForTime:(double)arg1;
 - (void)removeAllQuads;

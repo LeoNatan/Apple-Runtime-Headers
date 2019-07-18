@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, PKPass, PKPeerPaymentAccount, UIImageView, UILabel;
+@class NPKDoubleClickToApproveView, NSString, PKPass, PKPeerPaymentAccount, UILabel;
 
 @interface NPKPaymentStatusView : UIView
 {
@@ -20,18 +20,20 @@
     PKPeerPaymentAccount *_peerPaymentAccount;
     UIView *_containerView;
     UILabel *_paymentLabel;
-    UIImageView *_buttonPillView;
+    NPKDoubleClickToApproveView *_doubleClickToApproveView;
     int _primaryPaymentApplicationState;
     int _contactlessPaymentApplicationState;
+    struct CGRect _buttonPillViewFrame;
 }
 
 + (id)stateAsStringForPaymentApplicationState:(int)arg1 showContactlessApplicationErrorMessage:(_Bool)arg2 merchantName:(id)arg3 pass:(id)arg4 instructionType:(unsigned int)arg5 loyalty:(_Bool)arg6 includeSummary:(_Bool)arg7 peerPaymentAccount:(id)arg8;
 @property(nonatomic) _Bool loyalty; // @synthesize loyalty=_loyalty;
 @property(nonatomic) int contactlessPaymentApplicationState; // @synthesize contactlessPaymentApplicationState=_contactlessPaymentApplicationState;
 @property(nonatomic) int primaryPaymentApplicationState; // @synthesize primaryPaymentApplicationState=_primaryPaymentApplicationState;
-@property(retain, nonatomic) UIImageView *buttonPillView; // @synthesize buttonPillView=_buttonPillView;
+@property(retain, nonatomic) NPKDoubleClickToApproveView *doubleClickToApproveView; // @synthesize doubleClickToApproveView=_doubleClickToApproveView;
 @property(retain, nonatomic) UILabel *paymentLabel; // @synthesize paymentLabel=_paymentLabel;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
+@property(readonly, nonatomic) struct CGRect buttonPillViewFrame; // @synthesize buttonPillViewFrame=_buttonPillViewFrame;
 @property(retain, nonatomic) PKPeerPaymentAccount *peerPaymentAccount; // @synthesize peerPaymentAccount=_peerPaymentAccount;
 @property(nonatomic) unsigned int instructionType; // @synthesize instructionType=_instructionType;
 @property(nonatomic) _Bool inverted; // @synthesize inverted=_inverted;
@@ -40,15 +42,13 @@
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(retain, nonatomic) NSString *merchantName; // @synthesize merchantName=_merchantName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) struct CGRect buttonPillViewFrame;
-- (void)_updateButtonPillAnimation;
-- (void)resetWithPrimaryPaymentApplicationState:(int)arg1 contactlessPaymentApplicationState:(int)arg2 loyalty:(_Bool)arg3;
-- (void)resetWithPrimaryPaymentApplicationState:(int)arg1 loyalty:(_Bool)arg2;
 - (id)_paymentFont;
+- (void)_updateBounceAnimationAnimated:(_Bool)arg1;
 - (void)_updateUI;
 - (_Bool)_buttonPillShouldBeHidden;
+- (void)resetWithPrimaryPaymentApplicationState:(int)arg1 contactlessPaymentApplicationState:(int)arg2 loyalty:(_Bool)arg3;
+- (void)resetWithPrimaryPaymentApplicationState:(int)arg1 loyalty:(_Bool)arg2;
 - (void)layoutSubviews;
-- (void)didMoveToWindow;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

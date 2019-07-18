@@ -38,6 +38,7 @@
 - (void)unblockContact:(id)arg1;
 - (void)blockContact:(id)arg1;
 - (BOOL)isEmailAddressBlocked:(id)arg1;
+@property(nonatomic, getter=isBlockedSenderEnabled) BOOL blockedSenderEnabled;
 @property(nonatomic, getter=isEnabled) BOOL enabled;
 - (void)_resetBlockedSenderCache;
 - (void)_blockedSenderListDidChange:(id)arg1;

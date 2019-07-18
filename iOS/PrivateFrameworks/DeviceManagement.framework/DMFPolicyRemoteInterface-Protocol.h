@@ -9,7 +9,7 @@
 @class DMFPolicyRegistration, NSArray, NSString;
 
 @protocol DMFPolicyRemoteInterface <NSObject>
-- (void)requestPolicyIdentifiersForOrganization:(NSString *)arg1 replyHandler:(void (^)(NSSet *, NSError *))arg2;
+- (void)requestOneMoreMinuteDeclarationIdentifiersForIdentifier:(NSString *)arg1 replyHandler:(void (^)(NSSet *, NSError *))arg2;
 - (void)requestPoliciesForTypes:(NSArray *)arg1 replyHandler:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)addRegistration:(DMFPolicyRegistration *)arg1 replyHandler:(void (^)(NSDictionary *, NSError *))arg2;
 @end

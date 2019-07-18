@@ -8,27 +8,33 @@
 
 #import <TVSystemMenuUI/TVLockupViewComponent-Protocol.h>
 
-@class NSString, UIImage, UIImageView, UILabel, _UIFloatingContentView;
+@class NSString, UIImage, UIImageView, UILabel, _TVSMHighContrastFocusView, _UIFloatingContentView;
 
 @interface _TVSMRectangleButtonContentView : UIView <TVLockupViewComponent>
 {
     long long _style;
     UIImage *_image;
+    NSString *_imageSymbolName;
     NSString *_titleText;
     NSString *_secondaryText;
     _UIFloatingContentView *_floatingContentView;
     UIImageView *_contentImageView;
     UILabel *_titleLabel;
     UILabel *_secondaryLabel;
+    _TVSMHighContrastFocusView *_highContrastFocusView;
 }
 
 + (void)_configureFloatingContentViewAppearance;
++ (long long)_contentModeForStyle:(long long)arg1;
++ (id)_imageForSymbolName:(id)arg1 style:(long long)arg2;
+@property(readonly, nonatomic) _TVSMHighContrastFocusView *highContrastFocusView; // @synthesize highContrastFocusView=_highContrastFocusView;
 @property(readonly, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIImageView *contentImageView; // @synthesize contentImageView=_contentImageView;
 @property(readonly, nonatomic) _UIFloatingContentView *floatingContentView; // @synthesize floatingContentView=_floatingContentView;
 @property(copy, nonatomic) NSString *secondaryText; // @synthesize secondaryText=_secondaryText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
+@property(copy, nonatomic) NSString *imageSymbolName; // @synthesize imageSymbolName=_imageSymbolName;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;

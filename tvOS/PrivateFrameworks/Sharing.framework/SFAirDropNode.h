@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CURangingMeasurement, NSDate, NSNumber, NSSet, NSString, NSUUID, UIImage;
+@class CURangingMeasurement, NSDate, NSNumber, NSSet, NSString, NSUUID;
 
 @interface SFAirDropNode : NSObject
 {
@@ -28,7 +28,7 @@
     id _node;
     NSString *_contactIdentifier;
     NSString *_realName;
-    UIImage *_displayIcon;
+    struct CGImage *_displayIcon;
     NSString *_displayName;
     NSString *_secondaryName;
     NSString *_model;
@@ -61,21 +61,21 @@
 @property(retain) NSString *model; // @synthesize model=_model;
 @property(retain) NSString *secondaryName; // @synthesize secondaryName=_secondaryName;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
-@property(retain) UIImage *displayIcon; // @synthesize displayIcon=_displayIcon;
+@property(retain) struct CGImage *displayIcon; // @synthesize displayIcon=_displayIcon;
 @property(retain) NSString *realName; // @synthesize realName=_realName;
 @property(retain) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(retain) id node; // @synthesize node=_node;
 @property(readonly) NSDate *discoveryDate; // @synthesize discoveryDate=_discoveryDate;
 - (void).cxx_destruct;
-- (void)simulateFakeTransferWithSessionID:(id)arg1;
 - (void)handleOperationCallback:(struct __SFOperation *)arg1 event:(long long)arg2 withResults:(id)arg3;
 - (void)cancelSend;
-- (void)startSendForBundleID:(id)arg1 sessionID:(id)arg2 items:(id)arg3 description:(id)arg4 previewImage:(id)arg5;
+- (void)startSendForBundleID:(id)arg1 sessionID:(id)arg2 items:(id)arg3 description:(id)arg4 previewImage:(struct CGImage *)arg5;
 - (void)updateWithSFNode:(struct __SFNode *)arg1;
 @property(readonly, getter=isKnown) _Bool known;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

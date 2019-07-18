@@ -16,13 +16,13 @@
 
 + (id)predicateForCameraSignificantEvent:(unsigned long long)arg1;
 + (id)notificationEventTriggersInPredicate:(id)arg1;
-@property(readonly) __weak HMCameraUserSettings *cameraUserSettings; // @synthesize cameraUserSettings=_cameraUserSettings;
+@property __weak HMCameraUserSettings *cameraUserSettings; // @synthesize cameraUserSettings=_cameraUserSettings;
 - (void).cxx_destruct;
 - (id)targetUUID;
 - (void)commitWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly) unsigned long long notificationEventTriggers;
-- (void)__configureWithContext:(id)arg1;
-- (id)initWithBulletinBoardNotification:(id)arg1 userSettings:(id)arg2;
+- (void)__configureWithContext:(id)arg1 cameraUserSettings:(id)arg2;
+- (id)initWithBulletinBoardNotification:(id)arg1;
 
 @end
 

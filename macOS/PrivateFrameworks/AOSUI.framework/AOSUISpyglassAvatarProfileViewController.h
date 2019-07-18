@@ -8,35 +8,32 @@
 
 #import <AOSUI/CNAvatarViewDelegate-Protocol.h>
 
-@class AOSUISpyglassAccountChangeObserver, CNAvatarViewController, MM_Account, NSString, NSTextField, NSView;
+@class AOSUISpyglassAccountChangeHelper, CNAvatarViewController, MM_Account, NSString, NSTextField, NSView;
 
 @interface AOSUISpyglassAvatarProfileViewController : AOSUISpyglassBaseViewController <CNAvatarViewDelegate>
 {
-    NSString *_mediaDescriptionString;
+    AOSUISpyglassAccountChangeHelper *_accountChangeHelper;
     NSView *_imageWell;
     NSTextField *_nameTextField;
     NSTextField *_userNameTextField;
-    NSTextField *_mediaDescriptionField;
     CNAvatarViewController *_avatarViewController;
     MM_Account *_mmAccount;
-    AOSUISpyglassAccountChangeObserver *_accountChangeObserver;
 }
 
-@property(retain) AOSUISpyglassAccountChangeObserver *accountChangeObserver; // @synthesize accountChangeObserver=_accountChangeObserver;
 @property(readonly, nonatomic) MM_Account *mmAccount; // @synthesize mmAccount=_mmAccount;
 @property(readonly, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
-@property __weak NSTextField *mediaDescriptionField; // @synthesize mediaDescriptionField=_mediaDescriptionField;
 @property __weak NSTextField *userNameTextField; // @synthesize userNameTextField=_userNameTextField;
 @property __weak NSTextField *nameTextField; // @synthesize nameTextField=_nameTextField;
 @property __weak NSView *imageWell; // @synthesize imageWell=_imageWell;
-@property(copy, nonatomic) NSString *mediaDescriptionString; // @synthesize mediaDescriptionString=_mediaDescriptionString;
 - (void).cxx_destruct;
 - (void)avatarViewController:(id)arg1 contactAvatarDidChange:(id)arg2;
 - (void)_loadProfilePictureFromAccount;
 - (void)_accountProfilePictureDidChange:(id)arg1;
 - (void)_setupProfileView;
+- (id)_usernameDescriptionString;
 - (id)_displayName;
 - (void)_setupNames;
+- (void)_startObservingAccountStoreChanges;
 - (id)_storeAccount;
 - (id)_appleAccount;
 - (void)viewDidLoad;

@@ -11,7 +11,6 @@
 
 @interface SearchUICardViewController : NSViewController
 {
-    SFCard *_card;
     NUIContainerBoxView *_loadingView;
     NSProgressIndicator *_loadingSpinner;
     TLKLabel *_loadingLabel;
@@ -26,11 +25,11 @@
 @property(retain, nonatomic) TLKLabel *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
 @property(retain, nonatomic) NSProgressIndicator *loadingSpinner; // @synthesize loadingSpinner=_loadingSpinner;
 @property(retain, nonatomic) NUIContainerBoxView *loadingView; // @synthesize loadingView=_loadingView;
-@property(retain, nonatomic) SFCard *card; // @synthesize card=_card;
 - (void).cxx_destruct;
 @property(nonatomic) BOOL disableNextCards;
 - (void)updateWithCardSections:(id)arg1;
 - (void)updateTimerAndCardSections:(id)arg1;
+@property(retain, nonatomic) SFCard *card;
 - (void)cardViewDidAppear;
 - (void)prepareLoadingView;
 - (void)displayLoadingViewAfterDelay:(double)arg1 withSpinner:(BOOL)arg2;

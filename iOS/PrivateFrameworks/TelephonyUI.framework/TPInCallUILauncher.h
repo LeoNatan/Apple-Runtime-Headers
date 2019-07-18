@@ -16,9 +16,11 @@
 }
 
 + (id)TPRemoteAlertActivationReasonForTPInCallUILaunchReason:(long long)arg1;
-+ (id)sharedInstance;
++ (id)sharedInCallUILauncher;
 @property(copy, nonatomic) CDUnknownBlockType launchSOSCompletion; // @synthesize launchSOSCompletion=_launchSOSCompletion;
 - (void).cxx_destruct;
+- (void)remoteAlertHandle:(id)arg1 didInvalidateWithError:(id)arg2;
+- (void)remoteAlertHandleDidDeactivate:(id)arg1;
 - (void)remoteAlertHandleDidActivate:(id)arg1;
 - (void)launchInCallUIForReason:(long long)arg1 withRequestURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 

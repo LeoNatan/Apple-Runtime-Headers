@@ -53,6 +53,7 @@
 - (_Bool)centerPlaceholder;
 - (void)setCenterPlaceholder:(_Bool)arg1;
 - (id)_presentationBackgroundBlurEffectForTraitCollection:(id)arg1;
+- (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(_Bool)arg3;
 - (unsigned long long)_backdropStyle;
 - (void)_setBackdropStyle:(unsigned long long)arg1;
 @property(nonatomic) unsigned long long searchBarStyle;
@@ -111,6 +112,8 @@
 - (void)_containerSafeAreaInsetsDidChange:(id)arg1;
 - (void)safeAreaInsetsDidChange;
 - (void)layoutMarginsDidChange;
+- (void)_getOverrideContentInsets:(struct UIEdgeInsets *)arg1 overriddenEdges:(unsigned long long *)arg2;
+- (void)_setOverrideContentInsets:(struct UIEdgeInsets)arg1 forRectEdges:(unsigned long long)arg2;
 - (struct UIEdgeInsets)contentInset;
 - (void)setContentInset:(struct UIEdgeInsets)arg1;
 - (void)_setShadowVisibleIfNecessary:(_Bool)arg1;
@@ -136,6 +139,7 @@
 - (void)_animateTransitionToSearchLayoutState:(long long)arg1;
 - (void)_prepareForTransitionToSearchLayoutState:(long long)arg1;
 - (void)_driveTransitionToSearchLayoutState:(long long)arg1;
+- (void)_navigationBarTraitCollectionDidChangeTo:(id)arg1 from:(id)arg2;
 - (void)_navigationBarTransitionCompleted:(long long)arg1 willBeDisplayed:(_Bool)arg2;
 - (void)_performNavigationBarTransition:(long long)arg1 willBeDisplayed:(_Bool)arg2;
 - (void)_navigationBarTransitionWillBegin:(long long)arg1 willBeDisplayed:(_Bool)arg2;
@@ -293,10 +297,12 @@
 @property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically; // @dynamic enablesReturnKeyAutomatically;
 @property(nonatomic) _Bool enablesReturnKeyOnNonWhiteSpaceContent;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
 @property(nonatomic) _Bool forceDefaultDictationInfo;
 @property(nonatomic) long long forceDictationKeyboardType;
 @property(nonatomic) _Bool forceDisableDictation;
 @property(nonatomic) _Bool forceEnableDictation;
+@property(nonatomic) _Bool forceFloatingKeyboard;
 @property(nonatomic) _Bool hasDefaultContents;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) _Bool hidePrediction;

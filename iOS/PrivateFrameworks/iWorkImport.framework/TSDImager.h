@@ -64,6 +64,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGRect actualScaledClipRect; // @synthesize actualScaledClipRect=mActualScaledClipRect;
 - (void)p_assertHasReadLock;
 - (id)dynamicOverrideForRep:(id)arg1;
+- (id)dynamicOverrideForLayout:(id)arg1;
 - (_Bool)isPrintingCanvas;
 - (_Bool)isCanvasDrawingIntoPDF:(id)arg1;
 - (struct CGRect)visibleScaledBoundsForClippingRepsOnCanvas:(id)arg1;

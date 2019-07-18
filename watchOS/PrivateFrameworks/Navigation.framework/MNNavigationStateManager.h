@@ -33,7 +33,7 @@
 - (void).cxx_destruct;
 - (void)resumeRealtimeUpdatesForSubscriber:(id)arg1;
 - (void)pauseRealtimeUpdatesForSubscriber:(id)arg1;
-- (void)checkinForNavigationService;
+- (void)checkinForNavigationService:(CDUnknownBlockType)arg1;
 - (void)updateGuidanceWithData:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)interfaceHashesWithHandler:(CDUnknownBlockType)arg1;
 - (void)recordPedestrianTracePath:(id)arg1;
@@ -64,8 +64,6 @@
 - (void)stopNavigation;
 - (void)startNavigationWithDetails:(id)arg1 activeBlock:(CDUnknownBlockType)arg2;
 - (void)setRoutesForPreview:(id)arg1 selectedRouteIndex:(unsigned int)arg2;
-- (void)cancelDirectionsRequestWithIdentifier:(id)arg1;
-- (void)requestDirections:(id)arg1 withIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)suggestionsManager:(id)arg1 didAddSuggestion:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
@@ -83,6 +81,7 @@
 @property(readonly, nonatomic) unsigned int currentStateType;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (void)reset;
 - (void)start;
 - (void)dealloc;
 - (id)init;

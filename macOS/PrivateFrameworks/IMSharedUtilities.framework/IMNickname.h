@@ -21,7 +21,9 @@
     NSString *_recordID;
 }
 
++ (id)nameHashWithFirstName:(id)arg1 lastName:(id)arg2;
 + (BOOL)supportsSecureCoding;
++ (id)uniqueFilePathForWritingImageData;
 @property(retain, nonatomic) NSString *recordID; // @synthesize recordID=_recordID;
 @property(retain, nonatomic) NSString *handle; // @synthesize handle=_handle;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;

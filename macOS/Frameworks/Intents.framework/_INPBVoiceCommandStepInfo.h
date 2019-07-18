@@ -15,12 +15,14 @@
 @interface _INPBVoiceCommandStepInfo : PBCodable <_INPBVoiceCommandStepInfo, NSSecureCoding, NSCopying>
 {
     CDStruct_74e42c4c _has;
+    BOOL __encodeLegacyGloryData;
     int _category;
     NSString *_applicationIdentifier;
     NSString *_name;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) int category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;

@@ -12,7 +12,12 @@
 
 + (void)_removeAllUserFonts;
 + (id)identifierFromDirectoryName:(id)arg1;
++ (void)synchronizeFontProviders;
 + (id)knownFontProviders;
++ (id)checkTimer:(id)arg1;
++ (id)resumeSuspendedFontFiles;
++ (id)fontProvidersSubscriptionSupportInfo;
++ (double)secondsSinceLastAccessed:(id)arg1;
 + (id)directoryNameFromIdentifier:(id)arg1;
 + (id)userFontsInfo;
 + (void)enableOrDisablePersistentURLs:(id)arg1 enabled:(_Bool)arg2;

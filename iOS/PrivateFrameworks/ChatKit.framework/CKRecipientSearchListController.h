@@ -14,6 +14,7 @@
 
 @interface CKRecipientSearchListController : CNAutocompleteResultsTableViewController <IDSBatchIDQueryControllerDelegate, CKContactsSearchManagerDelegate>
 {
+    _Bool shouldHideGroupsDonations;
     _Bool _smsEnabled;
     NSArray *_enteredRecipients;
     NSArray *_prefilteredRecipients;
@@ -34,6 +35,7 @@
 @property(nonatomic) _Bool smsEnabled; // @synthesize smsEnabled=_smsEnabled;
 @property(retain, nonatomic) NSArray *prefilteredRecipients; // @synthesize prefilteredRecipients=_prefilteredRecipients;
 @property(retain, nonatomic) NSArray *enteredRecipients; // @synthesize enteredRecipients=_enteredRecipients;
+@property(nonatomic) _Bool shouldHideGroupsDonations; // @synthesize shouldHideGroupsDonations;
 - (void).cxx_destruct;
 - (BOOL)_serviceColorForRecipients:(id)arg1;
 - (id)_statusQueryController;

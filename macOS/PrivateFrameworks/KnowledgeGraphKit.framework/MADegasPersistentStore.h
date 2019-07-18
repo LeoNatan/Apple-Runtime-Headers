@@ -36,6 +36,7 @@
 + (BOOL)destroyAtURL:(id)arg1 error:(id *)arg2;
 + (BOOL)migrateFromURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 + (BOOL)copyFromURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
++ (id)errorForKGDBReturnCode:(int)arg1 description:(id)arg2;
 + (id)persistentStoreFileExtension;
 @property(retain, nonatomic) NSMutableDictionary *propertyNameByAttrId; // @synthesize propertyNameByAttrId=_propertyNameByAttrId;
 @property(retain, nonatomic) NSMutableDictionary *attrIdByPropertyName; // @synthesize attrIdByPropertyName=_attrIdByPropertyName;

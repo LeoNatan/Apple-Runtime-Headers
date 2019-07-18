@@ -22,6 +22,8 @@ __attribute__((visibility("hidden")))
 - (void)migrateResourcesToSandbox:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)asynchronouslyMigrateResourcesToSandbox:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)synchronouslyRemoveQuarantineHardAttributeFromFileAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)cancelUnarchivingOperationWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)extractArchiveAtPath:(id)arg1 type:(unsigned long long)arg2 identifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)writeWebArchiveWithoutQuarantineFlag:(id)arg1 atURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)synchronouslyIssueExtensionForDirectoryContainingDownloadDestinationAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)issueDevelopModeExtensionWithCompletionHandler:(CDUnknownBlockType)arg1;

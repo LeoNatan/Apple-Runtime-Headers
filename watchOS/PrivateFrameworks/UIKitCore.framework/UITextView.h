@@ -333,6 +333,8 @@
 - (void)_setInteractiveTextSelectionDisabled:(_Bool)arg1;
 - (void)_updateContainerTileAndSizingFlags;
 - (void)setScrollEnabled:(_Bool)arg1;
+- (void)removeInvisibleRange:(id)arg1;
+- (void)addInvisibleRange:(id)arg1;
 - (void)removeAllGhostedRanges;
 - (void)addGhostedRange:(id)arg1;
 - (void)setTiledViewsDrawAsynchronously:(_Bool)arg1;
@@ -480,8 +482,10 @@
 @property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically; // @dynamic enablesReturnKeyAutomatically;
 @property(nonatomic) _Bool enablesReturnKeyOnNonWhiteSpaceContent;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
 @property(nonatomic) _Bool forceDefaultDictationInfo;
 @property(nonatomic) int forceDictationKeyboardType;
+@property(nonatomic) _Bool forceFloatingKeyboard;
 @property(nonatomic) _Bool hasDefaultContents;
 @property(readonly) unsigned int hash;
 @property(nonatomic) _Bool hidePrediction;
@@ -489,7 +493,7 @@
 @property(retain, nonatomic) UIColor *insertionPointColor;
 @property(nonatomic) unsigned int insertionPointWidth;
 @property(nonatomic) _Bool isCarPlayIdiom;
-@property(nonatomic) _Bool isSingleLineDocument;
+@property(readonly, nonatomic) _Bool isSingleLineDocument;
 @property(nonatomic) int keyboardAppearance; // @dynamic keyboardAppearance;
 @property(nonatomic) int keyboardType; // @dynamic keyboardType;
 @property(nonatomic) _Bool learnsCorrections;

@@ -12,16 +12,15 @@
 
 @interface HMDDatabaseCKOperationCompletionEvent : HMDLogEvent <HMDAWDLogEvent>
 {
+    NSString *_containerIdentifier;
     NSError *_error;
-    NSString *_containerType;
 }
 
 + (id)uuid;
-+ (void)initialize;
-@property(retain) NSString *containerType; // @synthesize containerType=_containerType;
-@property(retain) NSError *error; // @synthesize error=_error;
+@property(readonly, copy) NSError *error; // @synthesize error=_error;
+@property(readonly, copy) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 - (void).cxx_destruct;
-- (id)initWithError:(id)arg1 containerType:(id)arg2;
+- (id)initWithContainerIdentifier:(id)arg1 error:(id)arg2;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;
 

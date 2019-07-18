@@ -15,9 +15,9 @@
     unsigned short _enrichmentState;
     id <PGHighlightModel> _highlight;
     double _promotionScore;
-    NSString *_title;
+    NSString *_smartDescription;
     NSString *_dateDescription;
-    NSString *_verboseTitle;
+    NSString *_verboseSmartDescription;
     PHAsset *_keyAsset;
     NSArray *_extendedCuration;
     NSDictionary *_curatedAssetsByCurationType;
@@ -33,13 +33,14 @@
 @property(retain, nonatomic) NSDictionary *curatedAssetsByCurationType; // @synthesize curatedAssetsByCurationType=_curatedAssetsByCurationType;
 @property(retain, nonatomic) NSArray *extendedCuration; // @synthesize extendedCuration=_extendedCuration;
 @property(retain, nonatomic) PHAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
-@property(copy, nonatomic) NSString *verboseTitle; // @synthesize verboseTitle=_verboseTitle;
+@property(copy, nonatomic) NSString *verboseSmartDescription; // @synthesize verboseSmartDescription=_verboseSmartDescription;
 @property(copy, nonatomic) NSString *dateDescription; // @synthesize dateDescription=_dateDescription;
-@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(copy, nonatomic) NSString *smartDescription; // @synthesize smartDescription=_smartDescription;
 @property(nonatomic) double promotionScore; // @synthesize promotionScore=_promotionScore;
 @property(nonatomic) BOOL clearCurations; // @synthesize clearCurations=_clearCurations;
 @property(readonly) id <PGHighlightModel> highlight; // @synthesize highlight=_highlight;
 - (void).cxx_destruct;
+@property(readonly) BOOL hasChanges;
 - (id)initWithHighlight:(id)arg1;
 
 @end

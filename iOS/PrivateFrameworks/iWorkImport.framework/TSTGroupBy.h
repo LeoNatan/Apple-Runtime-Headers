@@ -231,7 +231,6 @@ __attribute__((visibility("hidden")))
 - (id)initWithGroupings:(id)arg1 categoryOwner:(id)arg2;
 - (id)labelRowUIDSetForCategoryLevel:(unsigned char)arg1 labelRowVisibility:(unsigned long long)arg2;
 - (id)labelRowUIDSet;
-- (void)p_setCell:(id)arg1 forRoundGroupingTypeWithGroupColumnValue:(id)arg2 toBeInGroup:(id)arg3;
 - (void)p_setCell:(id)arg1 forYearQuarterGroupingTypeWithGroupColumnValue:(id)arg2 toBeInGroup:(id)arg3;
 - (void)p_setCell:(id)arg1 forYearWeekGroupingTypeWithGroupColumnValue:(id)arg2 toBeInGroup:(id)arg3;
 - (void)p_setCell:(id)arg1 forDayGroupingTypeWithGroupColumnValue:(id)arg2 toBeInGroup:(id)arg3;

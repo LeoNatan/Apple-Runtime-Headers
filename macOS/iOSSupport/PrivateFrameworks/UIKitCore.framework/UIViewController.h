@@ -20,7 +20,7 @@
 #import <UIKitCore/_UITraitEnvironmentInternal-Protocol.h>
 #import <UIKitCore/_UIViewServiceDeputy-Protocol.h>
 
-@class NSArray, NSBundle, NSDictionary, NSExtensionContext, NSLayoutConstraint, NSMapTable, NSMutableArray, NSString, NSUUID, UIAccessibilityHUDView, UIBarButtonItem, UIDropShadowView, UIMultiColumnViewController, UINavigationContentAdjustments, UINavigationController, UINavigationItem, UIPopoverController, UIPresentationController, UIScrollView, UISearchDisplayController, UISplitViewController, UIStatusBarHideAnimationParameters, UIStatusBarStyleAnimationParameters, UIStoryboard, UIStoryboardSegue, UITabBarController, UITabBarItem, UITraitCollection, UITransitionView, UIView, UIWindow, _UIActionSheetPresentationController, _UIGestureStudyInteraction;
+@class NSArray, NSBundle, NSDictionary, NSExtensionContext, NSLayoutConstraint, NSMapTable, NSMutableArray, NSString, NSUUID, UIAccessibilityHUDView, UIBarButtonItem, UIDropShadowView, UIMultiColumnViewController, UINavigationContentAdjustments, UINavigationController, UINavigationItem, UIPopoverController, UIPresentationController, UIScrollView, UISearchDisplayController, UISplitViewController, UIStatusBarHideAnimationParameters, UIStatusBarStyleAnimationParameters, UIStoryboard, UIStoryboardSegue, UITabBarController, UITabBarItem, UITraitCollection, UITransitionView, UIView, UIWindow, _UIActionSheetPresentationController;
 @protocol UIFocusEnvironment, UIFocusItem, UIFocusItemContainer, UILayoutSupport><_UILayoutItem, UIViewControllerTransitioningDelegate, _UIFocusRegionContainer, _UIViewControllerContentViewEmbedding;
 
 @interface UIViewController : UIResponder <NSExtensionRequestHandling, _UIFallbackEnvironment, _UIViewServiceDeputy, UIWindowDelegate, _UITraitEnvironmentInternal, _UIContentContainerInternal, _UIFocusEnvironmentInternal, _UIStatusBarAnimationProviding, NSCoding, UIAppearanceContainer, UITraitEnvironment, UIContentContainer, UIFocusEnvironment>
@@ -155,7 +155,6 @@
     UIViewController *__childControllerToIgnoreWhileLookingForTransitionCoordinator;
     id <UIFocusItem> _presentingFocusedItem;
     UINavigationContentAdjustments *_navigationInsetAdjustment;
-    _UIGestureStudyInteraction *_studyInteraction;
     NSArray *_storyboardPreviewSegueTemplates;
     NSArray *_storyboardCommitSegueTemplates;
     NSArray *_storyboardPreviewingRegistrants;
@@ -237,7 +236,6 @@
 @property(readonly, nonatomic) NSArray *storyboardPreviewingRegistrants; // @synthesize storyboardPreviewingRegistrants=_storyboardPreviewingRegistrants;
 @property(readonly, nonatomic) NSArray *storyboardCommitSegueTemplates; // @synthesize storyboardCommitSegueTemplates=_storyboardCommitSegueTemplates;
 @property(readonly, nonatomic) NSArray *storyboardPreviewSegueTemplates; // @synthesize storyboardPreviewSegueTemplates=_storyboardPreviewSegueTemplates;
-@property(nonatomic) __weak _UIGestureStudyInteraction *studyInteraction; // @synthesize studyInteraction=_studyInteraction;
 @property(retain, nonatomic) UINavigationContentAdjustments *navigationInsetAdjustment; // @synthesize navigationInsetAdjustment=_navigationInsetAdjustment;
 @property(nonatomic, getter=_presentingFocusedItem, setter=_setPresentingFocusedItem:) __weak id <UIFocusItem> presentingFocusedItem; // @synthesize presentingFocusedItem=_presentingFocusedItem;
 @property(retain, nonatomic, setter=_setChildControllerToIgnoreWhileLookingForTransitionCoordinator:) UIViewController *_childControllerToIgnoreWhileLookingForTransitionCoordinator; // @synthesize _childControllerToIgnoreWhileLookingForTransitionCoordinator=__childControllerToIgnoreWhileLookingForTransitionCoordinator;
@@ -287,7 +285,6 @@
 @property(readonly, nonatomic) id <UIFocusItemContainer> focusItemContainer;
 @property(readonly, nonatomic, getter=_focusMapContainer) __weak id <_UIFocusRegionContainer> focusMapContainer;
 @property(readonly, nonatomic) __weak id <UIFocusEnvironment> parentFocusEnvironment;
-- (id)_parentFocusEnvironment;
 - (id)_overridingPreferredFocusEnvironment;
 - (void)_rememberPresentingFocusedItem:(id)arg1;
 - (BOOL)_canRestoreFocusAfterTransitionToPresentingFocusedItem:(id)arg1;
@@ -777,6 +774,7 @@
 - (id)init;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)_doCommonSetup;
+- (void)_populateInitialTraitCollection;
 @property(readonly, nonatomic) BOOL _viewHostsLayoutEngineAllowsTAMIC_NO;
 - (BOOL)_viewHostsLayoutEngine;
 - (void)_setViewHostsLayoutEngine:(BOOL)arg1;
@@ -964,6 +962,7 @@
 - (id)_navigationBarForDragAffordance;
 - (void)_dismissAccessibilityHUD;
 - (void)_showAccessibilityHUDItem:(id)arg1;
+- (id)_accessibilityLargeContentHUDWindow;
 - (id)autorelease;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;

@@ -18,7 +18,10 @@
 + (id)reuseIdentifier;
 - (void).cxx_destruct;
 - (void)_fontSizeDidChange;
+- (id)_traitCollectionAdjustedIfNeeded;
+- (void)_updateLabelFonts;
 - (void)layoutSubviews;
+@property(copy, nonatomic) NSString *groupName;
 @property(copy, nonatomic) NSString *subtitle;
 @property(copy, nonatomic) NSString *title;
 - (id)initWithReuseIdentifier:(id)arg1;

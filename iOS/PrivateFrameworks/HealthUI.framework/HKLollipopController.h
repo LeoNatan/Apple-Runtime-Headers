@@ -44,9 +44,10 @@
 - (void)_setExtensionViewBackgrounds;
 - (double)_lollipopExtensionWidth;
 - (double)_lollipopExtensionLength;
+- (id)_lollipopExtensionColor;
 - (id)_lollipopAnnotationColor;
 - (id)_lollipopFieldColor;
-- (id)initWithAnnotationDataSource:(id)arg1 parentView:(id)arg2 showSeparators:(_Bool)arg3 delegate:(id)arg4;
+- (id)initWithAnnotationDataSource:(id)arg1 parentView:(id)arg2 delegate:(id)arg3;
 
 @end
 

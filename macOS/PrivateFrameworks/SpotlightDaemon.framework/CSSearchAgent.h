@@ -15,8 +15,7 @@
     NSMutableDictionary *_searchConnections;
 }
 
-+ (id)searchAgent;
-+ (void)initialize;
++ (id)searchAgent:(BOOL)arg1;
 @property(retain, nonatomic) NSMutableDictionary *searchConnections; // @synthesize searchConnections=_searchConnections;
 @property(retain, nonatomic) id <MDIndexer> indexer; // @synthesize indexer=_indexer;
 - (void).cxx_destruct;

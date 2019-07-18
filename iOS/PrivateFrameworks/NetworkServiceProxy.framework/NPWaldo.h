@@ -211,14 +211,16 @@
 - (_Bool)isLatenciesCompleteForNetwork:(id)arg1;
 - (void)ageOutLatencyMap;
 - (void)removeDayPassesFromKernel;
-- (_Bool)pushCurrentDayPassesToKernelUpdateGeneration:(_Bool)arg1;
+- (void)pushKeybagToKernelCanReuse:(_Bool)arg1;
+- (void)pushKeybagToKernel;
+- (void)pushKeybagToKernelUpdateGeneration:(_Bool)arg1;
 - (void)establishTrustWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeFromKeychain;
 - (void)saveToKeychain;
 - (id)initFromKeychainWithIdentifier:(id)arg1;
 - (id)description;
 - (void)teardownNetworkAgent;
-- (_Bool)updateNetworkAgentWithKeybag:(id)arg1;
+- (void)updateNetworkAgentWithKeybag:(id)arg1 networkInfo:(id)arg2;
 @property(retain) NSArray *allOnRamps;
 @property(copy) NSArray *edges;
 - (void)merge:(id)arg1 missingSettingsOnly:(_Bool)arg2;

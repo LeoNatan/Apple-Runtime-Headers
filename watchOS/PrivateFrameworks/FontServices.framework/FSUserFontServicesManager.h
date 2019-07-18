@@ -10,7 +10,7 @@
 {
 }
 
-+ (void)GSFontEnableOrDisablePersistentURLs:(id)arg1 forProfileFonts:(_Bool)arg2 enabled:(_Bool)arg3 withReply:(CDUnknownBlockType)arg4;
++ (void)GSFontEnableOrDisablePersistentURLs:(id)arg1 forProfileFonts:(_Bool)arg2 enabled:(_Bool)arg3 suspend:(_Bool)arg4 withReply:(CDUnknownBlockType)arg5;
 + (void)GSFontUnregisterPersistentURLs:(id)arg1 forProfileFonts:(_Bool)arg2 withReply:(CDUnknownBlockType)arg3;
 + (void)GSFontRegisterPersistentURLs:(id)arg1 enabled:(_Bool)arg2 forProfileFonts:(_Bool)arg3 withReply:(CDUnknownBlockType)arg4;
 + (id)_UserFontServicesConnection;

@@ -9,7 +9,7 @@
 #import <NewsCore/FCClearableReadingHistory-Protocol.h>
 #import <NewsCore/FCIssueReadingHistoryType-Protocol.h>
 
-@class FCMTWriterLock, NSMutableDictionary, NSString;
+@class FCMTWriterLock, NSArray, NSMutableDictionary, NSString;
 
 @interface FCIssueReadingHistory : FCPrivateDataController <FCIssueReadingHistoryType, FCClearableReadingHistory>
 {
@@ -40,14 +40,23 @@
 - (id)_historyItemForIssueID:(id)arg1;
 - (id)recordsForRestoringZoneName:(id)arg1;
 - (_Bool)canHelpRestoreZoneName:(id)arg1;
-- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
+- (id)allKnownRecordNamesWithinRecordZoneWithID:(id)arg1;
+- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
 - (void)loadLocalCachesFromStore;
 - (void)clearHistory;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+@property(readonly, nonatomic) NSArray *allEngagedIssueIDs;
+@property(readonly, nonatomic) NSArray *recentlyEngagedIssueIDs;
+@property(readonly, nonatomic) NSArray *recentlyVisitedIssueIDs;
 @property(readonly, nonatomic) NSString *mostRecentlyVisitedIssueID;
+- (id)lastEngagedDateForIssueWithID:(id)arg1;
 - (id)lastVisitedDateForIssueWithID:(id)arg1;
 - (id)bookmarkForLastVisitToIssueWithID:(id)arg1;
+- (_Bool)hasIssueWithIDBeenRemovedFromMyMagazines:(id)arg1;
+- (void)markIssueAsRemovedFromMyMagazinesWithID:(id)arg1;
+- (_Bool)hasIssueWithIDBeenEngaged:(id)arg1;
+- (void)markIssueAsEngagedWithID:(id)arg1;
 - (_Bool)hasIssueWithIDBeenBadged:(id)arg1;
 - (void)markIssueAsBadgedWithID:(id)arg1;
 - (_Bool)hasIssueWithIDBeenVisited:(id)arg1;

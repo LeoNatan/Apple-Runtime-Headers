@@ -8,7 +8,7 @@
 
 #import <UserNotificationsUIKit/MTVisualStylingProviding-Protocol.h>
 
-@class MTVisualStylingProvider, NCNotificationManagementBlueButton, NSMutableDictionary, NSString, UIImageView, UILabel;
+@class NCNotificationManagementBlueButton, NSMutableDictionary, NSString, UIImageView, UILabel;
 
 @interface NCNotificationManagementView : UIView <MTVisualStylingProviding>
 {
@@ -51,7 +51,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 
 @end
 

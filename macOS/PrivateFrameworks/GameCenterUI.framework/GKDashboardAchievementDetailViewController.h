@@ -6,7 +6,7 @@
 
 #import <GameCenterUI/GKDetailViewController.h>
 
-@class GKAchievement, GKAchievementIconView, NSTextField, UIButton;
+@class GKAchievement, GKAchievementIconView, NSButton, NSTextField;
 
 @interface GKDashboardAchievementDetailViewController : GKDetailViewController
 {
@@ -15,16 +15,16 @@
     NSTextField *_descriptionLabel;
     NSTextField *_progressLabel;
     NSTextField *_disabledLabel;
-    UIButton *_firstButton;
-    UIButton *_secondButton;
+    NSButton *_firstButton;
+    NSButton *_secondButton;
     GKAchievement *_achievement;
     GKAchievement *_localAchievement;
 }
 
 @property(retain, nonatomic) GKAchievement *localAchievement; // @synthesize localAchievement=_localAchievement;
 @property(retain, nonatomic) GKAchievement *achievement; // @synthesize achievement=_achievement;
-@property(nonatomic) UIButton *secondButton; // @synthesize secondButton=_secondButton;
-@property(nonatomic) UIButton *firstButton; // @synthesize firstButton=_firstButton;
+@property(nonatomic) NSButton *secondButton; // @synthesize secondButton=_secondButton;
+@property(nonatomic) NSButton *firstButton; // @synthesize firstButton=_firstButton;
 @property(nonatomic) NSTextField *disabledLabel; // @synthesize disabledLabel=_disabledLabel;
 @property(nonatomic) NSTextField *progressLabel; // @synthesize progressLabel=_progressLabel;
 @property(nonatomic) NSTextField *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;

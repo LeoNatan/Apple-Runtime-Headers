@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString, REMChangeTracking, REMObjectID;
+@class NSSet, NSString, REMChangeTracking, REMObjectID;
 
 @protocol REMChangeTrackingProvider
+- (REMChangeTracking *)provideChangeTrackingForAccountID:(REMObjectID *)arg1 clientName:(NSString *)arg2 transactionAuthorKeysToExclude:(NSSet *)arg3;
 - (REMChangeTracking *)provideChangeTrackingForAccountID:(REMObjectID *)arg1 clientName:(NSString *)arg2;
 @end
 

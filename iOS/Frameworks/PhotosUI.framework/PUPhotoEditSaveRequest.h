@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSProgress, PHAsset, PHContentEditingOutput, PICompositionController, PUPhotoEditIrisModel;
+@class NSProgress, NUComposition, PHAsset, PHContentEditingOutput, PICompositionController, PUPhotoEditIrisModel;
 
 __attribute__((visibility("hidden")))
 @interface PUPhotoEditSaveRequest : NSObject
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     int _identifier;
     PHAsset *_photo;
     PICompositionController *_compositionController;
+    NUComposition *_originalComposition;
     PUPhotoEditIrisModel *_irisModel;
     PHContentEditingOutput *_contentEditingOutput;
     long long _workImageVersion;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long workImageVersion; // @synthesize workImageVersion=_workImageVersion;
 @property(readonly, nonatomic) PHContentEditingOutput *contentEditingOutput; // @synthesize contentEditingOutput=_contentEditingOutput;
 @property(readonly, copy, nonatomic) PUPhotoEditIrisModel *irisModel; // @synthesize irisModel=_irisModel;
+@property(readonly, nonatomic) NUComposition *originalComposition; // @synthesize originalComposition=_originalComposition;
 @property(readonly, copy, nonatomic) PICompositionController *compositionController; // @synthesize compositionController=_compositionController;
 @property(readonly, nonatomic) PHAsset *photo; // @synthesize photo=_photo;
 @property(readonly, nonatomic) int identifier; // @synthesize identifier=_identifier;
@@ -44,7 +46,7 @@ __attribute__((visibility("hidden")))
 - (long long)_videoRequestVersion;
 - (long long)_imageRequestVersion;
 - (void)beginSaveOperationWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)initWithPhoto:(id)arg1 compositionController:(id)arg2 contentEditingOutput:(id)arg3 workImageVersion:(long long)arg4 irisEditModel:(id)arg5 useRawIfAvailable:(_Bool)arg6;
+- (id)initWithPhoto:(id)arg1 compositionController:(id)arg2 contentEditingOutput:(id)arg3 workImageVersion:(long long)arg4 irisEditModel:(id)arg5 originalComposition:(id)arg6 useRawIfAvailable:(_Bool)arg7;
 - (id)initWithPhoto:(id)arg1 contentEditingOutput:(id)arg2 workImageVersion:(long long)arg3 irisEditModel:(id)arg4 useRawIfAvailable:(_Bool)arg5;
 - (id)initWithPhotoToRevertToOriginal:(id)arg1;
 - (id)init;

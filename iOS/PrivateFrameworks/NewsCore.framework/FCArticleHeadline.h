@@ -32,6 +32,7 @@
     _Bool _bundlePaid;
     _Bool _canBePurchased;
     _Bool _showBundleSoftPaywall;
+    _Bool _useTransparentNavigationBar;
     NSString *_versionIdentifier;
     NSString *_identifier;
     NSString *_articleID;
@@ -103,6 +104,7 @@
 - (id)linkedArticleIDs;
 - (void)setHalfLife:(unsigned long long)arg1;
 - (unsigned long long)halfLife;
+- (_Bool)useTransparentNavigationBar;
 - (_Bool)showBundleSoftPaywall;
 - (void)setRole:(unsigned long long)arg1;
 - (unsigned long long)role;

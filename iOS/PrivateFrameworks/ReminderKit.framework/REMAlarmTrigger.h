@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) REMObjectID *remObjectID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_deepCopy;
+- (_Bool)isContentEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) _Bool isTemporal;
 - (id)initWithCoder:(id)arg1;

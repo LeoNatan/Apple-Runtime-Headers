@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)disableNotifier;
 - (void)p_stopNotifier;
 - (void)p_startNotifier;
+- (void)reachabilityStatusWithCompletionQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) long long lastKnownStatus;
 - (void)p_updateCachedStatus:(long long)arg1;
 - (void)updateCachedStatus:(long long)arg1;

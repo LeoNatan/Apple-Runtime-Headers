@@ -12,12 +12,14 @@
 {
 }
 
+- (id)controls;
 @property(nonatomic) struct AVAudioHardwareStereoPair defaultOutputStereoChannels;
 @property(nonatomic) struct AVAudioHardwareStereoPair defaultInputStereoChannels;
 @property(readonly, nonatomic) NSArray *inputStreams;
 @property(readonly, nonatomic) NSArray *outputStreams;
 @property(readonly, nonatomic) unsigned long long outputSafetyOffset;
 @property(readonly, nonatomic) unsigned long long inputSafetyOffset;
+- (id)description;
 
 @end
 

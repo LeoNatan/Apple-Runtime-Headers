@@ -7,7 +7,7 @@
 #import <AudioDSPManager/dspd_HardwareVolumeDelegate-Protocol.h>
 #import <AudioDSPManager/dspd_VolumeNotificationDelegate-Protocol.h>
 
-@protocol dspd_ActivationChangeRequest, dspd_ConfigurationChangeRequest, dspd_DeactivationChangeRequest, dspd_HardwareVolumeDelegate, dspd_SupportedPublicStreamFormatRequest, dspd_VolumeNotificationDelegate;
+@protocol dspd_ActivationChangeRequest, dspd_ConfigurationChangeRequest, dspd_DeactivationChangeRequest, dspd_GraphVolumeDelegate, dspd_HardwareVolumeDelegate, dspd_SupportedPublicStreamFormatRequest, dspd_VolumeNotificationDelegate;
 
 @protocol dspd_DSPDelegate <dspd_HardwareVolumeDelegate, dspd_VolumeNotificationDelegate>
 @property(readonly, nonatomic) vector_a93e9522 muteRecords;
@@ -26,13 +26,14 @@
 - (expected_af0f637c)simulateConfigurationChanges:(const vector_d47d98e2 *)arg1;
 - (expected_af0f637c)simulateConfigurationChange:(id <dspd_ConfigurationChangeRequest>)arg1;
 - (expected_025c1a52)configurationChangeComplete:(int)arg1 dspMutation:(function_71b6729b)arg2;
-- (expected_6c7599df)adaptToConfigurationChanges:(const vector_d47d98e2 *)arg1;
-- (expected_6c7599df)adaptToConfigurationChange:(id <dspd_ConfigurationChangeRequest>)arg1;
+- (expected_0910f26e)adaptToConfigurationChanges:(const vector_d47d98e2 *)arg1;
+- (expected_0910f26e)adaptToConfigurationChange:(id <dspd_ConfigurationChangeRequest>)arg1;
 - (expected_2b9a0a05)negotiateConfigurationChanges:(const vector_d47d98e2 *)arg1;
 - (expected_2b9a0a05)negotiateConfigurationChange:(id <dspd_ConfigurationChangeRequest>)arg1;
 - (id <dspd_SupportedPublicStreamFormatRequest>)supportedPublicStreamFormatRequest;
 - (id <dspd_DeactivationChangeRequest>)deactivationChangeRequestWithSession:(unsigned int)arg1;
 - (id <dspd_ActivationChangeRequest>)activationChangeRequestWithSession:(unsigned int)arg1;
+- (struct error_code)setGraphVolumeDelegate:(id <dspd_GraphVolumeDelegate>)arg1;
 - (struct error_code)setVolumeNotificationDelegate:(id <dspd_VolumeNotificationDelegate>)arg1;
 - (struct error_code)setHardwareVolumeDelegate:(id <dspd_HardwareVolumeDelegate>)arg1;
 @end

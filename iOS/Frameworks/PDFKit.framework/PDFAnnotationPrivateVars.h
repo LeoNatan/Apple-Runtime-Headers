@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct CGPDFAnnotation *cgAnnotation;
     NSMutableDictionary *PDFAnnotationDictionary;
     NSDictionary *PDFAnnotationKeyMapping;
+    NSMutableDictionary *internalPDFAnnotationDictionary;
     struct CGPDFForm *normalAppearance;
     struct CGPDFForm *rolloverAppearance;
     struct CGPDFForm *downAppearance;

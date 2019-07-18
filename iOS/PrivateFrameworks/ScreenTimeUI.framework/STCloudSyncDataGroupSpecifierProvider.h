@@ -6,13 +6,13 @@
 
 #import <ScreenTimeUI/STRootGroupSpecifierProvider.h>
 
-#import <ScreenTimeUI/AAUIDeviceToDeviceEncryptionHelperDelegate-Protocol.h>
+#import <ScreenTimeUI/CDPUIDeviceToDeviceEncryptionHelperDelegate-Protocol.h>
 #import <ScreenTimeUI/MCProfileConnectionObserver-Protocol.h>
 
 @class NSString, PSSpecifier;
 
 __attribute__((visibility("hidden")))
-@interface STCloudSyncDataGroupSpecifierProvider : STRootGroupSpecifierProvider <AAUIDeviceToDeviceEncryptionHelperDelegate, MCProfileConnectionObserver>
+@interface STCloudSyncDataGroupSpecifierProvider : STRootGroupSpecifierProvider <CDPUIDeviceToDeviceEncryptionHelperDelegate, MCProfileConnectionObserver>
 {
     PSSpecifier *_toggleCloudSyncDataSpecifier;
 }

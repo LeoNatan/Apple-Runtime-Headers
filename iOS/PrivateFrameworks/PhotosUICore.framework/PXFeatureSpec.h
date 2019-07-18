@@ -20,6 +20,7 @@
     long long _userInterfaceIdiom;
     long long _userInterfaceFeature;
     long long _userInterfaceStyle;
+    long long _userInterfaceLevel;
     long long _contentSizeCategory;
     double _displayScale;
     NSArray *_collectionTileImageOverlaySpecs;
@@ -43,6 +44,7 @@
 @property(readonly, nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsets; // @synthesize safeAreaInsets=_safeAreaInsets;
 @property(readonly, nonatomic) long long contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
+@property(readonly, nonatomic) long long userInterfaceLevel; // @synthesize userInterfaceLevel=_userInterfaceLevel;
 @property(readonly, nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(readonly, nonatomic) long long userInterfaceFeature; // @synthesize userInterfaceFeature=_userInterfaceFeature;
 @property(readonly, nonatomic) long long userInterfaceIdiom; // @synthesize userInterfaceIdiom=_userInterfaceIdiom;

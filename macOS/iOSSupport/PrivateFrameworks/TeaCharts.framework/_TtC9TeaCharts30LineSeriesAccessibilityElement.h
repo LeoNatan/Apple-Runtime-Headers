@@ -11,11 +11,13 @@
     // Error parsing type: , name: series
     // Error parsing type: , name: chartModel
     // Error parsing type: , name: interactor
+    // Error parsing type: , name: dataElements
 }
 
 - (void).cxx_destruct;
 - (id)init;
 - (id)initWithAccessibilityContainer:(id)arg1;
+- (id)tc_accessibilityDataSeriesGridlinePositionsForAxis:(long long)arg1;
 - (id)tc_accessibilityDataSeriesValueDescriptionForPosition:(double)arg1 axis:(long long)arg2;
 - (double)tc_accessibilityDataSeriesSonificationDuration;
 - (BOOL)tc_accessibilityDataSeriesIncludesTrendlineInSonification;

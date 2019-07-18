@@ -19,7 +19,7 @@
 - (oneway void)speechDidRecognizeTranscriptionObjects:(NSArray *)arg1 usingSpeechModel:(NSString *)arg2;
 - (oneway void)speechDidProcessAudioDuration:(double)arg1;
 - (oneway void)speechDidRecognizeTokens:(NSArray *)arg1 usingSpeechModel:(NSString *)arg2;
-- (oneway void)speechDidRecognizePartialResult:(SASSpeechPartialResult *)arg1 usingSpeechModel:(NSString *)arg2;
+- (oneway void)speechDidRecognizePartialResult:(SASSpeechPartialResult *)arg1;
 - (oneway void)speechDidRecognizePhrases:(NSArray *)arg1 utterances:(NSArray *)arg2 usingSpeechModel:(NSString *)arg3 correctionContext:(NSDictionary *)arg4 audioAnalytics:(AFSpeechAudioAnalytics *)arg5;
 - (oneway void)speechRecordingDidFail:(NSError *)arg1;
 - (oneway void)speechRecordingDidCancel;

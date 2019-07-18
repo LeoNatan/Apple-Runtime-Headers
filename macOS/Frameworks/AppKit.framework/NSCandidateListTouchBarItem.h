@@ -38,6 +38,7 @@
 @property(getter=isCollapsed) BOOL collapsed; // @dynamic collapsed;
 - (void)_didChangeCandidateListVisibility;
 @property(readonly, getter=isCandidateListVisible) BOOL candidateListVisible; // @dynamic candidateListVisible;
+- (void)setCandidates:(id)arg1 forSelectedRange:(struct _NSRange)arg2 offset:(unsigned long long)arg3 inString:(id)arg4 rect:(struct CGRect)arg5 view:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)setCandidates:(id)arg1 forSelectedRange:(struct _NSRange)arg2 inString:(id)arg3 rect:(struct CGRect)arg4 view:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)setCandidates:(id)arg1 forSelectedRange:(struct _NSRange)arg2 inString:(id)arg3;
 @property(readonly, copy) NSArray *candidates; // @dynamic candidates;

@@ -35,11 +35,13 @@
     id <PXUIAssetBadgeViewDelegate> _delegate;
     long long _style;
     double _contentWidth;
+    struct CGSize _bottomElementsPadding;
     struct PXAssetBadgeInfo _badgeInfo;
 }
 
 + (double)preferredHeightForStyle:(long long)arg1;
 + (void)preloadResourcesForStyle:(long long)arg1;
+@property(nonatomic) struct CGSize bottomElementsPadding; // @synthesize bottomElementsPadding=_bottomElementsPadding;
 @property(nonatomic) double contentWidth; // @synthesize contentWidth=_contentWidth;
 @property(nonatomic, getter=isOverContent) _Bool overContent; // @synthesize overContent=_overContent;
 @property(nonatomic) long long style; // @synthesize style=_style;
@@ -57,7 +59,7 @@
 - (void)_invalidateBottomTrailingImage;
 - (void)_updateBottomLeadingImageIfNeeded;
 - (void)_invalidateBottomLeadingImage;
-- (id)_updateTopGroup:(id)arg1 withBadgeInfo:(struct PXAssetBadgeInfo)arg2 origin:(struct CGPoint)arg3;
+- (id)_updateTopGroup:(id)arg1 withBadgeInfo:(struct PXAssetBadgeInfo)arg2;
 - (void)_updateTopRightElementsIfNeeded;
 - (void)_updateTopLeftElementsIfNeeded;
 - (void)_invalidateTopRightElements;

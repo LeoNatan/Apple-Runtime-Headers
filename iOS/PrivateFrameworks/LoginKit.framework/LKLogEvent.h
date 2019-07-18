@@ -14,8 +14,10 @@
     NSDate *_date;
     NSString *_senderImagePath;
     NSString *_composedMessage;
+    unsigned long long _activityIdentifier;
 }
 
+@property(readonly, nonatomic) unsigned long long activityIdentifier; // @synthesize activityIdentifier=_activityIdentifier;
 @property(readonly, nonatomic) NSString *composedMessage; // @synthesize composedMessage=_composedMessage;
 @property(readonly, nonatomic) NSString *senderImagePath; // @synthesize senderImagePath=_senderImagePath;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
@@ -25,10 +27,12 @@
 - (_Bool)loggedByFramework:(id)arg1;
 - (_Bool)loggedByProcess:(id)arg1;
 - (id)dictionary;
+- (void)setActivityIdentifier:(unsigned long long)arg1;
 - (void)setSenderImagePath:(id)arg1;
 - (void)setComposedMessage:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setProcess:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

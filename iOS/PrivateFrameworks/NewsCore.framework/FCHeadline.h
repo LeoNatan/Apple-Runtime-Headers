@@ -241,9 +241,11 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic) _Bool isFeatured;
 @property(readonly, copy, nonatomic) NSArray *linkedArticleIDs;
 @property(readonly, copy, nonatomic) NSArray *linkedIssueIDs;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool useTransparentNavigationBar;
 
 @end
 

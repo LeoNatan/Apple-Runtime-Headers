@@ -28,6 +28,7 @@
     NSString *_groupIdentifier;
 }
 
++ (unsigned long long)_searchableItemVersion;
 + (void)deleteInteractionsWithGroupIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)deleteInteractionsWithIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)deleteAllInteractionsWithCompletion:(CDUnknownBlockType)arg1;
@@ -61,7 +62,9 @@
 - (void)donateInteractionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)_commonInit;
 - (id)initWithIntent:(id)arg1 response:(id)arg2;
+- (id)_init;
 @property(copy, nonatomic) NSString *domainIdentifier;
 @property(nonatomic) double duration;
 @property(retain, nonatomic) NSDate *date;

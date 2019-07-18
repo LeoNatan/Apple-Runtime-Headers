@@ -6,28 +6,32 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
 @protocol ML3AccountInformationProviding, MLMediaLibraryAccountChangeObserver, MLMediaLibraryResourcesServiceProtocol;
 
 @interface ML3MusicLibraryResourcesManagerContext : NSObject
 {
     BOOL _runningInDaemon;
-    BOOL _multiUsersSupported;
+    BOOL _multiUserSupported;
     id <MLMediaLibraryResourcesServiceProtocol> _resourcesService;
     id <ML3AccountInformationProviding> _accountInfo;
     id <MLMediaLibraryAccountChangeObserver> _accountChangeObserver;
+    NSString *_libraryContainerIdentifier;
 }
 
-+ (id)contextForMultiUsersDaemonLibraryWithAccountInfo:(id)arg1 accountChangeObserver:(id)arg2;
-+ (id)contextForMultiUsersFrameworkLibraryWithService:(id)arg1;
++ (id)contextForMultiUserDaemonLibraryWithAccountInfo:(id)arg1 accountChangeObserver:(id)arg2;
++ (id)contextForMultiUserFrameworkLibraryWithService:(id)arg1;
++ (id)contextForSingleUserLibraryWithLibraryContainerIdentifier:(id)arg1;
 + (id)contextForSingleUserLibraryWithAccountInfo:(id)arg1;
-+ (id)contextWithDefaultValues;
++ (id)contextForAutoupdatingSharedLibrary;
+@property(readonly, nonatomic) NSString *libraryContainerIdentifier; // @synthesize libraryContainerIdentifier=_libraryContainerIdentifier;
 @property(readonly, nonatomic) id <MLMediaLibraryAccountChangeObserver> accountChangeObserver; // @synthesize accountChangeObserver=_accountChangeObserver;
 @property(readonly, nonatomic) id <ML3AccountInformationProviding> accountInfo; // @synthesize accountInfo=_accountInfo;
 @property(readonly, nonatomic) id <MLMediaLibraryResourcesServiceProtocol> resourcesService; // @synthesize resourcesService=_resourcesService;
-@property(readonly, nonatomic, getter=isMultiUsersSupported) BOOL multiUsersSupported; // @synthesize multiUsersSupported=_multiUsersSupported;
+@property(readonly, nonatomic, getter=isMultiUserSupported) BOOL multiUserSupported; // @synthesize multiUserSupported=_multiUserSupported;
 @property(readonly, nonatomic, getter=isRunningInDaemon) BOOL runningInDaemon; // @synthesize runningInDaemon=_runningInDaemon;
 - (void).cxx_destruct;
-- (id)_initWithResourcesService:(id)arg1 accountInfo:(id)arg2 accountChangeObserver:(id)arg3 supportsMultiUsers:(BOOL)arg4 runningInDaemon:(BOOL)arg5;
+- (id)_initWithResourcesService:(id)arg1 accountInfo:(id)arg2 libraryContainerIdentifier:(id)arg3 accountChangeObserver:(id)arg4 supportsMultiUsers:(BOOL)arg5 runningInDaemon:(BOOL)arg6;
 
 @end
 

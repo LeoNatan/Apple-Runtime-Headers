@@ -41,6 +41,7 @@
 @property(nonatomic, getter=isSelected) _Bool selected;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 appearanceDelegate:(id)arg2;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -10,16 +10,26 @@
 
 @interface IDSCertifiedDeliveryContext : NSObject
 {
-    IDSCertifiedDeliveryReplayKey *_replayKey;
-    NSData *_certifiedDeliveryRTS;
-    NSData *_senderToken;
+    _Bool _generateDeliveryReceipt;
     NSString *_originalGUID;
     NSString *_service;
-    NSNumber *_failureReason;
     long long _certifiedDeliveryVersion;
+    NSData *_certifiedDeliveryRTS;
+    NSData *_senderToken;
+    NSNumber *_failureReason;
     NSString *_failureReasonMessage;
+    IDSCertifiedDeliveryReplayKey *_replayKey;
+    NSDictionary *_deliveryStatusContext;
+    NSString *_localURI;
+    NSString *_remoteURI;
+    NSData *_queryHash;
 }
 
+@property(readonly, nonatomic) NSData *queryHash; // @synthesize queryHash=_queryHash;
+@property(readonly, nonatomic) NSString *remoteURI; // @synthesize remoteURI=_remoteURI;
+@property(readonly, nonatomic) NSString *localURI; // @synthesize localURI=_localURI;
+@property(retain, nonatomic) NSDictionary *deliveryStatusContext; // @synthesize deliveryStatusContext=_deliveryStatusContext;
+@property(nonatomic) _Bool generateDeliveryReceipt; // @synthesize generateDeliveryReceipt=_generateDeliveryReceipt;
 @property(readonly, nonatomic) IDSCertifiedDeliveryReplayKey *replayKey; // @synthesize replayKey=_replayKey;
 @property(readonly, nonatomic) NSString *failureReasonMessage; // @synthesize failureReasonMessage=_failureReasonMessage;
 @property(readonly, nonatomic) NSNumber *failureReason; // @synthesize failureReason=_failureReason;
@@ -31,9 +41,11 @@
 - (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
-- (id)initWithGUID:(id)arg1 service:(id)arg2 certifiedDeliveryVersion:(long long)arg3 certifiedDeliveryRTS:(id)arg4 senderToken:(id)arg5 failureReason:(id)arg6 failureReasonMessage:(id)arg7 replayKey:(id)arg8;
-- (id)initWithGUID:(id)arg1 service:(id)arg2 certifiedDeliveryVersion:(long long)arg3 certifiedDeliveryRTS:(id)arg4 senderToken:(id)arg5 replayKey:(id)arg6;
+- (id)initWithGUID:(id)arg1 service:(id)arg2 certifiedDeliveryVersion:(long long)arg3 certifiedDeliveryRTS:(id)arg4 senderToken:(id)arg5 failureReason:(id)arg6 failureReasonMessage:(id)arg7 replayKey:(id)arg8 generateDeliveryReceipt:(_Bool)arg9 deliveryStatusContext:(id)arg10 localURI:(id)arg11 remoteURI:(id)arg12 queryHash:(id)arg13;
+- (id)initWithCertifiedDeliveryContext:(id)arg1 queryHash:(id)arg2;
+- (id)initWithGUID:(id)arg1 service:(id)arg2 certifiedDeliveryVersion:(long long)arg3 certifiedDeliveryRTS:(id)arg4 senderToken:(id)arg5 localURI:(id)arg6 remoteURI:(id)arg7 replayKey:(id)arg8;
 - (id)initWithGUID:(id)arg1 service:(id)arg2 certifiedDeliveryVersion:(long long)arg3 certifiedDeliveryRTS:(id)arg4 senderToken:(id)arg5 failureReason:(id)arg6 failureReasonMessage:(id)arg7;
+- (id)initWithGUID:(id)arg1 service:(id)arg2 certifiedDeliveryVersion:(long long)arg3 certifiedDeliveryRTS:(id)arg4 senderToken:(id)arg5 localURI:(id)arg6 remoteURI:(id)arg7;
 - (id)initWithGUID:(id)arg1 service:(id)arg2 certifiedDeliveryVersion:(long long)arg3 certifiedDeliveryRTS:(id)arg4 senderToken:(id)arg5;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 

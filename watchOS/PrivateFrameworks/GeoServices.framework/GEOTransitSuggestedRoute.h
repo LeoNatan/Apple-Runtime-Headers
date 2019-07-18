@@ -6,11 +6,12 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
+#import <GeoServices/GEOCompanionCompatibility-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPBTransitRoutingIncidentMessage, GEOTransitEngineDebugData, GEOTransitRouteDisplayStrings, NSData, NSMutableArray, PBDataReader, PBUnknownFields;
+@class GEOPBTransitRoutingIncidentMessage, GEOTransitEngineDebugData, GEOTransitRouteDisplayStrings, NSData, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
-@interface GEOTransitSuggestedRoute : PBCodable <NSCopying>
+@interface GEOTransitSuggestedRoute : PBCodable <GEOCompanionCompatibility, NSCopying>
 {
     PBDataReader *_reader;
     CDStruct_30d0674c _readerMark;
@@ -75,7 +76,7 @@
 - (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
@@ -83,7 +84,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, copy) NSString *description;
 @property(nonatomic) _Bool hasSupportsRouteUpdates;
 @property(nonatomic) _Bool supportsRouteUpdates;
 @property(retain, nonatomic) GEOTransitEngineDebugData *engineDebugData;
@@ -147,7 +148,12 @@
 @property(nonatomic) _Bool hasAbsStartTime;
 @property(nonatomic) unsigned int absStartTime;
 - (void)dealloc;
+- (id)instanceCompatibleWithProtocolVersion:(unsigned int)arg1;
 @property(readonly, nonatomic, getter=isWalkingOnlyRoute) _Bool walkingOnlyRoute;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

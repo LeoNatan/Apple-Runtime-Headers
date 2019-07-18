@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (BOOL)_anyOutputDevicePassesTest:(CDUnknownBlockType)arg1;
 - (BOOL)_anyOutputDevicePassesMRFunction:(CDUnknownFunctionPointerType)arg1;
+- (BOOL)isLowLatencyRoute;
 - (BOOL)isSplitterCapable;
 - (BOOL)supportsGrouping;
 - (BOOL)isStereoPair;

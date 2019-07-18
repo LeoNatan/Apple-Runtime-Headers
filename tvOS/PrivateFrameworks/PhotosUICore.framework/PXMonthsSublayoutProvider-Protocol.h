@@ -6,9 +6,9 @@
 
 #import <PhotosUICore/PXGSublayoutProvider-Protocol.h>
 
-@class NSIndexSet, PXGLayout;
+@class NSMutableIndexSet, PXGLayout;
 
 @protocol PXMonthsSublayoutProvider <PXGSublayoutProvider>
-- (NSIndexSet *)layout:(PXGLayout *)arg1 indexesOfChapterHeaderSublayoutsInRange:(struct _NSRange)arg2;
+- (void)layout:(PXGLayout *)arg1 collectIndexesOfChapterHeaderSublayouts:(NSMutableIndexSet *)arg2 heroSublayouts:(NSMutableIndexSet *)arg3 inRange:(struct _NSRange)arg4;
 @end
 

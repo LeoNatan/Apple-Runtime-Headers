@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)splitViewItem:(id)arg1 isChangingCollapsed:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)splitViewItem:(id)arg1 willChangeCollapsed:(BOOL)arg2 animated:(BOOL)arg3;
 - (BOOL)_isShowingOverlaySidebar;
+- (BOOL)_uncachedSidebarAppearsAsOverlay;
 @property(readonly, nonatomic) BOOL sidebarAppearsAsOverlay;
 - (void)_cleanUpAfterHidingSidebar;
 - (void)_prepareForFadeOutAnimationWithSnapshot:(const RetainPtr_fae59704 *)arg1;

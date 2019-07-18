@@ -9,7 +9,7 @@
 #import <SafariServices/WKNavigationDelegate-Protocol.h>
 #import <SafariServices/_SFReaderControllerDelegate-Protocol.h>
 
-@class NSString, NSURL, WKProcessPool, WKWebView, _SFReaderController;
+@class NSString, NSTimer, NSURL, WKProcessPool, WKWebView, _SFReaderController;
 
 @interface _SFReaderExtractor : NSObject <WKNavigationDelegate, _SFReaderControllerDelegate>
 {
@@ -18,17 +18,23 @@
     WKProcessPool *_processPool;
     NSURL *_currentURL;
     _SFReaderController *_readerController;
+    NSTimer *_loadingTimeoutTimer;
+    NSTimer *_readerExtractionTimer;
     CDUnknownBlockType _completionHandler;
 }
 
 - (void).cxx_destruct;
 - (void)readerController:(id)arg1 didCollectArticleContent:(id)arg2;
+- (void)webViewWebContentProcessDidTerminate:(id)arg1;
 - (void)webView:(id)arg1 decidePolicyForNavigationResponse:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)getExtractedDataForURL:(id)arg1 withData:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)getExtractedDataForURL:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_scheduleReaderDataExtractionTimeout;
+- (void)_scheduleLoadingTimeout;
+- (void)_invalidateTimers;
 - (void)_finishWithContent:(id)arg1 error:(id)arg2;
 - (void)_setUpReaderController;
 - (id)_configuration;

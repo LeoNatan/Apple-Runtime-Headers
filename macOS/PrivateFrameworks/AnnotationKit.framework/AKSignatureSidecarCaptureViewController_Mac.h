@@ -38,6 +38,7 @@
 - (void)_devicePicked:(id)arg1;
 - (void)requestComplete:(id)arg1 cancelled:(BOOL)arg2;
 - (void)request:(id)arg1 updatedSignature:(id)arg2;
+- (void)stopCapture;
 - (void)start;
 - (void)viewWillDisappear;
 - (void)awakeFromNib;

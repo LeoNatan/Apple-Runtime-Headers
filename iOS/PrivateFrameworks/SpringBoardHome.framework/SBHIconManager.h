@@ -22,7 +22,7 @@
 #import <SpringBoardHome/UIPopoverPresentationControllerDelegate-Protocol.h>
 
 @class BSEventQueue, NSHashTable, NSIndexPath, NSMutableArray, NSMutableSet, NSSet, NSString, NSTimer, SBFloatingDockViewController, SBFolder, SBFolderController, SBFolderIconImageCache, SBHHomeScreenSettings, SBHIconImageCache, SBHIconModel, SBHRootFolderSettings, SBHomeScreenDefaults, SBHomeScreenIconTransitionAnimator, SBIconDragManager, SBIconLabelImageCache, SBIconPageIndicatorImageSetCache, SBIconPreviousLocationTracker, SBIconView, SBLeafIcon, SBReusableViewMap, SBRootFolder, SBRootFolderController, SBSearchGesture, SBWorkspaceInteractionContext, UIImpactFeedbackGenerator, UIViewController, _UILegibilitySettings;
-@protocol SBHIconManagerDelegate, SBHIconRootViewProviding, SBHLegibility, SBIconListLayoutProvider;
+@protocol SBHIconManagerDelegate, SBHIconRootViewProviding, SBHSidebarProvider, SBIconListLayoutProvider;
 
 @interface SBHIconManager : NSObject <UIPopoverPresentationControllerDelegate, SBReusableViewMapDelegate, SBRootFolderPageStateObserver, SBNestingViewControllerDelegate, SBHIconModelDelegate, PTSettingsKeyObserver, SBRootFolderDelegate, SBIconViewObserver, SBIconViewDelegate, SBIconViewQuerying, SBHomeScreenIconTransitionAnimatorDelegate, SBIconViewProviding, SBRootFolderControllerDelegate, SBIconLocationPresenting>
 {
@@ -43,6 +43,7 @@
     SBFolderIconImageCache *_folderIconImageCache;
     SBHIconImageCache *_iconImageCache;
     unsigned long long _relayoutCount;
+    Class _subclassIconViewClass;
     _Bool _dockPinnedForRotation;
     _Bool _showsDoneButtonWhileEditing;
     _Bool _editing;
@@ -59,13 +60,13 @@
     SBFloatingDockViewController *_floatingDockViewController;
     _UILegibilitySettings *_legibilitySettings;
     id <SBIconListLayoutProvider> _listLayoutProvider;
+    unsigned long long _listLayoutProviderLayoutOptions;
     SBLeafIcon *_iconToReveal;
     SBHomeScreenIconTransitionAnimator *_currentTransitionAnimator;
     SBIconDragManager *_iconDragManager;
     SBIconPageIndicatorImageSetCache *_iconPageIndicatorImageSetCache;
     SBIconView *_highlightedIconView;
     NSTimer *_editingEndTimer;
-    NSTimer *_popoverDelayTimer;
     NSTimer *_iconEditingFeedbackWarmTimer;
     SBIconView *_previewInteractingIconView;
     NSIndexPath *_postResetIndexPath;
@@ -77,13 +78,12 @@
     NSString *_precachedContentSizeCategory;
     SBIconView *_popoverIconView;
     SBHomeScreenDefaults *_homeScreenDefaults;
-    UIViewController<SBHLegibility> *_sidebarViewController;
+    UIViewController<SBHSidebarProvider> *_sidebarViewController;
 }
 
-+ (_Bool)supportsPopOvers;
 + (double)defaultIconLayoutAnimationDuration;
 @property(nonatomic, getter=isResettingRootIconLists) _Bool resettingRootIconLists; // @synthesize resettingRootIconLists=_resettingRootIconLists;
-@property(retain, nonatomic) UIViewController<SBHLegibility> *sidebarViewController; // @synthesize sidebarViewController=_sidebarViewController;
+@property(retain, nonatomic) UIViewController<SBHSidebarProvider> *sidebarViewController; // @synthesize sidebarViewController=_sidebarViewController;
 @property(readonly, nonatomic) SBHomeScreenDefaults *homeScreenDefaults; // @synthesize homeScreenDefaults=_homeScreenDefaults;
 @property(retain, nonatomic) SBIconView *popoverIconView; // @synthesize popoverIconView=_popoverIconView;
 @property(copy, nonatomic) NSString *precachedContentSizeCategory; // @synthesize precachedContentSizeCategory=_precachedContentSizeCategory;
@@ -98,7 +98,6 @@
 @property(copy, nonatomic) NSIndexPath *postResetIndexPath; // @synthesize postResetIndexPath=_postResetIndexPath;
 @property(retain, nonatomic) SBIconView *previewInteractingIconView; // @synthesize previewInteractingIconView=_previewInteractingIconView;
 @property(retain, nonatomic) NSTimer *iconEditingFeedbackWarmTimer; // @synthesize iconEditingFeedbackWarmTimer=_iconEditingFeedbackWarmTimer;
-@property(retain, nonatomic) NSTimer *popoverDelayTimer; // @synthesize popoverDelayTimer=_popoverDelayTimer;
 @property(retain, nonatomic) NSTimer *editingEndTimer; // @synthesize editingEndTimer=_editingEndTimer;
 @property(retain, nonatomic) SBIconView *highlightedIconView; // @synthesize highlightedIconView=_highlightedIconView;
 @property(readonly, nonatomic) SBIconPageIndicatorImageSetCache *iconPageIndicatorImageSetCache; // @synthesize iconPageIndicatorImageSetCache=_iconPageIndicatorImageSetCache;
@@ -106,6 +105,7 @@
 @property(retain, nonatomic) SBHomeScreenIconTransitionAnimator *currentTransitionAnimator; // @synthesize currentTransitionAnimator=_currentTransitionAnimator;
 @property(retain, nonatomic) SBLeafIcon *iconToReveal; // @synthesize iconToReveal=_iconToReveal;
 @property(nonatomic, getter=isAnimatingForUnscatter) _Bool animatingForUnscatter; // @synthesize animatingForUnscatter=_animatingForUnscatter;
+@property(nonatomic) unsigned long long listLayoutProviderLayoutOptions; // @synthesize listLayoutProviderLayoutOptions=_listLayoutProviderLayoutOptions;
 @property(retain, nonatomic) id <SBIconListLayoutProvider> listLayoutProvider; // @synthesize listLayoutProvider=_listLayoutProvider;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
@@ -235,6 +235,7 @@
 - (id)applicationBundleURLForShortcutsWithIconView:(id)arg1;
 - (void)iconViewShortcutsPresentationDidCancel:(id)arg1;
 - (void)iconViewShortcutsPresentationDidFinish:(id)arg1;
+- (void)_setupApplicationShortcutItemsForPresentation:(id)arg1;
 - (_Bool)iconViewShouldBeginShortcutsPresentation:(id)arg1;
 - (id)accessibilityTintColorForIconView:(id)arg1;
 - (id)backgroundViewForComponentsOfIconView:(id)arg1;
@@ -277,16 +278,8 @@
 - (void)icon:(id)arg1 touchEnded:(_Bool)arg2;
 - (void)icon:(id)arg1 touchMoved:(id)arg2;
 - (void)iconTouchBegan:(id)arg1;
-- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)_sizeCategoryDidChange:(id)arg1;
 - (void)_reduceTransparencyStatusDidChange:(id)arg1;
-- (id)_containerViewControllerForPopOvers;
-- (void)_dismissPopOverCleanUp;
-- (void)_clearPopoverTimer;
-- (void)dismissPopOverAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic, getter=isPresentingPopOver) _Bool presentingPopOver;
-- (void)showPopOverIfPossibleForIcon:(id)arg1 inIconView:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)_canShowPopover;
 - (void)presentStatistics;
 @property(readonly, copy, nonatomic) NSString *statisticsSummary;
 - (void)getStatistics:(struct SBHIconManagerStatistics *)arg1;
@@ -394,7 +387,6 @@
 - (id)addDownloadingIconsForDataSources:(id)arg1;
 - (_Bool)isPerformingCancelledExpandTransition;
 - (void)_noteUserIsInteractingWithIcons;
-- (_Bool)_isAnyIconViewPreviewing;
 - (_Bool)isIconVisiblyRepresented:(id)arg1;
 - (void)layoutIconLists:(double)arg1 animationType:(long long)arg2 forceRelayout:(_Bool)arg3;
 - (void)_updateVisibleIconsViewsForAllowableCloseBoxes;
@@ -433,12 +425,14 @@
 - (void)resetRootIconLists;
 - (void)updateVisibleIconsToShowLeafIcons:(id)arg1 hideLeafIcons:(id)arg2 forceRelayout:(_Bool)arg3;
 - (void)_precacheImagesForRootIcons;
+- (Class)iconViewClass;
 - (id)iconLocationForPrecachingImages;
 - (_Bool)relayout;
 - (void)enumerateIconModelsUsingBlock:(CDUnknownBlockType)arg1;
 - (_Bool)hasRootViewController;
 - (_Bool)hasRootFolderController;
 - (void)noteInterfaceOrientationChanged;
+- (unsigned long long)allowedInterfaceOrientations;
 @property(readonly, nonatomic) long long interfaceOrientation;
 @property(readonly, nonatomic) SBSearchGesture *searchGesture;
 - (id)init;

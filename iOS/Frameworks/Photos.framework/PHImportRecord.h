@@ -37,7 +37,6 @@
 @property(readonly, nonatomic) NSString *rawAssetIdentifier;
 - (id)allAssetIdentifiers;
 - (void)cleanupAfterFailure;
-- (void)updateImportType;
 - (id)descriptionWithPrefix:(id)arg1;
 - (id)description;
 - (id)initWithImportAsset:(id)arg1;

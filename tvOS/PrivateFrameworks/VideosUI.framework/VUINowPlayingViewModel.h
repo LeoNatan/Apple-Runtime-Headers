@@ -17,18 +17,18 @@ __attribute__((visibility("hidden")))
     NSDictionary *_metadata;
     NSString *_canonicalID;
     NSString *_showCanonicalID;
+    unsigned long long _autoPlayedEpisodesCount;
     VUIMediaController *_mediaController;
     VUIVideoAdvisoryLogoImageDownloader *_logoImageDownloader;
     UIImage *_ratingImage;
-    unsigned long long _autoPlayedEpisodesCount;
 }
 
-@property(nonatomic) unsigned long long autoPlayedEpisodesCount; // @synthesize autoPlayedEpisodesCount=_autoPlayedEpisodesCount;
 @property(nonatomic, getter=isCurrentMediaATVShow) _Bool currentMediaATVShow; // @synthesize currentMediaATVShow=_currentMediaATVShow;
 @property(retain, nonatomic) UIImage *ratingImage; // @synthesize ratingImage=_ratingImage;
 @property(retain, nonatomic) VUIVideoAdvisoryLogoImageDownloader *logoImageDownloader; // @synthesize logoImageDownloader=_logoImageDownloader;
 @property(retain, nonatomic) VUIMediaController *mediaController; // @synthesize mediaController=_mediaController;
 @property(nonatomic, getter=isLivePlayback) _Bool livePlayback; // @synthesize livePlayback=_livePlayback;
+@property(nonatomic) unsigned long long autoPlayedEpisodesCount; // @synthesize autoPlayedEpisodesCount=_autoPlayedEpisodesCount;
 @property(nonatomic) _Bool includesProductPageButton; // @synthesize includesProductPageButton=_includesProductPageButton;
 @property(copy, nonatomic) NSString *showCanonicalID; // @synthesize showCanonicalID=_showCanonicalID;
 @property(copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
@@ -42,7 +42,6 @@ __attribute__((visibility("hidden")))
 - (void)_registerPlaybackNotifications;
 - (void)_unregisterPlayerObserver;
 - (void)_registerPlayerObserver;
-- (void)changeMediaInfo:(id)arg1 isAutoPlay:(_Bool)arg2;
 @property(readonly, nonatomic, getter=canAutoPlay) _Bool autoPlay;
 @property(readonly, nonatomic) NSString *currentMediaTitle;
 - (void)startPlaybackFromBeginning;

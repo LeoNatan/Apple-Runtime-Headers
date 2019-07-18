@@ -6,15 +6,18 @@
 
 #import <UIKit/UIControl.h>
 
+#import <NanoTimeKit/CLKMonochromeComplicationView-Protocol.h>
 #import <NanoTimeKit/NTKContainerViewLayoutDelegate-Protocol.h>
 #import <NanoTimeKit/NTKControl-Protocol.h>
 
 @class CLKDevice, NSString, NTKContainerView, NTKFaceColorScheme, UIColor, UIView;
+@protocol CLKMonochromeFilterProvider;
 
-@interface NTKModuleView : UIControl <NTKContainerViewLayoutDelegate, NTKControl>
+@interface NTKModuleView : UIControl <NTKContainerViewLayoutDelegate, NTKControl, CLKMonochromeComplicationView>
 {
     NTKContainerView *_contentView;
     UIView *_highlightView;
+    id <CLKMonochromeFilterProvider> filterProvider;
     CLKDevice *_device;
     UIColor *_foregroundColor;
     UIColor *_secondaryForegroundColor;
@@ -39,11 +42,15 @@
 @property(retain, nonatomic) UIColor *secondaryForegroundColor; // @synthesize secondaryForegroundColor=_secondaryForegroundColor;
 @property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)layoutContainerView:(id)arg1;
 - (_Bool)shouldCancelTouchesInScrollview;
 - (void)setHighlighted:(_Bool)arg1;
+- (void)_enumerateAllForegroundColoringViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateSecondaryForegroundColoringViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateForegroundColoringViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_layoutContentView;
@@ -51,6 +58,7 @@
 - (id)viewsAndSpacingArrayForSpace:(float)arg1 view:(id)arg2 space:(float)arg3 view:(id)arg4;
 - (id)viewsAndSpacingArrayForSpace:(float)arg1 view:(id)arg2;
 - (void)applyColorScheme:(id)arg1;
+- (void)_applyMonochromeTransitionFraction:(float)arg1 fromFaceColor:(unsigned int)arg2 toFaceColor:(unsigned int)arg3;
 - (void)applyTransitionFraction:(float)arg1 fromFaceColor:(unsigned int)arg2 toFaceColor:(unsigned int)arg3 units:(unsigned int)arg4 brightenedUnits:(unsigned int)arg5;
 - (void)applyFaceColor:(unsigned int)arg1 units:(unsigned int)arg2;
 - (void)_updateColors;

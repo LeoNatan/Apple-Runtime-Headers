@@ -75,6 +75,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isInCameraMode;
 - (void)selectSource:(id)arg1;
 - (void)noteContentDidChange;
+- (void)switchToDefaults;
 - (void)switchToCamera;
 - (void)switchToCurrentPicture;
 - (void)setupSourceSelector;

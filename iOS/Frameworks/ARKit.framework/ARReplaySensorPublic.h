@@ -39,6 +39,7 @@
     NSSet *_videoStreamsToReplay;
     _Bool _isReplayingManually;
     _Bool _synchronousMode;
+    _Bool _recordingTimeToReplayTimeOffsetReset;
     float _advanceFramesPerSecondMultiplier;
     int _imageIndex;
     id <ARSensorDelegate> _delegate;
@@ -56,9 +57,12 @@
     ARParentImageSensorSettings *_parentImageSensorSettings;
     NSString *_mainVideoStreamIdentifier;
     long long _targetFrameIndex;
+    double _recordingTimeToReplayTimeOffset;
     struct CGSize _imageResolution;
 }
 
+@property(nonatomic) _Bool recordingTimeToReplayTimeOffsetReset; // @synthesize recordingTimeToReplayTimeOffsetReset=_recordingTimeToReplayTimeOffsetReset;
+@property(nonatomic) double recordingTimeToReplayTimeOffset; // @synthesize recordingTimeToReplayTimeOffset=_recordingTimeToReplayTimeOffset;
 @property long long targetFrameIndex; // @synthesize targetFrameIndex=_targetFrameIndex;
 @property(nonatomic) int imageIndex; // @synthesize imageIndex=_imageIndex;
 @property(readonly, nonatomic) _Bool interrupted; // @synthesize interrupted=_interrupted;

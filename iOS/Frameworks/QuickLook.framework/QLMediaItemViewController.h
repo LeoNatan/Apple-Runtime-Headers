@@ -12,7 +12,7 @@
 @class NSLayoutConstraint, NSMutableDictionary, NSNumber, NSString, NSTimer, QLMediaScrubberGesture, UILabel, UIScrollView, UITapGestureRecognizer, UIView;
 
 __attribute__((visibility("hidden")))
-@interface QLMediaItemViewController : QLMediaItemBaseViewController <UIGestureRecognizerDelegate, QLMediaScrubberGestureDelegate>
+@interface QLMediaItemViewController : QLMediaItemBaseViewController <QLMediaScrubberGestureDelegate, UIGestureRecognizerDelegate>
 {
     NSMutableDictionary *_playingInfo;
     UIView *_timeLabelBackground;

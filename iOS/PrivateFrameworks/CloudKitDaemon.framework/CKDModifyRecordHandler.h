@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     _Bool _isDelete;
     _Bool _saveCompletionBlockCalled;
     _Bool _needsRefetch;
+    _Bool _didAttemptDugongKeyRoll;
     _Bool _didRollRecordPCSMasterKey;
     int _saveAttempts;
     CKDModifyRecordsOperation *_operation;
@@ -40,6 +41,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool didRollRecordPCSMasterKey; // @synthesize didRollRecordPCSMasterKey=_didRollRecordPCSMasterKey;
 @property(retain, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(copy, nonatomic) NSDictionary *assetUUIDToExpectedProperties; // @synthesize assetUUIDToExpectedProperties=_assetUUIDToExpectedProperties;
+@property(nonatomic) _Bool didAttemptDugongKeyRoll; // @synthesize didAttemptDugongKeyRoll=_didAttemptDugongKeyRoll;
 @property(retain, nonatomic) CKDZonePCSData *sharedZonePCSData; // @synthesize sharedZonePCSData=_sharedZonePCSData;
 @property(nonatomic) _Bool needsRefetch; // @synthesize needsRefetch=_needsRefetch;
 @property(nonatomic) _Bool saveCompletionBlockCalled; // @synthesize saveCompletionBlockCalled=_saveCompletionBlockCalled;

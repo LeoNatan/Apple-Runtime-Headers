@@ -53,6 +53,7 @@
 - (void)_removeDevice:(unsigned int)arg1;
 - (void)_addDevice:(unsigned int)arg1;
 - (void)_updateFNKeyMode;
+- (unsigned long long)systemActionTypeForHIDUsagePage:(unsigned long long)arg1 usage:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSArray *keyCodesGeneratedByFunctionKeyModification;
 - (unsigned long long)fKeyModifiedMacKeyCodeForUSBKeyCode:(unsigned long long)arg1;
 - (unsigned long long)fKeyModifiedMacKeyCodeForMacKeyCode:(unsigned long long)arg1;

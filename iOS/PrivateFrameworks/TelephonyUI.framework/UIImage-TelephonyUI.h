@@ -19,7 +19,17 @@
 + (id)telephonyUI_iPodAudioRouteGlyphImage;
 + (id)telephonyUI_iPadAudioRouteGlyphImage;
 + (id)telephonyUI_iPhoneAudioRouteGlyphImage;
++ (id)voicemailGlyphForSymbolType:(long long)arg1;
++ (id)voicemailReportFeedbackGlyphImage;
++ (id)voicemailPauseGlyphImage;
++ (id)voicemailPlayGlyphImage;
++ (id)voicemailUndeleteGlyphImage;
++ (id)voicemailDeleteGlyphImage;
++ (id)voicemailDialRequestGlyphImage;
++ (id)voicemailAudioRouteGlyphImage;
 + (id)recentsGlyphForSymbolType:(long long)arg1;
++ (id)recentsRTTChevronImage;
++ (id)recentsVerifiedCheckmarkImage;
 + (id)recentsTTYGlyphImage;
 + (id)recentsTTYRelayGlyphImage;
 + (id)recentsTTYDirectGlyphImage;

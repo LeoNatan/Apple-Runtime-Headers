@@ -7,10 +7,6 @@
 @class CRVehicle, NSArray, NSData, NSDictionary, NSString, NSURL;
 
 @protocol CRCarKitService
-- (void)setSessionInstrumentClusterURLs:(NSArray *)arg1 reply:(void (^)(NSArray *, NSError *))arg2;
-- (void)fetchCurrentAccessoryDetailsWithReply:(void (^)(NSDictionary *, NSError *))arg1;
-- (void)unregisterInstrumentClusterURL:(NSURL *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
-- (void)registerInstrumentClusterURL:(NSURL *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
 - (void)fetchSessionInstrumentClusterURLsWithReply:(void (^)(NSArray *, NSError *))arg1;
 - (void)fetchInstrumentClusterURLsWithReply:(void (^)(NSArray *, NSError *))arg1;
 - (void)vehicleIdentifierForCertificateSerial:(NSData *)arg1 reply:(void (^)(NSString *, NSError *))arg2;

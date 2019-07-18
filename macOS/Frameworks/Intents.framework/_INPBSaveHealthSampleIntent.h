@@ -17,6 +17,7 @@
     struct {
         unsigned int objectType:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _objectType;
     _INPBIntentMetadata *_intentMetadata;
     _INPBDateTimeRange *_recordDate;
@@ -28,6 +29,7 @@
 + (BOOL)supportsSecureCoding;
 + (Class)valuesType;
 + (Class)sampleMetadataType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(retain, nonatomic) _INPBWellnessUnitType *unit; // @synthesize unit=_unit;
 @property(copy, nonatomic) NSArray *sampleMetadatas; // @synthesize sampleMetadatas=_sampleMetadatas;

@@ -11,6 +11,7 @@
 @class NSString;
 @protocol OS_os_log;
 
+__attribute__((visibility("hidden")))
 @interface WFSystemLoggingBackend : NSObject <WFLoggingBackend>
 {
     NSObject<OS_os_log> *_log;

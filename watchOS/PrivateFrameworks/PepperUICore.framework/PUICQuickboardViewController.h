@@ -26,6 +26,7 @@
     unsigned int _confirmationType;
     UIViewController *_dismissalViewController;
     unsigned int _quickboardType;
+    int _minTextLengthForEnablingAccept;
     CSLSButtonTapAssertion *_buttonTapAssertion;
     UIView *_backgroundView;
     UIView *_headerView;
@@ -48,6 +49,7 @@
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) CSLSButtonTapAssertion *buttonTapAssertion; // @synthesize buttonTapAssertion=_buttonTapAssertion;
+@property(nonatomic) int minTextLengthForEnablingAccept; // @synthesize minTextLengthForEnablingAccept=_minTextLengthForEnablingAccept;
 @property(nonatomic) unsigned int quickboardType; // @synthesize quickboardType=_quickboardType;
 @property(nonatomic) __weak UIViewController *dismissalViewController; // @synthesize dismissalViewController=_dismissalViewController;
 @property(nonatomic) _Bool animatesSelectionToDestinationView; // @synthesize animatesSelectionToDestinationView=_animatesSelectionToDestinationView;

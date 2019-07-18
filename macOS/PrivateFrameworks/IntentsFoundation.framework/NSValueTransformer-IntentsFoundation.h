@@ -7,6 +7,6 @@
 #import <Foundation/NSValueTransformer.h>
 
 @interface NSValueTransformer (IntentsFoundation)
-+ (id)_inf_transformerUsingForwardTransformation:(CDUnknownBlockType)arg1 reverseTransformation:(CDUnknownBlockType)arg2;
++ (id)if_transformerUsingForwardTransformation:(CDUnknownBlockType)arg1 reverseTransformation:(CDUnknownBlockType)arg2;
 @end
 

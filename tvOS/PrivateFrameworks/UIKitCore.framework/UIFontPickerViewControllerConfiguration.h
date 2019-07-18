@@ -9,18 +9,25 @@
 #import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 
-@class UIColor;
+@class NSPredicate, UIColor;
 
 @interface UIFontPickerViewControllerConfiguration : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _includeFaces;
+    _Bool _displayUsingSystemFont;
     _Bool __hideSearchBar;
+    unsigned int _filteredTraits;
+    NSPredicate *_filteredLanguagesPredicate;
     UIColor *__tintColor;
 }
 
++ (id)filterPredicateForFilteredLanguages:(id)arg1;
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic, setter=_setTintColor:) UIColor *_tintColor; // @synthesize _tintColor=__tintColor;
 @property(nonatomic, setter=_setHideSearchBar:) _Bool _hideSearchBar; // @synthesize _hideSearchBar=__hideSearchBar;
+@property(copy, nonatomic) NSPredicate *filteredLanguagesPredicate; // @synthesize filteredLanguagesPredicate=_filteredLanguagesPredicate;
+@property(nonatomic) unsigned int filteredTraits; // @synthesize filteredTraits=_filteredTraits;
+@property(nonatomic) _Bool displayUsingSystemFont; // @synthesize displayUsingSystemFont=_displayUsingSystemFont;
 @property(nonatomic) _Bool includeFaces; // @synthesize includeFaces=_includeFaces;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;

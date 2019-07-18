@@ -9,7 +9,7 @@
 #import <HealthMenstrualCycles/NSCopying-Protocol.h>
 #import <HealthMenstrualCycles/NSSecureCoding-Protocol.h>
 
-@class HKMCStatistics, HKQuantity, NSArray;
+@class HKMCStatistics, HKQuantity, NSArray, NSNumber;
 
 @interface HKMCAnalysis : NSObject <NSSecureCoding, NSCopying>
 {
@@ -19,11 +19,15 @@
     NSArray *_cycles;
     unsigned int _recentSymptoms;
     HKQuantity *_recentBasalBodyTemperature;
-    int _lastLoggedDayIndex;
+    NSNumber *_lastLoggedDayIndex;
+    NSNumber *_lastMenstrualFlowDayIndex;
+    NSNumber *_anchor;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) int lastLoggedDayIndex; // @synthesize lastLoggedDayIndex=_lastLoggedDayIndex;
+@property(copy, nonatomic) NSNumber *anchor; // @synthesize anchor=_anchor;
+@property(readonly, copy, nonatomic) NSNumber *lastMenstrualFlowDayIndex; // @synthesize lastMenstrualFlowDayIndex=_lastMenstrualFlowDayIndex;
+@property(readonly, copy, nonatomic) NSNumber *lastLoggedDayIndex; // @synthesize lastLoggedDayIndex=_lastLoggedDayIndex;
 @property(readonly, nonatomic) HKQuantity *recentBasalBodyTemperature; // @synthesize recentBasalBodyTemperature=_recentBasalBodyTemperature;
 @property(readonly, nonatomic) unsigned int recentSymptoms; // @synthesize recentSymptoms=_recentSymptoms;
 @property(readonly, nonatomic) NSArray *cycles; // @synthesize cycles=_cycles;
@@ -38,7 +42,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithStatistics:(id)arg1 menstruationProjections:(id)arg2 fertileWindowProjections:(id)arg3 cycles:(id)arg4 recentSymptoms:(unsigned int)arg5 recentBasalBodyTemperature:(id)arg6 lastLoggedDayIndex:(int)arg7;
+- (id)initWithStatistics:(id)arg1 menstruationProjections:(id)arg2 fertileWindowProjections:(id)arg3 cycles:(id)arg4 recentSymptoms:(unsigned int)arg5 recentBasalBodyTemperature:(id)arg6 lastLoggedDayIndex:(id)arg7 lastMenstrualFlowDayIndex:(id)arg8;
 
 @end
 

@@ -24,3 +24,45 @@ struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
 };
 
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    _Bool *list;
+    unsigned int count;
+    unsigned int size;
+} CDStruct_aa2cdd4f;
+
+typedef struct {
+    long long *list;
+    unsigned int count;
+    unsigned int size;
+} CDStruct_815f15fd;
+
+typedef struct {
+    unsigned int accountId:1;
+    unsigned int conversationId:1;
+    unsigned int mailboxId:1;
+    unsigned int messageId:1;
+    unsigned int mailboxType:1;
+    unsigned int value:1;
+} CDStruct_1b0f2210;
+
+// Ambiguous groups
+typedef struct {
+    unsigned int accountId:1;
+    unsigned int conversationId:1;
+    unsigned int fromMailboxId:1;
+    unsigned int messageId:1;
+    unsigned int toMailboxId:1;
+    unsigned int fromMailboxType:1;
+    unsigned int toMailboxType:1;
+} CDStruct_b83e950b;
+
+typedef struct {
+    unsigned int accountId:1;
+    unsigned int conversationId:1;
+    unsigned int mailboxId:1;
+    unsigned int messageId:1;
+    unsigned int mailboxType:1;
+} CDStruct_11e5c17e;
+

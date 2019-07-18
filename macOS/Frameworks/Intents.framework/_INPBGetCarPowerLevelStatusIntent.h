@@ -15,11 +15,13 @@
 @interface _INPBGetCarPowerLevelStatusIntent : PBCodable <_INPBGetCarPowerLevelStatusIntent, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBDataString *_carName;
     _INPBIntentMetadata *_intentMetadata;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 @property(retain, nonatomic) _INPBDataString *carName; // @synthesize carName=_carName;
 - (void).cxx_destruct;

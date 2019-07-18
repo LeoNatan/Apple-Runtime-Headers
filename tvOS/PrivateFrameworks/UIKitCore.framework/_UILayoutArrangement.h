@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_hiddenItems;
     NSMutableSet *_newlyHiddenItems;
     NSMutableSet *_newlyUnhiddenItems;
+    NSMutableSet *_invalidBaselineConstraints;
     NSMutableArray *_canvasConnectionConstraints;
     _Bool _awaitingAnimationLayoutPass;
     _Bool _layoutFillsCanvas;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool layoutFillsCanvas; // @synthesize layoutFillsCanvas=_layoutFillsCanvas;
 @property(nonatomic) long long axis; // @synthesize axis=_axis;
 @property(nonatomic) __weak UIView *canvas; // @synthesize canvas=_canvas;
+@property(readonly, nonatomic) NSSet *invalidBaselineConstraints; // @synthesize invalidBaselineConstraints=_invalidBaselineConstraints;
 @property(readonly, retain, nonatomic) _UILayoutSpacer *_spanningLayoutGuide; // @synthesize _spanningLayoutGuide;
 @property(retain, nonatomic, setter=_setMutableItems:) NSMutableArray *_mutableItems; // @synthesize _mutableItems;
 @property(readonly, nonatomic) _Bool _awaitingAnimationLayoutPass; // @synthesize _awaitingAnimationLayoutPass;
@@ -65,6 +67,11 @@ __attribute__((visibility("hidden")))
 - (long long)_centerAttributeForCanvasConnections;
 - (long long)_minAttributeForCanvasConnections;
 - (long long)_dimensionAttributeForCurrentAxis;
+- (id)_baselineDependentConstraints;
+- (void)_hasBaselineChangedNotification:(id)arg1;
+- (void)_invalidateBaselineConstraint:(id)arg1;
+- (void)_hasBaselineChangedNotificationRequirementDidChange;
+- (_Bool)_requiresNotificationForHasBaselinePropertyChanges;
 - (_Bool)_itemWantsLayoutAsIfVisible:(id)arg1;
 - (void)_visibilityParameterChangedForItem:(id)arg1;
 - (void)removeItem:(id)arg1;

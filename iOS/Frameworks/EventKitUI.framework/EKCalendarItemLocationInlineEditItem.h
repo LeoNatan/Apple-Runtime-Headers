@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)editItemViewControllerSave:(id)arg1;
 - (_Bool)isSubitemAtIndexSaveable:(unsigned long long)arg1;
 - (_Bool)forceRefreshStartAndEndDatesOnSave;
+- (_Bool)forceTableReloadOnSave;
 - (_Bool)saveAndDismissWithForce:(_Bool)arg1;
 - (void)_clearLocation:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)_clearButtonTapped:(id)arg1;

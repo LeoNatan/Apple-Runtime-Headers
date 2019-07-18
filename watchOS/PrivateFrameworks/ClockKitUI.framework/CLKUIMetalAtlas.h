@@ -6,17 +6,22 @@
 
 #import <ClockKitUI/CLKUIAtlas.h>
 
-@protocol MTLTexture;
+@class NSObject;
+@protocol MTLTexture, OS_dispatch_queue;
 
 @interface CLKUIMetalAtlas : CLKUIAtlas
 {
     id <MTLTexture> _texture;
+    NSObject<OS_dispatch_queue> *_loaderQueue;
+    id <MTLTexture> _loaderQueue_prewarmedTexture;
+    unsigned int _mainQueue_prewarmState;
 }
 
-+ (id)createMTLTextureWithBacking:(id)arg1 encoder:(id)arg2;
++ (id)_createMTLTextureWithBacking:(id)arg1 device:(id)arg2 encoder:(id)arg3;
 - (void).cxx_destruct;
 - (void)purge;
 - (void)bind:(id)arg1 slot:(unsigned int)arg2;
+- (void)prewarm;
 - (void)dealloc;
 - (id)initWithUuid:(id)arg1;
 

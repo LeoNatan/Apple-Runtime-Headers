@@ -13,7 +13,7 @@
 #import <AvatarUI/AVTDisplayingCarouselController-Protocol.h>
 #import <AvatarUI/AVTRecordingCarouselController-Protocol.h>
 
-@class AVTAvatarContainerViewController, AVTAvatarRecordDataSource, AVTMultiAvatarController, AVTRecordView, AVTSingleAvatarController, AVTUIEnvironment, AVTView, AVTViewCarouselLayout, AVTViewSession, AVTViewSessionProvider, NSString, UIView;
+@class AVTAvatarRecordDataSource, AVTMultiAvatarController, AVTRecordView, AVTSingleAvatarController, AVTUIEnvironment, AVTView, AVTViewCarouselLayout, AVTViewSession, AVTViewSessionProvider, NSString, UIView;
 @protocol AVTAvatarDisplayingController, AVTAvatarRecord, AVTDisplayingCarouselControllerDelegate, AVTPresenterDelegate, AVTRecordingCarouselControllerDelegate, AVTUILogger;
 
 @interface AVTCarouselController : NSObject <AVTAvatarActionsViewControllerDelegate, AVTAvatarEditorViewControllerDelegate, AVTAvatarDisplayingControllerDelegate, AVTAvatarRecordDataSourceObserver, AVTRecordingCarouselController, AVTDisplayingCarouselController>
@@ -29,7 +29,6 @@
     AVTUIEnvironment *_environment;
     id <AVTAvatarRecord> _currentAvatarRecord;
     UIView *_avtViewContainer;
-    AVTAvatarContainerViewController *_containerViewController;
     AVTViewSessionProvider *_avtViewSessionProvider;
     AVTViewSession *_avtViewSession;
     AVTMultiAvatarController *_multiAvatarController;
@@ -50,7 +49,6 @@
 @property(retain, nonatomic) AVTMultiAvatarController *multiAvatarController; // @synthesize multiAvatarController=_multiAvatarController;
 @property(retain, nonatomic) AVTViewSession *avtViewSession; // @synthesize avtViewSession=_avtViewSession;
 @property(readonly, nonatomic) AVTViewSessionProvider *avtViewSessionProvider; // @synthesize avtViewSessionProvider=_avtViewSessionProvider;
-@property(retain, nonatomic) AVTAvatarContainerViewController *containerViewController; // @synthesize containerViewController=_containerViewController;
 @property(retain, nonatomic) UIView *avtViewContainer; // @synthesize avtViewContainer=_avtViewContainer;
 @property(retain, nonatomic) id <AVTAvatarRecord> currentAvatarRecord; // @synthesize currentAvatarRecord=_currentAvatarRecord;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;

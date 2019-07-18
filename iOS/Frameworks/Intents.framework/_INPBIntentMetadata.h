@@ -22,14 +22,17 @@
         unsigned int backgroundLaunch:1;
         unsigned int confirmed:1;
         unsigned int idiom:1;
+        unsigned int isOwnedByCurrentUser:1;
         unsigned int isPrimaryDisplayDisabled:1;
         unsigned int triggerMethod:1;
         unsigned int userConfirmationRequired:1;
     } _has;
     _Bool _backgroundLaunch;
     _Bool _confirmed;
+    _Bool _isOwnedByCurrentUser;
     _Bool _isPrimaryDisplayDisabled;
     _Bool _userConfirmationRequired;
+    _Bool __encodeLegacyGloryData;
     int _executionContext;
     int _intentCategory;
     int _idiom;
@@ -52,6 +55,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)parameterImagesType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBString *userUtterance; // @synthesize userUtterance=_userUtterance;
 @property(nonatomic) _Bool userConfirmationRequired; // @synthesize userConfirmationRequired=_userConfirmationRequired;
 @property(nonatomic) int triggerMethod; // @synthesize triggerMethod=_triggerMethod;
@@ -61,6 +65,7 @@
 @property(copy, nonatomic) NSString *originatingDeviceRapportEffectiveId; // @synthesize originatingDeviceRapportEffectiveId=_originatingDeviceRapportEffectiveId;
 @property(copy, nonatomic) NSString *originatingDeviceIdsIdentifier; // @synthesize originatingDeviceIdsIdentifier=_originatingDeviceIdsIdentifier;
 @property(nonatomic) _Bool isPrimaryDisplayDisabled; // @synthesize isPrimaryDisplayDisabled=_isPrimaryDisplayDisabled;
+@property(nonatomic) _Bool isOwnedByCurrentUser; // @synthesize isOwnedByCurrentUser=_isOwnedByCurrentUser;
 @property(copy, nonatomic) NSString *intentId; // @synthesize intentId=_intentId;
 @property(copy, nonatomic) NSString *intentDescription; // @synthesize intentDescription=_intentDescription;
 @property(nonatomic) int idiom; // @synthesize idiom=_idiom;
@@ -98,6 +103,7 @@
 @property(readonly, nonatomic) _Bool hasOriginatingDeviceRapportEffectiveId;
 @property(readonly, nonatomic) _Bool hasOriginatingDeviceIdsIdentifier;
 @property(nonatomic) _Bool hasIsPrimaryDisplayDisabled;
+@property(nonatomic) _Bool hasIsOwnedByCurrentUser;
 @property(readonly, nonatomic) _Bool hasIntentId;
 @property(readonly, nonatomic) _Bool hasIntentDescription;
 - (int)StringAsIdiom:(id)arg1;
@@ -125,8 +131,8 @@
 @property(nonatomic) _Bool hasExecutionContext;
 @property(readonly, nonatomic) _Bool hasDefaultImageValue;
 @property(readonly, nonatomic) _Bool hasCategoryVerb;
-- (id)_intents_encodeWithJSONEncoder:(id)arg1;
-- (void)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
+- (void)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

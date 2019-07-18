@@ -84,6 +84,7 @@
 - (void)removeLiveButtonHighlighting;
 - (void)showDeleteInterface;
 - (void)deleteClip;
+- (id)_displayableURLForCameraClipURL:(id)arg1;
 - (id)outputURLForClip:(id)arg1;
 - (id)uploadURLCameraClip:(id)arg1;
 - (void)exportLocalClipAtURL:(id)arg1;

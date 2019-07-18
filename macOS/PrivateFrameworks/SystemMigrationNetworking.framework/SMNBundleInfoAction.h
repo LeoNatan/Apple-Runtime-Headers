@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (BOOL)success;
 - (BOOL)returnsData;
+- (BOOL)setResultFromDict:(id)arg1;
 - (id)resultData;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

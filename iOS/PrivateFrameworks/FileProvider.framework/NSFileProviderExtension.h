@@ -53,6 +53,7 @@
 - (id)providerIdentifier;
 - (id)init;
 - (void)handleEventsForBackgroundURLSession:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)performActionWithIdentifier:(id)arg1 onItemsWithIdentifiers:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)disconnectWithOptions:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)fetchPublishingURLForItemIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setFavoriteRank:(id)arg1 forItemIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

@@ -30,7 +30,6 @@
 - (id)sendersPhoneNumber;
 - (id)sendersEmail;
 - (_Bool)isManaged;
-- (_Bool)removeAllCalendarItemsWithError:(id *)arg1;
 - (_Bool)remove:(id *)arg1;
 - (_Bool)_validateDeletable:(id *)arg1;
 - (_Bool)commit:(id *)arg1;

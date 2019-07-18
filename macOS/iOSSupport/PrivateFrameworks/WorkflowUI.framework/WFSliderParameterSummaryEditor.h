@@ -19,7 +19,7 @@
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 - (void).cxx_destruct;
 - (void)presentationControllerDidDismiss:(id)arg1;
-- (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (void)sliderTouchUp:(id)arg1;
 - (void)sliderValueChanged:(id)arg1;

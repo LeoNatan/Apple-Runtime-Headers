@@ -42,7 +42,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UUIDData_5fbc143e entityUID; // @synthesize entityUID=mEntityUID;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)localizeFormulaLiteralsWithBundle:(id)arg1;
+- (void)localizeFormulaLiteralsWithLocale:(id)arg1;
 - (id)customNegScatterXFormulas;
 - (id)customPosScatterXFormulas;
 - (id)customNegFormulas;
@@ -168,6 +168,7 @@ __attribute__((visibility("hidden")))
 - (id)ownerUIDMapper;
 - (void)setFormulaOwnerUID:(const UUIDData_5fbc143e *)arg1;
 - (UUIDData_5fbc143e)formulaOwnerUID;
+- (id)formulaOwner;
 - (id)dataFormatterForSeries:(id)arg1 index:(unsigned long long)arg2 axisType:(int)arg3 documentRoot:(id)arg4;
 - (id)nonDefaultDataFormatterForSeries:(id)arg1 index:(unsigned long long)arg2 axisType:(int)arg3 documentRoot:(id)arg4;
 - (id)dataFormatterFromFormatStruct:(CDStruct_b1066b25)arg1 in:(id)arg2;

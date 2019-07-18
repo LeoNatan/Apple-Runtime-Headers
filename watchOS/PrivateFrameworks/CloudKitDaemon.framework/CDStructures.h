@@ -67,10 +67,6 @@ typedef struct {
 } CDStruct_3f29eb26;
 
 typedef struct {
-    unsigned int limit:1;
-} CDStruct_88fc3008;
-
-typedef struct {
     unsigned int status:1;
 } CDStruct_47fe53f2;
 

@@ -14,7 +14,7 @@
 #import <LinkPresentation/NSImmediateActionGestureRecognizerDelegate-Protocol.h>
 #import <LinkPresentation/QLPreviewMenuItemDelegate-Protocol.h>
 
-@class LPCaptionBarPresentationProperties, LPCaptionButtonPresentationProperties, LPImage, LPImagePresentationProperties, LPInlineMediaPlaybackInformation, LPLinkMetadata, LPLinkViewComponents, LPTheme, LPVideo, NSArray, NSColor, NSHashTable, NSMutableArray, NSString, NSURL;
+@class LPCaptionBarPresentationProperties, LPCaptionButtonPresentationProperties, LPImage, LPImagePresentationProperties, LPInlineMediaPlaybackInformation, LPLinkMetadata, LPLinkViewComponents, LPTheme, LPVideo, NSArray, NSColor, NSHashTable, NSImmediateActionGestureRecognizer, NSMutableArray, NSString, NSURL;
 @protocol LPLinkViewDelegate;
 
 @interface LPLinkView : NSView <NSAccessibilityGroup, NSGestureRecognizerDelegate, NSImmediateActionGestureRecognizerDelegate, QLPreviewMenuItemDelegate, CAAnimationDelegate, LPTapToLoadViewDelegate, LPThemeClient>
@@ -47,12 +47,14 @@
     LPLinkViewComponents *_componentsForSizing;
     NSView *_contentView;
     NSView *_animationView;
+    NSImmediateActionGestureRecognizer *_immediateActionGestureRecognizer;
     BOOL _hasEverBuilt;
     BOOL _needsRebuild;
     BOOL _usesDeferredLayout;
     BOOL _shouldAnimateDuringNextBuild;
     BOOL _hasValidPresentationProperties;
     BOOL _hasSetDisableHighlightGesture;
+    BOOL _hasSetDisablePreviewGesture;
     BOOL _mayReceiveAdditionalMetadata;
     BOOL _usesComputedPresentationProperties;
     BOOL _asynchronouslyLoadingMetadataFields;
@@ -61,6 +63,7 @@
     BOOL _needsMessagesTranscriptPushCounterAnimation;
     BOOL _disableTapGesture;
     BOOL _disableHighlightGesture;
+    BOOL _disablePreviewGesture;
     BOOL _disableAutoPlay;
     BOOL _disablePlayback;
     BOOL _disablePlaybackControls;
@@ -99,13 +102,16 @@
 - (struct CGRect)menuItem:(id)arg1 itemFrameForPoint:(struct CGPoint)arg2;
 - (id)menuItem:(id)arg1 previewItemAtPoint:(struct CGPoint)arg2;
 - (void)immediateActionRecognizerWillPrepare:(id)arg1;
-- (void)_setupInteraction;
+- (void)_uninstallPreviewGestureRecognizer;
+- (void)_installPreviewGestureRecognizer;
 - (void)tapToLoadViewWasTapped:(id)arg1;
 - (void)_tapRecognized:(id)arg1;
 - (void)_highlightRecognized:(id)arg1;
+- (void)_cancelActiveHighlight;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_addHighlightRecognizerToView:(id)arg1;
 - (void)_addTapRecognizerToView:(id)arg1;
+@property(nonatomic, setter=_setDisablePreviewGesture:) BOOL _disablePreviewGesture; // @synthesize _disablePreviewGesture;
 @property(nonatomic, setter=_setDisableHighlightGesture:) BOOL _disableHighlightGesture; // @synthesize _disableHighlightGesture;
 - (void)_rebuildGestureRecognizersIfNeeded;
 - (void)_uninstallTapGestureRecognizers;

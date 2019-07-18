@@ -6,18 +6,21 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <SafariServices/MCProfileConnectionObserver-Protocol.h>
 #import <SafariServices/SFWatchWebViewControllerDelegate-Protocol.h>
 
-@class NSString, SFNanoDomainContainerView, SFWatchWebViewController;
+@class NSString, PUICContentUnavailableView, SFNanoDomainContainerView, SFWatchWebViewController;
 
-@interface _SFNanoBrowserViewController : UIViewController <SFWatchWebViewControllerDelegate>
+@interface _SFNanoBrowserViewController : UIViewController <MCProfileConnectionObserver, SFWatchWebViewControllerDelegate>
 {
     SFWatchWebViewController *_webViewController;
     SFNanoDomainContainerView *_domainContainerView;
+    PUICContentUnavailableView *_contentUnavailableView;
     NSString *_pageTitle;
     NSString *_domain;
 }
 
++ (_Bool)canLoadWebpage;
 + (void)clearWebsiteData;
 + (void)prewarm;
 + (void)initialize;
@@ -31,8 +34,12 @@
 - (_Bool)prefersStatusBarHidden;
 - (void)webViewcontroller:(id)arg1 updateTopBarHeight:(float)arg2;
 - (void)webViewController:(id)arg1 didUpdateNavigationBarItem:(id)arg2;
+- (void)webViewControllerDidCommitNavigation:(id)arg1;
+- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (void)_setShowingSafariRestrictedOverlayIfNeeded;
 - (void)loadURL:(id)arg1;
 - (void)_setUpWebViewControllerIfNeeded;
+- (void)dealloc;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;
 

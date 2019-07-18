@@ -30,6 +30,7 @@
     NSHashTable *_observers;
 }
 
++ (void)createSharedAudioSession;
 + (unsigned long long)_convertDeactivateOption:(unsigned long long)arg1;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -55,8 +56,8 @@
 - (void)voiceControllerDidStopRecording:(id)arg1 forStream:(unsigned long long)arg2 forReason:(long long)arg3;
 - (void)voiceControllerAudioCallback:(id)arg1 forStream:(unsigned long long)arg2 buffer:(id)arg3;
 - (void)voiceControllerDidStartRecording:(id)arg1 forStream:(unsigned long long)arg2 successfully:(_Bool)arg3 error:(id)arg4;
-- (void)_audioRecorderDidStopRecordingForReason:(long long)arg1;
-- (void)_audioRecorderDidStartRecordingSuccessfully:(_Bool)arg1 error:(id)arg2;
+- (void)_audioRecorderDidStopRecordingForReason:(long long)arg1 streamHandleID:(unsigned long long)arg2;
+- (void)_audioRecorderDidStartRecordingSuccessfully:(_Bool)arg1 streamHandleID:(unsigned long long)arg2 error:(id)arg3;
 - (id)metrics;
 - (float)averagePowerForChannel:(unsigned long long)arg1;
 - (float)peakPowerForChannel:(unsigned long long)arg1;

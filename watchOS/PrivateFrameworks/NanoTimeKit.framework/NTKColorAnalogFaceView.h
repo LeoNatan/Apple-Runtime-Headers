@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (id)_colorComplicationViewForSlot:(id)arg1;
 - (void)_enumerateColorComplicationSlotsWithBlock:(CDUnknownBlockType)arg1;
+- (_Bool)_wantsConstantSpeedZoom;
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(int)arg2;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;

@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)dealloc;
+- (id)stringForCheckpoint;
 
 @end
 

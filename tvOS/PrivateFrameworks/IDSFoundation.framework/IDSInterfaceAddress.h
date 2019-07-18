@@ -25,12 +25,14 @@
     _Bool _companionLink;
     _Bool _expensive;
     _Bool _constrained;
+    _Bool _clat46Compatible;
 }
 
 + (id)interfaceAddress:(struct ifaddrs *)arg1 eflags:(unsigned long long)arg2 v6flags:(int)arg3 iftype:(int)arg4;
 + (id)interfaceAddressWithTransmittedBytes:(char *)arg1 length:(long long)arg2 withLocalInterfaceName:(id)arg3;
 + (id)BSSIDWithInterfaceName:(id)arg1;
 @property(nonatomic) _Bool constrained; // @synthesize constrained=_constrained;
+@property(readonly, nonatomic, getter=isCLAT46Compatible) _Bool clat46Compatible; // @synthesize clat46Compatible=_clat46Compatible;
 @property(readonly, nonatomic) _Bool expensive; // @synthesize expensive=_expensive;
 @property(readonly, getter=isCompanionLink) _Bool companionLink; // @synthesize companionLink=_companionLink;
 @property(readonly, getter=isTemporaryIPv6) _Bool temporary; // @synthesize temporary=_temporary;

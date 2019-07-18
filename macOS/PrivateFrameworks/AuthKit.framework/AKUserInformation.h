@@ -9,16 +9,10 @@
 #import <AuthKit/NSCopying-Protocol.h>
 #import <AuthKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSNumber, NSString;
 
 @interface AKUserInformation : NSObject <NSSecureCoding, NSCopying>
 {
-    BOOL _vettedPrimaryEmail;
-    BOOL _phoneAsAppleID;
-    BOOL _isUnderage;
-    BOOL _isLegacyStudent;
-    BOOL _hasUsedAuthorization;
-    BOOL _previouslyWantedPrivateEmail;
     NSString *_givenName;
     NSString *_familyName;
     NSString *_forwardingEmail;
@@ -28,6 +22,13 @@
     NSArray *_reachableEmails;
     NSString *_authorizedApplicationsListVersion;
     NSString *_masterKeyID;
+    NSNumber *_vettedPrimaryEmail;
+    NSNumber *_phoneAsAppleID;
+    NSNumber *_isUnderage;
+    NSString *_ageOfMajority;
+    NSNumber *_isLegacyStudent;
+    NSNumber *_hasUsedAuthorization;
+    NSNumber *_previouslyWantedPrivateEmail;
     unsigned long long _appleIDSecurityLevel;
     unsigned long long _authMode;
     unsigned long long _repairState;
@@ -39,18 +40,19 @@
 @property(nonatomic) unsigned long long repairState; // @synthesize repairState=_repairState;
 @property(nonatomic) unsigned long long authMode; // @synthesize authMode=_authMode;
 @property(nonatomic) unsigned long long appleIDSecurityLevel; // @synthesize appleIDSecurityLevel=_appleIDSecurityLevel;
-@property(readonly, nonatomic) BOOL previouslyWantedPrivateEmail; // @synthesize previouslyWantedPrivateEmail=_previouslyWantedPrivateEmail;
-@property(nonatomic) BOOL hasUsedAuthorization; // @synthesize hasUsedAuthorization=_hasUsedAuthorization;
-@property(nonatomic) BOOL isLegacyStudent; // @synthesize isLegacyStudent=_isLegacyStudent;
-@property(nonatomic) BOOL isUnderage; // @synthesize isUnderage=_isUnderage;
-@property(nonatomic) BOOL phoneAsAppleID; // @synthesize phoneAsAppleID=_phoneAsAppleID;
-@property(nonatomic) BOOL vettedPrimaryEmail; // @synthesize vettedPrimaryEmail=_vettedPrimaryEmail;
+@property(copy, nonatomic) NSNumber *previouslyWantedPrivateEmail; // @synthesize previouslyWantedPrivateEmail=_previouslyWantedPrivateEmail;
+@property(copy, nonatomic) NSNumber *hasUsedAuthorization; // @synthesize hasUsedAuthorization=_hasUsedAuthorization;
+@property(copy, nonatomic) NSNumber *isLegacyStudent; // @synthesize isLegacyStudent=_isLegacyStudent;
+@property(copy, nonatomic) NSString *ageOfMajority; // @synthesize ageOfMajority=_ageOfMajority;
+@property(copy, nonatomic) NSNumber *isUnderage; // @synthesize isUnderage=_isUnderage;
+@property(copy, nonatomic) NSNumber *phoneAsAppleID; // @synthesize phoneAsAppleID=_phoneAsAppleID;
+@property(copy, nonatomic) NSNumber *vettedPrimaryEmail; // @synthesize vettedPrimaryEmail=_vettedPrimaryEmail;
 @property(copy, nonatomic) NSString *masterKeyID; // @synthesize masterKeyID=_masterKeyID;
 @property(copy, nonatomic) NSString *authorizedApplicationsListVersion; // @synthesize authorizedApplicationsListVersion=_authorizedApplicationsListVersion;
 @property(copy, nonatomic) NSArray *reachableEmails; // @synthesize reachableEmails=_reachableEmails;
 @property(copy, nonatomic) NSArray *accountAliases; // @synthesize accountAliases=_accountAliases;
 @property(copy, nonatomic) NSString *accountName; // @synthesize accountName=_accountName;
-@property(readonly, copy, nonatomic) NSString *previouslySelectedEmail; // @synthesize previouslySelectedEmail=_previouslySelectedEmail;
+@property(copy, nonatomic) NSString *previouslySelectedEmail; // @synthesize previouslySelectedEmail=_previouslySelectedEmail;
 @property(copy, nonatomic) NSString *forwardingEmail; // @synthesize forwardingEmail=_forwardingEmail;
 @property(copy, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 @property(copy, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;

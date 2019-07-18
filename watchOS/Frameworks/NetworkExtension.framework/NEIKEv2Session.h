@@ -171,6 +171,7 @@
 - (_Bool)generateSPIForChild:(id)arg1 proposals:(id)arg2;
 - (id)copyIPsecInterfaceWithMissingAllowed:(_Bool)arg1;
 - (id)copyIPsecInterface;
+@property(readonly) _Bool peerAuthenticated;
 @property(readonly) unsigned int interfaceIndex;
 @property(readonly) NSString *interfaceName;
 @property(readonly) _Bool hasInterface;

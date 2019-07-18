@@ -8,7 +8,6 @@
 
 @class CKActionMenuGestureVelocitySample;
 
-__attribute__((visibility("hidden")))
 @interface CKActionMenuGestureRecognizer : UILongPressGestureRecognizer
 {
     CKActionMenuGestureVelocitySample *_velocitySample;

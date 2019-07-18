@@ -9,7 +9,7 @@
 #import <ClockKit/NSCopying-Protocol.h>
 #import <ClockKit/NSSecureCoding-Protocol.h>
 
-@class CLKTextProviderCache, NSMutableArray, NSMutableDictionary, UIColor;
+@class CLKTextProviderCache, NSMutableArray, NSMutableDictionary, NSString, UIColor;
 
 @interface CLKTextProvider : NSObject <NSSecureCoding, NSCopying>
 {
@@ -22,10 +22,12 @@
     struct NSNumber *_minuteTimerToken;
     struct NSNumber *_30fpsTimerToken;
     _Bool _finalized;
+    _Bool _ignoreUppercaseStyle;
     _Bool _paused;
     _Bool _italicized;
     _Bool _useMonospacedNumbersForTimeTravel;
     UIColor *_tintColor;
+    NSString *_accessibilityLabel;
     int _shrinkTextPreference;
     int _timeTravelUpdateFrequency;
 }
@@ -42,6 +44,8 @@
 @property(nonatomic) int shrinkTextPreference; // @synthesize shrinkTextPreference=_shrinkTextPreference;
 @property(nonatomic) _Bool italicized; // @synthesize italicized=_italicized;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
+@property(nonatomic) _Bool ignoreUppercaseStyle; // @synthesize ignoreUppercaseStyle=_ignoreUppercaseStyle;
+@property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 - (void).cxx_destruct;
 - (id)JSONObjectRepresentation;

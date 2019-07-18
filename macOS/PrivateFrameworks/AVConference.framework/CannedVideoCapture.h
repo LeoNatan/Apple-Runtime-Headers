@@ -13,14 +13,16 @@
 __attribute__((visibility("hidden")))
 @interface CannedVideoCapture : VCVideoCapture <VideoCaptureProtocol>
 {
-    struct CannedVideoCapturePrivate *_pimpl;
+    // Error parsing type: ^{CannedVideoCapturePrivate={_opaque_pthread_mutex_t=q[56c]}Ai@i^{OpaqueCMClock}cc^{OpaqueFigThread}c{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_cond_t=q[40c]}^{OpaqueFigThread}c{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_cond_t=q[40c]}{_opaque_pthread_mutex_t=q[56c]}^{Frame}i}, name: _pimpl
     id <CannedVideoFrameFeeder> _frameFeeder;
 }
 
 + (int)createPixelBufferPool:(struct __CVPixelBufferPool **)arg1 withWidth:(int)arg2 height:(int)arg3;
 + (int)cannedVideoTypeForPath:(id)arg1;
 @property(retain, nonatomic) id <CannedVideoFrameFeeder> frameFeeder; // @synthesize frameFeeder=_frameFeeder;
-@property(readonly, nonatomic) struct CannedVideoCapturePrivate *pimpl; // @synthesize pimpl=_pimpl;
+// Error parsing type for property pimpl:
+// Property attributes: T^{CannedVideoCapturePrivate={_opaque_pthread_mutex_t=q[56c]}Ai@i^{OpaqueCMClock}cc^{OpaqueFigThread}c{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_cond_t=q[40c]}^{OpaqueFigThread}c{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_cond_t=q[40c]}{_opaque_pthread_mutex_t=q[56c]}^{Frame}i},R,N,V_pimpl
+
 - (void)stopThreads;
 - (int)startThreads;
 - (int)getPreviewFrameCount:(int *)arg1 captureFrameCount:(int *)arg2 reset:(BOOL)arg3;

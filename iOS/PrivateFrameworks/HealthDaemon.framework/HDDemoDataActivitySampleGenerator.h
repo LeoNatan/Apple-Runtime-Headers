@@ -81,7 +81,6 @@
 - (void)_generateSwimmingWorkoutDataWithObjectCollection:(id)arg1 demoPerson:(id)arg2;
 - (void)_generateHIITWorkoutDataWithObjectCollection:(id)arg1 demoPerson:(id)arg2;
 - (void)_updateWorkoutStateWithActiveEnergyBurned:(id)arg1 distanceWalking:(id)arg2 distanceCycling:(id)arg3 currentTime:(double)arg4 date:(id)arg5 objectCollection:(id)arg6 demoPerson:(id)arg7;
-- (void)generateRecentWorkoutIfNeededWith:(id)arg1 demoPerson:(id)arg2;
 - (id)_sumQuantity:(id)arg1 withQuantity:(id)arg2;
 - (void)generateSamplesForDemoPerson:(id)arg1 atTime:(double)arg2 sampleDate:(id)arg3 objectCollection:(id)arg4;
 - (void)generateFirstRunSampleForDemoPerson:(id)arg1 firstDate:(id)arg2 objectCollection:(id)arg3;

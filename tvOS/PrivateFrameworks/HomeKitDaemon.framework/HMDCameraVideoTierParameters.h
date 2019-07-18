@@ -9,13 +9,13 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class HMDCameraSessionID, HMDCameraVideoTier, NSArray, NSDictionary, NSString;
+@class HMDCameraStreamSessionID, HMDCameraVideoTier, NSArray, NSDictionary, NSString;
 
 @interface HMDCameraVideoTierParameters : HMFObject <NSSecureCoding, HMFLogging>
 {
     NSDictionary *_videoTierCombinations;
     NSArray *_tierOrder;
-    HMDCameraSessionID *_sessionID;
+    HMDCameraStreamSessionID *_sessionID;
     HMDCameraVideoTier *_firstPickedTier;
     HMDCameraVideoTier *_currentPickedTier;
 }
@@ -24,7 +24,7 @@
 + (id)logCategory;
 @property(retain, nonatomic) HMDCameraVideoTier *currentPickedTier; // @synthesize currentPickedTier=_currentPickedTier;
 @property(retain, nonatomic) HMDCameraVideoTier *firstPickedTier; // @synthesize firstPickedTier=_firstPickedTier;
-@property(readonly, nonatomic) HMDCameraSessionID *sessionID; // @synthesize sessionID=_sessionID;
+@property(readonly, nonatomic) HMDCameraStreamSessionID *sessionID; // @synthesize sessionID=_sessionID;
 @property(retain, nonatomic) NSArray *tierOrder; // @synthesize tierOrder=_tierOrder;
 @property(readonly, nonatomic) NSDictionary *videoTierCombinations; // @synthesize videoTierCombinations=_videoTierCombinations;
 - (void).cxx_destruct;

@@ -43,8 +43,10 @@
 - (id)initWithTitle:(id)arg1 locationUID:(id)arg2 latitude:(double)arg3 longitude:(double)arg4 radius:(double)arg5 address:(id)arg6 routing:(id)arg7 referenceFrameString:(id)arg8 contactLabel:(id)arg9 mapKitHandle:(id)arg10;
 - (id)initWithTitle:(id)arg1 locationUID:(id)arg2;
 - (id)initWithTitle:(id)arg1;
+- (id)debugDescription;
 - (id)description;
 - (unsigned int)hash;
+- (_Bool)isContentEqual:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

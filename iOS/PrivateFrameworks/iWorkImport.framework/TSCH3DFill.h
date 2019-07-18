@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *percentage; // @synthesize percentage=_percentage;
 @property(retain, nonatomic) TSCH3DFillSetIdentifier *identifier; // @synthesize identifier=_identifier;
 - (void)didInitFromSOS;
-- (int)fillType;
+- (long long)fillType;
 - (id)referenceColor;
 - (void)paintPath:(struct CGPath *)arg1 inContext:(struct CGContext *)arg2 offset:(struct CGPoint)arg3;
 - (void)paintPath:(struct CGPath *)arg1 inContext:(struct CGContext *)arg2;
@@ -41,8 +41,8 @@ __attribute__((visibility("hidden")))
 - (id)p_imageFillForRect:(struct CGRect)arg1 context:(struct CGContext *)arg2;
 - (id)p_imageFillForSize:(struct CGSize)arg1 context:(id)arg2;
 - (id)convertToSimpleTSDFillWithSize:(unsigned long long)arg1 context:(id)arg2;
-- (id)p_convertToTSDFillWithSize:(unsigned long long)arg1 technique:(int)arg2;
-- (id)p_convertToTSDFillWithSize:(unsigned long long)arg1 technique:(int)arg2 context:(id)arg3;
+- (id)p_convertToTSDFillWithSize:(unsigned long long)arg1 technique:(unsigned long long)arg2;
+- (id)p_convertToTSDFillWithSize:(unsigned long long)arg1 technique:(unsigned long long)arg2 context:(id)arg3;
 - (id)renderingLightingModelWithLightings:(id)arg1;
 - (void)nonatomicallySetLightingModel:(id)arg1;
 @property(readonly) TSCH3DLightingModel *lightingModel;

@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface ISIconTypeResourceLocator : ISIconResourceLocator <NSSecureCoding>
 {
     NSString *_type;

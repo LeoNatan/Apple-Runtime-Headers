@@ -88,7 +88,6 @@
 @property(retain, nonatomic) NSArray *accessibilityCustomRotors;
 - (id)_NSItemProviderTypeCoercion_coercedUIImageValueFromNSDataValue:(id)arg1 error:(id *)arg2;
 - (id)_NSItemProviderTypeCoercion_coercedUIImageValueFromNSURLValue:(id)arg1 error:(id *)arg2;
-- (id)__ui_performAsyncSelector:(SEL)arg1 type:(long long)arg2 sender:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)uiPresentationManager;
 - (id)__autorotationSanityCheckObjectFromSource:(id)arg1 selector:(SEL)arg2;
 - (void)prepareForInterfaceBuilder;

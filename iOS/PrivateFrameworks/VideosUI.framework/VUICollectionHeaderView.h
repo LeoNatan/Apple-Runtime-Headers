@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionReusableView.h>
 
-@class IKViewElement, UIButton, VUICollectionHeaderViewLayout, VUILabel, VUISeparatorView;
+@class IKViewElement, UIButton, VUICollectionHeaderViewLayout, VUILabel, VUISeparatorView, _TVImageView;
 
 __attribute__((visibility("hidden")))
 @interface VUICollectionHeaderView : UICollectionReusableView
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     VUICollectionHeaderViewLayout *_layout;
     VUILabel *_titleTextView;
     VUILabel *_subtitleTextView;
+    _TVImageView *_imageView;
     UIButton *_headerButton;
     VUISeparatorView *_separatorView;
     struct UIEdgeInsets _padding;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
 + (id)configureCollectionHeaderViewWithElement:(id)arg1 existingView:(id)arg2;
 @property(retain, nonatomic) VUISeparatorView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) UIButton *headerButton; // @synthesize headerButton=_headerButton;
+@property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) VUILabel *subtitleTextView; // @synthesize subtitleTextView=_subtitleTextView;
 @property(retain, nonatomic) VUILabel *titleTextView; // @synthesize titleTextView=_titleTextView;
 @property(retain, nonatomic) VUICollectionHeaderViewLayout *layout; // @synthesize layout=_layout;

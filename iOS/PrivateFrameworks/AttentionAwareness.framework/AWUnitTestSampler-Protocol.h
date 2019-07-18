@@ -5,6 +5,8 @@
 //
 
 @protocol AWUnitTestSampler
+- (void)setPearlErrorState:(_Bool)arg1 reply:(void (^)(NSError *))arg2;
+- (void)setPearlErrorState:(_Bool)arg1;
 - (void)setSmartCoverCallback:(void (^)(_Bool))arg1;
 - (void)setSmartCoverClosed:(_Bool)arg1 reply:(void (^)(NSError *))arg2;
 - (void)setSmartCoverClosed:(_Bool)arg1;

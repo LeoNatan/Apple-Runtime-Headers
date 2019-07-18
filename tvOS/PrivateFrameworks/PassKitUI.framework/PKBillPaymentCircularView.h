@@ -4,23 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PassKitUI/PKShapeView.h>
+#import <UIKit/UIView.h>
 
-@class UIImage, UIImageView;
+@class UIColor, UIImage, UIImageView;
 
-@interface PKBillPaymentCircularView : PKShapeView
+@interface PKBillPaymentCircularView : UIView
 {
+    UIView *_primaryView;
+    UIView *_secondaryView;
     UIImageView *_imageView;
-    struct CGRect _lastBounds;
-    double _startCircleAngle;
-    double _endCircleAngle;
+    UIColor *_primaryColor;
+    struct CGRect _shadowFrame;
+    UIColor *_secondaryColor;
     UIImage *_image;
 }
 
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-@property(nonatomic) double endCircleAngle; // @synthesize endCircleAngle=_endCircleAngle;
-@property(nonatomic) double startCircleAngle; // @synthesize startCircleAngle=_startCircleAngle;
+@property(copy, nonatomic) UIColor *secondaryColor; // @synthesize secondaryColor=_secondaryColor;
 - (void).cxx_destruct;
+- (id)_defaultSecondaryColor;
+@property(copy, nonatomic) UIColor *primaryColor;
+- (void)_updateColors;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)init;

@@ -17,6 +17,7 @@
     struct {
         unsigned int toDuration:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     _INPBIntentMetadata *_intentMetadata;
     _INPBTimer *_targetTimer;
     _INPBDataString *_toLabel;
@@ -24,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDataString *toLabel; // @synthesize toLabel=_toLabel;
 @property(nonatomic) double toDuration; // @synthesize toDuration=_toDuration;
 @property(retain, nonatomic) _INPBTimer *targetTimer; // @synthesize targetTimer=_targetTimer;

@@ -25,8 +25,8 @@
 @property(readonly, copy, nonatomic) NSArray *knownAppBundles;
 - (_Bool)setAccessGranted:(_Bool)arg1 forBundle:(struct __CFBundle *)arg2;
 - (_Bool)isAccessGrantedForBundle:(struct __CFBundle *)arg1;
-- (void)_promptForAccessUsingAuditToken:(CDStruct_4c969caf)arg1 processIdentifier:(int)arg2 identityProviderDisplayName:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)requestAccessForAuditToken:(CDStruct_4c969caf)arg1 processIdentifier:(int)arg2 identityProviderDisplayName:(id)arg3 identityProviderID:(id)arg4 allowUI:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)_promptForAccessUsingAuditToken:(CDStruct_4c969caf)arg1 processIdentifier:(int)arg2 identityProviderDisplayName:(id)arg3 providerIsSupported:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)requestAccessForAuditToken:(CDStruct_4c969caf)arg1 processIdentifier:(int)arg2 identityProviderDisplayName:(id)arg3 providerIsSupported:(_Bool)arg4 identityProviderID:(id)arg5 allowUI:(_Bool)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (id)_voucherForProcess:(int)arg1 providerID:(id)arg2;
 - (_Bool)setAccessGranted:(_Bool)arg1 forAuditToken:(CDStruct_4c969caf)arg2;
 - (_Bool)isAccessGrantedForAuditToken:(CDStruct_4c969caf)arg1;

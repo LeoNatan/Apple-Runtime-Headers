@@ -16,11 +16,11 @@ __attribute__((visibility("hidden")))
     NSString *_optFlag;
     double _timeWatched;
     double _timeWatchedStart;
-    NSObject *_reportingHierarchyToken;
+    id _reportingHierarchyToken;
 }
 
 + (void)initialize;
-@property(retain, nonatomic) NSObject *reportingHierarchyToken; // @synthesize reportingHierarchyToken=_reportingHierarchyToken;
+@property(retain, nonatomic) id reportingHierarchyToken; // @synthesize reportingHierarchyToken=_reportingHierarchyToken;
 @property double timeWatchedStart; // @synthesize timeWatchedStart=_timeWatchedStart;
 @property double timeWatched; // @synthesize timeWatched=_timeWatched;
 @property(retain) NSString *optFlag; // @synthesize optFlag=_optFlag;

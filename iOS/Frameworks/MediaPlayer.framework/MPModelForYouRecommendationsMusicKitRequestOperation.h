@@ -6,10 +6,14 @@
 
 #import <MediaPlayer/MPStoreModelRequestOperation.h>
 
+@class NSDictionary;
+
 @interface MPModelForYouRecommendationsMusicKitRequestOperation : MPStoreModelRequestOperation
 {
+    NSDictionary *_storeBagDictionary;
 }
 
+- (void).cxx_destruct;
 - (id)recentlyPlayedURLWithStoreBagDictionary:(id)arg1;
 - (id)recommendationsURLWithStoreBagDictionary:(id)arg1;
 - (id)_produceResponseWithRecommendationsArray:(id)arg1 recentlyPlayedArray:(id)arg2 storeItemMetadataResults:(id)arg3 completion:(CDUnknownBlockType)arg4;

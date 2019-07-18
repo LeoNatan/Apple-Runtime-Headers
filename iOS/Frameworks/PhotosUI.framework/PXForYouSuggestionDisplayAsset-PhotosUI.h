@@ -11,6 +11,7 @@
 @class CLLocation, NSDate, NSString;
 
 @interface PXForYouSuggestionDisplayAsset (PhotosUI) <PUDisplayAsset>
+@property(readonly, nonatomic) CDStruct_1b6d18a9 videoKeyFrameSourceTime;
 @property(readonly, nonatomic) unsigned long long deferredLogInfo;
 @property(readonly, nonatomic) unsigned long long pixelHeight;
 @property(readonly, nonatomic) unsigned long long pixelWidth;

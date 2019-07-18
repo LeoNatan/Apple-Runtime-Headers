@@ -16,12 +16,14 @@ __attribute__((visibility("hidden")))
     TSCECalculationEngine *_calcEngine;
     UUIDRect_d701734b _uidRange;
     TSCECellTractRef *_lastKnownViewTractRef;
+    _Bool _needsUidRectUpgrade;
     unsigned char _basePreserveFlags;
     UUIDData_5fbc143e _tableUID;
     RefTypeHolder_8c6da553 _chromeRangeRef;
 }
 
 @property(nonatomic) RefTypeHolder_8c6da553 chromeRangeRef; // @synthesize chromeRangeRef=_chromeRangeRef;
+@property(nonatomic) _Bool needsUidRectUpgrade; // @synthesize needsUidRectUpgrade=_needsUidRectUpgrade;
 @property(readonly, nonatomic) UUIDData_5fbc143e tableUID; // @synthesize tableUID=_tableUID;
 @property(readonly, nonatomic) UUIDRect_d701734b uidRange; // @synthesize uidRange=_uidRange;
 @property(nonatomic) unsigned char basePreserveFlags; // @synthesize basePreserveFlags=_basePreserveFlags;

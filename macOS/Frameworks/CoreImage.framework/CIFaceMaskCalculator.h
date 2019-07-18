@@ -54,7 +54,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CIVector *inputFacesLeftEyeX; // @synthesize inputFacesLeftEyeX;
 @property(retain) CIImage *inputImage; // @synthesize inputImage;
 - (id)outputImage;
-- (id)outputImage_NEW;
+- (id)outputImage_V4;
 - (id)metalKernel;
 - (id)_kernel;
 

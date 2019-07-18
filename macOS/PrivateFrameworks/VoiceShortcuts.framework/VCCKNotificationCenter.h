@@ -20,7 +20,6 @@
 }
 
 + (void)notificationCenterForContainer:(id)arg1 completion:(CDUnknownBlockType)arg2;
-+ (void)initialize;
 @property(readonly, copy, nonatomic) NSString *topic; // @synthesize topic=_topic;
 @property(readonly, nonatomic) APSConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) NSHashTable *observerTable; // @synthesize observerTable=_observerTable;

@@ -7,6 +7,7 @@
 #import <Foundation/NSURLResponse.h>
 
 @interface NSURLResponse (ResponseSuccessCategory)
+- (int)responseCode;
 - (_Bool)successful;
 @end
 

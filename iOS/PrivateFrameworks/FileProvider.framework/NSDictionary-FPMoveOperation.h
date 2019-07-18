@@ -8,6 +8,7 @@
 
 @interface NSDictionary (FPMoveOperation)
 - (id)fp_copyItemKeysUnwrapped;
+- (id)fp_filter:(CDUnknownBlockType)arg1;
 - (id)fp_removingObjectsNotKindOfClasses:(id)arg1;
 @end
 

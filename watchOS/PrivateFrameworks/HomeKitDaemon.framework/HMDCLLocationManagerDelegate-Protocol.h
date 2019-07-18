@@ -10,8 +10,7 @@
 @protocol HMDCLLocationManager;
 
 @protocol HMDCLLocationManagerDelegate <NSObject>
-- (void)locationManager:(id <HMDCLLocationManager>)arg1 didExitRegion:(CLRegion *)arg2;
-- (void)locationManager:(id <HMDCLLocationManager>)arg1 didEnterRegion:(CLRegion *)arg2;
+- (void)locationManager:(id <HMDCLLocationManager>)arg1 didDetermineState:(int)arg2 forRegion:(CLRegion *)arg3;
 - (void)locationManager:(id <HMDCLLocationManager>)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id <HMDCLLocationManager>)arg1 didFailWithError:(NSError *)arg2;
 - (void)locationManager:(id <HMDCLLocationManager>)arg1 didUpdateLocations:(NSArray *)arg2;

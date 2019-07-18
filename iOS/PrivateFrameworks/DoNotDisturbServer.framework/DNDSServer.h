@@ -54,7 +54,7 @@
 - (id)_activeModeAssertions;
 - (void)_queue_updateScheduleManagerLifetimeMonitorsAndStateForReason:(unsigned long long)arg1;
 - (void)_queue_resume;
-- (void)pairedDeviceStateMonitor:(id)arg1 didChangePairedDevice:(id)arg2;
+- (void)pairedDeviceStateMonitor:(id)arg1 pairingChangedFromDevice:(id)arg2 toDevice:(id)arg3;
 - (void)settingsManager:(id)arg1 didReceiveUpdatedSyncSettings:(id)arg2;
 - (void)settingsManager:(id)arg1 didReceiveUpdatedScheduleSettings:(id)arg2;
 - (void)settingsManager:(id)arg1 didReceiveUpdatedPhoneCallBypassSettings:(id)arg2;
@@ -76,8 +76,8 @@
 - (id)remoteServiceProvider:(id)arg1 currentStateWithError:(id *)arg2;
 - (id)remoteServiceProvider:(id)arg1 invalidateAllModeAssertionsTakenBeforeDate:(id)arg2 forReason:(unsigned long long)arg3 clientIdentifier:(id)arg4 error:(id *)arg5;
 - (id)remoteServiceProvider:(id)arg1 latestInvalidationWithClientIdentifer:(id)arg2 error:(id *)arg3;
-- (id)remoteServiceProvider:(id)arg1 invalidateModeAssertionForClientIdentifier:(id)arg2 reason:(unsigned long long)arg3 error:(id *)arg4;
-- (id)remoteServiceProvider:(id)arg1 invalidateModeAssertionWithUUID:(id)arg2 reason:(unsigned long long)arg3 error:(id *)arg4;
+- (id)remoteServiceProvider:(id)arg1 invalidateModeAssertionForClientIdentifier:(id)arg2 reason:(unsigned long long)arg3 reasonOverride:(unsigned long long)arg4 details:(id)arg5 error:(id *)arg6;
+- (id)remoteServiceProvider:(id)arg1 invalidateModeAssertionWithUUID:(id)arg2 reason:(unsigned long long)arg3 reasonOverride:(unsigned long long)arg4 error:(id *)arg5;
 - (id)remoteServiceProvider:(id)arg1 takeModeAssertionWithDetails:(id)arg2 clientIdentifier:(id)arg3 error:(id *)arg4;
 - (id)remoteServiceProvider:(id)arg1 assertionWithClientIdentifer:(id)arg2 error:(id *)arg3;
 - (id)remoteServiceProvider:(id)arg1 resolveBehaviorForEventDetails:(id)arg2 clientIdentifier:(id)arg3 date:(id)arg4 error:(id *)arg5;

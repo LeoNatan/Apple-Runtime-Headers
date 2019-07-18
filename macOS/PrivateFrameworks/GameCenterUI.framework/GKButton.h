@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GameCenterUICore/UIButton.h>
+#import <AppKit/NSButton.h>
 
 @class GKTextStyle;
 
-@interface GKButton : UIButton
+@interface GKButton : NSButton
 {
     GKTextStyle *_baseStyle;
     GKTextStyle *_appliedStyle;

@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end
 

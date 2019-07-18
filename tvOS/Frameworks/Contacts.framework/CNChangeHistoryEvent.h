@@ -9,7 +9,6 @@
 #import <Contacts/NSCopying-Protocol.h>
 #import <Contacts/NSSecureCoding-Protocol.h>
 
-__attribute__((visibility("hidden")))
 @interface CNChangeHistoryEvent : NSObject <NSCopying, NSSecureCoding>
 {
 }

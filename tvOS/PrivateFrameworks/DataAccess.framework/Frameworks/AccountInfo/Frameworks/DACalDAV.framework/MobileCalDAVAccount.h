@@ -68,6 +68,7 @@
 - (id)localizedIdenticalAccountFailureMessage;
 - (_Bool)accountHasSignificantPropertyChangesFromOldAccountInfo:(id)arg1;
 - (_Bool)isEqualToAccount:(id)arg1;
+- (void)setIsDelegateAccount:(_Bool)arg1;
 - (_Bool)isDelegateAccount;
 - (_Bool)isCalDAVAccount;
 - (void)reattainPowerAssertions;
@@ -85,6 +86,7 @@
 - (void)_reallyPerformSearchQuery:(id)arg1;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)updateDelegates;
+- (id)childAccountWithIdentifier:(id)arg1;
 - (void)refreshWithContext:(id)arg1;
 - (void)_collectMoveActions;
 - (id)_collectActionsFromMoveDictionary:(struct __CFDictionary *)arg1 forDataclass:(id)arg2 outShouldSave:(_Bool *)arg3;
@@ -135,8 +137,8 @@
 @property(retain, nonatomic) NSString *overriddenScheme;
 @property(nonatomic) int overriddenPort;
 @property(retain, nonatomic) NSString *overriddenServer;
-@property(retain, nonatomic) NSString *delegateDisplayName;
-@property(retain, nonatomic) NSString *delegatePrincipalPath;
+- (void)setDelegatePrincipalPath:(id)arg1;
+- (id)delegatePrincipalPath;
 - (void)_setParentAccount:(id)arg1;
 - (id)emailAddresses;
 @property(readonly, nonatomic) NSDictionary *itemIDsToMoveActions;

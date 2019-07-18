@@ -47,6 +47,7 @@
 @property(readonly, nonatomic) NSColor *rowColor;
 @property(readonly, nonatomic) NSColor *separatorLineColor;
 @property(readonly, nonatomic) NSColor *highlightedTintColor;
+@property(readonly, nonatomic) NSColor *tertiaryTextColor;
 @property(readonly, nonatomic) NSColor *lightTextColor;
 @property(readonly, nonatomic) NSColor *textColor;
 @property(readonly, nonatomic) BOOL isDarkTheme;

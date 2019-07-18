@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     VCVideoReceiverBase *_videoReceiver;
     VCVideoRule *_videoRule;
     int _reportingModuleID;
+    unsigned int _reportingDefaultRealtimePeriod;
     NSObject<OS_dispatch_semaphore> *_bufferQueueSemaphore;
     struct opaqueCMBufferQueue *_bufferQueue;
     VCVideoCaptureConverter *_captureConverter;
@@ -49,6 +50,8 @@ __attribute__((visibility("hidden")))
     unsigned int _tilesPerFrame;
     AVCRateController *_vcrcRateController;
     VCRedundancyControllerVideo *_redundancyController;
+    int _lastDisplayedFromImageQueueCount;
+    int _lastDroppedFromImageQueueCount;
 }
 
 + (id)capabilities;
@@ -106,6 +109,7 @@ __attribute__((visibility("hidden")))
 - (void)onStopWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)onStartWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setupReportingAgent;
+- (void)collectImageQueuePerformanceMetrics:(struct __CFDictionary *)arg1;
 - (void)registerForVideoCapture;
 - (void)deregisterForVideoCapture;
 - (_Bool)onConfigureStreamWithConfiguration:(id)arg1 error:(id *)arg2;

@@ -13,8 +13,10 @@
 @interface UIMutableApplicationSceneClientSettings : FBSMutableSceneClientSettings <UIApplicationSceneClientSettings>
 {
     _Bool _statusBarForegroundTransparent;
+    int _sceneActivationBias;
 }
 
+@property(nonatomic) int sceneActivationBias; // @synthesize sceneActivationBias=_sceneActivationBias;
 @property(nonatomic, getter=isStatusBarForegroundTransparent) _Bool statusBarForegroundTransparent; // @synthesize statusBarForegroundTransparent=_statusBarForegroundTransparent;
 - (_Bool)isUISubclass;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;

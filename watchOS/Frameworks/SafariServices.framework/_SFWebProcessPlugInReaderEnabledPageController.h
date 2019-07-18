@@ -36,7 +36,6 @@
 @property(retain, nonatomic) _SFReaderWebProcessPlugInPageController *readerPageController; // @synthesize readerPageController=_readerPageController;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)webProcessPlugInBrowserContextController:(id)arg1 frame:(id)arg2 willSendRequestForResource:(unsigned long long)arg3 request:(id)arg4 redirectResponse:(id)arg5;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 renderingProgressDidChange:(unsigned int)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didFinishLoadForFrame:(id)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didFinishDocumentLoadForFrame:(id)arg2;
@@ -53,7 +52,6 @@
 - (void)loadNewReaderArticle;
 - (void)didCreateReaderPageContextHandle:(id)arg1;
 - (void)prepareToTransitionToReader;
-- (void)checkReaderAvailability;
 - (void)didFinishPresentationUpdateAfterTransitioningToReader;
 - (void)setReaderIsActive:(_Bool)arg1;
 - (void)activateFont:(id)arg1;

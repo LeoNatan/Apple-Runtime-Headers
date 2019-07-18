@@ -17,10 +17,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _row;
     NSString *_title;
     NSArray *_images;
-    long long _backgroundStyle;
 }
 
-@property long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)__drawLTRRect:(struct CGRect)arg1;
 - (void)__drawRTLRect:(struct CGRect)arg1;

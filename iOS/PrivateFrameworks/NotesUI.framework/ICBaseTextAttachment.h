@@ -23,7 +23,7 @@
 - (id)attachmentUTI;
 - (id)attachmentIdentifier;
 - (_Bool)isEqualToModelComparable:(id)arg1;
-- (id)printableTextContent;
+- (id)printableTextContentForAppearanceType:(unsigned long long)arg1;
 - (id)attachmentAttributesForAttributedString;
 - (void)fixAttachmentForAttributedString:(id)arg1 range:(struct _NSRange)arg2 forPlainText:(_Bool)arg3 forStandardizedText:(_Bool)arg4;
 - (double)viewCornerRadius;

@@ -49,12 +49,12 @@ __attribute__((visibility("hidden")))
     Matrix_08d701e4 _worldMatrix;
     double _maxHeightNoPitch;
     VKCameraRegionRestriction *_regionRestriction;
-    double _minDistanceToGround;
-    double _maxDistanceToGround;
+    optional_76e85d3d _minDistanceToGroundRestriction;
+    optional_76e85d3d _maxDistanceToGroundRestriction;
 }
 
-@property(nonatomic) double maxDistanceToGround; // @synthesize maxDistanceToGround=_maxDistanceToGround;
-@property(nonatomic) double minDistanceToGround; // @synthesize minDistanceToGround=_minDistanceToGround;
+@property(nonatomic) optional_76e85d3d maxDistanceToGroundRestriction; // @synthesize maxDistanceToGroundRestriction=_maxDistanceToGroundRestriction;
+@property(nonatomic) optional_76e85d3d minDistanceToGroundRestriction; // @synthesize minDistanceToGroundRestriction=_minDistanceToGroundRestriction;
 @property(retain, nonatomic) VKCameraRegionRestriction *regionRestriction; // @synthesize regionRestriction=_regionRestriction;
 @property(nonatomic) double ndcZNear; // @synthesize ndcZNear=_ndcZNear;
 @property(nonatomic) double horizontalOffset; // @synthesize horizontalOffset=_horizontalOffset;

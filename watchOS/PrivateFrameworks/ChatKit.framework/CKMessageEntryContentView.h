@@ -92,7 +92,6 @@
 - (void)textViewDidEndEditing:(id)arg1;
 - (void)textViewDidBeginEditing:(id)arg1;
 - (_Bool)textViewShouldBeginEditing:(id)arg1;
-- (void)collapseTextFieldsIfInPencilMode;
 - (void)didFinishAnimatedBoundsChange;
 - (void)willAnimateBoundsChange;
 - (void)acceptAutocorrection;

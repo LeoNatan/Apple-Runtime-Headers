@@ -14,6 +14,7 @@
 
 @interface MapsSuggestionsMSPShortcutStorage : NSObject <MSPQueryDelegate, MapsSuggestionsShortcutStorage>
 {
+    CDUnknownBlockType _changeHandler;
     MSPPinnedPlacesQuery *_query;
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
@@ -27,6 +28,7 @@
 - (_Bool)removeShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)addOrUpdateShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)loadAllShortcutsWithHandler:(CDUnknownBlockType)arg1;
+- (void)setChangeHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;
 - (id)init;
 

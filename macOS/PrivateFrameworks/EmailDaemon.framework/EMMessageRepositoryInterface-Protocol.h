@@ -10,8 +10,9 @@
 @protocol EMContentItemRequestDelegate, EMMessageListItemQueryResultsObserver, EMMessageRepositoryCountQueryObserver_xpc;
 
 @protocol EMMessageRepositoryInterface <NSObject>
+- (void)loadOlderMessagesForMailboxes:(NSArray *)arg1;
 - (void)predictMailboxForMovingMessages:(NSArray *)arg1 completionHandler:(void (^)(EMMailbox *))arg2;
-- (NSString *)cachedMetadataJSONForKey:(NSString *)arg1 messageID:(EMMessageObjectID *)arg2;
+- (void)getCachedMetadataJSONForKey:(NSString *)arg1 messageID:(EMMessageObjectID *)arg2 completionHandler:(void (^)(NSString *))arg3;
 - (void)setCachedMetadataJSON:(NSString *)arg1 forKey:(NSString *)arg2 messageID:(EMMessageObjectID *)arg3;
 - (void)resetPrecomputedThreadScopesForMailboxScope:(EMMailboxScope *)arg1;
 - (NSProgress *)requestRepresentationForMessageWithID:(EMMessageObjectID *)arg1 options:(EMContentRequestOptions *)arg2 delegate:(id <EMContentItemRequestDelegate>)arg3 completionHandler:(void (^)(id <_EMDistantContentRepresentation>, EMContentRepresentation *, NSError *))arg4;

@@ -64,6 +64,7 @@
 - (void)shouldHideSupplementaryUI:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)handleEvent:(id)arg1 targetResponder:(id)arg2 viewElement:(id)arg3 extraInfo:(id *)arg4;
 - (void)didCompleteDocumentCreationWithStatus:(long long)arg1 errorDictionary:(id)arg2;
+- (_Bool)automaticallyProvidesMediaController;
 - (void)showcaseFactorDidChange;
 - (void)mediaInfoDidChange;
 - (void)didChangeDocumentContext;

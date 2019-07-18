@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <WebKit/NSURLSessionDataDelegate-Protocol.h>
+#import <WebKit/NSURLSessionWebSocketDelegate-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface WKNetworkSessionDelegate : NSObject <NSURLSessionDataDelegate>
+@interface WKNetworkSessionDelegate : NSObject <NSURLSessionDataDelegate, NSURLSessionWebSocketDelegate>
 {
     struct RefPtr<WebKit::NetworkSessionCocoa, WTF::DumbPtrTraits<WebKit::NetworkSessionCocoa>> _session;
     _Bool _withCredentials;
@@ -19,6 +20,9 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)URLSession:(id)arg1 webSocketTask:(id)arg2 didCloseWithCode:(long long)arg3 reason:(id)arg4;
+- (void)URLSession:(id)arg1 webSocketTask:(id)arg2 didOpenWithProtocol:(id)arg3;
+- (struct WebSocketTask *)existingWebSocketTask:(id)arg1;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didBecomeDownloadTask:(id)arg3;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didResumeAtOffset:(long long)arg3 expectedTotalBytes:(long long)arg4;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;

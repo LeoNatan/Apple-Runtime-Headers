@@ -6,12 +6,9 @@
 
 #import <UserNotificationsUIKit/NSObject-Protocol.h>
 
-@class NSString;
 @protocol NCNotificationListCoalescingControlsHandlerDelegate;
 
 @protocol NCNotificationListCoalescingControlsHandler <NSObject>
-@property(nonatomic) unsigned long long groupingSection;
-@property(copy, nonatomic) NSString *coalescingIdentifier;
 @property(nonatomic) __weak id <NCNotificationListCoalescingControlsHandlerDelegate> handlerDelegate;
 - (_Bool)shouldReceiveTouchAtPointInWindowSpace:(struct CGPoint)arg1;
 - (_Bool)dismissModalFullScreenIfNeeded;

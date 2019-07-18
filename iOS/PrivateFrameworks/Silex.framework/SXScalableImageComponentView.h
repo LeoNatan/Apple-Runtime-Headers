@@ -56,8 +56,6 @@
 - (_Bool)gestureShouldBegin:(id)arg1;
 - (id)dragManager:(id)arg1 dragableAtLocation:(struct CGPoint)arg2;
 - (id)viewForDragManager:(id)arg1;
-- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
 - (void)layoutImageView;
 - (_Bool)fullScreenCanvasController:(id)arg1 showable:(id)arg2 gestureRecognizerShouldBegin:(id)arg3;
 - (unsigned long long)fullScreenCanvasController:(id)arg1 viewIndexForPoint:(struct CGPoint)arg2 inShowable:(id)arg3;
@@ -76,7 +74,6 @@
 - (void)imageView:(id)arg1 didLoadImage:(id)arg2 ofQuality:(int)arg3;
 - (void)imageView:(id)arg1 didLoadAnimatedImage:(id)arg2;
 - (void)visibilityStateDidChangeFromState:(long long)arg1;
-- (void)forceFullScreen;
 - (void)discardContents;
 - (void)renderContents;
 - (void)presentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;

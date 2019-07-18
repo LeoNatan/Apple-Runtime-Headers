@@ -42,8 +42,6 @@
 - (void)forecast:(unsigned int)arg1 forLocation:(id)arg2 locale:(id)arg3 taskIdentifier:(id)arg4;
 - (void)dailyForecastForLocation:(id)arg1 locale:(id)arg2 taskIdentifier:(id)arg3;
 - (void)hourlyForecastForLocation:(id)arg1 locale:(id)arg2 taskIdentifier:(id)arg3;
-- (void)historicalForecastForLocation:(id)arg1 locale:(id)arg2 atDate:(id)arg3 options:(id)arg4 taskIdentifier:(id)arg5;
-- (void)almanacForecastForLocation:(id)arg1 locale:(id)arg2 atDate:(id)arg3 options:(id)arg4 taskIdentifier:(id)arg5;
 - (void)forecastForLocation:(id)arg1 locale:(id)arg2 atDate:(id)arg3 options:(id)arg4 taskIdentifier:(id)arg5;
 - (void)performMigrationWithCompletion:(CDUnknownBlockType)arg1;
 - (id)clientForPid:(int)arg1;

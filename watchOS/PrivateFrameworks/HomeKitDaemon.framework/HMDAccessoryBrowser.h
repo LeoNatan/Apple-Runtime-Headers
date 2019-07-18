@@ -19,7 +19,7 @@
 #import <HomeKitDaemon/HMFMessageReceiver-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HAPAccessoryServerBrowserBTLE, HAPAccessoryServerBrowserIP, HAPAccessoryServerBrowserRelay, HAPWACAccessoryBrowser, HMDAuthServer, HMDHomeManager, HMDMediaBrowser, HMDUnassociatedWACAccessory, HMDWACBrowser, HMFMessageDispatcher, HMFTimer, NSArray, NSData, NSHashTable, NSMapTable, NSMutableArray, NSMutableSet, NSObject, NSString, NSUUID;
+@class HAPAccessoryServerBrowserBTLE, HAPAccessoryServerBrowserIP, HAPAccessoryServerBrowserRelay, HAPWACAccessoryBrowser, HMDAuthServer, HMDDAccessoryServerBrowserDemo, HMDHomeManager, HMDMediaBrowser, HMDUnassociatedWACAccessory, HMDWACBrowser, HMFMessageDispatcher, HMFTimer, NSArray, NSData, NSHashTable, NSMapTable, NSMutableArray, NSMutableSet, NSObject, NSString, NSUUID;
 @protocol HMDAccessoryBrowserManagerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
 @interface HMDAccessoryBrowser : HMFObject <HAPAccessoryServerBrowserDelegate, HAPAccessoryServerDelegate, HMFMessageReceiver, HMFTimerDelegate, HMDMediaBrowserDelegate, HMDWACBrowserDelegate, HMDWACAccessoryConfigurationDelegate, HMDWatchSystemStateDelegate, HMDAuthServerDelegate, HMFLogging, HMDAccessoryBrowserProtocol, HMDAccessoryBrowserHapProtocol>
@@ -30,6 +30,7 @@
     NSMutableSet *_unassociatedWACAccessories;
     NSMutableSet *_mediaAccessoryControlConnections;
     NSMutableSet *_browsingConnections;
+    _Bool _btlePowerState;
     _Bool _appIsInForeground;
     _Bool _activeSiriCommand;
     HMDUnassociatedWACAccessory *_accessoryPerformingWAC;
@@ -49,6 +50,7 @@
     HMDMediaBrowser *_mediaBrowser;
     HMDWACBrowser *_wacBrowser;
     HMDAuthServer *_authServer;
+    HMDDAccessoryServerBrowserDemo *_demoAccessoryServerBrowser;
     HMFTimer *_stopReprovisioningTimer;
     HMFTimer *_stopBrowsingAccessoriesNeedingReprovisioningTimer;
     NSString *_identifierOfAccessoryBeingReprovisioned;
@@ -82,6 +84,7 @@
 @property(retain, nonatomic) NSString *identifierOfAccessoryBeingReprovisioned; // @synthesize identifierOfAccessoryBeingReprovisioned=_identifierOfAccessoryBeingReprovisioned;
 @property(retain, nonatomic) HMFTimer *stopBrowsingAccessoriesNeedingReprovisioningTimer; // @synthesize stopBrowsingAccessoriesNeedingReprovisioningTimer=_stopBrowsingAccessoriesNeedingReprovisioningTimer;
 @property(retain, nonatomic) HMFTimer *stopReprovisioningTimer; // @synthesize stopReprovisioningTimer=_stopReprovisioningTimer;
+@property(retain, nonatomic) HMDDAccessoryServerBrowserDemo *demoAccessoryServerBrowser; // @synthesize demoAccessoryServerBrowser=_demoAccessoryServerBrowser;
 @property(retain, nonatomic) HMDAuthServer *authServer; // @synthesize authServer=_authServer;
 @property(retain, nonatomic) HMDWACBrowser *wacBrowser; // @synthesize wacBrowser=_wacBrowser;
 @property(retain, nonatomic) HMDMediaBrowser *mediaBrowser; // @synthesize mediaBrowser=_mediaBrowser;
@@ -97,6 +100,7 @@
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
+@property(nonatomic) _Bool btlePowerState; // @synthesize btlePowerState=_btlePowerState;
 @property(readonly, nonatomic) HAPAccessoryServerBrowserRelay *relayAccessoryServerBrowser; // @synthesize relayAccessoryServerBrowser=_relayAccessoryServerBrowser;
 - (void).cxx_destruct;
 - (id)dumpRegisteredPairedAccessories;
@@ -112,7 +116,7 @@
 - (void)accessoryServer:(id)arg1 authenticateUUID:(id)arg2 token:(id)arg3;
 - (void)accessoryServer:(id)arg1 validateCert:(id)arg2 model:(id)arg3;
 - (void)accessoryServer:(id)arg1 validateUUID:(id)arg2 token:(id)arg3 model:(id)arg4;
-- (void)accessoryServerNeedsOwnershipProof:(id)arg1;
+- (void)accessoryServerNeedsOwnershipToken:(id)arg1;
 - (void)accessoryServer:(id)arg1 didFinishAuth:(id)arg2;
 - (void)accessoryServer:(id)arg1 didUpdateName:(id)arg2;
 - (void)_notifyDelegatesOfAccessoryServer:(id)arg1 didUpdateName:(id)arg2;
@@ -176,11 +180,12 @@
 - (void)_promptForPairingPasswordForServer:(id)arg1 reason:(id)arg2;
 - (void)_pairAccessory:(id)arg1 configuration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_pairAccessoryWithDescription:(id)arg1 configuration:(id)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)_checkDelegatesOfAccessoryWithSetupID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_checkDelegatesOfAccessoryWithSetupID:(id)arg1 serverIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)cancelPairingWithAccessoryDescription:(id)arg1 error:(id)arg2;
 - (id)findAccessoryServerForAccessoryDescription:(id)arg1;
 - (void)_cancelPairingWithAccessory:(id)arg1 error:(id)arg2;
 - (void)_handleSetupCodeAvailable:(id)arg1;
+- (_Bool)isDemoAccessoryIdentifier:(id)arg1;
 - (void)_notifyDelegatesOfNewAccessory:(id)arg1;
 - (id)unpairedAccessoryForServer:(id)arg1;
 - (id)unpairedAccessoryWithServerIdentifier:(id)arg1;
@@ -194,6 +199,7 @@
 - (void)_registerForMessages;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (void)tearDownSessionForAccesoryServer:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resurrectAccessoryServer:(id)arg1;
 - (void)tombstoneAccessoryServer:(id)arg1;
 - (void)discoverAccessories:(id)arg1;
@@ -307,6 +313,8 @@
 - (void)setQOS:(int)arg1;
 - (void)configureAccessory:(id)arg1 trackState:(_Bool)arg2 connectionPriority:(_Bool)arg3;
 - (void)configureWithHomeManager:(id)arg1;
+- (void)configureDemoBrowserWithTestAccessories:(id)arg1;
+- (void)configureDemoBrowserWithDemoAccessories:(id)arg1 finalized:(_Bool)arg2;
 - (id)initWithMessageDispatcher:(id)arg1 workQueue:(id)arg2 injectedSettings:(id)arg3;
 - (id)initWithMessageDispatcher:(id)arg1;
 

@@ -45,7 +45,7 @@
 - (BOOL)isEqualToObject:(id)arg1;
 @property(readonly) BOOL isDate;
 @property(readonly) BOOL isArray;
-- (BOOL)isSymbol;
+@property(readonly) BOOL isSymbol;
 @property(readonly) BOOL isObject;
 @property(readonly) BOOL isString;
 @property(readonly) BOOL isNumber;

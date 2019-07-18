@@ -17,6 +17,7 @@
     CLKDevice *_device;
     struct NSNumber *_updateToken;
     PUICClientSideAnimation *_progressAnimation;
+    float _currentBackgroundViewAlphaPercentage;
     _Bool _enabled;
     id <CLKMonochromeFilterProvider> _filterProvider;
     NSArray *_gradientColors;
@@ -43,6 +44,7 @@
 - (id)filterForView:(id)arg1 style:(int)arg2;
 - (void)_createRingView;
 - (void)_applyStyle;
+- (void)_adjustBackgroundViewAlphaWithPercentage:(float)arg1;
 - (void)_updateUIFromGaugeProvider;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;

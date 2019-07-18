@@ -6,41 +6,63 @@
 
 #import <objc/NSObject.h>
 
-@class UIColor;
+#import <NanoTimeKit/NTKCircularAnalogDialColorPalette-Protocol.h>
 
-@interface NTKCaliforniaColorPalette : NSObject
+@class CLKDevice, NSString, UIColor;
+
+@interface NTKCaliforniaColorPalette : NSObject <NTKCircularAnalogDialColorPalette>
 {
     unsigned int _color;
-    _Bool _alternativeColor;
     UIColor *_backgroundColor;
     UIColor *_circularBackgroundColor;
+    UIColor *_swatchBackgroundColor;
     UIColor *_hourMarkerColor;
     UIColor *_smallTickColor;
     UIColor *_largeTickColor;
-    UIColor *_largeHandsColor;
+    UIColor *_hourHandInlayColor;
+    UIColor *_hourHandStrokeColor;
     UIColor *_secondHandColor;
-    UIColor *_cornerComplicationColor;
+    UIColor *_cornerComplicationOuterTextColor;
+    UIColor *_cornerComplicationInnerTextColor;
     UIColor *_simpleTextComplicationColor;
     UIColor *_circularComplicationColor;
+    UIColor *_circularComplicationAlternateColor;
+    UIColor *_bezelComplicationColor;
+    UIColor *_circularDialSubtickColor;
+    CLKDevice *_device;
 }
 
 + (id)paletteForColor:(unsigned int)arg1;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
+- (id)circularDialFillColor;
+- (id)circularDialSubtickColor;
+- (id)circularDialTickColor;
 @property(readonly, nonatomic) UIColor *platterTextColor;
 @property(readonly, nonatomic) int richComplicationViewTheme;
+@property(readonly, nonatomic) UIColor *bezelComplicationColor;
+@property(readonly, nonatomic) UIColor *circularComplicationAlternateColor;
 @property(readonly, nonatomic) UIColor *circularComplicationColor;
 @property(readonly, nonatomic) UIColor *simpleTextComplicationColor;
-@property(readonly, nonatomic) UIColor *cornerComplicationColor;
+@property(readonly, nonatomic) UIColor *cornerComplicationInnerTextColor;
+@property(readonly, nonatomic) UIColor *cornerComplicationOuterTextColor;
 @property(readonly, nonatomic) UIColor *secondHandColor;
-@property(readonly, nonatomic) UIColor *largeHandsColor;
+@property(readonly, nonatomic) UIColor *hourHandStrokeColor;
+@property(readonly, nonatomic) UIColor *hourHandInlayColor;
 @property(readonly, nonatomic) UIColor *largeTickColor;
 @property(readonly, nonatomic) UIColor *smallTickColor;
 @property(readonly, nonatomic) UIColor *hourMarkerColor;
 @property(readonly, nonatomic) UIColor *circularBackgroundColor;
+- (id)swatchBackgroundColor;
 @property(readonly, nonatomic) UIColor *backgroundColor;
 @property(readonly, nonatomic) unsigned int color;
-- (id)initWithColor:(unsigned int)arg1 alternativeColor:(_Bool)arg2;
+- (id)initWithColor:(unsigned int)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

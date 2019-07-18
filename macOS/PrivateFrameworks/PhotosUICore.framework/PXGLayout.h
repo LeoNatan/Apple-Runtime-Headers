@@ -11,7 +11,7 @@
 #import <PhotosUICore/PXGSpriteIndexReferencing-Protocol.h>
 
 @class NSArray, NSIndexSet, NSMutableArray, NSString, PXGAnchor, PXGItemsLayout, PXGReusableAccessibilityContentInfo, PXGSpriteDataStore, PXGSpriteMetadataStore, PXGSublayoutDataStore, PXGViewEnvironment;
-@protocol PXGLayoutContentSource, PXGLayoutUpdateDelegate, PXGLayoutVisibleRectDelegate;
+@protocol PXGDisplayAssetSource, PXGLayoutContentSource, PXGLayoutUpdateDelegate, PXGLayoutVisibleRectDelegate;
 
 @interface PXGLayout : NSObject <PXGDataSourceDrivenLayout, PXGSpriteIndexReferencing, PXGDiagnosticsProvider>
 {
@@ -44,6 +44,7 @@
     id <PXGLayoutUpdateDelegate> _updateDelegate;
     id <PXGLayoutVisibleRectDelegate> _visibleRectDelegate;
     long long _updateCount;
+    id <PXGDisplayAssetSource> _displayAssetSource;
     PXGAnchor *_activeAnchor;
     PXGAnchor *_lastVisibleAreaAnchor;
     PXGReusableAccessibilityContentInfo *_accessibilityGroupElement;
@@ -61,6 +62,7 @@
 @property(retain, nonatomic) PXGAnchor *lastVisibleAreaAnchor; // @synthesize lastVisibleAreaAnchor=_lastVisibleAreaAnchor;
 @property(nonatomic) struct CGSize estimatedContentSize; // @synthesize estimatedContentSize=_estimatedContentSize;
 @property(readonly, nonatomic) PXGAnchor *activeAnchor; // @synthesize activeAnchor=_activeAnchor;
+@property(nonatomic) __weak id <PXGDisplayAssetSource> displayAssetSource; // @synthesize displayAssetSource=_displayAssetSource;
 @property(readonly, nonatomic) long long updateCount; // @synthesize updateCount=_updateCount;
 @property(nonatomic) __weak id <PXGLayoutVisibleRectDelegate> visibleRectDelegate; // @synthesize visibleRectDelegate=_visibleRectDelegate;
 @property(nonatomic) __weak id <PXGLayoutUpdateDelegate> updateDelegate; // @synthesize updateDelegate=_updateDelegate;
@@ -96,6 +98,7 @@
 - (id)_paddingForLevel:(long long)arg1;
 - (id)recursiveDescription;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
+@property(readonly, nonatomic) CDStruct_3fe57b01 orientedContentTransform;
 @property(readonly, nonatomic) unsigned long long fullyVisibleEdgesWithDefaultTolerance;
 - (unsigned long long)fullyVisibleEdgesWithTolerance:(double)arg1;
 - (struct _PXGSpriteIndexRange)spriteIndexRangeCoveringRect:(struct CGRect)arg1;
@@ -106,6 +109,7 @@
 - (long long)sublayoutIndexForSpriteIndex:(unsigned int)arg1;
 - (id)hitTestResultForSpriteIndex:(unsigned int)arg1;
 - (void)_enumerateSpritesInRange:(struct _PXGSpriteIndexRange)arg1 transform:(CDStruct_3fe57b01)arg2 spriteOffset:(unsigned int)arg3 stop:(char *)arg4 usingBlock:(CDUnknownBlockType)arg5;
+- (void)enumerateSpritesInRange:(struct _PXGSpriteIndexRange)arg1 options:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateSpritesInRange:(struct _PXGSpriteIndexRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)copyLayoutForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 applySpriteTransforms:(BOOL)arg2 parentTransform:(CDStruct_3fe57b01)arg3 parentSublayoutOrigin:(struct CGPoint)arg4 geometries:(CDStruct_ac168a83 *)arg5 styles:(CDStruct_506f5052 *)arg6 infos:(CDStruct_9d1ebe49 *)arg7;
 - (void)copyLayoutForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 applySpriteTransforms:(BOOL)arg2 geometries:(CDStruct_ac168a83 *)arg3 styles:(CDStruct_506f5052 *)arg4 infos:(CDStruct_9d1ebe49 *)arg5;
@@ -259,6 +263,7 @@
 - (id)createCuratedLibraryLayoutTransitionIfNeededWithContext:(long long)arg1;
 - (id)createCuratedLibraryLayoutAnimationIfNeededWithContext:(long long)arg1;
 - (id)createCuratedLibraryLayoutSkimmingSlideshowAnimationFromSectionIndexPath:(struct PXSimpleIndexPath)arg1 toSectionIndexPath:(struct PXSimpleIndexPath)arg2;
+- (id)createCuratedLibraryLayoutZoomLevelChangeAnimationFromZoomLevel:(long long)arg1 toZoomLevel:(long long)arg2 withContext:(long long)arg3;
 - (id)createCuratedLibraryLayoutAnimationIfNeededWithContext:(long long)arg1 userData:(id)arg2;
 - (id)createTransitionWithAnimations:(id)arg1;
 @property(readonly, nonatomic) BOOL shouldInvalidateDecorationForModifiedSprites;

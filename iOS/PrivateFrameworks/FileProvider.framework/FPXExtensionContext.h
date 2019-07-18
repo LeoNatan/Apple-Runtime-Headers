@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)bulkEvictItemsWithItemIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)wakeForSessionIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)performActionWithIdentifier:(id)arg1 onItemsWithIdentifiers:(id)arg2 domainIdentifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)disconnectDomainID:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)fetchPublishingURLForItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchDefaultContainerForBundleIdentifier:(id)arg1 defaultName:(id)arg2 inDomainIdentifier:(id)arg3 reply:(CDUnknownBlockType)arg4;
@@ -80,6 +81,7 @@ __attribute__((visibility("hidden")))
 - (void)preflightTrashItemIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dumpIndexStateForDomain:(id)arg1 toFileHandler:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dropIndexForDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchCurrentIndexingAnchorForDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)indexOneBatchInDomain:(id)arg1 fromAnchor:(id)arg2 toAnchor:(id)arg3 updatedItems:(id)arg4 deletedItems:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)indexOneBatchInDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)bulkItemChanges:(id)arg1 changedFields:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;

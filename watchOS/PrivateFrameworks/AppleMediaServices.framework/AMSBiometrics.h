@@ -10,11 +10,15 @@
 {
 }
 
-+ (id)_biometricStateHeaderValue;
-+ (id)headersWithOptions:(id)arg1 signatureResult:(id)arg2 fallback:(_Bool)arg3;
-+ (id)handleResponse:(id)arg1 session:(id)arg2 taskInfo:(id)arg3;
-+ (int)type;
 + (int)state;
++ (id)_stateHeaderValueForAccount:(id)arg1;
++ (int)stateForAccount:(id)arg1;
++ (void)setState:(int)arg1 forAccount:(id)arg2;
++ (id)headersWithAccount:(id)arg1 options:(id)arg2 signatureResult:(id)arg3;
++ (id)handleResponse:(id)arg1 session:(id)arg2 taskInfo:(id)arg3 shouldFallbackToPassword:(_Bool *)arg4;
++ (void)setDeviceState:(int)arg1;
++ (int)type;
++ (int)deviceState;
 
 @end
 

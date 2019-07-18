@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class PXGLayout, PXGTransition;
+@class NSDictionary, PXGLayout, PXGTransition;
 @protocol PXGAnimationDelegate;
 
 @interface PXGAnimation : NSObject
@@ -20,12 +20,14 @@
     long long _numberOfOscillations;
     double _maximumDistance;
     id <PXGAnimationDelegate> _delegate;
+    NSDictionary *_userData;
     PXGLayout *_layout;
     PXGTransition *_transition;
 }
 
 @property(nonatomic) __weak PXGTransition *transition; // @synthesize transition=_transition;
 @property(readonly, nonatomic) __weak PXGLayout *layout; // @synthesize layout=_layout;
+@property(retain, nonatomic) NSDictionary *userData; // @synthesize userData=_userData;
 @property(retain, nonatomic) id <PXGAnimationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool supportsPresentationAdjustment; // @synthesize supportsPresentationAdjustment=_supportsPresentationAdjustment;
 @property(nonatomic, setter=setDoubleSided:) _Bool isDoubleSided; // @synthesize isDoubleSided=_isDoubleSided;

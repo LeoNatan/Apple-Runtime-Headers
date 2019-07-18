@@ -12,7 +12,6 @@
 {
 }
 
-+ (void)load;
 - (id)notesWithValue:(id)arg1 withType:(int)arg2;
 - (id)URLWithValue:(id)arg1 withType:(int)arg2;
 

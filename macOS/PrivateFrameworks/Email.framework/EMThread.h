@@ -17,6 +17,7 @@
 
 @interface EMThread : EMCollection <EMThreadBuilder, EFLoggable, NSCopying, NSSecureCoding, EMMessageListItem>
 {
+    unsigned long long _isEditable;
     EMMailboxScope *_mailboxScope;
     id <EMMailboxTypeResolver> _mailboxTypeResolver;
     NSArray *_mailboxes;
@@ -82,6 +83,7 @@
 - (void)setDate:(id)arg1;
 @property(readonly) NSDate *date;
 - (void).cxx_destruct;
+@property(readonly) BOOL isEditable;
 @property(readonly) BOOL shouldArchiveByDefault;
 @property(readonly) BOOL supportsArchiving;
 @property(readonly) BOOL deleteMovesToTrash;
@@ -104,6 +106,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)ef_publicDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
 - (void)_commonInitWithOriginatingQuery:(id)arg1 builder:(CDUnknownBlockType)arg2;
 - (id)initWithObjectID:(id)arg1 originatingQuery:(id)arg2 builder:(CDUnknownBlockType)arg3;
@@ -111,7 +114,6 @@
 @property(readonly, nonatomic) EMMessageRepository *repository;
 
 // Remaining properties
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy, nonatomic) EMObjectID *objectID;
 @property(readonly) Class superclass;

@@ -19,11 +19,13 @@
     _Bool _restrictToPlayableOnCurrentDevice;
     long long _deliveryMode;
     long long _version;
+    long long _streamingVideoIntent;
 }
 
 @property(nonatomic) _Bool restrictToPlayableOnCurrentDevice; // @synthesize restrictToPlayableOnCurrentDevice=_restrictToPlayableOnCurrentDevice;
 @property(nonatomic, getter=isMediumHighQualityAllowed) _Bool mediumHighQualityAllowed; // @synthesize mediumHighQualityAllowed=_mediumHighQualityAllowed;
 @property(nonatomic, getter=isVideoComplementAllowed) _Bool videoComplementAllowed; // @synthesize videoComplementAllowed=_videoComplementAllowed;
+@property(nonatomic) long long streamingVideoIntent; // @synthesize streamingVideoIntent=_streamingVideoIntent;
 @property(nonatomic, getter=isStreamingAllowed) _Bool streamingAllowed; // @synthesize streamingAllowed=_streamingAllowed;
 @property(nonatomic, getter=isNetworkAccessAllowed) _Bool networkAccessAllowed; // @synthesize networkAccessAllowed=_networkAccessAllowed;
 @property(nonatomic) long long version; // @synthesize version=_version;

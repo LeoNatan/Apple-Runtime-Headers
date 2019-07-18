@@ -28,6 +28,7 @@
 - (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)init;
+- (void)updateBroadcastURL:(id)arg1;
 - (void)_completeRequestWithReturnItems:(id)arg1;
 - (void)updateServiceInfo:(id)arg1;
 - (void)beginRequestWithExtensionContext:(id)arg1;

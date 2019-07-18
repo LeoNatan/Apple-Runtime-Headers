@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long statisticsID; // @synthesize statisticsID=_statisticsID;
 - (void)loadDefaultSettings;
 - (void)reportRedundancyPercentage:(unsigned int)arg1 redundancyInterval:(double)arg2;
-- (void)updateRedundancyStrategyWithNetworkStatistics:(CDStruct_b3eb8f4a)arg1;
+- (void)updateRedundancyStrategyWithNetworkStatistics:(CDStruct_b21f1e06)arg1;
 - (void)dealloc;
-- (id)initWithDelegate:(id)arg1 statisticsCollector:(id)arg2 mode:(unsigned int)arg3;
+- (id)initWithDelegate:(id)arg1 statisticsCollector:(id)arg2 mode:(unsigned int)arg3 maxAllowedRedundancyPercentage:(unsigned int)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

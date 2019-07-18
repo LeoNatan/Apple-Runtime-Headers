@@ -6,13 +6,21 @@
 
 #import <UIKit/UIViewController.h>
 
+@class NSMutableArray;
+
 @interface _SBHRecentsDocumentExtensionWrappingViewController : UIViewController
 {
+    UIViewController *_wrappedRemoteViewController;
+    NSMutableArray *_constraints;
 }
 
+- (void).cxx_destruct;
+- (void)wrapRemoteViewController:(id)arg1;
+- (void)_updateViewIntrinsicContentSize:(struct CGSize)arg1;
 - (void)setPreferredContentSize:(struct CGSize)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)loadView;
+- (id)init;
 
 @end
 

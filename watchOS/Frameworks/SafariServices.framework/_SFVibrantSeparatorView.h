@@ -4,13 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIVisualEffectView.h>
+#import <UIKit/UIView.h>
 
-@interface _SFVibrantSeparatorView : UIVisualEffectView
+@interface _SFVibrantSeparatorView : UIView
 {
+    UIView *_backgroundView;
+    UIView *_overlayView;
 }
 
-- (void)traitCollectionDidChange:(id)arg1;
+- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

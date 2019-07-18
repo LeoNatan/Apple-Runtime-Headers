@@ -57,7 +57,6 @@
 - (void)setNumberOfAttachments:(unsigned long long)arg1 isSigned:(_Bool)arg2 isEncrypted:(_Bool)arg3;
 - (void)calculateAttachmentInfoFromBody:(id)arg1;
 - (void)deleteBodyData;
-- (void)_calculateAttachmentInfoFromBody:(id)arg1;
 - (id)dataPathForMimePart:(id)arg1;
 - (_Bool)fetchDataForMimePart:(id)arg1 inRange:(struct _NSRange)arg2 withConsumer:(id)arg3 isComplete:(_Bool *)arg4 downloadIfNecessary:(_Bool)arg5;
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange)arg2 isComplete:(_Bool *)arg3 downloadIfNecessary:(_Bool)arg4 didDownload:(_Bool *)arg5;

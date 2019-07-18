@@ -17,7 +17,8 @@
 
 @interface PLExpandedPlatterView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate, PLExpandedPlatter, PLTitled, PLContentSizeCategoryAdjusting>
 {
-    MTMaterialView *_headerBackgroundView;
+    UIView *_headerBackgroundView;
+    UIView *_headerKeyLineView;
     UIView *_headerTintView;
     PLPlatterHeaderContentView *_headerContentView;
     UIView *_scrollViewContentView;
@@ -50,6 +51,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;
+- (void)_reduceTransparencyDidChange:(id)arg1;
 - (void)_layoutActionsView;
 - (void)_layoutMainContentView;
 - (void)_layoutScrollViewContentView;
@@ -63,7 +65,11 @@
 - (void)_configureCustomContentViewIfNecessary;
 - (void)_configureScrollViewContentViewIfNecessary;
 - (void)_configureScrollViewIfNecessary;
-- (void)_configureHeaderContentViewIfNecessary;
+- (void)_configureHeaderViewsIfNecessary;
+- (void)_configureHeaderBackgroundForReduceTransparencyIfNecessary;
+- (void)_updateHeaderKeyLineAlphaIfNecessary;
+- (double)_headerKeyLineAlphaForContentOffset;
+- (void)_configureHeaderBackgroundDefaultIfNecessary;
 - (void)_configureDismissControlIfNecessary;
 @property(readonly, nonatomic) UIView *customContentView; // @synthesize customContentView=_customContentView;
 - (struct CGSize)_actionsSizeThatFits:(struct CGSize)arg1 includingPadding:(_Bool)arg2;
@@ -96,6 +102,8 @@
 - (void)layoutSubviews;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect)arg1;
 - (void)_layoutCustomContentView;
 - (struct CGSize)_contentViewSize;
 - (struct CGRect)_mainContentViewFrame;

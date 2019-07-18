@@ -22,7 +22,6 @@
     BOOL _showsPointLabels;
     BOOL _showsBuildings;
     BOOL _showsNightMode;
-    BOOL _showsAppleLogo;
     BOOL _rendersInBackground;
     BOOL _useSnapshotService;
     struct CGSize _size;
@@ -51,7 +50,6 @@
 @property(copy, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(nonatomic, getter=_rendersInBackground, setter=_setRendersInBackground:) BOOL rendersInBackground; // @synthesize rendersInBackground=_rendersInBackground;
 @property(nonatomic, getter=_useSnapshotService, setter=_setUseSnapshotService:) BOOL useSnapshotService; // @synthesize useSnapshotService=_useSnapshotService;
-@property(nonatomic, getter=_showsAppleLogo, setter=_setShowsAppleLogo:) BOOL showsAppleLogo; // @synthesize showsAppleLogo=_showsAppleLogo;
 @property(nonatomic, getter=_showsNightMode, setter=_setShowsNightMode:) BOOL showsNightMode; // @synthesize showsNightMode=_showsNightMode;
 @property(nonatomic) BOOL showsBuildings; // @synthesize showsBuildings=_showsBuildings;
 @property(nonatomic, getter=_showsPointLabels, setter=_setShowsPointLabels:) BOOL showsPointLabels; // @synthesize showsPointLabels=_showsPointLabels;

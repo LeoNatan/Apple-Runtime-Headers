@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _lastGestureCenter;
 }
 
-+ (id)sharedInstance;
++ (id)snapshotOfKeyplaneView:(id)arg1;
 + (_Bool)isPointWithinDockingRegion:(struct CGPoint)arg1;
 + (float)magneticEdgeMargin;
 @property(retain) UIViewSpringAnimationBehavior *animationBehavior; // @synthesize animationBehavior=_animationBehavior;
@@ -62,17 +62,11 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
-- (id)meshTransformForKeyplane:(id)arg1 frame:(struct CGRect)arg2 toKeyplane:(id)arg3 frame:(struct CGRect)arg4;
-- (void)fillFaces:(struct CAMeshFace *)arg1 withVertexIndex:(unsigned int)arg2;
-- (void)fillVertices:(struct CAMeshVertex *)arg1 forKeyRect:(struct CGRect)arg2 inKeyplaneRect:(struct CGRect)arg3 toKeyRect:(struct CGRect)arg4 inKeyplaneRect:(struct CGRect)arg5;
-- (id)geometriesForKeyplane:(id)arg1;
-- (_Bool)shouldUseMeshTransform;
-- (_Bool)shouldDimKeys;
 - (void)captureStateForStart:(_Bool)arg1;
-- (id)sortedCommonVisibleKeys;
+- (void)inputViewSnapshot:(id *)arg1 withPlatterInsets:(struct UIEdgeInsets *)arg2;
 - (void)updateAnimationAtScale:(float)arg1;
 - (void)finalizeTransition;
-- (void)initializeContext;
+- (void)initializeContextAtPoint:(struct CGPoint)arg1;
 - (void)endTransitionAtPoint:(struct CGPoint)arg1 withScale:(float)arg2;
 - (void)updateTransitionAtPoint:(struct CGPoint)arg1 withScale:(float)arg2 interactive:(_Bool)arg3;
 - (void)beginTransitionAtPoint:(struct CGPoint)arg1 withScale:(float)arg2;

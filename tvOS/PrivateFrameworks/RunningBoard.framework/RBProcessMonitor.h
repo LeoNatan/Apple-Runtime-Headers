@@ -7,22 +7,26 @@
 #import <objc/NSObject.h>
 
 #import <RunningBoard/RBProcessMonitoring-Protocol.h>
+#import <RunningBoard/RBStateCapturing-Protocol.h>
 
 @class NSCountedSet, NSMutableSet, NSString, RBProcessIndex, RBProcessMap;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, RBStateCaptureManaging;
 
-@interface RBProcessMonitor : NSObject <RBProcessMonitoring>
+@interface RBProcessMonitor : NSObject <RBProcessMonitoring, RBStateCapturing>
 {
-    NSObject<OS_dispatch_queue> *_queue;
     RBProcessIndex *_processIndex;
     RBProcessMap *_stateMap;
     RBProcessMap *_suppressedState;
     RBProcessMap *_publishedState;
     NSCountedSet *_suppressedIdentities;
+    struct os_unfair_lock_s _observersLock;
     NSMutableSet *_observers;
+    id <RBStateCaptureManaging> _stateCaptureManager;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (id)_clientStateForServerState:(id)arg1 process:(id)arg2;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *monitorSerializationQueue; // @synthesize monitorSerializationQueue=_queue;
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
@@ -33,6 +37,8 @@
 - (void)_queue_updateServerState:(id)arg1 forProcess:(id)arg2 force:(_Bool)arg3;
 - (void)_queue_unsuppressUpdatesForIdentity:(id)arg1;
 - (void)_queue_suppressUpdatesForIdentity:(id)arg1;
+- (id)captureState;
+@property(readonly, copy, nonatomic) NSString *stateCaptureTitle;
 - (void)unsuppressUpdatesForIdentity:(id)arg1;
 - (void)suppressUpdatesForIdentity:(id)arg1;
 - (void)removeStateForProcessIdentity:(id)arg1;
@@ -44,7 +50,7 @@
 - (id)statesMatchingPredicate:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (id)init;
+- (id)initWithStateCaptureManager:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

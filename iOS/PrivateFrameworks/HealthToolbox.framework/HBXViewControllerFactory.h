@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)unitStringForType:(id)arg1;
 - (void)fetchUserDefaultForKey:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
+- (id)localizedUnitDisplayNameForDisplayType:(id)arg1;
 - (void)updatePreferredUnit:(id)arg1 forType:(id)arg2;
 - (id)preferredUnitForType:(id)arg1;
 - (id)localizedPreferredUnitDisplayNameForType:(id)arg1;

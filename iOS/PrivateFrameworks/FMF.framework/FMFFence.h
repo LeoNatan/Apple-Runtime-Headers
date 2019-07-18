@@ -65,6 +65,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)updateFenceLocation:(id)arg1 placemark:(id)arg2 label:(id)arg3 trigger:(id)arg4 type:(id)arg5 locationType:(unsigned long long)arg6;
 @property(readonly, nonatomic, getter=isRegionAllowed) _Bool regionAllowed;
+@property(readonly, getter=isSupported) _Bool supported;
 @property(readonly, nonatomic, getter=shouldUseCloudKitStore) _Bool useCloudKitStore;
 @property(readonly, nonatomic, getter=shouldUseIDSTrigger) _Bool useIDSTrigger;
 @property(readonly, nonatomic, getter=isOnMe) _Bool onMe;
@@ -72,10 +73,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithRecipient:(id)arg1 location:(id)arg2 placemark:(id)arg3 label:(id)arg4 trigger:(id)arg5 type:(id)arg6 locationType:(unsigned long long)arg7 recurring:(_Bool)arg8;
-- (id)localizedSubtitleString;
-- (id)localizedWillBeNotifiedStringForFollower:(id)arg1;
-- (id)localizedRequestNotificationStringForFollower:(id)arg1;
-- (id)localizedNotificationStringForFollower:(id)arg1;
+- (id)localizedSubtitleStringWithLocationName:(id)arg1;
+- (id)localizedWillBeNotifiedStringForFollower:(id)arg1 locationName:(id)arg2;
+- (id)localizedRequestNotificationStringForFollower:(id)arg1 locationName:(id)arg2;
+- (id)localizedNotificationStringForFollower:(id)arg1 locationName:(id)arg2;
 @property(readonly, nonatomic) NSString *displayLocationName;
 
 @end

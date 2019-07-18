@@ -16,6 +16,7 @@
 @property(readonly, nonatomic) _Bool hasCompleteData;
 @property(retain, nonatomic) NSData *underlyingData;
 @property(readonly, nonatomic) unsigned long long estimatedSizeInBytes;
+@property(readonly, nonatomic) unsigned long long itemInstantiationTime;
 @property(readonly, nonatomic) NSDate *dateReceived;
 @property(nonatomic) long long indexingType;
 @property(readonly, copy, nonatomic) NSString *domainIdentifier;

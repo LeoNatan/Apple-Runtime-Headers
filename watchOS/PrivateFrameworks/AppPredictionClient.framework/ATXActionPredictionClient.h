@@ -22,9 +22,7 @@
 - (void).cxx_destruct;
 - (void)sendFeedbackWithResponse:(id)arg1;
 - (void)getActionPredictionsForContext:(id)arg1 includeBundleIds:(id)arg2 excludeBundleIds:(id)arg3 includeActionTypes:(id)arg4 excludeActionTypes:(id)arg5 limit:(unsigned int)arg6 reply:(CDUnknownBlockType)arg7;
-- (void)getActionsPredictionsFromContext:(id)arg1 includeActionTypes:(id)arg2 excludeActionTypes:(id)arg3 limit:(unsigned int)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)shouldDisplayDailyRoutineForContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)shouldDisplayEverydayShortcutFromContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getActionPredictionsForCandidateBundleIdentifiers:(id)arg1 candidateActionTypes:(id)arg2 consumerType:(unsigned int)arg3 consumerSubType:(unsigned char)arg4 limit:(int)arg5 reply:(CDUnknownBlockType)arg6;
 - (id)actionPredictionsForConsumerSubType:(unsigned char)arg1 limit:(int)arg2;
 - (void)dealloc;

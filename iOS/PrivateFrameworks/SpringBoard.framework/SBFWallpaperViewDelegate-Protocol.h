@@ -7,7 +7,6 @@
 @class SBFWallpaperConfiguration, SBFWallpaperView;
 
 @protocol SBFWallpaperViewDelegate
-- (_Bool)needsWallpaperDimmingTreatment;
 - (SBFWallpaperConfiguration *)wallpaperView:(SBFWallpaperView *)arg1 wallpaperConfigurationIncludingValueTypes:(unsigned long long)arg2;
 @end
 

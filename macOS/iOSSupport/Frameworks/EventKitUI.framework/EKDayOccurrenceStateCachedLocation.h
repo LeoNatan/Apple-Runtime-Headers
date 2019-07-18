@@ -11,15 +11,17 @@
 @interface EKDayOccurrenceStateCachedLocation : NSObject
 {
     BOOL _originalOccurrenceLocationIsPrediction;
+    BOOL _originalHasNewTimeProposed;
     NSString *_generatedLocationString;
     NSString *_originalOccurrenceLocation;
 }
 
+@property(readonly, nonatomic) BOOL originalHasNewTimeProposed; // @synthesize originalHasNewTimeProposed=_originalHasNewTimeProposed;
 @property(readonly, nonatomic) BOOL originalOccurrenceLocationIsPrediction; // @synthesize originalOccurrenceLocationIsPrediction=_originalOccurrenceLocationIsPrediction;
 @property(readonly, nonatomic) NSString *originalOccurrenceLocation; // @synthesize originalOccurrenceLocation=_originalOccurrenceLocation;
 @property(readonly, nonatomic) NSString *generatedLocationString; // @synthesize generatedLocationString=_generatedLocationString;
 - (void).cxx_destruct;
-- (id)initWithGeneratedLocationString:(id)arg1 originalOccurrenceLocation:(id)arg2 originalOccurrenceLocationIsPrediction:(BOOL)arg3;
+- (id)initWithGeneratedLocationString:(id)arg1 originalOccurrenceLocation:(id)arg2 originalOccurrenceLocationIsPrediction:(BOOL)arg3 originalHasNewTimeProposed:(BOOL)arg4;
 
 @end
 

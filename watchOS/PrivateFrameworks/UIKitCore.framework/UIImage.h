@@ -12,8 +12,14 @@
 
 @interface UIImage : NSObject <NSSecureCoding>
 {
+    NSMapTable *_siblingImages;
+    UIImageConfiguration *_configuration;
+    struct UIEdgeInsets _contentInsets;
+    struct CGSize _sizeInPixels;
+    float _baselineOffsetFromBottom;
     struct {
         unsigned int named:1;
+        unsigned int asksContentForImageOrientation:1;
         unsigned int imageOrientation:3;
         unsigned int cached:1;
         unsigned int hasPattern:1;
@@ -27,11 +33,6 @@
         unsigned int areAlignmentRectInsetsExplicit:1;
         unsigned int flipsForRightToLeftLayoutDirection:1;
     } _imageFlags;
-    NSMapTable *_siblingImages;
-    struct UIEdgeInsets _contentInsets;
-    struct CGSize _sizeInPixels;
-    float _baselineOffsetFromBottom;
-    UIImageConfiguration *_configuration;
     UIImageAsset *_imageAsset;
     _UIImageContent *_content;
     struct UIEdgeInsets _alignmentRectInsets;
@@ -78,7 +79,8 @@
 + (id)imageWithData:(id)arg1 scale:(float)arg2;
 + (id)imageWithData:(id)arg1;
 + (id)imageWithContentsOfFile:(id)arg1;
-+ (id)_generateCompositedSymbolImageForAsset:(id)arg1 usingLayers:(id)arg2 configuration:(id)arg3;
++ (id)_generateCompositedSymbolImageForAsset:(id)arg1 usingLayers:(id)arg2 configuration:(id)arg3 alignUsingBaselines:(_Bool)arg4;
++ (id)_systemImageNamed:(id)arg1 fallback:(id)arg2 withConfiguration:(id)arg3;
 + (id)_systemImageNamed:(id)arg1 fallback:(id)arg2;
 + (id)systemImageNamed:(id)arg1 withConfiguration:(id)arg2;
 + (id)systemImageNamed:(id)arg1 compatibleWithTraitCollection:(id)arg2;
@@ -87,6 +89,8 @@
 + (id)__systemImageNamed:(id)arg1 compatibleWithTraitCollection:(id)arg2;
 + (id)__systemImageNamed:(id)arg1;
 + (id)_systemImageNamed:(id)arg1;
++ (id)_imageNamed:(id)arg1 inBundle:(id)arg2 withConfiguration:(id)arg3;
++ (id)imageNamed:(id)arg1 inCFBundle:(struct __CFBundle *)arg2 withConfiguration:(id)arg3;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2 withConfiguration:(id)arg3;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3;
 + (id)_imageNamed:(id)arg1 withTrait:(id)arg2;
@@ -109,6 +113,10 @@
 + (id)_systemCloseImageCompatibleWithTraitCollection:(id)arg1;
 + (id)_systemRemoveImageWithColor:(id)arg1;
 + (id)_systemAddImageWithColor:(id)arg1;
++ (id)strokedCheckmarkImageWithConfiguration:(id)arg1;
++ (id)strokedCheckmarkImage;
++ (id)checkmarkImageWithConfiguration:(id)arg1;
++ (id)checkmarkImage;
 + (id)removeImageWithConfiguration:(id)arg1;
 + (id)removeImage;
 + (id)closeImageWithConfiguration:(id)arg1;
@@ -194,10 +202,11 @@
 - (id)_imageWithContentInsets:(struct UIEdgeInsets)arg1;
 - (void)_setColorForFlattening:(id)arg1;
 - (id)_colorForFlattening;
-- (id)_imageTintedWithColor:(id)arg1 flatten:(_Bool)arg2 withUpdatedCGImage:(_Bool)arg3;
+- (id)_imageTintedWithColor:(id)arg1 flatten:(_Bool)arg2 renderingMode:(int)arg3 withUpdatedCGImage:(_Bool)arg4;
 - (id)flattenedImageWithColor:(id)arg1;
 - (id)_flattenedImageWithTintColor:(id)arg1;
 - (id)imageWithTintColor:(id)arg1;
+- (id)imageWithTintColor:(id)arg1 renderingMode:(int)arg2;
 - (void)_setConfiguration:(id)arg1;
 - (id)imageWithConfiguration:(id)arg1;
 @property(readonly, copy, nonatomic) UIImageConfiguration *configuration;
@@ -232,8 +241,6 @@
 - (void)_setSuppressesAccessibilityHairlineThickening:(_Bool)arg1;
 - (struct CGSize)_sizeWithHairlineThickening:(_Bool)arg1 renderingEffects:(unsigned int)arg2 forTraitCollection:(id)arg3;
 - (id)_imageWithStylePresets:(id)arg1 tintColor:(id)arg2 traitCollection:(id)arg3;
-- (void)_cacheStyledImage:(id)arg1 forPresets:(id)arg2 tintColor:(id)arg3 appearanceName:(id)arg4;
-- (id)_cachedImageStyledWithPresets:(id)arg1 forTintColor:(id)arg2 appearanceName:(id)arg3;
 @property(readonly, nonatomic) UIGraphicsImageRendererFormat *imageRendererFormat;
 - (int)_effectiveRenderingMode;
 @property(readonly, nonatomic) int renderingMode;
@@ -265,6 +272,7 @@
 - (id)imageWithHorizontallyFlippedOrientation;
 - (void)_flipImageOrientationHorizontally;
 @property(readonly, nonatomic) int imageOrientation;
+- (_Bool)_isRTLImage;
 - (int)_imageOrientationConsideringRTLForUserInterfaceLayoutDirection:(int)arg1;
 - (int)_imageOrientationConsideringRTL;
 - (void)setFlipsForRightToLeftLayoutDirection:(_Bool)arg1;
@@ -294,13 +302,15 @@
 - (id)initWithData:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)init;
+- (id)_initWithCompositedSymbolImageLayers:(id)arg1 name:(id)arg2 alignUsingBaselines:(_Bool)arg3;
 - (id)_initWithCompositedSymbolImageLayers:(id)arg1 name:(id)arg2;
+- (id)_initWithFilledSystemImageNamed:(id)arg1 fillColor:(id)arg2 symbolColor:(id)arg3 withName:(id)arg4;
 - (id)_initWithFilledSystemImageNamed:(id)arg1 fillColor:(id)arg2 symbolColor:(id)arg3;
 - (id)_initWithFilledSystemImageNamed:(id)arg1 fillColor:(id)arg2;
 - (id)_defaultConfiguration;
 - (_Bool)_isDecompressing;
-- (id)_initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize)arg2 scale:(float)arg3 renderingIntent:(int)arg4 cache:(_Bool)arg5;
-- (id)_initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize)arg2 scale:(float)arg3 renderingIntent:(int)arg4;
+- (id)_initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize)arg2 scale:(float)arg3 renderingIntent:(unsigned int)arg4 cache:(_Bool)arg5;
+- (id)_initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize)arg2 scale:(float)arg3 renderingIntent:(unsigned int)arg4;
 @property(readonly, nonatomic) int topCapHeight;
 @property(readonly, nonatomic) int leftCapWidth;
 - (id)stretchableImageWithLeftCapWidth:(int)arg1 topCapHeight:(int)arg2;

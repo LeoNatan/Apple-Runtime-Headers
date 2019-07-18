@@ -6,50 +6,43 @@
 
 #import <SearchUI/SearchUICardSectionView.h>
 
-#import <SearchUI/MKMapViewDelegate-Protocol.h>
 #import <SearchUI/NUIContainerViewDelegate-Protocol.h>
 
-@class CLGeocoder, CLPlacemark, MKMapView, MKPinAnnotationView, NSClickGestureRecognizer, NSString, SFMapCardSection, TLKLabel, TLKStackView;
+@class CLPlacemark, MKMapSnapshotter, MKPinAnnotationView, NSClickGestureRecognizer, NSString, SFMapCardSection, TLKImageView, TLKLabel, TLKStackView;
 
-@interface SearchUIMapCardSectionView : SearchUICardSectionView <MKMapViewDelegate, NUIContainerViewDelegate>
+@interface SearchUIMapCardSectionView : SearchUICardSectionView <NUIContainerViewDelegate>
 {
-    BOOL _needsToNotifyDelegateOfLocationUpdate;
-    MKMapView *_mapView;
     TLKLabel *_footnoteDescriptorLabel;
     TLKLabel *_footnoteLabel;
     MKPinAnnotationView *_pinAnnotationView;
     NSClickGestureRecognizer *_tapRecognizer;
     CLPlacemark *_currentPlacemark;
-    CLGeocoder *_geocoder;
     TLKStackView *_labelsStackView;
+    TLKImageView *_snapshotView;
+    MKMapSnapshotter *_mapSnapshotter;
 }
 
 + (id)_postalAddressFromPlacemark:(id)arg1;
 + (BOOL)supportsRecyclingForCardSection:(id)arg1;
+@property(retain, nonatomic) MKMapSnapshotter *mapSnapshotter; // @synthesize mapSnapshotter=_mapSnapshotter;
+@property(retain, nonatomic) TLKImageView *snapshotView; // @synthesize snapshotView=_snapshotView;
 @property(retain, nonatomic) TLKStackView *labelsStackView; // @synthesize labelsStackView=_labelsStackView;
-@property(nonatomic) BOOL needsToNotifyDelegateOfLocationUpdate; // @synthesize needsToNotifyDelegateOfLocationUpdate=_needsToNotifyDelegateOfLocationUpdate;
-@property(retain, nonatomic) CLGeocoder *geocoder; // @synthesize geocoder=_geocoder;
 @property(retain, nonatomic) CLPlacemark *currentPlacemark; // @synthesize currentPlacemark=_currentPlacemark;
 @property(retain, nonatomic) NSClickGestureRecognizer *tapRecognizer; // @synthesize tapRecognizer=_tapRecognizer;
 @property(retain, nonatomic) MKPinAnnotationView *pinAnnotationView; // @synthesize pinAnnotationView=_pinAnnotationView;
 @property(retain, nonatomic) TLKLabel *footnoteLabel; // @synthesize footnoteLabel=_footnoteLabel;
 @property(retain, nonatomic) TLKLabel *footnoteDescriptorLabel; // @synthesize footnoteDescriptorLabel=_footnoteDescriptorLabel;
-@property(retain, nonatomic) MKMapView *mapView; // @synthesize mapView=_mapView;
 - (void).cxx_destruct;
-- (void)mapView:(id)arg1 regionDidChangeAnimated:(BOOL)arg2;
-- (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
-- (BOOL)_pinShouldFloat;
 - (id)_uiColorFromSFColor:(id)arg1;
 - (id)_clLocationFromSFLatLng:(id)arg1;
 - (void)sendMapFeedbackWithTriggerEvent:(unsigned long long)arg1 placemarkData:(id)arg2;
 - (void)_mapButtonPressed;
-- (void)_notifyDelegateOfLocationUpdateIfNeededWithPlacemark:(id)arg1;
-- (void)prepareForDismissal;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
+- (void)dealloc;
 - (void)updateWithRowModel:(id)arg1;
+- (void)_updateSnapshot:(struct CGSize)arg1;
 - (void)updateMapAppearance;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)dealloc;
 - (id)setupContentView;
 
 // Remaining properties

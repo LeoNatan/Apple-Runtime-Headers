@@ -15,6 +15,7 @@
 }
 
 - (void)submit:(CDUnknownBlockType)arg1;
+- (id)submitSynchronous:(out id *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

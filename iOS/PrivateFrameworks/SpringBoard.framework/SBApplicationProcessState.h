@@ -24,8 +24,8 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) _Bool isBeingDebugged;
-@property(readonly, nonatomic) int visibility;
-@property(readonly, nonatomic) int taskState;
+@property(readonly, nonatomic) long long visibility;
+@property(readonly, nonatomic) long long taskState;
 @property(readonly, nonatomic, getter=isForeground) _Bool foreground;
 @property(readonly, nonatomic, getter=isRunning) _Bool running;
 @property(readonly, nonatomic) int pid;

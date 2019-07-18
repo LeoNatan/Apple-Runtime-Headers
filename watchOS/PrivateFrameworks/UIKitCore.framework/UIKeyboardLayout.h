@@ -75,6 +75,7 @@
 @property(nonatomic) unsigned int cursorLocation; // @synthesize cursorLocation=_cursorLocation;
 @property(retain, nonatomic) NSUUID *shiftKeyTouchUUID; // @synthesize shiftKeyTouchUUID=_shiftKeyTouchUUID;
 @property(retain, nonatomic) NSUUID *activeTouchUUID; // @synthesize activeTouchUUID=_activeTouchUUID;
+- (_Bool)isHandwritingPlane;
 - (_Bool)hasActiveContinuousPathInput;
 - (id)simulateTouchForCharacter:(id)arg1 errorVector:(struct CGPoint)arg2 shouldTypeVariants:(_Bool)arg3 baseKeyForVariants:(_Bool)arg4;
 - (id)simulateTouch:(struct CGPoint)arg1;
@@ -99,8 +100,9 @@
 - (_Bool)keyplaneContainsEmojiKey;
 - (_Bool)keyplaneContainsDismissKey;
 - (void)triggerSpaceKeyplaneSwitchIfNecessary;
+- (_Bool)_allowContinuousPathUI;
 - (id)currentKeyplane;
-- (void)traitCollectionDidChange:(id)arg1;
+- (void)traitCollectionDidChange;
 - (float)biasedKeyboardWidthRatio;
 - (int)currentHandBias;
 - (void)cancelTouchesForTwoFingerTapGesture:(id)arg1;
@@ -223,10 +225,12 @@
 - (id)_keyboardLayoutView;
 - (void)longPressAction;
 - (_Bool)isShiftKeyPlaneChooser;
+- (_Bool)isGeometricShiftOrMoreKeyForTouch:(id)arg1;
 - (_Bool)isShiftKeyBeingHeld;
 - (void)setAutoshift:(_Bool)arg1;
 - (void)setShift:(_Bool)arg1;
 - (_Bool)diacriticForwardCompose;
+- (_Bool)isKanaPlane;
 - (_Bool)isAlphabeticPlane;
 - (_Bool)ignoresShiftState;
 - (_Bool)usesAutoShift;

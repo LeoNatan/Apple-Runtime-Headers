@@ -10,7 +10,6 @@
 {
     // Error parsing type: , name: resolver
     // Error parsing type: , name: tracker
-    // Error parsing type: , name: textSizeManagerFactory
     // Error parsing type: , name: articleAccessMap
 }
 

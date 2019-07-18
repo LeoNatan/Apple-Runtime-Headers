@@ -9,7 +9,7 @@
 #import <UIKitCore/UIViewControllerAnimatedTransitioning-Protocol.h>
 #import <UIKitCore/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class NSString, UIView, UIViewController, UIViewPropertyAnimator, _UIPortalView, _UIPreviewInteractionHighlighter, _UIPreviewInteractionViewControllerPresentation, _UITargetedPreview;
+@class NSString, UITargetedPreview, UIView, UIViewController, UIViewPropertyAnimator, _UIPortalView, _UIPreviewInteractionHighlighter, _UIPreviewInteractionViewControllerPresentation;
 @protocol UIViewControllerContextTransitioning;
 
 __attribute__((visibility("hidden")))
@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
     _UIPreviewInteractionHighlighter *_highlighter;
     _UIPreviewInteractionViewControllerPresentation *_presentation;
     _UIPortalView *_presentationSourcePortalView;
-    _UITargetedPreview *_sourcePreview;
+    UITargetedPreview *_sourcePreview;
     UIViewController *_stashedParentViewController;
     UIView *_stashedSuperView;
     CDUnknownBlockType _dismissalCompletion;
@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType dismissalCompletion; // @synthesize dismissalCompletion=_dismissalCompletion;
 @property(retain, nonatomic) UIView *stashedSuperView; // @synthesize stashedSuperView=_stashedSuperView;
 @property(retain, nonatomic) UIViewController *stashedParentViewController; // @synthesize stashedParentViewController=_stashedParentViewController;
-@property(retain, nonatomic) _UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
+@property(retain, nonatomic) UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
 @property(retain, nonatomic) _UIPortalView *presentationSourcePortalView; // @synthesize presentationSourcePortalView=_presentationSourcePortalView;
 @property(retain, nonatomic) _UIPreviewInteractionViewControllerPresentation *presentation; // @synthesize presentation=_presentation;
 @property(retain, nonatomic) _UIPreviewInteractionHighlighter *highlighter; // @synthesize highlighter=_highlighter;

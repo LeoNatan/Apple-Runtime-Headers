@@ -19,6 +19,9 @@
 - (int)buildFigCaptionArrayFromAVCaptionArrayAndSubmitToCDSSession;
 - (id)captionSceneChangesInRange:(CDStruct_e83c9415)arg1;
 - (id)description;
+- (void)setDefaultStyles:(id)arg1;
+- (id)defaultStyles;
+- (BOOL)synchronizeWithCurrentAccessibilityPreferencesWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(nonatomic) struct CGRect bounds;
 @property(copy, nonatomic) NSArray *captions;
 - (void)dealloc;

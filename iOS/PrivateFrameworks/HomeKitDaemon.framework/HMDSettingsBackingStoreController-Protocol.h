@@ -10,6 +10,7 @@
 @protocol HMDSettingTransaction, HMDSettingTransactionReceiverProtocol;
 
 @protocol HMDSettingsBackingStoreController <NSObject>
+- (void)runSettingTransaction:(id <HMDSettingTransaction>)arg1 waitForCloudPush:(_Bool)arg2 completion:(void (^)(NSError *))arg3;
 - (void)runSettingTransaction:(id <HMDSettingTransaction>)arg1 completion:(void (^)(NSError *))arg2;
 - (id <HMDSettingTransaction>)settingTransactionWithName:(NSString *)arg1;
 - (void)start;

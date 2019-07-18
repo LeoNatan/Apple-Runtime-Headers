@@ -8,6 +8,5 @@
 
 @protocol _CPProcessableFeedback <_CPFeedbackJSONObject>
 @property(nonatomic) unsigned long long timestamp;
-@property(readonly, nonatomic) _Bool requiresQueryId;
 @end
 

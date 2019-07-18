@@ -16,6 +16,7 @@
 {
     _Bool _startOfSpeechDetected;
     _Bool _needsToUpdateModel;
+    _Bool _currentRequestCancelled;
     int _notifyToken;
     _EARLanguageDetector *_languageDetector;
     _EARLanguageDetectorAudioBuffer *_audioBuffer;
@@ -23,15 +24,18 @@
     CSAudioCircularBuffer *_circBuffer;
     NSMutableArray *_latestDetectedLanguages;
     unsigned long long _numLatestLanguages;
+    NSString *_languageDetectorAssetHash;
     NSObject<OS_dispatch_queue> *_queue;
     id <CSLanguageDetectorDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <CSLanguageDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(retain, nonatomic) NSString *languageDetectorAssetHash; // @synthesize languageDetectorAssetHash=_languageDetectorAssetHash;
 @property(nonatomic) unsigned long long numLatestLanguages; // @synthesize numLatestLanguages=_numLatestLanguages;
 @property(retain, nonatomic) NSMutableArray *latestDetectedLanguages; // @synthesize latestDetectedLanguages=_latestDetectedLanguages;
 @property(nonatomic) int notifyToken; // @synthesize notifyToken=_notifyToken;
+@property(nonatomic) _Bool currentRequestCancelled; // @synthesize currentRequestCancelled=_currentRequestCancelled;
 @property(nonatomic) _Bool needsToUpdateModel; // @synthesize needsToUpdateModel=_needsToUpdateModel;
 @property(nonatomic) _Bool startOfSpeechDetected; // @synthesize startOfSpeechDetected=_startOfSpeechDetected;
 @property(retain, nonatomic) CSAudioCircularBuffer *circBuffer; // @synthesize circBuffer=_circBuffer;
@@ -42,15 +46,16 @@
 - (void)startOfSpeechDetector:(id)arg1 foundStartSampleAt:(unsigned long long)arg2;
 - (void)languageDetectorDidCompleteProcessing:(id)arg1 loggingInfo:(id)arg2;
 - (void)languageDetector:(id)arg1 result:(id)arg2;
-- (void)languageDetector:(id)arg1 confidences:(id)arg2;
 - (void)_logSoSResult:(id)arg1 toPath:(id)arg2;
 - (id)_getDefaultValues;
 - (id)_readJsonDictionaryAt:(id)arg1;
 - (void)_setNumLatestLangFromConfigFile:(id)arg1;
 - (id)_constructLangPriors;
 - (void)setMostRecentRecognitionLanguage:(id)arg1;
+- (void)_recordRecognitionLanguage:(id)arg1;
 - (void)recordRecognitionLanguage:(id)arg1;
-- (void)_initializeStartOfSpeechDetector:(id)arg1 option:(id)arg2;
+- (void)_initializeStartOfSpeechDetector:(id)arg1;
+- (void)cancelCurrentRequest;
 - (void)_resetStartOfSpeechDetector;
 - (void)endAudio;
 - (void)addSamples:(id)arg1 numSamples:(unsigned long long)arg2;

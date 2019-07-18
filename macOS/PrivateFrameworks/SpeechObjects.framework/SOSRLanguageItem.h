@@ -12,7 +12,6 @@
 
 + (id)engineIdentifierFromLocaleIdentifier:(id)arg1;
 + (id)tagNameFromLocaleIdentifier:(id)arg1;
-+ (id)visibleSRLanguageItemsTable;
 + (void)setVisibilityValue:(unsigned long long)arg1 forLocaleIdentifier:(id)arg2 usingOffline:(BOOL)arg3;
 + (unsigned long long)visibiltyValueForLocaleIdentifier:(id)arg1 entryExists:(char *)arg2 usingOffline:(BOOL)arg3;
 + (void)setVisibleSRLanguageItemsTable:(id)arg1 usingOffline:(BOOL)arg2;
@@ -20,12 +19,14 @@
 + (id)preferredDictationLocaleIdentifierFromAvaiableLocaleIdentifiers:(id)arg1 defaultLocaleIdentifier:(id)arg2;
 + (unsigned long long)bestIndexFromLanguageItems:(id)arg1 forLocaleIdentifier:(id)arg2;
 + (id)languageItemFromLanguageItems:(id)arg1 matchingLocaleIdentifier:(id)arg2;
++ (id)languageItemsFromLocaleIdentifiers:(id)arg1 usingOffline:(BOOL)arg2;
 + (id)languageItemsFromLocaleIdentifiers:(id)arg1;
 + (id)downloadableLocalSRLanguageItems;
 + (id)availableLocalRecognizerLanguageItems;
 - (id)description;
 - (void)dealloc;
 - (id)initWithLocaleIdentifier:(id)arg1;
+- (id)initWithLocaleIdentifier:(id)arg1 usingOffline:(BOOL)arg2;
 - (id)initWithDownloadableBundleIdentifier:(id)arg1 properties:(id)arg2;
 
 @end

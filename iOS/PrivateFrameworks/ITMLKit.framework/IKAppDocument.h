@@ -9,7 +9,7 @@
 #import <ITMLKit/IKJSDOMDocumentAppBridgeInternal-Protocol.h>
 #import <ITMLKit/IKStyleMediaQueryEvaluator-Protocol.h>
 
-@class IKAppContext, IKDOMDocument, IKHeadElement, IKJSNavigationDocument, IKJSObject, IKViewElement, IKViewElementStyleFactory, NSError, NSMapTable, NSMutableDictionary, NSString;
+@class IKAppContext, IKDOMDocument, IKHeadElement, IKJSNavigationDocument, IKJSObject, IKViewElement, IKViewElementStyleFactory, NSDictionary, NSError, NSMapTable, NSMutableDictionary, NSString;
 @protocol IKAppDocumentDelegate, IKNetworkRequestLoader;
 
 @interface IKAppDocument : NSObject <IKJSDOMDocumentAppBridgeInternal, IKStyleMediaQueryEvaluator>
@@ -32,6 +32,8 @@
     NSError *_error;
     id <IKAppDocumentDelegate> _delegate;
     double _impressionThreshold;
+    double _impressionViewablePercentage;
+    NSDictionary *_cachedSnapshotImpressionsMap;
     NSMutableDictionary *_impressions;
     IKJSObject *_owner;
     IKViewElementStyleFactory *_styleFactory;
@@ -41,6 +43,8 @@
 @property(retain, nonatomic) IKViewElementStyleFactory *styleFactory; // @synthesize styleFactory=_styleFactory;
 @property(readonly, nonatomic) __weak IKJSObject *owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) NSMutableDictionary *impressions; // @synthesize impressions=_impressions;
+@property(retain, nonatomic) NSDictionary *cachedSnapshotImpressionsMap; // @synthesize cachedSnapshotImpressionsMap=_cachedSnapshotImpressionsMap;
+@property(nonatomic) double impressionViewablePercentage; // @synthesize impressionViewablePercentage=_impressionViewablePercentage;
 @property(nonatomic) double impressionThreshold; // @synthesize impressionThreshold=_impressionThreshold;
 @property(getter=isSubtreeUpdated) _Bool subtreeUpdated; // @synthesize subtreeUpdated=_subtreeUpdated;
 @property(nonatomic, getter=isUpdated) _Bool updated; // @synthesize updated=_updated;
@@ -73,6 +77,7 @@
 - (void)updateForDocument:(id)arg1;
 - (id)retrieveJSElementForViewElement:(id)arg1 jsContext:(id)arg2;
 - (void)setViewElementStylesDirty;
+- (void)snapshotImpressionsForViewElements:(id)arg1;
 - (void)recordImpressionsForViewElements:(id)arg1;
 - (void)onViewAttributesChangeWithArguments:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)onPerformanceMetricsChange:(id)arg1;

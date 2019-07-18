@@ -13,6 +13,8 @@
 }
 
 + (BOOL)hasLibrary;
++ (id)pluralFilterDescription;
++ (id)filterDescription;
 + (id)countDescription;
 + (id)pluralTypeDescription;
 + (id)typeDescription;

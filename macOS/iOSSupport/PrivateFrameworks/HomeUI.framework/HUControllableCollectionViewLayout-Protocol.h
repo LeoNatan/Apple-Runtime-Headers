@@ -6,11 +6,11 @@
 
 #import <HomeUI/NSObject-Protocol.h>
 
-@class HUControllableCollectionViewLayoutOverrideAttributes, NSIndexPath;
+@class HFItem, HUControllableCollectionViewLayoutOverrideAttributes, NSIndexPath, NSSet;
 
 @protocol HUControllableCollectionViewLayout <NSObject>
-- (void)clearAllOverrideAttributes;
-- (void)clearOverrideAttributesForItemAtIndexPath:(NSIndexPath *)arg1;
-- (void)applyOverrideAttributes:(HUControllableCollectionViewLayoutOverrideAttributes *)arg1 toItemAtIndexPath:(NSIndexPath *)arg2;
+- (void)clearAllOverrideAttributesForItems:(NSSet *)arg1;
+- (void)clearOverrideAttributesForItem:(HFItem *)arg1 atIndexPath:(NSIndexPath *)arg2;
+- (void)applyOverrideAttributes:(HUControllableCollectionViewLayoutOverrideAttributes *)arg1 toItem:(HFItem *)arg2 atIndexPath:(NSIndexPath *)arg3;
 @end
 

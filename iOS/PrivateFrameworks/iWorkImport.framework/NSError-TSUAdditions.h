@@ -44,6 +44,7 @@
 - (void)tsu_enumerateErrorUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool tsu_isNoPermissionError;
 @property(readonly, nonatomic) _Bool tsu_isNoSuchFileError;
+@property(readonly, nonatomic) _Bool tsu_isFileExistsError;
 @property(readonly, nonatomic) _Bool tsu_isCancelError;
 @property(readonly, nonatomic) _Bool tsu_isOutOfSpaceError;
 - (id)tsu_localizedAlertMessage;

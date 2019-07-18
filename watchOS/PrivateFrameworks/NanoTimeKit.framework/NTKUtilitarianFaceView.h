@@ -59,7 +59,7 @@
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
 - (int)_legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
-- (id)_curvedPickerMaskForSlot:(id)arg1;
+- (id)_pickerMaskForSlot:(id)arg1;
 - (void)_curvedComplicationCircleRadius:(float *)arg1 centerAngle:(float *)arg2 maxAngularWidth:(float *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(id)arg6;
 - (_Bool)_slotSupportsCurvedText:(id)arg1;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;

@@ -8,19 +8,19 @@
 
 #import <Preferences/PSKeyboardNavigationSearchResultsController-Protocol.h>
 
-@class NSArray, NSObject, _SUIKSearchResultsUpdateOperation, _UICollectionViewDiffableDataSource;
+@class NSArray, NSObject, UICollectionViewDiffableDataSource, _SUIKSearchResultsUpdateOperation;
 @protocol SUIKSearchResultsCollectionViewControllerDelegate;
 
 @interface SUIKSearchResultsCollectionViewController : UICollectionViewController <PSKeyboardNavigationSearchResultsController>
 {
     NSObject<SUIKSearchResultsCollectionViewControllerDelegate> *_delegate;
     NSArray *_results;
-    _UICollectionViewDiffableDataSource *_diffableDataSource;
+    UICollectionViewDiffableDataSource *_diffableDataSource;
     _SUIKSearchResultsUpdateOperation *_updateOperation;
 }
 
 @property(retain, nonatomic) _SUIKSearchResultsUpdateOperation *updateOperation; // @synthesize updateOperation=_updateOperation;
-@property(retain, nonatomic) _UICollectionViewDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
+@property(retain, nonatomic) UICollectionViewDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(nonatomic) __weak NSObject<SUIKSearchResultsCollectionViewControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

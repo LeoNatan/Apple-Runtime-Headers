@@ -15,32 +15,31 @@ __attribute__((visibility("hidden")))
     BOOL _needsAutocorrection;
     BOOL _deferredAutocorrection;
     BOOL _requestedAutocorrection;
-    BOOL _preserveTextSuggestion;
     TIAutocorrectionList *_autocorrectionList;
     TIAutocorrectionList *_textSuggestionList;
     NSHashTable *_autocorrectionObservers;
 }
 
-+ (BOOL)isPersistentTextSuggestionFromApp:(id)arg1;
-+ (BOOL)isTextSuggestionFromApp:(id)arg1;
 @property(retain, nonatomic) NSHashTable *autocorrectionObservers; // @synthesize autocorrectionObservers=_autocorrectionObservers;
-@property(nonatomic) BOOL preserveTextSuggestion; // @synthesize preserveTextSuggestion=_preserveTextSuggestion;
 @property(nonatomic) BOOL requestedAutocorrection; // @synthesize requestedAutocorrection=_requestedAutocorrection;
 @property(nonatomic) BOOL deferredAutocorrection; // @synthesize deferredAutocorrection=_deferredAutocorrection;
 @property(nonatomic) BOOL needsAutocorrection; // @synthesize needsAutocorrection=_needsAutocorrection;
 @property(retain, nonatomic) TIAutocorrectionList *textSuggestionList; // @synthesize textSuggestionList=_textSuggestionList;
 - (void).cxx_destruct;
 - (void)requestAutocorrectionWithExecutionContext:(id)arg1;
+- (BOOL)hasContinuousPathConversions;
 - (BOOL)hasAutofillCandidates;
 - (BOOL)hasCaseableAutocorrection;
 - (BOOL)hasAutocorrection;
+- (void)clearAutofillAndTextSuggestions;
+- (void)clearAutocorrectionAndNotifyObservers:(BOOL)arg1;
 - (void)clearAutocorrection;
-- (void)clearAutocorrectionButPreserveTextSuggestion:(BOOL)arg1;
 - (void)setNeedsAutocorrection;
 @property(retain, nonatomic) TIAutocorrectionList *autocorrectionList; // @synthesize autocorrectionList=_autocorrectionList;
 - (void)_setAutocorrectionList:(id)arg1 notifyObserver:(BOOL)arg2;
 @property(readonly, nonatomic) TIKeyboardCandidate *autocorrection;
 - (void)updateSuggestionViews;
+- (void)_notifyObserversOfClearedAutocorrectionList;
 - (void)_notifyObserversOfUpdatedAutocorrectionList:(id)arg1;
 - (void)removeAutocorrectionObserver:(id)arg1;
 - (void)addAutocorrectionObserver:(id)arg1;

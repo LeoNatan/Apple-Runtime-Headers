@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <iWorkImport/TSDRepDynamicOverrideProvider-Protocol.h>
+#import <iWorkImport/TSDDynamicOverrideProvider-Protocol.h>
 
 @class NSString, TSDFreehandDrawingAnimationPlaybackTiming, TSDFreehandDrawingInfo;
 
 __attribute__((visibility("hidden")))
-@interface TSDFreehandDrawingAnimationPlaybackSession : NSObject <TSDRepDynamicOverrideProvider>
+@interface TSDFreehandDrawingAnimationPlaybackSession : NSObject <TSDDynamicOverrideProvider>
 {
     TSDFreehandDrawingInfo *_drawingInfo;
     TSDFreehandDrawingAnimationPlaybackTiming *_timing;
@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
 - (id)dynamicOverrideForRep:(id)arg1;
+- (id)dynamicOverrideForLayout:(id)arg1;
 - (void)p_updateShouldParameterizeStrokes;
 - (double)visibilityOfChild:(id)arg1;
 - (id)initWithFreehandDrawingInfo:(id)arg1 duration:(double)arg2 framesPerSecond:(double)arg3;

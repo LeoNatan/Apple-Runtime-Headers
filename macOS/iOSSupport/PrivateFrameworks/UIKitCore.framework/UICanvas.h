@@ -14,7 +14,6 @@
 }
 
 @property(nonatomic) struct CGSize contentMinSize; // @synthesize contentMinSize=_contentMinSize;
-- (id)canvasToolbar;
 
 // Remaining properties
 @property(readonly, nonatomic) _UICanvasDefinition *_definition; // @dynamic _definition;

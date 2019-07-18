@@ -19,6 +19,7 @@
     unsigned int _maxNumberOfAttachments;
 }
 
++ (id)specialPolicyForFirstPartyApps;
 + (id)defaultPolicyForCalls;
 + (id)defaultPolicyForMessages;
 + (id)defaultPolicyForMeetings;

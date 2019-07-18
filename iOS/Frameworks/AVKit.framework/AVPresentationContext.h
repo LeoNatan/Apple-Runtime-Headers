@@ -6,17 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class AVPresentationContainerView, AVPresentationContextTransition, AVPresentationController, UIView, UIViewController, UIWindow;
+@class AVFullScreenViewController, AVPresentationContainerView, AVPresentationContextTransition, AVPresentationController, UIView, UIViewController, UIWindow;
 @protocol UIViewControllerContextTransitioning;
 
 __attribute__((visibility("hidden")))
 @interface AVPresentationContext : NSObject
 {
+    _Bool _allowsSecondWindowPresentations;
     _Bool _allowsPausingWhenTransitionCompletes;
     UIView *_sourceView;
     UIView *_touchBlockingView;
     UIView *_backgroundView;
     id <UIViewControllerContextTransitioning> _transitionContext;
+    UIWindow *_rotatableSecondWindow;
+    AVFullScreenViewController *_avFullScreenViewController;
     AVPresentationContextTransition *_presentingTransition;
     AVPresentationContextTransition *_dismissingTransition;
     AVPresentationController *_presentationController;
@@ -27,6 +30,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool allowsPausingWhenTransitionCompletes; // @synthesize allowsPausingWhenTransitionCompletes=_allowsPausingWhenTransitionCompletes;
 @property(retain, nonatomic) AVPresentationContextTransition *dismissingTransition; // @synthesize dismissingTransition=_dismissingTransition;
 @property(retain, nonatomic) AVPresentationContextTransition *presentingTransition; // @synthesize presentingTransition=_presentingTransition;
+@property(readonly, nonatomic) __weak AVFullScreenViewController *avFullScreenViewController; // @synthesize avFullScreenViewController=_avFullScreenViewController;
+@property(retain, nonatomic) UIWindow *rotatableSecondWindow; // @synthesize rotatableSecondWindow=_rotatableSecondWindow;
+@property(nonatomic) _Bool allowsSecondWindowPresentations; // @synthesize allowsSecondWindowPresentations=_allowsSecondWindowPresentations;
 @property(nonatomic) __weak id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(readonly, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic) UIView *touchBlockingView; // @synthesize touchBlockingView=_touchBlockingView;
@@ -43,6 +49,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasActiveTransition;
 @property(readonly, nonatomic) __weak UIViewController *presentedViewController;
 @property(readonly, nonatomic) __weak AVPresentationContainerView *presentedView;
+@property(readonly, nonatomic) __weak AVFullScreenViewController *rotatableWindowViewController;
 @property(readonly, nonatomic) __weak UIWindow *presentationWindow;
 - (id)presentingView;
 @property(readonly, nonatomic) __weak UIView *containerView;

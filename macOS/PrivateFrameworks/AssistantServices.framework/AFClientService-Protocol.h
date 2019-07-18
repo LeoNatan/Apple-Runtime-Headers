@@ -25,8 +25,6 @@
 - (oneway void)adviseSessionArbiterToContinueWithPreviousWinner:(BOOL)arg1;
 - (oneway void)reportIssueForError:(NSError *)arg1 type:(long long)arg2 context:(NSDictionary *)arg3;
 - (oneway void)updateSpeechSynthesisRecord:(AFSpeechSynthesisRecord *)arg1;
-- (oneway void)setMyriadDecisionResult:(BOOL)arg1;
-- (oneway void)setShouldWaitForMyriad:(BOOL)arg1;
 - (oneway void)endUpdateOutputAudioPower;
 - (oneway void)beginUpdateOutputAudioPowerWithReply:(void (^)(AFXPCWrapper *))arg1;
 - (oneway void)stopAllAudioPlaybackRequests:(BOOL)arg1;

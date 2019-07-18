@@ -15,6 +15,7 @@
 @interface _INPBMediaItemValue : PBCodable <_INPBMediaItemValue, NSSecureCoding, NSCopying>
 {
     CDStruct_f953fb60 _has;
+    BOOL __encodeLegacyGloryData;
     int _type;
     NSString *_artist;
     _INPBImageValue *_artwork;
@@ -28,6 +29,7 @@
 + (BOOL)supportsSecureCoding;
 + (Class)topicsType;
 + (Class)namedEntitiesType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSArray *topics; // @synthesize topics=_topics;

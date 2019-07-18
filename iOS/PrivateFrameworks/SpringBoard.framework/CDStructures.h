@@ -135,6 +135,7 @@ struct WGWidgetListSettings {
     unsigned long long _field1;
     _Bool _field2;
     _Bool _field3;
+    _Bool _field4;
 };
 
 struct _NSRange {
@@ -238,8 +239,9 @@ typedef struct {
     unsigned int delegateWantsDidChangeStatusBarHiddenTo:1;
     unsigned int delegateWantsDidChangeStatusBarOrientationTo:1;
     unsigned int delegateWantsDidChangeStatusBarStyleOverridesToSuppressTo:1;
+    unsigned int delegateWantsDidChangeStatusBarAvoidanceFrameTo:1;
     unsigned int delegateWantsDidInvalidateStatusBarDescriptionForSceneWithIdentifier:1;
-} CDStruct_542159fd;
+} CDStruct_418fc906;
 
 typedef struct {
     double value;

@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIScrollViewDelegate-Protocol.h>
 
-@class CABackdropLayer, CAGradientLayer, NSString, UIInterpolatingMotionEffect, UIScrollView, UIView, UIVisualEffectView, _UIBarBackground, _UIBarBackgroundLayoutLegacy;
+@class CABackdropLayer, CAGradientLayer, NSString, UIFocusAnimationCoordinator, UIFocusUpdateContext, UIInterpolatingMotionEffect, UIScrollView, UITabBarButton, UIView, _UIBarBackground, _UIBarBackgroundLayoutLegacy;
 
 __attribute__((visibility("hidden")))
 @interface _UITabBarVisualProviderTVOS : _UITabBarVisualProvider <UIScrollViewDelegate>
@@ -17,43 +17,42 @@ __attribute__((visibility("hidden")))
     _UIBarBackgroundLayoutLegacy *_backgroundViewLayout;
     UIView *_customBackgroundView;
     UIScrollView *_itemsScrollView;
-    UIView *_floatingBackgroundContainerView;
-    UIView *_floatingItemsScrollContainerView;
+    UIView *_backgroundContainerView;
+    UIView *_itemsScrollContainerView;
     CAGradientLayer *_scrollViewMask;
     CABackdropLayer *_maskBackdropLayer;
     UIView *_selectionPlatterContainerView;
     UIView *_selectionPlatterView;
-    _Bool _forceFocusedState;
-    UIVisualEffectView *_selectedLabelEffectView;
-    UIView *_snapshotOriginalView;
-    UIView *_labelMaskView;
-    UIInterpolatingMotionEffect *_floatingPlatterMotionEffect;
-    _Bool _snapshotInProgress;
+    UIInterpolatingMotionEffect *_motionEffect;
+    UITabBarButton *_prevSelectedButton;
+    UIFocusUpdateContext *_focusContext;
+    UIFocusAnimationCoordinator *_focusAnimationCoordinator;
+    _Bool _shouldAnimateSelectionPlatterInPlace;
+    _Bool _prevFocused;
+    _Bool _focused;
+    UITabBarButton *_selectedButton;
 }
 
+@property(nonatomic) _Bool focused; // @synthesize focused=_focused;
+@property(nonatomic) __weak UITabBarButton *selectedButton; // @synthesize selectedButton=_selectedButton;
 - (void).cxx_destruct;
-- (struct CGRect)_getSnapshotFocusedRectForView:(id)arg1;
-- (struct CGRect)_getRectForPlatterForView:(id)arg1 withFocus:(_Bool)arg2 finalSize:(_Bool)arg3 clippedToView:(id)arg4;
-- (struct CGRect)_getRectForPlatterForView:(id)arg1 withFocus:(_Bool)arg2 finalSize:(_Bool)arg3;
-- (void)_updatePlatterRectWithSelectedItem:(id)arg1 forceFocused:(_Bool)arg2;
+- (struct CGRect)__getRectForPlatterForView:(id)arg1 withFocus:(_Bool)arg2 finalSize:(_Bool)arg3;
+- (struct CGRect)_getRectForFocusedSelectionPlatterForView:(id)arg1 finalSize:(_Bool)arg2;
+- (struct CGRect)_getRectForUnfocusedSelectionPlatterForView:(id)arg1;
+- (void)_updatePlatterRectWithSelectedItem:(id)arg1;
 - (struct CGRect)_getFadeFrameRight:(_Bool)arg1;
 - (void)_updateScrollContainerMaskIfNeeded;
-- (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
-- (void)_updateFloatingScrollViewContentOffsetWithSelectedView:(id)arg1 animated:(_Bool)arg2;
-- (void)_updateFloatingPlatterMotionEffectWithContext:(id)arg1;
-- (void)_updateLabelSnapshotStateToMatchView:(id)arg1 forceFocusState:(_Bool)arg2 focused:(_Bool)arg3;
-- (id)_makeLabelSnapshotWith:(id)arg1;
-- (long long)_compositingMode;
-- (void)_updateLabelColorEffectViewEffectWithFocus:(_Bool)arg1;
-- (void)_updateLabelColorEffectViewEffect;
-- (void)_updateColorsWithFocus:(_Bool)arg1 titleAnimationDuration:(double)arg2 withDelay:(double)arg3;
+- (void)_updateMotionEffect;
 - (void)_updateColorsWithTitleAnimationDuration:(double)arg1 withDelay:(double)arg2;
 - (void)_updateColors;
-- (void)_updateFloatingPlatterViewWithFocusContext:(id)arg1 withFocusAnimationCoordinator:(id)arg2;
-- (void)_updateFloatingPlatterView;
-- (void)_setForceFocusState:(_Bool)arg1;
-- (void)_layoutFloatingTabBarItems;
+- (void)_updateViews;
+- (void)_updateBackground;
+- (void)_updateBackgroundLegacy;
+- (void)_updateAccessoryViews;
+- (void)_layoutTabBarItems;
+- (void)_configureItems:(id)arg1;
+- (id)_createViewForTabBarItem:(id)arg1;
 - (void)_shim_updateTabBarItemView:(id)arg1;
 - (void)_shim_layoutItemsOnly;
 - (void)_shim_updateFocusHighlightVisibility;
@@ -62,20 +61,16 @@ __attribute__((visibility("hidden")))
 - (void)_shim_setAccessoryView:(id)arg1;
 - (id)_shim_compatibilityBackgroundView;
 - (void)_shim_setCustomBackgroundView:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusedView;
 - (void)setSemanticContentAttribute:(long long)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)_updateAccessoryViews;
 - (void)layoutSubviews;
-- (void)updateBackgroundGroupName;
-- (void)_updateBackground;
-- (void)_updateBackgroundLegacy;
-- (void)_configureItems:(id)arg1;
 - (struct CGSize)intrinsicContentSizeGivenSize:(struct CGSize)arg1;
 - (void)updateArchivedSubviews:(id)arg1;
-- (id)createViewForTabBarItem:(id)arg1;
 - (void)setUseModernAppearance:(_Bool)arg1;
+- (void)updateBackgroundGroupName;
 - (void)changeLayout;
 - (void)changeAppearance;
 - (void)changeSelectedItem:(id)arg1 fromItem:(id)arg2;

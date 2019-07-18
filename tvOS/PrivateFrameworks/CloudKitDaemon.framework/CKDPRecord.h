@@ -31,7 +31,7 @@
     CKDPDateStatistics *_timeStatistics;
     NSMutableArray *_tombstonedPublicKeyIDs;
     CKDPRecordType *_type;
-    NSData *_zoneRecordProtectionInfoPublicKeyID;
+    NSData *_zoneishMasterKeyId;
     struct {
         unsigned int permission:1;
     } _has;
@@ -42,7 +42,7 @@
 + (Class)conflictLoserEtagsType;
 + (Class)fieldsType;
 + (id)recordFromData:(id)arg1;
-@property(retain, nonatomic) NSData *zoneRecordProtectionInfoPublicKeyID; // @synthesize zoneRecordProtectionInfoPublicKeyID=_zoneRecordProtectionInfoPublicKeyID;
+@property(retain, nonatomic) NSData *zoneishMasterKeyId; // @synthesize zoneishMasterKeyId=_zoneishMasterKeyId;
 @property(retain, nonatomic) NSMutableArray *tombstonedPublicKeyIDs; // @synthesize tombstonedPublicKeyIDs=_tombstonedPublicKeyIDs;
 @property(retain, nonatomic) CKDPRecordStableUrl *stableUrl; // @synthesize stableUrl=_stableUrl;
 @property(retain, nonatomic) CKDPRecordChainParent *chainParent; // @synthesize chainParent=_chainParent;
@@ -71,7 +71,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) _Bool hasZoneRecordProtectionInfoPublicKeyID;
+@property(readonly, nonatomic) _Bool hasZoneishMasterKeyId;
 - (id)tombstonedPublicKeyIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)tombstonedPublicKeyIDsCount;
 - (void)addTombstonedPublicKeyIDs:(id)arg1;

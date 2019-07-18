@@ -53,7 +53,6 @@
 - (id)enumeratorForSearchQuery:(id)arg1 error:(id *)arg2;
 - (id)enumeratorForContainerItemIdentifier:(id)arg1 error:(id *)arg2;
 - (id)itemForIdentifier:(id)arg1 error:(id *)arg2;
-- (id)nsfpItemFromLocalItem:(id)arg1 needsRemap:(BOOL)arg2;
 - (id)nsfpItemFromLocalItem:(id)arg1;
 - (id)nsfpItemFromNotification:(id)arg1;
 - (BOOL)_prepareAndCheckLoggedInOrError:(id *)arg1;

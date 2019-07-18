@@ -10,7 +10,8 @@
 #import <PhotosUICore/PXGNamedImageSource-Protocol.h>
 #import <PhotosUICore/PXGStringSource-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, PXAssetCollectionReference, PXCuratedLibraryChapterHeaderLayoutSpec, PXNumberAnimator;
+@class NSArray, NSDictionary, NSObject, NSString, PXAssetCollectionReference, PXCuratedLibraryChapterHeaderLayoutSpec, PXNumberAnimator;
+@protocol OS_dispatch_queue;
 
 @interface PXCuratedLibraryChapterHeaderLayout : PXGLayout <PXChangeObserver, PXGStringSource, PXGNamedImageSource>
 {
@@ -21,6 +22,8 @@
     long long _alternateAppearanceFadeDirection;
     double _alternateAppearanceFadeStartThresholdDistance;
     NSArray *_itemIdentifierBySpriteIndex;
+    long long _asyncDateGeneration;
+    NSObject<OS_dispatch_queue> *_asyncDateQueue;
     BOOL _presentedAlternateAppearance;
     PXAssetCollectionReference *_assetCollectionReference;
     PXCuratedLibraryChapterHeaderLayoutSpec *_spec;
@@ -62,6 +65,7 @@
 - (void)visibleRectDidChange;
 @property(readonly, nonatomic) struct CGSize subtitleSize; // @synthesize subtitleSize=_subtitleSize;
 @property(readonly, nonatomic) struct CGSize titleSize; // @synthesize titleSize=_titleSize;
+- (void)_handleAsyncTitle:(id)arg1 generation:(long long)arg2;
 - (void)_updateTitleAndSubtitle;
 - (void)_invalidateAttributedSubtitle;
 - (void)_invalidateAttributedTitle;

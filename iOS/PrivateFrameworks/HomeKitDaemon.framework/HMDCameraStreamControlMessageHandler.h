@@ -10,7 +10,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDAccessory, HMDCameraResidentMessageHandler, HMDCameraSettingsControlManager, HMDCameraStreamManagerSession, HMDCameraStreamSnapshotHandler, HMDCameraSupportedConfigurationCache, HMDNotificationRegistration, HMDService, HMFNetMonitor, NSObject, NSString, NSUUID;
+@class HMDCameraResidentMessageHandler, HMDCameraSettingsControlManager, HMDCameraStreamManagerSession, HMDCameraStreamSnapshotHandler, HMDCameraSupportedConfigurationCache, HMDHAPAccessory, HMDNotificationRegistration, HMDService, HMFNetMonitor, NSObject, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HMDCameraStreamControlMessageHandler : HMFObject <HMFTimerDelegate, HMDCameraStreamControlManagerDelegate, HMFLogging>
@@ -20,7 +20,7 @@
     HMDNotificationRegistration *_notificationRegistration;
     HMDCameraResidentMessageHandler *_residentMessageHandler;
     NSObject<OS_dispatch_queue> *_workQueue;
-    HMDAccessory *_accessory;
+    HMDHAPAccessory *_accessory;
     CDUnknownBlockType _messageSender;
     NSUUID *_uniqueIdentifier;
     NSUUID *_profileUniqueIdentifier;
@@ -38,12 +38,13 @@
 @property(readonly, nonatomic) NSUUID *profileUniqueIdentifier; // @synthesize profileUniqueIdentifier=_profileUniqueIdentifier;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly, nonatomic) CDUnknownBlockType messageSender; // @synthesize messageSender=_messageSender;
-@property(readonly, nonatomic) __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
+@property(readonly, nonatomic) __weak HMDHAPAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) HMDCameraResidentMessageHandler *residentMessageHandler; // @synthesize residentMessageHandler=_residentMessageHandler;
 @property(readonly, nonatomic) HMDNotificationRegistration *notificationRegistration; // @synthesize notificationRegistration=_notificationRegistration;
 @property(readonly, nonatomic) HMDService *streamManagementService; // @synthesize streamManagementService=_streamManagementService;
 - (void).cxx_destruct;
+- (void)handleCameraSettingsDidChangeNotification:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)_resetCurrentStreamState:(id)arg1;

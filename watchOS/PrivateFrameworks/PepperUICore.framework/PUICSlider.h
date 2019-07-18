@@ -74,7 +74,7 @@
 - (id)_minTrackView;
 - (id)_maxTrackView;
 - (void)_cancelTouchTarget;
-- (int)_touchTargetFromTouches:(id)arg1;
+- (int)_touchTargetFromTouches:(id)arg1 event:(id)arg2;
 - (float)_percentFillForValue:(float)arg1;
 - (struct CGRect)_fillBoundsForValue:(float)arg1;
 - (void)_updateValueViews;

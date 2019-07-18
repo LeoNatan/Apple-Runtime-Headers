@@ -57,10 +57,12 @@
     BOOL _haveParsedFakeResponseData;
     CoreDAVErrorItem *_forbiddenErrorItem;
     NSString *_uniqueID;
+    BOOL _ignoresGuardianRestrictions;
 }
 
 + (id)stringFromDepth:(int)arg1;
 + (unsigned int)uniqueQueryID;
+@property(nonatomic) BOOL ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions=_ignoresGuardianRestrictions;
 @property(retain, nonatomic) NSDictionary *requestProperties; // @synthesize requestProperties=_requestProperties;
 @property(nonatomic) BOOL allowAutomaticRedirects; // @synthesize allowAutomaticRedirects=_allowAutomaticRedirects;
 @property(nonatomic) unsigned long long totalBytesReceived; // @synthesize totalBytesReceived=_totalBytesReceived;

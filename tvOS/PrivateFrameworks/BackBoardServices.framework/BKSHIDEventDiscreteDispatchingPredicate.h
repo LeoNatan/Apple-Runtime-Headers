@@ -15,13 +15,13 @@
 
 @interface BKSHIDEventDiscreteDispatchingPredicate : NSObject <NSSecureCoding, BSDescriptionProviding, NSCopying, NSMutableCopying>
 {
-    NSSet *_displays;
+    NSSet *_senderDescriptors;
     NSSet *_descriptors;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSSet *descriptors; // @synthesize descriptors=_descriptors;
-@property(readonly, copy, nonatomic) NSSet *displays; // @synthesize displays=_displays;
+@property(readonly, copy, nonatomic) NSSet *senderDescriptors; // @synthesize senderDescriptors=_senderDescriptors;
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
@@ -37,7 +37,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)containsDescriptor:(id)arg1;
 - (_Bool)specifiesDescriptor:(id)arg1;
-- (id)_initWithDisplays:(id)arg1 descriptors:(id)arg2;
+@property(readonly, copy, nonatomic) NSSet *displays; // @dynamic displays;
+- (id)_initWithSourceDescriptors:(id)arg1 descriptors:(id)arg2;
 - (id)init;
 
 // Remaining properties

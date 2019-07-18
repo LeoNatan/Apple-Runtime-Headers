@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     NSView *_realBaselineView;
 }
 
++ (id)decorateView:(id)arg1 withText:(id)arg2;
 @property __weak NSView *realBaselineView; // @synthesize realBaselineView=_realBaselineView;
 - (void).cxx_destruct;
 - (id)lastBaselineAnchor;

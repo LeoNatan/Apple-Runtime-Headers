@@ -55,6 +55,7 @@
 @property(readonly, nonatomic) VSIdentityProvider *identityProvider; // @synthesize identityProvider=_identityProvider;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (_Bool)applicationController:(id)arg1 requestsAlert:(id)arg2;
 - (void)applicationController:(id)arg1 request:(id)arg2 didCompleteWithResponse:(id)arg3;
 - (void)applicationController:(id)arg1 request:(id)arg2 didFailWithError:(id)arg3;
 - (void)applicationController:(id)arg1 didReceiveViewModel:(id)arg2;
@@ -76,6 +77,7 @@
 - (void)_showAuthenticationUI;
 - (void)_submitApplicationControllerRequest:(id)arg1;
 - (void)_stopApplicationController;
+- (id)_identityProviderAlertWithApplicationControllerAlert:(id)arg1;
 - (id)_applicationControllerRequestWithIdentityProviderRequest:(id)arg1;
 - (void)_completeCurrentRequestWithResult:(id)arg1;
 - (void)_completeCurrentRequestWithError:(id)arg1;
@@ -88,6 +90,7 @@
 - (void)_startDeletingAccount;
 - (void)_handleApplicationControllerError:(id)arg1 forRequest:(id)arg2;
 - (_Bool)_handleAccountMetadataRequest:(id)arg1 didCompleteWithResponse:(id)arg2;
+- (_Bool)_handleSTBOptOutDidComplete:(id)arg1;
 - (_Bool)_handleLogoutRequestDidComplete:(id)arg1;
 - (_Bool)_handleSilentAuthenticationRequest:(id)arg1 didCompleteWithResponse:(id)arg2;
 - (_Bool)_handleAuthenticationRequest:(id)arg1 didCompleteWithResponse:(id)arg2;

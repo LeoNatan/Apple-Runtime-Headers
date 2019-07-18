@@ -8,6 +8,7 @@
 
 @interface _TtC16HealthPluginHost38InteractiveFeedItemGenerationOperation : _TtC16HealthPluginHost25HealthPluginHostOperation
 {
+    // Error parsing type: , name: lock
     // Error parsing type: , name: ongoingProgress
 }
 

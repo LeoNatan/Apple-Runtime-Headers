@@ -58,7 +58,6 @@
 - (_Bool)shouldBeginMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
 - (_Bool)interaction:(id)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg2;
 - (void)automaticallyTransitionToMultiSelectModeKeepingCurrentSelection:(_Bool)arg1;
-- (void)automaticallyTransitionToMultiSelectMode;
 - (_Bool)isInMultiSelectMode;
 - (_Bool)supportsMultiSelectInteraction:(id)arg1;
 - (_Bool)_shouldBeginMultiSelectAtLocation:(struct CGPoint)arg1;

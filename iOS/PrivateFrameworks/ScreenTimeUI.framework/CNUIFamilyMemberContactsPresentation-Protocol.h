@@ -12,5 +12,8 @@
 - (void)dismissPresentedViewController:(UIViewController *)arg1;
 - (void)presentViewController:(UIViewController *)arg1;
 - (void)familyMemberContactsDidChange;
+
+@optional
+- (void)presentedViewControllerDidCancel:(UIViewController *)arg1;
 @end
 

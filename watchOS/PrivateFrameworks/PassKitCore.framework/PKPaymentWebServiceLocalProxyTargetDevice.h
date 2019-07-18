@@ -22,6 +22,9 @@
 - (void).cxx_destruct;
 - (void)archiveBackgroundContext:(id)arg1;
 - (void)archiveContext:(id)arg1;
+- (void)paymentWebService:(id)arg1 passOwnershipTokenWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)paymentWebService:(id)arg1 storePassOwnershipToken:(id)arg2 withIdentifier:(id)arg3;
+- (void)performDeviceCheckInWithCompletion:(CDUnknownBlockType)arg1;
 - (void)paymentWebService:(id)arg1 requestPassUpgrade:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)paymentWebService:(id)arg1 setDefaultPaymentPassUniqueIdentifier:(id)arg2;
 - (void)deleteApplePayTrustKeyWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -49,6 +52,11 @@
 - (_Bool)paymentWebService:(id)arg1 hasPassesOfType:(unsigned int)arg2;
 - (void)paymentWebService:(id)arg1 setNewAuthRandom:(CDUnknownBlockType)arg2;
 - (void)paymentWebService:(id)arg1 setNewAuthRandomIfNecessaryReturningPairingState:(CDUnknownBlockType)arg2;
+- (void)endRequiringUpgradedPasscodeIfNecessary;
+- (void)startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(_Bool)arg1;
+- (void)enforceUpgradedPasscodePolicyWithCompletion:(CDUnknownBlockType)arg1;
+- (void)notePasscodeUpgradeFlowDidEnd;
+- (void)notePasscodeUpgradeFlowWillBeginWithCompletion:(CDUnknownBlockType)arg1;
 - (id)secureElementIdentifiers;
 - (void)noteProvisioningDidEnd;
 - (void)noteProvisioningDidBegin;
@@ -63,13 +71,12 @@
 - (id)deviceDescriptionForPaymentWebService:(id)arg1;
 - (int)paymentSupportedInCurrentRegionForWebService:(id)arg1;
 - (id)appleAccountInformation;
-- (void)renewAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)renewAppleAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)paymentWebService:(id)arg1 filterVerificationChannels:(id)arg2;
 - (void)paymentWebService:(id)arg1 didRegisterWithRegionMap:(id)arg2 primaryRegionTopic:(id)arg3;
 - (void)paymentWebService:(id)arg1 deleteApplicationWithAID:(id)arg2;
 - (void)paymentWebService:(id)arg1 provisioningDataWithCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)paymentWebService:(id)arg1 signData:(id)arg2 signatureEntanglementMode:(unsigned int)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
-- (void)paymentWebService:(id)arg1 registrationDataWithAuthToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)paymentWebService:(id)arg1 registrationDataWithCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)paymentWebService:(id)arg1 configurationDataWithCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)paymentWebService:(id)arg1 queueConnectionToTrustedServiceManagerForPushTopic:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;

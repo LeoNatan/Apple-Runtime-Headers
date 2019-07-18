@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) id <TBScore> qualityScore;
 @property(readonly, nonatomic) id <TBScore> popularityScore;
 @property(readonly, nonatomic) NSSet *accessPoints;
+@property(readonly, nonatomic) NSString *remoteIdentifier;
 @property(readonly, nonatomic) NSString *SSID;
 @property(readonly, nonatomic) NSString *attributesDescription;
 @property(readonly, nonatomic) NSString *authDescription;
@@ -33,7 +34,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) NSString *identifier;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) unsigned long long tileKey;
 @end

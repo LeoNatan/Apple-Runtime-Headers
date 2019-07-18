@@ -28,6 +28,7 @@
     struct NSMutableArray *_writeRequests;
     BOOL _responseReceived;
     RPCloudDaemon *_cloudDaemon;
+    NSString *_cloudServiceID;
     NSString *_destinationID;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _errorHandler;
@@ -45,12 +46,14 @@
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSString *destinationID; // @synthesize destinationID=_destinationID;
+@property(copy, nonatomic) NSString *cloudServiceID; // @synthesize cloudServiceID=_cloudServiceID;
 @property(retain, nonatomic) RPCloudDaemon *cloudDaemon; // @synthesize cloudDaemon=_cloudDaemon;
 - (void).cxx_destruct;
 - (void)_completeWriteRequest:(id)arg1 error:(id)arg2;
 - (void)_abortWritesWithError:(id)arg1;
 - (void)_processWriteRequest:(id)arg1;
 - (void)_processWrites;
+- (void)writeEndOfDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)writeWithRequest:(id)arg1;
 - (void)_completeReadRequest:(id)arg1 error:(id)arg2;
 - (void)_abortReadsWithError:(id)arg1;
@@ -65,7 +68,7 @@
 - (void)_receivedSessionStartResponse:(id)arg1 error:(id)arg2;
 - (void)receivedSessionStartResponse:(id)arg1 error:(id)arg2;
 - (void)_invalidated;
-- (void)_invalidate;
+- (void)_invalidateWithError:(id)arg1;
 - (void)invalidate;
 - (BOOL)activateDirectAndReturnError:(id *)arg1;
 - (void)activateWithCompletion:(CDUnknownBlockType)arg1;

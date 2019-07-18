@@ -92,7 +92,7 @@ __attribute__((visibility("hidden")))
 - (int)getCell:(id)arg1 atCellID:(struct TSUViewCellCoord)arg2 suppressCellBorder:(_Bool)arg3;
 - (int)getCell:(id)arg1 atCellUID:(const struct TSTCellUID *)arg2;
 - (id)regionForValueOrCommentCellsInRange:(struct TSUViewCellRect)arg1;
-- (id)fontColorAtCellID:(struct TSUViewCellCoord)arg1 optionalCell:(id)arg2;
+- (id)characterFillAtCellID:(struct TSUViewCellCoord)arg1 optionalCell:(id)arg2;
 - (id)stringAtCellID:(struct TSUViewCellCoord)arg1 optionalCell:(id)arg2;
 - (id)metadataForColumnIndex:(struct TSUViewColumnIndex)arg1;
 - (id)metadataForRowIndex:(struct TSUViewRowIndex)arg1;

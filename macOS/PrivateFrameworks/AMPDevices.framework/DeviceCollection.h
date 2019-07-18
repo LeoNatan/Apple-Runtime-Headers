@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSMutableArray, NSMutableDictionary, NSXPCConnection;
-@protocol DeviceCollectionDelegate, DeviceUIViewControllerFactory;
+@protocol DeviceCollectionDelegate;
 
 @interface DeviceCollection : NSObject
 {
@@ -17,7 +17,6 @@
     id <DeviceCollectionDelegate> _delegate;
     NSMutableDictionary *_devices;
     NSMutableArray *_connections;
-    id <DeviceUIViewControllerFactory> _viewControllerFactory;
     NSXPCConnection *_connectionToService;
 }
 
@@ -25,13 +24,13 @@
 @property(nonatomic) int serviceProcessID; // @synthesize serviceProcessID=_serviceProcessID;
 @property(nonatomic) unsigned int clientID; // @synthesize clientID=_clientID;
 @property(retain, nonatomic) NSXPCConnection *connectionToService; // @synthesize connectionToService=_connectionToService;
-@property(nonatomic) __weak id <DeviceUIViewControllerFactory> viewControllerFactory; // @synthesize viewControllerFactory=_viewControllerFactory;
 @property(retain, nonatomic) NSMutableArray *connections; // @synthesize connections=_connections;
 @property(retain, nonatomic) NSMutableDictionary *devices; // @synthesize devices=_devices;
 @property(nonatomic) __weak id <DeviceCollectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)setMode:(id)arg1 forView:(id)arg2;
 - (void)willTerminate;
+- (void)disconnectView:(id)arg1;
 - (void)connectToView:(id)arg1 forDevice:(id)arg2;
 - (void)connectToView:(id)arg1 forDevice:(id)arg2 andMode:(id)arg3;
 - (id)currentViewForDevice:(id)arg1;
@@ -39,8 +38,8 @@
 - (void)cancelOperationForDevice:(id)arg1;
 - (id)registerForOperationProgressForDeviceWithIdentifier:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)discoveryServiceWillTerminate;
-- (void)completedOperationForDeviceIdentifier:(id)arg1;
-- (void)startedOperationForDeviceIdentifier:(id)arg1 allowCancel:(BOOL)arg2;
+- (void)completedOperationForDeviceWithIdentifier:(id)arg1;
+- (void)startedOperationForDeviceWithIdentifier:(id)arg1 allowCancel:(BOOL)arg2;
 - (void)nameChangedTo:(id)arg1 forDeviceIdentifier:(id)arg2;
 - (void)allDevicesDetached;
 - (void)allDevicesDetachedOnMainThread;
@@ -51,9 +50,10 @@
 - (void)serviceConnectionInterrupted;
 - (void)connect;
 - (void)createConnection;
-- (void)setUIViewControllerFactory:(id)arg1;
+- (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 - (void)removeConnectionsAttachedToWindow:(id)arg1;
+- (void)removeConnectionsAttachedToView:(id)arg1;
 
 @end
 

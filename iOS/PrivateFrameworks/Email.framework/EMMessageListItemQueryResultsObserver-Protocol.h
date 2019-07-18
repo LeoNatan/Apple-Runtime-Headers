@@ -9,7 +9,9 @@
 @class EMMessageObjectID, EMObjectID, NSArray, NSDictionary;
 
 @protocol EMMessageListItemQueryResultsObserver <NSObject>
+- (void)observerWillRestart:(EMObjectID *)arg1;
 - (void)observerDidFinishInitialLoad:(EMObjectID *)arg1;
+- (void)observer:(EMObjectID *)arg1 matchedOldestItemsUpdatedForMailboxes:(NSDictionary *)arg2;
 - (void)observer:(EMObjectID *)arg1 matchedAlternateIDChangedForObjectID:(EMObjectID *)arg2 alternateID:(EMMessageObjectID *)arg3;
 - (void)observer:(EMObjectID *)arg1 matchedDeletedObjectIDs:(NSArray *)arg2;
 - (void)observer:(EMObjectID *)arg1 matchedChangesForObjectIDs:(NSDictionary *)arg2;

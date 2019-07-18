@@ -14,11 +14,13 @@
 {
     unsigned long long _responseTimePerf;
     PREUMTrialExperiment *_experiment;
+    int _generationStatus;
     NSMutableArray *_items;
     PREUMMessageMetadata *_msgMetadata;
     _Bool _isCached;
     struct {
         unsigned int responseTimePerf:1;
+        unsigned int generationStatus:1;
         unsigned int isCached:1;
     } _has;
 }
@@ -39,6 +41,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsGenerationStatus:(id)arg1;
+- (id)generationStatusAsString:(int)arg1;
+@property(nonatomic) _Bool hasGenerationStatus;
+@property(nonatomic) int generationStatus; // @synthesize generationStatus=_generationStatus;
 @property(nonatomic) _Bool hasResponseTimePerf;
 @property(nonatomic) _Bool hasIsCached;
 - (id)itemsAtIndex:(unsigned int)arg1;

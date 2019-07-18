@@ -14,6 +14,7 @@
 
 @interface PKPaymentSetupPurchaseAmountView : UIView <PKEnterCurrencyAmountViewDelegate, PKNumberPadSuggestionsViewDelegate>
 {
+    _Bool _transferButtonEnabled;
     _Bool _displayingBalanceErrorMessage;
     _Bool _showTransferButton;
     id <PKPaymentSetupPurchaseAmountViewDelegate> _delegate;
@@ -71,6 +72,7 @@
 @property(readonly, nonatomic) UITextField *amountTextField;
 - (void)updateConstraints;
 - (void)layoutSubviews;
+@property(nonatomic, getter=isTransferButtonEnabled) _Bool transferButtonEnabled;
 - (id)initWithProduct:(id)arg1 provisioningMethodMetadata:(id)arg2 showTransferButton:(_Bool)arg3;
 
 // Remaining properties

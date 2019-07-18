@@ -23,7 +23,7 @@
     NSMutableDictionary *_scores;
     struct SharingImportanceMeasurements _measurements;
     struct unique_ptr<SharingImportanceManager, std::__1::default_delete<SharingImportanceManager>> _estimator;
-    BOOL _useFullEstimator;
+    _Bool _useFullEstimator;
     NSSortDescriptor *_scoreSortDescriptor;
     double _lastUpdateTime;
     double _updateInterval;

@@ -7,6 +7,6 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (Utils)
-- (id)numberArrayDescription;
+- (id)exMRL_numberArrayDescription;
 @end
 

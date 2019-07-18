@@ -14,9 +14,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)shouldRunStateForRing:(id)arg1;
 - (id)name;
 - (id)renderPipelineDescriptorFromLibrary:(id)arg1;
-- (void)_sharedInit;
-- (id)initWithPipelineLibrary:(id)arg1;
-- (id)initWithDevice:(id)arg1 library:(id)arg2;
+- (void)didInitialize;
 
 @end
 

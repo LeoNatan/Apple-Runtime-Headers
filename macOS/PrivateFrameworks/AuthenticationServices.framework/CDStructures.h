@@ -25,16 +25,36 @@ struct CGSize {
     double _field2;
 };
 
-struct NSColor {
+struct NSView {
     Class _field1;
-};
-
-struct NSFont {
-    Class _field1;
-};
-
-struct NSTextField {
-    Class _field1;
-    id _field2;
+    struct CGRect _field2;
+    struct CGRect _field3;
+    id _field4;
+    id _field5;
+    id _field6;
+    struct __VFlags {
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :5;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :2;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :6;
+        unsigned int :1;
+        unsigned int :1;
+    } _field7;
 };
 

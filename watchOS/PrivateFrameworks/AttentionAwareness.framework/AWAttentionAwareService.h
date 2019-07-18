@@ -19,12 +19,15 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
     AWScheduler *_unitTestScheduler;
     NSMutableArray *_schedulers;
+    int _supportedEventsNotify;
+    unsigned long long _supportedEvents;
     unsigned int _clientCount;
 }
 
 + (id)sharedAttentionService;
 @property unsigned int clientCount; // @synthesize clientCount=_clientCount;
 - (void).cxx_destruct;
+- (void)crashWithReply:(CDUnknownBlockType)arg1;
 - (void)getUnitTestSamplerWithReply:(CDUnknownBlockType)arg1;
 - (void)_createUnitTestScheduler;
 - (void)outputPowerLogWithReply:(CDUnknownBlockType)arg1;
@@ -33,9 +36,10 @@ __attribute__((visibility("hidden")))
 - (void)getSupportedEventsWithReply:(CDUnknownBlockType)arg1;
 - (void)setSmartCoverClosed:(_Bool)arg1;
 - (void)processHIDEvent:(struct __IOHIDEvent *)arg1 mask:(unsigned long long)arg2 timestamp:(unsigned long long)arg3;
-- (void)addClient:(id)arg1 clientConfig:(id)arg2 unitTestMode:(_Bool)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)addClient:(id)arg1 clientConfig:(id)arg2 clientIndex:(int)arg3 unitTestMode:(_Bool)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)clientCountChangedFrom:(unsigned int)arg1 to:(unsigned int)arg2 forScheduler:(id)arg3;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

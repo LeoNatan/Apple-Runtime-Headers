@@ -6,25 +6,32 @@
 
 #import <UIKit/UIControl.h>
 
+@class CAFilter;
+
 @interface ASAuthorizationAppleIDButton : UIControl
 {
-    struct UILabel *_titleLabel;
     long long _type;
     long long _style;
+    CAFilter *_highlightFilter;
+    double _cornerRadius;
 }
 
++ (Class)layerClass;
 + (id)buttonWithType:(long long)arg1 style:(long long)arg2;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;
-- (struct UIColor *)_borderColorForButton;
-- (struct UIColor *)_highlightedBackgroundColorForButton;
-- (struct UIColor *)_defaultBackgroundColorForButton;
-- (struct UIColor *)_textColorForButton;
-- (id)_attributedTitleForButton;
-- (id)_titleForButton;
-- (struct UIFont *)_fontForButtonLogo;
-- (struct UIFont *)_fontForButton;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
+- (BOOL)isAccessibilityElement;
+- (long long)_ak_buttonStyle;
+- (long long)_ak_buttonType;
 - (void)setHighlighted:(BOOL)arg1;
-@property(nonatomic) double cornerRadius;
+- (void)_performAnimationToSetHighlighted:(BOOL)arg1;
+- (void)_createHighlightFilterIfNecessary;
+- (struct CGSize)intrinsicContentSize;
+- (void)layoutSubviews;
+- (void)_drawRect:(struct CGRect)arg1 inView:(struct UIView *)arg2;
+- (void)drawRect:(struct CGRect)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

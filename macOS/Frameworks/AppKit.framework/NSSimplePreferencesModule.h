@@ -14,8 +14,12 @@ __attribute__((visibility("hidden")))
     NSBox *_rootView;
     NSString *_title;
     NSImage *_toolbarIcon;
+    NSString *_helpAnchor;
+    NSString *_helpBook;
 }
 
+@property(copy) NSString *helpBook; // @synthesize helpBook=_helpBook;
+@property(copy) NSString *helpAnchor; // @synthesize helpAnchor=_helpAnchor;
 @property(retain) NSImage *toolbarIcon; // @synthesize toolbarIcon=_toolbarIcon;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(retain) NSBox *rootView; // @synthesize rootView=_rootView;

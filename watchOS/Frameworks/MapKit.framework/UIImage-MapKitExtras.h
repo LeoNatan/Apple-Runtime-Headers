@@ -15,8 +15,8 @@
 + (id)_mapkit_imageNamed:(id)arg1;
 + (id)_mk_newImageForCorner:(unsigned int)arg1 cornerRadius:(float)arg2;
 + (id)_mapkit_imageFromVKImage:(id)arg1;
-+ (id)_mapkit_transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 scale:(float)arg3 withWidthPaddingMultiple:(float)arg4 coordinate:(struct CLLocationCoordinate2D)arg5;
-+ (id)_mapkit_transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 scale:(float)arg3 coordinate:(struct CLLocationCoordinate2D)arg4;
++ (id)_mapkit_transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 scale:(float)arg3 withWidthPaddingMultiple:(float)arg4;
++ (id)_mapkit_transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 scale:(float)arg3;
 - (id)_mapkit_imageWithAlpha:(float)arg1;
 - (id)_mapkit_templateImageWithTintColor:(id)arg1;
 - (id)_mapkit_horizontallyFlippedImage;

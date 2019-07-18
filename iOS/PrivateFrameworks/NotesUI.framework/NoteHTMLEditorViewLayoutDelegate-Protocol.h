@@ -8,6 +8,5 @@
 
 @protocol NoteHTMLEditorViewLayoutDelegate
 - (_Bool)isNoteHTMLEditorViewVisible:(NoteHTMLEditorView *)arg1;
-- (void)noteHTMLEditorView:(NoteHTMLEditorView *)arg1 didChangeContentSize:(struct CGSize)arg2;
 @end
 

@@ -301,6 +301,7 @@
 - (void)updateTranscript:(CDUnknownBlockType)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)reloadData;
 - (void)_prewarmBalloonControllers;
+- (void)_prewarmMediaPreviews;
 - (void)sizeFullTranscriptIfNecessary;
 - (void)invalidateChatItemLayoutWithBalloonMaxWidth:(float)arg1 marginInsets:(struct UIEdgeInsets)arg2 traitCollection:(id)arg3;
 - (void)setScrollAnchor:(float)arg1;

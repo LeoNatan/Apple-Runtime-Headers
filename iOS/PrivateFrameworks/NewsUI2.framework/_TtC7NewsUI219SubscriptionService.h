@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface _TtC7NewsUI219SubscriptionService : NSObject
 {
-    // Error parsing type: , name: delegate
+    // Error parsing type: , name: observers
     // Error parsing type: , name: tagService
     // Error parsing type: , name: notificationController
     // Error parsing type: , name: notificationService

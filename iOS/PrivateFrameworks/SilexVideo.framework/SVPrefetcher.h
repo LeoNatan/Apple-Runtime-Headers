@@ -8,13 +8,13 @@
 
 #import <SilexVideo/SVPrefetcher-Protocol.h>
 
-@class NSString;
-@protocol SVPlayerItemLoading, SVVideoBufferObserving, SVVideoLoadingProgressObserving, SVVideoLoadingStateObserving, SVVideoPlaybackProgressObserving;
+@class NSString, SVPlaybackCoordinator;
+@protocol SVVideoBufferObserving, SVVideoLoadingProgressObserving, SVVideoLoadingStateObserving, SVVideoPlaybackProgressObserving;
 
 @interface SVPrefetcher : NSObject <SVPrefetcher>
 {
     unsigned long long _prefetchPolicy;
-    id <SVPlayerItemLoading> _playerItemLoader;
+    SVPlaybackCoordinator *_playbackCoordinator;
     id <SVVideoBufferObserving> _bufferObserver;
     id <SVVideoLoadingStateObserving> _loadingStateObserver;
     id <SVVideoLoadingProgressObserving> _loadingProgressObserver;
@@ -25,11 +25,11 @@
 @property(readonly, nonatomic) id <SVVideoLoadingProgressObserving> loadingProgressObserver; // @synthesize loadingProgressObserver=_loadingProgressObserver;
 @property(readonly, nonatomic) id <SVVideoLoadingStateObserving> loadingStateObserver; // @synthesize loadingStateObserver=_loadingStateObserver;
 @property(readonly, nonatomic) id <SVVideoBufferObserving> bufferObserver; // @synthesize bufferObserver=_bufferObserver;
-@property(readonly, nonatomic) id <SVPlayerItemLoading> playerItemLoader; // @synthesize playerItemLoader=_playerItemLoader;
+@property(readonly, nonatomic) SVPlaybackCoordinator *playbackCoordinator; // @synthesize playbackCoordinator=_playbackCoordinator;
 @property(readonly, nonatomic) unsigned long long prefetchPolicy; // @synthesize prefetchPolicy=_prefetchPolicy;
 - (void).cxx_destruct;
 - (void)prefetchingConditionsChanged;
-- (id)initWithPrefetchPolicy:(unsigned long long)arg1 playerItemLoader:(id)arg2 bufferObserver:(id)arg3 loadingStateObserver:(id)arg4 loadingProgressObserver:(id)arg5 playbackProgressObserver:(id)arg6;
+- (id)initWithPrefetchPolicy:(unsigned long long)arg1 playbackCoordinator:(id)arg2 bufferObserver:(id)arg3 loadingStateObserver:(id)arg4 loadingProgressObserver:(id)arg5 playbackProgressObserver:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

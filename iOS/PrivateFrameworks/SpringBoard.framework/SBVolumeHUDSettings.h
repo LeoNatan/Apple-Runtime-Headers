@@ -12,18 +12,23 @@
     _Bool _autoDismiss;
     _Bool _forceEUVolumeMode;
     float _EUVolumeLimit;
+    double _minMaxXScaleSpringRetargetImpulse;
     double _minMaxXScaleSpringDampingRatio;
     double _minMaxXScaleSpringResponse;
     double _minMaxXScaleSpringVolumeToMax;
     double _minMaxXScaleSpringVolumeToMin;
+    double _minMaxYScaleSpringRetargetImpulse;
     double _minMaxYScaleSpringDampingRatio;
     double _minMaxYScaleSpringResponse;
     double _minMaxYScaleSpringVolumeToMax;
     double _minMaxYScaleSpringVolumeToMin;
+    double _positionXSpringRetargetImpulse;
     double _positionXSpringDampingRatio;
     double _positionXSpringResponse;
+    double _positionYSpringRetargetImpulse;
     double _positionYSpringDampingRatio;
     double _positionYSpringResponse;
+    double _scaleSpringRetargetImpulse;
     double _scaleSpringDampingRatio;
     double _scaleSpringResponse;
     double _scaleSpringVolumeDownInput;
@@ -32,7 +37,9 @@
     double _scaleSpringVolumeToMax;
     double _scaleSpringBase;
     double _scaleSpringTracking;
+    double _dimmingAlpha;
     double _dismissalInterval;
+    double _legibilityStrength;
     double _initialState1ToState2TransitionInterval;
     double _labelMargin;
     double _onscreenTopMargin;
@@ -94,7 +101,9 @@
 @property(nonatomic) double onscreenTopMargin; // @synthesize onscreenTopMargin=_onscreenTopMargin;
 @property(nonatomic) double labelMargin; // @synthesize labelMargin=_labelMargin;
 @property(nonatomic) double initialState1ToState2TransitionInterval; // @synthesize initialState1ToState2TransitionInterval=_initialState1ToState2TransitionInterval;
+@property(nonatomic) double legibilityStrength; // @synthesize legibilityStrength=_legibilityStrength;
 @property(nonatomic) double dismissalInterval; // @synthesize dismissalInterval=_dismissalInterval;
+@property(nonatomic) double dimmingAlpha; // @synthesize dimmingAlpha=_dimmingAlpha;
 @property(nonatomic) double scaleSpringTracking; // @synthesize scaleSpringTracking=_scaleSpringTracking;
 @property(nonatomic) double scaleSpringBase; // @synthesize scaleSpringBase=_scaleSpringBase;
 @property(nonatomic) double scaleSpringVolumeToMax; // @synthesize scaleSpringVolumeToMax=_scaleSpringVolumeToMax;
@@ -103,18 +112,23 @@
 @property(nonatomic) double scaleSpringVolumeDownInput; // @synthesize scaleSpringVolumeDownInput=_scaleSpringVolumeDownInput;
 @property(nonatomic) double scaleSpringResponse; // @synthesize scaleSpringResponse=_scaleSpringResponse;
 @property(nonatomic) double scaleSpringDampingRatio; // @synthesize scaleSpringDampingRatio=_scaleSpringDampingRatio;
+@property(nonatomic) double scaleSpringRetargetImpulse; // @synthesize scaleSpringRetargetImpulse=_scaleSpringRetargetImpulse;
 @property(nonatomic) double positionYSpringResponse; // @synthesize positionYSpringResponse=_positionYSpringResponse;
 @property(nonatomic) double positionYSpringDampingRatio; // @synthesize positionYSpringDampingRatio=_positionYSpringDampingRatio;
+@property(nonatomic) double positionYSpringRetargetImpulse; // @synthesize positionYSpringRetargetImpulse=_positionYSpringRetargetImpulse;
 @property(nonatomic) double positionXSpringResponse; // @synthesize positionXSpringResponse=_positionXSpringResponse;
 @property(nonatomic) double positionXSpringDampingRatio; // @synthesize positionXSpringDampingRatio=_positionXSpringDampingRatio;
+@property(nonatomic) double positionXSpringRetargetImpulse; // @synthesize positionXSpringRetargetImpulse=_positionXSpringRetargetImpulse;
 @property(nonatomic) double minMaxYScaleSpringVolumeToMin; // @synthesize minMaxYScaleSpringVolumeToMin=_minMaxYScaleSpringVolumeToMin;
 @property(nonatomic) double minMaxYScaleSpringVolumeToMax; // @synthesize minMaxYScaleSpringVolumeToMax=_minMaxYScaleSpringVolumeToMax;
 @property(nonatomic) double minMaxYScaleSpringResponse; // @synthesize minMaxYScaleSpringResponse=_minMaxYScaleSpringResponse;
 @property(nonatomic) double minMaxYScaleSpringDampingRatio; // @synthesize minMaxYScaleSpringDampingRatio=_minMaxYScaleSpringDampingRatio;
+@property(nonatomic) double minMaxYScaleSpringRetargetImpulse; // @synthesize minMaxYScaleSpringRetargetImpulse=_minMaxYScaleSpringRetargetImpulse;
 @property(nonatomic) double minMaxXScaleSpringVolumeToMin; // @synthesize minMaxXScaleSpringVolumeToMin=_minMaxXScaleSpringVolumeToMin;
 @property(nonatomic) double minMaxXScaleSpringVolumeToMax; // @synthesize minMaxXScaleSpringVolumeToMax=_minMaxXScaleSpringVolumeToMax;
 @property(nonatomic) double minMaxXScaleSpringResponse; // @synthesize minMaxXScaleSpringResponse=_minMaxXScaleSpringResponse;
 @property(nonatomic) double minMaxXScaleSpringDampingRatio; // @synthesize minMaxXScaleSpringDampingRatio=_minMaxXScaleSpringDampingRatio;
+@property(nonatomic) double minMaxXScaleSpringRetargetImpulse; // @synthesize minMaxXScaleSpringRetargetImpulse=_minMaxXScaleSpringRetargetImpulse;
 - (void)setDefaultValues;
 
 @end

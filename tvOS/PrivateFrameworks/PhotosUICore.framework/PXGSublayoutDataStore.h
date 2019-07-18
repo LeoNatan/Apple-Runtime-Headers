@@ -14,14 +14,14 @@
 {
     long long _capacity;
     long long _count;
-    CDStruct_56d04da7 *_geometries;
+    CDStruct_ff9a7497 *_geometries;
     CDStruct_df88f589 *_infos;
     long long _version;
 }
 
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) CDStruct_df88f589 *infos; // @synthesize infos=_infos;
-@property(readonly, nonatomic) CDStruct_56d04da7 *geometries; // @synthesize geometries=_geometries;
+@property(readonly, nonatomic) CDStruct_ff9a7497 *geometries; // @synthesize geometries=_geometries;
 @property(nonatomic) long long count; // @synthesize count=_count;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
 - (void)enumerateSublayoutGeometriesInRange:(struct _NSRange)arg1 options:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
@@ -30,7 +30,7 @@
 - (void)enumerateSublayoutsInRect:(struct CGRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateSublayoutsInRange:(struct _NSRange)arg1 options:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateSublayoutsUsingBlock:(CDUnknownBlockType)arg1;
-- (CDStruct_56d04da7)geometryForSublayout:(id)arg1;
+- (CDStruct_ff9a7497)geometryForSublayout:(id)arg1;
 - (unsigned int)spriteIndexOriginForSublayout:(id)arg1;
 - (id)sublayoutProviderAtIndex:(long long)arg1;
 - (id)sublayoutAtIndex:(long long)arg1;

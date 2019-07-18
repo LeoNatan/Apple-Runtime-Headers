@@ -7,7 +7,7 @@
 @class AVAudioFormat, NSArray, NSData, NSDictionary;
 
 @protocol CHHapticServerInterface
-- (void)debugNotifyAboutFinishWithCompletionHandler:(void (^)(void))arg1;
+- (void)debugExpectNotifyOnFinishAfter:(double)arg1 reply:(void (^)(void))arg2;
 - (void)stopRunning:(void (^)(NSError *))arg1;
 - (void)stopRunning;
 - (void)startRunning:(void (^)(NSError *))arg1;
@@ -17,9 +17,10 @@
 - (void)prepareHapticSequence:(unsigned int)arg1 reply:(void (^)(NSError *))arg2;
 - (void)removeCustomAudioEvent:(unsigned int)arg1 reply:(void (^)(NSError *))arg2;
 - (void)createCustomAudioEvent:(NSData *)arg1 format:(AVAudioFormat *)arg2 frames:(unsigned int)arg3 options:(NSDictionary *)arg4 reply:(void (^)(unsigned int, NSError *))arg5;
+- (void)setSequenceEventBehavior:(unsigned int)arg1 behavior:(unsigned int)arg2 channelIndex:(unsigned int)arg3 reply:(void (^)(NSError *))arg4;
 - (void)loadVibePattern:(NSDictionary *)arg1 reply:(void (^)(unsigned int, NSError *))arg2;
-- (void)loadHapticSequenceFromEvents:(NSArray *)arg1 reply:(void (^)(unsigned int, unsigned int, NSError *))arg2;
-- (void)loadHapticSequenceFromData:(NSData *)arg1 reply:(void (^)(unsigned int, unsigned int, NSError *))arg2;
+- (void)loadHapticSequenceFromEvents:(NSArray *)arg1 reply:(void (^)(unsigned int, double, unsigned int, NSError *))arg2;
+- (void)loadHapticSequenceFromData:(NSData *)arg1 reply:(void (^)(unsigned int, double, unsigned int, NSError *))arg2;
 - (void)loadHapticEvent:(NSDictionary *)arg1 reply:(void (^)(unsigned int, NSError *))arg2;
 - (void)setChannelEventBehavior:(unsigned int)arg1 behavior:(unsigned int)arg2 reply:(void (^)(NSError *))arg3;
 - (void)removeChannel:(unsigned int)arg1 reply:(void (^)(NSError *))arg2;

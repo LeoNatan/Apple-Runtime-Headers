@@ -28,7 +28,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CNMonogrammer *monogrammer; // @synthesize monogrammer=_monogrammer;
 - (void).cxx_destruct;
 - (id)monogramImageForNameComponents:(id)arg1;
-- (void)_fetchFamilyPhotoWithDSID:(id)arg1;
+- (void)_fetchFamilyPhotoWithDSID:(id)arg1 fullName:(id)arg2 appleID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)_personImageWithDSID:(id)arg1 fullName:(id)arg2 appleID:(id)arg3 forceFetch:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)fetchPersonImageWithDSID:(id)arg1 fullName:(id)arg2 appleID:(id)arg3 forceFetch:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)personImageWithDSID:(id)arg1 fullName:(id)arg2;
 - (id)roundedImageForImageWithName:(id)arg1;
 - (id)_newCircleImageWithFillColor:(id)arg1 fillDiameter:(double)arg2 outlineColor:(id)arg3 outlineWidth:(double)arg4;
@@ -38,7 +40,8 @@ __attribute__((visibility("hidden")))
 - (id)blankSpaceImageWithSize:(struct CGSize)arg1;
 - (void)removeObserver:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 bundleIdentifier:(id)arg3;
-- (id)imageForCategoryIdentifier:(id)arg1;
+- (id)_iconForCacheKey:(id)arg1 categoryIdentifier:(id)arg2;
+- (id)imageForCategoryIdentifier:(id)arg1 userInterfaceStyle:(long long)arg2;
 - (void)_handleiTunesResponseForAppInfo:(id)arg1 response:(id)arg2 data:(id)arg3 error:(id)arg4;
 - (void)_fetchImageForAppInfoIfNeeded:(id)arg1;
 - (id)imageForBundleIdentifier:(id)arg1;

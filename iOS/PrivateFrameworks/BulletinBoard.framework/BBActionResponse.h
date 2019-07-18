@@ -12,6 +12,7 @@
 
 @interface BBActionResponse : NSObject <NSSecureCoding>
 {
+    _Bool _didOpenApplication;
     long long _actionType;
     unsigned long long _actionActivationMode;
     long long _actionBehavior;
@@ -37,6 +38,7 @@
 @property(copy, nonatomic) NSString *bulletinRecordID; // @synthesize bulletinRecordID=_bulletinRecordID;
 @property(copy, nonatomic) NSURL *actionLaunchURL; // @synthesize actionLaunchURL=_actionLaunchURL;
 @property(copy, nonatomic) NSString *actionID; // @synthesize actionID=_actionID;
+@property(nonatomic) _Bool didOpenApplication; // @synthesize didOpenApplication=_didOpenApplication;
 @property(nonatomic) long long actionBehavior; // @synthesize actionBehavior=_actionBehavior;
 @property(nonatomic) unsigned long long actionActivationMode; // @synthesize actionActivationMode=_actionActivationMode;
 @property(nonatomic) long long actionType; // @synthesize actionType=_actionType;

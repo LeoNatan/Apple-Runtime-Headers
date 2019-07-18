@@ -8,10 +8,12 @@
 
 @interface TIMecabraWrapper : NSObject
 {
+    int _inputMethodType;
     struct __Mecabra *_mecabraRef;
 }
 
 @property(readonly) struct __Mecabra *mecabraRef; // @synthesize mecabraRef=_mecabraRef;
+@property(readonly) int inputMethodType; // @synthesize inputMethodType=_inputMethodType;
 - (void)dealloc;
 - (id)initWithInputMethodType:(int)arg1 learningDictionaryDirectoryURL:(struct __CFURL *)arg2 creationOptions:(unsigned long long)arg3;
 

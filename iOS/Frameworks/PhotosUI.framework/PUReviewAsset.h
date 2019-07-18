@@ -102,6 +102,7 @@
 @property(readonly, copy, nonatomic) NSString *pathForTrimmedVideoFile;
 @property(readonly, copy, nonatomic) NSString *pathForOriginalVideoFile;
 @property(readonly, copy, nonatomic) NSString *pathForOriginalImageFile;
+@property(readonly, nonatomic, getter=isCloudPhotoLibraryEnabled) _Bool cloudPhotoLibraryEnabled;
 @property(readonly, nonatomic, getter=isResourceDownloadPossible) _Bool resourceDownloadPossible;
 @property(readonly, nonatomic) int originalEXIFOrientation;
 @property(readonly, nonatomic) NSDictionary *imageProperties;
@@ -132,6 +133,7 @@
 @property(readonly, nonatomic) double aspectRatio;
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithAVAsset:(id)arg1 audioMix:(id)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 captureDate:(id)arg5 duration:(double)arg6 previewImage:(id)arg7 videoURL:(id)arg8 unadjustedVideoURL:(id)arg9 adjustments:(id)arg10 identifier:(id)arg11;
 - (id)initWithAVAsset:(id)arg1 audioMix:(id)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 captureDate:(id)arg5 duration:(double)arg6 previewImage:(id)arg7 videoURL:(id)arg8 adjustments:(id)arg9 identifier:(id)arg10;
 - (id)initWithLivePhoto:(id)arg1 fullsizeUnadjustedImageURL:(id)arg2 fullsizeUnadjustedVideoURL:(id)arg3 assetAdjustments:(id)arg4 width:(unsigned long long)arg5 height:(unsigned long long)arg6 captureDate:(id)arg7 metadata:(id)arg8 duration:(double)arg9 previewImage:(id)arg10 identifier:(id)arg11;
 - (id)initWithPhoto:(id)arg1 mediaSubtypes:(unsigned long long)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 captureDate:(id)arg5 metadata:(id)arg6 burstIdentifier:(id)arg7 representedCount:(unsigned long long)arg8 fullsizeImageURL:(id)arg9 fullsizeUnadjustedImageURL:(id)arg10 assetAdjustments:(id)arg11 identifier:(id)arg12;
@@ -157,6 +159,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) CDStruct_1b6d18a9 videoKeyFrameSourceTime;
 
 @end
 

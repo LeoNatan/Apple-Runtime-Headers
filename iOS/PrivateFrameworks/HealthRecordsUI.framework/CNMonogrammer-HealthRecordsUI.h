@@ -8,6 +8,5 @@
 
 @interface CNMonogrammer (HealthRecordsUI)
 - (id)monogramForFirstWordFromText:(id)arg1;
-- (id)monogramForAccount:(id)arg1;
 @end
 

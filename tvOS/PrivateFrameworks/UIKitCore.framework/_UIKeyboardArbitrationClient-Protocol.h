@@ -7,6 +7,7 @@
 @class NSDictionary, NSString, _UIKeyboardChangedInformation;
 
 @protocol _UIKeyboardArbitrationClient
+- (void)queue_setLastEventSource:(long long)arg1 withCompletion:(void (^)(void))arg2;
 - (void)queue_setKeyboardDisabled:(_Bool)arg1 withCompletion:(void (^)(void))arg2;
 - (void)queue_getDebugInfoWithCompletion:(void (^)(NSDictionary *))arg1;
 - (void)queue_sceneBecameFocused:(NSString *)arg1 withCompletion:(void (^)(void))arg2;

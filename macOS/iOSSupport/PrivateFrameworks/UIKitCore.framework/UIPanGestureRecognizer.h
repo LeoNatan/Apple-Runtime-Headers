@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIGestureRecognizer.h>
 
-@class NSMutableArray, UIPanGestureVelocitySample;
+@class NSArray, NSMutableArray, UIPanGestureVelocitySample;
 
 @interface UIPanGestureRecognizer : UIGestureRecognizer
 {
@@ -32,18 +32,20 @@
     unsigned int _requiresImmediateMultipleTouches:1;
     NSMutableArray *_movingTouches;
     struct CGPoint _digitizerLocation;
-    BOOL _iOSMacScrollingEnabled;
     BOOL _iOSMacUseNonacceleratedDelta;
     BOOL _iOSMacIgnoreScrollDirectionUserPreference;
+    BOOL _iOSMacScrollingEnabled;
+    NSArray *_allowedScrollTypes;
 }
 
 + (void)_setPanGestureRecognizersEnabled:(BOOL)arg1;
 + (BOOL)supportsSecureCoding;
 + (BOOL)_shouldDefaultToTouches;
 + (double)_defaultHysteresis;
+@property(nonatomic, getter=_iOSMacScrollingEnabled, setter=_setiOSMacScrollingEnabled:) BOOL iOSMacScrollingEnabled; // @synthesize iOSMacScrollingEnabled=_iOSMacScrollingEnabled;
 @property(nonatomic, getter=_iOSMacIgnoreScrollDirectionUserPreference, setter=_setiOSMacIgnoreScrollDirectionUserPreference:) BOOL iOSMacIgnoreScrollDirectionUserPreference; // @synthesize iOSMacIgnoreScrollDirectionUserPreference=_iOSMacIgnoreScrollDirectionUserPreference;
 @property(nonatomic, getter=_iOSMacUseNonacceleratedDelta, setter=_setiOSMacUseNonacceleratedDelta:) BOOL iOSMacUseNonacceleratedDelta; // @synthesize iOSMacUseNonacceleratedDelta=_iOSMacUseNonacceleratedDelta;
-@property(nonatomic, getter=_iOSMacScrollingEnabled, setter=_setiOSMacScrollingEnabled:) BOOL iOSMacScrollingEnabled; // @synthesize iOSMacScrollingEnabled=_iOSMacScrollingEnabled;
+@property(copy, nonatomic, getter=_allowedScrollTypes, setter=_setAllowedScrollTypes:) NSArray *allowedScrollTypes; // @synthesize allowedScrollTypes=_allowedScrollTypes;
 @property(readonly, getter=_previousVelocitySample) UIPanGestureVelocitySample *_previousVelocitySample; // @synthesize _previousVelocitySample;
 @property(readonly, getter=_velocitySample) UIPanGestureVelocitySample *_velocitySample; // @synthesize _velocitySample;
 @property(nonatomic) unsigned long long maximumNumberOfTouches; // @synthesize maximumNumberOfTouches=_maximumNumberOfTouches;
@@ -51,6 +53,7 @@
 - (void).cxx_destruct;
 - (void)_scrollingChangedWithEvent:(id)arg1;
 - (void)_processScrollPhaseChanged:(id)arg1;
+- (BOOL)isIOSMacScrollingEnabled;
 - (BOOL)_shouldReceiveScrollEvent:(id)arg1;
 - (void)_updateDigitizerLocationWithEvent:(id)arg1;
 - (struct CGPoint)_digitizerLocation;

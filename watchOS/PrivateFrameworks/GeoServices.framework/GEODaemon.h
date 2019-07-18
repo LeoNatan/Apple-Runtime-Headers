@@ -14,6 +14,7 @@
     NSMutableSet *_servers;
     NSMutableSet *_peers;
     NSObject<OS_dispatch_source> *_sigInfoSrc;
+    NSObject<OS_dispatch_source> *_sigTermSrc;
     NSObject<OS_xpc_object> *_listener;
 }
 
@@ -22,6 +23,7 @@
 - (id)description;
 - (void)_localeChanged:(id)arg1;
 - (void)dealloc;
+- (void)startServerClassIfNecessary:(Class)arg1;
 - (void)addServerClass:(Class)arg1;
 - (void)addServerInstance:(id)arg1;
 - (void)peerDidDisconnect:(id)arg1;

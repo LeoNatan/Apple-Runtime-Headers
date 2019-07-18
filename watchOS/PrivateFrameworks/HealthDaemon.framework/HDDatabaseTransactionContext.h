@@ -19,6 +19,7 @@
     NSMutableSet *_accessibilityAssertions;
 }
 
++ (id)highPriorityContext;
 + (id)contextForReadingProtectedData;
 + (id)contextForReading;
 + (id)contextForWritingProtectedData;

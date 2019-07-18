@@ -7,6 +7,6 @@
 @protocol SBFTodayOverlayControlling;
 
 @protocol SBFTodayOverlayObserving
-- (void)todayOverlayControllerDidDismiss:(id <SBFTodayOverlayControlling>)arg1;
+- (void)todayOverlayController:(id <SBFTodayOverlayControlling>)arg1 didChangePresentationProgress:(double)arg2;
 @end
 

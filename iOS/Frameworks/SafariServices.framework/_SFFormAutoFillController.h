@@ -11,7 +11,7 @@
 #import <SafariServices/_SFAuthenticationClient-Protocol.h>
 #import <SafariServices/_SFAutoFillInputViewDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableIndexSet, NSMutableSet, NSSet, NSString, NSTimer, SFFormAutoFillFrameHandle, SFFormAutocompleteState, UIView, WBSCreditCardData, WBSFormMetadata, WBSOneTimeCodeMonitor, WKWebView, _SFAuthenticationContext, _SFAutoFillInputView, _SFFormAutoFillInputSession, _WKRemoteObjectInterface;
+@class CNContact, NSArray, NSDictionary, NSMutableIndexSet, NSMutableSet, NSSet, NSString, NSTimer, SFFormAutoFillFrameHandle, SFFormAutocompleteState, UIView, WBSCreditCardData, WBSFormMetadata, WBSOneTimeCodeMonitor, WKWebView, _SFAuthenticationContext, _SFAutoFillInputView, _SFFormAutoFillInputSession, _WKRemoteObjectInterface;
 @protocol SFFormAutoFillControllerDelegate, SFFormAutoFiller, WBUFormAutoFillWebView;
 
 @interface _SFFormAutoFillController : NSObject <SFCredentialProviderExtensionManagerObserver, _SFAutoFillInputViewDelegate, SFFormMetadataObserver, _SFAuthenticationClient>
@@ -37,6 +37,7 @@
     NSArray *_preservedTrailingBarButtonGroups;
     NSDictionary *_externalCredentialIdentitiesForStreamlinedAutoFill;
     _Bool _metadataCorrectionsEnabled;
+    CNContact *_lastFilledContact;
     WBSCreditCardData *_lastFilledCreditCardData;
     NSSet *_lastFilledCreditCardDataTypes;
 }
@@ -46,6 +47,7 @@
 + (void)_getExternalLoginCredentialSuggestionsForDomains:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) NSSet *lastFilledCreditCardDataTypes; // @synthesize lastFilledCreditCardDataTypes=_lastFilledCreditCardDataTypes;
 @property(retain, nonatomic) WBSCreditCardData *lastFilledCreditCardData; // @synthesize lastFilledCreditCardData=_lastFilledCreditCardData;
+@property(retain, nonatomic) CNContact *lastFilledContact; // @synthesize lastFilledContact=_lastFilledContact;
 @property(nonatomic) _Bool metadataCorrectionsEnabled; // @synthesize metadataCorrectionsEnabled=_metadataCorrectionsEnabled;
 - (void).cxx_destruct;
 - (void)credentialProviderExtensionManagerExtensionListDidChange:(id)arg1;

@@ -14,10 +14,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)kindWithVariants:(unsigned long long)arg1 options:(unsigned long long)arg2;
++ (id)identityKind;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) unsigned long long variants; // @synthesize variants=_variants;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)humanDescription;
 
 @end

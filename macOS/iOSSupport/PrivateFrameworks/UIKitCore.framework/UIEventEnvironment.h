@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSCountedSet, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, UIApplication, UIEvent, UIMotionEvent, UIPhysicalKeyboardEvent, UIPressesEvent, UIRemoteControlEvent, UIWheelEvent;
+@class NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, UIApplication, UIEvent, UIMotionEvent, UIPhysicalKeyboardEvent, UIPressesEvent, UIRemoteControlEvent, UIWheelEvent;
 
 __attribute__((visibility("hidden")))
 @interface UIEventEnvironment : NSObject
@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
     UIMotionEvent *_motionEvent;
     UIRemoteControlEvent *_remoteControlEvent;
     NSMutableDictionary *_dragEventsByContextAndSessionIDPair;
-    NSCountedSet *_contextAndSessionIDPairsForAdditionalDragEvents;
     BOOL _isSystemApplication;
     NSMutableSet *_exclusiveTouchWindows;
     double _commitTimeForTouchEvents;
@@ -87,8 +86,6 @@ __attribute__((visibility("hidden")))
 - (void)_enqueueHIDEvent:(struct __IOHIDEvent *)arg1;
 - (id)_dragEvents;
 - (void)_removeDragEvent:(id)arg1;
-- (void)_unregisterContextIDsForAdditionalDragEvents:(id)arg1 forSession:(unsigned int)arg2;
-- (void)_registerContextIDsForAdditionalDragEvents:(id)arg1 forSession:(unsigned int)arg2;
 - (id)_dragEventForHIDEvent:(struct __IOHIDEvent *)arg1;
 - (void)_setTouchMap:(struct __CFDictionary *)arg1 forWindow:(id)arg2;
 - (void)_clearTouchesForView:(id)arg1 onWindow:(id)arg2;

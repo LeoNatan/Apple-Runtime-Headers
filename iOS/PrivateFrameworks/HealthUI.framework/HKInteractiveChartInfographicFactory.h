@@ -11,7 +11,10 @@
 }
 
 + (id)_attributedSymbolForAudioClassification:(unsigned long long)arg1 textStyle:(id)arg2;
++ (id)_tableTitleAttributes;
 + (id)_audioTitleAttributes;
++ (id)_itemWithTitleKey:(id)arg1 valueKey:(id)arg2 hideSeparator:(_Bool)arg3;
++ (id)_itemWithTitleKey:(id)arg1 valueKey:(id)arg2;
 + (id)_itemForAudioInfographicWithClassification:(unsigned long long)arg1 descriptionKey:(id)arg2;
 + (id)_headphoneAudioExposureInfographic;
 + (id)_environmentalAudioExposureInfographic;

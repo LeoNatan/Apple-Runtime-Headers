@@ -10,18 +10,16 @@
 #import <WorkflowUI/UITableViewDelegate-Protocol.h>
 #import <WorkflowUI/WFAlarmChooserViewControllerDelegate-Protocol.h>
 
-@class MTAlarmDataSource, MTAlarmManager, NSArray, NSString, UITableView;
+@class MTAlarmDataSource, NSArray, NSString, UITableView;
 
 @interface WFAlarmTriggerConfigurationViewController : WFTriggerConfigurationViewController <UITableViewDataSource, UITableViewDelegate, WFAlarmChooserViewControllerDelegate>
 {
     UITableView *_tableView;
     NSArray *_sections;
-    MTAlarmManager *_alarmManager;
     MTAlarmDataSource *_alarmDataSource;
 }
 
 @property(readonly, nonatomic) MTAlarmDataSource *alarmDataSource; // @synthesize alarmDataSource=_alarmDataSource;
-@property(readonly, nonatomic) MTAlarmManager *alarmManager; // @synthesize alarmManager=_alarmManager;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;

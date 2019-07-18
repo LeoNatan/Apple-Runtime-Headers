@@ -6,37 +6,35 @@
 
 #import <objc/NSObject.h>
 
+@class VKInternalIconManager, VKSharedResources;
+@protocol OS_dispatch_source;
+
 @interface VKIconManager : NSObject
 {
-    shared_ptr_6d521cf7 _iconManager;
-    shared_ptr_dd2d1f5e _stylesheetVendor;
-    struct read_write_lock _nameToStyleManagerLock;
-    struct map<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::shared_ptr<gss::StylesheetManager<gss::PropertyID>>, NSStringMapComparison, geo::StdAllocator<std::__1::pair<const geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::shared_ptr<gss::StylesheetManager<gss::PropertyID>>>, mdm::Allocator>> _nameToStyleManager;
-    struct _retain_ptr<VKResourceManager *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> _resourceManager;
-    struct shared_ptr<md::GeoResourceProvider> _resourceProvider;
-    shared_ptr_76a6df1b _fontManager;
+    VKSharedResources *_sharedResources;
+    VKInternalIconManager *_iconManager;
+    _Bool _usingSingletonIconManager;
+    struct mutex _lock;
+    NSObject<OS_dispatch_source> *_iconManagerReleaseSource;
 }
 
 + (id)sharedManager;
-+ (unsigned int)convertCalloutShape:(unsigned char)arg1;
-+ (long long)convertGrlSizeGroup:(unsigned char)arg1;
-+ (unsigned char)convertSizeGroup:(long long)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)purge;
-- (void)dealloc;
 - (void)setIsCachingAtlases:(_Bool)arg1;
 - (_Bool)isCachingAtlases;
 - (unsigned int)darkVariant;
 - (unsigned int)trafficIncidentTypeKey;
 - (unsigned int)styleAttributeTransitSystemTypeKey;
 - (unsigned int)styleAttributeTransitTypeKey;
-- (id)imageForName:(id)arg1 contentScale:(float)arg2 sizeGroup:(long long)arg3 coordinate:(CDStruct_c3b9c2ee)arg4 modifiers:(id)arg5;
-- (id)imageForKey:(unsigned int)arg1 value:(unsigned int)arg2 contentScale:(float)arg3 sizeGroup:(long long)arg4 coordinate:(CDStruct_c3b9c2ee)arg5 modifiers:(id)arg6;
-- (id)imageForDataID:(unsigned int)arg1 text:(id)arg2 contentScale:(float)arg3 sizeGroup:(long long)arg4 coordinate:(CDStruct_c3b9c2ee)arg5 modifiers:(id)arg6;
-- (id)imageForStyleAttributes:(id)arg1 withStylesheetName:(id)arg2 contentScale:(float)arg3 sizeGroup:(long long)arg4 coordinate:(CDStruct_c3b9c2ee)arg5 modifiers:(id)arg6;
-- (id)imageForStyleAttributes:(id)arg1 styleManager:(shared_ptr_a3c46825)arg2 contentScale:(float)arg3 sizeGroup:(long long)arg4 coordinate:(CDStruct_c3b9c2ee)arg5 modifiers:(id)arg6;
-- (id)init:(shared_ptr_6d521cf7)arg1 stylesheetVendor:(shared_ptr_dd2d1f5e)arg2;
+- (id)imageForName:(id)arg1 contentScale:(float)arg2 sizeGroup:(long long)arg3 modifiers:(id)arg4;
+- (id)imageForKey:(unsigned int)arg1 value:(unsigned int)arg2 contentScale:(float)arg3 sizeGroup:(long long)arg4 modifiers:(id)arg5;
+- (id)imageForDataID:(unsigned int)arg1 text:(id)arg2 contentScale:(float)arg3 sizeGroup:(long long)arg4 modifiers:(id)arg5;
+- (id)imageForStyleAttributes:(id)arg1 withStylesheetName:(id)arg2 contentScale:(float)arg3 sizeGroup:(long long)arg4 modifiers:(id)arg5;
+- (id)imageForStyleAttributes:(id)arg1 styleManager:(shared_ptr_a3c46825)arg2 contentScale:(float)arg3 sizeGroup:(long long)arg4 modifiers:(id)arg5;
+- (id)_internalIconManager;
+- (void)dealloc;
 - (id)init;
 
 @end

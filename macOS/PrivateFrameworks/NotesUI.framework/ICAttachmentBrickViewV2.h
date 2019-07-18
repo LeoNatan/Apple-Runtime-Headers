@@ -141,6 +141,7 @@
 - (void)attachmentDidLoadNotification:(id)arg1;
 - (id)quickLookTransitionImageWithContentRect:(struct CGRect *)arg1;
 - (struct CGRect)quickLookSourceFrameOnScreen;
+- (void)cacheDisplayInRect:(struct CGRect)arg1 toBitmapImageRep:(id)arg2;
 - (void)prepareForReuse;
 - (void)prepareForPrinting;
 - (void)setAttachment:(id)arg1 forSearchResult:(id)arg2;

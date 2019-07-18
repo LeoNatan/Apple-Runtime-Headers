@@ -8,7 +8,7 @@
 
 #import <ViewBridge/NSRemoteViewDelegate-Protocol.h>
 
-@class NSError, NSRemoteViewController, NSString;
+@class NSError, NSRemoteViewController, NSString, NSUUID;
 
 __attribute__((visibility("hidden")))
 @interface NSRemoteViewControllerAuxiliary : NSObject <NSRemoteViewDelegate>
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     unsigned int _inhibitFirstResponder:1;
     NSRemoteViewController *_remoteViewController;
     NSString *_serviceBundleIdentifier;
+    NSUUID *_serviceInstanceIdentifier;
     NSString *_serviceViewControllerClassName;
     NSError *_terminationError;
     struct os_unfair_lock_s _retainReleaseLock;

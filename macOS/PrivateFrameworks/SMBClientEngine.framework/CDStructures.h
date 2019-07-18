@@ -82,31 +82,31 @@ struct smb_close {
 };
 
 struct smb_create {
-    unsigned long long flags;
-    unsigned char oplockLevel;
-    unsigned int impersonationLevel;
-    unsigned int desiredAccess;
-    unsigned int fileAttributes;
-    unsigned int shareAccess;
-    unsigned int createDisposition;
-    unsigned int createOptions;
-    void *createContextp;
-    unsigned int createContextLen;
-    unsigned int ntStatus;
-    unsigned char retOplockLevel;
-    unsigned char retFlags;
-    unsigned int createAction;
-    unsigned long long creationTime;
-    unsigned long long lastAccessTime;
-    unsigned long long lastWriteTime;
-    unsigned long long changeTime;
-    unsigned long long allocationSize;
-    unsigned long long eof;
-    unsigned int retFileAttributes;
-    unsigned int maxAccess;
-    CDStruct_9808ab94 fid;
-    struct smb_resolve_id resolveInfo;
-    struct smb_dur_handle durHandle;
+    unsigned long long _field1;
+    unsigned char _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    void *_field9;
+    unsigned int _field10;
+    unsigned int _field11;
+    unsigned char _field12;
+    unsigned char _field13;
+    unsigned int _field14;
+    unsigned long long _field15;
+    unsigned long long _field16;
+    unsigned long long _field17;
+    unsigned long long _field18;
+    unsigned long long _field19;
+    unsigned long long _field20;
+    unsigned int _field21;
+    unsigned int _field22;
+    CDStruct_9808ab94 _field23;
+    struct smb_resolve_id _field24;
+    struct smb_dur_handle _field25;
 };
 
 struct smb_dir_enum_out {
@@ -115,18 +115,18 @@ struct smb_dir_enum_out {
 };
 
 struct smb_dur_handle {
-    unsigned long long leaseKeyHigh;
-    unsigned long long leaseKeyLow;
-    unsigned int reqLeaseState;
-    unsigned long long parLeaseKeyHigh;
-    unsigned long long parLeaseKeyLow;
-    unsigned short epoch;
-    unsigned int flagsV2;
-    unsigned char createGuid[16];
-    CDStruct_9808ab94 fid;
-    unsigned long long flags;
-    unsigned int leaseState;
-    unsigned int timeout;
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned int _field3;
+    unsigned long long _field4;
+    unsigned long long _field5;
+    unsigned short _field6;
+    unsigned int _field7;
+    unsigned char _field8[16];
+    CDStruct_9808ab94 _field9;
+    unsigned long long _field10;
+    unsigned int _field11;
+    unsigned int _field12;
 };
 
 struct smb_flush {
@@ -238,8 +238,8 @@ struct smb_read_write {
 };
 
 struct smb_resolve_id {
-    unsigned long long fileID;
-    unsigned int resolveIDError;
+    unsigned long long _field1;
+    unsigned int _field2;
 };
 
 struct smb_rq;

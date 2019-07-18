@@ -8,17 +8,21 @@
 
 #import <HMFoundation/HMFObject-Protocol.h>
 #import <HMFoundation/NSCopying-Protocol.h>
+#import <HMFoundation/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSString, NSUUID;
 
-@interface HMFMessageDestination : HMFObject <HMFObject, NSCopying>
+@interface HMFMessageDestination : HMFObject <HMFObject, NSCopying, NSSecureCoding>
 {
     NSUUID *_target;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)allMessageDestinations;
 @property(readonly, copy, nonatomic) NSUUID *target; // @synthesize target=_target;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 @property(readonly, copy) NSString *shortDescription;

@@ -21,6 +21,9 @@
 @property(readonly, nonatomic) NSString *guid; // @synthesize guid=_guid;
 @property(readonly, nonatomic) long long reason; // @synthesize reason=_reason;
 - (void).cxx_destruct;
+- (_Bool)_shouldReportMetricForExternal;
+- (_Bool)_shouldReportReason;
+- (_Bool)shouldReportMetric;
 @property(readonly, nonatomic) NSNumber *command;
 @property(readonly, nonatomic) NSDictionary *payload;
 - (id)initWithReason:(long long)arg1 guid:(id)arg2 service:(id)arg3 additionalInformation:(id)arg4;

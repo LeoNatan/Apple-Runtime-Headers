@@ -36,11 +36,13 @@
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) __weak id <LAUIAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)localizedCallerName;
+- (id)callerIconBundlePath;
 - (void)biometryState:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)biometricNoMatch;
 - (void)authenticationResult:(id)arg1 error:(id)arg2 context:(id)arg3;
-- (void)notification:(long long)arg1 original:(id)arg2 mechanism:(unsigned long long)arg3;
 - (id)localizedSubTitleForMechanisms:(unsigned long long)arg1;
+- (void)notification:(long long)arg1 original:(id)arg2 mechanism:(unsigned long long)arg3;
 - (void)_announceFailure:(id)arg1;
 - (void)_updateUIActive:(BOOL)arg1;
 - (id)_imageName;

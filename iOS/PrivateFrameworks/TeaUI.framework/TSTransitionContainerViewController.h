@@ -11,6 +11,7 @@
 @interface TSTransitionContainerViewController : UIViewController
 {
     // Error parsing type: , name: identifier
+    // Error parsing type: , name: disableSidebarBarButtonItem
     // Error parsing type: , name: rootViewController
     // Error parsing type: , name: backBarButtonItem
     // Error parsing type: , name: sidebarBarButtonItem

@@ -6,15 +6,15 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class UIButton, UILabel;
+@class UIButton, UILabel, _TtC18HealthExperienceUI11PlatterView;
 
 __attribute__((visibility("hidden")))
 @interface _TtC18HealthExperienceUI27DataTypeDetailFavoritesCell : UICollectionViewCell
 {
+    // Error parsing type: , name: platterView
     // Error parsing type: , name: titleLabel
     // Error parsing type: , name: favoriteButton
     // Error parsing type: , name: favoritesController
-    // Error parsing type: , name: highlightStateView
     // Error parsing type: , name: parentViewController
     // Error parsing type: , name: item
 }
@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)awakeFromNib;
 @property(nonatomic) __weak UIButton *favoriteButton; // @synthesize favoriteButton;
 @property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel;
+@property(nonatomic) __weak _TtC18HealthExperienceUI11PlatterView *platterView; // @synthesize platterView;
 
 @end
 

@@ -14,7 +14,6 @@
 
 @interface FPUIActionController : NSObject <FPUIActionRemoteContextDelegate, FPUIActionControllerProtocol>
 {
-    _Bool _actionHasStarted;
     NSString *_domainIdentifier;
     NSString *_actionIdentifier;
     NSArray *_items;
@@ -34,7 +33,7 @@
 - (void)_delegateDidFinishWithUserInfo:(id)arg1 error:(id)arg2;
 - (void)_delegateError:(id)arg1;
 - (id)_getExtensionWithError:(id *)arg1;
-- (void)startAction;
+- (id)performActionWithCompletionHandler:(CDUnknownBlockType)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

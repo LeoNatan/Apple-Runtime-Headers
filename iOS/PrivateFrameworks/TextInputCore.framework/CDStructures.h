@@ -10,8 +10,8 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct AlignedBuffer<432, 8> {
-    char _field1[432];
+struct AlignedBuffer<456, 8> {
+    char _field1[456];
 };
 
 struct ByteString {
@@ -232,7 +232,7 @@ struct Vector<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> {
 struct VectorBuffer<KB::Word, 3> {
     struct Word *_field1;
     unsigned long long _field2;
-    struct AlignedBuffer<432, 8> _field3;
+    struct AlignedBuffer<456, 8> _field3;
 };
 
 struct VectorBuffer<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> {
@@ -379,9 +379,7 @@ struct vector<unsigned int, std::__1::allocator<unsigned int>> {
 
 typedef struct {
     float _field1;
-    unsigned long long _field2;
-    float _field3;
-} CDStruct_cd80b3f2;
+} CDStruct_37a3040a;
 
 typedef struct CDStruct_183601bc;
 

@@ -16,8 +16,8 @@
 {
     id <MTLRenderPipelineStateSPI> _baseObject;
     CaptureMTLDevice *_captureDevice;
-    struct GTTraceContext *_traceContext;
-    struct GTTraceStream *_traceStream;
+    // Error parsing type: ^{GTTraceContext={_opaque_pthread_mutex_t=q[56c]}^{GTTraceStore}AQAQ^{apr_hash_t}^(FreeNode)Ai^{GTTraceStream}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}}, name: _traceContext
+    // Error parsing type: ^{GTTraceStream=QQQ^{GTTraceMemPool}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}AQ}, name: _traceStream
     MTLRenderPipelineDescriptor *_descriptor;
 }
 
@@ -25,7 +25,8 @@
 - (void).cxx_destruct;
 - (id)newVertexShaderDebugInfo;
 - (id)newFragmentShaderDebugInfo;
-- (void)dealloc;
+- (unsigned int)getVertexShaderTelemetryID;
+- (unsigned int)getFragmentShaderTelemetryID;
 @property(readonly) unsigned long long uniqueIdentifier;
 @property(readonly) BOOL supportIndirectCommandBuffers;
 @property(nonatomic) unsigned long long resourceIndex;
@@ -35,9 +36,14 @@
 @property(readonly, copy) NSString *description;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 @property(readonly) unsigned long long streamReference;
-@property(readonly) struct GTTraceStream *traceStream;
-@property(readonly) struct GTTraceContext *traceContext;
+// Error parsing type for property traceStream:
+// Property attributes: T^{GTTraceStream=QQQ^{GTTraceMemPool}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}AQ},R
+
+// Error parsing type for property traceContext:
+// Property attributes: T^{GTTraceContext={_opaque_pthread_mutex_t=q[56c]}^{GTTraceStore}AQAQ^{apr_hash_t}^(FreeNode)Ai^{GTTraceStream}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}},R
+
 - (void)touch;
+- (void)dealloc;
 @property(readonly) id <MTLRenderPipelineState> baseObject;
 - (void)swapObject:(id)arg1;
 - (id)initWithBaseObject:(id)arg1 captureDevice:(id)arg2;

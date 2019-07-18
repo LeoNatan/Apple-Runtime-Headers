@@ -26,11 +26,13 @@
     id <PXGTextureProviderDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_requestQueue;
     NSObject<OS_dispatch_queue> *_processingQueue;
+    CDStruct_04522d6a _interactionState;
 }
 
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *requestQueue; // @synthesize requestQueue=_requestQueue;
 @property(nonatomic) __weak id <PXGTextureProviderDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) CDStruct_04522d6a interactionState; // @synthesize interactionState=_interactionState;
 @property(retain, nonatomic) PXGViewEnvironment *viewEnvironment; // @synthesize viewEnvironment=_viewEnvironment;
 - (void).cxx_destruct;
 - (void)setTextureAtlasManager:(id)arg1 atSpecIndex:(long long)arg2;
@@ -55,6 +57,7 @@
 - (void)didFinishRequestingTextures;
 - (void)cancelTextureRequests:(id)arg1;
 - (struct _NSRange)requestTexturesForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 geometries:(CDStruct_ac168a83 *)arg2 styles:(CDStruct_506f5052 *)arg3 infos:(CDStruct_9d1ebe49 *)arg4 inLayout:(id)arg5;
+- (void)interactionStateDidChange:(CDStruct_04522d6a)arg1;
 - (void)viewEnvironmentDidChange:(id)arg1;
 - (void)dealloc;
 - (id)init;

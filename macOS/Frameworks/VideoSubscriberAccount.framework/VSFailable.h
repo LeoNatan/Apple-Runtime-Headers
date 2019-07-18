@@ -20,7 +20,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)failableWithError:(id)arg1;
 + (id)failableWithObject:(id)arg1;
-+ (Class)objectClass;
++ (id)decodableClasses;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
 @property(nonatomic) long long kind; // @synthesize kind=_kind;

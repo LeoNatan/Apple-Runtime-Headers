@@ -34,6 +34,7 @@
 + (id)effectiveInputClassesFromInputClasses:(id)arg1 workflowTypes:(id)arg2;
 + (BOOL)supportsSecureCoding;
 + (id)defaultName;
++ (id)supportedInputClassNames;
 + (id)supportedInputClasses;
 + (id)workflowWithReference:(id)arg1 storageProvider:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) id <WFRecordStorageProvider> storageProvider; // @synthesize storageProvider=_storageProvider;
@@ -97,6 +98,7 @@
 @property(copy, nonatomic) NSString *name;
 @property(readonly, nonatomic) NSString *workflowID;
 @property(readonly, nonatomic) WFWorkflowReference *reference;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithRecord:(id)arg1 storageProvider:(id)arg2 migrateIfNecessary:(BOOL)arg3 environment:(long long)arg4 error:(id *)arg5;
 - (id)initWithRecord:(id)arg1 storageProvider:(id)arg2 error:(id *)arg3;
@@ -116,7 +118,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

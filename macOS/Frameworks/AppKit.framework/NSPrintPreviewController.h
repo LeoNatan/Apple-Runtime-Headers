@@ -21,9 +21,12 @@ __attribute__((visibility("hidden")))
     BOOL _isPreviewing;
     BOOL _isInStartOrStop;
     NSMapTable *_observedKeyPathsPerAccessoryController;
+    BOOL _hasRealPrintingStarted;
 }
 
+@property BOOL hasRealPrintingStarted; // @synthesize hasRealPrintingStarted=_hasRealPrintingStarted;
 - (void)_updatePrintPreview:(id)arg1;
+- (void)_cancelDeferredPrintPreview;
 - (void)_updatePrintPreviewDeferred;
 - (void)printInfoDidChange:(id)arg1;
 - (void)userClickedPageNumberControl:(id)arg1;
@@ -33,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)setMaxViewFrameSize:(struct CGSize)arg1;
 - (void)viewDidDisappear;
 - (void)viewWillAppear;
+- (BOOL)_viewControllerSupports10_10Features;
 - (void)loadView;
 - (BOOL)_checkSizeValidity:(struct CGSize)arg1;
 - (BOOL)_checkOriginValidity:(struct CGPoint)arg1;
@@ -45,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (long long)_nUpPages;
 - (void)setRepresentedObject:(id)arg1;
 - (void)dealloc;
+- (void)teardownForRealPrinting;
 - (id)initWithOperation:(id)arg1;
 
 @end

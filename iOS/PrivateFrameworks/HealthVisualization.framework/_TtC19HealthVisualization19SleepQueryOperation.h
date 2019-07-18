@@ -12,6 +12,7 @@
     // Error parsing type: , name: dateInterval
     // Error parsing type: , name: calendar
     // Error parsing type: , name: healthStore
+    // Error parsing type: , name: queryQualityOfService
     // Error parsing type: , name: resultHandler
     // Error parsing type: , name: $__lazy_storage_$_query
 }

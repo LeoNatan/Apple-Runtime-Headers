@@ -50,16 +50,18 @@
     id <PXGEngineDelegate> _delegate;
     PXGMetalRenderer *_metalRenderer;
     PXGViewRenderer *_viewRenderer;
-    PXGAccessibilityRenderer *_accessibilityRenderer;
     NSArray *_renderers;
     PXGViewEnvironment *_viewEnvironment;
     CDStruct_58b866b9 *_stats;
     PXDisplayLink *_displayLink;
+    PXGAccessibilityRenderer *_accessibilityRenderer;
     PXGAccessibilityContentInfoManager *_contentInfoManager;
+    CDStruct_04522d6a _interactionState;
     struct _PXGEngineScrollState _scrollState;
 }
 
 @property(readonly, nonatomic) PXGAccessibilityContentInfoManager *contentInfoManager; // @synthesize contentInfoManager=_contentInfoManager;
+@property(readonly, nonatomic) PXGAccessibilityRenderer *accessibilityRenderer; // @synthesize accessibilityRenderer=_accessibilityRenderer;
 @property(nonatomic, getter=isAccessibilityEnabled) _Bool accessibilityEnabled; // @synthesize accessibilityEnabled=_accessibilityEnabled;
 @property(nonatomic) _Bool slowAnimationsEnabled; // @synthesize slowAnimationsEnabled=_slowAnimationsEnabled;
 @property(readonly, nonatomic) PXDisplayLink *displayLink; // @synthesize displayLink=_displayLink;
@@ -68,10 +70,10 @@
 @property(retain, nonatomic) PXGViewEnvironment *viewEnvironment; // @synthesize viewEnvironment=_viewEnvironment;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(readonly, nonatomic) NSArray *renderers; // @synthesize renderers=_renderers;
-@property(readonly, nonatomic) PXGAccessibilityRenderer *accessibilityRenderer; // @synthesize accessibilityRenderer=_accessibilityRenderer;
 @property(readonly, nonatomic) PXGViewRenderer *viewRenderer; // @synthesize viewRenderer=_viewRenderer;
 @property(readonly, nonatomic) PXGMetalRenderer *metalRenderer; // @synthesize metalRenderer=_metalRenderer;
 @property(nonatomic) __weak id <PXGEngineDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) CDStruct_04522d6a interactionState; // @synthesize interactionState=_interactionState;
 @property(readonly, nonatomic) struct _PXGEngineScrollState scrollState; // @synthesize scrollState=_scrollState;
 @property(copy, nonatomic) CDUnknownBlockType animationRenderingCompletionHandler; // @synthesize animationRenderingCompletionHandler=_animationRenderingCompletionHandler;
 @property(readonly, nonatomic) PXGTextureManager *textureManager; // @synthesize textureManager=_textureManager;
@@ -93,14 +95,19 @@
 - (void)_render;
 - (void)_setNeedsRender;
 - (_Bool)_shouldDeferContentOffsetUpdates;
+- (_Bool)_shouldWaitForScrollEvent;
+- (_Bool)_shouldDeferRenderUntilNextFrame;
+- (_Bool)_isInBackground;
 - (void)_enumerateRenderers:(CDUnknownBlockType)arg1;
 - (void)_updateTextureManager;
+- (void)_updateInteractionState;
 - (void)_updateAnimatorWithTargetTimestamp:(double)arg1;
 - (void)_updateLayout;
 - (void)_updateIfNeededWithReason:(id)arg1;
 - (void)_ensureUpdatedLayout;
 - (void)__setNeedsUpdate;
 - (void)_forceInvalidate:(unsigned long long)arg1;
+- (void)_deferredInvalidate:(unsigned long long)arg1;
 - (void)_invalidateOrDefer:(unsigned long long)arg1;
 - (void)_updateDisplayLink;
 - (void)handleDisplayLink:(id)arg1;

@@ -21,7 +21,8 @@
     NSUserActivity *_stateRestorationActivity;
     NSDictionary *_userInfo;
     struct {
-        unsigned int _stateRestorationActivityHasLoaded:1;
+        unsigned int _userInfoIsCurrent:1;
+        unsigned int _stateRestorationActivityIsCurrent:1;
         unsigned int _trackingSessionRequest:1;
         unsigned int _configurationIsDirty:1;
         unsigned int _userInfoIsDirty:1;
@@ -37,7 +38,9 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)_loadStateRestorationActivity;
+- (id)_copyWithoutUserInfo;
+- (void)_loadStateRestorationActivityIfNeeded;
+- (void)_loadUserInfo;
 - (void)_clearAllDirtyFlags;
 @property(nonatomic, setter=_setUserInfoIsDirty:) BOOL _userInfoIsDirty;
 @property(nonatomic, setter=_setConfigurationIsDirty:) BOOL _configurationIsDirty;
@@ -51,6 +54,7 @@
 - (id)description;
 @property(copy, nonatomic) NSDictionary *userInfo;
 @property(readonly, nonatomic) NSUserActivity *stateRestorationActivity;
+- (void)setStateRestorationActivity:(id)arg1;
 @property(readonly, copy, nonatomic) UISceneConfiguration *configuration;
 - (id)_initWithIdentifier:(id)arg1 sessionRole:(id)arg2 configurationName:(id)arg3;
 - (id)_init;

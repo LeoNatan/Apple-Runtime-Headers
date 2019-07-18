@@ -36,9 +36,6 @@
 + (Class)_classToCheckForRequiresConstraintBasedLayout;
 + (BOOL)_shouldUseBoundsOutsetsForString:(id)arg1;
 + (struct __CFCharacterSet *)_tooBigChars;
-+ (BOOL)_serviceDeferredTextLayerUpdateQueue:(BOOL)arg1 forWindow:(id)arg2;
-+ (BOOL)_checkLastQueuedWindowFrameForChange:(id)arg1;
-+ (id)_deferredFrameUpdateQueue:(BOOL)arg1;
 + (void)initialize;
 + (id)textFieldWithString:(id)arg1;
 + (id)labelWithAttributedString:(id)arg1;
@@ -49,7 +46,6 @@
 + (id)textFieldWithAttributedString:(id)arg1;
 + (id)wrappingTextFieldWithString:(id)arg1 preferredMaxLayoutWidth:(double)arg2;
 - (void)viewDidEndLiveResize;
-- (void)viewWillStartLiveResize;
 - (void)textView:(id)arg1 prepareMenu:(id)arg2 forCharacterAtIndex:(unsigned long long)arg3 withEvent:(id)arg4;
 - (id)accessibilityValue;
 - (struct CGRect)accessibilityFrameForRange:(struct _NSRange)arg1;
@@ -137,8 +133,6 @@
 - (BOOL)isFlipped;
 - (void)drawForegroundOfTextLayer:(id)arg1;
 - (void)displayTextLayer:(id)arg1;
-- (void)_queueForDeferredTextLayerFrameUpdate;
-- (BOOL)_shouldDeferUpdateTextLayerSize:(struct CGSize)arg1 toNewSize:(struct CGSize)arg2;
 - (id)_preferredAppearance;
 - (void)setCell:(id)arg1;
 - (long long)_preferredLayerContentsRedrawPolicy;

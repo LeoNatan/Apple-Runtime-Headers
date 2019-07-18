@@ -14,11 +14,14 @@ __attribute__((visibility("hidden")))
     long long _itemID;
     NSArray *_items;
     NSMutableArray *_slices;
+    long long _type;
 }
 
 - (void).cxx_destruct;
 - (void)_sendCompletion:(id)arg1;
-- (void)sendItems:(id)arg1 complete:(_Bool)arg2;
+- (void)sendItems:(id)arg1 messageType:(long long)arg2;
+@property(readonly, nonatomic) long long type;
+- (id)initWithSession:(id)arg1 requestID:(long long)arg2 transferID:(long long)arg3;
 
 @end
 

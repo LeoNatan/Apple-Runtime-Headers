@@ -205,6 +205,7 @@
 - (BOOL)shouldStartPlayingPreviewView:(id)arg1;
 - (BOOL)previewView:(id)arg1 shouldShowDisplayable:(id)arg2;
 - (BOOL)shouldManageVisibilityForPreviewView:(id)arg1;
+- (void)previewView:(id)arg1 pinchZoomedWithMagnification:(double)arg2 onPreviewItem:(id)arg3;
 - (void)previewView:(id)arg1 openExternalURL:(id)arg2;
 - (BOOL)previewView:(id)arg1 shouldOpenURL:(id)arg2;
 - (void)previewView:(id)arg1 doubleClickedOnPreviewItem:(id)arg2;

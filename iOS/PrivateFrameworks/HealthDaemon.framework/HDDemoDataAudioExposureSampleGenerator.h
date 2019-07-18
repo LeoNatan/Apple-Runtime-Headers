@@ -26,14 +26,15 @@
 @property(nonatomic) _Bool didGenerateEnvironmentalAudioExposureSamples; // @synthesize didGenerateEnvironmentalAudioExposureSamples=_didGenerateEnvironmentalAudioExposureSamples;
 @property(nonatomic) double nextEnvironmentalAudioExposureSampleTime; // @synthesize nextEnvironmentalAudioExposureSampleTime=_nextEnvironmentalAudioExposureSampleTime;
 - (void).cxx_destruct;
+- (id)_headphoneAudioExposureMetadata;
 - (id)_makeUnknownHeadphones;
 - (id)_makeBeatsHeadphones;
 - (id)_makeEarPods;
 - (id)_makeAirPods;
 - (id)_headphoneProvenanceWithPerson:(id)arg1;
 - (id)_dateComponentsByAddingHours:(long long)arg1 toDate:(id)arg2;
-- (id)_makeAlertSampleWithStartDate:(id)arg1 endDate:(id)arg2 value:(id)arg3;
-- (id)_makeQuantitySampleWithType:(id)arg1 value:(id)arg2 unit:(id)arg3 startDate:(id)arg4 endDate:(id)arg5;
+- (id)_makeAlertSampleWithStartDate:(id)arg1 endDate:(id)arg2 value:(id)arg3 limit:(id)arg4;
+- (id)_makeQuantitySampleWithType:(id)arg1 value:(id)arg2 unit:(id)arg3 startDate:(id)arg4 endDate:(id)arg5 metadata:(id)arg6;
 - (id)_makeQuantitySeriesSamplesWithType:(id)arg1 rawSampleValues:(id)arg2 sampleUnit:(id)arg3 initialSampleDate:(id)arg4 sampleDuration:(double)arg5 distanceBetweenSamples:(double)arg6 demoPerson:(id)arg7;
 - (id)_makeEnvironmentalSamplesWithType:(id)arg1 rawSampleValues:(id)arg2 sampleUnit:(id)arg3 initialSampleDate:(id)arg4 sampleDuration:(double)arg5 distanceBetweenSamples:(double)arg6;
 - (id)_makeHeadphoneSamplesWithType:(id)arg1 rawSampleValues:(id)arg2 sampleUnit:(id)arg3 initialSampleDate:(id)arg4 sampleDuration:(double)arg5 distanceBetweenSamples:(double)arg6 demoPerson:(id)arg7;

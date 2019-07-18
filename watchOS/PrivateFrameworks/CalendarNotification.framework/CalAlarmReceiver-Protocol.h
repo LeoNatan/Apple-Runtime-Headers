@@ -10,5 +10,6 @@
 
 @protocol CalAlarmReceiver <NSObject>
 - (void)receivedAlarmNamed:(NSString *)arg1;
+- (void)didRegisterForAlarms;
 @end
 

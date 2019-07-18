@@ -10,6 +10,7 @@
 
 @protocol SUSUICommandLineToolServerInterface <NSObject>
 - (void)setPasscodePolicy:(unsigned long long)arg1;
+- (void)downloadDidFinish;
 - (void)simulateComingFromOTAUpdate;
 - (void)reboot:(_Bool)arg1;
 - (void)toggleSettingsBadge:(_Bool)arg1;

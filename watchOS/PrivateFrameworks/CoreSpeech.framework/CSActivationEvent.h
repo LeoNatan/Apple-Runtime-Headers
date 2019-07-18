@@ -18,8 +18,7 @@
     unsigned long long _hosttime;
 }
 
-+ (id)builtInVoiceTriggerStopEvent:(id)arg1 hostTime:(unsigned long long)arg2;
-+ (id)builtInVoiceTriggerStartEvent:(id)arg1 hostTime:(unsigned long long)arg2;
++ (id)mediaserverdLaunchedEvent:(unsigned long long)arg1;
 + (id)jarvisVoiceTriggerEvent:(id)arg1 activationInfo:(id)arg2 hostTime:(unsigned long long)arg3;
 + (id)builtInMicVoiceTriggerEvent:(id)arg1 hostTime:(unsigned long long)arg2;
 + (id)remoteMicVADEvent:(id)arg1 vadScore:(float)arg2 hostTime:(unsigned long long)arg3;

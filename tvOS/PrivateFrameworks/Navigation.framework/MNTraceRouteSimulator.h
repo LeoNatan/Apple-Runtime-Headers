@@ -40,6 +40,7 @@
 - (void)navigationSession:(id)arg1 didUpdateMatchedLocation:(id)arg2;
 - (void)navigationSessionDidStart:(id)arg1;
 @property(readonly, nonatomic) double timeScale;
+@property(readonly, nonatomic) unsigned long long traceVersion;
 @property(readonly, nonatomic) _Bool isTracePlayer;
 @property(readonly, nonatomic) _Bool isSimulation;
 @property(readonly, nonatomic) _Bool usesCLMapCorrection;

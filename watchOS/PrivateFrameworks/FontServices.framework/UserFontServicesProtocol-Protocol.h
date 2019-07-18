@@ -7,7 +7,7 @@
 @class NSArray;
 
 @protocol UserFontServicesProtocol
-- (void)GSFontEnableOrDisablePersistentURLs:(NSArray *)arg1 forProfileFonts:(_Bool)arg2 enabled:(_Bool)arg3 withReply:(void (^)(NSArray *))arg4;
+- (void)GSFontEnableOrDisablePersistentURLs:(NSArray *)arg1 forProfileFonts:(_Bool)arg2 enabled:(_Bool)arg3 suspend:(_Bool)arg4 withReply:(void (^)(NSArray *))arg5;
 - (void)GSFontUnregisterPersistentURLs:(NSArray *)arg1 forProfileFonts:(_Bool)arg2 withReply:(void (^)(NSArray *, unsigned int))arg3;
 - (void)GSFontRegisterPersistentURLs:(NSArray *)arg1 enabled:(_Bool)arg2 forProfileFonts:(_Bool)arg3 withReply:(void (^)(NSArray *, unsigned int))arg4;
 @end

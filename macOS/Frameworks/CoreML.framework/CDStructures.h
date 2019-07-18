@@ -190,6 +190,14 @@ struct OArchive {
     struct map<std::__1::basic_string<char>, OArchive, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, OArchive>>> _field3;
 };
 
+struct Pipeline {
+    CDUnknownFunctionPointerType *_field1;
+    struct InternalMetadataWithArenaLite _field2;
+    RepeatedPtrField_f3160e5f _field3;
+    RepeatedPtrField_fe7cf120 _field4;
+    int _field5;
+};
+
 struct Prediction {
     double _field1;
     double _field2;
@@ -215,6 +223,13 @@ struct RepeatedPtrField<CoreML::Specification::FeatureDescription> {
 };
 
 struct RepeatedPtrField<CoreML::Specification::Model> {
+    struct Arena *_field1;
+    int _field2;
+    int _field3;
+    struct Rep *_field4;
+};
+
+struct RepeatedPtrField<std::__1::basic_string<char>> {
     struct Arena *_field1;
     int _field2;
     int _field3;
@@ -355,6 +370,10 @@ struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>
             } ;
         } __value_;
     } __r_;
+};
+
+struct linear_congruential_engine<unsigned int, 48271, 0, 2147483647> {
+    unsigned int __x_;
 };
 
 struct map<std::__1::basic_string<char>, IArchive, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, IArchive>>> {
@@ -621,6 +640,14 @@ struct vector<long long, std::__1::allocator<long long>> {
     } __end_cap_;
 };
 
+struct vector<long, std::__1::allocator<long>> {
+    long long *__begin_;
+    long long *__end_;
+    struct __compressed_pair<long *, std::__1::allocator<long>> {
+        long long *__value_;
+    } __end_cap_;
+};
+
 struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> {
     basic_string_23d93216 *__begin_;
     basic_string_23d93216 *__end_;
@@ -747,6 +774,13 @@ typedef struct RepeatedPtrField<CoreML::Specification::Model> {
     int _field3;
     struct Rep *_field4;
 } RepeatedPtrField_f3160e5f;
+
+typedef struct RepeatedPtrField<std::__1::basic_string<char>> {
+    struct Arena *_field1;
+    int _field2;
+    int _field3;
+    struct Rep *_field4;
+} RepeatedPtrField_fe7cf120;
 
 typedef struct __map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, void *>*, long>> {
     struct __tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, void *>*, long> {

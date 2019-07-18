@@ -9,7 +9,7 @@
 #import <Photos/NSCopying-Protocol.h>
 #import <Photos/PLLocalUUIDConverter-Protocol.h>
 
-@class NSManagedObjectID, NSString, PHPhotoLibrary;
+@class NSManagedObjectID, NSString, PHObjectReference, PHPhotoLibrary;
 
 @interface PHObject : NSObject <PLLocalUUIDConverter, NSCopying>
 {
@@ -72,6 +72,7 @@
 @property(readonly, copy, nonatomic) NSString *localIdentifier;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
 - (_Bool)hasLoadedPropertySet:(id)arg1;
+@property(readonly, nonatomic) PHObjectReference *objectReference;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

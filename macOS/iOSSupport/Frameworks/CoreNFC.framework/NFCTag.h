@@ -10,13 +10,14 @@
 #import <CoreNFC/NFCTag-Protocol.h>
 
 @class NSNumber, NSString;
-@protocol NFCReaderSession, NFTag;
+@protocol NFCReaderSession, NFTag, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface NFCTag : NSObject <NFCTag, NFCNDEFTag>
 {
     id <NFTag> _tag;
     NSNumber *_sessionKey;
+    NSObject<OS_dispatch_queue> *_delegateQueue;
     long long _configuration;
 }
 
@@ -25,15 +26,15 @@ __attribute__((visibility("hidden")))
 + (BOOL)supportsSecureCoding;
 - (BOOL)isMatchingSession:(id)arg1;
 - (void)_sendAPDU:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)_transceiveWithData:(id)arg1 receivedData:(id *)arg2 error:(id *)arg3;
+- (BOOL)_transceiveWithSession:(id)arg1 sendData:(id)arg2 receivedData:(id *)arg3 error:(id *)arg4;
 - (void)_transceiveWithData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_disconnectWithError:(id *)arg1;
 - (void)_connectWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (BOOL)_connectWithError:(id *)arg1;
+- (BOOL)_connectWithSession:(id)arg1 outError:(id *)arg2;
 - (void)dispatchOnDelegateQueueAsync:(CDUnknownBlockType)arg1;
-- (void)dispatchOnSessionQueueAsync:(CDUnknownBlockType)arg1;
 - (id)_getInternalReaderSession;
 - (BOOL)isEqualToNFTag:(id)arg1;
+- (void)_setDelegateQueue:(id)arg1;
 - (void)_setSession:(id)arg1;
 - (void)_setTag:(id)arg1;
 @property(readonly, nonatomic) long long configuration;

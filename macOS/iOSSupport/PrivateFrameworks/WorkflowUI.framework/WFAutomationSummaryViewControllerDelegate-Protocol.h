@@ -6,13 +6,13 @@
 
 #import <WorkflowUI/NSObject-Protocol.h>
 
-@class WFAutomationSummaryViewController, WFConfiguredTriggerRecord, WFWorkflowReference;
+@class WFAutomationSummaryViewController, WFConfiguredTriggerRecord, WFWorkflow;
 
 @protocol WFAutomationSummaryViewControllerDelegate <NSObject>
 - (void)automationSummaryViewController:(WFAutomationSummaryViewController *)arg1 didFinishWithTrigger:(WFConfiguredTriggerRecord *)arg2;
 
 @optional
-- (void)automationSummaryViewController:(WFAutomationSummaryViewController *)arg1 editWorkflow:(WFWorkflowReference *)arg2;
+- (void)automationSummaryViewController:(WFAutomationSummaryViewController *)arg1 editWorkflow:(WFWorkflow *)arg2;
 - (void)automationSummaryViewController:(WFAutomationSummaryViewController *)arg1 editTrigger:(WFConfiguredTriggerRecord *)arg2;
 @end
 

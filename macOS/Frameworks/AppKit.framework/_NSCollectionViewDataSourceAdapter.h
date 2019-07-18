@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property NSCollectionView *collectionView; // @synthesize collectionView=_collectionView;
+- (void).cxx_destruct;
 - (void)dealloc;
 @property(readonly, copy) NSString *debugDescription;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
@@ -44,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)deleteItemsAtIndexPaths:(id)arg1;
 - (void)insertItemsAtIndexPaths:(id)arg1;
 - (void)_queueInsertItemsAtIndexes:(id)arg1 inSectionObject:(id)arg2;
+- (void)_queueDeleteItemsAtIndexPaths:(id)arg1;
 - (void)moveSection:(long long)arg1 toSection:(long long)arg2;
 - (void)reloadSections:(id)arg1;
 - (void)deleteSections:(id)arg1;
@@ -67,7 +69,7 @@ __attribute__((visibility("hidden")))
 - (void)_invalidateEverything;
 - (unsigned long long)_indexOfSectionWithRepresentedObject:(id)arg1 inBatchUpdateAfterState:(BOOL)arg2;
 - (unsigned long long)_indexOfSectionWithRepresentedObject:(id)arg1;
-@property id <NSCollectionViewDataSource> dataSource;
+@property __weak id <NSCollectionViewDataSource> dataSource;
 - (void)_endBatchUpdate;
 - (void)_finishBatchUpdateWithUpdateItems:(id)arg1 newSectionCount:(long long)arg2 newSectionSourceIndexes:(long long *)arg3 newSectionItemCounts:(long long *)arg4 newGlobalItemCount:(long long)arg5 newGlobalItemSourceIndexes:(long long *)arg6;
 - (void)_processQueuedInsertsInSectionObjects;

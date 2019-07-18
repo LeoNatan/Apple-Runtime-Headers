@@ -16,6 +16,7 @@
 @property(readonly, nonatomic) NSSet *personLocalIdentifiers; // @synthesize personLocalIdentifiers=_personLocalIdentifiers;
 - (void).cxx_destruct;
 - (id)description;
+- (unsigned long long)changeCount;
 - (unsigned long long)type;
 - (id)initWithPersonLocalIdentifiers:(id)arg1;
 

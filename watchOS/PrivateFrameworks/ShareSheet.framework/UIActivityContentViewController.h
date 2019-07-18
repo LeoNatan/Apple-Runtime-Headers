@@ -8,7 +8,7 @@
 
 #import <ShareSheet/UICollectionViewDelegate-Protocol.h>
 
-@class LPLinkMetadata, NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSString, NSUUID, UICollectionView, _UICollectionViewDiffableDataSource;
+@class LPLinkMetadata, NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSString, NSUUID, UICollectionView, UIVisualEffectView, _UICollectionViewDiffableDataSource;
 @protocol UIActivityContentDelegate;
 
 @interface UIActivityContentViewController : UIViewController <UICollectionViewDelegate>
@@ -16,7 +16,9 @@
     _Bool _configureForCloudSharing;
     _Bool _configureForPhotosEdit;
     _Bool _wantsObjectManipulation;
+    _Bool _sharingCollapsed;
     _Bool _photosLandscapeMode;
+    _Bool _contentInstalled;
     id <UIActivityContentDelegate> _delegate;
     UIViewController *_photosCarouselViewController;
     NSDictionary *_activitiesByUUID;
@@ -32,8 +34,11 @@
     NSNumber *_nearbyCountSlotID;
     NSMutableDictionary *_shareSlots;
     NSMutableDictionary *_actionSlots;
+    UIVisualEffectView *_backgroundView;
 }
 
+@property(nonatomic) _Bool contentInstalled; // @synthesize contentInstalled=_contentInstalled;
+@property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) NSMutableDictionary *actionSlots; // @synthesize actionSlots=_actionSlots;
 @property(retain, nonatomic) NSMutableDictionary *shareSlots; // @synthesize shareSlots=_shareSlots;
 @property(retain, nonatomic) NSNumber *nearbyCountSlotID; // @synthesize nearbyCountSlotID=_nearbyCountSlotID;
@@ -49,15 +54,18 @@
 @property(retain, nonatomic) NSMutableDictionary *identifierToProgress; // @synthesize identifierToProgress=_identifierToProgress;
 @property(retain, nonatomic) NSDictionary *activitiesByUUID; // @synthesize activitiesByUUID=_activitiesByUUID;
 @property(retain, nonatomic) UIViewController *photosCarouselViewController; // @synthesize photosCarouselViewController=_photosCarouselViewController;
+@property(nonatomic) _Bool sharingCollapsed; // @synthesize sharingCollapsed=_sharingCollapsed;
 @property(nonatomic) _Bool wantsObjectManipulation; // @synthesize wantsObjectManipulation=_wantsObjectManipulation;
 @property(nonatomic) _Bool configureForPhotosEdit; // @synthesize configureForPhotosEdit=_configureForPhotosEdit;
 @property(nonatomic) _Bool configureForCloudSharing; // @synthesize configureForCloudSharing=_configureForCloudSharing;
 @property(nonatomic) __weak id <UIActivityContentDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (_Bool)isPhotosOrCamera;
-- (void)updateProgress:(float)arg1 withText:(id)arg2 forNodeWithIdentifier:(id)arg3 shouldPulse:(_Bool)arg4 animated:(_Bool)arg5;
+- (void)updateProgress:(float)arg1 withTopText:(id)arg2 bottomText:(id)arg3 forNodeWithIdentifier:(id)arg4 shouldPulse:(_Bool)arg5 animated:(_Bool)arg6;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)nextButtonTapped;
 - (void)closeButtonTapped;
+- (void)cancelButtonTapped;
 - (id)_activityWithActivityUUID:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)layoutContentCollectionView:(_Bool)arg1;
@@ -67,7 +75,6 @@
 @property(readonly, nonatomic) LPLinkMetadata *headerMetadata;
 - (void)updateHeaderMetadata;
 - (void)configureHeaderViewIfNeeded;
-- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)init;
 

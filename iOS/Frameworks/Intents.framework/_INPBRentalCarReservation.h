@@ -15,6 +15,7 @@
 @interface _INPBRentalCarReservation : PBCodable <_INPBRentalCarReservation, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     _INPBLocationValue *_dropOffLocation;
     _INPBLocationValue *_pickupLocation;
     _INPBRentalCar *_rentalCar;
@@ -23,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBReservation *reservation; // @synthesize reservation=_reservation;
 @property(retain, nonatomic) _INPBDateTimeRange *rentalDuration; // @synthesize rentalDuration=_rentalDuration;
 @property(retain, nonatomic) _INPBRentalCar *rentalCar; // @synthesize rentalCar=_rentalCar;

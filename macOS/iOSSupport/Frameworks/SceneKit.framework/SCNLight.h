@@ -81,6 +81,7 @@
 - (void)_customDecodingOfSCNLight:(id)arg1;
 - (void)_customEncodingOfSCNLight:(id)arg1;
 @property(retain, nonatomic) NSURL *IESProfileURL;
+- (void)setIESProfileURL:(id)arg1 resolvedURL:(id)arg2;
 @property(readonly, nonatomic) SCNMaterialProperty *gobo;
 - (BOOL)hasGobo;
 @property(copy, nonatomic) NSArray *areaPolygonVertices;

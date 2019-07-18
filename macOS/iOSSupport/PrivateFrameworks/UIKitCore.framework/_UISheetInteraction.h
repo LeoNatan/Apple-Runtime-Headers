@@ -52,10 +52,12 @@
 - (void).cxx_destruct;
 - (void)draggingCancelledInSource:(id)arg1;
 - (void)draggingEndedInSource:(id)arg1 withVelocity:(double)arg2;
-- (void)draggingChangedInSource:(id)arg1 withTranslation:(struct CGPoint)arg2;
+- (void)draggingChangedInSource:(id)arg1 withTranslation:(struct CGPoint)arg2 animateChange:(BOOL)arg3;
 - (void)draggingBeganFromSource:(id)arg1;
+- (BOOL)_shouldInteractWithDescendentScrollView:(id)arg1 startOffset:(struct CGPoint)arg2 maxTopOffset:(double)arg3;
 - (void)_descendentScrollViewDidEndDragging:(id)arg1;
-- (struct CGPoint)_scrollView:(id)arg1 adjustedUnconstrainedOffsetForUnconstrainedOffset:(struct CGPoint)arg2 startOffset:(struct CGPoint)arg3 horizontalVelocity:(inout double *)arg4 verticalVelocity:(inout double *)arg5;
+- (BOOL)_descendentScrollView:(id)arg1 shouldPreserveStartOffset:(struct CGPoint)arg2;
+- (struct CGPoint)_scrollView:(id)arg1 adjustedUnconstrainedOffsetForUnconstrainedOffset:(struct CGPoint)arg2 startOffset:(struct CGPoint)arg3 horizontalVelocity:(inout double *)arg4 verticalVelocity:(inout double *)arg5 animator:(out id *)arg6;
 - (void)handlePan:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (void)updateRegisteredPanGestureRecognizerEnabled:(id)arg1;

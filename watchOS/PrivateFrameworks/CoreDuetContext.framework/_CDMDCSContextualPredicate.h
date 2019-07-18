@@ -6,9 +6,11 @@
 
 #import <CoreDuetContext/_CDContextualPredicate.h>
 
+#import <CoreDuetContext/_CDDictionaryEncoding-Protocol.h>
+
 @class NSDictionary, NSString;
 
-@interface _CDMDCSContextualPredicate : _CDContextualPredicate
+@interface _CDMDCSContextualPredicate : _CDContextualPredicate <_CDDictionaryEncoding>
 {
     NSString *_identifier;
     NSDictionary *_parameters;
@@ -19,7 +21,6 @@
 + (id)predicateWithIdentifier:(id)arg1;
 + (id)predicateForForegroundApp;
 + (id)predicateForBacklightOnStatus;
-+ (id)predicateForJazzAtHomeReadingNewsInTheEvening;
 + (id)predicateForFirstPartyWorkoutMatchingTypes:(id)arg1 states:(id)arg2;
 + (id)predicateForIsConnectedToAudioBluetoothDevice;
 + (id)predicateForIsConnectedToCar;
@@ -38,11 +39,14 @@
 @property(retain, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (id)initWithPlistDictionary:(id)arg1;
+- (id)plistDictionary;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 parameters:(id)arg2;
 
 @end
 

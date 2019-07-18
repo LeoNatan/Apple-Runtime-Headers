@@ -6,11 +6,12 @@
 
 #import <HomeUI/NSObject-Protocol.h>
 
-@class HFItem, HUQuickControlViewController;
+@class HFItem, HUQuickControlViewController, NSString;
 
 @protocol HUQuickControlCollectionItemManaging <NSObject>
 
 @optional
+- (NSString *)titleForItem:(HFItem *)arg1;
 - (HUQuickControlViewController *)viewControllerForItem:(HFItem *)arg1;
 @end
 

@@ -23,11 +23,9 @@ __attribute__((visibility("hidden")))
     struct shared_ptr<md::OverlayContainer> _overlayContainer;
     _Bool _trafficEnabled;
     id <VKInteractiveMapDelegate> _delegate;
-    shared_ptr_a3c46825 _styleManager;
 }
 
 + (_Bool)supportsMapType:(int)arg1 scale:(int)arg2;
-@property(readonly, nonatomic) shared_ptr_a3c46825 styleManager; // @synthesize styleManager=_styleManager;
 @property(nonatomic) _Bool trafficEnabled; // @synthesize trafficEnabled=_trafficEnabled;
 @property(nonatomic) double canonicalSkyHeight; // @synthesize canonicalSkyHeight=_canonicalSkyHeight;
 @property(nonatomic) id <VKInteractiveMapDelegate> delegate; // @synthesize delegate=_delegate;

@@ -6,9 +6,10 @@
 
 #import <ChatKit/NSObject-Protocol.h>
 
-@class NSString, _MKNanoPlaceCardViewController;
+@class NSArray, NSString, _MKNanoPlaceCardViewController;
 
 @protocol _MKNanoPlaceCardViewControllerDelegate <NSObject>
+- (void)nanoPlaceCardViewController:(_MKNanoPlaceCardViewController *)arg1 didSelectTransitIncidents:(NSArray *)arg2;
 - (void)nanoPlaceCardViewController:(_MKNanoPlaceCardViewController *)arg1 didSelectPhoneNumber:(NSString *)arg2;
 - (void)nanoPlaceCardViewControllerDidTapAttribution:(_MKNanoPlaceCardViewController *)arg1;
 - (void)nanoPlaceCardViewControllerDidTapMap:(_MKNanoPlaceCardViewController *)arg1;

@@ -9,7 +9,7 @@
 @interface _TtC18HealthExperienceUI42AllHighlightCategoriesButtonDataSourceItem : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: reuseIdentifier
-    // Error parsing type: , name: titleKey
+    // Error parsing type: , name: title
 }
 
 @end

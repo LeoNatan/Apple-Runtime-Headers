@@ -18,6 +18,7 @@
     NSString *_articleId;
     NSString *_channelId;
     NSString *_countryCode;
+    NSString *_deviceModel;
     NTPBIssueData *_issueData;
     NTPBIssueViewData *_issueViewData;
     NSData *_sessionId;
@@ -33,6 +34,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 @property(retain, nonatomic) NTPBIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
 @property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
 @property(nonatomic) _Bool isPaidSubscriber; // @synthesize isPaidSubscriber=_isPaidSubscriber;
@@ -53,6 +55,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasDeviceModel;
 @property(readonly, nonatomic) _Bool hasIssueViewData;
 @property(readonly, nonatomic) _Bool hasIssueData;
 @property(nonatomic) _Bool hasIsPaidSubscriber;

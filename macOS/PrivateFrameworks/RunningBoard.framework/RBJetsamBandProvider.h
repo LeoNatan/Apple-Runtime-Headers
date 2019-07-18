@@ -20,8 +20,6 @@
 - (int)_foregroundJetsamPriorityForProcess:(id)arg1 state:(id)arg2;
 - (int)_backgroundJetsamPriorityForProcess:(id)arg1 state:(id)arg2;
 - (int)_inactiveJetsamPriorityForProcess:(id)arg1 state:(id)arg2;
-- (int)_defaultJetsamPriorityForProcess:(id)arg1 inBand:(unsigned char)arg2;
-- (int)_jetsamPriorityForProcess:(id)arg1 state:(id)arg2;
 - (int)defaultPriorityForProcess:(id)arg1 inBand:(unsigned char)arg2;
 - (int)jetsamPriorityForProcess:(id)arg1 withState:(id)arg2;
 - (id)initWithEntitlementManager:(id)arg1;

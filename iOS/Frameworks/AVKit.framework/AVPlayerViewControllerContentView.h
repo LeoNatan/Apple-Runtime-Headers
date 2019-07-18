@@ -73,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (void)layoutSubviews;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
+- (_Bool)avkit_hasFullScreenLayoutClass;
 - (id)avkit_backdropGroupLeader;
 - (void)removeTurboModePlaybackControlsPlaceholderViewIfNeeded;
 - (void)loadPlaybackControlsViewIfNeeded;

@@ -6,39 +6,46 @@
 
 #import <PassKitUI/PKSectionTableViewController.h>
 
-@class NSDateFormatter, NSDictionary, NSNumberFormatter, PKAccount, PKAccountPayment, PKFooterHyperlinkView, PKPaymentWebService;
+@class NSDate, NSDateFormatter, NSDictionary, NSNumberFormatter, PKAccount, PKAccountPayment, PKFooterHyperlinkView, PKPaymentWebService;
 @protocol PKCreditAccountPaymentDetailsViewControllerDelegate;
 
 @interface PKCreditAccountPaymentDetailsViewController : PKSectionTableViewController
 {
     PKAccount *_account;
+    NSDate *_paymentDueDate;
     unsigned int _featureIdentifier;
     PKAccountPayment *_payment;
     PKPaymentWebService *_paymentWebService;
     int _detailViewStyle;
     NSDictionary *_recurringDetailsRowMap;
     NSNumberFormatter *_currencyFormatter;
-    NSDateFormatter *_dateFormatter;
+    NSDateFormatter *_productDateFormatter;
+    NSDateFormatter *_productDayFormatter;
     NSDateFormatter *_localTimeFormatter;
     NSDateFormatter *_localCancellationDateFormatter;
+    NSDateFormatter *_productPaymentMonthFormatter;
+    NSDateFormatter *_productPaymentDateFormatter;
     _Bool _cancellingPayment;
-    _Bool _onHold;
+    _Bool _showStatusSection;
+    _Bool _showUpcomingPaymentSection;
+    _Bool _paymentAmountPending;
+    _Bool _isFailedRecurringPayment;
     PKFooterHyperlinkView *_hyperlinkFooterView;
     id <PKCreditAccountPaymentDetailsViewControllerDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <PKCreditAccountPaymentDetailsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_cancelPayment;
+- (void)_cancelPayment:(unsigned int)arg1;
 - (void)_configureLinkCell:(id)arg1;
+- (void)_configureDismissCell:(id)arg1;
 - (void)_configureDeletePaymentCell:(id)arg1;
 - (id)_modifyPaymentCellForTableView:(id)arg1;
 - (id)_cancelPaymentCellForTableView:(id)arg1;
 - (void)_modifyPaymentSelected;
-- (void)_cancelPaymentSelected;
+- (void)_cancelPaymentSelected:(unsigned int)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)_footnoteString;
-- (id)_tableView:(id)arg1 recurringPaymentOnHoldCellForRowAtIndexPath:(id)arg2;
+- (id)_tableView:(id)arg1 recurringPaymentStatusCellForRowAtIndexPath:(id)arg2;
 - (id)_tableView:(id)arg1 recurringPaymentUpcomingPaymentCellForPaymentDetailsRowAtIndexPath:(id)arg2;
 - (id)_tableView:(id)arg1 recurringPaymentDetailsCellForPaymentDetailsRowAtIndexPath:(id)arg2;
 - (id)_tableView:(id)arg1 paymentDetailsCellForPaymentDetailsRowAtIndexPath:(id)arg2;

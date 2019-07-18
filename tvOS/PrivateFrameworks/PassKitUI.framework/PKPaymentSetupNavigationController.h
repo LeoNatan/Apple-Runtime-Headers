@@ -6,13 +6,13 @@
 
 #import <PassKitUI/PKNavigationController.h>
 
-#import <PassKitUI/PKPaymentSetupRequiresPreflightProtocol-Protocol.h>
 #import <PassKitUI/PKPaymentSetupViewControllerDelegate-Protocol.h>
+#import <PassKitUI/PKViewControllerPreflightable-Protocol.h>
 
 @class NSString, PKPaymentProvisioningController;
 @protocol PKPaymentSetupDelegate;
 
-@interface PKPaymentSetupNavigationController : PKNavigationController <PKPaymentSetupViewControllerDelegate, PKPaymentSetupRequiresPreflightProtocol>
+@interface PKPaymentSetupNavigationController : PKNavigationController <PKPaymentSetupViewControllerDelegate, PKViewControllerPreflightable>
 {
     long long _context;
     _Bool _rootViewControllerNeedsConfiguration;
@@ -33,8 +33,10 @@
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
+- (void)viewController:(id)arg1 requestPasscodeUpgradeWithCompletion:(CDUnknownBlockType)arg2;
 - (void)viewControllerDidShowEligibilityIssue:(id)arg1;
 - (void)viewController:(id)arg1 didShowProvisioningError:(id)arg2;
+- (void)viewControllerDidCancelSetupFlow:(id)arg1;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)_dirtyConfigurationAndReloadIfNeeded;

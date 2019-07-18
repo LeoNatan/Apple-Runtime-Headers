@@ -46,6 +46,8 @@
     NSDateInterval *_lastReturnedDateInterval;
     NSArray *_lastReturnedLocationNames;
     BOOL _performedInitialVisualShift;
+    long long _visuallyStableAnchorItem;
+    long long _visuallyStableAnchorItemDesiredColumn;
     BOOL _shouldAnimateTowardsAnchor;
     BOOL _wasTracking;
     PXCuratedLibraryLayoutSpec *_spec;

@@ -10,6 +10,7 @@
 
 @protocol _SFPBMediaRemoteControlCardSection <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
+@property(copy, nonatomic) NSString *playbackBundleIdentifier;
 @property(nonatomic) _Bool playbackRouteUniqueIdentifierIsEncrypted;
 @property(copy, nonatomic) NSString *playbackRouteUniqueIdentifier;
 @property(retain, nonatomic) _SFPBColor *backgroundColor;

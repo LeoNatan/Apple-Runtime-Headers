@@ -9,7 +9,7 @@
 #import <TextInputCore/NSSecureCoding-Protocol.h>
 #import <TextInputCore/TIKeyboardInteractionProtocol-Protocol.h>
 
-@class NSDate, NSLocale, NSMutableArray, NSString, TIKeyboardInput, TIKeyboardState, TIKeyboardTouchEvent, TIWordEntry;
+@class NSDate, NSLocale, NSMutableArray, NSMutableDictionary, NSString, TIKeyboardInput, TIKeyboardState, TIKeyboardTouchEvent, TIWordEntry;
 
 @interface TITypingSession : NSObject <NSSecureCoding, TIKeyboardInteractionProtocol>
 {
@@ -30,9 +30,13 @@
     TIWordEntry *_lastWord;
     TIKeyboardTouchEvent *_timeCalibrationTouch;
     double _calibratedTimeBase;
+    NSMutableDictionary *_touchesHistory;
+    long long _lastActivePathIndex;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) long long lastActivePathIndex; // @synthesize lastActivePathIndex=_lastActivePathIndex;
+@property(retain, nonatomic) NSMutableDictionary *touchesHistory; // @synthesize touchesHistory=_touchesHistory;
 @property double calibratedTimeBase; // @synthesize calibratedTimeBase=_calibratedTimeBase;
 @property(retain) TIKeyboardTouchEvent *timeCalibrationTouch; // @synthesize timeCalibrationTouch=_timeCalibrationTouch;
 @property(nonatomic) BOOL includeInputToLastWord; // @synthesize includeInputToLastWord=_includeInputToLastWord;

@@ -17,7 +17,7 @@
 
 @property(readonly, copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) RTXPCActivityCriteria *criteria; // @synthesize criteria=_criteria;
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 criteria:(id)arg2 handler:(CDUnknownBlockType)arg3;

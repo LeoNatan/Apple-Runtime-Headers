@@ -12,8 +12,7 @@
 #import <ChatKit/CKConversationResultsControllerDelegate-Protocol.h>
 #import <ChatKit/CKOnboardingControllerDelegate-Protocol.h>
 #import <ChatKit/CNContactViewControllerDelegate-Protocol.h>
-#import <ChatKit/CNMeCardSharingPickerViewControllerDelegate-Protocol.h>
-#import <ChatKit/IMCNMeCardSharingSettingsViewControllerDelegate-Protocol.h>
+#import <ChatKit/CNMeCardSharingSettingsViewControllerDelegate-Protocol.h>
 #import <ChatKit/IMCloudKitEventHandler-Protocol.h>
 #import <ChatKit/INKContentControllerObserver-Protocol.h>
 #import <ChatKit/UIActionSheetDelegate-Protocol.h>
@@ -26,9 +25,9 @@
 #import <ChatKit/UITableViewDropDelegate-Protocol.h>
 #import <ChatKit/_UIContextMenuInteractionDelegate-Protocol.h>
 
-@class CKCloudKitSyncProgressViewController, CKConversation, CKConversationList, CKConversationSearchResultsController, CKLargeTitleAccessoryView, CKMessagesController, CKNavigationBarTitleView, CKOnboardingController, CKScheduledUpdater, CKSearchViewController, CNContact, CNContactStore, INKContentController, INKContentView, NSArray, NSIndexPath, NSString, UIBarButtonItem, UIButton, UISearchController, UITableView, UIView, _UIContextMenuInteraction;
+@class CKCloudKitSyncProgressViewController, CKConversation, CKConversationList, CKConversationListFilterCell, CKConversationSearchResultsController, CKLargeTitleAccessoryView, CKMessagesController, CKNavigationBarTitleView, CKOnboardingController, CKScheduledUpdater, CKSearchViewController, CNContact, CNContactStore, INKContentController, INKContentView, NSArray, NSIndexPath, NSString, UIBarButtonItem, UIButton, UISearchController, UITableView, UIView, _UIContextMenuInteraction;
 
-@interface CKConversationListController : UITableViewController <UISearchControllerDelegate, UISearchBarDelegate, CKCloudKitSyncProgressViewControllerDelegate, IMCloudKitEventHandler, CNContactViewControllerDelegate, CKConversationResultsControllerDelegate, CKContainerSearchControllerDelegate, CKConversationListCellDelegate, UITableViewDropDelegate, UITableViewDragDelegate, _UIContextMenuInteractionDelegate, INKContentControllerObserver, CNMeCardSharingPickerViewControllerDelegate, IMCNMeCardSharingSettingsViewControllerDelegate, CKOnboardingControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITableViewDelegatePrivate, UIActionSheetDelegate>
+@interface CKConversationListController : UITableViewController <UISearchControllerDelegate, UISearchBarDelegate, CKCloudKitSyncProgressViewControllerDelegate, IMCloudKitEventHandler, CNContactViewControllerDelegate, CKConversationResultsControllerDelegate, CKContainerSearchControllerDelegate, CKConversationListCellDelegate, UITableViewDropDelegate, UITableViewDragDelegate, _UIContextMenuInteractionDelegate, INKContentControllerObserver, CNMeCardSharingSettingsViewControllerDelegate, CKOnboardingControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITableViewDelegatePrivate, UIActionSheetDelegate>
 {
     UITableView *_table;
     NSIndexPath *_previouslySelectedIndexPath;
@@ -68,6 +67,7 @@
     UIBarButtonItem *_doneButton;
     CDUnknownBlockType _searchCompletion;
     CNContactStore *_contactStore;
+    CKConversationListFilterCell *_cachedFilterControlCell;
     INKContentController *_infoKitContentController;
     INKContentView *_infoKitContentView;
     CKOnboardingController *_onboardingController;
@@ -76,6 +76,7 @@
 @property(retain, nonatomic) CKOnboardingController *onboardingController; // @synthesize onboardingController=_onboardingController;
 @property(retain, nonatomic) INKContentView *infoKitContentView; // @synthesize infoKitContentView=_infoKitContentView;
 @property(retain, nonatomic) INKContentController *infoKitContentController; // @synthesize infoKitContentController=_infoKitContentController;
+@property(retain, nonatomic) CKConversationListFilterCell *cachedFilterControlCell; // @synthesize cachedFilterControlCell=_cachedFilterControlCell;
 @property(nonatomic) _Bool hasJunkiMessageChats; // @synthesize hasJunkiMessageChats=_hasJunkiMessageChats;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) _Bool shouldUseFastPreviewText; // @synthesize shouldUseFastPreviewText=_shouldUseFastPreviewText;
@@ -186,6 +187,8 @@
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (long long)preferredStatusBarStyle;
 - (void)optionsButtonTapped:(id)arg1;
+- (void)showMultiplePhoneNumbersAlertForNicknames;
+- (void)showAccountMismatachAlertForNicknames;
 - (void)composeButtonClicked:(id)arg1;
 - (void)_endHoldingUpdatesForBatchEditing:(_Bool)arg1;
 - (void)_updateToolbarItems;
@@ -211,7 +214,7 @@
 - (void)viewDidUnload;
 - (void)viewDidLoad;
 - (void)loadView;
-- (_Bool)_messageIsFromFilteredSenderIsSMS:(_Bool)arg1 isContact:(_Bool)arg2 isFiltered:(_Bool)arg3 isSpam:(_Bool)arg4 unknownFilteringEnabled:(_Bool)arg5 smsSpamFilteringEnabled:(_Bool)arg6;
+- (_Bool)_messageIsFromFilteredSenderServiceIsSMS:(_Bool)arg1 lastMessageIsSMS:(_Bool)arg2 isContact:(_Bool)arg3 isFiltered:(_Bool)arg4 isSpam:(_Bool)arg5 unknownFilteringEnabled:(_Bool)arg6 smsSpamFilteringEnabled:(_Bool)arg7;
 - (_Bool)_messageSpamFilteringEnabled;
 - (_Bool)_messageUnknownFilteringEnabled;
 - (_Bool)_getHasJunkiMessageUserDefault;
@@ -245,19 +248,15 @@
 - (void)sharingSettingsViewController:(id)arg1 didSelectSharingAudience:(unsigned long long)arg2;
 - (void)sharingSettingsViewController:(id)arg1 didUpdateSharingState:(_Bool)arg2;
 - (void)sharingSettingsViewControllerDidUpdateContact:(id)arg1;
-- (void)sharingPickerDidFinish:(id)arg1;
-- (void)sharingPicker:(id)arg1 didSelectNameFormat:(unsigned long long)arg2;
-- (void)sharingPicker:(id)arg1 didSelectSharingAudience:(unsigned long long)arg2;
-- (void)sharingPicker:(id)arg1 didChangeSharingState:(_Bool)arg2;
+- (_Bool)_imageForkedFromMeCard;
 - (unsigned long long)_meCardSharingAudience;
-- (unsigned long long)_meCardSharingNameFormat;
 - (_Bool)_meCardSharingEnabled;
 - (id)_meCardSharingState;
 - (id)_meCardSharingNameProviderWithContact:(id)arg1;
 - (id)_meContact;
 - (id)_contactStore;
 - (id)nicknameController;
-- (void)showMeCardViewControllerWithContact:(id)arg1;
+- (void)showMeCardViewControllerWithNickname:(id)arg1;
 - (void)showMeCardViewController;
 - (void)doneButtonTapped:(id)arg1;
 - (void)updateTitleViews:(_Bool)arg1;

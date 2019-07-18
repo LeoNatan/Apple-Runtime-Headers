@@ -69,7 +69,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSArray *calendars;
 - (void)_loadLists;
 - (void)_loadListsIfNeeded;
-- (id)_fetchAndCacheConstraintsForSource:(id)arg1;
+- (id)_fetchAndCacheConstraintsForFrozenSource:(id)arg1;
 - (id)cachedConstraintsForSource:(id)arg1;
 - (id)sourceWithIdentifier:(id)arg1;
 @property(readonly) NSArray *sources;

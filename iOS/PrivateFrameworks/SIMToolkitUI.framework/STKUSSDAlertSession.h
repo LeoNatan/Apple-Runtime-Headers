@@ -22,15 +22,15 @@
 
 @property(readonly, nonatomic) NSMutableArray *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
 @property(readonly, nonatomic) NSXPCConnection *ussdConnection; // @synthesize ussdConnection=_ussdConnection;
-@property(nonatomic) _Bool hasReceivedContent; // @synthesize hasReceivedContent=_hasReceivedContent;
 @property(readonly, nonatomic) NSXPCListener *ussdListener; // @synthesize ussdListener=_ussdListener;
 @property(readonly, nonatomic) long long event; // @synthesize event=_event;
 - (void).cxx_destruct;
 - (void)wakeup;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)performUSSDUpdate:(CDUnknownBlockType)arg1;
+@property(nonatomic) _Bool hasReceivedContent;
 - (void)invalidate;
-- (id)initWithQueue:(id)arg1 responseProvider:(id)arg2 event:(long long)arg3 options:(id)arg4 sound:(id)arg5;
+- (id)initWithLogger:(id)arg1 responseProvider:(id)arg2 event:(long long)arg3 options:(id)arg4 sound:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

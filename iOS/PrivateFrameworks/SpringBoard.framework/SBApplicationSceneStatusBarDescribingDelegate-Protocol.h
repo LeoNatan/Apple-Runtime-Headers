@@ -12,6 +12,7 @@
 
 @optional
 - (void)didInvalidateStatusBarDescriptionForSceneWithIdentifier:(NSString *)arg1;
+- (void)sceneWithIdentifier:(NSString *)arg1 didChangeStatusBarAvoidanceFrameTo:(struct CGRect)arg2;
 - (void)sceneWithIdentifier:(NSString *)arg1 didChangeStatusBarStyleOverridesToSuppressTo:(int)arg2;
 - (void)sceneWithIdentifier:(NSString *)arg1 didChangeStatusBarOrientationTo:(long long)arg2;
 - (void)sceneWithIdentifier:(NSString *)arg1 didChangeStatusBarHiddenTo:(_Bool)arg2;

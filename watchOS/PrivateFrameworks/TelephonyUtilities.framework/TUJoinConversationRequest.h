@@ -28,6 +28,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)sanitizedMembersFromMembers:(id)arg1;
++ (_Bool)showUIPromptFromURLComponents:(id)arg1;
 + (id)messagesGroupNameFromURLComponents:(id)arg1;
 + (id)messagesGroupUUIDFromURLComponents:(id)arg1;
 + (id)callerIDFromURLComponents:(id)arg1;
@@ -49,6 +50,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)showUIPromptQueryItem;
 - (id)messagesGroupNameQueryItem;
 - (id)messagesGroupUUIDQueryItem;
 - (id)callerIDQueryItem;

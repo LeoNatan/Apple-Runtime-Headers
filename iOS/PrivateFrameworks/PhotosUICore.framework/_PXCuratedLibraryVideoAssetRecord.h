@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) PXGVideoSessionPixelBufferSource *pixelBufferSource; // @synthesize pixelBufferSource=_pixelBufferSource;
 - (void).cxx_destruct;
 - (void)pixelBufferSource:(id)arg1 updateVideoSession:(id)arg2;
+- (void)_configureVideoSession:(id)arg1;
 - (void)prepareForInactive;
 - (long long)desiredPlayState;
 - (void)setDesiredPlayState:(long long)arg1;

@@ -14,6 +14,7 @@
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)description;
 @property(readonly, nonatomic, getter=isSuspended) _Bool suspended;
 @property(readonly, nonatomic, getter=isForeground) _Bool foreground;
 - (id)initWithApplicationState:(unsigned int)arg1;

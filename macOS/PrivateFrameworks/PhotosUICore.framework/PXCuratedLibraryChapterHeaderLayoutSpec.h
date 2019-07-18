@@ -11,6 +11,7 @@
 @interface PXCuratedLibraryChapterHeaderLayoutSpec : PXFeatureSpec
 {
     BOOL _shouldFloat;
+    BOOL _shouldAbbreviateMonth;
     struct NSFont *_titleFont;
     double _titleHeight;
     struct NSColor *_titleColor;
@@ -34,6 +35,7 @@
 @property(readonly, nonatomic) double floatingAppearanceCrossfadeDistance; // @synthesize floatingAppearanceCrossfadeDistance=_floatingAppearanceCrossfadeDistance;
 @property(readonly, nonatomic) double floatingAppearanceCrossfadeStartDistance; // @synthesize floatingAppearanceCrossfadeStartDistance=_floatingAppearanceCrossfadeStartDistance;
 @property(readonly, nonatomic) double floatingDistanceFromSafeAreaTop; // @synthesize floatingDistanceFromSafeAreaTop=_floatingDistanceFromSafeAreaTop;
+@property(readonly, nonatomic) BOOL shouldAbbreviateMonth; // @synthesize shouldAbbreviateMonth=_shouldAbbreviateMonth;
 @property(readonly, nonatomic) BOOL shouldFloat; // @synthesize shouldFloat=_shouldFloat;
 @property(readonly, nonatomic) double spacingBetweenTitleBottomAndNextCardTop; // @synthesize spacingBetweenTitleBottomAndNextCardTop=_spacingBetweenTitleBottomAndNextCardTop;
 @property(readonly, nonatomic) double spacingBetweenTitleTopAndPreviousCardBottom; // @synthesize spacingBetweenTitleTopAndPreviousCardBottom=_spacingBetweenTitleTopAndPreviousCardBottom;

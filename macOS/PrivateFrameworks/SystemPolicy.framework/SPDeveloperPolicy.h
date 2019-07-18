@@ -22,6 +22,7 @@
 - (BOOL)isDeveloperToolEnvironmentWithError:(id *)arg1;
 - (BOOL)setDeveloperModeEnabled:(BOOL)arg1 error:(id *)arg2;
 @property(readonly, getter=isDeveloperModeEnabled) BOOL developerModeEnabled;
+- (void)dealloc;
 - (id)init;
 
 @end

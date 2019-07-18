@@ -41,11 +41,8 @@ typedef struct {
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    unsigned int _field1;
-    unsigned int _field2;
-} CDStruct_c0454aff;
-
-typedef struct {
+    unsigned int maxAlarmsAllowed;
+    unsigned int maxRecurrencesAllowed;
     unsigned int supportsAlarmTriggerIntervals:1;
     unsigned int supportsAlarmTriggerDates:1;
     unsigned int supportsAlarmsTriggeringAfterStartDate:1;
@@ -71,7 +68,7 @@ typedef struct {
     unsigned int requiresAttendeeSearchInSingleAccount:1;
     unsigned int mustAcknowledgeMasterEvent:1;
     unsigned int canSetAvailability:1;
-    unsigned int eventAvalabilityLimited:1;
+    unsigned int eventAvailabilityLimited:1;
     unsigned int requiresMSFormattedUID:1;
     unsigned int shouldCancelDeletedEvents:1;
     unsigned int shouldDeclineDeletedInvitations:1;
@@ -110,8 +107,17 @@ typedef struct {
     unsigned int supportsAttachments:1;
     unsigned int supportsDelegation:1;
     unsigned int supportsDelegateEnumeration:1;
+    unsigned int supportsFloatingTimeZone:1;
+    unsigned int prohibitsUsingEventOrganizerEmailWhenComposingMail:1;
     unsigned int supportsRecurrenceSplit:1;
-} CDStruct_4df63007;
+    unsigned int requiresOpeningAttachmentAsLink:1;
+    unsigned int shouldUseDeleteAndAddInsteadOfMoveBetweenCalendars:1;
+} CDStruct_6a9d2bb3;
+
+typedef struct {
+    unsigned int _field1;
+    unsigned int _field2;
+} CDStruct_c0454aff;
 
 typedef struct {
     int _field1;

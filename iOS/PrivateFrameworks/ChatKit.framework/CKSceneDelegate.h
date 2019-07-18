@@ -24,6 +24,7 @@
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
 @property(readonly, nonatomic) __weak UIWindowScene *scene; // @synthesize scene=_scene;
 - (void).cxx_destruct;
+- (void)updateSceneTitleForConversation:(id)arg1;
 - (id)predicateMatchingConversation:(id)arg1;
 - (id)prefersToActivatePredicate;
 - (id)canActivatePredicate;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSTimer;
+@class NSTimer;
 
 @interface PBSPowerManager : NSObject
 {
@@ -16,16 +16,13 @@
     int _sleepStateNotificationToken;
     NSTimer *_powerAssertionTimer;
     unsigned long long _sleepState;
-    NSDictionary *_pendingSleepWakeCommand;
 }
 
-+ (_Bool)automaticallyNotifiesObserversOfDeviceAsleep;
 + (_Bool)isDeviceAsleepAndSleptManually:(_Bool *)arg1;
 + (void)setupPowerManagement;
 + (id)sharedInstance;
 + (void)load;
 @property(nonatomic) int sleepStateNotificationToken; // @synthesize sleepStateNotificationToken=_sleepStateNotificationToken;
-@property(retain, nonatomic) NSDictionary *pendingSleepWakeCommand; // @synthesize pendingSleepWakeCommand=_pendingSleepWakeCommand;
 @property(nonatomic) unsigned long long sleepState; // @synthesize sleepState=_sleepState;
 @property(nonatomic) _Bool needsDisplayWakeOnPowerOn; // @synthesize needsDisplayWakeOnPowerOn=_needsDisplayWakeOnPowerOn;
 @property(retain, nonatomic) NSTimer *powerAssertionTimer; // @synthesize powerAssertionTimer=_powerAssertionTimer;

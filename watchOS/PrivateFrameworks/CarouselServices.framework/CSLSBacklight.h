@@ -36,8 +36,8 @@
 - (id)_createConnectionIfNecessary;
 - (void)_releaseMinimumBrightnessAssertion:(id)arg1;
 - (void)_takeMinimumBrightnessAssertion:(id)arg1;
-- (void)releaseBacklightAssertion:(id)arg1;
-- (void)takeBacklightAssertion:(id)arg1;
+- (void)releaseBacklightAssertion:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)takeBacklightAssertion:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)offForIdentifier:(id)arg1 reason:(unsigned int)arg2 isUserInitiated:(_Bool)arg3;
 - (void)onForIdentifier:(id)arg1 reason:(unsigned int)arg2 isUserInitiated:(_Bool)arg3;
 - (void)removeObserver:(id)arg1;

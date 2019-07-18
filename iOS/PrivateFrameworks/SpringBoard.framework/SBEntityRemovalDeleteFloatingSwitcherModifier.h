@@ -11,22 +11,27 @@
 @interface SBEntityRemovalDeleteFloatingSwitcherModifier : SBTransitionSwitcherModifier
 {
     SBAppLayout *_fromAppLayout;
+    SBAppLayout *_toAppLayout;
     long long _floatingConfiguration;
 }
 
 - (void).cxx_destruct;
+- (_Bool)_isIndexToAppLayout:(unsigned long long)arg1;
+- (_Bool)_isIndexFromAppLayout:(unsigned long long)arg1;
 - (id)opacitySettings;
 - (id)layoutSettings;
 - (double)shadowOpacityForIndex:(unsigned long long)arg1;
 - (double)opacityForIndex:(unsigned long long)arg1;
+- (id)topMostAppLayouts;
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (double)scaleForIndex:(unsigned long long)arg1;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;
 - (long long)layoutUpdateMode;
 - (id)transitionDidEnd;
 - (id)transitionWillUpdate;
+- (id)transitionWillBegin;
 - (struct CGRect)containerViewBounds;
-- (id)initWithTransitionID:(id)arg1 appLayout:(id)arg2 floatingConfiguration:(long long)arg3;
+- (id)initWithTransitionID:(id)arg1 fromAppLayout:(id)arg2 toAppLayout:(id)arg3 floatingConfiguration:(long long)arg4;
 
 @end
 

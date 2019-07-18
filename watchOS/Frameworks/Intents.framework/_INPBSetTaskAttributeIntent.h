@@ -18,6 +18,7 @@
         unsigned int priority:1;
         unsigned int status:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     _INPBContactEventTrigger *_contactEventTrigger;
     _INPBIntentMetadata *_intentMetadata;
     int _priority;
@@ -29,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBTemporalEventTrigger *temporalEventTrigger; // @synthesize temporalEventTrigger=_temporalEventTrigger;
 @property(retain, nonatomic) _INPBDataString *taskTitle; // @synthesize taskTitle=_taskTitle;
 @property(retain, nonatomic) _INPBTask *targetTask; // @synthesize targetTask=_targetTask;

@@ -12,6 +12,7 @@
 
 @interface HDAWDHealthKitCloudSyncEvent : PBCodable <NSCopying>
 {
+    unsigned long long _pcsReportManateeStatus;
     NSString *_cloudKitUUID;
     NSString *_containerID;
     int _operation;
@@ -23,6 +24,7 @@
     _Bool _hasCKManateeEnabled;
     _Bool _hasInternalSettingManateeEnabled;
     struct {
+        unsigned int pcsReportManateeStatus:1;
         unsigned int operation:1;
         unsigned int options:1;
         unsigned int reason:1;
@@ -31,6 +33,7 @@
     } _has;
 }
 
+@property(nonatomic) unsigned long long pcsReportManateeStatus; // @synthesize pcsReportManateeStatus=_pcsReportManateeStatus;
 @property(nonatomic) _Bool hasInternalSettingManateeEnabled; // @synthesize hasInternalSettingManateeEnabled=_hasInternalSettingManateeEnabled;
 @property(nonatomic) _Bool hasCKManateeEnabled; // @synthesize hasCKManateeEnabled=_hasCKManateeEnabled;
 @property(retain, nonatomic) NSString *cloudKitUUID; // @synthesize cloudKitUUID=_cloudKitUUID;
@@ -49,6 +52,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasPcsReportManateeStatus;
 @property(nonatomic) _Bool hasHasInternalSettingManateeEnabled;
 @property(nonatomic) _Bool hasHasCKManateeEnabled;
 @property(readonly, nonatomic) _Bool hasCloudKitUUID;

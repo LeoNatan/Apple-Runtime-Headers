@@ -6,7 +6,7 @@
 
 #import <HealthExperience/NSObject-Protocol.h>
 
-@class NSIndexPath, NSOrderedCollectionDifference, NSString;
+@class NSDiffableDataSourceSnapshot, NSIndexPath, NSOrderedCollectionDifference, NSString;
 @protocol NSFetchedResultsSectionInfo;
 
 @protocol NSFetchedResultsControllerDelegate <NSObject>
@@ -18,6 +18,6 @@
 - (void)controller:(id)arg1 didChangeSection:(id <NSFetchedResultsSectionInfo>)arg2 atIndex:(long long)arg3 forChangeType:(unsigned long long)arg4;
 - (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(NSIndexPath *)arg3 forChangeType:(unsigned long long)arg4 newIndexPath:(NSIndexPath *)arg5;
 - (void)controller:(id)arg1 didChangeContentWithDifference:(NSOrderedCollectionDifference *)arg2;
-- (void)controller:(id)arg1 didChangeContentWithSnapshot:(id)arg2;
+- (void)controller:(id)arg1 didChangeContentWithSnapshot:(NSDiffableDataSourceSnapshot *)arg2;
 @end
 

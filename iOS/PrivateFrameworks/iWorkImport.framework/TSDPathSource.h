@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     NSString *mName;
 }
 
-+ (id)pathSourceForShapeType:(int)arg1 naturalSize:(struct CGSize)arg2;
++ (id)pathSourceForShapeType:(long long)arg1 naturalSize:(struct CGSize)arg2;
 +     // Error parsing type: @24@0:8r^{PathSourceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{PointPathSourceArchive}^{ScalarPathSourceArchive}^{BezierPathSourceArchive}^{CalloutPathSourceArchive}^{ConnectionLinePathSourceArchive}^{EditableBezierPathSourceArchive}BB}16, name: pathSourceWithArchive:
 @property _Bool hasVerticalFlip; // @synthesize hasVerticalFlip=mVerticalFlip;
 @property _Bool hasHorizontalFlip; // @synthesize hasHorizontalFlip=mHorizontalFlip;

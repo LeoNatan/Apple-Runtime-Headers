@@ -20,7 +20,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCumulativeCPUTimeMeasurement:(id)arg1;
-- (id)initWithCumulativeCPUTime:(double)arg1;
 
 @end
 

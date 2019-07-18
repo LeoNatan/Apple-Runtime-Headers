@@ -44,6 +44,7 @@
 - (void)releaseTurnByTurnOwnership;
 - (void)requestTurnByTurnOwnership;
 - (unsigned long long)navigationOwner;
+- (_Bool)carOwnsMainAudio;
 - (_Bool)carOwnsScreen;
 - (void)requestCarUIForURL:(id)arg1;
 - (void)requestCarUI;

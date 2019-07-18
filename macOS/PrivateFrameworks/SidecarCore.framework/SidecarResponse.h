@@ -8,7 +8,7 @@
 
 @interface SidecarResponse : SidecarRequest
 {
-    unsigned int _accepted:1;
+    // Error parsing type: AB, name: _accepted
 }
 
 - (void)sendItems:(id)arg1;

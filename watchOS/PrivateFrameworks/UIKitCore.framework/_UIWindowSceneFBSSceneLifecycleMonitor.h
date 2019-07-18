@@ -6,17 +6,23 @@
 
 #import <UIKitCore/_UISceneLifecycleMonitor.h>
 
-@class UIApplicationSceneSettings;
+@class NSNumber;
 
 __attribute__((visibility("hidden")))
 @interface _UIWindowSceneFBSSceneLifecycleMonitor : _UISceneLifecycleMonitor
 {
-    UIApplicationSceneSettings *_transitionSettings;
+    NSNumber *_transitioningState;
+    _Bool _transitioning;
+    _Bool _connected;
 }
 
 - (void).cxx_destruct;
+- (void)willBecomeActive;
+- (void)didEnterBackground;
+- (id)_windowScene;
 - (void)transitionToTargetState:(id)arg1 fromState:(id)arg2 withTransitionContext:(id)arg3 preparations:(CDUnknownBlockType)arg4;
 - (int)currentActivationState;
+- (id)initWithScene:(id)arg1;
 
 @end
 

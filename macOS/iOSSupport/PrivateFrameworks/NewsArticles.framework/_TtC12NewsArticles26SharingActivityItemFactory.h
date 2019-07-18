@@ -12,6 +12,7 @@
     // Error parsing type: , name: readingList
     // Error parsing type: , name: readingHistory
     // Error parsing type: , name: subscriptionController
+    // Error parsing type: , name: followingManager
 }
 
 @end

@@ -6,6 +6,7 @@
 
 #import <HomeUI/HUItemTableViewController.h>
 
+#import <HomeUI/HUMediaSelectionViewControllerDelegate-Protocol.h>
 #import <HomeUI/HUSwitchCellDelegate-Protocol.h>
 #import <HomeUI/HUTriggerDurationPickerDelegate-Protocol.h>
 #import <HomeUI/HUTriggerEditorDelegate-Protocol.h>
@@ -16,7 +17,7 @@
 @class HFTriggerBuilder, HUForwardingTriggerActionBuilderDelegate, HUTriggerSummaryActionGridViewController, HUTriggerSummaryItemManager, NSString;
 @protocol HUTriggerEditorDelegate;
 
-@interface HUTriggerSummaryViewController : HUItemTableViewController <HUTriggerEditorDelegate, HUSwitchCellDelegate, HUTriggerSummaryActionGridViewControllerDelegate, HUTriggerDurationPickerDelegate, UITextViewDelegate, WFHomeComposeViewControllerDelegate>
+@interface HUTriggerSummaryViewController : HUItemTableViewController <HUTriggerEditorDelegate, HUSwitchCellDelegate, HUTriggerSummaryActionGridViewControllerDelegate, HUTriggerDurationPickerDelegate, UITextViewDelegate, WFHomeComposeViewControllerDelegate, HUMediaSelectionViewControllerDelegate>
 {
     BOOL _viewHasAppeared;
     HUTriggerSummaryActionGridViewController *_actionSetsGridViewController;
@@ -35,6 +36,8 @@
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
 - (void).cxx_destruct;
+- (id)mediaSelectionViewControllerMessageForMediaActionPlayUnavailable:(id)arg1;
+- (id)mediaSelectionViewController:(id)arg1 messageForMediaPickerUnavailableReason:(long long)arg2;
 - (void)homeComposeViewController:(id)arg1 didFinishWithHomeWorkflow:(id)arg2;
 - (void)_commitTriggerBuilder;
 - (BOOL)_canCommitTriggerBuilder;

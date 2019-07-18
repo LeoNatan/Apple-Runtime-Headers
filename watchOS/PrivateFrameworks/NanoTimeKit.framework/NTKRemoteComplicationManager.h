@@ -64,6 +64,7 @@
 - (_Bool)_exportComplicationManifestForClientIdentifier:(id)arg1 complicationFileNames:(id)arg2 bundlePath:(id)arg3;
 - (void)generateGalleryComplicationBundleForID:(id)arg1 atPath:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)applicationStateDidChange:(id)arg1;
+- (void)handleAPSPushForComplicationClientIdentifier:(id)arg1;
 - (void)handleDeviceHasBecomeActiveWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)isExtensionPrivileged:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)handlePingForExtensionBundleID:(id)arg1;

@@ -14,6 +14,7 @@
 {
 }
 
+@property(readonly, nonatomic) BOOL animated;
 - (void)cancelTransition;
 - (void)animateWithContext:(id)arg1;
 

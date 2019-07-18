@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (_Bool)allowsEditing;
+- (_Bool)allowsMoveAndScale;
 - (_Bool)allowsVariants;
 
 @end

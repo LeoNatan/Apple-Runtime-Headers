@@ -10,7 +10,6 @@
 
 @class NSString, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface ISVectorVariantResource : NSObject <ISVariantResourceProtocol>
 {
     NSString *_variantName;

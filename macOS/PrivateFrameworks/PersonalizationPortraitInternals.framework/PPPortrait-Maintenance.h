@@ -9,7 +9,7 @@
 @interface PPPortrait (Maintenance)
 + (id)_quantizeTopics:(id)arg1;
 + (id)_quantizeAndFilterEntities:(id)arg1 withLimit:(unsigned int)arg2;
-+ (BOOL)_runPortraitAnalyticsDataCollectionWithError:(id *)arg1;
++ (BOOL)_runPortraitAnalyticsDataCollectionWithError:(id *)arg1 shouldContinueBlock:(CDUnknownBlockType)arg2;
 + (id)_generateTopicExtractionsWithSamplingRate:(double)arg1 fromDate:(id)arg2 toDate:(id)arg3 error:(id *)arg4;
 + (BOOL)_logPerplexityWithError:(id *)arg1;
 + (BOOL)_logPerplexityForNamedEntitiesWithError:(id *)arg1;
@@ -19,6 +19,8 @@
 + (void)_registerDailyMetricsLogging;
 + (void)_registerDataCollection;
 + (BOOL)_logDailyMetricsWithError:(id *)arg1 shouldContinueBlock:(CDUnknownBlockType)arg2;
++ (void)processPendingFeedbackWithShouldContinueBlock:(CDUnknownBlockType)arg1;
++ (void)_registerProcessPendingFeedback;
 + (void)_registerEntityBackfilling;
 + (void)_registerRTCSendLogs;
 + (void)_registerPeriodicMetrics;

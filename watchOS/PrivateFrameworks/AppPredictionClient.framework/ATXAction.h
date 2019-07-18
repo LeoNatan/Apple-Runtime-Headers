@@ -69,8 +69,6 @@
 - (id)dateForAction;
 - (id)actionSubtitle;
 - (_Bool)hasActionTitle;
-@property(readonly, nonatomic) NSString *customSubtitle;
-@property(readonly, nonatomic) NSString *customTitle;
 - (id)actionTitle;
 - (id)actionDescription;
 @property(readonly, nonatomic) _Bool isHeuristic;
@@ -79,12 +77,12 @@
 - (unsigned int)hash;
 - (_Bool)isEqualToAction:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (id)actionWithRouteInfo:(id)arg1;
 - (id)initWithActivity:(id)arg1 activityString:(id)arg2 itemIdentifier:(id)arg3 contentAttributeSet:(id)arg4 intent:(id)arg5 actionUUID:(id)arg6 bundleId:(id)arg7 type:(unsigned int)arg8 heuristic:(id)arg9 heuristicMetadata:(id)arg10 criteria:(id)arg11 isFutureMedia:(_Bool)arg12 routeInfo:(id)arg13 title:(id)arg14 subtitle:(id)arg15;
 - (id)initWithNSUserActivityString:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 itemIdentifier:(id)arg4 contentAttributeSet:(id)arg5 heuristic:(id)arg6 heuristicMetadata:(id)arg7 isFutureMedia:(_Bool)arg8 title:(id)arg9 subtitle:(id)arg10;
 - (id)initWithNSUserActivity:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 contentAttributeSet:(id)arg4 itemIdentifier:(id)arg5 heuristic:(id)arg6 heuristicMetadata:(id)arg7 criteria:(id)arg8 isFutureMedia:(_Bool)arg9 title:(id)arg10 subtitle:(id)arg11;
 - (id)initWithIntent:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 heuristic:(id)arg4 heuristicMetadata:(id)arg5 criteria:(id)arg6 isFutureMedia:(_Bool)arg7 title:(id)arg8 subtitle:(id)arg9;
 - (id)init;
-- (id)atx_actionWithRouteInfo:(id)arg1;
 
 @end
 

@@ -13,9 +13,15 @@
 __attribute__((visibility("hidden")))
 @interface AWDSymptomsAdvisoryAlternateNetworkType : PBCodable <NSCopying>
 {
+    CDStruct_95bda58d _cellEgressTriggers;
+    CDStruct_95bda58d _cellIngressTriggers;
+    CDStruct_95bda58d _wifiEgressTriggers;
+    CDStruct_95bda58d _wifiIngressTriggers;
     unsigned long long _adviceHeldForSecs;
     unsigned long long _timestamp;
+    unsigned int _activationIdentifier;
     int _advice;
+    int _advisor;
     int _bailOutOf;
     unsigned int _cellularDataUsage;
     unsigned int _comingFromState;
@@ -37,7 +43,9 @@ __attribute__((visibility("hidden")))
     struct {
         unsigned int adviceHeldForSecs:1;
         unsigned int timestamp:1;
+        unsigned int activationIdentifier:1;
         unsigned int advice:1;
+        unsigned int advisor:1;
         unsigned int bailOutOf:1;
         unsigned int cellularDataUsage:1;
         unsigned int comingFromState:1;
@@ -59,6 +67,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)egressTriggerSignatureType;
 + (Class)ingressTriggerSignatureType;
+@property(nonatomic) unsigned int activationIdentifier; // @synthesize activationIdentifier=_activationIdentifier;
 @property(nonatomic) unsigned int cellularDataUsage; // @synthesize cellularDataUsage=_cellularDataUsage;
 @property(nonatomic) unsigned int transitionsSuppressedByMobility; // @synthesize transitionsSuppressedByMobility=_transitionsSuppressedByMobility;
 @property(nonatomic) unsigned int comingFromState; // @synthesize comingFromState=_comingFromState;
@@ -81,6 +90,43 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsCellEgressTriggers:(id)arg1;
+- (id)cellEgressTriggersAsString:(int)arg1;
+- (void)setCellEgressTriggers:(int *)arg1 count:(unsigned long long)arg2;
+- (int)cellEgressTriggersAtIndex:(unsigned long long)arg1;
+- (void)addCellEgressTriggers:(int)arg1;
+- (void)clearCellEgressTriggers;
+@property(readonly, nonatomic) int *cellEgressTriggers;
+@property(readonly, nonatomic) unsigned long long cellEgressTriggersCount;
+- (int)StringAsWifiEgressTriggers:(id)arg1;
+- (id)wifiEgressTriggersAsString:(int)arg1;
+- (void)setWifiEgressTriggers:(int *)arg1 count:(unsigned long long)arg2;
+- (int)wifiEgressTriggersAtIndex:(unsigned long long)arg1;
+- (void)addWifiEgressTriggers:(int)arg1;
+- (void)clearWifiEgressTriggers;
+@property(readonly, nonatomic) int *wifiEgressTriggers;
+@property(readonly, nonatomic) unsigned long long wifiEgressTriggersCount;
+- (int)StringAsCellIngressTriggers:(id)arg1;
+- (id)cellIngressTriggersAsString:(int)arg1;
+- (void)setCellIngressTriggers:(int *)arg1 count:(unsigned long long)arg2;
+- (int)cellIngressTriggersAtIndex:(unsigned long long)arg1;
+- (void)addCellIngressTriggers:(int)arg1;
+- (void)clearCellIngressTriggers;
+@property(readonly, nonatomic) int *cellIngressTriggers;
+@property(readonly, nonatomic) unsigned long long cellIngressTriggersCount;
+- (int)StringAsWifiIngressTriggers:(id)arg1;
+- (id)wifiIngressTriggersAsString:(int)arg1;
+- (void)setWifiIngressTriggers:(int *)arg1 count:(unsigned long long)arg2;
+- (int)wifiIngressTriggersAtIndex:(unsigned long long)arg1;
+- (void)addWifiIngressTriggers:(int)arg1;
+- (void)clearWifiIngressTriggers;
+@property(readonly, nonatomic) int *wifiIngressTriggers;
+@property(readonly, nonatomic) unsigned long long wifiIngressTriggersCount;
+@property(nonatomic) BOOL hasActivationIdentifier;
+- (int)StringAsAdvisor:(id)arg1;
+- (id)advisorAsString:(int)arg1;
+@property(nonatomic) BOOL hasAdvisor;
+@property(nonatomic) int advisor; // @synthesize advisor=_advisor;
 - (int)StringAsPolicy:(id)arg1;
 - (id)policyAsString:(int)arg1;
 @property(nonatomic) BOOL hasPolicy;
@@ -135,6 +181,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL hasAdvice;
 @property(nonatomic) int advice; // @synthesize advice=_advice;
 @property(nonatomic) BOOL hasTimestamp;
+- (void)dealloc;
 
 @end
 

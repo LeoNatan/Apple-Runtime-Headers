@@ -10,12 +10,13 @@
 #import <MapKit/MKTransitDeparturesDataProviderDelegate-Protocol.h>
 #import <MapKit/NSTableViewDataSource-Protocol.h>
 #import <MapKit/NSTableViewDelegate-Protocol.h>
+#import <MapKit/_MKClickableTableViewDelegate-Protocol.h>
 #import <MapKit/_MKTransitConnectionCellDelegate-Protocol.h>
 
 @class MKArtworkDataSourceCache, MKMapItem, MKTransitDeparturesDataProvider, NSMapTable, NSMutableDictionary, NSString, NSTableView;
 @protocol MKTransitDeparturesDataSourceHosting, _MKInfoCardAnalyticsDelegate;
 
-@interface MKTransitDeparturesDataSource : NSObject <_MKTransitConnectionCellDelegate, MKTransitDeparturesCellDelegate, MKTransitDeparturesDataProviderDelegate, NSTableViewDelegate, NSTableViewDataSource>
+@interface MKTransitDeparturesDataSource : NSObject <_MKTransitConnectionCellDelegate, MKTransitDeparturesCellDelegate, MKTransitDeparturesDataProviderDelegate, NSTableViewDelegate, NSTableViewDataSource, _MKClickableTableViewDelegate>
 {
     NSTableView *_tableView;
     NSMapTable *_cachedSectionHeaders;

@@ -6,44 +6,28 @@
 
 #import <objc/NSObject.h>
 
-#import <ContactsUI/CNUIAuthorizationStateObserver-Protocol.h>
-#import <ContactsUI/UIPopoverPresentationControllerDelegate-Protocol.h>
-
-@class NSString, UIAlertController, UIViewController;
-@protocol CNUIAuthorizer, CNUIEditAuthorizationControllerDelegate;
+@class UIViewController;
+@protocol CNUIEditAuthorizationControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface CNUIEditAuthorizationController : NSObject <CNUIAuthorizationStateObserver, UIPopoverPresentationControllerDelegate>
+@interface CNUIEditAuthorizationController : NSObject
 {
     _Bool _animated;
-    UIAlertController *_authorizationOptionsSheetController;
     id <CNUIEditAuthorizationControllerDelegate> _delegate;
     id _sender;
     UIViewController *_guardedViewController;
-    long long _authorizationOption;
-    UIViewController<CNUIAuthorizer> *_authorizationOptionViewController;
 }
 
-@property(retain, nonatomic) UIViewController<CNUIAuthorizer> *authorizationOptionViewController; // @synthesize authorizationOptionViewController=_authorizationOptionViewController;
-@property(nonatomic) long long authorizationOption; // @synthesize authorizationOption=_authorizationOption;
 @property(nonatomic) __weak UIViewController *guardedViewController; // @synthesize guardedViewController=_guardedViewController;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
 @property(nonatomic) __weak id sender; // @synthesize sender=_sender;
 @property(nonatomic) __weak id <CNUIEditAuthorizationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)didNotAutorizeWithAuthorizer:(id)arg1;
-- (void)didAutorizeWithAuthorizer:(id)arg1;
-- (void)prepareAuthorizationOptionViewController:(id)arg1;
-- (void)userChooseCancelAuthorizationOption;
-- (void)userChooseSendRequestAuthorizationOption;
-- (void)userChooseScreenTimePasscodeAuthorizationOption;
-@property(readonly, nonatomic) UIAlertController *authorizationOptionsSheetController; // @synthesize authorizationOptionsSheetController=_authorizationOptionsSheetController;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (void)didNotAuthorize;
+- (void)didAutorize;
+- (void)dealloc;
+- (void)lockoutRestrictionsPINControllerDidFinish:(id)arg1;
+- (void)presentAuthorizationUI;
 
 @end
 

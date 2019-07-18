@@ -6,27 +6,23 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class NSLayoutConstraint, UILabel;
+@class NSLayoutConstraint, UILabel, UITextView;
 
 __attribute__((visibility("hidden")))
 @interface _TtC18HealthExperienceUI29DataTypeDetailDescriptionCell : UICollectionViewCell
 {
     // Error parsing type: , name: detailTextLabel
-    // Error parsing type: , name: attributionLabel
+    // Error parsing type: , name: attributionTextView
     // Error parsing type: , name: labelSpacingConstraint
-    // Error parsing type: , name: highlightStateView
     // Error parsing type: , name: item
 }
 
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-@property(nonatomic) _Bool highlighted;
-- (_Bool)isHighlighted;
-- (void)didTapAttributionLabel:(id)arg1;
 - (void)awakeFromNib;
 @property(nonatomic) __weak NSLayoutConstraint *labelSpacingConstraint; // @synthesize labelSpacingConstraint;
-@property(nonatomic) __weak UILabel *attributionLabel; // @synthesize attributionLabel;
+@property(nonatomic) __weak UITextView *attributionTextView; // @synthesize attributionTextView;
 @property(nonatomic) __weak UILabel *detailTextLabel; // @synthesize detailTextLabel;
 
 @end

@@ -28,7 +28,8 @@
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)serviceProxyWithErrorHandler:(CDUnknownBlockType)arg1;
-- (void)_logReplyWarning:(id)arg1;
+- (void)_logReplyError:(id)arg1 withCallStackSymbols:(id)arg2;
+- (id)_inq_createServiceProxyWithCallStackSymbols:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (id)_inq_createServiceProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)initWithQueue:(id)arg1 proxyCreating:(id)arg2 proxyGetter:(SEL)arg3;
 

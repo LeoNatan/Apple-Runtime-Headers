@@ -40,7 +40,6 @@
     CKOperationFlowControlManager *_flowControlManager;
     int _statusReportToken;
     int _killSwitchToken;
-    int _accountChangeToken;
     int _identityUpdateToken;
     NSMutableArray *_sandboxExtensionHandles;
     CKContainerSetupInfo *_cachedSetupInfo;
@@ -58,7 +57,7 @@
 + (id)fakeClassEntitlements;
 + (int)_untrustedDatabaseEnvironment;
 + (id)_checkSelfContainerIdentifier;
-+ (id)_untrustedApplicationIdentifier;
++ (id)_untrustedApplicationBundleID;
 + (void)_checkSelfCloudServicesEntitlement;
 + (id)_untrustedEntitlementForKey:(id)arg1;
 + (void)registerCompletedLongLivedOperationWithID:(id)arg1;
@@ -69,6 +68,7 @@
 + (id)containerWithIdentifier:(id)arg1;
 + (id)containerIDForContainerIdentifier:(id)arg1;
 + (id)containerIDForContainerIdentifier:(id)arg1 environment:(int)arg2;
++ (id)accountChangeNotificationRegistrationQueue;
 + (id)defaultContainer;
 + (id)uploadRequestFetchAllNotificationName;
 @property(copy, nonatomic) NSString *personaIdentifier; // @synthesize personaIdentifier=_personaIdentifier;
@@ -81,7 +81,6 @@
 @property(retain, nonatomic) CKContainerSetupInfo *cachedSetupInfo; // @synthesize cachedSetupInfo=_cachedSetupInfo;
 @property(retain, nonatomic) NSMutableArray *sandboxExtensionHandles; // @synthesize sandboxExtensionHandles=_sandboxExtensionHandles;
 @property(nonatomic) int identityUpdateToken; // @synthesize identityUpdateToken=_identityUpdateToken;
-@property(nonatomic) int accountChangeToken; // @synthesize accountChangeToken=_accountChangeToken;
 @property(nonatomic) int killSwitchToken; // @synthesize killSwitchToken=_killSwitchToken;
 @property(nonatomic) int statusReportToken; // @synthesize statusReportToken=_statusReportToken;
 @property(retain, nonatomic) CKOperationFlowControlManager *flowControlManager; // @synthesize flowControlManager=_flowControlManager;
@@ -135,10 +134,13 @@
 - (void)finishDiscretionaryOperation:(id)arg1;
 - (void)queueDiscretionaryOperation:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchCurrentUserBoundaryKeyWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)getOutstandingOperationCountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearPCSCachesForKnownContextsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)wipeAllCachedLongLivedProxiesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setFakeResponseOperationResult:(id)arg1 forNextRequestOfClassName:(id)arg2 forItemID:(id)arg3 withLifetime:(int)arg4;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2;
+- (void)serverPreferredPushEnvironmentSynchronous:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)serverPreferredPushEnvironmentWithError:(id *)arg1;
 - (void)serverPreferredPushEnvironmentWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)tossConfigWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resetAllApplicationPermissionsWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -162,6 +164,8 @@
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2;
 - (void)cancelOperationID:(id)arg1;
 - (id)discretionaryDaemonWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)daemonSynchronous:(_Bool)arg1 withErrorHandler:(CDUnknownBlockType)arg2;
+- (id)synchronousDaemonWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)daemonWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)discretionaryXPCConnectionWithError:(id *)arg1;
 - (id)connectionWithError:(id *)arg1;
@@ -177,15 +181,20 @@
 @property(nonatomic) _Bool captureResponseHTTPHeaders;
 @property(nonatomic) _Bool wantsSiloedContext;
 - (id)initWithContainerID:(id)arg1 accountInfoOverride:(id)arg2;
-@property(readonly, nonatomic) CKContainerSetupInfo *setupInfo;
+- (id)setupInfo;
 @property(readonly, copy) NSString *description;
 - (id)CKPropertiesDescription;
 - (void)dealloc;
 - (id)initWithContainerID:(id)arg1;
 - (id)initWithContainerID:(id)arg1 options:(id)arg2;
+- (id)initWithContainerSetupInfo:(id)arg1;
+- (id)_containerSetupInfoFromOptions:(id)arg1;
+- (id)_optionsFromContainerSetupInfo:(id)arg1;
 - (id)_initWithContainerIdentifier:(id)arg1;
 - (id)_initWithContainerIdentifier:(id)arg1 environment:(int)arg2;
 - (id)_allStatusReports;
+- (void)unregisterForAccountChangeNotifications;
+- (void)registerForAccountChangeNotifications;
 - (void)_setupWithContainerID:(id)arg1 options:(id)arg2;
 - (void)discoverUserInfoWithUserRecordID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)discoverUserInfoWithEmailAddress:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -89,6 +89,7 @@
 }
 
 + (id)defaultMenu;
++ (Class)_classToCheckForRequiresConstraintBasedLayout;
 + (BOOL)mapsDocumentColorForColorPickers;
 + (BOOL)stronglyReferencesTextStorage;
 + (BOOL)alwaysReferencesTextStorageStrongly;
@@ -216,8 +217,8 @@
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (void)layout;
 - (BOOL)wantsLayer;
+- (BOOL)_needsLayoutEngine;
 - (void)updateConstraints;
-- (BOOL)needsUpdateConstraints;
 - (void)_updateTextContainerSize:(struct CGSize)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (BOOL)shouldBeTreatedAsInkEvent:(id)arg1;
@@ -387,6 +388,7 @@
 - (void)insertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
 - (id)_writingDirectionAttributeForPeriodBeforeInsertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
 - (id)_writingDirectionAttributeForInsertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
+- (id)inputContextAllowingInitialization:(BOOL)arg1;
 - (id)inputContext;
 - (void)handleTextCheckingResults:(id)arg1 forRange:(struct _NSRange)arg2 types:(unsigned long long)arg3 options:(id)arg4 orthography:(id)arg5 wordCount:(long long)arg6;
 - (void)_markAsCheckedForRange:(struct _NSRange)arg1;

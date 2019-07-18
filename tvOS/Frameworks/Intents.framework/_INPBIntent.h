@@ -15,6 +15,7 @@
 @interface _INPBIntent : PBCodable <_INPBIntent, NSSecureCoding, NSCopying>
 {
     CDStruct_a8e956ad _has;
+    _Bool __encodeLegacyGloryData;
     int _encodingFormat;
     _INPBAppIdentifier *_appIdentifier;
     NSString *_encodedIntent;
@@ -23,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *intentTypeName; // @synthesize intentTypeName=_intentTypeName;
 @property(nonatomic) int encodingFormat; // @synthesize encodingFormat=_encodingFormat;
 @property(copy, nonatomic) NSString *encodedIntentDefinition; // @synthesize encodedIntentDefinition=_encodedIntentDefinition;

@@ -12,6 +12,7 @@
 
 + (id)writableContainerProperties;
 + (id)allContainerProperties;
++ (id)containerLastSyncDateDescription;
 + (id)containerGuardianStateDirtyDescription;
 + (id)containerGuardianRestrictedDescription;
 + (id)containerRestrictionsDescription;
@@ -99,8 +100,9 @@
 + (id)namePrefixDescription;
 + (id)iOSLegacyIdentifierDescription;
 + (id)identifierDescription;
-+ (id)contactPropertiesByKey;
 + (id)restrictedProperties;
++ (void)resetRestrictedPropertiesOnMutableContact:(id)arg1;
++ (id)contactPropertiesByKey;
 + (id)writableMultiValueContactProperties;
 + (id)writableSingleValueContactProperties;
 + (id)writableContactProperties;

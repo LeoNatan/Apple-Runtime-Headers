@@ -26,7 +26,7 @@
 - (void)sampleDidChange:(id)arg1;
 - (void)selectCellForIndex:(unsigned int)arg1 navigationController:(id)arg2 animated:(_Bool)arg3;
 - (id)cellForIndex:(unsigned int)arg1 tableView:(id)arg2;
-- (void)_loadDetailsForSample:(id)arg1;
+- (unsigned int)numberOfRowsInSection;
 - (id)initWithSample:(id)arg1 delegate:(id)arg2;
 
 // Remaining properties

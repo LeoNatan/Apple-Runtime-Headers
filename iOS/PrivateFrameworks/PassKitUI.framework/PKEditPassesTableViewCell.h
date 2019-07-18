@@ -11,10 +11,10 @@
 @interface PKEditPassesTableViewCell : UITableViewCell
 {
     _Bool _showImage;
-    _Bool _isRTL;
     PKPass *_pass;
 }
 
++ (struct UIEdgeInsets)separatorInset;
 + (_Bool)needsFullPassImage;
 + (double)height;
 + (struct CGSize)imageSizeNeeded;
@@ -22,7 +22,6 @@
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 - (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (struct CGRect)imageFrameWithSize:(struct CGSize)arg1;
 - (void)setImage:(id)arg1 forPass:(id)arg2;
 - (void)prepareForReuse;
 - (void)layoutSubviews;

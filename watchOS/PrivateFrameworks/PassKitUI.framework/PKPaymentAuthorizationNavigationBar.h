@@ -11,7 +11,6 @@
 @interface PKPaymentAuthorizationNavigationBar : UINavigationBar
 {
     UILabel *_environmentLabel;
-    int _interfaceStyle;
 }
 
 + (id)applePayBarButtonItem;

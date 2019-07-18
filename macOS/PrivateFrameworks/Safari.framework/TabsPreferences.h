@@ -49,7 +49,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSStackView *checkBoxStackView; // @synthesize checkBoxStackView=_checkBoxStackView;
 @property(nonatomic) __weak NSView *mainContentView; // @synthesize mainContentView=_mainContentView;
 - (void).cxx_destruct;
-- (id)helpAnchor;
+- (id)safariHelpAnchor;
 - (void)initializeFromDefaults;
 - (void)toggleCommand1Through9SwitchesTabs:(id)arg1;
 - (void)toggleSelectNewTabs:(id)arg1;

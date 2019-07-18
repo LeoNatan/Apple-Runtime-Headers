@@ -12,7 +12,7 @@
 #import <coreroutine/RTPersistenceMirroringRequestDelegate-Protocol.h>
 #import <coreroutine/RTPurgable-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString, RTAccountManager, RTAuthorizationManager, RTDefaultsManager, RTInvocationDispatcher, RTPersistenceCloudDeletionEnforcer, RTPersistenceManager, RTPersistenceMirroringRequest, RTPowerAssertion, RTReachabilityManager, RTTimerManager, RTXPCActivityManager;
+@class NSMutableArray, NSMutableDictionary, NSString, RTAccountManager, RTDefaultsManager, RTInvocationDispatcher, RTPersistenceCloudDeletionEnforcer, RTPersistenceManager, RTPersistenceMirroringRequest, RTPowerAssertion, RTReachabilityManager, RTTimerManager, RTXPCActivityManager;
 @protocol OS_dispatch_queue, OS_os_transaction, RTPersistenceMirroringMetricsDelegate;
 
 @interface RTPersistenceMirroringManager : NSObject <RTPersistenceMirroringMetricsDelegate, RTPersistenceMirroringRequestDelegate, RTPersistenceMirroringDelegate, RTPurgable, RTDiagnosticProvider>
@@ -20,10 +20,8 @@
     RTDefaultsManager *_defaultsManager;
     RTInvocationDispatcher *_dispatcher;
     RTTimerManager *_timerManager;
-    RTAuthorizationManager *_authorizationManager;
     RTAccountManager *_accountManager;
     RTReachabilityManager *_reachabilityManager;
-    _Bool _routineEnabled;
     long long _cloudSyncAuthorizationState;
     long long _currentReachability;
     id <RTPersistenceMirroringMetricsDelegate> _metricsDelegate;
@@ -66,8 +64,6 @@
 - (void)onReachabilityChange:(id)arg1;
 - (void)_onCloudSyncAuthorizationChange:(id)arg1;
 - (void)onCloudSyncAuthorizationChange:(id)arg1;
-- (void)_onAuthorizationChange:(id)arg1;
-- (void)onAuthorizationChange:(id)arg1;
 - (void)_persistenceAvailabilityDidChange:(id)arg1;
 - (void)persistenceAvailabilityDidChange:(id)arg1;
 - (void)_scheduleRetryAttemptForRequest:(id)arg1 referenceDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
@@ -91,8 +87,8 @@
 - (void)shutdown;
 - (void)unregisterForXPCActivities;
 - (void)registerForXPCActivities;
-- (id)initWithAccountManager:(id)arg1 authorizationManager:(id)arg2 persistenceCloudDeletionEnforcer:(id)arg3 persistenceManager:(id)arg4 defaultsManager:(id)arg5 mirroringPolicies:(id)arg6 reachabilityManager:(id)arg7 timerManager:(id)arg8 xpcActivityManager:(id)arg9;
-- (id)initWithAccountManager:(id)arg1 authorizationManager:(id)arg2 defaultsManager:(id)arg3 persistenceManager:(id)arg4 reachabilityManager:(id)arg5 xpcActivityManager:(id)arg6;
+- (id)initWithAccountManager:(id)arg1 persistenceCloudDeletionEnforcer:(id)arg2 persistenceManager:(id)arg3 defaultsManager:(id)arg4 mirroringPolicies:(id)arg5 reachabilityManager:(id)arg6 timerManager:(id)arg7 xpcActivityManager:(id)arg8;
+- (id)initWithAccountManager:(id)arg1 defaultsManager:(id)arg2 persistenceManager:(id)arg3 reachabilityManager:(id)arg4 xpcActivityManager:(id)arg5;
 - (id)init;
 - (void)collectMetricsFromMirroringRequest:(id)arg1 error:(id)arg2;
 - (void)mirroringManager:(id)arg1 mirroringRequest:(id)arg2 didFailWithError:(id)arg3;

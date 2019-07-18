@@ -21,7 +21,6 @@
     NSHashTable *_delegates;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     NSObject<OS_dispatch_queue> *_asynchronousImageQueue;
-    BOOL _shouldSendRemovingPassesOfTypeDidFinish;
     id <PKPassLibraryDelegate> _delegate;
 }
 
@@ -51,8 +50,6 @@
 - (void)passRemoved:(id)arg1;
 - (void)passUpdated:(id)arg1;
 - (void)passAdded:(id)arg1;
-- (void)removingPassesOfType:(unsigned long long)arg1 didFinishWithSuccess:(BOOL)arg2;
-- (void)removingPassesOfType:(unsigned long long)arg1 didUpdateWithProgress:(double)arg2;
 - (void)catalogChanged:(id)arg1 withNewPasses:(id)arg2;
 - (id)diffForPassUpdateUserNotificationWithIdentifier:(id)arg1;
 - (void)noteAccountDeleted;
@@ -61,7 +58,6 @@
 - (void)shuffleGroups:(int)arg1;
 - (void)removePassesOfType:(unsigned long long)arg1 withDiagnosticReason:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removePassesOfType:(unsigned long long)arg1 withDiagnosticReason:(id)arg2;
-- (void)removePassesOfType:(unsigned long long)arg1;
 - (void)removePassesWithUniqueIDs:(id)arg1 diagnosticReason:(id)arg2;
 - (void)removePassWithUniqueID:(id)arg1 diagnosticReason:(id)arg2;
 - (void)spotlightDeleteIndexEntriesForAllPassesWithCompletion:(CDUnknownBlockType)arg1;
@@ -71,6 +67,7 @@
 - (void)introduceDatabaseIntegrityProblem;
 - (void)removeAllScheduledActivities;
 - (void)nukeDatabaseAndExit;
+- (void)pendingUserNotificationsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)issueWalletUserNotificationWithTitle:(id)arg1 message:(id)arg2 forPassUniqueIdentifier:(id)arg3 customActionRoute:(id)arg4;
 - (void)notifyPassUsed:(id)arg1 fromSource:(long long)arg2;
 - (void)sendUserEditedCatalog:(id)arg1;

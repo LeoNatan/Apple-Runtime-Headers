@@ -24,17 +24,3 @@ typedef struct {
     unsigned long long _field2;
 } CDStruct_4bcfbbae;
 
-typedef struct {
-    unsigned int ignoresResponse:1;
-    unsigned int loading:1;
-    unsigned int needsCancel:1;
-    unsigned int responseStatusSet:1;
-    unsigned int parsedResponseHeader:1;
-    unsigned int delegateDidReceiveResponse:1;
-    unsigned int delegateDidFinish:1;
-    unsigned int delegateDidCancel:1;
-    unsigned int delegateDidFailWithError:1;
-    unsigned int paused:1;
-    unsigned int resuming:1;
-} CDStruct_dca542ad;
-

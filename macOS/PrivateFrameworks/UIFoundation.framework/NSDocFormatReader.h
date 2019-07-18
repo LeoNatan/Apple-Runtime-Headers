@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <UIFoundation/DocFormatAddressValidation-Protocol.h>
+
 @class NSArray, NSData, NSMutableArray, NSMutableAttributedString, NSMutableData, NSMutableDictionary, NSMutableRLEArray;
 
-@interface NSDocFormatReader : NSObject
+@interface NSDocFormatReader : NSObject <DocFormatAddressValidation>
 {
     NSMutableAttributedString *_attrStr;
     NSMutableDictionary *_documentAttrs;
@@ -20,6 +22,7 @@
     NSMutableDictionary *_contentsDictionary;
     NSData *_documentData;
     NSData *_tableData;
+    NSData *_infoData;
     NSMutableArray *_fontNames;
     struct __CFArray *_predefinedOffsets;
     struct __CFDictionary *_predefinedAttributes;
@@ -108,6 +111,7 @@
 - (unsigned long long)_underlineStyleForArgument:(unsigned long long)arg1;
 - (BOOL)_colorComponentsForIndex:(long long)arg1 redComponent:(long long *)arg2 greenComponent:(long long *)arg3 blueComponent:(long long *)arg4;
 - (id)_fontWithNumber:(long long)arg1 size:(double)arg2 bold:(BOOL)arg3 italic:(BOOL)arg4;
+- (BOOL)validateAddress:(const char *)arg1 numberOfBytes:(unsigned long long)arg2;
 
 @end
 

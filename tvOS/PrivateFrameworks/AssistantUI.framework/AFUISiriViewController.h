@@ -94,9 +94,12 @@
 @property(nonatomic) __weak id <AFUISiriViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <AFUISiriViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)_setRecordingStartedOnRoute:(_Bool)arg1;
 - (_Bool)_recordingStartedOnRoute;
 - (void)updateToPresentationWithIdentifier:(id)arg1 presentationProperties:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)siriSessionShouldEndExtendAudioSessionForImminentPhoneCall;
+- (void)siriSessionShouldExtendAudioSessionForImminentPhoneCall;
 - (void)siriSessionDidFinishRequestWithError:(id)arg1;
 - (void)siriSession:(id)arg1 speechRecordingDidBeginOnAVRecordRoute:(id)arg2;
 - (void)siriSessionDidUpdateSessionInfo:(id)arg1;

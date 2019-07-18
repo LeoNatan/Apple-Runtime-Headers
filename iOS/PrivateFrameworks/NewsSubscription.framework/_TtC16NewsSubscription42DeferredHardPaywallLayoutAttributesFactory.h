@@ -21,13 +21,13 @@
     // Error parsing type: , name: largeSubscribeButtonSize
     // Error parsing type: , name: smallButtonCapMarginWidth
     // Error parsing type: , name: largeButtonCapMarginWidth
-    // Error parsing type: , name: compactGradientViewHeight
-    // Error parsing type: , name: regularGradientViewHeight
-    // Error parsing type: , name: smallFooterImageHeight
-    // Error parsing type: , name: largeFooterImageHeight
     // Error parsing type: , name: viewableAreaMaxHeight
-    // Error parsing type: , name: contentViewLandscapeHeightFactor
-    // Error parsing type: , name: contentViewPortraitHeightFactor
+    // Error parsing type: , name: contentViewRegularWidthHeightFactor
+    // Error parsing type: , name: contentViewCompactWidthHeightFactor
+    // Error parsing type: , name: largeGradientHeight
+    // Error parsing type: , name: mediumGradientHeight
+    // Error parsing type: , name: smallGradientHeight
+    // Error parsing type: , name: footerImageExtraHeight
 }
 
 @end

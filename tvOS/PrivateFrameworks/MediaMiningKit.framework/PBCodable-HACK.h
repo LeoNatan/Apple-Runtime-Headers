@@ -9,5 +9,6 @@
 @interface PBCodable (HACK)
 + (void)load;
 - (id)hack_formattedText;
+- (id)debugRequestName;
 @end
 

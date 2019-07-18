@@ -8,7 +8,7 @@
 
 #import <ContactsUI/CNPickerControllerDelegate-Protocol.h>
 
-@class CNRepeatingGradientSeparatorView, UIButton;
+@class CNRepeatingGradientSeparatorView, NSString, UIButton;
 
 __attribute__((visibility("hidden")))
 @interface CNPropertyEditingCell : CNPropertyCell <CNPickerControllerDelegate>
@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIButton *labelButton; // @synthesize labelButton=_labelButton;
 - (void).cxx_destruct;
 - (void)regainFocus;
+- (void)picker:(id)arg1 didDeleteItem:(id)arg2;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;
 - (id)variableConstraints;
@@ -38,6 +39,12 @@ __attribute__((visibility("hidden")))
 - (id)labelView;
 - (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

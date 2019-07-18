@@ -18,10 +18,10 @@
 }
 
 @property BOOL iCloudSyncingEnabled; // @synthesize iCloudSyncingEnabled;
-@property(retain) NSThread *clientThread; // @synthesize clientThread;
+@property NSThread *clientThread; // @synthesize clientThread;
 @property CDUnknownFunctionPointerType callback; // @synthesize callback;
 @property void *context; // @synthesize context;
-@property(retain) NSUbiquitousKeyValueStore *keyValueStore; // @synthesize keyValueStore;
+@property NSUbiquitousKeyValueStore *keyValueStore; // @synthesize keyValueStore;
 - (void)relayKeychainSyncState:(id)arg1;
 - (void)queryKeychainSyncState;
 - (void)synchronizeAndCallMergeNetworks;

@@ -4,47 +4,37 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UITableViewController.h>
+#import <UIKit/UIViewController.h>
 
-#import <PencilKit/PKPaletteShapesViewControllerDelegate-Protocol.h>
-
-@class NSArray, NSString, UITraitCollection;
+@class NSArray, NSLayoutConstraint, PKPaletteAutoMinimizeOptionCell, UIStackView, UITraitCollection;
 @protocol PKPaletteMoreOptionsViewControllerDelegate;
 
-@interface PKPaletteMoreOptionsViewController : UITableViewController <PKPaletteShapesViewControllerDelegate>
+@interface PKPaletteMoreOptionsViewController : UIViewController
 {
     BOOL _autoHideOn;
-    BOOL _supportsOpacityEditing;
-    BOOL _supportsAnnotationEditing;
     id <PKPaletteMoreOptionsViewControllerDelegate> _delegate;
     UITraitCollection *_externalTraitCollection;
-    NSArray *_cellTypes;
+    NSLayoutConstraint *_stackViewMinWidthConstraint;
+    NSArray *_stackViewPositioningConstraints;
+    UIStackView *_stackView;
+    PKPaletteAutoMinimizeOptionCell *_autoMinimizeCell;
 }
 
-@property(retain, nonatomic) NSArray *cellTypes; // @synthesize cellTypes=_cellTypes;
+@property(retain, nonatomic) PKPaletteAutoMinimizeOptionCell *autoMinimizeCell; // @synthesize autoMinimizeCell=_autoMinimizeCell;
+@property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
+@property(retain, nonatomic) NSArray *stackViewPositioningConstraints; // @synthesize stackViewPositioningConstraints=_stackViewPositioningConstraints;
+@property(retain, nonatomic) NSLayoutConstraint *stackViewMinWidthConstraint; // @synthesize stackViewMinWidthConstraint=_stackViewMinWidthConstraint;
 @property(retain, nonatomic) UITraitCollection *externalTraitCollection; // @synthesize externalTraitCollection=_externalTraitCollection;
-@property(nonatomic) BOOL supportsAnnotationEditing; // @synthesize supportsAnnotationEditing=_supportsAnnotationEditing;
-@property(nonatomic) BOOL supportsOpacityEditing; // @synthesize supportsOpacityEditing=_supportsOpacityEditing;
 @property(nonatomic, getter=isAutoHideOn) BOOL autoHideOn; // @synthesize autoHideOn=_autoHideOn;
 @property(nonatomic) __weak id <PKPaletteMoreOptionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)shapesViewController:(id)arg1 didSelectShapeWithType:(long long)arg2;
-- (void)_autoHideCellDidChangeValue:(id)arg1;
-- (id)_imageForCellType:(long long)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (id)cellTypesForTraitCollection:(id)arg1;
-- (struct CGSize)preferredContentSizeForTraitCollection:(id)arg1;
-- (void)_reloadCellTypes;
-- (BOOL)_canShowWhileLocked;
+- (void)_updateContentSize;
+- (void)_reloadItems;
+- (void)_autoMinimizeCellDidChangeValue:(id)arg1;
+- (void)_updateAutoMinimizeCell;
 - (void)updateUIForTraitCollection:(id)arg1;
-- (id)initWithStyle:(long long)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (BOOL)_canShowWhileLocked;
+- (void)viewDidLoad;
 
 @end
 

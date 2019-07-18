@@ -32,8 +32,8 @@
     UIImage *_progressImage;
 }
 
-+ (id)_tintedImageForHeight:(float)arg1 andColors:(id)arg2;
-+ (id)_tintedImageForHeight:(float)arg1 andColors:(id)arg2 roundingRectCorners:(unsigned int)arg3;
++ (id)_tintedImageWithTraitCollection:(id)arg1 forHeight:(float)arg2 andColors:(id)arg3;
++ (id)_tintedImageWithTraitCollection:(id)arg1 forHeight:(float)arg2 andColors:(id)arg3 roundingRectCorners:(unsigned int)arg4;
 + (id)_standardInnerImageForStyle:(int)arg1 barStyle:(int)arg2;
 + (id)_standardOuterImageForStyle:(int)arg1 barStyle:(int)arg2;
 + (void)_fillImagesForIndex:(unsigned int)arg1 style:(int)arg2 barStyle:(int)arg3;

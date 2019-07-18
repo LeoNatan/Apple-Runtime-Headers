@@ -9,6 +9,7 @@
 @interface _TtC18HealthExperienceUI17HostViewTableCell : UITableViewCell
 {
     // Error parsing type: , name: hostView
+    // Error parsing type: , name: recreateViewControllerOnHostedFeedItemChange
     // Error parsing type: , name: item
 }
 

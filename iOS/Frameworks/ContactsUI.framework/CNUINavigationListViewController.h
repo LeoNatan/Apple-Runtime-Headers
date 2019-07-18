@@ -41,8 +41,11 @@
 @property(retain, nonatomic) CNUINavigationListView *navigationListView; // @synthesize navigationListView=_navigationListView;
 - (void).cxx_destruct;
 - (void)navigationListView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (_Bool)navigationListView:(id)arg1 shouldSelectRowAtIndexPath:(id)arg2;
+- (_Bool)navigationListView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)stopTrackingRollover;
 - (void)startTrackingRolloverWithGestureRecognizer:(id)arg1;
+- (_Bool)canSelectItem:(id)arg1;
 - (void)updateNavigationListViewStateAnimated:(_Bool)arg1;
 - (void)reloadNavigationListView;
 - (void)updateNavigationListViewSeparatorStyle;

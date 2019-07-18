@@ -6,7 +6,24 @@
 
 #import <Intents/INObject.h>
 
-@interface INObject (WFNaming)
-- (id)wfName;
+#import <WorkflowKit/WFINObject-Protocol.h>
+#import <WorkflowKit/WFNaming-Protocol.h>
+
+@class NSArray, NSString;
+
+@interface INObject (WFNaming) <WFNaming, WFINObject>
+@property(readonly, copy, nonatomic) NSString *wfName;
+- (id)wf_initWithIdentifier:(id)arg1 displayString:(id)arg2;
+
+// Remaining properties
+@property(readonly, nonatomic) NSArray *alternativeSpeakableMatches;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly, nonatomic) NSString *identifier;
+@property(readonly, nonatomic) NSString *pronunciationHint;
+@property(readonly, nonatomic) NSString *spokenPhrase;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic) NSString *vocabularyIdentifier;
 @end
 

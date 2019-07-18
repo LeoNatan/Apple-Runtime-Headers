@@ -6,20 +6,22 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI/NUWebContentContentRuleProvider-Protocol.h>
+#import <NewsUI/SXWebContentComponentContentRuleProvider-Protocol.h>
 
 @class NSString;
-@protocol FCNewsAppConfigurationManager;
+@protocol FCHeadlineProviding, FCNewsAppConfigurationManager;
 
-@interface NUWebContentContentRuleProvider : NSObject <NUWebContentContentRuleProvider>
+@interface NUWebContentContentRuleProvider : NSObject <SXWebContentComponentContentRuleProvider>
 {
     id <FCNewsAppConfigurationManager> _appConfigurationManager;
+    id <FCHeadlineProviding> _headline;
 }
 
+@property(readonly, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
 @property(readonly, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
 - (void).cxx_destruct;
 - (id)contentRules;
-- (id)initWithAppConfigurationManager:(id)arg1;
+- (id)initWithAppConfigurationManager:(id)arg1 headline:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

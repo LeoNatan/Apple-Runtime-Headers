@@ -6,19 +6,28 @@
 
 #import <HealthUI/HKActivitySummaryAnnotationViewDataSource.h>
 
+@class UIView;
 @protocol HKInteractiveChartCurrentValueViewCallbacks;
 
 @interface _ActivityCurrentValueDataSource : HKActivitySummaryAnnotationViewDataSource
 {
+    _Bool _currentValueViewHasNoData;
     id <HKInteractiveChartCurrentValueViewCallbacks> _currentValueViewCallbacks;
+    UIView *_noDataView;
 }
 
+@property(readonly, nonatomic) UIView *noDataView; // @synthesize noDataView=_noDataView;
+@property(nonatomic) _Bool currentValueViewHasNoData; // @synthesize currentValueViewHasNoData=_currentValueViewHasNoData;
 @property(nonatomic) __weak id <HKInteractiveChartCurrentValueViewCallbacks> currentValueViewCallbacks; // @synthesize currentValueViewCallbacks=_currentValueViewCallbacks;
 - (void).cxx_destruct;
 - (id)_dateRangeFromComponents;
 - (id)_dateRangeFromStartDate:(id)arg1 endDate:(id)arg2;
 - (id)_localizedCurrentValueViewDateRange;
+- (id)_buildNoDataView;
 - (id)dateViewWithOrientation:(int)arg1;
+- (id)valueViewForColumnAtIndex:(int)arg1 orientation:(int)arg2;
+- (int)numberOfValuesForAnnotationView:(id)arg1;
+- (id)leftMarginViewWithOrientation:(int)arg1;
 - (id)initWithDisplayTypeController:(id)arg1 unitController:(id)arg2 wheelchairUseCharacteristicCache:(id)arg3 currentValueViewContext:(_Bool)arg4 currentValueViewCallbacks:(id)arg5;
 
 @end

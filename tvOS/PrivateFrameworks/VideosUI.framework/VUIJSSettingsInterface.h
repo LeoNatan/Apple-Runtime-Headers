@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 
 - (void)_handleSettingsDidChange:(id)arg1;
 - (void)updateFeaturesConfiguration:(id)arg1;
+- (id)wlkOverrides;
 - (id)userPreferences;
 - (id)deniedBrands;
 - (id)consentedBrands;

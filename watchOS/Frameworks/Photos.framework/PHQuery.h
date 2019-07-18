@@ -40,6 +40,7 @@
     _Bool __includesCameraRoll;
     PHFetchOptions *_fetchOptions;
     NSArray *_propertiesToGroupBy;
+    NSArray *_propertiesToFetchWhenGrouping;
     NSString *_fetchType;
     NSArray *_seedOIDs;
     PHPhotoLibrary *_photoLibrary;
@@ -178,6 +179,7 @@
 @property(readonly) NSArray *seedOIDs; // @synthesize seedOIDs=_seedOIDs;
 @property(readonly) NSPredicate *basePredicate; // @synthesize basePredicate=_basePredicate;
 @property(readonly) NSString *fetchType; // @synthesize fetchType=_fetchType;
+@property(retain) NSArray *propertiesToFetchWhenGrouping; // @synthesize propertiesToFetchWhenGrouping=_propertiesToFetchWhenGrouping;
 @property(retain) NSArray *propertiesToGroupBy; // @synthesize propertiesToGroupBy=_propertiesToGroupBy;
 @property(nonatomic, setter=_setIncludesCameraRoll:) _Bool _includesCameraRoll; // @synthesize _includesCameraRoll=__includesCameraRoll;
 @property(copy, nonatomic) PHFetchOptions *fetchOptions; // @synthesize fetchOptions=_fetchOptions;

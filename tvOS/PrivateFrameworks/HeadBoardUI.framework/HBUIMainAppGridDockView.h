@@ -16,6 +16,7 @@
 @property(readonly, nonatomic) TVSUIOuterShadowView *shadowView; // @synthesize shadowView=_shadowView;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)_updateIdleModeAttributes;
 - (void)_updateShadowViewVisibility;
 - (void)_updateLayerBorderWidth;
 - (void)layoutSubviews;

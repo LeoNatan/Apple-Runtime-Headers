@@ -53,8 +53,6 @@
 - (void)updatePreviewHeader;
 - (void)addWebView:(id)arg1;
 - (void)updateDismissButtonStyle:(int)arg1;
-- (void)updateNavigationBarTintColor:(id)arg1;
-- (void)updateToolbarTintColor:(id)arg1;
 - (void)setContentReadyForDisplay;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

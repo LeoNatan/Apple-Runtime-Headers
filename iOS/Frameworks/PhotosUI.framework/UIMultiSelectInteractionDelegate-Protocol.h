@@ -6,7 +6,7 @@
 
 #import <PhotosUI/NSObject-Protocol.h>
 
-@class UIMultiSelectInteraction;
+@class UIGestureRecognizer, UIMultiSelectInteraction;
 
 @protocol UIMultiSelectInteractionDelegate <NSObject>
 - (void)didEndMultiSelectInteraction:(UIMultiSelectInteraction *)arg1 atPoint:(struct CGPoint)arg2;
@@ -22,5 +22,6 @@
 
 @optional
 - (void)automaticallyTransitionToMultiSelectMode;
+- (_Bool)multiSelectInteractionGestureShouldPreventDragLiftGesture:(UIGestureRecognizer *)arg1;
 @end
 

@@ -16,6 +16,7 @@
     _Bool _enabled;
     _Bool _headingEnabled;
     _Bool __monitoringLocation;
+    _Bool __didRequestLocation;
     CLLocation *_currentLocation;
     CLHeading *_currentHeading;
     NSObject<OS_dispatch_queue> *__authorizationQueue;
@@ -26,6 +27,7 @@
 + (id)locationMetadataForLocation:(id)arg1 heading:(id)arg2 device:(long long)arg3;
 + (id)_sharedGPSDatestampFormatter;
 + (id)_sharedGPSTimestampFormatter;
+@property(nonatomic, setter=_setDidRequestLocation:) _Bool _didRequestLocation; // @synthesize _didRequestLocation=__didRequestLocation;
 @property(readonly, nonatomic) NSMutableArray *_enqueuedAssetsWaitingForLocation; // @synthesize _enqueuedAssetsWaitingForLocation=__enqueuedAssetsWaitingForLocation;
 @property(readonly, nonatomic) CLLocationManager *_locationManager; // @synthesize _locationManager=__locationManager;
 @property(readonly, nonatomic, getter=_isMonitoringLocation) _Bool _monitoringLocation; // @synthesize _monitoringLocation=__monitoringLocation;
@@ -41,6 +43,7 @@
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (void)_resetDidRequestLocation;
 - (void)_updateLocationMonitoring;
 - (void)_stopMonitoringLocationUpdates;
 - (void)_authorizeOrStartLocationManager;

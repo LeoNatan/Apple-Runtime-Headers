@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isGesture:(id)arg1 inDraggableView:(struct CGPoint)arg2;
 - (BOOL)preBeginGesture:(id)arg1 shouldBegin:(char *)arg2;
 - (struct CGRect)targetRect;
+@property(readonly, retain) UIView *twoFingerDraggableView;
 @property(readonly, retain) UIView *draggableView;
 @property(readonly, retain) NSArray *constraints;
 @property(readonly) struct CGPoint origin;

@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
     NSImageView *_imageView;
     NSView *_overlayView;
     NSView *_backgroundView;
-    NSView *_borderView;
 }
 
 - (void).cxx_destruct;
@@ -31,8 +30,6 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)imageSizeThatFits:(struct CGSize)arg1;
 - (long long)scalingModeForSize:(struct CGSize)arg1;
 - (void)installDarkeningView;
-- (void)installBorderView;
-- (BOOL)usesBorder;
 - (void)layoutComponentView;
 - (void)setCornerRadius:(double)arg1 continuous:(BOOL)arg2;
 - (void)componentViewDidMoveToWindow;

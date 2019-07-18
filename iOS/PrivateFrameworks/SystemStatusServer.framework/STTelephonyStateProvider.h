@@ -38,8 +38,10 @@
     long long _cachedSuppressesCellIndicators;
     long long _cachedNeedsUserIdentificationModule;
     RadiosPreferences *_radiosPreferences;
+    _Bool *_telephonyDaemonRestartHandlerCanceled;
 }
 
+@property(nonatomic) _Bool *telephonyDaemonRestartHandlerCanceled; // @synthesize telephonyDaemonRestartHandlerCanceled=_telephonyDaemonRestartHandlerCanceled;
 @property(nonatomic, getter=isAirplaneModeEnabled) _Bool airplaneModeEnabled; // @synthesize airplaneModeEnabled=_airplaneModeEnabled;
 @property(readonly, nonatomic) RadiosPreferences *radiosPreferences; // @synthesize radiosPreferences=_radiosPreferences;
 @property(nonatomic) long long cachedNeedsUserIdentificationModule; // @synthesize cachedNeedsUserIdentificationModule=_cachedNeedsUserIdentificationModule;
@@ -93,15 +95,16 @@
 - (void)networkReselectionNeeded:(id)arg1;
 - (void)_handleCellChangedForContext:(id)arg1 withCTContext:(id)arg2;
 - (void)cellChanged:(id)arg1 cell:(id)arg2;
+- (void)_cancelFakeRegistrationForContext:(id)arg1;
+- (void)_startFakeRegistrationIfNecessaryForContext:(id)arg1;
 - (void)_updateRegistrationNowInSubscriptionContext:(id)arg1;
 - (void)_setRegistrationStatus:(unsigned long long)arg1 inSubscriptionContext:(id)arg2;
 - (void)_setCachedCTRegistrationDisplayStatus:(id)arg1 forcedHome:(_Bool)arg2 inSubscriptionContext:(id)arg3;
-- (void)setDisplayStatus:(id)arg1 forcedHome:(_Bool)arg2 changeCausedBySIMRemoval:(_Bool)arg3 inSubscriptionContext:(id)arg4 withCTContext:(id)arg5;
+- (void)_setDisplayStatus:(id)arg1 forcedHome:(_Bool)arg2 changeCausedBySIMRemoval:(_Bool)arg3 inSubscriptionContext:(id)arg4 withCTContext:(id)arg5;
 - (void)displayStatusChanged:(id)arg1 status:(id)arg2;
 - (id)_carrierNameForOperatorName:(id)arg1 withContext:(id)arg2;
-- (void)_cancelFakeServiceTimerForContext:(id)arg1;
+- (void)_cancelFakeServiceForContext:(id)arg1;
 - (void)_stopFakeServiceForContext:(id)arg1;
-- (void)_stopFakeService:(id)arg1;
 - (void)_startFakeServiceIfNecessaryForContext:(id)arg1;
 - (void)_reallySetOperatorName:(id)arg1 inSubscriptionContext:(id)arg2;
 - (void)_setOperatorName:(id)arg1 inSubscriptionContext:(id)arg2;
@@ -142,7 +145,7 @@
 - (void)_purgeSubscriptionState;
 - (id)_newSubscriptionContext;
 - (void)_updateState;
-- (void)airplaneModeDidChange:(_Bool)arg1;
+- (void)_airplaneModeDidChange:(_Bool)arg1;
 - (void)_handleTelephonyDaemonRestart;
 - (void)_serverConnectionDidError:(CDStruct_1ef3fb1f)arg1;
 - (struct __CTServerConnection *)_serverConnection;

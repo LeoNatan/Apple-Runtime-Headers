@@ -79,6 +79,7 @@
 - (void)hideRulerAnimated:(_Bool)arg1;
 - (void)hideRuler;
 - (void)showRuler;
+- (struct CGRect)_rulerFrame;
 - (void)adjustFrames;
 - (void)_adjustViewForHostingRulerView;
 - (void)dealloc;

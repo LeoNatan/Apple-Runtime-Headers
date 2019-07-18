@@ -7,18 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <DoNotDisturbServer/DNDSAssertionSyncManager-Protocol.h>
-#import <DoNotDisturbServer/DNDSIDSSyncServiceDelegate-Protocol.h>
-#import <DoNotDisturbServer/DNDSModeAssertionStoreMigrationDelegate-Protocol.h>
+#import <DoNotDisturbServer/DNDSSyncServiceDelegate-Protocol.h>
 
-@class DNDSClientDetailsProvider, DNDSIDSSyncService, DNDSModeAssertionStore, NSString;
-@protocol DNDSAssertionSyncManagerDataSource, DNDSAssertionSyncManagerDelegate, OS_dispatch_queue;
+@class DNDSClientDetailsProvider, NSDate, NSString;
+@protocol DNDSAssertionSyncManagerDataSource, DNDSAssertionSyncManagerDelegate, DNDSSyncService, OS_dispatch_queue;
 
-@interface DNDSModernAssertionSyncManager : NSObject <DNDSIDSSyncServiceDelegate, DNDSModeAssertionStoreMigrationDelegate, DNDSAssertionSyncManager>
+@interface DNDSModernAssertionSyncManager : NSObject <DNDSSyncServiceDelegate, DNDSAssertionSyncManager>
 {
     NSObject<OS_dispatch_queue> *_queue;
-    DNDSIDSSyncService *_syncService;
+    id <DNDSSyncService> _syncService;
     DNDSClientDetailsProvider *_clientDetailsProvider;
-    DNDSModeAssertionStore *_latestSentOrReceivedStore;
+    NSDate *_lastReceivedStoreDate;
+    NSDate *_lastSentStoreDate;
     id <DNDSAssertionSyncManagerDataSource> _dataSource;
     id <DNDSAssertionSyncManagerDelegate> _delegate;
 }
@@ -26,17 +26,13 @@
 @property(nonatomic) __weak id <DNDSAssertionSyncManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <DNDSAssertionSyncManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
-- (_Bool)isAssertionUserRequestedForClientIdentifier:(id)arg1;
-- (_Bool)isAssertionSyncSuppressedForClientIdentifier:(id)arg1;
-- (id)_resolvedSyncAssertionStore:(id)arg1 pairedDevice:(id)arg2;
-- (id)_unresolvedSyncAssertionStore:(id)arg1 pairedDevice:(id)arg2;
-- (id)_syncAssertionStoreForAssertionStore:(id)arg1 pairedDevice:(id)arg2;
+- (void)_queue_sendStateSnapshotToPairedDevice:(id)arg1 force:(_Bool)arg2;
 - (void)_queue_handleMessage:(id)arg1 withVersionNumber:(unsigned long long)arg2;
-- (void)_queue_sendStateSnapshotToPairedDevice:(id)arg1;
-- (void)idsSyncService:(id)arg1 didReceiveMessage:(id)arg2 withVersionNumber:(unsigned long long)arg3 fromDeviceIdentifier:(id)arg4;
-- (_Bool)idsSyncService:(id)arg1 shouldAcceptIncomingMessage:(id)arg2 withVersionNumber:(unsigned long long)arg3 fromDeviceIdentifier:(id)arg4;
+- (void)syncService:(id)arg1 didReceiveMessage:(id)arg2 withVersionNumber:(unsigned long long)arg3 fromDeviceIdentifier:(id)arg4;
+- (_Bool)syncService:(id)arg1 shouldAcceptIncomingMessage:(id)arg2 withVersionNumber:(unsigned long long)arg3 fromDeviceIdentifier:(id)arg4;
 - (void)updateForModeAssertionUpdateResult:(id)arg1;
 - (void)resume;
+- (id)initWithClientDetailsProvider:(id)arg1 syncService:(id)arg2;
 - (id)initWithClientDetailsProvider:(id)arg1;
 
 // Remaining properties

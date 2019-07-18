@@ -6,13 +6,12 @@
 
 #import <WorkflowKit/WFDynamicEnumerationParameter.h>
 
-#import <ActionKit/WFDynamicEnumerationAsynchronousDataSource-Protocol.h>
+#import <ActionKit/WFDynamicEnumerationDataSource-Protocol.h>
 #import <ActionKit/WFMediaRoutePickerObserver-Protocol.h>
-#import <ActionKit/WFModuleSummarySupporting-Protocol.h>
 
 @class NSString, WFMediaRoutePicker;
 
-@interface WFMediaRoutePickerParameter : WFDynamicEnumerationParameter <WFModuleSummarySupporting, WFDynamicEnumerationAsynchronousDataSource, WFMediaRoutePickerObserver>
+@interface WFMediaRoutePickerParameter : WFDynamicEnumerationParameter <WFDynamicEnumerationDataSource, WFMediaRoutePickerObserver>
 {
     WFMediaRoutePicker *_routePicker;
 }
@@ -27,14 +26,13 @@
 - (BOOL)shouldDefaultToLocalDeviceEndpoint;
 - (BOOL)preferItemPickerSheet;
 - (void)loadPossibleStatesForEnumeration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)loadDefaultSerializedRepresentationForEnumeration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)defaultSerializedRepresentationForEnumeration:(id)arg1;
 - (void)stopDiscoveringRoutes;
 - (void)startDiscoveringRoutes;
 - (id)localizedLabelForPossibleState:(id)arg1;
 @property(readonly, nonatomic) long long routeType;
 - (id)initWithDefinition:(id)arg1;
 - (Class)singleStateClass;
-- (id)moduleSummarySlotsForState:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

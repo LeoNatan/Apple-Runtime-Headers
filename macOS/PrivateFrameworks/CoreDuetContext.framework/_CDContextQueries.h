@@ -26,6 +26,7 @@
 + (id)keyPathForWatchNearbyStatus;
 + (id)keyPathForNetworkingBudgetRemainingStatus;
 + (id)keyPathForEnergyBudgetRemainingStatus;
++ (id)keyPathForNearbyLOIIdentifiers;
 + (id)keyPathForCPUUsageLevel;
 + (id)keyPathForThermalPressureLevel;
 + (id)predicateForPluginStatus:(BOOL)arg1;
@@ -191,6 +192,7 @@
 + (id)userActivityUUID;
 + (id)keyPathForUserActivityDataDictionary;
 + (id)keyPathForNFCTagIdentifiers;
++ (BOOL)isMDCSKeyPath:(id)arg1;
 + (id)keyPathForMDCSDeviceIDsWithProxySourceDeviceUUID:(id)arg1;
 + (id)keyPathForMDCSDevicesWithProxySourceDeviceUUID:(id)arg1;
 + (id)keyPathForMDCSUserIDWithProxySourceDeviceUUID:(id)arg1;

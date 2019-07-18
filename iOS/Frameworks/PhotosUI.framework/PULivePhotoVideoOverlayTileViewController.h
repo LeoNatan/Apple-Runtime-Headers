@@ -6,51 +6,62 @@
 
 #import <PhotosUI/PUTileViewController.h>
 
+#import <PhotosUI/ISChangeObserver-Protocol.h>
+#import <PhotosUI/PHLivePhotoViewDelegate-Protocol.h>
 #import <PhotosUI/PUBrowsingViewModelChangeObserver-Protocol.h>
 #import <PhotosUI/PXChangeObserver-Protocol.h>
-#import <PhotosUI/PXVideoSessionUIViewDelegate-Protocol.h>
 
-@class NSArray, NSString, PUBrowsingViewModel, PULivePhotoPlaybackInteraction, PUMergedLivePhotosVideo, PUModelTileTransform, PUOneUpMergedVideoProvider, PXVideoSessionUIView, UIImpactFeedbackGenerator, UIView;
+@class ISWrappedAVPlayer, NSArray, NSString, PHLivePhotoView, PUBrowsingViewModel, PUMergedLivePhotosVideo, PUModelTileTransform, PUOneUpMergedVideoProvider, PXImageLayerModulator, PXImageModulationManager, UIImpactFeedbackGenerator, UIView;
 @protocol PULivePhotoVideoOverlayTileViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface PULivePhotoVideoOverlayTileViewController : PUTileViewController <PUBrowsingViewModelChangeObserver, PXChangeObserver, PXVideoSessionUIViewDelegate>
+@interface PULivePhotoVideoOverlayTileViewController : PUTileViewController <PUBrowsingViewModelChangeObserver, PXChangeObserver, PHLivePhotoViewDelegate, ISChangeObserver>
 {
+    _Bool _isPresentedForSecondScreen;
     PUBrowsingViewModel *_browsingViewModel;
     PUOneUpMergedVideoProvider *_mergedVideoProvider;
     id <PULivePhotoVideoOverlayTileViewControllerDelegate> _delegate;
+    PXImageModulationManager *_imageModulationManager;
     NSArray *_playbackGestureRecognizers;
     UIImpactFeedbackGenerator *_feedbackGenerator;
     PUMergedLivePhotosVideo *_mergedVideo;
-    PULivePhotoPlaybackInteraction *_playbackInteraction;
     UIView *_containerView;
-    PXVideoSessionUIView *_videoView;
+    PHLivePhotoView *_livePhotoView;
+    ISWrappedAVPlayer *_videoPlayer;
+    id _videoPlayerTimeObserver;
     PUModelTileTransform *_modelTileTransform;
+    PXImageLayerModulator *_imageLayerModulator;
 }
 
+@property(retain, nonatomic) PXImageLayerModulator *imageLayerModulator; // @synthesize imageLayerModulator=_imageLayerModulator;
 @property(retain, nonatomic) PUModelTileTransform *modelTileTransform; // @synthesize modelTileTransform=_modelTileTransform;
-@property(readonly, nonatomic) PXVideoSessionUIView *videoView; // @synthesize videoView=_videoView;
+@property(retain, nonatomic) id videoPlayerTimeObserver; // @synthesize videoPlayerTimeObserver=_videoPlayerTimeObserver;
+@property(retain, nonatomic) ISWrappedAVPlayer *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
+@property(readonly, nonatomic) PHLivePhotoView *livePhotoView; // @synthesize livePhotoView=_livePhotoView;
 @property(readonly, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
-@property(readonly, nonatomic) PULivePhotoPlaybackInteraction *playbackInteraction; // @synthesize playbackInteraction=_playbackInteraction;
 @property(readonly, nonatomic) PUMergedLivePhotosVideo *mergedVideo; // @synthesize mergedVideo=_mergedVideo;
 @property(readonly, nonatomic) UIImpactFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(readonly, nonatomic) NSArray *playbackGestureRecognizers; // @synthesize playbackGestureRecognizers=_playbackGestureRecognizers;
+@property(retain, nonatomic) PXImageModulationManager *imageModulationManager; // @synthesize imageModulationManager=_imageModulationManager;
 @property(nonatomic) __weak id <PULivePhotoVideoOverlayTileViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool isPresentedForSecondScreen; // @synthesize isPresentedForSecondScreen=_isPresentedForSecondScreen;
 @property(retain, nonatomic) PUOneUpMergedVideoProvider *mergedVideoProvider; // @synthesize mergedVideoProvider=_mergedVideoProvider;
 @property(retain, nonatomic) PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
 - (void).cxx_destruct;
 - (void)_updatePlaybackEnabled;
-- (void)_videoSessionCurrentTimeDidChange:(id)arg1;
-- (void)_videoSessionDesiredPlayStateDidChange:(id)arg1;
+- (void)_videoCurrentTimeDidChange:(CDStruct_1b6d18a9)arg1;
 - (void)_updateMergedVideo;
-- (void)_stopPlayback;
-- (void)_startPlaybackIfReady;
-- (void)_updatePlaying;
+- (void)_updateImageLayerModulatorInput;
+- (void)_updateImageLayerModulator;
+- (void)_updateLivePhotoViewPhoto;
+- (void)_updateLivePhotoViewFrame;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
-- (void)videoSessionViewPlaceholderVisibilityChanged:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (void)livePhotoView:(id)arg1 didEndPlaybackWithStyle:(long long)arg2;
+- (void)livePhotoView:(id)arg1 willBeginPlaybackWithStyle:(long long)arg2;
 - (id)gestureRecognizers;
 - (id)loadView;
+- (void)dealloc;
 - (void)setMergedVideo:(id)arg1;
 
 // Remaining properties

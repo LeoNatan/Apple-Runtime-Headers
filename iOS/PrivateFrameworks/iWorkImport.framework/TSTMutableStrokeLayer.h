@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)applyStroke:(id)arg1 atIndexes:(id)arg2 order:(int)arg3 applyStroke:(id)arg4 atIndexes:(id)arg5 order:(int)arg6 applyStroke:(id)arg7 atIndexes:(id)arg8 order:(int)arg9 applyStroke:(id)arg10 atIndexes:(id)arg11 order:(int)arg12 applyStroke:(id)arg13 atIndexes:(id)arg14 order:(int)arg15;
 - (void)flattenStrokeOrder;
 - (void)moveRange:(struct _NSRange)arg1 toIndex:(long long)arg2;
 - (void)swapSegmentAtIndex:(long long)arg1 withSegmentAtIndex:(long long)arg2;

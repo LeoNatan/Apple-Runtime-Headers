@@ -10,11 +10,11 @@
 #import <iWorkImport/TSWPLayoutOwner-Protocol.h>
 #import <iWorkImport/TSWPLayoutTarget-Protocol.h>
 
-@class NSMutableArray, NSObject, NSString, TSDCanvas, TSPObject, TSUBezierPath, TSWPLayoutManager, TSWPStorage;
+@class NSMutableArray, NSMutableSet, NSObject, NSString, TSDCanvas, TSPObject, TSUBezierPath, TSWPLayoutManager, TSWPStorage;
 @protocol TSDHint, TSWPFootnoteHeightMeasurer, TSWPFootnoteMarkProvider, TSWPLayoutParent, TSWPOffscreenColumn, TSWPTopicNumberHints;
 
 __attribute__((visibility("hidden")))
-@interface TSWPLayout : TSDLayout <TSDWrapInvalidationParent, TSWPLayoutTarget, TSWPLayoutOwner>
+@interface TSWPLayout : TSDLayout <TSWPLayoutTarget, TSWPLayoutOwner, TSDWrapInvalidationParent>
 {
     TSWPLayoutManager *_layoutManager;
     NSMutableArray *_columns;
@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     TSWPStorage *_storage;
     unsigned long long _lastLayoutMgrChangeCount;
     TSDLayout<TSWPLayoutParent> *_wpLayoutParent;
+    NSMutableSet *_markedHiddenInlineDrawableLayouts;
     _Bool _useBlackTextColor;
 }
 
@@ -31,14 +32,18 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isLinked;
 - (id)textColorOverride;
+- (void)markHiddenInlineDrawableLayout:(id)arg1;
+- (void)clearHiddenInlineDrawableLayoutMarks;
 @property(readonly, nonatomic) TSUBezierPath *interiorClippingPath;
 - (id)styleProvider;
 - (struct CGRect)p_rectInRootForSelectionPath:(id)arg1 useParagraphModeRects:(_Bool)arg2 forZoom:(_Bool)arg3;
 - (struct CGRect)p_rectForSelectionPath:(id)arg1 useParagraphModeRects:(_Bool)arg2;
 - (_Bool)selectionMustBeEntirelyOnscreenToCountAsVisibleInSelectionPath:(id)arg1;
 - (double)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(double)arg2;
+- (_Bool)containsStartOfRange:(struct _NSRange)arg1;
 - (_Bool)containsStartOfPencilAnnotation:(id)arg1;
-- (id)unscaledAnchorRectsForPencilAnnotationSelectionPath:(id)arg1 attachedType:(long long)arg2;
+- (id)pageAnchorDetailsForPencilAnnotationAtSelectionPath:(id)arg1 attachedType:(long long)arg2;
+- (id)unscaledContentRectsToAvoidPencilAnnotationOverlap;
 - (id)containedPencilAnnotations;
 - (struct CGRect)rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect)rectInRootOfAutoZoomContextOfSelectionPath:(id)arg1;
@@ -98,7 +103,10 @@ __attribute__((visibility("hidden")))
 - (void)willBeAddedToLayoutController:(id)arg1;
 - (_Bool)shouldProvideSizingGuides;
 - (_Bool)shouldDisplayGuides;
+- (_Bool)childLayoutIsCurrentlyHiddenWhileManipulating:(id)arg1;
+- (double)textScaleForChild:(id)arg1;
 - (struct CGSize)maximumFrameSizeForChild:(id)arg1;
+- (struct CGSize)p_maximumFrameSizeForChild:(id)arg1;
 - (Class)repClassOverride;
 - (void)invalidateParentForAutosizing;
 - (_Bool)invalidateForPageCountChange;
@@ -118,6 +126,7 @@ __attribute__((visibility("hidden")))
 - (void)invalidateInlineSize;
 - (void)invalidateSize;
 @property(readonly, nonatomic) struct _NSRange containedTextRange;
+- (_Bool)descendersCannotClip;
 @property(readonly, nonatomic) _Bool isInstructional;
 - (_Bool)caresAboutStorageChanges;
 - (void)i_setTextLayoutValid:(_Bool)arg1;

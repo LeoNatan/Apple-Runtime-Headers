@@ -6,7 +6,7 @@
 
 #import <Navigation/NSObject-Protocol.h>
 
-@class GEOComposedRouteTraffic, GEODirectionsRequest, GEODirectionsResponse, GEOStep, MNActiveRouteInfo, MNAudioOutputSetting, MNGuidanceEventFeedback, MNGuidanceJunctionViewInfo, MNGuidanceLaneInfo, MNGuidanceSignInfo, MNLocationDetails, MNNavigationDetails, MNTracePlaybackDetails, MNTrafficIncidentAlertDetails, NSArray, NSData, NSDate, NSError, NSSet, NSString, NSUUID;
+@class GEODirectionsRequest, GEODirectionsResponse, GEOStep, MNActiveRouteInfo, MNAudioOutputSetting, MNGuidanceEventFeedback, MNGuidanceJunctionViewInfo, MNGuidanceLaneInfo, MNGuidanceSignInfo, MNLocationDetails, MNNavigationDetails, MNTracePlaybackDetails, MNTrafficIncidentAlertDetails, NSArray, NSData, NSDate, NSError, NSSet, NSString, NSUUID;
 @protocol MNNavigationServiceProxy;
 
 @protocol MNNavigationServiceClientInterface <NSObject>
@@ -27,7 +27,7 @@
 - (void)navigationServiceProxy:(id <MNNavigationServiceProxy>)arg1 didUpdateTrafficIncidentAlert:(MNTrafficIncidentAlertDetails *)arg2;
 - (void)navigationServiceProxy:(id <MNNavigationServiceProxy>)arg1 didReceiveTrafficIncidentAlert:(MNTrafficIncidentAlertDetails *)arg2;
 - (void)navigationServiceProxy:(id <MNNavigationServiceProxy>)arg1 didUpdateAlternateRoutes:(NSArray *)arg2;
-- (void)navigationServiceProxy:(id <MNNavigationServiceProxy>)arg1 failedRerouteWithErrorCode:(int)arg2;
+- (void)navigationServiceProxy:(id <MNNavigationServiceProxy>)arg1 didFailRerouteWithError:(NSError *)arg2;
 - (void)navigationServiceProxy:(id <MNNavigationServiceProxy>)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(MNActiveRouteInfo *)arg3;
 - (void)navigationServiceProxy:(id <MNNavigationServiceProxy>)arg1 didUpdateRouteWithNewRideSelection:(MNActiveRouteInfo *)arg2;
 - (void)navigationServiceProxyDidCancelReroute:(id <MNNavigationServiceProxy>)arg1;
@@ -35,7 +35,6 @@
 - (void)navigationServiceProxyWillReroute:(id <MNNavigationServiceProxy>)arg1;
 - (void)navigationServiceProxy:(id <MNNavigationServiceProxy>)arg1 didUpdatePreviewRoutes:(NSArray *)arg2 withSelectedRouteIndex:(unsigned int)arg3;
 - (void)navigationServiceProxy:(id <MNNavigationServiceProxy>)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
-- (void)navigationServiceProxy:(id <MNNavigationServiceProxy>)arg1 didUpdateTraffic:(GEOComposedRouteTraffic *)arg2;
 - (void)navigationServiceProxy:(id <MNNavigationServiceProxy>)arg1 didUpdateETAResponseForRoute:(MNActiveRouteInfo *)arg2;
 - (void)navigationServiceProxy:(id <MNNavigationServiceProxy>)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
 - (void)navigationServiceProxy:(id <MNNavigationServiceProxy>)arg1 didUpdateDisplayETA:(NSDate *)arg2 displayRemainingMinutes:(unsigned int)arg3 forRoute:(MNActiveRouteInfo *)arg4;

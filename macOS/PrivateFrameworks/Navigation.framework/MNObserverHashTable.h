@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable, NSLock, Protocol;
+@class NSHashTable, Protocol, geo_isolater;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 {
     Protocol *_protocol;
     NSHashTable *_observers;
-    NSLock *_observersLock;
+    geo_isolater *_observerLock;
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 

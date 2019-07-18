@@ -22,6 +22,16 @@
     PXCMMInvitationViewModel *_viewModel;
 }
 
++ (id)subtitle2Color;
++ (id)subtitle1Color;
++ (id)titleBulletColor;
++ (long long)subtitle2TextStyle;
++ (long long)subtitle1TextStyle;
++ (long long)titleTextStyle;
++ (struct NSFont *)subtitle2Font;
++ (struct NSFont *)subtitle1Font;
++ (struct NSFont *)titleEmphasizedFont;
++ (struct NSFont *)titleFont;
 + (struct CGSize)sizeThatFits:(struct CGSize)arg1 viewModel:(id)arg2;
 @property(retain, nonatomic) PXCMMInvitationViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) __weak id <PXCMMInvitationViewDelegate> delegate; // @synthesize delegate=_delegate;

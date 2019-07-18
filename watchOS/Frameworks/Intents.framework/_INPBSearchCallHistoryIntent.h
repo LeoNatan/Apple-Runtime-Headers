@@ -23,6 +23,7 @@
         unsigned int unseen:1;
     } _has;
     _Bool _unseen;
+    _Bool __encodeLegacyGloryData;
     int _callType;
     _INPBDateTimeRange *_dateCreated;
     _INPBIntentMetadata *_intentMetadata;
@@ -32,6 +33,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) _Bool unseen; // @synthesize unseen=_unseen;
 @property(retain, nonatomic) _INPBContact *targetContact; // @synthesize targetContact=_targetContact;
 @property(retain, nonatomic) _INPBContact *recipient; // @synthesize recipient=_recipient;

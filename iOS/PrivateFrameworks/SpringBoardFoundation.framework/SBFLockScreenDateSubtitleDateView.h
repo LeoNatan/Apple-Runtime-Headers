@@ -18,7 +18,7 @@
 
 + (double)scaledFontSize:(double)arg1 withMaximumFontSizeCategory:(id)arg2;
 + (double)subtitleLabelToLunarDateLabelBaselineDifferenceY;
-+ (CDStruct_d2b197d1)dateTimeLunarDateFontMetrics;
++ (CDStruct_91d2e2b9)dateTimeLunarDateFontMetrics;
 + (id)dateTimeLunarDateFont;
 @property(nonatomic) _Bool useCompactDateFormat; // @synthesize useCompactDateFormat=_useCompactDateFormat;
 @property(nonatomic) double alignmentPercent; // @synthesize alignmentPercent=_alignmentPercent;

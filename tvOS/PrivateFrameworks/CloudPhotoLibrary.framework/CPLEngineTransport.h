@@ -27,7 +27,7 @@
 - (id)createGroupForPublishingMomentShare;
 - (id)createGroupForPruningCheck;
 - (id)createGroupForAnalysisDownload;
-- (id)createGroupForMovieStreaming;
+- (id)createGroupForMovieStreamingWithIntent:(unsigned long long)arg1;
 - (id)createGroupForResourcesDownload;
 - (id)createGroupForThumbnailsDownload;
 - (id)createGroupForChangeDownload;
@@ -72,7 +72,7 @@
 - (id)resourcesDownloadTaskWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)rampingRequestTaskForResourceType:(unsigned long long)arg1 numRequested:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)resourceCheckTaskForResources:(id)arg1 transportScopes:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)resourcePublishTaskForResource:(id)arg1 transportScope:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)getStreamingURLTaskForResource:(id)arg1 intent:(unsigned long long)arg2 hints:(id)arg3 transportScope:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)fetchTransportScopeForScope:(id)arg1 transportScope:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)getCurrentSyncAnchorWithTransportScope:(id)arg1 scope:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)getLibraryInfoAndStateWithTransportScope:(id)arg1 scope:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

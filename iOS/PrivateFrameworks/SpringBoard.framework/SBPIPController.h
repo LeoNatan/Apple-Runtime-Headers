@@ -10,7 +10,8 @@
 #import <SpringBoard/SBAlertItemsControllerObserver-Protocol.h>
 #import <SpringBoard/SBAssistantObserver-Protocol.h>
 
-@class NSMutableDictionary, NSMutableSet, NSString, PGPictureInPictureController, SBPIPWindow;
+@class NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSString, PGPictureInPictureController, SBPIPWindow;
+@protocol BSInvalidatable;
 
 @interface SBPIPController : NSObject <PGPictureInPictureControllerDelegate, SBAlertItemsControllerObserver, SBAssistantObserver>
 {
@@ -20,6 +21,8 @@
     NSMutableSet *_pictureInPictureWindowHiddenReasons;
     NSMutableDictionary *_pictureInPictureInsetsForSource;
     NSMutableSet *_pictureInPictureMorphAnimatorControllers;
+    id <BSInvalidatable> _stateCaptureInvalidatable;
+    NSMutableOrderedSet *_pictureInPictureWindowLevelOverrides;
 }
 
 + (id)sharedInstance;
@@ -35,6 +38,7 @@
 - (struct UIEdgeInsets)_updatePictureInPictureOverlayInsetsWithDuration:(double)arg1 withCurrentLayoutState:(_Bool)arg2;
 - (void)_floatingDockHeightWillChange:(id)arg1;
 - (void)_updateFloatingDockInsetsWithHeight:(double)arg1;
+- (void)_updateFloatingDockInsets;
 - (void)_bulletinWillDismiss:(id)arg1;
 - (void)_bulletinWillPresent:(id)arg1;
 - (void)_keyboardWillDisappear:(id)arg1;
@@ -68,6 +72,8 @@
 - (void)startPictureInPictureForApplicationWithProcessIdentifierEnteringBackground:(int)arg1 scenePersistenceIdentifier:(id)arg2 animated:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)shouldStartPictureInPictureForApplicationWithProcessIdentifierEnteringBackground:(int)arg1 scenePersistenceIdentifier:(id)arg2;
 - (_Bool)isPictureInPictureWindowVisible;
+- (void)removePictureInPictureWindowLevelOverrideForReason:(id)arg1;
+- (void)setPictureInPictureWindowLevelOverride:(unsigned long long)arg1 withReason:(id)arg2;
 - (void)setPictureInPictureWindowHidden:(_Bool)arg1 withReason:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;

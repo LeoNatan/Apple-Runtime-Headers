@@ -56,7 +56,7 @@
 - (double)_footnoteLeading;
 - (id)_footnoteFont;
 - (id)_footnoteTextStyle;
-- (double)_learnMoreButtonLastBaselineToContinueButton;
+- (double)_viewLastBaselineToContinueButton;
 - (double)_learnMoreContentViewLastBaselineToContinueButton;
 - (double)_titleLastBaselineToBodyFirstBaseline;
 - (id)_bodyFont;

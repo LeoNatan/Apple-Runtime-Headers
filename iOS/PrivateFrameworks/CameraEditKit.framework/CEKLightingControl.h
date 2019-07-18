@@ -93,6 +93,7 @@
 - (unsigned long long)_itemCount;
 - (void)_loadItemsIfNeeded;
 - (void)badgeViewDidChangeIntrinsicContentSize:(id)arg1;
+@property(nonatomic) unsigned long long nameBadgeFontStyle;
 - (void)_updateNameBadgeAnimated:(_Bool)arg1;
 - (void)setNameBadgeHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_updateItemViewsWithSelectionOffsetAngle:(double)arg1;

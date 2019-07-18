@@ -11,6 +11,7 @@
 }
 
 + (id)setOfActiveRestrictionUUIDs;
++ (BOOL)isWalletRestricted;
 + (BOOL)isWalletVisible;
 + (void)updateWalletVisibility;
 

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)registerLast;
 - (id)nsFormulaOwnerUID;
 - (UUIDData_5fbc143e)formulaOwnerUID;
+- (id)formulaOwner;
 - (void)unregisterFromCalcEngine:(id)arg1;
 - (void)registerWithCalcEngineForDocumentLoad:(id)arg1;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;

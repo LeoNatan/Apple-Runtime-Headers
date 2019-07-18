@@ -17,10 +17,12 @@
     NSString *_language;
     NSString *_subtitle;
     NSString *_title;
+    NSString *_body;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) _Bool isDefault; // @synthesize isDefault=_isDefault;
+@property(readonly, nonatomic) NSString *body; // @synthesize body=_body;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
@@ -29,7 +31,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 language:(id)arg3 isDefault:(_Bool)arg4;
+- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 language:(id)arg3 body:(id)arg4 isDefault:(_Bool)arg5;
 - (id)initWithCallToAction:(id)arg1;
 
 @end

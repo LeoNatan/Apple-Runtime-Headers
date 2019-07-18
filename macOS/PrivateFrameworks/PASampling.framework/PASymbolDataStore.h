@@ -17,7 +17,6 @@
     NSMutableSet *_sharedCacheUUIDsAlreadySearchedFor;
     NSMutableDictionary *_uuidToCSSymbolOwnerCache;
     NSMutableDictionary *_pidToCSSymbolicatorCache;
-    NSMutableSet *pidsUsingNonSystemSharedCache;
     PAImageInfo *_systemSharedCache;
     PAImageInfo *_nonSystemSharedCache;
     PAImageInfo *_kernelCache;

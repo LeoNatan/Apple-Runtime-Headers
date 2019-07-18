@@ -4,18 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UICollectionViewCell.h>
+#import <UIKit/UICollectionReusableView.h>
 
-@class NSString, UILabel;
+@class NSLayoutConstraint, NSString, UILabel, UIView;
 
-@interface _HKDisplayTypeSectionedHeaderView : UICollectionViewCell
+@interface _HKDisplayTypeSectionedHeaderView : UICollectionReusableView
 {
-    UILabel *_titleLabel;
+    UIView *_contentView;
     NSString *_title;
+    NSLayoutConstraint *_maxTitleWidthConstraint;
+    UILabel *_titleLabel;
 }
 
 + (id)reuseIdentifier;
+@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) NSLayoutConstraint *maxTitleWidthConstraint; // @synthesize maxTitleWidthConstraint=_maxTitleWidthConstraint;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
+@property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
 - (void)_updatePreferredTitleFont;
 - (void)prepareForReuse;

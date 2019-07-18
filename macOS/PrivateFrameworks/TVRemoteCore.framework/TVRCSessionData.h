@@ -13,11 +13,13 @@
     BOOL _usedRTI;
     BOOL _usedSiri;
     BOOL _requiredPairing;
+    BOOL _directionalControlsEnabled;
     NSDate *_sessionStartTime;
     NSString *_launchContextDesc;
 }
 
 @property(copy, nonatomic) NSString *launchContextDesc; // @synthesize launchContextDesc=_launchContextDesc;
+@property(nonatomic) BOOL directionalControlsEnabled; // @synthesize directionalControlsEnabled=_directionalControlsEnabled;
 @property(nonatomic) BOOL requiredPairing; // @synthesize requiredPairing=_requiredPairing;
 @property(nonatomic) BOOL usedSiri; // @synthesize usedSiri=_usedSiri;
 @property(nonatomic) BOOL usedRTI; // @synthesize usedRTI=_usedRTI;

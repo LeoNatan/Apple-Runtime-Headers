@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *queue;
     NSURL *_urlToTag;
     BOOL _useSecurityScopedURL;
-    NSArray *tags;
+    NSArray *tagNames;
     NSDictionary *initialFileAttributes;
     NSMutableSet *urlsWithTagsSet;
     NSTimer *timer;
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_relevantFileAttributesForURL:(id)arg1 cached:(BOOL)arg2;
 + (void)_tagSetterFinished:(id)arg1;
-+ (void)_waitForURL:(id)arg1 useSecurityScopedURL:(BOOL)arg2 withNameFieldString:(id)arg3 thenSetTags:(id)arg4;
++ (void)_waitForURL:(id)arg1 useSecurityScopedURL:(BOOL)arg2 withNameFieldString:(id)arg3 thenSetTagNames:(id)arg4;
 + (id)_prefixForURL:(id)arg1 nameFieldString:(id)arg2;
 - (void)_setTagsForURL:(id)arg1;
 - (void)_stopWatching;
@@ -43,8 +43,8 @@ __attribute__((visibility("hidden")))
 - (id)_URLForDirectoryToWatch;
 - (BOOL)_isRelevantURL:(id)arg1;
 - (void)dealloc;
-- (id)_initWithURL:(id)arg1 useSecurityScopedURL:(BOOL)arg2 tags:(id)arg3;
-- (id)_initWithTags:(id)arg1;
+- (id)_initWithURL:(id)arg1 useSecurityScopedURL:(BOOL)arg2 tagNames:(id)arg3;
+- (id)_initWithTagNames:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

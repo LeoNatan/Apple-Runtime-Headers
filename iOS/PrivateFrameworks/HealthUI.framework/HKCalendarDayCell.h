@@ -26,7 +26,7 @@
 + (void)clearImageCache;
 @property(readonly, nonatomic) _Bool representsToday; // @synthesize representsToday=_representsToday;
 @property(readonly, nonatomic) long long dayOfMonth; // @synthesize dayOfMonth=_dayOfMonth;
-@property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
+@property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) double dayDiameter; // @synthesize dayDiameter=_dayDiameter;
 @property(retain, nonatomic) UIFont *boldFont; // @synthesize boldFont=_boldFont;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;

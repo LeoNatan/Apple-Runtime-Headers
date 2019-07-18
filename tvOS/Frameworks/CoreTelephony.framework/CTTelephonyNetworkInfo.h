@@ -55,7 +55,6 @@
 - (void)updateSignalStrength:(id)arg1 descriptor:(id)arg2;
 - (void)signalStrengthChanged:(id)arg1 info:(id)arg2;
 - (void)postNotificationIfReady:(id)arg1 object:(id)arg2;
-- (void)postCellularProviderUpdatesIfNecessary;
 - (void)carrierBundleChange:(id)arg1;
 - (void)cellChanged:(id)arg1 cell:(id)arg2;
 - (void)connectionStateChanged:(id)arg1 connection:(int)arg2 dataConnectionStatusInfo:(id)arg3;

@@ -6,7 +6,9 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-@interface _TtC5TeaUI14ImageProcessor : _TtCs12_SwiftObject
+#import <TeaUI/TSImageProcessorType-Protocol.h>
+
+@interface _TtC5TeaUI14ImageProcessor : _TtCs12_SwiftObject <TSImageProcessorType>
 {
 }
 

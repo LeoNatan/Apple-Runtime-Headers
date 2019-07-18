@@ -6,26 +6,22 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class AVTUIAnimatingImageView, CAShapeLayer, NSUUID;
+@class AVTUIAnimatingImageView, NSUUID, UIView;
 
 @interface AVTSimpleAvatarPickerCollectionViewCell : UICollectionViewCell
 {
     _Bool _showSelectedState;
-    _Bool _highlightIsAnimating;
-    _Bool _unhighlightOnAnimationCompletion;
     NSUUID *_displaySessionUUID;
     unsigned long long _imageInsetSize;
-    CAShapeLayer *_selectionLayer;
+    UIView *_selectionLayer;
     AVTUIAnimatingImageView *_imageView;
 }
 
 + (double)imageInsetForInsetSize:(unsigned long long)arg1;
 + (struct CGPath *)selectionPathInBounds:(struct CGRect)arg1;
 + (id)cellIdentifier;
-@property(nonatomic) _Bool unhighlightOnAnimationCompletion; // @synthesize unhighlightOnAnimationCompletion=_unhighlightOnAnimationCompletion;
-@property(nonatomic) _Bool highlightIsAnimating; // @synthesize highlightIsAnimating=_highlightIsAnimating;
 @property(readonly, nonatomic) AVTUIAnimatingImageView *imageView; // @synthesize imageView=_imageView;
-@property(readonly, nonatomic) CAShapeLayer *selectionLayer; // @synthesize selectionLayer=_selectionLayer;
+@property(readonly, nonatomic) UIView *selectionLayer; // @synthesize selectionLayer=_selectionLayer;
 @property(nonatomic) _Bool showSelectedState; // @synthesize showSelectedState=_showSelectedState;
 @property(nonatomic) unsigned long long imageInsetSize; // @synthesize imageInsetSize=_imageInsetSize;
 @property(retain, nonatomic) NSUUID *displaySessionUUID; // @synthesize displaySessionUUID=_displaySessionUUID;
@@ -35,7 +31,7 @@
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1;
 - (void)updateWithImage:(id)arg1 animated:(_Bool)arg2;
-- (void)updateSelectionLayer;
+- (void)updateSelectionLayerOpacityAnimated:(_Bool)arg1;
 - (_Bool)shouldShowSelectionLayer;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

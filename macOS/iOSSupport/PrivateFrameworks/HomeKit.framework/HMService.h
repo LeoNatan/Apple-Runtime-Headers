@@ -77,7 +77,6 @@
 - (void)_handleUpdateServiceSubtype:(id)arg1;
 - (void)_handleUpdateAssociatedServiceType:(id)arg1;
 - (void)_handleUpdateDefaultName:(id)arg1;
-- (void)_handleUpdateConfiguredName:(id)arg1;
 - (void)_handleUpdateName:(id)arg1;
 - (void)_handleMarkServiceInteractive:(id)arg1;
 - (void)_handleUpdateServicePrimary:(id)arg1;
@@ -89,6 +88,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)logIdentifier;
+@property(readonly, copy) NSUUID *applicationDataIdentifier;
 - (void)_updateConfigurationState:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateConfigurationState:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_updateAssociatedServiceType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

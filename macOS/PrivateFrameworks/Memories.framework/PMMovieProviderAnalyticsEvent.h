@@ -12,6 +12,18 @@
 
 @interface PMMovieProviderAnalyticsEvent : PMCoreAnalyticsEvent <CoreAnalyticsEventProtocol>
 {
+    BOOL _didChangeMusic;
+    BOOL _didChangeTitle;
+    BOOL _didChangeSubTitle;
+    BOOL _didChangeMood;
+    BOOL _didChangeDuration;
+    BOOL _didChangeKeyAsset;
+    BOOL _didChangeTrimRange;
+    BOOL _didPlayAllTheWayThrough;
+    BOOL _didStartPlayback;
+    BOOL _didShare;
+    BOOL _didEdit;
+    BOOL _didAbortDuringDownload;
     long long _changedMusicCount;
     long long _changedTitleCount;
     long long _changedSubTitleCount;
@@ -30,34 +42,58 @@
 
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(nonatomic) long long assetCountDeltaFromEditing; // @synthesize assetCountDeltaFromEditing=_assetCountDeltaFromEditing;
+@property(nonatomic) BOOL didAbortDuringDownload; // @synthesize didAbortDuringDownload=_didAbortDuringDownload;
 @property(nonatomic) long long abortedDuringDownloadCount; // @synthesize abortedDuringDownloadCount=_abortedDuringDownloadCount;
+@property(nonatomic) BOOL didEdit; // @synthesize didEdit=_didEdit;
 @property(nonatomic) long long editDoneCount; // @synthesize editDoneCount=_editDoneCount;
+@property(nonatomic) BOOL didShare; // @synthesize didShare=_didShare;
 @property(nonatomic) long long sharedCount; // @synthesize sharedCount=_sharedCount;
+@property(nonatomic) BOOL didStartPlayback; // @synthesize didStartPlayback=_didStartPlayback;
 @property(nonatomic) long long startedPlaybackCount; // @synthesize startedPlaybackCount=_startedPlaybackCount;
+@property(nonatomic) BOOL didPlayAllTheWayThrough; // @synthesize didPlayAllTheWayThrough=_didPlayAllTheWayThrough;
 @property(nonatomic) long long playedAllTheWayThroughCount; // @synthesize playedAllTheWayThroughCount=_playedAllTheWayThroughCount;
+@property(nonatomic) BOOL didChangeTrimRange; // @synthesize didChangeTrimRange=_didChangeTrimRange;
 @property(nonatomic) long long changedTrimRangeCount; // @synthesize changedTrimRangeCount=_changedTrimRangeCount;
+@property(nonatomic) BOOL didChangeKeyAsset; // @synthesize didChangeKeyAsset=_didChangeKeyAsset;
 @property(nonatomic) long long changedKeyAssetCount; // @synthesize changedKeyAssetCount=_changedKeyAssetCount;
+@property(nonatomic) BOOL didChangeDuration; // @synthesize didChangeDuration=_didChangeDuration;
 @property(nonatomic) long long changedDurationCount; // @synthesize changedDurationCount=_changedDurationCount;
+@property(nonatomic) BOOL didChangeMood; // @synthesize didChangeMood=_didChangeMood;
 @property(nonatomic) long long changedMoodCount; // @synthesize changedMoodCount=_changedMoodCount;
+@property(nonatomic) BOOL didChangeSubTitle; // @synthesize didChangeSubTitle=_didChangeSubTitle;
 @property(nonatomic) long long changedSubTitleCount; // @synthesize changedSubTitleCount=_changedSubTitleCount;
+@property(nonatomic) BOOL didChangeTitle; // @synthesize didChangeTitle=_didChangeTitle;
 @property(nonatomic) long long changedTitleCount; // @synthesize changedTitleCount=_changedTitleCount;
+@property(nonatomic) BOOL didChangeMusic; // @synthesize didChangeMusic=_didChangeMusic;
 @property(nonatomic) long long changedMusicCount; // @synthesize changedMusicCount=_changedMusicCount;
 - (void).cxx_destruct;
 - (id)copy;
 - (id)eventName;
 - (id)eventPayload;
 - (id)eventByAssigningAssetCountDeltaFromEditingWithCount:(long long)arg1;
+- (id)eventByAssigningDidAbortDuringDownload;
 - (id)eventByIncreasingAbortedDuringDownloadCount;
+- (id)eventByAssigningDidEdit;
 - (id)eventByIncreasingEditDoneCount;
+- (id)eventByAssigningDidShare;
 - (id)eventByIncreasingSharedCount;
+- (id)eventByAssigningDidStartPlayback;
 - (id)eventByIncreasingStartedPlaybackCount;
+- (id)eventByAssigningDidPlayAllTheWayThrough;
 - (id)eventByIncreasingPlayedAllTheWayThroughCount;
+- (id)eventByAssigningDidChangeTrimRange;
 - (id)eventByIncreasingChangedTrimRangeCount;
+- (id)eventByAssigningDidChangeKeyAsset;
 - (id)eventByIncreasingChangedKeyAssetCount;
+- (id)eventByAssigningDidChangeDuration;
 - (id)eventByIncreasingChangedDurationCount;
+- (id)eventByAssigningDidChangeMood;
 - (id)eventByIncreasingChangedMoodCount;
+- (id)eventByAssigningDidChangeSubTitle;
 - (id)eventByIncreasingChangedSubtitleCount;
+- (id)eventByAssigningDidChangeTitle;
 - (id)eventByIncreasingChangedTitleCount;
+- (id)eventByAssigningDidChangeMusic;
 - (id)eventByIncreasingChangedMusicCount;
 - (id)init;
 

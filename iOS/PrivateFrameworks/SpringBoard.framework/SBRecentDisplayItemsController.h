@@ -28,11 +28,15 @@
 @property(nonatomic) __weak id <SBRecentDisplayItemsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)_addStateCaptureHandler;
+- (void)_disallowAppFromAppearingWhileHidden:(id)arg1;
+- (void)_allowAppToAppearWhileHidden:(id)arg1;
 - (void)_removeDisplayItem:(id)arg1;
 - (void)_moveDisplayItemToFront:(id)arg1;
 - (void)_addDisplayItemToFront:(id)arg1;
 - (void)_addOrMoveDisplayItemToFront:(id)arg1;
 - (id)_displayItemForLayoutElement:(id)arg1;
+- (id)_allDisplayItemsPassingTest:(CDUnknownBlockType)arg1;
+- (id)_allDisplayItemsForUniqueID:(id)arg1;
 - (id)_allDisplayItemsForBundleID:(id)arg1;
 - (id)_firstDisplayItemForBundleID:(id)arg1;
 - (id)_firstDisplayItemForUniqueID:(id)arg1;

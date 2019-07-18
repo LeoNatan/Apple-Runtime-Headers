@@ -59,6 +59,7 @@ __attribute__((visibility("hidden")))
 + (id)bezierPathWithRoundedRect:(struct CGRect)arg1 cornerRadius:(double)arg2;
 + (id)bezierPathWithOvalInRect:(struct CGRect)arg1;
 + (id)bezierPathWithRect:(struct CGRect)arg1;
++ (id)bezierPathWithDefaultsForErrorCases;
 + (id)bezierPathWithStart:(struct CGPoint)arg1 end:(struct CGPoint)arg2;
 + (id)bezierPath;
 + (void)initialize;
@@ -167,11 +168,13 @@ __attribute__((visibility("hidden")))
 - (void)setLineWidth:(double)arg1;
 - (double)lineWidth;
 - (void)relativeCurveToPoint:(struct CGPoint)arg1 controlPoint1:(struct CGPoint)arg2 controlPoint2:(struct CGPoint)arg3;
+- (void)relativeCurveToPoint:(struct CGPoint)arg1 controlPoint:(struct CGPoint)arg2;
 - (void)relativeLineToPoint:(struct CGPoint)arg1;
 - (void)relativeMoveToPoint:(struct CGPoint)arg1;
 - (void)removeAllPoints;
 - (void)closePath;
 - (void)curveToPoint:(struct CGPoint)arg1 controlPoint1:(struct CGPoint)arg2 controlPoint2:(struct CGPoint)arg3;
+- (void)curveToPoint:(struct CGPoint)arg1 controlPoint:(struct CGPoint)arg2;
 - (void)lineToPoint:(struct CGPoint)arg1;
 - (void)moveToPoint:(struct CGPoint)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -239,6 +242,8 @@ __attribute__((visibility("hidden")))
 - (id)outlineStroke;
 - (id)bezierPathByOffsettingPath:(double)arg1 joinStyle:(unsigned long long)arg2 withThreshold:(double)arg3;
 - (id)pathByNormalizingClosedPathToRemoveSelfIntersections;
+- (id)p_elementCountForSubpaths;
+- (id)pathSplitAtSubpathBoundariesWithSoftElementLimit:(unsigned long long)arg1 hardElementLimit:(unsigned long long)arg2;
 - (id)arrayOfSubpathsWithEffectivelyEmptySubpathsRemoved:(_Bool)arg1;
 @property(readonly, nonatomic) unsigned long long totalSubpathCountIncludingEffectivelyEmptySubpaths;
 @property(readonly, nonatomic) NSArray *visuallyDistinctSubregions;

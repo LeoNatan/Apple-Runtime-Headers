@@ -6,19 +6,17 @@
 
 #import <UIKit/UIImageView.h>
 
-@class UIImage;
+@class CAFilter;
 
 @interface SBDarkeningImageView : UIImageView
 {
-    UIImage *_baseImage;
+    CAFilter *_multiplyFilter;
     double _brightness;
 }
 
+@property(nonatomic) double brightness; // @synthesize brightness=_brightness;
 - (void).cxx_destruct;
 - (id)description;
-- (void)setImage:(id)arg1 brightness:(double)arg2;
-@property(nonatomic) double brightness;
-- (void)setImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

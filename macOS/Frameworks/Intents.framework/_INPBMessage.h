@@ -19,6 +19,7 @@
         unsigned int effect:1;
         unsigned int type:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _effect;
     int _type;
     NSString *_content;
@@ -40,6 +41,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)recipientType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) _INPBDataString *speakableGroupName; // @synthesize speakableGroupName=_speakableGroupName;
 @property(retain, nonatomic) _INPBContact *sender; // @synthesize sender=_sender;

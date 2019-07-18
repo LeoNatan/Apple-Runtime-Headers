@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 + (id)columns;
 @property(readonly, nonatomic) _Bool equalWidth; // @synthesize equalWidth=_equalWidth;
 @property(readonly, nonatomic) unsigned long long columnCount; // @synthesize columnCount=_columnCount;
+- (_Bool)p_validate:(_Bool)arg1;
 - (id)p_description;
 - (id)description;
 - (void)p_setGap:(double)arg1 forColumnIndex:(unsigned long long)arg2 bodyWidth:(double)arg3;
@@ -44,7 +45,9 @@ __attribute__((visibility("hidden")))
 -     // Error parsing type: @32@0:8r^{ColumnsArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ColumnsArchive_EqualColumnsArchive}^{ColumnsArchive_NonEqualColumnsArchive}}16@24, name: initWithArchive:unarchiver:
 - (id)copyWithEqualWidth:(_Bool)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithEqualColumnCount:(unsigned long long)arg1 gapFraction:(double)arg2 assert:(_Bool)arg3;
 - (id)initWithEqualColumnCount:(unsigned long long)arg1 gapFraction:(double)arg2;
+- (id)initWithColumnCount:(unsigned long long)arg1 equalWidth:(_Bool)arg2 widthArray:(double *)arg3 gapArray:(double *)arg4 assert:(_Bool)arg5;
 - (id)initWithColumnCount:(unsigned long long)arg1 equalWidth:(_Bool)arg2 widthArray:(double *)arg3 gapArray:(double *)arg4;
 - (id)init;
 - (id)initWithColumnCount:(unsigned long long)arg1;

@@ -9,11 +9,13 @@
 @interface PXGridSettings : PXSettings
 {
     _Bool _disableSelectionOverlayView;
+    _Bool _enableAutomaticTransitionToSelectMode;
     long long _weightingScheme;
 }
 
 + (id)sharedInstance;
 + (id)settingsControllerModule;
+@property(nonatomic) _Bool enableAutomaticTransitionToSelectMode; // @synthesize enableAutomaticTransitionToSelectMode=_enableAutomaticTransitionToSelectMode;
 @property(nonatomic) long long weightingScheme; // @synthesize weightingScheme=_weightingScheme;
 @property(nonatomic) _Bool disableSelectionOverlayView; // @synthesize disableSelectionOverlayView=_disableSelectionOverlayView;
 - (void)setDefaultValues;

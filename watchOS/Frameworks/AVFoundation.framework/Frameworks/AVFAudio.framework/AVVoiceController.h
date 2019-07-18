@@ -23,6 +23,7 @@
 - (_Bool)isMeteringEnabledForStream:(unsigned int)arg1;
 - (id)getRecordSettingsForStream:(unsigned int)arg1;
 - (double)getRecordBufferDurationForStream:(unsigned int)arg1;
+- (_Bool)playAlertSoundForType:(int)arg1 overrideMode:(int)arg2;
 - (void)playAlert:(int)arg1 withOverride:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)setContextForStream:(id)arg1 forStream:(unsigned int)arg2 error:(id *)arg3;
 - (int)getCurrentSessionState;
@@ -117,7 +118,6 @@
 - (void)removeSessionNotifications;
 - (void)setSessionNotifications;
 - (struct ControllerImpl *)impl;
-- (_Bool)playAlertSoundForType:(int)arg1 overrideMode:(int)arg2;
 @property(readonly) unsigned int numberOfChannels;
 @property(setter=setDuckOthersOption:) _Bool duckOthersOption;
 @property(readonly) AVAudioFormat *pcmRecordBufferFormat;

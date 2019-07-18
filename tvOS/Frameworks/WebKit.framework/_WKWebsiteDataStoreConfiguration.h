@@ -16,6 +16,8 @@
 }
 
 @property(readonly) struct Object *_apiObject;
+@property(nonatomic) _Bool allLoadsBlockedByDeviceManagementRestrictionsForTesting;
+@property(nonatomic) _Bool deviceManagementRestrictionsEnabled;
 @property(copy, nonatomic) NSString *sourceApplicationSecondaryIdentifier;
 @property(copy, nonatomic) NSString *sourceApplicationBundleIdentifier;
 @property(copy, nonatomic, setter=_setServiceWorkerRegistrationDirectory:) NSURL *_serviceWorkerRegistrationDirectory;
@@ -27,6 +29,9 @@
 @property(copy, nonatomic, setter=_setWebSQLDatabaseDirectory:) NSURL *_webSQLDatabaseDirectory;
 @property(copy, nonatomic, setter=_setIndexedDBDatabaseDirectory:) NSURL *_indexedDBDatabaseDirectory;
 @property(copy, nonatomic, setter=_setWebStorageDirectory:) NSURL *_webStorageDirectory;
+@property(readonly, nonatomic, getter=isPersistent) _Bool persistent;
+- (id)initNonPersistentConfiguration;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

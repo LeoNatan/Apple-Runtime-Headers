@@ -6,7 +6,7 @@
 
 #import <Navigation/NSObject-Protocol.h>
 
-@class GEOComposedRouteTraffic, GEOComposedWaypoint, GEONameInfo, GEONavigationGuidanceState, GEOStep, MNActiveRouteInfo, MNGuidanceEventFeedback, MNGuidanceJunctionViewInfo, MNGuidanceLaneInfo, MNGuidanceSignInfo, MNLocation, MNNavigationSession, MNTrafficIncidentAlert, NSArray, NSDate, NSString, NSUUID;
+@class GEOComposedWaypoint, GEONameInfo, GEONavigationGuidanceState, GEOStep, MNActiveRouteInfo, MNGuidanceEventFeedback, MNGuidanceJunctionViewInfo, MNGuidanceLaneInfo, MNGuidanceSignInfo, MNLocation, MNNavigationSession, MNTrafficIncidentAlert, NSArray, NSDate, NSError, NSString, NSUUID;
 
 @protocol MNNavigationSessionObserver <NSObject>
 
@@ -39,14 +39,13 @@
 - (void)navigationSession:(MNNavigationSession *)arg1 currentStepIndex:(unsigned long long)arg2 didUpdateDistanceUntilSign:(double)arg3 timeUntilSign:(double)arg4;
 - (void)navigationSession:(MNNavigationSession *)arg1 proceedToRouteDistance:(double)arg2 displayString:(NSString *)arg3 closestStepIndex:(unsigned long long)arg4;
 - (void)navigationSession:(MNNavigationSession *)arg1 didUpdateAlternateRoutes:(NSArray *)arg2;
-- (void)navigationSession:(MNNavigationSession *)arg1 failedRerouteWithErrorCode:(long long)arg2;
+- (void)navigationSession:(MNNavigationSession *)arg1 didFailRerouteWithError:(NSError *)arg2;
 - (void)navigationSession:(MNNavigationSession *)arg1 didUpdateDestination:(GEOComposedWaypoint *)arg2;
 - (void)navigationSession:(MNNavigationSession *)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(MNActiveRouteInfo *)arg3;
 - (void)navigationSession:(MNNavigationSession *)arg1 didReroute:(MNActiveRouteInfo *)arg2 withLocation:(MNLocation *)arg3 withAlternateRoutes:(NSArray *)arg4;
 - (void)navigationSessionDidCancelReroute:(MNNavigationSession *)arg1;
 - (void)navigationSessionWillReroute:(MNNavigationSession *)arg1;
 - (void)navigationSession:(MNNavigationSession *)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
-- (void)navigationSession:(MNNavigationSession *)arg1 didUpdateTraffic:(GEOComposedRouteTraffic *)arg2;
 - (void)navigationSession:(MNNavigationSession *)arg1 didUpdateETAResponseForRoute:(MNActiveRouteInfo *)arg2;
 - (void)navigationSession:(MNNavigationSession *)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
 - (void)navigationSession:(MNNavigationSession *)arg1 didUpdateDisplayETA:(NSDate *)arg2 displayRemainingMinutes:(unsigned long long)arg3 forRoute:(MNActiveRouteInfo *)arg4;

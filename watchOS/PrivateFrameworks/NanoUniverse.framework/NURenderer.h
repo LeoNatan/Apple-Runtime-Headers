@@ -6,32 +6,33 @@
 
 #import <objc/NSObject.h>
 
-@class EAGLContext, EAGLSharegroup, NSBundle;
+@class NSBundle;
+@protocol MTLDevice;
 
 @interface NURenderer : NSObject
 {
-    EAGLContext *_context;
+    id <MTLDevice> _mtlDevice;
     NSBundle *_bundle;
     struct NURendererResources _resources;
-    unsigned int _initalizedProgams:1;
-    unsigned int _initalizedHemi:1;
-    unsigned int _initalized:1;
+    unsigned int _viewMtlPixelFormat;
     struct _NUGeometryRange _octahedronGeomRange;
     struct _NUGeometryRange _quadGeomRange;
-    EAGLSharegroup *_shareGroup;
 }
 
 + (void)_deallocInstance;
-+ (id)sharedInstance;
-@property(readonly, nonatomic) EAGLSharegroup *shareGroup; // @synthesize shareGroup=_shareGroup;
++ (id)sharedInstanceWithPixelFormat:(unsigned int)arg1;
 - (void).cxx_destruct;
 - (void)_asyncDeallocInstance;
-- (_Bool)_initPrograms;
-- (void)renderWithScene:(id)arg1 viewport:(struct NUViewport)arg2 resources:(id)arg3;
-- (unsigned int)createVertexArray;
-- (_Bool)_initHemi;
+- (void)_initPrograms;
+- (void)_createPipelineForProgramType:(unsigned int)arg1 fromLibrary:(id)arg2;
+- (void)renderWithScene:(id)arg1 viewport:(struct NUViewport)arg2 resources:(id)arg3 encoder:(id)arg4;
+-     // Error parsing type: v24@0:4@8r^{NURendererState={NUViewport=iiii}IIf{_NUGeometryRange=ii}{_NUGeometryRange=ii}(float4x4=[16f][4[4f]][4])(float4x4=[16f][4[4f]][4])(float4x4=[16f][4[4f]][4])}12@16@20, name: drawSpriteWithEncoder:state:spheroid:resources:
+-     // Error parsing type: v24@0:4@8r^{NURendererState={NUViewport=iiii}IIf{_NUGeometryRange=ii}{_NUGeometryRange=ii}(float4x4=[16f][4[4f]][4])(float4x4=[16f][4[4f]][4])(float4x4=[16f][4[4f]][4])}12@16@20, name: draw3DWithEncoder:state:spheroid:resources:
+- (void)bindAssetArt:(unsigned int)arg1 withEncoder:(id)arg2 resources:(id)arg3 toSlot:(unsigned int)arg4;
+- (void)_initHemi;
+- (void)_initDepthStencilState;
 - (void)dealloc;
-- (id)init;
+- (id)initWithPixelFormat:(unsigned int)arg1;
 
 @end
 

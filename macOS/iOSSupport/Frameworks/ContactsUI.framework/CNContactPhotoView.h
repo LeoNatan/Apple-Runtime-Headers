@@ -13,7 +13,7 @@
 #import <ContactsUI/UIImagePickerControllerDelegate-Protocol.h>
 #import <ContactsUI/UINavigationControllerDelegate-Protocol.h>
 
-@class CNAvatarView, CNContactImage, CNMutableContact, CNPhotoPickerViewController, NSArray, NSString, PRLikeness, UIButton, UIDropInteraction, UILongPressGestureRecognizer, UITapGestureRecognizer;
+@class CNAvatarView, CNMutableContact, CNPhotoPickerViewController, NSArray, NSString, PRLikeness, UIButton, UIDropInteraction, UILongPressGestureRecognizer, UITapGestureRecognizer;
 @protocol CNContactPhotoViewDelegate, CNPresenterDelegate;
 
 __attribute__((visibility("hidden")))
@@ -40,7 +40,6 @@ __attribute__((visibility("hidden")))
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
     UIDropInteraction *_dropInteraction;
     CNPhotoPickerViewController *_photoPicker;
-    CNContactImage *_pendingContactImageToSave;
 }
 
 + (id)supportedPasteboardTypes;
@@ -48,7 +47,6 @@ __attribute__((visibility("hidden")))
 + (id)descriptorForRequiredKeysWithThreeDTouchEnabled:(BOOL)arg1;
 + (id)descriptorForRequiredKeys;
 + (struct CGSize)defaultSize;
-@property(retain, nonatomic) CNContactImage *pendingContactImageToSave; // @synthesize pendingContactImageToSave=_pendingContactImageToSave;
 @property(retain, nonatomic) CNPhotoPickerViewController *photoPicker; // @synthesize photoPicker=_photoPicker;
 @property(nonatomic) BOOL acceptsImageDrop; // @synthesize acceptsImageDrop=_acceptsImageDrop;
 @property(retain, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
@@ -116,8 +114,8 @@ __attribute__((visibility("hidden")))
 - (void)avatarTapped:(id)arg1;
 - (void)disablePhotoTapGesture;
 - (void)setHighlightedFrame:(BOOL)arg1;
+- (void)setEditing:(BOOL)arg1 preservingChanges:(BOOL)arg2;
 - (BOOL)hasPhoto;
-- (void)saveMetadataContactImageToRecentsForContact:(id)arg1;
 - (void)saveEdits;
 - (void)saveChangesFromPendingContact:(id)arg1 toContact:(id)arg2;
 - (id)currentImageData;

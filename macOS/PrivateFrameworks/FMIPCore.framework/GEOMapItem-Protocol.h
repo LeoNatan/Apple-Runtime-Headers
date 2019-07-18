@@ -23,6 +23,7 @@
 - (BOOL)_isInLinkedPlaceRelationship;
 - (GEOMapItemContainedPlace *)_containedPlace;
 - (BOOL)isEqualToMapItem:(id <GEOMapItem>)arg1;
+- (NSURL *)_bestHeroBrandIconURLForSize:(struct CGSize)arg1 allowSmaller:(BOOL)arg2;
 - (NSURL *)_bestNavbarBrandIconURLForSize:(struct CGSize)arg1 allowSmaller:(BOOL)arg2;
 - (NSURL *)_bestAvatarBrandIconURLForSize:(struct CGSize)arg1 allowSmaller:(BOOL)arg2;
 - (int)_wifiFingerprintLabelStatusCode;
@@ -70,6 +71,7 @@
 - (GEOPDBusinessClaim *)_businessClaim;
 - (BOOL)_hasBusinessClaim;
 - (NSArray *)_additionalPlaceInfos;
+- (NSString *)_mapsCategoryId;
 - (unsigned long long)_customIconID;
 - (GEOFeatureStyleAttributes *)_styleAttributes;
 - (NSString *)_poiCategory;
@@ -216,6 +218,7 @@
 @property(nonatomic, readonly) BOOL isStandAloneBrand;
 @property(nonatomic, readonly) BOOL isTransitDisplayFeature;
 @property(nonatomic, readonly) NSArray *linkedServices;
+@property(nonatomic, readonly) NSString *mapsCategoryId;
 @property(nonatomic, readonly) GEOMessageLink *messageLink;
 @property(nonatomic, readonly) unsigned long long muid;
 @property(nonatomic, readonly) BOOL needsAttribution;

@@ -27,7 +27,6 @@
 - (void).cxx_destruct;
 - (void)closeDbForTesting;
 - (unsigned long long)numberOfRowsInTable:(id)arg1;
-- (id)allStoredPlanIds;
 - (void)loadSessionsForModel:(id)arg1 excludeItemIdsUsedWithin:(double)arg2 withSkew:(double)arg3 andLimit:(int)arg4 block:(CDUnknownBlockType)arg5;
 - (void)storeSession:(id)arg1 label:(long long)arg2 model:(id)arg3;
 - (void)storeSession:(id)arg1 source:(id)arg2 label:(long long)arg3 model:(id)arg4;
@@ -50,15 +49,13 @@
 - (void)_registerUnlockHandler;
 - (unsigned long long)sessionDescriptorIdFor:(id)arg1;
 - (void)enumerateSessionDescriptorsUsingBlock:(CDUnknownBlockType)arg1;
-- (void)deleteReceivedPlan:(struct NSString *)arg1;
-- (void)storeReceivedPlan:(id)arg1 planId:(id)arg2;
-- (void)enumerateReceivedPlansUsingBlock:(CDUnknownBlockType)arg1;
 - (id)sessionStatsForSessionDescriptor:(id)arg1;
 - (id)sessionStats;
 - (void)deleteSessionsWithBundleId:(id)arg1 domainId:(id)arg2;
 - (void)deleteSessionsWithBundleId:(id)arg1 itemId:(id)arg2;
 - (void)deleteSessionsWithBundleId:(id)arg1;
 - (void)limitLabeledSessionsWithSessionDescriptor:(id)arg1 label:(long long)arg2 limit:(unsigned long long)arg3;
+- (void)limitSessionsByMaxTimesAccessed;
 - (void)limitSessionsByLastUsedTTL:(double)arg1;
 - (void)limitSessionsForEachLabelWithSessionDescriptor:(id)arg1 totalSessionLimit:(unsigned long long)arg2;
 - (void)loadSessionsForModel:(id)arg1 excludeItemIdsUsedWithin:(double)arg2 limit:(unsigned long long)arg3 onlyAppleInternal:(BOOL)arg4 block:(CDUnknownBlockType)arg5;

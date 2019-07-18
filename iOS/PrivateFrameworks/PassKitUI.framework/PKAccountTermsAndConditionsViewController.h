@@ -23,6 +23,7 @@
 - (void)pdfTermsDataWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)htmlTermsDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)initalTermsDataWithCompletion:(CDUnknownBlockType)arg1;
+- (id)displayTitle;
 - (id)initWithAccount:(id)arg1 webService:(id)arg2 context:(long long)arg3 termsIdentifier:(id)arg4;
 
 @end

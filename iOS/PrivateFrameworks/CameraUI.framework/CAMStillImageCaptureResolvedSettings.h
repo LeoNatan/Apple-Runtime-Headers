@@ -10,8 +10,10 @@
 {
     _Bool _HDREnabled;
     _Bool _portraitEffectEnabled;
+    double _lowLightCaptureTime;
 }
 
+@property(readonly, nonatomic) double lowLightCaptureTime; // @synthesize lowLightCaptureTime=_lowLightCaptureTime;
 @property(readonly, nonatomic, getter=isPortraitEffectEnabled) _Bool portraitEffectEnabled; // @synthesize portraitEffectEnabled=_portraitEffectEnabled;
 @property(readonly, nonatomic, getter=isHDREnabled) _Bool HDREnabled; // @synthesize HDREnabled=_HDREnabled;
 - (id)initWithHDREnabled:(_Bool)arg1 portraitEffectEnabled:(_Bool)arg2;

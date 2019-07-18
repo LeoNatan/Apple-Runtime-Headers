@@ -21,11 +21,11 @@
 - (id)_menuItemForShortcutItem:(id)arg1;
 - (void)_updateApplicationShortcutsActions;
 - (_Bool)shouldBeginTransitionToExpandedContentModule;
-- (void)didBeginInteraction;
 - (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (id)leadingImageForMenuItem:(id)arg1;
 - (void)buttonTapped:(id)arg1 forEvent:(id)arg2;
+- (void)buttonTouchDown:(id)arg1 forEvent:(id)arg2;
 
 @end
 

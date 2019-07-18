@@ -338,6 +338,7 @@
 @property(readonly, nonatomic) BOOL hasOnlySecureContent;
 @property(readonly, nonatomic) double estimatedProgress;
 @property(readonly, nonatomic, getter=isLoading) BOOL loading;
+@property(readonly, nonatomic) NSURL *_resourceDirectoryURL;
 @property(readonly, copy, nonatomic) NSURL *URL;
 @property(readonly, copy, nonatomic) NSString *title;
 - (id)goToBackForwardListItem:(id)arg1;
@@ -476,6 +477,7 @@
 - (void)_resumeAllMediaPlayback;
 - (void)_suspendAllMediaPlayback;
 - (void)_stopAllMediaPlayback;
+- (void)_closeAllMediaPresentations;
 - (void)_togglePictureInPicture;
 @property(readonly, nonatomic) BOOL _isPictureInPictureActive;
 @property(readonly, nonatomic) BOOL _canTogglePictureInPicture;

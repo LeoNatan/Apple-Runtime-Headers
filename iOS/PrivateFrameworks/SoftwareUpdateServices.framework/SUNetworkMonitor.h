@@ -36,6 +36,7 @@
 - (void)setCellularRoaming:(_Bool)arg1;
 - (int)_networkTypeFromCurrentCellularData;
 - (int)_networkTypeFromFlags:(unsigned int)arg1;
+- (void)_resetCtClient;
 - (void)_initNetworkObservation;
 - (int)_queue_currentNetworkType;
 - (void)setCurrentNetworkType:(int)arg1;

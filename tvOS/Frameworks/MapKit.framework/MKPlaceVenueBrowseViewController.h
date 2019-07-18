@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)setupCollectionView;
 - (void)viewDidLoad;
 - (id)initWithMapItem:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,23 +8,29 @@
 
 #import <MLFoundation/MLFoundationLayerCompiling-Protocol.h>
 
-@class MLFoundationLossDescriptor;
+@class MLFoundationLossDescriptor, MLFoundationTensor, NSString;
 
 @interface MLFoundationLossLayer : MLFoundationLayer <MLFoundationLayerCompiling>
 {
     MLFoundationLossDescriptor *_lossDescriptor;
-    void *_deviceData;
+    MLFoundationTensor *_lossLabels;
 }
 
 + (id)layerWithLossDescriptor:(id)arg1;
 + (id)new;
-@property(readonly, nonatomic) void *deviceData; // @synthesize deviceData=_deviceData;
+@property(copy, nonatomic) MLFoundationTensor *lossLabels; // @synthesize lossLabels=_lossLabels;
 @property(readonly, nonatomic) MLFoundationLossDescriptor *lossDescriptor; // @synthesize lossDescriptor=_lossDescriptor;
 - (void).cxx_destruct;
-- (id)description;
-- (void)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
+@property(readonly, copy) NSString *description;
+- (unsigned long long)computeResultSizeFromSourceSize:(unsigned long long)arg1 dimension:(unsigned long long)arg2;
+- (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
 - (id)initWithLossDescriptor:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -27,6 +27,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) NSString *lastSearchQuery;
 @property(readonly, nonatomic) NSString *parsecDomainIdentifier;
+@property(readonly, nonatomic) long long parsecQueryID;
 @property(readonly, nonatomic) SFSearchResult *sfSearchResultValue;
 @property(retain, nonatomic) WBSQuerySuggestion *siriSuggestion;
 @property(readonly) Class superclass;

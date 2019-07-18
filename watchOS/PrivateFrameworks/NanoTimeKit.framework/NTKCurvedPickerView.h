@@ -8,12 +8,13 @@
 
 #import <NanoTimeKit/NTKEditOptionContainerView-Protocol.h>
 
-@class NSMutableDictionary, NSString, UIImage;
+@class NSMutableDictionary, NSString;
 
 @interface NTKCurvedPickerView : UIView <NTKEditOptionContainerView>
 {
     NSMutableDictionary *_sideViews;
     unsigned int _activeSide;
+    unsigned int _transitioningSide;
     float _currentFraction;
     _Bool _interior;
     float _circleRadius;
@@ -39,7 +40,6 @@
 - (void)setView:(id)arg1 forSideAtIndex:(unsigned int)arg2;
 @property(readonly, nonatomic) unsigned int numberOfVisibleSides;
 @property(readonly, nonatomic) unsigned int numberOfSides;
-@property(retain, nonatomic) UIImage *maskImage;
 - (void)setCircleRadius:(float)arg1 centerAngle:(float)arg2 circleCenter:(struct CGPoint)arg3 interior:(_Bool)arg4;
 - (id)init;
 

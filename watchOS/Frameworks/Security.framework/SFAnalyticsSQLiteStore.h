@@ -18,6 +18,7 @@
 - (void)removeAllSamplesForName:(id)arg1;
 - (void)addSample:(id)arg1 forName:(id)arg2;
 - (void)addEventDict:(id)arg1 toTable:(id)arg2;
+- (void)addEventDict:(id)arg1 toTable:(id)arg2 timestampBucket:(unsigned int)arg3;
 @property(readonly) NSArray *samples;
 @property(readonly) NSArray *allEvents;
 @property(readonly) NSArray *softFailures;

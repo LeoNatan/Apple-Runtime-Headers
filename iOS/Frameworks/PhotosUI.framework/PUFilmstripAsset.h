@@ -65,6 +65,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) CDStruct_1b6d18a9 videoKeyFrameSourceTime;
 
 @end
 

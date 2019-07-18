@@ -13,11 +13,13 @@
     _Bool _includesCursorEdits;
     _Bool _includesOrientationChange;
     _Bool _isRetrocorrection;
+    _Bool _isMultilingual;
+    _Bool _isOOV;
+    _Bool _isContinuousPathCompletion;
     _Bool _isPunctuationEntryFollowingAWord;
     int _wordEntryType;
     int _wordAlignmentConf;
     int _touchAlignmentConf;
-    NSArray *_candididatesOffered;
     NSString *_acceptedString;
     NSString *_originalAcceptedString;
     NSString *_orientation;
@@ -59,6 +61,9 @@
 @property(nonatomic) int touchAlignmentConf; // @synthesize touchAlignmentConf=_touchAlignmentConf;
 @property(nonatomic) int wordAlignmentConf; // @synthesize wordAlignmentConf=_wordAlignmentConf;
 @property(retain, nonatomic) TIKeyboardInput *inputTriggeredTextAccepted; // @synthesize inputTriggeredTextAccepted=_inputTriggeredTextAccepted;
+@property(nonatomic) _Bool isContinuousPathCompletion; // @synthesize isContinuousPathCompletion=_isContinuousPathCompletion;
+@property(nonatomic) _Bool isOOV; // @synthesize isOOV=_isOOV;
+@property(nonatomic) _Bool isMultilingual; // @synthesize isMultilingual=_isMultilingual;
 @property(nonatomic) _Bool isRetrocorrection; // @synthesize isRetrocorrection=_isRetrocorrection;
 @property(nonatomic) _Bool includesOrientationChange; // @synthesize includesOrientationChange=_includesOrientationChange;
 @property(nonatomic) _Bool includesCursorEdits; // @synthesize includesCursorEdits=_includesCursorEdits;
@@ -66,11 +71,10 @@
 @property(copy, nonatomic) NSString *orientation; // @synthesize orientation=_orientation;
 @property(copy, nonatomic) NSString *originalAcceptedString; // @synthesize originalAcceptedString=_originalAcceptedString;
 @property(copy, nonatomic) NSString *acceptedString; // @synthesize acceptedString=_acceptedString;
-@property(readonly, nonatomic) NSArray *candididatesOffered; // @synthesize candididatesOffered=_candididatesOffered;
 - (void).cxx_destruct;
 - (_Bool)isEntryFollowingANewLine;
 @property(readonly, nonatomic) NSArray *touchLayouts;
-- (id)candidatesOffered;
+@property(readonly, nonatomic) NSArray *candidatesOffered;
 @property(readonly, nonatomic) NSArray *allTouches;
 @property(readonly, nonatomic) NSArray *allKeyboardInputs;
 - (void)addTouchEvent:(id)arg1 withLayoutId:(unsigned long long)arg2;

@@ -6,7 +6,7 @@
 
 #import <HealthRecordsUI/NSObject-Protocol.h>
 
-@class HKHealthRecordsStore, HKInspectableValueCollection, NSArray, NSDate, NSString;
+@class HKConceptStore, HKHealthRecordsStore, HKInspectableValueCollection, NSArray, NSDate, NSString;
 
 @protocol HRWDDisplayable <NSObject>
 @property(readonly, nonatomic) NSArray *conceptNameItems;
@@ -20,11 +20,11 @@
 @property(readonly, nonatomic) NSString *meaningfulDateTitle;
 @property(readonly, copy, nonatomic) NSString *subtitle;
 @property(readonly, copy, nonatomic) NSString *title;
-- (void)fetchObservationDetailItemsWithHealthRecordsStore:(HKHealthRecordsStore *)arg1 completion:(void (^)(NSArray *))arg2;
+- (void)fetchObservationDetailItemsWithHealthRecordsStore:(HKHealthRecordsStore *)arg1 style:(long long)arg2 completion:(void (^)(NSArray *))arg3;
 - (void)fetchChartValueWithRangeWithHealthStore:(HKHealthRecordsStore *)arg1 completion:(void (^)(HKInspectableValueInRange *))arg2;
-- (void)fetchStructuredFieldItemsWithHealthRecordsStore:(HKHealthRecordsStore *)arg1 completion:(void (^)(NSArray *))arg2;
+- (void)fetchStructuredFieldItemsWithHealthRecordsStore:(HKHealthRecordsStore *)arg1 conceptStore:(HKConceptStore *)arg2 completion:(void (^)(NSArray *))arg3;
 - (void)fetchDisplayNameItemWithHealthRecordsStore:(HKHealthRecordsStore *)arg1 completion:(void (^)(NSArray *))arg2;
-- (void)fetchConceptRoomItemsWithHealthRecordsStore:(HKHealthRecordsStore *)arg1 completion:(void (^)(NSArray *))arg2;
-- (void)fetchDetailItemsWithHealthRecordsStore:(HKHealthRecordsStore *)arg1 completion:(void (^)(NSArray *))arg2;
+- (void)fetchConceptRoomItemsWithHealthRecordsStore:(HKHealthRecordsStore *)arg1 conceptStore:(HKConceptStore *)arg2 completion:(void (^)(NSArray *))arg3;
+- (void)fetchDetailItemsWithHealthRecordsStore:(HKHealthRecordsStore *)arg1 conceptStore:(HKConceptStore *)arg2 completion:(void (^)(NSArray *))arg3;
 @end
 

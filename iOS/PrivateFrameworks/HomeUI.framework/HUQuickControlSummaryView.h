@@ -12,13 +12,13 @@
 @interface HUQuickControlSummaryView : UIView
 {
     HUIconView *_iconView;
+    UILabel *_primaryStatusLabel;
+    UILabel *_secondaryStatusLabel;
     id <HFStringGenerator> _primaryStatusText;
     id <HFStringGenerator> _secondaryStatusText;
     unsigned long long _contentAlignment;
     long long _sizeSubclass;
     unsigned long long _iconSize;
-    UILabel *_primaryStatusLabel;
-    UILabel *_secondaryStatusLabel;
     NSArray *_contentConstraints;
     UILayoutGuide *_lastBaselineLayoutGuide;
 }
@@ -26,13 +26,13 @@
 + (_Bool)requiresConstraintBasedLayout;
 @property(retain, nonatomic) UILayoutGuide *lastBaselineLayoutGuide; // @synthesize lastBaselineLayoutGuide=_lastBaselineLayoutGuide;
 @property(retain, nonatomic) NSArray *contentConstraints; // @synthesize contentConstraints=_contentConstraints;
-@property(readonly, nonatomic) UILabel *secondaryStatusLabel; // @synthesize secondaryStatusLabel=_secondaryStatusLabel;
-@property(readonly, nonatomic) UILabel *primaryStatusLabel; // @synthesize primaryStatusLabel=_primaryStatusLabel;
 @property(nonatomic) unsigned long long iconSize; // @synthesize iconSize=_iconSize;
 @property(nonatomic) long long sizeSubclass; // @synthesize sizeSubclass=_sizeSubclass;
 @property(nonatomic) unsigned long long contentAlignment; // @synthesize contentAlignment=_contentAlignment;
 @property(copy, nonatomic) id <HFStringGenerator> secondaryStatusText; // @synthesize secondaryStatusText=_secondaryStatusText;
 @property(copy, nonatomic) id <HFStringGenerator> primaryStatusText; // @synthesize primaryStatusText=_primaryStatusText;
+@property(readonly, nonatomic) UILabel *secondaryStatusLabel; // @synthesize secondaryStatusLabel=_secondaryStatusLabel;
+@property(readonly, nonatomic) UILabel *primaryStatusLabel; // @synthesize primaryStatusLabel=_primaryStatusLabel;
 @property(readonly, nonatomic) HUIconView *iconView; // @synthesize iconView=_iconView;
 - (void).cxx_destruct;
 - (id)_secondaryFont;

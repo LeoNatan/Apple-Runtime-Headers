@@ -10,6 +10,8 @@
 {
 }
 
++ (id)inCallHeuristicReason;
++ (id)photoAssetPresenceHeuristicReason;
 + (id)eligibleShareSheetTargets;
 + (id)mobileMessagesComposeBundleId;
 + (id)shareSheetTargetBundleIdMail;

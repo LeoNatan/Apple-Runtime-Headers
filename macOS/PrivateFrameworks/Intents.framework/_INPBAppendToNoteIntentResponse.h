@@ -15,10 +15,12 @@
 @interface _INPBAppendToNoteIntentResponse : PBCodable <_INPBAppendToNoteIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBNote *_note;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBNote *note; // @synthesize note=_note;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

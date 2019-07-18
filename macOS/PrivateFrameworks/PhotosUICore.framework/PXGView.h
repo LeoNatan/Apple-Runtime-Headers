@@ -29,7 +29,6 @@
     BOOL _showPerspectiveDebug;
     BOOL _ignoreBoundsChanges;
     PXGLayout *accessibilityRootLayout;
-    NSArray *axDelegateAccessibilitySelectedChildren;
     id <PXGViewAccessibilityDelegate> _accessibilityDelegate;
     PXScrollViewController *_scrollViewController;
     PXScrollViewSpeedometer *_scrollingSpeedometer;
@@ -38,11 +37,13 @@
     MTKView *_metalView;
     PXGAnchor *_scrollingAnimationAnchor;
     NSDictionary *_ppt_currentTestOptions;
+    CDUnknownBlockType _nextDidLayoutHandler;
     id <PXGViewDiagnosticsSource> _diagnosticsSource;
     PXGEngine *_engine;
     struct NSEdgeInsets _hitTestPadding;
 }
 
++ (BOOL)hasMetalDevices;
 + (BOOL)hasExtendedColorDisplay;
 + (long long)screenPixelCount;
 @property(readonly, nonatomic) PXGEngine *engine; // @synthesize engine=_engine;
@@ -50,6 +51,7 @@
 @property(retain, nonatomic) id <PXGViewDiagnosticsSource> diagnosticsSource; // @synthesize diagnosticsSource=_diagnosticsSource;
 @property(nonatomic) BOOL showPerspectiveDebug; // @synthesize showPerspectiveDebug=_showPerspectiveDebug;
 @property(nonatomic) BOOL showDebugHUD; // @synthesize showDebugHUD=_showDebugHUD;
+@property(copy, nonatomic) CDUnknownBlockType nextDidLayoutHandler; // @synthesize nextDidLayoutHandler=_nextDidLayoutHandler;
 @property(copy, nonatomic, setter=ppt_setCurrentTestOptions:) NSDictionary *ppt_currentTestOptions; // @synthesize ppt_currentTestOptions=_ppt_currentTestOptions;
 @property(retain, nonatomic) PXGAnchor *scrollingAnimationAnchor; // @synthesize scrollingAnimationAnchor=_scrollingAnimationAnchor;
 @property(nonatomic) BOOL isAnimatingScroll; // @synthesize isAnimatingScroll=_isAnimatingScroll;
@@ -61,14 +63,14 @@
 @property(readonly, nonatomic) PXScrollViewSpeedometer *scrollingSpeedometer; // @synthesize scrollingSpeedometer=_scrollingSpeedometer;
 @property(readonly, nonatomic) PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
 @property(nonatomic) __weak id <PXGViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
-@property(retain, nonatomic) NSArray *axDelegateAccessibilitySelectedChildren; // @synthesize axDelegateAccessibilitySelectedChildren;
 - (void).cxx_destruct;
 - (id)viewForSpriteIndex:(unsigned int)arg1;
 @property(readonly, nonatomic) NSDictionary *ppt_extraResults;
 - (void)ppt_cleanUpAfterTest:(id)arg1 isScrollTest:(BOOL)arg2;
 - (void)ppt_prepareForTest:(id)arg1 withOptions:(id)arg2 isScrollTest:(BOOL)arg3;
 - (void)test_installRenderSnapshotHandler:(CDUnknownBlockType)arg1;
-- (void)setAxDelegateAccessibilityChildren:(id)arg1;
+@property(retain, nonatomic) NSArray *axDelegateAccessibilitySelectedCells;
+@property(retain, nonatomic) NSArray *axDelegateAccessibilitySelectedChildren;
 @property(readonly, nonatomic) NSArray *axDelegateAccessibilityVisibleChildren;
 @property(readonly, nonatomic) NSArray *axDelegateAccessibilityChildren;
 @property(readonly, nonatomic) BOOL canSelectAccessibilityGroupElementsChildren; // @synthesize canSelectAccessibilityGroupElementsChildren;
@@ -76,6 +78,8 @@
 @property(readonly, nonatomic) PXGLayout *accessibilityRootLayout; // @synthesize accessibilityRootLayout;
 - (id)accessibilityViewForSpriteIndex:(unsigned int)arg1;
 - (id)accessibilityHitTestResultAtPoint:(struct CGPoint)arg1;
+- (void)axScrollToAsset:(id)arg1;
+- (id)assetClosestToAsset:(id)arg1 inDirection:(unsigned long long)arg2;
 - (void)selectAssets:(id)arg1;
 - (BOOL)itemDidShowDefaultUIAtLocation:(struct CGPoint)arg1;
 - (BOOL)itemDidShowAlternateUIAtLocation:(struct CGPoint)arg1;
@@ -88,6 +92,7 @@
 - (void)scrollViewControllerDidEndScrolling:(id)arg1;
 - (void)scrollViewControllerWillBeginScrolling:(id)arg1;
 - (void)scrollViewControllerDidScroll:(id)arg1;
+- (void)scrollViewControllerDidLayoutSubviews:(id)arg1;
 @property(nonatomic) BOOL slowAnimationsEnabled;
 - (void)engine:(id)arg1 updateDebugHUDWithStats:(CDStruct_58b866b9 *)arg2;
 - (struct CGImage *)textureSnapshotForSpriteReference:(id)arg1;
@@ -101,6 +106,7 @@
 - (id)hitTestResultAtPoint:(struct CGPoint)arg1;
 - (void)disablePreheating;
 - (void)installLayoutCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_installNextDidLayoutHandler:(CDUnknownBlockType)arg1;
 - (void)_updateUserInterfaceDirection;
 - (void)_updateLayoutScreenScale;
 - (void)_updateIsVisible;
@@ -134,6 +140,7 @@
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (id)_validateHitTest:(id)arg1;
+- (void)mouseDown:(id)arg1;
 - (void)popUpDebugContextMenuWithEvent:(id)arg1;
 - (void)_hideDebugHUD:(id)arg1;
 - (void)_showDebugHUD:(id)arg1;
@@ -149,7 +156,9 @@
 - (id)firstCuratedLibraryHitTestResultsAtPoint:(struct CGPoint)arg1 withControl:(long long)arg2;
 - (void)enumerateCuratedLibraryHitTestResultsAtPoint:(struct CGPoint)arg1 withControls:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateCuratedLibraryHitTestResultsAtPoint:(struct CGPoint)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (id)regionOfInterestForAssetReference:(id)arg1 image:(struct CGImage **)arg2;
+- (struct CGImage *)_fallbackImageForAssetReference:(id)arg1 mediaProvider:(id)arg2;
+- (id)regionOfInterestForAssetReference:(id)arg1 image:(struct CGImage **)arg2 fallbackMediaProvider:(id)arg3;
+- (id)regionOfInterestForObjectReference:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

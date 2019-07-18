@@ -29,7 +29,7 @@
 @property(readonly, nonatomic) _Bool px_isSharedAlbum;
 @property(readonly, nonatomic) _Bool px_isScreenRecordingsSmartAlbum;
 @property(readonly, nonatomic) _Bool px_isRecentlyEditedSmartAlbum;
-@property(readonly, nonatomic) _Bool px_isRecentlySavedSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isRecentsSmartAlbum;
 @property(readonly, nonatomic) _Bool px_isImportSessionCollection;
 @property(readonly, nonatomic) _Bool px_isImportHistoryCollection;
 @property(readonly, nonatomic) _Bool px_isSharedActivityVirtualCollection;
@@ -53,6 +53,7 @@
 @property(readonly, nonatomic) _Bool px_isStandInAlbum;
 @property(readonly, nonatomic) NSString *localizedDebugDescription;
 @property(readonly, nonatomic) NSString *localizedSmartDescription;
+- (id)localizedDateDescriptionWithOptions:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSString *localizedDateDescription;
 @property(readonly, nonatomic) _Bool isRecent;
 @property(readonly, nonatomic) _Bool isAggregation;
@@ -65,6 +66,7 @@
 @property(readonly, nonatomic) unsigned long long px_estimatedCuratedAssetsCount;
 @property(readonly, nonatomic) unsigned short px_curationType;
 - (id)px_debugDictionary;
+- (_Bool)px_allowsImplicitSelectionForProjectOrSharingAction;
 - (_Bool)px_allowsAssetsDrop;
 - (_Bool)px_shouldUseFacesRectForSmartCropping;
 - (_Bool)px_fetchContainsAnyAssets;

@@ -17,6 +17,7 @@
 - (void)enableRemoteStateDumpWithTimeout:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestStateDump:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)countScenesForBundleIdentifier:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)acquireHUDHiddenAssertionForIdentifier:(id)arg1;
 - (void)setTestRunnerRecoveryApplicationBundleIdentifier:(id)arg1;
 - (void)setApplicationBundleIdentifier:(id)arg1 blockedForScreenTime:(_Bool)arg2;
 - (void)resetToHomeScreenAnimated:(_Bool)arg1;
@@ -35,8 +36,6 @@
 - (void)acquireAssertionOfType:(long long)arg1 forReason:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)fetchUnlockCredentialSetWithCompletion:(CDUnknownBlockType)arg1;
 - (void)requestAppSwitcherAppearanceForHiddenApplicationWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)requestSuggestedApplicationWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)resetHomeScreenLayoutWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
 

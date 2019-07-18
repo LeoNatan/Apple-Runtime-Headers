@@ -55,6 +55,7 @@
 - (void)_performBackgroundConfigDataInstallForProduct:(id)arg1;
 - (void)addToAutoInstallJournalForProduct:(id)arg1 wasAdminAutoInstall:(BOOL)arg2;
 - (void)cancelBackgroundDownloadIfNecessaryForProductKeys:(id)arg1 replyWhenDone:(CDUnknownBlockType)arg2;
+- (void)_backgroundDownloadDidFinishForProduct:(id)arg1;
 - (void)downloadRecommendedUpdates;
 - (id)_appropriateProductsForAction:(long long)arg1;
 - (BOOL)_isProductEligibleForAutoInstallOfRestartRequiredUpdates:(id)arg1;
@@ -65,7 +66,6 @@
 - (BOOL)downloadAndStageUpdates:(id)arg1 doDownload:(BOOL)arg2 notifyWhenFinished:(BOOL)arg3 inForeground:(BOOL)arg4 withReply:(CDUnknownBlockType)arg5;
 - (BOOL)downloadUpdates:(id)arg1 notifyWhenFinished:(BOOL)arg2 inForeground:(BOOL)arg3 withReply:(CDUnknownBlockType)arg4;
 - (BOOL)_canDownloadAndStageUpdates;
-- (unsigned long long)_attemptToReclaimSpaceUsingCacheDelete:(unsigned long long)arg1 spaceRequired:(unsigned long long)arg2;
 - (void)evaluateAvailableUpdatesAndLog:(BOOL)arg1;
 - (BOOL)_evaluateScanRequirements;
 - (void)setCatalogTestMode:(id)arg1;

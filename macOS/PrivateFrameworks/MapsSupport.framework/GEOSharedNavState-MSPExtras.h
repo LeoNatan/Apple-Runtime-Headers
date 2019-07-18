@@ -7,6 +7,7 @@
 #import <GeoServices/GEOSharedNavState.h>
 
 @interface GEOSharedNavState (MSPExtras)
+- (void)stripArrivedOrClosedTrip;
 - (CDUnknownBlockType)equalityTest;
 - (id)composedRouteTraffic;
 - (id)composedRoute;

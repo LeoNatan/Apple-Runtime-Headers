@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)ready;
 - (float *)biasTerms;
 - (void *)weights;
+- (id)initWithParams:(struct inner_product_uniforms)arg1 forMode:(_Bool)arg2;
 
 @end
 

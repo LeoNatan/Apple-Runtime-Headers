@@ -12,10 +12,10 @@
 {
 }
 
-- (_Bool)isSidebarAllowed;
 - (void)_bindAndRegisterDefaults;
 
 // Remaining properties
+@property(nonatomic, getter=isLayoutLowDensity) _Bool layoutLowDensity; // @dynamic layoutLowDensity;
 @property(nonatomic) _Bool shouldFudgeShortcutsToCauseMaximumPain; // @dynamic shouldFudgeShortcutsToCauseMaximumPain;
 @property(nonatomic) _Bool shouldShowWidgetsTeachingView; // @dynamic shouldShowWidgetsTeachingView;
 @property(nonatomic, getter=hasSidebarEverBeenVisible) _Bool sidebarEverBeenVisible; // @dynamic sidebarEverBeenVisible;

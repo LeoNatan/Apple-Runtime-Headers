@@ -15,6 +15,7 @@
 - (void)trimScrubber:(PXLivePhotoTrimScrubber *)arg1 debugStartOffset:(struct CGRect)arg2;
 - (void)trimScrubber:(PXLivePhotoTrimScrubber *)arg1 debugEndRect:(struct CGRect)arg2;
 - (void)trimScrubber:(PXLivePhotoTrimScrubber *)arg1 debugStartRect:(struct CGRect)arg2;
+- (void)trimScrubberDidLayoutSubviews:(PXLivePhotoTrimScrubber *)arg1;
 - (void)trimScrubberDidUnzoom:(PXLivePhotoTrimScrubber *)arg1;
 - (void)trimScrubber:(PXLivePhotoTrimScrubber *)arg1 didZoomToMinimumValue:(double)arg2 maximumValue:(double)arg3;
 - (void)trimScrubber:(PXLivePhotoTrimScrubber *)arg1 didChangeLoupeRect:(struct CGRect)arg2;

@@ -10,6 +10,7 @@
 @property(readonly, nonatomic) optional_cd8a9b08 manufacturerName;
 @property(readonly, nonatomic) optional_cd8a9b08 modelName;
 @property(readonly, nonatomic) optional_cd8a9b08 name;
+@property(readonly, nonatomic) unsigned int stockClassID;
 @property(readonly, nonatomic) unsigned int classID;
 @property(readonly, nonatomic) unsigned long long objectID;
 - (expected_b2b3f2ff)controlForClassID:(unsigned int)arg1 scope:(const unsigned int *)arg2 element:(unsigned int)arg3;

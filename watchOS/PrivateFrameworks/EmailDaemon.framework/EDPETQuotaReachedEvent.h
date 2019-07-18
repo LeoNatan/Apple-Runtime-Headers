@@ -6,21 +6,24 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <EmailDaemon/EDPETMessageTypeIntrospectable-Protocol.h>
+#import <EmailDaemon/EDPETMessageFrameTypeIntrospectable-Protocol.h>
 #import <EmailDaemon/NSCopying-Protocol.h>
 
-@interface EDPETQuotaReachedEvent : PBCodable <EDPETMessageTypeIntrospectable, NSCopying>
+@interface EDPETQuotaReachedEvent : PBCodable <EDPETMessageFrameTypeIntrospectable, NSCopying>
 {
+    unsigned long long _droppedEventsCount;
     unsigned long long _timestamp;
     unsigned int _sequenceNumber;
     int _timezoneOffset;
     struct {
+        unsigned int droppedEventsCount:1;
         unsigned int timestamp:1;
         unsigned int sequenceNumber:1;
         unsigned int timezoneOffset:1;
     } _has;
 }
 
+@property(nonatomic) unsigned long long droppedEventsCount; // @synthesize droppedEventsCount=_droppedEventsCount;
 @property(nonatomic) int timezoneOffset; // @synthesize timezoneOffset=_timezoneOffset;
 @property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
@@ -33,10 +36,11 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasDroppedEventsCount;
 @property(nonatomic) _Bool hasTimezoneOffset;
 @property(nonatomic) _Bool hasSequenceNumber;
 @property(nonatomic) _Bool hasTimestamp;
-- (int)messageType;
+- (int)messageFrameType;
 
 @end
 

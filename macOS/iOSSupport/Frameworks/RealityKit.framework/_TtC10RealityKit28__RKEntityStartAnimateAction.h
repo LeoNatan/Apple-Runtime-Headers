@@ -8,6 +8,8 @@
 
 @interface _TtC10RealityKit28__RKEntityStartAnimateAction : _TtC10RealityKit23__RKEntityAnimateAction
 {
+    // Error parsing type: , name: updateSubscription
+    // Error parsing type: , name: deadline
 }
 
 - (id)copyWithZone:(void *)arg1;

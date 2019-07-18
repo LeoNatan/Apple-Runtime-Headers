@@ -34,7 +34,6 @@
     _Bool _reportScale;
     id <PMLTransformerProtocol> _transformer;
     NSArray *_refeaturizationDescriptors;
-    _Bool _isSynchronous;
     _Bool _intercept;
     struct NSString *_planId;
 }
@@ -58,7 +57,6 @@
 @property(readonly, nonatomic) unsigned long long currentServerIteration; // @synthesize currentServerIteration=_currentServerIteration;
 @property(readonly, nonatomic) id <PMLLogRegTrackerProtocol> tracker; // @synthesize tracker=_tracker;
 @property(readonly, nonatomic) PMLTrainingStore *store; // @synthesize store=_store;
-@property(readonly, nonatomic) _Bool isSynchronous; // @synthesize isSynchronous=_isSynchronous;
 @property(readonly, nonatomic) NSString *planId; // @synthesize planId=_planId;
 - (void).cxx_destruct;
 - (void)runUntilDoneForTesting;
@@ -70,7 +68,7 @@
 - (void)loadSessionsWithBlock:(CDUnknownBlockType)arg1;
 - (id)evaluationMetricsForPredictions:(id)arg1 objectives:(id)arg2 predicate:(CDUnknownBlockType)arg3 start:(id)arg4;
 - (id)train;
-- (id)initWithStore:(id)arg1 tracker:(id)arg2 noiseStrategy:(id)arg3 planId:(struct NSString *)arg4 isSynchronous:(_Bool)arg5 sessionDescriptor:(id)arg6 maxSessionsLimit:(unsigned long long)arg7 sessionsInBatch:(unsigned long long)arg8 currentServerIteration:(unsigned long long)arg9 currentModelWeights:(id)arg10 localLearningRate:(float)arg11 stoppingThreshold:(float)arg12 localMinimumIterations:(unsigned long long)arg13 localGradientIterations:(unsigned long long)arg14 useOnlyAppleInternalSessions:(_Bool)arg15 skew:(double)arg16 threshold:(double)arg17 isMultiLabel:(_Bool)arg18 intercept:(_Bool)arg19 positiveLabel:(unsigned long long)arg20 evaluationLevel:(unsigned long long)arg21 reportScale:(_Bool)arg22 transformer:(id)arg23 refeaturizationDescriptors:(id)arg24;
+- (id)initWithStore:(id)arg1 tracker:(id)arg2 noiseStrategy:(id)arg3 planId:(struct NSString *)arg4 sessionDescriptor:(id)arg5 maxSessionsLimit:(unsigned long long)arg6 sessionsInBatch:(unsigned long long)arg7 currentServerIteration:(unsigned long long)arg8 currentModelWeights:(id)arg9 localLearningRate:(float)arg10 stoppingThreshold:(float)arg11 localMinimumIterations:(unsigned long long)arg12 localGradientIterations:(unsigned long long)arg13 useOnlyAppleInternalSessions:(_Bool)arg14 skew:(double)arg15 threshold:(double)arg16 isMultiLabel:(_Bool)arg17 intercept:(_Bool)arg18 positiveLabel:(unsigned long long)arg19 evaluationLevel:(unsigned long long)arg20 reportScale:(_Bool)arg21 transformer:(id)arg22 refeaturizationDescriptors:(id)arg23;
 - (id)init;
 
 // Remaining properties

@@ -14,6 +14,7 @@
 
 @interface WGMajorListViewController : WGWidgetListViewController <WGWidgetListFooterViewDelegate, WGWidgetIconAnimationExtraViewsProviding>
 {
+    _Bool _footerVisible;
     _Bool _headerVisible;
     UIView *_containerView;
     WGWidgetListFooterView *_footerView;
@@ -26,7 +27,10 @@
 @property(retain, nonatomic) UIViewController *headerContentViewController; // @synthesize headerContentViewController=_headerContentViewController;
 @property(readonly, nonatomic) WGWidgetListFooterView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
+@property(nonatomic, getter=_isFooterVisible, setter=_setFooterVisible:) _Bool _footerVisible; // @synthesize _footerVisible;
 - (void).cxx_destruct;
+- (void)_updateEditButtonVisibilityAnimated:(_Bool)arg1;
+- (void)_updateFooterVisibility;
 - (void)_updateHeaderVisibility;
 - (void)widgetDiscoveryController:(id)arg1 widgetWithIdentifier:(id)arg2 shouldBecomeHiddenInGroup:(id)arg3;
 - (void)widgetDiscoveryController:(id)arg1 widgetWithIdentifier:(id)arg2 shouldBecomeVisibleInGroup:(id)arg3;
@@ -34,13 +38,15 @@
 - (void)presentEditView:(id)arg1;
 - (void)widgetListFooterViewAvailableNewWidgetsUpdated:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)setEditingIcons:(_Bool)arg1;
 - (void)setShouldBlurContent:(_Bool)arg1;
 - (unsigned long long)_insertionIndexofListItem:(id)arg1 intoWidgetViews:(id)arg2 withOrderedIdentifiers:(id)arg3;
 - (void)_repopulateStackViewWithWidgetIdentifiers:(id)arg1;
 - (void)_configureStackView;
 - (id)_group;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
-@property(readonly, copy, nonatomic) UIView *extraViewsContainer;
+@property(readonly, nonatomic) UIView *extraViewsContainer;
+@property(readonly, nonatomic) _Bool shouldAnimateLastTwoViewsAsOne;
 @property(readonly, copy, nonatomic) NSArray *extraViews;
 - (void)_insertHeaderView;
 - (_Bool)_canShowWhileLocked;

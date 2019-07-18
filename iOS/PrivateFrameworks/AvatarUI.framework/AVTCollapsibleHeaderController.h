@@ -75,6 +75,7 @@
 - (void)collapseAnimated:(_Bool)arg1;
 - (void)expandAnimated:(_Bool)arg1 withFocusRect:(struct CGRect)arg2;
 - (void)expandAnimated:(_Bool)arg1;
+- (void)updateMinHeight:(double)arg1 maxHeight:(double)arg2 animated:(_Bool)arg3;
 - (id)initWithScrollView:(id)arg1 headerView:(id)arg2 minHeight:(double)arg3 maxHeight:(double)arg4;
 
 // Remaining properties

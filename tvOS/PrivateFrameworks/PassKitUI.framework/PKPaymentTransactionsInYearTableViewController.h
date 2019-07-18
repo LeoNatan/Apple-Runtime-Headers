@@ -6,32 +6,39 @@
 
 #import <UIKit/UITableViewController.h>
 
+#import <PassKitUI/PKDashboardTransactionFetcherDelegate-Protocol.h>
 #import <PassKitUI/UIViewControllerPreviewingDelegate-Protocol.h>
 
 @class NSArray, NSCalendar, NSDate, NSDateFormatter, NSString, PKDashboardTransactionFetcher, PKPaymentPass, PKPaymentTransactionCellController, PKPaymentTransactionDetailsFactory, PKPeerPaymentContactResolver, PKPeerPaymentController;
 @protocol PKPaymentDataProvider;
 
-@interface PKPaymentTransactionsInYearTableViewController : UITableViewController <UIViewControllerPreviewingDelegate>
+@interface PKPaymentTransactionsInYearTableViewController : UITableViewController <UIViewControllerPreviewingDelegate, PKDashboardTransactionFetcherDelegate>
 {
     NSDate *_dateFromYear;
     NSCalendar *_calendar;
     NSArray *_transactionsByMonth;
+    NSArray *_instantWithdrawalFeesTransactionGroups;
     PKPaymentPass *_paymentPass;
     id <PKPaymentDataProvider> _paymentServiceDataProvider;
     PKPaymentTransactionCellController *_transactionCellController;
     PKPeerPaymentContactResolver *_contactResolver;
     PKPeerPaymentController *_peerPaymentController;
     NSDateFormatter *_transactionMonthFormatter;
+    NSDateFormatter *_withdrawalFeeMonthYearFormatter;
     long long _detailViewStyle;
     PKDashboardTransactionFetcher *_transactionFetcher;
     PKPaymentTransactionDetailsFactory *_transactionDetailsFactory;
 }
 
 - (void).cxx_destruct;
+- (void)transactionsChanged:(id)arg1;
+- (void)_updateWithTransactions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_fetchDataWithCompletion:(CDUnknownBlockType)arg1;
+- (id)_withdrawalFeeMonthYearFormatter;
 - (id)_transactionMonthFormatter;
 - (id)_transactionsInYearTitleString;
 - (id)_transactionDetailViewControllerForTransaction:(id)arg1;
+- (long long)_sectionTypeForSection:(long long)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

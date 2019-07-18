@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (struct UIEdgeInsets)contentInsets;
 - (BOOL)isGesture:(id)arg1 inDraggableView:(struct CGPoint)arg2;
 - (BOOL)preBeginGesture:(id)arg1 shouldBegin:(char *)arg2;
+- (id)twoFingerDraggableView;
 - (id)draggableView;
 
 @end

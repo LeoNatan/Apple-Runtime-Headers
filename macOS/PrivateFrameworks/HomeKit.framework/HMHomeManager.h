@@ -26,6 +26,7 @@
     BOOL _viewServiceActive;
     int _serverGenerationCounterToken;
     id <HMHomeManagerDelegate> _delegate;
+    unsigned long long _authorizationStatus;
     HMHome *_primaryHome;
     HMHome *_currentHome;
     HMApplicationData *_applicationData;
@@ -68,6 +69,7 @@
 @property(retain, nonatomic) HMMutableArray *currentHomes; // @synthesize currentHomes=_currentHomes;
 @property(readonly) HMUserCloudShareManager *userCloudShareManager; // @synthesize userCloudShareManager=_userCloudShareManager;
 - (void).cxx_destruct;
+@property(readonly, copy) NSUUID *applicationDataIdentifier;
 - (void)_pairingIdentityForAccessoryWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)pairingIdentityForAccessoryWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_registerForMediaAccessoryControl:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -76,7 +78,6 @@
 - (void)_handleAccessAllowedWhenLockedUpdatedNotification:(id)arg1;
 - (void)_handleResidentEnabledForThisDeviceUpdatedNotification:(id)arg1;
 - (void)_handleResidentDeviceCapableUpdatedNotification:(id)arg1;
-- (void)_handleAppDataUpdatedNotification:(id)arg1;
 - (void)_updateInvitation:(id)arg1 presenceAuthStatus:(unsigned long long)arg2 invitationState:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_acceptInvitation:(id)arg1 presenceAuthStatus:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_acceptInvitation:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -209,6 +210,7 @@
 @property(readonly, nonatomic) HMHome *currentHome; // @synthesize currentHome=_currentHome;
 @property(retain, nonatomic) HMHome *primaryHome; // @synthesize primaryHome=_primaryHome;
 @property(nonatomic) BOOL frameworkMergeComplete; // @synthesize frameworkMergeComplete=_frameworkMergeComplete;
+@property(readonly) unsigned long long authorizationStatus; // @synthesize authorizationStatus=_authorizationStatus;
 @property(nonatomic) __weak id <HMHomeManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)dealloc;
 - (id)initWithHomeMangerConfiguration:(id)arg1;

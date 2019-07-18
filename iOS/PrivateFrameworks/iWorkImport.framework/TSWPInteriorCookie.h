@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class TSDLayout, TSWPColumn;
+@class TSDLayout, TSDWrapSegments, TSWPColumn;
 @protocol TSWPLayoutTarget;
 
 __attribute__((visibility("hidden")))
@@ -14,8 +14,10 @@ __attribute__((visibility("hidden")))
 {
     TSWPColumn *_column;
     TSDLayout<TSWPLayoutTarget> *_layout;
+    TSDWrapSegments *_interiorWrapSegmentsInWrapSpace;
 }
 
+@property(retain, nonatomic) TSDWrapSegments *interiorWrapSegmentsInWrapSpace; // @synthesize interiorWrapSegmentsInWrapSpace=_interiorWrapSegmentsInWrapSpace;
 @property(nonatomic) __weak TSDLayout<TSWPLayoutTarget> *layout; // @synthesize layout=_layout;
 @property(nonatomic) __weak TSWPColumn *column; // @synthesize column=_column;
 - (void).cxx_destruct;

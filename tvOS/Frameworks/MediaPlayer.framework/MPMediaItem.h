@@ -17,6 +17,7 @@
 + (id)dynamicProperties;
 + (id)fallbackTitlePropertyForGroupingType:(long long)arg1;
 + (id)titlePropertyForGroupingType:(long long)arg1;
++ (id)ULIDPropertyForGroupingType:(long long)arg1;
 + (id)persistentIDPropertyForGroupingType:(long long)arg1;
 + (_Bool)canFilterByProperty:(id)arg1;
 + (_Bool)supportsSecureCoding;
@@ -115,7 +116,7 @@
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)initWithMultiverseIdentifier:(id)arg1;
+- (id)initWithMultiverseIdentifier:(id)arg1 library:(id)arg2;
 - (id)initWithPersistentID:(unsigned long long)arg1;
 - (id)_artworkCatalogWithArtworkType:(long long)arg1;
 - (id)screenshotArtworkCatalog;

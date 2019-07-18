@@ -103,6 +103,7 @@
 - (id)flightForLeg:(id)arg1;
 - (id)currentLeg;
 - (id)currentFlight;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateOrientationConstraints;
 - (void)updateConstraints;
 - (void)layoutSubviews;
@@ -119,7 +120,9 @@
 - (void)didMoveToWindow;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (void)removeMapBackground;
+- (void)updateMapAppearance;
 - (void)awakeFromNib;
+- (_Bool)mapOnly;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

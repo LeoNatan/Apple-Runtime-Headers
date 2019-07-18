@@ -16,8 +16,7 @@
 - (void)setData:(NSData *)arg1 onMessage:(id <ECMessage>)arg2;
 - (void)setRemoteID:(NSString *)arg1 onMessageWithDatabaseID:(long long)arg2;
 - (NSArray *)addLabels:(NSSet *)arg1 removeLabels:(NSSet *)arg2 toMessagesInDatabase:(NSArray *)arg3;
-- (void)adjustUnreadStatusCountsBy:(long long)arg1 forMailboxWithURL:(NSURL *)arg2;
-- (void)setUnreadStatusCountsTo:(unsigned long long)arg1 subtractFromTotalCount:(BOOL)arg2 forMailboxWithURL:(NSURL *)arg3;
+- (void)resetStatusCountsForMailboxWithURL:(NSURL *)arg1;
 - (NSArray *)applyFlagChange:(ECMessageFlagChange *)arg1 toMessagesInDatabase:(NSArray *)arg2;
 - (BOOL)haveCompleteMIMEForMessage:(id <ECMessage>)arg1;
 - (void)deletePersistedMessages:(NSArray *)arg1;

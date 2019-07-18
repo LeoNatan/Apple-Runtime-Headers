@@ -28,7 +28,7 @@
 #import <PhotosUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 #import <PhotosUI/UIScrollViewDelegate-Protocol.h>
 
-@class CEKBadgeTextView, CEKLightingControl, CEKLightingNameBadge, NSArray, NSObject, NSString, NSURL, NUBufferRenderClient, NUComposition, NUMediaView, PHContentEditingInput, PICompositionController, PLEditSource, PLPhotoEditRenderer, PUAdjustmentsToolController, PUAutoAdjustmentController, PUCropToolController, PUEditPluginSession, PUEditableMediaProvider, PUFilterToolController, PULivePhotoEffectsToolController, PUMediaDestination, PUPhotoEditAggregateSession, PUPhotoEditButtonCenteredToolbar, PUPhotoEditIrisModel, PUPhotoEditLivePhotoVideoToolController, PUPhotoEditPerfHUD, PUPhotoEditPortraitToolController, PUPhotoEditResourceLoader, PUPhotoEditSnapshot, PUPhotoEditToolController, PUPhotoEditToolPickerController, PUPhotoEditToolbar, PUPhotoEditValuesCalculator, PUPhotoEditViewControllerSpec, PUProgressIndicatorView, PURedeyeToolController, PUTouchingGestureRecognizer, PXImageLayerModulator, PXUIAssetBadgeView, UIAlertController, UIButton, UIImageView, UILongPressGestureRecognizer, UIPencilInteraction, UITapGestureRecognizer, UIView, UIViewController, _PPTState;
+@class CEKBadgeTextView, CEKLightingControl, CEKLightingNameBadge, NSArray, NSObject, NSString, NSURL, NUBufferRenderClient, NUComposition, NUMediaView, PHContentEditingInput, PICompositionController, PLEditSource, PLPhotoEditRenderer, PUAdjustmentsToolController, PUAutoAdjustmentController, PUCropToolController, PUEditPluginSession, PUEditableMediaProvider, PUEnterEditPerformanceEventBuilder, PUExitEditPerformanceEventBuilder, PUFilterToolController, PULivePhotoEffectsToolController, PUMediaDestination, PUPhotoEditAggregateSession, PUPhotoEditButtonCenteredToolbar, PUPhotoEditIrisModel, PUPhotoEditLivePhotoVideoToolController, PUPhotoEditPerfHUD, PUPhotoEditPortraitToolController, PUPhotoEditResourceLoader, PUPhotoEditSnapshot, PUPhotoEditToolController, PUPhotoEditToolPickerController, PUPhotoEditToolbar, PUPhotoEditValuesCalculator, PUPhotoEditViewControllerSpec, PUProgressIndicatorView, PURedeyeToolController, PUTimeInterval, PUTouchingGestureRecognizer, PXImageLayerModulator, PXUIAssetBadgeView, UIAlertController, UIButton, UIImageView, UIPencilInteraction, UITapGestureRecognizer, UIView, UIViewController, _PPTState;
 @protocol NUImageProperties, OS_dispatch_source, PUEditableAsset, PUPhotoEditViewControllerPresentationDelegate, PUPhotoEditViewControllerSessionDelegate;
 
 @interface PUPhotoEditViewController : PUEditViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIPencilInteractionDelegate, PUPhotoEditToolControllerDelegate, PUVideoEditPluginSessionDataSource, PUImageEditPluginSessionDataSource, PUEditPluginSessionDelegate, PXPhotoLibraryUIChangeObserver, PUOneUpAssetTransitionViewController, PXForcedDismissableViewController, PUPhotoEditIrisModelChangeObserver, PHLivePhotoViewDelegate, PUPhotoEditResourceLoaderDelegate, PUViewControllerSpecChangeObserver, NUMediaViewDelegatePrivate, PUPhotoEditToolbarDelegate, PXChangeObserver, PICompositionControllerDelegate, PXTrimToolPlayerWrapperNUMediaViewPlayerItemSource, PUPhotoEditLayoutSource>
@@ -38,6 +38,7 @@
     PUPhotoEditToolController *_previousEditingTool;
     UIViewController *_currentTool;
     _Bool _switchingToolsAnimated;
+    _Bool _leavingEdit;
     NUMediaView *_mediaView;
     _Bool _isImageFrameReady;
     _Bool _isImageZooming;
@@ -73,15 +74,7 @@
     UIButton *_pluginButton;
     UIButton *_redEyeButton;
     UIButton *_ttrButton;
-    double _ttrStartTime;
-    double _ttrTotalDuration;
-    double _ttrResourceLoadingStartTime;
-    double _ttrResourceLoadingDuration;
-    double _ttrAutoCalcStartTime;
-    double _ttrAutoCalcDuration;
     _Bool _ttrExceededThreshold;
-    double _exitStartTime;
-    _Bool _hasLoggedExitDuration;
     PUEditPluginSession *_pluginSession;
     _Bool _pluginWorkImageVersionIsValid;
     long long _pluginWorkImageVersion;
@@ -95,8 +88,6 @@
     UIImageView *_placeholderImageView;
     _Bool _placeholderImageViewTransitioningOut;
     UITapGestureRecognizer *_togglePreviewTapGestureRecognizer;
-    UILongPressGestureRecognizer *_togglePreviewPressGestureRecognizer;
-    NSArray *_toggleOriginalInitialPoints;
     CEKBadgeTextView *_previewingOriginalBadge;
     unsigned long long _togglePreviewOriginalOffRequestID;
     PXUIAssetBadgeView *_rawDecodeBadge;
@@ -120,10 +111,10 @@
     _Bool __isCachingVideo;
     _Bool _isEmbeddedEdit;
     id <NUImageProperties> _imageProperties;
+    struct CGSize _previewOriginalSavedImageSize;
     _Bool _shouldShowPortraitTool;
     CEKLightingControl *_lightingControl;
     CEKLightingNameBadge *_lightingNameBadge;
-    unsigned long long _enterEditSignpostId;
     _Bool __hasLoadedRaw;
     _Bool __penultimateAvailable;
     _Bool _runningAutoCalculators;
@@ -165,6 +156,14 @@
     long long _mediaViewEdgeInsetsUpdateDisableCount;
     UIPencilInteraction *_pencilInteraction;
     PUPhotoEditPerfHUD *_perfHUD;
+    PUTimeInterval *_enterEditTimeInterval;
+    PUTimeInterval *_resourceCheckingInterval;
+    PUTimeInterval *_resourceDownloadInterval;
+    PUTimeInterval *_resourceLoadingInterval;
+    PUTimeInterval *_autoCalcInterval;
+    PUTimeInterval *_exitEditTimeInterval;
+    PUEnterEditPerformanceEventBuilder *_enterEditEventBuilder;
+    PUExitEditPerformanceEventBuilder *_exitEditEventBuilder;
     CDUnknownBlockType _ppt_afterRenderBlock;
     CDUnknownBlockType _ppt_afterAutoenhanceBlock;
     CDUnknownBlockType _ppt_willBeginPlaybackBlock;
@@ -179,15 +178,22 @@
 
 + (id)_defaultMediaViewRenderPipelineFilters;
 + (id)_defaultLivePhotoRenderPipelineFilters;
-+ (_Bool)_isForceTouchEnabled;
-+ (double)toggleOriginalLongPressDelay;
 + (_Bool)_shouldForwardViewWillTransitionToSize;
++ (void)preheatEditDependenciesIfNeeded;
 @property(copy, nonatomic) CDUnknownBlockType ppt_exitActionCompleteNotificationBlock; // @synthesize ppt_exitActionCompleteNotificationBlock=_ppt_exitActionCompleteNotificationBlock;
 @property(copy, nonatomic) CDUnknownBlockType ppt_editIsReadyNotificationBlock; // @synthesize ppt_editIsReadyNotificationBlock=_ppt_editIsReadyNotificationBlock;
 @property(copy) CDUnknownBlockType ppt_didEndPlaybackBlock; // @synthesize ppt_didEndPlaybackBlock=_ppt_didEndPlaybackBlock;
 @property(copy) CDUnknownBlockType ppt_willBeginPlaybackBlock; // @synthesize ppt_willBeginPlaybackBlock=_ppt_willBeginPlaybackBlock;
 @property(copy) CDUnknownBlockType ppt_afterAutoenhanceBlock; // @synthesize ppt_afterAutoenhanceBlock=_ppt_afterAutoenhanceBlock;
 @property(copy) CDUnknownBlockType ppt_afterRenderBlock; // @synthesize ppt_afterRenderBlock=_ppt_afterRenderBlock;
+@property(retain, nonatomic) PUExitEditPerformanceEventBuilder *exitEditEventBuilder; // @synthesize exitEditEventBuilder=_exitEditEventBuilder;
+@property(retain, nonatomic) PUEnterEditPerformanceEventBuilder *enterEditEventBuilder; // @synthesize enterEditEventBuilder=_enterEditEventBuilder;
+@property(retain, nonatomic) PUTimeInterval *exitEditTimeInterval; // @synthesize exitEditTimeInterval=_exitEditTimeInterval;
+@property(retain, nonatomic) PUTimeInterval *autoCalcInterval; // @synthesize autoCalcInterval=_autoCalcInterval;
+@property(retain, nonatomic) PUTimeInterval *resourceLoadingInterval; // @synthesize resourceLoadingInterval=_resourceLoadingInterval;
+@property(retain, nonatomic) PUTimeInterval *resourceDownloadInterval; // @synthesize resourceDownloadInterval=_resourceDownloadInterval;
+@property(retain, nonatomic) PUTimeInterval *resourceCheckingInterval; // @synthesize resourceCheckingInterval=_resourceCheckingInterval;
+@property(retain, nonatomic) PUTimeInterval *enterEditTimeInterval; // @synthesize enterEditTimeInterval=_enterEditTimeInterval;
 @property(retain, nonatomic) PUPhotoEditPerfHUD *perfHUD; // @synthesize perfHUD=_perfHUD;
 @property(retain, nonatomic) UIPencilInteraction *pencilInteraction; // @synthesize pencilInteraction=_pencilInteraction;
 @property(nonatomic) long long mediaViewEdgeInsetsUpdateDisableCount; // @synthesize mediaViewEdgeInsetsUpdateDisableCount=_mediaViewEdgeInsetsUpdateDisableCount;
@@ -290,6 +296,7 @@
 - (void)_setupImagePluginSession;
 - (void)_updatePluginSession;
 - (void)_updatePluginWorkImageVersion;
+- (id)pluginActivitiesForEditPluginSession:(id)arg1;
 - (void)editPluginSession:(id)arg1 commitContentEditingOutput:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_editPluginSession:(id)arg1 checkVideoEnabled:(_Bool)arg2 loadVideoComplementURLWithHandler:(CDUnknownBlockType)arg3;
 - (void)editPluginSession:(id)arg1 loadVideoComplementURLWithHandler:(CDUnknownBlockType)arg2;
@@ -333,6 +340,7 @@
 - (id)toolControllerMainRenderer:(id)arg1;
 - (id)toolControllerMainContainerView:(id)arg1;
 - (CDStruct_910f5d27)toolControllerImageModulationOptions:(id)arg1;
+- (id)toolControllerOriginalCompositionController:(id)arg1;
 - (id)toolControllerUneditedCompositionController:(id)arg1;
 - (void)toolControllerDidUpdateToolbar:(id)arg1;
 - (void)toolControllerDidChangePreferredAlternateToolbarButton:(id)arg1;
@@ -364,7 +372,7 @@
 - (void)_updatePhotoEditIrisModel;
 - (void)_resetModelAndBaseImagesToWorkImageVersion:(long long)arg1;
 - (id)_orientedCIImageFromUIImage:(id)arg1;
-- (void)_setOriginalURL:(id)arg1 withOriginalImageUTI:(id)arg2;
+- (void)_setOriginalURL:(id)arg1 originalEditSource:(id)arg2;
 - (void)_updateValuesCalculator;
 - (void)_handleResourceLoadChange;
 - (void)_handleDidLoadOriginalWithResult:(id)arg1;
@@ -379,15 +387,14 @@
 - (void)photoEditResourceLoadRequest:(id)arg1 downloadProgress:(double)arg2;
 - (void)photoEditResourceLoadRequestWillBeginDownload:(id)arg1;
 - (void)photoEditResourceLoadRequest:(id)arg1 mediaLoadDidFailWithError:(id)arg2;
-- (void)photoEditResourceLoadRequest:(id)arg1 downloadDidFailWithError:(id)arg2;
 - (void)photoEditResourceLoadRequest:(id)arg1 didCompleteWithResult:(id)arg2;
+- (void)photoEditResourceLoadRequestResourcesAvailabilityChanged:(id)arg1 previousAvailability:(long long)arg2 currentAvailability:(long long)arg3;
 - (void)_loadOriginalImageIfNeeded;
 - (void)_loadPhotoEditResourcesIfNeeded;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_updateLivePhotoPlaybackGestureRecognizer;
 - (id)_livePhotoGestureRecognizer;
-- (void)_handleTogglePreviewPressGesture:(id)arg1;
 - (void)_handleTogglePreviewTapGesture:(id)arg1;
 - (void)_updateTogglePreviewGestureRecognizer;
 - (void)pencilInteractionDidTap:(id)arg1;

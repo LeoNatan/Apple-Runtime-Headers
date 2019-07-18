@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isDataless;
 - (_Bool)isRecursivelyDownloaded;
 @property(readonly, nonatomic, getter=isDownloaded) _Bool downloaded;
+- (id)formerIdentifier;
 @property(readonly, copy) NSString *fp_parentDomainIdentifier;
 - (_Bool)isInPinnedFolder;
 - (_Bool)isPinned;

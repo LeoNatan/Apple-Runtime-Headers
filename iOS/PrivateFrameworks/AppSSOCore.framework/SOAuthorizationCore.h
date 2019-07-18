@@ -33,6 +33,7 @@
 - (void)beginAuthorizationWithParameters:(id)arg1;
 - (void)beginAuthorizationWithOperation:(id)arg1 url:(id)arg2 httpHeaders:(id)arg3 httpBody:(id)arg4;
 - (void)beginAuthorizationWithURL:(id)arg1 httpHeaders:(id)arg2 httpBody:(id)arg3;
+- (void)getAuthorizationHintsWithURL:(id)arg1 responseCode:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)init;
 - (void)debugHintsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performBlockOnDelegateQueue:(CDUnknownBlockType)arg1;

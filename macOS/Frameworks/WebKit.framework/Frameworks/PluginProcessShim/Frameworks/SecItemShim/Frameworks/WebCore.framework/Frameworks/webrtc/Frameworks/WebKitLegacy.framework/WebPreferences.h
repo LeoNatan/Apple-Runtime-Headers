@@ -84,6 +84,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (id)init;
+@property(nonatomic) BOOL linkPreloadResponsiveImagesEnabled;
 @property(nonatomic) BOOL coreMathMLEnabled;
 @property(nonatomic) BOOL resizeObserverEnabled;
 @property(nonatomic) BOOL referrerPolicyAttributeEnabled;
@@ -121,6 +122,8 @@
 - (BOOL)modernMediaControlsEnabled;
 - (void)setFetchAPIKeepAliveEnabled:(BOOL)arg1;
 - (BOOL)fetchAPIKeepAliveEnabled;
+- (void)setSyntheticEditingCommandsEnabled:(BOOL)arg1;
+- (BOOL)syntheticEditingCommandsEnabled;
 - (void)setPointerEventsEnabled:(BOOL)arg1;
 - (BOOL)pointerEventsEnabled;
 - (void)setWebAnimationsEnabled:(BOOL)arg1;

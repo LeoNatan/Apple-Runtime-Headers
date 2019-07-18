@@ -6,17 +6,25 @@
 
 #import <ContactsUI/CNPhotoPickerProviderItem.h>
 
-@class UIView;
+@class NSString, UIColor, UIView;
 
 __attribute__((visibility("hidden")))
 @interface CNPhotoPickerGlyphProviderItem : CNPhotoPickerProviderItem
 {
     UIView *_symbolImageView;
+    NSString *_symbolImageName;
+    UIColor *_tintColor;
 }
 
 + (id)thumbnailViewForImage:(id)arg1;
+@property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
+@property(retain, nonatomic) NSString *symbolImageName; // @synthesize symbolImageName=_symbolImageName;
 @property(retain, nonatomic) UIView *symbolImageView; // @synthesize symbolImageView=_symbolImageView;
 - (void).cxx_destruct;
+- (void)updateTintColorIfNeeded:(id)arg1;
+- (id)backgroundColorWithTintColor:(id)arg1;
+- (id)imageForImageNamed:(id)arg1 withTintColor:(id)arg2;
+- (long long)scaleForImageNamed:(id)arg1;
 - (void)thumbnailViewWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithSymbolImageNamed:(id)arg1;
 

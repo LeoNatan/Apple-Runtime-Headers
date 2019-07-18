@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool readOnly;
 @property(readonly, nonatomic) unsigned long long encodedLength;
 @property(readonly, nonatomic) unsigned long long length;
--     // Error parsing type: @48@0:8@16@24^{DataInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DataAttributes}^{EncryptionInfo}QBi}32@40, name: writeData:toPackageWriter:infoMessage:preferredFilename:
+-     // Error parsing type: @56@0:8@16@24^{DataInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DataAttributes}^{EncryptionInfo}QBi}32@40^@48, name: writeData:toPackageWriter:infoMessage:preferredFilename:error:
 -     // Error parsing type: B40@0:8^{DataInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DataAttributes}^{EncryptionInfo}QBi}16@24@32, name: archiveInfoMessage:archiver:packageWriter:
 - (id)filenameForPreferredFilename:(id)arg1;
 @property(readonly, nonatomic) _Bool isMissingData;
@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool gilligan_isRemote;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) _Bool needsDownload;
+@property(readonly, nonatomic) struct CGSize pixelSize;
 @property(readonly) Class superclass;
 
 @end

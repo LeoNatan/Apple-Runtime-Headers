@@ -53,9 +53,10 @@
 - (id)locationOfInterestCloseToLocation:(id)arg1 inDateInterval:(id)arg2;
 - (id)locationOfInterestAtLocation:(id)arg1;
 - (BOOL)isRemoteLocation:(id)arg1 inDateInterval:(id)arg2;
+- (id)contactHistoryCollector;
 - (id)matchingDictionaryForContactIdentifier:(id)arg1;
 - (id)contactsForIdentifiers:(id)arg1;
-- (void)enumeratePersonsAndPotentialBirthdayDateUsingBlock:(CDUnknownBlockType)arg1;
+- (void)enumeratePersonsAndPotentialBirthdayDateForContactIdentifiers:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumeratePersonsForFullname:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)personForPersonHandle:(id)arg1;
 - (id)personLocalIdentifierMatchingContactPictureForContactIdentifier:(id)arg1 usingPersonsModel:(id)arg2;

@@ -10,7 +10,7 @@
 {
 }
 
-- (id)serializedParametersForDonatedIntent:(id)arg1;
+- (id)serializedParametersForDonatedIntent:(id)arg1 allowDroppingUnconfigurableValues:(BOOL)arg2;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 - (void)getContentFromInput:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getRecipients:(CDUnknownBlockType)arg1;

@@ -12,6 +12,5 @@
 - (long long)_sf_responsePolicy:(long long *)arg1 uti:(id *)arg2;
 - (_Bool)_sf_allowReloadingInMainFrame;
 @property(readonly, nonatomic) NSString *_sf_suggestedFilename;
-@property(readonly, nonatomic) NSString *_sf_downloadAttribute;
 @end
 

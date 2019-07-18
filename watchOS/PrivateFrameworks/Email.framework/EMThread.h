@@ -17,10 +17,14 @@
 
 @interface EMThread : EMCollection <EMThreadBuilder, EFLoggable, NSCopying, NSSecureCoding, EMMessageListItem>
 {
+    unsigned int _isEditable;
     EMMailboxScope *_mailboxScope;
     id <EMMailboxTypeResolver> _mailboxTypeResolver;
+    NSArray *_mailboxes;
+    NSArray *_mailboxObjectIDs;
     struct os_unfair_lock_s _mailboxScopeLock;
     struct os_unfair_lock_s _mailboxTypeResolverLock;
+    struct os_unfair_lock_s _mailboxesLock;
     _Bool _hasUnflagged;
     _Bool _isVIP;
     _Bool _isBocked;
@@ -37,7 +41,6 @@
     NSIndexSet *_flagColors;
     int _conversationNotificationLevel;
     unsigned int _count;
-    NSArray *_mailboxObjectIDs;
     id <EMCollectionItemID> _displayMessageItemID;
     EFQuery *_originatingQuery;
 }
@@ -51,8 +54,6 @@
 @property(readonly) _Bool isToMe;
 - (void)setDisplayMessageItemID:(id)arg1;
 @property(readonly) id <EMCollectionItemID> displayMessageItemID;
-- (void)setMailboxObjectIDs:(id)arg1;
-@property(readonly, copy) NSArray *mailboxObjectIDs;
 - (void)setCount:(unsigned int)arg1;
 @property(readonly) unsigned int count;
 - (void)setConversationNotificationLevel:(int)arg1;
@@ -82,12 +83,16 @@
 - (void)setDate:(id)arg1;
 @property(readonly) NSDate *date;
 - (void).cxx_destruct;
+@property(readonly) _Bool isEditable;
 @property(readonly) _Bool shouldArchiveByDefault;
 @property(readonly) _Bool supportsArchiving;
 @property(readonly) _Bool deleteMovesToTrash;
 @property(readonly) EMMessage *displayMessage;
 @property(readonly) EMObjectID *displayMessageObjectID;
+- (void)setMailboxes:(id)arg1;
 @property(readonly, copy) NSArray *mailboxes;
+- (void)setMailboxObjectIDs:(id)arg1;
+@property(readonly, copy) NSArray *mailboxObjectIDs;
 - (void)setConversationID:(long long)arg1;
 @property(readonly) long long conversationID;
 @property(readonly, nonatomic) id <EMCollectionItemID> itemID;
@@ -101,6 +106,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)ef_publicDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
 - (void)_commonInitWithOriginatingQuery:(id)arg1 builder:(CDUnknownBlockType)arg2;
 - (id)initWithObjectID:(id)arg1 originatingQuery:(id)arg2 builder:(CDUnknownBlockType)arg3;
@@ -108,7 +114,6 @@
 @property(readonly, nonatomic) EMMessageRepository *repository;
 
 // Remaining properties
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly, copy, nonatomic) EMObjectID *objectID;
 @property(readonly) Class superclass;

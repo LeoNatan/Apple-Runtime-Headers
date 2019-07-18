@@ -9,9 +9,10 @@
 @class _UINavigationBarTransitionContext;
 
 @protocol _UINavigationBarTransitionContextParticipant <NSObject>
-- (void)adoptFinalStateFromTransition:(_UINavigationBarTransitionContext *)arg1 transitionCompleted:(_Bool)arg2;
+- (void)finalizeStateFromTransition:(_UINavigationBarTransitionContext *)arg1;
 - (void)ensureBackButtonTruncationOccursWithContext:(_UINavigationBarTransitionContext *)arg1;
 - (void)recordToStateForTransition:(_UINavigationBarTransitionContext *)arg1;
+- (void)prepareToRecordToState:(_UINavigationBarTransitionContext *)arg1;
 - (void)recordFromStateForTransition:(_UINavigationBarTransitionContext *)arg1;
 @end
 

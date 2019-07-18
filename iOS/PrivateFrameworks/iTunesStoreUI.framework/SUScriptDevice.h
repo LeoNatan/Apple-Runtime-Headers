@@ -111,7 +111,7 @@
 @property(readonly) id accessibilityUseDarkerKeyboard;
 @property(readonly) SUScriptColor *accessibilitySingleColor;
 @property(readonly) id accessibilitySingleColorSelected;
-@property(readonly) id accessibilityReduceMotion;
+@property(readonly) id accessibilityMotionAutoPlayVideo;
 @property(readonly) id accessibilityEnhanceBackgroundContrast;
 @property(readonly) id accessibilityDarkenSystemColors;
 @property(readonly) id accessibilityButtonShapesEnabled;

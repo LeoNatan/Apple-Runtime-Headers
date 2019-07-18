@@ -44,6 +44,7 @@
 - (void)_cleanup;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (id)activityViewController;
+- (void)_setSessionID:(id)arg1;
 - (void)_setMailSubject:(id)arg1;
 - (void)prepareWithActivityItems:(id)arg1 recipients:(id)arg2;
 - (void)prepareWithActivityItems:(id)arg1;

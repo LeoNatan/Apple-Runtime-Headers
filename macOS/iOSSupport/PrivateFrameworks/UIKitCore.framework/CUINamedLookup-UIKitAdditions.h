@@ -8,6 +8,5 @@
 
 @interface CUINamedLookup (UIKitAdditions)
 - (id)configuration;
-- (id)configurationWithIntrinsicTraitCollectionFromConfiguration:(id)arg1 flippedHorizontally:(BOOL)arg2;
 @end
 

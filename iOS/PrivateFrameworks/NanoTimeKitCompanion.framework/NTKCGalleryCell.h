@@ -16,6 +16,7 @@
 {
     _Bool _hasCalloutName;
     _Bool _hasCalloutImage;
+    _Bool _allSnapshotsLoaded;
     NTKCGalleryCollection *_collection;
     id <NTKCGalleryCellDelegate> _delegate;
     long long _selectedIndex;
@@ -35,6 +36,7 @@
 
 + (double)rowHeightForCollection:(id)arg1;
 + (id)reuseIdentifier;
+@property(nonatomic) _Bool allSnapshotsLoaded; // @synthesize allSnapshotsLoaded=_allSnapshotsLoaded;
 @property(retain, nonatomic) _NTKCAddNewFace *addNewFace; // @synthesize addNewFace=_addNewFace;
 @property(retain, nonatomic) UILabel *footer; // @synthesize footer=_footer;
 @property(retain, nonatomic) UIStackView *collectionViewFooterStack; // @synthesize collectionViewFooterStack=_collectionViewFooterStack;

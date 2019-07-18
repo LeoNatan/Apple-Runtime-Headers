@@ -17,6 +17,7 @@
     struct {
         unsigned int radioType:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _radioType;
     _INPBString *_channel;
     _INPBDouble *_frequency;
@@ -26,6 +27,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBString *stationName; // @synthesize stationName=_stationName;
 @property(nonatomic) int radioType; // @synthesize radioType=_radioType;
 @property(retain, nonatomic) _INPBInteger *presetNumber; // @synthesize presetNumber=_presetNumber;

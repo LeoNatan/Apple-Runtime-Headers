@@ -34,6 +34,7 @@
 - (void)_updateBarAppearanceForViewController:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
+- (_Bool)_canShowWhileLocked;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;

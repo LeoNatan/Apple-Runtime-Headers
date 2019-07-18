@@ -8,16 +8,23 @@
 
 #import <IconServices/ISScalableCompositorResource-Protocol.h>
 
-@class NSString;
+@class ISColor, NSString;
 
 __attribute__((visibility("hidden")))
 @interface ISShapeCompositorResource : NSObject <ISScalableCompositorResource>
 {
+    ISColor *_fillColor;
+    ISColor *_lineColor;
+    float _lineWidth;
 }
 
 + (float)continuousCornerRadiusForSize:(struct CGSize)arg1;
 + (id)circleShape;
 + (id)continuousRoundedRectShape;
+@property float lineWidth; // @synthesize lineWidth=_lineWidth;
+@property(retain) ISColor *lineColor; // @synthesize lineColor=_lineColor;
+@property(retain) ISColor *fillColor; // @synthesize fillColor=_fillColor;
+- (void).cxx_destruct;
 - (id)imageForSize:(struct CGSize)arg1 scale:(float)arg2;
 - (id)_init;
 

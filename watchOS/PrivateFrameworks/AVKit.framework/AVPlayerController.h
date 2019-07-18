@@ -330,6 +330,7 @@
 - (void)reloadOptions;
 - (void)selectedMediaOptionMayHaveChanged;
 - (id)_optionsForGroup:(id)arg1;
+- (void)enableAutomaticCaptionDisplayTypeIfNeeded;
 - (void)toggleCaptions;
 - (void)setSavedCaptionAppearanceDisplayType:(long)arg1;
 - (long)savedCaptionAppearanceDisplayType;

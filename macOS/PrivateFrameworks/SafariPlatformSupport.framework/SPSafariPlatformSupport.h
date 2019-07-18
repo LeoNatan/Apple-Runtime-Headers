@@ -6,34 +6,35 @@
 
 #import <objc/NSObject.h>
 
-#import <SafariPlatformSupport/NSPopoverDelegate-Protocol.h>
-
-@class NSPopover, NSString, NSWindow, SPCompletionListRemoteViewController;
+@class NSString, NSWindow, SPAutoFillAuthorizationRemoteViewController, SPCompletionListRemoteViewController, SPOtherPasswordsRemoteViewController;
 
 __attribute__((visibility("hidden")))
-@interface SPSafariPlatformSupport : NSObject <NSPopoverDelegate>
+@interface SPSafariPlatformSupport : NSObject
 {
     CDUnknownBlockType _completionListCompletionHandler;
-    NSPopover *_popover;
+    NSWindow *_completionListWindow;
+    id _textDidEndEditingObserver;
+    id _textDidChangeObserver;
+    id _windowDidResignKeyObserver;
     SPCompletionListRemoteViewController *_completionListViewController;
+    SPOtherPasswordsRemoteViewController *_otherPasswordsViewController;
+    SPAutoFillAuthorizationRemoteViewController *_autoFillAuthorizationViewController;
+    NSString *_partialUsername;
     NSWindow *_currentSheetWindow;
 }
 
 + (id)sharedPlatformSupport;
 - (void).cxx_destruct;
-- (void)popoverWillClose:(id)arg1;
 - (void)_dismissCurrentSheetWindow;
 - (void)showAutoFillAuthorizationControllerForCredential:(id)arg1;
 - (void)showOtherPasswordsSelected;
 - (void)credentialSelected:(id)arg1;
+- (void)_dismissCompletionListWindowIfNecessary;
+- (void)_observeNotificationsForTextField:(id)arg1 keyWindow:(id)arg2;
+- (void)displayCompletionListRelativeToRect:(struct CGRect)arg1 ofView:(id)arg2 webViewURL:(id)arg3 matchingPartialUsername:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)updatePartialUsername:(id)arg1;
 - (void)displayCompletionListRelativeToRect:(struct CGRect)arg1 ofView:(id)arg2 matchingPartialUsername:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)displayCompletionListRelativeToRect:(struct CGRect)arg1 ofView:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

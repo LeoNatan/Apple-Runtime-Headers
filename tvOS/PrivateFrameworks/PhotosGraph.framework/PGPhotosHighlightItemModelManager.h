@@ -9,7 +9,7 @@
 #import <PhotosGraph/PGHighlightItemListModelWriter-Protocol.h>
 #import <PhotosGraph/PGHighlightItemModelReader-Protocol.h>
 
-@class NSMutableDictionary, NSString, PHPhotoLibrary;
+@class NSMutableDictionary, NSSet, NSString, PHPhotoLibrary;
 
 @interface PGPhotosHighlightItemModelManager : NSObject <PGHighlightItemModelReader, PGHighlightItemListModelWriter>
 {
@@ -22,6 +22,8 @@
 @property(readonly, nonatomic) unsigned short kind; // @synthesize kind=_kind;
 @property(readonly, nonatomic) PHPhotoLibrary *library; // @synthesize library=_library;
 - (void).cxx_destruct;
+- (void)addVisibleHighlight:(id)arg1 inMonth:(id)arg2;
+@property(readonly, nonatomic) NSSet *highlightUUIDsWithVisibilityStateChange;
 - (unsigned short)visibilityStateForHighlightItem:(id)arg1;
 - (void)setVisibilityState:(unsigned short)arg1 forHighlightItem:(id)arg2;
 - (id)fetchChildHighlightItemsForHighlightItem:(id)arg1;

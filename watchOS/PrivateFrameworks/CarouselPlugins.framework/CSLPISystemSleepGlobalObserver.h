@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class CSLPISystemSleepObserver, CSLSConcurrentObserverStore;
+#import <CarouselPlugins/CSLPISystemSleepObserverDelegate-Protocol.h>
+
+@class CSLPISystemSleepObserver, CSLSConcurrentObserverStore, NSString;
 @protocol CSLPISystemSleepGlobalObserverObserver;
 
-@interface CSLPISystemSleepGlobalObserver : NSObject
+@interface CSLPISystemSleepGlobalObserver : NSObject <CSLPISystemSleepObserverDelegate>
 {
     CSLPISystemSleepObserver *_systemSleepObserver;
     CSLSConcurrentObserverStore<CSLPISystemSleepGlobalObserverObserver> *_observerStore;
@@ -19,17 +21,24 @@
 + (id)sharedInstance;
 @property(getter=isSleepImminent) _Bool sleepImminent; // @synthesize sleepImminent=_sleepImminent;
 - (void).cxx_destruct;
+- (void)systemSleepObserverWillNotSleep:(id)arg1;
+- (void)systemSleepObserver:(id)arg1 willSleepWithCompletion:(CDUnknownBlockType)arg2;
+- (void)systemSleepObserver:(id)arg1 canSleep:(CDUnknownBlockType)arg2;
+- (void)systemSleepObserverHasPoweredOn:(id)arg1;
+- (void)systemSleepObserverWillPowerOn:(id)arg1;
 - (void)_stopObserving;
 - (void)_startObserving;
-- (void)_hasPoweredOn;
-- (void)_willSleep;
-- (_Bool)_canSleep;
-- (_Bool)_observeWithAction:(unsigned int)arg1;
+- (void)_observeWithAction:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

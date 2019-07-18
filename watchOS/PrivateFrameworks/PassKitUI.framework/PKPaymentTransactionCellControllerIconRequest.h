@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, PKPaymentTransaction;
+@class NSArray, NSString, PKPaymentTransaction;
 
 @interface PKPaymentTransactionCellControllerIconRequest : NSObject
 {
     PKPaymentTransaction *_transaction;
+    NSString *_cacheKey;
     NSArray *_completionHandlers;
     struct CGSize _size;
 }
 
 @property(retain, nonatomic) NSArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
+@property(retain, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 - (void).cxx_destruct;

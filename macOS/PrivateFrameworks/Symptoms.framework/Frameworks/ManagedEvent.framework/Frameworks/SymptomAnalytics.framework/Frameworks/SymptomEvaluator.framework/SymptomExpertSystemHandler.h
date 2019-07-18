@@ -9,12 +9,11 @@
 #import <SymptomEvaluator/CLIPSShimDelegate-Protocol.h>
 #import <SymptomEvaluator/ProbeManagerDelegate-Protocol.h>
 #import <SymptomEvaluator/SymptomsFileCleanerDelegate-Protocol.h>
-#import <SymptomEvaluator/WiFiShimDelegate-Protocol.h>
 
 @class CLIPSShim, CellFallbackHandler, NSArray, NSDataDetector, NSDate, NSMutableArray, NSMutableDictionary, NSNumber, NSObject, NSString, NSXPCConnection, NetworkAnalyticsStateRelay, PowerStateRelay, ProbeManager, SDRDiagnosticReporter, SymptomExpertSystemState, SymptomsFileCleaner, SystemProperties, SystemSettingsRelay;
 @protocol OS_dispatch_source;
 
-@interface SymptomExpertSystemHandler : ExpertSystemHandlerCore <ProbeManagerDelegate, CLIPSShimDelegate, WiFiShimDelegate, SymptomsFileCleanerDelegate>
+@interface SymptomExpertSystemHandler : ExpertSystemHandlerCore <ProbeManagerDelegate, CLIPSShimDelegate, SymptomsFileCleanerDelegate>
 {
     NSMutableDictionary *_interfaceNameToType;
     SymptomExpertSystemState *currentState;

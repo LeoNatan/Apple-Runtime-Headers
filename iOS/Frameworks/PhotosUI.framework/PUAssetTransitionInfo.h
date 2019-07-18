@@ -6,13 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, UIImage;
+@class NSArray, PUPhotoViewContentHelper, UIImage;
+@protocol PUDisplayAsset;
 
 @interface PUAssetTransitionInfo : NSObject
 {
     UIImage *_image;
     NSArray *_filters;
     double _cornerRadius;
+    id <PUDisplayAsset> _asset;
+    NSArray *_badgeTransitionInfos;
+    PUPhotoViewContentHelper *_contentHelper;
     CDStruct_1b6d18a9 _seekTime;
     struct CGRect _frame;
 }
@@ -21,6 +25,9 @@
 + (id)assetTransitionInfoWithImage:(id)arg1 andSeekTime:(CDStruct_1b6d18a9)arg2;
 + (id)assetTransitionInfoWithImage:(id)arg1 filters:(id)arg2;
 + (id)assetTransitionInfoWithImage:(id)arg1;
+@property(retain, nonatomic) PUPhotoViewContentHelper *contentHelper; // @synthesize contentHelper=_contentHelper;
+@property(copy, nonatomic) NSArray *badgeTransitionInfos; // @synthesize badgeTransitionInfos=_badgeTransitionInfos;
+@property(retain, nonatomic) id <PUDisplayAsset> asset; // @synthesize asset=_asset;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(nonatomic, setter=_setSeekTime:) CDStruct_1b6d18a9 seekTime; // @synthesize seekTime=_seekTime;

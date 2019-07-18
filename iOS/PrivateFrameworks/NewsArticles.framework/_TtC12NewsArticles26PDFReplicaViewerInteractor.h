@@ -15,6 +15,7 @@
     // Error parsing type: , name: pageBlueprintFactory
     // Error parsing type: , name: activityItemFactory
     // Error parsing type: , name: issueReadingHistory
+    // Error parsing type: , name: configurationManager
     // Error parsing type: , name: options
 }
 

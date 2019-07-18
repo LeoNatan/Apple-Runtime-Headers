@@ -12,24 +12,26 @@
 {
     _Bool _onStart;
     _Bool _onEnd;
+    unsigned long long _selection;
     NSArray *_selectedWorkoutTypes;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
++ (_Bool)isSupportedOnThisDevice;
 + (_Bool)isAllowedToRunAutomatically;
-@property(copy, nonatomic) NSArray *selectedWorkoutTypes; // @synthesize selectedWorkoutTypes=_selectedWorkoutTypes;
 @property(nonatomic) _Bool onEnd; // @synthesize onEnd=_onEnd;
 @property(nonatomic) _Bool onStart; // @synthesize onStart=_onStart;
+@property(copy, nonatomic) NSArray *selectedWorkoutTypes; // @synthesize selectedWorkoutTypes=_selectedWorkoutTypes;
+@property(nonatomic) unsigned long long selection; // @synthesize selection=_selection;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)localizedTitleWithConfigurationSummary;
-- (_Bool)isEqual:(id)arg1;
-- (id)init;
 - (_Bool)hasValidConfiguration;
+- (id)init;
 
 @end
 

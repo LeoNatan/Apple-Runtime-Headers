@@ -10,7 +10,7 @@
 #import <Widgets/WGWidgetHostingViewControllerDelegate-Protocol.h>
 #import <Widgets/WGWidgetHostingViewControllerHost-Protocol.h>
 
-@class NSString, WGWidgetHostingViewController;
+@class NSString, UITraitCollection, WGWidgetHostingViewController;
 @protocol WGWidgetViewControllerDelegate;
 
 @interface WGWidgetViewController : UIViewController <WGWidgetHostingViewControllerDelegate, WGWidgetHostingViewControllerHost, WGWidgetExtensionVisibilityProviding>
@@ -36,6 +36,7 @@
 - (id)_platterViewLoadingIfNecessary:(_Bool)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (struct CGSize)sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;
+@property(readonly, nonatomic) UITraitCollection *requestedTraitCollectionOverride;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

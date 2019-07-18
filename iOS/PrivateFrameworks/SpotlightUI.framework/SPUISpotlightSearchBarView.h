@@ -8,10 +8,8 @@
 
 @interface SPUISpotlightSearchBarView : UIView
 {
-    double _heightOfBar;
 }
 
-@property double heightOfBar; // @synthesize heightOfBar=_heightOfBar;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

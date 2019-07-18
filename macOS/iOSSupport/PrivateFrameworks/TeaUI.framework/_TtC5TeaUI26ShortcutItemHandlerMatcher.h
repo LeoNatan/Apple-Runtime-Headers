@@ -8,6 +8,7 @@
 
 @interface _TtC5TeaUI26ShortcutItemHandlerMatcher : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: shortcutItem
 }
 
 @end

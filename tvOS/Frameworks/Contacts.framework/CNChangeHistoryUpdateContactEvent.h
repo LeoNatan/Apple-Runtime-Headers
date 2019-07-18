@@ -8,7 +8,6 @@
 
 @class CNContact;
 
-__attribute__((visibility("hidden")))
 @interface CNChangeHistoryUpdateContactEvent : CNChangeHistoryEvent
 {
     CNContact *_contact;

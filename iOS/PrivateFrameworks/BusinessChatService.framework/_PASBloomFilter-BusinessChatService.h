@@ -9,5 +9,6 @@
 @interface _PASBloomFilter (BusinessChatService)
 + (id)bloomFilterWithData:(id)arg1;
 - (id)initWithJSONObj:(id)arg1;
+- (id)_bloomFilterStringWithJSONObj:(id)arg1;
 @end
 

@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)groupSessionEnded:(id)arg1 withError:(id)arg2;
 - (void)groupSession:(id)arg1 participantDidLeave:(id)arg2;
 - (void)groupSession:(id)arg1 participantDidJoin:(id)arg2;
+- (void)navigationListenerStopped:(id)arg1;
 - (void)navigationListenerArrived:(id)arg1;
 - (void)navigationListenerTrafficUpdated:(id)arg1;
 - (void)navigationListenerRouteUpdated:(id)arg1;
@@ -41,6 +42,8 @@ __attribute__((visibility("hidden")))
 - (void)navigationListenerIsReady:(id)arg1;
 - (void)navigationListenerDestinationUpdated:(id)arg1;
 - (void)navigationListener:(id)arg1 didFailWithError:(id)arg2;
+- (void)touchedRules;
+- (id)rulesForParticipant:(id)arg1;
 - (void)sendMessage:(id)arg1 toParticipant:(id)arg2;
 - (void)_stopNavigationListener;
 - (void)_startNavigationListener;

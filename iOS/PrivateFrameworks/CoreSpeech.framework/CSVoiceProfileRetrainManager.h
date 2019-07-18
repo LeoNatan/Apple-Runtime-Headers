@@ -11,7 +11,8 @@
 }
 
 + (id)sharedInstance;
-- (_Bool)isRetrainerRunning;
+- (void)triggerVoiceProfileRetrainingWithAsset:(id)arg1;
+- (void)analyzeImplicitUtterance:(id)arg1;
 
 @end
 

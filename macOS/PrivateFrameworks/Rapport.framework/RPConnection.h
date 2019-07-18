@@ -8,7 +8,7 @@
 
 #import <Rapport/RPAuthenticatable-Protocol.h>
 
-@class CUBLEConnection, CUBluetoothScalablePipe, CUBonjourDevice, CUHomeKitManager, CUNetLinkManager, CUPairingSession, CUPairingStream, CUTCPConnection, NSData, NSDictionary, NSError, NSString, NSUUID, RPCloudDaemon, RPCloudSession, RPCompanionLinkDevice, RPIdentity, RPIdentityDaemon, RPMetrics;
+@class CUBLEConnection, CUBluetoothScalablePipe, CUBonjourDevice, CUHomeKitManager, CUNetLinkManager, CUPairingSession, CUPairingStream, CUTCPConnection, NSData, NSDictionary, NSError, NSString, NSUUID, RPCloudDaemon, RPCloudSession, RPCompanionLinkDevice, RPIdentity, RPIdentityDaemon;
 @protocol CUReadWriteRequestable, OS_dispatch_queue, OS_dispatch_source;
 
 @interface RPConnection : NSObject <RPAuthenticatable>
@@ -18,6 +18,7 @@
     NSString *_selfAddrString;
     BOOL _invalidateCalled;
     BOOL _invalidateDone;
+    NSObject<OS_dispatch_source> *_idleTimer;
     NSObject<OS_dispatch_source> *_probeTimer;
     BOOL _retryFired;
     unsigned long long _retryTicks;
@@ -46,6 +47,8 @@
     struct NSMutableArray *_sendArray;
     struct LogCategory *_ucat;
     unsigned int _xidLast;
+    unsigned long long _receivedFrameCountCurrent;
+    unsigned long long _receivedFrameCountLast;
     BOOL _clientMode;
     BOOL _flowControlReadEnabled;
     BOOL _invalidationHandled;
@@ -76,6 +79,7 @@
     id _client;
     RPCloudDaemon *_cloudDaemon;
     NSString *_cloudDeviceIdentifier;
+    NSString *_cloudServiceID;
     RPCloudSession *_cloudSession;
     unsigned long long _controlFlags;
     NSString *_destinationString;
@@ -91,7 +95,6 @@
     CDUnknownBlockType _invalidationHandler;
     NSString *_label;
     RPCompanionLinkDevice *_localDeviceInfo;
-    RPMetrics *_metrics;
     CUNetLinkManager *_netLinkManager;
     CDUnknownBlockType _pairVerifyCompletion;
     RPCompanionLinkDevice *_peerDeviceInfo;
@@ -123,7 +126,6 @@
 @property(readonly, nonatomic) RPCompanionLinkDevice *peerDeviceInfo; // @synthesize peerDeviceInfo=_peerDeviceInfo;
 @property(copy, nonatomic) CDUnknownBlockType pairVerifyCompletion; // @synthesize pairVerifyCompletion=_pairVerifyCompletion;
 @property(retain, nonatomic) CUNetLinkManager *netLinkManager; // @synthesize netLinkManager=_netLinkManager;
-@property(retain, nonatomic) RPMetrics *metrics; // @synthesize metrics=_metrics;
 @property(retain, nonatomic) RPCompanionLinkDevice *localDeviceInfo; // @synthesize localDeviceInfo=_localDeviceInfo;
 @property(readonly, nonatomic) int linkType; // @synthesize linkType=_linkType;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
@@ -144,6 +146,7 @@
 @property(copy, nonatomic) NSString *destinationString; // @synthesize destinationString=_destinationString;
 @property(nonatomic) unsigned long long controlFlags; // @synthesize controlFlags=_controlFlags;
 @property(retain, nonatomic) RPCloudSession *cloudSession; // @synthesize cloudSession=_cloudSession;
+@property(copy, nonatomic) NSString *cloudServiceID; // @synthesize cloudServiceID=_cloudServiceID;
 @property(copy, nonatomic) NSString *cloudDeviceIdentifier; // @synthesize cloudDeviceIdentifier=_cloudDeviceIdentifier;
 @property(retain, nonatomic) RPCloudDaemon *cloudDaemon; // @synthesize cloudDaemon=_cloudDaemon;
 @property(nonatomic) BOOL clientMode; // @synthesize clientMode=_clientMode;
@@ -167,6 +170,8 @@
 - (void).cxx_destruct;
 - (id)_systeminfo;
 - (void)_receivedSystemInfo:(id)arg1 xid:(id)arg2;
+- (void)_idleTimerFired;
+- (void)_idleTimerStart:(unsigned int)arg1 repeat:(unsigned int)arg2;
 - (void)_identityProofsVerifyHomeKitSignature:(id)arg1 identifier:(id)arg2;
 - (void)_identityProofsVerify:(id)arg1;
 - (void)_identityProofsAdd:(id)arg1 update:(BOOL)arg2;
@@ -209,6 +214,7 @@
 - (void)_serverAcceptBLE;
 - (void)_serverAccept;
 - (void)_serverRun;
+- (void)_clientStarted;
 - (void)_clientRetryFired;
 - (void)_clientRetryStart;
 - (void)_clientStartSession;
@@ -233,6 +239,7 @@
 - (void)_updateLinkInfo;
 - (void)_updateExternalState;
 - (void)tryPassword:(id)arg1;
+- (void)sessionStopped:(id)arg1;
 - (void)_run;
 - (void)_pskPrepare:(BOOL)arg1;
 - (BOOL)_pairVerifyVerifySignature:(id)arg1 data:(id)arg2 flags:(unsigned int)arg3 error:(id *)arg4;

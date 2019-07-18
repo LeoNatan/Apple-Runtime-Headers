@@ -52,6 +52,7 @@
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
 - (void)tintColorDidChange;
+- (void)setUserInteractionEnabled:(BOOL)arg1;
 - (void)_updateSelectedRowBorderView:(id)arg1;
 - (void)_updateUI;
 - (id)initWithProfile:(id)arg1;

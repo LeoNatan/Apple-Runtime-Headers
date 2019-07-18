@@ -6,17 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class ASWebAuthenticationSession;
+#import <NewsSubscription/ASWebAuthenticationPresentationContextProviding-Protocol.h>
 
-@interface BridgedWebAuthenticationSession : NSObject
+@class ASWebAuthenticationSession, NSString;
+
+@interface BridgedWebAuthenticationSession : NSObject <ASWebAuthenticationPresentationContextProviding>
 {
     ASWebAuthenticationSession *_authenticationSession;
 }
 
 @property(retain, nonatomic) ASWebAuthenticationSession *authenticationSession; // @synthesize authenticationSession=_authenticationSession;
 - (void).cxx_destruct;
+- (id)presentationAnchorForWebAuthenticationSession:(id)arg1;
 - (BOOL)start;
 - (id)initWithURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

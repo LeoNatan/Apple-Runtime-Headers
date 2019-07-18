@@ -37,7 +37,7 @@
 - (void)clearHistoryMatchesCache;
 - (void)clearBookmarkMatchesCaches;
 - (void)clearBookmarkMatchesCachesKeepingEmptyValues:(_Bool)arg1;
-- (void)getBestMatchesForTypedString:(id)arg1 topHits:(id *)arg2 matches:(id *)arg3 limit:(unsigned long long)arg4;
+- (void)getBestMatchesForTypedString:(id)arg1 topHits:(id *)arg2 matches:(id *)arg3 limit:(unsigned long long)arg4 forQueryID:(long long)arg5;
 - (id)init;
 
 @end

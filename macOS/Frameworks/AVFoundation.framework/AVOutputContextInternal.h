@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     id <AVOutputContextImpl> impl;
     unsigned long long outputDeviceFeatures;
     int applicationPID;
+    BOOL applicationPIDWasSet;
     id <AVOutputContextCommunicationChannelDelegate> communicationChannelDelegate;
 }
 

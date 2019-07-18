@@ -22,6 +22,7 @@
 + (id)_internalDebugFeatures;
 @property(readonly) struct Object *_apiObject;
 @property(nonatomic) _Bool javaScriptCanOpenWindowsAutomatically;
+@property(nonatomic, getter=isFraudulentWebsiteWarningEnabled) _Bool fraudulentWebsiteWarningEnabled;
 @property(nonatomic) _Bool javaScriptEnabled;
 @property(nonatomic) float minimumFontSize;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -49,6 +50,7 @@
 @property(nonatomic, setter=_setWebRTCLegacyAPIEnabled:) _Bool _webRTCLegacyAPIEnabled;
 @property(nonatomic, setter=_setICECandidateFilteringEnabled:) _Bool _iceCandidateFilteringEnabled;
 @property(nonatomic, setter=_setEnumeratingAllNetworkInterfacesEnabled:) _Bool _enumeratingAllNetworkInterfacesEnabled;
+@property(nonatomic, setter=_setInterruptAudioOnPageVisibilityChangeEnabled:) _Bool _interruptAudioOnPageVisibilityChangeEnabled;
 @property(nonatomic, setter=_setInactiveMediaCaptureSteamRepromptIntervalInMinutes:) double _inactiveMediaCaptureSteamRepromptIntervalInMinutes;
 @property(nonatomic, setter=_setMediaCaptureRequiresSecureConnection:) _Bool _mediaCaptureRequiresSecureConnection;
 @property(nonatomic, setter=_setMockCaptureDevicesPromptEnabled:) _Bool _mockCaptureDevicesPromptEnabled;

@@ -16,8 +16,8 @@
 
 @property(readonly, nonatomic) RTVisitHyperParameter *hyperParameter; // @synthesize hyperParameter=_hyperParameter;
 - (void).cxx_destruct;
-- (id)decodeWithProbabilities:(id)arg1 sequenceMiddleIndex:(unsigned long long)arg2 firstTimeStepDate:(id)arg3;
-- (id)createSuccessor:(id)arg1 probabilities:(id)arg2 firstTimeStepDate:(id)arg3 currentDate:(id)arg4;
+- (id)decodeWithProbabilities:(const float *)arg1 batchSize:(unsigned long long)arg2 firstTimeStepDate:(id)arg3;
+- (id)createSuccessor:(id)arg1 probabilities:(const float *)arg2 firstTimeStepDate:(id)arg3 currentDate:(id)arg4;
 - (void)updateSuccessor:(id)arg1 newNode:(id)arg2;
 - (void)reset;
 - (id)initWithHyperParameter:(id)arg1;

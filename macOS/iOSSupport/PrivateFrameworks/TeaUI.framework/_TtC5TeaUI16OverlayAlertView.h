@@ -10,7 +10,9 @@ __attribute__((visibility("hidden")))
 @interface _TtC5TeaUI16OverlayAlertView : UIView
 {
     // Error parsing type: , name: backdropView
-    // Error parsing type: , name: maskingView
+    // Error parsing type: , name: image
+    // Error parsing type: , name: titleLabel
+    // Error parsing type: , name: subtitleLabel
 }
 
 - (void).cxx_destruct;

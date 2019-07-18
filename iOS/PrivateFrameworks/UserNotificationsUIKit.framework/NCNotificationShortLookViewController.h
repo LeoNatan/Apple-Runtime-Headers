@@ -28,6 +28,8 @@
     NSDate *_tapBeginTime;
     id <UIViewControllerContextTransitioning> _scrollPresentationTransitionContext;
     struct CGRect _finalPresentedFrameOfViewForPreview;
+    UIView *_lookViewWrapper;
+    long long _trigger;
     _Bool _didScrollPresentLongLookViewController;
     PLClickPresentationInteractionManager *_clickPresentationInteractionManager;
     UIScrollView *_scrollView;
@@ -52,8 +54,10 @@
 @property(readonly, nonatomic) struct CGRect finalDismissedFrameOfViewForPreview;
 @property(readonly, nonatomic) struct CGRect finalPresentedFrameOfViewForPreview;
 @property(readonly, nonatomic) struct CGRect initialPresentedFrameOfViewForPreview;
+@property(nonatomic, getter=isHighlighted) _Bool highlighted;
 @property(readonly, nonatomic) PLClickPresentationInteractionManager *clickPresentationInteractionManager; // @synthesize clickPresentationInteractionManager=_clickPresentationInteractionManager;
 @property(readonly, nonatomic) UIView *viewForPreview;
+- (_Bool)clickPresentationInteractionManagerShouldAllowLongPressGesture:(id)arg1;
 - (void)clickPresentationInteractionManager:(id)arg1 declinedDismissingPresentedContentWithTrigger:(long long)arg2;
 - (void)clickPresentationInteractionManager:(id)arg1 willDismissPresentedContentWithTrigger:(long long)arg2;
 - (void)_handlePresentedContentDismissalWithTrigger:(long long)arg1;
@@ -67,6 +71,8 @@
 - (id)_longLookNotificationViewController;
 - (void)customContentDidLoadExtension:(id)arg1;
 - (void)dragInteraction:(id)arg1 session:(id)arg2 willEndWithOperation:(unsigned long long)arg3;
+- (void)dragInteraction:(id)arg1 item:(id)arg2 willAnimateCancelWithAnimator:(id)arg3;
+- (void)dragInteraction:(id)arg1 willAnimateLiftWithAnimator:(id)arg2 session:(id)arg3;
 - (id)dragInteraction:(id)arg1 previewForCancellingItem:(id)arg2 withDefault:(id)arg3;
 - (id)dragInteraction:(id)arg1 previewForLiftingItem:(id)arg2 session:(id)arg3;
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
@@ -84,6 +90,11 @@
 - (void)_updateShortLookShadow;
 - (_Bool)_shouldUseHapticTouch;
 - (void)_updateWithProvidedAuxiliaryOptionsContent;
+- (unsigned long long)_maximumNumberOfTextLinesForProvidedStaticContentWithDefaultNumber:(unsigned long long)arg1 isPrimary:(_Bool)arg2 isLarge:(_Bool)arg3;
+- (unsigned long long)_maximumNumberOfSecondaryLargeTextLinesForProvidedStaticContent;
+- (unsigned long long)_maximumNumberOfSecondaryTextLinesForProvidedStaticContent;
+- (unsigned long long)_maximumNumberOfPrimaryLargeTextLinesForProvidedStaticContent;
+- (unsigned long long)_maximumNumberOfPrimaryTextLinesForProvidedStaticContent;
 - (void)_updateWithProvidedStaticContent;
 - (_Bool)_tryDismissingShortLookInScrollView:(id)arg1;
 - (void)_handleTapOnView:(id)arg1;
@@ -101,7 +112,7 @@
 - (void)setInteractionEnabled:(_Bool)arg1;
 - (_Bool)shouldRestorePresentingShortLookOnDismiss;
 - (void)expandAndPlayMedia;
-- (void)presentLongLookAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)presentLongLookAnimated:(_Bool)arg1 trigger:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_canShowWhileLocked;
 - (void)viewWillLayoutSubviews;
 - (void)setHasShadow:(_Bool)arg1;

@@ -250,7 +250,7 @@
 - (id)newFunctionWithGLIR:(void *)arg1 functionType:(unsigned long long)arg2;
 - (id)description;
 - (id)formattedDescription:(unsigned long long)arg1;
-- (BOOL)supportsVersion:(long long)arg1;
+- (BOOL)areProgrammableSamplePositionsSupported;
 - (BOOL)supportsFamily:(long long)arg1;
 - (void)initGPUFamilySupport;
 - (void)initFeatureQueries;
@@ -338,6 +338,7 @@
 @property(readonly, nonatomic) BOOL supportsLinearTextureFromSharedBuffer;
 @property(readonly, nonatomic) BOOL supportsNonPrivateMSAATextures;
 @property(readonly, nonatomic) BOOL supportsNonPrivateDepthStencilTextures;
+@property(readonly, nonatomic) BOOL supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) BOOL supportsPlacementHeaps;
 @property(readonly, nonatomic) BOOL supportsSamplerReductionMode;
 @property(readonly, nonatomic) BOOL supportsQueryTextureLOD;

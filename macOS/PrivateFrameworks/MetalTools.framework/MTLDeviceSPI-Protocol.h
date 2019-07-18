@@ -160,6 +160,7 @@
 @property(readonly, nonatomic) BOOL supportsLinearTextureFromSharedBuffer;
 @property(readonly, nonatomic) BOOL supportsNonPrivateMSAATextures;
 @property(readonly, nonatomic) BOOL supportsNonPrivateDepthStencilTextures;
+@property(readonly, nonatomic) BOOL supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) BOOL supportsPlacementHeaps;
 @property(readonly, nonatomic) BOOL supportsSamplerReductionMode;
 @property(readonly, nonatomic) BOOL supportsQueryTextureLOD;

@@ -4,31 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CoreSuggestionsML/SGModelSource.h>
+#import <objc/NSObject.h>
 
-@class NSString;
+@class PMLSessionDescriptor;
 @protocol PMLTransformerProtocol;
 
-@interface SGTransformerInstance : SGModelSource
+@interface SGTransformerInstance : NSObject
 {
-    unsigned long long _window;
-    unsigned long long _ngrams;
-    NSString *_language;
-    NSString *_featuresVersion;
-    NSString *_featuresModelId;
+    PMLSessionDescriptor *_sessionDescriptor;
     id <PMLTransformerProtocol> _transformer;
+    Class _modelClass;
 }
 
++ (id)defaultSessionDescriptorForModelId:(id)arg1 featureVersion:(id)arg2 language:(id)arg3 windowAndNgrams:(id)arg4;
++ (id)defaultWindowAndNgrams;
+@property(retain, nonatomic) Class modelClass; // @synthesize modelClass=_modelClass;
 @property(retain, nonatomic) id <PMLTransformerProtocol> transformer; // @synthesize transformer=_transformer;
-@property(copy, nonatomic) NSString *featuresModelId; // @synthesize featuresModelId=_featuresModelId;
-@property(copy, nonatomic) NSString *featuresVersion; // @synthesize featuresVersion=_featuresVersion;
-@property(copy, nonatomic) NSString *language; // @synthesize language=_language;
-@property(nonatomic) unsigned long long ngrams; // @synthesize ngrams=_ngrams;
-@property(nonatomic) unsigned long long window; // @synthesize window=_window;
+@property(retain, nonatomic) PMLSessionDescriptor *sessionDescriptor; // @synthesize sessionDescriptor=_sessionDescriptor;
 - (void).cxx_destruct;
-- (id)featuresOf:(id)arg1;
-- (id)sessionDescriptor;
-- (id)initWithLanguage:(id)arg1;
+- (id)trainingFeaturesOf:(id)arg1;
+- (id)initWithTransformer:(id)arg1 sessionDescriptor:(id)arg2 modelClass:(Class)arg3;
 
 @end
 

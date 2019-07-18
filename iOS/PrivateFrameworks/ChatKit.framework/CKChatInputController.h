@@ -162,6 +162,7 @@
 @property(readonly, nonatomic) _Bool appStoreIsDisplayed;
 - (_Bool)handwritingIsDisplayed;
 - (void)showHandwritingBrowserWithExistingPayload:(id)arg1;
+- (_Bool)_shouldShowHandwriting;
 - (_Bool)_switcherPluginHasTouchTokenForDirectSend;
 - (_Bool)_switcherPluginCanMessageAPI;
 - (_Bool)_switcherPluginCanMessageAPIOnBehalfOfPlugin:(id)arg1;
@@ -191,6 +192,7 @@
 - (void)browserTransitionCoordinatorWillTransitionOrPresentToFullscreen:(id)arg1 withReason:(long long)arg2;
 - (void)setInputViewVisible:(_Bool)arg1 entryFieldCollapsed:(_Bool)arg2 animated:(_Bool)arg3 messageDelegate:(_Bool)arg4;
 - (void)setInputViewVisible:(_Bool)arg1 entryFieldCollapsed:(_Bool)arg2 animated:(_Bool)arg3;
+- (_Bool)isHandwritingLandscape;
 - (void)composeRecipientViewDidBecomeFirstResponder:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
 - (void)keyboardDidHide:(id)arg1;

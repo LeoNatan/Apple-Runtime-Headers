@@ -43,10 +43,14 @@
 - (void)hack_overrideReminderIDsOrderingWithOrderedObjectIDs:(id)arg1;
 @property(readonly, nonatomic) NSString *externalIdentifierForMarkedForDeletionObject;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
-- (id)fetchRemindersWithDACalendarItemUniqueIdentifiers:(id)arg1 error:(id *)arg2;
 - (id)fetchRemindersWithExternalIdentifiers:(id)arg1 error:(id *)arg2;
+- (id)fetchReminderWithExternalIdentifier:(id)arg1 error:(id *)arg2;
+- (id)sharingStatusText;
+- (id)formattedSharedOwnerName;
+- (id)fetchRemindersAndSubtasksWithError:(id *)arg1;
 - (id)fetchRemindersWithError:(id *)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (_Bool)respondsToSelector:(SEL)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 @property(readonly, nonatomic) _Bool isOwnedByMe;
@@ -54,6 +58,7 @@
 @property(readonly, nonatomic) _Bool canBeShared;
 - (id)ekColor;
 @property(readonly, nonatomic) NSOrderedSet *reminderIDsOrdering;
+@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
@@ -77,10 +82,11 @@
 @property(readonly, nonatomic) _Bool daIsReadOnly; // @dynamic daIsReadOnly;
 @property(readonly, nonatomic) NSString *daPushKey; // @dynamic daPushKey;
 @property(readonly, nonatomic) NSString *daSyncToken; // @dynamic daSyncToken;
-@property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic) NSString *displayName; // @dynamic displayName;
 @property(readonly, nonatomic) NSString *externalIdentifier; // @dynamic externalIdentifier;
 @property(readonly, nonatomic) NSString *externalModificationTag; // @dynamic externalModificationTag;
 @property(readonly, nonatomic) _Bool isGroup; // @dynamic isGroup;
+@property(nonatomic) _Bool isPlaceholder; // @dynamic isPlaceholder;
 @property(readonly, copy, nonatomic) NSDate *lastUserAccessDate; // @dynamic lastUserAccessDate;
 @property(readonly, nonatomic) NSString *name; // @dynamic name;
 @property(readonly, nonatomic) REMObjectID *objectID; // @dynamic objectID;

@@ -13,6 +13,9 @@
     double _maximumDuration;
 }
 
++ (id)attributedLiveStringFromDate:(id)arg1;
++ (id)attributedTimeStringFromDate:(id)arg1;
++ (id)attributedStringFromDateString:(id)arg1;
 + (id)liveStringFromDate:(id)arg1;
 + (id)dayNameStringFromDate:(id)arg1;
 + (id)timeStringFromDate:(id)arg1;

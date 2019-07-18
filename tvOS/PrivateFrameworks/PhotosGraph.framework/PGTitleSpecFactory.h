@@ -17,6 +17,7 @@
 + (id)_specForThrowbackThursday;
 + (id)_specForPeopleVisiting;
 + (id)_specForEarlyMoments;
++ (id)_specForBabyGrowingUp;
 + (id)_specForBaby;
 + (id)_specForPet;
 + (id)_specForGathering;

@@ -8,12 +8,12 @@
 
 @interface PXApplicationSettings : PXSettings
 {
-    double _defaultUserInterfaceTimeoutDurationInMinutes;
+    double _defaultUserInterfaceTimeoutDuration;
 }
 
 + (id)sharedInstance;
 + (id)settingsControllerModule;
-@property(nonatomic) double defaultUserInterfaceTimeoutDurationInMinutes; // @synthesize defaultUserInterfaceTimeoutDurationInMinutes=_defaultUserInterfaceTimeoutDurationInMinutes;
+@property(nonatomic) double defaultUserInterfaceTimeoutDuration; // @synthesize defaultUserInterfaceTimeoutDuration=_defaultUserInterfaceTimeoutDuration;
 - (void)setDefaultValues;
 - (id)parentSettings;
 

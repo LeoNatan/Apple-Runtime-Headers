@@ -27,7 +27,6 @@
 - (double)portraitAnalyticsTopicsSamplingRate;
 - (int)feedbackSessionLogsGeohashLength;
 - (float)feedbackSessionLogsExtractionsSamplingRate;
-- (float)feedbackSessionLogsMappedTopicsSamplingRate;
 - (float)feedbackSessionLogsSamplingRate;
 - (float)scoreThresholdForLocation;
 - (float)scoreThresholdForTopic;

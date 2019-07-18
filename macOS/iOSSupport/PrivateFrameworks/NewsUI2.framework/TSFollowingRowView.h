@@ -14,10 +14,11 @@
     // Error parsing type: , name: imageView
     // Error parsing type: , name: subtitleLabel
     // Error parsing type: , name: badgeView
-    // Error parsing type: , name: notificationSwitch
-    // Error parsing type: , name: likeButton
-    // Error parsing type: , name: dislikeButton
+    // Error parsing type: , name: _notificationSwitch
+    // Error parsing type: , name: _likeButton
+    // Error parsing type: , name: _dislikeButton
     // Error parsing type: , name: isEditing
+    // Error parsing type: , name: keyCommandBlocks
 }
 
 - (void).cxx_destruct;

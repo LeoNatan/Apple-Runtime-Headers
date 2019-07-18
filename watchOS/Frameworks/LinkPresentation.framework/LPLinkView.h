@@ -50,6 +50,7 @@
     _Bool _shouldAnimateDuringNextBuild;
     _Bool _hasValidPresentationProperties;
     _Bool _hasSetDisableHighlightGesture;
+    _Bool _hasSetDisablePreviewGesture;
     _Bool _mayReceiveAdditionalMetadata;
     _Bool _usesComputedPresentationProperties;
     _Bool _asynchronouslyLoadingMetadataFields;
@@ -58,6 +59,7 @@
     _Bool _needsMessagesTranscriptPushCounterAnimation;
     _Bool _disableTapGesture;
     _Bool _disableHighlightGesture;
+    _Bool _disablePreviewGesture;
     _Bool _disableAutoPlay;
     _Bool _disablePlayback;
     _Bool _disablePlaybackControls;
@@ -91,10 +93,12 @@
 @property(nonatomic, setter=_setNeedsMessagesTranscriptPushCounterAnimation:) _Bool _needsMessagesTranscriptPushCounterAnimation; // @synthesize _needsMessagesTranscriptPushCounterAnimation;
 @property(nonatomic, setter=_setDisableAnimations:) _Bool _disableAnimations; // @synthesize _disableAnimations;
 - (void).cxx_destruct;
-- (void)_setupInteraction;
+- (void)_uninstallPreviewGestureRecognizer;
+- (void)_installPreviewGestureRecognizer;
 - (void)tapToLoadViewWasTapped:(id)arg1;
 - (void)_tapRecognized:(id)arg1;
 - (void)_highlightRecognized:(id)arg1;
+- (void)_cancelActiveHighlight;
 - (void)_didScroll;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
@@ -102,6 +106,7 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_addHighlightRecognizerToView:(id)arg1;
 - (void)_addTapRecognizerToView:(id)arg1;
+@property(nonatomic, setter=_setDisablePreviewGesture:) _Bool _disablePreviewGesture; // @synthesize _disablePreviewGesture;
 @property(nonatomic, setter=_setDisableHighlightGesture:) _Bool _disableHighlightGesture; // @synthesize _disableHighlightGesture;
 - (void)_rebuildGestureRecognizersIfNeeded;
 - (void)_uninstallTapGestureRecognizers;

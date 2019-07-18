@@ -36,9 +36,9 @@
 @property(retain, nonatomic) NSString *longDescription;
 @property(retain, nonatomic) NSData *mediaMetadataData;
 - (void)resetCloudRecoveryState;
-- (_Bool)hasCloudRecoveryStateFlagSet:(long long)arg1;
-- (void)removeCloudRecoveryStateFlag:(long long)arg1;
-- (void)setCloudRecoveryStateFlag:(long long)arg1;
+- (_Bool)hasCloudRecoveryStateFlagSet:(unsigned long long)arg1;
+- (void)removeCloudRecoveryStateFlag:(unsigned long long)arg1;
+- (void)setCloudRecoveryStateFlag:(unsigned long long)arg1;
 - (_Bool)hasConsistentCloudState;
 - (void)setSceneprintWithData:(id)arg1;
 
@@ -52,7 +52,7 @@
 @property(nonatomic) int cloudAvalanchePickType; // @dynamic cloudAvalanchePickType;
 @property(nonatomic) long long cloudGroupingState; // @dynamic cloudGroupingState;
 @property(nonatomic) short cloudKindSubtype; // @dynamic cloudKindSubtype;
-@property(nonatomic) long long cloudRecoveryState; // @dynamic cloudRecoveryState;
+@property(nonatomic) unsigned long long cloudRecoveryState; // @dynamic cloudRecoveryState;
 @property(nonatomic) short cloudStateRecoveryAttemptsCount; // @dynamic cloudStateRecoveryAttemptsCount;
 @property(retain, nonatomic) NSString *creatorBundleID; // @dynamic creatorBundleID;
 @property(readonly, copy) NSString *debugDescription;
@@ -106,6 +106,7 @@
 @property(retain, nonatomic) NSData *shiftedLocationData; // @dynamic shiftedLocationData;
 @property(copy, nonatomic) NSString *snowdayIdentifier; // @dynamic snowdayIdentifier;
 @property(copy, nonatomic) NSString *snowdaySnowplowIdentifier; // @dynamic snowdaySnowplowIdentifier;
+@property(copy, nonatomic) NSString *snowplowGroupUUID; // @dynamic snowplowGroupUUID;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) NSString *timeZoneName; // @dynamic timeZoneName;
 @property(retain, nonatomic) NSNumber *timeZoneOffset; // @dynamic timeZoneOffset;

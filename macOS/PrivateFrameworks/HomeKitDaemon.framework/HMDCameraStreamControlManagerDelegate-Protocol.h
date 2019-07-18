@@ -6,12 +6,12 @@
 
 #import <HomeKitDaemon/NSObject-Protocol.h>
 
-@class HMDCameraSessionID, NSDictionary, NSError, NSNumber;
+@class HMDCameraStreamSessionID, NSDictionary, NSError, NSNumber;
 @protocol HMDCameraStreamControlManagerProtocol;
 
 @protocol HMDCameraStreamControlManagerDelegate <NSObject>
 - (void)streamControlManager:(id <HMDCameraStreamControlManagerProtocol>)arg1 didFail:(NSError *)arg2;
-- (void)streamControlManagerDidStopStreamForSessionID:(HMDCameraSessionID *)arg1 error:(NSError *)arg2;
+- (void)streamControlManagerDidStopStreamForSessionID:(HMDCameraStreamSessionID *)arg1 error:(NSError *)arg2;
 - (void)streamControlManagerDidReconfigureStream:(id <HMDCameraStreamControlManagerProtocol>)arg1;
 - (void)streamControlManagerDidReceiveFirstFrame:(id <HMDCameraStreamControlManagerProtocol>)arg1 audioStreamSetting:(unsigned long long)arg2 aspectRatio:(NSNumber *)arg3 slotIdentifier:(NSNumber *)arg4;
 - (void)streamControlManagerDidStartStream:(id <HMDCameraStreamControlManagerProtocol>)arg1 slotIdentifier:(NSNumber *)arg2;

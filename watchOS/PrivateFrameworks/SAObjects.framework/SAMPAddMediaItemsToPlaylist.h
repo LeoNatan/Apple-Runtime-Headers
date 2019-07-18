@@ -18,6 +18,7 @@
 @property(retain, nonatomic) SAMPPlaylist *playlist;
 @property(copy, nonatomic) NSArray *mediaItems;
 @property(copy, nonatomic) NSString *insertLocation;
+@property(copy, nonatomic) NSString *influencedUserSharedUserId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

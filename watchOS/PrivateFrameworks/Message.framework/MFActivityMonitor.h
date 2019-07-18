@@ -13,7 +13,6 @@
 @interface MFActivityMonitor : EFPriorityDesignator <EFCancelable>
 {
     NSThread *_runningThread;
-    NSString *_taskName;
     NSString *_displayName;
     NSString *_statusMessage;
     NSString *_descriptionString;
@@ -78,7 +77,6 @@
 @property(retain, nonatomic) id activityTarget;
 @property(copy, nonatomic) NSString *displayName;
 - (void)setDisplayName:(id)arg1 maxCount:(unsigned int)arg2;
-@property(copy, nonatomic) NSString *taskName;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) unsigned int expectedLength;
 @property(readonly, nonatomic) double startTime;

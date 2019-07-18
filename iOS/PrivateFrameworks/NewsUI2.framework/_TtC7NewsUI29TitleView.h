@@ -12,7 +12,8 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: backgroundView
     // Error parsing type: , name: titleLabel
     // Error parsing type: , name: subtitleLabel
-    // Error parsing type: , name: actionButton
+    // Error parsing type: , name: chevron
+    // Error parsing type: , name: action
 }
 
 - (void).cxx_destruct;

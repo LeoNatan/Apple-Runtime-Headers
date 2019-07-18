@@ -48,8 +48,6 @@
 - (void)_registerProcessPendingGeocodesActivity;
 - (void)_performContactDetailCacheRebuildActivity:(id)arg1;
 - (void)_registerForContactDetailCacheRebuildActivity;
-- (void)_performPMLTrainingActivity:(id)arg1;
-- (void)_registerForPMLTrainingActivity;
 - (void)_performSendRTCActivity;
 - (void)_registerForCTSSendRTCActivity;
 - (void)_performIdentityAnalysisActivity:(id)arg1;

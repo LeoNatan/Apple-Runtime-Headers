@@ -8,7 +8,7 @@
 
 #import <HomeAI/HMFLogging-Protocol.h>
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, VNGenerateOpticalFlowRequest, VNImageRequestHandler;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface HMICameraVideoFrameSelector : HMFObject <HMFLogging>
 {
@@ -22,8 +22,6 @@
     unsigned long long _totalNumberOfFramesInFragment;
     unsigned long long _currentFrameNumber;
     unsigned long long _numberFramesToSelect;
-    VNImageRequestHandler *_imageRequestHandler;
-    VNGenerateOpticalFlowRequest *_opticalFlowRequest;
     NSMutableDictionary *_minRows;
     NSMutableDictionary *_maxRows;
     NSMutableDictionary *_minCols;
@@ -34,9 +32,11 @@
     NSMutableArray *_framesScore;
     unsigned long long _frameWidth;
     unsigned long long _frameHeight;
+    struct __CVBuffer *_opticalFlowReferenceImage;
 }
 
 + (id)logCategory;
+@property struct __CVBuffer *opticalFlowReferenceImage; // @synthesize opticalFlowReferenceImage=_opticalFlowReferenceImage;
 @property unsigned long long frameHeight; // @synthesize frameHeight=_frameHeight;
 @property unsigned long long frameWidth; // @synthesize frameWidth=_frameWidth;
 @property(retain) NSMutableArray *framesScore; // @synthesize framesScore=_framesScore;
@@ -47,8 +47,6 @@
 @property(retain) NSMutableDictionary *minCols; // @synthesize minCols=_minCols;
 @property(retain) NSMutableDictionary *maxRows; // @synthesize maxRows=_maxRows;
 @property(retain) NSMutableDictionary *minRows; // @synthesize minRows=_minRows;
-@property(retain) VNGenerateOpticalFlowRequest *opticalFlowRequest; // @synthesize opticalFlowRequest=_opticalFlowRequest;
-@property(retain) VNImageRequestHandler *imageRequestHandler; // @synthesize imageRequestHandler=_imageRequestHandler;
 @property _Bool enableOpticalFlow; // @synthesize enableOpticalFlow=_enableOpticalFlow;
 @property unsigned long long numberFramesToSelect; // @synthesize numberFramesToSelect=_numberFramesToSelect;
 @property unsigned long long currentFrameNumber; // @synthesize currentFrameNumber=_currentFrameNumber;
@@ -65,7 +63,6 @@
 - (float)getScaleFactorWidth;
 - (id)connectedComponents;
 - (_Bool)quantizedAndBinarizeFrame:(unsigned long long)arg1 frame_height:(unsigned long long)arg2 error:(id *)arg3;
-- (_Bool)imageResize:(struct __CVBuffer *)arg1 to:(struct __CVBuffer *)arg2;
 - (_Bool)willHandleFrames;
 - (void)unionTheRegoins;
 - (struct CGRect)applyPaddingIndex:(id)arg1;

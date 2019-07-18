@@ -6,17 +6,15 @@
 
 #import <SettingsCellularUI/PSUIDanglingPlanTableCell.h>
 
-@class UIImage, UIImageView;
+@class UIImageView;
 
 __attribute__((visibility("hidden")))
 @interface PSUIPlanPendingTransferTableCell : PSUIDanglingPlanTableCell
 {
-    UIImage *_exclamationSymbol;
     UIImageView *_view;
 }
 
 @property(retain, nonatomic) UIImageView *view; // @synthesize view=_view;
-@property(retain, nonatomic) UIImage *exclamationSymbol; // @synthesize exclamationSymbol=_exclamationSymbol;
 - (void).cxx_destruct;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)_setView;

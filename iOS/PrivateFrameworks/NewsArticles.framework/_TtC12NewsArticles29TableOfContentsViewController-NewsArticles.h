@@ -8,6 +8,7 @@
 
 @interface _TtC12NewsArticles29TableOfContentsViewController (NewsArticles)
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 @end

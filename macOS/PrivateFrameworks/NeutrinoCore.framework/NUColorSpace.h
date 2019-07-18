@@ -36,6 +36,7 @@
 - (id)initWithICCProfileData:(id)arg1;
 - (id)initWithCGColorSpace:(struct CGColorSpace *)arg1;
 - (id)init;
+- (void)nu_updateDigest:(id)arg1;
 
 @end
 

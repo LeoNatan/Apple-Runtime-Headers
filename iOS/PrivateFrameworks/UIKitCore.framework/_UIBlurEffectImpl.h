@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (Class)_implClassForStyle:(long long)arg1;
 + (id)implementationFromCoder:(id)arg1;
 - (void)appendDescriptionTo:(id)arg1;
 - (_Bool)_needsUpdateForTransitionFromEnvironment:(id)arg1 toEnvironment:(id)arg2 usage:(long long)arg3;
@@ -25,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)setEffect:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (_Bool)requiresCopying;
 - (void)encodeWithCoder:(id)arg1;
 
 @end

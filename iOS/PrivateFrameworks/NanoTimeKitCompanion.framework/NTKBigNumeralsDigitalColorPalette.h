@@ -13,6 +13,7 @@
 + (id)swatchImageForColor:(unsigned long long)arg1 device:(id)arg2;
 + (id)swatchColorForColor:(unsigned long long)arg1 device:(id)arg2;
 + (id)minuteColorForColor:(unsigned long long)arg1 device:(id)arg2;
++ (id)standardHourColorForColor:(unsigned long long)arg1 shifted:(_Bool)arg2 device:(id)arg3;
 + (id)hourColorForColor:(unsigned long long)arg1 device:(id)arg2;
 
 @end

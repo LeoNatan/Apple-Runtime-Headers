@@ -71,9 +71,10 @@
 + (_Bool)_allowsDeferredTransitions;
 + (_Bool)_preventsAppearanceProxyCustomization;
 + (struct UIEdgeInsets)_statusBarOverlapAndMarginInfoForView:(id)arg1;
++ (void)initialize;
+@property(readonly, nonatomic, getter=_realSourceView) UIView *realSourceView; // @synthesize realSourceView=_realSourceView;
 @property(nonatomic) _Bool isCurrentStateCancelled; // @synthesize isCurrentStateCancelled=_isCurrentStateCancelled;
 @property(nonatomic, getter=_containerIgnoresDirectTouchEvents, setter=_setContainerIgnoresDirectTouchEvents:) _Bool containerIgnoresDirectTouchEvents; // @synthesize containerIgnoresDirectTouchEvents=_containerIgnoresDirectTouchEvents;
-@property(readonly, nonatomic, getter=_realSourceView) UIView *realSourceView; // @synthesize realSourceView=_realSourceView;
 @property(retain, nonatomic, getter=_customViewForTouchContinuation, setter=_setCustomViewForTouchContinuation:) UIView *customViewForTouchContinuation; // @synthesize customViewForTouchContinuation=_customViewForTouchContinuation;
 @property(nonatomic, getter=_shouldContinueTouchesOnTargetViewController, setter=_setShouldContinueTouchesOnTargetViewController:) _Bool shouldContinueTouchesOnTargetViewController; // @synthesize shouldContinueTouchesOnTargetViewController=_shouldContinueTouchesOnTargetViewController;
 @property(copy, nonatomic) CDUnknownBlockType _currentTransitionDidComplete; // @synthesize _currentTransitionDidComplete=__currentTransitionDidComplete;

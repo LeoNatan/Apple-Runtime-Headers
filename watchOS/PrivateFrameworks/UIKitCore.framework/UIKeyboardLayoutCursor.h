@@ -86,6 +86,7 @@ __attribute__((visibility("hidden")))
 - (void)setDisableTouchInput:(_Bool)arg1;
 - (_Bool)diacriticForwardCompose;
 - (_Bool)supportsContinuousPath;
+- (_Bool)isKanaPlane;
 - (_Bool)isAlphabeticPlane;
 - (_Bool)ignoresShiftState;
 - (_Bool)usesAutoShift;

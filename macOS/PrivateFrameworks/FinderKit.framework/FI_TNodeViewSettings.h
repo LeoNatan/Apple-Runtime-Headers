@@ -175,10 +175,11 @@ __attribute__((visibility("hidden")))
 - (void)restoreToDefaults;
 @property(readonly, nonatomic) _Bool showDefaultsButton;
 @property(readonly, nonatomic) _Bool isDesktop; // @dynamic isDesktop;
-@property(readonly, nonatomic) _Bool isAirDrop; // @dynamic isAirDrop;
+@property(readonly, nonatomic) _Bool disabledViewOptionsForTarget; // @dynamic disabledViewOptionsForTarget;
 @property(readonly, nonatomic) _Bool isSearch; // @dynamic isSearch;
 @property(nonatomic) NSString *windowName;
 @property(nonatomic) int viewStyleForViewOptions;
+- (int)viewStyleForOptionsPane:(int)arg1;
 @property(nonatomic) int viewStyle; // @dynamic viewStyle;
 - (void)checkIfUsingDefaultSettings;
 - (void)saveListViewSettings;

@@ -23,8 +23,10 @@
     PKPaletteToolView *_tool;
     PKColorPicker *_colorPickerPopover;
     NSLayoutConstraint *_toolViewTopAnchor;
+    NSLayoutConstraint *_toolViewHeightAnchor;
 }
 
+@property(retain, nonatomic) NSLayoutConstraint *toolViewHeightAnchor; // @synthesize toolViewHeightAnchor=_toolViewHeightAnchor;
 @property(retain, nonatomic) NSLayoutConstraint *toolViewTopAnchor; // @synthesize toolViewTopAnchor=_toolViewTopAnchor;
 @property(retain, nonatomic) PKColorPicker *colorPickerPopover; // @synthesize colorPickerPopover=_colorPickerPopover;
 @property(retain, nonatomic) PKPaletteToolView *tool; // @synthesize tool=_tool;
@@ -39,7 +41,6 @@
 - (void)_showColorSelectionPopover;
 - (void)toggleColorSelectionPopover;
 - (void)updateConstraints;
-- (double)_toolEdgeMargin;
 @property(readonly, nonatomic) UIColor *toolColor;
 - (void)showPreviewForToolWithInk:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

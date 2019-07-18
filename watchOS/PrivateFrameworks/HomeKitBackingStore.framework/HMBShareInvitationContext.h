@@ -13,12 +13,14 @@
 
 @interface HMBShareInvitationContext : HMFObject <NSCopying, NSSecureCoding>
 {
+    _Bool _shouldGrantWriteAccess;
     NSUUID *_participantClientIdentifier;
     CKUserIdentityLookupInfo *_lookupInfo;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly) CKUserIdentityLookupInfo *lookupInfo; // @synthesize lookupInfo=_lookupInfo;
+@property _Bool shouldGrantWriteAccess; // @synthesize shouldGrantWriteAccess=_shouldGrantWriteAccess;
 @property(readonly, copy) NSUUID *participantClientIdentifier; // @synthesize participantClientIdentifier=_participantClientIdentifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

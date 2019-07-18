@@ -18,8 +18,10 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (void)resolveProviderItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)isAllowedToProvideItemID:(id)arg1 toConsumerWithIdentifier:(id)arg2;
 - (id)createIndexerWithExtension:(id)arg1 enabled:(_Bool)arg2 error:(id *)arg3;
-- (void)reimportItemsBelowItemWithID:(id)arg1 removeCachedItems:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)reimportItemsBelowItemWithID:(id)arg1 removeCachedItems:(_Bool)arg2 markItemDataless:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)updateRootAfterDomainChangeWithError:(id *)arg1;
 - (_Bool)removeAllFilesWithError:(id *)arg1;
 - (void)currentMaterializedSetSyncAnchorWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -46,7 +48,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isProviderForURL:(id)arg1;
 @property(readonly, copy) NSArray *rootURLs;
 - (void)invalidate;
-- (unsigned long long)startAndGetSyncAnchor:(id *)arg1;
+- (_Bool)startAndGetSyncAnchor:(id *)arg1;
 - (id)initWithDomain:(id)arg1;
 
 // Remaining properties

@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGRect clipRect;
 @property(readonly, nonatomic) _Bool isDrawingInFlippedContext;
 - (void)updateFromLayout;
+- (void)didAddChildRep:(id)arg1;
 - (void)updateChildrenFromLayout;
 - (struct CGRect)layerFrameInScaledCanvasRelativeToParent;
 @property(readonly, nonatomic) struct CGRect i_layerFrameInScaledCanvasIgnoringDragging;

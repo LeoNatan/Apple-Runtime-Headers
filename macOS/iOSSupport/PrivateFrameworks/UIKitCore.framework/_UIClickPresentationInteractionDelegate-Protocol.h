@@ -6,7 +6,7 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class UIViewController, _UIClickPresentation, _UIClickPresentationInteraction, _UITargetedPreview;
+@class UITargetedPreview, UIViewController, _UIClickPresentation, _UIClickPresentationInteraction;
 
 @protocol _UIClickPresentationInteractionDelegate <NSObject>
 - (_UIClickPresentation *)clickPresentationInteraction:(_UIClickPresentationInteraction *)arg1 presentationForPresentingViewController:(UIViewController *)arg2;
@@ -14,7 +14,7 @@
 @optional
 - (void)clickPresentationInteractionEnded:(_UIClickPresentationInteraction *)arg1 wasCancelled:(BOOL)arg2;
 - (BOOL)clickPresentationInteractionShouldPresent:(_UIClickPresentationInteraction *)arg1;
-- (_UITargetedPreview *)clickPresentationInteraction:(_UIClickPresentationInteraction *)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
+- (UITargetedPreview *)clickPresentationInteraction:(_UIClickPresentationInteraction *)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
 - (BOOL)clickPresentationInteractionShouldBegin:(_UIClickPresentationInteraction *)arg1;
 @end
 

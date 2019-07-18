@@ -4,9 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSNumber, PSAppCellularUsageSpecifier;
+@class NSNumber, PSAppCellularUsageSpecifier, UIAlertController;
 
 @protocol PSAppCellularUsageSpecifierDelegate
 - (void)didFailToSetPolicy:(NSNumber *)arg1 forSpecifier:(PSAppCellularUsageSpecifier *)arg2;
+
+@optional
+- (void)presentAlert:(UIAlertController *)arg1;
 @end
 

@@ -10,6 +10,7 @@
 
 @class NSSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface HMIInputFeatureProvider : NSObject <MLFeatureProvider>
 {
     struct __CVBuffer *_pixelBuffer;

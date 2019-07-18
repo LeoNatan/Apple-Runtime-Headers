@@ -15,12 +15,14 @@
     double _pitchRadians;
     double _yawRadians;
     double _rollRadians;
+    double _fovRadians;
     _Bool _isAutoCrop;
     unsigned long long _hitVertexID;
     struct CGSize _masterImageSize;
     CDStruct_d58201db _aspectRatio;
 }
 
++ (double)defaultFocalLength;
 + (CDStruct_912cb5d2)freeFormAspectRatio;
 +     // Error parsing type: {?=[4]}72@0:8d16d24d32{CGRect={CGPoint=dd}{CGSize=dd}}40, name: _imageTransformFromPitch:yaw:roll:imageRect:
 @property(nonatomic) _Bool isAutoCrop; // @synthesize isAutoCrop=_isAutoCrop;
@@ -70,6 +72,7 @@
 - (struct CGRect)_integralCropRect:(struct CGRect)arg1 straightenAngle:(double)arg2 anchorPoint:(struct CGPoint)arg3;
 - (struct CGRect)integralCropRect:(struct CGRect)arg1;
 -     // Error parsing type: {?=[4]}80@0:8d16d24d32d40{CGRect={CGPoint=dd}{CGSize=dd}}48, name: _getBoundingQuadFromPitch:yaw:roll:withExpansionTol:imageRect:
+-     // Error parsing type: {?=[4]}40@0:8d16d24d32, name: _imageTransformFromPitch:yaw:roll:
 -     // Error parsing type: {?=[4]}16@0:8, name: _imageTransform
 -     // Error parsing type: {?=[4]}48@0:8d16d24d32d40, name: _getBoundingQuadFromPitch:yaw:roll:withExpansionTol:
 - (struct Quad2d)_getBoundingQuadFromPitch:(double)arg1 yaw:(double)arg2 roll:(double)arg3 imageRect:(struct CGRect)arg4;

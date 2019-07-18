@@ -72,6 +72,7 @@ __attribute__((visibility("hidden")))
 - (void)setNeedsUpdateGlyphRenderingMode;
 - (void)triggerSelectionChangedFeedback;
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) _Bool collapsedOrExcluded;
+- (void)setHidden:(_Bool)arg1;
 @property(readonly, nonatomic) UISelectionFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 - (id)initWithFrame:(struct CGRect)arg1;
 

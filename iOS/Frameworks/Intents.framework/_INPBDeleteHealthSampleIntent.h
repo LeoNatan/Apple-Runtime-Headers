@@ -15,12 +15,14 @@
 @interface _INPBDeleteHealthSampleIntent : PBCodable <_INPBDeleteHealthSampleIntent, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     _INPBIntentMetadata *_intentMetadata;
     NSArray *_sampleUuids;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)sampleUuidsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *sampleUuids; // @synthesize sampleUuids=_sampleUuids;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 - (void).cxx_destruct;

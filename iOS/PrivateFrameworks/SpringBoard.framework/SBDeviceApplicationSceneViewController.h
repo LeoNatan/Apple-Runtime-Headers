@@ -60,6 +60,7 @@
 - (id)statusBarAssertionWithStatusBarHidden:(_Bool)arg1 atLevel:(unsigned long long)arg2;
 @property(readonly, nonatomic) SBHomeGrabberView *homeGrabberView;
 - (_Bool)_canShowWhileLocked;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillLayoutSubviews;
 - (_Bool)definesPresentationContext;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;

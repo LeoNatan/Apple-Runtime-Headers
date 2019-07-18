@@ -14,12 +14,11 @@
 @interface HKHealthRecordsStore : NSObject <HKHealthRecordsStoreInterface, _HKXPCExportable>
 {
     HKPluginProxyProvider *_proxyProvider;
+    long long _ingestionState;
     HKObserverSet *_ingestionStateChangeObservers;
     HKObserverSet *_accountStateChangeObservers;
-    long long _ingestionState;
 }
 
-@property(readonly, nonatomic) long long ingestionState; // @synthesize ingestionState=_ingestionState;
 @property(retain, nonatomic) HKObserverSet *accountStateChangeObservers; // @synthesize accountStateChangeObservers=_accountStateChangeObservers;
 @property(retain, nonatomic) HKObserverSet *ingestionStateChangeObservers; // @synthesize ingestionStateChangeObservers=_ingestionStateChangeObservers;
 - (void).cxx_destruct;
@@ -29,6 +28,7 @@
 - (CDUnknownBlockType)_actionCompletionWithObjectOnClientQueue:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_actionCompletionOnClientQueue:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_objectCompletionOnClientQueue:(CDUnknownBlockType)arg1;
+- (void)_getSynchronousHealthRecordsPluginServerProxyWithHandler:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (void)_fetchHealthRecordsPluginServerProxyWithHandler:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (void)deregisterAppSourceFromClinicalUnlimitedAuthorizationModeConfirmation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)registerAppSourceForClinicalUnlimitedAuthorizationModeConfirmation:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -39,6 +39,7 @@
 - (void)removeAccountStateChangeListener:(id)arg1;
 - (void)addAccountStateChangeListener:(id)arg1;
 - (void)clientRemote_updateIngestionState:(long long)arg1;
+@property(readonly, nonatomic) long long currentIngestionState;
 - (void)addIngestionStateListener:(id)arg1;
 - (void)fetchLogoDataForFeaturedBrandsAtScaleKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchLogoDataForBrand:(id)arg1 scaleKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -75,9 +76,11 @@
 - (void)invalidateCredentialForAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)accountWithIdentifier:(id)arg1 error:(id *)arg2;
 - (void)fetchAccountForSource:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAccountsForGateways:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAllAccountsWithCompletion:(CDUnknownBlockType)arg1;
+- (id)allAccountsWithError:(id *)arg1;
 @property(readonly, nonatomic) HKHealthStore *healthStore;
 - (id)initWithHealthStore:(id)arg1;
 - (void)_hk_shouldPromptForOptInClinicalDataCollection:(CDUnknownBlockType)arg1;

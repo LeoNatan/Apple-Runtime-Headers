@@ -23,6 +23,7 @@
 - (void)setCloudPhotoLibraryPauseState:(BOOL)arg1 reason:(short)arg2;
 - (void)setCloudPhotoLibraryEnabledState:(BOOL)arg1;
 - (void)syncCloudPhotoLibrary;
+- (BOOL)shouldAutoEnableiCPLWithError:(id *)arg1;
 - (BOOL)isReadyForCloudPhotoLibrary;
 - (void)setPersonInfoDictionary:(id)arg1 forPersonID:(id)arg2;
 - (id)personInfoDictionaryForPersonID:(id)arg1 error:(id *)arg2;

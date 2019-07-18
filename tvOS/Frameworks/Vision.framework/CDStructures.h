@@ -168,7 +168,7 @@ struct ImageDescriptorBufferJoint {
     unsigned long long _field9;
     int _field10;
     float *_field11;
-    struct vector<bool, std::__1::allocator<bool>> _field12;
+    vector_a7cf9eda _field12;
     struct vector<vision::mod::DescriptorItemSideInfo, std::__1::allocator<vision::mod::DescriptorItemSideInfo>> _field13;
 };
 
@@ -177,6 +177,8 @@ struct ImageDescriptorProcessorAbstract {
 };
 
 struct LandmarkAttributes;
+
+struct LandmarkDetectorDNN;
 
 struct LandmarkDetectorERT;
 
@@ -541,8 +543,8 @@ struct shared_ptr<vision::mod::FaceprintAndAttributes> {
 };
 
 struct shared_ptr<vision::mod::ImageAnalyzer_CustomClassifier> {
-    struct ImageAnalyzer_CustomClassifier *_field1;
-    struct __shared_weak_count *_field2;
+    struct ImageAnalyzer_CustomClassifier *__ptr_;
+    struct __shared_weak_count *__cntrl_;
 };
 
 struct shared_ptr<vision::mod::ImageClassifierAbstract> {
@@ -577,6 +579,11 @@ struct shared_ptr<vision::mod::ImageDescriptorProcessorAbstract> {
 
 struct shared_ptr<vision::mod::LandmarkAttributes> {
     struct LandmarkAttributes *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<vision::mod::LandmarkDetectorDNN> {
+    struct LandmarkDetectorDNN *__ptr_;
     struct __shared_weak_count *__cntrl_;
 };
 
@@ -701,11 +708,11 @@ struct vector<MPClusteringTreeNode *, std::__1::allocator<MPClusteringTreeNode *
 };
 
 struct vector<_Geometry2D_point2D_, std::__1::allocator<_Geometry2D_point2D_>> {
-    struct _Geometry2D_point2D_ *_field1;
-    struct _Geometry2D_point2D_ *_field2;
+    struct _Geometry2D_point2D_ *__begin_;
+    struct _Geometry2D_point2D_ *__end_;
     struct __compressed_pair<_Geometry2D_point2D_ *, std::__1::allocator<_Geometry2D_point2D_>> {
-        struct _Geometry2D_point2D_ *_field1;
-    } _field3;
+        struct _Geometry2D_point2D_ *__value_;
+    } __end_cap_;
 };
 
 struct vector<bool, std::__1::allocator<bool>> {
@@ -922,9 +929,9 @@ typedef struct shared_ptr<vision::mod::FaceIDModel> {
 } shared_ptr_8c39738b;
 
 typedef struct shared_ptr<vision::mod::ImageAnalyzer_CustomClassifier> {
-    struct ImageAnalyzer_CustomClassifier *_field1;
-    struct __shared_weak_count *_field2;
-} shared_ptr_74bdb789;
+    struct ImageAnalyzer_CustomClassifier *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_53937872;
 
 typedef struct shared_ptr<vision::mod::ImageClassifierAbstract> {
     struct ImageClassifierAbstract *__ptr_;
@@ -983,12 +990,20 @@ typedef struct vector<MPClusteringTreeNode *, std::__1::allocator<MPClusteringTr
 } vector_e14a6833;
 
 typedef struct vector<_Geometry2D_point2D_, std::__1::allocator<_Geometry2D_point2D_>> {
-    struct _Geometry2D_point2D_ *_field1;
-    struct _Geometry2D_point2D_ *_field2;
+    struct _Geometry2D_point2D_ *__begin_;
+    struct _Geometry2D_point2D_ *__end_;
     struct __compressed_pair<_Geometry2D_point2D_ *, std::__1::allocator<_Geometry2D_point2D_>> {
-        struct _Geometry2D_point2D_ *_field1;
+        struct _Geometry2D_point2D_ *__value_;
+    } __end_cap_;
+} vector_f48c7054;
+
+typedef struct vector<bool, std::__1::allocator<bool>> {
+    unsigned long long *_field1;
+    unsigned long long _field2;
+    struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long>> {
+        unsigned long long _field1;
     } _field3;
-} vector_09a306ff;
+} vector_a7cf9eda;
 
 typedef struct vector<float, std::__1::allocator<float>> {
     float *__begin_;

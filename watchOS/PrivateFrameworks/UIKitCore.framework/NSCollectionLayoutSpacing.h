@@ -21,6 +21,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) _Bool isFixedSpacing;
 @property(readonly, nonatomic) _Bool isFlexibleSpacing;
+- (_Bool)_hasSpacing;
 @property(readonly, nonatomic) float spacing;
 - (id)description;
 - (id)initWithSpacing:(float)arg1 isFlexible:(_Bool)arg2;

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)addDirection:(unsigned long long)arg1 localizedMenuString:(id)arg2;
 @property(readonly, nonatomic) NSArray *directions;
 @property(readonly, nonatomic) NSArray *localizedDirections;
+- (id)localizedStringForDirection:(unsigned long long)arg1;
 - (id)init;
 
 @end

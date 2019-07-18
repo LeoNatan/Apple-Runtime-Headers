@@ -7,11 +7,11 @@
 #import <HomeKitBackingStore/HMBBackedObjectBase.h>
 
 #import <HomeKitBackingStore/HMBLocalZoneDelegate-Protocol.h>
-#import <HomeKitBackingStore/HMBLocalZoneUpdateProtocol-Protocol.h>
+#import <HomeKitBackingStore/HMBLocalZoneModelObserver-Protocol.h>
 
 @class HMBLocalZone, HMFUnfairLock, NSMutableDictionary, NSMutableSet, NSString, NSUUID;
 
-@interface HMBBackedObjectRoot : HMBBackedObjectBase <HMBLocalZoneUpdateProtocol, HMBLocalZoneDelegate>
+@interface HMBBackedObjectRoot : HMBBackedObjectBase <HMBLocalZoneModelObserver, HMBLocalZoneDelegate>
 {
     NSUUID *_parentModelID;
     HMBLocalZone *_hmbLocalZone;

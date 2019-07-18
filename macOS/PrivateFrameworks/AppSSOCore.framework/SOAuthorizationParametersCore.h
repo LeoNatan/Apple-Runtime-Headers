@@ -16,8 +16,10 @@
     NSDictionary *_httpHeaders;
     NSData *_httpBody;
     NSData *_auditTokenData;
+    long long _responseCode;
 }
 
+@property(nonatomic) long long responseCode; // @synthesize responseCode=_responseCode;
 @property(nonatomic) BOOL useInternalExtensions; // @synthesize useInternalExtensions=_useInternalExtensions;
 @property(retain, nonatomic) NSData *auditTokenData; // @synthesize auditTokenData=_auditTokenData;
 @property(retain, nonatomic) NSData *httpBody; // @synthesize httpBody=_httpBody;

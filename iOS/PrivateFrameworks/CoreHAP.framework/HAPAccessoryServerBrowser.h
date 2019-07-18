@@ -20,7 +20,7 @@
 @property(readonly, nonatomic) long long linkType; // @synthesize linkType=_linkType;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
-- (void)matchAccessoryServerWithSetupID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)matchAccessoryServerWithSetupID:(id)arg1 serverIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)discoverAccessoryServerWithIdentifier:(id)arg1;
 - (void)stopDiscoveringAccessoryServers;
 - (void)startDiscoveringAccessoryServers;

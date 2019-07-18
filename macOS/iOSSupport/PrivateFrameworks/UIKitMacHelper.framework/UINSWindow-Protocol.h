@@ -13,6 +13,7 @@
 @property(readonly, nonatomic) BOOL appearsKeyIncludingSheets;
 @property(readonly, nonatomic) BOOL appearsKey;
 @property(readonly) NSISEngine *_layoutEngine;
+@property(readonly, nonatomic) NSArray *uiWindows;
 @property(nonatomic) long long windowAppearance;
 @property(readonly, copy, nonatomic) NSString *sceneIdentifier;
 @property(nonatomic, getter=isTitlebarTransparent) BOOL titlebarTransparent;

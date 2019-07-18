@@ -8,13 +8,13 @@
 
 #import <HealthRecordsUI/HKHealthRecordsStoreAccountStateChangeListener-Protocol.h>
 
-@class HKClinicalAccount, HRProfile, NSMutableArray, NSString, UIProgressHUD;
+@class HKClinicalAccount, HRProfile, NSDate, NSMutableArray, NSString, UIProgressHUD;
 @protocol WDClinicalAccountDetailsViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface WDClinicalAccountDetailsViewController : HKTableViewController <HKHealthRecordsStoreAccountStateChangeListener>
 {
-    _Bool _activityInProgress;
+    NSDate *_activityEarliestDismissalDate;
     UIProgressHUD *_hud;
     HRProfile *_profile;
     id <WDClinicalAccountDetailsViewControllerDelegate> _delegate;
@@ -34,14 +34,15 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
 - (void)healthRecordsStore:(id)arg1 accountDidChange:(id)arg2 changeType:(long long)arg3;
-- (void)hideActivityInProgressUI;
-- (void)showActivityInProgressUIWithMessage:(id)arg1;
+- (void)_hideActivityAndDismissUnlessError:(id)arg1;
+- (void)_showActivityInProgressUIWithMessage:(id)arg1;
 - (void)_deleteAccount;
 - (void)_presentDeleteAccountFromiCloudConfirmation;
 - (void)_deleteAccountPromptingForiCloudConfirmationIfNeeded;
 - (void)_presentRemoveAccountConfirmation;
 - (void)dismiss:(id)arg1;
 - (void)_popOrDismissViewController;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (_Bool)tableView:(id)arg1 shouldDrawBottomSeparatorForSection:(long long)arg2;
 - (_Bool)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

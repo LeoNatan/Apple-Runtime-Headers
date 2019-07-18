@@ -153,7 +153,7 @@
 - (void)cleanUpAfterGestureFailureForEventGestureController:(id)arg1;
 - (BOOL)_shouldEndGestureEditingOnTap;
 - (BOOL)eventEditorPopoverActiveWhileDraggingForEventGestureController:(id)arg1;
-- (void)validateInterfaceOrientation;
+- (void)validateInterfaceOrientationWithFutureOrientation:(long long)arg1;
 - (void)externallyEndedGestureDragging;
 - (BOOL)didScrollWhenEventGestureController:(id)arg1 scrollTimerFiredToMoveLeft:(BOOL)arg2 right:(BOOL)arg3 vertically:(BOOL)arg4 towardPoint:(struct CGPoint)arg5;
 - (void)eventGestureController:(id)arg1 didSingleTapOccurrence:(id)arg2;
@@ -193,9 +193,11 @@
 - (id)_occurrencesForDayView:(id)arg1;
 - (void)dayView:(id)arg1 didUpdateScrollPosition:(struct CGPoint)arg2;
 - (void)significantTimeChangeOccurred;
-- (void)loadDataBetweenStart:(id)arg1 end:(id)arg2 completionForCurrentDayReload:(CDUnknownBlockType)arg3;
-- (void)loadData:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)loadDataBetweenStart:(id)arg1 end:(id)arg2 withTrigger:(int)arg3 completionForCurrentDayReload:(CDUnknownBlockType)arg4;
+- (void)loadData:(BOOL)arg1 withTrigger:(int)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)reloadData;
+- (void)_performDisplayedOccurrencesChangedDelegateMethodWithTrigger:(int)arg1;
+- (BOOL)_delegateRespondsToDisplayedOccurrencesChangedMethod;
 - (void)reloadDataIfNeeded;
 - (void)setNeedsReload;
 - (id)_eventsForDay:(id)arg1;

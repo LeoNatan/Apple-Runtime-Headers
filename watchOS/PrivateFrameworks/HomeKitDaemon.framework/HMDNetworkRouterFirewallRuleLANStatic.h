@@ -6,11 +6,9 @@
 
 #import <HomeKitDaemon/HMDNetworkRouterFirewallRuleLAN.h>
 
-#import <HomeKitDaemon/HMDNetworkRouterFirewallRuleLANStatic-Protocol.h>
+@class HMFNetAddress;
 
-@class HMFNetAddress, NSDictionary, NSString;
-
-@interface HMDNetworkRouterFirewallRuleLANStatic : HMDNetworkRouterFirewallRuleLAN <HMDNetworkRouterFirewallRuleLANStatic>
+@interface HMDNetworkRouterFirewallRuleLANStatic : HMDNetworkRouterFirewallRuleLAN
 {
     unsigned char _transportProtocol;
     unsigned short _portStart;
@@ -18,27 +16,15 @@
     HMFNetAddress *_ipAddress;
 }
 
++ (id)createWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(_Bool)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(_Bool)arg7 ruleDictionary:(struct NSDictionary *)arg8;
 @property(readonly, nonatomic) unsigned short portEnd; // @synthesize portEnd=_portEnd;
 @property(readonly, nonatomic) unsigned short portStart; // @synthesize portStart=_portStart;
 @property(readonly, nonatomic) HMFNetAddress *ipAddress; // @synthesize ipAddress=_ipAddress;
 @property(readonly, nonatomic) unsigned char transportProtocol; // @synthesize transportProtocol=_transportProtocol;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSDictionary *prettyJSONDictionary;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(_Bool)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(_Bool)arg7;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(_Bool)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(_Bool)arg7 ruleDictionary:(struct NSDictionary *)arg8;
+- (struct NSDictionary *)prettyJSONDictionary;
+- (id)attributeDescriptions;
 - (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(_Bool)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(_Bool)arg7 transportProtocol:(unsigned char)arg8 ipAddress:(id)arg9 portStart:(unsigned short)arg10 portEnd:(unsigned short)arg11;
-
-// Remaining properties
-@property(readonly, nonatomic, getter=areConnectionsWithOtherAccessoriesAllowed) _Bool allowInterAccessoryConnections;
-@property(readonly, nonatomic, getter=isCritical) _Bool critical;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) unsigned char direction;
-@property(readonly) unsigned int hash;
-@property(readonly, nonatomic) NSString *name;
-@property(readonly, nonatomic) unsigned long long purpose;
-@property(readonly, nonatomic, getter=isRequiredForHAPFunctionality) _Bool requiredForHAPFunctionality;
-@property(readonly) Class superclass;
 
 @end
 

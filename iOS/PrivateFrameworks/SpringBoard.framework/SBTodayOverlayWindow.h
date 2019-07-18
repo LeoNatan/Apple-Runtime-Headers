@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SpringBoard/SBWindow.h>
+#import <SpringBoard/SBMainScreenActiveInterfaceOrientationWindow.h>
 
 #import <SpringBoard/SBTodayOverlayWindow-Protocol.h>
 
 @class SBTodayOverlayController;
 
-@interface SBTodayOverlayWindow : SBWindow <SBTodayOverlayWindow>
+@interface SBTodayOverlayWindow : SBMainScreenActiveInterfaceOrientationWindow <SBTodayOverlayWindow>
 {
     SBTodayOverlayController *_todayOverlayController;
 }

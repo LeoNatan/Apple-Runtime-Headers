@@ -6,9 +6,11 @@
 
 #import <CloudKit/CKRecordID.h>
 
+@class NSString;
+
 @interface CKRecordID (HMB)
 + (id)recordIDFromExternalID:(id)arg1 error:(id *)arg2;
 - (id)externalID:(id *)arg1;
-- (id)hmbDescription;
+@property(readonly, copy) NSString *hmbDescription;
 @end
 

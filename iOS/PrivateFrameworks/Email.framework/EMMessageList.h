@@ -9,11 +9,12 @@
 #import <Email/EFContentProtectionObserver-Protocol.h>
 #import <Email/EFLoggable-Protocol.h>
 #import <Email/EMCollectionChangeObserver-Protocol.h>
+#import <Email/EMMessageListQueryResultsObserver-Protocol.h>
 
-@class EFLazyCache, EMMailboxScope, EMMessageRepository, EMThreadScope, NSMapTable, NSMutableDictionary, NSObject, NSSet, NSString;
+@class EFLazyCache, EMMailboxScope, EMMessageRepository, EMObjectID, EMThreadScope, NSMapTable, NSMutableDictionary, NSObject, NSSet, NSString;
 @protocol EFScheduler, OS_dispatch_queue;
 
-@interface EMMessageList : EMCollection <EFContentProtectionObserver, EFLoggable, EMCollectionChangeObserver>
+@interface EMMessageList : EMCollection <EFContentProtectionObserver, EFLoggable, EMCollectionChangeObserver, EMMessageListQueryResultsObserver>
 {
     NSMutableDictionary *_expandedThreads;
     NSMapTable *_messageListItemsForRetry;
@@ -39,6 +40,7 @@
 - (id)_nextThreadItemIDAfterThreadItemID:(id)arg1;
 - (_Bool)_threadIsExpandedForItemID:(id)arg1;
 - (_Bool)_threadIsExpanded:(id)arg1;
+- (void)queryMatchedOldestItemsUpdatedForMailboxesObjectIDs:(id)arg1;
 - (id)_expandedObjectIDsForObjectIDs:(id)arg1;
 - (void)queryMatchedChangedObjectIDs:(id)arg1;
 - (void)queryMatchedMovedObjectIDs:(id)arg1 after:(id)arg2;
@@ -85,6 +87,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy, nonatomic) EMObjectID *objectID;
 @property(readonly) Class superclass;
 
 @end

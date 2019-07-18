@@ -224,6 +224,7 @@
 - (id)searchableTextContentWithoutTitle;
 - (id)searchableTextContent;
 - (id)searchableItemAttributeSet;
+- (id)userActivityContentAttributeSet;
 - (id)searchDomainIdentifier;
 - (id)searchIndexingIdentifier;
 - (id)contentIdentifier;

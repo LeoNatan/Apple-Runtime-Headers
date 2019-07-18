@@ -11,6 +11,7 @@
     // Error parsing type: , name: card
     // Error parsing type: , name: shelves
     // Error parsing type: , name: footerLockup
+    // Error parsing type: , name: arcadeFooterLockup
     // Error parsing type: , name: shareAction
     // Error parsing type: , name: isIncomplete
     // Error parsing type: , name: pageMetrics

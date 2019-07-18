@@ -9,6 +9,7 @@
 @class NSRegularExpression, NSString;
 @protocol WFPythonHTMLParserDelegate;
 
+__attribute__((visibility("hidden")))
 @interface WFPythonHTMLParser : NSObject
 {
     int _currentLineNumber;

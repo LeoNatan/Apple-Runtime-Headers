@@ -87,9 +87,12 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)defaultOriginalSize;
 - (struct CGSize)originalSize;
 - (void)setStyle:(id)arg1;
+@property(readonly, nonatomic) TSPData *imageDataForExport;
 - (void)setImageData:(id)arg1 thumbnailData:(id)arg2;
 - (id)mediaFileType;
 - (id)mediaDisplayName;
+- (_Bool)p_canCopy:(id)arg1;
+- (_Bool)canCopyData;
 - (_Bool)needsDownload;
 - (long long)mediaCompatibilityTypeForData:(id)arg1 associatedHint:(id)arg2;
 - (struct CGSize)targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
@@ -99,7 +102,7 @@ __attribute__((visibility("hidden")))
 - (struct CGAffineTransform)computeFullTransform;
 - (id)geometryWithMask;
 - (id)infoForSelectionPath:(id)arg1;
-@property(readonly, nonatomic) NSArray *childInfos;
+@property(readonly, copy, nonatomic) NSArray *childInfos;
 - (id)styleIdentifierTemplateForNewPreset;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
@@ -137,6 +140,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isFloatingAboveText) _Bool floatingAboveText; // @dynamic floatingAboveText;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic, getter=isInlineWithText) _Bool inlineWithText; // @dynamic inlineWithText;
+@property(readonly, nonatomic) _Bool isMaster;
 @property(nonatomic) _Bool matchesObjectPlaceholderGeometry;
 @property(nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment; // @dynamic owningAttachment;
 @property(readonly, nonatomic) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse; // @dynamic owningAttachmentNoRecurse;

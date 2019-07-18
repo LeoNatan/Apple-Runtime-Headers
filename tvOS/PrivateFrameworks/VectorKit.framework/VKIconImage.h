@@ -14,6 +14,7 @@
     struct _retain_ptr<CGColor *, geo::_retain_cf<CGColor *>, geo::_release_cf, geo::_hash_cf, geo::_equal_cf> _glyphColor;
     struct _retain_ptr<CGColor *, geo::_retain_cf<CGColor *>, geo::_release_cf, geo::_hash_cf, geo::_equal_cf> _calloutFillColor;
     struct _retain_ptr<CGColor *, geo::_retain_cf<CGColor *>, geo::_release_cf, geo::_hash_cf, geo::_equal_cf> _calloutHaloColor;
+    struct _retain_ptr<CGColor *, geo::_retain_cf<CGColor *>, geo::_release_cf, geo::_hash_cf, geo::_equal_cf> _calloutTextColor;
 }
 
 - (id).cxx_construct;
@@ -22,6 +23,7 @@
 - (float)opacity;
 - (_Bool)isBalloonShape;
 - (unsigned int)calloutShape;
+- (struct CGColor *)calloutTextColor;
 - (struct CGColor *)calloutHaloColor;
 - (struct CGColor *)calloutFillColor;
 - (struct CGColor *)glyphColor;

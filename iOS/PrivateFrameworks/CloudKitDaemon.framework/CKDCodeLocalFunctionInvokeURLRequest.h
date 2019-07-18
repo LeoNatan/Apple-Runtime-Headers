@@ -6,7 +6,7 @@
 
 #import <CloudKitDaemon/CKDURLRequest.h>
 
-@class NSData, NSString;
+@class NSData, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface CKDCodeLocalFunctionInvokeURLRequest : CKDURLRequest
@@ -15,8 +15,10 @@ __attribute__((visibility("hidden")))
     NSString *_serviceName;
     NSString *_functionName;
     NSData *_serializedParameters;
+    NSURL *_explicitBaseURL;
 }
 
+@property(copy, nonatomic) NSURL *explicitBaseURL; // @synthesize explicitBaseURL=_explicitBaseURL;
 @property(retain, nonatomic) NSData *serializedParameters; // @synthesize serializedParameters=_serializedParameters;
 @property(copy, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
@@ -35,7 +37,7 @@ __attribute__((visibility("hidden")))
 - (long long)partitionType;
 - (_Bool)allowsAnonymousAccount;
 - (_Bool)requestGETPreAuth;
-- (id)initWithServiceName:(id)arg1 functionName:(id)arg2 serializedParameters:(id)arg3;
+- (id)initWithServiceName:(id)arg1 functionName:(id)arg2 serializedParameters:(id)arg3 explicitBaseURL:(id)arg4;
 
 @end
 

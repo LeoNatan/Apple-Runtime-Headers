@@ -14,11 +14,9 @@ __attribute__((visibility("hidden")))
     BOOL _requiresMasking;
     struct CGImage *_CGImage;
     UIColor *_multiplyColor;
-    id _renditionCacheKey;
 }
 
 + (id)renditionWithCGImage:(struct CGImage *)arg1 color:(id)arg2 requiresMasking:(BOOL)arg3;
-@property(readonly, nonatomic) id renditionCacheKey; // @synthesize renditionCacheKey=_renditionCacheKey;
 @property(readonly, nonatomic) BOOL requiresMasking; // @synthesize requiresMasking=_requiresMasking;
 @property(readonly, nonatomic) UIColor *multiplyColor; // @synthesize multiplyColor=_multiplyColor;
 @property(readonly, nonatomic) struct CGImage *CGImage; // @synthesize CGImage=_CGImage;

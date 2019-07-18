@@ -16,7 +16,7 @@
 - (int)finalizeAnalysisAtTime:(const CDStruct_1b6d18a9 *)arg1;
 - (int)processAudioSamples:(struct AudioBufferList *)arg1 timestamp:(struct AudioTimeStamp)arg2;
 - (int)loadModel;
-- (int)initializeAudioUnit:(const struct AudioStreamBasicDescription *)arg1;
+- (int)setupWithAudioStream:(const struct AudioStreamBasicDescription *)arg1;
 - (void)dealloc;
 - (id)init;
 

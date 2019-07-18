@@ -27,9 +27,9 @@
 - (id)results;
 - (int)finalizeAnalysisAtTime:(const CDStruct_1b6d18a9 *)arg1;
 - (int)processAudioSamples:(struct AudioBufferList *)arg1 timestamp:(struct AudioTimeStamp)arg2;
-- (int)initializeAudioUnit:(const struct AudioStreamBasicDescription *)arg1;
+- (int)setupWithAudioStream:(const struct AudioStreamBasicDescription *)arg1;
 - (int)loadModel;
-- (int)initialize:(struct opaqueCMSampleBuffer *)arg1 sampleBatchSize:(int)arg2;
+- (int)setupWithSample:(struct opaqueCMSampleBuffer *)arg1 andSampleBatchSize:(int)arg2;
 - (void)addDetectionFromTime:(const CDStruct_1b6d18a9 *)arg1 toTime:(const CDStruct_1b6d18a9 *)arg2 result:(id)arg3;
 - (id)audioFormatRequirements;
 - (id)init;

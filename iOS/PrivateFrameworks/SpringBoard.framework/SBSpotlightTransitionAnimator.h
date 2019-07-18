@@ -37,9 +37,6 @@
 @property(nonatomic) _Bool hidesAcquiredSearchHeader; // @synthesize hidesAcquiredSearchHeader=_hidesAcquiredSearchHeader;
 - (void).cxx_destruct;
 - (double)_percentVisibleForPercentComplete:(double)arg1;
-- (unsigned long long)_searchBackdropLowQualityStyleForStyle;
-- (_Bool)_shouldUseDarkTintForStyle;
-- (_Bool)_shouldUseBlurForStyle;
 - (void)_prototypeSettingsChanged;
 - (void)_restoreSpotlightHeaderToInitiatingViewControllerForCancellation:(_Bool)arg1;
 - (void)_restoreSpotlightHeaderToInitiatingViewController;

@@ -28,6 +28,7 @@
 - (void)_performClickingActionForMessage:(id)arg1;
 - (void)_performActionForMessage:(id)arg1;
 - (void)_handleExpirationForIdentifiers:(id)arg1;
+- (void)_timerFiredWithLabel:(id)arg1 performsQuickAction:(BOOL)arg2;
 - (void)_handleActivationForCoalesced:(id)arg1;
 - (void)_dismissCoalescedSuggestions;
 - (void)_dismissCoalescedMessagesPassingTest:(CDUnknownBlockType)arg1;

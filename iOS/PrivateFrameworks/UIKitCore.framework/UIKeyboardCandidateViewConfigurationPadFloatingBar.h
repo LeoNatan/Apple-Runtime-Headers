@@ -4,17 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/UIKeyboardCandidateViewConfigurationPhoneBar.h>
+#import <UIKitCore/UIKeyboardCandidateViewConfigurationPhoneBarDown.h>
 
 __attribute__((visibility("hidden")))
-@interface UIKeyboardCandidateViewConfigurationPadFloatingBar : UIKeyboardCandidateViewConfigurationPhoneBar
+@interface UIKeyboardCandidateViewConfigurationPadFloatingBar : UIKeyboardCandidateViewConfigurationPhoneBarDown
 {
 }
 
-- (_Bool)shouldAlwaysShowSortControl;
-- (_Bool)shouldResizeKeyboardBackdrop;
-- (unsigned long long)rowsToExtend;
-- (id)extendedScrolledState;
+- (_Bool)willCoverKeyboardLayout;
+- (_Bool)allowsPullDownGesture;
 - (id)extendedState;
 - (id)initialState;
 

@@ -58,7 +58,7 @@
 - (void)_aliasToCNIDMapForAliases:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)_contactsBasedMerginEnabled;
 - (void)invalidatePersonCentricGroupedChatsCache;
-- (void)simulateMessageReceive:(id)arg1 serviceName:(id)arg2 handles:(id)arg3 sender:(id)arg4;
+- (void)simulateMessageReceive:(id)arg1 serviceName:(id)arg2 groupID:(id)arg3 handles:(id)arg4 sender:(id)arg5;
 - (id)_existingiMessageChatForChatIdentifier:(id)arg1 style:(unsigned char)arg2;
 - (_Bool)isBeingSetup;
 - (_Bool)doneLoadingAfterMerge;
@@ -142,6 +142,7 @@
 - (id)_allChatInfo;
 - (id)_chatInfoForConnection;
 - (void)_fixUpChatParticipantsIfNeeded:(id)arg1;
+- (void)_fixSMSGroupChatAndStoreIfNeeded:(id)arg1 iMessageChat:(id)arg2;
 - (id)stringForChatStyle:(unsigned char)arg1;
 - (void)removeMessage:(id)arg1 fromChat:(id)arg2;
 - (void)addMessage:(id)arg1 toChat:(id)arg2 deferSpotlightIndexing:(_Bool)arg3;

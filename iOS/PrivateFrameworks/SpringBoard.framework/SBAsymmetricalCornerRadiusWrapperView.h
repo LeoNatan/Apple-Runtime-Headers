@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)_updateMaskedCorners;
 - (void)_updateCornerRadius;
+- (void)sendContentViewToBack:(id)arg1;
 - (void)bringContentViewToFront:(id)arg1;
 - (void)addContentView:(id)arg1;
 - (void)setClipsToBounds:(_Bool)arg1;

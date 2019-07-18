@@ -13,6 +13,7 @@
 
 @interface WiFiAvailabilityMatch : NSObject <WiFiRecommendation>
 {
+    BOOL _unwantedNetworkName;
     long long _priority;
     id <WiFiCandidateNetwork> _network;
     NSString *_SSID;
@@ -21,6 +22,7 @@
 }
 
 + (id)matchWithNetwork:(id)arg1 scannedNetwork:(id)arg2;
+@property(nonatomic) BOOL unwantedNetworkName; // @synthesize unwantedNetworkName=_unwantedNetworkName;
 @property(retain, nonatomic) NSDate *matchedAt; // @synthesize matchedAt=_matchedAt;
 @property(retain, nonatomic) id <WiFiScannedNetwork> scannedNetwork; // @synthesize scannedNetwork=_scannedNetwork;
 @property(readonly, copy, nonatomic) NSString *SSID; // @synthesize SSID=_SSID;
@@ -28,8 +30,6 @@
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
 - (void).cxx_destruct;
 - (id)description;
-- (id)userDescription;
-- (id)userTitle;
 - (unsigned long long)hash;
 - (BOOL)isEqualToAvailabilityMatch:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

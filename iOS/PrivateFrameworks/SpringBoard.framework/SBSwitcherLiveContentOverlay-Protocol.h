@@ -6,11 +6,13 @@
 
 #import <SpringBoard/NSObject-Protocol.h>
 
-@class UIView;
+@class NSString, UIView;
 
 @protocol SBSwitcherLiveContentOverlay <NSObject>
 @property(readonly, nonatomic) UIView *contentOverlayView;
 - (void)setRendersAsynchronously:(_Bool)arg1 withMinificationFilterEnabled:(_Bool)arg2;
+- (_Bool)rendersAsynchronously;
+- (void)noteKeyboardFocusDidChangeToSceneID:(NSString *)arg1;
 - (void)setUsesBrightSceneViewBackgroundMaterial:(_Bool)arg1;
 - (void)setHomeGrabberHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setStatusBarHidden:(_Bool)arg1 nubViewHidden:(_Bool)arg2 animator:(void (^)(void (^)(void), void (^)(_Bool, _Bool)))arg3;

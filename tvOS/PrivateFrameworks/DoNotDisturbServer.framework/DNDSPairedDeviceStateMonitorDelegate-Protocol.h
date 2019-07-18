@@ -9,6 +9,6 @@
 @class DNDSPairedDevice, DNDSPairedDeviceStateMonitor;
 
 @protocol DNDSPairedDeviceStateMonitorDelegate <NSObject>
-- (void)pairedDeviceStateMonitor:(DNDSPairedDeviceStateMonitor *)arg1 didChangePairedDevice:(DNDSPairedDevice *)arg2;
+- (void)pairedDeviceStateMonitor:(DNDSPairedDeviceStateMonitor *)arg1 pairingChangedFromDevice:(DNDSPairedDevice *)arg2 toDevice:(DNDSPairedDevice *)arg3;
 @end
 

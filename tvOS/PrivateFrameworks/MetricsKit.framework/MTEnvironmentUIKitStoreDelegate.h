@@ -15,6 +15,9 @@
 }
 
 + (id)_ams_cookiesForURL:(id)arg1;
+- (id)_activeItunesAccount;
+- (id)_connectionType;
+- (id)_userType;
 - (id)userType;
 - (id)userAgent;
 - (id)storeFrontHeader;

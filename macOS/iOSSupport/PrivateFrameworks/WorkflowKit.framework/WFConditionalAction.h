@@ -6,17 +6,18 @@
 
 #import <WorkflowKit/WFControlFlowAction.h>
 
-#import <WorkflowKit/WFDynamicEnumerationAsynchronousDataSource-Protocol.h>
+#import <WorkflowKit/WFDynamicEnumerationDataSource-Protocol.h>
 #import <WorkflowKit/WFVariableDelegate-Protocol.h>
 
 @class NSString;
 @protocol WFVariableProvider;
 
-@interface WFConditionalAction : WFControlFlowAction <WFDynamicEnumerationAsynchronousDataSource, WFVariableDelegate>
+@interface WFConditionalAction : WFControlFlowAction <WFDynamicEnumerationDataSource, WFVariableDelegate>
 {
     id <WFVariableProvider> _parentVariableProvider;
 }
 
++ (id)serializedParametersForHome:(id)arg1;
 @property(nonatomic) __weak id <WFVariableProvider> parentVariableProvider; // @synthesize parentVariableProvider=_parentVariableProvider;
 - (void).cxx_destruct;
 - (void)variableDidChange:(id)arg1;
@@ -58,7 +59,6 @@
 - (id)createAccompanyingActions;
 - (BOOL)isDeletable;
 - (id)name;
-- (id)copyWithHome:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

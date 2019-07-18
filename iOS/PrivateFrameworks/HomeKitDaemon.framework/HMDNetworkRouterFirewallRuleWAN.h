@@ -6,11 +6,9 @@
 
 #import <HomeKitDaemon/HMDNetworkRouterFirewallRule.h>
 
-#import <HomeKitDaemon/HMDNetworkRouterFirewallRuleWAN-Protocol.h>
+@class HMFNetAddress;
 
-@class HMFNetAddress, NSDictionary, NSString;
-
-@interface HMDNetworkRouterFirewallRuleWAN : HMDNetworkRouterFirewallRule <HMDNetworkRouterFirewallRuleWAN>
+@interface HMDNetworkRouterFirewallRuleWAN : HMDNetworkRouterFirewallRule
 {
     unsigned char _transportProtocol;
     _Bool _usingIGD;
@@ -21,6 +19,7 @@
     HMFNetAddress *_addressEnd;
 }
 
++ (id)createWithJSONDictionary:(struct NSDictionary *)arg1;
 + (_Bool)__decodePorts:(struct NSDictionary *)arg1 portStart:(unsigned short *)arg2 portEnd:(unsigned short *)arg3;
 + (_Bool)__decodeAddresses:(struct NSDictionary *)arg1 address:(id *)arg2 addressEnd:(id *)arg3;
 + (_Bool)__decodeType:(struct NSDictionary *)arg1 transportProtocol:(unsigned char *)arg2 usingIGD:(_Bool *)arg3;
@@ -35,18 +34,9 @@
 @property(readonly, nonatomic) unsigned char transportProtocol; // @synthesize transportProtocol=_transportProtocol;
 @property(readonly, nonatomic) unsigned long long purpose; // @synthesize purpose=_purpose;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSDictionary *prettyJSONDictionary;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3;
+- (struct NSDictionary *)prettyJSONDictionary;
+- (id)attributeDescriptions;
 - (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3 purpose:(unsigned long long)arg4 transportProtocol:(unsigned char)arg5 usingIGD:(_Bool)arg6 address:(id)arg7 addressEnd:(id)arg8 portStart:(unsigned short)arg9 portEnd:(unsigned short)arg10;
-
-// Remaining properties
-@property(readonly, nonatomic, getter=isCritical) _Bool critical;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) NSString *name;
-@property(readonly) Class superclass;
 
 @end
 

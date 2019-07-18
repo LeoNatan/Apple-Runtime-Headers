@@ -6,11 +6,13 @@
 
 #import <HomeKitBackingStore/HMBCloudZone.h>
 
-@class NSArray, NSSet;
+@class NSArray, NSMutableSet, NSSet;
 
 @interface HMDNetworkRouterFirewallRuleCloudZone : HMBCloudZone
 {
     BOOL _useAnonymousRequests;
+    NSSet *_modifiedRecordIDsFromLastPull;
+    NSMutableSet *_uncommittedModifiedRecordIDsFromLastPull;
     NSSet *_watchedRecordIDs;
     NSArray *_signatureVerificationPublicKeys;
 }
@@ -31,9 +33,14 @@
 - (void)__zoneChangeTokensUpdated:(id)arg1 fetchInfo:(id)arg2;
 - (void)__recordDeleted:(id)arg1 recordType:(id)arg2 fetchInfo:(id)arg3;
 - (void)__recordChanged:(id)arg1 fetchInfo:(id)arg2;
+- (void)__finalizeUpdatedRecordIDs;
+- (void)__noteUpdatedRecordID:(id)arg1;
 - (void)__fetchZoneChangesWithFetchInfo:(id)arg1;
-- (id)lazyPerformCloudPullWithFetchToken:(id)arg1 options:(id)arg2;
-- (BOOL)startupWithLocalZone:(id)arg1 error:(id *)arg2;
+- (id)performCloudPullWithFetchToken:(id)arg1 options:(id)arg2;
+- (void)startUpWithLocalZone:(id)arg1;
+@property(retain, nonatomic) NSMutableSet *uncommittedModifiedRecordIDsFromLastPull; // @synthesize uncommittedModifiedRecordIDsFromLastPull=_uncommittedModifiedRecordIDsFromLastPull;
+@property(retain, nonatomic) NSSet *modifiedRecordIDsFromLastPull; // @synthesize modifiedRecordIDsFromLastPull=_modifiedRecordIDsFromLastPull;
+- (id)attributeDescriptions;
 - (id)initWithCloudDatabase:(id)arg1 state:(id)arg2 useAnonymousRequests:(BOOL)arg3 watchedRecordIDs:(id)arg4 signatureVerificationPublicKeys:(id)arg5;
 - (id)decodeModelFrom:(id)arg1 fullyPopulatedRecord:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)__verifyNetworkDeclarationsFromRecord:(id)arg1 baseAccessoryIdentifier:(id *)arg2 networkDeclarationsData:(id *)arg3 error:(id *)arg4;

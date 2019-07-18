@@ -11,9 +11,6 @@
 @class NSString;
 
 @interface PHCollectionList (PXDisplayAssetAdoption) <PXDisplayCollectionList>
-+ (id)px_testingCollectionListWithCollectionTitles:(id)arg1 title:(id)arg2;
-+ (id)px_testingCollectionListWithCollections:(id)arg1 title:(id)arg2;
-+ (id)px_testingTransientIdentifier;
 + (id)_assetCollectionsWithAlbumSubtypes:(id)arg1;
 + (id)px_otherAlbumsWithoutDeletedCollectionList;
 + (id)px_otherAlbumsCollectionList;
@@ -62,7 +59,7 @@
 @property(readonly, nonatomic) _Bool px_isRecentlyAddedSmartAlbum;
 @property(readonly, nonatomic) _Bool px_isRecentlyDeletedSmartAlbum;
 @property(readonly, nonatomic) _Bool px_isRecentlyEditedSmartAlbum;
-@property(readonly, nonatomic) _Bool px_isRecentlySavedSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isRecentsSmartAlbum;
 @property(readonly, nonatomic) _Bool px_isRegularAlbum;
 @property(readonly, nonatomic) _Bool px_isRootSmartAlbum;
 @property(readonly, nonatomic) _Bool px_isScreenRecordingsSmartAlbum;

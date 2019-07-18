@@ -8,9 +8,13 @@
 
 @interface STKClass0SMSAlertSession : STKAlertSession
 {
+    long long _slot;
 }
 
 + (_Bool)_requiresResponseProvider;
+@property(readonly, nonatomic) long long slot; // @synthesize slot=_slot;
+- (id)initWithLogger:(id)arg1 responseProvider:(id)arg2 options:(id)arg3 sound:(id)arg4 slot:(long long)arg5;
+- (id)initWithLogger:(id)arg1 responseProvider:(id)arg2 options:(id)arg3 sound:(id)arg4;
 
 @end
 

@@ -32,7 +32,6 @@ __attribute__((visibility("hidden")))
 - (void)CADDatabaseGetChangedEntityIDsSinceTimestamp:(double)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)CADDatabaseGetChangesSinceSequenceNumber:(int)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)CADDatabaseGetSequenceNumber:(CDUnknownBlockType)arg1;
-- (void)CADDatabaseClearSuperfluousChanges:(CDUnknownBlockType)arg1;
 - (struct __CFSet *)_copyToIntCFSetRef:(id)arg1;
 - (struct __CFArray *)_copyToIntCFArrayRef:(id)arg1;
 - (void)CADDatabaseMarkIndividualChangesConsumed:(id)arg1 reply:(CDUnknownBlockType)arg2;

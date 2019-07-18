@@ -70,6 +70,7 @@
 @property(readonly) BOOL supportsFreebusy;
 @property BOOL isDelegate;
 @property(readonly) BOOL isMainPrincipal;
+@property(readonly) BOOL requiresOpeningAttachmentAsLink;
 @property(readonly) BOOL isAutoScheduleSupported;
 @property(readonly) BOOL isLikenessPropagationSupported;
 @property(readonly) BOOL isPrivateCommentsSupported;

@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)filterWithBackgroundFilter:(id)arg1 inputFilter:(id)arg2;
+- (id)filterWithBackgroundImage:(id)arg1 inputImage:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

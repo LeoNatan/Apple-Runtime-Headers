@@ -42,7 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)_willPerformDiff:(_Bool)arg1;
 - (void)_reloadData;
 - (void)_deleteAllItems;
-- (void)_performUpdateWithCollectionViewUpdateItems:(id)arg1 dataSourceSnapshotter:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
+- (void)_performUpdateWithCollectionViewUpdateItems:(id)arg1 dataSourceSnapshotter:(id)arg2 updateHandler:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)initWithTableView:(id)arg1;
 - (id)initWithCollectionView:(id)arg1;
 - (id)initWithCollectionViewUpdatesSink:(id)arg1;

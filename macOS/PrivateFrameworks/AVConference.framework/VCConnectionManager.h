@@ -30,6 +30,10 @@ __attribute__((visibility("hidden")))
     unsigned int _signalingExcessiveCellularRxBytes;
     unsigned int _budgetConsumingCellularTxBytes;
     unsigned int _budgetConsumingCellularRxBytes;
+    unsigned long long _mediaCellularTxBytes;
+    unsigned long long _mediaCellularRxBytes;
+    unsigned long long _mediaWifiTxBytes;
+    unsigned long long _mediaWifiRxBytes;
     id _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     int _duplicationType;
@@ -69,10 +73,12 @@ __attribute__((visibility("hidden")))
     BOOL _fastMediaDuplicationEnabled;
     BOOL _cellPrimaryInterfaceChangeEnabled;
     BOOL _duplicateImportantPktsEnabled;
+    double _noRemoteDuplicationThresholdFast;
 }
 
 @property(readonly) unsigned int budgetConsumingCellularRxBytes; // @synthesize budgetConsumingCellularRxBytes=_budgetConsumingCellularRxBytes;
 @property(readonly) unsigned int budgetConsumingCellularTxBytes; // @synthesize budgetConsumingCellularTxBytes=_budgetConsumingCellularTxBytes;
+@property double noRemoteDuplicationThresholdFast; // @synthesize noRemoteDuplicationThresholdFast=_noRemoteDuplicationThresholdFast;
 @property BOOL duplicateImportantPktsEnabled; // @synthesize duplicateImportantPktsEnabled=_duplicateImportantPktsEnabled;
 @property BOOL cellPrimaryInterfaceChangeEnabled; // @synthesize cellPrimaryInterfaceChangeEnabled=_cellPrimaryInterfaceChangeEnabled;
 @property BOOL fastMediaDuplicationEnabled; // @synthesize fastMediaDuplicationEnabled=_fastMediaDuplicationEnabled;
@@ -81,6 +87,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) VCStatsRecorder *statsRecorder; // @synthesize statsRecorder=_statsRecorder;
 @property(readonly) double remoteNoRemotePacketInterval; // @synthesize remoteNoRemotePacketInterval=_remoteNoRemotePacketInterval;
 @property BOOL isAudioOnly; // @synthesize isAudioOnly=_isAudioOnly;
+@property(readonly) unsigned long long mediaWifiRxBytes; // @synthesize mediaWifiRxBytes=_mediaWifiRxBytes;
+@property(readonly) unsigned long long mediaWifiTxBytes; // @synthesize mediaWifiTxBytes=_mediaWifiTxBytes;
+@property(readonly) unsigned long long mediaCellularRxBytes; // @synthesize mediaCellularRxBytes=_mediaCellularRxBytes;
+@property(readonly) unsigned long long mediaCellularTxBytes; // @synthesize mediaCellularTxBytes=_mediaCellularTxBytes;
 @property(readonly) unsigned int signalingExcessiveCellularRxBytes; // @synthesize signalingExcessiveCellularRxBytes=_signalingExcessiveCellularRxBytes;
 @property(readonly) unsigned int signalingExcessiveCellularTxBytes; // @synthesize signalingExcessiveCellularTxBytes=_signalingExcessiveCellularTxBytes;
 @property(readonly) unsigned int mediaExcessiveCellularRxBytes; // @synthesize mediaExcessiveCellularRxBytes=_mediaExcessiveCellularRxBytes;
@@ -116,6 +126,8 @@ __attribute__((visibility("hidden")))
 - (int)processConnectionHealthFromControlInfo:(void *)arg1;
 - (int)setConnectionHealthOnControlInfo:(void *)arg1;
 - (void)updateCellularExcessiveBytesWithSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1 bytes:(int)arg2 isMediaData:(BOOL)arg3 isOutgoing:(BOOL)arg4;
+- (void)updateReceivedBytes:(int)arg1 isOnCell:(BOOL)arg2 isIPv6:(BOOL)arg3;
+- (void)updateTransmittedBytes:(int)arg1 isOnCell:(BOOL)arg2 isIPv6:(BOOL)arg3;
 - (void)updateTransmittedExcessiveBytes:(int)arg1 isMediaData:(BOOL)arg2 isIPv6:(BOOL)arg3;
 - (void)updateReceivedExcessiveBytes:(int)arg1 isMediaData:(BOOL)arg2 isIPv6:(BOOL)arg3;
 - (void)reportConnection:(id)arg1 isInitialConnection:(BOOL)arg2;
@@ -151,7 +163,7 @@ __attribute__((visibility("hidden")))
 - (int)getNumberOfConnectionsInternal;
 @property(readonly) int connectionCount;
 - (int)processRemoteWRMSuggestion:(int)arg1 isRemoteDuplicating:(BOOL)arg2;
-- (int)processWRMNotification:(CDStruct_d2860d30 *)arg1;
+- (int)processWRMNotification:(CDStruct_0693755d *)arg1;
 - (void)setPreWarmState:(BOOL)arg1;
 - (int)setWRMUpdateCallback:(CDUnknownFunctionPointerType)arg1 requestNotificationCallback:(CDUnknownFunctionPointerType)arg2 withContext:(void *)arg3;
 - (const char *)reasonStringWithDuplicationType:(int)arg1;

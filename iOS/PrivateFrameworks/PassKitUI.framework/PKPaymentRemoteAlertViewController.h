@@ -56,6 +56,7 @@
 - (void)_setupGroupController;
 - (void)handleButtonActions:(id)arg1;
 - (void)configureWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)didInvalidateForRemoteAlert;
 - (id)childViewControllerForStatusBarStyle;
 - (id)childViewControllerForStatusBarHidden;
 - (_Bool)_canShowWhileLocked;

@@ -4,17 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIImageView.h>
+#import <UIKit/UIView.h>
 
-@class UIImage, UILabel, WebBookmark;
+@class UIColor, UIImage, UIImageView, UILabel, WebBookmark;
 @protocol _SFSiteIconViewUpdateObserver;
 
-@interface _SFSiteIconView : UIImageView
+@interface _SFSiteIconView : UIView
 {
-    UIImageView *_glyphView;
+    UIImageView *_imageView;
+    UIView *_backgroundView;
     UILabel *_monogramLabel;
     int _state;
     id _touchIconRequestToken;
+    UIColor *_preferredBackgroundColor;
     WebBookmark *_bookmark;
     UIImage *_leadingImage;
     id <_SFSiteIconViewUpdateObserver> _updateObserver;
@@ -24,6 +26,7 @@
 @property(retain, nonatomic) UIImage *leadingImage; // @synthesize leadingImage=_leadingImage;
 @property(retain, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
 - (void).cxx_destruct;
+- (id)_effectiveBackgroundColor;
 - (void)_setState:(int)arg1;
 - (void)_setMonogramWithString:(id)arg1 backgroundColor:(id)arg2;
 - (int)_inferredIconSize;
@@ -31,13 +34,14 @@
 - (float)_monogramFontSize;
 - (id)_tintedFolderImage;
 - (void)_setGlyph:(id)arg1 withBackgroundColor:(id)arg2;
-- (void)_clearGlyph;
 - (void)_setSiteIcon:(id)arg1 withBackgroundColor:(id)arg2;
 - (void)_setImage:(id)arg1 withBackgroundColor:(id)arg2;
 - (void)_cancelTouchIconRequest;
 - (void)_updateSiteIconViewWithTouchIconResponse:(id)arg1;
 - (void)_displayDefaultFolderIcon;
 - (void)updateBookmarkData;
+- (struct CGRect)_imageFrame;
+@property(readonly, nonatomic) UIImage *image;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;

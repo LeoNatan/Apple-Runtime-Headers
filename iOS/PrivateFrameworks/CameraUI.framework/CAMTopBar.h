@@ -9,7 +9,7 @@
 #import <CameraUI/CAMExpandableMenuButtonDelegate-Protocol.h>
 #import <CameraUI/CEKApertureButtonDelegate-Protocol.h>
 
-@class CAMElapsedTimeView, CAMExpandableMenuButton, CAMFilterButton, CAMFlashButton, CAMFlipButton, CAMFramerateIndicatorView, CAMHDRButton, CAMLivePhotoButton, CAMMessagesPhotosButton, CAMTimerButton, CEKApertureButton, NSArray, NSSet, PUReviewScreenDoneButton;
+@class CAMElapsedTimeView, CAMExpandableMenuButton, CAMFilterButton, CAMFlashButton, CAMFlipButton, CAMFramerateIndicatorView, CAMHDRButton, CAMIntensityButton, CAMLivePhotoButton, CAMMessagesPhotosButton, CAMTimerButton, CEKApertureButton, NSArray, NSSet, PUReviewScreenDoneButton;
 @protocol CAMControlVisibilityUpdateDelegate;
 
 @interface CAMTopBar : UIView <CAMExpandableMenuButtonDelegate, CEKApertureButtonDelegate>
@@ -23,6 +23,7 @@
     CAMFlipButton *_flipButton;
     CAMFilterButton *_filterButton;
     CEKApertureButton *_apertureButton;
+    CAMIntensityButton *_intensityButton;
     CAMTimerButton *_timerButton;
     CAMLivePhotoButton *_livePhotoButton;
     CAMMessagesPhotosButton *_photosButton;
@@ -50,6 +51,7 @@
 @property(retain, nonatomic) CAMMessagesPhotosButton *photosButton; // @synthesize photosButton=_photosButton;
 @property(retain, nonatomic) CAMLivePhotoButton *livePhotoButton; // @synthesize livePhotoButton=_livePhotoButton;
 @property(retain, nonatomic) CAMTimerButton *timerButton; // @synthesize timerButton=_timerButton;
+@property(retain, nonatomic) CAMIntensityButton *intensityButton; // @synthesize intensityButton=_intensityButton;
 @property(retain, nonatomic) CEKApertureButton *apertureButton; // @synthesize apertureButton=_apertureButton;
 @property(retain, nonatomic) CAMFilterButton *filterButton; // @synthesize filterButton=_filterButton;
 @property(retain, nonatomic) CAMFlipButton *flipButton; // @synthesize flipButton=_flipButton;
@@ -75,6 +77,7 @@
 - (_Bool)shouldHideLivePhotoButtonForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideElapsedTimeViewForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideFlipButtonForGraphConfiguration:(id)arg1;
+- (_Bool)shouldHideIntensityButtonForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideApertureButtonForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideFilterButtonForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideTimerButtonForGraphConfiguration:(id)arg1;

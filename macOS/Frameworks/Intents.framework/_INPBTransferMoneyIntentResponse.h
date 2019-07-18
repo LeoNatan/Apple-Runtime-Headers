@@ -15,6 +15,7 @@
 @interface _INPBTransferMoneyIntentResponse : PBCodable <_INPBTransferMoneyIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBFinancialAccountValue *_fromAccount;
     _INPBFinancialAccountValue *_toAccount;
     _INPBPaymentAmountValue *_transactionAmount;
@@ -24,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBCurrencyAmountValue *transferFee; // @synthesize transferFee=_transferFee;
 @property(retain, nonatomic) _INPBDateTimeRange *transactionScheduledDate; // @synthesize transactionScheduledDate=_transactionScheduledDate;
 @property(copy, nonatomic) NSString *transactionNote; // @synthesize transactionNote=_transactionNote;

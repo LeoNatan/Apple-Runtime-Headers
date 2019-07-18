@@ -29,7 +29,6 @@
 @property(retain, nonatomic) NSArray *tagColors; // @synthesize tagColors=_tagColors;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
-- (struct UIEdgeInsets)alignmentRectInsets;
 - (void)sizeToFit;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

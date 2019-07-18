@@ -28,7 +28,7 @@
 - (void)persistenceDidReconcileJournaledMessages:(NSArray *)arg1;
 - (void)persistenceDidAddMessages:(NSArray *)arg1;
 - (void)persistenceIsAddingMessages:(NSArray *)arg1 journaled:(BOOL)arg2;
-- (void)persistenceWillAddMessage:(id <ECMessage>)arg1;
+- (void)persistenceWillAddMessage:(id <ECMessage>)arg1 fromExistingMessage:(BOOL)arg2;
 - (void)persistenceDidFinishUpdates;
 - (void)persistenceWillBeginUpdates;
 @end

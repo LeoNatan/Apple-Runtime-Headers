@@ -14,6 +14,7 @@
 - (id)_predicateForSDKVersion:(unsigned int)arg1;
 - (_Bool)_validateMetadata:(id)arg1 sample:(id)arg2 error:(id *)arg3;
 - (int)_defaultValue;
+- (int)_categoryValueForValue:(int)arg1;
 - (_Bool)_acceptsValue:(int)arg1;
 
 @end

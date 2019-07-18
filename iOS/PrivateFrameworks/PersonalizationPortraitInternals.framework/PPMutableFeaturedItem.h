@@ -10,6 +10,8 @@
 
 @interface PPMutableFeaturedItem : NSObject
 {
+    unsigned short _countForAlgorithm[15];
+    unsigned short _rankCount[5];
     _Bool _strictFiltering;
     float _maxScore;
     float _minScore;
@@ -42,14 +44,13 @@
     unsigned int _countInNetflix;
     float _meanInterArrivalHour;
     float _varianceInterArrivalHour;
+    float _meanSourceDateInHours;
+    float _varianceSourceDateInHours;
     float _timeSpanInHours;
     float _timeElapsedInHours;
     float _decayedSum;
     float _decayRate;
-    float _decayRateOverride;
     unsigned long long _uniqueAlgorithmCount;
-    NSMutableArray *_countForAlgorithm;
-    NSMutableArray *_rankCount;
     unsigned long long _uniqueOsBuildCount;
     unsigned long long _uniqueAssetVersionCount;
     unsigned long long _uniqueBundleIdCount;
@@ -66,11 +67,12 @@
 @property(readonly, nonatomic) PPSourceStats *sourceStats; // @synthesize sourceStats=_sourceStats;
 @property(readonly, nonatomic) NSDate *scoringDate; // @synthesize scoringDate=_scoringDate;
 @property(readonly, nonatomic) _Bool strictFiltering; // @synthesize strictFiltering=_strictFiltering;
-@property(readonly, nonatomic) float decayRateOverride; // @synthesize decayRateOverride=_decayRateOverride;
 @property(readonly, nonatomic) float decayRate; // @synthesize decayRate=_decayRate;
 @property(readonly, nonatomic) float decayedSum; // @synthesize decayedSum=_decayedSum;
 @property(readonly, nonatomic) float timeElapsedInHours; // @synthesize timeElapsedInHours=_timeElapsedInHours;
 @property(readonly, nonatomic) float timeSpanInHours; // @synthesize timeSpanInHours=_timeSpanInHours;
+@property(readonly, nonatomic) float varianceSourceDateInHours; // @synthesize varianceSourceDateInHours=_varianceSourceDateInHours;
+@property(readonly, nonatomic) float meanSourceDateInHours; // @synthesize meanSourceDateInHours=_meanSourceDateInHours;
 @property(readonly, nonatomic) float varianceInterArrivalHour; // @synthesize varianceInterArrivalHour=_varianceInterArrivalHour;
 @property(readonly, nonatomic) float meanInterArrivalHour; // @synthesize meanInterArrivalHour=_meanInterArrivalHour;
 @property(readonly, nonatomic) unsigned long long uniqueSourceDayOfWeekCount; // @synthesize uniqueSourceDayOfWeekCount=_uniqueSourceDayOfWeekCount;
@@ -103,21 +105,19 @@
 @property(readonly, nonatomic) unsigned long long uniqueAssetVersionCount; // @synthesize uniqueAssetVersionCount=_uniqueAssetVersionCount;
 @property(readonly, nonatomic) unsigned long long uniqueOsBuildCount; // @synthesize uniqueOsBuildCount=_uniqueOsBuildCount;
 @property(readonly, nonatomic) float recordCount; // @synthesize recordCount=_recordCount;
-@property(readonly, nonatomic) NSMutableArray *rankCount; // @synthesize rankCount=_rankCount;
 @property(readonly, nonatomic) float sumDwellTimeInHours; // @synthesize sumDwellTimeInHours=_sumDwellTimeInHours;
 @property(readonly, nonatomic) float varianceScoreWithOutliersRemoved; // @synthesize varianceScoreWithOutliersRemoved=_varianceScoreWithOutliersRemoved;
 @property(readonly, nonatomic) float meanScoreWithOutliersRemoved; // @synthesize meanScoreWithOutliersRemoved=_meanScoreWithOutliersRemoved;
 @property(readonly, nonatomic) float meanScore; // @synthesize meanScore=_meanScore;
 @property(readonly, nonatomic) float minScore; // @synthesize minScore=_minScore;
 @property(readonly, nonatomic) float maxScore; // @synthesize maxScore=_maxScore;
-@property(readonly, nonatomic) NSMutableArray *countForAlgorithm; // @synthesize countForAlgorithm=_countForAlgorithm;
 @property(readonly, nonatomic) unsigned long long uniqueAlgorithmCount; // @synthesize uniqueAlgorithmCount=_uniqueAlgorithmCount;
 - (void).cxx_destruct;
 - (float)computeModelScoreWithScoreInterpreter:(id)arg1;
 - (id)computeModelScoreAndReturnFeaturesWithScoreInterpreter:(id)arg1;
 - (id)generateScoreDict;
 - (void)updateSpecializedFeaturesNamedEntity:(id)arg1;
-- (id)initWithMutableAggregatedItem:(id)arg1 scoringDate:(id)arg2 overrideDecayRate:(_Bool)arg3 decayRateOverride:(float)arg4 sourceStats:(id)arg5 calendar:(id)arg6 strictFiltering:(_Bool)arg7;
+- (id)initWithMutableAggregatedItem:(id)arg1 scoringDate:(id)arg2 decayRate:(float)arg3 sourceStats:(id)arg4 strictFiltering:(_Bool)arg5;
 
 @end
 

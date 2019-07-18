@@ -8,9 +8,8 @@
 
 @interface _TtC7NewsUI220StubMyMagazinesStore : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: currentIssues
-    // Error parsing type: , name: mostRecentlyReadIssue
-    // Error parsing type: , name: downloadedIssues
+    // Error parsing type: , name: state
+    // Error parsing type: , name: badgeIssueIDs
 }
 
 @end

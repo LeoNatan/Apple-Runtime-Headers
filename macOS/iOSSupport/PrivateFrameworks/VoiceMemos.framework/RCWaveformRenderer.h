@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
     BOOL _syncRenderOnMainThread;
     BOOL _paused;
     BOOL _activeDisplayLinkRequired;
+    BOOL _overviewRecordingWaveformRefresh;
     BOOL _renderingQueueIsBusy;
     BOOL _renderReadyForDraw;
     RCWaveformDataSource *_dataSource;
@@ -58,6 +59,7 @@ __attribute__((visibility("hidden")))
 @property(copy) CDUnknownBlockType nextRenderBlock; // @synthesize nextRenderBlock=_nextRenderBlock;
 @property BOOL renderReadyForDraw; // @synthesize renderReadyForDraw=_renderReadyForDraw;
 @property BOOL renderingQueueIsBusy; // @synthesize renderingQueueIsBusy=_renderingQueueIsBusy;
+@property BOOL overviewRecordingWaveformRefresh; // @synthesize overviewRecordingWaveformRefresh=_overviewRecordingWaveformRefresh;
 @property(nonatomic) CDStruct_73a5d3ca highlightTimeRange; // @synthesize highlightTimeRange=_highlightTimeRange;
 @property(nonatomic) CDStruct_73a5d3ca visibleTimeRange; // @synthesize visibleTimeRange=_visibleTimeRange;
 @property(nonatomic) double dataPointWidth; // @synthesize dataPointWidth=_dataPointWidth;

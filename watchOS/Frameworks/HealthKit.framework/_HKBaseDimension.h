@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 + (id)_uniquedDimensionWithName:(id)arg1 configuration:(CDUnknownBlockType)arg2;
 + (id)nullDimension;
 + (id)titer;
++ (id)soundPressureLevel;
 + (id)hearingSensitivity;
 + (id)equivalents;
 + (id)nonConvertibleIU;

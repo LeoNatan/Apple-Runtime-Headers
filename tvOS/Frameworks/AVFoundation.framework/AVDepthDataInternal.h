@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSData *depthBlurEffectRenderingParameters;
     _Bool portraitScoreIsHigh;
     float portraitScore;
+    float portraitLightingEffectStrength;
 }
 
 @end

@@ -30,7 +30,6 @@
 - (id)_headerTextProviderForTimeAtState:(unsigned long long)arg1;
 - (id)_textProviderForTimeAtState:(unsigned long long)arg1;
 - (id)_relativeDateGaugeProviderForTimeInterval:(double)arg1 fullDuration:(double)arg2 paused:(_Bool)arg3 tintColor:(id)arg4;
-- (id)_gaugeProviderForTimeAtState:(unsigned long long)arg1 tintColor:(id)arg2 useFullBarForUnknown:(_Bool)arg3;
 - (id)_gaugeProviderForTimeAtState:(unsigned long long)arg1 tintColor:(id)arg2;
 - (id)_newExtraLargeTemplate;
 - (id)_newSimpleTextTemplate;

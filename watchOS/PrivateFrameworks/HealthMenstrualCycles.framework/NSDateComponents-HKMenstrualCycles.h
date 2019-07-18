@@ -7,7 +7,7 @@
 #import <Foundation/NSDateComponents.h>
 
 @interface NSDateComponents (HKMenstrualCycles)
-+ (id)hkmc_componentsWithDayIndex:(int)arg1;
++ (id)hkmc_componentsWithDayIndex:(int)arg1 calendar:(id)arg2;
 - (id)hkmc_dateDescription;
 - (int)hkmc_dayIndex;
 @end

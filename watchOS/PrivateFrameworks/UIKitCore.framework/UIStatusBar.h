@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIStatusBarServerClient-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSString, UIColor, UILabel, UIStatusBarBackgroundView, UIStatusBarForegroundView, UIStatusBarStyleAnimationParameters, UIStatusBarStyleAttributes, UIStatusBarWindow, UIView;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSString, UIColor, UILabel, UIStatusBarBackgroundView, UIStatusBarForegroundView, UIStatusBarStyleAnimationParameters, UIStatusBarStyleAttributes, UIView;
 
 @interface UIStatusBar : UIStatusBar_Base <UIStatusBarServerClient>
 {
@@ -36,7 +36,6 @@
     NSMutableDictionary *_actions;
     _Bool _disablesRasterization;
     _Bool _timeHidden;
-    UIStatusBarWindow *_statusBarWindow;
 }
 
 + (int)_deviceUserInterfaceLayoutDirection;
@@ -58,8 +57,6 @@
 + (struct NSDirectionalEdgeInsets)_roundedPadEdgeInsets;
 @property(nonatomic, getter=isTimeHidden) _Bool timeHidden; // @synthesize timeHidden=_timeHidden;
 - (_Bool)disablesRasterization;
-- (void)setStatusBarWindow:(id)arg1;
-- (id)statusBarWindow;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_dateTimePreferencesUpdated;
@@ -153,6 +150,7 @@
 - (void)forceUpdateToData:(const CDStruct_0942cde0 *)arg1 animated:(_Bool)arg2;
 - (void)forceUpdateData:(_Bool)arg1;
 - (void)forceUpdate:(_Bool)arg1;
+- (id)statusBarWindow;
 - (void)dealloc;
 - (id)_initWithFrame:(struct CGRect)arg1 showForegroundView:(_Bool)arg2 wantsServer:(_Bool)arg3 inProcessStateProvider:(id)arg4;
 

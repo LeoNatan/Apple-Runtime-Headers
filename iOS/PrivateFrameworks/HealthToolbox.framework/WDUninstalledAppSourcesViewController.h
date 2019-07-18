@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) UIImage *uninistalledAppImage;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)dealloc;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

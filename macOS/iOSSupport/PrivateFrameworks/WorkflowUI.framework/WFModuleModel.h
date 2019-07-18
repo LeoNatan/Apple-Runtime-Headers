@@ -42,6 +42,7 @@
     unsigned long long _parameterCollapsingBehavior;
     Class _customConfigurationClass;
     NSArray *_processingParameters;
+    NSString *_firstResponderParameterKey;
     NSArray *_parametersExcludedFromSelection;
     id <WFModuleParameterStateWriter> _parameterStateWriter;
     id <WFVariableProvider> _variableProvider;
@@ -74,6 +75,7 @@
 @property(readonly, nonatomic) BOOL isWorkflowRunning; // @synthesize isWorkflowRunning=_isWorkflowRunning;
 @property(readonly, nonatomic) CKTypedComponentAction_789af415 processingDoneAction; // @synthesize processingDoneAction=_processingDoneAction;
 @property(readonly, nonatomic) CKTypedComponentAction_789af415 processingCancelAction; // @synthesize processingCancelAction=_processingCancelAction;
+@property(readonly, copy, nonatomic) NSString *firstResponderParameterKey; // @synthesize firstResponderParameterKey=_firstResponderParameterKey;
 @property(readonly, nonatomic) NSArray *processingParameters; // @synthesize processingParameters=_processingParameters;
 @property(readonly, nonatomic) BOOL isProcessing; // @synthesize isProcessing=_isProcessing;
 @property(readonly, nonatomic) CKTypedComponentAction_aa963706 removeAction; // @synthesize removeAction=_removeAction;

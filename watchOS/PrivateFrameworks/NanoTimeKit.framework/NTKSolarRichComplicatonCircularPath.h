@@ -10,6 +10,9 @@
 {
 }
 
++ (id)_cachedSolarPathKeyForDiameter:(float)arg1 horizonLineTop:(float)arg2 horizonLineHeight:(float)arg3 maxCurveHeight:(float)arg4 solarTimeModel:(id)arg5 sunriseWaypoint:(id)arg6 sunsetWayPoint:(id)arg7;
++ (id)_cachedSolarPathForDiameter:(float)arg1 horizonLineTop:(float)arg2 horizonLineHeight:(float)arg3 maxCurveHeight:(float)arg4 solarTimeModel:(id)arg5 sunriseWaypoint:(id)arg6 sunsetWayPoint:(id)arg7 cacheMissBlock:(CDUnknownBlockType)arg8;
++ (id)_solarPathCache;
 + (id)pathWithDiameter:(float)arg1 horizonLineTop:(float)arg2 horizonLineHeight:(float)arg3 maxCurveHeight:(float)arg4 solarTimeModel:(id)arg5 sunriseWaypoint:(id)arg6 sunsetWayPoint:(id)arg7;
 
 @end

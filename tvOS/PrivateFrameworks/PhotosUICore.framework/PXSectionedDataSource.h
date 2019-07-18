@@ -21,14 +21,16 @@
 @property(readonly, nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
 - (long long)_numberOfAssetsWithMaximum:(long long)arg1;
 - (id)inputForItem:(id)arg1;
+- (id)fetchAllItemObjects;
 - (void)prefetchSections:(id)arg1;
 - (void)prefetchIndexPaths:(id)arg1;
 - (_Bool)couldObjectReferenceAppear:(id)arg1;
 - (id)indexPathSetFromIndexPath:(struct PXSimpleIndexPath)arg1 toIndexPath:(struct PXSimpleIndexPath)arg2;
 - (id)indexPathSetForItemsInIndexPath:(struct PXSimpleIndexPath)arg1;
-@property(readonly, nonatomic) PXIndexPathSet *allIndexPaths;
+@property(readonly, nonatomic) PXIndexPathSet *allItemIndexPaths;
 @property(readonly, nonatomic) struct PXSimpleIndexPath lastItemIndexPath;
 @property(readonly, nonatomic) struct PXSimpleIndexPath firstItemIndexPath;
+@property(readonly, nonatomic) PXIndexPathSet *allSectionIndexPaths;
 @property(readonly, nonatomic) struct PXSimpleIndexPath lastSectionIndexPath;
 @property(readonly, nonatomic) struct PXSimpleIndexPath firstSectionIndexPath;
 - (void)enumerateItemIndexPathsStartingAtIndexPath:(struct PXSimpleIndexPath)arg1 untilEndIndexPath:(struct PXSimpleIndexPath)arg2 usingBlock:(CDUnknownBlockType)arg3;

@@ -6,10 +6,11 @@
 
 #import <UIKit/UIViewController.h>
 
-@class ICViewControllerManager;
+@class ICViewControllerManager, UINavigationController;
 
 @interface UIViewController (IC)
 + (void)ic_enableUIViewAnimations:(_Bool)arg1 forBlock:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) UINavigationController *ic_rootNavigationController;
 - (id)ic_embedInNavigationControllerForModalPresentation;
 - (id)ic_topViewController;
 - (void)ic_showSingleButtonAlertWithTitle:(id)arg1 message:(id)arg2;

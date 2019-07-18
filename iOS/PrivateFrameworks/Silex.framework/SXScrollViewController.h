@@ -9,21 +9,21 @@
 #import <Silex/STScrollViewDelegate-Protocol.h>
 #import <Silex/SXAdControllerPresentationDelegate-Protocol.h>
 #import <Silex/SXComponentHosting-Protocol.h>
+#import <Silex/SXContextMenuManagerDelegate-Protocol.h>
 #import <Silex/SXDocumentSectionHosting-Protocol.h>
 #import <Silex/SXFormatInteractorDelegate-Protocol.h>
 #import <Silex/SXKeyboardSupport-Protocol.h>
 #import <Silex/SXPresentationDelegate-Protocol.h>
 #import <Silex/SXPresentationEnvironment-Protocol.h>
-#import <Silex/SXPreviewViewControllerManagerDelegate-Protocol.h>
 #import <Silex/SXScrollPositionRestoring-Protocol.h>
 #import <Silex/SXTangierControllerDelegate-Protocol.h>
 #import <Silex/SXViewportChangeListener-Protocol.h>
 #import <Silex/UIGestureRecognizerDelegate-Protocol.h>
 
 @class NSMutableArray, NSOrderedSet, NSString, SXComponentAnimationController, SXComponentBehaviorController, SXComponentView, SXContext, SXDocumentProvider, SXFontIndex, SXFullscreenCanvasController, SXFullscreenCanvasViewController, SXFullscreenVideoPlaybackManager, SXMediaPlaybackController, SXPresentationAttributes, SXScrollPosition, SXTangierController, SXVideoPlayerViewControllerManager, SXViewControllerPresentingManager, SXViewport, SXViewportDebugger, UIScrollView, UITraitCollection;
-@protocol SXActionManager, SXAdControllerContainer, SXAdDocumentStateManager, SXAnalyticsReportingContainer, SXAppStateMonitor, SXComponentController, SXDOMObjectProviding, SXDocumentControllerContainer, SXDocumentSectionBlueprint, SXDocumentSectionManager, SXDocumentStyleRenderer, SXFormatInteractor, SXMediaSharingPolicyProvider, SXPresentationAttributesManager, SXPresentationDelegateContainer, SXPreviewViewControllerManager, SXResourceDataSourceContainer, SXScrollPositionManager, SXScrollReporting, SXScrollViewControllerDelegate, SXTextSelectionManager, SXTransitionDataSourceProvider, UIViewControllerPreviewing;
+@protocol SXAdControllerContainer, SXAdDocumentStateManager, SXAnalyticsReportingContainer, SXAppStateMonitor, SXComponentController, SXComponentInteractionManager, SXContextMenuManager, SXDOMObjectProviding, SXDocumentControllerContainer, SXDocumentSectionBlueprint, SXDocumentSectionManager, SXDocumentStyleRenderer, SXFormatInteractor, SXMediaSharingPolicyProvider, SXPresentationAttributesManager, SXPresentationDelegateContainer, SXResourceDataSourceContainer, SXScrollPositionManager, SXScrollReporting, SXScrollViewControllerDelegate, SXTextSelectionManager, SXTransitionDataSourceProvider, UIViewControllerPreviewing;
 
-@interface SXScrollViewController : UIViewController <SXFormatInteractorDelegate, SXDocumentSectionHosting, SXPresentationDelegate, STScrollViewDelegate, SXComponentHosting, UIGestureRecognizerDelegate, SXTangierControllerDelegate, SXViewportChangeListener, SXAdControllerPresentationDelegate, SXPreviewViewControllerManagerDelegate, SXPresentationEnvironment, SXKeyboardSupport, SXScrollPositionRestoring>
+@interface SXScrollViewController : UIViewController <SXFormatInteractorDelegate, SXDocumentSectionHosting, SXPresentationDelegate, STScrollViewDelegate, SXComponentHosting, UIGestureRecognizerDelegate, SXTangierControllerDelegate, SXViewportChangeListener, SXAdControllerPresentationDelegate, SXContextMenuManagerDelegate, SXPresentationEnvironment, SXKeyboardSupport, SXScrollPositionRestoring>
 {
     _Bool _restoreScrollPositionOnNextLayout;
     _Bool _isPreviewing;
@@ -47,10 +47,10 @@
     id <SXAdControllerContainer> _adControllerContainer;
     id <SXAppStateMonitor> _appStateMonitor;
     id <SXPresentationAttributesManager> _presentationAttributesManager;
-    id <SXActionManager> _actionManager;
     SXViewControllerPresentingManager *_viewControllerPresentingManager;
     id <SXScrollPositionManager> _scrollPositionManager;
-    id <SXPreviewViewControllerManager> _previewViewControllerManager;
+    id <SXComponentInteractionManager> _componentInteractionManager;
+    id <SXContextMenuManager> _contextMenuManager;
     id <SXMediaSharingPolicyProvider> _mediaSharingPolicyProvider;
     id <SXFormatInteractor> _interactor;
     id <SXDocumentSectionManager> _documentSectionManager;
@@ -104,10 +104,10 @@
 @property(readonly, nonatomic) id <SXDocumentSectionManager> documentSectionManager; // @synthesize documentSectionManager=_documentSectionManager;
 @property(readonly, nonatomic) id <SXFormatInteractor> interactor; // @synthesize interactor=_interactor;
 @property(readonly, nonatomic) id <SXMediaSharingPolicyProvider> mediaSharingPolicyProvider; // @synthesize mediaSharingPolicyProvider=_mediaSharingPolicyProvider;
-@property(readonly, nonatomic) id <SXPreviewViewControllerManager> previewViewControllerManager; // @synthesize previewViewControllerManager=_previewViewControllerManager;
+@property(readonly, nonatomic) id <SXContextMenuManager> contextMenuManager; // @synthesize contextMenuManager=_contextMenuManager;
+@property(readonly, nonatomic) id <SXComponentInteractionManager> componentInteractionManager; // @synthesize componentInteractionManager=_componentInteractionManager;
 @property(readonly, nonatomic) id <SXScrollPositionManager> scrollPositionManager; // @synthesize scrollPositionManager=_scrollPositionManager;
 @property(readonly, nonatomic) SXViewControllerPresentingManager *viewControllerPresentingManager; // @synthesize viewControllerPresentingManager=_viewControllerPresentingManager;
-@property(readonly, nonatomic) id <SXActionManager> actionManager; // @synthesize actionManager=_actionManager;
 @property(readonly, nonatomic) id <SXPresentationAttributesManager> presentationAttributesManager; // @synthesize presentationAttributesManager=_presentationAttributesManager;
 @property(readonly, nonatomic) id <SXAppStateMonitor> appStateMonitor; // @synthesize appStateMonitor=_appStateMonitor;
 @property(readonly, nonatomic) id <SXAdControllerContainer> adControllerContainer; // @synthesize adControllerContainer=_adControllerContainer;
@@ -134,9 +134,9 @@
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (double)snaplineForContentOffset:(double)arg1 velocity:(double)arg2;
 - (void)finishArticleScrollEvents;
-- (void)willEndPreviewingForPreviewViewControllerManager:(id)arg1;
-- (void)willStartPreviewingForPreviewViewControllerManager:(id)arg1;
-- (_Bool)shouldStartPreviewForPreviewViewControllerManager:(id)arg1;
+- (void)willEndPreviewingForContextMenuManager:(id)arg1;
+- (void)willStartPreviewingForContextMenuManager:(id)arg1;
+- (_Bool)shouldStartPreviewForContextMenuManager:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)spacebarPressedWithModifierFlags:(long long)arg1;
 - (void)tangierController:(id)arg1 scrollViewWillEndDragging:(id)arg2 withVelocity:(struct CGPoint)arg3 targetContentOffset:(inout struct CGPoint *)arg4;
@@ -148,7 +148,6 @@
 - (_Bool)accessibilityShouldScrollForScrollView:(id)arg1 defaultValue:(_Bool)arg2;
 - (_Bool)scrollView:(id)arg1 shouldOccludeAccessibilityElement:(id)arg2;
 - (_Bool)shouldPreventDraggingForScrollView:(id)arg1;
-- (void)didTouchScrollView:(id)arg1 withEvent:(id)arg2;
 - (void)updateBehaviorForComponentView:(id)arg1;
 - (id)presentingContentViewController;
 - (void)scrollToRect:(struct CGRect)arg1 animated:(_Bool)arg2;
@@ -203,7 +202,7 @@
 - (void)updatePresentationWithAttributes:(id)arg1;
 - (void)loadContext:(id)arg1 analyticsReporting:(id)arg2 adControllerFactory:(id)arg3;
 - (void)viewDidLoad;
-- (id)initWithScrollView:(id)arg1 documentControllerContainer:(id)arg2 resourceDataSourceContainer:(id)arg3 analyticsReportingContainer:(id)arg4 presentationDelegateContainer:(id)arg5 adControllerContainer:(id)arg6 presentationAttributeManager:(id)arg7 viewport:(id)arg8 tangierController:(id)arg9 componentController:(id)arg10 interactor:(id)arg11 appStateMonitor:(id)arg12 viewControllerPresentingManager:(id)arg13 scrollPositionManager:(id)arg14 documentStyleRenderer:(id)arg15 previewViewControllerManager:(id)arg16 scrollReporter:(id)arg17 videoPlayerViewControllerManager:(id)arg18 mediaSharingPolicyProvider:(id)arg19 fontIndex:(id)arg20 documentProvider:(id)arg21 transitionDataSourceProvider:(id)arg22 DOMObjectProvider:(id)arg23;
+- (id)initWithScrollView:(id)arg1 documentControllerContainer:(id)arg2 resourceDataSourceContainer:(id)arg3 analyticsReportingContainer:(id)arg4 presentationDelegateContainer:(id)arg5 adControllerContainer:(id)arg6 presentationAttributeManager:(id)arg7 viewport:(id)arg8 tangierController:(id)arg9 componentController:(id)arg10 interactor:(id)arg11 appStateMonitor:(id)arg12 viewControllerPresentingManager:(id)arg13 scrollPositionManager:(id)arg14 documentStyleRenderer:(id)arg15 componentInteractionManager:(id)arg16 contextMenuManager:(id)arg17 scrollReporter:(id)arg18 videoPlayerViewControllerManager:(id)arg19 mediaSharingPolicyProvider:(id)arg20 fontIndex:(id)arg21 documentProvider:(id)arg22 transitionDataSourceProvider:(id)arg23 DOMObjectProvider:(id)arg24;
 - (id)scrollViewForFullscreenGalleryWithComponentIdentifier:(id)arg1;
 - (void)presentFullscreenGalleryWithComponentIdentifier:(id)arg1;
 - (id)scrollViewForStripGalleryWithComponentIdentifier:(id)arg1;

@@ -53,7 +53,8 @@
 - (unsigned long long)providedDataTypes;
 - (void)reconfigure:(id)arg1;
 - (_Bool)canReconfigure:(id)arg1;
-- (void)updateCaptureDeviceFrameRate:(double)arg1;
+- (void)updateCaptureDeviceConfigurations:(id)arg1;
+- (void)forceUpdatePowerUsage:(unsigned long long)arg1;
 - (void)addSensorForSettings:(id)arg1;
 - (id)initWithSettings:(id)arg1;
 

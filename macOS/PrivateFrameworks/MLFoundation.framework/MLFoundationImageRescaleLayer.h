@@ -8,6 +8,8 @@
 
 #import <MLFoundation/MLFoundationLayerCompiling-Protocol.h>
 
+@class NSString;
+
 @interface MLFoundationImageRescaleLayer : MLFoundationLayer <MLFoundationLayerCompiling>
 {
     BOOL _alignCorners;
@@ -20,10 +22,15 @@
 @property(readonly, nonatomic) BOOL alignCorners; // @synthesize alignCorners=_alignCorners;
 @property(readonly, nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(readonly, nonatomic) unsigned long long width; // @synthesize width=_width;
-- (id)description;
-- (void)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
+@property(readonly, copy) NSString *description;
+- (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
 - (id)initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 alignCorners:(BOOL)arg3;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

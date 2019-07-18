@@ -25,6 +25,7 @@
         char userInterfaceIdiom;
         char userInterfaceFeature;
         char userInterfaceStyle;
+        char userInterfaceLevel;
     } _needsUpdateFlags;
     BOOL _enabled;
     struct NSObject *_traitCollection;
@@ -37,6 +38,7 @@
     long long _userInterfaceFeature;
     double _displayScale;
     long long _userInterfaceStyle;
+    long long _userInterfaceLevel;
     struct NSObject *_viewController;
     struct CGSize _layoutReferenceSize;
     struct CGSize __viewSize;
@@ -49,6 +51,7 @@
 @property(readonly, nonatomic) __weak NSObject<PXAnonymousViewController> *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic, setter=_setPendingViewTransitionSize:) struct CGSize _pendingViewTransitionSize; // @synthesize _pendingViewTransitionSize=__pendingViewTransitionSize;
 @property(nonatomic, setter=_setViewSize:) struct CGSize _viewSize; // @synthesize _viewSize=__viewSize;
+@property(nonatomic, setter=_setUserInterfaceLevel:) long long userInterfaceLevel; // @synthesize userInterfaceLevel=_userInterfaceLevel;
 @property(nonatomic, setter=_setUserInterfaceStyle:) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsets; // @synthesize safeAreaInsets=_safeAreaInsets;
@@ -78,6 +81,8 @@
 - (void)_updateUserInterfaceFeatureIfNeeded;
 - (long long)userInterfaceFeatureForViewController:(struct NSObject *)arg1;
 - (void)_invalidateUserInterfaceFeature;
+- (void)_updateUserInterfaceLevelIfNeeded;
+- (void)_invalidateUserInterfaceLevel;
 - (void)_updateUserInterfaceStyleIfNeeded;
 - (void)_invalidateUserInterfaceStyle;
 - (void)_updateUserInterfaceIdiomIfNeeded;
@@ -114,6 +119,7 @@
 - (double)displayScaleFromTraitCollection:(struct NSObject *)arg1;
 - (void)getContentSizeCategory:(out long long *)arg1;
 - (void)getSizeClass:(out long long *)arg1 sizeSubclass:(out long long *)arg2;
+- (void)getUserInterfaceLevel:(out long long *)arg1;
 - (void)getUserInterfaceStyle:(out long long *)arg1;
 - (void)getLayoutDirection:(out long long *)arg1;
 - (void)getUserInterfaceIdiom:(out long long *)arg1;

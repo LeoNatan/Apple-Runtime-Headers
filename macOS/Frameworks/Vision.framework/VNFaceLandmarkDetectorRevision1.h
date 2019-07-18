@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     id <VNModelFile> mLandmarkRefinerModelFileHandle;
 }
 
-+ (void)dumpDebugIntermediatesWithImageBuffer:(id)arg1 lumaIntermediate:(struct __CVBuffer *)arg2 alignedBBoxInLumaIntermediateCoordinates:(struct _Geometry2D_rect2D_)arg3 meanShapeInLumaIntermediate:(const vector_09a306ff *)arg4 landmarkPointsInLumaIntermediate:(const vector_09a306ff *)arg5;
++ (void)dumpDebugIntermediatesWithImageBuffer:(id)arg1 lumaIntermediate:(struct __CVBuffer *)arg2 alignedBBoxInLumaIntermediateCoordinates:(struct _Geometry2D_rect2D_)arg3 meanShapeInLumaIntermediate:(const vector_f48c7054 *)arg4 landmarkPointsInLumaIntermediate:(const vector_f48c7054 *)arg5;
 + (BOOL)shouldDumpDebugIntermediates;
 + (id)configurationOptionKeysForDetectorKey;
 - (id).cxx_construct;

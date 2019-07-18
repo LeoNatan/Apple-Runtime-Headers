@@ -8,7 +8,7 @@
 
 #import <AvatarUI/AVTAvatarEditorViewControllerDelegate-Protocol.h>
 
-@class AVTAvatarLibraryCreateNewItem, AVTUIEnvironment, NSArray, NSMutableArray, NSString;
+@class AVTAvatarLibraryCreateNewItem, AVTUIEnvironment, AVTViewSessionProvider, NSArray, NSMutableArray, NSString;
 @protocol AVTAvatarLibraryModelDelegate, AVTAvatarStoreInternal;
 
 @interface AVTAvatarLibraryModel : NSObject <AVTAvatarEditorViewControllerDelegate>
@@ -16,6 +16,7 @@
     _Bool _isCreatingAvatar;
     id <AVTAvatarLibraryModelDelegate> _delegate;
     id <AVTAvatarStoreInternal> _avatarStore;
+    AVTViewSessionProvider *_viewSessionProvider;
     AVTUIEnvironment *_environment;
     AVTAvatarLibraryCreateNewItem *_createNewItem;
     NSMutableArray *_mutableLibraryItems;
@@ -25,6 +26,7 @@
 @property(readonly, nonatomic) NSMutableArray *mutableLibraryItems; // @synthesize mutableLibraryItems=_mutableLibraryItems;
 @property(readonly, nonatomic) AVTAvatarLibraryCreateNewItem *createNewItem; // @synthesize createNewItem=_createNewItem;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
+@property(readonly, nonatomic) AVTViewSessionProvider *viewSessionProvider; // @synthesize viewSessionProvider=_viewSessionProvider;
 @property(readonly, nonatomic) id <AVTAvatarStoreInternal> avatarStore; // @synthesize avatarStore=_avatarStore;
 @property(nonatomic) __weak id <AVTAvatarLibraryModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -45,7 +47,7 @@
 - (void)storeDidChangeNotification:(id)arg1;
 - (unsigned long long)numberOfRecords;
 @property(readonly, nonatomic) NSArray *libraryItems;
-- (id)initWithAvatarStore:(id)arg1 environment:(id)arg2;
+- (id)initWithAvatarStore:(id)arg1 avtViewSessionProvider:(id)arg2 environment:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

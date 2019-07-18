@@ -25,6 +25,7 @@
 - (void)importObjectsWithArray:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_createNewNetwork:(id)arg1 tile:(id)arg2 withMOC:(id)arg3;
 - (void)removeWithFetchRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)prune3BarsNetworks:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeAllWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)cacheFetchResponse:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_canSupportRequest:(id)arg1;

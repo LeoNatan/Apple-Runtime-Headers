@@ -9,7 +9,7 @@
 #import <QuickLook/QLDownloadingItemViewControllerDelegate-Protocol.h>
 #import <QuickLook/QLItemViewControllerPresentingDelegate-Protocol.h>
 
-@class DMFApplicationPolicyMonitor, NSString, QLDownloadingItemViewController, QLErrorItemViewController, QLItem, QLItemViewController, QLLoadingItemViewController, QLPreviewContext, QLScreenTimeItemViewController;
+@class DMFApplicationPolicyMonitor, DMFCategoryPolicyMonitor, NSString, QLDownloadingItemViewController, QLErrorItemViewController, QLItem, QLItemViewController, QLLoadingItemViewController, QLPreviewContext, QLScreenTimeItemViewController;
 
 __attribute__((visibility("hidden")))
 @interface QLItemPresenterViewController : QLItemAggregatedViewController <QLDownloadingItemViewControllerDelegate, QLItemViewControllerPresentingDelegate>
@@ -31,10 +31,12 @@ __attribute__((visibility("hidden")))
     id _contents;
     QLPreviewContext *_context;
     NSString *_hostApplicationBundleIdentifier;
-    DMFApplicationPolicyMonitor *_screenTimeMonitor;
+    DMFApplicationPolicyMonitor *_screenTimeApplicationMonitor;
+    DMFCategoryPolicyMonitor *_screenTimeCategoryMonitor;
 }
 
-@property(retain, nonatomic) DMFApplicationPolicyMonitor *screenTimeMonitor; // @synthesize screenTimeMonitor=_screenTimeMonitor;
+@property(retain, nonatomic) DMFCategoryPolicyMonitor *screenTimeCategoryMonitor; // @synthesize screenTimeCategoryMonitor=_screenTimeCategoryMonitor;
+@property(retain, nonatomic) DMFApplicationPolicyMonitor *screenTimeApplicationMonitor; // @synthesize screenTimeApplicationMonitor=_screenTimeApplicationMonitor;
 @property(copy, nonatomic) NSString *hostApplicationBundleIdentifier; // @synthesize hostApplicationBundleIdentifier=_hostApplicationBundleIdentifier;
 @property(nonatomic) _Bool printing; // @synthesize printing=_printing;
 @property(retain) QLPreviewContext *context; // @synthesize context=_context;
@@ -52,9 +54,13 @@ __attribute__((visibility("hidden")))
 - (id)screenTimePolicyBundleIdentifier;
 - (void)_hideScreenTimeViewControllerIfNeeded;
 - (void)_showScreenTimeViewController;
-- (void)_didReceiveNewScreenTimePolicies:(id)arg1 error:(id)arg2;
+- (void)_didReceiveNewScreenTimePolity:(long long)arg1;
+- (void)_didReceiveNewScreenTimeApplicationPolicies:(id)arg1 error:(id)arg2;
+- (void)_didReceiveNewScreenTimeCategoryPolicy:(id)arg1 error:(id)arg2;
+- (void)_queryScreenTimeCategoryPolicy;
 - (void)_queryScreenTimePolicyForBundleIdentifier:(id)arg1;
-- (void)_screenTimePolicyHasChanged;
+- (void)_setupScreenTimeApplicationHandling;
+- (void)_setupScreenTimeCategoryHandling;
 - (void)_setupScreenTimeHandling;
 - (id)additionalItemViewControllerDescription;
 @property(readonly) QLItemPresenterViewController *itemPresenterViewController;

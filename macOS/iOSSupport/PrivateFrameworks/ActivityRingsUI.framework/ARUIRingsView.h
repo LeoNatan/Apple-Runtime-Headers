@@ -7,26 +7,15 @@
 #import <UIKit/UIView.h>
 
 #import <ActivityRingsUI/ARUIRingGroupControllerDelegate-Protocol.h>
-#import <ActivityRingsUI/ARUIRingsRendering-Protocol.h>
 #import <ActivityRingsUI/CALayerDelegate-Protocol.h>
 
-@class ARUICelebrationsRenderer, ARUIRingGroupController, ARUIRingsRenderPipelineFactory, ARUIRingsRenderer, ARUISpritesRenderPipelineFactory, ARUISpritesRenderer, CADisplayLink, CAMetalLayer, NSArray, NSString, UIImage;
-@protocol MTLCommandQueue, MTLDeviceSPI;
+@class ARUIRingGroupController, ARUIRingsViewRenderer, CADisplayLink, CAMetalLayer, NSArray, NSString, UIImage;
 
-@interface ARUIRingsView : UIView <ARUIRingGroupControllerDelegate, CALayerDelegate, ARUIRingsRendering>
+@interface ARUIRingsView : UIView <ARUIRingGroupControllerDelegate, CALayerDelegate>
 {
     NSArray *_ringGroupControllers;
-    BOOL _viewWillMoveToWindow;
     CAMetalLayer *_metalLayer;
-    id <MTLDeviceSPI> _device;
     // Error parsing type: , name: _drawableSize
-    BOOL _canPremultiplyAlpha;
-    ARUIRingsRenderPipelineFactory *_ringsRenderPipelineFactory;
-    ARUIRingsRenderer *_ringsRenderer;
-    ARUISpritesRenderPipelineFactory *_spritesRenderPipelineFactory;
-    ARUISpritesRenderer *_spritesRenderer;
-    ARUICelebrationsRenderer *_celebrationsRenderer;
-    id <MTLCommandQueue> _commandQueue;
     CADisplayLink *_displayLink;
     double _lastTickTime;
     BOOL _shouldBypassApplicationStateChecking;
@@ -35,33 +24,37 @@
     BOOL _paused;
     BOOL _synchronizesWithCA;
     float _screenScale;
+    ARUIRingsViewRenderer *_renderer;
+    long long _preferredFramesPerSecond;
     double _emptyRingAlpha;
-    UIImage *_iconSpriteImage;
     unsigned long long _iconTextureRows;
     unsigned long long _iconTextureColumns;
-    long long _preferredFramesPerSecond;
+    UIImage *_iconSpriteImage;
 }
 
 + (void)clearSharedCaches;
-+ (id)_iconSpriteImage;
-+ (id)_ringsViewConfiguredForCompanionWithNumberOfRings:(long long)arg1 ringType:(long long)arg2;
++ (id)ringsViewConfiguredForCompanionOfType:(long long)arg1 withRenderer:(id)arg2;
 + (id)ringsViewConfiguredForOneRingOnCompanionOfType:(long long)arg1;
++ (id)ringsViewConfiguredForThreeRingsOnCompanionWithRenderer:(id)arg1;
 + (id)ringsViewConfiguredForThreeRingsOnCompanion;
-+ (id)_ringsViewConfiguredForGizmoWithNumberOfRings:(long long)arg1 ringType:(long long)arg2 withIcons:(BOOL)arg3;
++ (id)ringsViewConfiguredForWatchOfType:(long long)arg1 withIcon:(BOOL)arg2 renderer:(id)arg3;
 + (id)ringsViewConfiguredForOneRingOnWatchOfType:(long long)arg1 withIcon:(BOOL)arg2;
++ (id)ringsViewConfiguredForOneRingOnWatchOfType:(long long)arg1 withRenderer:(id)arg2;
 + (id)ringsViewConfiguredForOneRingOnWatchOfType:(long long)arg1;
++ (id)ringsViewConfiguredForThreeRingsOnWatchWithRenderer:(id)arg1;
 + (id)ringsViewConfiguredForThreeRingsOnWatch;
 @property(readonly, nonatomic) float screenScale; // @synthesize screenScale=_screenScale;
+@property(retain, nonatomic) UIImage *iconSpriteImage; // @synthesize iconSpriteImage=_iconSpriteImage;
+@property(nonatomic) unsigned long long iconTextureColumns; // @synthesize iconTextureColumns=_iconTextureColumns;
+@property(nonatomic) unsigned long long iconTextureRows; // @synthesize iconTextureRows=_iconTextureRows;
+@property(nonatomic) double emptyRingAlpha; // @synthesize emptyRingAlpha=_emptyRingAlpha;
 @property(nonatomic) BOOL synchronizesWithCA; // @synthesize synchronizesWithCA=_synchronizesWithCA;
 @property(nonatomic, getter=isPaused) BOOL paused; // @synthesize paused=_paused;
 @property(readonly, nonatomic) BOOL viewIsVisible; // @synthesize viewIsVisible=_viewIsVisible;
 @property(nonatomic) long long preferredFramesPerSecond; // @synthesize preferredFramesPerSecond=_preferredFramesPerSecond;
 @property(nonatomic) BOOL discardBackBuffers; // @synthesize discardBackBuffers=_discardBackBuffers;
 @property(nonatomic) BOOL shouldBypassApplicationStateChecking; // @synthesize shouldBypassApplicationStateChecking=_shouldBypassApplicationStateChecking;
-@property(nonatomic) unsigned long long iconTextureColumns; // @synthesize iconTextureColumns=_iconTextureColumns;
-@property(nonatomic) unsigned long long iconTextureRows; // @synthesize iconTextureRows=_iconTextureRows;
-@property(retain, nonatomic) UIImage *iconSpriteImage; // @synthesize iconSpriteImage=_iconSpriteImage;
-@property(nonatomic) double emptyRingAlpha; // @synthesize emptyRingAlpha=_emptyRingAlpha;
+@property(readonly, nonatomic) ARUIRingsViewRenderer *renderer; // @synthesize renderer=_renderer;
 - (void).cxx_destruct;
 - (BOOL)shouldAutorotate;
 - (unsigned long long)supportedInterfaceOrientations;
@@ -72,45 +65,36 @@
 - (void)updateDisplayLink;
 - (BOOL)_needsDisplayLink;
 - (BOOL)_shouldAllowRendering;
-- (void)_setNeedsDisplay;
 - (void)updateRingGroupControllers;
 - (void)ringGroupControllerWillAddCelebrationOfType:(unsigned long long)arg1;
 - (void)ringGroupControllerNeedsUpdate:(id)arg1;
-- (id)ringTextureWithCommandBuffer:(id)arg1 rings:(id)arg2 andSize: /* Error: Ran out of types for this method. */;
 - (void)_discardBackBuffersIfNoDisplayLink;
 - (void)drawIntoTexture:(id)arg1 withDrawable:(id)arg2 waitUntilCompleted:(BOOL)arg3;
-- (id)spriteRenderPipelineConfigurationForRingGroupController:(id)arg1;
-- (id)ringsRenderPipelineConfigurationForRingGroupController:(id)arg1;
-- (void)displayLayer:(id)arg1;
 - (void)layoutSubviews;
-- (void)_updateSpriteUniformsForRingGroupController:(id)arg1 andRingIndex:(unsigned long long)arg2;
-- (void)_updateSpriteAttributesForRingGroupController:(id)arg1 andRingIndex:(unsigned long long)arg2;
 - (void)_resumeByNotification:(id)arg1;
 - (void)_pauseByNotification:(id)arg1;
 - (id)metalLayer;
 - (void)_updateMetalLayerProperties;
 - (void)_updateMetalLayerVisibility:(BOOL)arg1;
 - (void)setOpaque:(BOOL)arg1;
-- (void)didMoveToWindow;
 - (void)willMoveToWindow:(id)arg1;
-- (void)willMoveToSuperview:(id)arg1;
 -     // Error parsing type: v80@0:8{?=[4]}16, name: setSkewAdjustmentMatrix:
 - (void)setRingBoundsDiameter:(float)arg1;
 - (void)_updateSkewAdjustment;
 - (void)_updateDrawableSize;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
-- (unsigned long long)maximumRingCount;
+- (unsigned long long)maximumRingCountForControllers:(id)arg1;
 @property(readonly, nonatomic) ARUIRingGroupController *ringGroupController;
 - (id)ringGroupControllers;
 - (id)ringGroups;
-- (id)renderPipelineFactoryWithDevice:(id)arg1 library:(id)arg2;
-- (id)renderPipelineFactoryWithDeviceSPI:(id)arg1 librarySPI:(id)arg2;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
+- (id)initWithRingGroupControllers:(id)arg1 renderer:(id)arg2;
 - (id)initWithRingGroupControllers:(id)arg1;
+- (id)initWithRingGroupController:(id)arg1 renderer:(id)arg2;
 - (id)initWithRingGroupController:(id)arg1;
 - (void)setActiveEnergyPercentage:(double)arg1 briskPercentage:(double)arg2 movingHoursPercentage:(double)arg3 animated:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)setBriskPercentage:(double)arg1 animated:(BOOL)arg2;

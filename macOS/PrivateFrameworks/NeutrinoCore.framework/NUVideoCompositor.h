@@ -8,13 +8,15 @@
 
 #import <NeutrinoCore/AVVideoCompositing-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSMutableSet, NSString;
 @protocol OS_dispatch_queue;
 
 @interface NUVideoCompositor : NSObject <AVVideoCompositing>
 {
-    BOOL _shouldCancelAllRequests;
+    // Error parsing type: AQ, name: _requestCounter
     NSObject<OS_dispatch_queue> *_renderingQueue;
+    NSMutableSet *_inFlightRequests;
+    struct os_unfair_lock_s _inFlightRequestsLock;
 }
 
 - (void).cxx_destruct;
@@ -25,6 +27,7 @@
 @property(readonly, nonatomic) BOOL supportsWideColorSourceFrames;
 - (void)renderContextChanged:(id)arg1;
 - (void)startVideoCompositionRequest:(id)arg1;
+- (BOOL)testAndSetVideoCompositionRequestFinished:(id)arg1;
 - (id)init;
 @property(readonly, nonatomic) NSDictionary *requiredPixelBufferAttributesForRenderContext;
 @property(readonly, nonatomic) NSDictionary *sourcePixelBufferAttributes;

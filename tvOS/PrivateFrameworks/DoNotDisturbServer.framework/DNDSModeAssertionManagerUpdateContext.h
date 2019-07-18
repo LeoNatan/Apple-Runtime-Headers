@@ -18,7 +18,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)invalidateAssertionsMatchingPredicate:(id)arg1 forReason:(unsigned long long)arg2 source:(id)arg3;
+- (id)invalidateAssertionsMatchingPredicate:(id)arg1 details:(id)arg2 source:(id)arg3 reason:(unsigned long long)arg4 reasonOverride:(unsigned long long)arg5;
 - (id)takeAssertionWithDetails:(id)arg1 source:(id)arg2 startDate:(id)arg3;
 - (id)lastCompleteInvalidationDate;
 - (id)lastUpdateDate;

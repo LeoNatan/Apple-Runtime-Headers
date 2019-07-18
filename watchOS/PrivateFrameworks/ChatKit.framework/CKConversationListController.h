@@ -15,7 +15,7 @@
 #import <ChatKit/UITableViewDelegate-Protocol.h>
 #import <ChatKit/UITableViewDelegatePrivate-Protocol.h>
 
-@class CKCloudKitSyncProgressViewController, CKConversation, CKConversationList, CKMessagesController, CKScheduledUpdater, CNContact, CNContactStore, NSArray, NSIndexPath, NSString, UIBarButtonItem, UIButton, UISearchController, UITableView, UIView;
+@class CKCloudKitSyncProgressViewController, CKConversation, CKConversationList, CKConversationListFilterCell, CKLargeTitleAccessoryView, CKMessagesController, CKNavigationBarTitleView, CKScheduledUpdater, CNContact, CNContactStore, NSArray, NSIndexPath, NSString, UIBarButtonItem, UIButton, UISearchController, UITableView, UIView;
 
 @interface CKConversationListController : UITableViewController <UISearchControllerDelegate, UISearchBarDelegate, CKCloudKitSyncProgressViewControllerDelegate, IMCloudKitEventHandler, UITableViewDataSource, UITableViewDelegate, UITableViewDelegatePrivate, UIActionSheetDelegate>
 {
@@ -32,6 +32,8 @@
     CKConversationList *_conversationList;
     CKMessagesController *_messagesController;
     CKCloudKitSyncProgressViewController *_syncProgressViewController;
+    CKNavigationBarTitleView *_navigationBarTitleView;
+    CKLargeTitleAccessoryView *_largeTitleAccessoryView;
     CKScheduledUpdater *_updater;
     UIView *_noMessagesDialogView;
     NSArray *_frozenConversations;
@@ -49,8 +51,10 @@
     UIBarButtonItem *_doneButton;
     CDUnknownBlockType _searchCompletion;
     CNContactStore *_contactStore;
+    CKConversationListFilterCell *_cachedFilterControlCell;
 }
 
+@property(retain, nonatomic) CKConversationListFilterCell *cachedFilterControlCell; // @synthesize cachedFilterControlCell=_cachedFilterControlCell;
 @property(nonatomic) _Bool hasJunkiMessageChats; // @synthesize hasJunkiMessageChats=_hasJunkiMessageChats;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) _Bool shouldUseFastPreviewText; // @synthesize shouldUseFastPreviewText=_shouldUseFastPreviewText;
@@ -72,6 +76,8 @@
 @property(retain, nonatomic) UIView *noMessagesDialogView; // @synthesize noMessagesDialogView=_noMessagesDialogView;
 @property(retain, nonatomic) CKScheduledUpdater *updater; // @synthesize updater=_updater;
 @property(nonatomic) _Bool isShowingSwipeDeleteConfirmation; // @synthesize isShowingSwipeDeleteConfirmation=_isShowingSwipeDeleteConfirmation;
+@property(retain, nonatomic) CKLargeTitleAccessoryView *largeTitleAccessoryView; // @synthesize largeTitleAccessoryView=_largeTitleAccessoryView;
+@property(retain, nonatomic) CKNavigationBarTitleView *navigationBarTitleView; // @synthesize navigationBarTitleView=_navigationBarTitleView;
 @property(retain, nonatomic) CKCloudKitSyncProgressViewController *syncProgressViewController; // @synthesize syncProgressViewController=_syncProgressViewController;
 @property(retain, nonatomic) NSIndexPath *previouslySelectedIndexPath; // @synthesize previouslySelectedIndexPath=_previouslySelectedIndexPath;
 @property(nonatomic) __weak CKMessagesController *messagesController; // @synthesize messagesController=_messagesController;
@@ -126,11 +132,12 @@
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (int)preferredStatusBarStyle;
 - (void)optionsButtonTapped:(id)arg1;
+- (void)showMultiplePhoneNumbersAlertForNicknames;
+- (void)showAccountMismatachAlertForNicknames;
 - (void)composeButtonClicked:(id)arg1;
 - (void)_endHoldingUpdatesForBatchEditing:(_Bool)arg1;
 - (void)_updateToolbarItems;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)_configureBarButton:(id)arg1;
 - (id)inputAccessoryView;
 - (void)_getRotationContentSettings:(CDStruct_86e6d80c *)arg1;
 - (unsigned int)supportedInterfaceOrientations;
@@ -148,7 +155,7 @@
 - (void)viewDidUnload;
 - (void)viewDidLoad;
 - (void)loadView;
-- (_Bool)_messageIsFromFilteredSenderIsSMS:(_Bool)arg1 isContact:(_Bool)arg2 isFiltered:(_Bool)arg3 isSpam:(_Bool)arg4 unknownFilteringEnabled:(_Bool)arg5 smsSpamFilteringEnabled:(_Bool)arg6;
+- (_Bool)_messageIsFromFilteredSenderServiceIsSMS:(_Bool)arg1 lastMessageIsSMS:(_Bool)arg2 isContact:(_Bool)arg3 isFiltered:(_Bool)arg4 isSpam:(_Bool)arg5 unknownFilteringEnabled:(_Bool)arg6 smsSpamFilteringEnabled:(_Bool)arg7;
 - (_Bool)_messageSpamFilteringEnabled;
 - (_Bool)_messageUnknownFilteringEnabled;
 - (_Bool)_getHasJunkiMessageUserDefault;
@@ -177,6 +184,7 @@
 - (void)conversationWillBeMarkedRead:(id)arg1;
 - (void)updateConversationSelection;
 - (void)doneButtonTapped:(id)arg1;
+- (void)updateTitleViews:(_Bool)arg1;
 - (void)updateNavigationItems;
 - (_Bool)_shouldKeepSelection;
 - (void)_groupsChanged:(id)arg1;

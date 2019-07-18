@@ -9,16 +9,17 @@
 __attribute__((visibility("hidden")))
 @interface TSTWidthHeightCollection : NSObject
 {
-    struct vector<std::__1::pair<TSUCellCoord, double>, std::__1::allocator<std::__1::pair<TSUCellCoord, double>>> mFittingHeights;
-    vector_38b190b0 mResetHeights;
+    struct vector<std::__1::pair<TSUCellCoord, double>, std::__1::allocator<std::__1::pair<TSUCellCoord, double>>> _fittingValues;
+    vector_38b190b0 _resetValues;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)enumerateResetHeightsUsingBlock:(CDUnknownBlockType)arg1;
-- (void)addResetHeightForCellID:(struct TSUCellCoord)arg1;
-- (void)enumerateFittingHeightsUsingBlock:(CDUnknownBlockType)arg1;
-- (void)addFittingHeight:(double)arg1 forCellID:(struct TSUCellCoord)arg2;
+- (void)enumerateResetValuesUsingBlock:(CDUnknownBlockType)arg1;
+- (void)addResetValueForCellID:(struct TSUCellCoord)arg1;
+- (void)enumerateFittingValuesUsingBlock:(CDUnknownBlockType)arg1;
+- (void)addFittingValue:(double)arg1 forCellID:(struct TSUCellCoord)arg2;
+@property(readonly, nonatomic) _Bool hasWorkItems;
 
 @end
 

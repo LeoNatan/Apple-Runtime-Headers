@@ -33,7 +33,6 @@
 @property(retain, nonatomic) MPAVEndpointRoute *systemRoute; // @synthesize systemRoute=_systemRoute;
 @property(copy, nonatomic) NSString *volumeAudioCategory; // @synthesize volumeAudioCategory=_volumeAudioCategory;
 - (void).cxx_destruct;
-- (_Bool)_volumeModuleShowsANCControls;
 - (void)_setupOutputDevicesAndVolumeControllers;
 - (unsigned long long)_routeForVolumeController:(id)arg1;
 - (void)_notifyVolumeChangedForVolumeController:(id)arg1 volumeControlAvailable:(_Bool)arg2 effectiveVolume:(float)arg3;
@@ -41,7 +40,11 @@
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
 - (void)routeDidChangeNotification;
 - (void)setVolume:(float)arg1 forRouteType:(unsigned long long)arg2;
-- (_Bool)shouldShowANCControlsForRouteType:(unsigned long long)arg1;
+- (_Bool)volumeControlAvailableForRouteType:(unsigned long long)arg1;
+- (float)volumeForRouteType:(unsigned long long)arg1;
+- (id)availableBluetoothListeningModeForRouteType:(unsigned long long)arg1;
+- (void)setCurrentBluetoothListeningModeForRouteType:(unsigned long long)arg1 bluetoothListeningMode:(id)arg2;
+- (id)currentBluetoothListeningModeForRouteType:(unsigned long long)arg1;
 - (id)imageForRouteType:(unsigned long long)arg1;
 - (id)routeNameForRouteType:(unsigned long long)arg1;
 - (void)removeObserver:(id)arg1;

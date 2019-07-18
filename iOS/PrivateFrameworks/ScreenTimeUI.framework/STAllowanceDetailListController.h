@@ -64,7 +64,7 @@ __attribute__((visibility("hidden")))
 - (void)showCustomizeDaysController:(id)arg1;
 - (id)timeFooterText;
 - (id)budgetTime;
-- (void)showPickerSpecifierForSpecifier:(id)arg1 highlight:(_Bool)arg2;
+- (void)_showOrHidePickerSpecifierForSpecifier:(id)arg1 highlight:(_Bool)arg2;
 - (void)cancelButtonTapped:(id)arg1;
 - (_Bool)hasSetBudgetTimeOrCustomSchedule;
 - (_Bool)hasSetBudgetTime;

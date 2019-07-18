@@ -17,14 +17,14 @@
     NSString *sharingServiceName;
 }
 
-@property(copy, nonatomic, setter=_setSharingServiceName:) NSString *sharingServiceName; // @synthesize sharingServiceName;
-@property(retain, nonatomic) id providedItem; // @synthesize providedItem;
-@property(retain, nonatomic) id placeholderItem; // @synthesize placeholderItem;
+@property(copy, setter=_setSharingServiceName:) NSString *sharingServiceName; // @synthesize sharingServiceName;
+@property(retain) id providedItem; // @synthesize providedItem;
+@property(retain) id placeholderItem; // @synthesize placeholderItem;
 - (void)dealloc;
 - (id)sharingServicePicker:(id)arg1 itemForSharingServiceName:(id)arg2;
 - (id)sharingServicePickerPlaceholderItem:(id)arg1;
 - (void)main;
-@property(readonly, nonatomic) id item;
+@property(readonly) id item;
 - (id)initWithPlaceholderItem:(id)arg1;
 - (id)init;
 

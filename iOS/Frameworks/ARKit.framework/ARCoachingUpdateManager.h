@@ -7,11 +7,10 @@
 #import <objc/NSObject.h>
 
 @class CADisplayLink, CAMetalLayer;
-@protocol ARCoachingUpdateManagerDelegate, MTLCommandQueue, MTLDevice;
+@protocol ARCoachingUpdateManagerDelegate, MTLCommandQueue;
 
 @interface ARCoachingUpdateManager : NSObject
 {
-    id <MTLDevice> _device;
     CAMetalLayer *_metalLayer;
     id <MTLCommandQueue> _commandQueue;
     CADisplayLink *_displayLink;

@@ -14,15 +14,17 @@
 #import <CoreSpeech/CSAudioStreamProviding-Protocol.h>
 #import <CoreSpeech/CSAudioTimeConversionProviding-Protocol.h>
 #import <CoreSpeech/CSSmartSiriVolumeProviding-Protocol.h>
+#import <CoreSpeech/CSTriggerInfoProviding-Protocol.h>
 
 @class CSAudioStream, NSHashTable, NSMutableSet, NSString;
-@protocol CSAudioAlertProvidingDelegate, CSAudioSessionProvidingDelegate, CSAudioStreamProvidingDelegate, OS_xpc_object;
+@protocol CSAudioAlertProvidingDelegate, CSAudioSessionProvidingDelegate, CSAudioStreamProvidingDelegate, CSXPCClientDelegate, OS_xpc_object;
 
-@interface CSXPCClient : NSObject <CSAudioSessionProviding, CSAudioStreamProviding, CSAudioAlertProviding, CSAudioSessionInfoProviding, CSAudioMeterProviding, CSAudioMetricProviding, CSSmartSiriVolumeProviding, CSAudioTimeConversionProviding>
+@interface CSXPCClient : NSObject <CSAudioSessionProviding, CSAudioStreamProviding, CSAudioAlertProviding, CSAudioSessionInfoProviding, CSAudioMeterProviding, CSAudioMetricProviding, CSSmartSiriVolumeProviding, CSAudioTimeConversionProviding, CSTriggerInfoProviding>
 {
     id <CSAudioSessionProvidingDelegate> _audioSessionProvidingDelegate;
     id <CSAudioStreamProvidingDelegate> _audioStreamProvidingDelegate;
     id <CSAudioAlertProvidingDelegate> _audioAlertProvidingDelegate;
+    id <CSXPCClientDelegate> _delegate;
     NSObject<OS_xpc_object> *_xpcConnection;
     CSAudioStream *_audioStream;
     NSMutableSet *_activationAssertions;
@@ -33,6 +35,7 @@
 @property(retain, nonatomic) NSMutableSet *activationAssertions; // @synthesize activationAssertions=_activationAssertions;
 @property(retain, nonatomic) CSAudioStream *audioStream; // @synthesize audioStream=_audioStream;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
+@property(nonatomic) __weak id <CSXPCClientDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CSAudioAlertProvidingDelegate> audioAlertProvidingDelegate; // @synthesize audioAlertProvidingDelegate=_audioAlertProvidingDelegate;
 @property(nonatomic) __weak id <CSAudioStreamProvidingDelegate> audioStreamProvidingDelegate; // @synthesize audioStreamProvidingDelegate=_audioStreamProvidingDelegate;
 @property(nonatomic) __weak id <CSAudioSessionProvidingDelegate> audioSessionProvidingDelegate; // @synthesize audioSessionProvidingDelegate=_audioSessionProvidingDelegate;
@@ -47,6 +50,7 @@
 - (void)_handleSessionInfoProvidingDelegateRouteChangeNotification:(id)arg1;
 - (void)_handleSessionInfoProvidingDelegateInterruptionNotification:(id)arg1;
 - (void)_handleSessionInfoProvidingDelegateMessageBody:(id)arg1;
+- (void)_handleSessionProvidingDelegateDidChangeContext:(id)arg1;
 - (void)_handleSessionProvidingDelegateStreamHandleIdInvalidation:(id)arg1;
 - (void)_handleSessionProvidingDelegateDidSetAudioSession:(id)arg1;
 - (void)_handleSessionProvidingDelegateWillSetAudioSession:(id)arg1;
@@ -60,7 +64,8 @@
 - (void)_handleListenerError:(id)arg1;
 - (void)_handleListenerMessage:(id)arg1;
 - (void)_handleListenerEvent:(id)arg1;
-- (_Bool)_sendMessageAndReplySync:(id)arg1 connection:(id)arg2;
+- (_Bool)_sendMessageAndReplySync:(id)arg1 connection:(id)arg2 error:(id *)arg3;
+- (id)_decodeError:(id)arg1;
 - (void)_sendMessage:(id)arg1 connection:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (unsigned long long)sampleCountFromHostTime:(unsigned long long)arg1;
 - (unsigned long long)hostTimeFromSampleCount:(unsigned long long)arg1;
@@ -78,7 +83,7 @@
 - (id)recordDeviceInfo;
 - (id)recordRoute;
 - (void)enableVoiceTrigger:(_Bool)arg1 withAssertion:(id)arg2;
-- (void)voiceTriggerInfo:(CDUnknownBlockType)arg1;
+- (void)triggerInfoForContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)stopAudioStream:(id)arg1 option:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)startAudioStream:(id)arg1 option:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)prepareAudioStream:(id)arg1 request:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -105,7 +110,7 @@
 - (_Bool)activateAudioSessionWithReason:(unsigned long long)arg1 error:(id *)arg2;
 - (_Bool)prewarmAudioSessionWithError:(id *)arg1;
 - (void)pingpong:(CDUnknownBlockType)arg1;
-- (_Bool)prepareAudioProviderWithContext:(id)arg1 isSiriSpeechRequest:(_Bool)arg2 error:(id *)arg3;
+- (_Bool)prepareAudioProviderWithContext:(id)arg1 clientType:(unsigned long long)arg2 error:(id *)arg3;
 - (void)dealloc;
 - (void)disconnect;
 - (void)connect;

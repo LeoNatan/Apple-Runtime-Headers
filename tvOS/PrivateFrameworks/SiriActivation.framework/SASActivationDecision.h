@@ -11,6 +11,8 @@
 }
 
 + (_Bool)_shouldSiriActivateForSiriSetupWithSystemState:(id)arg1;
++ (_Bool)_shouldSiriActivateForRequest:(id)arg1 buttonTriggerStateActive:(_Bool)arg2 systemState:(id)arg3 preferences:(id)arg4 analyticsContext:(id)arg5 currentRequestState:(long long)arg6;
++ (_Bool)canDirectActionActivateSiriWithSystemState:(id)arg1 preferences:(id)arg2 currentRequestState:(long long)arg3;
 + (_Bool)shouldSiriActivateForRequest:(id)arg1 buttonTriggerStateActive:(_Bool)arg2 systemState:(id)arg3 preferences:(id)arg4 analyticsContext:(id)arg5 currentRequestState:(long long)arg6;
 
 @end

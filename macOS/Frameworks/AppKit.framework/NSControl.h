@@ -25,7 +25,8 @@
         unsigned int asmlwidth:1;
         unsigned int hsmlwidth:1;
         unsigned int dontValidate:1;
-        unsigned int reserved:22;
+        unsigned int allowsLogicalLayoutDirectionExplicitlySet:1;
+        unsigned int reserved:21;
     } _conFlags;
     _NSControlModel *_model;
     NSFont *_font;

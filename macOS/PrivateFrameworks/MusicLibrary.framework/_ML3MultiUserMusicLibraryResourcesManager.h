@@ -25,12 +25,8 @@ __attribute__((visibility("hidden")))
 - (void)terminateForFailureToPerformDatabasePathChange;
 - (void)emergencyDisconnectWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performDatabasePathChange:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_libraryPathChangeNotification:(id)arg1;
-- (void)_tearDownNotifications;
-- (void)_setupNotifications;
 @property(copy, nonatomic) NSString *cachedLibraryContainerPath; // @synthesize cachedLibraryContainerPath=_cachedLibraryContainerPath;
 - (id)libraryContainerPath;
-- (void)dealloc;
 - (id)initWithLibraryResourcesService:(id)arg1;
 
 // Remaining properties

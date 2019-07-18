@@ -9,7 +9,7 @@
 #import <AOSUI/InternetAccountExports-Protocol.h>
 #import <AOSUI/MMWebKitControllerDelegate-Protocol.h>
 
-@class ADMChangePasswordController, CDPContext, CDPStateController, CDPStateUIController, JSContext, JSValue, MMJSDialogController, MMWebKitController, NSDictionary, NSImage, NSMutableDictionary, NSString, NSView, NSWindow, WebView, iCloudPurchaseStorageController;
+@class ADMChangePasswordController, CDPContext, CDPStateController, CDPStateUIController, JSContext, JSValue, MMJSDialogController, MMWebKitController, NSDictionary, NSImage, NSMutableDictionary, NSNumber, NSString, NSView, NSWindow, WebView, iCloudPurchaseStorageController;
 @protocol ICAUIDelegate, ICAWebKitViewControllerDelegate, MBICAUIDelegate;
 
 @interface MMICAWebKitViewController : NSObject <MMWebKitControllerDelegate, InternetAccountExports>
@@ -77,6 +77,10 @@
 - (void)generateNewRecoveryKeyWithType:(long long)arg1 andCompletion:(CDUnknownBlockType)arg2;
 - (void)deleteRecoveryKey:(CDUnknownBlockType)arg1;
 - (void)_setRecoveryKeyState:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) NSString *numberOfDaysSinceIMExit;
+- (void)setIMEnabled:(BOOL)arg1;
+@property(readonly, nonatomic) NSNumber *isIMChangingEnabledState;
+@property(readonly, nonatomic) NSNumber *isIMEnabled;
 - (void)refreshFamilyCircle;
 - (void)refreshPage;
 - (void)getIcon:(id)arg1 bundleIconName:(id)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 callback:(id)arg5;

@@ -15,6 +15,7 @@
 - (void)notificationMasterList:(NCNotificationMasterList *)arg1 scrollViewDidScroll:(UIScrollView *)arg2;
 - (void)notificationMasterList:(NCNotificationMasterList *)arg1 scrollViewWillBeginDragging:(UIScrollView *)arg2;
 - (void)notificationMasterList:(NCNotificationMasterList *)arg1 requestsClearingFromIncomingSectionNotificationRequests:(NSArray *)arg2;
+- (void)notificationMasterListDidScrollToRevealNotificationHistory:(NCNotificationMasterList *)arg1;
 - (_Bool)notificationMasterListShouldAllowNotificationHistoryReveal:(NCNotificationMasterList *)arg1;
 @end
 

@@ -26,8 +26,6 @@
 @property(nonatomic) id <AVTAvatarAttributeEditorSectionColorDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AVTAvatarAttributeEditorColorSection *colorSection; // @synthesize colorSection=_colorSection;
 - (void).cxx_destruct;
-- (id)indexPathForLastPrimary;
-- (id)indexPathOfNaturalColor;
 - (id)indexPathOfExtendedIcon;
 - (void)selectSectionItemAtIndexPath:(id)arg1;
 - (id)sectionItemAtIndex:(long long)arg1;
@@ -37,7 +35,7 @@
 - (void)toggleSliderMode;
 @property(readonly, nonatomic) _Bool isShowingExtended;
 @property(readonly, nonatomic) _Bool isShowingSlider;
-- (void)updateSelectedIndexesSelectingItem:(id)arg1 notifyDelegateEvenIfSameIndex:(_Bool)arg2;
+- (void)updateSelectedIndexesSelectingItem:(id)arg1 fromUserInteraction:(_Bool)arg2;
 @property(readonly, nonatomic) long long selectedItemIndex;
 - (id)init;
 

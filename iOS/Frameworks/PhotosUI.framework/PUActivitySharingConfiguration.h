@@ -23,12 +23,14 @@ __attribute__((visibility("hidden")))
     NSArray *_excludedActivityTypes;
     PHPerson *_person;
     NSString *_title;
+    NSString *_subtitle;
     id <PXDisplayAsset> _keyAsset;
     unsigned long long _sourceOrigin;
 }
 
 @property(nonatomic) unsigned long long sourceOrigin; // @synthesize sourceOrigin=_sourceOrigin;
 @property(retain, nonatomic) id <PXDisplayAsset> keyAsset; // @synthesize keyAsset=_keyAsset;
+@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) _Bool excludeShareActivity; // @synthesize excludeShareActivity=_excludeShareActivity;
 @property(nonatomic) _Bool wantsActionSheet; // @synthesize wantsActionSheet=_wantsActionSheet;

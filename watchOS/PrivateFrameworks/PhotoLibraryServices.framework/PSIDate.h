@@ -12,7 +12,6 @@
     long long _int64RepresentationMask;
 }
 
-+ (id)descriptionWithInt64Representation:(long long)arg1;
 + (id)distantFuture;
 + (id)distantPast;
 @property(readonly) long long int64RepresentationMask; // @synthesize int64RepresentationMask=_int64RepresentationMask;
@@ -22,6 +21,7 @@
 @property(readonly) int day;
 @property(readonly) int month;
 @property(readonly) int year;
+@property(readonly) int era;
 - (id)initWithInt64Representation:(long long)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

@@ -11,7 +11,7 @@
 #import <FrontBoard/FBSceneClient-Protocol.h>
 #import <FrontBoard/FBSceneClientProvider-Protocol.h>
 
-@class FBSceneClientProviderInvalidationAction, NSMutableArray, NSMutableDictionary, NSString;
+@class FBSSceneClientSettingsDiffInspector, FBSceneClientProviderInvalidationAction, NSMutableArray, NSMutableDictionary, NSString;
 @protocol NSCopying;
 
 @interface FBLocalSynchronousSceneClientProvider : NSObject <FBSWorkspaceScenesSource, FBSceneClient, FBSSceneUpdater, FBSceneClientProvider>
@@ -21,21 +21,19 @@
     FBSceneClientProviderInvalidationAction *_invalidationAction;
     NSMutableDictionary *_localSceneInfoByIdentifier;
     NSMutableDictionary *_hostsByIdentifier;
+    FBSSceneClientSettingsDiffInspector *_clientSettingsDiffInspector;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)_sendSceneCreateFBSWorkspaceDelegateForSceneInfo:(id)arg1 transitionContext:(id)arg2;
-- (void)_updateSceneSettingsForScene:(id)arg1 layer:(id)arg2;
+- (void)_updateLevelForScene:(id)arg1;
 - (id)sceneWithIdentifier:(id)arg1;
 - (id)scenes;
 @property(readonly, nonatomic) NSObject<NSCopying> *identifier;
 - (void)scene:(id)arg1 sendMessage:(id)arg2 withResponse:(CDUnknownBlockType)arg3;
 - (void)scene:(id)arg1 didReceiveActions:(id)arg2;
 - (void)scene:(id)arg1 didUpdateClientSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4;
-- (void)scene:(id)arg1 didDetachLayer:(id)arg2;
-- (void)scene:(id)arg1 didUpdateLayer:(id)arg2;
-- (void)scene:(id)arg1 didAttachLayer:(id)arg2;
 - (id)endpoint;
 - (id)hostProcess;
 - (id)callOutQueue;

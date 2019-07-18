@@ -14,7 +14,7 @@
 #import <UIKitCore/_UITouchable-Protocol.h>
 
 @class NSArray, NSString, NSUndoManager, NSUserActivity, UIInputViewController, UITextInputAssistantItem, UITextInputMode, UIView;
-@protocol UITextInput, UITextInputPrivate;
+@protocol UITextInput, UITextInputPrivate, _UICopyConfigurationReading;
 
 @interface UIResponder : NSObject <UITextInput_Internal, UITextInputAdditions, UIUserActivityRestoring, _UIStateRestorationContinuation, _UITouchable, UIResponderStandardEditActions>
 {
@@ -36,7 +36,7 @@
 + (void)_stopDeferredTrackingObjectsWithIdentifiers;
 + (void)_startDeferredTrackingObjectsWithIdentifiers;
 + (id)objectWithRestorationIdentifierPath:(id)arg1;
-- (long long)undoOption;
+@property(readonly, nonatomic) long long editingInteractionConfiguration;
 - (void)_setDropDataOwner:(long long)arg1;
 - (long long)_dropDataOwner;
 - (void)_setDragDataOwner:(long long)arg1;
@@ -132,10 +132,9 @@
 - (void)_share:(id)arg1;
 - (void)_lookup:(id)arg1;
 - (void)_define:(id)arg1;
-- (id)validationForCommand:(id)arg1;
 - (void)validateCommand:(id)arg1;
-- (void)_buildCommandsFromChainWithBuilder:(id)arg1;
-- (void)buildCommandsWithBuilder:(id)arg1;
+- (void)_buildMenuFromChainWithBuilder:(id)arg1;
+- (void)buildMenuWithBuilder:(id)arg1;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (id)_targetCanPerformBlock:(CDUnknownBlockType)arg1;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
@@ -276,6 +275,7 @@
 @property(readonly, nonatomic, getter=isEditable) _Bool editable;
 - (id)__textInteractionFromAssistant;
 - (void)__tearDownInteractionAssistantIfNecessary;
+- (void)__prepareInteractionAssistantIfNecessary;
 - (void)__createInteractionAssistantIfNecessaryWithMode:(long long)arg1;
 - (id)interactionAssistant;
 - (id)textInputView;
@@ -301,6 +301,13 @@
 - (id)_restorationIdentifierPath;
 @property(copy, nonatomic) NSString *restorationIdentifier;
 - (void)_rebuildStateRestorationIdentifierPath;
+- (_Bool)_handleCopyConfigurationShare:(id)arg1;
+- (_Bool)_handleCopyConfigurationDoesNotHandleSelector:(SEL)arg1;
+- (_Bool)_handleCopyConfigurationCanPerformAction:(SEL)arg1;
+- (id)_firstNonnullCopyConfigurationInResponderChainForView:(id)arg1 location:(struct CGPoint)arg2 responder:(id *)arg3;
+@property(retain, nonatomic, setter=_setCopyConfiguration:) id <_UICopyConfigurationReading> _copyConfiguration;
+- (id)_effectiveCopyConfigurationForView:(id)arg1 location:(struct CGPoint)arg2;
+- (id)_effectiveCopyConfiguration;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

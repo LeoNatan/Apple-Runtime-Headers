@@ -18,9 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (id)scopedSearchQuery;
 - (void)updateCollectionsForDomains:(id)arg1;
 - (void)fetchTrashItemsFromProvider:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)filterDomains:(id)arg1;
+@property(readonly) FPQueryCollection *trashQueryCollection;
 - (id)initWithQueryCollection:(id)arg1;
 - (void)setDesiredNumberOfItems:(id)arg1;
 - (void)setExcludedFileTypes:(id)arg1;

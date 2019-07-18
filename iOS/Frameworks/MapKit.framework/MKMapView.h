@@ -183,6 +183,7 @@
     unsigned long long _compassInsetEdges;
     _Bool _explicitCompassInsetEdges;
     MKMapViewLabelMarkerState *_selectedLabelMarkerState;
+    double _appleLogoImageWidth;
     _Bool _compassSuppressedForFloorPicker;
     _Bool _geodHealthConsoleEnabled;
     double _compassVisibleRotationThreshold;
@@ -236,6 +237,8 @@
 - (void)_zoomIn;
 - (void)_zoomWithAmount:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_zoomWithAmount:(double)arg1;
+- (void)stopZoomingWithInertia;
+- (void)startLinearZoomIn:(_Bool)arg1;
 - (void)setCameraBoundary:(id)arg1 animated:(_Bool)arg2;
 - (void)setCameraZoomRange:(id)arg1 animated:(_Bool)arg2;
 - (void)setCamera:(id)arg1 springMass:(float)arg2 springStiffness:(float)arg3 springDamping:(float)arg4 springVelocity:(float)arg5;
@@ -415,7 +418,11 @@
 - (_Bool)annotationContainerIsRotated:(id)arg1;
 - (struct CGRect)visibleCenteringRectInView:(id)arg1;
 - (struct CGRect)visibleRectInView:(id)arg1;
+- (void)_sceneWillEnterForeground:(id)arg1;
+- (void)_unregisterSceneLifecycleNotifications;
+- (void)_registerSceneLifecycleNotifications;
 - (void)applicationWillTerminate:(id)arg1;
+- (void)applicationWillEnterForeground:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationDidFinishSuspensionSnapshot:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
@@ -459,7 +466,7 @@
 - (void)snapToNorth:(id)arg1;
 - (id)compassVisibilityAnimation;
 - (_Bool)compassVisible;
-- (void)_setCompassVisible:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_setCompassVisible:(_Bool)arg1 animated:(_Bool)arg2 force:(_Bool)arg3;
 - (void)_handleCompassTap:(id)arg1;
 - (void)_updateCompassPosition;
 - (void)_postDidUpdateYawNotification;
@@ -472,6 +479,8 @@
 - (void)_updateScalePosition;
 - (void)_showOrHideScaleIfNecessary:(_Bool)arg1;
 - (void)_updateScale;
+- (_Bool)_canShowAppleLogo;
+@property(readonly, nonatomic, getter=_canShowControls) _Bool canShowControls;
 - (_Bool)_shouldDisplayScaleForCurrentRegion;
 - (id)scaleView;
 @property(nonatomic, getter=_showsScaleDuringZoom, setter=_setShowsScaleDuringZoom:) _Bool showsScaleDuringZoom;
@@ -605,7 +614,6 @@
 - (void)_addCustomFeatureDataSource:(id)arg1;
 @property(nonatomic) _Bool showsTraffic;
 - (void)deviceOrientationDidChange:(id)arg1;
-- (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)valueChangedForGEOConfigKey:(CDStruct_35640fce)arg1;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
@@ -613,7 +621,7 @@
 - (id)mapAttributionWithStringAttributes:(id)arg1 allowMultiLine:(_Bool)arg2;
 - (id)mapAttributionWithStringAttributes:(id)arg1;
 - (struct CGRect)attributionFrame;
-- (void)_updateAppleLogo;
+- (void)_updateAppleLogoVisibility;
 - (void)_updateAttribution;
 @property(nonatomic, getter=_compassInsetEdges, setter=_setCompassInsetEdges:) unsigned long long compassInsetEdges;
 - (void)_setCompassViewSize:(long long)arg1 style:(long long)arg2;

@@ -17,6 +17,7 @@
 - (void)finalizeTextureMemory:(void *)arg1;
 - (void)copyFromTextureMemory:(const void *)arg1 textureSlice:(unsigned int)arg2 textureLevel:(unsigned int)arg3 textureRegion:(CDStruct_7ec2ac88)arg4 toLinearBytes:(void *)arg5 linearOffset:(unsigned int)arg6 linearBytesPerRow:(unsigned int)arg7 linearBytesPerImage:(unsigned int)arg8;
 - (void)copyFromLinearBytes:(const void *)arg1 linearOffset:(unsigned int)arg2 linearBytesPerRow:(unsigned int)arg3 linearBytesPerImage:(unsigned int)arg4 toTextureMemory:(void *)arg5 textureSlice:(unsigned int)arg6 textureLevel:(unsigned int)arg7 textureRegion:(CDStruct_7ec2ac88)arg8;
+- (void)initializeTextureMemory:(void *)arg1;
 - (void)acceptVisitor:(id)arg1;
 @property(readonly) CDStruct_492b6082 watermark;
 @property(readonly) CDStruct_32a7f38a copyGranularity;

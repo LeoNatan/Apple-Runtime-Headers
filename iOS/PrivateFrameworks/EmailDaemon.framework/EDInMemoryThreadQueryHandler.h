@@ -15,6 +15,7 @@
 {
     NSMutableOrderedSet *_conversationIDs;
     NSMutableDictionary *_threadsByConversationID;
+    NSMutableDictionary *_oldestThreadsByMailboxObjectIDs;
     EDMessageQueryHelper *_messageQueryHelper;
     NSArray *_threadSortDescriptors;
     NSArray *_messageSortDescriptors;
@@ -23,12 +24,19 @@
 + (id)log;
 @property(readonly, copy, nonatomic) NSArray *messageSortDescriptors; // @synthesize messageSortDescriptors=_messageSortDescriptors;
 @property(readonly, copy, nonatomic) NSArray *threadSortDescriptors; // @synthesize threadSortDescriptors=_threadSortDescriptors;
-@property(readonly, nonatomic) EDMessageQueryHelper *messageQueryHelper; // @synthesize messageQueryHelper=_messageQueryHelper;
+@property(retain, nonatomic) EDMessageQueryHelper *messageQueryHelper; // @synthesize messageQueryHelper=_messageQueryHelper;
 - (void).cxx_destruct;
-- (void)remoteSearchDidFinish;
 - (_Bool)_messageListItemChangeAffectsSorting:(id)arg1;
 - (id)_inMemoryThreadSortDescriptorsForThreadSortDescriptors:(id)arg1;
 - (id)_messageQueryFromThreadsQuery:(id)arg1;
+- (void)_oldestThreadsByMailboxObjectIDsWasUpdated;
+- (void)_updateOldestThreadsForMailboxes:(id)arg1;
+- (void)_threadsWereDeleted;
+- (void)_didMergeInThreads:(id)arg1;
+- (_Bool)_updateCurrentOldestThreadWithThreadIfApplicable:(id)arg1 forMailbox:(id)arg2;
+- (void)_initializeOldestThreadsByMailbox;
+- (void)queryHelperNeedsRestart:(id)arg1;
+- (void)queryHelperDidFinishRemoteSearch:(id)arg1;
 - (void)_vipsDidChange:(id)arg1;
 - (void)_blockedSendersDidChange:(id)arg1;
 - (void)_removeThreadsForInMemoryThreads:(id)arg1;
@@ -37,19 +45,22 @@
 - (void)_mergeInThreads:(id)arg1 forMove:(_Bool)arg2;
 - (id)_messagesByConversationIDForMessages:(id)arg1;
 - (void)_messagesWereChanged:(id)arg1 forKeyPaths:(id)arg2 deleted:(_Bool)arg3;
-- (void)conversationNotificationLevelWasChangedForConversation:(long long)arg1 conversationID:(long long)arg2;
-- (void)conversationIDWasChangedForMessages:(id)arg1 fromConversationID:(long long)arg2;
-- (void)messagesWereDeleted:(id)arg1;
-- (void)objectIDChangedForMessage:(id)arg1 oldObjectID:(id)arg2;
-- (void)messagesWereUpdated:(id)arg1 forKeyPaths:(id)arg2;
-- (void)messageFlagsWereChangedForMessages:(id)arg1;
+- (void)queryHelper:(id)arg1 conversationNotificationLevelDidChangeForConversation:(long long)arg2 conversationID:(long long)arg3;
+- (void)queryHelper:(id)arg1 conversationIDDidChangeForMessages:(id)arg2 fromConversationID:(long long)arg3;
+- (void)queryHelper:(id)arg1 didDeleteMessages:(id)arg2;
+- (void)queryHelper:(id)arg1 objectIDDidChangeForMessage:(id)arg2 oldObjectID:(id)arg3;
+- (void)queryHelper:(id)arg1 didUpdateMessages:(id)arg2 forKeyPaths:(id)arg3;
+- (void)queryHelper:(id)arg1 messageFlagsDidChangeForMessages:(id)arg2;
 - (void)_messagesWereAdded:(id)arg1;
-- (void)messagesWereAdded:(id)arg1;
-- (void)allMessagesWereFound;
-- (void)messagesWereFound:(id)arg1;
+- (void)queryHelper:(id)arg1 didAddMessages:(id)arg2;
+- (void)queryHelperDidFindAllMessages:(id)arg1;
+- (void)queryHelper:(id)arg1 didFindMessages:(id)arg2;
 - (id)messagesForThread:(id)arg1;
 - (id)threadForObjectID:(id)arg1 error:(id *)arg2;
+- (void)_createHelper;
+- (void)_restartHelper;
 - (void)cancel;
+- (void)start;
 - (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 observer:(id)arg4 observationIdentifier:(id)arg5;
 
 // Remaining properties

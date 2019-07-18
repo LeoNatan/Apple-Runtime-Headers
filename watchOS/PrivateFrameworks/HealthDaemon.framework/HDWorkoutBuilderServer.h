@@ -94,6 +94,7 @@
 - (void)_didUpdateMetadata:(id)arg1;
 - (_Bool)_addMetadata:(id)arg1 error:(id *)arg2;
 - (id)currentMetadata;
+- (void)remote_setShouldCollectEvents:(_Bool)arg1;
 - (void)remote_setStatisticsComputationMethod:(int)arg1 forType:(id)arg2;
 - (void)remote_setStatisticsMergeStrategy:(unsigned int)arg1 forType:(id)arg2;
 - (void)remote_updateDevice:(id)arg1;

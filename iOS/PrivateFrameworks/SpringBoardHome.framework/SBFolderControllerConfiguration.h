@@ -16,6 +16,7 @@
 {
     SBFolder *_folder;
     long long _orientation;
+    unsigned long long _allowedOrientations;
     id <SBIconListLayoutProvider> _listLayoutProvider;
     id <SBIconViewProviding> _iconViewProvider;
     id <SBNestingViewControllerDelegate> _delegate;
@@ -46,6 +47,7 @@
 @property(nonatomic) __weak id <SBNestingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <SBIconViewProviding> iconViewProvider; // @synthesize iconViewProvider=_iconViewProvider;
 @property(retain, nonatomic) id <SBIconListLayoutProvider> listLayoutProvider; // @synthesize listLayoutProvider=_listLayoutProvider;
+@property(nonatomic) unsigned long long allowedOrientations; // @synthesize allowedOrientations=_allowedOrientations;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) SBFolder *folder; // @synthesize folder=_folder;
 - (void).cxx_destruct;

@@ -25,7 +25,9 @@
 @property(retain, nonatomic) NSString *topText; // @synthesize topText=_topText;
 - (void).cxx_destruct;
 - (id)_curvedLabel;
+- (void)didFinishTransition;
 - (void)applyTransitionFraction:(double)arg1;
+- (void)willStartTransition;
 - (void)_layoutLabel:(id)arg1 text:(id)arg2 monospaced:(_Bool)arg3 offset:(struct CGPoint)arg4 adjustsFontSize:(_Bool)arg5;
 - (void)setup;
 - (id)initWithFrame:(struct CGRect)arg1 device:(id)arg2;

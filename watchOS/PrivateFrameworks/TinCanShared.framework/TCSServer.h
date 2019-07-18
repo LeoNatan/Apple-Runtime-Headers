@@ -25,6 +25,7 @@
 - (void)_removeConnection:(id)arg1;
 - (void)_enumerateConnectionsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_addConnection:(id)arg1;
+- (void)getLogEntryForCallWithUniqueProxyIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)ensureUplinkMuted;
 - (void)setClientRecordingInProgress:(_Bool)arg1;
 - (void)setUplinkMuted:(_Bool)arg1 for:(id)arg2 completion:(CDUnknownBlockType)arg3;

@@ -192,6 +192,7 @@
 @property(nonatomic) _Bool showsLeftBorder;
 @property(nonatomic) _Bool eventsFillGrid;
 @property(nonatomic) _Bool showsTimeLine;
+- (struct CGRect)currentTimeRectInView:(id)arg1 requireThumb:(_Bool)arg2;
 - (struct CGRect)currentTimeRectInView:(id)arg1;
 - (_Bool)_isTimeMarkerFullyUnobstructed;
 @property(nonatomic) _Bool showsTimeMarker;

@@ -20,6 +20,7 @@
     unsigned long long _deviceNotifications;
     unsigned int _connectionState;
     _MROriginProtobuf *_customOrigin;
+    _Bool _isValid;
     _Bool _hasEverAttemptedToConnect;
     CDUnknownBlockType _connectionStateCallback;
     NSObject<OS_dispatch_queue> *_connectionStateCallbackQueue;

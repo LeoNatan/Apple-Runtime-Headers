@@ -555,13 +555,13 @@ typedef struct {
 } CDStruct_fcaf9308;
 
 typedef struct {
-    long long _field1;
-    _Bool _field2;
-    _Bool _field3;
-    unsigned long long _field4;
-    _Bool _field5;
-    _Bool _field6;
-} CDStruct_30adaef5;
+    long long scrollRegime;
+    _Bool isAnimatingScroll;
+    _Bool isAnimatingContent;
+    unsigned long long zoomBehavior;
+    _Bool isViewBoundsChanging;
+    _Bool isInitialLoad;
+} CDStruct_04522d6a;
 
 typedef struct {
     long long _field1;
@@ -585,7 +585,14 @@ typedef struct {
     long long _field1;
     long long _field2;
     long long _field3;
-} CDStruct_2ec95fd7;
+    double _field4;
+} CDStruct_68723fc0;
+
+typedef struct {
+    long long photosCount;
+    long long videosCount;
+    long long othersCount;
+} CDStruct_9bad6f47;
 
 typedef struct CDStruct_183601bc;
 
@@ -668,10 +675,10 @@ typedef struct {
     _Bool isInteractive;
     long long fromColumnIndex;
     long long toColumnIndex;
-    long long desiredColumnIndex;
-    double progress;
+    double interactiveProgress;
+    double animatedProgress;
     double stickyHeaderOpacity;
-} CDStruct_eae77eb3;
+} CDStruct_3a6a7d8f;
 
 typedef struct {
     struct CGPoint normalizedInitialPosition;

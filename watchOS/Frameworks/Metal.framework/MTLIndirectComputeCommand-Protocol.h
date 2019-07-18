@@ -12,8 +12,6 @@
 - (void)setStageInRegion:(CDStruct_4e0934b9)arg1;
 - (void)setThreadgroupMemoryLength:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (void)reset;
-- (void)dispatchThreadgroups:(CDStruct_778afa1c)arg1 threadsPerThreadgroup:(CDStruct_778afa1c)arg2;
-- (void)setImageBlockWidth:(unsigned int)arg1 height:(unsigned int)arg2;
 - (void)clearBarrier;
 - (void)setBarrier;
 - (void)concurrentDispatchThreads:(CDStruct_778afa1c)arg1 threadsPerThreadgroup:(CDStruct_778afa1c)arg2;

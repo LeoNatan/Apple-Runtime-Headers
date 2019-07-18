@@ -24,6 +24,7 @@
     BOOL _enableCooling;
     BOOL _enableHeating;
     BOOL _enableMassage;
+    BOOL __encodeLegacyGloryData;
     int _relativeLevelSetting;
     int _seat;
     _INPBDataString *_carName;
@@ -32,6 +33,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int seat; // @synthesize seat=_seat;
 @property(nonatomic) int relativeLevelSetting; // @synthesize relativeLevelSetting=_relativeLevelSetting;
 @property(retain, nonatomic) _INPBInteger *level; // @synthesize level=_level;

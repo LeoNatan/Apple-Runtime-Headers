@@ -17,10 +17,13 @@
 + (void)_registerDailyMetricsLogging;
 + (void)_registerDataCollection;
 + (_Bool)_logDailyMetricsWithError:(id *)arg1 shouldContinueBlock:(CDUnknownBlockType)arg2;
++ (void)processPendingFeedbackWithShouldContinueBlock:(CDUnknownBlockType)arg1;
++ (void)_registerProcessPendingFeedback;
 + (void)_registerRTCSendLogs;
 + (void)_registerPeriodicMetrics;
 + (_Bool)_checkDeferralAndAvoidDuetRateLimitWithBatchInterval:(double)arg1 lastSyncDate:(id)arg2 activity:(id)arg3;
 + (void)_registerKnowledgeStoreSync;
++ (void)_registerRemotelyDonatedRecordCleanup;
 + (void)_setDateOfLastTopicDKSyncViaCTSToDate:(id)arg1;
 + (id)_dateOfLastTopicDKSyncViaCTS;
 + (void)_setDateOfLastNamedEntityDKSyncViaCTSToDate:(id)arg1;

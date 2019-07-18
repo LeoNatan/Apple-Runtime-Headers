@@ -79,6 +79,7 @@
 - (void)_handleAddShortcutActionTransaction:(id)arg1 message:(id)arg2;
 - (void)_handleAddMediaPlaybackActionTransaction:(id)arg1 message:(id)arg2;
 - (void)_handleAddCharactersiticWriteActionTransaction:(id)arg1 message:(id)arg2;
+- (void)sendNotificationWithAction:(id)arg1 message:(id)arg2 requiresSPIEntitlement:(_Bool)arg3;
 - (void)_handleAddNewAction:(id)arg1 message:(id)arg2;
 - (id)_addMediaPlaybackActionModelWithUUID:(id)arg1 message:(id)arg2;
 - (id)_addCharacteristicWriteActionModelWithUUID:(id)arg1 message:(id)arg2;

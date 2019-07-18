@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id sender; // @synthesize sender=_sender;
 @property(nonatomic) __weak id <CNUIEditAuthorizationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)didNotAutorize;
+- (void)didNotAuthorize;
 - (void)didAutorize;
 - (void)dealloc;
 - (void)lockoutRestrictionsPINControllerDidFinish:(id)arg1;

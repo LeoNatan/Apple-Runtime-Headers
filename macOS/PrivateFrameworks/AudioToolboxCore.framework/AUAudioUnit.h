@@ -116,7 +116,7 @@
 @property(readonly, copy) NSArray *channelCapabilities;
 - (void)reset;
 - (id)parametersForOverviewWithCount:(long long)arg1;
-@property(readonly) AUParameterTree *parameterTree;
+@property(retain) AUParameterTree *parameterTree;
 - (void)deallocateRenderResources;
 - (BOOL)allocateRenderResourcesAndReturnError:(id *)arg1;
 - (void)removeRenderObserver:(CDUnknownFunctionPointerType)arg1 userData:(void *)arg2;

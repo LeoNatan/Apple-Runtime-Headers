@@ -62,6 +62,7 @@
 @property(readonly) NSArray *entries;
 - (void)fetchContacts;
 - (void)rearrangeObjects;
+- (void)expandPersonEntriesCacheWithEntry:(id)arg1;
 - (void)clearExtraUniqueIdsInSearchResults;
 - (void)selectPrevious:(id)arg1;
 - (void)selectNext:(id)arg1;

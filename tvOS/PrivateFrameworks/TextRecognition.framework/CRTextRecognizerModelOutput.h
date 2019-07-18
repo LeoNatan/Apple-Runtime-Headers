@@ -14,29 +14,13 @@ __attribute__((visibility("hidden")))
 @interface CRTextRecognizerModelOutput : NSObject <MLFeatureProvider>
 {
     MLMultiArray *_output_label_prob_map;
-    MLMultiArray *_rnn_block1_bilstm_h_out;
-    MLMultiArray *_rnn_block1_bilstm_c_out;
-    MLMultiArray *_rnn_block1_bilstm_h_out_rev;
-    MLMultiArray *_rnn_block1_bilstm_c_out_rev;
-    MLMultiArray *_rnn_block2_bilstm_h_out;
-    MLMultiArray *_rnn_block2_bilstm_c_out;
-    MLMultiArray *_rnn_block2_bilstm_h_out_rev;
-    MLMultiArray *_rnn_block2_bilstm_c_out_rev;
 }
 
-@property(retain, nonatomic) MLMultiArray *rnn_block2_bilstm_c_out_rev; // @synthesize rnn_block2_bilstm_c_out_rev=_rnn_block2_bilstm_c_out_rev;
-@property(retain, nonatomic) MLMultiArray *rnn_block2_bilstm_h_out_rev; // @synthesize rnn_block2_bilstm_h_out_rev=_rnn_block2_bilstm_h_out_rev;
-@property(retain, nonatomic) MLMultiArray *rnn_block2_bilstm_c_out; // @synthesize rnn_block2_bilstm_c_out=_rnn_block2_bilstm_c_out;
-@property(retain, nonatomic) MLMultiArray *rnn_block2_bilstm_h_out; // @synthesize rnn_block2_bilstm_h_out=_rnn_block2_bilstm_h_out;
-@property(retain, nonatomic) MLMultiArray *rnn_block1_bilstm_c_out_rev; // @synthesize rnn_block1_bilstm_c_out_rev=_rnn_block1_bilstm_c_out_rev;
-@property(retain, nonatomic) MLMultiArray *rnn_block1_bilstm_h_out_rev; // @synthesize rnn_block1_bilstm_h_out_rev=_rnn_block1_bilstm_h_out_rev;
-@property(retain, nonatomic) MLMultiArray *rnn_block1_bilstm_c_out; // @synthesize rnn_block1_bilstm_c_out=_rnn_block1_bilstm_c_out;
-@property(retain, nonatomic) MLMultiArray *rnn_block1_bilstm_h_out; // @synthesize rnn_block1_bilstm_h_out=_rnn_block1_bilstm_h_out;
 @property(retain, nonatomic) MLMultiArray *output_label_prob_map; // @synthesize output_label_prob_map=_output_label_prob_map;
 - (void).cxx_destruct;
 - (id)featureValueForName:(id)arg1;
 @property(readonly, nonatomic) NSSet *featureNames;
-- (id)initWithOutput_label_prob_map:(id)arg1 rnn_block1_bilstm_h_out:(id)arg2 rnn_block1_bilstm_c_out:(id)arg3 rnn_block1_bilstm_h_out_rev:(id)arg4 rnn_block1_bilstm_c_out_rev:(id)arg5 rnn_block2_bilstm_h_out:(id)arg6 rnn_block2_bilstm_c_out:(id)arg7 rnn_block2_bilstm_h_out_rev:(id)arg8 rnn_block2_bilstm_c_out_rev:(id)arg9;
+- (id)initWithOutput_label_prob_map:(id)arg1;
 
 @end
 

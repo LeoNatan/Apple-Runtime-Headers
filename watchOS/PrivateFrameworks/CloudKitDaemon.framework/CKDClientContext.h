@@ -142,7 +142,7 @@
 @property(retain, nonatomic) NSString *applicationVersion; // @synthesize applicationVersion=_applicationVersion;
 @property(readonly, nonatomic) NSString *personaID; // @synthesize personaID=_personaID;
 @property(readonly, nonatomic) NSString *sourceApplicationBundleID; // @synthesize sourceApplicationBundleID=_sourceApplicationBundleID;
-@property(readonly, nonatomic) NSString *applicationBundleID; // @synthesize applicationBundleID=_applicationBundleID;
+@property(retain, nonatomic) NSString *applicationBundleID; // @synthesize applicationBundleID=_applicationBundleID;
 @property(readonly, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
 @property int cachedEnvironment; // @synthesize cachedEnvironment=_cachedEnvironment;
 @property(retain, nonatomic) NSHashTable *proxies; // @synthesize proxies=_proxies;
@@ -157,6 +157,7 @@
 @property(copy) NSURL *publicCloudDBURL; // @synthesize publicCloudDBURL=_publicCloudDBURL;
 @property(retain, nonatomic) CKDServerConfiguration *config; // @synthesize config=_config;
 - (void).cxx_destruct;
+- (unsigned int)aggregatedOutstandingOperationCount;
 - (void)clearAuthTokensForRecordWithID:(id)arg1 databaseScope:(int)arg2;
 - (void)clearPILSCacheForLookupInfos:(id)arg1;
 - (void)clearContextFromMetadataCache;
@@ -170,11 +171,13 @@
 - (unsigned int)countAssetCacheItems;
 - (void)setFakeResponseOperationResult:(id)arg1 forNextRequestOfClassName:(id)arg2 forItemID:(id)arg3 withLifetime:(int)arg4;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2;
+@property(nonatomic) _Bool hasExplicitCodeOperationURLEntitlement;
 @property(nonatomic) _Bool hasAllowUnverifiedAccountEntitlement;
 @property(nonatomic) _Bool hasNonLegacyShareURLEntitlement;
-@property(retain, nonatomic) NSString *pushBundleIdentifier;
+@property(readonly, nonatomic) NSString *applicationBundleIDForServer;
+@property(readonly, nonatomic) NSString *applicationBundleIDForPush;
 @property(retain, nonatomic) NSString *clientPrefixEntitlement;
-@property(retain, nonatomic) NSString *applicationIdentifier;
+@property(retain, nonatomic) NSString *associatedApplicationBundleID;
 @property(readonly, nonatomic) NSString *encryptionServiceName;
 @property(nonatomic) _Bool hasDisplaysSystemAcceptPromptEntitlement;
 @property(nonatomic) _Bool hasParticipantPIIEntitlement;
@@ -196,7 +199,6 @@
 @property(readonly, nonatomic) NSString *regionCode;
 @property(readonly, nonatomic) NSString *languageCode;
 @property(readonly, nonatomic) NSString *deviceName;
-@property(readonly, nonatomic) NSString *bundleID;
 - (void)fetchPrivateURLForServerType:(int)arg1 operation:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)fetchDeviceIDForOperation:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchServerEnvironmentForOperation:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

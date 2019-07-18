@@ -17,12 +17,13 @@
     CDUnknownBlockType _completionHandler;
 }
 
-+ (_Bool)workflowNeedsMigration:(id)arg1 fromClientVersion:(int)arg2;
++ (_Bool)workflowNeedsMigration:(id)arg1 fromClientVersion:(id)arg2;
 + (id)migrationClassDependencies;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSMutableDictionary *workflow; // @synthesize workflow=_workflow;
 - (void).cxx_destruct;
 - (void)migrateWorkflow;
+- (void)enumerateActionsWithIdentifier:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSString *actionParametersKey;
 @property(readonly, nonatomic) NSString *actionIdentifierKey;
 @property(readonly, nonatomic) NSMutableArray *actions;

@@ -16,14 +16,14 @@
 
 @interface CKNanoChatController : CKCoreChatController <_MKNanoPlaceCardViewControllerDelegate, CKReaderViewControllerDelegate, CKBrowserViewControllerSendDelegate, CKNanoRevealBalloonViewControllerDelegate, STLockoutViewControllerDelegate>
 {
+    STConversationContext *_currentScreenTimeConversationContext;
     IMBalloonPlugin *_currentPlugin;
     UIViewController *_fullScreenPluginViewController;
-    STConversationContext *_currentScreenTimeConversationContext;
 }
 
-@property(retain, nonatomic) STConversationContext *currentScreenTimeConversationContext; // @synthesize currentScreenTimeConversationContext=_currentScreenTimeConversationContext;
 @property(retain, nonatomic) UIViewController *fullScreenPluginViewController; // @synthesize fullScreenPluginViewController=_fullScreenPluginViewController;
 @property(retain, nonatomic) IMBalloonPlugin *currentPlugin; // @synthesize currentPlugin=_currentPlugin;
+@property(retain, nonatomic) STConversationContext *currentScreenTimeConversationContext; // @synthesize currentScreenTimeConversationContext=_currentScreenTimeConversationContext;
 - (void).cxx_destruct;
 - (void)nanoPlaceCardViewControllerDidTapAttribution:(id)arg1;
 - (void)nanoPlaceCardViewController:(id)arg1 didSelectPhoneNumber:(id)arg2;

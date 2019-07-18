@@ -26,6 +26,7 @@
 + (id)predicateMatchingBundleIdentifier:(id)arg1;
 + (id)predicateMatchingHandle:(id)arg1;
 + (id)predicateMatchingIdentifier:(id)arg1;
++ (id)predicateMatchingTarget:(id)arg1;
 + (id)predicateMatchingIdentity:(id)arg1;
 + (id)predicateMatchingServiceName:(id)arg1;
 + (id)predicateMatchingJobLabel:(id)arg1;

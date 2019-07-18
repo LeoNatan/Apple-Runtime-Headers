@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <SpringBoardServices/BSDescriptionProviding-Protocol.h>
 #import <SpringBoardServices/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface SBSStatusBarStyleOverridesAssertionData : NSObject <NSSecureCoding>
+@interface SBSStatusBarStyleOverridesAssertionData : NSObject <NSSecureCoding, BSDescriptionProviding>
 {
     int _statusBarStyleOverrides;
     int _pid;
@@ -28,11 +29,21 @@
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(nonatomic) int statusBarStyleOverrides; // @synthesize statusBarStyleOverrides=_statusBarStyleOverrides;
 - (void).cxx_destruct;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+@property(readonly, copy) NSString *description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(_Bool)arg3 showsWhenForeground:(_Bool)arg4 uniqueIdentifier:(id)arg5;
 - (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(_Bool)arg3 showsWhenForeground:(_Bool)arg4;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

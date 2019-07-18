@@ -9,30 +9,32 @@
 #import <AXSpeakFingerManager/AXOratorDelegate-Protocol.h>
 #import <AXSpeakFingerManager/AXUIService-Protocol.h>
 
-@class AXElement, AXOrator, NSMutableArray, NSString, UINotificationFeedbackGenerator;
+@class AXElement, AXOrator, NSArray, NSMutableArray, NSString, UIImpactFeedbackGenerator;
 
 @interface AXSpeakFingerManager : NSObject <AXOratorDelegate, AXUIService>
 {
     _Bool _unitTestSpeaking;
     _Bool _inUnitTestMode;
     unsigned long long _speakFingerState;
+    NSArray *_elementsForUnitTests;
     NSMutableArray *_stateUpdateBlocks;
     AXElement *_currentSpeakFingerElement;
     AXOrator *_orator;
-    UINotificationFeedbackGenerator *_hapticGenerator;
+    UIImpactFeedbackGenerator *_hapticGenerator;
     NSString *_springBoardActionHandlerId;
     struct CGPoint _lastTouchPoint;
 }
 
 + (id)sharedInstance;
 @property(retain, nonatomic) NSString *springBoardActionHandlerId; // @synthesize springBoardActionHandlerId=_springBoardActionHandlerId;
-@property(retain, nonatomic) UINotificationFeedbackGenerator *hapticGenerator; // @synthesize hapticGenerator=_hapticGenerator;
+@property(retain, nonatomic) UIImpactFeedbackGenerator *hapticGenerator; // @synthesize hapticGenerator=_hapticGenerator;
 @property(nonatomic) _Bool inUnitTestMode; // @synthesize inUnitTestMode=_inUnitTestMode;
 @property(nonatomic) _Bool unitTestSpeaking; // @synthesize unitTestSpeaking=_unitTestSpeaking;
 @property(retain, nonatomic) AXOrator *orator; // @synthesize orator=_orator;
 @property(nonatomic) struct CGPoint lastTouchPoint; // @synthesize lastTouchPoint=_lastTouchPoint;
 @property(retain, nonatomic) AXElement *currentSpeakFingerElement; // @synthesize currentSpeakFingerElement=_currentSpeakFingerElement;
 @property(retain, nonatomic) NSMutableArray *stateUpdateBlocks; // @synthesize stateUpdateBlocks=_stateUpdateBlocks;
+@property(retain, nonatomic) NSArray *elementsForUnitTests; // @synthesize elementsForUnitTests=_elementsForUnitTests;
 @property(nonatomic) unsigned long long speakFingerState; // @synthesize speakFingerState=_speakFingerState;
 - (void).cxx_destruct;
 - (double)desiredWindowLevelForContentViewController:(id)arg1 userInteractionEnabled:(_Bool)arg2;

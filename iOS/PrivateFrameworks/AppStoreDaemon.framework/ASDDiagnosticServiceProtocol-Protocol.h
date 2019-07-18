@@ -6,6 +6,7 @@
 
 @protocol ASDDiagnosticServiceProtocol
 - (void)sendCommandWithReplyHandler:(long long)arg1 handler:(void (^)(void))arg2;
+- (void)sendCommandWithDetailedReplyHandler:(long long)arg1 handler:(void (^)(NSDictionary *))arg2;
 - (void)pingWithReplyHandler:(void (^)(void))arg1;
 - (void)activeClientsWithReplyHandler:(void (^)(NSArray *))arg1;
 @end

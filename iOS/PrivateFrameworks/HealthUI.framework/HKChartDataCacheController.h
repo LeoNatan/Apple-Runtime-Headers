@@ -37,6 +37,7 @@
 - (void)_subscribeForUpdatesForDisplayType:(id)arg1;
 - (id)_chartCacheIdentifiersFromStartDate:(id)arg1 endDate:(id)arg2;
 - (id)_chartCacheIdentifiersFromSamples:(id)arg1;
+- (void)updateController:(id)arg1 didReceiveHighFrequencyUpdateForType:(id)arg2;
 - (void)updateController:(id)arg1 didReceiveUpdateForType:(id)arg2 samplesAdded:(id)arg3 objectsRemoved:(id)arg4;
 - (id)_generateChartCacheForDisplayType:(id)arg1 timeScope:(long long)arg2;
 - (id)_chartCacheForDisplayType:(id)arg1 timeScope:(long long)arg2 chartCachesByDisplayTypeIdentifier:(struct NSMutableDictionary *)arg3;

@@ -12,7 +12,7 @@
 #import <TelephonyUtilities/TUFilteredRequest-Protocol.h>
 #import <TelephonyUtilities/TUVideoRequest-Protocol.h>
 
-@class IDSDestination, NSArray, NSDate, NSString, NSURL, NSUUID, NSUserActivity, TUCallProvider, TUCallProviderManager, TUHandle, TUSenderIdentity, TUSenderIdentityClient;
+@class BSProcessHandle, IDSDestination, NSArray, NSDate, NSString, NSURL, NSUUID, NSUserActivity, TUCallProvider, TUCallProviderManager, TUHandle, TUSenderIdentity, TUSenderIdentityClient;
 
 @interface TUDialRequest : NSObject <TUCallRequest, TUVideoRequest, TUFilteredRequest, NSSecureCoding, NSCopying>
 {
@@ -40,11 +40,14 @@
     CDUnknownBlockType _isEmergencyNumberOrIsWhitelistedBlock;
     NSDate *_dateDialed;
     NSString *_endpointIDSDestinationURI;
+    NSString *_endpointRapportMediaSystemIdentifier;
+    NSString *_endpointRapportEffectiveIdentifier;
     NSUUID *_localSenderIdentityUUID;
     NSUUID *_localSenderIdentityAccountUUID;
     long long _originatingUIType;
     NSString *_successNotification;
     NSString *_failureNotification;
+    BSProcessHandle *_processHandle;
     struct CGSize _localPortraitAspectRatio;
     struct CGSize _localLandscapeAspectRatio;
 }
@@ -65,6 +68,8 @@
 + (id)stringForTTYType:(long long)arg1;
 + (long long)handleTypeForQueryItem:(id)arg1;
 + (id)stringForDialType:(long long)arg1;
++ (long long)dialRequestTTYTypeForCHRecentCallTTYType:(long long)arg1;
+@property(retain, nonatomic) BSProcessHandle *processHandle; // @synthesize processHandle=_processHandle;
 @property(copy, nonatomic) NSString *failureNotification; // @synthesize failureNotification=_failureNotification;
 @property(copy, nonatomic) NSString *successNotification; // @synthesize successNotification=_successNotification;
 @property(nonatomic) _Bool shouldSuppressInCallUI; // @synthesize shouldSuppressInCallUI=_shouldSuppressInCallUI;
@@ -73,6 +78,8 @@
 @property(nonatomic) long long originatingUIType; // @synthesize originatingUIType=_originatingUIType;
 @property(copy, nonatomic) NSUUID *localSenderIdentityAccountUUID; // @synthesize localSenderIdentityAccountUUID=_localSenderIdentityAccountUUID;
 @property(copy, nonatomic) NSUUID *localSenderIdentityUUID; // @synthesize localSenderIdentityUUID=_localSenderIdentityUUID;
+@property(copy, nonatomic) NSString *endpointRapportEffectiveIdentifier; // @synthesize endpointRapportEffectiveIdentifier=_endpointRapportEffectiveIdentifier;
+@property(copy, nonatomic) NSString *endpointRapportMediaSystemIdentifier; // @synthesize endpointRapportMediaSystemIdentifier=_endpointRapportMediaSystemIdentifier;
 @property(copy, nonatomic) NSString *endpointIDSDestinationURI; // @synthesize endpointIDSDestinationURI=_endpointIDSDestinationURI;
 @property(nonatomic) _Bool endpointOnCurrentDevice; // @synthesize endpointOnCurrentDevice=_endpointOnCurrentDevice;
 @property(nonatomic) _Bool hostOnCurrentDevice; // @synthesize hostOnCurrentDevice=_hostOnCurrentDevice;
@@ -120,6 +127,8 @@
 - (id)failureNotificationQueryItem;
 - (id)successNotificationQueryItem;
 - (id)shouldSuppressInCallUIQueryItem;
+- (id)endpointRapportEffectiveIdentifierQueryItem;
+- (id)endpointRapportMediaSystemIdentifierQueryItem;
 - (id)endpointIDSDestinationURIQueryItem;
 - (id)redialURLQueryItem;
 - (id)sosURLQueryItem;

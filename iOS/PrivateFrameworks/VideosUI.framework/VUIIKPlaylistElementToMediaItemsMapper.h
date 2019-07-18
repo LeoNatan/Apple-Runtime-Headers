@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 - (void)_populateMediaItem:(id)arg1 withMetadatafromTimelineEventElement:(id)arg2;
 - (void)_populateMediaItem:(id)arg1 withMetadatafromVideoElement:(id)arg2;
 - (id)_clipMediaItemsMediaItem:(id)arg1 fromTimelineElement:(id)arg2;
-- (id)_auxMediaItemForVideoElement:(id)arg1;
-- (id)_storeMediaItemsForVideoElement:(id)arg1;
-- (id)mediaItemsFromIKPlaylistElement:(id)arg1;
+- (id)_storeAuxMediaItemForIKMediaElement:(id)arg1 isExtrasContent:(_Bool)arg2;
+- (id)_storeMediaItemsForAdamID:(long long)arg1 IKMediaElement:(id)arg2;
+- (id)playlistForIKMediaElements:(id)arg1 isExtrasContent:(_Bool)arg2;
 - (_Bool)_shouldDisableResumeMenuForAsset:(id)arg1;
 - (id)init;
 

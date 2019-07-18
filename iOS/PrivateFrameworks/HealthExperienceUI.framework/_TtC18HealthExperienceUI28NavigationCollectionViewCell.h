@@ -4,21 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UICollectionViewCell.h>
+#import <HealthExperienceUI/_TtC18HealthExperienceUI32CollectionViewListDisclosureCell.h>
 
-@interface _TtC18HealthExperienceUI28NavigationCollectionViewCell : UICollectionViewCell
+@interface _TtC18HealthExperienceUI28NavigationCollectionViewCell : _TtC18HealthExperienceUI32CollectionViewListDisclosureCell
 {
-    // Error parsing type: , name: item
-    // Error parsing type: , name: tapGestureRecognizer
-    // Error parsing type: , name: textLabel
-    // Error parsing type: , name: accessoryImageView
-    // Error parsing type: , name: highlightView
 }
 
-- (void).cxx_destruct;
-@property(nonatomic) _Bool highlighted;
-- (_Bool)isHighlighted;
-- (void)viewWasTapped:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

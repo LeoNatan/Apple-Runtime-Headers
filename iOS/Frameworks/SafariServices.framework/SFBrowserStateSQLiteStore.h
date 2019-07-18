@@ -48,6 +48,8 @@ __attribute__((visibility("hidden")))
 - (id)tabStatesWithBrowserWindowUUID:(id)arg1;
 - (void)_readTabStatesWithBrowserWindowUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)readTabStatesWithBrowserWindowUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_tabStateDataForUUID:(id)arg1;
+- (id)tabStateDataForUUID:(id)arg1;
 - (void)saveTabStateWithDictionary:(id)arg1;
 - (void)removeSavedSessionStateDataForTabsWithUUIDStrings:(id)arg1;
 - (void)_removeSavedSessionStateDataForTabsWithUUIDStrings:(id)arg1;

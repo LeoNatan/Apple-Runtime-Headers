@@ -11,5 +11,6 @@
 @protocol AWFrameworkClient <NSObject>
 - (void)notifyPollEventType:(unsigned long long)arg1 event:(AWAttentionEvent *)arg2;
 - (void)notifyEvent:(AWAttentionEvent *)arg1;
+- (void)notify:(unsigned long long)arg1;
 @end
 

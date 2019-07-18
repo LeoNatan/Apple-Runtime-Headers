@@ -14,13 +14,11 @@
     BOOL _hostIsAnimating;
     QLExtensionPreview *_preview;
     QLPreviewExtensionViewController *_viewService;
-    NSViewController<QLPreviewingController> *_previewViewController;
 }
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (void)_updateClassesOnHostInterface:(id)arg1;
 + (id)_extensionAuxiliaryHostProtocol;
-@property(retain) NSViewController<QLPreviewingController> *previewViewController; // @synthesize previewViewController=_previewViewController;
 @property __weak QLPreviewExtensionViewController *viewService; // @synthesize viewService=_viewService;
 @property(retain) QLExtensionPreview *preview; // @synthesize preview=_preview;
 @property BOOL hostIsAnimating; // @synthesize hostIsAnimating=_hostIsAnimating;
@@ -30,6 +28,7 @@
 - (void)loadWithPreview:(id)arg1 isAnimating:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_derivedExtensionAuxiliaryHostProtocol;
 - (id)hostProxy;
+@property(readonly) NSViewController<QLPreviewingController> *previewViewController;
 
 @end
 

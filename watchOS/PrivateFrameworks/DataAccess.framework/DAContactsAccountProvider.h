@@ -14,7 +14,8 @@
 + (id)providerWithContactStore:(id)arg1;
 - (id)accountForContainerWithIdentifier:(id)arg1;
 - (id)allAccounts;
-- (id)accountWithExternalIdentifier:(id)arg1 createIfNecessary:(_Bool)arg2;
+- (id)accountByCreatingAccountWithExternalIdentifier:(id)arg1;
+- (id)fetchedAccountWithExternalIdentifier:(id)arg1;
 
 @end
 

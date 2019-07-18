@@ -12,7 +12,7 @@
 
 @class NSDate, NSDictionary, NSNumber, NSString;
 
-@interface WFDropboxMetadata : MTLModel <WFNaming, WFRemoteFile, MTLJSONSerializing>
+@interface WFDropboxMetadata : MTLModel <WFRemoteFile, WFNaming, MTLJSONSerializing>
 {
     NSString *_name;
     NSString *_path;
@@ -38,16 +38,16 @@
 @property(readonly, copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *wfName;
+- (BOOL)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) BOOL isDirectory;
 - (BOOL)wfIsEqualToFile:(id)arg1;
 - (id)wfFileType;
 - (id)wfLastModifiedDate;
 - (id)wfFileSize;
 - (id)wfPath;
 - (BOOL)wfIsDirectory;
-@property(readonly, copy, nonatomic) NSString *wfName;
-- (BOOL)isEqual:(id)arg1;
-@property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) BOOL isDirectory;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

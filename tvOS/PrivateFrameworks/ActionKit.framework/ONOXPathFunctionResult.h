@@ -6,19 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSNumber, NSString;
 
 @interface ONOXPathFunctionResult : NSObject
 {
-    _Bool _boolValue;
-    double _numericValue;
-    NSString *_stringValue;
+    struct _xmlXPathObject *_xmlXPath;
 }
 
-@property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
-@property(nonatomic) double numericValue; // @synthesize numericValue=_numericValue;
-@property(nonatomic) _Bool boolValue; // @synthesize boolValue=_boolValue;
-- (void).cxx_destruct;
+@property(nonatomic) struct _xmlXPathObject *xmlXPath; // @synthesize xmlXPath=_xmlXPath;
+@property(readonly, copy, nonatomic) NSString *stringValue;
+@property(readonly, copy, nonatomic) NSNumber *numberValue;
+@property(readonly, nonatomic) double numericValue;
+@property(readonly, nonatomic) _Bool boolValue;
+- (void)dealloc;
 
 @end
 

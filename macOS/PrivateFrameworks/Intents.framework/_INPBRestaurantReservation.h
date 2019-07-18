@@ -15,6 +15,7 @@
 @interface _INPBRestaurantReservation : PBCodable <_INPBRestaurantReservation, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBInteger *_partySize;
     _INPBReservation *_reservation;
     _INPBDateTimeRange *_reservationDuration;
@@ -22,6 +23,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBLocation *restaurantLocation; // @synthesize restaurantLocation=_restaurantLocation;
 @property(retain, nonatomic) _INPBDateTimeRange *reservationDuration; // @synthesize reservationDuration=_reservationDuration;
 @property(retain, nonatomic) _INPBReservation *reservation; // @synthesize reservation=_reservation;

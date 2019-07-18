@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class HDMultiTypeSortedSampleIterator, HDProfile;
+@class HDMultiTypeSortedSampleIterator, HDProfile, HKMCCalendarCache;
 
 @interface HDMCDaySummaryEnumerator : NSObject
 {
@@ -14,15 +14,16 @@
     CDStruct_ef5fcbe6 _dayIndexRange;
     HDMultiTypeSortedSampleIterator *_iterator;
     _Bool _ascending;
+    HKMCCalendarCache *_calendarCache;
 }
 
-+ (id)daySummariesInIndexRange:(CDStruct_ef5fcbe6)arg1 profile:(id)arg2 error:(id *)arg3;
-+ (id)daySummaryAtIndex:(long long)arg1 profile:(id)arg2 error:(id *)arg3;
++ (id)daySummariesInIndexRange:(CDStruct_ef5fcbe6)arg1 profile:(id)arg2 calendarCache:(id)arg3 error:(id *)arg4;
++ (id)daySummaryAtIndex:(long long)arg1 profile:(id)arg2 calendarCache:(id)arg3 error:(id *)arg4;
 - (void).cxx_destruct;
 - (void)_addSample:(id)arg1 toBuilders:(id)arg2 inRange:(CDStruct_ef5fcbe6)arg3;
 - (void)_closeBuilders:(id)arg1 withIndexes:(id)arg2 handler:(CDUnknownBlockType)arg3 stop:(_Bool *)arg4;
 - (_Bool)enumerateWithError:(id *)arg1 handler:(CDUnknownBlockType)arg2;
-- (id)initWithProfile:(id)arg1 dayIndexRange:(CDStruct_ef5fcbe6)arg2 ascending:(_Bool)arg3;
+- (id)initWithProfile:(id)arg1 calendarCache:(id)arg2 dayIndexRange:(CDStruct_ef5fcbe6)arg3 ascending:(_Bool)arg4;
 
 @end
 

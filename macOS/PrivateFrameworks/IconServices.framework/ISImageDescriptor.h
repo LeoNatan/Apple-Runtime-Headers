@@ -6,12 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <IconServices/ISImageDescriptor-Protocol.h>
 #import <IconServices/NSCopying-Protocol.h>
 #import <IconServices/NSSecureCoding-Protocol.h>
 
+@class NSString;
 @protocol NSCopying;
 
-@interface ISImageDescriptor : NSObject <NSSecureCoding, NSCopying>
+@interface ISImageDescriptor : NSObject <NSSecureCoding, ISImageDescriptor, NSCopying>
 {
     struct CGSize _size;
     double _scale;
@@ -28,7 +30,7 @@
 @property(nonatomic) unsigned long long variantOptions; // @synthesize variantOptions=_variantOptions;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
-- (id)description;
+@property(readonly, copy) NSString *description;
 @property(retain) id <NSCopying> imageCacheKey; // @dynamic imageCacheKey;
 @property(readonly) double sanitizedScale;
 @property(readonly) struct CGSize sanitizedSize;
@@ -44,6 +46,11 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSize:(struct CGSize)arg1 scale:(double)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

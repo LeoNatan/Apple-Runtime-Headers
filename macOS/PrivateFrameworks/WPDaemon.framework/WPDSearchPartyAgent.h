@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSData, NSDate, SPBeaconManager;
+@class NSArray, NSData, NSDate, SPBeaconManager, WPDPendingCompletions;
 @protocol OS_dispatch_queue;
 
 @interface WPDSearchPartyAgent : NSObject
@@ -15,6 +15,7 @@
     BOOL _disableScans;
     BOOL _spBeaconState;
     unsigned char _spBeaconStatus;
+    BOOL _testBeaconState;
     unsigned char _testBeaconStatus;
     NSData *_beaconKey;
     NSObject<OS_dispatch_queue> *_queue;
@@ -27,25 +28,29 @@
     CDUnknownBlockType _beaconStateChangedBlock;
     CDUnknownBlockType _beaconKeysChangedBlock;
     CDUnknownBlockType _beaconStatusChangedBlock;
+    CDUnknownBlockType _nearbyTokensChangedBlock;
     CDUnknownBlockType _tokensChange;
     NSArray *_spNearbyTokens;
-    CDUnknownBlockType _nearbyTokensChangedBlock;
     NSDate *_spNearbyTokensUpdated;
     NSArray *_testNearbyTokens;
     NSArray *_testBeaconKeys;
     NSDate *_testNearbyTokensUpdated;
     NSDate *_testBeaconKeysUpdated;
+    WPDPendingCompletions *_pendingKeyCompletions;
+    WPDPendingCompletions *_pendingTokenCompletions;
 }
 
 + (id)spBeaconKeyFromTestKey:(id)arg1;
+@property(retain) WPDPendingCompletions *pendingTokenCompletions; // @synthesize pendingTokenCompletions=_pendingTokenCompletions;
+@property(retain) WPDPendingCompletions *pendingKeyCompletions; // @synthesize pendingKeyCompletions=_pendingKeyCompletions;
 @property(retain) NSDate *testBeaconKeysUpdated; // @synthesize testBeaconKeysUpdated=_testBeaconKeysUpdated;
 @property(retain) NSDate *testNearbyTokensUpdated; // @synthesize testNearbyTokensUpdated=_testNearbyTokensUpdated;
 @property(retain) NSArray *testBeaconKeys; // @synthesize testBeaconKeys=_testBeaconKeys;
 @property(retain) NSArray *testNearbyTokens; // @synthesize testNearbyTokens=_testNearbyTokens;
 @property(retain) NSDate *spNearbyTokensUpdated; // @synthesize spNearbyTokensUpdated=_spNearbyTokensUpdated;
-@property(copy) CDUnknownBlockType nearbyTokensChangedBlock; // @synthesize nearbyTokensChangedBlock=_nearbyTokensChangedBlock;
 @property(retain) NSArray *spNearbyTokens; // @synthesize spNearbyTokens=_spNearbyTokens;
 @property(copy) CDUnknownBlockType tokensChange; // @synthesize tokensChange=_tokensChange;
+@property(copy) CDUnknownBlockType nearbyTokensChangedBlock; // @synthesize nearbyTokensChangedBlock=_nearbyTokensChangedBlock;
 @property(copy) CDUnknownBlockType beaconStatusChangedBlock; // @synthesize beaconStatusChangedBlock=_beaconStatusChangedBlock;
 @property(copy) CDUnknownBlockType beaconKeysChangedBlock; // @synthesize beaconKeysChangedBlock=_beaconKeysChangedBlock;
 @property(copy) CDUnknownBlockType beaconStateChangedBlock; // @synthesize beaconStateChangedBlock=_beaconStateChangedBlock;
@@ -55,6 +60,7 @@
 @property(retain) SPBeaconManager *beaconManager; // @synthesize beaconManager=_beaconManager;
 @property(retain) NSData *testBeaconReserved; // @synthesize testBeaconReserved=_testBeaconReserved;
 @property unsigned char testBeaconStatus; // @synthesize testBeaconStatus=_testBeaconStatus;
+@property BOOL testBeaconState; // @synthesize testBeaconState=_testBeaconState;
 @property(readonly) NSData *spBeaconReserved; // @synthesize spBeaconReserved=_spBeaconReserved;
 @property unsigned char spBeaconStatus; // @synthesize spBeaconStatus=_spBeaconStatus;
 @property BOOL spBeaconState; // @synthesize spBeaconState=_spBeaconState;
@@ -63,14 +69,21 @@
 @property(retain) NSData *beaconKey; // @synthesize beaconKey=_beaconKey;
 @property BOOL isTestMode; // @synthesize isTestMode=_isTestMode;
 - (void).cxx_destruct;
+- (void)updateTestBeaconState:(id)arg1;
+- (void)updateTestBeaconExtended:(id)arg1;
+- (void)updateTestBeaconStatus:(id)arg1;
 - (void)updateTestBeaconKeys:(id)arg1;
 - (void)updateTestNearOwnerTokens:(id)arg1;
 - (void)stopTest;
 - (void)startTest;
-- (void)rollTokens;
+- (void)rollTokensWithRequestID:(unsigned long long)arg1;
 - (void)rollTokens_async;
-- (void)rollKeys;
+- (void)rollTokens_async_completion:(CDUnknownBlockType)arg1;
+- (void)rollKeysWithRequestID:(unsigned long long)arg1;
 - (void)rollKeys_async;
+- (void)rollKeys_async_completion:(CDUnknownBlockType)arg1;
+- (void)completedTokenRequestID:(unsigned long long)arg1 success:(BOOL)arg2;
+- (void)completedKeyRequestID:(unsigned long long)arg1 success:(BOOL)arg2;
 - (void)initSPObjects;
 - (id)generateStateDump;
 - (void)dealloc;

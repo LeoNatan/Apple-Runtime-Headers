@@ -59,9 +59,11 @@
     unsigned long long _recordCount;
     BOOL _didExtractOneBatch;
     BOOL _highPriority;
+    NSString *_phaseDescription;
 }
 
 @property(nonatomic) BOOL highPriority; // @synthesize highPriority=_highPriority;
+@property(copy) NSString *phaseDescription; // @synthesize phaseDescription=_phaseDescription;
 - (void).cxx_destruct;
 - (id)taskIdentifier;
 - (void)_pushTaskDidFinishWithError:(id)arg1;

@@ -20,7 +20,7 @@
     id <IMAAppPresenterDelegate> _delegate;
     IMBalloonPlugin *_currentBalloonPlugin;
     CKFullScreenAppViewController *_expandedAppViewController;
-    CKBrowserTransitionCoordinator *_alwaysExpandedCoordinator;
+    CKBrowserTransitionCoordinator *_transitionCoordinator;
     _Bool _isTransitioningPresentationStyles;
     _Bool _alwaysPresentAppsExpanded;
     _Bool _hidesCompactAppForStickerDrag;
@@ -81,6 +81,7 @@
 - (void)_hideCompactBrowserAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)hideAppViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) UIViewController *currentAppViewController;
+- (void)presentFullScreenModalAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)notifyDelegateOfSelectedPlugin:(id)arg1;
 - (void)dealloc;

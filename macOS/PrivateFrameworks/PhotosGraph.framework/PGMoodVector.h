@@ -16,7 +16,7 @@
 - (id)description;
 - (id)moodArray;
 - (double)sum;
-- (unsigned long long)weightedRandomMood;
+- (unsigned long long)weightedRandomMoodWithSeed:(unsigned long long)arg1;
 - (void)enumerateWithBlock:(CDUnknownBlockType)arg1;
 - (unsigned long long)moodsWithThreshold:(double)arg1;
 - (void)normalize;

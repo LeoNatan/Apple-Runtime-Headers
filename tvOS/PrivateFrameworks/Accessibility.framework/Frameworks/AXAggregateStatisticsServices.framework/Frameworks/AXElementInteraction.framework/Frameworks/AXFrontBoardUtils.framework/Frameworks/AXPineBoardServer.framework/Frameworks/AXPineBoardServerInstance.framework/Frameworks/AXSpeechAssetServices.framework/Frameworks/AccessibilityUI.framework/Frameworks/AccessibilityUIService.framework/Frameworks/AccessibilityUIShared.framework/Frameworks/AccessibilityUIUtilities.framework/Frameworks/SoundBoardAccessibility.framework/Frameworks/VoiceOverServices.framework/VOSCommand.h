@@ -99,6 +99,11 @@
 + (id)SummarizeSystemFocusedElement;
 + (id)SummarizeElement;
 + (id)ToggleTextSelection;
++ (id)Redo;
++ (id)Undo;
++ (id)Paste;
++ (id)Cut;
++ (id)Copy;
 + (id)NextSearchResult;
 + (id)PreviousSearchResult;
 + (id)FindElementWithTextSearch;

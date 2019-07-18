@@ -47,6 +47,8 @@
     unsigned long long _scrollMode;
     double _autoscrollInterval;
     double _unitScrollDuration;
+    UIView *_headerView;
+    double _showcaseFactor;
     NSDictionary *_collectionToDatasourceIndexMap;
     UIFocusGuide *_focusGuide;
     CADisplayLink *_displayLink;
@@ -67,6 +69,8 @@
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) UIFocusGuide *focusGuide; // @synthesize focusGuide=_focusGuide;
 @property(retain, nonatomic) NSDictionary *collectionToDatasourceIndexMap; // @synthesize collectionToDatasourceIndexMap=_collectionToDatasourceIndexMap;
+@property(nonatomic) double showcaseFactor; // @synthesize showcaseFactor=_showcaseFactor;
+@property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(nonatomic) struct CGPoint focusDirection; // @synthesize focusDirection=_focusDirection;
 @property(nonatomic) double unitScrollDuration; // @synthesize unitScrollDuration=_unitScrollDuration;
 @property(nonatomic) double autoscrollInterval; // @synthesize autoscrollInterval=_autoscrollInterval;
@@ -138,6 +142,7 @@
 - (void)displayLinkDidFire:(id)arg1;
 - (void)_startContinuousScroll;
 - (void)layoutSubviews;
+- (void)tv_setShowcaseFactor:(double)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

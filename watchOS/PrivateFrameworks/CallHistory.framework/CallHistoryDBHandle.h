@@ -27,7 +27,6 @@
 @property(readonly, nonatomic) NSString *objectId; // @synthesize objectId;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)deleteWithPredicate:(id)arg1;
 - (_Bool)resetAllTimers;
 - (void)resetTimers;
 - (_Bool)saveTimers:(CDUnknownBlockType)arg1;
@@ -51,8 +50,11 @@
 - (id)createCallRecord;
 - (id)fetchAllNoLimit;
 - (id)fetchAll;
+- (id)updateManagedCallsWithPredicate:(id)arg1 propertiesToUpdate:(id)arg2;
 - (id)fetchManagedCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned int)arg3 offset:(unsigned int)arg4 batchSize:(unsigned int)arg5;
 - (unsigned int)fetchManagedCallCountWithPredicate:(id)arg1 sortDescriptors:(id)arg2;
+- (int)deleteManagedCalls:(id)arg1;
+- (int)deleteManagedCallsWithPredicate:(id)arg1;
 - (id)fetchWithPredicate:(id)arg1 forEntity:(id)arg2 withLimit:(_Bool)arg3;
 - (id)fetchWithPredicate:(id)arg1 forEntity:(id)arg2;
 - (void)mergeCallDBPropChangesFromRemoteAppSave;

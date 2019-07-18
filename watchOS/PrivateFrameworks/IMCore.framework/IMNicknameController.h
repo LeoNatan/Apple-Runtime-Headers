@@ -20,6 +20,8 @@
     NSSet *_blacklistedHandlesForSharing;
 }
 
++ (_Bool)multiplePhoneNumbersTiedToAppleID;
++ (_Bool)accountsMatchUpToUseNicknames;
 + (id)sharedInstance;
 @property(nonatomic) _Bool isInitialLoad; // @synthesize isInitialLoad=_isInitialLoad;
 @property(retain, nonatomic) NSSet *blacklistedHandlesForSharing; // @synthesize blacklistedHandlesForSharing=_blacklistedHandlesForSharing;
@@ -30,6 +32,7 @@
 @property(retain, nonatomic) IMNickname *personalNickname; // @synthesize personalNickname=_personalNickname;
 @property(retain, nonatomic) NSMutableDictionary *responseHandlers; // @synthesize responseHandlers=_responseHandlers;
 - (void).cxx_destruct;
+- (_Bool)meCardSyncEnabled;
 - (id)contactStore;
 - (id)meCardSharingState;
 - (id)daemonController;
@@ -40,16 +43,20 @@
 - (void)updateSharingWhitelist:(id)arg1 blacklist:(id)arg2;
 - (void)updatePendingNicknames:(id)arg1 handledNicknames:(id)arg2;
 - (void)_updateLocalNicknameStore;
+- (_Bool)shouldOfferNicknameSharingForChat:(id)arg1;
 - (void)updatePersonalNickname:(id)arg1;
 - (void)fetchPersonalNicknameWithCompletion:(CDUnknownBlockType)arg1;
 - (void)blacklistHandlesForNicknameSharing:(id)arg1;
-- (void)whitelistHandlesForNicknameSharing:(id)arg1;
+- (void)whitelistHandlesForNicknameSharing:(id)arg1 forChat:(id)arg2;
 - (_Bool)handleIsBlacklistedForSharing:(id)arg1;
 - (_Bool)handleIsWhitelistedForSharing:(id)arg1;
 - (void)clearPendingNicknameUpdatesForHandle:(id)arg1;
+- (id)IMSharedHelperMD5Helper:(id)arg1;
 - (unsigned int)nicknameUpdateForHandle:(id)arg1 nicknameIfAvailable:(id *)arg2;
 - (id)nicknameForHandle:(id)arg1;
 - (void)_broadcastNicknamePreferencesDidChange:(id)arg1;
+- (_Bool)_canUpdatePersonalNickname;
+- (_Bool)_nicknameFeatureEnabled;
 - (id)init;
 
 @end

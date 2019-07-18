@@ -9,7 +9,7 @@
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/UIScrollViewIntersectionDelegate-Protocol.h>
 
-@class CADisplayLink, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIInputViewPostPinningReloadState, UIInputViewSet, UIKBRenderConfig, UIKeyboardAutomatic, UIKeyboardRotationState, UIPanGestureRecognizer, UIPeripheralHostState, UIPeripheralHostView, UIResponder, UITextEffectsWindow, UITextInputMode, UIView;
+@class CADisplayLink, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIInputViewPostPinningReloadState, UIInputViewSet, UIKBRenderConfig, UIKeyboardAutomatic, UIKeyboardRotationState, UIPanGestureRecognizer, UIPeripheralHostState, UIPeripheralHostView, UIResponder, UITextInputMode, UIView;
 
 @interface UIPeripheralHost : NSObject <UIScrollViewIntersectionDelegate, UIGestureRecognizerDelegate>
 {
@@ -71,9 +71,7 @@
     NSMutableArray *_extraViews;
     float _ambiguousControlCenterActivationMargin;
     UIResponder *_responderWithoutAutomaticAppearanceEnabled;
-    UITextEffectsWindow *_containerWindow;
     int _hostedAnimationToggleCount;
-    _Bool _dontNeedAssistantBar;
     CDUnknownBlockType _deferredTransitionTask;
     double _lastKeyplaneResize;
     _Bool _preservingInputViews;
@@ -93,6 +91,8 @@
 + (float)gridViewRubberBandValueForValue:(float)arg1 target:(float)arg2 timeInterval:(float)arg3 velocity:(float *)arg4;
 + (void)setFloating:(_Bool)arg1 onCompletion:(CDUnknownBlockType)arg2;
 + (struct CGPoint)defaultUndockedOffset;
++ (void)adjustFloatingPersistentOffsetForKeyboardSize:(struct CGSize)arg1;
++ (struct UIEdgeInsets)floatingChromeBuffer;
 + (_Bool)pointIsWithinKeyboardContent:(struct CGPoint)arg1;
 + (id)allVisiblePeripheralFrames;
 + (struct CGRect)visiblePeripheralFrame;
@@ -171,12 +171,10 @@
 - (id)_renderConfigForCurrentResponder;
 - (struct CGSize)sizeOfInputViewForInputViewSet:(id)arg1 withInterfaceOrientation:(int)arg2;
 - (void)textEffectsWindowDidRotate:(id)arg1;
-- (void)peripheralHostDidEnterBackground:(id)arg1;
 - (void)peripheralHostWillResume:(id)arg1;
 - (_Bool)hasDictationKeyboard;
 - (void)dealloc;
 - (id)init;
-- (void)setListeningToSpringBoardKeyboardNotifications:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool automaticAppearanceReallyEnabled;
 - (void)setInputViewsHidden:(_Bool)arg1;
 - (void)updateToPlacement:(id)arg1 withNormalAnimationsAndNotifications:(_Bool)arg2;
@@ -286,7 +284,6 @@
 - (void)performWithoutDeactivation:(CDUnknownBlockType)arg1;
 - (int)_isKeyboardDeactivated;
 - (void)setDeactivatedKeyboard:(_Bool)arg1 forScene:(id)arg2;
-- (void)_dismissOverlayedUI;
 - (void)forceReloadInputViews;
 - (void)_reloadInputViewsForResponder:(id)arg1;
 - (void)setTextEffectsWindowLevelForInputView:(id)arg1 responder:(id)arg2;

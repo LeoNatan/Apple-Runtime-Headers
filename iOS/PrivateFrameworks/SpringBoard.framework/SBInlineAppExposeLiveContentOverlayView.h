@@ -21,6 +21,8 @@
 @property(readonly, nonatomic) SBSceneViewStatusBarAssertion *statusBarAssertion; // @synthesize statusBarAssertion=_statusBarAssertion;
 @property(readonly, nonatomic) SBDeviceApplicationSceneViewController *deviceApplicationSceneViewController; // @synthesize deviceApplicationSceneViewController=_deviceApplicationSceneViewController;
 - (void).cxx_destruct;
+- (_Bool)rendersAsynchronously;
+- (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
 - (void)dealloc;
 - (void)setRendersAsynchronously:(_Bool)arg1 withMinificationFilterEnabled:(_Bool)arg2;
 - (void)setUsesBrightSceneViewBackgroundMaterial:(_Bool)arg1;

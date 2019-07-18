@@ -21,6 +21,8 @@
     NSMutableData *_memStore;
 }
 
++ (id)fullNameForEncodedContact:(id)arg1;
++ (id)encodedStringForFullName:(id)arg1;
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;

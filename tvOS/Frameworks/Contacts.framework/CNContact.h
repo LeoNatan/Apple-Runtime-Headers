@@ -143,6 +143,7 @@
 + (id)predicateForContactsLinkedToContact:(id)arg1;
 + (id)predicateForContactsLinkedToContactWithIdentifier:(id)arg1;
 + (id)predicateForContactsMatchingPostalAddress:(id)arg1;
++ (id)predicateForContactsMatchingHandleStrings:(id)arg1 inContainersWithIdentifiers:(id)arg2;
 + (id)predicateForContactsMatchingHandleStrings:(id)arg1;
 + (id)predicateForContactsMatchingPhoneNumber:(id)arg1 prefixHint:(id)arg2 groupIdentifiers:(id)arg3 limitToOneResult:(_Bool)arg4;
 + (id)predicateForContactsMatchingEmailAddress:(id)arg1 groupIdentifiers:(id)arg2 limitToOneResult:(_Bool)arg3;

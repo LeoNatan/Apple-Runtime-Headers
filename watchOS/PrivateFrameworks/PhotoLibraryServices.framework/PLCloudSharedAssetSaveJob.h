@@ -27,7 +27,6 @@
     long long _jobType;
 }
 
-+ (id)placeholderImageProperties;
 + (id)nextDCIMSaveFileURLForCloudPersonID:(id)arg1 cloudAlbumGUID:(id)arg2 fileExtension:(id)arg3;
 + (id)_dcimDirectoryForFileURL:(id)arg1;
 + (id)pathForInFlightAssetCollectionWithGUID:(id)arg1 mediaAssetType:(unsigned int)arg2;

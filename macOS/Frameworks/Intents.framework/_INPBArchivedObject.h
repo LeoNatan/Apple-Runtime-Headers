@@ -15,11 +15,13 @@
 @interface _INPBArchivedObject : PBCodable <_INPBArchivedObject, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSData *_messageData;
     NSString *_typeName;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;
 @property(copy, nonatomic) NSData *messageData; // @synthesize messageData=_messageData;
 - (void).cxx_destruct;

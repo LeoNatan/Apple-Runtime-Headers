@@ -14,6 +14,14 @@
 {
     struct unordered_map<std::__1::basic_string<char>, unsigned long, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, unsigned long>>> inference_layer_index;
     ETVariablesDefinition *varsDef;
+    unsigned long long runtimePlatform;
+    int precision;
+    basic_string_23d93216 training_control_name;
+    basic_string_23d93216 training_control_end_name;
+    basic_string_23d93216 gradient_control_name;
+    basic_string_23d93216 gradient_control_end_name;
+    basic_string_23d93216 optimizer_control_name;
+    basic_string_23d93216 optimizer_control_end_name;
     ETModelDefinition *_inferenceModel;
     ETOptimizerDefinition *_optimizer;
     unsigned long long _platform;
@@ -22,14 +30,12 @@
     NSArray *_outputNames;
     shared_ptr_d082c67d _inferenceGraphNetPtr;
     shared_ptr_d082c67d _trainingGraphNetPtr;
-    basic_string_23d93216 _training_control_name;
     vector_ebb6ef3e _non_batches;
     unordered_map_1de83e55 _blobShapes;
 }
 
 @property vector_ebb6ef3e non_batches; // @synthesize non_batches=_non_batches;
 @property unordered_map_1de83e55 blobShapes; // @synthesize blobShapes=_blobShapes;
-@property basic_string_23d93216 training_control_name; // @synthesize training_control_name=_training_control_name;
 @property(retain) NSArray *outputNames; // @synthesize outputNames=_outputNames;
 @property unsigned long long batchSize; // @synthesize batchSize=_batchSize;
 @property shared_ptr_d082c67d trainingGraphNetPtr; // @synthesize trainingGraphNetPtr=_trainingGraphNetPtr;
@@ -53,6 +59,7 @@
 - (id)initWithModelDefinition:(id)arg1 lossDefinition:(id)arg2 variablesDefinition:(id)arg3 optimizerDefinition:(id)arg4 forPlatform:(unsigned long long)arg5 error:(id *)arg6;
 - (id)description;
 - (void)shareWeights;
+- (void)reloadOnRuntinePlatform:(id *)arg1;
 
 @end
 

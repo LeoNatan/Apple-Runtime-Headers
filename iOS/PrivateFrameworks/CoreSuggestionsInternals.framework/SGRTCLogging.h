@@ -62,7 +62,6 @@
 - (void)logEventInteractionForEntitySync:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
 - (id)interactionKeyForInterface:(unsigned short)arg1 actionType:(unsigned short)arg2;
 - (void)logEventInteractionForEntity:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
-- (void)logEventExtractionForTemplateName:(id)arg1 extractionStatus:(unsigned short)arg2 outputExceptions:(id)arg3 outputInfos:(id)arg4 jsMessageLogs:(id)arg5 jsOutputLogs:(id)arg6 timingProcessing:(unsigned long long)arg7 overridingDocumentType:(id)arg8;
 - (void)logEventExtractionForTemplateName:(id)arg1 extractionStatus:(unsigned short)arg2 outputExceptions:(id)arg3 outputInfos:(id)arg4 jsMessageLogs:(id)arg5 jsOutputLogs:(id)arg6 timingProcessing:(unsigned long long)arg7;
 - (id)_eventExtractionDictionaryLogForTemplateName:(id)arg1 extractionStatus:(unsigned short)arg2 outputExceptions:(id)arg3 outputInfos:(id)arg4 jsMessageLogs:(id)arg5 jsOutputLogs:(id)arg6 timingProcessing:(unsigned long long)arg7;
 - (void)logNewInteractionWithDictionary:(id)arg1;

@@ -11,7 +11,6 @@
 + (id)ak_errorWithCode:(long long)arg1 underlyingError:(id)arg2;
 + (id)ak_errorWithCode:(long long)arg1 userInfo:(id)arg2;
 + (id)ak_errorWithCode:(long long)arg1;
-- (_Bool)ak_isAuthorizationUserNotSupportedError;
 - (_Bool)ak_isServiceError;
 - (_Bool)ak_isUserTryAgainError;
 - (_Bool)ak_isUserSkippedError;

@@ -11,11 +11,13 @@
 
 @interface CSSiriClientBehaviorMonitor : NSObject
 {
+    BOOL _isStreaming;
     NSObject<OS_dispatch_queue> *_queue;
     NSHashTable *_observers;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) BOOL isStreaming; // @synthesize isStreaming=_isStreaming;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;

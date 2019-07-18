@@ -10,6 +10,7 @@
 {
 }
 
+- (long long)type;
 - (id)initWithDismissalDelay:(double)arg1 validator:(CDUnknownBlockType)arg2;
 
 @end

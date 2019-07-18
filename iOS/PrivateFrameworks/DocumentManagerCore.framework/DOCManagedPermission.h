@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSCache, NSString;
+@class ACAccountStore, NSCache, NSString;
 
 @interface DOCManagedPermission : NSObject
 {
@@ -19,9 +19,11 @@
     NSString *_hostIdentifier;
     unsigned long long _hostAccountDataOwnerState;
     NSCache *_cache;
+    ACAccountStore *_accountStore;
 }
 
 + (id)defaultPermission;
+@property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(retain, nonatomic) NSCache *cache; // @synthesize cache=_cache;
 @property(nonatomic) unsigned long long hostAccountDataOwnerState; // @synthesize hostAccountDataOwnerState=_hostAccountDataOwnerState;
 @property(retain, nonatomic) NSString *hostIdentifier; // @synthesize hostIdentifier=_hostIdentifier;
@@ -32,12 +34,15 @@
 - (_Bool)canCopyfromContainingBundleIdentifer:(id)arg1;
 - (id)queueFileDataForAcceptance:(id)arg1 originalFileName:(id)arg2 forBundleID:(id)arg3 outError:(id *)arg4;
 - (id)defaultFileProviderForAppBundle:(id)arg1;
+- (unsigned long long)dataOwnerStateForAccountIdentifier:(id)arg1;
 - (unsigned long long)dataOwnerStateForBundleIdentifier:(id)arg1;
 - (unsigned long long)dataOwnerStateForItem:(id)arg1;
 - (_Bool)canAppWithDataOwnerState:(unsigned long long)arg1 performAction:(unsigned long long)arg2 dataOwnerState:(unsigned long long)arg3;
+- (_Bool)canAppWithBundleIdentifier:(id)arg1 performAction:(unsigned long long)arg2 accountIdentifier:(id)arg3;
 - (_Bool)canAppWithBundleIdentifier:(id)arg1 performAction:(unsigned long long)arg2 bundleIdentifier:(id)arg3;
 - (_Bool)canAppWithDataOwnerState:(unsigned long long)arg1 performAction:(unsigned long long)arg2 item:(id)arg3;
 - (_Bool)canItem:(id)arg1 performAction:(unsigned long long)arg2 item:(id)arg3;
+- (_Bool)canHostAppPerformAction:(unsigned long long)arg1 accountIdentifier:(id)arg2;
 - (_Bool)canHostAppPerformAction:(unsigned long long)arg1 bundleIdentifier:(id)arg2;
 - (_Bool)canHostAppPerformAction:(unsigned long long)arg1 legacyPickerExtension:(id)arg2;
 - (_Bool)canHostAppPerformAction:(unsigned long long)arg1 targetItem:(id)arg2;

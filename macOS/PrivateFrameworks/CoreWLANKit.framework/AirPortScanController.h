@@ -50,6 +50,7 @@
 - (void)userCancelledWPSDialog:(id)arg1;
 - (void)userDidDenyJoin:(id)arg1;
 - (void)userDidConfirmJoin:(id)arg1;
+- (void)userDidOKInfoDialog:(id)arg1;
 - (void)userDidCancelErrorDialog:(id)arg1;
 - (void)userDidOKErrorDialog:(id)arg1;
 - (void)userCancelledManualJoinDialog:(id)arg1;

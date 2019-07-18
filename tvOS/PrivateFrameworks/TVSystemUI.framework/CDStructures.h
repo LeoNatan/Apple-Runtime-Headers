@@ -44,3 +44,9 @@ struct _TVSUIOuterShadowViewAttributes {
     double shadowRadius;
 };
 
+struct _textSizeResult {
+    struct CGSize _field1;
+    unsigned long long _field2;
+    _Bool _field3;
+};
+

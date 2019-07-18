@@ -9,6 +9,7 @@
 @interface _TtC12NewsArticles23FollowingCommandHandler : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: subscriptionController
+    // Error parsing type: , name: followingManager
 }
 
 @end

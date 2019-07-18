@@ -70,6 +70,7 @@
 - (void)ams_setFirstName:(id)arg1;
 - (void)ams_setDSID:(id)arg1;
 - (void)ams_setCreditsString:(id)arg1;
+- (void)ams_setBiometricsState:(long long)arg1;
 - (void)ams_setAltDSID:(id)arg1;
 - (void)ams_setAgreedToTerms:(_Bool)arg1;
 - (void)ams_setAccountFlags:(id)arg1;
@@ -83,6 +84,7 @@
 @property(readonly, nonatomic) NSString *ams_lastName;
 - (_Bool)ams_isValidPayment;
 @property(readonly, nonatomic, getter=ams_isSandboxAccount) _Bool ams_sandboxAccount;
+@property(readonly, nonatomic, getter=ams_isPrivateListeningEnabled) _Bool ams_privateListeningEnabled;
 @property(readonly, nonatomic, getter=ams_isManagedAppleID) _Bool ams_managedAppleID;
 @property(readonly, nonatomic, getter=ams_isLocalAccount) _Bool ams_localAccount;
 @property(readonly, nonatomic, getter=ams_isiTunesAccount) _Bool ams_iTunesAccount;
@@ -101,6 +103,7 @@
 - (_Bool)ams_didAgreeToTerms;
 @property(readonly, nonatomic) NSString *ams_creditsString;
 @property(readonly, nonatomic) NSArray *ams_cookies;
+- (long long)ams_biometricsState;
 @property(readonly, nonatomic) NSString *ams_altDSID;
 - (id)ams_accountFlags;
 

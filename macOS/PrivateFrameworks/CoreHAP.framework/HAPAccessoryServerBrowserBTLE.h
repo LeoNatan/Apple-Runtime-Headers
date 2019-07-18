@@ -107,8 +107,8 @@
 - (void)_startScanningForPairingPeers;
 - (void)_stopActiveScan;
 - (void)pauseScans;
-- (void)_matchAccessoryServerWithSetupID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)matchAccessoryServerWithSetupID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_matchAccessoryServerWithSetupID:(id)arg1 serverIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)matchAccessoryServerWithSetupID:(id)arg1 serverIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)stopDiscoveringAccessoryServers;
 - (void)_startDiscoveringAccessoryServers;
 - (void)startDiscoveringAccessoryServers;

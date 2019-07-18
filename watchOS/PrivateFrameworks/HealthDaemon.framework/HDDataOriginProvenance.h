@@ -24,12 +24,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)dataProvenanceWithSyncProvenance:(long long)arg1 productType:(id)arg2 systemBuild:(id)arg3 operatingSystemVersion:(CDStruct_4bb15e50)arg4 sourceVersion:(id)arg5 timeZoneName:(id)arg6 sourceID:(id)arg7 deviceID:(id)arg8;
++ (id)dataProvenanceWithSyncProvenance:(long long)arg1 productType:(id)arg2 systemBuild:(id)arg3 operatingSystemVersion:(CDStruct_77932685)arg4 sourceVersion:(id)arg5 timeZoneName:(id)arg6 sourceID:(id)arg7 deviceID:(id)arg8;
 @property(retain, nonatomic) NSNumber *deviceID; // @synthesize deviceID=_deviceID;
 @property(retain, nonatomic) NSNumber *sourceID; // @synthesize sourceID=_sourceID;
 @property(copy, nonatomic) NSString *timeZoneName; // @synthesize timeZoneName=_timeZoneName;
 @property(copy, nonatomic) NSString *sourceVersion; // @synthesize sourceVersion=_sourceVersion;
-@property(nonatomic) CDStruct_4bb15e50 operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
+@property(nonatomic) CDStruct_77932685 operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
 @property(copy, nonatomic) NSString *systemBuild; // @synthesize systemBuild=_systemBuild;
 @property(copy, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(nonatomic) long long syncProvenance; // @synthesize syncProvenance=_syncProvenance;

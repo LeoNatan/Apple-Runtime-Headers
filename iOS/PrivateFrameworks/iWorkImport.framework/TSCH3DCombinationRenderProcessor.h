@@ -6,7 +6,7 @@
 
 #import <iWorkImport/TSCH3DRetargetRenderProcessor.h>
 
-@class NSIndexSet, TSCH3DShaderEffects, TSCH3DShaderEffectsStates;
+@class NSIndexSet, NSMutableArray, TSCH3DShaderEffects, TSCH3DShaderEffectsStates;
 
 __attribute__((visibility("hidden")))
 @interface TSCH3DCombinationRenderProcessor : TSCH3DRetargetRenderProcessor
@@ -19,10 +19,11 @@ __attribute__((visibility("hidden")))
     StateStack_2a9a65b0 mObjectStateStack;
     struct StateStack<TSCH3D::RenderState, 10> mRenderStateStack;
     TSCH3DShaderEffects *mEffects;
-    TSCH3DShaderEffectsStates *mShaderEffectsStates;
+    NSMutableArray *mEffectsStatesStack;
 }
 
 + (id)processorWithOriginal:(id)arg1 enableTypes:(id)arg2;
+@property(retain, nonatomic) NSMutableArray *effectsStatesStack; // @synthesize effectsStatesStack=mEffectsStatesStack;
 @property(readonly, nonatomic) _Bool projectionChanged; // @synthesize projectionChanged=mProjectionChanged;
 @property(readonly, nonatomic) _Bool transformChanged; // @synthesize transformChanged=mTransformChanged;
 - (id).cxx_construct;
@@ -31,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)pushRenderState;
 - (void)setRenderState:(const struct RenderState *)arg1;
 - (struct RenderState)renderState;
+@property(readonly, nonatomic) TSCH3DShaderEffectsStates *currentEffectsStates;
 - (id)effectsStates;
 - (id)effects;
 - (void)resetBuffers;

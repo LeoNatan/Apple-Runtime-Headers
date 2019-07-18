@@ -29,12 +29,17 @@
 - (void)updateVoiceTriggerConfiguration:(id)arg1;
 - (void)enableBargeInMode:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)hasBargeInSupport;
+- (void)hasBargeInSupportCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)speakerStateMuted;
+- (void)speakerStateMutedCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)speakerStateActive;
+- (void)speakerStateActiveCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)enableSpeakerStateListening:(BOOL)arg1;
+- (void)enableSpeakerStateListening:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)enableVoiceTriggerListening:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)enableVoiceTriggerListening:(BOOL)arg1;
 @property(readonly, nonatomic) unsigned long long voiceTriggerPastDataFramesAvailable;
+- (void)voiceTriggerPastDataFramesAvailableCompletion:(CDUnknownBlockType)arg1;
 - (id)voiceTriggerServerConnection;
 - (void)handleMediaServerReset:(id)arg1;
 - (void)callServerResetBlock;

@@ -13,7 +13,7 @@
 @interface PXCMMPhotoKitPersonSuggestion : NSObject <PXCMMPersonSuggestion>
 {
     CNContact *_fetchQueue_linkedContact;
-    NSString *_displayName;
+    NSString *_localizedName;
     PHPerson *_person;
     PHFetchResult *_keyFaceFetchResult;
     PHFetchResult *_keyAssetFetchResult;
@@ -28,7 +28,7 @@
 @property(readonly, nonatomic) PHFetchResult *keyAssetFetchResult; // @synthesize keyAssetFetchResult=_keyAssetFetchResult;
 @property(readonly, nonatomic) PHFetchResult *keyFaceFetchResult; // @synthesize keyFaceFetchResult=_keyFaceFetchResult;
 @property(readonly, nonatomic) PHPerson *person; // @synthesize person=_person;
-@property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
+@property(readonly, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

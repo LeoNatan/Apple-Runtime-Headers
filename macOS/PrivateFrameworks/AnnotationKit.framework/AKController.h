@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AKActionController, AKAttributeController, AKCursorController_Mac, AKDFRController, AKFormFeatureDetectorController, AKHighlightAnnotationController, AKLegacyDoodleController, AKMainEventHandler, AKModelController, AKPageController, AKSidecarController, AKSignatureModelController, AKStatistics, AKTextEditorController, AKToolController, AKToolbarView, AKToolbarViewController, AKUndoController, NSMapTable, NSMutableArray, NSString, NSView, NSWindow;
+@class AKActionController, AKAttributeController, AKCursorController_Mac, AKDFRController, AKFormFeatureDetectorController, AKHighlightAnnotationController, AKLegacyDoodleController, AKMainEventHandler, AKModelController, AKPageController, AKPageControllerArray, AKSidecarController, AKSignatureModelController, AKStatistics, AKTextEditorController, AKToolController, AKToolbarView, AKToolbarViewController, AKUndoController, NSMapTable, NSString, NSView, NSWindow;
 @protocol AKControllerDelegateProtocol;
 
 @interface AKController : NSObject
@@ -27,7 +27,7 @@
     NSView *_toolbarView;
     unsigned long long _currentPageIndex;
     NSString *_author;
-    NSMutableArray *_pageControllers;
+    AKPageControllerArray *_pageControllers;
     NSMapTable *_pageModelControllersToPageControllers;
     AKActionController *_actionController;
     AKToolController *_toolController;
@@ -93,7 +93,7 @@
 @property(retain) AKToolController *toolController; // @synthesize toolController=_toolController;
 @property(retain) AKActionController *actionController; // @synthesize actionController=_actionController;
 @property(retain) NSMapTable *pageModelControllersToPageControllers; // @synthesize pageModelControllersToPageControllers=_pageModelControllersToPageControllers;
-@property(retain) NSMutableArray *pageControllers; // @synthesize pageControllers=_pageControllers;
+@property(retain) AKPageControllerArray *pageControllers; // @synthesize pageControllers=_pageControllers;
 @property BOOL isTestingInstance; // @synthesize isTestingInstance=_isTestingInstance;
 @property(copy) NSString *author; // @synthesize author=_author;
 @property unsigned long long currentPageIndex; // @synthesize currentPageIndex=_currentPageIndex;

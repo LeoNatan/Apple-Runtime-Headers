@@ -7,7 +7,7 @@
 #import <UIKit/UIView.h>
 
 @class MKMapItem, MKMuninContainerBadgeView, UIActivityIndicatorView, UIColor;
-@protocol NSObject;
+@protocol MKMuninContainerViewDelegate, NSObject;
 
 @interface MKMuninContainerView : UIView
 {
@@ -15,6 +15,7 @@
     UIColor *_dimmingViewBackgroundColorBlackTranslucent;
     UIColor *_dimmingViewBackgroundColorPhotosOpaque;
     _Bool _photosDimmingStyle;
+    id <MKMuninContainerViewDelegate> _delegate;
     MKMapItem *_mapItem;
     unsigned long long _dimmingState;
     MKMuninContainerBadgeView *_badgeView;
@@ -30,8 +31,10 @@
 @property(nonatomic) _Bool photosDimmingStyle; // @synthesize photosDimmingStyle=_photosDimmingStyle;
 @property(nonatomic) unsigned long long dimmingState; // @synthesize dimmingState=_dimmingState;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
+@property(nonatomic) __weak id <MKMuninContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_updateDimmingViewBackgroundColor;
+- (void)_updateDimmingStateForMuninView:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)infoCardThemeChanged;
 - (void)cancelIfPresent;
 - (void)_setDimmingViewHidden:(_Bool)arg1 loading:(_Bool)arg2 animated:(_Bool)arg3;
@@ -39,6 +42,7 @@
 - (void)setBadgeHidden:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic, getter=isBadgeHidden) _Bool badgeHidden;
 - (void)layoutSubviews;
+- (void)didAddSubview:(id)arg1;
 - (id)muninViewIfPresent;
 - (void)setMapItem:(id)arg1 wantsCloseUpView:(_Bool)arg2;
 - (void)dealloc;

@@ -6,11 +6,12 @@
 
 #import <HealthDaemon/HDQueryServer.h>
 
-@class NSDateInterval;
+@class HKQuantityType, NSDateInterval;
 
 @interface HDStatisticsQueryServer : HDQueryServer
 {
     NSDateInterval *_dateInterval;
+    HKQuantityType *_quantityType;
     unsigned int _statisticsOptions;
     unsigned int _mergeStrategy;
 }
@@ -22,6 +23,7 @@
 @property(readonly, nonatomic) unsigned int statisticsOptions; // @synthesize statisticsOptions=_statisticsOptions;
 - (void).cxx_destruct;
 - (id)_queue_fetchStatisticsWithError:(id *)arg1;
+- (id)quantityType;
 - (void)_queue_start;
 - (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4;
 

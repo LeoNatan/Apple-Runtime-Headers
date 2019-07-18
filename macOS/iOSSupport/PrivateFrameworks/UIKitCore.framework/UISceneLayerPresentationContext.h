@@ -18,8 +18,12 @@
     double _alpha;
     BOOL _hidden;
     BOOL _clippingDisabled;
+    unsigned long long _renderingMode;
+    NSString *_minificationFilterName;
 }
 
+@property(copy, nonatomic, setter=_setMinificationFilterName:) NSString *_minificationFilterName; // @synthesize _minificationFilterName;
+@property(nonatomic) unsigned long long renderingMode; // @synthesize renderingMode=_renderingMode;
 @property(nonatomic, getter=isClippingDisabled) BOOL clippingDisabled; // @synthesize clippingDisabled=_clippingDisabled;
 @property(nonatomic, getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;

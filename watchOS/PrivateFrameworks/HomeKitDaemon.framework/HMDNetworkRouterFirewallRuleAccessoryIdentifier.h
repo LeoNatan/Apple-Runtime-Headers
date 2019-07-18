@@ -23,12 +23,11 @@
 @property(readonly, nonatomic) NSString *productNumber; // @synthesize productNumber=_productNumber;
 @property(readonly, nonatomic) NSString *productGroup; // @synthesize productGroup=_productGroup;
 - (void).cxx_destruct;
+- (id)attributeDescriptions;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithProductGroup:(id)arg1 productNumber:(id)arg2 firmwareVersion:(id)arg3;
-- (id)shortDescription;
-- (id)description;
 - (id)cloudKitRecordID;
 @property(readonly, nonatomic) NSString *cloudKitRecordName;
 @property(readonly, nonatomic) NSString *cloudKitZoneName;

@@ -16,11 +16,14 @@
 @interface PXNSScrollViewController : PXScrollViewController <PXNSScrollViewDelegate, NSScrollViewDelegate, _PXScrollDocumentViewAccessibilityDelegate>
 {
     PXNSScrollView *_scrollView;
+    BOOL _isScrolling;
+    BOOL _isTracking;
     id <PXNSScrollViewControllerAccessibilityDelegate> _accessibilityDelegate;
 }
 
 @property(nonatomic) __weak id <PXNSScrollViewControllerAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *axDelegateAccessibilitySelectedCells;
 @property(retain, nonatomic) NSArray *axDelegateAccessibilitySelectedChildren;
 @property(readonly, nonatomic) NSArray *axDelegateAccessibilityVisibleChildren;
 @property(readonly, nonatomic) NSArray *axDelegateAccessibilityChildren;
@@ -32,6 +35,7 @@
 - (void)didBeginScrollInScrollView:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidLayout:(id)arg1;
+- (BOOL)isTracking;
 - (void)applyScrollInfo:(id)arg1;
 - (BOOL)deferContentOffsetUpdates;
 - (void)setDeferContentOffsetUpdates:(BOOL)arg1;
@@ -46,6 +50,7 @@
 - (void)setScrollViewNeedsLayout;
 - (void)scrollRectToVisible:(struct CGRect)arg1 avoidingContentInsetEdges:(unsigned long long)arg2 animated:(BOOL)arg3;
 - (void)setVisibleOrigin:(struct CGPoint)arg1;
+- (BOOL)isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
 - (void)scrollToEdge:(unsigned int)arg1;
 - (void)addSubviewToScrollView:(struct NSObject *)arg1;
 - (void)addSubview:(id)arg1;

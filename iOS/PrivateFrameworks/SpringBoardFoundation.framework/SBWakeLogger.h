@@ -10,6 +10,7 @@
 
 @interface SBWakeLogger : NSObject
 {
+    struct os_unfair_lock_s _lock;
     _Bool _trackingWake;
     unsigned int _timesyncService;
     unsigned int _backlightService;
@@ -24,6 +25,7 @@
 @property(nonatomic) long long homeButtonType; // @synthesize homeButtonType=_homeButtonType;
 @property(nonatomic) _Bool trackingWake; // @synthesize trackingWake=_trackingWake;
 - (void).cxx_destruct;
+- (void)_lock_wakeDidBegin:(long long)arg1;
 - (void)lockDidBegin;
 - (void)wakeDidEnd;
 - (void)wakeDidBegin:(long long)arg1;

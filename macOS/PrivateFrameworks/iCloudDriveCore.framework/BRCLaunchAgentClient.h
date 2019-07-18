@@ -27,6 +27,8 @@ __attribute__((visibility("hidden")))
 - (void)getUserVisibleRootURLWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getDefaultAccountURLWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getUbiquityIdentityTokenWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (BOOL)tokenAtPath:(id)arg1 appIdentifier:(id)arg2 dsid:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)getDocumentDomainForCurrentPersonaWithRetryCount:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getDocumentDomainForCurrentPersonaWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getiCloudDriveServiceURLWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_gateAccessToPreciousURL:(id)arg1 auditToken:(CDStruct_4c969caf)arg2 completion:(CDUnknownBlockType)arg3;

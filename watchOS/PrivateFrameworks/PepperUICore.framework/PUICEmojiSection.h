@@ -38,6 +38,7 @@
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 @property(readonly, copy, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 - (void).cxx_destruct;
+- (id)_thumbnailForRecentItem:(id)arg1 withMaxPixelDimension:(float)arg2;
 - (void)_updateWithRecents:(id)arg1;
 - (void)_loadRecents;
 - (void)_populateFrequentlyUsedList;

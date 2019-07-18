@@ -17,9 +17,11 @@ __attribute__((visibility("hidden")))
     TVPStateMachine *_stateMachine;
     NSMutableArray *_keyLoaders;
     NSMutableSet *_penaltyBox;
+    unsigned long long _backgroundTaskIdentifier;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) unsigned long long backgroundTaskIdentifier; // @synthesize backgroundTaskIdentifier=_backgroundTaskIdentifier;
 @property(nonatomic) _Bool networkErrorOccurredDuringInvalidation; // @synthesize networkErrorOccurredDuringInvalidation=_networkErrorOccurredDuringInvalidation;
 @property(retain, nonatomic) NSMutableSet *penaltyBox; // @synthesize penaltyBox=_penaltyBox;
 @property(retain, nonatomic) NSMutableArray *keyLoaders; // @synthesize keyLoaders=_keyLoaders;

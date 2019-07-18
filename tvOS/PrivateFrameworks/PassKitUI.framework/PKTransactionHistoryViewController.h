@@ -49,8 +49,8 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)_updateNavigationBarIconForNavigationBarAppeared:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithTransactionGroup:(id)arg1 paymentPass:(id)arg2 transactionHistory:(id)arg3;
-- (id)initWithFetcher:(id)arg1 paymentPass:(id)arg2 featuredTransaction:(id)arg3 selectedTransactions:(id)arg4 transactionHistory:(id)arg5;
+- (id)initWithTransactionGroup:(id)arg1 paymentPass:(id)arg2 account:(id)arg3 transactionHistory:(id)arg4;
+- (id)initWithFetcher:(id)arg1 paymentPass:(id)arg2 account:(id)arg3 featuredTransaction:(id)arg4 selectedTransactions:(id)arg5 transactionHistory:(id)arg6;
 
 @end
 

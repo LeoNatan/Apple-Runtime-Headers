@@ -27,13 +27,13 @@
 @property(retain, nonatomic, setter=_setHostTintColor:) UIColor *_hostTintColor; // @synthesize _hostTintColor=__hostTintColor;
 @property(nonatomic, setter=_setHostTintAdjustmentMode:) long long _hostTintAdjustmentMode; // @synthesize _hostTintAdjustmentMode;
 - (void).cxx_destruct;
-- (id)_traitCollectionForSize:(struct CGSize)arg1 screenCollection:(id)arg2;
+- (id)_traitCollectionForSize:(struct CGSize)arg1 parentCollection:(id)arg2;
 - (void)_updateWindowTraitsAndNotify:(_Bool)arg1;
 - (_Bool)_shouldPropagateTraitCollectionChanges;
 - (_Bool)_allowsLinkPreviewInteractionInViewServices;
 - (void)didSetResponderTargetForCalloutBar:(id)arg1;
 - (void)_setFirstResponder:(id)arg1;
-- (void)setScreen:(id)arg1;
+- (void)_didMoveFromScreen:(id)arg1 toScreen:(id)arg2;
 - (void)_configureContextOptions:(id)arg1;
 - (long long)_defaultTintAdjustmentMode;
 - (id)_normalInheritedTintColor;

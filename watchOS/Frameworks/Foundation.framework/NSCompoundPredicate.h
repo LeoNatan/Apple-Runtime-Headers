@@ -28,7 +28,7 @@
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)predicateFormat;
-- (id)_subpredicateDescription:(id)arg1;
+- (id)_copySubpredicateDescription:(id)arg1;
 @property(readonly, copy) NSArray *subpredicates;
 - (id)_predicateOperator;
 @property(readonly) unsigned int compoundPredicateType;

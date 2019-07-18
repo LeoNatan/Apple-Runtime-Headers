@@ -32,6 +32,7 @@
 + (id)pasteboardWithName:(id)arg1;
 + (id)pasteboardWithUniqueName;
 + (id)generalPasteboard;
++ (id)testingPasteboardWithCFPasteboard:(void *)arg1;
 + (id)_pasteboardWithName:(id)arg1;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone *)arg1;
@@ -83,6 +84,7 @@
 - (id)_typesAtIndex:(unsigned long long)arg1 combinesItems:(BOOL)arg2;
 - (id)_cachedTypeNameUnion;
 - (void)_updateTypeCacheIfNeeded;
+- (BOOL)_setExpirationDate:(id)arg1;
 - (long long)_setOwner:(id)arg1 forTypes:(id)arg2 atIndex:(unsigned long long)arg3 selector:(SEL)arg4 usesPboardTypes:(BOOL)arg5;
 - (BOOL)_setData:(id)arg1 forType:(id)arg2 index:(unsigned long long)arg3 usesPboardTypes:(BOOL)arg4;
 - (id)_pasteboardItems;

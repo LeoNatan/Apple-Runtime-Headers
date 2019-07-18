@@ -19,11 +19,11 @@
 - (_Bool)updateHighlightTitlesWithError:(id *)arg1;
 - (_Bool)processUnprocessedMomentLocationsWithError:(id *)arg1;
 - (_Bool)processRecentHighlightsWithError:(id *)arg1;
+- (void)prefetchResourcesWithMode:(int)arg1;
 - (void)prefetchResourcesForHighlights:(id)arg1;
 - (void)prefetchResourcesForMemories:(id)arg1;
 - (void)pruneAssets:(id)arg1 resourceTypes:(id)arg2;
 - (_Bool)debugSidecarFileURLsForAsset:(id)arg1 debugSidecarFileURLs:(id *)arg2 error:(id *)arg3;
-- (void)computeFingerPrintsOfAsset:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)revertToOriginalForAsset:(id)arg1 error:(id *)arg2;
 - (id)getCPLState;
 - (id)getXPCTransactionStatus;

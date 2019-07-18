@@ -13,7 +13,7 @@
     NSDateFormatter *_dateFormatter;
 }
 
-+ (_Bool)workflowNeedsMigration:(id)arg1 fromClientVersion:(long long)arg2;
++ (_Bool)workflowNeedsMigration:(id)arg1 fromClientVersion:(id)arg2;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 - (void).cxx_destruct;
 - (void)migrateWorkflow;

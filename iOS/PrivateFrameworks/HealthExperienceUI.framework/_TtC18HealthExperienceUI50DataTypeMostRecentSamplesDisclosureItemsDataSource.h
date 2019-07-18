@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HealthExperienceUI/_TtC18HealthExperienceUI25DataTypeMutableDataSource.h>
+#import "_$s16HealthExperience22MutableArrayDataSourceCN.h"
 
-@interface _TtC18HealthExperienceUI50DataTypeMostRecentSamplesDisclosureItemsDataSource : _TtC18HealthExperienceUI25DataTypeMutableDataSource
+@interface _TtC18HealthExperienceUI50DataTypeMostRecentSamplesDisclosureItemsDataSource : _$s16HealthExperience22MutableArrayDataSourceCN
 {
     // Error parsing type: , name: healthStore
+    // Error parsing type: , name: unitController
     // Error parsing type: , name: sampleType
     // Error parsing type: , name: sampleQueryLimit
     // Error parsing type: , name: samples

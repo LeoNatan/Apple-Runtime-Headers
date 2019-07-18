@@ -14,7 +14,10 @@
     id <MTLDevice> _device;
     id <MTLCommandQueue> _commandQueue;
     id <MTLComputePipelineState> _transitionDetection;
-    struct CF<__CVMetalTextureCache *> _textureCache;
+    struct CF<__CVMetalTextureCache *> _textureCacheLuma;
+    struct CF<__CVMetalTextureCache *> _textureCacheChroma;
+    struct CF<__CVMetalTextureCache *> _textureCacheBGRALuma;
+    struct CF<__CVMetalTextureCache *> _textureCacheBGRAChroma;
     NSDictionary *_readAttributes;
     NSDictionary *_writeAttributes;
     struct MetalBufferPool _packetPool;

@@ -10,13 +10,20 @@
 
 @interface RBSWorkloop : NSObject
 {
+    NSObject<OS_dispatch_workloop> *_calloutWorkloop;
     NSObject<OS_dispatch_workloop> *_backgroundWorkloop;
+    NSObject<OS_dispatch_workloop> *_syncingWorkloop;
 }
 
++ (id)createSyncingQueue:(id)arg1;
 + (void)performBackgroundWorkWithServiceClass:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
 + (void)performBackgroundWork:(CDUnknownBlockType)arg1;
 + (id)createBackgroundQueue:(id)arg1;
 + (id)sharedBackgroundWorkloop;
++ (void)performCalloutWithServiceClass:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
++ (void)performCallout:(CDUnknownBlockType)arg1;
++ (id)createCalloutQueue:(id)arg1;
++ (id)sharedCalloutWorkloop;
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (id)_init;

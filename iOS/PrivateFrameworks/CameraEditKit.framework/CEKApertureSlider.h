@@ -4,82 +4,35 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <CameraEditKit/CEKDiscreteSlider.h>
 
 #import <CameraEditKit/UIScrollViewDelegate-Protocol.h>
 
-@class CEKApertureSliderTickMarksView, CEKEdgeGradientView, CEKSelectionFeedbackGenerator, CEKSliderDotView, NSNumberFormatter, NSString, UIColor, UIImageView, UILabel, UIScrollView;
+@class NSNumberFormatter, NSString;
 @protocol CEKApertureSliderDelegate;
 
-@interface CEKApertureSlider : UIView <UIScrollViewDelegate>
+@interface CEKApertureSlider : CEKDiscreteSlider <UIScrollViewDelegate>
 {
-    NSNumberFormatter *_decimalFormatter;
-    NSNumberFormatter *_wholeNumberFormatter;
-    _Bool _enabled;
-    _Bool _useLegibilityBackgrounds;
-    _Bool __overscrolling;
-    _Bool __active;
     id <CEKApertureSliderDelegate> _delegate;
-    long long _textOrientation;
-    UIColor *_gradientColor;
-    UIScrollView *__scrollView;
-    UIView *__indicatorView;
-    UILabel *__titleLabel;
-    UILabel *__valueLabel;
-    CEKEdgeGradientView *__edgeGradientView;
-    UIImageView *__valueBackground;
-    UIImageView *__titleBackground;
-    UIView *__indicatorBackground;
-    CEKApertureSliderTickMarksView *__tickMarksView;
-    CEKSliderDotView *__dotView;
-    CEKSelectionFeedbackGenerator *__feedbackGenerator;
-    unsigned long long __currentApertureIndex;
     unsigned long long __minimumApertureIndex;
     unsigned long long __maximumApertureIndex;
-    unsigned long long __markedApertureIndex;
-    CDStruct_ae5a35ae _gradientInsets;
+    NSNumberFormatter *__decimalFormatter;
+    NSNumberFormatter *__wholeNumberFormatter;
 }
 
 + (_Bool)isValidApertureIndex:(unsigned long long)arg1;
 + (_Bool)isValidApertureIndexFullStop:(unsigned long long)arg1;
 + (unsigned long long)firstFullStopIndexAfterOrIncludingIndex:(unsigned long long)arg1;
 + (id)validApertureValues;
-@property(nonatomic, setter=_setMarkedApertureIndex:) unsigned long long _markedApertureIndex; // @synthesize _markedApertureIndex=__markedApertureIndex;
+@property(readonly, nonatomic) NSNumberFormatter *_wholeNumberFormatter; // @synthesize _wholeNumberFormatter=__wholeNumberFormatter;
+@property(readonly, nonatomic) NSNumberFormatter *_decimalFormatter; // @synthesize _decimalFormatter=__decimalFormatter;
 @property(nonatomic, setter=_setMaximumApertureIndex:) unsigned long long _maximumApertureIndex; // @synthesize _maximumApertureIndex=__maximumApertureIndex;
 @property(nonatomic, setter=_setMinimumApertureIndex:) unsigned long long _minimumApertureIndex; // @synthesize _minimumApertureIndex=__minimumApertureIndex;
-@property(nonatomic, setter=_setCurrentApertureIndex:) unsigned long long _currentApertureIndex; // @synthesize _currentApertureIndex=__currentApertureIndex;
-@property(nonatomic, getter=_isActive, setter=_setActive:) _Bool _active; // @synthesize _active=__active;
-@property(nonatomic, getter=_isOverscrolling, setter=_setOverscrolling:) _Bool _overscrolling; // @synthesize _overscrolling=__overscrolling;
-@property(readonly, nonatomic) CEKSelectionFeedbackGenerator *_feedbackGenerator; // @synthesize _feedbackGenerator=__feedbackGenerator;
-@property(readonly, nonatomic) CEKSliderDotView *_dotView; // @synthesize _dotView=__dotView;
-@property(readonly, nonatomic) CEKApertureSliderTickMarksView *_tickMarksView; // @synthesize _tickMarksView=__tickMarksView;
-@property(retain, nonatomic) UIView *_indicatorBackground; // @synthesize _indicatorBackground=__indicatorBackground;
-@property(retain, nonatomic) UIImageView *_titleBackground; // @synthesize _titleBackground=__titleBackground;
-@property(retain, nonatomic) UIImageView *_valueBackground; // @synthesize _valueBackground=__valueBackground;
-@property(retain, nonatomic) CEKEdgeGradientView *_edgeGradientView; // @synthesize _edgeGradientView=__edgeGradientView;
-@property(readonly, nonatomic) UILabel *_valueLabel; // @synthesize _valueLabel=__valueLabel;
-@property(readonly, nonatomic) UILabel *_titleLabel; // @synthesize _titleLabel=__titleLabel;
-@property(readonly, nonatomic) UIView *_indicatorView; // @synthesize _indicatorView=__indicatorView;
-@property(readonly, nonatomic) UIScrollView *_scrollView; // @synthesize _scrollView=__scrollView;
-@property(nonatomic) CDStruct_ae5a35ae gradientInsets; // @synthesize gradientInsets=_gradientInsets;
-@property(retain, nonatomic) UIColor *gradientColor; // @synthesize gradientColor=_gradientColor;
-@property(nonatomic) _Bool useLegibilityBackgrounds; // @synthesize useLegibilityBackgrounds=_useLegibilityBackgrounds;
-@property(nonatomic) long long textOrientation; // @synthesize textOrientation=_textOrientation;
-@property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <CEKApertureSliderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)setTextOrientation:(long long)arg1 animated:(_Bool)arg2;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (struct CGPoint)_contentOffsetForApertureIndex:(unsigned long long)arg1;
-- (unsigned long long)_nearestValidApertureIndexForContentOffset:(struct CGPoint)arg1;
-- (unsigned long long)_biasedValidApertureIndexForContentOffset:(struct CGPoint)arg1;
-- (double)_interpolatedValidApertureIndexForContentOffset:(struct CGPoint)arg1;
 - (unsigned long long)_indexOfClosestValidValueForAperture:(double)arg1;
-- (void)_setApertureWithIndex:(unsigned long long)arg1 shouldDelegate:(_Bool)arg2 shouldScroll:(_Bool)arg3 shouldEmitFeedback:(_Bool)arg4;
+- (unsigned long long)_discreteIndexForValidApertureIndex:(unsigned long long)arg1;
+- (unsigned long long)_validApertureIndexForDiscreteIndex:(unsigned long long)arg1;
 - (void)setMarkedApertureValueToNone;
 - (void)setMarkedApertureValueClosestTo:(double)arg1;
 @property(readonly, nonatomic) double markedApertureValue;
@@ -88,19 +41,10 @@
 @property(readonly, nonatomic) double minimumApertureValue;
 - (void)setMinimumApertureValueClosestTo:(double)arg1 maximumApertureValueClosestTo:(double)arg2;
 - (void)setApertureValueClosestTo:(double)arg1;
-@property(nonatomic) long long titleAlignment;
-- (id)_createLegibilityImage;
-- (void)_updateLegibilityBackgrounds;
-- (void)_setActive:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)_updateMarkedApertureViewAnimated:(_Bool)arg1;
-- (void)_updateLabel;
-- (void)_updateScrollViewContentOffset;
-- (void)_updateColorsAnimated:(_Bool)arg1;
-- (struct CGSize)intrinsicContentSize;
-- (void)_layoutSliderContentAtY:(double)arg1 withHorizontalPadding:(double)arg2;
-- (void)_layoutSubviewsWithLabelRotation:(double)arg1;
-- (void)_layoutSubviewsWithNoRotation;
-- (void)layoutSubviews;
+- (void)_updateMainTickMarkOffset;
+- (id)valueText;
+- (double)horizontalValueLabelOffset;
+- (void)_handleDidChangeValue:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

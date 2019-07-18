@@ -30,7 +30,6 @@
 - (BOOL)useGPU;
 - (BOOL)supportGPU;
 - (int)constructBlock:(id)arg1 context:(id)arg2;
-- (int)initializeRest;
 - (id)initWithParameters:(int)arg1 filterNum:(int)arg2 chunk:(int)arg3 reLU:(BOOL)arg4 padding:(BOOL)arg5 groups:(int)arg6 stride:(int)arg7 batchNorm:(BOOL)arg8;
 
 @end

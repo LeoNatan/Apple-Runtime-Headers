@@ -16,5 +16,7 @@
 + (id)medications;
 + (id)clinicalVitals;
 + (id)healthRecords;
++ (id)clinicalDocuments;
++ (id)tableViewCellHighlightColor;
 @end
 

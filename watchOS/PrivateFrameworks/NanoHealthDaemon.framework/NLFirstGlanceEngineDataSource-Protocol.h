@@ -14,7 +14,7 @@
 - (NSSet *)allActivitySharingFriends;
 - (NSDictionary *)weeklySummaryInfoForDate:(NSDate *)arg1;
 - (double)recommendedGoalForDate:(NSDate *)arg1;
-- (NSArray *)activitySummariesDuringInterval:(NSDateInterval *)arg1 calendar:(NSCalendar *)arg2;
+- (_Bool)enumerateActivitySummariesDuringInterval:(NSDateInterval *)arg1 calendar:(NSCalendar *)arg2 error:(id *)arg3 handler:(void (^)(HKActivitySummary *))arg4;
 - (HKActivitySummary *)yesterdayActivitySummary;
 - (ACHAchievement *)monthlyChallengeForDate:(NSDate *)arg1 calendar:(NSCalendar *)arg2;
 - (NSArray *)achievementsCompletedOnDay:(NSDateComponents *)arg1 calendar:(NSCalendar *)arg2;

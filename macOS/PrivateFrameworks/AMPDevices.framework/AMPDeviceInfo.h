@@ -20,8 +20,10 @@
     BOOL _supportsTVShows;
     BOOL _supportsRentals;
     BOOL _supportsHDVideos;
+    BOOL _supportsPlaylistFolders;
     BOOL _supportsFileSharing;
     BOOL _supportsWifiSyncing;
+    BOOL _supportsAutofill;
     BOOL _supportsTranscoding;
     BOOL _supportsFlashUIForShuffle;
     BOOL _supportsSoundCheckForShuffle;
@@ -48,6 +50,8 @@
     BOOL _supportsClearingSyncData;
     BOOL _syncingContactsOverTheAir;
     BOOL _syncingCalendarsOverTheAir;
+    BOOL _supportsCheckedSongs;
+    BOOL _supportsCheckedVideos;
     BOOL _supportsBackupRestore;
     BOOL _supportsEncryptedBackups;
     BOOL _willEncryptBackups;
@@ -107,6 +111,8 @@
 @property(nonatomic) BOOL willEncryptBackups; // @synthesize willEncryptBackups=_willEncryptBackups;
 @property(nonatomic) BOOL supportsEncryptedBackups; // @synthesize supportsEncryptedBackups=_supportsEncryptedBackups;
 @property(nonatomic) BOOL supportsBackupRestore; // @synthesize supportsBackupRestore=_supportsBackupRestore;
+@property(nonatomic) BOOL supportsCheckedVideos; // @synthesize supportsCheckedVideos=_supportsCheckedVideos;
+@property(nonatomic) BOOL supportsCheckedSongs; // @synthesize supportsCheckedSongs=_supportsCheckedSongs;
 @property(nonatomic) BOOL syncingCalendarsOverTheAir; // @synthesize syncingCalendarsOverTheAir=_syncingCalendarsOverTheAir;
 @property(nonatomic) BOOL syncingContactsOverTheAir; // @synthesize syncingContactsOverTheAir=_syncingContactsOverTheAir;
 @property(nonatomic) BOOL supportsClearingSyncData; // @synthesize supportsClearingSyncData=_supportsClearingSyncData;
@@ -133,8 +139,10 @@
 @property(nonatomic) BOOL supportsSoundCheckForShuffle; // @synthesize supportsSoundCheckForShuffle=_supportsSoundCheckForShuffle;
 @property(nonatomic) BOOL supportsFlashUIForShuffle; // @synthesize supportsFlashUIForShuffle=_supportsFlashUIForShuffle;
 @property(nonatomic) BOOL supportsTranscoding; // @synthesize supportsTranscoding=_supportsTranscoding;
+@property(nonatomic) BOOL supportsAutofill; // @synthesize supportsAutofill=_supportsAutofill;
 @property(nonatomic) BOOL supportsWifiSyncing; // @synthesize supportsWifiSyncing=_supportsWifiSyncing;
 @property(nonatomic) BOOL supportsFileSharing; // @synthesize supportsFileSharing=_supportsFileSharing;
+@property(nonatomic) BOOL supportsPlaylistFolders; // @synthesize supportsPlaylistFolders=_supportsPlaylistFolders;
 @property(nonatomic) BOOL supportsHDVideos; // @synthesize supportsHDVideos=_supportsHDVideos;
 @property(nonatomic) BOOL supportsRentals; // @synthesize supportsRentals=_supportsRentals;
 @property(nonatomic) BOOL supportsTVShows; // @synthesize supportsTVShows=_supportsTVShows;

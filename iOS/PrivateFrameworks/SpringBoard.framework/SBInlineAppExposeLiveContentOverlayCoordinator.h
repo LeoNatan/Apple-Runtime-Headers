@@ -16,6 +16,7 @@
     SBDeviceApplicationSceneViewController *_deviceApplicationSceneViewController;
     long long _environment;
     long long _layoutRole;
+    _Bool _overlay;
     SBAppLayout *_liveContentAppLayout;
     SBInlineAppExposeLiveContentOverlayView *_liveContentOverlayView;
     _Bool _liveContentOverlayUpdatesSuspended;
@@ -30,11 +31,12 @@
 - (id)_appLayoutFromLayoutState:(id)arg1;
 - (void)_removeLiveContentOverlay;
 - (void)_addLiveContentOverlay:(id)arg1 forAppLayout:(id)arg2 animated:(_Bool)arg3;
+- (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
 - (id)animationControllerForTransitionRequest:(id)arg1;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidBeginWithTransitionContext:(id)arg2;
 @property(readonly, nonatomic) NSArray *windowsToExcludeForCrossfadeSnapshot;
-- (void)updateSceneViewController:(id)arg1 environment:(long long)arg2 layoutRole:(long long)arg3;
+- (void)updateSceneViewController:(id)arg1 environment:(long long)arg2 layoutRole:(long long)arg3 overlay:(_Bool)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

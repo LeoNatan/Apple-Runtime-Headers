@@ -14,12 +14,16 @@
 {
     NSMutableArray *_zoomListeners;
     _Bool _showingZoomLens;
+    _Bool _springBoardReady;
+    _Bool _triedToShowLensBeofreSBReady;
     _Bool _registeredForZoomListener;
     AXUIClient *_zoomWindowClient;
 }
 
 + (id)sharedInstance;
 @property(nonatomic) _Bool registeredForZoomListener; // @synthesize registeredForZoomListener=_registeredForZoomListener;
+@property(nonatomic) _Bool triedToShowLensBeofreSBReady; // @synthesize triedToShowLensBeofreSBReady=_triedToShowLensBeofreSBReady;
+@property(nonatomic) _Bool springBoardReady; // @synthesize springBoardReady=_springBoardReady;
 @property(nonatomic, getter=isShowingZoomLens) _Bool showingZoomLens; // @synthesize showingZoomLens=_showingZoomLens;
 @property(retain, nonatomic) AXUIClient *zoomWindowClient; // @synthesize zoomWindowClient=_zoomWindowClient;
 - (void).cxx_destruct;
@@ -39,6 +43,8 @@
 - (double)appActivationAnimationStartDelay;
 - (void)_handleChangedAttributes:(id)arg1;
 - (void)registerInterestInZoomAttributes;
+- (_Bool)notifyZoomDragWillEnd;
+- (_Bool)notifyZoomDragWillStart;
 - (_Bool)notifyZoomWillHideBrailleInputUI;
 - (void)notifyZoomSOSMedicalIDShown;
 - (_Bool)notifyZoomWillShowBrailleInputUI;

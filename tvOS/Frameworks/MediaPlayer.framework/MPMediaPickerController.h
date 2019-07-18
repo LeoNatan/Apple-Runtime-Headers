@@ -28,6 +28,8 @@
 - (void)_pickerDidPickItems:(id)arg1;
 - (void)_pickerDidCancel;
 - (void)_forceDismissal;
+- (void)setPickingForExternalPlayer:(_Bool)arg1;
+- (_Bool)pickingForExternalPlayer;
 - (void)setShowsCatalogContent:(_Bool)arg1;
 - (_Bool)showsCatalogContent;
 - (long long)selectionMode;
@@ -45,6 +47,7 @@
 - (void)remoteMediaPickerDidPickPlaybackArchive:(id)arg1;
 - (void)remoteMediaPickerDidCancel;
 - (void)remoteMediaPickerDidPickMediaItems:(id)arg1;
+- (long long)_preferredModalPresentationStyle;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)willMoveToParentViewController:(id)arg1;

@@ -57,7 +57,6 @@
     BOOL _displayTasksWithZeroCount;
     BOOL _displayStacksWithZeroCount;
     BOOL _displayAllTaskSizeChanges;
-    BOOL _displayAllThreadIDsInStackHeader;
     int _omitStacksBelowBasePriority;
     int _omitStacksAboveBasePriority;
     long long _omitTasksBelowSampleCount;
@@ -66,7 +65,6 @@
     long long _omitFramesAfterLineCount;
 }
 
-@property BOOL displayAllThreadIDsInStackHeader; // @synthesize displayAllThreadIDsInStackHeader=_displayAllThreadIDsInStackHeader;
 @property BOOL displayAllTaskSizeChanges; // @synthesize displayAllTaskSizeChanges=_displayAllTaskSizeChanges;
 @property BOOL displayStacksWithZeroCount; // @synthesize displayStacksWithZeroCount=_displayStacksWithZeroCount;
 @property BOOL displayTasksWithZeroCount; // @synthesize displayTasksWithZeroCount=_displayTasksWithZeroCount;

@@ -66,6 +66,7 @@
 - (_Bool)isAttributeSenderEnabled:(id)arg1 segment:(long long)arg2;
 - (void)performAttributeActionForSender:(id)arg1 segment:(long long)arg2;
 - (void)annotationEditingDidEnd;
+- (void)forceHideRuler;
 - (void)toggleRuler;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithController:(id)arg1;

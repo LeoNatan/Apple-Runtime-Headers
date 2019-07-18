@@ -26,8 +26,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)outputContextExistsWithRemoteOutputDevice;
 + (void)resetOutputDeviceForAllOutputContexts;
 + (struct OpaqueFigEndpointPicker *)copySystemVideoPicker;
-+ (BOOL)supportsSecureCoding;
-+ (id)outputContextImplForID:(id)arg1;
++ (id)outputContextImplForID:(id)arg1 type:(id)arg2;
 + (id)outputContextImplForControllingOutputDeviceGroupWithID:(id)arg1 options:(id)arg2;
 + (id)iTunesAudioContext;
 + (id)sharedSystemScreenContext;
@@ -67,8 +66,6 @@ __attribute__((visibility("hidden")))
 - (void)_addFigEndpointPickerNotifications;
 - (void)_handlePickerServerConnectionDiedNotification;
 - (int)_configureFigEndpointPickerWithFeature:(unsigned long long)arg1 options:(id)arg2;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithFeature:(unsigned long long)arg1 options:(id)arg2;
 - (id)initWithContextUUID:(id)arg1;
 - (id)init;

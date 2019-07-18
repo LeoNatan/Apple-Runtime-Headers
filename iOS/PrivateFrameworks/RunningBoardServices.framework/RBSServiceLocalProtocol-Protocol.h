@@ -27,6 +27,6 @@
 - (NSDictionary *)assertionDescriptorsByPidWithFlattenedAttributes:(_Bool)arg1 error:(out id *)arg2;
 - (_Bool)invalidateAssertionWithIdentifier:(RBSAssertionIdentifier *)arg1 error:(out id *)arg2;
 - (_Bool)invalidateAssertion:(RBSAssertion *)arg1 error:(out id *)arg2;
-- (_Bool)acquireAssertion:(RBSAssertion *)arg1 identifier:(out id *)arg2 error:(out id *)arg3;
+- (RBSAssertionIdentifier *)acquireAssertion:(RBSAssertion *)arg1 error:(out id *)arg2;
 @end
 

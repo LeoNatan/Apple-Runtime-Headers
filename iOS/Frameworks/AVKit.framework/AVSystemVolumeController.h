@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
 - (void)_handleSystemControllerServerDiedNotification;
 - (void)_unobserveSystemController;
 - (void)_observeSystemController;
+- (void)_postNotificationForNameIfFullyInitialized:(id)arg1 userInfo:(id)arg2;
 - (void)setSystemVolumeHUDEnabled:(_Bool)arg1;
 - (void)setClientWithIdentifier:(id)arg1 prefersSystemVolumeHUDHidden:(_Bool)arg2;
 - (void)endChangingVolume;

@@ -15,11 +15,13 @@
 @interface _INPBSearchForBillsIntentResponse : PBCodable <_INPBSearchForBillsIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     NSArray *_bills;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)billsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *bills; // @synthesize bills=_bills;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

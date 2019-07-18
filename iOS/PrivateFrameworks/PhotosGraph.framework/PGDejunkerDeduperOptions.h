@@ -6,19 +6,21 @@
 
 #import <objc/NSObject.h>
 
+@class NSSet;
+
 @interface PGDejunkerDeduperOptions : NSObject
 {
     _Bool _doIdenticalDeduping;
     _Bool _useFaceprintsForIdenticalDeduping;
     _Bool _doSemanticalDeduping;
-    _Bool _dontSemanticallyDedupePeople;
-    _Bool _dontSemanticallyDedupePersons;
+    _Bool _doNotSemanticallyDedupePeople;
+    _Bool _doNotSemanticallyDedupePersons;
     _Bool _allowAdaptiveForSemanticalDeduping;
     _Bool _useOnlyScenesForDeduping;
     _Bool _useAllPersonsForDeduping;
     _Bool _useFaceQualityForElection;
-    _Bool _dontDedupeInterestingVideos;
-    _Bool _dontDedupeInterestingPortraitsAndLivePictures;
+    _Bool _doNotDedupeVideos;
+    _Bool _doNotDedupeInterestingPortraitsAndLivePictures;
     _Bool _onlyDedupeContiguousItems;
     _Bool _doDejunk;
     _Bool _returnDedupedJunkIfOnlyJunk;
@@ -42,8 +44,10 @@
     double _finalPassTimeInterval;
     double _finalPassMaximumTimeGroupExtension;
     double _finalPassDedupingThreshold;
+    NSSet *_identifiersOfRequiredItems;
 }
 
+@property(retain, nonatomic) NSSet *identifiersOfRequiredItems; // @synthesize identifiersOfRequiredItems=_identifiersOfRequiredItems;
 @property(nonatomic) double finalPassDedupingThreshold; // @synthesize finalPassDedupingThreshold=_finalPassDedupingThreshold;
 @property(nonatomic) double finalPassMaximumTimeGroupExtension; // @synthesize finalPassMaximumTimeGroupExtension=_finalPassMaximumTimeGroupExtension;
 @property(nonatomic) double finalPassTimeInterval; // @synthesize finalPassTimeInterval=_finalPassTimeInterval;
@@ -51,14 +55,14 @@
 @property(nonatomic) _Bool returnDedupedJunkIfOnlyJunk; // @synthesize returnDedupedJunkIfOnlyJunk=_returnDedupedJunkIfOnlyJunk;
 @property(nonatomic) _Bool doDejunk; // @synthesize doDejunk=_doDejunk;
 @property(nonatomic) _Bool onlyDedupeContiguousItems; // @synthesize onlyDedupeContiguousItems=_onlyDedupeContiguousItems;
-@property(nonatomic) _Bool dontDedupeInterestingPortraitsAndLivePictures; // @synthesize dontDedupeInterestingPortraitsAndLivePictures=_dontDedupeInterestingPortraitsAndLivePictures;
-@property(nonatomic) _Bool dontDedupeInterestingVideos; // @synthesize dontDedupeInterestingVideos=_dontDedupeInterestingVideos;
+@property(nonatomic) _Bool doNotDedupeInterestingPortraitsAndLivePictures; // @synthesize doNotDedupeInterestingPortraitsAndLivePictures=_doNotDedupeInterestingPortraitsAndLivePictures;
+@property(nonatomic) _Bool doNotDedupeVideos; // @synthesize doNotDedupeVideos=_doNotDedupeVideos;
 @property(nonatomic) _Bool useFaceQualityForElection; // @synthesize useFaceQualityForElection=_useFaceQualityForElection;
 @property(nonatomic) _Bool useAllPersonsForDeduping; // @synthesize useAllPersonsForDeduping=_useAllPersonsForDeduping;
 @property(nonatomic) _Bool useOnlyScenesForDeduping; // @synthesize useOnlyScenesForDeduping=_useOnlyScenesForDeduping;
 @property(nonatomic) _Bool allowAdaptiveForSemanticalDeduping; // @synthesize allowAdaptiveForSemanticalDeduping=_allowAdaptiveForSemanticalDeduping;
-@property(nonatomic) _Bool dontSemanticallyDedupePersons; // @synthesize dontSemanticallyDedupePersons=_dontSemanticallyDedupePersons;
-@property(nonatomic) _Bool dontSemanticallyDedupePeople; // @synthesize dontSemanticallyDedupePeople=_dontSemanticallyDedupePeople;
+@property(nonatomic) _Bool dontSemanticallyDedupePersons; // @synthesize dontSemanticallyDedupePersons=_doNotSemanticallyDedupePersons;
+@property(nonatomic) _Bool dontSemanticallyDedupePeople; // @synthesize dontSemanticallyDedupePeople=_doNotSemanticallyDedupePeople;
 @property(nonatomic) double semanticalDedupingThresholdForPersons; // @synthesize semanticalDedupingThresholdForPersons=_semanticalDedupingThresholdForPersons;
 @property(nonatomic) double semanticalDedupingThresholdForPeople; // @synthesize semanticalDedupingThresholdForPeople=_semanticalDedupingThresholdForPeople;
 @property(nonatomic) double semanticalDedupingThreshold; // @synthesize semanticalDedupingThreshold=_semanticalDedupingThreshold;
@@ -78,8 +82,9 @@
 @property(nonatomic) double identicalDedupingTimeIntervalForPeople; // @synthesize identicalDedupingTimeIntervalForPeople=_identicalDedupingTimeIntervalForPeople;
 @property(nonatomic) double identicalDedupingTimeInterval; // @synthesize identicalDedupingTimeInterval=_identicalDedupingTimeInterval;
 @property(nonatomic) _Bool doIdenticalDeduping; // @synthesize doIdenticalDeduping=_doIdenticalDeduping;
+- (void).cxx_destruct;
 - (id)description;
-- (id)dictionaryRepresentation;
+- (id)dictionaryRepresentationRestrictingToGlobalOptions:(_Bool)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)init;
 

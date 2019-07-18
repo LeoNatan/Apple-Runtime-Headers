@@ -9,7 +9,7 @@
 #import <AppleMediaServices/NSCopying-Protocol.h>
 #import <AppleMediaServices/NSSecureCoding-Protocol.h>
 
-@class AMSMappedBundleInfo, NSData, NSString;
+@class AMSMappedBundleInfo, NSData, NSString, NSURL;
 @protocol OS_dispatch_queue;
 
 @interface AMSProcessInfo : NSObject <NSCopying, NSSecureCoding>
@@ -19,8 +19,10 @@
     NSString *_accountMediaType;
     NSData *_auditTokenData;
     NSString *_bundleIdentifier;
+    NSURL *_bundleURL;
     NSString *_clientVersion;
     NSString *_executableName;
+    NSString *_localizedName;
     NSString *_proxyAppBundleID;
     AMSMappedBundleInfo *_mappedBundleInfo;
 }
@@ -43,8 +45,10 @@
 + (id)currentProcess;
 @property(readonly) AMSMappedBundleInfo *mappedBundleInfo; // @synthesize mappedBundleInfo=_mappedBundleInfo;
 @property(retain) NSString *proxyAppBundleID; // @synthesize proxyAppBundleID=_proxyAppBundleID;
+@property(retain) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(retain) NSString *executableName; // @synthesize executableName=_executableName;
 @property(retain) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
+@property(retain) NSURL *bundleURL; // @synthesize bundleURL=_bundleURL;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSData *auditTokenData; // @synthesize auditTokenData=_auditTokenData;
 @property(retain) NSString *accountMediaType; // @synthesize accountMediaType=_accountMediaType;

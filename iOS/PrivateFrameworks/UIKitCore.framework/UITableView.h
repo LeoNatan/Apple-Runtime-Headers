@@ -339,6 +339,8 @@
         unsigned int dataSourceIsDiffableDataSource:1;
         unsigned int isApplyingDiffableUpdate:1;
         unsigned int isUpdatingVisibleCells:1;
+        unsigned int scrollFirstResponderCellVisibleAfterVisibleCellsUpdate:1;
+        unsigned int ignoreCopyFilterForTableAnimations:1;
     } _tableFlags;
     id <UITableViewDragDelegate> _dragDelegate;
     id <UITableViewDropDelegate> _dropDelegate;
@@ -356,8 +358,6 @@
 + (void)initialize;
 + (void)_setupIdiom:(long long)arg1 forTableViewStyle:(long long)arg2 includingBackground:(_Bool)arg3;
 + (void)_initializeForIdiom:(long long)arg1;
-+ (id)_externalTableSeparatorColor;
-+ (id)_externalTableBackgroundColor;
 + (_Bool)_isInternalTableView;
 @property(nonatomic) __weak id <UITableViewDragDestinationDelegate> dragDestinationDelegate; // @synthesize dragDestinationDelegate=_dragDestinationDelegate;
 @property(nonatomic) __weak id <UITableViewDragSourceDelegate> dragSourceDelegate; // @synthesize dragSourceDelegate=_dragSourceDelegate;
@@ -735,6 +735,7 @@
 - (id)_contentFocusContainerGuide;
 - (void)_setUpContentFocusContainerGuide;
 - (id)_sidebarVariantOfConstants:(id)arg1;
+- (void)_stopScrollingNotify:(_Bool)arg1 pin:(_Bool)arg2;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(_Bool)arg2;
 - (void)_nudgeScroll:(long long)arg1;
 - (void)_handleNudgeInDirection:(long long)arg1;
@@ -1074,6 +1075,7 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_setUsesStaticScrollBar:(_Bool)arg1;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(_Bool)arg3;
+- (void)_updateConstants;
 - (void)_updateConstantsForVisibleCellsAndHeaderFooterViews;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(readonly, nonatomic, getter=_wrapperView) UIScrollView *wrapperView;
@@ -1117,6 +1119,9 @@
 - (void)_resignFirstResponderInDeletedSectionOrRow:(_Bool)arg1;
 - (void)_endAnimatingCells;
 - (void)_beginAnimatingCells;
+- (void)_setClearBlendingViewCompositingFilter;
+- (void)_setIgnoreCopyFilterForTableAnimations:(_Bool)arg1;
+- (_Bool)_ignoreCopyFilterForTableAnimations;
 - (void)_setGestureRecognizerRequiresTableGestureRecognizersToFail:(id)arg1;
 - (void)_purgeReuseQueues;
 - (void)_reuseHeaderFooterView:(id)arg1 isHeader:(_Bool)arg2 forSection:(long long)arg3;
@@ -1162,7 +1167,7 @@
 - (void)_setNeedsVisibleCellsUpdate:(_Bool)arg1 withFrames:(_Bool)arg2 updateImmediatelyIfPossible:(_Bool)arg3;
 - (void)_setNeedsVisibleCellsUpdate:(_Bool)arg1 withFrames:(_Bool)arg2;
 - (void)_updateFocusedCellIndexPathIfNecessaryWithLastFocusedRect:(struct CGRect)arg1;
-- (void)_rebaseExistingShadowUpdatesIfNecessaryWithItems:(id)arg1 insertItems:(id)arg2 deleteItems:(id)arg3 sortedInsertItems:(id)arg4 sortedDeleteItems:(id)arg5 sortedMoveItems:(id)arg6;
+- (void)_rebaseExistingShadowUpdatesIfNecessaryWithSortedInsertItems:(id)arg1 sortedDeleteItems:(id)arg2 sortedMoveItems:(id)arg3;
 - (void)_Bug_Detected_In_Client_Of_UITableView_Invalid_Number_Of_Rows_In_Section:(id)arg1;
 - (void)_Bug_Detected_In_Client_Of_UITableView_Invalid_Number_Of_Sections:(id)arg1;
 - (void)_endCellAnimationsWithContext:(id)arg1;

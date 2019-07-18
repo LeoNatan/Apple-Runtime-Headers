@@ -10,7 +10,8 @@
 {
 }
 
-+ (BOOL)flushCurrentInstallLogToMutableProductOnTarget:(id)arg1;
++ (BOOL)flushCurrentInstallLogToMutableProduct;
++ (void)markDetached;
 - (double)estimatedTimeToComplete;
 - (BOOL)_attachLog;
 - (id)operationName;

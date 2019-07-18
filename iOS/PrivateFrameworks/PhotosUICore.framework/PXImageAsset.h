@@ -42,7 +42,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) double duration;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) float hdrGain;
+@property(readonly, nonatomic) double hdrGain;
 @property(readonly, nonatomic) NSDate *importDate;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly, nonatomic) long long playbackStyle;

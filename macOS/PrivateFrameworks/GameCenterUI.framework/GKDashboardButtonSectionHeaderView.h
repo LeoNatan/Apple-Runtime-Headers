@@ -6,13 +6,13 @@
 
 #import <GameCenterUI/GKDashboardSectionHeaderView.h>
 
-@class NSLayoutConstraint, NSString, UIButton;
+@class NSButton, NSLayoutConstraint, NSString;
 
 @interface GKDashboardButtonSectionHeaderView : GKDashboardSectionHeaderView
 {
     id _buttonTarget;
     SEL _buttonAction;
-    UIButton *_button;
+    NSButton *_button;
     NSLayoutConstraint *_titleToButtonConstraint;
     NSLayoutConstraint *_rightMarginConstraint;
 }
@@ -23,7 +23,7 @@
 + (double)widthForTitle:(id)arg1;
 @property(nonatomic) NSLayoutConstraint *rightMarginConstraint; // @synthesize rightMarginConstraint=_rightMarginConstraint;
 @property(nonatomic) NSLayoutConstraint *titleToButtonConstraint; // @synthesize titleToButtonConstraint=_titleToButtonConstraint;
-@property(nonatomic) UIButton *button; // @synthesize button=_button;
+@property(nonatomic) NSButton *button; // @synthesize button=_button;
 @property(nonatomic) SEL buttonAction; // @synthesize buttonAction=_buttonAction;
 @property(nonatomic) id buttonTarget; // @synthesize buttonTarget=_buttonTarget;
 - (void)buttonPressed:(id)arg1;

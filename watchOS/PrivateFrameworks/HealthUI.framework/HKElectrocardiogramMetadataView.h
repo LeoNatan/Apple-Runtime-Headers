@@ -6,21 +6,15 @@
 
 #import <UIKit/UIView.h>
 
-@class HKElectrocardiogram, NSLayoutConstraint;
+@class HKElectrocardiogram;
 @protocol HKElectrocardiogramMetadataViewDelegate;
 
 @interface HKElectrocardiogramMetadataView : UIView
 {
     HKElectrocardiogram *_sample;
     id <HKElectrocardiogramMetadataViewDelegate> _delegate;
-    NSLayoutConstraint *_dateLabelFirstBaselineFromTitleLastLastBaselineConstraint;
-    NSLayoutConstraint *_dateLabelLastBaselineConstraint;
-    NSLayoutConstraint *_footerLabelFirstBaselineConstraint;
 }
 
-@property(retain, nonatomic) NSLayoutConstraint *footerLabelFirstBaselineConstraint; // @synthesize footerLabelFirstBaselineConstraint=_footerLabelFirstBaselineConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *dateLabelLastBaselineConstraint; // @synthesize dateLabelLastBaselineConstraint=_dateLabelLastBaselineConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *dateLabelFirstBaselineFromTitleLastLastBaselineConstraint; // @synthesize dateLabelFirstBaselineFromTitleLastLastBaselineConstraint=_dateLabelFirstBaselineFromTitleLastLastBaselineConstraint;
 @property(nonatomic) __weak id <HKElectrocardiogramMetadataViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HKElectrocardiogram *sample; // @synthesize sample=_sample;
 - (void).cxx_destruct;
@@ -29,12 +23,8 @@
 - (id)_sharePDFControl;
 - (id)_bulletedTextView;
 - (id)_ecgChart;
-- (id)_dateLabel;
-- (id)_titleLabel;
 - (void)sharedPDFControlTapped:(id)arg1;
 - (void)detailButtonTapped:(id)arg1;
-- (void)traitCollectionDidChange:(id)arg1;
-- (void)updateConstraints;
 - (void)_setupUI;
 - (id)initWithSample:(id)arg1 delegate:(id)arg2;
 

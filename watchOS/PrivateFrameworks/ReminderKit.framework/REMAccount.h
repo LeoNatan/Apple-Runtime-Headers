@@ -35,12 +35,17 @@
 @property(readonly, nonatomic) _Bool daSupportsPhoneNumbers;
 @property(readonly, nonatomic) NSOrderedSet *listIDsOrdering;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (_Bool)respondsToSelector:(SEL)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)fetchListIncludingSpecialContainerWithExternalIdentifier:(id)arg1 error:(id *)arg2;
 - (id)fetchListsIncludingSpecialContainersWithError:(id *)arg1;
+- (_Bool)isConsideredEmptyWithResultPtr:(_Bool *)arg1 withError:(id *)arg2;
+- (_Bool)canCopyReminderLosslesslyToAccount:(id)arg1;
 - (id)fetchListsWithError:(id *)arg1;
 @property(readonly, nonatomic) REMAccountGroupContext *groupContext;
 @property(readonly, nonatomic) _Bool supportsSharingLists;
+- (id)debugDescription;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

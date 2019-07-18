@@ -8,12 +8,13 @@
 
 #import <CarPlaySupport/BSInvalidatable-Protocol.h>
 #import <CarPlaySupport/CPBannerProviding-Protocol.h>
+#import <CarPlaySupport/CPSApplicationStateObserving-Protocol.h>
 #import <CarPlaySupport/CPSBannerSourceServerToClientInterface-Protocol.h>
 
 @class BSServiceConnection, NSString;
 @protocol CPBannerDelegate, OS_dispatch_queue;
 
-@interface CPSBannerSourceProxy : NSObject <CPSBannerSourceServerToClientInterface, BSInvalidatable, CPBannerProviding>
+@interface CPSBannerSourceProxy : NSObject <CPSBannerSourceServerToClientInterface, BSInvalidatable, CPBannerProviding, CPSApplicationStateObserving>
 {
     id <CPBannerDelegate> _delegate;
     BSServiceConnection *_connection;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) __weak id <CPBannerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)applicationStateMonitor:(id)arg1 didBecomeActive:(_Bool)arg2;
 - (void)bannerDidDisappearWithIdentifier:(id)arg1;
 - (void)bannerDidAppearWithIdentifier:(id)arg1;
 - (void)bannerTappedWithIdentifier:(id)arg1;

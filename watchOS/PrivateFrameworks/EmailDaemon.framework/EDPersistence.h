@@ -42,6 +42,7 @@
 @property(readonly) EDConversationPersistence *conversationPersistence;
 @property(readonly) EDServerMessagePersistenceFactory *serverMessagePersistenceFactory;
 @property(readonly) EDPersistenceDatabase *database;
+- (void)scheduleRecurringActivity;
 - (void)_commonInitWithVIPManager:(id)arg1;
 - (id)initWithVIPManager:(id)arg1;
 - (id)init;

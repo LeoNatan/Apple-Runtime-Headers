@@ -17,19 +17,16 @@ __attribute__((visibility("hidden")))
     id <SPMonitorsWrapperDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     SPNetworkMonitor *_networkMonitor;
-    NSDate *_networkOffDuringSleepDate;
     NSDate *_lastStateChangeDate;
     NSDate *_nextStateChangeDate;
 }
 
 @property(retain, nonatomic) NSDate *nextStateChangeDate; // @synthesize nextStateChangeDate=_nextStateChangeDate;
 @property(retain, nonatomic) NSDate *lastStateChangeDate; // @synthesize lastStateChangeDate=_lastStateChangeDate;
-@property(retain, nonatomic) NSDate *networkOffDuringSleepDate; // @synthesize networkOffDuringSleepDate=_networkOffDuringSleepDate;
 @property(retain, nonatomic) SPNetworkMonitor *networkMonitor; // @synthesize networkMonitor=_networkMonitor;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <SPMonitorsWrapperDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)calculateLowPowerNetworkOffDate;
 - (void)stop;
 - (void)start;
 - (unsigned long long)powerState;

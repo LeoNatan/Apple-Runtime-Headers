@@ -9,6 +9,7 @@
 @interface _TtC5TeaUI13CommandCenter : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: handlers
+    // Error parsing type: , name: observers
     // Error parsing type: , name: contextStore
 }
 

@@ -9,7 +9,7 @@
 #import <SearchUI/NUIContainerViewDelegate-Protocol.h>
 #import <SearchUI/SearchUIChartUpdaterDelegate-Protocol.h>
 
-@class NSBox, NSMutableArray, NSString, NUIContainerBoxView, NUIContainerStackView, SearchUIChartUpdater, SearchUIDashedLineView, SearchUIStockChartData, SearchUIStockChartDisplayMode, SearchUIStockGraphView, TLKLabel;
+@class NSMutableArray, NSString, NSView, NUIContainerBoxView, NUIContainerStackView, SearchUIChartUpdater, SearchUIDashedLineView, SearchUIStockChartData, SearchUIStockChartDisplayMode, SearchUIStockGraphView, TLKLabel;
 
 @interface SearchUIStocksCardSectionView : SearchUICardSectionView <SearchUIChartUpdaterDelegate, NUIContainerViewDelegate>
 {
@@ -23,12 +23,12 @@
     SearchUIStockChartData *_chartData;
     NUIContainerStackView *_stackView;
     NSMutableArray *_axisViews;
-    NSBox *_xAxisKeyline;
+    NSView *_xAxisKeyline;
     NSMutableArray *_xLabelViews;
 }
 
 @property(retain) NSMutableArray *xLabelViews; // @synthesize xLabelViews=_xLabelViews;
-@property(retain) NSBox *xAxisKeyline; // @synthesize xAxisKeyline=_xAxisKeyline;
+@property(retain) NSView *xAxisKeyline; // @synthesize xAxisKeyline=_xAxisKeyline;
 @property(retain) NSMutableArray *axisViews; // @synthesize axisViews=_axisViews;
 @property(retain) NUIContainerStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain) SearchUIStockChartData *chartData; // @synthesize chartData=_chartData;
@@ -43,6 +43,7 @@
 - (void)layoutAxesAndXLabels;
 - (void)layoutPriceLabels;
 - (struct CGRect)lineGraphFrame;
+- (void)containerViewDidLayoutArrangedSubviews:(id)arg1;
 - (struct CGRect)containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect)arg3;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
 - (void)chartUpdater:(id)arg1 didFailWithError:(id)arg2;

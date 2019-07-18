@@ -21,7 +21,7 @@
 - (id)attachmentUTI;
 - (id)attachmentIdentifier;
 - (BOOL)isEqualToModelComparable:(id)arg1;
-- (id)printableTextContent;
+- (id)printableTextContentForAppearanceType:(unsigned long long)arg1;
 - (id)attachmentAttributesForAttributedString;
 - (void)fixAttachmentForAttributedString:(id)arg1 range:(struct _NSRange)arg2 forPlainText:(BOOL)arg3 forStandardizedText:(BOOL)arg4;
 - (double)viewCornerRadius;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class HDDemoDataActivitySampleGenerator, HDDemoDataAudioExposureSampleGenerator, HDDemoDataAudiogramSampleGenerator, HDDemoDataBloodSampleGenerator, HDDemoDataBodySampleGenerator, HDDemoDataFoodSampleGenerator, HDDemoDataGeneratorConfiguration, HDDemoDataGeneratorState, HDDemoDataHealthDocumentSampleGenerator, HDDemoDataHeartSampleGenerator, HDDemoDataMindfulnessSampleGenerator, HDDemoDataPathologySampleGenerator, HDDemoDataPerson, HDDemoDataReproductiveHealthSampleGenerator, HDDemoDataSleepSampleGenerator, HDDemoDataStatisticsSampleGenerator, HDDemoDataVitalsSampleGenerator, HDProfile, NSArray, NSCalendar, NSMutableDictionary;
+@class HDDemoDataActivitySampleGenerator, HDDemoDataAudioExposureSampleGenerator, HDDemoDataAudiogramSampleGenerator, HDDemoDataBloodSampleGenerator, HDDemoDataBodySampleGenerator, HDDemoDataFoodSampleGenerator, HDDemoDataGeneratorConfiguration, HDDemoDataGeneratorState, HDDemoDataHealthDocumentSampleGenerator, HDDemoDataHeartSampleGenerator, HDDemoDataMindfulnessSampleGenerator, HDDemoDataOtherAndAdditionalSampleGenerator, HDDemoDataPathologySampleGenerator, HDDemoDataPerson, HDDemoDataReproductiveHealthSampleGenerator, HDDemoDataSleepSampleGenerator, HDDemoDataStatisticsSampleGenerator, HDDemoDataVitalsSampleGenerator, HDProfile, NSArray, NSCalendar, NSMutableDictionary;
 @protocol OS_dispatch_queue;
 
 @interface HDDemoDataGenerator : NSObject
@@ -33,6 +33,7 @@
     HDDemoDataReproductiveHealthSampleGenerator *_reproductiveHealthSampleGenerator;
     HDDemoDataSleepSampleGenerator *_sleepSampleGenerator;
     HDDemoDataStatisticsSampleGenerator *_statisticsSampleGenerator;
+    HDDemoDataOtherAndAdditionalSampleGenerator *_otherAndAdditionalSampleGenerator;
     HDDemoDataVitalsSampleGenerator *_vitalsSampleGenerator;
     HDDemoDataMindfulnessSampleGenerator *_mindfulnessSampleGenerator;
 }
@@ -40,6 +41,7 @@
 @property(readonly, nonatomic) HDDemoDataGeneratorState *generatorState; // @synthesize generatorState=_generatorState;
 @property(retain, nonatomic) HDDemoDataMindfulnessSampleGenerator *mindfulnessSampleGenerator; // @synthesize mindfulnessSampleGenerator=_mindfulnessSampleGenerator;
 @property(retain, nonatomic) HDDemoDataVitalsSampleGenerator *vitalsSampleGenerator; // @synthesize vitalsSampleGenerator=_vitalsSampleGenerator;
+@property(retain, nonatomic) HDDemoDataOtherAndAdditionalSampleGenerator *otherAndAdditionalSampleGenerator; // @synthesize otherAndAdditionalSampleGenerator=_otherAndAdditionalSampleGenerator;
 @property(retain, nonatomic) HDDemoDataStatisticsSampleGenerator *statisticsSampleGenerator; // @synthesize statisticsSampleGenerator=_statisticsSampleGenerator;
 @property(retain, nonatomic) HDDemoDataSleepSampleGenerator *sleepSampleGenerator; // @synthesize sleepSampleGenerator=_sleepSampleGenerator;
 @property(retain, nonatomic) HDDemoDataReproductiveHealthSampleGenerator *reproductiveHealthSampleGenerator; // @synthesize reproductiveHealthSampleGenerator=_reproductiveHealthSampleGenerator;
@@ -68,6 +70,7 @@
 - (id)_unarchiveDataWithClass:(Class)arg1 error:(id *)arg2;
 - (_Bool)_archiveObject:(id)arg1 error:(id *)arg2;
 - (id)_keyValueDomain;
+- (id)_workoutPrototypesIfEnsureRecentWorkoutHasRouteIsYes;
 - (void)_updateWorkoutConfigurationInGeneratorStateWithSampleDate:(id)arg1;
 - (id)_watchProvenanceWithPerson:(id)arg1;
 - (id)_phoneProveance;

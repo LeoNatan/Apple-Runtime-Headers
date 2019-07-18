@@ -17,6 +17,7 @@
     struct {
         unsigned int reservationStatus:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     int _reservationStatus;
     NSArray *_actions;
     _INPBTimestamp *_bookingTime;
@@ -27,6 +28,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)actionsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int reservationStatus; // @synthesize reservationStatus=_reservationStatus;
 @property(copy, nonatomic) NSString *reservationNumber; // @synthesize reservationNumber=_reservationNumber;
 @property(copy, nonatomic) NSString *reservationHolderName; // @synthesize reservationHolderName=_reservationHolderName;

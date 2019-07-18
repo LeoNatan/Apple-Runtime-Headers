@@ -6,9 +6,11 @@
 
 #import <UIKit/UIView.h>
 
-@class MTVisualStyling, NSArray, SBFluidSwitcherIconImageContainerView, SBFluidSwitcherItemContainerHeaderItem, UILabel;
+#import <SpringBoard/PTSettingsKeyObserver-Protocol.h>
 
-@interface SBFluidSwitcherItemContainerHeaderView : UIView
+@class MTVisualStyling, NSArray, NSString, SBFluidSwitcherIconImageContainerView, SBFluidSwitcherItemContainerHeaderItem, UILabel;
+
+@interface SBFluidSwitcherItemContainerHeaderView : UIView <PTSettingsKeyObserver>
 {
     SBFluidSwitcherItemContainerHeaderItem *_firstItem;
     SBFluidSwitcherIconImageContainerView *_firstIconImageView;
@@ -20,6 +22,15 @@
     UILabel *_secondSubtitleLabel;
     long long _subtitleVisualStylingInterfaceStyle;
     MTVisualStyling *_subtitleVisualStyling;
+    double _spacingBetweenLeadingEdgeAndIcon;
+    double _spacingBetweenTrailingEdgeAndLabels;
+    double _iconSideLength;
+    double _spacingBetweenSnapshotAndIcon;
+    double _spacingBetweenSnapshotAndDescriptionLabelBaseline;
+    double _spacingBetweenTitleAndSubtitleBaseline;
+    double _spacingBetweenIconAndLabel;
+    double _spacingBetweenLabelAndSecondIcon;
+    double _spacingBetweenBoundsCenterAndSecondIcon;
     double _textAlpha;
     NSArray *_headerItems;
 }
@@ -31,13 +42,21 @@
 - (void)_updateTitleAlpha;
 - (id)_titleLabelFont;
 - (id)_subtitleLabelFont;
+- (void)_applyPrototypeSettings;
 - (void)_updateVisualStylingWithHeaderItems:(id)arg1;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)layoutSubviews;
 - (void)setHeaderItems:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) double preferredHeaderHeight;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -24,6 +24,8 @@
 - (id)_displayableItemsForInstructionManual;
 - (id)_displayableItemsForWatch;
 - (id)_displayableItemsForPhone;
+- (id)_displayableItemsForFeatureName;
+- (_Bool)_shouldDisplayItemsForWatch;
 - (id)displayableItems;
 - (void)viewDidLoad;
 

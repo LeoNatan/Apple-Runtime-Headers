@@ -11,7 +11,12 @@
 + (_Bool)_mapkit_ax3TextEnabled;
 + (id)_mapkit_preferredFontForTextStyleTimeDisplayInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 useMonospace:(_Bool)arg3;
 + (id)_mapkit_preferredFontForTextStyleTimeDisplayInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2;
++ (id)_mapkit_preferredFontForTextStyle:(id)arg1 weight:(float)arg2 contentSizeCategory:(id)arg3 symbolicTraits:(unsigned int)arg4;
++ (id)_mapkit_preferredFontForTextStyleInTableViewCell:(id)arg1 weight:(float)arg2 contentSizeCategory:(id)arg3 symbolicTraits:(unsigned int)arg4;
++ (id)_mapkit_preferredFontForTextStyleInTableViewCell:(id)arg1 weight:(float)arg2;
 + (id)_mapkit_preferredFontForTextStyleInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2;
++ (id)_mapkit_preferredFontForTextStyleInTableViewCell:(id)arg1;
++ (id)_contentSizeCategoryInTableViewCellWithContentSizeCategory:(id)arg1;
 - (float)_mapkit_scaledValueForValue:(float)arg1;
 - (float)_mapkit_lineHeight;
 - (id)_mapkit_fontWithWeight:(float)arg1;

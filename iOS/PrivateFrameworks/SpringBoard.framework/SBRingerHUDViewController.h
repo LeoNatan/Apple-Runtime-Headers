@@ -31,11 +31,12 @@
 @property(nonatomic) _Bool ringerSilent; // @synthesize ringerSilent=_ringerSilent;
 - (void).cxx_destruct;
 - (void)_extendDismissalTimer;
+@property(readonly, nonatomic, getter=isPresented) _Bool presented;
 - (void)_dismiss;
 - (void)present;
 - (void)_setPositionSpringValue:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_createSprings;
-- (void)_updateStateAnimated:(_Bool)arg1;
+- (void)_updateStateAnimated:(_Bool)arg1 invert:(_Bool)arg2;
 - (void)swipeGesture:(id)arg1;
 - (void)_updateVolumeSliderAnimated:(_Bool)arg1;
 - (void)_layoutPillView;

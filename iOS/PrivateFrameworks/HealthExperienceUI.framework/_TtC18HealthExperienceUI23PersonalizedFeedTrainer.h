@@ -10,12 +10,13 @@
 {
     // Error parsing type: , name: feedItemDisplayBegan
     // Error parsing type: , name: feedItemDurations
+    // Error parsing type: , name: tapEvents
     // Error parsing type: , name: sessionWasBackgrounded
     // Error parsing type: , name: delegate
 }
 
 - (void)appDidBecomeActive;
-- (void)appWillResignActive;
+- (void)appDidEnterBackground;
 
 @end
 

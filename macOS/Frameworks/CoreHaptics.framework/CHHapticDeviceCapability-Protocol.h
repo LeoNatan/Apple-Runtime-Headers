@@ -11,6 +11,6 @@
 @property(readonly) BOOL supportsAudio;
 @property(readonly) BOOL supportsHaptics;
 - (id <CHHapticParameterAttributes>)attributesForDynamicParameter:(NSString *)arg1 error:(id *)arg2;
-- (id <CHHapticParameterAttributes>)attributesForEventParameter:(NSString *)arg1 error:(id *)arg2;
+- (id <CHHapticParameterAttributes>)attributesForEventParameter:(NSString *)arg1 eventType:(NSString *)arg2 error:(id *)arg3;
 @end
 

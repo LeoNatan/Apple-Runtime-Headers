@@ -6,11 +6,11 @@
 
 #import <AppKit/NSSharingService.h>
 
-@protocol PXDisplayAsset;
+@class NSItemProvider;
 
 @interface SBLSetDesktopSharingService : NSSharingService
 {
-    id <PXDisplayAsset> _asset;
+    NSItemProvider *_itemProvider;
 }
 
 + (void)_setDesktopPictureURL:(id)arg1 forDisplay:(long long)arg2 options:(id)arg3;
@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (void)performWithItems:(id)arg1;
 - (BOOL)canPerformWithItems:(id)arg1;
-- (id)initWithAsset:(id)arg1;
+- (id)initWithItemProvider:(id)arg1;
 
 @end
 

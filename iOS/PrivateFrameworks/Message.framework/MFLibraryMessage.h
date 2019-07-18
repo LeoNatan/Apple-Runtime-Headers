@@ -8,7 +8,7 @@
 
 #import <Message/EDLibraryMessage-Protocol.h>
 
-@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, MFLock, MFMailboxUid, MFMessageHeaders, MailAccount, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSMutableSet, NSSet, NSString;
+@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, MFMailboxUid, MFMessageHeaders, MailAccount, NSArray, NSDate, NSDictionary, NSSet, NSString;
 @protocol ECMimePart;
 
 @interface MFLibraryMessage : MFMailMessage <EDLibraryMessage>
@@ -22,13 +22,11 @@
     long long _originalMailboxID;
     NSString *_messageID;
     unsigned long long _conversationFlags;
-    NSMutableDictionary *_metadata;
-    NSMutableSet *_metadataChangedKeys;
-    MFLock *_metadataLock;
     NSArray *_references;
 }
 
 + (id)messageWithLibraryID:(long long)arg1;
++ (id)log;
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *references; // @synthesize references=_references;
 - (unsigned long long)fileSize;
@@ -36,9 +34,6 @@
 - (void)_forceLoadOfMessageSummaryFromProtectedStore;
 - (id)attachmentStorageLocation;
 - (id)_attachmentStorageLocation;
-- (id)metadataValueOfClass:(Class)arg1 forKey:(id)arg2;
-- (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
-- (void)_initializeMetadata;
 - (id)copyMessageInfo;
 - (_Bool)isLibraryMessage;
 - (id)dataConsumerForMimePart:(id)arg1;

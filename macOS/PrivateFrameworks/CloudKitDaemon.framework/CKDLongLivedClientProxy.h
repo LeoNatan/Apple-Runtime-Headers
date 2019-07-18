@@ -23,6 +23,7 @@
 - (id)_clientPrefixEntitlement;
 - (id)associatedApplicationBundleID;
 - (id)applicationBundleID;
+- (BOOL)hasExplicitCodeOperationURLEntitlement;
 - (BOOL)hasAllowUnverifiedAccountEntitlement;
 - (BOOL)hasNonLegacyShareURLEntitlement;
 - (id)serviceNameForContainerMapEntitlement;

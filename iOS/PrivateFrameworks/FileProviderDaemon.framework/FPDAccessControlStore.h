@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <FileProviderDaemon/FPAccessControl-Protocol.h>
-
-@class NSString, NSURL, PQLConnection;
+@class NSURL, PQLConnection;
 @protocol OS_dispatch_queue;
 
-@interface FPDAccessControlStore : NSObject <FPAccessControl>
+@interface FPDAccessControlStore : NSObject
 {
     PQLConnection *_dbConnection;
     NSURL *_databaseBaseURL;
@@ -37,12 +35,6 @@
 - (void)dealloc;
 - (id)initWithDatabaseBaseURL:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

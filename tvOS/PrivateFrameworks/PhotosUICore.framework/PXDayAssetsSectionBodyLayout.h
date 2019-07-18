@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) double buildingRowSpacing;
 @property(readonly, nonatomic) double buildingRowContentHeight;
 @property(readonly, nonatomic) struct CGSize minPlayableSpriteSize;
+- (void)enumerateHeroSpritesInRect:(struct CGRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateVisibleAnchoringSpriteIndexesUsingBlock:(CDUnknownBlockType)arg1;
 - (struct CGSize)_minSizeOfDominantSprites;
 @property(readonly, nonatomic) struct CGSize minimumItemSize;

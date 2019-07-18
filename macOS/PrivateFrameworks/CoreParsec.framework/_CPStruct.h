@@ -33,7 +33,6 @@
 - (BOOL)getIntKeyFields:(id *)arg1 forKey:(int)arg2;
 - (void)setStringKeyFields:(id)arg1 forKey:(id)arg2;
 - (BOOL)getStringKeyFields:(id *)arg1 forKey:(id)arg2;
-- (BOOL)requiresQueryId;
 @property(readonly, nonatomic) id feedbackJSON;
 - (id)initWithFacade:(id)arg1;
 

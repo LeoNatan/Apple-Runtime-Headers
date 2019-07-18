@@ -9,6 +9,7 @@
 #import <NewsArticles/UIGestureRecognizerDelegate-Protocol.h>
 
 @interface _TtC12NewsArticles37PDFReplicaBarVisibilityAnimatorForiOS (NewsArticles) <UIGestureRecognizerDelegate>
+- (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)handleTapGesture;
 @end

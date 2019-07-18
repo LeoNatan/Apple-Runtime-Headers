@@ -170,10 +170,10 @@
 @property(readonly, nonatomic) PUBrowsingSession *browsingSession; // @synthesize browsingSession=_browsingSession;
 - (void).cxx_destruct;
 - (void)livePhotoVideoPlaybackTileViewControllerDidEndPlaying:(id)arg1;
-- (void)livePhotoVideoPlaybackTileViewControllerWillEndPlaying:(id)arg1;
-- (void)livePhotoVideoPlaybackTileViewControllerDidBeginPlaying:(id)arg1;
 - (void)livePhotoVideoPlaybackTileViewControllerWillBeginPlaying:(id)arg1;
+- (id)livePhotoVideoPlaybackTileViewControllerCurrentImage:(id)arg1;
 - (id)livePhotoVideoPlaybackTileViewControllerDisplayTileTransform:(id)arg1;
+- (_Bool)livePhotoVideoPlaybackTileViewControllerCanBeginPlaying:(id)arg1;
 - (void)gestureProvider:(id)arg1 didTriggerEvent:(long long)arg2;
 - (struct CGRect)gestureProviderCurrentAssetRect:(id)arg1;
 - (_Bool)oneUpSuggestionsController:(id)arg1 canShowSuggestion:(id)arg2 forAssetReference:(id)arg3;
@@ -229,6 +229,9 @@
 - (void)_unhideOverlays;
 - (void)_hideOverlays;
 - (id)_currentPlaceholderSnapshotViewForTileController:(id)arg1;
+- (id)_leadingContentTileController;
+- (id)_trailingContentTileController;
+- (id)_contentTileControllerForAssetReference:(id)arg1;
 - (id)_currentContentTileController;
 - (void)overOneUpPresentationSessionDidFinish:(id)arg1;
 - (void)overOneUpPresentationSession:(id)arg1 didPresent:(id)arg2;
@@ -299,7 +302,6 @@
 - (_Bool)layout:(id)arg1 shouldMoveProgressIndicatorForItemAtIndexPath:(id)arg2;
 - (double)alphaForReviewScreenBarsInLayout:(id)arg1;
 - (_Bool)layoutShouldShowReviewScreenScrubberBar:(id)arg1;
-- (_Bool)layout:(id)arg1 shouldShowMuteButtonForItemAtIndexPath:(id)arg2;
 - (_Bool)layout:(id)arg1 shouldShowPlayButtonForItemAtIndexPath:(id)arg2;
 - (struct CGSize)layout:(id)arg1 assetExplorerReviewScreenBadgeSizeForItemAtIndexPath:(id)arg2;
 - (struct CGSize)layout:(id)arg1 badgeSizeForItemAtIndexPath:(id)arg2 contentWidth:(double)arg3;
@@ -356,7 +358,6 @@
 - (void)_toggleDetailsVisibility;
 - (void)_toggleAccessoryVisibility;
 - (void)_presentAlertForUnplayableAssetReference:(id)arg1;
-- (void)_presentAlertForError:(id)arg1;
 - (void)_handleTouchGesture:(id)arg1;
 - (_Bool)_isLocationFromProviderOverControl:(id)arg1;
 - (_Bool)_isLocationFromProviderInAccessoryArea:(id)arg1;

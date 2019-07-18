@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGRect presentationRect; // @synthesize presentationRect=_presentationRect;
 @property(readonly, nonatomic) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
 @property(readonly, copy, nonatomic) NSString *textWithContext; // @synthesize textWithContext=_textWithContext;
-@property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
+@property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) UIResponder<UITextInput> *textInput; // @synthesize textInput=_textInput;
 - (void).cxx_destruct;
 - (void)convertRectToView:(id)arg1;

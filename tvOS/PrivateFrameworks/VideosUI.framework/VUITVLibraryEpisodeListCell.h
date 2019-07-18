@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     _TVStackingPosterView *_stackingPosterView;
     UIPress *_press;
     UIView *_imageView;
+    UIView *_overlayView;
     VUIMediaItem *_mediaItem;
     VUITVEpisodeInformationView *_informationView;
 }
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 + (void)configureVUITVLibraryEpisodeListCell:(id)arg1 withMedia:(id)arg2 width:(double)arg3 cornerRadius:(double)arg4;
 @property(retain, nonatomic) VUITVEpisodeInformationView *informationView; // @synthesize informationView=_informationView;
 @property(retain, nonatomic) VUIMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
+@property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) UIView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIPress *press; // @synthesize press=_press;
 @property(retain, nonatomic) _TVStackingPosterView *stackingPosterView; // @synthesize stackingPosterView=_stackingPosterView;

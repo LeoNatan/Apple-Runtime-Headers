@@ -24,7 +24,7 @@
 #import <SpringBoard/SBTetheredSwitcherContentViewControlling-Protocol.h>
 #import <SpringBoard/UIGestureRecognizerDelegate-Protocol.h>
 
-@class BSAnimationSettings, NSArray, NSMutableArray, NSMutableDictionary, NSString, SBAppSwitcherScrollView, SBAppSwitcherSettings, SBAppSwitcherSnapshotImageCache, SBAppSwitcherSnapshotLockoutViewControllerProvider, SBAsynchronousSurfaceRetentionAssertion, SBBestAppSuggestion, SBFHomeGrabberSettings, SBFloatingDockBehaviorAssertion, SBFloatingDockWindowLevelAssertion, SBFluidSwitcherContentView, SBFluidSwitcherLayoutContext, SBFluidSwitcherModifierTimelineController, SBFluidSwitcherPageContentViewProvider, SBLayoutStateTransitionCoordinator, SBSceneManager, SBSwitcherModifier, SBViewMorphAnimator, SBWorkspaceApplicationSceneTransitionContext, UIApplicationSceneDeactivationAssertion, UILabel, UINotificationFeedbackGenerator, UIPanGestureRecognizer, UITapGestureRecognizer, UIView;
+@class BSAnimationSettings, NSArray, NSMutableArray, NSMutableDictionary, NSString, SBAppSwitcherScrollView, SBAppSwitcherSettings, SBAppSwitcherSnapshotImageCache, SBAppSwitcherSnapshotLockoutViewControllerProvider, SBBestAppSuggestion, SBFHomeGrabberSettings, SBFloatingDockBehaviorAssertion, SBFloatingDockWindowLevelAssertion, SBFluidSwitcherContentView, SBFluidSwitcherLayoutContext, SBFluidSwitcherModifierTimelineController, SBFluidSwitcherPageContentViewProvider, SBFluidSwitcherPlusButton, SBLayoutStateTransitionCoordinator, SBSceneManager, SBSwitcherModifier, SBViewMorphAnimator, SBWorkspaceApplicationSceneTransitionContext, UIApplicationSceneDeactivationAssertion, UILabel, UINotificationFeedbackGenerator, UIPanGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol BSInvalidatable, SBFluidSwitcherScrollProviding, SBSwitcherContentViewControllerDataSource, SBSwitcherContentViewControllerDelegate, SBSwitcherLiveContentOverlayCoordinating, SBTetheredSwitcherContentViewControlling;
 
 @interface SBFluidSwitcherViewController : UIViewController <SBFluidSwitcherPageContentViewProviderDelegate, SBChainableModifierDelegate, SBAppSwitcherSnapshotImageCacheDelegate, BSUIScrollViewDelegate, SBFluidSwitcherItemContainerDelegate, SBIconViewObserver, BSDescriptionProviding, UIGestureRecognizerDelegate, SBSearchGestureObserver, PTSettingsKeyObserver, PTSettingsKeyPathObserver, SBFluidSwitcherScrollProvidingDelegate, SBHistorianSwitcherModifierDelegate, SBSwitcherLiveContentOverlayCoordinatorDelegate, SBAppSwitcherReusableSnapshotViewDelegate, SBSwitcherContentViewControlling, SBTetheredSwitcherContentViewControlling>
@@ -41,7 +41,6 @@
     SBAppSwitcherSnapshotImageCache *_snapshotCache;
     SBAppSwitcherSnapshotLockoutViewControllerProvider *_lockoutVCProvider;
     SBAppSwitcherSettings *_settings;
-    SBAsynchronousSurfaceRetentionAssertion *_asyncSurfaceRetentionAssertion;
     UIApplicationSceneDeactivationAssertion *_transitionBeginResignActiveAssertion;
     UIApplicationSceneDeactivationAssertion *_resignActiveAssertion;
     NSString *_fluidSwitcherAssertionReason;
@@ -72,6 +71,8 @@
     _Bool _isShowingModifierTimeline;
     id <BSInvalidatable> _stateCaptureInvalidatable;
     UIPanGestureRecognizer *_borrowableScrollViewPanGestureRecognizer;
+    SBFluidSwitcherContentView *_stashedContentView;
+    _Bool _asynchronousRenderingDisabled;
     id <SBSwitcherContentViewControllerDelegate> _delegate;
     id <SBSwitcherContentViewControllerDataSource> _dataSource;
     SBBestAppSuggestion *_bestAppSuggestion;
@@ -81,7 +82,7 @@
     SBFluidSwitcherLayoutContext *_layoutContext;
     NSMutableDictionary *_visibleItemContainers;
     NSMutableArray *_hiddenRecycledItemContainers;
-    UIView *_plusButton;
+    SBFluidSwitcherPlusButton *_plusButton;
     SBSwitcherModifier<SBFluidSwitcherScrollProviding> *_rootModifier;
     SBSwitcherModifier *_reduceMotionModifier;
     NSMutableDictionary *_hiddenIconViews;
@@ -106,12 +107,13 @@
 @property(retain, nonatomic) NSMutableDictionary *hiddenIconViews; // @synthesize hiddenIconViews=_hiddenIconViews;
 @property(retain, nonatomic) SBSwitcherModifier *reduceMotionModifier; // @synthesize reduceMotionModifier=_reduceMotionModifier;
 @property(retain, nonatomic) SBSwitcherModifier<SBFluidSwitcherScrollProviding> *rootModifier; // @synthesize rootModifier=_rootModifier;
-@property(retain, nonatomic) UIView *plusButton; // @synthesize plusButton=_plusButton;
+@property(retain, nonatomic) SBFluidSwitcherPlusButton *plusButton; // @synthesize plusButton=_plusButton;
 @property(retain, nonatomic) NSMutableArray *hiddenRecycledItemContainers; // @synthesize hiddenRecycledItemContainers=_hiddenRecycledItemContainers;
 @property(retain, nonatomic) NSMutableDictionary *visibleItemContainers; // @synthesize visibleItemContainers=_visibleItemContainers;
 @property(retain, nonatomic) SBFluidSwitcherLayoutContext *layoutContext; // @synthesize layoutContext=_layoutContext;
 @property(retain, nonatomic) SBFluidSwitcherContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) SBAppSwitcherScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(nonatomic, getter=isAsynchronousRenderingDisabled) _Bool asynchronousRenderingDisabled; // @synthesize asynchronousRenderingDisabled=_asynchronousRenderingDisabled;
 @property(nonatomic) long long contentOrientation; // @synthesize contentOrientation=_contentOrientation;
 @property(retain, nonatomic) SBBestAppSuggestion *bestAppSuggestion; // @synthesize bestAppSuggestion=_bestAppSuggestion;
 @property(nonatomic) __weak id <SBSwitcherContentViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
@@ -123,7 +125,7 @@
 - (void)_updateModifierTimelinePresence;
 @property(nonatomic, getter=isShowingModifierTimeline) _Bool showModifierTimeline;
 - (void)_updateModifierStackDebugLabelPresence;
-- (void)_performLiveContentOverlayBlurAction:(id)arg1;
+- (void)_performBlurItemContainerAction:(id)arg1;
 - (void)_performModifierDosidoScaleAnimationAction:(id)arg1;
 - (void)_performModifierInvalidateAdjustedAppLayoutsAction:(id)arg1;
 - (void)_performModifierTimerEventAction:(id)arg1;
@@ -140,9 +142,10 @@
 - (void)_performModifierReachabilityAction:(id)arg1;
 - (void)_performModifierCompletionAction:(id)arg1;
 - (void)_performModifierPerformTransitionAction:(id)arg1;
+- (void)_performModifierGroupAction:(id)arg1;
 - (void)_performModifierAction:(id)arg1;
-- (void)_updateTetheredScrolling;
 - (void)_handleModifierAction:(id)arg1;
+- (void)_updateTetheredScrolling;
 - (void)_dispatchEventAndHandleAction:(id)arg1;
 - (id)_dispatchEventAndReturnAction:(id)arg1;
 - (id)_transitionEventForTransitionWithContext:(id)arg1 identifier:(id)arg2 phase:(unsigned long long)arg3 animated:(_Bool)arg4;
@@ -178,6 +181,7 @@
 - (struct CGRect)_frameForItemWithRole:(long long)arg1 inMainAppLayout:(id)arg2 interfaceOrientation:(long long)arg3;
 - (_Bool)_allowsHeaderItemsForAppLayout:(id)arg1;
 - (void)_setScrollViewContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_setupLiveContentOverlayForAppLayout:(id)arg1 itemContainer:(id)arg2 overlay:(id)arg3;
 - (void)_coolDownEmptyAppSwitcherHaptic;
 - (void)_actuateEmptyAppSwitcherHaptic;
 - (void)_warmupEmptyAppSwitcherHaptic;
@@ -195,7 +199,7 @@
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (struct CGPoint)gestureHandlingModifier:(id)arg1 averageVelocityOverDuration:(double)arg2;
 - (void)gestureHandlingModifierRequestsUpdate:(id)arg1;
-- (_Bool)shouldUseDarkModeTreatmentForItemContainer:(id)arg1;
+- (_Bool)shouldUseBackgroundWallpaperTreatmentForItemContainer:(id)arg1;
 - (double)switcherCardScale;
 - (long long)homeScreenInterfaceOrientation;
 - (void)scrollViewKillingProgressUpdated:(double)arg1 ofContainer:(id)arg2;
@@ -256,25 +260,26 @@
 - (void)folderExpansionAnimationWillBegin:(id)arg1;
 - (void)_temporarilyHideMatchMovedZoomDownAnimationViewAnimated:(_Bool)arg1;
 - (_Bool)_isPerformingMatchMoveToIconView;
-- (void)_unblurLiveContentOverlayOfAppLayout:(id)arg1;
-- (void)_blurLiveContentOverlayOfAppLayout:(id)arg1;
+- (void)_unblurItemContainer:(id)arg1;
+- (void)_blurItemContainerWithAnimation:(id)arg1;
 - (void)_performContentViewScaleAnimationForDosido;
 - (void)_cancelInProcessAnimations;
 - (id)_rotationAnimationSettingsForTransitionContext:(id)arg1;
 - (void)_makeAppLayoutVisibleForTransitionWithContext:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (double)_delayForTransitionWithContext:(id)arg1 animated:(_Bool)arg2;
-- (void)performTransitionWithContext:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)performTransitionWithContext:(id)arg1 animated:(_Bool)arg2 alongsideAnimationController:(id)arg3 completion:(CDUnknownBlockType)arg4;
 @property(readonly, copy, nonatomic) BSAnimationSettings *defaultTransitionAnimationSettings;
 @property(readonly, nonatomic) _Bool canInterruptActiveTransition;
 - (void)_performWithoutNotifyingTetheredViewController:(CDUnknownBlockType)arg1;
 - (void)returnScrollViewPanGestureRecognizer:(id)arg1;
 - (id)borrowScrollViewPanGestureRecognizer;
+- (_Bool)hasItemContainerAtLocationInContentView:(struct CGPoint)arg1;
 - (void)dispatchAndHandleTetheredRemovalEvent:(id)arg1;
+- (double)distanceToLeadingEdgeOfLeadingCardFromTrailingEdgeOfScreen;
 - (unsigned long long)numberOfAppLayouts;
 - (struct CGSize)contentSize;
-- (void)tetheredViewController:(id)arg1 didUpdateStyleWithAnimationMode:(long long)arg2;
-- (void)tetheredViewController:(id)arg1 didUpdateLayoutWithAnimationMode:(long long)arg2;
-- (void)tetheredViewControllerDidUpdateVisibleItems:(id)arg1;
+- (void)tetheredViewController:(id)arg1 didPerformTransitionWithMode:(long long)arg2;
+- (void)setTetheredContentView:(id)arg1;
 - (void)setTetheredScrollViewContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2;
 - (void)endTetheringWithViewController:(id)arg1;
 - (void)beginTetheringWithViewController:(id)arg1 asTetheree:(_Bool)arg2;
@@ -287,11 +292,13 @@
 - (_Bool)areLiveContentOverlayUpdatesSuspended;
 - (void)removeLiveContentOverlayForAppLayout:(id)arg1 animated:(_Bool)arg2;
 - (void)addLiveContentOverlay:(id)arg1 forAppLayout:(id)arg2 animated:(_Bool)arg3;
-- (void)enterAppExposeForBundleID:(id)arg1;
+- (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
+- (id)enterAppExposeForBundleID:(id)arg1;
 - (void)handleModifierAction:(id)arg1;
 - (id)animationControllerForTransitionRequest:(id)arg1;
 - (void)respondToInAppStatusBarRequestedHiddenUpdate;
 - (_Bool)isStatusBarHiddenForAppLayout:(id)arg1;
+- (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)shouldAcceleratedHomeButtonPressBegin;
 - (_Bool)isUserInteractionEnabled;
 - (_Bool)isWindowVisible;
@@ -329,14 +336,17 @@
 - (id)medusaSettings;
 - (id)homeGestureSettings;
 - (id)switcherSettings;
+- (_Bool)isHomeScreenSidebarVisible;
 - (_Bool)isShowingSpotlightOrTodayView;
 - (_Bool)homeScreenHasOpenFolderInLocation:(id)arg1;
 - (_Bool)homeScreenHasOpenFolder;
+- (_Bool)isFloatingDockGesturePossible;
 - (_Bool)isFloatingDockFullyPresented;
 - (double)floatingDockViewTopMargin;
 - (double)floatingDockHeight;
 - (double)displayCornerRadius;
 - (long long)switcherInterfaceOrientation;
+- (double)distanceToTetheredLeadingEdgeOfLeadingCardFromTrailingEdgeOfScreen;
 - (struct CGSize)tetheredScrollViewContentSize;
 - (struct CGPoint)scrollViewContentOffset;
 - (struct CGRect)switcherViewBounds;

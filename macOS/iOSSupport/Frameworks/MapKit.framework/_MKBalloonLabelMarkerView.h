@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)calloutViewClass;
 - (void).cxx_destruct;
-- (void)_configureBalloonForDataIconImageKeys:(id)arg1 scale:(double)arg2 coordinate:(struct CLLocationCoordinate2D)arg3;
+- (void)_configureBalloonForDataIconImageKeys:(id)arg1 scale:(double)arg2;
 - (BOOL)updateCalloutViewIfNeededAnimated:(BOOL)arg1;
 - (void)_addAnchorDotViewIfNeeded;
 - (BOOL)shouldShowCallout;
@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_balloonTintColor) UIColor *balloonTintColor;
 - (BOOL)_balloonCalloutShouldOriginateFromSmallSize:(double *)arg1;
 @property(readonly, nonatomic, getter=_balloonCalloutStyle) long long balloonCalloutStyle;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_resolveBalloonAttributesIfNecessary;
 - (void)prepareForReuse;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;

@@ -7,6 +7,6 @@
 @class PXCuratedLibraryFooterViewModel;
 
 @protocol PXCuratedLibraryFooterViewModelPresentationDelegate
-- (struct NSObject *)presentingViewControllerForViewModel:(PXCuratedLibraryFooterViewModel *)arg1;
+- (struct NSObject *)presentingViewControllerForFooterViewModel:(PXCuratedLibraryFooterViewModel *)arg1;
 @end
 

@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateVisibilityState;
 - (void)_handleApplicationDidEnterBackground:(id)arg1;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;
+- (_Bool)isHandwritingLandscape;
 @property(readonly) NSString *pluginBundleID;
 - (void)setVisible:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic) _Bool visible;

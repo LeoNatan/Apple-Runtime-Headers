@@ -15,6 +15,7 @@
 @interface _INPBBillPayeeValue : PBCodable <_INPBBillPayeeValue, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSString *_accountNumber;
     _INPBDataString *_nickname;
     _INPBDataString *_organizationName;
@@ -22,6 +23,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(retain, nonatomic) _INPBDataString *organizationName; // @synthesize organizationName=_organizationName;
 @property(retain, nonatomic) _INPBDataString *nickname; // @synthesize nickname=_nickname;

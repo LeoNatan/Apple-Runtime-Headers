@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+#import <SpringBoard/BSDescriptionProviding-Protocol.h>
 #import <SpringBoard/CSExternalBehaviorProviding-Protocol.h>
 #import <SpringBoard/CSExternalEventHandling-Protocol.h>
 #import <SpringBoard/SBBarSwipeAffordanceObserver-Protocol.h>
@@ -14,15 +15,14 @@
 #import <SpringBoard/SBTodayOverlayViewControllerDelegate-Protocol.h>
 #import <SpringBoard/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSHashTable, NSString, SBBarSwipeAffordanceViewController, SBHomeGesturePanGestureRecognizer, SBMainStatusBarContentAssertion, SBTodayOverlayViewController, SBWindow;
+@class NSHashTable, NSString, SBBarSwipeAffordanceViewController, SBHomeGesturePanGestureRecognizer, SBMainScreenActiveInterfaceOrientationWindow, SBMainStatusBarContentAssertion, SBTodayOverlayViewController;
 @protocol SBTodayOverlayWindow;
 
-@interface SBTodayOverlayController : NSObject <SBBarSwipeAffordanceObserver, SBTodayOverlayViewControllerDelegate, UIGestureRecognizerDelegate, SBFTodayOverlayControlling, SBFIdleTimerBehaviorProviding, CSExternalBehaviorProviding, CSExternalEventHandling>
+@interface SBTodayOverlayController : NSObject <SBBarSwipeAffordanceObserver, SBTodayOverlayViewControllerDelegate, UIGestureRecognizerDelegate, SBFTodayOverlayControlling, SBFIdleTimerBehaviorProviding, CSExternalBehaviorProviding, CSExternalEventHandling, BSDescriptionProviding>
 {
     NSHashTable *_observers;
     _Bool _dismissing;
-    double _presentationProgress;
-    SBWindow<SBTodayOverlayWindow> *_window;
+    SBMainScreenActiveInterfaceOrientationWindow<SBTodayOverlayWindow> *_window;
     SBBarSwipeAffordanceViewController *_homeAffordanceViewController;
     SBTodayOverlayViewController *_overlayViewController;
     SBHomeGesturePanGestureRecognizer *_dismissHomeGestureRecognizer;
@@ -34,9 +34,13 @@
 @property(readonly, nonatomic) SBHomeGesturePanGestureRecognizer *dismissHomeGestureRecognizer; // @synthesize dismissHomeGestureRecognizer=_dismissHomeGestureRecognizer;
 @property(readonly, nonatomic) SBTodayOverlayViewController *overlayViewController; // @synthesize overlayViewController=_overlayViewController;
 @property(readonly, nonatomic) SBBarSwipeAffordanceViewController *homeAffordanceViewController; // @synthesize homeAffordanceViewController=_homeAffordanceViewController;
-@property(readonly, nonatomic) SBWindow<SBTodayOverlayWindow> *window; // @synthesize window=_window;
-@property(nonatomic) double presentationProgress; // @synthesize presentationProgress=_presentationProgress;
+@property(readonly, nonatomic) SBMainScreenActiveInterfaceOrientationWindow<SBTodayOverlayWindow> *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+@property(readonly, copy) NSString *description;
 - (void)todayOverlayViewControllerDidChangeHeaderVisibility:(id)arg1;
 - (void)homeGesturePerformedForBarSwipeAffordanceView:(id)arg1;
 - (_Bool)wouldHandleButtonEvent:(id)arg1;
@@ -53,15 +57,18 @@
 - (void)_relinquishStatusBarContentAssertion;
 - (void)_takeStatusBarContentAssertion;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (void)_removeSystemGestureRecognizer;
+- (void)_addSystemGestureRecognizer;
 - (void)dismissScrollGestureUpdated:(id)arg1;
 - (void)dismissTapGestureUpdated:(id)arg1;
+- (id)testScrollView;
 - (void)dismiss;
-- (_Bool)isWidgetExtensionWithIdentifierVisible:(id)arg1;
 - (void)enumerateTodayOverlayObserversUsingBlock:(CDUnknownBlockType)arg1;
 - (void)removeTodayOverlayObserver:(id)arg1;
 - (void)addTodayOverlayObserver:(id)arg1;
 - (double)finalPresentationProgressForPresentationProgress:(double)arg1 gestureVelocity:(double)arg2;
 - (void)setPresentationProgress:(double)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+@property(nonatomic) double presentationProgress;
 @property(readonly, nonatomic, getter=isPresented) _Bool presented;
 @property(readonly, nonatomic) double contentWidth;
 - (void)dealloc;
@@ -72,7 +79,6 @@
 @property(readonly, nonatomic) double customIdleExpirationTimeout;
 @property(readonly, nonatomic) double customIdleWarningTimeout;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

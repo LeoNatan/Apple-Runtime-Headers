@@ -6,15 +6,18 @@
 
 #import <UIKitCore/UIView.h>
 
-@class UIButton;
+@class UIAssistantBarRoundedButtonViewButton;
 
 __attribute__((visibility("hidden")))
 @interface UIAssistantBarRoundedButtonView : UIView
 {
-    UIButton *_button;
+    UIView *_shadowView;
+    _Bool _dropShadow;
+    UIAssistantBarRoundedButtonViewButton *_button;
 }
 
-@property(readonly, nonatomic) UIButton *button; // @synthesize button=_button;
+@property(readonly, nonatomic) UIAssistantBarRoundedButtonViewButton *button; // @synthesize button=_button;
+@property(nonatomic) _Bool dropShadow; // @synthesize dropShadow=_dropShadow;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

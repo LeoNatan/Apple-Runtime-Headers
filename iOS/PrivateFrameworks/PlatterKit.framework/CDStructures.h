@@ -41,3 +41,11 @@ struct UIEdgeInsets {
     double right;
 };
 
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    float opacity;
+    struct CGSize offset;
+    double radius;
+} CDStruct_b48b9fb5;
+

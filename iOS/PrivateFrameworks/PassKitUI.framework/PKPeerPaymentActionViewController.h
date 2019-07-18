@@ -8,12 +8,11 @@
 
 #import <PassKitUI/PKPeerPaymentActionControllerDelegate-Protocol.h>
 
-@class NSDecimalNumber, NSString, PKPassSnapshotter, PKPaymentPass, PKPeerPaymentAccount, PKPeerPaymentAccountFeatureDescriptor, PKPeerPaymentActionController, PKPeerPaymentWebService, UIImageView;
+@class NSDecimalNumber, NSString, PKPaymentPass, PKPeerPaymentAccount, PKPeerPaymentAccountFeatureDescriptor, PKPeerPaymentActionController, PKPeerPaymentWebService;
 @protocol PKPeerPaymentActionViewControllerDelegate;
 
 @interface PKPeerPaymentActionViewController : UIViewController <PKPeerPaymentActionControllerDelegate>
 {
-    PKPassSnapshotter *_snapshotter;
     _Bool _viewHasAppeared;
     _Bool _dismissingViewController;
     _Bool _showCancelButton;
@@ -29,13 +28,11 @@
     NSDecimalNumber *_maxBalance;
     NSDecimalNumber *_minLoadAmount;
     NSDecimalNumber *_maxLoadAmount;
-    UIImageView *_passView;
 }
 
 + (id)navigationBarBackgroundColor;
 + (id)peerPaymentActionViewControllerForAction:(unsigned long long)arg1 paymentPass:(id)arg2 webService:(id)arg3 context:(long long)arg4;
 @property(nonatomic) _Bool showCancelButton; // @synthesize showCancelButton=_showCancelButton;
-@property(retain, nonatomic) UIImageView *passView; // @synthesize passView=_passView;
 @property(copy, nonatomic) NSDecimalNumber *maxLoadAmount; // @synthesize maxLoadAmount=_maxLoadAmount;
 @property(copy, nonatomic) NSDecimalNumber *minLoadAmount; // @synthesize minLoadAmount=_minLoadAmount;
 @property(copy, nonatomic) NSDecimalNumber *maxBalance; // @synthesize maxBalance=_maxBalance;
@@ -57,7 +54,6 @@
 @property(nonatomic) unsigned long long controllerAction;
 - (void)updateFirstResponder;
 - (void)willDismissViewController;
-- (void)shakePassView;
 - (void)_performedAction;
 - (void)_cancelledAction;
 - (void)_cancelButtonPressed:(id)arg1;
@@ -67,7 +63,6 @@
 - (_Bool)pkui_disablesAutomaticDismissalUponEnteringBackground;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
-- (void)viewWillLayoutSubviews;
 - (void)loadView;
 - (void)dealloc;
 - (id)initWithPaymentPass:(id)arg1 webService:(id)arg2 context:(long long)arg3;

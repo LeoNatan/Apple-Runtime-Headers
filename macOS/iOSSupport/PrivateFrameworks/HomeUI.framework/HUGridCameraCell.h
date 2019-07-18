@@ -43,17 +43,14 @@
 - (id)_descriptionLabelText:(id)arg1;
 - (void)_updateRecordIndicatorColor;
 - (void)_updateCameraViewAppearance;
-- (void)_updateLabelsAppearance;
 - (void)_animateTransitionWithView:(id)arg1 animations:(CDUnknownBlockType)arg2;
 - (void)updateConstraints;
-- (void)_invalidateConstraints;
 - (void)layoutOptionsDidChange;
 - (void)updateUIWithAnimation:(BOOL)arg1;
 - (BOOL)shouldDisplayErrorContent;
 - (struct CGRect)cameraViewFrame;
 @property(readonly, nonatomic) UIView *cameraContentView;
 @property(nonatomic) double cameraViewAlpha;
-- (void)tintColorDidChange;
 - (void)dealloc;
 - (void)prepareForReuse;
 - (id)initWithFrame:(struct CGRect)arg1;

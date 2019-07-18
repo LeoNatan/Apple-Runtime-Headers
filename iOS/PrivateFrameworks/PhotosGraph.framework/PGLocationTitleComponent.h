@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet, NSSet, PGGraphEdge, PGGraphNode;
+@class NSMutableSet, NSSet, NSString, PGGraphEdge, PGGraphNode;
 
 @interface PGLocationTitleComponent : NSObject
 {
@@ -15,8 +15,12 @@
     PGGraphNode *_node;
     PGGraphEdge *_edge;
     double _timestampStart;
+    unsigned long long _type;
+    NSString *_personName;
 }
 
+@property(nonatomic) NSString *personName; // @synthesize personName=_personName;
+@property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) float weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) double timestampStart; // @synthesize timestampStart=_timestampStart;
 @property(retain, nonatomic) NSSet *addressNodes; // @synthesize addressNodes=_addressNodes;

@@ -6,12 +6,14 @@
 
 #import <UIKit/UIControl.h>
 
+#import <CameraEditKit/CEKAbstractSlider-Protocol.h>
+#import <CameraEditKit/CEKSliderTickMarksDelegate-Protocol.h>
 #import <CameraEditKit/UIScrollViewDelegate-Protocol.h>
 
-@class CEKApertureSliderTickMarksView, CEKEdgeGradientView, CEKSelectionFeedbackGenerator, CEKSliderDotView, NSString, UIColor, UILabel, UIScrollView, UIView;
-@protocol CEKSliderDelegate;
+@class CEKEdgeGradientView, CEKSelectionFeedbackGenerator, CEKSliderDotView, CEKSliderTickMarksView, NSString, UIColor, UILabel, UIScrollView, UIView;
+@protocol CEKSliderDelegate, CEKTickMarksConfiguration;
 
-@interface CEKSlider : UIControl <UIScrollViewDelegate>
+@interface CEKSlider : UIControl <UIScrollViewDelegate, CEKSliderTickMarksDelegate, CEKAbstractSlider>
 {
     struct {
         _Bool respondsToWillBeginScrolling;
@@ -25,6 +27,11 @@
     _Bool __active;
     _Bool __reAdjustingOffsets;
     _Bool __dimmed;
+    double _labelVerticalPadding;
+    long long _sliderVerticalAlignment;
+    double _sliderVerticalOffset;
+    long long _textOrientation;
+    unsigned long long _fontStyle;
     id <CEKSliderDelegate> _delegate;
     double _animationDuration;
     double _maximumValue;
@@ -35,14 +42,10 @@
     long long _tickMarkCount;
     UIColor *_tickMarkColor;
     UIColor *_prominentTickMarkColor;
-    long long _sliderVerticalAlignment;
-    double _sliderVerticalOffset;
-    double _labelVerticalPadding;
     NSString *_title;
     long long _valueLabelVisibility;
-    long long _textOrientation;
     UIScrollView *__contentScrollView;
-    CEKApertureSliderTickMarksView *__tickMarksView;
+    CEKSliderTickMarksView *__tickMarksView;
     UIView *__levelIndicatorView;
     CEKSliderDotView *__dotView;
     CEKEdgeGradientView *__edgeGradientView;
@@ -50,10 +53,12 @@
     CEKSelectionFeedbackGenerator *__feedbackGenerator;
     UILabel *__titleLabel;
     UILabel *__valueLabel;
-    struct CGSize _tickMarkSize;
+    UIView *__levelIndicatorBackgroundView;
     CDStruct_ae5a35ae _gradientInsets;
+    struct CGSize _tickMarkSize;
 }
 
+@property(retain, nonatomic) UIView *_levelIndicatorBackgroundView; // @synthesize _levelIndicatorBackgroundView=__levelIndicatorBackgroundView;
 @property(nonatomic, getter=_isDimmed, setter=_setDimmed:) _Bool _dimmed; // @synthesize _dimmed=__dimmed;
 @property(nonatomic, getter=_isreAdjustingOffsets) _Bool _reAdjustingOffsets; // @synthesize _reAdjustingOffsets=__reAdjustingOffsets;
 @property(retain, nonatomic) UILabel *_valueLabel; // @synthesize _valueLabel=__valueLabel;
@@ -66,15 +71,10 @@
 @property(retain, nonatomic, setter=_setEdgeGradientView:) CEKEdgeGradientView *_edgeGradientView; // @synthesize _edgeGradientView=__edgeGradientView;
 @property(readonly, nonatomic) CEKSliderDotView *_dotView; // @synthesize _dotView=__dotView;
 @property(readonly, nonatomic) UIView *_levelIndicatorView; // @synthesize _levelIndicatorView=__levelIndicatorView;
-@property(readonly, nonatomic) CEKApertureSliderTickMarksView *_tickMarksView; // @synthesize _tickMarksView=__tickMarksView;
+@property(readonly, nonatomic) CEKSliderTickMarksView *_tickMarksView; // @synthesize _tickMarksView=__tickMarksView;
 @property(readonly, nonatomic) UIScrollView *_contentScrollView; // @synthesize _contentScrollView=__contentScrollView;
-@property(nonatomic) CDStruct_ae5a35ae gradientInsets; // @synthesize gradientInsets=_gradientInsets;
-@property(nonatomic) long long textOrientation; // @synthesize textOrientation=_textOrientation;
 @property(nonatomic) long long valueLabelVisibility; // @synthesize valueLabelVisibility=_valueLabelVisibility;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-@property(nonatomic) double labelVerticalPadding; // @synthesize labelVerticalPadding=_labelVerticalPadding;
-@property(nonatomic) double sliderVerticalOffset; // @synthesize sliderVerticalOffset=_sliderVerticalOffset;
-@property(nonatomic) long long sliderVerticalAlignment; // @synthesize sliderVerticalAlignment=_sliderVerticalAlignment;
 @property(retain, nonatomic) UIColor *prominentTickMarkColor; // @synthesize prominentTickMarkColor=_prominentTickMarkColor;
 @property(retain, nonatomic) UIColor *tickMarkColor; // @synthesize tickMarkColor=_tickMarkColor;
 @property(nonatomic) struct CGSize tickMarkSize; // @synthesize tickMarkSize=_tickMarkSize;
@@ -86,7 +86,15 @@
 @property(nonatomic) double maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(nonatomic) __weak id <CEKSliderDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) unsigned long long fontStyle; // @synthesize fontStyle=_fontStyle;
+@property(nonatomic) long long textOrientation; // @synthesize textOrientation=_textOrientation;
+@property(nonatomic) CDStruct_ae5a35ae gradientInsets; // @synthesize gradientInsets=_gradientInsets;
+@property(nonatomic) double sliderVerticalOffset; // @synthesize sliderVerticalOffset=_sliderVerticalOffset;
+@property(nonatomic) long long sliderVerticalAlignment; // @synthesize sliderVerticalAlignment=_sliderVerticalAlignment;
+@property(nonatomic) double labelVerticalPadding; // @synthesize labelVerticalPadding=_labelVerticalPadding;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool useLegibilityShadows;
+- (void)tickMarksViewDidChangeWidthForTickMarkCount:(id)arg1;
 - (void)_sliderDidEndScrolling;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
@@ -95,24 +103,29 @@
 - (void)scrollViewDidScroll:(id)arg1;
 @property(nonatomic) long long titleAlignment;
 - (void)setTextOrientation:(long long)arg1 animated:(_Bool)arg2;
+- (void)_updateFonts;
 - (void)_updateValueLabel;
 - (void)_setShowValueLabel:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_setNormalizedValue:(double)arg1;
 - (void)_setValue:(double)arg1 shouldSendActions:(_Bool)arg2 shouldUpdateScrollPosition:(_Bool)arg3;
 - (void)_updateScrollViewPosition;
 - (double)xOffsetForValue:(double)arg1;
+- (double)_xOffsetForMarkedValue;
 - (void)_setActive:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_updateColorsAnimated:(_Bool)arg1;
 - (void)_updateEnableAppearanceStateAnimated:(_Bool)arg1;
 - (void)_setDimmed:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setEnabled:(_Bool)arg1 dimmed:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)setEnabled:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)removeGradients;
 - (void)setOpaqueGradientsWithColor:(id)arg1;
 - (void)setTransparentGradients;
 - (void)_createGradientIfNeeded;
-@property(nonatomic) _Bool useLegibilityShadows;
 @property(nonatomic) double tickMarkSpacing;
 @property(nonatomic) long long mainTickMarkInterval;
+@property(nonatomic) _Bool useTickMarkLegibilityShadows;
+- (void)_updateLegibilityBackground;
+@property(readonly, nonatomic) id <CEKTickMarksConfiguration> tickMarksConfiguration;
 - (void)_updateMarkedViewAnimated:(_Bool)arg1;
 - (void)setMarkedValue:(double)arg1 animated:(_Bool)arg2;
 - (void)_clampValuesAndUpdateScrollPosition:(_Bool)arg1;

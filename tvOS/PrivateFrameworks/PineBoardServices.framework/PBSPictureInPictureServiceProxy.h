@@ -22,6 +22,7 @@
 @property(retain, nonatomic) id <PBSPictureInPictureServiceInterface> remoteProxy; // @synthesize remoteProxy=_remoteProxy;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 - (void).cxx_destruct;
+- (void)mutePictureInPicture:(_Bool)arg1;
 - (void)cancelPictureInPicture;
 - (void)applyPictureInPictureInsetsValue:(id)arg1 fromSource:(id)arg2 withAnimationSettings:(id)arg3 usingAnimationFence:(id)arg4;
 - (void)fetchCurrentPictureInPictureStateWithReply:(CDUnknownBlockType)arg1;

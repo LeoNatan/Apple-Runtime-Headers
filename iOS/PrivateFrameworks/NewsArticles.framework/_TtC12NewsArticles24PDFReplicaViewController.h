@@ -11,11 +11,12 @@ __attribute__((visibility("hidden")))
 {
     // Error parsing type: , name: identifier
     // Error parsing type: , name: delegate
+    // Error parsing type: , name: contentBackgroundColor
     // Error parsing type: , name: styler
     // Error parsing type: , name: eventHandler
     // Error parsing type: , name: pdfView
     // Error parsing type: , name: coverViewManager
-    // Error parsing type: , name: doubleTapRecognizer
+    // Error parsing type: , name: loadingIndicatorProvider
     // Error parsing type: , name: pinchRecognizer
     // Error parsing type: , name: loadingStateMachine
 }

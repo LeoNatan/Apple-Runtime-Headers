@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class CNPersistentStoreCoordinatorCache;
-@protocol NSLocking;
+@protocol CNScheduler, NSLocking;
 
 __attribute__((visibility("hidden")))
 @interface CNPersistentStoreCoordinatorUpdater : NSObject
@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
     BOOL _readOnly;
     BOOL _isPristine;
     id <NSLocking> _fileLock;
+    id <CNScheduler> _updaterScheduler;
 }
 
+@property(readonly, nonatomic) id <CNScheduler> updaterScheduler; // @synthesize updaterScheduler=_updaterScheduler;
 @property(retain) id <NSLocking> fileLock; // @synthesize fileLock=_fileLock;
 @property BOOL isPristine; // @synthesize isPristine=_isPristine;
 - (void).cxx_destruct;

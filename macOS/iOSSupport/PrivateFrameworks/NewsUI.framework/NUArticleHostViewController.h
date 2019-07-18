@@ -12,7 +12,7 @@
 #import <NewsUI/SXAnalyticsReporting-Protocol.h>
 
 @class FCArticle, FCIssue, FCObservable, NFMultiDelegate, NSHashTable, NSString, UIScrollView, UIView;
-@protocol NUAnalyticsReporting, NUArticleViewControllerFactory, NUErrorMessageFactory, NULoadingDelegate, NULoadingViewProviding, NUSettings;
+@protocol NUAnalyticsReporting, NUArticleContentSizeManager, NUArticleViewControllerFactory, NUErrorMessageFactory, NULoadingDelegate, NULoadingViewProviding, NUSettings;
 
 @interface NUArticleHostViewController : UIViewController <NULoadingDelegate, SXAnalyticsReporting, NUPageable, NUBarCompressible>
 {
@@ -28,8 +28,10 @@
     NFMultiDelegate *_multiLoadingDelegate;
     id <NUErrorMessageFactory> _errorMessageFactory;
     id <NUAnalyticsReporting> _analyticsReporting;
+    id <NUArticleContentSizeManager> _contentSizeManager;
 }
 
+@property(readonly, nonatomic) id <NUArticleContentSizeManager> contentSizeManager; // @synthesize contentSizeManager=_contentSizeManager;
 @property(readonly, nonatomic) id <NUAnalyticsReporting> analyticsReporting; // @synthesize analyticsReporting=_analyticsReporting;
 @property(readonly, nonatomic) id <NUErrorMessageFactory> errorMessageFactory; // @synthesize errorMessageFactory=_errorMessageFactory;
 @property(readonly, nonatomic) NFMultiDelegate *multiLoadingDelegate; // @synthesize multiLoadingDelegate=_multiLoadingDelegate;
@@ -52,11 +54,12 @@
 - (void)loadingDidStart;
 - (void)loadingWillStart;
 - (void)viewDidLayoutSubviews;
+@property(nonatomic) long long contentScale;
+@property(retain, nonatomic) NSString *contentSizeCategory;
 - (void)viewDidLoad;
 @property(readonly, nonatomic) NSHashTable *loadingListeners;
-- (id)initWithArticle:(id)arg1 articleViewControllerFactory:(id)arg2 settings:(id)arg3 errorMessageFactory:(id)arg4;
-- (id)initWithArticle:(id)arg1 articleViewControllerFactory:(id)arg2 settings:(id)arg3 errorMessageFactory:(id)arg4 analyticsReporting:(id)arg5;
-- (id)initWithArticle:(id)arg1 issue:(id)arg2 articleViewControllerFactory:(id)arg3 settings:(id)arg4 errorMessageFactory:(id)arg5 analyticsReporting:(id)arg6;
+- (id)initWithArticle:(id)arg1 articleViewControllerFactory:(id)arg2 settings:(id)arg3 errorMessageFactory:(id)arg4 contentSizeManager:(id)arg5;
+- (id)initWithArticle:(id)arg1 issue:(id)arg2 articleViewControllerFactory:(id)arg3 settings:(id)arg4 errorMessageFactory:(id)arg5 analyticsReporting:(id)arg6 contentSizeManager:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

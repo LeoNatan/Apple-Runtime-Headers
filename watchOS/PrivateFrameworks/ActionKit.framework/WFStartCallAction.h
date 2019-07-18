@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)shouldOpenAppThroughSiriForIntent:(id)arg1 intentResponse:(id)arg2;
 - (id)generatedIntentWithInput:(id)arg1 error:(id *)arg2;
 - (void)resolveSlot:(id)arg1 withProcessedValue:(id)arg2 parameter:(id)arg3 input:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)errorFromHandleResponse:(id)arg1 intent:(id)arg2;
@@ -21,10 +22,11 @@
 - (id)contactNotSupportedByAppErrorForContacts:(id)arg1;
 - (id)callingServiceNotAvailableError;
 - (id)appConfigurationRequiredError;
+- (id)localizedKeyParameterDisplayName;
 - (id)localizedCallServiceName;
 - (int)preferredCallProvider;
 - (int)callCapability;
-- (id)serializedParametersForDonatedIntent:(id)arg1;
+- (id)serializedParametersForDonatedIntent:(id)arg1 allowDroppingUnconfigurableValues:(_Bool)arg2;
 
 @end
 

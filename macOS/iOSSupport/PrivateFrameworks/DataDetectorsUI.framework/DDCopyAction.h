@@ -15,6 +15,7 @@
 - (void)performFromView:(id)arg1;
 - (id)icon;
 - (id)localizedName;
+-     // Error parsing type: @40@0:8@16^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}24@32, name: initWithURL:result:context:
 
 @end
 

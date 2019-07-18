@@ -15,6 +15,7 @@
 - (struct NSDictionary *)captureState;
 - (_Bool)isExpired;
 - (NSDictionary *)userInfoForError;
+- (unsigned int)maxReqCount;
 - (double)timeUntilReset;
 - (unsigned long long)remainingEntries;
 - (_Bool)addRequestTimestamp;

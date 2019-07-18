@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)migrateStyles;
 @property(readonly, nonatomic) KNMasterSlide *master;
 - (void)didInitFromSOS;
-- (void)rebuildChildInfosAndPlaceholders;
+- (void)rebuildChildInfosAndPlaceholdersFromMaster:(id)arg1;
 - (void)dealloc;
 - (id)initWithSlide:(id)arg1;
 

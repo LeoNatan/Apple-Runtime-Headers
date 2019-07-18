@@ -16,7 +16,7 @@
 // Property attributes: T^{_OpaquePCSShareProtection={__CFRuntimeBase=QAQ}^{_PCSIdentitySetData}^{_PCSIdentitySetData}^{_PCSIdentitySetData}^{__CFDictionary}^{__CFArray}^{__CFData}^{__CFData}^{__CFData}^{_PCSKeyData}^{__CFData}^{_PCSKeyData}^{__CFDictionary}II{PCSAttributes=I^{PCSTypeValue}}^{_PCSPublicIdentityData}^{_PCSPublicIdentityData}^{_PCSPublicIdentityData}^{_PCSPublicIdentityData}^{_PCSIdentityData}^{_PCSIdentityData}i{?=BBBBBBB}I},R,N,V_shareProtection
 
 - (id)exportAcceptedSharingRequestWithError:(id *)arg1;
-- (id)sharingRequestDataForIdentity:(struct _PCSPublicIdentityData *)arg1 owner:(struct _PCSPublicIdentityData *)arg2 flags:(unsigned int)arg3 error:(id *)arg4;
+- (id)sharingRequestDataForIdentity:(struct _PCSPublicIdentityData *)arg1 owner:(void *)arg2 flags:(unsigned int)arg3 error:(id *)arg4;
 - (id)sharingRequestDataForIdentity:(struct _PCSPublicIdentityData *)arg1 flags:(unsigned int)arg2 error:(id *)arg3;
 - (id)sharingRequestDataForIdentity:(struct _PCSPublicIdentityData *)arg1 error:(id *)arg2;
 - (void)dealloc;

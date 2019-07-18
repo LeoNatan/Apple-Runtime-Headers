@@ -185,6 +185,7 @@ __attribute__((visibility("hidden")))
 
 + (void)initialize;
 - (void)_flushInspectorBarItemIdentifiers;
+- (id)inputContextForFirstTextView:(id)arg1 allowInitialization:(BOOL)arg2;
 - (id)inputContextForFirstTextView:(id)arg1;
 - (BOOL)wantsNotificationForMarkedText;
 - (void)setWantsNotificationForMarkedText:(BOOL)arg1;

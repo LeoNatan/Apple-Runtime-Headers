@@ -14,6 +14,7 @@
 }
 
 @property(nonatomic) int mostRecentNotificationChangeIndex; // @synthesize mostRecentNotificationChangeIndex=_mostRecentNotificationChangeIndex;
+- (id)_accountLoggingDescription;
 - (_Bool)_handleResourceChanged:(id)arg1 withResource:(id)arg2 uid:(id)arg3;
 - (id)_changedAttributesFromCalendarChanges:(id)arg1;
 - (_Bool)_handleInviteReply:(id)arg1 withResource:(id)arg2 owningNotification:(id)arg3 uid:(id)arg4;

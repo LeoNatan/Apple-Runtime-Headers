@@ -16,6 +16,7 @@
     CDUnknownBlockType _appearanceOverride;
     _Bool _shouldUseAppearanceOverride;
     _Bool _isObservingForAppearance;
+    struct CGPDFDocument *_appearanceOverridePDF;
     _Bool _isObservingForIsEdited;
     _Bool _isReallyObservingForIsEdited;
     long long _predConformsToAKStrokedAnnotationProtocol;
@@ -43,6 +44,7 @@
     _Bool _textIsFixedHeight;
     _Bool _textIsClipped;
     _Bool _shouldUsePlaceholderText;
+    _Bool _isBeingCopied;
     NSString *_UUID;
     NSString *_customPlaceholderText;
     double _originalModelBaseScaleFactor;
@@ -62,6 +64,7 @@
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
 + (id)keyPathsForValuesAffectingDrawingBounds;
 + (id)keyPathsForValuesAffectingHitTestBounds;
+@property _Bool isBeingCopied; // @synthesize isBeingCopied=_isBeingCopied;
 @property struct CGRect initialDrawingBoundsForAppearanceOverride; // @synthesize initialDrawingBoundsForAppearanceOverride=_initialDrawingBoundsForAppearanceOverride;
 @property __weak AKAnnotation *childAnnotation; // @synthesize childAnnotation=_childAnnotation;
 @property __weak AKAnnotation *parentAnnotation; // @synthesize parentAnnotation=_parentAnnotation;

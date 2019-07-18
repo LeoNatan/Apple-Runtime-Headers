@@ -13,7 +13,7 @@
 #import <SpringBoardHome/SBSearchGestureObserver-Protocol.h>
 #import <SpringBoardHome/SBViewControllerTransitionContextDelegate-Protocol.h>
 
-@class NSArray, NSHashTable, NSSet, NSString, SBFParallaxSettings, SBFolderIconImageCache, SBFramewiseInteractiveTransitionAnimator, SBHIconImageCache, SBPercentPassthroughInteractiveTransition, SBRootFolder, SBRootFolderView, SBSearchGesture, SBViewControllerTransitionContext, UITapGestureRecognizer, UIView, UIViewController, _SBRootFolderDockAnimationViewControllerWindow, _SBRootFolderPageTransitionHandle, _UILegibilitySettings;
+@class NSArray, NSHashTable, NSSet, NSString, SBFParallaxSettings, SBFolderIconImageCache, SBFramewiseInteractiveTransitionAnimator, SBHIconImageCache, SBPercentPassthroughInteractiveTransition, SBRootFolder, SBRootFolderView, SBSearchGesture, SBViewControllerTransitionContext, UIView, UIViewController, _SBRootFolderDockAnimationViewControllerWindow, _SBRootFolderPageTransitionHandle, _UILegibilitySettings;
 @protocol SBHLegibility, SBHSidebarProvider, SBRootFolderControllerAccessoryViewControllerDelegate, SBRootFolderControllerDelegate, SBRootFolderPageTransition;
 
 @interface SBRootFolderController : SBFolderController <SBFramewiseInteractiveTransitionAnimatorDelegate, SBViewControllerTransitionContextDelegate, SBRootFolderViewDelegate, SBSearchGestureObserver, SBRootFolderPageStateTransitioning, SBHIconRootViewProviding>
@@ -22,17 +22,16 @@
     SBFramewiseInteractiveTransitionAnimator *_currentTransitionAnimator;
     SBPercentPassthroughInteractiveTransition *_currentTransitionInteractor;
     NSHashTable *_pageStateObservers;
-    UITapGestureRecognizer *_debugTapGestureRecognizer;
     _Bool _showsDoneButtonWhileEditing;
     _Bool _spotlightTransitioningFromBreadcrumb;
     _Bool _managesStatusBarWidth;
+    long long _pageState;
     UIViewController *_pullDownSearchViewController;
     UIViewController<SBHLegibility> *_todayViewController;
     UIViewController<SBHSidebarProvider> *_sidebarViewController;
     SBSearchGesture *_searchGesture;
     id <SBRootFolderControllerAccessoryViewControllerDelegate> _accessoryViewControllerDelegate;
     _SBRootFolderDockAnimationViewControllerWindow *_dockAnimationWindow;
-    long long _pageState;
     _SBRootFolderPageTransitionHandle *_currentTransitionHandle;
     id <SBRootFolderPageTransition> _searchGestureTransition;
     id <SBRootFolderPageTransition> _implicitScrollTransition;
@@ -48,7 +47,6 @@
 @property(retain, nonatomic) id <SBRootFolderPageTransition> implicitScrollTransition; // @synthesize implicitScrollTransition=_implicitScrollTransition;
 @property(retain, nonatomic) id <SBRootFolderPageTransition> searchGestureTransition; // @synthesize searchGestureTransition=_searchGestureTransition;
 @property(retain, nonatomic) _SBRootFolderPageTransitionHandle *currentTransitionHandle; // @synthesize currentTransitionHandle=_currentTransitionHandle;
-@property(nonatomic) long long pageState; // @synthesize pageState=_pageState;
 @property(nonatomic) _Bool managesStatusBarWidth; // @synthesize managesStatusBarWidth=_managesStatusBarWidth;
 @property(retain, nonatomic) _SBRootFolderDockAnimationViewControllerWindow *dockAnimationWindow; // @synthesize dockAnimationWindow=_dockAnimationWindow;
 @property(nonatomic, getter=isSpotlightTransitioningFromBreadcrumb) _Bool spotlightTransitioningFromBreadcrumb; // @synthesize spotlightTransitioningFromBreadcrumb=_spotlightTransitioningFromBreadcrumb;
@@ -58,10 +56,12 @@
 @property(readonly, nonatomic) UIViewController<SBHLegibility> *todayViewController; // @synthesize todayViewController=_todayViewController;
 @property(readonly, nonatomic) UIViewController *pullDownSearchViewController; // @synthesize pullDownSearchViewController=_pullDownSearchViewController;
 @property(readonly, nonatomic) _Bool showsDoneButtonWhileEditing; // @synthesize showsDoneButtonWhileEditing=_showsDoneButtonWhileEditing;
+@property(nonatomic) long long pageState; // @synthesize pageState=_pageState;
 - (void).cxx_destruct;
 - (void)_setupDebugTapGestureRecognizerForDockIconListView:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)extraViews;
+- (_Bool)shouldAnimateLastTwoViewsAsOne;
 - (id)extraViewsContainer;
 - (id)dockIconListView;
 - (id)_viewControllersToNotifyForViewObscuration;

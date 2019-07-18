@@ -37,6 +37,7 @@
 @property(readonly, nonatomic) unsigned long long tileInfoType;
 @property(readonly, nonatomic) unsigned long long bookmarkOffsetType;
 @property(readonly, nonatomic) NFLHeadlineTileInfo *feedTileInfoForBookmarking;
+@property(readonly, nonatomic, getter=isSelectable) BOOL selectable;
 @property(readonly, nonatomic) BOOL pageable;
 @property(readonly, copy, nonatomic) NSString *identifier;
 - (void)commonInit;

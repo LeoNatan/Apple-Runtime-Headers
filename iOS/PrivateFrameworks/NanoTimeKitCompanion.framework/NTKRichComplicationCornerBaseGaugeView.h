@@ -16,6 +16,7 @@
 }
 
 + (long long)progressFillStyle;
++ (_Bool)isMeteredProgressView;
 - (void).cxx_destruct;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(double)arg1;

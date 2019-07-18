@@ -10,6 +10,7 @@
 {
 }
 
+- (void)computeFingerPrintsOfAsset:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cancelCPLDownloadImageDataWithVirtualTaskIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestCPLDownloadImageDataForAssets:(id)arg1 format:(unsigned long long)arg2 doneTokens:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)downloadCloudPhotoLibraryAsset:(id)arg1 resourceType:(unsigned long long)arg2 highPriority:(_Bool)arg3 trackCPLDownload:(_Bool)arg4 downloadIsTransient:(_Bool)arg5 proposedTaskIdentifier:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;

@@ -48,6 +48,7 @@
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)webView:(id)arg1 didStartProvisionalNavigation:(id)arg2;
 - (void)webViewWebContentProcessDidTerminate:(id)arg1;
+@property(nonatomic) _Bool allowsRemoteInspection;
 - (void)initiateLoadingWithLoader:(id)arg1;
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)loadURL:(id)arg1;

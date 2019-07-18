@@ -8,43 +8,45 @@
 
 #import <HealthDaemon/HDPeriodicActivityDelegate-Protocol.h>
 
-@class HDDaemon, HDPeriodicActivity, MAAsset, NSMutableDictionary, NSString, NSURL, _HKMobileAssetDownloadManagerV2;
+@class HDDaemon, HDPeriodicActivity, MAAsset, NSMutableDictionary, NSString, NSURL, _HKMobileAssetDownloadManager;
 @protocol OS_dispatch_queue;
 
 @interface HDOntologyAssetManager : NSObject <HDPeriodicActivityDelegate>
 {
-    _HKMobileAssetDownloadManagerV2 *_assetDownloadManager;
+    _HKMobileAssetDownloadManager *_assetDownloadManager;
     NSObject<OS_dispatch_queue> *_downloadManagerCallbackQueue;
     NSObject<OS_dispatch_queue> *_handlerInvocationQueue;
     struct os_unfair_lock_s _ivarLock;
     int _notificationRegistrationToken;
     NSMutableDictionary *_registeredHandlers;
-    _Bool _shouldDownloadNextAvailableAsset;
     _Bool _assetDownloadEnabled;
+    CDUnknownBlockType _AWDMetricPosterBlock;
     NSURL *_assetFileURL;
     MAAsset *_currentOntologyAsset;
     MAAsset *_latestOntologyAsset;
     int _simulatedCompatibilityVersion;
     HDPeriodicActivity *_catalogUpdatePeriodicActivity;
-    HDPeriodicActivity *_assetDownloadPeriodicActivity;
     NSMutableDictionary *_completionsByActivityName;
     HDDaemon *_daemon;
 }
 
 @property(readonly, nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
 @property(readonly, copy, nonatomic) NSMutableDictionary *completionsByActivityName; // @synthesize completionsByActivityName=_completionsByActivityName;
-@property(readonly, nonatomic) HDPeriodicActivity *assetDownloadPeriodicActivity; // @synthesize assetDownloadPeriodicActivity=_assetDownloadPeriodicActivity;
-@property(readonly, nonatomic) HDPeriodicActivity *catalogUpdatePeriodicActivity; // @synthesize catalogUpdatePeriodicActivity=_catalogUpdatePeriodicActivity;
+@property(retain, nonatomic) HDPeriodicActivity *catalogUpdatePeriodicActivity; // @synthesize catalogUpdatePeriodicActivity=_catalogUpdatePeriodicActivity;
 @property(nonatomic) _Bool assetDownloadEnabled; // @synthesize assetDownloadEnabled=_assetDownloadEnabled;
 @property(nonatomic) int simulatedCompatibilityVersion; // @synthesize simulatedCompatibilityVersion=_simulatedCompatibilityVersion;
 @property(retain, nonatomic) MAAsset *latestOntologyAsset; // @synthesize latestOntologyAsset=_latestOntologyAsset;
 @property(retain, nonatomic) MAAsset *currentOntologyAsset; // @synthesize currentOntologyAsset=_currentOntologyAsset;
 @property(copy, nonatomic) NSURL *assetFileURL; // @synthesize assetFileURL=_assetFileURL;
-@property(nonatomic) _Bool shouldDownloadNextAvailableAsset; // @synthesize shouldDownloadNextAvailableAsset=_shouldDownloadNextAvailableAsset;
 - (void).cxx_destruct;
-- (_Bool)periodicActivityRequiresProtectedData:(id)arg1;
+- (_Bool)clearUserDefaultOverrideAssetFileURLWithError:(id *)arg1;
+- (id)setUserDefaultOverrideAssetFileURL:(id)arg1 error:(id *)arg2;
 - (void)performPeriodicActivity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)periodicActivity:(id)arg1 configureXPCActivityCriteria:(id)arg2;
+@property(copy, nonatomic) CDUnknownBlockType AWDMetricPosterBlock; // @synthesize AWDMetricPosterBlock=_AWDMetricPosterBlock;
+- (void)_postAWDMetricEventWithAssetDownloadPhase:(int)arg1;
+- (id)_lastModifiedDateForFileAtURL:(id)arg1;
+- (long long)_hoursSinceLastModifiedForFileAtURL:(id)arg1;
 - (_Bool)_lock_saveContentInfoForAsset:(id)arg1;
 - (void)_downloadManagerCallbackQueue_assetDownloadDidFail:(id)arg1;
 - (void)_downloadManagerCallbackQueue_assetDownloadDidComplete:(id)arg1;
@@ -52,13 +54,20 @@
 - (void)_downloadManagerCallbackQueue_catalogUpdateDidComplete:(id)arg1;
 - (void)_registerNotifyDispatchHandler;
 - (void)_updateAssetCatalogForReason:(unsigned int)arg1;
-- (void)_startAssetDownloadForReason:(unsigned int)arg1;
-- (void)_lock_invokeCompletionForPeriodicActivityName:(id)arg1 withResult:(int)arg2;
+- (void)_startAssetDownload;
+- (id)_lock_currentOntologyAssetFileURL;
+- (void)_lock_invokeCompletionForPeriodicActivityName:(id)arg1 withResult:(int)arg2 error:(id)arg3;
 - (id)_keyValueDomain;
 - (id)_bestAssetInArray:(id)arg1;
 - (void)_lock_invokeAvailabilityHandlers;
-- (id)_newPeriodicActivityWithName:(id)arg1 interval:(double)arg2;
+- (id)_newPeriodicActivityWithName:(id)arg1;
 - (id)_newAssetDownloadManager;
+- (void)_lock_unschedulePeriodicActivity;
+- (void)_lock_schedulePeriodicActivity;
+- (double)_catalogUpdateIntervalOverride;
+- (double)_retryIntervalForActivityNamed:(id)arg1;
+- (double)_normalIntervalForActivityNamed:(id)arg1;
+- (void)invalidateAndWait;
 - (void)unregisterHandlerForToken:(id)arg1;
 - (id)registerAssetAvailabilityHandler:(CDUnknownBlockType)arg1;
 - (int)_lock_assetAvailability;
@@ -67,7 +76,7 @@
 - (id)_userDefaultOverrideAssetFileURL;
 - (_Bool)_ignoreAssetEqualityComparison;
 - (id)_localFileURLForAsset:(id)arg1;
-@property(readonly, nonatomic) _HKMobileAssetDownloadManagerV2 *assetDownloadManager;
+@property(readonly, nonatomic) _HKMobileAssetDownloadManager *assetDownloadManager;
 - (void)dealloc;
 - (id)initWithDaemon:(id)arg1;
 

@@ -17,7 +17,7 @@
 
 + (id)slotsForMultipleParameterState:(id)arg1 inParameter:(id)arg2;
 + (BOOL)formatString:(id)arg1 containsParameterKey:(id)arg2;
-@property(retain, nonatomic) NSArray *parameterKeys; // @synthesize parameterKeys=_parameterKeys;
+@property(copy, nonatomic) NSArray *parameterKeys; // @synthesize parameterKeys=_parameterKeys;
 @property(retain, nonatomic) NSArray *formatItems; // @synthesize formatItems=_formatItems;
 @property(readonly, copy, nonatomic) NSString *formatString; // @synthesize formatString=_formatString;
 - (void).cxx_destruct;

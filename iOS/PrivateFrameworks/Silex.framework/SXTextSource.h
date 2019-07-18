@@ -43,6 +43,7 @@
 - (id)fontFaceForTextStyleFontDescription:(id)arg1 defaultTextStyleFontDescription:(id)arg2 fontAttributes:(id)arg3 fontSize:(long long)arg4;
 - (struct _NSRange)rangeInBounds:(struct _NSRange)arg1 maxLength:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSLocale *locale;
+- (void)transform:(id)arg1 forTextStyle:(id)arg2 range:(struct _NSRange)arg3;
 - (id)attributesForTextStyle:(id)arg1 onParagraphStyle:(id)arg2 forRange:(struct _NSRange)arg3 resultingDropCapStyle:(id *)arg4 textResizer:(id)arg5 fontFace:(id)arg6;
 - (id)characterStyleFromAttributes:(id)arg1 context:(id)arg2;
 - (int)listNumberTypeForListType:(unsigned long long)arg1;
@@ -53,7 +54,7 @@
 - (void)applyStylingOnTextTangierStorage:(id)arg1;
 - (struct _NSRange)rangeForRange:(struct _NSRange)arg1;
 - (id)cleanString:(id)arg1;
-- (id)initWithString:(id)arg1 defaults:(id)arg2 smartFieldFactory:(id)arg3 dataSource:(id)arg4 documentLanguageProvider:(id)arg5 fontAttributesConstructor:(id)arg6;
+- (id)initWithString:(id)arg1 smartFieldFactory:(id)arg2 dataSource:(id)arg3 documentLanguageProvider:(id)arg4 fontAttributesConstructor:(id)arg5;
 
 @end
 

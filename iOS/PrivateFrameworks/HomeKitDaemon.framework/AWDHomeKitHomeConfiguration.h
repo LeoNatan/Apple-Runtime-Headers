@@ -20,6 +20,7 @@
     unsigned int _numAccessoriesNetworkProtectionAutoProtectedMainLAN;
     unsigned int _numAccessoriesNetworkProtectionFullAccess;
     unsigned int _numAccessoriesNetworkProtectionHomeKitOnly;
+    unsigned int _numAccessoriesNetworkProtectionUnprotected;
     unsigned int _numAccessoriesWiFiPPSKCredential;
     unsigned int _numAccessoryServiceGroups;
     unsigned int _numAdmins;
@@ -60,6 +61,7 @@
         unsigned int numAccessoriesNetworkProtectionAutoProtectedMainLAN:1;
         unsigned int numAccessoriesNetworkProtectionFullAccess:1;
         unsigned int numAccessoriesNetworkProtectionHomeKitOnly:1;
+        unsigned int numAccessoriesNetworkProtectionUnprotected:1;
         unsigned int numAccessoriesWiFiPPSKCredential:1;
         unsigned int numAccessoryServiceGroups:1;
         unsigned int numAdmins:1;
@@ -96,6 +98,7 @@
 }
 
 + (Class)eventTriggersType;
+@property(nonatomic) unsigned int numAccessoriesNetworkProtectionUnprotected; // @synthesize numAccessoriesNetworkProtectionUnprotected=_numAccessoriesNetworkProtectionUnprotected;
 @property(nonatomic) unsigned int numAccessoriesNetworkProtectionHomeKitOnly; // @synthesize numAccessoriesNetworkProtectionHomeKitOnly=_numAccessoriesNetworkProtectionHomeKitOnly;
 @property(nonatomic) unsigned int numAccessoriesNetworkProtectionFullAccess; // @synthesize numAccessoriesNetworkProtectionFullAccess=_numAccessoriesNetworkProtectionFullAccess;
 @property(nonatomic) unsigned int numAccessoriesNetworkProtectionAutoProtectedHomeKitLAN; // @synthesize numAccessoriesNetworkProtectionAutoProtectedHomeKitLAN=_numAccessoriesNetworkProtectionAutoProtectedHomeKitLAN;
@@ -145,6 +148,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionUnprotected;
 @property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionHomeKitOnly;
 @property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionFullAccess;
 @property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionAutoProtectedHomeKitLAN;

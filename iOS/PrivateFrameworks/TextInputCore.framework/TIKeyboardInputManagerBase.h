@@ -6,16 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, TIInputMode, TIKeyboardSecureCandidateRenderer;
+@class NSString, TIInputMode;
 
 @interface TIKeyboardInputManagerBase : NSObject
 {
     _Bool _hasHandledInput;
     TIInputMode *_inputMode;
-    TIKeyboardSecureCandidateRenderer *_secureCandidateRenderer;
 }
 
-@property(retain, nonatomic) TIKeyboardSecureCandidateRenderer *secureCandidateRenderer; // @synthesize secureCandidateRenderer=_secureCandidateRenderer;
 @property(readonly, nonatomic) _Bool hasHandledInput; // @synthesize hasHandledInput=_hasHandledInput;
 @property(readonly, nonatomic) TIInputMode *inputMode; // @synthesize inputMode=_inputMode;
 - (void).cxx_destruct;

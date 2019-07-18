@@ -8,20 +8,23 @@
 
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXCuratedLibraryViewModelPresenter-Protocol.h>
+#import <PhotosUICore/PXGAnchorDelegate-Protocol.h>
 #import <PhotosUICore/PXGNamedImageSource-Protocol.h>
 #import <PhotosUICore/PXLibrarySummaryDataSource-Protocol.h>
 
-@class NSMutableDictionary, NSString, PXCuratedLibraryAllPhotosLayout, PXCuratedLibraryLayoutSpec, PXCuratedLibrarySectionHeaderLayout, PXCuratedLibrarySectionedLayout, PXCuratedLibrarySummaryHelper, PXCuratedLibraryViewModel, PXGDiagnosticsSpriteProbe, PXGSpriteReference, PXNumberAnimator;
+@class NSMutableDictionary, NSString, PXAssetCollectionReference, PXCuratedLibraryAllPhotosLayout, PXCuratedLibraryLayoutSpec, PXCuratedLibrarySectionHeaderLayout, PXCuratedLibrarySectionedLayout, PXCuratedLibrarySummaryHelper, PXCuratedLibraryViewModel, PXGDiagnosticsSpriteProbe, PXGSpriteReference, PXNumberAnimator;
 @protocol PXBrowserVisibleContentSnapshot, PXDisplayAssetCollection;
 
-@interface PXCuratedLibraryLayout : PXGSplitLayout <PXLibrarySummaryDataSource, PXChangeObserver, PXCuratedLibraryViewModelPresenter, PXGNamedImageSource>
+@interface PXCuratedLibraryLayout : PXGSplitLayout <PXLibrarySummaryDataSource, PXChangeObserver, PXCuratedLibraryViewModelPresenter, PXGNamedImageSource, PXGAnchorDelegate>
 {
     PXCuratedLibrarySectionHeaderLayout *_floatingHeaderLayout;
     PXCuratedLibrarySummaryHelper *_summaryHelper;
     CDStruct_d97c9657 _updateFlags;
+    CDStruct_d97c9657 _postUpdateFlags;
     NSMutableDictionary *_lastVisibleAreaAnchorsByZoomLevels;
     NSMutableDictionary *_preferredVisibleAreaAnchorsByZoomLevels;
     PXGDiagnosticsSpriteProbe *_spriteProbe;
+    _Bool _wantsStatusBarGradient;
     PXNumberAnimator *_statusBarGradientAnimator;
     unsigned short _statusBarGradientResizableCapInsetsIndex;
     unsigned int _statusBarGradientSpriteIndex;
@@ -36,9 +39,13 @@
     PXGSpriteReference *_lastHitSpriteReference;
     PXCuratedLibraryLayoutSpec *_spec;
     id _lastVisibleDominantObjectReference;
+    PXAssetCollectionReference *_lastPresentedDayAssetCollectionReference;
+    id _dominantHeroPreferencesBeforeTransition;
     struct CGRect _presentedVisibleRect;
 }
 
+@property(retain, nonatomic) id dominantHeroPreferencesBeforeTransition; // @synthesize dominantHeroPreferencesBeforeTransition=_dominantHeroPreferencesBeforeTransition;
+@property(retain, nonatomic) PXAssetCollectionReference *lastPresentedDayAssetCollectionReference; // @synthesize lastPresentedDayAssetCollectionReference=_lastPresentedDayAssetCollectionReference;
 @property(retain, nonatomic) id lastVisibleDominantObjectReference; // @synthesize lastVisibleDominantObjectReference=_lastVisibleDominantObjectReference;
 @property(retain, nonatomic) PXCuratedLibraryLayoutSpec *spec; // @synthesize spec=_spec;
 @property(retain, nonatomic) PXGSpriteReference *lastHitSpriteReference; // @synthesize lastHitSpriteReference=_lastHitSpriteReference;
@@ -48,13 +55,23 @@
 @property(readonly, nonatomic) PXCuratedLibraryAllPhotosLayout *allPhotosLayout; // @synthesize allPhotosLayout=_allPhotosBodyLayout;
 @property(readonly, nonatomic) PXCuratedLibrarySectionedLayout *libraryBodyLayout; // @synthesize libraryBodyLayout=_libraryBodyLayout;
 - (void).cxx_destruct;
+- (id)accessibilityLabel;
+- (_Bool)canSelectAccessibilityGroupElementsChildren;
+- (_Bool)canSelectAccessibilityGroupElements;
+- (_Bool)canCreateAccessibilityGroupElement;
+- (_Bool)hasBodyContent;
+- (long long)viewModel:(id)arg1 transitionTypeFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
 - (id)viewModel:(id)arg1 dominantAssetCollectionReferenceForZoomLevel:(long long)arg2;
+- (void)viewModel:(id)arg1 didTransitionFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
+- (void)viewModel:(id)arg1 willTransitionFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
 @property(readonly, nonatomic) id <PXBrowserVisibleContentSnapshot> visibleContentSnapshot;
+- (struct CGPoint)anchor:(id)arg1 visibleRectOriginForProposedVisibleRect:(struct CGRect)arg2 forLayout:(id)arg3;
 - (id)imageNameAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (void)_updateFloatingHeaderLayoutSpec;
 - (id)_currentFloatingHeaderSpec;
 - (void)_updateLibraryBodyLayoutLastVisibleDominantObjectReference;
 - (struct CGRect)sectionBoundariesForAssetCollectionReference:(id)arg1;
+- (void)enumerateVisibleAssetReferencesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateVisibleAssetsSectionSublayoutsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)topMostAssetCollectionInRect:(struct CGRect)arg1;
 - (id)_currentBodyLayout;
@@ -65,15 +82,20 @@
 - (id)_createAnchorForTransitionToZoomLevel:(long long)arg1;
 - (id)createCuratedLibraryLayoutTransitionIfNeededWithContext:(long long)arg1;
 - (id)createCuratedLibraryLayoutAnimationIfNeededWithContext:(long long)arg1 userData:(id)arg2;
+- (long long)curatedLibraryLayoutAnimationContextForTransitionToZoomLevel:(long long)arg1;
 - (void)animationDidComplete:(id)arg1;
-- (void)_noteAnimationWithContext:(long long)arg1 isRunning:(_Bool)arg2;
+- (void)_noteAnimation:(id)arg1 isRunning:(_Bool)arg2;
+- (_Bool)changeVisibleRectToProposedVisibleRect:(struct CGRect)arg1;
 - (struct CGPoint)_adjustInitialVisibleRect:(struct CGRect)arg1 inLayout:(id)arg2 forRecentSection:(long long)arg3;
 - (id)createAnchorForScrollingToInitialPosition;
 @property(readonly, nonatomic) struct CGRect fullyVisibleRect;
 @property(readonly, nonatomic) double estimatedHeaderHeight;
 - (void)enumerateSectionBoundariesWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_enumerateScrollablePagesWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)_enumerateHeroSpritesInRect:(struct CGRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (double)adjustedTargetVisibleTopForProposedTargetVisibleTop:(double)arg1 scrollingVelocity:(double)arg2;
+- (double)_adjustedTargetVisibleTopByAligningNearestHeroForProposedTargetVisibleTop:(double)arg1;
+- (double)_adjustedTargetVisibleTopToAccomodateFromBottomPaddedAreaVisibility:(_Bool)arg1 proposedVisibleRect:(struct CGRect)arg2;
 - (long long)sublayoutIndexForObjectReference:(id)arg1 options:(unsigned long long)arg2 updatedObjectReference:(out id *)arg3;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)visibleRectDidChange;
@@ -82,6 +104,7 @@
 - (void)_updateFloatingHeaderButtons;
 - (void)_updateStatusBarGradientAlphaValue;
 - (void)_updateStatusBarGradientVisibility;
+- (void)_updateLocalSprites;
 - (void)_updateStatusBarStyle;
 - (long long)_statusBarVisibility;
 - (void)_updateFloatingHeaderTitleOpacity;
@@ -90,6 +113,7 @@
 - (void)update;
 - (void)dealloc;
 - (id)initWithViewModel:(id)arg1;
+- (id)mostDominantModelObject;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

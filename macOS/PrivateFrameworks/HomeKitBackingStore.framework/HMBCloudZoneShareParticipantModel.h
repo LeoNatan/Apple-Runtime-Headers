@@ -8,7 +8,6 @@
 
 @class HMBShareParticipant;
 
-__attribute__((visibility("hidden")))
 @interface HMBCloudZoneShareParticipantModel : HMBModel
 {
 }

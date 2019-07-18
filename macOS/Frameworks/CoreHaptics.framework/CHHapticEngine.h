@@ -11,31 +11,28 @@
 @interface CHHapticEngine : NSObject
 {
     BOOL _running;
-    float _hapticContinuousScaling;
+    BOOL _autoShutdownEnabled;
     unsigned int _audioSessionID;
-    CDUnknownBlockType _timeoutHandler;
     CDUnknownBlockType _stoppedHandler;
     CDUnknownBlockType _resetHandler;
-    double _runTimeout;
     AVAudioSession *_avAudioSession;
 }
 
 + (BOOL)supports1stPartyHaptics;
 + (id)capabilitiesForHardware;
+@property(nonatomic, getter=isAutoShutdownEnabled) BOOL autoShutdownEnabled; // @synthesize autoShutdownEnabled=_autoShutdownEnabled;
 @property BOOL running; // @synthesize running=_running;
 @property(readonly) unsigned int audioSessionID; // @synthesize audioSessionID=_audioSessionID;
 @property(readonly) AVAudioSession *avAudioSession; // @synthesize avAudioSession=_avAudioSession;
-@property float hapticContinuousScaling; // @synthesize hapticContinuousScaling=_hapticContinuousScaling;
-@property double runTimeout; // @synthesize runTimeout=_runTimeout;
 @property(copy) CDUnknownBlockType resetHandler; // @synthesize resetHandler=_resetHandler;
 @property(copy) CDUnknownBlockType stoppedHandler; // @synthesize stoppedHandler=_stoppedHandler;
-@property(copy) CDUnknownBlockType timeoutHandler; // @synthesize timeoutHandler=_timeoutHandler;
 - (void).cxx_destruct;
 - (BOOL)playPatternFromData:(id)arg1 error:(id *)arg2;
 - (BOOL)playPatternFromURL:(id)arg1 error:(id *)arg2;
 - (BOOL)unregisterAudioResource:(unsigned long long)arg1 error:(id *)arg2;
 - (unsigned long long)registerAudioResource:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (double)getDurationForResource:(unsigned long long)arg1;
+- (BOOL)resourceIsRegistered:(unsigned long long)arg1;
 - (id)createPrivilegedPlayerWithPlayable:(id)arg1 error:(id *)arg2;
 - (id)createAdvancedPlayerWithRingtonePattern:(id)arg1 error:(id *)arg2;
 - (id)createAdvancedPlayerWithRingtoneData:(id)arg1 error:(id *)arg2;
@@ -44,6 +41,7 @@
 - (id)createPlayerWithEvent:(id)arg1 error:(id *)arg2;
 - (id)initWithAudioSession:(id)arg1 sessionIsShared:(BOOL)arg2 error:(id *)arg3;
 - (id)initWithAudioSessionID:(unsigned int)arg1 error:(id *)arg2;
+- (void)notifyWhenPlayersFinished:(CDUnknownBlockType)arg1;
 - (void)stopWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)startAndReturnError:(id *)arg1;
 - (void)startWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -60,8 +58,11 @@
 @property(nonatomic) BOOL followAudioRoute;
 @property(nonatomic) BOOL hapticsIsMuted;
 @property(nonatomic) BOOL audioIsMuted;
-@property(nonatomic) BOOL muteHapticsWhileRecordingAudio;
 @property(nonatomic) BOOL hapticsOnly;
+@property(nonatomic) BOOL isMutedForHaptics;
+@property(nonatomic) BOOL isMutedForAudio;
+@property(nonatomic) BOOL muteHapticsWhileRecordingAudio;
+@property(nonatomic) BOOL playsHapticsOnly;
 @property(readonly) double currentTime;
 
 @end

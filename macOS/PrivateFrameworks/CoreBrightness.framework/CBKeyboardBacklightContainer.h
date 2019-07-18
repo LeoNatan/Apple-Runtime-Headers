@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly) HIDDevice *device; // @synthesize device=_device;
+- (_Bool)keyboardUsesNitUnits:(id)arg1;
 - (id)newKeyboardBacklightWithQueue:(id)arg1 device:(id)arg2;
 - (void)sendNotificationForKey:(id)arg1 andValue:(id)arg2;
 - (_Bool)removeHIDServiceClient:(struct __IOHIDServiceClient *)arg1;

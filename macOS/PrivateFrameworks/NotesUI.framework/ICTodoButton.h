@@ -6,13 +6,14 @@
 
 #import <AppKit/NSButton.h>
 
-@class ICTrackedParagraph, NSImageView, NSTrackingArea;
+#import <NotesUI/NSGestureRecognizerDelegate-Protocol.h>
+
+@class ICTrackedParagraph, NSImageView, NSString, NSTrackingArea;
 @protocol ICTodoButtonDragDelegate;
 
-@interface ICTodoButton : NSButton
+@interface ICTodoButton : NSButton <NSGestureRecognizerDelegate>
 {
     BOOL _done;
-    BOOL _isRTL;
     ICTrackedParagraph *_trackedParagraph;
     double _zoomFactor;
     id <ICTodoButtonDragDelegate> _dragDelegate;
@@ -27,7 +28,6 @@
 @property(retain) NSImageView *doneImageView; // @synthesize doneImageView=_doneImageView;
 @property(retain) NSImageView *undoneImageView; // @synthesize undoneImageView=_undoneImageView;
 @property(nonatomic) struct CGSize defaultImageSize; // @synthesize defaultImageSize=_defaultImageSize;
-@property(nonatomic) BOOL isRTL; // @synthesize isRTL=_isRTL;
 @property(nonatomic) struct CGSize defaultSize; // @synthesize defaultSize=_defaultSize;
 @property(nonatomic) __weak id <ICTodoButtonDragDelegate> dragDelegate; // @synthesize dragDelegate=_dragDelegate;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
@@ -36,6 +36,10 @@
 - (void).cxx_destruct;
 - (void)setDone:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)init;
+- (BOOL)panGestureRecognizerIsWithinThreshold:(id)arg1;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (id)hitTest:(struct CGPoint)arg1;
 - (void)mouseMoved:(id)arg1;
 - (void)cursorUpdate:(id)arg1;
 - (void)updateTrackingAreas;
@@ -43,6 +47,7 @@
 - (void)updateImagesAnimated:(BOOL)arg1;
 - (struct CGSize)sizeForLetterpressedImage;
 - (struct CGRect)imageFrame;
+- (void)trackedParagraphDidChange;
 - (void)wasPressed;
 - (void)updateAccentColor;
 - (void)accentColorDidChange;
@@ -50,6 +55,12 @@
 - (void)didPan:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

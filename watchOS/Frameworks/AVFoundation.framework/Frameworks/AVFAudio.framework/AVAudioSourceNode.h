@@ -15,7 +15,7 @@
 }
 
 + (CDUnknownBlockType)pullInputBlockFromRenderBlock:(CDUnknownBlockType)arg1;
-- (id)initWithRenderBlock:(CDUnknownBlockType)arg1 format:(id)arg2;
+- (id)initWithFormat:(id)arg1 renderBlock:(CDUnknownBlockType)arg2;
 - (id)initWithRenderBlock:(CDUnknownBlockType)arg1;
 
 // Remaining properties

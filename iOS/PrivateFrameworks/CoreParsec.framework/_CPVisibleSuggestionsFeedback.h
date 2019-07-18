@@ -35,7 +35,6 @@
 - (void)clearSuggestions;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
-@property(readonly, nonatomic) _Bool requiresQueryId;
 @property(readonly, nonatomic) id feedbackJSON;
 
 // Remaining properties

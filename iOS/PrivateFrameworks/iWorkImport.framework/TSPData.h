@@ -9,20 +9,19 @@
 #import <iWorkImport/TSPRemoteDataStorageDelegate-Protocol.h>
 #import <iWorkImport/TSPSplitableData-Protocol.h>
 
-@class NSDate, NSString, TSPDataAttributes, TSPDataManager, TSPDataMetadata, TSPDigest, TSPObjectContext;
+@class NSDate, NSString, TSPDataAttributes, TSPDataManager, TSPDataMetadata, TSPDataUniqueIdentifier, TSPDigest, TSPObjectContext;
 @protocol OS_dispatch_queue, TSPDataStorage;
 
 __attribute__((visibility("hidden")))
 @interface TSPData : NSObject <TSPSplitableData, TSPRemoteDataStorageDelegate>
 {
-    // Error parsing type: Ai, name: _didCull
-    long long _identifier;
-    TSPDigest *_digest;
+    // Error parsing type: AB, name: _didCull
     NSObject<OS_dispatch_queue> *_accessQueue;
     id <TSPDataStorage> _storage;
     NSString *_filename;
     TSPDataAttributes *_attributes;
-    _Bool _isDeallocating;
+    long long _identifier;
+    TSPDataUniqueIdentifier *_uniqueIdentifier;
     TSPDataManager *_manager;
     NSDate *_lastModificationDate;
     TSPDataMetadata *_metadata;
@@ -32,10 +31,9 @@ __attribute__((visibility("hidden")))
 + (id)normalizedExtensionForFilename:(id)arg1;
 + (id)typeForFilename:(id)arg1;
 + (id)requiredAVAssetOptions;
-+ (id)cullingListeners;
 + (void)removeCullingListener:(id)arg1;
 + (void)addCullingListener:(id)arg1;
-+ (id)cullingListenersQueue;
++ (void)performDataCullingOperationSynchronously:(_Bool)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (id)null;
 + (id)readOnlyDataFromNSData:(id)arg1 filename:(id)arg2;
 + (id)readOnlyDataFromURL:(id)arg1;
@@ -50,26 +48,21 @@ __attribute__((visibility("hidden")))
 + (id)pasteboardTypeForIdentifier:(long long)arg1;
 + (id)remoteDataWithURL:(id)arg1 digest:(id)arg2 filename:(id)arg3 canDownload:(_Bool)arg4 downloadPriority:(long long)arg5 context:(id)arg6;
 + (id)resourceNameForFilename:(id)arg1 identifier:(long long)arg2;
-+ (id)nsDataWithPattern4:(const char *)arg1;
-+ (id)digestStringForDataWithPattern4:(const char *)arg1;
-+ (id)digestForDataWithPattern4:(const char *)arg1;
-+ (id)readOnlyDataWithPattern4:(const char *)arg1 filename:(id)arg2;
-+ (id)dataWithPattern4:(const char *)arg1 filename:(id)arg2 context:(id)arg3;
-+ (void)temporaryNSDataWithPattern4:(const char *)arg1 accessor:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) TSPDataMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) NSDate *lastModificationDate; // @synthesize lastModificationDate=_lastModificationDate;
 @property(readonly, nonatomic) __weak TSPDataManager *manager; // @synthesize manager=_manager;
+@property(readonly, nonatomic) TSPDataUniqueIdentifier *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly, nonatomic) long long identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) TSPDataAttributes *unsafeAttributes; // @synthesize unsafeAttributes=_attributes;
 - (void).cxx_destruct;
 - (void)upgradeFallbackColorIfNeeded;
 - (id)createMetadataIfNeeded;
+- (struct CGSize)pixelSize;
 - (void)setFallbackColor:(id)arg1;
 - (id)fallbackColor;
 @property(readonly, nonatomic) _Bool gilligan_isRemote;
 -     // Error parsing type: B40@0:8^{DataInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DataAttributes}^{EncryptionInfo}QBi}16@24@32, name: archiveInfoMessage:archiver:packageWriter:
 - (_Bool)isStorageInPackage:(id)arg1;
-@property(readonly, nonatomic) TSPDigest *digest;
 - (id)preferredFilename;
 - (void)setFilename:(id)arg1 storage:(id)arg2 ifStorageIs:(id)arg3;
 - (void)setFilename:(id)arg1 storage:(id)arg2;
@@ -92,7 +85,8 @@ __attribute__((visibility("hidden")))
 - (void)setToCopyOfMetadataIfNil:(id)arg1;
 - (id)copyWithContext:(id)arg1;
 @property(readonly, nonatomic) NSString *digestString;
-@property(readonly, nonatomic) TSPObjectContext *context;
+@property(readonly, nonatomic) TSPDigest *digest;
+@property(readonly, nonatomic) __weak TSPObjectContext *context;
 @property(readonly, nonatomic) unsigned char packageIdentifier;
 @property(readonly, nonatomic) NSString *packageLocator;
 @property(readonly, nonatomic) NSString *documentResourceLocator;
@@ -113,6 +107,7 @@ __attribute__((visibility("hidden")))
 - (id)makeBookmarkDataWithContext:(id)arg1 filename:(id)arg2 error:(out id *)arg3;
 @property(copy) TSPDataAttributes *attributes;
 - (void)didReplaceDataContents;
+- (void)willCullWithFlags:(unsigned long long)arg1;
 - (void)willCull;
 - (void)dealloc;
 @property(nonatomic, getter=isAcknowledgedByServer) _Bool acknowledgedByServer;

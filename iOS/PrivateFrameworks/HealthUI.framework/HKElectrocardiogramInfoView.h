@@ -6,32 +6,20 @@
 
 #import <UIKit/UIStackView.h>
 
-@class NSLayoutConstraint, NSMutableArray, NSString, UIButton, UILabel;
+@class NSLayoutConstraint, NSString, UILabel;
 
 @interface HKElectrocardiogramInfoView : UIStackView
 {
-    UIButton *_detailButton;
     UILabel *_heartRateLabel;
     UILabel *_bodyLabel;
     NSLayoutConstraint *_heartRateLabelLeadingConstraint;
     NSLayoutConstraint *_heartRateFirstBaselineConstraint;
-    NSLayoutConstraint *_heartRateLastBaselineConstraint;
-    NSLayoutConstraint *_bodyFirstBaselineConstraint;
-    NSLayoutConstraint *_bodyLastBaselineConstraint;
-    NSMutableArray *_regularHeartRateLabelConstraints;
-    NSMutableArray *_accessibilityHeartRateLabelConstraints;
 }
 
-@property(retain, nonatomic) NSMutableArray *accessibilityHeartRateLabelConstraints; // @synthesize accessibilityHeartRateLabelConstraints=_accessibilityHeartRateLabelConstraints;
-@property(retain, nonatomic) NSMutableArray *regularHeartRateLabelConstraints; // @synthesize regularHeartRateLabelConstraints=_regularHeartRateLabelConstraints;
-@property(retain, nonatomic) NSLayoutConstraint *bodyLastBaselineConstraint; // @synthesize bodyLastBaselineConstraint=_bodyLastBaselineConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *bodyFirstBaselineConstraint; // @synthesize bodyFirstBaselineConstraint=_bodyFirstBaselineConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *heartRateLastBaselineConstraint; // @synthesize heartRateLastBaselineConstraint=_heartRateLastBaselineConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *heartRateFirstBaselineConstraint; // @synthesize heartRateFirstBaselineConstraint=_heartRateFirstBaselineConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *heartRateLabelLeadingConstraint; // @synthesize heartRateLabelLeadingConstraint=_heartRateLabelLeadingConstraint;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 @property(retain, nonatomic) UILabel *heartRateLabel; // @synthesize heartRateLabel=_heartRateLabel;
-@property(retain, nonatomic) UIButton *detailButton; // @synthesize detailButton=_detailButton;
 - (void).cxx_destruct;
 - (id)_bodyView;
 - (id)_heartRateView;

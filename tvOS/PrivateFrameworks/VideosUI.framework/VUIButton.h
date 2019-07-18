@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) VUIButtonLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
-- (void)_updateAppearance;
+- (void)_updateBackgroundColor;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_configureWithLayout:(id)arg1;
 - (_Bool)_hasBackgroundImage;
@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (double)bottomMarginWithBaselineMargin:(double)arg1;
 - (double)topMarginWithBaselineMargin:(double)arg1;
 - (double)topMarginToLabel:(id)arg1 withBaselineMargin:(double)arg2;
+- (void)layoutSubviews;
 - (struct CGSize)_imageSizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setHighlighted:(_Bool)arg1;

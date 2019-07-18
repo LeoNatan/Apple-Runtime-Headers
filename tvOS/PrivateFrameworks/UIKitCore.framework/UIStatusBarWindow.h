@@ -35,7 +35,6 @@
 - (struct CGRect)_statusBarFrameForOrientation:(long long)arg1;
 - (void)setOrientation:(long long)arg1 animationParameters:(id)arg2;
 - (void)setStatusBar:(id)arg1;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (struct CGRect)statusBarWindowFrame;
 - (struct CGRect)_defaultStatusBarSceneBoundsForOrientation:(long long)arg1;

@@ -6,7 +6,7 @@
 
 #import <Navigation/NSObject-Protocol.h>
 
-@class GEOComposedRouteTraffic, GEODirectionsRequest, GEODirectionsResponse, GEOStep, MNActiveRouteInfo, MNAudioOutputSetting, MNGuidanceEventFeedback, MNGuidanceJunctionViewInfo, MNGuidanceLaneInfo, MNGuidanceSignInfo, MNLocationDetails, MNNavigationSessionManager, MNTracePlaybackDetails, MNTrafficIncidentAlertDetails, NSArray, NSDate, NSError, NSSet, NSString, NSUUID;
+@class GEODirectionsRequest, GEODirectionsResponse, GEOStep, MNActiveRouteInfo, MNAudioOutputSetting, MNGuidanceEventFeedback, MNGuidanceJunctionViewInfo, MNGuidanceLaneInfo, MNGuidanceSignInfo, MNLocationDetails, MNNavigationSessionManager, MNTracePlaybackDetails, MNTrafficIncidentAlertDetails, NSArray, NSDate, NSError, NSSet, NSString, NSUUID;
 
 @protocol MNNavigationSessionManagerDelegate <NSObject>
 - (void)navigationSessionManager:(MNNavigationSessionManager *)arg1 didReceiveTransitUpdates:(NSSet *)arg2;
@@ -50,7 +50,6 @@
 - (void)navigationSessionManager:(MNNavigationSessionManager *)arg1 didRerouteWithRoute:(MNActiveRouteInfo *)arg2 locationDetails:(MNLocationDetails *)arg3 withAlternateRoutes:(NSArray *)arg4;
 - (void)navigationSessionManagerWillReroute:(MNNavigationSessionManager *)arg1;
 - (void)navigationSessionManager:(MNNavigationSessionManager *)arg1 didUpdatePreviewRoutes:(NSArray *)arg2 withSelectedRouteIndex:(unsigned long long)arg3;
-- (void)navigationSessionManager:(MNNavigationSessionManager *)arg1 didUpdateTraffic:(GEOComposedRouteTraffic *)arg2;
 - (void)navigationSessionManager:(MNNavigationSessionManager *)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
 - (void)navigationSessionManager:(MNNavigationSessionManager *)arg1 didUpdateETAResponseForRoute:(MNActiveRouteInfo *)arg2;
 - (void)navigationSessionManager:(MNNavigationSessionManager *)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;

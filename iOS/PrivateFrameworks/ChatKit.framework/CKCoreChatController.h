@@ -133,6 +133,7 @@
 - (void)transcriptCollectionViewController:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)_setConversationDeferredSetup;
 - (void)_removeExistingCollectionViewController;
+- (id)_handleIDsForCurrentConversation;
 @property(readonly, nonatomic) double gradientBottomPlaceholderHeight;
 @property(readonly, nonatomic) double balloonMaxWidth;
 @property(readonly, nonatomic) IMChat *chat;

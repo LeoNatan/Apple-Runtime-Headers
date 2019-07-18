@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)suspend;
 - (_Bool)resume:(id *)arg1;
 @property(nonatomic) __weak id <SYSyncEngineResponder> responder;
+- (void)dealloc;
 - (id)initWithService:(id)arg1 queue:(id)arg2;
 
 // Remaining properties

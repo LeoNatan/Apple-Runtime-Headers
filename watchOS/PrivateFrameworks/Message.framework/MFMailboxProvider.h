@@ -37,12 +37,16 @@
 - (id)mailboxObjectIDsForMailboxType:(int)arg1;
 - (void)invalidateMailboxes;
 - (void)_mailboxInvalidated:(id)arg1;
+- (void)_didChangeMailboxList:(id)arg1;
 - (void)_didReloadMailboxList:(id)arg1;
 - (void)_willReloadMailboxList:(id)arg1;
 - (_Bool)_isSuppressingInvalidation;
 - (void)_endSuppressingInvalidation;
 - (void)_beginSuppressingInvalidation;
+- (id)legacyMailboxesForObjectIDs:(id)arg1;
 - (id)legacyMailboxForObjectID:(id)arg1;
+- (id)mailboxForObjectID:(id)arg1;
+- (id)mailboxesFromLegacyMailboxes:(id)arg1;
 - (id)mailboxFromLegacyMailbox:(id)arg1;
 - (void)fetchMailboxes;
 - (id)allMailboxes;

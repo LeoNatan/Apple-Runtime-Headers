@@ -15,18 +15,18 @@
     NSData *_token;
 }
 
-+ (id)shortDescription;
 + (id)sharedInstance;
 @property(readonly, nonatomic) NSData *token; // @synthesize token=_token;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic) NSArray *labels;
+- (id)attributeDescriptions;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, copy) NSString *description;
 - (id)initWithToken:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

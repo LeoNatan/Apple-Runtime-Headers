@@ -11,19 +11,21 @@
 @interface WFBluetoothTrigger : WFTrigger
 {
     NSArray *_selectedDevices;
+    unsigned long long _selection;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
+@property(nonatomic) unsigned long long selection; // @synthesize selection=_selection;
 @property(retain, nonatomic) NSArray *selectedDevices; // @synthesize selectedDevices=_selectedDevices;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)localizedTitleWithConfigurationSummary;
 - (BOOL)hasValidConfiguration;
 - (id)init;
-- (id)localizedTitleWithConfigurationSummary;
 
 @end
 

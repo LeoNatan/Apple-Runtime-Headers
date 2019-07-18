@@ -11,6 +11,7 @@
 @protocol CNUIPRLikenessProvider <NSObject>
 
 @optional
+- (struct CGImage *)_cnui_image;
 - (struct CGImage *)_cnui_roundedRectImageForSize:(struct CGSize)arg1 scale:(double)arg2;
 - (struct CGImage *)_cnui_circularImageForSize:(struct CGSize)arg1 scale:(double)arg2;
 - (unsigned long long)_cnui_likenessType;

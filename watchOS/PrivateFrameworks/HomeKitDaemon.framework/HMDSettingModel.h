@@ -15,6 +15,8 @@
 }
 
 + (id)hmbProperties;
+- (id)copyWithNewParentModelID:(id)arg1;
+@property(readonly, nonatomic) NSString *nameForKeyPath;
 - (_Bool)setSettingValue:(id)arg1;
 
 // Remaining properties

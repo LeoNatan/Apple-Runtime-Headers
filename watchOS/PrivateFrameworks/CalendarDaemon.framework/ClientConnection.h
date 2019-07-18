@@ -16,7 +16,7 @@
     _Bool _allowedEntityTypesValid;
     int _eventAccess;
     int _reminderAccess;
-    // Error parsing type: ^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}, name: _database
+    // Error parsing type: ^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}, name: _database
     id <CADAccountAccessHandler> _accountAccessHandler;
     id <CADAccountAccessHandler> _strictAccountAccessHandler;
     NSObject<OS_dispatch_queue> *_dbQueue;
@@ -38,7 +38,7 @@
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(readonly, nonatomic) ClientIdentity *identity; // @synthesize identity=_identity;
 // Error parsing type for property database:
-// Property attributes: T^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B},N,V_database
+// Property attributes: T^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B},N,V_database
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic) __weak id <ClientConnectionDelegate> delegate; // @synthesize delegate=_delegate;

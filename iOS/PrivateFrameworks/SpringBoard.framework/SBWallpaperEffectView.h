@@ -54,7 +54,6 @@
 @property(nonatomic, getter=isFullscreen) _Bool fullscreen; // @synthesize fullscreen=_fullscreen;
 @property(nonatomic) _Bool forcesOpaque; // @synthesize forcesOpaque=_forcesOpaque;
 - (void).cxx_destruct;
-- (void)_isolationWindowRectDidChange:(id)arg1;
 - (void)_setFrame:(struct CGRect)arg1 forceUpdateBackgroundImage:(_Bool)arg2;
 - (void)_setIsContainedInPopover:(_Bool)arg1;
 - (void)updateBackgroundImage;
@@ -86,7 +85,6 @@
 - (_Bool)prepareToAnimateToTransitionState:(inout CDStruct_059c2b36 *)arg1;
 @property(nonatomic) double zoomScale;
 - (void)setHidden:(_Bool)arg1;
-- (void)didMoveToWindow;
 - (void)willMoveToWindow:(id)arg1;
 - (void)setStyle:(long long)arg1;
 @property(readonly, copy) NSString *description;

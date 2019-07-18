@@ -8,7 +8,8 @@
 
 #import <SpringBoard/SBDeviceApplicationSceneHandleObserver-Protocol.h>
 
-@class NSString, SBDeviceApplicationSceneHandle, SBSecureWindow, SBWindowSelfHostWrapper, UIApplicationSceneClientSettingsDiffInspector;
+@class NSString, SBDeviceApplicationSceneHandle, SBSecureWindow, SBWindowSelfHostWrapper, UIApplicationSceneClientSettingsDiffInspector, UIApplicationSceneSettingsDiffInspector;
+@protocol SBIsolatedSceneOrientationFollowingWrapperOrientationDelegate;
 
 @interface SBIsolatedSceneOrientationFollowingWrapperViewController : UIViewController <SBDeviceApplicationSceneHandleObserver>
 {
@@ -16,19 +17,22 @@
     UIViewController *_contentViewController;
     SBSecureWindow *_appOverlayWindow;
     SBWindowSelfHostWrapper *_appOverlayHostWrapper;
+    UIApplicationSceneSettingsDiffInspector *_sceneSettingsDiffInspector;
     UIApplicationSceneClientSettingsDiffInspector *_clientSettingsDiffInspector;
+    _Bool _sceneWantsDeviceOrientationEvents;
+    id <SBIsolatedSceneOrientationFollowingWrapperOrientationDelegate> _orientationDelegate;
 }
 
 - (void).cxx_destruct;
-- (id)_clientSettingsDiffInspector;
 - (void)sceneHandle:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 transitionContext:(id)arg3;
+- (void)sceneHandle:(id)arg1 didUpdateSettingsWithDiff:(id)arg2 previousSettings:(id)arg3;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 - (void)dealloc;
-- (id)initWithContentViewController:(id)arg1 sceneHandle:(id)arg2;
+- (id)initWithContentViewController:(id)arg1 sceneHandle:(id)arg2 orientationDelegate:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -51,6 +51,9 @@
 - (long long)_circleStatus:(id *)arg1;
 - (unsigned long long)cdpStatusFromOT:(long long)arg1;
 - (unsigned long long)cdpStatusFromSOS:(int)arg1;
+- (id)contextType;
+- (void)reportFailure:(id)arg1;
+- (void)reportSuccess;
 - (unsigned long long)circleStatus:(id *)arg1;
 - (unsigned long long)cachedCircleStatus:(id *)arg1;
 - (void)didJoinCircleAfterRecovery:(id)arg1;

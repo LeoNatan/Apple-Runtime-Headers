@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
         NSString *name;
         long long requirement;
         _Bool supported;
-    } _featureInfo[96];
+    } _featureInfo[95];
     id <MTLDeviceSPI> _device;
 }
 
@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)supportsSIMDReduction;
 - (_Bool)supportsMirrorClampToEdgeSamplerMode;
 - (_Bool)supportsBlackOrWhiteSamplerBorderColors;
-- (_Bool)supportsShaderBarycentricCoordinates;
 - (_Bool)supportsSIMDShufflesAndBroadcast;
 - (_Bool)supportsShaderMinLODClamp;
 - (_Bool)supportsSIMDGroup;

@@ -20,6 +20,7 @@
 - (void)_didReceivePreferredFontChangedNotification:(id)arg1;
 - (BOOL)ensureCacheIsValid;
 - (void)_invalidateCache;
+- (id)cachedImage:(CDUnknownBlockType)arg1 forKey:(id)arg2;
 - (double)cachedFloat:(CDUnknownBlockType)arg1 forKey:(id)arg2;
 - (id)cachedFont:(CDUnknownBlockType)arg1 forKey:(id)arg2;
 - (double)cachedScaledFloatWithValue:(double)arg1 fontStyle:(id)arg2 maximumContentSizeCategory:(id)arg3;

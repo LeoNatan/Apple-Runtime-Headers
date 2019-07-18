@@ -17,9 +17,11 @@
 - (_Bool)tsu_isHomogeneousForClass:(Class)arg1;
 - (id)tsu_setByMappingObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)tsu_sortedArray;
+- (_Bool)tsu_containsKindOfClass:(Class)arg1;
 - (_Bool)tsu_containsObjectIdenticalTo:(id)arg1;
 - (id)tsp_initWithProtobufStringArray:(const RepeatedPtrField_fe7cf120 *)arg1;
 - (void)tsp_saveToProtobufStringArray:(RepeatedPtrField_fe7cf120 *)arg1;
+- (id)tsp_sortedArray;
 - (_Bool)tss_containsStyleOrVariationOfStyle:(id)arg1;
 - (_Bool)tss_hasVariations;
 @end

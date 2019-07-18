@@ -40,7 +40,7 @@
 - (void)_updateAvatarOnTransactionCell:(id)arg1 withTransaction:(id)arg2 contact:(id)arg3;
 - (void)_configureCell:(id)arg1 forItem:(id)arg2 inCollectionView:(id)arg3 forIndexPath:(id)arg4;
 - (_Bool)_shouldShowIconForPass:(id)arg1 context:(unsigned long long)arg2;
-- (void)viewControllerForTransaction:(id)arg1 paymentPass:(id)arg2 forcePreventHistory:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)viewControllerForTransaction:(id)arg1 paymentPass:(id)arg2 account:(id)arg3 forcePreventHistory:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)prefetchForItem:(id)arg1 inCollectionView:(id)arg2;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 inCollectionView:(id)arg3 atIndexPath:(id)arg4;
 - (struct CGSize)sizeForItem:(id)arg1 inCollectionView:(id)arg2 atIndexPath:(id)arg3;

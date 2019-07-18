@@ -22,7 +22,6 @@
 @property(readonly, nonatomic) struct CGPDFContentStream *contentStreamRef; // @synthesize contentStreamRef=_contentStreamRef;
 - (void).cxx_destruct;
 - (id)textInRect:(struct CGRect)arg1;
-- (id)_textContainersFromOperators:(id)arg1;
 - (void)dealloc;
 - (id)initWithContentStreamRef:(struct CGPDFContentStream *)arg1;
 

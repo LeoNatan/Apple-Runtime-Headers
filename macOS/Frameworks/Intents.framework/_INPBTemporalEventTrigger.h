@@ -15,10 +15,12 @@
 @interface _INPBTemporalEventTrigger : PBCodable <_INPBTemporalEventTrigger, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBDateTimeRangeValue *_dateTime;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDateTimeRangeValue *dateTime; // @synthesize dateTime=_dateTime;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

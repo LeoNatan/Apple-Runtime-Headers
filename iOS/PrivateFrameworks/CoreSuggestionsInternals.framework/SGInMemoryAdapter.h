@@ -21,6 +21,7 @@
 
 @property(readonly, nonatomic) NSArray *reminders; // @synthesize reminders=_reminders;
 - (void).cxx_destruct;
+- (void)orphanReminder:(id)arg1;
 - (void)rejectReminderFromOtherDevice:(id)arg1;
 - (void)confirmReminderFromOtherDevice:(id)arg1;
 - (void)reminderAlarmTriggeredFromThisDevice:(id)arg1;

@@ -18,6 +18,7 @@
     int _kTCCPhotosAuthorized;
     int _kTCCPhotosAddAuthorized;
     _Bool _libraryUpgradeAuthorized;
+    _Bool _directDatabaseWriteAuthorized;
     NSDate *_connectionStartDate;
     BKSApplicationStateMonitor *_applicationStateMonitor;
     NSObject<OS_dispatch_queue> *_duetUpdateQueue;
@@ -38,6 +39,7 @@
 - (void)setupFromConnection:(id)arg1;
 @property(readonly, nonatomic) CDStruct_4c969caf clientAuditToken;
 - (_Bool)isPhotosClient;
+@property(readonly, nonatomic) _Bool directDatabaseWriteAuthorized;
 - (_Bool)isClientAuthorizedForLibraryUpgrade;
 - (_Bool)isClientAuthorizedForLithiumSystemPhotoLibraryURL;
 - (_Bool)isClientAuthorizedForTCCServicePhotosAdd;

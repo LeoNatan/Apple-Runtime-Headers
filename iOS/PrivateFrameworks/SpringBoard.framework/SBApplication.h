@@ -11,7 +11,7 @@
 #import <SpringBoard/UISApplicationStateServiceDataSource-Protocol.h>
 #import <SpringBoard/XBApplicationSnapshotManifestDelegate-Protocol.h>
 
-@class FBApplicationProcess, FBProcessExitContext, FBSApplicationDataStore, NSArray, NSDate, NSHashTable, NSMapTable, NSSet, NSString, NSUserDefaults, SBApplicationInfo, SBApplicationProcessState, SBApplicationWakeScheduler, XBApplicationSnapshotManifest;
+@class FBApplicationProcess, FBProcessExitContext, FBSApplicationDataStore, NSArray, NSDate, NSHashTable, NSMapTable, NSSet, NSString, NSUserDefaults, SBApplicationInfo, SBApplicationProcessState, SBApplicationSupportServiceRequestContext, SBApplicationWakeScheduler, XBApplicationSnapshotManifest;
 
 @interface SBApplication : NSObject <XBApplicationSnapshotManifestDelegate, SBLeafIconDataSource, UISApplicationStateServiceDataSource, BSDescriptionProviding>
 {
@@ -22,6 +22,7 @@
     SBApplicationProcessState *_threadUnsafe_processState;
     FBProcessExitContext *_lastExitContext;
     unsigned long long _displayedLaunchAlerts;
+    SBApplicationSupportServiceRequestContext *_initializationContext;
     unsigned int _isRecentlyUpdated:3;
     unsigned int _isNewlyInstalled:3;
     _Bool _uninstalled;
@@ -120,6 +121,7 @@
 - (void)_processDidLaunch:(id)arg1;
 - (void)_processWillLaunch:(id)arg1;
 - (void)_noteProcess:(id)arg1 didChangeToState:(id)arg2;
+- (id)_initializationContext;
 - (void)_setApplicationRestorationCheckState:(int)arg1;
 - (int)_applicationRestorationCheckState;
 - (void)_terminationAssertionEfficacyChangedTo:(unsigned long long)arg1;
@@ -135,7 +137,7 @@
 - (void)markRecentlyUpdated;
 - (void)markNewlyInstalled;
 - (id)_sceneIdentifierForDisplayIdentity:(id)arg1;
-- (_Bool)disablesJailForDisplayWithIdentity:(id)arg1;
+- (_Bool)shouldReceiveSourceApplicationContextFromOriginatingApplication:(id)arg1;
 - (_Bool)canShowSystemVolumeHUDForCategory:(id)arg1;
 - (void)setAudioCategoriesThatDisableSystemVolumeHUD:(id)arg1;
 - (id)statusBarStyleOverridesAssertionsByStyleOverride;

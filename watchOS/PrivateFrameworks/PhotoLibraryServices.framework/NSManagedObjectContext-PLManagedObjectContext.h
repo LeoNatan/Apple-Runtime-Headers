@@ -7,6 +7,7 @@
 #import <CoreData/NSManagedObjectContext.h>
 
 @interface NSManagedObjectContext (PLManagedObjectContext)
+- (_Bool)pl_performWithOptions:(unsigned int)arg1 andBlock:(CDUnknownBlockType)arg2;
 - (_Bool)pl_executeBatchUpdateRequest:(id)arg1 withBatchSize:(unsigned int)arg2 error:(id *)arg3;
 - (id)pl_resultWithError:(id *)arg1 block:(CDUnknownBlockType)arg2;
 - (id)deleteObjectsWithIncrementalSave:(id)arg1;

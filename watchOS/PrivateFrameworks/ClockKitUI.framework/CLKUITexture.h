@@ -14,8 +14,6 @@
     // Error parsing type: , name: _rect
 }
 
-+ (id)mtlTextureWithProviderDelegate:(id)arg1 uuid:(id)arg2 rect: /* Error: Ran out of types for this method. */;
-+ (id)mtlTextureWithProviderDelegate:(id)arg1 uuid:(id)arg2;
 + (id)textureWithProviderDelegate:(id)arg1 uuid:(id)arg2 rect: /* Error: Ran out of types for this method. */;
 + (id)textureWithProviderDelegate:(id)arg1 uuid:(id)arg2;
 // Error parsing type for property rect:

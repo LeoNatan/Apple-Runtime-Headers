@@ -101,7 +101,7 @@
 - (void)continueAddingAssetCollections:(id)arg1 skipAssetCollections:(id)arg2 toAlbum:(id)arg3 info:(id)arg4;
 - (void)_addAssetCollectionsDisposition:(int)arg1 params:(id)arg2;
 - (void)addAssetCollections:(id)arg1 toAlbum:(id)arg2 info:(id)arg3;
-- (id)_createHardlinkedOrCopiedAssetsInAssetCollections:(id)arg1;
+- (id)_createCopiedAssetsInAssetCollections:(id)arg1;
 - (void)_updateAlbumDisposition:(int)arg1 params:(id)arg2;
 - (void)updateAlbum:(id)arg1 updateAlbumFlags:(int)arg2 info:(id)arg3;
 - (void)_createAlbumDisposition:(int)arg1 params:(id)arg2;

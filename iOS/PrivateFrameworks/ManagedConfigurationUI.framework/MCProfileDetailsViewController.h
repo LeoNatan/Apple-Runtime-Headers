@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     _Bool _showTitleIfOnlyOneSection;
     _Bool _viewControllerCanPop;
     int _mode;
+    double _tableViewBottomInset;
     MCUIProfile *_UIProfile;
     NSArray *_sections;
 }
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool viewControllerCanPop; // @synthesize viewControllerCanPop=_viewControllerCanPop;
 @property(nonatomic) _Bool showTitleIfOnlyOneSection; // @synthesize showTitleIfOnlyOneSection=_showTitleIfOnlyOneSection;
 @property(retain, nonatomic) MCUIProfile *UIProfile; // @synthesize UIProfile=_UIProfile;
+@property(nonatomic) double tableViewBottomInset; // @synthesize tableViewBottomInset=_tableViewBottomInset;
 @property(nonatomic) int mode; // @synthesize mode=_mode;
 - (void).cxx_destruct;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;

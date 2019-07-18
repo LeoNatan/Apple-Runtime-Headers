@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)userInterfaceName;
 - (id)propertiesForReferenceColors;
 - (id)elementBuilder;
 - (_Bool)supportsLineConnectionStyle;

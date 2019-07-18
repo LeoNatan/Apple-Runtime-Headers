@@ -10,7 +10,7 @@
 
 @interface CLSCachedContact : NSObject
 {
-    _Bool _faceprintWasExtractedAndClassifiedWithFaceModelID;
+    _Bool _hasPicture;
     NSString *_contactIdentifier;
     NSString *_classifiedPersonLocalIdentifierWithFaceModelID;
     double _updateTimestamp;
@@ -18,7 +18,7 @@
 
 @property(nonatomic) double updateTimestamp; // @synthesize updateTimestamp=_updateTimestamp;
 @property(retain, nonatomic) NSString *classifiedPersonLocalIdentifierWithFaceModelID; // @synthesize classifiedPersonLocalIdentifierWithFaceModelID=_classifiedPersonLocalIdentifierWithFaceModelID;
-@property(nonatomic) _Bool faceprintWasExtractedAndClassifiedWithFaceModelID; // @synthesize faceprintWasExtractedAndClassifiedWithFaceModelID=_faceprintWasExtractedAndClassifiedWithFaceModelID;
+@property(nonatomic) _Bool hasPicture; // @synthesize hasPicture=_hasPicture;
 @property(retain, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 - (void).cxx_destruct;
 - (id)description;

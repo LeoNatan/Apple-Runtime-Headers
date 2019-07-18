@@ -25,6 +25,7 @@
 + (long long)_seedProgramForString:(id)arg1;
 + (BOOL)unenrollFromSeedProgram;
 + (BOOL)enrollInSeedProgram:(long long)arg1;
++ (BOOL)enrollInSeedProgram:(long long)arg1 deletingSystemURL:(BOOL)arg2;
 + (id)legalsForSeedProgram:(long long)arg1 withError:(id *)arg2;
 + (id)catalogForSeedProgram:(long long)arg1 withError:(id *)arg2;
 + (id)availableSeedPrograms;

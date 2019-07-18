@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSDate, NSURL, OspreyGRPCChannel, OspreyKeychain;
+@class NSData, NSDate, NSString, NSURL, OspreyGRPCChannel, OspreyKeychain;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     struct NACContextOpaque_ *_nacContext;
     NSData *_certificateData;
     OspreyGRPCChannel *_channel;
+    NSString *_uuid;
     long long _state;
     NSData *_sessionInfo;
     NSDate *_sessionExpireOn;
@@ -41,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)didMoveToState:(long long)arg1;
 - (void)willMoveToState:(long long)arg1;
 - (BOOL)_readyToSignClientData;
+- (void)deleteCachedCertificateDataWithEndpoint:(id)arg1;
 - (void)setCachedCertificateData:(id)arg1 endpoint:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)getCachedCertificateDataWithEndpoint:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)_prefixIdentifierWithOsprey:(id)arg1;

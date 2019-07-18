@@ -12,11 +12,17 @@
 {
     float _fraction;
     unsigned int _dial;
+    struct CGPoint *_fadeOutHourMarkersCenterPoints;
+    struct CGPoint *_fadeInHourMarkersCenterPoints;
+    unsigned int _hourMarkersCount;
     CLKDevice *_device;
     struct CGPoint _centerPoint;
 }
 
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
+@property(nonatomic) unsigned int hourMarkersCount; // @synthesize hourMarkersCount=_hourMarkersCount;
+@property(nonatomic) struct CGPoint *fadeInHourMarkersCenterPoints; // @synthesize fadeInHourMarkersCenterPoints=_fadeInHourMarkersCenterPoints;
+@property(nonatomic) struct CGPoint *fadeOutHourMarkersCenterPoints; // @synthesize fadeOutHourMarkersCenterPoints=_fadeOutHourMarkersCenterPoints;
 @property(nonatomic) struct CGPoint centerPoint; // @synthesize centerPoint=_centerPoint;
 @property(nonatomic) unsigned int dial; // @synthesize dial=_dial;
 @property(nonatomic) float fraction; // @synthesize fraction=_fraction;

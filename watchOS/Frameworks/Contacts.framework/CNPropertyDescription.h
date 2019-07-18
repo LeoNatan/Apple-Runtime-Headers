@@ -27,6 +27,7 @@
 @property(readonly, nonatomic) SEL readSelector; // @synthesize readSelector=_readSelector;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
 - (void).cxx_destruct;
+- (void)resetGuardianManagedValueOnContact:(id)arg1;
 - (id)stringForIndexingForContact:(id)arg1;
 - (id)CNValueForContact:(id)arg1;
 - (void)setCNValue:(id)arg1 onContact:(id)arg2;

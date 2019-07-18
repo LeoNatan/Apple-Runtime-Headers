@@ -20,7 +20,7 @@
     unsigned long long _sourceType;
     PXCMMViewModel *_viewModel;
     id <PXAssetImportStatusManager> _importStatusManager;
-    NSArray *_displayNames;
+    NSArray *_localizedNames;
     PXMomentShareStatusPresentation *_momentShareStatusPresentation;
     id <PXCMMBannerTileControllerDelegate> _delegate;
     PXCMMPosterBannerView *_bannerView;
@@ -34,7 +34,7 @@
 @property(retain, nonatomic) PXCMMPosterBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(nonatomic) __weak id <PXCMMBannerTileControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_updateDisplayNamesByViewModel;
+- (void)_updateLocalizedNamesByViewModel;
 - (void)_updatePeopleSuggestionNames;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)prepareForReuse;

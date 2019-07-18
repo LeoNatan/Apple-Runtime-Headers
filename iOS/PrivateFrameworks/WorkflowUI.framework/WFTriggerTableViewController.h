@@ -6,7 +6,7 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class NSArray, NSMutableOrderedSet, NSOrderedSet;
+@class NSArray, NSMutableOrderedSet, NSOrderedSet, NSString;
 @protocol WFTriggerTableViewControllerDelegate;
 
 @interface WFTriggerTableViewController : UITableViewController
@@ -16,10 +16,10 @@
     NSOrderedSet *_allOptions;
     NSMutableOrderedSet *_selectedOptions;
     NSArray *_sections;
-    unsigned long long _type;
+    NSString *_nameOfAnyOption;
 }
 
-@property(nonatomic) unsigned long long type; // @synthesize type=_type;
+@property(readonly, copy, nonatomic) NSString *nameOfAnyOption; // @synthesize nameOfAnyOption=_nameOfAnyOption;
 @property(nonatomic) _Bool anyOption; // @synthesize anyOption=_anyOption;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) NSMutableOrderedSet *selectedOptions; // @synthesize selectedOptions=_selectedOptions;
@@ -28,13 +28,15 @@
 - (void).cxx_destruct;
 - (void)done:(id)arg1;
 - (void)cancel:(id)arg1;
+- (void)updateDoneButtonEnabledState;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)infoForSection:(long long)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithOptions:(id)arg1 selectedOptions:(id)arg2 type:(unsigned long long)arg3;
+- (id)initWithOptions:(id)arg1 selectedOptions:(id)arg2 nameOfAnyOption:(id)arg3;
 
 @end
 

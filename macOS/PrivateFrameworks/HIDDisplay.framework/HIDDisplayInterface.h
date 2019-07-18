@@ -13,8 +13,10 @@
     HIDManager *_manager;
     HIDDevice *_deviceRef;
     NSString *_containerID;
+    unsigned long long _registryID;
 }
 
+@property(readonly) unsigned long long registryID; // @synthesize registryID=_registryID;
 @property(readonly) NSString *containerID; // @synthesize containerID=_containerID;
 - (void).cxx_destruct;
 @property(readonly) NSArray *capabilities;
@@ -26,8 +28,10 @@
 - (id)getHIDDevicesForMatching:(id)arg1;
 - (id)getDeviceElements:(id)arg1;
 - (BOOL)hasMatchingContainerID:(id)arg1 containerID:(id)arg2;
+- (id)extractContainerIDFromService:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithMatching:(id)arg1;
+- (id)initWithService:(unsigned int)arg1;
 - (id)initWithContainerID:(id)arg1;
 
 @end

@@ -17,6 +17,7 @@
     struct {
         unsigned int affinityType:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _affinityType;
     _INPBIntentMetadata *_intentMetadata;
     NSArray *_mediaItems;
@@ -25,6 +26,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)mediaItemsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBMediaSearch *mediaSearch; // @synthesize mediaSearch=_mediaSearch;
 @property(copy, nonatomic) NSArray *mediaItems; // @synthesize mediaItems=_mediaItems;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;

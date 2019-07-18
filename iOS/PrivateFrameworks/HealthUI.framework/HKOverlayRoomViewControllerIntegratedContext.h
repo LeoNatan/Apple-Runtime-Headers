@@ -35,10 +35,11 @@
 - (void)updateContextItemForDateInterval:(id)arg1 timeScope:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)overlayDisplayTypeForTimeScope:(long long)arg1;
 - (id)sampleTypeForDateRangeUpdates;
+- (id)valueContextString:(id)arg1 applicationItems:(id)arg2 representativeDisplayType:(id)arg3;
 - (id)valueString:(id)arg1 applicationItems:(id)arg2 representativeDisplayType:(id)arg3;
 - (void)fetchCachedDataForTimeScope:(long long)arg1 dateInterval:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)buildOverlayDisplayTypeForTimeScope:(long long)arg1;
-- (id)buildContextItemWithValue:(id)arg1 forTimeScope:(long long)arg2;
+- (id)buildContextItemWithValue:(id)arg1 valueContext:(id)arg2 forTimeScope:(long long)arg3;
 - (id)representativeDisplayType;
 - (id)initWithOverlayChartController:(id)arg1 applicationItems:(id)arg2 mode:(long long)arg3;
 

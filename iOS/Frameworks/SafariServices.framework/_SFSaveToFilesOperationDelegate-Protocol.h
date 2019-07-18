@@ -6,13 +6,14 @@
 
 #import <SafariServices/NSObject-Protocol.h>
 
-@class UIViewController, _SFSaveToFilesOperation;
+@class UIViewController, _SFActivityItemCustomizationController, _SFSaveToFilesOperation;
 
 @protocol _SFSaveToFilesOperationDelegate <NSObject>
 - (void)saveToFilesOperation:(_SFSaveToFilesOperation *)arg1 didFinishWithSuccess:(_Bool)arg2;
 - (void)saveToFilesOperation:(_SFSaveToFilesOperation *)arg1 presentViewController:(UIViewController *)arg2;
 
 @optional
+- (_SFActivityItemCustomizationController *)customizationControllerForSaveToFilesOperation:(_SFSaveToFilesOperation *)arg1;
 - (_Bool)saveToFilesOperationSupportsDownloads:(_SFSaveToFilesOperation *)arg1;
 @end
 

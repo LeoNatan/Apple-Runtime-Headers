@@ -6,9 +6,15 @@
 
 #import <SearchUI/SearchUITableViewController.h>
 
+@class SFCard;
+
 @interface SearchUICardTableViewController : SearchUITableViewController
 {
+    SFCard *_card;
 }
+
+@property(retain, nonatomic) SFCard *card; // @synthesize card=_card;
+- (void).cxx_destruct;
 
 @end
 

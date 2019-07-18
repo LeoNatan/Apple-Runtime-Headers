@@ -37,6 +37,7 @@
 - (id)_detailsForAsset:(id)arg1 simpleOnly:(_Bool)arg2;
 - (_Bool)_writeDetails:(id)arg1 toFilepath:(id)arg2 withDefaultFilename:(id)arg3;
 - (id)momentGenerationStatus;
+- (void)invalidateHighlightSubtitlesAndRegenerateHighlightTitlesWithForceUpdateLocale:(_Bool)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)invalidateHighlightSubtitlesAndRegenerateHighlightTitlesWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)cleanupEmptyHighlightsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)updateHighlightTitlesWithCompletionBlock:(CDUnknownBlockType)arg1;
@@ -44,7 +45,7 @@
 - (void)processRecentHighlightsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)rebuildAllHighlightsWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)rebuildAllMomentsWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_runMomentAndHighlightGenerationForAssets:(id)arg1 hiddenAssets:(id)arg2 updatedAssetIDsForHighlights:(id)arg3 updatedMomentIDsForHighlights:(id)arg4 affectedMoments:(id)arg5 insertedOrUpdatedMoments:(id *)arg6;
+- (void)_runMomentAndHighlightGenerationForAssets:(id)arg1 hiddenAssets:(id)arg2 updatedAssetIDsForHighlights:(id)arg3 updatedMomentIDsForHighlights:(id)arg4 affectedMoments:(id)arg5 highlightsWithDeletedMoments:(id)arg6 insertedOrUpdatedMoments:(id *)arg7;
 - (void)_runIncrementalGenerationPassWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)generateWithIncrementalDataCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)generateWithAssetInsertsAndUpdates:(id)arg1 assetDeletes:(id)arg2 assetUpdatesForHighlights:(id)arg3 momentUpdatesForHighlights:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
@@ -52,6 +53,7 @@
 - (_Bool)_isAsset:(id)arg1 identicalToAssetForMoments:(id)arg2;
 - (id)_newPublicGlobalUUIDsToAssetsMappingWithAssets:(id)arg1;
 - (void)_updateIncrementalMomentGeneration;
+- (_Bool)isGenerationPassInProgress;
 - (id)initWithMomentGenerationDataManager:(id)arg1;
 - (_Bool)rebuildAllMomentsWithManager:(id)arg1 error:(id *)arg2;
 

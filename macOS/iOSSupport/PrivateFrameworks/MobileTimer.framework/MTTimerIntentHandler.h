@@ -18,7 +18,6 @@
 @property(nonatomic) __weak id <MTTimerManagerProviding> timerManagerProvider; // @synthesize timerManagerProvider=_timerManagerProvider;
 - (void).cxx_destruct;
 - (BOOL)_isDefaultTimer:(id)arg1;
-- (BOOL)_timersOnlyContainSingleRunningSleepTimer:(id)arg1;
 - (id)_alternateTimersForTargetTimerState:(long long)arg1 type:(long long)arg2 inTimers:(id)arg3 allowedTimerStates:(id)arg4;
 - (id)_onlyUnnamedTimerInTimers:(id)arg1 forTargetTimer:(id)arg2 allowMultiple:(BOOL)arg3;
 - (void)_genericallyResolveTargetTimer:(id)arg1 multiple:(BOOL)arg2 allowedTimerStatesForFollowup:(id)arg3 completion:(CDUnknownBlockType)arg4;

@@ -51,8 +51,6 @@
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
-- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForFooterInSection:(long long)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (CDUnknownBlockType)placeholderProvider;
@@ -62,7 +60,6 @@
 - (void)clearStickerRendererIfNeeded;
 - (void)discardStickerItems;
 - (id)firstStickerView;
-- (void)footerButtonPressed;
 - (void)sheetWillAppear;
 - (void)sheetWillDisappear;
 - (void)lowerTaskPriority:(CDUnknownBlockType)arg1;

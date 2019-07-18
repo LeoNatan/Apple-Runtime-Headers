@@ -60,6 +60,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *effectIdentifier; // @synthesize effectIdentifier=_effectIdentifier;
 @property(readonly, nonatomic) long long buildType; // @synthesize buildType=_buildType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double finalRotation;
+@property(readonly, nonatomic) double initialRotation;
 @property(readonly, nonatomic) NSArray *requiredScales;
 @property(readonly, nonatomic) double maxScale;
 @property(readonly, nonatomic) double finalScale;

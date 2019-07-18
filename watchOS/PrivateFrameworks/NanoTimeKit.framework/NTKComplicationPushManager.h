@@ -66,8 +66,6 @@
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
-- (void)scheduleDuetActivityForClient:(id)arg1;
-- (_Bool)isClientRunning:(id)arg1;
 - (void)clientXPCConnectionDidDisconnect:(id)arg1;
 - (void)clientRequestingComplicationUnregister:(id)arg1;
 - (void)clientRequestingComplicationRegister:(id)arg1;

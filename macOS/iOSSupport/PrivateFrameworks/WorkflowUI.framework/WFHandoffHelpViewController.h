@@ -15,7 +15,7 @@
 }
 
 + (id)newWithSourceView:(id)arg1;
-- (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (void)dismiss;
 - (struct CGSize)preferredContentSize;
 - (void)loadView;

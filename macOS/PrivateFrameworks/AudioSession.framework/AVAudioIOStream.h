@@ -10,7 +10,7 @@
 
 @interface AVAudioIOStream : NSObject
 {
-    struct synchronized<std::__1::shared_ptr<as::client::Stream>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::Stream>>> _guarded_impl;
+    struct synchronized<std::__1::shared_ptr<as::client::Stream>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::Stream>>> _guarded_impl;
 }
 
 - (id).cxx_construct;

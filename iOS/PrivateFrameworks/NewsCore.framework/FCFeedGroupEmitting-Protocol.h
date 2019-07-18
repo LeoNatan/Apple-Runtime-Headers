@@ -11,7 +11,7 @@
 @protocol FCCoreConfiguration, FCFeedGroupOutlining;
 
 @protocol FCFeedGroupEmitting <FCFeedGroupInsertionDescriptor, NSObject>
-@property(readonly, copy, nonatomic) NSString *groupEmitterIdentifier;
++ (NSString *)groupEmitterIdentifier;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
 - (FCFeedGroupEmittingOperation *)operationToEmitGroupWithContext:(FCFeedGroupEmittingContext *)arg1 fromCursor:(FCFeedGroupEmittingCursor *)arg2 toCursor:(FCFeedGroupEmittingCursor *)arg3;
 - (_Bool)wantsToEmitGroupInContext:(FCFeedGroupEmittingContext *)arg1 fromCursor:(FCFeedGroupEmittingCursor *)arg2 toCursor:(FCFeedGroupEmittingCursor *)arg3;
@@ -26,5 +26,6 @@
 - (_Bool)canMergeHeadlinesFromGroup:(id <FCFeedGroupOutlining>)arg1 intoGroup:(id <FCFeedGroupOutlining>)arg2;
 - (_Bool)canMergeGroupsUnconditionally;
 - (_Bool)supportsPagination;
+- (_Bool)canDeferEmittingGroupInContext:(FCFeedGroupEmittingContext *)arg1;
 @end
 

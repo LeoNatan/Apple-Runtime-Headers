@@ -82,6 +82,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (BOOL)_acceptsActivatingTouch;
 - (id)hitTest:(struct CGPoint)arg1 forEvent:(struct __GSEvent *)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 @property(nonatomic, getter=isSelected) BOOL selected; // @dynamic selected;

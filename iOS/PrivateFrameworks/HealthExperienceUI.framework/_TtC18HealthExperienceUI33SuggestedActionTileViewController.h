@@ -15,6 +15,7 @@
     // Error parsing type: , name: imageView
     // Error parsing type: , name: imageBackgroundView
     // Error parsing type: , name: containerViewTopConstraint
+    // Error parsing type: , name: containerViewBottomConstraint
     // Error parsing type: , name: imageBackgroundViewContainerViewTopConstraint
     // Error parsing type: , name: imageBackgroundViewContainerViewBottomConstraint
     // Error parsing type: , name: titleLabel
@@ -34,19 +35,21 @@
 - (void)didTapLink:(id)arg1;
 - (void)didTapAction:(id)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
-@property(nonatomic) __weak NSLayoutConstraint *actionButtonHeightConstraint; // @synthesize actionButtonHeightConstraint;
-@property(nonatomic) __weak NSLayoutConstraint *actionButtonTopSpacingConstraint; // @synthesize actionButtonTopSpacingConstraint;
+@property(nonatomic, retain) NSLayoutConstraint *actionButtonHeightConstraint; // @synthesize actionButtonHeightConstraint;
+@property(nonatomic, retain) NSLayoutConstraint *actionButtonTopSpacingConstraint; // @synthesize actionButtonTopSpacingConstraint;
 @property(nonatomic) __weak UIButton *actionButton; // @synthesize actionButton;
-@property(nonatomic) __weak NSLayoutConstraint *linkButtonHeightConstraint; // @synthesize linkButtonHeightConstraint;
-@property(nonatomic) __weak NSLayoutConstraint *linkButtonTopSpacingConstraint; // @synthesize linkButtonTopSpacingConstraint;
+@property(nonatomic, retain) NSLayoutConstraint *linkButtonHeightConstraint; // @synthesize linkButtonHeightConstraint;
+@property(nonatomic, retain) NSLayoutConstraint *linkButtonTopSpacingConstraint; // @synthesize linkButtonTopSpacingConstraint;
 @property(nonatomic) __weak UIButton *linkButton; // @synthesize linkButton;
 @property(nonatomic) __weak UILabel *bodyLabel; // @synthesize bodyLabel;
 @property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel;
-@property(nonatomic) __weak NSLayoutConstraint *imageBackgroundViewContainerViewBottomConstraint; // @synthesize imageBackgroundViewContainerViewBottomConstraint;
-@property(nonatomic) __weak NSLayoutConstraint *imageBackgroundViewContainerViewTopConstraint; // @synthesize imageBackgroundViewContainerViewTopConstraint;
-@property(nonatomic) __weak NSLayoutConstraint *containerViewTopConstraint; // @synthesize containerViewTopConstraint;
+@property(nonatomic, retain) NSLayoutConstraint *imageBackgroundViewContainerViewBottomConstraint; // @synthesize imageBackgroundViewContainerViewBottomConstraint;
+@property(nonatomic, retain) NSLayoutConstraint *imageBackgroundViewContainerViewTopConstraint; // @synthesize imageBackgroundViewContainerViewTopConstraint;
+@property(nonatomic, retain) NSLayoutConstraint *containerViewBottomConstraint; // @synthesize containerViewBottomConstraint;
+@property(nonatomic, retain) NSLayoutConstraint *containerViewTopConstraint; // @synthesize containerViewTopConstraint;
 @property(nonatomic) __weak UIView *imageBackgroundView; // @synthesize imageBackgroundView;
 @property(nonatomic) __weak UIImageView *imageView; // @synthesize imageView;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView;

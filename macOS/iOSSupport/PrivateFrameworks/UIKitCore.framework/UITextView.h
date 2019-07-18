@@ -125,7 +125,7 @@
 - (BOOL)canBecomeDropResponder;
 - (void)draggingFinished:(id)arg1;
 - (void)draggingStarted;
-@property(readonly, nonatomic, getter=isTextDropActive) _Bool textDropActive;
+@property(readonly, nonatomic, getter=isTextDropActive) BOOL textDropActive;
 @property(readonly, nonatomic, getter=isTextDragActive) BOOL textDragActive;
 - (void)invalidateDropCaret;
 @property(readonly, nonatomic) UIDropInteraction *textDropInteraction;
@@ -370,6 +370,8 @@
 - (void)_setInteractiveTextSelectionDisabled:(BOOL)arg1;
 - (void)_updateContainerTileAndSizingFlags;
 - (void)setScrollEnabled:(BOOL)arg1;
+- (void)removeInvisibleRange:(id)arg1;
+- (void)addInvisibleRange:(id)arg1;
 - (void)removeAllGhostedRanges;
 - (void)addGhostedRange:(id)arg1;
 - (void)setTiledViewsDrawAsynchronously:(BOOL)arg1;

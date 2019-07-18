@@ -6,7 +6,7 @@
 
 #import <UserNotificationsUIKit/NSObject-Protocol.h>
 
-@class NSString, UIView;
+@class UIView;
 @protocol NCNotificationListCoalescingControlsHandler;
 
 @protocol NCNotificationListCoalescingControlsHandlerDelegate <NSObject>
@@ -18,7 +18,7 @@
 - (void)notificationListCoalescingControlsHandlerDidPresentPreviewInteractionPresentedContent:(id <NCNotificationListCoalescingControlsHandler>)arg1;
 - (void)notificationListCoalescingControlsHandlerDidBeginPreviewInteraction:(id <NCNotificationListCoalescingControlsHandler>)arg1;
 - (UIView *)containerViewForCoalescingControlsHandlerPreviewInteractionPresentedContent:(id <NCNotificationListCoalescingControlsHandler>)arg1;
-- (void)notificationListCoalescingControlsHandler:(id <NCNotificationListCoalescingControlsHandler>)arg1 requestsClearingNotificationsWithCoalescingIdentifier:(NSString *)arg2 inSection:(unsigned long long)arg3;
-- (void)notificationListCoalescingControlsHandler:(id <NCNotificationListCoalescingControlsHandler>)arg1 requestsRestackingNotificationsWithCoalescingIdentifier:(NSString *)arg2 inSection:(unsigned long long)arg3;
+- (void)notificationListCoalescingControlsHandlerRequestsClearingNotifications:(id <NCNotificationListCoalescingControlsHandler>)arg1;
+- (void)notificationListCoalescingControlsHandlerRequestsRestackingNotifications:(id <NCNotificationListCoalescingControlsHandler>)arg1;
 @end
 

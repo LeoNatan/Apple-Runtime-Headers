@@ -15,10 +15,12 @@
 @interface _INPBAppId : PBCodable <_INPBAppId, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     NSString *_bundleId;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

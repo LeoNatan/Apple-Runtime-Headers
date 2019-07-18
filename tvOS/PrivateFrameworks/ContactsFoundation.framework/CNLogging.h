@@ -10,6 +10,8 @@
 {
 }
 
++ (id)sdkBreakageLog;
++ (id)apiUsageLog;
 + (id)notificationOSLog;
 
 @end

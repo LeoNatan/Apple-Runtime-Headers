@@ -10,30 +10,35 @@
 
 @interface DABabysitter : NSObject
 {
+    struct os_unfair_lock_s _lock;
     NSString *_buildVersion;
-    NSMutableDictionary *_refreshingWaiters;
-    NSMutableDictionary *_failedWaiters;
-    NSMutableDictionary *_restrictedWaiters;
+    NSMutableDictionary *_l_refreshingWaiters;
+    NSMutableDictionary *_l_failedWaiters;
+    NSMutableDictionary *_l_restrictedWaiters;
 }
 
 + (id)sharedBabysitter;
-@property(retain, nonatomic) NSMutableDictionary *restrictedWaiters; // @synthesize restrictedWaiters=_restrictedWaiters;
-@property(retain, nonatomic) NSMutableDictionary *failedWaiters; // @synthesize failedWaiters=_failedWaiters;
-@property(retain, nonatomic) NSMutableDictionary *refreshingWaiters; // @synthesize refreshingWaiters=_refreshingWaiters;
+@property(readonly, nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
+@property(retain, nonatomic) NSMutableDictionary *l_restrictedWaiters; // @synthesize l_restrictedWaiters=_l_restrictedWaiters;
+@property(retain, nonatomic) NSMutableDictionary *l_failedWaiters; // @synthesize l_failedWaiters=_l_failedWaiters;
+@property(retain, nonatomic) NSMutableDictionary *l_refreshingWaiters; // @synthesize l_refreshingWaiters=_l_refreshingWaiters;
 @property(retain, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 - (void).cxx_destruct;
 - (void)giveAccountWithIDAnotherChance:(id)arg1;
+- (void)_l_giveAccountWithIDAnotherChance:(id)arg1;
 - (_Bool)accountShouldContinue:(id)arg1;
 - (_Bool)accountWithIDShouldContinue:(id)arg1;
 - (void)unregisterAccount:(id)arg1 forOperationWithName:(id)arg2;
 - (_Bool)registerAccount:(id)arg1 forOperationWithName:(id)arg2;
-- (void)_decrementRefreshCountForWaiterID:(id)arg1 operationName:(id)arg2;
-- (void)_decrementRefreshCountForWaiter:(id)arg1 forOperationWithName:(id)arg2;
+- (void)_l_decrementRefreshCountForWaiterID:(id)arg1 operationName:(id)arg2;
+- (void)_l_decrementRefreshCountForWaiter:(id)arg1 forOperationWithName:(id)arg2;
 - (void)_incrementRefreshCountForWaiterID:(id)arg1 operationName:(id)arg2;
+- (void)_l_incrementRefreshCountForWaiterID:(id)arg1 operationName:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)_init;
 - (void)_reloadBabysitterProperties;
+- (void)_l_reloadBabysitterWaitersWithRefreshingWaitersPrefs:(id)arg1 failedWaitersPrefs:(id)arg2 restrictedWaitersPrefs:(id)arg3;
 
 @end
 

@@ -21,12 +21,14 @@
 @property(nonatomic) double blurFractionComplete; // @synthesize blurFractionComplete=_blurFractionComplete;
 @property(readonly, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 - (void).cxx_destruct;
+- (void)_updateIdleModeAttributes;
 - (void)_updateAnimationFromBlur;
 - (void)_updateAnimationToBlur;
 - (void)_beginAnimationFromOne;
 - (void)_beginAnimationFromZero;
 - (void)_finishAnimationAtPosition:(long long)arg1;
 - (void)_updateWithBlurFractionComplete:(double)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

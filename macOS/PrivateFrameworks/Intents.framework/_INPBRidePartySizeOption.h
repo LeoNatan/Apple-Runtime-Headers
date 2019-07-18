@@ -15,12 +15,14 @@
 @interface _INPBRidePartySizeOption : PBCodable <_INPBRidePartySizeOption, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBRangeValue *_partySizeRange;
     _INPBPriceRangeValue *_priceRange;
     NSString *_sizeDescription;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *sizeDescription; // @synthesize sizeDescription=_sizeDescription;
 @property(retain, nonatomic) _INPBPriceRangeValue *priceRange; // @synthesize priceRange=_priceRange;
 @property(retain, nonatomic) _INPBRangeValue *partySizeRange; // @synthesize partySizeRange=_partySizeRange;

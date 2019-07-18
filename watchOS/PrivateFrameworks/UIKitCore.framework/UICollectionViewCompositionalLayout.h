@@ -13,6 +13,7 @@
 {
     UICollectionViewCompositionalLayoutConfiguration *_configuration;
     _Bool _defersInitialSolveUntilPrepare;
+    _Bool _shouldAdjustContentInsetModeForCollectionViewNeverMode;
     _Bool _isInUpdateVisibleCellsPass;
     _Bool _layoutRTL;
     _Bool _roundsToScreenScale;
@@ -20,6 +21,7 @@
     CDUnknownBlockType _layoutSectionProvider;
     _UICollectionCompositionalLayoutSolver *_solver;
     _UIDataSourceSnapshotter *_dataSourceSnapshotter;
+    unsigned int _edgesForSafeAreaPropagation;
     _UIUpdateVisibleCellsContext *_updateVisibleCellsContext;
     _UICollectionCompositionalLayoutSolverUpdate *_currentUpdate;
     id <_UICollectionCompositionalLayoutSolverResolveResult> _currentResolveResult;
@@ -37,6 +39,8 @@
 @property(retain, nonatomic) _UICollectionCompositionalLayoutSolverUpdate *currentUpdate; // @synthesize currentUpdate=_currentUpdate;
 @property(retain, nonatomic) _UIUpdateVisibleCellsContext *updateVisibleCellsContext; // @synthesize updateVisibleCellsContext=_updateVisibleCellsContext;
 @property(nonatomic) _Bool isInUpdateVisibleCellsPass; // @synthesize isInUpdateVisibleCellsPass=_isInUpdateVisibleCellsPass;
+@property(nonatomic) unsigned int edgesForSafeAreaPropagation; // @synthesize edgesForSafeAreaPropagation=_edgesForSafeAreaPropagation;
+@property(nonatomic) _Bool shouldAdjustContentInsetModeForCollectionViewNeverMode; // @synthesize shouldAdjustContentInsetModeForCollectionViewNeverMode=_shouldAdjustContentInsetModeForCollectionViewNeverMode;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
 @property(retain, nonatomic) _UIDataSourceSnapshotter *dataSourceSnapshotter; // @synthesize dataSourceSnapshotter=_dataSourceSnapshotter;
 @property(nonatomic) struct CGSize memoizedPreviousInvalidationCollectionViewBoundsSize; // @synthesize memoizedPreviousInvalidationCollectionViewBoundsSize=_memoizedPreviousInvalidationCollectionViewBoundsSize;
@@ -72,6 +76,7 @@
 - (id)_updatePinnedSectionSupplementaryItemsForCurrentVisibleBounds;
 - (void)_computeAndUpdateAdjustedContentFrame;
 - (id)_dataSourceSnapshotter;
+- (_Bool)_adjustCollectionViewContentInsetBehaviorForLayoutAxisIfNeeded:(int)arg1 container:(id)arg2;
 - (_Bool)_invokeVisibleBoundsUpdateForDynamicAnimatorForNewVisibleBounds:(struct CGRect)arg1 preparingLayout:(_Bool)arg2;
 - (_Bool)_shouldInvalidateLayoutForBoundsSizeChange:(struct CGRect)arg1;
 - (void)_traitCollectionDidChangeFromPreviousCollection:(id)arg1 newTraitCollection:(id)arg2;
@@ -79,6 +84,8 @@
 - (id)_boundsChangeResolve;
 - (id)_updateResolve;
 - (void)_fullResolve;
+- (unsigned int)_edgesForSafeAreaPropagationToDescendants;
+- (_Bool)_overridesSafeAreaPropagationToDescendants;
 - (_Bool)_preparedForBoundsChanges;
 - (_Bool)_wantsUntrackedAnimationCleanupForAuxillaryItems;
 - (int)_layoutAxis;

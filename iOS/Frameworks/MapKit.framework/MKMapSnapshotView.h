@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (void)cancel;
+- (_Bool)cancel;
 - (void)cropImage:(struct CGRect)arg1;
 - (void)takeSnapshotWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -14,6 +14,7 @@
     BOOL _skipLayer;
     BOOL _enableDebugging;
     int _paddingPolicy;
+    unsigned long long _layerID;
     unsigned long long _kernelWidth;
     unsigned long long _kernelHeight;
     unsigned long long _dilationRateInX;
@@ -27,9 +28,11 @@
     NSMutableArray *_resultTensor;
     MLFoundationTensor *_sourceGradientTensor;
     MLFoundationTensor *_lossInitialGradientTensor;
+    NSMutableArray *_fusedLayers;
 }
 
 + (id)new;
+@property(readonly, copy, nonatomic) NSMutableArray *fusedLayers; // @synthesize fusedLayers=_fusedLayers;
 @property(copy, nonatomic) MLFoundationTensor *lossInitialGradientTensor; // @synthesize lossInitialGradientTensor=_lossInitialGradientTensor;
 @property(copy, nonatomic) MLFoundationTensor *sourceGradientTensor; // @synthesize sourceGradientTensor=_sourceGradientTensor;
 @property(readonly, copy, nonatomic) NSMutableArray *resultTensor; // @synthesize resultTensor=_resultTensor;
@@ -37,7 +40,7 @@
 @property(nonatomic) BOOL enableDebugging; // @synthesize enableDebugging=_enableDebugging;
 @property(nonatomic) BOOL skipLayer; // @synthesize skipLayer=_skipLayer;
 @property(readonly, nonatomic) BOOL isPreprocessingLayer; // @synthesize isPreprocessingLayer=_isPreprocessingLayer;
-@property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSArray *deviceOps; // @synthesize deviceOps=_deviceOps;
 @property(retain, nonatomic) MLFoundationDevice *device; // @synthesize device=_device;
 @property(nonatomic) int paddingPolicy; // @synthesize paddingPolicy=_paddingPolicy;
@@ -47,9 +50,11 @@
 @property(nonatomic) unsigned long long dilationRateInX; // @synthesize dilationRateInX=_dilationRateInX;
 @property(nonatomic) unsigned long long kernelHeight; // @synthesize kernelHeight=_kernelHeight;
 @property(nonatomic) unsigned long long kernelWidth; // @synthesize kernelWidth=_kernelWidth;
+@property(nonatomic) unsigned long long layerID; // @synthesize layerID=_layerID;
 - (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)computeResultSizeFromSourceSize:(unsigned long long)arg1 dimension:(unsigned long long)arg2;
+- (void)assignLayerID:(unsigned long long)arg1;
 - (void)bindDevice:(id)arg1 deviceOps:(id)arg2;
 - (id)initWithLabel:(id)arg1 isPreprocessingLayer:(BOOL)arg2;
 - (id)initWithLabel:(id)arg1;

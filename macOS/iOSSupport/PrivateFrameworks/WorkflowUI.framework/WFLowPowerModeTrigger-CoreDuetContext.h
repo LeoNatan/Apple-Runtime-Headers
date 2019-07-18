@@ -7,6 +7,6 @@
 #import <WorkflowKit/WFLowPowerModeTrigger.h>
 
 @interface WFLowPowerModeTrigger (CoreDuetContext)
-+ (id)triggerTypeIconName;
++ (id)triggerTypeIcon;
 @end
 

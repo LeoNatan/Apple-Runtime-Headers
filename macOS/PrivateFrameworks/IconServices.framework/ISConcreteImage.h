@@ -8,7 +8,6 @@
 
 #import <IconServices/NSCopying-Protocol.h>
 
-__attribute__((visibility("hidden")))
 @interface ISConcreteImage : ISImage <NSCopying>
 {
     BOOL _placeholder;

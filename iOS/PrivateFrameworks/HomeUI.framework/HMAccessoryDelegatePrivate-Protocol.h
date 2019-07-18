@@ -11,6 +11,7 @@
 @protocol HMAccessoryDelegatePrivate <HMAccessoryDelegate>
 
 @optional
+- (void)accessoryDidUpdateReachableTransports:(HMAccessory *)arg1;
 - (void)accessory:(HMAccessory *)arg1 didUpdateLastKnownSleepDiscoveryModeForService:(HMService *)arg2;
 - (void)accessoryDidUpdateMultiUserSupport:(HMAccessory *)arg1;
 - (void)accessoryDidRemoveSymptomsHandler:(HMAccessory *)arg1;

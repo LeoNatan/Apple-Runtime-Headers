@@ -38,6 +38,7 @@
     CDUnknownBlockType _hidePasswordHandler;
     CDUnknownBlockType _promptForPasswordHandler;
     NSString *_appID;
+    NSString *_cloudServiceID;
     unsigned long long _controlFlags;
     RPCompanionLinkDevice *_destinationDevice;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -68,6 +69,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain, nonatomic) RPCompanionLinkDevice *destinationDevice; // @synthesize destinationDevice=_destinationDevice;
 @property(nonatomic) unsigned long long controlFlags; // @synthesize controlFlags=_controlFlags;
+@property(copy, nonatomic) NSString *cloudServiceID; // @synthesize cloudServiceID=_cloudServiceID;
 @property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
 @property(copy, nonatomic) CDUnknownBlockType promptForPasswordHandler; // @synthesize promptForPasswordHandler=_promptForPasswordHandler;
 @property(copy, nonatomic) CDUnknownBlockType hidePasswordHandler; // @synthesize hidePasswordHandler=_hidePasswordHandler;

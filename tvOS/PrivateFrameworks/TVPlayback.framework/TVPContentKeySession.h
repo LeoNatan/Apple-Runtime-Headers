@@ -13,6 +13,7 @@
 
 @interface TVPContentKeySession : NSObject <AVContentKeySessionDelegate>
 {
+    _Bool _offlineKeyGenerationIsForRenewal;
     AVContentKeySession *_contentKeySession;
     NSObject<TVPContentKeyLoading> *_contentKeyLoader;
     CDUnknownBlockType _offlineKeyGenerationCompletionHandler;
@@ -21,6 +22,7 @@
 }
 
 + (void)initialize;
+@property(nonatomic) _Bool offlineKeyGenerationIsForRenewal; // @synthesize offlineKeyGenerationIsForRenewal=_offlineKeyGenerationIsForRenewal;
 @property(retain, nonatomic) NSMutableArray *keyRequestsInProgress; // @synthesize keyRequestsInProgress=_keyRequestsInProgress;
 @property(retain, nonatomic) NSArray *offlineKeyIdentifiersInProgress; // @synthesize offlineKeyIdentifiersInProgress=_offlineKeyIdentifiersInProgress;
 @property(copy, nonatomic) CDUnknownBlockType offlineKeyGenerationCompletionHandler; // @synthesize offlineKeyGenerationCompletionHandler=_offlineKeyGenerationCompletionHandler;
@@ -32,6 +34,7 @@
 - (void)contentKeySession:(id)arg1 didProvideContentKeyRequest:(id)arg2;
 - (void)finishKeyRequest:(id)arg1;
 - (id)initWithContentKeyLoader:(id)arg1 avAsset:(id)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

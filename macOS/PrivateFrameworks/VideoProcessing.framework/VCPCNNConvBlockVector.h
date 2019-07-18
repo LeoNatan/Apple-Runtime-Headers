@@ -11,12 +11,12 @@
     CDUnknownFunctionPointerType CalculateDotProductOfChunk;
 }
 
++ (BOOL)isFilterSizeSupported:(int)arg1;
 - (int)forward;
 - (int)chunkFourForward;
 - (int)straightForwardForChunkFour;
 - (int)readFromDisk:(struct __sFILE *)arg1 quantFactor:(short)arg2;
-- (BOOL)isFilterSizeSupported:(int)arg1;
-- (int)initializeRest;
+- (id)initWithParameters:(int)arg1 filterNum:(int)arg2 chunk:(int)arg3 reLU:(BOOL)arg4 padding:(BOOL)arg5 groups:(int)arg6 stride:(int)arg7 batchNorm:(BOOL)arg8;
 
 @end
 

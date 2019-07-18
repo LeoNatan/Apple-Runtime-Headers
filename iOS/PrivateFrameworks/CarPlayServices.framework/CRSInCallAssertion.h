@@ -15,6 +15,7 @@
 {
     struct os_unfair_lock_s _lock;
     _Bool _lock_pendingPresent;
+    _Bool _lock_presented;
     _Bool _lock_activated;
     _Bool _lock_invalidated;
     NSString *_reason;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 - (void).cxx_destruct;
+- (void)_handleConnectionInterrupted;
 - (void)_handleConnectionActivated;
 - (void)invalidate;
 - (void)activate;

@@ -6,20 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSNumber, NSUUID;
+@class HMDAccessoryNetworkCredential, NSUUID;
 
 @interface HMDHomeReprovisioningPendingInformation : NSObject
 {
     NSUUID *_messageIdentifier;
-    NSData *_wiFiPSK;
-    NSNumber *_clientIdentifier;
+    HMDAccessoryNetworkCredential *_networkCredential;
 }
 
-@property(readonly) NSNumber *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-@property(readonly) NSData *wiFiPSK; // @synthesize wiFiPSK=_wiFiPSK;
+@property(readonly) HMDAccessoryNetworkCredential *networkCredential; // @synthesize networkCredential=_networkCredential;
 @property(readonly) NSUUID *messageIdentifier; // @synthesize messageIdentifier=_messageIdentifier;
 - (void).cxx_destruct;
-- (id)initWithMessageUUID:(id)arg1 wiFiPSK:(id)arg2 clientIdentifier:(id)arg3;
+- (id)initWithMessageUUID:(id)arg1 networkCredential:(id)arg2;
 
 @end
 

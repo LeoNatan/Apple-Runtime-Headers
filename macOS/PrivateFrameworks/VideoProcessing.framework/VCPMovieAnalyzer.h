@@ -33,6 +33,7 @@
 - (id)createDecoderForTrack:(id)arg1 timerange:(const CDStruct_e83c9415 *)arg2;
 - (int)performMetadataAnalysisOnAsset:(id)arg1 withCancelBlock:(CDUnknownBlockType)arg2;
 - (id)processExistingAnalysisForTimeRange:(CDStruct_e83c9415)arg1 analysisTypes:(unsigned long long *)arg2;
+- (void)loadPropertiesForAsset:(id)arg1;
 - (id)privateResults;
 - (id)initWithPHAsset:(id)arg1 withExistingAnalysis:(id)arg2 forAnalysisTypes:(unsigned long long)arg3;
 - (id)initWithPHAsset:(id)arg1 withPausedAnalysis:(id)arg2 forAnalysisTypes:(unsigned long long)arg3;

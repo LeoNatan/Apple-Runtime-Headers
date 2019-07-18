@@ -10,13 +10,13 @@
 #import <HeadBoardUI/TVCollectionViewDelegateFullScreenLayout-Protocol.h>
 #import <HeadBoardUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class HBUITopShelfParadePageControlsView, NSMapTable, NSString, NSTimer, UITapGestureRecognizer, __UIDiffableDataSource;
+@class HBUITopShelfParadePageControlsView, NSIndexPath, NSMapTable, NSString, NSTimer, UITapGestureRecognizer, __UIDiffableDataSource;
 @protocol HBUITopShelfParadeContent, HBUITopShelfParadeViewControllerDelegate;
 
 @interface HBUITopShelfParadeViewController : UICollectionViewController <TVCollectionViewDelegateFullScreenLayout, UIGestureRecognizerDelegate, HBUITopShelfParadeContentCoordinatorDelegate>
 {
     _Bool _contentOccluded;
-    _Bool _muted;
+    _Bool _didFinishFirstLoop;
     id <HBUITopShelfParadeContent> _paradeContent;
     id <HBUITopShelfParadeViewControllerDelegate> _delegate;
     long long _contentStyle;
@@ -27,9 +27,13 @@
     UITapGestureRecognizer *_showContentViewsTapGestureRecognizer;
     UITapGestureRecognizer *_hideContentViewsGestureRecognizer;
     NSTimer *_pageControlViewFadeTimer;
+    NSIndexPath *_centerItemIndexPath;
+    NSTimer *_autoAdvanceTimer;
 }
 
-@property(nonatomic, getter=_isMuted, setter=_setMuted:) _Bool muted; // @synthesize muted=_muted;
+@property(readonly, nonatomic) NSTimer *autoAdvanceTimer; // @synthesize autoAdvanceTimer=_autoAdvanceTimer;
+@property(readonly, nonatomic) _Bool didFinishFirstLoop; // @synthesize didFinishFirstLoop=_didFinishFirstLoop;
+@property(readonly, nonatomic) NSIndexPath *centerItemIndexPath; // @synthesize centerItemIndexPath=_centerItemIndexPath;
 @property(retain, nonatomic, getter=_pageControlViewFadeTimer, setter=_setHidePageControlsViewTimer:) NSTimer *pageControlViewFadeTimer; // @synthesize pageControlViewFadeTimer=_pageControlViewFadeTimer;
 @property(readonly, nonatomic) UITapGestureRecognizer *hideContentViewsGestureRecognizer; // @synthesize hideContentViewsGestureRecognizer=_hideContentViewsGestureRecognizer;
 @property(readonly, nonatomic) UITapGestureRecognizer *showContentViewsTapGestureRecognizer; // @synthesize showContentViewsTapGestureRecognizer=_showContentViewsTapGestureRecognizer;
@@ -52,20 +56,21 @@
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)collectionView:(id)arg1 layout:(id)arg2 didCenterCellAtIndexPath:(id)arg3;
+- (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didUpdateFocusInContext:(id)arg2 withAnimationCoordinator:(id)arg3;
+- (void)_centerItemIndexPathDidChange;
+- (void)_updateParadeMediaPlayerState;
+- (id)_collectionViewCenterItemIndexPath;
 - (void)_paradeContentDidChange:(_Bool)arg1;
 - (void)_updateCollectionViewLayoutWithStandardHideShowAnimator;
 - (id)_paradeItemAtIndexPath:(id)arg1;
 - (id)_currentContentViewController;
 - (id)_currentBackgroundViewController;
-- (id)_firstIndexPath;
-- (id)_indexPathAfterIndexPath:(id)arg1;
 - (void)_advanceToNextItem;
 - (id)_existingContentViewControllerForItemAtIndexPath:(id)arg1;
 - (id)_existingBackgroundViewControllerForItemAtIndexPath:(id)arg1;
 - (id)_existingContentCoordinatorForItemAtIndexPath:(id)arg1;
-- (void)_resetBackgroundViewControllers;
 - (CDUnknownBlockType)_diffableDataSourceCollectionViewCellProvider;
 - (void)_hidePageControlsViewTimerDidFire;
 - (void)_scheduleHidePageControlsViewTimer;
@@ -73,6 +78,8 @@
 - (void)_hideContentViews:(id)arg1;
 - (void)_showContentViews:(id)arg1;
 - (id)_contentCoordinatorForCell:(id)arg1 withContentOptions:(unsigned long long)arg2;
+- (id)_newCollectionViewWithFrame:(struct CGRect)arg1 collectionViewLayout:(id)arg2;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 @property(readonly, copy) NSString *debugDescription;

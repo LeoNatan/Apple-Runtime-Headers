@@ -7,7 +7,6 @@
 #import <UIKit/UIView.h>
 
 @interface UIView (FrameUsingCenterAndBounds)
-+ (id)sx_videoOverlayButtonWithStyle:(long long)arg1;
 - (void)setFrameUsingCenterAndBounds:(struct CGRect)arg1;
 - (struct CGRect)frameUsingCenterAndBounds;
 @end

@@ -56,6 +56,8 @@
 - (_Bool)_filteringSettingConfirmed;
 - (id)_displayNameForBusinessChatAddress:(id)arg1;
 - (id)_suggestedDisplayNameForAddress:(id)arg1;
+- (id)_nicknameDisplayNameForID:(id)arg1;
+- (id)_nicknameInfoForAddress:(id)arg1;
 - (void)_setUpSuggestionService;
 - (id)_displayNameForHandle:(struct _IMDHandleRecordStruct *)arg1 andContact:(id)arg2;
 - (_Bool)_handleIsWhitelisted:(struct _IMDHandleRecordStruct *)arg1;
@@ -66,9 +68,9 @@
 - (id)_previewFileURLForTransferURL:(id)arg1 utiType:(id)arg2;
 - (_Bool)_shouldUseOriginalURLForUTIType:(id)arg1;
 - (id)_previewFileURLForTransferURL:(id)arg1;
-- (_Bool)_isMostActiveDevice;
+- (void)_isMostActiveDeviceWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_populateIgnoreDownTime:(id)arg1 messageDictionary:(id)arg2 downtimeEnabled:(_Bool)arg3;
-- (void)_populateSpokenMessage:(id)arg1 messageDictionary:(id)arg2 chatDictionary:(id)arg3 isMostActive:(_Bool)arg4;
+- (_Bool)_messageShouldBeSpoken:(id)arg1 chatDictionary:(id)arg2 isMostActive:(_Bool)arg3;
 -     // Error parsing type: v20@0:4@8@12^{_IMDMessageRecordStruct={__CFRuntimeBase=IAI}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16, name: _populateAttachmentsForNotificationContent:messageDictionary:messageRecord:
 - (void)_populateNotificationCategoryContent:(id)arg1 messageDictionary:(id)arg2;
 - (void)_populateUserInfoForMessageContent:(id)arg1 messageDictionary:(id)arg2 messageIsAddressedToMe:(_Bool)arg3;
@@ -80,7 +82,7 @@
 - (void)_populateSubtitleForNotificationContent:(id)arg1 chatDictionary:(id)arg2 messageDictionary:(id)arg3;
 - (void)_populateBodyForNotificationContent:(id)arg1 messageDictionary:(id)arg2 onlyPopulateWasMentionedString:(_Bool)arg3;
 - (void)_populateBodyForNotificationContent:(id)arg1 messageDictionary:(id)arg2;
-- (void)_populateBasicNotificationIdentifyingContent:(id)arg1 chatDictionary:(id)arg2 messageDictionary:(id)arg3;
+- (void)_populateBasicNotificationIdentifyingContent:(id)arg1 chatDictionary:(id)arg2 messageDictionary:(id)arg3 isCarouselUITriggered:(_Bool)arg4;
 - (_Bool)_isRaiseGestureEnabled;
 - (void)postCarouselUITriggerNotificationsForMessages:(id)arg1 type:(id)arg2;
 - (void)postFirstUnlockMessage:(id)arg1 forIdentifier:(id)arg2;
@@ -89,9 +91,9 @@
 - (void)retractNotificationsForReadMessages:(id)arg1;
 - (void)postNotifications:(_Bool)arg1;
 - (void)_postNotifications:(id)arg1;
-- (void)__postNotifications:(_Bool)arg1;
+- (void)__postNotifications:(_Bool)arg1 isMostActiveDevice:(_Bool)arg2;
 - (void)_registerUserNotificationsForFailedDeliveryMessageRecords:(id)arg1 isCarouselUITriggered:(_Bool)arg2;
-- (void)_registerUserNotificationsForMessageRecords:(id)arg1 newerThanDate:(long long)arg2 areUrgentMessages:(_Bool)arg3 downTimeEnabled:(_Bool)arg4 isCarouselUITriggered:(_Bool)arg5;
+- (void)_registerUserNotificationsForMessageRecords:(id)arg1 newerThanDate:(long long)arg2 areUrgentMessages:(_Bool)arg3 downTimeEnabled:(_Bool)arg4 isCarouselUITriggered:(_Bool)arg5 isMostActiveDevice:(_Bool)arg6;
 - (id)_messages:(id)arg1 newerThanDate:(long long)arg2;
 - (id)_messagesSortedByDate:(id)arg1;
 - (_Bool)_overrideDNDForMessagesAddressingMe;

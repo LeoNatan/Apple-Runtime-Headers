@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 + (id)serviceXPCInterface;
 + (id)serviceName;
 - (void).cxx_destruct;
+- (void)fetchDocumentRecordIDWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)thumbnailChangedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchLastEditorDeviceNameWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchAccountIdentifierWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -34,7 +34,6 @@
 - (id)_primaryContainerInContactStore:(id)arg1 withError:(id *)arg2;
 - (id)_contactStoreForUser;
 - (void)notifyServerOfScreenTimeEnabled:(_Bool)arg1;
-- (void)disableAllBlueprints;
 - (void)didChangeValueForKey:(id)arg1;
 - (void)updateWithDescription:(id)arg1;
 @property(nonatomic) _Bool contactsEditable;

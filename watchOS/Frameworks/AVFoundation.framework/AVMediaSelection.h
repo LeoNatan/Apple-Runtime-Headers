@@ -30,6 +30,7 @@
 - (id)initWithAsset:(id)arg1 propertyList:(id)arg2;
 - (id)_groupDictionaries;
 - (id)_selectedMediaArray;
+- (id)_initWithAssetWithoutGroupDictionaries:(id)arg1;
 - (id)_initWithAsset:(id)arg1;
 - (id)_initWithAsset:(id)arg1 selectedMediaArray:(id)arg2;
 

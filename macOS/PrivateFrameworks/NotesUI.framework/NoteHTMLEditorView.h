@@ -38,6 +38,7 @@
     ICSelectorDelayer *_updateContentDelayer;
 }
 
++ (id)baseHTMLString;
 @property(nonatomic) BOOL updatingContent; // @synthesize updatingContent=_updatingContent;
 @property(retain, nonatomic) ICSelectorDelayer *updateContentDelayer; // @synthesize updateContentDelayer=_updateContentDelayer;
 @property(copy, nonatomic) NSArray *attachmentsToLoad; // @synthesize attachmentsToLoad=_attachmentsToLoad;
@@ -81,12 +82,18 @@
 - (void)accentColorDidChange:(id)arg1;
 - (void)stopEditing;
 - (void)startEditing;
-- (void)replaceSelectionWithHTMLString:(id)arg1;
+- (void)adoptEditableState;
+- (void)updateDataDetectors;
 - (void)undoablyRemoveAttachmentPresentations:(id)arg1 undoManager:(id)arg2;
 - (void)undoablyReplaceSelectionWithAttachmentPresentations:(id)arg1 undoManager:(id)arg2;
 - (void)replaceSelectionWithAttachmentPresentation:(id)arg1;
+- (id)jsonStringFromDictionaryOrArray:(id)arg1;
 - (id)attachmentInfoDictionaryForAttachmentPresentation:(id)arg1;
 - (id)contentAsPasteboardItems;
+- (void)insertLinksWithURLs:(id)arg1 titles:(id)arg2;
+- (void)insertLinkWithURL:(id)arg1 title:(id)arg2;
+- (void)setEnableShiftNewlinesInSmartLists:(BOOL)arg1;
+- (void)setEnableSmartLists:(BOOL)arg1;
 - (void)setHtmlString:(id)arg1 attachments:(id)arg2;
 @property(nonatomic) double textZoomFactor;
 @property(readonly, nonatomic) WebArchive *webArchive;

@@ -38,6 +38,7 @@
 - (_Bool)hasCustomGroupItemProvider;
 - (_Bool)ignoresRTL;
 - (id)auxillaryItems;
+- (struct NSDirectionalEdgeInsets)_effectiveContentInsets;
 - (_Bool)isDecoration;
 - (_Bool)isSupplementary;
 - (_Bool)isAuxillary;

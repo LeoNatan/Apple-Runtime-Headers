@@ -29,6 +29,7 @@
 - (id)suggestedFileNameForQuickLookDocument:(id)arg1;
 - (id)dataForQuickLookDocument:(id)arg1;
 @property(readonly, nonatomic) _Bool canGenerateWebArchive;
+@property(readonly, nonatomic) NSString *suggestedFilenameWithoutExtension;
 @property(readonly, nonatomic) NSString *suggestedFilenameWithExtension;
 - (id)initWithWebView:(id)arg1;
 

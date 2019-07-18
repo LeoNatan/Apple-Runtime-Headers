@@ -8,7 +8,7 @@
 
 #import <CoreML/MLUpdatable-Protocol.h>
 
-@class ETTaskDefinition, ETTaskState, MLUpdateProgressHandlers, NSDictionary, NSObject, NSString;
+@class ETTaskDefinition, ETTaskState, MLShufflingBatchProvider, MLUpdateProgressHandlers, NSDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 @interface MLNeuralNetworkUpdateEngine : MLNeuralNetworkEngine <MLUpdatable>
@@ -23,10 +23,12 @@
     NSDictionary *_updateParameters;
     NSDictionary *_coreMLToEspressoParamsMap;
     NSString *_lossOutputName;
+    MLShufflingBatchProvider *_shuffableTrainingData;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)loadModelFromCompiledArchive:(struct _MLModelInputArchiver *)arg1 modelVersionInfo:(id)arg2 compilerVersionInfo:(id)arg3 configuration:(id)arg4 error:(id *)arg5;
+@property(retain, nonatomic) MLShufflingBatchProvider *shuffableTrainingData; // @synthesize shuffableTrainingData=_shuffableTrainingData;
 @property(nonatomic) _Bool continueWithUpdate; // @synthesize continueWithUpdate=_continueWithUpdate;
 @property(retain, nonatomic) NSString *lossOutputName; // @synthesize lossOutputName=_lossOutputName;
 @property(retain, nonatomic) NSDictionary *coreMLToEspressoParamsMap; // @synthesize coreMLToEspressoParamsMap=_coreMLToEspressoParamsMap;
@@ -34,7 +36,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *progressHandlersDispatchQueue; // @synthesize progressHandlersDispatchQueue=_progressHandlersDispatchQueue;
 @property(retain, nonatomic) MLUpdateProgressHandlers *progressHandlers; // @synthesize progressHandlers=_progressHandlers;
 @property(readonly, nonatomic) NSDictionary *classLabelToIndexMap; // @synthesize classLabelToIndexMap=_classLabelToIndexMap;
-@property(readonly, nonatomic) NSString *lossTargetName; // @synthesize lossTargetName=_lossTargetName;
+@property(retain, nonatomic) NSString *lossTargetName; // @synthesize lossTargetName=_lossTargetName;
 @property(retain, nonatomic) ETTaskDefinition *task; // @synthesize task=_task;
 @property(retain, nonatomic) ETTaskState *snapshot; // @synthesize snapshot=_snapshot;
 - (void).cxx_destruct;
@@ -51,7 +53,7 @@
 - (void)resumeUpdateWithParameters:(id)arg1;
 - (void)cancelUpdate;
 - (void)resumeUpdate;
-- (void)updateModelWithData:(id)arg1 parameters:(id)arg2;
+- (void)updateModelWithData:(id)arg1;
 - (void)setUpdateProgressHandlers:(id)arg1 dispatchQueue:(id)arg2;
 - (id)stringForDataType:(unsigned long long)arg1;
 - (id)predictionsFromBatch:(id)arg1 error:(id *)arg2;

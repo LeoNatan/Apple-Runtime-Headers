@@ -8,11 +8,12 @@
 
 #import <RunningBoard/RBAssertionManagerDelegate-Protocol.h>
 #import <RunningBoard/RBBundlePropertiesManagerDelegate-Protocol.h>
+#import <RunningBoard/RBPowerAssertionManagerDelegate-Protocol.h>
 #import <RunningBoard/RBProcessManagerDelegate-Protocol.h>
 
 @class NSString, RBAssertionDescriptorValidator, RBAssertionManager, RBAssertionOriginatorPidStore, RBBundlePropertiesManager, RBConnectionListener, RBDomainAttributeManager, RBEntitlementManager, RBJetsamBandProvider, RBPowerAssertionManager, RBProcessManager, RBProcessMonitor, RBProcessReconnectManager, RBStateCaptureManager, RBThrottleBestEffortNetworkingManager;
 
-@interface RBDaemon : NSObject <RBAssertionManagerDelegate, RBProcessManagerDelegate, RBBundlePropertiesManagerDelegate>
+@interface RBDaemon : NSObject <RBAssertionManagerDelegate, RBProcessManagerDelegate, RBBundlePropertiesManagerDelegate, RBPowerAssertionManagerDelegate>
 {
     RBAssertionDescriptorValidator *_assertionDescriptorValidator;
     RBAssertionManager *_assertionManager;
@@ -35,12 +36,15 @@
 - (void).cxx_destruct;
 - (id)_reconnectOriginatorProcess;
 - (void)_start;
+- (void)emitAssertionSignpostForLegacyReason:(id)arg1;
 - (void)watchdogRegister;
 - (id)_init;
 - (void)bundlePropertiesManager:(id)arg1 didChangePropertiesForProcessIdentities:(id)arg2;
 - (void)processManager:(id)arg1 didRemoveProcess:(id)arg2;
 - (void)processManager:(id)arg1 didAddProcess:(id)arg2;
 - (void)processManager:(id)arg1 didReconnectProcesses:(id)arg2;
+- (void)powerAssertionManagerDidPreventIdleSleep:(id)arg1;
+- (void)powerAssertionManagerDidAllowIdleSleep:(id)arg1;
 - (void)assertionManager:(id)arg1 didRejectAcquisitionFromOriginatorWithExcessiveAssertions:(id)arg2;
 - (void)assertionManager:(id)arg1 didEndTrackingInFightUpdatesForProcessIdentity:(id)arg2;
 - (void)assertionManager:(id)arg1 didBeginTrackingInFightUpdatesForProcessIdentity:(id)arg2;

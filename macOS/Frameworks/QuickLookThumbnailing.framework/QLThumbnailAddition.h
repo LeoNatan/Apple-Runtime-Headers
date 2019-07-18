@@ -21,7 +21,6 @@
 + (BOOL)associateThumbnailsForDocumentAtURL:(id)arg1 withImmutableDocument:(BOOL)arg2 atURL:(id)arg3 error:(id *)arg4;
 + (BOOL)associateThumbnailsForDocumentAtURL:(id)arg1 withDocumentAtURL:(id)arg2 error:(id *)arg3;
 + (BOOL)setThumbnailsDictionary:(id)arg1 forURL:(id)arg2 error:(id *)arg3;
-+ (void)downloadOrGenerateThumbnailAtPhysicalURL:(id)arg1;
 + (void)downloadOrGenerateThumbnailAtTaggedURL:(id)arg1;
 + (void)downloadOrGenerateThumbnailAtURL:(id)arg1;
 + (id)thumbnailsDictionaryForURL:(id)arg1 error:(id *)arg2;

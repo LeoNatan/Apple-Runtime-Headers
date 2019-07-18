@@ -8,18 +8,23 @@
 
 #import <iCloudDrive/ICDBRProgressProxyDelegate-Protocol.h>
 
-@class NSString;
+@class NSArray, NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface ICDBRGlobalProgressProxy : ICDBRProgressProxy <ICDBRProgressProxyDelegate>
 {
-    NSString *_kind;
+    NSArray *_kinds;
+    NSMutableArray *_proxiedProgresses;
 }
 
+@property(retain, nonatomic) NSMutableArray *proxiedProgresses; // @synthesize proxiedProgresses=_proxiedProgresses;
 - (void).cxx_destruct;
 - (id)progressProxy:(id)arg1 localizedDescriptionForProgress:(id)arg2;
 - (_Bool)progressProxy:(id)arg1 shouldProxyProgress:(id)arg2;
-- (id)initWithGlobalProgressKind:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)stopProxyingProgress:(id)arg1;
+- (void)startProxyingProgress:(id)arg1;
+- (id)initWithGlobalProgressKinds:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

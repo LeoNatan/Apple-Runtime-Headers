@@ -25,9 +25,9 @@
 + (struct CGPoint)_perceivedAnchorPoint;
 + (id)_shadowImage;
 + (id)_reuseIdentifier;
-+ (id)_pinsWithMapType:(unsigned long long)arg1 mapDisplayStyle:(CDStruct_80aa614a)arg2 pinColor:(id)arg3 traits:(id)arg4;
++ (id)_pinsWithMapType:(unsigned long long)arg1 pinColor:(id)arg2 traits:(id)arg3;
 + (id)_imageCache;
-+ (id)_imageForState:(long long)arg1 mapType:(unsigned long long)arg2 displayStyle:(unsigned long long)arg3 pinColor:(id)arg4 traits:(id)arg5;
++ (id)_imageForState:(long long)arg1 mapType:(unsigned long long)arg2 pinColor:(id)arg3 traits:(id)arg4;
 + (id)_imageForLayer:(long long)arg1 state:(long long)arg2 mapType:(unsigned long long)arg3 traits:(id)arg4;
 + (id)_dropBounceAnimation;
 + (id)_bounceAnimation;
@@ -47,15 +47,12 @@
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)_liftDidEnd:(id)arg1;
-- (void)_liftBeforeDropDidEnd:(id)arg1;
-- (void)_dropAfterDraggingDidEnd:(id)arg1;
 - (void)_liftForDraggingAfterBounceAnimated:(_Bool)arg1;
 - (void)_liftForDraggingAnimated:(_Bool)arg1;
 - (void)setDragState:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (void)_dropAfterDraggingAndRevertPosition:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_dropFromDistance:(double)arg1 maxDistance:(double)arg2 withDelay:(double)arg3;
 - (id)_bounceAnimation:(_Bool)arg1 withDelay:(double)arg2 addToLayer:(_Bool)arg3;
-- (void)_stopDropAnimationAndDropToPosition;
 - (void)_cleanupAfterPinDropAnimation;
 - (void)_stopDrop;
 - (void)_removeAllAnimations;
@@ -72,7 +69,6 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)_pins;
 - (id)description;
-- (void)_setMapDisplayStyle:(CDStruct_80aa614a)arg1;
 - (void)_setMapType:(unsigned long long)arg1;
 - (struct UIEdgeInsets)_defaultCollisionAlignmentRectInsets;
 - (struct CGRect)_significantBounds;

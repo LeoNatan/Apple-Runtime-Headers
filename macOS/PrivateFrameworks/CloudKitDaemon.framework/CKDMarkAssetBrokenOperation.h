@@ -6,12 +6,13 @@
 
 #import <CloudKitDaemon/CKDDatabaseOperation.h>
 
-@class CKDFetchRecordsOperation, CKDMarkAssetBrokenURLRequestWrapperOperation, CKDModifyRecordZonesOperation, CKDModifyRecordsOperation, CKRecord, CKRecordID, CKUploadRequestConfiguration, NSError, NSString;
+@class CKDFetchRecordZonesOperation, CKDFetchRecordsOperation, CKDMarkAssetBrokenURLRequestWrapperOperation, CKDModifyRecordZonesOperation, CKDModifyRecordsOperation, CKRecord, CKRecordID, CKRecordZone, CKUploadRequestConfiguration, NSError, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CKDMarkAssetBrokenOperation : CKDDatabaseOperation
 {
     BOOL _touchRepairZone;
+    BOOL _bypassPCSEncryptionForTouchRepairZone;
     BOOL _simulateCorruptAsset;
     BOOL _writeRepairRecord;
     CDUnknownBlockType _assetOrPackageMarkedBrokenBlock;
@@ -20,9 +21,11 @@ __attribute__((visibility("hidden")))
     NSString *_field;
     long long _listIndex;
     CKDFetchRecordsOperation *_fetchOperation;
-    CKDModifyRecordZonesOperation *_zoneOperation;
+    CKDFetchRecordZonesOperation *_zoneFetchOperation;
+    CKDModifyRecordZonesOperation *_zoneCreateOperation;
     CKDModifyRecordsOperation *_corruptOperation;
     CKDMarkAssetBrokenURLRequestWrapperOperation *_wrapperOperation;
+    CKRecordZone *_repairZone;
     CKRecord *_record;
     unsigned long long _numMarkAssetBrokenFailures;
     NSError *_markAssetBrokenError;
@@ -31,15 +34,18 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSError *markAssetBrokenError; // @synthesize markAssetBrokenError=_markAssetBrokenError;
 @property(nonatomic) unsigned long long numMarkAssetBrokenFailures; // @synthesize numMarkAssetBrokenFailures=_numMarkAssetBrokenFailures;
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
+@property(retain, nonatomic) CKRecordZone *repairZone; // @synthesize repairZone=_repairZone;
 @property(retain, nonatomic) CKDMarkAssetBrokenURLRequestWrapperOperation *wrapperOperation; // @synthesize wrapperOperation=_wrapperOperation;
 @property(retain, nonatomic) CKDModifyRecordsOperation *corruptOperation; // @synthesize corruptOperation=_corruptOperation;
-@property(retain, nonatomic) CKDModifyRecordZonesOperation *zoneOperation; // @synthesize zoneOperation=_zoneOperation;
+@property(retain, nonatomic) CKDModifyRecordZonesOperation *zoneCreateOperation; // @synthesize zoneCreateOperation=_zoneCreateOperation;
+@property(retain, nonatomic) CKDFetchRecordZonesOperation *zoneFetchOperation; // @synthesize zoneFetchOperation=_zoneFetchOperation;
 @property(retain, nonatomic) CKDFetchRecordsOperation *fetchOperation; // @synthesize fetchOperation=_fetchOperation;
 @property(nonatomic) long long listIndex; // @synthesize listIndex=_listIndex;
 @property(retain, nonatomic) NSString *field; // @synthesize field=_field;
 @property(retain, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(nonatomic) BOOL writeRepairRecord; // @synthesize writeRepairRecord=_writeRepairRecord;
 @property(nonatomic) BOOL simulateCorruptAsset; // @synthesize simulateCorruptAsset=_simulateCorruptAsset;
+@property(nonatomic) BOOL bypassPCSEncryptionForTouchRepairZone; // @synthesize bypassPCSEncryptionForTouchRepairZone=_bypassPCSEncryptionForTouchRepairZone;
 @property(nonatomic) BOOL touchRepairZone; // @synthesize touchRepairZone=_touchRepairZone;
 @property(retain, nonatomic) CKUploadRequestConfiguration *uploadRequestConfiguration; // @synthesize uploadRequestConfiguration=_uploadRequestConfiguration;
 @property(copy, nonatomic) CDUnknownBlockType assetOrPackageMarkedBrokenBlock; // @synthesize assetOrPackageMarkedBrokenBlock=_assetOrPackageMarkedBrokenBlock;
@@ -51,7 +57,8 @@ __attribute__((visibility("hidden")))
 - (id)repairContext;
 - (void)_markAssetBroken;
 - (void)_breakAsset;
-- (void)_touchRepairZone;
+- (void)_touchCreateRepairZone;
+- (void)_touchFetchRepairZone;
 - (void)_fetchRecord;
 - (id)nameForState:(unsigned long long)arg1;
 - (BOOL)makeStateTransition;

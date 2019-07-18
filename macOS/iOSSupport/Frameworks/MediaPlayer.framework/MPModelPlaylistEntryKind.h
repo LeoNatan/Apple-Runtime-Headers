@@ -15,10 +15,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)kindWithKinds:(id)arg1;
++ (id)identityKind;
 @property(readonly, nonatomic) NSArray *kinds; // @synthesize kinds=_kinds;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)humanDescription;
 
 @end

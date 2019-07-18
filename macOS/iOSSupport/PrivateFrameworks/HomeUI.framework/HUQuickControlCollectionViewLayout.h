@@ -14,12 +14,14 @@
     HUQuickControlGridLayoutManager *_layoutManager;
     NSLayoutConstraint *_heightConstraint;
     NSMutableDictionary *_cachedLayoutAttributesByIndexPath;
+    NSMutableDictionary *_cachedSectionHeaderLayoutAttributes;
     HUQuickControlCollectionViewLayoutInfo *_layoutInfo;
     struct UIEdgeInsets _contentInset;
 }
 
 + (Class)layoutAttributesClass;
 @property(retain, nonatomic) HUQuickControlCollectionViewLayoutInfo *layoutInfo; // @synthesize layoutInfo=_layoutInfo;
+@property(readonly, nonatomic) NSMutableDictionary *cachedSectionHeaderLayoutAttributes; // @synthesize cachedSectionHeaderLayoutAttributes=_cachedSectionHeaderLayoutAttributes;
 @property(readonly, nonatomic) NSMutableDictionary *cachedLayoutAttributesByIndexPath; // @synthesize cachedLayoutAttributesByIndexPath=_cachedLayoutAttributesByIndexPath;
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain, nonatomic) HUQuickControlGridLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
@@ -34,6 +36,7 @@
 - (id)_intrinsicSizeDescriptorForItemAtIndexPath:(id)arg1 itemSize:(unsigned long long)arg2;
 - (id)delegate;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
+- (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (void)prepareLayout;

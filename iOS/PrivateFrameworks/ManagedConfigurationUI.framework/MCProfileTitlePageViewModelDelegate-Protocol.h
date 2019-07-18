@@ -9,7 +9,7 @@
 @class AKAppleIDAuthenticationInAppContext, MCProfileConnection, NSArray, NSError;
 
 @protocol MCProfileTitlePageViewModelDelegate <NSObject>
-- (void)installationFinishedShouldDismiss:(_Bool)arg1 shouldRedirect:(_Bool)arg2 errorToDisplay:(NSError *)arg3;
+- (void)installationFinishedSuccessfully:(_Bool)arg1 shouldDismiss:(_Bool)arg2 shouldRedirect:(_Bool)arg3 errorToDisplay:(NSError *)arg4;
 - (void)setUserInteractionEnabled:(_Bool)arg1;
 - (void)presentSpinnerViewController;
 - (void)presentAuthenticationViewControllerWithContext:(AKAppleIDAuthenticationInAppContext *)arg1 authenticationPreparationHandler:(void (^)(void (^)(void)))arg2 authenticationCompletionHandler:(void (^)(NSMutableDictionary *, NSError *, _Bool))arg3;

@@ -6,9 +6,11 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class CKOperationGroup, HMBProcessingOptions, HMFActivity, NAPromise, NSDate;
+#import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@interface HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper : HMFObject
+@class CKOperationGroup, HMBProcessingOptions, HMFActivity, NAPromise, NSDate, NSString;
+
+@interface HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper : HMFObject <HMFLogging>
 {
     NAPromise *_promise;
     BOOL _finished;
@@ -23,6 +25,7 @@
 + (unsigned long long)maxOperationDurationSeconds;
 + (unsigned long long)maxRetryCount;
 + (unsigned long long)__integerForPreferenceKey:(id)arg1 defaultValue:(unsigned long long)arg2;
++ (id)logCategory;
 @property(readonly, nonatomic) BOOL finished; // @synthesize finished=_finished;
 @property(retain, nonatomic) NSDate *operationStartTime; // @synthesize operationStartTime=_operationStartTime;
 @property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
@@ -37,6 +40,12 @@
 @property(nonatomic) BOOL shouldRetry;
 - (void)dealloc;
 - (id)initWithActivity:(id)arg1 options:(id)arg2 container:(id)arg3 useAnonymousRequests:(BOOL)arg4 promise:(id)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -67,7 +67,7 @@ __attribute__((visibility("hidden")))
 - (id)_customScheduleTime:(id)arg1;
 - (id)_simpleEndTime:(id)arg1;
 - (id)_simpleStartTime:(id)arg1;
-- (void)showPickerSpecifierForSpecifier:(id)arg1;
+- (void)_showOrHidePickerSpecifierForSpecifier:(id)arg1;
 - (id)deviceBedtimeEnabled:(id)arg1;
 - (void)setDeviceBedtimeEnabled:(id)arg1 specifier:(id)arg2;
 - (void)_didEndEditingDailySchedule:(id)arg1;

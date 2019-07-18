@@ -21,8 +21,10 @@
 - (void)setSeparatorDrawsFlushWithLeadingEdge:(_Bool)arg1;
 - (void)updateConstraints;
 - (id)_constraintsForEdges:(unsigned long long)arg1 banner:(id)arg2 useLayoutMarginsGuide:(_Bool)arg3;
-- (void)dealloc;
+- (void)willMoveToSuperview:(id)arg1;
+- (void)commonInitWithBanner:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 banner:(id)arg2;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

@@ -16,6 +16,7 @@
 - (id)_absoluteString;
 - (id)_stringByInsertingBomPathPrefix;
 - (id)_stringByDeletingVolumePath;
+- (BOOL)_pathIsOnSameVolumeGivenDestinationPath:(id)arg1 requiringPathPrefixedWithDestinationPath:(BOOL)arg2;
 - (id)_systemVolumePath;
 - (id)_dataVolumePath;
 - (id)_volumePath;

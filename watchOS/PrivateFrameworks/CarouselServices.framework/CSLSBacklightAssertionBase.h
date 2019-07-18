@@ -26,7 +26,10 @@
 - (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) double secondsSinceTaken;
+- (void)_releaseAssertionCompletion:(CDUnknownBlockType)arg1 logAction:(const char *)arg2 logIfNotAsserted:(_Bool)arg3;
+- (void)releaseAssertionCompletion:(CDUnknownBlockType)arg1;
 - (void)releaseAssertion;
+- (void)takeAssertionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)takeAssertion;
 @property(readonly, nonatomic, getter=isAsserted) _Bool asserted;
 - (void)dealloc;

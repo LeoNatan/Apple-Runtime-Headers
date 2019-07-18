@@ -12,7 +12,7 @@
 #import <MapKit/UITableViewDelegate-Protocol.h>
 #import <MapKit/_MKTransitConnectionCellDelegate-Protocol.h>
 
-@class MKArtworkDataSourceCache, MKMapItem, MKTransitDeparturesDataProvider, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, UITableView;
+@class MKArtworkDataSourceCache, MKMapItem, MKTransitDeparturesDataProvider, NSMapTable, NSMutableDictionary, NSString, UITableView;
 @protocol MKTransitDeparturesDataSourceHosting, _MKInfoCardAnalyticsDelegate;
 
 @interface MKTransitDeparturesDataSource : NSObject <_MKTransitConnectionCellDelegate, MKTransitDeparturesCellDelegate, MKTransitDeparturesDataProviderDelegate, UITableViewDelegate, UITableViewDataSource>
@@ -26,7 +26,7 @@
     struct CGSize _newSize;
     _Bool _animatingRowInsertion;
     struct CGRect _lastMaxWidthBounds;
-    NSMutableArray *_shownIncidentTitles;
+    _Bool _showingIncidents;
     _Bool _limitInteraction;
     _Bool _allowTransitLineSelection;
     _Bool _supportSystemSectionCollapsing;
@@ -50,7 +50,8 @@
 - (int)transitCategoryForFrequencyType:(long long)arg1;
 - (int)_transitCategoryForSection:(long long)arg1;
 - (int)currentTransitCategory;
-- (void)recordIncidentShown:(id)arg1 system:(id)arg2;
+- (id)possibleActions;
+- (void)recordIncidentsShowing:(_Bool)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
@@ -79,7 +80,7 @@
 - (id)_departureSequenceForIndexPath:(id)arg1;
 - (id)_indexPathWithHeader:(id)arg1;
 - (id)_indexPathWithoutHeader:(id)arg1;
-- (void)_incidentDetailsButtonSelected;
+- (void)_showIncidentDetails;
 - (id)_incidentCellForRow:(long long)arg1 inSection:(long long)arg2;
 - (void)infoButtonSelectedInConnectionCell:(id)arg1;
 - (id)_connectionCellForRow:(long long)arg1;

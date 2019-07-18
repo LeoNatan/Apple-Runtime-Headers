@@ -24,6 +24,7 @@
     NSObject<OS_dispatch_queue> *_metricsQueue;
 }
 
++ (id)privacyLinkIdentifiersFromController:(id)arg1;
 @property(nonatomic) BOOL viewHasAppeared; // @synthesize viewHasAppeared=_viewHasAppeared;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *metricsQueue; // @synthesize metricsQueue=_metricsQueue;
 @property(retain, nonatomic) NSString *primaryButtonText; // @synthesize primaryButtonText=_primaryButtonText;
@@ -44,7 +45,7 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)commonSetupWithPrimaryButtonText:(id)arg1 privacyLinkBundleIdentifier:(id)arg2;
+- (void)commonSetupWithPrimaryButtonText:(id)arg1 privacyLinkBundleIdentifiers:(id)arg2;
 - (id)initWithTitleText:(id)arg1 features:(id)arg2 primaryButtonText:(id)arg3 privacyLinkBundleIdentifier:(id)arg4;
 - (id)initWithHeaderImage:(id)arg1 titleText:(id)arg2 descriptionText:(id)arg3 primaryButtonText:(id)arg4 privacyLinkBundleIdentifier:(id)arg5;
 - (id)initWithTitleText:(id)arg1 features:(id)arg2 primaryButtonText:(id)arg3 privacyLinkController:(id)arg4;

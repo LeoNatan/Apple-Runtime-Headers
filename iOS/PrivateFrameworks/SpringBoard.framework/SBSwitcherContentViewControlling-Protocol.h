@@ -11,12 +11,14 @@
 @protocol SBSwitcherContentViewControllerDataSource, SBSwitcherContentViewControllerDelegate;
 
 @protocol SBSwitcherContentViewControlling <SBLayoutStateTransitionObserver, SBSwitcherAnimatedTransitioning>
+@property(nonatomic, getter=isAsynchronousRenderingDisabled) _Bool asynchronousRenderingDisabled;
 @property(nonatomic) long long contentOrientation;
 @property(nonatomic, getter=isShowingModifierTimeline) _Bool showModifierTimeline;
 @property(retain, nonatomic) SBBestAppSuggestion *bestAppSuggestion;
 @property(nonatomic) __weak id <SBSwitcherContentViewControllerDataSource> dataSource;
 @property(nonatomic) __weak id <SBSwitcherContentViewControllerDelegate> delegate;
-- (void)enterAppExposeForBundleID:(NSString *)arg1;
+- (void)noteKeyboardFocusDidChangeToSceneID:(NSString *)arg1;
+- (SBSwitcherModifierAction *)enterAppExposeForBundleID:(NSString *)arg1;
 - (SBUIAnimationController *)animationControllerForTransitionRequest:(SBMainWorkspaceTransitionRequest *)arg1;
 - (void)relinquishTransientOverlayViewController:(SBTransientOverlayViewController *)arg1;
 - (void)acquiredViewController:(SBTransientOverlayViewController *)arg1 forTransientOverlayAppLayout:(SBAppLayout *)arg2;
@@ -29,6 +31,7 @@
 - (void)insertAppLayout:(SBAppLayout *)arg1 atIndex:(unsigned long long)arg2 modelMutationBlock:(void (^)(void))arg3 completion:(void (^)(_Bool, SBAppLayout *, SBAppLayout *))arg4;
 - (_Bool)isStatusBarHiddenForAppLayout:(SBAppLayout *)arg1;
 - (void)respondToInAppStatusBarRequestedHiddenUpdate;
+- (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)shouldAcceleratedHomeButtonPressBegin;
 - (_Bool)isUserInteractionEnabled;
 - (_Bool)isWindowVisible;

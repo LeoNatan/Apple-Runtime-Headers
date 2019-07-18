@@ -6,10 +6,9 @@
 
 #import <SiriActivation/NSObject-Protocol.h>
 
-@class NSString, SASActivationRequest, SASRequestOptions, SASRequestOptionsBuilder;
+@class SASActivationRequest, SASRequestOptions, SASRequestOptionsBuilder;
 
 @protocol SASRequestOptionsBuilderDataSourceForTesting <NSObject>
 - (SASRequestOptions *)requestOptionsBuilder:(SASRequestOptionsBuilder *)arg1 optionsForOverriding:(SASRequestOptions *)arg2 withActiviation:(SASActivationRequest *)arg3;
-- (NSString *)requestOptionsBuilder:(SASRequestOptionsBuilder *)arg1 overriddenPresentationIdentifierForCurrentPresentationIdentifier:(long long)arg2 withActivation:(SASActivationRequest *)arg3;
 @end
 

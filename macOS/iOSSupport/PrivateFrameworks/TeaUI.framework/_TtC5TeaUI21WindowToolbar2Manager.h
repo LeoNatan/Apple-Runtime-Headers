@@ -8,6 +8,7 @@
 
 @interface _TtC5TeaUI21WindowToolbar2Manager : NSObject
 {
+    // Error parsing type: , name: _toolbarEnabled
     // Error parsing type: , name: $__lazy_storage_$_toolbarDelegate
     // Error parsing type: , name: $__lazy_storage_$_toolbar
     // Error parsing type: , name: layouts

@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: force
     // Error parsing type: , name: velocity
+    // Error parsing type: , name: updateSubscription
 }
 
 - (id)copyWithZone:(void *)arg1;

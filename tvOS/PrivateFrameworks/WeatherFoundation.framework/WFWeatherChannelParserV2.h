@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)parseHourlyForecasts:(id)arg1 date:(id)arg2;
 - (id)parseDailyForecasts:(id)arg1 date:(id)arg2;
 - (unsigned long long)_pressureTrendFromWeatherChannelCode:(id)arg1;
+- (id)parseForecastData:(id)arg1 types:(unsigned long long)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6 rules:(id)arg7;
 - (id)parseForecastData:(id)arg1 types:(unsigned long long)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6;
 - (id)init;
 

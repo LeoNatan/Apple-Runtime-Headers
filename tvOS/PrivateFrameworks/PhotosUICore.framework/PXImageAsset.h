@@ -24,6 +24,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (long long)isContentEqualTo:(id)arg1;
 @property(readonly, nonatomic) Class defaultImageProviderClass;
+@property(readonly, nonatomic) unsigned long long thumbnailIndex;
+@property(readonly, nonatomic) _Bool isEligibleForAutoPlayback;
 @property(readonly, nonatomic) _Bool isInCloud;
 @property(readonly, nonatomic) _Bool representsBurst;
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite;
@@ -40,7 +42,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) double duration;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) float hdrGain;
+@property(readonly, nonatomic) double hdrGain;
 @property(readonly, nonatomic) NSDate *importDate;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly, nonatomic) long long playbackStyle;

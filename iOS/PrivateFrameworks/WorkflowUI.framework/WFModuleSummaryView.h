@@ -6,7 +6,6 @@
 
 #import <UIKit/UIView.h>
 
-#import <WorkflowUI/WFComponentEditingSession-Protocol.h>
 #import <WorkflowUI/WFModuleSummaryEditorDelegate-Protocol.h>
 #import <WorkflowUI/WFSlotTemplateViewDelegate-Protocol.h>
 #import <WorkflowUI/WFVariableDelegate-Protocol.h>
@@ -14,7 +13,7 @@
 @class NSDictionary, NSHashTable, NSMutableDictionary, NSSet, NSString, UIFont, WFModuleSummaryEditor, WFModuleSummaryTemplateBuilder, WFSlotIdentifier, WFSlotTemplateView, WFVariable;
 @protocol WFModuleSummaryViewDelegate, WFVariableProvider, WFVariableUIDelegate;
 
-@interface WFModuleSummaryView : UIView <WFComponentEditingSession, WFSlotTemplateViewDelegate, WFModuleSummaryEditorDelegate, WFVariableDelegate>
+@interface WFModuleSummaryView : UIView <WFSlotTemplateViewDelegate, WFModuleSummaryEditorDelegate, WFVariableDelegate>
 {
     _Bool _processing;
     NSString *_summaryFormatString;
@@ -65,6 +64,7 @@
 - (void)summaryEditorDidFinish:(id)arg1 returnToKeyboard:(_Bool)arg2;
 - (void)summaryEditorDidRequestTextEntry:(id)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)startEditingForParameterKey:(id)arg1;
 - (void)destroyCurrentEditor;
 - (void)removeElementFromArrayAtIndex:(unsigned long long)arg1 forParameterKey:(id)arg2;
 - (id)addElementToArrayForParameterKey:(id)arg1;
@@ -81,7 +81,7 @@
 - (void)slotTemplateView:(id)arg1 willBeginTypingInSlotWithIdentifier:(id)arg2 usingTextEntry:(id)arg3 allowMultipleLines:(_Bool *)arg4;
 - (void)slotTemplateView:(id)arg1 didTapTextAttachment:(id)arg2 inSlotWithIdentifier:(id)arg3;
 - (_Bool)slotTemplateView:(id)arg1 shouldTapTextAttachment:(id)arg2 inSlotWithIdentifier:(id)arg3;
-- (void)slotTemplateView:(id)arg1 didLongPressSlotWithIdentifier:(id)arg2 sourceRect:(struct CGRect)arg3;
+- (void)slotTemplateView:(id)arg1 didLongPressSlotWithIdentifier:(id)arg2 sourceRect:(struct CGRect)arg3 textAttachmentToSelect:(id)arg4;
 - (_Bool)slotTemplateView:(id)arg1 shouldLongPressSlotWithIdentifier:(id)arg2;
 - (void)slotTemplateView:(id)arg1 didDeselectSlotWithIdentifier:(id)arg2;
 - (void)slotTemplateView:(id)arg1 didSelectSlotWithIdentifier:(id)arg2 sourceRect:(struct CGRect)arg3;

@@ -12,19 +12,24 @@
 {
     NSUndoManager *_undoManager;
     NSUserDefaults *_userDefaults;
+    NSUserDefaults *_globalUserDefaults;
     VSDevice *_device;
 }
 
 @property(retain, nonatomic) VSDevice *device; // @synthesize device=_device;
+@property(retain, nonatomic) NSUserDefaults *globalUserDefaults; // @synthesize globalUserDefaults=_globalUserDefaults;
 @property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
 - (void).cxx_destruct;
+- (BOOL)ignoreSetTopBoxProfile;
+- (void)setIgnoreSetTopBoxProfile:(BOOL)arg1;
 - (id)setTopBoxInfoBundleIdentifierOverride;
 - (id)setTopBoxInfoAppAdamIdOverride;
 - (id)setTopBoxInfoProviderDisplayNameOverride;
 - (id)setTopBoxInfoProviderIdOverride;
 - (BOOL)setTopBoxInfoIsSetTopBoxOverride;
 - (void)noteIsInSTBMode:(BOOL)arg1;
+- (BOOL)allowInsecureAuthContext;
 - (BOOL)shouldIgnoreExtendedValidation;
 - (BOOL)isInSTBMode;
 - (void)noteDesiredApp:(id)arg1;

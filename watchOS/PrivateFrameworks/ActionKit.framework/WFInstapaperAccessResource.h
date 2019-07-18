@@ -18,7 +18,6 @@
 - (_Bool)canLogOut;
 - (id)username;
 - (id)resourceName;
-- (void)makeAvailableAtGlobalLevelWithUserInterface:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned int)globalLevelStatus;
 - (id)protectedResourceDescription;
 - (id)associatedAppIdentifier;

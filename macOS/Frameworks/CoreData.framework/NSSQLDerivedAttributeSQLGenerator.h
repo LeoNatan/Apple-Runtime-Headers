@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 + (id)_computeNewColumnTokenForKeypathExpression:(id)arg1 governingEntity:(id)arg2;
 + (id)_generateTriggerForAttribute:(id)arg1 newToken:(id)arg2 triggerColumnListComponent:(id)arg3 triggerColumnWhereComponent:(id)arg4;
 + (id)_generateIncrementDecrementTriggersForDerivedAttribute:(id)arg1 toManyKeypath:(id)arg2;
++ (id)_generateMinMaxTriggersForDerivedAttribute:(id)arg1 toManyKeypath:(id)arg2;
 + (id)_generateSQLForToOneDerivationForDerivedAttribute:(id)arg1 toOneKeypath:(id)arg2;
 + (id)_parameterPropertyTokenForDerivedAttribute:(id)arg1 andKeypath:(id)arg2 onEntity:(id)arg3;
 + (id)_generateIncrementDecrementTriggersForDerivedAttribute:(id)arg1 manyToManyKeypath:(id)arg2;

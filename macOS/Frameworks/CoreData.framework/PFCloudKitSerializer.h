@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
 - (void)updateAttributes:(id)arg1 andRelationships:(id)arg2 onManagedObject:(id)arg3 fromRecord:(id)arg4 withRecordMetadata:(id)arg5 importContext:(id)arg6;
 - (BOOL)applyUpdatedRecords:(id)arg1 deletedRecordIDs:(id)arg2 toStore:(id)arg3 inManagedObjectContext:(id)arg4 onlyUpdatingAttributes:(id)arg5 andRelationships:(id)arg6 error:(id *)arg7;
 - (BOOL)applyUpdatedRecords:(id)arg1 deletedRecordIDs:(id)arg2 toStore:(id)arg3 inManagedObjectContext:(id)arg4 error:(id *)arg5;
+- (id)newCKRecordsFromObject:(id)arg1 fullyMaterializeRecords:(BOOL)arg2 includeRelationships:(BOOL)arg3 error:(id *)arg4;
 - (id)newCKRecordsFromObject:(id)arg1 fullyMaterializeRecords:(BOOL)arg2 error:(id *)arg3;
 - (void)addURLToWrittenAssetURLs:(id)arg1;
 @property(readonly, nonatomic) NSArray *writtenAssetURLs;

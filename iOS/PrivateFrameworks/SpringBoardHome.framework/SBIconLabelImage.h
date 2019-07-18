@@ -11,7 +11,7 @@
 @interface SBIconLabelImage : UIImage
 {
     SBIconLabelImageParameters *_parameters;
-    struct CGPoint _maxSizeOffset;
+    struct UIEdgeInsets _alignmentRectInsets;
     double _baselineOffsetFromBottom;
     UIImage *_legibilityImage;
 }
@@ -20,21 +20,16 @@
 + (double)legibilityStrengthForLegibilityStyle:(long long)arg1;
 + (id)legibilityImageForIconLabelImage:(id)arg1 parameters:(id)arg2 pool:(id)arg3;
 + (struct CGSize)_maxLegibilityImageSizeForLabelSize:(struct CGSize)arg1;
-+ (id)imageWithParameters:(id)arg1 pool:(id)arg2 legibilityPool:(id)arg3;
 + (id)imageWithParameters:(id)arg1;
-+ (void)drawImageInRect:(struct CGRect)arg1 fromParameters:(id)arg2;
-+ (struct SBIconLabelImageMetrics)metricsFromParameters:(id)arg1 constrainedToRect:(struct CGRect)arg2;
-+ (void)applyKerning:(double)arg1 whitespaceKerning:(double)arg2 toAttributedString:(id)arg3;
-+ (_Bool)attributedText:(id)arg1 fitsInRect:(struct CGRect)arg2 textRect:(out struct CGRect *)arg3;
-+ (struct SBIconLabelImageMetrics)_metricsWithDrawing:(_Bool)arg1 inRect:(struct CGRect)arg2 fromParameters:(id)arg3;
++ (id)imageWithParameters:(id)arg1 pool:(id)arg2 legibilityPool:(id)arg3;
 @property(retain, nonatomic) UIImage *legibilityImage; // @synthesize legibilityImage=_legibilityImage;
-@property(readonly, nonatomic) struct CGPoint maxSizeOffset; // @synthesize maxSizeOffset=_maxSizeOffset;
 @property(readonly, copy, nonatomic) SBIconLabelImageParameters *parameters; // @synthesize parameters=_parameters;
 - (void).cxx_destruct;
 - (id)description;
 - (double)baselineOffsetFromBottom;
+- (struct UIEdgeInsets)alignmentRectInsets;
 - (_Bool)hasBaseline;
-- (id)_initWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 orientation:(long long)arg3 parameters:(id)arg4 maxSizeOffset:(struct CGPoint)arg5 baselineOffsetFromBottom:(double)arg6;
+- (id)_initWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 orientation:(long long)arg3 parameters:(id)arg4 alignmentRectInsets:(struct UIEdgeInsets)arg5 baselineOffsetFromBottom:(double)arg6;
 
 @end
 

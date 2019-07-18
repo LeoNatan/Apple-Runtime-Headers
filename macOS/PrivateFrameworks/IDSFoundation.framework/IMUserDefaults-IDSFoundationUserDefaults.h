@@ -7,5 +7,6 @@
 #import <IMFoundation/IMUserDefaults.h>
 
 @interface IMUserDefaults (IDSFoundationUserDefaults)
++ (BOOL)inIDSPrototypeMode;
 @end
 

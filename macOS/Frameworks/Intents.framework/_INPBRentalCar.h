@@ -15,6 +15,7 @@
 @interface _INPBRentalCar : PBCodable <_INPBRentalCar, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSString *_make;
     NSString *_model;
     NSString *_rentalCarDescription;
@@ -23,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *rentalCompanyName; // @synthesize rentalCompanyName=_rentalCompanyName;
 @property(copy, nonatomic) NSString *rentalCarDescription; // @synthesize rentalCarDescription=_rentalCarDescription;

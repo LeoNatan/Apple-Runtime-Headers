@@ -11,7 +11,7 @@
 #import <MapKit/VKMapViewCameraDelegate-Protocol.h>
 #import <MapKit/VKMapViewDelegate-Protocol.h>
 
-@class GEOMuninViewState, GEOStorefrontView, MKMapItem, MKMuninGestureController, NSArray, NSDate, NSLayoutConstraint, NSString, UIImageView, VKLabelMarker, VKMapView, VKMuninMarker, _MKCustomFeatureStore, _MKMuninLayerHostingView;
+@class GEOMuninViewState, GEOStorefrontView, MKMapItem, MKMuninGestureController, NSArray, NSDate, NSLayoutConstraint, NSString, NSURL, UIImageView, UITapGestureRecognizer, VKLabelMarker, VKMapView, VKMuninMarker, _MKCustomFeatureStore, _MKMuninLayerHostingView;
 @protocol MKMapServiceTicket, MKMuninViewDelegate;
 
 @interface MKMuninView : UIView <MKMuninGestureControllerDelegate, VKMapViewCameraDelegate, VKMapViewDelegate, NSCoding>
@@ -23,6 +23,7 @@
     UIImageView *_compassView;
     NSLayoutConstraint *_compassTopConstraint;
     NSLayoutConstraint *_compassTrailingConstraint;
+    UITapGestureRecognizer *_compassTapGestureRecognizer;
     MKMuninGestureController *_gestureController;
     VKMapView *_muninView;
     struct CLLocationCoordinate2D _lastCoordinate;
@@ -37,8 +38,11 @@
     _Bool _moveToStorefrontViewInProgress;
     _Bool _didTriggerAdequatelyDrawnNotification;
     MKMapItem *_mapItem;
+    MKMapItem *_revGeoMapItem;
     GEOStorefrontView *_requestedStorefrontView;
     _MKCustomFeatureStore *_customFeatureStore;
+    NSDate *_startTime;
+    int _triggerAction;
     _Bool _hasEnteredMunin;
     _Bool _navigatingEnabled;
     _Bool _panningEnabled;
@@ -70,17 +74,23 @@
 - (void)_refineLabelMarker:(id)arg1;
 - (_Bool)_pointContainedInCompassView:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)_locationInfoWithHeading:(double)arg1;
+- (void)_handleCompassTap;
 - (void)mapLayerDidChangeSceneState:(id)arg1 withState:(unsigned long long)arg2;
 - (void)mapLayerWasUnableToAnimate;
 - (void)mapLayerWillAnimateToLocation:(CDStruct_c3b9c2ee)arg1;
 - (void)mapLayer:(id)arg1 nearestJunctionDidChange:(id)arg2 currentRoad:(id)arg3;
 - (void)mapLayerDidChangeRegionAnimated:(_Bool)arg1;
 - (void)mapLayerDidChangeVisibleRegion;
+- (void)muninGestureControllerDidPan:(id)arg1;
+- (void)muninGestureController:(id)arg1 didZoomWithDirection:(long long)arg2 type:(long long)arg3;
+- (void)muninGestureController:(id)arg1 didTapAtPoint:(struct CGPoint)arg2 areaAvailable:(_Bool)arg3;
+- (void)muninGestureController:(id)arg1 didTapLabelMarker:(id)arg2;
 - (void)muninGestureControllerDidStopUserInteraction:(id)arg1;
 - (void)muninGestureControllerDidStartUserInteraction:(id)arg1;
 - (void)removeCustomFeatureDataSource:(id)arg1;
 - (void)addCustomFeatureDataSource:(id)arg1;
 - (id)labelMarkerForCustomFeatureAnnotation:(id)arg1;
+- (void)recordTriggerAction:(int)arg1;
 - (void)deselectLabelMarker;
 - (void)selectLabelMarker:(id)arg1;
 - (void)moveToStandOffUpViewAnimated:(_Bool)arg1;
@@ -89,6 +99,7 @@
 - (void)moveToCloseUpView;
 - (_Bool)_moveToStorefrontView:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)moveToMapItem:(id)arg1 wantsCloseUpView:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+@property(readonly, nonatomic, getter=isLoading) _Bool loading;
 @property(readonly, nonatomic) _Bool adequatelyDrawn;
 @property(readonly, nonatomic) VKLabelMarker *selectedLabelMarker;
 - (void)openInMapsWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -99,7 +110,10 @@
 - (void)_enterMuninForMuninMarker:(id)arg1 withHeading:(double)arg2;
 - (void)_enterMuninForMapItem:(id)arg1 wantsCloseUpView:(_Bool)arg2;
 - (void)enterMuninWithEntryPoint:(id)arg1;
+@property(readonly, nonatomic) NSURL *sharingURL;
 @property(readonly, nonatomic) NSDate *collectionDate;
+- (void)setPresentationYaw:(double)arg1 pitch:(double)arg2 animated:(_Bool)arg3;
+- (void)setPresentationYaw:(double)arg1 animated:(_Bool)arg2;
 @property(nonatomic) double presentationYaw;
 @property(nonatomic) struct CLLocationCoordinate2D centerCoordinate;
 @property(nonatomic) _Bool showsPointLabels;
@@ -109,6 +123,7 @@
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)_animateCanvasForBounds:(struct CGRect)arg1;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

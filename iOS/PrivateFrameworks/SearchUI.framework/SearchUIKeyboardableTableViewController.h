@@ -56,6 +56,7 @@
 - (void)keyboardFrameChanged:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)setTableView:(id)arg1;
+- (void)escapeButtonPressed;
 - (id)init;
 
 // Remaining properties

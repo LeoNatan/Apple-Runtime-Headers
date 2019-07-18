@@ -49,6 +49,12 @@
 - (id)_sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2 extraOptions:(id)arg3;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2;
 - (void)_setOrResetCleanupTimerForRequest:(id)arg1;
+- (void)_invalidateAssertionOfType:(unsigned int)arg1;
+- (void)_acquireAssertionOfType:(unsigned int)arg1;
+- (void)endRequiringUpgradedPasscodeIfNecessary;
+- (void)startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(_Bool)arg1;
+- (void)checkPasscodePolicyComplianceResponse:(id)arg1;
+- (void)enforceUpgradedPasscodePolicyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)paymentWebService:(id)arg1 requestPassUpgrade:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)claimSecureElementForCurrentUserWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)paymentWebServiceSupportsPeerPaymentRegistration:(id)arg1;
@@ -85,6 +91,13 @@
 - (void)initializeCloudStoreIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)initializeCloudStoreIfNecessaryResponse:(id)arg1;
 - (void)paymentWebService:(id)arg1 setDefaultPaymentPassUniqueIdentifier:(id)arg2;
+- (void)performProductActionRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)performProductActionResponse:(id)arg1;
+- (void)availableProductsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)availableProductsResponse:(id)arg1;
+- (void)performDeviceCheckInWithCompletion:(CDUnknownBlockType)arg1;
+- (void)performDeviceCheckInResponse:(id)arg1;
+- (id)_deviceSupportedFeatureIdentifiers;
 - (void)paymentWebService:(id)arg1 updateAccountWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateAccountWithIdentifierResponse:(id)arg1;
 - (id)supportedFeatureIdentifiersWithPaymentWebService:(id)arg1;

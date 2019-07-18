@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (id)nextObject;
 - (id)allObjects;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (id)objectAtIndex:(int)arg1;
 - (void)dealloc;
 
 @end

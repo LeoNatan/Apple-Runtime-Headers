@@ -15,11 +15,13 @@
 @interface _INPBRefinementItem : PBCodable <_INPBRefinementItem, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBSelectionItem *_item;
     NSString *_subKeyPath;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *subKeyPath; // @synthesize subKeyPath=_subKeyPath;
 @property(retain, nonatomic) _INPBSelectionItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;

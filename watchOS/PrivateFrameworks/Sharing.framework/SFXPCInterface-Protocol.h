@@ -29,6 +29,7 @@
 - (void)remoteInteractionSessionTextSessionDidEnd:(SFRemoteTextSessionInfo *)arg1;
 - (void)remoteInteractionSessionTextSessionDidBegin:(SFRemoteTextSessionInfo *)arg1;
 - (void)remoteInteractionSessionRemoteTextEvent:(NSDictionary *)arg1;
+- (void)proximityClientDeviceUpdated:(NSString *)arg1 rssi:(int)arg2 state:(int)arg3;
 - (void)proximityClientDeviceDidUntriggerHandler:(NSString *)arg1;
 - (void)proximityClientDeviceWillTriggerHandler:(NSString *)arg1;
 - (void)proximityClientDeviceWasSelectedHandler:(NSString *)arg1;

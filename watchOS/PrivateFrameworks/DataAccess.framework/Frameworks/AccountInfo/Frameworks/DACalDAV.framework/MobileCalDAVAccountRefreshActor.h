@@ -20,6 +20,9 @@
     _Bool _shouldCancel;
     _Bool _didFinish;
     _Bool _refreshing;
+    _Bool _refreshFoundUpdatedTaskContainer;
+    _Bool _refreshFoundUpdatedSpecialCalendar;
+    _Bool _refreshFoundDeletedContainerURL;
     CalDAVRefreshContext *_context;
     MobileCalDAVAccount *_account;
     CDUnknownBlockType _completionBlock;
@@ -42,6 +45,9 @@
 @property(retain, nonatomic) NSMutableSet *outstandingTasks; // @synthesize outstandingTasks=_outstandingTasks;
 @property(retain, nonatomic) NSMutableSet *outstandingTaskGroups; // @synthesize outstandingTaskGroups=_outstandingTaskGroups;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *outstandingOperationGroup; // @synthesize outstandingOperationGroup=_outstandingOperationGroup;
+@property(nonatomic) _Bool refreshFoundDeletedContainerURL; // @synthesize refreshFoundDeletedContainerURL=_refreshFoundDeletedContainerURL;
+@property(nonatomic) _Bool refreshFoundUpdatedSpecialCalendar; // @synthesize refreshFoundUpdatedSpecialCalendar=_refreshFoundUpdatedSpecialCalendar;
+@property(nonatomic) _Bool refreshFoundUpdatedTaskContainer; // @synthesize refreshFoundUpdatedTaskContainer=_refreshFoundUpdatedTaskContainer;
 @property(retain, nonatomic) NSMutableArray *calendarsToRefresh; // @synthesize calendarsToRefresh=_calendarsToRefresh;
 @property(retain, nonatomic) NSMutableDictionary *pathsToSyncTokens; // @synthesize pathsToSyncTokens=_pathsToSyncTokens;
 @property(retain, nonatomic) NSMutableDictionary *pathsToCTags; // @synthesize pathsToCTags=_pathsToCTags;
@@ -52,7 +58,10 @@
 @property(nonatomic) _Bool shouldCancel; // @synthesize shouldCancel=_shouldCancel;
 @property(retain, nonatomic) CalDAVRefreshContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool needsRemindersSync;
 - (void)_sendResultToAccount;
+- (id)_guidsOfExistingCalendars;
+- (void)_cleanUpOrphanedPreferredUserAddressesPerCalendar;
 - (void)_calendarCollectionsWereRefreshed;
 - (void)_handleAttachmentUploadComplete:(id)arg1 attachmentUUID:(id)arg2;
 - (void)_uploadAttachments:(struct __CFArray *)arg1 forOwnerURL:(id)arg2 syncKey:(id)arg3 scheduleTag:(id)arg4;
@@ -70,9 +79,14 @@
 - (void)_refreshSpecialCalendars;
 - (_Bool)_sendMoveForItem:(id)arg1;
 - (void)_handleMoveTaskComplete:(id)arg1 moveItem:(id)arg2;
+- (void)_saveMoveChange:(id)arg1;
 - (void)_clearMoveChange:(id)arg1;
 - (void)_sendMoveTasks;
 - (void)calendarRefreshForPrincipal:(id)arg1 completedWithNewCTags:(id)arg2 newSyncTokens:(id)arg3 calendarHomeSyncToken:(id)arg4 updatedCalendars:(id)arg5 error:(id)arg6;
+- (void)calendarRefreshFoundDeletedContainerURL:(id)arg1;
+- (void)calendarRefreshFoundUpdatedSpecialContainer:(id)arg1;
+- (void)calendarRefreshFoundUpdatedContainerWithIgnoredEntityType:(id)arg1;
+- (_Bool)calendarRefreshShouldRetryMkCalendarForPrincipal:(id)arg1 calendar:(id)arg2 error:(id)arg3;
 - (void)_refreshCalendarProperties;
 - (void)delegateRefreshForPrincipal:(id)arg1 completedWithError:(id)arg2;
 - (void)_refreshDelegateAccountProperties;

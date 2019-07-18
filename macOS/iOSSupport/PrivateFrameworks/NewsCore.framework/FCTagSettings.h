@@ -30,9 +30,11 @@
 - (id)authenticatedAccessTokensByTagID;
 - (id)accessTokenForTagID:(id)arg1;
 - (void)setAccessTokenForTagID:(id)arg1 accessToken:(id)arg2 userInitiated:(BOOL)arg3;
+- (id)contentScaleForTagID:(id)arg1;
+- (void)setContentScaleForTagID:(id)arg1 contentScale:(id)arg2;
 - (id)fontSizeForTagID:(id)arg1;
 - (void)setFontSizeForTagID:(id)arg1 fontSize:(id)arg2;
-- (void)syncFontSizeForTagID:(id)arg1;
+- (void)syncForTagID:(id)arg1;
 - (void)loadLocalCachesFromStore;
 - (id)initWithStore:(id)arg1 tagSettingsDelegate:(id)arg2;
 

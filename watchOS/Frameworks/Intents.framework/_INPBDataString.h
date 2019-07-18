@@ -15,6 +15,7 @@
 @interface _INPBDataString : PBCodable <_INPBDataString, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     NSArray *_alternatives;
     NSString *_localizedValue;
     NSString *_pronunciationHint;
@@ -23,6 +24,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)alternativesType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *vocabularyIdentifier; // @synthesize vocabularyIdentifier=_vocabularyIdentifier;
 @property(copy, nonatomic) NSString *pronunciationHint; // @synthesize pronunciationHint=_pronunciationHint;
 @property(copy, nonatomic) NSString *localizedValue; // @synthesize localizedValue=_localizedValue;

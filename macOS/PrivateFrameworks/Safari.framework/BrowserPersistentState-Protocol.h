@@ -11,6 +11,6 @@
 @protocol BrowserPersistentState <NSObject>
 @property(readonly, nonatomic) unsigned long long numberOfTabs;
 @property(readonly, copy, nonatomic) NSArray *tabUUIDs;
-- (NSDictionary *)dictionaryRepresentationIncludingSessionState:(BOOL)arg1;
+- (NSDictionary *)dictionaryRepresentationIncludingSessionState:(BOOL)arg1 forCleanExit:(BOOL)arg2;
 @end
 

@@ -16,6 +16,10 @@
 + (id)issueReadingHistoryItemWithCKRecord:(id)arg1;
 - (void)writeToKeyValuePair:(id)arg1;
 - (id)asCKRecord;
+@property(readonly, copy, nonatomic) NSDate *lastRemovedFromMyMagazinesDate;
+- (void)setLastRemovedFromMyMagazinesDate:(id)arg1;
+@property(readonly, copy, nonatomic) NSDate *lastEngagedDate;
+- (void)setLastEngagedDate:(id)arg1;
 @property(readonly, copy, nonatomic) NSDate *lastBadgedDate;
 - (void)setLastBadgedDate:(id)arg1;
 @property(readonly, copy, nonatomic) NSDate *lastVisitedDate;

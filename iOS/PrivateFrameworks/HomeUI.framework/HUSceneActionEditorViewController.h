@@ -8,15 +8,16 @@
 
 #import <HomeUI/HUDetailsPresentationDelegateHost-Protocol.h>
 #import <HomeUI/HUIconPickerViewControllerDelegate-Protocol.h>
+#import <HomeUI/HUMediaSelectionViewControllerDelegate-Protocol.h>
 #import <HomeUI/HUNameAndIconEditorCellDelegate-Protocol.h>
-#import <HomeUI/HUSceneActionGridViewControllerDelegate-Protocol.h>
 #import <HomeUI/HUSceneServicePickerViewControllerDelegate-Protocol.h>
+#import <HomeUI/HUServiceGridViewControllerDelegate-Protocol.h>
 #import <HomeUI/HUSwitchCellDelegate-Protocol.h>
 
 @class HUSceneActionEditorItemManager, NSMutableDictionary, NSSet, NSString;
 @protocol HUPresentationDelegate, HUSceneEditorDelegate;
 
-@interface HUSceneActionEditorViewController : HUItemTableViewController <HUSwitchCellDelegate, HUSceneServicePickerViewControllerDelegate, HUNameAndIconEditorCellDelegate, HUIconPickerViewControllerDelegate, HUSceneActionGridViewControllerDelegate, HUDetailsPresentationDelegateHost>
+@interface HUSceneActionEditorViewController : HUItemTableViewController <HUSwitchCellDelegate, HUSceneServicePickerViewControllerDelegate, HUNameAndIconEditorCellDelegate, HUIconPickerViewControllerDelegate, HUServiceGridViewControllerDelegate, HUMediaSelectionViewControllerDelegate, HUDetailsPresentationDelegateHost>
 {
     _Bool _requiresPresentingViewControllerDismissal;
     _Bool _showCancelButton;
@@ -38,7 +39,9 @@
 @property(nonatomic) _Bool requiresPresentingViewControllerDismissal; // @synthesize requiresPresentingViewControllerDismissal=_requiresPresentingViewControllerDismissal;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 - (void).cxx_destruct;
-- (void)sceneActionGridViewController:(id)arg1 didTapItem:(id)arg2;
+- (id)mediaSelectionViewControllerMessageForMediaActionPlayUnavailable:(id)arg1;
+- (id)mediaSelectionViewController:(id)arg1 messageForMediaPickerUnavailableReason:(long long)arg2;
+- (void)serviceGridViewController:(id)arg1 didTapItem:(id)arg2;
 - (void)_presentMediaSelection;
 - (void)iconPicker:(id)arg1 didPickIconDescriptor:(id)arg2;
 - (void)iconPickerDidCancel:(id)arg1;
@@ -58,8 +61,6 @@
 - (_Bool)shouldManageTextFieldForItem:(id)arg1;
 - (id)childViewControllersToPreload;
 - (_Bool)shouldHideSeparatorsForCell:(id)arg1 indexPath:(id)arg2;
-- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
-- (_Bool)shouldHideFooterBelowSection:(long long)arg1;
 - (_Bool)shouldHideHeaderAboveSection:(long long)arg1;
 - (void)itemManager:(id)arg1 performUpdateRequest:(id)arg2;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(_Bool)arg4;

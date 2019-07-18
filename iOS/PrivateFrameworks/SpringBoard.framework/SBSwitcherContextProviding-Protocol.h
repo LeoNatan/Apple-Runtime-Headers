@@ -32,13 +32,16 @@
 - (SBMedusaSettings *)medusaSettings;
 - (SBHomeGestureSettings *)homeGestureSettings;
 - (SBAppSwitcherSettings *)switcherSettings;
+- (_Bool)isHomeScreenSidebarVisible;
 - (_Bool)isShowingSpotlightOrTodayView;
 - (_Bool)homeScreenHasOpenFolderInLocation:(NSString *)arg1;
 - (_Bool)homeScreenHasOpenFolder;
+- (_Bool)isFloatingDockGesturePossible;
 - (_Bool)isFloatingDockFullyPresented;
 - (double)floatingDockViewTopMargin;
 - (double)floatingDockHeight;
 - (double)displayCornerRadius;
+- (double)distanceToTetheredLeadingEdgeOfLeadingCardFromTrailingEdgeOfScreen;
 - (struct CGSize)tetheredScrollViewContentSize;
 - (struct CGPoint)scrollViewContentOffset;
 - (long long)switcherInterfaceOrientation;

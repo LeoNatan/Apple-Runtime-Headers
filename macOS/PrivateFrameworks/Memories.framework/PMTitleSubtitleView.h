@@ -8,12 +8,16 @@
 
 #import <Memories/PXChangeObserver-Protocol.h>
 
-@class NSString, PXExtendedTraitCollection, PXTitleSubtitleNSLabel;
+@class NSLayoutConstraint, NSString, NSViewController, PXExtendedTraitCollection, PXTitleSubtitleNSLabel;
 
 @interface PMTitleSubtitleView : NSView <PXChangeObserver>
 {
+    struct CGPoint _ptOffset;
     double _titleScale;
     NSString *_titleFontName;
+    NSLayoutConstraint *_bottomConstraint;
+    NSLayoutConstraint *_leftConstraint;
+    NSViewController *_viewController;
     PXTitleSubtitleNSLabel *_label;
     NSView *_dark;
     PXExtendedTraitCollection *_extendedTraitCollection;
@@ -24,6 +28,9 @@
 @property(retain, nonatomic) PXExtendedTraitCollection *extendedTraitCollection; // @synthesize extendedTraitCollection=_extendedTraitCollection;
 @property(retain, nonatomic) NSView *dark; // @synthesize dark=_dark;
 @property(retain, nonatomic) PXTitleSubtitleNSLabel *label; // @synthesize label=_label;
+@property(nonatomic) __weak NSViewController *viewController; // @synthesize viewController=_viewController;
+@property(retain, nonatomic) NSLayoutConstraint *leftConstraint; // @synthesize leftConstraint=_leftConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *bottomConstraint; // @synthesize bottomConstraint=_bottomConstraint;
 @property(retain, nonatomic) NSString *titleFontName; // @synthesize titleFontName=_titleFontName;
 @property(nonatomic) double titleScale; // @synthesize titleScale=_titleScale;
 - (void).cxx_destruct;
@@ -32,9 +39,13 @@
 @property(retain, nonatomic) NSString *subtitleText;
 @property(retain, nonatomic) NSString *titleText;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (void)setSpecForVerticalExport;
 - (void)updateFeatureSpecWithExtendedTraitCollection:(id)arg1;
+- (double)toolbarHeight;
 - (void)registerForChangesFromViewController:(id)arg1;
 - (void)updateDarkFrame;
+- (void)updateSpecialConstraints;
+@property(nonatomic) struct CGPoint ptOffset;
 - (void)updateSpecIfNeeded;
 - (void)layout;
 @property(readonly, nonatomic) double heightOfTitleArea;

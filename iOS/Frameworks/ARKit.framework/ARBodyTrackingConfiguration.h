@@ -37,6 +37,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)createTechniquesWithParallelTechniques:(id)arg1 serialTechniques:(id)arg2;
+- (id)imageSensorSettings;
 - (id)init;
 
 // Remaining properties

@@ -6,12 +6,11 @@
 
 #import <PhotosUICore/PXSettings.h>
 
-@class NSArray, NSString, PXCuratedLibrarySelectModeCaptionViewSettings;
+@class NSArray, NSString;
 
 @interface PXCuratedLibrarySettings : PXSettings
 {
     BOOL _showPhotosLibrarySettingsAtTopLevel;
-    BOOL _enableClickyOrb;
     BOOL _enablePlayMovieInYears;
     BOOL _enableSlideshowInYears;
     BOOL _launchToSavedAllPhotosScrollPosition;
@@ -41,27 +40,27 @@
     BOOL _enableShowAllButtons;
     BOOL _allowsCustomDateTitles;
     BOOL _showAllHighlights;
+    BOOL _useCustomDaysCurationType;
     BOOL _hideRecents;
     BOOL _hideAggregations;
     BOOL _enableInlinePlayback;
     BOOL _forcePlayback;
     BOOL _playBestTimeRange;
     BOOL _enablePlaybackDiagnostics;
-    BOOL _firstTimeExperienceSimulateProgress;
-    BOOL _firstTimeExperienceSimulateUnavailability;
+    BOOL _firstTimeExperienceAlwaysLogReadiness;
     BOOL _enbaleInteractiveTransition;
     BOOL _enableSnapshotMode;
-    BOOL _enableRecentlySavedAlbum;
     BOOL _enableRecentlyEditedAlbum;
     BOOL _exaggerateContrast;
     BOOL _forceBadgesOnAllAssets;
-    BOOL _simulateFooterImportantInformationUpdates;
+    BOOL _forceShowAllButtonsVisible;
     unsigned short _daysCurationType;
     double _recentHighlightsTimeInterval;
     NSString *_savedAllPhotosScrollPositionAnchorAssetIdentifier;
     double _bottomCenterSecondaryToolbarWidth;
     double _scrollSnapMaximumDecelerationFactor;
     double _scrollSnapMaximumAccelerationFactor;
+    double _scrollSnapMinimumSpeed;
     double _floatingHeaderFadeThresholdBetweenHeaderTopAndBodyBottom;
     double _floatingHeaderFadeOverDistance;
     double _floatingHeaderButtonsFadeThresholdBetweenHeaderTopAndNextBodyTop;
@@ -83,7 +82,6 @@
     double _aspectRatioForCompactPortraitYears;
     double _aspectRatioForCompactLandscapeYears;
     double _aspectRatioForRegularYears;
-    double _relativeWidthForMacYears;
     long long _forcedNumberOfYearsColumn;
     double _aspectRatioForCompactPortraitMonths;
     double _spacingBetweenDays;
@@ -97,7 +95,8 @@
     double _faultOutPadding;
     long long _allPhotosZoomingHeaderStyle;
     double _allPhotosDecadesDensityScale;
-    double _allPhotosMinimumScreensOfContent;
+    double _allPhotosDenseLevelMinimumScreensOfContent;
+    double _allPhotosIndividualLevelMinimumScreensOfContent;
     double _allPhotosShiftingRequiredScreensTopDistance;
     double _allPhotosZoomingHeaderTintOpacity;
     long long _allPhotosColumnsChoiceIndex;
@@ -115,6 +114,7 @@
     double _allPhotosSliderSmoothingDuration;
     long long _allPhotosSimulateMinimumPhotoCount;
     long long _allPhotosMaxPhotoCount;
+    long long _allPhotosOnlyPhotosFromToday;
     long long _maxColumnsForIndividualItems;
     long long _maxColumnsForSaliency;
     long long _maxColumnsForSingleDate;
@@ -129,6 +129,7 @@
     double _headerGradientAlpha;
     double _yearsHeaderGradientHeight;
     double _monthsHeaderGradientHeight;
+    double _monthsSmallHeaderGradientHeight;
     double _daysHeaderGradientHeight;
     double _allPhotosHeaderGradientHeight;
     double _statusBarGradientAlpha;
@@ -143,7 +144,7 @@
     double _slideshowTriggerDelay;
     double _slideshowIntervalDelay;
     long long _firstTimeExperienceMaxNonProcessedHighlights;
-    long long _firstTimeExperienceMaxNonEnrichedHighlights;
+    long long _firstTimeExperienceMaxNonProcessedAssets;
     double _defaultAnimationDuration;
     double _defaultZoomLevelTransitionAnimationDuration;
     double _defaultZoomLevelTransitionMaximumScaleAroundAnchor;
@@ -154,8 +155,9 @@
     double _transitionToOrFromAllPhotosScale;
     double _transitionScaleForDayNotMatchingMonths;
     double _zoomLevelPinchSignificantScaleDelta;
+    double _swipeBackGestureMinAngle;
+    double _swipeBackGestureMinTranslation;
     double _zoomLevelControlSegmentExpansionFactor;
-    PXCuratedLibrarySelectModeCaptionViewSettings *_selectModeCaptionViewSettings;
 }
 
 + (void)setEnableEmptyYearsMonthsDaysForTesting:(BOOL)arg1;
@@ -167,14 +169,14 @@
 + (id)allPhotosValidColumns;
 + (id)sharedInstance;
 + (id)settingsControllerModule;
-@property(nonatomic) BOOL simulateFooterImportantInformationUpdates; // @synthesize simulateFooterImportantInformationUpdates=_simulateFooterImportantInformationUpdates;
+@property(nonatomic) BOOL forceShowAllButtonsVisible; // @synthesize forceShowAllButtonsVisible=_forceShowAllButtonsVisible;
 @property(nonatomic) BOOL forceBadgesOnAllAssets; // @synthesize forceBadgesOnAllAssets=_forceBadgesOnAllAssets;
 @property(nonatomic) BOOL exaggerateContrast; // @synthesize exaggerateContrast=_exaggerateContrast;
-@property(retain, nonatomic) PXCuratedLibrarySelectModeCaptionViewSettings *selectModeCaptionViewSettings; // @synthesize selectModeCaptionViewSettings=_selectModeCaptionViewSettings;
 @property(nonatomic) BOOL enableRecentlyEditedAlbum; // @synthesize enableRecentlyEditedAlbum=_enableRecentlyEditedAlbum;
-@property(nonatomic) BOOL enableRecentlySavedAlbum; // @synthesize enableRecentlySavedAlbum=_enableRecentlySavedAlbum;
 @property(nonatomic) BOOL enableSnapshotMode; // @synthesize enableSnapshotMode=_enableSnapshotMode;
 @property(nonatomic) double zoomLevelControlSegmentExpansionFactor; // @synthesize zoomLevelControlSegmentExpansionFactor=_zoomLevelControlSegmentExpansionFactor;
+@property(nonatomic) double swipeBackGestureMinTranslation; // @synthesize swipeBackGestureMinTranslation=_swipeBackGestureMinTranslation;
+@property(nonatomic) double swipeBackGestureMinAngle; // @synthesize swipeBackGestureMinAngle=_swipeBackGestureMinAngle;
 @property(nonatomic) double zoomLevelPinchSignificantScaleDelta; // @synthesize zoomLevelPinchSignificantScaleDelta=_zoomLevelPinchSignificantScaleDelta;
 @property(nonatomic) double transitionScaleForDayNotMatchingMonths; // @synthesize transitionScaleForDayNotMatchingMonths=_transitionScaleForDayNotMatchingMonths;
 @property(nonatomic) double transitionToOrFromAllPhotosScale; // @synthesize transitionToOrFromAllPhotosScale=_transitionToOrFromAllPhotosScale;
@@ -186,9 +188,8 @@
 @property(nonatomic) double defaultZoomLevelTransitionAnimationDuration; // @synthesize defaultZoomLevelTransitionAnimationDuration=_defaultZoomLevelTransitionAnimationDuration;
 @property(nonatomic) double defaultAnimationDuration; // @synthesize defaultAnimationDuration=_defaultAnimationDuration;
 @property(nonatomic) BOOL enbaleInteractiveTransition; // @synthesize enbaleInteractiveTransition=_enbaleInteractiveTransition;
-@property(nonatomic) BOOL firstTimeExperienceSimulateUnavailability; // @synthesize firstTimeExperienceSimulateUnavailability=_firstTimeExperienceSimulateUnavailability;
-@property(nonatomic) BOOL firstTimeExperienceSimulateProgress; // @synthesize firstTimeExperienceSimulateProgress=_firstTimeExperienceSimulateProgress;
-@property(nonatomic) long long firstTimeExperienceMaxNonEnrichedHighlights; // @synthesize firstTimeExperienceMaxNonEnrichedHighlights=_firstTimeExperienceMaxNonEnrichedHighlights;
+@property(nonatomic) BOOL firstTimeExperienceAlwaysLogReadiness; // @synthesize firstTimeExperienceAlwaysLogReadiness=_firstTimeExperienceAlwaysLogReadiness;
+@property(nonatomic) long long firstTimeExperienceMaxNonProcessedAssets; // @synthesize firstTimeExperienceMaxNonProcessedAssets=_firstTimeExperienceMaxNonProcessedAssets;
 @property(nonatomic) long long firstTimeExperienceMaxNonProcessedHighlights; // @synthesize firstTimeExperienceMaxNonProcessedHighlights=_firstTimeExperienceMaxNonProcessedHighlights;
 @property(nonatomic) double slideshowIntervalDelay; // @synthesize slideshowIntervalDelay=_slideshowIntervalDelay;
 @property(nonatomic) double slideshowTriggerDelay; // @synthesize slideshowTriggerDelay=_slideshowTriggerDelay;
@@ -204,6 +205,7 @@
 @property(nonatomic) BOOL hideRecents; // @synthesize hideRecents=_hideRecents;
 @property(nonatomic) double nonInterestingPromotionScore; // @synthesize nonInterestingPromotionScore=_nonInterestingPromotionScore;
 @property(nonatomic) unsigned short daysCurationType; // @synthesize daysCurationType=_daysCurationType;
+@property(nonatomic) BOOL useCustomDaysCurationType; // @synthesize useCustomDaysCurationType=_useCustomDaysCurationType;
 @property(nonatomic) BOOL showAllHighlights; // @synthesize showAllHighlights=_showAllHighlights;
 @property(nonatomic) long long initialZoomLevel; // @synthesize initialZoomLevel=_initialZoomLevel;
 @property(nonatomic) double statusBarGradientAndStyleFadeDuration; // @synthesize statusBarGradientAndStyleFadeDuration=_statusBarGradientAndStyleFadeDuration;
@@ -211,6 +213,7 @@
 @property(nonatomic) double statusBarGradientAlpha; // @synthesize statusBarGradientAlpha=_statusBarGradientAlpha;
 @property(nonatomic) double allPhotosHeaderGradientHeight; // @synthesize allPhotosHeaderGradientHeight=_allPhotosHeaderGradientHeight;
 @property(nonatomic) double daysHeaderGradientHeight; // @synthesize daysHeaderGradientHeight=_daysHeaderGradientHeight;
+@property(nonatomic) double monthsSmallHeaderGradientHeight; // @synthesize monthsSmallHeaderGradientHeight=_monthsSmallHeaderGradientHeight;
 @property(nonatomic) double monthsHeaderGradientHeight; // @synthesize monthsHeaderGradientHeight=_monthsHeaderGradientHeight;
 @property(nonatomic) double yearsHeaderGradientHeight; // @synthesize yearsHeaderGradientHeight=_yearsHeaderGradientHeight;
 @property(nonatomic) double headerGradientAlpha; // @synthesize headerGradientAlpha=_headerGradientAlpha;
@@ -229,6 +232,7 @@
 @property(nonatomic) long long maxColumnsForSingleDate; // @synthesize maxColumnsForSingleDate=_maxColumnsForSingleDate;
 @property(nonatomic) long long maxColumnsForSaliency; // @synthesize maxColumnsForSaliency=_maxColumnsForSaliency;
 @property(nonatomic) long long maxColumnsForIndividualItems; // @synthesize maxColumnsForIndividualItems=_maxColumnsForIndividualItems;
+@property(nonatomic) long long allPhotosOnlyPhotosFromToday; // @synthesize allPhotosOnlyPhotosFromToday=_allPhotosOnlyPhotosFromToday;
 @property(nonatomic) long long allPhotosMaxPhotoCount; // @synthesize allPhotosMaxPhotoCount=_allPhotosMaxPhotoCount;
 @property(nonatomic) long long allPhotosSimulateMinimumPhotoCount; // @synthesize allPhotosSimulateMinimumPhotoCount=_allPhotosSimulateMinimumPhotoCount;
 @property(nonatomic) double allPhotosSliderSmoothingDuration; // @synthesize allPhotosSliderSmoothingDuration=_allPhotosSliderSmoothingDuration;
@@ -246,7 +250,8 @@
 @property(nonatomic) long long allPhotosColumnsChoiceIndex; // @synthesize allPhotosColumnsChoiceIndex=_allPhotosColumnsChoiceIndex;
 @property(nonatomic) double allPhotosZoomingHeaderTintOpacity; // @synthesize allPhotosZoomingHeaderTintOpacity=_allPhotosZoomingHeaderTintOpacity;
 @property(nonatomic) double allPhotosShiftingRequiredScreensTopDistance; // @synthesize allPhotosShiftingRequiredScreensTopDistance=_allPhotosShiftingRequiredScreensTopDistance;
-@property(nonatomic) double allPhotosMinimumScreensOfContent; // @synthesize allPhotosMinimumScreensOfContent=_allPhotosMinimumScreensOfContent;
+@property(nonatomic) double allPhotosIndividualLevelMinimumScreensOfContent; // @synthesize allPhotosIndividualLevelMinimumScreensOfContent=_allPhotosIndividualLevelMinimumScreensOfContent;
+@property(nonatomic) double allPhotosDenseLevelMinimumScreensOfContent; // @synthesize allPhotosDenseLevelMinimumScreensOfContent=_allPhotosDenseLevelMinimumScreensOfContent;
 @property(nonatomic) double allPhotosDecadesDensityScale; // @synthesize allPhotosDecadesDensityScale=_allPhotosDecadesDensityScale;
 @property(nonatomic) BOOL enableAllPhotosHeaderBlur; // @synthesize enableAllPhotosHeaderBlur=_enableAllPhotosHeaderBlur;
 @property(nonatomic) long long allPhotosZoomingHeaderStyle; // @synthesize allPhotosZoomingHeaderStyle=_allPhotosZoomingHeaderStyle;
@@ -275,7 +280,6 @@
 @property(nonatomic) double spacingBetweenDays; // @synthesize spacingBetweenDays=_spacingBetweenDays;
 @property(nonatomic) double aspectRatioForCompactPortraitMonths; // @synthesize aspectRatioForCompactPortraitMonths=_aspectRatioForCompactPortraitMonths;
 @property(nonatomic) long long forcedNumberOfYearsColumn; // @synthesize forcedNumberOfYearsColumn=_forcedNumberOfYearsColumn;
-@property(nonatomic) double relativeWidthForMacYears; // @synthesize relativeWidthForMacYears=_relativeWidthForMacYears;
 @property(nonatomic) double aspectRatioForRegularYears; // @synthesize aspectRatioForRegularYears=_aspectRatioForRegularYears;
 @property(nonatomic) double aspectRatioForCompactLandscapeYears; // @synthesize aspectRatioForCompactLandscapeYears=_aspectRatioForCompactLandscapeYears;
 @property(nonatomic) double aspectRatioForCompactPortraitYears; // @synthesize aspectRatioForCompactPortraitYears=_aspectRatioForCompactPortraitYears;
@@ -299,6 +303,7 @@
 @property(nonatomic) double floatingHeaderButtonsFadeThresholdBetweenHeaderTopAndNextBodyTop; // @synthesize floatingHeaderButtonsFadeThresholdBetweenHeaderTopAndNextBodyTop=_floatingHeaderButtonsFadeThresholdBetweenHeaderTopAndNextBodyTop;
 @property(nonatomic) double floatingHeaderFadeOverDistance; // @synthesize floatingHeaderFadeOverDistance=_floatingHeaderFadeOverDistance;
 @property(nonatomic) double floatingHeaderFadeThresholdBetweenHeaderTopAndBodyBottom; // @synthesize floatingHeaderFadeThresholdBetweenHeaderTopAndBodyBottom=_floatingHeaderFadeThresholdBetweenHeaderTopAndBodyBottom;
+@property(nonatomic) double scrollSnapMinimumSpeed; // @synthesize scrollSnapMinimumSpeed=_scrollSnapMinimumSpeed;
 @property(nonatomic) double scrollSnapMaximumAccelerationFactor; // @synthesize scrollSnapMaximumAccelerationFactor=_scrollSnapMaximumAccelerationFactor;
 @property(nonatomic) double scrollSnapMaximumDecelerationFactor; // @synthesize scrollSnapMaximumDecelerationFactor=_scrollSnapMaximumDecelerationFactor;
 @property(nonatomic) BOOL enableCustomScrollToTopOrBottom; // @synthesize enableCustomScrollToTopOrBottom=_enableCustomScrollToTopOrBottom;
@@ -310,13 +315,11 @@
 @property(nonatomic) BOOL launchToSavedAllPhotosScrollPosition; // @synthesize launchToSavedAllPhotosScrollPosition=_launchToSavedAllPhotosScrollPosition;
 @property(nonatomic) BOOL enableSlideshowInYears; // @synthesize enableSlideshowInYears=_enableSlideshowInYears;
 @property(nonatomic) BOOL enablePlayMovieInYears; // @synthesize enablePlayMovieInYears=_enablePlayMovieInYears;
-@property(nonatomic) BOOL enableClickyOrb; // @synthesize enableClickyOrb=_enableClickyOrb;
 @property(nonatomic) BOOL showPhotosLibrarySettingsAtTopLevel; // @synthesize showPhotosLibrarySettingsAtTopLevel=_showPhotosLibrarySettingsAtTopLevel;
 @property(nonatomic) double recentHighlightsTimeInterval; // @synthesize recentHighlightsTimeInterval=_recentHighlightsTimeInterval;
 - (void).cxx_destruct;
 - (long long)version;
 - (BOOL)allowsModularLayoutForZoomLevel:(long long)arg1 sizeClass:(long long)arg2 orientation:(long long)arg3;
-- (BOOL)shouldUseRecentlySavedAlbum;
 - (CDUnknownBlockType)acceptableLargeHeroPredicate;
 - (void)setDefaultValues;
 - (id)parentSettings;

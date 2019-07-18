@@ -54,6 +54,9 @@ __attribute__((visibility("hidden")))
 + (id)propertiesAllowingNSNull;
 + (id)properties;
 + (id)stickyOverrideProperties;
+- (id)p_characterFillByResolvingWithParagraphStyle:(id)arg1;
+- (id)resolvedValueForProperty:(int)arg1 inStyles:(id)arg2;
+- (_Bool)wantsCustomResolveLogicForProperty:(int)arg1 forStyles:(id)arg2;
 - (id)additionalPropertiesNeededForVariationWithPropertyMap:(id)arg1;
 - (id)baseStyleForTopicNumbers;
 @property(readonly, nonatomic) NSString *presetKind;

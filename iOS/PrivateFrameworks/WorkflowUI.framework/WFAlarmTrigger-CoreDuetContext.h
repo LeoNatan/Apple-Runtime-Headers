@@ -7,6 +7,6 @@
 #import <WorkflowKit/WFAlarmTrigger.h>
 
 @interface WFAlarmTrigger (CoreDuetContext)
-+ (id)triggerTypeIconName;
++ (id)triggerTypeIcon;
 @end
 

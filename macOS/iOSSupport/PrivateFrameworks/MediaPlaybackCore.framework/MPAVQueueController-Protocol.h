@@ -26,6 +26,7 @@
 - (NSString *)contentItemIDWithCurrentItemOffset:(long long)arg1 mode:(long long)arg2 didReachEnd:(char *)arg3;
 - (void)jumpToContentItemID:(NSString *)arg1;
 - (void)jumpToFirstContentItem;
+- (void)reshuffle;
 - (void)player:(MPAVController *)arg1 currentItemDidChangeFromItem:(MPAVItem *)arg2 toItem:(MPAVItem *)arg3;
 - (void)finalizeStateRestorationWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)handlePlaybackFailureForItem:(MPAVItem *)arg1;

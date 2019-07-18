@@ -27,7 +27,7 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *diagnosticDictionary;
 @property(readonly, nonatomic) CNContact *contact;
-@property(readonly, copy, nonatomic) NSString *displayName;
+@property(readonly, copy, nonatomic) NSString *localizedName;
 - (id)initWithPersonSuggestion:(id)arg1;
 - (id)initWithRecipient:(id)arg1;
 

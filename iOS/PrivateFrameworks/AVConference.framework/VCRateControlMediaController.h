@@ -104,7 +104,7 @@ __attribute__((visibility("hidden")))
 - (void)resumeVideoByVCRateControl;
 - (void)stopVideoByVCRateControl;
 - (void)pauseVideoByUser:(_Bool)arg1;
-- (void)updateBasebandSuggestionWithStatistics:(CDStruct_b3eb8f4a)arg1;
+- (void)updateBasebandSuggestionWithStatistics:(CDStruct_b21f1e06)arg1;
 - (void)computePacketLossWithRemoteInfo:(struct VCRCMediaPLPFromRemoteInfo *)arg1;
 - (void)getMediaQueueRateChangeCounter:(unsigned int *)arg1 rateChangeTime:(double *)arg2;
 - (void)getMediaQueueInVideoBitrate:(double *)arg1 outVideoBitrate:(double *)arg2 inAudioBitrate:(double *)arg3 outAudioBitrate:(double *)arg4;

@@ -4,17 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class FCIssueBookmark, NSDate, NSString;
+@class FCIssueBookmark, NSArray, NSDate, NSString;
 @protocol FCIssueReadingHistoryObserving;
 
 @protocol FCIssueReadingHistoryType
+@property(readonly, nonatomic) NSArray *allEngagedIssueIDs;
+@property(readonly, nonatomic) NSArray *recentlyEngagedIssueIDs;
+@property(readonly, nonatomic) NSArray *recentlyVisitedIssueIDs;
 @property(readonly, nonatomic) NSString *mostRecentlyVisitedIssueID;
 - (void)removeObserver:(id <FCIssueReadingHistoryObserving>)arg1;
 - (void)addObserver:(id <FCIssueReadingHistoryObserving>)arg1;
+- (NSDate *)lastEngagedDateForIssueWithID:(NSString *)arg1;
 - (NSDate *)lastVisitedDateForIssueWithID:(NSString *)arg1;
 - (FCIssueBookmark *)bookmarkForLastVisitToIssueWithID:(NSString *)arg1;
+- (_Bool)hasIssueWithIDBeenRemovedFromMyMagazines:(NSString *)arg1;
+- (_Bool)hasIssueWithIDBeenEngaged:(NSString *)arg1;
 - (_Bool)hasIssueWithIDBeenBadged:(NSString *)arg1;
 - (_Bool)hasIssueWithIDBeenVisited:(NSString *)arg1;
+- (void)markIssueAsRemovedFromMyMagazinesWithID:(NSString *)arg1;
+- (void)markIssueAsEngagedWithID:(NSString *)arg1;
 - (void)markIssueAsBadgedWithID:(NSString *)arg1;
 - (void)markIssueWithID:(NSString *)arg1 asVisitedWithBookmark:(FCIssueBookmark *)arg2;
 @end

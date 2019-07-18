@@ -7,19 +7,25 @@
 #import <SiriActivation/SiriActivationSource.h>
 
 @class BSServiceConnection;
+@protocol SiriDirectActionSourceDelegate;
 
 @interface SiriDirectActionSource : SiriActivationSource
 {
     struct os_unfair_lock_s _lock;
+    id <SiriDirectActionSourceDelegate> _delegate;
     BSServiceConnection *_connection;
 }
 
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
+@property(nonatomic) __weak id <SiriDirectActionSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (oneway void)canActivateChangedTo:(id)arg1;
 - (void)configureConnection;
+- (void)activateWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)activateWithContext:(id)arg1;
 - (id)init;
+- (id)initWithDelegate:(id)arg1;
 
 @end
 

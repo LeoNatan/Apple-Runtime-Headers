@@ -37,6 +37,7 @@
 @property(readonly, nonatomic) NSOrderedSet *messages; // @synthesize messages=_messages;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)_pageControlChanged:(id)arg1;
 - (unsigned long long)_primaryIndexAtOffset:(struct CGPoint)arg1;
 - (double)_endOfItemAtIndex:(unsigned long long)arg1;
 - (double)_startOfItemAtIndex:(unsigned long long)arg1;

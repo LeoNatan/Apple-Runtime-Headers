@@ -47,6 +47,7 @@
 @property(nonatomic) unsigned int remoteUID; // @synthesize remoteUID=_remoteUID;
 - (void).cxx_destruct;
 - (void)setFlag:(unsigned int)arg1 enabled:(_Bool)arg2;
+- (id)mailboxTypeDescription;
 - (id)flagDescription;
 - (_Bool)hasSameContent:(id)arg1;
 - (_Bool)hasSameFlags:(id)arg1;

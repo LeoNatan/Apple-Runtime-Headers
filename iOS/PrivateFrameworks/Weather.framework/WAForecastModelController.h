@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, WFServiceConnection;
+@class NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, WFServiceConnection, WFWeatherStoreService;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -20,8 +20,10 @@ __attribute__((visibility("hidden")))
     WFServiceConnection *_connection;
     struct ct_green_tea_logger_s *_greenTeaLogger;
     NSString *_trackingParameter;
+    WFWeatherStoreService *_store;
 }
 
+@property(readonly) WFWeatherStoreService *store; // @synthesize store=_store;
 @property(copy) NSString *trackingParameter; // @synthesize trackingParameter=_trackingParameter;
 @property(nonatomic) struct ct_green_tea_logger_s *greenTeaLogger; // @synthesize greenTeaLogger=_greenTeaLogger;
 @property(retain, nonatomic) WFServiceConnection *connection; // @synthesize connection=_connection;

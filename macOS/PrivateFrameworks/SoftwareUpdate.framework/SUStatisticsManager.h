@@ -15,9 +15,12 @@
 
 + (id)sharedManager;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void)reportPreferencesDataToRTC;
+- (unsigned char)_byteForNVRAMKey:(id)arg1 namespace:(id)arg2;
+- (void)_reportPreferencesDataToRTC;
+- (void)_reportPreferencesDataToCoreAnalytics;
 - (id)_createPayloadForRTC:(id)arg1;
 - (unsigned short)_retrieveCategoryType:(id)arg1;
+- (void)reportPreferences;
 - (void)reportInstallDataToRTC:(id)arg1 product:(id)arg2;
 - (void)reportScanDataToRTCWithURL:(id)arg1 background:(BOOL)arg2 timeElapsedSinceLastScan:(double)arg3 resultCode:(long long)arg4;
 - (void)reportDoItLaterToRTC:(id)arg1;

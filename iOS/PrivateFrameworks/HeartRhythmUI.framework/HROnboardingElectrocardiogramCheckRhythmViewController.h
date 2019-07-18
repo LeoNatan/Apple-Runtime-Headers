@@ -72,13 +72,13 @@
 - (double)_ageEntryTopSeparatorToFirstBaseline;
 - (double)_agePromptLastBaselineToAgeEntryTop;
 - (id)_ageEntryTitleFont;
-- (double)_bodyLastBaselineToAgePromptFirstBaseline;
-- (double)_titleLastBaselineToBodyFirstBaseline;
+- (double)_bodyBottomToAgePromptTop;
+- (double)_titleBottomToBodyTop;
 - (id)_footnoteFont;
 - (id)_footnoteTextStyle;
+- (id)_birthdayPromptFont;
 - (id)_bodyFont;
 - (id)_bodyFontTextStyle;
-- (double)_assetImageBottomToTitleFirstBaseline;
 - (id)_titleFont;
 - (id)_titleFontTextStyle;
 - (void)_updateDateOfBirthDisplay;

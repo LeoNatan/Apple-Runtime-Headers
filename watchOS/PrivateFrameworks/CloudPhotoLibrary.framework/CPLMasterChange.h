@@ -44,6 +44,7 @@
 @property(copy, nonatomic) NSArray *expungeableResourceStates; // @synthesize expungeableResourceStates=_expungeableResourceStates;
 @property(copy, nonatomic) NSArray *resources; // @synthesize resources=_resources;
 - (void).cxx_destruct;
+- (_Bool)isMasterChange;
 - (_Bool)isResourceTypeAGeneratedDerivative:(unsigned int)arg1;
 - (unsigned int)dataClassType;
 - (_Bool)supportsDeletion;

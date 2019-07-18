@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
     _NSCloudSharingPostShareViewController *_contentViewController;
     NSWindow *_parentWindow;
     NSPopover *_popover;
-    NSWindow *_sheet;
+    NSWindow *_window;
     NSObject<OS_dispatch_group> *_participantListWaiterGroup;
     id _item;
     NSURL *_ubiquitousURL;

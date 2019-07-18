@@ -10,6 +10,9 @@
 @protocol UIViewControllerTransitionCoordinator;
 
 @protocol AVFullScreenViewControllerDelegate <NSObject>
+- (_Bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
+- (long long)preferredInterfaceOrientationForPresentation;
 - (UIResponder *)keyCommandResponderForFullScreenViewController:(AVFullScreenViewController *)arg1;
 - (long long)preferredStatusStyleForFullScreenViewController:(AVFullScreenViewController *)arg1;
 - (_Bool)prefersStatusBarHiddenForFullScreenViewController:(AVFullScreenViewController *)arg1;

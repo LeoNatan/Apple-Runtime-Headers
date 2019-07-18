@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray;
+@class AVTextStyleRule, NSArray;
 
 __attribute__((visibility("hidden")))
 @interface AVCaptionRendererInternal : NSObject
 {
     NSArray *_captions;
     struct CGRect _bounds;
+    AVTextStyleRule *_defaultStyles;
     NSArray *_sortedCaptions;
     struct OpaqueFigCDSSession *_cdsSession;
 }

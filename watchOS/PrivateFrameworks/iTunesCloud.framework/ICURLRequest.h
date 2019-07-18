@@ -40,6 +40,7 @@
     int _handlingType;
     CDUnknownBlockType _completionHandler;
     double _retryDelay;
+    double _startTime;
     double _lastUpdateTime;
     double _lastProgressUpdateTime;
 }
@@ -47,6 +48,7 @@
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) double lastProgressUpdateTime; // @synthesize lastProgressUpdateTime=_lastProgressUpdateTime;
 @property(nonatomic) double lastUpdateTime; // @synthesize lastUpdateTime=_lastUpdateTime;
+@property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) int handlingType; // @synthesize handlingType=_handlingType;
 @property(retain, nonatomic) NSDictionary *avDownloadOptions; // @synthesize avDownloadOptions=_avDownloadOptions;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;

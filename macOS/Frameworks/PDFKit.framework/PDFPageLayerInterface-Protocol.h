@@ -12,6 +12,8 @@
 @protocol PDFPageLayerInterface <NSObject>
 - (unsigned long long)visibilityDelegateIndex;
 - (void)setVisibilityDelegateIndex:(unsigned long long)arg1;
+- (void)willEndStartLiveResize;
+- (void)willStartLiveResize;
 - (void)applyTileLayoutScale:(double)arg1;
 - (void)restoreOriginalTileLayout;
 - (void)saveOriginalTileLayout;

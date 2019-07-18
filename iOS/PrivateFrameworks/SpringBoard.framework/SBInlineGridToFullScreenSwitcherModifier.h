@@ -13,6 +13,7 @@
     SBAppLayout *_fullScreenAppLayout;
     SBSwitcherModifier *_multitaskingModifier;
     struct UIRectCornerRadii _fullScreenCornerRadii;
+    _Bool _dimInactiveCards;
 }
 
 @property(readonly, nonatomic) SBSwitcherModifier *multitaskingModifier; // @synthesize multitaskingModifier=_multitaskingModifier;
@@ -26,6 +27,8 @@
 - (_Bool)isContainerStatusBarVisible;
 - (id)layoutSettings;
 - (_Bool)wantsAsynchronousRenderingAssertion;
+- (double)backdropBlurProgress;
+- (double)dimmingAlpha;
 - (long long)backdropBlurType;
 - (struct UIRectCornerRadii)cardCornerRadiiForIndex:(unsigned long long)arg1;
 - (double)darkeningAlphaForIndex:(unsigned long long)arg1;
@@ -37,7 +40,7 @@
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;
 - (id)transitionWillBegin;
-- (id)initWithTransitionID:(id)arg1 fullScreenAppLayout:(id)arg2 multitaskingModifier:(id)arg3 fullscreenCornerRadii:(struct UIRectCornerRadii)arg4;
+- (id)initWithTransitionID:(id)arg1 fullScreenAppLayout:(id)arg2 multitaskingModifier:(id)arg3 fullscreenCornerRadii:(struct UIRectCornerRadii)arg4 dimInactiveCards:(_Bool)arg5;
 
 @end
 

@@ -10,6 +10,8 @@
 @protocol GEOMapItemPhotoInfo;
 
 @protocol GEOMapItemPhoto <NSObject>
+@property(readonly, nonatomic) _Bool businessProvided;
+@property(readonly, nonatomic) _Bool highQuality;
 @property(readonly, nonatomic) double sizeRatio;
 @property(readonly, nonatomic) NSString *uid;
 @property(readonly, nonatomic) _Bool useGallery;

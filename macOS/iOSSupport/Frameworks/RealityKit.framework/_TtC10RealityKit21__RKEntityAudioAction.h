@@ -8,6 +8,7 @@
 
 @interface _TtC10RealityKit21__RKEntityAudioAction : _TtC10RealityKit16__RKEntityAction
 {
+    // Error parsing type: , name: durationForStreaming
     // Error parsing type: , name: type
     // Error parsing type: , name: path
     // Error parsing type: , name: volume

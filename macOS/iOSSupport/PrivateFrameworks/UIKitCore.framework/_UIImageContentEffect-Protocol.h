@@ -10,6 +10,6 @@
 @protocol _UIImageContentLayoutSource;
 
 @protocol _UIImageContentEffect <NSObject>
-- (_UIImageContentRendition *)_renditionForSource:(id <_UIImageContentLayoutSource>)arg1 withCGImageProvider:(struct CGImage * (^)(void))arg2 lazy:(BOOL)arg3;
+- (_UIImageContentRendition *)_renditionForSource:(id <_UIImageContentLayoutSource>)arg1 size:(struct CGSize)arg2 withCGImageProvider:(struct CGImage * (^)(void))arg3 lazy:(BOOL)arg4;
 @end
 

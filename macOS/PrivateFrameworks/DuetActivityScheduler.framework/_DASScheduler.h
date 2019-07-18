@@ -85,6 +85,7 @@
 - (id)runningGroupActivities;
 - (id)runningActivities;
 - (id)delayedRunningActivities;
+- (BOOL)deferActivities:(id)arg1;
 - (void)submitActivity:(id)arg1 inGroup:(id)arg2;
 - (void)submitActivity:(id)arg1 inGroupWithName:(id)arg2;
 - (void)createActivityGroup:(id)arg1;

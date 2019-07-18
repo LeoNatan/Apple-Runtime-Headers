@@ -19,6 +19,7 @@
 + (id)sharedLogger;
 @property(readonly, nonatomic) AWDServerConnection *awdServer; // @synthesize awdServer=_awdServer;
 - (void).cxx_destruct;
+- (void)_sendEvent:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)didRetrieveNumberOfFrequentlyVisitedSites:(unsigned long long)arg1;
 - (void)didRetrieveNumberOfFavorites:(unsigned long long)arg1;
 - (void)didToggleShowLessButtonForSection:(long long)arg1;
@@ -31,6 +32,8 @@
 - (void)didMoveToBackgroundWithNumberOfOnGoingDownloads:(unsigned long long)arg1;
 - (void)didRevealDownloadWithMIMEType:(id)arg1 uti:(id)arg2 result:(long long)arg3;
 - (void)didModifyPerSitePreferenceWithIdentifier:(id)arg1 modificationLevel:(long long)arg2 type:(long long)arg3 method:(long long)arg4;
+- (void)reportWeakPasswordWarningEvent:(long long)arg1;
+- (void)recordSearchResultPageImpressionWithDefaultSearchProviderIdentifier:(id)arg1 searchProviderIdentifier:(id)arg2 isReferredByUnifiedField:(_Bool)arg3;
 - (void)userDidReceiveSharedPasswordWithOutcome:(int)arg1;
 - (void)userDidSharePasswordWithOutcome:(int)arg1;
 - (void)submitVersioningMetricWithVersion:(id)arg1 variant:(int)arg2;

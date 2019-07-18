@@ -9,7 +9,7 @@
 #import <PassKitUI/PKDashboardDataSource-Protocol.h>
 #import <PassKitUI/PKDashboardTransactionFetcherDelegate-Protocol.h>
 
-@class CNContact, NSArray, NSCalendar, NSDateFormatter, NSString, PKCurrencyAmount, PKDashboardTransactionFetcher, PKMerchant, PKPaymentPass, PKPaymentTransaction, PKPaymentTransactionGroup, PKPeerPaymentContactResolver;
+@class CNContact, NSArray, NSCalendar, NSDateFormatter, NSString, PKAccount, PKCurrencyAmount, PKDashboardTransactionFetcher, PKMerchant, PKPaymentPass, PKPaymentTransaction, PKPaymentTransactionGroup, PKPeerPaymentContactResolver;
 @protocol PKDashboardDataSourceDelegate;
 
 @interface PKTransactionHistoryDataSource : NSObject <PKDashboardTransactionFetcherDelegate, PKDashboardDataSource>
@@ -25,15 +25,19 @@
     _Bool _transactionHistoryLoaded;
     NSArray *_transactionHistory;
     NSDateFormatter *_formatterTitle;
+    NSDateFormatter *_formatterMonth;
     NSCalendar *_currentCalendar;
+    PKAccount *_account;
     unsigned int _type;
     CNContact *_contact;
     PKMerchant *_merchant;
     PKPaymentTransactionGroup *_group;
-    PKCurrencyAmount *_totalSpending;
+    PKCurrencyAmount *_footerTotal;
+    PKCurrencyAmount *_footerSecondaryTotal;
 }
 
-@property(readonly, nonatomic) PKCurrencyAmount *totalSpending; // @synthesize totalSpending=_totalSpending;
+@property(readonly, nonatomic) PKCurrencyAmount *footerSecondaryTotal; // @synthesize footerSecondaryTotal=_footerSecondaryTotal;
+@property(readonly, nonatomic) PKCurrencyAmount *footerTotal; // @synthesize footerTotal=_footerTotal;
 @property(readonly, nonatomic) PKPaymentTransactionGroup *group; // @synthesize group=_group;
 @property(readonly, nonatomic) PKMerchant *merchant; // @synthesize merchant=_merchant;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
@@ -46,6 +50,7 @@
 - (void)_loadContact;
 - (id)_headerItem;
 - (id)_transactionItemForTransaction:(id)arg1;
+- (id)_totalRewardsFromTransactions:(id)arg1;
 - (id)_totalPaymentsFromTransactions:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (id)_totalSpendingFromTransactions:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (void)transactionsChanged:(id)arg1;
@@ -56,9 +61,10 @@
 - (id)itemAtIndexPath:(id)arg1;
 - (void)setDataSourceDelegate:(id)arg1;
 - (id)navigationBarTitle;
+@property(readonly, nonatomic) NSString *footerSecondaryTitle;
 @property(readonly, nonatomic) NSString *footerTitle;
-- (id)initWithTransactionGroup:(id)arg1 paymentPass:(id)arg2 transactionHistory:(id)arg3;
-- (id)initWithFetcher:(id)arg1 paymentPass:(id)arg2 featuredTransaction:(id)arg3 selectedTransactions:(id)arg4 transactionHistory:(id)arg5 type:(unsigned int)arg6;
+- (id)initWithTransactionGroup:(id)arg1 paymentPass:(id)arg2 account:(id)arg3 transactionHistory:(id)arg4;
+- (id)initWithFetcher:(id)arg1 paymentPass:(id)arg2 account:(id)arg3 featuredTransaction:(id)arg4 selectedTransactions:(id)arg5 transactionHistory:(id)arg6 type:(unsigned int)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

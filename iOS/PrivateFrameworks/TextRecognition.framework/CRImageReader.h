@@ -13,7 +13,6 @@
     NSArray *_outputObjectTypes;
     _Bool _shouldCancel;
     unsigned short _blank;
-    float *_zeroBuffer;
     CRPerformanceStatistics *_detectorStats;
     CRPerformanceStatistics *_postProcStats;
     CRPerformanceStatistics *_recognizerStats;
@@ -51,9 +50,7 @@
 @property(retain) CRPerformanceStatistics *recognizerStats; // @synthesize recognizerStats=_recognizerStats;
 @property(retain) CRPerformanceStatistics *postProcStats; // @synthesize postProcStats=_postProcStats;
 @property(retain) CRPerformanceStatistics *detectorStats; // @synthesize detectorStats=_detectorStats;
-@property float *zeroBuffer; // @synthesize zeroBuffer=_zeroBuffer;
 - (void).cxx_destruct;
-- (void)dealloc;
 - (void)cancel;
 - (id)textResultsForImage:(id)arg1 roi:(struct CGRect)arg2 options:(id)arg3 error:(id *)arg4 withProgressHandler:(CDUnknownBlockType)arg5 title:(id *)arg6;
 - (id)textResultsForImage:(id)arg1 roi:(struct CGRect)arg2 options:(id)arg3 error:(id *)arg4 title:(id *)arg5;
@@ -77,7 +74,6 @@
 - (id)initWithOptions:(id)arg1;
 - (_Bool)hasAppleNeuralEngine;
 - (long long)_indexOfBestModelForAspectRatio:(float)arg1;
-- (id)_createInputForBatch:(id)arg1;
 - (id)correctLMDecodingWithRegex:(id)arg1 noLMDecoding:(id)arg2;
 - (_Bool)mleValidateProbability:(id)arg1 options:(id)arg2;
 - (void)getWordBoundariesForWhiteSpaceRanges:(id)arg1 topPoints:(id *)arg2 bottomPoints:(id *)arg3 image:(id)arg4 scale:(float)arg5 rect:(struct CGRect)arg6 rotatedRoi:(struct CGRect)arg7 radians:(float)arg8;
@@ -87,6 +83,8 @@
 - (void)enumerateInputsForFeatures:(id)arg1 widthIndex:(long long)arg2 inImage:(id)arg3 options:(id)arg4 usingBlock:(CDUnknownBlockType)arg5;
 - (id)mleTextRecognizerResultsForTextFeatures:(id)arg1 inImage:(id)arg2 options:(id)arg3 withProgressHandler:(CDUnknownBlockType)arg4 title:(id *)arg5;
 - (id)mleTextRecognizerResultsForTextFeatures:(id)arg1 inImage:(id)arg2 options:(id)arg3 title:(id *)arg4;
+- (id)sortedRotateTextFeatures:(id)arg1 center:(struct CGPoint)arg2 radians:(float)arg3;
+- (void)rotatePolygon:(vector_e1abc270 *)arg1 center:(struct CGPoint)arg2 angle:(float)arg3 dest:(vector_e1abc270 *)arg4;
 - (id)combinedLineFeature:(id)arg1 lineFeature:(id)arg2;
 - (vector_8f06c10f)converMLMultiArraytoArray:(id)arg1 targetSize:(struct CGSize)arg2;
 - (vector_f9ed6fc8)convertVImageGeoMapstoArray:(struct vImage_Buffer **)arg1;
@@ -113,7 +111,6 @@
 - (_Bool)lfpValidateProbability:(id)arg1 options:(id)arg2;
 - (id)lfpTextResultsInImage:(id)arg1 options:(id)arg2 withProgressHandler:(CDUnknownBlockType)arg3;
 - (id)lfpTextResultsInImage:(id)arg1 options:(id)arg2;
-- (id)_fkcrCreateInputForBatch:(id)arg1;
 - (long long)_fkcrIndexOfBestModelForAspectRatio:(float)arg1;
 - (id)fkcrCorrectLMDecodingWithRegex:(id)arg1 noLMDecoding:(id)arg2;
 - (void)fkcrRecognizeFeatures:(id)arg1 widthIndex:(long long)arg2 inImage:(id)arg3 options:(id)arg4;

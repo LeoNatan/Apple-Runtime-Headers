@@ -8,7 +8,7 @@
 
 #import <QuickLookUI/QLRemoteViewControllerDelegate-Protocol.h>
 
-@class LOViewController, NSExtension, NSString, NSView, QLPreviewHostExtensionContext;
+@class NSExtension, NSString, NSView, QLPreviewHostExtensionContext, STLockoutViewController;
 @protocol QLPreviewExtensionContextProtocol, QLPreviewExtensionViewControllerProtocol;
 
 @interface QLPreviewExtensionDisplayBundle : QLUIServiceBaseDisplayBundle <QLRemoteViewControllerDelegate>
@@ -18,11 +18,11 @@
     QLPreviewHostExtensionContext *_extensionContext;
     NSString *_extensionContentTitle;
     NSView *_containerView;
-    LOViewController *_lockoutViewController;
+    STLockoutViewController *_lockoutViewController;
     struct CGSize _extensionPreferredPreviewSize;
 }
 
-@property(retain) LOViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
+@property(retain) STLockoutViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
 @property(retain) NSView *containerView; // @synthesize containerView=_containerView;
 @property(copy) NSString *extensionContentTitle; // @synthesize extensionContentTitle=_extensionContentTitle;
 @property struct CGSize extensionPreferredPreviewSize; // @synthesize extensionPreferredPreviewSize=_extensionPreferredPreviewSize;
@@ -39,7 +39,7 @@
 - (id)sizingConstraints;
 - (void)updateExtensionPreviewForExternalResourceAccess:(id)arg1 withExtension:(id)arg2;
 - (void)_insertRemoteView;
-- (void)presentScreenTimeLockout:(BOOL)arg1 withBundleID:(id)arg2;
+- (void)presentScreenTimeLockout:(BOOL)arg1 withScreentimeID:(id)arg2;
 - (int)loadWithHints:(id)arg1;
 @property(readonly) id <QLPreviewExtensionContextProtocol> remoteExtensionContext;
 - (id)quickLookView;

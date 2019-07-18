@@ -9,5 +9,6 @@
 @interface NSDateComponentsFormatter (MKRelativeFormatting)
 + (id)_mapkit_descriptionForTimeSinceDate:(id)arg1;
 + (id)_mapkit_descriptionForTimeSinceDate:(id)arg1 referenceDate:(id)arg2;
++ (id)_mapkit_descriptionForTimeSinceDate:(id)arg1 referenceDate:(id)arg2 smallestUnit:(unsigned int)arg3;
 @end
 

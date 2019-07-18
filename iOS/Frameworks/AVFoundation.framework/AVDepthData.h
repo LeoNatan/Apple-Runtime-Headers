@@ -21,6 +21,7 @@
 - (struct CGImageMetadata *)copyAuxiliaryMetadata;
 - (id)initWithPixelBuffer:(struct __CVBuffer *)arg1 depthMetadataDictionary:(id)arg2;
 - (id)initWithPixelBuffer:(struct __CVBuffer *)arg1 auxiliaryMetadata:(struct CGImageMetadata *)arg2;
+- (float)portraitLightingEffectStrength;
 - (float)portraitScore;
 - (_Bool)portraitScoreIsHigh;
 - (id)depthBlurEffectRenderingParameters;

@@ -11,6 +11,7 @@
 
 @protocol MNLocationProvider <NSObject>
 @property(readonly, nonatomic) double timeScale;
+@property(readonly, nonatomic) unsigned int traceVersion;
 @property(readonly, nonatomic) _Bool isTracePlayer;
 @property(readonly, nonatomic) _Bool isSimulation;
 @property(readonly, nonatomic) _Bool usesCLMapCorrection;

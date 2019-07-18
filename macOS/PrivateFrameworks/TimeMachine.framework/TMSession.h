@@ -35,6 +35,7 @@
 + (id)_synthesizedDirectoryPathForBackupPath:(id)arg1 backupMountPoint:(id)arg2;
 + (id)_originalLocationForBackedUpItem:(id)arg1 error:(id *)arg2;
 + (struct TMBackupPathRanges)_backupPathRangesInPath:(id)arg1;
++ (id)_volumeUUIDForVolumeStoreAtURL:(id)arg1;
 + (BOOL)checkAndSetIsInCurrentSystemDataVolumeForPath:(id)arg1 ranges:(struct TMBackupPathRanges)arg2;
 + (id)_inferBackupRootPathFromBackedUpItemPath:(id)arg1;
 + (id)_inferOriginalPathFromBackedUpItemPath:(id)arg1;
@@ -60,6 +61,7 @@
 - (id)backupURLForDate:(id)arg1 error:(id *)arg2;
 - (id)browsableBackupEnumerator:(id *)arg1;
 - (id)completedBackupEnumerator:(id *)arg1;
+@property(readonly) NSArray *browsableBackupDates;
 - (void)dealloc;
 - (BOOL)finishSession:(id *)arg1;
 - (id)initWithLiveVolumeMountPoint:(id)arg1;

@@ -13,16 +13,20 @@
 @interface TITypingSessionAligned : NSObject <NSSecureCoding>
 {
     _Bool _success;
+    _Bool _containsCPEntries;
     NSArray *_layouts;
     NSLocale *_locale;
     NSArray *_alignedEntries;
     NSString *_alignedText;
     NSString *_highConfAlignedSubSegment;
+    unsigned long long _firstCPEntryIndex;
 }
 
 + (id)alignedPathTouchesForWord:(id)arg1;
 + (id)alignedEntryForWord:(id)arg1;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned long long firstCPEntryIndex; // @synthesize firstCPEntryIndex=_firstCPEntryIndex;
+@property(nonatomic) _Bool containsCPEntries; // @synthesize containsCPEntries=_containsCPEntries;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(retain, nonatomic) NSString *highConfAlignedSubSegment; // @synthesize highConfAlignedSubSegment=_highConfAlignedSubSegment;
 @property(retain, nonatomic) NSString *alignedText; // @synthesize alignedText=_alignedText;

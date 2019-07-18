@@ -17,10 +17,10 @@
     _Bool _on;
     _Bool _alwaysShowOnOffLabel;
     UIColor *_onTintColor;
-    UIColor *_tintColor;
     UIColor *_thumbTintColor;
     UIImage *_onImage;
     UIImage *_offImage;
+    UIColor *_tintColor;
     UISwitchVisualElement *_visualElement;
 }
 
@@ -28,11 +28,11 @@
 + (void)setVisualElementProvider:(id)arg1;
 @property(nonatomic, getter=_alwaysShowOnOffLabel, setter=_setAlwaysShowsOnOffLabel:) _Bool alwaysShowOnOffLabel; // @synthesize alwaysShowOnOffLabel=_alwaysShowOnOffLabel;
 @property(retain, nonatomic) UISwitchVisualElement *visualElement; // @synthesize visualElement=_visualElement;
+@property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic, getter=isOn) _Bool on; // @synthesize on=_on;
 @property(retain, nonatomic) UIImage *offImage; // @synthesize offImage=_offImage;
 @property(retain, nonatomic) UIImage *onImage; // @synthesize onImage=_onImage;
 @property(retain, nonatomic) UIColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
-@property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIColor *onTintColor; // @synthesize onTintColor=_onTintColor;
 - (void).cxx_destruct;
 @property(retain, nonatomic, getter=_impactFeedbackGenerator, setter=_setImpactFeedbackGenerator:) UIImpactFeedbackGenerator *impactFeedbackGenerator;

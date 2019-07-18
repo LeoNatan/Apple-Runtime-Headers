@@ -6,11 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class ARUIRingsView, HKActivitySummary, _HKShapeView;
+@class ARUIRingsView, ARUIRingsViewRenderer, HKActivitySummary, _HKShapeView;
 
 @interface HKActivityRingView : UIView
 {
     ARUIRingsView *_ringsView;
+    ARUIRingsViewRenderer *_renderer;
     _HKShapeView *_maskView;
     BOOL _shouldBypassApplicationStateChecking;
     HKActivitySummary *_activitySummary;
@@ -42,6 +43,7 @@
 - (void)setActivitySummary:(id)arg1 animated:(BOOL)arg2;
 - (void)_setUpAfterInit;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 renderer:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

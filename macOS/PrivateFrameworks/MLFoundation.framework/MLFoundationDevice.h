@@ -7,19 +7,26 @@
 #import <objc/NSObject.h>
 
 #import <MLFoundation/NSCopying-Protocol.h>
+#import <MLFoundation/NSSecureCoding-Protocol.h>
 
 @protocol MLFoundationComputeEngineControl><MLFoundationLayerOperations><MLFoundationComputeEngineDispatch;
 
-@interface MLFoundationDevice : NSObject <NSCopying>
+@interface MLFoundationDevice : NSObject <NSCopying, NSSecureCoding>
 {
     int _deviceType;
     id <MLFoundationComputeEngineControl><MLFoundationLayerOperations><MLFoundationComputeEngineDispatch> _engine;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)deviceWithType:(int)arg1;
 @property(readonly, nonatomic) id <MLFoundationComputeEngineControl><MLFoundationLayerOperations><MLFoundationComputeEngineDispatch> engine; // @synthesize engine=_engine;
 @property(readonly, nonatomic) int deviceType; // @synthesize deviceType=_deviceType;
 - (void).cxx_destruct;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToDevice:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned long long)numberOfDevices;

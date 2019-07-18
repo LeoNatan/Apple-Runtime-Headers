@@ -21,6 +21,7 @@
     LPImage *_categoryIcon;
     NSString *_searchQuery;
     NSString *_directionsType;
+    NSNumber *_transportType;
     NSString *_directionsSourceAddress;
     CNPostalAddress *_directionsSourceAddressComponents;
     NSString *_directionsDestinationAddress;
@@ -40,6 +41,7 @@
 @property(copy, nonatomic) NSString *directionsDestinationAddress; // @synthesize directionsDestinationAddress=_directionsDestinationAddress;
 @property(copy, nonatomic) CNPostalAddress *directionsSourceAddressComponents; // @synthesize directionsSourceAddressComponents=_directionsSourceAddressComponents;
 @property(copy, nonatomic) NSString *directionsSourceAddress; // @synthesize directionsSourceAddress=_directionsSourceAddress;
+@property(retain, nonatomic) NSNumber *transportType; // @synthesize transportType=_transportType;
 @property(copy, nonatomic) NSString *directionsType; // @synthesize directionsType=_directionsType;
 @property(copy, nonatomic) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 @property(retain, nonatomic) LPImage *categoryIcon; // @synthesize categoryIcon=_categoryIcon;
@@ -59,7 +61,9 @@
 - (void)populateMetadataForBackwardCompatibility:(id)arg1;
 - (id)previewImageForTransformer:(id)arg1;
 - (id)previewSummaryForTransformer:(id)arg1;
+- (_Bool)canGeneratePresentationPropertiesForURL:(id)arg1;
 - (id)presentationPropertiesForTransformer:(id)arg1;
+- (id)_iconForTransport;
 - (id)_resolvedImage;
 - (long long)_style;
 - (id)_bottomLineForTwoUpForTransformer:(id)arg1;

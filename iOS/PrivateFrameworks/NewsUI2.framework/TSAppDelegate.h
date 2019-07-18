@@ -8,9 +8,13 @@
 
 #import <NewsUI2/UIApplicationDelegate-Protocol.h>
 
+@class UIWindow;
+
 @interface TSAppDelegate : UIResponder <UIApplicationDelegate>
 {
     // Error parsing type: , name: resolver
+    // Error parsing type: , name: window
+    // Error parsing type: , name: windowToolbarManager
     // Error parsing type: , name: sessionObserver
     // Error parsing type: , name: $__lazy_storage_$_menuManager
 }
@@ -20,6 +24,7 @@
 - (void)bootstrapWithWindow:(id)arg1 application:(id)arg2;
 - (void)bootstrapWithContainer:(id)arg1 application:(id)arg2;
 - (void)bootstrapWithApplication:(id)arg1;
+@property(nonatomic, retain) UIWindow *window; // @synthesize window;
 
 @end
 

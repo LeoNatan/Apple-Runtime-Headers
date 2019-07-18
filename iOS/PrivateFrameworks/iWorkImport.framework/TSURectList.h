@@ -13,12 +13,15 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)rectListWithDifference:(struct CGRect)arg1 withRect:(struct CGRect)arg2;
++ (id)rectListWithRect:(struct CGRect)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (struct CGRect)rectAtIndex:(unsigned long long)arg1;
-- (void)insertRect:(struct CGRect)arg1 atIndex:(unsigned long long)arg2;
-- (void)addRect:(struct CGRect)arg1;
 @property(readonly, nonatomic) unsigned long long count;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRectList:(id)arg1;
 - (id)initWithRect:(struct CGRect)arg1;
 

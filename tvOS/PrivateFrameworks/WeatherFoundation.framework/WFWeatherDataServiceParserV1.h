@@ -17,22 +17,22 @@
 
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (void).cxx_destruct;
-- (id)parseForecastDataFromDict:(id)arg1 types:(unsigned long long)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6;
+- (id)parseForecastDataFromDict:(id)arg1 types:(unsigned long long)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6 rules:(id)arg7;
+- (id)parseForecastData:(id)arg1 types:(unsigned long long)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6 rules:(id)arg7;
 - (id)parseForecastData:(id)arg1 types:(unsigned long long)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6;
 - (id)init;
+- (id)dailyAlmanacDictFromData:(id)arg1 types:(unsigned long long)arg2;
+- (id)parseAlmanacFromData:(id)arg1;
 - (id)pollenDictFromData:(id)arg1 types:(unsigned long long)arg2;
 - (id)parsePollenFromData:(id)arg1;
-- (id)dailyAlmanacDictFromData:(id)arg1 types:(unsigned long long)arg2;
-- (id)parseDailyAlmanacFromData:(id)arg1;
 - (id)hourlyForecastDictFromData:(id)arg1 types:(unsigned long long)arg2;
 - (id)parseHourlyForecastFromData:(id)arg1;
 - (id)hourlyHistoryDictFromData:(id)arg1 types:(unsigned long long)arg2;
 - (id)parseHourlyHistoryFromData:(id)arg1;
-- (id)dailyAlmanacDictFromData:(id)arg1 types:(unsigned long long)arg2;
-- (id)parseDailyAlmanacFromData:(id)arg1;
 - (id)currentObservationsDictFromData:(id)arg1 types:(unsigned long long)arg2;
 - (id)parseCurrentObservationsFromData:(id)arg1;
 - (id)parseMetaDataFromData:(id)arg1;
+- (void)parseWeatherComponentsFromData:(id)arg1 intoConditions:(id)arg2;
 - (id)parseWeatherComponentsFromData:(id)arg1;
 - (id)airQualityDictFromData:(id)arg1 types:(unsigned long long)arg2;
 - (id)parsePollutants:(id)arg1;

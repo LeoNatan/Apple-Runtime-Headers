@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class MPAVRoute, NMCBluetoothAudioDevice, NSString;
+@class MPAVRoute, NMCBluetoothAudioDevice, NMCHearingAidAudioDevice, NSString;
 
 @interface NMCVirtualAudioRoute : NSObject
 {
     _Bool _cachedPicked;
     MPAVRoute *_systemRoute;
     NMCBluetoothAudioDevice *_bluetoothDevice;
+    NMCHearingAidAudioDevice *_hearingDevice;
 }
 
 @property(nonatomic) _Bool cachedPicked; // @synthesize cachedPicked=_cachedPicked;
+@property(retain, nonatomic) NMCHearingAidAudioDevice *hearingDevice; // @synthesize hearingDevice=_hearingDevice;
 @property(retain, nonatomic) NMCBluetoothAudioDevice *bluetoothDevice; // @synthesize bluetoothDevice=_bluetoothDevice;
 @property(retain, nonatomic) MPAVRoute *systemRoute; // @synthesize systemRoute=_systemRoute;
 - (void).cxx_destruct;

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 - (id)timeZone;
 - (id)businessHours;
 - (id)titleString;
+- (_Bool)_canShowWhileLocked;
 
 @end
 

@@ -4,10 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSDictionary;
+@class NSData, NSDictionary;
 
 @protocol SessionManagerXPCServerCallbackProtocol
-- (void)sessionAvailablePortsChange:(unsigned int)arg1 userInfo:(NSDictionary *)arg2;
+- (void)controlValueChanged:(NSData *)arg1;
+- (void)serverConfigurationChange:(NSData *)arg1;
 - (void)sessionNeedsStateSync:(unsigned int)arg1;
 - (void)session:(unsigned int)arg1 hasProxies:(BOOL)arg2;
 - (void)sessionStoppedForAppStateChange:(unsigned int)arg1;

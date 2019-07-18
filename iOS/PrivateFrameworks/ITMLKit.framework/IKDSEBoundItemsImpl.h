@@ -8,17 +8,17 @@
 
 #import <ITMLKit/IKDataSourceElementImplementing-Protocol.h>
 
-@class IKAppDataSet, IKChangeSet, IKDataSourceElement, NSArray, NSDictionary, NSMutableDictionary, NSMutableIndexSet, NSString;
+@class IKAppDataSet, IKChangeSet, IKDataSourceElement, NSArray, NSDictionary, NSMutableDictionary, NSMutableIndexSet, NSString, _IKDSEBoundItemsPrototypeBundle;
 
 __attribute__((visibility("hidden")))
 @interface IKDSEBoundItemsImpl : NSObject <IKDataSourceElementImplementing>
 {
     _Bool _visibleIndexRangeIsDirty;
     IKDataSourceElement *_dataSourceElement;
-    NSArray *_prototypes;
     IKChangeSet *_itemsChangeSet;
     IKAppDataSet *_dataSet;
     NSDictionary *_usedPrototypesByIdentifer;
+    _IKDSEBoundItemsPrototypeBundle *_prototypeBundle;
     NSDictionary *_childrenByItemID;
     NSMutableIndexSet *_visibleIndexSet;
     NSMutableDictionary *_proxiedItemElementsByItemID;
@@ -28,16 +28,21 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *proxiedItemElementsByItemID; // @synthesize proxiedItemElementsByItemID=_proxiedItemElementsByItemID;
 @property(retain, nonatomic) NSMutableIndexSet *visibleIndexSet; // @synthesize visibleIndexSet=_visibleIndexSet;
 @property(copy, nonatomic) NSDictionary *childrenByItemID; // @synthesize childrenByItemID=_childrenByItemID;
+@property(retain, nonatomic) _IKDSEBoundItemsPrototypeBundle *prototypeBundle; // @synthesize prototypeBundle=_prototypeBundle;
 @property(copy, nonatomic) NSDictionary *usedPrototypesByIdentifer; // @synthesize usedPrototypesByIdentifer=_usedPrototypesByIdentifer;
 @property(retain, nonatomic) IKAppDataSet *dataSet; // @synthesize dataSet=_dataSet;
 @property(retain, nonatomic) IKChangeSet *itemsChangeSet; // @synthesize itemsChangeSet=_itemsChangeSet;
-@property(retain, nonatomic) NSArray *prototypes; // @synthesize prototypes=_prototypes;
 @property(readonly, nonatomic) __weak IKDataSourceElement *dataSourceElement; // @synthesize dataSourceElement=_dataSourceElement;
 - (void).cxx_destruct;
 - (void)_appendVisibleIndexSetWithIndex:(long long)arg1;
+- (id)_elementForItemAtIndex:(long long)arg1;
+- (id)_appPrototypeForItemAtIndex:(long long)arg1;
 - (_Bool)canProxyUnloadedChildElement:(id)arg1;
 - (id)proxyElementForLoadedChildElement:(id)arg1;
 - (void)resetImplicitUpdates;
+- (id)masterPrototypeForItemAtIndex:(unsigned long long)arg1;
+@property(readonly, copy, nonatomic) NSArray *proxiedItemElements;
+@property(readonly, nonatomic) NSArray *masterPrototypes;
 - (void)resetUpdates;
 - (void)updateStylesUsingUpdater:(CDUnknownBlockType)arg1;
 - (void)applyUpdatesWithImplementation:(id)arg1 usingUpdater:(CDUnknownBlockType)arg2;
@@ -51,7 +56,7 @@ __attribute__((visibility("hidden")))
 - (id)elementForItemAtIndex:(long long)arg1;
 - (id)prototypeForItemAtIndex:(long long)arg1;
 - (long long)numberOfItems;
-@property(readonly, copy, nonatomic) NSArray *proxiedItemElements;
+@property(readonly, nonatomic) NSArray *prototypes;
 @property(readonly, copy) NSString *debugDescription;
 - (id)initWithDataSourceElement:(id)arg1;
 

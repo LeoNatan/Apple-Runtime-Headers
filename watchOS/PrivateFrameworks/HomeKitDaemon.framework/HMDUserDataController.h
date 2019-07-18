@@ -17,6 +17,7 @@
 @interface HMDUserDataController : NSObject <HMDAssistantAccessControlModelUpdateReceiver, HMDMediaContentProfileAccessControlModelUpdateReceiver, HMFLogging, HMFTimerDelegate>
 {
     _Bool _isModifyingState;
+    _Bool _assistantAccessControlRequiresAuthenticationForSecureRequests;
     unsigned int _state;
     HMFUnfairLock *_lock;
     NSUUID *_homeUUID;
@@ -53,6 +54,7 @@
 @property(readonly) NSUUID *userUUID; // @synthesize userUUID=_userUUID;
 @property(readonly) NSUUID *homeUUID; // @synthesize homeUUID=_homeUUID;
 @property(readonly) HMFUnfairLock *lock; // @synthesize lock=_lock;
+@property _Bool assistantAccessControlRequiresAuthenticationForSecureRequests; // @synthesize assistantAccessControlRequiresAuthenticationForSecureRequests=_assistantAccessControlRequiresAuthenticationForSecureRequests;
 - (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)timerDidFire:(id)arg1;
@@ -61,7 +63,7 @@
 - (void)assistantAccessControlModelRemoved:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)assisteantAccessControlModelUpdated:(id)arg1 previousModel:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)handleMediaContentProfileAccessControlUpdatedAccessoryUUIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)handleAssistantAccessControlAccessoryUUIDsUpdated:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)handleAssistantAccessControlAccessoryUUIDsUpdated:(id)arg1 requireAuthenticationForSecureRequests:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)handleStartForZoneController:(id)arg1;
 - (void)_startupPrivateZone;
 - (void)_startupSharedZone;

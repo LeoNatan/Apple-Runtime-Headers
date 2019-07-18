@@ -11,6 +11,7 @@
 }
 
 - (id)imageForSize:(struct CGSize)arg1 scale:(double)arg2;
+- (id)init;
 
 @end
 

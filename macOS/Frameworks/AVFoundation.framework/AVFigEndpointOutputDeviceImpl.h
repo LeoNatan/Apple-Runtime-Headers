@@ -9,7 +9,7 @@
 #import <AVFoundation/AVOutputDeviceImpl-Protocol.h>
 
 @class AVOutputDevice, AVWeakReference, NSArray, NSData, NSDictionary, NSNumber, NSString;
-@protocol AVFigRoutingContextFactory;
+@protocol FigRoutingContextFactory;
 
 @interface AVFigEndpointOutputDeviceImpl : NSObject <AVOutputDeviceImpl>
 {
@@ -17,7 +17,7 @@
     AVWeakReference *_weakObserver;
     struct OpaqueFigEndpoint *_figEndpoint;
     struct OpaqueFigVolumeControllerState *_volumeController;
-    id <AVFigRoutingContextFactory> _routingContextFactory;
+    id <FigRoutingContextFactory> _routingContextFactory;
     BOOL _useRouteConfigUpdatedNotification;
 }
 

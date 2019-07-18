@@ -215,6 +215,8 @@
 - (id)undoManager;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
+- (_Bool)canBecomeFirstResponder;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

@@ -90,7 +90,8 @@
 - (_Bool)folderController:(id)arg1 canChangeCurrentPageIndexToIndex:(long long)arg2;
 - (Class)controllerClassForFolder:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *extraViews;
-@property(readonly, copy, nonatomic) UIView *extraViewsContainer;
+@property(readonly, nonatomic) _Bool shouldAnimateLastTwoViewsAsOne;
+@property(readonly, nonatomic) UIView *extraViewsContainer;
 - (id)targetIconContainerView;
 - (void)returnScalingView;
 - (id)borrowScalingView;

@@ -34,12 +34,15 @@
 - (id)description;
 - (id)gradientLayerForNaturalColorWithSkinColor:(id)arg1;
 - (void)renderNaturalSkinColorIntoCALayer:(id)arg1 withSkinColor:(id)arg2;
+- (id)gradientLayerWithRangeMin:(float)arg1 max:(float)arg2 withSkinColor:(id)arg3;
 - (id)gradientLayerWithRangeMin:(float)arg1 max:(float)arg2;
+- (void)renderColorIntoCALayer:(id)arg1 withSkinColor:(id)arg2;
 - (void)renderColorIntoCALayer:(id)arg1;
 @property(readonly) float variation;
 - (id)colorPresetWithVariation:(float)arg1;
 - (void)didMutate;
 @property(readonly) long long category;
+- (id)derivedCategoriesNames;
 - (id)derivedColorNameForPresetCategory:(long long)arg1;
 - (void)setDerivedColors:(id)arg1;
 - (id)derivedColor;
@@ -49,6 +52,7 @@
 - (struct UIColor *)previewAccentColor;
 - (struct UIColor *)previewColor;
 @property(readonly) UIImage *thumbnail;
+- (_Bool)shouldBlendWithSkinColor;
 @property(readonly) _Bool isNatural;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

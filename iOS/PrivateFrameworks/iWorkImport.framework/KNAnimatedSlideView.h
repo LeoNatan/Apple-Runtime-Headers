@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
     NSMapTable *_textureDescriptionAndSetForRepMap;
     double _transitionStartTime;
     NSMapTable *_eventToSlideTextureMap;
-    NSMutableSet *_movieControllers;
     _Bool _isSlideBuildable;
     _Bool _shouldStopAnimations;
     _Bool _isInDelayBeforeActiveBuild;
     _Bool _sInDelayBeforeActiveTransition;
     _Bool _isSerialized;
     _Bool _transitionHasFinishedCallbackPending;
+    _Bool _wasMetalLayerActiveWhenPaused;
     id _eventStartCallbackTarget;
     SEL _eventStartCallbackSelector;
     id _eventAnimationActiveCallbackTarget;
@@ -57,14 +57,17 @@ __attribute__((visibility("hidden")))
     KNPlaybackSession *_session;
     KNSlide *_slide;
     KNSlideNode *_slideNode;
+    NSArray *_movieControllers;
     NSLock *_setTextureLock;
     NSLock *_canvasLock;
 }
 
++ (id)keyPathsForValuesAffectingActiveMovieHosts;
 + (void)registerUserDefaults;
 + (void)initialize;
 @property(retain) NSLock *canvasLock; // @synthesize canvasLock=_canvasLock;
 @property(retain) NSLock *setTextureLock; // @synthesize setTextureLock=_setTextureLock;
+@property(readonly) NSArray *movieControllers; // @synthesize movieControllers=_movieControllers;
 @property(nonatomic) _Bool triggerQueued; // @synthesize triggerQueued=_triggerQueued;
 @property(readonly, nonatomic) __weak KNSlideNode *slideNode; // @synthesize slideNode=_slideNode;
 @property(readonly, nonatomic) __weak KNSlide *slide; // @synthesize slide=_slide;
@@ -104,8 +107,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSSet *movieRenderers;
 - (struct CGRect)boundingRectOnCanvasForInfo:(id)arg1;
 - (id)movieControllerForInfo:(id)arg1;
-@property(readonly) _Bool isPlayingMovies;
-@property(readonly) NSSet *movieControllers;
+@property(readonly) _Bool isPlayingMoviesWithMovieControllers;
+@property(readonly, nonatomic) NSSet *activeMovieHosts;
 - (void)p_animateBuild:(id)arg1;
 - (void)p_animateBuild:(id)arg1 afterDelay:(double)arg2;
 - (void)p_removeDelayedAnimation:(id)arg1;
@@ -144,6 +147,7 @@ __attribute__((visibility("hidden")))
 - (id)infosVisibleAtEvent:(unsigned long long)arg1 ignoreBuildVisibility:(_Bool)arg2;
 - (id)repsCurrentlyVisible;
 - (id)infosCurrentlyVisible;
+@property(readonly, nonatomic) NSArray *allInfosIncludingAudio;
 @property(readonly, nonatomic) NSArray *allInfos;
 @property(readonly, nonatomic) _Bool isAmbientAnimationAnimating;
 @property(readonly, nonatomic) _Bool isNonAmbientAnimationAnimating;

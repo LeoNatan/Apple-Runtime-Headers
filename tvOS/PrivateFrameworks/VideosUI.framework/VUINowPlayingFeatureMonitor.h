@@ -54,7 +54,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <VUINowPlayingFeatureMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_cleanUpEverything;
-- (void)_cancelFeatureTimersIfNeeded;
 - (void)_cancelTimerForFeature:(id)arg1;
 - (void)_processTimerTriggeredFeature:(id)arg1;
 - (_Bool)_needsUIForFeature:(id)arg1;
@@ -62,6 +61,7 @@ __attribute__((visibility("hidden")))
 - (void)_removeAllObservedTokensForFeature:(id)arg1;
 - (void)_addObservedToken:(id)arg1 forFeature:(id)arg2;
 - (void)_removeTimeObservingForFeature:(id)arg1 withStartTime:(double)arg2;
+- (void)_updateBoundaryObserverForFeature:(id)arg1 change:(id)arg2;
 - (void)_addTimeObservingForFeature:(id)arg1 withStartTime:(double)arg2 andHandler:(CDUnknownBlockType)arg3;
 - (id)_observerInfoForFeature:(id)arg1 matchingTime:(double)arg2;
 - (void)_processAnyTimeBoundFeatures;
@@ -75,7 +75,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_isElapsedTimeWithinFeatureTimeWindow:(id)arg1;
 - (void)_unregisterPlaybackStateNotification;
 - (void)_registerPlaybackStateChangeNotification;
-- (void)_deactivateFeature:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_deactivateFeature:(id)arg1 animated:(_Bool)arg2;
 - (void)_activateFeature:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_shouldAnimateFeature:(id)arg1;
 - (_Bool)_isTimerTriggeredFeature:(id)arg1;
@@ -92,16 +92,17 @@ __attribute__((visibility("hidden")))
 - (void)_playbackStateChangedNottificaiton:(id)arg1;
 - (_Bool)mediaPlaybackManager:(id)arg1 shouldEnableUIModeImplicitly:(long long)arg2;
 - (void)mediaPlaybackManager:(id)arg1 shouldHideUI:(_Bool)arg2 animated:(_Bool)arg3 animations:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)deactivateFeature:(id)arg1 animated:(_Bool)arg2;
 - (void)enableUIMode:(long long)arg1 enabled:(_Bool)arg2;
 - (void)removeFeaturesMatching:(id)arg1;
 - (void)_cleanupFeature:(id)arg1;
 - (void)removeFeature:(id)arg1;
-- (void)evaluateFeature:(id)arg1;
 - (id)activeFeatureForType:(unsigned long long)arg1;
 - (id)featuresForType:(unsigned long long)arg1;
 - (void)addFeature:(id)arg1 withDependencyToPreferredFeatures:(id)arg2;
 - (void)addFeature:(id)arg1;
 @property(readonly, nonatomic) NSArray *allFeatures;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)init;
 

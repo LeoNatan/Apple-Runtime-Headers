@@ -16,7 +16,6 @@
     NSString *backingStore;
     BOOL readOnly;
     BOOL pathKnownToFail;
-    NSString *revision;
     NSString *storeKind;
     BOOL __persistent;
     BOOL _forceIntegrityCheck;
@@ -66,7 +65,7 @@
 - (id)initWorkspaceWithService:(id)arg1;
 - (id)initWorkspaceWithName:(id)arg1 atPath:(id)arg2 objectModelName:(id)arg3 objectModelBundle:(id)arg4 useReadOnly:(BOOL)arg5;
 - (id)initWorkspaceWithName:(id)arg1 atPath:(id)arg2 useReadOnly:(BOOL)arg3;
-- (id)initInMemoryWorkspaceWithName:(id)arg1 customModelName:(id)arg2 objectModelBundle:(id)arg3 revision:(id)arg4;
+- (id)initInMemoryWorkspaceWithName:(id)arg1 customModelName:(id)arg2 objectModelBundle:(id)arg3;
 - (id)_initWithName:(id)arg1 inMemory:(BOOL)arg2 useReadOnly:(BOOL)arg3 customModelName:(id)arg4 loadModelFromBundle:(id)arg5;
 - (void)dealloc;
 

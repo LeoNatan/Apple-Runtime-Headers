@@ -9,7 +9,7 @@
 #import <MediaMiningKit/CLSQueryPerformerProtocol-Protocol.h>
 
 @class CLSBusinessCategoryCache, NSArray, NSString;
-@protocol GEOMapServiceBatchSpatialLookupTicket;
+@protocol GEOMapServiceBatchSpatialLookupTicket, OS_os_log;
 
 @interface CLSBusinessItemGenericQueryPerformer : NSObject <CLSQueryPerformerProtocol>
 {
@@ -18,6 +18,7 @@
     id <GEOMapServiceBatchSpatialLookupTicket> _businessGenericTicket;
     NSArray *_regions;
     double _precision;
+    NSObject<OS_os_log> *_loggingConnection;
     CDStruct_95c2efd7 _statistics;
 }
 
@@ -25,6 +26,7 @@
 + (double)defaultPrecision;
 + (unsigned long long)numberOfRegionsPerBatch;
 + (id)queryWithTemplate:(id)arg1 forRegions:(id)arg2;
+@property(nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 @property(nonatomic) double precision; // @synthesize precision=_precision;
 @property(nonatomic) CDStruct_95c2efd7 statistics; // @synthesize statistics=_statistics;
 @property(readonly, nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;

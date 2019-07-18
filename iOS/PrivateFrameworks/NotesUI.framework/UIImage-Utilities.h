@@ -21,6 +21,12 @@
 + (struct UIImage *)ic_imageNamed:(id)arg1 withTint:(struct UIColor *)arg2 size:(struct CGSize)arg3;
 + (struct UIImage *)ic_imageNamed:(id)arg1 withTint:(struct UIColor *)arg2;
 + (struct UIImage *)ic_imageWithContentsOfURL:(id)arg1;
++ (id)ic_systemImageNamed:(id)arg1 fromFont:(id)arg2 scale:(long long)arg3;
++ (id)ic_systemImageNamed:(id)arg1 scale:(long long)arg2;
++ (id)ic_systemImageNamed:(id)arg1 fromFont:(id)arg2;
++ (id)ic_systemImageNamed:(id)arg1 textStyle:(id)arg2 scale:(long long)arg3;
++ (id)ic_systemImageNamed:(id)arg1 textStyle:(id)arg2;
++ (id)ic_largeSystemImageNamed:(id)arg1;
 - (struct CGContext *)ic_newARGB8BitmapContextFromImage:(struct CGImage *)arg1;
 - (struct CGRect)ic_cropRectZeroAlpha;
 - (struct UIImage *)ic_decodeInBackground;
@@ -39,5 +45,10 @@
 - (struct UIImage *)ic_scaledImageMaxDimension:(double)arg1 scale:(double)arg2;
 - (struct UIImage *)ic_scaledImageMinDimension:(double)arg1 scale:(double)arg2;
 - (struct UIImage *)ic_imageWithTint:(struct UIColor *)arg1 size:(struct CGSize)arg2;
+- (id)ic_imageWithTextStyle:(id)arg1 scale:(long long)arg2;
+- (id)ic_imageWithTextStyle:(id)arg1;
+- (id)ic_imageWithFont:(id)arg1 scale:(long long)arg2;
+- (id)ic_imageWithScale:(long long)arg1;
+- (id)ic_imageWithFont:(id)arg1;
 @end
 

@@ -14,13 +14,14 @@
     // Error parsing type: , name: ownerSession
     // Error parsing type: , name: refreshQueue
     // Error parsing type: , name: callbackInterval
+    // Error parsing type: , name: defaultCallbackInterval
+    // Error parsing type: , name: initialCallbackInterval
     // Error parsing type: , name: lastRefreshTime
     // Error parsing type: , name: refreshTimer
     // Error parsing type: , name: isRefreshing
 }
 
 - (void)handleBeaconsChanged;
-- (void)refreshTimerFired;
 
 @end
 

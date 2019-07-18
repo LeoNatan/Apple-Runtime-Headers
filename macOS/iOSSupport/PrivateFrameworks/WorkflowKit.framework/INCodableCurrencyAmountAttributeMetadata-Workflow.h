@@ -7,7 +7,6 @@
 #import <Intents/INCodableCurrencyAmountAttributeMetadata.h>
 
 @interface INCodableCurrencyAmountAttributeMetadata (Workflow)
-- (id)wf_contentItemForValue:(id)arg1;
 - (id)wf_parameterStateForIntentValue:(id)arg1 parameterDefinition:(id)arg2;
 - (BOOL)wf_processParameterValue:(id)arg1 forParameter:(id)arg2 codableAttribute:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)wf_updateParameterDictionary:(id)arg1 forCodableAttribute:(id)arg2;

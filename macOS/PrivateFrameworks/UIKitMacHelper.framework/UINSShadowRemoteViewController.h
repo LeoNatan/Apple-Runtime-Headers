@@ -6,13 +6,14 @@
 
 #import <ViewBridge/NSRemoteViewController.h>
 
+#import <UIKitMacHelper/NSRemoteViewControllerSPI_50629596-Protocol.h>
 #import <UIKitMacHelper/UINSShadowRemoteViewController-Protocol.h>
 
 @class NSString, UINSWindow, UIView, UIViewController;
 @protocol UINSShadowRemoteViewController_UIView, UINSShadowRemoteViewController_UIViewController, UINSShadowRemoteViewController_UIWindow;
 
 __attribute__((visibility("hidden")))
-@interface UINSShadowRemoteViewController : NSRemoteViewController <UINSShadowRemoteViewController>
+@interface UINSShadowRemoteViewController : NSRemoteViewController <NSRemoteViewControllerSPI_50629596, UINSShadowRemoteViewController>
 {
     id <UINSShadowRemoteViewController_UIViewController> _trackedViewController;
     id <UINSShadowRemoteViewController_UIView> _trackedView;

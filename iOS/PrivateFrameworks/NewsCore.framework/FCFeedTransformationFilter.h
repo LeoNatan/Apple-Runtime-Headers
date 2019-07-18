@@ -38,7 +38,6 @@
 - (id)transformHeadline:(id)arg1;
 - (id)transformHeadlines:(id)arg1;
 - (id)transformFeedItems:(id)arg1;
-- (id)transformFeedItem:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

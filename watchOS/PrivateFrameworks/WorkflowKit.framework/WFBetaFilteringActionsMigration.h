@@ -11,7 +11,7 @@
 }
 
 + (id)actionIdentifierMapping;
-+ (_Bool)workflowNeedsMigration:(id)arg1 fromClientVersion:(int)arg2;
++ (_Bool)workflowNeedsMigration:(id)arg1 fromClientVersion:(id)arg2;
 - (void)migrateWorkflow;
 
 @end

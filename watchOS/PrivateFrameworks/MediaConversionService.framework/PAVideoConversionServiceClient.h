@@ -13,22 +13,27 @@
 @interface PAVideoConversionServiceClient : NSObject <VideoConversionServiceClient>
 {
     NSXPCConnection *_serviceConnection;
-    NSMutableDictionary *_pendingRequestMap;
-    PFDispatchQueue *_requestMapQueue;
+    NSMutableDictionary *_pendingRequestIdentifierToProgressMap;
+    PFDispatchQueue *_isolationQueue;
+    unsigned int _state;
 }
 
-@property(retain) PFDispatchQueue *requestMapQueue; // @synthesize requestMapQueue=_requestMapQueue;
-@property(retain) NSMutableDictionary *pendingRequestMap; // @synthesize pendingRequestMap=_pendingRequestMap;
+@property unsigned int state; // @synthesize state=_state;
+@property(retain) PFDispatchQueue *isolationQueue; // @synthesize isolationQueue=_isolationQueue;
+@property(retain) NSMutableDictionary *pendingRequestIdentifierToProgressMap; // @synthesize pendingRequestIdentifierToProgressMap=_pendingRequestIdentifierToProgressMap;
 @property(retain) NSXPCConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 - (void).cxx_destruct;
+- (void)invalidateAfterPendingRequestCompletion;
 - (void)updateProgress:(id)arg1;
 - (void)performCleanupForJobGroupIdentifier:(id)arg1;
+- (void)transitionToInvalidatedState;
+- (void)handleRequestCompletionForIdentifier:(id)arg1;
 - (void)extractStillImageFromVideoAtSourceURL:(id)arg1 toDestinationURL:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)convertVideoAtSourceURLCollection:(id)arg1 toDestinationURLCollection:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)convertVideoAtSourceURL:(id)arg1 toDestinationURL:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setupServiceConnection;
 - (id)init;
-- (void)invalidateServiceConnection;
+- (void)ut_invalidateServiceConnection;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

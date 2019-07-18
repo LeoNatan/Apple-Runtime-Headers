@@ -10,21 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct CGPoint {
-    float _field1;
-    float _field2;
-};
-
-struct CGRect {
-    struct CGPoint _field1;
-    struct CGSize _field2;
-};
-
-struct CGSize {
-    float width;
-    float height;
-};
-
 struct LogCategory {
     int _field1;
     int _field2;
@@ -72,13 +57,6 @@ struct PairingSubstate {
     int pin;
 };
 
-struct UIEdgeInsets {
-    float top;
-    float left;
-    float bottom;
-    float right;
-};
-
 struct _NSRange {
     unsigned int location;
     unsigned int length;
@@ -106,8 +84,4 @@ typedef struct {
     unsigned long *_field3;
     unsigned long _field4[5];
 } CDStruct_11f37819;
-
-typedef struct {
-    unsigned int val[8];
-} CDStruct_4c969caf;
 

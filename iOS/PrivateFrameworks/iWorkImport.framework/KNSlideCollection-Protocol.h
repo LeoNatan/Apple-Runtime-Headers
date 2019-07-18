@@ -9,6 +9,8 @@
 @class KNSlideCollectionSelection, KNSlideNode, NSArray;
 
 @protocol KNSlideCollection <NSObject>
+@property(readonly, nonatomic) NSArray *displayedSlideNodes;
+@property(readonly, nonatomic) NSArray *slideNodes;
 @property(readonly, nonatomic) KNSlideNode *defaultSlideNodeForNewSelection;
 - (NSArray *)orderedSlideNodesInSelection:(KNSlideCollectionSelection *)arg1;
 - (unsigned long long)indexOfSlideNode:(KNSlideNode *)arg1;

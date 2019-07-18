@@ -16,7 +16,7 @@
 @property(readonly, nonatomic) PHAsset *keyAsset;
 @property(readonly, nonatomic) id modelObject;
 @property(readonly, nonatomic) unsigned long long numberOfAssetsInExtended;
-- (_Bool)performChangeRequest:(CDUnknownBlockType)arg1 inPhotoLibrary:(id)arg2 error:(id *)arg3;
+- (id)changeRequest;
 - (double)nonDefaultCurationScorePercentageForPhotoLibrary:(id)arg1;
 - (double)sceneAnalysisProgressForPhotoLibrary:(id)arg1;
 - (double)faceAnalysisProgressForPhotoLibrary:(id)arg1;

@@ -24,6 +24,7 @@
 - (void)_updateForGestureDidBeginOrChangeWithEvent:(id)arg1;
 - (id)handleGestureEvent:(id)arg1;
 - (long long)layoutUpdateMode;
+- (_Bool)isFloatingDockGesturePossible;
 - (struct CGRect)containerViewBounds;
 - (void)didMoveToParentModifier:(id)arg1;
 - (id)initWithGestureID:(id)arg1 initialFloatingConfiguration:(long long)arg2 interfaceOrientation:(long long)arg3;

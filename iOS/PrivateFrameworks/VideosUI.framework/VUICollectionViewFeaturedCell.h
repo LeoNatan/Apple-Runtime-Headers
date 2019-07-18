@@ -6,13 +6,12 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class IKViewElement, TVImageLayout, VUIButton, VUICollectionViewFeaturedView;
+@class IKViewElement, TVImageLayout, VUICollectionViewFeaturedView;
 
 __attribute__((visibility("hidden")))
 @interface VUICollectionViewFeaturedCell : UICollectionViewCell
 {
     VUICollectionViewFeaturedView *_featuredView;
-    VUIButton *_focusableButton;
     TVImageLayout *_imageLayout;
     IKViewElement *_viewElement;
 }
@@ -21,7 +20,6 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)lockupSizeForElement:(id)arg1;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) TVImageLayout *imageLayout; // @synthesize imageLayout=_imageLayout;
-@property(retain, nonatomic) VUIButton *focusableButton; // @synthesize focusableButton=_focusableButton;
 @property(retain, nonatomic) VUICollectionViewFeaturedView *featuredView; // @synthesize featuredView=_featuredView;
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;

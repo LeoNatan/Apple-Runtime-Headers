@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsCustomEffectTimingCurve1;
 - (_Bool)supportsRandomNumberSeedInspection;
 - (_Bool)supportsTimingCurves;
+@property(readonly, nonatomic) _Bool isAutomaticTransition;
 @property(readonly, nonatomic) _Bool canEditAnimations;
 @property(readonly, nonatomic) NSSet *inspectableAttributes;
 @property(readonly, nonatomic) long long customTextDelivery;

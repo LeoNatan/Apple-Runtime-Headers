@@ -8,14 +8,14 @@
 
 #import <ARKit/ARTechniqueBusyState-Protocol.h>
 
-@class ARImageRotationTechnique, ARSegmentationData, NSString;
+@class ARImageRotationTechnique, NSString;
 
 @interface ARSegmentationTechnique : ARMLImageProcessingTechnique <ARTechniqueBusyState>
 {
     struct __CVPixelBufferPool *_outputSegmentationPixelBufferPool;
     struct __CVPixelBufferPool *_scaledSegmentationOutputPixelBufferPool;
     ARImageRotationTechnique *_segmentationRotationTechnique;
-    ARSegmentationData *_previousSegmentationData;
+    struct __CVBuffer *_previousSegmentationData;
     int frameCount;
 }
 
@@ -31,7 +31,7 @@
 - (id)createSegmentationResultDataFromTensors:(CDStruct_cf098810)arg1 inputImageData:(id)arg2 rotationNeeded:(long long)arg3 regionOfInterest:(struct CGSize)arg4;
 - (id)createResultDataFromTensors:(CDStruct_cf098810 *)arg1 numberOfOutputTensors:(unsigned long long)arg2 inputImageData:(id)arg3 rotationNeeded:(long long)arg4 regionOfInterest:(struct CGSize)arg5;
 - (id)runNeuralNetworkWithImageData:(id)arg1 originalImageData:(id)arg2 regionOfInterest:(struct CGSize)arg3 rotationOfResultTensor:(long long)arg4;
-- (_Bool)preProcessNetworkInputImage:(struct vImage_Buffer)arg1;
+- (_Bool)preProcessNetworkInputImage:(struct __CVBuffer *)arg1;
 - (_Bool)isLoadedModelVersionCorrect:(id)arg1;
 - (id)resultDataClasses;
 - (double)requiredTimeInterval;

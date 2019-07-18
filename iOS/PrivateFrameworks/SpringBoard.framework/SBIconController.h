@@ -7,33 +7,31 @@
 #import <UIKit/UIViewController.h>
 
 #import <SpringBoard/BBObserverDelegate-Protocol.h>
-#import <SpringBoard/FBSDisplayLayoutObserver-Protocol.h>
+#import <SpringBoard/FBSDisplayLayoutPublisherObserving-Protocol.h>
 #import <SpringBoard/MCProfileConnectionObserver-Protocol.h>
 #import <SpringBoard/PTSettingsKeyObserver-Protocol.h>
 #import <SpringBoard/SBAlertItemsControllerObserver-Protocol.h>
 #import <SpringBoard/SBApplicationRestrictionObserver-Protocol.h>
 #import <SpringBoard/SBAssistantObserver-Protocol.h>
-#import <SpringBoard/SBFTodayOverlayObserving-Protocol.h>
 #import <SpringBoard/SBFloatingDockControllerDelegate-Protocol.h>
 #import <SpringBoard/SBHIconManagerDelegate-Protocol.h>
+#import <SpringBoard/SBHSidebarProviderDelegate-Protocol.h>
 #import <SpringBoard/SBHomeScreenIconTransitionAnimatorDelegate-Protocol.h>
 #import <SpringBoard/SBHomeScreenSpotlightDismissalDelegate-Protocol.h>
 #import <SpringBoard/SBHomeScreenTodayViewControllerDelegate-Protocol.h>
 #import <SpringBoard/SBIconAnimationContaining-Protocol.h>
 #import <SpringBoard/SBIconModelApplicationDataSource-Protocol.h>
-#import <SpringBoard/SBPopoverExtensionProviderDelegate-Protocol.h>
 #import <SpringBoard/SBRootFolderControllerAccessoryViewControllerDelegate-Protocol.h>
 #import <SpringBoard/SBRootFolderPageStateObserver-Protocol.h>
 #import <SpringBoard/SBSearchGestureObserver-Protocol.h>
 #import <SpringBoard/SPUIRemoteSearchViewDelegate-Protocol.h>
 #import <SpringBoard/UIGestureRecognizerDelegate-Protocol.h>
-#import <SpringBoard/UIPopoverPresentationControllerDelegate-Protocol.h>
 #import <SpringBoard/WGWidgetGroupViewControllerDelegate-Protocol.h>
 
-@class BBObserver, BSEventQueue, BSTimer, FBDisplayLayoutTransition, FBSDisplayLayoutMonitor, NSArray, NSIndexPath, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, NSTimer, PTSingleTestRecipe, SBAlertItemsController, SBApplicationController, SBApplicationPlaceholderController, SBAssistantController, SBDisableActiveInterfaceOrientationChangeAssertion, SBFloatingDockBehaviorAssertion, SBFloatingDockController, SBFolderController, SBFolderStatsQueryableMetric, SBHIconImageCache, SBHIconManager, SBHRootFolderSettings, SBHomeScreenSpotlightViewController, SBHomeScreenTodayViewController, SBIconContentView, SBIconDragManager, SBIconModel, SBIconView, SBIconVisibilityService, SBMainDisplayPolicyAggregator, SBMainStatusBarContentAssertion, SBRootFolder, SBRootFolderController, SBTodayOverlayController, SBUIController, SBWorkspaceTransitionRequest, UIView, UIWindow, WGWidgetGroupViewController, _UILegibilitySettings;
-@protocol BSInvalidatable, SBIconAnimationContaining, SBRootFolderPageTransition, SBUIPopoverProviding;
+@class BBObserver, BSEventQueue, BSTimer, NSArray, NSIndexPath, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, NSTimer, PTSingleTestRecipe, SBAlertItemsController, SBApplicationController, SBApplicationPlaceholderController, SBAssistantController, SBDisableActiveInterfaceOrientationChangeAssertion, SBFloatingDockBehaviorAssertion, SBFloatingDockController, SBFolderController, SBFolderStatsQueryableMetric, SBHIconImageCache, SBHIconManager, SBHRootFolderSettings, SBHomeScreenSpotlightViewController, SBHomeScreenTodayViewController, SBIconContentView, SBIconDragManager, SBIconModel, SBIconView, SBIconVisibilityService, SBMainDisplayPolicyAggregator, SBMainStatusBarContentAssertion, SBRootFolder, SBRootFolderController, SBTodayOverlayController, SBUIController, SBWorkspaceTransitionRequest, UIView, UIWindow, WGWidgetGroupViewController, _UILegibilitySettings;
+@protocol BSInvalidatable, SBIconAnimationContaining, SBRootFolderPageTransition;
 
-@interface SBIconController : UIViewController <BBObserverDelegate, MCProfileConnectionObserver, SBApplicationRestrictionObserver, UIGestureRecognizerDelegate, SBSearchGestureObserver, UIPopoverPresentationControllerDelegate, FBSDisplayLayoutObserver, SBPopoverExtensionProviderDelegate, SBRootFolderPageStateObserver, SBAlertItemsControllerObserver, SBAssistantObserver, SBHIconManagerDelegate, SBRootFolderControllerAccessoryViewControllerDelegate, SBHomeScreenSpotlightDismissalDelegate, SBHomeScreenTodayViewControllerDelegate, SBFloatingDockControllerDelegate, SPUIRemoteSearchViewDelegate, PTSettingsKeyObserver, WGWidgetGroupViewControllerDelegate, SBFTodayOverlayObserving, SBIconModelApplicationDataSource, SBHomeScreenIconTransitionAnimatorDelegate, SBIconAnimationContaining>
+@interface SBIconController : UIViewController <BBObserverDelegate, MCProfileConnectionObserver, SBApplicationRestrictionObserver, UIGestureRecognizerDelegate, SBSearchGestureObserver, FBSDisplayLayoutPublisherObserving, SBRootFolderPageStateObserver, SBAlertItemsControllerObserver, SBAssistantObserver, SBHIconManagerDelegate, SBRootFolderControllerAccessoryViewControllerDelegate, SBHomeScreenSpotlightDismissalDelegate, SBHomeScreenTodayViewControllerDelegate, SBFloatingDockControllerDelegate, SPUIRemoteSearchViewDelegate, PTSettingsKeyObserver, WGWidgetGroupViewControllerDelegate, SBHSidebarProviderDelegate, SBIconModelApplicationDataSource, SBHomeScreenIconTransitionAnimatorDelegate, SBIconAnimationContaining>
 {
     NSSet *_visibleTags;
     NSSet *_hiddenTags;
@@ -62,17 +60,16 @@
     _Bool _appIconForceTouchSkipCancelAllTouches;
     SBWorkspaceTransitionRequest *_currentTransitionRequest;
     BSEventQueue *_transitionEventQueue;
-    id <SBUIPopoverProviding> _popoverProvider;
     SBFolderStatsQueryableMetric *_queryableFolderMetric;
     NSMutableArray *_iconTouchesFinishedBlocks;
     SBFloatingDockBehaviorAssertion *_popOverFloatingDockBehaviorAssertion;
     SBFloatingDockBehaviorAssertion *_quickActionFloatingDockBehaviorAssertion;
     id <BSInvalidatable> _deferRotationForIconDraggingAssertion;
     id <BSInvalidatable> _deferRotationForForceTouchAssertion;
-    FBSDisplayLayoutMonitor *_displayLayoutMonitor;
     NSMapTable *_folderControllerDeferRotationForIconScrollingAssertions;
     SBDisableActiveInterfaceOrientationChangeAssertion *_orientationChangeDeferralAssertion;
-    SBHIconImageCache *_appSwitcherIconImageCache;
+    SBHIconImageCache *_appSwitcherUnmaskedIconImageCache;
+    SBHIconImageCache *_appSwitcherHeaderIconImageCache;
     SBHIconImageCache *_tableUIIconImageCache;
     SBHIconImageCache *_notificationIconImageCache;
     NSMutableSet *_delayedStyleWallpaperEffectViews;
@@ -91,14 +88,14 @@
     NSTimer *_iconEditingFeedbackWarmTimer;
     unsigned long long _iconOcclusionReasons;
     id <SBRootFolderPageTransition> _interactivePullToTodaySearchTransition;
-    FBDisplayLayoutTransition *_displayLayoutTransition;
+    id <BSInvalidatable> _displayLayoutTransition;
     PTSingleTestRecipe *_relayoutTestRecipe;
     PTSingleTestRecipe *_toggleSearchTestRecipe;
     PTSingleTestRecipe *_runDownloadingIconTestRecipe;
     SBHRootFolderSettings *_rootFolderSettings;
-    SBTodayOverlayController *_todayOverlayController;
     SBMainStatusBarContentAssertion *_widgetsStatusBarContentAssertion;
     WGWidgetGroupViewController *_widgetGroupViewController;
+    SBTodayOverlayController *_todayOverlayController;
     long long _currentIconListIndex;
 }
 
@@ -106,14 +103,14 @@
 + (id)sharedInstance;
 @property(readonly, nonatomic) long long currentIconListIndex; // @synthesize currentIconListIndex=_currentIconListIndex;
 @property(nonatomic, setter=_setIgnoreMutatingIconListsOnApplicationInstall:) _Bool _ignoreMutatingIconListsOnApplicationInstall; // @synthesize _ignoreMutatingIconListsOnApplicationInstall=__ignoreMutatingIconListsOnApplicationInstall;
+@property(retain, nonatomic) SBTodayOverlayController *todayOverlayController; // @synthesize todayOverlayController=_todayOverlayController;
 @property(readonly, nonatomic) WGWidgetGroupViewController *widgetGroupViewController; // @synthesize widgetGroupViewController=_widgetGroupViewController;
 @property(retain, nonatomic) SBMainStatusBarContentAssertion *widgetsStatusBarContentAssertion; // @synthesize widgetsStatusBarContentAssertion=_widgetsStatusBarContentAssertion;
-@property(retain, nonatomic) SBTodayOverlayController *todayOverlayController; // @synthesize todayOverlayController=_todayOverlayController;
 @property(readonly, nonatomic) SBHRootFolderSettings *rootFolderSettings; // @synthesize rootFolderSettings=_rootFolderSettings;
 @property(readonly, nonatomic) PTSingleTestRecipe *runDownloadingIconTestRecipe; // @synthesize runDownloadingIconTestRecipe=_runDownloadingIconTestRecipe;
 @property(readonly, nonatomic) PTSingleTestRecipe *toggleSearchTestRecipe; // @synthesize toggleSearchTestRecipe=_toggleSearchTestRecipe;
 @property(readonly, nonatomic) PTSingleTestRecipe *relayoutTestRecipe; // @synthesize relayoutTestRecipe=_relayoutTestRecipe;
-@property(retain, nonatomic) FBDisplayLayoutTransition *displayLayoutTransition; // @synthesize displayLayoutTransition=_displayLayoutTransition;
+@property(retain, nonatomic) id <BSInvalidatable> displayLayoutTransition; // @synthesize displayLayoutTransition=_displayLayoutTransition;
 @property(retain, nonatomic) id <SBRootFolderPageTransition> interactivePullToTodaySearchTransition; // @synthesize interactivePullToTodaySearchTransition=_interactivePullToTodaySearchTransition;
 @property(nonatomic) unsigned long long iconOcclusionReasons; // @synthesize iconOcclusionReasons=_iconOcclusionReasons;
 @property(retain, nonatomic) NSTimer *iconEditingFeedbackWarmTimer; // @synthesize iconEditingFeedbackWarmTimer=_iconEditingFeedbackWarmTimer;
@@ -135,7 +132,6 @@
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)_relinquishStatusBarContentAssertion;
 - (void)_takeStatusBarContentAssertion;
-- (void)todayOverlayControllerDidDismiss:(id)arg1;
 - (double)minimumHomeScreenScaleForFloatingDockController:(id)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)iconManager:(id)arg1 rootFolderController:(id)arg2 willUsePropertyAnimator:(id)arg3 toTransitionToState:(long long)arg4;
@@ -179,8 +175,6 @@
 - (_Bool)iconManager:(id)arg1 canBeginDragForIconView:(id)arg2;
 - (void)iconManagerDidDismissPopOver:(id)arg1;
 - (void)iconManagerWillPresentPopOver:(id)arg1;
-- (id)containerViewControllerForPopOversForIconManager:(id)arg1;
-- (id)iconManager:(id)arg1 popoverContentViewControllerForIcon:(id)arg2;
 - (id)viewControllerForPresentingViewControllersForIconManager:(id)arg1;
 - (void)iconManager:(id)arg1 wantsUninstallForIcon:(id)arg2 location:(id)arg3;
 - (_Bool)iconManager:(id)arg1 iconViewDisplaysCloseBox:(id)arg2;
@@ -193,7 +187,6 @@
 - (void)iconManager:(id)arg1 possibleUserIconTapBeganAfterInformingIcon:(id)arg2;
 - (void)iconManager:(id)arg1 possibleUserIconTapBegan:(id)arg2;
 - (void)iconManagerDidFinishInstallForIcon:(id)arg1;
-- (id)iconManager:(id)arg1 reasonToDisallowTapOnIconView:(id)arg2;
 - (id)localizedDefaultFolderNameForIconManager:(id)arg1;
 - (id)iconManager:(id)arg1 localizedFolderNameForDefaultDisplayName:(id)arg2;
 - (id)localizedFolderNameForDefaultDisplayName:(id)arg1;
@@ -201,6 +194,7 @@
 - (void)iconManager:(id)arg1 willUseIconImageCache:(id)arg2;
 - (_Bool)isEditingAllowedForIconManager:(id)arg1;
 - (_Bool)isRootFolderContentVisibleForIconManager:(id)arg1;
+- (unsigned long long)allowedInterfaceOrientationsForIconManager:(id)arg1;
 - (long long)interfaceOrientationForIconManager:(id)arg1;
 - (id)additionalIconModelForIconManager:(id)arg1;
 - (void)iconManager:(id)arg1 didCreateRootViewController:(id)arg2;
@@ -208,6 +202,7 @@
 - (void)iconManager:(id)arg1 willUseRootFolderControllerConfiguration:(id)arg2;
 - (void)iconManager:(id)arg1 willDestroyRootViewController:(id)arg2;
 - (void)iconManager:(id)arg1 willDestroyRootFolderController:(id)arg2;
+@property(readonly, nonatomic) double currentDockHeight;
 - (void)assistantWillAppear:(id)arg1;
 - (void)alertItemsController:(id)arg1 didDeactivateAlertItem:(id)arg2 forReason:(int)arg3;
 - (void)alertItemsController:(id)arg1 didActivateAlertItem:(id)arg2;
@@ -215,7 +210,7 @@
 @property(readonly, nonatomic) UIView *fallbackIconContainerView;
 @property(readonly, nonatomic) UIWindow *animationWindow;
 @property(readonly, nonatomic) UIView *containerView;
-- (void)layoutMonitor:(id)arg1 didUpdateDisplayLayout:(id)arg2 withContext:(id)arg3;
+- (void)publisher:(id)arg1 didUpdateLayout:(id)arg2 withTransition:(id)arg3;
 - (void)searchGesture:(id)arg1 completedShowing:(_Bool)arg2;
 - (void)searchGesture:(id)arg1 changedPercentComplete:(double)arg2;
 - (void)_iconForceTouchControllerDidDismiss:(id)arg1;
@@ -231,7 +226,6 @@
 - (_Bool)_shouldHideAppIconForceTouchInfoForApplication:(id)arg1;
 - (_Bool)_isHostedByCoverSheet;
 @property(readonly, nonatomic) _Bool isAnyIconViewPreviewing;
-- (_Bool)isWidgetVisible:(id)arg1;
 - (void)dismissAppIconForceTouchControllerIfNecessaryAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSSet *appIconForceTouchWindows;
 @property(readonly, nonatomic) _Bool isAppIconForceTouchControllerPeekingOrShowing;
@@ -291,7 +285,6 @@
 - (void)observer:(id)arg1 updateSectionInfo:(id)arg2;
 - (void)_updateEnabledBadgesSetWithSections:(id)arg1;
 - (_Bool)_badgesAreEnabledForSectionInfo:(id)arg1;
-- (void)popoverRequestsDismiss:(id)arg1;
 - (_Bool)importIconState:(id)arg1;
 @property(retain, nonatomic) SBIconModel *model;
 - (void)_selectIconModel:(_Bool)arg1;
@@ -311,10 +304,12 @@
 @property(nonatomic, getter=isSidebarPinned) _Bool sidebarPinned;
 @property(readonly, nonatomic, getter=isShowingSidebar) _Bool showingSidebar;
 @property(readonly, nonatomic, getter=isShowingTodayOverlay) _Bool showingTodayOverlay;
+- (void)completeSidebarAnimationsIfNeeded;
 - (void)dismissTodayOverlay;
 @property(readonly, nonatomic) SBHIconImageCache *notificationIconImageCache;
 @property(readonly, nonatomic) SBHIconImageCache *tableUIIconImageCache;
-@property(readonly, nonatomic) SBHIconImageCache *appSwitcherIconImageCache;
+@property(readonly, nonatomic) SBHIconImageCache *appSwitcherHeaderIconImageCache;
+@property(readonly, nonatomic) SBHIconImageCache *appSwitcherUnmaskedIconImageCache;
 - (_Bool)resetHomeScreenLayout;
 - (double)minimumHomeScreenScale;
 - (_Bool)allowsBadgingForIcon:(id)arg1;
@@ -348,11 +343,13 @@
 - (void)_showInfoAlertIfNeeded:(_Bool)arg1;
 - (void)_iconVisibilityChanged:(id)arg1;
 - (void)_ensureRootFolderController;
+- (id)iconPathForIconWithDisplayID:(id)arg1;
 - (id)folderNameForDisplayID:(id)arg1;
 @property(readonly, nonatomic, getter=_currentFolderController) SBFolderController *currentFolderController;
 @property(readonly, nonatomic, getter=_openFolderController) SBFolderController *openFolderController;
 @property(readonly, nonatomic, getter=_rootFolderController) SBRootFolderController *rootFolderController;
 @property(readonly, nonatomic) SBRootFolder *rootFolder;
+@property(readonly, nonatomic) unsigned long long allowedInterfaceOrientations;
 - (long long)orientation;
 - (long long)_effectiveOrientation;
 - (_Bool)shouldAutorotate;
@@ -376,7 +373,6 @@
 - (id)initWithApplicationController:(id)arg1 applicationPlaceholderController:(id)arg2 userInterfaceController:(id)arg3 policyAggregator:(id)arg4 alertItemsController:(id)arg5 assistantController:(id)arg6;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)_failCurrentTestWithMessage:(id)arg1;
-- (void)_runPopOverPresentationTest:(id)arg1 withOptions:(id)arg2;
 - (void)_runAppIconForceTouchTest:(id)arg1 withOptions:(id)arg2;
 - (void)_runScrollFolderTest:(long long)arg1;
 - (void)_runFolderTestWithName:(id)arg1 actions:(CDUnknownBlockType)arg2;

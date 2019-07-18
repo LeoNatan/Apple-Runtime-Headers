@@ -32,7 +32,7 @@
 #import <Safari/WBSCertificateWarningPageHandler-Protocol.h>
 #import <Safari/WBSFluidProgressStateSource-Protocol.h>
 
-@class AppLinkBannerController, AutoFillFunctionBarProvider, BackgroundLoad, Banner, BookmarksViewController, BrowserDiagnosticLoggingDelegate, BrowserDocument, BrowserNavigationDelegate, BrowserTabPersistentState, BrowserTabViewItem, BrowserWKView, BrowserWindowController, CKContextCompleter, CKContextResponse, ContinuousReadingListPageItem, ContinuousReadingListViewController, DefaultBrowserBanner, FullscreenUnifiedFieldWindowController, JavaScriptDialogSuppressionManager, NSArray, NSData, NSDictionary, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSTimer, NSURL, NSView, NSWindow, PagePreviewAnimationController, PassDownloadSuppressionManager, PointerLockBanner, PrintSheetSuppressionManager, PrivateBrowsingExplanationBanner, ReadingListItem, ResponsiveDesignViewController, SearchableWKView, SecIdentitiesCache, StartPageViewController, StatusMessage, TabContentView, TabDialogPresentationManager, TabDialogViewController, TextFieldInformation, UnresponsiveWebProcessHandler, WBSCreditCardData, WBSFluidProgressState, WBSFormMetadata, WBSHistoryContextController, WBSHistoryVisit, WBSMultiRoundAutoFillManager, WBSMutableOrderedSet, WBSSameDocumentNavigationToHistoryVisitCorrelator, WBSURLSpoofingMitigator, WebCrashBanner, _WKRemoteObjectInterface;
+@class AppLinkBannerController, AutoFillFunctionBarProvider, BackgroundLoad, Banner, BookmarksViewController, BrowserDiagnosticLoggingDelegate, BrowserDocument, BrowserNavigationDelegate, BrowserTabPersistentState, BrowserTabViewItem, BrowserWKView, BrowserWindowController, CKContextCompleter, CKContextResponse, ContinuousReadingListPageItem, ContinuousReadingListViewController, DefaultBrowserBanner, FullscreenUnifiedFieldWindowController, JavaScriptDialogSuppressionManager, NSArray, NSData, NSDate, NSDictionary, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSPrintInfo, NSSet, NSString, NSTimer, NSURL, NSView, NSWindow, PagePreviewAnimationController, PassDownloadSuppressionManager, PointerLockBanner, PrintSheetSuppressionManager, PrivateBrowsingExplanationBanner, ReadingListItem, ResponsiveDesignViewController, SearchableWKView, SecIdentitiesCache, StartPageViewController, StatusMessage, TabContentView, TabDialogPresentationManager, TabDialogViewController, TextFieldInformation, UnresponsiveWebProcessHandler, WBSCreditCardData, WBSFluidProgressState, WBSFormMetadata, WBSHistoryContextController, WBSHistoryVisit, WBSMultiRoundAutoFillManager, WBSMutableOrderedSet, WBSSameDocumentNavigationToHistoryVisitCorrelator, WBSURLSpoofingMitigator, WebCrashBanner, _WKRemoteObjectInterface;
 @protocol AppExtensionMessageReceiver, AuthenticationSessionNavigationHandling, BrowserContentLoaderDelegate, FormAutoFiller, PrintHelper, RemoteNotificationStateObserver, WBSCertificateWarningPagePresenter, WBSSandboxExtensionToken, WKUIDelegate;
 
 __attribute__((visibility("hidden")))
@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
     BrowserDiagnosticLoggingDelegate *_diagnosticLoggingDelegate;
     struct unique_ptr<Safari::BrowserPageFindClient, std::__1::default_delete<Safari::BrowserPageFindClient>> _pageFindClient;
     struct unique_ptr<Safari::BrowserPageFormClient, std::__1::default_delete<Safari::BrowserPageFormClient>> _pageFormClient;
+    NSTimer *_sessionStateUpdatePageLoadSafetyTimer;
     BOOL _hasDisplayedValidURL;
     BOOL _hasDisplayedStartPage;
     int _currentPageType;
@@ -154,6 +155,9 @@ __attribute__((visibility("hidden")))
     _WKRemoteObjectInterface *_extensionGalleryCertificateHandler;
     BOOL _mediaSuspendedForScreenTime;
     NSURL *_urlAssociatedWithScreenTimeShield;
+    BOOL _shouldIgnoreURLAsAnalyticsImpression;
+    BOOL _shouldNotifyImpressionAnalyticsRecorder;
+    BOOL _shouldNotifyImpressionAnalyticsRecorderWhenDisplayedToUser;
     BOOL _playingMutableMedia;
     BOOL _mediaCaptureMuted;
     BOOL _screenCapturePaused;
@@ -171,6 +175,7 @@ __attribute__((visibility("hidden")))
     BOOL _handlingExternalNavigation;
     BOOL _tryingToCloseBeforeCommittingToBackgroundLoad;
     BOOL _hasEverBeenVisible;
+    BOOL _isUnifiedFieldImpression;
     BOOL _sensitiveFormFieldHasEverHadFocus;
     BOOL _committedExtendedValidationCertificateOrganizationNameHasBeenDetermined;
     BOOL _restoringFromSessionStateData;
@@ -214,6 +219,7 @@ __attribute__((visibility("hidden")))
     BrowserViewController *_originatingContentViewControllerWithPossibleJavaScriptAccess;
     BrowserNavigationDelegate *_navigationDelegate;
     id <WKUIDelegate> _UIDelegate;
+    NSDate *_dateFinishedLoading;
     NSString *_originalURLString;
     NSString *_provisionalOriginalURLString;
     WBSURLSpoofingMitigator *_urlSpoofingMitigator;
@@ -337,6 +343,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PassDownloadSuppressionManager *passDownloadSuppressionManager; // @synthesize passDownloadSuppressionManager=_passDownloadSuppressionManager;
 @property(readonly, nonatomic) BOOL committedExtendedValidationCertificateOrganizationNameHasBeenDetermined; // @synthesize committedExtendedValidationCertificateOrganizationNameHasBeenDetermined=_committedExtendedValidationCertificateOrganizationNameHasBeenDetermined;
 @property(readonly, nonatomic) BOOL sensitiveFormFieldHasEverHadFocus; // @synthesize sensitiveFormFieldHasEverHadFocus=_sensitiveFormFieldHasEverHadFocus;
+@property(nonatomic) BOOL isUnifiedFieldImpression; // @synthesize isUnifiedFieldImpression=_isUnifiedFieldImpression;
 @property(readonly, nonatomic) __weak BackgroundLoad *backgroundNavigationBackgroundLoad; // @synthesize backgroundNavigationBackgroundLoad=_backgroundNavigationBackgroundLoad;
 @property(nonatomic) BOOL hasEverBeenVisible; // @synthesize hasEverBeenVisible=_hasEverBeenVisible;
 @property(nonatomic) long long lastBackgroundTerminationReason; // @synthesize lastBackgroundTerminationReason=_lastBackgroundTerminationReason;
@@ -363,6 +370,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *provisionalOriginalURLString; // @synthesize provisionalOriginalURLString=_provisionalOriginalURLString;
 @property(copy, nonatomic, setter=_setOriginalURLString:) NSString *originalURLString; // @synthesize originalURLString=_originalURLString;
 @property(nonatomic) BOOL webPageIsUnresponsive; // @synthesize webPageIsUnresponsive=_webPageIsUnresponsive;
+@property(readonly, nonatomic) NSDate *dateFinishedLoading; // @synthesize dateFinishedLoading=_dateFinishedLoading;
 @property(readonly, nonatomic) id <WKUIDelegate> UIDelegate; // @synthesize UIDelegate=_UIDelegate;
 @property(readonly, nonatomic) BrowserNavigationDelegate *navigationDelegate; // @synthesize navigationDelegate=_navigationDelegate;
 @property(nonatomic) __weak BrowserViewController *originatingContentViewControllerWithPossibleJavaScriptAccess; // @synthesize originatingContentViewControllerWithPossibleJavaScriptAccess=_originatingContentViewControllerWithPossibleJavaScriptAccess;
@@ -822,6 +830,7 @@ __attribute__((visibility("hidden")))
 - (void)_printFrame:(const struct Frame *)arg1 withPrintInfo:(id)arg2 waitUntilDone:(BOOL)arg3;
 - (void)_printFrame:(const struct Frame *)arg1 waitUntilDone:(BOOL)arg2;
 - (void)_getPrintInfoForFrame:(const struct Frame *)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) NSPrintInfo *printInfo;
 - (BOOL)_isHTMLPage;
 - (id)_printHelper;
 - (void)_showPrintSheetBlockedDialogForFrame:(const struct Frame *)arg1 waitUntilDone:(BOOL)arg2;
@@ -944,6 +953,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)canSave;
 - (void)decideStorageQuotaForURL:(id)arg1 originDisplayName:(id)arg2 currentQuota:(unsigned long long)arg3 currentOriginUsage:(unsigned long long)arg4 currentDatabaseUsage:(unsigned long long)arg5 expectedUsage:(unsigned long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (unsigned long long)_defaultDatabaseQuota;
+- (void)_notifyImpressionAnalyticsRecorderIfNeededIsInViewDidAppear:(BOOL)arg1;
+- (BOOL)_analyticsRecorderShouldIgnoreURLWithNavigationPolicy:(long long)arg1 forNavigationAction:(id)arg2;
+- (void)didDecideNavigationPolicy:(long long)arg1 inMainFrameForNavigationAction:(id)arg2;
 - (void)confirmUnloadingPageWithPIPDuringNavigationWithCompletionHandler:(CDUnknownBlockType)arg1 isReload:(BOOL)arg2;
 - (BOOL)shouldConfirmUnloadingPageWithPIPDuringNavigation;
 - (void)updateCustomSwipeViews;
@@ -994,6 +1006,7 @@ __attribute__((visibility("hidden")))
 - (void)reportCurrentAutoplaySignalIfNecessary;
 - (void)didReplaceNavigationState;
 - (void)didFailProvisionalLoad;
+- (void)_sessionStateUpdatePageLoadSafetyTimerDidFire:(id)arg1;
 - (void)sessionStateDidChange;
 - (void)loadingStatusHasChanged;
 - (void)reloadWithOption:(long long)arg1;
@@ -1099,6 +1112,7 @@ __attribute__((visibility("hidden")))
 - (void)transferStateFromBrowserContentViewController:(id)arg1;
 - (Ref_a0637525)createContentViewController;
 - (void)loadViewIfNeeded;
+- (void)viewDidAppear;
 - (void)viewDidLoad;
 - (void)_commonInitializationWithDocument:(id)arg1;
 - (id)_createWebViewWithConfiguration:(id)arg1;

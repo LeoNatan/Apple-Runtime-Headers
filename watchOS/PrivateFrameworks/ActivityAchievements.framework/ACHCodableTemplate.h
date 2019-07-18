@@ -31,7 +31,10 @@
     NSString *_availableSuffixes;
     NSString *_canonicalUnit;
     NSString *_goalExpression;
+    NSString *_graceGoalExpression;
     NSString *_gracePredicate;
+    NSString *_graceProgressExpression;
+    NSString *_graceValueExpression;
     NSString *_graceVisibilityPredicate;
     NSString *_predicate;
     NSString *_progressExpression;
@@ -57,6 +60,9 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *graceGoalExpression; // @synthesize graceGoalExpression=_graceGoalExpression;
+@property(retain, nonatomic) NSString *graceProgressExpression; // @synthesize graceProgressExpression=_graceProgressExpression;
+@property(retain, nonatomic) NSString *graceValueExpression; // @synthesize graceValueExpression=_graceValueExpression;
 @property(retain, nonatomic) NSString *graceVisibilityPredicate; // @synthesize graceVisibilityPredicate=_graceVisibilityPredicate;
 @property(retain, nonatomic) NSString *gracePredicate; // @synthesize gracePredicate=_gracePredicate;
 @property(retain, nonatomic) NSString *availableSuffixes; // @synthesize availableSuffixes=_availableSuffixes;
@@ -97,6 +103,9 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasGraceGoalExpression;
+@property(readonly, nonatomic) _Bool hasGraceProgressExpression;
+@property(readonly, nonatomic) _Bool hasGraceValueExpression;
 @property(readonly, nonatomic) _Bool hasGraceVisibilityPredicate;
 @property(readonly, nonatomic) _Bool hasGracePredicate;
 @property(readonly, nonatomic) _Bool hasAvailableSuffixes;

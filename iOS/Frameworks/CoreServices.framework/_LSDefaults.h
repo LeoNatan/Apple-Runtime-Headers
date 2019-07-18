@@ -47,6 +47,7 @@
 - (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly) NSData *HMACSecret;
+@property(readonly, getter=isRegionChina) _Bool regionChina; // @dynamic regionChina;
 @property(readonly) _Bool alwaysUseDebugOpenWithMenus; // @dynamic alwaysUseDebugOpenWithMenus;
 @property(readonly) _Bool markLocalizationsStoredInDatabase; // @dynamic markLocalizationsStoredInDatabase;
 @property(readonly) NSArray *preferredLocalizations; // @dynamic preferredLocalizations;

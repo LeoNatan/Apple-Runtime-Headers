@@ -16,6 +16,8 @@
     RTPersistenceManager *_persistenceManager;
 }
 
++ (id)contextTypeToString:(unsigned long long)arg1;
++ (id)availabilityToString:(unsigned long long)arg1;
 @property(retain, nonatomic) RTPersistenceManager *persistenceManager; // @synthesize persistenceManager=_persistenceManager;
 @property(nonatomic) unsigned long long availability; // @synthesize availability=_availability;
 @property(retain, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
@@ -34,6 +36,7 @@
 - (void)_updateWritableObjects:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)storeWritableObjects:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_storeWritableObjects:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)fetchAvailabilityWithHandler:(CDUnknownBlockType)arg1;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
 - (void)_shutdown;

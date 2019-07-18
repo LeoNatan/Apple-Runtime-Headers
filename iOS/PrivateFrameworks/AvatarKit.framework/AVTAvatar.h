@@ -79,7 +79,7 @@
 - (void)applyHeadPoseWithTrackingInfo:(id)arg1 gazeCorrection:(_Bool)arg2 pointOfView:(id)arg3;
 - (void)applyBlendShapesWithTrackingInfo:(id)arg1;
 - (void)setupMorphInfo;
-- (id)effectiveMorphedNodeForTargetName:(id)arg1;
+- (id)effectiveMorphedNodeForTargetName:(id)arg1 candidateNode:(id)arg2;
 - (void)updateAfterAnimationsEvaluatedAtTime:(double)arg1 renderer:(id)arg2;
 - (void)renderer:(id)arg1 didApplyAnimationsAtTime:(double)arg2;
 - (void)didAddToScene:(id)arg1;

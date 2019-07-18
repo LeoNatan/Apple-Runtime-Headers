@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) unsigned long long tileInfoType;
 @property(readonly, nonatomic) unsigned long long bookmarkOffsetType;
 @property(readonly, nonatomic) NFLHeadlineTileInfo *feedTileInfoForBookmarking;
+@property(readonly, nonatomic, getter=isSelectable) _Bool selectable;
 @property(readonly, nonatomic) _Bool pageable;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

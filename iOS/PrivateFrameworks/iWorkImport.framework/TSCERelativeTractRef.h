@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)debugDescription;
-- (void)verifySpanningSettings;
+- (_Bool)verifySpanningSettings;
 - (id)description;
 - (_Bool)isSingleCellOrSpanningRange;
 - (_Bool)isRectangularRange;
@@ -65,6 +65,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool preserveRectangular;
 @property(nonatomic) _Bool spansAllRows;
 @property(nonatomic) _Bool spansAllColumns;
+- (void)repairSpanningRowSetting;
+- (void)repairSpanningColumnSetting;
 - (id)initWithAbsoluteTractRef:(id)arg1 hostCell:(const struct TSUCellCoord *)arg2;
 - (id)initWithTableUID:(const UUIDData_5fbc143e *)arg1 preserveFlags:(const struct TSUPreserveFlags *)arg2;
 - (id)init;

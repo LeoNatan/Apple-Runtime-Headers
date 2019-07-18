@@ -9,7 +9,7 @@
 #import <PassKitUI/PKSetupFlowControllerProtocol-Protocol.h>
 
 @class NSString, PKAccount, PKAccountService, PKPaymentPass, PKPhysicalCard;
-@protocol PKPhysicalCardControllerDelegate, PKSetupFlowControllerProtocol;
+@protocol PKPaymentSetupViewControllerDelegate, PKSetupFlowControllerProtocol;
 
 @interface PKPhysicalCardController : NSObject <PKSetupFlowControllerProtocol>
 {
@@ -17,8 +17,8 @@
     _Bool _updatingOrderController;
     PKAccount *_account;
     PKPaymentPass *_paymentPass;
-    id <PKPhysicalCardControllerDelegate> _delegate;
     id <PKSetupFlowControllerProtocol> _parentFlowController;
+    id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
     PKPhysicalCard *_unactivatedPhysicalCard;
     PKPhysicalCard *_primaryPhysicalCard;
 }
@@ -26,12 +26,11 @@
 + (_Bool)deviceSupportsContactlessActivation;
 @property(readonly, nonatomic) PKPhysicalCard *primaryPhysicalCard; // @synthesize primaryPhysicalCard=_primaryPhysicalCard;
 @property(readonly, nonatomic) PKPhysicalCard *unactivatedPhysicalCard; // @synthesize unactivatedPhysicalCard=_unactivatedPhysicalCard;
+@property(nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 @property(retain, nonatomic) id <PKSetupFlowControllerProtocol> parentFlowController; // @synthesize parentFlowController=_parentFlowController;
-@property(nonatomic) __weak id <PKPhysicalCardControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
-- (void)_handleAccountsChanged:(id)arg1;
 - (void)_updatePhysicalCards;
 - (void)nextViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)orderFlowViewControllerForReason:(unsigned int)arg1 content:(int)arg2 completion:(CDUnknownBlockType)arg3;
@@ -40,6 +39,7 @@
 @property(readonly, nonatomic) _Bool canRequestPhysicalCard;
 @property(readonly, nonatomic) _Bool canActivatePhysicalCard;
 @property(readonly, nonatomic) _Bool hasPrimaryPhysicalCard;
+- (void)updateWithAccount:(id)arg1;
 - (void)dealloc;
 - (id)initWithAccountService:(id)arg1 paymentPass:(id)arg2 account:(id)arg3;
 

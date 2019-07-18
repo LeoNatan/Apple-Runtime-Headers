@@ -51,6 +51,8 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)setModalInPresentation:(BOOL)arg1;
+- (BOOL)isModalInPresentation;
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1;
 - (id)initWithCoder:(id)arg1;

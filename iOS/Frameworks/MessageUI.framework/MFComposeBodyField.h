@@ -11,7 +11,7 @@
 #import <MessageUI/UIWebDraggingDelegate-Protocol.h>
 #import <MessageUI/WebResourceLoadDelegate-Protocol.h>
 
-@class DOMHTMLDocument, DOMHTMLElement, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, UIBarButtonItemGroup, UIView;
+@class DOMHTMLDocument, DOMHTMLElement, NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, UIBarButtonItemGroup, UIView;
 @protocol MFMailComposeViewDelegate;
 
 @interface MFComposeBodyField : UIWebDocumentView <MFComposeBodyFieldInternal, WebResourceLoadDelegate, MFComposeBodyField, UIWebDraggingDelegate>
@@ -35,7 +35,7 @@
     struct UIEdgeInsets _previousLayoutMargins;
     NSDictionary *_replacementFilenamesByContentID;
     UIBarButtonItemGroup *_leadingInputAssistantItemGroup;
-    UIBarButtonItemGroup *_trailingInputAssistantItemGroup;
+    NSArray *_trailingInputAssistantItemGroups;
     _Bool _createAttachmentsForUnknownDataTypes;
     NSMutableSet *_drawingAttachmentNames;
     id <MFMailComposeViewDelegate> _mailComposeViewDelegate;
@@ -108,9 +108,9 @@
 - (void)_decreaseQuoteLevelKeyCommandInvoked:(id)arg1;
 - (void)_increaseQuoteLevelKeyCommandInvoked:(id)arg1;
 - (void)_pasteAsQuotationKeyCommandInvoked:(id)arg1;
-@property(retain, nonatomic, setter=_setTrailingInputAssistantItemGroup:) UIBarButtonItemGroup *_trailingInputAssistantItemGroup;
+@property(retain, nonatomic, setter=_setTrailingInputAssistantItemGroups:) NSArray *_trailingInputAssistantItemGroups;
 @property(retain, nonatomic, setter=_setLeadingInputAssistantItemGroup:) UIBarButtonItemGroup *_leadingInputAssistantItemGroup;
-@property(readonly, nonatomic) UIBarButtonItemGroup *_mailComposeEditingTrailingInputAssistantGroup;
+@property(readonly, nonatomic) NSArray *_mailComposeEditingTrailingInputAssistantGroups;
 @property(readonly, nonatomic) UIBarButtonItemGroup *_mailComposeEditingLeadingInputAssistantGroup;
 - (void)_didTapScanDocumentButton:(id)arg1;
 - (void)_didTapImportDocumentButton:(id)arg1;

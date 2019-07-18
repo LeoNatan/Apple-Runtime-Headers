@@ -7,7 +7,7 @@
 #import <TelephonyUtilities/TUAudioController.h>
 
 @class NSArray, NSDictionary, NSNumber, NSObject;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, TUAudioSystemControllerDelegate;
 
 @interface TUAudioSystemController : TUAudioController
 {
@@ -43,11 +43,13 @@
     unsigned long long _lastPlayAndRecordVoiceRoutesScheduleTime;
     unsigned long long _lastPlayAndRecordRemoteVoiceRoutesScheduleTime;
     unsigned long long _lastVoicemailRoutesScheduleTime;
+    id <TUAudioSystemControllerDelegate> _delegate;
 }
 
 + (id)filteredPickableRoutesFromPickableRoutes:(id)arg1;
 + (id)sourceIdentifierForRouteID:(id)arg1;
 + (id)sharedAudioSystemController;
+@property(nonatomic) __weak id <TUAudioSystemControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (BOOL)shouldSuppressCallUsingRoute:(id)arg1;
 - (id)pickableRouteWithUniqueIdentifier:(id)arg1;
@@ -63,6 +65,7 @@
 - (id)_pickableRoutesForPlayAndRecordVoiceWithForceNewRequest:(BOOL)arg1;
 - (id)currentlyPickedRouteIdForCategory:(id)arg1 andMode:(id)arg2;
 - (id)_pickableRoutesForPhoneCallWithForceNewRequest:(BOOL)arg1;
+- (id)pickableRoutesForActiveCall;
 @property(readonly, copy, nonatomic) NSArray *pickableRoutesForTTY;
 - (id)_pickableRoutesForTTYWithForceNewRequest:(BOOL)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *pickedRouteAttribute;

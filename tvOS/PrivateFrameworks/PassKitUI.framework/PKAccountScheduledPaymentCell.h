@@ -6,10 +6,12 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class PKAccountPayment, UIColor;
+@class NSTimeZone, PKAccountPayment, UIColor;
 
 @interface PKAccountScheduledPaymentCell : UITableViewCell
 {
+    NSTimeZone *_timeZone;
+    _Bool _hasPaymentDueDate;
     _Bool _onHold;
     PKAccountPayment *_payment;
     UIColor *_titleColor;

@@ -16,6 +16,7 @@
 + (id)hk_dateTimeDateIntervalFormatter;
 + (id)hk_hourMinuteOnlyDateIntervalFormatter;
 + (id)hk_hourOnlyDateIntervalFormatter;
++ (id)hk_hourDateIntervalWithDateFormatter;
 + (id)hk_hourDateIntervalFormatter;
 @end
 

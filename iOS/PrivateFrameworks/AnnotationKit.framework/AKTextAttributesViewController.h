@@ -62,6 +62,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (void)_commonInit;
 - (id)initWithController:(id)arg1;

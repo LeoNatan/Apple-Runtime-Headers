@@ -6,26 +6,26 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class NSError, NSUUID;
+@class NSDate, NSError, NSUUID;
 
 @interface HMDLogEvent : HMFObject
 {
     _Bool _submitted;
     NSUUID *_eventType;
     NSError *_eventError;
-    unsigned long long _startTime;
-    unsigned long long _endTime;
+    NSDate *_startDate;
+    NSDate *_endDate;
 }
 
 + (id)stringForSource:(unsigned long long)arg1;
-@property(nonatomic) unsigned long long endTime; // @synthesize endTime=_endTime;
-@property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
+@property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
+@property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSError *eventError; // @synthesize eventError=_eventError;
 @property(readonly, nonatomic) NSUUID *eventType; // @synthesize eventType=_eventType;
 @property(nonatomic, getter=isSubmitted) _Bool submitted; // @synthesize submitted=_submitted;
 - (void).cxx_destruct;
 @property(readonly) double durationInMilliseconds;
-- (void)submitAtTime:(unsigned long long)arg1 error:(id)arg2;
+- (void)submitAtDate:(id)arg1 error:(id)arg2;
 - (id)initWithEventType:(id)arg1;
 - (id)init;
 

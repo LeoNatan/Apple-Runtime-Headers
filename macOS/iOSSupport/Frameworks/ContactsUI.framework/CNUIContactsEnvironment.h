@@ -21,6 +21,7 @@
     CNUIMeContactMonitor *_meMonitor;
     id <CNUIPRLikenessResolver> _cachingLikenessResolver;
     id <CNUILikenessRendering> _cachingLikenessRenderer;
+    id <CNUILikenessRendering> _cachingMonogramRenderer;
     id <CNUIUserActionDiscoveringEnvironment> _actionDiscoveringEnvironment;
     CNUIIDSAvailabilityProvider *_idsAvailabilityProvider;
     id <CNLSApplicationWorkspace> _applicationWorkspace;
@@ -49,6 +50,7 @@
 @property(retain, nonatomic) id <CNLSApplicationWorkspace> applicationWorkspace; // @synthesize applicationWorkspace=_applicationWorkspace;
 @property(retain, nonatomic) CNUIIDSAvailabilityProvider *idsAvailabilityProvider; // @synthesize idsAvailabilityProvider=_idsAvailabilityProvider;
 @property(retain, nonatomic) id <CNUIUserActionDiscoveringEnvironment> actionDiscoveringEnvironment; // @synthesize actionDiscoveringEnvironment=_actionDiscoveringEnvironment;
+@property(retain, nonatomic) id <CNUILikenessRendering> cachingMonogramRenderer; // @synthesize cachingMonogramRenderer=_cachingMonogramRenderer;
 @property(retain, nonatomic) id <CNUILikenessRendering> cachingLikenessRenderer; // @synthesize cachingLikenessRenderer=_cachingLikenessRenderer;
 @property(retain, nonatomic) id <CNUIPRLikenessResolver> cachingLikenessResolver; // @synthesize cachingLikenessResolver=_cachingLikenessResolver;
 @property(retain, nonatomic) CNUIMeContactMonitor *meMonitor; // @synthesize meMonitor=_meMonitor;
@@ -77,6 +79,7 @@
 - (id)nts_lazyIDSAvailabilityProvider;
 - (id)nts_makeActionDiscoveringEnvironment;
 - (id)nts_lazyActionDiscoveringEnvironment;
+- (id)nts_lazyCachingMonogramRenderer;
 - (id)nts_lazyCachingLikenessRenderer;
 - (id)nts_makeCachingLikenessResolver;
 - (id)nts_lazyCachingLikenessResolver;

@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (id)_addRowForType:(unsigned long long)arg1 withValue:(id)arg2 toViews:(id)arg3;
 - (void)_addContactRow:(id)arg1 ofType:(unsigned long long)arg2 toViews:(id)arg3 defaultTitle:(id)arg4;
 - (void)_updateViewsAnimated:(_Bool)arg1;
+- (_Bool)_shouldShowSuggestAnEdit;
 - (void)_menuDismissed:(id)arg1;
 - (void)_rowLongPressed:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
@@ -53,6 +54,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasContent;
 - (void)viewDidLoad;
 - (id)initWithPlaceItem:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -22,7 +22,7 @@
 @property(readonly, nonatomic) unsigned long long inputLatency;
 - (double)latency;
 @property(readonly, nonatomic) unsigned long long clockDomain;
-@property(readonly, nonatomic) unsigned long long transportType;
+@property(readonly, nonatomic) unsigned int transportType;
 
 @end
 

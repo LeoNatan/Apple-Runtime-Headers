@@ -46,6 +46,7 @@
 - (void)updateValueForSetting:(id)arg1 value:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)configureWithContext:(id)arg1;
 - (void)decodeWithCoder:(id)arg1;
+- (void)notifyDelegateOfUpdate;
 - (void)mergeWith:(id)arg1;
 - (void)settingsDidChangeWithRootGroup:(id)arg1 addedGroups:(id)arg2 addedSettings:(id)arg3 changedSettings:(id)arg4;
 - (id)settingGroupForIdentifier:(id)arg1;

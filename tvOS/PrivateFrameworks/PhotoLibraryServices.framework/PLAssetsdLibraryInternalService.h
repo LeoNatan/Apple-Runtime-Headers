@@ -16,6 +16,7 @@
 
 - (void)invalidateBehavioralScoreOnAllAssetsWithReply:(CDUnknownBlockType)arg1;
 - (void)deleteiTunesSyncedContentWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)backgroundJobServiceRemoveAllBundleRecordsFromProcessingSet;
 - (void)getBackgroundJobServiceBundlesInQueueDictionaryWithReply:(CDUnknownBlockType)arg1;
 - (void)getBackgroundJobServiceStateWithReply:(CDUnknownBlockType)arg1;
 - (void)registerBackgroundJobServiceIfNecessaryOnLibraryPath:(id)arg1 reply:(CDUnknownBlockType)arg2;

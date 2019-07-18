@@ -35,6 +35,7 @@
 @property(readonly, copy, nonatomic) NSURL *webURL;
 @property(readonly, nonatomic) struct CGRect thumbnailFocalFrame;
 @property(readonly, nonatomic) unsigned long long thumbnailSizePreset;
+@property(copy, nonatomic) NSString *thumbnailIdentifier;
 @property(readonly, copy, nonatomic) NSURL *thumbnailRemoteURL;
 @property(readonly, copy, nonatomic) NSURL *compactSourceNameImageRemoteURL;
 @property(readonly, nonatomic) double sourceNameImageScale;

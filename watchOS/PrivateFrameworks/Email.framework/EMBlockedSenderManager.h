@@ -16,6 +16,8 @@
     NSObject<OS_dispatch_queue> *_cacheQueue;
 }
 
++ (void)setPromptForBlockedSender:(_Bool)arg1;
++ (_Bool)shouldPromptForBlockedSender;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
 @property(retain, nonatomic) id <EFScheduler> resetScheduler; // @synthesize resetScheduler=_resetScheduler;
 @property(retain, nonatomic) NSSet *blockedSenderCache; // @synthesize blockedSenderCache=_blockedSenderCache;
@@ -36,6 +38,7 @@
 - (void)unblockContact:(id)arg1;
 - (void)blockContact:(id)arg1;
 - (_Bool)isEmailAddressBlocked:(id)arg1;
+@property(nonatomic, getter=isBlockedSenderEnabled) _Bool blockedSenderEnabled;
 @property(nonatomic, getter=isEnabled) _Bool enabled;
 - (void)_resetBlockedSenderCache;
 - (void)_blockedSenderListDidChange:(id)arg1;

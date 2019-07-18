@@ -15,6 +15,7 @@
 
 @property(readonly, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 - (void).cxx_destruct;
+- (struct UIEdgeInsets)alignmentRectInsets;
 - (double)baselineOffsetFromBottom;
 - (_Bool)hasBaseline;
 - (void)removeInvertingFilter;

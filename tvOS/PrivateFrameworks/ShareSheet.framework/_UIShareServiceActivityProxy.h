@@ -28,6 +28,8 @@
 - (void)_willBePerformedOrPresented;
 - (struct CGSize)_thumbnailSize;
 - (_Bool)_activitySupportsPromiseURLs;
+- (_Bool)_needsResolvedActivityItems;
+- (_Bool)_managesOwnPresentation;
 - (_Bool)_dismissActivityFromViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_presentActivityOnViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_embeddedActivityViewController;

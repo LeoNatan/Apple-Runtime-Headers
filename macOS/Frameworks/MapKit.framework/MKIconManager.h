@@ -34,7 +34,6 @@
 + (struct CGColor *)newHaloColorForStyleAttributes:(id)arg1 forScale:(double)arg2;
 + (struct CGColor *)newFillColorForStyleAttributes:(id)arg1 forScale:(double)arg2;
 + (id)iconManager;
-+ (void)setUseSharedCaches;
 + (void)setDiskCacheURL:(id)arg1;
 
 @end

@@ -8,14 +8,21 @@
 
 @interface CSVoiceProfileTrainer : NSObject
 {
-    float _baseProfileConfidenceScoreThreshold;
-    float _implicitConfidenceScoreThreshold;
-    float _implicitDeltaConfidenceScoreThreshold;
+    unsigned long long _baseProfileConfidenceScoreThreshold;
+    unsigned long long _implicitConfidenceScoreThreshold;
+    unsigned long long _implicitDeltaConfidenceScoreThreshold;
 }
 
-@property(readonly, nonatomic) float implicitDeltaConfidenceScoreThreshold; // @synthesize implicitDeltaConfidenceScoreThreshold=_implicitDeltaConfidenceScoreThreshold;
-@property(readonly, nonatomic) float implicitConfidenceScoreThreshold; // @synthesize implicitConfidenceScoreThreshold=_implicitConfidenceScoreThreshold;
-@property(readonly, nonatomic) float baseProfileConfidenceScoreThreshold; // @synthesize baseProfileConfidenceScoreThreshold=_baseProfileConfidenceScoreThreshold;
+@property(readonly, nonatomic) unsigned long long implicitDeltaConfidenceScoreThreshold; // @synthesize implicitDeltaConfidenceScoreThreshold=_implicitDeltaConfidenceScoreThreshold;
+@property(readonly, nonatomic) unsigned long long implicitConfidenceScoreThreshold; // @synthesize implicitConfidenceScoreThreshold=_implicitConfidenceScoreThreshold;
+@property(readonly, nonatomic) unsigned long long baseProfileConfidenceScoreThreshold; // @synthesize baseProfileConfidenceScoreThreshold=_baseProfileConfidenceScoreThreshold;
+- (unsigned long long)maxAllowedImplicitTrainingUtterances;
+- (unsigned long long)maxAllowedSatVectorCount;
+- (unsigned long long)satVectorCount;
+- (_Bool)checkIfUpdateNecessaryForAudioFileCount:(unsigned long long)arg1;
+- (_Bool)checkIfRetrainingIsRequired;
+- (void)processUtterance:(id)arg1 ofSpIdType:(unsigned long long)arg2 withUpdatePolicyBlock:(CDUnknownBlockType)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
+- (void)addUtterances:(id)arg1 withScoreThreshold:(float)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)addUtterances:(id)arg1 toProfile:(id)arg2 toModel:(unsigned long long)arg3 withScoreThreshold:(float)arg4 withCompletionBlock:(CDUnknownBlockType)arg5;
 
 @end

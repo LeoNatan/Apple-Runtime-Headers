@@ -15,6 +15,7 @@
 }
 
 + (id)wrappedMessage:(id)arg1;
++ (BOOL)_writeDataForTransparency:(id)arg1;
 - (void)postMetricId:(unsigned int)arg1 message:(id)arg2;
 
 // Remaining properties

@@ -44,6 +44,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyElementWithUpdatedRelevanceProviders:(id)arg1;
+- (void)finalizeContent;
 - (id)dictionaryEncodingWithRelevanceProviderGenerator:(id)arg1;
 - (id)initWithDictionary:(id)arg1 relevanceProviderGenerator:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 content:(id)arg2 idealizedContent:(id)arg3 action:(id)arg4 relevanceProviders:(id)arg5 privacyBehavior:(unsigned int)arg6;

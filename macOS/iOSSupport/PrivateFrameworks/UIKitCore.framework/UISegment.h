@@ -102,6 +102,7 @@ __attribute__((visibility("hidden")))
 - (void)setBarStyle:(long long)arg1;
 - (id)disabledTextColor;
 - (id)_attributedTextForState:(unsigned long long)arg1 selected:(BOOL)arg2;
+- (id)_stateTextAttibutes:(id)arg1 segmentState:(unsigned long long)arg2;
 - (void)_updateTextColors;
 - (void)setUsesAXTextSize:(BOOL)arg1;
 - (void)setWasSelected:(BOOL)arg1;
@@ -132,6 +133,8 @@ __attribute__((visibility("hidden")))
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_encodableSubviews;
 - (id)_tintColorArchivingKey;
+- (id)_effectiveBackgroundTintColor;
+- (id)_effectiveSelectedSegmentTintColor;
 - (Class)_segmentedControlClass;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInfo:(id)arg1 size:(int)arg2 barStyle:(long long)arg3 tintColor:(id)arg4 appearanceStorage:(id)arg5 position:(unsigned int)arg6 autosizeText:(BOOL)arg7;

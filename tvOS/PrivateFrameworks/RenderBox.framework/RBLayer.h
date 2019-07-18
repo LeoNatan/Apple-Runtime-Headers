@@ -6,13 +6,15 @@
 
 #import <QuartzCore/CALayer.h>
 
-@class RBDevice;
+@class NSTimer, RBDevice;
 
 @interface RBLayer : CALayer
 {
     struct objc_ptr<RBDevice *> _device;
     _Bool _disableAsync;
     _Bool _pendingFlush;
+    _Bool _pendingCollection;
+    NSTimer *_collectionTimer;
     struct unique_ptr<RB::Drawable, std::__1::default_delete<RB::Drawable>> _drawable;
     struct objc_ptr<NSObject<OS_dispatch_semaphore>*> _semaphore;
     struct cf_ptr<_CAImageQueue *> _imageQueue;
@@ -32,6 +34,7 @@
 - (void).cxx_destruct;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)waitUntilAsyncRenderingCompleted;
+- (void)_scheduleCollection;
 - (void)drawInDisplayList:(id)arg1;
 - (void)display;
 @property(readonly, nonatomic, getter=isDrawableAvailable) _Bool drawableAvailable;

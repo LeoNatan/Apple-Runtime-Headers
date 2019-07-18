@@ -38,6 +38,9 @@
 - (void)resetModifications:(BOOL)arg1;
 - (void)markPropertyModifiedIfNecessary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)descriptionWithValues:(BOOL)arg1;
+- (id)debugDescription;
+- (id)description;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (BOOL)writeToStorage:(id)arg1 error:(id *)arg2;
 - (BOOL)saveChangesToStorage:(id)arg1 error:(id *)arg2;

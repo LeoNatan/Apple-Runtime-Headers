@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 @property(readonly) NSString *stringValue;
 @property(readonly, nonatomic) ECEmailAddress *emailAddressValue;
+- (id)valueForUndefinedKey:(id)arg1;
 @property(readonly, copy) NSArray *groupList; // @synthesize groupList=_groupList;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;

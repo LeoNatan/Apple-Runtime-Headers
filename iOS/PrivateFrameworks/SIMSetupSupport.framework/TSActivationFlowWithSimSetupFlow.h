@@ -16,7 +16,6 @@
 @interface TSActivationFlowWithSimSetupFlow : TSSIMSetupFlow <TSSIMSetupFlowDelegate, TSCellularPlanManagerCacheDelegate, TSEntitlementJSHandlerDelegate>
 {
     _Bool _requireSetup;
-    _Bool _isPreinstallingViewControllerActive;
     _Bool _confirmationCodeRequired;
     _Bool _isTransferCapable;
     NSError *_planInstallError;
@@ -27,8 +26,10 @@
     UIBarButtonItem *_cancelButton;
     long long _signupConsentResponse;
     UIViewController<TSSetupFlowItem> *_currentViewController;
+    _Bool _isPreinstallingViewControllerActive;
 }
 
+@property _Bool isPreinstallingViewControllerActive; // @synthesize isPreinstallingViewControllerActive=_isPreinstallingViewControllerActive;
 - (void).cxx_destruct;
 - (void)_requestPendingInstallItems;
 - (void)_requestTransferPlanList;

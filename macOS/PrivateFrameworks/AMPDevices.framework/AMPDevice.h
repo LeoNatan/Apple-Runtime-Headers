@@ -64,7 +64,7 @@
 @property(retain, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) BOOL isIPodDeviceType;
+@property(readonly, nonatomic) BOOL isClassicIPodDeviceType;
 @property(readonly, nonatomic) BOOL isIOSDeviceType;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

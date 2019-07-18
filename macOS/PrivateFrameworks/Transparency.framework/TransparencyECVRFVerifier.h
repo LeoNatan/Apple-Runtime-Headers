@@ -12,7 +12,6 @@
 }
 
 + (BOOL)verifyMessage:(id)arg1 output:(id)arg2 proof:(id)arg3 key:(id)arg4 error:(id *)arg5;
-+ (id)decodeSPKI:(id)arg1;
 - (BOOL)verifyMessage:(id)arg1 output:(id)arg2 proof:(id)arg3 error:(id *)arg4;
 - (int)vrfType;
 - (id)initWithKey:(id)arg1;

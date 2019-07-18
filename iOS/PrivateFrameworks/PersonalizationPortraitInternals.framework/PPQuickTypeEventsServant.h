@@ -29,7 +29,7 @@
 - (_Bool)_shouldTreatAsUnscheduledFreeTime:(id)arg1;
 - (_Bool)_userDidOrganizeEvent:(id)arg1;
 - (_Bool)_userIsInvitedToEvent:(id)arg1;
-- (long long)_userStatusForEvent:(id)arg1;
+- (unsigned char)_userStatusForEvent:(id)arg1;
 - (_Bool)_areAllPeopleOfInterest:(id)arg1 inAttendeeList:(id)arg2;
 - (id)_valuesForPrediction:(id)arg1 fields:(unsigned int)arg2 formatter:(id)arg3;
 - (id)_labelForEvent:(id)arg1 value:(id)arg2 fields:(unsigned int)arg3 formatter:(id)arg4;

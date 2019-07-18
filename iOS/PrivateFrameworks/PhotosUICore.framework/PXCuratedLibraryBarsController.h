@@ -9,11 +9,12 @@
 #import <PhotosUICore/PXActionPerformerDelegate-Protocol.h>
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@class NSString, PXActionPerformer, PXAssetActionManager, PXBarAppearance, PXCuratedLibraryViewModel;
+@class NSString, PXActionPerformer, PXAssetActionManager, PXBarAppearance, PXCuratedLibraryViewModel, UILabel;
 
 @interface PXCuratedLibraryBarsController : PXBarsController <PXChangeObserver, PXActionPerformerDelegate>
 {
     PXAssetActionManager *_assetActionManager;
+    UILabel *_selectModeCaptionLabel;
     PXCuratedLibraryViewModel *_viewModel;
     PXActionPerformer *_activeActionPerformer;
     PXActionPerformer *_lastActionPerformer;
@@ -39,6 +40,8 @@
 - (id)leftBarButtonItemIdentifiers;
 - (id)rightBarButtonItemIdentifiers;
 - (id)curatedLibraryViewController;
+- (void)_updateSelectModeCaptionLabel;
+@property(readonly, nonatomic) UILabel *selectModeCaptionLabel; // @synthesize selectModeCaptionLabel=_selectModeCaptionLabel;
 @property(readonly, nonatomic) PXAssetActionManager *assetActionManager; // @synthesize assetActionManager=_assetActionManager;
 @property(readonly, nonatomic) PXBarAppearance *barAppearance;
 - (id)createAssetActionManagerForAssetReference:(id)arg1;

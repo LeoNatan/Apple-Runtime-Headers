@@ -271,10 +271,12 @@
 @property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically; // @dynamic enablesReturnKeyAutomatically;
 @property(nonatomic) _Bool enablesReturnKeyOnNonWhiteSpaceContent;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
 @property(nonatomic) _Bool forceDefaultDictationInfo;
 @property(nonatomic) int forceDictationKeyboardType;
 @property(nonatomic) _Bool forceDisableDictation;
 @property(nonatomic) _Bool forceEnableDictation;
+@property(nonatomic) _Bool forceFloatingKeyboard;
 @property(nonatomic) _Bool hasDefaultContents;
 @property(readonly) unsigned int hash;
 @property(nonatomic) _Bool hidePrediction;
@@ -282,7 +284,7 @@
 @property(retain, nonatomic) UIColor *insertionPointColor;
 @property(nonatomic) unsigned int insertionPointWidth;
 @property(nonatomic) _Bool isCarPlayIdiom;
-@property(nonatomic) _Bool isSingleLineDocument;
+@property(readonly, nonatomic) _Bool isSingleLineDocument;
 @property(nonatomic) int keyboardAppearance; // @dynamic keyboardAppearance;
 @property(nonatomic) int keyboardType; // @dynamic keyboardType;
 @property(nonatomic) _Bool learnsCorrections;

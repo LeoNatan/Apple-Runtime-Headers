@@ -66,16 +66,16 @@
 @property(nonatomic) __weak id <AVTAvatarPickerDelegate> avatarPickerDelegate; // @synthesize avatarPickerDelegate;
 @property(nonatomic) __weak id <AVTPresenterDelegate> presenterDelegate; // @synthesize presenterDelegate;
 - (void).cxx_destruct;
+- (struct CGPoint)collectionView:(id)arg1 targetContentOffsetForProposedContentOffset:(struct CGPoint)arg2;
 - (void)notifyingContainerViewDidChangeSize:(struct CGSize)arg1;
 - (void)notifyingContainerViewWillChangeSize:(struct CGSize)arg1;
 - (id)avatarActionsViewController:(id)arg1 recordUpdateForDeletingRecord:(id)arg2;
 - (void)avatarActionsViewControllerDidFinish:(id)arg1;
 - (void)selectAvatarRecordWithIdentifier:(id)arg1 animated:(_Bool)arg2;
-- (void)stickerSheetController:(id)arg1 didInteractWithStickerAtIndex:(long long)arg2;
+- (void)stickerSheetController:(id)arg1 didInteractWithStickerAtIndex:(long long)arg2 byPeeling:(_Bool)arg3;
 - (void)stickerSheetController:(id)arg1 didFinishRenderingStickersForRecord:(id)arg2;
 - (void)stickerSheetController:(id)arg1 scrollView:(id)arg2 willEndDraggingWithTargetContentOffset:(inout struct CGPoint *)arg3;
 - (void)stickerSheetController:(id)arg1 didScrollToContentOffset:(struct CGPoint)arg2;
-- (void)stickerSheetControllerDidPressEditButton:(id)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -89,7 +89,6 @@
 - (void)willEndDisplaying;
 - (void)willStartDisplaying;
 - (void)wrapAndPresentViewController:(id)arg1 animated:(_Bool)arg2;
-- (void)presentActionsForAvatar:(id)arg1;
 - (long long)pageIndexForAvatarRecordIdentifier:(id)arg1;
 - (void)updateForEndingScrollWithTargetContentOffset:(struct CGPoint)arg1;
 - (void)scrollToPageAtIndex:(long long)arg1 animated:(_Bool)arg2;
@@ -104,7 +103,6 @@
 - (void)reloadData;
 - (void)loadView;
 - (id)initWithRecordDataSource:(id)arg1 recordImageProvider:(id)arg2 environment:(id)arg3 allowsPeel:(_Bool)arg4;
-- (void)presentActionsForAvatarForPPT:(id)arg1;
 - (long long)pageIndexForAvatarRecordIdentifierForPPT:(id)arg1;
 - (id)collectionViewForPPT;
 

@@ -28,7 +28,7 @@
 - (void)faceDidChange;
 - (id)titleForHeader;
 - (void)_commonInit;
-- (id)initWithTableView:(id)arg1 face:(id)arg2 inGallery:(_Bool)arg3 external:(_Bool)arg4;
+- (id)initWithTableViewController:(id)arg1 face:(id)arg2 inGallery:(_Bool)arg3 external:(_Bool)arg4;
 
 // Remaining properties
 @property(retain, nonatomic) NTKCFaceDetailExpandableDescriptionCell *cell; // @dynamic cell;

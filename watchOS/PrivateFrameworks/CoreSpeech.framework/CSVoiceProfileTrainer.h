@@ -8,14 +8,21 @@
 
 @interface CSVoiceProfileTrainer : NSObject
 {
-    float _baseProfileConfidenceScoreThreshold;
-    float _implicitConfidenceScoreThreshold;
-    float _implicitDeltaConfidenceScoreThreshold;
+    unsigned int _baseProfileConfidenceScoreThreshold;
+    unsigned int _implicitConfidenceScoreThreshold;
+    unsigned int _implicitDeltaConfidenceScoreThreshold;
 }
 
-@property(readonly, nonatomic) float implicitDeltaConfidenceScoreThreshold; // @synthesize implicitDeltaConfidenceScoreThreshold=_implicitDeltaConfidenceScoreThreshold;
-@property(readonly, nonatomic) float implicitConfidenceScoreThreshold; // @synthesize implicitConfidenceScoreThreshold=_implicitConfidenceScoreThreshold;
-@property(readonly, nonatomic) float baseProfileConfidenceScoreThreshold; // @synthesize baseProfileConfidenceScoreThreshold=_baseProfileConfidenceScoreThreshold;
+@property(readonly, nonatomic) unsigned int implicitDeltaConfidenceScoreThreshold; // @synthesize implicitDeltaConfidenceScoreThreshold=_implicitDeltaConfidenceScoreThreshold;
+@property(readonly, nonatomic) unsigned int implicitConfidenceScoreThreshold; // @synthesize implicitConfidenceScoreThreshold=_implicitConfidenceScoreThreshold;
+@property(readonly, nonatomic) unsigned int baseProfileConfidenceScoreThreshold; // @synthesize baseProfileConfidenceScoreThreshold=_baseProfileConfidenceScoreThreshold;
+- (unsigned int)maxAllowedImplicitTrainingUtterances;
+- (unsigned int)maxAllowedSatVectorCount;
+- (unsigned int)satVectorCount;
+- (_Bool)checkIfUpdateNecessaryForAudioFileCount:(unsigned int)arg1;
+- (_Bool)checkIfRetrainingIsRequired;
+- (void)processUtterance:(id)arg1 ofSpIdType:(unsigned int)arg2 withUpdatePolicyBlock:(CDUnknownBlockType)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
+- (void)addUtterances:(id)arg1 withScoreThreshold:(float)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)addUtterances:(id)arg1 toProfile:(id)arg2 toModel:(unsigned int)arg3 withScoreThreshold:(float)arg4 withCompletionBlock:(CDUnknownBlockType)arg5;
 
 @end

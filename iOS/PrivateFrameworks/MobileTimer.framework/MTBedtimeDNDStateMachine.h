@@ -30,9 +30,8 @@
 - (id)currentDate;
 - (id)sleepAlarm;
 - (void)userWokeUp;
-- (void)bedtimeReached;
 - (void)bedtimeDNDEnabled:(_Bool)arg1 userRequested:(_Bool)arg2 date:(id)arg3;
-- (void)updateState;
+- (void)updateState:(_Bool)arg1;
 - (id)stateMachineLog;
 - (id)userRequestedOffStateWithKeepOffUntilDate:(id)arg1;
 - (id)onStateWithBedtimeDNDEndDate:(id)arg1;

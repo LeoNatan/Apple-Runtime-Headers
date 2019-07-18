@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <EmailFoundation/EFCacheable-Protocol.h>
 #import <EmailFoundation/NSCopying-Protocol.h>
 #import <EmailFoundation/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSPredicate, NSString;
+@class NSArray, NSPredicate;
 
-@interface EFQuery : NSObject <EFCacheable, NSSecureCoding, NSCopying>
+@interface EFQuery : NSObject <NSSecureCoding, NSCopying>
 {
     Class _targetClass;
     NSPredicate *_predicate;
@@ -28,18 +27,13 @@
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)_isEqualToQuery:(id)arg1;
-@property(readonly) unsigned long long hash;
-@property(readonly, copy) NSString *debugDescription;
+- (unsigned long long)hash;
+- (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithTargetClass:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 searchType:(unsigned long long)arg4;
 - (id)initWithTargetClass:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3;
-- (id)cachedSelf;
-
-// Remaining properties
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
 
 @end
 

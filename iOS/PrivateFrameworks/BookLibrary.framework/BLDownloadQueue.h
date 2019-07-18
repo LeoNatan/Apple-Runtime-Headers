@@ -20,9 +20,6 @@
     NSNumber *_currentAccountNumber;
 }
 
-+ (_Bool)isPreorderFromBuyParameters:(id)arg1;
-+ (id)storeIDFromBuyParameters:(id)arg1;
-+ (id)buyParametersValueForKey:(id)arg1 fromBuyParams:(id)arg2;
 + (void)cancelAllActiveDownloads;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSNumber *currentAccountNumber; // @synthesize currentAccountNumber=_currentAccountNumber;
@@ -59,6 +56,8 @@
 - (void)addDownloadWithMetadata:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)addDownloadWithPermlink:(id)arg1 title:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)addDownloadWithPurchaseParameters:(id)arg1 storeID:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)purchaseWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)purchaseWithBuyParameters:(id)arg1 storeID:(id)arg2 isAudiobook:(_Bool)arg3 userInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)purchaseWithBuyParameters:(id)arg1 storeID:(id)arg2 isAudiobook:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)purchaseWithBuyParameters:(id)arg1 storeID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) NSArray *downloads;

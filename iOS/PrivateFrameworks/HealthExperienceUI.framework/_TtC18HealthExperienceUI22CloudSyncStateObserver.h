@@ -8,9 +8,11 @@
 
 @interface _TtC18HealthExperienceUI22CloudSyncStateObserver : NSObject
 {
+    // Error parsing type: , name: _cachedFirstRestoreState
     // Error parsing type: , name: firstRestoreStateChangeHandler
     // Error parsing type: , name: stateChangeHandler
     // Error parsing type: , name: cloudSyncObserver
+    // Error parsing type: , name: store
 }
 
 - (void).cxx_destruct;

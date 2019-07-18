@@ -7,7 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (AXSSKeyChordExtras)
-@property(readonly, nonatomic) NSString *axss_keyChordKeyDisplayValue;
+- (id)axss_keyChordKeyDisplayValueForUSKeyboard:(_Bool)arg1;
 - (id)axss_stringByTrimmingToLength:(unsigned int)arg1 encoding:(unsigned int)arg2;
 @end
 

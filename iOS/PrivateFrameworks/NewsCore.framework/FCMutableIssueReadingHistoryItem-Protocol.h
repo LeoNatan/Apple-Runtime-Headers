@@ -11,6 +11,8 @@
 @protocol FCMutableIssueReadingHistoryItem <FCIssueReadingHistoryItem>
 @property(copy, nonatomic) NSString *lastVisitedPageID;
 @property(copy, nonatomic) NSString *lastVisitedArticleID;
+@property(copy, nonatomic) NSDate *lastRemovedFromMyMagazinesDate;
+@property(copy, nonatomic) NSDate *lastEngagedDate;
 @property(copy, nonatomic) NSDate *lastBadgedDate;
 @property(copy, nonatomic) NSDate *lastVisitedDate;
 @property(copy, nonatomic) NSString *issueID;

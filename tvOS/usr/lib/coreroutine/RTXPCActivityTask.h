@@ -7,17 +7,20 @@
 #import <objc/NSObject.h>
 
 @class NSString;
+@protocol OS_xpc_object;
 
 @interface RTXPCActivityTask : NSObject
 {
     NSString *_identifier;
+    NSObject<OS_xpc_object> *_activity;
     CDUnknownBlockType _handler;
 }
 
 @property(readonly, copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) NSObject<OS_xpc_object> *activity; // @synthesize activity=_activity;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (id)initWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (id)initWithIdentifier:(id)arg1 activity:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)init;
 
 @end

@@ -28,6 +28,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)onWakeUpdated:(const struct Sample *)arg1;
+- (void)forceDetected;
 - (_Bool)setFireAllEnabled:(_Bool)arg1;
 - (void)reset;
 - (void)setDetectedStateEnabled:(_Bool)arg1;

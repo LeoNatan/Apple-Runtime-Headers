@@ -244,6 +244,8 @@
 @property(nonatomic) __weak id <UICollectionViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) UICollectionViewLayout *collectionViewLayout; // @synthesize collectionViewLayout=_layout;
 - (void).cxx_destruct;
+- (id)_orthogonalScrollerController;
+- (id)_updateTranslator;
 - (void)_performDiffableUpdate:(CDUnknownBlockType)arg1;
 - (void)_managedSubviewAdded:(id)arg1;
 - (id)_prefetchDataSourceActual;
@@ -445,6 +447,7 @@
 - (struct CGPoint)_adjustFocusContentOffset:(struct CGPoint)arg1 toShowFocusItemWithInfo:(id)arg2;
 - (void)_scrollViewWillEndDraggingWithVelocity:(struct CGPoint)arg1 targetContentOffset:(inout struct CGPoint *)arg2;
 - (void)setContentOffset:(struct CGPoint)arg1;
+- (id)_customScrollAnimation;
 - (void)setContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2;
 - (void)setContentInset:(struct UIEdgeInsets)arg1;
 - (void)_scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned int)arg2 animated:(_Bool)arg3;
@@ -568,6 +571,7 @@
 - (void)setScrollEnabled:(_Bool)arg1;
 - (void)setDirectionalLayoutMargins:(struct NSDirectionalEdgeInsets)arg1;
 - (void)_invalidateLayoutForUpdatedLayoutMarginsIfNeeded;
+- (unsigned int)_edgesPropagatingSafeAreaInsetsToDescendants;
 - (void)safeAreaInsetsDidChange;
 - (void)layoutMarginsDidChange;
 - (void)setLayoutMargins:(struct UIEdgeInsets)arg1;

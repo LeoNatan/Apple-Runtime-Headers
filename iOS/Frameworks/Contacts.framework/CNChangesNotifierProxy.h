@@ -9,7 +9,7 @@
 #import <Contacts/CNChangeNotificationReceiver-Protocol.h>
 
 @class CNCoalescingTimer, NSCountedSet, NSMapTable, NSMutableDictionary, NSString;
-@protocol CNSchedulerProvider, OS_dispatch_queue;
+@protocol CNContactsLoggerProvider, CNSchedulerProvider, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface CNChangesNotifierProxy : NSObject <CNChangeNotificationReceiver>
@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     NSMapTable *_removalBlocks;
     NSMapTable *_notifyingBlocks;
     id <CNSchedulerProvider> _schedulerProvider;
+    id <CNContactsLoggerProvider> _loggerProvider;
     NSMutableDictionary *_notificationForwardingMapping;
     NSCountedSet *_supressedNotificationNames;
     NSMutableDictionary *_notificationsToBeSentOnceAllowed;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *notificationsToBeSentOnceAllowed; // @synthesize notificationsToBeSentOnceAllowed=_notificationsToBeSentOnceAllowed;
 @property(retain, nonatomic) NSCountedSet *supressedNotificationNames; // @synthesize supressedNotificationNames=_supressedNotificationNames;
 @property(readonly, nonatomic) NSMutableDictionary *notificationForwardingMapping; // @synthesize notificationForwardingMapping=_notificationForwardingMapping;
+@property(readonly, nonatomic) id <CNContactsLoggerProvider> loggerProvider; // @synthesize loggerProvider=_loggerProvider;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(retain, nonatomic) NSMapTable *notifyingBlocks; // @synthesize notifyingBlocks=_notifyingBlocks;
 @property(retain, nonatomic) NSMapTable *removalBlocks; // @synthesize removalBlocks=_removalBlocks;
@@ -52,7 +54,7 @@ __attribute__((visibility("hidden")))
 - (void)postNotificationName:(id)arg1 fromSender:(id)arg2 saveIdentifier:(id)arg3 isFromExternalProcess:(_Bool)arg4;
 - (void)addNotificationPoster:(CDUnknownBlockType)arg1 forNotificationName:(id)arg2;
 - (void)addListenerForNotificationName:(id)arg1 registration:(CDUnknownBlockType)arg2 removal:(CDUnknownBlockType)arg3;
-- (id)initWithSchedulerProvider:(id)arg1;
+- (id)initWithSchedulerProvider:(id)arg1 loggerProvider:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

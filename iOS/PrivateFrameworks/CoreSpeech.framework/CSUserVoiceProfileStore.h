@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <CoreSpeech/CSLanguageCodeUpdateMonitorDelegate-Protocol.h>
+#import <CoreSpeech/CSVoiceTriggerAssetDownloadMonitorDelegate-Protocol.h>
 
 @class NSMutableArray, NSString;
 @protocol OS_dispatch_queue;
 
-@interface CSUserVoiceProfileStore : NSObject <CSLanguageCodeUpdateMonitorDelegate>
+@interface CSUserVoiceProfileStore : NSObject <CSLanguageCodeUpdateMonitorDelegate, CSVoiceTriggerAssetDownloadMonitorDelegate>
 {
     NSMutableArray *_voiceProfileArray;
     NSString *_languageCode;
@@ -25,10 +26,13 @@
 - (void).cxx_destruct;
 - (void)addiTunesAccountForVoiceProfile:(id)arg1 withMultiUserToken:(id)arg2 withDsid:(id)arg3 withAltDsid:(id)arg4 withHomeId:(id)arg5 withHomeUserId:(id)arg6 withCompletionBlock:(CDUnknownBlockType)arg7;
 - (void)CSLanguageCodeUpdateMonitor:(id)arg1 didReceiveLanguageCodeChanged:(id)arg2;
+- (void)CSVoiceTriggerAssetDownloadMonitor:(id)arg1 didInstallNewAsset:(_Bool)arg2;
+- (id)copyAudioFiles:(id)arg1 toProfile:(id)arg2 forModelType:(unsigned long long)arg3;
 - (id)_importVoiceProfile:(id)arg1 forModelType:(unsigned long long)arg2 withContentsOfDirectory:(id)arg3;
 - (id)_retrainVoiceProfile:(id)arg1 forModelType:(unsigned long long)arg2 withUtterances:(id)arg3 withForceRetrain:(_Bool)arg4;
 - (id)_retrainVoiceProfile:(id)arg1 forModelType:(unsigned long long)arg2 withForceRetrain:(_Bool)arg3;
 - (id)_retrainExplicitOnlyModelForVoiceProfile:(id)arg1 withForceRetrain:(_Bool)arg2;
+- (void)_retrainLiveOnOnboardedProfilesForLanguage:(id)arg1 withForceRetrain:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)_updateHomeUserId:(id)arg1 forProfileWithSiriProfileId:(id)arg2;
 - (id)_getContentsOfDirectory:(id)arg1;
 - (void)_saveTrainedUsers:(id)arg1 forLocale:(id)arg2;
@@ -38,10 +42,16 @@
 - (void)_migrationAssistantForUserVoiceProfilesForLocale:(id)arg1;
 - (void)_retrainVoiceProfile:(id)arg1 withForceRetrain:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)retrainVoiceProfilesForLanguage:(id)arg1 withForceRetrain:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (id)_prepareVoiceProfileAtPath:(id)arg1 forImportToProfile:(id)arg2;
+- (_Bool)checkIfVoiceProfile:(id)arg1 needsUpdatedWith:(id)arg2 withCategory:(unsigned long long)arg3;
 - (id)deleteUserVoiceProfile:(id)arg1;
 - (void)addUserVoiceProfile:(id)arg1 fromUtteranceCache:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)_getTopScoringProfileIdFromScores:(id)arg1;
-- (id)evaluateSpeakerVector:(id)arg1 withVectorSize:(unsigned long long)arg2 forProfile:(id)arg3 withBaseThreshold:(unsigned long long)arg4 withImplicitThreshold:(unsigned long long)arg5 withDeltaThreshold:(unsigned long long)arg6;
+- (void)evaluateSpeakerVector:(id)arg1 withVectorSize:(unsigned long long)arg2 forProfile:(id)arg3 withBaseThreshold:(unsigned long long)arg4 withImplicitThreshold:(unsigned long long)arg5 withDeltaThreshold:(unsigned long long)arg6 withCompletion:(CDUnknownBlockType)arg7;
+- (void)_reevaluateAndCleanupImplicitUtterances;
+- (id)_saveImplicitUtterance:(id)arg1 asUtterance:(id)arg2 withType:(id)arg3 withTriggerSource:(id)arg4 withAudioInput:(id)arg5;
+- (id)_prepareImplicitUtterance:(id)arg1 withType:(id)arg2 toProfile:(id)arg3 withTriggerSource:(id)arg4 withAudioInput:(id)arg5 withMetaData:(id)arg6 withUploadFlag:(_Bool)arg7;
+- (void)reevaluateAndCleanupImplicitUtterances;
 - (void)addImplicitUtterance:(id)arg1 toVoiceProfile:(id)arg2 withTriggerSource:(id)arg3 withAudioInput:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (id)userVoiceProfileForSiriProfileId:(id)arg1;
 - (id)userVoiceProfileForSharedSiriDebugID:(id)arg1;

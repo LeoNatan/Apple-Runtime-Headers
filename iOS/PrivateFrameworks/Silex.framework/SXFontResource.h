@@ -15,7 +15,6 @@
 {
 }
 
-+ (void)load;
 - (id)fontAttributesWithValue:(id)arg1 withType:(int)arg2;
 
 // Remaining properties

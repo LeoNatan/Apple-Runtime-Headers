@@ -39,6 +39,7 @@
 - (double)_aggregateWidthOfItems:(id)arg1 sharesLeftEdge:(BOOL)arg2 sharesRightEdge:(BOOL)arg3 widthMeasurement:(CDUnknownBlockType)arg4;
 - (id)_overflowMenuParticipatingItems:(id)arg1;
 - (id)_prioritizedItems:(id)arg1;
+- (BOOL)_isOverflowRequiredForItems:(id)arg1 availableWidth:(double)arg2 sharesLeftEdge:(BOOL)arg3 sharesRightEdge:(BOOL)arg4;
 - (struct CGRect)_centerRectGivenItems:(id)arg1 remainingLeftWidth:(double)arg2 remainingRightWidth:(double)arg3 sharesLeftEdge:(BOOL)arg4 sharesRightEdge:(BOOL)arg5;
 - (struct CGRect)_centerRectGivenItems:(id)arg1 leftItems:(id)arg2 rightItems:(id)arg3 totalWidth:(double)arg4 xOrigin:(double)arg5;
 - (void)_adjustForItemUserInterfaceLayoutDirection:(id)arg1 itemsToAttributes:(id)arg2 availableWidth:(double)arg3 xOrigin:(double)arg4;

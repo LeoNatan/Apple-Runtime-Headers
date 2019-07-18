@@ -9,7 +9,7 @@
 #import <GameCenterUI/UIViewControllerAnimatedTransitioning-Protocol.h>
 #import <GameCenterUI/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class GKBubbleFlowContainerView, NSMutableDictionary, NSString, UIButton, UILabel, UIView;
+@class GKBubbleFlowContainerView, NSMutableDictionary, NSString, OBPrivacyLinkController, UIButton, UILabel, UIView;
 @protocol GKOnboardingFlowDelegate;
 
 @interface GKOnboardingViewController : UIViewController <UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate>
@@ -17,7 +17,7 @@
     _Bool _presenting;
     id <GKOnboardingFlowDelegate> _delegate;
     NSString *_lastPersonalizationVersionDisplayed;
-    NSString *_lastPrivacyNoticeVersionDisplayed;
+    unsigned long long _lastPrivacyNoticeVersionDisplayed;
     NSMutableDictionary *_analyticsPayload;
     UIView *_privacyContainer;
     UIView *_bubblePlaceholder;
@@ -26,11 +26,13 @@
     UIView *_bubblesAnchorView;
     UILabel *_mainTitle;
     UILabel *_subTitle;
+    OBPrivacyLinkController *_privacyLink;
     double _transitionDuration;
 }
 
 @property(nonatomic) double transitionDuration; // @synthesize transitionDuration=_transitionDuration;
 @property(nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
+@property(retain, nonatomic) OBPrivacyLinkController *privacyLink; // @synthesize privacyLink=_privacyLink;
 @property(retain, nonatomic) UILabel *subTitle; // @synthesize subTitle=_subTitle;
 @property(retain, nonatomic) UILabel *mainTitle; // @synthesize mainTitle=_mainTitle;
 @property(retain, nonatomic) UIView *bubblesAnchorView; // @synthesize bubblesAnchorView=_bubblesAnchorView;
@@ -39,7 +41,7 @@
 @property(retain, nonatomic) UIView *bubblePlaceholder; // @synthesize bubblePlaceholder=_bubblePlaceholder;
 @property(retain, nonatomic) UIView *privacyContainer; // @synthesize privacyContainer=_privacyContainer;
 @property(retain, nonatomic) NSMutableDictionary *analyticsPayload; // @synthesize analyticsPayload=_analyticsPayload;
-@property(retain, nonatomic) NSString *lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
+@property(nonatomic) unsigned long long lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
 @property(retain, nonatomic) NSString *lastPersonalizationVersionDisplayed; // @synthesize lastPersonalizationVersionDisplayed=_lastPersonalizationVersionDisplayed;
 @property(nonatomic) __weak id <GKOnboardingFlowDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -50,6 +52,7 @@
 - (void)animationEnded:(_Bool)arg1;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (id)preferredFocusEnvironments;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (_Bool)didDisplayPrivacyNotice;
@@ -58,6 +61,7 @@
 - (_Bool)shouldPresentPersonalizationScreen;
 - (void)nextPressed:(id)arg1;
 - (void)signOutPressed:(id)arg1;
+- (void)addPrivacyLink;
 - (void)viewDidLoad;
 
 // Remaining properties

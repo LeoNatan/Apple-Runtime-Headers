@@ -80,8 +80,6 @@
 - (double)_ageEntryFooterToDiagnosisPromptFirstBaseline;
 - (double)_ageEntryLastBaselineToBottomSeparator;
 - (double)_ageEntryTopSeparatorToFirstBaseline;
-- (double)_bodyLastBaselineToAgeEntryTop;
-- (double)_titleLastBaselineToBodyFirstBaseline;
 - (id)diagnosisIneligiblePromptAckButtonString;
 - (id)diagnosisIneligiblePromptBodyString;
 - (id)diagnosisIneligiblePromptTitleString;

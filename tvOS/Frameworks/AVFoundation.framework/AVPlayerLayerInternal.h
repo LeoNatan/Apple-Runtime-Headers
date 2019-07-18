@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     AVPlayerLayer *associatedRemoteModeLayer;
     _Bool willManageSublayersAsSwappedLayers;
     long long activeMode;
+    _Bool isPartOfForegroundScene;
     _Bool isReadyForDisplay;
     AVPlayer *playerBeingObserved;
     NSSet *KVOInvokers;

@@ -26,10 +26,17 @@
 - (void)wasAddedToWorkflow:(id)arg1;
 - (void)initializeParameters;
 - (id)outputContentClasses;
+- (id)inputParameterKey;
 - (_Bool)inputRequired;
+- (unsigned long long)parameterCollapsingBehavior;
 - (id)keywords;
 - (id)descriptionDictionary;
 - (id)createStateForParameter:(id)arg1 fromSerializedRepresentation:(id)arg2;
+- (id)localizedParameterSummaryStringForFilterWithFilterConditions;
+- (id)localizedParameterSummaryStringForFilter;
+- (id)localizedParameterSummaryStringForFindWithFilterConditions;
+- (id)localizedParameterSummaryStringForFind;
+- (id)parameterSummary;
 - (id)name;
 - (id)tableTemplate;
 

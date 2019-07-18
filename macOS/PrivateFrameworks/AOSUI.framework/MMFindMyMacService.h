@@ -8,16 +8,18 @@
 
 #import <AOSUI/MMServicePreflightProtocol-Protocol.h>
 
-@class NSError, NSImage, NSOperationQueue, NSString;
+@class FMDUIFMMiCloudSettingsController, NSError, NSImage, NSOperationQueue, NSString;
 
 @interface MMFindMyMacService : MMService <MMServicePreflightProtocol>
 {
     NSError *_fmmError;
     NSImage *_warningIcon;
     NSOperationQueue *_requesterQueue;
+    FMDUIFMMiCloudSettingsController *_optionsController;
 }
 
 + (id)_errorWithFMMErroCode:(unsigned long long)arg1;
+@property(retain) FMDUIFMMiCloudSettingsController *optionsController; // @synthesize optionsController=_optionsController;
 @property(retain) NSImage *warningIcon; // @synthesize warningIcon=_warningIcon;
 @property(retain) NSError *fmmError; // @synthesize fmmError=_fmmError;
 - (void).cxx_destruct;
@@ -43,20 +45,21 @@
 - (BOOL)_containsRecoveryPartition;
 - (unsigned long long)_recoveryPatitionCheckTimeout;
 - (void)_updateStatus;
-- (void)handleEnableFMMWhenAlreadyActive:(id)arg1;
-- (void)disableFMMWithActivationLock:(id)arg1;
+- (void)handleEnableFMMWhenAlreadyActive:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)disableFMMWithActivationLock:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)showFMMMissingWiFiSheet:(id)arg1;
-- (void)showFMMAlreadyActiveSheet:(id)arg1;
+- (void)showFMMAlreadyActiveSheet:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)showFMMNetworkOffSheet:(id)arg1;
 - (void)showFMMMissingRecoveryPartitionSheet:(id)arg1;
 - (void)showFMMLocationServicesOffSheet:(id)arg1;
-- (void)showFMMEnableConfirmationSheet:(id)arg1 isAlreadyActive:(BOOL)arg2 creating:(BOOL)arg3;
+- (void)showFMMEnableConfirmationSheet:(id)arg1 isAlreadyActive:(BOOL)arg2 creating:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)willGainFocus;
 - (void)didSelect;
-- (void)_setEnabled:(BOOL)arg1 withRightsMask:(unsigned long long)arg2;
-- (void)_showClientFailureSheet:(id)arg1 enabling:(BOOL)arg2 withError:(id)arg3;
+- (void)_setEnabled:(BOOL)arg1 withRightsMask:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_showClientFailureSheet:(id)arg1 enabling:(BOOL)arg2 withError:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_serviceFailed:(id)arg1;
 - (void)showMoreInfo:(id)arg1;
+- (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
 - (BOOL)canEnable:(id *)arg1;
 - (BOOL)hasDataToMerge;

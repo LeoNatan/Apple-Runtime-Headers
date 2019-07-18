@@ -4,14 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <NanoTimeKitCompanion/NTKEnumeratedEditOption.h>
+#import <NanoTimeKitCompanion/NTKFaceColorEditOption.h>
 
-@interface NTKCaliforniaColorEditOption : NTKEnumeratedEditOption
+@interface NTKCaliforniaColorEditOption : NTKFaceColorEditOption
 {
 }
 
-+ (id)_nameLocalizationKeyForValue:(unsigned long long)arg1 forDevice:(id)arg2;
++ (id)_localizedNameForValue:(unsigned long long)arg1 forDevice:(id)arg2;
 + (id)_snapshotKeyForValue:(unsigned long long)arg1 forDevice:(id)arg2;
++ (id)_orderedValuesRestrictedByDevice:(id)arg1;
++ (id)_curatedColorValuesForDevice:(id)arg1;
++ (id)__orderedValuesForDevice:(id)arg1;
 + (id)_orderedValuesForDevice:(id)arg1;
 + (id)optionWithCaliforniaColor:(unsigned long long)arg1 forDevice:(id)arg2;
 - (id)_valueToFaceBundleStringDict;

@@ -9,6 +9,7 @@
 #import <iAd/CLLocationManagerDelegate-Protocol.h>
 
 @class CLLocation, CLLocationManager, NSString;
+@protocol OS_dispatch_queue;
 
 @interface ADLocationManager : NSObject <CLLocationManagerDelegate>
 {
@@ -21,6 +22,7 @@
     NSString *_subAdministrativeArea;
     NSString *_ISOcountryCode;
     NSString *_postalCode;
+    NSObject<OS_dispatch_queue> *_readWriteQueue;
     CLLocation *_previousLocation;
     CLLocationManager *_locationManager;
     double _requestedLocationAccuracy;
@@ -31,12 +33,13 @@
 @property(nonatomic) _Bool isUpdatingLocation; // @synthesize isUpdatingLocation=_isUpdatingLocation;
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(copy, nonatomic) CLLocation *previousLocation; // @synthesize previousLocation=_previousLocation;
-@property(nonatomic) _Bool isLocationInitialized; // @synthesize isLocationInitialized=_isLocationInitialized;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *readWriteQueue; // @synthesize readWriteQueue=_readWriteQueue;
 @property(retain, nonatomic) NSString *postalCode; // @synthesize postalCode=_postalCode;
 @property(retain, nonatomic) NSString *ISOcountryCode; // @synthesize ISOcountryCode=_ISOcountryCode;
 @property(retain, nonatomic) NSString *subAdministrativeArea; // @synthesize subAdministrativeArea=_subAdministrativeArea;
 @property(retain, nonatomic) NSString *administrativeArea; // @synthesize administrativeArea=_administrativeArea;
 @property(retain, nonatomic) NSString *locality; // @synthesize locality=_locality;
+@property(nonatomic) _Bool isLocationInitialized; // @synthesize isLocationInitialized=_isLocationInitialized;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic) int authorizationStatus; // @synthesize authorizationStatus=_authorizationStatus;
 - (void).cxx_destruct;

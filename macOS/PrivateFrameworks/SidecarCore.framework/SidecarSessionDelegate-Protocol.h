@@ -8,6 +8,7 @@
 @protocol SidecarMessage;
 
 @protocol SidecarSessionDelegate
+- (void)sidecarServiceTerminate;
 - (void)sidecarSession:(SidecarSession *)arg1 invalidatedWithError:(NSError *)arg2;
 - (void)sidecarSession:(SidecarSession *)arg1 receivedMessage:(id <SidecarMessage>)arg2;
 @end

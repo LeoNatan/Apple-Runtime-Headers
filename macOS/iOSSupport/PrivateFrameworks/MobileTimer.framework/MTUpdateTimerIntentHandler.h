@@ -10,6 +10,7 @@
 {
 }
 
+- (id)_timerFromIntentTargetTimer:(id)arg1 defaultState:(long long)arg2;
 - (void)_updateTimer:(id)arg1 dryRun:(BOOL)arg2 allowMultiple:(BOOL)arg3 excludeStoppedTimers:(BOOL)arg4 filterBlock:(CDUnknownBlockType)arg5 updateBlock:(CDUnknownBlockType)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)_updateTimer:(id)arg1 dryRun:(BOOL)arg2 updateBlock:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 

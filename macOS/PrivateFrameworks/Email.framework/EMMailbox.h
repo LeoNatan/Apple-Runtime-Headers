@@ -59,6 +59,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *redactedName;
+@property(readonly, nonatomic) BOOL supportsSelectAll;
 @property(readonly, nonatomic) BOOL isSentMailbox;
 @property(readonly, nonatomic) BOOL isOutgoingMailbox;
 @property(readonly, nonatomic) BOOL isInboxMailbox;

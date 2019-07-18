@@ -102,6 +102,7 @@ __attribute__((visibility("hidden")))
 - (void)setValue:(float)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (_Bool)avkit_shouldPreventExternalGestureRecognizerAtPoint:(struct CGPoint)arg1;
+- (void)setHidden:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) _Bool collapsedOrExcluded;
 @property(readonly, nonatomic) double timeIntervalSinceTrackingEnded;
 @property(readonly, nonatomic) NSString *localizedScrubbingSpeedName;

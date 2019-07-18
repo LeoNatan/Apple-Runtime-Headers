@@ -20,7 +20,6 @@
     NSMutableString *_debugLog;
 }
 
-+ (id)log;
 @property(retain, nonatomic) NSMutableString *debugLog; // @synthesize debugLog=_debugLog;
 @property(retain, nonatomic) NSCache *mailboxIDCache; // @synthesize mailboxIDCache=_mailboxIDCache;
 @property(retain, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
@@ -39,6 +38,7 @@
 - (id)_listIDCountsForMessage:(id)arg1;
 - (id)_senderCountsForMessage:(id)arg1;
 - (id)_conversationIDCountsForMessage:(id)arg1;
+- (id)_groupedMessagesCountByMailboxMatchingQuery:(unsigned int)arg1 variable:(id)arg2;
 - (_Bool)_limitToRecents;
 - (id)_countsForField:(id)arg1 message:(id)arg2;
 - (id)_weightedModePredictionsForMessage:(id)arg1;

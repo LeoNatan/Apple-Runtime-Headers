@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)purgeSnapshotsOnDisk:(id)arg1 installType:(long long)arg2 error:(id *)arg3;
 + (BOOL)unsupportedInstallEnvironmentForGatheringDiagnosticsWithError:(id *)arg1;
 + (id)parseFirmlinkManifestForVolume:(id)arg1 withError:(id *)arg2;
 + (id)masterBOMSystemPath;

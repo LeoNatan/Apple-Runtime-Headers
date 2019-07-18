@@ -42,7 +42,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithoutFence;
 - (id)copyWithoutIAV;
-- (id)initWithKeyboardRect:(struct CGRect)arg1 iavPosition:(struct CGRect)arg2 onScreen:(BOOL)arg3 fence:(id)arg4;
+- (id)initWithKeyboardRect:(struct CGRect)arg1 iavPosition:(struct CGRect)arg2 onScreen:(BOOL)arg3 takeSnapshot:(BOOL)arg4 fence:(id)arg5;
 
 @end
 

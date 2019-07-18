@@ -175,7 +175,6 @@
 - (void)_installBackGestureRecognizer;
 - (int)_buttonTypeForBackGestureForIdiom:(int)arg1;
 - (_Bool)_idiomSupportsBackGesture:(int)arg1;
-- (int)overrideUserInterfaceStyle;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_resolvedStyleChanged;
 - (id)_currentDescriptor;

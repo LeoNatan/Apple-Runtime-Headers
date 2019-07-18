@@ -21,10 +21,12 @@
     NSArray *_deletes;
     NSError *_error;
     NSArray *_filterByTransactionAuthorStrings;
+    NSArray *_unfilteredTransactions;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)errorChangeSetWithError:(id)arg1;
+@property(retain, nonatomic) NSArray *unfilteredTransactions; // @synthesize unfilteredTransactions=_unfilteredTransactions;
 @property(nonatomic) BOOL filterByTransactionAuthorsIsExclusion; // @synthesize filterByTransactionAuthorsIsExclusion=_filterByTransactionAuthorsIsExclusion;
 @property(retain, nonatomic) NSArray *filterByTransactionAuthorStrings; // @synthesize filterByTransactionAuthorStrings=_filterByTransactionAuthorStrings;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -41,6 +43,7 @@
 - (BOOL)enumerateChanges:(long long)arg1 forModelsOfClass:(Class)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (BOOL)applyFilterByTransactionAuthors:(id)arg1 isExclusion:(BOOL)arg2;
 - (BOOL)_flattenAndConsolidateChanges;
+- (id)initWithChangeTransactions:(id)arg1 unfilteredTransactions:(id)arg2;
 - (id)initWithChangeTransactions:(id)arg1;
 - (id)initWithError:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

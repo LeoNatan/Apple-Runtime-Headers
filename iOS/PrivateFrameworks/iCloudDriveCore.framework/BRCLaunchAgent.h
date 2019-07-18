@@ -9,6 +9,7 @@
 #import <iCloudDriveCore/NSXPCListenerDelegate-Protocol.h>
 
 @class BRCServerDefaultsDownloader, NSOperationQueue, NSString, NSXPCListener;
+@protocol OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
 @interface BRCLaunchAgent : NSObject <NSXPCListenerDelegate>
@@ -16,12 +17,17 @@ __attribute__((visibility("hidden")))
     NSXPCListener *_xpcListener;
     BRCServerDefaultsDownloader *_defaultDownloader;
     NSOperationQueue *_internalQueue;
+    NSObject<OS_dispatch_source> *_sigIntSrc;
+    NSObject<OS_dispatch_source> *_sigQuitSrc;
+    NSObject<OS_dispatch_source> *_sigTermSrc;
 }
 
 + (id)agent;
 - (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)start;
+- (void)handleExitSignal:(int)arg1;
+- (void)_initSignals;
 - (void)_startXPCListeners;
 - (id)init;
 

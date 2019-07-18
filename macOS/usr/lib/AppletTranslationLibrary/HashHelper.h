@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 
 + (id)hashHelper;
 - (id)addObject:(id)arg1;
+- (id)addDateComponents:(id)arg1;
 - (id)addArray:(id)arg1;
 - (id)addDictionary:(id)arg1;
 - (id)addNumber:(id)arg1;

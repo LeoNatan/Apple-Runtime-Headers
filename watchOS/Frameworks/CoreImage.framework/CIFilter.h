@@ -48,6 +48,7 @@
 + (id)filterWithImageURL:(id)arg1 options:(id)arg2;
 + (id)metalFilterWithName:(id)arg1;
 + (id)metalFilterWithName:(id)arg1 withInputParameters:(id)arg2;
++ (long)getMinMaxSimulatedApertureFrom:(struct __CFData *)arg1 minValue:(float *)arg2 maxValue:(float *)arg3 version:(int *)arg4;
 @property(getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *name;
 - (id)apply:(id)arg1;

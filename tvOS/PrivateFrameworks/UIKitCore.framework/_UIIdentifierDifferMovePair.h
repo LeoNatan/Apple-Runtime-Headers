@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/_UIIdentifierDifferMovePair-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface _UIIdentifierDifferMovePair : NSObject <_UIIdentifierDifferMovePair>
+@interface _UIIdentifierDifferMovePair : NSObject <_UIIdentifierDifferMovePair, NSCopying>
 {
     long long _fromIndex;
     long long _toIndex;
@@ -21,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long fromIndex; // @synthesize fromIndex=_fromIndex;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (long long)compare:(id)arg1;
 - (id)initWithFromIndex:(long long)arg1 toIndex:(long long)arg2;

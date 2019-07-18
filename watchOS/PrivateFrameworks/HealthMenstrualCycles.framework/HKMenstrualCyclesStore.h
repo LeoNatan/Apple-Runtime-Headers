@@ -30,6 +30,7 @@
 - (void)savePeriodNotYetStartedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)saveLastMenstrualPeriodWithDayIndexRange:(CDStruct_800a618e)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)saveMenstrualFlowByDayIndex:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)saveMenstrualFlow:(int)arg1 dayIndex:(int)arg2 updateAdjacentDays:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)saveDaySummaries:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)saveDaySummary:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchScheduledNotificationsWithCompletion:(CDUnknownBlockType)arg1;

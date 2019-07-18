@@ -7,26 +7,29 @@
 #import <BaseBoard/BSTransaction.h>
 
 @class HBUILaunchAnimationContext, HBUILaunchApplicationAnimationDescription, UIView, UIVisualEffectView, UIWindow;
+@protocol HBUILaunchAnimationViewSnapshot;
 
 __attribute__((visibility("hidden")))
 @interface HBUILaunchApplicationAnimationTransaction : BSTransaction
 {
     _Bool _needsSetup;
+    id <HBUILaunchAnimationViewSnapshot> _viewSnapshot;
     HBUILaunchAnimationContext *_context;
     HBUILaunchApplicationAnimationDescription *_appIconAnimation;
     UIWindow *_animationHostWindow;
-    UIVisualEffectView *_backgroundVisualEffectView;
     UIView *_appIconSnapshotView;
+    UIVisualEffectView *_backgroundVisualEffectView;
 }
 
 @property(nonatomic) _Bool needsSetup; // @synthesize needsSetup=_needsSetup;
-@property(retain, nonatomic) UIView *appIconSnapshotView; // @synthesize appIconSnapshotView=_appIconSnapshotView;
 @property(retain, nonatomic) UIVisualEffectView *backgroundVisualEffectView; // @synthesize backgroundVisualEffectView=_backgroundVisualEffectView;
+@property(retain, nonatomic) UIView *appIconSnapshotView; // @synthesize appIconSnapshotView=_appIconSnapshotView;
 @property(retain, nonatomic) UIWindow *animationHostWindow; // @synthesize animationHostWindow=_animationHostWindow;
 @property(readonly, nonatomic) HBUILaunchApplicationAnimationDescription *appIconAnimation; // @synthesize appIconAnimation=_appIconAnimation;
 @property(readonly, nonatomic) HBUILaunchAnimationContext *context; // @synthesize context=_context;
+@property(readonly, nonatomic) id <HBUILaunchAnimationViewSnapshot> viewSnapshot; // @synthesize viewSnapshot=_viewSnapshot;
 - (void).cxx_destruct;
-- (void)copyStateFromTransaction:(id)arg1;
+- (void)willInterruptTransaction:(id)arg1;
 - (_Bool)_canBeInterrupted;
 - (void)_didComplete;
 - (void)_begin;

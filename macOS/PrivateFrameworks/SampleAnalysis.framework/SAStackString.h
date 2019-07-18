@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     BOOL _isMainThread;
     BOOL _isTargetThread;
     unsigned long long _count;
-    NSMutableArray *_dispatchQueueIds;
+    NSMutableArray *_dispatchQueues;
     NSMutableArray *_threadIds;
     SAMutableDataOutputStream *_stream;
 }
@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 @property BOOL isTargetThread; // @synthesize isTargetThread=_isTargetThread;
 @property BOOL isMainThread; // @synthesize isMainThread=_isMainThread;
 @property(retain) NSMutableArray *threadIds; // @synthesize threadIds=_threadIds;
-@property(retain) NSMutableArray *dispatchQueueIds; // @synthesize dispatchQueueIds=_dispatchQueueIds;
+@property(retain) NSMutableArray *dispatchQueues; // @synthesize dispatchQueues=_dispatchQueues;
 @property unsigned long long count; // @synthesize count=_count;
 - (void).cxx_destruct;
 

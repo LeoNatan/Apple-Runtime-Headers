@@ -204,7 +204,6 @@
 @property(copy, nonatomic) NSString *backButtonTitle;
 @property(copy, nonatomic) NSString *title;
 - (void)_setBackButtonTitle:(id)arg1 lineBreakMode:(int)arg2;
-@property(copy, nonatomic) UINavigationBarAppearance *scrollToTopAppearance;
 @property(nonatomic, setter=_setSupportsTwoLineLargeTitles:) _Bool _supportsTwoLineLargeTitles;
 - (void)_setLargeTitleAccessoryView:(id)arg1 alignToBaseline:(_Bool)arg2 horizontalAlignment:(unsigned int)arg3;
 - (void)_setLargeTitleAccessoryView:(id)arg1 alignToBaseline:(_Bool)arg2;

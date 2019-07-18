@@ -6,24 +6,20 @@
 
 #import <SpringBoard/SBFluidSwitcherRootSwitcherModifier.h>
 
-@class SBAppLayout;
-
 @interface SBInlineAppExposeRootSwitcherModifier : SBFluidSwitcherRootSwitcherModifier
 {
-    SBAppLayout *_initialAppLayout;
     long long _layoutRole;
+    _Bool _overlay;
     struct UIRectCornerRadii _fullscreenCornerRadii;
 }
 
 @property(nonatomic) struct UIRectCornerRadii fullscreenCornerRadii; // @synthesize fullscreenCornerRadii=_fullscreenCornerRadii;
-- (void).cxx_destruct;
-- (_Bool)_isFloating;
 - (id)transitionModifierForInlineTransitionEvent:(id)arg1;
 - (id)multitaskingModifierForEvent:(id)arg1;
 - (id)floorModifierForTransitionEvent:(id)arg1;
 - (id)newMultitaskingModifierFromMultitaskingModifier:(id)arg1;
 - (double)floatingDockHeight;
-- (id)initWithInitialAppLayout:(id)arg1 layoutRole:(long long)arg2;
+- (id)initWithLayoutRole:(long long)arg1 overlay:(_Bool)arg2;
 
 @end
 

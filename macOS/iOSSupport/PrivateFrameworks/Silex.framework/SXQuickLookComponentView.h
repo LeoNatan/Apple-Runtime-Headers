@@ -45,6 +45,8 @@
 - (void)layoutLoadingIndicator;
 - (void)layout;
 - (void)handleTap;
+- (void)discardContents;
+- (void)renderContents;
 - (void)presentComponentWithChanges:(CDStruct_74be42e1)arg1;
 - (void)configure;
 - (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 fileProvider:(id)arg5 quickLookModule:(id)arg6;

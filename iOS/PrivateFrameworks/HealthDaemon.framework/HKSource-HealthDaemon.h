@@ -11,7 +11,12 @@
 @class NSString;
 
 @interface HKSource (HealthDaemon) <HDCoding>
-+ (id)hd_sourceForClient:(id)arg1 name:(id)arg2;
++ (id)_applicationNameForCompanionBundleIdentifier:(id)arg1;
++ (id)_applicationNameForBundleIdentifier:(id)arg1;
++ (_Bool)hd_isSpartanDeviceBundleIdentifier:(id)arg1;
++ (id)hd_currentDeviceSourceName;
++ (id)hd_getNameForSource:(id)arg1;
++ (id)hd_sourceForClient:(id)arg1;
 + (id)createWithCodable:(id)arg1;
 - (id)codableRepresentationForSync;
 

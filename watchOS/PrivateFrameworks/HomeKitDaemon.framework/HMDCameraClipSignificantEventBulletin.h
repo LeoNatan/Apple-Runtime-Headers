@@ -6,17 +6,19 @@
 
 #import <HomeKitDaemon/HMDCameraSignificantEventBulletin.h>
 
-@class NSUUID;
+@class NSArray, NSUUID;
 
 @interface HMDCameraClipSignificantEventBulletin : HMDCameraSignificantEventBulletin
 {
+    NSArray *_notificationUUIDs;
     NSUUID *_clipUUID;
 }
 
 @property(readonly, copy) NSUUID *clipUUID; // @synthesize clipUUID=_clipUUID;
+@property(readonly, copy) NSArray *notificationUUIDs; // @synthesize notificationUUIDs=_notificationUUIDs;
 - (void).cxx_destruct;
 - (id)userInfo;
-- (id)initWithNotificationUUID:(id)arg1 previewImageFilePathURL:(id)arg2 significantEvent:(unsigned int)arg3 camera:(id)arg4 home:(id)arg5 accessory:(id)arg6 recordingService:(id)arg7 clipUUID:(id)arg8;
+- (id)initWithNotificationUUIDs:(id)arg1 previewImageFilePathURL:(id)arg2 significantEvent:(unsigned int)arg3 dateOfOccurrence:(id)arg4 camera:(id)arg5 home:(id)arg6 accessory:(id)arg7 recordingService:(id)arg8 clipUUID:(id)arg9;
 
 @end
 

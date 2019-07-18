@@ -78,6 +78,7 @@ __attribute__((visibility("hidden")))
 - (int)preflightSequentialSteps:(id)arg1 runnerName:(id)arg2;
 - (id)objectForAttribute:(id)arg1;
 - (void)_handleVoicesChangedNotification:(id)arg1;
+- (void)_punctuationGroupsChanged:(id)arg1;
 - (void)handleEvent:(id)arg1;
 - (void)dealloc;
 - (void)setupObservers;

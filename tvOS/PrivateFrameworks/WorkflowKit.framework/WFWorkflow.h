@@ -16,6 +16,7 @@
 
 @interface WFWorkflow : NSObject <WFNaming, WFActionEventObserver, NSCopying, NSSecureCoding>
 {
+    _Bool _saveDisabled;
     NSArray *_actions;
     WFVariableAvailability *_variableAvailability;
     WFActionGroupingCache *_groupingCache;
@@ -28,14 +29,16 @@
     id <WFRecordStorageProvider> _storageProvider;
 }
 
-+ (_Bool)checkClientVersion:(unsigned long long)arg1 currentVersion:(unsigned long long)arg2 error:(id *)arg3;
++ (_Bool)checkClientVersion:(id)arg1 currentVersion:(id)arg2 error:(id *)arg3;
 + (id)localizedSubtitleWithActionCount:(unsigned long long)arg1;
 + (id)effectiveInputClassesFromInputClasses:(id)arg1 workflowTypes:(id)arg2;
 + (_Bool)supportsSecureCoding;
 + (id)defaultName;
++ (id)supportedInputClassNames;
 + (id)supportedInputClasses;
 + (id)workflowWithReference:(id)arg1 storageProvider:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) id <WFRecordStorageProvider> storageProvider; // @synthesize storageProvider=_storageProvider;
+@property(nonatomic) _Bool saveDisabled; // @synthesize saveDisabled=_saveDisabled;
 @property(readonly, nonatomic) WFWorkflowReference *overridenReference; // @synthesize overridenReference=_overridenReference;
 @property(retain, nonatomic) WFWorkflowQuarantine *quarantine; // @synthesize quarantine=_quarantine;
 @property(readonly, nonatomic) long long environment; // @synthesize environment=_environment;
@@ -45,13 +48,14 @@
 - (void).cxx_destruct;
 - (_Bool)isUntitled;
 - (_Bool)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2;
-- (id)actionIconsForAutomationSummaryMaxCount:(long long)arg1;
+- (void)loadActionDescriptionIconsMaxCount:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)localizedSubtitle;
 - (id)localizedActionsSummary;
 - (id)effectiveInputClasses;
 - (void)action:(id)arg1 didChangeVariableName:(id)arg2 to:(id)arg3;
 - (void)updateVariablesForAction:(id)arg1 includingImportedVariables:(_Bool)arg2;
 @property(readonly, nonatomic) WFVariableAvailability *variableAvailability; // @synthesize variableAvailability=_variableAvailability;
+- (void)actionOutputContentClassesDidChange:(id)arg1;
 - (void)actionNameDidChange:(id)arg1;
 - (void)action:(id)arg1 supplementalParameterValueDidChangeForKey:(id)arg2;
 - (void)action:(id)arg1 parameterStateDidChangeForKey:(id)arg2;
@@ -71,6 +75,8 @@
 - (void)configureWithShortcut:(id)arg1;
 - (void)configureAsSingleStepShortcutIfNecessary:(CDUnknownBlockType)arg1;
 - (void)saveActionsToRecordIfNeeded;
+- (void)performBatchOperation:(CDUnknownBlockType)arg1;
+- (void)authorizeAccessResourcesIfNeeded;
 - (void)loadFromRecord;
 - (void)reloadFromRecord;
 - (void)save;
@@ -84,14 +90,15 @@
 @property(nonatomic) _Bool hiddenFromLibraryAndSync;
 @property(nonatomic) _Bool hiddenInComplication;
 @property(copy, nonatomic) NSArray *workflowTypes;
-@property(copy, nonatomic) NSString *associatedAppBundleIdentifier;
-@property(copy, nonatomic) NSString *actionsDescription;
-@property(copy, nonatomic) NSString *workflowSubtitle;
+@property(readonly, nonatomic) NSString *associatedAppBundleIdentifier;
+@property(readonly, nonatomic) NSString *actionsDescription;
+@property(readonly, nonatomic) NSString *workflowSubtitle;
 @property(retain, nonatomic) WFWorkflowIcon *icon;
 @property(copy, nonatomic) NSString *legacyName;
 @property(copy, nonatomic) NSString *name;
 @property(readonly, nonatomic) NSString *workflowID;
 @property(readonly, nonatomic) WFWorkflowReference *reference;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithRecord:(id)arg1 storageProvider:(id)arg2 migrateIfNecessary:(_Bool)arg3 environment:(long long)arg4 error:(id *)arg5;
 - (id)initWithRecord:(id)arg1 storageProvider:(id)arg2 error:(id *)arg3;
@@ -99,6 +106,7 @@
 - (id)init;
 - (void)generateShortcutRepresentation:(CDUnknownBlockType)arg1;
 - (id)initWithShortcut:(id)arg1 error:(id *)arg2;
+- (id)initWithActionDonation:(id)arg1 error:(id *)arg2;
 - (id)initWithName:(id)arg1 description:(id)arg2 associatedAppBundleIdentifier:(id)arg3 actions:(id)arg4;
 @property(readonly, copy, nonatomic) NSString *wfName;
 - (id)eventDictionary;
@@ -110,7 +118,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

@@ -113,7 +113,7 @@
 - (id)_documentCatalogMetadataForRootPath:(id)arg1 withKeys:(id)arg2;
 - (void)_sanitizeAnnotationArray:(struct __CFArray *)arg1;
 - (void)_sanitizeAnnotationDictionary:(struct __CFDictionary *)arg1;
-- (struct CGPDFName *)_convertCFStringToCGPDFName:(void *)arg1;
+- (struct CGPDFName *)_convertCFStringToCGPDFName:(void *)arg1 forKey:(struct __CFString *)arg2;
 - (struct CGPDFAnnotation *)_createCGPDFAnnotationForAnnotation:(id)arg1;
 - (_Bool)_writeAppendMode:(struct CGDataConsumer *)arg1;
 - (BOOL)canSaveWithAppendModeUsingOptions:(id)arg1;

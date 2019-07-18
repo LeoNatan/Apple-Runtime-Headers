@@ -81,7 +81,7 @@
 - (void)setBackgroundColor:(struct CGColor *)arg1;
 - (id)renderer;
 - (void)setRenderer:(id)arg1;
-@property(nonatomic) id <SCNSceneRendererDelegate> delegate;
+@property(nonatomic) __weak id <SCNSceneRendererDelegate> delegate;
 - (struct SCNVector3)unprojectPoint:(struct SCNVector3)arg1;
 - (struct SCNVector3)projectPoint:(struct SCNVector3)arg1;
 - (void)projectPoints:(struct SCNVector3 *)arg1 count:(unsigned long long)arg2;

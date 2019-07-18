@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (void)setSeparatorDashStyle:(long long)arg1 hidden:(_Bool)arg2;
 - (void)setUpConstraints;
 - (void)setupSubviews;
+- (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

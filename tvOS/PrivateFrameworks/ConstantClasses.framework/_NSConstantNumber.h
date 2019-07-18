@@ -11,7 +11,6 @@
 }
 
 + (id)alloc;
-+ (void)load;
 - (void)dealloc;
 - (unsigned long long)retainCount;
 - (oneway void)release;

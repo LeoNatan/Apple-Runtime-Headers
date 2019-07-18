@@ -70,6 +70,7 @@
 @property(nonatomic) float defaultPlaybackRate;
 @property(nonatomic) double startTime;
 @property(nonatomic) double duration;
+@property(copy, nonatomic) NSString *localizedDurationString;
 @property(copy, nonatomic) NSString *artworkIdentifier;
 @property(copy, nonatomic) NSArray *artworkURLTemplates;
 @property(copy, nonatomic) NSString *artworkURL;

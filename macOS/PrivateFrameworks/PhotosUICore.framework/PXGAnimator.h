@@ -17,6 +17,7 @@
     PXGIndexSetArray *_spriteIndexesByGroupIndex;
     PXGSpriteDataStore *_doubleSidedSpriteDataStore;
     PXGSpriteDataStore *_oldAnimationPresentationSpriteDataStore;
+    BOOL _isSkippingAnimations;
     BOOL _animating;
     double _speed;
     long long _computeCount;

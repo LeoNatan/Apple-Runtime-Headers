@@ -16,8 +16,10 @@
     NSString *_sessionID;
     _UIActivityApplicationExtensionDiscovery *_applicationExtensionDiscovery;
     NSArray *_cachedBuiltinActivities;
+    CDUnknownBlockType _fetchShortcutsBlock;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType fetchShortcutsBlock; // @synthesize fetchShortcutsBlock=_fetchShortcutsBlock;
 @property(nonatomic) _Bool primed; // @synthesize primed=_primed;
 @property(readonly, nonatomic) NSArray *cachedBuiltinActivities; // @synthesize cachedBuiltinActivities=_cachedBuiltinActivities;
 @property(retain, nonatomic) _UIActivityApplicationExtensionDiscovery *applicationExtensionDiscovery; // @synthesize applicationExtensionDiscovery=_applicationExtensionDiscovery;
@@ -42,7 +44,7 @@
 - (void)preheatAvailableActivitiesForMatchingContext:(id)arg1;
 - (void)_enumerateAvailableActivitiesForMatchingContext:(id)arg1 intoMatchingResults:(id)arg2 matchingResultsUpdateBlock:(CDUnknownBlockType)arg3 enumerateActivityBlock:(CDUnknownBlockType)arg4;
 - (void)primeWithDiscoveryContext:(id)arg1;
-- (id)initWithDelegate:(id)arg1 sessionID:(id)arg2;
+- (id)initWithDelegate:(id)arg1 sessionID:(id)arg2 fetchShortcutsBlock:(CDUnknownBlockType)arg3;
 
 @end
 

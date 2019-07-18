@@ -8,6 +8,8 @@
 
 #import <MLFoundation/MLFoundationLayerCompiling-Protocol.h>
 
+@class NSString;
+
 @interface MLFoundationSoftmaxLayer : MLFoundationLayer <MLFoundationLayerCompiling>
 {
     int _softmaxOp;
@@ -16,10 +18,15 @@
 + (id)layerWithSoftmaxOp:(int)arg1;
 + (id)new;
 @property(readonly, nonatomic) int softmaxOp; // @synthesize softmaxOp=_softmaxOp;
-- (id)description;
-- (void)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
+@property(readonly, copy) NSString *description;
+- (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
 - (id)initWithSoftmaxOp:(int)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

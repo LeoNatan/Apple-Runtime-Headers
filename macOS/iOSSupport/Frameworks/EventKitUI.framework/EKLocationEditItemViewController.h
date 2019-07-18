@@ -71,11 +71,12 @@
 @property(nonatomic) BOOL onlyAllowConferenceRooms;
 - (BOOL)presentModally;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)updateViewConstraints;
+- (void)_setupConstraints;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (struct CGSize)preferredContentSize;
 - (void)setPreferredContentSize:(struct CGSize)arg1;
+- (void)viewDidLoad;
 - (void)loadView;
 - (id)title;
 - (void)dealloc;

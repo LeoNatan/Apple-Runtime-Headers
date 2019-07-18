@@ -6,14 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-@class HKReferenceRangeViewConfiguration, HKReferenceRangeViewData, NSString, UIFont, UILabel;
+@class HKReferenceRangeDotView, HKReferenceRangeViewConfiguration, HKReferenceRangeViewData, NSString, UIFont, UILabel;
 
 @interface HKReferenceRangeView : UIView
 {
     double _lowValueXPosition;
     double _highValueXPosition;
     double _currentValueXPosition;
-    struct CGRect _boundsCacheForNormalization;
     long long _valueDirection;
     double _intrinsicHeight;
     _Bool _showOutOfRangeIndicator;
@@ -22,7 +21,7 @@
     HKReferenceRangeViewData *_data;
     UIView *_referenceRangeView;
     UIView *_referenceRangeContainerView;
-    UIView *_currentValueView;
+    HKReferenceRangeDotView *_currentValueView;
     UILabel *_lowValueLabel;
     UILabel *_highValueLabel;
     UILabel *_currentValueLabel;
@@ -41,25 +40,27 @@
 @property(retain, nonatomic) UILabel *currentValueLabel; // @synthesize currentValueLabel=_currentValueLabel;
 @property(retain, nonatomic) UILabel *highValueLabel; // @synthesize highValueLabel=_highValueLabel;
 @property(retain, nonatomic) UILabel *lowValueLabel; // @synthesize lowValueLabel=_lowValueLabel;
-@property(retain, nonatomic) UIView *currentValueView; // @synthesize currentValueView=_currentValueView;
+@property(retain, nonatomic) HKReferenceRangeDotView *currentValueView; // @synthesize currentValueView=_currentValueView;
 @property(retain, nonatomic) UIView *referenceRangeContainerView; // @synthesize referenceRangeContainerView=_referenceRangeContainerView;
 @property(retain, nonatomic) UIView *referenceRangeView; // @synthesize referenceRangeView=_referenceRangeView;
 @property(copy, nonatomic) HKReferenceRangeViewData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSString *multiValueSeparator; // @synthesize multiValueSeparator=_multiValueSeparator;
 @property(readonly, nonatomic) HKReferenceRangeViewConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+- (id)_outOfRangeColor;
 - (id)_configuredPreferredFontForTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2;
 - (id)_generateMultilineAttributedValueStringForOriginalString:(id)arg1;
 - (id)_generateAttributedValueStringWithOverrideColor:(id)arg1;
 - (void)_applyNormalizedValuesToView;
-- (void)_normalizeValues;
+- (void)_normalizeValuesIfNeeded;
 - (void)_setupSubviews;
-- (void)_updateCoreGraphicsColors;
+- (void)_updateContainerBorderColors;
 - (_Bool)_hasReferenceRange;
 - (void)updateWithData:(id)arg1;
 - (void)_layoutCurrentValueOnly;
 - (struct CGRect)_assureLabelFrameWithinBounds:(struct CGRect)arg1;
 - (void)_layoutFullReferenceRange;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (id)unitLabelFont;

@@ -30,6 +30,7 @@ struct CXCallUpdateHasSet {
     unsigned int audioInterruptionProvider:1;
     unsigned int audioInterruptionOperationMode:1;
     unsigned int verificationStatus:1;
+    unsigned int priority:1;
     unsigned int requiresInCallSounds:1;
     unsigned int inCallSoundRegion:1;
     unsigned int supportsHolding:1;
@@ -41,6 +42,7 @@ struct CXCallUpdateHasSet {
     unsigned int supportsSendingToVoicemail:1;
     unsigned int videoStreamToken:1;
     unsigned int crossDeviceIdentifier:1;
+    unsigned int ISOCountryCode:1;
     unsigned int localSenderIdentityUUID:1;
     unsigned int localSenderIdentityAccountUUID:1;
     unsigned int remoteParticipantHandles:1;

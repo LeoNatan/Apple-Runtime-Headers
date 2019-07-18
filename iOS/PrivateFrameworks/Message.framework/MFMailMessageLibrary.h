@@ -44,14 +44,14 @@
     id <EFScheduler> _reconciliationCleanupScheduler;
 }
 
-+ (void)_removeLibrary:(_Bool)arg1 atPath:(id)arg2;
++ (void)_renameLibraryAtPath:(id)arg1;
 + (void)removeLibraryOnNextLaunch;
-+ (void)removeLibraryAtPath:(id)arg1;
 + (id)defaultPath;
 + (void)setDefaultInstance:(id)arg1;
 + (id)defaultInstance;
 + (_Bool)canUsePersistence;
 + (id)propertyMapper;
++ (id)log;
 @property(retain, nonatomic) id <EFScheduler> reconciliationCleanupScheduler; // @synthesize reconciliationCleanupScheduler=_reconciliationCleanupScheduler;
 @property(retain, nonatomic) EDMessageQueryParser *queryParser; // @synthesize queryParser=_queryParser;
 @property _Bool isReconciling; // @synthesize isReconciling=_isReconciling;
@@ -82,19 +82,9 @@
 - (id)_stringsForIndexSet:(id)arg1;
 - (void)pruneConversationTables:(double)arg1;
 - (void)renameOrRemoveDatabaseIfNeeded;
-- (void)renameOrRemoveDatabase;
 - (void)persistenceDidReconcileProtectedData;
-- (void)_handleBusyError;
-- (void)_handleProtectedDataIOError;
-- (void)_handleIOError;
-- (void)_handleDetachedDatabaseIOError;
-- (void)_handleInvalidDatabaseIOError;
-- (void)_handleFullDatabase;
 - (void)handleFailedMigration;
-- (void)_handleProtectedDataInconsistencies;
 - (void)journalReconciliationFailed;
-- (void)_handleJournalWriteFailure;
-- (void)_handleCorruptDatabase;
 - (void)closeDatabaseConnections;
 - (void)_scheduleIncrementalVacuum;
 - (void)performIncrementalVacuumForSchema:(id)arg1;
@@ -164,8 +154,6 @@
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
 - (id)loadMeetingDataForMessage:(id)arg1;
 - (id)loadData:(id)arg1 forMessage:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
-- (id)metadataForMessage:(id)arg1 ofClass:(Class)arg2 key:(id)arg3;
-- (void)updateMessage:(id)arg1 withMetadata:(CDUnknownBlockType)arg2;
 - (_Bool)_setSummary:(id)arg1 forMessageWithRowID:(long long)arg2 connection:(id)arg3;
 - (void)setSummary:(id)arg1 forMessage:(id)arg2;
 - (_Bool)_setMessageData:(id)arg1 libraryID:(long long)arg2 part:(id)arg3 partial:(_Bool)arg4 complete:(_Bool)arg5 connection:(id)arg6;
@@ -242,8 +230,7 @@
 - (id)oldestMessageInMailbox:(id)arg1;
 - (void)setMostRecentStatusCount:(unsigned long long)arg1 forMailbox:(id)arg2;
 - (unsigned long long)mostRecentStatusCountForMailbox:(id)arg1;
-- (void)adjustLastSyncAndMostRecentStatusCount:(long long)arg1 forMailbox:(id)arg2;
-- (void)setLastSyncAndMostRecentStatusCount:(unsigned long long)arg1 forMailbox:(id)arg2;
+- (void)setLastSyncAndMostRecentStatusCount:(long long)arg1 forMailbox:(id)arg2;
 - (long long)statusCountDeltaForMailbox:(id)arg1;
 - (void)setServerUnreadOnlyOnServerCount:(unsigned long long)arg1 forMailbox:(id)arg2;
 - (unsigned long long)indexedCountForMailbox:(id)arg1 limit:(unsigned long long)arg2;
@@ -306,7 +293,7 @@
 - (long long)_findOrCreateDatabaseIDForSummary:(id)arg1 cache:(id)arg2 connection:(id)arg3;
 - (long long)_findOrCreateDatabaseIDForSubject:(id)arg1 cache:(id)arg2 connection:(id)arg3;
 - (long long)_findOrCreateDatabaseIDForAddress:(id)arg1 comment:(id)arg2 cache:(id)arg3 connection:(id)arg4;
-- (void)_addRecipients:(id)arg1 toMessageWithDatabaseID:(long long)arg2 cache:(id)arg3 connection:(id)arg4;
+- (_Bool)_addRecipients:(id)arg1 toMessageWithDatabaseID:(long long)arg2 cache:(id)arg3 connection:(id)arg4;
 - (void)persistenceDidAddMessages:(id)arg1;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(_Bool)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(_Bool)arg9 addPOPUIDs:(_Bool)arg10 dataSectionsByMessage:(id)arg11;
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry;

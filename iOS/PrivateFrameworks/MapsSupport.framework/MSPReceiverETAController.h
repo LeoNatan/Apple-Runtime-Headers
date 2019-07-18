@@ -9,7 +9,7 @@
 #import <MapsSupport/MSPSharedTripRelayDelegate-Protocol.h>
 #import <MapsSupport/MSPSharedTripStorageDelegate-Protocol.h>
 
-@class MSPSharedTripBlacklist, MSPSharedTripRelay, MapsNotificationCenter, NSArray, NSDictionary, NSMutableDictionary, NSString;
+@class MSPSharedTripBlacklist, MSPSharedTripRelay, MapsNotificationCenter, NSArray, NSMutableDictionary, NSString, NSTimer;
 @protocol MSPReceiverETAControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -18,12 +18,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_sharedSessions;
     NSMutableDictionary *_sharedNavStates;
     NSMutableDictionary *_temporaryNavStates;
-    NSMutableDictionary *_forceUpdateNotification;
-    NSMutableDictionary *_notificationRules;
-    NSDictionary *_groupStorage;
     MapsNotificationCenter *_mapsNotificationCenter;
     MSPSharedTripRelay *_idsRelay;
     MSPSharedTripBlacklist *_blockedList;
+    NSTimer *_cleanupTimer;
     id <MSPReceiverETAControllerDelegate> _delegate;
 }
 
@@ -36,16 +34,14 @@ __attribute__((visibility("hidden")))
 - (void)relay:(id)arg1 sharingClosed:(id)arg2;
 - (void)relay:(id)arg1 receiveData:(id)arg2 info:(id)arg3 fromID:(id)arg4;
 - (void)_cleanGroup:(id)arg1;
+- (_Bool)_cleanUpNecessaryForGroup:(id)arg1;
+- (void)_cleanupIfNecessary;
 - (void)_updateDelegateWithUpdateState:(id)arg1 to:(id)arg2 freshAvailable:(_Bool)arg3;
 - (void)_updateData:(id)arg1 forGroup:(id)arg2 fromID:(id)arg3;
 - (_Bool)_allowMessageWithState:(id)arg1 forGroup:(id)arg2 fromID:(id)arg3;
-- (void)_resolveContactIfNeeded:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_resolveContactIfNeeded:(id)arg1 fromId:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_showOrUpdateNotificationIfNeeded:(id)arg1;
-- (void)unblockAllSenders;
-- (void)unblockSharedTripFromSenders:(id)arg1;
-- (void)blockSharedTripFromSenders:(id)arg1;
-- (void)unmuteSharedTripUpdatesForSharedTrip:(id)arg1;
-- (void)muteSharedTripUpdatesForSharedTrip:(id)arg1;
+- (void)blockSharedTrip:(id)arg1;
 - (void)unsubscribeFromUpdatesToSharedTrip:(id)arg1;
 - (void)subscribeToUpdatesToSharedTrip:(id)arg1;
 @property(readonly, nonatomic) NSArray *allTrips;

@@ -13,6 +13,7 @@
 @interface HMCameraClip : NSObject <HMFLogging>
 {
     HMFUnfairLock *_lock;
+    BOOL _firstOfTheDay;
     HMCameraClipAssetContext *_posterFramesAssetContext;
     HMCameraClipAssetContext *_videoSegmentsAssetContext;
     NSMutableDictionary *_assetTypeToActiveRequestMap;
@@ -31,6 +32,7 @@
 @property(readonly) _HMContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSArray *eventNotifications; // @synthesize eventNotifications=_eventNotifications;
 @property(readonly, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
+@property(nonatomic, getter=isFirstOfTheDay) BOOL firstOfTheDay; // @synthesize firstOfTheDay=_firstOfTheDay;
 - (void).cxx_destruct;
 - (id)_fetchAssetContext:(unsigned long long)arg1 currentAssetContext:(CDUnknownBlockType)arg2 buildFetchAssetMessage:(CDUnknownBlockType)arg3;
 @property(readonly) NSMutableDictionary *assetTypeToActiveRequestMap; // @synthesize assetTypeToActiveRequestMap=_assetTypeToActiveRequestMap;

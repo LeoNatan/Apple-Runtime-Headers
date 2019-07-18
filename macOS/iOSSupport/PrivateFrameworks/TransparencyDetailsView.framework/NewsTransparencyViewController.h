@@ -40,6 +40,8 @@
 - (id)bundleForTransparencyDetailsViewFramework;
 - (id)normalizeChineseLanguage:(id)arg1;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)errorDelegate;
 - (void)presentViewDelegate;
 - (void)_closeViewController:(id)arg1;

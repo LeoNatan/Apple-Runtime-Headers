@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (long long)brailleLineType;
 - (id)typeDescription;
 - (BOOL)shouldMap;
 - (BOOL)shouldNavigate;

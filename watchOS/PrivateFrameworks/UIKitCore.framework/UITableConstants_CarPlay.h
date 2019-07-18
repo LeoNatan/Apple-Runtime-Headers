@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedConstants;
 - (unsigned int)contentClipCornersForCell:(id)arg1 inTableView:(id)arg2;
+- (id)defaultImageSymbolConfigurationForTraitCollection:(id)arg1;
 - (float)defaultMaskGradientHeightForTableView:(id)arg1;
 - (float)defaultFocusedShadowRadiusForTableView:(id)arg1;
 - (float)defaultFocusedHorizontalOutsetForTableView:(id)arg1;
@@ -62,10 +63,12 @@ __attribute__((visibility("hidden")))
 - (float)defaultGroupedFooterHeightForTableView:(id)arg1;
 - (float)defaultGroupedHeaderHeightForTableView:(id)arg1;
 - (float)defaultPlainFirstSectionHeaderHeightForTableView:(id)arg1;
-- (float)_defaultPlainHeaderFooterHeightForTableView:(id)arg1;
+- (float)_defaultPlainHeaderFooterHeightForTableViewStyle:(int)arg1;
 - (float)defaultTrailingCellMarginWidthForTableView:(id)arg1;
 - (float)defaultLeadingCellMarginWidthForTableView:(id)arg1;
 - (float)defaultMarginWidthForTableView:(id)arg1;
+- (struct UIEdgeInsets)_defaultLayoutMargins;
+- (struct UIEdgeInsets)defaultLayoutMarginsForScreen:(id)arg1 size:(struct CGSize)arg2;
 - (struct UIEdgeInsets)defaultLayoutMarginsForTableView:(id)arg1;
 - (float)defaultPaddingBetweenHeaderAndRowsForTableView:(id)arg1;
 - (float)defaultPaddingBetweenRowsForTableView:(id)arg1;
@@ -80,7 +83,9 @@ __attribute__((visibility("hidden")))
 - (struct UIEdgeInsets)headerFooterOffsetFromContentInsetForTableView:(id)arg1;
 - (struct UIEdgeInsets)defaultLayoutMarginsForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultSectionFooterHeightForTableView:(id)arg1;
+- (float)defaultSectionFooterHeightForTableViewStyle:(int)arg1 screen:(id)arg2;
 - (float)defaultSectionHeaderHeightForTableView:(id)arg1;
+- (float)defaultSectionHeaderHeightForTableViewStyle:(int)arg1 screen:(id)arg2;
 - (_Bool)defaultRowHeightDependsOnCellStyle;
 - (float)defaultRowHeightForTableView:(id)arg1;
 - (float)defaultRowHeightForTableView:(id)arg1 cellStyle:(int)arg2;

@@ -30,6 +30,7 @@
     long long _currentMediaRemoteInputMode;
     struct __IOHIDEventSystemClient *_hidSystemClient;
     NSObject<OS_dispatch_queue> *_hidSystemClientQueue;
+    BOOL _shouldMonitorBackgroundEvents;
     BOOL _isAppInBackground;
     GCController *_firstMicroGamepad;
     NSThread *_hidInputThread;

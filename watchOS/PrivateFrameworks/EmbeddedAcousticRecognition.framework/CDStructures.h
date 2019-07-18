@@ -37,6 +37,7 @@ struct EARCSpeechRecognitionResultStream {
     CDUnknownFunctionPointerType DidRecognizePartialResultTokens;
     CDUnknownFunctionPointerType DidFinishRecognitionWithError;
     CDUnknownFunctionPointerType DidRecognizeFinalResults;
+    CDUnknownFunctionPointerType DidProcessAudioDuration;
 };
 
 struct HybridClientConfigs {
@@ -57,6 +58,7 @@ struct ModelLoader;
 struct PSRAudioProcessor;
 
 struct PTree {
+    int dataType;
     basic_string_8c74bb18 dataValue;
     struct vector<std::__1::pair<std::__1::basic_string<char>, quasar::PTree>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, quasar::PTree>>> map;
     _Bool isALeaf;

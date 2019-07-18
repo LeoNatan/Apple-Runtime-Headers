@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)moduleWillBeRemoved;
 - (void)moduleWasInstalled;
 - (void)initializeFromDefaults;
-- (id)helpAnchor;
+- (id)safariHelpAnchor;
 - (id)imageForPreferenceNamed:(id)arg1;
 
 @end

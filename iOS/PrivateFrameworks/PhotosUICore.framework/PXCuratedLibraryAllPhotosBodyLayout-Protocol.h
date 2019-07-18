@@ -12,7 +12,7 @@
 @property(readonly, nonatomic) _Bool supportsContentMode;
 @property(readonly, nonatomic) struct CGRect loadedItemsRect;
 @property(readonly, nonatomic) struct _NSRange loadedItems;
-@property(nonatomic) _Bool fillSafeAreaInsets;
+@property(nonatomic) _Bool fillSafeAreaTopInset;
 @property(nonatomic) _Bool hideIncompleteLastRow;
 @property(readonly, nonatomic) double rowHeight;
 @property(readonly, nonatomic) long long visualItemShift;

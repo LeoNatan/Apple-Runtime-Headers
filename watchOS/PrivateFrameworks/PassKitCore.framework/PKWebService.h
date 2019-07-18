@@ -8,7 +8,7 @@
 
 #import <PassKitCore/NSURLSessionTaskDelegate-Protocol.h>
 
-@class ACAccount, ACAccountStore, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSSet, NSString, NSURLSession, NSURLSessionConfiguration;
+@class ACAccountStore, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSSet, NSString, NSURLSession, NSURLSessionConfiguration;
 @protocol OS_dispatch_queue;
 
 @interface PKWebService : NSObject <NSURLSessionTaskDelegate>
@@ -28,7 +28,6 @@
 }
 
 + (id)_sharedCookieStorage;
-+ (id)account;
 - (void).cxx_destruct;
 - (void)_redactLogsFromJSONObject:(id)arg1;
 - (id)_redactLogsWithData:(id)arg1;
@@ -61,8 +60,6 @@
 - (void)refreshSessionWithConfiguration:(id)arg1;
 @property(readonly) NSURLSessionConfiguration *sessionConfiguration;
 - (void)invalidate;
-@property(readonly) ACAccount *primaryAppleAccount;
-@property(readonly) ACAccount *account;
 - (void)handleAuthenticationFailureWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)handleWillPerformHTTPRedirectionWithResponse:(id)arg1 redirectHandler:(CDUnknownBlockType)arg2;
 - (_Bool)canBypassTrustExtendedValidation;

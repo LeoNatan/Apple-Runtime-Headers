@@ -12,6 +12,7 @@
 - (void)startBackgroundVerificationObserverForPass:(PKPaymentPass *)arg1 verificationMethod:(PKVerificationChannel *)arg2;
 - (void)passbookUIServiceDidLaunch:(void (^)(void))arg1;
 - (void)scheduleAutomaticPresentationAvailableNotificationForPassWithUniqueIdentifier:(NSString *)arg1 handler:(void (^)(_Bool))arg2;
+- (void)removeProductsCache;
 - (void)unscheduleDeviceCheckIn;
 - (void)scheduleDeviceCheckInWithStartTimeOffset:(double)arg1;
 - (void)scheduleSetupReminders:(void (^)(void))arg1;

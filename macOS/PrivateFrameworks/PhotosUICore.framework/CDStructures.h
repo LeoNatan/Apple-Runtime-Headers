@@ -511,13 +511,13 @@ typedef struct {
 } CDStruct_fcaf9308;
 
 typedef struct {
-    long long _field1;
-    char _field2;
-    char _field3;
-    unsigned long long _field4;
-    char _field5;
-    char _field6;
-} CDStruct_1ca42d13;
+    long long scrollRegime;
+    char isAnimatingScroll;
+    char isAnimatingContent;
+    unsigned long long zoomBehavior;
+    char isViewBoundsChanging;
+    char isInitialLoad;
+} CDStruct_73ead4b7;
 
 typedef struct {
     long long _field1;
@@ -541,7 +541,14 @@ typedef struct {
     long long _field1;
     long long _field2;
     long long _field3;
-} CDStruct_2ec95fd7;
+    double _field4;
+} CDStruct_68723fc0;
+
+typedef struct {
+    long long photosCount;
+    long long videosCount;
+    long long othersCount;
+} CDStruct_9bad6f47;
 
 typedef struct CDStruct_183601bc;
 

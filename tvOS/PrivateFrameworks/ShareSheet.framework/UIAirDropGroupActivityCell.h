@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UICollectionViewCell.h>
 
-@class NSArray, UIAirDropNode, UILabel, UIView, _UIAirDropProgressView;
+@class NSArray, UIAirDropNode, UILabel, UIView, UIVisualEffectView, _UIAirDropProgressView;
 
 @interface UIAirDropGroupActivityCell : UICollectionViewCell
 {
@@ -14,13 +14,14 @@
     _Bool _disabled;
     UILabel *_nameLabel;
     UIView *_titleSlotView;
-    UIView *_subtitleBackgroundView;
     UIView *_subtitleSlotView;
     UIView *_displayNameSlotView;
     UIView *_imageSlotView;
     UIView *_transportSlotView;
     UIAirDropNode *_node;
     double _progress;
+    UIVisualEffectView *_vibrantTitleView;
+    UIVisualEffectView *_vibrantSubtitleView;
     UILabel *_secondLabel;
     NSArray *_secondLabelVisibleConstraintsArray;
     UILabel *_labelForPositioning;
@@ -31,6 +32,8 @@
 @property(retain, nonatomic) UILabel *labelForPositioning; // @synthesize labelForPositioning=_labelForPositioning;
 @property(retain, nonatomic) NSArray *secondLabelVisibleConstraintsArray; // @synthesize secondLabelVisibleConstraintsArray=_secondLabelVisibleConstraintsArray;
 @property(retain, nonatomic) UILabel *secondLabel; // @synthesize secondLabel=_secondLabel;
+@property(retain, nonatomic) UIVisualEffectView *vibrantSubtitleView; // @synthesize vibrantSubtitleView=_vibrantSubtitleView;
+@property(retain, nonatomic) UIVisualEffectView *vibrantTitleView; // @synthesize vibrantTitleView=_vibrantTitleView;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(nonatomic) _Bool stateBeingRestored; // @synthesize stateBeingRestored=_stateBeingRestored;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
@@ -39,7 +42,6 @@
 @property(retain, nonatomic) UIView *imageSlotView; // @synthesize imageSlotView=_imageSlotView;
 @property(retain, nonatomic) UIView *displayNameSlotView; // @synthesize displayNameSlotView=_displayNameSlotView;
 @property(retain, nonatomic) UIView *subtitleSlotView; // @synthesize subtitleSlotView=_subtitleSlotView;
-@property(retain, nonatomic) UIView *subtitleBackgroundView; // @synthesize subtitleBackgroundView=_subtitleBackgroundView;
 @property(retain, nonatomic) UIView *titleSlotView; // @synthesize titleSlotView=_titleSlotView;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 - (void).cxx_destruct;

@@ -17,6 +17,7 @@
     unsigned long long _options;
     unsigned long long _behaviors;
     NSString *_searchString;
+    NSArray *_searchTokens;
     unsigned long long _compareOptions;
     NSArray *_classSortDescriptors;
     NSArray *_classLocationIDs;
@@ -39,6 +40,7 @@
     unsigned long long _requiredClassMemberRole;
 }
 
++ (id)newlineAnchoredPredicateValueForToken:(id)arg1;
 + (_Bool)supportsSecureCoding;
 @property unsigned long long requiredClassMemberRole; // @synthesize requiredClassMemberRole=_requiredClassMemberRole;
 @property(copy) NSArray *requiredClassMemberClassIDs; // @synthesize requiredClassMemberClassIDs=_requiredClassMemberClassIDs;
@@ -61,6 +63,7 @@
 @property(copy, nonatomic) NSArray *classLocationIDs; // @synthesize classLocationIDs=_classLocationIDs;
 @property(copy) NSArray *classSortDescriptors; // @synthesize classSortDescriptors=_classSortDescriptors;
 @property(nonatomic) unsigned long long compareOptions; // @synthesize compareOptions=_compareOptions;
+@property(copy, nonatomic) NSArray *searchTokens; // @synthesize searchTokens=_searchTokens;
 @property(copy) NSString *searchString; // @synthesize searchString=_searchString;
 @property(nonatomic) unsigned long long behaviors; // @synthesize behaviors=_behaviors;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
@@ -74,11 +77,16 @@
 - (_Bool)canUsePersonPredicate;
 - (_Bool)canUseClassPredicate;
 - (_Bool)requiresDashboardEntitlement;
+- (id)predicateWithLocationIDs:(id)arg1;
+- (id)predicate;
+- (id)predicateForClasses;
+- (id)predicateForPersonsWithPersonIDs:(id)arg1;
+- (id)predicateForPersons;
+- (id)predicateUsingSubPredicateBlock:(CDUnknownBlockType)arg1;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)searchTokens;
 - (id)initWithOptions:(unsigned long long)arg1 behaviors:(unsigned long long)arg2 searchString:(id)arg3;
 - (id)initWithOptions:(unsigned long long)arg1 behaviors:(unsigned long long)arg2;
 - (void)prohibitPrivilege:(id)arg1 atLocationIDs:(id)arg2;

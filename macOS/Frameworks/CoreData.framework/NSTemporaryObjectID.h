@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (id)_retainedURIString;
 - (BOOL)_isPersistentStoreAlive;
 - (id)_storeIdentifier;
+- (int)_temporaryIDCounter;
 - (BOOL)isTemporaryID;
 - (id)entity;
 - (void)_setPersistentStore:(id)arg1;

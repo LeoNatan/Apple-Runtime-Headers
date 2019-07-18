@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)shouldFreezeCurrentSeries:(id)arg1 lastDatum:(id)arg2 seriesLength:(int)arg3 configuration:(id)arg4 aggregationInterval:(double)arg5;
 - (void)addDatum:(id)arg1 toAccumulatedData:(id)arg2;
 
 @end

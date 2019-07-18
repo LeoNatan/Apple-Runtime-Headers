@@ -29,8 +29,7 @@
 - (void).cxx_destruct;
 - (double)modelTimeoutPreference;
 - (id)getConfidenceThresholdPreferenceForKey:(id)arg1 defaultConfidenceThreshold:(double)arg2;
-- (id)getMLModelPreference;
-- (id)analyze:(id)arg1 runRemotely:(_Bool)arg2 error:(id *)arg3;
+- (id)analyze:(id)arg1 error:(id *)arg2;
 - (void)warmStartModel;
 - (id)init;
 - (void)timerDidFire:(id)arg1;

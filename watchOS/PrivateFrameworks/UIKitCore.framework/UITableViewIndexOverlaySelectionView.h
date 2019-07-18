@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)reloadData;
 - (void)_setIndexColor:(id)arg1;
-- (void)_invalidateTable;
 - (void)_doneTapped;
 - (void)_cellTapped:(id)arg1;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;

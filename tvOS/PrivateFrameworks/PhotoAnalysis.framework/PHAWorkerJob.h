@@ -13,6 +13,7 @@
 
 @interface PHAWorkerJob : NSObject <NSCopying>
 {
+    _Bool _didTimeout;
     _Bool _disableReactionCheck;
     _Bool _producedAssetMetadataChanges;
     _Bool _isGraphUpdateJob;
@@ -37,6 +38,7 @@
 @property _Bool isGraphUpdateJob; // @synthesize isGraphUpdateJob=_isGraphUpdateJob;
 @property _Bool producedAssetMetadataChanges; // @synthesize producedAssetMetadataChanges=_producedAssetMetadataChanges;
 @property(nonatomic) _Bool disableReactionCheck; // @synthesize disableReactionCheck=_disableReactionCheck;
+@property(nonatomic) _Bool didTimeout; // @synthesize didTimeout=_didTimeout;
 @property(readonly, nonatomic) short workerType; // @synthesize workerType=_workerType;
 @property(readonly, nonatomic) unsigned long long scenario; // @synthesize scenario=_scenario;
 - (void).cxx_destruct;

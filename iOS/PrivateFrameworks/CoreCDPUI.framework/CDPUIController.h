@@ -74,7 +74,6 @@
 - (void)cdpContext:(id)arg1 promptForAdoptionOfMultipleICSC:(CDUnknownBlockType)arg2;
 - (void)_presentRemoteApprovalViewControllerWithEscapeOfferMask:(unsigned long long)arg1;
 - (void)_presentRemoteSecretControllerWithNewestDevice:(id)arg1;
-- (id)_newestDeviceFromDevices:(id)arg1;
 - (id)_remoteSecretControllerForDevice:(id)arg1;
 - (id)_remoteSecretControllerForNewestDevice:(id)arg1;
 - (void)cdpContext:(id)arg1 promptForRemoteSecretWithDevices:(id)arg2 offeringRemoteApproval:(_Bool)arg3 validator:(id)arg4;

@@ -36,7 +36,6 @@
 - (void)sendActions:(id)arg1;
 - (void)finishBooting;
 - (_Bool)ping;
-- (void)restart;
 - (void)checkInAndWaitForDataMigration:(_Bool)arg1;
 - (void)connect;
 - (id)initWithCalloutQueue:(id)arg1;

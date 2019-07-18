@@ -44,6 +44,7 @@
 - (id)parallaxSettingsForShortcutsPresentationWithIconView:(id)arg1;
 - (_Bool)shouldUseSecureWindowForShortcutsPresentationWithIconView:(id)arg1;
 - (_Bool)iconView:(id)arg1 shouldActivateApplicationShortcutItem:(id)arg2 atIndex:(unsigned long long)arg3;
+- (_Bool)shouldHideShortcutsForAppIcon:(id)arg1;
 - (id)applicationShortcutWidgetBundleIdentifierForShortcutsWithIconView:(id)arg1;
 - (id)applicationBundleURLForShortcutsWithIconView:(id)arg1;
 - (id)iconView:(id)arg1 applicationShortcutItemsWithProposedItems:(id)arg2;

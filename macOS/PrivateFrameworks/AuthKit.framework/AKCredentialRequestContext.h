@@ -29,6 +29,8 @@
     NSString *_proxiedClientAppID;
     NSString *_proxiedClientTeamID;
     NSArray *_proxiedAssociatedDomains;
+    NSString *_proxiedDeviceName;
+    NSString *_proxiedDeviceClass;
     NSUUID *_requestIdentifier;
     AKAuthorizationRequest *_authorizationRequest;
     AKPasswordRequest *_passwordRequest;
@@ -38,6 +40,8 @@
 @property(retain, nonatomic) AKPasswordRequest *passwordRequest; // @synthesize passwordRequest=_passwordRequest;
 @property(retain, nonatomic) AKAuthorizationRequest *authorizationRequest; // @synthesize authorizationRequest=_authorizationRequest;
 @property(readonly, copy, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
+@property(retain) NSString *_proxiedDeviceClass; // @synthesize _proxiedDeviceClass;
+@property(retain) NSString *_proxiedDeviceName; // @synthesize _proxiedDeviceName;
 @property BOOL _isRapportLogin; // @synthesize _isRapportLogin;
 @property BOOL _isFirstPartyLogin; // @synthesize _isFirstPartyLogin;
 @property BOOL _isWebLogin; // @synthesize _isWebLogin;

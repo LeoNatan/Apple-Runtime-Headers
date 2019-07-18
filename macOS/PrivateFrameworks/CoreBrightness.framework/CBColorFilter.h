@@ -26,6 +26,8 @@ __attribute__((visibility("hidden")))
 @property(readonly) CBColorSample *sample; // @synthesize sample=_sample;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) unsigned long long sensorPolicy; // @synthesize sensorPolicy=_sensorPolicy;
+- (BOOL)hasExtFrontSensor;
+- (BOOL)hasExtRearSensor;
 - (BOOL)forceSampleUpdate;
 - (void)updateValidServices;
 - (BOOL)ALSServiceConformsToPolicy:(id)arg1;

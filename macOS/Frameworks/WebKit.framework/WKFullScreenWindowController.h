@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
 - (void)finishedExitFullScreenAnimation:(_Bool)arg1;
 - (void)beganExitFullScreenWithInitialFrame:(struct CGRect)arg1 finalFrame:(struct CGRect)arg2;
 - (void)requestExitFullScreen;
+- (void)exitFullScreenImmediately;
 - (void)exitFullScreen;
 - (void)finishedEnterFullScreenAnimation:(_Bool)arg1;
 - (void)beganEnterFullScreenWithInitialFrame:(struct CGRect)arg1 finalFrame:(struct CGRect)arg2;

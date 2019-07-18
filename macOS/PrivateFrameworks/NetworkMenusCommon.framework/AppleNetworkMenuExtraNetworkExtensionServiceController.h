@@ -38,6 +38,7 @@
 - (id)serviceName;
 - (id)serviceID;
 - (void)setupEventCallbackWithBlock:(CDUnknownBlockType)arg1;
+- (void)dealloc;
 - (id)initWithConfiguration:(id)arg1 andBundle:(id)arg2;
 
 @end

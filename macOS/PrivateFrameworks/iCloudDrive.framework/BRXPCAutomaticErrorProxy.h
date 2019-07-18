@@ -8,12 +8,13 @@
 
 #import <iCloudDrive/BRXPCAutomaticErrorProxy-Protocol.h>
 
-@class NSXPCConnection;
+@class NSFileProviderService, NSXPCConnection;
 
 __attribute__((visibility("hidden")))
 @interface BRXPCAutomaticErrorProxy : FPXPCAutomaticErrorProxy <BRXPCAutomaticErrorProxy>
 {
     NSXPCConnection *_connection;
+    NSFileProviderService *_service;
 }
 
 + (BOOL)sanitizeErrors;
@@ -22,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)invalidate;
-- (id)initWithConnection:(id)arg1 interface:(id)arg2;
+- (id)initWithConnection:(id)arg1 service:(id)arg2 interface:(id)arg3;
 
 @end
 

@@ -31,11 +31,12 @@
 #import <UIKitCore/_UIMultilineTextContentSizing-Protocol.h>
 #import <UIKitCore/_UIScrollViewScrollObserver_Internal-Protocol.h>
 #import <UIKitCore/_UITraitEnvironmentInternal-Protocol.h>
+#import <UIKitCore/_UIViewSubtreeMonitor-Protocol.h>
 
 @class CALayer, NSArray, NSISEngine, NSISVariable, NSLayoutDimension, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSMapTable, NSMutableArray, NSMutableSet, NSString, UIBezierPath, UIColor, UIInputResponderController, UIKBRenderConfig, UILayoutGuide, UIPresentationController, UIStoryboardPreviewingSegueTemplateStorage, UITraitCollection, UIViewAnimationInfo, UIViewController, UIWindow, _UIBoundingPath, _UITouchForceObservable, _UIViewLayoutEngineRelativeAlignmentRectOriginCache;
 @protocol UICoordinateSpace, UIFocusEnvironment, UIFocusItemContainer, _UIFocusRegionContainer;
 
-@interface UIView : UIResponder <_UIFallbackEnvironment, UILayoutItem_Internal, UITextEffectsOrdering, NSISVariableDelegate, _UILayoutItem, _UIMultilineTextContentSizing, NSISEngineDelegate, _UIScrollViewScrollObserver_Internal, _UITraitEnvironmentInternal, _UIFocusItemInternal, _UIFocusItemDebuggable, _UIFocusRegionContainerInternal, _UILegacyFocusRegion, _UIGeometryChangeObserver, _UIFocusEnvironmentPrivate, _UIFocusRegionContainer, NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate>
+@interface UIView : UIResponder <_UIFallbackEnvironment, UILayoutItem_Internal, UITextEffectsOrdering, NSISVariableDelegate, _UILayoutItem, _UIMultilineTextContentSizing, NSISEngineDelegate, _UIScrollViewScrollObserver_Internal, _UIViewSubtreeMonitor, _UITraitEnvironmentInternal, _UIFocusItemInternal, _UIFocusItemDebuggable, _UIFocusRegionContainerInternal, _UILegacyFocusRegion, _UIGeometryChangeObserver, _UIFocusEnvironmentPrivate, _UIFocusRegionContainer, NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate>
 {
     NSMutableArray *_constraintsExceptingSubviewAutoresizingConstraints;
     UITraitCollection *_cachedTraitCollection;
@@ -182,6 +183,7 @@
         unsigned int semanticContentAttribute:3;
         unsigned int hasDynamicBackgroundColor:1;
         unsigned int hasLocalOverrideTraitCollection:1;
+        unsigned int hasPendingTraitStorageConstraints:1;
     } _viewFlags;
     unsigned short _unsatisfiableConstraintsLoggingSuspensionCount;
     unsigned int _pseudo_id;
@@ -226,6 +228,7 @@
 + (_Bool)_tintColorUpdating;
 + (id)_defaultInteractionTintColorForIdiom:(long long)arg1;
 + (void)_setAnimatedPropertiesEnabled:(_Bool)arg1;
++ (void)initialize;
 + (_Bool)_wantsDeepColorByDefault;
 + (Class)layerClass;
 + (_Bool)_preventsAppearanceProxyCustomization;
@@ -449,7 +452,6 @@
 @property(readonly, copy, nonatomic) NSArray *preferredFocusEnvironments;
 @property(readonly, nonatomic) __weak UIView *preferredFocusedView;
 @property(readonly, nonatomic) __weak id <UIFocusEnvironment> parentFocusEnvironment;
-- (id)_parentFocusEnvironment;
 @property(readonly, nonatomic, getter=_focusTouchSensitivityStyle) long long focusTouchSensitivityStyle;
 @property(readonly, nonatomic, getter=_mayRemainFocused) _Bool mayRemainFocused;
 - (double)_preferredDurationScaleFactorForFocusAnimation:(long long)arg1 inContext:(id)arg2;
@@ -515,6 +517,7 @@
 @property(nonatomic, setter=_setFrameIgnoringLayerTransform:) struct CGRect _frameIgnoringLayerTransform;
 - (void)_reestablishConstraintsForTransformChange;
 @property(nonatomic) struct CGPoint center;
+- (void)_synchronizeAutoLayoutWithCALayoutIfNecessaryForOldBounds:(struct CGRect)arg1 updateSuperview:(_Bool)arg2;
 - (void)_updateCombinedInsetsIfNecessary;
 @property(readonly, nonatomic) struct CGRect bounds;
 - (struct CGRect)convertRect:(struct CGRect)arg1 fromCoordinateSpace:(id)arg2;
@@ -629,12 +632,11 @@
 - (void)_effectiveThemeTraitCollectionDidChangeOnSubtreeInternal;
 - (_Bool)_definesDynamicTintColor;
 - (void)_effectiveThemeTraitCollectionDidChangeInternal;
-@property(readonly, nonatomic, getter=_effectiveThemeTraitCollection) UITraitCollection *_effectiveThemeTraitCollection;
 - (void)_traitCollectionDidChangeOnSubtreeInternal:(const struct _UITraitCollectionChangeDescription *)arg1;
 - (void)_traitCollectionDidChangeInternal:(const struct _UITraitCollectionChangeDescription *)arg1;
-- (void)_noteTraitsDidChangeRecursivelyFrom:(id)arg1;
+- (void)_noteLocalTraitsDidChangeRecursively;
 - (void)_noteTraitsDidChangeRecursively;
-- (void)_localOverrideTraitCollectionDidChangeWithPreviousTraitCollection:(id)arg1;
+- (void)_localOverrideTraitCollectionDidChange;
 - (void)_localOverrideTraitCollectionWillChange:(id)arg1;
 @property(retain, nonatomic, getter=_localOverrideTraitCollection, setter=_setLocalOverrideTraitCollection:) UITraitCollection *_localOverrideTraitCollection;
 @property(nonatomic, getter=_canBeParentTraitEnvironment, setter=_setCanBeParentTraitEnvironment:) _Bool _canBeParentTraitEnviroment;
@@ -730,6 +732,7 @@
 - (void)_layoutConstraintCleanup;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)_isRestrictedSplashboardClass;
 - (void)_finishDecodingLayoutGuideConnections:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (_Bool)_wantsDeepDrawing;
@@ -744,6 +747,8 @@
 - (Class)_layerClass;
 - (void)_setTraitStorageSubviews:(id)arg1;
 - (id)_traitStorageSubviews;
+- (void)_applyTraitStorageConstraintsByRemoving:(id)arg1 adding:(id)arg2;
+- (void)_applyPendingTraitStorageConstraints;
 - (void)_setTraitStorageConstraints:(id)arg1;
 - (id)_traitStorageConstraints;
 - (id)_appearanceTraitCollection;
@@ -754,6 +759,7 @@
 - (id)_alignmentRectOriginCacheCreateIfNecessary:(_Bool)arg1;
 - (double)_firstBaselineOffsetFromTop;
 - (double)_baselineOffsetFromBottom;
+- (_Bool)_isHasBaselinePropertyChangeable;
 - (_Bool)_hasBaseline;
 - (id)_constraintsArray;
 - (id)nsli_contentYOffsetVariable;
@@ -937,6 +943,7 @@
 - (void)_calculateSubviewAlignmentFrame:(struct CGRect *)arg1 superviewAlignmentBounds:(struct CGRect *)arg2 forAutoresizingMask:(unsigned long long)arg3 preservingNonzeroSuperviewAlignmentBoundsOriginForCompatibility:(_Bool)arg4;
 - (unsigned long long)_effectiveAutoresizingMask;
 - (_Bool)_isManuallyResizedBySuperview;
+- (float)_priorityForEngineHostConstraints;
 - (void)_invalidateEngineHostConstraints;
 - (void)_updateLayoutEngineHostConstraints;
 - (id)_engineHostingWidthConstraint;
@@ -1198,7 +1205,6 @@
 - (_Bool)isMultipleTouchEnabled;
 - (void)setMultipleTouchEnabled:(_Bool)arg1;
 - (void)setFrame:(struct CGRect)arg1;
-- (void)_synchronizeAutoLayoutWithCALayoutIfNecessaryForOldBounds:(struct CGRect)arg1;
 - (_Bool)_needsLayoutOnAnimatedFrameChangeForNewFrame:(struct CGRect)arg1;
 - (struct CGRect)extent;
 @property(readonly, nonatomic) struct CGRect frame;
@@ -1366,8 +1372,9 @@
 - (void)_recursivelyNameLayerTree;
 - (void)_setBackgroundCGColor:(struct CGColor *)arg1;
 - (void)_setBackgroundCGColor:(struct CGColor *)arg1 withSystemColorName:(id)arg2;
-- (void)_descendent:(id)arg1 didMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
-- (void)_descendent:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
+- (void)_monitoredView:(id)arg1 didMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
+- (void)_monitoredView:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
+- (_Bool)_monitorsView:(id)arg1;
 @property(nonatomic, getter=_monitorsSubtree, setter=_setMonitorsSubtree:) _Bool monitorsSubtree;
 - (_Bool)_shouldApplyExclusiveTouch;
 - (_Bool)_isInExclusiveTouchSubviewTree;
@@ -1378,6 +1385,8 @@
 - (void)_unsubscribeToScrollNotificationsIfNecessary:(id)arg1;
 - (void)_subscribeToScrollNotificationsIfNecessary:(id)arg1;
 - (_Bool)_canHostViewControllerContentScrollView;
+- (_Bool)_hasActingParentViewForGestureRecognizers:(id)arg1;
+- (id)_actingParentViewForGestureRecognizers;
 - (id)_containingScrollView;
 - (id)_viewIndexPath;
 - (_Bool)_isAncestorOfFirstResponder;

@@ -24,6 +24,7 @@
 - (id)attachmentWithGUID:(id)arg1;
 - (id)getAuxVideoPath:(id)arg1;
 - (void)markAttachmentPurgeable:(id)arg1;
+- (BOOL)_fileEligibleForCacheDelete:(id)arg1;
 - (void)markFileAsPurgeable:(id)arg1;
 - (BOOL)updateAttachment:(id)arg1;
 - (BOOL)removeAttachment:(id)arg1 fromMessageWithGUID:(id)arg2;

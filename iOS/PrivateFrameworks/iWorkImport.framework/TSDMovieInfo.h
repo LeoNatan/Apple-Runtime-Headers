@@ -42,11 +42,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSPData *posterImageData; // @synthesize posterImageData=mPosterImageData;
 - (id)style;
 - (void).cxx_destruct;
+- (_Bool)shouldShowInPrint;
 - (_Bool)willRenderContentViaImager;
 - (id)typesToPromiseWhenCopyingSingleDrawable;
 - (id)promisedTSPDataForType:(id)arg1;
 - (id)promisedDataForType:(id)arg1;
 - (id)mediaDataForDragging;
+- (_Bool)canCopyData;
 - (_Bool)needsDownload;
 - (_Bool)supportsHyperlinks;
 - (int)intValueForProperty:(int)arg1;
@@ -105,9 +107,11 @@ __attribute__((visibility("hidden")))
 -     // Error parsing type: v32@0:8^{MovieArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DrawableArchive}^{Reference}^{Reference}^{Reference}^{DataReference}^{DataReference}^{DataReference}^{Reference}^{Size}^{Size}^{DataReference}^{Attribution}fffIfIIBBBBBi}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
 -     // Error parsing type: v32@0:8r^{MovieArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DrawableArchive}^{Reference}^{Reference}^{Reference}^{DataReference}^{DataReference}^{DataReference}^{Reference}^{Size}^{Size}^{DataReference}^{Attribution}fffIfIIBBBBBi}16@24, name: loadFromArchive:unarchiver:
+- (int)elementKind;
 - (_Bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 @property(readonly, nonatomic, getter=isImplicitAmbientAnimationInteractive) _Bool implicitAmbientAnimationInteractive;
 - (id)newImplicitAmbientBuildRendererWithAnimatedBuild:(id)arg1 buildChunk:(id)arg2 session:(id)arg3 animatedSlideView:(id)arg4;
+@property(readonly, nonatomic) NSString *implicitAmbientAnimationEffectIdentifier;
 @property(readonly, nonatomic) _Bool canAddImplicitAmbientAnimations;
 
 // Remaining properties

@@ -16,6 +16,8 @@
     long long _textAlignment;
 }
 
++ (_Bool)defaultAllowsNegativeNumbers;
++ (_Bool)defaultAllowsDecimalNumbers;
 @property(readonly, nonatomic) _Bool allowsNegativeNumbers; // @synthesize allowsNegativeNumbers=_allowsNegativeNumbers;
 @property(readonly, nonatomic) _Bool allowsDecimalNumbers; // @synthesize allowsDecimalNumbers=_allowsDecimalNumbers;
 @property(readonly, nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;

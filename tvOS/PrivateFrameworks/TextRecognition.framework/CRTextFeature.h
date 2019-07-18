@@ -68,6 +68,7 @@
 @property struct CGPoint topLeft; // @synthesize topLeft=_topLeft;
 @property struct CGRect bounds; // @synthesize bounds=_bounds;
 - (void).cxx_destruct;
+- (float)calculateTextBoxHeight;
 - (id)createWordSubFeaturesForCandidateAtIndex:(long long)arg1 topWhiteSpacePoints:(id)arg2 bottomWhiteSpacePoints:(id)arg3;
 - (float)aspectRatioWithImageSize:(struct CGSize)arg1;
 - (id)createCharacterSubFeaturesForCandidateAtIndex:(long long)arg1;
@@ -97,7 +98,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithVNTextObsevation:(id)arg1;
 - (id)initWithCITextFeature:(id)arg1 inImage:(id)arg2;
-- (id)initWithCRTextFeature:(id)arg1;
 - (id)initWithTopLeft:(struct CGPoint)arg1 TopRight:(struct CGPoint)arg2 BottomLeft:(struct CGPoint)arg3 BottomRight:(struct CGPoint)arg4;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

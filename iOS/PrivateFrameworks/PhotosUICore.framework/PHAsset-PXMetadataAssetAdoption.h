@@ -53,6 +53,8 @@
 - (id)localizedDetailedGeoDescriptionForRTL:(_Bool)arg1;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly, nonatomic) _Bool isInCloud;
+- (id)_faceNamesStringForAsset;
+- (id)px_accessibilityLabelForStyles:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool requiresConfidentiality;
 - (_Bool)px_isConfidentialAdjustmentsVersion:(id)arg1;
 - (_Bool)px_isSupportedApp:(id)arg1;
@@ -68,7 +70,7 @@
 @property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) float hdrGain;
+@property(readonly, nonatomic) double hdrGain;
 @property(readonly, nonatomic) NSDate *localCreationDate;
 @property(readonly, nonatomic) CLLocation *location;
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;

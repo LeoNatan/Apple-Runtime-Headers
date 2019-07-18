@@ -7,12 +7,13 @@
 #import <OnBoardingKit/OBWelcomeController.h>
 
 #import <HomeUI/HUConfigurationViewController-Protocol.h>
+#import <HomeUI/HUOnboardingWarningPresenter-Protocol.h>
 #import <HomeUI/HUPreloadableViewController-Protocol.h>
 
 @class HUPersonalRequestsEditorItemManager, NSArray, NSString, OBLinkTrayButton, OBTrayButton;
 @protocol HUConfigurationViewControllerDelegate;
 
-@interface HUHomeAssistantDeviceLanguageSetupViewController : OBWelcomeController <HUConfigurationViewController, HUPreloadableViewController>
+@interface HUHomeAssistantDeviceLanguageSetupViewController : OBWelcomeController <HUOnboardingWarningPresenter, HUConfigurationViewController, HUPreloadableViewController>
 {
     _Bool _maxNumberOfVoicesReached;
     _Bool _shouldSetMultiUserIsEnabled;
@@ -33,11 +34,13 @@
 @property(retain, nonatomic) OBTrayButton *continueButton; // @synthesize continueButton=_continueButton;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)viewDidLoad;
 - (void)_turnOffPersonalRequests;
-- (void)_presentAlertConfirmingTurningOffPersonalRequests;
+- (void)userTappedContinueFromWarning;
 - (void)_setupPersonalRequestsItemInfrastructure;
 - (void)_changeLanguage;
 - (void)_completeLanguageSetup;
+- (void)_cancelLanguageSetupWithoutWarningUser;
 - (void)_cancelLanguageSetup;
 - (id)hu_preloadContent;
 - (id)init;

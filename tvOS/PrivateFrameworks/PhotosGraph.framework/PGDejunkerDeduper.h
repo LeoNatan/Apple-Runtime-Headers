@@ -18,13 +18,13 @@
 
 @property(retain, nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 - (void).cxx_destruct;
-- (id)requiredItemsInItems:(id)arg1;
+- (id)requiredItemsInItems:(id)arg1 options:(id)arg2 containStronglyRequiredItems:(_Bool *)arg3;
 - (id)itemsSortedByScoreWithItems:(id)arg1 options:(id)arg2;
 - (id)featureWithItem:(id)arg1;
 - (id)faceprintByPersonLocalIdentifierByItemIdentifierWithItems:(id)arg1;
 - (id)debugPersonStringForItem:(id)arg1;
 - (_Bool)isJunkForItem:(id)arg1;
-- (id)bestItemInItems:(id)arg1 bestItemsIfNotUnique:(id *)arg2 options:(id)arg3;
+- (id)bestItemsInItems:(id)arg1 options:(id)arg2;
 - (id)itemsByFeatureWithItems:(id)arg1;
 - (id)timeSortedItemsWithItems:(id)arg1;
 - (id)bestItemGroupsBasedOnSceneprintsWithItemGroups:(id)arg1 options:(id)arg2;

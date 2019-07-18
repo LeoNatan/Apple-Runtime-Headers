@@ -10,11 +10,17 @@
 
 @interface AVAudioHardwareConfigurationChangeEvent : NSObject
 {
+    NSArray *createdObjects;
+    NSArray *destroyedObjects;
+    NSArray *changedObjects;
 }
 
-@property(readonly, nonatomic) NSArray *changedObjects;
-@property(readonly, nonatomic) NSArray *destroyedObjects;
-@property(readonly, nonatomic) NSArray *createdObjects;
+@property(retain, nonatomic) NSArray *changedObjects; // @synthesize changedObjects;
+@property(retain, nonatomic) NSArray *destroyedObjects; // @synthesize destroyedObjects;
+@property(retain, nonatomic) NSArray *createdObjects; // @synthesize createdObjects;
+- (void).cxx_destruct;
+- (id)description;
+- (id)init;
 
 @end
 

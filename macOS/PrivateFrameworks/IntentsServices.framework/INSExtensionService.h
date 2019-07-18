@@ -16,7 +16,9 @@
 @interface INSExtensionService : NSObject <INSAnalyticsObserver, INSAnalyticsDataSource, INSAppLaunchCommandDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_requestDelegateQueue;
     INCExtensionConnection *_currentConnection;
+    NSString *_currentBundleIdForDisplay;
     INExtensionContext *_extensionContext;
     NSDictionary *_options;
     id <INSExtensionServiceDelegate> _delegate;

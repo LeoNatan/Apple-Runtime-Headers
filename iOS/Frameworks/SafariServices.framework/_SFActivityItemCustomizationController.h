@@ -26,6 +26,7 @@
 - (id)_allowedContentTypes;
 - (long long)_selectedIndex;
 - (long long)_contentTypeForAllowedContentAtIndex:(long long)arg1;
+@property(readonly, nonatomic) _Bool canShareAsPDF;
 @property(readonly, nonatomic) _Bool canShareAsStandaloneImage;
 @property(readonly, nonatomic) _Bool canShareAsWebArchive;
 @property(readonly, nonatomic) _Bool canShareAsDownload;

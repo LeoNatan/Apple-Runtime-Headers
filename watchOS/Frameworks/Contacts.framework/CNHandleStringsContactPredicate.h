@@ -12,19 +12,23 @@ __attribute__((visibility("hidden")))
 @interface CNHandleStringsContactPredicate : CNPredicate
 {
     NSArray *_handleStrings;
+    NSArray *_containerIdentifiers;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, copy, nonatomic) NSArray *containerIdentifiers; // @synthesize containerIdentifiers=_containerIdentifiers;
 @property(readonly, copy, nonatomic) NSArray *handleStrings; // @synthesize handleStrings=_handleStrings;
 - (void).cxx_destruct;
-- (CDUnknownBlockType)cn_resultTransform;
+- (CDUnknownBlockType)cn_resultTransformWithMatchInfos:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)shortDebugDescription;
 - (id)description;
+- (id)initWithHandleStrings:(id)arg1 containerIdentifiers:(id)arg2;
 - (id)initWithHandleStrings:(id)arg1;
+- (id)init;
 
 @end
 

@@ -35,6 +35,7 @@
     NSNumber *_clsFaceScore;
     NSNumber *_clsIsInhabited;
     NSNumber *_clsAvoidIfPossibleForKeyItem;
+    NSNumber *_clsHasPoorResolution;
     NSNumber *_clsHasInterestingScenes;
     NSNumber *_clsLikabilityScore;
     NSNumber *_clsInteractionScore;
@@ -45,6 +46,7 @@
     NSNumber *_clsDuration;
     NSNumber *_clsIsNonMemorable;
     NSNumber *_clsIsLoopOrBounce;
+    NSNumber *_clsIsLongExposure;
     NSString *_clsIdentifier;
     NSDate *_cls_universalDate;
     NSDate *_cls_localDate;
@@ -72,6 +74,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D pl_coordinate;
 @property(readonly, nonatomic) NSDate *pl_date;
+@property(readonly, nonatomic) BOOL clsIsLongExposure;
 @property(readonly, nonatomic) BOOL clsIsLoopOrBounce;
 @property(readonly, nonatomic) BOOL clsIsNonMemorable;
 @property(readonly, nonatomic) double clsDuration;
@@ -82,6 +85,7 @@
 - (double)clsInteractionScore;
 - (double)clsLikabilityScore;
 @property(readonly) BOOL clsHasInterestingScenes;
+@property(readonly) BOOL clsHasPoorResolution;
 @property(readonly) BOOL clsAvoidIfPossibleForKeyItem;
 @property(readonly) BOOL clsIsInhabited;
 @property(readonly, nonatomic) double clsFaceScore;

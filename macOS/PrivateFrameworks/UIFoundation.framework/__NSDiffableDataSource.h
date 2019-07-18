@@ -56,14 +56,17 @@
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (id)_snapshotWithHandlerAtomic:(CDUnknownBlockType)arg1;
 - (BOOL)_canApplySnapshotUpdateWithoutDiffing:(id)arg1;
-- (void)_commitNewDataSource:(id)arg1 withViewUpdates:(id)arg2;
+- (void)_commitNewDataSource:(id)arg1 withViewUpdates:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_reloadViewUpdatesForDiffUpdate:(id)arg1 dataSource:(id)arg2 ignoreInvalidItems:(BOOL)arg3;
 - (id)_reloadViewUpdatesForDiffUpdate:(id)arg1;
 - (void)_commitUpdate:(id)arg1;
 - (id)_pendingReloadUpdatesForDataSource:(id)arg1;
 - (void)applySnapshot:(id)arg1;
+- (void)applyDifferencesFromSnapshot:(id)arg1 animatingDifferences:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)applyDifferencesFromSnapshot:(id)arg1 animatingDifferences:(BOOL)arg2;
+- (void)reloadFromSnapshot:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)reloadFromSnapshot:(id)arg1;
+- (void)applyDifferencesFromSnapshot:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)applyDifferencesFromSnapshot:(id)arg1;
 - (id)emptySnapshot;
 - (id)snapshot;

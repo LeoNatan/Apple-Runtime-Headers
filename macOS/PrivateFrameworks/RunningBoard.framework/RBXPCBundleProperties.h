@@ -14,6 +14,7 @@
 {
     int _pid;
     NSCache *_plistValues;
+    BOOL _canFetchBundle;
     BOOL _backgroundRefreshEnabled;
     BOOL _hasPreferredJetsamBand;
     BOOL _supportsBackgroundContentFetching;

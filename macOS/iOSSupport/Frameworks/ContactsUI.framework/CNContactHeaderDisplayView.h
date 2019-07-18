@@ -32,9 +32,9 @@
     NSLayoutConstraint *_avatarNameSpacingConstraint;
 }
 
-+ (id)contactHeaderViewWithContact:(id)arg1 allowsPhotoDrops:(BOOL)arg2 delegate:(id)arg3;
-+ (id)contactHeaderViewWithContact:(id)arg1 delegate:(id)arg2;
-+ (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(BOOL)arg2 shouldAllowImageDrops:(BOOL)arg3;
++ (id)contactHeaderViewWithContact:(id)arg1 allowsPhotoDrops:(BOOL)arg2 monogramOnly:(BOOL)arg3 delegate:(id)arg4;
++ (id)contactHeaderViewWithContact:(id)arg1 monogramOnly:(BOOL)arg2 delegate:(id)arg3;
++ (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(BOOL)arg2 shouldAllowImageDrops:(BOOL)arg3 monogramOnly:(BOOL)arg4;
 + (id)descriptorForRequiredKeysForContactFormatter:(id)arg1;
 @property(retain) NSLayoutConstraint *avatarNameSpacingConstraint; // @synthesize avatarNameSpacingConstraint=_avatarNameSpacingConstraint;
 @property(nonatomic) double maxLabelsHeight; // @synthesize maxLabelsHeight=_maxLabelsHeight;
@@ -79,8 +79,8 @@
 - (void)createGeminiViewIfNeeded;
 - (double)maxHeight;
 - (double)minHeight;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 monogrammerStyle:(long long)arg3 shouldAllowImageDrops:(BOOL)arg4 delegate:(id)arg5;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 delegate:(id)arg3;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 monogrammerStyle:(long long)arg3 shouldAllowImageDrops:(BOOL)arg4 monogramOnly:(BOOL)arg5 delegate:(id)arg6;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 monogramOnly:(BOOL)arg3 delegate:(id)arg4;
 - (id)descriptorForRequiredKeys;
 
 // Remaining properties

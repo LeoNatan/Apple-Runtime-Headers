@@ -12,18 +12,22 @@
 
 @interface CLSClassMember : CLSObject <CLSRelationable>
 {
+    _Bool _markedForDeletion;
     NSString *_personID;
     unsigned long long _roles;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)objectIDForClassID:(id)arg1 andPersonID:(id)arg2;
 + (id)relations;
+@property(nonatomic) _Bool markedForDeletion; // @synthesize markedForDeletion=_markedForDeletion;
 @property(nonatomic) unsigned long long roles; // @synthesize roles=_roles;
 @property(copy, nonatomic) NSString *personID; // @synthesize personID=_personID;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithClassID:(id)arg1 personID:(id)arg2 roles:(unsigned long long)arg3;
 - (id)_init;
 
 // Remaining properties

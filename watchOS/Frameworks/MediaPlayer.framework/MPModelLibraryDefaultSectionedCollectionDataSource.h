@@ -15,23 +15,19 @@
     MPMediaLibraryEntityTranslationContext *_entityTranslationContext;
     vector_bbba3654 _allowedItemPersistentIDs;
     struct map<long long, unsigned long, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, unsigned long>>> _allowedItemPersistentIDToItemQueryResultsIndexMap;
-    _Bool _contentItemIDPredetermined;
     MPModelLibraryRequest *_request;
-    NSDictionary *_indexPathToContentItemIDMap;
+    NSDictionary *_indexPathToContainerUniqueIDMap;
     shared_ptr_8b9a1f72 _itemIdentifierQueryResults;
     shared_ptr_274c5e8b _itemQueryResults;
 }
 
 @property(readonly, nonatomic) shared_ptr_274c5e8b itemQueryResults; // @synthesize itemQueryResults=_itemQueryResults;
 @property(readonly, nonatomic) shared_ptr_8b9a1f72 itemIdentifierQueryResults; // @synthesize itemIdentifierQueryResults=_itemIdentifierQueryResults;
-@property(retain, nonatomic) NSDictionary *indexPathToContentItemIDMap; // @synthesize indexPathToContentItemIDMap=_indexPathToContentItemIDMap;
-@property(nonatomic, getter=isContentItemIDPredetermined) _Bool contentItemIDPredetermined; // @synthesize contentItemIDPredetermined=_contentItemIDPredetermined;
+@property(retain, nonatomic) NSDictionary *indexPathToContainerUniqueIDMap; // @synthesize indexPathToContainerUniqueIDMap=_indexPathToContainerUniqueIDMap;
 @property(readonly, nonatomic) MPModelLibraryRequest *request; // @synthesize request=_request;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_contentItemIDForItemPersistentID:(long long)arg1 withOccurrenceCount:(int)arg2;
-- (id)_buildIndexPathToContentItemIDMapFromItemQueryResults:(shared_ptr_274c5e8b)arg1;
-- (id)_contentItemIDForItemPersistentID:(long long)arg1 atIndexPath:(id)arg2;
+- (id)_buildIndexPathToContainerUniqueIDMapFromItemQueryResults:(shared_ptr_274c5e8b)arg1;
 - (_Bool)_allowedEntityIdentifiersContainsAllPersistentIDs;
 - (unsigned long)_adjustedGlobalIndexForIndexPath:(id)arg1;
 - (void)_populateIndexMap;

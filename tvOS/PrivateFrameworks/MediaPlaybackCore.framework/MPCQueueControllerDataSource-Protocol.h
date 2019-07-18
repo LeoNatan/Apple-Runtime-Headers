@@ -6,7 +6,7 @@
 
 #import <MediaPlaybackCore/MPShuffleableSectionedIdentifierListDataSource-Protocol.h>
 
-@class MPAVItem, MPPlaceholderAVItem, MPPlaybackContext, NSString;
+@class MPAVItem, MPIdentifierSet, MPPlaceholderAVItem, MPPlaybackContext, NSString;
 
 @protocol MPCQueueControllerDataSource <MPShuffleableSectionedIdentifierListDataSource>
 @property(readonly, nonatomic) _Bool containsLiveStream;
@@ -14,6 +14,7 @@
 - (void)loadPlaybackContext:(MPPlaybackContext *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 
 @optional
+- (NSString *)firstItemIntersectingIdentifierSet:(MPIdentifierSet *)arg1;
 - (MPPlaceholderAVItem *)placeholderItemForLoadingAdditionalItemsInSection:(NSString *)arg1;
 - (void)loadAdditionalItemsForSection:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (_Bool)shouldRequestAdditionalItemsWhenReachingTailOfSection:(NSString *)arg1;

@@ -6,7 +6,7 @@
 
 #import <HealthDaemon/NSObject-Protocol.h>
 
-@class HDHealthOntologyManager, HKConcept, NSArray, NSError;
+@class HDHealthOntologyManager, NSError;
 
 @protocol HDHealthOntologyManagerObserver <NSObject>
 
@@ -14,8 +14,5 @@
 - (void)ontologyManagerReferenceOntologyCreated:(HDHealthOntologyManager *)arg1;
 - (void)ontologyManagerReferenceOntologyFinishedUpdate:(HDHealthOntologyManager *)arg1 success:(_Bool)arg2 error:(NSError *)arg3;
 - (void)ontologyManagerReferenceOntologyWillUpdate:(HDHealthOntologyManager *)arg1;
-- (void)conceptAssociationsRemovedFromUserRecords:(NSArray *)arg1;
-- (void)conceptRecordAssociationCountChanged:(HKConcept *)arg1;
-- (void)newConceptsAssociatedWithUserRecords:(NSArray *)arg1;
 @end
 

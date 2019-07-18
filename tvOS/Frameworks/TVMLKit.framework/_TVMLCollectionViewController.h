@@ -16,7 +16,6 @@
 __attribute__((visibility("hidden")))
 @interface _TVMLCollectionViewController : UIViewController <TVAppTemplateImpressionable, _TVCollectionViewDelegate, UICollectionViewDataSource, _TVSubviewPreloading>
 {
-    _Bool _ignoreNextSelect;
     _Bool _didAppear;
     _Bool _didUpdateFocus;
     double _impressionThreshold;

@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class AXMDataRegressionModel, NSArray, NSNumberFormatter, NSString;
+@protocol AXMDataSummaryCategoryNameProvider;
 
 @interface AXMDataSummary : NSObject
 {
@@ -17,6 +18,7 @@
     unsigned int _n;
     NSArray *_residuals;
     NSArray *_outliers;
+    NSObject<AXMDataSummaryCategoryNameProvider> *_categoryNameDelegate;
     NSNumberFormatter *_numberFormatter;
     double _r;
     double _rSquared;
@@ -34,6 +36,7 @@
 }
 
 @property(retain, nonatomic) NSNumberFormatter *numberFormatter; // @synthesize numberFormatter=_numberFormatter;
+@property(nonatomic) __weak NSObject<AXMDataSummaryCategoryNameProvider> *categoryNameDelegate; // @synthesize categoryNameDelegate=_categoryNameDelegate;
 @property(readonly, nonatomic) NSArray *outliers; // @synthesize outliers=_outliers;
 @property(readonly, nonatomic) NSArray *residuals; // @synthesize residuals=_residuals;
 @property(readonly, nonatomic) double intercept; // @synthesize intercept=_intercept;
@@ -55,6 +58,9 @@
 @property(readonly, nonatomic) NSArray *xValues; // @synthesize xValues=_xValues;
 @property(readonly, nonatomic) NSArray *axisTitles; // @synthesize axisTitles=_axisTitles;
 - (void).cxx_destruct;
+- (id)descriptionForXValue:(double)arg1;
+- (double)positionForYAxisValue:(double)arg1;
+- (double)positionForXAxisValue:(double)arg1;
 - (void)getValues:(double *)arg1 fromNSNumberArray:(id)arg2;
 - (double)getVariance:(id)arg1;
 - (double)getMedian:(id)arg1;

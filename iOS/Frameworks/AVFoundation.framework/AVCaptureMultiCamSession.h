@@ -20,6 +20,7 @@
 - (void)_updateCosts;
 - (id)_livePortSetsByDeviceInput;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)handleVideoInputDevice:(id)arg1 activeFormatChanged:(id)arg2;
 - (_Bool)isOverCost:(id *)arg1;
 - (void)_removeConnection:(id)arg1;
 - (_Bool)_addConnection:(id)arg1 exceptionReason:(id *)arg2;

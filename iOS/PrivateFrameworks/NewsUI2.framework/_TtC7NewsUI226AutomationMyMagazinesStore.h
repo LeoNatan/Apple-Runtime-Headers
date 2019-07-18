@@ -8,9 +8,8 @@
 
 @interface _TtC7NewsUI226AutomationMyMagazinesStore : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: currentIssues
-    // Error parsing type: , name: mostRecentlyReadIssue
-    // Error parsing type: , name: downloadedIssues
+    // Error parsing type: , name: state
+    // Error parsing type: , name: badgeIssueIDs
     // Error parsing type: , name: testDataLoader
     // Error parsing type: , name: issueService
 }

@@ -17,13 +17,12 @@
 }
 
 - (void).cxx_destruct;
+- (void)_handleHighFrequencyObserverCallbacksForType:(id)arg1;
 - (void)_handleQuerySuccessForType:(id)arg1 samplesAdded:(id)arg2 objectsRemoved:(id)arg3;
 - (void)_handleQueryErrorForType:(id)arg1 retryCount:(int)arg2;
 - (void)_transitionToQueryFailureForType:(id)arg1;
 - (void)_handleQueryCallbackForType:(id)arg1 samplesAdded:(id)arg2 objectsDeleted:(id)arg3 error:(id)arg4 retryCount:(int)arg5;
 - (void)_removeQueryForType:(id)arg1;
-- (id)_makeDummyQuantitySampleForQuantityType:(id)arg1;
-- (_Bool)_hasUpdatesForStatisticsCollection:(id)arg1;
 - (void)_createQueryForType:(id)arg1 retryCount:(int)arg2;
 - (_Bool)_isHighFrequencyDataType:(id)arg1;
 - (void)_setQueryState:(int)arg1 forType:(id)arg2;

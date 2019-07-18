@@ -6,22 +6,26 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class NSLayoutConstraint, UILabel;
+@class NSLayoutConstraint, UILabel, UIView;
 
 @interface HKInfographicTableViewCell : UITableViewCell
 {
+    _Bool hideSeparator;
     UILabel *_titleLabel;
-    UILabel *_descriptionLabel;
+    UILabel *_valueLabel;
+    UIView *_separator;
     NSLayoutConstraint *_heightConstraint;
 }
 
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
-@property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
+@property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;
+@property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
-- (id)_descriptionFont;
+- (id)_valueFont;
 - (id)_titleFont;
 - (id)_labelWithFont:(id)arg1;
+- (void)setSeparatorHidden:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

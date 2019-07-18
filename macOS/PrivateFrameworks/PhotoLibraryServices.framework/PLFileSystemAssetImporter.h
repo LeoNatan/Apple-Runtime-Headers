@@ -31,6 +31,7 @@
 - (BOOL)_setupVideoAsset:(id)arg1 withURL:(id)arg2;
 - (BOOL)_setupPhotoAsset:(id)arg1 withURL:(id)arg2 unknownType:(BOOL)arg3 isPlaceholder:(BOOL)arg4 hasVideoComplementResource:(BOOL)arg5;
 - (BOOL)_setupAdjustmentsFromAdjustmentFileForAsset:(id)arg1;
+- (id)_assetAdjustmentsIfExistsForAsset:(id)arg1;
 - (BOOL)_setupUnknownAsset:(id)arg1 withURL:(id)arg2;
 - (BOOL)_setupPhotoAsset:(id)arg1 withURL:(id)arg2 isPlaceholder:(BOOL)arg3 hasVideoComplementResource:(BOOL)arg4;
 - (BOOL)_setupPhotoAssetAsPhotoIrisIfNeeded:(id)arg1 hasVideoComplementResource:(BOOL)arg2;

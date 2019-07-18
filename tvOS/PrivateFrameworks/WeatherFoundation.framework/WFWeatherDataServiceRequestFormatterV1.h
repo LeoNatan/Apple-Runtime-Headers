@@ -7,15 +7,19 @@
 #import <objc/NSObject.h>
 
 #import <WeatherFoundation/WFForecastRequestFormatter-Protocol.h>
+#import <WeatherFoundation/WFForecastRequestFormatterMultiHost-Protocol.h>
 
 @class NSString;
 
-@interface WFWeatherDataServiceRequestFormatterV1 : NSObject <WFForecastRequestFormatter>
+@interface WFWeatherDataServiceRequestFormatterV1 : NSObject <WFForecastRequestFormatter, WFForecastRequestFormatterMultiHost>
 {
 }
 
-+ (id)hostURLForService;
++ (id)geocodePathForLocation:(id)arg1 rules:(id)arg2;
++ (id)forecastRequest:(unsigned long long)arg1 forLocation:(id)arg2 locale:(id)arg3 date:(id)arg4 rules:(id)arg5;
 + (id)forecastRequest:(unsigned long long)arg1 forLocation:(id)arg2 locale:(id)arg3 date:(id)arg4;
++ (id)hostURLForEnvironment:(id)arg1;
++ (id)hostURLForService;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,27 +6,23 @@
 
 #import <UIKit/UIView.h>
 
-@class UIImageView, UIStackView;
+@class UIImageView, UIStackView, WFRowOfIconsView;
 
 @interface WFAutomationSummaryIconsView : UIView
 {
-    UIImageView *_triggerIconView;
-    UIImageView *_shortcutIconViewA;
-    UIImageView *_shortcutIconViewB;
-    UIImageView *_shortcutIconViewC;
-    UIImageView *_shortcutIconViewD;
     UIStackView *_stackView;
+    UIImageView *_triggerIconView;
     UIImageView *_arrowImageView;
+    WFRowOfIconsView *_actionsIconsView;
 }
 
+@property(readonly, nonatomic) WFRowOfIconsView *actionsIconsView; // @synthesize actionsIconsView=_actionsIconsView;
 @property(readonly, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
-@property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
-@property(readonly, nonatomic) UIImageView *shortcutIconViewD; // @synthesize shortcutIconViewD=_shortcutIconViewD;
-@property(readonly, nonatomic) UIImageView *shortcutIconViewC; // @synthesize shortcutIconViewC=_shortcutIconViewC;
-@property(readonly, nonatomic) UIImageView *shortcutIconViewB; // @synthesize shortcutIconViewB=_shortcutIconViewB;
-@property(readonly, nonatomic) UIImageView *shortcutIconViewA; // @synthesize shortcutIconViewA=_shortcutIconViewA;
 @property(readonly, nonatomic) UIImageView *triggerIconView; // @synthesize triggerIconView=_triggerIconView;
+@property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 - (void).cxx_destruct;
+- (void)setActionIcons:(id)arg1;
+- (void)setTriggerIcon:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithFrame:(struct CGRect)arg1;
 

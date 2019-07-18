@@ -6,15 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, SORealmSettingManager;
+@class LAContext, NSString, SORealmSettingManager;
 
 @interface SOKerberosAuthentication : NSObject
 {
     BOOL _siteDiscoveryInProgress;
     NSString *_realm;
     SORealmSettingManager *_settingsManager;
+    LAContext *_myLAContext;
 }
 
+@property(retain, nonatomic) LAContext *myLAContext; // @synthesize myLAContext=_myLAContext;
 @property BOOL siteDiscoveryInProgress; // @synthesize siteDiscoveryInProgress=_siteDiscoveryInProgress;
 @property(retain, nonatomic) SORealmSettingManager *settingsManager; // @synthesize settingsManager=_settingsManager;
 @property(retain, nonatomic) NSString *realm; // @synthesize realm=_realm;

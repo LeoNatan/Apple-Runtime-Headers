@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak UIViewController<PUOneUpAssetTransitionViewController> *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(readonly, nonatomic) PUOneUpPhotosSharingTransitionContext *oneUpTransitionContext; // @synthesize oneUpTransitionContext=_oneUpTransitionContext;
 - (void).cxx_destruct;
+- (void)_configurePhotoView:(id)arg1 withContentHelper:(id)arg2;
+- (void)_installTransitioningBadgeViewsForAssetTransitionInfo:(id)arg1 inTransitioningView:(id)arg2;
 - (id)interruptibleAnimatorForTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (id)initWithTransitionContext:(id)arg1 presentingViewController:(id)arg2;

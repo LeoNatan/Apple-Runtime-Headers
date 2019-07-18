@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)setColorStoreActionOptions:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (void)setColorStoreAction:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (void)endEncoding;
+- (void)dealloc;
 - (id)renderCommandEncoder;
 - (id)initWithCommandBuffer:(id)arg1 renderPassDescriptor:(id)arg2;
 

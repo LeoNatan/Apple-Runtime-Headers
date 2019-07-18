@@ -40,6 +40,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (void)dieForTesting;
+- (void)waitForSystemAppMigratorWithCompletion:(CDUnknownBlockType)arg1;
+- (void)waitForSystemAppMigratorToComplete:(CDUnknownBlockType)arg1;
+- (void)systemAppMigratorHasCompleted:(CDUnknownBlockType)arg1;
+- (void)setSystemAppMigrationComplete:(CDUnknownBlockType)arg1;
 - (void)snapshotWKAppInCompanionAppID:(id)arg1 toURL:(id)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setAppLaunchStateForApp:(id)arg1 enable:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getAppMetadataForApp:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -38,7 +38,7 @@
 @property(retain, nonatomic) NSMutableArray *queuedItems; // @synthesize queuedItems=_queuedItems;
 @property(nonatomic) __weak id <CPSBannerSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)applicationStateMonitor:(id)arg1 didBecomeActive:(_Bool)arg2;
+- (void)sceneActivationStateChangedTo:(id)arg1;
 - (void)_resetLastUserDismissedIdentifierTimerFired:(id)arg1;
 - (void)_resetLastUserDismissedIdentifierTimer;
 - (void)_dismissTimerFired:(id)arg1;

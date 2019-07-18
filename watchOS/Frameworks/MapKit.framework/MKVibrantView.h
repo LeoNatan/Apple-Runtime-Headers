@@ -12,6 +12,7 @@
 }
 
 @property(nonatomic) int style; // @synthesize style=_style;
+- (void)setContinuousCornerRadius:(float)arg1;
 - (void)didMoveToWindow;
 - (void)setBackgroundColor:(id)arg1;
 - (id)initWithEffect:(id)arg1;

@@ -7,7 +7,7 @@
 #import <AccessibilityPlatformTranslation/AXPTranslator.h>
 
 @class AXUIElement, NSMutableDictionary, NSObject;
-@protocol OS_dispatch_queue, OS_dispatch_semaphore;
+@protocol OS_dispatch_queue;
 
 @interface AXPTranslator_iOS : AXPTranslator
 {
@@ -15,7 +15,7 @@
     NSMutableDictionary *_backTranslationCache;
     NSObject<OS_dispatch_queue> *_cacheQueue;
     struct __IOHIDEventSystemClient *_ioSystemPostBackClient;
-    NSObject<OS_dispatch_semaphore> *_appAXReadySemaphore;
+    _Bool _axAppReadyFlag;
     _Bool _accessibilityEnabled;
     struct __AXObserver *_axEventObserver;
     AXUIElement *_systemAppElement;
@@ -47,6 +47,7 @@
 - (id)_processAttributeSpecialCases:(unsigned int)arg1 uiElement:(id)arg2 error:(unsigned int *)arg3;
 - (id)_processSubroleAttributeRequest:(id)arg1 error:(unsigned int *)arg2;
 - (id)_processStringForRangeAttributeRequest:(id)arg1 parameter:(id)arg2 error:(unsigned int *)arg3;
+- (id)_processAttributedStringForRangeAttributeRequest:(id)arg1 parameter:(id)arg2 error:(unsigned int *)arg3;
 - (id)_processRoleAttributeRequest:(id)arg1 error:(unsigned int *)arg2;
 - (id)_processNumberOfCharactersAttributeRequest:(id)arg1 error:(unsigned int *)arg2;
 - (id)_processingSmuggledMarzipanRequest:(id)arg1 parameter:(id)arg2 error:(unsigned int *)arg3;
@@ -84,6 +85,7 @@
 - (_Bool)_processPerformAction:(int)arg1 value:(id)arg2;
 - (id)_processAccessibilityAttributeValue:(long)arg1;
 - (void)_initializeAccessibility;
+- (CDUnknownBlockType)attributedStringConversionBlock;
 - (id)backTranslationCache;
 - (id)translationCache;
 - (id)init;

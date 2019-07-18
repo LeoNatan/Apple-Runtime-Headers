@@ -8,7 +8,7 @@
 
 #import <MediaPlayer/NSSecureCoding-Protocol.h>
 
-@class ML3MusicLibrary, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSNumber, NSPointerArray, NSString, NSURL, QueryCriteriaResultsCache;
+@class ICUserIdentity, ML3MusicLibrary, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSNumber, NSPointerArray, NSString, NSURL, QueryCriteriaResultsCache;
 @protocol MPMediaLibraryDataProviderPrivate, OS_dispatch_queue;
 
 @interface MPMediaLibrary : NSObject <NSSecureCoding>
@@ -81,6 +81,7 @@
     unsigned char _originalWiFiNetworkFlags;
     id __MLCoreStorage;
     NSObject<OS_dispatch_queue> *_accessQueue;
+    ICUserIdentity *_userIdentity;
 }
 
 + (BOOL)companionDeviceActiveStoreAccountIsSubscriber;
@@ -110,12 +111,16 @@
 + (long long)authorizationStatus;
 + (void)endDiscoveringMediaLibraries;
 + (void)beginDiscoveringMediaLibraries;
++ (void)_postNotificationName:(id)arg1 library:(id)arg2 userInfo:(id)arg3;
++ (void)_postNotificationName:(id)arg1 library:(id)arg2;
 + (BOOL)supportsSecureCoding;
++ (id)_deviceMediaLibraryWithUserIdentity:(id)arg1 isSingletonLibrary:(BOOL)arg2;
 + (id)deviceMediaLibraryWithUserIdentity:(id)arg1;
 + (id)deviceMediaLibrary;
 + (void)setDefaultMediaLibrary:(id)arg1;
 + (id)defaultMediaLibrary;
 + (void)initialize;
+@property(readonly, copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
 - (BOOL)recordPlayEventForPlaylistPersistentID:(long long)arg1;
 - (BOOL)recordPlayEventForAlbumPersistentID:(long long)arg1;
@@ -254,6 +259,8 @@
 - (id)additionalLibraryFilterPredicates;
 - (long long)status;
 - (BOOL)writable;
+- (BOOL)isHomeSharingLibrary;
+- (BOOL)isDeviceLibrary;
 - (long long)playlistGeneration;
 - (unsigned long long)syncGenerationID;
 - (unsigned long long)currentEntityRevision;
@@ -280,7 +287,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (id)initWithUserIdentity:(id)arg1;
+- (id)_initWithUserIdentity:(id)arg1 isSingletonLibrary:(BOOL)arg2;
 - (id)init;
 @property(readonly, nonatomic) NSURL *protectedContentSupportStorageURL;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

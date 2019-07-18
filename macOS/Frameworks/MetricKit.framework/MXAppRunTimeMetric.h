@@ -26,7 +26,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCumulativeForegroundTimeMeasurement:(id)arg1 cumulativeBackgroundTimeMeasurement:(id)arg2 cumulativeBackgroundAudioTimeMeasurement:(id)arg3 cumulativeBackgroundLocationTimeMeasurement:(id)arg4;
-- (id)initWithCumulativeForegroundTime:(double)arg1 cumulativeBackgroundTime:(double)arg2 cumulativeBackgroundAudioTime:(double)arg3 cumulativeBackgroundLocationTime:(double)arg4;
 
 @end
 

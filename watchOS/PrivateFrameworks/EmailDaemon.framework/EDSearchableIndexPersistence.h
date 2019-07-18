@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <EmailDaemon/ECSignpostable-Protocol.h>
 #import <EmailDaemon/EDSearchableIndexDataSource-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
+#import <EmailDaemon/EFSignpostable-Protocol.h>
 
 @class EDPersistenceDatabase, NSString;
 @protocol EDSearchableIndexHookResponder;
 
-@interface EDSearchableIndexPersistence : NSObject <EFLoggable, ECSignpostable, EDSearchableIndexDataSource>
+@interface EDSearchableIndexPersistence : NSObject <EFLoggable, EFSignpostable, EDSearchableIndexDataSource>
 {
     EDPersistenceDatabase *_database;
     id <EDSearchableIndexHookResponder> _hookResponder;

@@ -47,7 +47,9 @@
 - (unsigned long long)serializeStateIntoData:(id)arg1 startingAtByteOffset:(unsigned long long)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) unsigned long long serializedLength;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1 forCodingVersion:(unsigned int)arg2;
 - (id)initWithCoder:(id)arg1;
+- (id)_initWithClassKeyMappedCoder:(id)arg1;
 @property(readonly, nonatomic) unsigned long long requestRevision;
 @property(readonly) unsigned long long elementType;
 - (id)initWithData:(const void *)arg1 elementCount:(unsigned long long)arg2 elementType:(unsigned long long)arg3 lengthInBytes:(unsigned long long)arg4 labelsAndConfidence:(id)arg5 requestRevision:(unsigned long long)arg6;

@@ -40,13 +40,13 @@
 - (void)updateInternalState;
 - (id)initWithLearnedLocationsOfInterest:(id)arg1 metricManager:(id)arg2 queue:(id)arg3;
 - (id)init;
-- (void)logStateModelAvailabilityMetricWithAvailability:(long long)arg1 precisionRecall:(unsigned int)arg2;
+- (void)logStateModelAvailabilityMetricWithAvailability:(unsigned long long)arg1 precisionRecall:(unsigned int)arg2;
 - (id)_getRecursivelyAllLOIsWithinDistance:(double)arg1 ofLocation:(id)arg2 previouslyFoundLocationsOfInterest:(id)arg3;
 - (id)getAllLOIsWithinDistance:(double)arg1 ofLocation:(id)arg2;
 - (struct CLLocationCoordinate2D)getEndingCoordinateWithStartingLocation:(id)arg1 distance:(double)arg2;
 - (id)getMostRecentLocationForDate:(id)arg1;
-- (unsigned int)calculateStateModelAvailabilityPrecisionRecallOnDate:(id)arg1 predictedLocations:(id)arg2;
-- (void)logStateModelAvailabilityMetricWithIntervalSinceLastUpdate:(double)arg1;
+- (unsigned int)calculateStateModelAvailabilityPrecisionRecallOnDate:(id)arg1 predictedLocations:(id)arg2 isHighConfidenceOnly:(_Bool)arg3;
+- (void)logStateModelAvailabilityMetricWithIntervalSinceLastUpdate:(double)arg1 untilNow:(id)arg2;
 - (void)logStateModelLengthMetric;
 - (void)logStateModelConfidenceMetric;
 - (double)calculateConfidenceWithNearbyLOIs:(unsigned long long)arg1 impossibleTransitions:(unsigned long long)arg2;

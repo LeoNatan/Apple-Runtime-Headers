@@ -28,6 +28,7 @@
     _Bool _updateEdgeRegionSampleCounter;
     _Bool _gestureHasBegun;
     _Bool _gestureHasEnded;
+    unsigned long long _numberOfTouchSamples;
     SBHomeGestureDockSwitcherModifier *_dockModifier;
     _Bool _scrunchInitiated;
     _Bool _startingInAppSwitcher;

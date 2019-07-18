@@ -6,21 +6,40 @@
 
 #import <UIKit/UIControl.h>
 
-@class UILabel;
+@class CAFilter, _ASAuthorizationAppleIDButtonContentView, _UIFloatingContentView;
 
 @interface ASAuthorizationAppleIDButton : UIControl
 {
-    UILabel *_titleLabel;
     long long _type;
     long long _style;
+    CAFilter *_highlightFilter;
+    _ASAuthorizationAppleIDButtonContentView *_buttonContentView;
+    _UIFloatingContentView *_floatingContentView;
     double _cornerRadius;
 }
 
 + (id)buttonWithType:(long long)arg1 style:(long long)arg2;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;
+- (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
+- (_Bool)_canHandlePresses:(id)arg1;
+- (unsigned long long)_currentControlState;
+- (void)_setupFloatingContentView;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
+- (_Bool)isAccessibilityElement;
+- (long long)_ak_buttonStyle;
+- (long long)_ak_buttonType;
 - (void)setHighlighted:(_Bool)arg1;
-- (id)titleForButton;
+- (void)_performAnimationToSetHighlighted:(_Bool)arg1;
+- (void)_createHighlightFilterIfNecessary;
+- (struct CGSize)intrinsicContentSize;
+- (void)layoutSubviews;
+- (void)_drawRect:(struct CGRect)arg1 inView:(struct UIView *)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

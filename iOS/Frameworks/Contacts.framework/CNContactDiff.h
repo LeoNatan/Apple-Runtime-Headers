@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)applyToMutableContact:(id)arg1 withIdentifierMap:(id)arg2;
 - (id)contactByApplyingUpdatesToContact:(id)arg1;
 - (id)initWithUpdates:(id)arg1;
-- (_Bool)applyToABPerson:(void *)arg1 error:(id *)arg2;
+- (_Bool)applyToABPerson:(void *)arg1 logger:(id)arg2 error:(id *)arg3;
 
 @end
 

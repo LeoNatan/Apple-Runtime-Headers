@@ -28,6 +28,7 @@
     BOOL supportsPrivateEvents;
     BOOL supportsSharingScheduling;
     BOOL supportsTaskCalendarCreation;
+    BOOL requiresOpeningAttachmentAsLink;
     BOOL supportsUnbind;
     int displayOrder;
     NSString *externalSourceIdentifier;
@@ -48,6 +49,7 @@
 @property(readonly, nonatomic) NSString *dropBoxPathString; // @synthesize dropBoxPathString;
 @property(readonly, retain, nonatomic) NSString *typeString; // @synthesize typeString;
 @property(readonly, nonatomic) NSString *title; // @synthesize title;
+@property(readonly, nonatomic) BOOL requiresOpeningAttachmentAsLink; // @synthesize requiresOpeningAttachmentAsLink;
 @property(readonly, nonatomic) BOOL supportsTaskCalendarCreation; // @synthesize supportsTaskCalendarCreation;
 @property(readonly, nonatomic) BOOL supportsSharingScheduling; // @synthesize supportsSharingScheduling;
 @property(readonly, nonatomic) BOOL supportsPrivateEvents; // @synthesize supportsPrivateEvents;

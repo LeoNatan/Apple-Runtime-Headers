@@ -7,6 +7,6 @@
 #import <WorkflowKit/WFWorkoutTrigger.h>
 
 @interface WFWorkoutTrigger (CoreDuetContext)
-+ (id)triggerTypeIconName;
++ (id)triggerTypeIcon;
 @end
 

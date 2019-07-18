@@ -12,7 +12,6 @@
 {
 }
 
-+ (void)load;
 - (Class)handlerClassForComponent:(id)arg1;
 
 // Remaining properties

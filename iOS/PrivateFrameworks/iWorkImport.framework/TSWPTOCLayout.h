@@ -36,7 +36,8 @@ __attribute__((visibility("hidden")))
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
 - (unsigned long long)autosizeFlagsForTextLayout:(id)arg1;
-- (id)commandToClampModelToLayoutSize;
+- (_Bool)descendersCannotClip;
+- (id)commandToClampModelToLayoutSizeWithAdditionalTransform:(struct CGAffineTransform)arg1;
 - (void)transferLayoutGeometryToInfo:(id)arg1 withAdditionalTransform:(struct CGAffineTransform)arg2 assertIfInDocument:(_Bool)arg3;
 - (_Bool)isDraggable;
 - (struct CGRect)boundsForStandardKnobs;

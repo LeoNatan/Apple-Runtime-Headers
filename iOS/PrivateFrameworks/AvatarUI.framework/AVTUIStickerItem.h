@@ -17,9 +17,11 @@
     NSString *_localizedName;
     MSSticker *_cachedMSSticker;
     CDUnknownBlockType _resourceProvider;
+    struct CGRect _clippingRect;
 }
 
 @property(readonly, copy, nonatomic) CDUnknownBlockType resourceProvider; // @synthesize resourceProvider=_resourceProvider;
+@property(nonatomic) struct CGRect clippingRect; // @synthesize clippingRect=_clippingRect;
 @property(nonatomic) _Bool hasBeenRendered; // @synthesize hasBeenRendered=_hasBeenRendered;
 @property(retain, nonatomic) MSSticker *cachedMSSticker; // @synthesize cachedMSSticker=_cachedMSSticker;
 @property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;

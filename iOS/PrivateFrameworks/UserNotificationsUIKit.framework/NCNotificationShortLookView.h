@@ -17,7 +17,6 @@
     NCNotificationContentView *_notificationContentView;
     NCNotificationGrabberView *_grabberView;
     NCAuxiliaryOptionsView *_auxiliaryOptionsView;
-    _Bool _defersAnimatedUpdates;
     _Bool _notificationContentViewHidden;
     _Bool _banner;
     _Bool _grabberVisible;
@@ -26,7 +25,6 @@
 @property(nonatomic, getter=_isGrabberVisible, setter=_setGrabberVisible:) _Bool grabberVisible; // @synthesize grabberVisible=_grabberVisible;
 @property(nonatomic, getter=_isBanner, setter=_setBanner:) _Bool banner; // @synthesize banner=_banner;
 @property(nonatomic, getter=isNotificationContentViewHidden) _Bool notificationContentViewHidden; // @synthesize notificationContentViewHidden=_notificationContentViewHidden;
-@property(nonatomic) _Bool defersAnimatedUpdates; // @synthesize defersAnimatedUpdates=_defersAnimatedUpdates;
 - (void).cxx_destruct;
 - (void)_layoutGrabber;
 - (void)_layoutAuxiliaryOptionsView;

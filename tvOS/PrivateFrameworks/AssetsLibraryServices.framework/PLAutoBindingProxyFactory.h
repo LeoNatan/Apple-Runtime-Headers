@@ -8,25 +8,29 @@
 
 #import <AssetsLibraryServices/PLXPCProxyCreating-Protocol.h>
 
-@class NSString, NSURL;
+@class NSString, NSURL, PLLazyObject, PLResult;
 @protocol PLXPCProxyCreating;
 
 @interface PLAutoBindingProxyFactory : NSObject <PLXPCProxyCreating>
 {
-    struct os_unfair_lock_s _clientLibraryStateLock;
+    struct os_unfair_lock_s _bindLock;
+    PLLazyObject *_lazyBindToPhotoLibrary;
+    PLResult *_cachedBindResult;
     id <PLXPCProxyCreating> _proxyFactory;
     NSURL *_photoLibraryURL;
-    long long _clientLibraryState;
 }
 
 + (id)clientToServiceBookmarkForURL:(id)arg1;
-@property(readonly) long long clientLibraryState; // @synthesize clientLibraryState=_clientLibraryState;
 @property(readonly, copy) NSURL *photoLibraryURL; // @synthesize photoLibraryURL=_photoLibraryURL;
 @property(readonly) id <PLXPCProxyCreating> proxyFactory; // @synthesize proxyFactory=_proxyFactory;
 - (void).cxx_destruct;
-- (void)_updateLibraryStateConnectionInterrupted:(id)arg1;
-- (long long)_bindToPhotoLibraryWithError:(id *)arg1;
-- (_Bool)_bindToPhotoLibraryIfNecessaryWithError:(id *)arg1;
+- (void)_connectionInterrupted:(id)arg1;
+- (id)_bindToPhotoLibrary;
+- (id)_lazilyBindToPhotoLibrary;
+- (void)_updateCachedBindResult:(id)arg1;
+- (id)_cachedBindResult;
+- (id)_tryToBindToPhotoLibrary;
+- (id)_bindToPhotoLibraryIfNecessary;
 - (_Bool)_bindToPhotoLibraryIfNecessaryWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)addBarrierBlock:(CDUnknownBlockType)arg1;
 - (id)_unboostingRemoteObjectProxy;

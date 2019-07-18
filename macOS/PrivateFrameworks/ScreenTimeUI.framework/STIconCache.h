@@ -24,14 +24,15 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *lookupQueue; // @synthesize lookupQueue=_lookupQueue;
 - (void).cxx_destruct;
 - (void)_fetchFamilyPhotoWithDSID:(id)arg1 fullName:(id)arg2 appleID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (id)_personImageWithDSID:(id)arg1 fullName:(id)arg2 appleID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)fetchPersonImageWithDSID:(id)arg1 fullName:(id)arg2 appleID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)_personImageWithDSID:(id)arg1 fullName:(id)arg2 appleID:(id)arg3 forceFetch:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)fetchPersonImageWithDSID:(id)arg1 fullName:(id)arg2 appleID:(id)arg3 forceFetch:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)personImageWithDSID:(id)arg1 fullName:(id)arg2;
 - (void)_updateCacheWithImage:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)_updateCacheWithImage:(id)arg1 dsid:(id)arg2;
 - (id)blankSpaceImageWithSize:(struct CGSize)arg1;
 - (void)removeObserver:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 bundleIdentifier:(id)arg3;
+- (id)_iconForCacheKey:(id)arg1 categoryIdentifier:(id)arg2;
 - (id)imageForCategoryIdentifier:(id)arg1;
 - (void)_handleiTunesResponseForAppInfo:(id)arg1 response:(id)arg2 data:(id)arg3 error:(id)arg4;
 - (void)_fetchImageForAppInfoIfNeeded:(id)arg1;

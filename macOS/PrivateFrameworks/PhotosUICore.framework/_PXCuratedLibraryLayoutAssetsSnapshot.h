@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSDictionary, PXAssetsDataSource;
+@protocol NSCopying;
 
 @interface _PXCuratedLibraryLayoutAssetsSnapshot : NSObject
 {
@@ -24,6 +25,8 @@
 @property(readonly, nonatomic) long long zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 @property(nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <NSCopying> dominantAssetIdentifier;
+- (void)enumerateAssetIdentifiersUsingBlock:(CDUnknownBlockType)arg1;
 - (CDStruct_c4ad1a77)spriteSnapshotForAssetWithIdentifier:(id)arg1;
 - (id)assetIdentifierForAssetReference:(id)arg1;
 - (void)enumerateAssetInfoForGeometries:(const CDStruct_ac168a83 *)arg1 styles:(const CDStruct_506f5052 *)arg2 infos:(const CDStruct_9d1ebe49 *)arg3 count:(unsigned int)arg4 options:(unsigned long long)arg5 usingBlock:(CDUnknownBlockType)arg6;

@@ -9,12 +9,12 @@
 __attribute__((visibility("hidden")))
 @interface WFNetworkFailTracker : NSObject
 {
-    unsigned long long _numConsecutiveFails;
-    unsigned long long _lastFailTimeInSeconds;
+    int _numConsecutiveFails;
+    double _lastFailTimeInSeconds;
 }
 
-@property(readonly, nonatomic) unsigned long long lastFailTimeInSeconds; // @synthesize lastFailTimeInSeconds=_lastFailTimeInSeconds;
-@property(readonly, nonatomic) unsigned long long numConsecutiveFails; // @synthesize numConsecutiveFails=_numConsecutiveFails;
+@property(readonly, nonatomic) double lastFailTimeInSeconds; // @synthesize lastFailTimeInSeconds=_lastFailTimeInSeconds;
+@property(readonly, nonatomic) int numConsecutiveFails; // @synthesize numConsecutiveFails=_numConsecutiveFails;
 - (BOOL)lastFailTimeExpiredForSettings:(id)arg1;
 - (void)incrementFailCount;
 

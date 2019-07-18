@@ -64,7 +64,7 @@
 - (id)itemAtIndex:(unsigned long long)arg1;
 - (id)allItems;
 - (void)_loadPersistedStore;
-- (void)_writePersistedStore;
+- (void)_writePersistedStoreItems:(id)arg1 mediaKind:(long long)arg2 version:(id)arg3;
 - (id)_persistedStoreURL;
 - (void)dealloc;
 - (id)initWithStoreClient:(id)arg1;

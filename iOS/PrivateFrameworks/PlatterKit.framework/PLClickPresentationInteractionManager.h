@@ -29,6 +29,7 @@
         unsigned int delegateImplementsDidEndUserInteraction:1;
         unsigned int delegateImplementsWillDismissPresentedContent:1;
         unsigned int delegateImplementsDeclinedDismissingPresentedContent:1;
+        unsigned int delegateImplementsShouldAllowLongPressGesture:1;
         unsigned int delegateShouldFinishInteraction:1;
     } _clickPresentationInteractionManagerDelegateFlags;
     _Bool _didInteractionInitiateWithHint;
@@ -43,7 +44,10 @@
 @property(readonly, nonatomic) __weak UIViewController<PLClickPresentationInteractionPresentable> *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 @property(nonatomic) __weak id <PLClickPresentationInteractionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)_delegateShouldAllowLongPressGesture;
+- (void)_setPresentingViewControllerHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)_presentedViewController;
+- (unsigned long long)activationStyleForClickPresentationInteraction:(id)arg1;
 - (void)clickPresentationInteractionEnded:(id)arg1 wasCancelled:(_Bool)arg2;
 - (id)clickPresentationInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
 - (id)clickPresentationInteraction:(id)arg1 presentationForPresentingViewController:(id)arg2;
@@ -56,7 +60,7 @@
 - (_Bool)presentIfPossible:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) UIGestureRecognizer *gestureRecognizerForExclusionRelationship;
 @property(readonly, nonatomic, getter=hasCommittedToPresentation) _Bool committedToPresentation;
-- (id)initWithPresentingViewController:(id)arg1;
+- (id)initWithPresentingViewController:(id)arg1 delegate:(id)arg2;
 - (void)_delegateDeclinedDismissingPresentedContentWithTrigger:(long long)arg1;
 - (void)_delegateWillDismissPresentedContentWithTrigger:(long long)arg1;
 - (void)_delegateShouldFinishInteractionWithCompletionBlock:(CDUnknownBlockType)arg1;
@@ -68,6 +72,7 @@
 - (id)_delegatePresentedViewController;
 - (_Bool)_dismissIfPossibleWithTrigger:(long long)arg1;
 - (void)resetForInitialInteraction;
+- (id)initWithPresentingViewController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

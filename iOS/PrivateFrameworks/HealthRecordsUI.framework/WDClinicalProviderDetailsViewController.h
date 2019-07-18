@@ -48,7 +48,10 @@ __attribute__((visibility("hidden")))
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)_presentUnavailableAlertForGatewayTitle:(id)arg1;
+- (void)_handleTapForActivateGateway:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)_presentError:(id)arg1;
 - (id)_gatewayAtIndexPath:(id)arg1;

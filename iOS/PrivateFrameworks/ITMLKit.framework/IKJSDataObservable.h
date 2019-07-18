@@ -30,7 +30,7 @@
 @property(readonly, nonatomic) _Bool isBoxed; // @synthesize isBoxed=_isBoxed;
 @property(readonly, nonatomic) __weak IKJSDataObservable *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
-- (_Bool)_updateValueAtPropertyPath:(id)arg1 forced:(_Bool)arg2 withBlock:(CDUnknownBlockType)arg3;
+- (void)_updateValueAtPropertyPath:(id)arg1 touch:(_Bool)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (id)_initWithTargetValue:(id)arg1 boxed:(_Bool)arg2;
 - (id)extraInfoForChangeInPathWithAccessorSequence:(id)arg1 extraInfo:(id)arg2;
 - (id)valueForAccessorSequence:(id)arg1 closestParent:(id *)arg2 accessorSequenceFromClosestParent:(id *)arg3;

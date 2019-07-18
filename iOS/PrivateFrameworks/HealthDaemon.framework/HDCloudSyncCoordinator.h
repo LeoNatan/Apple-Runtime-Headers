@@ -6,14 +6,15 @@
 
 #import <objc/NSObject.h>
 
+#import <HealthDaemon/HDDatabaseJournalMergeObserver-Protocol.h>
 #import <HealthDaemon/HDDiagnosticObject-Protocol.h>
 #import <HealthDaemon/HDHealthDaemonReadyObserver-Protocol.h>
 #import <HealthDaemon/HDPeriodicActivityDelegate-Protocol.h>
 
-@class ACAccountStore, APSConnection, HDAsynchronousTaskTree, HDDaemon, HDPeriodicActivity, HKObserverSet, NSDate, NSMutableArray, NSProgress, NSString;
+@class ACAccountStore, APSConnection, HDAsynchronousTaskTree, HDDaemon, HDPeriodicActivity, HDProfile, HKObserverSet, NSDate, NSMutableArray, NSProgress, NSString;
 @protocol OS_dispatch_queue;
 
-@interface HDCloudSyncCoordinator : NSObject <HDDiagnosticObject, HDPeriodicActivityDelegate, HDHealthDaemonReadyObserver>
+@interface HDCloudSyncCoordinator : NSObject <HDDiagnosticObject, HDPeriodicActivityDelegate, HDHealthDaemonReadyObserver, HDDatabaseJournalMergeObserver>
 {
     HDDaemon *_daemon;
     HDPeriodicActivity *_periodicActivity;
@@ -35,6 +36,7 @@
     _Bool _cloudSyncEnabled;
     _Bool _cloudSyncValueLoaded;
     APSConnection *_apsConnection;
+    HDProfile *_unitTest_primaryProfileOverride;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
@@ -42,6 +44,10 @@
 - (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (void)unitTest_performPeriodicSyncWithCompletion:(CDUnknownBlockType)arg1;
+- (void)unitTest_setPrimaryProfileOverride:(id)arg1;
+- (void)_queue_generateRestoreEventMergeComplete;
+- (void)_queue_setStartDateForRestoreEventSyncComplete;
+- (void)databaseJournalMergeDidCompleteForProfile:(id)arg1;
 - (void)_updateAggdKeysForPeriodicSyncError:(id)arg1;
 - (void)performPeriodicActivity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_prepareAllProfilesForSyncWithCompletion:(CDUnknownBlockType)arg1;
@@ -77,11 +83,12 @@
 - (id)_queue_resetAllProfilesWithOptions:(unsigned long long)arg1 reason:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_queue_syncProfilesWithIdentifiers:(id)arg1 withOptions:(unsigned long long)arg2 reason:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)_unitTest_shouldSyncProfile:(id)arg1;
+- (id)_primaryProfile;
 - (_Bool)canPerformCloudSyncWithError:(id *)arg1;
-- (void)_considerMigratingHealthAccountDataclassState;
+- (void)_queue_considerMigratingHealthAccountDataclassState;
 - (void)_setHealthAccountDataclassEnabled:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_checkiCloudAccountStatus;
-- (void)_respondToACAccountStoreDidChange;
+- (void)_queue_checkiCloudAccountStatus;
+- (void)_handleACAccountStoreDidChangeNotification;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1 queue:(id)arg2;
 - (id)fetchCloudSyncProgressWithCompletion:(CDUnknownBlockType)arg1;

@@ -8,7 +8,7 @@
 
 #import <CoreHAP/HMFMerging-Protocol.h>
 
-@class HAPAccessoryServer, NSArray, NSNumber, NSObject, NSString;
+@class HAPAccessoryServer, HMFMACAddress, NSArray, NSNumber, NSObject, NSString;
 @protocol HAPAccessoryDelegate, OS_dispatch_queue;
 
 @interface HAPAccessory : HMFObject <HMFMerging>
@@ -23,6 +23,7 @@
     NSArray *_services;
     NSString *_serverIdentifier;
     long long _linkType;
+    HMFMACAddress *_bluetoothClassicMacAddress;
     NSString *_uniqueIdentifier;
     NSString *_name;
     NSString *_model;
@@ -44,6 +45,7 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(nonatomic) _Bool supportsRelay; // @synthesize supportsRelay=_supportsRelay;
+@property(copy) HMFMACAddress *bluetoothClassicMacAddress; // @synthesize bluetoothClassicMacAddress=_bluetoothClassicMacAddress;
 @property(readonly, nonatomic) long long linkType; // @synthesize linkType=_linkType;
 @property(copy, nonatomic) NSString *serverIdentifier; // @synthesize serverIdentifier=_serverIdentifier;
 @property(retain, nonatomic) NSArray *services; // @synthesize services=_services;

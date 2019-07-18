@@ -109,6 +109,7 @@ __attribute__((visibility("hidden")))
 - (id)componentRootObject;
 - (_Bool)registerLast;
 - (UUIDData_5fbc143e)formulaOwnerUID;
+- (id)formulaOwner;
 - (void)unregisterFromCalcEngine:(id)arg1;
 - (void)registerWithCalcEngineForDocumentLoad:(id)arg1;
 

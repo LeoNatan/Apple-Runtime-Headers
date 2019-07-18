@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     NSArray *_posters;
     NSArray *_requestedKeywords;
     NSString *_requestedMoodID;
+    NSDictionary *_requestedMusicGenreDistribution;
     NSString *_keywordedSongID;
     NSString *_initalKeyAssetIdentifier;
     NSSet *_manuallyAddedAssetIDs;
@@ -84,6 +85,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSSet *manuallyAddedAssetIDs; // @synthesize manuallyAddedAssetIDs=_manuallyAddedAssetIDs;
 @property(retain, nonatomic) NSString *initalKeyAssetIdentifier; // @synthesize initalKeyAssetIdentifier=_initalKeyAssetIdentifier;
 @property(retain, nonatomic) NSString *keywordedSongID; // @synthesize keywordedSongID=_keywordedSongID;
+@property(retain, nonatomic) NSDictionary *requestedMusicGenreDistribution; // @synthesize requestedMusicGenreDistribution=_requestedMusicGenreDistribution;
 @property(retain, nonatomic) NSString *requestedMoodID; // @synthesize requestedMoodID=_requestedMoodID;
 @property(retain, nonatomic) NSArray *requestedKeywords; // @synthesize requestedKeywords=_requestedKeywords;
 @property(nonatomic) BOOL isPregenerating; // @synthesize isPregenerating=_isPregenerating;
@@ -147,6 +149,7 @@ __attribute__((visibility("hidden")))
 - (id)dataRepresentation;
 - (id)initWithData:(id)arg1;
 - (BOOL)isPersistable;
+- (BOOL)isPending;
 - (void)unPersist;
 - (void)persistWithoutFreeze;
 - (void)persist;

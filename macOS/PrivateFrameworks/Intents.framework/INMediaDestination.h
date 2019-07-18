@@ -18,7 +18,7 @@
     NSString *_playlistName;
 }
 
-+ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
 + (id)playlistDestinationWithName:(id)arg1;
 + (id)libraryDestination;
@@ -28,7 +28,7 @@
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
-- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -9,7 +9,8 @@
 @interface _TtC8NewsFeed25LayeredMediaLayerRenderer : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: conditionValidator
-    // Error parsing type: , name: variantSelector
+    // Error parsing type: , name: imageVariantSelector
+    // Error parsing type: , name: videoVariantSelector
     // Error parsing type: , name: imageCache
 }
 

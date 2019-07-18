@@ -20,9 +20,10 @@
 }
 
 + (void)_useSyncXPCWithBlock:(CDUnknownBlockType)arg1;
++ (_Bool)usingSyncXPC;
 - (void).cxx_destruct;
 - (void)addConnectionInterruptedHandler:(CDUnknownBlockType)arg1;
-- (id)waitUntilReturn:(CDUnknownBlockType)arg1 error:(id *)arg2;
+- (id)waitUntilReturn:(CDUnknownBlockType)arg1 withTimeout:(double)arg2 error:(id *)arg3;
 - (id)remoteObjectProxy;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;

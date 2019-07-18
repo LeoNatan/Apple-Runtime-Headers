@@ -25,6 +25,9 @@
     BOOL _hiddenFromAutoFavorites;
     BOOL _paid;
     BOOL _webEmbedsEnabled;
+    BOOL _bundlePaid;
+    BOOL _issueOnly;
+    BOOL _showBundleSoftPaywall;
     NSString *_versionIdentifier;
     NSString *_identifier;
     NSString *_articleID;
@@ -63,6 +66,7 @@
     FCTopStoriesStyleConfiguration *_storyStyle;
     long long _minimumNewsVersion;
     FCCoverArt *_coverArt;
+    unsigned long long _role;
     long long _bodyTextLength;
     FCAssetManager *_assetManager;
     NSDictionary *_articlePayload;
@@ -79,7 +83,13 @@
 @property(retain, nonatomic) NSString *flintDocumentUrlString; // @synthesize flintDocumentUrlString=_flintDocumentUrlString;
 @property(retain, nonatomic) NSDictionary *articlePayload; // @synthesize articlePayload=_articlePayload;
 @property(retain, nonatomic) FCAssetManager *assetManager; // @synthesize assetManager=_assetManager;
+- (BOOL)showBundleSoftPaywall;
 - (long long)bodyTextLength;
+- (BOOL)isIssueOnly;
+- (void)setRole:(unsigned long long)arg1;
+- (unsigned long long)role;
+- (void)setBundlePaid:(BOOL)arg1;
+- (BOOL)isBundlePaid;
 - (BOOL)webEmbedsEnabled;
 - (id)coverArt;
 - (void)setPaid:(BOOL)arg1;

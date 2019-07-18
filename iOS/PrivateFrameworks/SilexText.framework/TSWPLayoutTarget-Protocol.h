@@ -66,6 +66,7 @@
 - (TSDBezierPath *)interiorClippingPath;
 - (_Bool)invalidateForPageCountChange;
 - (unsigned int)pageIndex;
+- (void)scaleTextPercentDidChange:(unsigned long long)arg1;
 - (_Bool)drawableAttachment:(TSWPDrawableAttachment *)arg1 withLayout:(TSDLayout *)arg2 shouldPositionIterativelyInColumn:(TSWPColumn *)arg3;
 - (void)drawableAttachment:(TSWPDrawableAttachment *)arg1 didFinalizePosition:(struct CGPoint)arg2;
 - (void)drawableAttachment:(TSWPDrawableAttachment *)arg1 willStartNewIterationWithIndex:(unsigned long long)arg2;

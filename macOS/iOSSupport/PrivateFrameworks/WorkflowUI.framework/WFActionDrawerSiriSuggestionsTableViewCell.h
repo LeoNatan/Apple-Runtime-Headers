@@ -41,6 +41,7 @@
 @property(retain, nonatomic) WFActionDrawerSection *section; // @synthesize section=_section;
 - (void).cxx_destruct;
 - (void)infoButtonPressed;
+- (void)siriSuggestionsCollectionViewManager:(id)arg1 showViewController:(id)arg2;
 - (void)siriSuggestionsCollectionViewManager:(id)arg1 didSelectAction:(id)arg2;
 - (void)configureLoading;
 - (void)configureWithActionDrawerSection:(id)arg1;

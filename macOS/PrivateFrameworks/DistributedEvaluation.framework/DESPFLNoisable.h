@@ -25,6 +25,7 @@
     double _weight;
     unsigned int _iteration;
     NSString *_recipeId;
+    NSString *_uuid;
     int _version;
     struct {
         unsigned int weight:1;
@@ -33,6 +34,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) double weight; // @synthesize weight=_weight;
 @property(nonatomic) unsigned int iteration; // @synthesize iteration=_iteration;
 @property(retain, nonatomic) NSString *recipeId; // @synthesize recipeId=_recipeId;
@@ -47,6 +49,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasUuid;
 - (void)setData32s:(float *)arg1 count:(unsigned long long)arg2;
 - (float)data32AtIndex:(unsigned long long)arg1;
 - (void)addData32:(float)arg1;

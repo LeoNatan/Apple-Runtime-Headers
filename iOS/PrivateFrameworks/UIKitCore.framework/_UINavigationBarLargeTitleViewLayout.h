@@ -42,7 +42,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long titleType; // @synthesize titleType=_titleType;
 @property(readonly, nonatomic) _UINavigationBarLargeTitleView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
-- (void)invalidate;
+- (void)removeContent;
 - (struct CGSize)sizeFittingSize:(struct CGSize)arg1 titleType:(long long)arg2;
 - (struct CGSize)_cachedTitleHeightSizeAndUpdateRestingSizeForWidth:(double)arg1;
 - (void)_invalidateTitleHeightCache;

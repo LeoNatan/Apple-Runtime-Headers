@@ -8,27 +8,27 @@
 
 #import <VoiceShortcuts/HMHomeManagerDelegate-Protocol.h>
 
-@class HMHomeManager, NSPersistentStoreDescription, NSString, VCCoreDataStore, VCRealmDataStore;
+@class HMHomeManager, NSPersistentStoreDescription, NSString, VCCoreDataStore, VCRealmDataStore, WFDatabase;
 
 @interface VCVoiceShortcutManager : NSObject <HMHomeManagerDelegate>
 {
     VCCoreDataStore *_coreDataStore;
     HMHomeManager *_homeManager;
+    WFDatabase *_database;
     NSPersistentStoreDescription *_storeDescription;
     VCRealmDataStore *_realmDataStore;
 }
 
-+ (void)initialize;
 @property(readonly, nonatomic) VCRealmDataStore *realmDataStore; // @synthesize realmDataStore=_realmDataStore;
 @property(readonly, copy, nonatomic) NSPersistentStoreDescription *storeDescription; // @synthesize storeDescription=_storeDescription;
+@property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
 - (void)requestDataMigrationWithCompletion:(CDUnknownBlockType)arg1;
-- (void)populateBlacklistStatusOnVoiceShortcut:(id)arg1 withAccessSpecifier:(id)arg2;
 - (id)addExtraVocabForDemoIfAppropriate:(id)arg1;
 - (void)requestShortcutsSpotlightFullReindex;
 - (void)updateShortcutsVocabularyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handleAssistantPreferencesChangedNotification;
-- (id)generateSingleUseTokenForWorkflowReference:(id)arg1;
+- (id)generateSingleUseTokenForWorkflowIdentifier:(id)arg1;
 - (void)getShareSheetWorkflowsForTypeIdentifiers:(id)arg1 hostBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateLSDatabaseAnchors;
 - (BOOL)lsDatabaseChangedSinceLastCheck;

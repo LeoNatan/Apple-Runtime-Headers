@@ -8,7 +8,7 @@
 
 #import <HomeKitDaemon/APSConnectionDelegate-Protocol.h>
 
-@class APSConnection, CKContainer, CKDatabase, CKServerChangeToken, HMDCloudCache, HMDCloudDataSyncStateFilter, HMDCloudHomeManagerZone, HMDCloudLegacyZone, HMDCloudMetadataZone, HMDHomeManager, HMFMessageDispatcher, NSData, NSMutableArray, NSObject, NSString;
+@class APSConnection, CKContainer, CKDatabase, HMDCloudCache, HMDCloudDataSyncStateFilter, HMDCloudHomeManagerZone, HMDCloudLegacyZone, HMDCloudMetadataZone, HMDHomeManager, HMDSyncOperationManager, HMFMessageDispatcher, NSData, NSMutableArray, NSObject, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface HMDCloudManager : HMFObject <APSConnectionDelegate>
@@ -29,7 +29,6 @@
     NSObject<OS_dispatch_source> *_pollTimer;
     NSObject<OS_dispatch_source> *_controllerKeyPollTimer;
     NSObject<OS_dispatch_source> *_watchdogControllerKeyPollTimer;
-    CKServerChangeToken *_databaseServerChangeToken;
     APSConnection *_pushConnection;
     CDUnknownBlockType _cloudDataDeletedNotificationHandler;
     CDUnknownBlockType _cloudMetadataDeletedNotificationHandler;
@@ -37,6 +36,7 @@
     HMDCloudDataSyncStateFilter *_cloudDataSyncStateFilter;
     HMFMessageDispatcher *_msgDispatcher;
     HMDHomeManager *_homeManager;
+    HMDSyncOperationManager *_syncManager;
     NSMutableArray *_currentBackoffTimerValuesInMinutes;
     CDUnknownBlockType _dataDecryptionFailedHandler;
     CDUnknownBlockType _accountActiveUpdateHandler;
@@ -47,6 +47,7 @@
 @property(copy, nonatomic) CDUnknownBlockType accountActiveUpdateHandler; // @synthesize accountActiveUpdateHandler=_accountActiveUpdateHandler;
 @property(copy, nonatomic) CDUnknownBlockType dataDecryptionFailedHandler; // @synthesize dataDecryptionFailedHandler=_dataDecryptionFailedHandler;
 @property(retain, nonatomic) NSMutableArray *currentBackoffTimerValuesInMinutes; // @synthesize currentBackoffTimerValuesInMinutes=_currentBackoffTimerValuesInMinutes;
+@property(nonatomic) __weak HMDSyncOperationManager *syncManager; // @synthesize syncManager=_syncManager;
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(retain, nonatomic) HMDCloudDataSyncStateFilter *cloudDataSyncStateFilter; // @synthesize cloudDataSyncStateFilter=_cloudDataSyncStateFilter;
@@ -54,7 +55,6 @@
 @property(copy, nonatomic) CDUnknownBlockType cloudMetadataDeletedNotificationHandler; // @synthesize cloudMetadataDeletedNotificationHandler=_cloudMetadataDeletedNotificationHandler;
 @property(copy, nonatomic) CDUnknownBlockType cloudDataDeletedNotificationHandler; // @synthesize cloudDataDeletedNotificationHandler=_cloudDataDeletedNotificationHandler;
 @property(retain, nonatomic) APSConnection *pushConnection; // @synthesize pushConnection=_pushConnection;
-@property(retain, nonatomic) CKServerChangeToken *databaseServerChangeToken; // @synthesize databaseServerChangeToken=_databaseServerChangeToken;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *watchdogControllerKeyPollTimer; // @synthesize watchdogControllerKeyPollTimer=_watchdogControllerKeyPollTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *controllerKeyPollTimer; // @synthesize controllerKeyPollTimer=_controllerKeyPollTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *pollTimer; // @synthesize pollTimer=_pollTimer;
@@ -74,7 +74,7 @@
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;
-- (void)_fetchDatabaseZoneChanges;
+- (void)_fetchDatabaseZoneChangesCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchDatabaseZoneChanges;
 - (void)_scheduleZoneFetch:(id)arg1;
 - (void)_registerForPushNotifications;
@@ -159,7 +159,7 @@
 - (void)__fetchSubscriptionWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)__addCKDatabaseOperation:(id)arg1;
 - (void)dealloc;
-- (id)initWithMessageDispatcher:(id)arg1 cloudDataSyncStateFilter:(id)arg2 cloudCache:(id)arg3 homeManager:(id)arg4 callbackQueue:(id)arg5;
+- (id)initWithMessageDispatcher:(id)arg1 cloudDataSyncStateFilter:(id)arg2 cloudCache:(id)arg3 homeManager:(id)arg4 syncManager:(id)arg5 callbackQueue:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

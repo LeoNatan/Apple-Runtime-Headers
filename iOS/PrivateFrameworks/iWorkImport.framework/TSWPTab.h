@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 
 + (id)tab;
 + (id)displayStringFromTabLeader:(id)arg1;
-+ (id)stringFromTabAlignment:(int)arg1 isRTL:(_Bool)arg2;
++ (id)stringFromTabAlignment:(int)arg1 isRTL:(_Bool)arg2 isVertical:(_Bool)arg3;
 + (int)tabAlignmentFromString:(id)arg1 isRTL:(_Bool)arg2;
 + (id)tabLeaderFromDisplayString:(id)arg1;
 + (id)tabStopLeaderStringArrowRTL;
@@ -37,6 +37,9 @@ __attribute__((visibility("hidden")))
 + (id)tabStopAlignmentStringRight;
 + (id)tabStopAlignmentStringCenter;
 + (id)tabStopAlignmentStringLeft;
++ (id)tabStopAlignmentStringBottom;
++ (id)tabStopAlignmentStringMiddle;
++ (id)tabStopAlignmentStringTop;
 @property(copy, nonatomic) NSString *leader; // @synthesize leader=_leader;
 @property(nonatomic) int alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) double position; // @synthesize position=_position;

@@ -72,6 +72,7 @@
 - (id)dataclassSwitchStateForSpecifier:(id)arg1;
 - (void)reloadDynamicSpecifiersWithAnimation:(_Bool)arg1;
 - (id)otherSpecifiers;
+- (_Bool)_isUserOverridableForDataclass:(id)arg1;
 - (id)specifierForDataclass:(id)arg1;
 - (_Bool)shouldShowSpecifierForDataclass:(id)arg1;
 - (id)_specifiersForDataclasses:(id)arg1;

@@ -11,10 +11,10 @@
 @interface DMFCategoryPolicyMonitor : NSObject
 {
     NSArray *_policyTypes;
-    NSUUID *_policyMonitorIdentifier;
+    NSUUID *_identifier;
 }
 
-@property(readonly, nonatomic) NSUUID *policyMonitorIdentifier; // @synthesize policyMonitorIdentifier=_policyMonitorIdentifier;
+@property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSArray *policyTypes; // @synthesize policyTypes=_policyTypes;
 - (void).cxx_destruct;
 - (void)requestPoliciesForCategoryIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

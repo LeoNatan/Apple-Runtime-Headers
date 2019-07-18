@@ -9,12 +9,13 @@
 #import <SearchUI/SearchUIFeedbackDelegateInternal-Protocol.h>
 #import <SearchUI/SearchUITableViewTesting-Protocol.h>
 
-@class NSString, SearchUIPeekDelegate, SearchUITableModel, SearchUITableView, TLKTableViewScrollTester, _UIContextMenuInteraction;
-@protocol SFFeedbackListener, SearchUIResultsViewDelegate, UIViewControllerPreviewing;
+@class NSString, SearchUIPeekDelegate, SearchUITableModel, SearchUITableView, TLKTableViewScrollTester, UIContextMenuInteraction;
+@protocol SFFeedbackListener, SearchUIResultsViewDelegate;
 
 @interface SearchUITableViewController : SearchUIKeyboardableTableViewController <SearchUITableViewTesting, SearchUIFeedbackDelegateInternal>
 {
     _Bool _shouldUseInsetRoundedSections;
+    _Bool _shouldUseStandardSectionInsets;
     CDUnknownBlockType tableViewWillUpdateHandler;
     CDUnknownBlockType tableViewDidUpdateHandler;
     CDUnknownBlockType cellWillDisplayHandler;
@@ -22,8 +23,7 @@
     id <SearchUIResultsViewDelegate> _resultsViewDelegate;
     SearchUITableModel *_tableModel;
     SearchUIPeekDelegate *_peekDelegate;
-    _UIContextMenuInteraction *_contextInteraction;
-    id <UIViewControllerPreviewing> _previewingContext;
+    UIContextMenuInteraction *_contextInteraction;
     long long _preferredPunchoutIndex;
     SearchUITableModel *_stateRestoredTableModel;
     TLKTableViewScrollTester *_scrollTester;
@@ -35,10 +35,10 @@
 @property(nonatomic) struct CGPoint stateRestoredScrollPoint; // @synthesize stateRestoredScrollPoint=_stateRestoredScrollPoint;
 @property(retain, nonatomic) SearchUITableModel *stateRestoredTableModel; // @synthesize stateRestoredTableModel=_stateRestoredTableModel;
 @property(nonatomic) long long preferredPunchoutIndex; // @synthesize preferredPunchoutIndex=_preferredPunchoutIndex;
-@property(retain, nonatomic) id <UIViewControllerPreviewing> previewingContext; // @synthesize previewingContext=_previewingContext;
-@property(retain, nonatomic) _UIContextMenuInteraction *contextInteraction; // @synthesize contextInteraction=_contextInteraction;
+@property(retain, nonatomic) UIContextMenuInteraction *contextInteraction; // @synthesize contextInteraction=_contextInteraction;
 @property(retain, nonatomic) SearchUIPeekDelegate *peekDelegate; // @synthesize peekDelegate=_peekDelegate;
 @property(retain, nonatomic) SearchUITableModel *tableModel; // @synthesize tableModel=_tableModel;
+@property(nonatomic) _Bool shouldUseStandardSectionInsets; // @synthesize shouldUseStandardSectionInsets=_shouldUseStandardSectionInsets;
 @property(nonatomic) _Bool shouldUseInsetRoundedSections; // @synthesize shouldUseInsetRoundedSections=_shouldUseInsetRoundedSections;
 @property __weak id <SearchUIResultsViewDelegate> resultsViewDelegate; // @synthesize resultsViewDelegate=_resultsViewDelegate;
 @property(nonatomic) __weak id <SFFeedbackListener> feedbackListener; // @synthesize feedbackListener=_feedbackListener;
@@ -81,13 +81,14 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)cellForIndexPath:(id)arg1 reuseIfPossible:(_Bool)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (unsigned long long)queryIDForIndexPath:(id)arg1;
 - (void)willDismissViewController:(id)arg1;
 - (void)showViewController:(id)arg1;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2 forceModalPresentation:(_Bool)arg3;
 - (void)presentViewController:(id)arg1;
 - (void)requestAuthIfNecessaryAndPresentViewController:(id)arg1 animated:(_Bool)arg2 forceModalPresentation:(_Bool)arg3;
 - (unsigned long long)handleSelectionAtIndexPath:(id)arg1 wasPop:(_Bool)arg2;
-- (void)sendFeedbackForCardSectionEngagement:(id)arg1 triggerEvent:(unsigned long long)arg2;
+- (void)sendFeedbackForCardSectionEngagement:(id)arg1 atIndexPath:(id)arg2 withTriggerEvent:(unsigned long long)arg3;
 - (id)cardSectionForIndexPath:(id)arg1;
 - (id)resultForIndexPath:(id)arg1;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;

@@ -22,7 +22,6 @@
 - (void)session:(SVXSession *)arg1 didBecomeActiveWithActivationContext:(SVXActivationContext *)arg2;
 - (void)session:(SVXSession *)arg1 willBecomeActiveWithActivationContext:(SVXActivationContext *)arg2;
 - (void)session:(SVXSession *)arg1 didStopSoundWithID:(long long)arg2 error:(NSError *)arg3;
-- (void)session:(SVXSession *)arg1 didNotStartSoundWithID:(long long)arg2 error:(NSError *)arg3;
 - (void)session:(SVXSession *)arg1 didStartSoundWithID:(long long)arg2;
 - (void)session:(SVXSession *)arg1 willStartSoundWithID:(long long)arg2;
 - (void)session:(SVXSession *)arg1 didEndUpdateAudioPowerWithType:(long long)arg2;

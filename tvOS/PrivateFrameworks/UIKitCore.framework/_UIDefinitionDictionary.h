@@ -6,21 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class ASAsset, NSString;
+@class MAAsset, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _UIDefinitionDictionary : NSObject
 {
     struct __DCSDictionary *_dictionary;
     _Bool _activated;
-    ASAsset *_rawAsset;
+    MAAsset *_rawAsset;
     NSString *_definitionLanguage;
+    MAAsset *_assetToUpgrade;
 }
 
 + (id)_normalizedLanguageStringForLanguageCode:(id)arg1;
+@property(retain) MAAsset *assetToUpgrade; // @synthesize assetToUpgrade=_assetToUpgrade;
 @property _Bool activated; // @synthesize activated=_activated;
 @property(readonly) NSString *definitionLanguage; // @synthesize definitionLanguage=_definitionLanguage;
-@property(readonly) ASAsset *rawAsset; // @synthesize rawAsset=_rawAsset;
+@property(readonly) MAAsset *rawAsset; // @synthesize rawAsset=_rawAsset;
 - (void).cxx_destruct;
 - (id)description;
 - (_Bool)_isTTYDictionary;
@@ -33,6 +35,9 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSString *localizedDictionaryName;
 @property(readonly) NSString *localizedLanguageName;
 - (void)dealloc;
+- (_Bool)assetIsDeletable;
+- (_Bool)assetIsLocal;
+- (void)updateAsset;
 - (id)initWithAsset:(id)arg1;
 
 @end

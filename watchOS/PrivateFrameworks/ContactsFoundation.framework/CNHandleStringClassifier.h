@@ -6,22 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class CNMutableHandleStringsClassification, NSArray;
+@protocol _CNHandleStringClassificationStrategy;
 
 @interface CNHandleStringClassifier : NSObject
 {
-    CNMutableHandleStringsClassification *_classification;
+    id <_CNHandleStringClassificationStrategy> _classificationStrategy;
 }
 
++ (id)classificationStrategyForQuality:(unsigned int)arg1;
++ (id)classificationOfHandleStrings:(id)arg1 classificationQuality:(unsigned int)arg2;
 + (id)classificationOfHandleStrings:(id)arg1;
-@property(readonly) CNMutableHandleStringsClassification *classification; // @synthesize classification=_classification;
+@property(readonly, nonatomic) id <_CNHandleStringClassificationStrategy> classificationStrategy; // @synthesize classificationStrategy=_classificationStrategy;
 - (void).cxx_destruct;
-- (void)classifyHandleString:(id)arg1;
-@property(readonly, nonatomic) NSArray *unknown;
-@property(readonly, nonatomic) NSArray *postalAddresses;
-@property(readonly, nonatomic) NSArray *phoneNumbers;
-@property(readonly, nonatomic) NSArray *emailAddresses;
+- (unsigned int)typeOfHandleString:(id)arg1;
+- (void)classifyHandleString:(id)arg1 builder:(id)arg2;
 - (id)description;
+- (id)initWithClassificationStrategy:(id)arg1;
+- (id)initWithClassificationQuality:(unsigned int)arg1;
 - (id)init;
 
 @end

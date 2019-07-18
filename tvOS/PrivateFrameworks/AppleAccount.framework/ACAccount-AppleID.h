@@ -34,6 +34,7 @@
 @property(readonly, nonatomic) ACAccount *aa_cloudKitAccount;
 @property(readonly, nonatomic) ACAccount *aa_fmipAccount;
 @property(readonly, nonatomic) ACAccount *aa_fmfAccount;
+@property(readonly, nonatomic) _Bool aa_isFamilyEligible;
 @property(readonly, nonatomic) _Bool aa_needsEmailConfiguration;
 @property(nonatomic, setter=aa_setRepairState:) NSNumber *aa_repairState;
 @property(copy, nonatomic, setter=aa_setLastKnownQuota:) NSNumber *aa_lastKnownQuota;

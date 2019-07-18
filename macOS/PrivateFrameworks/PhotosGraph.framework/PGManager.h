@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSMutableArray, NSMutableDictionary, NSString, NSURL, PGCurationCache, PGGraph, PGMemoryController, PHPhotoLibrary;
-@protocol OS_dispatch_queue, OS_os_log;
+@protocol OS_dispatch_queue, OS_os_log, PGGraphHealthRecording;
 
 @interface PGManager : NSObject
 {
@@ -46,6 +46,7 @@
     NSObject<OS_os_log> *_suggestionsLoggingConnection;
     NSObject<OS_os_log> *_metricsLoggingConnection;
     PGCurationCache *_curationCache;
+    id <PGGraphHealthRecording> _graphHealthRecorder;
 }
 
 + (BOOL)clientIsPhotoAnalysis;
@@ -54,6 +55,7 @@
 + (id)stringFromPGPrecision:(unsigned long long)arg1;
 + (BOOL)shouldInvalidateConstructionGraph:(id)arg1;
 + (BOOL)shouldInvalidatePersistentGraph:(id)arg1;
++ (BOOL)geoServiceProviderDidChangeForGraph:(id)arg1;
 + (void)initialize;
 + (id)_locationsByDateIntervalForAssetsMetadata:(id)arg1;
 + (unsigned long long)numberOfExistingMemoriesToKeepForOverlapCheckWithBeta:(double)arg1;
@@ -72,6 +74,7 @@
 + (id)_summaryClusteringForDuration:(unsigned long long)arg1 andPrecision:(unsigned long long)arg2;
 + (id)matchingWeightToDictionary;
 + (id)assetPropertySetsForCuration;
+@property(readonly, nonatomic) id <PGGraphHealthRecording> graphHealthRecorder; // @synthesize graphHealthRecorder=_graphHealthRecorder;
 @property(readonly) PGCurationCache *curationCache; // @synthesize curationCache=_curationCache;
 @property(readonly, nonatomic) NSObject<OS_os_log> *metricsLoggingConnection; // @synthesize metricsLoggingConnection=_metricsLoggingConnection;
 @property(readonly, nonatomic) NSObject<OS_os_log> *suggestionsLoggingConnection; // @synthesize suggestionsLoggingConnection=_suggestionsLoggingConnection;
@@ -109,6 +112,7 @@
 - (void)invalidatePersistentCaches;
 - (void)invalidateTransientCaches;
 - (void)_invalidatePersistentCaches;
+- (void)_invalidatePersistentCachesForGeoServiceProviderChange;
 - (void)_invalidateTransientCaches;
 - (void)performApplicationDataBlock:(CDUnknownBlockType)arg1;
 - (void)performAsynchronousNotification:(CDUnknownBlockType)arg1;
@@ -365,6 +369,7 @@
 - (id)_messagesStatistics;
 - (id)_peopleNameGenderStatistics;
 - (id)_peopleVisionGenderStatistics;
+- (id)_peopleVisionAgeStatistics;
 - (id)_stringDescriptionForContactCache;
 - (id)_peopleContactSuggestionStatisticsIncludingDebugInfo:(BOOL)arg1;
 - (id)_oneOnOneTrips;

@@ -13,7 +13,9 @@
 + (id)resetImageProperties:(id)arg1 preserveRegions:(BOOL)arg2;
 + (id)metadataConverter;
 + (void)setMetadataConverter:(id)arg1;
+- (void)_exportVideoToURLFull:(id)arg1 composition:(id)arg2 options:(id)arg3 metadata:(id)arg4 progress:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)_exportVideoToURL:(id)arg1 composition:(id)arg2 options:(id)arg3 metadata:(id)arg4 progress:(id)arg5 completion:(CDUnknownBlockType)arg6;
+- (BOOL)shouldTryVideoRotationFastPath:(id)arg1 options:(id)arg2;
 - (id)addVideoProperties:(id)arg1 composition:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (void)_prepareToExportVideo:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)addImageProperties:(id)arg1 composition:(id)arg2 options:(id)arg3 error:(id *)arg4;

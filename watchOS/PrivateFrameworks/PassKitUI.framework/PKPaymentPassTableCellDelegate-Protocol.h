@@ -9,6 +9,7 @@
 @class PKPaymentPass;
 
 @protocol PKPaymentPassTableCellDelegate <NSObject>
+- (void)verifyButtonPressedForPaymentPass:(PKPaymentPass *)arg1;
 - (void)addButtonPressedForPaymentPass:(PKPaymentPass *)arg1;
 @end
 

@@ -15,14 +15,11 @@
     BLSecureOfflineKeyDeliveryRequest *_secureKeyRequest;
     MPMediaItem *_mediaItem;
     NSString *_identity;
-    NSString *_keyServerURL;
-    NSString *_keyCertificateURL;
     NSData *_persistentKeyData;
 }
 
 - (void).cxx_destruct;
 - (void)_performOfflineKeyRequest;
-- (id)_customAssetInfo;
 - (void)execute;
 - (void)performRequestWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)initWithMediaItem:(id)arg1 identity:(id)arg2;

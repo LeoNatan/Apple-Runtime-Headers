@@ -6,32 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@class MSVCallback, NSArray, NSString;
-@protocol OS_dispatch_source;
+@class NSArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface MRAVOutputContextModification : NSObject
 {
-    NSObject<OS_dispatch_source> *_timerSource;
-    _Bool _valid;
     unsigned long long _modificationType;
+    NSArray *_concreteOutputDevices;
     NSArray *_outputDevices;
-    MSVCallback *_callback;
+    NSArray *_avOutputDevices;
     NSString *_password;
+    NSString *_initiator;
 }
 
-+ (id)replaceModificationWithDevices:(id)arg1 callback:(id)arg2;
-+ (id)removeModificationWithDevices:(id)arg1 callback:(id)arg2;
-+ (id)addModificationWithDevices:(id)arg1 callback:(id)arg2;
+@property(copy, nonatomic) NSString *initiator; // @synthesize initiator=_initiator;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
-@property(readonly, nonatomic) _Bool valid; // @synthesize valid=_valid;
-@property(readonly, nonatomic) MSVCallback *callback; // @synthesize callback=_callback;
+@property(readonly, nonatomic) NSArray *avOutputDevices; // @synthesize avOutputDevices=_avOutputDevices;
 @property(readonly, nonatomic) NSArray *outputDevices; // @synthesize outputDevices=_outputDevices;
+@property(readonly, nonatomic) NSArray *concreteOutputDevices; // @synthesize concreteOutputDevices=_concreteOutputDevices;
 @property(readonly, nonatomic) unsigned long long modificationType; // @synthesize modificationType=_modificationType;
 - (void).cxx_destruct;
-- (void)invalidate;
-- (void)dealloc;
-- (id)initWithType:(unsigned long long)arg1 devices:(id)arg2 callback:(id)arg3;
+- (id)errorFromResult:(id)arg1;
+- (void)_modifyWithOutputContext:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)modifyWithOutputContext:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)initWithType:(unsigned long long)arg1 devices:(id)arg2;
 
 @end
 

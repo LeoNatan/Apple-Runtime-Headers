@@ -6,66 +6,34 @@
 
 #import <objc/NSObject.h>
 
-@class MPModelPlayEvent, MSVFuzzyBidirectionalDictionary, NSData, NSDictionary, NSMutableDictionary, NSString;
-@protocol MPQueueFeederDelegate;
+@class MPModelPlayEvent, MPQueueFeederIdentifierRegistry, NSData, NSDictionary, NSString;
 
 @interface MPQueueFeeder : NSObject
 {
-    NSMutableDictionary *_nextStartTimes;
-    MSVFuzzyBidirectionalDictionary *_exportableItemIDs;
-    NSMutableDictionary *_deferredExportableItemIDs;
-    id <MPQueueFeederDelegate> _delegate;
+    MPQueueFeederIdentifierRegistry *_identifierRegistry;
+    NSString *_uniqueIdentifier;
     NSString *_playActivityFeatureName;
     NSData *_playActivityRecommendationData;
     NSString *_siriReferenceIdentifier;
     NSDictionary *_siriWHAMetricsInfo;
-    NSString *_uniqueIdentifier;
     MPModelPlayEvent *_modelPlayEvent;
 }
 
-+ (BOOL)supportsStateRestoration;
 @property(readonly, nonatomic) MPModelPlayEvent *modelPlayEvent; // @synthesize modelPlayEvent=_modelPlayEvent;
-@property(copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(copy, nonatomic) NSDictionary *siriWHAMetricsInfo; // @synthesize siriWHAMetricsInfo=_siriWHAMetricsInfo;
 @property(copy, nonatomic) NSString *siriReferenceIdentifier; // @synthesize siriReferenceIdentifier=_siriReferenceIdentifier;
 @property(copy, nonatomic) NSData *playActivityRecommendationData; // @synthesize playActivityRecommendationData=_playActivityRecommendationData;
 @property(copy, nonatomic) NSString *playActivityFeatureName; // @synthesize playActivityFeatureName=_playActivityFeatureName;
-@property(nonatomic) __weak id <MPQueueFeederDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property(retain, nonatomic) MPQueueFeederIdentifierRegistry *identifierRegistry; // @synthesize identifierRegistry=_identifierRegistry;
 - (void).cxx_destruct;
-- (BOOL)player:(id)arg1 shouldContinuePlaybackForNetworkType:(long long)arg2 returningError:(id *)arg3;
-- (void)player:(id)arg1 currentItemDidChangeToItem:(id)arg2;
-- (id)playbackInfoForIdentifier:(id)arg1;
-- (void)invalidateAssets;
-- (void)contentsDidChangeWithReplacementPlaybackContext:(id)arg1;
-- (void)contentsDidChangeWithPreferredStartIndex:(unsigned long long)arg1 error:(id)arg2;
-- (unsigned long long)indexOfMediaItem:(id)arg1;
-@property(readonly, nonatomic) unsigned long long itemCount;
-- (id)identifierSetAtIndex:(unsigned long long)arg1;
-- (id)identifierAtIndex:(unsigned long long)arg1;
-- (unsigned long long)indexOfItemWithIdentifier:(id)arg1;
-- (id)itemForIdentifier:(id)arg1;
-- (id)_itemForIndex:(long long)arg1 queueIdentifier:(id)arg2;
-- (BOOL)hasItemForIndex:(unsigned long long)arg1;
-- (id)copyRawItemAtIndex:(unsigned long long)arg1;
+- (id)playbackInfoForItem:(id)arg1;
 - (void)applyVolumeNormalizationForItem:(id)arg1;
-- (void)endDeferringItemIDs;
-- (void)beginDeferringItemIDsWithCapacityHint:(unsigned long long)arg1;
-- (void)generateContentIDForItem:(id)arg1;
-- (id)contentItemIDForQueueItemID:(id)arg1;
-- (id)contentItemIDAtIndex:(long long)arg1;
-- (long long)indexForItemID:(id)arg1;
-- (id)itemIDAtIndex:(long long)arg1;
-- (id)itemForItemID:(id)arg1;
-- (id)preferredLanguages;
 - (id)errorResolverForItem:(id)arg1;
-- (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)setNextStartTime:(double)arg1 forIndentifier:(id)arg2;
+- (void)getRepresentativeMetadataForPlaybackContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)supplementalPlaybackContext;
 - (long long)supplementalPlaybackContextBehavior;
-@property(copy, nonatomic) MSVFuzzyBidirectionalDictionary *exportableItemIDs;
 - (id)init;
-- (void)restoreState:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) unsigned long long state;
 
 @end
 

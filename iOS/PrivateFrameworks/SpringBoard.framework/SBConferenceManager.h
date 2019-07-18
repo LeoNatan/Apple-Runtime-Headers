@@ -25,6 +25,7 @@
 - (id)currentFaceTimeCall;
 - (id)activeFaceTimeCall;
 - (id)incomingFaceTimeCall;
+- (_Bool)inFaceTimeVideo;
 - (_Bool)inFaceTime;
 - (_Bool)activeFaceTimeCallExists;
 - (_Bool)faceTimeInvitationExists;

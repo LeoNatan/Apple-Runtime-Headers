@@ -10,7 +10,7 @@
 #import <MapKit/UIGestureRecognizerDelegate-Protocol.h>
 #import <MapKit/_MKUserInteractionGestureRecognizerTouchObserver-Protocol.h>
 
-@class MKBasicMapView, MKCompassView, MKRotationFilter, MKScaleView, MKTiltGestureRecognizer, MKVariableDelayTapRecognizer, NSString, PUICCrownInputSequencer, UIGestureRecognizer, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, UITraitCollection, VKCompoundAnimation, VKDynamicAnimation, _MKOneHandedZoomGestureRecognizer, _MKUserInteractionGestureRecognizer, _MKZoomingCrownSequencer;
+@class MKBasicMapView, MKCompassView, MKRotationFilter, MKScaleView, MKTiltGestureRecognizer, MKVariableDelayTapRecognizer, NSString, PUICCrownInputSequencer, UIGestureRecognizer, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, UITraitCollection, VKCompoundAnimation, VKDynamicAnimation, VKTimedAnimation, _MKDirectionalArrowRecognizer, _MKOneHandedZoomGestureRecognizer, _MKUserInteractionGestureRecognizer, _MKZoomingCrownSequencer;
 @protocol MKMapGestureControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -29,6 +29,12 @@ __attribute__((visibility("hidden")))
     UIPanGestureRecognizer *_panGestureRecognizer;
     UIPanGestureRecognizer *_verticalPanGestureRecognizer;
     _MKOneHandedZoomGestureRecognizer *_oneHandedZoomGestureRecognizer;
+    _MKDirectionalArrowRecognizer *_arrowZoomGestureRecognizer;
+    VKTimedAnimation *_currentArrowAnimation;
+    float _arrowZoomSpeed;
+    double _arrowZoomStartTimestamp;
+    float _pinchFactorAverageInGesture;
+    double _lastPinchUpdateTimestamp;
     double _lastScale;
     VKDynamicAnimation *_pinchDecelerationAnimation;
     VKCompoundAnimation *_panDecelerationAnimationGroup;
@@ -66,6 +72,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (void)handleArrowZoom:(id)arg1;
+- (void)handleZoomArrowMask:(int)arg1 speed:(float)arg2;
 - (double)variableDelayTapRecognizer:(id)arg1 shouldWaitForNextTapForDuration:(double)arg2 afterTouch:(id)arg3;
 - (void)gestureRecognizerTouchesCanceled:(id)arg1;
 - (void)gestureRecognizerTouchesEnded:(id)arg1;

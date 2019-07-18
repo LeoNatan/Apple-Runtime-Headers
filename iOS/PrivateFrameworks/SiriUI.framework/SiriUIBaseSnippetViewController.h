@@ -23,6 +23,7 @@
 @property(nonatomic, getter=isUtteranceUserInteractionEnabled) _Bool utteranceUserInteractionEnabled; // @synthesize utteranceUserInteractionEnabled=_utteranceUserInteractionEnabled;
 @property(retain, nonatomic) AceObject *aceObject; // @synthesize aceObject;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (double)desiredTopPaddingBelowController:(id)arg1;
 - (double)desiredHeight;
 - (void)wasAddedToTranscript;

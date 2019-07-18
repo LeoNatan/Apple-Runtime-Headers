@@ -8,10 +8,11 @@
 
 #import <WorkflowUI/CNContactPickerDelegate-Protocol.h>
 #import <WorkflowUI/CNContactViewControllerDelegate-Protocol.h>
+#import <WorkflowUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 
 @class NSSet, NSString, UIViewController, WFAlertPresentationSource;
 
-@interface WFContactPickerCoordinator : NSObject <CNContactPickerDelegate, CNContactViewControllerDelegate>
+@interface WFContactPickerCoordinator : NSObject <CNContactPickerDelegate, CNContactViewControllerDelegate, UIPopoverPresentationControllerDelegate>
 {
     NSSet *_supportedPersonProperties;
     WFAlertPresentationSource *_presentationSource;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) WFAlertPresentationSource *presentationSource; // @synthesize presentationSource=_presentationSource;
 @property(copy, nonatomic) NSSet *supportedPersonProperties; // @synthesize supportedPersonProperties=_supportedPersonProperties;
 - (void).cxx_destruct;
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
 - (void)contactPickerDidCancel:(id)arg1;

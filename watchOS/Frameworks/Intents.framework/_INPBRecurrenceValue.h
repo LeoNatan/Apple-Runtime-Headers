@@ -19,12 +19,14 @@
         unsigned int interval:1;
         unsigned int ordinal:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     int _frequency;
     unsigned long long _interval;
     long long _ordinal;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) long long ordinal; // @synthesize ordinal=_ordinal;
 @property(nonatomic) unsigned long long interval; // @synthesize interval=_interval;
 @property(nonatomic) int frequency; // @synthesize frequency=_frequency;

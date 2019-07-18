@@ -20,6 +20,8 @@
 
 + (id)sharedInstance;
 @property(retain) NSBox *preferencesView; // @synthesize preferencesView=_preferencesView;
+- (id)helpBook;
+- (id)helpAnchor;
 - (BOOL)isResizable;
 - (BOOL)preferencesWindowShouldClose;
 - (BOOL)moduleCanBeRemoved;

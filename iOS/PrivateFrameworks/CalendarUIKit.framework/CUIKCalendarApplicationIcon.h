@@ -10,22 +10,14 @@
 {
 }
 
-+ (id)iconImageWithIdentifier:(id)arg1;
-+ (id)iconIdentifierWithDate:(id)arg1 calendar:(id)arg2 format:(int)arg3;
-+ (id)_identifierEncodingAllowedCharacters;
 + (int)iconVersion;
 + (double)_imageScaleForApplicationIconFormat:(int)arg1;
-+ (long long)_iconDateNameFormatTypeForNotificationsWithDate:(id)arg1 calendar:(id)arg2;
 + (long long)_iconDateNameFormatTypeForDate:(id)arg1 calendar:(id)arg2 format:(int)arg3;
 + (id)_dateNameFromDateComponents:(id)arg1 type:(long long)arg2 style:(long long)arg3;
 + (id)_dateNameFromDate:(id)arg1 calendar:(id)arg2 type:(long long)arg3 style:(long long)arg4;
 + (id)_dayNumberStringFromDateComponents:(id)arg1;
 + (id)_dayNumberStringFromDate:(id)arg1 calendar:(id)arg2;
 + (void)_fillContextWithWhiteBackgroundIfNeededForFormat:(long long)arg1 context:(struct CGContext *)arg2 frame:(struct CGRect)arg3;
-+ (_Bool)_isDate:(id)arg1 withinNextWeekOfDate:(id)arg2 calendar:(id)arg3;
-+ (_Bool)_isWithinNextWeek:(id)arg1 calendar:(id)arg2;
-+ (_Bool)_isDate:(id)arg1 withinPreviousWeekOfDate:(id)arg2 calendar:(id)arg3;
-+ (_Bool)_isWithinPreviousWeek:(id)arg1 calendar:(id)arg2;
 + (id)croppedIconImage:(id)arg1 format:(int)arg2;
 + (id)getUnmaskedIconImage:(int)arg1;
 + (void)_drawGridInContext:(struct CGContext *)arg1 size:(struct CGSize)arg2;

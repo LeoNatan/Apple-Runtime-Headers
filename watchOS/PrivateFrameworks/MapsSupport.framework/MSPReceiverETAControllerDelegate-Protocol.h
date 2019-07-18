@@ -10,7 +10,7 @@
 
 @protocol MSPReceiverETAControllerDelegate <NSObject>
 - (void)etaController:(MSPReceiverETAController *)arg1 sharedTripDidBecomeUnavailable:(GEOSharedNavState *)arg2;
-- (void)etaController:(MSPReceiverETAController *)arg1 didUpdateMutedForSharedTrip:(GEOSharedNavState *)arg2;
+- (void)etaController:(MSPReceiverETAController *)arg1 sharedTripDidClose:(GEOSharedNavState *)arg2;
 - (void)etaController:(MSPReceiverETAController *)arg1 didUpdateReachedDestinationForSharedTrip:(GEOSharedNavState *)arg2;
 - (void)etaController:(MSPReceiverETAController *)arg1 didUpdateRouteForSharedTrip:(GEOSharedNavState *)arg2;
 - (void)etaController:(MSPReceiverETAController *)arg1 didUpdateETAForSharedTrip:(GEOSharedNavState *)arg2;

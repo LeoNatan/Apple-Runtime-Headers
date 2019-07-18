@@ -9,7 +9,6 @@
 @interface _TtC12NewsArticles33ShareArticleViewerFeatureProvider : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: visibilityProvider
-    // Error parsing type: , name: sharingIntentFactory
 }
 
 @end

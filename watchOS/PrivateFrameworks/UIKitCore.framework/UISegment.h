@@ -42,7 +42,7 @@ __attribute__((visibility("hidden")))
     float _requestedScaleFactor;
 }
 
-+ (id)_backgroundImageWithStorage:(id)arg1 mini:(_Bool)arg2 state:(unsigned int)arg3 position:(unsigned int)arg4 drawMode:(int *)arg5 isCustom:(_Bool *)arg6 defaultBlock:(CDUnknownBlockType)arg7;
++ (id)_backgroundImageWithStorage:(id)arg1 mini:(_Bool)arg2 state:(unsigned int)arg3 position:(unsigned int)arg4 drawMode:(unsigned int *)arg5 isCustom:(_Bool *)arg6 defaultBlock:(CDUnknownBlockType)arg7;
 @property(nonatomic) float requestedScaleFactor; // @synthesize requestedScaleFactor=_requestedScaleFactor;
 @property(copy, nonatomic, setter=_setInfoConstraints:) NSArray *_infoConstraints; // @synthesize _infoConstraints;
 - (void).cxx_destruct;
@@ -102,6 +102,7 @@ __attribute__((visibility("hidden")))
 - (void)setBarStyle:(int)arg1;
 - (id)disabledTextColor;
 - (id)_attributedTextForState:(unsigned int)arg1 selected:(_Bool)arg2;
+- (id)_stateTextAttibutes:(id)arg1 segmentState:(unsigned int)arg2;
 - (void)_updateTextColors;
 - (void)setUsesAXTextSize:(_Bool)arg1;
 - (void)setWasSelected:(_Bool)arg1;
@@ -132,6 +133,8 @@ __attribute__((visibility("hidden")))
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_encodableSubviews;
 - (id)_tintColorArchivingKey;
+- (id)_effectiveBackgroundTintColor;
+- (id)_effectiveSelectedSegmentTintColor;
 - (Class)_segmentedControlClass;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInfo:(id)arg1 size:(int)arg2 barStyle:(int)arg3 tintColor:(id)arg4 appearanceStorage:(id)arg5 position:(unsigned int)arg6 autosizeText:(_Bool)arg7;

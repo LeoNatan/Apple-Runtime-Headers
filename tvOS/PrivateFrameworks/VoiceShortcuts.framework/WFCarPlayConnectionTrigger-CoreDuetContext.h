@@ -7,7 +7,8 @@
 #import <WorkflowKit/WFCarPlayConnectionTrigger.h>
 
 @interface WFCarPlayConnectionTrigger (CoreDuetContext)
-- (id)predicateForContextStore;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

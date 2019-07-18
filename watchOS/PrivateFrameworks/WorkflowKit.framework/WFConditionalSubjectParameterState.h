@@ -28,7 +28,7 @@
 
 + (id)subjectType;
 + (id)subjectClasses;
-@property(retain, nonatomic) NSString *homeIdentifier; // @synthesize homeIdentifier=_homeIdentifier;
+@property(copy, nonatomic) NSString *homeIdentifier; // @synthesize homeIdentifier=_homeIdentifier;
 @property(readonly, nonatomic, getter=isEnumeration) _Bool enumeration; // @synthesize enumeration=_enumeration;
 @property(readonly, nonatomic) NSUnit *unit; // @synthesize unit=_unit;
 @property(readonly, nonatomic) unsigned int comparableTimeUnits; // @synthesize comparableTimeUnits=_comparableTimeUnits;

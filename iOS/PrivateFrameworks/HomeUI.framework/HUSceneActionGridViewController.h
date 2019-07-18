@@ -12,19 +12,16 @@
 #import <HomeUI/HUServiceGridItemManagerDelegate-Protocol.h>
 
 @class HFActionSetBuilder, HUContainedServicesGridViewController, NSSet, NSString;
-@protocol HUSceneActionGridViewControllerDelegate;
 
 @interface HUSceneActionGridViewController : HUServiceGridViewController <HFActionSetValueSourceDelegate, HUServiceActionControlsViewControllerDelegate, HUServiceGridItemManagerDelegate, HUContainedServiceGridViewControllerDelegate>
 {
     HFActionSetBuilder *_actionSetBuilder;
     NSSet *_blacklistedServices;
     NSSet *_whitelistedServices;
-    id <HUSceneActionGridViewControllerDelegate> _delegate;
     HUContainedServicesGridViewController *_presentedServiceGroupDetailsViewController;
 }
 
 @property(nonatomic) __weak HUContainedServicesGridViewController *presentedServiceGroupDetailsViewController; // @synthesize presentedServiceGroupDetailsViewController=_presentedServiceGroupDetailsViewController;
-@property(nonatomic) __weak id <HUSceneActionGridViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSSet *whitelistedServices; // @synthesize whitelistedServices=_whitelistedServices;
 @property(copy, nonatomic) NSSet *blacklistedServices; // @synthesize blacklistedServices=_blacklistedServices;
 @property(readonly, nonatomic) HFActionSetBuilder *actionSetBuilder; // @synthesize actionSetBuilder=_actionSetBuilder;
@@ -33,7 +30,7 @@
 - (id)detailsViewControllerForContainedServiceGridViewController:(id)arg1 item:(id)arg2;
 - (_Bool)hasDetailsActionForContainedServiceGridViewController:(id)arg1 item:(id)arg2;
 - (void)serviceActionControlsViewController:(id)arg1 removeServiceActionItem:(id)arg2;
-- (id)_performTapActionForItem:(id)arg1;
+- (_Bool)presentationCoordinator:(id)arg1 shouldBeginPresentationWithContext:(id)arg2;
 - (id)layoutOptionsForSection:(long long)arg1;
 - (id)detailsViewControllerForPresentationCoordinator:(id)arg1 item:(id)arg2;
 - (_Bool)hasDetailsActionForPresentationCoordinator:(id)arg1 item:(id)arg2;
@@ -42,7 +39,7 @@
 - (void)actionSetValueSource:(id)arg1 didUpdateValuesForActionBuilders:(id)arg2;
 - (void)viewDidLoad;
 - (id)initWithItemManager:(id)arg1;
-- (id)initWithActionSetBuilder:(id)arg1 delegate:(id)arg2;
+- (id)initWithActionSetBuilder:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

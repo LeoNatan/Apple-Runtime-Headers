@@ -19,7 +19,6 @@
     NSUUID *_uniqueID;
     NSString *_eventLabel;
     SBLayoutStateTransitionCoordinator *_layoutStateTransitionCoordinator;
-    CDUnknownBlockType _transitionCompletion;
     _Bool _finalized;
     long long _interfaceOrientation;
     SBWorkspaceApplicationSceneTransitionContext *_applicationContext;
@@ -28,7 +27,6 @@
 }
 
 @property(retain, nonatomic) SBWorkspaceTransientOverlayTransitionContext *transientOverlayContext; // @synthesize transientOverlayContext=_transientOverlayContext;
-@property(copy, nonatomic) CDUnknownBlockType transitionCompletion; // @synthesize transitionCompletion=_transitionCompletion;
 @property(retain, nonatomic) SBWorkspaceApplicationSceneTransitionContext *applicationContext; // @synthesize applicationContext=_applicationContext;
 @property(copy, nonatomic) NSString *eventLabel; // @synthesize eventLabel=_eventLabel;
 @property(retain, nonatomic) BSProcessHandle *originatingProcess; // @synthesize originatingProcess=_originatingProcess;
@@ -43,7 +41,6 @@
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)compactDescriptionBuilder;
-- (void)_sendResult:(_Bool)arg1;
 - (void)declineWithReason:(id)arg1;
 - (void)finalize;
 @property(readonly, nonatomic, getter=isFinalized) _Bool finalized; // @synthesize finalized=_finalized;

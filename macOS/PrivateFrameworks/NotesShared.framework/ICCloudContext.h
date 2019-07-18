@@ -15,6 +15,7 @@
     BOOL _needsToUpdateSubscriptions;
     BOOL _enableLongLivedOperations;
     BOOL _disableAutomaticallyRetryNetworkFailures;
+    BOOL _disableRetryTimer;
     BOOL _disabled;
     BOOL _disabledInternal;
     BOOL _needsToProcessAllObjects;
@@ -58,6 +59,7 @@
 + (id)userRecordNameForContainer:(id)arg1;
 + (id)errorFromOperations:(id)arg1;
 + (id)errorFromErrors:(id)arg1;
++ (id)errorForWaitingForRetryTimer;
 + (id)errorForDisabledCloudSyncing;
 + (id)metadataZoneID;
 + (id)notesZoneID;
@@ -85,6 +87,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
+@property(nonatomic) BOOL disableRetryTimer; // @synthesize disableRetryTimer=_disableRetryTimer;
 @property(nonatomic) BOOL disableAutomaticallyRetryNetworkFailures; // @synthesize disableAutomaticallyRetryNetworkFailures=_disableAutomaticallyRetryNetworkFailures;
 @property(nonatomic) BOOL enableLongLivedOperations; // @synthesize enableLongLivedOperations=_enableLongLivedOperations;
 @property(nonatomic) unsigned long long discretionaryNetworkBehavior; // @synthesize discretionaryNetworkBehavior=_discretionaryNetworkBehavior;
@@ -179,6 +182,7 @@
 - (id)newPlaceholderObjectForRecordID:(id)arg1 recordType:(id)arg2 accountID:(id)arg3 context:(id)arg4;
 - (id)newCloudObjectForRecord:(id)arg1 accountID:(id)arg2 context:(id)arg3;
 - (id)existingCloudObjectForUserSpecificRecordID:(id)arg1 createPlaceholderIfNecessary:(BOOL)arg2 accountID:(id)arg3 context:(id)arg4;
+- (id)existingCloudObjectForRecordID:(id)arg1 recordType:(id)arg2 accountID:(id)arg3 context:(id)arg4 excludingRecordTypes:(id)arg5;
 - (id)existingCloudObjectForRecordID:(id)arg1 recordType:(id)arg2 accountID:(id)arg3 context:(id)arg4;
 - (id)existingCloudObjectForRecord:(id)arg1 accountID:(id)arg2 context:(id)arg3;
 - (void)fetchUserRecordWithContainer:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

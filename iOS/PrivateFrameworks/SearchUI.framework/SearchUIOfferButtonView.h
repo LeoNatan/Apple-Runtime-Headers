@@ -22,10 +22,10 @@
 @property(retain, nonatomic) NSString *offerTitle; // @synthesize offerTitle=_offerTitle;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
-- (struct CGSize)effectiveLayoutSizeFittingSize:(struct CGSize)arg1;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)didMoveToWindow;
 - (void)_dynamicUserInterfaceTraitDidChange;
+@property(nonatomic) _Bool adjustsFontSizeToFitWidth;
 - (void)updateSelectionState:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (id)init;

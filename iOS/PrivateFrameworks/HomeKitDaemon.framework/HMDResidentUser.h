@@ -23,6 +23,7 @@
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)legacyUser;
 @property unsigned long long configurationState; // @synthesize configurationState=_configurationState;
+@property(readonly, getter=isBlocked) _Bool blocked;
 - (_Bool)updateWithDevice:(id)arg1;
 - (void)setDevice:(id)arg1;
 @property(readonly) HMDDevice *device; // @synthesize device=_device;

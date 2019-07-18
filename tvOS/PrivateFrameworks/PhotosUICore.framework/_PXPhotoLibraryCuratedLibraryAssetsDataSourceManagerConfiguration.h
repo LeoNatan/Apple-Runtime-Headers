@@ -13,10 +13,7 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
-+ (id)_nonInterestingPromotionScorePredicate;
 - (void).cxx_destruct;
-- (id)assetCollectionWithKeyAsset:(id)arg1 inZoomLevel:(long long)arg2;
-- (id)childAssetCollectionsOfAssetCollection:(id)arg1;
 - (id)configurationForZoomLevel:(long long)arg1;
 - (id)initWithPhotoLibrary:(id)arg1;
 

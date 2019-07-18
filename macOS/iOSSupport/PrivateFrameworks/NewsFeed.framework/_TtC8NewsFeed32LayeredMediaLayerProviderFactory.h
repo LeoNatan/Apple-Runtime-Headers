@@ -8,7 +8,7 @@
 
 @interface _TtC8NewsFeed32LayeredMediaLayerProviderFactory : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: assetHandleFactory
+    // Error parsing type: , name: variantFactory
     // Error parsing type: , name: layersCache
 }
 

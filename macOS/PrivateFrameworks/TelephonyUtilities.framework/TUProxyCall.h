@@ -45,6 +45,7 @@
     float _remoteMeterLevel;
     NSString *_callUUID;
     TUHandle *_handle;
+    NSString *_isoCountryCode;
     TUCallProvider *_backingProvider;
     TUCallProvider *_displayProvider;
     NSString *_callerNameFromNetwork;
@@ -138,6 +139,7 @@
 @property(nonatomic, getter=isOutgoing) BOOL outgoing; // @synthesize outgoing=_outgoing;
 @property(retain, nonatomic) TUCallProvider *displayProvider; // @synthesize displayProvider=_displayProvider;
 @property(retain, nonatomic) TUCallProvider *backingProvider; // @synthesize backingProvider=_backingProvider;
+@property(copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(retain, nonatomic) TUHandle *handle; // @synthesize handle=_handle;
 @property(nonatomic, getter=isHostedOnCurrentDevice) BOOL hostedOnCurrentDevice; // @synthesize hostedOnCurrentDevice=_hostedOnCurrentDevice;
 @property(nonatomic) int callStatus; // @synthesize callStatus=_callStatus;

@@ -22,7 +22,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithPeakMemoryUsageMeasurement:(id)arg1 averageMemoryUsageMeasurement:(id)arg2;
-- (id)initWithPeakMemoryUsage:(double)arg1 averageMemoryUsage:(double)arg2 averageMemoryUsageSampleCount:(long long)arg3 averageMemoryUsageStandardDeviation:(double)arg4;
 
 @end
 

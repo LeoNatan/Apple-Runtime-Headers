@@ -20,6 +20,7 @@
         unsigned int minuteOfHour:1;
         unsigned int secondOfMinute:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     long long _hourOfDay;
     long long _millisOfSecond;
     long long _minuteOfHour;
@@ -27,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) long long secondOfMinute; // @synthesize secondOfMinute=_secondOfMinute;
 @property(nonatomic) long long minuteOfHour; // @synthesize minuteOfHour=_minuteOfHour;
 @property(nonatomic) long long millisOfSecond; // @synthesize millisOfSecond=_millisOfSecond;

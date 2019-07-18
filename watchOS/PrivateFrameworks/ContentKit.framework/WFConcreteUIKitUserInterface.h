@@ -10,6 +10,7 @@
 
 @class NSString, UIView, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface WFConcreteUIKitUserInterface : NSObject <WFUIKitUserInterface>
 {
     UIViewController *_viewController;

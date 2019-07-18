@@ -10,6 +10,8 @@
 @protocol MPAVQueueController;
 
 @protocol MPAVQueueControllerDelegate <NSObject>
+- (void)queueController:(id <MPAVQueueController>)arg1 didChangeShuffleType:(int)arg2;
+- (void)queueController:(id <MPAVQueueController>)arg1 didChangeRepeatType:(int)arg2;
 - (void)queueController:(id <MPAVQueueController>)arg1 didChangeContentsWithReplacementPlaybackContext:(MPPlaybackContext *)arg2;
 - (void)queueController:(id <MPAVQueueController>)arg1 failedToLoadItem:(MPAVItem *)arg2;
 - (void)queueControllerDidChangeContents:(id <MPAVQueueController>)arg1;

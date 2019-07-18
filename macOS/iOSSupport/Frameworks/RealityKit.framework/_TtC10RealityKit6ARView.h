@@ -19,6 +19,8 @@
     // Error parsing type: , name: initialized
     // Error parsing type: , name: environment
     // Error parsing type: , name: __environmentEntity
+    // Error parsing type: , name: __enableAutomaticFrameRate
+    // Error parsing type: , name: __preferredFrameRate
     // Error parsing type: , name: singleTapGesture
     // Error parsing type: , name: engineWasRunningWhenLastInTheForeground
     // Error parsing type: , name: backingLayer
@@ -29,6 +31,7 @@
     // Error parsing type: , name: updateSubscription
     // Error parsing type: , name: renderSubscription
     // Error parsing type: , name: realityAssetCollisionSubscription
+    // Error parsing type: , name: __disableComposition
     // Error parsing type: , name: __statisticsOptions
     // Error parsing type: , name: __disableStatisticsRendering
 }

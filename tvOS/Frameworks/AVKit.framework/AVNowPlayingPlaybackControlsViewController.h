@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     _Bool _assetHasDates;
     _Bool _initialPlaybackBegun;
     _Bool _shouldFadeOutPlaybackControlsOncePlaybackBegins;
+    _Bool _shouldDisableNavigationMarkerImagesInInfoPanel;
     long long _playbackControlsStateWhenVisible;
     double _maxMinusMinDurationCached;
     double _timeOfLastCurrentDateCheck;

@@ -30,11 +30,9 @@
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
 - (double)_cannotDoHeaderLastBaselineToCannotDoBodyFirstBaseline;
-- (double)_bodyTextLastBaselineToCannotDoHeaderFirstBaseline;
-- (double)_titleLastBaselineToBodyFirstBaseline;
-- (id)_boldBodyFont;
+- (id)_boldSubheadlineFont;
+- (id)_subheadlineFont;
 - (id)_bodyFont;
-- (id)_bodyFontTextStyle;
 - (void)_adjustButtonFooterViewLocationForViewContentHeight;
 - (void)_setUpButtonFooterView;
 - (struct CGSize)_bulletImageSize;

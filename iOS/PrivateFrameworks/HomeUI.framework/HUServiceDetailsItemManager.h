@@ -17,6 +17,7 @@
     _Bool _shouldHideAccessoryItem;
     _Bool _showRoomsList;
     _Bool _showAssociatedServiceTypeList;
+    _Bool _homePodsActiveInStereoSetUp;
     HFItem<HFItemBuilderItem> *_builderItem;
     HFItemBuilder<HFServiceLikeBuilder> *_serviceLikeBuilder;
     HFItemProvider *_existingRoomItemProvider;
@@ -51,6 +52,7 @@
     HFItem *_audioSettingsItem;
     HFItem *_cameraNightModeItem;
     HFItem *_internalDebuggingItem;
+    HFItem *_restartItem;
     HUServiceDetailsProgrammableSwitchItemModule *_programmableSwitchItemModule;
     HUServiceDetailsControlAndCharacteristicStateItemModule *_serviceDetailsControlStateAndCharacteristicItemModule;
     NSArray *_nameAndIconSections;
@@ -72,6 +74,7 @@
 }
 
 @property(nonatomic) __weak id <HUServiceDetailsItemManagerDelegate> serviceDetailsDelegate; // @synthesize serviceDetailsDelegate=_serviceDetailsDelegate;
+@property(nonatomic) _Bool homePodsActiveInStereoSetUp; // @synthesize homePodsActiveInStereoSetUp=_homePodsActiveInStereoSetUp;
 @property(retain, nonatomic) HUFirmwareUpdateItemProvider *firmwareUpdateItemProvider; // @synthesize firmwareUpdateItemProvider=_firmwareUpdateItemProvider;
 @property(retain, nonatomic) HULinkedApplicationItemProvider *linkedApplicationItemProvider; // @synthesize linkedApplicationItemProvider=_linkedApplicationItemProvider;
 @property(retain, nonatomic) HFStaticItemProvider *staticItemProvider; // @synthesize staticItemProvider=_staticItemProvider;
@@ -92,6 +95,7 @@
 @property(nonatomic) _Bool showAssociatedServiceTypeList; // @synthesize showAssociatedServiceTypeList=_showAssociatedServiceTypeList;
 @property(nonatomic) _Bool showRoomsList; // @synthesize showRoomsList=_showRoomsList;
 @property(nonatomic) _Bool shouldHideAccessoryItem; // @synthesize shouldHideAccessoryItem=_shouldHideAccessoryItem;
+@property(retain, nonatomic) HFItem *restartItem; // @synthesize restartItem=_restartItem;
 @property(retain, nonatomic) HFItem *internalDebuggingItem; // @synthesize internalDebuggingItem=_internalDebuggingItem;
 @property(retain, nonatomic) HFItem *cameraNightModeItem; // @synthesize cameraNightModeItem=_cameraNightModeItem;
 @property(retain, nonatomic) HFItem *audioSettingsItem; // @synthesize audioSettingsItem=_audioSettingsItem;
@@ -127,6 +131,8 @@
 @property(retain, nonatomic) HFItemBuilder<HFServiceLikeBuilder> *serviceLikeBuilder; // @synthesize serviceLikeBuilder=_serviceLikeBuilder;
 @property(readonly, nonatomic) HFItem<HFItemBuilderItem> *builderItem; // @synthesize builderItem=_builderItem;
 - (void).cxx_destruct;
+- (void)currentAccessoryReachableOverRapportUpdated:(_Bool)arg1;
+- (void)_setupDeviceOptionsAdapterUtilityForGroupedAccessories:(id)arg1;
 - (id)_restartAccessory;
 - (void)restartAccessory;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -135,6 +141,7 @@
 - (void)_setupDeviceOptionsAdapterForMediaAccessoryItem:(id)arg1;
 - (id)hf_MediaAccessoryItem;
 - (_Bool)shouldShowDeviceOptionsForAccessoryItem:(id)arg1;
+- (_Bool)_isGroupedHomePod:(id)arg1;
 - (_Bool)_shouldShowLinkedApplicationSection;
 - (_Bool)_shouldShowFirmwareUpdateSection;
 - (id)_characteristicSectionForIdentifier:(id)arg1;

@@ -44,5 +44,6 @@
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) NSString *uniformTypeIdentifier;
 @property(readonly, nonatomic) NSString *uuid;
+@property(readonly, nonatomic) CDStruct_1b6d18a9 videoKeyFrameSourceTime;
 @end
 

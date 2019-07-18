@@ -20,6 +20,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)wellKnownTypeTextPayloadWithString:(id)arg1 locale:(id)arg2;
 + (id)wellKnowTypeTextPayloadWithString:(id)arg1 locale:(id)arg2;
 + (id)wellKnownTypeURIPayloadWithURL:(id)arg1;
 + (id)wellKnownTypeURIPayloadWithString:(id)arg1;

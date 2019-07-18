@@ -87,7 +87,7 @@
 - (void)startInstallingAdminUpdates:(id)arg1 replyWhenDone:(CDUnknownBlockType)arg2;
 - (void)startStagingUpdatesForProductKey:(id)arg1 usingForeground:(BOOL)arg2 replyWhenDone:(CDUnknownBlockType)arg3;
 - (void)startDownloadingForProductKeys:(id)arg1 replyWhenDone:(CDUnknownBlockType)arg2;
-- (void)calculateDiskSpaceRequiredForUpdatesWithProductKeys:(id)arg1 downloadingOnly:(BOOL)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)calculateDiskSpaceRequiredForUpdatesWithProductKeys:(id)arg1 downloadingOnly:(BOOL)arg2 invokeCacheDelete:(BOOL)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)popScanBlockingClient;
 - (void)preventFurtherScansWhileConnected:(CDUnknownBlockType)arg1;
 - (void)buildTagCacheIfNecessaryWithReply:(CDUnknownBlockType)arg1;

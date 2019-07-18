@@ -91,9 +91,9 @@
 - (void)startBackgroundFetchIfNeeded;
 - (void)_updateInaccurateAssetCollectionsIfNeeded;
 - (id)_inaccurateAssetCollections;
-- (void)_prefetchIndexesByFetchResult:(id)arg1;
+- (void)_prefetchIndexesByFetchResult:(id)arg1 onlyThumbnails:(_Bool)arg2;
 - (void)prefetchAssetsInSections:(id)arg1;
-- (void)prefetchAssetsAtIndexPaths:(id)arg1;
+- (void)prefetchAssetsAtIndexPaths:(id)arg1 onlyThumbnailAssets:(_Bool)arg2;
 - (void)prefetchApproximateAssetsAtIndexPaths:(id)arg1 reverseOrder:(_Bool)arg2;
 - (void)prefetchApproximateAssetsAtIndexPaths:(id)arg1;
 - (_Bool)forceAccurateIndexPath:(id)arg1 andAssetsBeforeAndAfter:(long long)arg2;
@@ -168,7 +168,8 @@
 - (void)registerChangeObserver:(id)arg1;
 - (id)_sectionCache;
 - (unsigned long long)_cachedSectionForAssetCollection:(id)arg1;
-@property(readonly, nonatomic) long long numberOfEnrichedSections;
+- (long long)estimatedAssetsCountWithEnrichmentState:(unsigned short)arg1;
+- (long long)numberOfSectionsWithEnrichmentState:(unsigned short)arg1;
 @property(readonly, nonatomic) long long estimatedOtherCount;
 @property(readonly, nonatomic) long long estimatedVideosCount;
 @property(readonly, nonatomic) long long estimatedPhotosCount;
@@ -194,6 +195,7 @@
 - (_Bool)_reverseSortOrderForAssetCollection:(id)arg1;
 - (_Bool)_isAssetCollectionAccurate:(id)arg1;
 - (_Bool)_allSectionsConsideredAccurate;
+@property(readonly, nonatomic) _Bool areAllSectionsConsideredAccurate;
 - (id)_fetcher;
 - (void)_observersQueue_copyChangeObserversForWriteIfNeeded;
 - (void)_enumerateChangeObserversWithBlock:(CDUnknownBlockType)arg1;

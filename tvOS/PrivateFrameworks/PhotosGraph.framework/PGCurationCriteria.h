@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, PGCurationIndexSetTrait, PGCurationPartOfDayTrait, PGCurationSetTrait, PGGraph;
+@class NSString, PGCurationContentOrAestheticScoreTrait, PGCurationIndexSetTrait, PGCurationPartOfDayTrait, PGCurationSetTrait, PGGraph;
 
 @interface PGCurationCriteria : NSObject
 {
@@ -18,11 +18,13 @@
     PGGraph *_graph;
     unsigned long long _faceFilter;
     PGCurationSetTrait *_peopleTrait;
+    PGCurationContentOrAestheticScoreTrait *_contentOrAestheticScoreTrait;
     unsigned long long _client;
 }
 
 @property(readonly, nonatomic) unsigned long long client; // @synthesize client=_client;
 @property(nonatomic) _Bool filterUtilityAssets; // @synthesize filterUtilityAssets=_filterUtilityAssets;
+@property(retain, nonatomic) PGCurationContentOrAestheticScoreTrait *contentOrAestheticScoreTrait; // @synthesize contentOrAestheticScoreTrait=_contentOrAestheticScoreTrait;
 @property(retain, nonatomic) PGCurationSetTrait *peopleTrait; // @synthesize peopleTrait=_peopleTrait;
 @property(nonatomic) unsigned long long faceFilter; // @synthesize faceFilter=_faceFilter;
 @property(readonly, nonatomic) PGGraph *graph; // @synthesize graph=_graph;

@@ -10,12 +10,15 @@
 
 @interface WFDevice : NSObject
 {
+    NSArray *_capabilities;
 }
 
 + (id)currentDevice;
+- (void).cxx_destruct;
+- (id)_deviceInfoForKey:(struct __CFString *)arg1;
 @property(readonly, nonatomic) NSString *localizedWiFiDisplayName;
 - (_Bool)hasCapability:(id)arg1;
-@property(readonly, nonatomic) NSArray *capabilities;
+@property(readonly, nonatomic) NSArray *capabilities; // @synthesize capabilities=_capabilities;
 @property(readonly, nonatomic) int platform;
 @property(readonly, nonatomic) int idiom;
 @property(readonly, nonatomic) NSString *systemName;

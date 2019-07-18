@@ -25,6 +25,8 @@
 - (id)description;
 - (void)setRecurrenceSet:(id)arg1;
 - (id)recurrenceSet;
+- (void)setBirthdayContactName:(id)arg1;
+- (id)birthdayContactName;
 - (void)setBirthdayContactIdentifier:(id)arg1;
 - (id)birthdayContactIdentifier;
 - (void)setConferenceURL:(id)arg1;

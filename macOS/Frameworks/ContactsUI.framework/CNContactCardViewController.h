@@ -118,6 +118,7 @@
 @property(retain, nonatomic) CNUIUserActionListDataSource *userActionListDataSource; // @synthesize userActionListDataSource=_userActionListDataSource;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
+- (void)setProhibitedPropertyKeys:(id)arg1;
 - (void)setPropertyKeysToDisplay:(id)arg1;
 - (void)setContactDataIsTransient:(BOOL)arg1;
 - (id)displayAttributesForProperty:(id)arg1 identifier:(id)arg2;

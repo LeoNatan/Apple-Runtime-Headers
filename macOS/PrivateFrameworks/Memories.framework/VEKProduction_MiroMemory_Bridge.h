@@ -46,6 +46,9 @@ __attribute__((visibility("hidden")))
 - (id)initWithDataRepresentation:(id)arg1;
 - (void)updateBlueprintOnMemory;
 - (void)updateSuggestionsOnMemory;
+- (double)maxDuration;
+- (long long)pickedItemCount;
+- (BOOL)isPending;
 - (id)memoryViewedDate;
 - (id)requestedMood;
 @property(nonatomic) double requestedDuration;

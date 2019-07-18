@@ -22,32 +22,12 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-+ (id)_orderedPrefetchConditionStringsOnAssets;
 + (id)_identifierForResourceDownload:(id)arg1;
 + (id)_legacyIdentifierForItemIdentifier:(id)arg1 cplType:(unsigned int)arg2;
 - (void).cxx_destruct;
 - (void)_resourcesToPrefetchWithPredicates:(id)arg1 budget:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_resourcesWithPredicate:(id)arg1 limit:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)_predicatesForNonThumbnails;
-- (id)_predicateForKeyFacePrefetching;
-- (id)_predicateToPrefetchHighlightWithUUIDs:(id)arg1;
-- (id)_predicateToPrefetchSuggestions:(id)arg1;
-- (id)_predicateToPrefetchMemories:(id)arg1;
-- (id)_resourcesToPrefetchForAsset:(id)arg1;
-- (id)_prefetchResourceForAsset:(id)arg1 inResourceTypes:(id)arg2;
-- (id)_predicatesForThumbnails;
-- (_Bool)_shouldPrefetchMediums;
 - (id)_lastCompletePrefetchDate;
-- (id)_predicateForMaxFilesize:(int)arg1;
-- (id)_predicateForResourceCreatedAfterDate:(id)arg1;
-- (id)_predicateForImageResourcePixelsLessOrEqual:(int)arg1;
-- (id)_irisConditionString;
-- (id)_missingLocalOriginalConditionString;
-- (id)_excludeMomentShareAssetsString;
-- (id)_missingThumbnailConditionString;
-- (id)_resourcePredicateForCPLResourceType:(unsigned int)arg1 additionalResourcePredicates:(id)arg2;
-- (id)_assetPredicateForCPLResourceType:(unsigned int)arg1 additionalAssetConditions:(id)arg2 additionalResourcePredicates:(id)arg3;
-- (id)_masterPredicateForCPLResourceType:(unsigned int)arg1 additionalAssetConditions:(id)arg2 additionalResourcePredicates:(id)arg3;
 - (long long)diskSpaceBudgetForNonThumbnails;
 - (long long)diskSpaceBudgetForThumbnails;
 - (void)_handlePrefetchError:(id)arg1 forPLCloudResourceWithObjectID:(id)arg2;
@@ -62,7 +42,7 @@
 - (void)_runOnWorkQueueWithTransaction:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_reloadDefaultDownload;
 - (void)_reloadDownloadOriginalsSetting;
-- (void)prefetchResourcesWithPredicates:(id)arg1;
+- (void)prefetchResourcesWithPredicates:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)prefetchStatusForDebug:(_Bool)arg1;
 - (void)stop;
 - (void)_cleanupInflightResources;

@@ -154,6 +154,7 @@
 - (id)hitAttachment:(struct CGPoint)arg1;
 - (void)getAttachment:(id)arg1 tileTransform:(struct CGAffineTransform *)arg2 strokeTransform:(struct CGAffineTransform *)arg3 paperTransform:(struct CGAffineTransform *)arg4 scrollViewContentOffset:(struct CGPoint)arg5;
 - (void)getAttachment:(id)arg1 tileTransform:(struct CGAffineTransform *)arg2 strokeTransform:(struct CGAffineTransform *)arg3 paperTransform:(struct CGAffineTransform *)arg4;
+- (void)_layoutSubviewsUpdateTiles:(_Bool)arg1;
 - (void)_layoutSubviews;
 - (void)_didAddDrawingAttachmentView;
 - (void)_scrollViewDidLayoutSubviews:(id)arg1;

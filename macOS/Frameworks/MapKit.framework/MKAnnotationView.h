@@ -227,6 +227,7 @@
 - (void)configureCustomFeature:(id)arg1;
 - (id)_effectiveSubtitlesIsCollidable:(char *)arg1;
 - (id)_effectiveTitleIsCollidable:(char *)arg1;
+- (void)_invalidateCustomFeatureForced:(BOOL)arg1 coordinates:(struct CLLocationCoordinate2D *)arg2 count:(unsigned long long)arg3;
 - (void)invalidateCustomFeatureForced:(BOOL)arg1;
 - (BOOL)isProvidingCustomFeature;
 - (id)customFeatureAnnotation;

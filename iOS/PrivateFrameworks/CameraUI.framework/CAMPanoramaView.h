@@ -36,6 +36,7 @@
     double *__previousSpeeds;
     double __currentAverageSpeed;
     unsigned long long __arrowUpdateFrame;
+    struct CGSize _panoramaCaptureSize;
     struct CGPoint __initialArrowCenter;
     struct CGRect __lastLayoutBounds;
 }
@@ -64,6 +65,7 @@
 @property(readonly, nonatomic) UIView *_stripBackgroundView; // @synthesize _stripBackgroundView=__stripBackgroundView;
 @property(nonatomic, setter=_setCurrentOrientedAcceleration:) double currentOrientedAcceleration; // @synthesize currentOrientedAcceleration=_currentOrientedAcceleration;
 @property(nonatomic, getter=isPainting, setter=_setPainting:) _Bool painting; // @synthesize painting=_painting;
+@property(nonatomic) struct CGSize panoramaCaptureSize; // @synthesize panoramaCaptureSize=_panoramaCaptureSize;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(readonly, nonatomic) CAMPanoramaPreviewView *previewView; // @synthesize previewView=_previewView;
 @property(nonatomic) __weak id <CAMPanoramaViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -90,6 +92,7 @@
 - (void)updatePaintingWithStatus:(id)arg1;
 - (void)startPainting;
 - (void)setTransform:(struct CGAffineTransform)arg1;
+- (struct CGRect)_frameForArrowViewWithDirection:(long long)arg1 offset:(double)arg2;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) UIView *instructionView;
 - (void)dealloc;

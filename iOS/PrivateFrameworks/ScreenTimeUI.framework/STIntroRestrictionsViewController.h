@@ -4,32 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <ScreenTimeUI/STIntroSplashViewController.h>
 
+#import <ScreenTimeUI/STUIDateTimePickerCellDelegate-Protocol.h>
 #import <ScreenTimeUI/UITableViewDataSource-Protocol.h>
 #import <ScreenTimeUI/UITableViewDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSString, STAllowance, UITableView;
+@class NSString, STAllowance, UITableView;
 
 __attribute__((visibility("hidden")))
-@interface STIntroRestrictionsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface STIntroRestrictionsViewController : STIntroSplashViewController <STUIDateTimePickerCellDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     _Bool _showAllCategories;
     _Bool _showingDatePicker;
-    STAllowance *_allowance;
     UITableView *_categoriesTableView;
-    NSLayoutConstraint *_categoriesHeightConstraint;
     UITableView *_settingsTableView;
-    NSLayoutConstraint *_settingsHeightConstraint;
+    STAllowance *_allowance;
 }
 
 @property _Bool showingDatePicker; // @synthesize showingDatePicker=_showingDatePicker;
 @property _Bool showAllCategories; // @synthesize showAllCategories=_showAllCategories;
-@property(retain) NSLayoutConstraint *settingsHeightConstraint; // @synthesize settingsHeightConstraint=_settingsHeightConstraint;
-@property(retain) UITableView *settingsTableView; // @synthesize settingsTableView=_settingsTableView;
-@property(retain) NSLayoutConstraint *categoriesHeightConstraint; // @synthesize categoriesHeightConstraint=_categoriesHeightConstraint;
-@property(retain) UITableView *categoriesTableView; // @synthesize categoriesTableView=_categoriesTableView;
 @property(retain) STAllowance *allowance; // @synthesize allowance=_allowance;
+@property(retain) UITableView *settingsTableView; // @synthesize settingsTableView=_settingsTableView;
+@property(retain) UITableView *categoriesTableView; // @synthesize categoriesTableView=_categoriesTableView;
 - (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
@@ -41,10 +38,10 @@ __attribute__((visibility("hidden")))
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)selectedCategories;
 - (_Bool)_hasSetTimeAmount;
-- (void)_datePickerChanged:(id)arg1;
+- (void)_updateSaveButton;
+- (void)datePickerChanged:(id)arg1;
 - (void)dealloc;
-- (void)viewDidLayoutSubviews;
-- (void)updateViewConstraints;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 

@@ -30,6 +30,7 @@
     unsigned long long _defaultIndex;
     unsigned long long _selectedIndex;
     unsigned long long _markedIndex;
+    long long _cornerStyle;
     double _selectionDotCenterTopSpacing;
     long long _dotPlacement;
     CEKWheelScrubberCollectionViewLayout *__collectionViewLayout;
@@ -68,6 +69,7 @@
 @property(nonatomic) CDStruct_ae5a35ae gradientInsets; // @synthesize gradientInsets=_gradientInsets;
 @property(nonatomic) struct UIEdgeInsets thumbnailEdgeInsets; // @synthesize thumbnailEdgeInsets=_thumbnailEdgeInsets;
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
+@property(nonatomic) long long cornerStyle; // @synthesize cornerStyle=_cornerStyle;
 @property(nonatomic) unsigned long long markedIndex; // @synthesize markedIndex=_markedIndex;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(nonatomic) unsigned long long defaultIndex; // @synthesize defaultIndex=_defaultIndex;
@@ -109,6 +111,7 @@
 - (struct CGSize)wheelScrubberCollectionViewLayout:(id)arg1 sizeForItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldDeselectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (void)_updateCornerMaskForCell:(id)arg1 withItemIndex:(long long)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;

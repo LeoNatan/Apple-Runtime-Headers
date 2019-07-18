@@ -50,6 +50,8 @@
 @property(readonly, nonatomic) NTKPhotoImageView *posterImageView; // @synthesize posterImageView=_posterImageView;
 @property(readonly, nonatomic) UIView *cornerView; // @synthesize cornerView=_cornerView;
 - (void).cxx_destruct;
+- (_Bool)isCheapCopy;
+- (_Bool)screenWillGoDark;
 - (void)_endScrubbingAnimationFromUIViewAnimateWithDuration;
 - (void)_startScrubbingAnimationFromUIViewAnimateWithDuration;
 - (void)_applyScrubbingForegroundColor:(id)arg1 shadowColor:(id)arg2;
@@ -57,7 +59,6 @@
 - (void)imageViewDidBeginPlaying:(id)arg1;
 - (void)_setDateAttributes:(id)arg1 animated:(_Bool)arg2;
 - (id)_newGradientViewWithColor:(id)arg1;
-- (id)newGradientView;
 - (void)_cleanupAfterZoom;
 - (void)_setZoomFraction:(float)arg1 iconDiameter:(float)arg2;
 - (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(float)arg2 maxDiameter:(float)arg3;
@@ -65,11 +66,8 @@
 - (void)_configureForEditMode:(int)arg1;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (_Bool)_curtainViewVisible;
-- (void)_fadeFromCurtainViewWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_fadeToCurtainViewWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_hideCurtainView;
 - (void)_showCurtainView;
-- (_Bool)_canShowCurtainViewWhenScreenBlanked;
 - (void)handleScreenBlanked;
 - (void)_handleScreenWake;
 - (void)_handleOrdinaryScreenWake;

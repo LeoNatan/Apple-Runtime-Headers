@@ -10,6 +10,7 @@
 {
 }
 
+- (id)selectedAppLayoutForGestureRecognizer:(id)arg1;
 - (long long)_gestureType;
 
 @end

@@ -16,14 +16,14 @@
 {
     id <EFSQLExpressable> _left;
     id <EFSQLExpressable> _right;
-    unsigned int _operator;
+    unsigned int _bitwiseOperator;
 }
 
 + (id)or:(id)arg1 with:(id)arg2;
 + (id)and:(id)arg1 with:(id)arg2;
 + (id)rightShift:(id)arg1 by:(id)arg2;
 + (id)leftShift:(id)arg1 by:(id)arg2;
-@property(readonly, nonatomic) unsigned int operator; // @synthesize operator=_operator;
+@property(readonly, nonatomic) unsigned int bitwiseOperator; // @synthesize bitwiseOperator=_bitwiseOperator;
 @property(readonly, nonatomic) id <EFSQLExpressable> right; // @synthesize right=_right;
 @property(retain, nonatomic) id <EFSQLExpressable> left; // @synthesize left=_left;
 - (void).cxx_destruct;

@@ -30,8 +30,9 @@
 - (void)displayProximityPinCode:(id)arg1 visual:(_Bool)arg2;
 - (void)proximititySetupCompleted:(id)arg1;
 - (void)suspendConnectionForSoftwareUpdate:(CDUnknownBlockType)arg1;
+- (void)showMigrationInterfaceOnSource;
 - (void)endDeviceToDeviceMigration;
-- (id)beginDeviceToDeviceMigration;
+- (id)fileTransferSessionTemplate;
 - (void)storeHandshake:(id)arg1;
 - (void)storeInformation:(id)arg1;
 - (void)resumeProximitySetup:(CDUnknownBlockType)arg1;

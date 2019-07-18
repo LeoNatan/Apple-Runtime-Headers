@@ -8,14 +8,16 @@
 
 @interface PUICCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes
 {
+    float _notchOffset;
     unsigned int _notchBehavior;
     int _notchStrength;
-    float _notchOffset;
+    int _notchOffsetCalculationMethod;
 }
 
-@property(nonatomic) float notchOffset; // @synthesize notchOffset=_notchOffset;
+@property(nonatomic) int notchOffsetCalculationMethod; // @synthesize notchOffsetCalculationMethod=_notchOffsetCalculationMethod;
 @property(nonatomic) int notchStrength; // @synthesize notchStrength=_notchStrength;
 @property(nonatomic) unsigned int notchBehavior; // @synthesize notchBehavior=_notchBehavior;
+@property(nonatomic) float notchOffset;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)init;

@@ -15,7 +15,6 @@
     NSArray *_groupSpecifierIndices;
     NSArray *_specifiersGroupIndices;
     NSArray *_specifiersGroupNumbers;
-    id <NPRFSpecifierSetDelegate> _delegate;
     NSBundle *sourceBundle;
     NSString *sourcePlistName;
     NSDictionary *sourcePlistContents;
@@ -26,6 +25,7 @@
     NSArray *_specifiers;
     NSArray *bundleControllers;
     NSArray *errors;
+    id <NPRFSpecifierSetDelegate> _delegate;
 }
 
 + (id)readPreferenceValue:(id)arg1;
@@ -36,6 +36,7 @@
 + (id)configurationSpecifiersForBundlesInPath:(id)arg1 specifierTarget:(id)arg2 bundleEnumerator:(CDUnknownBlockType)arg3;
 + (id)specifierSetFromBundle:(id)arg1 withPlistNamed:(id)arg2 specifierTarget:(id)arg3 parentSpecifier:(id)arg4;
 + (id)specifierSetWithSpecifierTarget:(id)arg1 parentSpecifier:(id)arg2 specifiers:(id)arg3;
+@property __weak id <NPRFSpecifierSetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSArray *errors; // @synthesize errors;
 @property(retain) NSArray *bundleControllers; // @synthesize bundleControllers;
 @property(retain) NSString *sourceTitle; // @synthesize sourceTitle;
@@ -74,12 +75,10 @@
 - (void)_updateSpecifiersToSpecifiers:(id)arg1 notifyObserver:(_Bool)arg2;
 - (void)updateSpecifiersToSpecifiers:(id)arg1;
 @property(retain) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
-@property(retain) id specifierTarget; // @synthesize specifierTarget=_specifierTarget;
+@property __weak id specifierTarget; // @synthesize specifierTarget=_specifierTarget;
 @property(retain) PSSpecifier *parentSpecifier; // @synthesize parentSpecifier=_parentSpecifier;
 @property(retain) NSArray *specifiers; // @synthesize specifiers=_specifiers;
 - (id)indexPathsForSpecifiers:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (id)initWithSpecifierTarget:(id)arg1 parentSpecifier:(id)arg2 specifiers:(id)arg3;
 - (id)initWithSourceBundle:(id)arg1 sourcePlistName:(id)arg2 sourcePlistContents:(id)arg3 sourceTitle:(id)arg4 sourceIdentifier:(id)arg5 specifierTarget:(id)arg6 parentSpecifier:(id)arg7 specifiers:(id)arg8 bundleControllers:(id)arg9 errors:(id)arg10;
 

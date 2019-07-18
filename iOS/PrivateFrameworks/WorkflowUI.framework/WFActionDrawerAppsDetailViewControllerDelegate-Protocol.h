@@ -6,9 +6,10 @@
 
 #import <WorkflowUI/NSObject-Protocol.h>
 
-@class WFAction, WFActionDrawerAppsDetailViewController;
+@class UIView, WFAction, WFActionDrawerAppsDetailViewController;
 
 @protocol WFActionDrawerAppsDetailViewControllerDelegate <NSObject>
+- (void)appDetailsViewController:(WFActionDrawerAppsDetailViewController *)arg1 didSelectDocumentationForAction:(WFAction *)arg2 fromView:(UIView *)arg3;
 - (void)appDetailsViewController:(WFActionDrawerAppsDetailViewController *)arg1 didSelectAction:(WFAction *)arg2;
 @end
 

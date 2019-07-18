@@ -28,6 +28,7 @@
 @property(nonatomic) __weak HMDCloudCache *cache; // @synthesize cache=_cache;
 - (void).cxx_destruct;
 - (void)deleteCloudRecord:(id)arg1;
+- (void)deleteCloudRecordNames:(id)arg1;
 - (void)updateCloudRecord:(id)arg1;
 - (void)addCloudRecord:(id)arg1;
 - (id)__cloudRecordWithObjectID:(id)arg1;

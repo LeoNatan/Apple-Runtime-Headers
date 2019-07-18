@@ -8,7 +8,7 @@
 
 #import <PhotosImagingFoundation/NSCopying-Protocol.h>
 
-@class CLLocation, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSString, NSTimeZone;
+@class CLLocation, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSNumber, NSString, NSTimeZone;
 
 @interface IPAMetadata : NSObject <NSCopying>
 {
@@ -89,8 +89,6 @@
 - (void)_digestedAVExifAttributesFromExif:(id)arg1;
 - (void)_digestedCameraSettingsExifAttributesFromExif:(id)arg1;
 - (void)_digestedDateTimeExifAttributesFromExif:(id)arg1;
-- (BOOL)_validTimezone:(id)arg1 forLongitude:(id)arg2;
-- (long long)approximateTimezoneOffsetInSecondsForLongitude:(id)arg1;
 - (void)digestedDateTimeExifAttributesFromExif:(id)arg1;
 - (void)_digestedOrientationExifAttributesFromExif:(id)arg1;
 - (void)_enforceProperFormatting:(id)arg1;
@@ -123,6 +121,8 @@
 @property(readonly, nonatomic) NSString *groupingUuid;
 @property(readonly, nonatomic) NSString *burstUuid;
 @property(readonly, nonatomic) NSString *exifImageDateTimeString;
+@property(readonly, nonatomic) NSNumber *timeZoneOffset;
+@property(readonly, nonatomic) NSString *timeZoneName;
 @property(readonly, nonatomic) NSDate *imageDate;
 @property(readonly, nonatomic) struct CGSize imageSize;
 - (id)utiForExtension:(id)arg1;

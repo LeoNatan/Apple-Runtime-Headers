@@ -24,10 +24,10 @@
 - (void)serializePersonWithName:(id)arg1 vCardData:(id)arg2;
 - (void)addFilename:(id)arg1;
 - (void)writeVCardData:(id)arg1 toPath:(id)arg2;
-- (void)serializePerson:(id)arg1 addressBook:(id)arg2;
+- (void)serializePerson:(id)arg1;
 @property(readonly, nonatomic) NSArray *filenames;
 - (id)makeProgress;
-- (void)serializePeople:(id)arg1 addressBook:(id)arg2;
+- (void)serializePeople:(id)arg1;
 - (void)dealloc;
 - (id)initWithBasePath:(id)arg1;
 

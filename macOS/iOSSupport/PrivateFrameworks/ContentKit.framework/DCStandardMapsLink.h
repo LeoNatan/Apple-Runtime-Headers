@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface DCStandardMapsLink : DCMapsLink
 {
     NSURL *_URL;

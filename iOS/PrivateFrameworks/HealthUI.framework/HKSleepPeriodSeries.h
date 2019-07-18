@@ -19,7 +19,9 @@
     struct CGSize _cornerRadii;
 }
 
-+ (id)sleepImageCompatibleWithFont:(id)arg1;
++ (id)inBedImageCompatibleWithFont:(id)arg1 withColor:(id)arg2;
++ (id)asleepImageCompatibleWithFont:(id)arg1 withColor:(id)arg2;
++ (id)_sleepCircleImageWithWidth:(double)arg1 diameter:(double)arg2 color:(id)arg3;
 @property(copy, nonatomic) CDUnknownBlockType startOfDayTransform; // @synthesize startOfDayTransform=_startOfDayTransform;
 @property(copy, nonatomic) HKStrokeStyle *goalLineStokeStyle; // @synthesize goalLineStokeStyle=_goalLineStokeStyle;
 @property(copy, nonatomic) NSArray *highlightedFillStyles; // @synthesize highlightedFillStyles=_highlightedFillStyles;

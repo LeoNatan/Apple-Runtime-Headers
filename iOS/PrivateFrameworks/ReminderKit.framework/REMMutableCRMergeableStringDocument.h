@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (void)replicaIDHelperDidAcquireReplicaUUID:(id)arg1;
 - (void)_test_insertString:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)wipeAndReplaceWithString:(id)arg1;
 - (id)immutableDocument;
 @property(readonly, nonatomic) TTMergeableAttributedString *mergeableString;
 - (id)initWithReplicaIDSource:(id)arg1 immutableDocumentToEdit:(id)arg2;

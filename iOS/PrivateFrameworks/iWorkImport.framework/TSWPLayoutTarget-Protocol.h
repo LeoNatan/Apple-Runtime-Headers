@@ -36,8 +36,14 @@
 @property(readonly, nonatomic) NSObject<TSWPTopicNumberHints> *previousTargetTopicNumbers;
 @property(readonly, nonatomic) id <TSWPOffscreenColumn> previousTargetLastColumn;
 @property(readonly, nonatomic) NSMutableArray *columns;
+- (_Bool)descendersCannotClip;
+- (TSUBezierPath *)interiorClippingPath;
+- (_Bool)containsStartOfRange:(struct _NSRange)arg1;
 - (_Bool)isLayoutOffscreen;
+- (double)textScaleForChild:(TSDLayout *)arg1;
 - (void)addAttachmentLayout:(TSDLayout *)arg1;
+- (void)markHiddenInlineDrawableLayout:(TSDLayout *)arg1;
+- (void)clearHiddenInlineDrawableLayoutMarks;
 - (NSArray *)currentAnchoredDrawableLayouts;
 - (NSArray *)currentInlineDrawableLayouts;
 - (TSDLayout *)validatedLayoutForAnchoredDrawable:(id <TSDInfo>)arg1;
@@ -58,7 +64,6 @@
 @property(retain, nonatomic) NSMutableArray *anchoredDrawablesForRelayout;
 @property(readonly, nonatomic) struct CGRect maskRect;
 - (TSDWrapSegments *)interiorWrapSegments;
-- (TSUBezierPath *)interiorClippingPath;
 - (_Bool)invalidateForPageCountChange;
 - (unsigned int)pageIndex;
 - (struct CGPoint)anchoredAttachmentPositionFromLayoutPosition:(struct CGPoint)arg1;

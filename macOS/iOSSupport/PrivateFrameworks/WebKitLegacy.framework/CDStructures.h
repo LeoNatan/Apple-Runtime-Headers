@@ -59,7 +59,7 @@ struct ArchiveResource {
 
 struct ArchiveResourceCollection;
 
-struct AtomicString {
+struct AtomString {
     struct String _field1;
 };
 
@@ -664,7 +664,7 @@ struct HTMLVideoElement {
     _Bool _field125;
     _Bool _field126;
     struct unique_ptr<WebCore::HTMLImageLoader, std::__1::default_delete<WebCore::HTMLImageLoader>> _field127;
-    struct AtomicString _field128;
+    struct AtomString _field128;
     unsigned int _field129;
     unsigned int _field130;
 };
@@ -1207,7 +1207,7 @@ struct KeyboardEvent {
     unsigned int :1;
     unsigned int :1;
     unsigned int :2;
-    struct AtomicString _field4;
+    struct AtomString _field4;
     struct RefPtr<WebCore::EventTarget, WTF::DumbPtrTraits<WebCore::EventTarget>> _field5;
     struct EventPath *_field6;
     struct RefPtr<WebCore::EventTarget, WTF::DumbPtrTraits<WebCore::EventTarget>> _field7;
@@ -1321,7 +1321,7 @@ struct MouseEventData {
     _Bool _field5;
     struct LayoutPoint _field6;
     struct FloatPoint _field7;
-    unsigned short _field8;
+    short _field8;
     unsigned short _field9;
     _Bool _field10;
 };
@@ -1340,7 +1340,7 @@ struct NavigationAction {
     struct Optional<WebCore::NavigationAction::UIEventWithKeyStateData> _field6;
     struct Optional<WebCore::NavigationAction::MouseEventData> _field7;
     struct RefPtr<WebCore::UserGestureToken, WTF::DumbPtrTraits<WebCore::UserGestureToken>> _field8;
-    struct AtomicString _field9;
+    struct AtomString _field9;
     _Bool _field10;
     _Bool _field11;
     _Bool _field12;
@@ -1989,8 +1989,8 @@ struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl>> {
     struct StringImpl *m_ptr;
 };
 
-struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> {
-    struct WeakReference *_field1;
+struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> {
+    struct WeakPtrImpl *_field1;
 };
 
 struct RefPtr<WebCore::Archive, WTF::DumbPtrTraits<WebCore::Archive>> {
@@ -2245,11 +2245,11 @@ struct ResourceRequest {
 
 struct ResourceResponse {
     struct URL _field1;
-    struct AtomicString _field2;
+    struct AtomString _field2;
     long long _field3;
-    struct AtomicString _field4;
-    struct AtomicString _field5;
-    struct AtomicString _field6;
+    struct AtomString _field4;
+    struct AtomString _field5;
+    struct AtomString _field6;
     struct HTTPHeaderMap _field7;
     struct NetworkLoadMetrics _field8;
     struct Optional<WebCore::CertificateInfo> _field9;
@@ -2751,34 +2751,34 @@ struct Weak<WebCore::JSDOMObject> {
 struct WeakImpl;
 
 struct WeakPtr<const WebCore::MediaResourceLoader> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::ContainerNode> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::DeferrableTask<WebCore::Timer>> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::MediaProducer> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::Page> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer>> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
-struct WeakReference;
+struct WeakPtrImpl;
 
 struct WebContent {
     struct String _field1;

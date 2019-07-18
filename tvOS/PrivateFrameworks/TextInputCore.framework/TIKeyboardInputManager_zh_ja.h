@@ -41,6 +41,7 @@
 + (id)offlineLearningHandleForInputMode:(id)arg1;
 + (id)dummyTouchData;
 + (id)dummyGeometryData;
++ (void)removeDynamicDictionaryForInputMode:(id)arg1;
 + (id)inputMethodWithChainedKeyboardInputManager:(id)arg1;
 @property(readonly, nonatomic) NSMutableDictionary *touchUpEvents; // @synthesize touchUpEvents=_touchUpEvents;
 @property(readonly, nonatomic) NSMutableDictionary *touchDownEvents; // @synthesize touchDownEvents=_touchDownEvents;

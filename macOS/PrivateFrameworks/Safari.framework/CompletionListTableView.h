@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) BOOL usesMenuSelectionStyle; // @synthesize usesMenuSelectionStyle=_usesMenuSelectionStyle;
 @property(nonatomic) BOOL actsLikeMenu; // @synthesize actsLikeMenu=_actsLikeMenu;
+- (id)accessibilityIdentifier;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityEnabled;

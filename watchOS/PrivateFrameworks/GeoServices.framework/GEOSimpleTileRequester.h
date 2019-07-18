@@ -27,8 +27,12 @@
     _Bool _subclassImplementsTileEdition;
     _Bool _hasRemainingTileKeys;
     GEOTileKeyMap *_signpostIDs;
+    GEOTileKeyMap *_tileLoaderCreateTimes;
     unsigned int _highestRunningOperationPriority;
     geo_isolater *_highestRunningOperationPriorityIsolation;
+    _Bool _includeReasonHeader;
+    _Bool _allowTLSSessionTicketUse;
+    _Bool _allowTCPFastOpen;
 }
 
 @property(readonly, nonatomic) GEOTileRequestBalancer *balancer; // @synthesize balancer=_balancer;

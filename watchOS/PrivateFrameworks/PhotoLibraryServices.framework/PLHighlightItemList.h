@@ -28,6 +28,7 @@
 - (void)reset;
 - (void)mergeWithHighlightItemList:(id)arg1;
 - (id)description;
+- (void)_updateStartEndDates;
 - (void)_updateHighlightItemsOrdering;
 - (void)removeHighlightItem:(id)arg1;
 - (void)addHighlightItem:(id)arg1;

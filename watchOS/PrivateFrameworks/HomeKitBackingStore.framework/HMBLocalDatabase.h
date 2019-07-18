@@ -19,9 +19,11 @@
     HMBLocalSQLContext *_local;
     HMFUnfairLock *_lock;
     NSMapTable *_openZonesByZoneID;
+    CDUnknownBlockType _localZoneFactory;
 }
 
 + (id)logCategory;
+@property(copy, nonatomic) CDUnknownBlockType localZoneFactory; // @synthesize localZoneFactory=_localZoneFactory;
 @property(readonly, nonatomic) NSMapTable *openZonesByZoneID; // @synthesize openZonesByZoneID=_openZonesByZoneID;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) HMBLocalSQLContext *local; // @synthesize local=_local;

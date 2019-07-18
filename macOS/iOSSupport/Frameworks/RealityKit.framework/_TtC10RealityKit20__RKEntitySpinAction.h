@@ -12,6 +12,9 @@
     // Error parsing type: , name: iterations
     // Error parsing type: , name: axis
     // Error parsing type: , name: direction
+    // Error parsing type: , name: currentAnimation
+    // Error parsing type: , name: updateSubscription
+    // Error parsing type: , name: deadline
 }
 
 - (id)copyWithZone:(void *)arg1;

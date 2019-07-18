@@ -10,7 +10,7 @@
 
 @interface CAMModeDialItem : UIView
 {
-    _Bool _highlighted;
+    _Bool _selected;
     _Bool _shouldShadowTitleText;
     NSString *_title;
     UIFont *_font;
@@ -23,12 +23,12 @@
 @property(nonatomic) _Bool shouldShadowTitleText; // @synthesize shouldShadowTitleText=_shouldShadowTitleText;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-@property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
+@property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 - (void).cxx_destruct;
 - (struct CGPath *)_pathForAttributedString:(struct __CFAttributedString *)arg1;
 - (void)_updateScalableTextPathFromAttributedTitle;
 - (struct CGColor *)_textColor;
-- (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) struct __CFAttributedString *_attributedTitle;
 - (void)tintColorDidChange;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

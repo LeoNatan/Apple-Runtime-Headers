@@ -39,6 +39,7 @@
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)viewDidLoad;

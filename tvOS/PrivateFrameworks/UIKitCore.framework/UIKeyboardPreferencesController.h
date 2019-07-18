@@ -10,10 +10,9 @@
 
 @interface UIKeyboardPreferencesController : NSObject
 {
-    struct CGPoint _floatingKeyboardPosition;
-    unsigned long long _floatingKeyboardDockedEdge;
 }
 
++ (id)valueForPreferenceKey:(id)arg1 domain:(id)arg2;
 + (id)sharedPreferencesController;
 - (_Bool)isPasswordAutoFillAllowed;
 - (_Bool)respondsToSelector:(SEL)arg1;
@@ -25,7 +24,6 @@
 - (void)performedFirstReachableKeyboardInteraction;
 - (_Bool)isFirstReachableKeyboardInteraction;
 @property long long handBias;
-@property(readonly) _Bool usesNovoPredictionBar;
 @property _Bool enableProKeyboard;
 - (_Bool)spaceConfirmationEnabled;
 - (double)rivenSizeFactor:(double)arg1;

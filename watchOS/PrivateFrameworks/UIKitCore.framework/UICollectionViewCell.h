@@ -79,8 +79,8 @@
 - (_Bool)_descendantsShouldHighlight;
 - (_Bool)_highlightDescendantsWhenSelected;
 - (void)_updateBackgroundView;
-- (void)_descendent:(id)arg1 didMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
-- (void)_descendent:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
+- (void)_monitoredView:(id)arg1 didMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
+- (void)_monitoredView:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)_setOpaque:(_Bool)arg1 forSubview:(id)arg2;
 - (void)_updateHighlightColorsForAnimationHalfwayPoint;
 - (void)_updateHighlightColorsForView:(id)arg1 highlight:(_Bool)arg2;

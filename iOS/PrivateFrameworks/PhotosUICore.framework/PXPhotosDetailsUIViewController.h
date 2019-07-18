@@ -14,18 +14,19 @@
 #import <PhotosUICore/PXUIViewControllerZoomTransitionEndPoint-Protocol.h>
 #import <PhotosUICore/PXWidgetCompositionDelegate-Protocol.h>
 #import <PhotosUICore/PXWidgetUnlockDelegate-Protocol.h>
-#import <PhotosUICore/_UIContextMenuInteractionDelegate-Protocol.h>
+#import <PhotosUICore/UIContextMenuInteractionDelegate-Protocol.h>
 
-@class NSArray, NSMapTable, NSMutableArray, NSString, NSUserActivity, PXBarsController, PXPhotosDetailsContext, PXPhotosDetailsHeaderTileWidget, PXPhotosDetailsSpecManager, PXPhotosDetailsViewModel, PXScrollViewController, PXSwipeSelectionManager, PXTilingController, PXUIScrollViewController, PXWidgetComposition, PXWidgetSpec, UIScrollView, UIView, _UIContextMenuInteraction;
+@class NSArray, NSMapTable, NSMutableArray, NSString, NSUserActivity, PXBarsController, PXPhotosDetailsContext, PXPhotosDetailsHeaderTileWidget, PXPhotosDetailsSpecManager, PXPhotosDetailsViewModel, PXScrollViewController, PXSwipeSelectionManager, PXTilingController, PXUIScrollViewController, PXWidgetComposition, PXWidgetSpec, UIContextMenuInteraction, UIScrollView, UIView;
 @protocol PXAssetCollectionActionPerformerDelegate, PXDisplayAsset, PXPhotosDetailsUIViewControllerDelegate, PXUIWidget;
 
-@interface PXPhotosDetailsUIViewController : UIViewController <PXWidgetCompositionDelegate, PXChangeObserver, PXUIViewControllerZoomTransitionEndPoint, PXActionPerformerDelegate, PXWidgetUnlockDelegate, PXForcedDismissableViewController, _UIContextMenuInteractionDelegate, PXScrollViewControllerObserver, PXPurgeableController>
+@interface PXPhotosDetailsUIViewController : UIViewController <PXWidgetCompositionDelegate, PXChangeObserver, PXUIViewControllerZoomTransitionEndPoint, PXActionPerformerDelegate, PXWidgetUnlockDelegate, PXForcedDismissableViewController, UIContextMenuInteractionDelegate, PXScrollViewControllerObserver, PXPurgeableController>
 {
     struct {
         _Bool requestDismissal;
     } _delegateRespondsTo;
     _Bool __hasAppeared;
     _Bool __shouldFocusHeader;
+    _Bool __previewCommitting;
     _Bool _empty;
     PXPhotosDetailsContext *_context;
     unsigned long long _options;
@@ -48,7 +49,8 @@
     UIView *__headerTileView;
     CDUnknownBlockType __ppt_allWidgetLoadingCompleteHandler;
     CDUnknownBlockType __ppt_variationsWidgetLoadingCompleteHandler;
-    _UIContextMenuInteraction *__contextMenuInteraction;
+    UIContextMenuInteraction *__contextMenuInteraction;
+    UIViewController *__previewViewController;
     NSUserActivity *_siriActionActivity;
     PXBarsController *_barsController;
     id <PXAssetCollectionActionPerformerDelegate> _actionPerformerDelegate;
@@ -63,7 +65,9 @@
 @property(nonatomic) struct UIEdgeInsets contentEdgeInsets; // @synthesize contentEdgeInsets=_contentEdgeInsets;
 @property(readonly, nonatomic) PXBarsController *barsController; // @synthesize barsController=_barsController;
 @property(retain, nonatomic) NSUserActivity *siriActionActivity; // @synthesize siriActionActivity=_siriActionActivity;
-@property(retain, nonatomic, setter=_setContextMenuInteraction:) _UIContextMenuInteraction *_contextMenuInteraction; // @synthesize _contextMenuInteraction=__contextMenuInteraction;
+@property(retain, nonatomic, setter=_setPreviewViewController:) UIViewController *_previewViewController; // @synthesize _previewViewController=__previewViewController;
+@property(nonatomic, setter=_setPreviewCommitting:) _Bool _previewCommitting; // @synthesize _previewCommitting=__previewCommitting;
+@property(retain, nonatomic, setter=_setContextMenuInteraction:) UIContextMenuInteraction *_contextMenuInteraction; // @synthesize _contextMenuInteraction=__contextMenuInteraction;
 @property(copy, nonatomic, setter=_ppt_setVariationsWidgetLoadingCompleteHandler:) CDUnknownBlockType _ppt_variationsWidgetLoadingCompleteHandler; // @synthesize _ppt_variationsWidgetLoadingCompleteHandler=__ppt_variationsWidgetLoadingCompleteHandler;
 @property(copy, nonatomic, setter=_ppt_setAllWidgetLoadingCompleteHandler:) CDUnknownBlockType _ppt_allWidgetLoadingCompleteHandler; // @synthesize _ppt_allWidgetLoadingCompleteHandler=__ppt_allWidgetLoadingCompleteHandler;
 @property(retain, nonatomic, setter=_setHeaderTileView:) UIView *_headerTileView; // @synthesize _headerTileView=__headerTileView;
@@ -97,10 +101,12 @@
 - (_Bool)prepareForDismissingForced:(_Bool)arg1;
 - (void)actionPerformer:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (void)_performAddToMemoriesAnimation;
+- (id)_previewViewControllerForLocation:(struct CGPoint)arg1;
 - (id)_widgetAtLocation:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
-- (id)contextMenuInteraction:(id)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(id)arg3;
-- (id)contextMenuInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
-- (_Bool)contextMenuInteractionShouldBegin:(id)arg1;
+- (void)contextMenuInteractionDidEnd:(id)arg1;
+- (void)contextMenuInteraction:(id)arg1 willCommitWithAnimator:(id)arg2;
+- (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
+- (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)playMiroMovieWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)zoomAnimationCoordinatorForZoomTransition:(id)arg1;

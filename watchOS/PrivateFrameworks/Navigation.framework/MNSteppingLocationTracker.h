@@ -8,14 +8,13 @@
 
 #import <Navigation/MNArrivalUpdaterDelegate-Protocol.h>
 
-@class GEORouteMatcher, MNArrivalUpdater, MNTransitLocationCoordinator, NSString;
+@class GEORouteMatcher, MNArrivalUpdater, NSString;
 
 __attribute__((visibility("hidden")))
 @interface MNSteppingLocationTracker : MNLocationTracker <MNArrivalUpdaterDelegate>
 {
     GEORouteMatcher *_routeMatcher;
     MNArrivalUpdater *_arrivalUpdater;
-    MNTransitLocationCoordinator *_transitLocationCoordinator;
 }
 
 - (void).cxx_destruct;

@@ -37,6 +37,7 @@
 - (void)beginAuthorizationWithParameters:(id)arg1;
 - (void)beginAuthorizationWithOperation:(id)arg1 url:(id)arg2 httpHeaders:(id)arg3 httpBody:(id)arg4;
 - (void)beginAuthorizationWithURL:(id)arg1 httpHeaders:(id)arg2 httpBody:(id)arg3;
+- (void)getAuthorizationHintsWithURL:(id)arg1 responseCode:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 @property(retain, nonatomic) NSDictionary *authorizationOptions;
 @property(retain) NSObject<OS_dispatch_queue> *delegateDispatchQueue;
 - (id)init;

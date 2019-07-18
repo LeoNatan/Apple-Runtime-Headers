@@ -9,6 +9,7 @@
 @class NSArray;
 
 @protocol _PXScrollDocumentViewAccessibilityDelegate <NSObject>
+@property(retain, nonatomic) NSArray *axDelegateAccessibilitySelectedCells;
 @property(retain, nonatomic) NSArray *axDelegateAccessibilitySelectedChildren;
 @property(readonly, nonatomic) NSArray *axDelegateAccessibilityVisibleChildren;
 @property(readonly, nonatomic) NSArray *axDelegateAccessibilityChildren;

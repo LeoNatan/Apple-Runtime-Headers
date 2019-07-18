@@ -7,11 +7,16 @@
 #import <UIKit/UIColor.h>
 
 @interface UIColor (DC)
++ (struct UIColor *)dc_labelBackgroundColor;
++ (struct UIColor *)dc_editBackgroundColor;
++ (struct UIColor *)dc_barColor;
 + (struct UIColor *)dc_lightPaperTexture;
 + (struct UIColor *)dc_paperTexture;
 + (struct UIImage *)dc_lightPaperImage;
 + (struct UIImage *)dc_paperImage;
 + (struct UIColor *)DCExtractedDocumentViewControllerBackgroundColor;
++ (struct UIColor *)colorInBundleWithName:(id)arg1;
 + (id)dc_darkerAccessibilityColorForColor:(id)arg1;
+- (_Bool)dc_colorIsLight;
 @end
 

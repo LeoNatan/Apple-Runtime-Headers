@@ -33,6 +33,7 @@
     NSArray *_userPreferredLatinLanguages;
     NSArray *_userTopLanguages;
     NSArray *_userTransliterationLocalizations;
+    NSArray *_userAdditionalEnglishLocalizations;
     NSMutableDictionary *_learnedResponses;
     NSMutableDictionary *_probationaryLearnedResponses;
     NSMutableDictionary *_probationaryLearnedResponseTimes;

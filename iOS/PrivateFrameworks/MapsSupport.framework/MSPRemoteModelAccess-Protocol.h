@@ -14,11 +14,11 @@
 - (void)testByNotingHistoryChangedOnDisk;
 - (void)eraseHistorySerializedRepresentationWithCompletion:(void (^)(NSError *))arg1;
 - (void)fetchLastKnownHistoryOperationIdentifier:(void (^)(NSUUID *))arg1;
-- (void)commitHistorySerializedRepresentation:(NSData *)arg1 earliestKnownSyncDate:(NSDate *)arg2 operationIdentifier:(NSUUID *)arg3 completion:(void (^)(NSError *))arg4;
+- (void)commitHistorySerializedRepresentation:(NSData *)arg1 reapingTombstones:(_Bool)arg2 earliestKnownSyncDate:(NSDate *)arg3 operationIdentifier:(NSUUID *)arg4 completion:(void (^)(NSError *))arg5;
 - (void)fetchHistorySerializedRepresentationWithCompletion:(void (^)(NSData *, NSError *))arg1;
 - (void)eraseFavoritesSerializedRepresentationWithCompletion:(void (^)(NSError *))arg1;
 - (void)fetchLastKnownFavoritesOperationIdentifier:(void (^)(NSUUID *))arg1;
-- (void)commitFavoritesSerializedRepresentation:(NSData *)arg1 operationIdentifier:(NSUUID *)arg2 completion:(void (^)(NSError *))arg3;
+- (void)commitFavoritesSerializedRepresentation:(NSData *)arg1 reapingTombstones:(_Bool)arg2 operationIdentifier:(NSUUID *)arg3 completion:(void (^)(NSError *))arg4;
 - (void)fetchFavoritesSerializedRepresentationWithCompletion:(void (^)(NSData *, NSError *))arg1;
 - (void)eraseCollectionsSerializedRepresentationWithCompletion:(void (^)(NSError *))arg1;
 - (void)fetchLastKnownCollectionsOperationIdentifier:(void (^)(NSUUID *))arg1;

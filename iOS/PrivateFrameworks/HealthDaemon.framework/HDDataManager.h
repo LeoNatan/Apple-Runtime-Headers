@@ -53,7 +53,7 @@
 - (void)addObserver:(id)arg1 forDataType:(id)arg2;
 - (void)removeObserverForAllTypes:(id)arg1;
 - (void)addObserverForAllTypes:(id)arg1;
-- (void)hasSampleWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (long long)hasSampleWithBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)containsDataObject:(id)arg1;
 - (void)_notificationQueue_notifyObserversSamplesWithTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (void)_notifyObserversSamplesWithTypesWereRemoved:(id)arg1 anchor:(id)arg2;

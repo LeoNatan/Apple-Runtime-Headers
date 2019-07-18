@@ -9,7 +9,7 @@
 #import <EmailDaemon/EFLoggable-Protocol.h>
 #import <EmailDaemon/EMMessageRepositoryInterface-Protocol.h>
 
-@class EDMailboxPersistence, EDMailboxPredictionController, EDMessageChangeManager, EDMessagePersistence, EDPersistenceHookRegistry, EDThreadPersistence, NSConditionLock, NSHashTable, NSMutableDictionary, NSString;
+@class EDFetchController, EDMailboxPersistence, EDMailboxPredictionController, EDMessageChangeManager, EDMessagePersistence, EDPersistenceHookRegistry, EDThreadPersistence, NSConditionLock, NSHashTable, NSMutableDictionary, NSString;
 @protocol EMUserProfileProvider, OS_dispatch_queue;
 
 @interface EDMessageRepository : NSObject <EFLoggable, EMMessageRepositoryInterface>
@@ -18,6 +18,7 @@
     struct os_unfair_lock_s _mailboxPredictionControllerLock;
     struct os_unfair_lock_s _handlersLock;
     NSMutableDictionary *_queryHandlers;
+    NSMutableDictionary *_messageQueryHandlers;
     NSMutableDictionary *_threadQueryHandlers;
     NSHashTable *_handlerTokens;
     EDPersistenceHookRegistry *_hookRegistry;
@@ -28,9 +29,11 @@
     NSObject<OS_dispatch_queue> *_serializationQueue;
     EDMailboxPersistence *_mailboxPersistence;
     id <EMUserProfileProvider> _userProfileProvider;
+    EDFetchController *_fetchController;
 }
 
 + (id)log;
+@property(readonly, nonatomic) EDFetchController *fetchController; // @synthesize fetchController=_fetchController;
 @property(readonly, nonatomic) id <EMUserProfileProvider> userProfileProvider; // @synthesize userProfileProvider=_userProfileProvider;
 @property(readonly, nonatomic) EDMailboxPersistence *mailboxPersistence; // @synthesize mailboxPersistence=_mailboxPersistence;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serializationQueue; // @synthesize serializationQueue=_serializationQueue;
@@ -41,15 +44,18 @@
 @property(retain, nonatomic) EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
 @property(retain, nonatomic) NSHashTable *handlerTokens; // @synthesize handlerTokens=_handlerTokens;
 @property(retain, nonatomic) NSMutableDictionary *threadQueryHandlers; // @synthesize threadQueryHandlers=_threadQueryHandlers;
+@property(retain, nonatomic) NSMutableDictionary *messageQueryHandlers; // @synthesize messageQueryHandlers=_messageQueryHandlers;
 @property(retain, nonatomic) NSMutableDictionary *queryHandlers; // @synthesize queryHandlers=_queryHandlers;
 - (void).cxx_destruct;
+- (void)loadOlderMessagesForMailboxes:(id)arg1;
 - (id)mailboxPredictionController;
 - (void)predictMailboxForMovingMessages:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)cachedMetadataJSONForKey:(id)arg1 messageID:(id)arg2;
+- (void)getCachedMetadataJSONForKey:(id)arg1 messageID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setCachedMetadataJSON:(id)arg1 forKey:(id)arg2 messageID:(id)arg3;
 - (void)resetPrecomputedThreadScopesForMailboxScope:(id)arg1;
 - (id)requestRepresentationForMessageWithID:(id)arg1 options:(id)arg2 delegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (id)_persistedMesssagesForMessageChangeAction:(id)arg1;
+- (id)_persistedMessagesForObjectIDs:(id)arg1;
+- (id)_persistedMessagesForMessageChangeAction:(id)arg1;
 - (void)_performMessageConversationFlagChangeAction:(id)arg1;
 - (id)_performUndoAction:(id)arg1;
 - (id)_undoActionsForMovedMessages:(id)arg1;
@@ -58,10 +64,14 @@
 - (void)_performMessageTransferAllAction:(id)arg1;
 - (id)_performMessageTransferAction:(id)arg1 returnUndoAction:(BOOL)arg2;
 - (id)_changeFlagsForPersistedMessages:(id)arg1 flagChange:(id)arg2 returnUndoAction:(BOOL)arg3;
+- (void)_performMessageDeleteAction:(id)arg1;
+- (void)_performMessageDeleteAllAction:(id)arg1;
 - (void)_performMessageFlagChangeAllAction:(id)arg1;
 - (id)_performMessageFlagChangeAction:(id)arg1 returnUndoAction:(BOOL)arg2;
 - (void)performMessageChangeAction:(id)arg1 returnUndoAction:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)messageListItemsForObjectIDs:(id)arg1 observationIdentifier:(id)arg2 loadSummaryForAdditionalObjectIDs:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_threadsByThreadObjectIDsByScope:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
+- (id)_partitionObjectIDs:(id)arg1;
 - (void)cancelAllHandlers;
 - (void)startCountingQuery:(id)arg1 includingServerCountsForMailboxScope:(id)arg2 withObserver:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_performQuery:(id)arg1 withObserver:(id)arg2 observationIdentifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -69,7 +79,7 @@
 - (void)performCountQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performQuery:(id)arg1 limit:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
-- (id)initWithMessagePersistence:(id)arg1 threadPersistence:(id)arg2 messageChangeManager:(id)arg3 hookRegistry:(id)arg4 mailboxPersistence:(id)arg5 userProfileProvider:(id)arg6;
+- (id)initWithMessagePersistence:(id)arg1 threadPersistence:(id)arg2 messageChangeManager:(id)arg3 hookRegistry:(id)arg4 mailboxPersistence:(id)arg5 userProfileProvider:(id)arg6 fetchController:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

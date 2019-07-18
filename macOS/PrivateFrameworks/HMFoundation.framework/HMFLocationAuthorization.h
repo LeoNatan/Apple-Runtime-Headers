@@ -9,7 +9,7 @@
 #import <HMFoundation/CLLocationManagerDelegate-Protocol.h>
 #import <HMFoundation/HMFLogging-Protocol.h>
 
-@class CLLocationManager, NSMutableSet, NSObject, NSString, __HMFLocationAuthorizationRequest;
+@class CLLocationManager, NSBundle, NSMutableSet, NSObject, NSString, __HMFLocationAuthorizationRequest;
 @protocol HMFLocking, OS_dispatch_queue;
 
 @interface HMFLocationAuthorization : HMFObject <CLLocationManagerDelegate, HMFLogging>
@@ -21,6 +21,7 @@
     __HMFLocationAuthorizationRequest *_request;
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_bundleIdentifier;
+    NSBundle *_bundle;
     CLLocationManager *_internal;
 }
 
@@ -29,6 +30,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)initialize;
 @property(readonly) CLLocationManager *internal; // @synthesize internal=_internal;
+@property(readonly) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(readonly, copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
 - (id)logIdentifier;
@@ -42,6 +44,7 @@
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (id)attributeDescriptions;
 - (void)dealloc;
+- (id)initWithBundle:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)init;
 

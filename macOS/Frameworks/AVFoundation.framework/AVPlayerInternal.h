@@ -71,6 +71,7 @@ __attribute__((visibility("hidden")))
     BOOL airPlayVideoActive;
     BOOL isConnectedToPhysicalSecondScreen;
     BOOL outputObscuredDueToInsufficientExternalProtection;
+    long long externalProtectionStatus;
     NSString *ancillaryPerformanceInformationForDisplay;
     float rate;
     BOOL automaticallyWaitsToMinimizeStalling;
@@ -81,6 +82,7 @@ __attribute__((visibility("hidden")))
     BOOL currentItemNonForcedSubtitlesEnabled;
     unsigned long long preferredVideoDecoderGPURegistryID;
     BOOL disallowsAutoPauseOnRouteRemovalIfNoAudio;
+    BOOL hostApplicationInForeground;
     NSMutableArray *videoLayers;
     NSMutableArray *subtitleLayers;
     NSMutableArray *closedCaptionLayers;
@@ -88,7 +90,7 @@ __attribute__((visibility("hidden")))
     int nextPrerollIDToGenerate;
     int pendingPrerollID;
     CDUnknownBlockType prerollCompletionHandler;
-    id <AVCallbackCancellation><AVKVOIntrospection> currentItemSuppressesVideoLayersCallbackInvoker;
+    id currentItemSuppressesVideoLayersNotificationToken;
     id <AVCallbackCancellation><AVKVOIntrospection> currentItemPreferredPixelBufferAttributesCallbackInvoker;
     struct OpaqueFigPlayer *figPlayer;
     struct OpaqueFigPlaybackItem *figPlaybackItemToIdentifyNextCurrentItem;
@@ -97,7 +99,6 @@ __attribute__((visibility("hidden")))
     NSArray *itemsInFigPlayQueue;
     NSArray *expectedAssetTypes;
     BOOL reevaluateBackgroundPlayback;
-    BOOL hostApplicationInForeground;
     BOOL hadAssociatedOnscreenPlayerLayerWhenSuspended;
     struct OpaqueCMClock *figMasterClock;
     NSString *captionRenderingStrategy;

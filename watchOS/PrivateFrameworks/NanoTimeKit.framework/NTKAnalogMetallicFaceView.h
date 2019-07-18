@@ -20,6 +20,7 @@
 @property(nonatomic) unsigned int currentDialShape; // @synthesize currentDialShape=_currentDialShape;
 @property(nonatomic) unsigned int currentMetallicColor; // @synthesize currentMetallicColor=_currentMetallicColor;
 - (void).cxx_destruct;
+- (_Bool)_wantsConstantSpeedZoom;
 - (void)reloadDataSources;
 - (void)setupDataSources;
 - (void)_updateDialSize;

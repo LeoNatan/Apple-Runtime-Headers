@@ -54,6 +54,7 @@
 - (void)viewDidLoad;
 - (void)dealloc;
 - (_Bool)_clientIsWebApp;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

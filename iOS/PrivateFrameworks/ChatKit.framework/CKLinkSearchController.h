@@ -6,21 +6,14 @@
 
 #import <ChatKit/CKMessageTypeSearchController.h>
 
-@class NSArray, NSDictionary;
-
 @interface CKLinkSearchController : CKMessageTypeSearchController
 {
-    NSDictionary *_messageGUIDToLinkMetadata;
-    NSArray *_itemsPendingLoad;
 }
 
 + (Class)cellClass;
 + (id)reuseIdentifier;
 + (id)sectionIdentifier;
 + (id)sectionTitle;
-@property(retain, nonatomic) NSArray *itemsPendingLoad; // @synthesize itemsPendingLoad=_itemsPendingLoad;
-@property(retain, nonatomic) NSDictionary *messageGUIDToLinkMetadata; // @synthesize messageGUIDToLinkMetadata=_messageGUIDToLinkMetadata;
-- (void).cxx_destruct;
 - (_Bool)handleSelectionForResult:(id)arg1;
 - (id)previewViewControllerForResult:(id)arg1;
 - (_Bool)shouldStartMenuInteractionForResult:(id)arg1;
@@ -31,24 +24,14 @@
 - (id)layoutGroupWithEnvironment:(id)arg1;
 - (void)updateSupplementryViewIfNeeded:(id)arg1 atIndexPath:(id)arg2;
 - (id)cellForSupplementryItemInCollectionView:(id)arg1 atIndexPath:(id)arg2 supplementryViewKind:(id)arg3;
-- (id)cellForItemInCollectionView:(id)arg1 atIndex:(long long)arg2 withIdentifier:(id)arg3;
 - (_Bool)applyLayoutMarginsToLayoutGroup;
-- (id)_messageGUIDsForResults:(id)arg1;
-- (id)_guidsToLoadFromGUIDs:(id)arg1;
-- (void)_loadMessagesForGUIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)_localTransferPathsForItem:(id)arg1 withPathMap:(id)arg2;
-- (id)_linkMetadataForDatasource:(id)arg1;
-- (id)_generateLinkMetadataForMessages:(id)arg1 transfers:(id)arg2;
-- (id)_filteredRichLinkResultsFromResults:(id)arg1;
-- (void)cancelCurrentSearch;
-- (void)_loadItems:(id)arg1;
 - (void)postProcessAndUpdateResults:(id)arg1;
 - (id)queryResultsForItems:(id)arg1;
 - (double)interGroupSpacing;
 - (id)detailsFilterQueriesForChatGUIDs:(id)arg1;
+- (id)filterQueries;
 - (id)queryAttributesForText:(id)arg1;
 - (id)fetchAttributes;
-- (id)initWithSectionIndex:(unsigned long long)arg1;
 
 @end
 

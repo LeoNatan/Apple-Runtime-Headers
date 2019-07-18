@@ -28,7 +28,6 @@
 @property(retain, nonatomic) CSLayoutStrategy *layoutStrategy; // @synthesize layoutStrategy=_layoutStrategy;
 - (void).cxx_destruct;
 - (void)handleAction:(id)arg1 fromSender:(id)arg2;
-- (_Bool)isWidgetExtensionWithIdentifierVisible:(id)arg1;
 @property(readonly, nonatomic) long long presentationAltitude;
 @property(readonly, nonatomic) long long participantState;
 - (void)aggregateBehavior:(id)arg1;

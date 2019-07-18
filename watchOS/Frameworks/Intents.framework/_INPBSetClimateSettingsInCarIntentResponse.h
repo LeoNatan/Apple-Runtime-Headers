@@ -15,9 +15,11 @@
 @interface _INPBSetClimateSettingsInCarIntentResponse : PBCodable <_INPBSetClimateSettingsInCarIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

@@ -27,6 +27,12 @@
 }
 
 + (id)importantAttributesForBundle:(id)arg1;
++ (id)calendarContentType;
++ (id)remindersContentType;
++ (id)messagesContentType;
++ (id)mailContentType;
++ (id)contactContentType;
++ (id)documentsAppBundle;
 + (id)filesBundle;
 + (id)searchBundle;
 + (id)relatedSearchesBundle;
@@ -71,7 +77,7 @@
 - (CDUnknownBlockType)comparatorByJoiningComparator:(CDUnknownBlockType)arg1 withPredicate:(id)arg2;
 - (_Bool)wasItemCreatedWithinAWeek:(id)arg1;
 - (void)rerankItemsWithPolicyForBundleItems:(id)arg1 isCJK:(_Bool)arg2;
-- (void)computePolicyFeaturesForBundleItems:(id)arg1 isCJK:(_Bool)arg2 currentTime:(double)arg3;
+- (void)computePolicyFeaturesForBundleItems:(id)arg1 isCJK:(_Bool)arg2;
 - (void)updateScoresForPreparedItems:(id)arg1 isCJK:(_Bool)arg2 clientBundle:(id)arg3;
 - (void)updateScoresForPreparedItems:(id)arg1;
 - (void)hackMusicResultsWithItem:(id)arg1 featureVector:(id)arg2;

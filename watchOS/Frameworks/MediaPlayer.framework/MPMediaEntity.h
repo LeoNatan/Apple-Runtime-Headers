@@ -27,7 +27,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMultiverseIdentifier:(id)arg1;
+- (id)initWithMultiverseIdentifier:(id)arg1 library:(id)arg2;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)cachedValueForProperty:(id)arg1 isCached:(_Bool *)arg2;
 - (id)valuesForProperties:(id)arg1;

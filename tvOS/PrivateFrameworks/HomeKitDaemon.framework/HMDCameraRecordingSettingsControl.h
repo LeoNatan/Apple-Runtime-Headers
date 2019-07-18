@@ -8,12 +8,13 @@
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDCameraRecordingGeneralConfiguration, HMDCameraRecordingSelectedConfiguration, HMDCameraRecordingSupportedAudioConfiguration, HMDCameraRecordingSupportedVideoConfiguration, HMDCharacteristic, HMDHAPAccessory, HMDService, NSDictionary, NSObject, NSString;
+@class HMDCameraRecordingGeneralConfiguration, HMDCameraRecordingSelectedConfiguration, HMDCameraRecordingSupportedAudioConfiguration, HMDCameraRecordingSupportedVideoConfiguration, HMDCharacteristic, HMDHAPAccessory, HMDService, NSDictionary, NSNumber, NSObject, NSString;
 @protocol HMDCameraRecordingSettingsControlDelegate, OS_dispatch_queue;
 
 @interface HMDCameraRecordingSettingsControl : HMFObject <HMFLogging>
 {
     _Bool _configureCameraInProgress;
+    _Bool _canConfigureCameraForRecording;
     NSString *_logIdentifier;
     id <HMDCameraRecordingSettingsControlDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_workQueue;
@@ -39,6 +40,7 @@
 + (id)videoConfigurationsByPreferenceOrder;
 + (id)clientIdentifier;
 @property(retain) HMDCameraRecordingSelectedConfiguration *currentSelectedConfiguration; // @synthesize currentSelectedConfiguration=_currentSelectedConfiguration;
+@property _Bool canConfigureCameraForRecording; // @synthesize canConfigureCameraForRecording=_canConfigureCameraForRecording;
 @property _Bool configureCameraInProgress; // @synthesize configureCameraInProgress=_configureCameraInProgress;
 @property(retain) HMDCharacteristic *activeCharacteristic; // @synthesize activeCharacteristic=_activeCharacteristic;
 @property(retain) HMDCameraRecordingSupportedAudioConfiguration *supportedAudioConfiguration; // @synthesize supportedAudioConfiguration=_supportedAudioConfiguration;
@@ -61,7 +63,7 @@
 - (void)_handleSupportedConfigurationCharacteristicsReadResponse:(id)arg1;
 - (void)_readSupportedCameraRecordingConfiguration;
 - (void)configureCameraRecordingSettings;
-- (_Bool)_canConfigureAccessoryForRecording;
+- (void)updateCanConfigureCameraForRecording;
 - (id)_recordingAudioConfiguration;
 - (id)_recordingVideoConfiguration;
 - (id)_preferredAudioConfigurationOverride;
@@ -72,6 +74,10 @@
 - (void)handleAccessoryReachable:(id)arg1;
 - (void)handleAccessoryUnreachable:(id)arg1;
 - (void)start;
+@property(readonly, copy) NSNumber *configuredImageHeight;
+@property(readonly, copy) NSNumber *configuredImageWidth;
+@property(readonly, copy) NSNumber *configuredIFrameInterval;
+@property(readonly, copy) NSNumber *configuredBitRate;
 - (id)initWithWorkQueue:(id)arg1 accessory:(id)arg2 recordingManagementService:(id)arg3;
 
 // Remaining properties

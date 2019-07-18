@@ -36,6 +36,7 @@
 + (id)deviceState;
 + (id)daemon;
 + (id)conversation;
++ (id)managementStateObserver;
 + (id)conduit;
 + (id)cloudkit;
 + (id)checkpoint;

@@ -28,8 +28,6 @@
 - (void).cxx_destruct;
 - (BOOL)isHSA2Enabled;
 - (void)configureHSA2Enabled:(BOOL)arg1;
-- (BOOL)updateLocationOfInterestWithIdentifier:(id)arg1 type:(long long)arg2 customLabel:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (BOOL)addLocationOfInterestOfType:(long long)arg1 mapItem:(id)arg2 customLabel:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (BOOL)fetchLocationOfInterestWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)clearAllVehicleEventsWithHandler:(CDUnknownBlockType)arg1;
 - (void)stopMonitoringVehicleEvents;

@@ -35,6 +35,7 @@
 @property(readonly) unsigned long long itemPosition;
 @property(retain) NSGroupTouchBarItem *groupItemContainingItem;
 @property(retain) NSGroupTouchBarItem *compressionItemContainingItem;
+- (struct CGSize)sizeThatFitsProposedLayoutSize:(struct CGSize)arg1;
 @property long long priorityIndex;
 @property(readonly) struct CGSize contentClippingSize;
 - (void)_updateMeasuredSizes;

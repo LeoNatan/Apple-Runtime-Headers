@@ -8,13 +8,14 @@
 
 #import <RunningBoard/RBStateCaptureManaging-Protocol.h>
 
-@class NSMutableDictionary, NSMutableSet, NSString;
+@class NSMutableDictionary, NSString, RBSStateCaptureSet;
+@protocol OS_dispatch_queue;
 
 @interface RBStateCaptureManager : NSObject <RBStateCaptureManaging>
 {
     NSMutableDictionary *_itemsByIdentifier;
-    NSMutableSet *_itemsWithoutIdentifiers;
-    struct os_unfair_lock_s _lock;
+    RBSStateCaptureSet *_itemsWithoutIdentifiers;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void).cxx_destruct;

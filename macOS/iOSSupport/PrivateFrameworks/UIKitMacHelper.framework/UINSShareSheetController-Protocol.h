@@ -14,5 +14,6 @@
 @property(copy, nonatomic) CDUnknownBlockType activitySelectedHandler;
 @property(copy, nonatomic) CDUnknownBlockType completionWithItemsHandler;
 - (void)presentShareSheetWithItems:(NSArray *)arg1 atRect:(struct CGRect)arg2;
+- (void)presentShareSheetWithItems:(NSArray *)arg1 atUIWindowRect:(struct CGRect)arg2;
 @end
 

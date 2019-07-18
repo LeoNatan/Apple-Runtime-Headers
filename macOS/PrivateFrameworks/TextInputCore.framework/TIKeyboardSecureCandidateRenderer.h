@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) CAContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (id)cachedPayloadForSecureCandidateSlotID:(unsigned int)arg1;
+- (id)updateCachedCandidate:(id)arg1 withCandidateString:(id)arg2;
 - (id)cachedCandidateForSecureCandidate:(id)arg1;
 - (void)clearSecureCandidateCache;
 - (unsigned int)slotIDForSendCurrentLocationWithRenderTraits:(id)arg1;

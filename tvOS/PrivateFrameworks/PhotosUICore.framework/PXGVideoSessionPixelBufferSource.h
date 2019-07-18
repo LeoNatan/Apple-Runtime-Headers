@@ -9,37 +9,34 @@
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXGDisplayAssetPixelBufferSource-Protocol.h>
 
-@class NSString, PXMediaProvider, PXVideoSession;
-@protocol PXDisplayAsset, PXGVideoSessionProvider;
+@class NSString, PXVideoSession;
+@protocol PXGVideoSessionPixelBufferSourceDelegate;
 
 @interface PXGVideoSessionPixelBufferSource : NSObject <PXChangeObserver, PXGDisplayAssetPixelBufferSource>
 {
     PXVideoSession *_videoSession;
-    PXMediaProvider *_mediaProvider;
     NSString *_bufferRequestIdentifier;
     _Bool _pixelBufferStreamingEnabled;
-    id <PXDisplayAsset> _displayAsset;
     CDUnknownBlockType _pixelBufferDidChangeHandler;
     long long _desiredPlayState;
-    id <PXGVideoSessionProvider> _videoSessionProvider;
+    double _videoTranformScale;
+    id <PXGVideoSessionPixelBufferSourceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PXGVideoSessionProvider> videoSessionProvider; // @synthesize videoSessionProvider=_videoSessionProvider;
+@property(nonatomic) __weak id <PXGVideoSessionPixelBufferSourceDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) double videoTranformScale; // @synthesize videoTranformScale=_videoTranformScale;
 @property(nonatomic) _Bool pixelBufferStreamingEnabled; // @synthesize pixelBufferStreamingEnabled=_pixelBufferStreamingEnabled;
 @property(nonatomic) long long desiredPlayState; // @synthesize desiredPlayState=_desiredPlayState;
-@property(readonly, nonatomic) PXMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(copy, nonatomic) CDUnknownBlockType pixelBufferDidChangeHandler; // @synthesize pixelBufferDidChangeHandler=_pixelBufferDidChangeHandler;
-@property(readonly, nonatomic) id <PXDisplayAsset> displayAsset; // @synthesize displayAsset=_displayAsset;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGAffineTransform videoRotationTransform;
 @property(readonly, nonatomic) struct __CVBuffer *currentPixelBuffer;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
-- (void)_updateVideoSession;
-- (void)prepareVideoSession:(id)arg1;
+- (void)_updateVideoSession:(id)arg1;
 - (void)_prepareVideoSession;
-- (id)_createVideoSession;
 - (void)dealloc;
 - (id)initWithDisplayAsset:(id)arg1 mediaProvider:(id)arg2;
+- (id)initWithVideoSeesion:(id)arg1;
 - (id)init;
 
 // Remaining properties

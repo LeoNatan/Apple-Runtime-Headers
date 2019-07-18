@@ -25,7 +25,8 @@ __attribute__((visibility("hidden")))
     struct CGRect _pageControlBoundingRect;
 }
 
-+ (double)p_constrainedDimensionForDimension:(double)arg1 min:(double)arg2 max:(double)arg3;
++ (double)p_constrainedImageContainerHeightForHeight:(double)arg1;
++ (double)p_constrainedImageContainerWidthForWidth:(double)arg1 maxLayoutWidth:(double)arg2;
 @property(readonly, nonatomic) struct CGRect pageControlBoundingRect; // @synthesize pageControlBoundingRect=_pageControlBoundingRect;
 @property(readonly, nonatomic) struct CGRect imageContainerRect; // @synthesize imageContainerRect=_imageContainerRect;
 @property(retain, nonatomic) TSAGalleryItem *currentItem; // @synthesize currentItem=_currentItem;
@@ -41,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (double)positionForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2 target:(id)arg3 outWidth:(double *)arg4 outGap:(double *)arg5;
 - (double)gapForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
 - (double)widthForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
+- (_Bool)descendersCannotClip;
 - (id)interiorClippingPath;
 - (Class)repClassForTextLayout:(id)arg1;
 - (id)dependentsOfTextLayout:(id)arg1;
@@ -51,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)autosizeFlagsForTextLayout:(id)arg1;
 - (id)pathForClippingConnectionLines;
 - (struct CGRect)boundsForStandardKnobs;
+- (struct CGPoint)calculateOffsetForGalleryItem:(id)arg1 withFacesRect:(struct CGRect)arg2;
 - (id)infoGeometryForFittingInFrame:(struct CGRect)arg1;
 - (struct CGRect)imageFrameInRootWithDragOffset:(struct CGPoint)arg1;
 - (struct CGRect)imageRectInImageContainerForItem:(id)arg1;
@@ -58,11 +61,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSDLayoutGeometry *imageGeometry;
 @property(readonly, nonatomic) struct CGRect imageRect;
 @property(readonly, nonatomic) TSDLayoutGeometry *imageContainerGeometry;
-- (struct CGSize)p_maximumLayoutSize;
+- (struct CGSize)p_maxLayoutSize;
 - (struct CGSize)minimumSize;
 - (double)p_minScaleForItem:(id)arg1;
 - (struct CGRect)p_imageRectInImageContainerForItem:(id)arg1 dragOffset:(struct CGPoint)arg2;
 - (id)computeLayoutGeometry;
+- (_Bool)needsToValidateChildrenForInlineLayout;
+- (void)p_invalidateOwningAttachmentSize;
 - (void)invalidateExteriorWrap;
 - (void)invalidateSize;
 - (void)updateChildrenFromInfo;

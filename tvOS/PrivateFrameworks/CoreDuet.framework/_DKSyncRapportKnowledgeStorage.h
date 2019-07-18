@@ -8,15 +8,18 @@
 
 #import <CoreDuet/_DKSyncRemoteKnowledgeStorage-Protocol.h>
 
+@class _DKSync2Policy;
 @protocol _DKSyncRemoteKnowledgeStorageFetchDelegate;
 
 @interface _DKSyncRapportKnowledgeStorage : _DKSyncRapportStorage <_DKSyncRemoteKnowledgeStorage>
 {
     unsigned long long _currentChangeSetSequenceNumber;
     id <_DKSyncRemoteKnowledgeStorageFetchDelegate> _delegate;
+    _DKSync2Policy *_policy;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) _DKSync2Policy *policy; // @synthesize policy=_policy;
 @property(readonly, nonatomic) id <_DKSyncRemoteKnowledgeStorageFetchDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)dataFromChangeSet:(id)arg1 didCompress:(_Bool *)arg2;

@@ -103,6 +103,7 @@ struct task_vm_info {
     long long ledger_tag_neural_nofootprint;
     long long ledger_tag_neural_nofootprint_compressed;
     unsigned long long limit_bytes_remaining;
+    int decompressions;
 };
 
 struct time_value {

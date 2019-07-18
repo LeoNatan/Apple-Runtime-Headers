@@ -20,6 +20,7 @@
 - (_Bool)render:(out id *)arg1;
 - (id)detectFaceLandmarksInBuffer:(struct __CVBuffer *)arg1 withFaceRects:(id)arg2 error:(out id *)arg3;
 - (id)detectFaceRectsInBuffer:(struct __CVBuffer *)arg1 maxResultCount:(unsigned long long)arg2 error:(out id *)arg3;
+- (id)cacheKey;
 - (_Bool)wantsCompleteStage;
 - (_Bool)wantsOutputGeometry;
 - (_Bool)wantsOutputImage;

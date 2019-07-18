@@ -9,8 +9,9 @@
 @class NSString;
 
 @interface NSDictionary (IntentsFoundation)
-- (id)_inf_dictionaryByAddingEntriesFromDictionary:(id)arg1;
-- (id)_inf_dictionaryWithNonEmptyValues;
-@property(readonly, copy, nonatomic) NSString *_inf_JSONStringRepresentation;
+- (id)if_compactMap:(CDUnknownBlockType)arg1;
+- (id)if_dictionaryByAddingEntriesFromDictionary:(id)arg1;
+- (id)if_dictionaryWithNonEmptyValues;
+@property(readonly, copy, nonatomic) NSString *if_JSONStringRepresentation;
 @end
 

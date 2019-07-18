@@ -9,7 +9,7 @@
 #import <PassKitUI/PKForegroundActiveArbiterObserver-Protocol.h>
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
 
-@class NSSet, NSString, PKCategoryVisualizationCardView, PKPass, PKPaymentService, UIImageView;
+@class NSString, PKCategoryVisualizationCardView, PKPass, PKPaymentService, UIImageView;
 
 @interface PKTransactionDataOverlayCardFaceView : UIView <PKPaymentServiceDelegate, PKForegroundActiveArbiterObserver>
 {
@@ -17,15 +17,18 @@
     UIImageView *_maskView;
     PKCategoryVisualizationCardView *_overlayView;
     PKPaymentService *_paymentService;
-    NSSet *_magnitudes;
     _Bool _invalidated;
     _Bool _foregroundActive;
+    int _unlockNotifyToken;
+    _Bool _contentSuppressed;
 }
 
 + (id)borderColor;
 + (float)borderWidth;
+@property(nonatomic, getter=isContentSuppressed) _Bool contentSuppressed; // @synthesize contentSuppressed=_contentSuppressed;
 - (void).cxx_destruct;
 - (void)_updateMagnitudesWithStyle:(int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_updateContentIfPossible;
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateCategoryVisualizationWithStyle:(int)arg2;
 - (id)rendererState;

@@ -28,6 +28,7 @@
     PFAssetAdjustments *__adjustments;
 }
 
++ (id)operationErrorWithCode:(long long)arg1 withDescription:(id)arg2;
 + (_Bool)outputSupportedForTypeIdentifier:(struct __CFString *)arg1;
 @property(retain, nonatomic, setter=_setAdjustments:) PFAssetAdjustments *_adjustments; // @synthesize _adjustments=__adjustments;
 @property(readonly, copy, nonatomic) NSURL *resultingFileURL; // @synthesize resultingFileURL=_resultingFileURL;

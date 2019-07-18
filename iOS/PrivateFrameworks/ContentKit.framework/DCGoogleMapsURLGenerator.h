@@ -6,6 +6,7 @@
 
 #import <ContentKit/DCMapsURLGenerator.h>
 
+__attribute__((visibility("hidden")))
 @interface DCGoogleMapsURLGenerator : DCMapsURLGenerator
 {
 }

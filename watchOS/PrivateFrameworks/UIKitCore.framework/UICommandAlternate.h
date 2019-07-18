@@ -8,10 +8,11 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/NSSecureCoding-Protocol.h>
+#import <UIKitCore/_UIMenuLeafAlternate-Protocol.h>
 
 @class NSString;
 
-@interface UICommandAlternate : NSObject <NSCopying, NSSecureCoding>
+@interface UICommandAlternate : NSObject <_UIMenuLeafAlternate, NSCopying, NSSecureCoding>
 {
     NSString *_title;
     SEL _action;
@@ -25,12 +26,20 @@
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)_resolvedTargetFromFirstTarget:(id)arg1;
+- (void)_performWithTarget:(id)arg1;
+- (int)_leafKeyModifierFlags;
 - (id)initWithTitle:(id)arg1 action:(SEL)arg2 modifierFlags:(int)arg3;
 - (id)initWithModifierFlags:(int)arg1;
 - (id)initWithCoder:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

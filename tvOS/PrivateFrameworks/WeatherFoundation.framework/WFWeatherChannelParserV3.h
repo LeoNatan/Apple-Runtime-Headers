@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (void).cxx_destruct;
 - (id)parseAirQualityData:(id)arg1 location:(id)arg2 locale:(id)arg3 error:(id *)arg4;
+- (id)parseForecastData:(id)arg1 types:(unsigned long long)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6 rules:(id)arg7;
 - (id)parseForecastData:(id)arg1 types:(unsigned long long)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6;
 - (void)_parseWebLinks:(id)arg1 intoWeatherConditions:(id)arg2;
 - (id)_parsePollutants:(id)arg1;

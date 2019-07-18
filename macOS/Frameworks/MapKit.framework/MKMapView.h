@@ -168,6 +168,7 @@
     BOOL wantsAccessibilityUpdates;
     BOOL _canRotateForHeading;
     BOOL _suspended;
+    BOOL _showsAppleLogo;
     MKAccessibilityItem *focusedAccessibilityItem;
     long long _interactionMode;
     unsigned long long _currentFlyoverAnimationID;
@@ -184,6 +185,7 @@
 + (CDStruct_02837cd9)_mapRectThatFitsViewBounds:(struct CGRect)arg1 mapRect:(CDStruct_02837cd9)arg2 viewInsets:(struct NSEdgeInsets)arg3 edgePadding:(struct NSEdgeInsets)arg4 minZoomLevel:(double)arg5 maxZoomLevel:(double)arg6 snapToZoomLevel:(BOOL)arg7;
 + (CDStruct_b7cb895d)_regionThatFitsMapType:(unsigned long long)arg1 viewSize:(struct CGSize)arg2 viewInsets:(struct NSEdgeInsets)arg3 edgePadding:(struct NSEdgeInsets)arg4 region:(CDStruct_b7cb895d)arg5 minZoomLevel:(double)arg6 maxZoomLevel:(double)arg7 snapToZoomLevel:(BOOL)arg8;
 @property(copy, nonatomic, getter=_labelsDidLayoutCallback, setter=_setLabelsDidLayoutCallback:) CDUnknownBlockType labelsDidLayoutCallback; // @synthesize labelsDidLayoutCallback=_labelsDidLayoutCallback;
+@property(nonatomic, getter=_showsAppleLogo, setter=_setShowsAppleLogo:) BOOL showsAppleLogo; // @synthesize showsAppleLogo=_showsAppleLogo;
 @property(retain, nonatomic) NSTimer *_startEffectsTimer; // @synthesize _startEffectsTimer=__startEffectsTimer;
 @property(nonatomic, getter=isSuspended) BOOL suspended; // @synthesize suspended=_suspended;
 @property(readonly, nonatomic) BOOL canRotateForHeading; // @synthesize canRotateForHeading=_canRotateForHeading;
@@ -437,7 +439,7 @@
 - (void)_updateZoomControlsVisiblility;
 - (id)compassVisibilityAnimation;
 - (BOOL)compassVisible;
-- (void)_setCompassVisible:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setCompassVisible:(BOOL)arg1 animated:(BOOL)arg2 force:(BOOL)arg3;
 - (void)_handleCompassTap:(id)arg1;
 - (void)_updateCompassViewPitch;
 - (void)_updateCompassVisibility;
@@ -720,6 +722,8 @@
 - (void)zoomControlSegmentPressed:(id)arg1;
 - (void)makeZoomButtonsIfNeeded;
 - (void)viewDidChangeEffectiveAppearance;
+- (void)rotateWithEvent:(id)arg1;
+- (void)magnifyWithEvent:(id)arg1;
 - (void)smartMagnifyWithEvent:(id)arg1;
 - (void)scrollWheel:(id)arg1;
 - (struct CGPoint)zoomPointInMapViewFromPoint:(struct CGPoint)arg1 smartAiming:(BOOL)arg2 lockOnPreviousTarget:(BOOL)arg3;

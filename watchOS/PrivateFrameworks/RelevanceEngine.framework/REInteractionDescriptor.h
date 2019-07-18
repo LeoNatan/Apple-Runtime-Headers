@@ -22,8 +22,10 @@
     float _exploreBias;
     float _trainingSimulationExploreBias;
     float _initialProbability;
+    float _varianceEpsilon;
 }
 
+@property(nonatomic) float varianceEpsilon; // @synthesize varianceEpsilon=_varianceEpsilon;
 @property(nonatomic) float initialProbability; // @synthesize initialProbability=_initialProbability;
 @property(nonatomic) float trainingSimulationExploreBias; // @synthesize trainingSimulationExploreBias=_trainingSimulationExploreBias;
 @property(nonatomic) float exploreBias; // @synthesize exploreBias=_exploreBias;

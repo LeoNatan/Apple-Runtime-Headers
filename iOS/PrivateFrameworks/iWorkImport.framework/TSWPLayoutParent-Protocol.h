@@ -8,6 +8,7 @@
 @protocol NSFastEnumeration, TSWPStyleProvider;
 
 @protocol TSWPLayoutParent
+- (_Bool)descendersCannotClip;
 - (Class)repClassForTextLayout:(TSWPLayout *)arg1;
 - (id <NSFastEnumeration>)dependentsOfTextLayout:(TSWPLayout *)arg1;
 - (struct CGRect)autosizedFrameForTextLayout:(TSWPLayout *)arg1 textSize:(struct CGSize)arg2;

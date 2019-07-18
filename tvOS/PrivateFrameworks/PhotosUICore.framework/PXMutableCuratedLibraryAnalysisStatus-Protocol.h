@@ -9,9 +9,10 @@
 @class NSString;
 
 @protocol PXMutableCuratedLibraryAnalysisStatus <NSObject>
-@property(nonatomic) _Bool showCuratedLibraryStructure;
+@property(nonatomic) _Bool isDaysMonthsYearsStructureEnabled;
 @property(nonatomic) float progress;
 @property(copy, nonatomic) NSString *localizedDescription;
+@property(copy, nonatomic) NSString *localizedTitle;
 @property(nonatomic) long long state;
 @end
 

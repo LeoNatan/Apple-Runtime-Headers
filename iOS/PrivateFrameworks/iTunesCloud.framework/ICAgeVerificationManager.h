@@ -6,30 +6,32 @@
 
 #import <objc/NSObject.h>
 
-@class ICAgeVerificationState;
+@class ICAgeVerificationState, NSMutableDictionary;
 @protocol OS_dispatch_queue;
 
 @interface ICAgeVerificationManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_calloutQueue;
-    ICAgeVerificationState *_ageVerificationStateInternal;
+    NSMutableDictionary *_ageVerificationStateInternal;
 }
 
 + (id)defaultManager;
-@property(retain, nonatomic) ICAgeVerificationState *ageVerificationStateInternal; // @synthesize ageVerificationStateInternal=_ageVerificationStateInternal;
+@property(retain, nonatomic) NSMutableDictionary *ageVerificationStateInternal; // @synthesize ageVerificationStateInternal=_ageVerificationStateInternal;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 - (void).cxx_destruct;
 - (_Bool)_bagHasValidKeys:(id)arg1;
-- (_Bool)_processAgeVerificationState:(id)arg1;
+- (_Bool)_processAgeVerificationState:(id)arg1 forDSID:(id)arg2;
 - (void)_runAgeVerificationForUserIdentity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateAgeVerificationStateForUserIdentity:(id)arg1 sendNotification:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_updateAgeVerificationStateAndSendNotification:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_userIdendityStoreDidChange:(id)arg1;
+- (void)_userIdentityStoreDidChange:(id)arg1;
 - (void)_registerForNotifications;
 - (id)_init;
+- (id)ageVerificationStateForUserIdentity:(id)arg1;
 @property(readonly, nonatomic) ICAgeVerificationState *ageVerificationState;
+- (void)getAgeVerificationStateForUserIdentity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getAgeVerificationStateWithCompletion:(CDUnknownBlockType)arg1;
 
 @end

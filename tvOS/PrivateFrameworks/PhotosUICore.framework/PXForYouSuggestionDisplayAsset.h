@@ -47,8 +47,10 @@
 @property(readonly, nonatomic) NSDate *creationDate;
 @property(readonly, nonatomic) _Bool representsBurst;
 @property(readonly, nonatomic) Class defaultImageProviderClass;
+@property(readonly, nonatomic) unsigned long long thumbnailIndex;
 @property(readonly, nonatomic) unsigned long long pixelHeight;
 @property(readonly, nonatomic) unsigned long long pixelWidth;
+@property(readonly, nonatomic) _Bool isEligibleForAutoPlayback;
 @property(readonly, nonatomic) _Bool isInCloud;
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;
 @property(readonly, nonatomic) long long mediaType;
@@ -62,7 +64,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) float hdrGain;
+@property(readonly, nonatomic) double hdrGain;
 @property(readonly, nonatomic) NSDate *importDate;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly) Class superclass;

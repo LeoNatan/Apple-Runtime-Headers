@@ -19,13 +19,15 @@
         _Bool respondsToHighlightViewForElementWithManyIDs;
         _Bool respondsToCancelHighlightView;
     } _delegateFlags;
+    struct {
+        _Bool respondsToActiveDocument;
+    } _appFlags;
     IKAppContext *_appContext;
     id <IKJSInspectorControllerDelegate> _delegate;
     RWIProtocolInspector *_inspector;
     NSDate *_inspectorConnectDate;
     id <IKNetworkRequestLoader> _requestLoader;
     IKDOMDocument *_activeDocument;
-    NSString *_activeDocumentIdentifier;
     IKJSInspectorDOMAgent *_domAgent;
     IKJSInspectorNetworkAgent *_networkAgent;
     IKJSInspectorPageAgent *_pageAgent;
@@ -42,8 +44,7 @@
 @property(readonly, nonatomic) __weak IKJSInspectorPageAgent *pageAgent; // @synthesize pageAgent=_pageAgent;
 @property(readonly, nonatomic) __weak IKJSInspectorNetworkAgent *networkAgent; // @synthesize networkAgent=_networkAgent;
 @property(readonly, nonatomic) __weak IKJSInspectorDOMAgent *domAgent; // @synthesize domAgent=_domAgent;
-@property(readonly, copy, nonatomic) NSString *activeDocumentIdentifier; // @synthesize activeDocumentIdentifier=_activeDocumentIdentifier;
-@property(readonly, nonatomic) __weak IKDOMDocument *activeDocument; // @synthesize activeDocument=_activeDocument;
+@property(nonatomic) __weak IKDOMDocument *activeDocument; // @synthesize activeDocument=_activeDocument;
 @property(readonly, nonatomic) id <IKNetworkRequestLoader> requestLoader; // @synthesize requestLoader=_requestLoader;
 @property(readonly, nonatomic) NSDate *inspectorConnectDate; // @synthesize inspectorConnectDate=_inspectorConnectDate;
 @property(readonly, nonatomic) RWIProtocolInspector *inspector; // @synthesize inspector=_inspector;
@@ -71,6 +72,7 @@
 - (id)styleFromComposer:(id)arg1;
 - (id)nodesByIds:(id)arg1;
 - (id)nodeById:(long long)arg1;
+- (void)_updateCurrentActiveDocument;
 - (void)dealloc;
 - (id)initWithAppContext:(id)arg1;
 

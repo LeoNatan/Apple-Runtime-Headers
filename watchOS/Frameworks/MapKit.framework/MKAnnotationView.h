@@ -34,6 +34,7 @@
     _MKKVOProxy *_annotationObserver;
     _MKAnnotationViewCustomFeatureAnnotation *_customFeatureAnnotation;
     _Bool _subclassImplementsAlignmentRectInsets;
+    unsigned int _allowedCalloutEdges;
     id <MKAnnotation> _annotation;
     float _displayPriority;
     struct CGRect _collisionFrame;
@@ -49,6 +50,8 @@
     unsigned int _zIndex;
     struct CGPoint _centerOffset;
     struct CGPoint _calloutOffset;
+    struct CGPoint _leftCalloutOffset;
+    struct CGPoint _rightCalloutOffset;
     unsigned int _dragState;
     struct {
         unsigned int pendingSelectionAnimated:1;
@@ -76,8 +79,6 @@
     _Bool _pendingSelectionAnimated;
     int _collisionMode;
     double _direction;
-    struct CGPoint _leftCalloutOffset;
-    struct CGPoint _rightCalloutOffset;
 }
 
 + (_Bool)_followsTerrain;
@@ -100,6 +101,7 @@
 @property(nonatomic, getter=_mapPitchRadians, setter=_setMapPitchRadians:) float mapPitchRadians; // @synthesize mapPitchRadians=_mapPitchRadians;
 @property(nonatomic, getter=_mapRotationRadians, setter=_setMapRotationRadians:) float mapRotationRadians; // @synthesize mapRotationRadians=_mapRotationRadians;
 @property(retain, nonatomic, setter=_setRouteMatch:) GEORouteMatch *_routeMatch; // @synthesize _routeMatch;
+@property(nonatomic, getter=_allowedCalloutEdges, setter=_setAllowedCalloutEdges:) unsigned int allowedCalloutEdges; // @synthesize allowedCalloutEdges=_allowedCalloutEdges;
 @property(retain, nonatomic) UIView *detailCalloutAccessoryView; // @synthesize detailCalloutAccessoryView=_detailCalloutAccessoryView;
 @property(retain, nonatomic) UIView *rightCalloutAccessoryView; // @synthesize rightCalloutAccessoryView=_rightCalloutAccessoryView;
 @property(retain, nonatomic) UIView *leftCalloutAccessoryView; // @synthesize leftCalloutAccessoryView=_leftCalloutAccessoryView;
@@ -217,6 +219,7 @@
 - (void)configureCustomFeature:(id)arg1;
 - (id)_effectiveSubtitlesIsCollidable:(_Bool *)arg1;
 - (id)_effectiveTitleIsCollidable:(_Bool *)arg1;
+- (void)_invalidateCustomFeatureForced:(_Bool)arg1 coordinates:(struct CLLocationCoordinate2D *)arg2 count:(unsigned int)arg3;
 - (void)invalidateCustomFeatureForced:(_Bool)arg1;
 - (_Bool)isProvidingCustomFeature;
 - (id)customFeatureAnnotation;

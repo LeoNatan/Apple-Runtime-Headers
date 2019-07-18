@@ -17,12 +17,14 @@
     struct {
         unsigned int attribute:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _attribute;
     NSArray *_identifiers;
     _INPBIntentMetadata *_intentMetadata;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 @property(copy, nonatomic) NSArray *identifiers; // @synthesize identifiers=_identifiers;
 @property(nonatomic) int attribute; // @synthesize attribute=_attribute;

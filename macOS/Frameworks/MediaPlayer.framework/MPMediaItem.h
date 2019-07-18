@@ -113,7 +113,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)initWithMultiverseIdentifier:(id)arg1;
+- (id)initWithMultiverseIdentifier:(id)arg1 library:(id)arg2;
 - (id)initWithPersistentID:(unsigned long long)arg1;
 
 // Remaining properties

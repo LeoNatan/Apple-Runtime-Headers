@@ -12,9 +12,11 @@ __attribute__((visibility("hidden")))
 @interface VUIProductBannerLayout : TVViewLayout
 {
     long long _sizeClass;
-    _Bool _isMovieLayout;
+    unsigned long long _contentType;
     TVImageLayout *_logoImageLayout;
     VUITextLayout *_logoTextLayout;
+    VUITextLayout *_subTextLayout;
+    VUITextLayout *_episodeInfoTextLayout;
     VUITextLayout *_descriptionTextLayout;
     VUITextLayout *_descriptionTitleTextLayout;
     VUIMediaTagsViewLayout *_tagsLayout;
@@ -26,7 +28,8 @@ __attribute__((visibility("hidden")))
     TVImageLayout *_availabilityImageLayout;
 }
 
-+ (id)layoutWithLayout:(id)arg1 element:(id)arg2 sizeClass:(long long)arg3 isMovieLayout:(_Bool)arg4;
++ (id)_coverArtImageShadow;
++ (id)layoutWithLayout:(id)arg1 element:(id)arg2 sizeClass:(long long)arg3 contentType:(unsigned long long)arg4;
 @property(readonly, nonatomic) TVImageLayout *availabilityImageLayout; // @synthesize availabilityImageLayout=_availabilityImageLayout;
 @property(readonly, nonatomic) VUITextLayout *availabilityTextLayout; // @synthesize availabilityTextLayout=_availabilityTextLayout;
 @property(readonly, nonatomic) VUITextLayout *disclaimerTextLayout; // @synthesize disclaimerTextLayout=_disclaimerTextLayout;
@@ -36,12 +39,15 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) VUIMediaTagsViewLayout *tagsLayout; // @synthesize tagsLayout=_tagsLayout;
 @property(readonly, nonatomic) VUITextLayout *descriptionTitleTextLayout; // @synthesize descriptionTitleTextLayout=_descriptionTitleTextLayout;
 @property(readonly, nonatomic) VUITextLayout *descriptionTextLayout; // @synthesize descriptionTextLayout=_descriptionTextLayout;
+@property(readonly, nonatomic) VUITextLayout *episodeInfoTextLayout; // @synthesize episodeInfoTextLayout=_episodeInfoTextLayout;
+@property(readonly, nonatomic) VUITextLayout *subTextLayout; // @synthesize subTextLayout=_subTextLayout;
 @property(retain, nonatomic) VUITextLayout *logoTextLayout; // @synthesize logoTextLayout=_logoTextLayout;
 @property(retain, nonatomic) TVImageLayout *logoImageLayout; // @synthesize logoImageLayout=_logoImageLayout;
 - (void).cxx_destruct;
-- (void)_createLayoutsWithSizeClass:(long long)arg1 isMovieLayout:(_Bool)arg2;
+@property(readonly, nonatomic) unsigned long long contentType;
+- (void)_createLayoutsWithSizeClass:(long long)arg1 contentType:(unsigned long long)arg2;
 - (void)updateWithSizeClass:(long long)arg1 contentSizeCategoryIsAccessibility:(_Bool)arg2;
-- (id)initWithSizeClass:(long long)arg1 isMovieLayout:(_Bool)arg2;
+- (id)initWithSizeClass:(long long)arg1 contentType:(unsigned long long)arg2;
 
 @end
 

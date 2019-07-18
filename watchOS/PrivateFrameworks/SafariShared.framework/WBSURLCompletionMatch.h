@@ -28,7 +28,7 @@
 - (id)originalURLString;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) _Bool matchLocationIsInURL;
-- (id)initWithMatchLocation:(int)arg1 userInput:(id)arg2;
+- (id)initWithMatchLocation:(int)arg1 userInput:(id)arg2 forQueryID:(long long)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

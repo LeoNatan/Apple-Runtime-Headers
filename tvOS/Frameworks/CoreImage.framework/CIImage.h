@@ -222,6 +222,7 @@
 - (id)localLightStatisticsNoProxy;
 - (id)localLightStatistics;
 - (id)localLightStatisticsWithProxy:(_Bool)arg1;
+- (id)autoPerspectiveResultWithOptions:(id)arg1;
 - (id)autoPerspectiveFilterWithOptions:(id)arg1;
 - (id)smartBlackAndWhiteAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;
 - (id)smartBlackAndWhiteStatistics;

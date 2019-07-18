@@ -10,7 +10,7 @@
 #import <PhotosUI/PUEditPluginHostViewControllerDataSource-Protocol.h>
 #import <PhotosUI/PUEditPluginHostViewControllerDelegate-Protocol.h>
 
-@class NSString, PUEditPlugin, PUEditPluginManager, UINavigationController, UIPopoverPresentationController, UIViewController;
+@class NSString, PUEditPlugin, PUEditPluginManager, UINavigationController, UIViewController;
 @protocol PUEditPluginSessionDataSource, PUEditPluginSessionDelegate, PUEditableAsset;
 
 __attribute__((visibility("hidden")))
@@ -23,14 +23,12 @@ __attribute__((visibility("hidden")))
     id <PUEditPluginSessionDelegate> _delegate;
     id <PUEditableAsset> _asset;
     long long _adjustmentType;
-    UIPopoverPresentationController *_pluginSelectionPopoverPresentationController;
     PUEditPlugin *_currentPlugin;
     UIViewController *__hostViewController;
 }
 
 @property(nonatomic, setter=_setHostViewController:) __weak UIViewController *_hostViewController; // @synthesize _hostViewController=__hostViewController;
 @property(retain, nonatomic, setter=_setCurrentPlugin:) PUEditPlugin *currentPlugin; // @synthesize currentPlugin=_currentPlugin;
-@property(readonly, nonatomic) __weak UIPopoverPresentationController *pluginSelectionPopoverPresentationController; // @synthesize pluginSelectionPopoverPresentationController=_pluginSelectionPopoverPresentationController;
 @property(nonatomic, setter=_setAdjustmentType:) long long adjustmentType; // @synthesize adjustmentType=_adjustmentType;
 @property(retain, nonatomic, setter=_setAsset:) id <PUEditableAsset> asset; // @synthesize asset=_asset;
 @property(nonatomic, setter=_setIsAvailable:) _Bool isAvailable; // @synthesize isAvailable=_isAvailable;

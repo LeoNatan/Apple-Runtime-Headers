@@ -47,6 +47,8 @@
 - (void)layoutSubviews;
 - (void)handleRedo:(id)arg1;
 - (void)handleUndo:(id)arg1;
+- (void)updateConstraints;
+- (struct CGSize)_buttonSize;
 - (void)installRedoButton;
 - (void)installUndoButton;
 - (void)installStackView;

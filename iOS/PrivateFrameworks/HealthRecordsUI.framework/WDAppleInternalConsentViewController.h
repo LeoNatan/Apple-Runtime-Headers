@@ -6,19 +6,17 @@
 
 #import <HealthUI/HKTitledBuddyViewController.h>
 
-@class HRProfile, UIBarButtonItem, UIViewController;
+@class UIBarButtonItem, UIViewController;
 
 __attribute__((visibility("hidden")))
 @interface WDAppleInternalConsentViewController : HKTitledBuddyViewController
 {
     UIBarButtonItem *_navigationCancelButton;
     UIViewController *_actionViewController;
-    HRProfile *_profile;
     CDUnknownBlockType _completionBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-@property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) UIViewController *actionViewController; // @synthesize actionViewController=_actionViewController;
 - (void).cxx_destruct;
 - (void)declineButtonTapped:(id)arg1;
@@ -35,7 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (unsigned long long)supportedInterfaceOrientations;
-- (id)initWithProfile:(id)arg1 presentingViewController:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)initWithPresentingViewController:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 
 @end
 

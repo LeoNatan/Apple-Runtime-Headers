@@ -9,6 +9,7 @@
 @protocol TSWPLayoutTarget;
 
 @protocol TSWPOffscreenColumn <NSObject>
+@property(readonly, nonatomic) _Bool terminatedByBreak;
 @property(readonly, nonatomic) _Bool lastLineIsEmptyAndHasListLabel;
 @property(readonly, nonatomic) unsigned long long nextWidowPullsDownFromCharIndex;
 @property(readonly, nonatomic) struct _NSRange anchoredRange;

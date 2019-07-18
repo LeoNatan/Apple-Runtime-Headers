@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class TSPData, TSUFlushingManager;
+@class TSPData, TSPObjectContext, TSUFlushingManager, TSUWeakReference;
 
 __attribute__((visibility("hidden")))
 @interface TSDImageProvider : NSObject
 {
     int mLoadState;
     TSPData *mImageData;
+    TSUWeakReference *mObjectContextReference;
     // Error parsing type: Ai, name: mRetainCount
     // Error parsing type: Ai, name: mOwnerCount
     TSUFlushingManager *mFlushingManager;
@@ -40,6 +41,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long imageGamut;
 @property(readonly, nonatomic) struct CGSize dpiAdjustedNaturalSize;
 @property(readonly, nonatomic) struct CGSize naturalSize;
+@property(readonly, nonatomic) __weak TSPObjectContext *objectContext;
 @property(readonly, retain, nonatomic) TSPData *imageData;
 - (void)dealloc;
 - (void)i_commonInit;

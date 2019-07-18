@@ -153,11 +153,15 @@
 - (void)fluidSwitcherGestureTransaction:(id)arg1 didUpdateGesture:(id)arg2;
 - (void)fluidSwitcherGestureTransaction:(id)arg1 didBeginGesture:(id)arg2;
 - (void)transactionDidComplete:(id)arg1;
+- (void)_configureTransitionRequest:(id)arg1 forGestureBegin:(id)arg2;
 - (void)_startFluidSwitcherTransactionForGestureRecognizer:(id)arg1;
 - (void)_handleSwitcherGestureBegan:(id)arg1;
 - (void)_handleFluidGesture:(id)arg1;
 - (id)_layoutElementViewControllerAtLocation:(struct CGPoint)arg1;
-- (void)dragAndDropInteractionManager:(id)arg1 didEndDraggingWindowWithSceneIdentifier:(id)arg2;
+- (void)dragAndDropInteractionManager:(id)arg1 didEndGesture:(id)arg2;
+- (void)dragAndDropInteractionManager:(id)arg1 didUpdateGesture:(id)arg2;
+- (void)dragAndDropInteractionManager:(id)arg1 didBeginGesture:(id)arg2;
+- (void)dragAndDropInteractionManager:(id)arg1 willEndDraggingWindowWithSceneIdentifier:(id)arg2;
 - (void)dragAndDropInteractionManager:(id)arg1 didBeginDraggingWindowWithSceneIdentifier:(id)arg2;
 - (id)dragAndDropInteractionManager:(id)arg1 sourceViewProviderForDraggingWindowWithGestureRecognizer:(id)arg2;
 - (id)dragAndDropInteractionManager:(id)arg1 displayItemForDraggingWindowWithGestureRecognizer:(id)arg2;

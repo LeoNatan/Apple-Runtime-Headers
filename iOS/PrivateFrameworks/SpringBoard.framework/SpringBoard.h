@@ -23,7 +23,7 @@
 #import <SpringBoard/UIStatusBarStyleDelegate_SpringBoardOnly-Protocol.h>
 #import <SpringBoard/_UIApplicationInitializationContextFactory-Protocol.h>
 
-@class DNDAWDMetricsService, DNDNotificationsService, NSArray, NSCountedSet, NSDate, NSHashTable, NSMutableArray, NSMutableSet, NSNumberFormatter, NSObject, NSSet, NSString, NSTimer, RSPeerToPeerServerController, SBAccountStoreManager, SBAppStatusBarSettingsAssertion, SBAppSwitcherSystemService, SBApplication, SBApplicationAutoLaunchService, SBApplicationLaunchAlertService, SBBluetoothAccessoryBatteryMonitor, SBCarDoNotDisturbController, SBCardItemsController, SBCombinationHardwareButton, SBDeveloperBuildExpirationTrigger, SBDeviceOrientationUpdateManager, SBExternalDisplayManager, SBFUserAuthenticationController, SBHomeHardwareButton, SBHomeScreenService, SBIdleTimerPolicyAggregator, SBInteractiveScreenshotGestureManager, SBLockHardwareButton, SBLockScreenService, SBMainDisplayInterfaceOrientationAggregator, SBMainWorkspace, SBModalAlertPresentationCoordinator, SBModalAlertPresenter, SBModalUIFluidDismissGestureManager, SBNCNotificationDispatcher, SBPressPrecedenceArbiter, SBProximitySensorManager, SBRemoteAlertHandleServer, SBRemoteTransientOverlaySessionManager, SBRestartManager, SBSStatusBarStyleOverridesAssertion, SBScreenTimeTrackingController, SBScreenshotManager, SBSoftwareUpdatePasscodePolicyManager, SBSpotlightTransientOverlayViewController, SBSpuriousScreenUndimmingAssertion, SBStateDumpService, SBSynchronizeCloudCriticalDataOperation, SBTestAutomationService, SBUIController, SBUserAgent, SBUserSessionController, SBVolumeHardwareButton, SBWidgetController, SSScreenCapturer, STStatusServer, STTelephonyStateProvider, UIWindow;
+@class DNDAWDMetricsService, DNDNotificationsService, NSArray, NSCountedSet, NSDate, NSHashTable, NSMutableArray, NSMutableSet, NSNumberFormatter, NSObject, NSSet, NSString, NSTimer, RSPeerToPeerServerController, SBAccountStoreManager, SBAppStatusBarSettingsAssertion, SBAppSwitcherSystemService, SBApplication, SBApplicationAutoLaunchService, SBApplicationLaunchAlertService, SBBluetoothAccessoryBatteryMonitor, SBCameraHardwareButton, SBCarDoNotDisturbController, SBCardItemsController, SBCombinationHardwareButton, SBDeveloperBuildExpirationTrigger, SBDeviceOrientationUpdateManager, SBExternalDisplayManager, SBFUserAuthenticationController, SBHomeHardwareButton, SBHomeScreenService, SBIdleTimerPolicyAggregator, SBInteractiveScreenshotGestureManager, SBLockHardwareButton, SBLockScreenService, SBMainDisplayInterfaceOrientationAggregator, SBMainWorkspace, SBModalAlertPresentationCoordinator, SBModalAlertPresenter, SBModalUIFluidDismissGestureManager, SBNCNotificationDispatcher, SBPressPrecedenceArbiter, SBProximitySensorManager, SBRemoteAlertHandleServer, SBRemoteTransientOverlaySessionManager, SBRestartManager, SBSStatusBarStyleOverridesAssertion, SBScreenTimeTrackingController, SBScreenshotManager, SBSoftwareUpdatePasscodePolicyManager, SBSpotlightTransientOverlayViewController, SBSpuriousScreenUndimmingAssertion, SBStateDumpService, SBSynchronizeCloudCriticalDataOperation, SBTestAutomationService, SBUIController, SBUserAgent, SBUserSessionController, SBVolumeHardwareButton, SBWidgetController, SSScreenCapturer, STStatusServer, STTelephonyStateProvider, UIWindow;
 @protocol BSInvalidatable, OS_dispatch_source, SBFLockOutStatusProvider, SBIdleTimer, SBProximityBacklightPolicy, SBUIUserAgent;
 
 @interface SpringBoard : UISystemShellApplication <CCUIPPTHostDelegate, MCProfileConnectionObserver, RSPeerToPeerConnectionControllerDataSource, SBRestartManagerDelegate, SBModalAlertPresentationCoordinatorDelegate, UIStatusBarStyleDelegate_SpringBoardOnly, SSScreenCapturerDelegate, UISApplicationSupportServiceDelegate, SBBacklightControllerObserver, SBInteractiveScreenshotGestureManagerDelegate, SBRemoteTransientOverlaySessionManagerDelegate, SBSpotlightTransientOverlayViewControllerDelegate, _UIApplicationInitializationContextFactory, SBAVSystemControllerCacheObserver, UIApplicationDelegate, SBIdleTimerProviding>
@@ -138,6 +138,7 @@
     SBHomeHardwareButton *_homeHardwareButton;
     SBLockHardwareButton *_lockHardwareButton;
     SBVolumeHardwareButton *_volumeHardwareButton;
+    SBCameraHardwareButton *_cameraHardwareButton;
     SBAccountStoreManager *_accountStoreController;
     SBInteractiveScreenshotGestureManager *_interactiveScreenshotGestureManager;
     SBSoftwareUpdatePasscodePolicyManager *_softwareUpdatePasscodePolicyManager;
@@ -167,6 +168,7 @@
 @property(readonly, nonatomic) SBNCNotificationDispatcher *notificationDispatcher; // @synthesize notificationDispatcher=_notificationDispatcher;
 @property(readonly, nonatomic) SBFUserAuthenticationController *authenticationController; // @synthesize authenticationController=_authenticationController;
 @property(readonly, nonatomic) id <SBFLockOutStatusProvider> lockOutController; // @synthesize lockOutController=_lockOutController;
+@property(readonly, nonatomic) SBCameraHardwareButton *cameraHardwareButton; // @synthesize cameraHardwareButton=_cameraHardwareButton;
 @property(readonly, nonatomic) SBVolumeHardwareButton *volumeHardwareButton; // @synthesize volumeHardwareButton=_volumeHardwareButton;
 @property(readonly, nonatomic) SBLockHardwareButton *lockHardwareButton; // @synthesize lockHardwareButton=_lockHardwareButton;
 @property(readonly, nonatomic) SBHomeHardwareButton *homeHardwareButton; // @synthesize homeHardwareButton=_homeHardwareButton;
@@ -254,7 +256,6 @@
 - (void)launchMusicPlayerSuspended;
 - (long long)alertInterfaceOrientation;
 - (_Bool)isLocked;
-- (_Bool)canShowAlerts;
 - (void)didDismissMiniAlert;
 - (void)willDisplayMiniAlert;
 - (void)frontDisplayDidChange:(id)arg1;
@@ -296,7 +297,6 @@
 - (void)removeActiveOrientationObserver:(id)arg1;
 - (void)addActiveOrientationObserver:(id)arg1;
 - (void)noteMainTransientOverlayPresentationManagerWillChangeToInterfaceOrientation:(long long)arg1;
-- (void)noteActiveInterfaceOrientationWillChangeToOrientation:(long long)arg1;
 - (void)noteInterfaceOrientationChanged:(long long)arg1 duration:(double)arg2 updateMirroredDisplays:(_Bool)arg3 force:(_Bool)arg4 logMessage:(id)arg5;
 - (void)noteInterfaceOrientationChanged:(long long)arg1 duration:(double)arg2 updateMirroredDisplays:(_Bool)arg3 logMessage:(id)arg4;
 - (void)noteInterfaceOrientationChanged:(long long)arg1 duration:(double)arg2 logMessage:(id)arg3;
@@ -359,7 +359,6 @@
 - (void)_headsetButtonUp:(struct __IOHIDEvent *)arg1;
 - (void)_headsetButtonDown:(struct __IOHIDEvent *)arg1;
 - (void)_setDeferredHeadsetButtonDownEvent:(struct __IOHIDEvent *)arg1;
-- (void)_imagesMounted;
 - (void)_iapExtendedModeReset;
 - (void)_iapServerConnectionDiedNotification:(id)arg1;
 - (void)_performDelayedHeadsetClickTimeout;
@@ -422,10 +421,10 @@
 - (void)_performDeferredLaunchWork;
 - (void)_startBulletinBoardServer;
 - (id)_defaultExpirationComponents;
-- (void)monitorForPurpleServerTermination;
 - (void)handleKeyHIDEvent:(struct __IOHIDEvent *)arg1;
 - (_Bool)_shouldSwallowHIDEvent:(struct __IOHIDEvent *)arg1;
 - (_Bool)application:(id)arg1 handleOpenURL:(id)arg2;
+- (void)spotlightTransientOverlayViewControllerDidDismiss:(id)arg1;
 - (void)spotlightTransientOverlayViewControllerRequestsDismissal:(id)arg1;
 - (void)modalAlertPresentationCoordinator:(id)arg1 didChangeShowingSystemModalAlert:(_Bool)arg2;
 - (void)restartManagerExitImminent:(id)arg1;
@@ -568,7 +567,6 @@
 - (void)_runSwipeToHomeOverFolderTest;
 - (void)_runSwipeToHomeTestWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_runWidgetLaunchTestNamed:(id)arg1 options:(id)arg2;
-- (id)_todayViewFlickNavigationEventStream;
 - (void)_runDashboardTodayViewScrollWidgetsTestWithOptions:(id)arg1;
 - (void)_runTodayViewScrollWidgetsTestWithOptions:(id)arg1;
 - (void)_runTapContinuityBannerInSwitcherTest;

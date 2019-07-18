@@ -10,11 +10,12 @@
 {
     // Error parsing type: , name: garbageCollectorIdentityKey
     // Error parsing type: , name: accountStore
+    // Error parsing type: , name: isAccountVerificationPending
     // Error parsing type: , name: delegate
     // Error parsing type: , name: paths
 }
 
-- (void)verifyAccount;
+- (void)scheduleAccountVerification;
 
 @end
 

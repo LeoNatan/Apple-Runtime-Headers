@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)unicastParameterForParticipantID:(unsigned long long)arg1 dataMode:(long long)arg2 connectionIndex:(unsigned long long)arg3;
 - (void)requestActiveParticipants;
 - (void)setPreferences:(id)arg1;
 - (void)leaveGroupSession;

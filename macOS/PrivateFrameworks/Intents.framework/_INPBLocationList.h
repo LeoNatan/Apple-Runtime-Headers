@@ -15,12 +15,14 @@
 @interface _INPBLocationList : PBCodable <_INPBLocationList, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBCondition *_condition;
     NSArray *_locations;
 }
 
 + (BOOL)supportsSecureCoding;
 + (Class)locationType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
 - (void).cxx_destruct;

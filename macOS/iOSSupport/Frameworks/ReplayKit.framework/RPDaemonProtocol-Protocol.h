@@ -10,15 +10,12 @@
 
 @protocol RPDaemonProtocol <NSObject>
 - (oneway void)appAudioCaptureOutputHandler:(NSDictionary *)arg1;
-- (oneway void)reportCameraUsage:(int)arg1;
-- (oneway void)setMicrophoneEnabledPersistent:(BOOL)arg1;
+- (oneway void)reportCameraUsage:(long long)arg1;
 - (oneway void)setBroadcastURL:(NSString *)arg1;
 - (oneway void)setHasUserConsentForMicrophone:(BOOL)arg1;
 - (oneway void)setHasUserConsentForCamera:(BOOL)arg1;
 - (oneway void)synchronousIsBroadcastingWithPreferredExtension:(NSString *)arg1 handler:(void (^)(BOOL))arg2;
 - (oneway void)synchronousGetCurrentState:(void (^)(NSDictionary *))arg1;
-- (oneway void)clientDidResignActive;
-- (oneway void)clientDidBecomeActive;
 - (oneway void)discardRecordingWithHandler:(void (^)(void))arg1;
 - (oneway void)updateProcessIDForAudioCaptureWithPID:(int)arg1;
 - (oneway void)setMicrophoneEnabled:(BOOL)arg1;

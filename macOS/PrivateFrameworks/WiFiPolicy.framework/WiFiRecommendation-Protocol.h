@@ -8,11 +8,10 @@
 @protocol WiFiCandidateNetwork, WiFiScannedNetwork;
 
 @protocol WiFiRecommendation
+@property(readonly, nonatomic) BOOL unwantedNetworkName;
 @property(readonly, nonatomic) id <WiFiScannedNetwork> scannedNetwork;
 @property(readonly, nonatomic) long long priority;
 @property(readonly, nonatomic) id <WiFiCandidateNetwork> network;
 @property(readonly, copy, nonatomic) NSString *SSID;
-- (NSString *)userDescription;
-- (NSString *)userTitle;
 @end
 

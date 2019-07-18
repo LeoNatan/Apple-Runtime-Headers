@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isBounded) _Bool bounded; // @synthesize bounded=_bounded;
 @property(nonatomic, getter=isHosted) _Bool hosted; // @synthesize hosted=_hosted;
 @property(nonatomic) struct TVRowMetrics rowMetrics; // @synthesize rowMetrics=_rowMetrics;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 
 @end
 

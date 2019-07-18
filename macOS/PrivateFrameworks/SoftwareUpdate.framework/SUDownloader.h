@@ -35,7 +35,7 @@
 @property(readonly) SUProduct *product; // @synthesize product=_product;
 - (void)__runBlock:(CDUnknownBlockType)arg1;
 - (void)_runBlockOnThread:(id)arg1 withBlock:(CDUnknownBlockType)arg2 waitUntilDone:(BOOL)arg3;
-- (void)_runBlockOnDownloaderThread:(CDUnknownBlockType)arg1 waitUntilDone:(BOOL)arg2;
+- (void)_runBlockOnDownloaderThread:(CDUnknownBlockType)arg1 waitUntilDone:(BOOL)arg2 ignoreIfThreadStopped:(BOOL)arg3;
 - (id)_packageReferenceForRetryingFailedPackageReference:(id)arg1 invalidatingCurrentReference:(BOOL)arg2;
 - (id)_suPackageReferencesToContentCachingRefs:(id)arg1;
 - (id)_suPackageReferenceForPKPackageReference:(id)arg1 withIntegrityInformation:(id)arg2;
@@ -56,6 +56,7 @@
 @property(readonly) double finiteProgress;
 @property(readonly) unsigned long long totalDownloadSize; // @synthesize totalDownloadSize=_totalDownloadSize;
 @property(readonly) unsigned long long currentlyDownloaded; // @synthesize currentlyDownloaded=_currentlyDownloaded;
+- (void)cancelAndWaitUntilFullyCanceled;
 - (void)cancel;
 - (void)startDownloadWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;

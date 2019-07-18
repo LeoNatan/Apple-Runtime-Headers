@@ -12,7 +12,6 @@
 {
 }
 
-+ (void)load;
 @property(readonly, nonatomic) unsigned long long cornerMask;
 - (id)curveWithValue:(id)arg1 withType:(int)arg2;
 - (_Bool)cornerWithValue:(id)arg1 withType:(int)arg2;

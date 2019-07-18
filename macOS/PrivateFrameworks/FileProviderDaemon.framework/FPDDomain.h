@@ -10,7 +10,7 @@
 #import <FileProviderDaemon/FPDFileCoordinationProviderDelegate-Protocol.h>
 
 @class FPDDomainIndexer, FPDProvider, FPPacer, FPProviderDomain, NSArray, NSData, NSDictionary, NSFileProviderDomain, NSMutableDictionary, NSNumber, NSOperationQueue, NSString, NSURL;
-@protocol FPDDomainBackend, FPDDomainIndexChangeDelegate, FPDExtensionSessionProtocol, OS_dispatch_queue, OS_os_log;
+@protocol FPDDomainBackend, FPDDomainIndexChangeDelegate, FPDExtensionSessionProtocol, OS_dispatch_queue, OS_dispatch_source, OS_os_log;
 
 @interface FPDDomain : NSObject <FPDFileCoordinationProviderDelegate, FPDDomainIndexerDelegate>
 {
@@ -23,6 +23,7 @@
     BOOL _isObservingRoot;
     BOOL _indexerStarted;
     BOOL _isUsingFPFS;
+    NSObject<OS_dispatch_source> *_timer;
     NSURL *_previouslyAccessedSecurityScopedURL;
     FPPacer *_rootCreationPacer;
     BOOL _started;
@@ -130,6 +131,9 @@
 - (BOOL)isUsingFPFS;
 - (BOOL)supportsFPFS;
 - (BOOL)isHiddenDefaultDomain;
+- (BOOL)_shouldDisconnectDueToLowDiskSpace;
+- (void)_setupRecoveryTimer;
+- (BOOL)_shouldDisconnect;
 @property(readonly, nonatomic) BOOL isConnectedToAppExtension;
 - (id)initWithIdentifier:(id)arg1 nsDomain:(id)arg2 extensionStorageURLs:(id)arg3 purposeIdentifier:(id)arg4 fpfsClass:(Class)arg5 provider:(id)arg6;
 

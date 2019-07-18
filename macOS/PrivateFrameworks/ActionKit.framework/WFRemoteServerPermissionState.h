@@ -22,6 +22,7 @@
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) BOOL hasNotDeterminedEntries;
 @property(readonly, nonatomic) BOOL hasDeniedEntries;
+- (id)stateBySettingAllEntriesAsAuthorized:(BOOL)arg1;
 - (id)stateBySettingNotDeterminedEntriesAsAuthorized:(BOOL)arg1;
 - (id)stateBySettingNotDeterminedEntriesAccordingToState:(id)arg1;
 - (id)stateByCombiningWithEntriesFromState:(id)arg1;

@@ -15,6 +15,8 @@
 
 - (void).cxx_destruct;
 - (id)tableForName:(id)arg1;
+- (id)indexDefinitionsWithDatabaseName:(id)arg1;
+- (id)definitionWithDatabaseName:(id)arg1 includeIndexes:(BOOL)arg2;
 - (id)definitionWithDatabaseName:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *tables;
 - (id)description;

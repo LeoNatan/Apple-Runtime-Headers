@@ -38,7 +38,9 @@
 @property(nonatomic) double automaticEndpointingSuspensionEndTime; // @synthesize automaticEndpointingSuspensionEndTime;
 @property(nonatomic) unsigned int activeChannel; // @synthesize activeChannel;
 - (void).cxx_destruct;
-- (void)resetForNewRequestWithSampleRate:(unsigned int)arg1 recordContext:(id)arg2;
+- (double)trailingSilenceDurationAtEndpoint;
+- (void)resetForNewRequestWithSampleRate:(unsigned int)arg1 recordContext:(id)arg2 recordSettings:(id)arg3;
+- (void)stopEndpointer;
 - (void)recordingStoppedForReason:(int)arg1;
 - (void)processAudioSamplesAsynchronously:(id)arg1;
 - (void)reset;

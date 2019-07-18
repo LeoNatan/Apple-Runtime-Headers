@@ -23,6 +23,7 @@
 @property(copy, nonatomic) NSArray *users; // @synthesize users=_users;
 - (void).cxx_destruct;
 - (void)notifyServerOfScreenTimeEnabled:(BOOL)arg1 forUser:(id)arg2;
+- (void)refreshSelectedUserImage;
 @property(readonly, nonatomic) STCoreUser *selectedUser;
 @property(readonly) STCoreUser *localUser;
 - (void)_updateUsersWithLocalUser:(id)arg1;

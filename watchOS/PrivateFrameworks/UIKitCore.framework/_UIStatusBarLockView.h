@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)animateUnlockWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)resetLock;
+@property(readonly, nonatomic) _Bool prefersBaselineAlignment;
 - (void)applyStyleAttributes:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly, nonatomic) int overriddenVerticalAlignment;
-@property(readonly, nonatomic) _Bool prefersBaselineAlignment;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) _Bool wantsCrossfade;
 

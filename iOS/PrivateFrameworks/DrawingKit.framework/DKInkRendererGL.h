@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)addPointsFromBrushPointQueueWithSegmentLength:(unsigned long long)arg1;
 - (void)displayForcefully;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)display;
 @property(readonly, nonatomic) unsigned long long maximumPointsForBleedAnimation;
 @property(readonly, nonatomic) _Bool supportsBleedAnimation;

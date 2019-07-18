@@ -44,8 +44,10 @@
 - (_Bool)canHelpRestoreZoneName:(id)arg1;
 - (void)_persistNotificationsUserID:(id)arg1;
 - (void)syncLocalNotificationsUserID:(id)arg1 withRemoteNotificationsUserID:(id)arg2;
+- (void)handleSyncWithDeletedUserInfoRecord;
 - (void)handleSyncWithUserInfoRecord:(id)arg1;
-- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
+- (id)allKnownRecordNamesWithinRecordZoneWithID:(id)arg1;
+- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
 - (void)accessTokenRemovedForTagID:(id)arg1 userInitiated:(_Bool)arg2;
 - (void)accessTokenDidChangeForTagID:(id)arg1;
 - (void)addModifyTagSettingsCommandToCommandQueue:(id)arg1;

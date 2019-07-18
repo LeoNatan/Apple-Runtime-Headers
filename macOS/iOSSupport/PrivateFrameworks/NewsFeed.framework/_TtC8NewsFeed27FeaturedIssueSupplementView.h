@@ -13,6 +13,7 @@
     // Error parsing type: , name: publisherLogoImageView
     // Error parsing type: , name: publisherLabel
     // Error parsing type: , name: dateLabel
+    // Error parsing type: , name: premiumBadgeView
     // Error parsing type: , name: debugButton
 }
 

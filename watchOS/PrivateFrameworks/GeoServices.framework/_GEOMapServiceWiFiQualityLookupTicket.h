@@ -8,24 +8,31 @@
 
 #import <GeoServices/GEOMapServiceWiFiQualityLocationSearchTicket-Protocol.h>
 #import <GeoServices/GEOMapServiceWiFiQualityNetworkSearchTicket-Protocol.h>
+#import <GeoServices/GEOMapServiceWiFiQualityTileLoadTicket-Protocol.h>
 
 @class GEOWiFiQualityServiceRequest, NSString;
 
 __attribute__((visibility("hidden")))
-@interface _GEOMapServiceWiFiQualityLookupTicket : GEOAbstractTicket <GEOMapServiceWiFiQualityNetworkSearchTicket, GEOMapServiceWiFiQualityLocationSearchTicket>
+@interface _GEOMapServiceWiFiQualityLookupTicket : GEOAbstractTicket <GEOMapServiceWiFiQualityNetworkSearchTicket, GEOMapServiceWiFiQualityLocationSearchTicket, GEOMapServiceWiFiQualityTileLoadTicket>
 {
     GEOWiFiQualityServiceRequest *_request;
+    NSString *_tileKey;
+    NSString *_eTag;
     NSString *_requestID;
 }
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_d1a7ebee dataRequestKind;
 - (void)_cancel;
+- (void)cancelTileLoad;
+- (void)submitTileLoadWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelLocationSearch;
 - (void)submitLocationSearchWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelNetworkSearch;
 - (void)submitNetworkSearchWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)initWithTileKey:(id)arg1 eTag:(id)arg2 requestId:(id)arg3;
 - (id)initWithRequest:(id)arg1 requestId:(id)arg2;
+- (id)initWithRequestID:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

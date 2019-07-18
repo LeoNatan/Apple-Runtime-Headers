@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     NSString *_fullScreenAlternateImageName;
     NSString *_inlineAlternateImageName;
     AVMicaPackage *_micaPackage;
+    double _micaSnapshotAlpha;
     UIViewPropertyAnimator *_highlightAnimator;
     double _trackingStartTime;
     double _horizontalTranslationOfLongPress;
@@ -58,6 +59,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool clampsHitRectInsetsWhenContainedInScrollableView; // @synthesize clampsHitRectInsetsWhenContainedInScrollableView=_clampsHitRectInsetsWhenContainedInScrollableView;
 @property(nonatomic) struct NSDirectionalEdgeInsets hitRectInsets; // @synthesize hitRectInsets=_hitRectInsets;
 @property(nonatomic) _Bool disablesHighlightWhenLongPressed; // @synthesize disablesHighlightWhenLongPressed=_disablesHighlightWhenLongPressed;
+@property(nonatomic) double micaSnapshotAlpha; // @synthesize micaSnapshotAlpha=_micaSnapshotAlpha;
 @property(retain, nonatomic) AVMicaPackage *micaPackage; // @synthesize micaPackage=_micaPackage;
 @property(copy, nonatomic) NSString *inlineAlternateImageName; // @synthesize inlineAlternateImageName=_inlineAlternateImageName;
 @property(copy, nonatomic) NSString *fullScreenAlternateImageName; // @synthesize fullScreenAlternateImageName=_fullScreenAlternateImageName;
@@ -103,6 +105,7 @@ __attribute__((visibility("hidden")))
 - (void)setEnabled:(_Bool)arg1;
 - (void)willMoveToWindow:(id)arg1;
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) _Bool collapsedOrExcluded;
+- (void)setHidden:(_Bool)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

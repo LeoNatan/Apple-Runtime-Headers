@@ -6,23 +6,32 @@
 
 #import <HomeUI/HUServiceGridViewController.h>
 
-@class HMAccessory, HUNearbyAccessoriesItemManager;
+@class HMAccessory, HUNearbyAccessoriesItemManager, NSArray, UILabel;
 
 @interface HUNearbyAccessoriesViewController : HUServiceGridViewController
 {
     _Bool _supportsQuickControls;
     HMAccessory *_currentAccessory;
+    UILabel *_userInfoHeading;
+    UILabel *_userInfoDescription;
+    NSArray *_userInfoConstraints;
 }
 
+@property(retain, nonatomic) NSArray *userInfoConstraints; // @synthesize userInfoConstraints=_userInfoConstraints;
+@property(retain, nonatomic) UILabel *userInfoDescription; // @synthesize userInfoDescription=_userInfoDescription;
+@property(retain, nonatomic) UILabel *userInfoHeading; // @synthesize userInfoHeading=_userInfoHeading;
 @property(retain, nonatomic) HMAccessory *currentAccessory; // @synthesize currentAccessory=_currentAccessory;
 @property(nonatomic) _Bool supportsQuickControls; // @synthesize supportsQuickControls=_supportsQuickControls;
 - (void).cxx_destruct;
 - (id)layoutOptionsForSection:(long long)arg1;
 - (_Bool)presentationCoordinatorShouldProvideCancellationFeedback:(id)arg1;
 - (_Bool)presentationCoordinator:(id)arg1 shouldBeginPresentationWithContext:(id)arg2;
+- (void)configureCell:(id)arg1 forItem:(id)arg2;
 - (void)doneButtonPressed:(id)arg1;
+- (void)updateViewConstraints;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithAccessory:(id)arg1;
+- (id)initWithSourceItem:(id)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) HUNearbyAccessoriesItemManager *itemManager; // @dynamic itemManager;

@@ -15,7 +15,7 @@
 - (void)loadWithModels:(NSArray *)arg1;
 - (void)encodeWithCoder:(NSCoder *)arg1;
 - (NSArray *)modelsToMakeSettings;
-- (void)makeOrMigrateSettings;
+- (void)migrateSettingsWithCompletion:(void (^)(NSError *))arg1;
 - (void)configure;
 @end
 

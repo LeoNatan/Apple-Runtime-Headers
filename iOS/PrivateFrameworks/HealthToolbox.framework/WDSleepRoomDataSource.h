@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) HKUnitPreferenceController *unitController; // @synthesize unitController=_unitController;
 - (void).cxx_destruct;
+- (void)updateController:(id)arg1 didReceiveHighFrequencyUpdateForType:(id)arg2;
 - (void)updateController:(id)arg1 didReceiveUpdateForType:(id)arg2 samplesAdded:(id)arg3 objectsRemoved:(id)arg4;
 - (id)_asleepGradientColors;
 - (id)_inbedGradientColors;

@@ -6,14 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class BLFileFetcher;
+@class BLFileFetcher, NSProgress;
+@protocol OS_dispatch_source;
 
 @interface BLAudiobookKeyPrefetcher : NSObject
 {
     int _batchSize;
     BLFileFetcher *_fileFetcher;
+    NSObject<OS_dispatch_source> *_deferTimer;
+    NSProgress *_currentProgress;
 }
 
++ (id)timerQueue;
+@property(retain, nonatomic) NSProgress *currentProgress; // @synthesize currentProgress=_currentProgress;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *deferTimer; // @synthesize deferTimer=_deferTimer;
 @property(readonly, nonatomic) BLFileFetcher *fileFetcher; // @synthesize fileFetcher=_fileFetcher;
 @property(readonly, nonatomic) int batchSize; // @synthesize batchSize=_batchSize;
 - (void).cxx_destruct;
@@ -21,6 +27,7 @@
 - (void)_processStreamInf:(id)arg1 item:(id)arg2 directoryUtils:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_fetchKeysForEnumerator:(id)arg1 completedCount:(int)arg2 shouldStop:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)fetchNextBatchWithShouldStop:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)q_cancelTimer;
 - (id)initWithBatchSize:(int)arg1;
 - (id)init;
 

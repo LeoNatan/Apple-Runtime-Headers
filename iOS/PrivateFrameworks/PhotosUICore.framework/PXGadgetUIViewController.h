@@ -16,15 +16,16 @@
 #import <PhotosUICore/UICollectionViewDataSourcePrefetching-Protocol.h>
 #import <PhotosUICore/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <PhotosUICore/UICollectionViewDropDelegate-Protocol.h>
-#import <PhotosUICore/_UIContextMenuInteractionDelegate-Protocol.h>
+#import <PhotosUICore/UIContextMenuInteractionDelegate-Protocol.h>
 
-@class NSMapTable, NSMutableSet, NSObject, NSString, NSTimer, PXContentUnavailablePlaceholderManager, PXContentUnavailableView, PXGadgetAnchorHelper, PXGadgetCollectionViewLayout, PXGadgetDataSource, PXGadgetDataSourceManager, PXGadgetNavigationHelper, PXGadgetSpecManager, PXUpdater, UIColor, _UIContextMenuInteraction;
+@class NSMapTable, NSMutableSet, NSObject, NSString, NSTimer, PXContentUnavailablePlaceholderManager, PXContentUnavailableView, PXGadgetAnchorHelper, PXGadgetCollectionViewLayout, PXGadgetDataSource, PXGadgetDataSourceManager, PXGadgetNavigationHelper, PXGadgetSpecManager, PXUpdater, UIColor, UIContextMenuInteraction, UIView, UIViewController;
 @protocol OS_os_log, PXGadget, PXGadgetDelegate, PXGadgetTransition;
 
-@interface PXGadgetUIViewController : UICollectionViewController <_UIContextMenuInteractionDelegate, PXGadgetCollectionViewLayoutDelegate, PXGadgetAnchorHelperDelegate, PXSectionedDataSourceManagerObserver, PXContentUnavailablePlaceholderManagerDelegate, UICollectionViewDataSourcePrefetching, PXChangeObserver, PXGadgetNavigationHelperDelegate, UICollectionViewDropDelegate, UICollectionViewDelegateFlowLayout, PXGadgetDelegate>
+@interface PXGadgetUIViewController : UICollectionViewController <UIContextMenuInteractionDelegate, PXGadgetCollectionViewLayoutDelegate, PXGadgetAnchorHelperDelegate, PXSectionedDataSourceManagerObserver, PXContentUnavailablePlaceholderManagerDelegate, UICollectionViewDataSourcePrefetching, PXChangeObserver, PXGadgetNavigationHelperDelegate, UICollectionViewDropDelegate, UICollectionViewDelegateFlowLayout, PXGadgetDelegate>
 {
     NSMutableSet *_registeredCellReuseIdentifiers;
     NSMapTable *_cellsToGadgets;
+    _Bool _isInteractionPreviewCancelled;
     _Bool _currentlyVisible;
     _Bool _loadingGadgets;
     _Bool _gadgetAnimating;
@@ -37,7 +38,10 @@
     PXGadgetAnchorHelper *_anchorHelper;
     unsigned long long _numberOfInitialGadgetsToLoad;
     UIColor *_backgroundColor;
-    _UIContextMenuInteraction *_contextMenuInteraction;
+    UIContextMenuInteraction *_contextMenuInteraction;
+    id <PXGadget> _interactionPreviewGadget;
+    UIViewController *_interactionPreviewViewController;
+    UIView *_interactionPreviewView;
     PXUpdater *_updater;
     PXGadgetDataSource *_dataSource;
     PXGadgetSpecManager *_specManager;
@@ -66,13 +70,18 @@
 @property(nonatomic, getter=isCurrentlyVisible) _Bool currentlyVisible; // @synthesize currentlyVisible=_currentlyVisible;
 @property(retain, nonatomic) PXGadgetDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) PXUpdater *updater; // @synthesize updater=_updater;
-@property(retain, nonatomic) _UIContextMenuInteraction *contextMenuInteraction; // @synthesize contextMenuInteraction=_contextMenuInteraction;
+@property(nonatomic) _Bool isInteractionPreviewCancelled; // @synthesize isInteractionPreviewCancelled=_isInteractionPreviewCancelled;
+@property(retain, nonatomic) UIView *interactionPreviewView; // @synthesize interactionPreviewView=_interactionPreviewView;
+@property(retain, nonatomic) UIViewController *interactionPreviewViewController; // @synthesize interactionPreviewViewController=_interactionPreviewViewController;
+@property(retain, nonatomic) id <PXGadget> interactionPreviewGadget; // @synthesize interactionPreviewGadget=_interactionPreviewGadget;
+@property(retain, nonatomic) UIContextMenuInteraction *contextMenuInteraction; // @synthesize contextMenuInteraction=_contextMenuInteraction;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) unsigned long long numberOfInitialGadgetsToLoad; // @synthesize numberOfInitialGadgetsToLoad=_numberOfInitialGadgetsToLoad;
 @property(readonly, nonatomic) PXGadgetAnchorHelper *anchorHelper; // @synthesize anchorHelper=_anchorHelper;
 @property(readonly, nonatomic) PXGadgetNavigationHelper *navigationHelper; // @synthesize navigationHelper=_navigationHelper;
 @property(readonly, nonatomic) PXGadgetDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 - (void).cxx_destruct;
+- (long long)scrollAnimationIdentifier;
 @property(readonly, nonatomic) NSObject<OS_os_log> *gadgetViewControllerLog;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)contentUnavailablePlaceholderManagerDidChange:(id)arg1;
@@ -140,15 +149,17 @@
 - (void)_clearTimerToHandleGadgetsSeen;
 - (void)_handleGadgetsSeen;
 - (void)_configureHeader:(id)arg1 withGadget:(id)arg2;
+- (void)configureSectionHeader:(id)arg1;
 - (id)_indexPathForGadget:(id)arg1;
 - (id)_gadgetAtIndexPath:(id)arg1;
 - (void)updateIfNeeded;
 - (void)_updaterNeedsUpdate;
-- (void)_unregisterForPreview;
-- (void)_registerForPreview;
-- (id)contextMenuInteraction:(id)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(id)arg3;
-- (id)contextMenuInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
-- (_Bool)contextMenuInteractionShouldBegin:(id)arg1;
+- (void)_removeContextMenuInteraction;
+- (void)_addContextMenuInteraction;
+- (void)contextMenuInteractionDidEnd:(id)arg1;
+- (void)contextMenuInteraction:(id)arg1 willCommitWithAnimator:(id)arg2;
+- (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
+- (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
 @property(readonly, nonatomic) _Bool isScrolling;
 - (void)setLayout:(id)arg1;
 @property(readonly, nonatomic) PXGadgetCollectionViewLayout *layout;
@@ -163,6 +174,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)rootGadgetControllerDidDisappear;
 - (void)rootGadgetControllerWillAppear;
 - (void)viewDidAppear:(_Bool)arg1;

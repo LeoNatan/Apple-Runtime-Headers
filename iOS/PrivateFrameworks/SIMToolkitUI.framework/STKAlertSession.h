@@ -9,33 +9,36 @@
 #import <SIMToolkitUI/SBSRemoteAlertHandleObserver-Protocol.h>
 
 @class NSDictionary, NSString, SBSRemoteAlertHandle, STKSessionAction;
-@protocol OS_dispatch_queue, STKAlertSessionResponseProvider, STKSound;
+@protocol OS_os_log, STKAlertSessionResponseProvider, STKSound;
 
 @interface STKAlertSession : NSObject <SBSRemoteAlertHandleObserver>
 {
-    NSObject<OS_dispatch_queue> *_queue;
+    struct os_unfair_lock_s _lock;
     id <STKAlertSessionResponseProvider> _responseProvider;
-    STKSessionAction *_pendingAction;
+    SBSRemoteAlertHandle *_alertHandle;
+    STKSessionAction *_alertAction;
     _Bool _needsResponse;
     _Bool _invalidated;
+    NSObject<OS_os_log> *_logger;
     NSDictionary *_options;
     id <STKSound> _sound;
-    SBSRemoteAlertHandle *_alertHandle;
 }
 
 + (_Bool)_requiresResponseProvider;
-@property(retain, nonatomic) SBSRemoteAlertHandle *alertHandle; // @synthesize alertHandle=_alertHandle;
-@property(retain, nonatomic) STKSessionAction *pendingAction; // @synthesize pendingAction=_pendingAction;
+@property(readonly, nonatomic) STKSessionAction *alertAction; // @synthesize alertAction=_alertAction;
 @property(retain, nonatomic) id <STKSound> sound; // @synthesize sound=_sound;
 @property(readonly, nonatomic) NSDictionary *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+- (void)_lock_sendResponse:(long long)arg1;
 - (void)remoteAlertHandleDidActivate:(id)arg1;
 - (void)sendResponse:(long long)arg1 withStringResult:(id)arg2;
 - (void)sendResponse:(long long)arg1;
 - (void)invalidate;
 @property(readonly, nonatomic) _Bool hasSentResponse;
+- (void)presentRemoteAlertHandle:(id)arg1 withAction:(id)arg2;
+@property(readonly, nonatomic) SBSRemoteAlertHandle *alertHandle;
 - (void)dealloc;
-- (id)initWithQueue:(id)arg1 responseProvider:(id)arg2 options:(id)arg3 sound:(id)arg4;
+- (id)initWithLogger:(id)arg1 responseProvider:(id)arg2 options:(id)arg3 sound:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

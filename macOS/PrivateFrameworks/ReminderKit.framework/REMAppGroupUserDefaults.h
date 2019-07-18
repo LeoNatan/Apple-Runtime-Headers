@@ -17,6 +17,7 @@
 - (id)streamTodayNotificationFireTime:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) NSDateComponents *todayNotificationFireTime;
 @property(retain, nonatomic) REMObjectID *preferredDefaultListID;
+@property(nonatomic) BOOL forceShowWelcomeScreen;
 @property(nonatomic) BOOL enableWelcomeScreen;
 - (id)observeShowRemindersAsOverdueWithBlock:(CDUnknownBlockType)arg1;
 @property(nonatomic) BOOL showRemindersAsOverdue;

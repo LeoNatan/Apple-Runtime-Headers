@@ -9,6 +9,7 @@
 #import <ChatKit/NSSecureCoding-Protocol.h>
 
 @class MSMessage, NSData, NSString, NSURL;
+@protocol OS_dispatch_semaphore;
 
 __attribute__((visibility("hidden")))
 @interface CKRemoteItemForSending : NSObject <NSSecureCoding>
@@ -21,11 +22,13 @@ __attribute__((visibility("hidden")))
     NSURL *_appendedRichLinkURL;
     NSData *_appendedRichLinkData;
     MSMessage *_appendedMessage;
+    NSObject<OS_dispatch_semaphore> *_previewCreationSemaphore;
 }
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)hasAppendedVideo:(id)arg1;
 + (id)previewQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *previewCreationSemaphore; // @synthesize previewCreationSemaphore=_previewCreationSemaphore;
 @property(copy, nonatomic) MSMessage *appendedMessage; // @synthesize appendedMessage=_appendedMessage;
 @property(copy, nonatomic) NSData *appendedRichLinkData; // @synthesize appendedRichLinkData=_appendedRichLinkData;
 @property(retain, nonatomic) NSURL *appendedRichLinkURL; // @synthesize appendedRichLinkURL=_appendedRichLinkURL;
@@ -41,12 +44,12 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (void)_setPreviewUIImage:(id)arg1;
 - (void)dealloc;
-- (void)waitForPreviewCreation;
+- (void)waitForPreviewGenerationIfNecessary;
 - (void)beginPreviewCreation;
 - (id)initWithMSMessage:(id)arg1;
 - (id)initWithRichLinkWithURL:(id)arg1 data:(id)arg2;
-- (id)initWithAttachmentURL:(id)arg1 description:(id)arg2;
-- (id)initWithAttachmentURL:(id)arg1 description:(id)arg2 previewImage:(id)arg3;
+- (id)initWithAttachmentURL:(id)arg1 description:(id)arg2 blockOnPreviewCreation:(_Bool)arg3;
+- (id)initWithAttachmentURL:(id)arg1 description:(id)arg2 previewImage:(id)arg3 blockOnPreviewCreation:(_Bool)arg4;
 
 @end
 

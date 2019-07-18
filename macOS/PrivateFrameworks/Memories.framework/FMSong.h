@@ -30,6 +30,7 @@
 - (CDStruct_1b6d18a9)minimumDuration;
 - (id)description;
 - (void)cancelDownloadOfAllAssetsWithIDs:(id)arg1;
+- (void)requestDownloadOfAllAssetsWithIDs:(id)arg1 withOptions:(id)arg2;
 - (void)requestDownloadOfAllAssetsWithIDs:(id)arg1;
 - (id)existingAssetWithID:(id)arg1;
 - (id)assetWithID:(id)arg1;

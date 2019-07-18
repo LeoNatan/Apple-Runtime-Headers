@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)clearStagedIDs:(id)arg1;
 - (BOOL)updateIDs:(id)arg1;
 - (BOOL)negateIDs:(id)arg1;
+- (BOOL)setForeignKeys:(id)arg1 enabled:(BOOL)arg2;
 - (BOOL)updateAttachedDatabase;
 - (id)docIDForURL:(id)arg1;
 - (BOOL)attachDatabase:(id)arg1 error:(id *)arg2;

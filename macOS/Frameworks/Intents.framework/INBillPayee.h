@@ -19,7 +19,7 @@
     INSpeakableString *_organizationName;
 }
 
-+ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
 @property(readonly, copy) INSpeakableString *organizationName; // @synthesize organizationName=_organizationName;
 @property(readonly, copy) NSString *accountNumber; // @synthesize accountNumber=_accountNumber;
@@ -28,7 +28,7 @@
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
-- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

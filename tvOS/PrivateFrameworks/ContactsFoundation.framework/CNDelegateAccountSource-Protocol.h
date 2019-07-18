@@ -6,10 +6,10 @@
 
 #import <ContactsFoundation/NSObject-Protocol.h>
 
-@class CNDelegateInfo, NSArray;
+@class CNCoreDelegateInfo, NSArray;
 
 @protocol CNDelegateAccountSource <NSObject>
 - (NSArray *)delegateAccounts;
-- (CNDelegateInfo *)primaryAccount;
+- (CNCoreDelegateInfo *)primaryAccount;
 @end
 

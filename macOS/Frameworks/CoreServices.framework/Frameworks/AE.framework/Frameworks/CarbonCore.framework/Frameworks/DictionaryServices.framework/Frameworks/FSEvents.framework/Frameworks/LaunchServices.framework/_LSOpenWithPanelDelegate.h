@@ -6,22 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class NSOpenPanel;
+@class NSMutableDictionary, NSOpenPanel, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface _LSOpenWithPanelDelegate : NSObject
 {
-    NSOpenPanel *_openPanel;
     struct unique_ptr<LaunchServices::OpenWithMenu::State, std::__1::default_delete<LaunchServices::OpenWithMenu::State>> state;
     BOOL allowAll;
+    NSURL *lastSelectedAppURL;
+    NSMutableDictionary *recommendedAppURLs;
+    BOOL delegateCaresAboutAppSelectionChanges;
+    BOOL delegateCaresAboutFilterMenuChanges;
+    NSOpenPanel *_openPanel;
 }
 
 @property __weak NSOpenPanel *openPanel; // @synthesize openPanel=_openPanel;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)toggleAll:(id)arg1;
+- (void)panelSelectionDidChange:(id)arg1;
 - (BOOL)panel:(id)arg1 shouldEnableURL:(id)arg2;
-- (id)initWithState:(struct State *)arg1;
+- (void)toggleAll:(id)arg1;
+- (id)initWithState:(struct State *)arg1 knownGoodApps:(id)arg2;
 
 @end
 

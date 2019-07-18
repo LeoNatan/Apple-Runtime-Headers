@@ -50,6 +50,8 @@
 - (void)updateConstraints;
 - (void)_reloadToolImage;
 - (void)_reloadToolImageSizeConstraints;
+- (struct CGSize)_largeShadowOffset;
+- (struct CGSize)_smallShadowOffset;
 - (void)_updateToolImageShadows;
 @property(readonly, nonatomic) NSString *toolName;
 - (void)layoutSubviews;

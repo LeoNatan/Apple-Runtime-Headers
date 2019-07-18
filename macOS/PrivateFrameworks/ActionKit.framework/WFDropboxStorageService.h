@@ -26,9 +26,7 @@
 - (void)createFolderAtPath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteFiles:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSharingURLsForFiles:(id)arg1 usePublicURLs:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)saveFiles:(id)arg1 withUserInterface:(id)arg2 options:(unsigned long long)arg3 progress:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)saveFiles:(id)arg1 toPath:(id)arg2 options:(unsigned long long)arg3 progress:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)retrieveFilesWithUserInterface:(id)arg1 initialDirectoryPath:(id)arg2 options:(unsigned long long)arg3 progress:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)finishRetrievalWithContentsOfFolderAtPath:(id)arg1 sessionManager:(id)arg2 retrievalHandler:(CDUnknownBlockType)arg3;
 - (void)retrieveFilesAtPath:(id)arg1 options:(unsigned long long)arg2 progress:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 

@@ -8,6 +8,8 @@
 
 @interface NSBundle (HealthKit)
 - (id)hk_findContainedBundleWithIdentifier:(id)arg1;
+- (id)hk_name;
+- (id)hk_displayName;
 - (id)hk_localizedClinicalReadAuthorizationUsageDescription;
 - (id)hk_localizedWriteAuthorizationUsageDescription;
 - (id)hk_localizedReadAuthorizationUsageDescription;

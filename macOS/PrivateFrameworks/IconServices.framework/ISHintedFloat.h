@@ -6,7 +6,6 @@
 
 #import <IconServices/ISHintedValue.h>
 
-__attribute__((visibility("hidden")))
 @interface ISHintedFloat : ISHintedValue
 {
 }

@@ -32,9 +32,11 @@
 + (void)deleteMarkerAtURL:(id)arg1;
 + (id)_markerFilePathForPersistentStoreFileURL:(id)arg1;
 + (void)deleteClosedDatabaseFilesAtBaseURL:(id)arg1;
++ (void)deleteClosedDatabaseFilesAtStoreURL:(id)arg1;
 + (_Bool)destroyAtURL:(id)arg1 error:(id *)arg2;
 + (_Bool)migrateFromURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 + (_Bool)copyFromURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
++ (id)errorForKGDBReturnCode:(int)arg1 description:(id)arg2;
 + (id)persistentStoreFileExtension;
 @property(retain, nonatomic) NSMutableDictionary *propertyNameByAttrId; // @synthesize propertyNameByAttrId=_propertyNameByAttrId;
 @property(retain, nonatomic) NSMutableDictionary *attrIdByPropertyName; // @synthesize attrIdByPropertyName=_attrIdByPropertyName;

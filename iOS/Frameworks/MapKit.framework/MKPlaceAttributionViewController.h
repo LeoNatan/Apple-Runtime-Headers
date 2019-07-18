@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)updateLogo;
 - (void)viewDidLoad;
 - (void)loadView;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

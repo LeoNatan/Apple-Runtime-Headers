@@ -118,6 +118,7 @@
 - (id)allowedEntities;
 - (id)fetchUpdatedObject:(id)arg1;
 - (id)fetchPHObjectsForUUIDs:(id)arg1 entityName:(id)arg2;
+- (id)fetchedObjectsForOIDs:(id)arg1 objectClass:(Class)arg2;
 - (id)fetchPHObjectsForOIDs:(id)arg1 propertyHint:(unsigned int)arg2 includeTrash:(_Bool)arg3;
 - (id)fetchDictionariesByPHClassForOIDs:(id)arg1 propertyHint:(unsigned int)arg2 includeTrash:(_Bool)arg3;
 - (id)fetchPHObjectsForOIDs:(id)arg1;
@@ -179,7 +180,7 @@
 - (id)pl_photoLibraryForCMM;
 @property(readonly) PLPhotoKitVariationCache *variationCache;
 - (void)dealloc;
-- (void)_invalidateEverything;
+- (void)_invalidateEverythingWithReason:(id)arg1;
 - (id)initWithPhotoLibraryBundle:(id)arg1 type:(unsigned short)arg2;
 - (id)initWithPhotoLibraryURL:(id)arg1 type:(unsigned short)arg2;
 - (id)initWithPLPhotoLibrary:(id)arg1 type:(unsigned short)arg2;
@@ -211,6 +212,7 @@
 - (id)bfa_photoLibrary;
 - (id)bfa_tombstoneObjectForOID:(id)arg1 uuid:(id)arg2 propertyHint:(unsigned int)arg3;
 - (id)bfa_fetchObjectsForOIDs:(id)arg1 propertyHint:(unsigned int)arg2;
+- (id)bfa_fetchedObjectsForOIDs:(id)arg1 objectClass:(Class)arg2;
 - (id)faceClusterSequenceNumbersOfFacesWithClusterSequenceNumbers:(id)arg1 error:(id *)arg2;
 - (unsigned int)countOfUnclusteredFaces;
 - (unsigned int)countOfDirtyFaceGroups;
@@ -276,7 +278,7 @@
 - (id)deletedAssetUUIDsForAnalysisByWorkerType:(short)arg1 fetchLimit:(unsigned int)arg2 error:(id *)arg3;
 - (void)requestCountOfAnalysisRecordsForDeletedAssetsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)workInfoForAnalysisWithWorkerType:(short)arg1 additionalStatesToExclude:(id)arg2 fetchLimit:(unsigned int)arg3 error:(id *)arg4;
-- (double)sceneAnalysisProgressForHighlight:(id)arg1;
+- (double)sceneAnalysisProgressForHighlight:(id)arg1 usingSceneVersion:(unsigned int)arg2;
 - (id)analysisProgressCountsForWorkerType:(short)arg1;
 - (id)assetUUIDsAllowedForCurationFromAssets:(id)arg1;
 - (double)analysisProgressForHighlight:(id)arg1 workerType:(short)arg2 error:(id *)arg3;

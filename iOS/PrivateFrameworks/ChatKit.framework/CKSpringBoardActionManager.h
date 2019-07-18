@@ -12,6 +12,7 @@
 
 @interface CKSpringBoardActionManager : NSObject <CKContactsSearchManagerDelegate>
 {
+    _Bool shouldHideGroupsDonations;
     CKContactsSearchManager *_contactsSearchManager;
     NSArray *_conversationCache;
 }
@@ -19,6 +20,7 @@
 + (id)sharedInstance;
 @property(copy, nonatomic) NSArray *conversationCache; // @synthesize conversationCache=_conversationCache;
 @property(retain, nonatomic) CKContactsSearchManager *contactsSearchManager; // @synthesize contactsSearchManager=_contactsSearchManager;
+@property(nonatomic) _Bool shouldHideGroupsDonations; // @synthesize shouldHideGroupsDonations;
 - (void).cxx_destruct;
 - (void)chatStateChanged:(id)arg1;
 - (id)conversationCacheForContactsSearchManager:(id)arg1;

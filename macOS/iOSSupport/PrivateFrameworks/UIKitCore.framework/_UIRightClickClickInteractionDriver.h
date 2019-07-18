@@ -28,12 +28,14 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <_UIClickInteractionDriverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_attemptSecondaryClick;
 - (void)_handleGestureRecognizer:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (void)_prepareStateMachine;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;
 - (void)cancelInteraction;
+@property(readonly, nonatomic) BOOL isCurrentlyAcceleratedByForce;
 @property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;
 @property(readonly, nonatomic) double touchDuration;
 - (id)init;

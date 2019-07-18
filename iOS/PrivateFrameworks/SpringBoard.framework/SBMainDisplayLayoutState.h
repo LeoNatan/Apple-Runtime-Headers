@@ -6,7 +6,7 @@
 
 #import <SpringBoard/SBLayoutState.h>
 
-@class NSString;
+@class NSSet, NSString;
 
 @interface SBMainDisplayLayoutState : SBLayoutState
 {
@@ -15,12 +15,12 @@
     long long _floatingConfiguration;
     long long _unlockedEnvironmentMode;
     NSString *_bundleIDShowingAppExpose;
-    unsigned long long _inlineAppExposeLayoutRoles;
+    NSSet *_inlineAppExposeOverlayElements;
 }
 
 + (long long)_defaultInterfaceOrientation;
+@property(readonly, nonatomic) NSSet *inlineAppExposeOverlayElements; // @synthesize inlineAppExposeOverlayElements=_inlineAppExposeOverlayElements;
 @property(readonly, nonatomic, getter=isFloatingSwitcherVisible) _Bool floatingSwitcherVisible; // @synthesize floatingSwitcherVisible=_floatingSwitcherVisible;
-@property(readonly, nonatomic) unsigned long long inlineAppExposeLayoutRoles; // @synthesize inlineAppExposeLayoutRoles=_inlineAppExposeLayoutRoles;
 @property(readonly, nonatomic) NSString *bundleIDShowingAppExpose; // @synthesize bundleIDShowingAppExpose=_bundleIDShowingAppExpose;
 @property(readonly, nonatomic) long long unlockedEnvironmentMode; // @synthesize unlockedEnvironmentMode=_unlockedEnvironmentMode;
 @property(readonly, nonatomic) long long floatingConfiguration; // @synthesize floatingConfiguration=_floatingConfiguration;
@@ -30,8 +30,9 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)inlineAppExposeOverlayElementWithRole:(long long)arg1;
 - (id)_initWithLayoutElements:(id)arg1 interfaceOrientation:(long long)arg2 elementInterfaceOrientation:(long long)arg3;
-- (id)_initWithLayoutElements:(id)arg1 interfaceOrientation:(long long)arg2 elementInterfaceOrientation:(long long)arg3 spaceConfiguration:(long long)arg4 floatingConfiguration:(long long)arg5 unlockedEnvironmentMode:(long long)arg6 floatingSwitcherVisible:(_Bool)arg7 bundleIDShowingAppExpose:(id)arg8 inlineAppExposeLayoutRoles:(unsigned long long)arg9;
+- (id)_initWithLayoutElements:(id)arg1 interfaceOrientation:(long long)arg2 elementInterfaceOrientation:(long long)arg3 spaceConfiguration:(long long)arg4 floatingConfiguration:(long long)arg5 unlockedEnvironmentMode:(long long)arg6 floatingSwitcherVisible:(_Bool)arg7 bundleIDShowingAppExpose:(id)arg8 inlineAppExposeOverlayElements:(id)arg9;
 - (id)visibleFloatingItem;
 - (id)floatingItem;
 - (id)_transitionContextForDismissingRightApplication;

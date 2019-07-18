@@ -41,6 +41,8 @@
 - (void)transitRouteUpdater:(id)arg1 didFailUpdateForRouteIDs:(id)arg2 withError:(id)arg3;
 - (void)transitRouteUpdater:(id)arg1 didUpdateTransitRoutes:(id)arg2;
 - (void)transitRouteUpdater:(id)arg1 willUpdateTransitForRouteIDs:(id)arg2;
+- (void)transitRouteUpdater:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)transitRouteUpdater:(id)arg1 willSendRequests:(id)arg2;
 - (void)_updateETAResponse:(id)arg1 withRemainingDistanceFromRequest:(id)arg2;
 - (void)_handleETAResponse:(id)arg1 forRouteInfo:(id)arg2 request:(id)arg3 error:(id)arg4;
 - (_Bool)_updateETARequest:(id)arg1 withRouteInfo:(id)arg2 andUserLocation:(id)arg3;
@@ -51,6 +53,7 @@
 - (void)_scheduleETATimerWithInterval:(double)arg1;
 - (void)resumeUpdateRequestsForSubscriber:(id)arg1;
 - (void)pauseUpdateRequestsForSubscriber:(id)arg1;
+- (void)restartUpdateTimer;
 - (void)stopUpdateRequests;
 - (void)startUpdateRequestsForRoutes:(id)arg1 andNavigationType:(int)arg2;
 - (void)dealloc;

@@ -28,6 +28,7 @@
 @property(retain, nonatomic) MLModel<MLWritable> *model; // @synthesize model=_model;
 @property(retain, nonatomic) MLUpdateTask *task; // @synthesize task=_task;
 - (void).cxx_destruct;
+- (id)description;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import <iWorkImport/TSPObject.h>
 
-@class KNRecordingMovieTrack, KNRecordingSyncState, NSArray, NSDate;
+@class KNRecordingCorrectionHistory, KNRecordingMovieTrack, KNRecordingSyncState, NSArray, NSDate;
 
 __attribute__((visibility("hidden")))
 @interface KNRecording : TSPObject
@@ -16,9 +16,14 @@ __attribute__((visibility("hidden")))
     double _duration;
     NSDate *_modificationDate;
     KNRecordingSyncState *_syncState;
+    KNRecordingCorrectionHistory *_correctionHistory;
 }
 
++ (id)p_movieEventsDerivedFromNavigationEvents:(id)arg1;
++ (id)p_correctedNavigationEventsFromNavigationEventTrack:(id)arg1;
+@property(readonly, nonatomic) KNRecordingCorrectionHistory *correctionHistory; // @synthesize correctionHistory=_correctionHistory;
 @property(readonly, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
+@property(readonly, nonatomic) KNRecordingSyncState *syncState; // @synthesize syncState=_syncState;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) KNRecordingMovieTrack *movieTrack; // @synthesize movieTrack=_movieTrack;
 @property(readonly, nonatomic) NSArray *eventTracks; // @synthesize eventTracks=_eventTracks;
@@ -30,12 +35,15 @@ __attribute__((visibility("hidden")))
 - (id)movieSegmentToTrimWhenReplacingAfterTime:(double)arg1 trimDuration:(out double *)arg2;
 - (_Bool)isLocallyOutOfSyncWithShowUsingLocalOutOfSyncToken:(id)arg1;
 @property(readonly, nonatomic, getter=isInSyncWithShow) _Bool inSyncWithShow;
+- (id)description;
 - (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 eventTracks:(id)arg2 movieTrack:(id)arg3 duration:(double)arg4;
 - (id)initWithContext:(id)arg1 eventTracks:(id)arg2 movieTrack:(id)arg3 duration:(double)arg4 modificationDate:(id)arg5;
+- (id)initWithContext:(id)arg1 eventTracks:(id)arg2 movieTrack:(id)arg3 duration:(double)arg4 syncState:(id)arg5 modificationDate:(id)arg6 correctionHistory:(id)arg7;
+- (id)recordingByAddingMissingEventsForRadar49654305;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
--     // Error parsing type: v32@0:8^{RecordingArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{Reference}^{Date}^{RecordingSyncState}di}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8^{RecordingArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{Reference}^{Date}^{RecordingSyncState}^{RecordingCorrectionHistory}di}16@24, name: saveToArchive:archiver:
 
 @end
 

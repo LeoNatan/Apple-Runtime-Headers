@@ -8,7 +8,7 @@
 
 #import <PassKitUI/PKContactlessCardIngesterDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSString, NSTimer, PKContactlessCardIngester, PKPaymentContactlessProductCredential, PKPaymentPass, PKPaymentProvisioningController, PKPaymentSetupFieldsModel, PKPaymentSetupProduct, PKPaymentWebService, PKReaderModeProvisioningView, UILabel, UIScrollView;
+@class NSMutableDictionary, NSString, NSTimer, PKContactlessCardIngester, PKPasscodeUpgradeFlowController, PKPaymentContactlessProductCredential, PKPaymentPass, PKPaymentProvisioningController, PKPaymentSetupFieldsModel, PKPaymentSetupProduct, PKPaymentWebService, PKReaderModeProvisioningView, UILabel, UIScrollView;
 @protocol PKPaymentSetupViewControllerDelegate;
 
 @interface PKPaymentReaderModeProvisioningViewController : UIViewController <PKContactlessCardIngesterDelegate>
@@ -29,6 +29,7 @@
     NSString *_lastProvisioningStateName;
     _Bool _isGoodState;
     _Bool _idleTimerDisabled;
+    PKPasscodeUpgradeFlowController *_passcodeUpgradeFlowController;
     PKPaymentProvisioningController *_provisioningController;
     long long _context;
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
@@ -53,6 +54,7 @@
 - (void)_performFinishWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performProvisionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performEligibilityWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_performPasscodeUpgradeIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performNextActionForProvisioningState:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)acceptTerms;
 - (void)handleNextActionWithCompletion:(CDUnknownBlockType)arg1;

@@ -22,7 +22,7 @@
     _Bool _loadingPeopleSuggestions;
     NSString *_headline;
     NSString *_subheadline;
-    NSArray *_namesForHeadline;
+    NSArray *_localizedNamesForHeadline;
 }
 
 + (id)_subheadlineLabelFont;
@@ -30,7 +30,7 @@
 + (id)_headlineLabelFont;
 @property(nonatomic, getter=isLoadingPeopleSuggestions) _Bool loadingPeopleSuggestions; // @synthesize loadingPeopleSuggestions=_loadingPeopleSuggestions;
 @property(nonatomic) _Bool containsUnverifiedPersons; // @synthesize containsUnverifiedPersons=_containsUnverifiedPersons;
-@property(copy, nonatomic) NSArray *namesForHeadline; // @synthesize namesForHeadline=_namesForHeadline;
+@property(copy, nonatomic) NSArray *localizedNamesForHeadline; // @synthesize localizedNamesForHeadline=_localizedNamesForHeadline;
 @property(copy, nonatomic) NSString *subheadline; // @synthesize subheadline=_subheadline;
 @property(copy, nonatomic) NSString *headline; // @synthesize headline=_headline;
 - (void).cxx_destruct;

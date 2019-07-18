@@ -6,16 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSData;
+@class LAContext, NSData;
 
 __attribute__((visibility("hidden")))
 @interface CTKClientSEP_TKTokenRefSEP : NSObject
 {
     NSData *_ACMContext;
-    id _LAContext;
+    LAContext *_LAContext;
 }
 
-@property(readonly) id LAContext; // @synthesize LAContext=_LAContext;
+@property(readonly) LAContext *LAContext; // @synthesize LAContext=_LAContext;
 @property(readonly) NSData *ACMContext; // @synthesize ACMContext=_ACMContext;
 - (void).cxx_destruct;
 - (BOOL)lifetimeControlKey:(id)arg1 lifetimeControlType:(long long)arg2 error:(id *)arg3;

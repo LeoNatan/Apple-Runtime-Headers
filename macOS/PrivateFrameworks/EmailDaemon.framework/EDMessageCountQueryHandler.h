@@ -52,7 +52,6 @@
 @property(retain, nonatomic) NSPredicate *predicateIgnoringFlags; // @synthesize predicateIgnoringFlags=_predicateIgnoringFlags;
 @property(retain, nonatomic) EFQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
-- (void)persistenceDidAdjustLastSyncAndMostRecentStatusCountBy:(long long)arg1 forMailboxWithObjectID:(id)arg2;
 - (void)persistenceDidUpdateLastSyncAndMostRecentStatusCount:(long long)arg1 forMailboxWithObjectID:(id)arg2;
 - (void)persistenceDidUpdateMostRecentStatusCount:(long long)arg1 forMailboxWithObjectID:(id)arg2;
 - (void)persistenceDidUpdateServerCount:(long long)arg1 forMailboxWithObjectID:(id)arg2;
@@ -61,7 +60,7 @@
 - (void)persistenceDidChangeFlags:(id)arg1 messages:(id)arg2;
 - (void)persistenceWillChangeFlags:(id)arg1 messages:(id)arg2;
 - (void)persistenceDidAddMessages:(id)arg1;
-- (void)persistenceWillAddMessage:(id)arg1;
+- (void)persistenceWillAddMessage:(id)arg1 fromExistingMessage:(BOOL)arg2;
 - (id)_filterMessages:(id)arg1 potentiallyMatchingMessages:(id *)arg2;
 - (void)_processChangedMessages:(id)arg1 changeKey:(id)arg2;
 - (void)_prepareForChangeWithMessages:(id)arg1 changeKey:(id)arg2;

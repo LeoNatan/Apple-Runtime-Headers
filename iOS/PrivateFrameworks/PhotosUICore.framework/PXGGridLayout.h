@@ -18,9 +18,10 @@
     struct CGSize _itemSize;
     double _finalInterItemSpacing;
     struct UIEdgeInsets _finalInsets;
+    _Bool _canHandleVisibleRectRejection;
     _Bool _enableBestCropRect;
     unsigned char _mediaFlags;
-    _Bool _fillSafeAreaInsets;
+    _Bool _fillSafeAreaTopInset;
     _Bool _hideIncompleteLastRow;
     _Bool _mediaTargetSizeIgnoresSpacing;
     int _mediaKind;
@@ -48,7 +49,7 @@
 @property(nonatomic) _Bool mediaTargetSizeIgnoresSpacing; // @synthesize mediaTargetSizeIgnoresSpacing=_mediaTargetSizeIgnoresSpacing;
 @property(nonatomic) _Bool hideIncompleteLastRow; // @synthesize hideIncompleteLastRow=_hideIncompleteLastRow;
 @property(nonatomic) long long visualItemShift; // @synthesize visualItemShift=_visualItemShift;
-@property(nonatomic) _Bool fillSafeAreaInsets; // @synthesize fillSafeAreaInsets=_fillSafeAreaInsets;
+@property(nonatomic) _Bool fillSafeAreaTopInset; // @synthesize fillSafeAreaTopInset=_fillSafeAreaTopInset;
 @property(nonatomic) int presentationType; // @synthesize presentationType=_presentationType;
 @property(nonatomic) unsigned char mediaFlags; // @synthesize mediaFlags=_mediaFlags;
 @property(nonatomic) int mediaKind; // @synthesize mediaKind=_mediaKind;
@@ -60,6 +61,7 @@
 @property(nonatomic) long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(nonatomic) long long style; // @synthesize style=_style;
+@property(nonatomic) _Bool canHandleVisibleRectRejection; // @synthesize canHandleVisibleRectRejection=_canHandleVisibleRectRejection;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
 - (void)applySpriteChangeDetails:(id)arg1 countAfterChanges:(unsigned int)arg2 initialState:(CDUnknownBlockType)arg3 modifyState:(CDUnknownBlockType)arg4;

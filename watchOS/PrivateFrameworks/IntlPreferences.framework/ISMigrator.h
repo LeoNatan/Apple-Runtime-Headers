@@ -6,32 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+@class NSString;
 
 @interface ISMigrator : NSObject
 {
     unsigned int _platform;
     NSString *_previousVersion;
     NSString *_currentVersion;
-    NSDictionary *_preferencesBeforeMigration;
-    NSDictionary *_preferencesAfterMigration;
 }
 
 + (id)migratorFromVersion:(id)arg1 toVersion:(id)arg2 platform:(unsigned int)arg3;
 + (id)migratorFromVersion:(id)arg1 toVersion:(id)arg2;
 + (unsigned int)currentPlatform;
-@property(copy, nonatomic) NSDictionary *preferencesAfterMigration; // @synthesize preferencesAfterMigration=_preferencesAfterMigration;
-@property(copy, nonatomic) NSDictionary *preferencesBeforeMigration; // @synthesize preferencesBeforeMigration=_preferencesBeforeMigration;
 @property(copy, nonatomic) NSString *currentVersion; // @synthesize currentVersion=_currentVersion;
 @property(copy, nonatomic) NSString *previousVersion; // @synthesize previousVersion=_previousVersion;
 @property(nonatomic) unsigned int platform; // @synthesize platform=_platform;
 - (void).cxx_destruct;
-- (id)importPreferredLanguages_macOS_10_9_forPreferences:(id)arg1;
-- (id)importPreferredLanguagesForPreferences:(id)arg1;
-- (id)appendRegionalVariantsToLanguageIdentifiers:(id)arg1 regionCode:(id)arg2;
-- (id)performMigrationForPreferences:(id)arg1;
+- (_Bool)previousVersionIsOlderThanMacOS:(id)arg1 iOS:(id)arg2 watchOS:(id)arg3 tvOS:(id)arg4;
 - (id)performMigrationForUserPreferences:(id)arg1 systemPreferences:(id)arg2;
-- (_Bool)performMigration;
+- (id)performMigrationForPreferences:(id)arg1;
 
 @end
 

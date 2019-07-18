@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)containsProperty:(int)arg1;
 - (id)childEnumerator;
 - (void)acceptVisitor:(id)arg1;
+- (_Bool)isMaster;
 - (void)removeBuildChunk:(id)arg1 rollbackGeneratedIdentifier:(_Bool)arg2;
 - (void)insertBuildChunk:(id)arg1 afterChunk:(id)arg2 generateIdentifier:(_Bool)arg3;
 - (void)removeBuild:(id)arg1;
@@ -52,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isMasterSlide;
 - (void)updatePlaceholderText;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
+- (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)flushClassicStylesheetRecord;
 - (void)wasAddedToTheme:(id)arg1;
 - (void)willBeAddedToTheme:(id)arg1;
@@ -61,8 +63,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)isObjectVisible;
 - (id)thumbnailTextForPlaceholder:(id)arg1;
 - (id)p_defaultThumbnailTextForPlaceholder:(id)arg1;
-- (id)tagsforNewPlaceholderInfos:(id)arg1;
-- (id)p_defaultTagForDrawable:(id)arg1;
+- (id)unusedPlaceholderTagBasedOnTag:(id)arg1;
+- (id)tagsForNewPlaceholderInfos:(id)arg1;
+- (id)defaultTagForDrawable:(id)arg1;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (id)initWithSlideNode:(id)arg1 context:(id)arg2;

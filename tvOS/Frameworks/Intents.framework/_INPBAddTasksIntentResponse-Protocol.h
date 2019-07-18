@@ -6,14 +6,22 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSArray, _INPBTask, _INPBTaskList;
+@class NSArray, NSString, _INPBTask, _INPBTaskList;
 
 @protocol _INPBAddTasksIntentResponse <NSObject>
 + (Class)addedTasksType;
+@property(readonly, nonatomic) unsigned long long warningsCount;
+@property(readonly, nonatomic) int *warnings;
 @property(readonly, nonatomic) _Bool hasModifiedTaskList;
 @property(retain, nonatomic) _INPBTaskList *modifiedTaskList;
 @property(readonly, nonatomic) unsigned long long addedTasksCount;
 @property(copy, nonatomic) NSArray *addedTasks;
+- (int)StringAsWarnings:(NSString *)arg1;
+- (NSString *)warningsAsString:(int)arg1;
+- (void)setWarnings:(int *)arg1 count:(unsigned long long)arg2;
+- (int)warningsAtIndex:(unsigned long long)arg1;
+- (void)addWarnings:(int)arg1;
+- (void)clearWarnings;
 - (_INPBTask *)addedTasksAtIndex:(unsigned long long)arg1;
 - (void)addAddedTasks:(_INPBTask *)arg1;
 - (void)clearAddedTasks;

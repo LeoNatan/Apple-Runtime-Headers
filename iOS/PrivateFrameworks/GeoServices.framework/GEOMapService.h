@@ -78,7 +78,10 @@
 - (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 retainedSearch:(id)arg3 maxResults:(unsigned int)arg4 traits:(id)arg5;
 - (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
 - (id)ticketForTransitTripIdentifiers:(id)arg1 traits:(id)arg2;
-- (id)ticketForTransitScheduleStationIdentifier:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripID:(unsigned long long)arg3 traits:(id)arg4;
+- (id)ticketForTransitTripDetailsAtStation:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripID:(unsigned long long)arg3 traits:(id)arg4;
+- (id)ticketForTransitDeparturesAtStation:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripID:(unsigned long long)arg3 traits:(id)arg4;
+- (id)ticketForUpdatedTransitScheduleDetailsAtStation:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripID:(unsigned long long)arg3 traits:(id)arg4;
+- (id)ticketForTransitScheduleAtStation:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripID:(unsigned long long)arg3 traits:(id)arg4;
 - (id)ticketForSearchPoisForCollectionMUID:(unsigned long long)arg1 traits:(id)arg2;
 - (id)ticketForSearchPoisForBrandMUID:(unsigned long long)arg1 traits:(id)arg2;
 - (id)ticketForFeedbackRequest:(id)arg1 traits:(id)arg2;
@@ -139,6 +142,10 @@
 - (id)serializedClientMetadataForSiri;
 - (id)serializedClientMetadataForParsec;
 - (id)serializedClientMetadataForTraits:(id)arg1;
+- (double)wiFiQualitySmallSearchRadiusMeters;
+- (long long)wiFiQualitySearchZoomLevel;
+- (double)wiFiQualitySearchRadiusMeters;
+- (id)ticketForWiFiQualityTileLoadForKey:(id)arg1 eTag:(id)arg2;
 - (id)ticketForWiFiQualityLocationServiceRequest:(id)arg1;
 - (id)ticketForWiFiQualityNetworkServiceRequest:(id)arg1;
 

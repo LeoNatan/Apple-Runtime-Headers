@@ -31,6 +31,7 @@
 @property(nonatomic) struct CGSize preferredSize; // @synthesize preferredSize=_preferredSize;
 @property(retain, nonatomic) NSSArticleInternal *article; // @synthesize article=_article;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateFonts;
 - (void)_commonInit;
 - (id)initWithCoder:(id)arg1;

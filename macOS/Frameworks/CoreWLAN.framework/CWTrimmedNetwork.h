@@ -27,6 +27,7 @@
 - (id)description;
 - (long long)compareSecurity:(id)arg1;
 - (long long)strongestSupportedSecurity;
+@property(readonly) BOOL supportsWPS; // @dynamic supportsWPS;
 - (BOOL)supportsSecurity:(long long)arg1;
 @property(readonly) NSString *accessoryFriendlyName; // @dynamic accessoryFriendlyName;
 @property(readonly) NSString *baseStationName; // @dynamic baseStationName;
@@ -55,9 +56,6 @@
 - (id)initWithScanRecord:(id)arg1;
 - (id)initWithNetwork:(id)arg1 properties:(id)arg2;
 - (id)__trimmedScanRecordForNetwork:(id)arg1 properties:(id)arg2;
-
-// Remaining properties
-@property(readonly) BOOL supportsWPS; // @dynamic supportsWPS;
 
 @end
 

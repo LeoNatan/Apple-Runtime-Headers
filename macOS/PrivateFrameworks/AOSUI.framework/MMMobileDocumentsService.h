@@ -207,9 +207,9 @@
 - (void)showMobileDocumentsOptionsSheet:(id)arg1;
 - (void)_updateOptionsUI;
 - (void)endDevicesConfirmationSheet:(long long)arg1;
-- (void)showMultipleDevicesConfirmationSheetWithParentWindow:(id)arg1;
-- (void)_showNoDevicesMigrationConfirmationSheet:(id)arg1;
-- (void)_showMigrationConfirmationSheet:(id)arg1;
+- (void)showMultipleDevicesConfirmationSheetWithParentWindow:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_showNoDevicesMigrationConfirmationSheet:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_showMigrationConfirmationSheet:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)_isMigrationComplete;
 - (BOOL)_getMobileDevices;
 - (id)_dsid;
@@ -220,7 +220,7 @@
 - (BOOL)isDataService;
 - (void)showMoreInfo:(id)arg1;
 - (void)_updateUI;
-- (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
+- (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)icon;
 @property(readonly) NSTouchBar *touchBar;
 - (void)dealloc;

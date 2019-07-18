@@ -13,7 +13,7 @@
 
 @property(nonatomic) _Bool buttonBarItemsExpanded; // @synthesize buttonBarItemsExpanded=_buttonBarItemsExpanded;
 - (void)layoutViewSet:(id)arg1 inBounds:(struct CGRect)arg2 forAssistantView:(id)arg3;
-- (void)configureButtonBarsInViewSet:(id)arg1 forInputAssistantItem:(id)arg2 withAssistantView:(id)arg3;
+- (void)configureButtonBarsInViewSet:(id)arg1 forApplicationAssistantItem:(id)arg2 withSystemAssistantItem:(id)arg3 withAssistantView:(id)arg4;
 - (_Bool)usesUnifiedButtonBar;
 
 @end

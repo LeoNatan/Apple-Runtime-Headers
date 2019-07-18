@@ -6,25 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class CSPolicy;
-@protocol OS_dispatch_queue;
-
 @interface CSInvalidSATEntriesCleaner : NSObject
 {
-    CSPolicy *_invalidSATEntriesCleanerPolicy;
-    NSObject<OS_dispatch_queue> *_queue;
 }
 
-+ (id)_cleanupPayloadUtterancesExceedingLifeTimeInDays:(long long)arg1 forType:(unsigned long long)arg2 forLanguageCode:(id)arg3 dryRun:(_Bool)arg4;
-+ (id)_cleanupOrphanedMetafilesAtURL:(id)arg1 dryRun:(_Bool)arg2;
-+ (void)_cleanupImplicitUtterenceCache;
-+ (id)_cleanupOrphanedMetafilesForLanguage:(id)arg1 payloadUtteranceLifeTimeInDays:(long long)arg2 dryRun:(_Bool)arg3;
-+ (id)cleanupInvalidSATEntriesAtSATRoot:(id)arg1 payloadUtteranceLifeTimeInDays:(long long)arg2 dryRun:(_Bool)arg3;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(retain, nonatomic) CSPolicy *invalidSATEntriesCleanerPolicy; // @synthesize invalidSATEntriesCleanerPolicy=_invalidSATEntriesCleanerPolicy;
-- (void).cxx_destruct;
-- (void)_sanitizeSATFiles;
-- (void)_registerForEvents;
+- (void)_cleanupModelFilesAtDir:(id)arg1 forAsset:(id)arg2;
+- (void)_cleanupInvalidModelsForAsset:(id)arg1;
+- (id)_cleanupPayloadUtterancesExceedingLifeTimeInDays:(long long)arg1 forType:(unsigned long long)arg2 forLanguageCode:(id)arg3 dryRun:(_Bool)arg4;
+- (id)_cleanupOrphanedMetafilesAtURL:(id)arg1 dryRun:(_Bool)arg2;
+- (id)_cleanupInvalidAudioFiles:(id)arg1 dryRun:(_Bool)arg2;
+- (id)_cleanupOrphanedMetafilesForLanguage:(id)arg1 payloadUtteranceLifeTimeInDays:(long long)arg2 dryRun:(_Bool)arg3;
+- (void)_cleanupImplicitUtteranceCache;
+- (id)cleanupInvalidSATEntriesAtSATRoot:(id)arg1 payloadUtteranceLifeTimeInDays:(long long)arg2 dryRun:(_Bool)arg3;
+- (void)sanitizeSATFilesWithAsset:(id)arg1;
 - (id)init;
 
 @end

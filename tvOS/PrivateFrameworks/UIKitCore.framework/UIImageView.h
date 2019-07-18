@@ -49,6 +49,7 @@
 - (void)_configureForLayeredImage:(id)arg1;
 - (_Bool)_displayImageAsLayered:(id)arg1;
 - (void)_updateImageViewForOldImage:(id)arg1 newImage:(id)arg2;
+- (_Bool)_resolveImageForTrait:(id)arg1 previouslyDisplayedImage:(id)arg2;
 - (_Bool)_resolveImageForTrait:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)_currentHighlightedImage;
@@ -62,7 +63,7 @@
 - (void)setAnimating:(_Bool)arg1;
 - (struct CGImage *)imageRef;
 - (void)setCGImageRef:(struct CGImage *)arg1;
-@property(nonatomic) int drawMode;
+@property(nonatomic) unsigned int drawMode;
 - (void)_drawImageEffectsForImage:(id)arg1 inRect:(struct CGRect)arg2 suppressColor:(_Bool)arg3;
 - (_Bool)_getDrawModeCompositeOperation:(int *)arg1 whiteComponent:(double *)arg2 drawingAlpha:(double *)arg3;
 - (_Bool)_needsImageEffectsForImage:(id)arg1 suppressColorizing:(_Bool)arg2;
@@ -108,14 +109,17 @@
 @property(readonly) UILayoutGuide *imageContentGuide;
 - (void)_imageContentParametersDidChange;
 - (struct UIEdgeInsets)_contentInsetsForImage:(id)arg1;
-- (void)_baselineOffsetParametersDidChange;
+- (void)_baselineOffsetParametersDidChangeHasBaselinePropertyChanged:(_Bool)arg1;
+- (_Bool)_isHasBaselinePropertyChangeable;
 - (_Bool)_hasBaseline;
 - (double)_baselineOffsetFromBottom;
 - (double)_firstBaselineOffsetFromTop;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
+- (void)setContentCompressionResistancePriority:(float)arg1 forAxis:(long long)arg2;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setContentMode:(long long)arg1;
+@property(readonly, nonatomic) _Bool _hasContentGravity;
 @property(readonly, nonatomic) _Bool _layoutShouldFlipHorizontalOrientations;
 @property(readonly, nonatomic) double preferredContentScaleFactor;
 - (void)setContentScaleFactor:(double)arg1;
@@ -135,7 +139,7 @@
 - (id)initWithImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_updateState;
-- (id)_renditionForSource:(id)arg1 withCGImageProvider:(CDUnknownBlockType)arg2 lazy:(_Bool)arg3;
+- (id)_renditionForSource:(id)arg1 size:(struct CGSize)arg2 withCGImageProvider:(CDUnknownBlockType)arg3 lazy:(_Bool)arg4;
 - (id)_effectForRenderingSource:(id)arg1;
 - (_Bool)_setImageViewContents:(id)arg1;
 - (void)_invalidateImageLayouts;

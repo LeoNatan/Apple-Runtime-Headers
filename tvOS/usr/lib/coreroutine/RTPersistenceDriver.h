@@ -10,14 +10,11 @@
 #import <coreroutine/RTPersistenceMetricsDelegate-Protocol.h>
 #import <coreroutine/RTPurgable-Protocol.h>
 
-@class NSManagedObjectContext, NSPersistentHistoryToken, NSString, RTAccount, RTAccountManager, RTDataProtectionManager, RTDefaultsManager, RTDeviceMO, RTKeychainManager, RTLifeCycleManager, RTPersistenceManager, RTPlatform;
+@class NSString, RTAccount, RTAccountManager, RTDataProtectionManager, RTDefaultsManager, RTKeychainManager, RTLifeCycleManager, RTPersistenceManager, RTPersistenceResetSyncContext, RTPlatform;
 @protocol OS_dispatch_queue, OS_os_transaction, RTPersistenceMetricsDelegate;
 
 @interface RTPersistenceDriver : NSObject <RTPersistenceMetricsDelegate, RTPersistenceDelegate, RTPurgable>
 {
-    RTDeviceMO *_resetSyncCurrentDevice;
-    NSManagedObjectContext *_resetSyncContext;
-    NSPersistentHistoryToken *_resetSyncHistoryToken;
     _Bool _requiresDirtyTransaction;
     _Bool _requiresSetupTransaction;
     RTPersistenceManager *_persistenceManager;
@@ -33,8 +30,10 @@
     long long _encryptedDataAvailability;
     RTAccount *_currentAccount;
     id <RTPersistenceMetricsDelegate> _metricsDelegate;
+    RTPersistenceResetSyncContext *_resetSyncContext;
 }
 
+@property(retain) RTPersistenceResetSyncContext *resetSyncContext; // @synthesize resetSyncContext=_resetSyncContext;
 @property __weak id <RTPersistenceMetricsDelegate> metricsDelegate; // @synthesize metricsDelegate=_metricsDelegate;
 @property(retain) RTAccount *currentAccount; // @synthesize currentAccount=_currentAccount;
 @property long long encryptedDataAvailability; // @synthesize encryptedDataAvailability=_encryptedDataAvailability;
@@ -51,6 +50,7 @@
 @property(readonly) RTDataProtectionManager *dataProtectionManager; // @synthesize dataProtectionManager=_dataProtectionManager;
 @property(readonly) RTPersistenceManager *persistenceManager; // @synthesize persistenceManager=_persistenceManager;
 - (void).cxx_destruct;
+- (_Bool)importSourceStore:(id)arg1 sourceCoordinator:(id)arg2 destinationStore:(id)arg3 destinationCoordinator:(id)arg4 managedObjectModel:(id)arg5 configuration:(id)arg6 error:(id *)arg7;
 - (id)prepareForDatabaseRekey:(id *)arg1;
 - (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)persistenceStore:(id)arg1 willBeginMirroringWithOptions:(id)arg2;
@@ -59,7 +59,10 @@
 - (unsigned long long)persistenceDeviceClassForPlatform;
 - (void)_updatePersistenceContexts:(id)arg1 deviceObjectID:(id)arg2;
 - (void)_updatePersistenceStoresWithDeviceObjectID:(id)arg1;
+- (_Bool)_purgeLocalEntityRowsUsingModel:(id)arg1 managedObjectContext:(id)arg2 persistenceManager:(id)arg3 error:(id *)arg4;
+- (id)_repersistPreviousDeviceWithResetSyncContext:(id)arg1 persistenceManager:(id)arg2 managedObjectContext:(id)arg3;
 - (void)persistenceManagerDidFinishResetSync:(id)arg1 userInfo:(id)arg2;
+- (_Bool)_evaluatePersistentHistoryForDeletedDeviceDuringResetSync:(_Bool *)arg1 resetSyncContext:(id)arg2 managedObjectContext:(id)arg3 error:(id *)arg4;
 - (void)persistenceManagerWillStartResetSync:(id)arg1 userInfo:(id)arg2 context:(id)arg3;
 - (_Bool)persistenceMirroringManagerDidFinishZonePurge:(id)arg1 store:(id)arg2 context:(id)arg3 error:(id *)arg4;
 - (void)persistenceManager:(id)arg1 didFinishSetup:(_Bool)arg2;
@@ -69,7 +72,7 @@
 - (void)persistenceStore:(id)arg1 failedWithError:(id)arg2;
 - (_Bool)prepareStore:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
 - (_Bool)persistCurrentDeviceRecordInStore:(id)arg1 context:(id)arg2 error:(id *)arg3;
-- (id)persistCurrentDeviceInStore:(id)arg1 context:(id)arg2 error:(id *)arg3;
+- (id)persistCurrentDeviceWithIdentifier:(id)arg1 inStore:(id)arg2 context:(id)arg3 error:(id *)arg4;
 - (void)cleanupOlderPersistentStores;
 - (id)remoteServerOptionsForStoreWithType:(unsigned long long)arg1;
 - (id)mirroringOptionsForStoreWithType:(unsigned long long)arg1;

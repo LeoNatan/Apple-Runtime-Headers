@@ -8,22 +8,31 @@
 
 #import <ChatKit/CKSearchResultCell-Protocol.h>
 
-@class NSString, UIImage, UIImageView;
+@class NSString, UIImage, UIImageView, UILabel;
 
 @interface CKPhotoSearchResultCell : UICollectionViewCell <CKSearchResultCell>
 {
     UIImage *_image;
     UIImageView *_imageView;
+    UIImageView *_livePhotoImage;
     NSString *_identifier;
+    UILabel *_durationLabel;
+    UIImageView *_durationGradientImage;
     struct UIEdgeInsets marginInsets;
 }
 
 + (id)reuseIdentifier;
+@property(retain, nonatomic) UIImageView *durationGradientImage; // @synthesize durationGradientImage=_durationGradientImage;
+@property(retain, nonatomic) UILabel *durationLabel; // @synthesize durationLabel=_durationLabel;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic) UIImageView *livePhotoImage; // @synthesize livePhotoImage=_livePhotoImage;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets;
 - (void).cxx_destruct;
+- (void)_configureDurationLabelForResult:(id)arg1;
+- (void)_videoDurationUpdated:(id)arg1;
+- (void)_livePhotoUpdated:(id)arg1;
 - (void)_thumbnailGenerated:(id)arg1;
 - (void)refreshForSearchTextIfNeeded:(id)arg1;
 - (void)configureWithQueryResult:(id)arg1 searchText:(id)arg2 mode:(unsigned long long)arg3;

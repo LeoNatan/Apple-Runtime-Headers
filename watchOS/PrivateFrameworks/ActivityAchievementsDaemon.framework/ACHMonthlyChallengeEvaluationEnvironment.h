@@ -29,6 +29,7 @@
 @property(readonly, nonatomic) double numberOfDaysClosingExerciseRingInCurrentMonth;
 @property(readonly, nonatomic) double numberOfDaysClosingMoveRingInCurrentMonth;
 @property(readonly, nonatomic) double numberOfDaysClosingAllThreeRingsInCurrentMonth;
+- (id)valueForUndefinedKey:(id)arg1;
 - (id)initWithMonthlyChallengeDataSource:(id)arg1 dateComponentInterval:(id)arg2 calendar:(id)arg3;
 
 @end

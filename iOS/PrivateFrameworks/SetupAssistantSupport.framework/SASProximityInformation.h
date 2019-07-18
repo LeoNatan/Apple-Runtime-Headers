@@ -8,7 +8,7 @@
 
 #import <SetupAssistantSupport/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSNumber, NSString;
+@class NSArray, NSData, NSDate, NSDictionary, NSNumber, NSString;
 
 @interface SASProximityInformation : NSObject <NSSecureCoding>
 {
@@ -30,6 +30,7 @@
     NSString *_deviceClass;
     NSString *_deviceName;
     NSString *_backupUUID;
+    NSDate *_dateOfLastBackup;
     NSData *_backupMetadata;
     NSData *_locationServicesData;
     NSNumber *_findMyDeviceOptIn;
@@ -40,6 +41,7 @@
     NSNumber *_deviceTermsIdentifier;
     NSString *_productVersion;
     NSNumber *_supportsDeviceToDeviceMigration;
+    NSNumber *_deviceToDeviceMigrationVersion;
     NSNumber *_storageAvailable;
     NSNumber *_storageCapacity;
     NSNumber *_hasTransferrableTelephonyPlan;
@@ -49,6 +51,7 @@
 @property NSNumber *hasTransferrableTelephonyPlan; // @synthesize hasTransferrableTelephonyPlan=_hasTransferrableTelephonyPlan;
 @property(retain) NSNumber *storageCapacity; // @synthesize storageCapacity=_storageCapacity;
 @property(retain) NSNumber *storageAvailable; // @synthesize storageAvailable=_storageAvailable;
+@property(retain) NSNumber *deviceToDeviceMigrationVersion; // @synthesize deviceToDeviceMigrationVersion=_deviceToDeviceMigrationVersion;
 @property(retain) NSNumber *supportsDeviceToDeviceMigration; // @synthesize supportsDeviceToDeviceMigration=_supportsDeviceToDeviceMigration;
 @property(retain) NSString *productVersion; // @synthesize productVersion=_productVersion;
 @property(retain) NSNumber *deviceTermsIdentifier; // @synthesize deviceTermsIdentifier=_deviceTermsIdentifier;
@@ -60,6 +63,7 @@
 @property(retain) NSData *locationServicesData; // @synthesize locationServicesData=_locationServicesData;
 @property _Bool locationServicesOptIn; // @synthesize locationServicesOptIn=_locationServicesOptIn;
 @property(retain) NSData *backupMetadata; // @synthesize backupMetadata=_backupMetadata;
+@property(copy) NSDate *dateOfLastBackup; // @synthesize dateOfLastBackup=_dateOfLastBackup;
 @property(nonatomic, getter=isBackupEnabled) _Bool backupEnabled; // @synthesize backupEnabled=_backupEnabled;
 @property(copy) NSString *backupUUID; // @synthesize backupUUID=_backupUUID;
 @property(copy) NSString *deviceName; // @synthesize deviceName=_deviceName;

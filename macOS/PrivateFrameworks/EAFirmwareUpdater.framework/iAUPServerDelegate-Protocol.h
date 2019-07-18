@@ -7,6 +7,8 @@
 @class NSData, NSDictionary, NSError, NSString;
 
 @protocol iAUPServerDelegate
+- (unsigned int)getWhitelistedPersonalizationFields;
+- (NSString *)getDeviceClassName;
 - (unsigned char)getPersonalizationID;
 - (void)handleSessionError:(unsigned int)arg1 message:(NSString *)arg2;
 - (BOOL)updateRequiresPersonalization;

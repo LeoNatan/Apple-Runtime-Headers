@@ -25,6 +25,7 @@
         char respondsToDidChangeLoupeRect;
         char respondsToDidZoomToMinimumValueMaximumValue;
         char respondsToDidUnzoom;
+        char respondsToDidLayoutSubviews;
         char respondsToDebugStartRect;
         char respondsToDebugEndRect;
         char respondsToDebugStartOffset;

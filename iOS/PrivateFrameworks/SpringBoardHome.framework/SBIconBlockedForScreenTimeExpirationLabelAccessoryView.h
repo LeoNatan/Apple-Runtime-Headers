@@ -10,6 +10,7 @@
 {
 }
 
++ (long long)labelAccessorySystemImageScale;
 + (id)labelAccessorySystemImageName;
 
 @end

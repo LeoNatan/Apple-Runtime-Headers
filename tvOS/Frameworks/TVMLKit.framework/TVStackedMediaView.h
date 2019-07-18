@@ -6,11 +6,12 @@
 
 #import <TVUIKit/_TVStackedMediaView.h>
 
-@class TVImageProxy, TVLSMDocumentProxy, UICollectionReusableView;
+@class TVImageProxy, TVLSMDocumentProxy, UICollectionReusableView, UIImage;
 
 @interface TVStackedMediaView : _TVStackedMediaView
 {
     _Bool _loadingDone;
+    UIImage *_placeHolder;
     TVLSMDocumentProxy *_lsmDocumentProxy;
     TVImageProxy *_fallbackImageProxy;
     UICollectionReusableView *_containingCell;
@@ -20,6 +21,8 @@
 @property(readonly, nonatomic) TVImageProxy *fallbackImageProxy; // @synthesize fallbackImageProxy=_fallbackImageProxy;
 @property(readonly, nonatomic) TVLSMDocumentProxy *lsmDocumentProxy; // @synthesize lsmDocumentProxy=_lsmDocumentProxy;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
+- (id)placeHolder;
 - (void)_teardownHosting;
 - (void)_setupHosting;
 - (void)_loadProxy;

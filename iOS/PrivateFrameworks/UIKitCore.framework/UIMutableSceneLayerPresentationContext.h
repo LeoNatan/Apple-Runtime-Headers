@@ -13,12 +13,12 @@
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithSceneLayer:(id)arg1;
 
 // Remaining properties
 @property(nonatomic) double alpha; // @dynamic alpha;
 @property(nonatomic, getter=isClippingDisabled) _Bool clippingDisabled; // @dynamic clippingDisabled;
 @property(nonatomic, getter=isHidden) _Bool hidden; // @dynamic hidden;
+@property(nonatomic) unsigned long long renderingMode; // @dynamic renderingMode;
 @property(retain, nonatomic) UITransformer *transformer; // @dynamic transformer;
 
 @end

@@ -111,6 +111,7 @@
 @property(readonly, nonatomic) double tileProminenceScoreBalanceValue;
 @property(readonly, nonatomic) double prerollLoadingTimeout;
 @property(readonly, nonatomic) double interstitialAdLoadDelay;
+@property(readonly, nonatomic) NSString *anfRenderingConfiguration;
 @property(readonly, nonatomic) NSString *webEmbedContentBlockers;
 @property(readonly, nonatomic) long long autoScrollToTopFeedTimeout;
 @property(readonly, nonatomic) NSArray *onboardingFeedIDs;

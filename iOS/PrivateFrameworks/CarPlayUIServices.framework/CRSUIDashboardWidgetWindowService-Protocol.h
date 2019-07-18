@@ -6,7 +6,10 @@
 
 #import <CarPlayUIServices/NSObject-Protocol.h>
 
+@class NSArray;
+
 @protocol CRSUIDashboardWidgetWindowService <NSObject>
+- (void)clientSetFocusableItems:(NSArray *)arg1;
 - (void)updateContextId:(unsigned int)arg1;
 @end
 

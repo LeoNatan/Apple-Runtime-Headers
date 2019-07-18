@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     unordered_map_9596ee37 _conditionalStylesForUndo;
     NSMutableArray *_nestedRewrites;
     struct unordered_map<TSCECellRef, TSUCellRect, std::__1::hash<TSCECellRef>, std::__1::equal_to<TSCECellRef>, std::__1::allocator<std::__1::pair<const TSCECellRef, TSUCellRect>>> _mergeRangesContainingFormulas;
+    struct os_unfair_lock_s _coordMappersLock;
     struct unordered_map<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>>> _coordMappersByTableUID;
     _Bool _canBeNested;
     TSCEFormulaRewriteSpec *_rewriteSpecBaseToChrome;

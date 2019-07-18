@@ -7,6 +7,7 @@
 #import <iWorkImport/TSPObject.h>
 
 #import <iWorkImport/TSDChangeableInfo-Protocol.h>
+#import <iWorkImport/TSDLockableInfo-Protocol.h>
 #import <iWorkImport/TSDScrollingAwareChangeSource-Protocol.h>
 #import <iWorkImport/TSKDocumentObject-Protocol.h>
 #import <iWorkImport/TSKSearchable-Protocol.h>
@@ -16,7 +17,7 @@
 @protocol TSDContainerInfo, TSDOwningAttachment;
 
 __attribute__((visibility("hidden")))
-@interface TSDDrawableInfo : TSPObject <TSDChangeableInfo, TSKDocumentObject, TSKTransformableObject, TSKSearchable, TSDScrollingAwareChangeSource>
+@interface TSDDrawableInfo : TSPObject <TSDChangeableInfo, TSDLockableInfo, TSKDocumentObject, TSKTransformableObject, TSKSearchable, TSDScrollingAwareChangeSource>
 {
     TSDInfoGeometry *mGeometry;
     NSObject<TSDContainerInfo> *mParentInfo;
@@ -33,8 +34,9 @@ __attribute__((visibility("hidden")))
     NSString *mAccessibilityDescription;
 }
 
-+ (_Bool)canPartition;
-+ (void)setShouldPartitionByDefault:(_Bool)arg1;
++ (_Bool)canPartitionInline;
++ (_Bool)canPartitionForPrinting;
++ (void)setShouldPartitionForPrinting:(_Bool)arg1;
 + (_Bool)needsObjectUUID;
 + (Class)classForUnarchiver:(id)arg1;
 @property(copy, nonatomic) NSString *accessibilityDescription; // @synthesize accessibilityDescription=mAccessibilityDescription;
@@ -43,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSURL *hyperlinkURL; // @synthesize hyperlinkURL=mHyperlinkURL;
 @property(nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment; // @synthesize owningAttachment=mOwningAttachment;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool shouldShowInPrint;
 @property(nonatomic) _Bool matchesObjectPlaceholderGeometry;
 @property(readonly, nonatomic) struct CGPoint transformableObjectAnchorPoint;
 - (id)transformedGeometryWithTransform:(struct CGAffineTransform)arg1 inBounds:(struct CGRect)arg2;
@@ -89,6 +92,7 @@ __attribute__((visibility("hidden")))
 - (void)willCopyWithOtherDrawables:(id)arg1;
 - (_Bool)shouldPreventCopyOperationWithOtherInfos:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldBeIgnoredWhenCopying;
+@property(readonly, nonatomic) _Bool canCopyData;
 @property(readonly, nonatomic) _Bool needsDownload;
 - (id)copyWithContext:(id)arg1;
 - (_Bool)isSelectable;
@@ -128,6 +132,8 @@ __attribute__((visibility("hidden")))
 - (void)setParentInfoDuringUnarchiving:(id)arg1 inDocument:(_Bool)arg2;
 - (id)objectUUIDPath;
 - (void)setInsertionCenterPosition:(struct CGPoint)arg1;
+- (_Bool)containsDisallowedDrawableElementKind:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned long long maxInlineNestingDepth;
 @property(readonly, nonatomic) int elementKind;
 - (id)uuidPathPrefixComponentsProvider;
 

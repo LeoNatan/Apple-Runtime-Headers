@@ -9,6 +9,7 @@
 @protocol HBUITopShelfParadeBackgroundViewControllerDelegate, HBUITopShelfParadeItem;
 
 @protocol HBUITopShelfParadeBackgroundViewController <NSObject>
+@property(readonly, nonatomic) long long contentState;
 @property(nonatomic, getter=isContentOccluded) _Bool contentOccluded;
 @property(nonatomic, getter=isMuted) _Bool muted;
 @property(nonatomic) _Bool isCenterViewController;

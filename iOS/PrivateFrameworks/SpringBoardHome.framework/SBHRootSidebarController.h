@@ -9,25 +9,34 @@
 #import <SpringBoardHome/SBHSidebarProvider-Protocol.h>
 #import <SpringBoardHome/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, SBHDateHeaderViewController, UIView, WGWidgetGroupViewController, _UILegibilitySettings;
+@class NSLayoutConstraint, NSMutableArray, NSString, SBHDateHeaderViewController, WGWidgetGroupViewController, _UILegibilitySettings;
+@protocol SBHSidebarProviderDelegate, SBIconListLayoutProvider;
 
 @interface SBHRootSidebarController : UIViewController <UIGestureRecognizerDelegate, SBHSidebarProvider>
 {
     SBHDateHeaderViewController *_dateViewController;
     _UILegibilitySettings *_legibilitySettings;
     WGWidgetGroupViewController *_widgetViewController;
-    UIView *_grabberView;
+    id <SBIconListLayoutProvider> _listLayoutProvider;
+    unsigned long long _layoutInsetsIgnoredEdges;
+    id <SBHSidebarProviderDelegate> _delegate;
     NSMutableArray *_widgetViewControllerConstraints;
+    NSLayoutConstraint *_dockHeightConstraint;
 }
 
+@property(retain, nonatomic) NSLayoutConstraint *dockHeightConstraint; // @synthesize dockHeightConstraint=_dockHeightConstraint;
 @property(copy, nonatomic) NSMutableArray *widgetViewControllerConstraints; // @synthesize widgetViewControllerConstraints=_widgetViewControllerConstraints;
-@property(readonly, nonatomic) UIView *grabberView; // @synthesize grabberView=_grabberView;
+@property(nonatomic) __weak id <SBHSidebarProviderDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) unsigned long long layoutInsetsIgnoredEdges; // @synthesize layoutInsetsIgnoredEdges=_layoutInsetsIgnoredEdges;
+@property(retain, nonatomic) id <SBIconListLayoutProvider> listLayoutProvider; // @synthesize listLayoutProvider=_listLayoutProvider;
 @property(retain, nonatomic) WGWidgetGroupViewController *widgetViewController; // @synthesize widgetViewController=_widgetViewController;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 - (void).cxx_destruct;
-- (void)_configureGrabberView;
-- (void)_configureDateViewController;
+- (void)_updateDockHeightConstraint;
+- (void)_configureLayoutMargins;
+- (void)_addEditButton;
 - (void)_configureWidgetViewController;
+- (void)setEditingIcons:(_Bool)arg1;
 @property(readonly, nonatomic) SBHDateHeaderViewController *dateViewController; // @synthesize dateViewController=_dateViewController;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

@@ -28,10 +28,10 @@
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)thumbnailLoaded:(id)arg1;
-- (void)effectiveAppearanceDidChange:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
 - (void)setImage:(id)arg1;
+- (void)initCommon;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

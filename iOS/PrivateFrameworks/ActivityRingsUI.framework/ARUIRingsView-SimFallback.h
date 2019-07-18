@@ -6,13 +6,15 @@
 
 #import <ActivityRingsUI/ARUIRingsView.h>
 
+@class NSArray;
+
 @interface ARUIRingsView (SimFallback)
 + (void)load;
-- (void)sim_layoutSubviews;
-- (void)sim_updateFallbackRings;
 - (id)sim_snapshot;
+- (void)sim_updateFallbackRings;
+- (void)sim_layoutSubviews;
 - (void)sim_setOpaque:(_Bool)arg1;
-- (void)sim_setNeedsDisplay;
-- (void)sim_displayLayer:(id)arg1;
+- (void)sim_updateMetalLayerVisibility:(_Bool)arg1;
+@property(retain, nonatomic) NSArray *shapeLayers; // @dynamic shapeLayers;
 @end
 

@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <EmailCore/EFLoggable-Protocol.h>
+
 @class NSArray, NSError, NSString;
 @protocol ECAuthenticationCredentials;
 
-@interface ECSASLClient : NSObject
+@interface ECSASLClient : NSObject <EFLoggable>
 {
     char *_userLanguageCode;
     char *_authenticationName;
@@ -62,10 +64,15 @@
 @property(readonly, nonatomic) _Bool lastResponseIncludesPlainTextCredential;
 - (id)responseForServerData:(id)arg1;
 - (id)start;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)init;
 - (id)initWithMechanismNames:(id)arg1 credentials:(id)arg2 externalSecurityLayer:(unsigned int)arg3 allowPlainText:(_Bool)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

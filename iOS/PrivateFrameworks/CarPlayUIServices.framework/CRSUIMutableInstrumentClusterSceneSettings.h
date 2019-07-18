@@ -12,18 +12,16 @@
 
 @interface CRSUIMutableInstrumentClusterSceneSettings : UIMutableApplicationSceneSettings <CRSUIInstrumentClusterSceneSettings>
 {
-    unsigned long long _itemType;
 }
 
-@property(nonatomic) unsigned long long itemType; // @synthesize itemType=_itemType;
+@property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) unsigned long long showsSpeedLimit;
 @property(nonatomic) unsigned long long showsCompass;
-- (void)setMapType:(unsigned long long)arg1;
+@property(nonatomic) unsigned long long itemType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

@@ -10,7 +10,6 @@
 
 @interface MAAsset (HDHealthDaemonAdditions)
 + (id)hd_assetWithAttributesData:(id)arg1;
-@property(readonly, nonatomic) _Bool hd_isHotFix;
 @property(readonly, nonatomic) long long hd_compatibilityVersion;
 @property(readonly, nonatomic) long long hd_contentVersion;
 @property(readonly, nonatomic) long long hd_availability;

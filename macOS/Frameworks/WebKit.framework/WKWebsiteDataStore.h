@@ -39,6 +39,11 @@
 - (void)dealloc;
 @property(nonatomic) __weak id <_WKWebsiteDataStoreDelegate> _delegate;
 - (_Bool)_hasRegisteredServiceWorker;
+- (void)_processStatisticsAndDataRecords:(CDUnknownBlockType)arg1;
+- (void)_clearPrevalentDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_getIsPrevalentDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_setPrevalentDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_scheduleCookieBlockingUpdate:(CDUnknownBlockType)arg1;
 - (void)_getAllStorageAccessEntriesFor:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_setResourceLoadStatisticsTestingCallback:(CDUnknownBlockType)arg1;
 - (void)_resourceLoadStatisticsSetShouldSubmitTelemetry:(BOOL)arg1;

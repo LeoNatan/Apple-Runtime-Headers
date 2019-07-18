@@ -17,6 +17,7 @@
 @property(readonly, nonatomic) id <GEOTransitArtworkDataSource> alternateArtwork;
 @property(readonly, nonatomic) id <GEOTransitArtworkDataSource> modeArtwork;
 @property(readonly, nonatomic) id <GEOTransitArtworkDataSource> artwork;
+@property(readonly, nonatomic) BOOL isBus;
 @property(readonly, nonatomic) BOOL departuresAreVehicleSpecific;
 @property(readonly, nonatomic) unsigned long long departureTimeDisplayStyle;
 @property(readonly, nonatomic) id <GEOTransitSystem> system;

@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)isAnalogousToEntity:(id)arg1;
 - (_Bool)isEmptyWorkspaceEntity;
 
 @end

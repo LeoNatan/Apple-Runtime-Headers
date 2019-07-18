@@ -19,6 +19,7 @@
         unsigned int destinationType:1;
         unsigned int sourceType:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     _INPBString *_destinationName;
     int _destinationType;
     NSArray *_entityNames;
@@ -31,6 +32,7 @@
 + (_Bool)supportsSecureCoding;
 + (Class)propertiesType;
 + (Class)entityNameType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int sourceType; // @synthesize sourceType=_sourceType;
 @property(retain, nonatomic) _INPBString *sourceName; // @synthesize sourceName=_sourceName;
 @property(copy, nonatomic) NSArray *properties; // @synthesize properties=_properties;

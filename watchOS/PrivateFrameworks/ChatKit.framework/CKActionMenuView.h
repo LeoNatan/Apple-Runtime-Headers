@@ -8,7 +8,6 @@
 
 @class CKActionMenuController, NSArray, UIBlurEffect, UIVisualEffectView;
 
-__attribute__((visibility("hidden")))
 @interface CKActionMenuView : UIView
 {
     _Bool _collapsed;

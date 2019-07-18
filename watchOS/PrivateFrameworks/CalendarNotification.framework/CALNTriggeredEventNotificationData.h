@@ -29,7 +29,7 @@
 @property(readonly, nonatomic) _Bool hasDisplayedRunningLateMessage; // @synthesize hasDisplayedRunningLateMessage=_hasDisplayedRunningLateMessage;
 @property(readonly, nonatomic) _Bool hasDisplayedLeaveNowMessage; // @synthesize hasDisplayedLeaveNowMessage=_hasDisplayedLeaveNowMessage;
 @property(readonly, nonatomic) _Bool hasDisplayedLeaveByMessage; // @synthesize hasDisplayedLeaveByMessage=_hasDisplayedLeaveByMessage;
-@property(readonly, nonatomic) EKTravelEngineHypothesis *hypothesis; // @synthesize hypothesis=_hypothesis;
+@property(readonly, copy, nonatomic) EKTravelEngineHypothesis *hypothesis; // @synthesize hypothesis=_hypothesis;
 @property(readonly, copy, nonatomic) NSDate *lastFireTimeOfAlertOffsetFromTravelTime; // @synthesize lastFireTimeOfAlertOffsetFromTravelTime=_lastFireTimeOfAlertOffsetFromTravelTime;
 @property(readonly, nonatomic) _Bool isOffsetFromTravelTimeStart; // @synthesize isOffsetFromTravelTimeStart=_isOffsetFromTravelTimeStart;
 @property(readonly, copy, nonatomic) NSString *alarmID; // @synthesize alarmID=_alarmID;

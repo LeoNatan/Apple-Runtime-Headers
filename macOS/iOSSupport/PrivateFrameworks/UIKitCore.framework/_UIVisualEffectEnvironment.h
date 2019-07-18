@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL allowsDithering; // @synthesize allowsDithering=_allowsDithering;
 @property(readonly, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 - (void).cxx_destruct;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithHost:(id)arg1;
 

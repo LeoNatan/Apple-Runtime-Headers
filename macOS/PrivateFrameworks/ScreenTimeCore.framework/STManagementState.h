@@ -19,12 +19,13 @@
 @property BOOL cachedIsRestrictionsPasscodeSet; // @synthesize cachedIsRestrictionsPasscodeSet=_cachedIsRestrictionsPasscodeSet;
 @property BOOL cachedShouldRequestMoreTime; // @synthesize cachedShouldRequestMoreTime=_cachedShouldRequestMoreTime;
 - (void).cxx_destruct;
+- (BOOL)permitWebFilterURL:(id)arg1 pageTitle:(id)arg2 error:(id *)arg3;
 - (BOOL)performMigrationFromMCXSettings:(id)arg1 error:(id *)arg2;
 - (void)contactManagementStateForDSID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestToManageContactsForDSID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setManageContactsEnabled:(BOOL)arg1 forDSID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)setCommunicationPolicy:(long long)arg1 forDSID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)communicationPoliciesForDSID:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)communicationPoliciesWithError:(id *)arg1;
 - (void)communicationPoliciesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)screenTimeSyncStateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setScreenTimeSyncingEnabled:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;

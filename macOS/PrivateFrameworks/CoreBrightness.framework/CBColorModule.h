@@ -36,7 +36,6 @@ __attribute__((visibility("hidden")))
         _Bool whitePointEnabled;
         double enablementTs;
         _Bool forceSnapping;
-        float currentChromaticitySensitivity;
         _Bool harmonyHWSupported;
         _Bool harmonyNativeSupported;
         _Bool harmonySystemSupported;
@@ -60,6 +59,7 @@ __attribute__((visibility("hidden")))
     CBColorFilter *_colorFilter;
     NSMutableDictionary *_aggregatedConfig;
     unsigned long long _colorFilterModeOverride;
+    NSMutableDictionary *_currentChromaticitySensitivity;
     unsigned long long _moduleType;
 }
 
@@ -72,6 +72,7 @@ __attribute__((visibility("hidden")))
 - (void)notifyAndStoreAggregatedConfig;
 - (id)newArrayFromIntegers:(int *)arg1 size:(int)arg2;
 - (id)newArrayFromDoubles:(double *)arg1 size:(int)arg2;
+- (_Bool)hasExternalALS;
 - (BOOL)isDFR;
 - (void)reportToAggd:(CDStruct_97eeab40 *)arg1;
 - (void)commitPowerLogReport:(CDStruct_97eeab40 *)arg1;
@@ -108,8 +109,8 @@ __attribute__((visibility("hidden")))
 - (void)updateSensorPolicy;
 - (void)updateColorFilterMode;
 - (float)absoluteDifferenceForCurrentColor:(CDStruct_b2fbf00d)arg1 andDeltaError:(CDStruct_b2fbf00d)arg2;
-- (BOOL)setColorSensitivity:(float)arg1 forALS:(struct __IOHIDServiceClient *)arg2;
-- (void)updateSensorSensitivity:(struct __IOHIDServiceClient *)arg1;
+- (BOOL)setColorSensitivity:(float)arg1 forALS:(struct __IOHIDServiceClient *)arg2 withIlluminance:(float)arg3;
+- (void)updateSensorSensitivity:(struct __IOHIDServiceClient *)arg1 forValue:(struct __IOHIDEvent *)arg2;
 - (void)handleHIDEventInternal:(struct __IOHIDEvent *)arg1 from:(struct __IOHIDServiceClient *)arg2;
 - (void)processColorSample:(id)arg1;
 - (_Bool)setPropertyInternal:(id)arg1 forKey:(id)arg2;

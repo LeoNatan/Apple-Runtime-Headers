@@ -17,7 +17,9 @@
 
 @property BOOL observingLoadedState; // @synthesize observingLoadedState=_observingLoadedState;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)invalidate;
 - (void)startLoadingWithForcedDisplayBundleID:(id)arg1 hints:(id)arg2;
+- (void)_stopObservingDocumentLoaded;
 - (void)dealloc;
 - (id)initWithPreviewItem:(id)arg1 customView:(id)arg2 forPreviewView:(id)arg3;
 

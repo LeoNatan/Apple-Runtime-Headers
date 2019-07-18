@@ -41,6 +41,7 @@
 - (_Bool)usesThumbIdentifiers;
 - (void)touchEntriesInRange:(struct _NSRange)arg1;
 - (_Bool)writeEntryData:(id)arg1 toIndex:(unsigned long long)arg2;
+- (void)preheatDataForThumbnailIndexes:(id)arg1;
 - (id)imageDataWithIdentifier:(id)arg1 orIndex:(unsigned long long)arg2 width:(int *)arg3 height:(int *)arg4 bytesPerRow:(int *)arg5 dataWidth:(int *)arg6 dataHeight:(int *)arg7 dataOffset:(int *)arg8;
 - (struct CGImage *)createImageWithIdentifier:(id)arg1 orIndex:(unsigned long long)arg2 decodeSession:(void *)arg3;
 - (id)_debugDescription;

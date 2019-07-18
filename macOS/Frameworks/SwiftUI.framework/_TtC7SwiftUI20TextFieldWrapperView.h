@@ -15,10 +15,12 @@ __attribute__((visibility("hidden")))
 + (BOOL)accessibilityIsSingleCelled;
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)layout;
 @property(nonatomic, readonly) BOOL canBecomeKeyView;
 @property(nonatomic) BOOL enabled;
 - (BOOL)isEnabled;
 @property(nonatomic) unsigned long long controlSize;
+@property(nonatomic, readonly) struct NSEdgeInsets alignmentRectInsets;
 @property(nonatomic, readonly) struct CGSize intrinsicContentSize;
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
 - (id)initWithCoder:(id)arg1;

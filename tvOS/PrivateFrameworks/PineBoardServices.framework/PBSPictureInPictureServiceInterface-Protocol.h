@@ -11,6 +11,7 @@
 
 @protocol PBSPictureInPictureServiceInterface <NSObject>
 - (void)applyPictureInPictureInsetsValue:(NSValue *)arg1 fromSource:(NSString *)arg2 withAnimationSettings:(BSAnimationSettings *)arg3 usingAnimationFence:(BKSAnimationFenceHandle *)arg4;
+- (void)mutePictureInPicture:(_Bool)arg1;
 - (void)cancelPictureInPicture;
 - (void)fetchCurrentPictureInPictureStateWithReply:(void (^)(PBSPictureInPictureState *, NSError *))arg1;
 - (void)setServiceDelegate:(id <PBSPictureInPictureDelegateServiceInterface>)arg1;

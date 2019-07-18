@@ -27,6 +27,7 @@
 }
 
 + (id)elementWithData:(id)arg1;
++ (id)applicationAtCoordinate:(struct CGPoint)arg1;
 + (id)systemWideElement;
 + (id)elementAtCoordinate:(struct CGPoint)arg1 withVisualPadding:(_Bool)arg2;
 + (void)registerNotifications:(id)arg1 withIdentifier:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
@@ -117,6 +118,7 @@
 @property(readonly, nonatomic) AXElement *elementParent;
 @property(readonly, nonatomic) int pid;
 @property(readonly, nonatomic) NSDictionary *semanticContext;
+- (_Bool)eligibleForIconVision;
 - (_Bool)setNativeFocus;
 - (_Bool)viewHierarchyHasNativeFocus;
 @property(readonly, nonatomic, getter=isNativeFocused) _Bool nativeFocus;

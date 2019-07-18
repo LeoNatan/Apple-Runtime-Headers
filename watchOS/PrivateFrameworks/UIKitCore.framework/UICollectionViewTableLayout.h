@@ -25,6 +25,7 @@
     NSMutableSet *_preferredAttributesCache;
     NSMutableSet *_headerPreferredAttributesCache;
     NSMutableSet *_footerPreferredAttributesCache;
+    float _memoizedScale;
     _Bool _usesVariableMargins;
     _Bool _overlapsSectionHeaderViews;
     _Bool _showingIndex;
@@ -109,6 +110,7 @@
 - (_Bool)_shouldHaveFooterViewForSection:(int)arg1;
 - (_Bool)_shouldHaveHeaderViewForSection:(int)arg1;
 - (_Bool)_shouldHaveViewForElementOfKind:(id)arg1 atSection:(int)arg2 useRowData:(_Bool)arg3;
+- (void)_applyContentSizeDeltaImmediately:(float)arg1;
 - (void)_coalesceContentSizeUpdateWithDelta:(float)arg1;
 - (float)_dataSourceHeightForFooterInSection:(int)arg1;
 - (float)_dataSourceHeightForHeaderInSection:(int)arg1;
@@ -170,11 +172,13 @@
 - (id)itemContainerViewForSwipeActionController:(id)arg1;
 - (id)gestureRecognizerViewForSwipeActionController:(id)arg1;
 - (_Bool)_wantsSwipes;
+- (_Bool)_needsRecomputeOfPreferredAttributesForVisibleEstimatedItemsDuringUpdate;
 - (float)_defaultCellHeight;
 - (struct _NSRange)_sectionRangeForBounds:(struct CGRect)arg1;
 - (struct CGRect)_frameForSectionElementKind:(id)arg1 atSection:(int)arg2 visibleRect:(struct CGRect)arg3 floating:(_Bool *)arg4 canGuess:(_Bool)arg5;
 - (_Bool)_hasHeaderFooterBelowRowAtIndexPath:(id)arg1;
 - (_Bool)_shouldDrawSeparatorAtTop:(_Bool)arg1 ofSection:(int)arg2;
+- (_Bool)_shouldDrawTopSeparatorDueToMergedBarForSectionAtIndex:(int)arg1;
 - (int)_editingStyleForRowAtIndexPath:(id)arg1;
 - (int)_indentationLevelForRowAtIndexPath:(id)arg1;
 - (_Bool)_shouldIndentWhileEditingForRowAtIndexPath:(id)arg1;

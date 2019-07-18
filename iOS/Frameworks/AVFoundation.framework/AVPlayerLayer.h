@@ -20,6 +20,10 @@
 + (id)keyPathsForValuesAffectingVideoRect;
 + (id)makeClosedCaptionLayer;
 + (id)playerLayerWithPlayer:(id)arg1;
+- (_Bool)_isPartOfForegroundScene;
+- (void)_updateIsPartOfForegroundScene;
+- (void)_windowSceneDidEnterBackground:(id)arg1;
+- (_Bool)_currentWindowSceneIsForeground;
 - (void)removeFromSuperlayer;
 - (void)replaceSublayer:(id)arg1 with:(id)arg2;
 - (void)insertSublayer:(id)arg1 above:(id)arg2;
@@ -55,6 +59,8 @@
 - (void)_associateWithLayer:(id)arg1 forMode:(long long)arg2;
 - (void)_configurePlayerWhenLeavingPIP;
 - (void)_configurePlayerWhenEnteringPIP;
+- (void)setLegibleDisplayEnabled:(_Bool)arg1;
+- (_Bool)isLegibleDisplayEnabled;
 - (struct CGRect)_videoRectForBounds:(struct CGRect)arg1;
 @property(readonly, nonatomic) struct CGRect videoRect;
 - (void)setLanczosFilterDownscaleFactor:(long long)arg1;

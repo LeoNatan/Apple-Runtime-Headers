@@ -18,12 +18,14 @@ __attribute__((visibility("hidden")))
 @interface TSDImageFill : TSDFill <TSDMixing, TSSPresetSource, NSCopying, NSMutableCopying>
 {
     TSPData *mImageData;
-    int mTechnique;
+    unsigned long long mTechnique;
     TSUColor *mTintColor;
     TSDImageFillCachedImage *mStandardSizeTintedImage;
     TSDImageFillCachedImage *mHalfSizeTintedImage;
     TSDImageFillCachedImage *mQuarterSizeTintedImage;
     TSUColor *mReferenceColor;
+    TSUColor *mCachedReferenceColor;
+    _Bool mShouldSkipFurtherAttemptsToCalculateReferenceColor;
     struct CGSize mFillSize;
     _Bool mHasIndicatedInterestInProvider;
     NSObject<OS_dispatch_queue> *mTempRenderLock;
@@ -36,7 +38,7 @@ __attribute__((visibility("hidden")))
 + (id)presetKinds;
 +     // Error parsing type: @32@0:8r^{FillArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{GradientArchive}^{ImageFillArchive}}16@24, name: instanceWithArchive:unarchiver:
 @property(readonly, copy, nonatomic) TSUColor *tintColor; // @synthesize tintColor=mTintColor;
-@property(nonatomic) int technique; // @synthesize technique=mTechnique;
+@property(nonatomic) unsigned long long technique; // @synthesize technique=mTechnique;
 @property(readonly, retain, nonatomic) TSPData *imageData; // @synthesize imageData=mImageData;
 - (void).cxx_destruct;
 - (void)p_drawPDFWithProvider:(id)arg1 inContext:(struct CGContext *)arg2 bounds:(struct CGRect)arg3;
@@ -59,22 +61,30 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)renderedImageSizeForObjectSize:(struct CGSize)arg1;
 - (id)p_cachedImageForSize:(struct CGSize)arg1 inContext:(struct CGContext *)arg2 orContentsScaleProvider:(id)arg3;
 - (_Bool)p_shouldApplyTintedImage;
-- (int)fillType;
+- (long long)fillType;
 - (_Bool)canApplyToRenderableByAddingSubrenderables;
 - (_Bool)canApplyToRenderable;
 - (_Bool)drawsInOneStep;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (void)p_updateCachedReferenceColorIfNeeded;
+- (void)i_updateStoredReferenceColorIfNeeded;
+- (id)p_calculateReferenceColor;
+@property(readonly, nonatomic) TSUColor *storedReferenceColor;
+- (id)referenceColorForFontArchiving;
 - (id)referenceColor;
+- (void)i_setStoredReferenceColor:(id)arg1;
 - (id)imageDataAtFillSize;
 - (void)p_setFillSizeForApplicationData;
 - (_Bool)isOpaque;
 @property(readonly, nonatomic) struct CGSize fillSize; // @synthesize fillSize=mFillSize;
 @property(readonly, nonatomic) double scale;
+- (struct CGSize)p_imageDataNaturalSize;
+@property(readonly, nonatomic) _Bool canCopyData;
 - (id)copyWithNewImageData:(id)arg1;
 @property(nonatomic, setter=p_setFillSize:) struct CGSize p_fillSize;
 @property(retain, nonatomic, setter=p_setTintColor:) TSUColor *p_tintColor;
-@property(nonatomic, setter=p_setTechnique:) int p_technique;
+@property(nonatomic, setter=p_setTechnique:) unsigned long long p_technique;
 @property(retain, nonatomic, setter=p_setImageData:) TSPData *p_imageData;
 - (void)flushImageCache;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -82,10 +92,11 @@ __attribute__((visibility("hidden")))
 - (void)p_clearTintedImageCache;
 - (void)dealloc;
 - (void)i_commonInit;
-- (id)initWithImageData:(id)arg1 technique:(int)arg2 tintColor:(id)arg3 size:(struct CGSize)arg4;
+- (id)initForUnarchiving;
+- (id)initWithImageData:(id)arg1 technique:(unsigned long long)arg2 tintColor:(id)arg3 size:(struct CGSize)arg4;
+- (id)initWithImageData:(id)arg1 technique:(unsigned long long)arg2 tintColor:(id)arg3 size:(struct CGSize)arg4 referenceColor:(id)arg5;
 - (_Bool)tsch_hasAllResources;
 -     // Error parsing type: v32@0:8^{FillArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{GradientArchive}^{ImageFillArchive}}16@24, name: saveToArchive:archiver:
-- (_Bool)p_shouldPersistFillSizeForData:(id)arg1;
 -     // Error parsing type: @32@0:8r^{FillArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{GradientArchive}^{ImageFillArchive}}16@24, name: initWithArchive:unarchiver:
 
 @end

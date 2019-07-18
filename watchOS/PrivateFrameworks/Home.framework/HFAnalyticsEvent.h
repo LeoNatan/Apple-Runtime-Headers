@@ -6,14 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+@class NSDate, NSDictionary, NSString;
 
 @interface HFAnalyticsEvent : NSObject
 {
     unsigned int _type;
+    NSDate *_timestamp;
 }
 
+@property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *payload;
 @property(readonly, nonatomic) NSString *name;
 - (id)description;

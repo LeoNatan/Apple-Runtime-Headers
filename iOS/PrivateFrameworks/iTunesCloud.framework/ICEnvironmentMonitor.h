@@ -55,6 +55,7 @@
 - (_Bool)_networkConstrained;
 - (long long)_networkTypeFromWatchCarousel;
 - (long long)_currentNetworkType;
+- (void)_onQueue_loadInitialThermalLevel;
 - (void)_onQueue_updateThermalLevelWithToken:(int)arg1;
 - (void)_onQueue_updateNetworkReachabilityAndNotifyObservers:(_Bool)arg1;
 - (void)removeObserver:(id)arg1;

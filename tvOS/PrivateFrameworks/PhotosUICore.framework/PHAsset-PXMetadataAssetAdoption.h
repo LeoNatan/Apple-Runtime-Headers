@@ -38,6 +38,7 @@
 @property(readonly, nonatomic) struct CGRect px_faceAreaRect;
 @property(readonly, nonatomic) NSValue *px_originalFaceAreaRectValue;
 @property(readonly, nonatomic) struct CGRect px_originalFaceAreaRect;
+@property(readonly, nonatomic) _Bool isEligibleForAutoPlayback;
 @property(readonly, nonatomic) NSDate *importDate;
 - (id)applyAdjustmentsToCompositionController:(id)arg1 renderer:(id)arg2;
 @property(readonly, nonatomic) PHAsset *photoKitAsset;
@@ -52,6 +53,8 @@
 - (id)localizedDetailedGeoDescriptionForRTL:(_Bool)arg1;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly, nonatomic) _Bool isInCloud;
+- (id)_faceNamesStringForAsset;
+- (id)px_accessibilityLabelForStyles:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool requiresConfidentiality;
 - (_Bool)px_isConfidentialAdjustmentsVersion:(id)arg1;
 - (_Bool)px_isSupportedApp:(id)arg1;
@@ -67,7 +70,7 @@
 @property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) float hdrGain;
+@property(readonly, nonatomic) double hdrGain;
 @property(readonly, nonatomic) NSDate *localCreationDate;
 @property(readonly, nonatomic) CLLocation *location;
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;
@@ -79,6 +82,7 @@
 @property(readonly, nonatomic) struct CGRect preferredCropRect;
 @property(readonly, nonatomic) _Bool representsBurst;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) unsigned long long thumbnailIndex;
 @property(readonly, nonatomic) NSString *uuid;
 @end
 

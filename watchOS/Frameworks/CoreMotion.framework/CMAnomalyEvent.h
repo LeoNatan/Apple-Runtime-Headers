@@ -35,6 +35,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithIdentifier:(unsigned long long)arg1 absoluteTimestamp:(double)arg2 state:(int)arg3 response:(int)arg4 resolution:(int)arg5 acknowledgement:(_Bool)arg6;
 - (id)initWithIdentifier:(unsigned long long)arg1 absoluteTimestamp:(double)arg2 state:(int)arg3 response:(int)arg4 resolution:(int)arg5;
 
 @end

@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)seekToOffset:(double)arg1 error:(id *)arg2;
 - (BOOL)resumeAtTime:(double)arg1 error:(id *)arg2;
 - (BOOL)pauseAtTime:(double)arg1 error:(id *)arg2;
-- (BOOL)prepareAndReturnError:(id *)arg1;
 - (BOOL)scheduleParameterCurve:(id)arg1 atTime:(double)arg2 error:(id *)arg3;
 - (BOOL)sendParameters:(id)arg1 atTime:(double)arg2 error:(id *)arg3;
 - (BOOL)stopAtTime:(double)arg1 error:(id *)arg2;

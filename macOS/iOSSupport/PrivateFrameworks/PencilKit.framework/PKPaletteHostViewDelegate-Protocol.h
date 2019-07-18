@@ -11,10 +11,6 @@
 @protocol PKPaletteHostViewDelegate <NSObject>
 
 @optional
-- (void)hostView:(UIView *)arg1 touchesDidEndInPaletteAtPoint:(struct CGPoint)arg2;
-- (void)hostView:(UIView *)arg1 touchesDidChangeInPaletteAtPoint:(struct CGPoint)arg2;
-- (void)hostView:(UIView *)arg1 didExpandPaletteFromCorner:(unsigned long long)arg2;
-- (void)hostView:(UIView *)arg1 willExpandPaletteFromCorner:(unsigned long long)arg2;
 - (void)hostView:(UIView *)arg1 didDockPaletteToCorner:(unsigned long long)arg2;
 - (void)hostView:(UIView *)arg1 willDockPaletteToCorner:(unsigned long long)arg2;
 - (void)hostView:(UIView *)arg1 didDockPaletteToEdge:(unsigned long long)arg2;

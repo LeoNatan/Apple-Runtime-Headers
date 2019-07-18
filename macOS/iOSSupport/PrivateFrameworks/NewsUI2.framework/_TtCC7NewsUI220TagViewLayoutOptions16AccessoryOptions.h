@@ -10,8 +10,7 @@
 {
     // Error parsing type: , name: items
     // Error parsing type: , name: compactItemSize
-    // Error parsing type: , name: switchItemSize
-    // Error parsing type: , name: reorderItemSize
+    // Error parsing type: , name: largeItemSize
     // Error parsing type: , name: spacing
     // Error parsing type: , name: padding
 }

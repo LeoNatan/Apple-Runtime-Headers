@@ -6,19 +6,19 @@
 
 #import <UIKit/UIView.h>
 
-@class CAMediaTimingFunction, CLKDevice, NSArray, NSDictionary, NSMutableDictionary, NTKVictoryLogoButton, UIImage;
+@class CAMediaTimingFunction, CLKDevice, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NTKVictoryLogoButton, UIImage;
 @protocol NTKVictoryAnalogBackgroundColorPalette, NTKVictoryAnalogBackgroundViewDelegate;
 
 @interface NTKVictoryAnalogBackgroundView : UIView
 {
     CLKDevice *_device;
     UIImage *_dotImage;
-    NSMutableDictionary *_regularNumberImages;
-    NSMutableDictionary *_largeNumberImages;
-    NSArray *_ringLayers;
+    UIView *_contentView;
+    NSMutableArray *_ringLayers;
     _Bool _ringLayerIsDigit[12];
     NSArray *_largeHourMarkerLabels;
     NSArray *_mediumNumberLayers;
+    NSMutableDictionary *_smallHourMarkerLabelsByIndex;
     NSArray *_temporaryNumberLayers;
     NSArray *_activeDigitIndices;
     _Bool _canonicalDigitStatesByStyle[3][12];
@@ -47,14 +47,13 @@
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) id <NTKVictoryAnalogBackgroundColorPalette> palette; // @synthesize palette=_palette;
 - (void).cxx_destruct;
-- (id)_largeNumberImageForNumber:(unsigned long long)arg1;
-- (id)_regularNumberImageForNumber:(unsigned long long)arg1;
 - (id)_dotImage;
 - (id)_circularDialLogoImage;
 - (id)_logoImage;
 - (id)_bigNumberInitialTransforms;
 - (struct CGAffineTransform)_affineTransformFromTransform3D:(struct CATransform3D)arg1;
 - (id)_createAndAddLayersWithCount:(unsigned long long)arg1;
+- (id)_createSmallHourMarkerLabelForIndex:(id)arg1;
 - (id)_createHourMarkerLabelsWithFontSize:(double)arg1;
 - (void)_createLargeHourMarkerLabelsAndAttachToViewIfNeeded;
 - (void)_createMediumNumberLayersIfNeededAndAttachToViewIfNeeded;
@@ -72,11 +71,13 @@
 - (void)_clearTransitionStateForStyle:(unsigned long long)arg1;
 - (struct CATransform3D)_intermediateTransformForBigNumberAtIndex:(unsigned long long)arg1 fraction:(double)arg2;
 - (void)applyTransitionFraction:(double)arg1 fromStyle:(unsigned long long)arg2 toStyle:(unsigned long long)arg3 fromPalette:(id)arg4 toPalette:(id)arg5;
+- (id)activeRingLayers;
 - (void)applyTransitionFraction:(double)arg1 fromDialShape:(unsigned long long)arg2 toDialShape:(unsigned long long)arg3;
 - (_Bool)isCircularDial;
 - (void)setInTimeTravel:(_Bool)arg1 animated:(_Bool)arg2;
 - (struct CGPoint)_ringDigitOffsetAtIndex:(unsigned long long)arg1;
 - (void)layoutNumbers;
+- (struct CGPoint)centerPointForSmallHourMarkerAtIndex:(unsigned long long)arg1;
 - (void)layoutSubviews;
 - (void)_logoTapped:(id)arg1;
 - (void)addSmallLogoButtonIfNeeded;

@@ -9,12 +9,12 @@
 #import <NanoTimeKit/CLKMonochromeFilterProvider-Protocol.h>
 #import <NanoTimeKit/NTKRichComplicationBezelViewDelegate-Protocol.h>
 
-@class NSString, NTKWhistlerAnalogColorPalette, NTKWhistlerAnalogDialView, NTKWhistlerAnalogFaceViewComplicationFactory;
+@class NSString, NTKCircularAnalogDialView, NTKWhistlerAnalogColorPalette, NTKWhistlerAnalogFaceViewComplicationFactory;
 
 @interface NTKWhistlerAnalogFaceView : NTKAnalogFaceView <NTKRichComplicationBezelViewDelegate, CLKMonochromeFilterProvider>
 {
     NTKWhistlerAnalogFaceViewComplicationFactory *_faceViewComplicationFactory;
-    NTKWhistlerAnalogDialView *_dialView;
+    NTKCircularAnalogDialView *_dialView;
     NTKWhistlerAnalogColorPalette *_colorPalette;
     float _bezelLabelCurvedRadius;
     unsigned int _color;
@@ -32,8 +32,6 @@
 - (void)bezelViewDidBecomeInteractive:(id)arg1;
 - (void)didUpdateBezelTextForRichComplicationBezelView:(id)arg1;
 - (void)complicationDisplayWrapperView:(id)arg1 updateCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5 animationDuration:(double)arg6 animationFraction:(float)arg7;
-- (void)complicationDisplayWrapperView:(id)arg1 prepareCustomDataAnimation:(id)arg2 fromEarlierView:(id)arg3 laterView:(id)arg4 isForward:(_Bool)arg5 animationType:(unsigned int)arg6;
-- (_Bool)complicationDisplayWrapperView:(id)arg1 shouldStartCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5;
 - (void)_updateDialTicksForBezelText;
 - (float)_bezelLabelCurvedRadiusForColor:(unsigned int)arg1;
 - (float)_bezelCircularBackgroundFromComplication:(id)arg1;
@@ -58,7 +56,7 @@
 - (id)filterForView:(id)arg1 style:(int)arg2 fraction:(float)arg3;
 - (id)filterForView:(id)arg1 style:(int)arg2;
 - (id)_customEditOptionContainerViewForSlot:(id)arg1;
-- (id)_curvedPickerMaskForSlot:(id)arg1;
+- (id)_pickerMaskForSlot:(id)arg1;
 - (int)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_applyExitingEditingWithTransitionFraction:(float)arg1;
 - (void)_applyEnteringEditingWithTransitionFraction:(float)arg1;

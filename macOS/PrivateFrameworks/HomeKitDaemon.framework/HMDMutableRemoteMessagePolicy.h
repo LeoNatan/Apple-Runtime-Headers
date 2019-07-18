@@ -13,6 +13,7 @@
 @property unsigned long long roles; // @dynamic roles;
 @property unsigned long long transportRestriction; // @dynamic transportRestriction;
 @property BOOL requiresAccountMessage; // @dynamic requiresAccountMessage;
+@property BOOL allowsAnonymousMessage; // @dynamic allowsAnonymousMessage;
 @property BOOL requiresSecureMessage; // @dynamic requiresSecureMessage;
 
 @end

@@ -16,5 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_title;
 }
 
+@property(copy) NSString *title; // @synthesize title=_title;
+@property(retain) NSString *path; // @synthesize path=_path;
+@property NSWindow *window; // @synthesize window=_window;
+- (void)dealloc;
+
 @end
 

@@ -12,6 +12,7 @@
 @protocol PHBatchFetchingArrayDataSource <NSObject>
 - (PHPhotoLibrary *)bfa_photoLibrary;
 - (id <PHBatchFetchingArrayElement>)bfa_tombstoneObjectForOID:(id)arg1 uuid:(NSString *)arg2 propertyHint:(unsigned long long)arg3;
+- (NSArray *)bfa_fetchedObjectsForOIDs:(NSArray *)arg1 objectClass:(Class)arg2;
 - (NSArray *)bfa_fetchObjectsForOIDs:(NSArray *)arg1 propertyHint:(unsigned long long)arg2;
 @end
 

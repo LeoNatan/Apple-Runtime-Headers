@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/_UISettings.h>
+#import <PrototypeTools/PTSettings.h>
 
-@interface MTLumaDodgePillStyleSettings : _UISettings
+@interface MTLumaDodgePillStyleSettings : PTSettings
 {
     double _colorAddOpacity;
     double _lumaMapPlusColorOpacity;

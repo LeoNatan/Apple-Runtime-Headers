@@ -10,27 +10,22 @@
 #import <DoNotDisturbServer/NSCopying-Protocol.h>
 #import <DoNotDisturbServer/NSMutableCopying-Protocol.h>
 
-@class DNDModeAssertionSource, NSArray, NSDate, NSString;
+@class NSArray, NSString;
 
 @interface DNDSModeAssertionStore : NSObject <DNDSBackingStoreRecord, NSCopying, NSMutableCopying>
 {
     NSArray *_assertions;
     NSArray *_invalidations;
-    NSDate *_lastCompleteInvalidationDate;
-    unsigned int _lastCompleteInvalidationReason;
-    DNDModeAssertionSource *_lastCompleteInvalidationSource;
-    NSDate *_lastUpdateDate;
+    NSArray *_invalidationRequests;
 }
 
-+ (id)downgradeDictionaryRepresentation:(id)arg1 fromVersionNumber:(unsigned int)arg2 toVersionNumber:(unsigned int)arg3 migrationDelegate:(id)arg4;
-+ (id)upgradeDictionaryRepresentation:(id)arg1 fromVersionNumber:(unsigned int)arg2 toVersionNumber:(unsigned int)arg3;
++ (id)messageDateForSyncDictionaryRepresentation:(id)arg1;
++ (id)newWithSyncDictionaryRepresentation:(id)arg1;
 + (id)newWithDictionaryRepresentation:(id)arg1;
-+ (unsigned int)recordVersionNumberIOS12;
-+ (unsigned int)recordVersionNumber;
-@property(readonly, copy, nonatomic) NSDate *lastUpdateDate; // @synthesize lastUpdateDate=_lastUpdateDate;
-@property(readonly, copy, nonatomic) DNDModeAssertionSource *lastCompleteInvalidationSource; // @synthesize lastCompleteInvalidationSource=_lastCompleteInvalidationSource;
-@property(readonly, nonatomic) unsigned int lastCompleteInvalidationReason; // @synthesize lastCompleteInvalidationReason=_lastCompleteInvalidationReason;
-@property(readonly, copy, nonatomic) NSDate *lastCompleteInvalidationDate; // @synthesize lastCompleteInvalidationDate=_lastCompleteInvalidationDate;
++ (id)upgradeDictionaryRepresentation:(id)arg1 fromVersionNumber:(unsigned int)arg2 toVersionNumber:(unsigned int)arg3;
++ (id)messageDateForPeaceSyncDictionaryRepresentation:(id)arg1;
++ (id)newWithPeaceSyncDictionaryRepresentation:(id)arg1;
+@property(readonly, copy, nonatomic) NSArray *invalidationRequests; // @synthesize invalidationRequests=_invalidationRequests;
 @property(readonly, copy, nonatomic) NSArray *invalidations; // @synthesize invalidations=_invalidations;
 @property(readonly, copy, nonatomic) NSArray *assertions; // @synthesize assertions=_assertions;
 - (void).cxx_destruct;
@@ -41,7 +36,10 @@
 @property(readonly) unsigned int hash;
 - (id)_initWithStore:(id)arg1;
 - (id)init;
+- (id)syncDictionaryRepresentationWithDate:(id)arg1 messageUUID:(id)arg2;
 - (id)dictionaryRepresentation;
+- (id)peaceSyncDictionaryRepresentationWithDate:(id)arg1 messageUUID:(id)arg2 userRequestedClientIdentifierHandler:(CDUnknownBlockType)arg3;
+- (id)lastUpdateDate;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

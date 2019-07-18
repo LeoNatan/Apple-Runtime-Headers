@@ -58,6 +58,7 @@
 - (oneway void)handlePairedHostDeviceRoutesByUniqueIdentifierUpdated:(id)arg1;
 - (oneway void)handleLocalRoutesByUniqueIdentifierUpdated:(id)arg1;
 - (oneway void)setClientCapabilities:(id)arg1;
+- (BOOL)isUnknownAddress:(id)arg1 normalizedAddress:(id)arg2 forBundleIdentifier:(id)arg3;
 - (BOOL)shouldRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
 - (BOOL)willRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)policyForAddresses:(id)arg1 forBundleIdentifier:(id)arg2;

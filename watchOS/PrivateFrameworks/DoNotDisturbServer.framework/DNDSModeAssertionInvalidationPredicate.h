@@ -6,28 +6,18 @@
 
 #import <Foundation/NSPredicate.h>
 
-@class NSArray, NSDate;
-
 @interface DNDSModeAssertionInvalidationPredicate : NSPredicate
 {
-    NSDate *_date;
-    NSArray *_clientIdentifiers;
-    NSArray *_UUIDs;
 }
 
-+ (_Bool)supportsSecureCoding;
-+ (id)invalidationPredicateForDate:(id)arg1 UUIDs:(id)arg2;
-+ (id)invalidationPredicateForDate:(id)arg1 clientIdentifiers:(id)arg2;
-+ (id)invalidationPredicateForDate:(id)arg1;
-@property(readonly, copy, nonatomic) NSArray *UUIDs; // @synthesize UUIDs=_UUIDs;
-@property(readonly, copy, nonatomic) NSArray *clientIdentifiers; // @synthesize clientIdentifiers=_clientIdentifiers;
-@property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
++ (id)predicateForAssertionUUIDs:(id)arg1;
++ (id)predicateForAssertionClientIdentifiers:(id)arg1;
++ (id)predicateForAssertionsTakenBeforeDate:(id)arg1;
++ (id)predicateForAnyAssertion;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) unsigned int predicateType; // @dynamic predicateType;
 - (_Bool)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
-- (id)initWithDate:(id)arg1 clientIdentifiers:(id)arg2 UUIDs:(id)arg3;
+- (id)_init;
 
 @end
 

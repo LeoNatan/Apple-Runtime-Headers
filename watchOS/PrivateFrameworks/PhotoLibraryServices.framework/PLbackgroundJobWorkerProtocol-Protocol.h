@@ -8,10 +8,14 @@
 
 @class NSArray, NSManagedObjectID, PLPhotoLibrary;
 
-@protocol PLbackgroundJobWorkerProtocol <NSObject>
+@protocol PLBackgroundJobWorkerProtocol <NSObject>
 + (id)workerWithLibrary:(PLPhotoLibrary *)arg1;
 - (void)performWorkOnManagedObjectID:(NSManagedObjectID *)arg1 completion:(void (^)(NSError *))arg2;
 - (NSArray *)managedObjectIDsNeedingProcessing;
 - (_Bool)hasPendingJobs;
+
+@optional
+- (void)stopWorkingOnManagedObjectID:(NSManagedObjectID *)arg1;
+- (_Bool)isInterruptible;
 @end
 

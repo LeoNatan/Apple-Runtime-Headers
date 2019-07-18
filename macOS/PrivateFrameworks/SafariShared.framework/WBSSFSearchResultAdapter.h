@@ -39,6 +39,7 @@
 @property(readonly, nonatomic) NSNumber *descriptionMaximumNumberOfLines;
 @property(readonly, nonatomic) NSNumber *titleMaximumNumberOfLines;
 @property(readonly, nonatomic) NSString *descriptionLeadInText;
+@property(readonly, nonatomic) long long parsecQueryID;
 @property(readonly, nonatomic) unsigned long long engagementDestination;
 @property(readonly, nonatomic) SFSearchResult *sfSearchResultValue;
 @property(readonly, nonatomic) NSString *parsecDomainIdentifier;

@@ -26,10 +26,12 @@ __attribute__((visibility("hidden")))
     CKDPCSIdentityManager *_identityManager;
     NSDate *_lastMissingManateeIdentityErrorDateForCurrentService;
     NSMutableSet *_missingIdentityPublicKeys;
+    NSMutableSet *_servicesWithMissingIdentities;
     NSMutableSet *_undecryptablePCSDataHashes;
     NSData *_boundaryKeyData;
     NSObject<OS_dispatch_source> *_pcsUpdateSource;
     NSObject<OS_dispatch_queue> *_synchronizeQueue;
+    NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
 + (id)allProtectionIdentifiersFromShareProtection:(struct _OpaquePCSShareProtection *)arg1;
@@ -37,10 +39,12 @@ __attribute__((visibility("hidden")))
 + (id)publicKeyIDFromIdentity:(struct _OpaquePCSShareProtection *)arg1;
 + (id)noMatchingIdentityErrorForPCSError:(struct __CFError *)arg1 withErrorCode:(long long)arg2 description:(id)arg3;
 + (id)_legacyServiceNameForContainerIDMapping:(id)arg1;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *synchronizeQueue; // @synthesize synchronizeQueue=_synchronizeQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *pcsUpdateSource; // @synthesize pcsUpdateSource=_pcsUpdateSource;
 @property(retain, nonatomic) NSData *boundaryKeyData; // @synthesize boundaryKeyData=_boundaryKeyData;
 @property(retain, nonatomic) NSMutableSet *undecryptablePCSDataHashes; // @synthesize undecryptablePCSDataHashes=_undecryptablePCSDataHashes;
+@property(retain, nonatomic) NSMutableSet *servicesWithMissingIdentities; // @synthesize servicesWithMissingIdentities=_servicesWithMissingIdentities;
 @property(retain, nonatomic) NSMutableSet *missingIdentityPublicKeys; // @synthesize missingIdentityPublicKeys=_missingIdentityPublicKeys;
 @property(retain, nonatomic) NSDate *lastMissingManateeIdentityErrorDateForCurrentService; // @synthesize lastMissingManateeIdentityErrorDateForCurrentService=_lastMissingManateeIdentityErrorDateForCurrentService;
 @property(readonly, nonatomic) CKDPCSIdentityManager *identityManager; // @synthesize identityManager=_identityManager;
@@ -82,11 +86,12 @@ __attribute__((visibility("hidden")))
 - (id)addPublicIdentity:(struct _PCSPublicIdentityData *)arg1 toSharePCS:(struct _OpaquePCSShareProtection *)arg2 permission:(unsigned long long)arg3;
 - (id)etagFromSharePCS:(struct _OpaquePCSShareProtection *)arg1 error:(id *)arg2;
 - (id)createNewSharePCSDataForShareWithID:(id)arg1 withPublicSharingKey:(id)arg2 addDebugIdentity:(_Bool)arg3 error:(id *)arg4;
+- (void)_locked_pcsDataFromFetchedShare:(id)arg1 withPublicSharingKey:(id)arg2 withServiceType:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)pcsDataFromFetchedShare:(id)arg1 withPublicSharingKey:(id)arg2 withServiceType:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)pcsDataFromFetchedShare:(id)arg1 withServiceType:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)pcsDataFromFetchedShare:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)decryptPCSDataOnSharePCS:(id)arg1 withPublicSharingKey:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)decryptCurrentPerParticipantPCSDataOnSharePCS:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_locked_decryptPCSDataOnSharePCS:(id)arg1 withPublicSharingKey:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_locked_decryptCurrentPerParticipantPCSDataOnSharePCS:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)decryptPCSDataOnSharePCS:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)publicKeyDataFromPCS:(struct _OpaquePCSShareProtection *)arg1 error:(id *)arg2;
 - (struct _OpaquePCSShareProtection *)createSharePCSFromEncryptedData:(id)arg1 error:(id *)arg2;
@@ -113,6 +118,7 @@ __attribute__((visibility("hidden")))
 - (struct _OpaquePCSShareProtection *)createRecordPCSWithEncryptedZonePCS:(struct __CFData *)arg1 sharePCS:(struct _OpaquePCSShareProtection *)arg2 createLite:(_Bool)arg3 error:(id *)arg4;
 - (struct _OpaquePCSShareProtection *)createRecordPCSWithZonePCS:(struct _OpaquePCSShareProtection *)arg1 sharePCS:(struct _OpaquePCSShareProtection *)arg2 createLite:(_Bool)arg3 error:(id *)arg4;
 - (id)keyRollForZoneWideShareWithZonePCS:(id)arg1 sharePCS:(id)arg2;
+- (_Bool)canRollShareKeys;
 - (id)updateIdentityAndRollKeyForZonePCS:(struct _OpaquePCSShareProtection *)arg1 usingServiceIdentityWithType:(unsigned long long)arg2;
 - (id)rollIdentityForSharePCS:(struct _OpaquePCSShareProtection *)arg1 removeAllExistingPrivateKeys:(_Bool)arg2 error:(id *)arg3;
 - (id)removePrivateKeysForKeyIDs:(id)arg1 fromPCS:(struct _OpaquePCSShareProtection *)arg2;
@@ -141,7 +147,7 @@ __attribute__((visibility("hidden")))
 - (void)createZonePCSWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)createZonePCSWithSyncKeyRegistryRetry:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_locked_createZonePCSWithSyncKeyRegistryRetry:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)markMissingIdentitiesFromFailedDecryptError:(struct __CFError *)arg1;
+- (void)_locked_markMissingIdentitiesFromFailedDecryptError:(struct __CFError *)arg1 serviceName:(id)arg2;
 - (_Bool)sharingFingerprintsContainPublicKeyWithData:(id)arg1 error:(id *)arg2;
 - (id)addIdentityForService:(unsigned long long)arg1 toPCS:(struct _OpaquePCSShareProtection *)arg2;
 - (id)_addIdentity:(struct _PCSIdentitySetData *)arg1 withService:(unsigned long long)arg2 toPCS:(struct _OpaquePCSShareProtection *)arg3;
@@ -158,6 +164,7 @@ __attribute__((visibility("hidden")))
 - (id)copyAllPublicKeysForService:(unsigned long long)arg1 withError:(id *)arg2;
 - (id)copyPublicKeyForService:(unsigned long long)arg1 withError:(id *)arg2;
 @property(readonly, nonatomic) _Bool currentServiceIsManatee;
+@property(readonly, nonatomic) NSString *pcsServiceName;
 - (unsigned long long)publicKeyVersionForServiceType:(unsigned long long)arg1;
 - (struct _PCSIdentityData *)debugSharingIdentity;
 - (id)_pcsObjectKindForCKDPCSBlobType:(unsigned long long)arg1;

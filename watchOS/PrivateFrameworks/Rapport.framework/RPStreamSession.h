@@ -38,6 +38,7 @@
     int _streamSocket;
     int _streamType;
     unsigned int _trafficFlags;
+    NSString *_trafficSessionID;
     NSString *_destinationString;
     NSData *_pskData;
     CDUnknownBlockType _streamAcceptHandler;
@@ -49,6 +50,7 @@
 @property(nonatomic) _Bool serverMode; // @synthesize serverMode=_serverMode;
 @property(copy, nonatomic) NSData *pskData; // @synthesize pskData=_pskData;
 @property(copy, nonatomic) NSString *destinationString; // @synthesize destinationString=_destinationString;
+@property(copy, nonatomic) NSString *trafficSessionID; // @synthesize trafficSessionID=_trafficSessionID;
 @property(nonatomic) unsigned int trafficFlags; // @synthesize trafficFlags=_trafficFlags;
 @property(nonatomic) int streamType; // @synthesize streamType=_streamType;
 @property(nonatomic) int streamSocket; // @synthesize streamSocket=_streamSocket;

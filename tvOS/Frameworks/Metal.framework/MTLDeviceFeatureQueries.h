@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsSIMDReduction;
 @property(readonly, nonatomic) _Bool supportsMirrorClampToEdgeSamplerMode;
 @property(readonly, nonatomic) _Bool supportsBlackOrWhiteSamplerBorderColors;
-@property(readonly, nonatomic) _Bool supportsShaderBarycentricCoordinates;
 @property(readonly, nonatomic) _Bool supportsSIMDShufflesAndBroadcast;
 @property(readonly, nonatomic) _Bool supportsShaderMinLODClamp;
 @property(readonly, nonatomic) _Bool supportsSIMDGroup;

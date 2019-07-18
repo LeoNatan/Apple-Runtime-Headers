@@ -13,6 +13,7 @@
 - (void)_clearParkedCarBulletin;
 - (void)_showParkedCarReplacementBulletinForEvent:(id)arg1 replacingEvent:(id)arg2;
 - (void)_showParkedCarBulletinForEvent:(id)arg1;
+- (id)pinnedPlacesContainer;
 - (id)historyContainer;
 - (id)favoritesContainer;
 

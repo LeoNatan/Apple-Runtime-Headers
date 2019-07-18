@@ -49,6 +49,7 @@
     NSError *_uploadingError;
     NSNumber *_childItemCount;
     unsigned long long _capabilities;
+    unsigned long long _enumerationOrigin;
     NSDictionary *_userInfo;
     NSNumber *_documentSize;
     NSDate *_creationDate;
@@ -146,6 +147,7 @@
 @property(copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(copy, nonatomic) NSNumber *documentSize; // @synthesize documentSize=_documentSize;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
+@property(nonatomic) unsigned long long enumerationOrigin; // @synthesize enumerationOrigin=_enumerationOrigin;
 @property(nonatomic) unsigned long long capabilities; // @synthesize capabilities=_capabilities;
 @property(copy, nonatomic) NSNumber *childItemCount; // @synthesize childItemCount=_childItemCount;
 @property(nonatomic, getter=isExcludedFromSync) BOOL excludedFromSync; // @synthesize excludedFromSync=_excludedFromSync;

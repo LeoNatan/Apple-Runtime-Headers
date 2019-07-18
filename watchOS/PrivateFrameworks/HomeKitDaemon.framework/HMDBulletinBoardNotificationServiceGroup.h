@@ -38,7 +38,7 @@
 @property(retain, nonatomic) NSArray *associatedServices; // @synthesize associatedServices=_associatedServices;
 @property(readonly, nonatomic) __weak HMDBulletinBoardNotification *bulletinBoardNotification; // @synthesize bulletinBoardNotification=_bulletinBoardNotification;
 - (void).cxx_destruct;
-- (id)actionContextForCameraProfileID:(id)arg1;
+- (struct NSDictionary *)actionContextForCameraProfileID:(id)arg1;
 - (id)_cameraProfileWithID:(id)arg1;
 - (id)dumpState;
 - (void)setAssociatedServicesTable:(id)arg1;
@@ -49,7 +49,6 @@
 @property(retain, nonatomic) NSSet *cameraProfileUUIDs; // @synthesize cameraProfileUUIDs=_cameraProfileUUIDs;
 - (void)_sendNotification:(id)arg1;
 - (id)_prepareServiceGroupPayload;
-- (void)_updateCameraProfilesTable:(id)arg1;
 - (void)_updateAssociatedServicesTable:(id)arg1;
 - (void)_updateAssociatedServices:(id)arg1 associatedCameras:(id)arg2;
 - (void)_configureServices;

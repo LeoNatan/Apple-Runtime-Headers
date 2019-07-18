@@ -24,12 +24,17 @@ __attribute__((visibility("hidden")))
 - (void)p_clearFootnoteLayoutCache;
 - (void)setFootnoteSpacing:(long long)arg1;
 - (void)setContainerLineWidth:(double)arg1;
-- (_Bool)footnoteContainerFits;
+- (_Bool)footnoteContainerFitsForTarget:(id)arg1;
+- (_Bool)footnoteContainerIsOnSamePageAsTarget:(id)arg1;
+- (_Bool)canHaveFootnotesFromPreviousTarget:(id)arg1;
 - (double)footnoteBlockHeightForTarget:(id)arg1;
 - (void)removeAllFootnoteReferenceStorages;
 - (void)removeFootnoteReferenceStorage:(id)arg1;
 - (void)addFootnoteReferenceStorage:(id)arg1;
-- (id)initWithFootnoteMarkProvider:(id)arg1 pageDelegate:(id)arg2 maxFootnoteLineWidth:(double)arg3 maxFootnoteBlockHeight:(double)arg4 vertical:(_Bool)arg5 footnoteSpacing:(double)arg6;
+- (double)footnoteBlockHeight;
+- (_Bool)hasFootnotes;
+- (void)tearDown;
+- (id)initWithFootnoteMarkProvider:(id)arg1 documentRoot:(id)arg2 pageDelegate:(id)arg3 maxFootnoteLineWidth:(double)arg4 maxFootnoteBlockHeight:(double)arg5 vertical:(_Bool)arg6 footnoteSpacing:(double)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

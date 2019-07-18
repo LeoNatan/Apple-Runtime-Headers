@@ -6,10 +6,12 @@
 
 #import <UIKit/UINavigationController.h>
 
+#import <EventKitUI/UIAdaptivePresentationControllerDelegate-Protocol.h>
+
 @class EKEvent, EKEventEditor, EKEventStore, NSString, UIColor;
 @protocol EKEventEditViewDelegate;
 
-@interface EKEventEditViewController : UINavigationController
+@interface EKEventEditViewController : UINavigationController <UIAdaptivePresentationControllerDelegate>
 {
     EKEventStore *_store;
     EKEvent *_event;
@@ -30,7 +32,12 @@
 @property(retain, nonatomic) EKEventEditor *editor; // @synthesize editor=_editor;
 @property(nonatomic) __weak id <EKEventEditViewDelegate> editViewDelegate; // @synthesize editViewDelegate=_editViewDelegate;
 - (void).cxx_destruct;
+- (void)presentationControllerDidAttemptToDismiss:(id)arg1;
+- (id)confirmDismissAlertController;
+- (id)_confirmDismissAlertExplanationText;
+- (id)_leftBarButtonItem;
 - (id)_eventEditorForTestingOnly;
+@property(readonly, nonatomic) _Bool displayingRootView;
 @property(nonatomic) _Bool timeImplicitlySet;
 @property(nonatomic) float editorNavBarRightContentInset;
 @property(nonatomic) float editorNavBarLeftContentInset;
@@ -50,17 +57,26 @@
 - (void)_storeChanged:(id)arg1;
 - (void)editor:(id)arg1 prepareCalendarItemForEdit:(id)arg2;
 - (void)editor:(id)arg1 didCompleteWithAction:(int)arg2;
+- (_Bool)editor:(id)arg1 shouldCompleteWithAction:(int)arg2;
+- (void)cancelEditingWithDelegateNotification:(_Bool)arg1 forceCancel:(_Bool)arg2;
 - (void)cancelEditing;
 - (_Bool)saveWithSpan:(int)arg1 animated:(_Bool)arg2;
 - (void)refreshStartAndEndDates;
 @property(retain, nonatomic) EKEvent *event;
 @property(retain, nonatomic) EKEventStore *eventStore;
 - (void)dealloc;
-- (_Bool)isModalInPopover;
+- (_Bool)isModalInPresentation;
 - (_Bool)shouldAutorotate;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -34,6 +34,8 @@
 @property(readonly, nonatomic) struct _NSRange visibleRange; // @synthesize visibleRange=_visibleRange;
 @property(nonatomic) __weak id <SXItemizedScrollViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (void)scrollToPrevious;
+- (void)scrollToNext;
 - (void)viewManagementForRange:(struct _NSRange)arg1;
 - (void)rebuildFramesArray;
 - (void)determineNewVisibilityRange;

@@ -13,8 +13,6 @@
     // Error parsing type: , name: imageView
     // Error parsing type: , name: paragraphStyle
     // Error parsing type: , name: isUsingVisualEffects
-    // Error parsing type: , name: imageWidthConstraint
-    // Error parsing type: , name: imageHeightConstraint
     // Error parsing type: , name: style
     // Error parsing type: , name: label
     // Error parsing type: , name: discView

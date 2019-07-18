@@ -6,15 +6,16 @@
 
 #import <objc/NSObject.h>
 
-#import <FrontBoardServices/BSDescriptionProviding-Protocol.h>
+#import <FrontBoardServices/BSDebugDescriptionProviding-Protocol.h>
 #import <FrontBoardServices/BSXPCSecureCoding-Protocol.h>
 #import <FrontBoardServices/NSCopying-Protocol.h>
 #import <FrontBoardServices/NSMutableCopying-Protocol.h>
 
-@class BSSettings, NSSet, NSString;
+@class BSSettings, NSOrderedSet, NSSet, NSString;
 
-@interface FBSSceneClientSettings : NSObject <BSDescriptionProviding, BSXPCSecureCoding, NSCopying, NSMutableCopying>
+@interface FBSSceneClientSettings : NSObject <BSDebugDescriptionProviding, BSXPCSecureCoding, NSCopying, NSMutableCopying>
 {
+    NSOrderedSet *_layers;
     float _preferredLevel;
     int _preferredInterfaceOrientation;
     NSSet *_occlusions;
@@ -29,17 +30,21 @@
 @property(readonly, copy, nonatomic) NSSet *occlusions; // @synthesize occlusions=_occlusions;
 @property(readonly, nonatomic) int preferredInterfaceOrientation; // @synthesize preferredInterfaceOrientation=_preferredInterfaceOrientation;
 @property(readonly, nonatomic) float preferredLevel; // @synthesize preferredLevel=_preferredLevel;
+@property(copy, nonatomic, setter=_setLayers:) NSOrderedSet *layers; // @synthesize layers=_layers;
 - (void).cxx_destruct;
+- (id)_descriptionBuilderWithMultilinePrefix:(id)arg1 debug:(_Bool)arg2;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)debugDescriptionWithMultilinePrefix:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
+@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
@@ -49,7 +54,6 @@
 - (id)initWithSettings:(id)arg1;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly) Class superclass;
 
 @end

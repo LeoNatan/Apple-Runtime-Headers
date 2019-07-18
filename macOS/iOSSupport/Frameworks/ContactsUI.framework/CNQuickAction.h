@@ -54,7 +54,6 @@
 - (id)subtitleForContext:(long long)arg1;
 - (id)titleForContext:(long long)arg1;
 - (id)defaultTitleForContext:(long long)arg1;
-- (id)coloredImage;
 - (id)imageForContext:(long long)arg1;
 - (BOOL)matchesDuetInteraction:(id)arg1;
 - (id)_coreDuetInteractionMechanisms;

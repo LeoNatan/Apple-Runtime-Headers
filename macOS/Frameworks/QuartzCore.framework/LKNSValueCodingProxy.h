@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
         struct CATransform3D transform;
         struct CAPoint3D point3d;
         struct CAColorMatrix color_matrix;
+        struct CGAffineTransform affine_transform;
     } _u;
 }
 

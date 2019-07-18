@@ -13,18 +13,14 @@
 __attribute__((visibility("hidden")))
 @interface PUAirPlayActivity : PXActivity <PHAirPlayControllerRouteObserver>
 {
-    _Bool __routeAvailable;
-    _Bool __needsUpdateRouteAvailable;
 }
 
-@property(nonatomic, setter=_setNeedsUpdateRouteAvailable:) _Bool _needsUpdateRouteAvailable; // @synthesize _needsUpdateRouteAvailable=__needsUpdateRouteAvailable;
-@property(nonatomic, getter=_isRouteAvailable, setter=_setRouteAvailable:) _Bool _routeAvailable; // @synthesize _routeAvailable=__routeAvailable;
-- (void)_updateRouteAvailabilityIfNeeded;
 - (void)airPlayControllerRouteAvailabilityChanged:(id)arg1;
 - (void)_unregisterForAirPlayNotifications;
 - (void)_registerForAirPlayNotifications;
 - (void)tearDownForCompletion;
 - (void)performActivity;
+@property(readonly, nonatomic, getter=isRouteAvailable) _Bool routeAvailable;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)_systemImageName;
 - (id)activityTitle;

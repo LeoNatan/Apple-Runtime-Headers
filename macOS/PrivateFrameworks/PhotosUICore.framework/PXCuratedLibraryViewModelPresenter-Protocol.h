@@ -13,5 +13,7 @@
 
 @optional
 - (long long)viewModel:(PXCuratedLibraryViewModel *)arg1 transitionTypeFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
+- (void)viewModel:(PXCuratedLibraryViewModel *)arg1 didTransitionFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
+- (void)viewModel:(PXCuratedLibraryViewModel *)arg1 willTransitionFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
 @end
 

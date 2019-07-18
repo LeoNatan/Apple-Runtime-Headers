@@ -19,6 +19,7 @@
 + (id)_deletedEntityNonPersistentIDsFromDeletedIDsListingPayload:(id)arg1;
 + (id)_errorFromUpdateResponsePayload:(id)arg1;
 + (id)_errorFromErrorResponsePayload:(id)arg1;
++ (id)_errorFromErrorResponseData:(id)arg1;
 @property(retain, nonatomic) TVHSDMAPEntityKind *entityKind; // @synthesize entityKind=_entityKind;
 @property(nonatomic) unsigned long long protocol; // @synthesize protocol=_protocol;
 @property(nonatomic) unsigned long long maxEntities; // @synthesize maxEntities=_maxEntities;

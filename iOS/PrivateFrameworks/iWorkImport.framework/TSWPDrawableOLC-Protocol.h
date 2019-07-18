@@ -4,6 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class TSWPStorage;
 @protocol TSDInfo;
 
 @protocol TSWPDrawableOLC
@@ -11,6 +12,7 @@
 @optional
 - (void)didRemoveDrawable:(id <TSDInfo>)arg1;
 - (void)willRemoveDrawable:(id <TSDInfo>)arg1;
+- (void)willRemoveDrawable:(id <TSDInfo>)arg1 storage:(TSWPStorage *)arg2;
 - (void)didAddDrawable:(id <TSDInfo>)arg1;
 - (void)willAddDrawable:(id <TSDInfo>)arg1;
 @end

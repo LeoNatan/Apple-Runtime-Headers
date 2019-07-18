@@ -111,6 +111,7 @@
 - (void)_sendHeldAction;
 - (void)_respondToHeldAction;
 - (void)_playPauseButtonTouchUp:(id)arg1;
+- (void)_playPauseButtonTouchDown:(id)arg1;
 - (void)_sendAction:(long long)arg1 withState:(long long)arg2;
 - (void)reloadData;
 - (void)_didUpdateSupportedCommandsNotification:(id)arg1;
@@ -125,6 +126,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)_handleWillAppear;
 - (double)_artBrickScale;
+- (_Bool)_showsButtonSelectionsForTouch;
 - (id)constraintsForLayoutType:(long long)arg1;
 - (void)updateViewConstraints;
 - (void)viewWillAppear:(_Bool)arg1;

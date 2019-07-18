@@ -11,6 +11,7 @@
     // Error parsing type: , name: issueService
     // Error parsing type: , name: articleService
     // Error parsing type: , name: pdfReplicaService
+    // Error parsing type: , name: anfPageService
     // Error parsing type: , name: issueCache
 }
 

@@ -39,7 +39,12 @@
         unsigned int styleDelegateWants_statusBar_didTriggerButtonType_withAction_context:1;
         unsigned int styleDelegateWants_statusBar_effectiveStyleOverridesForRequestedStyle_overrides:1;
         unsigned int styleDelegateWants_overriddenRequestedStyleFromStyle:1;
-    } _statusBarStyleDelegateFlags;
+        unsigned int dataSourceWants_statusBarPartsForSceneWithIdentifier:1;
+        unsigned int dataSourceWants_currentlyValidStatusBarPartIdentifiers:1;
+        unsigned int dataSourceWants_statusBarDescriberAtPoint_inView_pointInSceneLayoutSpace:1;
+        unsigned int dataSourceWants_frameForSceneIdentifier_inView:1;
+        unsigned int dataSourceWants_statusBarAvoidanceFrame:1;
+    } _conformanceFlags;
     id <SBMainDisplaySceneLayoutStatusBarViewDataSource> _dataSource;
     id <UIStatusBarStyleDelegate_SpringBoardOnly> _realStyleDelegate;
 }
@@ -64,16 +69,20 @@
 - (void)_setupDebugging;
 - (int)_effectiveStatusBarStyleOverridesToSuppress;
 - (void)_enumerateValidStatusBarPartIdentifiersForSceneWithIdentifier:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
-- (id)_validStatusBarPartIdentifiersForSceneWithIdentifier:(id)arg1;
 - (id)_defaultStatusBarStyleRequest;
 - (long long)_effectiveStyleForPartIdentifier:(id)arg1;
+- (id)_validStatusBarPartIdentifiersForSceneWithIdentifier:(id)arg1;
+- (struct CGRect)_statusBarAvoidanceFrame;
+- (id)_currentlyValidStatusBarPartIdentifiers;
 - (void)didInvalidateStatusBarDescriptionForSceneWithIdentifier:(id)arg1;
 - (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarOrientationTo:(long long)arg2;
+- (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarAvoidanceFrameTo:(struct CGRect)arg2;
 - (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarStyleOverridesToSuppressTo:(int)arg2;
 - (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarAlphaTo:(double)arg2;
 - (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarHiddenTo:(_Bool)arg2;
 - (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarStyleTo:(long long)arg2 forPartWithIdentifier:(id)arg3;
 - (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarStyleTo:(long long)arg2;
+- (void)_applyStatusBarAvoidanceFrame:(struct CGRect)arg1 toSceneWithIdentifier:(id)arg2;
 - (void)_applyStatusBarStyleOverridesToSuppress:(int)arg1 toSceneWithIdentifier:(id)arg2;
 - (void)_applyStatusBarAlpha:(double)arg1 toSceneWithIdentifier:(id)arg2;
 - (void)_applyStatusBarHidden:(_Bool)arg1 toSceneWithIdentifier:(id)arg2;
@@ -86,6 +95,7 @@
 - (void)_updateHitTestLayers;
 - (void)updateBreadcrumbActionIfNecessary;
 - (_Bool)_allowChangingIndividualStatusBarParts;
+@property(readonly, nonatomic, getter=isStatusBarEffectivelyHidden) _Bool statusBarEffectivelyHidden;
 @property(readonly, nonatomic, getter=isRequiringStatusBar) _Bool requiringStatusBar;
 - (void)_tearDownStatusBar;
 - (void)_layoutStatusBarForOrientation:(long long)arg1;
@@ -97,7 +107,6 @@
 - (id)_sceneHandleForClassicApplicationIfAny;
 - (id)_sceneHandleForPrimaryApplicationIfAny;
 - (id)_anyAppViewControllerOwningInterfaceOrientation;
-- (_Bool)_statusBarIsVisibleInOrientation:(long long)arg1;
 - (void)_statusBarTapped:(id)arg1 type:(long long)arg2;
 - (void)_statusBarShowDebug:(id)arg1;
 - (void)_statusBarScrollToTop:(id)arg1;

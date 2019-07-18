@@ -15,6 +15,7 @@
 {
     _Bool _isExpanded;
     SearchUIRowModel *_rowModel;
+    UIView *_platterView;
     id <SearchUIFeedbackDelegateInternal> _delegate;
     UIView *_sizingContainer;
     SearchUIDragSource *_dragSource;
@@ -30,9 +31,12 @@
 @property(retain, nonatomic) UIView *sizingContainer; // @synthesize sizingContainer=_sizingContainer;
 @property(nonatomic) __weak id <SearchUIFeedbackDelegateInternal> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isExpanded; // @synthesize isExpanded=_isExpanded;
+@property(retain, nonatomic) UIView *platterView; // @synthesize platterView=_platterView;
 @property(retain, nonatomic) SearchUIRowModel *rowModel; // @synthesize rowModel=_rowModel;
 - (void).cxx_destruct;
 - (void)removeKeyboardHandler;
+- (_Bool)navigateKeyboardDown;
+- (_Bool)navigateKeyboardUp;
 - (_Bool)navigateKeyboardRight;
 - (void)returnKeyPressed;
 - (_Bool)navigateKeyboardLeft;

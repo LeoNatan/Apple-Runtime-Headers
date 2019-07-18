@@ -17,6 +17,7 @@
 
 + (void)migrateForTests;
 + (void)clearTestSettings;
++ (_Bool)isSupportedSearchableItemBundleIdentifier:(id)arg1;
 + (_Bool)shouldAdmitContentFromBundleIdentifier:(id)arg1;
 + (void)disableBundleIdentifier:(id)arg1;
 + (id)sharedInstance;

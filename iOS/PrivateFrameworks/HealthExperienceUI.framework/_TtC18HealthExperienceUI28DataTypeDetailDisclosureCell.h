@@ -4,21 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/_UICollectionViewListCell.h>
+#import <HealthExperienceUI/_TtC18HealthExperienceUI32CollectionViewListDisclosureCell.h>
 
-@class UILabel;
-
-@interface _TtC18HealthExperienceUI28DataTypeDetailDisclosureCell : _UICollectionViewListCell
+@interface _TtC18HealthExperienceUI28DataTypeDetailDisclosureCell : _TtC18HealthExperienceUI32CollectionViewListDisclosureCell
 {
-    // Error parsing type: , name: $__lazy_storage_$_mainTextLabel
-    // Error parsing type: , name: item
 }
 
-- (void).cxx_destruct;
-- (void)didTapCell;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-@property(nonatomic, retain) UILabel *mainTextLabel;
 
 @end
 

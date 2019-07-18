@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSError, NSURL, NSURLSessionConfiguration, OspreyAbsintheAuthenticator, OspreyGRPCChannel;
+@class NSData, NSError, NSString, NSURL, NSURLSessionConfiguration, OspreyAbsintheAuthenticator, OspreyGRPCChannel;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
 @interface OspreyChannel : NSObject
@@ -23,13 +23,19 @@
     BOOL _useAbsinthe;
     BOOL _forceHTTPv2;
     NSURL *_absintheServer;
+    NSString *_clientTraceId;
+    CDUnknownBlockType _connectionMetricsHandler;
 }
 
 + (void)initialize;
+@property(copy, nonatomic) CDUnknownBlockType connectionMetricsHandler; // @synthesize connectionMetricsHandler=_connectionMetricsHandler;
+@property(copy, nonatomic) NSString *clientTraceId; // @synthesize clientTraceId=_clientTraceId;
 @property(nonatomic) BOOL forceHTTPv2; // @synthesize forceHTTPv2=_forceHTTPv2;
 @property(copy, nonatomic) NSURL *absintheServer; // @synthesize absintheServer=_absintheServer;
 @property(nonatomic) BOOL useAbsinthe; // @synthesize useAbsinthe=_useAbsinthe;
 - (void).cxx_destruct;
+- (void)initializeAbsintheSessionWithCompletion:(CDUnknownBlockType)arg1;
+- (void)preconnect;
 - (void)setUseCompression:(BOOL)arg1;
 - (id)performBidirectionalStreamingRequest:(id)arg1 handler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)performBidirectionalStreamingCallContextWithMethodName:(id)arg1 data:(id)arg2 handler:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
@@ -38,6 +44,8 @@
 - (void)performRequest:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)performCallForMethodName:(id)arg1 data:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_on_queue_getChannelWithHandler:(CDUnknownBlockType)arg1;
+- (CDUnknownBlockType)getConnectionMetricsHandler;
+- (id)initWithURL:(id)arg1 configuration:(id)arg2 useCache:(BOOL)arg3;
 - (id)initWithURL:(id)arg1 configuration:(id)arg2;
 
 @end

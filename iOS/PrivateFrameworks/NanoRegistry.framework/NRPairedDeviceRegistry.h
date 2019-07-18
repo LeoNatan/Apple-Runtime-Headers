@@ -20,6 +20,7 @@
     NSObject<OS_dispatch_queue> *_legacyDevicesQueueFirst;
     unsigned long long _lastStatus;
     NSMutableArray *_waitingForRegistryUpdateBlocks;
+    unsigned long long _callCount;
 }
 
 + (CDUnknownBlockType)activePairedDeviceSelectorBlock;
@@ -28,6 +29,7 @@
 + (id)sharedInstance;
 + (_Bool)shouldBoostProcess;
 + (Class)proxyClass;
+@property(nonatomic) unsigned long long callCount; // @synthesize callCount=_callCount;
 @property(retain, nonatomic) NSMutableArray *waitingForRegistryUpdateBlocks; // @synthesize waitingForRegistryUpdateBlocks=_waitingForRegistryUpdateBlocks;
 @property(nonatomic) unsigned short lastCompatibilityState; // @synthesize lastCompatibilityState=_lastCompatibilityState;
 @property(nonatomic) unsigned long long lastStatus; // @synthesize lastStatus=_lastStatus;
@@ -97,6 +99,7 @@
 - (void)abortPairingWithReason:(id)arg1;
 - (void)abortPairing;
 - (void)_fireWaitingForUpdateBlocksWithCollection:(id)arg1;
+- (id)waitForActiveDevice;
 - (id)waitForActivePairedDevice;
 - (void)waitForPairingStorePathPairingID:(CDUnknownBlockType)arg1;
 - (void)pairingStorePathPairingID:(CDUnknownBlockType)arg1;
@@ -149,6 +152,7 @@
 - (id)_mostlyPairedDevices;
 - (long long)maxPairedDeviceCount;
 - (void)threadIsBlockedWaitingOn_nanoregistryd_syncGrabLegacyRegistryWithBlock:(CDUnknownBlockType)arg1;
+- (void)logCallFrequency;
 - (id)_getLocalDeviceCollection;
 
 @end

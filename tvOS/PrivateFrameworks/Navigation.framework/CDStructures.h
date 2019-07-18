@@ -50,7 +50,8 @@ typedef struct {
     _Bool _field3;
     _Bool _field4;
     _Bool _field5;
-} CDStruct_22bfdb93;
+    double _field6;
+} CDStruct_ef0b40be;
 
 typedef struct {
     unsigned int index;
@@ -108,7 +109,8 @@ typedef struct {
     unsigned int _field20;
     int _field21;
     int _field22;
-} CDStruct_b79ad89f;
+    int _field23;
+} CDStruct_a4140ae0;
 
 typedef struct {
     struct {

@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOCarInfo, GEOLocation, GEOMapRegion, NSString, PBDataReader;
+@class GEOCarInfo, GEOLocation, GEOLogMsgEventPredExTrainingData, GEOMapRegion, GEOMapsServerMetadata, GEORouteDetails, NSData, NSMutableArray, NSString, PBDataReader;
 
 @interface GEOAnalyticsPipelineStateData : PBCodable <NSCopying>
 {
@@ -26,6 +26,9 @@
     double _mapViewLocationTouristTimestamp;
     GEOMapRegion *_mapViewMapRegion;
     double _mapViewZoomLevel;
+    NSMutableArray *_mapsServerMetadataSuggestionEntryDisplayeds;
+    NSData *_mapsServerMetadataSuggestionEntryTappedOn;
+    GEOMapsServerMetadata *_mapsServerMetadata;
     NSString *_placeCardPlaceactiondetailsActionurl;
     unsigned long long _placeCardPlaceactiondetailsAnimationid;
     unsigned long long _placeCardPlaceactiondetailsBusinessid;
@@ -41,6 +44,10 @@
     unsigned long long _placeCardPlaceactiondetailsTransitplacecardTransitdeparturesequenceusageLineid;
     NSString *_placeCardPlaceactiondetailsTransitplacecardTransitsystemname;
     NSString *_placeCardPlacecardcategory;
+    GEOLogMsgEventPredExTrainingData *_predExTrainingData;
+    GEORouteDetails *_routeRouteDetails;
+    NSMutableArray *_suggestionsDisplayedresults;
+    NSString *_suggestionsSearchstring;
     unsigned int _lookaroundHeading;
     unsigned int _lookaroundNumberPoisInView;
     int _mapSettingsNavVolume;
@@ -54,7 +61,11 @@
     int _placeCardPlaceactiondetailsResultindex;
     int _placeCardPlaceactiondetailsTransitplacecardTransitcategory;
     int _placeCardPlacecardtype;
+    int _suggestionsAcsequencenumber;
+    int _suggestionsSearchfieldtype;
+    int _suggestionsSelectedindex;
     _Bool _deviceInDarkMode;
+    _Bool _landscape;
     _Bool _lookAroundEntryIconShown;
     _Bool _lookaroundIsLabelingShown;
     _Bool _lookaroundSessionHadMoveAction;
@@ -105,7 +116,11 @@
         unsigned int has_placeCardPlaceactiondetailsResultindex:1;
         unsigned int has_placeCardPlaceactiondetailsTransitplacecardTransitcategory:1;
         unsigned int has_placeCardPlacecardtype:1;
+        unsigned int has_suggestionsAcsequencenumber:1;
+        unsigned int has_suggestionsSearchfieldtype:1;
+        unsigned int has_suggestionsSelectedindex:1;
         unsigned int has_deviceInDarkMode:1;
+        unsigned int has_landscape:1;
         unsigned int has_lookAroundEntryIconShown:1;
         unsigned int has_lookaroundIsLabelingShown:1;
         unsigned int has_lookaroundSessionHadMoveAction:1;
@@ -138,6 +153,9 @@
         unsigned int read_deviceOutputLocale:1;
         unsigned int read_lookaroundLocation:1;
         unsigned int read_mapViewMapRegion:1;
+        unsigned int read_mapsServerMetadataSuggestionEntryDisplayeds:1;
+        unsigned int read_mapsServerMetadataSuggestionEntryTappedOn:1;
+        unsigned int read_mapsServerMetadata:1;
         unsigned int read_placeCardPlaceactiondetailsActionurl:1;
         unsigned int read_placeCardPlaceactiondetailsDestinationapp:1;
         unsigned int read_placeCardPlaceactiondetailsPhotoid:1;
@@ -147,6 +165,10 @@
         unsigned int read_placeCardPlaceactiondetailsTransitplacecardTransitdeparturesequenceusageHeadsign:1;
         unsigned int read_placeCardPlaceactiondetailsTransitplacecardTransitsystemname:1;
         unsigned int read_placeCardPlacecardcategory:1;
+        unsigned int read_predExTrainingData:1;
+        unsigned int read_routeRouteDetails:1;
+        unsigned int read_suggestionsDisplayedresults:1;
+        unsigned int read_suggestionsSearchstring:1;
         unsigned int wrote_placeCardPossibleactions:1;
         unsigned int wrote_placeCardUnactionableuielements:1;
         unsigned int wrote_carPlayInfo:1;
@@ -159,6 +181,9 @@
         unsigned int wrote_mapViewLocationTouristTimestamp:1;
         unsigned int wrote_mapViewMapRegion:1;
         unsigned int wrote_mapViewZoomLevel:1;
+        unsigned int wrote_mapsServerMetadataSuggestionEntryDisplayeds:1;
+        unsigned int wrote_mapsServerMetadataSuggestionEntryTappedOn:1;
+        unsigned int wrote_mapsServerMetadata:1;
         unsigned int wrote_placeCardPlaceactiondetailsActionurl:1;
         unsigned int wrote_placeCardPlaceactiondetailsAnimationid:1;
         unsigned int wrote_placeCardPlaceactiondetailsBusinessid:1;
@@ -174,6 +199,10 @@
         unsigned int wrote_placeCardPlaceactiondetailsTransitplacecardTransitdeparturesequenceusageLineid:1;
         unsigned int wrote_placeCardPlaceactiondetailsTransitplacecardTransitsystemname:1;
         unsigned int wrote_placeCardPlacecardcategory:1;
+        unsigned int wrote_predExTrainingData:1;
+        unsigned int wrote_routeRouteDetails:1;
+        unsigned int wrote_suggestionsDisplayedresults:1;
+        unsigned int wrote_suggestionsSearchstring:1;
         unsigned int wrote_lookaroundHeading:1;
         unsigned int wrote_lookaroundNumberPoisInView:1;
         unsigned int wrote_mapSettingsNavVolume:1;
@@ -187,7 +216,11 @@
         unsigned int wrote_placeCardPlaceactiondetailsResultindex:1;
         unsigned int wrote_placeCardPlaceactiondetailsTransitplacecardTransitcategory:1;
         unsigned int wrote_placeCardPlacecardtype:1;
+        unsigned int wrote_suggestionsAcsequencenumber:1;
+        unsigned int wrote_suggestionsSearchfieldtype:1;
+        unsigned int wrote_suggestionsSelectedindex:1;
         unsigned int wrote_deviceInDarkMode:1;
+        unsigned int wrote_landscape:1;
         unsigned int wrote_lookAroundEntryIconShown:1;
         unsigned int wrote_lookaroundIsLabelingShown:1;
         unsigned int wrote_lookaroundSessionHadMoveAction:1;
@@ -217,6 +250,8 @@
 }
 
 + (_Bool)isValid:(id)arg1;
++ (Class)suggestionsDisplayedresultsType;
++ (Class)mapsServerMetadataSuggestionEntryDisplayedType;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -228,6 +263,45 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasLandscape;
+@property(nonatomic) _Bool landscape;
+- (id)suggestionsDisplayedresultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)suggestionsDisplayedresultsCount;
+- (void)_addNoFlagsSuggestionsDisplayedresults:(id)arg1;
+- (void)addSuggestionsDisplayedresults:(id)arg1;
+- (void)clearSuggestionsDisplayedresults;
+@property(retain, nonatomic) NSMutableArray *suggestionsDisplayedresults;
+- (void)_readSuggestionsDisplayedresults;
+@property(retain, nonatomic) NSString *suggestionsSearchstring;
+@property(readonly, nonatomic) _Bool hasSuggestionsSearchstring;
+- (void)_readSuggestionsSearchstring;
+@property(nonatomic) _Bool hasSuggestionsSelectedindex;
+@property(nonatomic) int suggestionsSelectedindex;
+- (int)StringAsSuggestionsSearchfieldtype:(id)arg1;
+- (id)suggestionsSearchfieldtypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasSuggestionsSearchfieldtype;
+@property(nonatomic) int suggestionsSearchfieldtype;
+@property(nonatomic) _Bool hasSuggestionsAcsequencenumber;
+@property(nonatomic) int suggestionsAcsequencenumber;
+@property(retain, nonatomic) GEOLogMsgEventPredExTrainingData *predExTrainingData;
+@property(readonly, nonatomic) _Bool hasPredExTrainingData;
+- (void)_readPredExTrainingData;
+@property(retain, nonatomic) GEORouteDetails *routeRouteDetails;
+@property(readonly, nonatomic) _Bool hasRouteRouteDetails;
+- (void)_readRouteRouteDetails;
+@property(retain, nonatomic) GEOMapsServerMetadata *mapsServerMetadata;
+@property(readonly, nonatomic) _Bool hasMapsServerMetadata;
+- (void)_readMapsServerMetadata;
+- (id)mapsServerMetadataSuggestionEntryDisplayedAtIndex:(unsigned long long)arg1;
+- (unsigned long long)mapsServerMetadataSuggestionEntryDisplayedsCount;
+- (void)_addNoFlagsMapsServerMetadataSuggestionEntryDisplayed:(id)arg1;
+- (void)addMapsServerMetadataSuggestionEntryDisplayed:(id)arg1;
+- (void)clearMapsServerMetadataSuggestionEntryDisplayeds;
+@property(retain, nonatomic) NSMutableArray *mapsServerMetadataSuggestionEntryDisplayeds;
+- (void)_readMapsServerMetadataSuggestionEntryDisplayeds;
+@property(retain, nonatomic) NSData *mapsServerMetadataSuggestionEntryTappedOn;
+@property(readonly, nonatomic) _Bool hasMapsServerMetadataSuggestionEntryTappedOn;
+- (void)_readMapsServerMetadataSuggestionEntryTappedOn;
 @property(nonatomic) _Bool hasLookAroundEntryIconShown;
 @property(nonatomic) _Bool lookAroundEntryIconShown;
 @property(nonatomic) _Bool hasPlaceCardPlaceactiondetailsTransitplacecardTransitdeparturesequenceusageLineid;

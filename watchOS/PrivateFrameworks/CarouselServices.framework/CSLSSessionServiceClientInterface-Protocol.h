@@ -9,7 +9,7 @@
 @class CSLSSession, NSError, NSString, NSUUID;
 
 @protocol CSLSSessionServiceClientInterface <NSObject>
-- (void)sessionStarted:(CSLSSession *)arg1 error:(NSError *)arg2;
-- (void)sessionWithUUIDEnded:(NSUUID *)arg1 bundleID:(NSString *)arg2 startWasScheduled:(_Bool)arg3 error:(NSError *)arg4;
+- (void)sessionStarted:(CSLSSession *)arg1 error:(NSError *)arg2 completion:(void (^)(void))arg3;
+- (void)sessionWithUUIDEnded:(NSUUID *)arg1 bundleID:(NSString *)arg2 startWasScheduled:(_Bool)arg3 error:(NSError *)arg4 completion:(void (^)(void))arg5;
 @end
 

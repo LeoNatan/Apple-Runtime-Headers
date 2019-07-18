@@ -8,10 +8,17 @@
 
 @interface _TtC19HealthVisualization21HighlightCalendarView : NUIContainerGridView
 {
+    // Error parsing type: , name: longWeekdayStrings
+    // Error parsing type: , name: shortWeekdayStrings
+    // Error parsing type: , name: $__lazy_storage_$_ringsRenderer
+    // Error parsing type: , name: weekdayLabels
+    // Error parsing type: , name: monthLabels
 }
 
+- (void).cxx_destruct;
 - (id)initWithArrangedSubviewRows:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 
 @end

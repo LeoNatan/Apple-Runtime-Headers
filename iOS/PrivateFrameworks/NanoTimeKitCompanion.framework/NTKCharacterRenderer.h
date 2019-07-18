@@ -35,6 +35,7 @@
     _Bool _animatingToNewDate;
     _Bool _animatingIntoOrb;
     _Bool _applyInstantTimeWarp;
+    _Bool _pinHandsBrightnessToMax;
     _Bool _sayCheese;
     float _blinkDuration;
     float _scrubOffset;
@@ -44,7 +45,6 @@
     struct CharacterPoseSpecs _poseSpecs[2];
     struct CharacterStateSpecs _stateSpecs[4];
     _Bool _active;
-    _Bool _pinHandsBrightnessToMax;
     float _characterBrightness;
     float _glowBrightness;
     float _numbersBrightness;
@@ -54,6 +54,7 @@
     int _clothingColorLoc;
     float _characterScale;
     float _zoomFraction;
+    float _dampenBones;
     float _curTimeMod1Sec;
     float _curTimeMod15Sec;
     NSString *_prefix;
@@ -74,6 +75,7 @@
 + (id)rendererWithCharacter:(unsigned long long)arg1 loader:(id)arg2;
 @property(readonly) float curTimeMod15Sec; // @synthesize curTimeMod15Sec=_curTimeMod15Sec;
 @property(readonly) float curTimeMod1Sec; // @synthesize curTimeMod1Sec=_curTimeMod1Sec;
+@property(readonly) float dampenBones; // @synthesize dampenBones=_dampenBones;
 // Error parsing type for property neckBone:
 // Property attributes: T,R,V_neckBone
 
@@ -98,7 +100,6 @@
 // Error parsing type for property globalOffset:
 // Property attributes: T,V_globalOffset
 
-@property(nonatomic) _Bool pinHandsBrightnessToMax; // @synthesize pinHandsBrightnessToMax=_pinHandsBrightnessToMax;
 @property(nonatomic) float numbersAlpha; // @synthesize numbersAlpha=_numbersAlpha;
 @property(nonatomic) float numbersScale; // @synthesize numbersScale=_numbersScale;
 @property(nonatomic) float numbersBrightness; // @synthesize numbersBrightness=_numbersBrightness;
@@ -155,11 +156,12 @@
 - (void)_setBlinkDuration:(float)arg1;
 - (void)_setStateSpecs:(struct CharacterStateSpecs [4])arg1;
 - (void)_setPoseSpecs:(struct CharacterPoseSpecs [2])arg1;
+- (void)_localeChanged;
 - (id)initWithCharacter:(unsigned long long)arg1 loader:(id)arg2 prefix:(id)arg3;
 - (void)setClothingColor:(id)arg1 andDesaturation:(double)arg2;
 - (void)setTimeOffset:(double)arg1;
 - (void)cleanupToOverrideDate:(id)arg1;
-- (void)setOverrideDateFraction:(double)arg1;
+- (void)setOverrideDateFraction:(float)arg1;
 - (void)prepareToAnimateToDate:(id)arg1 forOrb:(_Bool)arg2;
 - (void)setAnimationFrameInterval:(float)arg1;
 - (void)copyStateFrom:(id)arg1;

@@ -13,6 +13,7 @@
     // Error parsing type: , name: correlatedQuantityTypes
     // Error parsing type: , name: configuration
     // Error parsing type: , name: configurationOverrides
+    // Error parsing type: , name: queryQualityOfService
     // Error parsing type: , name: healthStore
     // Error parsing type: , name: accumulatedStatisticsCollections
     // Error parsing type: , name: resultHandler

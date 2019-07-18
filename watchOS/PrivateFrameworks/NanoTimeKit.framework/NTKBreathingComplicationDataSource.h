@@ -21,7 +21,7 @@
 - (void)breatheTimeLineModelCurrentEntryModelUpdated:(id)arg1;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (id)complicationApplicationIdentifier;
-- (id)privacyTemplate;
+- (id)lockedTemplate;
 - (id)currentSwitcherTemplate;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;

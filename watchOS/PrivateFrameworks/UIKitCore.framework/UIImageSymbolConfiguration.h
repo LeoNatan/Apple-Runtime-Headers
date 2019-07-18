@@ -11,18 +11,20 @@
 
 @interface UIImageSymbolConfiguration : UIImageConfiguration
 {
+    float _pointSize;
     struct {
-        unsigned int hasPointSize:1;
+        unsigned int hasFixedPointSize:1;
         unsigned int providerUpdates:1;
+        unsigned int ignoresDynamicType:1;
     } _configFlags;
     int _scale;
-    float _pointSize;
-    float _pointSizeScaleFactor;
+    float _customFontPointSizeMultiplier;
     int _weight;
     NSString *_textStyle;
     id <UIImageSymbolConfigurationProvider> _provider;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)configurationWithConfiguration:(id)arg1 and:(id)arg2;
 + (id)updatingConfigurationFromProvider:(id)arg1 scale:(int)arg2;
 + (id)updatingConfigurationFromProvider:(id)arg1;
@@ -43,8 +45,7 @@
 @property(nonatomic, setter=_setProvider:) __weak id <UIImageSymbolConfigurationProvider> provider; // @synthesize provider=_provider;
 @property(copy, nonatomic, setter=_setTextStyle:) NSString *textStyle; // @synthesize textStyle=_textStyle;
 @property(nonatomic, setter=_setWeight:) int weight; // @synthesize weight=_weight;
-@property(nonatomic, setter=_setPointSizeScaleFactor:) float pointSizeScaleFactor; // @synthesize pointSizeScaleFactor=_pointSizeScaleFactor;
-@property(nonatomic, setter=_setPointSize:) float pointSize; // @synthesize pointSize=_pointSize;
+@property(nonatomic, setter=_setPointSizeScaleFactor:) float customFontPointSizeMultiplier; // @synthesize customFontPointSizeMultiplier=_customFontPointSizeMultiplier;
 @property(nonatomic, setter=_setScale:) int scale; // @synthesize scale=_scale;
 - (void).cxx_destruct;
 - (void)_deriveGlyphSize:(int *)arg1 weight:(int *)arg2 pointSize:(float *)arg3;
@@ -72,7 +73,9 @@
 - (void)_setProvider:(id)arg1 updating:(_Bool)arg2;
 - (_Bool)_hasSpecifiedTextStyle;
 - (_Bool)_hasSpecifiedWeight;
-- (_Bool)_hasSpecifiedPointSize;
+- (_Bool)_hasFixedPointSize;
+@property(nonatomic, setter=_setPointSizeForScalingWithTextStyle:) float pointSizeForScalingWithTextStyle;
+@property(nonatomic, setter=_setFixedPointSize:) float fixedPointSize;
 - (_Bool)_hasSpecifiedScale;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

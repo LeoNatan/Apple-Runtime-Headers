@@ -9,7 +9,7 @@
 @class NSDictionary, NSString;
 
 @protocol TBAnalyticsEvent <NSObject>
-- (NSDictionary *)eventDictionary;
-- (NSString *)eventName;
+@property(readonly, nonatomic) NSDictionary *eventDictionary;
+@property(readonly, nonatomic) NSString *eventName;
 @end
 

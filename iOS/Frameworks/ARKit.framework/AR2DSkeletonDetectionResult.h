@@ -14,7 +14,7 @@
 {
     struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _rawJoints;
     struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _rotatedJoints;
-    vector_aab22ae2 _jointTrackingStates;
+    struct vector<unsigned char, std::__1::allocator<unsigned char>> _jointTrackingStates;
     long long _rotationNeeded;
     AR2D3DSkeletonLiftingData *_liftingData;
 }
@@ -28,7 +28,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, nonatomic) unsigned long long liftingJointCount;
-@property(readonly, nonatomic) const char *liftingDataTrackingStates;
 @property(readonly, nonatomic) const float *liftingData3D;
 @property(readonly, nonatomic) unsigned long long jointCount;
 @property(readonly, nonatomic) const char *jointTrackingStates;

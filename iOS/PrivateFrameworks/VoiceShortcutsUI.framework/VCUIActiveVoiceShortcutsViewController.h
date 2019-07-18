@@ -6,12 +6,11 @@
 
 #import <UIKit/UITableViewController.h>
 
-#import <VoiceShortcutsUI/VCUIDebugWorkflowViewControllerDelegate-Protocol.h>
 #import <VoiceShortcutsUI/VCUIShortcutViewControllerDelegate-Protocol.h>
 
 @class NSArray, NSString, UISearchController, VCUIVoiceShortcutCell, VCVoiceShortcutClient;
 
-@interface VCUIActiveVoiceShortcutsViewController : UITableViewController <VCUIShortcutViewControllerDelegate, VCUIDebugWorkflowViewControllerDelegate>
+@interface VCUIActiveVoiceShortcutsViewController : UITableViewController <VCUIShortcutViewControllerDelegate>
 {
     VCVoiceShortcutClient *_voiceShortcutClient;
     UISearchController *_searchController;
@@ -28,7 +27,6 @@
 - (void)showHandleIntentResponse:(id)arg1;
 - (void)showConfirmationWithTitle:(id)arg1 message:(id)arg2 confirmationHandler:(CDUnknownBlockType)arg3;
 - (void)launchExtensionToRunVoiceShortcut:(id)arg1;
-- (void)debugWorkflowViewControllerDidFinish:(id)arg1;
 - (void)shortcutViewController:(id)arg1 didDeleteShortcut:(id)arg2;
 - (void)shortcutViewController:(id)arg1 didSaveShortcut:(id)arg2;
 - (void)shortcutViewControllerDidCancel:(id)arg1;

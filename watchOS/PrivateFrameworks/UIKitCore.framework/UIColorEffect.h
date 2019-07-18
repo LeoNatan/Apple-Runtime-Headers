@@ -14,12 +14,13 @@
     NSDictionary *_configurationValues;
     NSDictionary *_identityValues;
     NSDictionary *_requestedValues;
+    _Bool _disableInPlaceFiltering;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (struct CAColorMatrix)_defaultShadowMatrix;
-+ (id)colorEffectForAverageColor;
-+ (id)colorEffectLuminanceCurvePoint1:(float)arg1 point2:(float)arg2 point3:(float)arg3 point4:(float)arg4 blendingAmount:(float)arg5;
++ (id)colorEffectAverageColor;
++ (id)colorEffectCurvesRed:(id)arg1 green:(id)arg2 blue:(id)arg3 alpha:(id)arg4;
++ (id)colorEffectLuminanceCurveMap:(id)arg1 blendingAmount:(float)arg2;
 + (id)colorEffectLuminanceMap:(id)arg1 blendingAmount:(float)arg2;
 + (id)colorEffectMonochromeTint:(id)arg1 blendingAmount:(float)arg2 brightnessAdjustment:(float)arg3;
 + (id)colorEffectInvert;

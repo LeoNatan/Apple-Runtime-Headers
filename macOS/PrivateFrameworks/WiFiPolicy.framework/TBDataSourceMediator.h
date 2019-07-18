@@ -19,6 +19,7 @@
 @property(retain, nonatomic) TBDataSource *remote; // @synthesize remote=_remote;
 @property(retain, nonatomic) TBCoreDataSource *local; // @synthesize local=_local;
 - (void).cxx_destruct;
+- (void)prune3BarsNetworks:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeAllWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeWithFetchRequest:(id)arg1;
 - (void)executeFetchRequest:(id)arg1;

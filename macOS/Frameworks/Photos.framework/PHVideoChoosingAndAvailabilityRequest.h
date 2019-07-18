@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) id <PHVideoChoosingAndAvailabilityRequestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_loadAdjustmentInfoFromPath:(id)arg1 intoAdditionalInfo:(id)arg2;
 - (void)_resourceURLReceivedNotification:(id)arg1;
 - (void)_cplDownloadStatusNotification:(id)arg1;
 - (void)cancel;

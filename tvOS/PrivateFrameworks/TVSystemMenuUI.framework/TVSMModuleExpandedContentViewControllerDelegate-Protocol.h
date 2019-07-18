@@ -10,6 +10,7 @@
 @protocol TVSMModuleExpandedContentViewController;
 
 @protocol TVSMModuleExpandedContentViewControllerDelegate <TVSMModuleContentViewControllerDelegate>
+- (void)contentModuleViewControllerDidRequestSystemDismissal:(UIViewController<TVSMModuleExpandedContentViewController> *)arg1;
 - (void)contentModuleViewControllerDidRequestDismissal:(UIViewController<TVSMModuleExpandedContentViewController> *)arg1;
 @end
 

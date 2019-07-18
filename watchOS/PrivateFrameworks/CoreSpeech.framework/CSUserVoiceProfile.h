@@ -16,9 +16,9 @@
     NSString *_profileID;
     NSString *_siriProfileId;
     unsigned int _onboardedType;
-    NSString *_profileOriginIdentifier;
-    int _baseVersion;
-    int _implicitVersion;
+    int _numberOfExplicitSatVectors;
+    int _numberOfBaseProfileSatVectors;
+    int _numberOfImplicitProfileSatVectors;
     NSString *_sharedHomeID;
     NSString *_siriDebugID;
     NSString *_userName;
@@ -27,9 +27,9 @@
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(retain, nonatomic) NSString *siriDebugID; // @synthesize siriDebugID=_siriDebugID;
 @property(retain, nonatomic) NSString *sharedHomeID; // @synthesize sharedHomeID=_sharedHomeID;
-@property(nonatomic) int implicitVersion; // @synthesize implicitVersion=_implicitVersion;
-@property(nonatomic) int baseVersion; // @synthesize baseVersion=_baseVersion;
-@property(retain, nonatomic) NSString *profileOriginIdentifier; // @synthesize profileOriginIdentifier=_profileOriginIdentifier;
+@property(nonatomic) int numberOfImplicitProfileSatVectors; // @synthesize numberOfImplicitProfileSatVectors=_numberOfImplicitProfileSatVectors;
+@property(nonatomic) int numberOfBaseProfileSatVectors; // @synthesize numberOfBaseProfileSatVectors=_numberOfBaseProfileSatVectors;
+@property(nonatomic) int numberOfExplicitSatVectors; // @synthesize numberOfExplicitSatVectors=_numberOfExplicitSatVectors;
 @property(nonatomic) unsigned int onboardedType; // @synthesize onboardedType=_onboardedType;
 @property(retain, nonatomic) NSString *siriProfileId; // @synthesize siriProfileId=_siriProfileId;
 @property(retain, nonatomic) NSString *profileID; // @synthesize profileID=_profileID;

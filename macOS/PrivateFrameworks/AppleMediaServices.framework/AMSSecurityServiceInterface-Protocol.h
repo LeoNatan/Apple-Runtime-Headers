@@ -6,9 +6,9 @@
 
 #import <AppleMediaServices/NSObject-Protocol.h>
 
-@class ACAccount, NSDictionary;
+@class ACAccount, AMSProcessInfo, NSDictionary;
 
 @protocol AMSSecurityServiceInterface <NSObject>
-- (void)performBiometricTokenUpdateWithAccount:(ACAccount *)arg1 additionalDialogMetrics:(NSDictionary *)arg2 shouldRequestConfirmation:(BOOL)arg3 completion:(void (^)(BOOL, NSError *))arg4;
+- (void)performBiometricTokenUpdateWithAccount:(ACAccount *)arg1 clientInfo:(AMSProcessInfo *)arg2 additionalDialogMetrics:(NSDictionary *)arg3 shouldRequestConfirmation:(BOOL)arg4 completion:(void (^)(BOOL, NSError *))arg5;
 @end
 

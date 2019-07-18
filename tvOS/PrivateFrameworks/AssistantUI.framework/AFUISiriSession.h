@@ -49,7 +49,6 @@
 @property(nonatomic) __weak id <AFUISiriSessionLocalDataSource> localDataSource; // @synthesize localDataSource=_localDataSource;
 @property(retain, nonatomic) id <AFUISiriSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (int)_mapInvocationAction:(long long)arg1;
 - (int)_mapInvocationSource:(long long)arg1;
 - (void)_updateActiveAccount:(id)arg1 withNumberOfActiveAccounts:(unsigned long long)arg2;
 - (void)_updateActiveAccount:(id)arg1;
@@ -124,6 +123,8 @@
 - (void)assistantConnectionDidDetectMusic:(id)arg1;
 - (void)assistantConnectionDismissAssistant:(id)arg1;
 - (void)assistantConnection:(id)arg1 didChangeAudioSessionID:(unsigned int)arg2;
+- (void)assistantConnection:(id)arg1 startPlaybackDidFail:(long long)arg2;
+- (void)assistantConnection:(id)arg1 willProcessStartPlayback:(long long)arg2 intent:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)assistantConnection:(id)arg1 shouldSpeak:(_Bool)arg2;
 - (void)assistantConnection:(id)arg1 openURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)assistantConnectionRequestFinished:(id)arg1;

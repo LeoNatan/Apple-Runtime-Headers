@@ -11,7 +11,7 @@
 #import <NanoTimeKitCompanion/NTKCompanionAppDelegate-Protocol.h>
 #import <NanoTimeKitCompanion/NTKSystemAppStateCache-Protocol.h>
 
-@class NRDevice, NSArray, NSHashTable, NSString;
+@class CLKDevice, NSArray, NSHashTable, NSMutableArray, NSSet, NSString;
 @protocol OS_dispatch_queue;
 
 @interface NTKCompanionAppLibrary : NSObject <NTKCompanionAppDelegate, LSApplicationWorkspaceObserverProtocol, ACXDeviceConnectionDelegate, NTKSystemAppStateCache>
@@ -19,21 +19,27 @@
     NSArray *_allApps;
     NSArray *_firstPartyApps;
     NSArray *_watchSystemApps;
+    NSSet *_installedSystemApplicationIdentifiers;
     NSArray *_thirdPartyApps;
     NSHashTable *_changeObservers;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_queue> *_updateProcessingQueue;
     NSObject<OS_dispatch_queue> *_observerCallbackQueue;
-    NRDevice *_device;
+    struct os_unfair_lock_s *_prewarmLock;
+    NSMutableArray *_prewarmCallbacks;
+    CLKDevice *_device;
 }
 
 + (id)sharedAppLibrary;
-@property(retain, nonatomic) NRDevice *device; // @synthesize device=_device;
+@property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
+@property(retain, nonatomic) NSMutableArray *prewarmCallbacks; // @synthesize prewarmCallbacks=_prewarmCallbacks;
+@property(readonly, nonatomic) struct os_unfair_lock_s *prewarmLock; // @synthesize prewarmLock=_prewarmLock;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *observerCallbackQueue; // @synthesize observerCallbackQueue=_observerCallbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *updateProcessingQueue; // @synthesize updateProcessingQueue=_updateProcessingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) NSHashTable *changeObservers; // @synthesize changeObservers=_changeObservers;
 @property(retain, nonatomic) NSArray *thirdPartyApps; // @synthesize thirdPartyApps=_thirdPartyApps;
+@property(retain, nonatomic) NSSet *installedSystemApplicationIdentifiers; // @synthesize installedSystemApplicationIdentifiers=_installedSystemApplicationIdentifiers;
 @property(retain, nonatomic) NSArray *watchSystemApps; // @synthesize watchSystemApps=_watchSystemApps;
 @property(retain, nonatomic) NSArray *firstPartyApps; // @synthesize firstPartyApps=_firstPartyApps;
 @property(retain, nonatomic) NSArray *allApps; // @synthesize allApps=_allApps;
@@ -58,6 +64,7 @@
 - (_Bool)isRestrictedSystemApp:(id)arg1;
 - (void)_activeDeviceChanged;
 - (void)_load;
+- (void)prewarmCompanionDaemonWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;
 

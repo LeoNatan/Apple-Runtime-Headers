@@ -17,11 +17,13 @@
     struct {
         unsigned int taskOutcome:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _taskOutcome;
     _INPBHomeUserTask *_userTask;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBHomeUserTask *userTask; // @synthesize userTask=_userTask;
 @property(nonatomic) int taskOutcome; // @synthesize taskOutcome=_taskOutcome;
 - (void).cxx_destruct;

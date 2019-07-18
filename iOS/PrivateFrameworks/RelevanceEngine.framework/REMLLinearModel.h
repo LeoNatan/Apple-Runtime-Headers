@@ -19,7 +19,11 @@
 @property(readonly, nonatomic) NSDictionary *models;
 - (void)setMetricsRecorder:(id)arg1;
 - (void)logCoreAnalyticsMetrics;
+- (unsigned long long)_getTotalPositiveCount;
+- (unsigned long long)_getTotalExampleCount;
 - (long long)_getNumberOfCoordinates;
+- (float)_getNormalizedEntropy;
+- (float)_getAveragePrediction;
 - (void)_clearModel;
 - (_Bool)_loadModelFromURL:(id)arg1 error:(id *)arg2;
 - (_Bool)_saveModelToURL:(id)arg1 error:(id *)arg2;

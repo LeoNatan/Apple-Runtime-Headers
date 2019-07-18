@@ -6,7 +6,7 @@
 
 #import <CoreSuggestions/_SGSuggestionsServiceBaseProtocol-Protocol.h>
 
-@class NSArray, NSData, NSDate, NSString, NSURL;
+@class NSArray, NSData, NSDate, NSString, NSURL, _PASDomainSelection;
 
 @protocol SGSuggestionsServiceInternalProtocol <_SGSuggestionsServiceBaseProtocol>
 - (void)deleteCloudKitZoneWithCompletion:(void (^)(NSError *))arg1;
@@ -28,7 +28,7 @@
 - (void)deleteInteractionsWithBundleId:(NSString *)arg1 identifiers:(NSArray *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)deleteInteractionsWithBundleId:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
-- (void)deleteSpotlightReferencesWithBundleIdentifier:(NSString *)arg1 domainIdentifiers:(NSArray *)arg2 completion:(void (^)(NSError *))arg3;
+- (void)deleteSpotlightReferencesWithBundleIdentifier:(NSString *)arg1 domainIdentifiers:(_PASDomainSelection *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(NSString *)arg1 uniqueIdentifiers:(NSArray *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)resetConfirmationAndRejectionHistoryWithCompletion:(void (^)(NSError *))arg1;
 - (_Bool)resetConfirmationAndRejectionHistory:(id *)arg1;

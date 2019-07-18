@@ -6,22 +6,26 @@
 
 #import <HealthRecordsUI/WDMedicalRecordGroupableCell.h>
 
-@class NSString, UIColor, UILabel;
+@class NSString, UILabel;
 
 __attribute__((visibility("hidden")))
 @interface WDMedicalRecordTimelinePanelTitleCell : WDMedicalRecordGroupableCell
 {
     NSString *_title;
-    UIColor *_categoryColor;
+    NSString *_subtitle;
     UILabel *_titleLabel;
+    UILabel *_subtitleLabel;
 }
 
+@property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property(retain, nonatomic) UIColor *categoryColor; // @synthesize categoryColor=_categoryColor;
+@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+- (id)subtitleFont;
 - (id)titleFont;
 - (void)setupSubviews;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
 

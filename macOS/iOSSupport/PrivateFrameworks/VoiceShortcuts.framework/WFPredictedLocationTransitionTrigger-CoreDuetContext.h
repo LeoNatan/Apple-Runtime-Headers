@@ -7,6 +7,8 @@
 #import <WorkflowKit/WFPredictedLocationTransitionTrigger.h>
 
 @interface WFPredictedLocationTransitionTrigger (CoreDuetContext)
+- (double)timeIntervalLowerBound;
+- (double)timeIntervalUpperBound;
 - (unsigned int)contextStoreQualityOfService;
 - (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;

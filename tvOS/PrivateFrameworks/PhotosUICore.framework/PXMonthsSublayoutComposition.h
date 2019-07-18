@@ -11,6 +11,7 @@
 @interface PXMonthsSublayoutComposition : PXGGeneratedSublayoutComposition
 {
     NSIndexSet *_indexesOfChapterHeaders;
+    NSIndexSet *_indexesOfHeroes;
     PXMonthsLayoutGenerator *_layoutGenerator;
     PXMonthsLayoutMetrics *_metrics;
 }

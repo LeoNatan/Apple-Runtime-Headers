@@ -25,6 +25,7 @@
     unsigned long long _edgeLocation;
     double _scalingFactor;
     id <PKPalettePopoverPresenting><PKPaletteColorPickerViewDelegate> _delegate;
+    long long _colorPickerMode;
     UICollectionView *_collectionView;
     NSArray *_swatches;
     NSArray *_swatchColors;
@@ -32,18 +33,21 @@
     PKColorPicker *_colorPickerPopover;
 }
 
++ (id)collectionViewFlowLayoutWithItemSize:(struct CGSize)arg1 minimumLineSpacing:(double)arg2 minimumInteritemSpacing:(double)arg3;
 @property(retain, nonatomic) PKColorPicker *colorPickerPopover; // @synthesize colorPickerPopover=_colorPickerPopover;
 @property(retain, nonatomic) UIColor *lastSelectedColor; // @synthesize lastSelectedColor=_lastSelectedColor;
 @property(retain, nonatomic) NSArray *swatchColors; // @synthesize swatchColors=_swatchColors;
 @property(retain, nonatomic) NSArray *swatches; // @synthesize swatches=_swatches;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
+@property(nonatomic) long long colorPickerMode; // @synthesize colorPickerMode=_colorPickerMode;
 @property(nonatomic) __weak id <PKPalettePopoverPresenting><PKPaletteColorPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
 - (void).cxx_destruct;
-- (void)reloadColorsForMode:(long long)arg1;
+- (id)traitCollectionWithCurrentInterfaceStyle;
+- (void)reloadColorsForCurrentColorPickerMode;
 - (void)toggleColorSelectionPopover;
-- (void)_reloadSwatchColorForTraitCollection:(id)arg1;
+- (void)_reloadSwatchColorsForTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_showColorSelectionPopover;
@@ -51,11 +55,13 @@
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)colorPickerDidChangeSelectedColor:(id)arg1;
 - (id)colorAtPoint:(struct CGPoint)arg1;
-- (id)_multicolorSwatch;
+- (id)swatchWithIdentifier:(id)arg1;
 - (id)swatchWithColor:(id)arg1;
+- (id)_multicolorSwatch;
 - (id)_selectedSwatch;
 @property(retain, nonatomic) UIColor *selectedColor;
-- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (void)collectionView:(id)arg1 didUnhighlightItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didHighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
@@ -63,7 +69,7 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_swatchLongPressHandler:(id)arg1;
 - (struct CGSize)swatchSize;
-- (id)_swatchColorsForTraitCollection:(id)arg1;
+- (id)_swatchColorsForTraitCollection:(id)arg1 userInterfaceStyle:(long long)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

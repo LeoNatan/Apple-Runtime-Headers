@@ -8,7 +8,7 @@
 
 #import <iWorkImport/TSDAnimationSession-Protocol.h>
 
-@class CALayer, KNAnimatedSlideView, KNAnimatedTextureManager, KNAnimationContext, KNAnimationTestResultLogger, KNShow, KNSlideNode, NSArray, NSMutableArray, NSString, TSDBitmapRenderingQualityInfo, TSDGLLayer, TSDMetalLayer, TSKAccessController;
+@class CALayer, KNAnimatedSlideView, KNAnimatedTextureManager, KNAnimationContext, KNAnimationTestResultLogger, KNShow, KNSlideNode, NSArray, NSMutableArray, NSString, TSDBitmapRenderingQualityInfo, TSDGLLayer, TSDMPSImageConversionStorage, TSDMetalLayer, TSKAccessController, TSULRUCache;
 @protocol MTLDevice, TSDCanvasDelegate, TSKAccessControllerReadTicket;
 
 __attribute__((visibility("hidden")))
@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     _Bool _shouldAutomaticallyPlayMovies;
     _Bool _shouldDrawTexturesAsynchronously;
     _Bool _shouldForceTextureGeneration;
+    _Bool _shouldAllowBackgroundAlpha;
     _Bool _shouldNotBakeActionTextures;
     _Bool _shouldPreferCARenderer;
     _Bool _shouldShowVideoReflectionsAndMasks;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
     _Bool _shouldSkipBuilds;
     _Bool _shouldRespectSkippedSlides;
     _Bool _shouldAlwaysLoop;
-    _Bool _shouldPreserveTransparency;
     _Bool _shouldExcludeFloatingComments;
     id <TSKAccessControllerReadTicket> _accessControllerReadTicket;
     KNSlideNode *_alternateNextSlideNode;
@@ -56,9 +56,11 @@ __attribute__((visibility("hidden")))
     CALayer *_rootLayer;
     id <MTLDevice> _metalDevice;
     TSDMetalLayer *_sharedMetalLayer;
+    TSDMPSImageConversionStorage *_mpsImageConversionStorage;
     KNShow *_show;
     NSArray *_slideNodesWithinPlayableRange;
     TSDGLLayer *_sharedGLLayer;
+    TSULRUCache *_movieAssetCache;
     NSMutableArray *_animationDurationArray;
     NSMutableArray *_eventDurationArray;
     NSMutableArray *_workDurationArray;
@@ -69,8 +71,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *workDurationArray; // @synthesize workDurationArray=_workDurationArray;
 @property(retain, nonatomic) NSMutableArray *eventDurationArray; // @synthesize eventDurationArray=_eventDurationArray;
 @property(retain, nonatomic) NSMutableArray *animationDurationArray; // @synthesize animationDurationArray=_animationDurationArray;
+@property(readonly, nonatomic) TSULRUCache *movieAssetCache; // @synthesize movieAssetCache=_movieAssetCache;
 @property(nonatomic) _Bool shouldExcludeFloatingComments; // @synthesize shouldExcludeFloatingComments=_shouldExcludeFloatingComments;
-@property(nonatomic) _Bool shouldPreserveTransparency; // @synthesize shouldPreserveTransparency=_shouldPreserveTransparency;
 @property(retain, nonatomic) TSDGLLayer *sharedGLLayer; // @synthesize sharedGLLayer=_sharedGLLayer;
 @property(copy, nonatomic) NSArray *slideNodesWithinPlayableRange; // @synthesize slideNodesWithinPlayableRange=_slideNodesWithinPlayableRange;
 @property(nonatomic) _Bool shouldAlwaysLoop; // @synthesize shouldAlwaysLoop=_shouldAlwaysLoop;
@@ -82,12 +84,14 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldShowVideoReflectionsAndMasks; // @synthesize shouldShowVideoReflectionsAndMasks=_shouldShowVideoReflectionsAndMasks;
 @property(nonatomic) _Bool shouldPreferCARenderer; // @synthesize shouldPreferCARenderer=_shouldPreferCARenderer;
 @property(nonatomic) _Bool shouldNotBakeActionTextures; // @synthesize shouldNotBakeActionTextures=_shouldNotBakeActionTextures;
+@property(nonatomic) _Bool shouldAllowBackgroundAlpha; // @synthesize shouldAllowBackgroundAlpha=_shouldAllowBackgroundAlpha;
 @property(nonatomic) _Bool shouldForceTextureGeneration; // @synthesize shouldForceTextureGeneration=_shouldForceTextureGeneration;
 @property(nonatomic) _Bool shouldDrawTexturesAsynchronously; // @synthesize shouldDrawTexturesAsynchronously=_shouldDrawTexturesAsynchronously;
 @property(nonatomic) _Bool shouldAutomaticallyPlayMovies; // @synthesize shouldAutomaticallyPlayMovies=_shouldAutomaticallyPlayMovies;
 @property(nonatomic) _Bool shouldAnimateNullTransitions; // @synthesize shouldAnimateNullTransitions=_shouldAnimateNullTransitions;
 @property(nonatomic) _Bool shouldAnimateTransitionOnLastSlide; // @synthesize shouldAnimateTransitionOnLastSlide=_shouldAnimateTransitionOnLastSlide;
 @property(nonatomic) _Bool shouldAlwaysSetCurrentGLContextWhenDrawing; // @synthesize shouldAlwaysSetCurrentGLContextWhenDrawing=_shouldAlwaysSetCurrentGLContextWhenDrawing;
+@property(readonly, nonatomic) TSDMPSImageConversionStorage *mpsImageConversionStorage; // @synthesize mpsImageConversionStorage=_mpsImageConversionStorage;
 @property(retain, nonatomic) TSDMetalLayer *sharedMetalLayer; // @synthesize sharedMetalLayer=_sharedMetalLayer;
 @property(readonly, nonatomic) id <MTLDevice> metalDevice; // @synthesize metalDevice=_metalDevice;
 @property(readonly, nonatomic) CALayer *rootLayer; // @synthesize rootLayer=_rootLayer;

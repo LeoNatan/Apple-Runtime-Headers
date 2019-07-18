@@ -17,6 +17,8 @@ __attribute__((visibility("hidden")))
     AVAudioMixerNode *_sampleRateConverter;
     AVAudioPlayerNode *_playingNode;
     // Error parsing type: {atomic<bool>="__a_"AB}, name: _ignoreCompletionCallback
+    BOOL _didHitStop;
+    struct recursive_mutex _completionMutex;
     // Error parsing type: {atomic<bool>="__a_"AB}, name: _looping
     id _resource;
     struct mutex _engineConfigurationMutex;

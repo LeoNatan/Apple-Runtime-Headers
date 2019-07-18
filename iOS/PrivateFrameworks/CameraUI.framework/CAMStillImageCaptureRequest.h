@@ -79,7 +79,7 @@
 @property(readonly, nonatomic) long long flashMode; // @synthesize flashMode=_flashMode;
 - (void).cxx_destruct;
 - (_Bool)hasAdjustments;
-@property(readonly, nonatomic) _Bool shouldPersistToLivePhotoDirectory;
+- (_Bool)shouldProtectPersistenceForVideo;
 - (_Bool)isEV0LocalVideoDestinationURL:(id)arg1;
 - (id)irisLocalVideoDestinationURLForEV0:(_Bool)arg1;
 - (id)irisVideoPersistenceUUIDForEV0:(_Bool)arg1;

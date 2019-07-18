@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
     NSString *_currentShieldGroup;
     _Bool _checkIfRouteSubrangeChanged;
     _Bool _useRouteSubrange;
+    _Bool _regenerateRoadSigns;
     struct PolylineCoordinate _routeSubrangeStart;
     struct PolylineCoordinate _routeSubrangeEnd;
     struct VKLabelNavArtworkCache *_artworkCache;
@@ -92,6 +93,8 @@ __attribute__((visibility("hidden")))
 - (void)layoutWithNavContext:(struct NavContext *)arg1 externalCollisionLabels:(const vector_7c356ace *)arg2;
 - (unsigned char)orientationForRoadSign:(id)arg1 roadLabel:(id)arg2 navContext:(struct NavContext *)arg3;
 - (void)_generateCurrentRoadSignWithContext:(struct NavContext *)arg1;
+- (void)styleManagerDidFinishAnimating;
+- (void)styleManagerDidChange:(_Bool)arg1;
 - (_Bool)_collideLabel:(id)arg1 activeLabel:(id)arg2 labelsToRemove:(id)arg3;
 - (void)_tryAddLabel:(id)arg1 navContext:(struct NavContext *)arg2 labelCollisionEnabled:(_Bool)arg3;
 - (void)_tryAddRoadSignForRoad:(id)arg1 isShield:(_Bool)arg2 navContext:(struct NavContext *)arg3 labelCollisionEnabled:(_Bool)arg4;
@@ -103,6 +106,7 @@ __attribute__((visibility("hidden")))
 - (void)clearSceneIsMemoryWarning:(_Bool)arg1;
 - (_Bool)isNavMode;
 - (void)dealloc;
+- (void)setMaxVisibleRoadsigns:(unsigned int)arg1;
 - (void)setStyleManager:(shared_ptr_a3c46825)arg1;
 - (id)init;
 @property(readonly, nonatomic) float currentRoadSignPixelHeight;

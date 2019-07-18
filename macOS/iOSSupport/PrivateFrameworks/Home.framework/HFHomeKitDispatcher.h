@@ -115,6 +115,7 @@
 @property(readonly, nonatomic) NAFuture *homeFuture;
 - (void)_requestSelectedHome:(id)arg1;
 - (BOOL)setSelectedHomeWithName:(id)arg1;
+- (void)setSelectedHome:(id)arg1 userInitiated:(BOOL)arg2;
 - (void)updateHome;
 - (void)warmup;
 - (void)dispatchNetworkRouterObserverMessage:(CDUnknownBlockType)arg1 sender:(id)arg2;

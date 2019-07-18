@@ -32,7 +32,7 @@
 @property(readonly, nonatomic) struct CGAffineTransform videoRotationTransform;
 @property(readonly, nonatomic) struct __CVBuffer *currentPixelBuffer;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
-- (void)_updateVideoSession;
+- (void)_updateVideoSession:(id)arg1;
 - (void)_prepareVideoSession;
 - (void)dealloc;
 - (id)initWithDisplayAsset:(id)arg1 mediaProvider:(id)arg2;

@@ -15,6 +15,7 @@
 - (id)ams_firstObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)ams_filterUsingTest:(CDUnknownBlockType)arg1;
 - (id)ams_dictionaryUsingTransform:(CDUnknownBlockType)arg1;
+- (_Bool)ams_anyWithTest:(CDUnknownBlockType)arg1;
 - (_Bool)ams_allWithTest:(CDUnknownBlockType)arg1;
 @end
 

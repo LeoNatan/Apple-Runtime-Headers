@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UICollectionViewCell.h>
 
-@class CALayer, UIImageView, UILabel, UIView, _UIHostActivityProxy;
+@class CALayer, UIImageView, UILabel, UIView, UIVisualEffectView, _UIHostActivityProxy;
 
 @interface UIShareGroupActivityCell : UICollectionViewCell
 {
@@ -18,12 +18,12 @@
     UIView *_titleSlotView;
     UIView *_badgeSlotView;
     CALayer *_darkeningLayer;
+    UIVisualEffectView *_vibrantLabelView;
     UIImageView *_darkenedImageView;
-    UIView *_outlineView;
 }
 
-@property(retain, nonatomic) UIView *outlineView; // @synthesize outlineView=_outlineView;
 @property(retain, nonatomic) UIImageView *darkenedImageView; // @synthesize darkenedImageView=_darkenedImageView;
+@property(retain, nonatomic) UIVisualEffectView *vibrantLabelView; // @synthesize vibrantLabelView=_vibrantLabelView;
 @property(retain, nonatomic) CALayer *darkeningLayer; // @synthesize darkeningLayer=_darkeningLayer;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(retain, nonatomic) UIView *badgeSlotView; // @synthesize badgeSlotView=_badgeSlotView;
@@ -33,9 +33,6 @@
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) _UIHostActivityProxy *activityProxy; // @synthesize activityProxy=_activityProxy;
 - (void).cxx_destruct;
-- (void)initDarkenedImageViewIfNeeded;
-- (void)updateDarkenedImageViewIfNeeded;
-- (void)initDarkeningLayerIfNeeded;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)updateDarkening;

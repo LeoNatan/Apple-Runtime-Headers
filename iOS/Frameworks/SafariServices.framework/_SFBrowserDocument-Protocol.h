@@ -6,12 +6,13 @@
 
 #import <SafariServices/NSObject-Protocol.h>
 
-@class _SFReloadOptionsController, _SFWebView;
+@class NSURL, _SFReloadOptionsController, _SFWebView;
 @protocol SFReaderContext;
 
 @protocol _SFBrowserDocument <NSObject>
 @property(readonly, nonatomic) _Bool canHideToolbar;
 @property(readonly, nonatomic) _Bool wasLoadedWithContentBlockersEnabled;
+@property(readonly, nonatomic) NSURL *URLForPerSitePreferences;
 @property(readonly, nonatomic) id <SFReaderContext> readerContext;
 @property(readonly, nonatomic) _SFReloadOptionsController *reloadOptionsController;
 @property(readonly, nonatomic) _SFWebView *webView;

@@ -15,8 +15,9 @@
 @interface PXPhotosGlobalFooterView : UXCollectionReusableView <PXChangeObserver, NSTextViewDelegate>
 {
     NSTextField *_titleLabel;
+    NSTextField *_extendedTitleLabel;
     NSTextView *_subtitle1TextView;
-    NSTextField *_subtitle2Label;
+    NSTextView *_subtitle2TextView;
     NSProgressIndicator *_progressView;
     BOOL _isPresentingAlert;
     struct {
@@ -31,7 +32,9 @@
 
 + (void)configureTextField:(id)arg1 withAttributes:(id)arg2;
 + (id)subtitleLinkTextAttributes;
++ (id)subtitle2TextAttributesHighlighted:(BOOL)arg1;
 + (id)subtitleTextAttributesDisabled:(BOOL)arg1;
++ (id)extendedTitleTextAttributes;
 + (id)titleTextAttributes;
 + (id)attributedStringForInputString:(id)arg1 actionTitle:(id)arg2 textAttributes:(id)arg3 linkTextAttributes:(id)arg4;
 @property(nonatomic) __weak id <PXPhotosGlobalFooterViewLayoutDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
@@ -44,9 +47,11 @@
 - (void)layout;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (void)_updateTextViewConfiguration:(id)arg1 highlighted:(BOOL)arg2;
 - (void)_updateProgress;
 - (void)_updateSubtitle2;
 - (void)_updateSubtitle1;
+- (void)_updateExtendedTitle;
 - (void)_updateTitle;
 - (BOOL)isFlipped;
 - (id)init;

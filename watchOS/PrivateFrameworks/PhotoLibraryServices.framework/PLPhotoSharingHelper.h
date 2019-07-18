@@ -28,7 +28,7 @@
 + (void)countOfAssetsInMstreamdSharingDownloadQueueWithCompletionBlock:(CDUnknownBlockType)arg1;
 + (void)isMstreamdBusyPerformingSharingActivityWithCompletionBlock:(CDUnknownBlockType)arg1;
 + (void)pruneNonRecentlyViewedCloudSharingAssetsInLibrary:(id)arg1;
-+ (void)applicationIsInForeground:(_Bool)arg1;
++ (void)applicationIsInForeground:(_Bool)arg1 photoLibraryURL:(id)arg2;
 + (double)intervalBetweenAlbumPolls;
 + (double)intervalBetweenPolls;
 + (void)downloadAsset:(id)arg1 cloudPlaceholderKind:(short)arg2 shouldPrioritize:(_Bool)arg3 shouldExtendTimer:(_Bool)arg4;
@@ -114,8 +114,10 @@
 + (_Bool)accountMatchesEmail:(id)arg1;
 + (id)sharingUsername;
 + (id)sharingPersonID;
-+ (_Bool)sharedStreamsExplictlyDisabled;
-+ (_Bool)sharedStreamsEnabled;
++ (_Bool)sharedStreamsExplictlyDisabledForPhotoLibraryURL:(id)arg1;
++ (_Bool)_sharedStreamsExplicitlyDisabled;
++ (_Bool)sharedStreamsEnabledForPhotoLibraryURL:(id)arg1;
++ (_Bool)_sharedStreamsEnabled;
 + (void)clearCachedAccountState;
 + (void)photosPreferencesChanged;
 + (void)accountSettingsChanged;

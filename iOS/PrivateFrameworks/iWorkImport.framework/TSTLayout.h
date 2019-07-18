@@ -156,6 +156,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)resizeMayChangeAspectRatio;
 - (_Bool)canRotateChildLayout:(id)arg1;
 - (_Bool)supportsRotation;
+- (_Bool)descendersCannotClip;
 - (void)offsetGeometryBy:(struct CGPoint)arg1;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1;

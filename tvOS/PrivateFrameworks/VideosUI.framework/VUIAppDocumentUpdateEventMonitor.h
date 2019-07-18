@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     NSDate *_lastProcesssedPlayActivity;
 }
 
++ (_Bool)_isAppRefreshEventType:(id)arg1;
 + (id)sharedMonitor;
 @property(retain, nonatomic) NSDate *lastProcesssedPlayActivity; // @synthesize lastProcesssedPlayActivity=_lastProcesssedPlayActivity;
 @property(nonatomic) int playbackReportToken; // @synthesize playbackReportToken=_playbackReportToken;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_notifyObserversOfEvent:(id)arg1;
 - (void)_notifyObserver:(id)arg1 ofRefreshEvent:(id)arg2;
+- (void)_handleLocationAuthorizationDidChangeNotification:(id)arg1;
 - (void)_handleClearPlayHistoryNotification:(id)arg1;
 - (void)_handlePreferredVideoFormatDidChangeNotification:(id)arg1;
 - (void)_handleRestrictionsDidChangeNotification:(id)arg1;

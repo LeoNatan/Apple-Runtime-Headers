@@ -9,7 +9,6 @@
 @interface _TtC18HealthExperienceUI37AllHighlightsExperienceViewController : _TtC18HealthExperienceUI28DataTypeDetailViewController
 {
     // Error parsing type: , name: keyword
-    // Error parsing type: , name: hkType
 }
 
 - (void).cxx_destruct;

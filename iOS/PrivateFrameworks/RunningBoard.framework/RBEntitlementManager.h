@@ -23,7 +23,7 @@
 - (_Bool)_secTask:(struct __SecTask *)arg1 hasEntitlement:(id)arg2;
 - (id)_hardCodedEntitlements;
 - (id)_entitlementsForProcess:(id)arg1;
-- (void)_removeRestrictedEntitlements:(id)arg1 forIdentity:(id)arg2;
+- (void)_removeRestrictedEntitlements:(id)arg1 forProcess:(id)arg2;
 - (id)captureState;
 @property(readonly, copy, nonatomic) NSString *stateCaptureTitle;
 - (id)entitlementsForProcess:(id)arg1;

@@ -8,7 +8,7 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class CNPostalAddress, NSString;
+@class CNPostalAddress, NSString, PKPhysicalCardPriceOption;
 
 @interface PKPhysicalCardAction : NSObject <NSSecureCoding>
 {
@@ -17,9 +17,13 @@
     unsigned long long _reason;
     NSString *_artworkIdentifier;
     CNPostalAddress *_shippingAddress;
+    NSString *_nameOnCard;
+    PKPhysicalCardPriceOption *_priceOption;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) PKPhysicalCardPriceOption *priceOption; // @synthesize priceOption=_priceOption;
+@property(copy, nonatomic) NSString *nameOnCard; // @synthesize nameOnCard=_nameOnCard;
 @property(copy, nonatomic) CNPostalAddress *shippingAddress; // @synthesize shippingAddress=_shippingAddress;
 @property(copy, nonatomic) NSString *artworkIdentifier; // @synthesize artworkIdentifier=_artworkIdentifier;
 @property(nonatomic) unsigned long long reason; // @synthesize reason=_reason;

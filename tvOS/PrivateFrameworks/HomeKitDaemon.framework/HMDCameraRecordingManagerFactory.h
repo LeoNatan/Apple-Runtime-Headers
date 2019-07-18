@@ -6,14 +6,17 @@
 
 #import <HMFoundation/HMFObject.h>
 
+@class HMFPreferences;
+
 @interface HMDCameraRecordingManagerFactory : HMFObject
 {
 }
 
+@property(readonly) HMFPreferences *hmfPreferences;
 - (id)createTimerWithTimeInterval:(double)arg1;
 - (id)createBulkSendSessionInitiatorWithWorkQueue:(id)arg1 accessory:(id)arg2 logIdentifier:(id)arg3;
 - (id)createSessionNotificationTrigger:(id)arg1 workQueue:(id)arg2;
-- (id)createRecordingSessionWithWorkQueue:(id)arg1 camera:(id)arg2 configuredFragmentDuration:(double)arg3;
+- (id)createRecordingSessionWithWorkQueue:(id)arg1 camera:(id)arg2 configuredFragmentDuration:(double)arg3 fragmentContextManager:(id)arg4;
 - (id)createSettingsControl:(id)arg1 accessory:(id)arg2 managementService:(id)arg3;
 
 @end

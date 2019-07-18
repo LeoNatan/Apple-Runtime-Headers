@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class ICAppearanceInfo, ICViewControllerManager, UIColor;
+@class ICAppearanceInfo, ICViewControllerManager, UIColor, UITraitCollection;
 
 @interface UIView (IC)
 + (void)ic_animateWithDuration:(double)arg1 timingFunction:(id)arg2 animations:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
@@ -26,6 +26,7 @@
 @property(copy, nonatomic) UIColor *ic_backgroundColor;
 - (void)ic_crashIfWindowIsSecure;
 - (_Bool)ic_isInSecureWindow;
+@property(readonly, nonatomic) UITraitCollection *ic_platformAppearanceObject;
 @property(readonly, nonatomic) struct NSDirectionalEdgeInsets ic_directionalSafeAreaInsets;
 @property(readonly, nonatomic) _Bool ic_isRTL;
 @property(readonly, nonatomic) ICViewControllerManager *ic_viewControllerManager;

@@ -6,7 +6,7 @@
 
 #import <AppSSOCore/NSObject-Protocol.h>
 
-@class SOAuthorizationRequestParametersCore;
+@class NSURL, SOAuthorizationRequestParametersCore;
 
 @protocol SOServiceProtocol <NSObject>
 - (void)debugHintsWithCompletion:(void (^)(NSDictionary *, NSError *))arg1;
@@ -15,5 +15,6 @@
 - (void)cancelAuthorizationWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)beginAuthorizationWithRequestParameters:(SOAuthorizationRequestParametersCore *)arg1 completion:(void (^)(NSString *, NSXPCListenerEndpoint *, NSError *))arg2;
 - (void)performAuthorizationWithRequestParameters:(SOAuthorizationRequestParametersCore *)arg1 completion:(void (^)(SOAuthorizationCredentialCore *, NSError *))arg2;
+- (void)getAuthorizationHintsWithURL:(NSURL *)arg1 responseCode:(long long)arg2 completion:(void (^)(SOAuthorizationHintsCore *, NSError *))arg3;
 @end
 

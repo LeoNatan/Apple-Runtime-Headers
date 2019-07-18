@@ -15,10 +15,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)kindWithRelationshipKinds:(id)arg1;
++ (id)identityKind;
 @property(readonly, nonatomic) NSDictionary *relationshipKinds; // @synthesize relationshipKinds=_relationshipKinds;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)humanDescription;
 
 @end

@@ -10,6 +10,7 @@
 @protocol PXLayoutItemInput;
 
 @protocol PXGGeneratedLayoutDelegate <PXGItemsLayoutDelegate>
+- (id)generatedLayout:(PXGGeneratedLayout *)arg1 objectReferenceAtIndex:(unsigned int)arg2;
 - (struct CGRect)generatedLayout:(PXGGeneratedLayout *)arg1 bestCropRectForInputItemAtIndex:(unsigned int)arg2 withAspectRatio:(double)arg3;
 - (id <PXLayoutItemInput>)generatedLayout:(PXGGeneratedLayout *)arg1 inputItemAtIndex:(unsigned int)arg2;
 @end

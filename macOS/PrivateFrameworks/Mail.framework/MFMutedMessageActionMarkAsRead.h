@@ -10,7 +10,8 @@
 {
 }
 
-- (void)performAction;
+- (void)performActionWithChangeManager:(id)arg1;
+- (void)performActionWithStore:(id)arg1;
 
 @end
 

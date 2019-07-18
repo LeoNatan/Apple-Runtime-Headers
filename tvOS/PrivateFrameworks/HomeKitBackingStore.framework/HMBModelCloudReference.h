@@ -8,19 +8,17 @@
 
 #import <HomeKitBackingStore/NSSecureCoding-Protocol.h>
 
-@class CKReference, HMBCloudZone, HMBCloudZoneID;
+@class CKReference, HMBCloudZone;
 
 @interface HMBModelCloudReference : HMBModelReference <NSSecureCoding>
 {
     CKReference *_reference;
     HMBCloudZone *_cloudZone;
-    HMBCloudZoneID *_cloudZoneID;
     unsigned long long _action;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) unsigned long long action; // @synthesize action=_action;
-@property(retain, nonatomic) HMBCloudZoneID *cloudZoneID; // @synthesize cloudZoneID=_cloudZoneID;
 @property(nonatomic) __weak HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(retain, nonatomic) CKReference *reference; // @synthesize reference=_reference;
 - (void).cxx_destruct;

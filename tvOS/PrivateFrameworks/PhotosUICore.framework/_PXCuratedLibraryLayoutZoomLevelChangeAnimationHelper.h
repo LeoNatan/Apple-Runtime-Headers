@@ -6,7 +6,8 @@
 
 #import <PhotosUICore/PXCuratedLibraryLayoutAnimationHelper.h>
 
-@class NSArray, PXCuratedLibraryLayoutSnapshotGeometryDescriptor, PXCuratedLibrarySectionGeometryDescriptor, PXVisualPositionsChangeDetails;
+@class NSArray, NSObject, PXCuratedLibraryLayoutSnapshotGeometryDescriptor, PXCuratedLibrarySectionGeometryDescriptor, PXVisualPositionsChangeDetails;
+@protocol UICoordinateSpace;
 
 @interface _PXCuratedLibraryLayoutZoomLevelChangeAnimationHelper : PXCuratedLibraryLayoutAnimationHelper
 {
@@ -15,16 +16,18 @@
     PXCuratedLibraryLayoutSnapshotGeometryDescriptor *_toLayoutSnapshotGeometryDescriptor;
     NSArray *_changeDetails;
     PXVisualPositionsChangeDetails *_visualPositionsChangeDetails;
+    long long _transitionType;
     PXCuratedLibrarySectionGeometryDescriptor *_nullSectionGeometryDescriptor;
+    NSObject<UICoordinateSpace> *_coordinateSpace;
 }
 
 - (void).cxx_destruct;
-- (void)_adjustGeometries:(inout CDStruct_ac168a83 *)arg1 styles:(inout CDStruct_3bc3b9c1 *)arg2 infos:(inout CDStruct_9d1ebe49 *)arg3 spriteIndexRange:(struct _PXGSpriteIndexRange)arg4 appearing:(_Bool)arg5;
-- (void)animation:(id)arg1 adjustGeometries:(inout CDStruct_ac168a83 *)arg2 styles:(inout CDStruct_3bc3b9c1 *)arg3 infos:(inout CDStruct_9d1ebe49 *)arg4 forSpriteDisappearingFromRootIndexRange:(struct _PXGSpriteIndexRange)arg5;
-- (void)animation:(id)arg1 adjustGeometries:(inout CDStruct_ac168a83 *)arg2 styles:(inout CDStruct_3bc3b9c1 *)arg3 infos:(inout CDStruct_9d1ebe49 *)arg4 forSpriteAppearingIntoRootIndexRange:(struct _PXGSpriteIndexRange)arg5;
+- (void)_adjustGeometries:(inout CDStruct_ac168a83 *)arg1 styles:(inout CDStruct_506f5052 *)arg2 infos:(inout CDStruct_9d1ebe49 *)arg3 spriteIndexRange:(struct _PXGSpriteIndexRange)arg4 appearing:(_Bool)arg5;
+- (void)animation:(id)arg1 adjustGeometries:(inout CDStruct_ac168a83 *)arg2 styles:(inout CDStruct_506f5052 *)arg3 infos:(inout CDStruct_9d1ebe49 *)arg4 forSpriteDisappearingFromRootIndexRange:(struct _PXGSpriteIndexRange)arg5;
+- (void)animation:(id)arg1 adjustGeometries:(inout CDStruct_ac168a83 *)arg2 styles:(inout CDStruct_506f5052 *)arg3 infos:(inout CDStruct_9d1ebe49 *)arg4 forSpriteAppearingIntoRootIndexRange:(struct _PXGSpriteIndexRange)arg5;
 - (void)animation:(id)arg1 prepareWithRootLayout:(id)arg2 viewportShift:(struct CGPoint)arg3;
-- (void)animation:(id)arg1 adjustPresentedGeometries:(CDStruct_ac168a83 *)arg2 styles:(CDStruct_3bc3b9c1 *)arg3 infos:(CDStruct_9d1ebe49 *)arg4 count:(unsigned int)arg5;
-- (id)animation:(id)arg1 doubleSidedAnimatedSpriteIndexesForModifiedSpriteIndexes:(id)arg2 rootLayout:(id)arg3 presentedGeometries:(const CDStruct_ac168a83 *)arg4 styles:(const CDStruct_3bc3b9c1 *)arg5 infos:(const CDStruct_9d1ebe49 *)arg6;
+- (void)animation:(id)arg1 adjustPresentedGeometries:(CDStruct_ac168a83 *)arg2 styles:(CDStruct_506f5052 *)arg3 infos:(CDStruct_9d1ebe49 *)arg4 count:(unsigned int)arg5;
+- (id)animation:(id)arg1 doubleSidedAnimatedSpriteIndexesForModifiedSpriteIndexes:(id)arg2 rootLayout:(id)arg3 presentedGeometries:(const CDStruct_ac168a83 *)arg4 styles:(const CDStruct_506f5052 *)arg5 infos:(const CDStruct_9d1ebe49 *)arg6;
 - (_Bool)wantsPresentationAdjustment;
 - (_Bool)wantsDoubleSidedAnimations;
 - (double)animationDuration;

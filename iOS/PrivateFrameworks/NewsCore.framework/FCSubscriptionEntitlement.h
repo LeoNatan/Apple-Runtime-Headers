@@ -27,7 +27,6 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithAppAdamID:(id)arg1 inAppAdamID:(id)arg2 chargeCurrencyCode:(id)arg3 newsAppPurchase:(_Bool)arg4 isTrailPeriod:(_Bool)arg5 isPurchaser:(_Bool)arg6;
-- (id)initWithAppAdamID:(id)arg1 inAppAdamID:(id)arg2 chargeCurrencyCode:(id)arg3 newsAppPurchase:(_Bool)arg4;
 
 @end
 

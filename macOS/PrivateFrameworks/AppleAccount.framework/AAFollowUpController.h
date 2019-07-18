@@ -22,6 +22,9 @@
 - (id)_followUpItemForIdentifier:(id)arg1 userInfo:(id)arg2;
 - (id)_followUpItemForIdentifier:(id)arg1;
 - (id)_followUpController;
+- (void)_dismissFollowUpWithIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)pendingFollowUpsForAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)dismissFollowUpsForAccount:(id)arg1 identifiers:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)dismissFollowUpWithIdentifier:(id)arg1 forAccount:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)postFollowUpWithIdentifier:(id)arg1 forAccount:(id)arg2 userInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
 

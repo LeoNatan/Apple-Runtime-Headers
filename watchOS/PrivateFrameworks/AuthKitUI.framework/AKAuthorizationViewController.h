@@ -7,31 +7,38 @@
 #import <UIKit/UIViewController.h>
 
 #import <AuthKitUI/AKAuthorizationPaneViewControllerDelegate-Protocol.h>
+#import <AuthKitUI/AKAuthorizationPrivacyDetailViewControllerDelegate-Protocol.h>
+#import <AuthKitUI/AKAuthorizationPrivacyWelcomeControllerDelegate-Protocol.h>
 
-@class AKAuthorizationPresentationContext, AKAuthorizationScopeChoices, NSString, UILabel;
+@class AKAuthorizationPresentationContext, AKAuthorizationScopeChoices, NSString, _SFNanoBrowserViewController;
 @protocol AKAuthorizationViewControllerDelegate;
 
-@interface AKAuthorizationViewController : UIViewController <AKAuthorizationPaneViewControllerDelegate>
+@interface AKAuthorizationViewController : UIViewController <AKAuthorizationPaneViewControllerDelegate, AKAuthorizationPrivacyWelcomeControllerDelegate, AKAuthorizationPrivacyDetailViewControllerDelegate>
 {
     AKAuthorizationPresentationContext *_presentationContext;
     id <AKAuthorizationViewControllerDelegate> _delegate;
     AKAuthorizationScopeChoices *_scopeChoices;
-    UILabel *_rightStatusBarItemView;
+    _SFNanoBrowserViewController *_safariViewController;
 }
 
-@property(retain, nonatomic) UILabel *rightStatusBarItemView; // @synthesize rightStatusBarItemView=_rightStatusBarItemView;
+@property(retain, nonatomic) _SFNanoBrowserViewController *safariViewController; // @synthesize safariViewController=_safariViewController;
 @property(readonly, nonatomic) AKAuthorizationScopeChoices *scopeChoices; // @synthesize scopeChoices=_scopeChoices;
 @property(nonatomic) __weak id <AKAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 - (void).cxx_destruct;
+- (void)presentBroweserViewControllerForURL:(id)arg1;
+- (void)showPrivacyDetailController;
+- (void)userReviewedPrivacy;
 - (void)performPasswordAuthenticationForPaneViewController:(id)arg1;
 - (id)_username;
+- (void)pushViewController:(id)arg1 withStatusBarLeftButtonTitle:(id)arg2 showNavigationUI:(_Bool)arg3;
 - (void)authorizationPaneViewController:(id)arg1 pushEditScope:(id)arg2 presentationContext:(id)arg3 options:(id)arg4;
 - (void)authorizationPaneViewController:(id)arg1 didRequestAuthorizationWithUserProvidedInformation:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)authorizationPaneViewController:(id)arg1 didDismissAuthorizationWithError:(id)arg2;
 - (void)_delegate_authorizationViewControllerDidCompleteWithError:(id)arg1;
 - (void)_authorizationCanceledWithError:(id)arg1;
 - (void)_statusBarTitleTapped:(id)arg1;
+- (void)_presentSuitableViewController;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithAuthorizationContext:(id)arg1;

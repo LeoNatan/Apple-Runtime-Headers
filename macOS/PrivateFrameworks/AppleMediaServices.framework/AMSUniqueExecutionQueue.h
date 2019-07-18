@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AMSPromise, NSMutableArray;
+@class AMSPromise;
 @protocol OS_dispatch_queue;
 
 @interface AMSUniqueExecutionQueue : NSObject
@@ -16,10 +16,8 @@
     NSObject<OS_dispatch_queue> *_executeBlockQueue;
     AMSPromise *_executionPromise;
     NSObject<OS_dispatch_queue> *_executionPromiseAccessQueue;
-    NSMutableArray *_subsequentCompletionBlocks;
 }
 
-@property(readonly) NSMutableArray *subsequentCompletionBlocks; // @synthesize subsequentCompletionBlocks=_subsequentCompletionBlocks;
 @property(readonly) NSObject<OS_dispatch_queue> *executionPromiseAccessQueue; // @synthesize executionPromiseAccessQueue=_executionPromiseAccessQueue;
 @property(retain) AMSPromise *executionPromise; // @synthesize executionPromise=_executionPromise;
 @property(retain) NSObject<OS_dispatch_queue> *executeBlockQueue; // @synthesize executeBlockQueue=_executeBlockQueue;

@@ -32,6 +32,8 @@
 - (void)_publishData:(id)arg1 forDomain:(unsigned int)arg2;
 - (void)publishWifiDataDiff:(id)arg1;
 - (void)publishWifiData:(id)arg1;
+- (void)publishVoiceControlDataDiff:(id)arg1;
+- (void)publishVoiceControlData:(id)arg1;
 - (void)publishTelephonyDataDiff:(id)arg1;
 - (void)publishTelephonyData:(id)arg1;
 - (void)publishBatteryDataDiff:(id)arg1;

@@ -71,6 +71,7 @@
 - (void)_deactivationCompleted;
 - (void)presentationStateDidChangeFromState:(unsigned long long)arg1 toState:(unsigned long long)arg2;
 - (void)doCleanupAfterDeactivationAnimation;
+- (_Bool)hideOnClonedDisplay;
 - (_Bool)dismissesOverlaysOnLockScreen;
 - (int)alertPriority;
 - (_Bool)allowInLoginWindow;

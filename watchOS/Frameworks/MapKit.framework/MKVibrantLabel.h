@@ -6,13 +6,15 @@
 
 #import <MapKit/MKVibrantView.h>
 
-@class NSAttributedString, NSString, UIFont, UILabel;
+@class NSAttributedString, NSString, UIColor, UIFont, UILabel;
 
 @interface MKVibrantLabel : MKVibrantView
 {
     UILabel *_label;
+    UIColor *_textColor;
 }
 
+@property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 - (void).cxx_destruct;
 @property(nonatomic) int textAlignment;
 @property(nonatomic) int numberOfLines;

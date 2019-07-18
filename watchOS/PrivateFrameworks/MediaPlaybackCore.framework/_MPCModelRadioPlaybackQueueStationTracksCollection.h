@@ -29,7 +29,6 @@
 - (int)removeExplicitItems;
 @property(readonly, nonatomic) int numberOfItems;
 - (_Bool)isExplicitItemAtIndex:(int)arg1;
-- (id)AVItemQueueIdentifierAtIndex:(int)arg1;
 - (id)AVItemAtIndex:(int)arg1;
 - (void)updateWithPersonalizedResponse:(id)arg1;
 @property(readonly, nonatomic) ICMutableRadioPlaybackHistory *playbackHistory;

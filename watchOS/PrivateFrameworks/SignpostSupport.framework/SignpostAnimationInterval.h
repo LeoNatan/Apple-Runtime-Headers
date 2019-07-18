@@ -69,7 +69,7 @@
 @property(readonly, nonatomic) NSArray *glitches;
 - (id)_poorPerfFrameDescription;
 - (id)_detailedFrameDescription;
-- (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned int)arg2;
+- (id)_descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned int)arg2 asBegin:(_Bool)arg3;
 - (id)_intervalTypeString;
 - (id)_dictionaryRepresentationWithIsHumanReadable:(_Bool)arg1 shouldRedact:(_Bool)arg2;
 - (id)humanReadableType;

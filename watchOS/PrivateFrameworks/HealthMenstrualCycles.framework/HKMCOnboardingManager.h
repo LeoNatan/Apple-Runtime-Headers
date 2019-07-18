@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class HKHealthStore, HKKeyValueDomain, HKMenstrualCyclesStore, HKQuantity;
+@class HKHealthStore, HKKeyValueDomain, HKMenstrualCyclesStore, HKQuantity, NSDate;
 
 @interface HKMCOnboardingManager : NSObject
 {
@@ -20,6 +20,7 @@
 - (void)setOnboardingCompletedWithUserEnteredCycleLength:(id)arg1 userEnteredPeriodLength:(id)arg2 userEnteredLastPeriodStartDay:(id)arg3;
 @property(readonly, nonatomic) HKQuantity *userEnteredPeriodLength;
 @property(readonly, nonatomic) HKQuantity *userEnteredCycleLength;
+@property(readonly, copy, nonatomic) NSDate *onboardingFirstCompletedDate;
 @property(readonly, nonatomic, getter=isOnboardingCompleted) _Bool onboardingCompleted;
 - (id)initWithHealthStore:(id)arg1;
 

@@ -11,9 +11,8 @@
 
 @protocol AVTStickerSheetControllerDelegate <NSObject>
 - (void)stickerSheetController:(AVTStickerSheetController *)arg1 didFinishRenderingStickersForRecord:(id <AVTAvatarRecord>)arg2;
-- (void)stickerSheetController:(AVTStickerSheetController *)arg1 didInteractWithStickerAtIndex:(long long)arg2;
+- (void)stickerSheetController:(AVTStickerSheetController *)arg1 didInteractWithStickerAtIndex:(long long)arg2 byPeeling:(_Bool)arg3;
 - (void)stickerSheetController:(AVTStickerSheetController *)arg1 scrollView:(UIScrollView *)arg2 willEndDraggingWithTargetContentOffset:(inout struct CGPoint *)arg3;
 - (void)stickerSheetController:(AVTStickerSheetController *)arg1 didScrollToContentOffset:(struct CGPoint)arg2;
-- (void)stickerSheetControllerDidPressEditButton:(AVTStickerSheetController *)arg1;
 @end
 

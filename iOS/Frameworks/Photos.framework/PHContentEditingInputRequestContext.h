@@ -6,7 +6,7 @@
 
 #import <Photos/PHMediaRequestContext.h>
 
-@class NSArray, NSMutableIndexSet, NSProgress, PHAdjustmentDataRequest, PHContentEditingInputRequestOptions, PHContentEditingInputResult, PHImageRequest, PHImageResourceChooser, PHVideoRequest;
+@class NSArray, NSMutableIndexSet, NSProgress, PAImageConversionServiceClient, PHAdjustmentDataRequest, PHContentEditingInputRequestOptions, PHContentEditingInputResult, PHImageRequest, PHImageResourceChooser, PHVideoRequest;
 
 @interface PHContentEditingInputRequestContext : PHMediaRequestContext
 {
@@ -24,6 +24,7 @@
     PHImageResourceChooser *_backupChooser;
     NSArray *_assetResources;
     NSMutableIndexSet *_requestIndexesOfAssetResourceRequests;
+    PAImageConversionServiceClient *_imageConversionClient;
     PHContentEditingInputRequestOptions *_options;
 }
 
@@ -38,7 +39,7 @@
 - (id)initialRequests;
 - (void)cancel;
 - (_Bool)isNetworkAccessAllowed;
-- (void)_setResourceURLsForFlippingRendersIfNeeded;
+- (void)_setVideoResourceURLsForFlippingRendersIfNeeded;
 - (void)_prepareAndAddFlippingRenderURLRequestsToChildRequestsIfNeeded:(id)arg1 forBaseVersion:(long long)arg2;
 - (id)_resourceRequestForAssetResource:(id)arg1 wantsURLOnly:(_Bool)arg2 progress:(id)arg3;
 - (_Bool)_hasAnyPenultimateResource;
@@ -48,8 +49,10 @@
 - (long long)_assetResourceTypeForImageWithBaseVersion:(long long)arg1;
 - (_Bool)_canRenderMediaForResult:(id)arg1;
 - (void)_prepareAndAddMediaRequestsToChildRequests:(id)arg1;
+- (id)_baseMediaRequestsForBaseVersion:(long long)arg1 error:(id *)arg2;
 - (void)_renderTemporaryVideoForObjectBuilder:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (void)_renderVideoFromVideoURL:(id)arg1 asset:(id)arg2 adjustmentData:(id)arg3 canHandleAdjustmentData:(_Bool)arg4 resultHandler:(CDUnknownBlockType)arg5;
+- (long long)_adjustmentBaseVersionFromResult:(id)arg1 request:(id)arg2 canHandleAdjustmentData:(_Bool *)arg3;
 - (id)_imageBehaviorSpecForBaseVersion:(long long)arg1;
 - (id)_videoBehaviorSpecForBaseVersion:(long long)arg1;
 - (id)_lazyVideoProgress;

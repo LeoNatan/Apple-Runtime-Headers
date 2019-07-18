@@ -22,9 +22,9 @@
     NSString *_bundleID;
     NSURL *_url;
     int _type;
+    NSUUID *_sessionID;
     NSDate *_expirationDate;
     NSDate *_startDate;
-    NSUUID *_sessionID;
     NSXPCConnection *_connection;
 }
 
@@ -36,9 +36,9 @@
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(getter=isLaunchable) _Bool launchable; // @synthesize launchable=_launchable;
 @property(getter=isDismissible) _Bool dismissible; // @synthesize dismissible=_dismissible;
-@property(copy, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
+@property(copy, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) _Bool lastStartWasScheduled; // @synthesize lastStartWasScheduled=_lastStartWasScheduled;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;

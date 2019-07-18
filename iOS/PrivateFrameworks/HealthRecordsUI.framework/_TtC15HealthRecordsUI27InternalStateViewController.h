@@ -25,9 +25,6 @@ __attribute__((visibility("hidden")))
 - (void)medicalRecordCountProviderDidUpdateAllRecordsCount:(id)arg1;
 - (void)medicalRecordCountProvider:(id)arg1 didUpdateCountForSampleTypes:(id)arg2;
 - (void)conceptStore:(id)arg1 indexManagerDidChangeState:(unsigned long long)arg2;
-- (void)newConceptsAssociatedWithUserRecords:(id)arg1;
-- (void)conceptRecordAssociationCountChanged:(id)arg1;
-- (void)conceptAssociationsRemovedFromUserRecords:(id)arg1;
 - (void)healthRecordsStore:(id)arg1 ingestionStateDidUpdateTo:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;

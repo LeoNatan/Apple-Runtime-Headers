@@ -24,13 +24,12 @@
 @property long long noiseMechanism; // @synthesize noiseMechanism=_noiseMechanism;
 @property float minimumMagnitude; // @synthesize minimumMagnitude=_minimumMagnitude;
 @property CDStruct_cd4a7bf5 noiseScaleFactors; // @synthesize noiseScaleFactors=_noiseScaleFactors;
-@property int maxIterations; // @synthesize maxIterations=_maxIterations;
 @property(readonly, copy) NSString *description;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
 - (id)toPlistWithChunks:(id)arg1;
 - (void)addNoiseToSparseMatrix:(id)arg1;
 - (void)addNoiseToSparseVector:(id)arg1;
-- (float)scaleAndAddNoiseToDenseVector:(id)arg1 usingNorm:(_Bool)arg2;
+- (_Bool)scaleAndAddNoiseToDenseVector:(id)arg1 usingNorm:(_Bool)arg2 scaleFactor:(float *)arg3;
 - (id)createSamplerByName:(id)arg1;
 - (id)createDefaultSampler;
 - (struct _PMLPreNoiseScaleFactorAndNoiseSampler)samplerWithScaleFactorFor:(id)arg1 usingNorm:(_Bool)arg2;

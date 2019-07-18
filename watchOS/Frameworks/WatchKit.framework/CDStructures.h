@@ -28,8 +28,8 @@ struct CGSize {
 };
 
 struct CLLocationCoordinate2D {
-    double _field1;
-    double _field2;
+    double latitude;
+    double longitude;
 };
 
 struct NSDirectionalEdgeInsets {
@@ -53,8 +53,8 @@ struct UIEdgeInsets {
 };
 
 struct _NSRange {
-    unsigned int _field1;
-    unsigned int _field2;
+    unsigned int location;
+    unsigned int length;
 };
 
 #pragma mark Typedef'd Structures
@@ -65,6 +65,13 @@ typedef struct {
 } CDStruct_c3b9c2ee;
 
 typedef struct {
+    long long value;
+    int timescale;
+    unsigned int flags;
+    long long epoch;
+} CDStruct_1b6d18a9;
+
+typedef struct {
     CDStruct_c3b9c2ee _field1;
     CDStruct_c3b9c2ee _field2;
 } CDStruct_90e2a262;
@@ -72,5 +79,5 @@ typedef struct {
 typedef struct {
     struct CLLocationCoordinate2D _field1;
     CDStruct_c3b9c2ee _field2;
-} CDStruct_2b0c6e0b;
+} CDStruct_26e8d939;
 

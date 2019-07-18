@@ -16,6 +16,8 @@
     NSDate *_createdAt;
     NSDate *_modifiedAt;
     NSString *_name;
+    NSString *_workflowSubtitle;
+    NSString *_associatedAppBundleIdentifier;
     WFFileRepresentation *_serializedDataFile;
     long long _cachedSyncHash;
     NSData *_serializedQuarantineData;
@@ -33,6 +35,8 @@
 @property(copy, nonatomic) NSData *serializedQuarantineData; // @synthesize serializedQuarantineData=_serializedQuarantineData;
 @property(nonatomic) long long cachedSyncHash; // @synthesize cachedSyncHash=_cachedSyncHash;
 @property(retain, nonatomic) WFFileRepresentation *serializedDataFile; // @synthesize serializedDataFile=_serializedDataFile;
+@property(copy, nonatomic) NSString *associatedAppBundleIdentifier; // @synthesize associatedAppBundleIdentifier=_associatedAppBundleIdentifier;
+@property(copy, nonatomic) NSString *workflowSubtitle; // @synthesize workflowSubtitle=_workflowSubtitle;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSDate *modifiedAt; // @synthesize modifiedAt=_modifiedAt;
 @property(readonly, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;

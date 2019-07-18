@@ -8,13 +8,12 @@
 
 #import <WeatherFoundation/NSCopying-Protocol.h>
 
-@class NSString, NSURL, NSURLSession, NWPathEvaluator, WFAggregateDictionary, WFSettingsManager;
+@class NSString, NSURL, NSURLSession, NWPathEvaluator, WFSettingsManager;
 
 @interface WFWeatherStoreServiceConfiguration : NSObject <NSCopying>
 {
     NWPathEvaluator *_serviceConnectivityEvaluator;
     NSURLSession *_session;
-    WFAggregateDictionary *_aggDictionary;
     NSURL *_cacheURL;
     Class _cacheClass;
     NSURL *_serviceConnectivityEvaluationURL;
@@ -28,7 +27,6 @@
 @property(retain, nonatomic) NSURL *serviceConnectivityEvaluationURL; // @synthesize serviceConnectivityEvaluationURL=_serviceConnectivityEvaluationURL;
 @property(retain, nonatomic) Class cacheClass; // @synthesize cacheClass=_cacheClass;
 @property(copy, nonatomic) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
-@property(retain, nonatomic) WFAggregateDictionary *aggDictionary; // @synthesize aggDictionary=_aggDictionary;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
 - (id)parseForecast:(unsigned long long)arg1 data:(id)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 apiVersion:(id)arg6 error:(id *)arg7;

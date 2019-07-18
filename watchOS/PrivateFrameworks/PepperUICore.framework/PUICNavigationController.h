@@ -21,6 +21,7 @@
 - (id)navigationBar;
 - (void)viewDidLoad;
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2;
+- (id)nextResponder;
 - (id)interactivePopGestureRecognizer;
 - (id)initWithRootViewController:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

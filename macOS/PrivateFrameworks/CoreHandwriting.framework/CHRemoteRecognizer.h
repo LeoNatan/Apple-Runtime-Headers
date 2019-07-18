@@ -12,6 +12,7 @@
 
 @interface CHRemoteRecognizer : NSObject <CHRecognizing>
 {
+    BOOL _shouldEnableCachingIfAvailable;
     BOOL _shouldUseTextReplacements;
     int _recognitionMode;
     int _contentType;
@@ -27,6 +28,7 @@
 @property(readonly, nonatomic) NSXPCConnection *_connection; // @synthesize _connection=__connection;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(nonatomic) BOOL shouldUseTextReplacements; // @synthesize shouldUseTextReplacements=_shouldUseTextReplacements;
+@property(nonatomic) BOOL shouldEnableCachingIfAvailable; // @synthesize shouldEnableCachingIfAvailable=_shouldEnableCachingIfAvailable;
 @property(nonatomic) struct CGSize minimumDrawingSize; // @synthesize minimumDrawingSize=_minimumDrawingSize;
 @property(nonatomic) int contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) unsigned long long maxRecognitionResultCount; // @synthesize maxRecognitionResultCount=_maxRecognitionResultCount;

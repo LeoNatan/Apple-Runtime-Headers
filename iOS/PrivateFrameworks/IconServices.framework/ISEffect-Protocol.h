@@ -6,9 +6,9 @@
 
 #import <IconServices/NSObject-Protocol.h>
 
-@class CIFilter;
+@class CIFilter, CIImage;
 
 @protocol ISEffect <NSObject>
-- (CIFilter *)filterWithBackgroundFilter:(CIFilter *)arg1 inputFilter:(CIFilter *)arg2;
+- (CIFilter *)filterWithBackgroundImage:(CIImage *)arg1 inputImage:(CIImage *)arg2;
 @end
 

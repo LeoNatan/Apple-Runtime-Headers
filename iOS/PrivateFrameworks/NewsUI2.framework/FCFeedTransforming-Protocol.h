@@ -7,12 +7,8 @@
 #import <NewsUI2/NSObject-Protocol.h>
 
 @class NSArray;
-@protocol FCFeedTransformationItem;
 
 @protocol FCFeedTransforming <NSObject>
 - (NSArray *)transformFeedItems:(NSArray *)arg1;
-
-@optional
-- (id <FCFeedTransformationItem>)transformFeedItem:(id <FCFeedTransformationItem>)arg1;
 @end
 

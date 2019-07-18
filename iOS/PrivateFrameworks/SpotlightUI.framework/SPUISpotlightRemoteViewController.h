@@ -56,6 +56,7 @@
 - (struct CGSize)initialFittingSize;
 - (id)sceneSpecification;
 - (void)createSceneWithPriority:(long long)arg1;
+- (void)updateTraitCollection;
 - (id)initWithSceneIdentifier:(id)arg1;
 
 // Remaining properties

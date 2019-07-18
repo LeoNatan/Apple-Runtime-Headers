@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)supportsFillSetFill;
 - (int)specificFillSetFillProperty;
 - (int)fillSetFillProperty;
+- (int)seriesStrokeProperty;
 - (_Bool)supportsCalloutLines;
 - (id)supportedValueLabelsAxisCombinations;
 - (id)axisTypesForValueLabels;
@@ -82,7 +83,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)supportsSeries3DFill;
 - (_Bool)supportsSeriesGradientFill;
 - (_Bool)supportsSeriesFill;
-- (id)cdeFillForSeries:(id)arg1 size:(struct CGSize)arg2;
+- (id)cdeFillForSeries:(id)arg1;
 - (id)propertiesForReferenceColors;
 - (id)legendStrokeForSeries:(id)arg1;
 - (id)legendFillForSeries:(id)arg1;

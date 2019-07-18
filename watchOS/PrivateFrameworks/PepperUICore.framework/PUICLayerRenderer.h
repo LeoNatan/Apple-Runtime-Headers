@@ -21,6 +21,7 @@
     struct CGRect _viewPort;
 }
 
++ (id)imageForSurface:(struct __IOSurface *)arg1;
 @property(nonatomic) struct CGRect viewPort; // @synthesize viewPort=_viewPort;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(retain, nonatomic) id <MTLTexture> mtlTexture; // @synthesize mtlTexture=_mtlTexture;

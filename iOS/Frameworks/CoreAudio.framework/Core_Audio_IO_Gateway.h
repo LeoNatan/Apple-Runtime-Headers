@@ -8,6 +8,7 @@
 
 #import <CoreAudio/Core_Audio_IO-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface Core_Audio_IO_Gateway : Core_Audio_Gateway <Core_Audio_IO>
 {
     // Error parsing type: ^{Client_Side_IO_Gateway=I{atomic<unsigned int>=AI}{shared_ptr<Client_Side_IO_Host>=^{Client_Side_IO_Host}^{__shared_weak_count}}{shared_ptr<HALIO::IPC_Client_Transport<Client_Side_IO_Host> >=^{IPC_Client_Transport<Client_Side_IO_Host>}^{__shared_weak_count}}}, name: _client_gateway

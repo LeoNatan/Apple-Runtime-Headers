@@ -18,13 +18,11 @@
 - (void).cxx_destruct;
 - (_Bool)_shouldUseSwitcherDismissalAnimationForTransientOverlayViewController:(id)arg1;
 - (void)_performDismissal;
+- (void)_handleDismissOverlaysCompletion;
 - (_Bool)_shouldResignActiveForAnimation;
 - (_Bool)_shouldAnimateTransition;
 - (id)_setupAnimation;
 - (unsigned long long)_serialOverlayPreDismissalOptions;
-- (void)_performPreAnimationTasksWithCompletion:(CDUnknownBlockType)arg1;
-- (_Bool)_hasPreAnimationTasks;
-- (void)_beginTransition;
 - (void)_didComplete;
 - (void)_begin;
 - (void)dealloc;

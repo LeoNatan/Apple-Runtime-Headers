@@ -83,6 +83,7 @@
 }
 
 + (void)adjustLayoutForCell:(id)arg1 tableViewWidth:(float)arg2 numRowsInSection:(unsigned int)arg3 cellRow:(unsigned int)arg4 forceLayout:(_Bool)arg5;
++ (id)_orderedActionsForMask:(int)arg1;
 + (void)setDefaultDatesForEvent:(id)arg1;
 @property(retain, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
@@ -137,8 +138,10 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (void)eventStatusButtonsView:(id)arg1 calculatedFontSizeToFit:(float)arg2;
 - (float)eventStatusButtonsViewButtonFontSize:(id)arg1;
-- (void)eventStatusButtonsView:(id)arg1 didSelectAction:(int)arg2;
+- (void)eventStatusButtonsView:(id)arg1 didSelectAction:(int)arg2 ifCancelled:(CDUnknownBlockType)arg3;
 - (id)_statusButtonsForOrb:(_Bool)arg1;
+- (int)_actionsMaskForOrb:(_Bool)arg1;
+- (id)_organizerContact;
 - (id)_statusButtons;
 - (_Bool)_shouldDisplayStatusButtons;
 - (void)_updateResponse;
@@ -147,6 +150,15 @@
 - (void)_addToCalendarClicked:(id)arg1;
 - (void)_deleteClicked:(id)arg1;
 - (void)_saveStatus:(int)arg1;
+- (void)_joinMeeting;
+- (void)_emailOrganizer;
+- (void)_contactOrganizer;
+- (void)_openInMaps;
+- (_Bool)_canEmailOrganizer;
+- (void)_cancelProposedTime;
+- (void)_rejectProposedTime;
+- (void)_acceptProposedTime;
+- (id)_proposedDate;
 - (void)invokeAction:(int)arg1;
 - (void)_prepareEventForEdit;
 - (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
@@ -178,6 +190,7 @@
 - (id)_footerLabelContainingText:(id)arg1;
 - (void)_updateHeaderAndFooterIfNeeded;
 - (_Bool)_shouldDisplayDelegateOrOutOfDateMessage;
+- (_Bool)_isDisplayingSelfOrganizedInvitation;
 - (_Bool)_isDisplayingInvitation;
 - (_Bool)_isDisplayingDeletableEvent;
 - (_Bool)_isDisplayingSuggestion;
@@ -189,6 +202,7 @@
 - (void)_storeChanged:(id)arg1;
 - (void)_refreshEventAndReload;
 - (void)_setObservesKeyboardNotifications:(_Bool)arg1;
+@property(readonly, nonatomic) UIViewController *eventDetailsViewController;
 @property(readonly, nonatomic) UIScrollView *eventDetailsScrollView;
 - (float)topInset;
 - (void)setTopInset:(float)arg1;
@@ -206,7 +220,6 @@
 - (void)_reloadIfNeeded;
 - (void)_setNeedsReloadIncludingItems:(_Bool)arg1;
 - (void)setNeedsReload;
-- (void)reloadedData;
 - (void)openAttendeesDetailItem;
 - (void)_pop;
 - (_Bool)_shouldPopSelf;

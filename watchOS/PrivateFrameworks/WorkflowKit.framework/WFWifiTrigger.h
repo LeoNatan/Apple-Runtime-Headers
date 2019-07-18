@@ -11,18 +11,21 @@
 @interface WFWifiTrigger : WFTrigger
 {
     NSArray *_selectedNetworks;
+    unsigned int _selection;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
+@property(nonatomic) unsigned int selection; // @synthesize selection=_selection;
 @property(retain, nonatomic) NSArray *selectedNetworks; // @synthesize selectedNetworks=_selectedNetworks;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)localizedTitleWithConfigurationSummary;
 - (_Bool)hasValidConfiguration;
+- (id)init;
 
 @end
 

@@ -16,9 +16,11 @@
     _UIUserDefaultsActivityProxy *_activityProxy;
     NSLayoutConstraint *_imageViewWidthConstraint;
     NSLayoutConstraint *_imageViewLeadingConstraint;
+    NSLayoutConstraint *_labelLeadingConstraint;
 }
 
 + (id)title3Font;
+@property(retain, nonatomic) NSLayoutConstraint *labelLeadingConstraint; // @synthesize labelLeadingConstraint=_labelLeadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *imageViewLeadingConstraint; // @synthesize imageViewLeadingConstraint=_imageViewLeadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *imageViewWidthConstraint; // @synthesize imageViewWidthConstraint=_imageViewWidthConstraint;
 @property(retain, nonatomic) _UIUserDefaultsActivityProxy *activityProxy; // @synthesize activityProxy=_activityProxy;

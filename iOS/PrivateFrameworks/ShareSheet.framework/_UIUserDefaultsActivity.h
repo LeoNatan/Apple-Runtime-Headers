@@ -13,8 +13,10 @@
     NSArray *_availableActivities;
     _UIActivityUserDefaults *_userDefaults;
     UIViewController *_presentableActivityViewController;
+    long long _activityCategory;
 }
 
+@property(nonatomic) long long activityCategory; // @synthesize activityCategory=_activityCategory;
 @property(retain, nonatomic) UIViewController *presentableActivityViewController; // @synthesize presentableActivityViewController=_presentableActivityViewController;
 @property(retain, nonatomic) _UIActivityUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(copy, nonatomic) NSArray *availableActivities; // @synthesize availableActivities=_availableActivities;
@@ -29,7 +31,7 @@
 - (id)_activityImage;
 - (id)activityTitle;
 - (id)activityType;
-- (id)initWithUserDefaults:(id)arg1;
+- (id)initWithUserDefaults:(id)arg1 activityCategory:(long long)arg2;
 
 @end
 

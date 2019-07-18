@@ -11,18 +11,19 @@
 __attribute__((visibility("hidden")))
 @interface UITableViewCellDetailDisclosureView : UIControl
 {
-    UIButton *_infoButton;
+    UIButton *_accessoryButton;
     UIImageView *_disclosureView;
     UITableViewCell *_cell;
 }
 
+@property(readonly, nonatomic) UIButton *accessoryButton; // @synthesize accessoryButton=_accessoryButton;
 - (void).cxx_destruct;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setSemanticContentAttribute:(int)arg1;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2 cell:(id)arg3 shouldReverseLayoutDirection:(_Bool)arg4;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2 cell:(id)arg3 buttonType:(int)arg4 shouldReverseLayoutDirection:(_Bool)arg5;
 
 @end
 

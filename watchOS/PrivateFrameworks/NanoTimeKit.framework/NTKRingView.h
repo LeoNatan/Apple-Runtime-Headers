@@ -6,27 +6,27 @@
 
 #import <NanoTimeKit/NTKColoringView.h>
 
+@protocol CLKMonochromeFilterProvider;
+
 @interface NTKRingView : NTKColoringView
 {
-    _Bool _showsRingsBackground;
     float _ringWidth;
     float _radius;
     float _fillFraction;
-    float _ringAnimationDelta;
-    float _appearanceAnimationProgress;
+    id <CLKMonochromeFilterProvider> _filterProvider;
 }
 
-@property(nonatomic) _Bool showsRingsBackground; // @synthesize showsRingsBackground=_showsRingsBackground;
-@property(nonatomic) float appearanceAnimationProgress; // @synthesize appearanceAnimationProgress=_appearanceAnimationProgress;
-@property(nonatomic) float ringAnimationDelta; // @synthesize ringAnimationDelta=_ringAnimationDelta;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 @property(nonatomic) float fillFraction; // @synthesize fillFraction=_fillFraction;
-@property(nonatomic) float radius; // @synthesize radius=_radius;
-@property(nonatomic) float ringWidth; // @synthesize ringWidth=_ringWidth;
+@property(readonly, nonatomic) float radius; // @synthesize radius=_radius;
+@property(readonly, nonatomic) float ringWidth; // @synthesize ringWidth=_ringWidth;
+- (void).cxx_destruct;
 - (void)_drawRingWithRadius:(float)arg1 fillFraction:(float)arg2 alpha:(float)arg3;
-- (void)_drawFillFractionRings;
 - (void)_drawBackgroundRings;
 - (void)drawRect:(struct CGRect)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 radius:(float)arg2 ringWidth:(float)arg3;
 
 @end
 

@@ -58,7 +58,7 @@
 - (id)complicationApplicationIdentifier;
 - (void)resume;
 - (void)pause;
-- (id)privacyTemplate;
+- (id)lockedTemplate;
 - (id)currentSwitcherTemplate;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;

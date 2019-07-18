@@ -6,15 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class PLPhotoLibraryPathManager;
+@class NSDate, PLPhotoLibraryPathManager;
 
 @interface PLAssetsdCrashRecoverySupport : NSObject
 {
     PLPhotoLibraryPathManager *_pathManager;
+    struct os_unfair_lock_s _recoveryIndicatorCheckLock;
+    NSDate *_recoveryJobCreationDate;
 }
 
 - (void).cxx_destruct;
-- (void)_enqeueRecoveryJob:(id)arg1 toImageWriter:(id)arg2;
+- (void)_enqeueRecoveryJob:(id)arg1 date:(id)arg2 toImageWriter:(id)arg3;
 - (BOOL)isSafeToRecoverAfterCrash;
 - (void)recoverFromCrashIfNeededWithImageWriter:(id)arg1;
 - (id)initWithPathManager:(id)arg1;

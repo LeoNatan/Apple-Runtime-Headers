@@ -68,6 +68,7 @@
 - (void)passFooterContentViewDidChangeCoachingState:(id)arg1;
 - (void)passFooterContentViewDidChangeUserIntentRequirement:(id)arg1;
 - (void)passFooterContentViewRequestsSessionSuppression:(id)arg1;
+- (void)passFooterContentViewDidAuthenticate:(id)arg1;
 @property(readonly, nonatomic) _Bool requestPileSuppression;
 @property(readonly, nonatomic, getter=isPassAuthorized) _Bool passAuthorized;
 - (void)invalidate;

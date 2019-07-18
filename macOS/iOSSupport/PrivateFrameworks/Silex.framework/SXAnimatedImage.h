@@ -46,6 +46,8 @@
 @property(readonly, nonatomic) struct CGImageSource *imageSource; // @synthesize imageSource=_imageSource;
 @property(nonatomic) __weak id <SXAnimatedImageDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)resumePreloading;
+- (void)suspendPreloading;
 - (void)setPreloadType:(long long)arg1 currentFrameIndex:(unsigned long long)arg2;
 - (void)animatedImageViewCache:(id)arg1 didCacheImageForFrameIndex:(unsigned long long)arg2;
 - (void)dealloc;

@@ -12,14 +12,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct HMDNetworkRouterFallbackLANRuleDefinition {
-    id _field1;
-    unsigned char _field2;
-    unsigned char _field3;
-    unsigned short _field4;
-    unsigned short _field5;
-};
-
 struct NSArray {
     Class _field1;
 };
@@ -76,6 +68,11 @@ typedef struct {
     unsigned long long *_field3;
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
+
+// Ambiguous groups
+typedef struct {
+    unsigned int timestamp:1;
+} CDStruct_b5306035;
 
 #pragma mark Typedef'd Unions
 

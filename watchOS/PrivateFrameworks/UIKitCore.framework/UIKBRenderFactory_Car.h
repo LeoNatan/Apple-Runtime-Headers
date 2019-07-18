@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (id)deleteKeyImageName;
 - (id)globalKeyImageName;
 - (float)defaultKeyFontSize;
+- (id)highlightedKeyColor;
 - (id)activeKeyColor;
 - (id)enabledKeyColor;
 - (id)dividerColor;

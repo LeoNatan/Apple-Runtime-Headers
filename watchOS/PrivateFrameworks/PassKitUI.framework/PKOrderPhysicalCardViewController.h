@@ -7,12 +7,12 @@
 #import <PassKitUI/PKExplanationViewController.h>
 
 #import <PassKitUI/PKExplanationViewDelegate-Protocol.h>
-#import <PassKitUI/PKPaymentSetupRequiresPreflightProtocol-Protocol.h>
+#import <PassKitUI/PKViewControllerPreflightable-Protocol.h>
 
 @class NSString, PKOrderPhysicalCardController, PKOrderPhysicalCardHeroView, PKPhysicalCardArtworkOption;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKOrderPhysicalCardViewController : PKExplanationViewController <PKExplanationViewDelegate, PKPaymentSetupRequiresPreflightProtocol>
+@interface PKOrderPhysicalCardViewController : PKExplanationViewController <PKExplanationViewDelegate, PKViewControllerPreflightable>
 {
     int _context;
     PKOrderPhysicalCardController *_controller;

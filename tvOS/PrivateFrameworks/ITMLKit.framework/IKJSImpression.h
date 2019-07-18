@@ -22,6 +22,8 @@
     long long _indexInParent;
 }
 
++ (id)impressionsMapForViewElements:(id)arg1 appContext:(id)arg2 timestamp:(long long)arg3 existingImpressionsMap:(id)arg4;
++ (id)impressionsMapForViewElements:(id)arg1 appContext:(id)arg2 timestamp:(long long)arg3;
 @property(nonatomic) long long indexInParent; // @synthesize indexInParent=_indexInParent;
 @property(retain, nonatomic) NSMutableArray *mutableChildren; // @synthesize mutableChildren=_mutableChildren;
 @property(retain, nonatomic) NSMutableArray *mutableTimestamps; // @synthesize mutableTimestamps=_mutableTimestamps;

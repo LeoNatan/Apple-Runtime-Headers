@@ -8,6 +8,8 @@
 
 #import <MLFoundation/MLFoundationLayerCompiling-Protocol.h>
 
+@class NSString;
+
 @interface MLFoundationArithmeticLayer : MLFoundationLayer <MLFoundationLayerCompiling>
 {
     int _arithmeticOp;
@@ -16,10 +18,15 @@
 + (id)layerWithArithmeticOp:(int)arg1;
 + (id)new;
 @property(readonly, nonatomic) int arithmeticOp; // @synthesize arithmeticOp=_arithmeticOp;
-- (id)description;
-- (void)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
+@property(readonly, copy) NSString *description;
+- (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
 - (id)initWithArithmeticOp:(int)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

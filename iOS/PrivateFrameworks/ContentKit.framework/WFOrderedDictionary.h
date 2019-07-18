@@ -14,7 +14,6 @@
     NSDictionary *_dictionary;
 }
 
-+ (Class)wf_mappedDictionaryClass;
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 @property(readonly, nonatomic) NSOrderedSet *keys; // @synthesize keys=_keys;

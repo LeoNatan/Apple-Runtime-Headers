@@ -99,6 +99,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSTCellRegion *baseRegion;
 @property(readonly, nonatomic) struct TSUCellCoord anchorCellID;
 @property(readonly, nonatomic) TSTCellRegion *cellRegion;
+@property(readonly, nonatomic, getter=isValid) _Bool valid;
 - (id)initWithTableInfo:(id)arg1 columnIndices:(id)arg2;
 - (id)initWithTableInfo:(id)arg1 rowIndices:(id)arg2;
 - (id)initWithTableInfo:(id)arg1 cellRegion:(id)arg2;

@@ -15,6 +15,7 @@
 @property(copy, nonatomic) NSString *topShelfStaticImageName; // @dynamic topShelfStaticImageName;
 @property(nonatomic) long long installFailureReason; // @dynamic installFailureReason;
 @property(nonatomic) long long installType; // @dynamic installType;
+@property(copy, nonatomic) NSString *liveIconName; // @dynamic liveIconName;
 @property(copy, nonatomic) NSString *primaryIconName; // @dynamic primaryIconName;
 @property(copy, nonatomic) NSString *iconFile; // @dynamic iconFile;
 @property(nonatomic) double installPercentage; // @dynamic installPercentage;

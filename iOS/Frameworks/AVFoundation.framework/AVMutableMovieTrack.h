@@ -13,6 +13,7 @@
     AVMutableMovieTrackInternal *_mutableMovieTrackInternal;
 }
 
++ (_Bool)expectsPropertyRevisedNotifications;
 + (id)trackWithTrackID:(int)arg1 forMovie:(id)arg2;
 - (void).cxx_destruct;
 - (id)description;

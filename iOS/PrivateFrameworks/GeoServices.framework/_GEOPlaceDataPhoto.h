@@ -18,6 +18,8 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool businessProvided;
+@property(readonly, nonatomic) _Bool highQuality;
 @property(readonly, nonatomic) double sizeRatio;
 - (id)bestPhotoForSize:(struct CGSize)arg1 allowSmaller:(_Bool)arg2;
 - (id)largestPhoto;

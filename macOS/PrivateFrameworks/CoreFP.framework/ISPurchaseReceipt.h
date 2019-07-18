@@ -16,6 +16,7 @@
     NSDate *_renewalDate;
     NSNumber *_adamID;
     NSString *_bundleID;
+    NSString *_receipt_type;
     unsigned char _opaqueDSIDBuffer[16];
 }
 
@@ -33,7 +34,8 @@
 - (BOOL)_anchorTrust:(struct __SecTrust *)arg1 toRootCertificateIn:(struct __CFArray *)arg2;
 @property(readonly) NSString *getReceiptPath;
 @property(readonly) char *getOpaqueDSIDBuffer;
-@property(readonly) NSString *getBundleID;
+@property(readonly) char *getReceiptType;
+@property(readonly) char *getBundleID;
 @property(readonly) NSNumber *getAdamID;
 @property(readonly) BOOL isVPPLicensed;
 @property(readonly) BOOL isRevoked;

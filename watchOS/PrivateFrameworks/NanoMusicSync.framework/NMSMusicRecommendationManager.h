@@ -44,12 +44,10 @@
 - (void)_startRecommendationRetryTimer;
 - (void)_removePreviousRecommendationDefaults;
 - (void)_removeLegacyRecommendationsDefaultsIfNecessary;
-- (void)_persistUpdatedRecommendationsWithRecommendationsResponse:(id)arg1;
+- (void)_persistUpdatedRecommendationsWithResponse:(id)arg1;
 - (_Bool)_updateRecommendationsSelections;
-- (_Bool)_updateRecommendationsWithRecommendationsResponse:(id)arg1;
-- (void)_finishLoadingContentsWithRecommendationsResponse:(id)arg1;
-- (void)_importRecommendationsWithLookupResponse:(id)arg1 recommendationsResponse:(id)arg2;
-- (void)_lookUpRecommendationsWithRecommendationsResponse:(id)arg1;
+- (_Bool)_updateWithRecommendations:(id)arg1;
+- (void)_finishLoadingContentsWithResponse:(id)arg1;
 - (void)_reloadStoreRecommendations;
 - (id)_fetchAddedDateForContainer:(id)arg1;
 - (id)_sortedContainersBasedOnRecency;

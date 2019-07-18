@@ -73,12 +73,14 @@
 - (void)ppt_performActivityOfType:(id)arg1;
 - (_Bool)prepareForDismissingForced:(_Bool)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
-- (_Bool)shouldSuggestSharingAsCMMForActivity:(id)arg1;
+- (_Bool)_shouldSuggestSharingAsCMMForActivity:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)_cancel;
 - (void)_prepareActivity:(id)arg1;
-- (void)presentCMMSuggestionAlertIfNeededForActivity:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)_presentCMMSuggestionAlertIfNeededForActivity:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)_presentAlertIfNeededForActivity:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_performActivity:(id)arg1;
+- (_Bool)_shouldPresentAirplayAlertForActivity:(id)arg1;
 - (id)_titleForActivity:(id)arg1;
 - (_Bool)_shouldShowSystemActivityType:(id)arg1;
 - (void)setCompletionWithItemsHandler:(CDUnknownBlockType)arg1;
@@ -86,6 +88,7 @@
 - (void)activityItemSourceController:(id)arg1 willBeginPreparationWithActivityType:(id)arg2 preparationType:(unsigned long long)arg3;
 - (id)_customizationGroupsForActivityViewController:(id)arg1;
 - (_Bool)_customizationAvailableForActivityViewController:(id)arg1;
+@property(readonly, nonatomic) NSString *localizedSubtitle;
 @property(readonly, nonatomic) NSString *localizedTitle;
 @property(readonly, nonatomic) unsigned long long sourceOrigin;
 @property(readonly, copy, nonatomic) NSOrderedSet *orderedSelectedAssets;
@@ -101,6 +104,7 @@
 - (void)_handlePostReadyToInteractUpdatesIfNeeded;
 - (void)updateVisibleShareActionsIfNeeded;
 - (void)setAssetItems:(id)arg1;
+- (void)replaceAssetItem:(id)arg1 withAssetItem:(id)arg2;
 - (void)removeAssetItem:(id)arg1;
 - (void)addAssetItem:(id)arg1;
 - (void)_cleanUpActivityState;
@@ -108,7 +112,7 @@
 - (void)mailActivity:(id)arg1 displayVideoRemakerProgressView:(id)arg2;
 - (void)_presentConfidentialityWarningWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_prepareAssetsForActivity:(id)arg1 forcePreparationAsMomentShareLink:(_Bool)arg2;
-- (void)_showSharingWasInterruptedForErrors:(id)arg1 withIndividualAssets:(id)arg2 toActivityType:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_showSharingWasInterruptedForErrors:(id)arg1 withIndividualAssets:(id)arg2 itemSourcesByAssetUUID:(id)arg3 toActivityType:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)updateProgressUITitle;
 - (void)showProgressUIAnimated:(_Bool)arg1 withDelay:(_Bool)arg2 cancellationHandler:(CDUnknownBlockType)arg3;
 - (void)removeProgressUIAnimated:(_Bool)arg1 withDelay:(_Bool)arg2;

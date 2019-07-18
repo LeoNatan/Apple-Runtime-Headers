@@ -66,6 +66,7 @@
     CDStruct_95bda58d _payloadWorkoutGoalUnitTypes;
     CDStruct_95bda58d _payloadWorkoutLocationTypes;
     CDStruct_f953fb60 _has;
+    BOOL __encodeLegacyGloryData;
     int _type;
     NSArray *_payloadActivities;
     NSArray *_payloadActivityLists;
@@ -222,6 +223,7 @@
 + (Class)payloadAppIdentifierType;
 + (Class)payloadActivityListType;
 + (Class)payloadActivityType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSArray *payloadWellnessValues; // @synthesize payloadWellnessValues=_payloadWellnessValues;
 @property(copy, nonatomic) NSArray *payloadWellnessUnitTypes; // @synthesize payloadWellnessUnitTypes=_payloadWellnessUnitTypes;

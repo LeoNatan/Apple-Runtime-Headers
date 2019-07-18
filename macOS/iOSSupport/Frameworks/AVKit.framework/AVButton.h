@@ -105,6 +105,7 @@ __attribute__((visibility("hidden")))
 - (void)setEnabled:(BOOL)arg1;
 - (void)willMoveToWindow:(id)arg1;
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) BOOL collapsedOrExcluded;
+- (void)setHidden:(BOOL)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

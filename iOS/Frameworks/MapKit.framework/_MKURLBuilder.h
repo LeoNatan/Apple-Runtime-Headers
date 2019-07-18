@@ -17,6 +17,7 @@
 + (id)URLForExternalBusiness:(id)arg1 id:(id)arg2 ofContentProvider:(id)arg3;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D)arg4 address:(id)arg5 useWebPlaceCard:(_Bool)arg6 mapItemData:(id)arg7;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D)arg4 address:(id)arg5 useWebPlaceCard:(_Bool)arg6;
++ (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D)arg4 address:(id)arg5 extraStorage:(id)arg6 useWebPlaceCard:(_Bool)arg7 muninViewState:(id)arg8;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D)arg4 address:(id)arg5 extraStorage:(id)arg6 useWebPlaceCard:(_Bool)arg7;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D)arg4 address:(id)arg5 extraStorage:(id)arg6;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D)arg4 address:(id)arg5;
@@ -26,6 +27,7 @@
 + (id)URLForDirectionsFromHereTo:(id)arg1;
 + (id)URLForDirectionsFrom:(id)arg1 to:(id)arg2 transport:(unsigned long long)arg3;
 + (id)URLForDirectionsFrom:(id)arg1 to:(id)arg2;
++ (id)URLForCoordinate:(struct CLLocationCoordinate2D)arg1 address:(id)arg2 label:(id)arg3 extraStorage:(id)arg4 useWebPlaceCard:(_Bool)arg5 muninViewState:(id)arg6;
 + (id)URLForCoordinate:(struct CLLocationCoordinate2D)arg1 address:(id)arg2 label:(id)arg3 extraStorage:(id)arg4 useWebPlaceCard:(_Bool)arg5;
 + (id)URLForCoordinate:(struct CLLocationCoordinate2D)arg1 address:(id)arg2 label:(id)arg3 extraStorage:(id)arg4;
 + (id)URLForCoordinate:(struct CLLocationCoordinate2D)arg1 address:(id)arg2 label:(id)arg3 useWebPlaceCard:(_Bool)arg4;
@@ -38,7 +40,6 @@
 + (id)URLForSearch:(id)arg1 at:(struct CLLocationCoordinate2D)arg2 span:(CDStruct_c3b9c2ee)arg3;
 + (id)URLForSearch:(id)arg1 near:(struct CLLocationCoordinate2D)arg2;
 + (id)URLForSearch:(id)arg1;
-+ (id)URLForMuninViewState:(id)arg1;
 - (void).cxx_destruct;
 - (void)setContentProvider:(id)arg1;
 - (void)setMapType:(unsigned long long)arg1;

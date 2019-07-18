@@ -40,6 +40,7 @@
     SBFFluidBehaviorSettings *_gestureInitiatedAppToSwitcherSettings;
     SBFFluidBehaviorSettings *_cardFlyInSettings;
     double _cardFlyInAccelerationDipThreshold;
+    long long _minimumTouchSamplesForAccelerationDip;
     SBFFluidBehaviorSettings *_reduceMotionArcSwipeSettings;
     SBFFluidBehaviorSettings *_reduceMotionAppToSwitcherSettings;
     double _reduceMotionTriggerDelay;
@@ -170,6 +171,7 @@
 @property(nonatomic) double reduceMotionTriggerDelay; // @synthesize reduceMotionTriggerDelay=_reduceMotionTriggerDelay;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *reduceMotionAppToSwitcherSettings; // @synthesize reduceMotionAppToSwitcherSettings=_reduceMotionAppToSwitcherSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *reduceMotionArcSwipeSettings; // @synthesize reduceMotionArcSwipeSettings=_reduceMotionArcSwipeSettings;
+@property(nonatomic) long long minimumTouchSamplesForAccelerationDip; // @synthesize minimumTouchSamplesForAccelerationDip=_minimumTouchSamplesForAccelerationDip;
 @property(nonatomic) double cardFlyInAccelerationDipThreshold; // @synthesize cardFlyInAccelerationDipThreshold=_cardFlyInAccelerationDipThreshold;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *cardFlyInSettings; // @synthesize cardFlyInSettings=_cardFlyInSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *gestureInitiatedAppToSwitcherSettings; // @synthesize gestureInitiatedAppToSwitcherSettings=_gestureInitiatedAppToSwitcherSettings;

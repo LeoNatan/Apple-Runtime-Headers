@@ -16,7 +16,7 @@
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class INImage, INIntentCodableDescription, INIntentKeyParameter, INParameterContexts, NSArray, NSDictionary, NSMutableDictionary, NSOrderedSet, NSString, PBCodable, _INPBIntentMetadata;
+@class INImage, INIntentCodableDescription, INIntentKeyParameter, INParameterContexts, NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSOrderedSet, NSString, NSUUID, PBCodable, _INPBIntentMetadata;
 
 @interface INIntent : NSObject <INImageProxyInjecting, INIntentSlotComposing, INFileURLEnumerable, INKeyImageProducing, INIntentExport, INGenericIntent, INRuntimeObject, NSCopying, NSSecureCoding>
 {
@@ -30,6 +30,9 @@
     NSString *_identifier;
     PBCodable *_backingStore;
     NSArray *_airPlayRouteIds;
+    NSString *_recordRoute;
+    NSUUID *_recordDeviceUID;
+    long long __preferredInteractionDirection;
 }
 
 + (_Bool)resolveInstanceMethod:(SEL)arg1;
@@ -40,6 +43,9 @@
 + (id)_ignoredParameters;
 + (void)_setSharedExtensionContextUUID:(id)arg1 forIntentClassName:(id)arg2;
 + (id)_sharedExtensionContextUUIDForIntentClassName:(id)arg1;
+@property(readonly, nonatomic) long long _preferredInteractionDirection; // @synthesize _preferredInteractionDirection=__preferredInteractionDirection;
+@property(retain, nonatomic, setter=_setRecordDeviceUID:) NSUUID *recordDeviceUID; // @synthesize recordDeviceUID=_recordDeviceUID;
+@property(copy, nonatomic, setter=_setRecordRoute:) NSString *recordRoute; // @synthesize recordRoute=_recordRoute;
 @property(retain, nonatomic, setter=_setAirPlayRouteIds:) NSArray *airPlayRouteIds; // @synthesize airPlayRouteIds=_airPlayRouteIds;
 @property(copy, nonatomic) PBCodable *backingStore; // @synthesize backingStore=_backingStore;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -79,14 +85,15 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)_emptyCopy;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (void)trimDataAgainstTCCForAuditToken:(CDStruct_6ad76789)arg1 bundle:(id)arg2;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData;
 @property(nonatomic, getter=_isUserConfirmationRequired, setter=_setUserConfirmationRequired:) _Bool _userConfirmationRequired;
 @property(readonly, nonatomic) unsigned long long _indexingHash; // @synthesize _indexingHash;
 @property(readonly, nonatomic) long long _type;
-- (id)_emptyCopy;
 - (id)_displayOrderedNonNilParameters;
 - (id)_nonNilParameters;
 @property(readonly, nonatomic, getter=_isEligibleForSuggestions) _Bool _eligibleForSuggestions;
@@ -106,6 +113,7 @@
 - (void)setImage:(id)arg1 forParameterNamed:(id)arg2;
 @property(readonly, copy, nonatomic) NSString *intentDescription;
 @property(copy, nonatomic) NSString *suggestedInvocationPhrase;
+@property(retain, nonatomic, setter=_setIsOwnedByCurrentUser:) NSNumber *_isOwnedByCurrentUser;
 @property(retain, nonatomic, setter=_setOriginatingDeviceRapportEffectiveIdentifier:) NSString *_originatingDeviceRapportEffectiveIdentifier;
 @property(retain, nonatomic, setter=_setOriginatingDeviceRapportMediaSystemIdentifier:) NSString *_originatingDeviceRapportMediaSystemIdentifier;
 @property(retain, nonatomic, setter=_setOriginatingDeviceIdsIdentifier:) NSString *_originatingDeviceIDSIdentifier;
@@ -130,6 +138,7 @@
 - (id)_initWithIdentifier:(id)arg1 schema:(id)arg2 name:(id)arg3 data:(id)arg4;
 - (id)_initWithIdentifier:(id)arg1 backingStore:(id)arg2 schema:(id)arg3 error:(id *)arg4;
 - (id)initWithIdentifier:(id)arg1 backingStore:(id)arg2;
+- (id)_init;
 - (id)init;
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_injectProxiesForImagesUsingIntentSlotDescriptionStrategy:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

@@ -9,6 +9,7 @@
 @class NSCharacterSet, NSLocale;
 
 @protocol CHRecognizing <NSObject>
+@property(nonatomic) _Bool shouldEnableCachingIfAvailable;
 @property(nonatomic) struct CGSize minimumDrawingSize;
 @property(retain, nonatomic) NSCharacterSet *activeCharacterSet;
 @property(nonatomic) unsigned int maxRecognitionResultCount;

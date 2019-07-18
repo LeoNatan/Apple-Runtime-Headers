@@ -8,7 +8,7 @@
 
 #import <SPOwner/SPPowerMonitorDelegate-Protocol.h>
 
-@class NSDate, NSDictionary, NSString, SPNetworkMonitor, SPPowerStateMonitorMac;
+@class NSDate, NSString, SPMacBeaconConfig, SPNetworkMonitor, SPPowerStateMonitorMac;
 @protocol OS_dispatch_queue, SPMonitorsWrapperDelegate;
 
 __attribute__((visibility("hidden")))
@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     NSDate *_nextStateChangeDate;
     NSDate *_networkOffDuringSleepDate;
     SPPowerStateMonitorMac *_powerStateMonitor;
-    NSDictionary *_macBeaconConfig;
+    SPMacBeaconConfig *_macBeaconConfig;
 }
 
-@property(retain, nonatomic) NSDictionary *macBeaconConfig; // @synthesize macBeaconConfig=_macBeaconConfig;
+@property(retain, nonatomic) SPMacBeaconConfig *macBeaconConfig; // @synthesize macBeaconConfig=_macBeaconConfig;
 @property(retain, nonatomic) SPPowerStateMonitorMac *powerStateMonitor; // @synthesize powerStateMonitor=_powerStateMonitor;
 @property(retain, nonatomic) NSDate *networkOffDuringSleepDate; // @synthesize networkOffDuringSleepDate=_networkOffDuringSleepDate;
 @property(retain, nonatomic) NSDate *nextStateChangeDate; // @synthesize nextStateChangeDate=_nextStateChangeDate;
@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (id)nextWakeTimeForState:(unsigned long long)arg1;
 - (void)powerMonitor:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (void)calculateLowPowerNetworkOffDate;
+- (void)updateConfig:(id)arg1;
 - (void)stop;
 - (void)start;
 - (unsigned long long)powerState;

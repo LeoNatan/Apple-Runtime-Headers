@@ -6,14 +6,22 @@
 
 #import <AppKit/NSPreferences.h>
 
+@class NSSet;
+
 __attribute__((visibility("hidden")))
 @interface NSSimplePreferences : NSPreferences
 {
+    NSSet *_customButtons;
 }
 
++ (id)customButtonTarget;
++ (void)setCustomButtonTarget:(id)arg1;
 + (void)setBundleToSearch:(id)arg1;
+@property(nonatomic) __weak NSSet *_customButtons; // @synthesize _customButtons;
+- (void).cxx_destruct;
 - (id)_createGroupBoxForChildGrid:(id)arg1 title:(id)arg2 footer:(id)arg3;
 - (void)_insertRadioGroupForItem:(id)arg1 label:(id)arg2 intoGrid:(id)arg3 bundle:(id)arg4 stringsTable:(id)arg5;
+- (id)_createDescriptionLabelWithString:(id)arg1;
 - (id)_createPopUpButtonForItem:(id)arg1 bundle:(id)arg2 stringsTable:(id)arg3;
 - (id)_createToggleControlForItem:(id)arg1 valueKeyPath:(id)arg2 bindOptions:(id)arg3 title:(id)arg4 inBundle:(id)arg5 stringsTable:(id)arg6;
 - (id)_createSliderFor:(id)arg1;
@@ -21,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)_insertFooterText:(id)arg1 intoGrid:(id)arg2;
 - (id)_createGridViewWithIdentifier:(id)arg1;
 - (id)_viewForItems:(id)arg1 rootBundle:(id)arg2;
+- (void)addSpacerTo:(id)arg1;
 - (id)_boxWithCenteredContent:(id)arg1 contentHuggingPriority:(float)arg2;
 - (BOOL)usesButtons;
 - (void)_addTabForSettingsPlist:(id)arg1 inBundle:(id)arg2 withTitle:(id)arg3;
@@ -28,6 +37,8 @@ __attribute__((visibility("hidden")))
 - (void)showPreferencesPanelForOwner:(id)arg1;
 - (void)loadFromSettingsBundle;
 - (id)settingsBundlePathToUse;
+- (void)_updateCustomButtonTargets;
+- (id)_customButtonTargetToUse;
 - (id)init;
 
 @end

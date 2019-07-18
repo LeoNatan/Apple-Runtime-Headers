@@ -51,6 +51,8 @@
 - (BOOL)accessibilityAllowsOverriddenAttributesWhenIgnored;
 - (BOOL)accessibilitySupportsOverriddenAttributes;
 - (id)accessibilityOverriddenAttributes;
+- (BOOL)_accessibilitySetOverrideCustomActions:(id)arg1;
+- (BOOL)_accessibilitySetOverrideIsAccessibilityElement:(BOOL)arg1;
 - (BOOL)_accessibilitySetOverrideValue:(id)arg1 forAttribute:(id)arg2;
 - (BOOL)accessibilitySetOverrideValue:(id)arg1 forAttribute:(id)arg2;
 - (void)accessibilityDecodeOverriddenAttributes:(id)arg1;

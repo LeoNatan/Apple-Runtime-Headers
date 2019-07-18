@@ -6,7 +6,7 @@
 
 #import <MapKit/MKCalloutView.h>
 
-@class MKSmallCalloutView, UIVisualEffectView, _MKCalloutContentView, _MKCalloutLayer;
+@class MKSmallCalloutView, UIView, UIVisualEffectView, _MKCalloutLayer, _MKStandardCalloutMaskView;
 
 __attribute__((visibility("hidden")))
 @interface MKStandardCalloutView : MKCalloutView
@@ -27,14 +27,18 @@ __attribute__((visibility("hidden")))
         unsigned int isObserving:1;
         unsigned int reserved:26;
     } _flags;
-    _MKCalloutLayer *_contentStrokeLayer;
-    _MKCalloutContentView *_contentView;
-    MKSmallCalloutView *_calloutView;
+    _Bool _animatingMapToShow;
+    _Bool _dismissed;
+    _MKStandardCalloutMaskView *_maskView;
     _MKCalloutLayer *_maskLayer;
+    _MKCalloutLayer *_contentStrokeLayer;
+    UIView *_contentView;
+    MKSmallCalloutView *_calloutView;
     UIVisualEffectView *_backdropView;
 }
 
 + (float)defaultHeight;
++ (Class)layerClass;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_adaptToUserInterfaceStyle;
@@ -49,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)_calloutAccessoryControlTapped:(id)arg1;
 - (void)dismissAnimated:(_Bool)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)showAnimated:(_Bool)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (_Bool)hasPendingVisibility;
 - (void)completeBounceAnimation;
 - (void)_markDidMoveCalled;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void *)arg3;

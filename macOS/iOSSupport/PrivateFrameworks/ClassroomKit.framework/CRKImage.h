@@ -18,6 +18,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (double)screenScale;
 + (struct CGImage *)resizedCGImageFromImage:(struct CGImage *)arg1 newSize:(struct CGSize)arg2;
 + (id)imageWithUnderlyingImage:(id)arg1;
 + (id)imageWithCGImage:(struct CGImage *)arg1;

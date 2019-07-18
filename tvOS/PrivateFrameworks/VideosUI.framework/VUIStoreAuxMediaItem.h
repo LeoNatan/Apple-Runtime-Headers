@@ -17,6 +17,7 @@
     _Bool _disableResumeMenu;
     _Bool _isForDownload;
     _Bool _disableScrubbing;
+    _Bool _sharedPurchase;
     _Bool _isHLS;
     NSURL *_fpsCertificateURL;
     NSURL *_fpsKeyServerURL;
@@ -41,6 +42,7 @@
 @property(retain, nonatomic) TVPPlayer *scrubPlayer; // @synthesize scrubPlayer=_scrubPlayer;
 @property(retain, nonatomic) VUIMutableBookmark *bookmark; // @synthesize bookmark=_bookmark;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
+@property(nonatomic) _Bool sharedPurchase; // @synthesize sharedPurchase=_sharedPurchase;
 @property(nonatomic) _Bool disableScrubbing; // @synthesize disableScrubbing=_disableScrubbing;
 @property(nonatomic) _Bool isForDownload; // @synthesize isForDownload=_isForDownload;
 @property(nonatomic) _Bool disableResumeMenu; // @synthesize disableResumeMenu=_disableResumeMenu;
@@ -55,9 +57,12 @@
 - (void)_keepKeyLoaderAlive:(id)arg1;
 - (void)storeFPSKeyLoader:(id)arg1 didLoadOfflineKeyData:(id)arg2 forKeyRequest:(id)arg3;
 - (void)storeFPSKeyLoader:(id)arg1 willFailWithError:(id)arg2 forKeyRequest:(id)arg3;
+- (void)loadFairPlayStreamingKeyRequests:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)loadFairPlayStreamingKeyRequests:(id)arg1;
 - (void)cleanUpMediaItem;
 - (void)updateBookmarkWithSuggestedTime:(double)arg1 forElapsedTime:(double)arg2 duration:(double)arg3 playbackOfMediaItemIsEnding:(_Bool)arg4;
+- (id)_replacementErrorForSharedPurchasePlaybackError:(id)arg1;
+- (id)_replacementErrorForPlaybackError:(id)arg1;
 - (id)replacementErrorForPlaybackError:(id)arg1;
 - (void)prepareForLoadingWithCompletion:(CDUnknownBlockType)arg1;
 - (id)mediaItemMetadataForProperty:(id)arg1;

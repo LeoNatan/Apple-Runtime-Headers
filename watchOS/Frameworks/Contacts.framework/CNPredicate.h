@@ -14,15 +14,14 @@
 {
     NSPredicate *_cn_predicate;
     _Bool _augmentMainStoreResults;
-    CDUnknownBlockType _cn_resultTransform;
     NSArray *_mainStoreContactIdentifiers;
 }
 
 + (id)os_log;
 @property(nonatomic) _Bool augmentMainStoreResults; // @synthesize augmentMainStoreResults=_augmentMainStoreResults;
 @property(retain, nonatomic) NSArray *mainStoreContactIdentifiers; // @synthesize mainStoreContactIdentifiers=_mainStoreContactIdentifiers;
-@property(readonly, copy) CDUnknownBlockType cn_resultTransform; // @synthesize cn_resultTransform=_cn_resultTransform;
 - (void).cxx_destruct;
+- (CDUnknownBlockType)cn_resultTransformWithMatchInfos:(id)arg1;
 - (id)shortDebugDescription;
 - (void)mainStoreDidFetchContacts:(id)arg1 unifiedFetch:(_Bool)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

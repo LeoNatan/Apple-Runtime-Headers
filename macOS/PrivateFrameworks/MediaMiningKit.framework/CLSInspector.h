@@ -19,6 +19,7 @@
 
 + (void)invalidateSharedTransientCaches;
 + (void)invalidateSharedPersistentCaches;
++ (void)invalidateSharedPersistentCachesForGeoServiceProviderChange;
 + (void)invalidateAllSharedCaches;
 + (id)sharedInspector;
 - (void).cxx_destruct;

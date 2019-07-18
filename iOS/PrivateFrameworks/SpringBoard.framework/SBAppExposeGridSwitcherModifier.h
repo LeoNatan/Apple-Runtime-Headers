@@ -17,11 +17,14 @@
     SBGridLayoutSwitcherModifier *_gridLayoutModifier;
     unsigned long long _initialNumberOfRows;
     double _initialCardScale;
+    _Bool _didPresentFromHomeScreen;
     _Bool _isTethered;
     id <SBFluidSwitcherScrollProvidingDelegate> _scrollDelegate;
     SBSwitcherModifier<SBFluidSwitcherScrollProviding> *_multitaskingModifier;
+    NSString *_appExposeBundleID;
 }
 
+@property(readonly, copy, nonatomic) NSString *appExposeBundleID; // @synthesize appExposeBundleID=_appExposeBundleID;
 @property(readonly, nonatomic) SBSwitcherModifier<SBFluidSwitcherScrollProviding> *multitaskingModifier; // @synthesize multitaskingModifier=_multitaskingModifier;
 @property(readonly, nonatomic) _Bool isTethered; // @synthesize isTethered=_isTethered;
 @property(nonatomic) __weak id <SBFluidSwitcherScrollProvidingDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
@@ -31,6 +34,7 @@
 - (unsigned long long)_gridLayoutNumberOfRows;
 - (double)trailingPadding;
 - (double)leadingPadding;
+- (double)distanceToLeadingEdgeOfLeadingCardFromTrailingEdgeOfScreenWithVisibleIndexToStartSearch:(unsigned long long)arg1;
 - (struct CGSize)contentSize;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;
@@ -47,10 +51,11 @@
 - (id)handleMainTransitionEvent:(id)arg1;
 - (id)handleRemovalEvent:(id)arg1;
 - (id)handleTapOutsideToDismissEvent:(id)arg1;
+- (id)handleTapAppLayoutEvent:(id)arg1;
 @property(readonly, nonatomic) double cardScale;
 - (void)didMoveToParentModifier:(id)arg1;
-- (id)initWithTetheredMode:(_Bool)arg1 multitaskingModifier:(id)arg2 initialNumberOfRows:(unsigned long long)arg3 initialCardScale:(double)arg4;
-- (id)initWithTetheredMode:(_Bool)arg1 multitaskingModifier:(id)arg2;
+- (id)initWithTetheredMode:(_Bool)arg1 multitaskingModifier:(id)arg2 appExposeBundleID:(id)arg3 initialNumberOfRows:(unsigned long long)arg4 initialCardScale:(double)arg5;
+- (id)initWithTetheredMode:(_Bool)arg1 multitaskingModifier:(id)arg2 appExposeBundleID:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

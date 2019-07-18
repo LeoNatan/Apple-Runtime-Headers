@@ -14,6 +14,7 @@
 {
 }
 
++ (id)scoreInputSharedKeySet;
 + (id)scoreInputKeys;
 + (void)iterScoreInputsWithBlock:(CDUnknownBlockType)arg1;
 + (id)scoreInputsToNames;

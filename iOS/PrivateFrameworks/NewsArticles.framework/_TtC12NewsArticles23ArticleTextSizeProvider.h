@@ -9,10 +9,8 @@
 __attribute__((visibility("hidden")))
 @interface _TtC12NewsArticles23ArticleTextSizeProvider : NSObject
 {
-    // Error parsing type: , name: observers
 }
 
-- (void).cxx_destruct;
 - (void)textSizeDidChange;
 - (id)init;
 

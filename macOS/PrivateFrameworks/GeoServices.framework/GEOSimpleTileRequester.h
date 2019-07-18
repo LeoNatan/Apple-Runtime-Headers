@@ -27,6 +27,7 @@
     BOOL _subclassImplementsTileEdition;
     BOOL _hasRemainingTileKeys;
     GEOTileKeyMap *_signpostIDs;
+    GEOTileKeyMap *_tileLoaderCreateTimes;
     unsigned int _highestRunningOperationPriority;
     geo_isolater *_highestRunningOperationPriorityIsolation;
     BOOL _includeReasonHeader;

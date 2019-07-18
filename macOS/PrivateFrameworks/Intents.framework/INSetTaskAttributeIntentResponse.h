@@ -22,6 +22,7 @@
 - (void)setPropertiesByName:(id)arg1;
 - (id)propertiesByName;
 - (id)_dictionaryRepresentation;
+@property unsigned long long warnings;
 @property(copy) INTask *modifiedTask;
 - (long long)_codeWithName:(id)arg1;
 - (long long)_intentResponseCode;

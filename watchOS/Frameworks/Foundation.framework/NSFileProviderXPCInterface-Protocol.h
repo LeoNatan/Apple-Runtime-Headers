@@ -9,6 +9,7 @@
 @class NSSet, NSString, NSURL;
 
 @protocol NSFileProviderXPCInterface <NSFileCoordinationDebugInfoXPCInteface>
+- (void)movingItemAtURL:(NSURL *)arg1 requiresProvidingWithDestinationURL:(NSURL *)arg2 completionHandler:(void (^)(_Bool))arg3;
 - (oneway void)observeEndOfWriteAtURL:(NSURL *)arg1 forClaimWithID:(id)arg2 fromProcessWithIdentifier:(int)arg3;
 - (oneway void)observePresentationChangeOfKind:(NSString *)arg1 forPresenterWithID:(id)arg2 fromProcessWithIdentifier:(int)arg3 observedUbiquityAttributes:(NSSet *)arg4 url:(NSURL *)arg5 newURL:(NSURL *)arg6;
 - (void)providePhysicalItemForURL:(NSURL *)arg1 completionHandler:(void (^)(NSURL *))arg2;

@@ -9,7 +9,6 @@
 @interface _TtC7NewsUI235MyMagazinesBlueprintModifierFactory : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: issueModelFactory
-    // Error parsing type: , name: config
     // Error parsing type: , name: bundleSubscriptionManager
 }
 

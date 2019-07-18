@@ -4,13 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HealthUI/HKQuantityDistributionSeries.h>
+#import <HealthUI/HKGraphSeries.h>
 
-@interface _TtC15HealthRecordsUI24MedicalRecordChartSeries : HKQuantityDistributionSeries
+@interface _TtC15HealthRecordsUI24MedicalRecordChartSeries : HKGraphSeries
 {
+    // Error parsing type: , name: selectedStrokeStyle
+    // Error parsing type: , name: unselectedStrokeStyle
 }
 
+- (void).cxx_destruct;
 - (id)init;
+- (double)yAxisDifferenceToPoint:(struct CGPoint)arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect)arg3;
+- (double)xAxisDistanceFromPoint:(struct CGPoint)arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect)arg3;
+- (double)distanceFromPoint:(struct CGPoint)arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect)arg3;
+- (_Bool)blockCoordinateIsVisibleInsideOfChartRect:(struct CGRect)arg1 blockCoordinate:(id)arg2;
+- (_Bool)supportsMultiTouchSelection;
+- (void)drawSeriesWithBlockCoordinates:(id)arg1 axisRect:(struct CGRect)arg2 zoomLevelConfiguration:(id)arg3 pointTransform:(struct CGAffineTransform)arg4 renderContext:(struct CGContext *)arg5 secondaryRenderContext:(id)arg6;
+- (id)coordinatesForBlock:(id)arg1 blockPath:(CDStruct_912cb5d2)arg2 xAxis:(id)arg3 yAxis:(id)arg4;
 @property(nonatomic, readonly) CDStruct_662257c6 selectedPathRange;
 
 @end

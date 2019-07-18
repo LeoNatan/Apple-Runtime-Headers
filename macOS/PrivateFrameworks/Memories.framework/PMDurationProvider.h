@@ -25,7 +25,6 @@
 @property(retain, nonatomic) NSArray *localizedDurations; // @synthesize localizedDurations=_localizedDurations;
 @property(nonatomic) double currentDuration; // @synthesize currentDuration=_currentDuration;
 @property(nonatomic) double customDuration; // @synthesize customDuration=_customDuration;
-@property(readonly, nonatomic) double maxDuration; // @synthesize maxDuration=_maxDuration;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(nonatomic) __weak id <PMEditProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) VEKProduction *production; // @synthesize production=_production;
@@ -35,6 +34,7 @@
 - (void)updateLocalizedNames;
 - (id)displayNameForIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfItems;
+@property(readonly, nonatomic) double maxDuration; // @synthesize maxDuration=_maxDuration;
 - (void)updateWithResult:(id)arg1;
 - (id)initWithProduction:(id)arg1;
 

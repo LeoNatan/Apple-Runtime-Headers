@@ -137,9 +137,9 @@ __attribute__((visibility("hidden")))
 - (void)stateChangeTo:(int)arg1;
 - (void)resetRampingStatus;
 - (void)updateInternalStatus;
-- (_Bool)doRateControlWithBasebandStatistics:(CDStruct_b3eb8f4a)arg1;
-- (_Bool)doRateControlWithVCRCStatistics:(CDStruct_b3eb8f4a)arg1;
-- (_Bool)doRateControlWithStatistics:(CDStruct_b3eb8f4a)arg1;
+- (_Bool)doRateControlWithBasebandStatistics:(CDStruct_b21f1e06)arg1;
+- (_Bool)doRateControlWithVCRCStatistics:(CDStruct_b21f1e06)arg1;
+- (_Bool)doRateControlWithStatistics:(CDStruct_b21f1e06)arg1;
 - (void)enableBasebandDump:(void *)arg1;
 - (void)enableLogDump:(void *)arg1 enablePeriodicLogging:(_Bool)arg2;
 - (void)configure:(struct VCRateControlAlgorithmConfig)arg1 restartRequired:(_Bool)arg2;

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int priority;
 @property(readonly, nonatomic) NSString *clientIdentifier;
 @property(readonly, nonatomic) NSDictionary *aps;
+@property(readonly, nonatomic) int alertType;
 @property(readonly, nonatomic) NSString *actionType;
 @property(readonly, nonatomic) NSNumber *accountIdentifier;
 @property(readonly, nonatomic) ACAccount *account;

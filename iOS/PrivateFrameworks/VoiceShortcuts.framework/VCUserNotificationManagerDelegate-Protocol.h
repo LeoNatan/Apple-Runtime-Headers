@@ -6,10 +6,10 @@
 
 #import <VoiceShortcuts/NSObject-Protocol.h>
 
-@class NSString;
+@class NSString, VCUserNotificationManager;
 
 @protocol VCUserNotificationManagerDelegate <NSObject>
-- (void)userDidDismissTriggerWithIdentifier:(NSString *)arg1;
-- (void)userDidConfirmToRunTriggerWithIdentifier:(NSString *)arg1;
+- (void)notificationManager:(VCUserNotificationManager *)arg1 didDismissTriggerWithIdentifier:(NSString *)arg2;
+- (void)notificationManager:(VCUserNotificationManager *)arg1 receivedConfirmationToRunTriggerWithIdentifier:(NSString *)arg2;
 @end
 

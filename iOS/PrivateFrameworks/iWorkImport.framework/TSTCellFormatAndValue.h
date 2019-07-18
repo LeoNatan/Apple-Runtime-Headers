@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
     _Bool _applySpareFormatOnly;
     int _spareFormatType;
     _Bool _boolValue;
-    double _doubleValue;
+    struct TSUDecimal _decimalValue;
     NSObject *_objValue;
     NSString *_formattedValue;
     TSWPStorage *_formattedRichTextStorage;
@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 + (id)formatAndValueFromRichTextCell:(id)arg1 updatingStorageWithBlock:(CDUnknownBlockType)arg2;
 + (id)formatAndValueFromCell:(id)arg1 useAllSpareFormats:(_Bool)arg2 forceNoContent:(_Bool)arg3;
 + (id)formatAndValueFromCell:(id)arg1 useAllSpareFormats:(_Bool)arg2;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)p_formatForFormatType:(unsigned int)arg1;
 - (void)saveToPropertyCommandMessage:(struct Message *)arg1 archiver:(id)arg2;
@@ -51,7 +52,7 @@ __attribute__((visibility("hidden")))
 - (id)getCurrentFormat;
 @property(readonly, nonatomic) _Bool isApplySpareFormatOnly;
 @property(readonly, nonatomic) _Bool isFormulaSyntaxError;
-@property(readonly, nonatomic) double numberOrCurrencyDoubleValue;
+@property(readonly, nonatomic) struct TSUDecimal numberOrCurrencyDecimalValue;
 @property(readonly, nonatomic) int valueType;
 - (id)p_copyStorage:(id)arg1;
 - (id)copyForApplyingNoContentWithSuppressApplyValue:(_Bool)arg1;
@@ -62,7 +63,6 @@ __attribute__((visibility("hidden")))
 - (id)initFromCell:(id)arg1 useAllSpareFormats:(_Bool)arg2;
 @property(readonly, nonatomic) TSWPStorage *richTextOrErrorTextStorageValue;
 @property(readonly, copy, nonatomic) NSString *stringValue;
-- (void)setDateValue:(id)arg1;
 @property(readonly, copy, nonatomic) NSDate *dateValue;
 
 // Remaining properties

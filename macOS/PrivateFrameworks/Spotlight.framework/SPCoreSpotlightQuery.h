@@ -6,10 +6,11 @@
 
 #import <Spotlight/SPMetadataQuery.h>
 
-@class CSSearchQuery, NSMutableArray, PRSRankingItemRanker, SPMetadataPattern;
+@class CSSearchQuery, NSArray, NSMutableArray, PRSRankingItemRanker, SPMetadataPattern;
 
 @interface SPCoreSpotlightQuery : SPMetadataQuery
 {
+    NSArray *_rankingQueries;
     NSMutableArray *_results;
     NSMutableArray *_sections;
     PRSRankingItemRanker *_ranker;

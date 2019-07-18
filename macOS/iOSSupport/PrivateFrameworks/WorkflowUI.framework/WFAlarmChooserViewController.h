@@ -10,21 +10,19 @@
 #import <WorkflowUI/UITableViewDataSource-Protocol.h>
 #import <WorkflowUI/UITableViewDelegate-Protocol.h>
 
-@class MTAlarmDataSource, MTAlarmManager, NSMutableOrderedSet, NSString, UITableView;
+@class MTAlarmDataSource, NSMutableOrderedSet, NSString, UITableView;
 @protocol WFAlarmChooserViewControllerDelegate;
 
 @interface WFAlarmChooserViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MTAlarmDataSourceObserver>
 {
     id <WFAlarmChooserViewControllerDelegate> _delegate;
     UITableView *_tableView;
-    MTAlarmManager *_alarmManager;
     MTAlarmDataSource *_alarmDataSource;
     NSMutableOrderedSet *_checkedAlarmIDs;
 }
 
 @property(readonly, nonatomic) NSMutableOrderedSet *checkedAlarmIDs; // @synthesize checkedAlarmIDs=_checkedAlarmIDs;
 @property(readonly, nonatomic) MTAlarmDataSource *alarmDataSource; // @synthesize alarmDataSource=_alarmDataSource;
-@property(readonly, nonatomic) MTAlarmManager *alarmManager; // @synthesize alarmManager=_alarmManager;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <WFAlarmChooserViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -39,7 +37,7 @@
 - (BOOL)isModalInPresentation;
 - (void)viewDidLoad;
 - (void)loadView;
-- (id)initWithAlarmManager:(id)arg1 alarmDataSource:(id)arg2 checkedAlarmIDs:(id)arg3;
+- (id)initWithAlarmDataSource:(id)arg1 checkedAlarmIDs:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

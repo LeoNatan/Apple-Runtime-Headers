@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSString;
+@class HMDAccessoryNetworkCredential, NSString;
 
 @interface HMDUnpairedHAPAccessoryConfiguration : NSObject
 {
@@ -14,18 +14,18 @@
     NSString *_homeName;
     NSString *_setupCode;
     CDUnknownBlockType _setupCodeProvider;
-    NSData *_wiFiPSK;
+    HMDAccessoryNetworkCredential *_networkCredential;
     NSString *_isoCountryCode;
 }
 
 @property(readonly) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
-@property(readonly) NSData *wiFiPSK; // @synthesize wiFiPSK=_wiFiPSK;
+@property(readonly) HMDAccessoryNetworkCredential *networkCredential; // @synthesize networkCredential=_networkCredential;
 @property(readonly) BOOL requiresUserConsent; // @synthesize requiresUserConsent=_requiresUserConsent;
 @property(readonly) CDUnknownBlockType setupCodeProvider; // @synthesize setupCodeProvider=_setupCodeProvider;
 @property(readonly) NSString *setupCode; // @synthesize setupCode=_setupCode;
 @property(readonly) NSString *homeName; // @synthesize homeName=_homeName;
 - (void).cxx_destruct;
-- (id)initWithHomeName:(id)arg1 setupCode:(id)arg2 setupCodeProvider:(CDUnknownBlockType)arg3 requiresUserConsent:(BOOL)arg4 wiFiPSK:(id)arg5 country:(id)arg6;
+- (id)initWithHomeName:(id)arg1 setupCode:(id)arg2 setupCodeProvider:(CDUnknownBlockType)arg3 requiresUserConsent:(BOOL)arg4 networkCredential:(id)arg5 country:(id)arg6;
 
 @end
 

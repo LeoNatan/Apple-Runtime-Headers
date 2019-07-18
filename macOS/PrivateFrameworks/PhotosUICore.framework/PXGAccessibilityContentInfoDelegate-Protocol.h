@@ -11,6 +11,9 @@
 
 @protocol PXGAccessibilityContentInfoDelegate <NSObject>
 - (NSObject<PXAccessibilityView> *)accessibilityViewForSpriteIndex:(unsigned int)arg1;
+- (void)scrollToAccessibilityElement:(PXGReusableAccessibilityContentInfo *)arg1;
+- (PXGReusableAccessibilityContentInfo *)siblingForElement:(PXGReusableAccessibilityContentInfo *)arg1 inDirection:(unsigned long long)arg2;
+- (void)handleAccessibilitySelectedCells:(NSArray *)arg1;
 - (void)handleAccessibilitySelectedChildren:(NSArray *)arg1;
 - (BOOL)accessibilityPerformShowDefaultUIWithElement:(PXGReusableAccessibilityContentInfo *)arg1;
 - (BOOL)accessibilityPerformShowAlternateUIWithElement:(PXGReusableAccessibilityContentInfo *)arg1;

@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     TSWPCharacterStyle *_characterStyle;
     struct __CTFont *_ctFont;
     NSDictionary *_attributes;
-    CDStruct_5b0a1db3 _fontHeightInfo;
+    struct TSWPFontHeightInfo _fontHeightInfo;
 }
 
-@property(nonatomic) CDStruct_5b0a1db3 fontHeightInfo; // @synthesize fontHeightInfo=_fontHeightInfo;
+@property(nonatomic) struct TSWPFontHeightInfo fontHeightInfo; // @synthesize fontHeightInfo=_fontHeightInfo;
 @property(retain, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) struct __CTFont *ctFont; // @synthesize ctFont=_ctFont;
 @property(retain, nonatomic) TSWPCharacterStyle *characterStyle; // @synthesize characterStyle=_characterStyle;

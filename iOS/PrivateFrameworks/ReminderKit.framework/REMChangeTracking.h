@@ -6,18 +6,24 @@
 
 #import <objc/NSObject.h>
 
+@class NSSet;
 @protocol REMChangeTrackingClientIdentifying, REMDaemonController;
 
 @interface REMChangeTracking : NSObject
 {
     id <REMChangeTrackingClientIdentifying> _changeTrackingClientID;
     id <REMDaemonController> _daemonController;
+    NSSet *_transactionAuthorKeysToExclude;
 }
 
++ (id)defaultTransactionAuthorKeysToExclude;
++ (id)internalTransactionAuthorKeysToExclude;
 + (id)entityNamesToIncludeFromTrackingWithOptionProvider:(Class)arg1;
+@property(readonly, nonatomic) NSSet *transactionAuthorKeysToExclude; // @synthesize transactionAuthorKeysToExclude=_transactionAuthorKeysToExclude;
 @property(readonly, nonatomic) id <REMDaemonController> daemonController; // @synthesize daemonController=_daemonController;
 @property(readonly, nonatomic) id <REMChangeTrackingClientIdentifying> changeTrackingClientID; // @synthesize changeTrackingClientID=_changeTrackingClientID;
 - (void).cxx_destruct;
+- (id)changeSetByFilteringTransactionAuthorKeysToExcludeFromChangeSet:(id)arg1;
 - (void)_performChangeTrackingWithBlock:(CDUnknownBlockType)arg1 xpcErrorHandler:(CDUnknownBlockType)arg2;
 - (id)persistenceStoreIDForAccountID:(id)arg1 error:(id *)arg2;
 - (void)deleteHistoryBeforeDate:(id)arg1 error:(id *)arg2;
@@ -29,6 +35,7 @@
 - (id)currentChangeTokenWithError:(id *)arg1;
 - (id)currentChangeTokenForAccountTypes:(long long)arg1 error:(id *)arg2;
 - (id)currentChangeTokenForAllAccountsWithError:(id *)arg1;
+- (id)initWithClientID:(id)arg1 daemonController:(id)arg2 transactionAuthorKeysToExclude:(id)arg3;
 - (id)initWithClientID:(id)arg1 daemonController:(id)arg2;
 - (id)fetchAuxiliaryChangeInfosOfType:(Class)arg1 withChangeObject:(id)arg2 error:(id *)arg3;
 

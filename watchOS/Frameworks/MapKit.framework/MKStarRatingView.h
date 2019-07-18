@@ -14,20 +14,23 @@
     unsigned int _numLevels;
     float _padding;
     _Bool _highlighted;
+    NSMutableArray *_ratingViews;
+    int _numReviews;
+    int _starStyle;
     UIImage *_fullStarImage;
     UIImage *_halfStarImage;
     UIImage *_emptyStarImage;
     UIImage *_fullStarHighlightedImage;
     UIImage *_halfStarHighlightedImage;
     UIImage *_emptyStarHighlightedImage;
-    NSMutableArray *_ratingViews;
-    int _numReviews;
-    int _starStyle;
 }
 
 + (id)ratingAsAttributedString:(float)arg1 baseFont:(id)arg2 style:(int)arg3 theme:(id)arg4;
 + (id)ratingShortAsAttributedString:(float)arg1 baseFont:(id)arg2 theme:(id)arg3;
-+ (id)ratingShortForCarPlayAsAttributedString:(float)arg1 baseFont:(id)arg2 isFocused:(_Bool)arg3;
++ (id)textAttachmentimageNamed:(id)arg1 font:(id)arg2;
++ (id)halfStarTextAttachmentWithFont:(id)arg1;
++ (id)emptyStarTextAttachmentWithFont:(id)arg1;
++ (id)fullStarTextAttachmentWithFont:(id)arg1;
 + (id)colorForRating:(float)arg1;
 @property(retain, nonatomic) UIImage *emptyStarHighlightedImage; // @synthesize emptyStarHighlightedImage=_emptyStarHighlightedImage;
 @property(retain, nonatomic) UIImage *halfStarHighlightedImage; // @synthesize halfStarHighlightedImage=_halfStarHighlightedImage;

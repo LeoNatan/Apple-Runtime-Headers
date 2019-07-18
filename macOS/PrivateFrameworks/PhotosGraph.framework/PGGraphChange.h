@@ -11,6 +11,7 @@
 }
 
 - (id)description;
+@property(readonly, nonatomic) unsigned long long changeCount;
 @property(readonly) unsigned long long type;
 
 @end

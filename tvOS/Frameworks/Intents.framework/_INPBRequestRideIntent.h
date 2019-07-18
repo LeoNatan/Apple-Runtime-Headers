@@ -18,6 +18,7 @@
         unsigned int usesApplePayForPayment:1;
     } _has;
     _Bool _usesApplePayForPayment;
+    _Bool __encodeLegacyGloryData;
     _INPBLocation *_dropOffLocation;
     _INPBIntentMetadata *_intentMetadata;
     _INPBInteger *_partySize;
@@ -30,6 +31,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) _Bool usesApplePayForPayment; // @synthesize usesApplePayForPayment=_usesApplePayForPayment;
 @property(retain, nonatomic) _INPBDateTimeRange *scheduledPickupTime; // @synthesize scheduledPickupTime=_scheduledPickupTime;
 @property(retain, nonatomic) _INPBDataString *rideOptionName; // @synthesize rideOptionName=_rideOptionName;

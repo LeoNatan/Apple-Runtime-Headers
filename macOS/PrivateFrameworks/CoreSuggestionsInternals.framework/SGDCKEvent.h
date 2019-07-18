@@ -15,13 +15,14 @@
     double _creationTimestamp;
     double _lastModifiedTimestamp;
     long long _parentEntityType;
-    unsigned long long _categoryType;
+    int _categoryType;
     NSString *_content;
     NSString *_domain;
     NSString *_extraKey;
     NSString *_groupId;
     SGDCKInteractionInfo *_interactionInfo;
     NSMutableArray *_locations;
+    NSData *_metadata;
     NSData *_schemaOrg;
     NSString *_sourceKey;
     NSString *_templateName;
@@ -40,9 +41,10 @@
 }
 
 + (Class)locationsType;
+@property(retain, nonatomic) NSData *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic) long long parentEntityType; // @synthesize parentEntityType=_parentEntityType;
 @property(retain, nonatomic) SGDCKInteractionInfo *interactionInfo; // @synthesize interactionInfo=_interactionInfo;
-@property(nonatomic) unsigned long long categoryType; // @synthesize categoryType=_categoryType;
+@property(nonatomic) int categoryType; // @synthesize categoryType=_categoryType;
 @property(retain, nonatomic) NSString *templateName; // @synthesize templateName=_templateName;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(retain, nonatomic) NSData *schemaOrg; // @synthesize schemaOrg=_schemaOrg;
@@ -67,10 +69,11 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasMetadata;
 @property(nonatomic) BOOL hasParentEntityType;
 @property(readonly, nonatomic) BOOL hasInteractionInfo;
-- (unsigned long long)StringAsCategoryType:(id)arg1;
-- (id)categoryTypeAsString:(unsigned long long)arg1;
+- (int)StringAsCategoryType:(id)arg1;
+- (id)categoryTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasCategoryType;
 @property(readonly, nonatomic) BOOL hasTemplateName;
 @property(readonly, nonatomic) BOOL hasDomain;

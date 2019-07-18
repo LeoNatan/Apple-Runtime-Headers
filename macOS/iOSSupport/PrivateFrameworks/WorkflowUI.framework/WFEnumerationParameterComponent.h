@@ -22,6 +22,7 @@
     UIColor *_tintColor;
 }
 
++ (BOOL)editsMultipleValues;
 + (id)newWithParameter:(id)arg1 state:(id)arg2 updateBlock:(CDUnknownBlockType)arg3 options:(struct WFParameterComponentOptions)arg4 variableProvider:(id)arg5 variableUIDelegate:(id)arg6 navigationContext:(id)arg7 labelsToAlignTo:(id)arg8;
 + (unsigned long long)variableResultTypeForParameter:(id)arg1;
 @property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;

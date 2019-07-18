@@ -30,6 +30,7 @@
 - (double)desiredHeight;
 - (_Bool)removedAfterDialogProgresses;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (_Bool)_canShowWhileLocked;
 - (_Bool)_shouldSkipAnimationsInAlternateSpeeds;
 - (void)_aceObjectViewControllerWillBeRemoved;
 - (double)_insertionAnimatedZPosition;

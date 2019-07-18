@@ -116,6 +116,7 @@
 @property(readonly, nonatomic) UIFont *playbackTimeLabelFont;
 @property(readonly, nonatomic) UIColor *videoScrubberTileBackgroundColor;
 @property(readonly, nonatomic) UIColor *playheadBackgroundColor;
+@property(readonly, nonatomic) UIColor *playheadOutlineColor;
 @property(readonly, nonatomic) UIColor *playheadColor;
 @property(readonly, nonatomic) UIFont *photoBrowserTimeTitleFont;
 @property(readonly, nonatomic) UIFont *photoBrowserPhotoSubtitleFont;

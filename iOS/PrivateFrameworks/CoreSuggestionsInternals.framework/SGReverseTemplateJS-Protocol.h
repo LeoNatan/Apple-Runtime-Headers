@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSDictionary;
+@class NSDictionary;
 
 @protocol SGReverseTemplateJS
 - (void)emailToJsonLd:(NSDictionary *)arg1 reply:(void (^)(NSDictionary *))arg2;
-- (void)schemaOrgToOutput:(NSArray *)arg1 reply:(void (^)(NSArray *, NSArray *, NSDictionary *))arg2;
+- (void)schemaOrgToOutput:(NSDictionary *)arg1 reply:(void (^)(NSArray *, NSArray *, NSDictionary *))arg2;
 - (void)textMessageToOutput:(NSDictionary *)arg1 reply:(void (^)(NSArray *, NSArray *, NSDictionary *))arg2;
 - (void)emailToOutput:(NSDictionary *)arg1 reply:(void (^)(NSArray *, NSArray *, NSDictionary *))arg2;
 - (void)shouldDownloadFull:(NSDictionary *)arg1 reply:(void (^)(_Bool))arg2;

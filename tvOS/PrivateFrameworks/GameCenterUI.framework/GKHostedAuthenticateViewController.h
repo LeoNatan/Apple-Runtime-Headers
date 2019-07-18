@@ -19,7 +19,7 @@
     NSError *_error;
     CDUnknownBlockType _remoteViewReadyHandler;
     NSString *_lastPersonalizationVersionDisplayed;
-    NSString *_lastPrivacyNoticeVersionDisplayed;
+    unsigned long long _lastPrivacyNoticeVersionDisplayed;
     GKAuthenticateHostViewController *_extensionHostViewController;
     long long _mode;
     CDUnknownBlockType _dismissCompletionHandler;
@@ -29,7 +29,7 @@
 @property(copy, nonatomic) CDUnknownBlockType dismissCompletionHandler; // @synthesize dismissCompletionHandler=_dismissCompletionHandler;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) GKAuthenticateHostViewController *extensionHostViewController; // @synthesize extensionHostViewController=_extensionHostViewController;
-@property(retain, nonatomic) NSString *lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
+@property(nonatomic) unsigned long long lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
 @property(retain, nonatomic) NSString *lastPersonalizationVersionDisplayed; // @synthesize lastPersonalizationVersionDisplayed=_lastPersonalizationVersionDisplayed;
 @property(copy, nonatomic) CDUnknownBlockType remoteViewReadyHandler; // @synthesize remoteViewReadyHandler=_remoteViewReadyHandler;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -49,6 +49,7 @@
 - (void)_setupExtensionHostViewController;
 - (void)_setupChildViewController;
 - (void)continueWithMode:(long long)arg1;
+- (void)setModalPresentationStyle:(long long)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)dealloc;
 - (id)init;

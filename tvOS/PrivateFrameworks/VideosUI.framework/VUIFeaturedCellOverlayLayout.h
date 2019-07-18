@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class TVImageLayout, VUIButtonLayout, VUITextLayout;
+@class VUIAppleTVChannelLogoLayout, VUIButtonLayout, VUITextLayout;
 
 __attribute__((visibility("hidden")))
 @interface VUIFeaturedCellOverlayLayout : NSObject
 {
     long long _overlayType;
-    TVImageLayout *_logoImageLayout;
+    VUIAppleTVChannelLogoLayout *_channelLogoLayout;
     VUITextLayout *_titleLayout;
     VUITextLayout *_subtitleLayout;
     VUITextLayout *_disclaimerLayout;
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUITextLayout *disclaimerLayout; // @synthesize disclaimerLayout=_disclaimerLayout;
 @property(retain, nonatomic) VUITextLayout *subtitleLayout; // @synthesize subtitleLayout=_subtitleLayout;
 @property(retain, nonatomic) VUITextLayout *titleLayout; // @synthesize titleLayout=_titleLayout;
-@property(retain, nonatomic) TVImageLayout *logoImageLayout; // @synthesize logoImageLayout=_logoImageLayout;
+@property(retain, nonatomic) VUIAppleTVChannelLogoLayout *channelLogoLayout; // @synthesize channelLogoLayout=_channelLogoLayout;
 @property(nonatomic) long long overlayType; // @synthesize overlayType=_overlayType;
 - (void).cxx_destruct;
 - (void)_setupLayouts;

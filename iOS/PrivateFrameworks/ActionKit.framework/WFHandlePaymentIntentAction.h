@@ -25,6 +25,7 @@
 - (id)amountBelowMinimumErrorWithAmount:(id)arg1 sending:(_Bool)arg2;
 - (id)credentialsUnverifiedError;
 - (id)noRecipientAccountError:(_Bool)arg1;
+- (id)localizedKeyParameterDisplayName;
 - (id)localizedPaymentServiceName;
 - (id)errorFromResolutionResult:(id)arg1 forSlot:(id)arg2 onIntent:(id)arg3;
 - (_Bool)opensInApp;

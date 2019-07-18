@@ -8,7 +8,7 @@
 
 #import <QuickLook/PHVideoScrubberFilmstripView-Protocol.h>
 
-@class AVAsset, NSString, UIImage, UIImageView;
+@class AVAsset, AVVideoComposition, NSString, UIImage, UIImageView;
 
 __attribute__((visibility("hidden")))
 @interface QLWaveformView : UIView <PHVideoScrubberFilmstripView>
@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(copy, nonatomic) AVVideoComposition *videoComposition;
 
 @end
 

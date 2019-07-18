@@ -7,13 +7,13 @@
 #import <TVMLKit/IKAppDocumentDelegatePrivate-Protocol.h>
 
 @class IKAppDocument, IKViewElement, NSString, TVTemplateFeaturesManager, UIResponder, UIView, UIViewController;
-@protocol TVInteractionController;
+@protocol TVPreviewInteractionController;
 
 @protocol _TVIKAppDocumentDelegate <IKAppDocumentDelegatePrivate>
 - (struct CGSize)tv_adjustedWindowSizeForDocument:(IKAppDocument *)arg1;
 
 @optional
-- (id <TVInteractionController>)tv_interactionPreviewControllerForViewController:(UIViewController *)arg1 presentingView:(UIView *)arg2 presentingElement:(IKViewElement *)arg3;
+- (id <TVPreviewInteractionController>)tv_interactionPreviewControllerForViewController:(UIViewController *)arg1 presentingView:(UIView *)arg2 presentingElement:(IKViewElement *)arg3;
 - (_Bool)tv_isPresentedModalForDocument:(IKAppDocument *)arg1;
 - (TVTemplateFeaturesManager *)tv_featuresManagerForDocument:(IKAppDocument *)arg1;
 - (_Bool)tv_handleEventForDocument:(IKAppDocument *)arg1 eventName:(NSString *)arg2 targetResponder:(UIResponder *)arg3 viewElement:(IKViewElement *)arg4 extraInfo:(id *)arg5;

@@ -7,7 +7,7 @@
 #import <HomeKitBackingStore/HMBMirrorInput.h>
 
 @interface HMBMirrorInput (FirewallRuleManager)
-- (id)frmSyncCommitWithOptions:(id)arg1;
-- (id)frmSyncCommitProcessingResultWithOptions:(id)arg1 error:(id *)arg2;
++ (_Bool)frmSyncCommitWithMirrorInput:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (_Bool)frmSyncCommitWithOptions:(id)arg1 error:(id *)arg2;
 @end
 

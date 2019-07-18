@@ -7,6 +7,8 @@
 #import <TeaUI/_TtC5TeaUI11MenuManager.h>
 
 @interface _TtC5TeaUI11MenuManager (TeaUI)
+- (void)handleShareCommandWithSender:(id)arg1;
+- (void)handleAlternateMenuCommandWithSender:(id)arg1;
 - (void)handleMenuCommandWithSender:(id)arg1;
 @end
 

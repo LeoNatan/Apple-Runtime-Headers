@@ -25,6 +25,7 @@
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
 - (id)_colorComplicationViewForSlot:(id)arg1;
 - (void)_enumerateColorComplicationSlotsWithBlock:(CDUnknownBlockType)arg1;
+- (_Bool)_wantsConstantSpeedZoom;
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(long long)arg2;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (double)_keylineCornerRadiusForComplicationSlot:(id)arg1;

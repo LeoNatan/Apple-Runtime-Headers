@@ -15,6 +15,8 @@
 + (id)_renderRingsUsingRingsView:(id)arg1 withDiameter:(float)arg2 thickness:(float)arg3 interspacing:(float)arg4;
 + (id)renderRingsUsingRingsView:(id)arg1 forMovePercentage:(double)arg2 exercisePercentage:(double)arg3 standPercentage:(double)arg4 withDiameter:(float)arg5 thickness:(float)arg6 interspacing:(float)arg7;
 + (id)renderSingleRingUsingRingsView:(id)arg1 forPercentage:(double)arg2 withDiameter:(float)arg3 thickness:(float)arg4 topColor:(id)arg5 bottomColor:(id)arg6;
++ (id)renderRingGroupController:(id)arg1 withBackgroundColor:(id)arg2 andRenderer:(id)arg3;
++ (id)renderRingGroupController:(id)arg1 withRenderer:(id)arg2;
 
 @end
 

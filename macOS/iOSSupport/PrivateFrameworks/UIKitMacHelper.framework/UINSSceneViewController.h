@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)acceptKeyViewHandoff:(BOOL)arg1;
 - (void)noteFocusRingMaskChanged;
 - (double)_rasterizationScale;
-- (id)_filter;
+- (id)_scalingFilter;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_observeDefaultsChangeKey:(id)arg1;
 - (void)dealloc;

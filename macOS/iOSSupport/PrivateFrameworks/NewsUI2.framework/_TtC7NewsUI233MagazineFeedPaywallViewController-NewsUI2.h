@@ -7,6 +7,7 @@
 #import <NewsUI2/_TtC7NewsUI233MagazineFeedPaywallViewController.h>
 
 @interface _TtC7NewsUI233MagazineFeedPaywallViewController (NewsUI2)
+- (void)viewWillLayoutSubviews;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

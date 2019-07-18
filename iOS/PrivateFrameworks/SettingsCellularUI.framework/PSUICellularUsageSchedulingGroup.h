@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)calculateUsage;
 - (void)didResetStatistics;
 - (void)selectedBillingPeriodChanged:(unsigned long long)arg1;
+- (void)presentAlert:(id)arg1;
 - (void)didFailToSetPolicy:(id)arg1 forSpecifier:(id)arg2;
 - (void)prefetchResourcesFor:(id)arg1;
 - (id)specifiers;

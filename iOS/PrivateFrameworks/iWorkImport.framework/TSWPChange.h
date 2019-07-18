@@ -39,12 +39,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *textAttributeUUIDString;
 - (void)trackedTextDidChange;
 - (void)saveToArchiver:(id)arg1;
-- (void)p_validateSession;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)i_setTextAttributeUUIDString:(id)arg1;
 @property(readonly, nonatomic) TSUColor *changeAdornmentsColor;
 @property(readonly, nonatomic) TSUColor *textMarkupColor;
 @property(readonly, nonatomic) _Bool showsHiddenDeletionMarkup;
+- (void)migrateWithDocumentRoot:(id)arg1;
 @property(readonly, nonatomic) _Bool showsMarkup;
 @property(readonly, nonatomic, getter=isHidden) _Bool hidden;
 @property(readonly, nonatomic) _Bool isDeletion;

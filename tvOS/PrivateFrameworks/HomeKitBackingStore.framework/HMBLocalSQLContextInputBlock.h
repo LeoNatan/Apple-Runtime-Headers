@@ -6,10 +6,11 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class HMBLocalSQLContext, HMFActivity;
+#import <HomeKitBackingStore/HMFLogging-Protocol.h>
 
-__attribute__((visibility("hidden")))
-@interface HMBLocalSQLContextInputBlock : HMFObject
+@class HMBLocalSQLContext, HMFActivity, NSString;
+
+@interface HMBLocalSQLContextInputBlock : HMFObject <HMFLogging>
 {
     unsigned long long _blockRow;
     HMFActivity *_activity;
@@ -18,17 +19,26 @@ __attribute__((visibility("hidden")))
     unsigned long long _type;
 }
 
++ (id)logCategory;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) unsigned long long zoneRow; // @synthesize zoneRow=_zoneRow;
 @property(nonatomic) __weak HMBLocalSQLContext *owner; // @synthesize owner=_owner;
 @property(readonly, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
 @property(nonatomic) unsigned long long blockRow; // @synthesize blockRow=_blockRow;
 - (void).cxx_destruct;
+- (id)logIdentifier;
 - (id)abort;
 - (id)commit:(id)arg1;
 - (id)updateExternalID:(id)arg1 externalData:(id)arg2 modelEncoding:(unsigned long long)arg3 modelData:(id)arg4;
 - (id)insertExternalID:(id)arg1 externalData:(id)arg2 modelEncoding:(unsigned long long)arg3 modelData:(id)arg4;
+- (id)attributeDescriptions;
 - (id)initWithOwner:(id)arg1 zoneRow:(unsigned long long)arg2 blockRow:(unsigned long long)arg3 type:(unsigned long long)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

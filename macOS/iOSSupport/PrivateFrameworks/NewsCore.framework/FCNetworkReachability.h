@@ -8,7 +8,7 @@
 
 #import <NewsCore/FCNetworkReachabilityType-Protocol.h>
 
-@class NSHashTable, NSString;
+@class NFLazy, NSHashTable, NSString;
 
 @interface FCNetworkReachability : NSObject <FCNetworkReachabilityType>
 {
@@ -24,9 +24,11 @@
     BOOL _accessRestrictedBecauseOfDeviceAbandoned;
     long long _offlineReason;
     NSHashTable *_observers;
+    NFLazy *_networkInfo;
 }
 
 + (id)sharedNetworkReachability;
+@property(retain, nonatomic) NFLazy *networkInfo; // @synthesize networkInfo=_networkInfo;
 @property(nonatomic) BOOL accessRestrictedBecauseOfDeviceAbandoned; // @synthesize accessRestrictedBecauseOfDeviceAbandoned=_accessRestrictedBecauseOfDeviceAbandoned;
 @property(nonatomic) BOOL accessRestrictedBecauseOfCountry; // @synthesize accessRestrictedBecauseOfCountry=_accessRestrictedBecauseOfCountry;
 @property(nonatomic) BOOL accessRestrictedBecauseOfOSVersion; // @synthesize accessRestrictedBecauseOfOSVersion=_accessRestrictedBecauseOfOSVersion;

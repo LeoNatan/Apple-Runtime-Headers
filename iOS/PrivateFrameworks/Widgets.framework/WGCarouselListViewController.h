@@ -28,11 +28,12 @@
     NSMutableDictionary *_catchupProperties;
     NSMutableDictionary *_catchupTimers;
     WGWidgetPinningTeachingView *_teachingView;
-    struct WGWidgetListSettings _settings;
+    NSMutableDictionary *_resizeContexts;
+    struct WGWidgetListSettings _listSettings;
 }
 
+@property(retain, nonatomic) NSMutableDictionary *resizeContexts; // @synthesize resizeContexts=_resizeContexts;
 @property(retain, nonatomic) WGWidgetPinningTeachingView *teachingView; // @synthesize teachingView=_teachingView;
-@property(nonatomic) struct WGWidgetListSettings settings; // @synthesize settings=_settings;
 @property(nonatomic, getter=isFooterVisible) _Bool footerVisible; // @synthesize footerVisible=_footerVisible;
 @property(retain, nonatomic) NSMutableDictionary *catchupTimers; // @synthesize catchupTimers=_catchupTimers;
 @property(retain, nonatomic) NSMutableDictionary *catchupProperties; // @synthesize catchupProperties=_catchupProperties;
@@ -41,6 +42,7 @@
 @property(nonatomic) double revealProgress; // @synthesize revealProgress=_revealProgress;
 @property(nonatomic, getter=isRevealed) _Bool revealed; // @synthesize revealed=_revealed;
 @property(nonatomic, getter=_headerHeight) double headerHeight; // @synthesize headerHeight=_headerHeight;
+@property(nonatomic) struct WGWidgetListSettings listSettings; // @synthesize listSettings=_listSettings;
 - (void).cxx_destruct;
 - (_Bool)shouldShowTeachingView;
 - (void)widgetPinningTeachingViewDidSelectNo:(id)arg1;
@@ -58,7 +60,7 @@
 - (void)_styleCroppedAndScaledCellForTopEdge:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2;
 - (void)_styleFullyInvisibleTopCell:(id)arg1;
 - (struct CGRect)_cellFrameInScrollBoundsForCell:(id)arg1;
-- (void)_updateTeachingViewVisibilityAnimated:(_Bool)arg1;
+- (void)_updateTeachingViewVisibilityAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)_isViewControllerVisible;
 - (_Bool)_hasEnoughContentToScroll;
 - (id)_identifierForCell:(id)arg1;
@@ -76,14 +78,15 @@
 - (_Bool)headerVisible;
 - (void)setContainerView:(id)arg1;
 - (void)_updateScrollViewContentSize;
+- (void)setVisuallyRevealed:(_Bool)arg1 withSlowAnimation:(_Bool)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)resizeWidgetWrapperView:(id)arg1 toSize:(struct CGSize)arg2 withTransitionContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_didUpdateStackViewArrangedSubviews;
 - (unsigned long long)_insertionIndexofListItem:(id)arg1 intoWidgetViews:(id)arg2 withOrderedIdentifiers:(id)arg3;
 - (void)_repopulateStackViewWithWidgetIdentifiers:(id)arg1;
-- (void)widgetWrapper:(id)arg1 willResizeWithTransitionCoordinator:(id)arg2;
 - (id)initWithWidgetDiscoveryController:(id)arg1 listSettings:(struct WGWidgetListSettings)arg2;
 
 // Remaining properties

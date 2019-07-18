@@ -181,6 +181,7 @@
     unsigned int _compassInsetEdges;
     _Bool _explicitCompassInsetEdges;
     MKMapViewLabelMarkerState *_selectedLabelMarkerState;
+    _Bool _showsAppleLogo;
     _Bool _compassSuppressedForFloorPicker;
     _Bool _geodHealthConsoleEnabled;
     int _interactionMode;
@@ -205,6 +206,7 @@
 @property(readonly, nonatomic) int compassViewStyle; // @synthesize compassViewStyle=_compassViewStyle;
 @property(readonly, nonatomic) int compassViewSize; // @synthesize compassViewSize=_compassViewSize;
 @property(nonatomic, getter=_isCompassSuppressedForFloorPicker, setter=_setCompassSuppressedForFloorPicker:) _Bool compassSuppressedForFloorPicker; // @synthesize compassSuppressedForFloorPicker=_compassSuppressedForFloorPicker;
+@property(nonatomic, getter=_showsAppleLogo, setter=_setShowsAppleLogo:) _Bool showsAppleLogo; // @synthesize showsAppleLogo=_showsAppleLogo;
 @property(nonatomic) int attributionCorner; // @synthesize attributionCorner=_attributionCorner;
 @property(copy, nonatomic) MKPointOfInterestFilter *pointOfInterestFilter; // @synthesize pointOfInterestFilter=_pointOfInterestFilter;
 @property(copy, nonatomic) MKMapCameraBoundary *cameraBoundary; // @synthesize cameraBoundary=_cameraBoundary;
@@ -234,6 +236,8 @@
 - (void)_zoomIn;
 - (void)_zoomWithAmount:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_zoomWithAmount:(double)arg1;
+- (void)stopZoomingWithInertia;
+- (void)startLinearZoomIn:(_Bool)arg1;
 - (void)setCameraBoundary:(id)arg1 animated:(_Bool)arg2;
 - (void)setCameraZoomRange:(id)arg1 animated:(_Bool)arg2;
 - (void)setCamera:(id)arg1 springMass:(float)arg2 springStiffness:(float)arg3 springDamping:(float)arg4 springVelocity:(float)arg5;
@@ -412,7 +416,11 @@
 - (_Bool)annotationContainerIsRotated:(id)arg1;
 - (struct CGRect)visibleCenteringRectInView:(id)arg1;
 - (struct CGRect)visibleRectInView:(id)arg1;
+- (void)_sceneWillEnterForeground:(id)arg1;
+- (void)_unregisterSceneLifecycleNotifications;
+- (void)_registerSceneLifecycleNotifications;
 - (void)applicationWillTerminate:(id)arg1;
+- (void)applicationWillEnterForeground:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationDidFinishSuspensionSnapshot:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
@@ -455,7 +463,7 @@
 - (void)snapToNorth:(id)arg1;
 - (id)compassVisibilityAnimation;
 - (_Bool)compassVisible;
-- (void)_setCompassVisible:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_setCompassVisible:(_Bool)arg1 animated:(_Bool)arg2 force:(_Bool)arg3;
 - (void)_handleCompassTap:(id)arg1;
 - (void)_updateCompassPosition;
 - (void)_postDidUpdateYawNotification;
@@ -468,6 +476,7 @@
 - (void)_updateScalePosition;
 - (void)_showOrHideScaleIfNecessary:(_Bool)arg1;
 - (void)_updateScale;
+@property(readonly, nonatomic, getter=_canShowControls) _Bool canShowControls;
 - (_Bool)_shouldDisplayScaleForCurrentRegion;
 - (id)scaleView;
 @property(nonatomic, getter=_showsScaleDuringZoom, setter=_setShowsScaleDuringZoom:) _Bool showsScaleDuringZoom;
@@ -604,7 +613,6 @@
 - (void)_addCustomFeatureDataSource:(id)arg1;
 @property(nonatomic) _Bool showsTraffic;
 - (void)deviceOrientationDidChange:(id)arg1;
-- (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)valueChangedForGEOConfigKey:(CDStruct_35640fce)arg1;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;

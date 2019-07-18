@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class BRContainer, CALayer, CNAvatarCache, CNAvatarViewController, CNContactStore, FIAirDropListViewItem, FIAirDropViewGutsController, FIArrangeByMenuController, FILocationMenuFactory, FIRadialProgressLayer, FIRadialProgressView, FITopBarTitlebarAccessoryViewController, FI_IPropertyValueApplicator, FI_IPropertyValueExtractor, FI_NewFolderController, FI_TAirDropDiscoveryController, FI_TAirDropLegacyModePopoverViewController, FI_TAirDropProgressLayer, FI_TBVDSBulkConfigChangedState, FI_TBasicImageView, FI_TBrowserImmediateActionGestureRecognizerDelegate, FI_TBrowserSplitViewController, FI_TBrowserViewContainerController, FI_TBrowserViewController, FI_TBrowserViewDataSource, FI_TBrowserViewSwitchAnimator, FI_TButton, FI_TColumnPreviewController, FI_TColumnViewController, FI_TContainerLayoutManager, FI_TDelayedPopulationViewController, FI_TDesktopGridLayout, FI_TDesktopInlinePreviewController, FI_TDesktopInlineProgressView, FI_TDesktopTitleBubbleView, FI_TDesktopTitleLayoutManager, FI_TFileSizeFormatter, FI_TFloatingInputView, FI_TGoToAutoCompletionController, FI_TGoToFieldEditor, FI_TICloudBadgeButton, FI_TICloudBadgePlaceholderView, FI_TICloudNoDocumentsViewController, FI_TICloudProgressObserver, FI_TIconCollectionGroupHeaderView, FI_TIconSelectionView, FI_TIconView, FI_TIconViewSettings, FI_TImageView, FI_TInlineCancelButtonLayer, FI_TInlinePreviewData, FI_TInlineProgressBarLayer, FI_TInlineProgressHostLayer, FI_TInlineProgressView, FI_TInternalCloudProgressObserver, FI_TKeyValueObserverGlue, FI_TLabelView, FI_TListHeaderCellView, FI_TListHeaderRowView, FI_TListNameCellView, FI_TListNameSubtitleTextField, FI_TListTextField, FI_TListViewSettings, FI_TMDUserSearch, FI_TNodeViewSettings, FI_TNodesAndValues, FI_TNotificationCenterObserverGlue, FI_TPathBarController, FI_TPieChartProgressLayer, FI_TPopoverController, FI_TPreviewOptions, FI_TPreviewOptionsDynamicGroupSettings, FI_TPreviewOptionsGroup, FI_TQLMultiPreviewItem, FI_TQLMultiPreviewView, FI_TQLMultiPreviewViewCommonDelegate, FI_TQLPreviewViewZoomController, FI_TRenameOperation, FI_TRunAfterHelper, FI_TSearchCriteriaSheetController, FI_TSearchCriteriaViewController, FI_TSearchScopeSliceController, FI_TSearchSliceController, FI_TShrinkToFitController, FI_TShrinkToFitTextView, FI_TShrinkToFitWindow, FI_TSidebarSplitViewController, FI_TSidebarViewController, FI_TTableView, FI_TTableViewShrinkToFitController, FI_TTagColumnTableViewController, FI_TTagEditorController, FI_TTagOperationDelegate, FI_TTagSuggestionsWindowController, FI_TTaggingPopoverContentViewController, FI_TTaggingSuggestionsViewController, FI_TTagsImageView, FI_TTargetActionFunctor, FI_TTextField, FI_TTrackingImageView, FI_TUpdateLayerView, FI_TValidatingDateFormatter, FI_TViewGridLayoutControllerDelegate, FI_TWindowHistory, NSAccessibilityCustomAction, NSArray, NSAttributedString, NSBox, NSColor, NSCustomTouchBarItem, NSData, NSDate, NSDateComponents, NSDateInterval, NSDictionary, NSEvent, NSFont, NSImage, NSImageView, NSImmediateActionGestureRecognizer, NSIndexSet, NSLayoutConstraint, NSLayoutGuide, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableSet, NSNumber, NSObject, NSOperationQueue, NSSet, NSSharingServicePicker, NSSplitViewItem, NSStackView, NSString, NSTextContainer, NSTextStorage, NSTimer, NSTouchBar, NSTrackingArea, NSURL, NSValue, NSView, NSViewController, NSWindow, QLInlinePreviewController, QLPreviewPanel, SFAirDropDiscoveryController, SFWirelessSettingsController;
+@class BRContainer, CALayer, CNAvatarCache, CNAvatarViewController, CNContactStore, FIAirDropListViewItem, FIAirDropViewGutsController, FIArrangeByMenuController, FILocationMenuFactory, FIRadialProgressLayer, FIRadialProgressView, FITopBarTitlebarAccessoryViewController, FI_IPropertyValueApplicator, FI_IPropertyValueExtractor, FI_NewFolderController, FI_TAirDropDiscoveryController, FI_TAirDropLegacyModePopoverViewController, FI_TAirDropProgressLayer, FI_TBVDSBulkConfigChangedState, FI_TBasicImageView, FI_TBrowserImmediateActionGestureRecognizerDelegate, FI_TBrowserSplitViewController, FI_TBrowserViewContainerController, FI_TBrowserViewController, FI_TBrowserViewDataSource, FI_TBrowserViewSwitchAnimator, FI_TButton, FI_TColumnPreviewController, FI_TColumnViewController, FI_TContainerLayoutManager, FI_TDesktopGridLayout, FI_TDesktopInlinePreviewController, FI_TDesktopInlineProgressView, FI_TDesktopTitleBubbleView, FI_TDesktopTitleLayoutManager, FI_TFileSizeFormatter, FI_TFloatingInputView, FI_TGoToAutoCompletionController, FI_TGoToFieldEditor, FI_TICloudBadgeButton, FI_TICloudBadgePlaceholderView, FI_TICloudNoDocumentsViewController, FI_TICloudProgressObserver, FI_TIconCollectionGroupHeaderView, FI_TIconSelectionView, FI_TIconView, FI_TIconViewSettings, FI_TImageView, FI_TInlineCancelButtonLayer, FI_TInlinePreviewData, FI_TInlineProgressBarLayer, FI_TInlineProgressHostLayer, FI_TInlineProgressView, FI_TInternalCloudProgressObserver, FI_TKeyValueObserverGlue, FI_TLabelView, FI_TListHeaderCellView, FI_TListHeaderRowView, FI_TListNameCellView, FI_TListNameSubtitleTextField, FI_TListTextField, FI_TListViewSettings, FI_TLoadingViewController, FI_TMDUserSearch, FI_TNodeViewSettings, FI_TNodesAndValues, FI_TNotificationCenterObserverGlue, FI_TPathBarController, FI_TPieChartProgressLayer, FI_TPopoverController, FI_TPreviewOptions, FI_TPreviewOptionsDynamicGroupSettings, FI_TPreviewOptionsGroup, FI_TQLMultiPreviewItem, FI_TQLMultiPreviewView, FI_TQLMultiPreviewViewCommonDelegate, FI_TQLPreviewViewZoomController, FI_TRenameOperation, FI_TRunAfterHelper, FI_TSearchCriteriaSheetController, FI_TSearchCriteriaViewController, FI_TSearchScopeSliceController, FI_TSearchSliceController, FI_TShrinkToFitController, FI_TShrinkToFitTextView, FI_TShrinkToFitWindow, FI_TSidebarSplitViewController, FI_TSidebarViewController, FI_TTableView, FI_TTableViewShrinkToFitController, FI_TTagColumnTableViewController, FI_TTagEditorController, FI_TTagOperationDelegate, FI_TTagSuggestionsWindowController, FI_TTaggingPopoverContentViewController, FI_TTaggingSuggestionsViewController, FI_TTagsImageView, FI_TTargetActionFunctor, FI_TTextField, FI_TTrackingImageView, FI_TUpdateLayerView, FI_TValidatingDateFormatter, FI_TViewGridLayoutControllerDelegate, FI_TWindowHistory, NSAccessibilityCustomAction, NSArray, NSAttributedString, NSBox, NSColor, NSCustomTouchBarItem, NSData, NSDate, NSDateComponents, NSDateInterval, NSDictionary, NSEvent, NSFont, NSImage, NSImageView, NSImmediateActionGestureRecognizer, NSIndexSet, NSLayoutConstraint, NSLayoutGuide, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableSet, NSNumber, NSObject, NSOperationQueue, NSSet, NSSharingServicePicker, NSSplitViewItem, NSStackView, NSString, NSTextContainer, NSTextStorage, NSTimer, NSTouchBar, NSTrackingArea, NSURL, NSValue, NSView, NSViewController, NSWindow, QLInlinePreviewController, QLPreviewPanel, QLPreviewView, SFAirDropDiscoveryController, SFWirelessSettingsController;
 
 #pragma mark Blocks
 
@@ -307,8 +307,6 @@ struct TConditionVariable {
     int fWaitCount;
 };
 
-struct TCustomNode;
-
 struct TDesktopTitleMetrics {
     struct TNSRef<NSTextStorage, void> fTextStorage;
     struct TNSRef<FI_TDesktopTitleLayoutManager, void> fLayoutManager;
@@ -492,27 +490,27 @@ struct TListBrowserSettings {
 
 struct TMDQueryAliasNode {
     CDUnknownFunctionPointerType *_field1;
-    struct weak_ptr<TCustomNode> _field2;
-    struct TNSRef<NSMutableDictionary, void> _field3;
-    struct recursive_mutex _field4;
-    struct map<const TNodeObserver *, std::__1::pair<std::__1::weak_ptr<TNodeObserver>, TObserverStats>, std::__1::less<const TNodeObserver *>, std::__1::allocator<std::__1::pair<const TNodeObserver *const, std::__1::pair<std::__1::weak_ptr<TNodeObserver>, TObserverStats>>>> _field5;
-    struct TFENode _field6;
-    struct shared_ptr<TEnableObserverAdaptor<TNodeObserver, TCustomNode>> _field7;
-    _Bool _field8;
+    struct TNSRef<NSMutableDictionary, void> _field2;
+    struct recursive_mutex _field3;
+    struct map<const TNodeObserver *, std::__1::pair<std::__1::weak_ptr<TNodeObserver>, TObserverStats>, std::__1::less<const TNodeObserver *>, std::__1::allocator<std::__1::pair<const TNodeObserver *const, std::__1::pair<std::__1::weak_ptr<TNodeObserver>, TObserverStats>>>> _field4;
+    struct TFENode _field5;
+    struct shared_ptr<TEnableObserverAdaptor<TNodeObserver, TCustomNode>> _field6;
+    _Bool _field7;
+    struct vector<TMDQueryAliasNode::SearchScopeDefinition, std::__1::allocator<TMDQueryAliasNode::SearchScopeDefinition>> _field8;
     struct vector<TMDQueryAliasNode::SearchScopeDefinition, std::__1::allocator<TMDQueryAliasNode::SearchScopeDefinition>> _field9;
-    struct vector<TMDQueryAliasNode::SearchScopeDefinition, std::__1::allocator<TMDQueryAliasNode::SearchScopeDefinition>> _field10;
-    struct TString _field11;
-    unsigned int _field12;
+    struct TString _field10;
+    unsigned int _field11;
+    struct TFENode _field12;
     struct TFENode _field13;
     struct TFENode _field14;
     struct TFENode _field15;
-    struct TFENode _field16;
+    struct TString _field16;
     struct TString _field17;
     struct TString _field18;
-    struct TString _field19;
-    struct TRef<const __CFDictionary *, TRetainReleasePolicy<CFDictionaryRef>> _field20;
+    struct TRef<const __CFDictionary *, TRetainReleasePolicy<CFDictionaryRef>> _field19;
+    int _field20;
     int _field21;
-    int _field22;
+    _Bool _field22;
     _Bool _field23;
     _Bool _field24;
     _Bool _field25;
@@ -528,14 +526,13 @@ struct TMDQueryAliasNode {
     _Bool _field35;
     _Bool _field36;
     _Bool _field37;
-    _Bool _field38;
-    struct TFENode _field39;
-    int _field40;
+    struct TFENode _field38;
+    int _field39;
+    struct TRef<const __CFArray *, TRetainReleasePolicy<CFArrayRef>> _field40;
     struct TRef<const __CFArray *, TRetainReleasePolicy<CFArrayRef>> _field41;
-    struct TRef<const __CFArray *, TRetainReleasePolicy<CFArrayRef>> _field42;
-    struct TFENode _field43;
-    struct TMDQueryDefinition _field44;
-    TNSWeakPtr_a131d41e _field45;
+    struct TFENode _field42;
+    struct TMDQueryDefinition _field43;
+    TNSWeakPtr_a131d41e _field44;
 };
 
 struct TMDQueryDefinition {
@@ -676,10 +673,6 @@ struct TNSRef<FI_TContainerLayoutManager, void> {
     FI_TContainerLayoutManager *fRef;
 };
 
-struct TNSRef<FI_TDelayedPopulationViewController, void> {
-    FI_TDelayedPopulationViewController *fRef;
-};
-
 struct TNSRef<FI_TDesktopGridLayout, void> {
     FI_TDesktopGridLayout *fRef;
 };
@@ -806,6 +799,10 @@ struct TNSRef<FI_TListTextField, void> {
 
 struct TNSRef<FI_TListViewSettings, void> {
     FI_TListViewSettings *fRef;
+};
+
+struct TNSRef<FI_TLoadingViewController, void> {
+    FI_TLoadingViewController *fRef;
 };
 
 struct TNSRef<FI_TMDUserSearch, void> {
@@ -1222,6 +1219,10 @@ struct TNSRef<QLInlinePreviewController, void> {
 
 struct TNSRef<QLPreviewPanel, void> {
     QLPreviewPanel *fRef;
+};
+
+struct TNSRef<QLPreviewView, void> {
+    QLPreviewView *fRef;
 };
 
 struct TNSRef<SFAirDropDiscoveryController, void> {
@@ -3371,11 +3372,6 @@ struct vector<unsigned char, std::__1::allocator<unsigned char>> {
     } __end_cap_;
 };
 
-struct weak_ptr<TCustomNode> {
-    struct TCustomNode *_field1;
-    struct __shared_weak_count *_field2;
-};
-
 struct weak_ptr<TNodeEventHandler> {
     struct TNodeEventHandler *_field1;
     struct __shared_weak_count *_field2;
@@ -3393,6 +3389,10 @@ typedef struct {
 } CDStruct_4c969caf;
 
 // Template types
+typedef struct TNSRef<FI_TBasicImageView, void> {
+    FI_TBasicImageView *fRef;
+} TNSRef_cc605514;
+
 typedef struct TNSRef<FI_TICloudBadgePlaceholderView, void> {
     FI_TICloudBadgePlaceholderView *fRef;
 } TNSRef_aed84f5d;

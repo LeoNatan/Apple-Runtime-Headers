@@ -6,7 +6,7 @@
 
 #import <Montreal/MLPImageLayer.h>
 
-@class MPSMatrixCopy, MPSMatrixLogSoftMax, MPSMatrixNeuron, MPSMatrixSoftMax, MPSNDArrayMultiplication, MPSNDArrayReductionSum, MPSVector;
+@class MPSMatrixCopy, MPSMatrixLogSoftMax, MPSMatrixNeuron, MPSMatrixSoftMax, MPSNDArrayMultiplication, MPSNDArrayReductionSum;
 
 @interface MLPLossLayer : MLPImageLayer
 {
@@ -15,14 +15,12 @@
     MPSMatrixSoftMax *_matrixSoftMax;
     MPSMatrixLogSoftMax *_matrixLogSoftMax;
     MPSMatrixNeuron *_negativeNeuron;
-    MPSVector *_alphaVec;
     MPSMatrixCopy *_matrixLargeCopyFilter;
     MPSMatrixCopy *_matrixSingleCopyFilter;
 }
 
 @property(retain) MPSMatrixCopy *matrixSingleCopyFilter; // @synthesize matrixSingleCopyFilter=_matrixSingleCopyFilter;
 @property(retain) MPSMatrixCopy *matrixLargeCopyFilter; // @synthesize matrixLargeCopyFilter=_matrixLargeCopyFilter;
-@property(retain) MPSVector *alphaVec; // @synthesize alphaVec=_alphaVec;
 @property(retain) MPSMatrixNeuron *negativeNeuron; // @synthesize negativeNeuron=_negativeNeuron;
 @property(retain) MPSMatrixLogSoftMax *matrixLogSoftMax; // @synthesize matrixLogSoftMax=_matrixLogSoftMax;
 @property(retain) MPSMatrixSoftMax *matrixSoftMax; // @synthesize matrixSoftMax=_matrixSoftMax;
@@ -34,7 +32,7 @@
 - (struct NSArray *)backward:(id)arg1 inputGradient:(struct NSArray *)arg2;
 - (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
 - (id)seqInferenceForward:(id)arg1 inputMatrix:(id)arg2 lossLabels:(id)arg3;
-- (id)seqTrainingForward:(id)arg1 subMatrix:(id)arg2 reductionSumResults:(id)arg3 labels:(id)arg4 rowOffset:(unsigned long long)arg5 computeNRows:(unsigned long long)arg6;
+- (id)seqTrainingForward:(id)arg1 subMatrix:(id)arg2 reductionSumResults:(id)arg3 alphaVec:(id)arg4 labels:(id)arg5 rowOffset:(unsigned long long)arg6 computeNRows:(unsigned long long)arg7;
 - (id)seqTrainingForward:(id)arg1 inputMatrix:(id)arg2 lossLabels:(id)arg3;
 - (id)seqForward:(id)arg1 inputMatrix:(id)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
 - (struct NSArray *)imageInferenceForward:(id)arg1 input:(struct NSArray *)arg2 lossLabels:(id)arg3;

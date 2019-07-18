@@ -31,6 +31,7 @@
 + (id)iTunesStoreURL:(State_0f18e2a3 *)arg1;
 + (id)fmipURL:(State_0f18e2a3 *)arg1;
 + (id)fmfURL:(State_0f18e2a3 *)arg1;
++ (id)mapsURL:(State_0f18e2a3 *)arg1;
 @property(readonly, copy, nonatomic) NSURL *overrideURL; // @synthesize overrideURL=_overrideURL;
 @property(readonly, nonatomic) NSURL *originalURL; // @synthesize originalURL=_originalURL;
 - (void).cxx_destruct;

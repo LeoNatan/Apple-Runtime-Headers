@@ -6,9 +6,10 @@
 
 #import <ContactsUI/NSObject-Protocol.h>
 
-@class CNMeCardSharingOnboardingAvatarCarouselViewController;
+@class CNMeCardSharingOnboardingAvatarCarouselItem, CNMeCardSharingOnboardingAvatarCarouselViewController;
 
 @protocol CNMeCardSharingOnboardingAvatarCarouselViewControllerDelegate <NSObject>
+- (void)avatarCarouselViewControllerDidUpdateCenterMostItem:(CNMeCardSharingOnboardingAvatarCarouselItem *)arg1;
 - (void)avatarCarouselViewControllerDidTapPhotoPickerCell:(CNMeCardSharingOnboardingAvatarCarouselViewController *)arg1;
 @end
 

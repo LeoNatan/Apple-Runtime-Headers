@@ -16,7 +16,7 @@
 @property(retain, nonatomic) ICViewControllerManager *viewControllerManager; // @synthesize viewControllerManager=_viewControllerManager;
 - (void).cxx_destruct;
 - (id)ic_viewControllerManager;
-- (id)initWithScreen:(id)arg1;
+- (id)initWithWindowScene:(id)arg1;
 
 @end
 

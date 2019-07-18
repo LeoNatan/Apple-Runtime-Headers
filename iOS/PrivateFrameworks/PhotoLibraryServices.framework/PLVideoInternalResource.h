@@ -24,6 +24,7 @@
 - (_Bool)isStreamable;
 - (_Bool)isRemotelyAvailable;
 - (_Bool)isPlayable;
+- (_Bool)isLocallyGeneratable;
 - (_Bool)isLocallyAvailable;
 - (_Bool)isOriginalVideoComplement;
 - (_Bool)isEqual:(id)arg1;

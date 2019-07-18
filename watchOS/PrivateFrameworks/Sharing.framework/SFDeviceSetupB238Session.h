@@ -67,8 +67,12 @@
     unsigned int _pairSetupFlags;
     int _pairSetupState;
     double _pairSetupSecs;
+    int _recognizeVoiceEnabled;
+    int _recognizeVoiceState;
     int _personalRequestsState;
     int _personalRequestsChoice;
+    _Bool _siriForEveryoneAnswered;
+    int _siriForEveryoneState;
     int _termsState;
     _Bool _termsAgreed;
     int _shareSettingsState;
@@ -96,6 +100,7 @@
     _Bool _prefBonjourTest;
     _Bool _prefForceSiriGreeting;
     _Bool _prefLEDPasscodeEnabled;
+    _Bool _hasMultipleUsers;
     _Bool _liveOn;
     _Bool _pauseAfterPreAuth;
     unsigned char _stereoCounterpartColor;
@@ -153,6 +158,7 @@
 @property(retain, nonatomic) SFDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(nonatomic) _Bool pauseAfterPreAuth; // @synthesize pauseAfterPreAuth=_pauseAfterPreAuth;
 @property(nonatomic) _Bool liveOn; // @synthesize liveOn=_liveOn;
+@property(readonly, nonatomic) _Bool hasMultipleUsers; // @synthesize hasMultipleUsers=_hasMultipleUsers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(readonly, nonatomic) int bonjourTestState; // @synthesize bonjourTestState=_bonjourTestState;
 @property(copy, nonatomic) NSDictionary *additionalMetrics; // @synthesize additionalMetrics=_additionalMetrics;
@@ -186,7 +192,9 @@
 - (void)_runAuthKitTrustStartIfNeeded;
 - (int)_runShareSettings;
 - (int)_runTerms;
+- (int)_runSiriForEveryone;
 - (int)_runPersonalRequests;
+- (int)_runRecognizeVoice;
 - (int)_runSiriLanguage;
 - (int)_runCheckAccount;
 - (void)_runPreAuthResponse:(id)arg1 error:(id)arg2;
@@ -209,10 +217,12 @@
 - (void)skipiTunesSignIn;
 - (void)skipAudioPasscode;
 - (void)siriLanguagePicked:(int)arg1;
+- (void)siriForEveryoneAnswered;
 - (void)siriEnable;
 - (void)shareSettingsAgreed;
 @property(readonly, nonatomic) NSString *selectedSiriLanguage;
 @property(readonly, nonatomic) HMHome *selectedHome;
+- (void)recognizeVoiceAnswered:(_Bool)arg1;
 - (void)_preflightAppleMusicCompleted:(int)arg1;
 - (void)_preflightAppleMusic;
 - (void)preflight;

@@ -36,8 +36,7 @@
 - (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 deletedCount:(unsigned int *)arg3 error:(id *)arg4;
 - (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 deletedCount:(unsigned int *)arg2 error:(id *)arg3;
 - (_Bool)flushDonationsWithError:(id *)arg1;
-- (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned int)arg3 cloudSync:(_Bool)arg4 decayRate:(double)arg5 sentimentScore:(double)arg6 error:(id *)arg7;
-- (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned int)arg3 cloudSync:(_Bool)arg4 decayRate:(double)arg5 error:(id *)arg6;
+- (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned int)arg3 cloudSync:(_Bool)arg4 sentimentScore:(double)arg5 error:(id *)arg6;
 - (id)namedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2;
 - (_Bool)iterNamedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)rankedNamedEntitiesWithQuery:(id)arg1 error:(id *)arg2;

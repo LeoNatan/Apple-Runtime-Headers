@@ -8,11 +8,11 @@
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDCameraProtocolParameters, HMDCameraSessionID, HMDCameraVideoTierParameters, HMDStreamingCapabilities, HMDStreamingManager, NSString;
+@class HMDCameraProtocolParameters, HMDCameraStreamSessionID, HMDCameraVideoTierParameters, HMDStreamingCapabilities, HMDStreamingManager, NSString;
 
 @interface HMDCameraStreamSession : HMFObject <HMFLogging>
 {
-    HMDCameraSessionID *_sessionID;
+    HMDCameraStreamSessionID *_sessionID;
     HMDStreamingManager *_streamingManager;
     HMDStreamingCapabilities *_streamingCapabilities;
     HMDCameraProtocolParameters *_protocolParameters;
@@ -24,7 +24,7 @@
 @property(retain, nonatomic) HMDCameraProtocolParameters *protocolParameters; // @synthesize protocolParameters=_protocolParameters;
 @property(readonly, nonatomic) HMDStreamingCapabilities *streamingCapabilities; // @synthesize streamingCapabilities=_streamingCapabilities;
 @property(retain, nonatomic) HMDStreamingManager *streamingManager; // @synthesize streamingManager=_streamingManager;
-@property(readonly, nonatomic) HMDCameraSessionID *sessionID; // @synthesize sessionID=_sessionID;
+@property(readonly, nonatomic) HMDCameraStreamSessionID *sessionID; // @synthesize sessionID=_sessionID;
 - (void).cxx_destruct;
 - (id)negotiatedParameters;
 - (id)logIdentifier;

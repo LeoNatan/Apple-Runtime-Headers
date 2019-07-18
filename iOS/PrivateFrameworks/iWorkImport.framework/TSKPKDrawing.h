@@ -6,26 +6,47 @@
 
 #import <objc/NSObject.h>
 
-@class CHRecognizer, NSMutableArray, PKDrawing;
+#import <iWorkImport/NSCopying-Protocol.h>
+
+@class CHRecognizer, NSArray, NSCache, PKDrawing;
 
 __attribute__((visibility("hidden")))
-@interface TSKPKDrawing : NSObject
+@interface TSKPKDrawing : NSObject <NSCopying>
 {
-    double _pencilAnnotationDrawingScale;
     PKDrawing *_pencilKitDrawing;
+    double _pencilAnnotationDrawingScale;
+    NSArray *_cachedStrokes;
     CHRecognizer *_textRecognizer;
     CHRecognizer *_lineRecognizer;
+    NSCache *_subDrawingCache;
+    struct CGPoint _cachedAverageUnscaledPoint;
     struct CGRect _cachedRenderedFrame;
+    struct CGRect _cachedStrokePointsFrame;
 }
 
++ (struct UIEdgeInsets)transparencyInsetsForCGImage:(struct CGImage *)arg1;
++ (id)copyAndAddStroke:(id)arg1 transform:(struct CGAffineTransform)arg2 intoDrawing:(id)arg3;
++ (id)copyPKDrawing:(id)arg1 withTransform:(struct CGAffineTransform)arg2;
++ (id)copyPKDrawing:(id)arg1;
 + (id)p_strokesForPencilKitDrawing:(id)arg1;
 + (void)initialize;
+@property(retain, nonatomic) NSCache *subDrawingCache; // @synthesize subDrawingCache=_subDrawingCache;
 @property(retain, nonatomic) CHRecognizer *lineRecognizer; // @synthesize lineRecognizer=_lineRecognizer;
 @property(retain, nonatomic) CHRecognizer *textRecognizer; // @synthesize textRecognizer=_textRecognizer;
+@property(retain, nonatomic) NSArray *cachedStrokes; // @synthesize cachedStrokes=_cachedStrokes;
+@property(nonatomic) struct CGPoint cachedAverageUnscaledPoint; // @synthesize cachedAverageUnscaledPoint=_cachedAverageUnscaledPoint;
+@property(nonatomic) struct CGRect cachedStrokePointsFrame; // @synthesize cachedStrokePointsFrame=_cachedStrokePointsFrame;
 @property(nonatomic) struct CGRect cachedRenderedFrame; // @synthesize cachedRenderedFrame=_cachedRenderedFrame;
-@property(retain, nonatomic) PKDrawing *pencilKitDrawing; // @synthesize pencilKitDrawing=_pencilKitDrawing;
 @property(readonly, nonatomic) double pencilAnnotationDrawingScale; // @synthesize pencilAnnotationDrawingScale=_pencilAnnotationDrawingScale;
+@property(retain, nonatomic) PKDrawing *pencilKitDrawing; // @synthesize pencilKitDrawing=_pencilKitDrawing;
 - (void).cxx_destruct;
+- (id)firstStrokeByTime;
+- (long long)toolTypeForFirstStroke;
+- (id)anchorBaseColor;
+- (void)p_clearSubDrawingCache;
+- (void)p_saveSubDrawingToCache:(id)arg1 atScale:(struct CGSize)arg2 movedToDelta:(struct CGPoint)arg3 cropRect:(struct CGRect)arg4;
+- (id)p_subDrawingFromCacheAtScale:(struct CGSize)arg1 movedToDelta:(struct CGPoint)arg2 cropRect:(struct CGRect)arg3;
+- (id)p_subDrawingCacheKeyForScale:(struct CGSize)arg1 movedToDelta:(struct CGPoint)arg2 cropRect:(struct CGRect)arg3;
 - (id)description;
 - (struct CGRect)convertStrokeToUnscaledCanvasRect:(struct CGRect)arg1;
 - (struct CGRect)convertUnscaledCanvasToStrokeRect:(struct CGRect)arg1;
@@ -33,42 +54,49 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasLargeVerticalLineAnchorStroke;
 - (_Bool)hasLargeBracketAnchorStroke;
 - (id)p_paragraphAnnotationAnchorComponentsPassingFilterBlock:(CDUnknownBlockType)arg1;
+- (_Bool)isMarginBracket;
 - (_Bool)isText:(id)arg1;
 - (_Bool)isRectangle;
 - (_Bool)isCircle;
 - (_Bool)isHorizontalLine;
 - (_Bool)isVerticalLine;
+- (_Bool)isLinePerpendicularToTextWithVerticalTextLayout:(_Bool)arg1;
 - (_Bool)isLine;
 - (_Bool)isXMark;
-- (struct CGPoint)averageUnscaledCenterPoint;
+- (id)strokesOrderedByCoordinateComparator:(CDUnknownBlockType)arg1;
+- (struct CGPoint)averageUnscaledPoint;
 - (id)p_drawingByTransformingByDeltaPosition:(struct CGPoint)arg1;
 - (id)p_drawingByCroppingToClipRect:(struct CGRect)arg1;
 - (id)drawingByCroppingToClipRect:(struct CGRect)arg1;
 - (id)drawingByScaling:(struct CGSize)arg1 andMovingByDelta:(struct CGPoint)arg2 andCroppingToClipRect:(struct CGRect)arg3;
 - (id)drawingByScaling:(struct CGSize)arg1 andMovingByDelta:(struct CGPoint)arg2;
 - (id)drawingByScaling:(struct CGSize)arg1;
+- (id)drawingTransformedWith:(struct CGAffineTransform)arg1;
+- (id)drawingContainingStrokesMatchingBlock:(CDUnknownBlockType)arg1;
+- (struct CGSize)scaleForPointsBasedOnRenderingScale:(struct CGSize)arg1;
 - (id)drawingByFilteringStrokesWithFilter:(CDUnknownBlockType)arg1;
 - (id)renderImageWithContentsScale:(double)arg1 drawingScale:(double)arg2 drawingFrame:(struct CGRect)arg3;
 - (id)renderImageWithContentsScale:(double)arg1 drawingScale:(double)arg2;
 - (id)renderImageWithContentsScale:(double)arg1;
+@property(readonly, nonatomic) struct CGRect unscaledStrokePointsFrame;
+@property(readonly, nonatomic) struct CGRect strokePointsFrame;
 @property(readonly, nonatomic) struct CGRect incorrectUnscaledFastFrame;
 - (struct CGRect)p_incorrectPencilCoordinatesFastFrame;
 @property(readonly, nonatomic) struct CGRect unscaledRenderedFrame;
-- (struct CGRect)renderedFrame;
+@property(readonly, nonatomic) struct CGRect renderedFrame;
 @property(readonly, nonatomic) struct CGSize estimatedExcessPaddingOnIncorrectUnscaledFastFrame;
-- (struct UIEdgeInsets)p_transparencyInsetsForCGImage:(struct CGImage *)arg1;
+@property(readonly, nonatomic) NSArray *strokes;
 - (id)copyAndAddStroke:(id)arg1 transform:(struct CGAffineTransform)arg2;
 - (id)copyAndAddStroke:(id)arg1;
 - (void)copyAndAddStrokes:(id)arg1;
-@property(readonly, nonatomic) NSMutableArray *strokes;
-- (id)PKDrawing;
 - (id)CHDrawing;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithData:(id)arg1 cachedRenderedFrame:(struct CGRect)arg2 cachedStrokePointsFrame:(struct CGRect)arg3 pencilAnnotationDrawingScale:(double)arg4;
 - (id)initWithData:(id)arg1 pencilAnnotationDrawingScale:(double)arg2;
-- (id)initWithPKDrawing:(id)arg1 pencilAnnotationDrawingScale:(double)arg2;
-- (id)initWithPKDrawing:(id)arg1 cachedRenderedFrame:(struct CGRect)arg2 pencilAnnotationDrawingScale:(double)arg3;
 - (id)initWithStrokes:(id)arg1;
-- (id)initWithStrokes:(id)arg1 cachedRenderedFrame:(struct CGRect)arg2;
+- (id)initWithPKDrawing:(id)arg1 pencilAnnotationDrawingScale:(double)arg2;
+- (id)initWithPKDrawing:(id)arg1 cachedRenderedFrame:(struct CGRect)arg2 cachedStrokePointsFrame:(struct CGRect)arg3 pencilAnnotationDrawingScale:(double)arg4;
 - (id)initWithPencilAnnotationDrawingScale:(double)arg1;
 
 @end

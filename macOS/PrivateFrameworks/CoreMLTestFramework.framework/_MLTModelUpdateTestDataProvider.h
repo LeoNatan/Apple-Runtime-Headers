@@ -8,25 +8,19 @@
 
 #import <CoreMLTestFramework/MLBatchProvider-Protocol.h>
 
-@class NSMutableArray, _MLTJSONReader;
+@class _MLTJSONReader;
 
 @interface _MLTModelUpdateTestDataProvider : NSObject <MLBatchProvider>
 {
     BOOL _forTraining;
     _MLTJSONReader *_jsonReader;
-    unsigned long long _shuffleCount;
-    NSMutableArray *_shuffledIndicies;
 }
 
-@property(retain) NSMutableArray *shuffledIndicies; // @synthesize shuffledIndicies=_shuffledIndicies;
-@property unsigned long long shuffleCount; // @synthesize shuffleCount=_shuffleCount;
 @property BOOL forTraining; // @synthesize forTraining=_forTraining;
 @property(retain, nonatomic) _MLTJSONReader *jsonReader; // @synthesize jsonReader=_jsonReader;
 - (void).cxx_destruct;
-- (BOOL)shuffleTrainingData:(id *)arg1;
 - (id)featuresAtIndex:(long long)arg1;
 @property(readonly, nonatomic) long long count;
-- (void)shuffleIndicies;
 - (id)initWithRecipePath:(id)arg1 forTraining:(BOOL)arg2 error:(id *)arg3;
 
 @end

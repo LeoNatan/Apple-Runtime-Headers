@@ -19,6 +19,7 @@
 + (id)movieWithData:(id)arg1 options:(id)arg2;
 + (id)movieWithURL:(id)arg1 options:(id)arg2;
 + (id)movieTypes;
++ (_Bool)expectsPropertyRevisedNotifications;
 + (void)initialize;
 - (void).cxx_destruct;
 - (id)description;

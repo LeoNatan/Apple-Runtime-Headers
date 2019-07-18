@@ -9,14 +9,13 @@
 #import <ViewBridge/AuxiliaryCallsService-Protocol.h>
 #import <ViewBridge/NSVBXPCConnectionClient-Protocol.h>
 #import <ViewBridge/NSViewServiceMarshal-Protocol.h>
-#import <ViewBridge/NSXPCConnectionDelegate-Protocol.h>
 #import <ViewBridge/NSXPCListenerDelegate-Protocol.h>
 
 @class NSAccessibilityRemoteUIElement, NSArray, NSCFRunLoopObserver, NSDictionary, NSLayoutConstraint, NSMutableArray, NSResponder, NSServiceViewController, NSString, NSVB_ViewServiceBehaviorProxy, NSViewBridge, NSWindow, NSXPCConnection, NSXPCInterface;
 @protocol NSObject;
 
 __attribute__((visibility("hidden")))
-@interface NSViewServiceMarshal : NSView <NSXPCListenerDelegate, NSVBXPCConnectionClient, AuxiliaryCallsService, NSViewServiceMarshal, NSXPCConnectionDelegate>
+@interface NSViewServiceMarshal : NSView <NSXPCListenerDelegate, AuxiliaryCallsService, NSViewServiceMarshal, NSVBXPCConnectionClient>
 {
     NSString *_extensionIdentifier;
     struct NSEdgeInsets _alignmentRectInsets;
@@ -82,6 +81,7 @@ __attribute__((visibility("hidden")))
     unsigned int _hostWindowIsFunctionRow:1;
     NSArray *_mostRecentlySentTouchBarsDescription;
     NSCFRunLoopObserver *_touchBarsObserver;
+    NSWindow *_sheetOrderingFront;
     BOOL _remoteViewDidMoveInProgress;
 }
 
@@ -128,6 +128,7 @@ __attribute__((visibility("hidden")))
 - (void)hideTouchBarPopover:(id)arg1;
 - (void)remoteViewCaresAboutTouchBars:(BOOL)arg1;
 - (void)remoteViewDidChangeState:(unsigned char)arg1 ofPopoverBar:(id)arg2 forItem:(id)arg3;
+- (void)whileOrderingSheetFront:(id)arg1 withParent:(id)arg2 performActions:(CDUnknownBlockType)arg3;
 @property(readonly) NSString *extensionIdentifier;
 - (void)remoteViewBackingScaleFactorDidChange:(double)arg1;
 - (void)withHostWindowFrameAnimationInProgress:(BOOL)arg1 perform:(CDUnknownBlockType)arg2;
@@ -238,6 +239,7 @@ __attribute__((visibility("hidden")))
 - (void)hostWindowResignedKey:(BOOL)arg1;
 - (void)afterResignKey;
 - (void)remoteViewDidEndLiveResize;
+- (void)automaticFocusRingChangedInHostApp;
 - (void)remoteViewWillStartLiveResizeWithReply:(CDUnknownBlockType)arg1;
 - (void)remoteViewGeometryDidChange:(struct CGRect)arg1 transaction:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (struct CGRect)_remoteViewGeometryDidChange:(id)arg1 serviceWindowSize:(struct CGSize *)arg2;

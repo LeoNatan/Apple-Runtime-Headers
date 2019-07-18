@@ -58,7 +58,7 @@
 - (id)deviceForAccessory:(id)arg1 residentOrder:(unsigned long long)arg2 reachableResidents:(unsigned long long *)arg3;
 - (id)_residentMapForAccessories:(id)arg1;
 - (id)balancedResidentMapForAccessories:(id)arg1;
-- (id)residentsForAccessory:(id)arg1 sortedBy:(CDUnknownBlockType)arg2;
+- (id)residentsForCameraAccessory:(id)arg1 excludeResident:(CDUnknownBlockType)arg2 sortedBy:(CDUnknownBlockType)arg3;
 - (id)bestResidentForAccessory:(id)arg1;
 - (void)_handleMeshUpdateMessage:(id)arg1;
 - (void)_handleMeshUpdateRequestMessage:(id)arg1;

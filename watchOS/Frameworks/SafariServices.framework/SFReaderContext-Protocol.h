@@ -10,7 +10,6 @@
 
 @protocol SFReaderContext <NSObject>
 - (void)activateFont:(NSString *)arg1;
-- (void)checkReaderAvailability;
 - (void)resetReaderTextSize;
 - (void)decreaseReaderTextSize;
 - (void)increaseReaderTextSize;

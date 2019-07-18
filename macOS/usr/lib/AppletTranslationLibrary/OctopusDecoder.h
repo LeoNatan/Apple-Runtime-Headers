@@ -11,8 +11,12 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (unsigned int)getEnRouteStatus:(id)arg1;
 + (unsigned int)isBlackListed:(id)arg1;
-+ (id)getTransactionTypeStringFromCode:(unsigned char)arg1;
++ (id)getTransitTransactionTypeNameFromCode:(unsigned char)arg1 andServiceProvider:(unsigned short)arg2;
++ (id)getTransactionTypeStringFromCode:(unsigned char)arg1 andServiceProviderID:(unsigned char)arg2;
++ (unsigned int)isTransitTransactionCode:(unsigned char)arg1;
++ (id)getTransactionTypeModifierStringFromCode:(unsigned char)arg1;
 + (BOOL)isTopUpTransaction:(unsigned char)arg1;
 + (id)getAAVSAmount:(id)arg1;
 + (id)getPhysicalID:(id)arg1;

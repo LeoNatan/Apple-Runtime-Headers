@@ -137,8 +137,8 @@
 @property(copy) NSString *url; // @synthesize url=_url;
 @property(copy) NSString *viewName; // @synthesize viewName=_viewName;
 - (void).cxx_destruct;
-- (void)_displayAuthRight:(const char *)arg1 withCallback:(id)arg2;
-- (id)getAuthKitData:(id)arg1;
+- (void)_displayAuthRightWithCallback:(id)arg1;
+- (void)getAuthKitDataWithResponse:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)wasNotifiedOfDataChange:(id)arg1;
 - (BOOL)shouldSelectToLocation:(id)arg1 toSection:(id)arg2;
 - (void)didChangetoLocation:(id)arg1 toSection:(id)arg2 withContext:(id)arg3;
@@ -168,6 +168,7 @@
 - (void)setLeftNavButton:(id)arg1 callback:(id)arg2;
 - (void)setPageSubTitle:(id)arg1;
 - (void)setNavTitle:(id)arg1;
+- (unsigned long long)presentationType;
 - (void)triggerAKAction:(id)arg1;
 - (BOOL)shouldShowButtonBar:(id)arg1;
 - (id)clientInfo;

@@ -39,22 +39,17 @@
 - (oneway void)activationRequestFromSimpleActivation:(id)arg1;
 - (oneway void)activationRequestFromBreadcrumb;
 - (oneway void)activationRequestFromContinuityWithContext:(id)arg1;
+- (void)_activationRequestFromDirectActionEvent:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (oneway void)activationRequestFromDirectActionEvent:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (oneway void)activationRequestFromDirectActionEvent:(id)arg1 context:(id)arg2;
+- (oneway void)deactivationRequestFromButtonIdentifier:(id)arg1 context:(id)arg2 options:(id)arg3;
 - (oneway void)activationRequestFromButtonIdentifier:(id)arg1 context:(id)arg2;
-- (oneway void)unregisterTestingSource;
-- (oneway void)registerTestingSource;
-- (oneway void)unregisterBreadcrumbSource;
-- (oneway void)registerBreadcrumbSource;
-- (oneway void)unregisterSpotlightSource;
-- (oneway void)registerSpotlightSource;
-- (oneway void)unregisterSimpleActivationSource;
-- (oneway void)registerSimpleActivationSource;
-- (oneway void)unregisterContinuitySource;
-- (oneway void)registerContinuitySource;
-- (oneway void)unregisterDirectActionSource;
-- (oneway void)registerDirectActionSource;
-- (oneway void)unregisterButtonIdentifier:(id)arg1;
-- (oneway void)registerButtonIdentifier:(id)arg1;
+- (oneway void)unregisterNonButtonSourceWithType:(id)arg1 withUUID:(id)arg2;
+- (oneway void)registerNonButtonSourceWithType:(id)arg1 withUUID:(id)arg2;
+- (oneway void)unregisterButtonIdentifier:(id)arg1 withUUID:(id)arg2;
+- (oneway void)registerButtonIdentifier:(id)arg1 withUUID:(id)arg2;
+- (void)_unregisterSourceForIdentifier:(id)arg1;
+- (void)_registerSourceForIdentifier:(id)arg1;
 - (void)_setConnection:(id)arg1;
 
 @end

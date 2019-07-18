@@ -39,13 +39,13 @@ struct CLLocationCoordinate2D {
     double _field2;
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
 struct _WFContentSlice {
     unsigned int startIndex;
     unsigned int endIndex;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
 };
 
 #pragma mark Typedef'd Structures

@@ -14,6 +14,7 @@
     long long _orientation;
     CAMVideoPreviewView *_videoPreviewView;
     UIView *_indicatorContainerView;
+    long long _indicatorClippingStyle;
     CAMFocusIndicatorView *_continuousIndicator;
     CAMFocusIndicatorView *_pointIndicator;
     CAMGridView *_gridView;
@@ -35,6 +36,7 @@
 @property(nonatomic) CAMGridView *gridView; // @synthesize gridView=_gridView;
 @property(retain, nonatomic) CAMFocusIndicatorView *pointIndicator; // @synthesize pointIndicator=_pointIndicator;
 @property(retain, nonatomic) CAMFocusIndicatorView *continuousIndicator; // @synthesize continuousIndicator=_continuousIndicator;
+@property(nonatomic) long long indicatorClippingStyle; // @synthesize indicatorClippingStyle=_indicatorClippingStyle;
 @property(readonly, nonatomic) UIView *indicatorContainerView; // @synthesize indicatorContainerView=_indicatorContainerView;
 @property(readonly, nonatomic) CAMVideoPreviewView *videoPreviewView; // @synthesize videoPreviewView=_videoPreviewView;
 @property(nonatomic) struct CGRect viewportFrame; // @synthesize viewportFrame=_viewportFrame;

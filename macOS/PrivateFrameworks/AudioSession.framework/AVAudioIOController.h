@@ -10,7 +10,7 @@
 
 @interface AVAudioIOController : NSObject
 {
-    struct synchronized<std::__1::weak_ptr<as::client::IOController>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::weak_ptr<as::client::IOController>>> _guarded_impl;
+    struct synchronized<std::__1::weak_ptr<as::client::IOController>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::weak_ptr<as::client::IOController>>> _guarded_impl;
 }
 
 - (id).cxx_construct;
@@ -29,7 +29,7 @@
 - (struct AudioTimeStamp)currentTime;
 - (id)createIOClientWithIOBlock:(CDUnknownBlockType)arg1 direction:(unsigned int)arg2;
 - (id)createIOClientWithIOBlock:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic, getter=isPrewarmed) BOOL prewarmed;
+- (BOOL)isPrewarmed;
 @property(readonly, nonatomic, getter=isRunning) BOOL running;
 
 @end

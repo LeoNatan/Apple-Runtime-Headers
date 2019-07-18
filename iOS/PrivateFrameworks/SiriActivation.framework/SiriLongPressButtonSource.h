@@ -14,7 +14,7 @@
 {
     struct os_unfair_lock_s _lock;
     double _longPressInterval;
-    long long _identifier;
+    long long _buttonIdentifier;
     BSServiceConnection *_connection;
     NSMutableArray *_lock_activityAssertions;
     SiriLongPressButtonContext *_context;
@@ -26,7 +26,7 @@
 @property(retain, nonatomic) NSMutableArray *lock_activityAssertions; // @synthesize lock_activityAssertions=_lock_activityAssertions;
 @property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
-@property(nonatomic) long long identifier; // @synthesize identifier=_identifier;
+@property(nonatomic) long long buttonIdentifier; // @synthesize buttonIdentifier=_buttonIdentifier;
 @property(nonatomic) double longPressInterval; // @synthesize longPressInterval=_longPressInterval;
 - (void).cxx_destruct;
 - (void)didRecognizeLongPress;
@@ -34,7 +34,7 @@
 - (id)speechInteractionActivityWithTimestamp:(double)arg1;
 - (id)prepareForActivation;
 - (void)configureConnection;
-- (id)_initWithIdentifier:(long long)arg1;
+- (id)_initWithButtonIdentifier:(long long)arg1;
 - (id)init;
 - (void)overrideConnectedToCarPlay:(_Bool)arg1;
 - (void)overrideConnectedToTrustedCarPlay:(_Bool)arg1;

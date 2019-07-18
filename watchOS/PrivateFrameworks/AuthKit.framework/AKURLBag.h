@@ -46,6 +46,7 @@
 @property(readonly, nonatomic, getter=isPhoneNumberSupportedConfig) _Bool phoneNumberSupportedConfig;
 @property(readonly, nonatomic) NSURL *storeModernRecoveryURL;
 @property(readonly, nonatomic) NSURL *fetchAuthenticationModeURL;
+@property(readonly, nonatomic) NSURL *fetchPrimaryBundleIDURL;
 @property(readonly, nonatomic) NSURL *fetchAppInfoURL;
 @property(readonly, nonatomic) NSURL *fetchUserInfoURL;
 @property(readonly, nonatomic) NSURL *fetchFollowUps;

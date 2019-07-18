@@ -75,6 +75,7 @@
 - (id)_cellForRow:(long long)arg1;
 - (void)_useOtherIDButtonSelected:(id)arg1;
 - (void)_addUseOtherIDButtonToContext:(id)arg1;
+- (void)_showOrHideConfirmButton;
 - (void)_enableOrDisableConfirmButton;
 - (void)_addAuthorizationButtonToPaneContext:(id)arg1;
 - (id)_infoLabelText;

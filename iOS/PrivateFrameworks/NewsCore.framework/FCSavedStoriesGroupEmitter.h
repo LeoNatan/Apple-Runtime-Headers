@@ -17,15 +17,15 @@
     FCReadingList *_readingList;
 }
 
++ (id)groupEmitterIdentifier;
 @property(retain, nonatomic) FCReadingList *readingList; // @synthesize readingList=_readingList;
 @property(nonatomic) long long desiredArticlesCount; // @synthesize desiredArticlesCount=_desiredArticlesCount;
 @property(nonatomic) unsigned long long minPrecedingTopicGroups; // @synthesize minPrecedingTopicGroups=_minPrecedingTopicGroups;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool emitsSingletonGroups;
 - (id)backingChannelTagIDWithConfiguration:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *groupEmitterIdentifier;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
-- (_Bool)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
+- (_Bool)wantsToInsertGroupInContext:(id)arg1;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (_Bool)wantsToEmitGroupInContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (id)initWithDesiredArticlesCount:(long long)arg1;

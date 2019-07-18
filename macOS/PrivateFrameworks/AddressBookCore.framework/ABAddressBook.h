@@ -428,8 +428,6 @@
 - (id)massageOptionsForClone:(id)arg1;
 - (id)clonedAddressBookWithOptions:(id)arg1;
 - (id)clonedAddressBook;
-- (CDUnknownBlockType)personToExtraInfo;
-- (id)extravCardInformationForRecordsWithIdentifiers:(id)arg1;
 - (id)deltasSinceAddressBook:(id)arg1;
 - (id)snapshotDate;
 - (id)allUniqueIdsWithModificationDates;

@@ -61,6 +61,7 @@
     id <GEOServerFormattedString> _transitRouteBadge;
     NSArray *_ticketedSegments;
     _Bool _isWalkingOnlyTransitRoute;
+    double _transitUpdateInitialDelay;
     unsigned int _indexOfSuggestedRoute;
     NSArray *_transitRouteUpdateAlerts;
     id <GEOComposedRouteTransitDisplayStrings> _transitRouteDisplayStrings;
@@ -78,6 +79,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) geo_reentrant_isolater *snappedRoutesIsolater; // @synthesize snappedRoutesIsolater=_snappedRoutesIsolater;
 @property(retain, nonatomic) NSUUID *revisionIdentifier; // @synthesize revisionIdentifier=_revisionIdentifier;
 @property(readonly, nonatomic) id <GEOComposedRouteTransitDisplayStrings> transitRouteDisplayStrings; // @synthesize transitRouteDisplayStrings=_transitRouteDisplayStrings;
 @property(readonly, nonatomic) GEOTransitRouteUpdateRequest *transitRouteUpdateRequest; // @synthesize transitRouteUpdateRequest=_transitRouteUpdateRequest;
@@ -90,6 +92,7 @@
 @property(readonly, nonatomic) _Bool isNavigable; // @synthesize isNavigable=_isNavigable;
 @property(readonly, nonatomic) NSData *directionsResponseID; // @synthesize directionsResponseID=_directionsResponseID;
 @property(readonly, nonatomic) unsigned int indexOfSuggestedRoute; // @synthesize indexOfSuggestedRoute=_indexOfSuggestedRoute;
+@property(nonatomic) double transitUpdateInitialDelay; // @synthesize transitUpdateInitialDelay=_transitUpdateInitialDelay;
 @property(readonly, nonatomic) _Bool isWalkingOnlyTransitRoute; // @synthesize isWalkingOnlyTransitRoute=_isWalkingOnlyTransitRoute;
 @property(readonly, nonatomic) id <GEOServerFormattedString> launchAndGoRouteDescription; // @synthesize launchAndGoRouteDescription=_launchAndGoRouteDescription;
 @property(readonly, nonatomic) id <GEOServerFormattedString> launchAndGoRouteTitle; // @synthesize launchAndGoRouteTitle=_launchAndGoRouteTitle;
@@ -209,7 +212,6 @@
 - (void)initializePointLengthsAndAssignStepDistance:(_Bool)arg1;
 - (void)initializePointLengths;
 - (void)_initializeManeuverDisplaySteps;
-@property(readonly, nonatomic) geo_reentrant_isolater *snappedRoutesIsolater; // @synthesize snappedRoutesIsolater=_snappedRoutesIsolater;
 @property(readonly, nonatomic) NSArray *baseTransitFares;
 @property(readonly, nonatomic) unsigned int numberOfTransitStops;
 @property(readonly, nonatomic) NSArray *routeDescriptions;
@@ -235,7 +237,7 @@
 - (_Bool)_MapsCarPlay_isArray:(id)arg1 equalTo:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)_composedStepWithIdentifier:(id)arg1;
+- (void)_enumerateAllStepsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_populateArtworkForSuggestedRoute:(id)arg1 decoderData:(id)arg2;
 - (id)initWithSuggestedRoute:(id)arg1 initializerData:(id)arg2 uniqueRouteID:(id)arg3;
 - (id)initWithSuggestedRoute:(id)arg1 initializerData:(id)arg2 updateRequest:(id)arg3;
@@ -246,6 +248,7 @@
 - (id)initWithRoute:(id)arg1 initializerData:(id)arg2;
 - (id)initWithRoute:(id)arg1 origin:(id)arg2 destination:(id)arg3;
 - (id)initWithRoute:(id)arg1;
+- (id)init;
 - (void)applyCompanionUpdates:(id)arg1;
 - (id)initWithCompanionRoute:(id)arg1;
 

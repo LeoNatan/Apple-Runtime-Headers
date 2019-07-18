@@ -25,9 +25,13 @@
     NSProgress *_downloadProgress;
     AVMediaSelection *_videoMediaSelection;
     NSMapTable *_mediaSelectionToProgressMap;
+    unsigned long long _downloadInitiationBackgroundTask;
+    unsigned long long _downloadTerminationBackgroundTask;
 }
 
 + (void)initialize;
+@property(nonatomic) unsigned long long downloadTerminationBackgroundTask; // @synthesize downloadTerminationBackgroundTask=_downloadTerminationBackgroundTask;
+@property(nonatomic) unsigned long long downloadInitiationBackgroundTask; // @synthesize downloadInitiationBackgroundTask=_downloadInitiationBackgroundTask;
 @property(retain, nonatomic) NSMapTable *mediaSelectionToProgressMap; // @synthesize mediaSelectionToProgressMap=_mediaSelectionToProgressMap;
 @property(retain, nonatomic) AVMediaSelection *videoMediaSelection; // @synthesize videoMediaSelection=_videoMediaSelection;
 @property(retain, nonatomic) NSProgress *downloadProgress; // @synthesize downloadProgress=_downloadProgress;

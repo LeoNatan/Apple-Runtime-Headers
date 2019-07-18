@@ -42,6 +42,7 @@
     PKPeerPaymentAccount *_peerPaymentAccount;
     _Bool _shouldAcquireLockButtonObserver;
     id <BSInvalidatable> _lockButtonObserver;
+    _Bool _invalidated;
     _Bool _dismissAfterPaymentSetup;
     _Bool _isPerformingPaymentSetup;
     PKPaymentAuthorizationRemoteAlertViewControllerExportedObject *_exportedObject;
@@ -60,6 +61,7 @@
 - (void)_invalidateLockButtonObserver;
 - (void)dismissWithRemoteOrigination:(_Bool)arg1;
 - (void)_dismiss;
+- (void)_invalidate;
 - (id)_remoteObjectProxy;
 - (void)authorizationDidSelectPaymentMethod:(id)arg1;
 - (void)authorizationDidSelectShippingAddress:(id)arg1;
@@ -108,6 +110,7 @@
 - (int)_preferredStatusBarVisibility;
 - (_Bool)_shouldRemoveViewFromHierarchyOnDisappear;
 - (void)configureWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)didInvalidateForRemoteAlert;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

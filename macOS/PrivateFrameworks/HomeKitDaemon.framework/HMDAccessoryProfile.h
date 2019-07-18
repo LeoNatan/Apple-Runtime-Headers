@@ -38,6 +38,7 @@
 - (void)_encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)findServiceWithType:(id)arg1;
 - (id)runtimeState;
 - (void)unconfigure;
 - (void)configureWithMessageDispatcher:(id)arg1 configurationTracker:(id)arg2;

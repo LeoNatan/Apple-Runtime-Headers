@@ -10,11 +10,12 @@
 #import <DACalDAV/CoreDAVAccountInfoProvider-Protocol.h>
 #import <DACalDAV/CoreDAVOAuthInfoProvider-Protocol.h>
 
-@class AKAppleIDSession, CalDAVRefreshContext, MobileCalDAVAccount, NSDateComponents, NSDictionary, NSMutableDictionary, NSMutableSet, NSNumber, NSSet, NSString, NSURL;
+@class AKAppleIDSession, CalDAVRefreshContext, MobileCalDAVAccount, NSArray, NSDateComponents, NSDictionary, NSMutableDictionary, NSMutableSet, NSNumber, NSSet, NSString, NSURL;
 @protocol CalDAVAccount, CoreDAVTaskManager;
 
 @interface MobileCalDAVPrincipal : NSObject <CoreDAVAccountInfoProvider, CoreDAVOAuthInfoProvider, CalDAVPrincipal>
 {
+    NSMutableDictionary *_calendarUserAddressesPerCalendar;
     _Bool _calendarsAreDirty;
     _Bool _isDelegate;
     _Bool _isWritable;
@@ -47,13 +48,12 @@
     NSString *_calendarHomePushKey;
     NSNumber *_quotaFreeBytes;
     NSString *_supportedCalendarComponentSets;
-    NSMutableDictionary *_calendarUserAddressesPerCalendar;
     NSURL *_preferredCalendarUserAddress;
     NSString *_preferredCalendarEmailAddress;
     NSString *_preferredCalendarPhoneNumber;
-    NSMutableSet *_addedCalendars;
-    NSMutableSet *_modifiedCalendars;
-    int _calendarChangeIndex;
+    NSSet *_addedCalendars;
+    NSSet *_modifiedCalendars;
+    NSArray *_calendarChangesToClear;
     CalDAVRefreshContext *_refreshContext;
     NSURL *_legacy_principalURL;
     AKAppleIDSession *_appleIDSession;
@@ -63,13 +63,12 @@
 @property(retain, nonatomic) AKAppleIDSession *appleIDSession; // @synthesize appleIDSession=_appleIDSession;
 @property(retain, nonatomic) NSURL *legacy_principalURL; // @synthesize legacy_principalURL=_legacy_principalURL;
 @property(retain, nonatomic) CalDAVRefreshContext *refreshContext; // @synthesize refreshContext=_refreshContext;
-@property(nonatomic) int calendarChangeIndex; // @synthesize calendarChangeIndex=_calendarChangeIndex;
-@property(retain, nonatomic) NSMutableSet *modifiedCalendars; // @synthesize modifiedCalendars=_modifiedCalendars;
-@property(retain, nonatomic) NSMutableSet *addedCalendars; // @synthesize addedCalendars=_addedCalendars;
+@property(retain, nonatomic) NSArray *calendarChangesToClear; // @synthesize calendarChangesToClear=_calendarChangesToClear;
+@property(retain, nonatomic) NSSet *modifiedCalendars; // @synthesize modifiedCalendars=_modifiedCalendars;
+@property(retain, nonatomic) NSSet *addedCalendars; // @synthesize addedCalendars=_addedCalendars;
 @property(retain, nonatomic) NSString *preferredCalendarPhoneNumber; // @synthesize preferredCalendarPhoneNumber=_preferredCalendarPhoneNumber;
 @property(retain, nonatomic) NSString *preferredCalendarEmailAddress; // @synthesize preferredCalendarEmailAddress=_preferredCalendarEmailAddress;
 @property(retain, nonatomic) NSURL *preferredCalendarUserAddress; // @synthesize preferredCalendarUserAddress=_preferredCalendarUserAddress;
-@property(retain, nonatomic) NSMutableDictionary *calendarUserAddressesPerCalendar; // @synthesize calendarUserAddressesPerCalendar=_calendarUserAddressesPerCalendar;
 @property(nonatomic) _Bool isDirty; // @synthesize isDirty=_isDirty;
 @property(nonatomic) _Bool shouldUpdatePushDelegate; // @synthesize shouldUpdatePushDelegate=_shouldUpdatePushDelegate;
 @property(nonatomic) _Bool shouldRefreshPrincipalSearchProperties; // @synthesize shouldRefreshPrincipalSearchProperties=_shouldRefreshPrincipalSearchProperties;
@@ -137,7 +136,9 @@
 @property(readonly, nonatomic) NSString *APSTopic;
 @property(nonatomic) _Bool calendarsAreDirty; // @synthesize calendarsAreDirty=_calendarsAreDirty;
 - (void)setPreferredCalendarUserAddresses:(id)arg1 forCalendar:(id)arg2;
+- (void)removePreferredCalendarUserAddressesForCalendarWithIdentifier:(id)arg1;
 - (id)preferredCalendarUserAddressesForCalendar:(id)arg1;
+@property(readonly, nonatomic) NSDictionary *calendarUserAddressesPerCalendar;
 - (void)removecalendarWithURL:(id)arg1;
 - (void)removeCalendar:(id)arg1;
 - (id)defaultTodoCalendarTitle;

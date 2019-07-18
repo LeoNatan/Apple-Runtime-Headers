@@ -10,11 +10,17 @@
 
 @interface AVAudioHardwareObjectChangeEvent : NSObject
 {
+    AVAudioHardwareObject *changedObject;
+    NSArray *namedProperties;
+    NSArray *customProperties;
 }
 
-@property(readonly, nonatomic) NSArray *customProperties;
-@property(readonly, nonatomic) NSArray *namedProperties;
-@property(readonly, nonatomic) AVAudioHardwareObject *changedObject;
+@property(retain, nonatomic) NSArray *customProperties; // @synthesize customProperties;
+@property(retain, nonatomic) NSArray *namedProperties; // @synthesize namedProperties;
+@property(retain, nonatomic) AVAudioHardwareObject *changedObject; // @synthesize changedObject;
+- (void).cxx_destruct;
+- (id)description;
+- (id)init;
 
 @end
 

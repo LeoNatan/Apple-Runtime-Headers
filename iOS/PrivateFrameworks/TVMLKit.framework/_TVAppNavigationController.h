@@ -59,8 +59,6 @@
 - (void)dismissed;
 - (void)_presentModalDocumentController:(id)arg1 options:(id)arg2;
 - (void)presentModal:(id)arg1 options:(id)arg2;
-- (void)presentConfirmationViewController:(id)arg1 preferredContentSize:(struct CGSize)arg2;
-- (void)presentConfirmation:(id)arg1 options:(id)arg2;
 - (void)pushDocument:(id)arg1 options:(id)arg2;
 - (void)insertDocument:(id)arg1 beforeDocument:(id)arg2 options:(id)arg3;
 - (id)documents;

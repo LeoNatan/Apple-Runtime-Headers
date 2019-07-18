@@ -18,7 +18,6 @@
 @interface _DKKnowledgeStorage : NSObject <_DKCoreDataStorageDelegate, _DKKnowledgeEventStreamDeleting, _DKKnowledgeSaving, _DKKnowledgeDeleting, _DKKnowledgeQuerying>
 {
     NSObject<OS_dispatch_queue> *_executionQueue;
-    NSObject<OS_dispatch_queue> *_readQueue;
     NSObject<OS_dispatch_queue> *_defaultResponseQueue;
     NSString *_directory;
     NSURL *_modelURL;
@@ -86,7 +85,7 @@
 - (unsigned long long)deleteAllEventsInEventStream:(id)arg1 error:(id *)arg2;
 - (void)deleteAllEventsInEventStream:(id)arg1 responseQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)_tombstoneObjects:(id)arg1 error:(id *)arg2;
-- (void)_tombstoneObjectsMatchingPredicate:(id)arg1 batchSize:(unsigned long long)arg2 error:(id *)arg3;
+- (id)_tombstoneObjectsMatchingPredicate:(id)arg1 batchSize:(unsigned long long)arg2 error:(id *)arg3;
 - (_Bool)_deleteObjects:(id)arg1 error:(id *)arg2;
 - (_Bool)deleteObjects:(id)arg1 error:(id *)arg2;
 - (void)deleteObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;

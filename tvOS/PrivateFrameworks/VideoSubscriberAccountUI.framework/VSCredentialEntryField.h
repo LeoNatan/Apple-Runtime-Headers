@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface VSCredentialEntryField : NSObject
 {
     _Bool _secure;
+    _Bool _required;
     NSString *_title;
     NSString *_placeholder;
     long long _keyboardType;
@@ -19,15 +20,18 @@ __attribute__((visibility("hidden")))
     long long _autocapitalizationType;
     long long _autocorrectionType;
     long long _returnKeyType;
+    NSString *_identifier;
     NSString *_recentsTitle;
     NSString *_recentsMessage;
 }
 
 @property(copy, nonatomic) NSString *recentsMessage; // @synthesize recentsMessage=_recentsMessage;
 @property(copy, nonatomic) NSString *recentsTitle; // @synthesize recentsTitle=_recentsTitle;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) long long returnKeyType; // @synthesize returnKeyType=_returnKeyType;
 @property(nonatomic) long long autocorrectionType; // @synthesize autocorrectionType=_autocorrectionType;
 @property(nonatomic) long long autocapitalizationType; // @synthesize autocapitalizationType=_autocapitalizationType;
+@property(nonatomic, getter=isRequired) _Bool required; // @synthesize required=_required;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic, getter=isSecure) _Bool secure; // @synthesize secure=_secure;
 @property(nonatomic) long long keyboardType; // @synthesize keyboardType=_keyboardType;

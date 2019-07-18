@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)specifiers;
 - (void)dealloc;
 - (id)init;
+- (void)setSpecifier:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,17 +15,14 @@
 {
     double _curveWidth;
     double _padding;
-    double _overlapStrokeWidth;
     UIView *_foregroundView;
     CAShapeLayer *_headLayer;
     CAShapeLayer *_tailLayer;
     CAShapeLayer *_tailStrokeLayer;
     _Bool _clockwise;
-    long long _tailOverride;
 }
 
 + (id)_disabledLayerActions;
-@property(nonatomic) long long tailOverride; // @synthesize tailOverride=_tailOverride;
 @property(nonatomic) _Bool clockwise; // @synthesize clockwise=_clockwise;
 - (void).cxx_destruct;
 - (void)_layoutHeadTailView:(id)arg1 forProgress:(double)arg2;
@@ -39,11 +36,9 @@
 - (void)_setupGradientLayer:(id)arg1;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(double)arg1;
-- (_Bool)_shouldShowTailLayer;
-- (void)_updateHeadTailAppearance;
 - (void)setProgress:(double)arg1;
 - (void)layoutSubviews;
-- (id)initWithCurveWidth:(double)arg1 padding:(double)arg2 overlapStrokeWidth:(double)arg3 forDevice:(id)arg4 withFilterStyle:(long long)arg5;
+- (id)initWithCurveWidth:(double)arg1 padding:(double)arg2 forDevice:(id)arg3 withFilterStyle:(long long)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

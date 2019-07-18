@@ -26,13 +26,11 @@
     MNActiveRouteInfo *_originalRouteInfo;
     GEORoutePreloader *_preloader;
     NSString *_tileLoaderClientIdentifier;
-    _Bool _isReconnecting;
     GEOComposedRoute *_originalRoute;
 }
 
 @property(readonly, nonatomic) GEOComposedRoute *originalRoute; // @synthesize originalRoute=_originalRoute;
 @property(readonly, nonatomic) GEOComposedWaypoint *originalDestination; // @synthesize originalDestination=_originalDestination;
-@property(readonly, nonatomic) _Bool isReconnecting; // @synthesize isReconnecting=_isReconnecting;
 @property(readonly, nonatomic) NSString *requestingAppIdentifier; // @synthesize requestingAppIdentifier=_requestingAppIdentifier;
 @property(readonly, nonatomic) GEODirectionsResponse *directionsResponse; // @synthesize directionsResponse=_directionsResponse;
 @property(readonly, nonatomic) GEODirectionsRequest *directionsRequest; // @synthesize directionsRequest=_directionsRequest;

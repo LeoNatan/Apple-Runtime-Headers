@@ -31,12 +31,13 @@
 - (void).cxx_destruct;
 - (void)_localeDidChange:(id)arg1;
 - (_Bool)textFieldShouldBeginEditing:(id)arg1;
+- (void)dismissInputView;
 - (void)commitEditing;
 - (void)beginEditing;
 - (void)updateValueLabel;
 - (void)valueDidChange;
 - (id)formattedValue;
-@property(retain, nonatomic) NSString *label;
+@property(copy, nonatomic) NSString *label;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)setupStackView;
 - (void)setupSubviews;

@@ -11,6 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)pulseAnimationWithDuration:(double)arg1 scale:(float)arg2;
++ (id)fadeAnimationWithDuration:(double)arg1 scale:(float)arg2 offset:(struct UIOffset)arg3;
 + (id)fadeAnimationWithDuration:(double)arg1 scale:(float)arg2;
 + (id)fadeAnimationWithDuration:(double)arg1;
 + (id)noAnimation;

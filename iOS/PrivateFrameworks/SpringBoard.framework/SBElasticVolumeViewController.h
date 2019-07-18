@@ -9,7 +9,7 @@
 #import <SpringBoard/PTSettingsKeyObserver-Protocol.h>
 #import <SpringBoard/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSDate, NSMutableArray, NSString, NSTimer, SBElasticSliderMaterialWrapperView, SBElasticSliderView, SBFTouchPassThroughView, SBUIViewFloatSpringProperty, SBVolumeHUDSettings, UIButton, UILabel, UILongPressGestureRecognizer, UIPanGestureRecognizer, UISegmentedControl, UISlider, UISwitch, UIView, _UIEdgeFeedbackGenerator, _UILegibilityLabel;
+@class NSArray, NSDate, NSMutableArray, NSMutableOrderedSet, NSString, NSTimer, SBElasticSliderMaterialWrapperView, SBElasticSliderView, SBFTouchPassThroughView, SBUIViewFloatSpringProperty, SBVolumeHUDSettings, UIButton, UILabel, UILongPressGestureRecognizer, UIPanGestureRecognizer, UISegmentedControl, UISlider, UISwitch, UIView, _UIEdgeFeedbackGenerator, _UILegibilityLabel;
 @protocol SBElasticAudioDataSource, SBElasticAudioVolumeViewControllerDelegate;
 
 @interface SBElasticVolumeViewController : UIViewController <UIGestureRecognizerDelegate, PTSettingsKeyObserver>
@@ -20,6 +20,7 @@
     _UILegibilityLabel *_leadingLabel;
     _UILegibilityLabel *_trailingLabel;
     UIView *_touchTrackingView;
+    UIView *_dimmingView;
     double _startingValue;
     double _startingHeight;
     double _startingWidth;
@@ -28,6 +29,8 @@
     _UIEdgeFeedbackGenerator *_edgeFeedbackGenerator;
     unsigned long long _sliderTrackingCount;
     NSTimer *_dismissalTimer;
+    NSTimer *_sliderApplyValueTimer;
+    NSMutableOrderedSet *_sliderApplyValueQueue;
     _Bool _initialTransitionCompleted;
     _Bool _lockState;
     _Bool _isDebugging;
@@ -71,11 +74,14 @@
 @property(nonatomic) __weak id <SBElasticAudioVolumeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SBElasticAudioDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (void)_updateVolumeLevelSlider:(float)arg1 animated:(_Bool)arg2;
 - (void)_modifySpringsFromState:(long long)arg1 toState:(long long)arg2;
 - (void)_updateForAxisChange:(int)arg1;
 - (void)_updateDebugUIPositions;
 - (void)_updateTouchTrackingView;
 - (void)_updateSliderViewToCenter:(struct CGPoint)arg1 size:(struct CGSize)arg2 continuousCornerRadius:(double *)arg3;
+- (void)_updateDimmingVisible:(_Bool)arg1;
+- (void)_updateSliderViewVerticalLayoutSize;
 - (void)_updateLabelsForAxis:(int)arg1 containerViewSize:(struct CGSize)arg2 state:(long long)arg3 animated:(_Bool)arg4;
 - (double)cornerRadiusForState:(long long)arg1;
 - (struct CGPoint)centerForState:(long long)arg1 containerViewSize:(struct CGSize)arg2 bounds:(struct CGRect)arg3 useSpringData:(_Bool)arg4;
@@ -121,7 +127,8 @@
 - (long long)hudPresentationOrientation;
 @property(readonly, nonatomic) int axis; // @synthesize axis=_axis;
 - (_Bool)shouldShowHighVolumeWarningForCurrentVolume;
-- (void)changeVolumeLevel:(double)arg1;
+- (_Bool)_changeVolumeLevel:(double)arg1;
+- (void)changeVolumeLevel:(double)arg1 animated:(_Bool)arg2;
 - (id)activeAudioCategory;
 - (_Bool)headphonesPresent;
 - (id)activeAudioRoute;

@@ -7,6 +7,7 @@
 #import <VoiceShortcuts/VCCompanionSyncSession.h>
 
 @class NSDictionary, NSMutableArray;
+@protocol VCCompanionSyncOutgoingSessionDelegate;
 
 @interface VCCompanionSyncOutgoingSession : VCCompanionSyncSession
 {
@@ -16,7 +17,7 @@
     NSMutableArray *_syncedChanges;
 }
 
-+ (long long)sessionType;
++ (long long)direction;
 @property(readonly, nonatomic) NSMutableArray *syncedChanges; // @synthesize syncedChanges=_syncedChanges;
 @property(readonly, nonatomic) NSMutableArray *sentChanges; // @synthesize sentChanges=_sentChanges;
 @property(readonly, copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
@@ -24,7 +25,11 @@
 - (void).cxx_destruct;
 - (void)syncSession:(id)arg1 successfullySynced:(id)arg2;
 - (long long)syncSession:(id)arg1 enqueueChanges:(CDUnknownBlockType)arg2 error:(id *)arg3;
+@property(readonly, nonatomic) double progress;
 - (id)initWithSYSession:(id)arg1 service:(id)arg2 syncDataHandlers:(id)arg3 changeSet:(id)arg4 metadata:(id)arg5;
+
+// Remaining properties
+@property(nonatomic) __weak id <VCCompanionSyncOutgoingSessionDelegate> delegate; // @dynamic delegate;
 
 @end
 

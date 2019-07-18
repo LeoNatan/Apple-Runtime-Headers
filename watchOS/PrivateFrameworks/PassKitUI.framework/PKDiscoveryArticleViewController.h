@@ -13,7 +13,8 @@
 #import <PassKitUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <PassKitUI/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSString, PKContinuousButton, PKDiscoveryArticleAnimatedTransitioningHandler, PKDiscoveryArticleLayout, PKDiscoveryCardView, UIActivityIndicatorView, UICollectionView, UILabel, UIPanGestureRecognizer, UISwipeGestureRecognizer;
+@class NSMutableDictionary, NSObject, NSString, PKContinuousButton, PKDiscoveryArticleAnimatedTransitioningHandler, PKDiscoveryArticleLayout, PKDiscoveryCardView, UIActivityIndicatorView, UICollectionView, UILabel, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer;
+@protocol OS_dispatch_queue;
 
 @interface PKDiscoveryArticleViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate, UIGestureRecognizerDelegate, PKDiscoveryCardViewDelegate, PKPaymentSetupDelegate>
 {
@@ -25,11 +26,13 @@
     UIActivityIndicatorView *_activityIndicator;
     UILabel *_downloadingLabel;
     NSString *_referrerIdentifierOverride;
+    CDUnknownBlockType _callToActionTappedOverride;
     UIPanGestureRecognizer *_panGestureRecognizer;
-    UISwipeGestureRecognizer *_swipeGestureRecognizer;
+    UIScreenEdgePanGestureRecognizer *_screenEdgePanGestureRecognizer;
     NSMutableDictionary *_cellImageCache;
     NSMutableDictionary *_imageDownloads;
     struct os_unfair_lock_s _lockDownloads;
+    NSObject<OS_dispatch_queue> *_loadImageQueue;
     _Bool _hasSafeAreaInsetOverride;
     _Bool _animatingCard;
     _Bool _useCustomPresentation;
@@ -47,10 +50,13 @@
 @property(readonly, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(readonly, nonatomic) PKDiscoveryCardView *cardView; // @synthesize cardView=_cardView;
 - (void).cxx_destruct;
-- (void)_handleSwipeGesture:(id)arg1;
+- (_Bool)_hasCardInGalleryView;
+- (void)_leftScreenEdgePanSwipeGesture:(id)arg1;
 - (void)_handlePanGesture:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)_loadMedia:(id)arg1 forShelfViewAtIndexPath:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_configureCallToActionShelfView:(id)arg1 forCallToActionShelf:(id)arg2 atIndexPath:(id)arg3;
 - (void)_configureInlineMediaShelfView:(id)arg1 forInlineMediaShelf:(id)arg2 atIndexPath:(id)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)_systemTextSizeChanged;

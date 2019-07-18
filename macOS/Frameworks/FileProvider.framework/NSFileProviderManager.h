@@ -75,7 +75,7 @@
 - (id)enumeratorForMaterializedItems;
 - (void)reimportItemsBelowItemWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)evictItemWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)downloadItemWithIdentifier:(id)arg1 downloadPolicy:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setDownloadPolicy:(unsigned long long)arg1 forItemWithIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) unsigned long long presenceAuthorizationStatus;
 - (void)requestPresenceAuthorization;
 - (void)ingestFromCacheItemWithIdentifier:(id)arg1 requestedFields:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;

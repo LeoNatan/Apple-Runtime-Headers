@@ -27,6 +27,7 @@
 @property(copy, nonatomic) NSDate *lastPullDate; // @synthesize lastPullDate=_lastPullDate;
 @property(nonatomic) BOOL syncEnabled; // @synthesize syncEnabled=_syncEnabled;
 - (void).cxx_destruct;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

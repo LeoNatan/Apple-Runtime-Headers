@@ -13,7 +13,6 @@
 }
 
 + (id)alloc;
-+ (void)load;
 - (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateKeysAndObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;

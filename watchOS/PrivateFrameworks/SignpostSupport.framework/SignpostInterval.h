@@ -48,8 +48,9 @@
 - (void)_adjustEndTimeVal:(struct timeval *)arg1;
 - (void)_adjustBeginTimeVal:(struct timeval *)arg1;
 - (id)descriptionWithTimeFormat:(unsigned int)arg1 verbosity:(unsigned char)arg2;
-- (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned int)arg2;
+- (id)_descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned int)arg2 asBegin:(_Bool)arg3;
 @property(readonly, nonatomic) NSString *_intervalTypeString;
+@property(readonly, nonatomic) _Bool isSyntheticInterval;
 - (id)humanReadableType;
 - (id)_dictionaryRepresentationWithIsHumanReadable:(_Bool)arg1 shouldRedact:(_Bool)arg2;
 - (id)initWithDictionary:(id)arg1;

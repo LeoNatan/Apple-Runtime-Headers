@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (id)controlLabelImageNameByType:(int)arg1 isRTL:(_Bool)arg2;
 - (void)updateCoverWithTavelProcess:(float)arg1 isRTL:(_Bool)arg2;
 - (void)updateUndoControlStyleForState:(unsigned int)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithType:(int)arg1 andStyling:(id)arg2;
 
 @end

@@ -7,6 +7,6 @@
 #import <WorkflowKit/WFDNDTrigger.h>
 
 @interface WFDNDTrigger (CoreDuetContext)
-+ (id)triggerTypeIconName;
++ (id)triggerTypeIcon;
 @end
 

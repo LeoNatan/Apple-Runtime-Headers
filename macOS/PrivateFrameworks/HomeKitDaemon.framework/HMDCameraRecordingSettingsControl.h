@@ -8,7 +8,7 @@
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDCameraRecordingGeneralConfiguration, HMDCameraRecordingSelectedConfiguration, HMDCameraRecordingSupportedAudioConfiguration, HMDCameraRecordingSupportedVideoConfiguration, HMDCharacteristic, HMDHAPAccessory, HMDService, NSDictionary, NSObject, NSString;
+@class HMDCameraRecordingGeneralConfiguration, HMDCameraRecordingSelectedConfiguration, HMDCameraRecordingSupportedAudioConfiguration, HMDCameraRecordingSupportedVideoConfiguration, HMDCharacteristic, HMDHAPAccessory, HMDService, NSDictionary, NSNumber, NSObject, NSString;
 @protocol HMDCameraRecordingSettingsControlDelegate, OS_dispatch_queue;
 
 @interface HMDCameraRecordingSettingsControl : HMFObject <HMFLogging>
@@ -74,6 +74,10 @@
 - (void)handleAccessoryReachable:(id)arg1;
 - (void)handleAccessoryUnreachable:(id)arg1;
 - (void)start;
+@property(readonly, copy) NSNumber *configuredImageHeight;
+@property(readonly, copy) NSNumber *configuredImageWidth;
+@property(readonly, copy) NSNumber *configuredIFrameInterval;
+@property(readonly, copy) NSNumber *configuredBitRate;
 - (id)initWithWorkQueue:(id)arg1 accessory:(id)arg2 recordingManagementService:(id)arg3;
 
 // Remaining properties

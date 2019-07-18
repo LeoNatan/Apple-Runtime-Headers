@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_isPersistentStoreAlive;
 - (id)_storeIdentifier;
 - (long long)_referenceData64;
-- (id)_referenceData;
 - (BOOL)isTemporaryID;
 - (id)persistentStore;
 - (id)entityName;

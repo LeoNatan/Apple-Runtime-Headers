@@ -14,7 +14,7 @@
 #import <UIKitCore/UIStatusBarStyleDelegate_SpringBoardOnly-Protocol.h>
 #import <UIKitCore/_UIApplicationInitializationContextFactory-Protocol.h>
 
-@class BKSAnimationFenceHandle, BKSProcessAssertion, BSServiceConnectionEndpointMonitor, FBSDisplayLayoutMonitor, NSArray, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSObject, NSSet, NSString, NSTimer, PKPushRegistry, SBSApplicationShortcutService, UIActivityContinuationManager, UIAlertController, UIEventDispatcher, UIEventFetcher, UIForceStageObservable, UIGestureEnvironment, UIMenu, UIRepeatedAction, UISApplicationState, UIStatusBar, UIStatusBarWindow, UISystemNavigationAction, UIWindow, _UIApplicationInfoParser, _UIIdleModeController;
+@class BKSAnimationFenceHandle, BKSProcessAssertion, BSServiceConnectionEndpointMonitor, FBSDisplayLayoutMonitor, NSArray, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSObject, NSSet, NSString, NSTimer, PKPushRegistry, SBSApplicationShortcutService, UIActivityContinuationManager, UIAlertController, UIEventDispatcher, UIEventFetcher, UIForceStageObservable, UIGestureEnvironment, UIRepeatedAction, UISApplicationState, UIStatusBar, UIStatusBarWindow, UISystemNavigationAction, UIWindow, _UIApplicationInfoParser, _UIIdleModeController;
 @protocol BSInvalidatable, OS_dispatch_queue, UIApplicationDelegate;
 
 @interface UIApplication : UIResponder <FBSUIApplicationWorkspaceDelegate, FBSDisplayLayoutObserver, PKPushRegistryDelegate, UIActivityContinuationManagerApplicationContext, UIApplicationSnapshotPreparing, UIStatusBarStyleDelegate_SpringBoardOnly, _UIApplicationInitializationContextFactory>
@@ -125,6 +125,7 @@
         unsigned int disablingBecomeFirstResponder:1;
         unsigned int hasMultiwindowAttributes:1;
         unsigned int supportedOnLockScreen:1;
+        unsigned int inBackgroundBeforeSuspending:1;
     } _applicationFlags;
     id <BSInvalidatable> _keyCommandToken;
     NSMutableDictionary *_physicalKeyCommandMap;
@@ -149,7 +150,7 @@
     int _simulatorShakeNotificationToken;
     UISApplicationState *_appState;
     PKPushRegistry *_applicationPushRegistry;
-    UIMenu *_storyboardInitialCommandMenu;
+    id _storyboardInitialMenu;
     BSServiceConnectionEndpointMonitor *_endpointMonitor;
     _Bool optOutOfRTL;
     _Bool _isDisplayingActivityContinuationUI;
@@ -217,7 +218,7 @@
 @property(readonly, nonatomic) _Bool supportsMultipleScenes;
 @property(readonly, nonatomic) NSSet *openSessions;
 @property(readonly, nonatomic) NSSet *connectedScenes;
-- (void)buildCommandsWithBuilder:(id)arg1;
+- (void)buildMenuWithBuilder:(id)arg1;
 - (_Bool)_hasStandardPrintSelector;
 - (id)_preferredContentSizeCategory:(unsigned int)arg1;
 @property(readonly, nonatomic) NSString *preferredContentSizeCategory;
@@ -468,6 +469,8 @@
 - (_Bool)_shouldShowAlertForUndoManager:(id)arg1;
 - (_Bool)_shakeToUndoEnabled;
 - (void)_showEditAlertViewWithUndoManager:(id)arg1 window:(id)arg2;
+- (void)_dismissEditAlertController;
+- (void)_presentEditAlertController;
 - (void)_endNoPresentingViewControllerAlertController:(id)arg1;
 - (id)_remoteControlEvent;
 - (id)_hoverEventForWindow:(id)arg1;
@@ -510,7 +513,6 @@
 - (void)prepareSnapshotsWithAction:(id)arg1 forScene:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_saveSnapshotWithName:(id)arg1;
 - (void)_performSnapshotsWithAction:(id)arg1 forScene:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_handleSnapshotAction:(id)arg1 forScene:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_beginSnapshotSessionForScene:(id)arg1 withSnapshotBlock:(CDUnknownBlockType)arg2;
 - (id)_createSnapshotContextForSceneRemoval:(id)arg1 withName:(id)arg2;
 - (id)_createSnapshotContextForScene:(id)arg1 withName:(id)arg2 performLayoutWithSettings:(id)arg3;
@@ -522,7 +524,7 @@
 - (_Bool)_updateDefaultImage;
 - (id)pathToDefaultImageNamed:(id)arg1 forScreen:(id)arg2;
 - (id)nameOfDefaultImageToUpdateAtSuspension;
-- (void)_configureSnapshotContext:(id)arg1 forScreen:(id)arg2 sceneSettings:(id)arg3;
+- (void)_configureSnapshotContext:(id)arg1 forScreen:(id)arg2 scene:(id)arg3;
 - (void)_performWithUICACommitStateSnapshotting:(CDUnknownBlockType)arg1;
 - (id)_localCachesDirectory;
 - (id)userCachesDirectory;
@@ -554,7 +556,6 @@
 - (void)_setCompatibilityModeOnSettings:(id)arg1;
 - (void)_pipStateDidChange;
 - (void)_handleTaskCompletionSuspensionEvents:(id)arg1;
-- (void)_handleSnapshotAction:(id)arg1 forScene:(id)arg2 deactivationCompletion:(CDUnknownBlockType)arg3;
 - (void)_handleSuspensionActions;
 - (void)_updateAppPriorityForSuspendedState;
 - (void)_applicationDidEnterBackground;
@@ -641,7 +642,7 @@
 - (void)_setStatusBarOrientation:(int)arg1 animated:(_Bool)arg2;
 - (void)setStatusBarOrientation:(int)arg1 animation:(int)arg2 duration:(double)arg3;
 - (void)setStatusBarOrientation:(int)arg1 animationParameters:(id)arg2;
-- (void)setStatusBarOrientation:(int)arg1 windowScene:(id)arg2 animationParameters:(id)arg3 updateBlock:(CDUnknownBlockType)arg4;
+- (void)setStatusBarOrientation:(int)arg1 fromOrientation:(int)arg2 windowScene:(id)arg3 animationParameters:(id)arg4 updateBlock:(CDUnknownBlockType)arg5;
 - (void)_notifyDidChangeStatusBarFrame:(struct CGRect)arg1;
 - (void)_notifyWillChangeStatusBarFrame:(struct CGRect)arg1;
 - (_Bool)_isStatusBarEffectivelyHiddenForContentOverlayInsetsForWindow:(id)arg1;
@@ -657,8 +658,6 @@
 - (_Bool)_isOrientationVerticallyCompact:(int)arg1;
 - (_Bool)_wantsCompactStatusBarHiding;
 - (_Bool)_supportsCompactStatusBarHiding;
-- (_Bool)_isInStatusBarFadeAnimation;
-- (void)_statusBarDidChangeHidden:(_Bool)arg1 withAnimationParameters:(id)arg2;
 - (void)setStatusBarHidden:(_Bool)arg1 animationParameters:(id)arg2 changeApplicationFlag:(_Bool)arg3;
 @property(readonly, nonatomic) int statusBarStyle;
 - (void)setStatusBarStyle:(int)arg1;
@@ -680,9 +679,13 @@
 - (id)_findWindowForControllingOverallAppearanceInWindowScene:(id)arg1;
 - (id)_findWindowForControllingOverallAppearanceInCanvas:(id)arg1;
 - (id)_findWindowForControllingOverallAppearance;
+- (id)_statusBarWindowIfExists;
 - (id)statusBarWindow;
 - (id)statusBar;
+- (void)_setupStatusBarWithRequestedStyle:(int)arg1 orientation:(int)arg2 hidden:(_Bool)arg3;
 - (void)_createStatusBarWithRequestedStyle:(int)arg1 orientation:(int)arg2 hidden:(_Bool)arg3;
+- (void)_createStatusBarIfNeededWithOrientation:(int)arg1;
+@property(readonly, nonatomic, getter=_hostsSystemStatusBar) _Bool hostsSystemStatusBar;
 - (_Bool)handleDoubleHeightStatusBarTapWithStyleOverride:(int)arg1;
 @property(nonatomic, getter=isNetworkActivityIndicatorVisible) _Bool networkActivityIndicatorVisible;
 - (_Bool)sendAction:(SEL)arg1 to:(id)arg2 from:(id)arg3 forEvent:(id)arg4;
@@ -698,7 +701,7 @@
 - (id)userInfoDictionaryForRunLoopMode:(id)arg1 requester:(id)arg2;
 - (int)_loadMainInterfaceFile;
 - (id)_newDefaultStoryboardWindow;
-- (id)_storyboardInitialCommandMenu;
+- (id)_storyboardInitialMenu;
 - (int)_loadMainStoryboardFileNamed:(id)arg1 bundle:(id)arg2;
 - (int)_loadMainNibFileNamed:(id)arg1 bundle:(id)arg2;
 - (void)_registerForNameLayerTreeNotification;
@@ -740,6 +743,7 @@
 - (void)activityContinuationManager:(id)arg1 displayProgressUI:(id)arg2 dismissalHandler:(CDUnknownBlockType)arg3;
 - (void)__completeAndRunAsPlugin;
 - (void)_run;
+- (void)_compellApplicationLaunchToCompleteUnconditionally;
 - (void)_performBlockAfterCATransactionCommitSynchronizes:(CDUnknownBlockType)arg1;
 - (void)_performBlockAfterCATransactionCommits:(CDUnknownBlockType)arg1;
 - (void)_addAfterCACommitBlockForViewController:(id)arg1;
@@ -911,16 +915,8 @@
 - (id)_currentTests;
 - (_Bool)launchedToTest;
 - (_Bool)_shouldHandleTestURL:(id)arg1;
-- (_Bool)_isShowingRemoteSheet;
-- (void)endRemoteSheet:(id)arg1 returnCode:(int)arg2 dismissAnimated:(_Bool)arg3;
-- (void)endRemoteSheet:(id)arg1 returnCode:(int)arg2;
 - (void)endRemoteSheet:(id)arg1;
-- (void)beginRemoteSheetController:(id)arg1 viewOrNil:(id)arg2 delegate:(id)arg3 didEndSelector:(SEL)arg4 contextInfo:(void *)arg5 requireTopApplication:(_Bool)arg6 opaque:(_Bool)arg7 presentAnimated:(_Bool)arg8;
 - (void)beginRemoteSheetController:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4 requireTopApplication:(_Bool)arg5 opaque:(_Bool)arg6 presentAnimated:(_Bool)arg7;
-- (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4 requireTopApplication:(_Bool)arg5 opaque:(_Bool)arg6 presentAnimated:(_Bool)arg7;
-- (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4 requireTopApplication:(_Bool)arg5 presentAnimated:(_Bool)arg6;
-- (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4 requireTopApplication:(_Bool)arg5;
-- (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

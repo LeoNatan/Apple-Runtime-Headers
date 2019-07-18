@@ -9,17 +9,13 @@
 #import <PhotoLibraryServices/PLHighlightItemClustererRule-Protocol.h>
 #import <PhotoLibraryServices/PLHighlightItemPromoterRule-Protocol.h>
 
-@class NSCalendar, NSString, PLDateRangeFormatter;
+@class NSCalendar, NSString;
 
 @interface PLMonthGroupingRule : NSObject <PLHighlightItemClustererRule, PLHighlightItemPromoterRule>
 {
     NSCalendar *_calendar;
-    PLDateRangeFormatter *_monthDateFormatter;
-    PLDateRangeFormatter *_yearDateFormatter;
 }
 
-@property(readonly, nonatomic) PLDateRangeFormatter *yearDateFormatter; // @synthesize yearDateFormatter=_yearDateFormatter;
-@property(readonly, nonatomic) PLDateRangeFormatter *monthDateFormatter; // @synthesize monthDateFormatter=_monthDateFormatter;
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (void).cxx_destruct;
 - (id)fallbackHighlightItemFromAllHighlightItems:(id)arg1;
@@ -29,6 +25,7 @@
 - (BOOL)highlightItemList:(id)arg1 canBeMergedWithOtherHighlightItemList:(id)arg2;
 - (BOOL)highlightItem:(id)arg1 belongsToHighlightItemList:(id)arg2;
 - (id)dominantMonthDateComponentForStartDateComponents:(id)arg1 endDateComponents:(id)arg2 numberOfDaysInMonthOfStartDate:(long long)arg3;
+- (void)titlesForHighlightItemList:(id)arg1 forceUpdateLocale:(BOOL)arg2 resultBlock:(CDUnknownBlockType)arg3;
 - (void)titlesForHighlightItemList:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
 - (id)init;
 

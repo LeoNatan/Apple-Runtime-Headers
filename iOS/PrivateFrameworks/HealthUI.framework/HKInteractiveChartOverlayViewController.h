@@ -32,6 +32,7 @@
 @property(readonly, nonatomic) HKDisplayType *primaryDisplayType; // @synthesize primaryDisplayType=_primaryDisplayType;
 - (void).cxx_destruct;
 - (id)seriesSelectionLineColorForGraphView:(id)arg1;
+- (id)lollipopExtensionColor;
 - (id)lollipopAnnotationColor;
 - (_Bool)_deliverCachedDataFromSource:(id)arg1 timeScope:(long long)arg2 startDate:(id)arg3 endDate:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)_dataSourceForQuantityType:(id)arg1 timeScope:(long long)arg2 customDataSource:(id)arg3;

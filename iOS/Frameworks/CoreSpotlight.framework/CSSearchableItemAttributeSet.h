@@ -82,6 +82,8 @@
 - (id)initWithMutableDictionary:(id)arg1;
 - (id)initWithAttributeSet:(id)arg1;
 - (id)init;
+- (id)calendarDelegateIdentifier;
+- (void)setCalendarDelegateIdentifier:(id)arg1;
 - (id)providerInPlaceFileTypeIdentifiers;
 - (void)setProviderInPlaceFileTypeIdentifiers:(id)arg1;
 - (id)providerFileTypeIdentifiers;
@@ -551,6 +553,8 @@
 @property(retain) NSNumber *uploadError;
 @property(retain, nonatomic, getter=isUploading) NSNumber *uploading;
 @property(retain, nonatomic, getter=isUploaded) NSNumber *uploaded;
+- (void)setIsPinned:(id)arg1;
+@property(retain, nonatomic, getter=isPinned) NSNumber *pinned;
 @property(retain, nonatomic, getter=isShared) NSNumber *shared;
 @property(retain, nonatomic, getter=isTrashed) NSNumber *trashed;
 @property(copy) NSArray *fileProviderUserInfoValues;

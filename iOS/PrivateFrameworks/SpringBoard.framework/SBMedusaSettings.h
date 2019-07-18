@@ -45,6 +45,8 @@
     double _contentDraggingCommandeerGutterWidth;
     double _contentDraggingSideActivationGutterWidth;
     double _contentDraggingFloatingActivationGutterWidth;
+    double _windowTearOffDraggingSideActivationGutterWidth;
+    double _windowTearOffDraggingFloatingActivationGutterWidth;
     PTOutlet *_killSpringBoardOutlet;
     double _cornerRadiusForInnerCorners;
     double _cornerRadiusForCompatibilityAppOuterCorners;
@@ -100,6 +102,8 @@
 @property(nonatomic) double cornerRadiusForCompatibilityAppOuterCorners; // @synthesize cornerRadiusForCompatibilityAppOuterCorners=_cornerRadiusForCompatibilityAppOuterCorners;
 @property(nonatomic) double cornerRadiusForInnerCorners; // @synthesize cornerRadiusForInnerCorners=_cornerRadiusForInnerCorners;
 @property(retain, nonatomic) PTOutlet *killSpringBoardOutlet; // @synthesize killSpringBoardOutlet=_killSpringBoardOutlet;
+@property(nonatomic) double windowTearOffDraggingFloatingActivationGutterWidth; // @synthesize windowTearOffDraggingFloatingActivationGutterWidth=_windowTearOffDraggingFloatingActivationGutterWidth;
+@property(nonatomic) double windowTearOffDraggingSideActivationGutterWidth; // @synthesize windowTearOffDraggingSideActivationGutterWidth=_windowTearOffDraggingSideActivationGutterWidth;
 @property(nonatomic) double contentDraggingFloatingActivationGutterWidth; // @synthesize contentDraggingFloatingActivationGutterWidth=_contentDraggingFloatingActivationGutterWidth;
 @property(nonatomic) double contentDraggingSideActivationGutterWidth; // @synthesize contentDraggingSideActivationGutterWidth=_contentDraggingSideActivationGutterWidth;
 @property(nonatomic) double contentDraggingCommandeerGutterWidth; // @synthesize contentDraggingCommandeerGutterWidth=_contentDraggingCommandeerGutterWidth;

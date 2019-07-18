@@ -13,6 +13,7 @@
 - (unsigned int)ef_insertObjectIfAbsent:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
 - (unsigned int)ef_insertObject:(id)arg1 usingSortFunction:(CDUnknownFunctionPointerType)arg2 context:(void *)arg3 allowDuplicates:(_Bool)arg4;
 - (unsigned int)ef_insertObject:(id)arg1 usingComparator:(CDUnknownBlockType)arg2 allowDuplicates:(_Bool)arg3;
+- (unsigned int)ef_insertObject:(id)arg1 usingSortDescriptors:(id)arg2;
 - (void)ef_reverseObjects;
 - (void)ef_addAbsentObjectsFromArrayAccordingToEquals:(id)arg1;
 - (void)ef_moveObjectAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;

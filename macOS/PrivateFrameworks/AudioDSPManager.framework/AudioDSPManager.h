@@ -74,8 +74,8 @@ __attribute__((visibility("hidden")))
 - (expected_af0f637c)simulateConfigurationChange:(id)arg1;
 - (expected_025c1a52)configurationChangeComplete:(int)arg1 dspMutation:(function_71b6729b)arg2;
 - (expected_025c1a52)configurationChangeComplete:(int)arg1;
-- (expected_6c7599df)adaptToConfigurationChanges:(const vector_d47d98e2 *)arg1;
-- (expected_6c7599df)adaptToConfigurationChange:(id)arg1;
+- (expected_0910f26e)adaptToConfigurationChanges:(const vector_d47d98e2 *)arg1;
+- (expected_0910f26e)adaptToConfigurationChange:(id)arg1;
 - (expected_2b9a0a05)negotiateConfigurationChanges:(const vector_d47d98e2 *)arg1;
 - (expected_2b9a0a05)negotiateConfigurationChange:(id)arg1;
 - (id)supportedPublicStreamFormatRequest;

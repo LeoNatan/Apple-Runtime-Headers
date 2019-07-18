@@ -14,6 +14,7 @@
     unsigned long long _thresholdStartTicks;
     BOOL _insideBubble;
     BOOL _insideBubbleWithThreshold;
+    BOOL _preventBoost;
     long long _rssiEnter;
     long long _rssiExit;
     double _thresholdSeconds;
@@ -24,6 +25,7 @@
 @property(nonatomic) double thresholdSeconds; // @synthesize thresholdSeconds=_thresholdSeconds;
 @property(nonatomic) long long rssiExit; // @synthesize rssiExit=_rssiExit;
 @property(nonatomic) long long rssiEnter; // @synthesize rssiEnter=_rssiEnter;
+@property(nonatomic) BOOL preventBoost; // @synthesize preventBoost=_preventBoost;
 @property(readonly, nonatomic) BOOL insideBubbleWithThreshold; // @synthesize insideBubbleWithThreshold=_insideBubbleWithThreshold;
 @property(readonly, nonatomic) BOOL insideBubble; // @synthesize insideBubble=_insideBubble;
 - (void).cxx_destruct;

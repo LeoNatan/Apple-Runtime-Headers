@@ -57,6 +57,7 @@
 - (void).cxx_destruct;
 - (void)unload;
 - (void)loadIfNeeded;
+@property(readonly, nonatomic) NSString *emojiRepresentation;
 - (void)setupOptions:(id)arg1;
 - (id)initWithName:(id)arg1 poseAnimation:(id)arg2 props:(id)arg3 shaders:(id)arg4 camera:(id)arg5 options:(id)arg6;
 - (id)initWithConfigDictionary:(id)arg1 assetsPath:(id)arg2;

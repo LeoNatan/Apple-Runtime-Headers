@@ -16,6 +16,7 @@
 {
     EAAccessory *_accessory;
     NSString *_protocolString;
+    BOOL _overrideProtocol;
     EASession *_session;
     NSString *_bootloaderProtocol;
     NSString *_appProtocol;
@@ -63,6 +64,7 @@
     BOOL _isMultiAssetSession;
     BOOL _byteEscape;
     BOOL _skipReconnect;
+    BOOL _closeEASession;
     NSString *_multiAssetAppProtocol;
     NSString *_updateBundleFilename;
     NSURL *_updateBundleURL;
@@ -85,6 +87,7 @@
 @property(retain, nonatomic) NSString *transportType; // @synthesize transportType=_transportType;
 @property(retain, nonatomic) NSString *firmwareVersionAvailable; // @synthesize firmwareVersionAvailable=_firmwareVersionAvailable;
 @property(retain, nonatomic) NSString *currentFirmwareVersionOnAcc; // @synthesize currentFirmwareVersionOnAcc=_currentFirmwareVersionOnAcc;
+@property(nonatomic) BOOL closeEASession; // @synthesize closeEASession=_closeEASession;
 @property(nonatomic) BOOL isMultiAssetSession; // @synthesize isMultiAssetSession=_isMultiAssetSession;
 @property(nonatomic) BOOL skipDFUMode; // @synthesize skipDFUMode=_skipDFUMode;
 @property(nonatomic) BOOL forceSilentUpdate; // @synthesize forceSilentUpdate=_forceSilentUpdate;
@@ -94,6 +97,7 @@
 @property(retain, nonatomic) NSString *multiAssetAppProtocol; // @synthesize multiAssetAppProtocol=_multiAssetAppProtocol;
 @property(retain, nonatomic) NSString *appProtocol; // @synthesize appProtocol=_appProtocol;
 @property(retain, nonatomic) NSString *bootloaderProtocol; // @synthesize bootloaderProtocol=_bootloaderProtocol;
+@property(nonatomic) BOOL overrideProtocol; // @synthesize overrideProtocol=_overrideProtocol;
 @property(retain, nonatomic) NSString *protocolString; // @synthesize protocolString=_protocolString;
 @property(retain, nonatomic) EASession *session; // @synthesize session=_session;
 @property(retain, nonatomic) EAAccessory *accessory; // @synthesize accessory=_accessory;
@@ -117,6 +121,11 @@
 - (void)personalizationResponse:(id)arg1 error:(id)arg2;
 - (BOOL)stitchManifestInSuperBinary:(id)arg1 withManifest:(id)arg2 withId:(unsigned int)arg3;
 - (void)processPersonalizationInfoFromAccessory:(id)arg1;
+- (BOOL)isUrgentUpdate;
+- (BOOL)isSleepWakeRequired;
+- (BOOL)isRestartRequired;
+- (unsigned int)getWhitelistedPersonalizationFields;
+- (id)getDeviceClassName;
 - (BOOL)updateRequiresPersonalization;
 - (id)validateAsset;
 - (id)validateAssetAttributes:(id)arg1;
@@ -128,6 +137,7 @@
 - (void)stopReconnectTimer;
 - (void)startReconnectTimer:(int)arg1;
 - (BOOL)findAccessory;
+- (void)setFirmwareImage:(id)arg1;
 - (void)dealloc;
 - (id)initWithDeviceClass:(id)arg1 assetType:(id)arg2 skipDFU:(BOOL)arg3 byteEscape:(BOOL)arg4 skipReconnect:(BOOL)arg5 options:(id)arg6 serialNum:(id)arg7;
 

@@ -47,10 +47,11 @@
 - (void)_updateGenerator;
 - (void)update;
 @property(readonly, nonatomic) PXLayoutGenerator *generator;
-- (void)applySpriteChangeDetails:(id)arg1 countAfterChanges:(unsigned int)arg2 initialState:(CDUnknownBlockType)arg3 modifyState:(CDUnknownBlockType)arg4;
+- (void)didApplySpriteChangeDetails:(id)arg1;
 - (void)metricsDidChange;
 - (void)screenScaleDidChange;
 - (void)referenceSizeDidChange;
+- (id)objectReferenceForSpriteIndex:(unsigned int)arg1;
 - (void)enumerateItemsInRect:(struct CGRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)getSpriteZPosition:(out float *)arg1 clippingRect:(out struct CGRect *)arg2 forSpriteKind:(long long)arg3;
 - (id)newGenerator;

@@ -4,19 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <UIKit/UIKeyCommand.h>
 
-@class UIKeyCommand;
-
-@interface WFBlockKeyCommand : NSObject
+@interface WFBlockKeyCommand : UIKeyCommand
 {
-    UIKeyCommand *_keyCommand;
+    CDUnknownBlockType _block;
 }
 
-+ (id)keyCommandWithInput:(id)arg1 modifierFlags:(long long)arg2 block:(CDUnknownBlockType)arg3 discoverabilityTitle:(id)arg4;
-@property(readonly, nonatomic) UIKeyCommand *keyCommand; // @synthesize keyCommand=_keyCommand;
++ (id)commandWithTitle:(id)arg1 input:(id)arg2 modifierFlags:(long long)arg3 block:(CDUnknownBlockType)arg4;
+@property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
-- (id)initWithKeyCommand:(id)arg1;
 
 @end
 

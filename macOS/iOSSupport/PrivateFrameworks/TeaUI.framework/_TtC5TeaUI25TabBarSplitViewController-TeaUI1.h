@@ -9,6 +9,7 @@
 @class NSArray;
 
 @interface _TtC5TeaUI25TabBarSplitViewController (TeaUI1)
+- (void)toggleSideBarVisibility;
 - (void)toggleResponderPane;
 @property(nonatomic, readonly) NSArray *keyCommands;
 @end

@@ -8,6 +8,7 @@
 
 #import <ContentKit/WFContentItemClass-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface WFPhotoItemProviderContentItem : WFNSItemProviderContentItem <WFContentItemClass>
 {
 }

@@ -79,7 +79,7 @@
 - (BOOL)canHelpRestoreZoneName:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (id)allKnownRecordNames;
+- (id)allKnownRecordNamesWithinRecordZoneWithID:(id)arg1;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
 - (void)loadLocalCachesFromStore;
 - (id)syncReadingHistoryItemRecords:(id)arg1 deletedArticleIDs:(id)arg2 didRemoveLastVisitedAt:(out char *)arg3;

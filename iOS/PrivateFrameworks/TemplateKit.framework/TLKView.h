@@ -22,6 +22,7 @@
 
 + (void)makeContainerShadowCompatible:(id)arg1;
 + (void)enableShadow:(_Bool)arg1 forView:(id)arg2;
++ (void)enableLightKeylineStroke:(_Bool)arg1 forView:(id)arg2;
 + (Class)layerClass;
 + (struct UIEdgeInsets)defaultInsets;
 @property(retain, nonatomic) TLKAppearance *tlkAppearance; // @synthesize tlkAppearance=_tlkAppearance;

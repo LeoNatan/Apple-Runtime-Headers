@@ -21,6 +21,7 @@
     } _has;
     _Bool _requiresAuthentication;
     _Bool _requiresProtectedData;
+    _Bool __encodeLegacyGloryData;
     _INPBIntentResponsePayloadFailure *_payloadFailure;
     _INPBIntentResponsePayloadSuccess *_payloadSuccess;
     int _type;
@@ -28,6 +29,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) _Bool requiresProtectedData; // @synthesize requiresProtectedData=_requiresProtectedData;

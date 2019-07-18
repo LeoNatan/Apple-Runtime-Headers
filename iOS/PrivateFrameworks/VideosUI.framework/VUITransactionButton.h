@@ -6,19 +6,19 @@
 
 #import <VideosUI/VUIButton.h>
 
-@class NSString, VUICircleProgressIndicator;
+@class NSString, VUICircularProgress;
 
 __attribute__((visibility("hidden")))
 @interface VUITransactionButton : VUIButton
 {
     _Bool _waitingForTransactionToStart;
     _Bool _monitorTransaction;
-    VUICircleProgressIndicator *_progressIndicator;
+    VUICircularProgress *_progressIndicator;
     NSString *_textContentTitleBackup;
 }
 
 @property(copy, nonatomic) NSString *textContentTitleBackup; // @synthesize textContentTitleBackup=_textContentTitleBackup;
-@property(retain, nonatomic) VUICircleProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
+@property(retain, nonatomic) VUICircularProgress *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(nonatomic) _Bool monitorTransaction; // @synthesize monitorTransaction=_monitorTransaction;
 @property(nonatomic, getter=isWaitingForTransactionToStart) _Bool waitingForTransactionToStart; // @synthesize waitingForTransactionToStart=_waitingForTransactionToStart;
 - (void).cxx_destruct;
@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateProgressIndicatorTintColor:(id)arg1;
 - (void)_buttonTapped:(id)arg1 eventName:(id)arg2;
 - (void)_layoutProgressIndicatorIfNeeded;
+- (id)_carouselView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)updateWithElement:(id)arg1;

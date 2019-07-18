@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)_create_pillView;
 - (_Bool)_pulsingForVoiceControlType:(long long)arg1;
 - (id)_backgroundColorForVoiceControlType:(long long)arg1 styleAttributes:(id)arg2;
+- (double)imageOpacityForVoiceControlType:(long long)arg1;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (id)createDisplayItemForIdentifier:(id)arg1;
 

@@ -7,11 +7,12 @@
 #import <ScreenTimeUI/STRootGroupSpecifierProvider.h>
 
 #import <ScreenTimeUI/AAUISignInControllerDelegate-Protocol.h>
+#import <ScreenTimeUI/MCProfileConnectionObserver-Protocol.h>
 
 @class NSString, PSSpecifier;
 
 __attribute__((visibility("hidden")))
-@interface STSignInToiCloudGroupSpecifierProvider : STRootGroupSpecifierProvider <AAUISignInControllerDelegate>
+@interface STSignInToiCloudGroupSpecifierProvider : STRootGroupSpecifierProvider <AAUISignInControllerDelegate, MCProfileConnectionObserver>
 {
     PSSpecifier *_signInSpecifier;
 }

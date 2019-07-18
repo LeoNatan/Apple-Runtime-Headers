@@ -14,6 +14,7 @@
 {
     struct os_unfair_lock_s _lock;
     _Bool _ignoreNextRedirection;
+    _Bool _completed;
     NSUUID *_UUID;
     unsigned int _identifier;
     NSMutableArray *_transactionMetrics;
@@ -28,6 +29,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (long long)optionsFromTask:(id)arg1;
+@property(nonatomic) _Bool completed; // @synthesize completed=_completed;
 @property(retain, nonatomic) __CFN_SessionMetrics *sessionMetrics; // @synthesize sessionMetrics=_sessionMetrics;
 @property(retain) __CFN_TransactionMetrics *currentTransactionMetrics; // @synthesize currentTransactionMetrics=_currentTransactionMetrics;
 @property(nonatomic) _Bool ignoreNextRedirection; // @synthesize ignoreNextRedirection=_ignoreNextRedirection;

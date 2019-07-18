@@ -21,7 +21,7 @@
 @property(readonly, copy, nonatomic) NSArray *assertions; // @synthesize assertions=_assertions;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)resultByAddingResult:(id)arg1;
+- (id)resultCombiningWithResult:(id)arg1;
 - (id)initWithAssertions:(id)arg1 invalidations:(id)arg2;
 
 @end

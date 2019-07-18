@@ -17,8 +17,9 @@
 @interface SBIconListViewDraggingDestinationDelegate : NSObject <SBFSpringLoadedInteractionBehaviorDelegate, SBFSpringLoadedInteractionEffectDelegate, BSDescriptionProviding, UIDropInteractionDelegate>
 {
     NSMapTable *_dragObservers;
-    NSMutableSet *_activeDragSessions;
-    NSMutableSet *_dragSessionsWaitingForConcludeDrop;
+    NSMutableSet *_activeDropSessionIdentifiers;
+    NSMutableSet *_dropSessionIdentifiersWaitingForConcludeDrop;
+    NSMapTable *_uniqueIdentifiers;
     _Bool _waitingForConcludeDrag;
     SBIconListView *_iconListView;
     UIDropInteraction *_dropInteraction;
@@ -64,6 +65,7 @@
 - (void)removeAllDragObserversForDropSession:(id)arg1;
 - (void)enumerateDragObserversForDropSession:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)addDragObserver:(id)arg1 forDropSession:(id)arg2;
+- (id)uniqueIdentifierForDropSession:(id)arg1;
 - (id)initWithIconListView:(id)arg1;
 
 // Remaining properties

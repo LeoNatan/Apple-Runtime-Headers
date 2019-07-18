@@ -6,22 +6,18 @@
 
 #import <WorkflowKit/WFAccessResource.h>
 
-@class ENSession;
-
 @interface WFEvernoteAccessResource : WFAccessResource
 {
-    ENSession *_evernoteSession;
 }
 
-@property(retain, nonatomic) ENSession *evernoteSession; // @synthesize evernoteSession=_evernoteSession;
-- (void).cxx_destruct;
++ (id)evernoteCallbackScheme;
++ (id)evernoteSession;
 - (void)logOut;
 - (_Bool)canLogOut;
 - (id)username;
 - (id)resourceName;
 - (void)makeAvailableAtGlobalLevelWithUserInterface:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned long long)globalLevelStatus;
-- (id)evernoteCallbackScheme;
 - (id)protectedResourceDescription;
 - (void)dealloc;
 - (id)initWithDefinition:(id)arg1;

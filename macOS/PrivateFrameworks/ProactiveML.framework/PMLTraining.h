@@ -22,11 +22,9 @@
 + (id)sharedSingletonWithDirectory:(id)arg1;
 @property(readonly) PMLTrainingStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
-- (void)trainWhileDoneForTesting;
 - (void)setSourceRecoverer:(CDUnknownBlockType)arg1;
 - (id)planReceivedWithPayload:(id)arg1 error:(id *)arg2;
 - (void)trimDb;
-- (void)trainWhile:(CDUnknownBlockType)arg1;
 - (void)updateLastTrainingFeaturizationForModel:(id)arg1 andData:(id)arg2;
 - (id)lastTrainingFeaturizationForModelName:(id)arg1 andLocale:(id)arg2;
 - (void)updateSessionsAndLabelForModel:(id)arg1 block:(CDUnknownBlockType)arg2;
@@ -34,6 +32,7 @@
 - (void)deleteSessionsWithDomainIdentifiers:(id)arg1 bundleID:(id)arg2;
 - (void)deleteSessionsWithIdentifiers:(id)arg1 bundleID:(id)arg2;
 - (void)_deleteAllSavedRecordsFromFidesStoreSync;
+- (void)_sendStatsToFidesForMultiLabelModel:(id)arg1 sessionCount:(unsigned long long)arg2 labeledStats:(id)arg3;
 - (void)_sendStatsToFidesForModel:(id)arg1 sessionCount:(unsigned long long)arg2 positivesCount:(unsigned long long)arg3 support:(float)arg4;
 - (void)sendSessionStatsToFides;
 - (BOOL)isMultiLabelModel:(id)arg1;

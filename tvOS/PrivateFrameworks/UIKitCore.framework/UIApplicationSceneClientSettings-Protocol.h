@@ -9,6 +9,7 @@
 @class FBSDisplayConfigurationRequest, FBSDisplayMode, NSArray, NSData, NSDictionary, NSString;
 
 @protocol UIApplicationSceneClientSettings <NSObject>
+@property(readonly, nonatomic) long long sceneActivationBias;
 @property(readonly, nonatomic) NSData *activationConditionsData;
 @property(readonly, copy, nonatomic) NSString *canvasTitle;
 @property(readonly, nonatomic) _Bool disablesMirroring;

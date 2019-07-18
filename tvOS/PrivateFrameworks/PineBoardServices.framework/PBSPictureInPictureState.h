@@ -20,14 +20,16 @@
 @property(readonly, nonatomic) BSSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPictureInPictureActive) _Bool pictureInPictureActive;
+@property(readonly, nonatomic) unsigned long long presentationState;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)description;
 - (id)_initWithSettings:(id)arg1;
 - (id)initWithState:(id)arg1;
-- (id)initWithPictureInPictureActive:(_Bool)arg1;
+- (id)initWithPresentationState:(unsigned long long)arg1;
 
 @end
 

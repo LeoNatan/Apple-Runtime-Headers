@@ -48,8 +48,7 @@
 - (id)initWithRecord:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)jsonDictionaryRepresentation;
-- (id)initWithDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1 productTimeZone:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

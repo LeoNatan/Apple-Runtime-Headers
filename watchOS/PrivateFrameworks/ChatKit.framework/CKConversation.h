@@ -9,7 +9,7 @@
 #import <ChatKit/NCABPersonListViewDelegate-Protocol.h>
 #import <ChatKit/_MKNanoPlaceCardViewControllerDelegate-Protocol.h>
 
-@class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSDate, NSNumber, NSSet, NSString;
+@class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSDate, NSNumber, NSSet, NSString, STConversationContext;
 
 @interface CKConversation : NSObject <_MKNanoPlaceCardViewControllerDelegate, NCABPersonListViewDelegate>
 {
@@ -31,6 +31,7 @@
     NSSet *_pendingRecipients;
     NSAttributedString *_groupName;
     NSArray *_suggestedReplies;
+    STConversationContext *_screenTimeConversationContext;
     NSString *_previewText;
     NSNumber *_businessConversation;
     NSDate *_dateLastViewed;
@@ -63,6 +64,7 @@
 @property(nonatomic) _Bool hasLoadedAllMessages; // @synthesize hasLoadedAllMessages=_hasLoadedAllMessages;
 @property(copy, nonatomic) NSString *previewText; // @synthesize previewText=_previewText;
 @property(retain, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
+@property(nonatomic) __weak STConversationContext *screenTimeConversationContext; // @synthesize screenTimeConversationContext=_screenTimeConversationContext;
 @property(retain, nonatomic) NSArray *suggestedReplies; // @synthesize suggestedReplies=_suggestedReplies;
 @property(readonly, nonatomic) NSAttributedString *groupName; // @synthesize groupName=_groupName;
 @property(retain, nonatomic) NSSet *pendingRecipients; // @synthesize pendingRecipients=_pendingRecipients;

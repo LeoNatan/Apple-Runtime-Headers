@@ -41,7 +41,12 @@
 - (id)defaultMagazineGenres;
 - (id)defaultSubscriptionButtonConfigs;
 - (id)defaultPaywallConfigs;
+@property(readonly, nonatomic) long long minimumPagesInPDFIssueBeforeRead;
+@property(readonly, nonatomic) long long minimumArticlesInANFIssueBeforeRead;
+@property(readonly, nonatomic) long long minimumReadIssuesInMyMagazines;
+@property(readonly, nonatomic) long long recentIssuesMaxAge;
 @property(readonly, nonatomic, getter=isCategoriesDownloadButtonEnabled) _Bool categoriesDownloadButtonEnabled;
+@property(readonly, nonatomic) long long entitlementsCacheExpiredGracePeriodInSeconds;
 @property(readonly, nonatomic) long long entitlementsGracePeriodInSeconds;
 @property(readonly, nonatomic) NSArray *groupWhitelistedTagIds;
 @property(readonly, nonatomic) long long criticalStorageAutomaticIssueDownloadTTL;
@@ -78,10 +83,12 @@
 @property(readonly, nonatomic) NSString *endOfPurchaseFamilySharingSetupArticleID;
 @property(readonly, nonatomic) NSString *familySharingLandingPageArticleID;
 @property(readonly, nonatomic) NSString *defaultLandingPageArticleID;
+@property(readonly, nonatomic, getter=isFamilySharingSetupEnabled) _Bool familySharingSetupEnabled;
 @property(readonly, nonatomic, getter=isSharingIssuesEnabled) _Bool sharingIssuesEnabled;
 @property(readonly, nonatomic, getter=isTemporaryAccessEnabled) _Bool temporaryAccessEnabled;
 @property(readonly, nonatomic, getter=isPaidBundleVisible) _Bool paidBundleVisible;
 @property(readonly, nonatomic, getter=areMagazinesEnabled) _Bool magazinesEnabled;
+@property(readonly, nonatomic) long long deferredHardPaywallMinimumBodyTextLength;
 @property(readonly, nonatomic) unsigned long long articleHardPaywallType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

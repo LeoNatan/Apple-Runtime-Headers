@@ -10,6 +10,7 @@
 {
 }
 
++ (id)dayHighlightContainingAsset:(id)arg1;
 + (void)returnContextualKeyAssetForHighlightNode:(id)arg1 withManager:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 + (id)onThisDayLocalDateForYearHighlight:(id)arg1 withOptions:(id)arg2;
 

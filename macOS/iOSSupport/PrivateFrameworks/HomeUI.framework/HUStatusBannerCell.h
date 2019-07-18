@@ -8,7 +8,7 @@
 
 #import <HomeUI/HUGridCellProtocol-Protocol.h>
 
-@class HFItem, HUGridStatusBannerCellLayoutOptions, NSString, UIButton, UIImageView, UILabel, UIView;
+@class HFItem, HUGridStatusBannerCellLayoutOptions, NSArray, NSString, UIButton, UIImageView, UILabel, UIView;
 @protocol HUResizableCellDelegate;
 
 @interface HUStatusBannerCell : UICollectionViewCell <HUGridCellProtocol>
@@ -23,10 +23,12 @@
     UIView *_lineView;
     UIView *_lipView;
     UILabel *_continueLabel;
+    NSArray *_layoutConstraints;
 }
 
 + (Class)layoutOptionsClass;
 + (BOOL)requiresConstraintBasedLayout;
+@property(retain, nonatomic) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property(retain, nonatomic) UILabel *continueLabel; // @synthesize continueLabel=_continueLabel;
 @property(retain, nonatomic) UIView *lipView; // @synthesize lipView=_lipView;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
@@ -38,6 +40,7 @@
 @property(retain, nonatomic) HUGridStatusBannerCellLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(nonatomic, getter=areCellContentsHidden) BOOL cellContentsHidden; // @synthesize cellContentsHidden=_cellContentsHidden;
 - (void).cxx_destruct;
+- (BOOL)_isCellSizeSubclassSmallPhone;
 @property(readonly, copy) NSString *description;
 - (void)_configureBannerForUnfinishedOnboardingFlowKeyPath:(id)arg1;
 - (void)updateUIWithAnimation:(BOOL)arg1;
@@ -48,6 +51,7 @@
 - (void)prepareForReuse;
 - (void)layoutOptionsDidChange;
 - (void)updateConstraints;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_setupCommonCellAppearance;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

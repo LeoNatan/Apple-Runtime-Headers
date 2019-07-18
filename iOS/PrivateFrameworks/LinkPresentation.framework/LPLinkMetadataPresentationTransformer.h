@@ -29,6 +29,7 @@
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(copy, nonatomic) LPLinkMetadata *metadata; // @synthesize metadata=_metadata;
 - (void).cxx_destruct;
+- (void)_populateProperties:(id)arg1 withPrimaryIcon:(id)arg2 iconProperties:(id)arg3;
 - (void)_populateProperties:(id)arg1 withPrimaryIcon:(id)arg2;
 - (void)_populateProperties:(id)arg1 withPrimaryImage:(id)arg2;
 - (_Bool)_prefersLeadingIconWithStyle:(long long)arg1;
@@ -37,6 +38,7 @@
 - (unsigned long long)_rowConfiguration;
 @property(readonly, nonatomic) _Bool hasMedia;
 - (id)presentationProperties;
+- (id)unspecializedPresentationPropertiesForStyle:(long long)arg1;
 - (id)unspecializedPresentationProperties;
 - (id)commonPresentationPropertiesForStyle:(long long)arg1;
 - (id)backgroundColorForStyle:(long long)arg1;

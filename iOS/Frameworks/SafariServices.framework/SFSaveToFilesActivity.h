@@ -8,7 +8,7 @@
 
 #import <SafariServices/_SFSaveToFilesOperationDelegate-Protocol.h>
 
-@class NSString, UIViewController, _SFSaveToFilesOperation;
+@class NSString, UIViewController, _SFActivityItemCustomizationController, _SFSaveToFilesOperation;
 
 __attribute__((visibility("hidden")))
 @interface SFSaveToFilesActivity : _SFActivity <_SFSaveToFilesOperationDelegate>
@@ -17,18 +17,20 @@ __attribute__((visibility("hidden")))
     UIViewController *_presenterViewController;
     CDUnknownBlockType _presentationCompletionHandler;
     _Bool _presentAnimated;
+    _SFActivityItemCustomizationController *_customizationController;
     _Bool _supportsDownloads;
 }
 
 @property(nonatomic) _Bool supportsDownloads; // @synthesize supportsDownloads=_supportsDownloads;
 - (void).cxx_destruct;
+- (id)customizationControllerForSaveToFilesOperation:(id)arg1;
 - (_Bool)saveToFilesOperationSupportsDownloads:(id)arg1;
 - (void)saveToFilesOperation:(id)arg1 didFinishWithSuccess:(_Bool)arg2;
 - (void)saveToFilesOperation:(id)arg1 presentViewController:(id)arg2;
 - (_Bool)_presentActivityOnViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)activityViewController;
 - (id)activityType;
-- (id)initWithActivityItemProviderCollection:(id)arg1;
+- (id)initWithActivityItemProviderCollection:(id)arg1 customizationController:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

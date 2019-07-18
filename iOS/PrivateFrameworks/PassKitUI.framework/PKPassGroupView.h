@@ -76,8 +76,6 @@
 - (void)passView:(id)arg1 willPresentPassDetailsViewController:(id)arg2;
 - (_Bool)passView:(id)arg1 deleteButtonEnabledForPass:(id)arg2;
 - (void)passView:(id)arg1 deleteButtonPressedForPass:(id)arg2;
-- (void)passViewUpdateBarcodeVisibility:(id)arg1 animated:(_Bool)arg2;
-- (_Bool)passViewCanShowBarcode:(id)arg1;
 - (void)passViewTapped:(id)arg1;
 - (void)invalidate;
 - (void)dismissBackOfPassIfNecessaryForUniqueID:(id)arg1;
@@ -126,7 +124,6 @@
 - (void)_updateCachedLayoutState;
 - (void)_updateCachedGroupState;
 - (void)_updateDelegateResponderCache;
-- (void)resizePassViewForPass:(id)arg1 animated:(_Bool)arg2;
 - (void)setDimmer:(double)arg1 animated:(_Bool)arg2;
 - (void)presentPassWithUniqueID:(id)arg1 withContext:(id)arg2;
 - (void)presentPassWithUniqueID:(id)arg1;

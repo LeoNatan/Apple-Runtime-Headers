@@ -14,13 +14,13 @@
 @interface HMBShareParticipant : HMFObject <NSCopying, NSSecureCoding>
 {
     NSUUID *_clientIdentifier;
-    HMBShareInvitation *_pendingInvitation;
     CKShareParticipant *_ckShareParticipant;
+    HMBShareInvitation *_pendingInvitation;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) CKShareParticipant *ckShareParticipant; // @synthesize ckShareParticipant=_ckShareParticipant;
 @property(copy) HMBShareInvitation *pendingInvitation; // @synthesize pendingInvitation=_pendingInvitation;
+@property(readonly, copy) CKShareParticipant *ckShareParticipant; // @synthesize ckShareParticipant=_ckShareParticipant;
 @property(readonly, copy) NSUUID *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -28,6 +28,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+@property(readonly) BOOL hasAccepted;
+@property(readonly) BOOL hasWriteAccess;
 - (id)attributeDescriptions;
 - (id)initWithCKShareParticipant:(id)arg1 clientIdentifier:(id)arg2;
 

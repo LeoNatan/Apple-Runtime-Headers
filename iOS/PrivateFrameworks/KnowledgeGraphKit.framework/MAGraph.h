@@ -115,7 +115,7 @@
 - (id)edgesForLabel:(id)arg1;
 - (id)edgesForIdentifiers:(id)arg1;
 - (id)edgeForIdentifier:(unsigned int)arg1;
-- (void)_removeMemoryEdgesWithoutCascade:(id)arg1;
+- (void)_removeMemoryEdges:(id)arg1;
 - (void)_removeMemoryEdge:(id)arg1;
 - (void)removeEdges:(id)arg1;
 - (void)removeEdge:(id)arg1;
@@ -157,7 +157,8 @@
 - (id)nodesForLabel:(id)arg1;
 - (id)nodesForIdentifiers:(id)arg1;
 - (id)nodeForIdentifier:(unsigned int)arg1;
-- (void)_removeMemoryNode:(id)arg1;
+- (id)_removeMemoryNode:(id)arg1;
+- (id)_removeMemoryNodes:(id)arg1;
 - (void)removeNodes:(id)arg1;
 - (void)removeNode:(id)arg1;
 - (void)removeNodeEdges:(id)arg1;

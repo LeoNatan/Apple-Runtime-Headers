@@ -15,6 +15,7 @@
 + (id)dynamicCarSecondaryColor;
 + (id)dynamicCarPrimaryColor;
 + (id)dynamicBackgroundColor;
++ (id)dynamicQuaternaryLabelColor;
 + (id)dynamicTertiaryLabelColor;
 + (id)dynamicSecondaryLabelColor;
 + (id)dynamicLabelColor;

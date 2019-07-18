@@ -10,9 +10,10 @@
 
 @protocol SBFluidSwitcherScrollProviding <NSObject>
 @property(nonatomic) __weak id <SBFluidSwitcherScrollProvidingDelegate> scrollDelegate;
-- (_Bool)cardsNeedDarkModeTreatment;
+- (_Bool)cardsNeedBackgroundWallpaperTreatment;
 - (void)resetAdjustedScrollingState;
 - (struct CGPoint)adjustedOffsetForOffset:(struct CGPoint)arg1 translation:(struct CGPoint)arg2 startPoint:(struct CGPoint)arg3 locationInView:(struct CGPoint)arg4 horizontalVelocity:(inout double *)arg5 verticalVelocity:(inout double *)arg6;
+- (double)distanceToLeadingEdgeOfLeadingCardFromTrailingEdgeOfScreenWithVisibleIndexToStartSearch:(unsigned long long)arg1;
 - (struct CGPoint)restingOffsetForScrollOffset:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
 - (struct CGPoint)contentOffsetForIndex:(unsigned long long)arg1;
 - (struct CGSize)fittedContentSize;

@@ -14,7 +14,7 @@
 #import <ContactsUI/NSTableViewDelegate-Protocol.h>
 
 @class CNContactStore, FAFamilyMember, NSArray, NSButton, NSScrollView, NSSegmentedControl, NSString, NSTableView;
-@protocol CNFamilyMemberWhitelistedContactsViewControllerDelegate, CNSchedulerProvider, CNUICoreFamilyMemberWhitelistedContactsDataSource;
+@protocol CNFamilyMemberWhitelistedContactsViewControllerDelegate, CNSchedulerProvider, CNUICoreContactManagementConsentCheck, CNUICoreFamilyMemberWhitelistedContactsDataSource;
 
 @interface CNFamilyMemberWhitelistedContactsViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource, NSMenuDelegate, CNFamilyMemberEditControlsViewControllerDelegate, CNFamilyMemberWhitelistedContactViewCellDelegate, CNUICoreFamilyMemberContactsObserver>
 {
@@ -22,6 +22,7 @@
     FAFamilyMember *_familyMember;
     id <CNFamilyMemberWhitelistedContactsViewControllerDelegate> _delegate;
     id <CNUICoreFamilyMemberWhitelistedContactsDataSource> _dataSource;
+    id <CNUICoreContactManagementConsentCheck> _contactManagentConsentCheck;
     id <CNSchedulerProvider> _schedulerProvider;
     CNContactStore *_familyMemberScopedContactStore;
     CNContactStore *_mainContactStore;
@@ -42,8 +43,9 @@
 @property(readonly, nonatomic) CNContactStore *mainContactStore; // @synthesize mainContactStore=_mainContactStore;
 @property(readonly, nonatomic) CNContactStore *familyMemberScopedContactStore; // @synthesize familyMemberScopedContactStore=_familyMemberScopedContactStore;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
+@property(readonly, nonatomic) id <CNUICoreContactManagementConsentCheck> contactManagentConsentCheck; // @synthesize contactManagentConsentCheck=_contactManagentConsentCheck;
 @property(readonly, nonatomic) id <CNUICoreFamilyMemberWhitelistedContactsDataSource> dataSource; // @synthesize dataSource=_dataSource;
-@property(readonly, nonatomic) id <CNFamilyMemberWhitelistedContactsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) __weak id <CNFamilyMemberWhitelistedContactsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL downtimeRestictionsEnabled; // @synthesize downtimeRestictionsEnabled=_downtimeRestictionsEnabled;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 - (void).cxx_destruct;
@@ -60,6 +62,7 @@
 - (void)addNewContact:(id)arg1;
 - (void)addContactFromLocalContacts:(id)arg1;
 - (void)addContactFromMyFamilyMemberContacts:(id)arg1;
+- (id)addToWhitelistOptionsMenu;
 - (void)showAddToWhitelistDropdown;
 - (void)segmentedControlChanged:(id)arg1;
 - (void)setupConstraints;
@@ -71,6 +74,7 @@
 - (void)setupScrollView;
 - (void)setupTableView;
 - (void)setupUI;
+- (BOOL)contactManagementEnabled;
 - (id)familyMemberContactItems;
 - (void)familyMemberContactItemsDidChange;
 - (void)commitChangesToWhitelistedContacts;

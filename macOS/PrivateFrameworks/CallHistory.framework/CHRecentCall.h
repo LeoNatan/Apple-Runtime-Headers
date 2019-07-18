@@ -88,6 +88,10 @@
 + (id)predicateForCallsWithStatus:(unsigned int)arg1;
 + (id)predicateForCallsWithAnyServiceProviders:(id)arg1;
 + (id)predicateForCallsWithServiceProvider:(id)arg1;
++ (id)predicateForCallsWithAnyRemoteParticipantHandleNormalizedValues:(id)arg1;
++ (id)predicateForCallsWithAnyRemoteParticipantHandleValues:(id)arg1;
++ (id)predicateForCallsWithAnyRemoteParticipantHandleTypes:(id)arg1;
++ (id)predicateForCallsWithAnyRemoteParticipantHandles:(id)arg1;
 + (id)predicateForCallsWithRemoteParticipantHandleNormalizedValue:(id)arg1;
 + (id)predicateForCallsWithRemoteParticipantHandleValue:(id)arg1;
 + (id)predicateForCallsWithRemoteParticipantHandleType:(long long)arg1;

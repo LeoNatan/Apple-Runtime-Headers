@@ -14,6 +14,7 @@
     // Error parsing type: , name: lastSelectedItem
 }
 
++ (void)setSharedManagerWith:(id)arg1 to:(id)arg2;
 + (void)clearSharedControllerFor:(id)arg1;
 + (id)sharedManagerFor:(id)arg1;
 - (void).cxx_destruct;

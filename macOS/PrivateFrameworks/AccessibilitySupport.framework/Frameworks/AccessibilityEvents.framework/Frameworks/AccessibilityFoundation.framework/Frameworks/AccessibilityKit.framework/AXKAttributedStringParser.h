@@ -13,9 +13,9 @@
 + (id)removeAttributesFromAttributedString:(id)arg1 forRangesMatchingPattern:(id)arg2;
 + (id)_cleanupAttributedString:(id)arg1;
 + (id)_updateFont:(id)arg1 withTraits:(unsigned int)arg2;
-+ (id)_parseAttributes:(id)arg1 intoAttributedString:(id)arg2 font:(id)arg3 fontColor:(id)arg4 fontSize:(double)arg5 shouldUseOriginalAlpha:(BOOL)arg6;
++ (id)_parseAttributes:(id)arg1 intoAttributedString:(id)arg2 font:(id)arg3 fontColor:(id)arg4 backgroundColor:(id)arg5 fontSize:(double)arg6 shouldUseOriginalAlpha:(BOOL)arg7;
 + (id)trimNewlineFromAttriubtedString:(id)arg1;
-+ (id)formatAttributedString:(id)arg1 font:(id)arg2 fontColor:(id)arg3 fontSize:(double)arg4 shouldUseOriginalAlpha:(BOOL)arg5;
++ (id)formatAttributedString:(id)arg1 font:(id)arg2 fontColor:(id)arg3 backgroundColor:(id)arg4 fontSize:(double)arg5 shouldUseOriginalAlpha:(BOOL)arg6;
 + (id)_colorAttribute:(id)arg1 forAttributedString:(id)arg2 atIndex:(unsigned long long)arg3;
 + (id)backgroundColorForAttributedString:(id)arg1 atIndex:(unsigned long long)arg2;
 + (id)foregroundColorForAttributedString:(id)arg1 atIndex:(unsigned long long)arg2;

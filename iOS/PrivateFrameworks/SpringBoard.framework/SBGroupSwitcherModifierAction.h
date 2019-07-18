@@ -13,15 +13,15 @@
     NSMutableArray *_actions;
 }
 
-+ (id)actionByAppendingAction:(id)arg1 toAction:(id)arg2;
 + (id)groupActionWithActions:(id)arg1;
 - (void).cxx_destruct;
 - (unsigned long long)leafCount;
 - (void)enumerateLeafActionsUsingBlock:(CDUnknownBlockType)arg1;
-- (void)appendActions:(id)arg1;
-- (void)appendAction:(id)arg1;
+- (void)enumerateActionsUsingBlock:(CDUnknownBlockType)arg1;
+- (id)appendAction:(id)arg1;
+- (void)addActions:(id)arg1;
+- (void)addAction:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
-- (_Bool)isGroupAction;
 - (id)init;
 - (long long)type;
 

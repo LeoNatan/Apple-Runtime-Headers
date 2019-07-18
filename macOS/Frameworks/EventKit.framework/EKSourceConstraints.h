@@ -8,12 +8,14 @@
 
 @interface EKSourceConstraints : NSObject
 {
+    BOOL _shouldUseDeleteAndAddInsteadOfMoveBetweenCalendars;
     int _maxAlarmsAllowed;
     int _maxRecurrencesAllowed;
     CDStruct_a60c0deb _flags;
 }
 
 @property CDStruct_a60c0deb flags; // @synthesize flags=_flags;
+@property(nonatomic) BOOL shouldUseDeleteAndAddInsteadOfMoveBetweenCalendars; // @synthesize shouldUseDeleteAndAddInsteadOfMoveBetweenCalendars=_shouldUseDeleteAndAddInsteadOfMoveBetweenCalendars;
 @property(nonatomic) int maxRecurrencesAllowed; // @synthesize maxRecurrencesAllowed=_maxRecurrencesAllowed;
 @property(nonatomic) int maxAlarmsAllowed; // @synthesize maxAlarmsAllowed=_maxAlarmsAllowed;
 @property(nonatomic) BOOL supportsRecurrenceSplit;

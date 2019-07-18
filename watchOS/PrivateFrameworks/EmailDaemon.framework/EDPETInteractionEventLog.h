@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <EmailDaemon/EDInteractionEventLog-Protocol.h>
+#import <EmailDaemon/EDPBHasher-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class CNContactStore, EDInteractionEventLogSaltProvider, EFLazyCache, NSData, NSFileHandle, NSString, NSURL;
+@class CNContactStore, EDInteractionEventLogSaltProvider, EFLazyCache, EFMutableInt64Set, NSData, NSFileHandle, NSString, NSURL;
 @protocol EMUserProfileProvider, EMVIPManager, OS_dispatch_queue;
 
-@interface EDPETInteractionEventLog : NSObject <EFLoggable, EDInteractionEventLog>
+@interface EDPETInteractionEventLog : NSObject <EFLoggable, EDPBHasher, EDInteractionEventLog>
 {
     // Error parsing type: AB, name: _shouldLog
     NSURL *_currentLogFile;
@@ -22,16 +23,19 @@
     id <EMVIPManager> _vipManager;
     EFLazyCache *_contactIDCache;
     NSString *_meContactIdentifier;
-    NSData *_monthSalt;
+    NSData *_rotatingSalt;
     NSObject<OS_dispatch_queue> *_workQueue;
     // Error parsing type: AI, name: _sequenceNumber
     NSURL *_directory;
     NSFileHandle *_logFileHandle;
+    EFMutableInt64Set *_currentLogMessageIDs;
     long long _userID;
     long long _deviceID;
 }
 
++ (void)enumerateFramesInData:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (id)log;
+@property(retain, nonatomic) EFMutableInt64Set *currentLogMessageIDs; // @synthesize currentLogMessageIDs=_currentLogMessageIDs;
 // Error parsing type for property shouldLog:
 // Property attributes: TAB,N,V_shouldLog
 
@@ -41,9 +45,7 @@
 // Property attributes: TAI,N,V_sequenceNumber
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(readonly, nonatomic) NSData *monthSalt; // @synthesize monthSalt=_monthSalt;
-@property(readonly, nonatomic) long long deviceID; // @synthesize deviceID=_deviceID;
-@property(readonly, nonatomic) long long userID; // @synthesize userID=_userID;
+@property(retain, nonatomic) NSData *rotatingSalt; // @synthesize rotatingSalt=_rotatingSalt;
 @property(retain, nonatomic) NSString *meContactIdentifier; // @synthesize meContactIdentifier=_meContactIdentifier;
 @property(readonly, nonatomic) EFLazyCache *contactIDCache; // @synthesize contactIDCache=_contactIDCache;
 @property(readonly, nonatomic) id <EMVIPManager> vipManager; // @synthesize vipManager=_vipManager;
@@ -58,32 +60,41 @@
 - (void)persistEvent:(id)arg1 dataFromMessage:(id)arg2;
 - (void)persistEvent:(id)arg1 date:(id)arg2 conversationID:(long long)arg3 data:(id)arg4;
 - (void)persistEvent:(id)arg1 date:(id)arg2 message:(id)arg3 data:(id)arg4;
-- (void)_fillEvent:(id)arg1 dataFromMessage:(id)arg2;
-- (long long)_hashedConversationID:(long long)arg1;
-- (long long)_hashedMailboxID:(id)arg1;
-- (long long)_hashedAccountID:(id)arg1;
-- (id)_hashedSubject:(id)arg1;
-- (long long)_contactIDForAddress:(id)arg1;
-- (long long)_hashedString:(id)arg1;
+- (id)_messageDataEventForMessage:(id)arg1 account:(id)arg2;
+- (id)hashedMessageHeadersForMessage:(id)arg1;
+- (long long)hashedConversationID:(long long)arg1;
+- (long long)hashedMailboxID:(id)arg1;
+- (long long)hashedAccountID:(id)arg1;
+- (CDStruct_815f15fd)hashedSubject:(id)arg1;
+- (long long)hashedContactIDForAddress:(id)arg1;
+- (long long)hashedString:(id)arg1;
+- (id)_currentLocaleIdentifier;
 - (long long)_truncatedSHA256:(id)arg1;
-- (void)_fillEvent:(id)arg1 fromData:(id)arg2;
-- (void)_fillEvent:(id)arg1 fromFeatureData:(id)arg2;
-- (void)_fillEvent:(id)arg1 fromMessage:(id)arg2 conversationID:(long long)arg3 account:(id)arg4;
 - (id)_eventForName:(int)arg1 date:(id)arg2;
-- (int)_convertMailboxType:(int)arg1;
 - (int)_timezoneOffset;
 - (unsigned long long)_truncatedUNIXTimestampFromDate:(id)arg1;
 - (int)_eventNameFromString:(id)arg1;
-- (void)_writeTruncationEvent;
-- (_Bool)_logReachedQuota;
+- (void)waitForPendingWrites;
+- (_Bool)_isLogQuotaReached;
 - (id)batchedEventsForSubmission;
-- (void)_readFramedMessagesIntoBatch:(id)arg1;
+- (void)_compressFramedMessagesIntoBatch:(id)arg1;
+- (unsigned int)_estimateStopCount:(id)arg1;
+- (void)_writeQuotaReachedEvent;
+- (void)_writeHeader;
+- (void)_writeMessageDataIfNecessary:(id)arg1 account:(id)arg2;
+- (void)_writeMessageDataIfNecessary:(id)arg1;
 - (void)_writeEvent:(id)arg1;
+- (id)_scanForMessageIDs:(id)arg1 logVersion:(out int *)arg2;
 - (id)_framedMessage:(id)arg1;
 - (int)_openFileForAppending:(id)arg1;
 - (id)_buildLogFileURLInDir:(id)arg1;
 - (_Bool)_openCurrentLogfile;
-- (void)_rotateLog;
+- (void)_rotateLogWithCompressedData:(id)arg1;
+- (void)_resetIdentifiers;
+- (unsigned int)_persistentBits;
+- (id)_salt;
+@property(readonly, nonatomic) long long deviceID; // @synthesize deviceID=_deviceID;
+@property(readonly, nonatomic) long long userID; // @synthesize userID=_userID;
 - (id)initWithDirectory:(id)arg1 userProfileProvider:(id)arg2 saltProvider:(id)arg3 contactStore:(id)arg4 vipManager:(id)arg5;
 
 // Remaining properties

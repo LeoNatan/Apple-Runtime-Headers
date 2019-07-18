@@ -7,11 +7,12 @@
 #import <PhotosUICore/PXObservable.h>
 
 #import <PhotosUICore/CPLStatusDelegate-Protocol.h>
+#import <PhotosUICore/PXAssetCountObserverDelegate-Protocol.h>
 
-@class CPLStatus, NSObject, NSProgress, NSString, PLPhotoLibrary, PXCPLState;
+@class CPLStatus, NSObject, NSProgress, NSString, PHPhotoLibrary, PLPhotoLibrary, PXAssetCountObserver, PXCPLState;
 @protocol OS_dispatch_queue;
 
-@interface PXCPLStatus : PXObservable <CPLStatusDelegate>
+@interface PXCPLStatus : PXObservable <CPLStatusDelegate, PXAssetCountObserverDelegate>
 {
     PXCPLState *_state;
     NSObject<OS_dispatch_queue> *_serialUpdateQueue;
@@ -19,7 +20,10 @@
     unsigned long long _syncProgressState;
     id _syncProgressSubscriber;
     NSProgress *_syncProgress;
-    PLPhotoLibrary *_photoLibrary;
+    PXAssetCountObserver *_numberOfReferencedItemsObserver;
+    unsigned long long _numberOfReferencedItems;
+    PHPhotoLibrary *_ph_photoLibrary;
+    PLPhotoLibrary *_pl_photoLibrary;
     unsigned long long _needsUpdate;
     double _lastUpdate;
     _Bool _isUpdating;
@@ -29,6 +33,7 @@
 + (id)currentStatusProvider;
 @property(readonly, nonatomic) PXCPLState *state; // @synthesize state=_state;
 - (void).cxx_destruct;
+- (void)assetCountObserver:(id)arg1 didChangeNumberOfAssets:(long long)arg2;
 - (void)statusDidChange:(id)arg1;
 - (void)syncWithCloudPhotoLibrary;
 - (void)userPauseCloudPhotos:(_Bool)arg1;
@@ -40,12 +45,12 @@
 - (void)_subscribeToSyncProgress;
 - (void)_setSyncProgress:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_powerStateDidChange:(id)arg1;
 - (void)_scheduleUpdateForType:(unsigned long long)arg1;
 - (void)_schedulePendingUpdates;
 - (void)_performUpdate;
 - (id)_updateState:(id)arg1 requestedTypes:(unsigned long long)arg2;
 - (void)setState:(id)arg1;
-- (id)mutableChangeObject;
 - (void)dealloc;
 - (id)init;
 - (id)_initWithInitialSynchronousUpdateType:(unsigned long long)arg1;

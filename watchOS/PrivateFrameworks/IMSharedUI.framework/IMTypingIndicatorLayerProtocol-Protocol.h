@@ -6,9 +6,12 @@
 
 #import <IMSharedUI/NSObject-Protocol.h>
 
+@class UITraitCollection;
+
 @protocol IMTypingIndicatorLayerProtocol <NSObject>
 @property(nonatomic) _Bool hasDarkBackground;
 - (void)startGrowAnimation;
+- (void)setTraitCollection:(UITraitCollection *)arg1;
 - (void)stopAnimation;
 - (void)stopPulseAnimation;
 - (void)startPulseAnimation;

@@ -17,12 +17,16 @@ __attribute__((visibility("hidden")))
     CNContactStore *_contactStore;
 }
 
++ (BOOL)isCandidatePolicy:(id)arg1 ofContactInCandidateContainerWithType:(long long)arg2 preferredOverPolicy:(id)arg3 ofContactInContainerWithType:(long long)arg4;
++ (BOOL)shouldIgnorePolicyOfContactInGuarianRestrictedContainer:(id)arg1;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNCache *cachedAccounts; // @synthesize cachedAccounts=_cachedAccounts;
 @property(retain, nonatomic) CNCache *cachedPolicies; // @synthesize cachedPolicies=_cachedPolicies;
 @property(retain, nonatomic) CNCache *cachedContainers; // @synthesize cachedContainers=_cachedContainers;
 - (void).cxx_destruct;
 - (id)_accountForContact:(id)arg1;
+- (id)bestPolicyForContact:(id)arg1;
+- (id)defaultContainerPolicy;
 - (id)_policyForContact:(id)arg1;
 - (id)containerForContact:(id)arg1;
 - (void)resetCache;

@@ -25,54 +25,7 @@ struct AddressReserve {
     int _field5;
 };
 
-struct Aggregate {
-    id _field1;
-    _Bool _field2;
-    struct vector<std::__1::shared_ptr<DeviceState>, std::__1::allocator<std::__1::shared_ptr<DeviceState>>> _field3;
-};
-
-struct AggregateDevice;
-
-struct AggregateScope {
-    struct vector<AggregateDevice::Stream, std::__1::allocator<AggregateDevice::Stream>> _field1;
-    struct DeviceState *_field2;
-    struct vector<unsigned int, std::__1::allocator<unsigned int>> _field3;
-    struct vector<unsigned int, std::__1::allocator<unsigned int>> _field4;
-};
-
-struct AggregateState {
-    struct weak_ptr<DeviceState> _field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    id _field4;
-    struct Scope _field5;
-    struct Scope _field6;
-    struct optional<DeviceState::Aggregate> _field7;
-    _Bool _field8;
-    struct AggregateScope _field9;
-    struct AggregateScope _field10;
-};
-
-struct ChannelLayout {
-    struct vector<char, std::__1::allocator<char>> _field1;
-};
-
-struct DefaultDeviceAggregate {
-    struct mutex _field1;
-    struct mutex _field2;
-    struct optional<SafeHALListener<std::__1::mutex>> _field3;
-    int _field4;
-    struct unique_ptr<AggregateDevice, std::__1::default_delete<AggregateDevice>> _field5;
-    struct optional<AggregateDevice::AggregateState> _field6;
-    unsigned int _field7;
-    unsigned int _field8;
-    int _field9;
-    struct vector<DefaultDeviceAggregate::Observer, std::__1::allocator<DefaultDeviceAggregate::Observer>> _field10;
-    struct queue _field11;
-    struct unique_ptr<SimulatorDeviceSettings, std::__1::default_delete<SimulatorDeviceSettings>> _field12;
-};
-
-struct DeviceState;
+struct AggregateState;
 
 struct HapticSharedMemory {
     CDUnknownFunctionPointerType *_vptr$SharableMemoryBase;
@@ -86,44 +39,10 @@ struct HapticSharedMemory {
     NSObject *mXPCObject;
 };
 
-struct Observer;
-
-struct SafeHALListener<std::__1::mutex> {
-    CDUnknownFunctionPointerType *_field1;
-    struct optional<TOpaqueRef<SafeHALListenerBase>> _field2;
-    struct vector<std::__1::tuple<unsigned int, AudioObjectPropertyAddress>, std::__1::allocator<std::__1::tuple<unsigned int, AudioObjectPropertyAddress>>> _field3;
-    struct mutex *_field4;
-    struct function<bool (unsigned int, unsigned int, const std::__1::vector<AudioObjectPropertyAddress, std::__1::allocator<AudioObjectPropertyAddress>>&)> _field5;
-};
-
-struct SafeHALListenerBase;
-
-struct Scope {
-    struct vector<unsigned int, std::__1::allocator<unsigned int>> _field1;
-    unsigned int _field2;
-    struct pair<unsigned int, unsigned int> _field3;
-    struct ChannelLayout _field4;
-};
-
-struct SimulatorDeviceSettings;
-
-struct Stream;
-
-struct TOpaqueRef<SafeHALListenerBase> {
-    CDUnknownFunctionPointerType *_field1;
-    unsigned int _field2;
-    struct SafeHALListenerBase *_field3;
-};
+struct __shared_weak_count;
 
 struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
     struct __tree_node_base<void *> *__left_;
-};
-
-struct function<bool (unsigned int, unsigned int, const std::__1::vector<AudioObjectPropertyAddress, std::__1::allocator<AudioObjectPropertyAddress>>&)> {
-    struct __value_func<bool (unsigned int, unsigned int, const std::__1::vector<AudioObjectPropertyAddress, std::__1::allocator<AudioObjectPropertyAddress>>&)> {
-        struct type _field1;
-        struct __base<bool (unsigned int, unsigned int, const std::__1::vector<AudioObjectPropertyAddress, std::__1::allocator<AudioObjectPropertyAddress>>&)> *_field2;
-    } _field1;
 };
 
 struct map<unsigned long, SequenceEntry *, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, SequenceEntry *>>> {
@@ -145,121 +64,28 @@ struct mutex {
     } __m_;
 };
 
-struct object {
-    id _field1;
+struct reactor<DefaultDeviceAggregate>;
+
+struct shared_ptr<caulk::reactor<DefaultDeviceAggregate>> {
+    struct reactor<DefaultDeviceAggregate> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
 };
 
-struct optional<AggregateDevice::AggregateState> {
-    union {
-        char _field1;
-        struct AggregateState _field2;
-    } _field1;
-    _Bool _field2;
-};
-
-struct optional<DeviceState::Aggregate> {
-    union {
-        char _field1;
-        struct Aggregate _field2;
-    } _field1;
-    _Bool _field2;
-};
-
-struct optional<SafeHALListener<std::__1::mutex>> {
-    union {
-        char _field1;
-        struct SafeHALListener<std::__1::mutex> _field2;
-    } _field1;
-    _Bool _field2;
-};
-
-struct optional<TOpaqueRef<SafeHALListenerBase>> {
-    union {
-        char _field1;
-        struct TOpaqueRef<SafeHALListenerBase> _field2;
-    } _field1;
-    _Bool _field2;
-};
-
-struct pair<unsigned int, unsigned int> {
-    unsigned int _field1;
-    unsigned int _field2;
-};
-
-struct queue {
-    struct object _field1;
-};
-
-struct shared_ptr<DeviceState>;
-
-struct tuple<unsigned int, AudioObjectPropertyAddress>;
-
-struct type {
-    unsigned char _field1[32];
-};
-
-struct unique_ptr<AggregateDevice, std::__1::default_delete<AggregateDevice>> {
-    struct __compressed_pair<AggregateDevice *, std::__1::default_delete<AggregateDevice>> {
-        struct AggregateDevice *_field1;
-    } _field1;
-};
-
-struct unique_ptr<SimulatorDeviceSettings, std::__1::default_delete<SimulatorDeviceSettings>> {
-    struct __compressed_pair<SimulatorDeviceSettings *, std::__1::default_delete<SimulatorDeviceSettings>> {
-        struct SimulatorDeviceSettings *_field1;
-    } _field1;
-};
-
-struct vector<AggregateDevice::Stream, std::__1::allocator<AggregateDevice::Stream>> {
-    struct Stream *_field1;
-    struct Stream *_field2;
-    struct __compressed_pair<AggregateDevice::Stream *, std::__1::allocator<AggregateDevice::Stream>> {
-        struct Stream *_field1;
-    } _field3;
-};
-
-struct vector<DefaultDeviceAggregate::Observer, std::__1::allocator<DefaultDeviceAggregate::Observer>> {
-    struct Observer *_field1;
-    struct Observer *_field2;
-    struct __compressed_pair<DefaultDeviceAggregate::Observer *, std::__1::allocator<DefaultDeviceAggregate::Observer>> {
-        struct Observer *_field1;
-    } _field3;
-};
-
-struct vector<char, std::__1::allocator<char>> {
-    char *_field1;
-    char *_field2;
-    struct __compressed_pair<char *, std::__1::allocator<char>> {
-        char *_field1;
-    } _field3;
-};
-
-struct vector<std::__1::shared_ptr<DeviceState>, std::__1::allocator<std::__1::shared_ptr<DeviceState>>> {
-    struct shared_ptr<DeviceState> *_field1;
-    struct shared_ptr<DeviceState> *_field2;
-    struct __compressed_pair<std::__1::shared_ptr<DeviceState>*, std::__1::allocator<std::__1::shared_ptr<DeviceState>>> {
-        struct shared_ptr<DeviceState> *_field1;
-    } _field3;
-};
-
-struct vector<std::__1::tuple<unsigned int, AudioObjectPropertyAddress>, std::__1::allocator<std::__1::tuple<unsigned int, AudioObjectPropertyAddress>>> {
-    struct tuple<unsigned int, AudioObjectPropertyAddress> *_field1;
-    struct tuple<unsigned int, AudioObjectPropertyAddress> *_field2;
-    struct __compressed_pair<std::__1::tuple<unsigned int, AudioObjectPropertyAddress>*, std::__1::allocator<std::__1::tuple<unsigned int, AudioObjectPropertyAddress>>> {
-        struct tuple<unsigned int, AudioObjectPropertyAddress> *_field1;
-    } _field3;
-};
-
-struct vector<unsigned int, std::__1::allocator<unsigned int>> {
-    unsigned int *_field1;
-    unsigned int *_field2;
-    struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
-        unsigned int *_field1;
-    } _field3;
-};
-
-struct weak_ptr<DeviceState> {
-    struct DeviceState *_field1;
+struct shared_ptr<const AggregateState> {
+    struct AggregateState *_field1;
     struct __shared_weak_count *_field2;
 };
+
+#pragma mark Typedef'd Structures
+
+// Template types
+typedef struct shared_ptr<caulk::reactor<DefaultDeviceAggregate>> {
+    struct reactor<DefaultDeviceAggregate> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_57118bb5;
+
+typedef struct shared_ptr<const AggregateState> {
+    struct AggregateState *_field1;
+    struct __shared_weak_count *_field2;
+} shared_ptr_4c923a7b;
 

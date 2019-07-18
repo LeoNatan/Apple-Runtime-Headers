@@ -87,7 +87,6 @@
 - (void)_handleSession:(id)arg1 didBecomeActiveWithActivationContext:(id)arg2;
 - (void)_handleSession:(id)arg1 willBecomeActiveWithActivationContext:(id)arg2;
 - (void)_handleSession:(id)arg1 didStopSoundWithID:(long long)arg2 error:(id)arg3;
-- (void)_handleSession:(id)arg1 didNotStartSoundWithID:(long long)arg2 error:(id)arg3;
 - (void)_handleSession:(id)arg1 didStartSoundWithID:(long long)arg2;
 - (void)_handleSession:(id)arg1 willStartSoundWithID:(long long)arg2;
 - (void)_handleSession:(id)arg1 didEndUpdateAudioPowerWithType:(long long)arg2;
@@ -135,7 +134,6 @@
 - (void)session:(id)arg1 didBecomeActiveWithActivationContext:(id)arg2;
 - (void)session:(id)arg1 willBecomeActiveWithActivationContext:(id)arg2;
 - (void)session:(id)arg1 didStopSoundWithID:(long long)arg2 error:(id)arg3;
-- (void)session:(id)arg1 didNotStartSoundWithID:(long long)arg2 error:(id)arg3;
 - (void)session:(id)arg1 didStartSoundWithID:(long long)arg2;
 - (void)session:(id)arg1 willStartSoundWithID:(long long)arg2;
 - (void)session:(id)arg1 didEndUpdateAudioPowerWithType:(long long)arg2;

@@ -7,13 +7,10 @@
 #import <HealthKit/HKMedicalRecord.h>
 
 #import <HealthRecordsUI/HRWDDisplayable-Protocol.h>
-#import <HealthRecordsUI/HRWDTitleFetchable-Protocol.h>
 
 @class HKInspectableValueCollection, NSArray, NSDate, NSString;
 
-@interface HKMedicalRecord (Displayable) <HRWDDisplayable, HRWDTitleFetchable>
-+ (id)_sortedDisplayItemsForDosages:(id)arg1;
-+ (id)_periodDisplayItemWithStartDate:(id)arg1 endDate:(id)arg2 startTitle:(id)arg3 endTitle:(id)arg4 instanceTitle:(id)arg5 rangeTitle:(id)arg6;
+@interface HKMedicalRecord (Displayable) <HRWDDisplayable>
 - (id)meaningfulDateDisplayStringWithPreferredForm:(long long)arg1 showTime:(_Bool)arg2;
 - (id)sortDateTitle;
 @property(readonly, nonatomic) NSString *titleDisplayStringForDetailViewController;
@@ -25,16 +22,17 @@
 @property(readonly, nonatomic) NSString *meaningfulDateTitle;
 - (id)codings;
 @property(readonly, nonatomic) HKInspectableValueCollection *chartValue;
-- (void)fetchObservationDetailItemsWithHealthRecordsStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fetchObservationDetailItemsWithHealthRecordsStore:(id)arg1 style:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchChartValueWithRangeWithHealthStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchStructuredFieldItemsWithHealthRecordsStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSArray *conceptNameItems;
 - (void)fetchDisplayNameItemWithHealthRecordsStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchConceptRoomItemsWithHealthRecordsStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchDetailItemsWithHealthRecordsStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fetchConceptRoomItemsWithHealthRecordsStore:(id)arg1 conceptStore:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)fetchStructuredFieldItemsWithHealthRecordsStore:(id)arg1 conceptStore:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)fetchDetailItemsWithHealthRecordsStore:(id)arg1 conceptStore:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, copy, nonatomic) NSString *subtitle;
 @property(readonly, copy, nonatomic) NSString *title;
-- (void)fetchTitleWithHealthRecordsStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
+@property(nonatomic, readonly) NSString *displayNameForGroupByConcept;
+@property(nonatomic, readonly) NSString *preferredDisplayName;
 - (id)chartableCodedQuantitySet;
 
 // Remaining properties

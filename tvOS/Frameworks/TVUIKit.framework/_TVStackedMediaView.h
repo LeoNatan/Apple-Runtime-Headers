@@ -13,6 +13,7 @@
 @interface _TVStackedMediaView : UIView <_TVStackedMediaLoaderDelegate>
 {
     _Bool _active;
+    _Bool _appearsHighlighted;
     _Bool _failedToLoadPreviewAsset;
     UIImage *_placeholderImage;
     UIImage *_fallbackImage;
@@ -47,6 +48,7 @@
 @property(retain, nonatomic) NSMutableArray *documentEntryViews; // @synthesize documentEntryViews=_documentEntryViews;
 @property(retain, nonatomic) UIMotionEffectGroup *motionEffect; // @synthesize motionEffect=_motionEffect;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
+@property(nonatomic) _Bool appearsHighlighted; // @synthesize appearsHighlighted=_appearsHighlighted;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) _TVStackedMediaDocument *document; // @synthesize document=_document;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
@@ -59,6 +61,8 @@
 - (void)stackedMediaLoaderReadyToTransitionPreviewToVideo:(id)arg1;
 - (void)stackedMediaLoader:(id)arg1 readyWithPlayerLayer:(id)arg2 forEntry:(id)arg3;
 - (void)_playVideoViews:(_Bool)arg1;
+- (struct CGRect)_viewFrameForEntryAtLayerIndex:(unsigned long long)arg1;
+- (double)_gimbalAmountForEntryAtLayerIndex:(unsigned long long)arg1;
 - (void)_uninstallMotionEffect;
 - (void)_installMotionEffect;
 - (void)_calculateMaxGimbalAmount;

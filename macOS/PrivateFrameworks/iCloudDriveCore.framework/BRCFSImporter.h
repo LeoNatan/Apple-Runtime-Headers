@@ -40,9 +40,9 @@ __attribute__((visibility("hidden")))
 - (id)_getOrCreateTrashItemInAppLibrary:(id)arg1 extension:(id)arg2 error:(id *)arg3;
 - (unsigned short)capabilityToMoveItem:(id)arg1 toNewParentItem:(id)arg2 error:(id *)arg3;
 - (id)createAndImportNewDirectoryWithLogicalName:(id)arg1 parentItem:(id)arg2 extension:(id)arg3 error:(id *)arg4;
-- (id)importNewItemAtURL:(id)arg1 logicalName:(id)arg2 parentItem:(id)arg3 templateItem:(id)arg4 fields:(unsigned long long)arg5 options:(unsigned long long)arg6 extension:(id)arg7 isExistingItem:(char *)arg8 error:(id *)arg9;
+- (id)importNewItemAtURL:(id)arg1 logicalName:(id)arg2 parentItem:(id)arg3 templateItem:(id)arg4 fields:(unsigned long long)arg5 options:(unsigned long long)arg6 extension:(id)arg7 appLibraryDocumentsFolder:(id *)arg8 error:(id *)arg9;
 - (BOOL)isDesktopOrDocumentsItem:(id)arg1;
-- (BOOL)shouldRejectItem:(id)arg1 templateItem:(id)arg2 extension:(id)arg3 tryReconciling:(char *)arg4;
+- (BOOL)shouldRejectItem:(id)arg1 templateItem:(id)arg2 extension:(id)arg3;
 - (id)_globalItemByFileID:(unsigned long long)arg1;
 - (id)_globalItemByDocumentID:(unsigned int)arg1;
 - (id)_createNewItemWithImportObject:(id)arg1 error:(id *)arg2;

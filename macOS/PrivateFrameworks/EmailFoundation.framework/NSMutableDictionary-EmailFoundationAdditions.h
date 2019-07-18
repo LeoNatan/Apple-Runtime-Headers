@@ -7,6 +7,7 @@
 #import <Foundation/NSMutableDictionary.h>
 
 @interface NSMutableDictionary (EmailFoundationAdditions)
+- (void)ef_removeObjectsPassingTest:(CDUnknownBlockType)arg1;
 - (void)ef_setOptionalObject:(id)arg1 forKey:(id)arg2;
 @end
 

@@ -28,6 +28,8 @@
 }
 
 + (id)controllerWithFamilyMember:(id)arg1 options:(id)arg2 schedulerProvider:(id)arg3;
++ (id)contactByRemovingSensitiveDataFromContact:(id)arg1;
++ (id)propertyKeysContainingSenstiveData;
 @property(readonly, nonatomic) id <CNCancelable> contactStoreDidChangeToken; // @synthesize contactStoreDidChangeToken=_contactStoreDidChangeToken;
 @property(retain, nonatomic) CNFuture *deleteContactsFromWhitelistFuture; // @synthesize deleteContactsFromWhitelistFuture=_deleteContactsFromWhitelistFuture;
 @property(retain, nonatomic) CNFuture *updateContactsInWhitelistFuture; // @synthesize updateContactsInWhitelistFuture=_updateContactsInWhitelistFuture;
@@ -38,7 +40,7 @@
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) id <CNUICoreFamilyMemberContactsUpdating> familyMemberContactsUpdator; // @synthesize familyMemberContactsUpdator=_familyMemberContactsUpdator;
 @property(readonly, nonatomic) id <CNUICoreFamilyMemberContactsModelFetching> modelFetcher; // @synthesize modelFetcher=_modelFetcher;
-@property(retain, nonatomic) id <CNUICoreFamilyMemberContactsObserver> observer; // @synthesize observer=_observer;
+@property(nonatomic) __weak id <CNUICoreFamilyMemberContactsObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
 - (id)contactRepresentingItem:(id)arg1;
 - (void)finishWhitelistedContactsTasks;
@@ -49,6 +51,7 @@
 - (void)cancelContactItemsFetch;
 - (void)triggerContactItemsFetch;
 @property(retain, nonatomic) NSArray *familyMemberContactItems; // @synthesize familyMemberContactItems=_familyMemberContactItems;
+@property(readonly, nonatomic) BOOL familyMemberContainerIsEmpty;
 @property(readonly, nonatomic) long long fetchStatus;
 - (void)dealloc;
 - (void)setupChangeNotificationResponse;

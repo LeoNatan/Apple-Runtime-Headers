@@ -15,6 +15,7 @@
 @interface _INPBSearchForMediaIntent : PBCodable <_INPBSearchForMediaIntent, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBIntentMetadata *_intentMetadata;
     NSArray *_mediaItems;
     _INPBMediaSearch *_mediaSearch;
@@ -22,6 +23,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)mediaItemsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBMediaSearch *mediaSearch; // @synthesize mediaSearch=_mediaSearch;
 @property(copy, nonatomic) NSArray *mediaItems; // @synthesize mediaItems=_mediaItems;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;

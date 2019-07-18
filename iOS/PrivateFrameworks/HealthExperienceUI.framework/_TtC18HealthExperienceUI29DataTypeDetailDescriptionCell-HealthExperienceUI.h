@@ -6,9 +6,9 @@
 
 #import <HealthExperienceUI/_TtC18HealthExperienceUI29DataTypeDetailDescriptionCell.h>
 
-@class NSString;
+#import <HealthExperienceUI/UITextViewDelegate-Protocol.h>
 
-@interface _TtC18HealthExperienceUI29DataTypeDetailDescriptionCell (HealthExperienceUI)
-@property(nonatomic, readonly) NSString *description;
+@interface _TtC18HealthExperienceUI29DataTypeDetailDescriptionCell (HealthExperienceUI) <UITextViewDelegate>
+- (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 @end
 

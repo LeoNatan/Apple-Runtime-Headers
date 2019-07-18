@@ -8,7 +8,7 @@
 
 #import <Notes/ICLegacyContext-Protocol.h>
 
-@class AccountUtilities, CPExclusiveLock, NSManagedObjectContext, NSMutableDictionary, NSNumber, NoteAccountObject, NoteStoreObject;
+@class AccountUtilities, CPExclusiveLock, ICManagedObjectContextUpdater, NSManagedObjectContext, NSMutableDictionary, NSNumber, NoteAccountObject, NoteStoreObject;
 
 @interface NoteContext : NSObject <ICLegacyContext>
 {
@@ -28,6 +28,7 @@
     NSMutableDictionary *_notePropertyObjectsRealized;
     _Bool _isMainContext;
     _Bool _usePrivateQueue;
+    ICManagedObjectContextUpdater *_mocUpdater;
 }
 
 + (id)searchIndexerDataSource;
@@ -55,11 +56,13 @@
 + (_Bool)databaseIsCorrupt:(id)arg1;
 + (_Bool)shouldLogIndexing;
 + (id)newLegacyContext;
+@property(retain, nonatomic) ICManagedObjectContextUpdater *mocUpdater; // @synthesize mocUpdater=_mocUpdater;
 @property(nonatomic) _Bool usePrivateQueue; // @synthesize usePrivateQueue=_usePrivateQueue;
 @property(nonatomic) _Bool isMainContext; // @synthesize isMainContext=_isMainContext;
 @property(retain, nonatomic) AccountUtilities *accountUtilities; // @synthesize accountUtilities=_accountUtilities;
 - (void).cxx_destruct;
 - (long long)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
+- (void)updateForRecentChanges;
 - (void)cleanUpLocks;
 - (void)trackChanges:(id)arg1;
 - (void)managedObjectContextWillSaveNotification:(id)arg1;

@@ -29,6 +29,7 @@
     TUICandidateBackdropView *_backdropView;
 }
 
++ (_Bool)_preventsAppearanceProxyCustomization;
 @property(nonatomic) _Bool changingLayout; // @synthesize changingLayout=_changingLayout;
 @property(nonatomic) _Bool shouldShowArrowButton; // @synthesize shouldShowArrowButton=_shouldShowArrowButton;
 @property(nonatomic) _Bool showingSortControl; // @synthesize showingSortControl=_showingSortControl;

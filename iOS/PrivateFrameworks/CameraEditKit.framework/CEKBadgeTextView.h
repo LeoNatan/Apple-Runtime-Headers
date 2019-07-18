@@ -11,6 +11,7 @@
 @interface CEKBadgeTextView : CEKBadgeView
 {
     NSString *_contentSizeCategory;
+    unsigned long long _fontStyle;
     NSDictionary *__textAttributes;
     NSString *__text;
     struct UIEdgeInsets __textInsets;
@@ -18,12 +19,13 @@
 
 + (double)_heightForContentSize:(id)arg1 textInsets:(struct UIEdgeInsets)arg2;
 + (double)_textHeightForContentSize:(id)arg1;
-+ (id)_fontForContentSize:(id)arg1;
-+ (id)_textAttributesForContentSize:(id)arg1;
++ (id)_fontForContentSize:(id)arg1 fontStyle:(unsigned long long)arg2;
++ (id)_textAttributesForContentSize:(id)arg1 fontStyle:(unsigned long long)arg2;
 + (struct UIEdgeInsets)_defaultTextInsets;
 @property(nonatomic, setter=_setTextInsets:) struct UIEdgeInsets _textInsets; // @synthesize _textInsets=__textInsets;
 @property(copy, nonatomic, setter=_setText:) NSString *_text; // @synthesize _text=__text;
 @property(retain, nonatomic, setter=_setTextAttributes:) NSDictionary *_textAttributes; // @synthesize _textAttributes=__textAttributes;
+@property(nonatomic) unsigned long long fontStyle; // @synthesize fontStyle=_fontStyle;
 @property(copy, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;

@@ -27,6 +27,7 @@
 - (double)_angleAtProgress:(float)arg1;
 - (double)_shapeLineWidth;
 - (void)_setupGradientLayer:(id)arg1;
+- (void)layoutSubviews;
 - (id)initWithCurveWidth:(double)arg1 padding:(double)arg2 beginAngle:(double)arg3 endAngle:(double)arg4 forDevice:(id)arg5 withFilterStyle:(long long)arg6;
 
 @end

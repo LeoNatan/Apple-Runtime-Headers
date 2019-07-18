@@ -6,11 +6,13 @@
 
 #import <CoreKnowledge/NSObject-Protocol.h>
 
-@class CKGenericCondition, CKTripleCondition, INIntent, INInteraction, NSArray, NSDictionary, NSString;
+@class CKGenericCondition, CKTripleCondition, INIntent, INInteraction, NSArray, NSData, NSDictionary, NSString, NSUUID;
 
 @protocol CKDaemonInterface <NSObject>
+- (void)relativeAppUsageProbabilitiesForBundleIDs:(NSArray *)arg1 overDays:(long long)arg2 completionHandler:(void (^)(NSDictionary *))arg3;
+- (void)appMatchesForJSONIntent:(NSData *)arg1 candidateBundleIDs:(NSArray *)arg2 completionHandler:(void (^)(SRAppMatches *))arg3;
 - (void)appMatchesForIntent:(INIntent *)arg1 candidateBundleIDs:(NSArray *)arg2 completionHandler:(void (^)(SRAppMatches *))arg3;
-- (void)saveInteraction:(INInteraction *)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)saveInteraction:(INInteraction *)arg1 dkEventUUID:(NSUUID *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)disableSyncAndDeleteCloudDataWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)dropLinksBetweenSubject:(NSString *)arg1 andObject:(NSString *)arg2 inStoreWithIdentifier:(NSString *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)dropLinksWithLabel:(NSString *)arg1 fromSubject:(NSString *)arg2 inStoreWithIdentifier:(NSString *)arg3 completionHandler:(void (^)(NSError *))arg4;

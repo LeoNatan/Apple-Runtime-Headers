@@ -33,6 +33,7 @@
 - (void)updateAuthorizationCredentials:(id)arg1 token:(id)arg2;
 - (void)passwordUpdated;
 - (void)authenticateAccount;
+@property(readonly, nonatomic) NSString *userUniqueIdentifier;
 @property(retain, nonatomic) NSString *displayName;
 @property(retain, nonatomic) NSString *regionBasePhoneNumber;
 @property(retain, nonatomic) NSString *regionID;
@@ -80,6 +81,7 @@
 - (id)initWithLoginID:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3;
 - (id)initWithDictionary:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3;
 - (id)_initWithDictionary:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3;
+- (id)matchingSim;
 
 @end
 

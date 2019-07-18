@@ -10,7 +10,6 @@
 
 @interface NTKRingsAndDotsView : UIView
 {
-    _Bool _enabled;
     _Bool _hidesOverlapShadow;
     NSArray *_ringColors;
     NSMutableArray *_ringsFillFractions;
@@ -21,9 +20,11 @@
     double _ringGapWidth;
     double _appearanceAnimationProgress;
     NSArray *_ringViews;
+    NSArray *_overlapArcArray;
 }
 
 + (id)emptyFillFractions;
+@property(retain, nonatomic) NSArray *overlapArcArray; // @synthesize overlapArcArray=_overlapArcArray;
 @property(retain, nonatomic) NSArray *ringViews; // @synthesize ringViews=_ringViews;
 @property(nonatomic) double appearanceAnimationProgress; // @synthesize appearanceAnimationProgress=_appearanceAnimationProgress;
 @property(nonatomic) double ringGapWidth; // @synthesize ringGapWidth=_ringGapWidth;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UIColor *secondaryForegroundColor; // @synthesize secondaryForegroundColor=_secondaryForegroundColor;
 @property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(nonatomic) _Bool hidesOverlapShadow; // @synthesize hidesOverlapShadow=_hidesOverlapShadow;
-@property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSMutableArray *ringsFillFractions; // @synthesize ringsFillFractions=_ringsFillFractions;
 @property(retain, nonatomic) NSArray *ringColors; // @synthesize ringColors=_ringColors;
 - (void).cxx_destruct;
@@ -43,7 +43,7 @@
 - (void)setFilterProvider:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 diameter:(double)arg2 ringWidth:(double)arg3 ringGapWidth:(double)arg4 overlapStrokeWidth:(double)arg5 device:(id)arg6;
+- (id)initWithFrame:(struct CGRect)arg1 diameter:(double)arg2 ringWidth:(double)arg3 ringGapWidth:(double)arg4 overlapStrokeWidth:(double)arg5;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

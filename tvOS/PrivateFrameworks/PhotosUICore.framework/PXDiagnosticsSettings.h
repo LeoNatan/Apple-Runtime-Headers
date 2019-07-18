@@ -15,7 +15,6 @@
     _Bool _enableTitleFontService;
     _Bool _enableCompleteMyMomentService;
     _Bool _enableDebugDictionaryService;
-    _Bool _simulateLaunchedToTest;
     _Bool _enableScrollService;
     double _scrollSpeed;
     long long _scrollIterations;
@@ -26,7 +25,6 @@
 @property(nonatomic) long long scrollIterations; // @synthesize scrollIterations=_scrollIterations;
 @property(nonatomic) double scrollSpeed; // @synthesize scrollSpeed=_scrollSpeed;
 @property(nonatomic) _Bool enableScrollService; // @synthesize enableScrollService=_enableScrollService;
-@property(nonatomic) _Bool simulateLaunchedToTest; // @synthesize simulateLaunchedToTest=_simulateLaunchedToTest;
 @property(nonatomic) _Bool enableDebugDictionaryService; // @synthesize enableDebugDictionaryService=_enableDebugDictionaryService;
 @property(nonatomic) _Bool enableCompleteMyMomentService; // @synthesize enableCompleteMyMomentService=_enableCompleteMyMomentService;
 @property(nonatomic) _Bool enableTitleFontService; // @synthesize enableTitleFontService=_enableTitleFontService;

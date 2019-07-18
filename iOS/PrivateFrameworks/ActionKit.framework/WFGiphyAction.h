@@ -6,28 +6,17 @@
 
 #import <WorkflowKit/WFAction.h>
 
-#import <ActionKit/WFGiphyViewControllerDelegate-Protocol.h>
+@class WFGiphySessionManager;
 
-@class NSString, WFGiphySessionManager;
-
-@interface WFGiphyAction : WFAction <WFGiphyViewControllerDelegate>
+@interface WFGiphyAction : WFAction
 {
     WFGiphySessionManager *_sessionManager;
 }
 
 - (void).cxx_destruct;
-- (void)giphyViewController:(id)arg1 didSelectObjects:(id)arg2;
-- (void)giphyViewControllerDidCancel:(id)arg1;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
 - (void)runWithUIKitWidgetUserInterface:(id)arg1 input:(id)arg2;
 - (void)runWithNoUserInterface;
 @property(readonly, nonatomic) WFGiphySessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

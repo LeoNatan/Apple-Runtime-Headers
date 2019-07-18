@@ -6,22 +6,22 @@
 
 #import <HomeKitDaemon/HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper.h>
 
-@class CKRecordID, CKRecordZoneID, NSArray, NSMutableArray;
+@class CKRecordID, CKRecordZoneID, NSArray, NSMutableSet;
 
 @interface HMDNetworkRouterFirewallRuleManagerBackingStoreMirrorFetchRecordsInfo : HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper
 {
     CKRecordZoneID *_zoneID;
     CKRecordID *_recordID;
     NSArray *_desiredKeys;
-    NSMutableArray *_records;
+    NSMutableSet *_records;
 }
 
-@property(readonly, nonatomic) NSMutableArray *records; // @synthesize records=_records;
+@property(readonly, nonatomic) NSMutableSet *records; // @synthesize records=_records;
 @property(readonly, nonatomic) NSArray *desiredKeys; // @synthesize desiredKeys=_desiredKeys;
 @property(readonly, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(readonly, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
 - (void).cxx_destruct;
-- (id)initWithActivity:(id)arg1 options:(id)arg2 promise:(id)arg3 database:(id)arg4 zoneID:(id)arg5 recordID:(id)arg6 desiredKeys:(id)arg7;
+- (id)initWithActivity:(id)arg1 options:(id)arg2 promise:(id)arg3 database:(id)arg4 useAnonymousRequests:(_Bool)arg5 zoneID:(id)arg6 recordID:(id)arg7 desiredKeys:(id)arg8;
 
 @end
 

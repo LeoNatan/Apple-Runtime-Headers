@@ -11,7 +11,6 @@
     _Bool wideColorSpace;
 }
 
-+ (void)load;
 - (_Bool)wideColorSpace;
 
 @end

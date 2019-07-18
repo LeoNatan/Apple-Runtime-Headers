@@ -9,8 +9,11 @@
 @interface PXGSplitLayout : PXGLayout
 {
     CDStruct_d97c9657 _updateFlags;
+    CDStruct_d97c9657 _additionalUpdateFlags;
     _Bool _settingSublayouts;
     _Bool _isUpdatingSublayouts;
+    _Bool _isPerformingAdditionalUpdate;
+    _Bool _shouldExcludeTopAndBottomPaddingFromReferenceSize;
     PXGLayout *_firstSublayout;
     PXGLayout *_secondSublayout;
     long long _mode;
@@ -20,6 +23,7 @@
 }
 
 @property(readonly, nonatomic) struct UIEdgeInsets presentedPadding; // @synthesize presentedPadding=_presentedPadding;
+@property(nonatomic) _Bool shouldExcludeTopAndBottomPaddingFromReferenceSize; // @synthesize shouldExcludeTopAndBottomPaddingFromReferenceSize=_shouldExcludeTopAndBottomPaddingFromReferenceSize;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) double interlayoutSpacing; // @synthesize interlayoutSpacing=_interlayoutSpacing;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;

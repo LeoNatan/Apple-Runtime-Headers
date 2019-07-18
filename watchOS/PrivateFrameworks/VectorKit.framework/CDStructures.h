@@ -137,7 +137,7 @@ struct Camera {
     struct Unit<MeterUnitDescription, double> _field4;
     struct Unit<MeterUnitDescription, double> _field5;
     double _field6;
-    double _field7;
+    Matrix_8746f91e _field7;
 };
 
 struct CameraAccessCartographic;
@@ -264,6 +264,10 @@ struct Color<float, 4, geo::ColorSpace::Linear> {
 };
 
 struct Color<unsigned char, 4, geo::ColorSpace::Linear> {
+    struct Matrix<unsigned char, 4, 1> _backing;
+};
+
+struct Color<unsigned char, 4, geo::ColorSpace::sRGB> {
     struct Matrix<unsigned char, 4, 1> _backing;
 };
 
@@ -437,10 +441,6 @@ struct FeatureAttributeSet {
 
 struct FeatureMarker;
 
-struct FixedPointVector<unsigned char, 4> {
-    unsigned char _e[4];
-};
-
 struct FlyoverLibrary;
 
 struct FlyoverRouteOverlayCache;
@@ -524,9 +524,8 @@ struct IconManager {
     _Bool _field4;
     struct PackInfo *_field5;
     struct read_write_lock _field6;
-    struct LRUCache<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>, std::__1::hash<grl::IconCacheKey>> _field7;
-    struct read_write_lock _field8;
-    shared_ptr_76a6df1b _field9;
+    struct map<std::__1::pair<std::__1::basic_string<char>, float>, geo::read_write_lock, std::__1::less<std::__1::pair<std::__1::basic_string<char>, float>>, geo::StdAllocator<std::__1::pair<const std::__1::pair<std::__1::basic_string<char>, float>, geo::read_write_lock>, grl::Allocator>> _field7;
+    shared_ptr_76a6df1b _field8;
 };
 
 struct IconModifiers {
@@ -534,14 +533,14 @@ struct IconModifiers {
     _Bool _isGlyphOnly;
     float _opacity;
     float _scale;
-    struct optional<gm::FixedPointVector<uint8_t, 4>> _textColor;
-    struct optional<gm::FixedPointVector<uint8_t, 4>> _transitLineColor;
+    struct optional<geo::Color<unsigned char, 4, geo::ColorSpace::sRGB>> _textColor;
+    struct optional<geo::Color<unsigned char, 4, geo::ColorSpace::sRGB>> _transitLineColor;
     optional_44235073 _fontSize;
     optional_44235073 _tailDirection;
     optional_44235073 _textBaseline;
     struct optional<gm::Matrix<float, 2, 1>> _fillSize;
     struct optional<std::__1::basic_string<char>> _fontName;
-    struct map<unsigned short, std::__1::basic_string<char>, std::__1::less<unsigned short>, std::__1::allocator<std::__1::pair<const unsigned short, std::__1::basic_string<char>>>> _text;
+    struct map<unsigned short, std::__1::basic_string<char>, std::__1::less<unsigned short>, geo::StdAllocator<std::__1::pair<const unsigned short, std::__1::basic_string<char>>, grl::Allocator>> _text;
 };
 
 struct Incident {
@@ -569,13 +568,6 @@ struct IsoAlphaAtlas {
     float _field3;
     struct unique_ptr<ggl::Texture2D, std::__1::default_delete<ggl::Texture2D>> _field4;
     struct shared_ptr<ggl::SamplerState> _field5;
-};
-
-struct LRUCache<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>, std::__1::hash<grl::IconCacheKey>> {
-    unsigned int _field1;
-    struct unordered_map<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>, std::__1::hash<grl::IconCacheKey>, std::__1::equal_to<grl::IconCacheKey>, std::__1::allocator<std::__1::pair<const grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>>> _field2;
-    struct list<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, std::__1::allocator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>>> _field3;
-    struct function<void (std::__1::shared_ptr<grl::IconImage>)> _field4;
 };
 
 struct LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long>>;
@@ -1174,6 +1166,8 @@ struct RealisticRenderer {
 
 struct RenderBuffer;
 
+struct RenderFrame;
+
 struct RenderItem;
 
 struct RenderQueue {
@@ -1561,8 +1555,16 @@ struct StdAllocator<std::__1::__tree_node<std::__1::__value_type<id<VKCustomFeat
     struct Allocator *_field1;
 };
 
+struct StdAllocator<std::__1::__tree_node<std::__1::__value_type<std::__1::pair<std::__1::basic_string<char>, float>, geo::read_write_lock>, void *>, grl::Allocator> {
+    struct Allocator *_field1;
+};
+
 struct StdAllocator<std::__1::__tree_node<std::__1::__value_type<std::__1::shared_ptr<md::LabelExternalRoadFeature>, std::__1::shared_ptr<md::RoadLabelFeature>>, void *>, mdm::Allocator> {
     struct Allocator *_field1;
+};
+
+struct StdAllocator<std::__1::__tree_node<std::__1::__value_type<unsigned short, std::__1::basic_string<char>>, void *>, grl::Allocator> {
+    struct Allocator *_allocator;
 };
 
 struct StdAllocator<std::__1::shared_ptr<ggl::DebugRenderer>, ggl::Allocator> {
@@ -1976,10 +1978,6 @@ struct __compressed_pair<unsigned long, std::__1::hash<unsigned long long>> {
     unsigned long __value_;
 };
 
-struct __hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*> *_field1;
-};
-
 struct __hash_node_base<std::__1::__hash_node<grl::ResourceObserver *, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<grl::ResourceObserver *, void *>*> *_field1;
 };
@@ -1990,10 +1988,6 @@ struct __hash_node_base<std::__1::__hash_node<md::Anchor *, void *>*> {
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoadJob>>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoadJob>>, void *>*> *__next_;
-};
-
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>*> *_field1;
 };
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*> {
@@ -2034,11 +2028,6 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::shared_ptr<md::LabelTile
 
 struct __hash_node_base<std::__1::__hash_node<unsigned long long, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<unsigned long long, void *>*> *__next_;
-};
-
-struct __list_node_base<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *> {
-    struct __list_node_base<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *> *_field1;
-    struct __list_node_base<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *> *_field2;
 };
 
 struct __rep {
@@ -2249,13 +2238,6 @@ struct function<void (mdc::SceneStatus)> {
     } _field1;
 };
 
-struct function<void (std::__1::shared_ptr<grl::IconImage>)> {
-    struct __value_func<void (std::__1::shared_ptr<grl::IconImage>)> {
-        struct type _field1;
-        struct __base<void (std::__1::shared_ptr<grl::IconImage>)> *_field2;
-    } _field1;
-};
-
 struct linear_map<md::CommandBufferLocation, md::RenderLayer *, std::__1::equal_to<md::CommandBufferLocation>, std::__1::allocator<std::__1::pair<md::CommandBufferLocation, md::RenderLayer *>>, std::__1::vector<std::__1::pair<md::CommandBufferLocation, md::RenderLayer *>, std::__1::allocator<std::__1::pair<md::CommandBufferLocation, md::RenderLayer *>>>> {
     struct vector<std::__1::pair<md::CommandBufferLocation, md::RenderLayer *>, std::__1::allocator<std::__1::pair<md::CommandBufferLocation, md::RenderLayer *>>> _field1;
 };
@@ -2274,13 +2256,6 @@ struct linear_map<unsigned short, std::__1::set<mdc::LayerDataWithWorld, std::__
 
 struct linear_set<md::TileSelectionTileSetType, std::__1::less<md::TileSelectionTileSetType>, std::__1::allocator<md::TileSelectionTileSetType>, std::__1::vector<md::TileSelectionTileSetType, std::__1::allocator<md::TileSelectionTileSetType>>> {
     struct vector<md::TileSelectionTileSetType, std::__1::allocator<md::TileSelectionTileSetType>> _field1;
-};
-
-struct list<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, std::__1::allocator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>>> {
-    struct __list_node_base<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *> _field1;
-    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>> {
-        unsigned long _field1;
-    } _field2;
 };
 
 struct map<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData>, std::__1::less<VKPolylineOverlay *>, std::__1::allocator<std::__1::pair<VKPolylineOverlay *const, std::__1::weak_ptr<altitude::RouteLineData>>>> {
@@ -2346,6 +2321,19 @@ struct map<md::Anchor *, float, std::__1::less<md::Anchor *>, std::__1::allocato
     } __tree_;
 };
 
+struct map<std::__1::pair<std::__1::basic_string<char>, float>, geo::read_write_lock, std::__1::less<std::__1::pair<std::__1::basic_string<char>, float>>, geo::StdAllocator<std::__1::pair<const std::__1::pair<std::__1::basic_string<char>, float>, geo::read_write_lock>, grl::Allocator>> {
+    struct __tree<std::__1::__value_type<std::__1::pair<std::__1::basic_string<char>, float>, geo::read_write_lock>, std::__1::__map_value_compare<std::__1::pair<std::__1::basic_string<char>, float>, std::__1::__value_type<std::__1::pair<std::__1::basic_string<char>, float>, geo::read_write_lock>, std::__1::less<std::__1::pair<std::__1::basic_string<char>, float>>, true>, geo::StdAllocator<std::__1::__value_type<std::__1::pair<std::__1::basic_string<char>, float>, geo::read_write_lock>, grl::Allocator>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, geo::StdAllocator<std::__1::__tree_node<std::__1::__value_type<std::__1::pair<std::__1::basic_string<char>, float>, geo::read_write_lock>, void *>, grl::Allocator>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+            struct StdAllocator<std::__1::__tree_node<std::__1::__value_type<std::__1::pair<std::__1::basic_string<char>, float>, geo::read_write_lock>, void *>, grl::Allocator> _field2;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::pair<std::__1::basic_string<char>, float>, std::__1::__value_type<std::__1::pair<std::__1::basic_string<char>, float>, geo::read_write_lock>, std::__1::less<std::__1::pair<std::__1::basic_string<char>, float>>, true>> {
+            unsigned long _field1;
+        } _field3;
+    } _field1;
+};
+
 struct map<std::__1::shared_ptr<md::LabelExternalRoadFeature>, std::__1::shared_ptr<md::RoadLabelFeature>, md::LabelExternalRoadFeatureLess, geo::StdAllocator<std::__1::pair<const std::__1::shared_ptr<md::LabelExternalRoadFeature>, std::__1::shared_ptr<md::RoadLabelFeature>>, mdm::Allocator>> {
     struct __tree<std::__1::__value_type<std::__1::shared_ptr<md::LabelExternalRoadFeature>, std::__1::shared_ptr<md::RoadLabelFeature>>, std::__1::__map_value_compare<std::__1::shared_ptr<md::LabelExternalRoadFeature>, std::__1::__value_type<std::__1::shared_ptr<md::LabelExternalRoadFeature>, std::__1::shared_ptr<md::RoadLabelFeature>>, md::LabelExternalRoadFeatureLess, true>, geo::StdAllocator<std::__1::__value_type<std::__1::shared_ptr<md::LabelExternalRoadFeature>, std::__1::shared_ptr<md::RoadLabelFeature>>, mdm::Allocator>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
@@ -2359,11 +2347,12 @@ struct map<std::__1::shared_ptr<md::LabelExternalRoadFeature>, std::__1::shared_
     } _field1;
 };
 
-struct map<unsigned short, std::__1::basic_string<char>, std::__1::less<unsigned short>, std::__1::allocator<std::__1::pair<const unsigned short, std::__1::basic_string<char>>>> {
-    struct __tree<std::__1::__value_type<unsigned short, std::__1::basic_string<char>>, std::__1::__map_value_compare<unsigned short, std::__1::__value_type<unsigned short, std::__1::basic_string<char>>, std::__1::less<unsigned short>, true>, std::__1::allocator<std::__1::__value_type<unsigned short, std::__1::basic_string<char>>>> {
+struct map<unsigned short, std::__1::basic_string<char>, std::__1::less<unsigned short>, geo::StdAllocator<std::__1::pair<const unsigned short, std::__1::basic_string<char>>, grl::Allocator>> {
+    struct __tree<std::__1::__value_type<unsigned short, std::__1::basic_string<char>>, std::__1::__map_value_compare<unsigned short, std::__1::__value_type<unsigned short, std::__1::basic_string<char>>, std::__1::less<unsigned short>, true>, geo::StdAllocator<std::__1::__value_type<unsigned short, std::__1::basic_string<char>>, grl::Allocator>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned short, std::__1::basic_string<char>>, void *>>> {
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, geo::StdAllocator<std::__1::__tree_node<std::__1::__value_type<unsigned short, std::__1::basic_string<char>>, void *>, grl::Allocator>> {
             struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+            struct StdAllocator<std::__1::__tree_node<std::__1::__value_type<unsigned short, std::__1::basic_string<char>>, void *>, grl::Allocator> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned short, std::__1::__value_type<unsigned short, std::__1::basic_string<char>>, std::__1::less<unsigned short>, true>> {
             unsigned long __value_;
@@ -2398,6 +2387,14 @@ struct optional<VKMapType> {
     } _value;
 };
 
+struct optional<double> {
+    _Bool _hasValue;
+    union ValueUnion {
+        unsigned char data[8];
+        double type;
+    } _value;
+};
+
 struct optional<float> {
     _Bool _hasValue;
     union ValueUnion {
@@ -2406,11 +2403,11 @@ struct optional<float> {
     } _value;
 };
 
-struct optional<gm::FixedPointVector<uint8_t, 4>> {
+struct optional<geo::Color<unsigned char, 4, geo::ColorSpace::sRGB>> {
     _Bool _hasValue;
     union ValueUnion {
         unsigned char data[4];
-        struct FixedPointVector<unsigned char, 4> type;
+        struct Color<unsigned char, 4, geo::ColorSpace::sRGB> type;
     } _value;
 };
 
@@ -2613,18 +2610,6 @@ struct set<md::MapEngineSetting, std::__1::less<md::MapEngineSetting>, std::__1:
             struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
         } _field2;
         struct __compressed_pair<unsigned long, std::__1::less<md::MapEngineSetting>> {
-            unsigned long _field1;
-        } _field3;
-    } _field1;
-};
-
-struct set<mdc::LayerDataWithWorld, std::__1::less<mdc::LayerDataWithWorld>, std::__1::allocator<mdc::LayerDataWithWorld>> {
-    struct __tree<mdc::LayerDataWithWorld, std::__1::less<mdc::LayerDataWithWorld>, std::__1::allocator<mdc::LayerDataWithWorld>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<mdc::LayerDataWithWorld, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::less<mdc::LayerDataWithWorld>> {
             unsigned long _field1;
         } _field3;
     } _field1;
@@ -3098,6 +3083,12 @@ struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer>
     } __ptr_;
 };
 
+struct unique_ptr<ggl::RenderFrame, std::__1::default_delete<ggl::RenderFrame>> {
+    struct __compressed_pair<ggl::RenderFrame *, std::__1::default_delete<ggl::RenderFrame>> {
+        struct RenderFrame *__value_;
+    } __ptr_;
+};
+
 struct unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem>> {
     struct __compressed_pair<ggl::RenderItem *, std::__1::default_delete<ggl::RenderItem>> {
         struct RenderItem *_field1;
@@ -3238,17 +3229,6 @@ struct unique_ptr<md::TrafficSegmentsAlongRoute, std::__1::default_delete<md::Tr
     } __ptr_;
 };
 
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*> **_field1;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*>*>> {
-                unsigned long _field1;
-            } _field1;
-        } _field2;
-    } _field1;
-};
-
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<grl::ResourceObserver *, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<grl::ResourceObserver *, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<grl::ResourceObserver *, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<grl::ResourceObserver *, void *>*>*>>> {
         struct __hash_node_base<std::__1::__hash_node<grl::ResourceObserver *, void *>*> **_field1;
@@ -3280,17 +3260,6 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__h
             } __data_;
         } __value_;
     } __ptr_;
-};
-
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>*> **_field1;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>*>*>> {
-                unsigned long _field1;
-            } _field1;
-        } _field2;
-    } _field1;
 };
 
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*>*>>> {
@@ -3434,21 +3403,6 @@ struct unordered_map<_GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoad
     } __table_;
 };
 
-struct unordered_map<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>, std::__1::hash<grl::IconCacheKey>, std::__1::equal_to<grl::IconCacheKey>, std::__1::allocator<std::__1::pair<const grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>>> {
-    struct __hash_table<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, std::__1::__unordered_map_hasher<grl::IconCacheKey, std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, std::__1::hash<grl::IconCacheKey>, true>, std::__1::__unordered_map_equal<grl::IconCacheKey, std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, std::__1::equal_to<grl::IconCacheKey>, true>, std::__1::allocator<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>*>*>>> _field1;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<grl::IconCacheKey, std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, std::__1::hash<grl::IconCacheKey>, true>> {
-            unsigned long _field1;
-        } _field3;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<grl::IconCacheKey, std::__1::__hash_value_type<grl::IconCacheKey, std::__1::__list_iterator<std::__1::pair<grl::IconCacheKey, std::__1::shared_ptr<grl::IconImage>>, void *>>, std::__1::equal_to<grl::IconCacheKey>, true>> {
-            float _field1;
-        } _field4;
-    } _field1;
-};
-
 struct unordered_map<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>, md::TextureManager::TextureKeyHash, std::__1::equal_to<md::TextureManager::TextureKey>, std::__1::allocator<std::__1::pair<const md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>>> {
     struct __hash_table<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, std::__1::__unordered_map_hasher<md::TextureManager::TextureKey, std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, md::TextureManager::TextureKeyHash, true>, std::__1::__unordered_map_equal<md::TextureManager::TextureKey, std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, std::__1::equal_to<md::TextureManager::TextureKey>, true>, std::__1::allocator<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>>> {
         struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*>*>>> _field1;
@@ -3551,21 +3505,6 @@ struct unordered_map<unsigned int, unsigned long long, std::__1::hash<unsigned i
             unsigned long _field1;
         } _field3;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, unsigned long long>, std::__1::equal_to<unsigned int>, true>> {
-            float _field1;
-        } _field4;
-    } _field1;
-};
-
-struct unordered_set<geo::MercatorTile, geo::MercatorTileHash, std::__1::equal_to<geo::MercatorTile>, std::__1::allocator<geo::MercatorTile>> {
-    struct __hash_table<geo::MercatorTile, geo::MercatorTileHash, std::__1::equal_to<geo::MercatorTile>, std::__1::allocator<geo::MercatorTile>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*>*>>> _field1;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*>, std::__1::allocator<std::__1::__hash_node<geo::MercatorTile, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, geo::MercatorTileHash> {
-            unsigned long _field1;
-        } _field3;
-        struct __compressed_pair<float, std::__1::equal_to<geo::MercatorTile>> {
             float _field1;
         } _field4;
     } _field1;
@@ -3737,14 +3676,6 @@ struct vector<geo::Mercator2<double>, std::__1::allocator<geo::Mercator2<double>
     Mercator2_57ec32b6 *__end_;
     struct __compressed_pair<geo::Mercator2<double>*, std::__1::allocator<geo::Mercator2<double>>> {
         Mercator2_57ec32b6 *__value_;
-    } __end_cap_;
-};
-
-struct vector<geo::MercatorTile, std::__1::allocator<geo::MercatorTile>> {
-    struct MercatorTile *__begin_;
-    struct MercatorTile *__end_;
-    struct __compressed_pair<geo::MercatorTile *, std::__1::allocator<geo::MercatorTile>> {
-        struct MercatorTile *__value_;
     } __end_cap_;
 };
 
@@ -4790,6 +4721,14 @@ typedef struct function<void (GEOResourceManifestManager *, GEOActiveTileGroup *
     } __f_;
 } function_3f206a7d;
 
+typedef struct optional<double> {
+    _Bool _hasValue;
+    union ValueUnion {
+        unsigned char data[8];
+        double type;
+    } _value;
+} optional_76e85d3d;
+
 typedef struct optional<float> {
     _Bool _hasValue;
     union ValueUnion {
@@ -4838,18 +4777,6 @@ typedef struct set<id<VKRouteOverlay>, std::__1::less<id<VKRouteOverlay>>, std::
         } __pair3_;
     } __tree_;
 } set_8b8eec9a;
-
-typedef struct set<mdc::LayerDataWithWorld, std::__1::less<mdc::LayerDataWithWorld>, std::__1::allocator<mdc::LayerDataWithWorld>> {
-    struct __tree<mdc::LayerDataWithWorld, std::__1::less<mdc::LayerDataWithWorld>, std::__1::allocator<mdc::LayerDataWithWorld>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<mdc::LayerDataWithWorld, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::less<mdc::LayerDataWithWorld>> {
-            unsigned long _field1;
-        } _field3;
-    } _field1;
-} set_b951f446;
 
 typedef struct set<std::__1::shared_ptr<md::RouteLineData>, std::__1::less<std::__1::shared_ptr<md::RouteLineData>>, std::__1::allocator<std::__1::shared_ptr<md::RouteLineData>>> {
     struct __tree<std::__1::shared_ptr<md::RouteLineData>, std::__1::less<std::__1::shared_ptr<md::RouteLineData>>, std::__1::allocator<std::__1::shared_ptr<md::RouteLineData>>> {
@@ -5053,21 +4980,6 @@ typedef struct unordered_map<unsigned int, unsigned long long, std::__1::hash<un
         } _field4;
     } _field1;
 } unordered_map_3bd9e45d;
-
-typedef struct unordered_set<geo::MercatorTile, geo::MercatorTileHash, std::__1::equal_to<geo::MercatorTile>, std::__1::allocator<geo::MercatorTile>> {
-    struct __hash_table<geo::MercatorTile, geo::MercatorTileHash, std::__1::equal_to<geo::MercatorTile>, std::__1::allocator<geo::MercatorTile>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*>*>>> _field1;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*>, std::__1::allocator<std::__1::__hash_node<geo::MercatorTile, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<geo::MercatorTile, void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, geo::MercatorTileHash> {
-            unsigned long _field1;
-        } _field3;
-        struct __compressed_pair<float, std::__1::equal_to<geo::MercatorTile>> {
-            float _field1;
-        } _field4;
-    } _field1;
-} unordered_set_dde32e0b;
 
 typedef struct unordered_set<std::__1::shared_ptr<md::LabelTile>, std::__1::hash<std::__1::shared_ptr<md::LabelTile>>, std::__1::equal_to<std::__1::shared_ptr<md::LabelTile>>, geo::StdAllocator<std::__1::shared_ptr<md::LabelTile>, mdm::Allocator>> {
     struct __hash_table<std::__1::shared_ptr<md::LabelTile>, std::__1::hash<std::__1::shared_ptr<md::LabelTile>>, std::__1::equal_to<std::__1::shared_ptr<md::LabelTile>>, geo::StdAllocator<std::__1::shared_ptr<md::LabelTile>, mdm::Allocator>> {

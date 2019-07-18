@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (id)_actingParentScrollViewForScrollView:(id)arg1;
 - (id)initWithScrollingTreeNodeDelegate:(struct ScrollingTreeScrollingNodeDelegateIOS *)arg1;
 
 // Remaining properties

@@ -36,6 +36,7 @@
 - (_Bool)observerContainsObjectID:(id)arg1;
 - (void)_filterAndTransformObjectIDs:(id)arg1 before:(_Bool)arg2 existingObjectID:(id)arg3 batchBlock:(CDUnknownBlockType)arg4;
 - (id)_itemIDsForObjectIDs:(id)arg1;
+- (void)queryDidFinishRemoteSearch;
 - (void)queryDidFinishInitialLoad;
 - (void)queryMatchedDeletedObjectIDs:(id)arg1;
 - (void)queryMatchedChangedObjectIDs:(id)arg1;

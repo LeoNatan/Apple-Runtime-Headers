@@ -6,11 +6,12 @@
 
 #import <TextInputCore/TITypingSessionAggregatedEventObserver-Protocol.h>
 
-@class NSArray, NSString, TICAnalyticsMetricsKey;
+@class NSArray, NSNumber, NSString, TICAnalyticsMetricsKey;
 @protocol TIUserModelValuesProtocol;
 
 @protocol TIUserModeling <TITypingSessionAggregatedEventObserver>
 @property(readonly, nonatomic) NSArray *keys;
+- (void)addNumberToTransientCounter:(NSNumber *)arg1 forKey:(NSString *)arg2 andCandidateLength:(int)arg3 andContext:(TICAnalyticsMetricsKey *)arg4;
 - (void)addToTransientCounter:(int)arg1 forKey:(NSString *)arg2 andCandidateLength:(int)arg3 andContext:(TICAnalyticsMetricsKey *)arg4;
 - (void)addToDurableCounter:(int)arg1 forKey:(NSString *)arg2;
 - (id <TIUserModelValuesProtocol>)valuesForKey:(TICAnalyticsMetricsKey *)arg1;

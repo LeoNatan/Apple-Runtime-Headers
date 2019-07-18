@@ -28,6 +28,9 @@
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (id)buildItemModuleControllerForModule:(id)arg1;
+- (id)presentNetworkRouterSettingsForItem:(id)arg1 animated:(_Bool)arg2;
+- (id)presentNetworkRouterSettingsForProfile:(id)arg1 animated:(_Bool)arg2;
+- (id)presentNetworkConfigurationSettingsForProfile:(id)arg1 animated:(_Bool)arg2;
 - (id)initWithHome:(id)arg1;
 - (id)initWithItemManager:(id)arg1 tableViewStyle:(long long)arg2;
 

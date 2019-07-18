@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <TVRemoteCore/HMAccessoryDelegate-Protocol.h>
+#import <TVRemoteCore/HMAccessoryDelegatePrivate-Protocol.h>
 #import <TVRemoteCore/HMHomeDelegate-Protocol.h>
 
 @class HMHome, NSMutableDictionary, NSString;
 
-@interface _TVRCHMHomeObserver : NSObject <HMAccessoryDelegate, HMHomeDelegate>
+@interface _TVRCHMHomeObserver : NSObject <HMAccessoryDelegate, HMHomeDelegate, HMAccessoryDelegatePrivate>
 {
     HMHome *_currentHome;
     NSMutableDictionary *_serviceToAccessoryIDMapping;
@@ -21,10 +22,14 @@
 @property(retain, nonatomic) NSMutableDictionary *serviceToAccessoryIDMapping; // @synthesize serviceToAccessoryIDMapping=_serviceToAccessoryIDMapping;
 @property(retain, nonatomic) HMHome *currentHome; // @synthesize currentHome=_currentHome;
 - (void).cxx_destruct;
+- (BOOL)_checkErrorForLocallySuspendedAccessory:(id)arg1;
+- (void)_readCharacteristic:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_checkAccessoryReachabilityAndFetchTVServices:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_updateServicesForAccessory:(id)arg1;
 - (void)_updateAccessoriesForHome:(id)arg1;
 - (void)accessoryDidUpdateServices:(id)arg1;
 - (void)accessory:(id)arg1 didUpdateNameForService:(id)arg2;
+- (void)accessoryDidUpdateReachableTransports:(id)arg1;
 - (void)accessoryDidUpdateReachability:(id)arg1;
 - (void)home:(id)arg1 didRemoveAccessory:(id)arg2;
 - (void)home:(id)arg1 didAddAccessory:(id)arg2;

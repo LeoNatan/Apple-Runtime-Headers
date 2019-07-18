@@ -11,9 +11,9 @@
     unsigned long long _syncHash;
 }
 
++ (unsigned long long)syncHashForRecord:(id)arg1;
 + (Class)recordClass;
 + (int)messageType;
-- (id)record;
 @property(readonly, nonatomic) unsigned long long syncHash; // @synthesize syncHash=_syncHash;
 
 @end

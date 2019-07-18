@@ -8,10 +8,11 @@
 
 @interface _TtC7NewsUI223MagazineGridDataManager : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: delegate
+    // Error parsing type: , name: notificationManager
     // Error parsing type: , name: magazineGridModelLoader
     // Error parsing type: , name: subscriptionService
     // Error parsing type: , name: tagService
-    // Error parsing type: , name: notificationManager
 }
 
 @end

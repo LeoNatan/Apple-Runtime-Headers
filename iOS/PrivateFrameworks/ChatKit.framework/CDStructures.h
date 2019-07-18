@@ -153,6 +153,13 @@ typedef struct {
 } CDStruct_e950349b;
 
 typedef struct {
+    long long value;
+    int timescale;
+    unsigned int flags;
+    long long epoch;
+} CDStruct_1b6d18a9;
+
+typedef struct {
     long long index;
     struct CGSize imageSize;
     struct CGSize minimumSize;

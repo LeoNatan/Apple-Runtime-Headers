@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface _UIImageViewExtendedStorage : NSObject <CAAnimationDelegate>
 {
     UIImageView *_imageView;
-    _Bool _highlighted;
     UIImage *_image;
     UIImage *_highlightedImage;
     UIImage *_configuredImage;
@@ -25,16 +24,19 @@ __attribute__((visibility("hidden")))
     NSArray *_highlightedAnimationImages;
     double _animationDuration;
     int _animationRepeatCount;
-    int _drawMode;
     int _defaultRenderingMode;
-    _Bool _masksTemplateImages;
     unsigned int _templateImageRenderingEffects;
     UIImage *_displayedImage;
     UIImage *_displayedHighlightedImage;
     CIContext *_CIContext;
-    _Bool _adjustsImageSizeForAccessibilityContentSizeCategory;
     UILayoutGuide *_imageContentGuide;
     NSMapTable *_layouts;
+    unsigned int _drawMode;
+    struct {
+        unsigned int highlighted:1;
+        unsigned int masksTemplateImages:1;
+        unsigned int adjustsImageSizeForAccessibilityContentSizeCategory:1;
+    } _flags;
 }
 
 - (void).cxx_destruct;

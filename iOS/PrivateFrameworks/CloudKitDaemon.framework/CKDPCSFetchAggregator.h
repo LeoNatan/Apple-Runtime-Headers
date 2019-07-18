@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *opQueue; // @synthesize opQueue=_opQueue;
 @property(nonatomic) __weak CKDClientContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+- (void)cancelAllOperations;
 - (void)requestFetchOfZoneWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)requestFetchOfShareWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)requestFetchOfRecordWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;

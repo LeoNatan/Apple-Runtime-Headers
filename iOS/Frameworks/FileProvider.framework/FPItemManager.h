@@ -58,6 +58,7 @@
 - (void)fetchURLForItem:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchURLForItem:(id)arg1 creatingPlaceholderIfMissing:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)thumbnailsFetchOperationForItems:(id)arg1 withSize:(struct CGSize)arg2 scale:(double)arg3;
+- (id)newSearchTrashCollection;
 - (id)newSearchCollection;
 - (id)newSharedItemsCollection;
 - (id)newCollectionForTag:(id)arg1;
@@ -69,6 +70,7 @@
 - (id)newTrashCollection;
 - (id)newFavoritesCollection;
 - (id)newCollectionWithItemID:(id)arg1;
+- (id)trashCollectionForProviderDomain:(id)arg1;
 - (id)collectionForFolderItem:(id)arg1;
 - (id)rootCollectionForProviderDomain:(id)arg1;
 - (id)rootCollectionForProvider:(id)arg1;

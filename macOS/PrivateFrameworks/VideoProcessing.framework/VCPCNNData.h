@@ -28,7 +28,7 @@
 - (int)softmax;
 - (int)normalization;
 - (int)readFromDisk:(struct __sFILE *)arg1 quantFactor:(short)arg2;
-- (int)initWithImage:(struct __CVBuffer *)arg1 forChunk:(int)arg2;
+- (int)copyImage:(struct __CVBuffer *)arg1 withChunk:(int)arg2;
 - (int)reallocGPUTemporalBuffers;
 - (int)convertGPUData2CPU;
 - (int)convertCPUData2GPU;

@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface EspressoTrainingConvolutionWeightsForMPS : EspressoConvolutionWeightsForMPS
 {
+    _Bool is_training;
     id <MTLBuffer> _weightsBuffer;
     id <MTLBuffer> _biasesBuffer;
 }
@@ -22,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)ready;
 - (float *)biasTerms;
 - (void *)weights;
+- (id)initWithParams:(struct convolution_uniforms)arg1 forMode:(_Bool)arg2;
 
 @end
 

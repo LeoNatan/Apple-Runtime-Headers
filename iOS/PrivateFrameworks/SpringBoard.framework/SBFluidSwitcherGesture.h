@@ -8,33 +8,30 @@
 
 #import <SpringBoard/BSDescriptionProviding-Protocol.h>
 
-@class NSString, NSUUID, SBAppLayout, UIGestureRecognizer, UIView;
+@class NSString, SBAppLayout, UIGestureRecognizer;
 
 @interface SBFluidSwitcherGesture : NSObject <BSDescriptionProviding>
 {
-    NSUUID *_gestureID;
-    UIView *_gestureRecognizerView;
-    long long _type;
+    CDUnknownBlockType _eventProvider;
     long long _state;
     SBAppLayout *_selectedAppLayout;
-    UIGestureRecognizer *_gestureRecognizer;
+    UIGestureRecognizer *_gestureRecognizerForStudyLog;
+    long long _type;
 }
 
-@property(readonly, nonatomic) UIGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
-@property(readonly, nonatomic) SBAppLayout *selectedAppLayout; // @synthesize selectedAppLayout=_selectedAppLayout;
-@property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
+@property(retain, nonatomic, setter=_setGestureRecognizerForStudyLog:) UIGestureRecognizer *gestureRecognizerForStudyLog; // @synthesize gestureRecognizerForStudyLog=_gestureRecognizerForStudyLog;
+@property(retain, nonatomic, setter=_setSelectedAppLayout:) SBAppLayout *selectedAppLayout; // @synthesize selectedAppLayout=_selectedAppLayout;
+@property(nonatomic, setter=_setState:) long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
-- (unsigned long long)_currentGestureModifierPhase;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
+- (id)studyLogData;
 - (id)gestureEvent;
-- (void)_setSelectedAppLayout:(id)arg1;
-- (void)_setState:(long long)arg1;
-- (id)initWithType:(long long)arg1 gestureRecognizer:(id)arg2;
+- (id)initWithType:(long long)arg1 eventProvider:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

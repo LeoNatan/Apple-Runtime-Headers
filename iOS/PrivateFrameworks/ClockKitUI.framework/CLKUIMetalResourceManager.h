@@ -6,14 +6,17 @@
 
 #import <ClockKitUI/CLKUIResourceManager.h>
 
-@protocol MTLDevice;
+@protocol MTLDevice, MTLTexture;
 
 @interface CLKUIMetalResourceManager : CLKUIResourceManager
 {
     id <MTLDevice> _device;
+    id <MTLTexture> _nilTexture;
 }
 
++ (id)sharedNilTexture;
 + (id)sharedDevice;
++ (id)sharedMetalInstance;
 - (void).cxx_destruct;
 - (void)_purgeAtlases:(id)arg1;
 - (id)_newAtlasForUuid:(id)arg1;

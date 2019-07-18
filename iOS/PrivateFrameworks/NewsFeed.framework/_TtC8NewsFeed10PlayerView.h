@@ -6,11 +6,14 @@
 
 #import <UIKit/UIView.h>
 
+@class AVPlayerLayer;
+
 @interface _TtC8NewsFeed10PlayerView : UIView
 {
     // Error parsing type: , name: stillImageView
     // Error parsing type: , name: loopBehavior
     // Error parsing type: , name: looper
+    // Error parsing type: , name: readyToDisplayObservation
 }
 
 + (Class)layerClass;
@@ -22,6 +25,7 @@
 - (void)dealloc;
 - (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;
+@property(nonatomic, readonly) AVPlayerLayer *playerLayer;
 
 @end
 

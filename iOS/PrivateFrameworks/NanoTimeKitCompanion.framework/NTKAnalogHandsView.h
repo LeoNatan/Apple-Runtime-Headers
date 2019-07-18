@@ -8,7 +8,7 @@
 
 #import <NanoTimeKitCompanion/NTKTimeView-Protocol.h>
 
-@class CALayer, CLKDevice, NSCalendar, NSDate, NSNumber, NSString, NSTimer, NTKColoringImageView, NTKHandView, UIColor;
+@class CALayer, CLKDevice, NSCalendar, NSDate, NSNumber, NSString, NSTimeZone, NSTimer, NTKColoringImageView, NTKHandView, UIColor;
 
 @interface NTKAnalogHandsView : UIView <NTKTimeView>
 {
@@ -41,9 +41,11 @@
     NTKHandView *_hourHandView_clientSide;
     NTKHandView *_minuteHandView_clientSide;
     NTKHandView *_secondHandView_clientSide;
+    NSTimeZone *_timeZone;
 }
 
 + (long long)preferredCountOfInstancesToCache;
+@property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(nonatomic) _Bool shouldRestoreSecondHandAfterScrubbing; // @synthesize shouldRestoreSecondHandAfterScrubbing=_shouldRestoreSecondHandAfterScrubbing;
 @property(nonatomic) _Bool showDebugClientSideHands; // @synthesize showDebugClientSideHands=_showDebugClientSideHands;
 @property(readonly, nonatomic) NTKHandView *secondHandView_clientSide; // @synthesize secondHandView_clientSide=_secondHandView_clientSide;

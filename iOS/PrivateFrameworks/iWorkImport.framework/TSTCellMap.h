@@ -7,36 +7,38 @@
 #import <iWorkImport/TSPObject.h>
 
 #import <iWorkImport/NSCopying-Protocol.h>
+#import <iWorkImport/TSTCellMapChangeDescriptorDelivering-Protocol.h>
 
 @class NSMutableArray, TSTCellUIDList;
 
 __attribute__((visibility("hidden")))
-@interface TSTCellMap : TSPObject <NSCopying>
+@interface TSTCellMap : TSPObject <NSCopying, TSTCellMapChangeDescriptorDelivering>
 {
     vector_38b190b0 _cellIDs;
     NSMutableArray *_mergeActions;
+    struct unordered_map<TSUCellCoord, TSTCell *, std::__1::hash<TSUCellCoord>, std::__1::equal_to<TSUCellCoord>, std::__1::allocator<std::__1::pair<const TSUCellCoord, TSTCell *>>> *_searchableIDMap;
+    struct unordered_map<TSTCellUID, TSTCell *, std::__1::hash<TSTCellUID>, std::__1::equal_to<TSTCellUID>, std::__1::allocator<std::__1::pair<const TSTCellUID, TSTCell *>>> *_searchableUIDMap;
+    _Bool _uidBased;
     _Bool _mayModifyFormulasInCells;
     _Bool _mayModifyValuesReferencedByFormulas;
-    _Bool _uidBased;
     _Bool _oneToMany;
+    _Bool _shallowCopy;
     TSTCellUIDList *_cellUIDs;
     NSMutableArray *_cellLists;
-    unordered_map_d2ee14f6 *_searchableIDMap;
-    unordered_map_7f472e10 *_searchableUIDMap;
 }
 
 + (id)cellMapWithContext:(id)arg1;
 + (id)uuidBasedCellMapWithContext:(id)arg1;
+@property(nonatomic) _Bool shallowCopy; // @synthesize shallowCopy=_shallowCopy;
 @property(readonly, nonatomic, getter=isOneToMany) _Bool oneToMany; // @synthesize oneToMany=_oneToMany;
-@property(nonatomic, getter=isUIDBased) _Bool uidBased; // @synthesize uidBased=_uidBased;
-@property(nonatomic) unordered_map_7f472e10 *searchableUIDMap; // @synthesize searchableUIDMap=_searchableUIDMap;
-@property(nonatomic) unordered_map_d2ee14f6 *searchableIDMap; // @synthesize searchableIDMap=_searchableIDMap;
-@property(nonatomic) _Bool mayModifyValuesReferencedByFormulas; // @synthesize mayModifyValuesReferencedByFormulas=_mayModifyValuesReferencedByFormulas;
-@property(nonatomic) _Bool mayModifyFormulasInCells; // @synthesize mayModifyFormulasInCells=_mayModifyFormulasInCells;
 @property(retain, nonatomic) NSMutableArray *cellLists; // @synthesize cellLists=_cellLists;
 @property(retain, nonatomic) TSTCellUIDList *cellUIDs; // @synthesize cellUIDs=_cellUIDs;
+@property(nonatomic) _Bool mayModifyValuesReferencedByFormulas; // @synthesize mayModifyValuesReferencedByFormulas=_mayModifyValuesReferencedByFormulas;
+@property(nonatomic) _Bool mayModifyFormulasInCells; // @synthesize mayModifyFormulasInCells=_mayModifyFormulasInCells;
+@property(nonatomic, getter=isUIDBased) _Bool uidBased; // @synthesize uidBased=_uidBased;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)changeDescriptorsForTable:(id)arg1;
 - (unsigned long long)p_cellCount;
 - (void)p_resolveCellIDsToUUIDsByTableInfo:(id)arg1 preserveHostCells:(_Bool)arg2;
 - (void)p_copyCellsAndUUIDsFromCellMap:(id)arg1 convertingToCellIDsWithTableInfo:(id)arg2;
@@ -60,7 +62,6 @@ __attribute__((visibility("hidden")))
 - (void)replaceCellAtIndex0:(id)arg1;
 - (void)addCell:(id)arg1 andCellID:(struct TSUCellCoord)arg2;
 - (void)addCell:(id)arg1 andCellUID:(const struct TSTCellUID *)arg2;
-- (id)changeDescriptorsForTable:(id)arg1 outCellRegion:(out id *)arg2;
 - (id)findCellForCellUID:(const struct TSTCellUID *)arg1;
 - (id)findCellForCellID:(struct TSUCellCoord)arg1;
 - (_Bool)containsMergeChanges;
@@ -77,7 +78,7 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)dealloc;
+- (id)initShallowMapWithContext:(id)arg1 uidBased:(_Bool)arg2;
 - (id)initWithContext:(id)arg1 cell:(id)arg2 cellIDList:(const vector_38b190b0 *)arg3;
 - (id)initWithContext:(id)arg1 cell:(id)arg2 cellUIDList:(id)arg3;
 - (id)initWithContext:(id)arg1 uidBased:(_Bool)arg2;

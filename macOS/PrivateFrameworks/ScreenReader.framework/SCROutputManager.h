@@ -175,6 +175,7 @@
 - (int)obtainSoundBus;
 - (int)obtainStereoSoundBus;
 - (void)updateAudioGraph;
+- (BOOL)soundsUseMultiChannelMixer;
 - (BOOL)isPositionalAudioEnabled;
 - (void)setIsPositionalAudioEnabled:(BOOL)arg1;
 - (void)_configureAudioGraphForChannelLayout;

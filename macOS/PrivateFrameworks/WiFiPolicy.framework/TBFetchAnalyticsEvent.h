@@ -8,7 +8,7 @@
 
 #import <WiFiPolicy/TBAnalyticsEvent-Protocol.h>
 
-@class NSDate, NSError, NSNumber, NSString;
+@class NSDate, NSDictionary, NSError, NSNumber, NSString;
 
 @interface TBFetchAnalyticsEvent : NSObject <TBAnalyticsEvent>
 {
@@ -32,8 +32,8 @@
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
 - (void).cxx_destruct;
-- (id)eventName;
-- (id)eventDictionary;
+@property(readonly, nonatomic) NSString *eventName;
+@property(readonly, nonatomic) NSDictionary *eventDictionary;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

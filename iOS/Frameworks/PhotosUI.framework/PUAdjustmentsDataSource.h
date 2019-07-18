@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *adjustmentInfoSections; // @synthesize adjustmentInfoSections=_adjustmentInfoSections;
 - (void).cxx_destruct;
 - (void)compositionControllerDidChange;
+- (void)_resetEnabledStateForAutoEnhancedInfos;
 - (void)resetInfoAtIndexPath:(id)arg1;
 - (void)modifyValue:(double)arg1 atIndexPath:(id)arg2;
 - (void)_modifyAdjustmentForInfo:(id)arg1;

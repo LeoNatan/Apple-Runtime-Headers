@@ -21,6 +21,8 @@
     CDUnknownBlockType _sendMsgBlock;
     double _lastIncomingPacketTime;
     double _lastOutgoingPacketTime;
+    unsigned int _totalPacketsSentOnLink;
+    unsigned int _totalPacketsReceivedOnLink;
     _Bool _hbStarted;
     unsigned short _hbCounter;
     unsigned char _statsIntervalInSeconds;
@@ -104,6 +106,8 @@
 @property(readonly) IDSQuickRelaySessionInfo *relaySessionInfo; // @synthesize relaySessionInfo=_relaySessionInfo;
 @property(copy) NSUUID *linkUUID; // @synthesize linkUUID=_linkUUID;
 @property(readonly, nonatomic) unsigned char statsIntervalInSeconds; // @synthesize statsIntervalInSeconds=_statsIntervalInSeconds;
+@property(nonatomic) unsigned int totalPacketsReceivedOnLink; // @synthesize totalPacketsReceivedOnLink=_totalPacketsReceivedOnLink;
+@property(nonatomic) unsigned int totalPacketsSentOnLink; // @synthesize totalPacketsSentOnLink=_totalPacketsSentOnLink;
 @property(nonatomic) double lastOutgoingPacketTime; // @synthesize lastOutgoingPacketTime=_lastOutgoingPacketTime;
 @property(nonatomic) double lastIncomingPacketTime; // @synthesize lastIncomingPacketTime=_lastIncomingPacketTime;
 @property(readonly, nonatomic) unsigned int testOptions; // @synthesize testOptions=_testOptions;

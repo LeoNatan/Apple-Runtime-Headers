@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     double _valueDouble;
     unsigned int _valueID;
     NSObject *_valueObject;
-    struct TSCEDecimal _valueBigNumber;
+    struct TSUDecimal _valueBigNumber;
     unsigned char _conditionalStyleAppliedRule;
     unsigned short _explicitFormatFlags;
     unsigned short _cellFlags;
@@ -203,12 +203,16 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *dateValue;
 @property(nonatomic) double durationTimeIntervalValue;
 @property(nonatomic) _Bool boolValue;
+- (void)setCurrencyOrNumberDecimalValue:(const struct TSUDecimal *)arg1;
 - (void)setCurrencyOrNumberDoubleValue:(double)arg1;
+@property(readonly, nonatomic) struct TSUDecimal underlyingDecimalValue;
 @property(readonly, nonatomic) double underlyingDoubleValue;
 @property(nonatomic) double currencyDoubleValue;
 @property(nonatomic) double numberDoubleValue;
-@property(nonatomic) struct TSCEDecimal currencyDecimalValue;
-@property(nonatomic) struct TSCEDecimal numberDecimalValue;
+@property(nonatomic) struct TSUDecimal currencyDecimalValue;
+- (void)setCurrencyDecimalValue:(struct TSUDecimal)arg1 roundToDoublePrecision:(_Bool)arg2;
+@property(nonatomic) struct TSUDecimal numberDecimalValue;
+- (void)setNumberDecimalValue:(struct TSUDecimal)arg1 roundToDoublePrecision:(_Bool)arg2;
 - (void)setProvidedValueTypeBeforeUpgrade;
 - (void)clearDataListIDs;
 @property(nonatomic) unsigned int richTextID;
@@ -230,6 +234,11 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStorageRef:(struct TSTCellStorage *)arg1 dataStore:(id)arg2;
 - (id)initWithLocale:(id)arg1;
+- (void)replaceContentWithParsableString:(id)arg1 tableInfo:(id)arg2 cellID:(struct TSUCellCoord)arg3 flags:(unsigned long long)arg4 outControlWasRemoved:(_Bool *)arg5;
+- (_Bool)coerceCellToFormatTypeUsingSpares:(int)arg1;
+- (_Bool)coerceTextCellToBestNumberFormatUsingLimitedParsing:(_Bool)arg1;
+- (_Bool)coerceToBaseFormat:(id)arg1;
+- (_Bool)coerceToFormatType:(int)arg1;
 - (_Bool)removeControlCellSpec;
 
 @end

@@ -17,6 +17,7 @@
     _Bool _isInternal;
     _Bool _searchInternal;
     _Bool _quotaDisabled;
+    _Bool _isPrivate;
     unsigned int _clientUID;
     NSObject<MDIndexer> *_indexer;
     NSObject<OS_xpc_object> *_clientConnection;
@@ -26,6 +27,7 @@
     NSString *_protectionClass;
 }
 
+@property(nonatomic) _Bool isPrivate; // @synthesize isPrivate=_isPrivate;
 @property(nonatomic) _Bool quotaDisabled; // @synthesize quotaDisabled=_quotaDisabled;
 @property(nonatomic) _Bool searchInternal; // @synthesize searchInternal=_searchInternal;
 @property(nonatomic) _Bool isInternal; // @synthesize isInternal=_isInternal;

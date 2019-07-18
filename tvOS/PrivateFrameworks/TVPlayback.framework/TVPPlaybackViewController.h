@@ -76,6 +76,7 @@
 - (void)videoPlayerViewController:(id)arg1 loadRelatedContentForMediaItem:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_currentChildViewControllerDidChangeFrom:(id)arg1;
 - (void)_currentChildViewControllerWillChangeTo:(id)arg1;
+- (_Bool)_tvTabBarShouldAutohide;
 - (void)transitionToForeground:(_Bool)arg1;
 - (void)transitionToBackground:(_Bool)arg1;
 @property(nonatomic) _Bool startPlaybackWhenViewAppears;

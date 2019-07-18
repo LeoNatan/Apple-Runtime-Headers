@@ -23,8 +23,6 @@
 - (void).cxx_destruct;
 - (id)description;
 - (void)stopTracking;
-- (void)updateQuery:(id)arg1;
-- (void)setQuery:(id)arg1;
 - (id)query;
 - (id)initWithIdentifier:(id)arg1 ray:(id)arg2 worldTrackingTechnique:(id)arg3 updateHandler:(CDUnknownBlockType)arg4;
 

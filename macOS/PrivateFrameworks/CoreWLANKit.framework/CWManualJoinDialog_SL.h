@@ -34,6 +34,7 @@
     BOOL _certificatesAvailable;
     CWDisplayedScanResult *_scanResult;
     NSArray *_scanResults;
+    NSArray *_updateScanResults;
     BOOL _autoJoinPrompt;
     NSString *_username;
     NSString *_password;
@@ -87,6 +88,7 @@
 @property BOOL remember; // @synthesize remember=_remember;
 @property(copy) CWDisplayedScanResult *scanResult; // @synthesize scanResult=_scanResult;
 @property(copy) NSArray *scanResults; // @synthesize scanResults=_scanResults;
+@property(copy) NSArray *updateScanResults; // @synthesize updateScanResults=_updateScanResults;
 @property id delegate; // @synthesize delegate=_delegate;
 - (BOOL)eapCertificatesAvailable;
 - (void)tableViewSelectionDidChange:(id)arg1;

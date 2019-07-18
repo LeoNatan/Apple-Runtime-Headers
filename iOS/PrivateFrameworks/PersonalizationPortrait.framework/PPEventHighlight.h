@@ -28,6 +28,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)describeProminentFeature:(unsigned long long)arg1;
++ (id)eventHighlightWithEvent:(id)arg1 score:(double)arg2 prominentFeature:(unsigned long long)arg3 features:(id)arg4 isExtraordinary:(_Bool)arg5;
 + (id)eventHighlightWithEKEvent:(id)arg1 score:(double)arg2 prominentFeature:(unsigned long long)arg3 features:(id)arg4 isExtraordinary:(_Bool)arg5;
 @property(nonatomic) _Bool isExtraordinary; // @synthesize isExtraordinary=_isExtraordinary;
 @property(nonatomic) double score; // @synthesize score=_score;

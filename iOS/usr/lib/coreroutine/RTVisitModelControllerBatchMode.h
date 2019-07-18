@@ -8,17 +8,24 @@
 
 #import <coreroutine/RTVisitModelController-Protocol.h>
 
-@class NSString, RTVisitTrajectorySequenceClassifierBatchMode;
+@class NSString, RTVisitHyperParameter, RTVisitTrajectorySequenceClassifierBatchMode;
 
 @interface RTVisitModelControllerBatchMode : NSObject <RTVisitModelController>
 {
+    void *_espressoContext;
+    void *_espressoPlan;
+    CDStruct_0a65202a _inputBuffer;
+    CDStruct_0a65202a _outputBuffer;
+    RTVisitHyperParameter *_hyperParameter;
     RTVisitTrajectorySequenceClassifierBatchMode *_model;
 }
 
 @property(readonly, nonatomic) RTVisitTrajectorySequenceClassifierBatchMode *model; // @synthesize model=_model;
 - (void).cxx_destruct;
-- (id)predictFromInput:(id)arg1;
-@property(readonly, nonatomic) NSString *uuid;
+- (const float *)predictFromInput:(const float *)arg1 featureVectorStride:(unsigned long long)arg2 firstSequenceIndex:(unsigned long long)arg3 firstSequenceLength:(unsigned long long)arg4 batchSize:(unsigned long long)arg5;
+- (const float *)batchProcess:(const float *)arg1 featureVectorStride:(unsigned long long)arg2 firstSequenceIndex:(unsigned long long)arg3 firstSequenceLength:(unsigned long long)arg4 batchSize:(unsigned long long)arg5;
+- (void)dealloc;
+- (id)initWithHyperParameter:(id)arg1;
 - (id)init;
 
 // Remaining properties

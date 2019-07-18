@@ -27,11 +27,13 @@
     NSArray *_areasOfInterest;
     NSString *_administrativeAreaCode;
     NSData *_revGeoLocationData;
+    NSString *_geoServiceProvider;
 }
 
 + (_Bool)_isIslandForGeoMapItem:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)litePlacemarkFromCLPlacemark:(id)arg1;
+@property(retain, nonatomic) NSString *geoServiceProvider; // @synthesize geoServiceProvider=_geoServiceProvider;
 @property(retain, nonatomic) NSData *revGeoLocationData; // @synthesize revGeoLocationData=_revGeoLocationData;
 @property(nonatomic) _Bool isIsland; // @synthesize isIsland=_isIsland;
 @property(retain, nonatomic) NSString *administrativeAreaCode; // @synthesize administrativeAreaCode=_administrativeAreaCode;

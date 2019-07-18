@@ -6,13 +6,12 @@
 
 #import <DataDetectorsUI/DDRemoteAction.h>
 
-@class NSString, NSURL;
+@class NSURL;
 
 __attribute__((visibility("hidden")))
 @interface DDMapAction : DDRemoteAction
 {
     NSURL *_commitURL;
-    NSString *_addressString;
 }
 
 + (_Bool)actionAvailableForContact:(id)arg1;
@@ -22,7 +21,6 @@ __attribute__((visibility("hidden")))
 - (id)menuActionClasses;
 - (id)previewActions;
 - (id)commitURL;
-- (id)platterTitle;
 - (id)initWithURL:(id)arg1 result:(struct __DDResult *)arg2 context:(id)arg3;
 
 @end

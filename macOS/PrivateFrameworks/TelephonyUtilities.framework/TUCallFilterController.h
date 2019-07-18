@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-@class CNContactStore;
 @protocol OS_dispatch_queue, TUCallFilterControllerActions;
 
 @interface TUCallFilterController : NSObject
@@ -18,17 +17,15 @@
 @property(readonly, nonatomic) __weak id <TUCallFilterControllerActions> actionsDelegate; // @synthesize actionsDelegate=_actionsDelegate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) CNContactStore *sharedSuggestedContactStore;
-- (id)predicateForContactsMatchingHandle:(id)arg1;
-- (BOOL)suggestedContactStoreContainsHandle:(id)arg1;
 - (id)bundleIdentifierForDialRequest:(id)arg1;
+- (BOOL)isUnknownAddress:(id)arg1 normalizedAddress:(id)arg2 forBundleIdentifier:(id)arg3;
 - (BOOL)willRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
 - (BOOL)shouldRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
 - (BOOL)shouldRestrictJoinConversationRequest:(id)arg1;
 - (BOOL)containsRestrictedHandle:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)policyForAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
 - (BOOL)shouldRestrictDialRequest:(id)arg1;
-- (BOOL)isKnownHandle:(id)arg1;
+- (BOOL)isUnknownHandle:(id)arg1;
 @property(readonly, nonatomic) BOOL silenceUnknownCallersEnabled;
 - (id)initWithActionsDelegate:(id)arg1 serialQueue:(id)arg2;
 

@@ -41,7 +41,6 @@
 - (BOOL)canProduceEntriesOfType:(long long)arg1;
 - (id)_predicateForPeriod:(struct NSDateInterval *)arg1;
 - (long long)_entryTypeFromSchema:(id)arg1;
-- (id)_suggestionSubtitleForReservationStatus:(id)arg1 event:(id)arg2;
 - (BOOL)_addRestaurantReservationFieldsToEntry:(id)arg1 fromSchemaOrgDictionary:(id)arg2 event:(id)arg3;
 - (BOOL)_addCalendarEventFieldsToEntry:(id)arg1 event:(id)arg2;
 - (BOOL)_addTicketedEventFieldsToEntry:(id)arg1 fromSchemaOrgDictionary:(id)arg2 event:(id)arg3;

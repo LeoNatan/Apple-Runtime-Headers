@@ -7,6 +7,7 @@
 #import <UIKit/UIViewController.h>
 
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
+#import <MapKit/MKMuninContainerViewDelegate-Protocol.h>
 #import <MapKit/MKMuninViewProvider-Protocol.h>
 #import <MapKit/MKPlaceAttributionCellDelegate-Protocol.h>
 #import <MapKit/MKPlacePhotosViewDelegate-Protocol.h>
@@ -16,7 +17,7 @@
 @class MKMapItem, MKMuninContainerView, MKMuninView, MKPhotoSmallAttributionView, MKPlaceAttributionCell, MKPlacePhotosView, NSArray, NSLayoutConstraint, NSString, UIScrollView, UIView, _MKPlaceViewController;
 @protocol MKPlaceCardPhotosControllerDelegate><MKPlaceCardActionControllerDelegate;
 
-@interface MKPlacePhotosViewController : UIViewController <MKPlaceAttributionCellDelegate, MKPlacePhotosViewDelegate, UIScrollViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol, MKMuninViewProvider>
+@interface MKPlacePhotosViewController : UIViewController <MKPlaceAttributionCellDelegate, MKPlacePhotosViewDelegate, UIScrollViewDelegate, MKMuninContainerViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol, MKMuninViewProvider>
 {
     MKPlacePhotosView *_currentPhotoViewer;
     UIView *_bottomHairline;
@@ -58,6 +59,7 @@
 - (void)setContentVisibility:(long long)arg1;
 - (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
+- (void)muninContainerView:(id)arg1 didAddMuninView:(id)arg2;
 - (void)placePhotoViewerWillClose:(id)arg1 photo:(id)arg2 onIndex:(unsigned long long)arg3;
 - (void)placePhotoViewerAttributionTappedForPhotoAtIndex:(unsigned long long)arg1 photo:(id)arg2;
 - (id)placePhotoViewerViewForPhotoAtIndex:(unsigned long long)arg1;
@@ -92,6 +94,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithMapItem:(id)arg1 mode:(unsigned long long)arg2 options:(unsigned long long)arg3;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -85,6 +85,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) _Bool isLivePhoto;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) CDStruct_1b6d18a9 videoKeyFrameSourceTime;
 
 @end
 

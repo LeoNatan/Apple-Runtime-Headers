@@ -81,7 +81,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UINavigationBarContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) _UINavigationBarModernPromptView *promptView; // @synthesize promptView=_promptView;
 - (void).cxx_destruct;
-- (void)adoptFinalStateFromTransition:(id)arg1;
+- (void)finalizeStateFromTransition:(id)arg1;
 - (void)ensureBackButtonTruncationOccursWithContext:(id)arg1;
 - (void)recordToStateForTransition:(id)arg1;
 - (void)prepareToRecordToState:(id)arg1;
@@ -113,6 +113,7 @@ __attribute__((visibility("hidden")))
 - (void)updateLayout;
 - (void)_updateLayoutOutputs;
 - (void)_updateLayoutParametersForWidth:(double)arg1;
+- (void)_updateLargeTitleViewLayoutItem;
 - (void)_resolveContentAndCanvasLayouts;
 - (void)_reprioritizeLayoutItem:(id)arg1 toPriority:(long long)arg2;
 - (void)_removeLayoutItem:(id)arg1;

@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@class NSNumber;
-
 @interface HAMenstrualAlgorithmsDayStreamProcessor : NSObject
 {
     struct unique_ptr<Nightingale::ngt_DayStreamProcessor, std::__1::default_delete<Nightingale::ngt_DayStreamProcessor>> _dayStreamProcessor;
-    NSNumber *_julianDayOfLastInput;
+    struct optional<unsigned int> _julianDayOfLastInput;
 }
 
 - (id).cxx_construct;

@@ -4,51 +4,52 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <iWorkImport/TSPContainedObject.h>
+#import <objc/NSObject.h>
 
 __attribute__((visibility("hidden")))
-@interface TSTTableTileRowInfo : TSPContainedObject
+@interface TSTTableTileRowInfo : NSObject
 {
-    struct __CFData *_storageBuffer;
-    unsigned short _storageOffsets[255];
-    unsigned short _bufferSize;
-    struct __CFData *_storageBufferPreBNC;
-    unsigned short _storageOffsetsPreBNC[255];
-    unsigned short _bufferSizePreBNC;
-    unsigned short _maxTileColumnIndex;
-    _Bool _maxTileColumnIndexValid;
+    struct TSTTableTileRowBuffer _currentData;
+    struct TSTTableTileRowBuffer _preBNCData;
+    unsigned short _maxColumnIndex;
+    _Bool _maxColumnIndexValid;
     unsigned char _storageVersion;
-    unsigned short _cellCount;
+    struct os_unfair_lock_s _unfairLock;
     unsigned int _tileRowIndex;
+    unsigned long long _cellCount;
 }
 
-@property(readonly, nonatomic) unsigned short cellCount; // @synthesize cellCount=_cellCount;
++     // Error parsing type: @24@0:8r^{TileRowInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}IIIB}16, name: rowInfoFromArchive:
++ (id)rowInfoWithTileRowIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned long long cellCount; // @synthesize cellCount=_cellCount;
 @property(nonatomic) unsigned int tileRowIndex; // @synthesize tileRowIndex=_tileRowIndex;
-@property(readonly, nonatomic) unsigned short maxTileColumnIndex;
+- (id)description;
+- (_Bool)validateWithResult:(id *)arg1;
+- (void)validate;
+@property(readonly, nonatomic) _Bool bncStorageBufferExists;
+@property(readonly, nonatomic) unsigned short maxColumnIndex;
+- (void)_recalculateMaxColumnIndex;
 - (_Bool)searchCellStorageRefAtColumnIndex:(unsigned short)arg1 searchMask:(unsigned long long)arg2;
 - (void)enumerateStoragesInColumnRange:(struct _NSRange)arg1 getPreBNC:(_Bool)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateStoragesInColumnRange:(struct _NSRange)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)moveColumnsFromIndex:(unsigned short)arg1 toIndex:(unsigned short)arg2 count:(unsigned int)arg3;
 - (void)removeColumnsAtIndex:(unsigned short)arg1 count:(unsigned int)arg2;
 - (void)insertColumnsAtIndex:(unsigned short)arg1 count:(unsigned int)arg2;
-- (void)setCell:(id)arg1 atIndex:(unsigned short)arg2 formatKeys:(CDStruct_c8ca99d5 *)arg3;
+- (long long)setCell:(id)arg1 atIndex:(unsigned short)arg2 formatKeys:(CDStruct_c8ca99d5 *)arg3;
+- (void)_removeCellAtIndex:(unsigned short)arg1;
+- (void)_insertCell:(id)arg1 atIndex:(unsigned short)arg2 formatKeys:(CDStruct_c8ca99d5 *)arg3;
+- (void)_replaceCellAtIndex:(unsigned short)arg1 withCell:(id)arg2 formatKeys:(CDStruct_c8ca99d5 *)arg3;
 - (unsigned short)cellIndexAtOrBeforeIndex:(unsigned short)arg1;
 - (unsigned short)cellIndexAtOrAfterIndex:(unsigned short)arg1;
 - (struct TSTCellStorage *)preBNCStorageRefAtIndex:(unsigned short)arg1;
 - (struct TSTCellStorage *)cellStorageRefAtIndex:(unsigned short)arg1;
-- (void)_removeCellAtIndex:(unsigned short)arg1;
-- (void)_insertCell:(id)arg1 atIndex:(unsigned short)arg2 formatKeys:(CDStruct_c8ca99d5 *)arg3;
-- (void)_replaceCellAtIndex:(unsigned short)arg1 withCell:(id)arg2 formatKeys:(CDStruct_c8ca99d5 *)arg3;
-- (void)_recalculateMaxTileColumnIndex;
-- (void)_invalidateMaxTileColumnIndex;
-- (id)description;
-- (_Bool)validateWithResult:(id *)arg1;
-- (void)validate;
-@property(readonly, nonatomic) _Bool bncStorageBufferExists;
--     // Error parsing type: v32@0:8^{TileRowInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}III}16@24, name: saveToArchive:archiver:
--     // Error parsing type: @32@0:8r^{TileRowInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}III}16@24, name: initWithArchive:owner:
+-     // Error parsing type: v32@0:8^{TileRowInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}IIIB}16@24, name: encodeToArchive:archiver:
+-     // Error parsing type: @24@0:8r^{TileRowInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}IIIB}16, name: initFromArchive:
 - (void)dealloc;
-- (id)initWithOwner:(id)arg1 tileRowIndex:(unsigned int)arg2;
+- (id)initWithTileRowIndex:(unsigned int)arg1;
+- (void)unlockForConcurrentAccess;
+- (void)lockForConcurrentAccess;
+- (vector_73284f0b)accumulateCurrentCellsConcurrentlyAtColumns:(vector_5e7df3d8 *)arg1 usingCellCreationBlock:(CDUnknownBlockType)arg2;
 
 @end
 

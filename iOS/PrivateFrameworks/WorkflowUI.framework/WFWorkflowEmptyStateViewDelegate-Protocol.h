@@ -9,7 +9,6 @@
 @class WFWorkflowEmptyStateView;
 
 @protocol WFWorkflowEmptyStateViewDelegate <NSObject>
-- (void)emptyViewDidRequestHelp:(WFWorkflowEmptyStateView *)arg1;
 - (void)emptyViewDidRequestTutorial:(WFWorkflowEmptyStateView *)arg1;
 - (void)emptyViewDidRequestActionDrawer:(WFWorkflowEmptyStateView *)arg1;
 @end

@@ -6,7 +6,7 @@
 
 #import <SearchUI/NSObject-Protocol.h>
 
-@class CNContact, CNLabeledValue, GEOMapServiceTraits, MKMapItem, MKSharingController, MKTransitAttributionDetailsViewController, NSArray, NSString, _MKPlaceViewController;
+@class CNContact, CNLabeledValue, GEOMapServiceTraits, MKMapItem, MKSharingController, MKTransitAttributionDetailsViewController, NSArray, NSString, NSView, _MKPlaceViewController;
 @protocol GEOTransitConnectionInfo, GEOTransitDepartureSequence, MKTransitLineMarker, _MKPlaceItem;
 
 @protocol _MKPlaceViewControllerDelegate <NSObject>
@@ -38,7 +38,7 @@
 - (BOOL)placeViewController:(_MKPlaceViewController *)arg1 shouldOpenHomePage:(CNLabeledValue *)arg2;
 - (void)placeViewControllerDidSelectShareLocation:(_MKPlaceViewController *)arg1;
 - (void)placeViewControllerDidSelectAddAPlace:(_MKPlaceViewController *)arg1;
-- (void)placeViewControllerDidSelectReportAProblem:(_MKPlaceViewController *)arg1;
+- (void)placeViewControllerDidSelectReportAProblem:(_MKPlaceViewController *)arg1 fromView:(NSView *)arg2;
 - (void)placeViewControllerDidSelectFlyover:(_MKPlaceViewController *)arg1;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 verticalScrollerInsetDidChangeDuringLayoutPhase:(long long)arg2;
 - (void)placeViewControllerDidSelectHeader:(_MKPlaceViewController *)arg1;

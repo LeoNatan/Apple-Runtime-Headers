@@ -40,6 +40,8 @@
 - (id)_nextAvailableLabel;
 - (id)_nextAvailableLabelInLabels:(id)arg1 withValueSelector:(SEL)arg2;
 - (id)_availableLabelsInLabels:(id)arg1 forItem:(id)arg2 withValueSelector:(SEL)arg3 usedLabelsCount:(long long *)arg4;
+- (id)itemsUsingLabel:(id)arg1;
+- (id)labelsInUseByGroup;
 - (id)labelsForItem:(id)arg1 options:(unsigned long long)arg2;
 - (void)saveChangesForItems:(id)arg1;
 - (id)policyForItem:(id)arg1;

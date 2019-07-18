@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
 - (void)removeMessageAction:(long long)arg1;
+- (_Bool)updateTransferUndownloadedMessageAction:(id)arg1 withResults:(id)arg2;
 - (id)_sourceRemoteIDListForCopyItems:(id)arg1;
 - (id)_whereClauseToFindCopyItems:(id)arg1;
 - (void)_deleteCopyItems:(id)arg1 actionID:(long long)arg2 connection:(id)arg3;

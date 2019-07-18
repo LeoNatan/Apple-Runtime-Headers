@@ -9,6 +9,7 @@
 @class NSDate, NSString;
 
 @protocol PLHighlightItem <NSObject>
+@property(readonly, nonatomic) double promotionScore;
 @property(readonly, nonatomic) BOOL isRecent;
 @property(readonly, nonatomic) unsigned short type;
 @property(readonly, nonatomic) BOOL isPromoted;

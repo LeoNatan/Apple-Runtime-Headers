@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PassKitUI/PKAccountServicePerformActionViewController.h>
+#import <UIKit/UIViewController.h>
 
 #import <PassKitUI/PKAccountBillPaymentControllerDelegate-Protocol.h>
 #import <PassKitUI/PKAccountBillPaymentPayInterestDescriptionViewDelegate-Protocol.h>
@@ -12,11 +12,14 @@
 #import <PassKitUI/UIPickerViewDataSource-Protocol.h>
 #import <PassKitUI/UIPickerViewDelegate-Protocol.h>
 
-@class CLInUseAssertion, NSCalendar, NSDate, NSDateFormatter, NSDecimalNumber, NSString, PKAccountBillPaymentController, PKAccountBillPaymentPayInterestDescriptionView, PKAddBankAccountInformationViewController, PKBillPaymentSuggestedAmountList, PKCompoundInterestCalculator, PKContinuousButton, UILabel, UIPickerView;
+@class CLInUseAssertion, NSCalendar, NSDate, NSDateFormatter, NSDecimalNumber, NSString, PKAccount, PKAccountBillPaymentController, PKAccountBillPaymentPayInterestDescriptionView, PKAddBankAccountInformationViewController, PKBillPaymentSuggestedAmountList, PKCompoundInterestCalculator, PKContinuousButton, PKPaymentPass, UILabel, UIPickerView;
+@protocol PKAccountBillPaymentObserver;
 
-@interface PKAccountBillPaymentPayLaterViewController : PKAccountServicePerformActionViewController <UIPickerViewDelegate, UIPickerViewDataSource, PKAccountBillPaymentControllerDelegate, PKAddBankAccountInformationViewControllerDelegate, PKAccountBillPaymentPayInterestDescriptionViewDelegate>
+@interface PKAccountBillPaymentPayLaterViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, PKAccountBillPaymentControllerDelegate, PKAddBankAccountInformationViewControllerDelegate, PKAccountBillPaymentPayInterestDescriptionViewDelegate>
 {
     CLInUseAssertion *_CLInUse;
+    PKAccount *_account;
+    PKPaymentPass *_pass;
     PKAccountBillPaymentController *_billPaymentCoordinator;
     PKBillPaymentSuggestedAmountList *_suggestionList;
     unsigned int _screenType;
@@ -25,6 +28,7 @@
     int _numDays;
     NSDateFormatter *_dateFormatterDayOfWeek;
     NSDateFormatter *_dateFormatter;
+    NSDateFormatter *_localDateFormatter;
     NSCalendar *_productCalendar;
     NSCalendar *_localCalendar;
     NSDecimalNumber *_selectedAmount;
@@ -39,8 +43,10 @@
     PKCompoundInterestCalculator *_interestCalculator;
     PKAccountBillPaymentPayInterestDescriptionView *_interestDescriptionView;
     PKAddBankAccountInformationViewController *_addBankAccountViewController;
+    id <PKAccountBillPaymentObserver> _observer;
 }
 
+@property(nonatomic) __weak id <PKAccountBillPaymentObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
 - (void)_presentAlertControllerForError:(id)arg1;
 - (void)_dismissViewControllerWithSuccess:(_Bool)arg1;
@@ -56,6 +62,7 @@
 - (float)_payButtonTopPadding;
 - (id)_interestForSelectedDate:(id)arg1;
 - (void)_payOnButtonTapped:(id)arg1;
+- (void)_accountDidChange:(id)arg1;
 - (void)_performBillPaymentWithAmount:(id)arg1 scheduledDate:(id)arg2 billPaymentSuggestedAmountDataEvent:(id)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (int)numberOfComponentsInPickerView:(id)arg1;
@@ -69,6 +76,7 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
+- (void)dealloc;
 - (id)initWithAccount:(id)arg1 billPaymentController:(id)arg2 paymentPass:(id)arg3 suggestionList:(id)arg4 selectedAmount:(id)arg5;
 
 // Remaining properties

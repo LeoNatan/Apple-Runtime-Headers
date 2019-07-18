@@ -7,7 +7,6 @@
 #import <Foundation/NSNotification.h>
 
 @interface NSNotification (HealthRecordsUI)
-+ (id)CategoryReloadDataNotification;
 + (id)OAuthCompletionNotification;
 @end
 

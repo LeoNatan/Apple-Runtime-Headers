@@ -24,6 +24,7 @@
 + (id)cloudForcePushSyncOperationWithBlock:(CDUnknownBlockType)arg1;
 + (id)cloudPushSyncOperationWithBlock:(CDUnknownBlockType)arg1;
 + (id)cancelOperationWithBlock:(CDUnknownBlockType)arg1;
++ (id)queryDatabaseOperationWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) HMDSyncOperationOptions *options; // @synthesize options=_options;
 @property(copy, nonatomic) CDUnknownBlockType operationBlock; // @synthesize operationBlock=_operationBlock;
 @property(retain, nonatomic) HMFTimer *delayTimer; // @synthesize delayTimer=_delayTimer;

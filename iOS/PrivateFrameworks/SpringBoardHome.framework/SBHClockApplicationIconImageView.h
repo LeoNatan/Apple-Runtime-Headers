@@ -6,11 +6,11 @@
 
 #import <SpringBoardHome/SBLiveIconImageView.h>
 
-@class CALayer, NSString, UIImage;
+@class CALayer, NSString, SBHClockIconVisualConfiguration, UIImage;
 
 @interface SBHClockApplicationIconImageView : SBLiveIconImageView
 {
-    struct SBHClockIconMetrics _metrics;
+    SBHClockIconVisualConfiguration *_configuration;
     CALayer *_seconds;
     CALayer *_minutes;
     CALayer *_hours;
@@ -29,7 +29,7 @@
 + (id)effectiveDate;
 + (void)setOverrideDate:(id)arg1;
 + (id)overrideDate;
-+ (struct SBHClockIconMetrics)defaultMetrics;
++ (id)defaultConfiguration;
 + (void)initialize;
 @property(copy, nonatomic) NSString *currentNumberingSystem; // @synthesize currentNumberingSystem=_currentNumberingSystem;
 - (void).cxx_destruct;
@@ -44,7 +44,7 @@
 - (id)contentsImage;
 - (id)backgroundImageName;
 - (void)layoutSubviews;
-- (void)applyMetrics:(const struct SBHClockIconMetrics *)arg1;
+- (void)applyConfiguration:(id)arg1;
 - (void)setJittering:(_Bool)arg1;
 - (void)setPaused:(_Bool)arg1;
 - (void)prepareForReuse;

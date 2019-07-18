@@ -56,6 +56,7 @@
 - (void).cxx_destruct;
 - (id)localizedStorefrontID;
 - (id)jsonEncodableObject;
+@property(readonly, nonatomic) unsigned long long bestOfBundleFeedGroupKind;
 @property(readonly, nonatomic) unsigned long long likeDislikeBehavior;
 @property(readonly, nonatomic) long long maximumTrendingGroupSizeiPhone;
 @property(readonly, nonatomic) long long maximumTrendingGroupSizeiPad;
@@ -110,6 +111,7 @@
 @property(readonly, nonatomic) double tileProminenceScoreBalanceValue;
 @property(readonly, nonatomic) double prerollLoadingTimeout;
 @property(readonly, nonatomic) double interstitialAdLoadDelay;
+@property(readonly, nonatomic) NSString *anfRenderingConfiguration;
 @property(readonly, nonatomic) NSString *webEmbedContentBlockers;
 @property(readonly, nonatomic) long long autoScrollToTopFeedTimeout;
 @property(readonly, nonatomic) NSArray *onboardingFeedIDs;

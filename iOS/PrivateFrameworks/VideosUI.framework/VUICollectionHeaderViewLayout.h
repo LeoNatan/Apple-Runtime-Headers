@@ -6,16 +6,18 @@
 
 #import <TVMLKit/TVViewLayout.h>
 
-@class VUITextLayout;
+@class TVImageLayout, VUITextLayout;
 
 __attribute__((visibility("hidden")))
 @interface VUICollectionHeaderViewLayout : TVViewLayout
 {
     VUITextLayout *_titleTextLayout;
     VUITextLayout *_subtitleTextLayout;
+    TVImageLayout *_imageViewLayout;
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+@property(retain, nonatomic) TVImageLayout *imageViewLayout; // @synthesize imageViewLayout=_imageViewLayout;
 @property(readonly, nonatomic) VUITextLayout *subtitleTextLayout; // @synthesize subtitleTextLayout=_subtitleTextLayout;
 @property(readonly, nonatomic) VUITextLayout *titleTextLayout; // @synthesize titleTextLayout=_titleTextLayout;
 - (void).cxx_destruct;

@@ -26,6 +26,7 @@
 - (void)addOverrides:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setOverrides:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_addOverrides:(id)arg1 replace:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)removeAllLocalRulesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dumpLocalRulesForProductGroup:(id)arg1 productNumber:(id)arg2 firmwareVersion:(id)arg3 ignoreOverrides:(BOOL)arg4 rawOutput:(BOOL)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)dumpLocalRulesForProductGroup:(id)arg1 ignoreOverrides:(BOOL)arg2 rawOutput:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)dumpAllLocalRulesIgnoringOverrides:(BOOL)arg1 rawOutput:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;

@@ -8,11 +8,12 @@
 
 #import <MediaPlayer/MPExclusiveAccessible-Protocol.h>
 #import <MediaPlayer/NSSecureCoding-Protocol.h>
+#import <MediaPlayer/_MPSectionedIdentifierListEncodableNextEntriesProviding-Protocol.h>
 
 @class MPSectionedIdentifierListEntry, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
 @protocol MPSectionedIdentifierListAnnotationDelegate, MPSectionedIdentifierListDelegate, OS_dispatch_queue;
 
-@interface MPSectionedIdentifierList : NSObject <MPExclusiveAccessible, NSSecureCoding>
+@interface MPSectionedIdentifierList : NSObject <_MPSectionedIdentifierListEncodableNextEntriesProviding, MPExclusiveAccessible, NSSecureCoding>
 {
     int _itemCount;
     NSObject<OS_dispatch_queue> *_accessQueue;

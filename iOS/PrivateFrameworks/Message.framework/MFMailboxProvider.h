@@ -37,6 +37,7 @@
 - (id)mailboxObjectIDsForMailboxType:(long long)arg1;
 - (void)invalidateMailboxes;
 - (void)_mailboxInvalidated:(id)arg1;
+- (void)_didChangeMailboxList:(id)arg1;
 - (void)_didReloadMailboxList:(id)arg1;
 - (void)_willReloadMailboxList:(id)arg1;
 - (_Bool)_isSuppressingInvalidation;

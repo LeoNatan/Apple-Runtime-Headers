@@ -18,8 +18,8 @@
 }
 
 + (id)stringForDataType:(long long)arg1;
-+ (vector_eb9481f9)indexVectorFromArray:(id)arg1;
-+ (id)arrayFromIndexVector:(const vector_eb9481f9 *)arg1;
++ (vector_06e666a8)indexVectorFromArray:(id)arg1;
++ (id)arrayFromIndexVector:(const vector_06e666a8 *)arg1;
 + (int)cppStorageOrder:(long long)arg1;
 + (id)doubleMatrixWithValues:(id)arg1 error:(id *)arg2;
 + (id)doubleMultiArrayWithShape:(id)arg1 valueArray:(id)arg2 error:(id *)arg3;

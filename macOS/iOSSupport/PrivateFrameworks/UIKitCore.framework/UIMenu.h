@@ -6,11 +6,9 @@
 
 #import <UIKitCore/UIMenuElement.h>
 
-#import <UIKitCore/NSSecureCoding-Protocol.h>
-
 @class NSArray, NSString;
 
-@interface UIMenu : UIMenuElement <NSSecureCoding>
+@interface UIMenu : UIMenuElement
 {
     NSString *_identifier;
     unsigned long long _options;
@@ -27,14 +25,17 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
+- (id)_immutableCopy;
 - (id)_copyWithOverrideChildren:(id)arg1;
+- (BOOL)_acceptBoolMenuVisit:(CDUnknownBlockType)arg1 leafVisit:(CDUnknownBlockType)arg2;
+- (void)_acceptMenuVisit:(CDUnknownBlockType)arg1 leafVisit:(CDUnknownBlockType)arg2;
 - (BOOL)_acceptBoolMenuVisit:(CDUnknownBlockType)arg1 commandVisit:(CDUnknownBlockType)arg2 actionVisit:(CDUnknownBlockType)arg3;
 - (void)_acceptMenuVisit:(CDUnknownBlockType)arg1 commandVisit:(CDUnknownBlockType)arg2 actionVisit:(CDUnknownBlockType)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)menuByReplacingChildren:(id)arg1;
-- (id)_initWithTitle:(id)arg1 image:(id)arg2 identifier:(id)arg3 options:(unsigned long long)arg4 children:(id)arg5;
+- (id)initWithTitle:(id)arg1 image:(id)arg2 identifier:(id)arg3 options:(unsigned long long)arg4 children:(id)arg5;
 - (id)_spiRepresentation;
 
 @end

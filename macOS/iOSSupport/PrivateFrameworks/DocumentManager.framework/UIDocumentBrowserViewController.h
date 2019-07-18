@@ -13,11 +13,12 @@
 #import <DocumentManager/DOCViewServiceErrorViewControllerDelegate-Protocol.h>
 #import <DocumentManager/NSCoding-Protocol.h>
 #import <DocumentManager/UINSDocumentBrowserViewControllerDelegate-Protocol.h>
+#import <DocumentManager/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class DOCAppearance, DOCConfiguration, DOCDocBrowserVC_UIActivityViewController, NSArray, NSOperationQueue, NSString, UIColor, UIView, _UIResilientRemoteViewContainerViewController;
+@class DOCAppearance, DOCConfiguration, DOCDocBrowserVC_UIActivityViewController, NSArray, NSOperationQueue, NSString, UIColor, UIView, _UIRemoteViewController, _UIResilientRemoteViewContainerViewController;
 @protocol DOCServiceDocumentBrowserViewControllerInterface, NSObject, UIDocumentBrowserViewControllerDelegate, UINSDocumentBrowserViewController;
 
-@interface UIDocumentBrowserViewController : UIViewController <UINSDocumentBrowserViewControllerDelegate, DOCHostDocumentBrowserViewControllerInterface, DOCRemoteViewControllerDelegate, DOCViewServiceErrorViewControllerDelegate, DOCKeyCommandResponder, DOCAppearanceCustomization, NSCoding>
+@interface UIDocumentBrowserViewController : UIViewController <UINSDocumentBrowserViewControllerDelegate, DOCHostDocumentBrowserViewControllerInterface, DOCRemoteViewControllerDelegate, DOCViewServiceErrorViewControllerDelegate, DOCKeyCommandResponder, _UIRemoteViewControllerContaining, DOCAppearanceCustomization, NSCoding>
 {
     BOOL _isDisplayingRemoteViewController;
     UIView *_trackingViewsContainer;
@@ -53,6 +54,7 @@
     UIColor *_itemSubtitleColor;
 }
 
++ (id)placeholderURLForDownloadsFolder;
 @property(copy, nonatomic) UIColor *itemSubtitleColor; // @synthesize itemSubtitleColor=_itemSubtitleColor;
 @property(copy, nonatomic) UIColor *itemTitleColor; // @synthesize itemTitleColor=_itemTitleColor;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
@@ -75,7 +77,7 @@
 @property(retain, nonatomic) NSArray *remoteAdditionalLeadingNavigationBarButtonItems; // @synthesize remoteAdditionalLeadingNavigationBarButtonItems=_remoteAdditionalLeadingNavigationBarButtonItems;
 @property(retain, nonatomic) NSArray *trailingBarButtonTrackingViews; // @synthesize trailingBarButtonTrackingViews=_trailingBarButtonTrackingViews;
 @property(retain, nonatomic) NSArray *leadingBarButtonTrackingViews; // @synthesize leadingBarButtonTrackingViews=_leadingBarButtonTrackingViews;
-@property(retain, nonatomic) NSArray *customActions; // @synthesize customActions=_customActions;
+@property(copy, nonatomic) NSArray *customActions; // @synthesize customActions=_customActions;
 @property(retain, nonatomic) NSArray *additionalTrailingNavigationBarButtonItems; // @synthesize additionalTrailingNavigationBarButtonItems=_additionalTrailingNavigationBarButtonItems;
 @property(retain, nonatomic) NSArray *additionalLeadingNavigationBarButtonItems; // @synthesize additionalLeadingNavigationBarButtonItems=_additionalLeadingNavigationBarButtonItems;
 @property(nonatomic) BOOL shouldShowFileExtensions; // @synthesize shouldShowFileExtensions=_shouldShowFileExtensions;
@@ -84,6 +86,7 @@
 @property(nonatomic) __weak id <UIDocumentBrowserViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)forwardHostSceneIdentifier:(id)arg1;
+- (id)recentDocumentsTypesFromInfoPlist;
 - (BOOL)supportsRemovableFileProvidersForConfiguration:(id)arg1;
 - (void)_renameDocumentAtURL:(id)arg1 newName:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_didTriggerBarButtonWithUUID:(id)arg1;
@@ -101,6 +104,7 @@
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)keyCommands;
+- (id)_symbolicDownloadsURLWrapper;
 - (id)_sandboxingURLWrapperForURL:(id)arg1 readonly:(BOOL)arg2 error:(id *)arg3;
 - (void)_displayActivityControllerWithItems:(id)arg1 popoverTracker:(id)arg2 isContentManaged:(BOOL)arg3 additionalActivities:(id)arg4 activityProxy:(id)arg5;
 - (void)addOperationToServiceQueue:(CDUnknownBlockType)arg1;
@@ -122,6 +126,7 @@
 @property(nonatomic) double createButtonAspectRatio;
 @property(nonatomic) double defaultDocumentAspectRatio;
 @property(retain, nonatomic) NSArray *additionalToolbarButtonItems; // @dynamic additionalToolbarButtonItems;
+@property(readonly, copy, nonatomic) NSArray *recentDocumentsContentTypes;
 @property(readonly, copy, nonatomic) NSArray *allowedContentTypes;
 - (void)didTapTryAgainInErrorViewController:(id)arg1;
 - (void)remoteViewController:(id)arg1 didTerminateViewServiceWithError:(id)arg2;
@@ -138,6 +143,7 @@
 - (void)revealDocumentAtURL:(id)arg1 shouldImport:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)effectiveAppearanceDidChange:(id)arg1;
+@property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)_displayRemoteControllerIfNeeded;
 - (void)_embedViewController:(id)arg1;
 - (void)_embedDocumentBrowserViewController;

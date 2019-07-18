@@ -10,19 +10,22 @@
 
 @interface WLKChannelsResponse : NSObject
 {
-    _Bool _isValid;
+    _Bool _filtered;
     NSArray *_orderedChannels;
     NSDictionary *_channels;
     NSDate *_expirationDate;
+    unsigned long long _environmentHash;
 }
 
 + (id)parseChannelsFromPayload:(id)arg1;
+@property(nonatomic) unsigned long long environmentHash; // @synthesize environmentHash=_environmentHash;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
-@property(readonly, nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
+@property(nonatomic) _Bool filtered; // @synthesize filtered=_filtered;
 @property(retain, nonatomic) NSDictionary *channels; // @synthesize channels=_channels;
 @property(retain, nonatomic) NSArray *orderedChannels; // @synthesize orderedChannels=_orderedChannels;
 - (void).cxx_destruct;
-- (id)initWithDictionary:(id)arg1 expirationDate:(id)arg2;
+- (_Bool)isValidForFiltered:(_Bool)arg1;
+- (id)initWithDictionary:(id)arg1 expirationDate:(id)arg2 environmentHash:(unsigned long long)arg3 filtered:(_Bool)arg4;
 
 @end
 

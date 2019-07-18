@@ -29,6 +29,7 @@
 @property(readonly, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
+- (BOOL)supportsSelectAll;
 - (BOOL)isSmartMailbox;
 - (id)initWithType:(long long)arg1 mailboxType:(long long)arg2 name:(id)arg3 predicate:(id)arg4 mailboxScope:(id)arg5;
 

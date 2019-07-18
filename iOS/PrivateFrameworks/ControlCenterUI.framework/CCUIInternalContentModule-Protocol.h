@@ -11,7 +11,6 @@
 @protocol CCUIInternalContentModule <CCUIContentModule>
 
 @optional
-- (void)didBeginInteraction;
 - (id)initWithSystemAgent:(id <CCUIControlCenterSystemAgent>)arg1;
 @end
 

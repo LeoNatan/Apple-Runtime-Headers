@@ -9,21 +9,24 @@
 #import <CoreSpeech/CSActivationEventNotifierDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioServerCrashMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioStreamProvidingDelegate-Protocol.h>
+#import <CoreSpeech/CSBluetoothWirelessSplitterMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSKeywordAnalyzerNDAPIScoreDelegate-Protocol.h>
 #import <CoreSpeech/CSSelfTriggerDetectorDelegate-Protocol.h>
 #import <CoreSpeech/CSSiriClientBehaviorMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSStateMachineDelegate-Protocol.h>
+#import <CoreSpeech/CSVoiceTriggerXPCServiceDelegate-Protocol.h>
 
 @class CSAsset, CSAudioProvider, CSAudioStream, CSOSTransaction, CSPolicy, CSVoiceTriggerSecondPass, NSDictionary, NSMutableArray, NSString;
 @protocol CSVoiceTriggerDelegate, OS_dispatch_group, OS_dispatch_queue;
 
-@interface CSBuiltInVoiceTrigger : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSActivationEventNotifierDelegate, CSStateMachineDelegate, CSAudioStreamProvidingDelegate, CSSiriClientBehaviorMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSSelfTriggerDetectorDelegate>
+@interface CSBuiltInVoiceTrigger : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSActivationEventNotifierDelegate, CSStateMachineDelegate, CSAudioStreamProvidingDelegate, CSSiriClientBehaviorMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSBluetoothWirelessSplitterMonitorDelegate, CSSelfTriggerDetectorDelegate, CSVoiceTriggerXPCServiceDelegate>
 {
     BOOL _voiceTriggerEnabled;
     BOOL _hasTriggerPending;
     BOOL _isSecondPassRunning;
     BOOL _isSiriClientListening;
     BOOL _isListenPollingStarting;
+    BOOL _isPhraseSpotterBypassed;
     float _firstPassThreshold;
     float _bestScore;
     float _masterChannelScoreBoost;
@@ -46,9 +49,12 @@
     NSMutableArray *_audioStreamHoldings;
     CSOSTransaction *_secondPassTransaction;
     NSObject<OS_dispatch_group> *_recordingWillStartGroup;
+    unsigned long long _currentSplitterState;
 }
 
+@property(nonatomic) unsigned long long currentSplitterState; // @synthesize currentSplitterState=_currentSplitterState;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *recordingWillStartGroup; // @synthesize recordingWillStartGroup=_recordingWillStartGroup;
+@property(nonatomic) BOOL isPhraseSpotterBypassed; // @synthesize isPhraseSpotterBypassed=_isPhraseSpotterBypassed;
 @property(retain, nonatomic) CSOSTransaction *secondPassTransaction; // @synthesize secondPassTransaction=_secondPassTransaction;
 @property(retain, nonatomic) NSMutableArray *audioStreamHoldings; // @synthesize audioStreamHoldings=_audioStreamHoldings;
 @property(retain, nonatomic) CSAudioProvider *audioProvider; // @synthesize audioProvider=_audioProvider;
@@ -83,6 +89,7 @@
 - (void)_cancelLastAudioStreamHold;
 - (void)_addAudioStreamHold:(id)arg1;
 - (void)activationEventNotifier:(id)arg1 event:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)voiceTriggerXPCService:(id)arg1 setPhraseSpotterBypassing:(BOOL)arg2;
 - (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
 - (void)CSAudioServerCrashMonitorDidReceiveServerCrash:(id)arg1;
 - (void)selfTriggerDetector:(id)arg1 didDetectSelfTrigger:(id)arg2;
@@ -91,7 +98,7 @@
 - (void)siriClientBehaviorMonitor:(id)arg1 didStopStream:(id)arg2;
 - (void)siriClientBehaviorMonitor:(id)arg1 didStartStreamWithContext:(id)arg2 successfully:(BOOL)arg3 option:(id)arg4;
 - (void)_handleSecondPassResult:(unsigned long long)arg1 voiceTriggerInfo:(id)arg2 deviceId:(id)arg3 error:(id)arg4;
-- (void)_handleVoiceTriggerSecondPassWithSource:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3;
+- (void)_handleVoiceTriggerSecondPassWithSource:(unsigned long long)arg1 deviceId:(id)arg2 audioProviderUUID:(id)arg3 firstPassInfo:(id)arg4;
 - (void)_reportVoiceTriggerFirstPassFireFromAP;
 - (void)_keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
@@ -113,7 +120,7 @@
 - (void)_reset;
 - (void)reset;
 - (void)start;
-- (id)init;
+- (id)initWithTargetQueue:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

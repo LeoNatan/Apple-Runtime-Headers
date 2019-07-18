@@ -9,6 +9,7 @@
 @interface UIColor (SafariServicesExtras)
 + (id)_sf_folderTouchIconBackgroundColor;
 + (id)_sf_touchIconBackgroundColor;
++ (id)_sf_defaultWebAppStatusBarBackgroundColor;
 + (id)_sf_barHairlineShadowColor;
 + (id)_sf_separatorColor;
 + (id)_sf_tertiaryLabelColor;
@@ -19,6 +20,6 @@
 + (id)_sf_automationBackgroundColor;
 + (id)_sf_defaultBookmarkFolderBackgroundColor;
 + (id)_sf_defaultWebContentBackgroundColor;
-+ (id)ss_browserSystemColor;
++ (id)_sf_browserSystemColor;
 @end
 

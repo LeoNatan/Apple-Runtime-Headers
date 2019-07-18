@@ -50,7 +50,7 @@ __attribute__((visibility("hidden")))
     shared_ptr_0f967b3d _thumbnailController;
     vector_7ca3ab92 _pendingIconFetchers;
     struct TNSRef<FI_TICloudNoDocumentsViewController, void> _iCloudNoDocumentsViewController;
-    struct TNSRef<FI_TDelayedPopulationViewController, void> _delayedPopulationViewController;
+    struct TNSRef<FI_TLoadingViewController, void> _loadingViewController;
     struct TNSRef<NSViewController, void> _authenticationViewController;
     struct TKeyValueObserver _viewSettingsObserver;
     struct TKeyValueBinder _sortByBinder;
@@ -106,10 +106,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)validateSelectAll:(id)arg1;
 - (void)openSelectionWithModifiers:(unsigned long long)arg1 allowTabs:(_Bool)arg2;
 - (_Bool)canDoubleClick:(const struct TFENode *)arg1;
-- (_Bool)showingDelayedPopulation;
-- (void)configureForDelayedPopulation:(_Bool)arg1;
-- (unsigned long long)itemCountForDelayedPopulation;
-- (id)viewToOverlayForDelayedPopulation;
+- (_Bool)showingLoadingUI;
+- (void)configureForLoadingUI:(_Bool)arg1;
+- (unsigned long long)itemCountForLoadingUI;
+- (id)viewToOverlayForLoadingUI;
 - (void)configureForAuthenticationUI;
 - (void)configureForAuthenticationUI:(_Bool)arg1;
 - (_Bool)shouldShowAuthenticationUI;
@@ -159,7 +159,8 @@ __attribute__((visibility("hidden")))
 - (duration_3c68f186)previewPaneDisplayDelay;
 - (_Bool)shouldDelayNextPreviewPaneRetargetForCurrentKey:(unsigned short)arg1;
 - (void)openPreviewPanelInFullScreen:(_Bool)arg1;
-- (id)iconImageForNode:(const struct TFENode *)arg1 includeBadge:(_Bool)arg2;
+- (id)iconImageForNode:(const struct TFENode *)arg1;
+- (_Bool)includeBadgeInIconImage;
 - (struct TFENode)thumbnailTargetNodeForNode:(const struct TFENode *)arg1;
 - (void)updateQueryHitPreviewForNode:(const struct TFENode *)arg1;
 - (void)invalidateThumbnailForKeyNodes:(const struct TFENodeVector *)arg1;

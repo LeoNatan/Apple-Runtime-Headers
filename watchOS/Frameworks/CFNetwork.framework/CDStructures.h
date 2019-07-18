@@ -752,11 +752,12 @@ typedef struct {
 
 typedef struct {
     double domainLookupBeginTime;
-    double domainLookupEndTime;
     double connectBeginTime;
-    double secureConnectionBeginTime;
-    double connectEndTime;
-} CDStruct_2e8cb519;
+    unsigned int domainLookupDuration;
+    unsigned int connectDuration;
+    unsigned int secureConnectionDuration;
+    _Bool secure;
+} CDStruct_c0a2f610;
 
 typedef struct {
     int domain;

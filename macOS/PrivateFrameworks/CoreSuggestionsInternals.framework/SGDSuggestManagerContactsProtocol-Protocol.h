@@ -15,7 +15,7 @@
 - (void)contactMatchesOrLookupIdByEmailAddress:(NSString *)arg1 withCompletion:(void (^)(SGXPCResponse1 *))arg2;
 - (void)contactMatchesOrLookupIdByPhoneNumber:(NSString *)arg1 withCompletion:(void (^)(SGXPCResponse1 *))arg2;
 - (void)namesForDetailCacheSnapshotsWithCompletion:(void (^)(SGXPCResponse3 *))arg1;
-- (void)namesForDetail:(NSString *)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(BOOL)arg3 withCompletion:(void (^)(SGXPCResponse1 *))arg4;
+- (void)namesForDetail:(NSString *)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(BOOL)arg3 onlySignificant:(BOOL)arg4 withCompletion:(void (^)(SGXPCResponse1 *))arg5;
 - (void)contactMatchesByEmailAddress:(NSString *)arg1 withCompletion:(void (^)(SGXPCResponse1 *))arg2;
 - (void)contactMatchesByPhoneNumber:(NSString *)arg1 withCompletion:(void (^)(SGXPCResponse1 *))arg2;
 - (void)cnContactMatchesForRecordIds:(NSArray *)arg1 withCompletion:(void (^)(SGXPCResponse1 *))arg2;

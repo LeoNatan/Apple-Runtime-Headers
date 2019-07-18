@@ -30,7 +30,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCumulativeBestAccuracyTimeMeasurement:(id)arg1 cumulativeBestAccuracyForNavigationTimeMeasurement:(id)arg2 nearestTenMetersAccuracyTimeMeasurement:(id)arg3 hundredMetersAccuracyTimeMeasurement:(id)arg4 kilometerAccuracyTimeMeasurement:(id)arg5 threeKilometerAccuracyTimeMeasurement:(id)arg6;
-- (id)initWithCumulativeBestAccuracyTime:(double)arg1 cumulativeBestAccuracyForNavigationTime:(double)arg2 nearestTenMetersAccuracyTime:(double)arg3 hundredMetersAccuracyTime:(double)arg4 kilometerAccuracyTime:(double)arg5 threeKilometerAccuracyTime:(double)arg6;
 
 @end
 

@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
-- (void)invalidate;
+- (void)invalidateWithHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (void)update;
+- (void)updateWithAcquisitionHandler:(CDUnknownBlockType)arg1 invalidationHander:(CDUnknownBlockType)arg2;
 - (id)_preventIdleSleepIdentifiers;
 - (int)_targetPid;
 - (id)_calculateNewName;

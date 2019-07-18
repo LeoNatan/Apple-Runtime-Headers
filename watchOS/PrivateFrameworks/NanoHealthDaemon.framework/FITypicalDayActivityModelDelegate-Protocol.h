@@ -6,10 +6,10 @@
 
 #import <NanoHealthDaemon/NSObject-Protocol.h>
 
-@class NSArray, NSCalendar, NSDate, NSDateComponents;
+@class NSCalendar, NSDate, NSDateComponents;
 
 @protocol FITypicalDayActivityModelDelegate <NSObject>
-- (NSArray *)activitySummariesFromDateComponents:(NSDateComponents *)arg1 toDateComponents:(NSDateComponents *)arg2;
+- (_Bool)enumerateActivitySummariesFromDateComponents:(NSDateComponents *)arg1 toDateComponents:(NSDateComponents *)arg2 error:(id *)arg3 handler:(void (^)(HKActivitySummary *))arg4;
 - (NSDate *)firstOnWristDateToday;
 - (NSCalendar *)currentCalendar;
 - (NSDate *)currentDate;

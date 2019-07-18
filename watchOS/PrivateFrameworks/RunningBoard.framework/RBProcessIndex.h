@@ -10,7 +10,6 @@
 
 @class NSMutableDictionary, NSMutableOrderedSet;
 
-__attribute__((visibility("hidden")))
 @interface RBProcessIndex : NSObject <NSFastEnumeration>
 {
     struct os_unfair_lock_s _lock;

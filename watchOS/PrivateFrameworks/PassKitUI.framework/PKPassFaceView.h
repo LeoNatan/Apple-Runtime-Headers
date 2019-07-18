@@ -81,6 +81,7 @@
 - (void)_flushContentViewsForRegions:(unsigned int)arg1;
 - (void)_createContentViewsForRegions:(unsigned int)arg1;
 - (void)_createInvariantViewsForRegions:(unsigned int)arg1;
+- (void)didAuthenticate;
 - (void)setShowsLiveRendering:(_Bool)arg1 rendererState:(id)arg2;
 @property(readonly, nonatomic) PKPassFaceViewRendererState *rendererState;
 - (void)createBodyContentViews;

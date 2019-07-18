@@ -53,13 +53,11 @@ __attribute__((visibility("hidden")))
 - (void)registerICloudPreferences;
 - (id)existingNestedDocumentPathForPath:(id)arg1;
 @property(readonly, nonatomic) _Bool showChineseNamedPointSizes;
-- (_Bool)openURL:(id)arg1 withDocumentRoot:(id)arg2;
-- (_Bool)openURL:(id)arg1;
+- (_Bool)openURL:(id)arg1 displayAlertOnError:(_Bool)arg2;
 @property(readonly, nonatomic) double maximumAspectRatioForPreviewImage;
 @property(readonly, nonatomic) double mimimumAspectRatioForPreviewImage;
 - (Class)drawableInfoSubclassForClass:(Class)arg1 unarchiver:(id)arg2;
-- (id)applicationTemplateVariantsForLocale:(struct __CFLocale *)arg1;
-@property(readonly, nonatomic) NSArray *applicationTemplateVariants;
+- (id)applicationTemplateVariantsForLocale:(id)arg1;
 - (void)registerDefaults;
 - (_Bool)isReadableDocumentType:(id)arg1;
 @property(readonly, nonatomic) NSArray *importableDocumentTypes;
@@ -73,10 +71,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *nativeDocumentExtension;
 @property(readonly, nonatomic) NSString *nativeDocumentType;
 - (void)persistenceError:(id)arg1;
-- (void)wakeUpDownloadManager;
 - (void)registerSOSClassTypeMappings;
 @property(readonly, nonatomic) Class documentRootClass;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -10,6 +10,7 @@
 
 @protocol VUIJSSettingsInterface <JSExport>
 - (void)updateFeaturesConfiguration:(NSDictionary *)arg1;
+- (NSDictionary *)wlkOverrides;
 - (NSDictionary *)userPreferences;
 - (NSArray *)deniedBrands;
 - (NSArray *)consentedBrands;

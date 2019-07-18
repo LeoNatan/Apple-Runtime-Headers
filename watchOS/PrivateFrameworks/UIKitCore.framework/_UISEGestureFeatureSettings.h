@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface _UISEGestureFeatureSettings : NSObject <_UISEGestureFeatureSettings>
 {
     float _bottomEdgeAngleWindow;
+    float _bottomEdgeRegionSize;
     float _cornerAngleWindow;
     float _edgeAngleWindow;
     float _edgeAngleWindowDecayTime;
@@ -34,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float edgeAngleWindow; // @synthesize edgeAngleWindow=_edgeAngleWindow;
 @property(nonatomic) float cornerAngleWindow; // @synthesize cornerAngleWindow=_cornerAngleWindow;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
+@property(nonatomic) float bottomEdgeRegionSize; // @synthesize bottomEdgeRegionSize=_bottomEdgeRegionSize;
 @property(nonatomic) float bottomEdgeAngleWindow; // @synthesize bottomEdgeAngleWindow=_bottomEdgeAngleWindow;
 - (id)init;
 

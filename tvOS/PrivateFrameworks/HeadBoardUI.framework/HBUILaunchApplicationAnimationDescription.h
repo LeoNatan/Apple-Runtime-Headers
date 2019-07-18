@@ -6,21 +6,24 @@
 
 #import <HeadBoardUI/HBUILaunchAnimationDescription.h>
 
-@class UIView, UIWindow;
+@class UIWindow;
+@protocol HBUIHideable, HBUILaunchAnimationViewSnapshot;
 
 @interface HBUILaunchApplicationAnimationDescription : HBUILaunchAnimationDescription
 {
-    UIView *_appIconView;
+    id <HBUIHideable> _applicationIconView;
+    id <HBUILaunchAnimationViewSnapshot> _viewSnapshot;
     UIWindow *_sourceWindow;
     struct CGRect _sourceRect;
 }
 
 @property(readonly, nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
 @property(readonly, nonatomic) UIWindow *sourceWindow; // @synthesize sourceWindow=_sourceWindow;
-@property(readonly, nonatomic) UIView *appIconView; // @synthesize appIconView=_appIconView;
+@property(readonly, nonatomic) id <HBUILaunchAnimationViewSnapshot> viewSnapshot; // @synthesize viewSnapshot=_viewSnapshot;
+@property(readonly, nonatomic) id <HBUIHideable> applicationIconView; // @synthesize applicationIconView=_applicationIconView;
 - (void).cxx_destruct;
 - (id)debugDescription;
-- (id)initWithAppIconView:(id)arg1 sourceWindow:(id)arg2 sourceRect:(struct CGRect)arg3;
+- (id)initWithApplicationIconView:(id)arg1 viewSnapshot:(id)arg2 sourceWindow:(id)arg3 sourceRect:(struct CGRect)arg4;
 
 @end
 

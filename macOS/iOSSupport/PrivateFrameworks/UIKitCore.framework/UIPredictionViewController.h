@@ -20,7 +20,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)_currentTextSuggestions;
 - (BOOL)hidesExpandableButton;
-- (BOOL)isVisibleForInputResponder:(id)arg1;
+- (BOOL)isVisibleForInputDelegate:(id)arg1 inputViews:(id)arg2;
+- (BOOL)_isVisibleForAutocorrectionType:(long long)arg1;
 - (BOOL)_canShowWhileLocked;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

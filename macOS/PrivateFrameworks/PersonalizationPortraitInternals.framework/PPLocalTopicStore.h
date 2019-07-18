@@ -6,11 +6,12 @@
 
 #import <PersonalizationPortrait/PPTopicStore.h>
 
+#import <PersonalizationPortraitInternals/PPFeedbackProcessing-Protocol.h>
+
 @class PPM2FeedbackPortraitRegistered, PPMFeedbackRegistered, PPMObjectsDeletion, PPMTopicDonation, PPMTopicDonationError, PPTopicStorage, _PASLock;
 
-@interface PPLocalTopicStore : PPTopicStore
+@interface PPLocalTopicStore : PPTopicStore <PPFeedbackProcessing>
 {
-    unsigned long long _hardFetchLimit;
     _PASLock *_lock;
     PPMTopicDonationError *_errorTracker;
     PPMTopicDonation *_donationTracker;
@@ -35,6 +36,7 @@
 @property(readonly, nonatomic) PPTopicStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
 - (BOOL)_logFeedbackSessionsWithFeedback:(id)arg1 error:(id *)arg2;
+- (void)processFeedback:(id)arg1;
 - (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_logDonationForTopics:(id)arg1 bundleId:(id)arg2 algorithm:(unsigned long long)arg3;
 - (void)disableSyncForBundleIds:(id)arg1;
@@ -68,7 +70,7 @@
 - (BOOL)_unlimitedTopicRecordsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)sourceStatsExcludedAlgorithms:(id)arg1;
 - (id)init;
-- (id)initWithStorage:(id)arg1 recordFetchLimit:(unsigned long long)arg2;
+- (id)initWithStorage:(id)arg1;
 
 @end
 

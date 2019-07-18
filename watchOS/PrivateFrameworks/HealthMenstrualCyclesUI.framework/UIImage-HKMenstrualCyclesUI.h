@@ -7,14 +7,15 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (HKMenstrualCyclesUI)
++ (id)hkmc_menstruationProjectionLowReversedImageHighContrast;
 + (id)hkmc_menstruationProjectionLowReversedImage;
 + (id)hkmc_menstruationProjectionLowImage;
++ (id)hkmc_menstruationProjectionHighReversedImageHighContrast;
 + (id)hkmc_menstruationProjectionHighReversedImage;
 + (id)hkmc_menstruationProjectionHighImage;
-+ (id)hkmc_fertilityProjectionLowReversedImage;
-+ (id)hkmc_fertilityProjectionLowImage;
-+ (id)hkmc_fertilityProjectionHighReversedImage;
-+ (id)hkmc_fertilityProjectionHighImage;
++ (id)hkmc_fertilityProjectionReversedImageHighContrast;
++ (id)hkmc_fertilityProjectionReversedImage;
++ (id)hkmc_fertilityProjectionImage;
 + (id)_hkmcui_imageWithAssetName:(id)arg1;
 @end
 

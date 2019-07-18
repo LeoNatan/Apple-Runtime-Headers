@@ -78,6 +78,7 @@
 - (struct CGRect)previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id *)arg3;
 - (void)quickLookView:(id)arg1 clickedShare:(id)arg2 forContentItem:(id)arg3;
 - (void)quickLookViewWantsFullscreen:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)invalidateLayoutForFooterView;
 - (void)scrollToQuickLook;
 - (void)clearQuickLook;

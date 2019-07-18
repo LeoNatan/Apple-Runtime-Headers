@@ -26,6 +26,7 @@
 - (void)_endLoadingMLModelSignpost;
 - (void)_startLoadingMLModelSignpost;
 - (id)createResultDataFromTensors:(CDStruct_cf098810 *)arg1 numberOfOutputTensors:(unsigned long long)arg2 imageDataForNeuralNetwork:(id)arg3 inputImageData:(id)arg4 rotationNeeded:(long long)arg5 regionOfInterest:(struct CGSize)arg6;
+- (id)processImageDataThroughNeuralNetwork:(id)arg1 originalImageData:(id)arg2 regionOfInterest:(struct CGSize)arg3 rotationOfResultTensor:(long long)arg4;
 - (int)defaultEngine;
 - (CDStruct_b527887c)networkInputParams;
 - (void)changeEspressoConfig:(id)arg1;

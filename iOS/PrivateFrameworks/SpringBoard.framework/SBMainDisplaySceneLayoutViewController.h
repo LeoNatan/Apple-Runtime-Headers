@@ -7,6 +7,7 @@
 #import <SpringBoard/SBSceneLayoutViewController.h>
 
 #import <SpringBoard/PTSettingsKeyObserver-Protocol.h>
+#import <SpringBoard/SBDeviceApplicationSceneStatusBarBreadcrumbProviderObserver-Protocol.h>
 #import <SpringBoard/SBMainDisplaySceneLayoutStatusBarViewDataSource-Protocol.h>
 #import <SpringBoard/SBSceneHandleObserver-Protocol.h>
 #import <SpringBoard/TFBetaLaunchHandleActivationDelegate-Protocol.h>
@@ -14,7 +15,7 @@
 @class FBScene, NSArray, NSLayoutConstraint, NSMutableSet, NSObject, NSString, SBFHomeGrabberSettings, SBHomeGrabberRotationView, SBHomeGrabberView, SBMainDisplayLayoutState, SBMainDisplaySceneLayoutGestureManager, SBMainDisplaySceneLayoutStatusBarView, SBOrientationTransformWrapperView, SBSceneHandleBlockObserver, SBSeparatorView, SBUIKeyboardHomeAffordanceAssertion, UIApplicationSceneClientSettingsDiffInspector, UIView;
 @protocol OS_dispatch_queue;
 
-@interface SBMainDisplaySceneLayoutViewController : SBSceneLayoutViewController <SBMainDisplaySceneLayoutStatusBarViewDataSource, PTSettingsKeyObserver, SBSceneHandleObserver, TFBetaLaunchHandleActivationDelegate>
+@interface SBMainDisplaySceneLayoutViewController : SBSceneLayoutViewController <SBMainDisplaySceneLayoutStatusBarViewDataSource, PTSettingsKeyObserver, SBSceneHandleObserver, TFBetaLaunchHandleActivationDelegate, SBDeviceApplicationSceneStatusBarBreadcrumbProviderObserver>
 {
     SBMainDisplaySceneLayoutGestureManager *_gestureManager;
     NSMutableSet *_pushPopTransformReasons;
@@ -38,15 +39,17 @@
     NSLayoutConstraint *_homeGrabberBottomConstraint;
     NSLayoutConstraint *_homeGrabberLeftConstraint;
     NSLayoutConstraint *_homeGrabberRightConstraint;
-    _Bool _nubHighlighted;
     _Bool __preventsCornerRadiusUpdate;
     double _separatorViewAlpha;
+    unsigned long long _nubStyle;
     SBHomeGrabberRotationView *_homeGrabberRotationView;
+    NSString *_keyboardFocusSceneID;
 }
 
+@property(copy, nonatomic, getter=_keyboardFocusSceneID, setter=_setKeyboardFocusSceneID:) NSString *keyboardFocusSceneID; // @synthesize keyboardFocusSceneID=_keyboardFocusSceneID;
 @property(nonatomic, setter=_setPreventsCornerRadiusUpdate:) _Bool _preventsCornerRadiusUpdate; // @synthesize _preventsCornerRadiusUpdate=__preventsCornerRadiusUpdate;
 @property(readonly, nonatomic) SBHomeGrabberRotationView *homeGrabberRotationView; // @synthesize homeGrabberRotationView=_homeGrabberRotationView;
-@property(nonatomic, getter=_isNubHighlighted, setter=_setNubHighlighted:) _Bool _nubHighlighted; // @synthesize _nubHighlighted;
+@property(nonatomic, setter=_setNubStyle:) unsigned long long _nubStyle; // @synthesize _nubStyle;
 @property(nonatomic, setter=_setSeparatorViewAlpha:) double _separatorViewAlpha; // @synthesize _separatorViewAlpha;
 - (void).cxx_destruct;
 - (struct CGSize)_layoutSizeForLayoutRole:(long long)arg1 spaceConfiguration:(long long)arg2 interfaceOrientation:(long long)arg3 frameOptions:(unsigned long long)arg4;
@@ -56,6 +59,7 @@
 - (struct CGRect)_separatorViewFrame;
 - (void)_createOrDestroyHomeGrabberRotationViewIfNecessary;
 - (id)_createStatusBarWithFrame:(struct CGRect)arg1 interfaceOrientation:(long long)arg2 reason:(id)arg3;
+- (void)statusBarBreadcrumbProviderDidUpdateDisplayProperties:(id)arg1;
 - (void)sceneHandle:(id)arg1 didUpdateSettingsWithDiff:(id)arg2 previousSettings:(id)arg3;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)betaLaunchHandle:(id)arg1 activateIfNeededEndedWithResult:(_Bool)arg2;
@@ -85,11 +89,11 @@
 - (_Bool)_shouldRepositionViewAfterTransition;
 - (void)_doCommonCleanupUponEndingLayoutTransitionWithInterruption:(_Bool)arg1;
 - (void)_beginLayoutStateTransitionWithTransitionContext:(id)arg1;
-- (_Bool)_canReuseLayoutElementViewController:(id)arg1 forEntity:(id)arg2 layoutElement:(id)arg3 transitionRequest:(id)arg4;
 - (void)_addLayoutElementViewController:(id)arg1 forLayoutElement:(id)arg2 entity:(id)arg3;
 - (struct CGRect)referenceFrameForUniqueIdentifier:(id)arg1 inLayoutState:(id)arg2;
 - (struct CGRect)referenceFrameForEntity:(id)arg1 inLayoutState:(id)arg2;
 - (id)_displayConfiguration;
+- (id)_inlineAppExposeOverlayForLayoutRole:(long long)arg1;
 - (id)_applicationSceneLayoutElementControllerForLayoutRole:(long long)arg1;
 @property(readonly, copy, nonatomic) NSArray *_transitioningAppViewControllers;
 @property(readonly, nonatomic) NSArray *appViewControllers;
@@ -109,6 +113,7 @@
 - (void)_popOutForReason:(id)arg1 animationFactory:(id)arg2;
 - (void)_pushInForReason:(id)arg1 animationFactory:(id)arg2;
 - (struct CGAffineTransform)_pushedInTransform;
+- (void)_setMaskDisplayCorners:(_Bool)arg1 forReason:(id)arg2;
 - (void)setUserResizing:(_Bool)arg1;
 - (struct CGRect)_separatorViewReferenceFrameForSpaceConfiguration:(long long)arg1 interfaceOrientation:(long long)arg2 frameOptions:(unsigned long long)arg3;
 - (struct CGRect)_referenceFrameForLayoutRole:(long long)arg1 spaceConfiguration:(long long)arg2 interfaceOrientation:(long long)arg3 frameOptions:(unsigned long long)arg4;
@@ -117,6 +122,7 @@
 - (unsigned int)_layoutSpaceAnchorEdgeForLayoutRole:(long long)arg1;
 - (double)_layoutWidthForLayoutRole:(long long)arg1 inSpaceConfiguration:(long long)arg2 interfaceOrientation:(long long)arg3;
 - (struct CGRect)_layoutFrameForSize:(struct CGSize)arg1 withRole:(long long)arg2 inInterfaceOrientation:(long long)arg3 frameOptions:(unsigned long long)arg4;
+- (void)_updateViewControllerNubViewHighlightState:(id)arg1 forKeyboardFocusSceneID:(id)arg2;
 - (void)_updateSuppressingHomeAffordanceBounce;
 - (void)_updateKeyboardHomeAffordanceAssertion;
 - (_Bool)_shouldTakeKeyboardHomeAffordanceAssertion;
@@ -126,9 +132,11 @@
 - (id)_medusaKeyboardSceneHandle;
 - (void)_noteKeyboardIsNotForMedusa;
 - (void)_noteKeyboardIsForMedusaWithOwningScene:(id)arg1;
+- (_Bool)_isStatusBarHidden;
 - (id)_trailingStatusBarStyleRequest;
 - (id)_leadingStatusBarStyleRequest;
 - (struct UIEdgeInsets)_statusBarEdgeInsetsForLayoutState:(id)arg1;
+- (struct CGRect)_statusBarAvoidanceFrameForLayoutState:(id)arg1 layoutRole:(long long)arg2;
 - (struct CGRect)_statusBarAvoidanceFrameForLayoutState:(id)arg1;
 @property(readonly, nonatomic) struct CGRect _separatorViewHitTestFrame;
 @property(readonly, nonatomic) double _separatorViewWidth;
@@ -147,7 +155,11 @@
 - (void)_performJiggleHintAnimationForApplicationSceneHandle:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_removeAppForTransitionRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_replaceSingleSceneForTransitionRequest:(id)arg1 animationSettings:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_fadeOutInlineOverlayForTransitionRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_slideOverAndFadeElementOffscreenForTransitionRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_addSingleSceneForTransitionRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_createFadeOutInlineOverlayWithTransitionRequest:(id)arg1;
+- (id)_createSlideOverAndFadeElementOffscreenWithTransitionRequest:(id)arg1;
 - (id)_createSplitAnimationControllerWithTransitionRequest:(id)arg1;
 - (id)_replaceSingleAppAnimationControllerWithTransitionRequest:(id)arg1;
 - (id)_removeAppAnimationControllerWithTransitionRequest:(id)arg1;
@@ -161,8 +173,10 @@
 - (double)normalizedHalfHalfLocation;
 - (double)normalizedNarrowWideLocation;
 - (double)normalizedDismissLeftLocation;
+- (struct CGRect)statusBarAvoidanceFrame;
 - (long long)_layoutRoleForSceneWithIdentifier:(id)arg1;
 - (id)_layoutElementForSceneWithIdentifier:(id)arg1;
+- (id)currentlyValidStatusBarPartIdentifiers;
 - (struct CGRect)frameForSceneIdentifier:(id)arg1 inView:(id)arg2;
 - (id)statusBarDescriberAtPoint:(struct CGPoint)arg1 inView:(id)arg2 pointInSceneLayoutSpace:(struct CGPoint *)arg3;
 - (id)statusBarPartsForSceneWithIdentifier:(id)arg1;

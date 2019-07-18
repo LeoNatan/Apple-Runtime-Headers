@@ -29,6 +29,7 @@
     int _activationEvent;
     NSString *_activationDeviceIdentifier;
     NSString *_serverCommandId;
+    int _endpointerOperationMode;
     NSNumber *_homeButtonUpFromBeep;
     int _audioFileType;
     NSFileHandle *_audioFileHandle;
@@ -46,6 +47,7 @@
     NSDictionary *_startContext;
     NSDictionary *_stopContext;
     AFLanguageDetectionUserContext *_languageDetectionUserContext;
+    int _dictationInputOrigin;
     struct NSUUID *_turnIdentifier;
     double _homeButtonDownEventTime;
     unsigned long long _homeButtonDownEventMachAbsoluteTime;
@@ -56,6 +58,7 @@
 
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSUUID *turnIdentifier; // @synthesize turnIdentifier=_turnIdentifier;
+@property(nonatomic) int dictationInputOrigin; // @synthesize dictationInputOrigin=_dictationInputOrigin;
 @property(copy, nonatomic) AFLanguageDetectionUserContext *languageDetectionUserContext; // @synthesize languageDetectionUserContext=_languageDetectionUserContext;
 @property(nonatomic) _Bool isOnPhoneCall; // @synthesize isOnPhoneCall=_isOnPhoneCall;
 @property(copy, nonatomic) NSDictionary *stopContext; // @synthesize stopContext=_stopContext;
@@ -90,6 +93,7 @@
 @property(nonatomic) unsigned long long homeButtonDownEventMachAbsoluteTime; // @synthesize homeButtonDownEventMachAbsoluteTime=_homeButtonDownEventMachAbsoluteTime;
 @property(nonatomic) double homeButtonDownEventTime; // @synthesize homeButtonDownEventTime=_homeButtonDownEventTime;
 @property(nonatomic) _Bool useStreamingDictation; // @synthesize useStreamingDictation=_useStreamingDictation;
+@property(nonatomic) int endpointerOperationMode; // @synthesize endpointerOperationMode=_endpointerOperationMode;
 @property(nonatomic) _Bool useAutomaticEndpointing; // @synthesize useAutomaticEndpointing=_useAutomaticEndpointing;
 @property(copy, nonatomic) NSString *serverCommandId; // @synthesize serverCommandId=_serverCommandId;
 @property(nonatomic) _Bool isEyesFree; // @synthesize isEyesFree=_isEyesFree;

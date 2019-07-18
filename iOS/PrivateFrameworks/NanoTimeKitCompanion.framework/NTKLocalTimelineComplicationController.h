@@ -35,7 +35,7 @@
 + (Class)complicationDataSourceClassForComplication:(id)arg1 family:(long long)arg2 device:(id)arg3;
 - (void).cxx_destruct;
 - (void)_updateDimStateForCurrentTimeline;
-- (id)privacyTemplate;
+- (id)lockedTemplate;
 - (id)activeDisplayTemplate;
 - (id)_currentEntry;
 - (Class)richComplicationDisplayViewClass;

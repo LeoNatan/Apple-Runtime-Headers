@@ -29,6 +29,7 @@
     BOOL supportsSharingScheduling;
     BOOL supportsTaskCalendarCreation;
     BOOL supportsUnbind;
+    BOOL requiresOpeningAttachmentAsLink;
     int displayOrder;
     NSString *externalSourceIdentifier;
     NSSet *ownerAddresses;
@@ -55,6 +56,7 @@
 + (id)sourceWithCalendarSource:(id)arg1 eventStore:(id)arg2;
 @property(copy, nonatomic) NSString *delegatedAccountOwnerStoreID; // @synthesize delegatedAccountOwnerStoreID=_delegatedAccountOwnerStoreID;
 @property(readonly, nonatomic) NSSet *calendars; // @synthesize calendars=_calendars;
+@property(readonly, nonatomic) BOOL requiresOpeningAttachmentAsLink; // @synthesize requiresOpeningAttachmentAsLink;
 @property(readonly, nonatomic) BOOL supportsUnbind; // @synthesize supportsUnbind;
 @property(readonly, nonatomic) NSURL *serverURL; // @synthesize serverURL;
 @property(readonly, nonatomic) NSString *dropBoxPathString; // @synthesize dropBoxPathString;

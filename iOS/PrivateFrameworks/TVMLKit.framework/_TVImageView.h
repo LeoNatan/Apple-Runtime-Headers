@@ -41,6 +41,7 @@
 @property(nonatomic) _Bool imageContainsCornerRadius; // @synthesize imageContainsCornerRadius=_imageContainsCornerRadius;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateCornerRadius;
 - (void)_updateImageView;
 - (void)_setImage:(id)arg1;

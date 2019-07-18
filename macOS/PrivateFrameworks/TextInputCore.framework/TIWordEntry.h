@@ -20,7 +20,6 @@
     int _wordEntryType;
     int _wordAlignmentConf;
     int _touchAlignmentConf;
-    NSArray *_candididatesOffered;
     NSString *_acceptedString;
     NSString *_originalAcceptedString;
     NSString *_orientation;
@@ -72,11 +71,10 @@
 @property(copy, nonatomic) NSString *orientation; // @synthesize orientation=_orientation;
 @property(copy, nonatomic) NSString *originalAcceptedString; // @synthesize originalAcceptedString=_originalAcceptedString;
 @property(copy, nonatomic) NSString *acceptedString; // @synthesize acceptedString=_acceptedString;
-@property(readonly, nonatomic) NSArray *candididatesOffered; // @synthesize candididatesOffered=_candididatesOffered;
 - (void).cxx_destruct;
 - (BOOL)isEntryFollowingANewLine;
 @property(readonly, nonatomic) NSArray *touchLayouts;
-- (id)candidatesOffered;
+@property(readonly, nonatomic) NSArray *candidatesOffered;
 @property(readonly, nonatomic) NSArray *allTouches;
 @property(readonly, nonatomic) NSArray *allKeyboardInputs;
 - (void)addTouchEvent:(id)arg1 withLayoutId:(unsigned long long)arg2;

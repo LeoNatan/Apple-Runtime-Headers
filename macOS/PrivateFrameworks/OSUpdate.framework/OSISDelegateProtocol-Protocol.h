@@ -9,6 +9,7 @@
 @class NSError, NSString;
 
 @protocol OSISDelegateProtocol <NSObject>
+- (void)clientShouldRebootWithShutdownOverReboot:(BOOL)arg1 withResponse:(void (^)(BOOL))arg2;
 - (void)helperToolDied;
 - (void)prepareRecoveryDidSucceed;
 - (void)prepareRecoveryDidFailWithError:(NSError *)arg1;

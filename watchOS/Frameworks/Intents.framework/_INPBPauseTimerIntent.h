@@ -18,11 +18,13 @@
         unsigned int pauseMultiple:1;
     } _has;
     _Bool _pauseMultiple;
+    _Bool __encodeLegacyGloryData;
     _INPBIntentMetadata *_intentMetadata;
     _INPBTimer *_targetTimer;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBTimer *targetTimer; // @synthesize targetTimer=_targetTimer;
 @property(nonatomic) _Bool pauseMultiple; // @synthesize pauseMultiple=_pauseMultiple;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;

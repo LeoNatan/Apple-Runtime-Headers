@@ -39,6 +39,7 @@
 - (void)specifier:(id)arg1 setValue:(double)arg2;
 - (double)valueForSpecifier:(id)arg1;
 - (void)_update;
+- (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;

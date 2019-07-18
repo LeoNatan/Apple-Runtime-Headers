@@ -227,6 +227,7 @@
 - (void)_clearCarPlayHumanPresenceState;
 - (void)_externalDeviceNightModeDidChange:(id)arg1;
 - (void)_limitedUIDidChange:(id)arg1;
+- (BOOL)_isCarInstrumentsScreen;
 - (BOOL)_isCarScreen;
 - (BOOL)_isMainScreenPointer;
 - (BOOL)_isExternal;

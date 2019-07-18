@@ -7,6 +7,6 @@
 #import <WorkflowKit/WFCarPlayConnectionTrigger.h>
 
 @interface WFCarPlayConnectionTrigger (CoreDuetContext)
-+ (id)triggerTypeIconName;
++ (id)triggerTypeIcon;
 @end
 

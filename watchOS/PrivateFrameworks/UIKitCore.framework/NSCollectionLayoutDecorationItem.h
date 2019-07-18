@@ -39,6 +39,7 @@
 - (id)initWithElementKind:(id)arg1 size:(id)arg2 contentInsets:(struct NSDirectionalEdgeInsets)arg3 containerAnchor:(id)arg4 itemAnchor:(id)arg5 zIndex:(int)arg6 registrationViewClass:(Class)arg7 isBackgroundDecoration:(_Bool)arg8;
 
 // Remaining properties
+@property(readonly, nonatomic) struct NSDirectionalEdgeInsets _effectiveContentInsets;
 @property(readonly, nonatomic) struct NSDirectionalEdgeInsets contentInsets;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

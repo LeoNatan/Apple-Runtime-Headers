@@ -13,12 +13,12 @@
 
 @interface WDProfile : NSObject <UIStateRestoring>
 {
-    HKHealthRecordsStore *_healthRecordsStore;
     WDNotificationManager *_notificationManager;
     HKDateCache *_dateCache;
     HKDisplayCategoryController *_displayCategoryController;
     HKDisplayTypeController *_displayTypeController;
     HKHealthStore *_healthStore;
+    HKHealthRecordsStore *_healthRecordsStore;
     HKManualEntryValidationController *_manualEntryValidationController;
     HKSampleTypeDateRangeController *_sampleTypeDateRangeController;
     HKUnitPreferenceController *_unitController;

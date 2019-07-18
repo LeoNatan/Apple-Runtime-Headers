@@ -11,6 +11,28 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (BOOL)uriMatchesMCProfileAdded:(id)arg1;
++ (BOOL)mcProfilePrintersOnlyAllowed;
++ (BOOL)ippsIsRequired;
++ (id)requiredPDL;
++ (BOOL)urfIsOptional;
++ (void *)getAttributes:(const char **)arg1 count:(int)arg2 fromURI:(id)arg3;
+- (id)TXTRecordWithTimeout:(int)arg1;
+- (id)txtRecordObjectForKey:(id)arg1;
+- (void)setPrivateObject:(id)arg1 forKey:(id)arg2;
+- (id)privateObjectForKey:(id)arg1;
+- (void)setAccessStateFromTXT;
+- (void)updateType;
+- (BOOL)resolveWithTimeout:(int)arg1;
+- (BOOL)resolve;
+- (BOOL)resolveIfNeeded;
+- (void *)lookup;
+- (id)localName;
+- (void *)getAttributes:(const char **)arg1 count:(int)arg2;
+- (void *)getSupplyLevelAttributes;
+- (void *)getPrinterAttributes;
+- (long long)finalizeJob:(int)arg1;
+- (void *)createRequest:(id)arg1 ofType:(id)arg2 url:(id)arg3;
 - (BOOL)knowsReadyPaperList;
 - (id)printInfoSupported;
 - (BOOL)hasPrintInfoSupported;

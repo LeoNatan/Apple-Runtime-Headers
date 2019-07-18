@@ -19,7 +19,6 @@
     UILabel *_titleLabel;
     UILabel *_textLabel;
     UIImageView *_iconImageView;
-    UIImageView *_actionChevronImageView;
     INKMultilineButton *_actionButton;
     NSMutableArray *_axRequiredLayoutConstraints;
     NSMutableArray *_defaultRequiredLayoutConstraints;

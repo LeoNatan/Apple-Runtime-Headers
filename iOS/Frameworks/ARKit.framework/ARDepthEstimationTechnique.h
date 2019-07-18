@@ -29,7 +29,6 @@
 - (void)_endLoadingMLModelSignpost;
 - (void)_startLoadingMLModelSignpost;
 - (id)createResultDataFromTensors:(CDStruct_cf098810 *)arg1 numberOfOutputTensors:(unsigned long long)arg2 imageDataForNeuralNetwork:(id)arg3 inputImageData:(id)arg4 rotationNeeded:(long long)arg5 regionOfInterest:(struct CGSize)arg6;
-- (_Bool)preProcessNetworkInputImage:(struct vImage_Buffer)arg1;
 - (void)networkModeDidChange:(id)arg1 toMode:(id)arg2;
 - (long long)numberOfInputChannelsToExpectInNetwork;
 - (_Bool)isLoadedModelVersionCorrect:(id)arg1;

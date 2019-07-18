@@ -6,15 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSOperation, NSOperationQueue, VSAppSettingsViewModel, VSIdentityProvider, VSOptional, VSPersistentStorage, VSRestrictionsCenter;
+@class NSArray, NSOperation, NSOperationQueue, UIViewController, VSAppSettingsViewModel, VSIdentityProvider, VSOptional, VSPersistentStorage, VSRestrictionsCenter;
 
 @interface VSAppSettingsFacade : NSObject
 {
     _Bool _needsUpdateApps;
+    _Bool _needsPresentationOfMVPDAppInstallPromptIfAvailable;
     int _registrationToken;
     VSIdentityProvider *_identityProvider;
     NSArray *_decidedApps;
-    NSArray *_voucherApps;
+    NSArray *_availableApps;
     NSOperationQueue *_privateQueue;
     NSOperation *_currentPresentationOperation;
     VSPersistentStorage *_storage;
@@ -24,8 +25,11 @@
     NSArray *_knownAppBundles;
     NSArray *_unredeemedVouchers;
     VSAppSettingsViewModel *_mvpdAppSettingsViewModel;
+    UIViewController *_mvpdInstallPromptPresentingViewController;
 }
 
+@property(retain, nonatomic) UIViewController *mvpdInstallPromptPresentingViewController; // @synthesize mvpdInstallPromptPresentingViewController=_mvpdInstallPromptPresentingViewController;
+@property(nonatomic) _Bool needsPresentationOfMVPDAppInstallPromptIfAvailable; // @synthesize needsPresentationOfMVPDAppInstallPromptIfAvailable=_needsPresentationOfMVPDAppInstallPromptIfAvailable;
 @property(retain, nonatomic) VSAppSettingsViewModel *mvpdAppSettingsViewModel; // @synthesize mvpdAppSettingsViewModel=_mvpdAppSettingsViewModel;
 @property(nonatomic) int registrationToken; // @synthesize registrationToken=_registrationToken;
 @property(nonatomic) _Bool needsUpdateApps; // @synthesize needsUpdateApps=_needsUpdateApps;
@@ -37,12 +41,13 @@
 @property(retain, nonatomic) VSPersistentStorage *storage; // @synthesize storage=_storage;
 @property(retain, nonatomic) NSOperation *currentPresentationOperation; // @synthesize currentPresentationOperation=_currentPresentationOperation;
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
-@property(copy, nonatomic) NSArray *voucherApps; // @synthesize voucherApps=_voucherApps;
+@property(copy, nonatomic) NSArray *availableApps; // @synthesize availableApps=_availableApps;
 @property(copy, nonatomic) NSArray *decidedApps; // @synthesize decidedApps=_decidedApps;
 @property(retain, nonatomic) VSIdentityProvider *identityProvider; // @synthesize identityProvider=_identityProvider;
 - (void).cxx_destruct;
 - (void)presentMVPDAppInstallPromptFromViewController:(id)arg1;
 - (_Bool)shouldShowMVPDAppInstallPrompt;
+- (_Bool)shouldShowMVPDAppInstallPromptFromViewController:(id)arg1;
 - (void)_setNeedsUpdateApps;
 - (void)_updateApps;
 - (id)_fetchOperationForAdamIDs:(id)arg1;

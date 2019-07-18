@@ -41,6 +41,7 @@
     long long _separatorStyle;
     UIColor *_sectionBackgroundColor;
     UIColor *_selectedCellBackgroundColor;
+    UIColor *_groupedBackgroundColor;
     long long _barStyle;
     long long _keyboardAppearance;
     long long _modalTransitionStyle;
@@ -66,6 +67,7 @@
 @property(nonatomic) long long keyboardAppearance; // @synthesize keyboardAppearance=_keyboardAppearance;
 @property(nonatomic) _Bool usesTranslucentBarStyle; // @synthesize usesTranslucentBarStyle=_usesTranslucentBarStyle;
 @property(nonatomic) long long barStyle; // @synthesize barStyle=_barStyle;
+@property(retain, nonatomic) UIColor *groupedBackgroundColor; // @synthesize groupedBackgroundColor=_groupedBackgroundColor;
 @property(retain, nonatomic) UIColor *selectedCellBackgroundColor; // @synthesize selectedCellBackgroundColor=_selectedCellBackgroundColor;
 @property(retain, nonatomic) UIColor *sectionBackgroundColor; // @synthesize sectionBackgroundColor=_sectionBackgroundColor;
 @property(nonatomic) struct UIEdgeInsets separatorInset; // @synthesize separatorInset=_separatorInset;

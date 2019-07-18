@@ -11,14 +11,17 @@
 @interface PLMacCPUGPUAgent : PLAgent
 {
     BOOL _isDiscreteGPUConnected;
+    int _nPstates;
     PLEntryNotificationOperatorComposition *_batteryLevelChangedNotifications;
     PLIOKitOperatorComposition *_graphicsControlComposition;
     PLIOKitOperatorComposition *_discreteGpuComposition;
 }
 
 + (id)entryAggregateDefinitions;
++ (id)entryEventNoneDefinitionGPUPState;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventIntervalDefinitions;
++ (id)entryEventBackwardDefinitionGPUPStateResidency;
 + (id)entryEventBackwardDefinitionDiscreteGPUAppList;
 + (id)entryEventForwardDefinitionDiscreteGPUState;
 + (id)entryEventBackwardDefinitions;
@@ -28,12 +31,18 @@
 + (id)railDefinitions;
 + (id)defaults;
 + (void)load;
+@property int nPstates; // @synthesize nPstates=_nPstates;
 @property BOOL isDiscreteGPUConnected; // @synthesize isDiscreteGPUConnected=_isDiscreteGPUConnected;
 @property(retain) PLIOKitOperatorComposition *discreteGpuComposition; // @synthesize discreteGpuComposition=_discreteGpuComposition;
 @property(retain) PLIOKitOperatorComposition *graphicsControlComposition; // @synthesize graphicsControlComposition=_graphicsControlComposition;
 @property(retain) PLEntryNotificationOperatorComposition *batteryLevelChangedNotifications; // @synthesize batteryLevelChangedNotifications=_batteryLevelChangedNotifications;
 - (void).cxx_destruct;
+- (id)readPStateResidencyDelta;
+- (void)logEventNoneGPUPState;
+- (unsigned int)GPUPMTClientConnection;
+- (BOOL)isDownRevNeeded;
 - (void)logEventNoneAndForward;
+- (void)logEventBackwardGPUPStateResidency;
 - (void)logEventBackwardDiscreteGPUAppList:(unsigned int)arg1 withReason:(int)arg2;
 - (void)logEventBackwardPStates:(id)arg1 Qos:(id)arg2;
 - (void)logEventBackwardPerCoreStats:(id)arg1;

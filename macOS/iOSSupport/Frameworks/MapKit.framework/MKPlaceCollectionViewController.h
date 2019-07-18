@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)reloadCollections;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (BOOL)_canShowWhileLocked;
 

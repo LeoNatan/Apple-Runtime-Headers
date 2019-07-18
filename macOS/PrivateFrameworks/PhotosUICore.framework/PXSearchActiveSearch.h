@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) NSString *searchTermsString;
 - (void)_generateRelatedSearchObjects;
 - (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) unsigned long long searchTermCount;
 @property(readonly, nonatomic) unsigned long long searchTokenCount;
 @property(readonly, nonatomic) BOOL isEmpty;

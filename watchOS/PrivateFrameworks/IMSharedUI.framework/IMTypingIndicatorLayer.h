@@ -8,15 +8,16 @@
 
 #import <IMSharedUI/IMTypingIndicatorLayerProtocol-Protocol.h>
 
-@class CAReplicatorLayer, NSString, UIColor;
+@class CAReplicatorLayer, NSString, UIColor, UITraitCollection;
 
 @interface IMTypingIndicatorLayer : CALayer <IMTypingIndicatorLayerProtocol>
 {
     _Bool _hasDarkBackground;
-    struct UIColor *_bubbleColor;
-    float _bubbleOpacity;
     id _iconImage;
+    struct UIColor *_bubbleColor;
     struct UIColor *_thinkingDotColor;
+    UITraitCollection *_traitCollection;
+    float _bubbleOpacity;
     float _thinkingDotOpacity;
     struct UIColor *_customBubbleColor;
     CALayer *_bubbleContainer;
@@ -56,10 +57,11 @@
 @property(retain, nonatomic) CALayer *bubbleContainer; // @synthesize bubbleContainer=_bubbleContainer;
 @property(copy, nonatomic) UIColor *customBubbleColor; // @synthesize customBubbleColor=_customBubbleColor;
 @property(nonatomic) float thinkingDotOpacity; // @synthesize thinkingDotOpacity=_thinkingDotOpacity;
-@property(copy, nonatomic) UIColor *thinkingDotColor; // @synthesize thinkingDotColor=_thinkingDotColor;
-@property(retain, nonatomic) id iconImage; // @synthesize iconImage=_iconImage;
 @property(nonatomic) float bubbleOpacity; // @synthesize bubbleOpacity=_bubbleOpacity;
+@property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
+@property(copy, nonatomic) UIColor *thinkingDotColor; // @synthesize thinkingDotColor=_thinkingDotColor;
 @property(copy, nonatomic) UIColor *bubbleColor; // @synthesize bubbleColor=_bubbleColor;
+@property(retain, nonatomic) id iconImage; // @synthesize iconImage=_iconImage;
 @property(nonatomic) _Bool hasDarkBackground; // @synthesize hasDarkBackground=_hasDarkBackground;
 - (void).cxx_destruct;
 - (void)stopAnimation;

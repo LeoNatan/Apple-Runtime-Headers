@@ -17,7 +17,10 @@
     struct {
         _Bool isSelectingAssets;
         _Bool visibleAssetCollections;
+        _Bool willTransitionFromZoomLevelToZoomLevel;
+        _Bool didTransitionFromZoomLevelToZoomLevel;
         _Bool dominantAssetCollectionReferenceForZoomLevel;
+        _Bool transitionTypeFromZoomLevelToZoomLevel;
     } _delegateRespondsTo;
     NSDictionary *_dataSourceManagerByZoomLevel;
     _Bool _isForcingSections;
@@ -31,12 +34,14 @@
     PXAssetsDataSource *_currentDataSource;
     long long _currentDataSourceZoomLevel;
     PXVisualPositionsChangeDetails *_lastVisualPositionsChangeDetails;
+    long long _lastTransitionType;
     unsigned long long _lastVisualPositionsChangeFromDataSourceIdentifier;
     unsigned long long _lastVisualPositionsChangeToDataSourceIdentifier;
 }
 
 @property(nonatomic) unsigned long long lastVisualPositionsChangeToDataSourceIdentifier; // @synthesize lastVisualPositionsChangeToDataSourceIdentifier=_lastVisualPositionsChangeToDataSourceIdentifier;
 @property(nonatomic) unsigned long long lastVisualPositionsChangeFromDataSourceIdentifier; // @synthesize lastVisualPositionsChangeFromDataSourceIdentifier=_lastVisualPositionsChangeFromDataSourceIdentifier;
+@property(nonatomic) long long lastTransitionType; // @synthesize lastTransitionType=_lastTransitionType;
 @property(retain, nonatomic) PXVisualPositionsChangeDetails *lastVisualPositionsChangeDetails; // @synthesize lastVisualPositionsChangeDetails=_lastVisualPositionsChangeDetails;
 @property(nonatomic) long long currentDataSourceZoomLevel; // @synthesize currentDataSourceZoomLevel=_currentDataSourceZoomLevel;
 @property(retain, nonatomic) PXAssetsDataSource *currentDataSource; // @synthesize currentDataSource=_currentDataSource;
@@ -67,9 +72,9 @@
 - (_Bool)forceAccurateSectionsIfNeeded:(id)arg1;
 - (void)loadIfNeeded;
 - (void)setTransientKeyAsset:(id)arg1 forAssetCollection:(id)arg2 zoomLevel:(long long)arg3;
-- (struct PXSimpleIndexPath)indexPathOfAssetCollectionInDataSourceForZoomLevel:(long long)arg1 containingKeyAssetOfAssetCollection:(id)arg2 inZoomLevel:(long long)arg3;
-- (id)indexesOfAssetCollectionsInDataSourceForZoomLevel:(long long)arg1 withParentAssetCollection:(id)arg2;
 - (id)firstAssetCollectionReferenceInDataSourceForZoomLevel:(long long)arg1 withParent:(id)arg2;
+- (id)assetCollectionReferencesInDataSourceForZoomLevel:(long long)arg1 withParentAssetCollectionReference:(id)arg2 assetCollectionReferenceWithSameKeyAssetAsParent:(id *)arg3;
+- (id)assetCollectionReferencesInDataSourceForZoomLevel:(long long)arg1 withParentAssetCollectionReference:(id)arg2;
 - (void)forceAccurateLastSection;
 @property(readonly, nonatomic) PXPhotoKitAssetsDataSourceManager *currentPhotoKitAssetsDataSourceManager;
 @property(readonly, nonatomic) PXAssetsDataSourceManager *currentAssetsDataSourceManager;
@@ -78,6 +83,7 @@
 - (id)dataSourceForZoomLevel:(long long)arg1;
 - (id)dataSourceManagerForZoomLevel:(long long)arg1;
 - (void)setZoomLevel:(long long)arg1;
+- (long long)transitionTypeFromDataSourceIdentifier:(unsigned long long)arg1 toDataSourceIdentifier:(unsigned long long)arg2;
 - (id)visualPositionsChangeDetailsFromDataSourceIdentifier:(unsigned long long)arg1 toDataSourceIdentifier:(unsigned long long)arg2;
 - (id)assetsInAssetCollection:(id)arg1;
 - (void)setCurationEnabled:(_Bool)arg1 forAssetCollection:(id)arg2;

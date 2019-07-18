@@ -6,10 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, SXDocument, SXImageController, SXJSONObjectMerger, SXMetaData, UIColor;
+#import <Silex/SXDocumentShareURLProvider-Protocol.h>
 
-@interface SXDocumentController : NSObject
+@class NSMutableDictionary, NSString, SXDocument, SXImageController, SXJSONObjectMerger, SXMetaData, UIColor;
+
+@interface SXDocumentController : NSObject <SXDocumentShareURLProvider>
 {
+    NSString *_shareURL;
     SXDocument *_document;
     SXJSONObjectMerger *_componentStyleMerger;
     SXImageController *_imageController;
@@ -20,6 +23,7 @@
 @property(retain, nonatomic) SXImageController *imageController; // @synthesize imageController=_imageController;
 @property(readonly, nonatomic) SXJSONObjectMerger *componentStyleMerger; // @synthesize componentStyleMerger=_componentStyleMerger;
 @property(readonly, nonatomic) SXDocument *document; // @synthesize document=_document;
+@property(readonly, nonatomic) NSString *shareURL; // @synthesize shareURL=_shareURL;
 - (void).cxx_destruct;
 - (id)mergedObjectsWithIdentifiers:(id)arg1 fromDictionary:(id)arg2 merger:(id)arg3;
 @property(readonly, nonatomic) UIColor *topBackgroundColor;
@@ -34,7 +38,13 @@
 - (id)componentLayoutForIdentifier:(id)arg1;
 - (id)resourceForIdentifier:(id)arg1;
 - (id)componentStyleForComponent:(id)arg1;
-- (id)initWithDocument:(id)arg1;
+- (id)initWithDocument:(id)arg1 shareURL:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class AVTAssetInfo, NSArray, NSDictionary, NSString, SCNNode;
+@class AVTAssetInfo, NSArray, NSDictionary, NSString;
 
 @interface AVTAsset : NSObject
 {
-    long long _type;
+    long long _componentType;
     AVTAssetInfo *_assetInfo;
     NSString *_uid;
     NSString *_bundlePath;
@@ -18,11 +18,13 @@
     NSString *_ao;
     NSDictionary *_highlights;
     unsigned long long _refCount;
-    SCNNode *_cachedNode;
+    unsigned char _resourceType;
+    id _cachedResource;
     _Bool _forceHighTessellation;
     NSDictionary *_specializationSettings;
     NSDictionary *_layers;
     NSDictionary *_perAssetMain;
+    // Error parsing type: {?="mirroringEnabled"B"transform"{?="columns"[3]}}, name: _uvRemappingInfo
     double _imageScale;
     struct CGSize _imageOffset;
     _Bool _imageMirror;
@@ -32,20 +34,22 @@
 @property(readonly) _Bool imageMirror; // @synthesize imageMirror=_imageMirror;
 @property(readonly) struct CGSize imageOffset; // @synthesize imageOffset=_imageOffset;
 @property(readonly) double imageScale; // @synthesize imageScale=_imageScale;
-@property(readonly) _Bool forceHighTessellation; // @synthesize forceHighTessellation=_forceHighTessellation;
+// Error parsing type for property uvRemappingInfo:
+// Property attributes: T{?=B{?=[3]}},R,V_uvRemappingInfo
+
 @property(readonly) NSDictionary *layers; // @synthesize layers=_layers;
 @property(readonly) NSDictionary *specializationSettings; // @synthesize specializationSettings=_specializationSettings;
 @property(readonly) NSArray *morphVariants; // @synthesize morphVariants=_morphVariants;
 @property(readonly) NSString *uid; // @synthesize uid=_uid;
-@property(readonly) long long type; // @synthesize type=_type;
+@property(readonly) long long componentType; // @synthesize componentType=_componentType;
 - (void).cxx_destruct;
-- (void)setCachedNode:(id)arg1;
-- (id)cachedNode;
+- (id)resourceForCaching:(_Bool)arg1;
+- (id)cachedResource;
+- (id)instantiateResource;
+@property(readonly) _Bool is3DAsset;
+@property(readonly) _Bool is2DAsset;
 - (id)perAssetMain;
 - (id)assetInfo;
-- (id)componentPath;
-- (void)setBundlePath:(id)arg1;
-- (id)bundlePath;
 - (void)decrUseCount;
 - (void)freeCache;
 - (void)incrUseCount;

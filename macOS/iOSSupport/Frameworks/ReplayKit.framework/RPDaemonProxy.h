@@ -25,7 +25,6 @@
 - (void)appAudioCaptureStopWithHandler:(CDUnknownBlockType)arg1;
 - (void)appAudioCaptureResumeWithHandler:(CDUnknownBlockType)arg1;
 - (void)appAudioCaptureStartWithAudioStreamDescription:(struct AudioStreamBasicDescription)arg1 didStartHandler:(CDUnknownBlockType)arg2;
-- (oneway void)setMicrophoneEnabledPersistent:(BOOL)arg1;
 - (oneway void)setHasUserConsentForMicrophone:(BOOL)arg1;
 - (oneway void)setHasUserConsentForCamera:(BOOL)arg1;
 - (oneway void)synchronousIsBroadcastingWithPreferredExtension:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -37,15 +36,15 @@
 - (oneway void)captureHandlerWithSample:(id)arg1 timingData:(id)arg2;
 - (oneway void)updateBroadcastURL:(id)arg1;
 - (oneway void)updateBroadcastServiceInfo:(id)arg1;
+- (oneway void)recordingDidPause;
+- (oneway void)recordingShouldResume;
 - (oneway void)recordingDidStopWithError:(id)arg1 movieURL:(id)arg2;
 - (oneway void)updateScreenRecordingStateWithCurrentState:(id)arg1;
 - (oneway void)appAudioCaptureOutputHandler:(id)arg1;
-- (oneway void)reportCameraUsage:(int)arg1;
+- (oneway void)reportCameraUsage:(long long)arg1;
 - (oneway void)updateProcessIDForAudioCaptureWithPID:(int)arg1;
 - (oneway void)setMicrophoneEnabled:(BOOL)arg1;
 - (oneway void)discardRecordingWithHandler:(CDUnknownBlockType)arg1;
-- (oneway void)clientDidResignActive;
-- (oneway void)clientDidBecomeActive;
 - (oneway void)resumeRecordingWithWindowLayerContextID:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (oneway void)pauseRecording;
 - (oneway void)getSystemBroadcastExtensionInfo:(CDUnknownBlockType)arg1;

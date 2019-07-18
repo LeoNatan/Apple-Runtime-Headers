@@ -11,6 +11,7 @@
 @interface SFMutableResultSection : SFResultSection
 {
     BOOL _doNotFold;
+    BOOL _pinToTop;
     unsigned int _domain;
     NSString *_groupName;
     NSNumber *_groupId;
@@ -18,6 +19,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property BOOL pinToTop; // @synthesize pinToTop=_pinToTop;
 @property(nonatomic) unsigned int domain; // @synthesize domain=_domain;
 @property BOOL doNotFold; // @synthesize doNotFold=_doNotFold;
 @property(retain, nonatomic) NSMutableOrderedSet *resultSet; // @synthesize resultSet=_resultSet;
@@ -27,6 +29,7 @@
 - (void)sortUsingComparator:(CDUnknownBlockType)arg1;
 - (void)replaceResultsAtIndex:(unsigned long long)arg1 withResults:(id)arg2;
 - (void)removeResultsInArray:(id)arg1;
+- (void)removeResultsInRange:(struct _NSRange)arg1;
 - (void)removeResults:(id)arg1;
 - (void)removeResultsAtIndex:(unsigned long long)arg1;
 - (id)resultsAtIndex:(unsigned long long)arg1;

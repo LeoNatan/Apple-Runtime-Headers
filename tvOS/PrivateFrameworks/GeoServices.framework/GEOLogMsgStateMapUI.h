@@ -15,9 +15,11 @@
     GEOMultiTabsState *_multiTabsState;
     int _layoutInfo;
     int _layoutStyle;
+    _Bool _landscape;
     struct {
         unsigned int has_layoutInfo:1;
         unsigned int has_layoutStyle:1;
+        unsigned int has_landscape:1;
     } _flags;
 }
 
@@ -33,6 +35,8 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasLandscape;
+@property(nonatomic) _Bool landscape;
 - (int)StringAsLayoutStyle:(id)arg1;
 - (id)layoutStyleAsString:(int)arg1;
 @property(nonatomic) _Bool hasLayoutStyle;

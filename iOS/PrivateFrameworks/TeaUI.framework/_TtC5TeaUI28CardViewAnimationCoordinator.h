@@ -14,11 +14,14 @@
     // Error parsing type: , name: behavior
     // Error parsing type: , name: presentationState
     // Error parsing type: , name: coordinatingCoordinators
+    // Error parsing type: , name: initialCoordinatingPresentationState
+    // Error parsing type: , name: dimmingAlpha
     // Error parsing type: , name: animatingPresentationState
     // Error parsing type: , name: coordinatingPresentationState
     // Error parsing type: , name: rootView
     // Error parsing type: , name: panView
     // Error parsing type: , name: contentView
+    // Error parsing type: , name: dimmingView
     // Error parsing type: , name: panGestureRecoginzer
     // Error parsing type: , name: panLockState
     // Error parsing type: , name: state

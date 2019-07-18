@@ -20,7 +20,6 @@
     int _connectionsProfilingLevel;
     int _willDeleteDatabaseNotifyToken;
     int _homeSharingCachesClearedNotifyToken;
-    _Bool _closed;
     _Bool _useReadOnlyConnections;
     _Bool _useDistantConnections;
     NSString *_databasePath;
@@ -35,10 +34,9 @@
 @property(readonly, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
 - (void).cxx_destruct;
 - (void)_handleDatabaseDeletion;
-@property(nonatomic, getter=isClosed) _Bool closed; // @synthesize closed=_closed;
-- (void)close;
 - (void)handleDiagnostic:(id)arg1;
 - (void)closeConnectionsAndWaitForBusyConnections:(_Bool)arg1;
+- (void)checkInConnection:(id)arg1 returnToPool:(_Bool)arg2;
 - (void)checkInConnection:(id)arg1;
 - (id)checkoutConnection:(_Bool *)arg1;
 @property(nonatomic) int connectionsProfilingLevel;

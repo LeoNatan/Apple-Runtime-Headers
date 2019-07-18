@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSLayoutConstraint, UIKBVisualEffectView, UIView, _UIKeyboardPopover, _UIKeyboardPopoverAffordance, _UIMirrorNinePatchView;
+@class NSLayoutConstraint, UIKBVisualEffectView, UIView, _UIKeyboardPopover, _UIKeyboardPopoverAffordance, _UIPopoverView;
 
 __attribute__((visibility("hidden")))
 @interface UIKeyboardPopoverContainer : NSObject
 {
-    _UIMirrorNinePatchView *_background;
+    _UIKeyboardPopover *_popoverContainerView;
     UIKBVisualEffectView *_backdrop;
-    _UIKeyboardPopover *_popover;
+    _UIPopoverView *_popover;
     _UIKeyboardPopoverAffordance *_affordance;
     struct CGRect _targetFull;
     double _arrowOffset;
@@ -21,11 +21,16 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_keyboardAreaHeight;
 }
 
-+ (void)resetGlobalProperties;
-+ (id)propertiesForSpecificKeyboardFrame:(struct CGRect)arg1 onScreenSize:(struct CGSize)arg2 headerHeight:(double)arg3;
-+ (id)propertiesForTargetRect:(struct CGRect)arg1 withHeight:(double)arg2 onScreenSize:(struct CGSize)arg3 headerHeight:(double)arg4;
++ (id)propertiesForSpecificKeyboardFrame:(struct CGRect)arg1 onScreenSize:(struct CGSize)arg2;
++ (struct CGRect)frameAtOffset:(struct CGPoint)arg1 keyboardSize:(struct CGSize)arg2 screenSize:(struct CGSize)arg3;
++ (id)propertiesForTargetRect:(struct CGRect)arg1 withHeight:(double)arg2 onScreenSize:(struct CGSize)arg3;
 + (struct UIEdgeInsets)contentInsets;
++ (struct CGSize)shadowOffset;
++ (double)shadowRadius;
++ (double)shadowOpacity;
++ (id)shadowColor;
 + (double)dragAreaHeight;
++ (double)pillDistanceToEdge;
 + (struct CGSize)pillSize;
 + (double)pillCornerRadius;
 + (id)pillColor;
@@ -40,7 +45,6 @@ __attribute__((visibility("hidden")))
 - (void)applyProperties:(id)arg1;
 - (void)updateBackdropStyle:(long long)arg1;
 - (id)initWithView:(id)arg1 usingBackdropStyle:(long long)arg2;
-- (_Bool)isValidDragPoint:(struct CGPoint)arg1;
 @property(readonly) struct CGRect frame;
 @property(readonly, retain) UIView *affordance;
 

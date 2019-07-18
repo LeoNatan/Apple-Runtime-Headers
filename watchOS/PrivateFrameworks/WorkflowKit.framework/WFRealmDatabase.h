@@ -8,21 +8,24 @@
 
 #import <WorkflowKit/WFDatabaseBackingStore-Protocol.h>
 
-@class NSString, NSURL, RLMRealmConfiguration;
+@class NSString, NSURL, RLMRealm, RLMRealmConfiguration;
 @protocol OS_dispatch_queue;
 
 @interface WFRealmDatabase : NSObject <WFDatabaseBackingStore>
 {
     _Bool _mainThreadOnly;
+    RLMRealm *_inMemoryRealm;
     RLMRealmConfiguration *_configuration;
     NSObject<OS_dispatch_queue> *_notificationQueue;
 }
 
 + (void)cleanOrphanedObjectsFromRealm:(id)arg1;
 + (id)visibleWorkflowsInRealm:(id)arg1;
++ (_Bool)wf_createDataVaultAndMigrateToItIfNeeded;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
 @property(readonly, nonatomic) _Bool mainThreadOnly; // @synthesize mainThreadOnly=_mainThreadOnly;
 @property(readonly, copy, nonatomic) RLMRealmConfiguration *configuration; // @synthesize configuration=_configuration;
+@property(retain, nonatomic) RLMRealm *inMemoryRealm; // @synthesize inMemoryRealm=_inMemoryRealm;
 - (void).cxx_destruct;
 - (int)suggestedSortOrderingInRealm:(id)arg1;
 - (void)setWorkflowOrdering:(id)arg1;
@@ -41,6 +44,7 @@
 - (id)logRunOfWorkflow:(id)arg1 withSource:(id)arg2 triggerID:(id)arg3;
 - (void)setConflictingReference:(id)arg1 forReference:(id)arg2;
 - (id)conflictingReferenceForReference:(id)arg1;
+- (id)latestRunEvent;
 - (id)sortedRunEventsForTriggerID:(id)arg1;
 - (id)sortedRunEventsWithSource:(id)arg1;
 - (id)allConfiguredTriggers;

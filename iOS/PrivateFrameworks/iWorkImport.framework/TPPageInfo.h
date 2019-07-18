@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long pageIndex; // @synthesize pageIndex=_pageIndex;
 - (void).cxx_destruct;
 - (id)infoForSelectionPath:(id)arg1;
-@property(readonly, nonatomic) NSArray *childInfos;
+@property(readonly, copy, nonatomic) NSArray *childInfos;
 - (Class)layoutClass;
 - (_Bool)isSelectable;
 @property(readonly, nonatomic, getter=isAttachedToBodyText) _Bool attachedToBodyText;
@@ -61,6 +61,7 @@ __attribute__((visibility("hidden")))
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) _Bool isMaster;
 @property(nonatomic) _Bool matchesObjectPlaceholderGeometry;
 @property(readonly) Class superclass;
 

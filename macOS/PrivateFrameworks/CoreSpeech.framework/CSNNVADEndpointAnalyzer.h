@@ -82,6 +82,7 @@
 - (void).cxx_destruct;
 - (void)reset;
 - (void)preheat;
+- (double)trailingSilenceDurationAtEndpoint;
 @property(readonly, nonatomic) BOOL canProcessCurrentRequest;
 - (void)_reportTwoShotAtTsInSecs:(double)arg1;
 - (void)_reportStartpointAtTsInSecs:(double)arg1;
@@ -93,6 +94,7 @@
 - (double)_effectiveAudioTimeInSecsForSNObservation:(id)arg1;
 - (BOOL)_shouldEnterTwoShotAtAudioTimeInSecs:(double)arg1;
 - (void)recordingStoppedForReason:(long long)arg1;
+- (void)stopEndpointer;
 - (void)processAudioSamplesAsynchronously:(id)arg1;
 - (id)_pcmBufferForAudioChunk:(id)arg1;
 - (void)handleVoiceTriggerWithActivationInfo:(id)arg1;

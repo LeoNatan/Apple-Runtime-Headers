@@ -11,7 +11,9 @@
 @protocol CSLSBacklightXPCServer <NSObject>
 - (void)releaseMinimumBrightnessAssertion:(NSString *)arg1;
 - (void)takeMinimumBrightnessAssertion:(NSString *)arg1 withMinimumNits:(float)arg2 fadeDuration:(float)arg3 withDisplay:(NSString *)arg4;
+- (void)releaseAssertion:(NSString *)arg1 completion:(void (^)(void))arg2;
 - (void)releaseAssertion:(NSString *)arg1;
+- (void)takeAssertion:(CSLSBacklightAssertionSpecification *)arg1 withUUID:(NSString *)arg2 completion:(void (^)(void))arg3;
 - (void)takeAssertion:(CSLSBacklightAssertionSpecification *)arg1 withUUID:(NSString *)arg2;
 - (void)endObserving;
 - (void)beginObserving;

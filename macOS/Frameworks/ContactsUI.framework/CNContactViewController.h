@@ -20,6 +20,7 @@
 }
 
 + (id)CNToABCNKeyMap;
++ (id)allPropertyKeys;
 + (id)descriptorForRequiredKeys;
 + (id)os_log;
 @property(nonatomic) double desiredHeight; // @synthesize desiredHeight=_desiredHeight;

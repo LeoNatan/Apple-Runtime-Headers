@@ -40,7 +40,12 @@
 + (id)_uncachedDefaultSourceWithEntitlements:(id)arg1;
 + (id)_uncachedDefaultSource;
 + (id)defaultSource;
-+ (id)hd_sourceForClient:(id)arg1 name:(id)arg2;
++ (id)_applicationNameForCompanionBundleIdentifier:(id)arg1;
++ (id)_applicationNameForBundleIdentifier:(id)arg1;
++ (_Bool)hd_isSpartanDeviceBundleIdentifier:(id)arg1;
++ (id)hd_currentDeviceSourceName;
++ (id)hd_getNameForSource:(id)arg1;
++ (id)hd_sourceForClient:(id)arg1;
 @property(nonatomic, getter=_options, setter=_setOptions:) unsigned long long options; // @synthesize options=_options;
 @property(copy, nonatomic, getter=_productType, setter=_setProductType:) NSString *productType; // @synthesize productType=_productType;
 @property(nonatomic, getter=_isLocalDevice, setter=_setLocalDevice:) _Bool localDevice; // @synthesize localDevice=_localDevice;
@@ -63,6 +68,7 @@
 - (unsigned long long)hash;
 - (id)_init;
 - (id)init;
+- (id)_fetchBundleWithError:(id *)arg1;
 - (id)_deducedClinicalAccountIdentifier;
 - (_Bool)_isClinicalSource;
 - (_Bool)_isHidden;

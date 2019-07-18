@@ -464,6 +464,7 @@
 - (void)retakeButtonWasPressed;
 - (void)disableRetakeMode;
 @property(readonly, nonatomic) BOOL isInRetakeMode;
+- (void)updateLabelColors;
 - (void)killFeedbackDisplayInternalIncludingUserPrompts:(BOOL)arg1;
 - (void)killFeedbackDisplayIncludingUserPrompts:(BOOL)arg1;
 - (void)enableUIElements:(BOOL)arg1;
@@ -482,6 +483,7 @@
 - (void)preWarmFilters;
 - (void)setUpUserDefaults;
 - (void)initializeUserInterface;
+- (void)traitCollectionDidChange:(id)arg1;
 - (long long)preferredStatusBarStyle;
 - (BOOL)prefersStatusBarHidden;
 - (void)viewSafeAreaInsetsDidChange;

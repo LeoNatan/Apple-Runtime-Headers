@@ -6,46 +6,43 @@
 
 #import <PhotosUICore/PXObservable.h>
 
-#import <PhotosUICore/PXAssetsDataSourceManagerObserver-Protocol.h>
 #import <PhotosUICore/PXMutableCuratedLibraryAnalysisStatus-Protocol.h>
 
-@class NSString, NSTimer, PXCuratedLibraryAssetsDataSourceManager;
+@class NSString, PXCuratedLibraryAssetsDataSourceManager;
+@protocol PXCuratedLibraryEventLogger;
 
-@interface PXCuratedLibraryAnalysisStatus : PXObservable <PXMutableCuratedLibraryAnalysisStatus, PXAssetsDataSourceManagerObserver>
+@interface PXCuratedLibraryAnalysisStatus : PXObservable <PXMutableCuratedLibraryAnalysisStatus>
 {
-    _Bool _shouldSimulateProgress;
-    NSTimer *_progressSimulationTimer;
-    float _simulatedProgress;
-    _Bool _shouldSimulateAvailability;
-    NSTimer *_availabilitySimulationTimer;
-    _Bool _simulatedIsAvailable;
-    _Bool _showCuratedLibraryStructure;
+    _Bool _isDaysMonthsYearsStructureEnabled;
     float _progress;
     PXCuratedLibraryAssetsDataSourceManager *_dataSourceManager;
+    id <PXCuratedLibraryEventLogger> _eventLogger;
     long long _state;
+    NSString *_localizedTitle;
     NSString *_localizedDescription;
 }
 
-@property(readonly, nonatomic) _Bool showCuratedLibraryStructure; // @synthesize showCuratedLibraryStructure=_showCuratedLibraryStructure;
+@property(readonly, nonatomic) _Bool isDaysMonthsYearsStructureEnabled; // @synthesize isDaysMonthsYearsStructureEnabled=_isDaysMonthsYearsStructureEnabled;
 @property(readonly, nonatomic) float progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
+@property(readonly, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
+@property(retain, nonatomic) id <PXCuratedLibraryEventLogger> eventLogger; // @synthesize eventLogger=_eventLogger;
 @property(readonly, nonatomic) PXCuratedLibraryAssetsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 - (void).cxx_destruct;
-- (void)_toggleSimulatedAvailability;
-- (void)_incrementSimulatedProgress;
-- (void)_configureSimulationIfNeeded;
-- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
-- (void)setShowCuratedLibraryStructure:(_Bool)arg1;
+- (void)setIsDaysMonthsYearsStructureEnabled:(_Bool)arg1;
 - (void)setProgress:(float)arg1;
 - (void)setLocalizedDescription:(id)arg1;
+- (void)setLocalizedTitle:(id)arg1;
 - (void)setState:(long long)arg1;
-- (void)_updateStatusProperties;
+- (void)_updateEventLogging;
+- (void)didPerformChanges;
+@property(readonly, copy) NSString *description;
+- (id)_initWithDataSourceManager:(id)arg1;
 - (id)initWithDataSourceManager:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

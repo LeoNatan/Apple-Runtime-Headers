@@ -25,7 +25,6 @@
     NSString *_clientIdentifier;
     NSString *_locationManagerEffectiveBundleID;
     NSString *_locationManagerEffectiveBundlePath;
-    CDUnknownBlockType _autoDeregistrationCallback;
     CDUnknownBlockType _informativeCallback;
 }
 
@@ -40,7 +39,6 @@
 + (id)registrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 dismissalPolicy:(id)arg3 deviceSet:(unsigned long long)arg4 clientIdentifier:(id)arg5 mustWake:(BOOL)arg6 callback:(CDUnknownBlockType)arg7;
 + (id)registrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 dismissalPolicy:(id)arg3 deviceSet:(unsigned long long)arg4 mustWake:(BOOL)arg5 callback:(CDUnknownBlockType)arg6;
 @property(copy) CDUnknownBlockType informativeCallback; // @synthesize informativeCallback=_informativeCallback;
-@property(copy) CDUnknownBlockType autoDeregistrationCallback; // @synthesize autoDeregistrationCallback=_autoDeregistrationCallback;
 @property(copy, nonatomic) NSString *locationManagerEffectiveBundlePath; // @synthesize locationManagerEffectiveBundlePath=_locationManagerEffectiveBundlePath;
 @property(copy, nonatomic) NSString *locationManagerEffectiveBundleID; // @synthesize locationManagerEffectiveBundleID=_locationManagerEffectiveBundleID;
 @property(nonatomic) BOOL isDeserialized; // @synthesize isDeserialized=_isDeserialized;

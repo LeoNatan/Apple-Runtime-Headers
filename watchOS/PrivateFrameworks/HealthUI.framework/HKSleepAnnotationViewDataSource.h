@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (id)_titleBodyGroupWithTitle:(id)arg1 body:(id)arg2 orientation:(int)arg3;
 - (id)_dateGroupWithDate:(id)arg1 orientation:(int)arg2;
+- (_Bool)showSeparators;
 - (id)valueViewForColumnAtIndex:(int)arg1 orientation:(int)arg2;
 - (int)numberOfValuesForAnnotationView:(id)arg1;
 - (id)leftMarginViewWithOrientation:(int)arg1;

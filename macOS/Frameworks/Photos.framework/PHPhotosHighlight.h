@@ -93,6 +93,7 @@
 @property(readonly, nonatomic) NSString *verboseSmartDescription; // @synthesize verboseSmartDescription=_verboseSmartDescription;
 - (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) unsigned short preferredCurationType;
 @property(readonly, nonatomic) NSManagedObjectID *keyAssetForKind;
 @property(readonly, nonatomic) NSString *smartDescription;
 - (id)dateDescriptionWithOptions:(unsigned long long)arg1;

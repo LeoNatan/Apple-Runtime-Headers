@@ -24,6 +24,7 @@
 + (BOOL)isBoolean:(id)arg1;
 + (BOOL)isNumber:(id)arg1;
 + (BOOL)evaluateArrayOp:(id)arg1 onObj:(id)arg2;
++ (BOOL)_testStrings:(id)arg1 test:(id)arg2 caseInsensitive:(BOOL)arg3;
 + (BOOL)evaluateNumericOp:(id)arg1 onObj:(id)arg2;
 + (BOOL)evaluateRegexOp:(id)arg1 onObj:(id)arg2;
 + (BOOL)evaluateStringOp:(id)arg1 onObj:(id)arg2;

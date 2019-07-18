@@ -14,6 +14,7 @@
     UIView *_transformContainer;
     UIVisualEffectView *_effectView;
     UIBlurEffect *_blurEffect;
+    UIVisualEffectView *_itemEffectView;
     UIImageView *_imageView;
     UILabel *_titleLabel;
     UIView *_customView;
@@ -26,6 +27,7 @@
 - (id)imageView;
 - (id)titleLabel;
 - (struct UIEdgeInsets)imageInsetsForLayout;
+- (id)itemContainerViewForLayout;
 - (id)containerViewForLayout;
 - (void)dismissAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)showAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

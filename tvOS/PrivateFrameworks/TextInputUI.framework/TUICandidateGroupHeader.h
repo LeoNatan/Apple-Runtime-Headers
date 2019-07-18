@@ -17,9 +17,11 @@
     double _rowHeight;
     UILabel *_textLabel;
     struct CGRect _visibleBounds;
+    struct CGRect _virtualLabelContainerFrame;
 }
 
 + (id)reuseIdentifier;
+@property(nonatomic) struct CGRect virtualLabelContainerFrame; // @synthesize virtualLabelContainerFrame=_virtualLabelContainerFrame;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
 @property(nonatomic) struct CGRect visibleBounds; // @synthesize visibleBounds=_visibleBounds;

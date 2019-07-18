@@ -6,41 +6,35 @@
 
 #import <HMFoundation/HMFMessageDispatcher.h>
 
-@class HMDAdminEnforcementMessageFilter, HMDHomeManager, HMDMessageFilterChain, HMDSecureRemoteMessageFilter, HMDSecureRemoteMessageTransport, HMDXPCMessageTransport, NSMutableDictionary;
+@class HMDHomeManager, HMDMessageFilterChain, HMDSecureRemoteMessageFilter, HMDSecureRemoteMessageTransport, HMDXPCMessageTransport, NSMutableDictionary;
 
 @interface HMDMessageDispatcher : HMFMessageDispatcher
 {
     HMDXPCMessageTransport *_XPCTransport;
     HMDSecureRemoteMessageTransport *_secureRemoteTransport;
     HMDMessageFilterChain *_messageFilterChain;
-    HMDAdminEnforcementMessageFilter *_adminMsgFilter;
     NSMutableDictionary *_remoteGateways;
     HMDSecureRemoteMessageFilter *_secureRemoteMessageFilter;
     HMDHomeManager *_homeManager;
 }
 
-+ (_Bool)isWhitelistedLocalMessage:(id)arg1;
 + (id)defaultDispatcher;
 + (id)destinationWithTarget:(id)arg1 userID:(id)arg2 destination:(id)arg3 multicast:(_Bool)arg4;
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(retain, nonatomic) HMDSecureRemoteMessageFilter *secureRemoteMessageFilter; // @synthesize secureRemoteMessageFilter=_secureRemoteMessageFilter;
 @property(retain, nonatomic) NSMutableDictionary *remoteGateways; // @synthesize remoteGateways=_remoteGateways;
-@property(retain, nonatomic) HMDAdminEnforcementMessageFilter *adminMsgFilter; // @synthesize adminMsgFilter=_adminMsgFilter;
 @property(readonly, nonatomic) HMDMessageFilterChain *messageFilterChain; // @synthesize messageFilterChain=_messageFilterChain;
 @property(readonly, nonatomic) HMDSecureRemoteMessageTransport *secureRemoteTransport; // @synthesize secureRemoteTransport=_secureRemoteTransport;
 @property(readonly, nonatomic) HMDXPCMessageTransport *XPCTransport; // @synthesize XPCTransport=_XPCTransport;
 - (void).cxx_destruct;
 - (void)sendMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dispatchMessage:(id)arg1;
-- (void)registerForMessage:(id)arg1 receiver:(id)arg2 policies:(id)arg3 selector:(SEL)arg4;
-- (void)registerForMessage:(id)arg1 receiver:(id)arg2 policies:(id)arg3 messageHandler:(CDUnknownBlockType)arg4;
 - (void)configureHTTPTransport:(id)arg1;
 - (void)disableMessageServer;
 - (void)enableMessageServer;
 - (id)httpMessageTransport;
 - (void)configureHomeManager:(id)arg1;
 - (void)reset;
-- (void)updateLocalAdministratorName;
 - (id)filterClasses;
 - (void)dealloc;
 - (id)initWithXPCTransport:(id)arg1 secureRemoteTransport:(id)arg2 messageFilterChain:(id)arg3;

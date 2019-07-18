@@ -39,6 +39,10 @@
 - (void)_failMigration;
 - (void)_resumeMigration;
 - (void)_beginMigration;
+- (void)observer:(id)arg1 matchedOldestItemsUpdatedForMailboxes:(id)arg2;
+- (void)observerWillRestart:(id)arg1;
+- (void)observer:(id)arg1 matchedAlternateIDChangedForObjectID:(id)arg2 alternateID:(id)arg3;
+- (void)observerDidFinishRemoteSearch:(id)arg1;
 - (void)observerDidFinishInitialLoad:(id)arg1;
 - (void)observer:(id)arg1 matchedDeletedObjectIDs:(id)arg2;
 - (void)observer:(id)arg1 matchedChangesForObjectIDs:(id)arg2;
@@ -50,6 +54,7 @@
 @property(readonly, nonatomic) EDThreadPersistence *threadPersistence;
 - (id)threadForObjectID:(id)arg1 error:(id *)arg2;
 - (void)cancel;
+- (void)start;
 - (id)initWithQuery:(id)arg1 threadScope:(id)arg2 messagePersistence:(id)arg3 threadPersistence:(id)arg4 hookRegistry:(id)arg5 observer:(id)arg6 observationIdentifier:(id)arg7;
 
 // Remaining properties

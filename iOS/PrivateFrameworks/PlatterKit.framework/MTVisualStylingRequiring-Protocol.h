@@ -11,8 +11,5 @@
 @protocol MTVisualStylingRequiring <MTVisualStylingProviding>
 @property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
 - (void)setVisualStylingProvider:(MTVisualStylingProvider *)arg1 forCategory:(long long)arg2;
-
-@optional
-@property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 @end
 

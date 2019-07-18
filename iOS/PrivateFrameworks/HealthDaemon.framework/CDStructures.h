@@ -344,12 +344,6 @@ typedef struct {
     _Bool _field6;
 } CDStruct_b3408c18;
 
-typedef struct {
-    long long majorVersion;
-    long long minorVersion;
-    long long patchVersion;
-} CDStruct_f6aba300;
-
 // Ambiguous groups
 typedef struct {
     unsigned int endDate:1;
@@ -372,6 +366,18 @@ typedef struct {
 typedef struct {
     unsigned int value:1;
 } CDStruct_01ef6375;
+
+typedef struct {
+    long long _field1;
+    long long _field2;
+    long long _field3;
+} CDStruct_2ec95fd7;
+
+typedef struct {
+    long long majorVersion;
+    long long minorVersion;
+    long long patchVersion;
+} CDStruct_f6aba300;
 
 typedef struct map<long long, _HDActivityCacheSourceTotal, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, _HDActivityCacheSourceTotal>>> {
     struct __tree<std::__1::__value_type<long long, _HDActivityCacheSourceTotal>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, _HDActivityCacheSourceTotal>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, _HDActivityCacheSourceTotal>>> {

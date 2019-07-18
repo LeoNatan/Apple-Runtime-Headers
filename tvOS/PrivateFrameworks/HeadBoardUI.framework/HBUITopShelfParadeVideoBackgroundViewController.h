@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_muted;
 @property(nonatomic) _Bool isCenterViewController; // @synthesize isCenterViewController=_isCenterViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long contentState;
 - (void)prepareForReuse;
 - (void)_reset:(_Bool)arg1;
 - (void)_scheduleAfterPreviewVideoTimer;

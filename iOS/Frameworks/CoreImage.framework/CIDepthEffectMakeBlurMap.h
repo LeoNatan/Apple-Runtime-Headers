@@ -50,9 +50,9 @@ __attribute__((visibility("hidden")))
 - (id)refineShiftMapV3WithMainImage:(id)arg1 shiftmap:(id)arg2 lensModel:(id)arg3;
 - (id)blurMapV2:(id)arg1;
 - (id)smoothShiftMapV2:(id)arg1;
-- (id)faceMaskDelta:(id)arg1 blurMap:(id)arg2 parameters:(id)arg3;
+- (id)faceMaskDelta:(id)arg1 extent:(struct CGRect)arg2 parameters:(id)arg3 distanceToAdd:(float *)arg4;
 - (id)faceMaskApply:(id)arg1 blurMap:(id)arg2;
-- (id)faceMaskParams:(id)arg1;
+- (id)faceMaskParams:(id)arg1 useNormalizedCoords:(_Bool)arg2;
 - (_Bool)needToRunFaceMask;
 - (id)lensModelApply:(id)arg1 shiftMap:(id)arg2;
 - (id)lensModelParams:(id)arg1;

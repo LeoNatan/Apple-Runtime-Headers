@@ -37,9 +37,9 @@
     CNGeminiPickerController *_geminiPicker;
 }
 
-+ (id)contactHeaderViewWithContact:(id)arg1 allowsPhotoDrops:(_Bool)arg2 delegate:(id)arg3;
-+ (id)contactHeaderViewWithContact:(id)arg1 delegate:(id)arg2;
-+ (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(_Bool)arg2 shouldAllowImageDrops:(_Bool)arg3;
++ (id)contactHeaderViewWithContact:(id)arg1 allowsPhotoDrops:(_Bool)arg2 monogramOnly:(_Bool)arg3 delegate:(id)arg4;
++ (id)contactHeaderViewWithContact:(id)arg1 monogramOnly:(_Bool)arg2 delegate:(id)arg3;
++ (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(_Bool)arg2 shouldAllowImageDrops:(_Bool)arg3 monogramOnly:(_Bool)arg4;
 + (id)descriptorForRequiredKeysForContactFormatter:(id)arg1;
 @property(retain, nonatomic) CNGeminiPickerController *geminiPicker; // @synthesize geminiPicker=_geminiPicker;
 @property(retain) CNGeminiResult *geminiResult; // @synthesize geminiResult=_geminiResult;
@@ -93,8 +93,8 @@
 - (void)createGeminiViewIfNeeded;
 - (double)maxHeight;
 - (double)minHeight;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 monogrammerStyle:(long long)arg3 shouldAllowImageDrops:(_Bool)arg4 delegate:(id)arg5;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 delegate:(id)arg3;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 monogrammerStyle:(long long)arg3 shouldAllowImageDrops:(_Bool)arg4 monogramOnly:(_Bool)arg5 delegate:(id)arg6;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 monogramOnly:(_Bool)arg3 delegate:(id)arg4;
 - (id)descriptorForRequiredKeys;
 
 // Remaining properties

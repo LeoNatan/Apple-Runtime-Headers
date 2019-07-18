@@ -50,6 +50,8 @@
 - (void)_refreshContextItemsAndUpdateChart:(_Bool)arg1;
 - (void)_invalidateContextItems;
 - (_Bool)_shouldUpdateContextItemsForChanges:(struct NSDictionary *)arg1;
+- (void)_refreshUpdatedItems;
+- (void)updateController:(id)arg1 didReceiveHighFrequencyUpdateForType:(id)arg2;
 - (void)updateController:(id)arg1 didReceiveUpdateForType:(id)arg2 samplesAdded:(id)arg3 objectsRemoved:(id)arg4;
 - (void)sampleTypeDateRangeController:(id)arg1 didUpdateDateRanges:(struct NSDictionary *)arg2;
 - (void)didUpdateVisibleValueRange:(id)arg1 changeContext:(long long)arg2;
@@ -65,9 +67,10 @@
 - (void)_showAllFilters:(id)arg1;
 - (void)_layoutNoVerticalExpansion:(id)arg1;
 - (_Bool)_usePreferredOverlayAndAllFiltersButton;
-- (void)_pinView:(id)arg1 toParentGuide:(id)arg2;
+- (void)_pinView:(id)arg1 toSafeAreaOf:(id)arg2;
 - (void)_setupOverlayContextItems;
 - (id)_contextViewBackgroundColor;
+- (id)_makeSeparatorView;
 - (void)_setupInterface;
 - (id)createChartOverlayViewController;
 - (void)_setupPrimaryDisplayType;

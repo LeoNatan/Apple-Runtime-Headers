@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     NSData *_imageData;
     struct MTLPixelFormatInfo _pixelFormatInfo;
+    _Bool _packedRowStride;
 }
 
 + (_Bool)isKTXFile:(id)arg1;

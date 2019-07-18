@@ -40,6 +40,7 @@
 + (id)tsu_customNumberFormatIntegerTokenDisplayStringWithDigits:(unsigned long long)arg1 separator:(_Bool)arg2 digitString:(id)arg3 locale:(id)arg4;
 + (id)tsu_customNumberFormatTokenStringOfType:(int)arg1 content:(id)arg2;
 + (id)tsp_stringWithProtobufString:(const basic_string_23d93216 *)arg1;
++ (id)tsa_durationStringFromTimeInterval:(double)arg1;
 + (id)tsk_regexStringForSearchString:(id)arg1 options:(unsigned long long)arg2;
 + (id)tsk_normalizedDisplayName:(id)arg1;
 + (id)tswp_stringForValue:(unsigned int)arg1 withPageNumberFormat:(int)arg2;
@@ -193,6 +194,14 @@
 - (id)tsp_initWithProtobufString:(const basic_string_23d93216 *)arg1;
 - (id)tsp_stringByAppendingObjectPathComponent:(id)arg1;
 @property(readonly, nonatomic) _Bool tsp_isPasteboardStateType;
+@property(readonly, nonatomic) _Bool tsa_conformsToNativeUTI;
+- (id)tsa_nameByConvertingFirstNameToInitials;
+- (id)tsa_initialsWithLimit:(unsigned long long)arg1;
+- (id)tsa_displayNameFromFilenameDeletingPathExtension:(_Bool)arg1;
+- (id)tsa_displayNameFromFilename;
+- (id)tsa_filenameTruncatedToCharacterLimit:(unsigned long long)arg1;
+- (id)tsa_filenameFromDisplayNameWithExtension:(id)arg1 characterLimit:(unsigned long long)arg2;
+- (id)tsa_filenameFromDisplayNameWithExtension:(id)arg1;
 - (void)tsch_saveToProtobufString:(basic_string_23d93216 *)arg1;
 - (id)tsk_stringByReplacingOccurrencesOfString:(id)arg1 withString:(id)arg2 searchOptions:(unsigned long long)arg3 range:(struct _NSRange)arg4 replacementCount:(unsigned long long *)arg5;
 - (id)tsk_stringByCapitalizingToMatchString:(id)arg1 range:(struct _NSRange)arg2 searchOptions:(unsigned long long)arg3;

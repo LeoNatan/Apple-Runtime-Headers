@@ -28,8 +28,8 @@
 @property(retain, nonatomic) NSString *adamID; // @synthesize adamID=_adamID;
 - (void).cxx_destruct;
 - (void)collectODMLResponse:(id)arg1;
-- (void)overrideAppVector;
-- (void)overrideWeightVersion;
+- (void)overrideAppVector:(id)arg1 vector:(id)arg2;
+- (void)overrideObfuscationID;
 - (void)overridePTTRData;
 - (id)init;
 

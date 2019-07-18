@@ -22,9 +22,10 @@ __attribute__((visibility("hidden")))
 + (id)sharedFactory;
 - (void).cxx_destruct;
 - (void)deviceCountryChanged:(id)arg1;
-- (id)sessionStateForType:(int)arg1;
+- (id)sessionStateForType:(long long)arg1;
 - (id)_emptyUserSessionState;
 - (id)stateForType:(long long)arg1;
+- (id)suggestions;
 - (id)placeRequest;
 - (id)tileSet;
 - (id)mapsServer;
@@ -39,10 +40,13 @@ __attribute__((visibility("hidden")))
 - (id)extension;
 - (id)pairedDevice;
 - (id)carPlay;
+- (id)carPlayLimited;
 - (id)deviceSettings_Long;
 - (id)deviceSettings_Short;
 - (id)deviceConnection;
+- (id)deviceConnectionLimited;
 - (id)deviceLocale;
+- (id)deviceLocaleLimited;
 - (id)applicationIdentifier;
 - (id)deviceIndentifierInternal;
 - (id)deviceIdentifier;

@@ -8,7 +8,7 @@
 
 #import <PlatterKit/_UIClickPresentationTransition-Protocol.h>
 
-@class MTMaterialView, NSString, PLViewControllerAnimator, UIViewPropertyAnimator, _PLViewControllerOneToOneTransitionContext, _UITargetedPreview;
+@class MTMaterialView, NSString, PLViewControllerAnimator, UITargetedPreview, UIViewPropertyAnimator, _PLViewControllerOneToOneTransitionContext;
 @protocol UIViewControllerTransitioningDelegate;
 
 @interface PLClickPresentationTransition : NSObject <_UIClickPresentationTransition>
@@ -38,7 +38,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(copy, nonatomic) _UITargetedPreview *sourcePreview;
+@property(copy, nonatomic) UITargetedPreview *sourcePreview;
 @property(readonly) Class superclass;
 
 @end

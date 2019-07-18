@@ -12,9 +12,9 @@ __attribute__((visibility("hidden")))
     struct TSCENumberValue *_numberValue;
 }
 
--     // Error parsing type: v24@0:8^{NumberCellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FormatStructArchive}diBB}16, name: encodeToArchive:
+-     // Error parsing type: v24@0:8^{NumberCellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FormatStructArchive}diBBQQ}16, name: encodeToArchive:
 - (void)setPopulatedCustomFormat:(id)arg1;
--     // Error parsing type: @32@0:8r^{NumberCellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FormatStructArchive}diBB}16@24, name: initWithArchive:locale:
+-     // Error parsing type: @32@0:8r^{NumberCellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FormatStructArchive}diBBQQ}16@24, name: initWithArchive:locale:
 - (long long)compareToCellValue:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)initWithNumberValue:(struct TSCENumberValue *)arg1 locale:(id)arg2;
+- (id)initWithDecimal:(const struct TSUDecimal *)arg1 locale:(id)arg2;
 - (id)initWithDouble:(double)arg1 locale:(id)arg2;
 
 @end

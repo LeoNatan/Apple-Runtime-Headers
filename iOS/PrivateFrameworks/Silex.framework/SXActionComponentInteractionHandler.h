@@ -7,13 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <Silex/SXComponentInteractionHandler-Protocol.h>
-#import <Silex/SXForceTouchComponentInteractionHandler-Protocol.h>
 #import <Silex/SXPostActionHandler-Protocol.h>
+#import <Silex/SXPreviewComponentInteractionHandler-Protocol.h>
 
 @class NSString, SXAction;
 @protocol SXActionManager, SXActionSerializer, SXAnalyticsReportingProvider;
 
-@interface SXActionComponentInteractionHandler : NSObject <SXPostActionHandler, SXComponentInteractionHandler, SXForceTouchComponentInteractionHandler>
+@interface SXActionComponentInteractionHandler : NSObject <SXPostActionHandler, SXComponentInteractionHandler, SXPreviewComponentInteractionHandler>
 {
     SXAction *_action;
     id <SXActionManager> _actionManager;

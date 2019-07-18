@@ -22,7 +22,6 @@
 }
 
 - (id)copyWithZone:(void *)arg1;
-- (void)rk_performActionWithNotification:(id)arg1;
 
 @end
 

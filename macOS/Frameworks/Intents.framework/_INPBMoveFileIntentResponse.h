@@ -21,6 +21,7 @@
     } _has;
     BOOL _overwrite;
     BOOL _success;
+    BOOL __encodeLegacyGloryData;
     _INPBString *_destinationName;
     NSArray *_entityNames;
     _INPBString *_sourceName;
@@ -28,6 +29,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)entityNameType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) BOOL success; // @synthesize success=_success;
 @property(retain, nonatomic) _INPBString *sourceName; // @synthesize sourceName=_sourceName;
 @property(nonatomic) BOOL overwrite; // @synthesize overwrite=_overwrite;

@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <VoiceShortcutClient/INVCVoiceShortcut-Protocol.h>
 #import <VoiceShortcutClient/NSSecureCoding-Protocol.h>
 
 @class INImage, INShortcut, NSDate, NSString, WFWorkflow;
 
-@interface VCVoiceShortcut : NSObject <NSSecureCoding>
+@interface VCVoiceShortcut : NSObject <INVCVoiceShortcut, NSSecureCoding>
 {
     NSString *_identifier;
     NSString *_phrase;
@@ -39,13 +40,17 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 @property(readonly, nonatomic) WFWorkflow *workflow;
 @property(readonly, nonatomic) _Bool hasBeenModified;
 - (id)initWithIdentifier:(id)arg1 phrase:(id)arg2 shortcutName:(id)arg3 shortcutDescription:(id)arg4 associatedAppBundleIdentifier:(id)arg5 dateCreated:(id)arg6 dateLastModified:(id)arg7 shortcut:(id)arg8 keyImageData:(id)arg9 error:(id *)arg10;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

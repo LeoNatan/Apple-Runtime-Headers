@@ -34,7 +34,6 @@
     _Bool _hasStartedPairing;
     _Bool _pairingRequestPending;
     _Bool _tokenValidationPending;
-    _Bool _cancelPairing;
     NSString *_productData;
     NSString *_model;
     NSString *_sourceVersion;
@@ -54,15 +53,16 @@
     NSMutableSet *_resolvers;
     HMFBlockOperation *_pairOperation;
     NSOperationQueue *_clientOperationQueue;
-    NSData *_ownershipProof;
+    NSData *_ownershipToken;
     HAPAccessoryWiFiConfiguration *_wifiConfiguration;
     HAPWACAccessory *_hapWACAccessory;
     HMFTimer *_bonjourEventTimer;
     HMFNetMonitor *_networkMonitor;
+    long _cancelPairingErr;
 }
 
 + (id)sharedPairOperationQueue;
-@property(nonatomic) _Bool cancelPairing; // @synthesize cancelPairing=_cancelPairing;
+@property(nonatomic) long cancelPairingErr; // @synthesize cancelPairingErr=_cancelPairingErr;
 @property(nonatomic, getter=isTokenValidationPending) _Bool tokenValidationPending; // @synthesize tokenValidationPending=_tokenValidationPending;
 @property(nonatomic, getter=isPairingRequestPending) _Bool pairingRequestPending; // @synthesize pairingRequestPending=_pairingRequestPending;
 @property(readonly, nonatomic) HMFNetMonitor *networkMonitor; // @synthesize networkMonitor=_networkMonitor;
@@ -72,7 +72,7 @@
 @property(nonatomic, getter=isContinuingLegacyWACpairing) _Bool continuingLegacyWACpairing; // @synthesize continuingLegacyWACpairing=_continuingLegacyWACpairing;
 @property(readonly, nonatomic) HAPWACAccessory *hapWACAccessory; // @synthesize hapWACAccessory=_hapWACAccessory;
 @property(retain, nonatomic) HAPAccessoryWiFiConfiguration *wifiConfiguration; // @synthesize wifiConfiguration=_wifiConfiguration;
-@property(readonly, nonatomic) NSData *ownershipProof; // @synthesize ownershipProof=_ownershipProof;
+@property(readonly, nonatomic) NSData *ownershipToken; // @synthesize ownershipToken=_ownershipToken;
 @property(readonly, nonatomic) NSOperationQueue *clientOperationQueue; // @synthesize clientOperationQueue=_clientOperationQueue;
 @property(retain, nonatomic) HMFBlockOperation *pairOperation; // @synthesize pairOperation=_pairOperation;
 @property(retain, nonatomic) NSMutableSet *resolvers; // @synthesize resolvers=_resolvers;
@@ -187,10 +187,11 @@
 - (void)_handleMFiCertValidation;
 - (_Bool)stopPairingWithError:(id *)arg1;
 - (void)_tearDownSession;
+- (void)tearDownSessionWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)tryPairingPassword:(id)arg1 error:(id *)arg2;
 - (void)continuePairingAfterAuthPrompt;
 - (void)reconfirm;
-- (void)startPairingWithConsentRequired:(_Bool)arg1 config:(id)arg2 ownershipProof:(id)arg3;
+- (void)startPairingWithConsentRequired:(_Bool)arg1 config:(id)arg2 ownershipToken:(id)arg3;
 - (void)_isAccessoryPublicKeyPresent:(_Bool *)arg1 registeredWithHomeKit:(_Bool *)arg2;
 - (void)_establishSecureConnectionAndFetchAttributeDatabase;
 - (void)discoverAccessories;
@@ -227,7 +228,7 @@
 - (_Bool)_hasBonjourDeviceInfo;
 @property(nonatomic, getter=isEstablishingSecureConnection) _Bool establishingSecureConnection; // @synthesize establishingSecureConnection=_establishingSecureConnection;
 - (_Bool)hasBonjourDeviceInfo;
-- (void)_notifyDelegateNeedsOwnershipProof;
+- (void)_notifyDelegateNeedsOwnershipToken;
 - (void)_notifyDelegatesOfAddAccessoryFailure;
 - (void)_notifyDelegatesPairingStopped:(id)arg1;
 @property(readonly, copy) NSString *description;

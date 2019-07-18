@@ -6,9 +6,6 @@
 
 #import <FileProviderUI/NSObject-Protocol.h>
 
-@class NSArray, NSProgress, NSString;
-
 @protocol FPUIActionExtensionContextProtocol <NSObject>
-- (NSProgress *)_performActionWithIdentifier:(NSString *)arg1 items:(NSArray *)arg2 domainIdentifier:(NSString *)arg3;
 @end
 

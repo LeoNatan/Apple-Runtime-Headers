@@ -49,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setiOSLayoutStyle:) long long _iOSLayoutStyle; // @synthesize _iOSLayoutStyle;
 @property(nonatomic, setter=_setShowsHighlightedState:) _Bool _showsHighlightedState; // @synthesize _showsHighlightedState;
 - (void).cxx_destruct;
-- (void)_setLabelCompositingMode:(long long)arg1;
 @property(readonly, nonatomic) UIColor *_defaultUnselectedLabelTintColor;
 - (id)_contentTintColorForState:(unsigned long long)arg1;
 - (void)_setContentTintColor:(id)arg1 forState:(unsigned long long)arg2;
@@ -74,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)_sendFocusAction;
+- (_Bool)_isEligibleForFocusInteraction;
 - (_Bool)canBecomeFocused;
 - (void)_setLabelHidden:(_Bool)arg1;
 - (void)_setCustomSelectedIndicatorImage:(id)arg1;

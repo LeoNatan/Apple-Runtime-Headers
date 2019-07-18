@@ -143,6 +143,7 @@ __attribute__((visibility("hidden")))
 - (void)setPreset:(id)arg1;
 @property(readonly, nonatomic) TSCHChartStylePreset *preset;
 - (_Bool)shouldOwnPreset:(id)arg1;
+- (_Bool)hasTwoYValueAxes;
 - (void)debugVerifyPreset;
 - (id)styleOwnerFromSwapType:(int)arg1 andIndex:(unsigned long long)arg2;
 - (id)applyStyleSwapTuple:(id)arg1;

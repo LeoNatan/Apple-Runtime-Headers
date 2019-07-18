@@ -72,7 +72,6 @@
     double _ambiguousControlCenterActivationMargin;
     UIResponder *_responderWithoutAutomaticAppearanceEnabled;
     int _hostedAnimationToggleCount;
-    BOOL _dontNeedAssistantBar;
     CDUnknownBlockType _deferredTransitionTask;
     double _lastKeyplaneResize;
     BOOL _preservingInputViews;
@@ -285,7 +284,6 @@
 - (void)performWithoutDeactivation:(CDUnknownBlockType)arg1;
 - (int)_isKeyboardDeactivated;
 - (void)setDeactivatedKeyboard:(BOOL)arg1 forScene:(id)arg2;
-- (void)_dismissOverlayedUI;
 - (void)forceReloadInputViews;
 - (void)_reloadInputViewsForResponder:(id)arg1;
 - (void)setTextEffectsWindowLevelForInputView:(id)arg1 responder:(id)arg2;

@@ -10,7 +10,7 @@
 #import <SpringBoard/SBRecentDisplayItemsControllerDelegate-Protocol.h>
 #import <SpringBoard/SBRecentDisplayItemsPersistenceDelegate-Protocol.h>
 
-@class NSOrderedSet, NSString, NSTimer, PTToggleTestRecipe, SBCommandTabViewController, SBRecentDisplayItemsController, SBRecentDisplayItemsDataStore, SBRecentDisplayItemsDefaults, SBWindow, UIApplicationSceneDeactivationAssertion;
+@class NSMutableSet, NSOrderedSet, NSString, NSTimer, PTToggleTestRecipe, SBCommandTabViewController, SBRecentDisplayItemsController, SBRecentDisplayItemsDataStore, SBRecentDisplayItemsDefaults, SBWindow, UIApplicationSceneDeactivationAssertion;
 @protocol BSInvalidatable, OS_dispatch_queue;
 
 @interface SBCommandTabController : NSObject <SBCommandTabViewControllerDelegate, SBRecentDisplayItemsControllerDelegate, SBRecentDisplayItemsPersistenceDelegate>
@@ -20,6 +20,7 @@
     UIApplicationSceneDeactivationAssertion *_resignActiveAssertion;
     SBRecentDisplayItemsController *_recentDisplayItemsController;
     NSOrderedSet *_persistedRecentDisplayItems;
+    NSMutableSet *_appsAllowedWhileHidden;
     NSObject<OS_dispatch_queue> *_recentDisplayItemsPersistenceQueue;
     SBRecentDisplayItemsDataStore *_dataStore;
     SBRecentDisplayItemsDefaults *_defaults;
@@ -33,6 +34,8 @@
 + (id)sharedInstance;
 @property(readonly, nonatomic) SBWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+- (void)_disallowAppFromAppearingWhileHidden:(id)arg1;
+- (void)_allowAppToAppearWhileHidden:(id)arg1;
 - (void)_clearTimer;
 - (void)_showWindow:(_Bool)arg1;
 - (void)_showCommandTabBarAfterTimer:(id)arg1;

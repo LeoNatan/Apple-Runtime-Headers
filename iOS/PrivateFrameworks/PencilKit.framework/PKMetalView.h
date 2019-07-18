@@ -6,14 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-@class CAMetalLayer, PKInternalDrawingView;
+@class CAMetalLayer;
 
 @interface PKMetalView : UIView
 {
     _Bool _isWideGamut;
     _Bool _isFixedPixelSize;
     _Bool _doubleBuffered;
-    PKInternalDrawingView *_drawingView;
     struct CGSize _fixedPixelSize;
 }
 
@@ -22,8 +21,6 @@
 @property(readonly, nonatomic) struct CGSize fixedPixelSize; // @synthesize fixedPixelSize=_fixedPixelSize;
 @property(readonly, nonatomic) _Bool isFixedPixelSize; // @synthesize isFixedPixelSize=_isFixedPixelSize;
 @property(readonly, nonatomic) _Bool isWideGamut; // @synthesize isWideGamut=_isWideGamut;
-@property(nonatomic) __weak PKInternalDrawingView *drawingView; // @synthesize drawingView=_drawingView;
-- (void).cxx_destruct;
 - (void)flushDrawables;
 - (void)resizeDrawableIfNecessary;
 - (void)setFixedPixelSize:(struct CGSize)arg1;

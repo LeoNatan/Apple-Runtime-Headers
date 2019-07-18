@@ -7,6 +7,6 @@
 #import <WorkflowKit/WFLeaveLocationTrigger.h>
 
 @interface WFLeaveLocationTrigger (CoreDuetContext)
-+ (id)triggerTypeIconName;
++ (id)triggerTypeIcon;
 @end
 

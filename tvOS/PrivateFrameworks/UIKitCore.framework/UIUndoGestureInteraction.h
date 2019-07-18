@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
 @interface UIUndoGestureInteraction : NSObject <UIInteractiveUndoHUDActionDelegate, UIGestureRecognizerDelegate, UIEditingOverlayInteractionWithView>
 {
     _Bool _interactiveHUDIsVisible;
-    _Bool _isInputDelegateOrigianalScrollable;
     _Bool _undoStateHUDIsAnimating;
     _Bool _multiPinchTimerOn;
     UIView *_view;
@@ -64,7 +63,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double remainingDistanceToTravel; // @synthesize remainingDistanceToTravel=_remainingDistanceToTravel;
 @property(retain, nonatomic) UIDelayedAction *multiPansTimer; // @synthesize multiPansTimer=_multiPansTimer;
 @property(nonatomic) long long previousRecognizedPanDirection; // @synthesize previousRecognizedPanDirection=_previousRecognizedPanDirection;
-@property(nonatomic) _Bool isInputDelegateOrigianalScrollable; // @synthesize isInputDelegateOrigianalScrollable=_isInputDelegateOrigianalScrollable;
 @property(nonatomic) _Bool interactiveHUDIsVisible; // @synthesize interactiveHUDIsVisible=_interactiveHUDIsVisible;
 @property(retain, nonatomic) UILayoutGuide *layoutGuide; // @synthesize layoutGuide=_layoutGuide;
 @property(nonatomic) struct CGRect currentActuallSceneBounds; // @synthesize currentActuallSceneBounds=_currentActuallSceneBounds;
@@ -102,10 +100,11 @@ __attribute__((visibility("hidden")))
 - (void)_endPan:(id)arg1;
 - (void)_updateUndoPan:(id)arg1;
 - (void)_startUndoPan:(id)arg1;
-- (_Bool)scrollabilityOfInputDelegate;
-- (void)modifyInputDelegateScrollable:(_Bool)arg1;
+- (void)disableEnclosingScrollViewScrolling;
+- (id)scrollViewForInputDelegate;
 - (_Bool)undoGestureIsMoving:(id)arg1;
 - (long long)slideDirectionWithGesture:(id)arg1;
+- (void)_cancelPinch:(id)arg1;
 - (void)_endPinch:(id)arg1;
 - (void)_updatePinch:(id)arg1;
 - (void)_startPinch:(id)arg1;
@@ -127,10 +126,11 @@ __attribute__((visibility("hidden")))
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
-- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (_Bool)undoManagerOperationsAvailable;
-- (long long)currentUndoOption;
+- (_Bool)textEditingOperationsAvailableWithGestureRecognizer:(id)arg1;
+- (_Bool)undoManagerOperationsCutCopyPasteAvailable;
+- (_Bool)undoManagerOperationsUndoRedoAvailable;
 - (id)_undoManagerFlattenedGroupingInfo;
+- (unsigned long long)privateEditingInteractionOptions;
 - (id)_undoManager;
 - (void)_removeGestureRecognizers;
 - (void)_addGestureRecognizers;
@@ -156,6 +156,7 @@ __attribute__((visibility("hidden")))
 - (double)currentTime;
 - (long long)keyboardAppearance;
 - (void)clearHUDViews;
+- (void)applicationWillSuspend;
 - (void)removeAllHUDOnContainerChange;
 - (void)editingOverlayContainerDidChangeToSceneBounds:(struct CGRect)arg1;
 - (void)didMoveToView:(id)arg1;

@@ -15,7 +15,8 @@
     _Bool _indexed;
     _Bool _stored;
     _Bool _tracked;
-    NSString *_name;
+    NSString *_label;
+    NSString *_value;
 }
 
 + (id)reminderMetadata:(id)arg1;
@@ -37,7 +38,7 @@
 + (id)contactDetail:(id)arg1;
 + (id)mailingListId:(id)arg1;
 + (id)url:(id)arg1;
-+ (id)tagForPrefix:(id)arg1 value:(id)arg2;
++ (id)tagForLabel:(id)arg1 value:(id)arg2;
 + (id)nonUserFacingUpdate;
 + (id)fullyDissected;
 + (id)isPartiallyDownloaded;
@@ -52,7 +53,11 @@
 + (id)fromSync;
 + (id)fromTextMessage;
 + (id)eventMetadata:(id)arg1;
++ (id)intentResponseUserActivityString:(id)arg1;
 + (id)reservationItemReferences:(id)arg1;
++ (id)reservationItemReferencesWithData:(id)arg1;
++ (id)reservationContainerReference:(id)arg1;
++ (id)reservationContainerReferenceWithData:(id)arg1;
 + (id)schemaOrg:(id)arg1;
 + (id)messagesAppUsageLevel:(unsigned char)arg1;
 + (id)mailAppUsageLevel:(unsigned char)arg1;
@@ -63,6 +68,7 @@
 + (id)naturalLanguageEventAttributes:(unsigned long long)arg1;
 + (id)naturalLanguageEventLanguageID:(id)arg1;
 + (id)naturalLanguageEventTypeIdentifier:(id)arg1;
++ (id)interactionTeamId:(id)arg1;
 + (id)interactionBundleId:(id)arg1;
 + (id)interactionGroupId:(id)arg1;
 + (id)interactionId:(id)arg1;
@@ -81,7 +87,7 @@
 + (id)geocodingModeAddressThenPOI;
 + (id)geocodingModePOIOnly;
 + (id)geocodingModeAddressOnly;
-+ (id)categoryTagWithCategoryType:(unsigned long long)arg1;
++ (id)categoryTagWithCategoryType:(int)arg1;
 + (id)extractedSocial;
 + (id)extractedFood;
 + (id)extractedMovie;
@@ -94,14 +100,17 @@
 + (id)extractedEvent;
 + (id)resolveName:(id)arg1;
 + (void)initialize;
-+ (void)tombstonePrefix:(id)arg1;
-+ (void)rememberPrefix:(id)arg1 stored:(_Bool)arg2 indexed:(_Bool)arg3 tracked:(_Bool)arg4;
++ (void)tombstoneLabel:(id)arg1;
++ (void)rememberLabel:(id)arg1 stored:(_Bool)arg2 indexed:(_Bool)arg3 tracked:(_Bool)arg4;
 + (id)remember:(id)arg1;
 @property(readonly, nonatomic) _Bool tracked; // @synthesize tracked=_tracked;
 @property(readonly, nonatomic) _Bool stored; // @synthesize stored=_stored;
 @property(readonly, nonatomic) _Bool indexed; // @synthesize indexed=_indexed;
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, nonatomic) NSString *value; // @synthesize value=_value;
+@property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+- (id)reservationContainerReference;
+- (id)reservationItemReferences;
 - (id)reminderMetadata;
 - (_Bool)isReminderMetadata;
 - (_Bool)isExtractedEventCategory;
@@ -114,6 +123,7 @@
 - (id)eventMetadata;
 - (_Bool)isEventMetadata;
 - (_Bool)isReservationItemReferences;
+- (_Bool)isReservationContainerReference;
 - (_Bool)isSchemaOrg;
 - (_Bool)isMessagesAppUsageLevel;
 - (_Bool)isMailAppUsageLevel;
@@ -129,15 +139,19 @@
 - (_Bool)isContactDetail;
 - (_Bool)isMailingListId;
 - (_Bool)isUrl;
+- (id)intentResponseUserActivityString;
+- (_Bool)isIntentResponseUserActivityString;
+- (_Bool)isInteractionTeamId;
 - (_Bool)isInteractionBundleId;
 - (_Bool)isInteractionGroupId;
 - (_Bool)isInteractionId;
 - (id)description;
-- (id)value;
+- (id)name;
 - (_Bool)isEqualToEntityTag:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)initWithName:(id)arg1 stored:(_Bool)arg2 indexed:(_Bool)arg3 tracked:(_Bool)arg4;
+- (id)initWithLabel:(id)arg1 value:(id)arg2 stored:(_Bool)arg3 indexed:(_Bool)arg4 tracked:(_Bool)arg5;
+- (id)initWithLabel:(id)arg1 stored:(_Bool)arg2 indexed:(_Bool)arg3 tracked:(_Bool)arg4;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

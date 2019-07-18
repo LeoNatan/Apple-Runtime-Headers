@@ -7,6 +7,7 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (WFWorkflowApplicationImages)
++ (id)wf_applicationIconForBundleIdentifier:(id)arg1 format:(unsigned long long)arg2;
 + (id)wf_applicationIconForBundleIdentifier:(id)arg1;
 + (id)wf_workflowKitImageNamed:(id)arg1;
 @end

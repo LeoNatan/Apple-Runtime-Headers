@@ -12,12 +12,14 @@
 
 @interface HFIncrementalStateIconDescriptor : NSObject <HFIconDescriptor>
 {
+    BOOL _shouldForceLTR;
     NSString *_identifier;
     NSString *_imageIdentifier;
     NSNumber *_incrementalState;
 }
 
 @property(readonly, nonatomic) NSNumber *incrementalState; // @synthesize incrementalState=_incrementalState;
+@property(readonly, nonatomic) BOOL shouldForceLTR; // @synthesize shouldForceLTR=_shouldForceLTR;
 @property(readonly, nonatomic) NSString *imageIdentifier; // @synthesize imageIdentifier=_imageIdentifier;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;

@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (id)fetchRemindersWithDACalendarItemUniqueIdentifiers:(id)arg1 inList:(id)arg2 error:(id *)arg3;
 - (id)fetchReminderWithDACalendarItemUniqueIdentifier:(id)arg1 inList:(id)arg2 error:(id *)arg3;
+- (id)fetchAllRemindersWithExternalIdentifier:(id)arg1 error:(id *)arg2;
 - (id)fetchRemindersWithExternalIdentifiers:(id)arg1 inList:(id)arg2 error:(id *)arg3;
 - (id)fetchReminderWithExternalIdentifier:(id)arg1 inList:(id)arg2 error:(id *)arg3;
 - (id)fetchRemindersCountWithListID:(id)arg1 error:(id *)arg2;
@@ -29,7 +30,7 @@
 - (id)fetchReminderIncludingMarkedForDeleteWithObjectID:(id)arg1 error:(id *)arg2;
 - (id)fetchReminderWithObjectID:(id)arg1 error:(id *)arg2;
 - (id)fetchRemindersWithParentReminderID:(id)arg1 error:(id *)arg2;
-- (id)fetchRemindersWithListID:(id)arg1 error:(id *)arg2;
+- (id)fetchRemindersWithListID:(id)arg1 includingSubtasks:(_Bool)arg2 error:(id *)arg3;
 - (id)initWithStore:(id)arg1;
 
 @end

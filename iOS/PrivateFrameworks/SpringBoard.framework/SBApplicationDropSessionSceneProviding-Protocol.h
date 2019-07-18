@@ -10,7 +10,7 @@
 
 @protocol SBApplicationDropSessionSceneProviding <NSObject>
 - (FBSSceneIdentity *)mostRecentSceneIdentityExcludingLiveScenesForApplication:(SBApplication *)arg1;
-- (FBSSceneIdentity *)nonVisibleSceneIdentityForApplication:(SBApplication *)arg1 targetContentIdentifier:(NSString *)arg2;
+- (FBSSceneIdentity *)preferredSceneIdentityForApplication:(SBApplication *)arg1 targetContentIdentifier:(NSString *)arg2 preferNewScene:(_Bool)arg3;
 - (FBSSceneIdentity *)newSceneIdentityForApplication:(SBApplication *)arg1;
 - (_Bool)isApplicationActiveAndVisible:(SBApplication *)arg1;
 @end

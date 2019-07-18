@@ -6,26 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class HKMenstrualCycleDaySummary;
+@class HKMCDaySummary;
 
 @interface HKMCDayViewModel : NSObject
 {
     _Bool _fetched;
     unsigned long long _menstruationLevel;
     unsigned long long _fertileWindowLevel;
-    HKMenstrualCycleDaySummary *_daySummary;
+    HKMCDaySummary *_daySummary;
 }
 
-+ (id)dayViewModelWithMenstruationLevel:(unsigned long long)arg1 fertileWindowLevel:(unsigned long long)arg2 daySummary:(id)arg3;
++ (id)dayViewModelWithMenstruationLevel:(unsigned long long)arg1 fertileWindowLevel:(unsigned long long)arg2 daySummary:(id)arg3 fetched:(_Bool)arg4;
 + (id)emptyDayViewModel;
 + (id)unfetchedDayViewModel;
-@property(readonly, nonatomic) HKMenstrualCycleDaySummary *daySummary; // @synthesize daySummary=_daySummary;
+@property(readonly, nonatomic) HKMCDaySummary *daySummary; // @synthesize daySummary=_daySummary;
 @property(readonly, nonatomic, getter=isFetched) _Bool fetched; // @synthesize fetched=_fetched;
 @property(readonly, nonatomic) unsigned long long fertileWindowLevel; // @synthesize fertileWindowLevel=_fertileWindowLevel;
 @property(readonly, nonatomic) unsigned long long menstruationLevel; // @synthesize menstruationLevel=_menstruationLevel;
 - (void).cxx_destruct;
 - (id)redactedDescription;
 - (id)description;
+- (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic, getter=isSupplementaryDataLogged) _Bool supplementaryDataLogged;
 - (id)_initWithMenstruationLevel:(unsigned long long)arg1 fertileWindowLevel:(unsigned long long)arg2 daySummary:(id)arg3 fetched:(_Bool)arg4;
 

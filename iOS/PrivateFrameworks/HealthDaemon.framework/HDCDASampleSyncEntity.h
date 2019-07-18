@@ -11,6 +11,7 @@
 }
 
 + (id)_objectWithCodable:(id)arg1;
++ (Class)_syncedSampleTypeClass;
 + (Class)healthEntityClass;
 + (id)syncEntityIdentifier;
 + (_Bool)supportsSpeculativeNanoSyncChanges;

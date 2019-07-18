@@ -42,6 +42,8 @@
 - (void)invalidateAddressTintColors;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (BOOL)recipientIsExpanded:(id)arg1;
+- (BOOL)recipientIsExpandedChild:(id)arg1;
+- (BOOL)recipientIsExpandedParent:(id)arg1;
 - (void)updateBackgroundAndSeparatorsForCell:(id)arg1 atIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewLayoutMarginsDidChange;

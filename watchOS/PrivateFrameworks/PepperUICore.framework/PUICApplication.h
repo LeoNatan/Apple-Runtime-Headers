@@ -9,7 +9,7 @@
 #import <PepperUICore/CSLSSessionDelegate-Protocol.h>
 #import <PepperUICore/UIApplicationSnapshotPreparing-Protocol.h>
 
-@class NSMutableDictionary, NSString, PUICActionWindowListener, PUICSnapshotController, UIColor, UIViewController, UIWindow;
+@class NSMutableDictionary, NSString, PUICActionWindowListener, PUICApplicationEnvironment, PUICSnapshotController, UIColor, UIViewController, UIWindow;
 @protocol PUICSnapshotDelegate;
 
 @interface PUICApplication : UIApplication <CSLSSessionDelegate, UIApplicationSnapshotPreparing>
@@ -128,6 +128,7 @@
 - (void)setSnapshotContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setSnapshotContext:(id)arg1;
 - (void)registerPlatformSpecificLaunchOptions:(CDUnknownBlockType)arg1 transitionContext:(id)arg2;
+@property(readonly, nonatomic) PUICApplicationEnvironment *applicationEnvironment;
 @property(readonly, nonatomic) unsigned int puic_effectiveVisibility;
 - (void)setPuic_effectiveVisibility:(unsigned int)arg1;
 

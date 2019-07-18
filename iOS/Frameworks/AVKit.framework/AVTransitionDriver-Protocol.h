@@ -6,10 +6,11 @@
 
 #import <AVKit/UIInteraction-Protocol.h>
 
-@class UIGestureRecognizer;
+@class UIGestureRecognizer, UIPanGestureRecognizer;
 @protocol AVTransitionDriver, AVTransitionDriverDelegate;
 
 @protocol AVTransitionDriver <UIInteraction>
+@property(nonatomic) __weak UIPanGestureRecognizer *contentTransitioningViewGestureRecognizer;
 @property(readonly, nonatomic) double pinchVelocity;
 @property(readonly, nonatomic) double pinchScale;
 @property(readonly, nonatomic) double rotationVelocity;

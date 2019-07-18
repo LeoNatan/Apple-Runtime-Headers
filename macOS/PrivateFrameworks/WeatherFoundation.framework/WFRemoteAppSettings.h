@@ -20,10 +20,22 @@
     unsigned long long _locationNumDecimalsOfPrecision;
     long long _appConfigRefreshRate;
     NSDate *_lastModificationDate;
+    NSString *_bundleID;
+    NSString *_countryCode;
+    unsigned long long _apiConfigModdedHash;
+    unsigned long long _apiConfigMinRange;
+    unsigned long long _apiConfigMaxRange;
 }
 
++ (BOOL)wfInternalBuild;
++ (BOOL)useInternalBundleID;
 + (id)configurationWithData:(id)arg1 bundleID:(id)arg2 country:(id)arg3 userID:(id)arg4 error:(id *)arg5;
 + (id)configurationWithData:(id)arg1 userID:(id)arg2 error:(id *)arg3;
+@property(readonly, nonatomic) unsigned long long apiConfigMaxRange; // @synthesize apiConfigMaxRange=_apiConfigMaxRange;
+@property(readonly, nonatomic) unsigned long long apiConfigMinRange; // @synthesize apiConfigMinRange=_apiConfigMinRange;
+@property(readonly, nonatomic) unsigned long long apiConfigModdedHash; // @synthesize apiConfigModdedHash=_apiConfigModdedHash;
+@property(readonly, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
+@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) NSDate *lastModificationDate; // @synthesize lastModificationDate=_lastModificationDate;
 @property(readonly, nonatomic) long long appConfigRefreshRate; // @synthesize appConfigRefreshRate=_appConfigRefreshRate;
 @property(readonly, nonatomic) unsigned long long locationNumDecimalsOfPrecision; // @synthesize locationNumDecimalsOfPrecision=_locationNumDecimalsOfPrecision;

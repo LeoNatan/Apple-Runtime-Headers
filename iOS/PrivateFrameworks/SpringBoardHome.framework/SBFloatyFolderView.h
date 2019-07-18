@@ -78,7 +78,7 @@
 - (void)_updateIconListContainment:(id)arg1 atIndex:(unsigned long long)arg2;
 - (struct CGRect)_iconListFrameForPageRect:(struct CGRect)arg1 atIndex:(unsigned long long)arg2;
 - (struct CGRect)_pageBackgroundFrameForPageRect:(struct CGRect)arg1;
-- (struct SBHFolderMetrics)folderMetrics;
+- (id)floatyFolderConfiguration;
 - (void)_layoutSubviews;
 - (long long)iconVisibilityHandling;
 - (double)scrollableWidthForVisibleColumnRange;

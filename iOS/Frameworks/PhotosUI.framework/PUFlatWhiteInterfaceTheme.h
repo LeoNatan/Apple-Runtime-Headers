@@ -80,6 +80,8 @@
 @property(readonly, nonatomic) UIColor *photoEditingToolbarUnderlineColor;
 @property(readonly, nonatomic) UIColor *photoEditingToolbarDarkGradientEndColor;
 @property(readonly, nonatomic) UIColor *photoEditingToolbarDarkGradientStartColor;
+@property(readonly, nonatomic) UIColor *photoEditingToolbarUltralightGradientEndColor;
+@property(readonly, nonatomic) UIColor *photoEditingToolbarUltralightGradientStartColor;
 @property(readonly, nonatomic) UIColor *photoEditingToolbarLightGradientEndColor;
 @property(readonly, nonatomic) UIColor *photoEditingToolbarLightGradientStartColor;
 @property(readonly, nonatomic) UIColor *photoEditingDepthBadgeDisabledTextColor;
@@ -143,6 +145,7 @@
 @property(readonly, nonatomic) UIColor *playbackTimeLabelBackgroundColor;
 @property(readonly, nonatomic) UIColor *videoScrubberTileBackgroundColor;
 @property(readonly, nonatomic) UIColor *playheadBackgroundColor;
+@property(readonly, nonatomic) UIColor *playheadOutlineColor;
 @property(readonly, nonatomic) UIColor *playheadColor;
 - (void)configureProgressIndicatorMessageLabel:(id)arg1;
 @property(readonly, nonatomic) UIFont *photoBrowserTimeTitleFont;

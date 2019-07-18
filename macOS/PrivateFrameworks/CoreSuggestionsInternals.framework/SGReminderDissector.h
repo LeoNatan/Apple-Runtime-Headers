@@ -29,7 +29,7 @@
 - (id)dueDateComponentsFromMessages:(id)arg1;
 - (id)reminderTitleFromMessages:(id)arg1;
 - (BOOL)mailAddressIsAccountOwner:(id)arg1;
-- (BOOL)isLanguageSameAsDeviceLocaleForContent:(id)arg1;
+- (id)processingLanguageForContent:(id)arg1;
 - (BOOL)isValidTextMessageForProcessing:(id)arg1;
 - (id)extractReminderFromEntity:(id)arg1;
 - (id)reminderTitleForContent:(id)arg1;

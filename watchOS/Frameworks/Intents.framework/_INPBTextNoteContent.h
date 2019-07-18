@@ -15,10 +15,12 @@
 @interface _INPBTextNoteContent : PBCodable <_INPBTextNoteContent, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     NSString *_text;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

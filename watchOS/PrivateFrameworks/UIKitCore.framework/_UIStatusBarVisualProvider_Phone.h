@@ -22,6 +22,7 @@
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *pillIconPlacement; // @synthesize pillIconPlacement=_pillIconPlacement;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *backgroundActivityDetailPlacement; // @synthesize backgroundActivityDetailPlacement=_backgroundActivityDetailPlacement;
 - (void).cxx_destruct;
+- (id)animationForBackgroundActivityPillWithDuration:(double)arg1 scale:(float)arg2;
 - (id)_animationForBackgroundActivityPill;
 - (id)_animationForBackgroundActivityIcon;
 - (void)_hideActivityDetailAndUpdate:(_Bool)arg1;

@@ -7,10 +7,12 @@
 #import <HMFoundation/HMFVersion.h>
 
 @interface HMFVersion (HMBModel)
++ (id)hmbVersionFromData:(id)arg1;
 + (id)versionWithHMDVersion:(long long)arg1;
 - (BOOL)isLessThanOrEqualTo:(id)arg1;
 - (BOOL)isGreaterThanOrEqualTo:(id)arg1;
 - (BOOL)isLessThan:(id)arg1;
 - (BOOL)isGreaterThan:(id)arg1;
+- (id)hmbData;
 @end
 

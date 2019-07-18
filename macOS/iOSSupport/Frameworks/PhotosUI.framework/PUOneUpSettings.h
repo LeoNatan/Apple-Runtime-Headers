@@ -41,12 +41,8 @@
     BOOL _enableFigPhotoBackgroundSizeBasedDisplay;
     BOOL _simulateWorstCaseFigPhotoBackgroundSize;
     BOOL _autoplayVideo;
-    BOOL _hideChromeOnUnmute;
     BOOL _unmuteOnChromeHide;
-    BOOL _showVideoUnmuteWhenChromeIsHidden;
-    BOOL _loopAllVideos;
     BOOL _allowPlayButtonInBars;
-    BOOL _placeMuteButtonOverContent;
     BOOL _videoRemuteOnBackgrounding;
     BOOL _applyPerspectiveTransformDuringVitality;
     BOOL _lockScrollDuringLivePhotoPlayback;
@@ -92,7 +88,7 @@
     double _doubleTapZoomFactor;
     double _videoAutoplayThreshold;
     double _videoPauseThreshold;
-    double _remuteButtonDisplayDuration;
+    double _autoplayScrubberWidth;
     double _livePhotoInteractionThreshold;
     double _livePhotoMinimumOverlappingDuration;
     unsigned long long _overlappingLivePhotosCountLimit;
@@ -150,15 +146,11 @@
 @property(nonatomic) BOOL lockScrollDuringLivePhotoPlayback; // @synthesize lockScrollDuringLivePhotoPlayback=_lockScrollDuringLivePhotoPlayback;
 @property(nonatomic) BOOL applyPerspectiveTransformDuringVitality; // @synthesize applyPerspectiveTransformDuringVitality=_applyPerspectiveTransformDuringVitality;
 @property(nonatomic) double livePhotoInteractionThreshold; // @synthesize livePhotoInteractionThreshold=_livePhotoInteractionThreshold;
+@property(nonatomic) double autoplayScrubberWidth; // @synthesize autoplayScrubberWidth=_autoplayScrubberWidth;
 @property(nonatomic) BOOL videoRemuteOnBackgrounding; // @synthesize videoRemuteOnBackgrounding=_videoRemuteOnBackgrounding;
-@property(nonatomic) BOOL placeMuteButtonOverContent; // @synthesize placeMuteButtonOverContent=_placeMuteButtonOverContent;
-@property(nonatomic) double remuteButtonDisplayDuration; // @synthesize remuteButtonDisplayDuration=_remuteButtonDisplayDuration;
 @property(nonatomic) double videoPauseThreshold; // @synthesize videoPauseThreshold=_videoPauseThreshold;
 @property(nonatomic) BOOL allowPlayButtonInBars; // @synthesize allowPlayButtonInBars=_allowPlayButtonInBars;
-@property(nonatomic) BOOL loopAllVideos; // @synthesize loopAllVideos=_loopAllVideos;
-@property(nonatomic) BOOL showVideoUnmuteWhenChromeIsHidden; // @synthesize showVideoUnmuteWhenChromeIsHidden=_showVideoUnmuteWhenChromeIsHidden;
 @property(nonatomic) BOOL unmuteOnChromeHide; // @synthesize unmuteOnChromeHide=_unmuteOnChromeHide;
-@property(nonatomic) BOOL hideChromeOnUnmute; // @synthesize hideChromeOnUnmute=_hideChromeOnUnmute;
 @property(nonatomic) double videoAutoplayThreshold; // @synthesize videoAutoplayThreshold=_videoAutoplayThreshold;
 @property(nonatomic) BOOL autoplayVideo; // @synthesize autoplayVideo=_autoplayVideo;
 @property(nonatomic) BOOL simulateWorstCaseFigPhotoBackgroundSize; // @synthesize simulateWorstCaseFigPhotoBackgroundSize=_simulateWorstCaseFigPhotoBackgroundSize;
@@ -218,7 +210,7 @@
 @property(nonatomic) BOOL showInitialDetailsIndicator; // @synthesize showInitialDetailsIndicator=_showInitialDetailsIndicator;
 - (void).cxx_destruct;
 - (void)preferencesDidChange;
-- (BOOL)allowAutoplayVideo;
+- (BOOL)allowAutoplayVideoForAsset:(id)arg1;
 - (void)setDefaultValues;
 - (id)parentSettings;
 

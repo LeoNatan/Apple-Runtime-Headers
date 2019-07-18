@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hidesSearchableSources; // @synthesize hidesSearchableSources=_hidesSearchableSources;
 @property(retain, nonatomic) CNContactStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+- (void)updateRootItemSelection;
 @property(readonly, nonatomic, getter=isTrivial) _Bool trivial;
 @property(readonly, nonatomic) CNContactStoreFilter *serverFilter;
 - (void)setServerFilterForItem:(id)arg1;

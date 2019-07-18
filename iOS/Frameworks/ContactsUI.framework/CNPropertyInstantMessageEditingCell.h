@@ -8,7 +8,7 @@
 
 #import <ContactsUI/CNPickerControllerDelegate-Protocol.h>
 
-@class CNInstantMessageAddress;
+@class CNInstantMessageAddress, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CNPropertyInstantMessageEditingCell : CNPropertySimpleEditingCell <CNPickerControllerDelegate>
@@ -19,6 +19,12 @@ __attribute__((visibility("hidden")))
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)labelButtonClicked:(id)arg1;
 @property(readonly, nonatomic) CNInstantMessageAddress *imAddress;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

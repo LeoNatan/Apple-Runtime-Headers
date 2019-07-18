@@ -33,6 +33,7 @@
 - (void).cxx_destruct;
 - (BOOL)supportForCloud;
 - (void)purgeAllLocalCachedAssetsWithIDs:(id)arg1;
+- (void)requestDownloadOfAllAssetsWithIDs:(id)arg1 withOptions:(id)arg2;
 - (void)requestDownloadOfAllAssetsWithIDs:(id)arg1;
 - (void)_updateFromCloud;
 - (void)_notifySongDownloadInProgressChanged:(BOOL)arg1;

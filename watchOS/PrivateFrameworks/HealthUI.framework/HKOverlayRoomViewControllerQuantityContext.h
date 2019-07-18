@@ -21,10 +21,11 @@
 @property(retain, nonatomic) NSString *quantityTypeIdentifier; // @synthesize quantityTypeIdentifier=_quantityTypeIdentifier;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
+- (id)valueContextString:(id)arg1 applicationItems:(id)arg2 representativeDisplayType:(id)arg3;
 - (id)valueString:(id)arg1 applicationItems:(id)arg2 representativeDisplayType:(id)arg3;
 - (void)fetchCachedDataForTimeScope:(int)arg1 dateInterval:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)buildOverlayDisplayTypeForTimeScope:(int)arg1;
-- (id)buildContextItemWithValue:(id)arg1 forTimeScope:(int)arg2;
+- (id)buildContextItemWithValue:(id)arg1 valueContext:(id)arg2 forTimeScope:(int)arg3;
 - (id)representativeDisplayType;
 - (id)initWithQuantityIdentifier:(id)arg1 overlayChartController:(id)arg2 applicationItems:(id)arg3 optionalDelegate:(id)arg4 seriesOptions:(int)arg5 mode:(int)arg6;
 

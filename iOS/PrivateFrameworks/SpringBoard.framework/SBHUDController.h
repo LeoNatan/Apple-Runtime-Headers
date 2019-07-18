@@ -10,10 +10,11 @@
 #import <SpringBoard/UIViewControllerTransitioningDelegate-Protocol.h>
 #import <SpringBoard/_SBHUDHostViewControllerDelegate-Protocol.h>
 
-@class NSString, SBHUDSettings, SBMainScreenActiveInterfaceOrientationWindow, UIScreen, _SBHUDHostViewController;
+@class NSCountedSet, NSString, SBHUDSettings, SBMainScreenActiveInterfaceOrientationWindow, UIScreen, _SBHUDHostViewController;
 
 @interface SBHUDController : NSObject <_SBHUDHostViewControllerDelegate, PTSettingsKeyObserver, UIViewControllerTransitioningDelegate>
 {
+    NSCountedSet *_hudHiddenAssertions;
     UIScreen *_screen;
     SBMainScreenActiveInterfaceOrientationWindow *_hudWindow;
     _SBHUDHostViewController *_hudViewController;
@@ -40,6 +41,7 @@
 - (void)_dismissHUD:(id)arg1 animated:(_Bool)arg2;
 - (void)_presentHUD:(id)arg1 animated:(_Bool)arg2;
 - (void)dismissHUDs:(_Bool)arg1;
+- (id)acquireHUDHiddenAssertionForIdentifier:(id)arg1 withReason:(id)arg2;
 - (id)HUDSessionForViewController:(id)arg1 identifier:(id)arg2;
 - (id)knownHUDControllerForIdentifier:(id)arg1;
 - (id)presentedHUDControllerForIdentifier:(id)arg1;

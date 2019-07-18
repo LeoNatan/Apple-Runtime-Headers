@@ -8,7 +8,7 @@
 
 #import <HealthDaemon/HDQuantitySeriesObserver-Protocol.h>
 
-@class HDStatisticsCollectionCalculator, HDStatisticsCollectionCalculatorDefaultDataSource, HDStatisticsCollectionCalculatorDefaultSourceOrderProvider, NSDate, NSMutableDictionary, NSString, _HKDateIntervalCollection;
+@class HDStatisticsCollectionCalculator, HDStatisticsCollectionCalculatorDefaultDataSource, HDStatisticsCollectionCalculatorDefaultSourceOrderProvider, HKQuantityType, NSDate, NSMutableDictionary, NSString, _HKDateIntervalCollection;
 
 @interface HDStatisticsCollectionQueryServer : HDQueryServer <HDQuantitySeriesObserver>
 {
@@ -22,6 +22,7 @@
     _Bool _hasScheduledUpdate;
     _Bool _deliversUpdates;
     unsigned long long _mergeStrategy;
+    HKQuantityType *_quantityType;
     NSDate *_anchorDate;
     unsigned long long _statisticsOptions;
     CDUnknownBlockType _unitTest_queryServerStatisticsEnumerationHandler;
@@ -46,9 +47,10 @@
 - (void)_queue_updateStatistics;
 - (id)_queue_filteredPendingSeriesWithError:(id *)arg1;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
-- (void)profile:(id)arg1 didJournalInsertOfQuantity:(id)arg2 type:(id)arg3 dateInterval:(id)arg4 series:(id)arg5;
 - (void)profile:(id)arg1 didDiscardSeriesOfType:(id)arg2;
-- (void)profile:(id)arg1 didInsertQuantity:(id)arg2 type:(id)arg3 dateInterval:(id)arg4 series:(id)arg5 anchor:(id)arg6;
+- (CDUnknownBlockType)transactionalQuantityInsertHandlerForProfile:(id)arg1 journaled:(_Bool)arg2 count:(long long)arg3;
+- (void)_queue_didReceiveQuantity:(id)arg1 type:(id)arg2 dateInterval:(id)arg3 series:(id)arg4 anchor:(id)arg5;
+- (id)quantityType;
 - (void)_queue_performUpdate;
 - (void)_queue_scheduleUpdate;
 - (_Bool)_shouldObserveDatabaseProtectedDataAvailability;

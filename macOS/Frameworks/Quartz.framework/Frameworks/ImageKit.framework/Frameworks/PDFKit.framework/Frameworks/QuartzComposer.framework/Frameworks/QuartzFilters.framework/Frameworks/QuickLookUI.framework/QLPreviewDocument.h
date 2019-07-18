@@ -31,6 +31,7 @@
 + (id)keyPathsForValuesAffectingIsLoaded;
 + (id)keyPathsForValuesAffectingNumberOfPages;
 @property(readonly, copy) NSString *description;
+- (void)updateFullScreenFromMagnification:(double)arg1;
 - (void)doubleClickOnPreviewContent;
 - (void)displayBundle:(id)arg1 didShowScreentimeLockout:(BOOL)arg2;
 - (void)displayBundleCustomTitleUpdated:(id)arg1;

@@ -12,7 +12,7 @@
 #import <PhotosUI/PXTrimToolPlayerObserver-Protocol.h>
 #import <PhotosUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class AVAsset, AVPlayerItem, NSLayoutConstraint, NSNumber, NSString, PICompositionController, PLEditSource, PLPhotoEditRenderer, PLSlalomRegionEditor, PULivePhotoKeyFrameSelectionViewController, PUTimeCodeOverlayView, PXLivePhotoTrimScrubber, PXLivePhotoTrimScrubberSnapStripController, PXLivePhotoTrimScrubberSpec, UIButton, UIImage, UILabel, UIView;
+@class AVPlayerItem, NSLayoutConstraint, NSNumber, NSString, PICompositionController, PLEditSource, PLPhotoEditRenderer, PLSlalomRegionEditor, PULivePhotoKeyFrameSelectionViewController, PUTimeCodeOverlayView, PXLivePhotoTrimScrubber, PXLivePhotoTrimScrubberSnapStripController, PXLivePhotoTrimScrubberSpec, UIButton, UIImage, UILabel, UIView;
 @protocol PUTrimToolControllerDelegate, PXTrimToolPlayerWrapper;
 
 __attribute__((visibility("hidden")))
@@ -38,7 +38,6 @@ __attribute__((visibility("hidden")))
     PLPhotoEditRenderer *__renderer;
     AVPlayerItem *_currentVideoPlayerItem;
     PXLivePhotoTrimScrubberSnapStripController *_snapStripController;
-    AVAsset *_slomoAsset;
     unsigned long long _playheadStyle;
     unsigned long long _internalState;
     NSNumber *_slomoTimeForPlayheadUpdate;
@@ -56,6 +55,7 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _originalEndTime;
     CDStruct_1b6d18a9 _suggestedKeyFrameTime;
     CDStruct_1b6d18a9 _cachedFrameDuration;
+    CDStruct_1b6d18a9 _unadjustedAssetDuration;
     CDStruct_1b6d18a9 _debugPlayerTime;
 }
 
@@ -74,7 +74,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool slomoDraggingStartHandle; // @synthesize slomoDraggingStartHandle=_slomoDraggingStartHandle;
 @property(nonatomic) unsigned long long internalState; // @synthesize internalState=_internalState;
 @property(nonatomic) unsigned long long playheadStyle; // @synthesize playheadStyle=_playheadStyle;
-@property(copy, nonatomic) AVAsset *slomoAsset; // @synthesize slomoAsset=_slomoAsset;
+@property(nonatomic) CDStruct_1b6d18a9 unadjustedAssetDuration; // @synthesize unadjustedAssetDuration=_unadjustedAssetDuration;
 @property(retain, nonatomic) PXLivePhotoTrimScrubberSnapStripController *snapStripController; // @synthesize snapStripController=_snapStripController;
 @property(nonatomic) CDStruct_1b6d18a9 cachedFrameDuration; // @synthesize cachedFrameDuration=_cachedFrameDuration;
 @property(retain, nonatomic) AVPlayerItem *currentVideoPlayerItem; // @synthesize currentVideoPlayerItem=_currentVideoPlayerItem;
@@ -109,7 +109,6 @@ __attribute__((visibility("hidden")))
 - (id)_slomoMapperForCurrentConfiguration;
 - (CDStruct_1b6d18a9)_originalTimeFromCurrentPlayerScaledTime:(CDStruct_1b6d18a9)arg1;
 - (CDStruct_1b6d18a9)_currentPlayerScaledTimeFromOriginalTime:(CDStruct_1b6d18a9)arg1;
-@property(readonly, nonatomic) CDStruct_1b6d18a9 currentPlayerTime;
 - (void)pause;
 - (void)play;
 - (void)_handlePlayPauseButton:(id)arg1;
@@ -140,6 +139,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) CDStruct_1b6d18a9 adjustedStillFrameTime;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 currentStillFrameTime;
 - (id)currentEditSource;
+- (void)trimScrubberDidLayoutSubviews:(id)arg1;
 - (void)trimScrubberDidUnzoom:(id)arg1;
 - (void)trimScrubber:(id)arg1 didZoomToMinimumValue:(double)arg2 maximumValue:(double)arg3;
 - (void)trimScrubber:(id)arg1 didChangeLoupeRect:(struct CGRect)arg2;

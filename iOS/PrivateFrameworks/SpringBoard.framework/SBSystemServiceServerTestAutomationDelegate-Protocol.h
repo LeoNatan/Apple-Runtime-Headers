@@ -6,13 +6,14 @@
 
 #import <SpringBoard/SBSystemServiceServerDelegate-Protocol.h>
 
-@class NSString, SBSystemServiceServer;
+@class BSMachPortSendRight, NSString, SBSystemServiceServer;
 @protocol FBSServiceFacilityClientHandle;
 
 @protocol SBSystemServiceServerTestAutomationDelegate <SBSystemServiceServerDelegate>
 - (void)systemServiceServer:(SBSystemServiceServer *)arg1 client:(id <FBSServiceFacilityClientHandle>)arg2 countScenesForBundleIdentifier:(NSString *)arg3 withCompletion:(void (^)(int))arg4;
 - (void)systemServiceServer:(SBSystemServiceServer *)arg1 client:(id <FBSServiceFacilityClientHandle>)arg2 setTestRunnerRecoveryApplicationBundleIdentifier:(NSString *)arg3;
 - (void)systemServiceServer:(SBSystemServiceServer *)arg1 client:(id <FBSServiceFacilityClientHandle>)arg2 setApplicationBundleIdentifier:(NSString *)arg3 blockedForScreenTime:(_Bool)arg4;
+- (void)systemServiceServer:(SBSystemServiceServer *)arg1 client:(id <FBSServiceFacilityClientHandle>)arg2 port:(BSMachPortSendRight *)arg3 acquireHUDHiddenAssertionForIdentifier:(NSString *)arg4;
 - (void)systemServiceServer:(SBSystemServiceServer *)arg1 client:(id <FBSServiceFacilityClientHandle>)arg2 resetToHomeScreenAnimated:(_Bool)arg3;
 - (void)systemServiceServer:(SBSystemServiceServer *)arg1 client:(id <FBSServiceFacilityClientHandle>)arg2 setOrientationLockEnabled:(_Bool)arg3;
 - (void)systemServiceServer:(SBSystemServiceServer *)arg1 client:(id <FBSServiceFacilityClientHandle>)arg2 setIdleTimerEnabled:(_Bool)arg3;

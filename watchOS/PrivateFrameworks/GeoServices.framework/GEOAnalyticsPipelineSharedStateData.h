@@ -6,19 +6,29 @@
 
 #import <GeoServices/GEOAnalyticsPipelineStateData.h>
 
+@class geo_isolater;
+
 @interface GEOAnalyticsPipelineSharedStateData : GEOAnalyticsPipelineStateData
 {
+    geo_isolater *_placeIso;
 }
 
 + (id)sharedData;
+- (void).cxx_destruct;
+- (void)clearSuggestionsData;
+- (_Bool)hasSuggestionsData;
+- (_Bool)hasMapsServerData;
 - (_Bool)hasPlaceCard_PlaceActionDetails_TransitPlaceCard_TransitDepartureSequence;
 - (_Bool)hasPlaceCard_PlaceActionDetails_TransitPlaceCard;
 - (_Bool)hasPlaceCard_PlaceActionDetails;
 - (_Bool)hasPlaceCardStateData;
-- (void)populateWithGEOTransitDepartureSequenceUsage:(id)arg1;
-- (void)populateWithGEOTransitPlaceCard:(id)arg1;
+- (void)populateWithChildPlace:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3;
+- (void)populateWithPlace:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3;
+- (void)_populateWithGEOTransitDepartureSequenceUsage:(id)arg1;
+- (void)_populateWithGEOTransitPlaceCard:(id)arg1;
 - (void)populateWithPlaceActionDetails:(id)arg1;
 - (void)clearPlaceCardStateData;
+- (void)performPlaceCardStateUpdate:(CDUnknownBlockType)arg1;
 - (id)init;
 
 @end

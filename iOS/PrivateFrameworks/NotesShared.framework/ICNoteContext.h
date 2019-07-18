@@ -8,7 +8,7 @@
 
 #import <NotesShared/ICNoteContainer-Protocol.h>
 
-@class ICAccount, ICAccountUtilities, ICFolderCustomNoteSortType, ICManagedObjectContextUpdater, ICNote, ICNotesCrossProcessChangeCoordinator, ICPersistentContainer, NSArray, NSData, NSError, NSManagedObjectContext, NSMutableDictionary, NSString, NSTimer;
+@class ICAccount, ICAccountUtilities, ICFolderCustomNoteSortType, ICManagedObjectContextUpdater, ICNote, ICNotesCrossProcessChangeCoordinator, ICPersistentContainer, NSArray, NSData, NSDictionary, NSError, NSManagedObjectContext, NSString, NSTimer;
 @protocol OS_dispatch_queue;
 
 @interface ICNoteContext : NSObject <ICNoteContainer>
@@ -28,7 +28,7 @@
     ICAccountUtilities *_accountUtilities;
     NSTimer *_trashDeletionTimer;
     NSObject<OS_dispatch_queue> *_backgroundTaskQueue;
-    NSMutableDictionary *_persistentStoresByAccountId;
+    NSDictionary *_persistentStoresByAccountId;
 }
 
 + (_Bool)isActive;
@@ -44,7 +44,7 @@
 + (_Bool)hasSharedContext;
 + (id)sharedContext;
 + (void)startSharedContextWithOptions:(unsigned long long)arg1;
-@property(retain, nonatomic) NSMutableDictionary *persistentStoresByAccountId; // @synthesize persistentStoresByAccountId=_persistentStoresByAccountId;
+@property(retain, nonatomic) NSDictionary *persistentStoresByAccountId; // @synthesize persistentStoresByAccountId=_persistentStoresByAccountId;
 @property(nonatomic) _Bool shouldEnsureLocalAccount; // @synthesize shouldEnsureLocalAccount=_shouldEnsureLocalAccount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *backgroundTaskQueue; // @synthesize backgroundTaskQueue=_backgroundTaskQueue;
 @property(retain, nonatomic) NSTimer *trashDeletionTimer; // @synthesize trashDeletionTimer=_trashDeletionTimer;
@@ -70,6 +70,7 @@
 - (void)saveSubFolderMergeableDataIfNeeded;
 @property(retain, nonatomic) NSData *subFolderOrderMergeableData;
 @property(readonly, nonatomic) NSArray *visibleSubFolders;
+@property(readonly, nonatomic) NSString *containerIdentifier;
 @property(readonly, nonatomic) _Bool isTrashFolder;
 - (_Bool)isModernCustomFolder;
 @property(readonly, nonatomic) _Bool isAllNotesContainer;
@@ -90,13 +91,16 @@
 - (void)purgeEverything;
 - (void)setupCrossProcessChangeCoordinator;
 - (void)destroyPersistentStore;
-- (id)persistentStoreForAccount:(id)arg1;
 - (id)persistentStoreForAccountID:(id)arg1;
-- (id)defaultPersistentStore;
 - (id)persistentStoreCoordinator;
 - (id)newWorkerManagedObjectContext;
-- (void)loadPersistentStoresWithAccountIdentifiers:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)loadPersistentStores;
+- (void)cleanupAdditionalPersistentStores;
+- (void)createAdditionalPersistentStoresWithAccountIdentifiers:(id)arg1 persistentContainer:(id)arg2;
+- (id)defaultPersistentStoreFromPersistentStores:(id)arg1;
+- (void)refreshPersistentStoresByAccountIdFromPersistentStores:(id)arg1;
+- (id)storeFilenameForAccountIdentifier:(id)arg1;
+- (void)createAdditionalPersistentStoresWithAccountIdentifiers:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)loadAdditionalPersistentStores;
 @property(readonly) ICPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
 - (void)reloadPersistentContainer;
 - (void)clearPersistentContainer;

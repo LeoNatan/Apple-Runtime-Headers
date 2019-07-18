@@ -16,7 +16,8 @@ __attribute__((visibility("hidden")))
     MADownloadOptions *_downloadOptions;
     long long _state;
     CDUnknownBlockType _completion;
-    long long _attemptCount;
+    long long _retryCount;
+    long long _maxNumberOfRetriesAllowed;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
@@ -31,7 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)_queue_run;
 - (void)run;
 - (id)description;
-- (id)initWithAsset:(id)arg1 queue:(id)arg2 downloadOptions:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)initWithAsset:(id)arg1 queue:(id)arg2 downloadOptions:(id)arg3 maxNumberOfRetriesAllowed:(long long)arg4 completion:(CDUnknownBlockType)arg5;
 
 @end
 

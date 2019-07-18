@@ -6,14 +6,14 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <WorkflowUI/UIAdaptivePresentationControllerDelegate-Protocol.h>
 #import <WorkflowUI/VCUIShortcutViewControllerDelegate-Protocol.h>
-#import <WorkflowUI/WFGalleryWorkflowViewDelegate-Protocol.h>
 #import <WorkflowUI/WFImportQuestionContainerViewControllerDelegate-Protocol.h>
 
-@class NSString, UIActivityIndicatorView, UIBarButtonItem, VCUIShortcutViewController, WFGalleryWorkflow, WFImportQuestionContainerViewController, WFSharedShortcut, WFWorkflow;
+@class NSString, UIActivityIndicatorView, UIBarButtonItem, VCUIShortcutViewController, WFGalleryWorkflow, WFImportQuestionContainerViewController, WFSharedShortcut, WFWorkflow, WFWorkflowIcon, WFWorkflowRecord;
 @protocol WFGalleryImportViewControllerDelegate;
 
-@interface WFGalleryImportViewController : UIViewController <WFGalleryWorkflowViewDelegate, WFImportQuestionContainerViewControllerDelegate, VCUIShortcutViewControllerDelegate>
+@interface WFGalleryImportViewController : UIViewController <WFImportQuestionContainerViewControllerDelegate, VCUIShortcutViewControllerDelegate, UIAdaptivePresentationControllerDelegate>
 {
     _Bool _previewingFor3DTouch;
     _Bool _importingSharedShortcut;
@@ -24,6 +24,9 @@
     WFSharedShortcut *_sharedShortcut;
     WFWorkflow *_workflow;
     NSString *_loggingContext;
+    WFWorkflowRecord *_workflowRecord;
+    NSString *_name;
+    WFWorkflowIcon *_icon;
     unsigned long long _currentImportQuestionIndex;
     VCUIShortcutViewController *_shortcutViewController;
     WFImportQuestionContainerViewController *_importQuestionViewController;
@@ -38,6 +41,9 @@
 @property(nonatomic) __weak VCUIShortcutViewController *shortcutViewController; // @synthesize shortcutViewController=_shortcutViewController;
 @property(readonly, nonatomic) _Bool skipServicesConfirmation; // @synthesize skipServicesConfirmation=_skipServicesConfirmation;
 @property(nonatomic) unsigned long long currentImportQuestionIndex; // @synthesize currentImportQuestionIndex=_currentImportQuestionIndex;
+@property(readonly, nonatomic) WFWorkflowIcon *icon; // @synthesize icon=_icon;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, nonatomic) WFWorkflowRecord *workflowRecord; // @synthesize workflowRecord=_workflowRecord;
 @property(nonatomic) _Bool importingSharedShortcut; // @synthesize importingSharedShortcut=_importingSharedShortcut;
 @property(nonatomic) _Bool previewingFor3DTouch; // @synthesize previewingFor3DTouch=_previewingFor3DTouch;
 @property(readonly, nonatomic) NSString *loggingContext; // @synthesize loggingContext=_loggingContext;
@@ -46,13 +52,13 @@
 @property(readonly, nonatomic) WFGalleryWorkflow *galleryWorkflow; // @synthesize galleryWorkflow=_galleryWorkflow;
 @property(nonatomic) __weak id <WFGalleryImportViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)presentationControllerShouldDismiss:(id)arg1;
 - (void)shortcutViewControllerDidCancel:(id)arg1;
 - (void)shortcutViewController:(id)arg1 didFinishWithName:(id)arg2;
 - (void)importQuestionViewControllerDidSelectNext:(id)arg1;
 - (void)importQuestionViewControllerDidSelectSkip:(id)arg1;
 - (void)importQuestionViewControllerDidSelectBack:(id)arg1;
 - (void)importQuestionViewControllerDidSelectCancel:(id)arg1;
-- (void)galleryWorkflowViewDidUpdateContentSize:(id)arg1;
 - (void)logEvent:(id)arg1 withObjects:(id)arg2;
 - (void)showNextImportQuestionAnimated:(_Bool)arg1 backButtonHidden:(_Bool)arg2;
 - (void)showNextImportQuestion;
@@ -62,13 +68,13 @@
 - (id)localizedStopSharingString;
 - (void)didTapShare;
 - (void)didTapCancel;
+- (void)loadWorkflowIfNeeded;
+- (void)loadWorkflowRecordForGalleryWorkflow:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 - (void)updateBarButtonItems;
 - (void)updateView;
-- (id)icon;
-- (id)name;
-- (id)initWithWorkflow:(id)arg1 loggingContext:(id)arg2 skipServicesConfirmation:(_Bool)arg3;
+- (id)initWithWorkflowRecord:(id)arg1 loggingContext:(id)arg2 skipServicesConfirmation:(_Bool)arg3;
 - (id)initWithSharedShortcut:(id)arg1 loggingContext:(id)arg2;
 - (id)initWithGalleryWorkflow:(id)arg1 loggingContext:(id)arg2;
 

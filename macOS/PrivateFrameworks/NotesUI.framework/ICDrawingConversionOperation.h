@@ -18,7 +18,7 @@
 }
 
 @property(retain, nonatomic) ICAttachment *attachment; // @synthesize attachment=_attachment;
-@property(nonatomic) __weak ICBaseTextAttachment *textAttachment; // @synthesize textAttachment=_textAttachment;
+@property(retain, nonatomic) ICBaseTextAttachment *textAttachment; // @synthesize textAttachment=_textAttachment;
 @property(readonly, nonatomic) NSManagedObjectID *finalAttachmentID; // @synthesize finalAttachmentID=_finalAttachmentID;
 @property(readonly, nonatomic) NSManagedObjectID *attachmentID; // @synthesize attachmentID=_attachmentID;
 @property(readonly, nonatomic) BOOL isAutomatic; // @synthesize isAutomatic=_isAutomatic;

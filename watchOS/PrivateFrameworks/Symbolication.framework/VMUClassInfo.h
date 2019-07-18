@@ -34,7 +34,7 @@
     _Bool _usesSwiftRefcounting;
 }
 
-+ (unsigned long)sizeofClassStructure:(_Bool)arg1;
++ (unsigned long)sizeofClassStructure;
 + (id)descriptionForTypeEncoding:(const char *)arg1 ivarName:(const char *)arg2;
 + (id)classInfoWithClassName:(id)arg1 binaryPath:(id)arg2 type:(unsigned int)arg3;
 + (id)_genericBlockByrefInfo;

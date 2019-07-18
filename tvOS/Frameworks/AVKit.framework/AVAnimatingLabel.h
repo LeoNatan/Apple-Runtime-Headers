@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithFrame:(struct CGRect)arg1 formatter:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(nonatomic) double timeInterval;
+- (void)setTimeInterval:(double)arg1 animated:(_Bool)arg2;
 
 @end
 

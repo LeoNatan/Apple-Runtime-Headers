@@ -11,8 +11,6 @@
 }
 
 + (BOOL)isDataSeparatedAccount:(id)arg1;
-+ (void)deleteEnterprisePersonaWithCompletion:(CDUnknownBlockType)arg1;
-+ (void)createEnterprisePersonaWithCompletion:(CDUnknownBlockType)arg1;
 + (void)verifyAndFixPersonaIfNeeded:(id)arg1 desiredContext:(id)arg2;
 + (BOOL)personaConsistencyCheck:(id)arg1;
 + (id)findEnterprisePersonaIdentifier;

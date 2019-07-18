@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)_requirePasscodeSet;
 + (BOOL)shouldContinueWithResponse:(id)arg1 error:(id *)arg2;
 + (BOOL)canPerformPasswordRequest:(id)arg1 error:(id *)arg2;
 + (BOOL)canPerformAuthorizationRequest:(id)arg1 error:(id *)arg2;

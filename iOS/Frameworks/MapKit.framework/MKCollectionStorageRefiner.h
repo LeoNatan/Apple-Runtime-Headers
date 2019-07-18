@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)fetchMapItems:(CDUnknownBlockType)arg1;
+- (void)_sharedInitWithCollectionStorage:(id)arg1;
 - (id)initWithCollectionStorage:(id)arg1;
 - (id)initWithCollectionURL:(id)arg1;
 

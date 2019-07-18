@@ -9,7 +9,7 @@
 @protocol FCPrivateDataContextInternal;
 
 @protocol FCPrivateDataSyncManager <NSObject>
-- (void)fetchChangesWithContext:(id <FCPrivateDataContextInternal>)arg1 qualityOfService:(long long)arg2 completionHandler:(void (^)(NSArray *, NSArray *, void (^)(void), NSError *))arg3;
+- (void)fetchChangesWithContext:(id <FCPrivateDataContextInternal>)arg1 qualityOfService:(long long)arg2 completionHandler:(void (^)(NSArray *, NSArray *, _Bool, void (^)(void), NSError *))arg3;
 - (_Bool)isAwaitingFirstSync;
 - (void)notifyObservers;
 - (void)markAsDirty;

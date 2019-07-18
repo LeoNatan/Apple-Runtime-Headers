@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 -     // Error parsing type: v32@0:8r^{FilterSetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::FilterRuleArchive>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<bool>=ii(Pointer=^{Arena}^{Rep})}iBB}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
+- (_Bool)allowsRowInsertion;
 - (id)viewColumnIndicesForRulesInTable:(id)arg1;
 - (id)baseColumnIndicesForRulesInTable:(id)arg1;
 - (id)absoluteRuleIndicesForColumn:(struct TSUModelColumnIndex)arg1 inTable:(id)arg2;

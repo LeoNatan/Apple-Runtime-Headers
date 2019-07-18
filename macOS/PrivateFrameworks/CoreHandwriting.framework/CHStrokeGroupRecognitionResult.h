@@ -20,13 +20,13 @@
     NSDictionary *_errorsByLocale;
 }
 
-+ (void)filterResultsByLocale:(id)arg1 usingLanguageFitness:(id)arg2;
++ (id)filteredResultsByLocale:(id)arg1 usingLanguageFitness:(id)arg2;
 + (id)sortedLocales:(id)arg1 usingLanguageFitness:(id)arg2;
 @property(readonly, copy, nonatomic) NSDictionary *errorsByLocale; // @synthesize errorsByLocale=_errorsByLocale;
 @property(readonly, copy, nonatomic) NSDictionary *recognitionResultsByLocale; // @synthesize recognitionResultsByLocale=_recognitionResultsByLocale;
 @property(readonly, copy, nonatomic) NSArray *inputStrokeIdentifiers; // @synthesize inputStrokeIdentifiers=_inputStrokeIdentifiers;
 - (double)languageFitnessForLocale:(id)arg1;
-- (id)highConfidenceTextForSessionResult:(id)arg1 rejectionRate:(double *)arg2;
+- (id)highConfidenceTextForSessionResult:(id)arg1 rejectionRate:(double *)arg2 doesContainUnfilteredMultiLocaleResults:(char *)arg3;
 - (id)localesSortedByLanguageFitness:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

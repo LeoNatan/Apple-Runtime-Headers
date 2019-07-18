@@ -13,6 +13,7 @@
     _Bool _isLuxo;
     _Bool _isExplorer;
     _Bool _hasRichMediaComplications;
+    _Bool _runningGraceOrLater;
     _Bool _limitedToPreGlory;
     _Bool _isBridgeActive;
     unsigned long long _sizeClass;
@@ -39,6 +40,7 @@
 @property(retain, nonatomic) NRDevice *nrDevice; // @synthesize nrDevice=_nrDevice;
 @property(nonatomic) unsigned long long materialType; // @synthesize materialType=_materialType;
 @property(nonatomic) unsigned long long collectionType; // @synthesize collectionType=_collectionType;
+@property(readonly, nonatomic, getter=isRunningGraceOrLater) _Bool runningGraceOrLater; // @synthesize runningGraceOrLater=_runningGraceOrLater;
 @property(nonatomic) _Bool hasRichMediaComplications; // @synthesize hasRichMediaComplications=_hasRichMediaComplications;
 @property(nonatomic) _Bool isExplorer; // @synthesize isExplorer=_isExplorer;
 @property(nonatomic) _Bool isLuxo; // @synthesize isLuxo=_isLuxo;
@@ -51,7 +53,6 @@
 @property(readonly, nonatomic) NSUUID *nrDeviceUUID;
 @property(readonly, nonatomic) _Bool unlockedSinceBoot;
 @property(readonly, nonatomic) _Bool isLocked;
-@property(readonly, nonatomic, getter=isRunningGraceOrLater) _Bool runningGraceOrLater;
 - (void)_loadDeviceInfo;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithNRDevice:(id)arg1;

@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 
 - (long long)userInterfaceTag;
 - (id)defaultDataFileName;
+- (_Bool)supportsSeriesStroke;
 - (Class)presetImagerClass;
 - (id)allCDESectionLabels;
 - (id)defaultSeriesType:(unsigned long long)arg1;

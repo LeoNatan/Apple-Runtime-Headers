@@ -22,6 +22,9 @@ __attribute__((visibility("hidden")))
 + (id)serviceXPCInterface;
 + (id)serviceName;
 - (void).cxx_destruct;
+- (void)copyCurrentUserNameAndDisplayHandleWithReply:(CDUnknownBlockType)arg1;
+- (void)fetchFilenameForRecordID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fetchURLForRecordID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resolveCrossDeviceBookmarkData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)printStatus:(id)arg1 containerID:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)forceSyncContainerID:(id)arg1 reply:(CDUnknownBlockType)arg2;

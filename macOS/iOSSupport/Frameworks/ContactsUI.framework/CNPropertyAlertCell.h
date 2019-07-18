@@ -8,7 +8,7 @@
 
 #import <ContactsUI/CNPickerControllerDelegate-Protocol.h>
 
-@class CNPropertyGroupAlertItem;
+@class CNPropertyGroupAlertItem, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CNPropertyAlertCell : CNPropertySimpleCell <CNPickerControllerDelegate>
@@ -25,6 +25,12 @@ __attribute__((visibility("hidden")))
 - (id)alertGroup;
 @property(readonly, nonatomic) CNPropertyGroupAlertItem *alertItem;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -15,11 +15,13 @@
 @interface _INPBIntentSlotResolutionMulticardinalResult : PBCodable <_INPBIntentSlotResolutionMulticardinalResult, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSArray *_resolutionResults;
 }
 
 + (BOOL)supportsSecureCoding;
 + (Class)resolutionResultsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *resolutionResults; // @synthesize resolutionResults=_resolutionResults;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

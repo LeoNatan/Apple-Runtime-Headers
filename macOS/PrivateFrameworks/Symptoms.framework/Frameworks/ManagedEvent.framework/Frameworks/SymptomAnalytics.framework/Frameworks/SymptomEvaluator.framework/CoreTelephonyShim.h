@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1;
 - (void)dealloc;
+- (void)_completeInitialization;
 - (id)init;
 - (id)elevatedQueue;
 

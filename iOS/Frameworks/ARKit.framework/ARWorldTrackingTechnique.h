@@ -28,10 +28,8 @@
     int _previousKeyframeCount;
     double _lastPoseTrackingMapTimestamp;
     double _lastMajorRelocalizationTimestamp;
-    double _lastPoseMajorRelocalizationTimestamp;
     double _originTimestamp;
     _Bool _relocalizingAfterSensorDataDrop;
-    _Bool _didRelocalize;
     _Bool _didClearMap;
     _Bool _hasQualityKeyframe;
     NSObject<OS_dispatch_semaphore> *_resultSemaphore;
@@ -56,9 +54,9 @@
 
 @property(retain) ARWorldTrackingOptions *mutableOptions; // @synthesize mutableOptions=_mutableOptions;
 - (void).cxx_destruct;
+- (void)stopAllRaycasts;
 - (void)invalidateAllRaycasts;
 - (void)stopRaycast:(id)arg1;
-- (void)updateRaycast:(id)arg1;
 - (id)trackedRaycast:(id)arg1 updateHandler:(CDUnknownBlockType)arg2;
 - (id)raycast:(id)arg1;
 - (void)pushCollaborationData:(id)arg1;

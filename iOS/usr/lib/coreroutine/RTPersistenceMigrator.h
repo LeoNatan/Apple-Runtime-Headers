@@ -31,6 +31,11 @@
 @property(readonly) NSDate *migrationEndDate; // @synthesize migrationEndDate=_migrationEndDate;
 @property(readonly) NSDate *migrationStartDate; // @synthesize migrationStartDate=_migrationStartDate;
 - (void).cxx_destruct;
+- (void)__cleanupAfterImportWithStore:(id)arg1 coordinator:(id)arg2;
+- (unsigned long long)__executeImportStepWithSourceStore:(id)arg1 sourceCoordinator:(id)arg2 destinationStore:(id)arg3 destinationCoordinator:(id)arg4 model:(id)arg5;
+- (unsigned long long)__prepareImportStepWithSourceStore:(id)arg1 sourceCoordinator:(id)arg2 destinationStore:(id)arg3 destinationCoordinator:(id)arg4 model:(id)arg5 allowMigration:(_Bool)arg6;
+- (id)__findCandidateStoresForImportStepWithStore:(id)arg1;
+- (unsigned long long)_executeImportStep;
 - (unsigned long long)_executeRecreateStep;
 - (unsigned long long)_executeDestroyStep;
 - (unsigned long long)_executeMigrateStep;

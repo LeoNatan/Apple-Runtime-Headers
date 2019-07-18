@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)_applyStyles;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithWidgetViewStyle:(unsigned long long)arg1;
 

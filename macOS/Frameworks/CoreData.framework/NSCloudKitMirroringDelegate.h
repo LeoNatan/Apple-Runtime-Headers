@@ -71,6 +71,8 @@
 - (void)_setContainer:(id)arg1;
 - (void)_setDatabase:(id)arg1;
 - (void)_setObservedStore:(id)arg1 observedCoordinator:(id)arg2;
+- (BOOL)_createSchemaWithMonitor:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (void)_performSchemaInitializationRequest:(id)arg1;
 - (void)_finishedRequest:(id)arg1 withResult:(id)arg2;
 - (void)checkAndExecuteNextRequest;
 - (id)newActivityWithIdentifier:(id)arg1;
@@ -83,6 +85,7 @@
 - (id)resetNotificationUserInfoForError:(id)arg1;
 - (void)postDidResetNotificationForError:(id)arg1;
 - (void)postWillResetNotificationForError:(id)arg1;
+- (BOOL)purgeMetadataMatchingObjectIDs:(id)arg1 inRequest:(id)arg2 inStore:(id)arg3 withMonitor:(id)arg4 error:(id *)arg5;
 - (BOOL)purgeMetadataFromStore:(id)arg1 inMonitor:(id)arg2 withOptions:(unsigned long long)arg3 forRecordZones:(id)arg4 error:(id *)arg5;
 - (BOOL)_recoverFromPartialError:(id)arg1 withMonitor:(id)arg2;
 - (BOOL)_recoverFromError:(id)arg1 withMonitor:(id)arg2;
@@ -91,6 +94,8 @@
 - (void)_requestEncounteredRecoverableError:(id)arg1 withResult:(id)arg2;
 - (void)_requestEncounteredUnrecoverableError:(id)arg1 withResult:(id)arg2;
 - (void)_requestAbortedNotInitialized:(id)arg1;
+- (void)_performExportProgressRequest:(id)arg1;
+- (void)_performSerializationRequest:(id)arg1;
 - (void)_performMetadataResetRequest:(id)arg1;
 - (void)_performFetchRecordsRequest:(id)arg1;
 - (void)_performResetZoneRequest:(id)arg1;

@@ -8,6 +8,7 @@
 
 @class WFPDFDocument;
 
+__attribute__((visibility("hidden")))
 @interface WFPDFPrintFormatter : UIPrintFormatter
 {
     WFPDFDocument *_document;

@@ -35,6 +35,7 @@
 - (void)_updateWithForce:(double)arg1 timestamp:(double)arg2;
 - (double)_currentForce;
 - (void)_updateConverged;
+- (void)converge;
 - (void)updateForTimestamp:(double)arg1;
 - (void)resetToValue:(double)arg1;
 @property(readonly, nonatomic) double unboundedValue;

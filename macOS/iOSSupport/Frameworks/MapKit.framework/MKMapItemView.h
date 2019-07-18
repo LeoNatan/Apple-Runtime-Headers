@@ -24,9 +24,11 @@
     unsigned long long _signpostID;
     BOOL _loadingMuninView;
     BOOL _shouldResolveMapItem;
+    BOOL _shouldShowBorders;
     MKMapItem *_mapItem;
 }
 
+@property(nonatomic) BOOL shouldShowBorders; // @synthesize shouldShowBorders=_shouldShowBorders;
 @property(readonly, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) BOOL shouldResolveMapItem; // @synthesize shouldResolveMapItem=_shouldResolveMapItem;
 - (void).cxx_destruct;
@@ -34,6 +36,7 @@
 - (void)triggerAnimation;
 - (void)_resetState;
 - (void)cancel;
+- (void)cancelSnapshot;
 - (void)_cropImage;
 - (void)_callCompletionHandler;
 - (void)_renderMapItem;

@@ -38,6 +38,7 @@
 - (void)_encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)findServiceWithType:(id)arg1;
 - (id)runtimeState;
 - (void)unconfigure;
 - (void)configureWithMessageDispatcher:(id)arg1 configurationTracker:(id)arg2;
@@ -49,6 +50,7 @@
 - (id)dumpState;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
+- (id)initWithAccessory:(id)arg1 uniqueIdentifier:(id)arg2 services:(id)arg3 workQueue:(id)arg4;
 - (id)initWithAccessory:(id)arg1 uniqueIdentifier:(id)arg2 services:(id)arg3;
 @property(readonly, copy, nonatomic) NSUUID *contextSPIUniqueIdentifier;
 @property(readonly, copy, nonatomic) NSString *contextID;

@@ -36,8 +36,6 @@
 - (_Bool)canRunWhenGraphIsLoaded;
 - (id)nextAdditionalJobWithScenario:(unsigned long long)arg1 requestReason:(unsigned long long)arg2;
 - (_Bool)hasAdditionalJobsForScenario:(unsigned long long)arg1 requestReason:(unsigned long long)arg2;
-- (_Bool)stopAcknowledgeDeletionsJob:(id)arg1 error:(id *)arg2;
-- (_Bool)startAcknowledgeDeletionsJob:(id)arg1 error:(id *)arg2;
 - (_Bool)stopAnalysisJob:(id)arg1 error:(id *)arg2;
 - (_Bool)startAnalysisJob:(id)arg1 error:(id *)arg2;
 - (void)handleOperation:(id)arg1;

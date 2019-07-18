@@ -13,7 +13,7 @@
     // Error parsing type: , name: performActivityHandler
     // Error parsing type: , name: type
     // Error parsing type: , name: title
-    // Error parsing type: , name: name
+    // Error parsing type: , name: image
 }
 
 - (void).cxx_destruct;

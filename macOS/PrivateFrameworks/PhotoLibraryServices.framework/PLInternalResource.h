@@ -27,6 +27,7 @@
 + (id)insertResourceForAssetObjectID:(id)arg1 resourceIdentity:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)cloudUUIDKeyForDeletion;
 + (long long)cloudDeletionTypeForTombstone:(id)arg1;
++ (BOOL)supportsTrashedStateForResourceIdentity:(id)arg1;
 + (id)listOfSyncedProperties;
 + (id)entityName;
 + (id)purgeablePushedPredicateForCPLResourceTypes:(id)arg1 urgency:(long long)arg2;
@@ -90,7 +91,10 @@
 - (id)validateForAssetID:(id)arg1 resourceIdentity:(id)arg2;
 @property(readonly, copy) NSString *cloudUUIDForDeletion;
 @property(readonly) long long cloudDeletionType;
+- (void)willSave;
 - (void)prepareForDeletion;
+- (void)persistTrashedStateToFilesystem;
+- (BOOL)shouldPersistTrashedState;
 - (void)applyTrashedState:(short)arg1 trashedDate:(id)arg2;
 - (void)applyTrashedState:(short)arg1;
 - (BOOL)isTrashedOrExpunged;

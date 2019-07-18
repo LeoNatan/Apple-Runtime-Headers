@@ -10,7 +10,6 @@
 
 @protocol SFReaderWebProcessControllerProtocol <NSObject>
 - (void)collectArticleContent;
-- (void)checkReaderAvailability;
 - (void)didFinishPresentationUpdateAfterTransitioningToReader;
 - (void)prepareReaderContentForPrinting;
 - (void)setReaderIsActive:(_Bool)arg1;

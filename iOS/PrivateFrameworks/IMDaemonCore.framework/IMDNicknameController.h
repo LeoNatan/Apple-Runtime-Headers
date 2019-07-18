@@ -8,11 +8,12 @@
 
 #import <IMDaemonCore/IMSystemMonitorListener-Protocol.h>
 
-@class IDSKVStore, IMNickname, NSMutableDictionary, NSMutableSet, NSSet;
+@class IDSKVStore, IMNickname, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet;
 
 @interface IMDNicknameController : NSObject <IMSystemMonitorListener>
 {
     _Bool _needToLoadMapsInfoFromDisk;
+    _Bool _nicknameIsUploadingToCK;
     IMNickname *_personalNickname;
     IDSKVStore *_kvStore;
     double _lastMeContactStoreSync;
@@ -23,10 +24,13 @@
     NSMutableDictionary *_pendingNicknameUpdates;
     NSMutableSet *_handleWhitelist;
     NSMutableSet *_handleBlacklist;
+    NSMutableArray *_chatsToSendNicknameInfoTo;
 }
 
 + (id)ckQueue;
 + (id)sharedInstance;
+@property(nonatomic) _Bool nicknameIsUploadingToCK; // @synthesize nicknameIsUploadingToCK=_nicknameIsUploadingToCK;
+@property(retain, nonatomic) NSMutableArray *chatsToSendNicknameInfoTo; // @synthesize chatsToSendNicknameInfoTo=_chatsToSendNicknameInfoTo;
 @property(nonatomic) _Bool needToLoadMapsInfoFromDisk; // @synthesize needToLoadMapsInfoFromDisk=_needToLoadMapsInfoFromDisk;
 @property(retain, nonatomic) NSMutableSet *handleBlacklist; // @synthesize handleBlacklist=_handleBlacklist;
 @property(retain, nonatomic) NSMutableSet *handleWhitelist; // @synthesize handleWhitelist=_handleWhitelist;
@@ -39,6 +43,7 @@
 @property(retain, nonatomic) IDSKVStore *kvStore; // @synthesize kvStore=_kvStore;
 @property(retain, nonatomic) IMNickname *personalNickname; // @synthesize personalNickname=_personalNickname;
 - (void)systemDidLeaveFirstDataProtectionLock;
+- (id)substringRecordIDForNickname:(id)arg1;
 - (id)nicknameForHandle:(id)arg1;
 - (id)nicknameForHandleURI:(id)arg1;
 - (id)nicknameForRecordID:(id)arg1 handle:(id)arg2;
@@ -54,11 +59,17 @@
 - (void)loadSharingHandlesPrefs;
 - (void)loadHandledNicknamesAndPendingUpdates;
 - (void)loadPersonalNicknameIfNeeded;
-- (_Bool)_loadAllInfoFromDiskIfAble;
+- (void)_loadAllInfoFromDiskIfAble;
 - (_Bool)_deviceUnderFirstUnlock;
+- (void)cleanUpNicknameForID:(id)arg1;
+- (void)_deleteHandleIDFromHandledMap:(id)arg1;
+- (void)_deleteHandleIDFromPendingMap:(id)arg1;
+- (void)_deleteNicknameFromPendingMap:(id)arg1;
 - (void)_writeNicknameToKVStore:(id)arg1 nickname:(id)arg2;
 - (void)markNicknameAsUpdated:(id)arg1;
+- (void)_updateNicknameInHandledMap:(id)arg1;
 - (void)_markNicknameAsUpdated:(id)arg1 incrementPendingNicknameVersion:(_Bool)arg2;
+- (_Bool)replacedNicknameForHandleIDInHandledMapIfNeeded:(id)arg1 nickname:(id)arg2;
 - (void)addNicknameToPendingUpdates:(id)arg1;
 - (void)_broadcastPendingMapChanged;
 - (void)clearPendingNicknameForHandleID:(id)arg1;
@@ -66,17 +77,22 @@
 - (void)_updatePendingNicknameVersion;
 - (void)_updateHandleList:(id)arg1 withHandles:(id)arg2 forKey:(id)arg3 broadcastUpdates:(_Bool)arg4;
 - (void)blacklistHandlesForSharing:(id)arg1;
-- (void)whitelistHandlesForSharing:(id)arg1;
+- (void)whitelistHandlesForSharing:(id)arg1 onChatGUIDs:(id)arg2;
+- (void)broadcastHandlesSharingNicknamesDidChange;
 @property(readonly, nonatomic) NSSet *blacklistedHandlesForSharing;
 @property(readonly, nonatomic) NSSet *whitelistedHandlesForSharing;
-- (void)_syncHandleWhitelistBlacklistToOtherDevices;
-- (void)_updateWhitelistBlacklistHandlesVersion;
-- (void)_sendMessageDictionary:(id)arg1;
-- (void)sendPersonalNicknameRecordIDAndVersion;
+- (void)sendPersonalNicknameToChat:(id)arg1;
+- (void)queueChatToSendNicknamePostUploadIfNeeded:(id)arg1;
+- (_Bool)_sendMessageDictionary:(id)arg1 toDevice:(id)arg2;
+- (void)sendPersonalNicknameRecordIDAndVersionToAllPeers;
+- (void)sendPersonalNicknameRecordIDAndVersionRequestedByDevice:(id)arg1;
 - (void)sendNicknamePreferencesDidChange;
 - (_Bool)_isNicknamesSharingEnabled;
 - (void)sendPendingNicknameUpdatesDidChange;
-- (void)handleNicknameUpdatesFromPeerDevice:(id)arg1;
+- (void)handleNicknameUpdatesFromPeerDevice:(id)arg1 fromPeerDevice:(id)arg2;
+- (_Bool)_requestingToSendLocalNicknameInfo:(id)arg1;
+- (void)_syncHandleWhitelistBlacklistToOtherDevices;
+- (void)_updateWhitelistBlacklistHandlesVersion;
 - (void)_updateHandleBlacklistWhitelistIfNeeded:(id)arg1;
 - (void)_updateCloudKitRecordIDAndDecryptionKeyIfNeededFromMadridMessage:(id)arg1;
 - (void)_updateHandledNicknamesIfNeeded:(id)arg1;
@@ -84,19 +100,38 @@
 - (id)messageDictionaryWithPersonalRecordIDAndVersion;
 - (void)_updateMessageDictionaryWithPendingNicknameUpdates:(id)arg1;
 - (void)_updateSharingPreferencesIfNeededFromMadridMessage:(id)arg1;
-- (void)deleteAllPersonalNickname;
+- (void)deleteAllPersonalNicknames:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_getNicknameRecordFromPublicDBWithRecordName:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)NicknameWithRecordID:(id)arg1 URI:(id)arg2 decryptionKey:(id)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
 - (void)currentPersonalNicknameWithRecordID:(id)arg1 decryptionKey:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)currentPersonalNicknamewithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)fetchAllNicknamesForCurrentUser:(CDUnknownBlockType)arg1;
 - (double)_retryIntervalForRetryCount:(unsigned long long)arg1;
 - (void)cloudKitOperationWithRetryCount:(unsigned long long)arg1 withError:(id)arg2 operation:(CDUnknownBlockType)arg3;
 - (void)performCloudKitOperation:(CDUnknownBlockType)arg1 withError:(id)arg2;
+- (void)_handleSaveNicknameError:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)_updateEncryptedPersonalNicknameToPublicCloudKitDBSavingRecord:(id)arg1 deletingRecordIDs:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)_updateEncryptedPersonalNicknameToPublicCloudKitDBSavingRecord:(id)arg1 deletingRecordID:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)_resetHandleSharingList;
 - (void)setPersonalNickname:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)_endNicknameUpload;
+- (void)_beginNicknameUpload;
 - (void)_incrementMeCardVersion;
+- (void)verifyTruncatedRecordIDMatchesPersonalNickname:(id)arg1 forChat:(id)arg2;
+- (void)deviceSignedOutOfiMessage;
+- (void)_newDeviceDidSignIntoiMessageWithRetryCount:(unsigned long long)arg1;
+- (void)_retryPeerRequestWithRetry:(unsigned long long)arg1;
+- (void)newDeviceDidSignIntoiMessage;
+- (void)reuploadProfileIfNeeded;
+- (void)_tryToReuploadPersonalNicknameWithRetryCount:(unsigned long long)arg1 reuploadVersion:(unsigned long long)arg2;
+- (unsigned long long)_reuploadLocalProfileVersionNumber;
+- (void)_evaluateIfAccountHasMultiplePhoneNumbers;
+- (void)aliasesDidChange:(_Bool)arg1;
+- (void)evaluateAccountStateForFeatureEligibility;
+- (void)_ckAccountChanged:(id)arg1;
+- (_Bool)_nicknameFeatureEnabled;
 - (id)defaults;
+- (id)_nickNameFetchConfiguration;
 - (id)_nickNameSaveConfiguration;
 - (id)_nickNamePublicDB;
 - (void)dealloc;

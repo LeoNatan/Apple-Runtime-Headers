@@ -65,7 +65,7 @@
 + (void)insertDataObjects:(id)arg1 insertionContext:(id)arg2 profile:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (_Bool)_validateObjectsToInsert:(id)arg1 insertionContext:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (_Bool)_insertDataObject:(id)arg1 insertionContext:(id)arg2 provenanceEntityID:(long long)arg3 profile:(id)arg4 database:(id)arg5 insertedEntityID:(id *)arg6 error:(id *)arg7;
-+ (int)shouldInsertObject:(id)arg1 sourceID:(id)arg2 profile:(id)arg3 objectToReplace:(id *)arg4 objectID:(id *)arg5 error:(id *)arg6;
++ (int)shouldInsertObject:(id)arg1 sourceID:(id)arg2 profile:(id)arg3 database:(id)arg4 objectToReplace:(id *)arg5 objectID:(id *)arg6 error:(id *)arg7;
 + (_Bool)_shouldReplaceExistingObject:(id)arg1 withObject:(id)arg2;
 + (id)_primitiveInsertDataObject:(id)arg1 insertionContext:(id)arg2 entityClass:(Class)arg3 provenanceEntityID:(long long)arg4 profile:(id)arg5 database:(id)arg6 error:(id *)arg7;
 

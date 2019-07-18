@@ -16,7 +16,6 @@
 + (id)syncDirectoryURLForBundleIdentifier:(id)arg1;
 + (id)definitionDirectoryURL;
 + (int)messageType;
-+ (void)initialize;
 @property(readonly, nonatomic) VCDaemonXPCEventHandler *eventHandler; // @synthesize eventHandler=_eventHandler;
 - (void).cxx_destruct;
 - (_Bool)deleteSyncedData:(id *)arg1;

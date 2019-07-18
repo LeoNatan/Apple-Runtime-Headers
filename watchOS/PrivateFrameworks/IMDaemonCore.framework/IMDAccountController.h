@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSSet;
+#import <IMDaemonCore/IDSAccountDelegate-Protocol.h>
 
-@interface IMDAccountController : NSObject
+@class NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString;
+
+@interface IMDAccountController : NSObject <IDSAccountDelegate>
 {
     NSMutableDictionary *_accounts;
     NSMutableDictionary *_activeAccounts;
@@ -20,6 +22,8 @@
 + (id)sharedAccountController;
 + (id)sharedInstance;
 @property(readonly, nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
+- (void)account:(id)arg1 isActiveChanged:(_Bool)arg2;
+- (id)_nicknameController;
 - (_Bool)_isOperationalForAccount:(id)arg1;
 - (id)_operationalAccounts;
 - (void)_rebuildOperationalAccountsCache;
@@ -57,6 +61,12 @@
 - (id)init;
 @property(readonly, nonatomic) NSDictionary *loadOldStatusStore;
 - (id)_superFormatFromAIML:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

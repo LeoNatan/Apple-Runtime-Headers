@@ -6,16 +6,18 @@
 
 #import <Contacts/CNContactStore.h>
 
-@protocol SGSuggestionsServiceContactsProtocol;
+@protocol CNSiriIntelligenceSettingsProtocol, SGSuggestionsServiceContactsProtocol;
 
 @interface CNSuggestedContactStore : CNContactStore
 {
     id <SGSuggestionsServiceContactsProtocol> _suggestionService;
+    id <CNSiriIntelligenceSettingsProtocol> _siriIntelligenceSettings;
 }
 
 + (_Bool)isSuggestionsSupported;
 + (id)storeIdentifier;
 + (id)storeInfoClasses;
+@property(retain, nonatomic) id <CNSiriIntelligenceSettingsProtocol> siriIntelligenceSettings; // @synthesize siriIntelligenceSettings=_siriIntelligenceSettings;
 @property(retain, nonatomic) id <SGSuggestionsServiceContactsProtocol> suggestionService; // @synthesize suggestionService=_suggestionService;
 - (void).cxx_destruct;
 - (_Bool)executeSaveRequest:(id)arg1 error:(id *)arg2;
@@ -24,7 +26,7 @@
 - (_Bool)enumerateContactsAndMatchInfoWithFetchRequest:(id)arg1 error:(id *)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)originForSuggestion:(id)arg1 error:(id *)arg2;
 - (id)requestAccessForEntityType:(long long)arg1;
-- (id)initWithSuggestionsService:(id)arg1;
+- (id)initWithSuggestionsService:(id)arg1 siriIntelligenceSettings:(id)arg2;
 - (id)init;
 
 @end

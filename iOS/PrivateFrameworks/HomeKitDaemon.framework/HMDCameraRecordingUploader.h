@@ -18,11 +18,12 @@
     NSData *_videoInitData;
     double _targetFragmentDuration;
     id <HMDCameraRecordingUploaderDelegate> _delegate;
-    HMBLocalZone *_localZone;
     NSUUID *_clipModelID;
+    HMBLocalZone *_localZone;
     id <HMDCameraRecordingUploaderFactory> _factory;
     HMCameraClipEncryptionManager *_encryptionManager;
     NSObject<OS_dispatch_queue> *_workQueue;
+    double _frameTimeOffset;
     NSMutableArray *_operations;
     double _totalClipDuration;
 }
@@ -30,11 +31,12 @@
 + (id)logCategory;
 @property double totalClipDuration; // @synthesize totalClipDuration=_totalClipDuration;
 @property(readonly) NSMutableArray *operations; // @synthesize operations=_operations;
+@property double frameTimeOffset; // @synthesize frameTimeOffset=_frameTimeOffset;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain) HMCameraClipEncryptionManager *encryptionManager; // @synthesize encryptionManager=_encryptionManager;
 @property(readonly) id <HMDCameraRecordingUploaderFactory> factory; // @synthesize factory=_factory;
-@property(retain) NSUUID *clipModelID; // @synthesize clipModelID=_clipModelID;
 @property(readonly) HMBLocalZone *localZone; // @synthesize localZone=_localZone;
+@property(retain) NSUUID *clipModelID; // @synthesize clipModelID=_clipModelID;
 @property __weak id <HMDCameraRecordingUploaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property double targetFragmentDuration; // @synthesize targetFragmentDuration=_targetFragmentDuration;
 @property(copy) NSData *videoInitData; // @synthesize videoInitData=_videoInitData;
@@ -50,7 +52,7 @@
 - (id)_addOperation:(id)arg1 finalizeClipOnError:(_Bool)arg2;
 - (void)_createClipModel:(id)arg1;
 - (id)finish;
-- (id)addNotificationWithType:(unsigned long long)arg1 heroFrameData:(id)arg2 offset:(double)arg3 homePresenceByPairingIdentity:(id)arg4;
+- (id)addNotificationWithType:(unsigned long long)arg1 dateOfOccurrence:(id)arg2 heroFrameData:(id)arg3 offset:(double)arg4 homePresenceByPairingIdentity:(id)arg5;
 - (id)addPosterFrameData:(id)arg1 offset:(double)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4;
 - (id)addVideoSegmentData:(id)arg1 startDate:(id)arg2 duration:(double)arg3;
 - (id)addVideoInitData:(id)arg1;

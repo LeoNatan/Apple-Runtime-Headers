@@ -6,20 +6,26 @@
 
 #import <VideosUI/VUIAction.h>
 
-@class NSString, NSURL, VUIContentMetadata, WLKChannelDetails;
+@class IKAppContext, NSString, NSURL, VUIContentMetadata, WLKChannelDetails;
 
 __attribute__((visibility("hidden")))
 @interface VUIActionPunchout : VUIAction
 {
     _Bool _isEntitledToPlay;
+    _Bool _isPlaybackURL;
     NSURL *_punchoutURL;
     WLKChannelDetails *_channelDetails;
     VUIContentMetadata *_contentMetadata;
     NSString *_externalID;
     NSString *_referenceID;
     NSString *_canonicalID;
+    NSString *_contentTitle;
+    IKAppContext *_appContext;
 }
 
+@property(retain, nonatomic) IKAppContext *appContext; // @synthesize appContext=_appContext;
+@property(copy, nonatomic) NSString *contentTitle; // @synthesize contentTitle=_contentTitle;
+@property(nonatomic) _Bool isPlaybackURL; // @synthesize isPlaybackURL=_isPlaybackURL;
 @property(retain, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 @property(retain, nonatomic) NSString *referenceID; // @synthesize referenceID=_referenceID;
 @property(retain, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
@@ -34,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)_openAirplayPicker:(CDUnknownBlockType)arg1;
 - (void)_startAppInstallFlow:(CDUnknownBlockType)arg1;
 - (void)performWithTargetResponder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)initWithContextData:(id)arg1;
+- (id)initWithContextData:(id)arg1 appContext:(id)arg2;
 
 @end
 

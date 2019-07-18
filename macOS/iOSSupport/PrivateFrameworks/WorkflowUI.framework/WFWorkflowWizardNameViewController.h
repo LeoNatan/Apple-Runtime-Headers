@@ -14,7 +14,6 @@
 
 @interface WFWorkflowWizardNameViewController : UITableViewController <WFWorkflowWizardNameCellDelegate, WFWorkflowWizardFooterViewDelegate>
 {
-    BOOL _dismissWasInvoked;
     id <WFWorkflowWizardNameViewControllerDelegate> _delegate;
     WFWorkflow *_workflow;
     WFWorkflowWizardNameConfiguration *_configuration;
@@ -22,7 +21,6 @@
     WFIconComposeViewController *_iconComposeViewController;
 }
 
-@property(nonatomic) BOOL dismissWasInvoked; // @synthesize dismissWasInvoked=_dismissWasInvoked;
 @property(nonatomic) __weak WFIconComposeViewController *iconComposeViewController; // @synthesize iconComposeViewController=_iconComposeViewController;
 @property(retain, nonatomic) NSString *updatedName; // @synthesize updatedName=_updatedName;
 @property(retain, nonatomic) WFWorkflowWizardNameConfiguration *configuration; // @synthesize configuration=_configuration;

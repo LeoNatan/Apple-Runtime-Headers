@@ -11,7 +11,7 @@
 @interface _TtC15HealthRecordsUI22SettingsViewController : HKTableViewController <HKHealthRecordsStoreAccountStateChangeListener>
 {
     // Error parsing type: , name: accounts
-    // Error parsing type: , name: sources
+    // Error parsing type: , name: appSourceModels
     // Error parsing type: , name: sourceLoadingToken
     // Error parsing type: , name: accountLoadingToken
     // Error parsing type: , name: factory
@@ -21,7 +21,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithStyle:(long long)arg1;
+- (id)initWithUsingInsetStyling:(_Bool)arg1;
 - (void)healthRecordsStore:(id)arg1 accountDidChange:(id)arg2 changeType:(long long)arg3;
+- (void)tapToRadar:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
@@ -30,6 +32,8 @@
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)closeButtonTapped;
+- (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;

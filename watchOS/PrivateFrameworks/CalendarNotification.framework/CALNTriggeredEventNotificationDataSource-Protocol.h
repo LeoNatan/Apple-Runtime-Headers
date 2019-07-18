@@ -12,8 +12,11 @@
 - (void)didDismissUINotification:(unsigned int)arg1 forPlannedDestination:(GEOPlannedDestination *)arg2 dismissalType:(unsigned int)arg3;
 - (void)sendFeedbackForAddedLeaveNowNotificationWithSourceClientIdentifier:(NSString *)arg1;
 - (void)sendFeedbackForAddedTravelAdvisoryNotificationWithSourceClientIdentifier:(NSString *)arg1 hypothesis:(EKTravelEngineHypothesis *)arg2 travelAdvisoryTimelinessPeriod:(unsigned int)arg3;
+- (void)ceaseRouteMonitoringEventWithEventID:(NSString *)arg1;
 - (void)ceaseRouteMonitoringEventForSourceClientIdentifier:(NSString *)arg1;
+- (void)removeTimeToLeaveRefreshTimerForEventID:(NSString *)arg1;
 - (void)removeTimeToLeaveRefreshTimerForSourceClientIdentifier:(NSString *)arg1;
+- (void)setUpTimeToLeaveRefreshTimerWithTriggerDate:(NSDate *)arg1 eventID:(NSString *)arg2;
 - (void)setUpTimeToLeaveRefreshTimerWithTriggerDate:(NSDate *)arg1 sourceClientIdentifier:(NSString *)arg2;
 - (NSString *)eventObjectIDForEventID:(NSURL *)arg1;
 - (void)handleMailOrganizerActionWithSourceClientIdentifier:(NSString *)arg1 hypothesis:(EKTravelEngineHypothesis *)arg2;
@@ -21,6 +24,9 @@
 - (void)handleDirectionsActionWithSourceClientIdentifier:(NSString *)arg1 hypothesis:(EKTravelEngineHypothesis *)arg2 lastFireTimeOfAlertOffsetFromTravelTime:(NSDate *)arg3;
 - (void)snoozeEventWithSourceClientIdentifier:(NSString *)arg1;
 - (void)acknowledgeEventWithSourceClientIdentifier:(NSString *)arg1 shouldMarkAsHavingReceivedLocation:(_Bool)arg2;
+- (NSDate *)notificationExpirationDateForEventID:(NSString *)arg1 alarmID:(NSString *)arg2;
+- (_Bool)shouldRemoveTimeToLeaveRefreshTimerWithRefreshDate:(NSDate *)arg1 eventID:(NSString *)arg2;
+- (_Bool)shouldRemoveNotificationMetaDataWithEventID:(NSString *)arg1;
 - (_Bool)shouldWithdrawNotificationWithSourceClientIdentifier:(NSString *)arg1;
 - (CALNTriggeredEventNotificationInfo *)fetchTriggeredEventNotificationInfoWithSourceClientIdentifier:(NSString *)arg1 isProtectedDataAvailable:(_Bool)arg2;
 @end

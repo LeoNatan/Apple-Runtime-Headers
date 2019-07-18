@@ -19,7 +19,8 @@
 - (_Bool)widgetDiscoveryControllerShouldRespectFavorites:(WGWidgetDiscoveryController *)arg1;
 - (void)widgetDiscoveryController:(WGWidgetDiscoveryController *)arg1 requestUnlockWithCompletion:(void (^)(_Bool))arg2;
 - (void)widgetDiscoveryController:(WGWidgetDiscoveryController *)arg1 didEndUsingStatusBarAssertion:(id)arg2;
-- (id)whiteStatusBarAssertionForWidgetDiscoveryController:(WGWidgetDiscoveryController *)arg1;
+- (void)widgetDiscoveryController:(WGWidgetDiscoveryController *)arg1 updateStatusBarAssertion:(id)arg2 withLegibilityStyle:(long long)arg3;
+- (id)statusBarAssertionForWidgetDiscoveryController:(WGWidgetDiscoveryController *)arg1 legibilityStyle:(long long)arg2;
 - (_Bool)didPurgeNonASTCSnapshotsForWidgetDiscoveryController:(WGWidgetDiscoveryController *)arg1;
 - (_Bool)didPurgeNonCAMLSnapshotsForWidgetDiscoveryController:(WGWidgetDiscoveryController *)arg1;
 - (_Bool)widgetDiscoveryController:(WGWidgetDiscoveryController *)arg1 shouldPurgeArchivedSnapshotsForWidgetWithBundleIdentifier:(NSString *)arg2;

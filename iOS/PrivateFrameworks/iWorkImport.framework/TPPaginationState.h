@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)backUpToPageIndexPath:(id)arg1 documentPageIndex:(unsigned long long)arg2;
 - (void)restartPaginationFromFirstPage;
 - (void)restartPaginationFromPageIndexPath:(id)arg1 documentPageIndex:(unsigned long long)arg2;
+- (struct _NSRange)footnoteRangeInBodyTextRange:(struct _NSRange)arg1;
 - (_Bool)isPaginationCompleteUpToDocumentPageIndex:(unsigned long long)arg1;
 - (_Bool)isPaginationCompleteThroughDocumentPageIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool isPaginationComplete;

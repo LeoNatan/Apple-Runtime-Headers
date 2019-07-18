@@ -9,6 +9,7 @@
 @class MapsSuggestionsShortcut;
 
 @protocol MapsSuggestionsShortcutStorage <MapsSuggestionsObject>
+- (void)setChangeHandler:(void (^)(void))arg1;
 - (_Bool)moveShortcut:(MapsSuggestionsShortcut *)arg1 toIndex:(long long)arg2 handler:(void (^)(_Bool))arg3;
 - (_Bool)removeShortcuts:(struct NSArray *)arg1 handler:(void (^)(_Bool))arg2;
 - (_Bool)addOrUpdateShortcuts:(struct NSArray *)arg1 handler:(void (^)(_Bool))arg2;

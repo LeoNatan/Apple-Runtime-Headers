@@ -15,6 +15,7 @@
 {
     _Bool _bodyTruncated;
     _Bool _doNotSendBody;
+    _Bool _isOrganizerUpdate;
     _Bool _calculateNextStatusAsIfMeetingRequest;
     _Bool _shouldUpdateStatus;
     _Bool _cachedOrganizerIsSelf;
@@ -76,6 +77,7 @@
 @property(nonatomic) _Bool shouldUpdateStatus; // @synthesize shouldUpdateStatus=_shouldUpdateStatus;
 @property(nonatomic) _Bool calculateNextStatusAsIfMeetingRequest; // @synthesize calculateNextStatusAsIfMeetingRequest=_calculateNextStatusAsIfMeetingRequest;
 @property(nonatomic) int meetingResponseToEmailAbout; // @synthesize meetingResponseToEmailAbout=_meetingResponseToEmailAbout;
+@property(nonatomic) _Bool isOrganizerUpdate; // @synthesize isOrganizerUpdate=_isOrganizerUpdate;
 @property(retain, nonatomic) NSDate *proposedEndTime; // @synthesize proposedEndTime=_proposedEndTime;
 @property(retain, nonatomic) NSDate *proposedStartTime; // @synthesize proposedStartTime=_proposedStartTime;
 @property(retain, nonatomic) NSString *responseComment; // @synthesize responseComment=_responseComment;

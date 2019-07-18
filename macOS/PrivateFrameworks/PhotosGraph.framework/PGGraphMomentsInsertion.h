@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) NSSet *momentLocalIdentifiers; // @synthesize momentLocalIdentifiers=_momentLocalIdentifiers;
 - (void).cxx_destruct;
 - (id)description;
+- (unsigned long long)changeCount;
 - (unsigned long long)type;
 - (id)initWithMoments:(id)arg1;
 - (id)initWithMomentLocalIdentifiers:(id)arg1;

@@ -8,7 +8,6 @@
 
 #import <IconServices/ISCompositorRecipe-Protocol.h>
 
-__attribute__((visibility("hidden")))
 @interface ISiosDocumentRecipe : NSObject <ISCompositorRecipe>
 {
     unsigned long long _options;

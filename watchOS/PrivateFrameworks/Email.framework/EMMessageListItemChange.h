@@ -14,6 +14,8 @@
 
 @interface EMMessageListItemChange : NSObject <EFPubliclyDescribable, NSSecureCoding>
 {
+    NSArray *_mailboxObjectIDs;
+    NSArray *_mailboxes;
     _Bool _isToMe;
     _Bool _isCCMe;
     NSDate *_date;
@@ -31,7 +33,6 @@
     NSNumber *_conversationNotificationLevel;
     NSNumber *_count;
     NSNumber *_conversationID;
-    NSArray *_mailboxObjectIDs;
     id <EMCollectionItemID> _displayMessageItemID;
 }
 
@@ -40,7 +41,6 @@
 + (id)changeForKeyPaths:(id)arg1 ofItem:(id)arg2;
 + (id)changeFrom:(id)arg1 to:(id)arg2;
 @property(retain, nonatomic) id <EMCollectionItemID> displayMessageItemID; // @synthesize displayMessageItemID=_displayMessageItemID;
-@property(copy, nonatomic) NSArray *mailboxObjectIDs; // @synthesize mailboxObjectIDs=_mailboxObjectIDs;
 @property(retain, nonatomic) NSNumber *conversationID; // @synthesize conversationID=_conversationID;
 @property(retain, nonatomic) NSNumber *count; // @synthesize count=_count;
 @property(retain, nonatomic) NSNumber *conversationNotificationLevel; // @synthesize conversationNotificationLevel=_conversationNotificationLevel;
@@ -63,6 +63,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)applyToMessageListItem:(id)arg1;
 - (void)addChange:(id)arg1;
+@property(copy, nonatomic) NSArray *mailboxes;
+@property(copy, nonatomic) NSArray *mailboxObjectIDs;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)_changeDescriptionsForDebug:(_Bool)arg1;

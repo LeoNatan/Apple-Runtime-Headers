@@ -78,6 +78,7 @@
 @property(nonatomic) _Bool hasDuration;
 @property(nonatomic) _Bool hasType;
 @property(readonly, nonatomic) _Bool hasSample;
+- (_Bool)isAmm;
 
 @end
 

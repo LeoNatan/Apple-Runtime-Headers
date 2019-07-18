@@ -28,7 +28,8 @@
 - (void)setCallCapability:(int)arg1;
 @property(readonly, nonatomic) int callCapability;
 @property(nonatomic, setter=setTTYType:) int ttyType;
-@property(nonatomic) int recordTypeForRedialing;
+- (void)setRecordTypeForRedialing:(int)arg1;
+@property(readonly, nonatomic) int recordTypeForRedialing;
 - (void)setContacts:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *contacts;
 @property(nonatomic) int preferredCallProvider;
@@ -36,13 +37,15 @@
 @property(readonly, nonatomic) int destinationType;
 - (void)setAudioRoute:(int)arg1;
 @property(readonly, nonatomic) int audioRoute;
+- (id)_emptyCopy;
 - (id)initWithAudioRoute:(int)arg1 destinationType:(int)arg2 preferredCallProvider:(int)arg3 contacts:(id)arg4 recordTypeForRedialing:(int)arg5 ttyType:(int)arg6 callCapability:(int)arg7;
-- (id)initWithAudioRoute:(int)arg1 destinationType:(int)arg2 contacts:(id)arg3 callCapability:(int)arg4;
+- (id)initWithAudioRoute:(int)arg1 destinationType:(int)arg2 contacts:(id)arg3 recordTypeForRedialing:(int)arg4 callCapability:(int)arg5;
 - (id)_categoryVerb;
 - (int)_intentCategory;
 - (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
+- (id)initWithAudioRoute:(int)arg1 destinationType:(int)arg2 contacts:(id)arg3 callCapability:(int)arg4;
 - (id)initWithDestinationType:(int)arg1 contacts:(id)arg2 callCapability:(int)arg3;
 
 // Remaining properties

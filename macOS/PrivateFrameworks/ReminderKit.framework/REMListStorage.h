@@ -25,6 +25,7 @@
     BOOL _daIsReadOnly;
     BOOL _daIsImmutable;
     BOOL _daIsNotificationsCollection;
+    BOOL _isPlaceholder;
     NSString *externalIdentifier;
     NSString *externalModificationTag;
     NSString *daSyncToken;
@@ -57,6 +58,7 @@
 + (id)objectIDWithUUID:(id)arg1;
 + (id)newObjectID;
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL isPlaceholder; // @synthesize isPlaceholder=_isPlaceholder;
 @property(nonatomic) BOOL daIsNotificationsCollection; // @synthesize daIsNotificationsCollection=_daIsNotificationsCollection;
 @property(nonatomic) BOOL daIsImmutable; // @synthesize daIsImmutable=_daIsImmutable;
 @property(nonatomic) BOOL daIsReadOnly; // @synthesize daIsReadOnly=_daIsReadOnly;
@@ -90,6 +92,7 @@
 @property(copy, nonatomic) NSString *externalIdentifier; // @synthesize externalIdentifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
+@property(readonly, nonatomic) NSString *displayName;
 - (id)reminderIDsMergeableOrdering;
 - (id)ekColor;
 - (id)debugDescription;

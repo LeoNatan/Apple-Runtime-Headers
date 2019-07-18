@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)labelWithTitle:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithVenueContents:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

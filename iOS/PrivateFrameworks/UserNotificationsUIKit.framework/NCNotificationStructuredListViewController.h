@@ -63,7 +63,9 @@
 - (void)notificationMasterList:(id)arg1 scrollViewWillEndDragging:(id)arg2 withVelocity:(struct CGPoint)arg3 targetContentOffset:(inout struct CGPoint *)arg4;
 - (void)notificationMasterList:(id)arg1 scrollViewDidScroll:(id)arg2;
 - (void)notificationMasterList:(id)arg1 scrollViewWillBeginDragging:(id)arg2;
+- (_Bool)notificationListComponentShouldAllowLongPressGesture:(id)arg1;
 - (void)notificationListComponentChangedContent:(id)arg1;
+- (void)notificationMasterListDidScrollToRevealNotificationHistory:(id)arg1;
 - (id)backgroundGroupNameBaseForNotificationListComponent:(id)arg1;
 - (id)settleHomeAffordanceAnimationBehaviorDescriptionForNotificationListComponent:(id)arg1;
 - (id)unhideHomeAffordanceAnimationSettingsForNotificationListComponent:(id)arg1;
@@ -90,7 +92,7 @@
 - (void)notificationMasterList:(id)arg1 requestsClearingFromIncomingSectionNotificationRequests:(id)arg2;
 - (_Bool)notificationListComponentShouldHintForDefaultAction:(id)arg1;
 - (void)notificationListComponent:(id)arg1 isPresentingLongLookForViewController:(id)arg2;
-- (void)notificationListComponent:(id)arg1 shouldFinishLongLookTransitionForNotificationRequest:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
+- (void)notificationListComponent:(id)arg1 shouldFinishLongLookTransitionForNotificationRequest:(id)arg2 trigger:(long long)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
 - (_Bool)notificationListComponent:(id)arg1 shouldAllowInteractionsForNotificationRequest:(id)arg2;
 - (double)insetHorizontalMarginForNotificationListComponent:(id)arg1;
 - (id)containerViewForPreviewInteractionPresentedContentForNotificationListComponent:(id)arg1;
@@ -121,6 +123,7 @@
 - (void)modifyNotificationRequest:(id)arg1;
 - (void)removeNotificationRequest:(id)arg1;
 - (void)insertNotificationRequest:(id)arg1;
+- (void)_didChangeDeepestUnambiguousResponder;
 - (_Bool)_canShowWhileLocked;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;

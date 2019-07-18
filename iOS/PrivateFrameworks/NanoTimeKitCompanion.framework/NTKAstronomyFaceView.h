@@ -108,6 +108,7 @@
 - (void)_layoutForegroundContainerView;
 - (_Bool)_needsForegroundContainerView;
 - (void)_loadSnapshotContentViews;
+- (void)_finalizeForSnapshotting:(CDUnknownBlockType)arg1;
 - (void)_applyDataModeAnimated:(_Bool)arg1;
 - (void)_applyDataMode;
 - (void)astronomyVistaViewContentsAnimationFinished:(id)arg1;

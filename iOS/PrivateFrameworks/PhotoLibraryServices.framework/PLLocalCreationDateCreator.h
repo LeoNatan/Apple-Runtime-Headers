@@ -6,16 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class PLTimeZoneLookup;
+@class PFTimeZoneLookup;
 
 @interface PLLocalCreationDateCreator : NSObject
 {
-    PLTimeZoneLookup *_timeZoneLookup;
+    PFTimeZoneLookup *_timeZoneLookup;
 }
 
 + (void)initialize;
 + (id)_gmtTranslationDictionary;
-@property(readonly, nonatomic) PLTimeZoneLookup *timeZoneLookup; // @synthesize timeZoneLookup=_timeZoneLookup;
+@property(readonly, nonatomic) PFTimeZoneLookup *timeZoneLookup; // @synthesize timeZoneLookup=_timeZoneLookup;
 - (void).cxx_destruct;
 - (id)generateInferredTimeZoneOffsetForAsset:(id)arg1;
 - (id)init;

@@ -9,7 +9,7 @@
 @class PLPhotoLibraryBundle;
 
 @protocol PLBackgroundJobLibraryCoordinatorDelegate <NSObject>
-- (void)libraryCoordinatorFinishedJobsOnAllBundles;
-- (void)libraryCoordinatorFinishedJobOnBundle:(PLPhotoLibraryBundle *)arg1 priority:(unsigned long long)arg2;
+- (void)libraryCoordinatorFinishedJobsOnAllSubmittedBundles;
+- (void)libraryCoordinatorFinishedJobsOnSubmittedBundle:(PLPhotoLibraryBundle *)arg1 priority:(unsigned long long)arg2;
 @end
 

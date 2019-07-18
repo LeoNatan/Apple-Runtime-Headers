@@ -14,5 +14,6 @@
 
 @optional
 + (_Bool)useDefaultSelectionBehavior;
+@property(nonatomic, getter=isCellEnabled) _Bool cellEnabled;
 @end
 

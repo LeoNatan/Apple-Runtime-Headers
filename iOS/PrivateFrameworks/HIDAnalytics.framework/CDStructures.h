@@ -9,9 +9,8 @@
 struct _HIDAnalyticsHistogramBucket;
 
 struct _HIDAnalyticsHistogramSegment {
-    long long _field1;
+    unsigned char _field1;
     struct _HIDAnalyticsHistogramBucket *_field2;
-    unsigned long long _field3;
 };
 
 struct _HIDAnalyticsHistogramSegmentConfig {

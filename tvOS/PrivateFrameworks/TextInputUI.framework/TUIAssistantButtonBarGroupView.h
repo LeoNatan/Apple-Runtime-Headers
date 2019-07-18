@@ -30,7 +30,7 @@
 - (void)_ensureVisibleButtonsForVisibleItems;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
-- (struct CGSize)_preferredSizeForItems:(id)arg1;
+- (struct CGSize)_preferredSizeForItems:(id)arg1 fittingWidth:(double)arg2;
 @property(readonly, nonatomic) _Bool containsFlexibleItems;
 - (id)_visibleItems;
 - (_Bool)_canBeCollapsed;

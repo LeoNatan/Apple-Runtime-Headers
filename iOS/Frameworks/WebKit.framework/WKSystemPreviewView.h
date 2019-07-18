@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     WKWebView *_webView;
 }
 
++ (_Bool)web_requiresCustomSnapshotting;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)provideDataForItem:(id)arg1;

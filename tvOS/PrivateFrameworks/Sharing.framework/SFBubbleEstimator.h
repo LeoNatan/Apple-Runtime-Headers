@@ -6,11 +6,15 @@
 
 #import <objc/NSObject.h>
 
+@class SFRSSIQueue;
+
 @interface SFBubbleEstimator : NSObject
 {
+    SFRSSIQueue *_rssiQueue;
     unsigned long long _thresholdStartTicks;
     _Bool _insideBubble;
     _Bool _insideBubbleWithThreshold;
+    _Bool _preventBoost;
     long long _rssiEnter;
     long long _rssiExit;
     double _thresholdSeconds;
@@ -21,8 +25,13 @@
 @property(nonatomic) double thresholdSeconds; // @synthesize thresholdSeconds=_thresholdSeconds;
 @property(nonatomic) long long rssiExit; // @synthesize rssiExit=_rssiExit;
 @property(nonatomic) long long rssiEnter; // @synthesize rssiEnter=_rssiEnter;
+@property(nonatomic) _Bool preventBoost; // @synthesize preventBoost=_preventBoost;
 @property(readonly, nonatomic) _Bool insideBubbleWithThreshold; // @synthesize insideBubbleWithThreshold=_insideBubbleWithThreshold;
 @property(readonly, nonatomic) _Bool insideBubble; // @synthesize insideBubble=_insideBubble;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) double velocitySmoothed;
+@property(readonly, nonatomic) double velocity;
+- (_Bool)shouldExpandBubble;
 - (long long)updateWithRSSI:(long long)arg1;
 - (void)reset;
 

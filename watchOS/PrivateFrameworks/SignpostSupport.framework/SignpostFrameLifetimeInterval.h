@@ -40,7 +40,9 @@
 @property(readonly, nonatomic) unsigned int frameSeed; // @synthesize frameSeed=_frameSeed;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) id <SignpostSupportTimeInterval> previousFrameOnScreenInterval;
+@property(readonly, nonatomic) id <SignpostSupportTimeInterval> userVisibleGlitchInterval;
 @property(readonly, nonatomic) id <SignpostSupportTimeInterval> frameOverrunInactiveDisplayInterval;
+- (id)_glitchIntervalWithRoundingUp:(_Bool)arg1;
 @property(readonly, nonatomic) id <SignpostSupportTimeInterval> frameOverrunInterval;
 - (unsigned long long)_overrunBeginMCT;
 @property(readonly, nonatomic) unsigned long long missedVBLCount;
@@ -51,6 +53,7 @@
 @property(readonly, nonatomic) _Bool renderIntervalIsLong;
 @property(readonly, nonatomic) _Bool hidLatencyIsLong;
 - (_Bool)_isLongMCT:(unsigned long long)arg1 expectedFrameLatency:(unsigned char)arg2;
+- (id)initWithInterval:(id)arg1 contextArray:(id)arg2 renderInterval:(id)arg3;
 - (id)initWithInterval:(id)arg1 contextArray:(id)arg2 hidLatencyInterval:(id)arg3 renderInterval:(id)arg4 frameLatencyInterval:(id)arg5;
 
 @end

@@ -14,29 +14,12 @@ __attribute__((visibility("hidden")))
 @interface CRTextRecognizerModelInput : NSObject <MLFeatureProvider>
 {
     MLMultiArray *_img_input;
-    MLMultiArray *_rnn_block1_bilstm_h_in;
-    MLMultiArray *_rnn_block1_bilstm_c_in;
-    MLMultiArray *_rnn_block1_bilstm_h_in_rev;
-    MLMultiArray *_rnn_block1_bilstm_c_in_rev;
-    MLMultiArray *_rnn_block2_bilstm_h_in;
-    MLMultiArray *_rnn_block2_bilstm_c_in;
-    MLMultiArray *_rnn_block2_bilstm_h_in_rev;
-    MLMultiArray *_rnn_block2_bilstm_c_in_rev;
 }
 
-@property(retain, nonatomic) MLMultiArray *rnn_block2_bilstm_c_in_rev; // @synthesize rnn_block2_bilstm_c_in_rev=_rnn_block2_bilstm_c_in_rev;
-@property(retain, nonatomic) MLMultiArray *rnn_block2_bilstm_h_in_rev; // @synthesize rnn_block2_bilstm_h_in_rev=_rnn_block2_bilstm_h_in_rev;
-@property(retain, nonatomic) MLMultiArray *rnn_block2_bilstm_c_in; // @synthesize rnn_block2_bilstm_c_in=_rnn_block2_bilstm_c_in;
-@property(retain, nonatomic) MLMultiArray *rnn_block2_bilstm_h_in; // @synthesize rnn_block2_bilstm_h_in=_rnn_block2_bilstm_h_in;
-@property(retain, nonatomic) MLMultiArray *rnn_block1_bilstm_c_in_rev; // @synthesize rnn_block1_bilstm_c_in_rev=_rnn_block1_bilstm_c_in_rev;
-@property(retain, nonatomic) MLMultiArray *rnn_block1_bilstm_h_in_rev; // @synthesize rnn_block1_bilstm_h_in_rev=_rnn_block1_bilstm_h_in_rev;
-@property(retain, nonatomic) MLMultiArray *rnn_block1_bilstm_c_in; // @synthesize rnn_block1_bilstm_c_in=_rnn_block1_bilstm_c_in;
-@property(retain, nonatomic) MLMultiArray *rnn_block1_bilstm_h_in; // @synthesize rnn_block1_bilstm_h_in=_rnn_block1_bilstm_h_in;
 @property(retain, nonatomic) MLMultiArray *img_input; // @synthesize img_input=_img_input;
 - (void).cxx_destruct;
 - (id)featureValueForName:(id)arg1;
 @property(readonly, nonatomic) NSSet *featureNames;
-- (id)initWithImg_input:(id)arg1 rnn_block1_bilstm_h_in:(id)arg2 rnn_block1_bilstm_c_in:(id)arg3 rnn_block1_bilstm_h_in_rev:(id)arg4 rnn_block1_bilstm_c_in_rev:(id)arg5 rnn_block2_bilstm_h_in:(id)arg6 rnn_block2_bilstm_c_in:(id)arg7 rnn_block2_bilstm_h_in_rev:(id)arg8 rnn_block2_bilstm_c_in_rev:(id)arg9;
 - (id)initWithImg_input:(id)arg1;
 
 @end

@@ -87,6 +87,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsActionRotationDirection;
 @property(readonly, nonatomic) _Bool supportsActionRotationAngle;
 @property(readonly, nonatomic) _Bool supportsTravelDistance;
+@property(readonly, nonatomic) _Bool supportsActionScale;
+@property(readonly, nonatomic) _Bool supportsOpacity;
 @property(readonly, nonatomic) _Bool supportsCustomScale;
 @property(readonly, nonatomic) _Bool supportsScaleAmount;
 @property(readonly, nonatomic) _Bool supportsShine;

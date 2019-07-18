@@ -9,16 +9,15 @@
 #import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, UIBezierPath, UIColor, UIDragPreviewParameters;
+@class UIBezierPath, UIColor, UIDragPreviewParameters;
 
 @interface _DUIPreview : NSObject <NSSecureCoding, NSCopying>
 {
-    BOOL _springboardPlatterStyle;
     BOOL _fadesHorizontally;
     BOOL _fadesVertically;
     BOOL _hidesSourceView;
     BOOL _avoidAnimation;
-    NSDictionary *_springboardParameters;
+    BOOL _wantsSuppressedMask;
     UIColor *_backgroundColor;
     UIBezierPath *_outline;
     double _originalRotation;
@@ -34,6 +33,7 @@
 + (id)defaultPreviewWithFrame:(struct CGRect)arg1;
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) struct CGSize viewScaleFactor; // @synthesize viewScaleFactor=_viewScaleFactor;
+@property(nonatomic) BOOL wantsSuppressedMask; // @synthesize wantsSuppressedMask=_wantsSuppressedMask;
 @property(nonatomic) BOOL avoidAnimation; // @synthesize avoidAnimation=_avoidAnimation;
 @property(nonatomic) struct CGPoint liftAnchorPoint; // @synthesize liftAnchorPoint=_liftAnchorPoint;
 @property(nonatomic) long long previewMode; // @synthesize previewMode=_previewMode;
@@ -46,8 +46,6 @@
 @property(readonly, nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(readonly, nonatomic) struct CGPoint contentOffset; // @synthesize contentOffset=_contentOffset;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-@property(copy, nonatomic) NSDictionary *_springboardParameters; // @synthesize _springboardParameters;
-@property(nonatomic) BOOL _springboardPlatterStyle; // @synthesize _springboardPlatterStyle;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -55,6 +53,7 @@
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) struct CGSize croppedScaledSize;
 @property(readonly, nonatomic) struct CGPoint croppedScaledAnchorPoint;
+@property(readonly, nonatomic) BOOL _springboardPlatterStyle;
 @property(nonatomic) BOOL textMode;
 - (double)_topOffset;
 @property(readonly, nonatomic) struct CGSize unscaledSize;

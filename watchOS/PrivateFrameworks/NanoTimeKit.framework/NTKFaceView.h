@@ -250,6 +250,7 @@
 - (id)_complicationSlotsHiddenByCurrentConfiguration;
 - (id)_complicationSlotsHiddenByEditOption:(id)arg1;
 - (id)_editOptionThatHidesAllComplications;
+- (id)allVisibleComplicationsForCurrentConfiguration;
 - (void)_cleanupAfterTransitionComplicationSlot:(id)arg1 selectedComplication:(id)arg2;
 - (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
@@ -289,7 +290,7 @@
 - (void)_loadLayoutRules;
 - (id)_detachedComplicationDisplays;
 - (id)_customEditOptionContainerViewForSlot:(id)arg1;
-- (id)_curvedPickerMaskForSlot:(id)arg1;
+- (id)_pickerMaskForSlot:(id)arg1;
 - (void)_curvedComplicationCircleRadius:(float *)arg1 centerAngle:(float *)arg2 maxAngularWidth:(float *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(id)arg6;
 - (_Bool)_slotSupportsCurvedText:(id)arg1;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
@@ -318,6 +319,7 @@
 - (void)_reorderSwitcherSnapshotView;
 - (void)handleUnadornedSnapshotRemoved;
 - (void)loadContentToReplaceUnadornedSnapshot;
+- (void)_applyEditConfigurationsWithForce:(_Bool)arg1;
 - (void)_loadContentToReplaceUnadornedSnapshot;
 - (_Bool)_supportsUnadornedSnapshot;
 - (_Bool)supportsUnadornedSnapshot;
@@ -342,7 +344,7 @@
 - (struct UIEdgeInsets)keylineLabelActiveAreaInsetsForComplicationAtSlot:(id)arg1;
 - (struct CGRect)keylineFrameForComplicationSlot:(id)arg1 selected:(_Bool)arg2;
 - (id)customEditOptionContainerViewForSlot:(id)arg1;
-- (id)curvedPickerMaskForSlot:(id)arg1;
+- (id)pickerMaskForSlot:(id)arg1;
 - (void)curvedComplicationCircleRadius:(float *)arg1 centerAngle:(float *)arg2 maxAngularWidth:(float *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(id)arg6;
 - (_Bool)slotSupportsCurvedText:(id)arg1;
 - (id)layoutRuleForComplicationSlot:(id)arg1 inState:(int)arg2 layoutOverride:(int)arg3;

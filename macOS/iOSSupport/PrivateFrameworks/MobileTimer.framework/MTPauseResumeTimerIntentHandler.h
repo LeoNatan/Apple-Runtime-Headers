@@ -17,7 +17,6 @@
 
 - (id)_responseToResumeTimerIntent:(id)arg1 withResumedTimers:(id)arg2 error:(id)arg3 dryRun:(BOOL)arg4;
 - (id)_responseToPauseTimerIntent:(id)arg1 withPausedTimers:(id)arg2 error:(id)arg3 dryRun:(BOOL)arg4;
-- (BOOL)_isSleepTimer:(id)arg1;
 - (void)_handleResumeTimer:(id)arg1 dryRun:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)handleResumeTimer:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)confirmResumeTimer:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 - (id)_URLForDirectoryToWatch;
 - (BOOL)_isRelevantURL:(id)arg1;
 - (void)dealloc;
-- (id)_initWithDirectoryURL:(id)arg1 useSecurityScopedURL:(BOOL)arg2 prefix:(id)arg3 tags:(id)arg4;
+- (id)_initWithDirectoryURL:(id)arg1 useSecurityScopedURL:(BOOL)arg2 prefix:(id)arg3 tagNames:(id)arg4;
 
 @end
 

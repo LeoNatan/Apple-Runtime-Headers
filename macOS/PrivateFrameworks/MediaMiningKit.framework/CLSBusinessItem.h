@@ -19,12 +19,16 @@
     unsigned long long _muid;
     long long _venueCapacity;
     NSArray *_businessCategories;
+    NSString *_isoCountryCode;
+    NSString *_geoServiceProvider;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)_businessCategoriesFromGeoMapItems:(id)arg1;
 + (double)_defaultRadiusForCategories:(id)arg1;
 + (id)_regionFromMapItem:(id)arg1;
+@property(copy, nonatomic) NSString *geoServiceProvider; // @synthesize geoServiceProvider=_geoServiceProvider;
+@property(copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(copy, nonatomic) NSArray *businessCategories; // @synthesize businessCategories=_businessCategories;
 @property(nonatomic) long long venueCapacity; // @synthesize venueCapacity=_venueCapacity;
 @property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
@@ -39,7 +43,7 @@
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) BOOL isEnriched;
 - (id)initWithName:(id)arg1 region:(id)arg2 categories:(id)arg3;
-- (id)initFromMapItem:(id)arg1;
+- (id)initFromMapItem:(id)arg1 isoCountryCode:(id)arg2 categoryOnly:(BOOL)arg3;
 
 @end
 

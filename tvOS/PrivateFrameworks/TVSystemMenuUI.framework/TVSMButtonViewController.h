@@ -16,6 +16,7 @@
     id <TVSMModuleContentViewControllerDelegate> _delegate;
     long long _style;
     UIImage *_image;
+    NSString *_imageSymbolName;
     NSString *_titleText;
     NSString *_secondaryText;
     TVSMModuleButtonView *_buttonView;
@@ -24,6 +25,7 @@
 @property(readonly, nonatomic) TVSMModuleButtonView *buttonView; // @synthesize buttonView=_buttonView;
 @property(copy, nonatomic) NSString *secondaryText; // @synthesize secondaryText=_secondaryText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
+@property(copy, nonatomic) NSString *imageSymbolName; // @synthesize imageSymbolName=_imageSymbolName;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) __weak id <TVSMModuleContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

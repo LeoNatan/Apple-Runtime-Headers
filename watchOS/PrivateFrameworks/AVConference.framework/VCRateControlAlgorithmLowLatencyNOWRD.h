@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
     _Bool _isFirstTimestampArrived;
     _Bool _isNewRateSentOut;
     unsigned int _actualSendBitrate;
+    unsigned int _instantBitrate;
     unsigned int _fastRampDownBitrateRange;
     unsigned int _totalPacketReceived;
     unsigned int _mostBurstLoss;
@@ -117,10 +118,10 @@ __attribute__((visibility("hidden")))
 - (void)stateChangeTo:(int)arg1;
 - (void)resetRampingStatus;
 - (void)updateInternalStatus;
-- (void)updateSendBitrateAndCheckIdlePeriod:(unsigned int)arg1;
-- (_Bool)doRateControlWithNWConnectionStatistics:(CDStruct_b3eb8f4a)arg1;
-- (_Bool)doRateControlWithVCRCStatistics:(CDStruct_b3eb8f4a)arg1;
-- (_Bool)doRateControlWithStatistics:(CDStruct_b3eb8f4a)arg1;
+- (void)updateSendBitrateAndCheckIdlePeriod:(unsigned int)arg1 instantBitrate:(unsigned int)arg2;
+- (_Bool)doRateControlWithNWConnectionStatistics:(CDStruct_b21f1e06)arg1;
+- (_Bool)doRateControlWithVCRCStatistics:(CDStruct_b21f1e06)arg1;
+- (_Bool)doRateControlWithStatistics:(CDStruct_b21f1e06)arg1;
 - (void)enableBasebandDump:(void *)arg1;
 - (void)enableLogDump:(void *)arg1 enablePeriodicLogging:(_Bool)arg2;
 - (void)configure:(struct VCRateControlAlgorithmConfig)arg1 restartRequired:(_Bool)arg2;

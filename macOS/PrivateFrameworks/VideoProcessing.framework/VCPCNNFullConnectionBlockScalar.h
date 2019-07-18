@@ -12,7 +12,6 @@
 
 - (int)loadWeights:(struct __sFILE *)arg1 inputDim:(int)arg2 outputDim:(int)arg3 quantFactor:(int)arg4;
 - (int)forward;
-- (int)initializeRest;
 
 @end
 

@@ -11,6 +11,7 @@
     // Error parsing type: , name: store
     // Error parsing type: , name: hkType
     // Error parsing type: , name: hideShowAll
+    // Error parsing type: , name: collectionView
 }
 
 @end

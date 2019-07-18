@@ -15,6 +15,7 @@
     CKContainer *_secureContainer;
     CKContainer *_secureContainerWithZoneWidePCS;
     BOOL _useSecureContainer;
+    BOOL _disableDeviceToDeviceEncryption;
     NSString *_accountIdentifier;
 }
 
@@ -24,6 +25,7 @@
 + (long long)defaultEnvironment;
 + (BOOL)hasCloudKitEntitlement;
 + (BOOL)useLongLivedOperations;
+@property(nonatomic) BOOL disableDeviceToDeviceEncryption; // @synthesize disableDeviceToDeviceEncryption=_disableDeviceToDeviceEncryption;
 @property(retain, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(nonatomic) BOOL useSecureContainer; // @synthesize useSecureContainer=_useSecureContainer;
 - (void).cxx_destruct;

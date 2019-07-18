@@ -12,6 +12,10 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: titleLabel
     // Error parsing type: , name: titleContainerView
     // Error parsing type: , name: subtitleLabel
+    // Error parsing type: , name: likeButton
+    // Error parsing type: , name: dislikeButton
+    // Error parsing type: , name: navigateToChannelAction
+    // Error parsing type: , name: debugFeedAction
 }
 
 - (void).cxx_destruct;

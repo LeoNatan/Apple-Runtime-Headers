@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
-+ (struct CGAffineTransform)p_textureRenderTransformRelativeToTextureRect:(struct CGRect)arg1 forRep:(id)arg2 isMagicMove:(_Bool)arg3;
-+ (struct CGRect)p_textureRectForRep:(id)arg1 isMagicMove:(_Bool)arg2;
-+ (struct CGAffineTransform)p_textureLayoutTransformInRootForRep:(id)arg1 isMagicMove:(_Bool)arg2;
++ (struct CGAffineTransform)p_textureRenderTransformRelativeToTextureRect:(struct CGRect)arg1 forLayout:(id)arg2 viewScale:(double)arg3 isMagicMove:(_Bool)arg4;
++ (struct CGRect)p_textureRectForLayout:(id)arg1 viewScale:(double)arg2 isMagicMove:(_Bool)arg3;
++ (struct CGAffineTransform)p_textureLayoutTransformInRootForLayout:(id)arg1 isMagicMove:(_Bool)arg2;
 @property(readonly, nonatomic) TSWPRep *captionRep; // @synthesize captionRep=_captionRep;
 - (void).cxx_destruct;
 - (void)p_announceNewItemForAccessibilityIfNeeded;

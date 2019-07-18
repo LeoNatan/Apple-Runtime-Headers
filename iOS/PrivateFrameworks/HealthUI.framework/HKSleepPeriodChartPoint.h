@@ -23,9 +23,9 @@
 
 @property(retain, nonatomic) HKSleepChartPointUserInfo *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
-@property(retain, nonatomic) NSNumber *lowerGoal; // @synthesize lowerGoal=_lowerGoal;
-@property(retain, nonatomic) NSNumber *upperGoal; // @synthesize upperGoal=_upperGoal;
-@property(retain, nonatomic) NSDate *xValue; // @synthesize xValue=_xValue;
+@property(copy, nonatomic) NSNumber *lowerGoal; // @synthesize lowerGoal=_lowerGoal;
+@property(copy, nonatomic) NSNumber *upperGoal; // @synthesize upperGoal=_upperGoal;
+@property(copy, nonatomic) NSDate *xValue; // @synthesize xValue=_xValue;
 @property(retain, nonatomic) NSArray *inBedOffsets; // @synthesize inBedOffsets=_inBedOffsets;
 @property(retain, nonatomic) NSArray *asleepOffsets; // @synthesize asleepOffsets=_asleepOffsets;
 - (void).cxx_destruct;

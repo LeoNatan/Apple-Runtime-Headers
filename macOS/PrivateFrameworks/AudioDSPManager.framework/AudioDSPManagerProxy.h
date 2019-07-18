@@ -10,6 +10,7 @@
 #import <AudioDSPManager/dspd_DSPDelegate-Protocol.h>
 
 @class AudioDSPManager, AudioHistoryObject, NSString;
+@protocol AudioDSPManagerProxyDelegate;
 
 __attribute__((visibility("hidden")))
 @interface AudioDSPManagerProxy : NSObject <AudioHistoryObjectDelegate, dspd_DSPDelegate>
@@ -17,9 +18,11 @@ __attribute__((visibility("hidden")))
     AudioDSPManager *_audioDSPManager;
     AudioHistoryObject *_audioHistory;
     struct mutex _mutex;
+    id <AudioDSPManagerProxyDelegate> _delegate;
 }
 
 + (id)deserializeStateForAudioHistorySystem:(id)arg1 fromData:(id)arg2;
+@property(nonatomic) __weak id <AudioDSPManagerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)simulateAudioHistoryEventForSystem:(id)arg1 withType:(id)arg2 andPayload:(id)arg3;
@@ -62,8 +65,8 @@ __attribute__((visibility("hidden")))
 - (expected_af0f637c)simulateConfigurationChanges:(const vector_d47d98e2 *)arg1;
 - (expected_af0f637c)simulateConfigurationChange:(id)arg1;
 - (expected_025c1a52)configurationChangeComplete:(int)arg1 dspMutation:(function_71b6729b)arg2;
-- (expected_6c7599df)adaptToConfigurationChanges:(const vector_d47d98e2 *)arg1;
-- (expected_6c7599df)adaptToConfigurationChange:(id)arg1;
+- (expected_0910f26e)adaptToConfigurationChanges:(const vector_d47d98e2 *)arg1;
+- (expected_0910f26e)adaptToConfigurationChange:(id)arg1;
 - (expected_2b9a0a05)negotiateConfigurationChanges:(const vector_d47d98e2 *)arg1;
 - (expected_2b9a0a05)negotiateConfigurationChange:(id)arg1;
 - (id)supportedPublicStreamFormatRequest;
@@ -71,6 +74,7 @@ __attribute__((visibility("hidden")))
 - (id)activationChangeRequestWithSession:(unsigned int)arg1;
 - (id)initWithAudioDSPManager:(id)arg1;
 - (id)init;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

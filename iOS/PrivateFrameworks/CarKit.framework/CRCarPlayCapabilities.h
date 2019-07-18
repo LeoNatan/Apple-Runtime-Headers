@@ -6,29 +6,26 @@
 
 #import <objc/NSObject.h>
 
-#import <CarKit/NSSecureCoding-Protocol.h>
-
 @class NSValue;
 
-@interface CRCarPlayCapabilities : NSObject <NSSecureCoding>
+@interface CRCarPlayCapabilities : NSObject
 {
-    unsigned long long _nowPlayingAlbumArtMode;
+    long long _nowPlayingAlbumArtMode;
     NSValue *_viewAreaInsets;
     NSValue *_dashboardRoundedCorners;
     long long _userInterfaceStyle;
 }
 
++ (id)newCapabilitiesFromGlobalDomain;
 + (id)fetchCarCapabilities;
-+ (void)fetchCarCapabilities:(CDUnknownBlockType)arg1;
-+ (_Bool)canFetchCarCapabilities;
-+ (_Bool)supportsSecureCoding;
 @property(nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(retain, nonatomic) NSValue *dashboardRoundedCorners; // @synthesize dashboardRoundedCorners=_dashboardRoundedCorners;
 @property(retain, nonatomic) NSValue *viewAreaInsets; // @synthesize viewAreaInsets=_viewAreaInsets;
-@property(nonatomic) unsigned long long nowPlayingAlbumArtMode; // @synthesize nowPlayingAlbumArtMode=_nowPlayingAlbumArtMode;
+@property(nonatomic) long long nowPlayingAlbumArtMode; // @synthesize nowPlayingAlbumArtMode=_nowPlayingAlbumArtMode;
 - (void).cxx_destruct;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (void)persistCapabilitiesToGlobalDomain;
+- (id)dictionaryRepresentation;
+- (id)initWithDictionaryRepresentation:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToCapabilities:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

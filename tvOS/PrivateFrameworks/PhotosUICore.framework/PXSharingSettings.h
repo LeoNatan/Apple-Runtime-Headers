@@ -30,7 +30,8 @@
     _Bool _simulatePhotoRemakingError;
     _Bool _simulateLivePhotoBundlingError;
     _Bool _simulateMismatchedExportCounts;
-    _Bool _alwaysShowGenericLocationString;
+    _Bool _showSingleVideoDurationInShareSheetHeader;
+    _Bool _showLivePhotoCountInShareSheetHeader;
     _Bool _showSecondaryActionSheet;
     _Bool _showGlobalLivenessExclusionSwitch;
     _Bool _showGlobalLocationExclusionSwitch;
@@ -54,6 +55,7 @@
     unsigned long long _maxMailPhotoLimit;
     unsigned long long _confidentialityWarningsVersion;
     long long _locationBakingComparisonStrategy;
+    long long _sharingHeaderLocationDisplayStyle;
 }
 
 + (id)sharedInstance;
@@ -68,7 +70,9 @@
 @property(nonatomic) _Bool showGlobalLocationExclusionSwitch; // @synthesize showGlobalLocationExclusionSwitch=_showGlobalLocationExclusionSwitch;
 @property(nonatomic) _Bool showGlobalLivenessExclusionSwitch; // @synthesize showGlobalLivenessExclusionSwitch=_showGlobalLivenessExclusionSwitch;
 @property(nonatomic) _Bool showSecondaryActionSheet; // @synthesize showSecondaryActionSheet=_showSecondaryActionSheet;
-@property(nonatomic) _Bool alwaysShowGenericLocationString; // @synthesize alwaysShowGenericLocationString=_alwaysShowGenericLocationString;
+@property(nonatomic) long long sharingHeaderLocationDisplayStyle; // @synthesize sharingHeaderLocationDisplayStyle=_sharingHeaderLocationDisplayStyle;
+@property(nonatomic) _Bool showLivePhotoCountInShareSheetHeader; // @synthesize showLivePhotoCountInShareSheetHeader=_showLivePhotoCountInShareSheetHeader;
+@property(nonatomic) _Bool showSingleVideoDurationInShareSheetHeader; // @synthesize showSingleVideoDurationInShareSheetHeader=_showSingleVideoDurationInShareSheetHeader;
 @property(nonatomic) _Bool simulateMismatchedExportCounts; // @synthesize simulateMismatchedExportCounts=_simulateMismatchedExportCounts;
 @property(nonatomic) _Bool simulateLivePhotoBundlingError; // @synthesize simulateLivePhotoBundlingError=_simulateLivePhotoBundlingError;
 @property(nonatomic) _Bool simulatePhotoRemakingError; // @synthesize simulatePhotoRemakingError=_simulatePhotoRemakingError;

@@ -6,11 +6,12 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class NSArray, NSString, UIColor, UIFont, UIImage, UIView;
+@class NSArray, NSString, UIColor, UIFont, UIImage, UIImageSymbolConfiguration, UIScreen, UITraitCollection, UIView;
 @protocol UITableConstants, UITableConstantsCellProviding, UITableConstantsHeaderFooterProviding, UITableConstantsTableProviding;
 
 @protocol UITableConstants <NSObject>
 + (id)sharedConstants;
+- (UIImageSymbolConfiguration *)defaultImageSymbolConfigurationForTraitCollection:(UITraitCollection *)arg1;
 - (double)defaultMaskGradientHeightForTableView:(id <UITableConstantsTableProviding>)arg1;
 - (double)defaultFocusedShadowRadiusForTableView:(id <UITableConstantsTableProviding>)arg1;
 - (double)defaultFocusedHorizontalOutsetForTableView:(id <UITableConstantsTableProviding>)arg1;
@@ -64,9 +65,12 @@
 - (double)defaultTrailingCellMarginWidthForTableView:(id <UITableConstantsTableProviding>)arg1;
 - (double)defaultLeadingCellMarginWidthForTableView:(id <UITableConstantsTableProviding>)arg1;
 - (double)defaultMarginWidthForTableView:(id <UITableConstantsTableProviding>)arg1;
+- (struct UIEdgeInsets)defaultLayoutMarginsForScreen:(UIScreen *)arg1 size:(struct CGSize)arg2;
 - (struct UIEdgeInsets)defaultLayoutMarginsForTableView:(id <UITableConstantsTableProviding>)arg1;
 - (double)defaultSectionFooterHeightForTableView:(id <UITableConstantsTableProviding>)arg1;
 - (double)defaultSectionHeaderHeightForTableView:(id <UITableConstantsTableProviding>)arg1;
+- (double)defaultSectionFooterHeightForTableViewStyle:(long long)arg1 screen:(UIScreen *)arg2;
+- (double)defaultSectionHeaderHeightForTableViewStyle:(long long)arg1 screen:(UIScreen *)arg2;
 - (BOOL)defaultRowHeightDependsOnCellStyle;
 - (double)defaultRowHeightForTableView:(id <UITableConstantsTableProviding>)arg1 cellStyle:(long long)arg2;
 - (double)defaultRowHeightForTableView:(id <UITableConstantsTableProviding>)arg1;

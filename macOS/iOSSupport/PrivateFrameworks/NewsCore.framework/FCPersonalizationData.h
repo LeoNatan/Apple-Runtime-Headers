@@ -64,7 +64,6 @@
 - (id)_instanceIdentifier;
 - (id)recordsForRestoringZoneName:(id)arg1;
 - (BOOL)canHelpRestoreZoneName:(id)arg1;
-- (id)allKnownRecordNames;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
 - (void)loadLocalCachesFromStore;
 - (void)syncWithCompletion:(CDUnknownBlockType)arg1;

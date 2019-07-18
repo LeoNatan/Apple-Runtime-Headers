@@ -31,8 +31,11 @@
 - (id)localizedStringForValue:(id)arg1 inPreference:(id)arg2;
 - (id)valuesForPreference:(id)arg1;
 - (id)preferences;
+- (void)_removePermissionsPassingTest:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removePermissionsAddedAfterDate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)removeTemporaryPermissionsAddedAfterDate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeAllPermissions;
+- (void)removeAllTemporaryPermissions;
 - (void)setDefaultGeolocationSetting:(long long)arg1;
 - (void)setGeolocationSetting:(long long)arg1 forDomain:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getGeolocationSettingForDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

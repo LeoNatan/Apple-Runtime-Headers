@@ -50,6 +50,7 @@
     BOOL _skipsBestOfPastUpgradeToFeaturedTrip;
     BOOL _skipsBlacklistedFeatureCheck;
     BOOL _isDryTesting;
+    BOOL _probabilityAlwaysPasses;
     unsigned long long _numberOfNewMemoriesForPeriodicity;
     unsigned long long _numberOfNewMemoriesForUserRequest;
     unsigned long long _minimumNumberOfAssetsForMomentMemory;
@@ -67,6 +68,7 @@
 + (void)computeMinimumNumbersOfAssetsWithCompletionBlock:(CDUnknownBlockType)arg1;
 + (unsigned long long)minimumNumberOfCuratedAssetsForMemories;
 + (double)computeBetaWithManager:(id)arg1;
+@property BOOL probabilityAlwaysPasses; // @synthesize probabilityAlwaysPasses=_probabilityAlwaysPasses;
 @property BOOL isDryTesting; // @synthesize isDryTesting=_isDryTesting;
 @property BOOL skipsBlacklistedFeatureCheck; // @synthesize skipsBlacklistedFeatureCheck=_skipsBlacklistedFeatureCheck;
 @property BOOL skipsBestOfPastUpgradeToFeaturedTrip; // @synthesize skipsBestOfPastUpgradeToFeaturedTrip=_skipsBestOfPastUpgradeToFeaturedTrip;
@@ -183,7 +185,7 @@
 - (BOOL)_wantsBestOfPastWithReason:(unsigned long long)arg1;
 - (BOOL)_doBestOfRandomYear;
 - (BOOL)_doYearSummaryWithLocalDate:(id)arg1;
-- (unsigned long long)_desireLevelForYearSummaryWithLocalDate:(id)arg1;
+- (unsigned long long)desireLevelForYearSummaryWithLocalDate:(id)arg1;
 - (BOOL)_doNearbyTodayWithLocalDate:(id)arg1 andLocation:(id)arg2;
 - (BOOL)_wantsNearbyTodayWithReason:(unsigned long long)arg1 location:(id)arg2;
 - (BOOL)_doDayInHistoryWithLocalDate:(id)arg1;

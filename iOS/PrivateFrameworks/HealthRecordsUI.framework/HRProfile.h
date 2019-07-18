@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class HKConceptStore, HKDateCache, HKHealthRecordsStore, HKHealthStore, HKMedicalRecordSearchController, HKSampleTypeUpdateController, HKUCUMUnitDisplayConverter, HRWDUserActivityManager, WDClinicalSampleAccountsLoader, WDClinicalSourcesDataProvider, WDMedicalRecordCountProvider;
+@class HKConceptStore, HKDateCache, HKHealthRecordsStore, HKHealthStore, HKSampleTypeUpdateController, HKUCUMUnitDisplayConverter, HRWDUserActivityManager, WDClinicalSampleAccountsLoader, WDClinicalSourcesDataProvider, WDMedicalRecordCountProvider;
 
 __attribute__((visibility("hidden")))
 @interface HRProfile : NSObject
@@ -20,11 +20,9 @@ __attribute__((visibility("hidden")))
     HKSampleTypeUpdateController *_updateController;
     HKDateCache *_dateCache;
     WDClinicalSampleAccountsLoader *_clinicalSampleAccountsLoader;
-    HKMedicalRecordSearchController *_recordSearchController;
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) HKMedicalRecordSearchController *recordSearchController; // @synthesize recordSearchController=_recordSearchController;
 @property(nonatomic) __weak WDClinicalSampleAccountsLoader *clinicalSampleAccountsLoader; // @synthesize clinicalSampleAccountsLoader=_clinicalSampleAccountsLoader;
 @property(readonly, nonatomic) HKDateCache *dateCache; // @synthesize dateCache=_dateCache;
 @property(readonly, nonatomic) HKSampleTypeUpdateController *updateController; // @synthesize updateController=_updateController;

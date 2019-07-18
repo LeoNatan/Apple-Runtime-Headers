@@ -191,7 +191,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <TabSnapshotVending> tabSnapshotVendor;
 - (void)_ensureTabSnapshotVendor;
 - (void)downloadsManager:(id)arg1 allowDownloadOnPage:(const struct Page *)arg2 originatingURL:(id)arg3 withDecisionHandler:(CDUnknownBlockType)arg4;
-- (BOOL)shouldAllowDownloadOnDomainNow:(id)arg1 originatingURL:(id)arg2 forBrowserViewController:(id)arg3 withDecisionHandler:(CDUnknownBlockType)arg4;
+- (void)shouldAllowDownloadOnDomain:(id)arg1 originatingURL:(id)arg2 forBrowserViewController:(id)arg3 withDecisionHandler:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) AutoplayQuirkWhitelistManager *autoplayQuirksWhitelistManager; // @synthesize autoplayQuirksWhitelistManager=_autoplayQuirksWhitelistManager;
 @property(readonly, nonatomic) AutoplayPreferenceManager *autoplayPreferenceManager; // @synthesize autoplayPreferenceManager=_autoplayPreferenceManager;
 @property(readonly, nonatomic) TemplateIconCache *templateIconCache;

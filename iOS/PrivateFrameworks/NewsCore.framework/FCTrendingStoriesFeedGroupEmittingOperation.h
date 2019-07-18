@@ -13,6 +13,7 @@
 
 @property(nonatomic) long long desiredArticlesCount; // @synthesize desiredArticlesCount=_desiredArticlesCount;
 - (id)_filterTrendingHeadlines:(id)arg1;
+- (void)_performOperation;
 - (void)performOperation;
 
 @end

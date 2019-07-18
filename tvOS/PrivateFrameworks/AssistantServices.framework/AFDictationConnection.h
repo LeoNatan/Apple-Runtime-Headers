@@ -40,6 +40,7 @@
 + (void)fetchSupportedLanguageCodes:(CDUnknownBlockType)arg1;
 + (_Bool)dictationIsSupportedForLanguageCode:(id)arg1 error:(id *)arg2;
 + (_Bool)dictationIsEnabled;
++ (_Bool)languageDetectorIsEnabled;
 + (void)getForcedOfflineDictationSupportedLanguagesWithCompletion:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <AFDictationDelegate> delegate; // @synthesize delegate=_delegate;
@@ -99,7 +100,7 @@
 - (void)_tellSpeechDelegateDidRecognizeTranscriptionObjects:(id)arg1 languageModel:(id)arg2;
 - (void)_tellSpeechDelegateDidProcessAudioDuration:(double)arg1;
 - (void)_tellSpeechDelegateDidRecognizeSpeechTokens:(id)arg1 languageModel:(id)arg2;
-- (void)_tellSpeechDelegateDidRecognizePartialResult:(id)arg1 usingSpeechModel:(id)arg2;
+- (void)_tellSpeechDelegateDidRecognizePartialResult:(id)arg1;
 - (void)_delegateDidRecognizeSpeechTokens:(id)arg1 languageModel:(id)arg2 delegate:(id)arg3;
 - (void)_tellSpeechDelegateDidRecognizeSpeechPhrases:(id)arg1 utterances:(id)arg2 languageModel:(id)arg3 correctionIdentifier:(id)arg4 audioAnalytics:(id)arg5;
 - (void)_tellSpeechDelegateDidRecognizePackage:(id)arg1;

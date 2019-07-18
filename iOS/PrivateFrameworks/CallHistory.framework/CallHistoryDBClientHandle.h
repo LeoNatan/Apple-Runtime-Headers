@@ -48,7 +48,6 @@
 - (_Bool)createCallRecord:(id)arg1 error:(id *)arg2 save:(_Bool)arg3;
 - (_Bool)createCallRecord:(id)arg1 error:(id *)arg2;
 - (_Bool)createCallRecord:(id)arg1;
-- (id)deleteWithPredicate:(id)arg1;
 - (_Bool)deleteObjectsWithUniqueIds:(id)arg1 error:(id *)arg2;
 - (_Bool)deleteObjectsWithUniqueIds:(id)arg1;
 - (_Bool)deleteObjectWithUniqueId:(id)arg1 error:(id *)arg2 save:(_Bool)arg3;
@@ -63,10 +62,12 @@
 - (id)fetchWithCallTypes:(unsigned int)arg1;
 - (id)fetchAllNoLimit;
 - (id)fetchAll;
+- (id)updateCallsWithPredicate:(id)arg1 propertiesToUpdate:(id)arg2 error:(id *)arg3;
 - (id)fetchCoalescedCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned long long)arg3 offset:(unsigned long long)arg4 batchSize:(unsigned long long)arg5;
 - (unsigned long long)fetchCoalescedCallCountWithPredicate:(id)arg1 sortDescriptors:(id)arg2;
 - (id)fetchCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned long long)arg3 offset:(unsigned long long)arg4 batchSize:(unsigned long long)arg5;
 - (unsigned long long)fetchCallCountWithPredicate:(id)arg1 sortDescriptors:(id)arg2;
+- (long long)deleteCallsWithPredicate:(id)arg1 error:(id *)arg2;
 - (void)unRegisterForNotifications;
 - (void)registerForNotifications;
 - (id)init:(_Bool)arg1;

@@ -7,11 +7,12 @@
 #import <HealthKit/HKCategorySample.h>
 
 @interface HKCategorySample (HKMenstrualCycles)
++ (id)hkmc_intermenstrualBleedingCategorySampleWithDate:(id)arg1;
 + (id)hkmc_categorySampleWithMenstrualSymptom:(unsigned int)arg1 date:(id)arg2;
 + (id)hkmc_categorySampleWithSexualActivity:(int)arg1 date:(id)arg2;
 + (id)hkmc_categorySampleWithOvulationTestResult:(int)arg1 date:(id)arg2;
 + (id)hkmc_categorySampleWithCervicalMucusQuality:(int)arg1 date:(id)arg2;
-+ (id)hkmc_categorySampleWithMenstrualFlow:(int)arg1 date:(id)arg2;
++ (id)hkmc_categorySampleWithMenstrualFlow:(int)arg1 date:(id)arg2 startOfCycle:(_Bool)arg3;
 - (unsigned int)hkmc_daySummarySymptom;
 - (int)hkmc_daySummarySexualActivity;
 - (int)hkmc_daySummaryOvulationTestResult;

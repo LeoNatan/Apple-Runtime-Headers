@@ -41,6 +41,7 @@
 - (void)setSecondaryViewVisible:(_Bool)arg1 withAnimationType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setSecondaryViewVisible:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_createExpandButtonIfNecessary;
+- (id)imageSymbolConfigurationForAssistantItem;
 - (void)_updateExpandButtonChevronImage;
 - (unsigned long long)_expandChevronImageStyleForRenderConfig:(id)arg1;
 - (_Bool)_expandButtonVisible;

@@ -8,10 +8,8 @@
 
 @interface MobileCalDAVNotificationCalendar : MobileCalDAVCalendar
 {
-    int _mostRecentNotificationChangeIndex;
 }
 
-@property(nonatomic) int mostRecentNotificationChangeIndex; // @synthesize mostRecentNotificationChangeIndex=_mostRecentNotificationChangeIndex;
 - (_Bool)_handleResourceChanged:(id)arg1 withResource:(id)arg2 uid:(id)arg3;
 - (id)_changedAttributesFromCalendarChanges:(id)arg1;
 - (void *)_createResourceChange:(id)arg1 withType:(unsigned int)arg2 forNotification:(void *)arg3;

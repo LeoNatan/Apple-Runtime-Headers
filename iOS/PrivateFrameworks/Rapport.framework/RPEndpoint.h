@@ -17,6 +17,7 @@
     unsigned int _hotspotInfo;
     NSString *_identifier;
     NSString *_idsDeviceIdentifier;
+    int _linkType;
     NSString *_mediaRemoteIdentifier;
     NSString *_mediaRouteIdentifier;
     NSString *_model;
@@ -34,6 +35,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)nullEndpoint;
 @property(nonatomic) _Bool present; // @synthesize present=_present;
+@property(nonatomic) int linkType; // @synthesize linkType=_linkType;
 @property(retain, nonatomic) IDSDevice *idsDevice; // @synthesize idsDevice=_idsDevice;
 @property(retain, nonatomic) CUBonjourDevice *bonjourDevice; // @synthesize bonjourDevice=_bonjourDevice;
 @property(retain, nonatomic) SFDevice *bleDevice; // @synthesize bleDevice=_bleDevice;

@@ -23,7 +23,6 @@
     _Bool _autoPerspectiveDisableOnFrontFacingCameraImages;
     _Bool _simulateDownload;
     _Bool _simulateDownloadFailure;
-    _Bool _previewOriginalAllowsLongPress;
     _Bool _previewOriginalTimesOut;
     _Bool _loopBounceTrimAllowed;
     _Bool _pauseAfterMovingPlayhead;
@@ -88,7 +87,6 @@
 @property(nonatomic) _Bool loopBounceTrimAllowed; // @synthesize loopBounceTrimAllowed=_loopBounceTrimAllowed;
 @property(nonatomic) double previewOriginalDuration; // @synthesize previewOriginalDuration=_previewOriginalDuration;
 @property(nonatomic) _Bool previewOriginalTimesOut; // @synthesize previewOriginalTimesOut=_previewOriginalTimesOut;
-@property(nonatomic) _Bool previewOriginalAllowsLongPress; // @synthesize previewOriginalAllowsLongPress=_previewOriginalAllowsLongPress;
 @property(nonatomic) double maxRawMP; // @synthesize maxRawMP=_maxRawMP;
 @property(nonatomic) _Bool simulateDownloadFailure; // @synthesize simulateDownloadFailure=_simulateDownloadFailure;
 @property(nonatomic) _Bool simulateDownload; // @synthesize simulateDownload=_simulateDownload;

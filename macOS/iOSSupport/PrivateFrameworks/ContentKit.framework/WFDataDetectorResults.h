@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) NSArray *phoneNumbers;
 @property(readonly, nonatomic) NSArray *streetAddresses;
 @property(readonly, nonatomic) NSArray *URLs;
+- (id)init;
 - (id)initWithTextCheckingResults:(id)arg1 number:(id)arg2 dictionaries:(id)arg3 dictionaryType:(id)arg4;
 
 @end

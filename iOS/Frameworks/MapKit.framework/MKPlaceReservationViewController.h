@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_updateReservationInfoAnimated:(_Bool)arg1;
 - (void)viewDidLoad;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

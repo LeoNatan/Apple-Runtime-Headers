@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)shortName:(id)arg1;
-+ (void)contactWithAccountIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)contactWithAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)properties;
 
 @end

@@ -28,13 +28,17 @@ __attribute__((visibility("hidden")))
 - (void)_updateTapGestureHistoryWithLocation:(struct CGPoint)arg1;
 - (void)oneFingerTap:(id)arg1;
 - (void)oneFingerTapSelectsAll:(id)arg1;
-- (void)performTapActionAtPoint:(struct CGPoint)arg1 granularity:(int)arg2 modifierFlags:(int)arg3;
+- (void)performTapActionWithDelegate:(id)arg1 atPoint:(struct CGPoint)arg2 granularity:(int)arg3 modifierFlags:(int)arg4;
 - (int)_textGranularityForRepeatedTap:(int)arg1;
 - (_Bool)_isRepeatedTap:(id)arg1 gestureLocationOut:(struct CGPoint *)arg2;
+- (_Bool)_isWithinRepeatedTapTimeForTouch:(id)arg1;
 - (_Bool)_isNowWithinRepeatedTapTime;
 - (_Bool)_isShiftKeyBeingHeldForGesture:(id)arg1;
 - (void)oneFingerDoubleTap:(id)arg1;
 - (void)oneFingerTripleTap:(id)arg1;
+- (void)_applyTransientState:(id)arg1;
+- (id)_transientState;
+- (void)didMoveToView:(id)arg1;
 - (void)finishSetup;
 - (id)initWithMode:(int)arg1;
 

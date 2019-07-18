@@ -45,6 +45,8 @@
 - (void)_continueHandleContainerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
 - (_Bool)_handleUpdateForCalendar:(id)arg1;
 - (void)_initializePrincipalCalendarCache;
+- (void)_retryMkCalForCalendar:(id)arg1;
+- (_Bool)_handleMkCalTaskGroupError:(id)arg1 forCalendar:(id)arg2;
 - (id)_getMkcalendarTaskGroupForCalendar:(id)arg1;
 - (id)_generateTimeZoneString:(id)arg1;
 - (id)_getSetPropertyTaskWithCoreDAVItem:(id)arg1 atURL:(id)arg2;

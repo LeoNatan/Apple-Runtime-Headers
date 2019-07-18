@@ -27,6 +27,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
+- (void)accumulateCellBordersConcurrently:(vector_73284f0b)arg1 inRow:(struct TSUModelRowIndex)arg2 atColumns:(vector_5e7df3d8 *)arg3;
+- (void)setBordersWithConcurrentCellMap:(id)arg1 forTableInfo:(id)arg2;
 - (id)strokeLayerForBottomOfRow:(unsigned int)arg1;
 - (id)strokeLayerForTopOfRow:(unsigned int)arg1;
 - (id)strokeLayerForRightSideOfColumn:(unsigned short)arg1;

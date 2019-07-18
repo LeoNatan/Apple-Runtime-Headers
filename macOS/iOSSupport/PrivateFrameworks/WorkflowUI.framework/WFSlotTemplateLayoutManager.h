@@ -14,8 +14,10 @@
 @interface WFSlotTemplateLayoutManager : NSLayoutManager <NSLayoutManagerDelegate, WFTextAttachmentSizeProvider>
 {
     BOOL _isLayoutManagerForTextView;
+    BOOL _extendSlotBackgroundOffEdges;
 }
 
+@property(nonatomic) BOOL extendSlotBackgroundOffEdges; // @synthesize extendSlotBackgroundOffEdges=_extendSlotBackgroundOffEdges;
 @property(nonatomic) BOOL isLayoutManagerForTextView; // @synthesize isLayoutManagerForTextView=_isLayoutManagerForTextView;
 - (struct CGRect)layoutManager:(id)arg1 boundingBoxForControlGlyphAtIndex:(unsigned long long)arg2 forTextContainer:(id)arg3 proposedLineFragment:(struct CGRect)arg4 glyphPosition:(struct CGPoint)arg5 characterIndex:(unsigned long long)arg6;
 - (long long)layoutManager:(id)arg1 shouldUseAction:(long long)arg2 forControlCharacterAtIndex:(unsigned long long)arg3;
@@ -25,6 +27,7 @@
 - (double)preferredHeightForDrawingTextAttachment:(id)arg1 atCharacterIndex:(unsigned long long)arg2 withProposedHeight:(double)arg3;
 - (BOOL)shouldDrawTextAttachment:(id)arg1 atCharacterIndex:(unsigned long long)arg2;
 - (void)drawBackgroundForGlyphRange:(struct _NSRange)arg1 atPoint:(struct CGPoint)arg2;
+- (id)enclosingRectsForCharacterRange:(struct _NSRange)arg1 insetForBackground:(BOOL)arg2 onlyFirst:(BOOL)arg3;
 @property(readonly, nonatomic) unsigned long long numberOfLaidLines;
 - (id)init;
 

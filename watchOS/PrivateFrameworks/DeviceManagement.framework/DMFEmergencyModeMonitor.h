@@ -10,16 +10,13 @@
 
 @interface DMFEmergencyModeMonitor : NSObject
 {
-    int notificationToken;
-    _Bool _emergencyModeEnabled;
     NSXPCConnection *_xpcConnection;
 }
 
 + (id)sharedMonitor;
 @property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-@property _Bool emergencyModeEnabled; // @synthesize emergencyModeEnabled=_emergencyModeEnabled;
 - (void).cxx_destruct;
-- (void)_handleEmergencyModeChange;
+- (void)emergencyModeStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)emergencyModeStatusWithError:(id *)arg1;
 - (_Bool)disableEmergencyModeWithError:(id *)arg1;
 - (_Bool)enableEmergencyModeForDuration:(double)arg1 withError:(id *)arg2;

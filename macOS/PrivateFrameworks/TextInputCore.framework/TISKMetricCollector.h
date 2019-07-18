@@ -26,12 +26,12 @@
     long long _currentWordPosition;
     long long _eventOrder;
     NSMutableArray *_currentSessionSamplesArray;
-    unsigned long long _keyboardPosition;
     unsigned long long _aggregatedWordThreshold;
     BOOL _isLoaded;
     TIUserModelDataStore *_userModelDataStore;
     BOOL _accentedLanguage;
     NSMutableArray *_accentedLayoutsMap;
+    NSString *_idenitifer;
     unsigned long long _wordAccumulationThreshold;
     id <TISensorWriterWrapper> _dataWriter;
     NSMutableArray *_savedSessionSamplesArray;
@@ -70,7 +70,6 @@
 - (void)_clear;
 - (void)_resetConsumeState;
 - (id)consumeTypingSession:(id)arg1;
-- (void)_setup;
 - (id)init:(id)arg1 separator:(id)arg2 wordsThreshold:(unsigned long long)arg3 accentedLanguage:(BOOL)arg4;
 - (id)init:(id)arg1 separator:(id)arg2 wordsThreshold:(unsigned long long)arg3;
 - (id)init:(id)arg1;

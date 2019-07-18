@@ -23,10 +23,12 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect currentBounds; // @synthesize currentBounds=_currentBounds;
 @property(nonatomic) BOOL compact; // @synthesize compact=_compact;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)preferredTintColor;
 - (void)setSelected:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
+- (void)updateInvertedImage;
 - (void)layoutSubviews;
 - (void)postButtonWithTypeInit;
 - (void)setDarkenedTintColor:(id)arg1;

@@ -26,7 +26,7 @@
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
-- (id)initWithFrame:(struct CGRect)arg1 person:(id)arg2 name:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 person:(id)arg2 localizedName:(id)arg3;
 
 @end
 

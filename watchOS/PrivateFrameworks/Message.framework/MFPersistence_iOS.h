@@ -42,7 +42,7 @@
 @property(retain, nonatomic) id <EDAccountsProvider> accountsProvider; // @synthesize accountsProvider=_accountsProvider;
 - (void).cxx_destruct;
 - (void)_configureSearchableIndexManagerIfNecessary;
-- (void)setupWithMailboxProvider:(id)arg1;
+- (void)setupWithMailboxProvider:(id)arg1 remoteSearchProvider:(id)arg2;
 - (id)initWithPath:(id)arg1 inMemoryIdentifier:(id)arg2 library:(id)arg3 propertyMapper:(id)arg4;
 
 // Remaining properties

@@ -14,13 +14,11 @@
 @interface SBWindowLevelAssertion : NSObject <BSDescriptionProviding, BSInvalidatable>
 {
     CDUnknownBlockType _invalidationHandler;
-    _Bool _shouldAutomaticallyInvalidateWhenDismissed;
     double _windowLevel;
     long long _priority;
     NSString *_reason;
 }
 
-@property(readonly, nonatomic) _Bool shouldAutomaticallyInvalidateWhenDismissed; // @synthesize shouldAutomaticallyInvalidateWhenDismissed=_shouldAutomaticallyInvalidateWhenDismissed;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) double windowLevel; // @synthesize windowLevel=_windowLevel;
@@ -31,7 +29,7 @@
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
-- (id)initWithPriority:(long long)arg1 windowLevel:(double)arg2 reason:(id)arg3 shouldAutomaticallyInvalidateWhenDismissed:(_Bool)arg4 invalidationHandler:(CDUnknownBlockType)arg5;
+- (id)initWithPriority:(long long)arg1 windowLevel:(double)arg2 reason:(id)arg3 invalidationHandler:(CDUnknownBlockType)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

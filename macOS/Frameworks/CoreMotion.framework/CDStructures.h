@@ -171,6 +171,12 @@ struct CMGyro50 {
     unsigned long long _field5;
 };
 
+struct CMPressure {
+    float _field1;
+    float _field2;
+    unsigned long long _field3;
+};
+
 struct GyroUnpacker {
     char *fData;
     unsigned int fBitsLeft;
@@ -190,6 +196,15 @@ struct ParkinsonsResult {
     float _field7;
     float _field8;
     float _field9;
+};
+
+struct PressureUnpacker {
+    char *fData;
+    unsigned int fBitsLeft;
+    unsigned char fPartial;
+    unsigned long long fTimestampLast;
+    long long fTimestampLastDelta;
+    int fSampleLast[2];
 };
 
 struct VO2MaxInput {

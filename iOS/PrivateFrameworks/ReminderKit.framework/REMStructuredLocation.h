@@ -46,6 +46,7 @@
 - (id)debugDescription;
 - (id)description;
 - (unsigned long long)hash;
+- (_Bool)isContentEqual:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

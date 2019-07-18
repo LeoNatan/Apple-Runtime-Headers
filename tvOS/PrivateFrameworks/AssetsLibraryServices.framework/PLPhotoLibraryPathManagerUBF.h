@@ -57,6 +57,7 @@
 - (id)photosDatabasePath;
 - (id)addToPath:(id)arg1 leafType:(unsigned char)arg2 additionalPathComponents:(id)arg3;
 - (id)convertPhotoLibraryPathType:(unsigned char)arg1;
+- (id)_externalDirectoryWithBundleIdentifier:(id)arg1 createIfNeeded:(_Bool)arg2;
 - (id)_privateDirectoryWithBundleIdentifier:(id)arg1 createIfNeeded:(_Bool)arg2;
 - (id)_basePrivateDirectoryPath;
 - (id)initWithLibraryURL:(id)arg1;

@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
 - (void)setIsDrawable:(BOOL)arg1;
 - (void)setFramebufferOnly:(BOOL)arg1;
 - (BOOL)framebufferOnly;
+- (BOOL)writeSwizzleEnabled;
+- (void)setWriteSwizzleEnabled:(BOOL)arg1;
 - (unsigned int)swizzleKey;
 - (void)setSwizzleKey:(unsigned int)arg1;
 - (CDStruct_a06f635e)swizzle;

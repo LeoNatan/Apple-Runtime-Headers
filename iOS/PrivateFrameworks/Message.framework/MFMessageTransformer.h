@@ -6,14 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class MFMailMessageLibrary, MFMailboxProvider;
+#import <Message/EFLoggable-Protocol.h>
 
-@interface MFMessageTransformer : NSObject
+@class MFMailMessageLibrary, MFMailboxProvider, NSString;
+
+@interface MFMessageTransformer : NSObject <EFLoggable>
 {
     MFMailMessageLibrary *_library;
     MFMailboxProvider *_mailboxProvider;
 }
 
++ (id)log;
 @property(retain, nonatomic) MFMailboxProvider *mailboxProvider; // @synthesize mailboxProvider=_mailboxProvider;
 @property(retain, nonatomic) MFMailMessageLibrary *library; // @synthesize library=_library;
 - (void).cxx_destruct;
@@ -22,6 +25,12 @@
 - (id)transformLegacyMailMessage:(id)arg1 mailboxScope:(id)arg2 loaderBlock:(CDUnknownBlockType)arg3;
 - (id)transformLegacyMailMessage:(id)arg1 mailboxScope:(id)arg2;
 - (id)initWithLibrary:(id)arg1 mailboxProvider:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

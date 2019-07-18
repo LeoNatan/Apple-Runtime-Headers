@@ -25,6 +25,7 @@
 - (BOOL)isPropertyUnavailable:(id)arg1;
 @property(readonly, nonatomic) BOOL isPartialObject;
 @property(readonly, nonatomic) BOOL canBeConvertedToFullObject;
+@property(readonly, nonatomic) BOOL requiresOpeningAttachmentAsLink;
 - (BOOL)supportsEmailValidation;
 - (BOOL)supportsTaskCalendarCreation;
 @property(readonly, nonatomic) BOOL supportsSharingScheduling;

@@ -11,7 +11,7 @@
 
 @interface MKMapItemView : UIView
 {
-    NSObject<OS_dispatch_group> *_muninSnapshotDispatchGroup;
+    NSObject<OS_dispatch_group> *_renderDispatchGroup;
     MKMapSnapshotView *_snapshotView;
     CDStruct_951efa70 _coordinateSpan;
     CDUnknownBlockType _mapItemloadedCompletionHandler;
@@ -21,10 +21,14 @@
     NSTimer *_loadTimeoutTimer;
     struct CGSize _sizeWhenLastLoaded;
     _Bool _loadCalledOnce;
+    unsigned long long _signpostID;
+    _Bool _loadingMuninView;
     _Bool _shouldResolveMapItem;
+    _Bool _shouldShowBorders;
     MKMapItem *_mapItem;
 }
 
+@property(nonatomic) _Bool shouldShowBorders; // @synthesize shouldShowBorders=_shouldShowBorders;
 @property(readonly, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) _Bool shouldResolveMapItem; // @synthesize shouldResolveMapItem=_shouldResolveMapItem;
 - (void).cxx_destruct;
@@ -32,6 +36,7 @@
 - (void)triggerAnimation;
 - (void)_resetState;
 - (void)cancel;
+- (void)cancelSnapshot;
 - (void)_cropImage;
 - (void)_callCompletionHandler;
 - (void)_renderMapItem;

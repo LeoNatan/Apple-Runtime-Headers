@@ -44,6 +44,7 @@
 @property(readonly, nonatomic) BOOL hasTransitAttribution;
 @property(readonly, nonatomic) BOOL hasStoredMapRegion;
 @property(readonly, nonatomic) BOOL hasLine;
+@property(readonly, nonatomic) BOOL isBus;
 @property(readonly, nonatomic) id <GEOEncyclopedicInfo> encyclopedicInfo;
 @property(readonly, nonatomic) BOOL hasEncyclopedicInfo;
 @property(readonly, nonatomic) BOOL hasIncidentComponent;

@@ -14,7 +14,6 @@
 
 + (id)managedObjectWithIdentifier:(id)arg1 deviceName:(id)arg2 deviceClass:(id)arg3 deviceModel:(id)arg4 creationDate:(id)arg5 inManagedObjectContext:(id)arg6;
 + (id)fetchRequest;
-- (id)cloneInContext:(id)arg1;
 - (void)setDevice:(id)arg1;
 @property(readonly, nonatomic) RTDeviceMO *device;
 
@@ -27,7 +26,6 @@
 @property(retain, nonatomic) NSSet *mapItems; // @dynamic mapItems;
 @property(retain, nonatomic) NSSet *places; // @dynamic places;
 @property(retain, nonatomic) NSSet *transitions; // @dynamic transitions;
-@property(retain, nonatomic) NSSet *userCorrections; // @dynamic userCorrections;
 @property(retain, nonatomic) NSSet *visits; // @dynamic visits;
 
 @end

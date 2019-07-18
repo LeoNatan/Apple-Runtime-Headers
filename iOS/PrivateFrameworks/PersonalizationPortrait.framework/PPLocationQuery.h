@@ -13,7 +13,6 @@
 
 @interface PPLocationQuery : NSObject <NSCopying, NSSecureCoding>
 {
-    _Bool _overrideDecayRate;
     _Bool _excludingWithoutSentiment;
     unsigned long long _limit;
     NSDate *_fromDate;
@@ -22,18 +21,21 @@
     NSSet *_matchingSourceBundleIds;
     NSSet *_excludingSourceBundleIds;
     unsigned long long _deviceFilter;
+    double _perRecordDecayRate;
     double _decayRate;
     NSString *_fuzzyMatchingString;
     NSSet *_fuzzyMatchingFields;
     NSSet *_matchingCategories;
     NSSet *_matchingAlgorithms;
     NSSet *_excludingAlgorithms;
+    unsigned long long _consumer;
 }
 
 + (id)queryForMapsWithLimit:(unsigned long long)arg1 fromDate:(id)arg2 consumerType:(unsigned long long)arg3;
 + (id)_algorithmsDescription:(id)arg1;
 + (id)_matchingCategoriesDescription:(id)arg1;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned long long consumer; // @synthesize consumer=_consumer;
 @property(nonatomic) _Bool excludingWithoutSentiment; // @synthesize excludingWithoutSentiment=_excludingWithoutSentiment;
 @property(retain, nonatomic) NSSet *excludingAlgorithms; // @synthesize excludingAlgorithms=_excludingAlgorithms;
 @property(retain, nonatomic) NSSet *matchingAlgorithms; // @synthesize matchingAlgorithms=_matchingAlgorithms;
@@ -41,7 +43,7 @@
 @property(retain, nonatomic) NSSet *fuzzyMatchingFields; // @synthesize fuzzyMatchingFields=_fuzzyMatchingFields;
 @property(retain, nonatomic) NSString *fuzzyMatchingString; // @synthesize fuzzyMatchingString=_fuzzyMatchingString;
 @property(nonatomic) double decayRate; // @synthesize decayRate=_decayRate;
-@property(nonatomic) _Bool overrideDecayRate; // @synthesize overrideDecayRate=_overrideDecayRate;
+@property(nonatomic) double perRecordDecayRate; // @synthesize perRecordDecayRate=_perRecordDecayRate;
 @property(nonatomic) unsigned long long deviceFilter; // @synthesize deviceFilter=_deviceFilter;
 @property(retain, nonatomic) NSSet *excludingSourceBundleIds; // @synthesize excludingSourceBundleIds=_excludingSourceBundleIds;
 @property(retain, nonatomic) NSSet *matchingSourceBundleIds; // @synthesize matchingSourceBundleIds=_matchingSourceBundleIds;

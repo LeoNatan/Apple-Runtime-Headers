@@ -6,11 +6,18 @@
 
 #import <objc/NSObject.h>
 
+@protocol MedicalIDChangeObserverDelegate;
+
 @interface MedicalIDChangeObserver : NSObject
 {
+    int _medicalIDChangedToken;
+    id <MedicalIDChangeObserverDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <MedicalIDChangeObserverDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)dealloc;
+- (void)startObservingChanges;
 - (id)init;
 
 @end

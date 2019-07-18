@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)load;
 - (void)dealloc;
 
 @end

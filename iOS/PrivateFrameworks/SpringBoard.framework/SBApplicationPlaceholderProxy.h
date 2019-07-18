@@ -6,17 +6,11 @@
 
 #import <FrontBoard/FBSApplicationPlaceholder.h>
 
-@class NSString;
-
 @interface SBApplicationPlaceholderProxy : FBSApplicationPlaceholder
 {
-    NSString *_customIconClassName;
 }
 
-@property(copy) NSString *customIconClassName; // @synthesize customIconClassName=_customIconClassName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) Class iconClass;
-- (void)_reloadFromProxy:(id)arg1;
 
 @end
 

@@ -59,7 +59,7 @@
 - (void)_URLSession:(id)arg1 companionAvailabilityChanged:(_Bool)arg2;
 - (id)_delegateForTask:(id)arg1;
 - (id)_cacheOnlyDataTaskForRequest:(id)arg1 withDelegate:(id)arg2;
-- (id)_proxyDataTaskForRequest:(id)arg1 withDelegate:(id)arg2;
+- (id)_proxyDataTaskForRequest:(id)arg1 withDelegate:(id)arg2 uniqueIdentifier:(id)arg3;
 - (void)_removeProtocolClassForDefaultSession:(Class)arg1;
 - (_Bool)_prependProtocolClassForDefaultSession:(Class)arg1;
 - (struct URLProtocol *)_newURLProtocolForTask:(id)arg1 client:(struct URLProtocolClient *)arg2;
@@ -68,7 +68,6 @@
 - (_Bool)_request:(id)arg1 isCacheEquivalentTo:(id)arg2;
 - (id)_createCanonicalRequestForTask:(id)arg1;
 - (id)_createCanonicalRequest:(id)arg1 task:(id)arg2;
-- (id)_createCanonicalRequest_GOOD:(id)arg1 task:(id)arg2;
 - (Class)_protocolClassForRequest:(id)arg1;
 - (Class)_protocolClassForTask:(id)arg1 skipAppSSO:(_Bool)arg2;
 - (Class)_protocolClassForTask:(id)arg1;

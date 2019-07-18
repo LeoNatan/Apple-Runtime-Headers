@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
     unsigned int _maxRoundTripTime;
     unsigned int _videoFrameNonFECTotalCounter;
     unsigned int _videoFrameNonFECCompleteCounter;
+    unsigned int _videoFrameDisplayedCounter;
     unsigned int _decodedVideoFrameEnqueueCounter;
     unsigned int _videoFrameReceivedCounter;
     unsigned int _videoFrameExpectedCounter;

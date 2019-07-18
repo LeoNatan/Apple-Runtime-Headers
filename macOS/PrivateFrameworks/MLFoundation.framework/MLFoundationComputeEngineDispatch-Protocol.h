@@ -6,23 +6,30 @@
 
 #import <MLFoundation/NSObject-Protocol.h>
 
-@class NSArray, NSMutableArray;
+@class MLFoundationLayer, MLFoundationTensor, NSArray;
 
 @protocol MLFoundationComputeEngineDispatch <NSObject>
+- (void)convertUpdatesToTensorDataForLayer:(MLFoundationLayer *)arg1;
+- (void)synchronizeUpdatesForLayer:(MLFoundationLayer *)arg1;
 - (void)updateBatchNormalizationLayer:(NSArray *)arg1 optimizer:(NSArray *)arg2;
-- (void)updateConvolutionLayer:(NSArray *)arg1 optimizer:(NSArray *)arg2 resultStateIsTemporary:(BOOL)arg3;
+- (void)updateFullyConnectedLayer:(NSArray *)arg1 optimizer:(NSArray *)arg2;
+- (void)updateConvolutionLayer:(NSArray *)arg1 optimizer:(NSArray *)arg2;
+- (void)transformRNNLayerTensor:(MLFoundationTensor *)arg1 isSourceTensor:(BOOL)arg2;
 - (void)incrementReadCountForGradientState:(NSArray *)arg1 increment:(long long)arg2;
 - (void)incrementReadCountForTensorDeviceMemory:(NSArray *)arg1 increment:(long long)arg2;
-- (void)dispatchGradientLossLayerWithInitialGradientAndStates:(NSArray *)arg1 sourceGradientTensor:(NSArray *)arg2 labelsTensor:(NSArray *)arg3 weightsTensor:(NSArray *)arg4 initialGradientResultTensor:(NSMutableArray *)arg5 resultGradientTensor:(NSMutableArray *)arg6 resultTensorIsTemporary:(BOOL)arg7 resultTensorAllocate:(BOOL)arg8;
-- (void)dispatchGradientLossLayerWithStates:(NSArray *)arg1 sourceGradientTensor:(NSArray *)arg2 labelsTensor:(NSArray *)arg3 weightsTensor:(NSArray *)arg4 resultGradientTensor:(NSMutableArray *)arg5 resultTensorIsTemporary:(BOOL)arg6 resultTensorAllocate:(BOOL)arg7;
-- (void)dispatchGradientBatchNormalizationLayer:(NSArray *)arg1 sourceGradientTensor:(NSArray *)arg2 resultGradientTensor:(NSMutableArray *)arg3 resultTensorIsTemporary:(BOOL)arg4 resultTensorAllocate:(BOOL)arg5;
-- (void)dispatchGradientLayer:(NSArray *)arg1 sourceGradientTensor:(NSArray *)arg2 resultGradientTensor:(NSMutableArray *)arg3 secondaryResultGradientTensor:(NSMutableArray *)arg4 resultTensorIsTemporary:(BOOL)arg5 resultTensorAllocate:(BOOL)arg6;
-- (void)dispatchGradientLayer:(NSArray *)arg1 sourceGradientTensor:(NSArray *)arg2 resultGradientTensor:(NSMutableArray *)arg3 resultTensorIsTemporary:(BOOL)arg4 resultTensorAllocate:(BOOL)arg5;
-- (void)dispatchForwardLossLayerWithStates:(NSArray *)arg1 sourceTensor:(NSArray *)arg2 labelsTensor:(NSArray *)arg3 weightsTensor:(NSArray *)arg4 resultTensor:(NSMutableArray *)arg5 resultTensorIsTemporary:(BOOL)arg6 resultTensorAllocate:(BOOL)arg7;
-- (void)dispatchForwardLayerWithStates:(NSArray *)arg1 sourceTensor:(NSArray *)arg2 secondaryTensor:(NSArray *)arg3 resultTensor:(NSMutableArray *)arg4 resultTensorIsTemporary:(BOOL)arg5 resultTensorAllocate:(BOOL)arg6;
-- (void)dispatchForwardLayerBatchNormalizationWithStates:(NSArray *)arg1 sourceTensor:(NSArray *)arg2 resultTensor:(NSMutableArray *)arg3 resultTensorIsTemporary:(BOOL)arg4 resultTensorAllocate:(BOOL)arg5;
-- (void)dispatchForwardLayerWithStates:(NSArray *)arg1 sourceTensor:(NSArray *)arg2 resultTensor:(NSMutableArray *)arg3 resultTensorIsTemporary:(BOOL)arg4 resultTensorAllocate:(BOOL)arg5;
-- (void)dispatchForwardLayer:(NSArray *)arg1 sourceTensor:(NSArray *)arg2 secondaryTensor:(NSArray *)arg3 resultTensor:(NSMutableArray *)arg4 resultTensorIsTemporary:(BOOL)arg5 resultTensorAllocate:(BOOL)arg6;
-- (void)dispatchForwardLayer:(NSArray *)arg1 sourceTensor:(NSArray *)arg2 resultTensor:(NSMutableArray *)arg3 resultTensorIsTemporary:(BOOL)arg4 resultTensorAllocate:(BOOL)arg5;
+- (void)dispatchRNNGradientLayer:(NSArray *)arg1 sourceGradientTensors:(NSArray *)arg2 resultGradientTensors:(NSArray *)arg3 resultTensorIsTemporary:(BOOL)arg4 resultTensorAllocate:(BOOL)arg5;
+- (void)dispatchRNNForwardLayerWithStates:(NSArray *)arg1 sourceTensors:(NSArray *)arg2 resultTensors:(NSArray *)arg3 resultTensorIsTemporary:(BOOL)arg4 resultTensorAllocate:(BOOL)arg5;
+- (void)dispatchForwardAndGradientLossLayerWithStates:(NSArray *)arg1 sourceTensor:(MLFoundationTensor *)arg2 labelsTensor:(MLFoundationTensor *)arg3 labelsTensorStride:(unsigned long long)arg4 weightsTensor:(MLFoundationTensor *)arg5 resultTensor:(MLFoundationTensor *)arg6 resultGradientTensor:(MLFoundationTensor *)arg7 resultTensorIsTemporary:(BOOL)arg8 resultTensorAllocate:(BOOL)arg9;
+- (void)dispatchGradientLossLayerWithInitialGradientAndStates:(NSArray *)arg1 sourceGradientTensor:(MLFoundationTensor *)arg2 labelsTensor:(MLFoundationTensor *)arg3 weightsTensor:(MLFoundationTensor *)arg4 initialGradientResultTensor:(MLFoundationTensor *)arg5 resultGradientTensor:(MLFoundationTensor *)arg6 resultTensorIsTemporary:(BOOL)arg7 resultTensorAllocate:(BOOL)arg8;
+- (void)dispatchGradientLossLayerWithStates:(NSArray *)arg1 sourceGradientTensor:(MLFoundationTensor *)arg2 labelsTensor:(MLFoundationTensor *)arg3 weightsTensor:(MLFoundationTensor *)arg4 resultGradientTensor:(MLFoundationTensor *)arg5 resultTensorIsTemporary:(BOOL)arg6 resultTensorAllocate:(BOOL)arg7;
+- (void)dispatchGradientBatchNormalizationLayer:(NSArray *)arg1 sourceGradientTensor:(MLFoundationTensor *)arg2 resultGradientTensor:(MLFoundationTensor *)arg3 resultTensorIsTemporary:(BOOL)arg4 resultTensorAllocate:(BOOL)arg5;
+- (void)dispatchGradientLayer:(NSArray *)arg1 sourceGradientTensor:(MLFoundationTensor *)arg2 resultGradientTensor:(MLFoundationTensor *)arg3 secondaryResultGradientTensor:(MLFoundationTensor *)arg4 resultTensorIsTemporary:(BOOL)arg5 resultTensorAllocate:(BOOL)arg6;
+- (void)dispatchGradientLayer:(NSArray *)arg1 sourceGradientTensor:(MLFoundationTensor *)arg2 resultGradientTensor:(MLFoundationTensor *)arg3 resultTensorIsTemporary:(BOOL)arg4 resultTensorAllocate:(BOOL)arg5;
+- (void)dispatchForwardLossLayerWithStates:(NSArray *)arg1 sourceTensor:(MLFoundationTensor *)arg2 labelsTensor:(MLFoundationTensor *)arg3 labelsTensorStride:(unsigned long long)arg4 weightsTensor:(MLFoundationTensor *)arg5 resultTensor:(MLFoundationTensor *)arg6 resultTensorIsTemporary:(BOOL)arg7 resultTensorAllocate:(BOOL)arg8;
+- (void)dispatchForwardLayerBatchNormalizationWithStates:(NSArray *)arg1 sourceTensor:(MLFoundationTensor *)arg2 resultTensor:(MLFoundationTensor *)arg3 resultTensorIsTemporary:(BOOL)arg4 resultTensorAllocate:(BOOL)arg5;
+- (void)dispatchForwardLayerWithStates:(NSArray *)arg1 sourceTensor:(MLFoundationTensor *)arg2 secondaryTensor:(MLFoundationTensor *)arg3 resultTensor:(MLFoundationTensor *)arg4 resultTensorIsTemporary:(BOOL)arg5 resultTensorAllocate:(BOOL)arg6;
+- (void)dispatchForwardLayerWithStates:(NSArray *)arg1 sourceTensor:(MLFoundationTensor *)arg2 resultTensor:(MLFoundationTensor *)arg3 resultTensorIsTemporary:(BOOL)arg4 resultTensorAllocate:(BOOL)arg5;
+- (void)dispatchForwardLayer:(NSArray *)arg1 sourceTensor:(MLFoundationTensor *)arg2 secondaryTensor:(MLFoundationTensor *)arg3 resultTensor:(MLFoundationTensor *)arg4 resultTensorIsTemporary:(BOOL)arg5 resultTensorAllocate:(BOOL)arg6;
+- (void)dispatchForwardLayer:(NSArray *)arg1 sourceTensor:(MLFoundationTensor *)arg2 resultTensor:(MLFoundationTensor *)arg3 resultTensorIsTemporary:(BOOL)arg4 resultTensorAllocate:(BOOL)arg5;
 @end
 

@@ -37,6 +37,10 @@
 - (id)_storeIdentifier;
 - (long long)_referenceData64;
 - (id)_referenceData;
+- (BOOL)_preferReferenceData64;
+- (long long)compare:(id)arg1;
+- (long long)_compareArbitraryValue:(id)arg1 toValue:(id)arg2;
+- (int)_temporaryIDCounter;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,22 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSMapTable, NSMutableArray, NSUUID;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSUUID;
 
 __attribute__((visibility("hidden")))
 @interface AppExtensionContextMenu : NSObject
 {
-    NSMapTable *_userInfo;
-    NSUUID *_extensionUUID;
     NSMutableArray *_contextMenuItems;
+    NSMutableDictionary *_userInfo;
+    NSUUID *_extensionUUID;
 }
 
-@property(readonly, nonatomic) NSMutableArray *contextMenuItems; // @synthesize contextMenuItems=_contextMenuItems;
+@property(readonly, nonatomic) NSArray *contextMenuItems; // @synthesize contextMenuItems=_contextMenuItems;
 @property(retain, nonatomic) NSUUID *extensionUUID; // @synthesize extensionUUID=_extensionUUID;
 - (void).cxx_destruct;
-- (void)invalidateContextMenuUserInfoForContentViewController:(id)arg1;
-- (id)userInfoForContentViewController:(id)arg1;
-- (void)setUserInfo:(id)arg1 forContentViewController:(id)arg2;
+- (void)invalidateContextMenuUserInfoForPageUUID:(id)arg1;
+- (id)userInfoForPageUUID:(id)arg1;
+- (void)setUserInfo:(id)arg1 forPageUUID:(id)arg2;
 - (void)addContextMenuItem:(id)arg1;
 
 @end

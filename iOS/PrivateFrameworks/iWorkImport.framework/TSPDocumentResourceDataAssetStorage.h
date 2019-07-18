@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 -     // Error parsing type: B40@0:8^{DataInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DataAttributes}^{EncryptionInfo}QBi}16@24@32, name: archiveInfoMessage:archiver:packageWriter:
 - (id)NSDataWithOptions:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSDataAsset *dataAsset;
+- (struct CGSize)pixelSize;
 - (id)fallbackColor;
 - (void)performIOChannelReadWithAccessor:(CDUnknownBlockType)arg1;
 - (unsigned long long)encodedLength;

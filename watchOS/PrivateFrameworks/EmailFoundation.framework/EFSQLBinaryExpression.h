@@ -16,10 +16,10 @@
 {
     id <EFSQLExpressable> _left;
     id <EFSQLExpressable> _right;
-    unsigned int _operator;
+    unsigned int _binaryOperator;
 }
 
-@property(readonly, nonatomic) unsigned int operator; // @synthesize operator=_operator;
+@property(readonly, nonatomic) unsigned int binaryOperator; // @synthesize binaryOperator=_binaryOperator;
 @property(readonly, nonatomic) id <EFSQLExpressable> right; // @synthesize right=_right;
 @property(readonly, nonatomic) id <EFSQLExpressable> left; // @synthesize left=_left;
 - (void).cxx_destruct;

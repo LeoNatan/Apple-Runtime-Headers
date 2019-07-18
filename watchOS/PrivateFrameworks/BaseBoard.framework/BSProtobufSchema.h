@@ -15,6 +15,7 @@
     Class _rootClass;
     BSProtobufSchema *_superSchema;
     int _fieldCount;
+    int _autotagIndex;
     struct _BSProtobufFieldEntry *_entries;
     NSMutableData *_memoryData;
     _Bool _respondsToDidFinishProtobufDecodingWithError;
@@ -22,9 +23,15 @@
     _Bool _respondsToInitProtobufTranslatorForObject;
 }
 
+- (void)addRepeatingField:(const char *)arg1 forTag:(int)arg2 allowedClasses:(id)arg3;
 - (void)addRepeatingField:(const char *)arg1 containsClass:(Class)arg2 forTag:(int)arg3;
+- (void)addRepeatingField:(const char *)arg1 containsClasses:(id)arg2;
+- (void)addRepeatingField:(const char *)arg1 containsClass:(Class)arg2;
+- (void)addField:(const char *)arg1 allowedClasses:(id)arg2;
+- (void)_addSubclassesForField:(const char *)arg1 allowedSubclasses:(id)arg2 assertSubclassRelationship:(_Bool)arg3;
 - (void)addField:(const char *)arg1 forTag:(int)arg2;
-- (struct _BSProtobufFieldEntry *)_appendFieldEntry;
+- (void)addField:(const char *)arg1;
+- (struct _BSProtobufFieldEntry *)_appendFieldEntriesOfCount:(int)arg1;
 - (void)dealloc;
 - (id)initWithRootClass:(Class)arg1;
 

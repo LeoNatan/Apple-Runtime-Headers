@@ -15,6 +15,7 @@
 @interface VUIAppDocumentServiceViewController : _TVAppDocumentRequestController <IKUpdateServiceRequestDelegate, VUIAppDocumentUpdateEventMonitorObserving>
 {
     _Bool _deferDocumentUpdateEventProcessing;
+    _Bool _markDocumentDirtyForRefreshUpdate;
     NSString *_viewControllerIdentifier;
     IKAppContext *_appContext;
     NSString *_documentRef;
@@ -24,6 +25,7 @@
 }
 
 + (id)_findCollectionListChildElementsInViewElement:(id)arg1;
+@property(nonatomic) _Bool markDocumentDirtyForRefreshUpdate; // @synthesize markDocumentDirtyForRefreshUpdate=_markDocumentDirtyForRefreshUpdate;
 @property(nonatomic) _Bool deferDocumentUpdateEventProcessing; // @synthesize deferDocumentUpdateEventProcessing=_deferDocumentUpdateEventProcessing;
 @property(retain, nonatomic) VUIAppDocumentUpdateEventStore *deferredDocumentUpdateEventStore; // @synthesize deferredDocumentUpdateEventStore=_deferredDocumentUpdateEventStore;
 @property(retain, nonatomic) NSMutableOrderedSet *documentUpdateViewElements; // @synthesize documentUpdateViewElements=_documentUpdateViewElements;
@@ -41,11 +43,12 @@
 - (void)_cancelDocumentUpdates;
 - (void)_cancelDocumentUpdateWithRequest:(id)arg1;
 - (void)_startDocumentUpdateWithRequest:(id)arg1;
+- (void)documentDidUpdate:(id)arg1;
 - (_Bool)handleEvent:(id)arg1 targetResponder:(id)arg2 viewElement:(id)arg3 extraInfo:(id *)arg4;
 - (void)didCompleteDocumentCreationWithStatus:(long long)arg1 errorDictionary:(id)arg2;
 - (void)updateServiceRequest:(id)arg1 documentDidChange:(id)arg2;
 - (void)serviceRequest:(id)arg1 didCompleteWithStatus:(long long)arg2 errorDictionary:(id)arg3;
-- (void)appDocumentUpdateEventMonitor:(id)arg1 didReceiveEvent:(id)arg2;
+- (void)appDocumentDidReceiveEvent:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)updateDocumentWithContextDictionary:(id)arg1 element:(id)arg2;

@@ -17,6 +17,7 @@
     _HKMobileAssetDownloadManager *_retainedSelf;
     BOOL _shouldQueryLocalAssetsFirst;
     BOOL _shouldAutoDownloadRemoteAssets;
+    long long _maxNumberOfRetriesAllowed;
     NSString *_mobileAssetTypeName;
     CDUnknownBlockType _errorHandler;
     MADownloadOptions *_mobileAssetDownloadOptions;
@@ -27,6 +28,7 @@
 @property(copy, nonatomic) MADownloadOptions *mobileAssetDownloadOptions; // @synthesize mobileAssetDownloadOptions=_mobileAssetDownloadOptions;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(readonly, copy, nonatomic) NSString *mobileAssetTypeName; // @synthesize mobileAssetTypeName=_mobileAssetTypeName;
+@property(nonatomic) long long maxNumberOfRetriesAllowed; // @synthesize maxNumberOfRetriesAllowed=_maxNumberOfRetriesAllowed;
 @property(nonatomic) BOOL shouldAutoDownloadRemoteAssets; // @synthesize shouldAutoDownloadRemoteAssets=_shouldAutoDownloadRemoteAssets;
 @property(nonatomic) BOOL shouldQueryLocalAssetsFirst; // @synthesize shouldQueryLocalAssetsFirst=_shouldQueryLocalAssetsFirst;
 - (void).cxx_destruct;

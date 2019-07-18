@@ -19,7 +19,13 @@
     id _cd_rawData;
     NSManagedObjectContext *_cd_managedObjectContext;
     NSManagedObjectID *_cd_objectID;
-    void *_cd_extras;
+    struct {
+        id _field1;
+        id _field2;
+        id _field3;
+        id _field4;
+        id _field5;
+    } *_cd_extras;
     id _cd_queueReference;
 }
 
@@ -122,6 +128,8 @@
 - (void)willRefresh:(BOOL)arg1;
 - (void)didFireFault;
 - (void)willFireFault;
+- (void)setBindableObjectPublisher:(id)arg1;
+- (id)bindableObjectPublisher;
 - (void)_updateFromUndoSnapshot:(id)arg1;
 - (void)_updateFromRefreshSnapshot:(id)arg1 includingTransients:(BOOL)arg2;
 - (id)_newSetFromSet:(id)arg1 byApplyingDiffs:(id)arg2;

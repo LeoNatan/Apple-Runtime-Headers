@@ -8,7 +8,7 @@
 
 #import <PassKitUI/PKPhysicalCardActionControllerDelegate-Protocol.h>
 
-@class CLInUseAssertion, CLLocationManager, NSString, PKBusinessChatController, PKOrderPhysicalCardHeroView, PKPaymentPass, PKPhysicalCard, PKPhysicalCardActionController;
+@class CLInUseAssertion, CLLocationManager, NSString, PKBusinessChatController, PKOrderPhysicalCardHeroView, PKPaymentPass, PKPhysicalCard, PKPhysicalCardActionController, SFClient;
 
 @interface PKPhysicalCardManualActivationViewController : PKExplanationViewController <PKPhysicalCardActionControllerDelegate>
 {
@@ -22,18 +22,20 @@
     CLInUseAssertion *_inUseAssertion;
     CLLocationManager *_locationManager;
     PKBusinessChatController *_businessChatController;
+    SFClient *_sharingClient;
 }
 
 - (void).cxx_destruct;
 - (void)_presentDisplayableError:(id)arg1;
 - (void)_showSpinner:(_Bool)arg1;
-- (void)_presentLocationAuthorizationIfNecessary;
 - (void)_setupForCurrentState;
 - (void)physicalCardActionController:(id)arg1 didChangeToState:(long long)arg2 withError:(id)arg3;
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)explanationViewDidSelectSetupLater:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)dealloc;
 - (id)initWithAccountService:(id)arg1 account:(id)arg2 paymentPass:(id)arg3 physicalCard:(id)arg4 activationCode:(id)arg5;
 
 // Remaining properties

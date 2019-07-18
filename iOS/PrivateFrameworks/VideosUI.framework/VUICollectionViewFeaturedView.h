@@ -6,16 +6,16 @@
 
 #import <UIKit/UIView.h>
 
-@class VUIFeaturedCellOverlayView, _TVImageView;
+@class _TVImageView;
 
 __attribute__((visibility("hidden")))
 @interface VUICollectionViewFeaturedView : UIView
 {
     _TVImageView *_imageView;
-    VUIFeaturedCellOverlayView *_overlayView;
+    UIView *_overlayView;
 }
 
-@property(retain, nonatomic) VUIFeaturedCellOverlayView *overlayView; // @synthesize overlayView=_overlayView;
+@property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
 - (void)layoutSubviews;

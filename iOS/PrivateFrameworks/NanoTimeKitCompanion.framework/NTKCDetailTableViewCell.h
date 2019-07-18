@@ -11,12 +11,14 @@
 @interface NTKCDetailTableViewCell : UITableViewCell
 {
     _Bool _showsSeparator;
+    _Bool _ignoresRTLCorrection;
     UIView *_separatorView;
 }
 
 + (id)titleFont;
 + (id)defaultTextColor;
 + (id)reuseIdentifier;
+@property(nonatomic) _Bool ignoresRTLCorrection; // @synthesize ignoresRTLCorrection=_ignoresRTLCorrection;
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) _Bool showsSeparator; // @synthesize showsSeparator=_showsSeparator;
 - (void).cxx_destruct;

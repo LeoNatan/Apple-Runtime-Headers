@@ -26,10 +26,10 @@ __attribute__((visibility("hidden")))
     int _stage;
     unsigned long long _retryAfter;
     BRCLocalItem *_itemNeedingPCSChaining;
-    NSMutableSet *_shareRecordIDsNeedingDelete;
+    NSMutableArray *_itemsNeedingUnshare;
 }
 
-@property(readonly, nonatomic) NSMutableSet *shareRecordIDsNeedingDelete; // @synthesize shareRecordIDsNeedingDelete=_shareRecordIDsNeedingDelete;
+@property(readonly, nonatomic) NSMutableArray *itemsNeedingUnshare; // @synthesize itemsNeedingUnshare=_itemsNeedingUnshare;
 @property(readonly, nonatomic) BRCLocalItem *itemNeedingPCSChaining; // @synthesize itemNeedingPCSChaining=_itemNeedingPCSChaining;
 @property(readonly, nonatomic) unsigned long long retryAfter; // @synthesize retryAfter=_retryAfter;
 @property(readonly, nonatomic) unsigned int batchSize; // @synthesize batchSize=_batchSize;

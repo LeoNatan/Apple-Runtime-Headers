@@ -6,13 +6,15 @@
 
 #import <NanoTimeKitCompanion/NTKRichComplicationRectangularBaseView.h>
 
-@class NSArray, NTKColoringLabel, NTKWellnessRichComplicationChartView, UIImageView;
+@class NSArray, NSLayoutConstraint, NTKColoringLabel, NTKWellnessRichComplicationChartView, UIImageView, UIView;
 
 @interface NTKWellnessRichComplicationRectangularView : NTKRichComplicationRectangularBaseView
 {
+    UIView *_chartTitleView;
     NTKColoringLabel *_titleLabel;
     NTKColoringLabel *_moveLabel;
     UIImageView *_moveGlyphView;
+    NSLayoutConstraint *_moveGlyphTitleLabelTrailingConstraint;
     NTKColoringLabel *_exerciseLabel;
     UIImageView *_exerciseGlyphView;
     NTKColoringLabel *_standLabel;
@@ -29,11 +31,13 @@
 @property(retain, nonatomic) NTKColoringLabel *standLabel; // @synthesize standLabel=_standLabel;
 @property(retain, nonatomic) UIImageView *exerciseGlyphView; // @synthesize exerciseGlyphView=_exerciseGlyphView;
 @property(retain, nonatomic) NTKColoringLabel *exerciseLabel; // @synthesize exerciseLabel=_exerciseLabel;
+@property(retain, nonatomic) NSLayoutConstraint *moveGlyphTitleLabelTrailingConstraint; // @synthesize moveGlyphTitleLabelTrailingConstraint=_moveGlyphTitleLabelTrailingConstraint;
 @property(retain, nonatomic) UIImageView *moveGlyphView; // @synthesize moveGlyphView=_moveGlyphView;
 @property(retain, nonatomic) NTKColoringLabel *moveLabel; // @synthesize moveLabel=_moveLabel;
 @property(retain, nonatomic) NTKColoringLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) UIView *chartTitleView; // @synthesize chartTitleView=_chartTitleView;
 - (void).cxx_destruct;
-- (void)_setAccentViewsVisibilityWithActivitySetupCompleted:(_Bool)arg1;
+- (void)_setAccentViewsVisibility:(_Bool)arg1;
 - (void)_updateViews:(id)arg1 withFilter:(id)arg2;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(double)arg1;

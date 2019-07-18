@@ -11,7 +11,6 @@
 }
 
 - (void)_setSeparatorBackdropOverlayBlendMode:(long long)arg1;
-- (void)tlk_updateForAppearance:(id)arg1;
 - (void)didMoveToWindow;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (_Bool)allowsHeaderViewsToFloat;

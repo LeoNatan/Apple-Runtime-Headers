@@ -47,7 +47,6 @@
 @property(retain, nonatomic) _CPSafariUsagePropensity *safariUsagePropensity; // @synthesize safariUsagePropensity=_safariUsagePropensity;
 @property(retain, nonatomic) _CPUsageSinceLookback *usageSinceLookback; // @synthesize usageSinceLookback=_usageSinceLookback;
 - (void)clearKind;
-- (_Bool)requiresQueryId;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

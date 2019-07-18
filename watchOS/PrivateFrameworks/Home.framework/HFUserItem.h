@@ -25,6 +25,8 @@
     HMHome *_hf_home;
 }
 
++ (id)_fakeHMSettings;
++ (void)set_fakeHMSettings:(id)arg1;
 @property(retain, nonatomic) HMHome *hf_home; // @synthesize hf_home=_hf_home;
 @property(readonly, nonatomic) HFUserNameFormatter *userNameFormatter; // @synthesize userNameFormatter=_userNameFormatter;
 @property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
@@ -48,6 +50,8 @@
 - (_Bool)hasDismissedIdentifyVoiceReminderBanner;
 - (id)setDismissIdentifyVoiceOnboarding:(_Bool)arg1;
 - (_Bool)hasDismissedVoiceProfileOnboarding;
+- (void)_setFakeBoolSettingsValueForKeyPath:(id)arg1 newValue:(_Bool)arg2;
+- (_Bool)_getFakeBoolSettingsValueForKeyPath:(id)arg1 defaultValue:(_Bool)arg2;
 - (id)_setBoolSettingsValueForKeyPath:(id)arg1 newValue:(_Bool)arg2 settingsType:(unsigned int)arg3;
 - (_Bool)_getBoolSettingsValueForKeyPath:(id)arg1 defaultValue:(_Bool)arg2 settingsType:(unsigned int)arg3;
 - (_Bool)_hasValidPrivateSettings;

@@ -62,6 +62,7 @@
 // Remaining properties
 @property(readonly, nonatomic, getter=isClientEntitled) BOOL clientEntitled;
 @property(readonly, nonatomic) NSString *clientName;
+@property(readonly, nonatomic) CDUnknownBlockType concurrentWorkBlock;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
 @property(readonly) BOOL isNewRequest;

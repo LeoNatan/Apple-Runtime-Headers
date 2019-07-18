@@ -6,32 +6,30 @@
 
 #import <CloudKit/CKDatabaseOperation.h>
 
-@class CKRecordID, CKRecordZoneID, NSString;
+@class CKRecordID, CKUploadRequestConfiguration, NSString;
 
 @interface CKMarkAssetBrokenOperation : CKDatabaseOperation
 {
     _Bool _touchRepairZone;
+    _Bool _bypassPCSEncryptionForTouchRepairZone;
     _Bool _simulateCorruptAsset;
     _Bool _writeRepairRecord;
     CDUnknownBlockType _markAssetBrokenCompletionBlock;
-    NSString *_repairContainerIdentifier;
-    NSString *_repairSourceApplicationBundleIdentifier;
-    CKRecordZoneID *_repairZoneID;
     CKRecordID *_recordID;
     NSString *_field;
     int _listIndex;
     CKRecordID *_repairRecordID;
+    CKUploadRequestConfiguration *_uploadRequestConfiguration;
 }
 
+@property(copy, nonatomic) CKUploadRequestConfiguration *uploadRequestConfiguration; // @synthesize uploadRequestConfiguration=_uploadRequestConfiguration;
 @property(retain, nonatomic) CKRecordID *repairRecordID; // @synthesize repairRecordID=_repairRecordID;
 @property(nonatomic) int listIndex; // @synthesize listIndex=_listIndex;
 @property(retain, nonatomic) NSString *field; // @synthesize field=_field;
 @property(retain, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
-@property(retain, nonatomic) CKRecordZoneID *repairZoneID; // @synthesize repairZoneID=_repairZoneID;
-@property(retain, nonatomic) NSString *repairSourceApplicationBundleIdentifier; // @synthesize repairSourceApplicationBundleIdentifier=_repairSourceApplicationBundleIdentifier;
-@property(retain, nonatomic) NSString *repairContainerIdentifier; // @synthesize repairContainerIdentifier=_repairContainerIdentifier;
 @property(nonatomic) _Bool writeRepairRecord; // @synthesize writeRepairRecord=_writeRepairRecord;
 @property(nonatomic) _Bool simulateCorruptAsset; // @synthesize simulateCorruptAsset=_simulateCorruptAsset;
+@property(nonatomic) _Bool bypassPCSEncryptionForTouchRepairZone; // @synthesize bypassPCSEncryptionForTouchRepairZone=_bypassPCSEncryptionForTouchRepairZone;
 @property(nonatomic) _Bool touchRepairZone; // @synthesize touchRepairZone=_touchRepairZone;
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
@@ -43,6 +41,7 @@
 - (void)fillOutOperationInfo:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType markAssetBrokenCompletionBlock; // @synthesize markAssetBrokenCompletionBlock=_markAssetBrokenCompletionBlock;
 - (id)activityCreate;
+@property(readonly, copy, nonatomic) CKUploadRequestConfiguration *resolvedUploadRequestConfiguration;
 - (id)initWithRecordID:(id)arg1 field:(id)arg2 listIndex:(int)arg3;
 - (id)initWithRecordID:(id)arg1 field:(id)arg2;
 - (id)initWithNoRecord;

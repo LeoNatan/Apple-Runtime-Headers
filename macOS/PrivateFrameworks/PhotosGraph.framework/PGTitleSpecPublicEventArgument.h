@@ -8,11 +8,14 @@
 
 @interface PGTitleSpecPublicEventArgument : PGTitleSpecArgument
 {
+    BOOL _shouldUseLongPublicEventTitle;
     unsigned long long _type;
 }
 
 + (id)_cleanUpEventName:(id)arg1;
++ (id)argumentWithPublicEventType:(unsigned long long)arg1 shouldUseLongPublicEventTitle:(BOOL)arg2;
 + (id)argumentWithPublicEventType:(unsigned long long)arg1;
+@property(readonly, nonatomic) BOOL shouldUseLongPublicEventTitle; // @synthesize shouldUseLongPublicEventTitle=_shouldUseLongPublicEventTitle;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 - (id)_generateTitleWithCategoryNameForPublicEventNode:(id)arg1;
 - (id)_generateTitleWithPerformerNamesForPublicEventNode:(id)arg1;
@@ -22,6 +25,7 @@
 - (id)_resolvedStringWithPublicEventNode:(id)arg1 inMomentNodes:(id)arg2;
 - (id)_resolvedStringWithMomentNodes:(id)arg1 features:(id)arg2;
 - (id)_resolvedStringWithMomentNodes:(id)arg1;
+- (id)initWithPublicEventType:(unsigned long long)arg1 shouldUseLongPublicEventTitle:(BOOL)arg2;
 - (id)initWithPublicEventType:(unsigned long long)arg1;
 
 @end

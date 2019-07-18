@@ -8,5 +8,6 @@
 
 @protocol CategoriesServiceProtocol
 - (void)lookupAppStoreForBundleIDs:(NSArray *)arg1 platform:(NSString *)arg2 replyHandler:(void (^)(NSDictionary *, NSError *))arg3;
+- (void)genreIDsAndCounterpartIdentifiersForInstalledBundleIDs:(NSArray *)arg1 replyHandler:(void (^)(NSDictionary *, NSError *))arg2;
 @end
 

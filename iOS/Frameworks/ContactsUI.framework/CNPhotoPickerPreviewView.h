@@ -6,19 +6,24 @@
 
 #import <UIKit/UIView.h>
 
+@class CAShapeLayer;
+
 __attribute__((visibility("hidden")))
 @interface CNPhotoPickerPreviewView : UIView
 {
     UIView *_previewView;
     UIView *_thumbnailContentView;
+    CAShapeLayer *_clippingLayer;
 }
 
 + (id)pickerPreviewWithFrame:(struct CGRect)arg1 forItem:(id)arg2;
+@property(retain, nonatomic) CAShapeLayer *clippingLayer; // @synthesize clippingLayer=_clippingLayer;
 @property(retain, nonatomic) UIView *thumbnailContentView; // @synthesize thumbnailContentView=_thumbnailContentView;
 @property(readonly, nonatomic) UIView *previewView; // @synthesize previewView=_previewView;
 - (void).cxx_destruct;
 - (void)updatePreviewWithItem:(id)arg1;
 - (void)setupPreview;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

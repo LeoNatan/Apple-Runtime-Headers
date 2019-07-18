@@ -10,18 +10,19 @@
 
 @interface WFGallerySessionManager : NSObject
 {
-    _Bool _perfomExpensiveFetchOperations;
+    _Bool _performExpensiveFetchOperations;
     CKContainer *_container;
     CKDatabase *_database;
     NSCache *_workflowSearchCache;
     NSCache *_collectionSearchCache;
 }
 
++ (id)sharedManager;
 @property(retain, nonatomic) NSCache *collectionSearchCache; // @synthesize collectionSearchCache=_collectionSearchCache;
 @property(retain, nonatomic) NSCache *workflowSearchCache; // @synthesize workflowSearchCache=_workflowSearchCache;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) CKContainer *container; // @synthesize container=_container;
-@property(nonatomic) _Bool perfomExpensiveFetchOperations; // @synthesize perfomExpensiveFetchOperations=_perfomExpensiveFetchOperations;
+@property(readonly, nonatomic) _Bool performExpensiveFetchOperations; // @synthesize performExpensiveFetchOperations=_performExpensiveFetchOperations;
 - (void).cxx_destruct;
 - (void)uploadWorkflow:(id)arg1 withName:(id)arg2 shortDescription:(id)arg3 longDescription:(id)arg4 private:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)deleteBanner:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -40,8 +41,7 @@
 - (id)searchCollections:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cacheWorkflowSearchResult:(id)arg1 result:(id)arg2;
 - (id)queryFilterForTokenizedKey:(id)arg1 words:(id)arg2 endsWithSpace:(_Bool)arg3;
-- (id)searchWorkflowsUsingWebServices:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)searchWorkflowsUsingNativeFramework:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)searchUsingWebServicesForItem:(Class)arg1 query:(id)arg2 queryFilter:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)searchWorkflows:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)searchWorkflowsAndCollections:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadWorkflowInGalleryWorkflow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -50,7 +50,7 @@
 - (void)getHomeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)createItemRequest;
 - (id)preferredLocalizations;
-- (id)initWithCloudContainerIdentifier:(id)arg1 applicationBundleIdentifier:(id)arg2;
+- (id)initWithCloudContainerIdentifier:(id)arg1 containerEnvironment:(int)arg2 performExpensiveFetchOperations:(_Bool)arg3;
 - (id)init;
 
 @end

@@ -33,6 +33,7 @@
 + (_Bool)updateSyncAnchorsWithMap:(id)arg1 type:(long long)arg2 store:(id)arg3 updatePolicy:(long long)arg4 resetInvalid:(_Bool)arg5 profile:(id)arg6 error:(id *)arg7;
 + (_Bool)updateSyncAnchor:(long long)arg1 type:(long long)arg2 entityIdentifier:(id)arg3 store:(id)arg4 updatePolicy:(long long)arg5 profile:(id)arg6 error:(id *)arg7;
 + (long long)syncAnchorOfType:(long long)arg1 entityIdentifier:(id)arg2 store:(id)arg3 profile:(id)arg4 error:(id *)arg5;
++ (_Bool)prepareSyncAnchorsForEntityIdentifiers:(id)arg1 store:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 
 @end
 

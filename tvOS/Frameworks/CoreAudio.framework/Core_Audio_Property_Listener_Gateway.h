@@ -8,12 +8,19 @@
 
 #import <CoreAudio/Core_Audio_Property_Listener-Protocol.h>
 
+@class NSObject;
+@protocol OS_dispatch_queue;
+
+__attribute__((visibility("hidden")))
 @interface Core_Audio_Property_Listener_Gateway : Core_Audio_Gateway <Core_Audio_Property_Listener>
 {
     struct Listener_List *_list_ptr;
+    NSObject<OS_dispatch_queue> *_notification_queue;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *notification_queue; // @synthesize notification_queue=_notification_queue;
 @property(nonatomic) struct Listener_List *list_ptr; // @synthesize list_ptr=_list_ptr;
+- (void).cxx_destruct;
 - (void)handle_server_reconnected;
 - (void)handle_server_disconnected;
 - (void)synchronously_notify_listeners_of_object:(unsigned int)arg1 about_changes_to_properties:(const vector_9f82871d *)arg2;

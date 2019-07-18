@@ -40,6 +40,7 @@
 - (id)navigationIntentWithURL:(id)arg1;
 - (id)navigationIntentWithText:(id)arg1;
 - (id)navigationIntentWithHistoryURL:(id)arg1;
+- (id)navigationIntentWithRecentlyClosedTabStateData:(id)arg1;
 - (id)navigationIntentWithCloudTab:(id)arg1;
 - (id)navigationIntentWithBookmark:(id)arg1;
 - (id)_initializeNavigationIntentWithType:(unsigned int)arg1 value:(id)arg2;

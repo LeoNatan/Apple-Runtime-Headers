@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType ss_error;
     NSObject<OS_nw_listener> *ss_listener;
     NSObject<OS_nw_array> *ss_socks5_connections;
+    struct nw_shoes_statistics ss_stats;
     unsigned int ss_shoes:1;
 }
 

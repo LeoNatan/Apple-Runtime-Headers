@@ -10,17 +10,17 @@
 
 @interface ACAccount (ContactsFoundation)
 - (void)setPropertiesFromDelegateInfo:(id)arg1;
-@property(readonly, copy, nonatomic) NSArray *appleAccountAppleIDAliases;
-@property(readonly, copy, nonatomic) NSString *appleAccountAppleID;
-@property(readonly, nonatomic) BOOL isChildDelegateAccount;
-@property(readonly, nonatomic) BOOL isCardDAV;
-@property(readonly, nonatomic) BOOL isLDAP;
-@property(readonly, nonatomic) BOOL isPrimaryAccount;
-@property(copy, nonatomic) NSString *lastName;
-@property(copy, nonatomic) NSString *firstName;
-@property(copy, nonatomic) NSString *appleID;
-@property(copy, nonatomic) NSString *principalPath;
-@property(copy, nonatomic) NSString *altDSID;
-@property(copy, nonatomic) NSNumber *dsid;
+@property(readonly, copy, nonatomic) NSArray *_cn_appleAccountAppleIDAliases;
+@property(readonly, copy, nonatomic) NSString *_cn_appleAccountAppleID;
+@property(readonly, nonatomic) BOOL _cn_isChildDelegateAccount;
+@property(readonly, nonatomic) BOOL _cn_isCardDAV;
+@property(readonly, nonatomic) BOOL _cn_isLDAP;
+@property(readonly, nonatomic) BOOL _cn_isPrimaryAccount;
+@property(copy, nonatomic) NSString *_cn_lastName;
+@property(copy, nonatomic) NSString *_cn_firstName;
+@property(copy, nonatomic) NSString *_cn_appleID;
+@property(copy, nonatomic) NSString *_cn_principalPath;
+@property(copy, nonatomic) NSString *_cn_altDSID;
+@property(copy, nonatomic) NSNumber *_cn_dsid;
 @end
 

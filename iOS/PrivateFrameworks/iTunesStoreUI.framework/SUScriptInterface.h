@@ -89,11 +89,13 @@
 @property(readonly) long long storeSheetTypeAskToBuy;
 @property(readonly) long long storeSheetTypeDefault;
 @property(readonly) NSString *safariViewControllerIdentifierQueryParameterName;
+@property(readonly, getter=isWalletAvailable) id walletAvailable;
 @property(readonly) NSString *userAgent;
 @property(readonly) NSString *tidState;
 @property(readonly) SUScriptDictionary *tidHeaders;
 @property(readonly) long long storeSheetType;
 @property(readonly) NSString *storeFrontIdentifier;
+- (void)setWalletAvailable:(id)arg1;
 - (void)setUserAgent:(id)arg1;
 - (void)setTidState:(id)arg1;
 - (void)setTidHeaders:(id)arg1;
@@ -166,6 +168,7 @@
 - (void)financeInterruptionResolved:(id)arg1;
 - (void)fetchWalletCardMetadata:(id)arg1 callback:(id)arg2;
 - (void)fetchWalletCardData:(id)arg1;
+- (void)fetchAppleCardMetadata:(id)arg1 callback:(id)arg2;
 - (void)dispatchXEvent:(id)arg1;
 - (void)dispatchGlobalEventWithName:(id)arg1 payload:(id)arg2;
 - (void)openFamilyCircleSetupWithClientName:(id)arg1 completionFunction:(id)arg2;

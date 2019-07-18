@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (id)computeInfoGeometryDuringResize;
 - (void)beginDynamicOperation;
 - (struct CGRect)rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
+- (_Bool)shouldBeIncludedInParentFrameForCulling;
 - (struct CGRect)frameForCulling;
 - (struct CGRect)alignmentFrame;
 - (void)updateLayoutGeometryInPreparationForPartitioning;
@@ -66,6 +67,7 @@ __attribute__((visibility("hidden")))
 - (id)additionalDependenciesForChildLayout:(id)arg1;
 - (id)reliedOnLayouts;
 - (id)layoutGeometryFromInfo;
+- (id)childInfosForChildLayouts;
 - (id)visibleGeometries;
 
 @end

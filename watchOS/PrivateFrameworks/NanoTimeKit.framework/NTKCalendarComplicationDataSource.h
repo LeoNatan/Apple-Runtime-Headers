@@ -23,7 +23,7 @@
 - (void)_startObserving;
 - (Class)richComplicationDisplayViewClassForDevice:(id)arg1;
 - (id)complicationApplicationIdentifier;
-- (id)privacyTemplate;
+- (id)lockedTemplate;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)getTimelineEndDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)getTimelineStartDateWithHandler:(CDUnknownBlockType)arg1;

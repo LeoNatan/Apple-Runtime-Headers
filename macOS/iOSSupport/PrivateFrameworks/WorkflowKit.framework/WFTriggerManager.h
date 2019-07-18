@@ -15,11 +15,6 @@
 
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
-- (BOOL)shouldRunTrigger:(id)arg1 forEvent:(id)arg2;
-- (id)allConfiguredTriggerDescriptions;
-- (void)wakeDaemonToRefreshTriggers;
-- (id)configuredTimeTriggersThatShouldFireAtDate:(id)arg1;
-- (id)configuredTimeTriggersThatShouldFireNow;
 - (id)configuredTriggerWithID:(id)arg1;
 - (id)allConfiguredTriggers;
 - (void)deleteTriggerWithIdentifier:(id)arg1 notifyDaemon:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;

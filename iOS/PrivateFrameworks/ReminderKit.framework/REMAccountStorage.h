@@ -15,6 +15,8 @@
 
 @interface REMAccountStorage : NSObject <NSCopying, NSSecureCoding, REMObjectIDProviding, REMExternalSyncMetadataWritableProviding>
 {
+    unsigned long long _storeGeneration;
+    unsigned long long _copyGeneration;
     _Bool _markedForRemoval;
     _Bool _listsDADisplayOrderChanged;
     _Bool _inactive;
@@ -66,6 +68,8 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)setStoreGenerationIfNeeded:(unsigned long long)arg1;
+- (unsigned long long)storeGeneration;
 - (id)initWithCoder:(id)arg1;
 - (id)debugDescription;
 - (id)description;

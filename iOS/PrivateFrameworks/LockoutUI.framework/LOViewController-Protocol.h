@@ -14,6 +14,5 @@
 @property(readonly, nonatomic) _Bool didFinishDismissing;
 @property(copy, nonatomic) NSString *bundleIdentifier;
 @property(nonatomic, getter=isForSnapshot) _Bool forSnapshot;
-- (void)_showRestrictionsPINControllerWithMainCompletion:(void (^)(_Bool, NSError *))arg1;
 @end
 

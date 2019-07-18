@@ -27,24 +27,18 @@ __attribute__((visibility("hidden")))
     // Error parsing type: {atomic<float>="__a_"Af}, name: _signalPresent
     double _signalPresentDecayPerSample;
     struct shared_ptr<AudioStreamRecordingManager::StreamWriter> _recordingStreamWriter;
-    struct unique_ptr<boost::lockfree::queue<GainRampCommand>, std::__1::default_delete<boost::lockfree::queue<GainRampCommand>>> _rampGainQueue;
-    float _targetGain;
-    unsigned int _remainingRampFrames;
-    float _currentGain;
     unsigned int _desiredLayoutTag;
     AUAudioUnit *_target;
 }
 
 @property(retain, nonatomic) AUAudioUnit *target; // @synthesize target=_target;
 @property(nonatomic) unsigned int desiredLayoutTag; // @synthesize desiredLayoutTag=_desiredLayoutTag;
-@property(readonly) float currentGain; // @synthesize currentGain=_currentGain;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)outputBusses;
 - (id)inputBusses;
 - (id)channelCapabilities;
 - (CDUnknownBlockType)internalRenderBlock;
-- (void)fadeToGain:(float)arg1 duration:(double)arg2;
 - (void)prepareTargetAU;
 @property(nonatomic) float signalPresent; // @dynamic signalPresent;
 @property(nonatomic, getter=isRunning) BOOL running;

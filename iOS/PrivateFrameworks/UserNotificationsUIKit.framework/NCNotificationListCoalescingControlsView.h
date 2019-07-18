@@ -51,10 +51,10 @@
 - (double)_cornerRadius;
 - (double)_imageDimension;
 - (double)_effectiveValue:(double)arg1;
-- (void)toggleControlDidDismssPreviewInteractionPresentedContent:(id)arg1;
-- (void)toggleControlDidPresentPreviewInteractionPresentedContent:(id)arg1;
-- (void)toggleControlDidBeginPreviewInteraction:(id)arg1;
-- (id)containerViewForToggleControlPreviewInteractionPresentedContent:(id)arg1;
+- (void)toggleControlDidDismssClickInteractionPresentedContent:(id)arg1;
+- (void)toggleControlDidPresentClickInteractionPresentedContent:(id)arg1;
+- (void)toggleControlDidBeginClickInteraction:(id)arg1;
+- (id)containerViewForToggleControlClickInteractionPresentedContent:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

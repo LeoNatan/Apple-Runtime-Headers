@@ -46,7 +46,7 @@
 - (id)_hourlyStatisticsCollectionForStartDate:(id)arg1 endDate:(id)arg2 quantityType:(id)arg3 statisticsOptions:(unsigned int)arg4 error:(id *)arg5;
 - (_Bool)_computeAndSubmitDatabaseStatsMetric:(_Bool)arg1;
 - (_Bool)_addRowCountDeltaToEvent:(id)arg1 profile:(id)arg2 currentDate:(id)arg3;
-- (_Bool)_updateDatabaseStatsEvent:(id)arg1 withSizeFromDatabase:(id)arg2 profile:(id)arg3 currentDate:(id)arg4;
+- (_Bool)_updateDatabaseStatsEvent:(id)arg1 profile:(id)arg2 currentDate:(id)arg3;
 - (id)_updateMonthDeltaToInt64:(long long)arg1 forKey:(id)arg2 profile:(id)arg3 currentDate:(id)arg4 error:(id *)arg5;
 - (_Bool)_setInt64:(long long)arg1 keyPrefix:(id)arg2 profile:(id)arg3 date:(id)arg4 error:(id *)arg5;
 - (long long)_int64ForKeyPrefix:(id)arg1 profile:(id)arg2 date:(id *)arg3 error:(id *)arg4;

@@ -27,8 +27,6 @@
 - (void)setBackIndicatorImage:(id)arg1 transitionMaskImage:(id)arg2;
 @property(readonly, nonatomic) UIImage *backIndicatorTransitionMaskImage;
 @property(readonly, nonatomic) UIImage *backIndicatorImage;
-- (void)setPlainButtonAppearance:(id)arg1;
-- (id)plainButtonAppearance;
 @property(copy, nonatomic) NSDictionary *largeTitleTextAttributes;
 @property(nonatomic) struct UIOffset titlePositionAdjustment;
 @property(copy, nonatomic) NSDictionary *titleTextAttributes;

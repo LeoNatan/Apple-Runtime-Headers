@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSNumber, SASButtonIdentifierTransport, SASDirectActionEventTransport, SASTimeIntervalTransport, SiriContext, SiriContinuityContext, SiriDirectActionContext, SiriLongPressButtonContext, SiriSpotlightContext, SiriTestingContext;
+@class NSNumber, NSString, SASButtonIdentifierTransport, SASDirectActionEventTransport, SASTimeIntervalTransport, SiriContext, SiriContinuityContext, SiriDirectActionContext, SiriDismissalOptions, SiriLongPressButtonContext, SiriSpotlightContext, SiriTestingContext;
 
 @protocol SASSignalClientInterface
+- (oneway void)deactivationRequestFromButtonIdentifier:(SASButtonIdentifierTransport *)arg1 context:(SiriContext *)arg2 options:(SiriDismissalOptions *)arg3;
 - (oneway void)buttonLongPressFromButtonIdentifier:(SASButtonIdentifierTransport *)arg1 context:(SiriLongPressButtonContext *)arg2;
 - (oneway void)buttonTapFromButtonIdentifier:(SASButtonIdentifierTransport *)arg1;
 - (oneway void)buttonUpFromButtonIdentifier:(SASButtonIdentifierTransport *)arg1 timestamp:(SASTimeIntervalTransport *)arg2;
@@ -19,21 +20,12 @@
 - (oneway void)activationRequestFromSimpleActivation:(NSNumber *)arg1;
 - (oneway void)activationRequestFromBreadcrumb;
 - (oneway void)activationRequestFromContinuityWithContext:(SiriContinuityContext *)arg1;
+- (oneway void)activationRequestFromDirectActionEvent:(SASDirectActionEventTransport *)arg1 context:(SiriDirectActionContext *)arg2 completion:(void (^)(NSNumber *, NSError *))arg3;
 - (oneway void)activationRequestFromDirectActionEvent:(SASDirectActionEventTransport *)arg1 context:(SiriDirectActionContext *)arg2;
 - (oneway void)activationRequestFromButtonIdentifier:(SASButtonIdentifierTransport *)arg1 context:(SiriContext *)arg2;
-- (oneway void)unregisterTestingSource;
-- (oneway void)registerTestingSource;
-- (oneway void)unregisterSpotlightSource;
-- (oneway void)registerSpotlightSource;
-- (oneway void)unregisterSimpleActivationSource;
-- (oneway void)registerSimpleActivationSource;
-- (oneway void)unregisterBreadcrumbSource;
-- (oneway void)registerBreadcrumbSource;
-- (oneway void)unregisterContinuitySource;
-- (oneway void)registerContinuitySource;
-- (oneway void)unregisterDirectActionSource;
-- (oneway void)registerDirectActionSource;
-- (oneway void)unregisterButtonIdentifier:(SASButtonIdentifierTransport *)arg1;
-- (oneway void)registerButtonIdentifier:(SASButtonIdentifierTransport *)arg1;
+- (oneway void)unregisterNonButtonSourceWithType:(NSNumber *)arg1 withUUID:(NSString *)arg2;
+- (oneway void)registerNonButtonSourceWithType:(NSNumber *)arg1 withUUID:(NSString *)arg2;
+- (oneway void)unregisterButtonIdentifier:(SASButtonIdentifierTransport *)arg1 withUUID:(NSString *)arg2;
+- (oneway void)registerButtonIdentifier:(SASButtonIdentifierTransport *)arg1 withUUID:(NSString *)arg2;
 @end
 

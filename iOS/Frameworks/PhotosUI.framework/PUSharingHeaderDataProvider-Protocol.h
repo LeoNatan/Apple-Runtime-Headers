@@ -19,6 +19,7 @@
 @property(readonly, copy, nonatomic) NSOrderedSet *orderedSelectedAssets;
 @property(readonly, copy, nonatomic) id <PXDisplayAsset> keyAsset;
 @property(readonly, nonatomic) unsigned long long sourceOrigin;
+@property(readonly, nonatomic) NSString *localizedSubtitle;
 @property(readonly, nonatomic) NSString *localizedTitle;
 @end
 

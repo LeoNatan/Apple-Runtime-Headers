@@ -6,11 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSNumber, NSURL, PLAssetsdClient, PLChangeHandlingContainer, PLConstraintsDirector, PLEmailAddressManager, PLLazyObject, PLLibraryServicesManager, PLManagedObjectLookupItemCache, PLPersistentContainer, PLPersonInfoManager, PLPhotoAnalysisServiceClient, PLPhotoKitVariationCache, PLPhotoLibraryBundleController, PLPhotoLibraryPathManager;
+@class NSArray, NSError, NSNumber, NSURL, PLAssetsdClient, PLAtomicObject, PLChangeHandlingContainer, PLConstraintsDirector, PLEmailAddressManager, PLLazyObject, PLLibraryServicesManager, PLManagedObjectLookupItemCache, PLPersistentContainer, PLPersonInfoManager, PLPhotoAnalysisServiceClient, PLPhotoKitVariationCache, PLPhotoLibraryBundleController, PLPhotoLibraryPathManager;
+@protocol PLUnlocker;
 
 @interface PLPhotoLibraryBundle : NSObject
 {
     NSURL *_libraryURL;
+    struct os_unfair_lock_s _lock;
+    NSError *_shutdownReason;
+    PLAtomicObject *_atomicPhotoLibraries;
     PLLazyObject *_lazyPersistentContainer;
     PLLazyObject *_lazyChangeHandlingContainer;
     PLLazyObject *_lazyAssetsdClient;
@@ -27,8 +31,10 @@
     struct os_unfair_lock_s _sqliteErrorIndicatorLock;
     PLPhotoLibraryPathManager *_pathManager;
     PLPhotoLibraryBundleController *_bundleController;
+    id <PLUnlocker> _unlocker;
 }
 
+@property(retain) id <PLUnlocker> unlocker; // @synthesize unlocker=_unlocker;
 @property(readonly, nonatomic) __weak PLPhotoLibraryBundleController *bundleController; // @synthesize bundleController=_bundleController;
 @property(readonly) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 @property(readonly, copy) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
@@ -60,6 +66,7 @@
 @property(readonly) PLPersistentContainer *persistentContainer;
 - (id)description;
 - (id)initWithLibraryURL:(id)arg1 bundleController:(id)arg2;
+- (BOOL)registerPLPhotoLibrary:(id)arg1;
 
 @end
 

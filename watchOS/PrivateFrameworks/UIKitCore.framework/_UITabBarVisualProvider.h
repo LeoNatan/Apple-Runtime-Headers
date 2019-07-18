@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (void)teardown;
 - (void)prepare;
 - (id)initWithTabBar:(id)arg1;
+- (float)_shim_heightForCustomizingItems;
 - (void)_shim_updateTabBarItemView:(id)arg1;
 - (void)_shim_layoutItemsOnly;
 - (void)_shim_updateFocusHighlightVisibility;

@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIKeyboardDockItemButton *view;
 @property(nonatomic) _Bool enabled;
 - (id)imageWithRenderConfig:(id)arg1;
+- (id)imageSymbolConfigurationForDock;
 - (id)initWithImageName:(id)arg1 identifier:(id)arg2;
 
 @end

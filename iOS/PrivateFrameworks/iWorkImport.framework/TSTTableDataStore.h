@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     TSTTableDataList *_commentStorageDataList;
     TSTTableDataList *_importWarningSetDataList;
     TSTTableDataList *_preBNCFormatDataList;
+    _Bool _foundABadDatalistKey;
     _Bool _upgrading;
     _Bool _cellCountValid;
     unsigned char _storageVersionPreBNC;
@@ -77,6 +78,11 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSKCustomFormatList *pasteboardCustomFormatList; // @synthesize pasteboardCustomFormatList=_pasteboardCustomFormatList;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (vector_73284f0b)accumulateCurrentCellsConcurrentlyInRow:(struct TSUModelRowIndex)arg1 rowInfo:(id)arg2 atColumns:(vector_5e7df3d8 *)arg3 usingCellCreationBlock:(CDUnknownBlockType)arg4;
+- (void)didApplyConcurrentCellMap:(id)arg1;
+- (void)prepareToApplyConcurrentCellMap:(id)arg1;
+- (void)setCellsConcurrently:(id)arg1 tableUID:(const UUIDData_5fbc143e *)arg2 calculationEngine:(id)arg3 conditionalStyleOwner:(id)arg4 ignoreFormula:(_Bool)arg5 clearImportWarnings:(_Bool)arg6;
+- (void)updateDataListsConcurrentlyWithConcurrentCellMap:(id)arg1 clearImportWarnings:(_Bool)arg2;
 - (_Bool)auditRowInfoCellCountsReturningResult:(id *)arg1;
 - (_Bool)auditDatalistDuplicationReturningResult:(id *)arg1;
 - (_Bool)confirmRefCountsReturningResult:(id *)arg1;
@@ -102,6 +108,7 @@ __attribute__((visibility("hidden")))
 - (id)p_pasteboardCustomFormatList;
 @property(readonly, nonatomic) _Bool hasPasteboardCustomFormats; // @dynamic hasPasteboardCustomFormats;
 - (id)addPasteboardCustomFormat:(id)arg1 toDocument:(id)arg2 updatingPasteboardFormat:(_Bool)arg3;
+- (void)addPasteboardCustomFormatFromCell:(id)arg1;
 - (void)resetAlmostEverything;
 - (id)p_makeALazyDatalistOfType:(int)arg1 isNewForBNC:(_Bool)arg2;
 - (id)p_makeALazyDatalistOfType:(int)arg1;
@@ -120,6 +127,7 @@ __attribute__((visibility("hidden")))
 - (id)p_loadDatalist:(id *)arg1 forLazyReference:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)p_loadDatalist:(id *)arg1 forLazyReference:(id)arg2;
 - (vector_e87daf7b)mergedRects;
+- (id)formulaSpecForStorageRef:(struct TSTCellStorage *)arg1;
 - (id)formulaSpecAtCellID:(struct TSUCellCoord)arg1;
 - (struct TSCEFormula *)formulaAtCellID:(struct TSUCellCoord)arg1;
 - (void)swapRowAtIndex:(unsigned int)arg1 withRowAtIndex:(unsigned int)arg2;
@@ -133,12 +141,15 @@ __attribute__((visibility("hidden")))
 - (void)p_clearDataListEntriesInRange:(struct TSUCellRect)arg1;
 - (void)resolveDataListKeysForCell:(id)arg1 suppressTransmutation:(_Bool)arg2 sourceStorageVersion:(unsigned char)arg3;
 - (void)resolveDataListKeysForPreBNCCell:(id)arg1 suppressTransmutation:(_Bool)arg2 sourceStorageVersion:(unsigned char)arg3;
+- (void)p_stashBadKey:(unsigned long long)arg1 forList:(id)arg2;
 - (id)p_populatedMultipleChoiceListFormat:(id)arg1;
 - (id)populatedCustomFormat:(id)arg1 value:(double)arg2;
 - (void)upgradeCellFormatsU2_0;
+- (CDStruct_c8ca99d5)p_preBNCKeysForCell:(id)arg1 oldPreBNCStorageRef:(CDStruct_106f10ff *)arg2 callWillModify:(_Bool)arg3;
 - (CDStruct_c8ca99d5)p_preBNCKeysForCell:(id)arg1 atCellID:(struct TSUCellCoord)arg2;
 - (void)setCellMap:(id)arg1 tableUID:(const UUIDData_5fbc143e *)arg2 calculationEngine:(id)arg3 conditionalStyleOwner:(id)arg4 ignoreFormulas:(_Bool)arg5 skipDirtyingNonFormulaCells:(_Bool)arg6 doRichTextDOLC:(_Bool)arg7;
 - (void)setCell:(id)arg1 atCellID:(struct TSUCellCoord)arg2 tableUID:(const UUIDData_5fbc143e *)arg3 calculationEngine:(id)arg4 conditionalStyleOwner:(id)arg5 ignoreFormula:(_Bool)arg6 clearImportWarnings:(_Bool)arg7 doRichTextDOLC:(_Bool)arg8;
+- (CDStruct_c8ca99d5)p_updatePreBNCDataListsForCurrentFormat:(id)arg1 numberFormat:(id)arg2 currencyFormat:(id)arg3 dateFormat:(id)arg4 durationFormat:(id)arg5 baseFormat:(id)arg6 customFormat:(id)arg7 stepperSliderFormat:(id)arg8 mcListFormat:(id)arg9 oldPreBNCStorageRef:(CDStruct_106f10ff *)arg10 callWillModify:(_Bool)arg11;
 - (id)allRichTextStorages;
 - (_Bool)containsControlCellSpecs;
 - (_Bool)containsImportWarnings;

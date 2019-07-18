@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)userInterfaceName;
 - (id)supportedValueLabelsAxisCombinations;
 - (id)axisTypesForValueLabels;
 - (_Bool)supportsRoundedCorners;

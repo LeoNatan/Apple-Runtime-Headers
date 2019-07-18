@@ -33,6 +33,7 @@
 @property(nonatomic) BOOL refineLeftEyeRegion;
 @property(nonatomic) BOOL refineMouthRegion;
 @property(retain, nonatomic) NSNumber *cascadeStepCount;
+- (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

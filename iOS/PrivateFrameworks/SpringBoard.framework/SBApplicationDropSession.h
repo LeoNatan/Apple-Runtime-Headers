@@ -6,12 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class FBSSceneIdentity, NSSet, SBActivationSettings, SBApplication, SBSAppDragLocalContext, UIDraggingSystemSession;
+@class FBSSceneIdentity, NSSet, NSString, SBActivationSettings, SBApplication, SBSAppDragLocalContext, UIDraggingSystemSession;
 @protocol OS_dispatch_group, UIDragDropSession;
 
 @interface SBApplicationDropSession : NSObject
 {
     NSObject<OS_dispatch_group> *_activationSettingsGroup;
+    _Bool _notificationDrag;
+    _Bool _windowTearOff;
     SBActivationSettings *_activationSettings;
     SBApplication *_application;
     FBSSceneIdentity *_sceneIdentity;
@@ -19,6 +21,7 @@
     UIDraggingSystemSession *_systemSession;
     SBSAppDragLocalContext *_localContext;
     NSSet *_launchActions;
+    NSString *_targetContentIdentifier;
 }
 
 + (void)_getUserActivityDropSessionWithUIDragDropSession:(id)arg1 dragItem:(id)arg2 systemSession:(id)arg3 targetApplication:(id)arg4 completion:(CDUnknownBlockType)arg5;
@@ -29,13 +32,16 @@
 + (_Bool)_itemProviderRequiresOpenInPlace:(id)arg1;
 + (_Bool)_dragItemRepresentsAcceptableFileDrag:(id)arg1;
 + (id)_applicationForIconLeafIdentifier:(id)arg1;
-+ (void)_getUserNotificationDropSessionWithUIDragDropSession:(id)arg1 dragItem:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)_getUserNotificationDropSessionWithUIDragDropSession:(id)arg1 systemSession:(id)arg2 dragItem:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)_getLocalAppDropSessionWithUIDragDropSession:(id)arg1 dragItem:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)getDropSessionWithUIDropSession:(id)arg1 sceneProvider:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)dropSessionWithWindowUIDragSession:(id)arg1;
 + (_Bool)canHandleUIDragDropSession:(id)arg1;
+@property(copy, nonatomic) NSString *targetContentIdentifier; // @synthesize targetContentIdentifier=_targetContentIdentifier;
 @property(readonly, nonatomic) NSSet *launchActions; // @synthesize launchActions=_launchActions;
 @property(readonly, nonatomic) SBSAppDragLocalContext *localContext; // @synthesize localContext=_localContext;
+@property(readonly, nonatomic, getter=isWindowTearOff) _Bool windowTearOff; // @synthesize windowTearOff=_windowTearOff;
+@property(readonly, nonatomic, getter=isNotificationDrag) _Bool notificationDrag; // @synthesize notificationDrag=_notificationDrag;
 @property(readonly, nonatomic) UIDraggingSystemSession *systemSession; // @synthesize systemSession=_systemSession;
 @property(readonly, nonatomic) id <UIDragDropSession> uiDragDropSession; // @synthesize uiDragDropSession=_uiDragDropSession;
 @property(retain, nonatomic) FBSSceneIdentity *sceneIdentity; // @synthesize sceneIdentity=_sceneIdentity;
@@ -45,10 +51,10 @@
 - (void)calculateSceneIdentityWithSceneProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) SBActivationSettings *activationSettings; // @synthesize activationSettings=_activationSettings;
 - (id)initWithUIDragDropSession:(id)arg1 systemSession:(id)arg2 application:(id)arg3 activity:(id)arg4 activityData:(id)arg5;
-- (id)initWithUIDragDropSession:(id)arg1 systemSession:(id)arg2 application:(id)arg3 URL:(id)arg4 requiresOpenInPlace:(_Bool)arg5;
-- (id)initWithUIDragDropSession:(id)arg1 application:(id)arg2 localContext:(id)arg3;
-- (id)initWithUIDragDropSession:(id)arg1 systemSession:(id)arg2 application:(id)arg3;
-- (id)_initWithUIDragDropSession:(id)arg1 application:(id)arg2;
+- (id)initWithUIDragDropSession:(id)arg1 systemSession:(id)arg2 application:(id)arg3 targetContentIdentifier:(id)arg4 URL:(id)arg5 requiresOpenInPlace:(_Bool)arg6;
+- (id)initWithUIDragDropSession:(id)arg1 systemSession:(id)arg2 application:(id)arg3 targetContentIdentifier:(id)arg4 localContext:(id)arg5;
+- (id)initWithUIDragDropSession:(id)arg1 systemSession:(id)arg2 application:(id)arg3 targetContentIdentifier:(id)arg4;
+- (id)_initWithUIDragDropSession:(id)arg1 application:(id)arg2 targetContentIdentifier:(id)arg3;
 
 @end
 

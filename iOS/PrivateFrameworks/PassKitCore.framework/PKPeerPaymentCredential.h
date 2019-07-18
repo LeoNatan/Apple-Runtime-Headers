@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) PKPeerPaymentAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *pendingPaymentSenderName;
+@property(readonly, copy, nonatomic) NSString *ownershipTokenIdentifier;
 - (id)longDescription;
 - (unsigned long long)hash;
 - (_Bool)_isEqualToCredential:(id)arg1;

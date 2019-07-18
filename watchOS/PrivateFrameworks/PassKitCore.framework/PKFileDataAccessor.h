@@ -25,6 +25,7 @@
 - (id)remoteAssetManager;
 - (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 cloudStoreCoordinatorDelegate:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)remoteAssetsDownloadedForScreenScale:(float)arg1 suffix:(id)arg2;
 - (_Bool)remoteAssetsDownloaded;
 - (id)bundle;
 - (id)serializedFileWrapper;

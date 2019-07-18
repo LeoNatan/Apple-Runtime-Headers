@@ -55,7 +55,6 @@
 - (void)pushAllLocalRecordsOnceIfNeeded;
 - (void)resetMigrationState;
 - (void)accountDidChange:(id)arg1;
-- (_Bool)shouldMigrateToCloudKit;
 - (id)initWithDirectoryPath:(id)arg1;
 - (id)initWithDirectoryPath:(id)arg1 ignoreMigrationBatchCheck:(_Bool)arg2 syncMode:(int)arg3;
 

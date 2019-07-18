@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosGraph/PGDejunkerDeduper.h>
+#import <PhotosGraph/PGDejunkerDeduper_CLSInvestigationItem.h>
 
 @class NSDictionary, NSSet, PHPhotoLibrary;
 
-@interface PGDejunkerDeduper_PHAsset : PGDejunkerDeduper
+@interface PGDejunkerDeduper_PHAsset : PGDejunkerDeduper_CLSInvestigationItem
 {
     NSDictionary *_personLocalIdentifiersByAssetUUID;
     NSDictionary *_peopleScenesByAssetUUID;
@@ -17,16 +17,15 @@
     NSSet *_verifiedPersonLocalIdentifiers;
 }
 
-@property(retain, nonatomic) NSSet *verifiedPersonLocalIdentifiers; // @synthesize verifiedPersonLocalIdentifiers=_verifiedPersonLocalIdentifiers;
+- (void)setVerifiedPersonLocalIdentifiers:(id)arg1;
+- (id)verifiedPersonLocalIdentifiers;
 @property(readonly) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void).cxx_destruct;
-- (id)requiredItemsInItems:(id)arg1;
 - (id)itemsSortedByScoreWithItems:(id)arg1 options:(id)arg2;
 - (id)featureWithItem:(id)arg1;
 - (id)faceprintByPersonLocalIdentifierByItemIdentifierWithItems:(id)arg1;
 - (id)debugPersonStringForItem:(id)arg1;
 - (_Bool)isJunkForItem:(id)arg1;
-- (id)bestItemInItems:(id)arg1 bestItemsIfNotUnique:(id *)arg2 options:(id)arg3;
 - (id)bestItemInItems:(id)arg1 options:(id)arg2;
 - (void)_buildCachesWithAssets:(id)arg1 options:(id)arg2;
 - (id)dejunkedDedupedAssetsInAssets:(id)arg1 options:(id)arg2 debugInfo:(id)arg3 progressBlock:(CDUnknownBlockType)arg4;

@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithURL:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

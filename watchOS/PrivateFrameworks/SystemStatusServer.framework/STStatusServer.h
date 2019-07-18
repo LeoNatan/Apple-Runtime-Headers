@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <SystemStatusServer/BSDescriptionProviding-Protocol.h>
 #import <SystemStatusServer/STStatusDomainPublisherServerHandle-Protocol.h>
 #import <SystemStatusServer/STStatusDomainServerHandle-Protocol.h>
 
 @class NSMutableDictionary, NSString, STStatusDomainPublisherXPCClientListener, STStatusDomainXPCClientListener;
 @protocol OS_dispatch_queue;
 
-@interface STStatusServer : NSObject <STStatusDomainServerHandle, STStatusDomainPublisherServerHandle>
+@interface STStatusServer : NSObject <BSDescriptionProviding, STStatusDomainServerHandle, STStatusDomainPublisherServerHandle>
 {
     NSMutableDictionary *_clientsByDomain;
     NSMutableDictionary *_dataByDomain;
@@ -34,6 +35,11 @@
 - (id)_internalQueue_dataForDomain:(unsigned int)arg1;
 - (void)_internalQueue_notifyClient:(id)arg1 ofData:(id)arg2 forDomain:(unsigned int)arg3;
 - (void)_internalQueue_enumerateClientsForDomain:(unsigned int)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+@property(readonly, copy) NSString *description;
 - (void)removeClient:(id)arg1 forDomain:(unsigned int)arg2;
 - (void)registerClient:(id)arg1 forDomain:(unsigned int)arg2;
 - (void)publishData:(id)arg1 forDomain:(unsigned int)arg2;
@@ -43,7 +49,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

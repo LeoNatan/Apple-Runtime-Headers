@@ -14,6 +14,7 @@
 {
     BOOL _systemForeground;
     BOOL _callInForeground;
+    unsigned int _activationIdentifier;
     unsigned long long _stepper;
 }
 
@@ -21,6 +22,7 @@
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
 @property(nonatomic) unsigned long long stepper; // @synthesize stepper=_stepper;
+@property(nonatomic) unsigned int activationIdentifier; // @synthesize activationIdentifier=_activationIdentifier;
 @property(nonatomic) BOOL callInForeground; // @synthesize callInForeground=_callInForeground;
 @property(nonatomic) BOOL systemForeground; // @synthesize systemForeground=_systemForeground;
 - (_Bool)noteSymptom:(id)arg1;

@@ -10,6 +10,7 @@
 {
 }
 
++ (id)linkMetadataForPluginPayload:(id)arg1;
 + (id)previewSummaryWithPluginPayload:(id)arg1;
 + (id)pluginPath;
 

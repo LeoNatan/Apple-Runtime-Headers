@@ -25,7 +25,6 @@
 @property(nonatomic) CDStruct_2bd92d94 cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 - (void).cxx_destruct;
-- (void)adjustHorizontalMarginForMaximumContentRelativeWidth:(double)arg1;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
 
 @end

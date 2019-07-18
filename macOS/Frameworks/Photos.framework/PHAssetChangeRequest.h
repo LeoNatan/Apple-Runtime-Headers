@@ -60,9 +60,11 @@
     BOOL _didSetAudioClassification;
     BOOL _didSetSceneprintData;
     BOOL _didSetReverseLocationData;
+    BOOL _didSetReverseLocationDataIsValid;
     BOOL _didSetShiftedLocation;
     BOOL _didSetOriginalResourceChoice;
     BOOL _didRevertLocationToOriginal;
+    BOOL _didRemoveFromPhotoStream;
     BOOL _didSetTimeZone;
     NSString *_timeZoneName;
     long long _timeZoneOffsetValue;
@@ -71,6 +73,7 @@
     PHRelationshipChangeRequestHelper *_keywordsHelper;
     BOOL _didChangeAdjustments;
     BOOL _duplicateAllowsPrivateMetadata;
+    BOOL _reverseLocationDataIsValid;
     unsigned short _photoIrisVisibilityState;
     short _audioClassification;
     float _testScore;
@@ -112,6 +115,7 @@
 + (id)_allAssetEditOperations;
 @property(copy, nonatomic) NSSet *keywordTitles; // @synthesize keywordTitles=_keywordTitles;
 @property(retain, nonatomic) CLLocation *shiftedLocation; // @synthesize shiftedLocation=_shiftedLocation;
+@property(nonatomic) BOOL reverseLocationDataIsValid; // @synthesize reverseLocationDataIsValid=_reverseLocationDataIsValid;
 @property(retain, nonatomic) NSData *reverseLocationData; // @synthesize reverseLocationData=_reverseLocationData;
 @property(retain, nonatomic) NSData *sceneprintData; // @synthesize sceneprintData=_sceneprintData;
 @property(nonatomic) short audioClassification; // @synthesize audioClassification=_audioClassification;
@@ -164,6 +168,7 @@
 - (void)encodeToXPCDict:(id)arg1;
 - (void)revertAssetContentToOriginal;
 - (void)retryUpload;
+- (void)removeFromMyPhotoStream;
 - (void)revertLocationToOriginal;
 - (void)setAdjustmentData:(id)arg1 withRenderedJPEGData:(id)arg2 orRenderedContentURL:(id)arg3 penultimateRenderedJPEGData:(id)arg4 isSubstandardRender:(BOOL)arg5 fullSizeRenderSize:(struct CGSize)arg6 renderedVideoComplementURL:(id)arg7 penultimateRenderedVideoComplementURL:(id)arg8 optionalOriginalResourceChoice:(id)arg9;
 - (void)setAdjustmentData:(id)arg1 withRenderedJPEGData:(id)arg2 orRenderedContentURL:(id)arg3 penultimateRenderedJPEGData:(id)arg4 isSubstandardRender:(BOOL)arg5 fullSizeRenderSize:(struct CGSize)arg6 renderedVideoComplementURL:(id)arg7 penultimateRenderedVideoComplementURL:(id)arg8;

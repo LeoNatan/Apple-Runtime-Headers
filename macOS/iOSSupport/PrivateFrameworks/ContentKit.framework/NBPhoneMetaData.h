@@ -8,6 +8,7 @@
 
 @class NBPhoneNumberDesc, NSMutableArray, NSNumber, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NBPhoneMetaData : NSObject
 {
     BOOL _sameMobileAndFixedLinePattern;

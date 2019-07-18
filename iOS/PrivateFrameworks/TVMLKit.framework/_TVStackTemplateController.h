@@ -17,7 +17,6 @@
     IKChangeSet *_filteredChangeSet;
     NSArray *_viewControllers;
     NSMutableArray *_preloadQueue;
-    double _lastLayoutWidth;
     NSArray *_stackSections;
     NSArray *_stackRows;
     double _contentHeight;
@@ -27,6 +26,7 @@
     UIViewController *_backdropTintViewController;
     UIView *_backdropTintView;
     _Bool _requiresShowcasing;
+    _Bool _shouldInvalidateMetrics;
     struct {
         _Bool _preloadingScheduled;
     } _flags;
@@ -42,6 +42,7 @@
 - (double)_offsetToScrollStop:(id)arg1;
 - (void)_updateFirstItemRowIndexes;
 - (void)_buildStackSections;
+- (void)_invalidateSectionMetricsIfNeeded;
 - (double)_maxViewWidth;
 - (_Bool)_didExtendContentForPeekMetrics:(CDStruct_6408a1ed *)arg1 above:(_Bool)arg2 initial:(_Bool)arg3;
 - (struct UIEdgeInsets)_scrollableBoundsInset;

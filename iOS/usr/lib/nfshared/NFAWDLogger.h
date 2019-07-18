@@ -25,6 +25,8 @@
 - (void)postAWDPurpleTrustOperationWithParameters:(id)arg1;
 - (void)postAWDPeerPaymentRequestWithParameters:(id)arg1;
 - (void)postAWDPeerPaymentEnrollmentWithParameters:(id)arg1;
+- (void)postReaderModeIngestionSessionEnded:(id)arg1 startTime:(unsigned long long)arg2;
+- (void)postReaderModeIngestionSessionStarted:(id)arg1;
 - (void)postAWDReaderSessionEventWithParameters:(id)arg1;
 - (void)postAWDMiddlewareException:(unsigned int)arg1 mwVersion:(unsigned int)arg2 errorType:(unsigned int)arg3 errorCode:(unsigned int)arg4 breadcrumb:(unsigned long long)arg5 checkMaxExceptionCounter:(_Bool)arg6;
 - (void)postAWDPLLUnlockEvent;

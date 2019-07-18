@@ -9,6 +9,8 @@
 @class NSArray;
 
 @protocol PXGMutableAccessibilityContentInfoManager <NSObject>
+@property(retain, nonatomic) NSArray *extendedAccessibilityGroupContentInfos;
+@property(retain, nonatomic) NSArray *extendedAccessibilityContentInfos;
 @property(retain, nonatomic) NSArray *visibleAccessibilityContentInfos;
 @end
 

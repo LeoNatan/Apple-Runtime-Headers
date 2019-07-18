@@ -9,6 +9,7 @@
 @class NCNotificationListRevealCoordinator, NSArray;
 
 @protocol NCNotificationListRevealCoordinatorDelegate <NSObject>
+- (void)revealCoordinatorDidScrollToReveal:(NCNotificationListRevealCoordinator *)arg1;
 - (void)notificationListRevealCoordinator:(NCNotificationListRevealCoordinator *)arg1 updatedRevealState:(_Bool)arg2;
 - (NSArray *)subListsForNotificationListRevealCoordinator:(NCNotificationListRevealCoordinator *)arg1;
 - (_Bool)notificationListRevealCoordinatorShouldAllowReveal:(NCNotificationListRevealCoordinator *)arg1;

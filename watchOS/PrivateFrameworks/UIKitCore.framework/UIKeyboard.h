@@ -35,6 +35,8 @@
 + (struct CGSize)keyboardSizeForInterfaceOrientation:(int)arg1;
 + (struct CGSize)sizeForInterfaceOrientation:(int)arg1 ignoreInputView:(_Bool)arg2;
 + (struct CGSize)sizeForInterfaceOrientation:(int)arg1;
++ (void)setSuppressionPolicyDelegate:(id)arg1;
++ (id)suppressionPolicyDelegate;
 + (_Bool)shouldMinimizeForHardwareKeyboard;
 + (_Bool)respondsToProxGesture;
 + (_Bool)isOnScreen;

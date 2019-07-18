@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     float _repeatCount;
     long long _musicBarsStyle;
     NSObject *_didBecomeActiveNotification;
+    NSObject *_didChangeReduceTransparencyNotification;
 }
 
 - (void).cxx_destruct;

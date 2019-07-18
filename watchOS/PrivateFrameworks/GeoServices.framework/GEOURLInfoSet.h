@@ -53,6 +53,7 @@
     GEOURLInfo *_spatialLookupURL;
     GEOURLInfo *_webModuleBaseURL;
     GEOURLInfo *_wifiConnectionQualityProbeURL;
+    GEOURLInfo *_wifiQualityTileURL;
     GEOURLInfo *_wifiQualityURL;
     unsigned int _dataSet;
     struct {
@@ -96,6 +97,7 @@
         unsigned int read_spatialLookupURL:1;
         unsigned int read_webModuleBaseURL:1;
         unsigned int read_wifiConnectionQualityProbeURL:1;
+        unsigned int read_wifiQualityTileURL:1;
         unsigned int read_wifiQualityURL:1;
         unsigned int wrote_unknownFields:1;
         unsigned int wrote_abExperimentURL:1;
@@ -136,6 +138,7 @@
         unsigned int wrote_spatialLookupURL:1;
         unsigned int wrote_webModuleBaseURL:1;
         unsigned int wrote_wifiConnectionQualityProbeURL:1;
+        unsigned int wrote_wifiQualityTileURL:1;
         unsigned int wrote_wifiQualityURL:1;
         unsigned int wrote_dataSet:1;
     } _flags;
@@ -155,6 +158,9 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOURLInfo *wifiQualityTileURL;
+@property(readonly, nonatomic) _Bool hasWifiQualityTileURL;
+- (void)_readWifiQualityTileURL;
 @property(retain, nonatomic) GEOURLInfo *webModuleBaseURL;
 @property(readonly, nonatomic) _Bool hasWebModuleBaseURL;
 - (void)_readWebModuleBaseURL;

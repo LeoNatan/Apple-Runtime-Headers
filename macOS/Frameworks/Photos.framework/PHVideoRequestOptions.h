@@ -21,6 +21,7 @@
     long long _version;
     long long _deliveryMode;
     CDUnknownBlockType _progressHandler;
+    long long _streamingVideoIntent;
     long long _contentMode;
     NSObject<OS_dispatch_queue> *_resultHandlerQueue;
     struct CGSize _targetSize;
@@ -32,6 +33,7 @@
 @property(nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
 @property(nonatomic, getter=isMediumHighQualityAllowed) BOOL allowMediumHighQuality; // @synthesize allowMediumHighQuality=_allowMediumHighQuality;
 @property(nonatomic, getter=isVideoComplementAllowed) BOOL videoComplementAllowed; // @synthesize videoComplementAllowed=_videoComplementAllowed;
+@property(nonatomic) long long streamingVideoIntent; // @synthesize streamingVideoIntent=_streamingVideoIntent;
 @property(nonatomic, getter=isStreamingAllowed) BOOL streamingAllowed; // @synthesize streamingAllowed=_streamingAllowed;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(nonatomic) long long deliveryMode; // @synthesize deliveryMode=_deliveryMode;

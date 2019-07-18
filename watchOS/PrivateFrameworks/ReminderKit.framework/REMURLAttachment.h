@@ -19,6 +19,7 @@
 @property(retain, nonatomic) NSData *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+- (id)debugDescription;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

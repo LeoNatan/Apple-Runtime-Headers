@@ -78,6 +78,7 @@
 - (void)setFaceStatsFlag:(BOOL)arg1 detectedFaces:(id)arg2;
 - (void)resetStatsFlag;
 - (int)loadKeyFrameResult:(id)arg1 timestamp:(CDStruct_1b6d18a9)arg2;
+- (void)copyFrom:(id)arg1;
 - (id)initWithLivePhoto:(BOOL)arg1;
 
 @end

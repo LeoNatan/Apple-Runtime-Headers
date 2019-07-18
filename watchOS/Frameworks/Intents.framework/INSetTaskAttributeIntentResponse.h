@@ -22,6 +22,7 @@
 - (void)setPropertiesByName:(id)arg1;
 - (id)propertiesByName;
 - (id)_dictionaryRepresentation;
+@property(nonatomic) unsigned int warnings;
 @property(copy, nonatomic) INTask *modifiedTask;
 - (int)_codeWithName:(id)arg1;
 - (int)_intentResponseCode;

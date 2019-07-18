@@ -8,13 +8,14 @@
 
 #import <GeoServices/GEOMapItemStorageSerializable-Protocol.h>
 
-@class GEOAddress, GEOAssociatedApp, GEOFeatureStyleAttributes, GEOMapItemClientAttributes, GEOMapItemContainedPlace, GEOMapItemDetourInfo, GEOMapItemIdentifier, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOMessageLink, GEOPDBusinessClaim, GEOPDFlyover, GEOPDPlace, GEOPlace, GEOPlaceResult, GEOPlacecardLayoutConfiguration, GEOPriceDescription, GEORelatedPlaceList, GEORestaurantFeaturesLink, GEOStorefrontInfo, GEOStorefrontPresentationInfo, GEOStyleAttributes, GEOURLExtraStorage, NSArray, NSData, NSDate, NSDictionary, NSString, NSTimeZone, NSURL;
+@class GEOAddress, GEOAssociatedApp, GEOFeatureStyleAttributes, GEOMapItemClientAttributes, GEOMapItemContainedPlace, GEOMapItemDetourInfo, GEOMapItemIdentifier, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOMessageLink, GEOMuninViewState, GEOPDBusinessClaim, GEOPDFlyover, GEOPDPlace, GEOPlace, GEOPlaceResult, GEOPlacecardLayoutConfiguration, GEOPriceDescription, GEORelatedPlaceList, GEORestaurantFeaturesLink, GEOStorefrontInfo, GEOStorefrontPresentationInfo, GEOStyleAttributes, GEOURLExtraStorage, NSArray, NSData, NSDate, NSDictionary, NSString, NSTimeZone, NSURL;
 @protocol GEOAnnotatedItemList, GEOEncyclopedicInfo, GEOMapItemTransitInfo, GEOMapItemVenueInfo, GEOTransitAttribution, GEOTransitVehiclePosition;
 
 @interface GEOURLBackedMapItem : GEOBaseMapItem <GEOMapItemStorageSerializable>
 {
     NSURL *_url;
     GEOURLExtraStorage *_extraStorage;
+    GEOMuninViewState *_muninViewState;
     GEOFeatureStyleAttributes *_styleAttributes;
     GEOMapItemIdentifier *_identifier;
     CDStruct_2c43369c _coordinate;
@@ -25,6 +26,7 @@
 }
 
 + (_Bool)urlContainsExtraStorage:(id)arg1;
+@property(readonly, nonatomic, getter=_muninViewState) GEOMuninViewState *muninViewState; // @synthesize muninViewState=_muninViewState;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) GEOAddress *geoAddress; // @synthesize geoAddress=_geoAddress;
 @property(readonly, nonatomic, getter=_hasMUID) _Bool hasMUID; // @synthesize hasMUID=_hasMUID;
@@ -118,6 +120,7 @@
 @property(readonly, nonatomic, getter=_isStandaloneBrand) _Bool isStandAloneBrand;
 @property(readonly, nonatomic, getter=_isTransitDisplayFeature) _Bool isTransitDisplayFeature;
 @property(readonly, nonatomic, getter=_linkedServices) NSArray *linkedServices;
+@property(readonly, nonatomic, getter=_mapsCategoryId) NSString *mapsCategoryId;
 @property(readonly, nonatomic, getter=_messageLink) GEOMessageLink *messageLink;
 @property(readonly, nonatomic, getter=_needsAttribution) _Bool needsAttribution;
 @property(readonly, nonatomic, getter=_normalizedUserRatingScore) float normalizedUserRatingScore;

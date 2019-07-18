@@ -34,10 +34,20 @@
     double _backingScaleFactor;
 }
 
++ (void)_postScreentimeChangedNotification;
++ (void)_schedulePostScreentimeChangedNotification;
++ (void)checkScreenTimePolicyByApplicationID;
++ (void)checkScreenTimePolicyByCategory;
++ (void)_setupScreentimeObserver;
++ (id)screentimeBundleForUTI:(id)arg1;
++ (id)screentimeCategoryForUTI:(id)arg1;
++ (id)blockableApplicationIDs;
++ (id)blockableCategories;
 + (id)keyPathsForValuesAffectingNumberOfPages;
 + (double)inlinePreviewMinimumSupportedSize;
 + (unsigned long long)inlinePreviewTrackingAreaOptions;
 + (int)specialInlinePreviewModeForPreviewItem:(id)arg1;
++ (void)initialize;
 @property BOOL lazyLoading; // @synthesize lazyLoading=_lazyLoading;
 @property BOOL hostingLayerIsInWindowServer; // @synthesize hostingLayerIsInWindowServer=_hostingLayerIsInWindowServer;
 @property(readonly) QLPreviewView *previewView; // @synthesize previewView=_previewView;
@@ -50,6 +60,8 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (unsigned long long)_integerValueFromObject:(id)arg1;
 - (BOOL)_boolValueFromObject:(id)arg1;
+- (void)updateControlsForScreentime:(id)arg1;
+- (BOOL)screentimeAllowControls;
 - (BOOL)sharedPreviewView:(id)arg1 shouldHaveContinuousTransitionWithPreviewView:(id)arg2;
 - (void)sharedPreviewView:(id)arg1 failedToStartSharingWithPreviewPanel:(id)arg2;
 - (void)sharedPreviewView:(id)arg1 didStopSharingWithPreviewPanel:(id)arg2;

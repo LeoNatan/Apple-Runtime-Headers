@@ -22,20 +22,20 @@
     NSOperationQueue *_serviceItemProviderOperationQueue;
     NSArray *_serviceItemProviderOperations;
     NSMutableArray *_sharingServices;
+    BOOL _hasActionServices;
     NSArray *_applicationServices;
     NSArray *_excludedSharingServiceNames;
     NSDictionary *_info;
     long long _style;
+    long long _completedProviderCount;
     SHKSharingService *_selectedSharingService;
     long long _totalProviderCount;
-    long long _completedProviderCount;
-    unsigned long long _sharingStyle;
 }
 
-@property unsigned long long sharingStyle; // @synthesize sharingStyle=_sharingStyle;
-@property(nonatomic) long long completedProviderCount; // @synthesize completedProviderCount=_completedProviderCount;
 @property(nonatomic) long long totalProviderCount; // @synthesize totalProviderCount=_totalProviderCount;
 @property(retain) SHKSharingService *selectedSharingService; // @synthesize selectedSharingService=_selectedSharingService;
+@property BOOL hasActionServices; // @synthesize hasActionServices=_hasActionServices;
+@property(nonatomic) long long completedProviderCount; // @synthesize completedProviderCount=_completedProviderCount;
 @property long long style; // @synthesize style=_style;
 @property(retain) NSDictionary *info; // @synthesize info=_info;
 @property(copy) NSArray *excludedSharingServiceNames; // @synthesize excludedSharingServiceNames=_excludedSharingServiceNames;
@@ -52,9 +52,11 @@
 - (id)menu;
 - (void)openAppExtensionsPrefpane;
 - (void)_populateNSMenu;
+- (id)orderAndGroupActionServices:(id)arg1;
 - (id)sharingServicesMenu;
 - (id)newPickerMenu;
 - (id)collapsedSharingMenuItemWithSubmenu:(id)arg1;
+- (id)moreMenuItem;
 - (id)applicationServicesWithType:(long long)arg1;
 - (id)menuItemFromService:(id)arg1;
 - (id)menuItemFromService:(id)arg1 includeImage:(BOOL)arg2;

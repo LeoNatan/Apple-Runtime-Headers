@@ -9,6 +9,7 @@
 @interface _TtC7SwiftUIP33_D8F02AF14545BC8A4C2E0C65363F315316LayoutGestureBox : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: inputs
+    // Error parsing type: , name: bindings
     // Error parsing type: , name: parentSubgraph
     // Error parsing type: , name: phase
     // Error parsing type: , name: children

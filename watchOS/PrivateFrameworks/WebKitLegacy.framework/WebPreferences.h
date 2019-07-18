@@ -83,6 +83,7 @@
 - (id)initWithIdentifier:(id)arg1 sendChangeNotification:(_Bool)arg2;
 - (id)initWithIdentifier:(id)arg1;
 - (id)init;
+@property(nonatomic) _Bool linkPreloadResponsiveImagesEnabled;
 @property(nonatomic) _Bool coreMathMLEnabled;
 @property(nonatomic) _Bool resizeObserverEnabled;
 @property(nonatomic) _Bool referrerPolicyAttributeEnabled;
@@ -121,6 +122,8 @@
 - (_Bool)modernMediaControlsEnabled;
 - (void)setFetchAPIKeepAliveEnabled:(_Bool)arg1;
 - (_Bool)fetchAPIKeepAliveEnabled;
+- (void)setSyntheticEditingCommandsEnabled:(_Bool)arg1;
+- (_Bool)syntheticEditingCommandsEnabled;
 - (void)setPointerEventsEnabled:(_Bool)arg1;
 - (_Bool)pointerEventsEnabled;
 - (void)setWebAnimationsEnabled:(_Bool)arg1;

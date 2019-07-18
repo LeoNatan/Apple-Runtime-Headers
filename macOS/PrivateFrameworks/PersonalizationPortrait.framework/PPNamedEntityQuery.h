@@ -15,7 +15,6 @@
 {
     BOOL _matchCategory;
     BOOL _excludeWithoutSentiment;
-    BOOL _isMapsSearchQuery;
     BOOL _orderByName;
     unsigned long long _limit;
     NSDate *_fromDate;
@@ -29,6 +28,7 @@
     NSSet *_matchingCategories;
     NSSet *_excludingAlgorithms;
     NSString *_matchingEntityTrie;
+    unsigned long long _locationConsumer;
 }
 
 + (id)locationQueryWithLimit:(unsigned long long)arg1 fromDate:(id)arg2 consumerType:(unsigned long long)arg3;
@@ -36,7 +36,7 @@
 + (id)_matchingCategoriesDescription:(id)arg1;
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL orderByName; // @synthesize orderByName=_orderByName;
-@property(nonatomic) BOOL isMapsSearchQuery; // @synthesize isMapsSearchQuery=_isMapsSearchQuery;
+@property(nonatomic) unsigned long long locationConsumer; // @synthesize locationConsumer=_locationConsumer;
 @property(retain, nonatomic) NSString *matchingEntityTrie; // @synthesize matchingEntityTrie=_matchingEntityTrie;
 @property(nonatomic) BOOL excludeWithoutSentiment; // @synthesize excludeWithoutSentiment=_excludeWithoutSentiment;
 @property(retain, nonatomic) NSSet *excludingAlgorithms; // @synthesize excludingAlgorithms=_excludingAlgorithms;

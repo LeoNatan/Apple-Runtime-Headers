@@ -63,11 +63,11 @@
 - (void)_updateDisableAirPlayMirroringDuringPlayback;
 - (_Bool)_allowsExternalPlayback;
 - (void)_tearDownTVOutWindow;
-- (void)tearDownTVOutWindow;
 - (void)_setupTVOutWindow;
 - (void)_displayVideoView;
 - (void)_restoreTVOutVideoIfNecessary;
 - (void)_updateTVOutEnabled;
+- (void)tearDownTVOutWindow;
 - (_Bool)videoOutActive;
 - (void)_screenDidDisconnect:(id)arg1;
 - (void)_screenDidConnect:(id)arg1;

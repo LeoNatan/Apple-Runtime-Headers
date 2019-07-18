@@ -14,6 +14,7 @@
 - (HMDUserSettingsBackingStoreController *)sharedZoneControllerForUserDataController:(HMDUserDataController *)arg1;
 - (void)userDataControllerDidUpdateMediaContentProfile:(HMDUserDataController *)arg1;
 - (void)userDataControllerDidUpdateAssistantAccessControl:(HMDUserDataController *)arg1;
+- (BOOL)userDataController:(HMDUserDataController *)arg1 isPersonalRequestCapableAccessoryID:(NSUUID *)arg2;
 - (BOOL)userDataController:(HMDUserDataController *)arg1 isMediaContentProfileCapableAccessoryID:(NSUUID *)arg2;
 @end
 

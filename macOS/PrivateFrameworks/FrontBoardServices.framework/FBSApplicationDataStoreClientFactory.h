@@ -17,6 +17,7 @@
     NSArray *_prefetchedKeys;
 }
 
++ (BOOL)isServerProcess;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSArray *prefetchedKeys; // @synthesize prefetchedKeys=_prefetchedKeys;
 - (void).cxx_destruct;

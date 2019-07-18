@@ -9,27 +9,24 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
 @class NSData, NSDate, NSDictionary, NSString, NSURL;
-@protocol HMDCameraRecordingUploaderDataSource;
 
 @interface HMDCameraSignificantEventNotificationOperation : HMDCameraClipModelOperation <HMFLogging>
 {
-    NSDate *_dateOfOccurence;
+    NSDate *_dateOfOccurrence;
     unsigned long long _eventType;
     NSData *_heroFrameData;
     double _offset;
     NSDictionary *_homePresenceByPairingIdentity;
-    id <HMDCameraRecordingUploaderDataSource> _dataSource;
     NSURL *_heroFrameURL;
 }
 
 + (id)logCategory;
 @property(readonly) NSURL *heroFrameURL; // @synthesize heroFrameURL=_heroFrameURL;
-@property(readonly) id <HMDCameraRecordingUploaderDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly) NSDictionary *homePresenceByPairingIdentity; // @synthesize homePresenceByPairingIdentity=_homePresenceByPairingIdentity;
 @property(readonly) double offset; // @synthesize offset=_offset;
 @property(readonly) NSData *heroFrameData; // @synthesize heroFrameData=_heroFrameData;
 @property(readonly) unsigned long long eventType; // @synthesize eventType=_eventType;
-@property(readonly) NSDate *dateOfOccurence; // @synthesize dateOfOccurence=_dateOfOccurence;
+@property(readonly) NSDate *dateOfOccurrence; // @synthesize dateOfOccurrence=_dateOfOccurrence;
 - (void).cxx_destruct;
 - (id)attributeDescriptions;
 - (void)_cleanUpHeroFrameAsset;
@@ -37,7 +34,7 @@
 - (void)cancelWithError:(id)arg1;
 - (void)finish;
 - (void)main;
-- (id)initWithClipModelID:(id)arg1 localZone:(id)arg2 encryptionManager:(id)arg3 dateOfOccurence:(id)arg4 significantEventType:(unsigned long long)arg5 heroFrameData:(id)arg6 offset:(double)arg7 homePresenceByPairingIdentity:(id)arg8 dataSource:(id)arg9;
+- (id)initWithClipModelID:(id)arg1 localZone:(id)arg2 encryptionManager:(id)arg3 dateOfOccurrence:(id)arg4 significantEventType:(unsigned long long)arg5 heroFrameData:(id)arg6 offset:(double)arg7 homePresenceByPairingIdentity:(id)arg8 dataSource:(id)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

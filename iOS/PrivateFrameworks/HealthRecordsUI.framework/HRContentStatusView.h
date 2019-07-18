@@ -10,8 +10,6 @@
 
 @interface HRContentStatusView : UIView
 {
-    // Error parsing type: , name: titleFontBaseSize
-    // Error parsing type: , name: titleLabelAlpha
     // Error parsing type: , name: titleLabel
     // Error parsing type: , name: subtitleLabel
     // Error parsing type: , name: spinnerView
@@ -20,11 +18,11 @@
 }
 
 - (void).cxx_destruct;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (void)stopAnimating;
-- (void)startAnimating;
 - (void)layoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)stopAnimating;
+- (void)startAnimating;
+- (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2;
 @property(nonatomic, copy) NSString *subtitle;

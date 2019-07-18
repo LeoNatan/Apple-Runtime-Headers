@@ -8,7 +8,7 @@
 
 #import <Navigation/MNNavigationServiceClientInterface-Protocol.h>
 
-@class GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequest, GEODirectionsResponse, MNAudioOutputSetting, MNCommuteDestination, MNLocation, MNNavigationDetails, MNNavigationServiceRemoteProxy, MNObserverHashTable, MNSettings, NSArray, NSSet, NSString, NSUUID;
+@class GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequest, GEODirectionsResponse, MNAudioOutputSetting, MNCommuteDestination, MNLocation, MNNavigationClientProxy, MNNavigationDetails, MNNavigationServiceRemoteProxy, MNObserverHashTable, MNSettings, NSArray, NSSet, NSString, NSUUID;
 @protocol MNNavigationServiceProxy;
 
 @interface MNNavigationService : NSObject <MNNavigationServiceClientInterface>
@@ -16,6 +16,7 @@
     MNObserverHashTable *_navigationObservers;
     id <MNNavigationServiceProxy> _proxy;
     MNNavigationServiceRemoteProxy *_remoteProxy;
+    MNNavigationClientProxy *_clientProxy;
     MNSettings *_cachedSettings;
     NSSet *_realtimeUpdates;
     NSUUID *_uuid;
@@ -53,7 +54,7 @@
 - (void)navigationServiceProxy:(id)arg1 didUpdateTrafficIncidentAlert:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didReceiveTrafficIncidentAlert:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateAlternateRoutes:(id)arg2;
-- (void)navigationServiceProxy:(id)arg1 failedRerouteWithErrorCode:(int)arg2;
+- (void)navigationServiceProxy:(id)arg1 didFailRerouteWithError:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(id)arg3;
 - (void)navigationServiceProxy:(id)arg1 didUpdateRouteWithNewRideSelection:(id)arg2;
 - (void)navigationServiceProxyDidCancelReroute:(id)arg1;
@@ -61,7 +62,6 @@
 - (void)navigationServiceProxyWillReroute:(id)arg1;
 - (void)navigationServiceProxy:(id)arg1 didUpdatePreviewRoutes:(id)arg2 withSelectedRouteIndex:(unsigned int)arg3;
 - (void)navigationServiceProxy:(id)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
-- (void)navigationServiceProxy:(id)arg1 didUpdateTraffic:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateETAResponseForRoute:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
 - (void)navigationServiceProxy:(id)arg1 didUpdateDisplayETA:(id)arg2 displayRemainingMinutes:(unsigned int)arg3 forRoute:(id)arg4;
@@ -98,6 +98,7 @@
 - (void)navigationServiceProxy:(id)arg1 didChangeFromState:(unsigned int)arg2 toState:(unsigned int)arg3;
 - (void)navigationServiceProxy:(id)arg1 willChangeFromState:(unsigned int)arg2 toState:(unsigned int)arg3;
 - (void)_resetDetails;
+- (id)_clientProxy;
 - (void)recordPedestrianTracePath:(id)arg1;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;
 - (void)setTracePlaybackSpeed:(double)arg1;

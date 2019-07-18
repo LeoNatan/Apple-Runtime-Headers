@@ -15,11 +15,13 @@
 @interface _INPBTimestamp : PBCodable <_INPBTimestamp, NSSecureCoding, NSCopying>
 {
     CDStruct_85a1ec51 _has;
+    _Bool __encodeLegacyGloryData;
     int _nanos;
     long long _seconds;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) long long seconds; // @synthesize seconds=_seconds;
 @property(nonatomic) int nanos; // @synthesize nanos=_nanos;
 - (id)dictionaryRepresentation;

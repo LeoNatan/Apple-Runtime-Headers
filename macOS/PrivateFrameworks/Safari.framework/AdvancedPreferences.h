@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSTextField *smartSearchFieldSectionLabel; // @synthesize smartSearchFieldSectionLabel=_smartSearchFieldSectionLabel;
 @property(nonatomic) __weak NSView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
-- (id)helpAnchor;
+- (id)safariHelpAnchor;
 - (void)moduleWasInstalled;
 - (void)moduleWillBeRemoved;
 - (void)initializeFromDefaults;

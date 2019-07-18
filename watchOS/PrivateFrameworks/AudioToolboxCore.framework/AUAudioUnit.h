@@ -109,7 +109,7 @@
 @property(readonly, copy, nonatomic) NSArray *channelCapabilities;
 - (void)reset;
 - (id)parametersForOverviewWithCount:(int)arg1;
-@property(readonly, nonatomic) AUParameterTree *parameterTree;
+@property(retain, nonatomic) AUParameterTree *parameterTree;
 - (void)deallocateRenderResources;
 - (_Bool)allocateRenderResourcesAndReturnError:(id *)arg1;
 - (void)removeRenderObserver:(CDUnknownFunctionPointerType)arg1 userData:(void *)arg2;

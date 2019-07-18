@@ -27,6 +27,7 @@
 - (id)containerDisplayName;
 - (id)typeIdentifier;
 - (id)parentItemIdentifier;
+- (BOOL)isHidden;
 - (BOOL)fp_isContainerPristine;
 - (BOOL)fp_isContainer;
 - (id)fp_cloudContainerClientBundleIdentifiers;
@@ -37,7 +38,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithQueryItem:(id)arg1 container:(id)arg2 zoneRowID:(id)arg3 ubiquityTokenSalt:(id)arg4 isDataScope:(BOOL)arg5;
+- (id)initWithQueryItem:(id)arg1 container:(id)arg2 zoneRowID:(id)arg3 accountID:(id)arg4 isDataScope:(BOOL)arg5;
 
 @end
 

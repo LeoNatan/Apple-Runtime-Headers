@@ -40,7 +40,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)configureHomeManager:(id)arg1;
-- (id)_getActionCombinationCategory:(id)arg1;
 - (id)init;
 
 // Remaining properties

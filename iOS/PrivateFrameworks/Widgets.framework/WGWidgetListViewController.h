@@ -13,7 +13,7 @@
 #import <Widgets/WGWidgetHostingViewControllerDelegate-Protocol.h>
 #import <Widgets/WGWidgetListItemViewControllerDelegate-Protocol.h>
 
-@class MTMaterialView, NSArray, NSLayoutConstraint, NSMutableDictionary, NSString, UIScrollView, UIStackView, WGWidgetDiscoveryController;
+@class MTMaterialView, NSArray, NSLayoutConstraint, NSMutableDictionary, NSString, UIControl, UIScrollView, UIStackView, WGWidgetDiscoveryController;
 @protocol WGWidgetListViewControllerDelegate;
 
 @interface WGWidgetListViewController : UIViewController <WGWidgetDebugging, UIScrollViewDelegate, WGWidgetDiscoveryObserving, WGWidgetHostingViewControllerDelegate, WGWidgetListItemViewControllerDelegate, WGWidgetExtensionVisibilityProviding>
@@ -26,16 +26,21 @@
     NSMutableDictionary *_widgetIDsToItemVCs;
     struct CGSize _maxVisibleContentSize;
     _Bool _shouldBlurContent;
+    _Bool _editingIcons;
     id <WGWidgetListViewControllerDelegate> _delegate;
+    UIControl *_editButton;
     NSArray *_previouslyVisibleWidgetIDs;
     NSLayoutConstraint *_stackViewBottomConstraint;
 }
 
 @property(readonly, nonatomic) NSLayoutConstraint *stackViewBottomConstraint; // @synthesize stackViewBottomConstraint=_stackViewBottomConstraint;
 @property(retain, nonatomic, getter=_previouslyVisibleWidgetIDs, setter=_setPreviouslyVisibleWidgetIDs:) NSArray *previouslyVisibleWidgetIDs; // @synthesize previouslyVisibleWidgetIDs=_previouslyVisibleWidgetIDs;
+@property(nonatomic, getter=isEditingIcons) _Bool editingIcons; // @synthesize editingIcons=_editingIcons;
+@property(retain, nonatomic) UIControl *editButton; // @synthesize editButton=_editButton;
 @property(nonatomic) _Bool shouldBlurContent; // @synthesize shouldBlurContent=_shouldBlurContent;
 @property(nonatomic) __weak id <WGWidgetListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_persistentStateControllerReloadedState:(id)arg1;
 - (_Bool)isWidgetExtensionVisible:(id)arg1;
 - (id)widgetListItemViewController:(id)arg1 widgetHostWithIdentifier:(id)arg2;
 - (struct CGRect)visibleFrameForWidget:(id)arg1;
@@ -51,7 +56,8 @@
 - (struct CGSize)maxSizeForWidget:(id)arg1 forDisplayMode:(long long)arg2;
 - (struct CGSize)_maxVisibleContentSize;
 - (struct CGRect)_visibleContentFrameForBounds:(struct CGRect)arg1 withContentOccludingInsets:(struct UIEdgeInsets)arg2;
-- (void)orderOfVisibleWidgetsDidChange:(id)arg1;
+- (void)widgetDiscoveryController:(id)arg1 orderDidChangeForWidgetIdentifiers:(id)arg2;
+- (void)widgetDiscoveryControllerSignificantWidgetsChange:(id)arg1;
 - (void)_scrollViewDidStop;
 - (void)scrollViewDidScrollToTop:(id)arg1;
 - (_Bool)scrollViewShouldScrollToTop:(id)arg1;
@@ -62,6 +68,7 @@
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)_presentEditViewController;
 - (id)_wrapperViewForWidgetPlatterView:(id)arg1;
 - (void)_updateWidgetViewStateWithPreviouslyVisibleWidgetIdentifiers:(id)arg1;
 - (id)_widgetIdentifiersForPlatterViewsVisibleInBounds;
@@ -70,7 +77,7 @@
 - (void)_invokeBlockWithAllPlatterViews:(CDUnknownBlockType)arg1;
 - (void)_invokeBlock:(CDUnknownBlockType)arg1 withPlatterViewsPassingTest:(CDUnknownBlockType)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)widgetWrapper:(id)arg1 willResizeWithTransitionCoordinator:(id)arg2;
+- (void)resizeWidgetWrapperView:(id)arg1 toSize:(struct CGSize)arg2 withTransitionContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (struct CGSize)sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
@@ -80,6 +87,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)viewDidLoad;
+- (void)_adjustContentOffsetToInsideContent:(_Bool)arg1;
 - (void)_invalidateAllCancelTouchesAssertions;
 - (void)_cancelTouchesForWidget:(id)arg1;
 - (void)_cancelTouchesForHitWidgetIfNecessaryAndDisableTouchesOnAllWidgets;

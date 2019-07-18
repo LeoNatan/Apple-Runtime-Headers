@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AFMyriadEmergencyCallPunchout, AFMyriadRecord, AFPowerAssertionManager, NSData, NSDate, NSDateFormatter, NSMutableDictionary, NSString, NSUUID, _DKKnowledgeStore;
+@class AFMyriadEmergencyCallPunchout, AFMyriadRecord, AFPowerAssertionManager, AFWatchdogTimer, NSData, NSDate, NSDateFormatter, NSMutableDictionary, NSString, NSUUID, _DKKnowledgeStore;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore, OS_dispatch_source;
 
 @interface AFMyriadCoordinator : NSObject
@@ -18,6 +18,7 @@
     NSData *_previousAdvertisedData;
     NSMutableDictionary *_replies;
     NSMutableDictionary *_replyCounts;
+    NSMutableDictionary *_repliesBeforeDecision;
     NSMutableDictionary *_previousTrumps;
     NSMutableDictionary *_incomingTrumps;
     NSMutableDictionary *_multipleContinuations;
@@ -36,6 +37,7 @@
     NSObject<OS_dispatch_queue> *_myriadReadinessQueue;
     NSString *_timerLabel;
     NSObject<OS_dispatch_source> *_timer;
+    AFWatchdogTimer *_overallTimeout;
     NSObject<OS_dispatch_semaphore> *_wiproxReadinessSemaphore;
     AFPowerAssertionManager *_powerAssertionManager;
     struct __CFNotificationCenter *_center;
@@ -93,7 +95,9 @@
 - (void)_waitWiProx:(long)arg1 andExecute:(CDUnknownBlockType)arg2;
 - (void)_ageWedgeFilter;
 - (_Bool)_testAndUpdateWedgeFilter:(id)arg1;
+- (_Bool)_isAlreadyAdvertising;
 - (_Bool)_inTaskTriggerWasTooSoon;
+- (id)_sortedReplies:(id)arg1;
 - (id)_sortedReplies;
 - (_Bool)_isAPhone:(unsigned char)arg1;
 - (_Bool)_shouldHandleEmergency;
@@ -135,6 +139,8 @@
 - (id)_stateAsString;
 - (void)enterState:(unsigned int)arg1;
 - (void)_enterState:(unsigned int)arg1;
+- (void)_cancelOverallTimeout;
+- (void)_setOverallTimeout;
 - (void)_startTimer:(id)arg1 for:(float)arg2 thenEnterState:(unsigned int)arg3;
 - (void)_startTimer:(id)arg1 until:(id)arg2 thenExecute:(CDUnknownBlockType)arg3;
 - (void)_startTimer:(id)arg1 for:(float)arg2 thenExecute:(CDUnknownBlockType)arg3;

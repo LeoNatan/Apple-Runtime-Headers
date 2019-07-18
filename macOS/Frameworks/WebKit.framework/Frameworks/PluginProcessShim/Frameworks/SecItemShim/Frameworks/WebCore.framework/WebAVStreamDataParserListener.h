@@ -13,13 +13,13 @@
 __attribute__((visibility("hidden")))
 @interface WebAVStreamDataParserListener : NSObject <AVStreamDataParserOutputHandling>
 {
-    WeakPtr_a1f6cd9e _parent;
+    WeakPtr_1d7f609b _parent;
     Box_1b51c224 _abortSemaphore;
     AVStreamDataParser *_parser;
 }
 
 @property Box_1b51c224 abortSemaphore; // @synthesize abortSemaphore=_abortSemaphore;
-@property WeakPtr_a1f6cd9e parent; // @synthesize parent=_parent;
+@property WeakPtr_1d7f609b parent; // @synthesize parent=_parent;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)streamDataParser:(id)arg1 didProvideContentKeyRequestInitializationData:(id)arg2 forTrackID:(int)arg3;
@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)streamDataParser:(id)arg1 didParseStreamDataAsAsset:(id)arg2;
 - (void)invalidate;
 - (void)dealloc;
-- (id)initWithParser:(id)arg1 parent:(WeakPtr_a1f6cd9e)arg2;
+- (id)initWithParser:(id)arg1 parent:(WeakPtr_1d7f609b)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

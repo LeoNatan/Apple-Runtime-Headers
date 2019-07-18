@@ -12,8 +12,10 @@
 {
     double _dampingRatio;
     double _response;
+    double _impulse;
     double _trackingDampingRatio;
     double _trackingResponse;
+    double _trackingImpulse;
     _Bool _tracking;
 }
 
@@ -22,7 +24,9 @@
 - (double)projectForTime:(double)arg1;
 - (double)projectForDeceleration:(double)arg1;
 - (CDStruct_aa45ca86)parametersForTransitionFromState:(int)arg1 toState:(int)arg2;
+- (void)setTrackingDampingRatio:(double)arg1 response:(double)arg2 impulse:(double)arg3;
 - (void)setTrackingDampingRatio:(double)arg1 response:(double)arg2;
+- (void)setDampingRatio:(double)arg1 response:(double)arg2 impulse:(double)arg3;
 - (void)setDampingRatio:(double)arg1 response:(double)arg2;
 @property(nonatomic) double output;
 @property(nonatomic) double input;

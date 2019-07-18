@@ -17,9 +17,11 @@ __attribute__((visibility("hidden")))
     NSTimer *_keyRenewalTimer;
     NSTimer *_expirationTimer;
     TVPContentKeySession *_contentKeySession;
+    unsigned long long _backgroundTaskIdentifier;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) unsigned long long backgroundTaskIdentifier; // @synthesize backgroundTaskIdentifier=_backgroundTaskIdentifier;
 @property(retain, nonatomic) TVPContentKeySession *contentKeySession; // @synthesize contentKeySession=_contentKeySession;
 @property(retain, nonatomic) NSTimer *expirationTimer; // @synthesize expirationTimer=_expirationTimer;
 @property(retain, nonatomic) NSTimer *keyRenewalTimer; // @synthesize keyRenewalTimer=_keyRenewalTimer;
@@ -31,6 +33,8 @@ __attribute__((visibility("hidden")))
 - (void)_sendRenewalRequestForFirstArray:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_expirationTimerDidFire:(id)arg1;
 - (void)_renewalTimerDidFire:(id)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_isPlaybackUIBeingShownDidChange:(id)arg1;
 - (void)_networkReachbilityDidChange:(id)arg1;
 - (void)updateKeyRenewalAndExpiration;

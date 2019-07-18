@@ -27,12 +27,14 @@
 @property(retain, nonatomic) SearchUIAppIconsRowView *topRow; // @synthesize topRow=_topRow;
 - (void).cxx_destruct;
 - (void)removeKeyboardHandler;
+- (_Bool)navigateKeyboardUp;
+- (_Bool)navigateKeyboardDown;
 - (_Bool)navigateKeyboardLeft;
 - (void)returnKeyPressed;
 - (_Bool)navigateKeyboardRight;
 - (void)setupKeyboardHandler;
 - (_Bool)canSetupKeyboardHandler;
-- (void)removeDropShadowIconState;
+- (void)removeHighlightedIconState;
 - (unsigned long long)numberOfVisibleResults;
 - (id)visibleResults;
 - (void)updateExpanded:(_Bool)arg1;

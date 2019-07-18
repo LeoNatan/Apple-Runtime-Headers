@@ -10,6 +10,7 @@
 {
 }
 
+- (id)baseSceneComponentClassDictionary;
 - (Class)uiSceneMinimumClass;
 
 @end

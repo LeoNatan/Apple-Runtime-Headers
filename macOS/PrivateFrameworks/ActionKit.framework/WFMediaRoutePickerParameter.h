@@ -6,12 +6,12 @@
 
 #import <WorkflowKit/WFDynamicEnumerationParameter.h>
 
-#import <ActionKit/WFDynamicEnumerationAsynchronousDataSource-Protocol.h>
+#import <ActionKit/WFDynamicEnumerationDataSource-Protocol.h>
 #import <ActionKit/WFMediaRoutePickerObserver-Protocol.h>
 
 @class NSString, WFMediaRoutePicker;
 
-@interface WFMediaRoutePickerParameter : WFDynamicEnumerationParameter <WFDynamicEnumerationAsynchronousDataSource, WFMediaRoutePickerObserver>
+@interface WFMediaRoutePickerParameter : WFDynamicEnumerationParameter <WFDynamicEnumerationDataSource, WFMediaRoutePickerObserver>
 {
     WFMediaRoutePicker *_routePicker;
 }
@@ -26,7 +26,7 @@
 - (BOOL)shouldDefaultToLocalDeviceEndpoint;
 - (BOOL)preferItemPickerSheet;
 - (void)loadPossibleStatesForEnumeration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)loadDefaultSerializedRepresentationForEnumeration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)defaultSerializedRepresentationForEnumeration:(id)arg1;
 - (void)stopDiscoveringRoutes;
 - (void)startDiscoveringRoutes;
 - (id)localizedLabelForPossibleState:(id)arg1;

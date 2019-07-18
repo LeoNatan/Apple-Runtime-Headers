@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (_Bool)_locationIsHome;
 - (id)_locationTitle;
+@property(readonly, nonatomic) _Bool locationCanBeEdited;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithTriggerBuilder:(id)arg1;
 - (id)init;

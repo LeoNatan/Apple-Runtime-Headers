@@ -55,6 +55,7 @@
 - (void)_configureForLayeredImage:(id)arg1;
 - (BOOL)_displayImageAsLayered:(id)arg1;
 - (void)_updateImageViewForOldImage:(id)arg1 newImage:(id)arg2;
+- (BOOL)_resolveImageForTrait:(id)arg1 previouslyDisplayedImage:(id)arg2;
 - (BOOL)_resolveImageForTrait:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)_currentHighlightedImage;
@@ -114,11 +115,13 @@
 @property(readonly) UILayoutGuide *imageContentGuide;
 - (void)_imageContentParametersDidChange;
 - (struct UIEdgeInsets)_contentInsetsForImage:(id)arg1;
-- (void)_baselineOffsetParametersDidChange;
+- (void)_baselineOffsetParametersDidChangeHasBaselinePropertyChanged:(BOOL)arg1;
+- (BOOL)_isHasBaselinePropertyChangeable;
 - (BOOL)_hasBaseline;
 - (double)_baselineOffsetFromBottom;
 - (double)_firstBaselineOffsetFromTop;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
+- (void)setContentCompressionResistancePriority:(float)arg1 forAxis:(long long)arg2;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setContentMode:(long long)arg1;
@@ -137,7 +140,7 @@
 - (id)initWithImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_updateState;
-- (id)_renditionForSource:(id)arg1 withCGImageProvider:(CDUnknownBlockType)arg2 lazy:(BOOL)arg3;
+- (id)_renditionForSource:(id)arg1 size:(struct CGSize)arg2 withCGImageProvider:(CDUnknownBlockType)arg3 lazy:(BOOL)arg4;
 - (id)_effectForRenderingSource:(id)arg1;
 - (BOOL)_setImageViewContents:(id)arg1;
 - (void)_invalidateImageLayouts;

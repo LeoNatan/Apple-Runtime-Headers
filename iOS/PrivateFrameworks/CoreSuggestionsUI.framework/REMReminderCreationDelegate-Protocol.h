@@ -19,6 +19,7 @@
 - (void)reminderCreationViewController:(REMReminderCreationViewController *)arg1 didCreateReminder:(_Bool)arg2 error:(NSError *)arg3;
 
 @optional
+@property(readonly, nonatomic) long long locationProximity;
 @property(readonly, nonatomic) _Bool titleIsGeneratedSuggestion;
 @property(readonly, nonatomic) _Bool wantsExtendedDetailOnlyView;
 @end

@@ -26,7 +26,7 @@
 @property(nonatomic) _Bool flashlightOn; // @synthesize flashlightOn=_flashlightOn;
 @property(retain, nonatomic) CSQuickActionsButton *cameraButton; // @synthesize cameraButton=_cameraButton;
 @property(retain, nonatomic) CSQuickActionsButton *flashlightButton; // @synthesize flashlightButton=_flashlightButton;
-@property(retain, nonatomic) id <CSQuickActionsDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <CSQuickActionsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (_Bool)_prototypingAllowsButtons;

@@ -16,14 +16,8 @@ __attribute__((visibility("hidden")))
 {
     NSHMDMetalSession *_session;
     NSHMDIOSurfaceDrawable *_drawable;
-    unsigned long long drawableID;
-    double presentedTime;
 }
 
-@property(readonly, nonatomic) double presentedTime; // @synthesize presentedTime;
-@property(readonly, nonatomic) unsigned long long drawableID; // @synthesize drawableID;
-- (void)addPresentedHandler:(CDUnknownBlockType)arg1;
-- (void)presentAfterMinimumDuration:(double)arg1;
 - (void)presentAtTime:(double)arg1;
 - (void)present;
 @property(readonly) id <MTLTexture> texture;

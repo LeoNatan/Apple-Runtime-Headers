@@ -18,6 +18,7 @@
 @property(nonatomic) _Bool drawDebugViewColors; // @synthesize drawDebugViewColors=_drawDebugViewColors;
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *contentOffsetsBySceneIdentifier;
+@property(nonatomic) _Bool highColorCarplayEnabled;
 @property(retain, nonatomic) NSString *upNextColor;
 @property(retain, nonatomic) NSString *upNextLocation;
 @property(nonatomic) double upNextDuration;

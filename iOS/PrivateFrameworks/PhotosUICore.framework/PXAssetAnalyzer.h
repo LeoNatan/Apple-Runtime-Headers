@@ -13,7 +13,6 @@
     NSMutableDictionary *_analyzerUUIDToRequest;
 }
 
-+ (short)_plAnalysisWorkerTypeForWorkerType:(long long)arg1;
 - (void).cxx_destruct;
 - (id)_keyForAssetUUID:(id)arg1 forWorkerType:(long long)arg2;
 - (void)_handleResultForRequest:(id)arg1 success:(_Bool)arg2;

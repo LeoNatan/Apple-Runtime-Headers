@@ -26,6 +26,7 @@
 @property(nonatomic, readonly) NSString *sourceFeedID;
 
 @optional
+@property(nonatomic, readonly) _Bool isFeatured;
 @property(nonatomic, readonly) long long bodyTextLength;
 - (_Bool)isBundlePaid;
 

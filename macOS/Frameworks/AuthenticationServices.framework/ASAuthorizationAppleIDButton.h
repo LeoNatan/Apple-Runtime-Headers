@@ -6,38 +6,49 @@
 
 #import <AppKit/NSControl.h>
 
-@class NSColor;
+#import <AuthenticationServices/NSAccessibilityButton-Protocol.h>
 
-@interface ASAuthorizationAppleIDButton : NSControl
+@class CAFilter, NSString;
+
+@interface ASAuthorizationAppleIDButton : NSControl <NSAccessibilityButton>
 {
-    struct NSTextField *_titleLabel;
     long long _type;
     long long _style;
-    struct NSColor *_backgroundColor;
+    CAFilter *_highlightFilter;
+    double _cornerRadius;
 }
 
++ (Class)layerClass;
 + (id)buttonWithType:(long long)arg1 style:(long long)arg2;
-@property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;
-- (struct NSColor *)_borderColorForButton;
-- (struct NSColor *)_highlightedBackgroundColorForButton;
-- (struct NSColor *)_defaultBackgroundColorForButton;
-- (struct NSColor *)_textColorForButton;
-- (id)_attributedTitleForButton;
-- (id)_titleForButton;
-- (struct NSFont *)_fontForButtonLogo;
-- (struct NSFont *)_fontForButton;
+- (id)accessibilityLabel;
+- (BOOL)accessibilityPerformPress;
+- (id)accessibilityRole;
+- (BOOL)accessibilityElement;
+- (long long)_ak_buttonStyle;
+- (long long)_ak_buttonType;
 - (BOOL)_isInsideButtonEvent:(id)arg1;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
-- (void)drawRect:(struct CGRect)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-@property(nonatomic) double cornerRadius;
+- (void)_performAnimationToSetHighlighted:(BOOL)arg1;
+- (void)_createHighlightFilterIfNecessary;
+- (struct CGSize)intrinsicContentSize;
+- (void)layout;
+- (void)_drawRect:(struct CGRect)arg1 inView:(struct NSView *)arg2;
+- (void)drawRect:(struct CGRect)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithAuthorizationButtonType:(long long)arg1 authorizationButtonStyle:(long long)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

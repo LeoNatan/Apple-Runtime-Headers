@@ -6,6 +6,8 @@
 
 #import <SAObjects/SABaseClientBoundCommand.h>
 
+@class NSString;
+
 @interface SAUIChangePrimaryUtterance : SABaseClientBoundCommand
 {
 }
@@ -14,6 +16,7 @@
 + (id)changePrimaryUtterance;
 - (_Bool)requiresResponse;
 @property(nonatomic) int utteranceIndex;
+@property(copy, nonatomic) NSString *speechRecognitionId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

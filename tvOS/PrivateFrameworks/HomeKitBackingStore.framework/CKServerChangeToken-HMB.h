@@ -6,7 +6,9 @@
 
 #import <CloudKit/CKServerChangeToken.h>
 
+@class NSString;
+
 @interface CKServerChangeToken (HMB)
-- (id)hmbDescription;
+@property(readonly, copy) NSString *hmbDescription;
 @end
 

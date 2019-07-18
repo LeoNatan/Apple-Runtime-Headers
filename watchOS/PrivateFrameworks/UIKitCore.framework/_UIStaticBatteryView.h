@@ -9,16 +9,33 @@
 __attribute__((visibility("hidden")))
 @interface _UIStaticBatteryView : _UIBatteryView
 {
+    int _inflightBoltAnimationCount;
 }
 
-+ (id)_batteryBoltMaskImageWithSize:(struct CGSize)arg1 forScale:(float)arg2;
-+ (id)_batteryBoltImageWithSize:(struct CGSize)arg1 forScale:(float)arg2;
++ (id)_batteryFillImageWithSize:(struct CGSize)arg1 forScale:(float)arg2 cornerRadius:(float)arg3 withBoltCutOutOfSize:(struct CGSize)arg4 inRect:(struct CGRect)arg5 boltFlipped:(_Bool)arg6;
++ (id)_batteryFillImageWithSize:(struct CGSize)arg1 forScale:(float)arg2 cornerRadius:(float)arg3;
++ (id)_batteryBoltMaskImageWithSize:(struct CGSize)arg1 boltSize:(struct CGSize)arg2 forScale:(float)arg3;
++ (id)_batteryBoltImageWithSize:(struct CGSize)arg1 boltSize:(struct CGSize)arg2 forScale:(float)arg3;
 + (id)_batteryPinImageWithSize:(struct CGSize)arg1 forScale:(float)arg2 complexPinPath:(_Bool)arg3;
++ (id)_batteryBodyImageWithSize:(struct CGSize)arg1 forScale:(float)arg2 batteryRect:(struct CGRect)arg3 cornerRadius:(float)arg4 lineWidth:(float)arg5 withBoltCutOutOfSize:(struct CGSize)arg6 inRect:(struct CGRect)arg7 boltFlipped:(_Bool)arg8;
 + (id)_batteryBodyImageWithSize:(struct CGSize)arg1 forScale:(float)arg2 batteryRect:(struct CGRect)arg3 cornerRadius:(float)arg4 lineWidth:(float)arg5;
-+ (id)_imageWithRenderedBezierPath:(id)arg1 size:(struct CGSize)arg2 scale:(float)arg3 stroke:(_Bool)arg4;
++ (id)_renderedImageOfSize:(struct CGSize)arg1 scale:(float)arg2 withActions:(CDUnknownBlockType)arg3;
++ (id)_imageByPunchingImage:(id)arg1 inRect:(struct CGRect)arg2 flippedHorizontally:(_Bool)arg3 outOfImage:(id)arg4 inRect:(struct CGRect)arg5 size:(struct CGSize)arg6 scale:(float)arg7;
++ (id)_imageWithRenderedBezierPath:(id)arg1 size:(struct CGSize)arg2 scale:(float)arg3 pathScaleFactor:(float)arg4 stroke:(_Bool)arg5;
+- (void)_didFinishAnimatingBoltToVisible:(_Bool)arg1;
+- (void)_willBeginAnimatingBoltToVisible:(_Bool)arg1;
+- (_Bool)_useImagesWithCutoutsForBolt;
+- (float)_batteryPathScaleFactor;
+- (float)_batteryBoltSmallScaleFactor;
+- (float)_batteryBoltLargeScaleFactor;
+- (void)_updateBatteryFillColor;
 - (void)_updateBodyColors;
+- (void)_updateFillLayer;
 - (struct CGRect)_updateBodyLayers;
+- (struct CGRect)_boltRectForTraitCollection:(id)arg1 boltSize:(struct CGSize)arg2;
+- (struct CGSize)_boltPathSize;
 - (void)_createBoltLayersWithSize:(struct CGSize)arg1;
+- (void)_createFillLayer;
 - (void)_createBodyLayers;
 
 @end

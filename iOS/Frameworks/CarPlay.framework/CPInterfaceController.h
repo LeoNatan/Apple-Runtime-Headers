@@ -55,12 +55,13 @@
 - (void)templateDidAppear:(id)arg1 animated:(_Bool)arg2;
 - (void)templateWillAppear:(id)arg1 animated:(_Bool)arg2;
 - (void)handleActionForControlIdentifier:(id)arg1;
+- (id)_synchronousTemplateProvider;
 - (id)_listenerEndpointForSettings:(id)arg1;
 - (void)_connectionInterrupted;
 - (void)_connectionInvalidated;
 - (void)_connectToListenerEndpoint:(id)arg1;
 - (void)_invalidate;
-- (void)_sceneConnect:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)_sceneConnect:(id)arg1;
 - (_Bool)_applicationHasMapsEntitlement;
 - (void)_presentAlertTemplate:(id)arg1 animated:(_Bool)arg2;
 - (void)_presentActionSheetTemplate:(id)arg1 animated:(_Bool)arg2;

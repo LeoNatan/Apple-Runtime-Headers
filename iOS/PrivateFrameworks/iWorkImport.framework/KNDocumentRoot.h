@@ -8,12 +8,13 @@
 
 #import <iWorkImport/TSKModel-Protocol.h>
 #import <iWorkImport/TSTResolverContainerNameProvider-Protocol.h>
+#import <iWorkImport/TSWPDrawableOLC-Protocol.h>
 
 @class KNRecordingSyncMaintainer, KNShow, NSString;
 @protocol KNDocumentRootDelegate;
 
 __attribute__((visibility("hidden")))
-@interface KNDocumentRoot : TSADocumentRoot <TSKModel, TSTResolverContainerNameProvider>
+@interface KNDocumentRoot : TSADocumentRoot <TSWPDrawableOLC, TSKModel, TSTResolverContainerNameProvider>
 {
     _Bool _isObservingRecording;
     KNShow *_show;

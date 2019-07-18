@@ -37,6 +37,7 @@
 - (void)_performAuthorization;
 - (_Bool)_canPerformAuthorization;
 - (void)_addAuthorizationButtonToPaneContext:(id)arg1;
+- (id)_buttonText;
 - (id)_infoLabelText;
 - (id)_firstLoginChoice;
 - (_Bool)_hasOneLoginChoice;

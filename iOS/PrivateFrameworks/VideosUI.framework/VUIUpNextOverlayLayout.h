@@ -6,7 +6,7 @@
 
 #import <TVMLKit/TVViewLayout.h>
 
-@class TVImageLayout, VUIProgressBarLayout, VUITextLayout;
+@class TVImageLayout, VUIProgressBarLayout, VUITextBadgeLayout, VUITextLayout;
 
 __attribute__((visibility("hidden")))
 @interface VUIUpNextOverlayLayout : TVViewLayout
@@ -17,9 +17,11 @@ __attribute__((visibility("hidden")))
     TVImageLayout *_badgeLayout;
     VUITextLayout *_titleLayout;
     VUITextLayout *_subtitleLayout;
+    VUITextBadgeLayout *_textBadgeLayout;
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+@property(retain, nonatomic) VUITextBadgeLayout *textBadgeLayout; // @synthesize textBadgeLayout=_textBadgeLayout;
 @property(retain, nonatomic) VUITextLayout *subtitleLayout; // @synthesize subtitleLayout=_subtitleLayout;
 @property(retain, nonatomic) VUITextLayout *titleLayout; // @synthesize titleLayout=_titleLayout;
 @property(retain, nonatomic) TVImageLayout *badgeLayout; // @synthesize badgeLayout=_badgeLayout;

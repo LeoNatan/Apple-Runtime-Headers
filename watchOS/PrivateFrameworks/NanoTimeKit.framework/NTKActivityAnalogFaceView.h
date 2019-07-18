@@ -55,6 +55,7 @@
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_applyTransitionFraction:(float)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(int)arg4 slot:(id)arg5;
 - (id)_accentColorForFaceColor:(unsigned int)arg1;
+- (void)_configureAppropriateChronoDetail;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_cleanupAfterEditing;
 - (void)_prepareForEditing;
@@ -72,7 +73,7 @@
 - (void)_applyShowsLockedUI;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (int)_legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
-- (id)_curvedPickerMaskForSlot:(id)arg1;
+- (id)_pickerMaskForSlot:(id)arg1;
 - (void)_curvedComplicationCircleRadius:(float *)arg1 centerAngle:(float *)arg2 maxAngularWidth:(float *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(id)arg6;
 - (_Bool)_slotSupportsCurvedText:(id)arg1;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;

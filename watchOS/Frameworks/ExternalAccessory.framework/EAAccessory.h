@@ -14,6 +14,7 @@
     EAAccessoryInternal *_internal;
 }
 
+- (_Bool)supportsDestinationSharing;
 - (_Bool)supportsPointOfInterest;
 - (void)updateItemProperty:(int)arg1 withValue:(id)arg2;
 - (void)updateSystemProperty:(int)arg1 withValue:(id)arg2;

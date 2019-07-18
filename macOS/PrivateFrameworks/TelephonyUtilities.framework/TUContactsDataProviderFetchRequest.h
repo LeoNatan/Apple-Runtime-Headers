@@ -15,6 +15,8 @@
     BOOL _emergency;
     BOOL _blocked;
     BOOL _conversation;
+    BOOL _verified;
+    BOOL _incoming;
     NSString *_contactIdentifier;
     NSArray *_auxiliaryKeysToFetch;
     NSString *_phoneNumberPrefixHint;
@@ -26,6 +28,8 @@
 @property(readonly, copy, nonatomic) NSArray *handles; // @synthesize handles=_handles;
 @property(readonly, copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(readonly, copy, nonatomic) NSString *callerNameFromNetwork; // @synthesize callerNameFromNetwork=_callerNameFromNetwork;
+@property(readonly, nonatomic, getter=isIncoming) BOOL incoming; // @synthesize incoming=_incoming;
+@property(readonly, nonatomic, getter=isVerified) BOOL verified; // @synthesize verified=_verified;
 @property(readonly, nonatomic, getter=isConversation) BOOL conversation; // @synthesize conversation=_conversation;
 @property(readonly, nonatomic, getter=isBlocked) BOOL blocked; // @synthesize blocked=_blocked;
 @property(readonly, nonatomic, getter=isEmergency) BOOL emergency; // @synthesize emergency=_emergency;

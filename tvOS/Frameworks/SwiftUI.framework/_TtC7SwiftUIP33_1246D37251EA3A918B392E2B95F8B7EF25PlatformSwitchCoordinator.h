@@ -8,7 +8,7 @@
 
 @interface _TtC7SwiftUIP33_1246D37251EA3A918B392E2B95F8B7EF25PlatformSwitchCoordinator : _TtC7SwiftUI23PlatformViewCoordinator
 {
-    // Error parsing type: , name: setOn
+    // Error parsing type: , name: _isOn
 }
 
 - (void).cxx_destruct;

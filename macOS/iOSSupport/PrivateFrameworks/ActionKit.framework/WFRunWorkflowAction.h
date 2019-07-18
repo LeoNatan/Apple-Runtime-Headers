@@ -6,26 +6,17 @@
 
 #import <WorkflowKit/WFAction.h>
 
-#import <ActionKit/WFRunWorkflowViewControllerDelegate-Protocol.h>
 #import <ActionKit/WFWorkflowControllerDelegate-Protocol.h>
 
-@class NSString, WFRunWorkflowViewController, WFWorkflow, WFWorkflowController;
+@class NSString, WFWorkflowController;
 
-@interface WFRunWorkflowAction : WFAction <WFRunWorkflowViewControllerDelegate, WFWorkflowControllerDelegate>
+@interface WFRunWorkflowAction : WFAction <WFWorkflowControllerDelegate>
 {
-    WFRunWorkflowViewController *_runViewController;
-    WFWorkflow *_runningWorkflow;
     WFWorkflowController *_workflowController;
 }
 
 @property(nonatomic) __weak WFWorkflowController *workflowController; // @synthesize workflowController=_workflowController;
-@property(nonatomic) __weak WFWorkflow *runningWorkflow; // @synthesize runningWorkflow=_runningWorkflow;
-@property(nonatomic) __weak WFRunWorkflowViewController *runViewController; // @synthesize runViewController=_runViewController;
 - (void).cxx_destruct;
-- (id)appIdentifier;
-- (BOOL)workflowViewController:(id)arg1 handleUnsupportedEnvironmentForAction:(id)arg2 currentState:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (BOOL)workflowViewController:(id)arg1 handleUnsupportedUserInterfaceForAction:(id)arg2 currentState:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)runWorkflowWithUIKitUserInterface:(id)arg1 input:(id)arg2;
 - (id)workflowController:(id)arg1 userInterfaceForAction:(id)arg2;
 - (BOOL)workflowController:(id)arg1 handleUnsupportedEnvironmentForAction:(id)arg2 currentState:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)workflowController:(id)arg1 handleUnsupportedUserInterfaceForAction:(id)arg2 currentState:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -34,6 +25,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)finishRunningWithError:(id)arg1;
 - (void)cancel;
+- (void)stop;
 - (void)runWorkflowWithInput:(id)arg1;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 - (void)getHandoffWorkflowControllerState:(CDUnknownBlockType)arg1;

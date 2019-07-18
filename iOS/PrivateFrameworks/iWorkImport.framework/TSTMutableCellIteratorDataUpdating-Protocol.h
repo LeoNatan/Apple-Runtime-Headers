@@ -9,6 +9,7 @@
 @class TSTMutableCellIteratorData;
 
 @protocol TSTMutableCellIteratorDataUpdating <NSObject>
+- (void)updateFormulaForCellData:(TSTMutableCellIteratorData *)arg1;
 - (void)updateCellData:(TSTMutableCellIteratorData *)arg1;
 @end
 

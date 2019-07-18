@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSString, NSTimer;
+@class NSMapTable, NSMutableDictionary, NSString, NSTimer;
 
 @interface _UIFeedbackEngine : NSObject
 {
@@ -17,7 +17,7 @@
     long long _prewarmCount;
     long long _state;
     unsigned long long _numberOfClients;
-    NSMutableDictionary *_playerDequeueBlocks;
+    NSMapTable *_playerDequeueBlocks;
     unsigned long long _backgroundTaskIdentifier;
     long long _suspensionState;
 }
@@ -31,7 +31,7 @@
 + (id)_internalQueue;
 @property(readonly, nonatomic, getter=_suspensionState) long long suspensionState; // @synthesize suspensionState=_suspensionState;
 @property(nonatomic, getter=_backgroundTaskIdentifier, setter=_setBackgroundTaskIdentifier:) unsigned long long backgroundTaskIdentifier; // @synthesize backgroundTaskIdentifier=_backgroundTaskIdentifier;
-@property(retain, nonatomic, getter=_playerDequeueBlocks, setter=_setPlayerDequeueBlocks:) NSMutableDictionary *playerDequeueBlocks; // @synthesize playerDequeueBlocks=_playerDequeueBlocks;
+@property(retain, nonatomic, getter=_playerDequeueBlocks, setter=_setPlayerDequeueBlocks:) NSMapTable *playerDequeueBlocks; // @synthesize playerDequeueBlocks=_playerDequeueBlocks;
 @property(readonly, nonatomic) unsigned long long numberOfClients; // @synthesize numberOfClients=_numberOfClients;
 @property(nonatomic, getter=_state, setter=_setState:) long long state; // @synthesize state=_state;
 @property(nonatomic, getter=isEnabled, setter=_setEnabled:) _Bool enabled; // @synthesize enabled=_enabled;

@@ -10,6 +10,7 @@
 @class INTaskList, NSArray;
 
 @protocol INAddTasksIntentResponseExport <NSObject, JSExport>
+@property unsigned long long warnings;
 @property(copy) NSArray *addedTasks;
 @property(copy) INTaskList *modifiedTaskList;
 @property(readonly) long long code;

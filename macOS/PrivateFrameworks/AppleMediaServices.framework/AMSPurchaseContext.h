@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ACAccount, AMSBuyParams, AMSPurchase, NSDictionary, NSMutableDictionary, NSString;
+@class ACAccount, AMSBuyParams, AMSProcessInfo, AMSPurchase, NSDictionary, NSMutableDictionary, NSString;
 @protocol AMSPurchaseResponseProtocol;
 
 @interface AMSPurchaseContext : NSObject
@@ -18,6 +18,7 @@
     NSString *_logUUID;
     ACAccount *_account;
     NSMutableDictionary *_additionalHeaders;
+    AMSProcessInfo *_clientInfo;
     id <AMSPurchaseResponseProtocol> _delegate;
     NSDictionary *_dialog;
     NSString *_dialogId;
@@ -32,6 +33,7 @@
 @property(retain) NSString *dialogId; // @synthesize dialogId=_dialogId;
 @property(retain) NSDictionary *dialog; // @synthesize dialog=_dialog;
 @property(retain) id <AMSPurchaseResponseProtocol> delegate; // @synthesize delegate=_delegate;
+@property(readonly) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property BOOL addKBSync; // @synthesize addKBSync=_addKBSync;
 @property(retain) NSMutableDictionary *additionalHeaders; // @synthesize additionalHeaders=_additionalHeaders;
 @property(retain) ACAccount *account; // @synthesize account=_account;

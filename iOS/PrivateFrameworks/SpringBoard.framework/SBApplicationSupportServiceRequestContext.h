@@ -11,7 +11,7 @@
 @interface SBApplicationSupportServiceRequestContext : NSObject
 {
     _Bool _hostIsSpringBoard;
-    FBProcess *_clientProcess;
+    _Bool _processIsEntitled;
     FBProcess *_hostProcess;
     SBApplication *_app;
     UISDeviceContext *_deviceContext;
@@ -20,7 +20,10 @@
     UISApplicationInitializationContext *_applicationInitializationContext;
 }
 
++ (id)initializationContextForClient:(id)arg1;
++ (id)_identifiersForWhitelistedProcesses;
 - (void).cxx_destruct;
+- (id)_preparedApplicationInitializationContextForEntitledProcesses;
 - (id)_main_applicationInitializationContext;
 - (id)_main_persistenceIDs;
 - (id)_main_displayContext;
@@ -28,10 +31,9 @@
 - (long long)_main_effectiveClassicMode;
 @property(readonly, nonatomic) UISApplicationInitializationContext *applicationInitializationContext;
 - (_Bool)_canGenerateAnythingUseful;
-@property(readonly, nonatomic) NSSet *persistenceIdentifiers;
-@property(readonly, nonatomic) UISDisplayContext *displayContext;
-@property(readonly, nonatomic) UISDeviceContext *deviceContext;
-- (id)initWithClient:(id)arg1;
+- (id)initWithEntitledProcess:(id)arg1;
+- (id)initWithBundleID:(id)arg1;
+- (id)initWithApplication:(id)arg1;
 
 @end
 

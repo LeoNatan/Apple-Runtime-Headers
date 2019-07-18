@@ -6,9 +6,9 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class _UIPreviewPlatterPresentationAnimator, _UITargetedPreview;
+@class UITargetedPreview, _UIPreviewPlatterPresentationAnimator;
 
 @protocol _UIPreviewPlatterPresentationAnimatorDelegate <NSObject>
-- (_UITargetedPreview *)targetedPreviewForAnimator:(_UIPreviewPlatterPresentationAnimator *)arg1 dismissingWithStyle:(unsigned long long)arg2;
+- (UITargetedPreview *)targetedPreviewForAnimator:(_UIPreviewPlatterPresentationAnimator *)arg1 dismissingWithStyle:(unsigned long long)arg2;
 @end
 

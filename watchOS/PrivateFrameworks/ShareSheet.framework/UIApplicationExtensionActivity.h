@@ -41,6 +41,7 @@
 - (void)_presentExtensionViewControllerIfPossible;
 - (void)_instantiateExtensionViewControllerWithInputItems:(id)arg1;
 - (void)_cleanup;
+- (_Bool)_managesOwnPresentation;
 - (_Bool)_dismissActivityFromViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_presentActivityOnViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)prepareWithActivityExtensionItemData:(id)arg1;

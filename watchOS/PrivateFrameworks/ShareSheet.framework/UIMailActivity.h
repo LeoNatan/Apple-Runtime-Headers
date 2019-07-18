@@ -46,6 +46,7 @@
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)_cleanup;
 - (id)activityViewController;
+- (void)_setSessionID:(id)arg1;
 - (void)_setMailSubject:(id)arg1;
 - (void)prepareWithActivityItems:(id)arg1 recipients:(id)arg2;
 - (_Bool)canPerformWithActivityItems:(id)arg1;

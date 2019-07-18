@@ -13,7 +13,9 @@
 - (id)_trackNumberAudioFileMetadataItem;
 - (id)_trackNumberID3v1MetadataItem;
 - (id)_trackNumberID3v3MetadataItem;
+- (id)bk_isExplicitFromMetadataFormat:(id)arg1;
 - (id)bk_accountIDFromMetadataFormat:(id)arg1;
+- (id)bk_discNumberFromMetadataFormat:(id)arg1;
 - (id)bk_trackNumberFromMetadataFormat:(id)arg1;
 - (id)bk_playlistIDFromMetadataFormat:(id)arg1;
 - (id)bk_genreFromMetadataFormat:(id)arg1;

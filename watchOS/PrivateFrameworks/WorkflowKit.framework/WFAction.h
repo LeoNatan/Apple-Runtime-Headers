@@ -63,8 +63,11 @@
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+- (void)setDefaultCoercionOptionsOnInputs;
+- (void)setDefaultCoercionOptionsOnContentCollection:(id)arg1;
 - (void)configureRuntimeResourcesWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (unsigned int)minimumSupportedClientVersion;
+- (id)minimumSupportedClientVersion;
+@property(readonly, nonatomic) _Bool shouldBeIncludedByAppsViewController;
 @property(readonly, nonatomic) _Bool isRelevantToUser;
 - (_Bool)requiresUserInteractionWhenRunWithInput:(id)arg1;
 - (_Bool)showsImplicitChooseFromListWhenRunWithInput:(id)arg1;
@@ -120,6 +123,7 @@
 - (id)createAccompanyingActions;
 - (void)removeEventObserver:(id)arg1;
 - (void)addEventObserver:(id)arg1;
+- (void)outputContentClassesUpdated;
 - (void)nameUpdated;
 @property(readonly, nonatomic) NSArray *keyCommands;
 - (void)setOutput:(id)arg1 onVariableSource:(id)arg2;
@@ -139,14 +143,14 @@
 - (void)runWithInput:(id)arg1 error:(id *)arg2;
 - (void)setParameterInputProvider:(id)arg1;
 - (id)parametersRequiringUserInputAlongsideParameter:(id)arg1;
-- (void)askForValuesOfParameters:(id)arg1 withDefaultStates:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_processParameterStates:(id)arg1 withInput:(id)arg2 skippingHiddenParameters:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)processParametersWithInput:(id)arg1 askForInputIfNecessary:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)askForValuesOfParameters:(id)arg1 withDefaultStates:(id)arg2 input:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_processParameterStates:(id)arg1 withInput:(id)arg2 skippingHiddenParameters:(_Bool)arg3 askForValuesIfNecessary:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)processParametersWithoutAskingForValuesWithInput:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)processParameterStates:(id)arg1 withInput:(id)arg2 skippingHiddenParameters:(_Bool)arg3 askForValuesIfNecessary:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)copyParameterStates;
-- (void)populateInputWithProcessedParameterValues:(id)arg1;
-- (void)populateInputFromVariablesWithParameterStates:(id)arg1 legacyInput:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)populatedInputWithProcessedParameterValues:(id)arg1;
 @property(readonly, nonatomic) _Bool populatesInputFromInputParameter;
-- (void)getInputContentFromVariablesInParameterState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)getInputContentFromVariablesInParameterState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)previousAction;
 - (void)runWithInput:(id)arg1 userInterface:(id)arg2 parameterInputProvider:(id)arg3 variableSource:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)createResourceManager;
@@ -156,8 +160,9 @@
 - (void)grantAccessToLocationAccessResourceIfNeededForParameterState:(id)arg1;
 - (id)supplementalParameterValueForKey:(id)arg1 ofClass:(Class)arg2;
 - (void)setSupplementalParameterValue:(id)arg1 forKey:(id)arg2;
-- (id)serializedParametersForDonatedIntent:(id)arg1;
+- (id)serializedParametersForDonatedIntent:(id)arg1 allowDroppingUnconfigurableValues:(_Bool)arg2;
 - (id)serializedParameters;
+- (id)parameterKeysIgnoredForParameterSummary;
 - (id)createStateForParameter:(id)arg1 fromSerializedRepresentation:(id)arg2;
 - (_Bool)setParameterState:(id)arg1 forKey:(id)arg2;
 - (id)parameterStateForKey:(id)arg1 fallingBackToDefaultValue:(_Bool)arg2;
@@ -168,6 +173,9 @@
 - (id)copyWithDefinition:(id)arg1 serializedParameters:(id)arg2;
 - (id)copyWithSerializedParameters:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy, nonatomic) NSString *localizedKeyParameterDisplayName;
 - (id)initWithIdentifier:(id)arg1 definition:(id)arg2 serializedParameters:(id)arg3;
 - (_Bool)containsVariableOfType:(id)arg1;
 - (id)containedVariablesOfClass:(Class)arg1;
@@ -204,7 +212,9 @@
 @property(readonly, nonatomic) NSDictionary *settingsUIDefinition;
 @property(readonly, nonatomic) NSArray *requiredResources;
 @property(readonly, nonatomic) NSArray *userInterfaceTypes;
+@property(readonly, nonatomic, getter=isBuiltInAction) _Bool builtInAction;
 @property(readonly, nonatomic, getter=isConstructorAction) _Bool constructorAction;
+@property(readonly, nonatomic, getter=isWatchCompatible) _Bool watchCompatible;
 @property(readonly, nonatomic, getter=isResidentCompatible) _Bool residentCompatible;
 @property(readonly, nonatomic, getter=isDiscoverable) _Bool discoverable;
 @property(readonly, nonatomic, getter=isDiscoverableInSearch) _Bool discoverableInSearch;
@@ -256,8 +266,6 @@
 @property(readonly, copy, nonatomic) NSString *appBundleIdentifier;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

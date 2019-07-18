@@ -4,15 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class UIInputWindowController, UIKBKeyplaneView, UIKBTree, UIKeyboardFloatingTransitionController;
+@class UIInputWindowController, UIKeyboardFloatingTransitionController;
 
 @protocol UIKeyboardFloatingTransitionControllerDelegate
 - (BOOL)shouldBeginTransitionForController:(UIKeyboardFloatingTransitionController *)arg1;
 - (void)didEndTransitionWithController:(UIKeyboardFloatingTransitionController *)arg1;
 - (void)willBeginTransitionWithController:(UIKeyboardFloatingTransitionController *)arg1;
-- (UIKBKeyplaneView *)keyplaneViewForController:(UIKeyboardFloatingTransitionController *)arg1;
-- (UIKBTree *)keyboardForController:(UIKeyboardFloatingTransitionController *)arg1;
-- (UIKBTree *)keyplaneForController:(UIKeyboardFloatingTransitionController *)arg1;
 - (UIInputWindowController *)inputWindowControllerForController:(UIKeyboardFloatingTransitionController *)arg1;
 @end
 

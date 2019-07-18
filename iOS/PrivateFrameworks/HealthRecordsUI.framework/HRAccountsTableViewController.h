@@ -6,7 +6,7 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class HRProfile, NSArray;
+@class HRContentStatusView, HRProfile, NSArray;
 @protocol HRRecordViewControllerFactory;
 
 @interface HRAccountsTableViewController : UITableViewController
@@ -14,8 +14,10 @@
     HRProfile *_profile;
     id <HRRecordViewControllerFactory> _factory;
     NSArray *_accounts;
+    HRContentStatusView *_loadingView;
 }
 
+@property(retain, nonatomic) HRContentStatusView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 @property(retain, nonatomic) id <HRRecordViewControllerFactory> factory; // @synthesize factory=_factory;
 @property(readonly, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
@@ -25,7 +27,9 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
-- (void)viewDidAppear:(_Bool)arg1;
+- (void)_hideLoadingIndicator;
+- (void)_showLoadingIndicator;
+- (void)_reloadAccounts;
 - (void)viewDidLoad;
 - (id)init;
 

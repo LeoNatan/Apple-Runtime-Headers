@@ -8,17 +8,20 @@
 
 @interface EKSourceConstraints : NSObject
 {
-    int _maxAlarmsAllowed;
-    int _maxRecurrencesAllowed;
-    CDStruct_4df63007 _flags;
+    CDStruct_6a9d2bb3 _flags;
+    _Bool _eventAvalabilityLimited;
 }
 
-@property CDStruct_4df63007 flags; // @synthesize flags=_flags;
-@property(nonatomic) int maxRecurrencesAllowed; // @synthesize maxRecurrencesAllowed=_maxRecurrencesAllowed;
-@property(nonatomic) int maxAlarmsAllowed; // @synthesize maxAlarmsAllowed=_maxAlarmsAllowed;
+@property(nonatomic) _Bool eventAvalabilityLimited; // @synthesize eventAvalabilityLimited=_eventAvalabilityLimited;
 @property(nonatomic) _Bool supportsRecurrenceSplit;
 @property(nonatomic) _Bool supportsDelegateEnumeration;
 @property(nonatomic) _Bool supportsDelegation;
+- (void)setProhibitsUsingEventOrganizerEmailWhenComposingMail:(_Bool)arg1;
+- (_Bool)prohibitsUsingEventOrganizerEmailWhenComposingMail;
+- (void)setSupportsFloatingTimeZone:(_Bool)arg1;
+- (_Bool)supportsFloatingTimeZone;
+@property(nonatomic) _Bool shouldUseDeleteAndAddInsteadOfMoveBetweenCalendars;
+@property(nonatomic) _Bool requiresOpeningAttachmentAsLink;
 @property(nonatomic) _Bool supportsAttachments;
 @property(nonatomic) _Bool supportsSubscribedCalendars;
 @property(nonatomic) _Bool prohibitsSlicingEventsWithAttendees;
@@ -55,7 +58,7 @@
 @property(nonatomic) _Bool shouldDeclineDeletedInvitations;
 @property(nonatomic) _Bool shouldCancelDeletedEvents;
 @property(nonatomic) _Bool requiresMSFormattedUID;
-@property(nonatomic) _Bool eventAvalabilityLimited;
+- (_Bool)eventAvailabilityLimited;
 @property(nonatomic) _Bool canSetAvailability;
 @property(nonatomic) _Bool mustAcknowledgeMasterEvent;
 @property(nonatomic) _Bool requiresAttendeeSearchInSingleAccount;
@@ -81,8 +84,10 @@
 @property(nonatomic) _Bool supportsAlarmsTriggeringAfterStartDate;
 @property(nonatomic) _Bool supportsAlarmTriggerDates;
 @property(nonatomic) _Bool supportsAlarmTriggerIntervals;
-- (void)_setDefaultValues;
+@property(nonatomic) int maxRecurrencesAllowed;
+@property(nonatomic) int maxAlarmsAllowed;
 - (id)init;
+- (id)initWithCDBSourceConstraintFlags:(CDStruct_6a9d2bb3)arg1;
 
 @end
 

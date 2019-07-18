@@ -13,6 +13,7 @@
 
 + (const struct MPSLibraryInfo *)libraryInfo;
 @property(nonatomic) unsigned long long axis; // @synthesize axis=_axis;
+- (id)reshapeFitToTileToCommandBuffer:(id)arg1 currentSource:(id)arg2 kernelDimension:(unsigned long long)arg3 dimensionsToBeRetained: /* Error: Ran out of types for this method. */;
 -     // Error parsing type: 16@0:8, name: dimensionsToBeRetained
 - (id)copyWithZone:(struct _NSZone *)arg1 device:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

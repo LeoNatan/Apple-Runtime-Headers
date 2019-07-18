@@ -20,8 +20,11 @@
 - (void)fetchApplications:(void (^)(NSDictionary *))arg1;
 - (void)deletePlaybackActivityWithIdentifier:(NSString *)arg1 bundleID:(NSString *)arg2;
 - (void)requestConsentForBundleID:(NSString *)arg1 forceAuth:(_Bool)arg2 replyHandler:(void (^)(_Bool))arg3;
+- (void)endPlaybackSession:(NSString *)arg1;
+- (void)reportPlayback:(WLKPlaybackSummary *)arg1 sessionID:(NSString *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)reportPlayback:(WLKPlaybackSummary *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)requestPlaybackSummaryForID:(NSNumber *)arg1 completion:(void (^)(WLKPlaybackSummary *))arg2;
-- (void)requestPlaybackSummary:(void (^)(WLKPlaybackSummary *))arg1;
+- (void)requestDecoratedNowPlayingSummaries:(void (^)(NSDictionary *))arg1;
+- (void)requestNowPlayingSummary:(void (^)(WLKPlaybackSummary *))arg1;
 @end
 

@@ -13,6 +13,7 @@
 
 @interface PKMerchant : NSObject <NSSecureCoding, PKCloudStoreCoding>
 {
+    _Bool _useRawMerchantData;
     NSString *_displayName;
     NSURL *_originURL;
     NSString *_webMerchantIdentifier;
@@ -42,6 +43,7 @@
 @property(retain, nonatomic) PKMapsMerchant *mapsMerchant; // @synthesize mapsMerchant=_mapsMerchant;
 @property(copy, nonatomic) NSString *fallbackDetailedCategory; // @synthesize fallbackDetailedCategory=_fallbackDetailedCategory;
 @property(nonatomic) int fallbackcategory; // @synthesize fallbackcategory=_fallbackcategory;
+@property(nonatomic) _Bool useRawMerchantData; // @synthesize useRawMerchantData=_useRawMerchantData;
 @property(nonatomic) int cleanConfidenceLevel; // @synthesize cleanConfidenceLevel=_cleanConfidenceLevel;
 @property(copy, nonatomic) NSString *zip; // @synthesize zip=_zip;
 @property(copy, nonatomic) NSString *state; // @synthesize state=_state;
@@ -64,6 +66,12 @@
 - (void)_regenerateDisplayName;
 @property(readonly, nonatomic) NSString *detailedCategory;
 @property(readonly, nonatomic) int category;
+@property(readonly, nonatomic) NSURL *businessChatURL;
+@property(readonly, nonatomic) NSString *phoneNumber;
+@property(readonly, nonatomic) NSString *heroImageAttribution;
+@property(readonly, nonatomic) NSURL *logoImageURL;
+@property(readonly, nonatomic) NSURL *heroImageURL;
+@property(readonly, nonatomic) _Bool hasMapsMatch;
 @property(readonly, nonatomic) _Bool isValid;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (id)jsonDictionaryRepresentation;

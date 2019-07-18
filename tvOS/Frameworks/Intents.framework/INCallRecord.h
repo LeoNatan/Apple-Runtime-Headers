@@ -25,7 +25,7 @@
     NSNumber *_numberOfCalls;
 }
 
-+ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSNumber *numberOfCalls; // @synthesize numberOfCalls=_numberOfCalls;
 @property(readonly, nonatomic) long long callCapability; // @synthesize callCapability=_callCapability;
@@ -39,7 +39,7 @@
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
-- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

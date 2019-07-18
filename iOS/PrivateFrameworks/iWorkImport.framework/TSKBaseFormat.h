@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     _Bool _baseUseMinusSign;
 }
 
++ (id)defaultHexadecimalFormat;
 @property(readonly, nonatomic) _Bool baseUseMinusSign; // @synthesize baseUseMinusSign=_baseUseMinusSign;
 @property(readonly, nonatomic) unsigned char basePlaces; // @synthesize basePlaces=_basePlaces;
 @property(readonly, nonatomic) unsigned char base; // @synthesize base=_base;

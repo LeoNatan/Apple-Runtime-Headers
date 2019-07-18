@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)cameraIsBusy;
 + (struct AVCaptureDevice *)captureDevice;
 + (BOOL)hasCameraAccess;
++ (BOOL)canPotentiallyHaveCameraAccess;
 + (void)releaseSharedDVGrabber;
 + (id)sharedDVGrabber;
 - (void)setMirrorMode:(BOOL)arg1;

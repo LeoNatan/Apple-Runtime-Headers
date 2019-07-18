@@ -21,7 +21,7 @@
 @property(readonly, nonatomic) BOOL hasMIDI;
 @property(readonly, nonatomic) BOOL hasVideo;
 @property(readonly, nonatomic) BOOL hasAudio;
-@property(readonly, nonatomic) unsigned long long transportType;
+@property(readonly, nonatomic) unsigned int transportType;
 @property(readonly, nonatomic) NSString *UID;
 
 @end

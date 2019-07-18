@@ -19,6 +19,7 @@
 @interface PHMediaRequestContext : NSObject <PHResourceAvailabilityChangeRequestDelegate, PHVideoChoosingAndAvailabilityRequestDelegate, PHImageRequestDelegate, PHVideoRequestDelegate, PHAdjustmentDataRequestDelegate, PHResourceRepairRequestDelegate>
 {
     // Error parsing type: AQ, name: _nextID
+    // Error parsing type: Ai, name: _repairAttemptCount
     struct os_unfair_lock_s _lock;
     NSMutableArray *_requests;
     NSMutableArray *_jobs;
@@ -30,11 +31,9 @@
     id <PHMediaRequestContextDelegate> _delegate;
     unsigned int _signpostLayoutID;
     int _requestID;
-    int _type;
     PHAsset *_asset;
     PHImageDisplaySpec *_displaySpec;
     PHImageResourceChooser *_imageResourceChooser;
-    int _repairAttemptCount;
     CDUnknownBlockType _resultHandler;
     unsigned long long _signpostID;
     unsigned long long _managerID;
@@ -47,12 +46,10 @@
 + (id)imageRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 imageRequestOptions:(id)arg4 displaySpec:(id)arg5 resultHandler:(CDUnknownBlockType)arg6;
 + (void)initialize;
 @property(copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
-@property(nonatomic) int repairAttemptCount; // @synthesize repairAttemptCount=_repairAttemptCount;
 @property(retain, nonatomic) PHImageResourceChooser *imageResourceChooser; // @synthesize imageResourceChooser=_imageResourceChooser;
 @property(retain, nonatomic) PHImageDisplaySpec *displaySpec; // @synthesize displaySpec=_displaySpec;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) unsigned long long managerID; // @synthesize managerID=_managerID;
-@property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) int requestID; // @synthesize requestID=_requestID;
 @property(nonatomic) unsigned int signpostLayoutID; // @synthesize signpostLayoutID=_signpostLayoutID;
 @property(nonatomic) unsigned long long signpostID; // @synthesize signpostID=_signpostID;
@@ -73,6 +70,7 @@
 - (void)resourceAvailabilityChangeRequest:(id)arg1 didReportProgress:(double)arg2 completed:(_Bool)arg3 error:(id)arg4;
 - (void)resourceRepairRequest:(id)arg1 didFinishWithSuccess:(_Bool)arg2;
 - (_Bool)representsShareableHighQualityResource;
+@property(readonly, nonatomic) int type;
 - (_Bool)isCancelled;
 - (void)cancel;
 - (void)start;

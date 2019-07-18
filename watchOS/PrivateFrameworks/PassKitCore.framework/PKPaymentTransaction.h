@@ -9,12 +9,13 @@
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 #import <PassKitCore/PKCloudStoreCoding-Protocol.h>
 
-@class CLLocation, NSArray, NSData, NSDate, NSDecimalNumber, NSDictionary, NSNumber, NSOrderedSet, NSSet, NSString, NSTimeZone, NSUUID, PKCurrencyAmount, PKMerchant, PKPaymentTransactionFees, PKPaymentTransactionForeignExchangeInformation, PKPaymentTransactionRewards;
+@class CLLocation, NSArray, NSData, NSDate, NSDecimalNumber, NSDictionary, NSNumber, NSOrderedSet, NSSet, NSString, NSTimeZone, NSUUID, PKAccountEvent, PKCurrencyAmount, PKMerchant, PKPaymentTransactionFees, PKPaymentTransactionForeignExchangeInformation, PKPaymentTransactionRewards;
 
 @interface PKPaymentTransaction : NSObject <NSSecureCoding, PKCloudStoreCoding>
 {
     _Bool _enRoute;
     _Bool _shouldSuppressDate;
+    _Bool _suppressNotifications;
     _Bool _deviceScoreIdentifiersRequired;
     _Bool _deviceScoreIdentifiersSubmitted;
     _Bool _isCloudKitArchived;
@@ -84,8 +85,10 @@
     NSSet *_questions;
     NSOrderedSet *_servicingEvents;
     NSArray *_payments;
+    PKAccountEvent *_redemptionEvent;
     NSDictionary *_metadata;
     NSDate *_lastMerchantReprocessingDate;
+    NSString *_issueReportIdentifier;
     int _transactionStatus;
     int _transactionType;
     int _technologyType;
@@ -114,6 +117,7 @@
 @property(nonatomic) int technologyType; // @synthesize technologyType=_technologyType;
 @property(nonatomic) int transactionType; // @synthesize transactionType=_transactionType;
 @property(nonatomic) int transactionStatus; // @synthesize transactionStatus=_transactionStatus;
+@property(copy, nonatomic) NSString *issueReportIdentifier; // @synthesize issueReportIdentifier=_issueReportIdentifier;
 @property(nonatomic) _Bool originatedByDevice; // @synthesize originatedByDevice=_originatedByDevice;
 @property(nonatomic) _Bool hasNotificationServiceData; // @synthesize hasNotificationServiceData=_hasNotificationServiceData;
 @property(nonatomic) _Bool hasAssociatedPaymentApplication; // @synthesize hasAssociatedPaymentApplication=_hasAssociatedPaymentApplication;
@@ -124,6 +128,7 @@
 @property(nonatomic) _Bool processedForLocation; // @synthesize processedForLocation=_processedForLocation;
 @property(nonatomic) _Bool isCloudKitArchived; // @synthesize isCloudKitArchived=_isCloudKitArchived;
 @property(copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(retain, nonatomic) PKAccountEvent *redemptionEvent; // @synthesize redemptionEvent=_redemptionEvent;
 @property(retain, nonatomic) NSArray *payments; // @synthesize payments=_payments;
 @property(retain, nonatomic) NSOrderedSet *servicingEvents; // @synthesize servicingEvents=_servicingEvents;
 @property(retain, nonatomic) NSSet *questions; // @synthesize questions=_questions;
@@ -163,6 +168,7 @@
 @property(nonatomic) int peerPaymentType; // @synthesize peerPaymentType=_peerPaymentType;
 @property(nonatomic) int adjustmentTypeReason; // @synthesize adjustmentTypeReason=_adjustmentTypeReason;
 @property(nonatomic) int adjustmentType; // @synthesize adjustmentType=_adjustmentType;
+@property(nonatomic) _Bool suppressNotifications; // @synthesize suppressNotifications=_suppressNotifications;
 @property(nonatomic) _Bool shouldSuppressDate; // @synthesize shouldSuppressDate=_shouldSuppressDate;
 @property(nonatomic) double endStationLongitude; // @synthesize endStationLongitude=_endStationLongitude;
 @property(nonatomic) double endStationLatitude; // @synthesize endStationLatitude=_endStationLatitude;
@@ -222,12 +228,14 @@
 - (id)updateReasonsDescription;
 - (void)addUpdateReasons:(unsigned int)arg1;
 @property(readonly, nonatomic) _Bool updateReasonIsInitialDownload;
+@property(readonly, nonatomic) _Bool fullyProcessed;
 @property(readonly, nonatomic) _Bool supportsFuzzyMatching;
 @property(readonly, nonatomic) _Bool hasBackingData;
 @property(readonly, nonatomic) _Bool hasEffectiveTransactionSource;
 @property(readonly, nonatomic) unsigned int effectiveTransactionSource;
 @property(readonly, nonatomic) _Bool hasTransactionSource;
 @property(nonatomic) int peerPaymentStatus;
+@property(readonly, nonatomic) CLLocation *preferredLocation;
 @property(retain, nonatomic) CLLocation *location;
 @property(readonly, nonatomic) __weak NSString *displayLocation;
 - (unsigned int)itemType;

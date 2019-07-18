@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData;
+@class NSData, NSString;
 
 @interface CSIBitmapWrapper : NSObject
 {
@@ -33,8 +33,10 @@
     long long _textureInterpretation;
     int _exifOrientation;
     long long _targetPlatform;
+    NSString *_name;
 }
 
+@property(nonatomic) NSString *name; // @synthesize name=_name;
 @property _Bool allowsDeepmap2ImageCompression; // @synthesize allowsDeepmap2ImageCompression=_allowsDeepmap2ImageCompression;
 @property _Bool allowsDeepmapImageCompression; // @synthesize allowsDeepmapImageCompression=_allowsDeepmapImageCompression;
 @property(nonatomic) int exifOrientation; // @synthesize exifOrientation=_exifOrientation;

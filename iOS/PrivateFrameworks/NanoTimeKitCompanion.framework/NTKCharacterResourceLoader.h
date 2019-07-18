@@ -48,7 +48,6 @@
 @property(readonly, nonatomic) unsigned long long bufferOffsetBackground; // @synthesize bufferOffsetBackground=_bufferOffsetBackground;
 @property(readonly, nonatomic) id <MTLBuffer> mtlBuffer; // @synthesize mtlBuffer=_mtlBuffer;
 - (void).cxx_destruct;
-- (void)bindTexture:(id)arg1;
 - (id)getMTLTexture:(id)arg1;
 - (id)textureWithName:(id)arg1;
 - (id)textureWithName:(id)arg1 prefix:(id)arg2;

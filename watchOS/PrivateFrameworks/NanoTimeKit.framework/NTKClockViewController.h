@@ -15,6 +15,7 @@
 #import <NanoTimeKit/NTKClockWakeControllerProvider-Protocol.h>
 #import <NanoTimeKit/NTKFaceCollectionObserver-Protocol.h>
 #import <NanoTimeKit/NTKFaceLibraryViewControllerDelegate-Protocol.h>
+#import <NanoTimeKit/NTKFaceObserver-Protocol.h>
 #import <NanoTimeKit/NTKFaceViewControllerDelegate-Protocol.h>
 #import <NanoTimeKit/NTKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKit/ORBTapGestureRecognizerDelegate-Protocol.h>
@@ -23,7 +24,7 @@
 @class CSLPITimer, NCEClockCelebrationViewController, NSLock, NSSet, NSString, NSTimer, NTKAggdReporter, NTKComplicationLocationManager, NTKFaceLibraryViewController, NTKFaceSnapshotClient, NTKFaceViewController, NTKPersistentFaceCollection, NTKTransientFaceCollection, NTKUpNextUseMonitor, ORBAnimator, ORBTapGestureRecognizer, PPTNTKBlankFaceCollection, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol CSLSScreenWakeProviderDelegate, NTKClockWakeController;
 
-@interface NTKClockViewController : UIViewController <NTKClockViewDelegate, NTKFaceViewControllerDelegate, NTKFaceLibraryViewControllerDelegate, ORBTapGestureRecognizerDelegate, CSLPIButtonHandlerProtocol, UIGestureRecognizerDelegate, NPTOUserPhotoFaceServerDelegateProtocol, NTKFaceCollectionObserver, NTKSensitiveUIStateObserver, NCEClockCelebrationViewControllerDelegate, CSLSScreenWakeProvider, NTKClockStatusBarViewControllerStatusObserver, NTKClockWakeControllerProvider>
+@interface NTKClockViewController : UIViewController <NTKClockViewDelegate, NTKFaceViewControllerDelegate, NTKFaceLibraryViewControllerDelegate, ORBTapGestureRecognizerDelegate, CSLPIButtonHandlerProtocol, UIGestureRecognizerDelegate, NPTOUserPhotoFaceServerDelegateProtocol, NTKFaceCollectionObserver, NTKSensitiveUIStateObserver, NCEClockCelebrationViewControllerDelegate, CSLSScreenWakeProvider, NTKClockStatusBarViewControllerStatusObserver, NTKClockWakeControllerProvider, NTKFaceObserver>
 {
     Class _statusBarViewControllerClass;
     NTKPersistentFaceCollection *_libraryFaceCollection;
@@ -67,11 +68,15 @@
 @property(readonly, nonatomic) NTKFaceViewController *wake_faceViewController;
 @property(readonly, nonatomic) UIView *wake_clockContentView;
 - (struct CGRect)launchRectForComplicationApplicationIdentifier:(id)arg1;
-- (void)_preloadAddableFaces;
+- (void)_handleDeviceLockChange;
+- (void)_preloadAddableFacesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_significantTimeChangeNotification;
 - (void)_localeDidChangeNotification;
 - (void)faceCollectionDidLoad:(id)arg1;
 - (void)faceCollection:(id)arg1 didSelectFace:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)faceCollection:(id)arg1 didRemoveFace:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)faceCollection:(id)arg1 didAddFace:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)faceConfigurationDidChange:(id)arg1;
 - (void)statusBarDidChange;
 - (_Bool)createNewCustomPhotoFaceFromFaceStyle:(int)arg1 andPath:(id)arg2;
 - (_Bool)createNewKaleidoscopeFaceFromPath:(id)arg1;

@@ -7,10 +7,11 @@
 #import <WorkflowUI/WFModuleSummaryEditor.h>
 
 #import <WorkflowUI/MPMediaPickerControllerDelegate-Protocol.h>
+#import <WorkflowUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 
 @class NSString, UIViewController;
 
-@interface WFMediaPickerParameterSummaryEditor : WFModuleSummaryEditor <MPMediaPickerControllerDelegate>
+@interface WFMediaPickerParameterSummaryEditor : WFModuleSummaryEditor <MPMediaPickerControllerDelegate, UIPopoverPresentationControllerDelegate>
 {
     UIViewController *_presentedViewController;
 }
@@ -18,6 +19,8 @@
 + (BOOL)supportsLongPressGestureForSlotWithIdentifier:(id)arg1;
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 - (void).cxx_destruct;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)mediaPickerDidCancel:(id)arg1;
 - (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;

@@ -9,17 +9,19 @@
 #import <UIKitCore/UIFocusedInterfaceActionPressDelegate-Protocol.h>
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSMutableSet, NSPointerArray, NSString, UIGestureRecognizer, UIHoverGestureRecognizer, UIInterfaceActionRepresentationView, UILongPressGestureRecognizer, UIScrollView, UIView, _UIInterfaceActionSelectByPressGestureRecognizer;
+@class NSArray, NSMutableSet, NSPointerArray, NSString, UIGestureRecognizer, UIHoverGestureRecognizer, UIInterfaceActionRepresentationView, UILongPressGestureRecognizer, UIScrollView, UIView, _UIInterfaceActionSelectByPressGestureRecognizer, _UIInterfaceActionSelectionDelayGestureRecognizer;
 
 __attribute__((visibility("hidden")))
 @interface UIInterfaceActionSelectionTrackingController : NSObject <UIGestureRecognizerDelegate, UIFocusedInterfaceActionPressDelegate>
 {
+    BOOL _scrubbingEnabled;
     BOOL _selectByPressGestureEnabled;
     BOOL _selectionFeedbackEnabled;
     UIView *_trackableContainerView;
     UIScrollView *_actionsScrollView;
     NSArray *_representationViews;
     UILongPressGestureRecognizer *_selectionGestureRecognizer;
+    _UIInterfaceActionSelectionDelayGestureRecognizer *_selectionDelayGestureRecognizer;
     UIGestureRecognizer *_systemProvidedGestureRecognizer;
     NSMutableSet *_viewsRequiringSelectionGestureDisabling;
     _UIInterfaceActionSelectByPressGestureRecognizer *_selectByPressGestureRecognizer;
@@ -41,11 +43,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIInterfaceActionSelectByPressGestureRecognizer *selectByPressGestureRecognizer; // @synthesize selectByPressGestureRecognizer=_selectByPressGestureRecognizer;
 @property(readonly, nonatomic) NSMutableSet *viewsRequiringSelectionGestureDisabling; // @synthesize viewsRequiringSelectionGestureDisabling=_viewsRequiringSelectionGestureDisabling;
 @property(readonly, nonatomic) UIGestureRecognizer *systemProvidedGestureRecognizer; // @synthesize systemProvidedGestureRecognizer=_systemProvidedGestureRecognizer;
+@property(readonly, nonatomic) _UIInterfaceActionSelectionDelayGestureRecognizer *selectionDelayGestureRecognizer; // @synthesize selectionDelayGestureRecognizer=_selectionDelayGestureRecognizer;
 @property(readonly, nonatomic) UILongPressGestureRecognizer *selectionGestureRecognizer; // @synthesize selectionGestureRecognizer=_selectionGestureRecognizer;
 @property(readonly, nonatomic) struct CGPoint actionSelectionInitialLocationInContainerView; // @synthesize actionSelectionInitialLocationInContainerView=_actionSelectionInitialLocationInContainerView;
 @property(retain, nonatomic) NSArray *representationViews; // @synthesize representationViews=_representationViews;
 @property(nonatomic) BOOL selectionFeedbackEnabled; // @synthesize selectionFeedbackEnabled=_selectionFeedbackEnabled;
 @property(nonatomic) BOOL selectByPressGestureEnabled; // @synthesize selectByPressGestureEnabled=_selectByPressGestureEnabled;
+@property(nonatomic) BOOL scrubbingEnabled; // @synthesize scrubbingEnabled=_scrubbingEnabled;
 @property(nonatomic) __weak UIScrollView *actionsScrollView; // @synthesize actionsScrollView=_actionsScrollView;
 @property(nonatomic) __weak UIView *trackableContainerView; // @synthesize trackableContainerView=_trackableContainerView;
 - (void).cxx_destruct;

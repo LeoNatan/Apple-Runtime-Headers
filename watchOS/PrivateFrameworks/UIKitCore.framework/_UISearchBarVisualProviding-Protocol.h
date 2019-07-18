@@ -119,6 +119,8 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (float)defaultHeightForOrientation:(int)arg1;
 - (void)updateEffectiveContentInset;
+- (void)getOverrideContentInsets:(struct UIEdgeInsets *)arg1 overriddenEdges:(unsigned int *)arg2;
+- (void)setOverrideContentInsets:(struct UIEdgeInsets)arg1 forRectEdges:(unsigned int)arg2;
 - (void)updatePlaceholderColor;
 - (UIColor *)effectiveBarTintColor;
 - (void)setBarTintColor:(UIColor *)arg1 forceUpdate:(_Bool)arg2;
@@ -130,6 +132,7 @@
 - (void)setImage:(UIImage *)arg1 forSearchBarIcon:(int)arg2 state:(unsigned int)arg3;
 - (UIImage *)searchFieldBackgroundImageForState:(unsigned int)arg1;
 - (void)setSearchFieldBackgroundImage:(UIImage *)arg1 forState:(unsigned int)arg2;
+- (void)applySearchBarStyle;
 - (void)updateRightView;
 - (void)setUpScopeBar;
 - (void)setShowsDeleteButton:(_Bool)arg1;

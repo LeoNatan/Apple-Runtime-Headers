@@ -8,7 +8,7 @@
 
 #import <MLFoundation/MLFoundationLayerCompiling-Protocol.h>
 
-@class MLFoundationConvolutionDescriptor, MLFoundationTensor;
+@class MLFoundationConvolutionDescriptor, MLFoundationTensor, NSString;
 
 @interface MLFoundationConvolutionLayer : MLFoundationLayer <MLFoundationLayerCompiling>
 {
@@ -25,10 +25,15 @@
 @property(readonly, nonatomic) MLFoundationConvolutionDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 @property(readonly, nonatomic) int accumulatorPrecisionOption; // @synthesize accumulatorPrecisionOption=_accumulatorPrecisionOption;
 - (void).cxx_destruct;
-- (id)description;
-- (void)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
+@property(readonly, copy) NSString *description;
+- (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
 - (id)initWithWeights:(id)arg1 biasTerms:(id)arg2 descriptor:(id)arg3;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -43,6 +43,12 @@ struct _BSProtobufFieldEntry {
     Class _field6;
     CDUnknownFunctionPointerType _field7;
     CDUnknownFunctionPointerType _field8;
+    struct {
+        int _field1;
+        struct _BSProtobufFieldEntry **_field2;
+        struct _BSProtobufFieldEntry *_field3;
+    } _field9;
+    _Bool _field10;
 };
 
 struct _NSRange {

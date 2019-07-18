@@ -33,6 +33,7 @@
 @property(readonly, nonatomic) NSString *ic_stringByRemovingAttachmentCharacters;
 @property(readonly, nonatomic) NSString *ic_stringReplacingUnsafeXMLCharacters;
 @property(readonly, nonatomic) NSString *ic_stringReplacingUnsafeHTMLCharacters;
+- (struct _NSRange)ic_lineRangeIgnoringLineBreakCharactersForIndex:(unsigned long long)arg1;
 - (_Bool)ic_rangeIsValid:(struct _NSRange)arg1;
 @property(readonly, nonatomic) NSString *ic_sanitizedFilenameString;
 @property(readonly, nonatomic) NSString *ic_whitespaceAndNewlineCoalescedString;

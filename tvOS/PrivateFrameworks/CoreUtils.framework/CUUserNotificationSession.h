@@ -22,12 +22,14 @@
     int _stepState;
     UNUserNotificationCenter *_unCenter;
     struct LogCategory *_ucat;
+    unsigned int _flags;
     CDUnknownBlockType _actionHandler;
     NSString *_bodyKey;
     NSArray *_bodyArguments;
     NSString *_bundleID;
     NSString *_categoryID;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+    NSString *_header;
     NSString *_identifier;
     NSString *_label;
     long long _soundAlertType;
@@ -44,6 +46,8 @@
 @property(nonatomic) long long soundAlertType; // @synthesize soundAlertType=_soundAlertType;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(copy, nonatomic) NSString *header; // @synthesize header=_header;
+@property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSString *categoryID; // @synthesize categoryID=_categoryID;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;

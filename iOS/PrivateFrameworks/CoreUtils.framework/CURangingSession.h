@@ -6,15 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString;
+#import <CoreUtils/PRSharingSessionDelegate-Protocol.h>
+
+@class NSArray, NSString, PRContactWhitelist, PRSharingSession;
 @protocol OS_dispatch_queue;
 
-@interface CURangingSession : NSObject
+@interface CURangingSession : NSObject <PRSharingSessionDelegate>
 {
     _Bool _activateCalled;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     _Bool _peersChanged;
+    NSArray *_peersRanging;
+    PRContactWhitelist *_prResponder;
+    int _prRangingInitiated;
+    PRSharingSession *_prRangingSession;
     struct LogCategory *_ucat;
     unsigned int _flags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -35,6 +41,8 @@
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
+- (void)session:(id)arg1 didFailwithError:(id)arg2;
+- (void)session:(id)arg1 didEstimateScores:(id)arg2;
 - (void)_updatePeers;
 - (void)_updateResponder;
 - (void)_updateInitiator;
@@ -43,6 +51,7 @@
 - (void)_invalidate;
 - (void)invalidate;
 - (void)activate;
+- (void)addSample:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

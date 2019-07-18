@@ -43,7 +43,6 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
-@property(readonly, nonatomic) _Bool requiresQueryId;
 - (id)actionDestinationFromResult:(id)arg1 actionEngaged:(_Bool)arg2 destination:(int)arg3;
 @property(readonly, nonatomic) id feedbackJSON;
 

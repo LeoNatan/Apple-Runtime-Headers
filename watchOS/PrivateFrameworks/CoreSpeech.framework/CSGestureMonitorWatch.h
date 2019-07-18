@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (void)_notifyObserver:(id)arg1;
 - (void)_didReceiveWakeGesture;
-- (void)wakeGestureRecognized:(unsigned int)arg1 date:(id)arg2;
+- (void)wakeGestureRecognized:(id)arg1;
 - (void)_stopMonitoring;
 - (void)_startMonitoringWithQueue:(id)arg1;
 - (id)init;

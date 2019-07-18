@@ -12,13 +12,14 @@
 #import <MediaControls/MediaControlsVolumeControllerObserver-Protocol.h>
 #import <MediaControls/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CALayer, MediaControlsVolumeController, MediaControlsVolumeSliderView, NSArray, NSString, UIViewPropertyAnimator;
+@class CALayer, MediaControlsVolumeController, MediaControlsVolumeSliderView, NSArray, NSString, UIImageView, UIViewPropertyAnimator;
 @protocol MediaControlsVolumeViewControllerDelegate;
 
 @interface MediaControlsVolumeViewController : UIViewController <MediaControlsVolumeControllerObserver, MPVolumeDisplaying, CCUIGroupRendering, UIGestureRecognizerDelegate, CCUIContentModuleContentViewController>
 {
     MediaControlsVolumeSliderView *_primarySlider;
     MediaControlsVolumeSliderView *_secondarySlider;
+    UIImageView *_affordanceImageView;
     _Bool _isExpanded;
     _Bool _isSplitRoute;
     id <MediaControlsVolumeViewControllerDelegate> _delegate;
@@ -30,6 +31,7 @@
 - (void).cxx_destruct;
 - (id)_glyphStateForVolumeLevel:(double)arg1;
 - (void)_dismissMediaControlsVolumeViewController;
+- (void)_performWithoutAnimationWhileHidden:(CDUnknownBlockType)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_secondarySliderValueDidChange:(id)arg1;
 - (void)_primarySliderValueDidChange:(id)arg1;

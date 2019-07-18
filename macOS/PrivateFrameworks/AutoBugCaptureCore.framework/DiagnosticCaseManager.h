@@ -112,7 +112,8 @@ __attribute__((visibility("hidden")))
 - (id)casesDiagnosedInTheLast:(double)arg1 from:(double)arg2 matchingDomain:(id)arg3;
 - (BOOL)isAdmissible:(id)arg1 dampenedBy:(short *)arg2;
 - (id)caseStorageAnalytics;
-- (unsigned int)dampeningFactorForSignature:(id)arg1 caseTime:(id)arg2;
+- (unsigned int)defaultDampeningFactorForSignature:(id)arg1 limit:(long long)arg2;
+- (unsigned int)dampeningFactorForSignature:(id)arg1 caseTime:(id)arg2 limit:(long long)arg3;
 - (BOOL)allowDampeningExceptionFor:(id)arg1;
 - (void)removeTransientCasesWithSignature:(id)arg1 beforeTime:(double)arg2;
 - (void)removeClosedCasesFromTotalCases;
@@ -120,7 +121,7 @@ __attribute__((visibility("hidden")))
 - (void)saveAllCases;
 @property(readonly, nonatomic) ABCConfigurationManager *configManager;
 @property(readonly, nonatomic) DiagnosticsController *diagnosticsController;
-- (long long)dailyCountLimitForDomain:(id)arg1 type:(id)arg2 subtype:(id)arg3;
+- (long long)dailyCountLimitForDomain:(id)arg1 type:(id)arg2 subtype:(id)arg3 domainPredicates:(id)arg4;
 - (BOOL)disableDampening;
 - (void)configureWithWorkspace:(id)arg1;
 - (id)initWithWorkspace:(id)arg1 liaison:(id)arg2;

@@ -16,6 +16,8 @@
     _Bool _isInteractive;
     _Bool _mayReparentPluginViews;
     _Bool _suppressMask;
+    int _userInterfaceStyle;
+    int _userInterfaceLevel;
     UIView<CKTranscriptPluginView> *_pluginView;
     IMBalloonPluginDataSource *_dataSource;
     UIView *_pluginSnapshotViewForThrowAnimation;
@@ -33,6 +35,8 @@
 @property(nonatomic) _Bool isInteractive; // @synthesize isInteractive=_isInteractive;
 @property(retain, nonatomic) IMBalloonPluginDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) UIView<CKTranscriptPluginView> *pluginView; // @synthesize pluginView=_pluginView;
+- (int)userInterfaceLevel;
+- (int)userInterfaceStyle;
 - (void).cxx_destruct;
 - (void)clearFilters;
 - (void)addFilter:(id)arg1;
@@ -51,6 +55,9 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(struct UIEdgeInsets *)arg2;
 - (void)setCanUseOpaqueMask:(_Bool)arg1;
 - (void)prepareForReuse;
+- (void)setUserInterfaceLevel:(int)arg1;
+- (void)setUserInterfaceStyle:(int)arg1;
+- (void)updateBalloonMasks;
 - (void)prepareForDisplay;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

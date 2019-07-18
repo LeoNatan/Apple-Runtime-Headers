@@ -54,6 +54,7 @@
 - (id)initWithUnmanagedAdjustment:(id)arg1 changedKeys:(id)arg2;
 - (id)initWithAssetDescription:(id)arg1 changedKeys:(id)arg2;
 - (id)initWithAdditionalAssetAttributes:(id)arg1 changedKeys:(id)arg2;
+- (void)_fixResourceTypeUnknownValues;
 - (void)_fixXMPSidecarUTI;
 - (void)_fixLocationData;
 - (void)_fixAdjustedAssetUTI;

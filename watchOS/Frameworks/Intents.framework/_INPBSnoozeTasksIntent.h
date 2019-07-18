@@ -16,6 +16,7 @@
 {
     CDStruct_eff9c538 _has;
     _Bool _all;
+    _Bool __encodeLegacyGloryData;
     _INPBIntentMetadata *_intentMetadata;
     _INPBDateTimeRange *_nextTriggerTime;
     NSArray *_tasks;
@@ -23,6 +24,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)tasksType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *tasks; // @synthesize tasks=_tasks;
 @property(retain, nonatomic) _INPBDateTimeRange *nextTriggerTime; // @synthesize nextTriggerTime=_nextTriggerTime;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;

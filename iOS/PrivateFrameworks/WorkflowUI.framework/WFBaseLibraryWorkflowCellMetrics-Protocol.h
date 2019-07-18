@@ -11,6 +11,7 @@
 
 @protocol WFBaseLibraryWorkflowCellMetrics <NSObject, NSCopying>
 @property(readonly, nonatomic) WFFloatingViewConfiguration *floatingViewConfiguration;
+@property(readonly, nonatomic) unsigned long long appIconFormat;
 @property(readonly, nonatomic) struct CGSize workflowGlyphSize;
 @end
 

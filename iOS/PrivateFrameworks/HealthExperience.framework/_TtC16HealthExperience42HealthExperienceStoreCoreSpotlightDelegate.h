@@ -6,11 +6,11 @@
 
 #import <CoreData/NSCoreDataCoreSpotlightDelegate.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC16HealthExperience42HealthExperienceStoreCoreSpotlightDelegate : NSCoreDataCoreSpotlightDelegate
 {
 }
 
+- (void).cxx_destruct;
 - (id)initForStoreWithDescription:(id)arg1 model:(id)arg2;
 - (id)attributeSetForObject:(id)arg1;
 - (id)indexName;

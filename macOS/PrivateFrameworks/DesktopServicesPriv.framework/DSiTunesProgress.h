@@ -12,14 +12,15 @@ __attribute__((visibility("hidden")))
     TNSRef_b16f0fdb _progress;
     struct TNSRef<AMPDevice, void> _device;
     struct TNodePtr _deviceNode;
+    struct vector<TKeyValueObserver, std::__1::allocator<TKeyValueObserver>> _observers;
 }
 
 + (struct TNodePtr)nodeForDevice:(id)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)sendUpdate;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (TNSRef_b16f0fdb)progress;
+- (void)aboutToTearDown;
 - (id)initWithDevice:(id)arg1 andProgress:(id)arg2;
 
 @end

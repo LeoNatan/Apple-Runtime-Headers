@@ -85,6 +85,7 @@
 - (void)cancel;
 @property(readonly, getter=isCancelled) BOOL cancelled;
 - (void)start;
+- (void)handleError:(id)arg1;
 - (void)_finishWithError:(id)arg1;
 - (void)handleCompletion:(id)arg1;
 - (BOOL)isTopHitQuery;

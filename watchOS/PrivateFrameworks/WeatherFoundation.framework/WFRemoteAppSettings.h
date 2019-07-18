@@ -19,11 +19,23 @@
     unsigned int _networkSwitchExpirationTimeInSeconds;
     unsigned int _locationNumDecimalsOfPrecision;
     NSDate *_lastModificationDate;
+    NSString *_bundleID;
+    NSString *_countryCode;
+    unsigned int _apiConfigModdedHash;
+    unsigned int _apiConfigMinRange;
+    unsigned int _apiConfigMaxRange;
     long long _appConfigRefreshRate;
 }
 
++ (_Bool)wfInternalBuild;
++ (_Bool)useInternalBundleID;
 + (id)configurationWithData:(id)arg1 bundleID:(id)arg2 country:(id)arg3 userID:(id)arg4 error:(id *)arg5;
 + (id)configurationWithData:(id)arg1 userID:(id)arg2 error:(id *)arg3;
+@property(readonly, nonatomic) unsigned int apiConfigMaxRange; // @synthesize apiConfigMaxRange=_apiConfigMaxRange;
+@property(readonly, nonatomic) unsigned int apiConfigMinRange; // @synthesize apiConfigMinRange=_apiConfigMinRange;
+@property(readonly, nonatomic) unsigned int apiConfigModdedHash; // @synthesize apiConfigModdedHash=_apiConfigModdedHash;
+@property(readonly, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
+@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) NSDate *lastModificationDate; // @synthesize lastModificationDate=_lastModificationDate;
 @property(readonly, nonatomic) long long appConfigRefreshRate; // @synthesize appConfigRefreshRate=_appConfigRefreshRate;
 @property(readonly, nonatomic) unsigned int locationNumDecimalsOfPrecision; // @synthesize locationNumDecimalsOfPrecision=_locationNumDecimalsOfPrecision;

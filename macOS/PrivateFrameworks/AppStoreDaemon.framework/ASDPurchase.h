@@ -17,6 +17,7 @@
     BOOL _createsJobs;
     BOOL _displaysOnLockScreen;
     BOOL _installUniversalVariant;
+    BOOL _isDSIDLess;
     BOOL _isUpdate;
     BOOL _isBackgroundUpdate;
     BOOL _isRedownload;
@@ -60,6 +61,7 @@
 @property(copy, nonatomic) NSString *referrerName; // @synthesize referrerName=_referrerName;
 @property(nonatomic) BOOL isBackgroundUpdate; // @synthesize isBackgroundUpdate=_isBackgroundUpdate;
 @property(nonatomic) BOOL isUpdate; // @synthesize isUpdate=_isUpdate;
+@property(nonatomic) BOOL isDSIDLess; // @synthesize isDSIDLess=_isDSIDLess;
 @property(nonatomic) BOOL installUniversalVariant; // @synthesize installUniversalVariant=_installUniversalVariant;
 @property(copy, nonatomic) NSArray *gratisIdentifiers; // @synthesize gratisIdentifiers=_gratisIdentifiers;
 @property long long extensionsToEnable; // @synthesize extensionsToEnable=_extensionsToEnable;

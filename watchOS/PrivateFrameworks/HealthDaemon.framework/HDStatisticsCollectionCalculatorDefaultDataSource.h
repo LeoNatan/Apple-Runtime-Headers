@@ -27,8 +27,8 @@
 
 + (_Bool)_addValueForQuantitySample:(id)arg1 calculator:(id)arg2 error:(id *)arg3;
 + (_Bool)_addValueForQuantitySeriesSample:(id)arg1 calculator:(id)arg2 transaction:(id)arg3 error:(id *)arg4;
-+ (_Bool)_enumerateSampleTypeWithProfile:(id)arg1 predicate:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
-+ (_Bool)_enumerateWithProfile:(id)arg1 predicate:(id)arg2 filter:(id)arg3 isQuantityType:(_Bool)arg4 includeUnfrozenSeries:(_Bool)arg5 error:(id *)arg6 block:(CDUnknownBlockType)arg7;
++ (_Bool)_enumerateSampleTypeWithProfile:(id)arg1 quantityType:(id)arg2 predicate:(id)arg3 error:(id *)arg4 block:(CDUnknownBlockType)arg5;
++ (_Bool)_enumerateWithProfile:(id)arg1 quantityType:(id)arg2 predicate:(id)arg3 filter:(id)arg4 isQuantityType:(_Bool)arg5 includeUnfrozenSeries:(_Bool)arg6 error:(id *)arg7 block:(CDUnknownBlockType)arg8;
 @property(copy, nonatomic) CDUnknownBlockType shouldContinueHandler; // @synthesize shouldContinueHandler=_shouldContinueHandler;
 @property(nonatomic) int shouldContinueFrequency; // @synthesize shouldContinueFrequency=_shouldContinueFrequency;
 @property(copy, nonatomic) NSNumber *anchor; // @synthesize anchor=_anchor;

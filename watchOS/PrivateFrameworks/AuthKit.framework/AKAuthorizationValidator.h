@@ -10,8 +10,8 @@
 {
 }
 
++ (_Bool)_requirePasscodeSet;
 + (_Bool)shouldContinueWithResponse:(id)arg1 error:(id *)arg2;
-+ (_Bool)canPerformRapportClientAuthorizationWithError:(id *)arg1;
 + (_Bool)canPerformPasswordRequest:(id)arg1 error:(id *)arg2;
 + (_Bool)canPerformAuthorizationRequest:(id)arg1 error:(id *)arg2;
 + (_Bool)canPerformCredentialRequest:(id)arg1 error:(id *)arg2;

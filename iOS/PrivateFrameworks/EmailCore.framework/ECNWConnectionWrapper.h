@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <EmailCore/EFCancelable-Protocol.h>
+#import <EmailCore/ECNWConnectionWrapper-Protocol.h>
 
 @class NSArray, NSConditionLock, NSData, NSError, NSString;
 @protocol OS_dispatch_group, OS_dispatch_queue, OS_dispatch_semaphore, OS_nw_connection, OS_nw_endpoint, OS_nw_error;
 
-@interface ECNWConnectionWrapper : NSObject <EFCancelable>
+@interface ECNWConnectionWrapper : NSObject <ECNWConnectionWrapper>
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_nw_connection> *_connection;
@@ -31,37 +31,37 @@
     _Bool _writable;
     double _connectTime;
     _Bool _allowsTrustPrompt;
-    _Bool _usesOpportunisticSockets;
     _Bool _disableEphemeralDiffieHellmanCiphers;
+    _Bool _usesOpportunisticSockets;
     unsigned int _timeout;
-    NSArray *_clientCertificates;
-    NSString *_sourceApplicationBundleIdentifier;
     NSString *_accountIdentifier;
-    NSString *_networkAccountIdentifier;
+    NSArray *_clientCertificates;
     NSString *_connectionServiceType;
-    NSArray *_serverCertificates;
     NSError *_error;
+    NSString *_networkAccountIdentifier;
     CDUnknownBlockType _networkActivityChangeBlock;
+    NSArray *_serverCertificates;
     CDUnknownBlockType _serverTrustHandler;
+    NSString *_sourceApplicationBundleIdentifier;
     CDUnknownBlockType _bytesAvailableHandler;
 }
 
 + (id)log;
 @property(copy) CDUnknownBlockType bytesAvailableHandler; // @synthesize bytesAvailableHandler=_bytesAvailableHandler;
-@property(copy, nonatomic) CDUnknownBlockType serverTrustHandler; // @synthesize serverTrustHandler=_serverTrustHandler;
-@property(copy, nonatomic) CDUnknownBlockType networkActivityChangeBlock; // @synthesize networkActivityChangeBlock=_networkActivityChangeBlock;
-@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-@property(readonly, copy, nonatomic) NSString *service; // @synthesize service=_service;
-@property(readonly, copy, nonatomic) NSArray *serverCertificates; // @synthesize serverCertificates=_serverCertificates;
-@property(copy, nonatomic) NSString *connectionServiceType; // @synthesize connectionServiceType=_connectionServiceType;
-@property(copy, nonatomic) NSString *networkAccountIdentifier; // @synthesize networkAccountIdentifier=_networkAccountIdentifier;
-@property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-@property(copy, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
-@property(retain, nonatomic) NSArray *clientCertificates; // @synthesize clientCertificates=_clientCertificates;
-@property(nonatomic) _Bool disableEphemeralDiffieHellmanCiphers; // @synthesize disableEphemeralDiffieHellmanCiphers=_disableEphemeralDiffieHellmanCiphers;
 @property(nonatomic) _Bool usesOpportunisticSockets; // @synthesize usesOpportunisticSockets=_usesOpportunisticSockets;
-@property(nonatomic) _Bool allowsTrustPrompt; // @synthesize allowsTrustPrompt=_allowsTrustPrompt;
 @property(nonatomic) unsigned int timeout; // @synthesize timeout=_timeout;
+@property(copy, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
+@property(readonly, copy, nonatomic) NSString *service; // @synthesize service=_service;
+@property(copy, nonatomic) CDUnknownBlockType serverTrustHandler; // @synthesize serverTrustHandler=_serverTrustHandler;
+@property(readonly, copy, nonatomic) NSArray *serverCertificates; // @synthesize serverCertificates=_serverCertificates;
+@property(copy, nonatomic) CDUnknownBlockType networkActivityChangeBlock; // @synthesize networkActivityChangeBlock=_networkActivityChangeBlock;
+@property(copy, nonatomic) NSString *networkAccountIdentifier; // @synthesize networkAccountIdentifier=_networkAccountIdentifier;
+@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
+@property(nonatomic) _Bool disableEphemeralDiffieHellmanCiphers; // @synthesize disableEphemeralDiffieHellmanCiphers=_disableEphemeralDiffieHellmanCiphers;
+@property(copy, nonatomic) NSString *connectionServiceType; // @synthesize connectionServiceType=_connectionServiceType;
+@property(retain, nonatomic) NSArray *clientCertificates; // @synthesize clientCertificates=_clientCertificates;
+@property(nonatomic) _Bool allowsTrustPrompt; // @synthesize allowsTrustPrompt=_allowsTrustPrompt;
+@property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) _Bool isCellularConnection;

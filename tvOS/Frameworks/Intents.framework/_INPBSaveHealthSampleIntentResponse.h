@@ -15,6 +15,7 @@
 @interface _INPBSaveHealthSampleIntentResponse : PBCodable <_INPBSaveHealthSampleIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     _INPBString *_defaultUnit;
     _INPBString *_punchoutUrl;
     _INPBDateTimeRange *_recordDate;
@@ -28,6 +29,7 @@
 + (Class)valuesUserProvidedUnitType;
 + (Class)valuesDefaultUnitType;
 + (Class)sampleUuidsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *valuesUserProvidedUnits; // @synthesize valuesUserProvidedUnits=_valuesUserProvidedUnits;
 @property(copy, nonatomic) NSArray *valuesDefaultUnits; // @synthesize valuesDefaultUnits=_valuesDefaultUnits;
 @property(retain, nonatomic) _INPBString *userProvidedUnit; // @synthesize userProvidedUnit=_userProvidedUnit;

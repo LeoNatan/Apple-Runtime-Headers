@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 
 + (id)infoWithFramebufferAttributes:(struct FramebufferAttributes)arg1 size:(tvec2_3b141483)arg2 session:(id)arg3;
 @property(readonly, retain, nonatomic) TSCH3DSession *session; // @synthesize session=_session;
-@property(readonly, nonatomic) tvec2_3b141483 size; // @synthesize size=_size;
+@property(nonatomic) tvec2_3b141483 size; // @synthesize size=_size;
 @property(readonly, nonatomic) struct FramebufferAttributes framebufferAttributes; // @synthesize framebufferAttributes=_framebufferAttributes;
 - (id).cxx_construct;
 - (void)dealloc;

@@ -7,6 +7,7 @@
 @class CTServiceDescriptor, CTSubscriberAuthDataHolder, CTSubscriberAuthRequest, CTXPCServiceSubscriptionContext, NSData, NSString;
 
 @protocol CTXPCServiceSubscriberInterface
+- (void)getUserDefaultVoiceSubscriptionContext:(void (^)(CTXPCServiceSubscriptionContext *, NSError *))arg1;
 - (void)refreshUserAuthToken:(CTServiceDescriptor *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)getUserAuthToken:(CTServiceDescriptor *)arg1 completion:(void (^)(NSData *, NSError *))arg2;
 - (void)authenticate:(CTServiceDescriptor *)arg1 request:(CTSubscriberAuthRequest *)arg2 completion:(void (^)(CTSubscriberAuthResult *, NSError *))arg3;

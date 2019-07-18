@@ -23,6 +23,7 @@
     } _has;
     _Bool _playShuffled;
     _Bool _resumePlayback;
+    _Bool __encodeLegacyGloryData;
     _INPBString *_audiobookAuthor;
     _INPBString *_audiobookTitle;
     NSArray *_buckets;
@@ -47,6 +48,7 @@
 + (Class)mediaItemsType;
 + (Class)hashedRouteUIDsType;
 + (Class)bucketType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBString *showTitle; // @synthesize showTitle=_showTitle;
 @property(nonatomic) _Bool resumePlayback; // @synthesize resumePlayback=_resumePlayback;
 @property(copy, nonatomic) NSString *recoID; // @synthesize recoID=_recoID;

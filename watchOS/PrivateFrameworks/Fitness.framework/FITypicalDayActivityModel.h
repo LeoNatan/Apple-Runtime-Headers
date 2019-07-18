@@ -24,15 +24,17 @@
     id <FITypicalDayActivityModelDelegate> _delegate;
 }
 
++ (id)_emptySimpleHistogram;
 @property(nonatomic) __weak id <FITypicalDayActivityModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (int)_bucketIndexForDate:(id)arg1 startOfDay:(id)arg2 bucketDates:(id)arg3;
 - (id)_bucketDateForIndex:(unsigned int)arg1 startOfDay:(id)arg2;
-- (id)_queue_fetchActivitySummariesOrderedByCacheIndexWithCalendar:(id)arg1;
+- (_Bool)_queue_enumerateActivitySummariesOrderedByCacheIndexWithCalendar:(id)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_queue_populateHistogramsAndOffWristDateForToday;
 @property(readonly, nonatomic) int totalActiveDays;
-- (id)_queue_calculateProjectedOffWristDateFromActivitySummaries:(id)arg1;
-- (id)_queue_createHistogramForGoalType:(int)arg1 activitySummaries:(id)arg2;
+- (id)_queue_calculateProjectedOffWristDateFromHistogram:(id)arg1 activeDays:(int)arg2;
+- (void)_queue_updateProjectedOffWristDateHistogram:(id)arg1 activitySummary:(id)arg2 activeDays:(int *)arg3;
+- (void)_queue_updateHistogram:(id)arg1 goalType:(int)arg2 activitySummary:(id)arg3;
 - (void)_waitUntilActivitySummaryLoaded;
 - (void)handleUpdatedCurrentActivitySummary:(id)arg1;
 - (double)projectedDayDuration;

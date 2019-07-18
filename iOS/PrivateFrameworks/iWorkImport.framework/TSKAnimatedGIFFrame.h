@@ -9,15 +9,18 @@
 __attribute__((visibility("hidden")))
 @interface TSKAnimatedGIFFrame : NSObject
 {
-    struct CGImage *mImage;
+    struct CGImageSource *mSource;
+    struct CGImage *mPreloadedImage;
+    unsigned long long mIndex;
     double mTime;
 }
 
-@property(readonly, nonatomic) struct CGImage *image; // @synthesize image=mImage;
 @property(readonly, nonatomic) double time; // @synthesize time=mTime;
+@property(readonly, nonatomic) unsigned long long index; // @synthesize index=mIndex;
+@property(readonly, nonatomic) struct CGImage *image;
 - (id)description;
 - (void)dealloc;
-- (id)initWithCGImage:(struct CGImage *)arg1 time:(double)arg2;
+- (id)initWithSource:(struct CGImageSource *)arg1 index:(unsigned long long)arg2 time:(double)arg3 preloadImage:(_Bool)arg4;
 
 @end
 

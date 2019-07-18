@@ -10,14 +10,13 @@
 #import <UIKitMacHelper/UINSApplicationDelegate-Protocol.h>
 
 @class NSArray, NSBundle, NSDictionary, NSMutableDictionary, NSString, UINSApplicationLifecycleController, UINSPrintingController, USSBackgroundLaunchRequest, USSUserActivityContinuationRequest, USSUserNotificationResponseRequest;
-@protocol NSObject, UINSApplicationShortcutItemMenuController, UINSMenuController, UINSSceneUtilities, UINSShareSheetController, UINSSystemAppearance, UINSWindow;
+@protocol NSObject, UINSApplicationShortcutItemMenuController, UINSCopyConfiguration, UINSMenuController, UINSSceneUtilities, UINSShareSheetController, UINSSystemAppearance, UINSWindow;
 
 @interface UINSApplicationDelegate : NSObject <NSWindowRestoration, UINSApplicationDelegate>
 {
     NSMutableDictionary *_sceneWindowControllers;
-    id _viewFrameDidChangeNotificationToken;
-    id _windowDidMoveNotificationToken;
-    NSString *_restorationSceneIdentifier;
+    NSString *_mainSceneIdentifier;
+    BOOL _hasWindowsToRestore;
     BOOL _didConfigureWindow;
     BOOL _registeredForAccessibilityNotifications;
     BOOL _nextPrintJobShouldExport;
@@ -28,8 +27,7 @@
     CDUnknownBlockType _hostWindowDidChangeKeyHandler;
     CDUnknownBlockType _initialHostWindowDidOpenCallback;
     CDUnknownBlockType _hostWindowDidResizeCallback;
-    CDUnknownBlockType _mainSceneWindowRestorationHandler;
-    CDUnknownBlockType _objectsForServicesAndSharing;
+    CDUnknownBlockType _copyConfigurationForServicesAndSharing;
     CDUnknownBlockType _performActionWithCompletionHandler;
     CDUnknownBlockType _readSelectionFromPasteboardWithName;
     CDUnknownBlockType _resignFirstResponderHandler;
@@ -49,7 +47,8 @@
     CDUnknownBlockType _appWillTerminateCallback;
     CDUnknownBlockType _regionBlockingWindowDragCallback;
     CDUnknownBlockType _appSupportsMultiwindowCallback;
-    NSArray *_cachedObjectsForServicesAndSharing;
+    CDUnknownBlockType _acceptsActivatingTouchCallback;
+    id <UINSCopyConfiguration> _cachedCopyConfigurationForServicesAndSharing;
     id _appMenu;
     CDUnknownBlockType _explicitlyMarksAppLaunchCompleteCallback;
     id <UINSSceneUtilities> _sceneUtilities;
@@ -73,7 +72,8 @@
 @property(nonatomic) BOOL shouldEmitApplicationLaunchSignpost; // @synthesize shouldEmitApplicationLaunchSignpost=_shouldEmitApplicationLaunchSignpost;
 @property(copy, nonatomic) CDUnknownBlockType explicitlyMarksAppLaunchCompleteCallback; // @synthesize explicitlyMarksAppLaunchCompleteCallback=_explicitlyMarksAppLaunchCompleteCallback;
 @property(retain, nonatomic) id appMenu; // @synthesize appMenu=_appMenu;
-@property(retain, nonatomic) NSArray *cachedObjectsForServicesAndSharing; // @synthesize cachedObjectsForServicesAndSharing=_cachedObjectsForServicesAndSharing;
+@property(retain, nonatomic) id <UINSCopyConfiguration> cachedCopyConfigurationForServicesAndSharing; // @synthesize cachedCopyConfigurationForServicesAndSharing=_cachedCopyConfigurationForServicesAndSharing;
+@property(copy, nonatomic) CDUnknownBlockType acceptsActivatingTouchCallback; // @synthesize acceptsActivatingTouchCallback=_acceptsActivatingTouchCallback;
 @property(copy, nonatomic) CDUnknownBlockType appSupportsMultiwindowCallback; // @synthesize appSupportsMultiwindowCallback=_appSupportsMultiwindowCallback;
 @property(copy, nonatomic) CDUnknownBlockType regionBlockingWindowDragCallback; // @synthesize regionBlockingWindowDragCallback=_regionBlockingWindowDragCallback;
 @property(copy, nonatomic) CDUnknownBlockType appWillTerminateCallback; // @synthesize appWillTerminateCallback=_appWillTerminateCallback;
@@ -95,8 +95,7 @@
 @property(nonatomic) BOOL registeredForAccessibilityNotifications; // @synthesize registeredForAccessibilityNotifications=_registeredForAccessibilityNotifications;
 @property(copy, nonatomic) CDUnknownBlockType readSelectionFromPasteboardWithName; // @synthesize readSelectionFromPasteboardWithName=_readSelectionFromPasteboardWithName;
 @property(copy, nonatomic) CDUnknownBlockType performActionWithCompletionHandler; // @synthesize performActionWithCompletionHandler=_performActionWithCompletionHandler;
-@property(copy, nonatomic) CDUnknownBlockType objectsForServicesAndSharing; // @synthesize objectsForServicesAndSharing=_objectsForServicesAndSharing;
-@property(copy, nonatomic) CDUnknownBlockType mainSceneWindowRestorationHandler; // @synthesize mainSceneWindowRestorationHandler=_mainSceneWindowRestorationHandler;
+@property(copy, nonatomic) CDUnknownBlockType copyConfigurationForServicesAndSharing; // @synthesize copyConfigurationForServicesAndSharing=_copyConfigurationForServicesAndSharing;
 @property(copy, nonatomic) CDUnknownBlockType hostWindowDidResizeCallback; // @synthesize hostWindowDidResizeCallback=_hostWindowDidResizeCallback;
 @property(copy, nonatomic) CDUnknownBlockType initialHostWindowDidOpenCallback; // @synthesize initialHostWindowDidOpenCallback=_initialHostWindowDidOpenCallback;
 @property(copy, nonatomic) CDUnknownBlockType hostWindowDidChangeKeyHandler; // @synthesize hostWindowDidChangeKeyHandler=_hostWindowDidChangeKeyHandler;
@@ -108,7 +107,6 @@
 - (void)_sendSystemAppRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_activateAppAndSendSystemAppRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)activateIgnoringOtherApps:(BOOL)arg1;
-@property(readonly) BOOL shouldSizeWindowsAutomatically;
 - (void)printingFinished:(BOOL)arg1;
 - (void)dismissPrintOrExportPanel;
 - (void)showPrintOrExportPanelWithPrintInfo:(id)arg1 andPDFDocumentGenerator:(CDUnknownBlockType)arg2;
@@ -124,7 +122,7 @@
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(id)arg1;
 - (BOOL)openURL:(id)arg1;
 - (void)openURL:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)updateRestorationTrackingForIdentifier:(id)arg1;
+- (void)updateMainSceneIdentifier:(id)arg1;
 @property(readonly) id <UINSWindow> keyHostWindow;
 - (void)_didSetUIKitScaleFactor:(double)arg1;
 - (void)didConfigureMainHostWindowWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -142,9 +140,11 @@
 @property(readonly, nonatomic) int pid;
 @property(readonly, nonatomic) NSBundle *bundle;
 - (void)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_createNewSceneWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_createNewSceneOfSize:(struct CGSize)arg1 persistenceIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)sceneWindowControllerWithIdentifier:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)implicitTabbingIdentifierForSceneIdentifier:(id)arg1;
+- (void)_hideWindowForSceneIdentifier:(id)arg1;
 - (void)_closeWindowControllerForSceneIdentifier:(id)arg1;
 - (void)didDestroySceneWithSceneIdentifier:(id)arg1;
 - (BOOL)shouldCloseWindowWithSceneIdentifier:(id)arg1 persistentIdentifier:(id)arg2;

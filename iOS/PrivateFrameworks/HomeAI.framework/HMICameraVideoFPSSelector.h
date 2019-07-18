@@ -19,7 +19,7 @@
 + (id)logCategory;
 @property(readonly) unsigned long long maxAnalysisFPS; // @synthesize maxAnalysisFPS=_maxAnalysisFPS;
 @property double multiplier; // @synthesize multiplier=_multiplier;
-- (double)getAnalysisFPSForAverageAnalysisTime:(double)arg1 timeSinceFragmentWasSubmitted:(double)arg2 duration:(CDStruct_1b6d18a9)arg3 currentSystemResourceUsageLevel:(long long)arg4;
+- (double)updateAnalysisFPSForAverageAnalysisTime:(double)arg1 timeSinceFragmentWasSubmitted:(double)arg2 duration:(CDStruct_1b6d18a9)arg3 currentSystemResourceUsageLevel:(long long)arg4;
 - (id)initWithAnalysisFPS:(unsigned long long)arg1;
 
 // Remaining properties

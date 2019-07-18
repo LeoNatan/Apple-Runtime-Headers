@@ -12,6 +12,7 @@
 @property(readonly, copy, nonatomic) NSString *pathForTrimmedVideoFile;
 @property(readonly, copy, nonatomic) NSString *pathForOriginalVideoFile;
 @property(readonly, copy, nonatomic) NSString *pathForOriginalImageFile;
+@property(readonly, nonatomic, getter=isCloudPhotoLibraryEnabled) _Bool cloudPhotoLibraryEnabled;
 @property(readonly, nonatomic, getter=isResourceDownloadPossible) _Bool resourceDownloadPossible;
 @property(readonly, nonatomic) int originalEXIFOrientation;
 @property(readonly, nonatomic) NSDictionary *imageProperties;

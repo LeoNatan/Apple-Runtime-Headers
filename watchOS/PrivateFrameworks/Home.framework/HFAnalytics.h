@@ -10,7 +10,9 @@
 {
 }
 
-+ (void)sendEvent:(id)arg1;
++ (void)_sendEvent:(id)arg1;
++ (void)sendEvent:(unsigned int)arg1 withData:(id)arg2;
++ (void)sendEvent:(unsigned int)arg1;
 + (id)eventNameForEventType:(unsigned int)arg1;
 
 @end

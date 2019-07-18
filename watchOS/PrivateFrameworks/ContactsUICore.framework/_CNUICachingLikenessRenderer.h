@@ -13,6 +13,8 @@
 
 @interface _CNUICachingLikenessRenderer : NSObject <CNUILikenessRendering>
 {
+    struct os_unfair_lock_s _lock;
+    _Bool _shouldRequireMainThread;
     _CNUILikenessRenderer *_renderer;
     id <CNSchedulerProvider> _schedulerProvider;
     CNCache *_imageCache;
@@ -28,6 +30,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *memoryMonitoringSource; // @synthesize memoryMonitoringSource=_memoryMonitoringSource;
 @property(retain, nonatomic) CNQueue *evictionQueue; // @synthesize evictionQueue=_evictionQueue;
 @property(retain, nonatomic) CNCache *imageCache; // @synthesize imageCache=_imageCache;
+@property(readonly, nonatomic) _Bool shouldRequireMainThread; // @synthesize shouldRequireMainThread=_shouldRequireMainThread;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) _CNUILikenessRenderer *renderer; // @synthesize renderer=_renderer;
 - (void).cxx_destruct;
@@ -40,7 +43,7 @@
 - (id)renderedLikenessesForContacts:(id)arg1 scope:(id)arg2 workScheduler:(id)arg3;
 - (void)emptyCache:(id)arg1;
 - (void)dealloc;
-- (id)initWithLikenessRenderer:(id)arg1 schedulerProvider:(id)arg2 capacity:(unsigned int)arg3;
+- (id)initWithLikenessRenderer:(id)arg1 schedulerProvider:(id)arg2 capacity:(unsigned int)arg3 shouldRequireMainThread:(_Bool)arg4;
 - (id)initWithLikenessRenderer:(id)arg1 schedulerProvider:(id)arg2;
 
 // Remaining properties

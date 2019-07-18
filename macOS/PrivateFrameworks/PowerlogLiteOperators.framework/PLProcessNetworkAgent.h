@@ -42,7 +42,6 @@
 @property(retain) UsageFeed *usageFeed; // @synthesize usageFeed=_usageFeed;
 @property struct __NStatManager *statManagerRef; // @synthesize statManagerRef=_statManagerRef;
 - (void).cxx_destruct;
-- (unsigned long long)getCurrMachAbsTimeInSecs;
 - (void)accountWithNetworkUsageDiffEntries:(id)arg1 withStartDate:(id)arg2 withEndDate:(id)arg3;
 - (void)logEventBackwardUsageWithOutcome:(id)arg1;
 - (BOOL)outcomeHasDataUsage:(id)arg1;

@@ -10,7 +10,6 @@
 
 @class ISIconset, NSDictionary, NSMutableDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ISVariant : NSObject <ISIconsetVariant>
 {
     unsigned int _type;

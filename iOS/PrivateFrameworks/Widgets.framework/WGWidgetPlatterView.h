@@ -8,17 +8,18 @@
 
 #import <Widgets/MTMaterialGrouping-Protocol.h>
 #import <Widgets/MTVisualStylingRequiring-Protocol.h>
+#import <Widgets/PLContentSizeCategoryAdjusting-Protocol.h>
 #import <Widgets/PLContentSizeManaging-Protocol.h>
 
-@class MTMaterialView, MTVisualStylingProvider, NSArray, NSString, UIButton, WGPlatterHeaderContentView, WGWidgetHostingViewController, WGWidgetListItemViewController;
+@class MTMaterialView, NSArray, NSString, UIButton, WGPlatterHeaderContentView, WGWidgetHostingViewController, WGWidgetListItemViewController;
 
-@interface WGWidgetPlatterView : UIView <PLContentSizeManaging, MTMaterialGrouping, MTVisualStylingRequiring>
+@interface WGWidgetPlatterView : UIView <PLContentSizeManaging, PLContentSizeCategoryAdjusting, MTMaterialGrouping, MTVisualStylingRequiring>
 {
     MTMaterialView *_backgroundView;
     MTMaterialView *_headerBackgroundView;
     WGPlatterHeaderContentView *_headerContentView;
-    UIView *_compatibilityDarkeningView;
     double _cornerRadius;
+    _Bool _adjustsFontForContentSizeCategory;
     _Bool _backgroundHidden;
     _Bool _showingMoreContent;
     NSString *_materialGroupNameBase;
@@ -26,20 +27,24 @@
     WGWidgetListItemViewController *_listItem;
     UIView *_contentView;
     unsigned long long _clippingEdge;
+    double _overrideHeightForLayingOutContentView;
+    double _topMarginForLayout;
     long long _buttonMode;
 }
 
 @property(nonatomic, getter=isShowingMoreContent) _Bool showingMoreContent; // @synthesize showingMoreContent=_showingMoreContent;
 @property(nonatomic) long long buttonMode; // @synthesize buttonMode=_buttonMode;
+@property(nonatomic) double topMarginForLayout; // @synthesize topMarginForLayout=_topMarginForLayout;
+@property(nonatomic) double overrideHeightForLayingOutContentView; // @synthesize overrideHeightForLayingOutContentView=_overrideHeightForLayingOutContentView;
 @property(nonatomic, getter=isBackgroundHidden) _Bool backgroundHidden; // @synthesize backgroundHidden=_backgroundHidden;
 @property(nonatomic) unsigned long long clippingEdge; // @synthesize clippingEdge=_clippingEdge;
 @property(retain, nonatomic, setter=_setContentView:) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak WGWidgetListItemViewController *listItem; // @synthesize listItem=_listItem;
 @property(nonatomic) __weak WGWidgetHostingViewController *widgetHost; // @synthesize widgetHost=_widgetHost;
 @property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
+@property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 - (void).cxx_destruct;
 - (void)iconDidInvalidate:(id)arg1;
-- (void)_updateCompatibilityDarkeningViewIfNecessary;
 - (void)_updateUtilityButtonForMoreContentState:(_Bool)arg1;
 - (void)_handleAddWidget:(id)arg1;
 - (void)_toggleShowMore:(id)arg1;
@@ -57,6 +62,7 @@
 - (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
 @property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
 - (id)visualStylingProviderForCategory:(long long)arg1;
+- (_Bool)adjustForContentSizeCategoryChange;
 - (struct CGSize)contentSizeForSize:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFitsContentWithSize:(struct CGSize)arg1;
 - (void)_updateShowMoreButtonImage;
@@ -77,8 +83,8 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(copy, nonatomic) NSString *preferredContentSizeCategory;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 
 @end
 

@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)attributesForDynamicParameter:(id)arg1 error:(id *)arg2;
-- (id)attributesForEventParameter:(id)arg1 error:(id *)arg2;
+- (id)attributesForEventParameter:(id)arg1 eventType:(id)arg2 error:(id *)arg3;
 @property(readonly) unsigned long long maximumNumberOfAudioChannels;
 @property(readonly) unsigned long long maximumNumberOfHapticChannels;
 @property(readonly) BOOL supportsAudio;

@@ -71,6 +71,7 @@ __attribute__((visibility("hidden")))
 - (id)runningApplicationBundlesIDs;
 - (void)applicationFailedToLaunch:(id)arg1;
 - (void)applicationFinishedLaunching:(id)arg1;
+@property(readonly, nonatomic) SCRApplication *frontmostApplication;
 @property(retain, nonatomic) SCRApplication *focusedApplication;
 - (void)setFocusedAndKeyboardApplication:(id)arg1;
 - (void)virtuallyFocusOnFrontMostApplication;

@@ -14,6 +14,7 @@
 + (id)firstQueryItemInURL:(id)arg1 withURLScheme:(id)arg2 andHost:(id)arg3 andQueryItemName:(id)arg4;
 + (id)contentOffsetFromQuickNoteURL:(id)arg1;
 + (id)noteIdentifierFromQuickNoteURL:(id)arg1;
++ (id)attachmentIdentifierFromQuickNoteURL:(id)arg1;
 + (BOOL)quickNoteURLShouldShowiCloudShareSheet:(id)arg1;
 + (BOOL)quickNoteURLShouldShowShareSheet:(id)arg1;
 + (BOOL)quickNoteURLShouldShowList:(id)arg1;

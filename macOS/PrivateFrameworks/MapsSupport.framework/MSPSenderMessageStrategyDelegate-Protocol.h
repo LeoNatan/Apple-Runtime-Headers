@@ -6,9 +6,11 @@
 
 #import <MapsSupport/NSObject-Protocol.h>
 
-@class NSString;
+@class MSPSharedTripNotificationRules, NSString;
 
 @protocol MSPSenderMessageStrategyDelegate <NSObject>
+- (void)touchedRules;
+- (MSPSharedTripNotificationRules *)rulesForParticipant:(NSString *)arg1;
 - (void)sendMessage:(NSString *)arg1 toParticipant:(NSString *)arg2;
 @end
 

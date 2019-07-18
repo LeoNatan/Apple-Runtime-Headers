@@ -28,11 +28,7 @@
 - (void)senderController:(id)arg1 sendMessage:(id)arg2 toGroup:(id)arg3;
 - (void)senderController:(id)arg1 sendMessage:(id)arg2 toParticipant:(id)arg3;
 - (void)senderController:(id)arg1 didInvalidateSharedTripWithError:(id)arg2;
-- (void)unblockAllSenders;
-- (void)unblockSharedTripFromSenders:(id)arg1;
-- (void)blockSharedTripFromSenders:(id)arg1;
-- (void)unmuteSharedTripUpdatesForSharedTrip:(id)arg1;
-- (void)muteSharedTripUpdatesForSharedTrip:(id)arg1;
+- (void)blockSharedTrip:(id)arg1;
 - (void)fetchSharedTripsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)unsubscribeFromSharedTripUpdatesWithIdentifier:(id)arg1;
 - (void)subscribeToSharedTripUpdatesWithIdentifier:(id)arg1;
@@ -44,7 +40,7 @@
 - (void)stopSharingTripWithContacts:(id)arg1;
 - (void)startSharingTripWithContacts:(id)arg1;
 - (void)checkin;
-- (void)etaController:(id)arg1 didUpdateMutedForSharedTrip:(id)arg2;
+- (void)etaController:(id)arg1 sharedTripDidClose:(id)arg2;
 - (void)etaController:(id)arg1 sharedTripDidBecomeUnavailable:(id)arg2;
 - (void)etaController:(id)arg1 sharedTripDidBecomeAvailable:(id)arg2;
 - (void)etaController:(id)arg1 didUpdateRouteForSharedTrip:(id)arg2;

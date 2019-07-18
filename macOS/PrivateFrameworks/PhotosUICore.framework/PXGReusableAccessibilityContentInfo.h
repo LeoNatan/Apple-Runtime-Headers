@@ -10,7 +10,7 @@
 #import <PhotosUICore/PXGMutableAccessibilityContentInfo-Protocol.h>
 #import <PhotosUICore/PXReusableObject-Protocol.h>
 
-@class NSObject, NSString, PXScrollViewController;
+@class NSArray, NSObject, NSString, PXScrollViewController;
 @protocol PXAccessibilityView, PXDisplayAsset, PXGAccessibilityContentInfoDelegate;
 
 @interface PXGReusableAccessibilityContentInfo : NSAccessibilityElement <PXGMutableAccessibilityContentInfo, PXGAccessibilityContentInfo, PXReusableObject>
@@ -26,6 +26,8 @@
     NSString *_imageName;
     id <PXDisplayAsset> _asset;
     NSObject<PXAccessibilityView> *_view;
+    NSArray *_selectedContent;
+    NSArray *_px_accessibilityChildren;
     PXScrollViewController *_scrollViewController;
     id <PXGAccessibilityContentInfoDelegate> _accessibilityDelegate;
     struct CGRect _frame;
@@ -40,6 +42,8 @@
 @property(nonatomic) BOOL isPerformingChanges; // @synthesize isPerformingChanges=_isPerformingChanges;
 @property(nonatomic) __weak id <PXGAccessibilityContentInfoDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 @property(retain, nonatomic) PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
+@property(retain, nonatomic) NSArray *px_accessibilityChildren; // @synthesize px_accessibilityChildren=_px_accessibilityChildren;
+@property(copy, nonatomic) NSArray *selectedContent; // @synthesize selectedContent=_selectedContent;
 @property(nonatomic) BOOL visible; // @synthesize visible=_visible;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) NSObject<PXAccessibilityView> *view; // @synthesize view=_view;
@@ -51,12 +55,21 @@
 @property(nonatomic) long long contentKind; // @synthesize contentKind=_contentKind;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 - (void).cxx_destruct;
+- (id)_siblingInDirection:(unsigned long long)arg1;
+- (id)siblingBelow;
+- (id)siblingAbove;
+- (id)previousSibling;
+- (id)nextSibling;
+- (id)accessibilityAttributeValue:(id)arg1;
+- (id)accessibilityAttributeNames;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
+- (void)accessibilityPerformScrollToVisible;
 - (BOOL)isAccessibilityAlternateUIVisible;
 - (BOOL)accessibilityPerformShowDefaultUI;
 - (BOOL)accessibilityPerformShowAlternateUI;
 - (BOOL)accessibilityPerformPress;
 - (BOOL)accessibilityPerformShowMenu;
+- (void)accessibilityPerformAction:(id)arg1;
 - (BOOL)isAccessibilitySelectorAllowed:(SEL)arg1;
 - (id)accessibilityChildren;
 - (struct CGRect)accessibilityFrame;
@@ -65,6 +78,7 @@
 - (id)accessibilityRole;
 - (id)accessibilityLabel;
 - (void)resetAccessibilityInformation;
+- (void)px_accessibilityAddChildElement:(id)arg1;
 - (void)prepareForReuse;
 - (void)becomeReusable;
 @property(readonly, copy) NSString *description;

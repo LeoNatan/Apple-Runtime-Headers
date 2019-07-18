@@ -138,6 +138,7 @@
 - (long long)_persistedLikedState;
 - (void)_handleUpdatedLikedState:(long long)arg1 forUserIdentity:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_currentPlaybackRateDidChange:(float)arg1;
+- (BOOL)usesSubscriptionLease;
 - (id)useListeningHistory;
 - (id)storeFrontIdentifier;
 - (id)storeAccountID;
@@ -156,6 +157,7 @@
 - (id)urlTimeMarkers;
 - (long long)type;
 - (id)playbackInfo;
+- (id)containerUniqueID;
 - (BOOL)hasStoreLyrics;
 - (id)libraryLyrics;
 - (BOOL)supportsLikedState;
@@ -174,6 +176,7 @@
 - (BOOL)shouldShowComposer;
 - (id)playbackError;
 - (void)notePlaybackFinishedByHittingEnd;
+- (long long)storePurchasedAdamID;
 - (unsigned long long)composerPersistentID;
 - (unsigned long long)genrePersistentID;
 - (unsigned long long)artistPersistentID;

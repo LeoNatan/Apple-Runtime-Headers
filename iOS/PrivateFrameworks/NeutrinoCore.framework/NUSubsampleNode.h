@@ -29,6 +29,7 @@
 - (id)_evaluateImageProperties:(out id *)arg1;
 - (id)_evaluateImageGeometry:(out id *)arg1;
 - (id)_evaluateImage:(out id *)arg1;
+- (id)debugQuickLookObject;
 - (id)_sourceNode;
 - (id)nodeByReplayingAgainstCache:(id)arg1 pipelineState:(id)arg2 error:(out id *)arg3;
 - (long long)resolveSubsampleFactorForPipelineState:(id)arg1 sourceScale:(CDStruct_912cb5d2)arg2;

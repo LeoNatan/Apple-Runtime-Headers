@@ -22,6 +22,7 @@
 + (id)__episodeNumber_KEY;
 + (id)__episodeType_KEY;
 + (id)__shareURL_KEY;
++ (id)__streamURL_KEY;
 + (id)__datePlayed_KEY;
 + (id)__descriptionText_KEY;
 + (id)__hasVideo_KEY;
@@ -53,6 +54,7 @@
 @property(copy, nonatomic) NSDateComponents *releaseDateComponents; // @dynamic releaseDateComponents;
 @property(readonly, nonatomic) long long seasonNumber; // @dynamic seasonNumber;
 @property(copy, nonatomic) NSURL *shareURL; // @dynamic shareURL;
+@property(copy, nonatomic) NSURL *streamURL; // @dynamic streamURL;
 @property(copy, nonatomic) NSString *title; // @dynamic title;
 @property(nonatomic) float userRating; // @dynamic userRating;
 

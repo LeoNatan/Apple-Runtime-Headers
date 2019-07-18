@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCCloudContext, FCDateRange, FCFeedPersonalizedItems, NSArray, NSDictionary, NSError;
+@class FCCloudContext, FCDateRange, NSArray, NSDictionary, NSError, NSMapTable;
 @protocol FCCoreConfiguration;
 
 @interface FCMyArticlesOperation : FCOperation
@@ -17,7 +17,7 @@
     FCDateRange *_dateRange;
     CDUnknownBlockType _feedItemsChangedHandler;
     NSArray *_feedItems;
-    FCFeedPersonalizedItems *_nonEditorialPersonalizedArticles;
+    NSMapTable *_nonEditorialScoreProfiles;
     NSDictionary *_feedContextByFeedID;
     NSError *_error;
     long long _binOverride;
@@ -32,7 +32,7 @@
 @property(nonatomic) long long binOverride; // @synthesize binOverride=_binOverride;
 @property(copy) NSError *error; // @synthesize error=_error;
 @property(copy) NSDictionary *feedContextByFeedID; // @synthesize feedContextByFeedID=_feedContextByFeedID;
-@property(retain) FCFeedPersonalizedItems *nonEditorialPersonalizedArticles; // @synthesize nonEditorialPersonalizedArticles=_nonEditorialPersonalizedArticles;
+@property(retain) NSMapTable *nonEditorialScoreProfiles; // @synthesize nonEditorialScoreProfiles=_nonEditorialScoreProfiles;
 @property(copy) NSArray *feedItems; // @synthesize feedItems=_feedItems;
 @property(copy, nonatomic) CDUnknownBlockType feedItemsChangedHandler; // @synthesize feedItemsChangedHandler=_feedItemsChangedHandler;
 @property(nonatomic) BOOL streamFeedItems; // @synthesize streamFeedItems=_streamFeedItems;

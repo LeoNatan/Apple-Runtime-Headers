@@ -8,7 +8,7 @@
 
 #import <coreroutine/RTPurgable-Protocol.h>
 
-@class NSString, RTAccountManager, RTContactsManager, RTDefaultsManager, RTDiagnostics, RTDistanceCalculator, RTEventManager, RTFingerprintManager, RTLearnedLocationAlgorithmMetricCalculator, RTLearnedLocationEngineTrainingMetrics, RTLearnedLocationReconciler, RTLearnedLocationRickonciler, RTLearnedLocationStore, RTLocationManager, RTLocationStore, RTMapServiceManager, RTMapsSupportManager, RTMetricManager, RTMotionActivityManager, RTPersonalizationPortraitManager, RTPlatform, RTVisitManager, RTXPCActivityManager;
+@class NSString, RTAccountManager, RTContactsManager, RTDefaultsManager, RTDiagnostics, RTDistanceCalculator, RTEventManager, RTFingerprintManager, RTLearnedLocationAlgorithmMetricCalculator, RTLearnedLocationEngineTrainingMetrics, RTLearnedLocationReconcilerPerDevice, RTLearnedLocationReconcilerPerVisit, RTLearnedLocationStore, RTLocationManager, RTLocationStore, RTMapServiceManager, RTMapsSupportManager, RTMetricManager, RTMotionActivityManager, RTPersonalizationPortraitManager, RTPlatform, RTVisitManager, RTXPCActivityManager;
 @protocol OS_dispatch_queue, RTLearnedLocationEngineProtocol;
 
 @interface RTLearnedLocationEngine : NSObject <RTPurgable>
@@ -34,8 +34,8 @@
     RTPlatform *_platform;
     RTPersonalizationPortraitManager *_portraitManager;
     RTLearnedLocationEngineTrainingMetrics *_trainingMetrics;
-    RTLearnedLocationReconciler *_reconciler;
-    RTLearnedLocationRickonciler *_rickonciler;
+    RTLearnedLocationReconcilerPerVisit *_reconcilerPerVisit;
+    RTLearnedLocationReconcilerPerDevice *_reconcilerPerDevice;
     RTVisitManager *_visitManager;
     RTXPCActivityManager *_xpcActivityManager;
 }
@@ -45,8 +45,8 @@
 @property(nonatomic) BOOL monitorFingerprints; // @synthesize monitorFingerprints=_monitorFingerprints;
 @property(readonly, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
 @property(readonly, nonatomic) RTVisitManager *visitManager; // @synthesize visitManager=_visitManager;
-@property(readonly, nonatomic) RTLearnedLocationRickonciler *rickonciler; // @synthesize rickonciler=_rickonciler;
-@property(readonly, nonatomic) RTLearnedLocationReconciler *reconciler; // @synthesize reconciler=_reconciler;
+@property(readonly, nonatomic) RTLearnedLocationReconcilerPerDevice *reconcilerPerDevice; // @synthesize reconcilerPerDevice=_reconcilerPerDevice;
+@property(readonly, nonatomic) RTLearnedLocationReconcilerPerVisit *reconcilerPerVisit; // @synthesize reconcilerPerVisit=_reconcilerPerVisit;
 @property(retain, nonatomic) RTLearnedLocationEngineTrainingMetrics *trainingMetrics; // @synthesize trainingMetrics=_trainingMetrics;
 @property(readonly, nonatomic) RTPersonalizationPortraitManager *portraitManager; // @synthesize portraitManager=_portraitManager;
 @property(readonly, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
@@ -104,6 +104,7 @@
 - (void)trainLocationsOfInterestModelWithHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_trainLocationsOfInterestModelWithError:(id *)arg1;
 - (void)trainWithHandler:(CDUnknownBlockType)arg1;
+- (void)_trainWithFromDate:(id)arg1 ToDate:(id)arg2 forLastLearnedVisit:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)_trainWithHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_deferTrainingDueToAvailability;
 - (BOOL)_deferTrainingDueToRecentResetSync;
@@ -126,11 +127,12 @@
 - (void)_shutdown;
 - (void)setup;
 - (void)_setup;
+- (void)_fetchLatestVisitWithHandler:(CDUnknownBlockType)arg1;
 - (void)_teardownXpcActivityTrain;
 - (void)_setupXpcActivityTrain;
 - (void)_unregisterForNotifications;
 - (void)_registerForNotifications;
-- (id)initWithAccountManager:(id)arg1 algorithmMetricCalculator:(id)arg2 contactsManager:(id)arg3 defaultsManager:(id)arg4 diagnostics:(id)arg5 distanceCalculator:(id)arg6 eventManager:(id)arg7 fingerprintManager:(id)arg8 learnedLocationStore:(id)arg9 locationManager:(id)arg10 locationStore:(id)arg11 mapServiceManager:(id)arg12 mapsSupportManager:(id)arg13 metricManager:(id)arg14 motionActivityManager:(id)arg15 platform:(id)arg16 portraitManager:(id)arg17 reconciler:(id)arg18 rickonciler:(id)arg19 visitManager:(id)arg20 xpcActivityManager:(id)arg21;
+- (id)initWithAccountManager:(id)arg1 algorithmMetricCalculator:(id)arg2 contactsManager:(id)arg3 defaultsManager:(id)arg4 diagnostics:(id)arg5 distanceCalculator:(id)arg6 eventManager:(id)arg7 fingerprintManager:(id)arg8 learnedLocationStore:(id)arg9 locationManager:(id)arg10 locationStore:(id)arg11 mapServiceManager:(id)arg12 mapsSupportManager:(id)arg13 metricManager:(id)arg14 motionActivityManager:(id)arg15 platform:(id)arg16 portraitManager:(id)arg17 reconcilerPerVisit:(id)arg18 reconcilerPerDevice:(id)arg19 visitManager:(id)arg20 xpcActivityManager:(id)arg21;
 - (id)init;
 
 // Remaining properties

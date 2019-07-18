@@ -51,6 +51,7 @@
 @property(readonly) BOOL isNetworkConnected;
 - (void)getStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly) unsigned long long freeDiskSpaceSize;
+- (void)updateDiskPressureState;
 @property(readonly) unsigned long long diskPressureState;
 - (id)componentName;
 - (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;

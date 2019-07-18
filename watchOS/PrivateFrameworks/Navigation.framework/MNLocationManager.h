@@ -62,7 +62,6 @@
 - (_Bool)locationProviderShouldPauseLocationUpdates:(id)arg1;
 - (void)locationProviderDidChangeAuthorizationStatus:(id)arg1;
 - (void)locationProvider:(id)arg1 didUpdateHeading:(id)arg2;
-- (void)_locationProvider:(id)arg1 didUpdateLocation:(id)arg2;
 - (void)locationProvider:(id)arg1 didReceiveError:(id)arg2;
 - (void)locationProvider:(id)arg1 didUpdateLocation:(id)arg2;
 - (_Bool)isLocationServicesRestricted;
@@ -76,6 +75,7 @@
 - (void)_reportLocationReset;
 - (void)_reportLocationFailureWithError:(id)arg1;
 - (void)_reportLocationSuccess;
+- (void)_updateForNewLocation:(id)arg1 rawLocation:(id)arg2;
 - (void)_startLocationUpdateWithObserver:(id)arg1 desiredAccuracy:(double)arg2;
 - (void)_setTrackingHeading:(_Bool)arg1;
 - (void)_setTrackingLocation:(_Bool)arg1;

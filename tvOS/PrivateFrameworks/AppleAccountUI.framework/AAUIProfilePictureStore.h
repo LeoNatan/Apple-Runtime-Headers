@@ -32,6 +32,7 @@
 - (id)profilePictureForPicture:(id)arg1;
 - (void)_updateServerProfilePictureWithRequest:(id)arg1;
 - (void)_updateServerProfilePictureForAccountOwner:(id)arg1 cropRect:(id)arg2;
+- (id)_getAccountIdentifierForContact:(id)arg1 error:(id *)arg2;
 - (_Bool)_contactSyncsWithiCloud:(id)arg1 error:(id *)arg2;
 - (id)_contactWithImageDataMatchingFamilyMember:(id)arg1 error:(id *)arg2;
 - (id)_monogrammedContactImage:(id)arg1;

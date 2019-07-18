@@ -20,6 +20,7 @@
 - (BOOL)contactNavigationController:(CNContactNavigationController *)arg1 shouldShowCardForContact:(CNContact *)arg2;
 - (BOOL)contactNavigationController:(CNContactNavigationController *)arg1 shouldSelectContact:(CNContact *)arg2 atIndexPath:(NSIndexPath *)arg3;
 - (BOOL)contactNavigationController:(CNContactNavigationController *)arg1 canSelectContact:(CNContact *)arg2;
+- (BOOL)contactNavigationControllerShouldAddNewContact:(CNContactNavigationController *)arg1;
 - (void)contactNavigationControllerDidComplete:(CNContactNavigationController *)arg1;
 - (void)contactNavigationControllerDidCancel:(CNContactNavigationController *)arg1;
 @end

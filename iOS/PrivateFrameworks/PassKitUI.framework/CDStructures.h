@@ -147,6 +147,15 @@ typedef struct {
 } CDStruct_e6a35582;
 
 typedef struct {
+    double _field1;
+    double _field2;
+    struct CGSize _field3;
+    double _field4;
+    double _field5;
+    _Bool _field6;
+} CDStruct_19e39b3b;
+
+typedef struct {
     CDStruct_c3b9c2ee _field1;
     CDStruct_c3b9c2ee _field2;
 } CDStruct_90e2a262;

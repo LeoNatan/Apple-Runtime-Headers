@@ -19,6 +19,7 @@
         unsigned int state:1;
         unsigned int type:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     _INPBIntentMetadata *_intentMetadata;
     _INPBDataString *_label;
     int _state;
@@ -27,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain, nonatomic) _INPBDataString *label; // @synthesize label=_label;

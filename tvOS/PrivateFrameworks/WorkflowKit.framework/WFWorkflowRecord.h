@@ -6,9 +6,11 @@
 
 #import <WorkflowKit/WFRecord.h>
 
+#import <WorkflowKit/WFNaming-Protocol.h>
+
 @class NSArray, NSDate, NSString, WFWorkflowIcon, WFWorkflowQuarantine;
 
-@interface WFWorkflowRecord : WFRecord
+@interface WFWorkflowRecord : WFRecord <WFNaming>
 {
     _Bool _hiddenInComplication;
     _Bool _hiddenFromLibraryAndSync;
@@ -26,8 +28,8 @@
     NSArray *_inputClasses;
     NSArray *_actions;
     NSArray *_importQuestions;
-    long long _minimumClientVersion;
-    long long _lastMigratedClientVersion;
+    NSString *_minimumClientVersion;
+    NSString *_lastMigratedClientVersion;
     long long _lastSyncedHash;
     NSString *_lastSavedOnDeviceName;
     unsigned long long _cachedSyncHash;
@@ -37,11 +39,11 @@
 @property(nonatomic) unsigned long long cachedSyncHash; // @synthesize cachedSyncHash=_cachedSyncHash;
 @property(copy, nonatomic) NSString *lastSavedOnDeviceName; // @synthesize lastSavedOnDeviceName=_lastSavedOnDeviceName;
 @property(nonatomic) long long lastSyncedHash; // @synthesize lastSyncedHash=_lastSyncedHash;
-@property(nonatomic) long long lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;
+@property(copy, nonatomic) NSString *lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;
 @property(readonly, nonatomic) _Bool isDeleted; // @synthesize isDeleted=_isDeleted;
 @property(nonatomic) _Bool hiddenFromLibraryAndSync; // @synthesize hiddenFromLibraryAndSync=_hiddenFromLibraryAndSync;
 @property(nonatomic) _Bool hiddenInComplication; // @synthesize hiddenInComplication=_hiddenInComplication;
-@property(nonatomic) long long minimumClientVersion; // @synthesize minimumClientVersion=_minimumClientVersion;
+@property(copy, nonatomic) NSString *minimumClientVersion; // @synthesize minimumClientVersion=_minimumClientVersion;
 @property(copy, nonatomic) NSArray *importQuestions; // @synthesize importQuestions=_importQuestions;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(copy, nonatomic) NSArray *inputClasses; // @synthesize inputClasses=_inputClasses;
@@ -60,6 +62,7 @@
 - (_Bool)isEquivalentForSyncTo:(id)arg1;
 - (_Bool)saveChangesToStorage:(id)arg1 error:(id *)arg2;
 - (id)fileRepresentation;
+@property(readonly, copy, nonatomic) NSString *wfName;
 
 @end
 

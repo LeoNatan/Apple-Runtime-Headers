@@ -28,7 +28,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isContainerElement;
 - (void)addContentToRequest:(id)arg1 visibleOnly:(BOOL)arg2;
 - (void)incrementReadContentsElementIndex:(BOOL)arg1;
-- (BOOL)performBrailleRouterActionWithIndex:(unsigned long long)arg1 outputRequest:(id)arg2;
 - (void)addItemDescriptionForBrailleToRequest:(id)arg1;
 - (id)description;
 - (id)_defaultLocalizedStringForCommandKey:(id)arg1;

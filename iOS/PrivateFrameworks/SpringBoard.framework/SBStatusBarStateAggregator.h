@@ -10,7 +10,7 @@
 #import <SpringBoard/SBAVSystemControllerCacheObserver-Protocol.h>
 #import <SpringBoard/SBDateTimeOverrideObserver-Protocol.h>
 
-@class DNDState, DNDStateService, NSDateFormatter, NSHashTable, NSString, NSTimer, SBSStatusBarStyleOverridesAssertion, SBStatusBarDefaults, SBSystemStatusBatteryDataProvider, SBSystemStatusWifiDataProvider, SBTelephonyManager, SBUserSessionController, STBatteryStatusDomain, STTelephonyStatusDomain, STTelephonyStatusDomainDataProvider, STWifiStatusDomain;
+@class DNDState, DNDStateService, NSDateFormatter, NSHashTable, NSString, NSTimer, SBSStatusBarStyleOverridesAssertion, SBStatusBarDefaults, SBSystemStatusBatteryDataProvider, SBSystemStatusWifiDataProvider, SBTelephonyManager, SBUserSessionController, STBatteryStatusDomain, STTelephonyStatusDomain, STTelephonyStatusDomainDataProvider, STVoiceControlStatusDomain, STWifiStatusDomain;
 
 @interface SBStatusBarStateAggregator : NSObject <SBDateTimeOverrideObserver, DNDStateUpdateListener, SBAVSystemControllerCacheObserver>
 {
@@ -67,12 +67,14 @@
     SBSystemStatusWifiDataProvider *_wifiDataProvider;
     STBatteryStatusDomain *_batteryDomain;
     STTelephonyStatusDomain *_telephonyDomain;
+    STVoiceControlStatusDomain *_voiceControlDomain;
     STWifiStatusDomain *_wifiDomain;
 }
 
 + (int)_thermalColorForLevel:(long long)arg1;
 + (id)sharedInstance;
 @property(readonly, nonatomic) STWifiStatusDomain *wifiDomain; // @synthesize wifiDomain=_wifiDomain;
+@property(readonly, nonatomic) STVoiceControlStatusDomain *voiceControlDomain; // @synthesize voiceControlDomain=_voiceControlDomain;
 @property(readonly, nonatomic) STTelephonyStatusDomain *telephonyDomain; // @synthesize telephonyDomain=_telephonyDomain;
 @property(readonly, nonatomic) STBatteryStatusDomain *batteryDomain; // @synthesize batteryDomain=_batteryDomain;
 @property(readonly, nonatomic) SBSystemStatusWifiDataProvider *wifiDataProvider; // @synthesize wifiDataProvider=_wifiDataProvider;
@@ -110,6 +112,7 @@
 - (void)_updateRotationLockItem;
 - (void)_updateLocationItem;
 - (void)_updateActivityItem;
+- (void)_updateVoiceControlItem;
 - (void)_updateCallForwardingItem:(int)arg1 withInfo:(id)arg2;
 - (void)_updateSecondaryCallForwardingItem;
 - (void)_updateCallForwardingItem;

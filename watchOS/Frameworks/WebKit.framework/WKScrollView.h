@@ -15,6 +15,10 @@ __attribute__((visibility("hidden")))
     struct WeakObjCPtr<id<UIScrollViewDelegate>> _externalDelegate;
     WKScrollViewDelegateForwarder *_delegateForwarder;
     float _keyboardBottomInsetAdjustment;
+    _Bool _scrollEnabledByClient;
+    _Bool _scrollEnabledInternal;
+    _Bool _zoomEnabledByClient;
+    _Bool _zoomEnabledInternal;
     WKWebView<UIScrollViewDelegate> *_internalDelegate;
 }
 
@@ -24,6 +28,12 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)_puic_contentOffsetForCrownInputSequencerOffset:(double)arg1;
 - (void)_configureDigitalCrownScrolling;
 - (void)addGestureRecognizer:(id)arg1;
+- (void)_updateZoomability;
+- (void)_setZoomEnabledInternal:(_Bool)arg1;
+- (void)setZoomEnabled:(_Bool)arg1;
+- (void)_updateScrollability;
+- (void)_setScrollEnabledInternal:(_Bool)arg1;
+- (void)setScrollEnabled:(_Bool)arg1;
 - (struct UIEdgeInsets)_systemContentInset;
 - (void)_adjustForAutomaticKeyboardInfo:(id)arg1 animated:(_Bool)arg2 lastAdjustment:(float *)arg3;
 - (void)_setContentSizePreservingContentOffsetDuringRubberband:(struct CGSize)arg1;

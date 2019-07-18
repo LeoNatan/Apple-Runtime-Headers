@@ -6,18 +6,20 @@
 
 #import <Foundation/NSOperation.h>
 
-@class NSArray, _UICollectionViewDiffableDataSource;
+@class NSArray, UICollectionViewDiffableDataSource;
 @protocol SUIKSearchResultsCollectionViewControllerDelegate;
 
 @interface _SUIKSearchResultsUpdateOperation : NSOperation
 {
     NSArray *_results;
-    _UICollectionViewDiffableDataSource *_diffableDataSource;
+    UICollectionViewDiffableDataSource *_diffableDataSource;
     id <SUIKSearchResultsCollectionViewControllerDelegate> _delegate;
+    NSArray *_categories;
 }
 
+@property(retain, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(nonatomic) __weak id <SUIKSearchResultsCollectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) __weak _UICollectionViewDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
+@property(nonatomic) __weak UICollectionViewDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
 @property(nonatomic) __weak NSArray *results; // @synthesize results=_results;
 - (void).cxx_destruct;
 - (void)main;

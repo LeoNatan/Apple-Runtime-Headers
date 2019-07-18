@@ -46,6 +46,7 @@
 - (void)_addNewPlanWithCardData:(id)arg1 confirmationCode:(id)arg2;
 - (void)enterFauxCardDataManually:(id)arg1;
 - (void)captureOutput:(id)arg1 didOutputMetadataObjects:(id)arg2 fromConnection:(id)arg3;
+- (long long)navigationBarScrollToEdgeBehavior;
 - (void)planInfoDidUpdate:(id)arg1 planListError:(id)arg2;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)viewDidDisappear:(_Bool)arg1;

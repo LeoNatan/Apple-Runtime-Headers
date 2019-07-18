@@ -13,6 +13,7 @@
     // Error parsing type: , name: healthStore
     // Error parsing type: , name: identifiersWithData
     // Error parsing type: , name: queryResults
+    // Error parsing type: , name: queryCompletedSuccessfully
 }
 
 @end

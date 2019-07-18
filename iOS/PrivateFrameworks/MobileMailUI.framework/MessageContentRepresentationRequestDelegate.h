@@ -8,12 +8,15 @@
 
 #import <MobileMailUI/EMContentItemRequestDelegate-Protocol.h>
 
-@class NSString;
+@class EFFuture, NSString;
 
 @interface MessageContentRepresentationRequestDelegate : NSObject <EMContentItemRequestDelegate>
 {
+    EFFuture *_messageFuture;
 }
 
+@property(retain, nonatomic) EFFuture *messageFuture; // @synthesize messageFuture=_messageFuture;
+- (void).cxx_destruct;
 - (void)contentObjectID:(id)arg1 generateHTMLSnippetsForMailDropContentItems:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)contentObjectID:(id)arg1 generateHTMLSnippetsForRelatedContentItems:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 

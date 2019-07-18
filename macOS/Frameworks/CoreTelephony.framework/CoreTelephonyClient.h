@@ -68,6 +68,7 @@
 - (void)getSmscAddress:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)getSmsReadyState:(id)arg1 error:(id *)arg2;
 - (void)getSmsReadyState:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)getUserDefaultVoiceSubscriptionContext:(id *)arg1;
 - (void)refreshUserAuthToken:(id)arg1 error:(id *)arg2;
 - (id)getUserAuthToken:(id)arg1 error:(id *)arg2;
 - (void)authenticate:(id)arg1 request:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -174,6 +175,7 @@
 - (void)isEmergencyNumber:(id)arg1 number:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)getPublicSignalStrength:(id)arg1 error:(id *)arg2;
 - (id)getDataMode:(id)arg1 error:(id *)arg2;
+- (id)getSignalStrengthMeasurements:(id)arg1 error:(id *)arg2;
 - (id)getEncryptionStatus:(id)arg1 error:(id *)arg2;
 - (void)isNetworkReselectionNeeded:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)copyNetworkSelectionInfo:(id)arg1 error:(id *)arg2;
@@ -282,6 +284,7 @@
 - (void)getTransferPlanListWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getCameraScanInfoForCardData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)supportsPlanProvisioning:(id)arg1 carrierDescriptors:(id)arg2 smdpUrl:(id)arg3 iccidPrefix:(id)arg4;
+- (void)addPlanWith:(id)arg1 appName:(id)arg2 appType:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)addPlanWith:(id)arg1 request:(id)arg2 appName:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)getVoicemailInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)copyPriVersion:(id)arg1 completion:(CDUnknownBlockType)arg2;

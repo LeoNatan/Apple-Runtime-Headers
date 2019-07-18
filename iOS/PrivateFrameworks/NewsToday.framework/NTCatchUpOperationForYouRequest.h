@@ -9,6 +9,7 @@
 #import <NewsToday/NSCopying-Protocol.h>
 
 @class NSSet, NSString;
+@protocol FCBundleSubscriptionProviderType;
 
 @interface NTCatchUpOperationForYouRequest : NSObject <NSCopying>
 {
@@ -18,6 +19,7 @@
     NSSet *_mutedTagIDs;
     NSSet *_purchasedTagIDs;
     NSSet *_subscribedTagIDs;
+    id <FCBundleSubscriptionProviderType> _bundleSubscriptionProvider;
     long long _cutoffTime;
     unsigned long long _headlinesPerFeedFetchCount;
     long long _fetchingBin;
@@ -26,6 +28,7 @@
 @property(readonly, nonatomic) long long fetchingBin; // @synthesize fetchingBin=_fetchingBin;
 @property(readonly, nonatomic) unsigned long long headlinesPerFeedFetchCount; // @synthesize headlinesPerFeedFetchCount=_headlinesPerFeedFetchCount;
 @property(readonly, nonatomic) long long cutoffTime; // @synthesize cutoffTime=_cutoffTime;
+@property(readonly, copy, nonatomic) id <FCBundleSubscriptionProviderType> bundleSubscriptionProvider; // @synthesize bundleSubscriptionProvider=_bundleSubscriptionProvider;
 @property(readonly, copy, nonatomic) NSSet *subscribedTagIDs; // @synthesize subscribedTagIDs=_subscribedTagIDs;
 @property(readonly, copy, nonatomic) NSSet *purchasedTagIDs; // @synthesize purchasedTagIDs=_purchasedTagIDs;
 @property(readonly, copy, nonatomic) NSSet *mutedTagIDs; // @synthesize mutedTagIDs=_mutedTagIDs;
@@ -34,7 +37,7 @@
 @property(readonly, copy, nonatomic) NSString *topStoriesChannelID; // @synthesize topStoriesChannelID=_topStoriesChannelID;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithForYouTodaySectionSpecificConfig:(id)arg1 topStoriesChannelID:(id)arg2 hiddenFeedIDs:(id)arg3 paidBundleFeedID:(id)arg4 mutedTagIDs:(id)arg5 purchasedTagIDs:(id)arg6 subscribedTagIDs:(id)arg7;
+- (id)initWithForYouTodaySectionSpecificConfig:(id)arg1 topStoriesChannelID:(id)arg2 hiddenFeedIDs:(id)arg3 paidBundleFeedID:(id)arg4 mutedTagIDs:(id)arg5 purchasedTagIDs:(id)arg6 subscribedTagIDs:(id)arg7 bundleSubscriptionProvider:(id)arg8;
 - (id)init;
 
 @end

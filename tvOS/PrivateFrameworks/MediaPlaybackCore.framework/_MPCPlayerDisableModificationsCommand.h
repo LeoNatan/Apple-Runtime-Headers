@@ -13,11 +13,9 @@
 @interface _MPCPlayerDisableModificationsCommand : _MPCPlayerCommand <MPCPlayerDisableModificationsCommand>
 {
     _Bool _disabled;
-    _Bool _disable;
 }
 
-@property(nonatomic, getter=isDisabled) _Bool disable; // @synthesize disable=_disable;
-@property(readonly, nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
+@property(nonatomic, getter=isDisabled, setter=_setDisabled:) _Bool disabled; // @synthesize disabled=_disabled;
 - (id)setDisabled:(_Bool)arg1;
 
 // Remaining properties

@@ -96,7 +96,7 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingNeedsTimeResolver;
 + (id)keyPathsForValuesAffectingPlayButtonsShowPauseGlyph;
 + (id)keyPathsForValuesAffectingCanShowLoadingIndicator;
-+ (id)keyPathsForValuesAffectingShowsStartContentTransitionsButtons;
++ (id)keyPathsForValuesAffectingShowsStartContentTransitionButtons;
 + (id)keyPathsForValuesAffectingShowsSkipButtons;
 + (id)keyPathsForValuesAffectingSeekingEnabled;
 + (id)keyPathsForValuesAffectingMaximumTime;

@@ -22,7 +22,7 @@
 - (int)analyzeImages:(struct __CVBuffer *)arg1 secondImage:(struct __CVBuffer *)arg2 moflow:(float *)arg3 cancel:(CDUnknownBlockType)arg4;
 - (int)createInput:(float *)arg1 withBuffer:(struct __CVBuffer *)arg2 cnnInputHeight:(int)arg3 cnnInputWidth:(int)arg4;
 - (int)createModel;
-- (int)initWithImage:(float *)arg1 image:(struct __CVBuffer *)arg2 channels:(int)arg3;
+- (int)copyImage:(struct __CVBuffer *)arg1 toData:(float *)arg2 withChannels:(int)arg3;
 - (void)dealloc;
 - (id)init;
 

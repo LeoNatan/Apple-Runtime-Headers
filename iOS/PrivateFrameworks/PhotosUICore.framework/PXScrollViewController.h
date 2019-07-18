@@ -13,6 +13,8 @@
 
 @interface PXScrollViewController : NSObject <PXTilingScrollController>
 {
+    NSHashTable *_willLayoutSubviewsObservers;
+    NSHashTable *_didLayoutSubviewsObservers;
     NSHashTable *_didScrollObservers;
     _Bool _isDecelerating;
     _Bool _isDragging;
@@ -62,6 +64,7 @@
 - (void)setScrollViewNeedsLayout;
 - (void)scrollRectToVisible:(struct CGRect)arg1 avoidingContentInsetEdges:(unsigned long long)arg2 animated:(_Bool)arg3;
 - (void)scrollRectToVisible:(struct CGRect)arg1 animated:(_Bool)arg2;
+- (_Bool)isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
 - (void)scrollToEdge:(unsigned int)arg1;
 - (void)addSubviewToScrollView:(struct NSObject *)arg1;
 - (void)addSubview:(struct NSObject *)arg1;

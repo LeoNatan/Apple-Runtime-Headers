@@ -14,6 +14,8 @@
     PLJournal *_journal;
 }
 
++ (BOOL)fileExistsAtURL:(id)arg1;
++ (BOOL)moveURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 + (BOOL)createEmptyURL:(id)arg1 error:(id *)arg2;
 + (BOOL)removeURL:(id)arg1 error:(id *)arg2;
 @property(nonatomic) __weak PLJournal *journal; // @synthesize journal=_journal;

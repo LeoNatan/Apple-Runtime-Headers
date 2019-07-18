@@ -15,10 +15,20 @@
     const struct __CFAllocator *_stringContentsDeallocator;
 }
 
++ (void)setDeserializationStatsHandler:(CDUnknownBlockType)arg1;
++ (CDUnknownBlockType)deserializationStatsHandler;
++ (void)setSerializationStatsHandler:(CDUnknownBlockType)arg1;
++ (CDUnknownBlockType)serializationStatsHandler;
++ (BOOL)isLazyPlistLikelyContainedInFileAtPath:(id)arg1 version:(unsigned long long *)arg2;
++ (BOOL)isLazyPlistLikelyContainedInData:(id)arg1 version:(unsigned long long *)arg2;
++ (id)fileBackedDataWithPropertyList:(id)arg1 appendedToFd:(int)arg2 startOfs:(long long *)arg3 error:(id *)arg4;
++ (id)fileBackedDataWithPropertyList:(id)arg1 writtenToPath:(id)arg2 error:(id *)arg3;
++ (id)dataWithPropertyList:(id)arg1 error:(id *)arg2;
 + (id)arrayWithData:(id)arg1 error:(id *)arg2;
 + (id)arrayWithPath:(id)arg1 error:(id *)arg2;
 + (id)dictionaryWithData:(id)arg1 error:(id *)arg2;
 + (id)dictionaryWithPath:(id)arg1 error:(id *)arg2;
++ (id)propertyListWithPath:(id)arg1 fileRange:(struct _NSRange)arg2 error:(id *)arg3;
 + (id)propertyListWithPath:(id)arg1 error:(id *)arg2;
 + (id)propertyListWithData:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) const struct __CFAllocator *stringContentsDeallocator; // @synthesize stringContentsDeallocator=_stringContentsDeallocator;

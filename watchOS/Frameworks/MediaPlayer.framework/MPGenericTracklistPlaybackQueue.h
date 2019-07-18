@@ -26,7 +26,7 @@
 - (void).cxx_destruct;
 - (_Bool)verifyWithError:(id *)arg1;
 - (id)description;
-- (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue *)arg1;
+- (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue *)arg1 options:(id)arg2;
 
 @end
 

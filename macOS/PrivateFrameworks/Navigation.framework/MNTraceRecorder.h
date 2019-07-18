@@ -130,7 +130,7 @@
 - (void)recordLocation:(id)arg1 timestamp:(double)arg2;
 - (void)_recordLocationEvent:(long long)arg1 recordingTimestamp:(double)arg2 location:(id)arg3 correctedLocation:(id)arg4;
 - (void)_recordLocationEvent:(long long)arg1 recordingTimestamp:(double)arg2 coordinate:(struct CLLocationCoordinate2D)arg3 rawCoordinate:(struct CLLocationCoordinate2D)arg4 timestamp:(double)arg5 horizontalAccuracy:(double)arg6 verticalAccuracy:(double)arg7 altitude:(double)arg8 speed:(double)arg9 speedAccuracy:(double)arg10 course:(double)arg11 rawCourse:(double)arg12 type:(int)arg13 courseAccuracy:(double)arg14 correctedCoordinate:(struct CLLocationCoordinate2D)arg15 correctedCourse:(double)arg16 matchType:(int)arg17 activeTransportType:(int)arg18 correctedLocation:(id)arg19 speedLimit:(int)arg20 shieldText:(id)arg21 shieldType:(int)arg22;
-- (void)recordLocation:(id)arg1;
+- (void)recordLocation:(id)arg1 rawLocation:(id)arg2;
 - (void)_recordLocationMatchInfoOnWriteQueue:(id)arg1 forLocationID:(int)arg2;
 - (void)recordMiscInfo:(id)arg1 value:(id)arg2;
 - (void)recordStylesheet:(id)arg1 data:(id)arg2;

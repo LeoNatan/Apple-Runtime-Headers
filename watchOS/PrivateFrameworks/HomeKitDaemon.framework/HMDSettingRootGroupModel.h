@@ -17,6 +17,7 @@
 + (id)hmbProperties;
 - (id)copyWithNewParentModelID:(id)arg1;
 - (id)nameForKeyPath;
+- (id)initWithModelID:(id)arg1 parentModelID:(id)arg2;
 
 // Remaining properties
 @property(copy, nonatomic) NSUUID *conflictResolutionToken; // @dynamic conflictResolutionToken;

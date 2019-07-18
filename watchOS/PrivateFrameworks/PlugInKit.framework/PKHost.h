@@ -16,11 +16,11 @@
     NSMutableDictionary *_activeOneShots;
     NSMapTable *_discoveryMap;
     NSObject<OS_dispatch_queue> *_hostQueue;
-    PKDaemonClient *_client;
+    PKDaemonClient *_daemon;
 }
 
 + (id)defaultHost;
-@property(retain) PKDaemonClient *client; // @synthesize client=_client;
+@property(retain) PKDaemonClient *daemon; // @synthesize daemon=_daemon;
 @property(retain) NSObject<OS_dispatch_queue> *hostQueue; // @synthesize hostQueue=_hostQueue;
 @property(retain) NSMapTable *discoveryMap; // @synthesize discoveryMap=_discoveryMap;
 @property(retain) NSMutableDictionary *activeOneShots; // @synthesize activeOneShots=_activeOneShots;

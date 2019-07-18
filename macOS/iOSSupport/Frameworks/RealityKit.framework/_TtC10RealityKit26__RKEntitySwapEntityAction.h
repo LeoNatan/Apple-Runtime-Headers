@@ -11,6 +11,8 @@
     // Error parsing type: , name: newEntity
     // Error parsing type: , name: buildOutAction
     // Error parsing type: , name: buildInAction
+    // Error parsing type: , name: updateSubscription
+    // Error parsing type: , name: deadline
 }
 
 - (id)copyWithZone:(void *)arg1;

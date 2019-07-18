@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSLayoutConstraint, UIKBUndoStyling, UILabel;
+@class NSLayoutConstraint, UIKBUndoStyling, UILabel, UIVisualEffectView;
 
 __attribute__((visibility("hidden")))
 @interface UIKBUndoStateHUD : UIView
@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     long long _controlType;
     NSLayoutConstraint *_undoStateHUDWidthConstraint;
     NSLayoutConstraint *_undoStateHUDHeightConstraint;
-    UIView *_shadowView;
+    UIVisualEffectView *_shadowView;
     UIView *_containerView;
     UILabel *_labelView;
     UIKBUndoStyling *_style;
@@ -23,11 +23,12 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIKBUndoStyling *style; // @synthesize style=_style;
 @property(retain, nonatomic) UILabel *labelView; // @synthesize labelView=_labelView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
-@property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
+@property(retain, nonatomic) UIVisualEffectView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) NSLayoutConstraint *undoStateHUDHeightConstraint; // @synthesize undoStateHUDHeightConstraint=_undoStateHUDHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *undoStateHUDWidthConstraint; // @synthesize undoStateHUDWidthConstraint=_undoStateHUDWidthConstraint;
 @property(nonatomic) long long controlType; // @synthesize controlType=_controlType;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateUndoStateHUDControlType:(long long)arg1 available:(BOOL)arg2;
 - (id)initWithKeyboardAppearance:(long long)arg1;
 

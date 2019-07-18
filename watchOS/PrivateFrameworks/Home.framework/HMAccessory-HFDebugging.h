@@ -45,7 +45,7 @@
 @property(readonly, nonatomic) _Bool hf_needsSoftwareUpdateToSupportBeingAddedToMediaSystem;
 @property(readonly, nonatomic) unsigned int hf_mediaAccessControlCapabilities;
 @property(readonly, nonatomic) _Bool hf_isDumbSpeaker;
-@property(readonly, nonatomic) _Bool hf_isAirPortExtremeSpeaker;
+@property(readonly, nonatomic) _Bool hf_isAirPortExpressSpeaker;
 @property(readonly, nonatomic) _Bool hf_isAppleTV;
 @property(readonly, nonatomic) _Bool hf_isHomePod;
 @property(readonly, nonatomic) _Bool hf_isMediaAccessory;
@@ -65,12 +65,12 @@
 @property(readonly, copy, nonatomic) NSSet *hf_visibleServices;
 @property(readonly, copy, nonatomic) NSSet *hf_standardServices;
 @property(readonly, nonatomic) HMResidentDevice *hf_linkedResidentDevice;
-@property(readonly, nonatomic) _Bool hf_isNetworkRouter;
 @property(readonly, nonatomic) _Bool hf_isMultiServiceAccessory;
 @property(readonly, nonatomic) _Bool hf_areAllServicesInGroups;
 @property(readonly, nonatomic) _Bool hf_isRemoteControl;
 @property(readonly, nonatomic) _Bool hf_isProgrammableSwitch;
 @property(readonly, nonatomic) _Bool hf_isNotificationSupportedCamera;
+@property(readonly, nonatomic) _Bool hf_isNetworkRouter;
 @property(readonly, nonatomic) _Bool hf_isCamera;
 @property(readonly, nonatomic) _Bool hf_isVisibleAsBridge;
 @property(readonly, nonatomic) _Bool hf_isBridge;

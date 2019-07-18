@@ -11,7 +11,19 @@
 }
 
 + (void)captureUserAction:(int)arg1 target:(int)arg2 value:(id)arg3;
++ (void)captureMapKitCountsWithMapKitCounts_mapKitCounts:(id)arg1;
++ (void)captureCommuteWindowWithCommuteWindow_startTime:(id)arg1 commuteWindow_duration:(id)arg2 commuteWindow_predictedExitTime:(id)arg3 commuteWindow_endReason:(int)arg4 commuteWindow_numberOfAlertingResponses:(id)arg5 commuteWindow_numberOfDoomRoutingRequests:(id)arg6 commuteWindow_predictedDestinations:(id)arg7;
++ (void)captureWidgetInteractionWithMapsWidgetsInteractionSession_mapsWidgetType:(int)arg1 mapsWidgetsInteractionSession_endState:(int)arg2 mapsWidgetsInteractionSession_lockedMode:(id)arg3 mapsWidgetsInteractionSession_localHour:(id)arg4 mapsWidgetsInteractionSession_localDayOfWeek:(id)arg5 mapsWidgetsInteractionSession_duration:(id)arg6 mapsWidgetsInteractionSession_mapsNearbyWidget:(id)arg7 mapsWidgetsInteractionSession_mapsTransitWidget:(id)arg8 mapsWidgetsInteractionSession_mapsDestinationsWidget:(id)arg9;
++ (void)captureTtlInitialTimeWithTimeToLeaveInitialTravelTimeEvent_travelTime:(id)arg1;
++ (void)captureTtlHypothesisWithTimeToLeaveHypothesisEvent_arrival:(int)arg1 timeToLeaveHypothesisEvent_departure:(int)arg2 timeToLeaveHypothesisEvent_ttlUiNotificationShown:(int)arg3 timeToLeaveHypothesisEvent_earliestArrivalOffset:(id)arg4 timeToLeaveHypothesisEvent_earliestDepartureOffset:(id)arg5 timeToLeaveHypothesisEvent_latestArrivalOffset:(id)arg6 timeToLeaveHypothesisEvent_latestDepartureOffset:(id)arg7 timeToLeaveHypothesisEvent_numberOfReroutes:(id)arg8;
++ (void)captureTransitAppLaunchWithTransitAppLaunchEvent_bundleIdentifier:(id)arg1 transitAppLaunchEvent_source:(id)arg2 transitAppLaunchEvent_destination:(id)arg3 transitAppLaunchEvent_timestamp:(id)arg4;
++ (void)captureTileSetStateWithTileSetStateEvent_tileSetStateType:(int)arg1 tileSetStateEvent_newCoverage:(id)arg2 tileSetStateEvent_oldCoverage:(id)arg3 tileSetStateEvent_durationInOldState:(id)arg4;
++ (void)captureMapLaunchWithMapLaunchEvent_launchUri:(id)arg1 mapLaunchEvent_sourceAppId:(id)arg2 GEOTimeToLeaveMapLaunch_minutesUntilEvent:(id)arg3;
++ (void)captureProactiveSuggestionWithProactiveSuggestionInteractionSessionEvent_listType:(int)arg1 proactiveSuggestionInteractionSessionEvent_interactedItemIndex:(id)arg2 proactiveSuggestionInteractionSessionEvent_duration:(id)arg3 proactiveSuggestionInteractionSessionEvent_proactiveItems:(id)arg4;
++ (void)captureMarcoLiteWithMarcoLiteUsage_totalNavTime:(id)arg1 marcoLiteUsage_usageStates:(id)arg2;
++ (void)capturePredExTrainingWithPredExTrainingData_chanceOfPrecipitation:(id)arg1 predExTrainingData_chanceOfRain:(id)arg2 predExTrainingData_chanceOfSnow:(id)arg3 predExTrainingData_endTime:(id)arg4 predExTrainingData_secondsUntilEnd:(id)arg5 predExTrainingData_secondsUntilStart:(id)arg6 predExTrainingData_startTime:(id)arg7 predExTrainingData_temperature:(id)arg8 predExTrainingData_timeOfDay:(id)arg9 predExTrainingData_timeSinceBackgrounded:(id)arg10 predExTrainingData_actualTransportMode:(int)arg11 predExTrainingData_dayOfWeek:(id)arg12 predExTrainingData_distanceFromHereToHome:(int)arg13 predExTrainingData_distanceFromHereToOrigin:(int)arg14 predExTrainingData_distanceFromHereToParkedCar:(int)arg15 predExTrainingData_distanceFromHereToWork:(int)arg16 predExTrainingData_distanceFromHere:(int)arg17 predExTrainingData_distanceFromOriginToDestination:(int)arg18 predExTrainingData_entryType:(int)arg19 predExTrainingData_mapType:(int)arg20 predExTrainingData_predictedTransportMode:(int)arg21 predExTrainingData_preferredTransportMode:(int)arg22 predExTrainingData_isInBasemode:(id)arg23 predExTrainingData_isTourist:(id)arg24 predExTrainingData_isTransitPossible:(id)arg25 predExTrainingData_routePlanningScreenPresented:(id)arg26;
 + (void)captureThrottleEventWithThrottleEvent_networkService:(int)arg1 throttleEvent_requestAppIdentifier:(id)arg2 throttleEvent_throttleType:(int)arg3 throttleEvent_throttleMode:(int)arg4 throttleEvent_throttleReqType:(id)arg5 throttleEvent_throttleTriggerCount:(id)arg6 throttleEvent_throttleTriggerDuration:(id)arg7 throttleEvent_throttleCount:(id)arg8 throttleEvent_throttleDuration:(id)arg9;
++ (void)captureShortAndCohortUserActionTargetPairWithUserActionEvent_userActionEventAction:(int)arg1 userActionEvent_userActionEventTarget:(int)arg2 userActionEvent_userActionEventValue:(id)arg3;
 + (void)captureLegacyUserActionTargetPairWithUserActionEvent_userActionEventAction:(int)arg1 userActionEvent_userActionEventTarget:(int)arg2 userActionEvent_userActionEventValue:(id)arg3;
 + (void)captureSessionlessUserActionWithUserActionEvent_userActionEventAction:(int)arg1 userActionEvent_userActionEventTarget:(int)arg2 userActionEvent_userActionEventValue:(id)arg3;
 + (void)captureCarplayUserActionWithUserActionEvent_userActionEventAction:(int)arg1 userActionEvent_userActionEventTarget:(int)arg2 userActionEvent_userActionEventValue:(id)arg3;
@@ -38,12 +50,29 @@
 + (void)captureTileCacheHitWithGEOCacheHit_requestorType:(int)arg1 GEOCacheHit_tileSourceType:(int)arg2 GEOCacheHit_count:(id)arg3 GEOCacheHit_bytes:(id)arg4 tileSet_tileSetInfos:(id)arg5;
 + (BOOL)isDisabledState:(id)arg1 inCountry:(id)arg2;
 + (BOOL)isDisabledEvent:(id)arg1 inCountry:(id)arg2;
++ (void)completeCapturePredExTrainingWithEndTime:(id)arg1;
++ (void)cancelCapturePredExTraining;
++ (void)beginCapturePredExTrainingWithChanceOfPrecipitation:(id)arg1 chanceOfRain:(id)arg2 chanceOfSnow:(id)arg3 secondsUntilEnd:(id)arg4 secondsUntilStart:(id)arg5 startTime:(id)arg6 temperature:(id)arg7 timeOfDay:(id)arg8 timeSinceBackgrounded:(id)arg9 actualTransportMode:(int)arg10 dayOfWeek:(id)arg11 distanceFromHereToHome:(int)arg12 distanceFromHereToOrigin:(int)arg13 distanceFromHereToParkedCar:(int)arg14 distanceFromHereToWork:(int)arg15 distanceFromHere:(int)arg16 distanceFromOriginToDestination:(int)arg17 entryType:(int)arg18 mapType:(int)arg19 predictedTransportMode:(int)arg20 predExTrainingData_preferredTransportMode:(int)arg21 isInBasemode:(id)arg22 isTourist:(id)arg23 isTransitPossible:(id)arg24 routePlanningScreenPresented:(id)arg25;
 + (void)captureGridDuration:(double)arg1 previousState:(int)arg2 endState:(int)arg3 displayType:(int)arg4 errors:(id)arg5;
-+ (void)capturePlaceCardUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 mapItem:(id)arg4 timestamp:(double)arg5 resultIndex:(int)arg6 targetID:(unsigned long long)arg7 providerID:(id)arg8 animationID:(unsigned long long)arg9 actionURL:(id)arg10 photoID:(id)arg11 placeCardType:(int)arg12 localizedMapItemCategory:(id)arg13 availableActions:(id)arg14 unactionableUIElements:(id)arg15;
-+ (void)captureUserAction:(int)arg1 target:(int)arg2 eventValue:(id)arg3 placeActionDetails:(id)arg4;
-+ (void)captureUserAction:(int)arg1 target:(int)arg2 eventValue:(id)arg3 mapRegion:(id)arg4 zoomLevel:(double)arg5 mapType:(int)arg6;
++ (void)captureUserAction:(int)arg1 target:(int)arg2 value:(id)arg3 mapsServerMetadata:(id)arg4;
++ (void)captureUserAction:(int)arg1 target:(int)arg2 value:(id)arg3 categoriesMetadataDisplayed:(id)arg4 categoryMetadataSelected:(id)arg5;
++ (void)captureUserAction:(int)arg1 target:(int)arg2 value:(id)arg3 categoriesDisplayed:(id)arg4 categorySelected:(id)arg5;
++ (void)captureTransitPlaceCardUserAction:(int)arg1 target:(int)arg2 value:(id)arg3 mapItem:(id)arg4 timestamp:(double)arg5 resultIndex:(int)arg6 targetID:(unsigned long long)arg7 providerID:(id)arg8 animationID:(unsigned long long)arg9 transitCardCategory:(int)arg10 transitSystem:(id)arg11 transitDepartureSequence:(id)arg12 transitIncident:(id)arg13;
++ (void)captureUserAction:(int)arg1 target:(int)arg2 value:(id)arg3 routeDetails:(id)arg4;
++ (void)capturePlaceCardUserAction:(int)arg1 target:(int)arg2 value:(id)arg3 mapItem:(id)arg4 timestamp:(double)arg5 placeCardType:(int)arg6 categoriesDisplayed:(id)arg7 categorySelected:(id)arg8;
++ (void)capturePlaceCardUserAction:(int)arg1 target:(int)arg2 value:(id)arg3 mapItem:(id)arg4 timestamp:(double)arg5 resultIndex:(int)arg6 targetID:(unsigned long long)arg7 providerID:(id)arg8 animationID:(unsigned long long)arg9 actionURL:(id)arg10 photoID:(id)arg11 placeCardType:(int)arg12 localizedMapItemCategory:(id)arg13 availableActions:(id)arg14 unactionableUIElements:(id)arg15;
++ (void)captureUserAction:(int)arg1 target:(int)arg2 value:(id)arg3 placeActionDetails:(id)arg4;
++ (void)captureUserAction:(int)arg1 target:(int)arg2 value:(id)arg3 placeActionDetails:(id)arg4 mapRegion:(id)arg5 zoomLevel:(double)arg6 mapType:(int)arg7;
++ (void)captureUserAction:(int)arg1 target:(int)arg2 value:(id)arg3 mapRegion:(id)arg4 zoomLevel:(double)arg5 mapType:(int)arg6;
++ (void)captureCommuteDoomWindow:(id)arg1 exitTime:(id)arg2 destinations:(id)arg3 reason:(long long)arg4 networkRequests:(unsigned long long)arg5 alerts:(unsigned long long)arg6;
++ (void)captureProactiveSuggestionInteractionForType:(int)arg1 items:(id)arg2 interactedWithItemIndex:(int)arg3 forDuration:(double)arg4;
++ (void)captureMapsWidgetsInteractionForType:(int)arg1 endState:(int)arg2 widgetSpecificObject:(id)arg3 wasLocked:(BOOL)arg4 startDate:(id)arg5 forDuration:(double)arg6;
++ (void)captureTimeToLeaveIntialTravelTimeEventWithTravelTime:(double)arg1;
++ (void)captureTimeToLeaveHypothesisEventWithEarlyDepartureDelta:(double)arg1 lateDepartureDelta:(double)arg2 earlyArrivalDelta:(double)arg3 lateArrivalDelta:(double)arg4 rerouteCount:(unsigned long long)arg5 uiNotification:(int)arg6;
++ (void)captureTransitAppLaunchSource:(CDStruct_c3b9c2ee)arg1 destination:(CDStruct_c3b9c2ee)arg2 bundleIdentifier:(id)arg3;
++ (void)captureMapLaunchEventWithLaunchUrl:(id)arg1 sourceAppId:(id)arg2 isLaunchedFromTTL:(BOOL)arg3 ttlEventTime:(id)arg4;
 + (void)captureNetworkEventForProtobufSessionTask:(id)arg1 networkService:(int)arg2 requestType:(int)arg3 requestAppId:(id)arg4;
-+ (void)captureNetworkEventForLoadingTileWithUsageInfo:(id)arg1 appIdentifier:(id)arg2;
++ (void)captureNetworkForLoadingTileForAppId:(id)arg1 error:(id)arg2 requestSize:(id)arg3 responseSize:(id)arg4 totalTime:(id)arg5 queuedTime:(id)arg6 clientNetMetrics:(id)arg7 transactionMetrics:(id)arg8 tileSetStyle:(int)arg9;
 - (void)captureNetworkEventForProtobufSessionTask:(id)arg1 networkService:(int)arg2 requestType:(int)arg3 requestErrorDomain:(id)arg4 requestErrorCode:(id)arg5 requestAppId:(id)arg6;
 
 @end

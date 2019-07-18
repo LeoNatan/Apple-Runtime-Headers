@@ -26,8 +26,6 @@
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (CDStruct_90e2a262)_mapRectForTransaction:(id)arg1;
 - (id)_annotationsForTransaction:(id)arg1;
-- (_Bool)_locationIsValid:(id)arg1;
-- (id)_locationForTransaction:(id)arg1;
 - (void)_centerOnTransactionAnimated:(_Bool)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -25,7 +25,7 @@
 
 @property(readonly, nonatomic) CPLEngineScopeStorage *scopes; // @synthesize scopes=_scopes;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
+- (id)phaseDescription;
 - (void)task:(id)arg1 didProgress:(float)arg2 userInfo:(id)arg3;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)cancel;
@@ -47,6 +47,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

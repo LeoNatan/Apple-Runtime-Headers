@@ -19,6 +19,7 @@
     _Bool _hasCompleteData;
     NSString *_identifier;
     long long _indexingType;
+    unsigned long long _itemInstantiationTime;
     id <EDIndexableMessage> _message;
     NSData *_bodyData;
 }
@@ -27,6 +28,7 @@
 + (id)accountIdentifierForMessage:(id)arg1;
 + (id)domainIdentifierForMessage:(id)arg1;
 + (id)domainIdentifierForAccountID:(id)arg1 mailboxPersistentID:(id)arg2;
++ (long long)indexingPriorityByIndexingType:(long long)arg1;
 + (id)itemWithIdentifier:(id)arg1 message:(id)arg2 bodyData:(id)arg3 fetchBody:(_Bool)arg4;
 + (id)itemWithMessage:(id)arg1 bodyData:(id)arg2 fetchBody:(_Bool)arg3;
 + (id)log;
@@ -35,6 +37,7 @@
 @property(readonly, nonatomic) _Bool fetchBody; // @synthesize fetchBody=_fetchBody;
 @property(retain, nonatomic) NSData *bodyData; // @synthesize bodyData=_bodyData;
 @property(readonly, nonatomic) id <EDIndexableMessage> message; // @synthesize message=_message;
+@property(readonly, nonatomic) unsigned long long itemInstantiationTime; // @synthesize itemInstantiationTime=_itemInstantiationTime;
 @property(nonatomic) long long indexingType; // @synthesize indexingType=_indexingType;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
@@ -52,7 +55,6 @@
 @property(readonly, nonatomic) _Bool shouldExcludeFromIndex;
 @property(readonly, copy, nonatomic) NSString *domainIdentifier;
 - (long long)compare:(id)arg1;
-- (long long)_indexingPriorityByIndexingType:(long long)arg1;
 @property(readonly, nonatomic) NSDate *dateReceived;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithMessage:(id)arg1 bodyData:(id)arg2 fetchBody:(_Bool)arg3;

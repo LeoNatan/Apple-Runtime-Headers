@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <MLFoundation/NSObject-Protocol.h>
+
 @class MLFoundationDevice, MLFoundationTensor, NSArray;
 
-@protocol MLFoundationLayerCompiling
-- (void)compileForDevice:(MLFoundationDevice *)arg1 sourceTensors:(NSArray *)arg2 resultTensor:(MLFoundationTensor *)arg3;
+@protocol MLFoundationLayerCompiling <NSObject>
+- (BOOL)compileForDevice:(MLFoundationDevice *)arg1 sourceTensors:(NSArray *)arg2 resultTensor:(MLFoundationTensor *)arg3;
 @end
 

@@ -23,8 +23,7 @@
 @property(nonatomic) unsigned long long selectedTabIndex; // @synthesize selectedTabIndex=_selectedTabIndex;
 - (void).cxx_destruct;
 - (void)tabBar:(id)arg1 didSelectItem:(id)arg2;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1 tabNames:(id)arg2 tabCharacters:(id)arg3;
+- (id)initWithTabNames:(id)arg1 tabCharacters:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

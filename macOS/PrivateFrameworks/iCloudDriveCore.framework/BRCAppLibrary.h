@@ -116,6 +116,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToAppLibrary:(id)arg1;
 - (unsigned int)greedinessPreferenceWithMtime:(id)arg1;
+- (void)whitelistAsDocumentScopePublic;
 - (void)didUpdateDocumentScopePublic;
 - (void)clearStateBits:(unsigned int)arg1;
 - (BOOL)setStateBits:(unsigned int)arg1;
@@ -132,7 +133,7 @@ __attribute__((visibility("hidden")))
 - (void)registerQueryIsRecursive:(BOOL)arg1;
 @property(readonly) BOOL hasActiveRecursiveQueries;
 @property(readonly) BOOL hasActiveQueries;
-@property(readonly, nonatomic) ICDBRFileObjectID *documentsFileObjectID;
+- (id)documentsFileObjectIDInDataDomain:(BOOL)arg1;
 @property(readonly, nonatomic) ICDBRFileObjectID *rootFileObjectID;
 - (BOOL)includesDataScope;
 @property(readonly, nonatomic) BOOL isCloudDocsAppLibrary;

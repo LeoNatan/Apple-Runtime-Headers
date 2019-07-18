@@ -7,7 +7,6 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (WBSNSDateExtras)
-+ (double)safari_oneDayInSeconds;
 + (void)safari_dateFromNTPServerWithTimeout:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)safari_dateOfMidnightNumberOfDaysAgo:(long long)arg1;
 - (id)safari_stringsFromDateForLocaleIdentifiers:(id)arg1;

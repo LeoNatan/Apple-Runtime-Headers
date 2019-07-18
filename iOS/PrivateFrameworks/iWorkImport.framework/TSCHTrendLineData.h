@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 @interface TSCHTrendLineData : NSObject <TSCHUnretainedParent>
 {
     TSCHChartSeries *mSeries;
-    int mLineType;
+    long long mLineType;
     _Bool mShowTrendLine;
     TSURegressionModel *mRegression;
     double mMaxYValue;
@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     _Bool mCachedChartVertical;
 }
 
++ (long long)getTrendLineTypeForSeries:(id)arg1;
 @property(readonly, nonatomic) _Bool showTrendLine; // @synthesize showTrendLine=mShowTrendLine;
 - (void).cxx_destruct;
 - (void)p_releaseCache;
@@ -42,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)p_calcRegression:(unsigned long long)arg1 xData:(double *)arg2 yData:(double *)arg3;
 - (void)p_calcBounds;
 - (id)p_dataPointValues;
-- (int)p_getTrendLineType;
+- (long long)p_getTrendLineType;
 - (id)trendLinePathForChartRect:(struct CGRect)arg1 offsetInBody:(double)arg2 vertical:(_Bool)arg3;
 - (void)p_addPathToTrendLinePathWithPoints:(CDStruct_c3b9c2ee *)arg1 count:(unsigned long long)arg2 curved:(_Bool)arg3 curveFitter:(id)arg4;
 - (id)p_linePathFromPoints:(CDStruct_c3b9c2ee *)arg1 count:(unsigned long long)arg2;

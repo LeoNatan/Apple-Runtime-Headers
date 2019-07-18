@@ -13,17 +13,18 @@
 __attribute__((visibility("hidden")))
 @interface SOExtensionViewService : NSServiceViewController <SORemoteExtensionViewProtocol>
 {
-    NSWindow *__window;
+    NSWindow *_window;
     SORemoteExtensionContext *_extensionContext;
 }
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 @property __weak SORemoteExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
-@property(retain, nonatomic) NSWindow *_window; // @synthesize _window=__window;
 - (void).cxx_destruct;
 - (void)_connectChildView;
 - (void)connectToContextWithSessionID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)invalidate;
+- (BOOL)remoteViewSizeChanged:(struct CGSize)arg1 transaction:(id)arg2;
 - (id)exportedInterface;
 - (id)remoteViewControllerInterface;
 - (void)loadView;

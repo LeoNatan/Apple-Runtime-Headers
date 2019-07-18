@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     _Bool _endOfLayout;
     _Bool _lastLineIsEmptyAndHasListLabel;
     _Bool _textIsVertical;
+    _Bool _terminatedByBreak;
     unsigned long long _nextWidowPullsDownFromCharIndex;
     unsigned long long _columnCount;
     unsigned long long _lineFragmentCount;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _frameBounds;
 }
 
+@property(nonatomic) _Bool terminatedByBreak; // @synthesize terminatedByBreak=_terminatedByBreak;
 @property(nonatomic) _Bool textIsVertical; // @synthesize textIsVertical=_textIsVertical;
 @property(nonatomic) _Bool lastLineIsEmptyAndHasListLabel; // @synthesize lastLineIsEmptyAndHasListLabel=_lastLineIsEmptyAndHasListLabel;
 @property(nonatomic) _Bool endOfLayout; // @synthesize endOfLayout=_endOfLayout;

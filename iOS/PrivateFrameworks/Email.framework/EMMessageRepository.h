@@ -37,10 +37,13 @@
 - (void)_vipsDidChange:(id)arg1;
 - (void)_blockedSendersDidChange:(id)arg1;
 - (void)_updateAlternateIDForObjectID:(id)arg1 alternateID:(id)arg2;
-- (void)_detectChangesForMatchedAddedObjectIDs:(id)arg1 matchedChangesHandler:(CDUnknownBlockType)arg2;
+- (void)_detectChangesForMatchedAddedObjectIDs:(id)arg1 observerationIdentifier:(id)arg2 matchedChangesHandler:(CDUnknownBlockType)arg3;
 - (void)_applyChangesToCachedObjects:(id)arg1;
+- (void)loadOlderMessagesForMailboxes:(id)arg1;
 - (void)_predictMailboxForMovingMessagesWithIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)predictMailboxForMovingMessages:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)cachedMetadataJSONForKey:(id)arg1 messageID:(id)arg2;
+- (void)setCachedMetadataJSON:(id)arg1 forKey:(id)arg2 messageID:(id)arg3;
 - (void)resetAllPrecomputedThreadScopes;
 - (void)resetPrecomputedThreadScopesForMailboxObjectID:(id)arg1;
 - (void)resetPrecomputedThreadScopesForMailboxType:(long long)arg1;
@@ -56,6 +59,7 @@
 - (id)_existingObservedItemForObjectID:(id)arg1;
 - (id)_cachedItemForItem:(id)arg1 observers:(id)arg2 validationBlock:(CDUnknownBlockType)arg3;
 - (id)messageForObjectID:(id)arg1;
+- (id)messageListItemsForObjectIDs:(id)arg1 observationIdentifier:(id)arg2;
 - (id)messageListItemsForObjectIDs:(id)arg1;
 - (void)performCountQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performQuery:(id)arg1 limit:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;

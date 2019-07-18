@@ -22,9 +22,11 @@
     NSData *_auditTokenData;
     NSString *_callerBundleIdentifier;
     NSDictionary *_authorizationOptions;
+    long long _responseCode;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) long long responseCode; // @synthesize responseCode=_responseCode;
 @property(nonatomic) _Bool useInternalExtensions; // @synthesize useInternalExtensions=_useInternalExtensions;
 @property(retain, nonatomic) NSDictionary *authorizationOptions; // @synthesize authorizationOptions=_authorizationOptions;
 @property(copy, nonatomic) NSString *callerBundleIdentifier; // @synthesize callerBundleIdentifier=_callerBundleIdentifier;

@@ -31,6 +31,7 @@
     _Bool _hasTouches;
     _Bool _scrollsLastUsedAppIconIntoView;
     _Bool _hideShinyStatus;
+    _Bool _toggleBordersOnInterfaceStyle;
     _Bool _minifiesOnSelection;
     _Bool _isMinifyingOnTranscriptScroll;
     id <CKBrowserSwitcherFooterViewDelegate> _delegate;
@@ -44,6 +45,7 @@
 @property(nonatomic) _Bool isMinifyingOnTranscriptScroll; // @synthesize isMinifyingOnTranscriptScroll=_isMinifyingOnTranscriptScroll;
 @property(nonatomic) _Bool minifiesOnSelection; // @synthesize minifiesOnSelection=_minifiesOnSelection;
 @property(retain, nonatomic) CKAppStripLayout *appStripLayout; // @synthesize appStripLayout=_appStripLayout;
+@property(nonatomic) _Bool toggleBordersOnInterfaceStyle; // @synthesize toggleBordersOnInterfaceStyle=_toggleBordersOnInterfaceStyle;
 @property(nonatomic) _Bool hideShinyStatus; // @synthesize hideShinyStatus=_hideShinyStatus;
 @property(nonatomic) _Bool scrollsLastUsedAppIconIntoView; // @synthesize scrollsLastUsedAppIconIntoView=_scrollsLastUsedAppIconIntoView;
 @property(nonatomic) _Bool isMagnified; // @synthesize isMagnified=_isMagnified;
@@ -88,7 +90,8 @@
 - (void)layoutSubviews;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)init;
+- (id)initWithFrame:(struct CGRect)arg1 toggleBordersOnInterfaceStyle:(_Bool)arg2;
 - (void)dealloc;
 
 // Remaining properties

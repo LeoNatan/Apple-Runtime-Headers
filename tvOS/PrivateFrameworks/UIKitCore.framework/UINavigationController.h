@@ -491,6 +491,7 @@
 - (_Bool)_animationParametersForHidingNavigationBar:(_Bool)arg1 lastOperation:(long long)arg2 edge:(unsigned long long *)arg3 duration:(double *)arg4;
 - (_Bool)_clipUnderlapWhileTransitioning;
 - (void)_setClipUnderlapWhileTransitioning:(_Bool)arg1;
+- (_Bool)_navigationBarLayoutIsInInteractiveScroll;
 - (_Bool)_navigationBarShouldUpdateProgress;
 @property(nonatomic, getter=isNavigationBarHidden) _Bool navigationBarHidden;
 - (void)setNavigationBar:(id)arg1;
@@ -570,6 +571,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;
 - (id)initWithRootViewController:(id)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (void)_commonInitWithBuiltinTransitionGap:(double)arg1;
 - (void)_commonNonCoderInit;
 - (void)decodeRestorableStateWithCoder:(id)arg1;

@@ -14,6 +14,7 @@
 
 @interface _CDUserContextService : NSObject <NSXPCListenerDelegate, _CDXPCEventPublisherDelegate>
 {
+    BOOL _remoteDevicesHaveBeenActivated;
     id <_CDContextPersisting> _persistence;
     _CDInMemoryUserContext *_userContext;
     NSMutableSet *_clients;
@@ -26,10 +27,13 @@
     NSMutableDictionary *_mdcsEventSubscribersByToken;
     NSMutableDictionary *_notificationEventSubscribersByToken;
     NSMutableDictionary *_notificationEventSubscribersByClientIdentifier;
+    NSMutableDictionary *_remoteDevicesByDeviceID;
 }
 
 + (id)sharedInstanceWithSharedMemoryStore:(id)arg1;
 + (id)sharedInstanceWithPersistence:(id)arg1;
+@property(readonly, nonatomic) NSMutableDictionary *remoteDevicesByDeviceID; // @synthesize remoteDevicesByDeviceID=_remoteDevicesByDeviceID;
+@property(nonatomic) BOOL remoteDevicesHaveBeenActivated; // @synthesize remoteDevicesHaveBeenActivated=_remoteDevicesHaveBeenActivated;
 @property(retain, nonatomic) NSMutableDictionary *notificationEventSubscribersByClientIdentifier; // @synthesize notificationEventSubscribersByClientIdentifier=_notificationEventSubscribersByClientIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *notificationEventSubscribersByToken; // @synthesize notificationEventSubscribersByToken=_notificationEventSubscribersByToken;
 @property(retain, nonatomic) NSMutableDictionary *mdcsEventSubscribersByToken; // @synthesize mdcsEventSubscribersByToken=_mdcsEventSubscribersByToken;
@@ -45,6 +49,8 @@
 - (void).cxx_destruct;
 - (void)removeSubscriberWithToken:(unsigned long long)arg1 streamName:(id)arg2;
 - (void)addSubscriber:(id)arg1;
+- (void)requestActivateDevicesFromSubscriber:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (void)requestActivateDevicesFromAllSubscribersWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchProxySourceDeviceUUIDFromSubscriber:(id)arg1;
 - (id)subscribersForClientIdentifier:(id)arg1;
 - (unsigned long long)tokenForSourceDeviceUUID:(id)arg1;
@@ -64,7 +70,7 @@
 - (void)deleteSavedData;
 - (void)start;
 - (void)regenerateState;
-- (void)informClientOfFiredRegistration:(id)arg1;
+- (void)informClientOfFiredRegistration:(id)arg1 info:(id)arg2;
 - (id)obtainFiredRegistrationMatchingRegistration:(id)arg1 info:(id *)arg2;
 - (void)removeOpenRegistration:(id)arg1;
 - (void)addOpenRegistration:(id)arg1;

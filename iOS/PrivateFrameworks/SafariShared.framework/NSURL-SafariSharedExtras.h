@@ -6,6 +6,8 @@
 
 #import <Foundation/NSURL.h>
 
+@class NSString;
+
 @interface NSURL (SafariSharedExtras)
 + (void)safari_enumeratePossibleURLsForUserTypedString:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 + (id)safari_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
@@ -25,6 +27,7 @@
 - (id)safari_originalDataAsString;
 - (id)safari_displayNameWithTitle:(id)arg1;
 - (_Bool)safari_hasCharactersBeyondPath;
+@property(readonly, copy, nonatomic) NSString *safari_simplifiedURLStringForDeduping;
 @property(readonly, nonatomic) NSURL *safari_canonicalURLForStartPage;
 - (id)safari_canonicalURL;
 - (id)safari_URLByDeletingUserAndPassword;

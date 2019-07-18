@@ -9,8 +9,9 @@
 @class NSString, REMObjectID;
 
 @protocol REMDAAccountProviding <NSObject>
-@property(readonly, nonatomic) NSString *loggingDescription;
+@property(readonly, nonatomic) NSString *accountDescription;
 @property(readonly, nonatomic) REMObjectID *rem_accountObjectID;
 @property(readonly, nonatomic) NSString *accountID;
+- (NSString *)loggingDescription;
 @end
 

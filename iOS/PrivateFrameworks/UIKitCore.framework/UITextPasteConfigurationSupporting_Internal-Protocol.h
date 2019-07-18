@@ -7,7 +7,7 @@
 #import <UIKitCore/UITextInput-Protocol.h>
 #import <UIKitCore/UITextPasteConfigurationSupporting-Protocol.h>
 
-@class NSArray, NSAttributedString, UITextInputController;
+@class NSArray, NSAttributedString, UITextInputController, UITextRange;
 @protocol UITextPasteSession;
 
 @protocol UITextPasteConfigurationSupporting_Internal <UITextPasteConfigurationSupporting, UITextInput>
@@ -15,6 +15,9 @@
 - (_Bool)allowsEditingTextAttributes;
 - (NSArray *)_implicitPasteConfigurationClasses;
 - (UITextInputController *)_inputController;
+- (void)removeInvisibleRange:(UITextRange *)arg1;
+- (void)addInvisibleRange:(UITextRange *)arg1;
+- (void)layoutIfNeeded;
 
 @optional
 + (Class)_textPasteItemClass;

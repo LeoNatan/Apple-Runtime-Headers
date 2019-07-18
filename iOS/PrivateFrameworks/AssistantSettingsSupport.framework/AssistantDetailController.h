@@ -7,7 +7,6 @@
 #import <Preferences/PSListController.h>
 
 @class NSMutableSet, PSSpecifier;
-@protocol AssistantDetailControllerDelegate;
 
 @interface AssistantDetailController : PSListController
 {
@@ -53,7 +52,6 @@
 - (id)inAppShowSiriSuggestionsEnabled:(id)arg1;
 - (void)_addInAppSpecifiersToSpecifiers:(id)arg1;
 - (id)specifiers;
-@property(readonly, nonatomic) id <AssistantDetailControllerDelegate> delegate;
 - (void)viewWillAppear:(_Bool)arg1;
 
 @end

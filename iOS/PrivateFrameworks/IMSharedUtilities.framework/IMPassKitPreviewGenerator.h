@@ -18,6 +18,11 @@
 + (id)passDataForURL:(id)arg1 error:(id *)arg2;
 + (_Bool)writesToDisk;
 + (struct CGSize)sizePreviewAtSourceURL:(id)arg1 withPreviewConstraints:(struct IMPreviewConstraints)arg2 error:(id *)arg3;
++ (struct CGImage *)newCroppedAndRescaledImageFromPKPassView:(id)arg1 withPreviewConstraints:(struct IMPreviewConstraints)arg2;
++ (_Bool)hasFailed:(id)arg1 error:(id)arg2;
++ (_Bool)passViewHasFailed:(id)arg1;
++ (_Bool)passHasFailed:(id)arg1 error:(id)arg2;
++ (_Bool)passDataHasFailed:(id)arg1 error:(id)arg2;
 + (struct CGImage *)newPreviewFromSourceURL:(id)arg1 withPreviewConstraints:(struct IMPreviewConstraints)arg2 error:(id *)arg3;
 + (id)UTITypes;
 

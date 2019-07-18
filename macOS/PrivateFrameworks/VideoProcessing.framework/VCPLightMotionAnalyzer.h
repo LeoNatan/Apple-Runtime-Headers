@@ -18,6 +18,7 @@
     float _cameraMotionParams[6][5];
     float _cameraMotionConfidences[6][5];
     unsigned long long _flags;
+    BOOL _turbo;
     float _actionScore;
 }
 
@@ -30,7 +31,8 @@
 - (int)generateThresholds:(float [6])arg1 withConfidences:(float [6])arg2;
 - (int)analyzeFrame:(struct __CVBuffer *)arg1 withTimestamp:(CDStruct_1b6d18a9)arg2 andDuration:(CDStruct_1b6d18a9)arg3 flags:(unsigned long long *)arg4;
 - (void)dealloc;
-- (id)initWithQueue:(id)arg1;
+- (int)prewarmWithWidth:(int)arg1 height:(int)arg2;
+- (id)initWithQueue:(id)arg1 turbo:(BOOL)arg2;
 - (id)init;
 
 @end

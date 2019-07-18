@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 @property __weak NSTitlebarContainerView *titlebarContainerView; // @synthesize titlebarContainerView=_titlebarContainerView;
 @property BOOL drawsBottomSeparator; // @synthesize drawsBottomSeparator=_drawsBottomSeparator;
 - (void).cxx_destruct;
+- (void)_updateTopHighlightLayer;
 - (void)layout;
 - (void)addSubview:(id)arg1;
 - (void)updateLayer;

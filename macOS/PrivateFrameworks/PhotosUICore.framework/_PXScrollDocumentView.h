@@ -20,10 +20,14 @@
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)accessibilityFocusedUIElement;
 - (struct CGRect)accessibilityFrameInParentSpace;
+- (void)setAccessibilitySelectedCells:(id)arg1;
+- (id)accessibilitySelectedCells;
 - (void)setAccessibilitySelectedChildren:(id)arg1;
 - (id)accessibilitySelectedChildren;
 - (id)accessibilityVisibleChildren;
 - (id)accessibilityChildren;
+- (id)accessibilityRoleDescription;
+- (id)accessibilitySubrole;
 - (id)accessibilityRole;
 - (BOOL)isAccessibilityElement;
 - (id)description;

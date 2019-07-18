@@ -126,6 +126,7 @@
 - (void)recordSystemLibraryState:(BOOL)arg1;
 - (void)recordFileSystemInfoForURL:(id)arg1;
 - (void)recordAutoPromoteState:(BOOL)arg1;
+- (void)recordError:(id)arg1 backupContextKey:(id)arg2;
 - (void)recordError:(id)arg1;
 - (void)recordDurPreHandoff:(id)arg1;
 - (void)calculateAndRecordLibrarySizeForURL:(id)arg1 completion:(CDUnknownBlockType)arg2;

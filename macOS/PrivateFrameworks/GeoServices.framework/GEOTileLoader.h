@@ -12,7 +12,7 @@
 #import <GeoServices/GEOTileServerProxyDelegate-Protocol.h>
 
 @class GEOTileLoaderConfiguration, GEOTileLoaderInternal, GEOTileLoaderUsage, GEOTileServerProxy, NSMutableArray, NSMutableSet, NSString, geo_isolater;
-@protocol GEOTileLoaderInternalDelegate, OS_dispatch_queue, OS_dispatch_source;
+@protocol GEOTileLoaderInternalDelegate, OS_dispatch_queue;
 
 @interface GEOTileLoader : NSObject <GEOPListStateCapturing, GEOTileServerProxyDelegate, GEOResourceManifestTileGroupObserver, GEOExperimentConfigurationObserver>
 {
@@ -30,7 +30,6 @@
     GEOTileLoaderConfiguration *_config;
     int _rollingBatchId;
     GEOTileLoaderUsage *_usage;
-    NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
     unsigned long long _stateCaptureHandle;
     BOOL _coalesceTimerEnabled;
     GEOTileLoaderInternal *_internal;
@@ -40,7 +39,6 @@
 + (void)setDiskCacheLocation:(id)arg1;
 + (void)setMemoryCacheTotalCostLimit:(unsigned long long)arg1;
 + (void)setMemoryCacheCountLimit:(unsigned long long)arg1;
-+ (void)setTrackUsage:(BOOL)arg1;
 + (void)useLocalLoader;
 + (void)useRemoteLoader;
 + (void)setServerProxyClass:(Class)arg1;
@@ -68,7 +66,6 @@
 - (void)proxy:(id)arg1 failedToLoadTiles:(id)arg2 error:(id)arg3;
 - (void)proxy:(id)arg1 loadedTile:(id)arg2 forKey:(const struct _GEOTileKey *)arg3 info:(id)arg4;
 - (void)_performOnServerProxyDelegateQueue:(CDUnknownBlockType)arg1;
-- (void)_removeUsageDataForKey:(const struct _GEOTileKey *)arg1;
 - (void)_loadedTileForLocalKey:(struct _GEOTileKey)arg1 preliminary:(BOOL)arg2 quickly:(BOOL)arg3 tileDecoder:(id)arg4 data:(id)arg5 disburseTile:(CDUnknownBlockType)arg6;
 - (void)_loadedTile:(id)arg1 forKey:(const struct _GEOTileKey *)arg2 info:(id)arg3;
 - (id)_tileDecoderForTileKey:(const struct _GEOTileKey *)arg1 quickly:(char *)arg2;
@@ -96,22 +93,23 @@
 - (void)_issuePendingRequests;
 - (void)_timerFired;
 - (void)_requestOnlineTiles;
+- (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const struct GEOTileLoaderAdditionalInfo *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 options:(unsigned long long)arg5 reason:(unsigned char)arg6 qos:(unsigned int)arg7 signpostID:(unsigned long long)arg8 createTime:(double)arg9 callbackQ:(id)arg10 beginNetwork:(CDUnknownBlockType)arg11 callback:(CDUnknownBlockType)arg12;
 - (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const struct GEOTileLoaderAdditionalInfo *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 options:(unsigned long long)arg5 reason:(unsigned char)arg6 qos:(unsigned int)arg7 signpostID:(unsigned long long)arg8 callbackQ:(id)arg9 beginNetwork:(CDUnknownBlockType)arg10 callback:(CDUnknownBlockType)arg11;
 - (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const struct GEOTileLoaderAdditionalInfo *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 options:(unsigned long long)arg5 reason:(unsigned char)arg6 qos:(unsigned int)arg7 callbackQ:(id)arg8 beginNetwork:(CDUnknownBlockType)arg9 callback:(CDUnknownBlockType)arg10;
 - (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const struct GEOTileLoaderAdditionalInfo *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 options:(unsigned long long)arg5 reason:(unsigned char)arg6 signpostID:(unsigned long long)arg7 callbackQ:(id)arg8 beginNetwork:(CDUnknownBlockType)arg9 callback:(CDUnknownBlockType)arg10;
 - (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const struct GEOTileLoaderAdditionalInfo *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 options:(unsigned long long)arg5 reason:(unsigned char)arg6 callbackQ:(id)arg7 beginNetwork:(CDUnknownBlockType)arg8 callback:(CDUnknownBlockType)arg9;
+- (void)loadKey:(const struct _GEOTileKey *)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 options:(unsigned long long)arg4 reason:(unsigned char)arg5 qos:(unsigned int)arg6 signpostID:(unsigned long long)arg7 createTime:(double)arg8 callbackQ:(id)arg9 beginNetwork:(CDUnknownBlockType)arg10 callback:(CDUnknownBlockType)arg11;
 - (void)loadKey:(const struct _GEOTileKey *)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 options:(unsigned long long)arg4 reason:(unsigned char)arg5 qos:(unsigned int)arg6 signpostID:(unsigned long long)arg7 callbackQ:(id)arg8 beginNetwork:(CDUnknownBlockType)arg9 callback:(CDUnknownBlockType)arg10;
 - (void)loadKey:(const struct _GEOTileKey *)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 options:(unsigned long long)arg4 reason:(unsigned char)arg5 qos:(unsigned int)arg6 callbackQ:(id)arg7 beginNetwork:(CDUnknownBlockType)arg8 callback:(CDUnknownBlockType)arg9;
 - (void)loadKey:(const struct _GEOTileKey *)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 options:(unsigned long long)arg4 reason:(unsigned char)arg5 callbackQ:(id)arg6 beginNetwork:(CDUnknownBlockType)arg7 callback:(CDUnknownBlockType)arg8;
 - (BOOL)reprioritizeKey:(const struct _GEOTileKey *)arg1 forClient:(id)arg2 newPriority:(unsigned int)arg3;
-- (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const struct GEOTileLoaderAdditionalInfo *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 proxyClient:(id)arg5 options:(unsigned long long)arg6 reason:(unsigned char)arg7 qos:(unsigned int)arg8 signpostID:(unsigned long long)arg9 callbackQ:(id)arg10 beginNetwork:(CDUnknownBlockType)arg11 callback:(CDUnknownBlockType)arg12;
+- (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const struct GEOTileLoaderAdditionalInfo *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 proxyClient:(id)arg5 options:(unsigned long long)arg6 reason:(unsigned char)arg7 qos:(unsigned int)arg8 signpostID:(unsigned long long)arg9 createTime:(double)arg10 callbackQ:(id)arg11 beginNetwork:(CDUnknownBlockType)arg12 callback:(CDUnknownBlockType)arg13;
 - (BOOL)_cancelIfNeeded:(__list_iterator_aef25af4 *)arg1;
 - (void)_cancel:(__list_iterator_aef25af4 *)arg1 err:(id)arg2;
 - (void)closeForClient:(id)arg1;
 - (void)openForClient:(id)arg1;
 - (id)descriptionDictionaryRepresentation;
 @property(readonly, copy) NSString *description;
-- (void)_receivedMemoryWarningNotification;
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1;
 - (id)init;

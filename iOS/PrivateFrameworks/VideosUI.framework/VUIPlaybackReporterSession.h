@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSString;
 @protocol TVPPlayback;
 
 __attribute__((visibility("hidden")))
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     struct os_unfair_lock_s _metadataLock;
     _Bool _reportingEnabled;
     NSObject<TVPPlayback> *_player;
+    NSString *_UUID;
     id _context;
 }
 
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
 + (id)transitionTypeForMediaControllerAutoStart:(id)arg1;
 @property(nonatomic) _Bool reportingEnabled; // @synthesize reportingEnabled=_reportingEnabled;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
+@property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(nonatomic) __weak NSObject<TVPPlayback> *player; // @synthesize player=_player;
 - (void).cxx_destruct;
 - (id)consumeMetadataForKey:(id)arg1;

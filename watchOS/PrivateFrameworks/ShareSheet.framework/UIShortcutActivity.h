@@ -6,27 +6,36 @@
 
 #import <ShareSheet/UIApplicationExtensionActivity.h>
 
-@class NSArray, NSString, WFWorkflowReference;
+#import <ShareSheet/NSSecureCoding-Protocol.h>
 
-@interface UIShortcutActivity : UIApplicationExtensionActivity
+@class NSArray, NSString, UIImage;
+
+@interface UIShortcutActivity : UIApplicationExtensionActivity <NSSecureCoding>
 {
-    WFWorkflowReference *_workflow;
+    NSString *_identifier;
+    UIImage *_iconImage;
     NSString *_singleUseToken;
+    NSString *_name;
     NSArray *_photosAssetIdentifiers;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSArray *photosAssetIdentifiers; // @synthesize photosAssetIdentifiers=_photosAssetIdentifiers;
+@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *singleUseToken; // @synthesize singleUseToken=_singleUseToken;
-@property(retain, nonatomic) WFWorkflowReference *workflow; // @synthesize workflow=_workflow;
+@property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (void)prepareWithActivityExtensionItemData:(id)arg1;
-- (void)requestSingleUseTokenWithCompletion:(CDUnknownBlockType)arg1;
 - (id)activityTitle;
 - (id)activityType;
 - (id)_actionImage;
 - (int)_defaultSortGroup;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithApplicationExtension:(id)arg1 singleUseToken:(id)arg2 photosAssetIdentifiers:(id)arg3;
-- (id)initWithApplicationExtension:(id)arg1 workflowReference:(id)arg2;
+- (id)initPartialShortcutFromXPCHelperWithName:(id)arg1 identifier:(id)arg2 image:(id)arg3;
+- (id)initWithPartial:(id)arg1;
 
 @end
 

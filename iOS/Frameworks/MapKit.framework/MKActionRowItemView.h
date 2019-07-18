@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     _MKUILabel *_label;
     UIImageView *_glyphImageView;
     MKVibrantView *_vibrantView;
+    UIView *_backgroundView;
     unsigned long long _style;
     NSArray *_constraints;
     _Bool _enabled;

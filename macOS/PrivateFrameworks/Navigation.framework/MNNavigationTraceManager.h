@@ -35,6 +35,7 @@
 - (void)stopMotionUpdates;
 - (void)startMotionUpdates;
 @property(readonly, nonatomic) double timeScale;
+@property(readonly, nonatomic) unsigned long long traceVersion;
 @property(readonly, nonatomic) BOOL isTracePlayer;
 @property(readonly, nonatomic) BOOL isSimulation;
 @property(readonly, nonatomic) BOOL usesCLMapCorrection;

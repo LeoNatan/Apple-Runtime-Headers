@@ -74,6 +74,7 @@
 - (id)UUIDForKey:(id)arg1;
 - (id)URLForKey:(id)arg1;
 - (id)dateForKey:(id)arg1;
+- (BOOL)booleanForKey:(id)arg1 is:(BOOL)arg2;
 - (BOOL)booleanForKey:(id)arg1;
 - (unsigned long long)uint64ForKey:(id)arg1;
 - (long long)integerForKey:(id)arg1;

@@ -16,12 +16,14 @@
 {
     struct _has;
     BOOL _currentLocation;
+    BOOL __encodeLegacyGloryData;
     _INPBFileDataAttachment *_file;
     _INPBURLValue *_fileURL;
     unsigned long long _whichDatasource;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(readonly, nonatomic) unsigned long long whichDatasource; // @synthesize whichDatasource=_whichDatasource;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

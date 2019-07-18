@@ -20,6 +20,7 @@
 + (id)predicateForEventsWithSourceDeviceID:(id)arg1 userID:(id)arg2;
 + (id)predicateForEventsWithSourceDeviceIDs:(id)arg1;
 + (id)predicateForEventsWithSourceID:(id)arg1 bundleID:(id)arg2 itemIDs:(id)arg3;
++ (id)predicateForEventsWithSourceGroupIDs:(id)arg1;
 + (id)predicateForEventsWithSourceID:(id)arg1 bundleID:(id)arg2 groupIDs:(id)arg3;
 + (id)predicateForEventsWithSourceID:(id)arg1 bundleID:(id)arg2;
 + (id)predicateForEventsWithSourceID:(id)arg1;

@@ -11,19 +11,21 @@
 @interface WFNFCTrigger : WFTrigger
 {
     NSString *_tagIdentifier;
+    NSString *_name;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
++ (_Bool)isSupportedOnThisDevice;
 + (_Bool)isAllowedToRunAutomatically;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *tagIdentifier; // @synthesize tagIdentifier=_tagIdentifier;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)localizedTitleWithConfigurationSummary;
-- (id)description;
 - (_Bool)hasValidConfiguration;
 
 @end

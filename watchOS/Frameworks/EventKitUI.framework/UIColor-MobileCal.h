@@ -7,12 +7,14 @@
 #import <UIKit/UIColor.h>
 
 @interface UIColor (MobileCal)
++ (id)colorWithY:(float)arg1 U:(float)arg2 V:(float)arg3 alpha:(float)arg4;
 + (id)tableViewBackgroundColorOpaque;
 - (id)burnWithColor:(id)arg1;
 - (id)overlayWithColor:(id)arg1;
 - (id)soverWithColor:(id)arg1;
 - (_Bool)isGreenOrYellow;
 - (float)differenceFromColor:(id)arg1;
+- (void)getY:(float *)arg1 U:(float *)arg2 V:(float *)arg3 alpha:(float *)arg4;
 - (float)luminance;
 - (float)blueComponent;
 - (float)greenComponent;

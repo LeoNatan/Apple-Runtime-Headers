@@ -52,7 +52,9 @@
 @property BOOL HTTPShouldSetCookies; // @dynamic HTTPShouldSetCookies;
 @property BOOL HTTPShouldUsePipelining; // @dynamic HTTPShouldUsePipelining;
 @property int TLSMaximumSupportedProtocol; // @dynamic TLSMaximumSupportedProtocol;
+@property unsigned short TLSMaximumSupportedProtocolVersion; // @dynamic TLSMaximumSupportedProtocolVersion;
 @property int TLSMinimumSupportedProtocol; // @dynamic TLSMinimumSupportedProtocol;
+@property unsigned short TLSMinimumSupportedProtocolVersion; // @dynamic TLSMinimumSupportedProtocolVersion;
 @property(retain) NSURLCache *URLCache; // @dynamic URLCache;
 @property(retain) NSURLCredentialStorage *URLCredentialStorage; // @dynamic URLCredentialStorage;
 @property(copy) NSString *_CTDataConnectionServiceType; // @dynamic _CTDataConnectionServiceType;
@@ -70,6 +72,7 @@
 @property BOOL _allowsSensitiveLogging; // @dynamic _allowsSensitiveLogging;
 @property BOOL _allowsTCPFastOpen; // @dynamic _allowsTCPFastOpen;
 @property BOOL _allowsTLSFallback; // @dynamic _allowsTLSFallback;
+@property BOOL _allowsTLSFalseStart; // @dynamic _allowsTLSFalseStart;
 @property BOOL _allowsTLSSessionResumption; // @dynamic _allowsTLSSessionResumption;
 @property BOOL _allowsTLSSessionTickets; // @dynamic _allowsTLSSessionTickets;
 @property BOOL _alwaysPerformDefaultTrustEvaluation; // @dynamic _alwaysPerformDefaultTrustEvaluation;

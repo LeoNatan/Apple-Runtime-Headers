@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class APSConnection, NSMutableDictionary, NSMutableSet, NSTimer;
+@class NSMutableDictionary, NSMutableSet, NSTimer;
 @protocol OS_dispatch_queue;
 
 @interface DARefreshManager : NSObject
@@ -17,7 +17,6 @@
     NSMutableDictionary *_suspendedTopicWrappersByEnv;
     NSMutableSet *_wrappers;
     NSMutableSet *_wrappersForDailyRefresh;
-    APSConnection *_connection;
     NSMutableDictionary *_apsConnections;
     NSTimer *_tokenRegistrationTimer;
     NSObject<OS_dispatch_queue> *_pcQueue;
@@ -27,7 +26,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *pcQueue; // @synthesize pcQueue=_pcQueue;
 @property(retain, nonatomic) NSTimer *tokenRegistrationTimer; // @synthesize tokenRegistrationTimer=_tokenRegistrationTimer;
 @property(retain, nonatomic) NSMutableDictionary *apsConnections; // @synthesize apsConnections=_apsConnections;
-@property(retain, nonatomic) APSConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) _Bool dailyRefreshInitialized; // @synthesize dailyRefreshInitialized=_dailyRefreshInitialized;
 @property(retain, nonatomic) NSMutableSet *wrappersForDailyRefresh; // @synthesize wrappersForDailyRefresh=_wrappersForDailyRefresh;
 @property(retain, nonatomic) NSMutableSet *wrappers; // @synthesize wrappers=_wrappers;
@@ -67,8 +65,7 @@
 - (id)_portNameForEnvironmentName:(id)arg1;
 - (id)_apsEnvStringForDAEnvString:(id)arg1;
 - (void)establishAllApsConnections;
-- (void)_tearDownAllApsConnections;
-- (void)_tearDownAPS;
+- (void)_tearDownAllAPSConnectionsUnregisteringTopics:(_Bool)arg1;
 - (id)stateString;
 - (void)dealloc;
 - (id)init;

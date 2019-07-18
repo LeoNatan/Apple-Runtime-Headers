@@ -21,7 +21,6 @@
 - (long long)modalPresentationStyle;
 - (unsigned long long)popoverArrowDirection;
 - (struct CGRect)popoverControllerSourceRect;
-- (oneway void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 broadcastConfigurationData:(id)arg4 userInfo:(id)arg5 cancelled:(BOOL)arg6;
 - (oneway void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 cancelled:(BOOL)arg4;
 - (void)viewDidLoad;
 

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     long long _barrierMessageCount;
     long long _droppedMessageCount;
     BOOL _shouldSendMessages;
+    BOOL _forceUpdateOnWake;
     NSXPCConnection *_connection;
     NSMutableSet *_subscribedNOIs;
 }

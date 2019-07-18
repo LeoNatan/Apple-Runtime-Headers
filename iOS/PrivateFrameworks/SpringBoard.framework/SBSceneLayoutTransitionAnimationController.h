@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)_serialOverlayPreDismissalOptions;
+- (_Bool)_canBeInterrupted;
 - (id)containerView;
 - (id)_getTransitionWindow;
 - (id)animationSettings;

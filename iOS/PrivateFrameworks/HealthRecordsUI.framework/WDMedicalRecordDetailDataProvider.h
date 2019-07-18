@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class HKHealthRecordsStore, HKMedicalRecord, NSMutableDictionary;
+@class HKConceptStore, HKHealthRecordsStore, HKMedicalRecord, NSMutableDictionary;
 @protocol OS_dispatch_queue, WDMedicalRecordDetailDataProviderDelegate;
 
 __attribute__((visibility("hidden")))
 @interface WDMedicalRecordDetailDataProvider : NSObject
 {
     HKHealthRecordsStore *_healthRecordsStore;
+    HKConceptStore *_conceptStore;
     HKMedicalRecord *_medicalRecord;
     id <WDMedicalRecordDetailDataProviderDelegate> _delegate;
     NSMutableDictionary *_displayItemsBySection;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *displayItemsBySection; // @synthesize displayItemsBySection=_displayItemsBySection;
 @property(nonatomic) __weak id <WDMedicalRecordDetailDataProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HKMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
+@property(retain, nonatomic) HKConceptStore *conceptStore; // @synthesize conceptStore=_conceptStore;
 @property(retain, nonatomic) HKHealthRecordsStore *healthRecordsStore; // @synthesize healthRecordsStore=_healthRecordsStore;
 - (void).cxx_destruct;
 - (void)_updatePlacementForDisplayItems:(id)arg1;
@@ -37,7 +39,7 @@ __attribute__((visibility("hidden")))
 - (id)titleForSection:(long long)arg1;
 - (long long)numberOfRowsForSection:(long long)arg1;
 - (long long)numberOfSections;
-- (id)initWithHealthRecordsStore:(id)arg1 medicalRecord:(id)arg2 delegate:(id)arg3;
+- (id)initWithHealthRecordsStore:(id)arg1 conceptStore:(id)arg2 medicalRecord:(id)arg3 delegate:(id)arg4;
 
 @end
 

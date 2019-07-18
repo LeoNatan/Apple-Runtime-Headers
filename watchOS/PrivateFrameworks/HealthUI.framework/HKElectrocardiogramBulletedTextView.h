@@ -6,17 +6,15 @@
 
 #import <UIKit/UIView.h>
 
-@class NSLayoutConstraint, NSMutableArray, NSString, UILabel;
+@class NSMutableArray, NSString, UILabel;
 
 @interface HKElectrocardiogramBulletedTextView : UIView
 {
     UILabel *_titleLabel;
     UILabel *_detailLabel;
     NSMutableArray *_bodyFirstBaselineConstraints;
-    NSLayoutConstraint *_detailLabelLastBaselineConstraint;
 }
 
-@property(retain, nonatomic) NSLayoutConstraint *detailLabelLastBaselineConstraint; // @synthesize detailLabelLastBaselineConstraint=_detailLabelLastBaselineConstraint;
 @property(retain, nonatomic) NSMutableArray *bodyFirstBaselineConstraints; // @synthesize bodyFirstBaselineConstraints=_bodyFirstBaselineConstraints;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

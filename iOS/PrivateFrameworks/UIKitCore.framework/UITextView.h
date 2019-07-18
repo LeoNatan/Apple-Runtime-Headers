@@ -365,6 +365,8 @@
 - (void)_setInteractiveTextSelectionDisabled:(_Bool)arg1;
 - (void)_updateContainerTileAndSizingFlags;
 - (void)setScrollEnabled:(_Bool)arg1;
+- (void)removeInvisibleRange:(id)arg1;
+- (void)addInvisibleRange:(id)arg1;
 - (void)removeAllGhostedRanges;
 - (void)addGhostedRange:(id)arg1;
 - (void)setTiledViewsDrawAsynchronously:(_Bool)arg1;

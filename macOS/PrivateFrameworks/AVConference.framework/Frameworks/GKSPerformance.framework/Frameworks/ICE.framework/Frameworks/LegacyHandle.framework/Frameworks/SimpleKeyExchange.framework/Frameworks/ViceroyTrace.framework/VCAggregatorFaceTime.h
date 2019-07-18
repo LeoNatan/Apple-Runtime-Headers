@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
     unsigned int _callPoorConnectionFrequency;
     double _callTotalVideoStallTime;
     double _callTotalMediaStallTime;
+    double _callMaxMediaStallTime;
     double _callMaxVideoStallInterval;
     double _callTotalAudioStallTime;
     double _callMaxAudioStallInterval;
@@ -91,6 +92,12 @@ __attribute__((visibility("hidden")))
     unsigned int _callTotalCellDupRxDataBytes;
     unsigned int _callTotalUsedCellBudgetTxDataBytes;
     unsigned int _callTotalUsedCellBudgetRxDataBytes;
+    unsigned char _duplicationType;
+    unsigned long long _callTotalCellTxDataBytes;
+    unsigned long long _callTotalCellRxDataBytes;
+    unsigned long long _callTotalWifiTxDataBytes;
+    unsigned long long _callTotalWifiRxDataBytes;
+    unsigned int _callTotalDuplicationDuration;
     BOOL _isDuplicationEnabled;
     BOOL _remoteFaceTimeSwitchesAvailable;
     VCHistogram *_callVideoSwitchPeriodHistogram;
@@ -128,6 +135,7 @@ __attribute__((visibility("hidden")))
 - (void)updateVideoFECStats:(id)arg1;
 - (void)updateRTStats:(id)arg1;
 - (void)startNewSegment;
+- (BOOL)isDuplicationEnabledForSegment:(id)arg1;
 - (id)duplicationIndicator;
 - (id)connectionTypeIndicator;
 - (id)interfaceTypeIndicator:(BOOL)arg1;

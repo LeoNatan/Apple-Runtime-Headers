@@ -46,6 +46,8 @@
 @property(readonly, nonatomic) __weak UINavigationItem *navigationItem; // @synthesize navigationItem=_navigationItem;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (void)navigationBarTraitCollectionDidChangeTo:(id)arg1 from:(id)arg2;
+- (void)_navigationBarTraitCollectionDidChangeTo:(id)arg1 from:(id)arg2;
 - (void)transitionCompleted:(int)arg1 willBeDisplayed:(_Bool)arg2;
 - (void)_navigationBarTransitionCompleted:(int)arg1 willBeDisplayed:(_Bool)arg2;
 - (void)performTransition:(int)arg1 willBeDisplayed:(_Bool)arg2;

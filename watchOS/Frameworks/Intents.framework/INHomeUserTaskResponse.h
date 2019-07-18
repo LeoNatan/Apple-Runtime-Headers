@@ -18,7 +18,7 @@
     int _taskOutcome;
 }
 
-+ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) int taskOutcome; // @synthesize taskOutcome=_taskOutcome;
 @property(readonly, copy, nonatomic) INHomeUserTask *userTask; // @synthesize userTask=_userTask;
@@ -26,7 +26,7 @@
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 @property(readonly, copy) NSString *description;
-- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

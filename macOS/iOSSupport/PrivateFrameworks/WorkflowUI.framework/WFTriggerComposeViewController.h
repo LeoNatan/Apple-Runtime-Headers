@@ -11,8 +11,10 @@
 @interface WFTriggerComposeViewController : WFComposeViewController
 {
     id <WFTriggerComposeViewControllerDelegate> delegate;
+    unsigned long long _mode;
 }
 
+@property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <WFTriggerComposeViewControllerDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;
 - (void)didTapNext:(id)arg1;
@@ -21,7 +23,7 @@
 - (id)emptyStateString;
 - (void)viewDidLoad;
 - (BOOL)isModalInPresentation;
-- (id)initWithWorkflow:(id)arg1 database:(id)arg2;
+- (id)initWithWorkflow:(id)arg1 mode:(unsigned long long)arg2 database:(id)arg3;
 
 @end
 

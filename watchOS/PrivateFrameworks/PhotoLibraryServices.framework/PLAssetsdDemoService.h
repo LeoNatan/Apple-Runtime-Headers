@@ -4,19 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotoLibraryServices/PLAbstractLibraryServicesManagerService.h>
+#import <objc/NSObject.h>
 
 #import <PhotoLibraryServices/PLAssetsdDemoServiceProtocol-Protocol.h>
 
-@class NSString;
+@class NSString, PLAssetsdConnectionAuthorization;
 
-@interface PLAssetsdDemoService : PLAbstractLibraryServicesManagerService <PLAssetsdDemoServiceProtocol>
+@interface PLAssetsdDemoService : NSObject <PLAssetsdDemoServiceProtocol>
 {
+    PLAssetsdConnectionAuthorization *_connectionAuthorization;
 }
 
+- (void).cxx_destruct;
 - (void)hasCompletedMomentAnalysisWithReply:(CDUnknownBlockType)arg1;
 - (void)hasCompletedRestorePostProcessingWithReply:(CDUnknownBlockType)arg1;
 - (void)cleanupForStoreDemoMode;
+- (id)initWithConnectionAuthorization:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

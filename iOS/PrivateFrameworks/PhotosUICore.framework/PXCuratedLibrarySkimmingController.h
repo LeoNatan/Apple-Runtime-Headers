@@ -8,7 +8,7 @@
 
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@class NSArray, NSDate, NSString, NSTimer, PXAssetCollectionReference, PXCuratedLibraryAssetCollectionSkimmingModel, UISelectionFeedbackGenerator;
+@class NSArray, NSString, NSTimer, PXAssetCollectionReference, PXCuratedLibraryAssetCollectionSkimmingModel, UISelectionFeedbackGenerator;
 @protocol PXCuratedLibrarySkimmingControllerDelegate;
 
 @interface PXCuratedLibrarySkimmingController : NSObject <PXChangeObserver>
@@ -21,7 +21,6 @@
     id <PXCuratedLibrarySkimmingControllerDelegate> _delegate;
     long long _state;
     PXAssetCollectionReference *_preSkimmedAssetCollectionReference;
-    NSDate *_skimTouchStartDate;
     double _lastPanningTranslation;
     long long _currentSkimmingIndex;
     NSArray *_skimmingIndexes;
@@ -35,7 +34,6 @@
 @property(retain, nonatomic) NSArray *skimmingIndexes; // @synthesize skimmingIndexes=_skimmingIndexes;
 @property(nonatomic) long long currentSkimmingIndex; // @synthesize currentSkimmingIndex=_currentSkimmingIndex;
 @property(nonatomic) double lastPanningTranslation; // @synthesize lastPanningTranslation=_lastPanningTranslation;
-@property(retain, nonatomic) NSDate *skimTouchStartDate; // @synthesize skimTouchStartDate=_skimTouchStartDate;
 @property(retain, nonatomic) PXAssetCollectionReference *preSkimmedAssetCollectionReference; // @synthesize preSkimmedAssetCollectionReference=_preSkimmedAssetCollectionReference;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) _Bool skimmingSlideshowEnabled; // @synthesize skimmingSlideshowEnabled=_skimmingSlideshowEnabled;
@@ -44,6 +42,7 @@
 - (void).cxx_destruct;
 - (void)_enterIdleStatePersistSkimmingState:(_Bool)arg1;
 - (void)_adoptIndexesFromSkimmingModel;
+- (void)_cancelEnteringTouchingState;
 - (void)_enterTouchingStateForAssetCollectionReference:(id)arg1;
 - (void)_enterSlideshowStateForAssetCollectionReference:(id)arg1;
 - (void)_cleanupFeedbackGenerator;

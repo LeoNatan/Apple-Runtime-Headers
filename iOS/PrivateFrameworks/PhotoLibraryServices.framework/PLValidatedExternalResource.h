@@ -49,6 +49,7 @@
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqualToValidatedExternalResource:(id)arg1;
+- (void)setTrashedStateFromURL;
 - (void)setQualitySortValueBasedOnAssetWidth:(long long)arg1 height:(long long)arg2 isNativeColorSpace:(_Bool)arg3 isLosslessEncoding:(_Bool)arg4 isCuratedPreview:(_Bool)arg5;
 - (unsigned long long)cplTypeWithAssetID:(id)arg1;
 - (_Bool)isPlayableVideo;

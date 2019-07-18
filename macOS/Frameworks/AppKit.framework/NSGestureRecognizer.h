@@ -8,7 +8,7 @@
 
 #import <AppKit/NSCoding-Protocol.h>
 
-@class NSEvent, NSMutableArray, NSMutableSet, NSPressureConfiguration, NSTouchDevice, NSView;
+@class NSMutableArray, NSMutableSet, NSPressureConfiguration, NSTouchDevice, NSView;
 @protocol NSGestureRecognizerDelegate;
 
 @interface NSGestureRecognizer : NSObject <NSCoding>
@@ -18,7 +18,6 @@
     SEL _action;
     NSMutableArray *_delayedEvents;
     NSView *_view;
-    NSEvent *_updateEvent;
     id <NSGestureRecognizerDelegate> _delegate;
     NSMutableSet *_friends;
     long long _state;
@@ -64,7 +63,7 @@
 - (void)_willBeginAfterSatisfyingFailureRequirements;
 - (BOOL)_acceptsFailureRequirements;
 - (void)_setAcceptsFailureRequiments:(BOOL)arg1;
-- (void)_failureRequirementCompleted:(id)arg1 withEvent:(id)arg2;
+- (void)_failureRequirementCompleted:(id)arg1;
 - (void)removeFailureRequirement:(id)arg1;
 - (void)requireOtherGestureToFail:(id)arg1;
 - (void)_addDynamicFailureRequirement:(id)arg1;
@@ -88,11 +87,11 @@
 - (BOOL)_isRecognized;
 - (void)_queueForResetIfFinished;
 - (void)_resetIfFinished;
-- (void)_updateGestureStateWithEvent:(id)arg1 afterDelay:(BOOL)arg2;
+- (void)_updateGestureStateAfterDelay:(BOOL)arg1;
 - (void)_didSendActions;
 - (void)_delayedUpdateGesture;
 - (BOOL)_requiresGestureRecognizerToFail:(id)arg1;
-- (void)_updateGestureWithEvent:(id)arg1;
+- (void)_updateGesture;
 - (void)_enqueueDelayedEventsToSend;
 - (void)_clearDelayedEvents;
 - (void)_eventWasCancelled:(id)arg1;

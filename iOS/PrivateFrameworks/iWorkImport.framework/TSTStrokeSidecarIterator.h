@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)terminate;
 - (struct TSUCellCoord)advanceToCellID:(struct TSUCellCoord)arg1;
 - (struct TSUCellCoord)getNext;
+- (void)updateFormulaForCellData:(id)arg1;
 - (void)updateCellData:(id)arg1;
 - (id)initWithStrokeSidecar:(id)arg1 region:(id)arg2;
 

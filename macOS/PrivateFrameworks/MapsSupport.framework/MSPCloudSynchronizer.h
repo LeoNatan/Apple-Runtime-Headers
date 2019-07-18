@@ -33,9 +33,9 @@
 @property(retain, nonatomic) MSPCloudKitAccountAccess *cloudAccess; // @synthesize cloudAccess=_cloudAccess;
 @property(nonatomic) __weak id <MSPCloudSynchronizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *containers; // @synthesize containers=_containers;
-@property(retain, nonatomic) MSPCloudMigrator *migrator; // @synthesize migrator=_migrator;
 @property(nonatomic) BOOL hasMigrated; // @synthesize hasMigrated=_hasMigrated;
 @property(nonatomic) BOOL hasMigratedPreSync; // @synthesize hasMigratedPreSync=_hasMigratedPreSync;
+@property(retain, nonatomic) MSPCloudMigrator *migrator; // @synthesize migrator=_migrator;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *mergeQueue; // @synthesize mergeQueue=_mergeQueue;
 @property(retain, nonatomic) MSPJournal *journal; // @synthesize journal=_journal;
 @property(retain, nonatomic) MSPCloudClientRegistration *clientRegistration; // @synthesize clientRegistration=_clientRegistration;

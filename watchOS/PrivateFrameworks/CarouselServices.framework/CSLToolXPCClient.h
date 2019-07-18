@@ -11,7 +11,8 @@
 }
 
 + (id)sharedInstance;
-- (void)_sendBlockingMessage:(CDUnknownBlockType)arg1;
+- (void)_sendBlockingMessage:(CDUnknownBlockType)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)sendMessage:(int)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)sendMessage:(int)arg1 withTimeInterval:(double)arg2 options:(id)arg3;
 - (void)sendMessage:(int)arg1 withOptions:(id)arg2;
 - (void)sendMessage:(int)arg1 withTimeInterval:(double)arg2 string:(const char *)arg3 flag:(_Bool)arg4;

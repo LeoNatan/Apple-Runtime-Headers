@@ -11,7 +11,10 @@
 @interface UIView (AccessibilityBridging)
 + (void)ts_executeWithAnimated:(_Bool)arg1 duration:(double)arg2 setupBlock:(CDUnknownBlockType)arg3 animationBlock:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 @property(nonatomic) unsigned long long ts_accessibilityInterfaceStyleIntent;
+- (void)ts_setPlusLCompositingFilter;
+- (void)ts_setPlusDCompositingFilter;
 - (_Bool)ts_safeAreaWidthExceedsReadableWidth;
+- (void)ts_setFrameUsingCenterAndBounds:(struct CGRect)arg1;
 @property(nonatomic, readonly) struct CGRect ts_frameUsingCenterAndBounds;
 - (void)expandWidthToGutterViewBounds;
 - (void)unclipUpToGutterView;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UICollectionViewCell.h>
+#import <UIKit/UIView.h>
 
 #import <UserNotificationsUIKit/MTMaterialGrouping-Protocol.h>
 #import <UserNotificationsUIKit/NCLegibilitySettingsAdjusting-Protocol.h>
@@ -15,11 +15,9 @@
 @class NCNotificationListCoalescingControlsView, NCNotificationListHeaderTitleView, NSString, _UILegibilitySettings;
 @protocol NCNotificationListCoalescingControlsHandlerDelegate;
 
-@interface NCNotificationListCoalescingHeaderCell : UICollectionViewCell <NCNotificationListCoalescingControlsViewDelegate, NCLegibilitySettingsAdjusting, PLContentSizeCategoryAdjusting, NCNotificationListCoalescingControlsHandler, MTMaterialGrouping>
+@interface NCNotificationListCoalescingHeaderCell : UIView <NCNotificationListCoalescingControlsViewDelegate, NCLegibilitySettingsAdjusting, PLContentSizeCategoryAdjusting, NCNotificationListCoalescingControlsHandler, MTMaterialGrouping>
 {
     _Bool _adjustsFontForContentSizeCategory;
-    NSString *_coalescingIdentifier;
-    unsigned long long _groupingSection;
     id <NCNotificationListCoalescingControlsHandlerDelegate> _handlerDelegate;
     NSString *_materialGroupNameBase;
     NSString *_title;
@@ -39,8 +37,6 @@
 @property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 @property(nonatomic) __weak id <NCNotificationListCoalescingControlsHandlerDelegate> handlerDelegate; // @synthesize handlerDelegate=_handlerDelegate;
-@property(nonatomic) unsigned long long groupingSection; // @synthesize groupingSection=_groupingSection;
-@property(copy, nonatomic) NSString *coalescingIdentifier; // @synthesize coalescingIdentifier=_coalescingIdentifier;
 - (void).cxx_destruct;
 - (void)_layoutHeaderTitleView;
 - (void)_layoutCoalescingControlsView;
@@ -57,7 +53,6 @@
 - (void)notificationListCoalescingControlsViewRequestsClearAll:(id)arg1;
 - (id)containerViewForCoalescingControlsPreviewInteractionPresentedContent:(id)arg1;
 - (void)notificationListCoalescingControlsViewRequestsClear:(id)arg1;
-- (void)prepareForReuse;
 - (void)layoutSubviews;
 - (_Bool)shouldReceiveTouchAtPointInWindowSpace:(struct CGPoint)arg1;
 - (_Bool)dismissModalFullScreenIfNeeded;

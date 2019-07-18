@@ -13,6 +13,11 @@
     id <MFMessageCriterionConverterDelegate> _delegate;
 }
 
++ (id)spotlightBodySearchPredicateForValue:(id)arg1;
++ (id)spotlightSubjectSearchPredicateForValue:(id)arg1 operator:(unsigned long long)arg2;
++ (id)spotlightSenderSearchPredicateForValue:(id)arg1 operator:(unsigned long long)arg2;
++ (id)spotlightRecipientSearchPredicateForValue:(id)arg1 operator:(unsigned long long)arg2;
++ (id)spotlightSearchPredicateForValue:(id)arg1;
 @property(nonatomic) __weak id <MFMessageCriterionConverterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)messageCriterionFromPredicateFormatString:(id)arg1;

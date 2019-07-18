@@ -6,25 +6,33 @@
 
 #import <objc/NSObject.h>
 
-#import <WatchListKit/WLKBulletinClient-Protocol.h>
+#import <WatchListKit/UNUserNotificationCenterDelegate-Protocol.h>
+#import <WatchListKit/UNUserNotificationCenterDelegatePrivate-Protocol.h>
 #import <WatchListKit/WLKNotificationsImpl-Protocol.h>
 
-@class NSString, NSXPCConnection;
+@class NSString;
 @protocol WLKNotificationCenterDelegate;
 
-@interface WLKNotificationsImpl_iOS : NSObject <WLKBulletinClient, WLKNotificationsImpl>
+@interface WLKNotificationsImpl_iOS : NSObject <UNUserNotificationCenterDelegate, UNUserNotificationCenterDelegatePrivate, WLKNotificationsImpl>
 {
     id <WLKNotificationCenterDelegate> delegate;
-    NSXPCConnection *_connection;
 }
 
 + (id)_JSONDictForResponse:(id)arg1;
-@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) __weak id <WLKNotificationCenterDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;
-- (void)receivedBulletinResponse:(id)arg1;
+- (void)userNotificationCenter:(id)arg1 didChangeSettings:(id)arg2;
+- (void)userNotificationCenter:(id)arg1 didOpenApplicationForResponse:(id)arg2;
+- (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)userNotificationCenter:(id)arg1 willPresentNotification:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (id)_topicIdentifierForCategory:(id)arg1;
+- (id)_displayNameForSubsectionID:(id)arg1;
+- (id)_topics;
+- (unsigned long long)_authOptions;
+- (id)_notificationCenter;
+- (void)setBadgeString:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)setBadgeNumber:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)post:(id)arg1 title:(id)arg2 body:(id)arg3 options:(id)arg4;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

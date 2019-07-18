@@ -22,16 +22,20 @@
     FCCachePolicy *_articleListCachePolicy;
     FCCachePolicy *_editorialSectionTagCachePolicy;
     CDUnknownBlockType _headlinesCompletionHandler;
+    CDUnknownBlockType _headlinesAndTagsCompletionHandler;
     FCForYouConfig *_resultForYouConfig;
     NSDictionary *_resultArticleListsByID;
     NSDictionary *_resultHeadlinesByArticleListID;
     NSDictionary *_resultHeadlinesByArticleID;
+    NSDictionary *_resultTagsByID;
 }
 
+@property(retain, nonatomic) NSDictionary *resultTagsByID; // @synthesize resultTagsByID=_resultTagsByID;
 @property(retain, nonatomic) NSDictionary *resultHeadlinesByArticleID; // @synthesize resultHeadlinesByArticleID=_resultHeadlinesByArticleID;
 @property(retain, nonatomic) NSDictionary *resultHeadlinesByArticleListID; // @synthesize resultHeadlinesByArticleListID=_resultHeadlinesByArticleListID;
 @property(retain, nonatomic) NSDictionary *resultArticleListsByID; // @synthesize resultArticleListsByID=_resultArticleListsByID;
 @property(retain, nonatomic) FCForYouConfig *resultForYouConfig; // @synthesize resultForYouConfig=_resultForYouConfig;
+@property(copy, nonatomic) CDUnknownBlockType headlinesAndTagsCompletionHandler; // @synthesize headlinesAndTagsCompletionHandler=_headlinesAndTagsCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType headlinesCompletionHandler; // @synthesize headlinesCompletionHandler=_headlinesCompletionHandler;
 @property(retain, nonatomic) FCCachePolicy *editorialSectionTagCachePolicy; // @synthesize editorialSectionTagCachePolicy=_editorialSectionTagCachePolicy;
 @property(retain, nonatomic) FCCachePolicy *articleListCachePolicy; // @synthesize articleListCachePolicy=_articleListCachePolicy;

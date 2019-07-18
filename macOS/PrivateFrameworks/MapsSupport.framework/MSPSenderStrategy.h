@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) GEOSharedNavState *state; // @synthesize state=_state;
 @property(retain, nonatomic) NSMutableSet *participants; // @synthesize participants=_participants;
 - (void).cxx_destruct;
+- (void)sessionStopped:(id)arg1;
 - (void)destinationReached:(id)arg1;
 - (void)stateUpdated:(id)arg1;
 - (void)trafficUpdated:(id)arg1;
@@ -38,8 +39,10 @@ __attribute__((visibility("hidden")))
 - (void)_sendTrafficUpdate:(id)arg1 to:(id)arg2;
 - (void)_sendRouteUpdate:(id)arg1 to:(id)arg2;
 - (void)_sendETAUpdate:(id)arg1 to:(id)arg2;
+- (void)_sendStoppedUpdate:(id)arg1 to:(id)arg2;
 - (void)_sendDestinationReachedUpdate:(id)arg1 to:(id)arg2;
 - (void)_sendDestinationUpdate:(id)arg1 to:(id)arg2;
+- (BOOL)removeParticipant:(id)arg1;
 - (void)removeParticipants:(id)arg1;
 - (void)addParticipants:(id)arg1;
 - (void)restoreState:(id)arg1;

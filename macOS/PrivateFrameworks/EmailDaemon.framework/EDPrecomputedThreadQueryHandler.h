@@ -11,7 +11,7 @@
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
 @class EDThreadPersistence, EFCancelationToken, EMThreadScope, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
-@protocol EFScheduler;
+@protocol EFCancelable, EFScheduler;
 
 @interface EDPrecomputedThreadQueryHandler : EDThreadQueryHandler <EDMessageChangeHookResponder, EDThreadChangeHookResponder, EFLoggable>
 {
@@ -24,9 +24,13 @@
     NSMutableArray *_pendingPositionChanges;
     NSMutableSet *_unreportedJournaledObjectIDs;
     NSMutableDictionary *_reportedJournaledObjectIDs;
+    NSMutableDictionary *_oldestThreadObjectIDsByMailbox;
+    id <EFCancelable> _updateOldestThreadsCancelationToken;
 }
 
 + (id)log;
+@property(retain, nonatomic) id <EFCancelable> updateOldestThreadsCancelationToken; // @synthesize updateOldestThreadsCancelationToken=_updateOldestThreadsCancelationToken;
+@property(retain, nonatomic) NSMutableDictionary *oldestThreadObjectIDsByMailbox; // @synthesize oldestThreadObjectIDsByMailbox=_oldestThreadObjectIDsByMailbox;
 @property(retain, nonatomic) NSMutableDictionary *reportedJournaledObjectIDs; // @synthesize reportedJournaledObjectIDs=_reportedJournaledObjectIDs;
 @property(retain, nonatomic) NSMutableSet *unreportedJournaledObjectIDs; // @synthesize unreportedJournaledObjectIDs=_unreportedJournaledObjectIDs;
 @property(retain, nonatomic) NSMutableArray *pendingPositionChanges; // @synthesize pendingPositionChanges=_pendingPositionChanges;
@@ -37,6 +41,7 @@
 @property(readonly, nonatomic) EDThreadPersistence *threadPersistence; // @synthesize threadPersistence=_threadPersistence;
 @property(readonly, nonatomic) EMThreadScope *threadScope; // @synthesize threadScope=_threadScope;
 - (void).cxx_destruct;
+- (void)_oldestThreadsNeedUpdate;
 - (id)_messageForPersistedMessage:(id)arg1;
 - (void)persistenceDidUpdateProperties:(id)arg1 message:(id)arg2;
 - (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 message:(id)arg2;
@@ -53,6 +58,7 @@
 - (id)threadForObjectID:(id)arg1 error:(id *)arg2;
 - (void)_getInitialResults;
 - (void)cancel;
+- (void)start;
 - (id)initWithQuery:(id)arg1 threadScope:(id)arg2 messagePersistence:(id)arg3 threadPersistence:(id)arg4 hookRegistry:(id)arg5 observer:(id)arg6 observationIdentifier:(id)arg7;
 
 // Remaining properties

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)_detach;
 - (void)_attach;
 - (id)initWithOwner:(id)arg1;
+- (BOOL)hasDependent:(id)arg1 forKey:(id)arg2 currentlyValid:(char *)arg3;
 @property(readonly) NSDictionary *dependencyMap;
 
 @end

@@ -21,8 +21,7 @@
     NSSet *_syncDataHandlers;
 }
 
-+ (long long)sessionType;
-+ (void)initialize;
++ (long long)direction;
 @property(readonly, copy, nonatomic) NSSet *syncDataHandlers; // @synthesize syncDataHandlers=_syncDataHandlers;
 @property(readonly, nonatomic) id <VCShortcutSyncService> service; // @synthesize service=_service;
 @property(readonly, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;

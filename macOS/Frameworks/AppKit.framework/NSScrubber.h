@@ -64,6 +64,8 @@
 - (struct CGRect)visibleContentRectForLayout;
 - (CDStruct_99688279)proxyState;
 - (void)setProxyState:(CDStruct_99688279)arg1;
+- (id)accessibilityIncrementButton;
+- (id)accessibilityDecrementButton;
 - (BOOL)accessibilityAutoScrollContentIntoView;
 - (BOOL)accessibilityScrollChangesSelection;
 - (long long)_indexForItemView:(id)arg1;
@@ -159,12 +161,12 @@
 - (id)_touchTargetViewForPressAndHoldBehavior;
 - (id)_gestureRecognizersForPressAndHoldBehavior;
 - (BOOL)_accessibilityChildIsVisible:(id)arg1;
+- (id)_accessibilityVisibleScrubberItems;
 - (long long)_accessibilityIndexOfChildBeforeVisible;
 - (long long)_accessibilityIndexOfChildAfterVisible;
 - (long long)_accessibilityNumberOfChildren;
-- (id)_accessibilityVisibleChildrenAtIndexes:(id)arg1;
-- (id)_accessibilityChildrenAtIndexes:(id)arg1;
 - (id)_accessibilityVisibleChildren;
+- (id)_accessibilityAllChildren;
 - (id)accessibilityArrayAttributeValues:(id)arg1 index:(unsigned long long)arg2 maxCount:(unsigned long long)arg3;
 - (unsigned long long)accessibilityArrayAttributeCount:(id)arg1;
 - (unsigned long long)accessibilityIndexOfChild:(id)arg1;

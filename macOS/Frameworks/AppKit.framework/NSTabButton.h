@@ -7,13 +7,12 @@
 #import <AppKit/NSTabBarViewButton.h>
 
 #import <AppKit/NSRolloverButtonDelegate-Protocol.h>
-#import <AppKit/_NSVibrancyTransitioningImageViewDelegate-Protocol.h>
 
-@class CALayer, NSArray, NSAttributedString, NSImage, NSImageView, NSLayoutConstraint, NSMutableArray, NSRolloverButton, NSStackView, NSString, NSTabBarItem, NSTextField, NSView, NSVisualEffectView, _NSVibrancyTransitioningImageView;
+@class CALayer, NSArray, NSAttributedString, NSImage, NSImageView, NSLayoutConstraint, NSMutableArray, NSRolloverButton, NSStackView, NSString, NSTabBarItem, NSTextField, NSView, NSVisualEffectView;
 @protocol NSTabButtonDelegate;
 
 __attribute__((visibility("hidden")))
-@interface NSTabButton : NSTabBarViewButton <_NSVibrancyTransitioningImageViewDelegate, NSRolloverButtonDelegate>
+@interface NSTabButton : NSTabBarViewButton <NSRolloverButtonDelegate>
 {
     BOOL _didEstablishTabBarViewItemBindings;
     NSMutableArray *_accessoryViews;
@@ -22,11 +21,10 @@ __attribute__((visibility("hidden")))
     NSTextField *_titleTextField;
     NSRolloverButton *_closeButton;
     NSImageView *_imageView;
-    NSView *_pinnedTabFaviconContainerView;
-    NSVisualEffectView *_pinnedTabFaviconFullscreenVisualEffectView;
-    NSView *_pinnedTabFaviconFullscreenBackgroundView;
-    CALayer *_pinnedTabFaviconFullscreenBackgroundHighlightLayer;
-    _NSVibrancyTransitioningImageView *_pinnedTabFaviconView;
+    NSView *_imageViewContainer;
+    NSVisualEffectView *_imageViewFullscreenVisualEffectView;
+    NSView *_imageViewFullscreenBackgroundView;
+    CALayer *_imageViewFullscreenBackgroundHighlightLayer;
     NSStackView *_mainContentContainer;
     NSView *_mainContentClippingContainer;
     NSStackView *_accessoryViewsContainer;
@@ -101,12 +99,12 @@ __attribute__((visibility("hidden")))
 - (id)pinnedTabDragImageOfSize:(struct CGSize)arg1;
 - (id)tabDragImageOfSize:(struct CGSize)arg1;
 - (id)tabImageOfSize:(struct CGSize)arg1;
-- (long long)vibrancyTransitionForVibrancyTransitioningImageView:(id)arg1 transitioningFromVibrant:(BOOL)arg2 toVibrant:(BOOL)arg3;
 - (id)_titleStringAttributesForMainWindow:(BOOL)arg1 activeTab:(BOOL)arg2 isDragging:(BOOL)arg3;
 - (id)_attributedStringColorMapForMainWindow:(BOOL)arg1 activeTab:(BOOL)arg2 isDragging:(BOOL)arg3;
 - (void)_updateTitleTextFieldAndAccessibilityProperties;
 - (void)setHasPressedHighlight:(BOOL)arg1;
 - (void)setHasMouseOverHighlight:(BOOL)arg1 shouldAnimateCloseButton:(BOOL)arg2;
+- (BOOL)_canShowCloseButton;
 @property(nonatomic) BOOL canShowCloseButton;
 - (void)_closeButtonClicked:(id)arg1;
 - (BOOL)_shouldShowCloseButton;
@@ -119,6 +117,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_windowIsActive;
 - (void)_updateConstraints;
 - (void)_setUpConstraints;
+- (void)_setUpImageViewConstraints;
 - (void)_updateTitleContainerConstraints;
 - (void)setActive:(BOOL)arg1;
 @property(nonatomic) double titleTextFieldCenterOffset; // @dynamic titleTextFieldCenterOffset;

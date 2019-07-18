@@ -23,6 +23,8 @@ __attribute__((visibility("hidden")))
 - (id)keychainData;
 - (id)signData:(id)arg1 error:(id *)arg2;
 - (id)publicKey;
+- (id)authenticateAndRetryKeyAgreement:(id)arg1 error:(id *)arg2;
+- (id)keyAgreement:(id)arg1 error:(id *)arg2 isRetry:(BOOL)arg3;
 - (id)keyAgreement:(id)arg1 error:(id *)arg2;
 - (id)getPrivateKeyRefWithError:(id *)arg1;
 

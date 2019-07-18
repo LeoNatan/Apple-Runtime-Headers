@@ -14,6 +14,7 @@
 - (void)actionDrawerViewController:(WFActionDrawerViewController *)arg1 didSelectCategoryForAppWithBundleIdentifier:(NSString *)arg2 shouldLoadSuggestions:(_Bool)arg3;
 - (void)actionDrawerViewControllerDidSelectCategoryScripting:(WFActionDrawerViewController *)arg1 title:(NSString *)arg2;
 - (void)actionDrawerViewControllerDidSelectCategoryFavorites:(WFActionDrawerViewController *)arg1 title:(NSString *)arg2;
+- (void)actionDrawerViewControllerDidSelectCategoryApps:(WFActionDrawerViewController *)arg1 title:(NSString *)arg2;
 - (void)actionDrawerViewController:(WFActionDrawerViewController *)arg1 didSelectDocumentationForAction:(WFAction *)arg2 fromView:(UIView *)arg3;
 - (void)actionDrawerViewController:(WFActionDrawerViewController *)arg1 didSelectAction:(WFAction *)arg2;
 @end

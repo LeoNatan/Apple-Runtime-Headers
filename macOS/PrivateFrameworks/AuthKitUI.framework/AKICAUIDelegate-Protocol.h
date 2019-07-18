@@ -22,6 +22,7 @@
 - (void)icaWebKitViewIsAvailable;
 
 @optional
+- (unsigned long long)presentationType;
 - (void)obtainAuthRight:(JSValue *)arg1;
 - (void)triggerAKAction:(NSString *)arg1;
 - (NSWindow *)webViewWindow;

@@ -16,15 +16,13 @@
     NSNumberFormatter *_floatNumberFormatter;
     double _magicNumbers[3];
     UIColor *_borderColorRegular;
-    UIColor *_borderColorDarkMode;
     UIColor *_borderColorSatellite;
     NSMutableArray *_segments;
     NSMutableArray *_blurredSegments;
     _MKScaleUnitsView *_unitsView;
     long long _oldNumberOfSegments;
-    UIView *_outlineViewA;
-    UIView *_outlineViewB;
     UIView *_displayedOutline;
+    UIView *_displayedWhiteOutline;
     double _segmentLengthInPixels;
     double _resultSegmentLength;
     double _resultSegmentLengthInMeters;
@@ -69,6 +67,7 @@
 - (void)_updateVisibility;
 - (void)shouldUpdateScaleNotification:(id)arg1;
 - (void)dealloc;
+- (id)_setupOutlineView;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (struct CGSize)_systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;

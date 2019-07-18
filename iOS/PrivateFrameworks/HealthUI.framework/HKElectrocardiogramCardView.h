@@ -56,6 +56,7 @@
 @property(nonatomic) __weak HKDateCache *dateCache; // @synthesize dateCache=_dateCache;
 @property(retain, nonatomic) HKElectrocardiogram *sample; // @synthesize sample=_sample;
 - (void).cxx_destruct;
+- (id)_graphBackgroundColor;
 - (id)_cardBackgroundColor;
 - (id)_cardHeaderColor;
 - (void)dateCacheDidUpdate:(id)arg1 onNotification:(id)arg2;

@@ -89,7 +89,6 @@
 - (void)_updateAuxiliaryViews;
 - (_Bool)_isLayoutElementViewControllerOccluded:(id)arg1;
 - (void)_cleanupDisappearedLayoutElementController:(id)arg1;
-- (_Bool)_canReuseLayoutElementViewController:(id)arg1 forEntity:(id)arg2 layoutElement:(id)arg3 transitionRequest:(id)arg4;
 - (void)_addLayoutElementViewController:(id)arg1 forLayoutElement:(id)arg2 entity:(id)arg3;
 - (id)_dequeueLayoutElementControllerForReuseOfClass:(Class)arg1;
 - (void)_enqueueLayoutViewControllerForReuse:(id)arg1;

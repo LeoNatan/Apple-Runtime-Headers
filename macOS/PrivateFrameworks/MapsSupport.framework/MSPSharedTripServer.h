@@ -40,6 +40,7 @@
 - (void)stopSharingTripWithContacts:(id)arg1;
 - (void)startSharingTripWithContacts:(id)arg1;
 - (void)checkin;
+- (void)etaController:(id)arg1 sharedTripDidClose:(id)arg2;
 - (void)etaController:(id)arg1 sharedTripDidBecomeUnavailable:(id)arg2;
 - (void)etaController:(id)arg1 sharedTripDidBecomeAvailable:(id)arg2;
 - (void)etaController:(id)arg1 didUpdateRouteForSharedTrip:(id)arg2;

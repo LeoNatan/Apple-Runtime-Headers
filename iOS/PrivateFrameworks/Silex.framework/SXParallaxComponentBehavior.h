@@ -11,7 +11,6 @@
     int _cachedDirection;
 }
 
-+ (void)load;
 @property(readonly, nonatomic) int cachedDirection; // @synthesize cachedDirection=_cachedDirection;
 - (Class)handlerClassForComponent:(id)arg1;
 - (int)directionWithValue:(id)arg1 withType:(int)arg2;

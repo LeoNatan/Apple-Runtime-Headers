@@ -9,7 +9,7 @@
 #import <UIKitCore/UIContextMenuInteractionDelegate-Protocol.h>
 #import <UIKitCore/UIInteraction-Protocol.h>
 
-@class NSString, UIContextMenuInteraction, UIGestureRecognizer, UIView, _UIContextMenuPreviewActionGroup;
+@class NSString, UIContextMenuInteraction, UIView, _UIContextMenuPreviewActionGroup;
 @protocol _UIContextMenuInteractionDelegate;
 
 @interface _UIContextMenuInteraction : NSObject <UIContextMenuInteractionDelegate, UIInteraction>
@@ -33,7 +33,6 @@
 @property(readonly, nonatomic) __weak id <_UIContextMenuInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
-@property(readonly, nonatomic, getter=_gestureRecognizerForExclusionRelationship) UIGestureRecognizer *gestureRecognizerForExclusionRelationship;
 - (id)_previewViewController;
 - (id)_actionsWithSuggestedActions:(id)arg1;
 - (void)contextMenuInteractionDidEnd:(id)arg1;

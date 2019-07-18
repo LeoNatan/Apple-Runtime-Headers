@@ -29,7 +29,7 @@
 @property(readonly, copy, nonatomic) NSString *derivedIntentIdentifier; // @synthesize derivedIntentIdentifier=_derivedIntentIdentifier;
 @property(readonly, nonatomic) INImage *image; // @synthesize image=_image;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-@property(readonly, copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
+@property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(readonly, copy, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
 @property(readonly, copy, nonatomic) NSString *conversationIdentifier; // @synthesize conversationIdentifier=_conversationIdentifier;
 - (void).cxx_destruct;

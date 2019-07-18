@@ -16,6 +16,6 @@
 - (NAFuture *)flush;
 - (NAFuture *)triggerOutputForOutputRow:(unsigned long long)arg1 options:(HMBProcessingOptions *)arg2;
 - (NAFuture *)destroy;
-- (BOOL)startupWithLocalZone:(HMBLocalZone *)arg1 error:(id *)arg2;
+- (void)startUpWithLocalZone:(HMBLocalZone *)arg1;
 @end
 

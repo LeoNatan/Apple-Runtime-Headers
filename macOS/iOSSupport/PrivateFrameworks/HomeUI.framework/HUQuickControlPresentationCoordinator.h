@@ -20,12 +20,13 @@
 
 @interface HUQuickControlPresentationCoordinator : NSObject <HUQuickControlContainerViewControllerDelegate, HUPresentationDelegate, UIGestureRecognizerDelegate, HUCardViewControllerDelegate, UIPresentationControllerDelegatePrivate, _UIClickPresentationInteractionDelegate, UIViewControllerTransitioningDelegate, UITraitEnvironment>
 {
+    HUCardViewController *_cardViewController;
     HUQuickControlPresentationContext *_presentationContext;
     HUQuickControlContainerViewController *_quickControlViewController;
+    HUGridServiceCell *_pressedTile;
     UIView *_targetView;
     id <HUQuickControlPresentationCoordinatorDelegate> _delegate;
     UINavigationController *_cardNavigationController;
-    HUCardViewController *_cardViewController;
     HUItemTableViewController *_settingsViewController;
     UITapGestureRecognizer *_singleTapGestureRecognizer;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
@@ -34,7 +35,6 @@
     id <NACancelable> _pressGestureActiveTimerCancellationToken;
     NSMapTable *_pressedItemContexts;
     _UIClickPresentationInteraction *_presentationInteraction;
-    HUGridServiceCell *_pressedTile;
     UIVisualEffectView *_pressedTileBlurEffectView;
     HUIconView *_transitionIconView;
     HUIconView *_transitionIconViewVibrant;
@@ -59,7 +59,6 @@
 @property(retain, nonatomic) HUIconView *transitionIconViewVibrant; // @synthesize transitionIconViewVibrant=_transitionIconViewVibrant;
 @property(retain, nonatomic) HUIconView *transitionIconView; // @synthesize transitionIconView=_transitionIconView;
 @property(retain, nonatomic) UIVisualEffectView *pressedTileBlurEffectView; // @synthesize pressedTileBlurEffectView=_pressedTileBlurEffectView;
-@property(retain, nonatomic) HUGridServiceCell *pressedTile; // @synthesize pressedTile=_pressedTile;
 @property(retain, nonatomic) _UIClickPresentationInteraction *presentationInteraction; // @synthesize presentationInteraction=_presentationInteraction;
 @property(readonly, nonatomic) NSMapTable *pressedItemContexts; // @synthesize pressedItemContexts=_pressedItemContexts;
 @property(retain, nonatomic) id <NACancelable> pressGestureActiveTimerCancellationToken; // @synthesize pressGestureActiveTimerCancellationToken=_pressGestureActiveTimerCancellationToken;
@@ -68,12 +67,13 @@
 @property(retain, nonatomic) UITapGestureRecognizer *doubleTapGestureRecognizer; // @synthesize doubleTapGestureRecognizer=_doubleTapGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *singleTapGestureRecognizer; // @synthesize singleTapGestureRecognizer=_singleTapGestureRecognizer;
 @property(retain, nonatomic) HUItemTableViewController *settingsViewController; // @synthesize settingsViewController=_settingsViewController;
-@property(retain, nonatomic) HUCardViewController *cardViewController; // @synthesize cardViewController=_cardViewController;
 @property(retain, nonatomic) UINavigationController *cardNavigationController; // @synthesize cardNavigationController=_cardNavigationController;
 @property(nonatomic) __weak id <HUQuickControlPresentationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak UIView *targetView; // @synthesize targetView=_targetView;
+@property(retain, nonatomic) HUGridServiceCell *pressedTile; // @synthesize pressedTile=_pressedTile;
 @property(retain, nonatomic) HUQuickControlContainerViewController *quickControlViewController; // @synthesize quickControlViewController=_quickControlViewController;
 @property(retain, nonatomic) HUQuickControlPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
+@property(retain, nonatomic) HUCardViewController *cardViewController; // @synthesize cardViewController=_cardViewController;
 - (void).cxx_destruct;
 - (void)_logUserMetricsAfterPress;
 - (id)_dismissServiceDetailsViewController:(id)arg1 animated:(BOOL)arg2;

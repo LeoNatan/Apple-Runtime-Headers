@@ -15,6 +15,7 @@
 
 + (Class)layerClass;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)isAccessibilityElement;
 - (id)accessibilityAttributedLabel;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

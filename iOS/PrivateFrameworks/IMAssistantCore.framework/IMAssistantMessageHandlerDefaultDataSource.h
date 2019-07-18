@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)registerForContactStoreChangeNotificationsIfNecessary;
 - (void)contactStoreDidChange:(id)arg1;
+@property(readonly, nonatomic) NSCache *contactIdentifierToUnifiedContactIdentifierCache;
 @property(readonly, nonatomic) NSCache *spiHandleToPersonCache;
 @property(readonly, nonatomic) NSCache *handleToContactIdentifierCache;
 @property(readonly, nonatomic) id <IMLocationManager> locationManagerDataSource;

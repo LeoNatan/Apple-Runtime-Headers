@@ -15,6 +15,5 @@
 - (BOOL)seekToOffset:(double)arg1 error:(id *)arg2;
 - (BOOL)resumeAtTime:(double)arg1 error:(id *)arg2;
 - (BOOL)pauseAtTime:(double)arg1 error:(id *)arg2;
-- (BOOL)prepareAndReturnError:(id *)arg1;
 @end
 

@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLogMsgStateApplicationIdentifier, GEOLogMsgStateCarPlay, GEOLogMsgStateDeviceBase, GEOLogMsgStateDeviceConnection, GEOLogMsgStateDeviceIdentifier, GEOLogMsgStateDeviceLocale, GEOLogMsgStateDeviceSettings, GEOLogMsgStateExperiments, GEOLogMsgStateExtension, GEOLogMsgStateFlyover, GEOLogMsgStateMapRestore, GEOLogMsgStateMapSettings, GEOLogMsgStateMapUI, GEOLogMsgStateMapUIShown, GEOLogMsgStateMapView, GEOLogMsgStateMapViewLocation, GEOLogMsgStateMapsServer, GEOLogMsgStateNavigation, GEOLogMsgStateOffline, GEOLogMsgStatePairedDevice, GEOLogMsgStatePlaceCard, GEOLogMsgStatePlaceRequest, GEOLogMsgStateRealtimeTrafficProbe, GEOLogMsgStateReportAnIssue, GEOLogMsgStateRoute, GEOLogMsgStateSuggestions, GEOLogMsgStateTileSet, GEOLogMsgStateTransit, GEOLogMsgStateUserSession, NSString, PBDataReader;
+@class GEOLogMsgStateApplicationIdentifier, GEOLogMsgStateCarPlay, GEOLogMsgStateDeviceBase, GEOLogMsgStateDeviceConnection, GEOLogMsgStateDeviceIdentifier, GEOLogMsgStateDeviceLocale, GEOLogMsgStateDeviceSettings, GEOLogMsgStateExperiments, GEOLogMsgStateExtension, GEOLogMsgStateMapSettings, GEOLogMsgStateMapUI, GEOLogMsgStateMapUIShown, GEOLogMsgStateMapView, GEOLogMsgStateMapViewLocation, GEOLogMsgStateMapsServer, GEOLogMsgStateNavigation, GEOLogMsgStatePairedDevice, GEOLogMsgStatePlaceCard, GEOLogMsgStatePlaceRequest, GEOLogMsgStateRealtimeTrafficProbe, GEOLogMsgStateRoute, GEOLogMsgStateSuggestions, GEOLogMsgStateTileSet, GEOLogMsgStateTransit, GEOLogMsgStateUserSession, NSString, PBDataReader;
 
 @interface GEOLogMsgState : PBCodable <NSCopying>
 {
@@ -23,8 +23,6 @@
     GEOLogMsgStateDeviceSettings *_deviceSettings;
     GEOLogMsgStateExperiments *_experiments;
     GEOLogMsgStateExtension *_extension;
-    GEOLogMsgStateFlyover *_flyover;
-    GEOLogMsgStateMapRestore *_mapRestore;
     GEOLogMsgStateMapSettings *_mapSettings;
     GEOLogMsgStateMapUIShown *_mapUiShown;
     GEOLogMsgStateMapUI *_mapUi;
@@ -32,12 +30,10 @@
     GEOLogMsgStateMapView *_mapView;
     GEOLogMsgStateMapsServer *_mapsServer;
     GEOLogMsgStateNavigation *_navigation;
-    GEOLogMsgStateOffline *_offline;
     GEOLogMsgStatePairedDevice *_pairedDevice;
     GEOLogMsgStatePlaceCard *_placeCard;
     GEOLogMsgStatePlaceRequest *_placeRequest;
     GEOLogMsgStateRealtimeTrafficProbe *_realtimeTrafficProbe;
-    GEOLogMsgStateReportAnIssue *_reportAnIssue;
     GEOLogMsgStateRoute *_route;
     NSString *_stateOrigin;
     GEOLogMsgStateSuggestions *_suggestions;
@@ -56,8 +52,6 @@
         unsigned int read_deviceSettings:1;
         unsigned int read_experiments:1;
         unsigned int read_extension:1;
-        unsigned int read_flyover:1;
-        unsigned int read_mapRestore:1;
         unsigned int read_mapSettings:1;
         unsigned int read_mapUiShown:1;
         unsigned int read_mapUi:1;
@@ -65,12 +59,10 @@
         unsigned int read_mapView:1;
         unsigned int read_mapsServer:1;
         unsigned int read_navigation:1;
-        unsigned int read_offline:1;
         unsigned int read_pairedDevice:1;
         unsigned int read_placeCard:1;
         unsigned int read_placeRequest:1;
         unsigned int read_realtimeTrafficProbe:1;
-        unsigned int read_reportAnIssue:1;
         unsigned int read_route:1;
         unsigned int read_stateOrigin:1;
         unsigned int read_suggestions:1;
@@ -86,8 +78,6 @@
         unsigned int wrote_deviceSettings:1;
         unsigned int wrote_experiments:1;
         unsigned int wrote_extension:1;
-        unsigned int wrote_flyover:1;
-        unsigned int wrote_mapRestore:1;
         unsigned int wrote_mapSettings:1;
         unsigned int wrote_mapUiShown:1;
         unsigned int wrote_mapUi:1;
@@ -95,12 +85,10 @@
         unsigned int wrote_mapView:1;
         unsigned int wrote_mapsServer:1;
         unsigned int wrote_navigation:1;
-        unsigned int wrote_offline:1;
         unsigned int wrote_pairedDevice:1;
         unsigned int wrote_placeCard:1;
         unsigned int wrote_placeRequest:1;
         unsigned int wrote_realtimeTrafficProbe:1;
-        unsigned int wrote_reportAnIssue:1;
         unsigned int wrote_route:1;
         unsigned int wrote_stateOrigin:1;
         unsigned int wrote_suggestions:1;
@@ -123,21 +111,12 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(retain, nonatomic) GEOLogMsgStateOffline *offline;
-@property(readonly, nonatomic) _Bool hasOffline;
-- (void)_readOffline;
 @property(retain, nonatomic) GEOLogMsgStateRealtimeTrafficProbe *realtimeTrafficProbe;
 @property(readonly, nonatomic) _Bool hasRealtimeTrafficProbe;
 - (void)_readRealtimeTrafficProbe;
-@property(retain, nonatomic) GEOLogMsgStateReportAnIssue *reportAnIssue;
-@property(readonly, nonatomic) _Bool hasReportAnIssue;
-- (void)_readReportAnIssue;
 @property(retain, nonatomic) GEOLogMsgStateSuggestions *suggestions;
 @property(readonly, nonatomic) _Bool hasSuggestions;
 - (void)_readSuggestions;
-@property(retain, nonatomic) GEOLogMsgStateMapRestore *mapRestore;
-@property(readonly, nonatomic) _Bool hasMapRestore;
-- (void)_readMapRestore;
 @property(retain, nonatomic) GEOLogMsgStateNavigation *navigation;
 @property(readonly, nonatomic) _Bool hasNavigation;
 - (void)_readNavigation;
@@ -150,9 +129,6 @@
 @property(retain, nonatomic) GEOLogMsgStateMapsServer *mapsServer;
 @property(readonly, nonatomic) _Bool hasMapsServer;
 - (void)_readMapsServer;
-@property(retain, nonatomic) GEOLogMsgStateFlyover *flyover;
-@property(readonly, nonatomic) _Bool hasFlyover;
-- (void)_readFlyover;
 @property(retain, nonatomic) GEOLogMsgStateRoute *route;
 @property(readonly, nonatomic) _Bool hasRoute;
 - (void)_readRoute;

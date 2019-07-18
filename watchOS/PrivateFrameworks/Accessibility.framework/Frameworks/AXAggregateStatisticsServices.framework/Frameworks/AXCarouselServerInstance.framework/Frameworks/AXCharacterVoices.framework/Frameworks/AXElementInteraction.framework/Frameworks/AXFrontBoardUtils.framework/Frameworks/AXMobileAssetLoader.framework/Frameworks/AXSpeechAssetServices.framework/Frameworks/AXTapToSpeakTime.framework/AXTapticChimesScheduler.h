@@ -37,6 +37,8 @@
 - (void)_scheduleChimeTimer;
 - (void)_clearChimeTimer;
 - (void)_previewChimes;
+- (double)_prePlayAudioTimeInterval;
+- (double)_preWakeTimeInterval;
 - (_Bool)canActivateTapticChimes;
 - (void)dealloc;
 - (id)_init;

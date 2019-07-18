@@ -25,7 +25,7 @@
 @property(readonly, nonatomic) NSMutableSet *currentRequestHandlerSessionIDs; // @synthesize currentRequestHandlerSessionIDs=_currentRequestHandlerSessionIDs;
 - (void).cxx_destruct;
 - (void)deregisterRemoteRequestHandler:(id)arg1;
-- (void)registerRemoteRequestHandler:(id)arg1;
+- (void)registerRemoteRequestHandler:(id)arg1 forSessionID:(id)arg2;
 - (id)init;
 
 // Remaining properties

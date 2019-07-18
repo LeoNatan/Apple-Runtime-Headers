@@ -97,6 +97,9 @@
 @property(readonly, getter=isSIFRSupported) _Bool SIFRSupported;
 - (id)frontEndScalerCompanionFormats;
 @property(readonly) int autoFocusSystem;
+- (float)lowLightVideoAEMaxGain;
+- (float)depthDataMaxIntegrationTimeOverride;
+- (float)depthDataAEMaxGain;
 - (int)maxIntegrationTimeOverride;
 - (float)aeMaxGain;
 @property(readonly) CDStruct_1b6d18a9 maxExposureDuration;

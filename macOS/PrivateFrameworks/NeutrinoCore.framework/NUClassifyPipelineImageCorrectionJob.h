@@ -19,6 +19,7 @@
 - (id)result;
 - (BOOL)render:(out id *)arg1;
 - (id)detectClassifyPipelineImageCorrectionInBuffer:(struct __CVBuffer *)arg1 error:(out id *)arg2;
+- (id)cacheKey;
 - (BOOL)wantsCompleteStage;
 - (BOOL)wantsOutputGeometry;
 - (BOOL)wantsOutputImage;

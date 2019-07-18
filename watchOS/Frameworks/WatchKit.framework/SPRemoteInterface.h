@@ -63,8 +63,9 @@
 + (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 + (void)finishedExtendedLaunchTest;
 + (void)startedTest:(id)arg1;
++ (void)scheduledSessonInvalidatedWhileRunning;
 + (void)showSystemAlertForBARDisabledWithReply:(CDUnknownBlockType)arg1;
-+ (void)hapticPlayed;
++ (void)playHapticForScheduledSession:(int)arg1;
 + (void)scheduleBackgroundRefreshTask:(id)arg1 preferredDate:(id)arg2 userInfo:(id)arg3 trackingUUID:(id)arg4 scheduledCompletion:(CDUnknownBlockType)arg5;
 + (void)interfaceViewController:(id)arg1 sendCrownReplyData:(id)arg2;
 + (void)interfaceViewController:(id)arg1 sendGestureReplyData:(id)arg2;
@@ -213,8 +214,9 @@
 - (void)appDidFinishConnecting:(id)arg1;
 - (void)appWillResignActive:(id)arg1;
 - (void)appDidBecomeActive:(id)arg1;
+- (void)scheduledSessonInvalidatedWhileRunning;
 - (void)showSystemAlertForBARDisabledWithReply:(CDUnknownBlockType)arg1;
-- (void)hapticPlayed;
+- (void)playHapticForScheduledSession:(int)arg1;
 - (void)didFinishHandlingBackgroundSnapshotTask:(_Bool)arg1 glanceableUI:(_Bool)arg2 staleDate:(id)arg3 userInfoUUID:(id)arg4 barTaskUUID:(id)arg5;
 - (void)failedToHandleBackgroundTasks:(id)arg1 error:(id)arg2 barTaskUUID:(id)arg3;
 - (void)didFinishHandlingBackgroundTask:(id)arg1 refreshSnapshot:(_Bool)arg2 barTaskUUID:(id)arg3;

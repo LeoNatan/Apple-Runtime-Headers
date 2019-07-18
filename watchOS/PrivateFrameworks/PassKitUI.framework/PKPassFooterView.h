@@ -60,6 +60,7 @@
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateDeactivationReasons:(unsigned int)arg2;
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
 - (void)passFooterContentViewRequestsSessionSuppression:(id)arg1;
+- (void)passFooterContentViewDidAuthenticate:(id)arg1;
 @property(readonly, nonatomic) _Bool requestPileSuppression;
 @property(readonly, nonatomic, getter=isPassAuthorized) _Bool passAuthorized;
 - (void)invalidate;

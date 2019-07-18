@@ -9,13 +9,14 @@
 #import <PassKitUI/PKPaymentDataProviderDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentPassTableCellDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
+#import <PassKitUI/PKPaymentVerificationControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPeerPaymentAccountResolutionControllerDelegate-Protocol.h>
 #import <PassKitUI/PKSwitchSpinnerTableCellDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, PKAccountService, PKExpressPassController, PKPaymentPreference, PKPaymentPreferenceCard, PKPaymentPreferencesViewController, PKPaymentSetupAboutViewController, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentWebService, PSSpecifier;
+@class NSArray, NSMutableDictionary, NSString, PKAccountService, PKExpressPassController, PKPaymentPreference, PKPaymentPreferenceCard, PKPaymentPreferencesViewController, PKPaymentSetupAboutViewController, PKPaymentVerificationController, PKPaymentWebService, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentWebService, PSSpecifier;
 @protocol PKPassLibraryDataProvider, PKPassbookPeerPaymentSettingsDelegate, PKPassbookSettingsDataSource, PKPassbookSettingsDelegate, PKPaymentDataProvider, PKPaymentOptionsProtocol;
 
-@interface PKPassbookSettingsController : NSObject <PKPaymentServiceDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPaymentDataProviderDelegate, PKSwitchSpinnerTableCellDelegate, PKPaymentPassTableCellDelegate>
+@interface PKPassbookSettingsController : NSObject <PKPaymentServiceDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPaymentDataProviderDelegate, PKSwitchSpinnerTableCellDelegate, PKPaymentVerificationControllerDelegate, PKPaymentPassTableCellDelegate>
 {
     id <PKPassbookSettingsDataSource> _dataSource;
     id <PKPassLibraryDataProvider> _passLibraryDataProvider;
@@ -26,6 +27,8 @@
     PKPaymentPreferencesViewController *_defaultCardsController;
     PKPaymentPreference *_availableCards;
     PKPaymentPreferenceCard *_unavailableCards;
+    PKPaymentVerificationController *_verificationController;
+    PKPaymentWebService *_webService;
     NSString *_defaultCardIdentifier;
     NSString *_provisioningPassIdentifier;
     NSArray *_paymentPasses;
@@ -76,8 +79,11 @@
 - (void)_requestDelegatePresentViewController:(id)arg1;
 - (void)_handleProvisioningError:(id)arg1 viewController:(id)arg2;
 - (void)_presentPaymentSetupViewController:(id)arg1 paymentPass:(id)arg2;
+- (void)verifyButtonPressedForPaymentPass:(id)arg1;
 - (void)addButtonPressedForPaymentPass:(id)arg1;
-- (void)openExpressTransitSettings:(id)arg1;
+- (void)presentVerificationViewController:(id)arg1 animated:(_Bool)arg2;
+- (void)openExpressTransitSettings:(id)arg1 withPassUniqueIdentifier:(id)arg2;
+- (void)_openExpressTransitSettings:(id)arg1;
 - (id)_defaultExpressTransitPassDescription;
 - (id)_defaultExpressTransitSpecifier;
 - (id)_transitDefaultsGroupSpecifiers;

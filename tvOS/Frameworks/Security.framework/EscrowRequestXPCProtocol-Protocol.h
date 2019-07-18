@@ -11,7 +11,7 @@
 @protocol EscrowRequestXPCProtocol <NSObject>
 - (void)storePrerecordsInEscrow:(void (^)(unsigned long long, NSError *))arg1;
 - (void)resetAllRequests:(void (^)(NSError *))arg1;
-- (void)fetchStatuses:(void (^)(NSDictionary *, NSError *))arg1;
+- (void)fetchRequestStatuses:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)fetchRequestWaitingOnPasscode:(void (^)(NSString *, NSError *))arg1;
 - (void)fetchPrerecord:(NSString *)arg1 reply:(void (^)(NSData *, NSError *))arg2;
 - (void)cachePrerecord:(NSString *)arg1 serializedPrerecord:(NSData *)arg2 reply:(void (^)(NSError *))arg3;

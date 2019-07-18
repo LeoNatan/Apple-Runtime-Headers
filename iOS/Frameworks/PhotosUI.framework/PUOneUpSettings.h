@@ -25,6 +25,8 @@
     _Bool _allowToggleOriginalBarItem;
     _Bool _showSaliencyRects;
     _Bool _showFacesRect;
+    _Bool _showPaddedFacesRect;
+    _Bool _showBestSquareRect;
     _Bool _hideToolbarWhenShowingAccessoryView;
     _Bool _useGlobalDetailsVisibility;
     _Bool _useGlobalCommentsVisibility;
@@ -39,12 +41,8 @@
     _Bool _enableFigPhotoBackgroundSizeBasedDisplay;
     _Bool _simulateWorstCaseFigPhotoBackgroundSize;
     _Bool _autoplayVideo;
-    _Bool _hideChromeOnUnmute;
     _Bool _unmuteOnChromeHide;
-    _Bool _showVideoUnmuteWhenChromeIsHidden;
-    _Bool _loopAllVideos;
     _Bool _allowPlayButtonInBars;
-    _Bool _placeMuteButtonOverContent;
     _Bool _videoRemuteOnBackgrounding;
     _Bool _applyPerspectiveTransformDuringVitality;
     _Bool _lockScrollDuringLivePhotoPlayback;
@@ -94,7 +92,7 @@
     double _doubleTapZoomFactor;
     double _videoAutoplayThreshold;
     double _videoPauseThreshold;
-    double _remuteButtonDisplayDuration;
+    double _autoplayScrubberWidth;
     double _livePhotoInteractionThreshold;
     double _livePhotoMinimumOverlappingDuration;
     unsigned long long _overlappingLivePhotosCountLimit;
@@ -153,15 +151,11 @@
 @property(nonatomic) _Bool lockScrollDuringLivePhotoPlayback; // @synthesize lockScrollDuringLivePhotoPlayback=_lockScrollDuringLivePhotoPlayback;
 @property(nonatomic) _Bool applyPerspectiveTransformDuringVitality; // @synthesize applyPerspectiveTransformDuringVitality=_applyPerspectiveTransformDuringVitality;
 @property(nonatomic) double livePhotoInteractionThreshold; // @synthesize livePhotoInteractionThreshold=_livePhotoInteractionThreshold;
+@property(nonatomic) double autoplayScrubberWidth; // @synthesize autoplayScrubberWidth=_autoplayScrubberWidth;
 @property(nonatomic) _Bool videoRemuteOnBackgrounding; // @synthesize videoRemuteOnBackgrounding=_videoRemuteOnBackgrounding;
-@property(nonatomic) _Bool placeMuteButtonOverContent; // @synthesize placeMuteButtonOverContent=_placeMuteButtonOverContent;
-@property(nonatomic) double remuteButtonDisplayDuration; // @synthesize remuteButtonDisplayDuration=_remuteButtonDisplayDuration;
 @property(nonatomic) double videoPauseThreshold; // @synthesize videoPauseThreshold=_videoPauseThreshold;
 @property(nonatomic) _Bool allowPlayButtonInBars; // @synthesize allowPlayButtonInBars=_allowPlayButtonInBars;
-@property(nonatomic) _Bool loopAllVideos; // @synthesize loopAllVideos=_loopAllVideos;
-@property(nonatomic) _Bool showVideoUnmuteWhenChromeIsHidden; // @synthesize showVideoUnmuteWhenChromeIsHidden=_showVideoUnmuteWhenChromeIsHidden;
 @property(nonatomic) _Bool unmuteOnChromeHide; // @synthesize unmuteOnChromeHide=_unmuteOnChromeHide;
-@property(nonatomic) _Bool hideChromeOnUnmute; // @synthesize hideChromeOnUnmute=_hideChromeOnUnmute;
 @property(nonatomic) double videoAutoplayThreshold; // @synthesize videoAutoplayThreshold=_videoAutoplayThreshold;
 @property(nonatomic) _Bool autoplayVideo; // @synthesize autoplayVideo=_autoplayVideo;
 @property(nonatomic) _Bool simulateWorstCaseFigPhotoBackgroundSize; // @synthesize simulateWorstCaseFigPhotoBackgroundSize=_simulateWorstCaseFigPhotoBackgroundSize;
@@ -200,6 +194,8 @@
 @property(nonatomic) double minimumVisibleContentHeight; // @synthesize minimumVisibleContentHeight=_minimumVisibleContentHeight;
 @property(nonatomic) double accessoryInitialTopPosition; // @synthesize accessoryInitialTopPosition=_accessoryInitialTopPosition;
 @property(nonatomic) long long accessoryViewType; // @synthesize accessoryViewType=_accessoryViewType;
+@property(nonatomic) _Bool showBestSquareRect; // @synthesize showBestSquareRect=_showBestSquareRect;
+@property(nonatomic) _Bool showPaddedFacesRect; // @synthesize showPaddedFacesRect=_showPaddedFacesRect;
 @property(nonatomic) _Bool showFacesRect; // @synthesize showFacesRect=_showFacesRect;
 @property(nonatomic) _Bool showSaliencyRects; // @synthesize showSaliencyRects=_showSaliencyRects;
 @property(nonatomic) long long userNavigationMaximumDistance; // @synthesize userNavigationMaximumDistance=_userNavigationMaximumDistance;
@@ -223,7 +219,7 @@
 @property(nonatomic) long long suggestionsStyle; // @synthesize suggestionsStyle=_suggestionsStyle;
 - (void).cxx_destruct;
 - (void)preferencesDidChange;
-- (_Bool)allowAutoplayVideo;
+- (_Bool)allowAutoplayVideoForAsset:(id)arg1;
 - (void)_updatePrototypeRelatedSettings;
 - (void)_invalidatePrototypeRelatedSettings;
 - (void)setDefaultValues;

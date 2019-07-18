@@ -4,14 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SpringBoardServices/SBSAbstractSystemService.h>
+#import <objc/NSObject.h>
 
-@interface SBSHomeScreenService : SBSAbstractSystemService
+#import <SpringBoardServices/SBSHomeScreenServiceServerToClientInterface-Protocol.h>
+
+@class BSServiceConnection;
+@protocol OS_dispatch_queue;
+
+@interface SBSHomeScreenService : NSObject <SBSHomeScreenServiceServerToClientInterface>
 {
+    BSServiceConnection *_connection;
+    NSObject<OS_dispatch_queue> *_connectionQueue;
 }
 
+- (void).cxx_destruct;
+- (id)folderPathToIconWithBundleIdentifier:(id)arg1;
 - (void)requestSuggestedApplicationWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resetHomeScreenLayoutWithCompletion:(CDUnknownBlockType)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end
 

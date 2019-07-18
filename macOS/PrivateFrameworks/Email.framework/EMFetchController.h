@@ -17,9 +17,8 @@
 @property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (void)setCurrentSuppressionContexts:(id)arg1 suppressedContexts:(id)arg2;
-- (void)performFetchOfType:(int)arg1 accounts:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)performFetchOfType:(int)arg1 mailboxes:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)performFetchOfType:(int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)performFetchOfType:(int)arg1 accounts:(id)arg2;
+- (void)performFetchOfType:(int)arg1 mailboxes:(id)arg2;
 - (void)performFetchOfType:(int)arg1;
 - (id)initWithRemoteConnection:(id)arg1;
 

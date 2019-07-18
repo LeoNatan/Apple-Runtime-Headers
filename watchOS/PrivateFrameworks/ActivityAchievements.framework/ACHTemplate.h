@@ -31,8 +31,11 @@
     NSString *_predicate;
     NSString *_gracePredicate;
     NSString *_valueExpression;
+    NSString *_graceValueExpression;
     NSString *_progressExpression;
+    NSString *_graceProgressExpression;
     NSString *_goalExpression;
+    NSString *_graceGoalExpression;
     unsigned int _triggers;
     NSString *_visibilityPredicate;
     NSString *_graceVisibilityPredicate;
@@ -62,8 +65,11 @@
 @property(retain, nonatomic) NSString *visibilityPredicate; // @synthesize visibilityPredicate=_visibilityPredicate;
 @property(nonatomic) unsigned char earnLimit; // @synthesize earnLimit=_earnLimit;
 @property(nonatomic) unsigned int triggers; // @synthesize triggers=_triggers;
+@property(retain, nonatomic) NSString *graceGoalExpression; // @synthesize graceGoalExpression=_graceGoalExpression;
 @property(retain, nonatomic) NSString *goalExpression; // @synthesize goalExpression=_goalExpression;
+@property(retain, nonatomic) NSString *graceProgressExpression; // @synthesize graceProgressExpression=_graceProgressExpression;
 @property(retain, nonatomic) NSString *progressExpression; // @synthesize progressExpression=_progressExpression;
+@property(retain, nonatomic) NSString *graceValueExpression; // @synthesize graceValueExpression=_graceValueExpression;
 @property(retain, nonatomic) NSString *valueExpression; // @synthesize valueExpression=_valueExpression;
 @property(retain, nonatomic) NSString *gracePredicate; // @synthesize gracePredicate=_gracePredicate;
 @property(retain, nonatomic) NSString *predicate; // @synthesize predicate=_predicate;

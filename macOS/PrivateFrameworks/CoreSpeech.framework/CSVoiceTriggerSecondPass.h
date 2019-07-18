@@ -18,7 +18,7 @@
 #import <CoreSpeech/CSVoiceTriggerEnabledMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSVolumeMonitorDelegate-Protocol.h>
 
-@class CSAsset, CSAudioCircularBuffer, CSAudioStream, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, CSKeywordAnalyzerQuasar, CSPlainAudioFileWriter, CSSpIdVTTextDependentSpeakerRecognizer, CSSpeakerDetectorNDAPI, CSSpeakerModel, NSData, NSDictionary, NSMutableDictionary, NSString;
+@class CSAsset, CSAudioCircularBuffer, CSAudioStream, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, CSKeywordAnalyzerQuasar, CSPlainAudioFileWriter, CSSpIdVTTextDependentSpeakerRecognizer, CSSpeakerDetectorNDAPI, CSSpeakerModel, NSData, NSDate, NSDictionary, NSMutableDictionary, NSString;
 @protocol CSVoiceTriggerDelegate, OS_dispatch_queue;
 
 @interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerNDEAPIScoreDelegate, CSSpeakerDetectorNDAPIDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSAudioStreamProvidingDelegate, CSMediaPlayingMonitorDelegate, CSVolumeMonitorDelegate, CSSpIdVTTextDependentSpeakerRecognizerDelegate, CSSelfTriggerDetectorDelegate>
@@ -92,11 +92,13 @@
     CSPlainAudioFileWriter *_audioFileWriter;
     long long _mediaPlayingState;
     NSMutableDictionary *_lastVoiceTriggerEventInfo;
+    NSDate *_tdsrStartTime;
 }
 
 + (id)timeStampString;
 + (id)secondPassAudioLogDirectory;
 + (id)secondPassAudioLoggingFilePath;
+@property(retain, nonatomic) NSDate *tdsrStartTime; // @synthesize tdsrStartTime=_tdsrStartTime;
 @property(nonatomic) BOOL skipTdsrProc; // @synthesize skipTdsrProc=_skipTdsrProc;
 @property(retain, nonatomic) NSMutableDictionary *lastVoiceTriggerEventInfo; // @synthesize lastVoiceTriggerEventInfo=_lastVoiceTriggerEventInfo;
 @property(nonatomic) float mediaVolume; // @synthesize mediaVolume=_mediaVolume;
@@ -176,11 +178,14 @@
 - (void)CSMediaPlayingMonitor:(id)arg1 didReceiveMediaPlayingChanged:(long long)arg2;
 - (void)selfTriggerDetector:(id)arg1 didDetectSelfTrigger:(id)arg2;
 - (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
+- (void)handleSATOnlyScore;
+- (void)handleTDSRCombinedScore;
 - (void)_getDidWakeAP:(id)arg1;
 - (void)_addDeviceStatusInfoToDict:(id)arg1;
 - (void)_addRejectStatsToDict:(id)arg1;
 - (void)_addTdsrInfoToDict:(id)arg1 combinedScore:(float)arg2;
 - (void)_addSatAnalyzerInfoToDict:(id)arg1 satScore:(float)arg2 satThreshold:(float)arg3;
+- (void)_addPHSExplicitOnlyModelScoresToDict:(id)arg1;
 - (void)_implicitTrainingIfNeeded:(id)arg1;
 - (void)CSVoiceTriggerEnabledMonitor:(id)arg1 didReceiveEnabled:(BOOL)arg2;
 - (void)_resetUpTime;
@@ -191,8 +196,6 @@
 - (void)keywordAnalyzerQuasar:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)keywordAnalyzerNDEAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
-- (void)handleSATOnlyScore;
-- (void)handleTDSRCombinedScore;
 - (void)_analyzeForKeywordDetection:(id)arg1 result:(id)arg2 forChannel:(unsigned long long)arg3 forceMaximized:(BOOL)arg4;
 - (void)audioStreamProvider:(id)arg1 audioChunkForTVAvailable:(id)arg2;
 - (void)audioStreamProvider:(id)arg1 audioBufferAvailable:(id)arg2;
@@ -201,13 +204,13 @@
 - (void)_didStopAudioStream;
 - (void)_didStartAudioStream;
 - (void)_notifySecondPassReject:(id)arg1 result:(unsigned long long)arg2;
-- (void)_voiceTriggerFirstPassDidDetectKeywordFrom:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_voiceTriggerFirstPassDidDetectKeywordFrom:(unsigned long long)arg1 deviceId:(id)arg2 audioProviderUUID:(id)arg3 firstPassInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)cancelCurrentRequest;
-- (void)handleVoiceTriggerSecondPassFrom:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_handleVoiceTriggerFirstPassFromJarvis:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_handleVoiceTriggerFirstPassFromHearst:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_handleVoiceTriggerFirstPassFromAP:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_requestStartAudioStreamWitContext:(id)arg1 startStreamOption:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)handleVoiceTriggerSecondPassFrom:(unsigned long long)arg1 deviceId:(id)arg2 audioProviderUUID:(id)arg3 firstPassInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_handleVoiceTriggerFirstPassFromJarvis:(unsigned long long)arg1 deviceId:(id)arg2 audioProviderUUID:(id)arg3 firstPassInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_handleVoiceTriggerFirstPassFromHearst:(unsigned long long)arg1 deviceId:(id)arg2 audioProviderUUID:(id)arg3 firstPassInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_handleVoiceTriggerFirstPassFromAP:(id)arg1 audioProviderUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_requestStartAudioStreamWitContext:(id)arg1 audioProviderUUID:(id)arg2 startStreamOption:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_clearTriggerCandidate;
 - (void)_initializeMediaPlayingState;
 - (void)_setAsset:(id)arg1;

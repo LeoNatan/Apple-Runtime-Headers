@@ -14,13 +14,13 @@
 #import <CoreSpeech/CSAudioServerCrashMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioSessionProviding-Protocol.h>
 #import <CoreSpeech/CSAudioStreamProviding-Protocol.h>
-#import <CoreSpeech/CSPassThroughVoiceTriggerInfoProviding-Protocol.h>
+#import <CoreSpeech/CSTriggerInfoProviding-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerDelegate-Protocol.h>
 
 @class CSAudioCircularBuffer, CSAudioPreprocessor, CSAudioRecordContext, CSAudioRecorder, CSOSTransaction, NSHashTable, NSMutableArray, NSString, NSUUID;
-@protocol CSAudioAlertProvidingDelegate, CSAudioSessionProvidingDelegate, OS_dispatch_queue;
+@protocol CSAudioAlertProvidingDelegate, CSAudioProviderDelegate, CSAudioSessionProvidingDelegate, OS_dispatch_group, OS_dispatch_queue;
 
-@interface CSAudioProvider : NSObject <CSAudioRecorderDelegate, CSAudioServerCrashMonitorDelegate, CSAudioPreprocessorDelegate, CSAudioStreamProviding, CSAudioSessionProviding, CSAudioMetricProviding, CSAudioAlertProviding, CSAudioMeterProviding, CSPassThroughVoiceTriggerInfoProviding, CSVoiceTriggerDelegate>
+@interface CSAudioProvider : NSObject <CSAudioRecorderDelegate, CSAudioServerCrashMonitorDelegate, CSAudioPreprocessorDelegate, CSAudioStreamProviding, CSAudioSessionProviding, CSAudioMetricProviding, CSAudioAlertProviding, CSAudioMeterProviding, CSTriggerInfoProviding, CSVoiceTriggerDelegate>
 {
     BOOL _audioSystemRecovering;
     NSString *_UUID;
@@ -34,6 +34,7 @@
     NSMutableArray *_pendingStartCompletions;
     NSMutableArray *_alertPlaybackFinishWaitingCompletions;
     NSMutableArray *_pendingStopCompletions;
+    id <CSAudioProviderDelegate> _providerDelegate;
     id <CSAudioSessionProvidingDelegate> _sessionDelegate;
     NSMutableArray *_streamHolders;
     NSHashTable *_historicalBufferRequestStreams;
@@ -42,12 +43,18 @@
     CSAudioRecordContext *_lastAudioRecorderContext;
     CSAudioPreprocessor *_audioPreprocessor;
     CSOSTransaction *_recordingTransaction;
+    NSObject<OS_dispatch_group> *_recordingWillStartGroup;
     unsigned long long _audioStreamHandleId;
     NSUUID *_alertPlaybackFinishTimeoutToken;
+    NSUUID *_startRecordingWatchDogToken;
+    NSUUID *_stopRecordingWatchDogToken;
 }
 
+@property(retain, nonatomic) NSUUID *stopRecordingWatchDogToken; // @synthesize stopRecordingWatchDogToken=_stopRecordingWatchDogToken;
+@property(retain, nonatomic) NSUUID *startRecordingWatchDogToken; // @synthesize startRecordingWatchDogToken=_startRecordingWatchDogToken;
 @property(retain, nonatomic) NSUUID *alertPlaybackFinishTimeoutToken; // @synthesize alertPlaybackFinishTimeoutToken=_alertPlaybackFinishTimeoutToken;
 @property(nonatomic) unsigned long long audioStreamHandleId; // @synthesize audioStreamHandleId=_audioStreamHandleId;
+@property(retain, nonatomic) NSObject<OS_dispatch_group> *recordingWillStartGroup; // @synthesize recordingWillStartGroup=_recordingWillStartGroup;
 @property(retain, nonatomic) CSOSTransaction *recordingTransaction; // @synthesize recordingTransaction=_recordingTransaction;
 @property(retain, nonatomic) CSAudioPreprocessor *audioPreprocessor; // @synthesize audioPreprocessor=_audioPreprocessor;
 @property(nonatomic) BOOL audioSystemRecovering; // @synthesize audioSystemRecovering=_audioSystemRecovering;
@@ -57,6 +64,7 @@
 @property(retain, nonatomic) NSHashTable *historicalBufferRequestStreams; // @synthesize historicalBufferRequestStreams=_historicalBufferRequestStreams;
 @property(retain, nonatomic) NSMutableArray *streamHolders; // @synthesize streamHolders=_streamHolders;
 @property(nonatomic) __weak id <CSAudioSessionProvidingDelegate> sessionDelegate; // @synthesize sessionDelegate=_sessionDelegate;
+@property(nonatomic) __weak id <CSAudioProviderDelegate> providerDelegate; // @synthesize providerDelegate=_providerDelegate;
 @property(retain, nonatomic) NSMutableArray *pendingStopCompletions; // @synthesize pendingStopCompletions=_pendingStopCompletions;
 @property(retain, nonatomic) NSMutableArray *alertPlaybackFinishWaitingCompletions; // @synthesize alertPlaybackFinishWaitingCompletions=_alertPlaybackFinishWaitingCompletions;
 @property(retain, nonatomic) NSMutableArray *pendingStartCompletions; // @synthesize pendingStartCompletions=_pendingStartCompletions;
@@ -69,10 +77,15 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *recordQueue; // @synthesize recordQueue=_recordQueue;
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
+- (void)_clearDidStopRecordingDelegateWatchDog;
+- (void)_scheduleDidStopRecordingDelegateWatchDog:(id)arg1;
+- (void)_scheduleDidStopRecordingDelegateWatchDog;
+- (void)_clearDidStartRecordingDelegateWatchDog;
+- (void)_schduleDidStartRecordingDelegateWatchDogWithToken:(id)arg1;
+- (void)_scheduleDidStartRecordingDelegateWatchDog;
 - (void)_releaseRecordingTransactionIfNeeded;
 - (void)_holdRecordingTransactionIfNeeded;
 - (id)_streamStateName:(unsigned long long)arg1;
-- (id)passThroughVoiceTriggerInfo;
 - (void)_handleAudioSystemFailure;
 - (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
 - (void)CSAudioServerCrashMonitorDidReceiveServerCrash:(id)arg1;
@@ -94,6 +107,8 @@
 - (void)audioRecorderDidStartRecord:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 successfully:(BOOL)arg3 error:(id)arg4;
 - (void)audioPreprocessor:(id)arg1 hasAvailableBuffer:(id)arg2 atTime:(unsigned long long)arg3;
 - (BOOL)_shouldStopRecording;
+- (BOOL)_isVoiceTriggerInfoAvailableLocally:(id)arg1;
+- (void)triggerInfoForContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (float)averagePowerForChannel:(unsigned long long)arg1;
 - (float)peakPowerForChannel:(unsigned long long)arg1;
 - (void)updateMeters;
@@ -144,6 +159,7 @@
 - (id)audioStreamWithRequest:(id)arg1 streamName:(id)arg2 error:(id *)arg3;
 - (id)_audioStreamWithRequest:(id)arg1 streamName:(id)arg2 error:(id *)arg3;
 - (BOOL)setCurrentContext:(id)arg1 error:(id *)arg2;
+- (void)setAudioProviderDelegate:(id)arg1;
 - (void)start;
 - (id)initWithAudioStreamHandleId:(unsigned long long)arg1 audioRecorder:(id)arg2;
 

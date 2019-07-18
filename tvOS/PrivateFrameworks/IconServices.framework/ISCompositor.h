@@ -11,6 +11,7 @@
 
 @interface ISCompositor : NSObject
 {
+    unsigned long long _renderingMode;
     NSMutableArray *_elements;
 }
 
@@ -24,6 +25,7 @@
 + (id)macosIconRecipe;
 + (id)iosmacAppIconRecipe;
 @property(retain) NSMutableArray *elements; // @synthesize elements=_elements;
+@property unsigned long long renderingMode; // @synthesize renderingMode=_renderingMode;
 - (void).cxx_destruct;
 - (void)reset;
 - (id)imageForSize:(struct CGSize)arg1 scale:(double)arg2;
@@ -35,6 +37,13 @@
 - (void)setResource:(id)arg1 named:(id)arg2;
 @property(retain) id <ISCompositorRecipe> recipe;
 - (id)initWithRecipe:(id)arg1;
+- (void)drawLayer:(id)arg1 resourceProvider:(id)arg2 inContext:(id)arg3;
+- (id)maskImageForLayer:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 resourceProvider:(id)arg4;
+- (id)scaledImageFromContent:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3;
+- (void)drawElement:(id)arg1 inContext:(id)arg2;
+@property(readonly) _Bool canUseCoreImage; // @dynamic canUseCoreImage;
+- (id)filterForLayer:(id)arg1 scale:(double)arg2 resourceProvider:(id)arg3;
+- (void)drawInContext:(id)arg1;
 
 @end
 

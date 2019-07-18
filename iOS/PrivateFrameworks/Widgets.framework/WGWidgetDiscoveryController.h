@@ -35,23 +35,23 @@
     _Bool _shouldPurgeNonCAMLSnapshots;
     _Bool _shouldPurgeNonASTCSnapshots;
     id <WGWidgetDiscoveryControllerDelegate> _delegate;
-    NSMutableDictionary *_widgetIDsToPendingTestCompletions;
-    NSMutableDictionary *_widgetIDsToPendingTestTearDowns;
     NSMutableDictionary *_widgetIDsToWidgets;
     id <WGWidgetDebugging> _debuggingHandler;
     WGWidgetListEditViewController *_presentedEditViewController;
     id _presentedEditViewControllerStatusBarAssertion;
+    NSMutableDictionary *_widgetIDsToPendingTestCompletions;
+    NSMutableDictionary *_widgetIDsToPendingTestTearDowns;
 }
 
 + (id)widgetViewControllerWithWidgetBundleID:(id)arg1 containingBundleID:(id)arg2 error:(id *)arg3;
 + (_Bool)hasWidgetForBundleID:(id)arg1 containingBundleID:(id)arg2;
 + (long long)layoutModeForSize:(struct CGSize)arg1;
+@property(retain, nonatomic) NSMutableDictionary *widgetIDsToPendingTestTearDowns; // @synthesize widgetIDsToPendingTestTearDowns=_widgetIDsToPendingTestTearDowns;
+@property(retain, nonatomic) NSMutableDictionary *widgetIDsToPendingTestCompletions; // @synthesize widgetIDsToPendingTestCompletions=_widgetIDsToPendingTestCompletions;
 @property(retain, nonatomic, getter=_presentedEditViewControllerStatusBarAssertion, setter=_setPresentedEditViewControllerStatusBarAssertion:) id presentedEditViewControllerStatusBarAssertion; // @synthesize presentedEditViewControllerStatusBarAssertion=_presentedEditViewControllerStatusBarAssertion;
 @property(nonatomic, setter=_setPresentedEditViewController:) __weak WGWidgetListEditViewController *presentedEditViewController; // @synthesize presentedEditViewController=_presentedEditViewController;
 @property(nonatomic) __weak id <WGWidgetDebugging> debuggingHandler; // @synthesize debuggingHandler=_debuggingHandler;
 @property(readonly, nonatomic, getter=_widgetIDsToWidgets) NSMutableDictionary *widgetIDsToWidgets; // @synthesize widgetIDsToWidgets=_widgetIDsToWidgets;
-@property(retain, nonatomic) NSMutableDictionary *widgetIDsToPendingTestTearDowns; // @synthesize widgetIDsToPendingTestTearDowns=_widgetIDsToPendingTestTearDowns;
-@property(retain, nonatomic) NSMutableDictionary *widgetIDsToPendingTestCompletions; // @synthesize widgetIDsToPendingTestCompletions=_widgetIDsToPendingTestCompletions;
 @property(nonatomic) __weak id <WGWidgetDiscoveryControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)unregisterIdentifierForRefreshEvents:(id)arg1;
@@ -74,6 +74,7 @@
 - (void)_setWidgetsPinned:(_Bool)arg1;
 - (void)widgetListEditViewController:(id)arg1 didChangeWidgetsPinning:(_Bool)arg2;
 - (_Bool)areWidgetsPinnedForWidgetListEditViewController:(id)arg1;
+- (void)_addDefaultPinnedWidgets;
 - (void)noteWidgetsPinningViewControllerDidDismiss:(_Bool)arg1;
 - (_Bool)shouldShowWidgetsPinningTeachingView;
 - (_Bool)shouldShowWidgetsPinButtonForWidgetListEditViewController:(id)arg1;
@@ -99,10 +100,12 @@
 - (long long)userSpecifiedDisplayModeForWidget:(id)arg1;
 - (void)widgetDataSource:(id)arg1 removeDatum:(id)arg2;
 - (void)widgetDataSource:(id)arg1 replaceWithDatum:(id)arg2;
+- (void)widgetEditListViewController:(id)arg1 traitCollectionDidChange:(id)arg2;
 - (void)dismissWidgetListEditViewController:(id)arg1 animated:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)_requestUnlockWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_preferredViewControllerForPresentingFromViewController:(id)arg1;
 - (void)_invalidateWidgetListEditViewControllerStatusBarAssertion:(id)arg1;
+- (long long)_widgetListEditViewControllerStatusBarLegibilityStyle;
 - (id)_newWidgetListEditViewControllerStatusBarAssertion;
 - (id)_newWidgetListEditViewController;
 - (void)dismissWidgetListEditViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
@@ -112,7 +115,8 @@
 - (id)_insertWidgetWithIdentifier:(id)arg1 atTop:(_Bool)arg2;
 - (id)_defaultGroupForWidgetWithIdentifier:(id)arg1;
 - (id)_groupForWidgetWithIdentifier:(id)arg1;
-- (void)_notifyObserversOfOrderChange;
+- (void)_notifyObserversOfOrderChangeForWidgetIdentifiers:(id)arg1;
+- (void)_notifyObserversOfSignificantWidgetsChange;
 - (void)_notifyObserversOfVisibilityChange:(_Bool)arg1 ofWidgetWithIdentifier:(id)arg2 inGroup:(id)arg3;
 - (void)_calculateAndPostNewWidgetsCount;
 - (_Bool)isElementWithIdentifierFavorited:(id)arg1;

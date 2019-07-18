@@ -6,7 +6,7 @@
 
 #import <ReminderKit/REMUserDefaults.h>
 
-@class NSDate, NSNumber, NSString, REMObjectID, REMStore;
+@class NSData, NSDate, NSNumber, NSString, REMObjectID, REMStore;
 
 @interface REMDaemonUserDefaults : REMUserDefaults
 {
@@ -15,6 +15,8 @@
 
 @property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL simulateMAIDAccount;
+@property(copy, nonatomic) NSData *userInteractionsData;
 @property(copy, nonatomic) NSDate *lastPresentAlarmDate;
 @property(copy, nonatomic) NSDate *nextScheduledAlarmDate;
 @property(copy, nonatomic) NSNumber *spotlightIndexVersion;

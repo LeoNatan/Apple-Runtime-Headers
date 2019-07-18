@@ -21,6 +21,7 @@
     _Bool _activeTimer;
 }
 
+@property(readonly, nonatomic) _Bool oncePerReport; // @synthesize oncePerReport=_oncePerReport;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)dealloc;

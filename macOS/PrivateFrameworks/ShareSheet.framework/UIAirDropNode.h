@@ -13,11 +13,13 @@
 @interface UIAirDropNode : NSObject <NSSecureCoding>
 {
     BOOL _wantsTwoLines;
+    BOOL _hasSquareImage;
     BOOL _disabled;
     BOOL _restricted;
     NSNumber *_imageSlot;
-    NSNumber *_labelSlot;
-    NSNumber *_secondLabelSlot;
+    NSNumber *_mainLabelSlot;
+    NSNumber *_topLabelSlot;
+    NSNumber *_bottomLabelSlot;
     NSNumber *_transportSlot;
     NSUUID *_nodeIdentifier;
 }
@@ -26,11 +28,13 @@
 + (id)nodeWithImageSlot:(id)arg1 labelSlot:(id)arg2 transportSlot:(id)arg3;
 @property(nonatomic, getter=isRestricted) BOOL restricted; // @synthesize restricted=_restricted;
 @property(nonatomic, getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
+@property(nonatomic) BOOL hasSquareImage; // @synthesize hasSquareImage=_hasSquareImage;
 @property(nonatomic) BOOL wantsTwoLines; // @synthesize wantsTwoLines=_wantsTwoLines;
 @property(retain) NSUUID *nodeIdentifier; // @synthesize nodeIdentifier=_nodeIdentifier;
 @property(retain) NSNumber *transportSlot; // @synthesize transportSlot=_transportSlot;
-@property(retain) NSNumber *secondLabelSlot; // @synthesize secondLabelSlot=_secondLabelSlot;
-@property(retain) NSNumber *labelSlot; // @synthesize labelSlot=_labelSlot;
+@property(retain) NSNumber *bottomLabelSlot; // @synthesize bottomLabelSlot=_bottomLabelSlot;
+@property(retain) NSNumber *topLabelSlot; // @synthesize topLabelSlot=_topLabelSlot;
+@property(retain) NSNumber *mainLabelSlot; // @synthesize mainLabelSlot=_mainLabelSlot;
 @property(retain) NSNumber *imageSlot; // @synthesize imageSlot=_imageSlot;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;

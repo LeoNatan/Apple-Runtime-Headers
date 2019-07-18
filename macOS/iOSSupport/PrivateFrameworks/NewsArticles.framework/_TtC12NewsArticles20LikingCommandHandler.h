@@ -9,6 +9,8 @@
 @interface _TtC12NewsArticles20LikingCommandHandler : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: readingHistory
+    // Error parsing type: , name: bundleSubscriptionManager
+    // Error parsing type: , name: paidAccessChecker
 }
 
 @end

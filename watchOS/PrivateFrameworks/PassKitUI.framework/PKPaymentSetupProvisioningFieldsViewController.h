@@ -10,7 +10,7 @@
 #import <PassKitUI/PKPaymentVerificationControllerDelegate-Protocol.h>
 #import <PassKitUI/UITextFieldDelegate-Protocol.h>
 
-@class CLInUseAssertion, NSString, NSTimer, PKPaymentProvisioningController, PKPaymentSetupFooterView, PKPaymentVerificationController;
+@class CLInUseAssertion, NSString, NSTimer, PKPasscodeUpgradeFlowController, PKPaymentProvisioningController, PKPaymentSetupFooterView, PKPaymentVerificationController;
 
 @interface PKPaymentSetupProvisioningFieldsViewController : PKPaymentSetupFieldsViewController <UITextFieldDelegate, PKPaymentVerificationControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol>
 {
@@ -22,6 +22,7 @@
     CDUnknownBlockType _waitForActivationCompletionHandler;
     NSTimer *_waitForActivationTimer;
     NSString *_activatingPaymentPassUniqueID;
+    PKPasscodeUpgradeFlowController *_passcodeUpgradeFlowController;
     _Bool _hideSetupLaterButton;
     PKPaymentProvisioningController *_paymentProvisioningController;
     CDUnknownBlockType _continueActionHandler;
@@ -52,6 +53,7 @@
 - (void)declineTerms;
 - (void)acceptTerms;
 - (void)displayTermsForEligibility:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)performPasscodeUpgradeIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)displayTermsForTermsURL:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_provisioningLocalizedProgressDescriptionDidChange:(id)arg1;
 - (void)_provisioningStateDidChange:(id)arg1;

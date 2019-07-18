@@ -9,7 +9,7 @@
 #import <BulletinDistributorCompanion/BLTSectionInfoListProviderDelegate-Protocol.h>
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
-@protocol BLTSectionInfoListDelegate, BLTSectionInfoListProvider;
+@protocol BLTSectionInfoListBBProvider, BLTSectionInfoListDelegate, BLTSectionInfoListOverrideProvider;
 
 @interface BLTSectionInfoList : NSObject <BLTSectionInfoListProviderDelegate>
 {
@@ -20,17 +20,17 @@
     _Bool _loading;
     _Bool _loaded;
     id <BLTSectionInfoListDelegate> _delegate;
-    id <BLTSectionInfoListProvider> _overrideProvider;
-    id <BLTSectionInfoListProvider> _sectionInfoProvider;
+    id <BLTSectionInfoListOverrideProvider> _overrideProvider;
+    id <BLTSectionInfoListBBProvider> _sectionInfoProvider;
 }
 
 @property(readonly, nonatomic, getter=hasLoaded) _Bool loaded; // @synthesize loaded=_loaded;
-@property(retain, nonatomic) id <BLTSectionInfoListProvider> sectionInfoProvider; // @synthesize sectionInfoProvider=_sectionInfoProvider;
-@property(retain, nonatomic) id <BLTSectionInfoListProvider> overrideProvider; // @synthesize overrideProvider=_overrideProvider;
+@property(retain, nonatomic) id <BLTSectionInfoListBBProvider> sectionInfoProvider; // @synthesize sectionInfoProvider=_sectionInfoProvider;
+@property(retain, nonatomic) id <BLTSectionInfoListOverrideProvider> overrideProvider; // @synthesize overrideProvider=_overrideProvider;
 @property(nonatomic) __weak id <BLTSectionInfoListDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)reloadBBSection:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_migrateFromExternalDeviceSwitchToOverrides:(id)arg1;
+- (void)_migrateFromExternalDeviceSwitchToOverrides:(id)arg1 sectionID:(id)arg2;
 - (_Bool)hasCustomSettingsSetForSectionID:(id)arg1;
 - (id)sectionOverrideOnlyForSectionID:(id)arg1;
 - (id)sectionOverridesOnly;
@@ -38,12 +38,15 @@
 - (id)originalSettings;
 - (id)overrides;
 - (void)removedSectionWithSectionID:(id)arg1;
-- (void)updateSectionInfo:(id)arg1 withUniversalSectionID:(id)arg2 displayName:(id)arg3;
+- (void)updateSectionInfoForSectionIDs:(id)arg1;
 - (void)updateOverrides:(id)arg1 forSectionID:(id)arg2;
 - (id)universalSectionIDForSectionID:(id)arg1;
 - (id)effectiveSectionInfoForSectionID:(id)arg1;
 - (id)bbSectionInfoForSectionID:(id)arg1;
 - (id)overriddenSectionInfoForSectionID:(id)arg1;
+- (id)_overriddenSectionInfoForSectionID:(id)arg1 originalSectionInfo:(id *)arg2 displayName:(id *)arg3;
+- (id)_sectionInfoFromListItem:(id)arg1 sectionID:(id)arg2 displayName:(id *)arg3;
+- (id)_sectionInfoFromSectionID:(id)arg1 displayName:(id *)arg2;
 - (void)reloadWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateListItem:(id)arg1 overrides:(id)arg2 sectionID:(id)arg3;
 - (id)sectionIDs;

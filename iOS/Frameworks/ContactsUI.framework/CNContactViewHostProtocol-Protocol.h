@@ -9,6 +9,7 @@
 @class CNContact, NSString;
 
 @protocol CNContactViewHostProtocol <NSObject>
+- (void)didExecuteDeleteFromDowntimeWhitelistAction;
 - (void)didExecuteClearRecentsDataAction;
 - (void)viewDidAppear;
 - (void)didChangePreferredContentSize:(struct CGSize)arg1;

@@ -14,6 +14,7 @@
 @protocol CLSInvestigationItem <NSObject, PLRegionsClusteringItem, CLSSimilarlyStackableItem>
 + (id <CLSItemScoringContext>)contextForItems:(NSArray *)arg1;
 @property(readonly) _Bool clsHasInterestingScenes;
+@property(readonly) _Bool clsHasPoorResolution;
 @property(readonly) _Bool clsAvoidIfPossibleForKeyItem;
 @property(readonly) _Bool clsIsInhabited;
 @property(readonly, nonatomic) NSDate *cls_localDate;
@@ -22,6 +23,8 @@
 @property(readonly, nonatomic) VNSceneprint *clsSceneprint;
 @property(readonly, nonatomic) NSData *clsDistanceIdentity;
 @property(readonly, copy, nonatomic) NSSet *clsSceneClassifications;
+@property(readonly, nonatomic) double clsDuration;
+@property(readonly, nonatomic) _Bool clsIsNonMemorable;
 @property(readonly, nonatomic) _Bool clsHasCustomPlaybackVariation;
 @property(readonly, nonatomic) _Bool clsHasInterestingAudioClassification;
 @property(readonly, nonatomic) _Bool clsIsInterestingHDR;
@@ -29,6 +32,8 @@
 @property(readonly, nonatomic) _Bool clsIsInterestingPanorama;
 @property(readonly, nonatomic) _Bool clsIsInterestingLivePhoto;
 @property(readonly, nonatomic) _Bool clsIsInterestingVideo;
+@property(readonly, nonatomic) _Bool clsIsLongExposure;
+@property(readonly, nonatomic) _Bool clsIsLoopOrBounce;
 @property(readonly, nonatomic) _Bool isBlurry;
 @property(readonly, nonatomic) _Bool clsIsAestheticallyPrettyGood;
 @property(readonly, nonatomic) _Bool isVideo;

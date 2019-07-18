@@ -88,9 +88,11 @@
 - (void)_delayedTrackingLoss;
 - (void)_fireTrackingLoss;
 - (void)_UIOrientationDidChangeNotification:(id)arg1;
+- (void)updateInterfaceOrientation;
 - (void)setupOrientation;
 - (void)setInterfaceOrientation:(long long)arg1;
 - (long long)interfaceOrientation;
+- (void)didMoveToWindow;
 - (void)avatarDidChange;
 @property(retain, nonatomic) AVTAvatar *avatar;
 - (id)environment;

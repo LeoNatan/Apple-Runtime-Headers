@@ -11,7 +11,7 @@
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 
-@class CSLPIMinorDetentAssertion, NSCalendar, NSDateFormatter, NSString, NSTimer, NTKSiderealAuxiliaryDialLabels, NTKSiderealDataSource, NTKSiderealDialBackgroundView, NTKSiderealDialView, NTKSiderealSolarContainerView, NTKSiderealSolarOrbitView, NTKSiderealTimeView, NTKWhistlerAnalogFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UILabel, UITapGestureRecognizer, UIView;
+@class CSLPIMinorDetentAssertion, NSCalendar, NSDateFormatter, NSString, NSTimer, NTKFaceViewTapControl, NTKSiderealAuxiliaryDialLabels, NTKSiderealDataSource, NTKSiderealDialBackgroundView, NTKSiderealSolarContainerView, NTKSiderealSolarOrbitView, NTKSiderealTimeView, NTKSiderealWaypointsView, NTKWhistlerAnalogFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UILabel, UIView;
 
 @interface NTKSiderealFaceView : NTKFaceView <NTKTimeView, NTKSiderealDataSourceDelegate, CLKMonochromeFilterProvider, PUICCrownInputSequencerDelegate>
 {
@@ -30,15 +30,15 @@
     float _interactionProgress;
     float _lastTestedWaypointProgress;
     NTKSiderealDialBackgroundView *_dialBackgroundView;
-    NTKSiderealDialView *_dialView;
     NTKSiderealSolarContainerView *_solarContainerView;
     NTKSiderealSolarOrbitView *_solarOrbitView;
+    NTKSiderealWaypointsView *_waypointsView;
     NTKSiderealAuxiliaryDialLabels *_auxiliaryDialLabels;
     NTKSiderealTimeView *_siderealTimeView;
     UILabel *_offsetLabel;
     UIView *_dialDarkeningView;
     NSDateFormatter *_interactiveModeDateFormatter;
-    UITapGestureRecognizer *_viewModeTapGesture;
+    NTKFaceViewTapControl *_viewModeTapButton;
     unsigned int _viewMode;
     unsigned int _previousViewMode;
     unsigned int _transitionState;
@@ -56,11 +56,13 @@
 - (id)colorForView:(id)arg1 accented:(_Bool)arg2;
 - (id)filterForView:(id)arg1 style:(int)arg2;
 - (id)filterForView:(id)arg1 style:(int)arg2 fraction:(float)arg3;
-- (id)_dateForProgress:(float)arg1 fromDate:(id)arg2;
 - (float)_idealizedSolarDayProgress;
 - (float)_solarDayProgressForCurrentTime;
+- (struct CGImage *)newImageRefFromView:(id)arg1;
+- (struct CGImage *)newWaypointViewAsImageRef;
+- (struct CGImage *)newDialViewAsImageRef;
 - (id)_customEditOptionContainerViewForSlot:(id)arg1;
-- (id)_curvedPickerMaskForSlot:(id)arg1;
+- (id)_pickerMaskForSlot:(id)arg1;
 - (int)_complicationPickerStyleForSlot:(id)arg1;
 - (int)_legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
@@ -98,6 +100,7 @@
 - (void)_cleanupAfterSettingViewMode:(unsigned int)arg1;
 - (void)_interpolateFromViewMode:(unsigned int)arg1 toViewMode:(unsigned int)arg2 progress:(float)arg3;
 - (void)_prepareForSettingViewMode:(unsigned int)arg1 animated:(_Bool)arg2;
+- (void)_setViewMode:(unsigned int)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setViewMode:(unsigned int)arg1 animated:(_Bool)arg2;
 - (void)_handleViewModeTapGesture:(id)arg1;
 - (_Bool)_canEnterInteractiveMode;
@@ -107,7 +110,7 @@
 - (void)_forceSolarDayUpdate;
 - (void)_setSolarDayProgress:(float)arg1;
 - (void)_updateSolarDayMask;
-- (void)didUpdateSolarIntervals:(id)arg1 andWaypoints:(id)arg2;
+- (void)dataSourceDidUpdateSolarData;
 - (void)_updateLocale;
 - (void)_asyncUpdateLocale;
 - (void)_timeZoneChanged:(id)arg1;
@@ -117,7 +120,7 @@
 - (void)_timeDidUpdate:(id)arg1;
 - (void)_stopClockUpdates;
 - (void)_startClockUpdates;
-- (id)_currentTime;
+- (id)_faceDisplayTime;
 - (void)_detentIfNecessaryForOffset:(float)arg1;
 - (void)_disableDetents;
 - (void)_enableDetents;
@@ -135,6 +138,9 @@
 - (void)_performWristRaiseAnimation;
 - (void)_prepareWristRaiseAnimation;
 - (void)_applyDataMode;
+- (void)setDataMode:(int)arg1;
+- (void)_finalizeForSnapshotting:(CDUnknownBlockType)arg1;
+- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (_Bool)_supportsTimeScrubbing;
 - (_Bool)_wantsMinorDetents;
 - (void)handleScreenBlanked;
@@ -147,6 +153,7 @@
 - (void)_loadSolarViews;
 - (void)_loadSolarOrbit;
 - (void)_loadDial;
+- (void)_unloadUI;
 - (void)_loadUI;
 - (void)dealloc;
 - (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;

@@ -10,12 +10,12 @@
 #import <FinderKit/QLSeamlessCloserDelegate-Protocol.h>
 #import <FinderKit/TQLPreviewWindowControllerProtocol-Protocol.h>
 
-@class FI_TQLPreviewView, NSString;
+@class NSString, QLPreviewView;
 
 __attribute__((visibility("hidden")))
 @interface FI_TQLPreviewViewZoomController : NSObject <ISpawnOriginDelegateProtocol, TQLPreviewWindowControllerProtocol, QLSeamlessCloserDelegate>
 {
-    FI_TQLPreviewView *_previewView;
+    QLPreviewView *_qlPreviewView;
 }
 
 - (void).cxx_destruct;

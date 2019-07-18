@@ -39,8 +39,10 @@
 - (void)updateProxy;
 - (float)_confidenceInPersonRecord:(id)arg1 forName:(id)arg2 components:(id)arg3;
 - (float)_fuzzyMatchingScoreBetweenNameComponents:(id)arg1 andNameComponents:(id)arg2;
+- (id)contactHistoryCollector;
+- (id)enumeratorForChangeHistoryFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)potentialBirthdayDateForCNIdentifier:(id)arg1 fullName:(id)arg2;
-- (void)enumeratePersonsAndPotentialBirthdayDateUsingBlock:(CDUnknownBlockType)arg1;
+- (void)enumeratePersonsAndPotentialBirthdayDateForContactIdentifiers:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)suggestionsService;
 - (void)configureRequest:(id)arg1 algorithmUmbrellaVersion:(unsigned int)arg2;
 - (unsigned long long)_ageCategoryFromFaceAgeType:(unsigned short)arg1;

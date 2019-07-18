@@ -6,7 +6,7 @@
 
 #import <PowerlogCore/PLAgent.h>
 
-@class NSDate, PLEntry, PLEntryNotificationOperatorComposition, PLNSNotificationOperatorComposition, PLXPCListenerOperatorComposition, PLXPCResponderOperatorComposition;
+@class NSDate, PLEntry, PLNSNotificationOperatorComposition, PLXPCListenerOperatorComposition, PLXPCResponderOperatorComposition;
 
 @interface PLXPCAgent : PLAgent
 {
@@ -15,6 +15,7 @@
     PLXPCListenerOperatorComposition *_UIKitActivityXPCListener;
     PLXPCListenerOperatorComposition *_UIKitAlertXPCListener;
     PLXPCListenerOperatorComposition *_UIKitEclipseXPCListener;
+    PLXPCListenerOperatorComposition *_SecondaryDisplayXPCListener;
     PLXPCListenerOperatorComposition *_DASyncStartXPCListener;
     PLXPCListenerOperatorComposition *_DACalendarItemsDownloadedXPCListener;
     PLXPCListenerOperatorComposition *_DACalendarItemsUploadedXPCListener;
@@ -77,15 +78,14 @@
     PLXPCListenerOperatorComposition *_CoreDuetKnowledgeSyncXPCListener;
     PLXPCListenerOperatorComposition *_AppleBacklightBrightnessXPCListener;
     PLXPCListenerOperatorComposition *_ShortcutsTriggerFiredXPCListener;
-    PLEntryNotificationOperatorComposition *_SBCXPCListener;
-    PLXPCListenerOperatorComposition *_sensitiveUISettingXPCListener;
-    PLEntry *_lastSensitiveUISettingEntry;
+    PLXPCListenerOperatorComposition *_RapportReceivedMessageXPCListener;
     PLXPCListenerOperatorComposition *_DosimetryXPCListener;
     PLEntry *_lastDosimetryEntry;
 }
 
 + (id)entryAggregateDefinitions;
 + (id)entryEventNoneDefinitions;
++ (id)entryEventIntervalDefinitionRapportReceivedMessage;
 + (id)entryEventIntervalDefinitionCoreDuetKnowledgeSync;
 + (id)entryEventIntervalDefinitionAirTrafficAssetDownload;
 + (id)entryEventIntervalDefinitions;
@@ -104,8 +104,6 @@
 + (id)entryEventBackwardDefinitionSiriFalseAlarm;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitionsDosimetry;
-+ (id)entryEventForwardDefinitionsSensitiveUISetting;
-+ (BOOL)shouldLogSensitiveUISetting;
 + (id)entryEventForwardDefinitionAppleBacklightBrightness;
 + (id)entryEventForwardDefinitionSOSKVSRateLimitingEvent;
 + (id)entryEventForwardDefinitionThermalHiP;
@@ -119,6 +117,7 @@
 + (id)entryEventForwardDefinitionSafariFetcher;
 + (id)entryEventForwardDefinitionUIKitAlert;
 + (id)entryEventForwardDefinitionUIKitActivity;
++ (id)entryEventForwardDefinitionSecondaryDisplay;
 + (id)entryEventForwardDefinitionUIKitEclipse;
 + (id)entryEventForwardDefinitionUIKitKeyboard;
 + (id)entryEventForwardDefinitions;
@@ -162,9 +161,7 @@
 + (void)load;
 @property(retain) PLEntry *lastDosimetryEntry; // @synthesize lastDosimetryEntry=_lastDosimetryEntry;
 @property(retain) PLXPCListenerOperatorComposition *DosimetryXPCListener; // @synthesize DosimetryXPCListener=_DosimetryXPCListener;
-@property(retain) PLEntry *lastSensitiveUISettingEntry; // @synthesize lastSensitiveUISettingEntry=_lastSensitiveUISettingEntry;
-@property(retain) PLXPCListenerOperatorComposition *sensitiveUISettingXPCListener; // @synthesize sensitiveUISettingXPCListener=_sensitiveUISettingXPCListener;
-@property(retain) PLEntryNotificationOperatorComposition *SBCXPCListener; // @synthesize SBCXPCListener=_SBCXPCListener;
+@property(retain) PLXPCListenerOperatorComposition *RapportReceivedMessageXPCListener; // @synthesize RapportReceivedMessageXPCListener=_RapportReceivedMessageXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *ShortcutsTriggerFiredXPCListener; // @synthesize ShortcutsTriggerFiredXPCListener=_ShortcutsTriggerFiredXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *AppleBacklightBrightnessXPCListener; // @synthesize AppleBacklightBrightnessXPCListener=_AppleBacklightBrightnessXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *CoreDuetKnowledgeSyncXPCListener; // @synthesize CoreDuetKnowledgeSyncXPCListener=_CoreDuetKnowledgeSyncXPCListener;
@@ -227,6 +224,7 @@
 @property(retain) PLXPCListenerOperatorComposition *DACalendarItemsUploadedXPCListener; // @synthesize DACalendarItemsUploadedXPCListener=_DACalendarItemsUploadedXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *DACalendarItemsDownloadedXPCListener; // @synthesize DACalendarItemsDownloadedXPCListener=_DACalendarItemsDownloadedXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *DASyncStartXPCListener; // @synthesize DASyncStartXPCListener=_DASyncStartXPCListener;
+@property(retain) PLXPCListenerOperatorComposition *SecondaryDisplayXPCListener; // @synthesize SecondaryDisplayXPCListener=_SecondaryDisplayXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *UIKitEclipseXPCListener; // @synthesize UIKitEclipseXPCListener=_UIKitEclipseXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *UIKitAlertXPCListener; // @synthesize UIKitAlertXPCListener=_UIKitAlertXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *UIKitActivityXPCListener; // @synthesize UIKitActivityXPCListener=_UIKitActivityXPCListener;
@@ -236,6 +234,7 @@
 - (void)createInCallServiceAccountingEvent:(id)arg1;
 - (void)createAirDropAccountingEvent:(id)arg1;
 - (void)createAccessoryAccountingEventWithName:(id)arg1 isStartEvent:(BOOL)arg2;
+- (void)logEventIntervalRapportReceivedMessage:(id)arg1;
 - (void)logEventIntervalCoreDuetKnowledgeSync:(id)arg1;
 - (void)logEventIntervalAirTrafficAssetDownload:(id)arg1;
 - (void)logEventPointCacheDelete:(id)arg1;
@@ -254,7 +253,6 @@
 - (void)logEventBackwardNameSpotlight:(id)arg1;
 - (void)logEventBackwardNameMediaServerdRTC:(id)arg1;
 - (void)logEventForwardDosimetry:(id)arg1;
-- (void)logEventForwardSensitiveUISetting:(id)arg1;
 - (void)logEventForwardThermalLevel:(id)arg1;
 - (void)logEventForwardWebApp:(id)arg1;
 - (void)logEventForwardInCallService:(id)arg1;
@@ -264,6 +262,7 @@
 - (void)logEventForwardSafariFetcherStatus:(id)arg1;
 - (void)logEventForwardUIKitAlert:(id)arg1;
 - (void)logEventForwardUIKitActivity:(id)arg1;
+- (void)logEventForwardSecondaryDisplay:(id)arg1;
 - (void)logEventForwardUIKitEclipse:(id)arg1;
 - (void)logEventForwardUIKitKeyboard:(id)arg1;
 - (void)handleCKKSSyncingEvent:(id)arg1;

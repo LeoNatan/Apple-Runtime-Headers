@@ -15,12 +15,12 @@
 
 @interface PKAccountFlowController : NSObject <PKAccountProvisioningControllerDelegate, PKFeatureDisplayableErrorProvider, PKSetupFlowControllerProtocol>
 {
+    PKAccountProvisioningController *_accountProvisioningController;
     PKAccount *_account;
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
     long long _context;
     PKAccountService *_accountService;
     unsigned long long _postProvisoningContentIndex;
-    PKAccountProvisioningController *_accountProvisioningController;
     unsigned long long _madeDefault;
     _Bool _endedProvisioningFlow;
     PKAssertion *_notificationSupressionAssertion;
@@ -46,7 +46,7 @@
 - (void)_resetPostProvisioningContent;
 - (void)_nextPostProvisioningViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)endProvisioningFlow;
-- (id)accountProvisioningController;
+@property(readonly, nonatomic) PKAccountProvisioningController *accountProvisioningController;
 - (void)_requestPresentationOfActiviationViewControllerShowingMadeDefault:(_Bool)arg1;
 - (void)_accountProvisoningControllerRequiresNextViewController:(id)arg1;
 - (void)_checkAccountProvisioningControllerState:(id)arg1;

@@ -11,6 +11,8 @@
 }
 
 - (unsigned int)_validateQuantity:(id)arg1 withAbsoluteRange:(id)arg2 confirmRange:(id)arg3;
+- (unsigned int)validateMinimumAllowedDuration:(double)arg1 ofType:(id)arg2;
+- (unsigned int)validateMaximumAllowedDuration:(double)arg1 ofType:(id)arg2;
 - (unsigned int)validateWorkoutEnergyBurned:(id)arg1;
 - (unsigned int)validateWorkoutDistance:(id)arg1;
 - (unsigned int)validateQuantity:(id)arg1 ofType:(id)arg2;

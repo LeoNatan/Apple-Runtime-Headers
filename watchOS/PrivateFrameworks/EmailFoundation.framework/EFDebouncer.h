@@ -22,7 +22,7 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)debounceResult:(id)arg1;
-- (id)initWithTimeInterval:(double)arg1 scheduler:(id)arg2 block:(CDUnknownBlockType)arg3;
+- (id)initWithTimeInterval:(double)arg1 scheduler:(id)arg2 startAfter:(unsigned int)arg3 block:(CDUnknownBlockType)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

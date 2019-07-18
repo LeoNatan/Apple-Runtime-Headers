@@ -16,6 +16,7 @@
 + (id)colorWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 + (id)colorWithWhite:(double)arg1 alpha:(double)arg2;
 + (id)pinkColor;
++ (id)blackColor;
 + (id)whiteColor;
 - (id)_rgbColor;
 - (struct CAColorMatrix)sourceOverColorMatrix;

@@ -31,7 +31,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (BOOL)requiresQueryId;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

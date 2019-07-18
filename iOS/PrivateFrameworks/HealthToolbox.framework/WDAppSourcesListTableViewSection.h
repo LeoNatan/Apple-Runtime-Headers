@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (id)_uninstalledSourcesCellWithTableView:(id)arg1;
 - (id)_sourceCellForRow:(unsigned long long)arg1 tableView:(id)arg2;
 - (id)cellForRow:(unsigned long long)arg1 table:(id)arg2;
+- (id)noneString;
 - (id)titleForFooter;
 - (id)titleForHeader;
 - (unsigned long long)numberOfRows;

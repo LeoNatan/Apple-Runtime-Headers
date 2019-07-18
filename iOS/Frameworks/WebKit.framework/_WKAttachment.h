@@ -23,6 +23,7 @@
 - (void)requestInfo:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _WKAttachmentInfo *info;
 @property(readonly) struct Object *_apiObject;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

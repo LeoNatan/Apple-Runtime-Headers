@@ -28,6 +28,7 @@
 
 + (unsigned int)directionsTypeForMapItem:(id)arg1 delegate:(id)arg2 mapType:(unsigned int)arg3;
 + (unsigned int)counterpartForTransportType:(unsigned int)arg1;
++ (_Bool)isLikelyToReturnETAForLocation:(id)arg1;
 + (double)_maxDistanceToRequestETA;
 @property(nonatomic) _Bool fetchAllTransportTypes; // @synthesize fetchAllTransportTypes=_fetchAllTransportTypes;
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;

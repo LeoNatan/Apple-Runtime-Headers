@@ -63,6 +63,8 @@
 - (void)goToFirstElement;
 - (void)goToPreviousElementOfType:(unsigned long long)arg1;
 - (void)goToNextElementOfType:(unsigned long long)arg1;
+- (void)didPerformStandardCommandWithIdentifier:(id)arg1;
+- (void)willPerformStandardCommandWithIdentifier:(id)arg1;
 - (void)handleCommand:(id)arg1;
 - (BOOL)isInteractive;
 

@@ -16,6 +16,7 @@
     _Bool _isUpdating;
     _Bool _didAlreadyUpdateLoadedItems;
     _Bool _enableBestCropRect;
+    _Bool _fillSafeAreaTopInset;
     int _mediaKind;
     int _presentationType;
     double _interItemSpacing;
@@ -33,6 +34,7 @@
 @property(nonatomic) long long anchorItem; // @synthesize anchorItem=_anchorItem;
 @property(nonatomic) struct CGPoint anchorViewportCenter; // @synthesize anchorViewportCenter=_anchorViewportCenter;
 @property(retain, nonatomic) id anchorObjectReference; // @synthesize anchorObjectReference=_anchorObjectReference;
+@property(nonatomic) _Bool fillSafeAreaTopInset; // @synthesize fillSafeAreaTopInset=_fillSafeAreaTopInset;
 @property(nonatomic) double aspectRatioLimit; // @synthesize aspectRatioLimit=_aspectRatioLimit;
 @property(nonatomic) double overrideAspectRatioAmount; // @synthesize overrideAspectRatioAmount=_overrideAspectRatioAmount;
 @property(nonatomic) double overrideAspectRatio; // @synthesize overrideAspectRatio=_overrideAspectRatio;
@@ -68,7 +70,6 @@
 @property(readonly, copy) NSString *description;
 - (id)init;
 @property(readonly, nonatomic) struct CGRect loadedItemsRect;
-@property(nonatomic) _Bool fillSafeAreaInsets;
 @property(nonatomic) _Bool hideIncompleteLastRow;
 @property(readonly, nonatomic) long long visualItemShift;
 - (_Bool)shiftItem:(long long)arg1 toColumn:(long long)arg2 hideIncompleteRows:(_Bool)arg3;

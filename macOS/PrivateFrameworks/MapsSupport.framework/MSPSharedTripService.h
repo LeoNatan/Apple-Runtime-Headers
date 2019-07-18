@@ -29,6 +29,7 @@
 - (void)sendMessage:(id)arg1 toParticipant:(id)arg2;
 - (void)sharedTripInvalidatedWithError:(id)arg1;
 - (void)_insertOrUpdateTrip:(id)arg1;
+- (void)sharedTripDidClose:(id)arg1;
 - (void)sharedTripDidBecomeUnavailable:(id)arg1;
 - (void)routeDidUpdateForSharedTrip:(id)arg1;
 - (void)etaDidUpdateForSharedTrip:(id)arg1;

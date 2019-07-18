@@ -21,6 +21,7 @@
 + (int)stateForPath:(id)arg1;
 + (id)validateVolumeAtPath:(id)arg1;
 + (id)rootVolume;
++ (id)mountPointForUUID:(id)arg1;
 + (id)volumeWithMountpoint:(id)arg1;
 + (id)volumeWithPath:(id)arg1;
 @property(readonly) unsigned int block_size; // @synthesize block_size=_block_size;

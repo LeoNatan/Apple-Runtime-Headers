@@ -191,7 +191,7 @@
 - (void)updateCurrentTimeIfPlayingWithSystemTime:(double)arg1;
 - (void)set_privateRendererShouldForwardSceneRendererDelegationMessagesToOwner:(_Bool)arg1;
 - (_Bool)_privateRendererShouldForwardSceneRendererDelegationMessagesToOwner;
-@property(nonatomic) id <SCNSceneRendererDelegate> delegate;
+@property(nonatomic) __weak id <SCNSceneRendererDelegate> delegate;
 - (void)_updateEngineCallbacks;
 - (id)programWithNode:(id)arg1 withMaterial:(id)arg2;
 - (void)prepareObjects:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

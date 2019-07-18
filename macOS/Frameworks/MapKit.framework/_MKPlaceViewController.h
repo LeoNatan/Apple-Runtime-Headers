@@ -112,7 +112,7 @@
 - (void)placeCardActionControllerDidSelectRemoveFromFavorites:(id)arg1;
 - (void)placeCardActionControllerDidSelectAddToFavorites:(id)arg1;
 - (void)placeCardActionControllerDidSelectAddToContacts:(id)arg1 fromView:(id)arg2;
-- (void)placeCardActionControllerDidSelectReportAProblem:(id)arg1;
+- (void)placeCardActionControllerDidSelectReportAProblem:(id)arg1 fromView:(id)arg2;
 - (id)transitDeparturesViewControllerTraits:(id)arg1;
 - (void)transitDeparturesViewController:(id)arg1 didSelectTransitLine:(id)arg2 fromCell:(id)arg3;
 - (void)transitDeparturesViewController:(id)arg1 didSelectDepartureSequence:(id)arg2 transitMapItem:(id)arg3 transitLine:(id)arg4 fromCell:(id)arg5;

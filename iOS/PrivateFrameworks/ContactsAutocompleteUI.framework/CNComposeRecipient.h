@@ -11,13 +11,12 @@
 #import <ContactsAutocompleteUI/NSItemProviderWriting-Protocol.h>
 #import <ContactsAutocompleteUI/NSSecureCoding-Protocol.h>
 
-@class CNAutocompleteResult, CNComposeRecipientOriginContext, CNContact, NSArray, NSString;
+@class CNAutocompleteResult, CNComposeRecipientOriginContext, CNContact, NSArray, NSPersonNameComponents, NSString;
 
 @interface CNComposeRecipient : NSObject <NSItemProviderReading, NSItemProviderWriting, NSCopying, NSSecureCoding>
 {
     _Bool _isMemberOfGroup;
     CNComposeRecipientOriginContext *_originContext;
-    unsigned long long _sourceType;
     NSString *_address;
     unsigned long long _kind;
     NSString *_countryCode;
@@ -33,6 +32,7 @@
     NSString *_label;
     NSString *_displayString;
     CNAutocompleteResult *_autocompleteResult;
+    NSPersonNameComponents *_nameComponents;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -42,6 +42,7 @@
 + (id)writableTypeIdentifiersForItemProvider;
 + (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
 + (id)readableTypeIdentifiersForItemProvider;
+@property(retain, nonatomic) NSPersonNameComponents *nameComponents; // @synthesize nameComponents=_nameComponents;
 @property(retain, nonatomic) CNAutocompleteResult *autocompleteResult; // @synthesize autocompleteResult=_autocompleteResult;
 @property(copy, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
@@ -58,7 +59,6 @@
 @property(copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(readonly, nonatomic) unsigned long long kind; // @synthesize kind=_kind;
 @property(copy, nonatomic) NSString *address; // @synthesize address=_address;
-@property(nonatomic) unsigned long long sourceType; // @synthesize sourceType=_sourceType;
 @property(retain, nonatomic) CNComposeRecipientOriginContext *originContext; // @synthesize originContext=_originContext;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
@@ -84,6 +84,7 @@
 - (id)sortedChildren;
 - (id)children;
 - (id)rawDisplayString;
+@property(readonly, nonatomic) unsigned long long sourceType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

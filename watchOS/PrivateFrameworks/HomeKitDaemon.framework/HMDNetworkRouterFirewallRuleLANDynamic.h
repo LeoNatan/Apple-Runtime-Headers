@@ -6,11 +6,9 @@
 
 #import <HomeKitDaemon/HMDNetworkRouterFirewallRuleLAN.h>
 
-#import <HomeKitDaemon/HMDNetworkRouterFirewallRuleLANDynamic-Protocol.h>
+@class NSString;
 
-@class NSDictionary, NSString;
-
-@interface HMDNetworkRouterFirewallRuleLANDynamic : HMDNetworkRouterFirewallRuleLAN <HMDNetworkRouterFirewallRuleLANDynamic>
+@interface HMDNetworkRouterFirewallRuleLANDynamic : HMDNetworkRouterFirewallRuleLAN
 {
     unsigned char _transportProtocol;
     unsigned char _advertisingProtocol;
@@ -18,6 +16,7 @@
     NSString *_serviceType;
 }
 
++ (id)createWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(_Bool)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(_Bool)arg7 ruleDictionary:(struct NSDictionary *)arg8;
 + (_Bool)__decodeFlags:(struct NSDictionary *)arg1 advertisingOnly:(_Bool *)arg2;
 + (_Bool)__decodeAdvertisingProtocol:(struct NSDictionary *)arg1 advertisingProtocol:(unsigned char *)arg2;
 + (id)__advertisingProtocolToString:(unsigned char)arg1;
@@ -26,22 +25,9 @@
 @property(readonly, nonatomic) unsigned char advertisingProtocol; // @synthesize advertisingProtocol=_advertisingProtocol;
 @property(readonly, nonatomic) unsigned char transportProtocol; // @synthesize transportProtocol=_transportProtocol;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSDictionary *prettyJSONDictionary;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(_Bool)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(_Bool)arg7;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(_Bool)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(_Bool)arg7 ruleDictionary:(struct NSDictionary *)arg8;
+- (struct NSDictionary *)prettyJSONDictionary;
+- (id)attributeDescriptions;
 - (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(_Bool)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(_Bool)arg7 transportProtocol:(unsigned char)arg8 advertisingProtocol:(unsigned char)arg9 advertisingOnly:(_Bool)arg10 serviceType:(id)arg11;
-
-// Remaining properties
-@property(readonly, nonatomic, getter=areConnectionsWithOtherAccessoriesAllowed) _Bool allowInterAccessoryConnections;
-@property(readonly, nonatomic, getter=isCritical) _Bool critical;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) unsigned char direction;
-@property(readonly) unsigned int hash;
-@property(readonly, nonatomic) NSString *name;
-@property(readonly, nonatomic) unsigned long long purpose;
-@property(readonly, nonatomic, getter=isRequiredForHAPFunctionality) _Bool requiredForHAPFunctionality;
-@property(readonly) Class superclass;
 
 @end
 

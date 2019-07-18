@@ -21,12 +21,14 @@
     } _has;
     _Bool _confirm;
     _Bool _success;
+    _Bool __encodeLegacyGloryData;
     NSArray *_recipients;
     int _shareMode;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)recipientsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(nonatomic) int shareMode; // @synthesize shareMode=_shareMode;
 @property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;

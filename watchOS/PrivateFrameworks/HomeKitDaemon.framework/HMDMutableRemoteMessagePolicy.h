@@ -13,6 +13,7 @@
 @property unsigned int roles; // @dynamic roles;
 @property unsigned int transportRestriction; // @dynamic transportRestriction;
 @property _Bool requiresAccountMessage; // @dynamic requiresAccountMessage;
+@property _Bool allowsAnonymousMessage; // @dynamic allowsAnonymousMessage;
 @property _Bool requiresSecureMessage; // @dynamic requiresSecureMessage;
 
 @end

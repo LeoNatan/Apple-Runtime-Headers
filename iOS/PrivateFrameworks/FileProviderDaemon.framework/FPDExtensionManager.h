@@ -12,7 +12,6 @@
 __attribute__((visibility("hidden")))
 @interface FPDExtensionManager : NSObject
 {
-    NSObject<OS_dispatch_queue> *_providersQueue;
     NSMutableDictionary *_providersByIdentifier;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSObject<OS_dispatch_group> *_providersLoadedGroup;
@@ -35,7 +34,8 @@ __attribute__((visibility("hidden")))
 - (id)alternateContentsDictionaryForProviderIdentifier:(id)arg1;
 - (id)alternateContentsURLForItemID:(id)arg1;
 - (void)setAlternateContentsURL:(id)arg1 forItemID:(id)arg2;
-- (id)providerWithOwningApplicationIdentifier:(id)arg1;
+- (id)providerWithTopLevelBundleIdentifier:(id)arg1;
+- (id)domainForActionOperationLocator:(id)arg1;
 - (id)_domainForURL:(id)arg1;
 - (id)domainForURL:(id)arg1;
 - (id)domainFromItemID:(id)arg1;

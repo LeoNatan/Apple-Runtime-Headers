@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned char)landmarkDetectorDNNVersion;
+- (id)processWithOptions:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 error:(id *)arg4;
 - (id)espressoModelInputImageDimensionsBlobNameForConfigurationOptions:(id)arg1;
 - (id)espressoModelFileNameForConfigurationOptions:(id)arg1;
 

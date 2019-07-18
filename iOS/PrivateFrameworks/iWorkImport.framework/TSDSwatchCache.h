@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 - (id)imageForMoviePreset:(id)arg1 imageSize:(struct CGSize)arg2 imageScale:(double)arg3 movieInfo:(id)arg4 shouldClipVertically:(_Bool)arg5 documentRoot:(id)arg6 renderForWideGamut:(_Bool)arg7;
 - (id)p_thumbnailImageDataForImageData:(id)arg1;
 - (id)p_maskInfoForMovieInfo:(id)arg1 context:(id)arg2;
-- (struct CGSize)swatchInsetForShapeStyle:(id)arg1 shapeType:(int)arg2;
+- (struct CGSize)swatchInsetForShapeStyle:(id)arg1 shapeType:(long long)arg2;
 - (struct CGSize)imageSizeForPreset:(id)arg1 swatchSize:(struct CGSize)arg2;
 - (struct CGImage *)p_newImageWithConnectionLineKnobsForShape:(id)arg1 atScale:(double)arg2 ofSize:(struct CGSize)arg3 overImage:(struct CGImage *)arg4;
 - (id)imageForImagePreset:(id)arg1 imageSize:(struct CGSize)arg2 imageScale:(double)arg3 imageInfo:(id)arg4 shouldClipVertically:(_Bool)arg5 documentRoot:(id)arg6 renderForWideGamut:(_Bool)arg7;
-- (id)imageForShapePreset:(id)arg1 imageSize:(struct CGSize)arg2 imageScale:(double)arg3 shapeType:(int)arg4 shapePathSource:(id)arg5 angle:(double)arg6 backgroundAppearance:(unsigned long long)arg7 documentRoot:(id)arg8 renderForWideGamut:(_Bool)arg9;
+- (id)imageForShapePreset:(id)arg1 imageSize:(struct CGSize)arg2 imageScale:(double)arg3 shapeType:(long long)arg4 shapePathSource:(id)arg5 angle:(double)arg6 backgroundAppearance:(unsigned long long)arg7 documentRoot:(id)arg8 renderForWideGamut:(_Bool)arg9;
 - (struct CGSize)shapeSwatchInset;
 - (void)warmStyle:(id)arg1 withFillProperty:(int)arg2 documentRoot:(id)arg3;
 - (void)dealloc;

@@ -13,7 +13,6 @@
     WFDatabase *_database;
 }
 
-+ (void)initialize;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
 - (_Bool)isPhraseUsable:(id)arg1 inDatabase:(id)arg2 error:(id *)arg3;
@@ -22,7 +21,7 @@
 - (void)validatePhrases:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteVoiceShortcutWithIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateVoiceShortcutWithIdentifier:(id)arg1 phrase:(id)arg2 shortcut:(id)arg3 accessSpecifier:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)addVoiceShortcut:(id)arg1 phrase:(id)arg2 accessSpecifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)createVoiceShortcut:(id)arg1 phrase:(id)arg2 accessSpecifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)getInactiveAppsWithAccessSpecifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getVoiceShortcutsForAppsWithBundleIdentifiers:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getVoiceShortcutsWithAccessSpecifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

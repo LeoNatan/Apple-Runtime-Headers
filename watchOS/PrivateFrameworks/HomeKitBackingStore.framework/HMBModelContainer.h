@@ -9,18 +9,21 @@
 #import <HomeKitBackingStore/NSCopying-Protocol.h>
 #import <HomeKitBackingStore/NSMutableCopying-Protocol.h>
 
-@class HMBLocalZone, HMFVersion, NSMapTable;
+@class HMBLocalZone, HMFUnfairLock, HMFVersion, NSMapTable;
 @protocol HMBMirrorProtocol;
 
 @interface HMBModelContainer : HMFObject <NSMutableCopying, NSCopying>
 {
     HMFVersion *_legacyDataVersion;
     HMFVersion *_dataVersion;
+    HMFUnfairLock *_propertyLock;
     HMBLocalZone *_localZone;
     id <HMBMirrorProtocol> _mirror;
     NSMapTable *_classToNameTransform;
     NSMapTable *_nameToClassTransform;
     NSMapTable *_objectPropertyHashLookup;
+    NSMapTable *_classReadOnlyVersionCache;
+    NSMapTable *_classUnavailableVersionCache;
 }
 
 + (id)decodeAsNSDictionary:(id)arg1 error:(id *)arg2;
@@ -29,11 +32,14 @@
 + (id)encodeAsOPACK:(id)arg1 error:(id *)arg2;
 + (id)internalAllowedTypes;
 + (id)allowedTypes;
+@property(retain, nonatomic) NSMapTable *classUnavailableVersionCache; // @synthesize classUnavailableVersionCache=_classUnavailableVersionCache;
+@property(retain, nonatomic) NSMapTable *classReadOnlyVersionCache; // @synthesize classReadOnlyVersionCache=_classReadOnlyVersionCache;
 @property(retain, nonatomic) NSMapTable *objectPropertyHashLookup; // @synthesize objectPropertyHashLookup=_objectPropertyHashLookup;
 @property(copy, nonatomic) NSMapTable *nameToClassTransform; // @synthesize nameToClassTransform=_nameToClassTransform;
 @property(copy, nonatomic) NSMapTable *classToNameTransform; // @synthesize classToNameTransform=_classToNameTransform;
 @property(readonly, nonatomic) __weak id <HMBMirrorProtocol> mirror; // @synthesize mirror=_mirror;
 @property(readonly, nonatomic) __weak HMBLocalZone *localZone; // @synthesize localZone=_localZone;
+@property(readonly, nonatomic) HMFUnfairLock *propertyLock; // @synthesize propertyLock=_propertyLock;
 @property(readonly, copy, nonatomic) HMFVersion *dataVersion; // @synthesize dataVersion=_dataVersion;
 @property(readonly, copy, nonatomic) HMFVersion *legacyDataVersion; // @synthesize legacyDataVersion=_legacyDataVersion;
 - (void).cxx_destruct;
@@ -50,6 +56,8 @@
 - (id)typeNameForModelClass:(Class)arg1;
 - (id)encodeForSibling:(id)arg1 error:(id *)arg2;
 - (unsigned int)bestModelEncodingFor:(unsigned int)arg1;
+- (id)unavailableVersionsForModelClass:(Class)arg1;
+- (id)readOnlyVersionsForModelClass:(Class)arg1;
 - (id)initWithDataVersion:(id)arg1 legacyDataVersion:(id)arg2;
 - (id)init;
 

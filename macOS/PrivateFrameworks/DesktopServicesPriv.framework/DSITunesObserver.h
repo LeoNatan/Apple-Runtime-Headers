@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)nameChangedForDevice:(id)arg1;
 - (void)deviceAttached:(id)arg1;
 - (void)syncDeviceList;
+- (id)copyCollection;
 - (TNSRef_16a0d36a)iTuneDevices;
 - (void)stopObserving;
 - (void)startObserving;

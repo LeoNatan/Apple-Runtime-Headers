@@ -11,7 +11,7 @@
 #import <HMFoundation/HMFTimerDelegate-Protocol.h>
 #import <HMFoundation/NSURLSessionDelegate-Protocol.h>
 
-@class HMFExponentialBackoffTimer, HMFNetMonitor, HMFNetService, NSObject, NSOperationQueue, NSString, NSURL, NSURLSession;
+@class HMFExponentialBackoffTimer, HMFHTTPClientConfiguration, HMFNetMonitor, HMFNetService, NSObject, NSOperationQueue, NSString, NSURL, NSURLSession;
 @protocol HMFHTTPClientDelegate, HMFLocking, OS_dispatch_queue;
 
 @interface HMFHTTPClient : HMFObject <HMFLogging, HMFNetMonitorDelegate, HMFTimerDelegate, NSURLSessionDelegate>
@@ -22,10 +22,10 @@
     _Bool _pinging;
     _Bool _allowAnonymousConnection;
     _Bool _active;
+    HMFHTTPClientConfiguration *_configuration;
     NSURL *_baseURL;
     id <HMFHTTPClientDelegate> _delegate;
     HMFNetService *_netService;
-    unsigned int _options;
     NSURLSession *_session;
     HMFNetMonitor *_reachabilityMonitor;
     NSOperationQueue *_reachabilityProbeQueue;
@@ -40,7 +40,6 @@
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(nonatomic) _Bool allowAnonymousConnection; // @synthesize allowAnonymousConnection=_allowAnonymousConnection;
-@property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) HMFNetService *netService; // @synthesize netService=_netService;
 @property __weak id <HMFHTTPClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -61,11 +60,14 @@
 @property(nonatomic, getter=isPinging) _Bool pinging; // @synthesize pinging=_pinging;
 @property(nonatomic, getter=isReachable) _Bool reachable; // @synthesize reachable=_reachable;
 @property(readonly, copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
-- (_Bool)isValid;
+@property(readonly, nonatomic) unsigned int options;
+@property(readonly, copy) HMFHTTPClientConfiguration *configuration; // @synthesize configuration=_configuration;
 - (id)attributeDescriptions;
 - (void)dealloc;
-- (void)__initializeWithOptions:(unsigned int)arg1;
+- (void)__initializeWithConfiguration:(id)arg1;
+- (id)initWithService:(id)arg1 configuration:(id)arg2;
 - (id)initWithNetService:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithBaseURL:(id)arg1 configuration:(id)arg2;
 - (id)initWithBaseURL:(id)arg1 options:(unsigned int)arg2;
 - (id)init;
 

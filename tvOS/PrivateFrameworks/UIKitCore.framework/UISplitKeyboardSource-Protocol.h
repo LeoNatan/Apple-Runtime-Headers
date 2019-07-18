@@ -17,6 +17,8 @@
 @property(readonly, nonatomic) struct CGPoint positionConstraintConstant;
 @property(readonly, nonatomic) _Bool isChangingPlacement;
 @property(readonly, retain, nonatomic) UIView *view;
+- (void)finishSplitTransition;
+- (void)prepareForSplitTransition;
 - (UIInputViewSetNotificationInfo *)constructNotificationInfoForScrollWithMode:(unsigned long long)arg1;
 - (void)setInterfaceAutorotationDisabled:(_Bool)arg1;
 @end

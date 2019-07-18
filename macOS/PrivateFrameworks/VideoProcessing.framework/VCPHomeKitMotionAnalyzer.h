@@ -34,7 +34,7 @@
 - (int)analyzeFrame:(struct __CVBuffer *)arg1 withTimestamp:(CDStruct_1b6d18a9)arg2 andDuration:(CDStruct_1b6d18a9)arg3 flags:(unsigned long long *)arg4;
 - (int)computeRegionsofInterest;
 - (int)calculateFrameDifference:(struct __CVBuffer *)arg1;
-- (int)initializeWithPixelBuffer:(struct __CVBuffer *)arg1;
+- (int)setPixelBuffer:(struct __CVBuffer *)arg1;
 - (void)dealloc;
 - (id)init;
 

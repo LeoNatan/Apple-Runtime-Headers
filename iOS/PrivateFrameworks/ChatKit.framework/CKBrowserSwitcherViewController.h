@@ -132,6 +132,7 @@
 - (void)_snapshotCurrentViewController;
 - (void)_updateGutterDividerViewsForCurrentVisibleBrowser;
 - (void)traitCollectionDidChange:(id)arg1;
+- (id)traitCollection;
 - (void)updateGrabberTitleAndIconForPlugin:(id)arg1;
 - (void)_updateAppNameAndPageForOffset:(struct CGPoint)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

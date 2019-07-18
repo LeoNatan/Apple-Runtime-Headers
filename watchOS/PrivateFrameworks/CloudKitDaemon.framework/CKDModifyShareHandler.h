@@ -36,7 +36,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)_updateSharePublicPCSWithError:(id *)arg1;
 - (_Bool)_serializePCSDataForShareWithError:(id *)arg1;
 - (void)_alignParticipantPermissions;
-- (void)sendAnalyticsEventForShareKeyRollWithRolledZonePCS:(id)arg1 andRollError:(id)arg2;
 - (id)_rollShareAndZonePCSIfNeededForSharePCS:(id)arg1 zonePCSData:(id)arg2;
 - (void)prepareForSave;
 - (void)_prepareDependentPCSUpdateIfNeededForShareWithSharePCS:(id)arg1 error:(id)arg2;

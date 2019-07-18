@@ -16,6 +16,7 @@
     PPClientFeedbackHelper *_clientFeedbackHelper;
 }
 
++ (id)describeLocationConsumer:(unsigned long long)arg1;
 + (id)placemarkWithName:(id)arg1 clLocation:(id)arg2;
 + (id)placemarkWithLatitudeDegrees:(id)arg1 longitudeDegrees:(id)arg2 name:(id)arg3 thoroughfare:(id)arg4 subthoroughFare:(id)arg5 locality:(id)arg6 subLocality:(id)arg7 administrativeArea:(id)arg8 subAdministrativeArea:(id)arg9 postalCode:(id)arg10 countryCode:(id)arg11 country:(id)arg12 inlandWater:(id)arg13 ocean:(id)arg14 areasOfInterest:(id)arg15;
 + (id)placemarkWithLocation:(id)arg1 name:(id)arg2 thoroughfare:(id)arg3 subthoroughFare:(id)arg4 locality:(id)arg5 subLocality:(id)arg6 administrativeArea:(id)arg7 subAdministrativeArea:(id)arg8 postalCode:(id)arg9 countryCode:(id)arg10 country:(id)arg11 inlandWater:(id)arg12 ocean:(id)arg13 areasOfInterest:(id)arg14;
@@ -29,6 +30,7 @@
 - (_Bool)clearWithError:(id *)arg1 deletedCount:(unsigned long long *)arg2;
 - (_Bool)cloudSyncWithError:(id *)arg1;
 - (_Bool)donateLocations:(id)arg1 source:(id)arg2 contextualNamedEntities:(id)arg3 algorithm:(unsigned short)arg4 cloudSync:(_Bool)arg5 decayRate:(double)arg6 error:(id *)arg7;
+- (void)registerFeedback:(id)arg1 clientIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;
 

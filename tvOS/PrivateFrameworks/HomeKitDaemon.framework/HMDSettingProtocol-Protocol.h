@@ -4,19 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HomeKitDaemon/NSObject-Protocol.h>
-#import <HomeKitDaemon/NSSecureCoding-Protocol.h>
+#import <HomeKitDaemon/HMDSettingBaseProtocol-Protocol.h>
 
-@class HMSettingValue, NSNumber, NSString, NSUUID;
+@class HMSettingValue, NSNumber;
 
-@protocol HMDSettingProtocol <NSObject, NSSecureCoding>
-@property(readonly, copy) NSString *name;
+@protocol HMDSettingProtocol <HMDSettingBaseProtocol>
 @property(readonly, copy) id value;
 @property(readonly, copy) NSNumber *properties;
 @property(readonly, copy) NSNumber *type;
 @property(readonly, getter=isReadOnly) _Bool readOnly;
-@property(readonly) NSUUID *identifier;
-@property(readonly) NSUUID *parentIdentifier;
 - (_Bool)wouldValueUpdate:(HMSettingValue *)arg1;
 - (_Bool)isValidValue:(HMSettingValue *)arg1;
 @end

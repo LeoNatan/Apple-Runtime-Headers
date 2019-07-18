@@ -21,6 +21,7 @@
 - (void)automaticallyDeleteEmptyAlbumWithObjectID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)synchronouslyUpdateThumbnailsForPhotos:(id)arg1 assignNewIndex:(_Bool)arg2 forceRefresh:(_Bool)arg3 error:(id *)arg4;
 - (void)updateThumbnailsForPhotos:(id)arg1 assignNewIndex:(_Bool)arg2 forceRefresh:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)_assetURIStringsForPhotos:(id)arg1;
 - (_Bool)repairSingletonObjectsWithError:(id *)arg1;
 - (void)recoverFromCrashIfNeeded;
 - (void)importFileSystemAssetsWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -13,9 +13,11 @@
     AVHapticPlayer *_player;
     unsigned int _seqID;
     double _lastStartTime;
+    unsigned int _eventBehavior;
     _Bool _loopIsEnabled;
     float _loopLength;
     float _playbackRate;
+    double _duration;
     unsigned int _channelCount;
     unsigned int _activeChannel;
 }
@@ -23,6 +25,7 @@
 @property(readonly) unsigned int channelCount; // @synthesize channelCount=_channelCount;
 @property unsigned int activeChannel; // @synthesize activeChannel=_activeChannel;
 @property double lastStartTime; // @synthesize lastStartTime=_lastStartTime;
+@property double duration; // @synthesize duration=_duration;
 @property unsigned int seqID; // @synthesize seqID=_seqID;
 @property __weak AVHapticPlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
@@ -42,6 +45,7 @@
 - (unsigned int)getChannelCount;
 @property(copy) CDUnknownBlockType completionHandler;
 - (_Bool)setLoopingEnabled:(_Bool)arg1 error:(id *)arg2;
+@property unsigned int eventBehavior;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1 player:(id)arg2 error:(id *)arg3;
 - (id)initWithEvents:(id)arg1 player:(id)arg2 error:(id *)arg3;

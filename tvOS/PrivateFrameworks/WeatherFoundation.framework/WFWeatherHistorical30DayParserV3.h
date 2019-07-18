@@ -18,6 +18,7 @@
 + (id)daysOfWeek;
 - (long long)getDataIndexFromFirstDayOfWeek:(id)arg1 andRequestedDate:(id)arg2;
 - (id)parseHistorical30DayForecastDataFromJson:(id)arg1 location:(id)arg2 date:(id)arg3 error:(id *)arg4;
+- (id)parseForecastData:(id)arg1 types:(unsigned long long)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6 rules:(id)arg7;
 - (id)parseForecastData:(id)arg1 types:(unsigned long long)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6;
 
 // Remaining properties

@@ -98,6 +98,7 @@
 - (id)_anchorForLowerView:(id)arg1;
 - (id)_anchorForUpperView:(id)arg1;
 - (long long)_styleOfView:(id)arg1;
+- (id)messageTextColor;
 @property(readonly, nonatomic) UIColor *fineprintColor;
 - (id)defaultButtonColor;
 @property(readonly, nonatomic) UIFont *fineprintFont;

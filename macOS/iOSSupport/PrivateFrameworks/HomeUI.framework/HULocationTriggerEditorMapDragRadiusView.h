@@ -34,7 +34,7 @@
 @property(nonatomic) BOOL isDragging; // @synthesize isDragging=_isDragging;
 @property(retain, nonatomic) MKMapView *mapView; // @synthesize mapView=_mapView;
 @property(nonatomic) unsigned long long proximity; // @synthesize proximity=_proximity;
-@property(nonatomic) id <HULocationTriggerEditorMapDragRadiusViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <HULocationTriggerEditorMapDragRadiusViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (BOOL)usesMetric;
 - (double)minimumRadiusNormalized;

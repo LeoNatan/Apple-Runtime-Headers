@@ -8,7 +8,7 @@
 
 #import <Foundation/NSISVariableDelegate-Protocol.h>
 
-@class NSHashTable, NSISObjectiveLinearExpression, NSISVariable, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, NSThread, _NSISVariableObservable;
+@class NSHashTable, NSISObjectiveLinearExpression, NSISVariable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSThread, _NSISVariableObservable;
 @protocol NSISEngineDelegate, NSObservable;
 
 @interface NSISEngine : NSObject <NSISVariableDelegate>
@@ -41,6 +41,8 @@
     BOOL _accessedFromMainThread;
     BOOL _engineNeedsRebuildFromConstraints;
     BOOL _changeNotificationsDirty;
+    NSMapTable *_variablesObservations;
+    NSMutableSet *_dirtyVariables;
     NSMapTable *_rows;
     CDStruct_52118125 _engineVarTable;
     CDStruct_52118125 _rowTables[2];
@@ -83,7 +85,10 @@
 - (id)constraints;
 - (void)enumerateOriginalConstraints:(CDUnknownBlockType)arg1;
 - (CDStruct_fee1177a *)traceState;
+- (BOOL)isObservingChangesForVariable:(id)arg1;
 - (id)variableChangeTransactionSignal;
+- (void)stopObservingChangesForVariable:(id)arg1;
+- (void)startObservingChangesForVariable:(id)arg1;
 - (BOOL)hasObservableForVariable:(id)arg1;
 - (void)removeObservableForVariable:(id)arg1;
 - (id)observableForVariable:(id)arg1;

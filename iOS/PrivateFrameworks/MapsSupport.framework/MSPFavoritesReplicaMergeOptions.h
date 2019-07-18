@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <MapsSupport/MSPReplicaMergeOptions-Protocol.h>
+#import <MapsSupport/MSPFavoritesReplicaMergeOptions-Protocol.h>
 
 @class NSString;
 
-@interface MSPFavoritesReplicaMergeOptions : NSObject <MSPReplicaMergeOptions>
+@interface MSPFavoritesReplicaMergeOptions : NSObject <MSPFavoritesReplicaMergeOptions>
 {
     _Bool _deserializationAllowed;
 }

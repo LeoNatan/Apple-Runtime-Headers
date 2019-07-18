@@ -10,13 +10,19 @@
 @protocol FCIssueReadingHistoryType
 - (void)removeObserver:(id <FCIssueReadingHistoryObserving>)arg1;
 - (void)addObserver:(id <FCIssueReadingHistoryObserving>)arg1;
-@property(nonatomic, readonly) NSArray *allVisitedIssueIDs;
+@property(nonatomic, readonly) NSArray *allEngagedIssueIDs;
+@property(nonatomic, readonly) NSArray *recentlyEngagedIssueIDs;
 @property(nonatomic, readonly) NSArray *recentlyVisitedIssueIDs;
 @property(nonatomic, readonly) NSString *mostRecentlyVisitedIssueID;
+- (NSDate *)lastEngagedDateForIssueWithID:(NSString *)arg1;
 - (NSDate *)lastVisitedDateForIssueWithID:(NSString *)arg1;
 - (FCIssueBookmark *)bookmarkForLastVisitToIssueWithID:(NSString *)arg1;
+- (BOOL)hasIssueWithIDBeenRemovedFromMyMagazines:(NSString *)arg1;
+- (BOOL)hasIssueWithIDBeenEngaged:(NSString *)arg1;
 - (BOOL)hasIssueWithIDBeenBadged:(NSString *)arg1;
 - (BOOL)hasIssueWithIDBeenVisited:(NSString *)arg1;
+- (void)markIssueAsRemovedFromMyMagazinesWithID:(NSString *)arg1;
+- (void)markIssueAsEngagedWithID:(NSString *)arg1;
 - (void)markIssueAsBadgedWithID:(NSString *)arg1;
 - (void)markIssueWithID:(NSString *)arg1 asVisitedWithBookmark:(FCIssueBookmark *)arg2;
 @end

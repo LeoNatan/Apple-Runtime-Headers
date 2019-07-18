@@ -10,6 +10,7 @@ __attribute__((visibility("hidden")))
 @interface _TtC12NewsArticles13TextInputView : UIView
 {
     // Error parsing type: , name: textView
+    // Error parsing type: , name: placeholderLabel
     // Error parsing type: , name: placeholderText
 }
 

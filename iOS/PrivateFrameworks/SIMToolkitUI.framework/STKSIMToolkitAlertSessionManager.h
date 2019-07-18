@@ -7,15 +7,18 @@
 #import <SIMToolkitUI/STKAlertSessionManager.h>
 
 #import <SIMToolkitUI/SBSRemoteAlertHandleObserver-Protocol.h>
+#import <SIMToolkitUI/STKIncomingCallUIStateObserver-Protocol.h>
 #import <SIMToolkitUI/STKUserEventMonitorDelegate-Protocol.h>
 
-@class NSObject, NSString, STKSIMToolkitAlertSession, STKUserEventMonitor;
-@protocol OS_dispatch_queue, STKAlertSessionResponseProvider, STKTelephonyListItemsProvider;
+@class NSObject, NSString, STKIncomingCallUIStateMonitor, STKSIMToolkitAlertSession, STKUserEventMonitor;
+@protocol BSInvalidatable, OS_dispatch_queue, STKAlertSessionResponseProvider, STKTelephonyListItemsProvider;
 
-@interface STKSIMToolkitAlertSessionManager : STKAlertSessionManager <SBSRemoteAlertHandleObserver, STKUserEventMonitorDelegate>
+@interface STKSIMToolkitAlertSessionManager : STKAlertSessionManager <SBSRemoteAlertHandleObserver, STKUserEventMonitorDelegate, STKIncomingCallUIStateObserver>
 {
     NSObject<OS_dispatch_queue> *_queue;
     struct __CTServerConnection *_serverConnection;
+    STKIncomingCallUIStateMonitor *_incomingCallUIStateMonitor;
+    id <BSInvalidatable> _haltEventQueueProcessingAssertion;
     int _atHomeScreenNotifyToken;
     id <STKTelephonyListItemsProvider> _listItemsProvider;
     STKUserEventMonitor *_userEventMonitor;
@@ -30,12 +33,13 @@
 - (id)_newSessionBehaviorFromOptions:(id)arg1;
 - (id)_listItemsFromCTItems:(id)arg1;
 - (void)_queue_handleSIMToolkitEvent:(long long)arg1 responder:(id)arg2 userInfo:(id)arg3;
+- (void)incomingCallUIStateDidChange:(_Bool)arg1;
 - (void)userEventDidOccur:(id)arg1;
 - (void)remoteAlertHandle:(id)arg1 didInvalidateWithError:(id)arg2;
 - (void)remoteAlertHandleDidDeactivate:(id)arg1;
 - (id)remoteAlertDescriptorForSession:(id)arg1;
 - (void)handleSIMToolkitEvent:(long long)arg1 responder:(id)arg2 userInfo:(id)arg3;
-- (id)initWithEventQueue:(id)arg1;
+- (id)init;
 - (id)initWithEventQueue:(id)arg1 logger:(id)arg2;
 
 // Remaining properties

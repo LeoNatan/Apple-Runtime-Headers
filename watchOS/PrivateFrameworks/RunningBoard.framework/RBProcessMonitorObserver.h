@@ -9,13 +9,13 @@
 #import <RunningBoard/RBProcessMonitorObserving-Protocol.h>
 
 @class NSHashTable, NSMutableDictionary, NSString, RBProcess, RBProcessMap, RBSProcessStateDescriptor;
-@protocol OS_dispatch_queue, OS_xpc_object, RBProcessMonitoring;
+@protocol OS_dispatch_queue, RBProcessMonitorObserverConnection, RBProcessMonitoring;
 
 @interface RBProcessMonitorObserver : NSObject <RBProcessMonitorObserving>
 {
     id <RBProcessMonitoring> _monitor;
     RBProcess *_process;
-    NSObject<OS_xpc_object> *_connection;
+    id <RBProcessMonitorObserverConnection> _connection;
     NSObject<OS_dispatch_queue> *_calloutQueue;
     struct os_unfair_lock_s _lock;
     unsigned int _qos;
@@ -35,11 +35,13 @@
 @property(readonly, copy) NSString *description;
 - (void)_lock_sendPendingStateUpdates;
 - (void)_lock_rebuildConfiguration;
+- (id)captureState;
+@property(readonly, copy, nonatomic) NSString *stateCaptureTitle;
 - (void)processMonitor:(id)arg1 didChangeProcessStates:(id)arg2;
 - (void)removeConfigurationWithIdentifier:(unsigned long long)arg1;
 - (void)_lock_addAllConfiguredStatesToPending;
 - (void)addConfiguration:(id)arg1;
-- (void)_lock_addCongurationStatesToPending:(id)arg1;
+- (void)_lock_addConfigurationStatesToPending:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;
 - (id)initWithMonitor:(id)arg1 forProcess:(id)arg2 connection:(id)arg3;

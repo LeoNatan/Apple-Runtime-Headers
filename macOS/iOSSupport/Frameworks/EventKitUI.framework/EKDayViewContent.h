@@ -100,7 +100,7 @@
 - (void)applyContentItem:(id)arg1 toView:(id)arg2;
 - (void)applyLoadedOccurrencesWithBatching:(BOOL)arg1 animated:(BOOL)arg2 reverse:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)movePreloadedItemsToVisible;
-- (void)applyLoadedOccurrenceBatchStartingAtIndex:(long long)arg1 batchSize:(long long)arg2 fromArray:(id)arg3 animated:(BOOL)arg4 reverse:(BOOL)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)applyLoadedOccurrenceBatchStartingAtIndex:(long long)arg1 batchSize:(long long)arg2 fromArray:(id)arg3 withStartDate:(id)arg4 animated:(BOOL)arg5 reverse:(BOOL)arg6 completion:(CDUnknownBlockType)arg7;
 - (unsigned long long)_dayIndexForAllIndex:(unsigned long long)arg1;
 - (void)_configureOccurrenceViewMarginAndPadding:(id)arg1;
 - (void)configureOccurrenceViewForGestureController:(id)arg1;

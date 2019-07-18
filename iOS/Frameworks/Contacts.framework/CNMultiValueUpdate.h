@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 + (id)addValue:(id)arg1;
 @property(nonatomic) _Bool ignoreIdentifiers; // @synthesize ignoreIdentifiers=_ignoreIdentifiers;
 - (long long)multiValueIndexForValue:(id)arg1 inMultiValue:(void *)arg2 identifier:(id *)arg3;
-- (_Bool)applyToABPerson:(void *)arg1 abmultivalue:(void *)arg2 propertyDescription:(id)arg3 error:(id *)arg4;
+- (_Bool)applyToABPerson:(void *)arg1 abmultivalue:(void *)arg2 propertyDescription:(id)arg3 logger:(id)arg4 error:(id *)arg5;
 - (void)applyToMutableMultiValue:(id)arg1 withIdentifierMap:(id)arg2;
 
 // Remaining properties

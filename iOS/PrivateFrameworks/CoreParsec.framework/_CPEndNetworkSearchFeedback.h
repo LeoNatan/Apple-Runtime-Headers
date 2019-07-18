@@ -45,7 +45,6 @@
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)init;
-@property(readonly, nonatomic) _Bool requiresQueryId;
 @property(readonly, nonatomic) id feedbackJSON;
 - (id)_formatNetworkTimingData;
 - (id)initWithStartSearch:(id)arg1 responseSize:(long long)arg2 statusCode:(long long)arg3 parsecStatus:(id)arg4 parsecDuration:(double)arg5 fbq:(id)arg6 partialClientIp:(id)arg7 networkTimingData:(id)arg8;

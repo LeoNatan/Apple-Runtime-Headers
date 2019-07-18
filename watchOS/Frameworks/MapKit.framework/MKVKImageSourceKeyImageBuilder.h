@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)_recursivelyGetImages:(id)arg1 accumulator:(id)arg2 coordinate:(struct CLLocationCoordinate2D)arg3;
++ (void)_recursivelyGetImages:(id)arg1 accumulator:(id)arg2;
 + (id)calculateImagesForParameters:(id)arg1;
 
 @end

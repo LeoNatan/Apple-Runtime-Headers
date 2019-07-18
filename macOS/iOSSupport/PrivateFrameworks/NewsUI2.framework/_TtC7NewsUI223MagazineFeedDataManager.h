@@ -9,6 +9,7 @@
 @interface _TtC7NewsUI223MagazineFeedDataManager : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: delegate
+    // Error parsing type: , name: feedServiceConfigFetcher
     // Error parsing type: , name: feedService
     // Error parsing type: , name: myMagazinesModule
     // Error parsing type: , name: categoriesModule
@@ -17,7 +18,9 @@
     // Error parsing type: , name: dataPrewarmer
     // Error parsing type: , name: pluginManager
     // Error parsing type: , name: lastRefreshDate
-    // Error parsing type: , name: lastRefreshedToOfflineMode
+    // Error parsing type: , name: tagService
+    // Error parsing type: , name: notificationManager
+    // Error parsing type: , name: subscriptionService
 }
 
 @end

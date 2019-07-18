@@ -6,23 +6,39 @@
 
 #import <UIKitCore/UIKBTutorialModalDisplay.h>
 
-@class UITextView;
+@class AVPlayerLooper, AVQueuePlayer, NSArray, UIButton, UILabel, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIContinuousPathIntroductionView : UIKBTutorialModalDisplay
 {
-    UITextView *_textBody;
-    double _imageWidth;
+    struct CGSize _videoSize;
+    double _videoWidth;
     double _textMargin;
     double _paddingAdjust;
+    AVPlayerLooper *_playerLooper;
+    AVQueuePlayer *_player;
+    UIView *_textVideoContainer;
+    UILabel *_landscapeTextBody;
+    UIView *_keyboardView;
+    UIButton *_landscapeButton;
+    NSArray *_portraitConstraints;
+    NSArray *_landscapeConstraints;
 }
 
+@property(retain, nonatomic) NSArray *landscapeConstraints; // @synthesize landscapeConstraints=_landscapeConstraints;
+@property(retain, nonatomic) NSArray *portraitConstraints; // @synthesize portraitConstraints=_portraitConstraints;
+@property(retain, nonatomic) UIButton *landscapeButton; // @synthesize landscapeButton=_landscapeButton;
+@property(retain, nonatomic) UIView *keyboardView; // @synthesize keyboardView=_keyboardView;
+@property(retain, nonatomic) UILabel *landscapeTextBody; // @synthesize landscapeTextBody=_landscapeTextBody;
+@property(retain, nonatomic) UIView *textVideoContainer; // @synthesize textVideoContainer=_textVideoContainer;
 - (void).cxx_destruct;
 - (void)extraButtonTapAction;
-- (id)textBodyDescription;
-- (void)configContainerView;
-- (id)constructMediaView;
-- (id)scaleImage:(id)arg1 toRect:(struct CGRect)arg2;
+- (long long)textBodyMaxLines;
+- (double)mediaLayoutWidthAdjustment;
+- (id)textBodyDescriptions;
+- (id)textTitleDescriptions;
+- (id)mediaContents;
+- (id)_introductionMovieAssetURL;
 - (void)setupConstraintData;
 - (id)initWithKeyboardAppearance:(long long)arg1;
 

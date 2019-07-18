@@ -60,6 +60,7 @@
 - (void)awakeFromFetch;
 - (BOOL)isColorEditable;
 - (BOOL)isRenameable;
+@property BOOL requiresOpeningAttachmentAsLink; // @dynamic requiresOpeningAttachmentAsLink;
 @property BOOL supportsPhoneNumbers; // @dynamic supportsPhoneNumbers;
 @property BOOL isLikenessPropagationSupported; // @dynamic isLikenessPropagationSupported;
 @property BOOL isPrivateCommentsSupported; // @dynamic isPrivateCommentsSupported;

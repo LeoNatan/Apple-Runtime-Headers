@@ -6,13 +6,13 @@
 
 #import <UIKit/UIRootWindowScenePresentationBinder.h>
 
-@class NSMutableArray, UICanvas, UIRootSceneWindow;
+@class NSMutableArray, UIRootSceneWindow, UIWindowScene;
 
 @interface SBMainDisplayRootWindowScenePresentationBinder : UIRootWindowScenePresentationBinder
 {
     UIRootSceneWindow *_rootWindow;
     NSMutableArray *_disconnectionAssertions;
-    UICanvas *_disconnectedFromCanvas;
+    UIWindowScene *_disconnectedFromScene;
 }
 
 + (id)sharedInstance;

@@ -14,7 +14,6 @@
 - (id)formattedValueStringForChartData:(id)arg1 options:(long long)arg2;
 - (id)formattedUnitStringForChartData:(id)arg1;
 - (id)formattedSelectedRangeLabelDataWithChartData:(id)arg1;
-- (id)_selectedPointFormattedStringWithSystolicRange:(id)arg1 diastolicRange:(id)arg2;
 - (id)_formattedStringWithRange:(id)arg1 displayUnit:(_Bool)arg2;
 
 @end

@@ -53,6 +53,7 @@
 - (BOOL)centerPlaceholder;
 - (void)setCenterPlaceholder:(BOOL)arg1;
 - (id)_presentationBackgroundBlurEffectForTraitCollection:(id)arg1;
+- (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (void)traitCollectionDidChange:(id)arg1;
 - (unsigned long long)_backdropStyle;
 - (void)_setBackdropStyle:(unsigned long long)arg1;

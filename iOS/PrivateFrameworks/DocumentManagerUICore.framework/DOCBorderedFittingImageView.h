@@ -9,13 +9,10 @@
 @interface DOCBorderedFittingImageView : DOCFittingImageView
 {
     _Bool _addDecoration;
-    _Bool _inTableMode;
 }
 
-@property(nonatomic, getter=isInTableMode) _Bool inTableMode; // @synthesize inTableMode=_inTableMode;
 @property(nonatomic) _Bool addDecoration; // @synthesize addDecoration=_addDecoration;
-- (void)updateCornerRadius;
-- (void)updateBorderWidth;
+- (void)layoutSubviews;
 - (void)updateImage:(id)arg1 addDecoration:(_Bool)arg2;
 - (void)setFittingSize:(struct CGSize)arg1;
 

@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)load;
 - (long long)preferredStartingPositionWithValue:(id)arg1 withType:(int)arg2;
 - (Class)handlerClass;
 

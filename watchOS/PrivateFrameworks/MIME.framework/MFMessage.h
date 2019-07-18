@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <MIME/EFPubliclyDescribable-Protocol.h>
 #import <MIME/NSCopying-Protocol.h>
 
 @class ECAngleBracketIDHash, ECSubject, MFMessageStore, MFMimePart, NSArray, NSString, NSURL;
 
-@interface MFMessage : NSObject <NSCopying>
+@interface MFMessage : NSObject <EFPubliclyDescribable, NSCopying>
 {
     MFMessageStore *_store;
     unsigned long _preferredEncoding;
@@ -56,7 +57,6 @@
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(_Bool)arg2 isEncrypted:(_Bool)arg3;
 - (void)calculateAttachmentInfoFromBody:(id)arg1;
 - (void)deleteBodyData;
-- (void)_calculateAttachmentInfoFromBody:(id)arg1;
 - (id)dataPathForMimePart:(id)arg1;
 - (_Bool)fetchDataForMimePart:(id)arg1 inRange:(struct _NSRange)arg2 withConsumer:(id)arg3 isComplete:(_Bool *)arg4 downloadIfNecessary:(_Bool)arg5;
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange)arg2 isComplete:(_Bool *)arg3 downloadIfNecessary:(_Bool)arg4 didDownload:(_Bool *)arg5;
@@ -148,8 +148,16 @@
 - (id)headers;
 - (void)setMessageStore:(id)arg1;
 - (id)messageStore;
+@property(readonly, copy, nonatomic) NSString *ef_publicDescription;
+@property(readonly, copy) NSString *description;
+- (id)_privacySafeDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

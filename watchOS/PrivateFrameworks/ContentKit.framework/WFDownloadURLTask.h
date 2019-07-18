@@ -10,6 +10,7 @@
 
 @class NSString, NSURLRequest;
 
+__attribute__((visibility("hidden")))
 @interface WFDownloadURLTask : NSObject <NSURLSessionDownloadDelegate>
 {
     NSURLRequest *_request;

@@ -8,7 +8,6 @@
 
 @interface _TtC7SwiftUIP33_D63C4EB7F2B205694B6515509E76E98B16AsyncTransaction : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: viewGraph
     // Error parsing type: , name: transaction
     // Error parsing type: , name: mutations
 }

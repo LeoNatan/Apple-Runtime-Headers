@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)newSectionSeparatorViewForGroupViewState:(id)arg1;
 - (double)actionSectionSpacing;
 - (struct CGSize)minimumActionContentSize;
 - (double)minimumImageGapWidth;

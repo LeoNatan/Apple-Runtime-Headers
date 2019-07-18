@@ -47,7 +47,7 @@
 
 + (id)_sanitizedContainerFallbackNameForMangledID:(id)arg1;
 + (id)_isDocumentScopePublicAsNumberWithProperties:(id)arg1 mangledID:(id)arg2;
-+ (id)_defaultAccountContainerRepositoryURLForMangledID:(id)arg1;
++ (id)containerRepositoryURLForMangledID:(id)arg1 inRepositoryURL:(id)arg2;
 + (id)bundlePropertyEnumerator:(id)arg1 valuesOfClass:(Class)arg2 forProperties:(id)arg3;
 + (id)bundleIdentifiersEnumeratorForProperties:(id)arg1;
 + (void)forceRefreshAllContainersWithCompletion:(CDUnknownBlockType)arg1;
@@ -66,8 +66,8 @@
 + (id)containerInRepositoryURL:(id)arg1 error:(id *)arg2;
 + (id)containerInPlistURL:(id)arg1 containerCache:(id)arg2 rootFileObjectID:(id)arg3 documentsFileObjectID:(id)arg4 createIfMissing:(BOOL)arg5 error:(id *)arg6;
 + (id)documentsContainersInBackupHomeAtURL:(id)arg1 error:(id *)arg2;
-+ (id)propertiesForMangledID:(id)arg1 usingBundle:(struct __CFBundle *)arg2 minimumBundleVersion:(id)arg3 bundleIcons:(id *)arg4;
-+ (void)_generateOSXIconsForMangledID:(id)arg1 usingBundle:(struct __CFBundle *)arg2 generatedIcons:(id)arg3;
++ (id)propertiesForMangledID:(id)arg1 usingBundle:(struct __CFBundle *)arg2 minimumBundleVersion:(id)arg3 containerStorageURL:(id)arg4 bundleIcons:(id *)arg5;
++ (void)_generateOSXIconsForMangledID:(id)arg1 usingBundle:(struct __CFBundle *)arg2 containerStorageURL:(id)arg3 generatedIcons:(id)arg4;
 + (void)postContainerListUpdateNotification;
 + (void)forceRefreshContainers:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (BOOL)isDocumentScopePublicWithProperties:(id)arg1 mangledID:(id)arg2;
@@ -89,6 +89,7 @@
 - (id)_exportedTypesWithProperties:(id)arg1;
 - (id)_documentsTypesWithProperties:(id)arg1;
 - (id)_localizedNameWithProperties:(id)arg1 mangledID:(id)arg2 preferredLanguages:(id)arg3;
+- (id)__localizedNameWithProperties:(id)arg1 mangledID:(id)arg2 preferredLanguages:(id)arg3;
 - (id)_localizedNameWithProperties:(id)arg1 mangledID:(id)arg2;
 - (id)_bundleIDVersionsWithProperties:(id)arg1 mangledID:(id)arg2;
 - (id)_isDocumentScopePublicAsNumberWithProperties:(id)arg1 mangledID:(id)arg2;

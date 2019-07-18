@@ -15,9 +15,7 @@ struct AdaptResponse {
     struct set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> _field4;
     struct set<AMCP::Wire_Identifier, std::__1::less<AMCP::Wire_Identifier>, std::__1::allocator<AMCP::Wire_Identifier>> _field5;
     struct vector<dspd::IOControllerConfiguration, std::__1::allocator<dspd::IOControllerConfiguration>> _field6;
-    struct map<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>>> _field7;
-    struct map<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>>> _field8;
-    struct vector<std::__1::pair<unsigned long long, dspd::AdaptResponse::CaptureStatus>, std::__1::allocator<std::__1::pair<unsigned long long, dspd::AdaptResponse::CaptureStatus>>> _field9;
+    struct vector<std::__1::pair<unsigned long long, dspd::AdaptResponse::CaptureStatus>, std::__1::allocator<std::__1::pair<unsigned long long, dspd::AdaptResponse::CaptureStatus>>> _field7;
 };
 
 struct Address {
@@ -138,6 +136,12 @@ struct StringRef {
     struct ObjectRef<const __CFString *> mObject;
 };
 
+struct Terminal_Identifier {
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _field1;
+    unsigned long long _field2;
+    unsigned int _field3;
+};
+
 struct TimeStamp {
     double _field1;
     unsigned long long _field2;
@@ -153,10 +157,39 @@ struct USBSection {
     unsigned int _field2;
 };
 
+struct Wire_Identifier {
+    struct Terminal_Identifier _field1;
+    struct Terminal_Identifier _field2;
+};
+
 struct __shared_weak_count;
 
 struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
     struct __tree_node_base<void *> *__left_;
+};
+
+struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+        struct __rep {
+            union {
+                struct __long {
+                    unsigned long long _field1;
+                    unsigned long long _field2;
+                    char *_field3;
+                } _field1;
+                struct __short {
+                    union {
+                        unsigned char _field1;
+                        char _field2;
+                    } _field1;
+                    char _field2[23];
+                } _field2;
+                struct __raw {
+                    unsigned long long _field1[3];
+                } _field3;
+            } _field1;
+        } _field1;
+    } _field1;
 };
 
 struct bitset<32> {
@@ -189,6 +222,11 @@ struct expected<aura::SimulatedMicrophoneConfigurationDescription, std::__1::err
     _Bool _field2;
 };
 
+struct expected<bool, std::__1::error_code> {
+    union constexpr_storage<bool, std::__1::error_code> _field1;
+    _Bool _field2;
+};
+
 struct expected<dspd::AdaptResponse, std::__1::error_code> {
     union storage<dspd::AdaptResponse, std::__1::error_code> _field1;
     _Bool _field2;
@@ -199,8 +237,23 @@ struct expected<dspd::NegotiateResponse, std::__1::error_code> {
     _Bool _field2;
 };
 
+struct expected<float, std::__1::error_code> {
+    union constexpr_storage<float, std::__1::error_code> _field1;
+    _Bool _field2;
+};
+
 struct expected<std::__1::map<aura::IOControllerType, std::__1::vector<__weak id<aura_VirtualPort>, std::__1::allocator<__weak id<aura_VirtualPort>>>, std::__1::less<aura::IOControllerType>, std::__1::allocator<std::__1::pair<const aura::IOControllerType, std::__1::vector<__weak id<aura_VirtualPort>, std::__1::allocator<__weak id<aura_VirtualPort>>>>>>, std::__1::error_code> {
     union storage<std::__1::map<aura::IOControllerType, std::__1::vector<__weak id<aura_VirtualPort>, std::__1::allocator<__weak id<aura_VirtualPort>>>, std::__1::less<aura::IOControllerType>, std::__1::allocator<std::__1::pair<const aura::IOControllerType, std::__1::vector<__weak id<aura_VirtualPort>, std::__1::allocator<__weak id<aura_VirtualPort>>>>>>, std::__1::error_code> _field1;
+    _Bool _field2;
+};
+
+struct expected<std::__1::tuple<double, double>, std::__1::error_code> {
+    union constexpr_storage<std::__1::tuple<double, double>, std::__1::error_code> _field1;
+    _Bool _field2;
+};
+
+struct expected<std::__1::tuple<unsigned int, unsigned int>, std::__1::error_code> {
+    union constexpr_storage<std::__1::tuple<unsigned int, unsigned int>, std::__1::error_code> _field1;
     _Bool _field2;
 };
 
@@ -347,18 +400,6 @@ struct map<unsigned int, std::__1::vector<aura::SimulatedIOController, std::__1:
             struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
         } _field2;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::vector<aura::SimulatedIOController, std::__1::allocator<aura::SimulatedIOController>>>, std::__1::less<unsigned int>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
-struct map<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>>> {
-    struct __tree<std::__1::__value_type<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>, std::__1::__map_value_compare<unsigned long long, std::__1::__value_type<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>, std::__1::less<unsigned long long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long long, std::__1::__value_type<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>, std::__1::less<unsigned long long>, true>> {
             unsigned long long _field1;
         } _field3;
     } _field1;
@@ -580,6 +621,10 @@ struct optional<wrop<aura_ConfigurationHints *, void>> {
 
 struct pair<unsigned long long, dspd::AdaptResponse::CaptureStatus>;
 
+struct reactor<aura::adm::GraphVolume *>;
+
+struct reactor<aura::adm::HardwareVolume *>;
+
 struct reactor<aura::hw::Hardware *>;
 
 struct reactor<aura::itf::BooleanControl *>;
@@ -684,6 +729,16 @@ struct set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<c
             unsigned long long _field1;
         } _field3;
     } _field1;
+};
+
+struct shared_ptr<caulk::reactor<aura::adm::GraphVolume *>> {
+    struct reactor<aura::adm::GraphVolume *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<caulk::reactor<aura::adm::HardwareVolume *>> {
+    struct reactor<aura::adm::HardwareVolume *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
 };
 
 struct shared_ptr<caulk::reactor<aura::hw::Hardware *>> {
@@ -1238,20 +1293,40 @@ typedef struct expected<aura::SimulatedMicrophoneConfigurationDescription, std::
     _Bool _field2;
 } expected_cf04bbb0;
 
+typedef struct expected<bool, std::__1::error_code> {
+    union constexpr_storage<bool, std::__1::error_code> _field1;
+    _Bool _field2;
+} expected_1e8b1ea0;
+
 typedef struct expected<dspd::AdaptResponse, std::__1::error_code> {
     union storage<dspd::AdaptResponse, std::__1::error_code> _field1;
     _Bool _field2;
-} expected_6c7599df;
+} expected_0910f26e;
 
 typedef struct expected<dspd::NegotiateResponse, std::__1::error_code> {
     union storage<dspd::NegotiateResponse, std::__1::error_code> _field1;
     _Bool _field2;
 } expected_2b9a0a05;
 
+typedef struct expected<float, std::__1::error_code> {
+    union constexpr_storage<float, std::__1::error_code> _field1;
+    _Bool _field2;
+} expected_60ac6007;
+
 typedef struct expected<std::__1::map<aura::IOControllerType, std::__1::vector<__weak id<aura_VirtualPort>, std::__1::allocator<__weak id<aura_VirtualPort>>>, std::__1::less<aura::IOControllerType>, std::__1::allocator<std::__1::pair<const aura::IOControllerType, std::__1::vector<__weak id<aura_VirtualPort>, std::__1::allocator<__weak id<aura_VirtualPort>>>>>>, std::__1::error_code> {
     union storage<std::__1::map<aura::IOControllerType, std::__1::vector<__weak id<aura_VirtualPort>, std::__1::allocator<__weak id<aura_VirtualPort>>>, std::__1::less<aura::IOControllerType>, std::__1::allocator<std::__1::pair<const aura::IOControllerType, std::__1::vector<__weak id<aura_VirtualPort>, std::__1::allocator<__weak id<aura_VirtualPort>>>>>>, std::__1::error_code> _field1;
     _Bool _field2;
 } expected_01e6cd2c;
+
+typedef struct expected<std::__1::tuple<double, double>, std::__1::error_code> {
+    union constexpr_storage<std::__1::tuple<double, double>, std::__1::error_code> _field1;
+    _Bool _field2;
+} expected_5f904053;
+
+typedef struct expected<std::__1::tuple<unsigned int, unsigned int>, std::__1::error_code> {
+    union constexpr_storage<std::__1::tuple<unsigned int, unsigned int>, std::__1::error_code> _field1;
+    _Bool _field2;
+} expected_ea5d568f;
 
 typedef struct expected<std::__1::vector<__weak id<aura_VirtualPort>, std::__1::allocator<__weak id<aura_VirtualPort>>>, std::__1::error_code> {
     union storage<std::__1::vector<__weak id<aura_VirtualPort>, std::__1::allocator<__weak id<aura_VirtualPort>>>, std::__1::error_code> _field1;
@@ -1528,6 +1603,16 @@ typedef struct optional<wrop<aura_ConfigurationHints *, void>> {
     } ;
     _Bool __engaged_;
 } optional_f9b20518;
+
+typedef struct shared_ptr<caulk::reactor<aura::adm::GraphVolume *>> {
+    struct reactor<aura::adm::GraphVolume *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_24ec3b2d;
+
+typedef struct shared_ptr<caulk::reactor<aura::adm::HardwareVolume *>> {
+    struct reactor<aura::adm::HardwareVolume *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_400bbdad;
 
 typedef struct shared_ptr<caulk::reactor<aura::hw::Hardware *>> {
     struct reactor<aura::hw::Hardware *> *_field1;
@@ -1932,6 +2017,30 @@ typedef struct weak_ptr<caulk::reactor<aura::itf::VirtualPort *>> {
 union constexpr_storage<CA::TimeStamp, std::__1::error_code> {
     char _field1;
     struct TimeStamp _field2;
+    struct error_code _field3;
+};
+
+union constexpr_storage<bool, std::__1::error_code> {
+    char _field1;
+    _Bool _field2;
+    struct error_code _field3;
+};
+
+union constexpr_storage<float, std::__1::error_code> {
+    char _field1;
+    float _field2;
+    struct error_code _field3;
+};
+
+union constexpr_storage<std::__1::tuple<double, double>, std::__1::error_code> {
+    char _field1;
+    tuple_83a731a2 _field2;
+    struct error_code _field3;
+};
+
+union constexpr_storage<std::__1::tuple<unsigned int, unsigned int>, std::__1::error_code> {
+    char _field1;
+    tuple_d3a1b75d _field2;
     struct error_code _field3;
 };
 

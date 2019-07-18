@@ -8,7 +8,7 @@
 
 #import <ShareSheet/UICollectionViewDelegate-Protocol.h>
 
-@class LPLinkMetadata, LPLinkMetadataObserver, LPLinkView, NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSString, NSUUID, UIBarButtonItem, UICollectionView, _UICollectionViewDiffableDataSource, _UINavigationBarTitleView;
+@class LPLinkMetadata, LPLinkMetadataObserver, LPLinkView, NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSString, NSUUID, UIBarButtonItem, UICollectionView, UIVisualEffectView, _UICollectionViewDiffableDataSource, _UINavigationBarTitleView;
 @protocol UIActivityContentDelegate;
 
 @interface UIActivityContentViewController : UIViewController <UICollectionViewDelegate>
@@ -18,6 +18,7 @@
     _Bool _wantsObjectManipulation;
     _Bool _sharingCollapsed;
     _Bool _photosLandscapeMode;
+    _Bool _contentInstalled;
     id <UIActivityContentDelegate> _delegate;
     UIViewController *_photosCarouselViewController;
     NSDictionary *_activitiesByUUID;
@@ -29,6 +30,7 @@
     LPLinkView *_headerLinkView;
     LPLinkMetadataObserver *_headerMetadataObserver;
     _UINavigationBarTitleView *_headerTitleView;
+    UIBarButtonItem *_cancelButton;
     UIBarButtonItem *_nextButton;
     UIBarButtonItem *_closeButton;
     NSUUID *_photosCarouselUUID;
@@ -38,8 +40,11 @@
     NSNumber *_nearbyCountSlotID;
     NSMutableDictionary *_shareSlots;
     NSMutableDictionary *_actionSlots;
+    UIVisualEffectView *_backgroundView;
 }
 
+@property(nonatomic) _Bool contentInstalled; // @synthesize contentInstalled=_contentInstalled;
+@property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) NSMutableDictionary *actionSlots; // @synthesize actionSlots=_actionSlots;
 @property(retain, nonatomic) NSMutableDictionary *shareSlots; // @synthesize shareSlots=_shareSlots;
 @property(retain, nonatomic) NSNumber *nearbyCountSlotID; // @synthesize nearbyCountSlotID=_nearbyCountSlotID;
@@ -50,6 +55,7 @@
 @property(retain, nonatomic) NSUUID *photosCarouselUUID; // @synthesize photosCarouselUUID=_photosCarouselUUID;
 @property(retain, nonatomic) UIBarButtonItem *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) UIBarButtonItem *nextButton; // @synthesize nextButton=_nextButton;
+@property(retain, nonatomic) UIBarButtonItem *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) _UINavigationBarTitleView *headerTitleView; // @synthesize headerTitleView=_headerTitleView;
 @property(retain, nonatomic) LPLinkMetadataObserver *headerMetadataObserver; // @synthesize headerMetadataObserver=_headerMetadataObserver;
 @property(retain, nonatomic) LPLinkView *headerLinkView; // @synthesize headerLinkView=_headerLinkView;
@@ -66,11 +72,14 @@
 @property(nonatomic) _Bool configureForCloudSharing; // @synthesize configureForCloudSharing=_configureForCloudSharing;
 @property(nonatomic) __weak id <UIActivityContentDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (_Bool)isSafari;
-- (_Bool)isPhotosOrCamera;
-- (void)updateProgress:(double)arg1 withText:(id)arg2 forNodeWithIdentifier:(id)arg3 shouldPulse:(_Bool)arg4 animated:(_Bool)arg5;
+- (_Bool)_presentedInFormSheet;
+- (void)updateProgress:(double)arg1 withTopText:(id)arg2 bottomText:(id)arg3 forNodeWithIdentifier:(id)arg4 shouldPulse:(_Bool)arg5 animated:(_Bool)arg6;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)nextButtonTapped;
 - (void)closeButtonTapped;
+- (void)cancelButtonTapped;
+- (id)nextBarButton;
+- (id)cancelBarButton;
 - (id)_activityWithActivityUUID:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)layoutContentCollectionView:(_Bool)arg1;
@@ -81,7 +90,6 @@
 - (void)updateHeaderMetadata;
 - (void)configureHeaderViewIfNeeded;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
-- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)init;
 

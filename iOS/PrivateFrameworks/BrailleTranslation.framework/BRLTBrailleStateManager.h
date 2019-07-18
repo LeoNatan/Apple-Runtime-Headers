@@ -35,10 +35,12 @@
     NSMutableArray *_runningScriptStringHistory;
     double _lastScriptStringOutputTime;
     _Bool _editable;
-    unsigned long long _translationMode;
+    unsigned long long _inputTranslationMode;
+    unsigned long long _outputTranslationMode;
 }
 
-@property(nonatomic) unsigned long long translationMode; // @synthesize translationMode=_translationMode;
+@property(nonatomic) unsigned long long outputTranslationMode; // @synthesize outputTranslationMode=_outputTranslationMode;
+@property(nonatomic) unsigned long long inputTranslationMode; // @synthesize inputTranslationMode=_inputTranslationMode;
 @property(nonatomic) _Bool editable; // @synthesize editable=_editable;
 - (void).cxx_destruct;
 - (struct _NSRange)scriptRangeOfBrailleCellRepresentingCharacterAtScriptIndex:(unsigned long long)arg1;

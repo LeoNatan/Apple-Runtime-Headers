@@ -11,10 +11,12 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)userInterfaceName;
 - (id)inspectorLocalizedValueLabelsDisclosureTitle;
 - (id)inspectorLocalizedValueLabelsTabName;
 - (_Bool)supportsFillSetFill;
 - (int)fillSetFillProperty;
+- (int)seriesStrokeProperty;
 - (id)propertiesForReferenceColors;
 - (_Bool)supportsSymbolTypeEditing;
 - (id)supportedValueLabelsAxisCombinations;

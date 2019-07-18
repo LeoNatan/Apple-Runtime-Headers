@@ -9,6 +9,5 @@
 @interface _TtC12NewsArticles24PDFReplicaViewController (NewsArticles1)
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)handlePinchGesture;
-- (void)handleDoubleTapGestureWithDoubleTapRecognizer:(id)arg1;
 @end
 

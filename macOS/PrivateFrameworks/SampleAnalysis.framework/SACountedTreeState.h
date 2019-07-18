@@ -8,30 +8,34 @@
 
 #import <SampleAnalysis/SAJSONSerialization-Protocol.h>
 
-@class NSString, SATimestamp, SAWaitInfo;
+@class NSString, SATimestamp, SATurnstileInfo, SAWaitInfo;
 
 __attribute__((visibility("hidden")))
 @interface SACountedTreeState : SACountedTreeNode <SAJSONSerialization>
 {
+    unsigned char _threadPriority;
     int _pid;
     unsigned int _microstackshotState;
     SATimestamp *_startTimestamp;
     unsigned long long _threadId;
     SAWaitInfo *_waitInfo;
+    SATurnstileInfo *_turnstileInfo;
     unsigned long long _state;
 }
 
 + (void)writeJSONDictionaryEntriesToStream:(id)arg1 microstackshotState:(unsigned int)arg2 primaryMicrostackshotState:(unsigned int)arg3 includeIdleAndBattery:(_Bool)arg4;
-+ (id)treeCountedStateWithWaitInfo:(id)arg1 state:(unsigned long long)arg2 microstackshotState:(unsigned int)arg3 pid:(int)arg4 threadId:(unsigned long long)arg5 startSampleIndex:(unsigned long long)arg6 startTimestamp:(id)arg7 sampleCount:(unsigned long long)arg8;
++ (id)treeCountedStateWithWaitInfo:(id)arg1 turnstileInfo:(id)arg2 state:(unsigned long long)arg3 microstackshotState:(unsigned int)arg4 pid:(int)arg5 threadId:(unsigned long long)arg6 threadPriority:(unsigned char)arg7 startSampleIndex:(unsigned long long)arg8 startTimestamp:(id)arg9 sampleCount:(unsigned long long)arg10;
 @property(readonly) unsigned int microstackshotState; // @synthesize microstackshotState=_microstackshotState;
 @property(readonly) unsigned long long state; // @synthesize state=_state;
+@property(readonly) SATurnstileInfo *turnstileInfo; // @synthesize turnstileInfo=_turnstileInfo;
 @property(readonly) SAWaitInfo *waitInfo; // @synthesize waitInfo=_waitInfo;
+@property(readonly) unsigned char threadPriority; // @synthesize threadPriority=_threadPriority;
 @property(readonly) unsigned long long threadId; // @synthesize threadId=_threadId;
 @property(readonly) int pid; // @synthesize pid=_pid;
 @property(readonly) SATimestamp *startTimestamp; // @synthesize startTimestamp=_startTimestamp;
 - (void).cxx_destruct;
 - (void)writeJSONDictionaryEntriesToStream:(id)arg1;
-- (id)initWithWaitInfo:(id)arg1 state:(unsigned long long)arg2 microstackshotState:(unsigned int)arg3 pid:(int)arg4 threadId:(unsigned long long)arg5 startSampleIndex:(unsigned long long)arg6 startTimestamp:(id)arg7 sampleCount:(unsigned long long)arg8;
+- (id)initWithWaitInfo:(id)arg1 turnstileInfo:(id)arg2 state:(unsigned long long)arg3 microstackshotState:(unsigned int)arg4 pid:(int)arg5 threadId:(unsigned long long)arg6 threadPriority:(unsigned char)arg7 startSampleIndex:(unsigned long long)arg8 startTimestamp:(id)arg9 sampleCount:(unsigned long long)arg10;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

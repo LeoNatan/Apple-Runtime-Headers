@@ -23,11 +23,11 @@
 - (void)layout;
 - (id)accessibilityTitle;
 - (id)hitTest:(struct CGPoint)arg1;
-- (struct CGSize)effectiveLayoutSizeFittingSize:(struct CGSize)arg1;
 - (void)setBorderedGlyph:(id)arg1;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)viewDidMoveToWindow;
 - (void)viewDidChangeEffectiveAppearance;
+@property(nonatomic) BOOL adjustsFontSizeToFitWidth;
 - (void)updateSelectionState:(BOOL)arg1;
 - (id)init;
 

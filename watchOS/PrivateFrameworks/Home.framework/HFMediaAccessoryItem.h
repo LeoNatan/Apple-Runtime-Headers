@@ -18,8 +18,10 @@
     id <HFHomeKitSettingsVendor> _homeKitSettingsVendor;
     id <HFCharacteristicValueSource> _valueSource;
     id <HFMediaProfileContainer> _mediaProfileContainer;
+    int _mediaAccessoryItemType;
 }
 
+@property(readonly, nonatomic) int mediaAccessoryItemType; // @synthesize mediaAccessoryItemType=_mediaAccessoryItemType;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, nonatomic) id <HFHomeKitSettingsVendor> homeKitSettingsVendor; // @synthesize homeKitSettingsVendor=_homeKitSettingsVendor;
@@ -34,7 +36,7 @@
 - (id)performStandardUpdateWithOptions:(id)arg1;
 - (void)_decorateWithMediaSystemSpecificKeys:(id)arg1;
 - (void)_decorateServiceLikeItemKeys:(id)arg1;
-- (void)_decorateWithMediaSessionKeys:(id)arg1;
+- (void)_decorateWithMediaSessionKeys:(id)arg1 inServiceAction:(_Bool)arg2;
 - (void)_decorateWithSoftwareUpdateStateKeys:(id)arg1;
 - (void)_decorateOutcomeWithAccessorySpecificKeys:(id)arg1;
 - (_Bool)supportsAlarmQuickControls;
@@ -45,8 +47,11 @@
 - (_Bool)isAppleTV;
 - (_Bool)isContainedWithinMediaSystem;
 - (_Bool)isHomePodAndIsInMediaSystem;
+- (_Bool)isSingleHomePod;
 - (_Bool)isHomePod;
 - (_Bool)isHomePodMediaSystem;
+@property(readonly, nonatomic) _Bool supportsMediaAction;
+@property(readonly, nonatomic) _Bool allowsAppleMusicAccount;
 @property(readonly, nonatomic) NSSet *availableSoftwareUpdates;
 @property(readonly, nonatomic) NSSet *accessoriesSupportingSoftwareUpdate;
 @property(readonly, nonatomic) _Bool isContainedWithinItemGroup;

@@ -6,7 +6,7 @@
 
 #import <CloudPhotoLibrary/CPLEngineScopedTask.h>
 
-@class CPLEngineTransport, CPLFeatureVersionHistory, CPLLibraryInfo, CPLLibraryState, NSObject;
+@class CPLEngineTransport, CPLFeatureVersionHistory, CPLLibraryInfo, CPLLibraryState, NSObject, NSString;
 @protocol CPLEngineTransportDownloadBatchTask, CPLEngineTransportGetCurrentSyncAnchorTask, CPLEngineTransportGroup, CPLEngineTransportQueryTask, OS_dispatch_queue;
 
 @interface CPLPullFromTransportScopeTask : CPLEngineScopedTask
@@ -35,8 +35,10 @@
     NSObject<OS_dispatch_queue> *_notifyQueue;
     BOOL _didNotifySchedulerPullQueueIsFullOnce;
     BOOL _needsToNotifySchedulerPullQueueIsFull;
+    NSString *_phaseDescription;
 }
 
+@property(copy) NSString *phaseDescription; // @synthesize phaseDescription=_phaseDescription;
 - (void).cxx_destruct;
 - (id)taskIdentifier;
 - (void)cancel;

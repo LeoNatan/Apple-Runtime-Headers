@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
     int _forceVideoPayload;
     int _forceRecvVideoPayload;
     int _forceKeyFrameInterval;
+    BOOL _forceWiFiAssist;
+    BOOL _forceWiFiAssistOutOfBudget;
 }
 
 + (BOOL)booleanValueForKey:(struct __CFString *)arg1 defaultValue:(BOOL)arg2;
@@ -29,6 +31,8 @@ __attribute__((visibility("hidden")))
 + (long long)integerValueForKey:(struct __CFString *)arg1;
 + (double)getDoubleValueForKey:(struct __CFString *)arg1 defaultValue:(double)arg2;
 + (id)sharedInstance;
+@property(readonly) BOOL forceWiFiAssistOutOfBudget; // @synthesize forceWiFiAssistOutOfBudget=_forceWiFiAssistOutOfBudget;
+@property(readonly) BOOL forceWiFiAssist; // @synthesize forceWiFiAssist=_forceWiFiAssist;
 - (BOOL)forceUseInternalRTPThreadingWithDefaultValue:(BOOL)arg1;
 @property(readonly) double remoteMediaStallTimeout;
 @property(readonly) unsigned int prominenceInactiveAccumulationThreshold;
@@ -66,9 +70,11 @@ __attribute__((visibility("hidden")))
 @property(readonly) BOOL forceEVSWideBand;
 @property(readonly) unsigned int maxActiveVideoDecoders;
 @property(readonly) unsigned int maxActiveVideoEncoders;
+@property(readonly) BOOL rearCameraVideoStablization;
 @property(readonly) BOOL dumpMediaBlob;
 @property(readonly) BOOL momentsUserPreferenceEnabled;
-@property(readonly) BOOL forceWifiAssist;
+- (BOOL)forceWifiAssistOutOfBudget;
+- (BOOL)forceWifiAssist;
 @property(readonly) BOOL shouldDisplayVideoInfoLayer;
 @property(readonly) float pauseHeartbeatInterval;
 @property(readonly) BOOL enableGFTStatsReceiveThread;
@@ -78,11 +84,11 @@ __attribute__((visibility("hidden")))
 @property(readonly) BOOL forceIPv6;
 @property(readonly) int max2GRate;
 @property(readonly) int redundancyControlForceVideoRedundancyPercentage;
+@property(readonly) int packetExpirationTime;
 @property(readonly) int rateControlForceRxRate;
 @property(readonly) int rateControlForceTxRate;
 @property(readonly) int rateControlForceRxCap;
 @property(readonly) int rateControlForceTxCap;
-@property(readonly) BOOL rateControlAllowRedLowBitrates;
 @property(readonly) BOOL rateControlAllowBurstyLossRampDown;
 @property(readonly) BOOL rateControlAllowVideoStop;
 @property(readonly) BOOL rateControlLogEnabled;

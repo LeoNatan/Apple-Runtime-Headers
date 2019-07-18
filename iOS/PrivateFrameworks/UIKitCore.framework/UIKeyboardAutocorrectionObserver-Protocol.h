@@ -9,6 +9,7 @@
 @class TIAutocorrectionList, UIKeyboardAutocorrectionController;
 
 @protocol UIKeyboardAutocorrectionObserver <NSObject>
+- (void)autocorrectionControllerDidClearAutocorrections:(UIKeyboardAutocorrectionController *)arg1;
 - (void)autocorrectionController:(UIKeyboardAutocorrectionController *)arg1 didUpdateAutocorrectionList:(TIAutocorrectionList *)arg2;
 @end
 

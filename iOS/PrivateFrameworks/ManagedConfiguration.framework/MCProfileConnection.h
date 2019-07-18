@@ -50,8 +50,10 @@
 - (void)dealloc;
 - (id)init;
 - (void)_queueCreateAndResumePublicXPCConnection;
+- (void)_destroyPublicXPCConnection;
 - (void)_createAndResumePublicXPCConnection;
 - (void)_queueCreateAndResumeXPCConnection;
+- (void)_destroyXPCConnection;
 - (void)_createAndResumeXPCConnection;
 @property(readonly, nonatomic) NSXPCConnection *publicXPCConnection; // @synthesize publicXPCConnection=_publicXPCConnection;
 @property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
@@ -110,6 +112,7 @@
 - (void)_detectProfiledCrashes;
 - (_Bool)removeProvisioningProfileWithUUID:(id)arg1 outError:(id *)arg2;
 - (_Bool)installProvisioningProfileData:(id)arg1 managingProfileIdentifier:(id)arg2 outError:(id *)arg3;
+- (id)listInstalledProvisioningProfileUUIDsWithManagedOnly:(_Bool)arg1;
 - (_Bool)showProfileErrorUIWithProfileIdentifier:(id)arg1 outError:(id *)arg2;
 - (_Bool)_openSensitiveURLString:(id)arg1 unlock:(_Bool)arg2;
 - (id)acceptedFileExtensions;
@@ -135,7 +138,6 @@
 - (id)_handleQueueProfileError:(id)arg1 forTargetDevice:(unsigned long long)arg2;
 - (id)popProvisioningProfileDataFromHeadOfInstallationQueue;
 - (id)peekProfileDataFromPurgatoryForDeviceType:(unsigned long long)arg1;
-- (id)popProfileDataFromPurgatoryForDeviceType:(unsigned long long)arg1;
 - (id)popProfileDataFromHeadOfInstallationQueue;
 - (void)allProfilesOutMDMProfileInfo:(id *)arg1 outConfigurationProfilesInfo:(id *)arg2 outUninstalledProfilesInfo:(id *)arg3 forDeviceType:(unsigned long long)arg4;
 - (id)uninstalledProfileDataWithIdentifier:(id)arg1 targetDevice:(unsigned long long)arg2;
@@ -154,6 +156,7 @@
 - (id)uninstalledProfileIdentifiersForDevice:(unsigned long long)arg1;
 - (id)installedProfileIdentifiers;
 - (id)installedMDMProfileIdentifier;
+- (_Bool)_isRestrictionDictionaryForbiddenForUserEnrollment:(id)arg1;
 - (id)effectiveWhitelistedAppsAndOptions;
 - (void)removeOrphanedClientRestrictionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeOrphanedClientRestrictions;
@@ -161,6 +164,7 @@
 - (id)userInfoForClientUUID:(id)arg1;
 - (id)clientRestrictionsForClientUUID:(id)arg1;
 - (id)allClientUUIDsForClientType:(id)arg1;
+- (int)applyRestrictionDictionary:(id)arg1 clientType:(id)arg2 clientUUID:(id)arg3 localizedClientDescription:(id)arg4 localizedWarningMessage:(id)arg5 complianceBlocking:(int)arg6 displayImmediateAlert:(_Bool)arg7 limitForUserEnrollment:(_Bool)arg8 outRestrictionChanged:(_Bool *)arg9 outEffectiveSettingsChanged:(_Bool *)arg10 outError:(id *)arg11;
 - (int)applyRestrictionDictionary:(id)arg1 clientType:(id)arg2 clientUUID:(id)arg3 localizedClientDescription:(id)arg4 localizedWarningMessage:(id)arg5 complianceBlocking:(int)arg6 displayImmediateAlert:(_Bool)arg7 outRestrictionChanged:(_Bool *)arg8 outEffectiveSettingsChanged:(_Bool *)arg9 outError:(id *)arg10;
 - (_Bool)applyRestrictionDictionary:(id)arg1 appsAndOptions:(id)arg2 clientType:(id)arg3 clientUUID:(id)arg4 localizedClientDescription:(id)arg5 localizedWarningMessage:(id)arg6 outRestrictionChanged:(_Bool *)arg7 outEffectiveSettingsChanged:(_Bool *)arg8 outError:(id *)arg9;
 - (_Bool)applyRestrictionDictionary:(id)arg1 clientType:(id)arg2 clientUUID:(id)arg3 localizedClientDescription:(id)arg4 localizedWarningMessage:(id)arg5 outRestrictionChanged:(_Bool *)arg6 outEffectiveSettingsChanged:(_Bool *)arg7 outError:(id *)arg8;
@@ -169,6 +173,11 @@
 - (int)boolRestrictionForFeature:(id)arg1;
 - (id)effectiveRestrictionsForPairedDevice;
 - (id)effectiveRestrictions;
+- (void)setAllowedGrandfatheredRestrictionUnionFeature:(id)arg1;
+- (void)setAllowedGrandfatheredRestrictionIntersectionFeature:(id)arg1;
+- (void)setAllowedGrandfatheredRestrictionValueFeature:(id)arg1;
+- (void)setAllowedGrandfatheredRestrictionBoolFeature:(id)arg1;
+- (void)_setAllowedGrandfatheredRestrictionFeature:(id)arg1 forRestrictionKey:(id)arg2;
 - (id)permittedAutoLockSeconds;
 - (id)lockedDownRootCertificatesWithOutLocalizedSourceDescription:(id *)arg1;
 - (id)userValueForUnionSetting:(id)arg1;
@@ -373,6 +382,7 @@
 - (_Bool)isScreenShotAllowed;
 - (_Bool)isWallpaperModificationAllowed;
 - (_Bool)isDeviceNameModificationAllowed;
+- (_Bool)isUSBDriveAccessInFilesAllowed;
 - (_Bool)isESIMModificationAllowed;
 - (_Bool)isWiFiPowerModificationAllowed;
 - (_Bool)isPersonalHotspotModificationAllowed;
@@ -559,6 +569,7 @@
 - (_Bool)isHomeScreenLayoutApplied;
 - (id)knownAirPrintIPPURLStrings;
 - (_Bool)isTeslaCloudConfigurationAvailable;
+- (id)managingOrganizationInformation;
 - (id)deviceOrganizationVendorID;
 - (id)deviceOrganizationCountry;
 - (id)deviceOrganizationZipCode;

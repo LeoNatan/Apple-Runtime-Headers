@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)_historyOrBookmarksDidChange:(id)arg1;
 - (id)fakeBookmarkMatchDataWithURLString:(id)arg1 title:(id)arg2;
 - (void)enumerateMatchDataForTypedStringHint:(id)arg1 options:(unsigned long long)arg2 withBlock:(CDUnknownBlockType)arg3;
-- (void)getBestMatchesForTypedString:(id)arg1 topHits:(id *)arg2 matches:(id *)arg3 limit:(unsigned long long)arg4;
+- (void)getBestMatchesForTypedString:(id)arg1 topHits:(id *)arg2 matches:(id *)arg3 limit:(unsigned long long)arg4 forQueryID:(long long)arg5;
 - (void)dealloc;
 - (id)init;
 

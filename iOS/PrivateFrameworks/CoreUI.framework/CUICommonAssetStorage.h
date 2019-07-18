@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSSet;
+@class NSData, NSDictionary, NSSet;
 
 @interface CUICommonAssetStorage : NSObject
 {
@@ -30,6 +30,7 @@
     id _renditionInfoCache[20];
     struct os_unfair_lock_s _lock;
     struct os_unfair_lock_s _renditionInfoCacheLock;
+    NSDictionary *_appearances;
 }
 
 + (_Bool)isValidAssetStorageWithURL:(id)arg1;
@@ -49,7 +50,8 @@
 - (id)localizations;
 - (id)nameForLocalizationIdentifier:(unsigned short)arg1;
 - (unsigned short)localizationIdentifierForName:(id)arg1;
-- (id)appearances;
+- (id)_readAppearances;
+@property(readonly, nonatomic) NSDictionary *appearances; // @synthesize appearances=_appearances;
 - (id)nameForAppearanceIdentifier:(unsigned short)arg1;
 - (unsigned short)appearanceIdentifierForName:(id)arg1;
 - (int)validatekeyformat;

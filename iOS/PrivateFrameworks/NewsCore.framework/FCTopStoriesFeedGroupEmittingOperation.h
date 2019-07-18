@@ -10,8 +10,6 @@
 {
 }
 
-- (id)_defaultDarkStyleBackgroundGradient;
-- (id)_defaultBackgroundGradient;
 - (_Bool)hasSeenAllPreviousArticleIDs:(id)arg1;
 - (id)headlinesLogFromHeadlines:(id)arg1 includeScore:(_Bool)arg2;
 - (id)_filterHeadlines:(id)arg1 withArticleMetadata:(id)arg2;
@@ -20,6 +18,7 @@
 - (id)_personalizedFeedTransformationWithLimit:(unsigned long long)arg1 otherArticleIDs:(id)arg2 preselectedArticles:(id)arg3;
 - (id)_feedTransformationWithOtherArticleIDs:(id)arg1;
 - (void)_selectHeadlinesFromMandatory:(id)arg1 optional:(id)arg2 publishDate:(id)arg3 articleMetadataByArticleID:(id)arg4 cursor:(id)arg5 isAllowedToCollapse:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)_performOperation;
 - (void)performOperation;
 - (void)_buildGroupWithCatchUpOperation:(id)arg1;
 

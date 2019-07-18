@@ -9,14 +9,11 @@
 @class INKContent, INKContentController, INKContentView, UIImage;
 
 @protocol INKContentControllerObserver <NSObject>
+- (void)contentController:(INKContentController *)arg1 didFinishWithContent:(INKContent *)arg2 animated:(_Bool)arg3;
+- (void)contentController:(INKContentController *)arg1 contentDidBecomeAvailable:(INKContent *)arg2 animated:(_Bool)arg3;
 
 @optional
 - (UIImage *)contentController:(INKContentController *)arg1 contentView:(INKContentView *)arg2 iconForCustomizationID:(long long)arg3;
 - (void)contentController:(INKContentController *)arg1 contentViewNeedsLayout:(INKContentView *)arg2;
-- (void)contentController:(INKContentController *)arg1 didFinishWithContent:(INKContent *)arg2 animated:(_Bool)arg3;
-- (void)contentController:(INKContentController *)arg1 contentDidBecomeAvailable:(INKContent *)arg2 animated:(_Bool)arg3;
-- (void)contentController:(INKContentController *)arg1 contentViewSizeDidChange:(INKContentView *)arg2;
-- (void)contentController:(INKContentController *)arg1 shouldDismissContent:(INKContent *)arg2;
-- (void)contentController:(INKContentController *)arg1 contentDidBecomeAvailable:(INKContent *)arg2;
 @end
 

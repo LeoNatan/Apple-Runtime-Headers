@@ -6,7 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@protocol MTLBuffer, MTLTexture;
+@class ARUISpriteTexture;
+@protocol MTLBuffer;
 
 __attribute__((visibility("hidden")))
 @interface ARUISpritesRenderer : NSObject
@@ -16,11 +17,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _numIndicies;
     // Error parsing type: ^{?=[2{?=[4]}]}, name: _vertexAttributes
     struct *_uniforms;
-    id <MTLTexture> _texture;
+    ARUISpriteTexture *_texture;
 }
 
 + (void)clearCaches;
-@property(retain, nonatomic) id <MTLTexture> texture; // @synthesize texture=_texture;
+@property(retain, nonatomic) ARUISpriteTexture *texture; // @synthesize texture=_texture;
 @property(nonatomic) struct *uniforms; // @synthesize uniforms=_uniforms;
 // Error parsing type for property vertexAttributes:
 // Property attributes: T^{?=[2{?=[4]}]},N,V_vertexAttributes

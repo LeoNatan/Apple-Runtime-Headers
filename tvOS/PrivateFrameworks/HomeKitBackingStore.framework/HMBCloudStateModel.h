@@ -13,7 +13,7 @@
 }
 
 + (id)hmbProperties;
-- (id)initWithModelID:(id)arg1 parentModelID:(id)arg2 dataVersion:(id)arg3;
+- (id)initWithModelID:(id)arg1 parentModelID:(id)arg2;
 
 // Remaining properties
 @property(retain, nonatomic) CKServerChangeToken *serverChangeToken; // @dynamic serverChangeToken;

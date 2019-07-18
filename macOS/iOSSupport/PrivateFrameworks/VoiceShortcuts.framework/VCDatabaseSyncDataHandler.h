@@ -16,7 +16,6 @@
 }
 
 + (Class)changeClass;
-+ (void)initialize;
 @property(readonly, nonatomic) WFDatabaseResult *result; // @synthesize result=_result;
 - (void).cxx_destruct;
 - (BOOL)deleteSyncedData:(id *)arg1;

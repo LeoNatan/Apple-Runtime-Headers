@@ -77,7 +77,7 @@
 - (void)startUpdatesForProductKeys:(id)arg1 inForeground:(BOOL)arg2 clientBlocksRestart:(BOOL)arg3 replyWhenDone:(CDUnknownBlockType)arg4;
 - (void)startInstallingAdminUpdates:(id)arg1 replyWhenDone:(CDUnknownBlockType)arg2;
 - (void)startDownloadingForProductKeys:(id)arg1 replyWhenDone:(CDUnknownBlockType)arg2;
-- (void)calculateDiskSpaceRequiredForUpdatesWithProductKeys:(id)arg1 downloadingOnly:(BOOL)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)calculateDiskSpaceRequiredForUpdatesWithProductKeys:(id)arg1 downloadingOnly:(BOOL)arg2 invokeCacheDelete:(BOOL)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)preventFurtherScansWhileConnected:(CDUnknownBlockType)arg1;
 - (void)buildTagCacheIfNecessaryWithReply:(CDUnknownBlockType)arg1;
 - (void)markRampedUpdatesAsSeenWithReply:(CDUnknownBlockType)arg1;

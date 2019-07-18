@@ -22,7 +22,7 @@
 - (id)playerItem;
 - (void).cxx_destruct;
 - (id)description;
-- (void)beginLoading;
+- (void)beginLoadingWithPriority:(long long)arg1;
 - (id)initWithPlayerItem:(id)arg1 contentIdentifier:(id)arg2;
 - (id)init;
 

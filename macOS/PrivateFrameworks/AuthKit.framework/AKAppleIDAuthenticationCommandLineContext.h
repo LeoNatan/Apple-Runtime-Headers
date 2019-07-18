@@ -13,8 +13,10 @@
 @interface AKAppleIDAuthenticationCommandLineContext : AKAppleIDAuthenticationContext <AKAppleIDServerAuthenticationUIProvider>
 {
     NSNumber *_secondFactorCode;
+    long long _verificationType;
 }
 
+@property(nonatomic) long long verificationType; // @synthesize verificationType=_verificationType;
 @property(copy, nonatomic) NSNumber *secondFactorCode; // @synthesize secondFactorCode=_secondFactorCode;
 - (void).cxx_destruct;
 - (void)dismissServerProvidedUIWithCompletion:(CDUnknownBlockType)arg1;
@@ -26,6 +28,8 @@
 - (void)dismissBasicLoginUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)presentBasicLoginUIWithCompletion:(CDUnknownBlockType)arg1;
 - (unsigned long long)_capabilityForUIDisplay;
+- (id)initWithVerificationType:(long long)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

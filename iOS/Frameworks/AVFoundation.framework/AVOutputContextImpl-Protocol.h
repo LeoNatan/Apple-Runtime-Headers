@@ -5,14 +5,13 @@
 //
 
 #import <AVFoundation/NSObject-Protocol.h>
-#import <AVFoundation/NSSecureCoding-Protocol.h>
 
 @class AVOutputContext, AVOutputContextCommunicationChannel, AVOutputDevice, NSArray, NSDictionary, NSString;
 
-@protocol AVOutputContextImpl <NSObject, NSSecureCoding>
+@protocol AVOutputContextImpl <NSObject>
 + (_Bool)outputContextExistsWithRemoteOutputDevice;
 + (void)resetOutputDeviceForAllOutputContexts;
-+ (id)outputContextImplForID:(NSString *)arg1;
++ (id)outputContextImplForID:(NSString *)arg1 type:(NSString *)arg2;
 + (id)outputContextImplForControllingOutputDeviceGroupWithID:(NSString *)arg1 options:(NSDictionary *)arg2;
 + (id)iTunesAudioContext;
 + (id)sharedSystemScreenContext;
@@ -36,10 +35,9 @@
 - (void)muteAllOutputDevicesWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)pausePlaybackOnAllOutputDevicesWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)setVolume:(float)arg1;
-- (void)removeOutputDevice:(AVOutputDevice *)arg1;
+- (void)removeOutputDevice:(AVOutputDevice *)arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(AVOutputContextDestinationChange *))arg3;
 - (void)addOutputDevice:(AVOutputDevice *)arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(AVOutputContextDestinationChange *))arg3;
 - (void)setOutputDevices:(NSArray *)arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(AVOutputContextDestinationChange *))arg3;
-- (void)setOutputDevices:(NSArray *)arg1;
 - (void)outputContextDidChangeApplicationProcessID:(AVOutputContext *)arg1;
 - (void)setOutputDevice:(AVOutputDevice *)arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(AVOutputContextDestinationChange *))arg3;
 @end

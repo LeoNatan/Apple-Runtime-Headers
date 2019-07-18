@@ -18,7 +18,7 @@
     NSString *_posterSubtitle;
     id <PXDisplayAsset> _posterAsset;
     id <PXUIImageProvider> _posterMediaProvider;
-    NSArray *_names;
+    NSArray *_localizedNames;
     NSString *_subtitle;
     NSImage *_combinedFaceTileImage;
     NSColor *_opaqueAncestorBackgroundColor;
@@ -31,7 +31,7 @@
 @property(readonly, nonatomic) NSImage *combinedFaceTileImage; // @synthesize combinedFaceTileImage=_combinedFaceTileImage;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) BOOL containsUnverifiedPersons; // @synthesize containsUnverifiedPersons=_containsUnverifiedPersons;
-@property(readonly, copy, nonatomic) NSArray *names; // @synthesize names=_names;
+@property(readonly, copy, nonatomic) NSArray *localizedNames; // @synthesize localizedNames=_localizedNames;
 @property(readonly, nonatomic) id <PXUIImageProvider> posterMediaProvider; // @synthesize posterMediaProvider=_posterMediaProvider;
 @property(readonly, nonatomic) id <PXDisplayAsset> posterAsset; // @synthesize posterAsset=_posterAsset;
 @property(readonly, copy, nonatomic) NSString *posterSubtitle; // @synthesize posterSubtitle=_posterSubtitle;
@@ -43,7 +43,7 @@
 - (void)setCombinedFaceTileImage:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setContainsUnverifiedPersons:(BOOL)arg1;
-- (void)setNames:(id)arg1;
+- (void)setLocalizedNames:(id)arg1;
 - (void)setPosterMediaProvider:(id)arg1;
 - (void)setPosterAsset:(id)arg1;
 - (void)setPosterSubtitle:(id)arg1;

@@ -9,6 +9,7 @@
 @protocol AVConferencePreviewClientDelegate
 
 @optional
+- (void)cameraZoomAvailabilityDidChange:(_Bool)arg1 currentZoomFactor:(double)arg2 maxZoomFactor:(double)arg3;
 - (void)cameraZoomAvailabilityDidChange:(_Bool)arg1;
 - (void)cameraDidBecomeInterruptedForForUniqueID:(NSString *)arg1 reason:(long long)arg2;
 - (void)cameraDidBecomeAvailableForUniqueID:(NSString *)arg1;

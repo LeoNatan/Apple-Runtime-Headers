@@ -153,6 +153,7 @@ __attribute__((visibility("hidden")))
 - (void)updateSubviewContentInsets:(struct NSEdgeInsets)arg1;
 - (void)handleMoveToTrashCommand:(const struct TFENodeVector *)arg1 immediately:(_Bool)arg2;
 - (void)reloadIconsInView;
+- (_Bool)includeBadgeInIconImage;
 - (id)popoverAnchorViewForNode:(const struct TFENode *)arg1;
 - (struct TFENodeVector)nodesWithViews;
 - (_Bool)isItem:(id)arg1 expandedAtRow:(long long)arg2 column:(long long)arg3;
@@ -212,8 +213,8 @@ __attribute__((visibility("hidden")))
 - (void)restoreBrowserViewState:(id)arg1;
 - (id)browserViewState;
 - (_Bool)makeBrowserViewFirstResponder;
-- (unsigned long long)itemCountForDelayedPopulation;
-- (id)viewToOverlayForDelayedPopulation;
+- (unsigned long long)itemCountForLoadingUI;
+- (id)viewToOverlayForLoadingUI;
 - (id)nibName;
 - (void)aboutToTearDown;
 - (void)killDelayedContainerSynchingTimer;

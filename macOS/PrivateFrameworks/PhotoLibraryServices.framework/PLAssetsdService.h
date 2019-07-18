@@ -14,6 +14,7 @@
 {
     PLAssetsdInnerService *_innerLibraryService;
     PLAssetsdInnerService *_innerLibraryInternalService;
+    PLAssetsdInnerService *_innerSystemLibraryURLReadOnlyService;
     PLAssetsdInnerService *_innerLibraryManagementService;
     PLAssetsdInnerService *_innerPhotoKitService;
     PLAssetsdInnerService *_innerResourceService;
@@ -29,6 +30,7 @@
     PLAssetsdInnerService *_innerDebugService;
     BOOL _readyForDaemonJobs;
     NSXPCConnection *_connection;
+    int _remotePID;
     PLPhotoLibraryBundleController *_libraryBundleController;
     PLPhotoLibraryBundle *_libraryBundle;
     PLPhotoLibrary *_photoLibrary;
@@ -86,6 +88,9 @@
 - (id)newLibraryManagementService;
 - (id)permissionsForLibraryManagementService;
 - (long long)requiredStateForLibraryManagementService;
+- (id)newSystemLibraryURLReadOnlyService;
+- (id)permissionsForSystemLibraryURLReadOnlyService;
+- (long long)requiredStateForSystemLibraryURLReadOnlyService;
 - (id)newLibraryInternalService;
 - (id)permissionsForLibraryInternalService;
 - (long long)requiredStateForLibraryInternalService;
@@ -105,6 +110,7 @@
 - (void)getResourceServiceWithReply:(CDUnknownBlockType)arg1;
 - (void)getPhotoKitServiceWithReply:(CDUnknownBlockType)arg1;
 - (void)getLibraryManagementServiceWithReply:(CDUnknownBlockType)arg1;
+- (void)getSystemLibraryURLReadOnlyServiceWithReply:(CDUnknownBlockType)arg1;
 - (void)getLibraryInternalServiceWithReply:(CDUnknownBlockType)arg1;
 - (void)getLibraryServiceWithReply:(CDUnknownBlockType)arg1;
 - (void)initializeDebugService;
@@ -120,6 +126,7 @@
 - (void)initializeResourceService;
 - (void)initializePhotoKitService;
 - (void)initializeLibraryManagementService;
+- (void)initializeSystemLibraryURLReadOnlyService;
 - (void)initializeLibraryInternalService;
 - (void)initializeLibraryService;
 - (id)serviceContextWithSelector:(SEL)arg1;

@@ -10,6 +10,8 @@
 {
 }
 
++ (id)autoreleasingSerialQueueWithLabel:(const char *)arg1 qosClass:(unsigned int)arg2;
++ (id)autoreleasingSerialQueueWithLabel:(const char *)arg1;
 + (void)runSyncOnMainThreadWithBlock:(CDUnknownBlockType)arg1;
 + (void)runAsyncOnQueue:(id)arg1 afterDelaySeconds:(double)arg2 block:(CDUnknownBlockType)arg3;
 + (void)waitForBlock:(CDUnknownBlockType)arg1 timeoutSeconds:(double)arg2 onBlockComplete:(CDUnknownBlockType)arg3 onTimeout:(CDUnknownBlockType)arg4;

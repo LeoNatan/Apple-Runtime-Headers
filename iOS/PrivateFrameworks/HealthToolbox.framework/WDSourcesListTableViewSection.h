@@ -11,7 +11,6 @@
 
 @class HKSourceListDataSource, NSString;
 
-__attribute__((visibility("hidden")))
 @interface WDSourcesListTableViewSection : WDTableViewSection <WDSourceTableViewSection, HKSourceListDataSourceObserver>
 {
     HKSourceListDataSource *_dataSource;
@@ -21,7 +20,8 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *restorationSourceBundleIdentifier; // @synthesize restorationSourceBundleIdentifier=_restorationSourceBundleIdentifier;
 @property(retain, nonatomic) HKSourceListDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
-- (id)authorizationViewControllerForSource:(id)arg1;
+- (id)detailViewControllerForSource:(id)arg1;
+- (id)noneString;
 - (id)noneCellForTableView:(id)arg1;
 - (void)dataSourceDidUpdate;
 - (double)heightForRow:(unsigned long long)arg1;

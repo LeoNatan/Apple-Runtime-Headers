@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 -     // Error parsing type: @24@0:8r^{ChartAxisIDArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}iI}16, name: initWithArchive:
 - (id)description;
 - (id)debuggingName;
+- (id)displayNameWithOrdinal:(_Bool)arg1;
 - (_Bool)intersectsAxisID:(id)arg1;
 - (long long)compare:(id)arg1;
 - (unsigned long long)hash;

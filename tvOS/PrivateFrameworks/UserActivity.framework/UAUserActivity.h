@@ -17,6 +17,7 @@
     NSString *_title;
     NSURL *_webpageURL;
     NSURL *_referrerURL;
+    NSString *_targetContentIdentifier;
     SFCompanionAdvertiser *_advertiser;
     NSObject<OS_dispatch_group> *_advertiserCompletedGroup;
     SFCompanionAdvertiser *_resumerAdvertiser;
@@ -97,6 +98,9 @@
 + (id)_encodeKeyAndValueIntoString:(id)arg1 value:(id)arg2;
 + (id)_encodeToString:(id)arg1;
 + (_Bool)registerAsProxyForApplication:(int)arg1 options:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
++ (void)deleteAllSavedUserActivitiesWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (void)deleteSavedUserActivitiesWithPersistentIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (id)mainBundleIdentifier;
 @property(readonly, retain) NSObject<OS_dispatch_queue> *willCallSaveSerializationQueue; // @synthesize willCallSaveSerializationQueue=_willCallSaveSerializationQueue;
 @property(retain) NSMutableSet *dirtyPayloadIdentifiers; // @synthesize dirtyPayloadIdentifiers=_dirtyPayloadIdentifiers;
 @property(retain) NSMutableDictionary *payloadDataCache; // @synthesize payloadDataCache=_payloadDataCache;
@@ -107,6 +111,7 @@
 @property(copy) NSDictionary *options; // @synthesize options=_options;
 @property(readonly) unsigned long long suggestedActionType; // @synthesize suggestedActionType=_suggestedActionType;
 @property(readonly, copy) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property(copy) NSString *targetContentIdentifier; // @synthesize targetContentIdentifier=_targetContentIdentifier;
 @property(copy) NSString *dynamicIdentifier; // @synthesize dynamicIdentifier=_dynamicIdentifier;
 @property(copy) NSString *typeIdentifier; // @synthesize typeIdentifier=_typeIdentifier;
 @property(readonly) __weak UAUserActivityManager *manager; // @synthesize manager=_manager;
@@ -209,6 +214,7 @@
 - (void)updateForwardToCoreSpotlightIndexer:(BOOL)arg1;
 @property(readonly) _Bool forwardToCoreSpotlightIndexer;
 @property(copy) CSSearchableItemAttributeSet *contentAttributeSet; // @dynamic contentAttributeSet;
+@property(copy) NSString *persistentIdentifier;
 - (void)setDirty:(_Bool)arg1 identifier:(id)arg2;
 - (_Bool)isPayloadDirty:(id)arg1;
 - (CDUnknownBlockType)payloadUpdateBlockForIdentifier:(id)arg1;
@@ -220,6 +226,7 @@
 - (id)payloadIdentifiers;
 
 // Remaining properties
+@property(getter=isEligibleForPrediction) _Bool eligibleForPrediction;
 @property(readonly) Class superclass;
 
 @end

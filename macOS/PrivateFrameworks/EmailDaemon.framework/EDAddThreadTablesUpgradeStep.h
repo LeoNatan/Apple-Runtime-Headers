@@ -15,7 +15,6 @@
 }
 
 + (int)runWithConnection:(id)arg1;
-+ (id)threadFlagColorsTableSchema;
 + (id)threadRecipientsTableSchema;
 + (id)threadSendersTableSchema;
 + (id)threadMailboxesTableSchema;

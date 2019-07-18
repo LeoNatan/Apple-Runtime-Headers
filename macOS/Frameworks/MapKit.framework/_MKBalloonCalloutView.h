@@ -53,6 +53,7 @@
 - (double)_innerDiameter;
 - (struct CGRect)_centerFrame;
 - (struct CGSize)intrinsicContentSize;
+- (void)_updateStyle;
 - (void)_commonInit;
 - (id)initWithStyle:(long long)arg1;
 - (id)initWithAnnotationView:(id)arg1;

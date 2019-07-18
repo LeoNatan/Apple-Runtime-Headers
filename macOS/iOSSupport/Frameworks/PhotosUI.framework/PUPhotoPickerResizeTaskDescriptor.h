@@ -13,9 +13,9 @@
 __attribute__((visibility("hidden")))
 @interface PUPhotoPickerResizeTaskDescriptor : NSObject <NSCopying>
 {
-    NSString *_formatString;
     NSCountedSet *_cachedAssetsIdentifiersForEstimation;
     unsigned long long _cachedSizeEstimate;
+    NSString *_localizedDescription;
     struct CGSize _targetSize;
 }
 
@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 + (id)defaultSmallDescriptor;
 + (id)defaultMediumDescriptor;
 + (id)defaultLargeDescriptor;
+@property(readonly, copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(readonly, nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -30,8 +31,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)appliesToAsset:(id)arg1;
 - (unsigned long long)estimatedSizeForAssets:(id)arg1;
+- (id)formattedSizeForAssets:(id)arg1;
 - (id)localizedDescriptionForAssets:(id)arg1;
-- (id)initWithLocalizedDescriptionFormatString:(id)arg1 targetSize:(struct CGSize)arg2;
+- (id)initWithLocalizedDescription:(id)arg1 targetSize:(struct CGSize)arg2;
 
 @end
 

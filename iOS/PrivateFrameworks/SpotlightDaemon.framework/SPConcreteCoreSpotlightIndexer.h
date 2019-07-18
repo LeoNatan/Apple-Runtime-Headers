@@ -50,7 +50,7 @@
 @property(nonatomic) __weak SPCoreSpotlightIndexer *owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
 - (void)_fetchAccumulatedStorageSizeForBundleId:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (_Bool)_startInternalQueryWithIndex:(struct __SI *)arg1 query:(id)arg2 fetchAttributes:(id)arg3 resultsHandler:(CDUnknownBlockType)arg4;
+- (_Bool)_startInternalQueryWithIndex:(struct __SI *)arg1 query:(id)arg2 fetchAttributes:(id)arg3 forBundleIds:(id)arg4 resultsHandler:(CDUnknownBlockType)arg5;
 - (void)powerStateChanged;
 - (void)attributesForBundleId:(id)arg1 identifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchAttributes:(id)arg1 bundleID:(id)arg2 identifiers:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -61,7 +61,7 @@
 - (void)deleteActionsWithIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteActionsBeforeTime:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteSearchableItemsSinceDate:(id)arg1 forBundleID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_deleteSearchableItemsMatchingQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_deleteSearchableItemsMatchingQuery:(id)arg1 forBundleIds:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteAllSearchableItemsForBundleID:(id)arg1 shouldGC:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)zombifyAllContactItems:(id)arg1;
 - (void)_scheduleStringsCleanupForBundleID:(id)arg1;
@@ -113,6 +113,7 @@
 - (void)revokeExpiredItems:(id)arg1;
 - (void)removeExpiredItemsForBundleId:(id)arg1 group:(id)arg2;
 - (void)indexFinishedDrainingJournal;
+- (void)fixupPathTimeouts;
 - (void)indexFinishedDrainingJournal:(id)arg1;
 - (void)scheduleMaintenance:(CDUnknownBlockType)arg1 description:(id)arg2 forDarkWake:(_Bool)arg3;
 - (id)_indexMaintenanceActivityName;

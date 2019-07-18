@@ -10,6 +10,8 @@
 
 @interface AXKElementController : NSObject
 {
+    BOOL __didRegisterSelectedChildrenChangedNotification;
+    BOOL _isMenuController;
     AXKApplicationController *_applicationController;
     AXFUIElement *_representedElement;
     AXKElementController *_parentController;
@@ -18,6 +20,8 @@
     NSArray *__horizontallyOrderedChildControllers;
     NSArray *__verticallyOrderedChildControllers;
     unsigned long long _layoutHash;
+    AXKElementController *_menuControllerSelectedItem;
+    AXKElementController *_menuControllerSubMenuController;
 }
 
 + (void)cancelPreviousPerformRequestsWithTarget:(id)arg1;
@@ -26,6 +30,10 @@
 + (void)registerControllerClass:(Class)arg1 applicationIdentifier:(id)arg2 role:(id)arg3 subrole:(id)arg4 predicate:(CDUnknownBlockType)arg5;
 + (void)registerControllerClass:(Class)arg1 role:(id)arg2 subrole:(id)arg3;
 + (void)registerControllerBaseClass:(Class)arg1;
+@property(retain, nonatomic) AXKElementController *menuControllerSubMenuController; // @synthesize menuControllerSubMenuController=_menuControllerSubMenuController;
+@property(retain, nonatomic) AXKElementController *menuControllerSelectedItem; // @synthesize menuControllerSelectedItem=_menuControllerSelectedItem;
+@property(nonatomic) BOOL isMenuController; // @synthesize isMenuController=_isMenuController;
+@property(nonatomic) BOOL _didRegisterSelectedChildrenChangedNotification; // @synthesize _didRegisterSelectedChildrenChangedNotification=__didRegisterSelectedChildrenChangedNotification;
 @property(nonatomic) unsigned long long layoutHash; // @synthesize layoutHash=_layoutHash;
 @property(retain, nonatomic, setter=_setVerticallyOrderedChildControllers:) NSArray *_verticallyOrderedChildControllers; // @synthesize _verticallyOrderedChildControllers=__verticallyOrderedChildControllers;
 @property(retain, nonatomic, setter=_setHorizontallyOrderedChildControllers:) NSArray *_horizontallyOrderedChildControllers; // @synthesize _horizontallyOrderedChildControllers=__horizontallyOrderedChildControllers;
@@ -37,6 +45,9 @@
 - (void).cxx_destruct;
 - (void)performSelector:(SEL)arg1 withObject:(id)arg2 afterDelay:(double)arg3;
 - (void)performSelector:(SEL)arg1 withObject:(id)arg2 afterDelay:(double)arg3 inModes:(id)arg4;
+- (void)_menuControllerSelectedChildrenChangedHandler:(id)arg1;
+- (id)menuControllerRoot;
+- (id)menuControllerParent;
 - (id)description;
 - (id)ancestorElementControllerWithPredicate:(CDUnknownBlockType)arg1;
 - (BOOL)isEqual:(id)arg1;

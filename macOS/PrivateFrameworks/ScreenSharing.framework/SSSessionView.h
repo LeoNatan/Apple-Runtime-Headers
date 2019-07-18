@@ -77,6 +77,7 @@
     BOOL _shouldNotifyOfVirtualDisplayStateChange;
     BOOL _shouldNotifyOfAllowsControlStateChange;
     BOOL _shouldSuppressFirstControlStateOverlay;
+    BOOL _deferredRequestUpdates;
     BOOL _shouldSkipAddressWindow;
     BOOL _stoppingSession;
     BOOL _AppleIDInviteWasAcceptedOrDeclined;
@@ -149,6 +150,7 @@
     NSString *_osType;
     double _occlusionScaleFactor;
     struct CGRect _screenFrame;
+    struct CGRect _deferredRequestFrameRect;
     struct CGRect _occlusionFrame;
     struct SSOrientationDetails savedScreenOrientation;
 }
@@ -204,6 +206,8 @@
 @property(retain) NSMutableOrderedSet *attemptedURLs; // @synthesize attemptedURLs=_attemptedURLs;
 @property(copy) NSString *curtainMessage; // @synthesize curtainMessage=_curtainMessage;
 @property BOOL shouldSkipAddressWindow; // @synthesize shouldSkipAddressWindow=_shouldSkipAddressWindow;
+@property struct CGRect deferredRequestFrameRect; // @synthesize deferredRequestFrameRect=_deferredRequestFrameRect;
+@property BOOL deferredRequestUpdates; // @synthesize deferredRequestUpdates=_deferredRequestUpdates;
 @property BOOL shouldSuppressFirstControlStateOverlay; // @synthesize shouldSuppressFirstControlStateOverlay=_shouldSuppressFirstControlStateOverlay;
 @property BOOL shouldNotifyOfAllowsControlStateChange; // @synthesize shouldNotifyOfAllowsControlStateChange=_shouldNotifyOfAllowsControlStateChange;
 @property BOOL shouldNotifyOfVirtualDisplayStateChange; // @synthesize shouldNotifyOfVirtualDisplayStateChange=_shouldNotifyOfVirtualDisplayStateChange;
@@ -515,6 +519,7 @@
 - (void)handleSessionEnded:(id)arg1 fromID:(id)arg2 withInfo:(id)arg3;
 - (void)session:(id)arg1 didReceiveData:(id)arg2;
 - (void)sessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
+- (void)activeSessionEndedWithReason:(unsigned int)arg1 error:(id)arg2;
 - (void)session:(id)arg1 receivedSessionEndFromID:(id)arg2 withData:(id)arg3;
 - (void)session:(id)arg1 receivedSessionMessageFromID:(id)arg2 withData:(id)arg3;
 - (void)session:(id)arg1 receivedInvitationCancelFromID:(id)arg2 withData:(id)arg3;
@@ -540,7 +545,7 @@
 - (int)orientationForCurrentAngle;
 - (void)setOrientationForConference:(id)arg1 videoAttributes:(id)arg2 callID:(long long)arg3;
 - (int)J99HackForScreenOrientation:(int)arg1 videoOrientation:(int)arg2;
-- (id)inviteDictionaryForRemoteInviteDictionary:(id)arg1;
+- (id)copyInviteDictionaryForRemoteInviteDictionary:(id)arg1;
 - (void)startAudioAVConferenceCallWithRemoteDictionary:(id)arg1;
 - (void)initAudioAVConference;
 - (void)startAVConferenceCallWithRemoteDictionary:(id)arg1;
@@ -563,6 +568,7 @@
 - (void)ssSessionRequestToResume:(id)arg1 result:(int)arg2;
 - (void)ssSessionResumed:(id)arg1;
 - (void)ssSessionPaused:(id)arg1;
+- (void)ssSession:(id)arg1 didSetLocalWindowUIResolution:(id)arg2;
 - (void)ssSession:(id)arg1 allowsControl:(BOOL)arg2;
 - (void)ssSession:(id)arg1 canToggleCurtainModeChanged:(BOOL)arg2;
 - (void)ssSession:(id)arg1 onConsoleChanged:(BOOL)arg2;
@@ -578,7 +584,9 @@
 - (void)ssSession:(id)arg1 cursorPositionChanged:(struct SSPoint)arg2;
 - (void)ssSession:(id)arg1 fullScreenUpdateProgress:(double)arg2;
 - (void)ssSession:(id)arg1 sizeChanged:(struct SSSize)arg2;
+- (void)finishSizeChangedWithFrame:(struct CGRect)arg1;
 - (void)ssSessionReady:(id)arg1;
+- (BOOL)aspectRatio:(struct CGSize)arg1 matches:(struct CGSize)arg2;
 - (void)ssSession:(id)arg1 sessionSelectionResult:(int)arg2;
 - (void)ssSession:(id)arg1 wantsSessionSelection:(id)arg2 consoleUser:(id)arg3;
 - (void)ssSession:(id)arg1 authenticationResult:(int)arg2;

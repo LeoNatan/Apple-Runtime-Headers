@@ -7,6 +7,6 @@
 #import <AppKit/NSMenuItem.h>
 
 @interface NSMenuItem (TSInternal)
-@property(setter=_setViewIsDrawingOnlyWrapper:) BOOL _viewIsDrawingOnlyWrapper;
+- (void)_setViewIsDrawingOnlyWrapper:(BOOL)arg1;
 @end
 

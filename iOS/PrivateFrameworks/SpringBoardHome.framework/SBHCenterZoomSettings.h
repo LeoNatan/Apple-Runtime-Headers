@@ -8,6 +8,7 @@
 
 @interface SBHCenterZoomSettings : SBHIconZoomSettings
 {
+    _Bool _preferCenterOfIconGrid;
     _Bool _zoomViewBelowIcons;
     double _centerRowCoordinate;
     long long _distanceEffect;
@@ -23,6 +24,7 @@
 @property(nonatomic) double firstHopIncrement; // @synthesize firstHopIncrement=_firstHopIncrement;
 @property(nonatomic) long long distanceEffect; // @synthesize distanceEffect=_distanceEffect;
 @property(nonatomic) double centerRowCoordinate; // @synthesize centerRowCoordinate=_centerRowCoordinate;
+@property(nonatomic) _Bool preferCenterOfIconGrid; // @synthesize preferCenterOfIconGrid=_preferCenterOfIconGrid;
 - (void)setDefaultValues;
 
 @end

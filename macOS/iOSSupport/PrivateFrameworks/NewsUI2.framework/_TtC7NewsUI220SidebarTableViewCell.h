@@ -10,8 +10,7 @@ __attribute__((visibility("hidden")))
 @interface _TtC7NewsUI220SidebarTableViewCell : UITableViewCell
 {
     // Error parsing type: , name: shadowView
-    // Error parsing type: , name: drawsIconShadow
-    // Error parsing type: , name: roundedIconCorners
+    // Error parsing type: , name: styler
 }
 
 - (void).cxx_destruct;

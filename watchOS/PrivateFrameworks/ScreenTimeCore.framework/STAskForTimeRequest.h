@@ -12,6 +12,7 @@
 
 @interface STAskForTimeRequest : NSObject <NSSecureCoding>
 {
+    _Bool _oneMoreMinute;
     int _usageType;
     NSString *_requestedResourceIdentifier;
     NSString *_resourceDisplayName;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) NSNumber *requestingUserDSID; // @synthesize requestingUserDSID=_requestingUserDSID;
 @property(retain, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(retain, nonatomic) NSDate *timeStamp; // @synthesize timeStamp=_timeStamp;
+@property(nonatomic) _Bool oneMoreMinute; // @synthesize oneMoreMinute=_oneMoreMinute;
 @property(retain, nonatomic) NSNumber *timeRequested; // @synthesize timeRequested=_timeRequested;
 @property(copy, nonatomic) NSString *resourceDisplayName; // @synthesize resourceDisplayName=_resourceDisplayName;
 @property(readonly, copy, nonatomic) NSString *requestedResourceIdentifier; // @synthesize requestedResourceIdentifier=_requestedResourceIdentifier;

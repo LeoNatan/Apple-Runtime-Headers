@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString;
+@class NSArray, NSData, NSString;
 
 @interface SRAppMatches : NSObject
 {
     // Error parsing type: , name: matchType
     // Error parsing type: , name: bundleIDs
+    // Error parsing type: , name: signalsJSON
 }
 
 + (void)setSupportsSecureCoding:(_Bool)arg1;
@@ -22,8 +23,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(void *)arg1;
 @property(nonatomic, readonly) NSString *description;
-- (id)matchTypeString;
-- (id)initWithMatchType:(int)arg1 bundleIDs:(id)arg2;
+- (id)initWithMatchType:(int)arg1 bundleIDs:(id)arg2 signalsJSON:(id)arg3;
+@property(nonatomic, readonly) NSData *signalsJSON;
 @property(nonatomic, readonly) NSArray *bundleIDs;
 @property(nonatomic, readonly) int matchType; // @synthesize matchType;
 

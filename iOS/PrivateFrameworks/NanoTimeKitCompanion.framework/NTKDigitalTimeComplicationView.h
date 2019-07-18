@@ -9,7 +9,7 @@
 #import <NanoTimeKitCompanion/NTKComplicationDisplay-Protocol.h>
 #import <NanoTimeKitCompanion/NTKTemplateComplicationDisplay-Protocol.h>
 
-@class CLKComplicationTemplate, CLKDevice, NSString, NTKDigitalTimeLabel, UIColor;
+@class CLKComplicationTemplate, CLKDevice, NSDate, NSString, NTKDigitalTimeLabel, UIColor;
 @protocol NTKComplicationDisplayObserver;
 
 @interface NTKDigitalTimeComplicationView : UIView <NTKComplicationDisplay, NTKTemplateComplicationDisplay>
@@ -19,10 +19,13 @@
     CLKDevice *_device;
     NTKDigitalTimeLabel *_timeLabel;
     CLKComplicationTemplate *_template;
+    NSDate *_timeTravelDate;
 }
 
 + (_Bool)supportsComplicationFamily:(long long)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
++ (unsigned long long)timelineAnimationFadeType;
+@property(retain, nonatomic) NSDate *timeTravelDate; // @synthesize timeTravelDate=_timeTravelDate;
 @property(retain, nonatomic) CLKComplicationTemplate *template; // @synthesize template=_template;
 @property(retain, nonatomic) NTKDigitalTimeLabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;

@@ -31,12 +31,15 @@
     long long _mediaType;
     NSURL *_renderedPreviewContentURL;
     NSNumber *_playbackVariation;
+    NSNumber *_videoDuration;
 }
 
 + (_Bool)supportsSecureCoding;
 + (unsigned long long)maximumAdjustmentDataLength;
++ (id)renderURLWithExtensionForMediaType:(long long)arg1;
 + (id)outputForFlippingFullSizeRenderWithContentEditingInput:(id)arg1 error:(id *)arg2;
 @property(nonatomic) _Bool isSwappingFullSizeRenderWithAlternateRender; // @synthesize isSwappingFullSizeRenderWithAlternateRender=_isSwappingFullSizeRenderWithAlternateRender;
+@property(retain, nonatomic) NSNumber *videoDuration; // @synthesize videoDuration=_videoDuration;
 @property(retain, nonatomic) NSNumber *playbackVariation; // @synthesize playbackVariation=_playbackVariation;
 @property(nonatomic) _Bool isAsyncAdjustment; // @synthesize isAsyncAdjustment=_isAsyncAdjustment;
 @property(retain, nonatomic) NSURL *renderedPreviewContentURL; // @synthesize renderedPreviewContentURL=_renderedPreviewContentURL;

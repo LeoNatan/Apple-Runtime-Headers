@@ -6,11 +6,25 @@
 
 #import <Mail/MFMutedMessageAction.h>
 
-@interface MFMutedMessageActionArchiveOrDelete : MFMutedMessageAction
+#import <Mail/EFLoggable-Protocol.h>
+
+@class NSString;
+
+@interface MFMutedMessageActionArchiveOrDelete : MFMutedMessageAction <EFLoggable>
 {
 }
 
-- (void)performAction;
++ (id)log;
+- (BOOL)_shouldArchive;
+- (id)toMailboxForAccount:(id)arg1;
+- (void)performActionWithChangeManager:(id)arg1;
+- (void)performActionWithStore:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

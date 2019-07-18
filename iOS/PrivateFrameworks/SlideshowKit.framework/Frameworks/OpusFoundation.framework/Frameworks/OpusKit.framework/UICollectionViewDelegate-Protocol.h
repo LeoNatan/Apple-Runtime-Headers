@@ -6,12 +6,16 @@
 
 #import <OpusKit/UIScrollViewDelegate-Protocol.h>
 
-@class NSIndexPath, NSString, UICollectionReusableView, UICollectionView, UICollectionViewCell, UICollectionViewFocusUpdateContext, UICollectionViewLayout, UICollectionViewTransitionLayout, UIFocusAnimationCoordinator;
-@protocol UISpringLoadedInteractionContext;
+@class NSIndexPath, NSString, UICollectionReusableView, UICollectionView, UICollectionViewCell, UICollectionViewFocusUpdateContext, UICollectionViewLayout, UICollectionViewTransitionLayout, UIContextMenuConfiguration, UIFocusAnimationCoordinator, UITargetedPreview;
+@protocol UIContextMenuInteractionCommitAnimating, UISpringLoadedInteractionContext;
 
 @protocol UICollectionViewDelegate <UIScrollViewDelegate>
 
 @optional
+- (void)collectionView:(UICollectionView *)arg1 willCommitMenuWithAnimator:(id <UIContextMenuInteractionCommitAnimating>)arg2;
+- (UITargetedPreview *)collectionView:(UICollectionView *)arg1 previewForDismissingContextMenuWithConfiguration:(UIContextMenuConfiguration *)arg2;
+- (UITargetedPreview *)collectionView:(UICollectionView *)arg1 previewForHighlightingContextMenuWithConfiguration:(UIContextMenuConfiguration *)arg2;
+- (UIContextMenuConfiguration *)collectionView:(UICollectionView *)arg1 contextMenuConfigurationForItemAtIndexPath:(NSIndexPath *)arg2 point:(struct CGPoint)arg3;
 - (void)collectionViewDidEndMultipleSelectionInteraction:(UICollectionView *)arg1;
 - (void)collectionView:(UICollectionView *)arg1 didBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)arg2;
 - (_Bool)collectionView:(UICollectionView *)arg1 shouldBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)arg2;

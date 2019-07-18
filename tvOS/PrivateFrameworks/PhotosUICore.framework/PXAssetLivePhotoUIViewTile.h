@@ -19,10 +19,12 @@
     ISLivePhotoUIView *_livePhotoView;
     ISLivePhotoPlayer *_livePhotoPlayer;
     PXImageRequester *_imageRequester;
+    double _cornerRadius;
     ISPlayerItem *__playerItem;
 }
 
 @property(retain, nonatomic, setter=_setPlayerItem:) ISPlayerItem *_playerItem; // @synthesize _playerItem=__playerItem;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) PXImageRequester *imageRequester; // @synthesize imageRequester=_imageRequester;
 - (void).cxx_destruct;
 - (void)_handleLivePhotoResult:(id)arg1 info:(id)arg2 expectedRequestCount:(unsigned long long)arg3 expectedRequestID:(long long)arg4;

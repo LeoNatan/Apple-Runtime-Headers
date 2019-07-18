@@ -11,6 +11,7 @@
 @interface NTKCaliforniaContentView : UIView
 {
     _Bool _showingStatusIcon;
+    _Bool _circularPillMarkersCenterPointsCalculated;
     unsigned int _style;
     unsigned int _dial;
     unsigned int _color;
@@ -28,6 +29,7 @@
 }
 
 + (id)_disabledLayerActions;
+@property(nonatomic) _Bool circularPillMarkersCenterPointsCalculated; // @synthesize circularPillMarkersCenterPointsCalculated=_circularPillMarkersCenterPointsCalculated;
 @property(nonatomic) _Bool showingStatusIcon; // @synthesize showingStatusIcon=_showingStatusIcon;
 @property(retain, nonatomic) NTKCaliforniaStyleTransitionHandler *styleTransitionHandler; // @synthesize styleTransitionHandler=_styleTransitionHandler;
 @property(retain, nonatomic) NTKCaliforniaColorPalette *colorPalette; // @synthesize colorPalette=_colorPalette;
@@ -53,9 +55,16 @@
 - (void)configureTicksForStatus:(_Bool)arg1;
 - (id)imageNameComponentForDial:(unsigned int)arg1;
 - (id)_createLayersWithCount:(unsigned int)arg1;
+- (id)_createLayer;
 - (id)imageNameComponentForStyle:(unsigned int)arg1;
 - (id)imageNameForDigit:(unsigned int)arg1 style:(unsigned int)arg2 dial:(unsigned int)arg3;
+- (id)createPillViewWithAngle:(float)arg1 size:(const struct CGSize *)arg2;
+- (id)createPillAtIndex:(unsigned int)arg1 dial:(unsigned int)arg2;
+- (id)createCaliforniaGraphicAtIndex:(unsigned int)arg1 dial:(unsigned int)arg2;
 - (id)_digitLayersForStyle:(unsigned int)arg1 dial:(unsigned int)arg2;
+- (id)textForDigit:(unsigned int)arg1 style:(unsigned int)arg2;
+- (id)createLabelForStyle:(unsigned int)arg1 dial:(unsigned int)arg2;
+- (void)setColorInHourMarkerView:(id)arg1 color:(id)arg2;
 - (void)_createTemporaryDigitsIfNeededWithStyle:(unsigned int)arg1 dial:(unsigned int)arg2;
 - (void)_createDigitsIfNeededWithStyle:(unsigned int)arg1 dial:(unsigned int)arg2;
 - (void)removeHourMarkers;
@@ -64,7 +73,9 @@
 - (void)addCircularTicksIfNeeded;
 - (void)addFullscreenTicksIfNeeded;
 - (void)setCircularTicksHidden:(_Bool)arg1;
-- (void)_layoutHourMarkersLayers:(id)arg1 dialShape:(unsigned int)arg2;
+- (struct CGPoint *)circularPillMarkersCenterPoints;
+- (struct CGPoint *)hourMarkersCenterPointConstantsForStyle:(unsigned int)arg1 dial:(unsigned int)arg2;
+- (void)_layoutHourMarkersLayers:(id)arg1 style:(unsigned int)arg2 dialShape:(unsigned int)arg3;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 dial:(unsigned int)arg2 style:(unsigned int)arg3 color:(unsigned int)arg4 device:(id)arg5;
 

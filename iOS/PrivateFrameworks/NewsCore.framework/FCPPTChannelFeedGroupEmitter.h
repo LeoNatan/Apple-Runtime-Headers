@@ -15,13 +15,13 @@
     NSString *_channelID;
 }
 
++ (id)groupEmitterIdentifier;
 @property(retain, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 - (void).cxx_destruct;
-@property(readonly, copy, nonatomic) NSString *groupEmitterIdentifier;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (_Bool)wantsToEmitGroupInContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
-- (_Bool)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
+- (_Bool)wantsToInsertGroupInContext:(id)arg1;
 - (id)initWithChannelID:(id)arg1;
 
 // Remaining properties

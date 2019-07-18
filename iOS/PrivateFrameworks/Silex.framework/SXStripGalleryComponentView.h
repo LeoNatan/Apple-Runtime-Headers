@@ -111,6 +111,7 @@
 - (struct CGRect)itemizedScrollView:(id)arg1 frameForViewAtIndex:(unsigned long long)arg2;
 - (unsigned long long)numberOfViewsInItemizedScrollView:(id)arg1;
 - (id)createViewForViewIndex:(unsigned long long)arg1;
+- (void)discardContents;
 - (void)presentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
 - (void)receivedInfo:(id)arg1 fromLayoutingPhaseWithIdentifier:(id)arg2;
 - (void)loadComponent:(id)arg1;

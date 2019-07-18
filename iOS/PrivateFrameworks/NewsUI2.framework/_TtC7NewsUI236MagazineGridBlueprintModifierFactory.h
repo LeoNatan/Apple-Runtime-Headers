@@ -12,6 +12,7 @@
     // Error parsing type: , name: issueModelFactory
     // Error parsing type: , name: paidAccessChecker
     // Error parsing type: , name: subscriptionService
+    // Error parsing type: , name: tagService
 }
 
 @end

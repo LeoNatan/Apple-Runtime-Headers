@@ -18,6 +18,8 @@
     BOOL _isAborted;
     BOOL _failed;
     BOOL _replySynchronous;
+    BOOL _didRespond;
+    NSString *_memoizationCacheKey;
     BOOL _isExecuting;
     BOOL _isCanceled;
     BOOL _isFinished;
@@ -42,6 +44,7 @@
     CDStruct_1e2b2e48 _renderScale;
 }
 
++ (void)initialize;
 @property(retain, nonatomic) AVAudioMix *outputAudioMix; // @synthesize outputAudioMix=_outputAudioMix;
 @property(retain, nonatomic) AVVideoComposition *outputVideoComposition; // @synthesize outputVideoComposition=_outputVideoComposition;
 @property(retain, nonatomic) AVComposition *outputVideo; // @synthesize outputVideo=_outputVideo;
@@ -83,6 +86,10 @@
 - (id)pipelineForComposition:(id)arg1 error:(out id *)arg2;
 - (id)validateComposition:(out id *)arg1;
 - (BOOL)prepare:(out id *)arg1;
+- (void)_memoizeResult:(id)arg1;
+- (BOOL)_checkForMemoizedResult;
+- (id)_memoizationCacheKey;
+- (id)cacheKey;
 - (void)_reply:(id)arg1;
 - (void)reply:(id)arg1;
 @property(readonly) BOOL succeeded; // @dynamic succeeded;

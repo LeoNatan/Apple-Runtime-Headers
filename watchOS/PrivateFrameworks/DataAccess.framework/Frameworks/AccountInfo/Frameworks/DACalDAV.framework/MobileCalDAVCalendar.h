@@ -8,13 +8,14 @@
 
 #import <DACalDAV/CalDAVCalendar-Protocol.h>
 
-@class CalDiagCalendarCollectionSync, MobileCalDAVPrincipal, NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString, NSTimeZone, NSURL;
+@class CalDAVDBChangeTrackingHelper, CalDiagCalendarCollectionSync, MobileCalDAVPrincipal, NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString, NSTimeZone, NSURL;
 @protocol CalDAVPrincipal;
 
 @interface MobileCalDAVCalendar : NSObject <CalDAVCalendar>
 {
     MobileCalDAVPrincipal *_principal;
     void *_calCalendar;
+    NSMutableDictionary *_changesToClear;
     NSString *_calendarURLString;
     _Bool _isScheduleOutbox;
     _Bool _isEnabled;
@@ -28,10 +29,8 @@
     int _maxAttendees;
     unsigned int _numDownloadedElements;
     unsigned int _numUploadedElements;
+    CalDAVDBChangeTrackingHelper *_changeTracker;
     CalDiagCalendarCollectionSync *_calendarCollectionSyncDiagnostics;
-    int _mostRecentSequenceNumber;
-    int _mostRecentShareeChangeIndex;
-    int _mostRecentEventActionChangeIndex;
     NSMutableDictionary *_deletedCalendarItems;
     NSArray *_syncActions;
     NSArray *_shareeActions;
@@ -44,10 +43,13 @@
     NSMutableDictionary *_URLToEtagMap;
 }
 
-+ (_Bool)clearCalendarChangesToIndex:(int)arg1 inPrincipal:(id)arg2 forChangeTrackingClient:(id)arg3;
-+ (int)deletedCalendars:(id *)arg1 inPrincipal:(id)arg2;
-+ (int)modifiedCalendars:(id *)arg1 inPrincipal:(id)arg2;
-+ (int)addedCalendars:(id *)arg1 inPrincipal:(id)arg2;
++ (_Bool)clearCalendarChanges:(struct __CFArray *)arg1 forChangeTrackingClient:(id)arg2;
++ (void)processModifiedCalendar:(id)arg1 oldFlags:(unsigned int)arg2 newFlags:(unsigned int)arg3;
++ (void)processAddedCalendar:(id)arg1;
++ (_Bool)shouldSkipModifiedCalendar:(void *)arg1;
++ (_Bool)shouldSkipAddedCalendar:(void *)arg1;
++ (_Bool)shouldSkipCalendar:(void *)arg1 withChangeType:(int)arg2;
++ (struct __CFArray *)gatherCalendarChangesInPrincipal:(id)arg1 calendars:(id)arg2 adds:(id *)arg3 modifies:(id *)arg4 deletes:(id *)arg5 changeTracker:(id)arg6;
 + (void)clearCalendarUIDCache;
 + (int)cachedCalendarUIDForURLString:(id)arg1;
 + (void)removeUIDCacheEntryForCalendarURLString:(id)arg1;
@@ -64,11 +66,9 @@
 @property(retain, nonatomic) NSArray *shareeActions; // @synthesize shareeActions=_shareeActions;
 @property(retain, nonatomic) NSArray *syncActions; // @synthesize syncActions=_syncActions;
 @property(retain, nonatomic) NSMutableDictionary *deletedCalendarItems; // @synthesize deletedCalendarItems=_deletedCalendarItems;
-@property(nonatomic) int mostRecentEventActionChangeIndex; // @synthesize mostRecentEventActionChangeIndex=_mostRecentEventActionChangeIndex;
-@property(nonatomic) int mostRecentShareeChangeIndex; // @synthesize mostRecentShareeChangeIndex=_mostRecentShareeChangeIndex;
-@property(nonatomic) int mostRecentSequenceNumber; // @synthesize mostRecentSequenceNumber=_mostRecentSequenceNumber;
 @property(retain, nonatomic) CalDiagCalendarCollectionSync *calendarCollectionSyncDiagnostics; // @synthesize calendarCollectionSyncDiagnostics=_calendarCollectionSyncDiagnostics;
 @property(nonatomic) _Bool needsIsAffectingAvailabilityUpdate; // @synthesize needsIsAffectingAvailabilityUpdate=_needsIsAffectingAvailabilityUpdate;
+@property(retain, nonatomic) CalDAVDBChangeTrackingHelper *changeTracker; // @synthesize changeTracker=_changeTracker;
 @property(nonatomic) unsigned int numUploadedElements; // @synthesize numUploadedElements=_numUploadedElements;
 @property(nonatomic) unsigned int numDownloadedElements; // @synthesize numDownloadedElements=_numDownloadedElements;
 @property(nonatomic) _Bool needsPublishUpdate; // @synthesize needsPublishUpdate=_needsPublishUpdate;
@@ -100,21 +100,25 @@
 - (id)_recurrenceSplitActionsForItems:(id)arg1 alreadySentItems:(id)arg2;
 - (id)_resourceURLsForJunkItemsInModifiedItems:(id)arg1 alreadySentItems:(id)arg2;
 - (_Bool)_isItemJunk:(void *)arg1;
+- (void)_saveChangesForItem:(id)arg1;
+- (void)_saveChangesAtIndices:(id)arg1 forType:(int)arg2;
 - (void)_clearChangesFromItem:(id)arg1 shouldClearAttachmentChanges:(_Bool)arg2;
 - (void)_clearChangesFromItem:(id)arg1;
 - (void)_clearChangesAtIndices:(id)arg1 forType:(int)arg2;
+- (void)addChangesToBeCleared:(struct __CFArray *)arg1 forEntityType:(int)arg2;
+- (void)clearChangesForEntityType:(int)arg1;
 - (void)clearEventChanges;
 - (id)_copyDeletedEventActions;
 - (id)copyDeletedItems;
-- (int)_gatherDeletedChanges:(CDUnknownFunctionPointerType)arg1 inDictionary:(id)arg2;
+- (void)_gatherDeletedChanges:(CDUnknownFunctionPointerType)arg1 inDictionary:(id)arg2;
 - (id)copyRecurrenseSplitItems;
-- (int)_addAddedRecurrenceSplitItemsToArray:(id)arg1;
+- (void)_addAddedRecurrenceSplitItemsToArray:(id)arg1;
 - (id)copyModifiedItems;
-- (int)_gatherModifiedTasksInArray:(id)arg1;
-- (int)_gatherModifiedEventsInArray:(id)arg1;
-- (int)_gatherModifiedItemsFromCalChangesCall:(CDUnknownFunctionPointerType)arg1 forType:(id)arg2 inArray:(id)arg3;
+- (void)_gatherModifiedTasksInArray:(id)arg1;
+- (void)_gatherModifiedEventsInArray:(id)arg1;
+- (void)_gatherModifiedItemsFromCalChangesCall:(CDUnknownFunctionPointerType)arg1 forType:(id)arg2 inArray:(id)arg3;
 - (id)copyAddedItems;
-- (int)_addAddedItemsOfType:(int)arg1 toArray:(id)arg2;
+- (void)_addAddedItemsOfType:(int)arg1 toArray:(id)arg2;
 - (void)_addCalendarItemWithRowID:(int)arg1 toArrayIfNeeded:(id)arg2 withChangeRowid:(int)arg3 changeType:(id)arg4;
 - (id)copyAllItems;
 - (id)_itemPropertyDictForItemAtIndex:(long)arg1 withChangedIDs:(struct __CFArray *)arg2 withChangedRowids:(struct __CFArray *)arg3 withExternalIDs:(struct __CFArray *)arg4 uniqueIdentifiers:(struct __CFArray *)arg5 significantAttributeChanges:(struct __CFArray *)arg6 oldCalendarIDs:(struct __CFArray *)arg7 entityType:(int)arg8;

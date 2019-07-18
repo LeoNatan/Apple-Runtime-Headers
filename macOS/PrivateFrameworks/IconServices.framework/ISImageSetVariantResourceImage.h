@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface ISImageSetVariantResourceImage : NSObject
 {
     struct CGImage *_image;

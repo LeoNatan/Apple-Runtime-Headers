@@ -17,10 +17,10 @@
 
 - (void).cxx_destruct;
 - (id)_atxAVRouteInfoWithRoute:(id)arg1;
-- (id)_filterExternalRoute:(id)arg1;
 - (id)_filterTopRouteFromRoutes:(id)arg1 withAcceptThreshold:(float)arg2;
 - (id)_selectedOrPendingRoute;
-- (id)_predictedRouteInfoWithAcceptThreshold:(float)arg1;
+- (id)_predictedRouteWithAcceptThreshold:(float)arg1;
+- (id)_predictedRouteInfoWithAcceptThreshold:(float)arg1 prefersLikelyDestinationsOverCurrentRoutingSession:(_Bool)arg2;
 @property(readonly, nonatomic) float acceptThreshod;
 @property(readonly, nonatomic) ATXAVRouteInfo *predictedRouteInfo;
 - (id)initWithAcceptThreshold:(float)arg1 avRoutingSessionManager:(id)arg2;

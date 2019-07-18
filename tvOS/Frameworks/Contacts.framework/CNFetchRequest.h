@@ -6,13 +6,9 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface CNFetchRequest : NSObject
 {
-    unsigned long long _resultType;
 }
-
-@property(nonatomic) unsigned long long resultType; // @synthesize resultType=_resultType;
 
 @end
 

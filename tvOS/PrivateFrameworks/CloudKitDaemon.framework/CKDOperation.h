@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     _Bool _useClearAssetEncryption;
     _Bool _isProxyOperation;
     _Bool _shouldPipelineFetchAllChangesRequests;
+    _Bool _didAttemptDugongKeyRoll;
     // Error parsing type: Ai, name: _pcsWaitCount
     CKDURLRequest *_request;
     NSDate *_startDate;
@@ -48,6 +49,7 @@ __attribute__((visibility("hidden")))
 
 + (long long)isPredominatelyDownload;
 + (id)_globalOperationCallbackQueueForQOS:(long long)arg1;
+@property(nonatomic) _Bool didAttemptDugongKeyRoll; // @synthesize didAttemptDugongKeyRoll=_didAttemptDugongKeyRoll;
 // Error parsing type for property pcsWaitCount:
 // Property attributes: TAi,N,V_pcsWaitCount
 
@@ -77,6 +79,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 - (void).cxx_destruct;
 - (id)analyticsPayload;
+- (id)dugongKeyRollAnalyticsPayloadWithError:(id)arg1;
+- (id)baseOperationAndErrorInfoCoreAnalyticsPayloadWithError:(id)arg1;
 - (void)sendCoreAnalyticsEventOperationFinished;
 - (_Bool)isNetworkingBehaviorEquivalentForOperation:(id)arg1;
 - (id)statusReportWithIndent:(unsigned long long)arg1;
@@ -115,6 +119,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)makeStateTransition;
 @property(nonatomic) unsigned long long state;
 - (void)cancel;
+- (_Bool)isTopLevelDaemonOperationForMetrics;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)finishWithError:(id)arg1;
 - (void)_finishInternalOnCallbackQueueWithError:(id)arg1;
@@ -141,6 +146,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSNumber *operationGroupQuantityNumber;
 @property(readonly, nonatomic) NSString *operationGroupName;
 @property(readonly, nonatomic) NSString *operationGroupID;
+@property(readonly, nonatomic) _Bool isCloudKitSupportOperation;
 @property(readonly, nonatomic) _Bool shouldSkipZonePCSUpdate;
 - (id)additionalRequestHTTPHeaders;
 @property(readonly, nonatomic) double timeoutIntervalForResource;

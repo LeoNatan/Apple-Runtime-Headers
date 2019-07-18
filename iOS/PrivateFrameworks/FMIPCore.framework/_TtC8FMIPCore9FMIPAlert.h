@@ -14,6 +14,7 @@
     // Error parsing type: , name: okButtonURL
     // Error parsing type: , name: cancelButtonLabel
     // Error parsing type: , name: cancelButtonURL
+    // Error parsing type: , name: type
 }
 
 @end

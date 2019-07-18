@@ -8,21 +8,28 @@
 
 #import <HomeAI/HMFLogging-Protocol.h>
 
-@class NSObject, NSString;
+@class HMFUnfairLock, NSMapTable, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 @interface HMIAnalysisService : HMFObject <HMFLogging>
 {
     _Bool _runRemotely;
+    int _nextRequestID;
     NSObject<OS_dispatch_queue> *_workQueue;
+    HMFUnfairLock *_lock;
+    NSMapTable *_requests;
 }
 
 + (id)logCategory;
 @property _Bool runRemotely; // @synthesize runRemotely=_runRemotely;
+@property(readonly) NSMapTable *requests; // @synthesize requests=_requests;
+@property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
+@property int nextRequestID; // @synthesize nextRequestID=_nextRequestID;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
 - (_Bool)cancelRequest:(int)arg1;
 - (int)requestAnalysisForAssetData:(id)arg1 withProperties:(id)arg2 andCompletionHandler:(CDUnknownBlockType)arg3;
+- (int)getNextRequestID;
 - (int)requestAnalysisForPixelBuffer:(struct __CVBuffer *)arg1 withProperties:(id)arg2 andCompletionHandler:(CDUnknownBlockType)arg3;
 - (id)expectedClasses;
 - (id)init;

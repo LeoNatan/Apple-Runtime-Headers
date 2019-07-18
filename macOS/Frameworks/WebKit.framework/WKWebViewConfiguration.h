@@ -23,7 +23,7 @@
     struct WeakObjCPtr<WKWebView> _relatedWebView;
     struct WeakObjCPtr<WKWebView> _alternateWebViewForNavigationGestures;
     struct RetainPtr<NSString> _groupIdentifier;
-    struct LazyInitialized<WTF::RetainPtr<NSString>> _applicationNameForUserAgent;
+    struct Optional<WTF::RetainPtr<NSString>> _applicationNameForUserAgent;
     double _incrementalRenderingSuppressionTimeout;
     BOOL _respectsImageOrientation;
     BOOL _printsBackgrounds;
@@ -74,6 +74,7 @@
 - (void)setURLSchemeHandler:(id)arg1 forURLScheme:(id)arg2;
 @property(retain, nonatomic, setter=_setVisitedLinkStore:) _WKVisitedLinkStore *_visitedLinkStore;
 @property(copy, nonatomic) NSString *applicationNameForUserAgent;
+@property(readonly, nonatomic) NSString *_applicationNameForDesktopUserAgent;
 @property(copy, nonatomic) WKWebpagePreferences *defaultWebpagePreferences;
 @property(retain, nonatomic) WKWebsiteDataStore *websiteDataStore;
 @property(retain, nonatomic) WKUserContentController *userContentController;

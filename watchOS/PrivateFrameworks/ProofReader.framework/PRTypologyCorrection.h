@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 {
     NSString *_misspelling;
     struct _NSRange _misspelledRange;
-    NSString *_stringToCheck;
     NSTextCheckingResult *_correctionResult;
     NSMutableString *_logs;
     double _openTime;
@@ -27,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)addTypologyCorrectionLog:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)initWithString:(id)arg1 range:(struct _NSRange)arg2 inString:(id)arg3;
+- (id)initWithString:(id)arg1 range:(struct _NSRange)arg2;
 
 @end
 

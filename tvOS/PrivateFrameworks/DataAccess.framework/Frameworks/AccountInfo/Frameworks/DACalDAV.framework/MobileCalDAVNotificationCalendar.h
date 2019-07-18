@@ -10,11 +10,9 @@
 
 @interface MobileCalDAVNotificationCalendar : MobileCalDAVCalendar
 {
-    int _mostRecentNotificationChangeIndex;
     CalDiagNotificationCollectionSync *_notificationCollectionSyncDiagnostics;
 }
 
-@property(nonatomic) int mostRecentNotificationChangeIndex; // @synthesize mostRecentNotificationChangeIndex=_mostRecentNotificationChangeIndex;
 @property(retain, nonatomic) CalDiagNotificationCollectionSync *notificationCollectionSyncDiagnostics; // @synthesize notificationCollectionSyncDiagnostics=_notificationCollectionSyncDiagnostics;
 - (void).cxx_destruct;
 - (_Bool)_handleResourceChanged:(id)arg1 withResource:(id)arg2 uid:(id)arg3;

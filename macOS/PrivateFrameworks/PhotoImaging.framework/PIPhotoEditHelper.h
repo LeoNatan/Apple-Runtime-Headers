@@ -10,6 +10,7 @@
 {
 }
 
++ (void)preheatEditDependencies;
 + (BOOL)canInterpretDataWithFormatIdentifier:(id)arg1 formatVersion:(id)arg2;
 + (id)knownFormatsVersionsMap;
 + (id)validatedCompositionCopyForComposition:(id)arg1 mediaType:(long long)arg2;

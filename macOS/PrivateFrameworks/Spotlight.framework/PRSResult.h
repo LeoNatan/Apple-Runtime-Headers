@@ -57,6 +57,9 @@
     NSString *_contentType;
     NSString *_displayName;
     NSURL *_fastLaunchURL;
+    NSArray *_otherTypes;
+    NSArray *_otherNames;
+    NSDate *_lastUsedDate;
     NSString *_distinguishPathString;
     unsigned long long _rank;
     NSURL *_altPath;
@@ -82,6 +85,9 @@
 @property(nonatomic) unsigned long long rank; // @synthesize rank=_rank;
 @property(retain) NSString *distinguishPathString; // @synthesize distinguishPathString=_distinguishPathString;
 @property BOOL isFolderQuery; // @synthesize isFolderQuery=_isFolderQuery;
+@property(readonly) NSDate *lastUsedDate; // @synthesize lastUsedDate=_lastUsedDate;
+@property(readonly) NSArray *otherNames; // @synthesize otherNames=_otherNames;
+@property(readonly) NSArray *otherTypes; // @synthesize otherTypes=_otherTypes;
 @property(nonatomic) BOOL isSynthetic; // @synthesize isSynthetic=_isSynthetic;
 @property(nonatomic) BOOL isShowAllInFinder; // @synthesize isShowAllInFinder=_isShowAllInFinder;
 @property(nonatomic) BOOL isAnyTopHit; // @synthesize isAnyTopHit=_isAnyTopHit;
@@ -132,12 +138,7 @@
 - (unsigned long long)matchQuality;
 - (BOOL)isExactMatch;
 - (BOOL)isPrefixMatch;
-@property(retain, nonatomic) NSString *groupName;
-@property(readonly) NSDate *lastUsedDate;
-@property(readonly) NSURL *URL;
 - (void)updateRenderOrEngagementCountsForKey:(id)arg1 date:(id)arg2;
-@property(readonly) NSArray *otherNames;
-@property(readonly) NSArray *otherTypes;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToResult:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -155,6 +156,7 @@
 - (id)cachedImageForKey:(id)arg1;
 
 // Remaining properties
+@property(readonly) NSURL *URL;
 @property(nonatomic) long long adam_id;
 @property(retain, nonatomic) NSString *bundle_id;
 @property(retain, nonatomic) NSString *completion;
@@ -163,6 +165,7 @@
 @property(retain, nonatomic) NSDictionary *featuresSet;
 @property(retain, nonatomic) NSString *geoUserSessionIDString;
 @property(nonatomic) double geoUserSessionStartTime;
+@property(retain, nonatomic) NSString *groupName;
 @property(retain, nonatomic) NSImage *icon;
 @property BOOL isQuickGlance;
 @property(nonatomic) BOOL isStreaming;

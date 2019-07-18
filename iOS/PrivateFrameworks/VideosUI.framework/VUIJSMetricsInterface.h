@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)recordLogEvent:(id)arg1;
 - (void)recordPerfEvent:(id)arg1;
 - (void)recordEvent:(id)arg1;
 - (id)initWithAppContext:(id)arg1;

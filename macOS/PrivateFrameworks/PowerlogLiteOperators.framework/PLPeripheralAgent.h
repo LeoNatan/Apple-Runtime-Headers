@@ -52,6 +52,7 @@
 - (_Bool)retrieveDeviceInfoUSB:(unsigned int)arg1 forDeviceState:(struct PLPeripheralDeviceState *)arg2;
 - (_Bool)SupportsIOSWithVID:(int)arg1 andPID:(int)arg2;
 - (void)initLid;
+- (void)initUSB;
 - (void)deviceChanged:(unsigned long long)arg1 withObject:(unsigned int)arg2;
 - (void)initOperatorDependancies;
 - (id)init;

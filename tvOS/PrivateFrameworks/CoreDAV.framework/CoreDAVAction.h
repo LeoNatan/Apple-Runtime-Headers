@@ -11,8 +11,10 @@
     int _action;
     id _context;
     id _changeContext;
+    _Bool _ignoresGuardianRestrictions;
 }
 
+@property(nonatomic) _Bool ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions=_ignoresGuardianRestrictions;
 @property(retain, nonatomic) id changeContext; // @synthesize changeContext=_changeContext;
 @property(readonly, nonatomic) id context; // @synthesize context=_context;
 @property(readonly, nonatomic) int action; // @synthesize action=_action;

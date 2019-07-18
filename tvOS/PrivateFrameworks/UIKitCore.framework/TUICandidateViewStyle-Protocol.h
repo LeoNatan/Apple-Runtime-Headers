@@ -15,6 +15,7 @@
 @property(readonly, nonatomic) _Bool darkBackdrop;
 @property(readonly, nonatomic) long long cellTextAlignment;
 @property(readonly, nonatomic) struct UIEdgeInsets sortControlPadding;
+@property(readonly, nonatomic) struct CGPoint gridLineOffset;
 @property(readonly, nonatomic) struct UIEdgeInsets gridLinePadding;
 @property(readonly, nonatomic) struct UIEdgeInsets gridPadding;
 @property(readonly, nonatomic) struct UIEdgeInsets arrowButtonPadding;

@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     id _timecodePeriodicObserverToken;
     _Bool _pictureInPictureInterrupted;
     _Bool _handlesAudioSessionInterruptions;
+    _Bool _isDeallocating;
     NSNumber *_rateToRestoreAfterAudioSessionInterruptionEnds;
     CDUnknownBlockType _retryPlayingImmediatelyBlock;
     _Bool _shouldPlayImmediately;
@@ -63,6 +64,7 @@ __attribute__((visibility("hidden")))
     _Bool _allowsPictureInPicturePlayback;
     _Bool _pictureInPictureActive;
     _Bool _canTogglePictureInPicture;
+    _Bool _hasBegunInspection;
     _Bool _touchBarRequiresLinearPlayback;
     AVPlayer *_player;
     long long _status;
@@ -144,6 +146,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long bestAvailableVideoRange; // @synthesize bestAvailableVideoRange=_bestAvailableVideoRange;
 @property(nonatomic) long long bestAvailableVideoResolution; // @synthesize bestAvailableVideoResolution=_bestAvailableVideoResolution;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *seekTimer; // @synthesize seekTimer=_seekTimer;
+@property(nonatomic) _Bool hasBegunInspection; // @synthesize hasBegunInspection=_hasBegunInspection;
 @property(nonatomic) _Bool canTogglePictureInPicture; // @synthesize canTogglePictureInPicture=_canTogglePictureInPicture;
 @property(nonatomic, getter=isPictureInPictureActive) _Bool pictureInPictureActive; // @synthesize pictureInPictureActive=_pictureInPictureActive;
 @property(nonatomic) _Bool allowsPictureInPicturePlayback; // @synthesize allowsPictureInPicturePlayback=_allowsPictureInPicturePlayback;
@@ -304,6 +307,7 @@ __attribute__((visibility("hidden")))
 - (void *)observationInfo;
 - (void)startKVO;
 - (void)dealloc;
+- (void)startInspectionIfNeeded;
 - (id)initWithPlayer:(id)arg1;
 - (id)init;
 - (void)_nukeTVExtras;
@@ -395,6 +399,7 @@ __attribute__((visibility("hidden")))
 - (void)reloadOptions;
 - (void)selectedMediaOptionMayHaveChanged;
 - (id)_optionsForGroup:(id)arg1;
+- (void)enableAutomaticCaptionDisplayTypeIfNeeded;
 - (void)toggleCaptions;
 - (void)setSavedCaptionAppearanceDisplayType:(long long)arg1;
 - (long long)savedCaptionAppearanceDisplayType;

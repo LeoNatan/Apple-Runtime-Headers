@@ -34,6 +34,7 @@
 - (BOOL)insertTimeRanges:(id)arg1 ofTracks:(id)arg2 atTime:(CDStruct_1b6d18a9)arg3 error:(id *)arg4;
 - (BOOL)insertTimeRange:(CDStruct_e83c9415)arg1 ofTrack:(id)arg2 atTime:(CDStruct_1b6d18a9)arg3 error:(id *)arg4;
 @property(copy, nonatomic) NSArray *segments;
+@property(nonatomic, getter=isEnabled) BOOL enabled;
 - (void)_notifySelfThatSegmentsDidChangeWithSuccess:(BOOL)arg1;
 - (void)_notifySelfThatSegmentsWillChange;
 - (void)_notifyAssetThatDurationDidChangeWithSuccess:(BOOL)arg1;

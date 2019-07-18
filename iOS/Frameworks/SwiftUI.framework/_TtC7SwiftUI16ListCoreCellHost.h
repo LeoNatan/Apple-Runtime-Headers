@@ -11,6 +11,8 @@ __attribute__((visibility("hidden")))
 {
     // Error parsing type: , name: host
     // Error parsing type: , name: selectionBehavior
+    // Error parsing type: , name: contextMenuItemsSeed
+    // Error parsing type: , name: contextMenuOptions
 }
 
 - (void).cxx_destruct;

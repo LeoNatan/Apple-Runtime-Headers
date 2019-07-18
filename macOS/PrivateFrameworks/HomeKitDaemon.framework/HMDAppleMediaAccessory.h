@@ -10,11 +10,9 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
 @class HMDAccessorySettingGroup, HMDAccessorySymptomHandler, HMDDevice, HMDRemoteLoginHandler, HMDSoftwareUpdate, HMDTargetControlManager, HMFPairingIdentity, HMFSoftwareVersion, HMFWiFiNetworkInfo, NSString;
-@protocol HMFLocking;
 
 @interface HMDAppleMediaAccessory : HMDMediaAccessory <HMDAccessoryUserManagement, HMFLogging>
 {
-    id <HMFLocking> _lock;
     BOOL _deviceReachable;
     BOOL _fixedPairingIdentityInCloud;
     HMDDevice *_device;
@@ -96,6 +94,7 @@
 - (void)updateWithDevice:(id)arg1;
 - (void)setDevice:(id)arg1;
 @property(readonly) HMDDevice *device; // @synthesize device=_device;
+- (BOOL)supportsPersonalRequests;
 - (BOOL)supportsMediaContentProfile;
 - (BOOL)requiresHomeAppForManagement;
 - (BOOL)supportsMultiUser;

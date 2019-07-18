@@ -17,6 +17,7 @@
     struct {
         unsigned int personalPlaceType:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _personalPlaceType;
     NSArray *_placeDescriptors;
     _INPBString *_placeSubType;
@@ -25,6 +26,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)placeDescriptorsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBString *placeType; // @synthesize placeType=_placeType;
 @property(retain, nonatomic) _INPBString *placeSubType; // @synthesize placeSubType=_placeSubType;
 @property(copy, nonatomic) NSArray *placeDescriptors; // @synthesize placeDescriptors=_placeDescriptors;

@@ -14,5 +14,6 @@
 + (id)userCancelledError;
 + (id)wfUnsupportedUserInterfaceError;
 @property(readonly, nonatomic) NSDictionary *propertiesForEventLogging;
+- (_Bool)wf_isUserCancelledError;
 @end
 

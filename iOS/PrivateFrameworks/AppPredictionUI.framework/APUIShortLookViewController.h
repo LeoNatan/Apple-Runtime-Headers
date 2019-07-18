@@ -22,7 +22,6 @@
 {
     APUILongLookViewController<PLPreviewInteractionPresentable> *_presentableViewController;
     APUITVIntentHandler *_tvIntentHandler;
-    _Bool _safeToReleaseLongLookViewController;
     double _preferredPlatterContentHeight;
     _Bool _acceptPlatterTaps;
     long long _dismissalReason;
@@ -94,6 +93,7 @@
 - (id)_defaults;
 @property(readonly, nonatomic) UIView *viewForPreview;
 - (_Bool)presentImmediately:(CDUnknownBlockType)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)setView:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

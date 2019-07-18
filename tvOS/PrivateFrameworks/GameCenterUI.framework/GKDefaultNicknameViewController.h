@@ -63,6 +63,7 @@
 - (void).cxx_destruct;
 - (void)settingsPressed:(id)arg1;
 - (void)dismiss:(id)arg1;
+- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)didChooseToDeleteAvatar;
 - (id)preferredFocusEnvironments;

@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 {
     _Bool _hasMediaEntitiesFetchCompleted;
     _Bool _hasStartedFetch;
-    _Bool _isUpdatingRentals;
     _Bool _hasDownloadDataSourceFetchCompleted;
     id <VUILibraryCategoryMenuViewModelDelegate> _delegate;
     NSDictionary *_mediaEntitiesByCategoryType;
@@ -32,12 +31,13 @@ __attribute__((visibility("hidden")))
     NSArray *_genreGroupings;
     NSSet *_validCategories;
     VUICloudClient *_cloudClient;
+    VUIMediaEntitiesFetchController *_rentalsUpdateFetchController;
     VUIDownloadDataSource *_downloadDataSource;
 }
 
 @property(nonatomic) _Bool hasDownloadDataSourceFetchCompleted; // @synthesize hasDownloadDataSourceFetchCompleted=_hasDownloadDataSourceFetchCompleted;
 @property(retain, nonatomic) VUIDownloadDataSource *downloadDataSource; // @synthesize downloadDataSource=_downloadDataSource;
-@property(nonatomic) _Bool isUpdatingRentals; // @synthesize isUpdatingRentals=_isUpdatingRentals;
+@property(retain, nonatomic) VUIMediaEntitiesFetchController *rentalsUpdateFetchController; // @synthesize rentalsUpdateFetchController=_rentalsUpdateFetchController;
 @property(retain, nonatomic) VUICloudClient *cloudClient; // @synthesize cloudClient=_cloudClient;
 @property(retain, nonatomic) NSSet *validCategories; // @synthesize validCategories=_validCategories;
 @property(retain, nonatomic) NSArray *genreGroupings; // @synthesize genreGroupings=_genreGroupings;

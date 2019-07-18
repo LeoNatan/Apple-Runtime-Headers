@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class UIFont, UIImageSymbolConfiguration, UITraitCollection;
+@class UIFont, UITraitCollection;
 
 __attribute__((visibility("hidden")))
 @interface SFNavigationBarMetrics : NSObject
@@ -23,8 +23,6 @@ __attribute__((visibility("hidden")))
     float _safariSquishHeightQuantizationOffset;
     float _safariViewControllerSquishHeightQuantizationOffset;
     float _statusBarHeight;
-    UIImageSymbolConfiguration *_accessoryImageSymbolConfiguration;
-    UIImageSymbolConfiguration *_squishedAccessoryImageSymbolConfiguration;
     float _accessibilityImageScale;
     float _urlOutlineCornerRadius;
     float _defaultBarHeight;
@@ -47,8 +45,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) float urlOutlineCornerRadius; // @synthesize urlOutlineCornerRadius=_urlOutlineCornerRadius;
 @property(readonly, nonatomic) float accessibilityImageScale; // @synthesize accessibilityImageScale=_accessibilityImageScale;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) UIImageSymbolConfiguration *squishedAccessoryImageSymbolConfiguration;
-@property(readonly, nonatomic) UIImageSymbolConfiguration *accessoryImageSymbolConfiguration;
 @property(readonly, nonatomic) float narrowEditingScaleFactor;
 @property(readonly, nonatomic) UIFont *narrowEditingLabelFont;
 @property(readonly, nonatomic) UIFont *defaultBoldFont;

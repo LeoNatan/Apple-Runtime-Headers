@@ -19,7 +19,6 @@
 }
 
 + (_Bool)destroyPersistentStore:(id)arg1 error:(id *)arg2;
-+ (void)initialize;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSManagedObjectContext *suggestionsContext; // @synthesize suggestionsContext=_suggestionsContext;
 @property(retain, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
@@ -31,13 +30,8 @@
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned int)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setShortcutSuggestions:(id)arg1 forAppWithBundleIdentifier:(id)arg2 accessSpecifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (_Bool)deleteAllSyncedData:(id *)arg1;
-- (void)describeSyncStateIncludingDeleted:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)managedObjectsMatchingPredicate:(id)arg1 sortDescriptors:(id)arg2 error:(id *)arg3;
-- (id)activeManagedObjectsMatchingPredicate:(id)arg1 sortDescriptors:(id)arg2 error:(id *)arg3;
 - (_Bool)saveContext:(id)arg1 orRollback:(id *)arg2;
 - (_Bool)saveContextOrRollback:(id *)arg1;
-- (void)getRawVoiceShortcutsSynchronously:(CDUnknownBlockType)arg1;
 - (_Bool)loadPersistentStoreWithDescription:(id)arg1 error:(id *)arg2;
 - (_Bool)resetPersistentStore:(id *)arg1;
 - (id)initWithPersistentStoreDescription:(id)arg1 realmDataStore:(id)arg2 error:(id *)arg3;

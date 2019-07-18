@@ -12,10 +12,12 @@
 {
     _Bool _presenterEnumeration;
     _Bool _wantsDirectExtensionEnumeration;
+    _Bool _wantsTrashEnumeration;
     FPItemID *_enumeratedItemID;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool wantsTrashEnumeration; // @synthesize wantsTrashEnumeration=_wantsTrashEnumeration;
 @property(nonatomic) _Bool wantsDirectExtensionEnumeration; // @synthesize wantsDirectExtensionEnumeration=_wantsDirectExtensionEnumeration;
 @property(nonatomic, getter=isPresenterEnumeration) _Bool presenterEnumeration; // @synthesize presenterEnumeration=_presenterEnumeration;
 @property(copy, nonatomic) FPItemID *enumeratedItemID; // @synthesize enumeratedItemID=_enumeratedItemID;

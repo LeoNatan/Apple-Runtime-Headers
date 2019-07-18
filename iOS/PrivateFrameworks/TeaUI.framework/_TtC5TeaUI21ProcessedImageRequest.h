@@ -6,9 +6,11 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
+#import <TeaUI/TSProcessedImageRequestType-Protocol.h>
+
 @class NSDictionary, NSString;
 
-@interface _TtC5TeaUI21ProcessedImageRequest : _TtCs12_SwiftObject
+@interface _TtC5TeaUI21ProcessedImageRequest : _TtCs12_SwiftObject <TSProcessedImageRequestType>
 {
     // Error parsing type: , name: assetHandles
     // Error parsing type: , name: cacheIdentifier

@@ -9,6 +9,10 @@
 @class PKPaletteColorPickerView;
 
 @protocol PKPaletteColorPickerViewDelegate <NSObject>
+@property(readonly, nonatomic) long long colorUserInterfaceStyle;
 - (void)colorPickerDidChangeSelectedColor:(PKPaletteColorPickerView *)arg1;
+
+@optional
+- (_Bool)colorPickerShouldDisplayColorSelection:(PKPaletteColorPickerView *)arg1;
 @end
 

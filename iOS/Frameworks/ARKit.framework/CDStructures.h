@@ -552,14 +552,6 @@ typedef struct vector<short, std::__1::allocator<short>> {
     } __end_cap_;
 } vector_00df4d9c;
 
-typedef struct vector<unsigned char, std::__1::allocator<unsigned char>> {
-    char *__begin_;
-    char *__end_;
-    struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char>> {
-        char *__value_;
-    } __end_cap_;
-} vector_aab22ae2;
-
 typedef struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
     unsigned long long *__begin_;
     unsigned long long *__end_;

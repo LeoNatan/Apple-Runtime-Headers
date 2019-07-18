@@ -16,6 +16,7 @@
 + (id)requiredEntitlements;
 + (Class)queryClass;
 - (void).cxx_destruct;
+- (_Bool)_queue_surfaceDaySummariesWithError:(id *)arg1;
 - (void)_queue_start;
 - (id)objectTypes;
 - (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4;

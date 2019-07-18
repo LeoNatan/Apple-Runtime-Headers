@@ -56,6 +56,7 @@
 - (void)_regenerateWithSizeChange:(_Bool)arg1;
 - (void)_createDotPathWithSize:(float)arg1;
 - (void)_getDotSize:(float *)arg1 spacing:(float *)arg2 fontSize:(float *)arg3 forDigits:(unsigned int)arg4;
+- (float)_getDefaultSize;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 expectedDigits:(unsigned int)arg2 squishedForScreenWithCancelButton:(_Bool)arg3 showCharacters:(_Bool)arg4;
 - (id)initWithStyle:(int)arg1 expectedDigits:(unsigned int)arg2 squishedForScreenWithCancelButton:(_Bool)arg3;

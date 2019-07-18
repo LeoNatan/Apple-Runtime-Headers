@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (void)setMeshTransform:(id)arg1;
 - (void)setAlpha:(float)arg1;
 - (id)snapshotFromView:(id)arg1;
 - (id)initWithKeyplaneView:(id)arg1;

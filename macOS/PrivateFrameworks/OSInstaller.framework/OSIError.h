@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)_localizedDescriptionForErrorCode:(unsigned long long)arg1;
++ (id)localizedDescriptionForErrorCode:(unsigned long long)arg1;
 + (id)errorWithCode:(unsigned long long)arg1 underlyingError:(id)arg2 userInfo:(id)arg3;
 + (id)errorWithCode:(unsigned long long)arg1 underlyingError:(id)arg2;
 + (id)errorWithCode:(unsigned long long)arg1;

@@ -6,14 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@interface MFMailMessageLibraryMigrator : NSObject
+#import <Message/EFContentProtectionObserver-Protocol.h>
+#import <Message/EFLoggable-Protocol.h>
+
+@class NSConditionLock, NSMutableArray, NSString;
+@protocol OS_dispatch_queue;
+
+@interface MFMailMessageLibraryMigrator : NSObject <EFContentProtectionObserver, EFLoggable>
 {
+    int _needsSpotlightReindex;
     _Bool _needsRebuildTriggers;
     _Bool _needsRebuildMessageInfoIndex;
-    int _needsSpotlightReindex;
+    NSMutableArray *_postMigrationBlocks;
+    NSObject<OS_dispatch_queue> *_contentProtectionQueue;
+    NSConditionLock *_migrationState;
 }
 
 + (int)currentVersion;
++ (id)log;
+@property(readonly, nonatomic) NSConditionLock *migrationState; // @synthesize migrationState=_migrationState;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *contentProtectionQueue; // @synthesize contentProtectionQueue=_contentProtectionQueue;
+- (void).cxx_destruct;
+- (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
+- (void)runPostMigrationBlocksWithConnection:(id)arg1;
+- (void)addPostMigrationBlock:(CDUnknownBlockType)arg1;
 - (void)performSpotlightReindexIfNeededWithHandler:(CDUnknownBlockType)arg1;
 - (void)noteNeedsSpotlightReindex;
 - (void)resetTTRPromptAndForceReindex;
@@ -21,7 +37,16 @@
 - (void)noteRebuildMessageInfoIndex;
 - (_Bool)needsRebuildTriggers;
 - (void)noteNeedsRebuildTriggers;
+- (long long)_checkContentProtectionState;
+- (long long)_runMigrationStepsFromVersion:(int)arg1 connection:(id)arg2 schema:(id)arg3 hookResponder:(id)arg4;
 - (_Bool)migrateWithDatabaseConnection:(id)arg1 schema:(id)arg2 hookResponder:(id)arg3;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

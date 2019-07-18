@@ -8,7 +8,7 @@
 
 #import <CloudKitDaemon/CKDSystemAvailabilityWatcher-Protocol.h>
 
-@class CKDClientContext, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, NSXPCConnection;
+@class CKDClientContext, CKDPCSFetchAggregator, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, NSXPCConnection;
 @protocol NSObject, OS_dispatch_queue;
 
 @interface CKDClientProxy : NSObject <CKDSystemAvailabilityWatcher>
@@ -26,6 +26,7 @@
     NSObject<OS_dispatch_queue> *_setupQueue;
     NSObject<OS_dispatch_queue> *_cancellationQueue;
     NSObject<OS_dispatch_queue> *_statusQueue;
+    NSOperationQueue *_cloudKitSupportOperationThrottleQueue;
     NSOperationQueue *_backgroundOperationThrottleQueue;
     NSArray *_cachedSandboxExtensions;
     NSMutableArray *_pendingContexts;
@@ -37,17 +38,19 @@
     NSObject<OS_dispatch_queue> *_tccAuthQueue;
     id <NSObject> _TCCDatabaseChangedNotificationObserver;
     NSMutableDictionary *_operationStatisticsByClassName;
+    NSString *_cachedApplicationBundleID;
+    NSString *_sourceApplicationBundleID;
     NSXPCConnection *_connection;
-    NSString *_bundleIdentifier;
-    NSString *_sourceApplicationBundleIdentifier;
+    CKDPCSFetchAggregator *_fetchAggregator;
 }
 
 + (id)operationStatusReport:(id)arg1;
 + (id)sharedClientThrottlingOperationQueue;
 + (id)accountStatusWorkloop;
-@property(retain, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
-@property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+@property(retain, nonatomic) CKDPCSFetchAggregator *fetchAggregator; // @synthesize fetchAggregator=_fetchAggregator;
 @property(nonatomic) __weak NSXPCConnection *connection; // @synthesize connection=_connection;
+@property(retain, nonatomic) NSString *sourceApplicationBundleID; // @synthesize sourceApplicationBundleID=_sourceApplicationBundleID;
+@property(retain, nonatomic) NSString *cachedApplicationBundleID; // @synthesize cachedApplicationBundleID=_cachedApplicationBundleID;
 @property(retain, nonatomic) NSMutableDictionary *operationStatisticsByClassName; // @synthesize operationStatisticsByClassName=_operationStatisticsByClassName;
 @property(retain, nonatomic) id <NSObject> TCCDatabaseChangedNotificationObserver; // @synthesize TCCDatabaseChangedNotificationObserver=_TCCDatabaseChangedNotificationObserver;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *tccAuthQueue; // @synthesize tccAuthQueue=_tccAuthQueue;
@@ -63,6 +66,7 @@
 @property(retain, nonatomic) NSMutableArray *pendingContexts; // @synthesize pendingContexts=_pendingContexts;
 @property(retain, nonatomic) NSArray *cachedSandboxExtensions; // @synthesize cachedSandboxExtensions=_cachedSandboxExtensions;
 @property(retain, nonatomic) NSOperationQueue *backgroundOperationThrottleQueue; // @synthesize backgroundOperationThrottleQueue=_backgroundOperationThrottleQueue;
+@property(retain, nonatomic) NSOperationQueue *cloudKitSupportOperationThrottleQueue; // @synthesize cloudKitSupportOperationThrottleQueue=_cloudKitSupportOperationThrottleQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *statusQueue; // @synthesize statusQueue=_statusQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cancellationQueue; // @synthesize cancellationQueue=_cancellationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *setupQueue; // @synthesize setupQueue=_setupQueue;
@@ -83,9 +87,11 @@
 - (void)clearContextFromMetadataCache;
 - (void)wipeAllCachesAndDie;
 - (id)CKStatusReportArray;
+- (id)CKStatusReportArrayIncludingSharedOperations:(_Bool)arg1;
 - (void)repairZonePCSWithOperationInfo:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)getRecordPCSDiagnosticsForZonesWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getPCSDiagnosticsForZonesWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)getOutstandingOperationCountWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)clearPCSCachesForKnownContextsWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestClientSyncWithOperationInfo:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)wipeAllCachedLongLivedProxiesWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -188,10 +194,15 @@
 - (void)_addOperationWithOperationInfo:(id)arg1 factoryBlock:(CDUnknownBlockType)arg2;
 - (_Bool)_isConnectionAuthorizedForOperation:(id)arg1 error:(id *)arg2;
 - (id)apsEnvironmentEntitlement;
-- (id)pushBundleIdentifier;
+@property(readonly, nonatomic) NSString *applicationBundleIDForPush;
+@property(readonly, nonatomic) unsigned long long _outstandingOperationCount;
 - (id)_clientPrefixEntitlement;
+@property(readonly, nonatomic) NSString *associatedApplicationBundleID;
+- (id)applicationBundleID;
 - (id)applicationIdentifier;
 - (id)serviceNameForContainerMapEntitlement;
+- (_Bool)hasExplicitCodeOperationURLEntitlement;
+- (_Bool)hasCloudKitSupportServiceEntitlement;
 - (_Bool)hasAllowUnverifiedAccountEntitlement;
 - (_Bool)hasNonLegacyShareURLEntitlement;
 - (_Bool)hasDisplaysSystemAcceptPromptEntitlement;

@@ -17,6 +17,7 @@
     _Bool _forceDisplayOfNewTravelAdvisoryHypotheses;
     NSString *_title;
     NSString *_location;
+    NSString *_locationWithoutPrediction;
     NSDate *_startDate;
     NSDate *_endDate;
     NSString *_eventID;
@@ -42,11 +43,12 @@
 @property(readonly, nonatomic) _Bool isAllDay; // @synthesize isAllDay=_isAllDay;
 @property(readonly, copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(readonly, copy, nonatomic) NSString *locationWithoutPrediction; // @synthesize locationWithoutPrediction=_locationWithoutPrediction;
 @property(readonly, copy, nonatomic) NSString *location; // @synthesize location=_location;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithTitle:(id)arg1 location:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 isAllDay:(_Bool)arg5 eventID:(id)arg6 eventObjectID:(id)arg7 eventRepresentationDictionary:(id)arg8 legacyIdentifier:(id)arg9 preferredLocation:(id)arg10 conferenceURL:(id)arg11 mailtoURL:(id)arg12 hasSuggestedLocation:(_Bool)arg13 eventHasAlarms:(_Bool)arg14 allowsLocationAlerts:(_Bool)arg15 forceDisplayOfNewTravelAdvisoryHypotheses:(_Bool)arg16;
+- (id)initWithTitle:(id)arg1 location:(id)arg2 locationWithoutPrediction:(id)arg3 startDate:(id)arg4 endDate:(id)arg5 isAllDay:(_Bool)arg6 eventID:(id)arg7 eventObjectID:(id)arg8 eventRepresentationDictionary:(id)arg9 legacyIdentifier:(id)arg10 preferredLocation:(id)arg11 conferenceURL:(id)arg12 mailtoURL:(id)arg13 hasSuggestedLocation:(_Bool)arg14 eventHasAlarms:(_Bool)arg15 allowsLocationAlerts:(_Bool)arg16 forceDisplayOfNewTravelAdvisoryHypotheses:(_Bool)arg17;
 
 @end
 

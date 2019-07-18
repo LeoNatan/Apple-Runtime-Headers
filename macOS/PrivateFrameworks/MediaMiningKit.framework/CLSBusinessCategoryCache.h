@@ -32,6 +32,7 @@
 - (id)_fetchedBusinessItemByMUIDForBusinessItems:(id)arg1;
 - (id)predicateForRegion:(id)arg1;
 - (id)predicateForEntryNearbyRegion:(id)arg1;
+- (void)invalidateCacheForGeoServiceProviderChangeToProvider:(id)arg1;
 - (void)invalidateCacheItemsBeforeDateWithTimestamp:(double)arg1;
 - (id)dataModelName;
 - (id)initWithDiskCacheName:(id)arg1;

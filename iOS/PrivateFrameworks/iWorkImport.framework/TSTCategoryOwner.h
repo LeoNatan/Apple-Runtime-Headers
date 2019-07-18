@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)willRemoveRows:(const vector_4dc5f307 *)arg1;
 - (void)didUnmergeRange:(struct TSUModelCellRect)arg1;
 - (void)didMergeRange:(struct TSUModelCellRect)arg1;
+- (void)willApplyConcurrentCellMap:(id)arg1;
 - (void)willApplyBaseCellMap:(id)arg1;
 - (void)willApplyCell:(id)arg1 baseCellCoord:(struct TSUModelCellCoord)arg2;
 - (UUIDData_5fbc143e)p_willApplyCell:(id)arg1 baseCellCoord:(struct TSUModelCellCoord)arg2 refreshCategoryInfo:(_Bool)arg3;
@@ -51,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (void)unregisterFromDistributors;
 - (void)registerWithDistributors;
 - (id)description;
+- (_Bool)hasEnabledGroupBys;
 - (void)dealloc;
 - (id)initWithBaseTableUID:(const UUIDData_5fbc143e *)arg1;
 - (id)initWithBaseTableUID:(const UUIDData_5fbc143e *)arg1 ownerUID:(const UUIDData_5fbc143e *)arg2;

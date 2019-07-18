@@ -27,9 +27,14 @@
 - (void)invalidateRemoteProxyTargetDevice;
 - (void)archiveBackgroundContext:(id)arg1;
 - (void)archiveContext:(id)arg1;
-- (void)noteProvisioningDidEndRequiringUpgradedPasscode;
-- (void)noteProvisioningDidStartRequiringUpgradedPasscode;
+- (void)passOwnershipTokenWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)storePassOwnershipToken:(id)arg1 withIdentifier:(id)arg2;
+- (void)performDeviceCheckInWithCompletion:(CDUnknownBlockType)arg1;
+- (void)endRequiringUpgradedPasscodeIfNecessary;
+- (void)startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(BOOL)arg1;
 - (void)enforceUpgradedPasscodePolicyWithCompletion:(CDUnknownBlockType)arg1;
+- (void)notePasscodeUpgradeFlowDidEnd;
+- (void)notePasscodeUpgradeFlowWillBeginWithCompletion:(CDUnknownBlockType)arg1;
 - (void)appleAccountInformationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)renewAppleAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setDefaultPaymentPassUniqueIdentifier:(id)arg1;

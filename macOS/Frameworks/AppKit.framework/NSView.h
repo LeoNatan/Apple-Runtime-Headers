@@ -452,8 +452,10 @@
 - (void)getRectsBeingDrawn:(const struct CGRect **)arg1 count:(long long *)arg2;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)viewWillDraw;
-@property(getter=isVerticalContentSizeConstraintActive) BOOL verticalContentSizeConstraintActive;
-@property(getter=isHorizontalContentSizeConstraintActive) BOOL horizontalContentSizeConstraintActive;
+- (void)setVerticalContentSizeConstraintActive:(BOOL)arg1;
+- (BOOL)isVerticalContentSizeConstraintActive;
+- (void)setHorizontalContentSizeConstraintActive:(BOOL)arg1;
+- (BOOL)isHorizontalContentSizeConstraintActive;
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
 - (BOOL)translatesAutoresizingMaskIntoConstraints;
 - (void)setUsesConstraintsInsteadOfAutoresizing:(BOOL)arg1;
@@ -897,6 +899,7 @@
 - (void)_removeVibrantBlendingMimicBackdropOrProxyLayerIfNeeded;
 - (void)_updateVibrantBlendingMimicBackdropOrProxyLayerWithBlendMode:(int)arg1;
 - (void)_setNeedsUpdateMimicBackdropLevel;
+- (id)_responderDebugDescription;
 - (BOOL)_isDiagonallyRotatedOrScaledFromBase;
 - (id)_buttonOfClass:(Class)arg1 action:(SEL)arg2;
 - (void)heartBeat:(CDStruct_fadd2e06 *)arg1;
@@ -966,7 +969,7 @@
 - (void)_updateDragRegionForHiddenStateChange;
 - (void)_setHidden:(BOOL)arg1 setNeedsDisplay:(BOOL)arg2;
 - (void)_updateAllLayerPropertiesFromView;
-- (BOOL)_appkitManagesLayer;
+- (BOOL)_usesCustomLayer;
 - (void)_createLayerAndInitialize;
 - (void)_updateVibrancy;
 - (BOOL)_wantsLayerBasedVibrancy;

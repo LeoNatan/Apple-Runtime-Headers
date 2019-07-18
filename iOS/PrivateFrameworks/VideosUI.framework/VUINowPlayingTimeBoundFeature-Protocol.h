@@ -9,6 +9,6 @@
 @protocol VUINowPlayingTimeBoundFeature <VUINowPlayingFeature>
 @property(nonatomic, getter=isSkippable) _Bool skippable;
 @property(readonly, nonatomic) double duration;
-@property(readonly, nonatomic) double startTime;
+@property(nonatomic) double startTime;
 @end
 

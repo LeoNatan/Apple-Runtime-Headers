@@ -8,7 +8,7 @@
 
 #import <SpringBoard/SBIconViewDelegate-Protocol.h>
 
-@class MTMaterialShadowView, NSLayoutConstraint, NSMutableArray, NSOrderedSet, NSString, SBIconController, SBIconModel, SBIconView, UIImageView, UIPanGestureRecognizer, UIStackView, UIView;
+@class MTMaterialShadowView, NSLayoutConstraint, NSMutableArray, NSOrderedSet, NSString, SBIconController, SBIconModel, SBIconView, UIImageView, UILabel, UIPanGestureRecognizer, UIStackView, UIView;
 @protocol SBCommandTabViewControllerDelegate;
 
 @interface SBCommandTabViewController : UIViewController <SBIconViewDelegate>
@@ -22,7 +22,10 @@
     UIView *_blurredBackgroundView;
     UIImageView *_selectionSquareView;
     SBIconView *_selectedIconView;
+    UILabel *_selectedIconLabel;
     NSLayoutConstraint *_selectionXLayoutConstraint;
+    NSLayoutConstraint *_selectedLabelXConstraint;
+    NSLayoutConstraint *_selectedLabelBottomConstraint;
     UIStackView *_stackView;
     UIPanGestureRecognizer *_panGestureRecognizer;
     _Bool _isTouchDown;
@@ -36,15 +39,15 @@
 - (void)_handleShiftCommandTab:(id)arg1;
 - (void)_handleCommandTab:(id)arg1;
 - (unsigned long long)indexOfDisplayItem:(id)arg1;
-- (void)_layoutAppIcons;
+- (void)_updateIconSelectionPositionAndLabelText;
 - (void)_moveSelectionSquareToIconAtIndex:(unsigned long long)arg1;
+- (_Bool)iconViewDisplaysBadges:(id)arg1;
 - (_Bool)iconViewCanBeginDrags:(id)arg1;
 - (void)iconTapped:(id)arg1;
 - (void)icon:(id)arg1 touchEnded:(_Bool)arg2;
 - (void)iconTouchBegan:(id)arg1;
 - (void)iconModelDidChange:(id)arg1;
 - (_Bool)canBecomeFirstResponder;
-- (void)didReceiveMemoryWarning;
 - (id)selectedApplicationDisplayItem;
 - (void)previous;
 - (void)next;

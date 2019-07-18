@@ -30,6 +30,8 @@ __attribute__((visibility("hidden")))
 - (id)_gradientLayer;
 - (void)_configureNavigationBarGradient;
 - (void)_configureBannerView:(id)arg1;
+- (void)_setupProductBanner;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)configureAppearanceTransition;
 - (long long)preferredStatusBarStyle;
 - (long long)preferredStatusBarUpdateAnimation;

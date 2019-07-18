@@ -6,19 +6,19 @@
 
 #import <AppKit/NSView.h>
 
-@class GKUIContentUnavailableView, NSStackView, NSString, UIActivityIndicatorView;
+@class GKUIActivityIndicatorView, GKUIContentUnavailableView, NSStackView, NSString;
 
 @interface GKNoContentView : NSView
 {
     BOOL _loading;
     CDUnknownBlockType _buttonAction;
     GKUIContentUnavailableView *_contentUnavailableView;
-    UIActivityIndicatorView *_loadingIndicatorView;
+    GKUIActivityIndicatorView *_loadingIndicatorView;
     NSStackView *_stackView;
 }
 
 @property(retain, nonatomic) NSStackView *stackView; // @synthesize stackView=_stackView;
-@property(retain, nonatomic) UIActivityIndicatorView *loadingIndicatorView; // @synthesize loadingIndicatorView=_loadingIndicatorView;
+@property(retain, nonatomic) GKUIActivityIndicatorView *loadingIndicatorView; // @synthesize loadingIndicatorView=_loadingIndicatorView;
 @property(retain, nonatomic) GKUIContentUnavailableView *contentUnavailableView; // @synthesize contentUnavailableView=_contentUnavailableView;
 @property(nonatomic, getter=isLoading) BOOL loading; // @synthesize loading=_loading;
 @property(copy, nonatomic) CDUnknownBlockType buttonAction; // @synthesize buttonAction=_buttonAction;

@@ -24,12 +24,13 @@
 - (id)localizedInsufficientPermissionsMessage;
 - (id)localizedAccessPermissionPromptMessage;
 - (id)localizedAccessPermissionPromptTitle;
-- (id)updatedPermissionStateForPermissionGranted:(BOOL)arg1;
+- (id)updatedPermissionStateForPermissionGranted:(BOOL)arg1 overridingPreviouslyDeterminedAuthorizations:(BOOL)arg2;
 - (unsigned long long)workflowLevelStatus;
 - (void)setCurrentPermissionState:(id)arg1;
 - (unsigned long long)globalLevelStatus;
 - (id)icon;
 - (id)name;
+- (id)domainsWithDeniedAccess;
 @property(readonly, nonatomic) NSSet *domainsWithNotDeterminedAccess;
 - (void)updateInternalStates;
 @property(readonly, nonatomic) WFRemoteServerPermissionState *currentState;

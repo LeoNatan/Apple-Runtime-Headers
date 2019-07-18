@@ -99,6 +99,7 @@
 - (void)_setShouldShowZoomDial:(_Bool)arg1 animationDuration:(long long)arg2;
 - (void)_setZoomDialEnabled:(_Bool)arg1 animationDuration:(long long)arg2;
 @property(nonatomic) NSString *contentSizeCategory;
+- (void)_updateZoomButtonTappableEdgeInsets;
 @property(readonly, nonatomic) double zoomDialBorderWidth;
 - (void)setLeftMargin:(double)arg1 animated:(_Bool)arg2;
 - (void)_setZoomFactor:(double)arg1 interactionType:(long long)arg2 shouldNotifyDelegate:(_Bool)arg3;
@@ -108,8 +109,8 @@
 - (void)_updateDisplayedValues;
 @property(readonly, nonatomic) double _displayMaximumZoomFactor;
 @property(readonly, nonatomic) double _displayMinimumZoomFactor;
-@property(readonly, nonatomic) double _maximumZoomFactor;
-@property(readonly, nonatomic) double _minimumZoomFactor;
+@property(readonly, nonatomic) double maximumZoomFactor;
+@property(readonly, nonatomic) double minimumZoomFactor;
 - (void)configureForToggleOnlyWithZoomFactor:(double)arg1 displayZoomFactor:(double)arg2;
 - (void)configureForToggleOnlyWithZoomFactor:(double)arg1 minimumZoomFactor:(double)arg2 displayMinimumZoomFactor:(double)arg3 maximumZoomFactor:(double)arg4 displayMaximumZoomFactor:(double)arg5;
 - (void)configureForSingleCameraPlusToggleWithZoomFactor:(double)arg1 minimumZoomFactor:(double)arg2 displayMinimumZoomFactor:(double)arg3 maximumZoomFactor:(double)arg4 displayMaximumZoomFactor:(double)arg5;

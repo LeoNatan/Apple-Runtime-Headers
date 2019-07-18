@@ -20,6 +20,7 @@
     BOOL mSkipAddressPresentation;
     BOOL mShouldReturnToAddressBox;
     BOOL skipUserPassDialogIfPossible;
+    BOOL noReconnect;
     BOOL _connectingToIOSdevice;
     long long mMinimumEncryptionLevel;
     long long sessionSelectionAction;
@@ -45,6 +46,7 @@
 @property long long authMethod; // @synthesize authMethod=_authMethod;
 @property long long controlType; // @synthesize controlType=_controlType;
 @property(retain) NSString *idsDestination; // @synthesize idsDestination;
+@property BOOL noReconnect; // @synthesize noReconnect;
 @property BOOL skipUserPassDialogIfPossible; // @synthesize skipUserPassDialogIfPossible;
 @property BOOL shouldReturnToAddressBox; // @synthesize shouldReturnToAddressBox=mShouldReturnToAddressBox;
 @property BOOL skipAddressPresentation; // @synthesize skipAddressPresentation=mSkipAddressPresentation;

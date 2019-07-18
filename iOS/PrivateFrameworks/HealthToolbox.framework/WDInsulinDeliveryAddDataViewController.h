@@ -6,12 +6,13 @@
 
 #import <HealthToolbox/WDDisplayTypeAddDataViewController.h>
 
+#import <HealthToolbox/WDAddDataManualEntryItemDelegate-Protocol.h>
 #import <HealthToolbox/WDAddDataManualEntrySpinnerDataSource-Protocol.h>
 
 @class NSString, WDAddDataManualEntryItem, WDAddDataManualEntrySpinner;
 
 __attribute__((visibility("hidden")))
-@interface WDInsulinDeliveryAddDataViewController : WDDisplayTypeAddDataViewController <WDAddDataManualEntrySpinnerDataSource>
+@interface WDInsulinDeliveryAddDataViewController : WDDisplayTypeAddDataViewController <WDAddDataManualEntrySpinnerDataSource, WDAddDataManualEntryItemDelegate>
 {
     WDAddDataManualEntryItem *_dateTimeEntryItem;
     WDAddDataManualEntrySpinner *_deliveryReasonEntryItem;
@@ -20,6 +21,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) WDAddDataManualEntrySpinner *deliveryReasonEntryItem; // @synthesize deliveryReasonEntryItem=_deliveryReasonEntryItem;
 @property(retain, nonatomic) WDAddDataManualEntryItem *dateTimeEntryItem; // @synthesize dateTimeEntryItem=_dateTimeEntryItem;
 - (void).cxx_destruct;
+- (void)validateDataWithCompletion:(CDUnknownBlockType)arg1;
+- (void)manualEntryItemDidUpdate:(id)arg1;
 - (id)manualEntrySpinner:(id)arg1 titleForRow:(long long)arg2;
 - (long long)numberOfRowsInManualEntrySpinner:(id)arg1;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;

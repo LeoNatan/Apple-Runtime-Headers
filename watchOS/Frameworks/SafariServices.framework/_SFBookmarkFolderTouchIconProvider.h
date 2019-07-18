@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (id)displayableFolderContentsForRequest:(id)arg1;
 - (id)bookmarkUUIDForRequest:(id)arg1;
 - (id)defaultFolderIconForRequest:(id)arg1;
-- (id)backgroundColor;
 - (_Bool)canHandleRequest:(id)arg1;
 - (id)init;
 

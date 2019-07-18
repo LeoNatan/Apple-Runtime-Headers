@@ -21,11 +21,13 @@
     UIViewController *_pullDownSearchViewController;
     UIViewController<SBHLegibility> *_todayViewController;
     UIViewController<SBHSidebarProvider> *_sidebarViewController;
+    unsigned long long _sidebarAllowedOrientations;
     UIViewController<SBHLegibility> *_portraitHeaderViewController;
 }
 
 @property(retain, nonatomic) UIViewController<SBHLegibility> *portraitHeaderViewController; // @synthesize portraitHeaderViewController=_portraitHeaderViewController;
 @property(nonatomic) _Bool ignoresOverscrollOnFirstPage; // @synthesize ignoresOverscrollOnFirstPage=_ignoresOverscrollOnFirstPage;
+@property(nonatomic) unsigned long long sidebarAllowedOrientations; // @synthesize sidebarAllowedOrientations=_sidebarAllowedOrientations;
 @property(nonatomic, getter=isSidebarPinned) _Bool sidebarPinned; // @synthesize sidebarPinned=_sidebarPinned;
 @property(nonatomic, getter=isSidebarVisible) _Bool sidebarVisible; // @synthesize sidebarVisible=_sidebarVisible;
 @property(retain, nonatomic) UIViewController<SBHSidebarProvider> *sidebarViewController; // @synthesize sidebarViewController=_sidebarViewController;
@@ -38,6 +40,7 @@
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)initWithConfiguration:(id)arg1;
+- (id)init;
 
 @end
 

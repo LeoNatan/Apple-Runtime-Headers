@@ -13,6 +13,8 @@
 
 + (const struct MPSLibraryInfo *)libraryInfo;
 @property(nonatomic) unsigned long long axis; // @synthesize axis=_axis;
+-     // Error parsing type: 16@0:8, name: dimensionsNotToBeBroadcast
+- (id)encodeToCommandBuffer:(id)arg1 primarySourceArray:(id)arg2 secondarySourceArray:(id)arg3;
 - (void)encodeToCommandBuffer:(id)arg1 primarySourceArray:(id)arg2 secondarySourceArray:(id)arg3 destinationArray:(id)arg4;
 - (id)destinationArrayDescriptorForSourceArrays:(id)arg1 sourceState:(id)arg2;
 - (id)initWithDevice:(id)arg1;

@@ -22,6 +22,7 @@
     AVTViewSessionProvider *_avtViewSessionProvider;
     AVTUIEnvironment *_environment;
     id <AVTUILogger> _logger;
+    UIBarButtonItem *_cancelButtonItem;
     UIBarButtonItem *_doneButtonItem;
     AVTSplashScreenViewController *_splashScreenViewController;
     AVTAvatarAttributeEditorViewController *_attributeEditorViewController;
@@ -36,6 +37,7 @@
 @property(readonly, nonatomic) AVTAvatarAttributeEditorViewController *attributeEditorViewController; // @synthesize attributeEditorViewController=_attributeEditorViewController;
 @property(readonly, nonatomic) AVTSplashScreenViewController *splashScreenViewController; // @synthesize splashScreenViewController=_splashScreenViewController;
 @property(retain, nonatomic) UIBarButtonItem *doneButtonItem; // @synthesize doneButtonItem=_doneButtonItem;
+@property(retain, nonatomic) UIBarButtonItem *cancelButtonItem; // @synthesize cancelButtonItem=_cancelButtonItem;
 @property(readonly, nonatomic) _Bool isCreating; // @synthesize isCreating=_isCreating;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
@@ -44,8 +46,11 @@
 @property(retain, nonatomic) AVTAvatarRecord *initialAvatarRecord; // @synthesize initialAvatarRecord=_initialAvatarRecord;
 @property(nonatomic) __weak id <AVTAvatarEditorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)controllerPresentationWillObstructView:(id)arg1;
 - (void)confirmCancel;
+- (void)handleDiscardAttempt;
 - (void)presentationControllerDidAttemptToDismiss:(id)arg1;
+- (_Bool)presentationControllerShouldDismiss:(id)arg1;
 - (void)attributeEditorDidMakeFirstSelection:(id)arg1;
 - (void)splashScreenViewControllerDidFinish:(id)arg1;
 - (void)finish:(id)arg1;
@@ -58,7 +63,7 @@
 - (void)applyLayout:(id)arg1;
 - (void)prepareForAnimatedTransitionWithLayout:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (_Bool)isModalInPresentation;
-- (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithAvatarRecord:(id)arg1 avtViewSessionProvider:(id)arg2 store:(id)arg3 enviroment:(id)arg4 isCreating:(_Bool)arg5;
 - (void)configurePPTMemoji;

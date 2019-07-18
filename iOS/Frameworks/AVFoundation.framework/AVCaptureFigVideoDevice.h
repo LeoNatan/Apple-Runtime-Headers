@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     AVCaptureDeviceFormat *_activeDepthDataFormat;
     CDStruct_1b6d18a9 _activeDepthDataMinFrameDuration;
     CDStruct_1b6d18a9 _videoMinFrameDurationOverride;
+    id _videoMinFrameDurationOverrideOwner;
     CDStruct_1b6d18a9 _activeMinFrameDuration;
     _Bool _activeMinFrameDurationSetByClient;
     CDStruct_1b6d18a9 _activeMaxFrameDuration;
@@ -146,6 +147,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isHEVCPreferred;
 - (_Bool)isHEVCSupported;
 - (_Bool)isHEVCRelaxedAverageBitRateTargetSupported;
+- (_Bool)isHEVCMemoryUsageMinimizationSupported;
 - (_Bool)hevcAllowBFramesForHighCTUCount;
 - (int)hevcTurboModeVersion;
 - (_Bool)usesQuantizationScalingMatrix_H264_Steep_16_48;
@@ -339,6 +341,7 @@ __attribute__((visibility("hidden")))
 - (void)setLowLightVideoCaptureEnabled:(_Bool)arg1;
 - (_Bool)isLowLightVideoCaptureEnabled;
 - (int)powerConsumptionAt30FPSForOISMode:(int)arg1;
+- (_Bool)isConstituentPhotoCalibrationDataSupported;
 - (id)constituentDeviceWithDeviceType:(id)arg1;
 - (_Bool)supportsMultiCamCaptureWithDevice:(id)arg1;
 - (_Bool)cachesFigCaptureSourceConfigurationChanges;
@@ -355,8 +358,8 @@ __attribute__((visibility("hidden")))
 - (void)setActiveVideoMinFrameDuration:(CDStruct_1b6d18a9)arg1;
 - (int)_setActiveVideoMinFrameDurationInternal:(CDStruct_1b6d18a9)arg1;
 - (CDStruct_1b6d18a9)activeVideoMinFrameDuration;
-- (void)setVideoMinFrameDurationOverride:(CDStruct_1b6d18a9)arg1;
-- (CDStruct_1b6d18a9)videoMinFrameDurationOverride;
+- (void)resetVideoMinFrameDurationOverrideForOwner:(id)arg1;
+- (void)setVideoMinFrameDurationOverride:(CDStruct_1b6d18a9)arg1 forOwner:(id)arg2;
 - (void)setActiveDepthDataMinFrameDuration:(CDStruct_1b6d18a9)arg1;
 - (CDStruct_1b6d18a9)activeDepthDataMinFrameDuration;
 - (void)setActiveDepthDataFormat:(id)arg1;

@@ -6,30 +6,51 @@
 
 #import <objc/NSObject.h>
 
+#import <SpringBoardHome/SBFolderIconGridCellImageProvider-Protocol.h>
 #import <SpringBoardHome/SBFolderIconObserver-Protocol.h>
 #import <SpringBoardHome/SBFolderObserver-Protocol.h>
+#import <SpringBoardHome/SBHIconImageCacheObserver-Protocol.h>
 
-@class CPMemoryPool, NSMapTable, NSString;
+@class CPMemoryPool, NSMapTable, NSString, SBHIconImageCache, UIImage;
 @protocol SBIconListLayout;
 
-@interface SBFolderIconImageCache : NSObject <SBFolderIconObserver, SBFolderObserver>
+@interface SBFolderIconImageCache : NSObject <SBFolderIconObserver, SBFolderObserver, SBHIconImageCacheObserver, SBFolderIconGridCellImageProvider>
 {
     NSMapTable *_folderIconObservers;
     NSMapTable *_cachedFolderImages;
+    NSMapTable *_cachedMiniGridImages;
+    UIImage *_genericMiniGridImage;
     id <SBIconListLayout> _listLayout;
+    SBHIconImageCache *_iconImageCache;
     CPMemoryPool *_pool;
 }
 
-+ (id)imagesForFolderIcon:(id)arg1 listLayout:(id)arg2 pool:(id)arg3;
++ (_Bool)drawTreatmentForIcon:(id)arg1 inRect:(struct CGRect)arg2;
++ (_Bool)needsTreatmentForIcon:(id)arg1;
++ (id)gridCellImageOfSize:(struct CGSize)arg1 forIconImage:(id)arg2;
++ (id)gridCellImageOfSize:(struct CGSize)arg1 forIcon:(id)arg2 iconImageInfo:(struct SBIconImageInfo)arg3;
++ (id)imageForPageAtIndex:(unsigned long long)arg1 inFolderIcon:(id)arg2 listLayout:(id)arg3 gridCellImageProvider:(id)arg4 pool:(id)arg5;
 @property(readonly, nonatomic) CPMemoryPool *pool; // @synthesize pool=_pool;
+@property(retain, nonatomic) SBHIconImageCache *iconImageCache; // @synthesize iconImageCache=_iconImageCache;
 @property(readonly, nonatomic) id <SBIconListLayout> listLayout; // @synthesize listLayout=_listLayout;
 - (void).cxx_destruct;
+- (void)folder:(id)arg1 didReplaceIcon:(id)arg2 withIcon:(id)arg3;
 - (void)folder:(id)arg1 didAddIcons:(id)arg2 removedIcons:(id)arg3;
 - (void)folder:(id)arg1 didRemoveLists:(id)arg2 atIndexes:(id)arg3;
 - (void)folder:(id)arg1 didAddList:(id)arg2;
+- (void)iconImageCache:(id)arg1 didUpdateImageForIcon:(id)arg2;
+- (void)folderIcon:(id)arg1 containedIconLaunchEnabledDidChange:(id)arg2;
+- (void)folderIcon:(id)arg1 containedIconAccessoriesDidUpdate:(id)arg2;
 - (void)folderIcon:(id)arg1 containedIconImageDidUpdate:(id)arg2;
+- (id)gridCellImageOfSize:(struct CGSize)arg1 forIcon:(id)arg2 iconImageInfo:(struct SBIconImageInfo)arg3;
+@property(readonly, nonatomic) unsigned long long numberOfCacheMisses;
+@property(readonly, nonatomic) unsigned long long numberOfCacheHits;
+@property(readonly, nonatomic) unsigned long long numberOfCachedImages;
+- (void)updateCachedImagesForFolderIcon:(id)arg1 afterChangeToContainedImageForIcon:(id)arg2 treatmentsOnly:(_Bool)arg3;
+- (id)genericMiniGridImage;
 - (void)rebuildImagesForFolderIcon:(id)arg1;
-- (id)imagesForFolderIcon:(id)arg1;
+- (id)gridCellImageForIcon:(id)arg1;
+- (id)imageForPageAtIndex:(unsigned long long)arg1 inFolderIcon:(id)arg2;
 - (void)removeObserver:(id)arg1 forFolderIcon:(id)arg2;
 - (void)addObserver:(id)arg1 forFolderIcon:(id)arg2;
 - (id)init;

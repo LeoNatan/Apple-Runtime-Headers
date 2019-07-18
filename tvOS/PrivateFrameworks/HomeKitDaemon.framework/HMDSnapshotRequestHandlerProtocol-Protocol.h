@@ -6,9 +6,9 @@
 
 #import <HomeKitDaemon/NSObject-Protocol.h>
 
-@class HMDCameraSessionID;
+@class HMDCameraSnapshotSessionID;
 
 @protocol HMDSnapshotRequestHandlerProtocol <NSObject>
-- (void)requestSnapshot:(HMDCameraSessionID *)arg1 streamingTierType:(unsigned long long)arg2 completionHandler:(void (^)(HMDSnapshotFile *, NSError *))arg3;
+- (void)requestSnapshot:(HMDCameraSnapshotSessionID *)arg1 streamingTierType:(unsigned long long)arg2 completionHandler:(void (^)(HMDSnapshotFile *, NSError *))arg3;
 @end
 

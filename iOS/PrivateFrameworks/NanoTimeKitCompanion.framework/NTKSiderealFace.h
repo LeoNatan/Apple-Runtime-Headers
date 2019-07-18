@@ -10,6 +10,7 @@
 {
 }
 
++ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1 forDevice:(id)arg2;
 + (id)_richComplicationSlotsForDevice:(id)arg1;
 + (id)_orderedComplicationSlots;
 + (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;

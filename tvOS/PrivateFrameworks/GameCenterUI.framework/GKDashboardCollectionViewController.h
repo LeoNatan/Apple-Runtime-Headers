@@ -76,6 +76,7 @@
 - (void)setupDataSource;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)preferredFocusEnvironments;
+- (void)prepareForAutomaticTwoColumnLayout;
 - (void)viewDidLoad;
 - (void)createCollectionViewInsideView:(id)arg1;
 - (void)loadView;

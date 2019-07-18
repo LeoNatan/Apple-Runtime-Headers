@@ -24,6 +24,7 @@
     PHContentEditingInput *_contentEditingInput;
     PUPhotoEditIrisModel *_livePhotoModel;
     CDStruct_1b6d18a9 _videoComplementStillImageTime;
+    CDStruct_1b6d18a9 _videoComplementOriginalStillImageTime;
     CDStruct_1b6d18a9 _videoComplementDuration;
 }
 
@@ -35,6 +36,7 @@
 @property(nonatomic, setter=_setPenultimateAvailability:) long long penultimateAvailability; // @synthesize penultimateAvailability=_penultimateAvailability;
 @property(nonatomic, setter=_setRetrievedVersion:) long long retrievedVersion; // @synthesize retrievedVersion=_retrievedVersion;
 @property(nonatomic, setter=_setVideoComplementDuration:) CDStruct_1b6d18a9 videoComplementDuration; // @synthesize videoComplementDuration=_videoComplementDuration;
+@property(nonatomic) CDStruct_1b6d18a9 videoComplementOriginalStillImageTime; // @synthesize videoComplementOriginalStillImageTime=_videoComplementOriginalStillImageTime;
 @property(nonatomic, setter=_setVideoComplementStillImageTime:) CDStruct_1b6d18a9 videoComplementStillImageTime; // @synthesize videoComplementStillImageTime=_videoComplementStillImageTime;
 @property(retain, nonatomic, setter=_setVideoComplementURL:) NSURL *videoComplementURL; // @synthesize videoComplementURL=_videoComplementURL;
 @property(retain, nonatomic, setter=_setImageUTI:) NSString *imageUTI; // @synthesize imageUTI=_imageUTI;

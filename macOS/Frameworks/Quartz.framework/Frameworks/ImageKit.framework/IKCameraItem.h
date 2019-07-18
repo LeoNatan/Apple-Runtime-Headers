@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     double _longitude;
     double _latitude;
     unsigned char _thumbnailState;
+    unsigned char _thumbnailOrientation;
     unsigned char _metadataState;
     BOOL _downloadedViaDragAndDrop;
     BOOL _downloadedViaDoubleClick;
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionHandler;
 }
 
+@property(nonatomic) unsigned char thumbnailOrientation; // @synthesize thumbnailOrientation=_thumbnailOrientation;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property BOOL forceNextDownload; // @synthesize forceNextDownload=_forceNextDownload;
 @property BOOL hasLocation; // @synthesize hasLocation=_hasLocation;

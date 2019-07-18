@@ -11,6 +11,7 @@
 @protocol PLAssetsdLibraryInternalServiceProtocol <NSObject>
 - (void)invalidateBehavioralScoreOnAllAssetsWithReply:(void (^)(_Bool, NSError *))arg1;
 - (void)deleteiTunesSyncedContentWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;
+- (void)backgroundJobServiceRemoveAllBundleRecordsFromProcessingSet;
 - (void)getBackgroundJobServiceBundlesInQueueDictionaryWithReply:(void (^)(NSDictionary *))arg1;
 - (void)getBackgroundJobServiceStateWithReply:(void (^)(unsigned long long))arg1;
 - (void)registerBackgroundJobServiceIfNecessaryOnLibraryPath:(NSString *)arg1 reply:(void (^)(_Bool, NSError *))arg2;

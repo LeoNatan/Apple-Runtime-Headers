@@ -20,6 +20,7 @@
     float _alpha;
     NSString *_daSymbolicColorName;
     NSString *_daHexString;
+    NSString *_ckSymbolicColorName;
 }
 
 + (id)colorWithDictionaryData:(id)arg1 error:(id *)arg2;
@@ -41,6 +42,7 @@
 + (id)colorWithHexString:(id)arg1;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4 targetRGBSpace:(unsigned int)arg5;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
+@property(readonly, nonatomic) NSString *ckSymbolicColorName; // @synthesize ckSymbolicColorName=_ckSymbolicColorName;
 @property(readonly, nonatomic) NSString *daHexString; // @synthesize daHexString=_daHexString;
 @property(readonly, nonatomic) NSString *daSymbolicColorName; // @synthesize daSymbolicColorName=_daSymbolicColorName;
 @property(readonly, nonatomic) float alpha; // @synthesize alpha=_alpha;
@@ -58,9 +60,11 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)hexStringWithAlpha;
 - (id)hexString;
+- (id)initWithCKSymbolicColorName:(id)arg1 hexString:(id)arg2;
 - (id)initWithDASymbolicColorName:(id)arg1 daHexString:(id)arg2;
+- (id)initWithDASymbolicColorName:(id)arg1 daHexString:(id)arg2 ckSymbolicColorName:(id)arg3;
 - (id)initWithHexString:(id)arg1;
-- (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4 colorSpace:(unsigned int)arg5 daSymbolicColorName:(id)arg6 daHexString:(id)arg7;
+- (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4 colorSpace:(unsigned int)arg5 daSymbolicColorName:(id)arg6 daHexString:(id)arg7 ckSymbolicColorName:(id)arg8;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4 colorSpace:(unsigned int)arg5;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (id)initWithWhite:(float)arg1 alpha:(float)arg2;

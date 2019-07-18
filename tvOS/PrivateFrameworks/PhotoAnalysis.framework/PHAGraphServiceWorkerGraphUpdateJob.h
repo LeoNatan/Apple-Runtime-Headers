@@ -8,8 +8,8 @@
 
 #import <PhotoAnalysis/PHAGraphRegistration-Protocol.h>
 
-@class NSDate, NSObject, NSString, PHAGraphManager;
-@protocol OS_dispatch_group, OS_os_transaction;
+@class NSConditionLock, NSDate, NSObject, NSString, PHAGraphManager;
+@protocol OS_os_transaction;
 
 @interface PHAGraphServiceWorkerGraphUpdateJob : PHAWorkerJob <PHAGraphRegistration>
 {
@@ -24,11 +24,11 @@
     NSObject<OS_os_transaction> *_transaction;
     PHAGraphManager *_graphManager;
     id _pgManager;
-    NSObject<OS_dispatch_group> *_completionWaitGroup;
+    NSConditionLock *_completionWaitLock;
 }
 
 + (id)graphUpdateJobWithLibrary:(id)arg1 scenario:(unsigned long long)arg2 label:(id)arg3 updateBlock:(CDUnknownBlockType)arg4;
-@property(retain) NSObject<OS_dispatch_group> *completionWaitGroup; // @synthesize completionWaitGroup=_completionWaitGroup;
+@property(retain) NSConditionLock *completionWaitLock; // @synthesize completionWaitLock=_completionWaitLock;
 @property(retain) id pgManager; // @synthesize pgManager=_pgManager;
 @property(retain, nonatomic) PHAGraphManager *graphManager; // @synthesize graphManager=_graphManager;
 @property(retain) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
@@ -41,8 +41,16 @@
 @property(nonatomic) float completionScore; // @synthesize completionScore=_completionScore;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
 - (void).cxx_destruct;
+- (void)additionalWorkAfterUpdate;
+- (long long)executionContext;
+- (void)prepareProcessingForWorker:(id)arg1;
+- (void)markJobFinishWorkForCancellation;
+- (void)_resetGraphManager;
+- (void)_transitionWorkerStateToWorking;
+- (void)_makeWorkerAvailable;
 - (void)_restoreGraphUpdateManagerExecutionContext;
 - (void)onGraphUpdateComplete;
+@property(readonly, nonatomic) _Bool isRebuildJob;
 - (void)graphUpdateDidStop;
 - (void)graphUpdateIsConsistent;
 - (void)graphUpdateMadeProgress:(double)arg1;

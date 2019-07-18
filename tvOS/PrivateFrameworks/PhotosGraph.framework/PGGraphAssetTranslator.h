@@ -13,7 +13,7 @@
 + (id)entityClassName;
 - (id)highlightUpdateTypeByAssetProperty;
 - (id)momentUpdateTypeByAssetProperty;
-- (id)graphChangesForChangedPropertyNamesByLocalIdentifier:(id)arg1 change:(id)arg2;
+- (id)graphChangesForChangedPropertyNamesByLocalIdentifier:(id)arg1 change:(id)arg2 progressBlock:(CDUnknownBlockType)arg3;
 
 @end
 

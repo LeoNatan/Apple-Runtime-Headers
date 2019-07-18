@@ -32,6 +32,8 @@
 - (void)rebootDeviceWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)activateSOSModeWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)setDashBoardSystemGesturesEnabled:(_Bool)arg1 withServerInstance:(_AXSpringBoardServerInstance *)arg2;
+- (_Bool)isGuidedAccessActiveWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
+- (_Bool)isSpotlightVisibleWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)revealSpotlightWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)toggleSpotlightWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (NSDictionary *)medusaAppsWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
@@ -66,6 +68,7 @@
 - (_Bool)isSiriVisibleWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (_Bool)isControlCenterVisibleWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)armApplePayWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
+- (_Bool)isStatusBarNativeFocusableWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)toggleDockWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)serverInstance:(_AXSpringBoardServerInstance *)arg1 setReachabilityEnabled:(_Bool)arg2;
 - (_Bool)serverInstance:(_AXSpringBoardServerInstance *)arg1 showNotificationCenter:(_Bool)arg2;
@@ -84,6 +87,7 @@
 - (_Bool)isScreenLockedWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)openCommandAndControlVocabularyWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)openCommandAndControlCommandsWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
+- (void)openCommandAndControlSettingsWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)openCustomGestureCreationForSCATWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)openCustomGestureCreationForASTWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)serverInstance:(_AXSpringBoardServerInstance *)arg1 setOrientationLocked:(_Bool)arg2;

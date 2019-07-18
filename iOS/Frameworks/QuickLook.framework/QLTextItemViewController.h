@@ -42,6 +42,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)canPinchToDismiss;
 - (_Bool)canSwipeToDismiss;
 - (id)printer;
+- (_Bool)_documentAttributesContainTextColors:(id)arg1;
+- (void)_setupTextViewColorsWithDocumentAttributes:(id)arg1;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 // Remaining properties

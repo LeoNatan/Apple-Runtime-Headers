@@ -6,18 +6,20 @@
 
 #import <UIKitCore/UIKBTutorialModalDisplay.h>
 
-@class NSArray, UIButton, UIImageView, UILabel, UIView;
+@class AVPlayerLooper, AVQueuePlayer, NSArray, UIButton, UILabel, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIContinuousPathIntroductionView : UIKBTutorialModalDisplay
 {
-    struct CGSize _imageSize;
-    double _imageWidth;
+    struct CGSize _videoSize;
+    double _videoWidth;
     double _textMargin;
     double _paddingAdjust;
-    UIView *_textImageContainer;
+    AVPlayerLooper *_playerLooper;
+    AVQueuePlayer *_player;
+    UIView *_textVideoContainer;
     UILabel *_landscapeTextBody;
-    UIImageView *_keyboardView;
+    UIView *_keyboardView;
     UIButton *_landscapeButton;
     NSArray *_portraitConstraints;
     NSArray *_landscapeConstraints;
@@ -26,9 +28,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *landscapeConstraints; // @synthesize landscapeConstraints=_landscapeConstraints;
 @property(retain, nonatomic) NSArray *portraitConstraints; // @synthesize portraitConstraints=_portraitConstraints;
 @property(retain, nonatomic) UIButton *landscapeButton; // @synthesize landscapeButton=_landscapeButton;
-@property(retain, nonatomic) UIImageView *keyboardView; // @synthesize keyboardView=_keyboardView;
+@property(retain, nonatomic) UIView *keyboardView; // @synthesize keyboardView=_keyboardView;
 @property(retain, nonatomic) UILabel *landscapeTextBody; // @synthesize landscapeTextBody=_landscapeTextBody;
-@property(retain, nonatomic) UIView *textImageContainer; // @synthesize textImageContainer=_textImageContainer;
+@property(retain, nonatomic) UIView *textVideoContainer; // @synthesize textVideoContainer=_textVideoContainer;
 - (void).cxx_destruct;
 - (void)extraButtonTapAction;
 - (long long)textBodyMaxLines;
@@ -36,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (id)textBodyDescriptions;
 - (id)textTitleDescriptions;
 - (id)mediaContents;
+- (id)_introductionMovieAssetURL;
 - (void)setupConstraintData;
 - (id)initWithKeyboardAppearance:(long long)arg1;
 

@@ -6,10 +6,7 @@
 
 #import <SceneKit/NSObject-Protocol.h>
 
-@class AVCaptureDevice;
-
 @protocol SCNCaptureDeviceOutputConsumer <NSObject>
-@property(retain, nonatomic) AVCaptureDevice *captureDevice;
 - (void)setPixelBuffer:(struct __CVBuffer *)arg1;
 - (void)setSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 @end

@@ -20,6 +20,7 @@
 @property(nonatomic) __weak id <AXSystemAppServer> localServiceProvider; // @synthesize localServiceProvider=_localServiceProvider;
 - (void).cxx_destruct;
 - (_Bool)isNonExclusiveSystemUIVisible;
+- (_Bool)isNonExclusiveSystemUIFocusable;
 - (_Bool)isSystemSleeping;
 - (void)wakeUpDeviceIfNecessary;
 - (void)activeInterfaceOrientation:(CDUnknownBlockType)arg1;

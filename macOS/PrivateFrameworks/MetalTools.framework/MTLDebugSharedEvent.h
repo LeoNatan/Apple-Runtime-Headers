@@ -13,9 +13,11 @@
     struct mutex _resourceMapLock;
     struct unordered_map<unsigned long long, unsigned long long, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, unsigned long long>>> _valueToCountMap;
     NSMapTable *_valueToResourcesMap;
+    BOOL _isStandardEvent;
 }
 
 + (id)sharedListener;
+@property(nonatomic) BOOL isStandardEvent; // @synthesize isStandardEvent=_isStandardEvent;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)releaseWritableResourcesForValue:(unsigned long long)arg1;

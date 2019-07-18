@@ -10,7 +10,7 @@
 #import <CalendarNotification/CALNTriggeredEventNotificationDataSourceDelegate-Protocol.h>
 
 @class NSArray, NSMutableDictionary, NSString;
-@protocol CALNCalendarIconIdentifierProvider, CALNNotificationManager, CALNSourceEventRepresentationProvider, CALNTravelAdvisoryTimelinessAuthority, CALNTriggeredEventNotificationBodyDescriptionProvider, CALNTriggeredEventNotificationDataSource, CALNTriggeredEventNotificationDataStorage, CALNTriggeredEventNotificationMapItemURLProvider, CALNTriggeredEventNotificationTransitionProvider, CALNTriggeredEventNotificationTriggerHelper, CALNURLHandler, CalDateProvider, OS_dispatch_queue;
+@protocol CALNCalendarIconIdentifierProvider, CALNNotificationManager, CALNSourceEventRepresentationProvider, CALNTimeToLeaveRefreshStorage, CALNTravelAdvisoryTimelinessAuthority, CALNTriggeredEventNotificationBodyDescriptionProvider, CALNTriggeredEventNotificationDataSource, CALNTriggeredEventNotificationDataStorage, CALNTriggeredEventNotificationMapItemURLProvider, CALNTriggeredEventNotificationTransitionProvider, CALNTriggeredEventNotificationTriggerHelper, CALNURLHandler, CalDateProvider, OS_dispatch_queue;
 
 @interface CALNTriggeredEventNotificationSource : NSObject <CALNTriggeredEventNotificationDataSourceDelegate, CALNNotificationSource>
 {
@@ -24,6 +24,7 @@
     id <CALNTravelAdvisoryTimelinessAuthority> _travelAdvisoryTimelinessAuthority;
     id <CalDateProvider> _dateProvider;
     id <CALNTriggeredEventNotificationDataStorage> _notificationDataStorage;
+    id <CALNTimeToLeaveRefreshStorage> _timeToLeaveRefreshStorage;
     NSMutableDictionary *_eventURLToObjectIDMap;
     id <CALNURLHandler> _urlHandler;
     id <CALNTriggeredEventNotificationMapItemURLProvider> _mapItemURLProvider;
@@ -32,7 +33,6 @@
 
 + (id)_conferenceURLForNotification:(id)arg1;
 + (id)_mapItemURLForNotification:(id)arg1;
-+ (id)_expirationDateForSourceNotificationInfo:(id)arg1;
 + (id)conferenceURLUserInfoKey;
 + (id)mapItemURLUserInfoKey;
 + (id)mailOrganizerActionIdentifier;
@@ -43,6 +43,7 @@
 @property(readonly, nonatomic) id <CALNTriggeredEventNotificationMapItemURLProvider> mapItemURLProvider; // @synthesize mapItemURLProvider=_mapItemURLProvider;
 @property(readonly, nonatomic) id <CALNURLHandler> urlHandler; // @synthesize urlHandler=_urlHandler;
 @property(readonly, nonatomic) NSMutableDictionary *eventURLToObjectIDMap; // @synthesize eventURLToObjectIDMap=_eventURLToObjectIDMap;
+@property(readonly, nonatomic) id <CALNTimeToLeaveRefreshStorage> timeToLeaveRefreshStorage; // @synthesize timeToLeaveRefreshStorage=_timeToLeaveRefreshStorage;
 @property(readonly, nonatomic) id <CALNTriggeredEventNotificationDataStorage> notificationDataStorage; // @synthesize notificationDataStorage=_notificationDataStorage;
 @property(readonly, nonatomic) id <CalDateProvider> dateProvider; // @synthesize dateProvider=_dateProvider;
 @property(readonly, nonatomic) id <CALNTravelAdvisoryTimelinessAuthority> travelAdvisoryTimelinessAuthority; // @synthesize travelAdvisoryTimelinessAuthority=_travelAdvisoryTimelinessAuthority;
@@ -63,20 +64,20 @@
 - (id)_notificationResponseDataForSourceNotificationInfo:(id)arg1;
 - (id)_notificationResponseDataForRecord:(id)arg1;
 - (id)_updatedNotificationDataResettingTimeToLeaveDisplayState:(id)arg1;
+- (void)_clearTravelAdvisoryFromNotificationMetaDataForSourceClientIdentifier:(id)arg1;
 - (void)_resetStoredNotificationDataTimeToLeaveDisplayStateForSourceClientIdentifier:(id)arg1;
 - (_Bool)_shouldUpdateStoredNotificationDataGivenTransition:(unsigned long long)arg1;
 - (_Bool)_shouldRemoveStoredNotificationDataGivenShouldWithdrawNotification:(_Bool)arg1 hasExistingTravelInformation:(_Bool)arg2 mayCeaseRouteMonitoring:(_Bool)arg3;
 - (void)_addNotificationData:(id)arg1 forSourceClientIdentifier:(id)arg2;
 - (void)_addNotificationDataForSourceClientIdentifier:(id)arg1 sourceNotificationInfo:(id)arg2 existingNotificationData:(id)arg3 transition:(unsigned long long)arg4 now:(id)arg5;
 - (void)_updateStoredNotificationDataForSourceClientIdentifier:(id)arg1 sourceNotificationInfo:(id)arg2 existingNotificationData:(id)arg3 transition:(unsigned long long)arg4 now:(id)arg5;
-- (void)_removeStoredNotificationDataForSourceClientIdentifier:(id)arg1;
+- (void)_removeStoredNotificationDataForEventWithEventID:(id)arg1;
 - (id)_notificationDataForSourceNotificationInfo:(id)arg1 existingNotificationData:(id)arg2 transition:(unsigned long long)arg3 now:(id)arg4;
 - (id)_existingNotificationDataMatchingEventForSourceClientIdentifier:(id)arg1;
 - (void)_handleMailOrganizerActionWithResponse:(id)arg1;
 - (void)_handleConferenceCallActionWithResponse:(id)arg1;
 - (void)_handleDirectionsActionWithResponse:(id)arg1;
 - (void)_addEventURL:(id)arg1 mappingToEventObjectID:(id)arg2;
-- (void)_removeRecordWithSourceClientIdentifier:(id)arg1;
 - (void)_updateNotification:(id)arg1 shouldClearHypothesis:(_Bool)arg2;
 - (void)_notificationAddedWithSourceClientIdentifier:(id)arg1 sourceNotificationInfo:(id)arg2 trigger:(unsigned long long)arg3;
 - (void)_addRecord:(id)arg1 sourceNotificationInfo:(id)arg2 existingNotificationData:(id)arg3 trigger:(unsigned long long)arg4 transition:(unsigned long long)arg5 now:(id)arg6;
@@ -87,15 +88,24 @@
 - (id)_sourceNotificationInfoForSourceClientIdentifier:(id)arg1 shouldClearHypothesis:(_Bool)arg2 isForContentCreation:(_Bool)arg3;
 - (id)_contentForNotificationWithSourceClientIdentifier:(id)arg1 shouldClearHypothesis:(_Bool)arg2;
 - (id)_contentForNotificationWithSourceClientIdentifier:(id)arg1;
-- (void)_refreshNotification:(id)arg1;
+- (_Bool)_itemWithEventID:(id)arg1 affectedByChangesToObjects:(id)arg2;
 - (_Bool)_notificationWithSourceClientIdentifier:(id)arg1 affectedByChangesToObjects:(id)arg2;
+- (_Bool)_shouldRemoveTimeToLeaveRefreshTimerWithRefreshDate:(id)arg1 eventID:(id)arg2;
+- (void)_refreshTimeToLeaveRefreshTimerWithRefreshDate:(id)arg1 eventID:(id)arg2;
+- (void)_refreshTimeToLeaveRefreshTimersWithObjectIDs:(id)arg1;
+- (_Bool)_isNotificationMetaDataExpired:(id)arg1 eventID:(id)arg2;
+- (_Bool)_shouldRemoveNotificationMetaData:(id)arg1 eventID:(id)arg2;
+- (void)_refreshNotificationMetaData:(id)arg1 eventID:(id)arg2;
+- (void)_refreshNotificationMetaDataWithObjectIDs:(id)arg1;
+- (void)_refreshNotification:(id)arg1;
+- (void)_refreshNotificationRecordsWithObjectIDs:(id)arg1;
 - (void)_refreshNotifications:(id)arg1;
 - (void)_updateTimeToLeaveRefreshTimerForSourceClientIdentifier:(id)arg1 hypothesis:(id)arg2 allowsLocationAlerts:(_Bool)arg3;
 - (void)_updateTimeToLeaveRefreshTimerForSourceClientIdentifier:(id)arg1;
 - (unsigned long long)_calnTravelAdvisoryTimelinessPeriodFromEKTravelAvisoryTimelinessPeriod:(unsigned long long)arg1;
 - (unsigned long long)_travelAdvisoryTimelinessPeriodForHypothesis:(id)arg1;
 - (_Bool)_mayCeaseRouteMonitoringForExistingNotificationData:(id)arg1;
-- (_Bool)_shouldCeaseRouteMonitoringGivenShouldWithdrawNotification:(_Bool)arg1 hasExistingTravelInformation:(_Bool)arg2 mayCeaseRouteMonitoring:(_Bool)arg3;
+- (_Bool)_shouldCeaseRouteMonitoringEventForSourceClientIdentifier:(id)arg1;
 - (void)_clearTravelAdvisoryHypotheses;
 - (void)_travelAdvisoryAuthorizationChanged:(_Bool)arg1;
 - (void)_travelEngineEventSignificantlyChangedWithSourceClientIdentifier:(id)arg1;
@@ -105,11 +115,12 @@
 - (void)dataSource:(id)arg1 triggeredWithSourceClientIdentifier:(id)arg2 triggerData:(id)arg3;
 @property(readonly, nonatomic) NSArray *categories;
 @property(readonly, nonatomic) NSString *sourceIdentifier;
+- (void)_didReceiveResponse:(id)arg1;
 - (void)didReceiveResponse:(id)arg1;
 - (void)refreshNotifications:(id)arg1;
 - (id)contentForSourceClientIdentifier:(id)arg1 sourceNotificationInfo:(id)arg2 isProtectedDataAvailable:(_Bool)arg3;
 - (id)contentForNotificationWithSourceClientIdentifier:(id)arg1;
-- (id)initWithDataSource:(id)arg1 notificationManager:(id)arg2 iconIdentifierProvider:(id)arg3 sourceEventRepresentationProvider:(id)arg4 triggerHelper:(id)arg5 transitionProvider:(id)arg6 bodyDescriptionProvider:(id)arg7 travelAdvisoryTimelinessAuthority:(id)arg8 dateProvider:(id)arg9 notificationDataStorage:(id)arg10 urlHandler:(id)arg11 mapItemURLProvider:(id)arg12;
+- (id)initWithDataSource:(id)arg1 notificationManager:(id)arg2 iconIdentifierProvider:(id)arg3 sourceEventRepresentationProvider:(id)arg4 triggerHelper:(id)arg5 transitionProvider:(id)arg6 bodyDescriptionProvider:(id)arg7 travelAdvisoryTimelinessAuthority:(id)arg8 dateProvider:(id)arg9 notificationDataStorage:(id)arg10 urlHandler:(id)arg11 mapItemURLProvider:(id)arg12 timeToLeaveRefreshStorage:(id)arg13;
 - (_Bool)sourceClientIdentifier:(id)arg1 matchesEventForSourceClientIdentifier:(id)arg2;
 
 // Remaining properties

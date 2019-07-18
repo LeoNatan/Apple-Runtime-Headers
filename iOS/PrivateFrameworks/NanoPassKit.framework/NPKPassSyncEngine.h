@@ -30,6 +30,7 @@
 @property(nonatomic) __weak id <NPKPassSyncEngineDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <NPKPassSyncEngineDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long engineRole; // @synthesize engineRole=_engineRole;
+@property(retain, nonatomic) NPKPassSyncState *backupState; // @synthesize backupState=_backupState;
 - (void).cxx_destruct;
 - (void)_finishedProcessingChange:(id)arg1;
 - (void)_receivedStateChangeProcessed:(id)arg1 changeAccepted:(_Bool)arg2;
@@ -47,7 +48,6 @@
 - (void)_sendNextStateChange;
 @property(retain, nonatomic) NPKPassSyncState *candidateState; // @synthesize candidateState=_candidateState;
 @property(retain, nonatomic) NPKPassSyncState *reconciledState; // @synthesize reconciledState=_reconciledState;
-@property(retain, nonatomic) NPKPassSyncState *backupState; // @synthesize backupState=_backupState;
 @property(retain, nonatomic) NPKPassSyncState *libraryState; // @synthesize libraryState=_libraryState;
 - (void)handleReconciledStateAcceptedWithHash:(id)arg1;
 - (void)handleProposedReconciledState:(id)arg1;

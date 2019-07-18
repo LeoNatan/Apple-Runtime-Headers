@@ -67,6 +67,7 @@
 - (void)logAvatarsDaemonReceivesIncomingConnection;
 - (void)logUpdatingBackupExclusionStatus:(_Bool)arg1;
 - (void)logErrorUpdatingBackupInclusionStatus:(id)arg1;
+- (void)logErrorMigratingBackupInclusionStatus:(id)arg1;
 - (void)logErrorGettingAccountInfo:(id)arg1;
 - (void)logAccountInfo:(id)arg1 status:(long long)arg2 deviceToDeviceEncryption:(_Bool)arg3;
 - (void)checkingAccountInfo:(CDUnknownBlockType)arg1;
@@ -139,6 +140,8 @@
 - (void)logExportRequestResult:(_Bool)arg1 error:(id)arg2;
 - (void)logImportRequestResult:(_Bool)arg1 error:(id)arg2;
 - (void)logSyncEnabled;
+- (void)logUserRequestedBackupXPCActivityFinished;
+- (void)performingUserRequestedBackupActivity:(CDUnknownBlockType)arg1;
 - (void)logMigrationXPCActivityFinished;
 - (void)performingMigrationXPCActivity:(CDUnknownBlockType)arg1;
 - (void)importingRecords:(CDUnknownBlockType)arg1;

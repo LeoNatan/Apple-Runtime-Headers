@@ -8,23 +8,22 @@
 
 #import <HealthRecordsUI/HKCloudSyncObserverDelegate-Protocol.h>
 #import <HealthRecordsUI/HKConceptStoreObserver-Protocol.h>
+#import <HealthRecordsUI/HKHealthRecordsStoreAccountStateChangeListener-Protocol.h>
 #import <HealthRecordsUI/HKHealthRecordsStoreIngestionStateListener-Protocol.h>
 #import <HealthRecordsUI/UISearchControllerDelegate-Protocol.h>
 #import <HealthRecordsUI/UISearchResultsUpdating-Protocol.h>
 #import <HealthRecordsUI/_TtP15HealthRecordsUI36FilterSettingsViewControllerDelegate_-Protocol.h>
 
-@class HKClinicalAccount, HKCloudSyncObserver, HKConcept, HKMedicalRecordSearchController, HKViewTableViewCell, HRContentStatusCell, HRContentStatusView, HROverlayRoomViewController, HRProfile, NSPredicate, NSSet, NSString, NSTimer, NSUUID, UIButton, UISearchController, WDMedicalRecordCategory, WDMedicalRecordDisplayItemProvider;
+@class HKClinicalAccount, HKCloudSyncObserver, HKConcept, HKViewTableViewCell, HRContentStatusCell, HRContentStatusView, HROverlayRoomViewController, HRProfile, NSPredicate, NSSet, NSString, NSTimer, NSUUID, UIButton, UISearchController, WDMedicalRecordCategory, WDMedicalRecordDisplayItemProvider;
 @protocol HRRecordViewControllerFactory;
 
 __attribute__((visibility("hidden")))
-@interface WDMedicalRecordTimelineViewController : HKTableViewController <UISearchControllerDelegate, UISearchResultsUpdating, _TtP15HealthRecordsUI36FilterSettingsViewControllerDelegate_, HKHealthRecordsStoreIngestionStateListener, HKConceptStoreObserver, HKCloudSyncObserverDelegate>
+@interface WDMedicalRecordTimelineViewController : HKTableViewController <UISearchControllerDelegate, UISearchResultsUpdating, _TtP15HealthRecordsUI36FilterSettingsViewControllerDelegate_, HKHealthRecordsStoreIngestionStateListener, HKHealthRecordsStoreAccountStateChangeListener, HKConceptStoreObserver, HKCloudSyncObserverDelegate>
 {
-    _Bool _shouldShowTimelineSource;
     _Bool _loadingNextPage;
     _Bool _showSearchBar;
     _Bool _showsFilterControl;
     _Bool _enableReconnect;
-    _Bool _viewAppeared;
     _Bool _queryReturned;
     _Bool _cloudSyncActive;
     WDMedicalRecordDisplayItemProvider *_displayItemProvider;
@@ -32,13 +31,14 @@ __attribute__((visibility("hidden")))
     id <HRRecordViewControllerFactory> _factory;
     NSPredicate *_accountPredicate;
     NSPredicate *_searchPredicate;
+    NSUUID *_accountId;
     HKClinicalAccount *_account;
     WDMedicalRecordCategory *_category;
     NSSet *_categories;
     NSSet *_accounts;
     HKConcept *_concept;
     NSUUID *_highlightedRecordId;
-    HKMedicalRecordSearchController *_medicalRecordSearchController;
+    id _medicalRecordSearchController;
     UISearchController *_navigationSearchController;
     NSTimer *_searchThrottleTimer;
     HROverlayRoomViewController *_chartViewController;
@@ -63,8 +63,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) HROverlayRoomViewController *chartViewController; // @synthesize chartViewController=_chartViewController;
 @property(retain, nonatomic) NSTimer *searchThrottleTimer; // @synthesize searchThrottleTimer=_searchThrottleTimer;
 @property(retain, nonatomic) UISearchController *navigationSearchController; // @synthesize navigationSearchController=_navigationSearchController;
-@property(retain, nonatomic) HKMedicalRecordSearchController *medicalRecordSearchController; // @synthesize medicalRecordSearchController=_medicalRecordSearchController;
-@property(nonatomic) _Bool viewAppeared; // @synthesize viewAppeared=_viewAppeared;
+@property(retain, nonatomic) id medicalRecordSearchController; // @synthesize medicalRecordSearchController=_medicalRecordSearchController;
 @property(nonatomic) _Bool enableReconnect; // @synthesize enableReconnect=_enableReconnect;
 @property(nonatomic) _Bool showsFilterControl; // @synthesize showsFilterControl=_showsFilterControl;
 @property(nonatomic) _Bool showSearchBar; // @synthesize showSearchBar=_showSearchBar;
@@ -75,39 +74,35 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSSet *categories; // @synthesize categories=_categories;
 @property(retain, nonatomic) WDMedicalRecordCategory *category; // @synthesize category=_category;
 @property(retain, nonatomic) HKClinicalAccount *account; // @synthesize account=_account;
+@property(retain, nonatomic) NSUUID *accountId; // @synthesize accountId=_accountId;
 @property(retain, nonatomic) NSPredicate *searchPredicate; // @synthesize searchPredicate=_searchPredicate;
 @property(retain, nonatomic) NSPredicate *accountPredicate; // @synthesize accountPredicate=_accountPredicate;
 @property(retain, nonatomic) id <HRRecordViewControllerFactory> factory; // @synthesize factory=_factory;
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
-@property(nonatomic) _Bool shouldShowTimelineSource; // @synthesize shouldShowTimelineSource=_shouldShowTimelineSource;
 @property(retain, nonatomic) WDMedicalRecordDisplayItemProvider *displayItemProvider; // @synthesize displayItemProvider=_displayItemProvider;
 - (void).cxx_destruct;
 - (void)filterSettingsViewControllerWithDidSelectCategories:(id)arg1 accounts:(id)arg2;
 - (void)_updateFilterButtonImage;
 - (void)_filterButtonTapped:(id)arg1;
 - (_Bool)_displayItemShouldBeTappable:(id)arg1;
-- (void)_connectGateway:(id)arg1;
 - (long long)_adjustTimelineItemSectionWithSection:(long long)arg1;
 - (id)_adjustedTimelineItemIndexPathForIndexPath:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didUnhighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didHighlightRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)_tableView:(id)arg1 sourceCellForRow:(long long)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (long long)_numberOfRowsInTimelineSectionSource;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (long long)_sectionTypeForSectionIndex:(long long)arg1;
 - (_Bool)_shouldShowReconnectCell;
 - (id)_indexPathForReconnectCell;
-- (id)_indexPathForSourceCell;
-- (_Bool)_indexPathIsSourceCell:(id)arg1;
+- (_Bool)_indexPathIsReconnectCell:(id)arg1;
 - (void)_uninstallSearchController;
 - (void)_installSearchController;
 - (void)_removeSearchController;
@@ -117,36 +112,44 @@ __attribute__((visibility("hidden")))
 - (void)_postAWDMetricForDetailCategory;
 - (void)_postAWDMetricForTimelineCategory;
 - (void)_postAWDMetricForCategoryType:(int)arg1;
-- (void)_updateSystemStatusView;
-- (_Bool)_shouldShowInlineSystemStatusSection;
-- (_Bool)_hasDisplayableStatus;
-- (id)_systemStatusDisplay;
 - (void)cloudSyncObserverSyncCompleted:(id)arg1;
 - (void)cloudSyncObserver:(id)arg1 syncFailedWithError:(id)arg2;
 - (void)cloudSyncObserver:(id)arg1 syncDidStartWithProgress:(id)arg2;
 - (void)cloudSyncObserverStatusUpdated:(id)arg1 status:(id)arg2;
 - (void)conceptStore:(id)arg1 indexManagerDidChangeState:(unsigned long long)arg2;
-- (void)newConceptsAssociatedWithUserRecords:(id)arg1;
-- (void)conceptRecordAssociationCountChanged:(id)arg1;
-- (void)conceptAssociationsRemovedFromUserRecords:(id)arg1;
+- (void)healthRecordsStore:(id)arg1 accountDidChange:(id)arg2 changeType:(long long)arg3;
 - (void)healthRecordsStore:(id)arg1 ingestionStateDidUpdateTo:(long long)arg2;
+- (void)_updateSystemStatusViewAfterDelay:(_Bool)arg1;
+- (void)_updateSystemStatusView;
+- (_Bool)_shouldShowInlineSystemStatusSection;
+- (_Bool)_hasDisplayableStatus;
+- (id)_systemStatusDisplay;
 - (void)_removeSystemStatusObservers;
 - (void)_setupSystemStatusObservers;
+- (void)_performActionForCellsSharingRecordsInTableView:(id)arg1 atIndexPath:(id)arg2 action:(CDUnknownBlockType)arg3;
+- (void)_updateTableHeaderView;
 - (id)_headerViewForTitle:(id)arg1;
 - (void)_determineConceptChartabilityAndInsertChartIfNeeded;
 - (void)_updateTableViewGroups;
+- (void)_showTTRAlertIfInternalInstallWithError:(id)arg1;
 - (void)_startCollectingData;
 - (id)_sampleTypesToDisplay;
 - (id)_filterFromCurrentPredicates;
 - (void)_setupDisplayItemProvider;
 - (void)_assertSearchControllerStatus;
 - (void)_scrollToRecordWithUUID:(id)arg1 animated:(_Bool)arg2;
+- (void)_reloadData;
+- (void)_reloadDataWithNotification:(id)arg1;
+- (void)_reloadDataWithDelay:(double)arg1;
+- (void)_tapToRadar:(id)arg1;
+- (void)_configureBarButtonItems;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithProfile:(id)arg1 factory:(id)arg2 concept:(id)arg3 highlightedRecordId:(id)arg4;
 - (id)initWithProfile:(id)arg1 factory:(id)arg2 category:(id)arg3 showInitialSearchBar:(_Bool)arg4;
+- (id)initWithProfile:(id)arg1 factory:(id)arg2 accountId:(id)arg3 showInitialSearchBar:(_Bool)arg4 enableReconnect:(_Bool)arg5;
 - (id)initWithProfile:(id)arg1 factory:(id)arg2 account:(id)arg3 showInitialSearchBar:(_Bool)arg4 enableReconnect:(_Bool)arg5;
 - (id)initWithProfile:(id)arg1 factory:(id)arg2 showInitialSearchBar:(_Bool)arg3;
 

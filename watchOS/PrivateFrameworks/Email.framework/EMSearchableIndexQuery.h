@@ -6,15 +6,15 @@
 
 #import <objc/NSObject.h>
 
-#import <Email/ECSignpostable-Protocol.h>
 #import <Email/EFCancelable-Protocol.h>
 #import <Email/EFLoggable-Protocol.h>
+#import <Email/EFSignpostable-Protocol.h>
 #import <Email/EMSearchableIndexQueryBuilder-Protocol.h>
 #import <Email/NSProgressReporting-Protocol.h>
 
 @class CSSearchQuery, EFPromise, EMSearchableIndexQueryExpression, NSArray, NSLock, NSProgress, NSString;
 
-@interface EMSearchableIndexQuery : NSObject <EFLoggable, EMSearchableIndexQueryBuilder, ECSignpostable, EFCancelable, NSProgressReporting>
+@interface EMSearchableIndexQuery : NSObject <EFLoggable, EMSearchableIndexQueryBuilder, EFSignpostable, EFCancelable, NSProgressReporting>
 {
     NSLock *_lock;
     NSProgress *_progress;
@@ -101,7 +101,6 @@
 - (void)_foundItems:(id)arg1;
 @property(readonly) NSProgress *progress;
 - (_Bool)_isFinishedQueryStatus:(id)arg1;
-- (id)truncatedDescription;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithExpression:(id)arg1 builder:(CDUnknownBlockType)arg2;

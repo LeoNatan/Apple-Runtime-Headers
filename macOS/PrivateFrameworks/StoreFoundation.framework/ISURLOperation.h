@@ -71,7 +71,6 @@
 - (void)_handleReceivedData:(id)arg1;
 - (void)_handleFinishedLoading;
 - (id)_request;
-- (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
 - (void)connection:(id)arg1 conditionalRequirementsChanged:(BOOL)arg2;
 - (id)connection:(id)arg1 willSendRequestForEstablishedConnection:(id)arg2 properties:(id)arg3;
 - (void)connectionDidFinishLoading:(id)arg1;

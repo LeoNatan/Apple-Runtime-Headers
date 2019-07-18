@@ -6,7 +6,7 @@
 
 #import <CoreData/NSManagedObjectContext.h>
 
-@class NSMutableDictionary, NSMutableSet, PLChangeHandlingContainer, PLDelayedFiledSystemDeletions, PLDelayedSaveActions, PLMergePolicy, PLPhotoLibrary, PLPhotoLibraryPathManager;
+@class NSError, NSMutableDictionary, NSMutableSet, PLChangeHandlingContainer, PLDelayedFiledSystemDeletions, PLDelayedSaveActions, PLMergePolicy, PLPhotoLibrary, PLPhotoLibraryPathManager;
 @protocol PLManagedObjectContextPTPNotificationDelegate;
 
 @interface PLManagedObjectContext : NSManagedObjectContext
@@ -30,6 +30,8 @@
     PLPhotoLibraryPathManager *_pathManager;
     PLDelayedSaveActions *_delayedSaveActions;
     PLChangeHandlingContainer *_changeHandlingContainer;
+    struct os_unfair_lock_s _invalidationStateLock;
+    NSError *_invalidationReason;
     BOOL _regenerateVideoThumbnails;
     int _changeSource;
     id <PLManagedObjectContextPTPNotificationDelegate> _ptpNotificationDelegate;
@@ -63,7 +65,7 @@
 + (BOOL)hasConfiguredPhotoLibrary;
 + (void)removePhotosDatabaseWithPathManager:(id)arg1;
 + (BOOL)canMergeRemoteChanges;
-+ (id)contextForRepairingSingletonObjects:(const char *)arg1 libraryURL:(id)arg2;
++ (id)contextForRepairingSingletonObjects:(const char *)arg1 libraryURL:(id)arg2 error:(id *)arg3;
 + (id)contextForPhotoLibrary:(id)arg1 automaticallyMerges:(BOOL)arg2 name:(const char *)arg3;
 @property(nonatomic) BOOL isBackingALAssetsLibrary; // @synthesize isBackingALAssetsLibrary=_isBackingALAssetsLibrary;
 @property(nonatomic) BOOL isInitializingSingletons; // @synthesize isInitializingSingletons=_isInitializingSingletons;
@@ -106,13 +108,20 @@
 - (void)recordManagedObjectWillSave:(id)arg1;
 - (void)disconnectFromChangeHandling;
 - (void)connectToChangeHandling;
+- (BOOL)pl_performWithOptions:(unsigned long long)arg1 andBlock:(CDUnknownBlockType)arg2;
+- (void)performWithOptions:(unsigned long long)arg1 andBlock:(CDUnknownBlockType)arg2;
+- (void)performBlockAndWait:(CDUnknownBlockType)arg1;
+- (void)performBlock:(CDUnknownBlockType)arg1;
 - (void)_simulateCrashIfNotAssetsd;
 - (BOOL)obtainPermanentIDsForObjects:(id)arg1 error:(id *)arg2;
 - (BOOL)save:(id *)arg1;
 - (unsigned long long)countForFetchRequest:(id)arg1 error:(id *)arg2;
 - (void)_logFaultForPotentialySlowFetchRequeset:(id)arg1;
+- (id)executeRequest:(id)arg1 error:(id *)arg2;
 - (id)executeFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)existingObjectWithID:(id)arg1 error:(id *)arg2;
+- (void)invalidateWithReason:(id)arg1;
+- (BOOL)isValidForSelector:(SEL)arg1 error:(id *)arg2;
 - (id)libraryBundle;
 - (id)pathManager;
 - (BOOL)isReadOnly;

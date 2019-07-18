@@ -69,6 +69,7 @@
 - (unsigned long long)_channelType;
 - (void)_didChangePresentation;
 - (void)setVerificationRecord:(id)arg1;
+- (void)_queue_sharedPaymentWebServiceChanged;
 - (void)sharedPaymentServiceChanged;
 - (id)passSnapshot;
 - (void)dealloc;

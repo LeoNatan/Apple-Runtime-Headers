@@ -10,7 +10,6 @@
 
 @protocol CAMIrisRequest <NSObject>
 @property(readonly, nonatomic) long long irisMode;
-@property(readonly, nonatomic) _Bool shouldPersistToLivePhotoDirectory;
 - (_Bool)isEV0LocalVideoDestinationURL:(NSURL *)arg1;
 - (NSURL *)irisLocalVideoDestinationURLForEV0:(_Bool)arg1;
 - (NSString *)irisVideoPersistenceUUIDForEV0:(_Bool)arg1;

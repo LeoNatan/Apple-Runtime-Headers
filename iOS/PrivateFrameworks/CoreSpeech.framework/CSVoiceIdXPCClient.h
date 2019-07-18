@@ -15,8 +15,9 @@
 
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+- (id)_decodeError:(id)arg1;
 - (void)_sendMessage:(id)arg1 connection:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)notifyImplicitUtterance:(id)arg1 audioDeviceType:(id)arg2 audioRecordType:(id)arg3 voiceTriggerEventInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)notifyImplicitUtterance:(id)arg1 audioDeviceType:(id)arg2 audioRecordType:(id)arg3 voiceTriggerEventInfo:(id)arg4 otherCtxt:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)_handleListenerError:(id)arg1;
 - (void)_handleListenerEvent:(id)arg1;
 - (void)dealloc;

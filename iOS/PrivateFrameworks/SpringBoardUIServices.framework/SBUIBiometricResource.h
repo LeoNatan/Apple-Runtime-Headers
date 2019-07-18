@@ -33,6 +33,7 @@
     _Bool _screenIsOn;
     _Bool _isAuthenticated;
     _Bool _shouldSendFingerOffNotification;
+    _Bool _shouldSendFaceOutOfViewNotification;
     _Bool _wasMatchingBeforeKeybagStateChangeOccurred;
     SBFCredentialSet *_unlockCredentialSet;
     NSHashTable *_observers;

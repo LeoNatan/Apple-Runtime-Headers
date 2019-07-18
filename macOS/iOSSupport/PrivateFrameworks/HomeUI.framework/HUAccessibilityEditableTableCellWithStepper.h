@@ -40,6 +40,7 @@
 - (void)stepperCell:(id)arg1 setValue:(double)arg2;
 - (double)valueForStepperCell:(id)arg1;
 - (void)_update;
+- (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;

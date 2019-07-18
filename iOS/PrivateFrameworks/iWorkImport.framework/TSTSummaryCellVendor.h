@@ -13,11 +13,11 @@ __attribute__((visibility("hidden")))
 {
     _Bool _hasCustomFormatsToPaste;
     TSTTableInfo *_tableInfo;
-    unordered_map_7f472e10 _cellUIDMap;
+    map_cd95b0b7 _cellUIDMap;
 }
 
 @property(nonatomic) _Bool hasCustomFormatsToPaste; // @synthesize hasCustomFormatsToPaste=_hasCustomFormatsToPaste;
-@property(readonly, nonatomic) unordered_map_7f472e10 *cellUIDMap; // @synthesize cellUIDMap=_cellUIDMap;
+@property(readonly, nonatomic) map_cd95b0b7 *cellUIDMap; // @synthesize cellUIDMap=_cellUIDMap;
 @property(readonly, nonatomic) __weak TSTTableInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 - (id).cxx_construct;
 - (void).cxx_destruct;

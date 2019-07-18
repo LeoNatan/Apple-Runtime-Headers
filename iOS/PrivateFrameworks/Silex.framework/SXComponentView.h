@@ -11,12 +11,11 @@
 #import <Silex/SXComponentInteractable-Protocol.h>
 #import <Silex/SXTransitionableComponentView-Protocol.h>
 #import <Silex/UIGestureRecognizerDelegate-Protocol.h>
-#import <Silex/UIViewControllerPreviewingDelegate-Protocol.h>
 
 @class NSString, SXColumnLayout, SXFillView, SXUnitConverter, SXViewport;
 @protocol SXComponent, SXComponentHosting, SXComponentLayout, SXComponentStyle, SXComponentStyleRenderer, SXComponentStyleRendererFactory, SXDOMObjectProviding, SXPresentationDelegate;
 
-@interface SXComponentView : UIView <UIGestureRecognizerDelegate, STTextCanvasRenderSource, SXAXAssistiveTechStatusChangeListener, SXTransitionableComponentView, UIViewControllerPreviewingDelegate, SXComponentInteractable>
+@interface SXComponentView : UIView <UIGestureRecognizerDelegate, STTextCanvasRenderSource, SXAXAssistiveTechStatusChangeListener, SXTransitionableComponentView, SXComponentInteractable>
 {
     _Bool _hasRenderedContents;
     _Bool _requiresThoroughFrameCalculations;
@@ -36,6 +35,7 @@
     long long _visibilityState;
     long long _presentationState;
     UIView *_contentView;
+    UIView *_backgroundView;
     SXFillView *_fillView;
     SXColumnLayout *_documentColumnLayout;
     SXUnitConverter *_unitConverter;
@@ -47,8 +47,9 @@
     unsigned long long _componentIndex;
     struct CGRect _absoluteFrame;
     struct UIEdgeInsets _componentLayoutMargins;
+    struct UIEdgeInsets _borderInsets;
     struct CGRect _contentFrame;
-    struct CGRect _backgroundFrame;
+    struct CGRect _backgroundViewFrame;
     struct CGRect _originalFrame;
     struct CGRect _presentationFrame;
 }
@@ -72,11 +73,13 @@
 @property(nonatomic) _Bool animationsAndBehaviorsEnabled; // @synthesize animationsAndBehaviorsEnabled=_animationsAndBehaviorsEnabled;
 @property(readonly, nonatomic) _Bool isDraggable; // @synthesize isDraggable=_isDraggable;
 @property(nonatomic) _Bool requiresThoroughFrameCalculations; // @synthesize requiresThoroughFrameCalculations=_requiresThoroughFrameCalculations;
-@property(nonatomic) struct CGRect backgroundFrame; // @synthesize backgroundFrame=_backgroundFrame;
+@property(nonatomic) struct CGRect backgroundViewFrame; // @synthesize backgroundViewFrame=_backgroundViewFrame;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
+@property(nonatomic) struct UIEdgeInsets borderInsets; // @synthesize borderInsets=_borderInsets;
 @property(nonatomic) struct UIEdgeInsets componentLayoutMargins; // @synthesize componentLayoutMargins=_componentLayoutMargins;
 @property(readonly, nonatomic) _Bool hasRenderedContents; // @synthesize hasRenderedContents=_hasRenderedContents;
 @property(nonatomic) __weak SXFillView *fillView; // @synthesize fillView=_fillView;
+@property(readonly, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) long long presentationState; // @synthesize presentationState=_presentationState;
 @property(nonatomic) long long visibilityState; // @synthesize visibilityState=_visibilityState;
@@ -108,8 +111,6 @@
 @property(readonly, nonatomic) struct CGRect transitionVisibleFrame;
 @property(readonly, nonatomic) _Bool transitionViewIsVisible;
 @property(readonly, nonatomic) struct CGRect transitionContentFrame;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
-- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (void)invalidateComponentStyle;
 - (void)renderComponentStyle;
 - (void)prepareComponentStyleRendererForStyle:(id)arg1;

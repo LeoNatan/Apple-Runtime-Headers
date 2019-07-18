@@ -28,6 +28,8 @@
 - (_Bool)applyLayoutMarginsToLayoutGroup;
 - (double)interGroupSpacing;
 - (id)chatGUIDForSearchableItem:(id)arg1;
+- (void)fractionalWidth:(double *)arg1 count:(unsigned long long *)arg2 forLayoutWidth:(unsigned long long)arg3;
+- (unsigned long long)maxResultsForMode:(unsigned long long)arg1;
 - (id)detailsFilterQueriesForChatGUIDs:(id)arg1;
 - (id)filterQueries;
 - (id)queryAttributesForText:(id)arg1;

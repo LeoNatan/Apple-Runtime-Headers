@@ -14,22 +14,26 @@
     NSString *_eventIdentifier;
     NSDate *_dueDate;
     NSDateComponents *_dueDateComponents;
+    unsigned long long _eventOptions;
     NSTimeZone *__unitTest_localTimeZoneOverride;
 }
 
 @property(copy, nonatomic) NSTimeZone *_unitTest_localTimeZoneOverride; // @synthesize _unitTest_localTimeZoneOverride=__unitTest_localTimeZoneOverride;
+@property(readonly, nonatomic) unsigned long long eventOptions; // @synthesize eventOptions=_eventOptions;
 @property(readonly, copy, nonatomic) NSDateComponents *dueDateComponents; // @synthesize dueDateComponents=_dueDateComponents;
 @property(readonly, copy, nonatomic) NSDate *dueDate; // @synthesize dueDate=_dueDate;
 @property(readonly, copy, nonatomic) NSString *eventIdentifier; // @synthesize eventIdentifier=_eventIdentifier;
 @property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool requiresDeviceUnlocked;
+@property(readonly, nonatomic) _Bool requiresDeviceOnWrist;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) NSDate *currentDueDate;
 - (id)localTimeZone;
-- (id)_initWithClientIdentifier:(id)arg1 eventIdentifier:(id)arg2 dueDate:(id)arg3 dueDateComponents:(id)arg4;
-- (id)initWithClientIdentifier:(id)arg1 eventIdentifier:(id)arg2 dueDateComponents:(id)arg3;
-- (id)initWithClientIdentifier:(id)arg1 eventIdentifier:(id)arg2 dueDate:(id)arg3;
+- (id)_initWithClientIdentifier:(id)arg1 eventIdentifier:(id)arg2 dueDate:(id)arg3 dueDateComponents:(id)arg4 eventOptions:(unsigned long long)arg5;
+- (id)initWithClientIdentifier:(id)arg1 eventIdentifier:(id)arg2 dueDateComponents:(id)arg3 eventOptions:(unsigned long long)arg4;
+- (id)initWithClientIdentifier:(id)arg1 eventIdentifier:(id)arg2 dueDate:(id)arg3 eventOptions:(unsigned long long)arg4;
 
 @end
 

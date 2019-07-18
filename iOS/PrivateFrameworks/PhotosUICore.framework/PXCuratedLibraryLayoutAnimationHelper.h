@@ -8,13 +8,13 @@
 
 #import <PhotosUICore/PXGAnimationDelegate-Protocol.h>
 
-@class NSString, PXCuratedLibraryLayout;
+@class NSDictionary, NSString, PXCuratedLibraryLayout;
 
 @interface PXCuratedLibraryLayoutAnimationHelper : NSObject <PXGAnimationDelegate>
 {
     _Bool _wantsPresentationAdjustment;
     _Bool _wantsAnimationWithSpriteTransfer;
-    id _userData;
+    NSDictionary *_userData;
     PXCuratedLibraryLayout *_layout;
 }
 
@@ -23,12 +23,11 @@
 @property(readonly, nonatomic) _Bool wantsAnimationWithSpriteTransfer; // @synthesize wantsAnimationWithSpriteTransfer=_wantsAnimationWithSpriteTransfer;
 @property(readonly, nonatomic) _Bool wantsPresentationAdjustment; // @synthesize wantsPresentationAdjustment=_wantsPresentationAdjustment;
 @property(readonly) __weak PXCuratedLibraryLayout *layout; // @synthesize layout=_layout;
-@property(retain, nonatomic) id userData; // @synthesize userData=_userData;
+@property(retain, nonatomic) NSDictionary *userData; // @synthesize userData=_userData;
 - (void).cxx_destruct;
 - (void)animation:(id)arg1 adjustGeometries:(inout CDStruct_ac168a83 *)arg2 styles:(inout CDStruct_506f5052 *)arg3 infos:(inout CDStruct_9d1ebe49 *)arg4 forSpriteDisappearingFromRootIndexRange:(struct _PXGSpriteIndexRange)arg5;
 - (void)animation:(id)arg1 adjustGeometries:(inout CDStruct_ac168a83 *)arg2 styles:(inout CDStruct_506f5052 *)arg3 infos:(inout CDStruct_9d1ebe49 *)arg4 forSpriteAppearingIntoRootIndexRange:(struct _PXGSpriteIndexRange)arg5;
 - (void)animation:(id)arg1 prepareWithRootLayout:(id)arg2 viewportShift:(struct CGPoint)arg3;
-- (id)animation:(id)arg1 doubleSidedAnimatedSpriteIndexesForModifiedSpriteIndexes:(id)arg2 rootLayout:(id)arg3 presentedGeometries:(const CDStruct_ac168a83 *)arg4 styles:(const CDStruct_506f5052 *)arg5 infos:(const CDStruct_9d1ebe49 *)arg6;
 @property(readonly, nonatomic) _Bool wantsDoubleSidedAnimations;
 @property(readonly, nonatomic) double animationDuration;
 @property(readonly, nonatomic) long long animationCurve;

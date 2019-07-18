@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface CNChangeHistoryDeleteContactEvent : CNChangeHistoryEvent
 {
     NSString *_contactIdentifier;

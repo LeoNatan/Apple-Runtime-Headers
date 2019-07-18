@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
     TSDFill *mDynamicFill;
     NSArray *mDynamicStrokeOffsetArray;
     _Bool mIsDynamicallyInvisible;
+    struct CGSize mLastParentLimitedSize;
 }
 
 - (void).cxx_destruct;
@@ -76,12 +77,14 @@ __attribute__((visibility("hidden")))
 - (void)transferLayoutGeometryToInfo:(id)arg1 withAdditionalTransform:(struct CGAffineTransform)arg2 assertIfInDocument:(_Bool)arg3;
 - (id)i_computeWrapPathClosed:(_Bool)arg1;
 - (id)i_computeWrapPath;
+- (int)wrapType;
 @property(readonly, nonatomic) TSDLineEnd *strokeTailLineEnd;
 @property(readonly, nonatomic) TSDLineEnd *strokeHeadLineEnd;
 @property(readonly, nonatomic) struct CGPoint unclippedTailPoint;
 @property(readonly, nonatomic) struct CGPoint unclippedHeadPoint;
 - (_Bool)supportsRotation;
 - (struct CGSize)minimumSize;
+- (_Bool)p_isInlineInsideResizingParentContainer;
 - (_Bool)supportsResize;
 - (void)invalidatePathBounds;
 - (void)invalidatePath;
@@ -127,6 +130,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)alignmentFrame;
 - (void)setGeometry:(id)arg1;
 - (struct CGAffineTransform)computeLayoutTransform;
+- (double)scaleForInlineClampingUnrotatedSize:(struct CGSize)arg1 withTransform:(struct CGAffineTransform)arg2;
 - (id)computeLayoutGeometry;
 - (void)invalidate;
 - (id)reliedOnLayouts;

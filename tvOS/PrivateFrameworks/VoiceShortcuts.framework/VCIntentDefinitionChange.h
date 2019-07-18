@@ -19,7 +19,6 @@
 }
 
 + (int)messageType;
-+ (void)initialize;
 @property(copy, nonatomic) NSArray *files; // @synthesize files=_files;
 @property(nonatomic) long long changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) NSString *objectIdentifier; // @synthesize objectIdentifier=_objectIdentifier;

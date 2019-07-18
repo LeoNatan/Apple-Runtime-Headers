@@ -6,9 +6,10 @@
 
 #import <EmailCore/ECLocalMessageActionBuilder-Protocol.h>
 
-@class NSString, NSURL;
+@class NSArray, NSString, NSURL;
 
 @protocol ECTransferUndownloadedMessageActionBuilder <ECLocalMessageActionBuilder>
+@property(retain, nonatomic) NSArray *itemsToDelete;
 @property(copy, nonatomic) NSString *oldestPersistedRemoteID;
 @property(retain, nonatomic) NSURL *destinationMailboxURL;
 @property(retain, nonatomic) NSURL *sourceMailboxURL;

@@ -4,26 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <HealthKit/HKDaemonTransaction.h>
 
-@class NSString;
-@protocol OS_os_transaction;
-
-@interface HDDaemonTransaction : NSObject
+@interface HDDaemonTransaction : HKDaemonTransaction
 {
-    NSObject<OS_os_transaction> *_transaction;
-    NSString *_name;
 }
-
-+ (id)transactionWithOwner:(id)arg1 activityName:(id)arg2;
-+ (id)transactionWithOwner:(id)arg1;
-+ (id)transactionWithName:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
-- (void)invalidate;
-- (void)dealloc;
-- (id)_initWithName:(id)arg1;
-- (id)init;
 
 @end
 

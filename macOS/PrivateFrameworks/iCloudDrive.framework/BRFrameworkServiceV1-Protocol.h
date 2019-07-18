@@ -9,6 +9,7 @@
 
 @protocol BRFrameworkServiceV1
 - (void)copyCurrentUserNameAndDisplayHandleWithReply:(void (^)(NSPersonNameComponents *, NSString *, NSError *))arg1;
+- (void)fetchFilenameForRecordID:(CKRecordID *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (void)fetchURLForRecordID:(CKRecordID *)arg1 completion:(void (^)(FPSandboxingURLWrapper *, NSError *))arg2;
 - (void)resolveCrossDeviceBookmarkData:(NSString *)arg1 completion:(void (^)(FPSandboxingURLWrapper *, NSError *))arg2;
 - (void)printStatus:(NSFileHandle *)arg1 containerID:(NSString *)arg2 reply:(void (^)(BOOL, NSError *))arg3;

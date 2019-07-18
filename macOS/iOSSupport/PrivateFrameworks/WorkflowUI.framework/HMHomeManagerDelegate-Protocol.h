@@ -16,5 +16,6 @@
 - (void)homeManager:(HMHomeManager *)arg1 didAddHome:(HMHome *)arg2;
 - (void)homeManagerDidUpdatePrimaryHome:(HMHomeManager *)arg1;
 - (void)homeManagerDidUpdateHomes:(HMHomeManager *)arg1;
+- (void)homeManager:(HMHomeManager *)arg1 didUpdateAuthorizationStatus:(unsigned long long)arg2;
 @end
 

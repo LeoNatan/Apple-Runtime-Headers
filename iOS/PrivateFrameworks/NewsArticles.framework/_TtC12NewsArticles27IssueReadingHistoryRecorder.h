@@ -9,6 +9,8 @@
 @interface _TtC12NewsArticles27IssueReadingHistoryRecorder : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: issueReadingHistory
+    // Error parsing type: , name: articleReadingHistory
+    // Error parsing type: , name: configurationManager
 }
 
 @end

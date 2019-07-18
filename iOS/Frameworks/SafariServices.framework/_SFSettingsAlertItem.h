@@ -15,6 +15,7 @@
     long long _type;
     NSString *_title;
     NSAttributedString *_attributedTitle;
+    NSString *_textStyle;
     UIImage *_icon;
     CDUnknownBlockType _handler;
     UIView<SFSettingsAlertItemView> *_view;
@@ -22,13 +23,15 @@
     CDUnknownBlockType _viewConfigurationBlock;
     UIView *_customView;
     NSArray *_subItems;
+    _SFSettingsAlertItem *_group;
 }
 
 + (id)itemWithCustomView:(id)arg1;
 + (id)optionsGroupWithController:(id)arg1;
 + (id)stepperWithController:(id)arg1 handler:(CDUnknownBlockType)arg2;
-+ (id)buttonWithTitle:(id)arg1 icon:(id)arg2 handler:(CDUnknownBlockType)arg3;
-+ (id)buttonWithAttributedTitle:(id)arg1 icon:(id)arg2 handler:(CDUnknownBlockType)arg3;
++ (id)buttonWithTitle:(id)arg1 textStyle:(id)arg2 icon:(id)arg3 handler:(CDUnknownBlockType)arg4;
++ (id)buttonWithAttributedTitle:(id)arg1 textStyle:(id)arg2 icon:(id)arg3 handler:(CDUnknownBlockType)arg4;
+@property(readonly, nonatomic) __weak _SFSettingsAlertItem *group; // @synthesize group=_group;
 @property(copy, nonatomic) NSArray *subItems; // @synthesize subItems=_subItems;
 @property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 @property(copy, nonatomic) CDUnknownBlockType viewConfigurationBlock; // @synthesize viewConfigurationBlock=_viewConfigurationBlock;
@@ -37,6 +40,7 @@
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
+@property(copy, nonatomic) NSString *textStyle; // @synthesize textStyle=_textStyle;
 @property(copy, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;

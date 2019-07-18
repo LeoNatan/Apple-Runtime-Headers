@@ -11,6 +11,7 @@
 @interface MSVLyricsLine : MSVLyricsTextElement
 {
     long long _lineIndex;
+    long long _originalLineIndex;
     MSVLyricsSection *_parentSection;
     MSVLyricsLine *_nextLine;
     NSArray *_words;
@@ -20,7 +21,8 @@
 @property(copy, nonatomic) NSString *translationKey; // @synthesize translationKey=_translationKey;
 @property(retain, nonatomic) NSArray *words; // @synthesize words=_words;
 @property(retain, nonatomic) MSVLyricsLine *nextLine; // @synthesize nextLine=_nextLine;
-@property(retain, nonatomic) MSVLyricsSection *parentSection; // @synthesize parentSection=_parentSection;
+@property(nonatomic) __weak MSVLyricsSection *parentSection; // @synthesize parentSection=_parentSection;
+@property(nonatomic) long long originalLineIndex; // @synthesize originalLineIndex=_originalLineIndex;
 @property(nonatomic) long long lineIndex; // @synthesize lineIndex=_lineIndex;
 - (void).cxx_destruct;
 - (BOOL)containsTimeOffset:(double)arg1 withErrorMargin:(double)arg2;

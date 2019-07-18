@@ -42,7 +42,7 @@
 @property(nonatomic) long long labelAccessoryType; // @synthesize labelAccessoryType=_labelAccessoryType;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(retain, nonatomic) UIColor *focusHighlightColor; // @synthesize focusHighlightColor=_focusHighlightColor;
-@property(nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
+@property(copy, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 @property(nonatomic, getter=isAccessibilityReduceTransparencyEnabled) _Bool accessibilityReduceTransparencyEnabled; // @synthesize accessibilityReduceTransparencyEnabled=_accessibilityReduceTransparencyEnabled;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) id <SBIconListLayoutProvider> listLayoutProvider; // @synthesize listLayoutProvider=_listLayoutProvider;
@@ -57,6 +57,7 @@
 - (_Bool)_canTightenLabel;
 - (_Bool)_canTruncateLabel;
 @property(readonly, nonatomic) struct CGSize iconImageSize;
+- (id)listLayout;
 - (void)setIcon:(id)arg1;
 - (void)setIcon:(id)arg1 forLocation:(id)arg2;
 - (void)setFont:(id)arg1 insets:(struct UIEdgeInsets)arg2;

@@ -19,12 +19,14 @@
     WFTrigger *_trigger;
     WFWorkflow *_workflow;
     unsigned long long _mode;
+    NSArray *_actionIcons;
     NSArray *_sections;
     UITableView *_tableView;
 }
 
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
+@property(retain, nonatomic) NSArray *actionIcons; // @synthesize actionIcons=_actionIcons;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(readonly, nonatomic) WFTrigger *trigger; // @synthesize trigger=_trigger;
@@ -34,15 +36,18 @@
 - (void)didTapDone:(id)arg1;
 - (void)promptSwitchChanged:(id)arg1;
 - (void)enabledSwitchChanged:(id)arg1;
+- (void)testAutomation;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)infoForSection:(long long)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)loadActionDescriptionIcons;
 - (void)loadView;
-- (_Bool)isModalInPopover;
+- (_Bool)isModalInPresentation;
 - (void)updateUI;
 - (id)initWithTrigger:(id)arg1 workflow:(id)arg2 mode:(unsigned long long)arg3;
 

@@ -26,11 +26,9 @@ __attribute__((visibility("hidden")))
     long long __lastValueChangeCharCount;
     SCRTextDelayedWordEchoHelper *__wordEchoHelper;
     SCRElement *_magicPressElement;
-    SCRTextMarkerRange *_lastBrailleOutputRange;
     CDStruct_97f7034d _command;
 }
 
-@property(retain, nonatomic) SCRTextMarkerRange *lastBrailleOutputRange; // @synthesize lastBrailleOutputRange=_lastBrailleOutputRange;
 @property(retain, nonatomic) SCRElement *magicPressElement; // @synthesize magicPressElement=_magicPressElement;
 @property(nonatomic) CDStruct_97f7034d command; // @synthesize command=_command;
 @property(retain, nonatomic, setter=_setWordEchoHelper:) SCRTextDelayedWordEchoHelper *_wordEchoHelper; // @synthesize _wordEchoHelper=__wordEchoHelper;
@@ -108,8 +106,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) SCRElement *elementToObserveForTextChanges;
 - (id)currentBrailleLineWithEchoRange:(id)arg1;
 - (id)_lineFeedCharacterAttributedString;
-- (BOOL)performBrailleWrapRightWithOutputRequest:(id)arg1;
-- (BOOL)performBrailleWrapLeftWithOutputRequest:(id)arg1;
 - (void)_handleTextValueChangedNotification:(id)arg1;
 - (void)__setCommandAndLastSelectedTextMarkerRange:(CDStruct_97f7034d)arg1 textMarkerRange:(id)arg2;
 - (void)__handleSelectedTextChangedNotification:(id)arg1;

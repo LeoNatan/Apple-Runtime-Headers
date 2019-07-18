@@ -33,6 +33,7 @@
 - (struct __CVBuffer *)imageWithPreferredDimension:(unsigned long long)arg1;
 - (id)exif;
 - (id)initWithImageURL:(id)arg1;
+- (float)originalPhotoOffsetSeconds;
 - (float)photoOffsetSeconds;
 - (id)initWithImageURL:(id)arg1 andMovieURL:(id)arg2;
 - (id)originalMovie;

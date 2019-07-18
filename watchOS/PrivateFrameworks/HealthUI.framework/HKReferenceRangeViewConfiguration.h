@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, UIColor;
+@class NSString, UIColor, UIFont;
 
 @interface HKReferenceRangeViewConfiguration : NSObject
 {
@@ -16,6 +16,10 @@
     float _referenceRangeViewHeight;
     UIColor *_referenceRangeViewColor;
     UIColor *_referenceRangeViewBorderColor;
+    UIFont *_currentValueValueFontWithRange;
+    UIFont *_currentValueValueFontWithoutRange;
+    UIFont *_currentValueUnitFont;
+    UIFont *_dynamicTypeAnchorFont;
     UIColor *_currentValueTextColor;
     UIColor *_currentValueUnitTextColor;
     UIColor *_referenceValueTextColor;
@@ -39,6 +43,10 @@
 @property(retain, nonatomic) UIColor *referenceValueTextColor; // @synthesize referenceValueTextColor=_referenceValueTextColor;
 @property(retain, nonatomic) UIColor *currentValueUnitTextColor; // @synthesize currentValueUnitTextColor=_currentValueUnitTextColor;
 @property(retain, nonatomic) UIColor *currentValueTextColor; // @synthesize currentValueTextColor=_currentValueTextColor;
+@property(retain, nonatomic) UIFont *dynamicTypeAnchorFont; // @synthesize dynamicTypeAnchorFont=_dynamicTypeAnchorFont;
+@property(retain, nonatomic) UIFont *currentValueUnitFont; // @synthesize currentValueUnitFont=_currentValueUnitFont;
+@property(retain, nonatomic) UIFont *currentValueValueFontWithoutRange; // @synthesize currentValueValueFontWithoutRange=_currentValueValueFontWithoutRange;
+@property(retain, nonatomic) UIFont *currentValueValueFontWithRange; // @synthesize currentValueValueFontWithRange=_currentValueValueFontWithRange;
 @property(retain, nonatomic) UIColor *referenceRangeViewBorderColor; // @synthesize referenceRangeViewBorderColor=_referenceRangeViewBorderColor;
 @property(retain, nonatomic) UIColor *referenceRangeViewColor; // @synthesize referenceRangeViewColor=_referenceRangeViewColor;
 @property(nonatomic) float referenceRangeViewHeight; // @synthesize referenceRangeViewHeight=_referenceRangeViewHeight;

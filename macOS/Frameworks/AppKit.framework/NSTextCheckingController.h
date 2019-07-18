@@ -163,6 +163,10 @@
 - (void)willChangeTextInRange:(struct _NSRange)arg1 replacementString:(id)arg2;
 - (void)considerTextCheckingForRange:(struct _NSRange)arg1;
 - (void)_scheduleTextCheckingForRange:(struct _NSRange)arg1;
+- (void)performPendingTextChecking;
+- (void)_performPendingTextChecking;
+- (void)cancelCorrectionIndicator;
+- (void)dismissCorrectionIndicator;
 - (void)_performScheduledTextChecking:(BOOL)arg1;
 - (void)_markAllForTextChecking;
 - (void)_checkLinksAfterChange;

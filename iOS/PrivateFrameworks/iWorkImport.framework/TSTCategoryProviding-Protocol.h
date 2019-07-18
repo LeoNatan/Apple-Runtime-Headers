@@ -43,6 +43,7 @@
 - (NSIndexSet *)indexesForCategoryColumnsInRegion:(TSTCellRegion *)arg1;
 - (NSIndexSet *)indexesForCategoryColumns;
 - (NSIndexSet *)indexesForBodyColumns;
+- (NSIndexSet *)indexesForBodyAndFooterRows;
 - (NSIndexSet *)indexesForBodyRows;
 - (NSIndexSet *)indexesForSummaryAndLabelRowsInRegion:(TSTCellRegion *)arg1;
 - (NSIndexSet *)indexesForSummaryAndLabelRows;

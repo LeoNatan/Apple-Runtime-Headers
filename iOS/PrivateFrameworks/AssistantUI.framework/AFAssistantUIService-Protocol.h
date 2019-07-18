@@ -6,7 +6,7 @@
 
 #import <AssistantUI/NSObject-Protocol.h>
 
-@class AFAudioPlaybackRequest, AFConnection, AceObject, INImage, NSDictionary, NSError, NSString, NSURL;
+@class AFAudioPlaybackRequest, AFConnection, AceObject, INImage, INIntent, NSDictionary, NSError, NSString, NSURL;
 @protocol SAAceCommand;
 
 @protocol AFAssistantUIService <NSObject>
@@ -16,10 +16,9 @@
 - (void)assistantConnection:(AFConnection *)arg1 audioSessionWillBecomeActive:(_Bool)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 startPlaybackDidFail:(long long)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 willProcessStartPlayback:(long long)arg2;
-- (void)assistantConnection:(AFConnection *)arg1 willProcessStartPlayback:(long long)arg2 completion:(void (^)(_Bool))arg3;
+- (void)assistantConnection:(AFConnection *)arg1 willProcessStartPlayback:(long long)arg2 intent:(INIntent *)arg3 completion:(void (^)(_Bool, _Bool))arg4;
 - (void)assistantConnection:(AFConnection *)arg1 didHandleQuickStopWithAction:(unsigned long long)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 didStopAudioPlaybackRequest:(AFAudioPlaybackRequest *)arg2 error:(NSError *)arg3;
-- (void)assistantConnection:(AFConnection *)arg1 didNotStartAudioPlaybackRequest:(AFAudioPlaybackRequest *)arg2 error:(NSError *)arg3;
 - (void)assistantConnection:(AFConnection *)arg1 didStartAudioPlaybackRequest:(AFAudioPlaybackRequest *)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 willStartAudioPlaybackRequest:(AFAudioPlaybackRequest *)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 startUIRequestWithText:(NSString *)arg2 completion:(void (^)(_Bool))arg3;

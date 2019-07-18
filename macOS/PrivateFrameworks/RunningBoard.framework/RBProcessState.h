@@ -24,7 +24,6 @@
     NSMutableSet *_legacyAssertions;
     NSMutableSet *_primitiveAssertions;
     unsigned long long _legacyFinishTaskReason;
-    unsigned long long _maxMemory;
     unsigned char _terminationResistance;
     unsigned char _jetsamBand;
     unsigned char _role;
@@ -41,7 +40,6 @@
 @property(retain, nonatomic) NSMutableDictionary *maxCPULimitsByRole; // @synthesize maxCPULimitsByRole=_maxCPULimitsByRole;
 @property(readonly, nonatomic) NSSet *preventIdleSleepIdentifiers; // @synthesize preventIdleSleepIdentifiers=_preventIdleSleepIdentifiers;
 @property(readonly, nonatomic) unsigned char role; // @synthesize role=_role;
-@property(readonly, nonatomic) unsigned long long maxMemory; // @synthesize maxMemory=_maxMemory;
 @property(readonly, nonatomic) unsigned char jetsamBand; // @synthesize jetsamBand=_jetsamBand;
 @property(readonly, copy, nonatomic) RBSProcessIdentity *identity; // @synthesize identity=_identity;
 @property(readonly, nonatomic) unsigned char terminationResistance; // @synthesize terminationResistance=_terminationResistance;

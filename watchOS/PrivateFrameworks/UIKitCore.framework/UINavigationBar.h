@@ -83,13 +83,12 @@
 @property(nonatomic, setter=_setRequestedMaxBackButtonWidth:) float _requestedMaxBackButtonWidth; // @synthesize _requestedMaxBackButtonWidth;
 @property(readonly, nonatomic) int barPosition; // @synthesize barPosition=_barPosition;
 - (void).cxx_destruct;
-- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)preferredFocusedView;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_accessibilityHUDGestureManager:(id)arg1 gestureLiftedAtPoint:(struct CGPoint)arg2;
 - (_Bool)_accessibilityHUDGestureManager:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)_accessibilityHUDGestureManager:(id)arg1 HUDItemForPoint:(struct CGPoint)arg2;
-- (_Bool)_accessibilityHUDGestureManagerShouldBegin:(id)arg1;
+- (_Bool)_accessibilityHUDGestureManager:(id)arg1 shouldBeginAtPoint:(struct CGPoint)arg2;
 - (void)_setupAXHUDGestureIfNecessary;
 - (void)_accessibility_triggerBarButtonItem:(id)arg1;
 - (void)_accessibility_triggerBackButton;
@@ -307,7 +306,6 @@
 - (void)setBackgroundImage:(id)arg1 forBarMetrics:(int)arg2;
 - (void)_effectiveBarTintColorDidChangeWithPreviousColor:(id)arg1;
 @property(retain, nonatomic) UIColor *tintColor; // @dynamic tintColor;
-@property(copy, nonatomic) UINavigationBarAppearance *scrollToTopAppearance;
 @property(copy, nonatomic) UINavigationBarAppearance *standardAppearance; // @synthesize standardAppearance=_standardAppearance;
 - (void)_upgradeAppearanceAPI;
 - (void)_installDefaultAppearance;

@@ -14,15 +14,16 @@
 
 @interface TSActivationCodeOnlyFlow : TSSIMSetupFlow <TSSIMSetupFlowDelegate, TSCellularPlanManagerCacheDelegate>
 {
-    _Bool _isPreinstallingViewControllerActive;
     _Bool _confirmationCodeRequired;
     NSError *_planInstallError;
     NSString *_carrierName;
     unsigned long long _userConsentType;
     UIBarButtonItem *_cancelButton;
     UIViewController<TSSetupFlowItem> *_currentViewController;
+    _Bool _isPreinstallingViewControllerActive;
 }
 
+@property _Bool isPreinstallingViewControllerActive; // @synthesize isPreinstallingViewControllerActive=_isPreinstallingViewControllerActive;
 - (void).cxx_destruct;
 - (void)planItemsUpdated:(id)arg1 planListError:(id)arg2;
 - (void)popViewController:(id)arg1;

@@ -20,11 +20,11 @@
 + (id)URLForShowFavoritesType:(long long)arg1;
 + (id)URLForTransitLine:(unsigned long long)arg1 withName:(id)arg2 mapRegion:(id)arg3;
 + (id)URLForExternalBusiness:(id)arg1 id:(id)arg2 ofContentProvider:(id)arg3;
++ (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(CDStruct_c3b9c2ee)arg4 address:(id)arg5 extraStorage:(id)arg6 useWebPlaceCard:(_Bool)arg7 muninViewState:(id)arg8;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(CDStruct_c3b9c2ee)arg4 address:(id)arg5 extraStorage:(id)arg6 useWebPlaceCard:(_Bool)arg7;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(CDStruct_c3b9c2ee)arg4 address:(id)arg5 extraStorage:(id)arg6;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(CDStruct_c3b9c2ee)arg4 address:(id)arg5;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3;
-+ (id)URLForMuninViewState:(id)arg1;
 + (id)URLForCameraAt:(CDStruct_c3b9c2ee)arg1 zoomLevel:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 roll:(double)arg5;
 + (id)URLForCameraAt:(CDStruct_c3b9c2ee)arg1 altitude:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 roll:(double)arg5;
 + (id)URLForDirectionsFromHereTo:(id)arg1 label:(id)arg2 muid:(unsigned long long)arg3 provider:(int)arg4 transport:(int)arg5;
@@ -32,6 +32,7 @@
 + (id)URLForDirectionsFromHereTo:(id)arg1 transport:(int)arg2;
 + (id)URLForDirectionsFrom:(id)arg1 to:(id)arg2 transport:(int)arg3;
 + (id)URLForDirectionsFrom:(id)arg1 to:(id)arg2;
++ (id)URLForCoordinate:(CDStruct_c3b9c2ee)arg1 address:(id)arg2 label:(id)arg3 extraStorage:(id)arg4 useWebPlaceCard:(_Bool)arg5 muninViewState:(id)arg6;
 + (id)URLForCoordinate:(CDStruct_c3b9c2ee)arg1 address:(id)arg2 label:(id)arg3 extraStorage:(id)arg4 useWebPlaceCard:(_Bool)arg5;
 + (id)URLForCoordinate:(CDStruct_c3b9c2ee)arg1 address:(id)arg2 label:(id)arg3 extraStorage:(id)arg4;
 + (id)URLForCoordinate:(CDStruct_c3b9c2ee)arg1 address:(id)arg2 label:(id)arg3;
@@ -65,7 +66,6 @@
 - (void)setBusinessCoordinate:(CDStruct_c3b9c2ee)arg1;
 - (id)initForExternalBusiness:(id)arg1 id:(id)arg2 ofContentProvider:(id)arg3;
 - (id)initForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3;
-- (id)initForMuninViewState:(id)arg1;
 - (id)initForCameraAt:(CDStruct_c3b9c2ee)arg1 zoomLevel:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 roll:(double)arg5;
 - (id)initForCameraAt:(CDStruct_c3b9c2ee)arg1 altitude:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 roll:(double)arg5;
 - (void)setDestinationMUID:(unsigned long long)arg1 provider:(int)arg2;

@@ -484,7 +484,6 @@
 - (BOOL)isValid;
 - (id)preferredDataSetForClientDatasetMetadata:(id)arg1;
 - (id)preferredDataSetForMapsABClient;
-- (void)workAround24919568IfNecessary;
 - (void)convertFromLegacyFormat;
 
 @end

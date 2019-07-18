@@ -9,6 +9,7 @@
 @class UNNotificationResponse, UNNotificationSettings;
 
 @protocol UNUserNotificationCenterDelegateConnectionListenerDelegate <NSObject>
+- (void)didOpenApplicationForResponse:(UNNotificationResponse *)arg1;
 - (void)didChangeSettings:(UNNotificationSettings *)arg1;
 - (void)didReceiveNotificationResponse:(UNNotificationResponse *)arg1 withCompletionHandler:(void (^)(void))arg2;
 @end

@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) UIFont *bodyFont;
 @property(readonly, nonatomic) UIFont *subtitleFont;
 @property(readonly, nonatomic) UIFont *brandTitleFont;
+@property(readonly, nonatomic) UIFont *mediumTitleFont;
 @property(readonly, nonatomic) UIFont *largeTitleFont;
 @property(readonly, nonatomic) UIFont *largeTitleFontStatic;
 - (UIFont *)iconFontToMatch:(UIFont *)arg1;

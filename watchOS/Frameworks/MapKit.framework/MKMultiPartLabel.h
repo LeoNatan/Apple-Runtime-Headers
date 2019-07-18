@@ -35,7 +35,7 @@
 @property(nonatomic) struct UIEdgeInsets textInset;
 - (void)layoutSubviews;
 - (id)_addDefaultAttributesToAttributedString:(id)arg1;
-- (id)_attributedAjudstedMultiPartStringFromString:(id)arg1;
+- (id)_attributedAdjustedMultiPartStringFromString:(id)arg1;
 - (void)_updateTextViewTextAndInvalidateLayout:(id)arg1;
 - (void)_updateStrings;
 @property(retain, nonatomic) NSString *text;

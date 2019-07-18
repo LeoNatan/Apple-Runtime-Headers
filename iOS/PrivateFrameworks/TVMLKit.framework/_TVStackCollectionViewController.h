@@ -7,6 +7,7 @@
 #import <UIKit/UICollectionViewController.h>
 
 @class IKViewElement, NSArray, NSIndexPath, UIView, UIViewController, _TVNeedsMoreContentEvaluator, _TVStackCollectionView;
+@protocol _TVStackCollectionViewControllerDelegate;
 
 @interface _TVStackCollectionViewController : UICollectionViewController
 {
@@ -18,9 +19,14 @@
     UIViewController *_backdropTintViewController;
     UIView *_backdropTintView;
     _Bool _configureForListTemplate;
+    struct {
+        _Bool respondsToStackCollectionViewControllerScrollViewDidScroll;
+    } _delegateFlags;
     IKViewElement *_viewElement;
+    id <_TVStackCollectionViewControllerDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <_TVStackCollectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;
 - (struct CGSize)_maxContentSize;

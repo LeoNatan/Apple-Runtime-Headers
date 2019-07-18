@@ -30,6 +30,7 @@
 - (id)_connectionForBannerSource:(id)arg1;
 - (void)_connectionQueue_removeConnection:(id)arg1;
 - (void)_connectionQueue_addConnection:(id)arg1;
+- (void)sceneActivationStateChangedTo:(id)arg1;
 - (void)postBannerForNavigationAlert:(id)arg1;
 - (void)postBannerForManeuver:(id)arg1 travelEstimates:(id)arg2;
 - (void)bannerSource:(id)arg1 bannerDidDisappearWithIdentifier:(id)arg2;

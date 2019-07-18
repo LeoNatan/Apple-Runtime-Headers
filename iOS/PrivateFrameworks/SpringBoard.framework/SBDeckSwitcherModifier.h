@@ -56,9 +56,10 @@
 - (unsigned long long)_directionForRemovingIndex:(unsigned long long)arg1 centeredIndex:(unsigned long long)arg2;
 - (unsigned long long)_indexOfCurrentCenteredCard;
 @property(readonly, copy) NSString *debugDescription;
-- (_Bool)cardsNeedDarkModeTreatment;
+- (_Bool)cardsNeedBackgroundWallpaperTreatment;
 - (void)resetAdjustedScrollingState;
 - (struct CGPoint)adjustedOffsetForOffset:(struct CGPoint)arg1 translation:(struct CGPoint)arg2 startPoint:(struct CGPoint)arg3 locationInView:(struct CGPoint)arg4 horizontalVelocity:(inout double *)arg5 verticalVelocity:(inout double *)arg6;
+- (double)distanceToLeadingEdgeOfLeadingCardFromTrailingEdgeOfScreenWithVisibleIndexToStartSearch:(unsigned long long)arg1;
 - (struct CGPoint)restingOffsetForScrollOffset:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
 - (struct CGPoint)contentOffsetForIndex:(unsigned long long)arg1;
 - (unsigned long long)scrollAxis;
@@ -95,7 +96,7 @@
 - (_Bool)shouldTruncateAnimationsUponTransitionCompletion;
 - (_Bool)shouldFireTransitionCompletionInDefaultRunLoopMode;
 - (_Bool)shouldWaitForLayoutAndStyleUpdatesForTransactionCompletion;
-- (_Bool)acceleratedHomeButtonPressShouldBegin;
+- (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)shouldAcceleratedHomeButtonPressBegin;
 - (id)appLayoutToScrollToBeforeTransitioning;
 - (id)topMostAppLayouts;
@@ -150,6 +151,7 @@
 - (id)appExposeAccessoryButtonBundleID;
 - (id)adjustedAppLayoutsForAppLayouts:(id)arg1;
 - (id)handleTapOutsideToDismissEvent:(id)arg1;
+- (id)handleTapAppLayoutEvent:(id)arg1;
 - (id)handleRemovalEvent:(id)arg1;
 - (id)handleSwitcherSettingsChangedEvent:(id)arg1;
 - (void)didMoveToParentModifier:(id)arg1;

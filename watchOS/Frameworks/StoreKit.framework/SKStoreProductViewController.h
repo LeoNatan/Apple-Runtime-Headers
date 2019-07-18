@@ -7,12 +7,11 @@
 #import <UIKit/UIViewController.h>
 
 #import <StoreKit/SKScreenTrackingDelegate-Protocol.h>
-#import <StoreKit/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class NSDictionary, NSString, SKInvocationQueueProxy, SKRemoteProductViewController, SKScrollDetector, _UIAsyncInvocation, _UIRemoteViewController;
+@class NSDictionary, NSString, SKInvocationQueueProxy, SKRemoteProductViewController, SKScrollDetector, _UIAsyncInvocation;
 @protocol SKStoreProductViewControllerDelegate, SKStoreProductViewControllerDelegatePrivate, SKUIServiceProductPageViewController;
 
-@interface SKStoreProductViewController : UIViewController <SKScreenTrackingDelegate, _UIRemoteViewControllerContaining>
+@interface SKStoreProductViewController : UIViewController <SKScreenTrackingDelegate>
 {
     NSString *_additionalBuyParameters;
     NSString *_affiliateIdentifier;
@@ -40,6 +39,7 @@
 + (id)_defaultIXStoreSheetDictionary;
 + (void)getCanLoadURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (void)getCanLoadURL:(id)arg1 withURLBag:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
++ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) _Bool automaticallyDismisses; // @synthesize automaticallyDismisses=_automaticallyDismisses;
 @property(copy, nonatomic) NSString *promptString; // @synthesize promptString=_promptString;
 @property(nonatomic) _Bool showsRightBarButton; // @synthesize showsRightBarButton=_showsRightBarButton;
@@ -54,15 +54,17 @@
 @property(copy, nonatomic) NSString *additionalBuyParameters; // @synthesize additionalBuyParameters=_additionalBuyParameters;
 @property(nonatomic) __weak id <SKStoreProductViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)sk_didBecomeOffScreen:(id)arg1;
 - (void)sk_didBecomeOnScreen:(id)arg1;
 - (void)_throwUnsupportedPresentationException;
+- (void)_configureForFullScreenPresentationOrThrowException;
 - (void)_setLoadBlock:(CDUnknownBlockType)arg1;
 - (void)_requestRemoteViewController;
 - (void)_forceOrientationBackToSupportedOrientation;
 - (void)_fireLoadBlockBeforeFinishing;
 - (void)_addRemoteView;
+- (void)setPresentationStyleIfNeeded;
+- (void)setParentViewController:(id)arg1;
 - (_Bool)_isPeeking;
 - (void)_resetRemoteViewController;
 - (void)_presentPageWithRequest:(id)arg1 animated:(_Bool)arg2;
@@ -87,6 +89,8 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (void)loadView;
 - (void)loadProductWithParameters:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (int)modalTransitionStyle;
+- (int)modalPresentationStyle;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

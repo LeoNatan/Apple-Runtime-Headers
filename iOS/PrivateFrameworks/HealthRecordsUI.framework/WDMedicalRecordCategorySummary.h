@@ -54,8 +54,9 @@ __attribute__((visibility("hidden")))
 - (id)_appendixItemForCount:(long long)arg1;
 - (void)_displayItemsForUnknownRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_displayItemsForPanel:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_displayItemsForObservation:(id)arg1 panelName:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_displayItemsForRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_displayItemsForObservation:(id)arg1 previous:(id)arg2 next:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)_displayItemsForGenericRecord:(id)arg1 previous:(id)arg2 next:(id)arg3;
+- (void)_displayItemsForRecord:(id)arg1 previous:(id)arg2 next:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_rqueue_determinStandaloneRecords;
 - (void)_rqueue_recomputeIfNeeded;
 - (void)_rqueue_setNeedsCompute;

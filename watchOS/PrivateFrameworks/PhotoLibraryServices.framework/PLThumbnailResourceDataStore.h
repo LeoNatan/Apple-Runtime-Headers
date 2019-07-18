@@ -29,7 +29,7 @@
 - (id)thumbnailFormatsByTableType;
 - (void)setThumbnailFormatsByIDs:(id)arg1;
 @property(retain, nonatomic) NSArray *thumbnailFormats; // @synthesize thumbnailFormats=_thumbnailFormats;
-- (void)requestStreamingURLForResource:(id)arg1 asset:(id)arg2 inContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)requestStreamingURLForResource:(id)arg1 asset:(id)arg2 intent:(unsigned int)arg3 inContext:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (_Bool)videoResource:(id)arg1 matchesOrExceedsQualityLevel:(unsigned int)arg2;
 - (void)requestRemoteAvailabilityChange:(short)arg1 forResource:(id)arg2 asset:(id)arg3 inContext:(id)arg4 options:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (unsigned int)requestLocalAvailabilityChange:(short)arg1 forResource:(id)arg2 asset:(id)arg3 inContext:(id)arg4 options:(id)arg5 completion:(CDUnknownBlockType)arg6;

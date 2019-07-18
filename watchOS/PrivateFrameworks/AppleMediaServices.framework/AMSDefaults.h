@@ -46,10 +46,12 @@
 + (void)setForceLoadUrlMetrics:(int)arg1;
 + (void)setExtendedBiometricACLVersion:(id)arg1;
 + (void)setEnablePurchaseQueue:(_Bool)arg1;
++ (void)setEnableCameraRedeem:(_Bool)arg1;
 + (void)setDisablePrivacyAcknowledgement:(_Bool)arg1;
 + (void)setDisableHARLogging:(_Bool)arg1;
 + (void)setDidRetrieveDeviceOffers:(_Bool)arg1;
 + (void)setDeviceOfferEligibility:(id)arg1;
++ (void)setDeviceBiometricsState:(int)arg1;
 + (void)setDefaultPaymentPassIdentifier:(id)arg1;
 + (void)setCardEnrollmentUpsell:(int)arg1;
 + (void)setCardEnrollmentSilent:(int)arg1;
@@ -60,8 +62,10 @@
 + (void)setBagURLCookies:(id)arg1;
 + (void)setBagOverrides:(id)arg1;
 + (void)setAuthenticationStarted:(id)arg1;
++ (void)setApplePayClassic:(int)arg1;
 + (void)setAlwaysSendGUID:(_Bool)arg1;
 + (void)setAlwaysSendCacheBuster:(_Bool)arg1;
++ (void)setAllowUpsellEnrollmentForAppliedAccounts:(_Bool)arg1;
 + (void)setAllowDuplicateAccounts:(_Bool)arg1;
 + (_Bool)useNewAccountStore;
 + (id)storefrontSuffixes;
@@ -84,11 +88,13 @@
 + (int)forceLoadUrlMetrics;
 + (id)extendedBiometricACLVersion;
 + (_Bool)enablePurchaseQueue;
++ (_Bool)enableCameraRedeem;
 + (_Bool)disablePrivacyAcknowledgement;
 + (_Bool)disableHARLogging;
 + (_Bool)didRetrieveDeviceOffers;
 + (id)deviceOffersSerialNumber;
 + (id)deviceOfferEligibility;
++ (int)deviceBiometricsState;
 + (id)defaultPaymentPassIdentifier;
 + (int)cardEnrollmentUpsell;
 + (int)cardEnrollmentSilent;
@@ -99,8 +105,10 @@
 + (id)bagURLCookies;
 + (id)bagOverrides;
 + (id)authenticationStarted;
++ (int)applePayClassic;
 + (_Bool)alwaysSendGUID;
 + (_Bool)alwaysSendCacheBuster;
++ (_Bool)allowUpsellEnrollmentForAppliedAccounts;
 + (_Bool)allowDuplicateAccounts;
 
 @end

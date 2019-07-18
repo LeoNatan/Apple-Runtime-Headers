@@ -39,6 +39,7 @@
 - (void)cancelAllRequests;
 @property(readonly, nonatomic, getter=areResourcesAvailable) _Bool resourcesAvailable;
 @property(readonly, nonatomic, getter=isDownloadingResources) _Bool downloadingResources;
+@property(readonly, nonatomic, getter=isCheckingForResourceAvailability) _Bool checkingAvailability;
 - (void)enqueueRequest:(id)arg1;
 - (id)initWithAsset:(id)arg1 mediaProvider:(id)arg2;
 

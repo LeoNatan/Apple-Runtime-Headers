@@ -93,6 +93,7 @@
 - (void)showMessageForError:(id)arg1;
 - (void)removeDDMLoadFailVersion;
 - (void)updateCacheControllerToLanguageCode:(id)arg1;
+- (id)deviceFamily;
 - (void)loadFromStaticServer;
 - (void)loadHelpBook;
 - (void)updateLastLoadVersion;

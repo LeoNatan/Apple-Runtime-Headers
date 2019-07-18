@@ -40,10 +40,12 @@
     HMSetupAccessoryBrowsingRequest *_accessoryBrowsingRequest;
     HMAccessory *_accessoryBeingReplaced;
     NSUUID *_addRequestIdentifier;
+    NSString *_accessoryServerIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)setupAccessoryProgressAsString:(long long)arg1;
+@property(retain, nonatomic) NSString *accessoryServerIdentifier; // @synthesize accessoryServerIdentifier=_accessoryServerIdentifier;
 @property(nonatomic) BOOL legacyAPI; // @synthesize legacyAPI=_legacyAPI;
 @property(retain, nonatomic) NSUUID *addRequestIdentifier; // @synthesize addRequestIdentifier=_addRequestIdentifier;
 @property(nonatomic) __weak HMAccessory *accessoryBeingReplaced; // @synthesize accessoryBeingReplaced=_accessoryBeingReplaced;
@@ -65,7 +67,6 @@
 @property(nonatomic) BOOL isTrustedOrigin; // @synthesize isTrustedOrigin=_isTrustedOrigin;
 @property(retain, nonatomic) HMAccessoryCategory *category; // @synthesize category=_category;
 @property(readonly, nonatomic) HMAccessoryOwnershipToken *ownershipToken; // @synthesize ownershipToken=_ownershipToken;
-@property(retain, nonatomic) NSString *setupCode; // @synthesize setupCode=_setupCode;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -76,6 +77,7 @@
 - (id)description;
 @property(readonly, nonatomic) BOOL hasAddRequest;
 @property(readonly, nonatomic) NSString *setupID; // @synthesize setupID=_setupID;
+@property(retain, nonatomic) NSString *setupCode; // @synthesize setupCode=_setupCode;
 @property(readonly, nonatomic, getter=isPaired) BOOL paired; // @synthesize paired=_paired;
 @property(readonly, nonatomic) BOOL supportsBTLE; // @synthesize supportsBTLE=_supportsBTLE;
 @property(readonly, nonatomic) BOOL supportsWAC; // @synthesize supportsWAC=_supportsWAC;

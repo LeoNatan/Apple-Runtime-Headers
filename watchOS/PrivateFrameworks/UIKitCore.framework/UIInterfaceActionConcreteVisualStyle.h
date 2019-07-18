@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)selectByPressGestureRequired;
 - (struct UIEdgeInsets)actionSequenceEdgeInsets;
 - (float)actionSectionSpacing;
+- (float)minimumImageGapWidth;
 - (float)verticalImageContentSpacing;
 - (float)horizontalImageContentSpacing;
 - (struct CGSize)minimumActionContentSize;

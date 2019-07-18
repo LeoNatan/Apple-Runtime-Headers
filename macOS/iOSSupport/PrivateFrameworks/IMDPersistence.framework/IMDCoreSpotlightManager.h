@@ -14,7 +14,9 @@
 - (unsigned long long)_lastIndexedRowID;
 - (unsigned long long)_batchSizeForTargetBatchSize:(unsigned long long)arg1 lastIndexedRowID:(unsigned long long)arg2 lastBatch:(char *)arg3;
 - (BOOL)_shouldIndexNextBatchForBatchSize:(unsigned long long)arg1;
+- (void)_setBypassIndexVersionCheck;
 - (void)_setCurrentIndexVersion:(unsigned long long)arg1;
+- (BOOL)_bypassIndexVersionCheck;
 - (unsigned long long)_currentIndexVersion;
 - (unsigned long long)_expectedIndexVersion;
 - (void)_setLastIndexedRowID:(unsigned long long)arg1;

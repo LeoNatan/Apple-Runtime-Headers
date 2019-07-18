@@ -8,10 +8,11 @@
 
 #import <NeutrinoCore/NUVideoProperties-Protocol.h>
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSDictionary, NSString, NSURL;
 
 @interface _NUVideoProperties : NSObject <NUVideoProperties>
 {
+    NSURL *_url;
     NSArray *_metadata;
     long long _orientation;
     NSDictionary *_colorProperties;
@@ -28,6 +29,7 @@
 @property(nonatomic) CDStruct_996ac03c cleanAperture; // @synthesize cleanAperture=_cleanAperture;
 @property(nonatomic) CDStruct_912cb5d2 size; // @synthesize size=_size;
 @property(retain, nonatomic) NSArray *metadata; // @synthesize metadata=_metadata;
+@property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithProperties:(id)arg1;

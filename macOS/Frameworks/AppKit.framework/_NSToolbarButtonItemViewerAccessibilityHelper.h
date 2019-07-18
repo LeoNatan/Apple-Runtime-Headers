@@ -11,6 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (BOOL)isAccessibilityElement;
+- (BOOL)accessibilityIsIgnored;
 - (id)accessibilityRoleAttribute;
 - (id)initWithToolbarItemViewer:(id)arg1;
 - (id)_accessibilityToolbarButtonElement;

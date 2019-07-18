@@ -12,8 +12,8 @@
 @interface NUJobQueue : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
-    NUJobPriorityQueue *_hiQueue;
-    NUJobPriorityQueue *_loQueue;
+    NUJobPriorityQueue *_interactiveQueue;
+    NUJobPriorityQueue *_initiatedQueue;
     long long _updateGroupLevel;
     long long _stage;
 }

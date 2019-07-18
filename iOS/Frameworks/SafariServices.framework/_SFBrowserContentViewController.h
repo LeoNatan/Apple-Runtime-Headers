@@ -30,7 +30,7 @@
 #import <SafariServices/_SFSaveToFilesOperationDelegate-Protocol.h>
 #import <SafariServices/_SFSingleBookmarkNavigationControllerDelegate-Protocol.h>
 
-@class NSArray, NSString, NSTimer, NSURL, SFBrowserPersonaAnalyticsHelper, SFReaderEnabledWebViewController, SFReaderViewController, SFSafariViewControllerConfiguration, UIColor, UIPanGestureRecognizer, UITapGestureRecognizer, WBSFluidProgressController, WBSFluidProgressState, WKBackForwardListItem, WKPreferences, WKWebView, _SFActivityViewController, _SFAppleConnectExtensionPageController, _SFBarManager, _SFBrowserToolbar, _SFBrowserView, _SFCalendarEventDetector, _SFDownload, _SFDynamicBarAnimator, _SFFindOnPageView, _SFFluidProgressView, _SFMailContentProvider, _SFNavigationBar, _SFNavigationBarItem, _SFNavigationUtilitiesManager, _SFPageFormatMenuController, _SFPageLoadErrorController, _SFPerSitePreferencesVendor, _SFPrintController, _SFQuickLookDocument, _SFQuickLookDocumentController, _SFQuickLookDocumentWriter, _SFReloadOptionsController, _SFSafariSharingExtensionController, _SFSaveToFilesOperation, _SFSecIdentityPreferencesController, _SFTelephonyNavigationMitigationPolicy, _SFURLSpoofingMitigator, _WKActivatedElementInfo, _WKUserInitiatedAction;
+@class NSArray, NSError, NSString, NSTimer, NSURL, SFBrowserPersonaAnalyticsHelper, SFReaderEnabledWebViewController, SFReaderViewController, SFSafariViewControllerConfiguration, UIColor, UIPanGestureRecognizer, UITapGestureRecognizer, WBSFluidProgressController, WBSFluidProgressState, WBSURLSpoofingMitigator, WKBackForwardListItem, WKPreferences, WKWebView, _SFActivityViewController, _SFAppleConnectExtensionPageController, _SFBarManager, _SFBrowserToolbar, _SFBrowserView, _SFCalendarEventDetector, _SFDownload, _SFDynamicBarAnimator, _SFFindOnPageView, _SFFluidProgressView, _SFMailContentProvider, _SFNavigationBar, _SFNavigationBarItem, _SFNavigationUtilitiesManager, _SFPageFormatMenuController, _SFPageLoadErrorController, _SFPerSitePreferencesVendor, _SFPrintController, _SFQuickLookDocument, _SFQuickLookDocumentController, _SFQuickLookDocumentWriter, _SFReloadOptionsController, _SFSafariSharingExtensionController, _SFSaveToFilesOperation, _SFSecIdentityPreferencesController, _SFTelephonyNavigationMitigationPolicy, _WKActivatedElementInfo, _WKUserInitiatedAction;
 @protocol SFReaderContext, _SFBrowserDocument;
 
 @interface _SFBrowserContentViewController : UIViewController <SFBrowserViewDelegate, SFReaderEnabledWebViewControllerDelegate, _SFAppleConnectExtensionUIDelegate, _SFBarManagerDelegate, _SFDownloadDelegate, _SFDynamicBarAnimatorDelegate, _SFFindOnPageViewDelegate, _SFMailContentProviderDataSource, _SFNavigationBarDelegate, _SFPageLoadErrorControllerDelegate, _SFPrintControllerDelegate, _SFSingleBookmarkNavigationControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, WBSFluidProgressControllerWindowDelegate, WBSFluidProgressStateSource, _SFActivityItemCustomizationDelegate, _SFActivityViewControllerDelegate, _SFSaveToFilesOperationDelegate, _SFQuickLookDocumentSource, _SFBrowserKeyCommandSafariViewControllerMethods, _SFBrowserContentController, _SFBrowserDocument>
@@ -50,7 +50,7 @@
     _SFDynamicBarAnimator *_dynamicBarAnimator;
     _Bool _scrollViewIsDragging;
     _SFNavigationBarItem *_navigationBarItem;
-    _SFURLSpoofingMitigator *_URLSpoofingMitigator;
+    WBSURLSpoofingMitigator *_URLSpoofingMitigator;
     WBSFluidProgressState *_fluidProgressState;
     WBSFluidProgressController *_fluidProgressController;
     _SFFluidProgressView *_cachedFluidProgressView;
@@ -71,7 +71,6 @@
     _SFSafariSharingExtensionController *_sharingExtensionController;
     _Bool _didReceivePolicyForInitialLoad;
     long long _customPreferredStatusBarStyle;
-    WKPreferences *_wkPreferences;
     _Bool _isDisplayingTelephonyPrompt;
     _SFTelephonyNavigationMitigationPolicy *_telephonyNavigationPolicy;
     _SFPrintController *_printController;
@@ -99,9 +98,11 @@
     _SFPageFormatMenuController *_pageFormatMenuController;
     _Bool _keepBarsMinimized;
     UIPanGestureRecognizer *_hideNavigationBarGestureRecognizer;
+    NSError *_lastLoadErrorForFormatMenu;
     _SFActivityViewController *_activityViewController;
     _Bool _loadWasUserDriven;
     _Bool _webViewIsInFullScreen;
+    CDUnknownBlockType _pendingNavigationActionDueToExternalSchemePromptHandler;
     _Bool _remoteSwipeGestureEnabled;
     _Bool _webViewLayoutUnderlapsStatusBar;
     _Bool _didNotifyInitialLoadFinish;
@@ -110,6 +111,7 @@
     _SFReloadOptionsController *_reloadOptionsController;
     _SFFindOnPageView *_findOnPageView;
     SFReaderEnabledWebViewController *_webViewController;
+    WKPreferences *_wkPreferences;
     NSArray *_linkActions;
     _WKActivatedElementInfo *_activatedElementInfo;
     UIColor *_preferredBarTintColor;
@@ -141,6 +143,7 @@
 @property(nonatomic) _Bool remoteSwipeGestureEnabled; // @synthesize remoteSwipeGestureEnabled=_remoteSwipeGestureEnabled;
 @property(retain, nonatomic) _WKActivatedElementInfo *activatedElementInfo; // @synthesize activatedElementInfo=_activatedElementInfo;
 @property(copy, nonatomic) NSArray *linkActions; // @synthesize linkActions=_linkActions;
+@property(readonly, nonatomic) WKPreferences *wkPreferences; // @synthesize wkPreferences=_wkPreferences;
 @property(retain, nonatomic) SFReaderEnabledWebViewController *webViewController; // @synthesize webViewController=_webViewController;
 @property(retain, nonatomic) _SFFindOnPageView *findOnPageView; // @synthesize findOnPageView=_findOnPageView;
 @property(retain, nonatomic) _SFReloadOptionsController *reloadOptionsController; // @synthesize reloadOptionsController=_reloadOptionsController;
@@ -174,7 +177,6 @@
 - (void)decreaseSize:(id)arg1;
 - (void)increaseSize:(id)arg1;
 - (void)_emailCurrentPageWithPreferredContentType:(long long)arg1;
-- (void)emailCurrentPageAsLink;
 - (void)emailCurrentPage;
 - (void)saveWebpageAlternativeKeyPressed;
 - (void)saveWebpageKeyPressed;
@@ -194,6 +196,7 @@
 - (id)webViewForFindOnPageView:(id)arg1;
 - (void)_invalidateUserActivity;
 - (void)_updateUserActivity;
+- (id)handoffURL;
 - (void)_cancelPendingUpdateUserActivityTimer;
 - (void)_updateUserActivityTimerFired;
 - (void)_updateUserActivitySoon;
@@ -202,6 +205,7 @@
 - (void)toggleShowingReaderForUserAction;
 @property(readonly, nonatomic, getter=isShowingReader) _Bool showingReader;
 @property(readonly, nonatomic) id <SFReaderContext> readerContext;
+@property(readonly, nonatomic) NSURL *URLForPerSitePreferences;
 @property(readonly, nonatomic) _Bool canHideToolbar;
 @property(readonly, nonatomic) _SFPerSitePreferencesVendor *perSitePreferencesVendor;
 - (void)reloadEnablingContentBlockers:(_Bool)arg1;
@@ -256,7 +260,6 @@
 - (void)_hideNavigationBarGestureRecognized:(id)arg1;
 - (void)navigationBarFormatMenuButtonBecameUnavailable:(id)arg1;
 - (void)navigationBarFormatMenuButtonWasTapped:(id)arg1;
-- (void)navigationBarDidUpdateBackdropEffect:(id)arg1;
 - (void)_showBars;
 - (void)compressedNavigationBarWasTapped:(id)arg1;
 - (void)navigationBarMetricsDidChange:(id)arg1;
@@ -285,6 +288,7 @@
 - (_Bool)printControllerCanPresentPrintUI:(id)arg1;
 - (_Bool)printControllerPageIsLoading:(id)arg1;
 - (_Bool)printControllerShouldPrintReader:(id)arg1;
+- (void)webViewController:(id)arg1 decidePolicyForSOAuthorizationLoadWithCurrentPolicy:(long long)arg2 forExtension:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)webViewController:(id)arg1 didStartDownload:(id)arg2;
 - (void)webViewController:(id)arg1 didChangeFullScreen:(_Bool)arg2;
 - (long long)webViewController:(id)arg1 presentationPolicyForDialog:(id)arg2;
@@ -360,7 +364,6 @@
 - (void)_didReceiveAllQueuedMessages;
 - (void)_updateUI;
 - (void)_updateBarItems;
-- (_Bool)_canShareWebView;
 - (void)_updatePreviewLoadingUI;
 - (_Bool)_canShowPageFormatMenu;
 - (void)didUpdateNavigationBarItem:(id)arg1;
@@ -384,11 +387,9 @@
 - (id)_currentWebView;
 - (void)_updateInterfaceFillsScreen;
 - (void)_updateUsesNarrowLayout;
-- (void)_updatePreferredControlTintColor;
+- (void)_updateBarTheme;
 - (_Bool)_effectiveBarCollapsingEnabled;
-- (void)_updatePreferredBarTintColor;
 - (void)_setUpToolbar;
-- (void)traitCollectionDidChange:(id)arg1;
 - (id)overrideTraitCollectionForChildViewController:(id)arg1;
 - (void)_updateStatusBarStyleForced:(_Bool)arg1;
 - (long long)preferredStatusBarStyle;

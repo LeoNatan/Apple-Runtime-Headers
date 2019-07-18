@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)texcoords:(id)arg1;
 - (void)normals:(id)arg1;
 - (void)geometry:(id)arg1;
+- (void)wipeActiveFramebuffer:(const tvec4_ac57c72d *)arg1;
 - (void)dealloc;
 - (_Bool)canRenderPrefilteredLines;
 

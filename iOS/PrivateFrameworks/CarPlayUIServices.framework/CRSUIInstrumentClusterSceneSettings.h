@@ -14,6 +14,7 @@
 {
 }
 
+@property(readonly, copy) NSString *description;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) unsigned long long showsSpeedLimit;
 @property(readonly, nonatomic) unsigned long long showsCompass;
@@ -21,7 +22,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

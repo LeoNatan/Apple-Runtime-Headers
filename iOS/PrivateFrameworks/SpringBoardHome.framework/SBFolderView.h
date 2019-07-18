@@ -47,6 +47,7 @@
     SBFolder *_folder;
     id <SBIconListLayoutProvider> _listLayoutProvider;
     long long _orientation;
+    unsigned long long _allowedOrientations;
     id <SBIconViewProviding> _iconViewProvider;
     double _effectiveStatusBarHeight;
     unsigned long long _userInterfaceLayoutDirectionHandling;
@@ -75,6 +76,7 @@
 @property(readonly, nonatomic) double effectiveStatusBarHeight; // @synthesize effectiveStatusBarHeight=_effectiveStatusBarHeight;
 @property(readonly, nonatomic) __weak id <SBIconViewProviding> iconViewProvider; // @synthesize iconViewProvider=_iconViewProvider;
 @property(nonatomic, getter=isRotating) _Bool rotating; // @synthesize rotating=_rotating;
+@property(readonly, nonatomic) unsigned long long allowedOrientations; // @synthesize allowedOrientations=_allowedOrientations;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) SBIconLayoutOverrideStrategy *iconLayoutOverrideStrategy; // @synthesize iconLayoutOverrideStrategy=_iconLayoutOverrideStrategy;
 @property(readonly, nonatomic) id <SBIconListLayoutProvider> listLayoutProvider; // @synthesize listLayoutProvider=_listLayoutProvider;
@@ -256,6 +258,7 @@
 - (void)_orientationDidChange:(long long)arg1;
 @property(nonatomic) double pageControlAlpha;
 @property(nonatomic, getter=isPageControlHidden) _Bool pageControlHidden;
+- (void)_updatePageControlCurrentPage;
 - (void)_updatePageControlToIndex:(long long)arg1;
 - (void)_currentPageIndexDidChange;
 - (void)_setCurrentPageIndex:(long long)arg1 deferringPageControlUpdate:(_Bool)arg2;

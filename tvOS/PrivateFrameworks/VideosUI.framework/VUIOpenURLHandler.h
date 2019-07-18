@@ -15,6 +15,7 @@
     CDUnknownBlockType _deferredOpenURLCompletion;
 }
 
++ (void)_handleDeeplinkAction:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)_getIDfromURLQueryParameters:(id)arg1 idKeyName:(id)arg2;
 + (void)_insertPageBehindTop:(id)arg1 viewController:(id)arg2 clearStack:(_Bool)arg3;
 + (id)sharedInstance;
@@ -23,7 +24,7 @@
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
 - (void)_fetchLocalMediaWithAdamID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_processLocalLibraryLink:(id)arg1;
+- (void)_processLocalLibraryLink:(id)arg1 playbackInitiationDate:(id)arg2 openURLCompletionDate:(id)arg3;
 - (void)_handleOpenURLRouterDataSource:(id)arg1 appContext:(id)arg2 clearStack:(_Bool)arg3 startDate:(id)arg4;
 - (void)handleDeferredURLWithAppContext:(id)arg1;
 - (void)saveDeferredURL:(id)arg1 completion:(CDUnknownBlockType)arg2;

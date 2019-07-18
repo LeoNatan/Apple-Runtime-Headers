@@ -12,6 +12,7 @@
 {
     _Bool _isCached;
     _Bool _hasQuestionMark;
+    int _generationStatus;
     NSArray *_responses;
     NSString *_language;
     NSString *_locale;
@@ -20,6 +21,7 @@
     unsigned long long _responseGenerationTime;
 }
 
+@property(nonatomic) int generationStatus; // @synthesize generationStatus=_generationStatus;
 @property(nonatomic) unsigned long long responseGenerationTime; // @synthesize responseGenerationTime=_responseGenerationTime;
 @property(nonatomic) _Bool hasQuestionMark; // @synthesize hasQuestionMark=_hasQuestionMark;
 @property(nonatomic) unsigned long long messageCharCount; // @synthesize messageCharCount=_messageCharCount;

@@ -77,6 +77,7 @@
 @property(retain, nonatomic) NSString *displayName;
 @property(retain, nonatomic) NSString *regionBasePhoneNumber;
 @property(retain, nonatomic) NSString *regionID;
+@property(readonly, nonatomic) NSString *userUniqueIdentifier;
 @property(readonly, nonatomic) int profileValidationErrorReason;
 @property(readonly, nonatomic) int profileValidationStatus;
 @property(readonly, nonatomic) NSDictionary *registrationAlertInfo;
@@ -106,6 +107,7 @@
 - (void)updateAccountWithAccountInfo:(id)arg1;
 @property(retain, nonatomic) NSDictionary *accountInfo;
 @property(readonly, nonatomic) _Bool isActive;
+@property(readonly, nonatomic) _Bool isTransientWhitelistedAccount;
 @property(readonly, nonatomic) _Bool isInTransientRegistrationState;
 - (void)_setObject:(id)arg1 forKey:(id)arg2;
 - (id)_objectForKey:(id)arg1;
@@ -118,6 +120,7 @@
 - (void)_callDelegatesWithBlock:(CDUnknownBlockType)arg1;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (_Bool)_isThumperService;
 - (_Bool)_isiCloudPairingService;
 - (void)dealloc;
 - (id)initWithLoginID:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3 delegateContext:(id)arg4;

@@ -14,6 +14,8 @@
 @interface UISceneConfiguration : NSObject <NSCopying, NSSecureCoding>
 {
     BOOL _hadResolutionErrorsOnLoad;
+    BOOL _isDefault;
+    BOOL _fromPlist;
     NSString *_name;
     NSString *_role;
     Class _sceneClass;
@@ -23,6 +25,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)configurationWithName:(id)arg1 sessionRole:(id)arg2;
+@property(readonly, nonatomic) BOOL _fromPlist; // @synthesize _fromPlist;
+@property(readonly, nonatomic) BOOL _isDefault; // @synthesize _isDefault;
 @property(readonly, nonatomic) BOOL _hadResolutionErrorsOnLoad; // @synthesize _hadResolutionErrorsOnLoad;
 @property(readonly, nonatomic) NSString *role; // @synthesize role=_role;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;

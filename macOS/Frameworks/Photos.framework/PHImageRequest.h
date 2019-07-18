@@ -13,8 +13,8 @@
 {
     struct os_unfair_lock_s _lock;
     PHImageDecoderAsyncDecodeRequestHandle *_asyncDecodeRequestHandle;
-    PHImageResourceChooser *_chooser;
     PHImageResult *_imageResult;
+    PHImageResourceChooser *_chooser;
     struct CGSize _desiredImageSize;
     BOOL _forceIgnoreCache;
     NSObject<OS_dispatch_semaphore> *_syncDownloadWaitSemaphore;

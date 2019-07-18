@@ -166,6 +166,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_isStandaloneBrand) BOOL isStandAloneBrand;
 @property(readonly, nonatomic, getter=_isTransitDisplayFeature) BOOL isTransitDisplayFeature;
 @property(readonly, nonatomic, getter=_linkedServices) NSArray *linkedServices;
+@property(readonly, nonatomic, getter=_mapsCategoryId) NSString *mapsCategoryId;
 @property(readonly, nonatomic, getter=_placeDisplayStyle) int placeDisplayStyle;
 @property(readonly, nonatomic, getter=_placeDisplayType) int placeDisplayType;
 @property(readonly, nonatomic, getter=_poiCategory) NSString *poiCategory;

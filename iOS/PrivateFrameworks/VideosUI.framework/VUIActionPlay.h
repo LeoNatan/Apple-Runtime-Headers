@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)_presentPlaybackWithMediaInfo:(id)arg1 extrasInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
-+ (void)_preflightWithMediaInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
-+ (void)_playMediaInfo:(id)arg1 extrasInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
-+ (void)playMediaInfo:(id)arg1;
++ (void)_preflightWithMediaInfo:(id)arg1 isRentAndWatchNow:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)_playMediaInfo:(id)arg1 extrasInfo:(id)arg2 isRentAndWatchNow:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
++ (void)playMediaInfo:(id)arg1 isRentAndWatchNow:(_Bool)arg2;
 + (void)_playPlayables:(id)arg1 storeDictionary:(id)arg2 appContext:(id)arg3 isUpNextPlayback:(_Bool)arg4 userPlaybackInitiationDate:(id)arg5 openURLCompletionDate:(id)arg6;
 @property(retain, nonatomic) NSDate *openURLCompletionDate; // @synthesize openURLCompletionDate=_openURLCompletionDate;
 @property(retain, nonatomic) NSDate *userPlaybackInitiationDate; // @synthesize userPlaybackInitiationDate=_userPlaybackInitiationDate;
@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *videosPlayables; // @synthesize videosPlayables=_videosPlayables;
 @property(retain, nonatomic) NSDictionary *contextData; // @synthesize contextData=_contextData;
 - (void).cxx_destruct;
+- (_Bool)isAccountRequired;
 - (void)performWithTargetResponder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithContextData:(id)arg1 appContext:(id)arg2;
 

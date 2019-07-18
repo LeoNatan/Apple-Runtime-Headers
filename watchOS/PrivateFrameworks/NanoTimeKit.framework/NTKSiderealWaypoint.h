@@ -8,13 +8,15 @@
 
 @interface NTKSiderealWaypoint : NSObject
 {
-    int _type;
     float _degree;
+    int _type;
 }
 
++ (int)_waypointTypeFromSolarEventType:(int)arg1;
 + (id)waypointWithType:(int)arg1 degree:(float)arg2;
-@property(nonatomic) float degree; // @synthesize degree=_degree;
++ (id)waypointFromSolarEvent:(id)arg1;
 @property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) float degree; // @synthesize degree=_degree;
 - (id)localizedName;
 - (id)debugDescription;
 - (id)description;

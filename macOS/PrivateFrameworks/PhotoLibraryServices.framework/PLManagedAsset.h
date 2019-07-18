@@ -122,7 +122,7 @@
 + (BOOL)isVideoComplementVisibilityStatePlayable:(unsigned short)arg1 hasAdjustments:(BOOL)arg2;
 + (id)videoComplementVisibilityStatePlayablePredicate;
 + (BOOL)canPlayPhotoIrisWithPhotoIris:(BOOL)arg1 photoIrisPlaceholder:(BOOL)arg2 hasAdjustments:(BOOL)arg3 videoCpVisibilityState:(unsigned short)arg4;
-+ (BOOL)isPhotoIrisPlaceholderWithPhotoIris:(BOOL)arg1 videoCpDuration:(long long)arg2 isCloudShared:(BOOL)arg3 videoCpFilePath:(id)arg4;
++ (BOOL)isPhotoIrisPlaceholderWithPhotoIris:(BOOL)arg1 isSnowplow:(BOOL)arg2 videoCpDuration:(long long)arg3 isCloudShared:(BOOL)arg4 videoCpFilePath:(id)arg5 snowplowVideoCpFilePath:(id)arg6;
 + (id)cloudUUIDKeyForDeletion;
 + (long long)cloudDeletionTypeForTombstone:(id)arg1;
 + (id)_importAlbumIsolationQueue;
@@ -152,6 +152,7 @@
 + (id)newLocationDataFromLocation:(id)arg1;
 + (id)baseSearchIndexPredicate;
 + (id)assetsToConsiderForTypePromotionInContext:(id)arg1 withExtensions:(id)arg2 error:(id *)arg3;
++ (void)computePreCropThumbnailSize:(struct CGSize *)arg1 andPostCropSize:(struct CGSize *)arg2 forOrientedOriginalSize:(struct CGSize)arg3 andCroppedSize:(struct CGSize)arg4 isLargeThumbnail:(BOOL)arg5;
 + (void)createThumbnailImage:(struct NSObject **)arg1 previewImage:(struct NSObject **)arg2 withImageSource:(struct CGImageSource *)arg3;
 + (id)_newPathAndDateDictionariesByAssetUUIDFromFetchResults:(id)arg1 photoLibrary:(id)arg2;
 + (id)pathAndDateDictionariesForAllIncompleteAssetsInManagedObjectContext:(id)arg1;
@@ -202,7 +203,7 @@
 + (id)calculateImageRequestHintsFromSortedResources:(id)arg1 asset:(id)arg2;
 + (id)debugDescriptionForHintData:(id)arg1 assetWidth:(long long)arg2 assetHeight:(long long)arg3 assetID:(id)arg4;
 + (id)_persistedResourcesForManagedAsset:(id)arg1 resourceIdentity:(id)arg2 fetchConfigurationBlock:(CDUnknownBlockType)arg3 error:(id *)arg4;
-+ (id)_predicateToExcludeDerivatives;
++ (id)predicateFilteringForNonDerivativeRecipeIDs;
 @property(nonatomic) BOOL disableFileSystemPersistency; // @synthesize disableFileSystemPersistency=_disableFileSystemPersistency;
 @property(nonatomic) BOOL disableDupeAnalysis; // @synthesize disableDupeAnalysis=_disableDupeAnalysis;
 @property(nonatomic) BOOL needsMomentUpdate; // @synthesize needsMomentUpdate=_needsMomentUpdate;
@@ -414,12 +415,12 @@
 @property(readonly, nonatomic) struct CLLocationCoordinate2D gpsCoordinate;
 - (id)managedAssetForPhotoLibrary:(id)arg1;
 @property(nonatomic) struct CGSize imageSize;
-- (id)_imageDataForThumbGeneration;
+- (id)imageDataForThumbGenerationAndIfNeededRAWUTI:(id *)arg1;
 - (void)setFaceRegionsFromImageMetadata:(struct CGImageMetadata *)arg1;
 - (void)setFaceRegionsFromCGImageProperties:(id)arg1;
 - (void)generateAndUpdateThumbnailsWithPreviewImage:(struct NSObject *)arg1 thumbnailImage:(struct NSObject *)arg2 fromImageSource:(struct CGImageSource *)arg3 imageData:(id)arg4 updateExistingLargePreview:(BOOL)arg5 forceSRGBConversion:(BOOL)arg6 saveCameraPreviewWellImage:(BOOL)arg7;
 - (void)generateAndUpdateThumbnailsWithPreviewImage:(struct NSObject *)arg1 thumbnailImage:(struct NSObject *)arg2 fromImageSource:(struct CGImageSource *)arg3 imageData:(id)arg4 updateExistingLargePreview:(BOOL)arg5 forceSRGBConversion:(BOOL)arg6;
-- (void)_createTHMFileWithPreviewImage:(struct NSObject *)arg1 thumbnailImage:(struct NSObject *)arg2;
+- (void)createTHMFileWithPreviewImage:(struct NSObject *)arg1 thumbnailImage:(struct NSObject *)arg2;
 - (BOOL)setVideoInfoFromFileAtURL:(id)arg1 fullSizeRenderURL:(id)arg2 overwriteOriginalProperties:(BOOL)arg3;
 - (void)updateVideoAttributesFromAVAsset:(id)arg1;
 - (void)updateVideoExtendedAttributesFromAVAsset:(id)arg1;
@@ -526,13 +527,14 @@
 - (void)_clearOverallAestheticScore;
 - (void)_clearAcceptableCropRect;
 - (void)_clearPreferredCropRect;
+- (void)_deleteMediaAnalysisAttributes;
 - (void)_deleteComputedAttributes;
 - (void)_removeAssetFromRelatedSuggestionsAndFixupSuggestions;
 - (void)fixupPersonsWithMissingKeyAsset;
 - (void)_fixupMemoriesWithMissingKeyAsset;
 - (BOOL)_hasBecomeNonVisibleToMemoriesAndPersonsAndSuggestions:(id)arg1;
 - (void)_updateOriginalResourceChoice;
-- (BOOL)_setTrashedState:(short)arg1 forResourceType:(unsigned long long)arg2;
+- (BOOL)setTrashedState:(short)arg1 forResourceType:(unsigned long long)arg2;
 - (BOOL)isSyncableChange;
 - (BOOL)_hasFFCDimensions;
 - (BOOL)updateKindSubtypeIfScreenshot;
@@ -638,7 +640,6 @@
 - (BOOL)promoteFromUnknownKind;
 - (BOOL)attemptPromoteFromUnknownKindUsingCloudMaster;
 - (void)generateThumbnailsWithImageSource:(struct CGImageSource *)arg1 imageData:(id)arg2 updateExistingLargePreview:(BOOL)arg3 allowMediumPreview:(BOOL)arg4 forceSRGBConversion:(BOOL)arg5 outSmallThumbnail:(struct NSObject **)arg6 outLargeThumbnail:(struct NSObject **)arg7;
-- (void)_computePreCropThumbnailSize:(struct CGSize *)arg1 andPostCropSize:(struct CGSize *)arg2 forOrientedOriginalSize:(struct CGSize)arg3 andCroppedSize:(struct CGSize)arg4 isLargeThumbnail:(BOOL)arg5;
 @property(retain, nonatomic) NSData *faceRegions;
 @property(retain, nonatomic) NSString *title;
 @property(retain, nonatomic) NSString *longDescription;
@@ -684,7 +685,6 @@
 - (void)deDupCMMAssetInLibrary:(id)arg1;
 - (void)_removeLocalFileForResource:(id)arg1;
 - (void)_removeAdjustmentDataResources;
-- (void)_cleanSubstandardFile;
 - (BOOL)_isResourceType:(unsigned long long)arg1 inResources:(id)arg2;
 - (void)markAsUnavailableCloudResourceOfType:(unsigned long long)arg1;
 - (long long)_plAdjustmentBaseVersionFromCPLAdjustmentSourceType:(unsigned long long)arg1;
@@ -703,7 +703,7 @@
 - (void)_updateAssetSubtypeFromCPLAssetSubtype:(unsigned long long)arg1;
 - (int)_avalancheTypeFromCplBurstFlags:(unsigned long long)arg1;
 - (unsigned long long)cplBurstFlagsFromPLAvalancheType:(int)arg1;
-- (void)_updateBurstFlagsForCPLAssetChange:(id)arg1;
+- (void)_updateBurstFlagsForCPLAssetChange:(id)arg1 photoLibrary:(id)arg2;
 - (void)_copyResourcesFromSouceAsset:(id)arg1 toCPLAsset:(id)arg2 inLibrary:(id)arg3;
 - (id)cplAssetChangeWithMasterScopedIdentifier:(id)arg1 withChangeType:(unsigned long long)arg2 shouldGenerateDerivatives:(BOOL)arg3 inLibrary:(id)arg4;
 - (id)cplFullRecord;
@@ -802,7 +802,7 @@
 - (id)rm_applyResourcesFromAssetChange:(id)arg1 inLibrary:(id)arg2;
 - (void)rm_createAssetResourcesForCPLResources:(id)arg1 inLibrary:(id)arg2;
 - (id)rm_cplExpungeableMasterResourceStates;
-- (id)rm_cplMasterOriginalResourcesFromCloudMaster:(id)arg1;
+- (id)rm_cplMasterResourcesFromCloudMaster:(id)arg1;
 - (id)rm_cplMasterResourceForResourceType:(unsigned long long)arg1;
 - (id)rm_cplResourceForResourceType:(unsigned long long)arg1;
 - (void)_rm_insertResource:(id)arg1 forOtherDuplicatedAssetInMaster:(id)arg2 inPhotoLibrary:(id)arg3;

@@ -8,8 +8,7 @@
 
 @interface _TtC8NewsFeed18LayeredMediaLoader : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: identifier
-    // Error parsing type: , name: json
+    // Error parsing type: , name: parser
 }
 
 @end

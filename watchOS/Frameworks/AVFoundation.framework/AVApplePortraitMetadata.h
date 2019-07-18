@@ -21,6 +21,7 @@
 @property(readonly) NSData *faceObservationsData;
 @property(readonly) int faceOrientation;
 @property(readonly) float luminanceNoiseAmplitude;
+@property(readonly) float portraitLightingEffectStrength;
 @property(readonly) float maximumApertureFocalRatio;
 @property(readonly) float minimumApertureFocalRatio;
 @property(readonly) float apertureFocalRatio;

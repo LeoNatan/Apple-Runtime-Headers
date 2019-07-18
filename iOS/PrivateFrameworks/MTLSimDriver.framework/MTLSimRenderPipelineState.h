@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
 
 - (unsigned long long)imageblockMemoryLengthForDimensions:(CDStruct_da2e99ad)arg1;
 @property(readonly) unsigned long long imageblockSampleLength;
+- (unsigned int)getVertexShaderTelemetryID;
+- (unsigned int)getFragmentShaderTelemetryID;
 - (id)newVertexShaderDebugInfo;
 - (id)newFragmentShaderDebugInfo;
 - (unsigned int)pipelineRef;

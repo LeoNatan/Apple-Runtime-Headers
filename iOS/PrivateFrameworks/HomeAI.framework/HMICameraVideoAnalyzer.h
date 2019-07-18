@@ -7,85 +7,93 @@
 #import <HMFoundation/HMFObject.h>
 
 #import <HomeAI/HMFLogging-Protocol.h>
-#import <HomeAI/HMISystemResourceUsageMonitorDelegate-Protocol.h>
 
-@class HMIAnalysisService, HMICameraVideoAnalyzerConfiguration, HMICameraVideoPosterFrameGenerator, HMISystemResourceUsageMonitor, NSLock, NSMutableArray, NSObject, NSString, NSUUID;
+@class HMFUnfairLock, HMIAnalysisService, HMICameraVideoAnalyzerConfiguration, HMICameraVideoAnalyzerScheduler, NSArray, NSMutableArray, NSObject, NSString, NSUUID;
 @protocol HMICameraVideoAnalyzerDelegate, OS_dispatch_queue;
 
-@interface HMICameraVideoAnalyzer : HMFObject <HMISystemResourceUsageMonitorDelegate, HMFLogging>
+@interface HMICameraVideoAnalyzer : HMFObject <HMFLogging>
 {
     _Bool _skipSequentialMediaIntegrityCheck;
     _Bool _analysisInProgress;
     _Bool _inErrorState;
+    _Bool _inBypassMode;
     _Bool _sessionEnded;
     _Bool _uploadVideoAnalysisEvent;
-    long long _currentSystemResourceUsageLevel;
+    _Bool _saveVideoFramesToDisk;
     id <HMICameraVideoAnalyzerDelegate> _delegate;
     NSUUID *_identifier;
+    HMFUnfairLock *_lock;
+    NSMutableArray *_internalPendingRequests;
+    unsigned long long _didAnalyzeCount;
+    unsigned long long _didNotAnalyzeCount;
+    unsigned long long _didFailCount;
     NSObject<OS_dispatch_queue> *_workQueue;
-    HMISystemResourceUsageMonitor *_systemResourceUsageMonitor;
-    NSLock *_lock;
+    HMICameraVideoAnalyzerScheduler *_scheduler;
     unsigned long long _mediaIntegritySequenceNumber;
-    NSMutableArray *_pendingRequests;
-    HMICameraVideoPosterFrameGenerator *_posterFrameGenerator;
-    HMICameraVideoAnalyzerConfiguration *_videoAnalyzerConfiguration;
-    long long _events;
-    NSMutableArray *_videoFrameResults;
-    long long _fragmentAnalysisResultCode;
+    HMICameraVideoAnalyzerConfiguration *_configuration;
     HMIAnalysisService *_remoteAnalysisService;
 }
 
 + (id)logCategory;
 + (id)queryVersionInformation;
-+ (unsigned long long)getAnalysisFPSPreference;
-+ (id)averageTimeToAnalyzeFragment;
-+ (id)fpsSelector;
+@property(getter=shouldSaveVideoFramesToDisk) _Bool saveVideoFramesToDisk; // @synthesize saveVideoFramesToDisk=_saveVideoFramesToDisk;
 @property(readonly, getter=shouldUploadVideoAnalysisEvent) _Bool uploadVideoAnalysisEvent; // @synthesize uploadVideoAnalysisEvent=_uploadVideoAnalysisEvent;
-@property(getter=isSessionEnded) _Bool sessionEnded; // @synthesize sessionEnded=_sessionEnded;
+@property _Bool sessionEnded; // @synthesize sessionEnded=_sessionEnded;
 @property(retain, nonatomic) HMIAnalysisService *remoteAnalysisService; // @synthesize remoteAnalysisService=_remoteAnalysisService;
-@property long long fragmentAnalysisResultCode; // @synthesize fragmentAnalysisResultCode=_fragmentAnalysisResultCode;
-@property(retain) NSMutableArray *videoFrameResults; // @synthesize videoFrameResults=_videoFrameResults;
-@property long long events; // @synthesize events=_events;
-@property(retain) HMICameraVideoAnalyzerConfiguration *videoAnalyzerConfiguration; // @synthesize videoAnalyzerConfiguration=_videoAnalyzerConfiguration;
-@property(retain) HMICameraVideoPosterFrameGenerator *posterFrameGenerator; // @synthesize posterFrameGenerator=_posterFrameGenerator;
-@property(retain) NSMutableArray *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
-@property(getter=isInErrorState) _Bool inErrorState; // @synthesize inErrorState=_inErrorState;
-@property(getter=isAnalysisInProgress) _Bool analysisInProgress; // @synthesize analysisInProgress=_analysisInProgress;
+@property(retain) HMICameraVideoAnalyzerConfiguration *configuration; // @synthesize configuration=_configuration;
+@property _Bool inBypassMode; // @synthesize inBypassMode=_inBypassMode;
+@property _Bool inErrorState; // @synthesize inErrorState=_inErrorState;
+@property _Bool analysisInProgress; // @synthesize analysisInProgress=_analysisInProgress;
 @property(readonly) _Bool skipSequentialMediaIntegrityCheck; // @synthesize skipSequentialMediaIntegrityCheck=_skipSequentialMediaIntegrityCheck;
 @property unsigned long long mediaIntegritySequenceNumber; // @synthesize mediaIntegritySequenceNumber=_mediaIntegritySequenceNumber;
-@property(readonly) NSLock *lock; // @synthesize lock=_lock;
-@property(retain) HMISystemResourceUsageMonitor *systemResourceUsageMonitor; // @synthesize systemResourceUsageMonitor=_systemResourceUsageMonitor;
+@property(readonly) HMICameraVideoAnalyzerScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
+@property unsigned long long didFailCount; // @synthesize didFailCount=_didFailCount;
+@property unsigned long long didNotAnalyzeCount; // @synthesize didNotAnalyzeCount=_didNotAnalyzeCount;
+@property unsigned long long didAnalyzeCount; // @synthesize didAnalyzeCount=_didAnalyzeCount;
+@property(readonly) NSMutableArray *internalPendingRequests; // @synthesize internalPendingRequests=_internalPendingRequests;
+@property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property __weak id <HMICameraVideoAnalyzerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_sendAnalyticsEventForFragment:(id)arg1 error:(id)arg2;
-- (void)_sendAnalyticsEventForFragment:(id)arg1 result:(id)arg2;
-- (void)systemResourceUsageDidChangeTo:(long long)arg1;
+- (void)_sendAnalyticsEventForRequest:(id)arg1 error:(id)arg2;
+- (void)_sendAnalyticsEventForRequest:(id)arg1 result:(id)arg2;
 - (id)logIdentifier;
-- (id)videoAnnotationScoresForFrameResult:(id)arg1;
-- (_Bool)uploadVideoAnalysisEventPreference;
-- (long long)getSystemResourceUsageLevelPreference;
-- (long long)getSystemResourceUsageLevel;
-- (long long)resetFrameEvents:(long long)arg1;
-- (_Bool)analyzeVideoFrame:(id)arg1 videoFragment:(id)arg2 error:(id *)arg3 events:(long long *)arg4;
-- (_Bool)shouldContinueAnalysis:(float)arg1 analysisStartTime:(id)arg2 fragmentSequenceNumber:(unsigned long long)arg3;
-- (double)computeRemainingAnalysisTimeFromStartTime:(id)arg1;
-- (_Bool)_analyzeFramesFromFragment:(id)arg1 frameSelector:(id)arg2 error:(id *)arg3;
-- (_Bool)_analyzeVideoHavingAttributes:(id)arg1 usingReader:(id)arg2 error:(id *)arg3;
-- (void)_handlePendingRequestsIfNeeded;
+- (long long)_resetFrameEvents:(long long)arg1;
+- (_Bool)_saveVideoFrame:(id)arg1 videoFragment:(id)arg2 error:(id *)arg3;
+- (_Bool)_analyzeVideoFrame:(id)arg1 request:(id)arg2 error:(id *)arg3 events:(long long *)arg4;
+- (id)_analyzeFrame:(id)arg1 error:(id *)arg2;
+- (_Bool)_analyzeRequestFrames:(id)arg1;
+- (void)_analyzeRequestFramesLocally:(id)arg1;
+- (_Bool)_shouldContinueAnalyzingRequest:(id)arg1 resultCode:(long long *)arg2;
+- (void)_skipPendingRequests;
 - (void)_failPendingRequests;
-- (void)_handleDidNotAnalyzeVideoFragment:(id)arg1 attributes:(id)arg2 timeToAnalyzeFragment:(double)arg3;
-- (void)_handleError:(id)arg1 videoFragment:(id)arg2;
-- (void)_analyze:(id)arg1;
-- (id)transcodeFragment:(id)arg1;
-- (void)_analyzeFragmentRemotely:(id)arg1 retryOnConnectionInterruption:(_Bool)arg2;
+- (void)_enterErrorState;
+- (void)_requestDidEnd:(id)arg1;
+- (void)_handleError:(long long)arg1 request:(id)arg2 description:(id)arg3 underlyingError:(id)arg4;
+- (void)_handleError:(long long)arg1 request:(id)arg2 underlyingError:(id)arg3;
+- (void)_handleError:(long long)arg1 request:(id)arg2 description:(id)arg3;
+- (void)_handleError:(long long)arg1 request:(id)arg2;
+- (void)_handleDidNotAnalyzeRequest:(id)arg1 withResult:(id)arg2;
+- (void)_handleDidNotAnalyzeRequest:(id)arg1 resultCode:(long long)arg2 description:(id)arg3;
+- (void)_handleDidNotAnalyzeRequest:(id)arg1 resultCode:(long long)arg2;
+- (void)_didFailAnalysisForRequest:(id)arg1 withError:(id)arg2;
+- (void)_didNotAnalyzeRequest:(id)arg1 withResult:(id)arg2;
+- (void)_didAnalyzeRequest:(id)arg1 withResult:(id)arg2;
+- (void)_willAnalyzeRequest:(id)arg1;
+- (void)_handleDidAnalyzeRequest:(id)arg1 withResult:(id)arg2;
+- (void)_handleDidAnalyzeRequest:(id)arg1;
+- (void)_analyzeRequestLocally:(id)arg1;
+- (void)_analyzeRequestRemotely:(id)arg1 retryOnConnectionInterruption:(_Bool)arg2;
+- (void)_analyzeRequest:(id)arg1;
+- (void)processPendingRequests;
+- (unsigned long long)pendingRequestsCount;
+- (_Bool)_checkRequest:(id)arg1;
 - (void)clearPendingFragments;
-- (void)_analyzeIfPossible:(id)arg1;
+@property(readonly) NSArray *pendingRequests;
+- (void)_scheduleRequest:(id)arg1;
 - (void)analyzeFragment:(id)arg1;
-- (void)_createSystemResourceUsageMonitor;
 - (id)initWithConfiguration:(id)arg1 identifier:(id)arg2;
-@property long long currentSystemResourceUsageLevel; // @synthesize currentSystemResourceUsageLevel=_currentSystemResourceUsageLevel;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

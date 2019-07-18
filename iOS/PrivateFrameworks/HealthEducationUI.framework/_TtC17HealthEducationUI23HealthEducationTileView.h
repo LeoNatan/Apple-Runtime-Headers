@@ -6,30 +6,19 @@
 
 #import <UIKit/UIView.h>
 
-@class NSLayoutConstraint, UIImageView, UILabel;
-
 @interface _TtC17HealthEducationUI23HealthEducationTileView : UIView
 {
     // Error parsing type: , name: delegate
-    // Error parsing type: , name: titleLabel
-    // Error parsing type: , name: backgroundImageView
-    // Error parsing type: , name: sashView
-    // Error parsing type: , name: trailingTitleLabelConstraint
-    // Error parsing type: , name: leadingTitleLabelConstraint
+    // Error parsing type: , name: $__lazy_storage_$_titleLabel
+    // Error parsing type: , name: $__lazy_storage_$_backgroundImageView
+    // Error parsing type: , name: $__lazy_storage_$_sashView
 }
 
 - (void).cxx_destruct;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (void)didTapTileView:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)awakeFromNib;
 - (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;
-@property(nonatomic) __weak NSLayoutConstraint *leadingTitleLabelConstraint; // @synthesize leadingTitleLabelConstraint;
-@property(nonatomic) __weak NSLayoutConstraint *trailingTitleLabelConstraint; // @synthesize trailingTitleLabelConstraint;
-@property(nonatomic) __weak UIView *sashView; // @synthesize sashView;
-@property(nonatomic) __weak UIImageView *backgroundImageView; // @synthesize backgroundImageView;
-@property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

@@ -59,6 +59,7 @@ __attribute__((visibility("hidden")))
         char isChangingProfile;
         char needsUpdateProfile;
         char wasPreviousUIElementInteractingBeforeJump;
+        unsigned int _mightBeMarzipanApp:2;
     } _sraFlags;
     struct os_unfair_lock_s _uiElementLock;
     BOOL _isXcodeApplication;
@@ -86,6 +87,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned long long)_hotSpotHashForElement:(id)arg1;
++ (BOOL)_canHandleFKACursorFeedbackForElement:(id)arg1;
 + (id)applicationWithPSN:(struct ProcessSerialNumber)arg1;
 + (void)initialize;
 + (id)contentChooserSerialQueue;
@@ -182,7 +184,6 @@ __attribute__((visibility("hidden")))
 - (void)handleBrailleRoutingEvent:(id)arg1 request:(id)arg2;
 - (BOOL)_handleRoutingMovesWithOffset:(long long)arg1 uiElement:(id)arg2 request:(id)arg3;
 - (void)_brailleRoutingMoveToElement:(id)arg1;
-- (BOOL)_handleBrailleRoutingWrapsWithOffset:(long long)arg1 uiElement:(id)arg2 request:(id)arg3;
 - (BOOL)_performActionFromBrailleRoutingEventWithIndex:(id)arg1 uiElement:(id)arg2 request:(id)arg3;
 - (unsigned long long)_getNextUIElementID;
 - (BOOL)canInitiallyFocusOnRole:(id)arg1;
@@ -436,7 +437,10 @@ __attribute__((visibility("hidden")))
 - (void)_setKeyboardFocusedUIElement:(id)arg1 outputRequest:(id)arg2;
 - (BOOL)_isDeepKeyboardChildSynchronizedWithVoiceOver:(id)arg1;
 - (void)addKeyboardSyncContextForElement:(id)arg1 previousKeyboardChild:(id)arg2 request:(id)arg3;
+- (void)_fullKeyboardAccessCursorDidChange:(id)arg1;
+- (void)_handleFKACursorChangeToElement:(id)arg1;
 - (void)_keyboardFocusDidChange:(id)arg1;
+- (void)_announcementRequested:(id)arg1;
 - (void)_textSelectionDidChange:(id)arg1;
 - (void)dispatchVerifyValidFocusChain;
 - (void)_verifyValidFocusChain;

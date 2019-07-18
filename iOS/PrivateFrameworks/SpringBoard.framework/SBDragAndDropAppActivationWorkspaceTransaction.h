@@ -11,14 +11,15 @@
 #import <SpringBoard/UIDragInteractionDelegate_Private-Protocol.h>
 #import <SpringBoard/UIDropInteractionDelegate-Protocol.h>
 
-@class NSMutableArray, NSMutableSet, NSString, SBAppPlatterDragPreview, SBApplicationDropSession, SBApplicationSceneUpdateTransaction, SBDeviceApplicationSceneHandle, SBFloatingDockWindowLevelAssertion, SBFluidSwitcherViewController, SBLayoutElement, SBMainDisplayLayoutState, SBMainDisplaySceneLayoutViewController, SBMainWorkspaceTransitionRequest, SBMedusaSettings, SBToAppsWorkspaceTransaction, SBTouchHistory, UIViewFloatAnimatableProperty;
-@protocol BSInvalidatable;
+@class CADisplayLink, NSMutableArray, NSMutableSet, NSString, NSUUID, SBAppPlatterDragPreview, SBApplicationDropSession, SBApplicationSceneUpdateTransaction, SBDeviceApplicationSceneHandle, SBFluidSwitcherGesture, SBFluidSwitcherViewController, SBLayoutElement, SBMainDisplayLayoutState, SBMainDisplaySceneLayoutViewController, SBMainWorkspaceTransitionRequest, SBMedusaSettings, SBToAppsWorkspaceTransaction, SBTouchHistory, UIViewFloatAnimatableProperty;
+@protocol BSInvalidatable, SBDragAndDropAppActivationWorkspaceTransactionDelegate;
 
 @interface SBDragAndDropAppActivationWorkspaceTransaction : SBMainWorkspaceTransaction <SBWorkspaceApplicationSceneTransitionContextDelegate, SBSceneLayoutWorkspaceTransactionObserver, UIDragInteractionDelegate_Private, UIDropInteractionDelegate>
 {
     SBFluidSwitcherViewController *_mainSwitcherContentController;
     SBMainDisplaySceneLayoutViewController *_sceneLayoutViewController;
     SBFluidSwitcherViewController *_floatingSwitcherContentController;
+    id <SBDragAndDropAppActivationWorkspaceTransactionDelegate> _delegate;
     SBMainDisplayLayoutState *_initialLayoutState;
     SBMainDisplayLayoutState *_currentLayoutState;
     SBMainDisplayLayoutState *_finalLayoutState;
@@ -39,6 +40,8 @@
     _Bool _windowDragEnteredPlatterZone;
     _Bool _windowLiftAnimationCompleted;
     SBApplicationSceneUpdateTransaction *_sceneUpdateTransactionForWindowDrag;
+    CADisplayLink *_displayLinkForWindowDrag;
+    long long _windowDragPauseCounter;
     unsigned long long _blurState;
     long long _blurringElementViewControllers;
     long long _resizingElementViewControllers;
@@ -46,17 +49,22 @@
     NSMutableSet *_pendingSceneUpdatesTransactions;
     SBAppPlatterDragPreview *_activePlatterPreview;
     id <BSInvalidatable> _deferOrientationUpdatesForDragAndDropAssertion;
-    SBFloatingDockWindowLevelAssertion *_floatingDockWindowLevelAssertion;
     SBTouchHistory *_touchHistory;
     SBMedusaSettings *_medusaSettings;
     NSMutableArray *_statusBarAssertions;
+    NSUUID *_gestureID;
+    SBFluidSwitcherGesture *_dragAndDropGesture;
 }
 
++ (double)prototypeSettingsWindowTearOffDraggingFloatingActivationWidth;
++ (double)prototypeSettingsWindowTearOffDraggingSideActivationWidth;
 + (double)prototypeSettingsContentDraggingFloatingActivationWidth;
 + (double)prototypeSettingsContentDraggingSideActivationWidth;
 + (double)prototypeSettingsContentDraggingCommandeerWidth;
 + (struct CGSize)prototypeSettingsFullscreenActivationRegionSize;
 + (double)prototypeSettingsSideActivationGutterSize;
++ (_Bool)isDragOverSideGutterRegionsAtLocation:(struct CGPoint)arg1 inBounds:(struct CGRect)arg2 totalContentDragGutterWidth:(double)arg3;
++ (_Bool)isDragOverFullscreenRegionAtLocation:(struct CGPoint)arg1 inBounds:(struct CGRect)arg2;
 + (_Bool)shouldTrackLocationOfDropSession:(id)arg1 inSceneLayoutViewController:(id)arg2 isCurrentlyTracking:(_Bool)arg3;
 + (_Bool)shouldTrackLocationOfDropSession:(id)arg1 inSceneLayoutViewController:(id)arg2;
 - (void).cxx_destruct;
@@ -65,7 +73,9 @@
 - (id)layoutStateForApplicationTransitionContext:(id)arg1;
 - (id)resizeUIAnimationFactory;
 - (id)_sideLayoutElementViewController;
+- (id)_sideApplicationLayoutElementViewController;
 - (id)_primaryLayoutElementViewController;
+- (id)_primaryApplicationLayoutElementViewController;
 - (id)_createPlatterPreviewForApplication:(id)arg1 withSourceViewProvider:(id)arg2 dropSession:(id)arg3;
 - (long long)_layoutRoleForDropAction:(long long)arg1;
 - (void)_updateAnchorPointForPlatterPreview:(id)arg1 dragPreview:(id)arg2 withSourceViewBounds:(struct CGRect)arg3 location:(struct CGPoint)arg4;
@@ -80,14 +90,21 @@
 - (_Bool)_showResizeUI;
 - (_Bool)_shouldPushInSceneLayoutViewControllerForDropAction:(long long)arg1;
 - (void)_updateCurrentDropActionForSession:(id)arg1;
+- (struct CGRect)_platterFrameInSwitcherView;
+- (_Bool)_canInterruptForCurrentDropAction;
 - (_Bool)_shouldComplete;
 - (void)_didInterruptWithReason:(id)arg1;
+- (void)_willInterruptForTransitionRequest:(id)arg1;
 - (void)_willInterruptWithReason:(id)arg1;
 - (_Bool)canInterruptForTransitionRequest:(id)arg1;
 - (_Bool)_canBeInterrupted;
 - (void)_childTransactionDidComplete:(id)arg1;
+- (void)_endDragAndDropFluidGesture;
 - (void)_didComplete;
 - (void)_begin;
+- (id)_currentGestureEventForGesture:(id)arg1;
+- (long long)_gestureType;
+- (unsigned long long)_gestureModifierPhaseForGestureState:(long long)arg1;
 - (void)_addChildWorkspaceTransaction:(id)arg1;
 - (_Bool)_shouldFailLayoutStateTransitionForWindowDrag;
 - (void)_runFinalLayoutStateTransaction;
@@ -102,11 +119,13 @@
 - (void)_setupResizeAnimatableProperty;
 - (void)_updateLayoutElementViewControllerBlurringWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateLayoutElementViewControllerCornerRadiusWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_updateSeparatorNubStyleWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateLayoutElementViewControllerDarkeningWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateLayoutElementViewControllersWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateLayoutElementViewControllerStatusBars;
 - (void)_updateLayoutElementViewControllerForDropCompletion;
 - (void)_updateForWindowDragForSession:(id)arg1;
+- (void)_displayLinkDidUpdate:(id)arg1;
 - (void)_setStatusBarsHidden:(_Bool)arg1;
 - (void)_invalidateStatusBarAssertions;
 - (void)_acquireStatusBarAssertions;
@@ -135,7 +154,7 @@
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
 - (_Bool)matchesUIDragDropSession:(id)arg1;
 - (_Bool)matchesApplicationDropSession:(id)arg1;
-- (id)initWithTransitionRequest:(id)arg1 mainSwitcherContentController:(id)arg2 floatingSwitcherContentController:(id)arg3 sceneLayoutViewController:(id)arg4 dropSession:(id)arg5;
+- (id)initWithTransitionRequest:(id)arg1 mainSwitcherContentController:(id)arg2 floatingSwitcherContentController:(id)arg3 sceneLayoutViewController:(id)arg4 dropSession:(id)arg5 delegate:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

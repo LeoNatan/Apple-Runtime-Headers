@@ -9,10 +9,9 @@
 @class UITouch, UIView, _UIPreviewPlatterPresentationController;
 
 @protocol _UIPreviewPlatterPresentationControllerDelegate <UIAdaptivePresentationControllerDelegate>
-- (void)_previewPlatterPresentationControllerDidTapPreview:(_UIPreviewPlatterPresentationController *)arg1;
 - (UIView *)actualPlatterContainerViewForPresentationController:(_UIPreviewPlatterPresentationController *)arg1;
 - (void)_previewPlatterPresentationController:(_UIPreviewPlatterPresentationController *)arg1 beginDragWithTouch:(UITouch *)arg2;
-- (void)_previewPlatterPresentationControllerDidDismiss:(_UIPreviewPlatterPresentationController *)arg1;
-- (void)_previewPlatterPresentationControllerWantsToBeDismissed:(_UIPreviewPlatterPresentationController *)arg1;
+- (void)_previewPlatterPresentationControllerWantsToBeDismissed:(_UIPreviewPlatterPresentationController *)arg1 withReason:(unsigned long long)arg2 completion:(void (^)(void))arg3;
+- (void)_previewPlatterPresentationControllerDidTapPreview:(_UIPreviewPlatterPresentationController *)arg1;
 @end
 

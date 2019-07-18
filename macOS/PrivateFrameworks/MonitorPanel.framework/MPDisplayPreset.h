@@ -15,8 +15,10 @@
     NSDictionary *_presetDictionary;
     unsigned long long _presetIndex;
     BOOL _isWritable;
+    long long _presetGroup;
 }
 
+@property(readonly) long long presetGroup; // @synthesize presetGroup=_presetGroup;
 @property(readonly) BOOL isWritable; // @synthesize isWritable=_isWritable;
 @property(readonly) unsigned long long presetIndex; // @synthesize presetIndex=_presetIndex;
 @property(readonly) NSDictionary *presetDictionary; // @synthesize presetDictionary=_presetDictionary;

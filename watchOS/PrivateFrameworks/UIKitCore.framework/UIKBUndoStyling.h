@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, UIColor;
+@class UIBlurEffect, UIColor, UIVibrancyEffect;
 
 __attribute__((visibility("hidden")))
 @interface UIKBUndoStyling : NSObject
@@ -14,8 +14,10 @@ __attribute__((visibility("hidden")))
     _Bool _undoRedoIconOnly;
     _Bool _isRTL;
     _Bool _cutCopyPasteIconOnly;
-    NSArray *_HUDbackgroundEffects;
+    UIBlurEffect *_backgroundBlurEffect;
+    UIVibrancyEffect *_backgroundVibrancyEffect;
     UIColor *_HUDbackgroundColor;
+    UIColor *_HUDShadowColor;
     UIColor *_buttonGlyphColorEnabled;
     UIColor *_buttonGlyphColorPressed;
     UIColor *_buttonGlyphColorDisabled;
@@ -31,10 +33,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor *buttonGlyphColorDisabled; // @synthesize buttonGlyphColorDisabled=_buttonGlyphColorDisabled;
 @property(retain, nonatomic) UIColor *buttonGlyphColorPressed; // @synthesize buttonGlyphColorPressed=_buttonGlyphColorPressed;
 @property(retain, nonatomic) UIColor *buttonGlyphColorEnabled; // @synthesize buttonGlyphColorEnabled=_buttonGlyphColorEnabled;
+@property(retain, nonatomic) UIColor *HUDShadowColor; // @synthesize HUDShadowColor=_HUDShadowColor;
 @property(retain, nonatomic) UIColor *HUDbackgroundColor; // @synthesize HUDbackgroundColor=_HUDbackgroundColor;
-@property(retain, nonatomic) NSArray *HUDbackgroundEffects; // @synthesize HUDbackgroundEffects=_HUDbackgroundEffects;
+@property(retain, nonatomic) UIVibrancyEffect *backgroundVibrancyEffect; // @synthesize backgroundVibrancyEffect=_backgroundVibrancyEffect;
+@property(retain, nonatomic) UIBlurEffect *backgroundBlurEffect; // @synthesize backgroundBlurEffect=_backgroundBlurEffect;
 - (void).cxx_destruct;
-- (id)backgroundBlurEffects:(int)arg1;
+- (void)updateBackgroundForAppearance:(int)arg1;
+- (id)vibrancyEffectForBlur:(id)arg1;
 - (id)initWithKeyboardAppearance:(int)arg1 isRTL:(_Bool)arg2;
 
 @end

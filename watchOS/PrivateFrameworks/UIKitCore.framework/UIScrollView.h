@@ -13,7 +13,7 @@
 #import <UIKitCore/UIScrollViewDelayedTouchesBeganGestureRecognizerClient-Protocol.h>
 #import <UIKitCore/_UIScrollToTopView-Protocol.h>
 
-@class CADisplayLink, NSArray, NSHashTable, NSISVariable, NSMutableDictionary, NSString, NSTimer, UIGestureRecognizer, UIImageView, UILayoutGuide, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRefreshControl, UIScrollViewDelayedTouchesBeganGestureRecognizer, UIScrollViewDirectionalPressGestureRecognizer, UIScrollViewPanGestureRecognizer, UIScrollViewPinchGestureRecognizer, UISwipeGestureRecognizer, _UIAutoScrollAssistant, _UIFocusFastScrollingController, _UIFocusFastScrollingIndexBarView, _UIFocusFastScrollingRequest, _UIStaticScrollBar, _UIWorkIntervalProxy;
+@class CADisplayLink, NSArray, NSHashTable, NSISVariable, NSMutableDictionary, NSString, NSTimer, UIGestureRecognizer, UILayoutGuide, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRefreshControl, UIScrollViewDelayedTouchesBeganGestureRecognizer, UIScrollViewDirectionalPressGestureRecognizer, UIScrollViewPanGestureRecognizer, UIScrollViewPinchGestureRecognizer, UISwipeGestureRecognizer, _UIAutoScrollAssistant, _UIFocusFastScrollingController, _UIFocusFastScrollingIndexBarView, _UIFocusFastScrollingRequest, _UIScrollViewScrollIndicator, _UIStaticScrollBar, _UIWorkIntervalProxy;
 @protocol UICoordinateSpace, UIFocusItem, UIScrollViewDelegate, _UIScrollViewLayoutObserver, _UIScrollViewScrollableAncestor;
 
 @interface UIScrollView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelayedTouchesBeganGestureRecognizerClient, _UIScrollToTopView, UIIndexBarAccessoryViewDelegate, NSCoding, UIFocusItemScrollableContainer>
@@ -24,8 +24,6 @@
     struct UIEdgeInsets _contentInset;
     float _refreshControlContentInsetHeight;
     struct UIEdgeInsets _contentScrollInset;
-    UIImageView *_verticalScrollIndicator;
-    UIImageView *_horizontalScrollIndicator;
     _UIStaticScrollBar *_staticScrollBar;
     struct UIEdgeInsets _scrollIndicatorInset;
     struct UIEdgeInsets _verticalScrollIndicatorInsets;
@@ -103,6 +101,8 @@
     struct CGPoint _deferredUpdateTargetContentOffset;
     struct CGSize _deferredUpdateTargetContentSize;
     NSTimer *_scrollIndicatorHideDelayTimer;
+    _UIScrollViewScrollIndicator *_verticalScrollIndicator;
+    _UIScrollViewScrollIndicator *_horizontalScrollIndicator;
     struct {
         unsigned int tracking:1;
         unsigned int dragging:1;
@@ -566,7 +566,8 @@
 - (void)_updatePanGesture;
 - (struct CADoublePoint)_rubberBandContentOffsetForOffset:(struct CADoublePoint)arg1 outsideX:(_Bool *)arg2 outsideY:(_Bool *)arg3;
 - (struct CADoublePoint)_newScrollOffsetForScrubReturningAnimated:(_Bool *)arg1;
-- (struct CADoublePoint)_clampScrubbingScrollOffsetToBounds:(struct CADoublePoint)arg1;
+- (struct CADoublePoint)_clampScrollOffsetToBounds:(struct CADoublePoint)arg1;
+@property(readonly, nonatomic, getter=_isScrubbing) _Bool _scrubbing;
 - (_Bool)_canScrubWithTouch:(id)arg1;
 - (int)_scrubbingForPoint:(struct CGPoint)arg1;
 - (void)setShowBackgroundShadow:(_Bool)arg1;
@@ -695,6 +696,8 @@
 - (void)_startDraggingParent:(id)arg1;
 - (_Bool)_stopBeingDraggedByChild:(id)arg1;
 - (_Bool)_startBeingDraggedByChild:(id)arg1;
+- (id)_actingParentScrollView;
+- (id)_actingParentViewForGestureRecognizers;
 - (void)_updatePagingGesture;
 - (id)_scrollViewTouchDelayGesture;
 - (void)_updatePinchGesture;

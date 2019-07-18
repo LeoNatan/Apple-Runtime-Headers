@@ -86,8 +86,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)dynamicallyUpdatesPrefersFullSizePreviews;
 @property(readonly, nonatomic) BOOL prefersFullSizePreview;
 - (BOOL)preventsSimultaneousDragFromView:(id)arg1;
-- (void)_unregisterContextIDsForAdditionalDragEvents;
-- (void)_registerContextIDsForAdditionalDragEvents;
 - (id)initWithDragManager:(id)arg1 configuration:(id)arg2;
 - (BOOL)touchRoutingPolicyContainsContextIDToAlwaysSend:(unsigned int)arg1;
 - (id)touchRoutingPolicy;

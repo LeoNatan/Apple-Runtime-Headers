@@ -7,13 +7,13 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (Utils)
-- (id)dataForKey:(id)arg1;
-- (id)setForKey:(id)arg1;
-- (id)arrayForKey:(id)arg1;
-- (id)dictionaryForKey:(id)arg1;
-- (BOOL)boolForKey:(id)arg1 keyPresent:(char *)arg2;
-- (BOOL)boolForKey:(id)arg1;
-- (id)numberForKey:(id)arg1;
-- (id)stringForKey:(id)arg1;
+- (id)exMRL_dataForKey:(id)arg1;
+- (id)exMRL_setForKey:(id)arg1;
+- (id)exMRL_arrayForKey:(id)arg1;
+- (id)exMRL_dictionaryForKey:(id)arg1;
+- (BOOL)exMRL_boolForKey:(id)arg1 keyPresent:(char *)arg2;
+- (BOOL)exMRL_boolForKey:(id)arg1;
+- (id)exMRL_numberForKey:(id)arg1;
+- (id)exMRL_stringForKey:(id)arg1;
 @end
 

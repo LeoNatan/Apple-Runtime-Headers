@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)deviceName;
 + (id)hwModel;
 + (id)osVersion;
 + (id)systemVersion;

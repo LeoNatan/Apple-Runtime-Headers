@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     long long _displayItemOptions;
     NSDictionary *_additionalPredicates;
     NSPredicate *_filter;
-    CDUnknownBlockType _internalErrorHandler;
+    CDUnknownBlockType _errorHandler;
     HRProfile *_profile;
     HKConcept *_concept;
     NSMutableArray *_medicalRecordGroups;
@@ -51,7 +51,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *medicalRecordGroups; // @synthesize medicalRecordGroups=_medicalRecordGroups;
 @property(retain, nonatomic) HKConcept *concept; // @synthesize concept=_concept;
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
-@property(copy, nonatomic) CDUnknownBlockType internalErrorHandler; // @synthesize internalErrorHandler=_internalErrorHandler;
+@property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSPredicate *filter; // @synthesize filter=_filter;
 @property(readonly, copy, nonatomic) NSDictionary *additionalPredicates; // @synthesize additionalPredicates=_additionalPredicates;
 @property(nonatomic) long long displayItemOptions; // @synthesize displayItemOptions=_displayItemOptions;
@@ -78,6 +78,7 @@ __attribute__((visibility("hidden")))
 - (void)stopCollectingData;
 - (void)startCollectingDataWithUpdateHandler:(CDUnknownBlockType)arg1;
 - (void)setSampleTypes:(id)arg1 predicatesPerType:(id)arg2 accountsPredicate:(id)arg3;
+- (void)reload;
 - (id)initWithProfile:(id)arg1 displayItemOptions:(long long)arg2 sampleTypes:(id)arg3 filter:(id)arg4 additionalPredicates:(id)arg5 sortDescriptors:(id)arg6;
 - (id)initWithProfile:(id)arg1 concept:(id)arg2 displayItemOptions:(long long)arg3 sampleTypes:(id)arg4 filter:(id)arg5 additionalPredicates:(id)arg6 sortDescriptors:(id)arg7;
 

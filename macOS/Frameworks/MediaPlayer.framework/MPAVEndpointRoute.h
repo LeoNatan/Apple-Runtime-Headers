@@ -34,6 +34,7 @@
 - (long long)routeType;
 - (id)groupUID;
 - (id)routeUID;
+- (BOOL)isLowLatencyRoute;
 - (BOOL)isRoutingToWirelessDevice;
 - (BOOL)isDeviceSpeakerRoute;
 @property(readonly, nonatomic) BOOL canModifyGroupMembership;

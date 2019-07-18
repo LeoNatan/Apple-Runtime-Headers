@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)_focusedItemHighlightView;
+- (double)_shim_heightForCustomizingItems;
 - (void)_shim_updateTabBarItemView:(id)arg1;
 - (void)_shim_layoutItemsOnly;
 - (void)_shim_setShadowHidden:(BOOL)arg1;

@@ -30,6 +30,7 @@
 @property(readonly, nonatomic) NSString *accessoryName; // @synthesize accessoryName=_accessoryName;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
+- (void)storeIdentifierFromUnassociatedAccessory:(id)arg1 setupCode:(id)arg2;
 - (void)cancelCleanupTimer;
 - (void)startCleanupTimerForDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

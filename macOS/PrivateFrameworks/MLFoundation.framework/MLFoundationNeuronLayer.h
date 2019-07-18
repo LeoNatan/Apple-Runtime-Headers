@@ -8,7 +8,7 @@
 
 #import <MLFoundation/MLFoundationLayerCompiling-Protocol.h>
 
-@class MLFoundationNeuronDescriptor;
+@class MLFoundationNeuronDescriptor, NSString;
 
 @interface MLFoundationNeuronLayer : MLFoundationLayer <MLFoundationLayerCompiling>
 {
@@ -19,10 +19,15 @@
 + (id)new;
 @property(readonly, nonatomic) MLFoundationNeuronDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 - (void).cxx_destruct;
-- (id)description;
-- (void)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
+@property(readonly, copy) NSString *description;
+- (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
 - (id)initWithDescriptor:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

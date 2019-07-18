@@ -140,6 +140,7 @@
 - (void)setFrameSize:(struct CGSize)arg1;
 - (struct CGSize)minViewerSize;
 - (void)_setOverriddenMaxWidth:(double)arg1;
+- (struct CGSize)sizeThatFitsProposedLayoutSize:(struct CGSize)arg1;
 @property(readonly) BOOL participatesInOverflow;
 @property(readonly) double preferredTrailingPosition;
 @property long long priorityIndex;

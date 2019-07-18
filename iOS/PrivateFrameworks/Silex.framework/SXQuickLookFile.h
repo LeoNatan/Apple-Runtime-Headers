@@ -12,13 +12,15 @@
 {
     NSURL *_fileURL;
     NSString *_title;
+    NSURL *_shareURL;
 }
 
+@property(readonly, nonatomic) NSURL *shareURL; // @synthesize shareURL=_shareURL;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void).cxx_destruct;
-- (id)initWithFileURL:(id)arg1 title:(id)arg2;
-- (id)initWithFileURL:(id)arg1;
+- (id)initWithFileURL:(id)arg1 title:(id)arg2 shareURL:(id)arg3;
+- (id)initWithFileURL:(id)arg1 shareURL:(id)arg2;
 - (id)previewItemTitle;
 - (id)previewItemURL;
 

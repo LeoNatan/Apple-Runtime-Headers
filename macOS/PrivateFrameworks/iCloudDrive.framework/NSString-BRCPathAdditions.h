@@ -14,6 +14,7 @@
 + (id)icd_pathWithFileSystemRepresentation:(const char *)arg1;
 + (id)icd_basePathForACAccountID:(id)arg1;
 + (id)icd_currentSupportDir;
++ (id)_icd_currentSupportDir;
 - (id)icd_pathRelativeToDirectory:(unsigned long long)arg1;
 - (id)icd_stringByDeletingPathBounceNo:(unsigned long long *)arg1;
 - (id)icd_stringByDeletingPathBounceNo:(unsigned long long *)arg1 andPathExtension:(id *)arg2;

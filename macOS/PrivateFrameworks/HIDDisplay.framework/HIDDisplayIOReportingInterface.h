@@ -25,6 +25,7 @@
 - (void)setInputDataHandler:(CDUnknownBlockType)arg1;
 - (id)getHIDDevices;
 - (BOOL)setupIOReporting;
+- (id)initWithService:(unsigned int)arg1;
 - (id)initWithContainerID:(id)arg1;
 
 @end

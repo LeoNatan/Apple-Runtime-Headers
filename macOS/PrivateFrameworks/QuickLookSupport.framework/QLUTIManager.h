@@ -11,6 +11,7 @@
 }
 
 + (id)screentimeiWorkBundleForUTI:(id)arg1;
++ (id)typesForWhichExternalGeneratorsArePreferred;
 + (id)internallySupportedTypes;
 + (id)supportedWebViewTypes;
 + (id)supportedCSVTypes;

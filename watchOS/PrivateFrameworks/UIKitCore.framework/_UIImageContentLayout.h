@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     struct {
         unsigned int contentsIsGenerator:1;
         unsigned int contentsIsCGImage:1;
+        unsigned int rendersContentAtNaturalSize:1;
     } _flags;
     id _contents;
     UIColor *_contentsMultiplyColor;
@@ -28,13 +29,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGAffineTransform contentsTransform; // @synthesize contentsTransform=_contentsTransform;
 - (void).cxx_destruct;
 - (id)description;
-- (struct UIEdgeInsets)_contentInsetsForSource:(id)arg1 target:(id)arg2 scaleFactor:(float)arg3;
 - (struct CGImage *)CGImageContents;
 - (_Bool)hasCGImageContents;
+- (_Bool)rendersContentsAtNaturalSize;
 - (_Bool)hasContents;
 @property(readonly, nonatomic) UIColor *contentsMultiplyColor;
 @property(readonly, nonatomic) id contents;
 - (void)_materializeContentsIfNeeded;
+- (void)_prepareContentOfSize:(struct CGSize)arg1 source:(id)arg2 target:(id)arg3;
 - (id)initWithSource:(id)arg1 target:(id)arg2;
 
 @end

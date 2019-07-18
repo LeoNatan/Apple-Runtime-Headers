@@ -30,6 +30,7 @@
 @property(readonly, nonatomic) NSMutableDictionary *_sectionIndexesByDataSourceIdentifier; // @synthesize _sectionIndexesByDataSourceIdentifier=__sectionIndexesByDataSourceIdentifier;
 - (void).cxx_destruct;
 - (id)description;
+- (id)indexPathSetByReplacingDataSourceIdentifier:(unsigned long long)arg1 withDataSourceIdentifier:(unsigned long long)arg2;
 - (struct PXSimpleIndexPath)indexPathLessThanIndexPath:(struct PXSimpleIndexPath)arg1;
 - (struct PXSimpleIndexPath)indexPathGreaterThanIndexPath:(struct PXSimpleIndexPath)arg1;
 - (struct PXSimpleIndexPath)lastItemIndexPathForDataSourceIdentifier:(unsigned long long)arg1;

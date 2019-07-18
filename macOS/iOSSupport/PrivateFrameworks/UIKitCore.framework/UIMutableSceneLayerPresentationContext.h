@@ -18,6 +18,7 @@
 @property(nonatomic) double alpha; // @dynamic alpha;
 @property(nonatomic, getter=isClippingDisabled) BOOL clippingDisabled; // @dynamic clippingDisabled;
 @property(nonatomic, getter=isHidden) BOOL hidden; // @dynamic hidden;
+@property(nonatomic) unsigned long long renderingMode; // @dynamic renderingMode;
 @property(retain, nonatomic) UITransformer *transformer; // @dynamic transformer;
 
 @end

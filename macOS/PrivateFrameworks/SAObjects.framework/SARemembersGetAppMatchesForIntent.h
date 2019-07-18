@@ -8,7 +8,7 @@
 
 #import <SAObjects/SAAceSerializable-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, SAIntentGroupProtobufMessage;
 
 @interface SARemembersGetAppMatchesForIntent : SABaseClientBoundCommand <SAAceSerializable>
 {
@@ -18,6 +18,7 @@
 + (id)getAppMatchesForIntent;
 - (BOOL)mutatingCommand;
 - (BOOL)requiresResponse;
+@property(retain, nonatomic) SAIntentGroupProtobufMessage *protoEncodedIntent;
 @property(copy, nonatomic) NSString *jsonEncodedIntent;
 @property(copy, nonatomic) NSArray *candidateBundleIDs;
 - (id)encodedClassName;

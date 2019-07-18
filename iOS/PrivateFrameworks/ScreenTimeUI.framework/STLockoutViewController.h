@@ -6,14 +6,15 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <ScreenTimeUI/CNContactViewControllerDelegate-Protocol.h>
 #import <ScreenTimeUI/LSApplicationWorkspaceObserverProtocol-Protocol.h>
 #import <ScreenTimeUI/STLockoutPolicyControllerDelegate-Protocol.h>
-#import <ScreenTimeUI/STLockoutViewControllerDelegate-Protocol.h>
+#import <ScreenTimeUI/STLockoutViewDelegate-Protocol.h>
 
 @class NSObject, NSString, SBSLockScreenService, STLockoutPolicyController, STLockoutView, UIAlertController, UIImage;
 @protocol OS_dispatch_group, STLockoutViewControllerDelegate;
 
-@interface STLockoutViewController : UIViewController <LSApplicationWorkspaceObserverProtocol, STLockoutPolicyControllerDelegate, STLockoutViewControllerDelegate>
+@interface STLockoutViewController : UIViewController <CNContactViewControllerDelegate, LSApplicationWorkspaceObserverProtocol, STLockoutPolicyControllerDelegate, STLockoutViewDelegate>
 {
     STLockoutView *_lockOutView;
     long long _style;
@@ -32,6 +33,7 @@
     _Bool _didFinishDismissing;
     UIImage *_appIcon;
     STLockoutPolicyController *_policyController;
+    long long _okButtonAction;
     id <STLockoutViewControllerDelegate> _viewControllerDelegate;
 }
 
@@ -42,12 +44,14 @@
 + (id)_bundleIdentifierForWebsiteURL:(id)arg1;
 + (id)_applicationNameForBundleIdentifier:(id)arg1;
 @property(nonatomic) __weak id <STLockoutViewControllerDelegate> viewControllerDelegate; // @synthesize viewControllerDelegate=_viewControllerDelegate;
+@property long long okButtonAction; // @synthesize okButtonAction=_okButtonAction;
 @property(readonly, nonatomic) _Bool didFinishDismissing; // @synthesize didFinishDismissing=_didFinishDismissing;
 @property(nonatomic, getter=isForSnapshot) _Bool forSnapshot; // @synthesize forSnapshot=_forSnapshot;
 @property(retain, nonatomic) STLockoutPolicyController *policyController; // @synthesize policyController=_policyController;
 @property(retain, nonatomic) UIImage *appIcon; // @synthesize appIcon=_appIcon;
 - (void).cxx_destruct;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
+- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (void)_handleRestrictionsPINNotification:(id)arg1;
 - (void)_stopListeningForRestrictionsPINEntryNotification;
 - (void)_startListeningForRestrictionsPINEntryNotification;
@@ -69,14 +73,6 @@
 - (void)_doInitialAnimationExitingGroup:(id)arg1;
 - (void)_showInitialAnimationIfNeeded;
 - (_Bool)_isShowingInitialAnimation;
-- (void)setHourglassState:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)setHourglassState:(id)arg1 animated:(_Bool)arg2;
-- (void)setHourglassState:(id)arg1;
-- (_Bool)isHourglassState:(id)arg1;
-- (void)setBackdropState:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)setBackdropState:(id)arg1 animated:(_Bool)arg2;
-- (void)setBackdropState:(id)arg1;
-- (_Bool)isBackdropState:(id)arg1;
 - (void)_changeStateToDismissing;
 - (void)_changeStateToContactBlocked;
 - (void)_changeStateToDisapproved;
@@ -84,6 +80,7 @@
 - (void)_changeStateToPending;
 - (void)_changeStateToAsk;
 - (void)_changeStateToWarn;
+- (void)_changeMainButtonToAddContact;
 - (void)_changeMainButtonToEnterScreenTimePasscode;
 - (void)_changeMainButtonToIgnoreLimit;
 - (void)_changeMainButtonToAskForMore;
@@ -92,6 +89,8 @@
 - (void)_authenticatedApproveForAdditionalTime:(double)arg1;
 - (_Bool)_authenticatedApproveActionSheet;
 - (void)_unlockWithSuccessMainCompletion:(CDUnknownBlockType)arg1;
+- (_Bool)_actionOK;
+- (_Bool)_actionAddContact;
 - (_Bool)_actionUnlockedEnterScreenTimePasscodeActionSheet;
 - (_Bool)_actionEnterScreenTimePasscodeActionSheet;
 - (_Bool)_actionUnlockedAskOrApproveActionSheet;
@@ -112,6 +111,7 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (id)initWithBundleIdentifier:(id)arg1 conversationContext:(id)arg2 contactStore:(id)arg3;
 - (id)initWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithWebsiteURL:(id)arg1;

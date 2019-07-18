@@ -17,6 +17,7 @@
     struct {
         unsigned int sortType:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _sortType;
     NSArray *_notes;
     NSArray *_taskLists;
@@ -27,6 +28,7 @@
 + (Class)tasksType;
 + (Class)taskListsType;
 + (Class)notesType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *tasks; // @synthesize tasks=_tasks;
 @property(copy, nonatomic) NSArray *taskLists; // @synthesize taskLists=_taskLists;
 @property(nonatomic) int sortType; // @synthesize sortType=_sortType;

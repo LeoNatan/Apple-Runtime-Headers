@@ -19,7 +19,6 @@
 }
 
 + (id)linkingObjectsProperties;
-+ (id)ignoredProperties;
 + (id)requiredProperties;
 + (id)defaultPropertyValues;
 + (id)className;

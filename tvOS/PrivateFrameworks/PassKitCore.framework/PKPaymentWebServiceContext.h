@@ -6,13 +6,17 @@
 
 #import <PassKitCore/PKWebServiceContext.h>
 
-@class NSArray, NSDate, NSDictionary, NSMutableDictionary, NSString, NSURL, PKPaymentWebServiceConfiguration, PKPaymentWebServiceRegion;
+@class NSArray, NSDate, NSDictionary, NSMutableDictionary, NSObject, NSString, NSURL, PKPaymentWebServiceConfiguration, PKPaymentWebServiceRegion;
+@protocol OS_dispatch_queue;
 
 @interface PKPaymentWebServiceContext : PKWebServiceContext
 {
     struct os_unfair_lock_s _lock_context;
     NSMutableDictionary *_verificationRequestsByPassUniqueID;
     NSDictionary *_regions;
+    NSObject<OS_dispatch_queue> *_queue;
+    struct os_unfair_lock_s _cacheLock;
+    NSMutableDictionary *_featureSupportedLangaugeCache;
     _Bool _devSigned;
     _Bool _transactionServiceDisabled;
     _Bool _messageServiceDisabled;
@@ -52,7 +56,8 @@
 @property(copy) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property long long version; // @synthesize version=_version;
 - (void).cxx_destruct;
-- (_Bool)deviceCheckInRequiredForRegion:(id)arg1;
+- (id)applyServicePreferredLangaugeForFeatureIdentifier:(unsigned long long)arg1;
+- (id)applyServiceLocalizationBundleForfeatureIdentifier:(unsigned long long)arg1;
 - (id)applyServiceFeaturesForRegionMeetingEnablementThreshold:(id)arg1;
 - (double)_contextProvisioningEnablementValue;
 - (id)betaPaymentNetworksForRegion:(id)arg1;
@@ -68,8 +73,11 @@
 - (void)removeVerificationRequestRecordForUniqueID:(id)arg1;
 - (id)verificationRequestRecordForUniqueID:(id)arg1;
 - (void)addVerificationRequestRecord:(id)arg1 forUniqueID:(id)arg2;
+- (void)_localizationUpdated;
+- (id)debugDescription;
 @property(retain) NSDictionary *regions;
 - (void)encodeWithCoder:(id)arg1;
+- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 

@@ -20,6 +20,7 @@
         unsigned int taskReference:1;
         unsigned int taskType:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     _INPBContactEventTrigger *_contactEventTrigger;
     _INPBDateTime *_createdDateTime;
     NSString *_identifier;
@@ -35,6 +36,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDataString *title; // @synthesize title=_title;
 @property(retain, nonatomic) _INPBTemporalEventTrigger *temporalEventTrigger; // @synthesize temporalEventTrigger=_temporalEventTrigger;
 @property(nonatomic) int taskType; // @synthesize taskType=_taskType;

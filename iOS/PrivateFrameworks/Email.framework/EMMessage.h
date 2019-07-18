@@ -18,6 +18,7 @@
 
 @interface EMMessage : EMRepositoryObject <EFLoggable, EMMessageBuilder, EMExtendedContentItem, EMMutableMessageListItem, EMMessageListItem, EMContentItem>
 {
+    unsigned long long _isEditable;
     NSArray *_mailboxes;
     NSArray *_mailboxObjectIDs;
     struct os_unfair_lock_s _mailboxesLock;
@@ -41,7 +42,6 @@
     CDUnknownBlockType _loaderBlock;
     id <ECEmailAddressConvertible> _senderAddress;
     NSArray *_bccList;
-    NSString *_mailbox;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -58,7 +58,6 @@
 + (id)predicateForMessagesWithObjectIDs:(id)arg1;
 + (id)predicateForMessageWithObjectID:(id)arg1;
 + (id)predicateForMessageWithItemID:(id)arg1 mailboxPredicate:(id)arg2 mailboxTypeResolver:(id)arg3;
-@property(copy, nonatomic) NSString *mailbox; // @synthesize mailbox=_mailbox;
 @property(copy, nonatomic) NSArray *bccList; // @synthesize bccList=_bccList;
 @property(retain, nonatomic) id <ECEmailAddressConvertible> senderAddress; // @synthesize senderAddress=_senderAddress;
 @property(copy, nonatomic) CDUnknownBlockType loaderBlock; // @synthesize loaderBlock=_loaderBlock;
@@ -107,6 +106,7 @@
 @property(readonly, copy, nonatomic) NSString *UTType;
 - (void)setAvailableRepresentations:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *availableRepresentations;
+@property(readonly) _Bool isEditable;
 @property(readonly) _Bool shouldArchiveByDefault;
 @property(readonly) _Bool supportsArchiving;
 @property(readonly) _Bool deleteMovesToTrash;
@@ -132,9 +132,12 @@
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
+- (id)cachedMetadataOfClass:(Class)arg1 forKey:(id)arg2;
+- (void)setCachedMetadata:(id)arg1 forKey:(id)arg2;
 - (void)_commonInitWithBuilder:(CDUnknownBlockType)arg1;
 - (id)initWithObjectID:(id)arg1 builder:(CDUnknownBlockType)arg2;
 - (id)initWithObjectID:(id)arg1;
+@property(nonatomic) _Bool isSinglePagePDF; // @dynamic isSinglePagePDF;
 - (void)setRepository:(id)arg1;
 @property(readonly, nonatomic) EMMessageRepository *repository;
 - (_Bool)isInManagedAccountWithSourceMailboxScope:(id)arg1;

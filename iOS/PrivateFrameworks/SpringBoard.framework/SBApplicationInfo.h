@@ -54,7 +54,6 @@
     _Bool _statusBarIsLegacy;
     _Bool _preventsLaunchInterfaceSplitting;
     _Bool _requiresHiDPI;
-    _Bool _disablesScreenJail;
     _Bool _alwaysLaunchesSuspended;
     _Bool _systemAppSupportsLocalNotifications;
     _Bool _disallowsNotificationCenter;
@@ -66,6 +65,7 @@
     _Bool _supports64Bit;
     _Bool _isNewsstand;
     _Bool _canChangeBackgroundStyle;
+    _Bool _allowNonDefaultBackgroundStyle;
     unsigned long long _applicationSizeInBytes;
     _Bool _ocelotApplication;
     _Bool _shouldLaunchWithLiveContentASAP;
@@ -105,7 +105,6 @@
 @property(readonly, nonatomic) unsigned long long uninstallCapability; // @synthesize uninstallCapability=_uninstallCapability;
 @property(readonly, nonatomic) _Bool systemAppSupportsLocalNotifications; // @synthesize systemAppSupportsLocalNotifications=_systemAppSupportsLocalNotifications;
 @property(readonly, nonatomic) _Bool shouldLaunchSuspendedAlways; // @synthesize shouldLaunchSuspendedAlways=_alwaysLaunchesSuspended;
-@property(readonly, nonatomic) _Bool disablesScreenJail; // @synthesize disablesScreenJail=_disablesScreenJail;
 @property(readonly, nonatomic) _Bool requiresHiDPI; // @synthesize requiresHiDPI=_requiresHiDPI;
 @property(readonly, nonatomic) _Bool preventsLaunchInterfaceSplitting; // @synthesize preventsLaunchInterfaceSplitting=_preventsLaunchInterfaceSplitting;
 @property(readonly, nonatomic) _Bool wasGameCenterEverEnabled; // @synthesize wasGameCenterEverEnabled=_wasGameCenterEverEnabled;
@@ -135,9 +134,9 @@
 - (void).cxx_destruct;
 - (unsigned long long)_calculateVoipClassWithEntitlements:(id)arg1;
 - (_Bool)_supportsApplicationType:(int)arg1;
-- (Class)_parseIconClassFromProxyInfo:(id)arg1;
 - (id)_configureTags:(id)arg1 hasVisibilityOverride:(_Bool)arg2;
 - (void)_loadFromProxy:(id)arg1;
+- (long long)backgroundStyle;
 - (_Bool)canChangeBackgroundStyle;
 - (_Bool)statusBarHiddenWhenVerticallyCompact;
 - (id)dataContainerURL;

@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <UINSToolbar> uins_toolbar; // @synthesize uins_toolbar=_uins_toolbar;
 @property(retain, nonatomic) NSObject<UINSTouchBarCoordinator> *touchBarCoordinator; // @synthesize touchBarCoordinator=_touchBarCoordinator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *uiWindows;
 - (struct CGSRegionObject *)_regionForOpaqueViewsBlockingDraggableFrame:(struct CGRect)arg1;
 - (void)setNeedsDragRegionsUpdate;
 - (id)_contextForLayerHosting;
@@ -87,6 +88,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSToolbar *toolbar;
 @property(nonatomic, getter=isTitlebarTransparent) BOOL titlebarTransparent;
 @property(nonatomic, getter=isTitlebarHidden) BOOL titlebarHidden;
+- (BOOL)_wantsFullScreenCleanupOnOrderOut;
 @property(nonatomic) BOOL autoHidesToolbarInFullScreen;
 @property(readonly, copy, nonatomic) NSString *sceneIdentifier;
 - (void)setWindowController:(id)arg1;

@@ -11,8 +11,10 @@ __attribute__((visibility("hidden")))
 {
     _Bool mIsUpdatingOpacity;
     double mDynamicOpacity;
+    _Bool _suppressesShadowsAndReflections;
 }
 
+@property(nonatomic) _Bool suppressesShadowsAndReflections; // @synthesize suppressesShadowsAndReflections=_suppressesShadowsAndReflections;
 - (_Bool)isInvisible;
 @property(readonly, nonatomic) double opacity;
 - (struct CGRect)frameForCulling;
@@ -24,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)shadowedNaturalBoundsWithoutOffset;
 - (struct CGRect)alignmentFrameInRoot;
 - (struct CGRect)aliasedAlignmentFrameForScale:(double)arg1;
+- (double)scaleToApplyToPathSourceNaturalSizeApplyingLayoutTransform:(struct CGAffineTransform)arg1 withStartingPathSource:(id)arg2;
 - (id)styledInfo;
 
 @end

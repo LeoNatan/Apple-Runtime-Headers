@@ -9,6 +9,8 @@
 @protocol PBSPictureInPictureServiceInterface;
 
 @protocol PBSPictureInPictureDelegateServiceInterface <NSObject>
+- (void)pictureInPictureService:(id <PBSPictureInPictureServiceInterface>)arg1 didSendPlaybackCommand:(unsigned long long)arg2;
+- (void)pictureInPictureService:(id <PBSPictureInPictureServiceInterface>)arg1 didRequestMute:(_Bool)arg2;
 - (void)pictureInPictureServiceDidUpdateState:(id <PBSPictureInPictureServiceInterface>)arg1;
 @end
 

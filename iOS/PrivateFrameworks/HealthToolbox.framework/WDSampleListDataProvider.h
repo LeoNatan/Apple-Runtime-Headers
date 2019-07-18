@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSPredicate *defaultQueryPredicate; // @synthesize defaultQueryPredicate=_defaultQueryPredicate;
 - (void).cxx_destruct;
 - (_Bool)_handleObjectsRemoved:(id)arg1;
+- (void)updateController:(id)arg1 didReceiveHighFrequencyUpdateForType:(id)arg2;
 - (void)updateController:(id)arg1 didReceiveUpdateForType:(id)arg2 samplesAdded:(id)arg3 objectsRemoved:(id)arg4;
 - (void)refineSamplesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_callUpdateHandler;

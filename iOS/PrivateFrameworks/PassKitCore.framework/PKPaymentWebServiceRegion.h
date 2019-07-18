@@ -8,7 +8,7 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString, NSURL, NSUUID;
+@class NSArray, NSString, NSURL;
 
 @interface PKPaymentWebServiceRegion : NSObject <NSSecureCoding>
 {
@@ -29,24 +29,24 @@
     long long _outstandingCheckInAction;
     NSString *_lastDeviceCheckInBuildVersion;
     NSString *_deviceCheckInPushTopic;
-    NSUUID *_deviceCheckInIdentifier;
     NSURL *_accountServiceURL;
     NSString *_accountServicePushTopic;
     NSURL *_applyServiceURL;
     NSString *_applyServicePushTopic;
+    NSString *_productsPushTopic;
     NSURL *_peerPaymentServiceURL;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool hasPeerPaymentAccount; // @synthesize hasPeerPaymentAccount=_hasPeerPaymentAccount;
 @property(retain, nonatomic) NSURL *peerPaymentServiceURL; // @synthesize peerPaymentServiceURL=_peerPaymentServiceURL;
+@property(copy, nonatomic) NSString *productsPushTopic; // @synthesize productsPushTopic=_productsPushTopic;
 @property(nonatomic) _Bool hasApplications; // @synthesize hasApplications=_hasApplications;
 @property(retain, nonatomic) NSString *applyServicePushTopic; // @synthesize applyServicePushTopic=_applyServicePushTopic;
 @property(retain, nonatomic) NSURL *applyServiceURL; // @synthesize applyServiceURL=_applyServiceURL;
 @property(nonatomic) _Bool hasAccounts; // @synthesize hasAccounts=_hasAccounts;
 @property(retain, nonatomic) NSString *accountServicePushTopic; // @synthesize accountServicePushTopic=_accountServicePushTopic;
 @property(retain, nonatomic) NSURL *accountServiceURL; // @synthesize accountServiceURL=_accountServiceURL;
-@property(retain, nonatomic) NSUUID *deviceCheckInIdentifier; // @synthesize deviceCheckInIdentifier=_deviceCheckInIdentifier;
 @property(copy, nonatomic) NSString *deviceCheckInPushTopic; // @synthesize deviceCheckInPushTopic=_deviceCheckInPushTopic;
 @property(copy, nonatomic) NSString *lastDeviceCheckInBuildVersion; // @synthesize lastDeviceCheckInBuildVersion=_lastDeviceCheckInBuildVersion;
 @property(nonatomic) long long outstandingCheckInAction; // @synthesize outstandingCheckInAction=_outstandingCheckInAction;

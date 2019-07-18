@@ -12,6 +12,7 @@
 + (BOOL)ic_alwaysShowLightContent;
 + (void)setIc_alwaysShowLightContent:(BOOL)arg1;
 + (BOOL)ic_darkModeEnabled;
+- (void)ic_performAsCurrent:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL ic_isDark;
 @property(readonly, nonatomic) ICAppearanceInfo *ic_appearanceInfoForContent;
 @property(readonly, nonatomic) ICAppearanceInfo *ic_appearanceInfo;

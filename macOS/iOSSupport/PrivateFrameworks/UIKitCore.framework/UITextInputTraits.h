@@ -83,6 +83,7 @@
 + (BOOL)keyboardTypeRequiresASCIICapable:(long long)arg1;
 + (id)traitsByAdoptingTraits:(id)arg1 lightweight:(BOOL)arg2;
 + (id)traitsByAdoptingTraits:(id)arg1;
++ (id)traitEnvironmentFromTraits:(id)arg1;
 + (id)defaultTextInputTraits;
 + (long long)configuredAppearanceForAppearance:(long long)arg1 withTraitEnvironment:(id)arg2;
 + (long long)accessibleAppearanceForAppearance:(long long)arg1;

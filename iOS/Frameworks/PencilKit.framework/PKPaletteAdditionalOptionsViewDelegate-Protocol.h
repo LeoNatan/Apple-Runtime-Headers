@@ -12,7 +12,6 @@
 
 @protocol PKPaletteAdditionalOptionsViewDelegate <NSObject, PKPaletteShapesViewControllerDelegate, PKPaletteTextOptionsViewControllerDelegate>
 - (void)additionalOptionsViewDidSelectPlusButton:(PKPaletteAdditionalOptionsView *)arg1;
-- (void)additionalOptionsViewDidTapOpacityOption:(PKPaletteAdditionalOptionsView *)arg1;
 - (void)additionalOptionsView:(PKPaletteAdditionalOptionsView *)arg1 didToggleAutoHideOption:(_Bool)arg2;
 @end
 

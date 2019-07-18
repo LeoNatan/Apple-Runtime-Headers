@@ -32,7 +32,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)displaysSameContentAs:(id)arg1 withDisplayOptions:(unsigned long long)arg2;
 - (id)initWithKCDataWaitInfo:(const struct stackshot_thread_waitinfo *)arg1;
-- (void)populateReferencesUsingBuffer:(const void *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
+- (void)populateReferencesUsingBuffer:(const CDStruct_b403be1b *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
 - (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
 - (BOOL)addSelfToBuffer:(CDStruct_b403be1b *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;

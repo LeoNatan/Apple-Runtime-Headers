@@ -9,6 +9,7 @@
 @class NSArray, NSDate, NSString, NTKComplication, NTKEditOption, NTKFaceView, UIViewController;
 
 @protocol NTKFaceViewDelegate <NSObject>
+- (NSArray *)faceViewAllVisibleComplicationsForCurrentConfiguration;
 - (NSArray *)faceViewComplicationSlotsHiddenByEditOption:(NTKEditOption *)arg1;
 - (NTKEditOption *)faceViewEditOptionThatHidesAllComplications;
 - (NSArray *)faceViewComplicationSlots;

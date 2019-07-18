@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: metrics
     // Error parsing type: , name: iconViews
+    // Error parsing type: , name: wordmarkView
     // Error parsing type: , name: buttonView
     // Error parsing type: , name: footnoteView
 }

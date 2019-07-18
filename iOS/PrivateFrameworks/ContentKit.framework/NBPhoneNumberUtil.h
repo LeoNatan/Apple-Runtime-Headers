@@ -8,6 +8,7 @@
 
 @class CTTelephonyNetworkInfo, NSBundle, NSDictionary, NSLock, NSMutableDictionary, NSRegularExpression;
 
+__attribute__((visibility("hidden")))
 @interface NBPhoneNumberUtil : NSObject
 {
     NSBundle *_libPhoneBundle;

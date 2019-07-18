@@ -16,6 +16,7 @@
 {
     NSObject<OS_dispatch_group> *_asynchronousLoadGroup;
     unsigned long long _asynchronousLoadDeferralTokenCount;
+    BOOL _wasCopiedFromIncompleteMetadata;
     NSMutableArray *_pendingAsynchronousLoadUpdateHandlers;
     unsigned int _version;
     NSURL *_originalURL;
@@ -88,6 +89,7 @@
 - (CDUnknownBlockType)_createAsynchronousLoadDeferralToken;
 - (void)_loadAsynchronousFieldsWithUpdateHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_hasAnyAsynchronousFields;
+- (BOOL)_wasCopiedFromIncompleteMetadata;
 - (BOOL)_isDeferringAsynchronousLoads;
 - (BOOL)_isLoadingAsynchronousFields;
 @property(retain, nonatomic) NSURL *remoteVideoURL;

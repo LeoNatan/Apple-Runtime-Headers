@@ -55,6 +55,7 @@
 @property(retain, nonatomic) NSString *queryString;
 - (void)updateWithResultSections:(id)arg1 resetScrollPoint:(_Bool)arg2;
 - (void)updateWithResultSections:(id)arg1;
+@property(nonatomic) _Bool shouldUseStandardSectionInsets;
 @property(nonatomic) _Bool shouldUseInsetRoundedSections;
 @property(nonatomic) _Bool shouldHideResultsUnderKeyboard;
 @property(nonatomic) __weak id <SFFeedbackListener> feedbackListener;
@@ -65,6 +66,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)replaceResult:(id)arg1 withResult:(id)arg2;
 @property(retain, nonatomic) UIView *footerView;
+@property(nonatomic) _Bool shortenTopFloatingHeader;
 - (void)didBeginScrolling;
 - (void)didScrollPastBottomOfContent;
 - (id)init;

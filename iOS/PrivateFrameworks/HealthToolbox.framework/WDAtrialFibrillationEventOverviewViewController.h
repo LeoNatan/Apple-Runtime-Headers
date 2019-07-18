@@ -12,13 +12,11 @@
 #import <HealthToolbox/HRFeatureRegulatoryReenableFeatureActionDelegate-Protocol.h>
 #import <HealthToolbox/HROnboardingManagerDelegate-Protocol.h>
 #import <HealthToolbox/UITextViewDelegate-Protocol.h>
-#import <HealthToolbox/WDUserActivityResponder-Protocol.h>
 
 @class HKDisplayType, HKHeartRhythmAvailability, HKKeyValueDomain, HROnboardingManager, NSArray, NSDate, NSString, UITapGestureRecognizer, WDProfile;
 @protocol HKDataMetadataSectionProtocol, WDDataListViewControllerDataProvider;
 
-__attribute__((visibility("hidden")))
-@interface WDAtrialFibrillationEventOverviewViewController : HKTableViewController <HKSwitchTableViewCellDelegate, HRFeatureRegulatoryReenableFeatureActionDelegate, HROnboardingManagerDelegate, UITextViewDelegate, HKOnboardingSetupViewDelegate, WDUserActivityResponder, HKHeartRhythmAvailabilityObserver>
+@interface WDAtrialFibrillationEventOverviewViewController : HKTableViewController <HKSwitchTableViewCellDelegate, HRFeatureRegulatoryReenableFeatureActionDelegate, HROnboardingManagerDelegate, UITextViewDelegate, HKOnboardingSetupViewDelegate, HKHeartRhythmAvailabilityObserver>
 {
     _Bool _previousAtrialFibrillationDetectionDisabledCacheValue;
     HKDisplayType *_displayType;
@@ -53,10 +51,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 - (void).cxx_destruct;
-- (void)_addActivityForAction:(long long)arg1 newResponder:(id)arg2;
-- (id)applyTransitionActivity:(id)arg1;
-- (void)applyChangeActivity:(id)arg1;
-- (void)_updateActivityForViewDidAppear;
+- (void)isFavorited:(_Bool)arg1;
 - (void)switchCellValueChanged:(id)arg1 value:(_Bool)arg2;
 - (void)didDismissOnboarding;
 - (void)didCompleteOnboarding;

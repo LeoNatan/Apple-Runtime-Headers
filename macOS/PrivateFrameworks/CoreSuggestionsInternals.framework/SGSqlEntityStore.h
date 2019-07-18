@@ -131,9 +131,9 @@
 - (id)suggestContactByKey:(id)arg1;
 - (id)storageContactByKey:(id)arg1;
 - (id)suggestContactMatchesByEmailAddress:(id)arg1;
-- (id)suggestContactMatchesByEmailAddress:(id)arg1 isMaybe:(BOOL)arg2;
+- (id)suggestContactMatchesByEmailAddress:(id)arg1 isMaybe:(BOOL)arg2 onlySignificant:(BOOL)arg3;
 - (id)suggestContactMatchesByPhoneNumber:(id)arg1;
-- (id)suggestContactMatchesByPhoneNumber:(id)arg1 isMaybe:(BOOL)arg2;
+- (id)suggestContactMatchesByPhoneNumber:(id)arg1 isMaybe:(BOOL)arg2 onlySignificant:(BOOL)arg3;
 - (id)allContactsMasterEntityIdsLimitedTo:(unsigned long long)arg1;
 - (id)allContactsLimitedTo:(unsigned long long)arg1;
 - (id)_queryForAllContactsWithLimit;
@@ -254,10 +254,12 @@
 - (void)deleteInteractionsWithBundleId:(id)arg1 groupIdentifiers:(id)arg2;
 - (void)deleteInteractionsWithBundleId:(id)arg1 identifiers:(id)arg2;
 - (void)deleteInteractionsWithBundleId:(id)arg1;
+- (void)deleteItemsWithEntityTag:(id)arg1 preserveEventConfirmationHistory:(BOOL)arg2;
 - (void)deleteItemsWithEntityTag:(id)arg1;
 - (void)deleteInteractionEntitiesExceedingLimit:(id)arg1 withSuspensionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteInteractionEntitiesOnBlacklist:(id)arg1;
 - (void)deleteMessagesByDuplicateKey:(id)arg1;
+- (void)deleteEntitiesByDuplicateKey:(id)arg1 preserveEventConfirmationHistory:(BOOL)arg2 emitChangeNotifications:(BOOL)arg3;
 - (void)deleteEntitiesByDuplicateKey:(id)arg1 emitChangeNotifications:(BOOL)arg2;
 - (id)_deleteMessageMetadataByDuplicateKeyNoRecurse:(id)arg1;
 - (id)_deleteEntitiesByDuplicateKeyNoRecurse:(id)arg1;
@@ -267,6 +269,7 @@
 - (id)childrenFromParentKey:(id)arg1;
 - (void)deleteMessages:(id)arg1;
 - (void)pruneNLEventEntitiesOlderThan:(struct SGUnixTimestamp_)arg1;
+- (void)pruneReminders;
 - (void)pruneNLEventEntitiesOlderThanTwoWeeks;
 - (void)pruneDuplicateWebPageExtractions:(id)arg1;
 - (void)pruneEntitiesOlderThan:(struct SGUnixTimestamp_)arg1 suspensionHandler:(CDUnknownBlockType)arg2 batchSize:(unsigned long long)arg3;
@@ -308,7 +311,9 @@
 - (BOOL)anyEmailAddressIsSignificant:(id)arg1;
 - (BOOL)realtimeContactIsSignificantOrSignificanceIsDisabled:(id)arg1;
 - (BOOL)realtimeContactIsSignificant:(id)arg1;
+- (BOOL)contactIsSignificantOrSignificanceIsDisabled:(id)arg1 usingCoreRecents:(BOOL)arg2;
 - (BOOL)contactIsSignificantOrSignificanceIsDisabled:(id)arg1;
+- (BOOL)contactIsSignificant:(id)arg1 usingCoreRecents:(BOOL)arg2;
 - (BOOL)contactIsSignificant:(id)arg1;
 - (void)writeIdentityBlobs:(id)arg1 forceRewrite:(BOOL)arg2;
 - (void)_writeLabeledBlobs:(id)arg1 isDelete:(BOOL)arg2;
@@ -407,7 +412,7 @@
 - (void)startJournaling;
 - (void)registerJournalUnlockHandler;
 - (void)tryExecuteSnippetsJournal;
-- (long long)migration_deleteSerializedContactsForEmergencyExtractions;
+- (long long)migration_deleteSerializedContacts;
 - (long long)migration_deleteEmergencyExtractions;
 - (long long)migration_reimport;
 - (long long)migration_deleteInteractions;

@@ -10,6 +10,7 @@
 {
 }
 
++ (id)newCloudContainerForAccountID:(id)arg1;
 + (id)defaultCloudContainer;
 + (id)defaultCloudContainerName;
 + (BOOL)isSandboxEnvironment;

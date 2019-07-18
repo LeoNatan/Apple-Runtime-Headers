@@ -22,12 +22,13 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
++ (id)bundleIdOfCurrentForegroundApp;
 + (_Bool)_response:(id)arg1 isEqualTo:(id)arg2;
 + (id)_setupRequest;
 - (void).cxx_destruct;
 - (void)waitForQueueEmpty;
 - (void)processResponse:(id)arg1;
-- (void)_donateDelayedResponse:(id)arg1 timePlayed:(double)arg2;
+- (void)_donateDelayedResponse:(id)arg1 timePlayed:(double)arg2 bundleId:(id)arg3;
 - (void)controller:(id)arg1 defersResponseReplacement:(CDUnknownBlockType)arg2;
 - (id)initWithNamedEntityStore:(id)arg1 donationDelaySeconds:(double)arg2 registersResponseLoading:(_Bool)arg3 useSGNamedEntityDissector:(_Bool)arg4;
 - (id)init;

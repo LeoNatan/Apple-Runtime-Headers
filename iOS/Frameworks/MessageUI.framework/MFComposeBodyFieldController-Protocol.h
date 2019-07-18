@@ -20,7 +20,7 @@
 - (void)replacePlaceholderWithAttachment:(NSString *)arg1 identifier:(NSString *)arg2;
 - (void)replacePlaceholderWithImage:(NSString *)arg1 completionHandler:(void (^)(NSString *))arg2;
 - (void)countDuplicatedAttachments:(NSString *)arg1 completionHandler:(void (^)(NSNumber *))arg2;
-- (void)insertImageAttachmentWithCompletionHandler:(void (^)(NSString *))arg1;
+- (void)insertAttachmentAsImage:(_Bool)arg1 completionHandler:(void (^)(NSString *))arg2;
 - (void)setFileName:(NSString *)arg1 forImageWithContentID:(NSString *)arg2;
 - (void)replaceImagesIfNecessary;
 - (void)setReplacementFilenamesByContentID:(NSDictionary *)arg1;

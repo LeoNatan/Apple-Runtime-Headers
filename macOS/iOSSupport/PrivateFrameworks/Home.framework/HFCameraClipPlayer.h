@@ -18,17 +18,17 @@
     BOOL _mutatingQueue;
     id <HFCameraClipPlayerDelegate> _delegate;
     id <HFCameraClipScrubbing> _scrubber;
+    NSArray *_clips;
     NSError *_error;
     HFCameraClipPlayerItem *_lastPlayerItem;
-    NSArray *_clips;
     HFCameraClipQueuePlayer *_queuePlayer;
 }
 
 @property(readonly, nonatomic) HFCameraClipQueuePlayer *queuePlayer; // @synthesize queuePlayer=_queuePlayer;
-@property(retain, nonatomic) NSArray *clips; // @synthesize clips=_clips;
 @property(nonatomic) __weak HFCameraClipPlayerItem *lastPlayerItem; // @synthesize lastPlayerItem=_lastPlayerItem;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic, getter=isMutatingQueue) BOOL mutatingQueue; // @synthesize mutatingQueue=_mutatingQueue;
+@property(retain, nonatomic) NSArray *clips; // @synthesize clips=_clips;
 @property(nonatomic, getter=isScrubbing) BOOL scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(nonatomic) __weak id <HFCameraClipScrubbing> scrubber; // @synthesize scrubber=_scrubber;
 @property(nonatomic) __weak id <HFCameraClipPlayerDelegate> delegate; // @synthesize delegate=_delegate;

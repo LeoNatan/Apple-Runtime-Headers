@@ -11,6 +11,7 @@
 @class NSData;
 
 @interface NSImage (DCImage) <DCImage>
++ (id)imageWithCGImage:(struct CGImage *)arg1;
 + (id)imageWithCIImage:(id)arg1;
 + (id)imageWithData:(id)arg1 scale:(double)arg2;
 + (id)imageWithData:(id)arg1;

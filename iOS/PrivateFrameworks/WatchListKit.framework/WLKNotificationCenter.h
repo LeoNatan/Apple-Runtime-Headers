@@ -14,8 +14,11 @@
     id <WLKNotificationCenterDelegate> _delegate;
 }
 
++ (id)defaultCenter;
 @property(nonatomic) __weak id <WLKNotificationCenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)setBadgeString:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)setBadgeNumber:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)post:(id)arg1 title:(id)arg2 body:(id)arg3 options:(id)arg4;
 - (id)init;
 

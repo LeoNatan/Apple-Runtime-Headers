@@ -10,7 +10,6 @@
 
 @interface HMCameraClip (HFAdditions)
 + (BOOL)clipSpansMultipleDays:(id)arg1;
-- (BOOL)hf_isFirstClipInDayForClips:(id)arg1;
 @property(readonly, nonatomic) BOOL hf_isPlayable;
 @property(readonly, nonatomic) double hf_duration;
 @property(readonly, nonatomic) double hf_elapsedTimeSinceMidnight;

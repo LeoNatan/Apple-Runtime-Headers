@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOABSecondPartyPlaceRequestClientMetaData, GEOAdditionalEnabledMarkets, GEOLocation, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
+@class GEOABSecondPartyPlaceRequestClientMetaData, GEOAdditionalEnabledMarkets, GEOLocalizationCapabilities, GEOLocation, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDClientMetadata : PBCodable <NSCopying>
@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_deviceHistoricalLocations;
     NSString *_deviceKeyboardLanguage;
     NSString *_deviceSpokenLanguage;
+    GEOLocalizationCapabilities *_localizationCapabilities;
     int _clientRevision;
     unsigned int _dayOfWeek;
     unsigned int _hourOfDay;
@@ -56,6 +57,7 @@ __attribute__((visibility("hidden")))
         unsigned int read_deviceHistoricalLocations:1;
         unsigned int read_deviceKeyboardLanguage:1;
         unsigned int read_deviceSpokenLanguage:1;
+        unsigned int read_localizationCapabilities:1;
         unsigned int wrote_unknownFields:1;
         unsigned int wrote_knownClientResolvedTypeDeprecateds:1;
         unsigned int wrote_knownClientResolvedTypes:1;
@@ -69,6 +71,7 @@ __attribute__((visibility("hidden")))
         unsigned int wrote_deviceHistoricalLocations:1;
         unsigned int wrote_deviceKeyboardLanguage:1;
         unsigned int wrote_deviceSpokenLanguage:1;
+        unsigned int wrote_localizationCapabilities:1;
         unsigned int wrote_clientRevision:1;
         unsigned int wrote_dayOfWeek:1;
         unsigned int wrote_hourOfDay:1;
@@ -93,11 +96,15 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
+- (void)clearSensitiveFields;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOLocalizationCapabilities *localizationCapabilities;
+@property(readonly, nonatomic) _Bool hasLocalizationCapabilities;
+- (void)_readLocalizationCapabilities;
 - (int)StringAsClientRevision:(id)arg1;
 - (id)clientRevisionAsString:(int)arg1;
 @property(nonatomic) _Bool hasClientRevision;

@@ -23,6 +23,7 @@
     } _has;
 }
 
++ (void)initialize;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(nonatomic) int length; // @synthesize length=_length;
 @property(nonatomic) int location; // @synthesize location=_location;
@@ -43,7 +44,7 @@
 @property(nonatomic) _Bool hasLocation;
 @property(readonly, nonatomic) _Bool hasIdentifier;
 @property(readonly, nonatomic) _Bool hasUuid;
-- (id)description;
+- (id)customDescription;
 
 @end
 

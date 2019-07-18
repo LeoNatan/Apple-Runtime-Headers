@@ -9,7 +9,7 @@
 #import <CameraUI/CAMCaptureRequestIntervalometerDelegate-Protocol.h>
 #import <CameraUI/CAMCaptureService-Protocol.h>
 
-@class AVCaptureVideoPreviewLayer, CAMBurstController, CAMCaptureEngine, CAMCaptureRequestIntervalometer, CAMKeyValueCoalescer, CAMLocationController, CAMMotionController, CAMPanoramaCaptureRequest, CAMPanoramaPreviewView, CAMPowerController, CAMProtectionController, CAMRemoteShutterController, CAMThumbnailGenerator, CAMVideoCaptureRequest, NSCountedSet, NSMutableSet, NSString;
+@class AVCaptureVideoPreviewLayer, CAMBurstController, CAMCaptureEngine, CAMCaptureRequestIntervalometer, CAMIrisVideoController, CAMKeyValueCoalescer, CAMLocationController, CAMMotionController, CAMPanoramaCaptureRequest, CAMPanoramaPreviewView, CAMPowerController, CAMProtectionController, CAMRemoteShutterController, CAMThumbnailGenerator, CAMVideoCaptureRequest, NSCountedSet, NSMutableSet, NSString;
 @protocol CAMAvailabilityDelegate, CAMBurstDelegate, CAMCaptureInterruptionDelegate, CAMCaptureRecoveryDelegate, CAMCaptureResultDelegate, CAMCaptureRunningDelegate, CAMConfigurationDelegate, CAMExposureDelegate, CAMFacesDelegate, CAMFocusDelegate, CAMMachineReadableCodeDelegate, CAMPanoramaChangeDelegate, CAMShallowDepthOfFieldStatusDelegate, CAMStillImageCapturingVideoDelegate, CAMSuggestionDelegate, CAMZoomDelegate, OS_dispatch_queue;
 
 @interface CUCaptureController : NSObject <CAMCaptureService, CAMCaptureRequestIntervalometerDelegate>
@@ -63,11 +63,13 @@
     CAMBurstController *__burstController;
     CAMProtectionController *__protectionController;
     CAMPowerController *__powerController;
+    CAMIrisVideoController *__irisVideoController;
     CAMRemoteShutterController *__remoteShutterController;
 }
 
 + (float)focusLensPositionCurrentSentinel;
 @property(readonly, nonatomic) CAMRemoteShutterController *_remoteShutterController; // @synthesize _remoteShutterController=__remoteShutterController;
+@property(readonly, nonatomic) CAMIrisVideoController *_irisVideoController; // @synthesize _irisVideoController=__irisVideoController;
 @property(readonly, nonatomic) CAMPowerController *_powerController; // @synthesize _powerController=__powerController;
 @property(readonly, nonatomic) CAMProtectionController *_protectionController; // @synthesize _protectionController=__protectionController;
 @property(readonly, nonatomic) CAMBurstController *_burstController; // @synthesize _burstController=__burstController;
@@ -123,6 +125,7 @@
 - (void)_setupSystemPressureStateMonitoring;
 - (_Bool)_shouldMonitorSystemPressureState;
 - (id)_systemPressureStateMonitoringKeyPaths;
+- (void)changeToPortraitLightingEffectStrength:(double)arg1;
 - (void)_handleShallowDepthOfFieldStatusChangedNotification:(id)arg1;
 - (void)changeToPortraitAperture:(double)arg1;
 - (void)_zoomResultChangedForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3;
@@ -164,7 +167,7 @@
 - (unsigned long long)_maximumNumberOfStillImageRequestsDuringBurst;
 - (void)_updateMaximumNumberOfStillImageRequestsAfterBurst;
 - (void)_updateMaximumNumberOfStillImageRequestsAfterCapturedRequestIfNecessary:(id)arg1;
-- (void)_updateMaximumNumberOfStillImageRequestsAfterEnqueuingRequestWithFlashMode:(long long)arg1 HDRMode:(long long)arg2 burstIdentifier:(id)arg3 wantsPortraitEffect:(_Bool)arg4;
+- (void)_updateMaximumNumberOfStillImageRequestsAfterEnqueuingRequest:(id)arg1;
 - (void)_availabilityResultChangedForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3;
 - (void)_teardownAvailabilityMonitoring;
 - (void)_setupAvailabilityMonitoring;
@@ -210,11 +213,13 @@
 - (void)changeToTorchMode:(long long)arg1;
 - (void)changeToFlashMode:(long long)arg1;
 - (int)_uniqueRequestIDForChangeToModeAndDevice;
-- (int)changeToGraphConfiguration:(id)arg1 resetZoom:(_Bool)arg2 minimumExecutionTime:(double)arg3;
+- (int)changeToGraphConfiguration:(id)arg1 zoomFactor:(double)arg2 minimumExecutionTime:(double)arg3;
+- (int)changeToGraphConfiguration:(id)arg1 minimumExecutionTime:(double)arg2;
+- (double)_defaultZoomFactorForGraphConfiguration:(id)arg1;
 - (_Bool)_wantsMachineReadableCodesForGraphConfiguration:(id)arg1;
 - (id)_realtimeMetadataCommandsForMode:(long long)arg1 capturing:(_Bool)arg2 wantsMachineReadableCodes:(_Bool)arg3;
 - (void)updateRealtimeMetadataConfigurationForGraphConfiguration:(id)arg1 isCapturing:(_Bool)arg2;
-- (id)_commandForChangeToGraphConfiguration:(id)arg1 resetZoom:(_Bool)arg2 minimumExecutionTime:(double)arg3 outRequestID:(int *)arg4;
+- (id)_commandForChangeToGraphConfiguration:(id)arg1 zoomFactor:(double)arg2 minimumExecutionTime:(double)arg3 outRequestID:(int *)arg4;
 - (id)_commandForConfiguration:(id)arg1 outRequestID:(int *)arg2;
 - (void)notifyTimelapseControllerFinishedUpdatingWithLocation;
 - (void)intervalometerDidReachMaximumCount:(id)arg1;
@@ -274,8 +279,7 @@
 - (int)applyCaptureConfiguration:(id)arg1;
 - (void)invalidateController;
 - (void)dealloc;
-- (id)init;
-- (id)initWithCaptureConfiguration:(id)arg1 engineOptions:(long long)arg2 locationController:(id)arg3 motionController:(id)arg4 burstController:(id)arg5 protectionController:(id)arg6 powerController:(id)arg7 remoteShutterController:(id)arg8;
+- (id)initWithCaptureConfiguration:(id)arg1 engineOptions:(long long)arg2 locationController:(id)arg3 motionController:(id)arg4 burstController:(id)arg5 protectionController:(id)arg6 powerController:(id)arg7 irisVideoController:(id)arg8 remoteShutterController:(id)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

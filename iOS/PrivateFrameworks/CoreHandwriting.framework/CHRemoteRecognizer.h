@@ -12,6 +12,7 @@
 
 @interface CHRemoteRecognizer : NSObject <CHRecognizing>
 {
+    _Bool _shouldEnableCachingIfAvailable;
     _Bool _shouldUseTextReplacements;
     int _recognitionMode;
     int _contentType;
@@ -23,10 +24,11 @@
     struct CGSize _minimumDrawingSize;
 }
 
-+ (long long)maxStrokeCountPerRequest;
++ (long long)maxRequestStrokeCountForLocale:(id)arg1;
 @property(readonly, nonatomic) NSXPCConnection *_connection; // @synthesize _connection=__connection;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(nonatomic) _Bool shouldUseTextReplacements; // @synthesize shouldUseTextReplacements=_shouldUseTextReplacements;
+@property(nonatomic) _Bool shouldEnableCachingIfAvailable; // @synthesize shouldEnableCachingIfAvailable=_shouldEnableCachingIfAvailable;
 @property(nonatomic) struct CGSize minimumDrawingSize; // @synthesize minimumDrawingSize=_minimumDrawingSize;
 @property(nonatomic) int contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) unsigned long long maxRecognitionResultCount; // @synthesize maxRecognitionResultCount=_maxRecognitionResultCount;
@@ -38,6 +40,8 @@
 - (_Bool)isEqualToRemoteRecognizer:(id)arg1;
 - (void)dealloc;
 - (id)_recognitionResultForRequest:(id)arg1 error:(id *)arg2;
+- (id)_recognitionRequestWithDrawing:(id)arg1 options:(id)arg2;
+- (id)transcriptionPathsForTokenizedTextResult:(id)arg1 withHistory:(id)arg2 scores:(id *)arg3 error:(id *)arg4;
 - (id)textRecognitionResultForDrawing:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (void)_teardownXPCConnection;
 - (void)_setupXPCConnectionIfNeeded;

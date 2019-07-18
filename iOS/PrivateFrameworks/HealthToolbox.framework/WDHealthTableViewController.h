@@ -10,6 +10,7 @@
 {
 }
 
+- (id)initWithProfile:(id)arg1 usingInsetStyling:(_Bool)arg2;
 - (id)initWithStyle:(long long)arg1 profile:(id)arg2;
 
 @end

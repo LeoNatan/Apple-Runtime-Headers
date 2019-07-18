@@ -17,6 +17,7 @@
 {
     id <CKDetailsSearchResultsFooterCellDelegate> _delegate;
     unsigned long long _sectionIndex;
+    NSString *_sectionIdentifier;
     NSString *_title;
     UITableView *_tableView;
     CALayer *_topHairline;
@@ -31,6 +32,7 @@
 @property(retain, nonatomic) CALayer *topHairline; // @synthesize topHairline=_topHairline;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(copy, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 @property(nonatomic) unsigned long long sectionIndex; // @synthesize sectionIndex=_sectionIndex;
 @property(nonatomic) id <CKDetailsSearchResultsFooterCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets;

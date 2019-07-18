@@ -8,7 +8,7 @@
 
 #import <SafariServices/_SFActivityItemCustomizationDelegate-Protocol.h>
 
-@class NSArray, NSString, NSURL, _SFActivityItemCustomizationController, _SFActivityItemProviderCollection, _SFPrintController, _SFSafariSharingExtensionController;
+@class NSArray, NSMutableSet, NSString, NSURL, _SFActivityItemCustomizationController, _SFActivityItemProviderCollection, _SFPrintController, _SFSafariSharingExtensionController;
 @protocol _SFActivityViewControllerDelegate;
 
 @interface _SFActivityViewController : UIActivityViewController <_SFActivityItemCustomizationDelegate>
@@ -16,6 +16,7 @@
     _SFPrintController *_printController;
     _SFActivityItemProviderCollection *_itemProviderCollection;
     NSArray *_initialApplicationActivities;
+    NSMutableSet *_activityTypesExcludedDueToSelectedCustomization;
     _SFSafariSharingExtensionController *_sharingExtensionController;
     id <_SFActivityViewControllerDelegate> _delegate;
     _SFActivityItemCustomizationController *_customizationController;

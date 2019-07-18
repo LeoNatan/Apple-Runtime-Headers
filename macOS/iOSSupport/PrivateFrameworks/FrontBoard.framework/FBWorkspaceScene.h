@@ -44,9 +44,6 @@
 - (void)sceneDidReceiveMessage:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)sceneDidReceiveActions:(id)arg1;
 - (void)sceneDidUpdateClientSettings:(id)arg1 transitionContext:(id)arg2;
-- (void)sceneDetachLayer:(id)arg1;
-- (void)sceneUpdateLayer:(id)arg1;
-- (void)sceneAttachLayer:(id)arg1;
 - (void)host:(id)arg1 didReceiveActions:(id)arg2;
 - (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(CDUnknownBlockType)arg5;

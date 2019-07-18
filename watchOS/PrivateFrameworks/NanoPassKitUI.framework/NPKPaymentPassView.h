@@ -35,6 +35,9 @@
 @property(nonatomic) _Bool useDemoArt; // @synthesize useDemoArt=_useDemoArt;
 @property(nonatomic) _Bool shrink; // @synthesize shrink=_shrink;
 - (void).cxx_destruct;
+- (void)resetDynamicView;
+- (_Bool)hasValidDynamicView;
+- (void)_refreshAppleCardOnAppForeground:(id)arg1;
 - (void)_setupDynamicViewForPassIfNecessary:(id)arg1;
 - (void)setShowFullPass:(_Bool)arg1;
 - (void)_setPass:(id)arg1;

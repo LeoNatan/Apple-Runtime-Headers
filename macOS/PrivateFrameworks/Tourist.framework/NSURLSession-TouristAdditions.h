@@ -7,7 +7,6 @@
 #import <Foundation/NSURLSession.h>
 
 @interface NSURLSession (TouristAdditions)
-+ (id)getURLCredential:(id)arg1;
 + (id)apd_requestSynchronousDataForURLRequest:(id)arg1 error:(id *)arg2;
 + (id)apd_requestSynchronousDataForURL:(id)arg1 error:(id *)arg2;
 @end

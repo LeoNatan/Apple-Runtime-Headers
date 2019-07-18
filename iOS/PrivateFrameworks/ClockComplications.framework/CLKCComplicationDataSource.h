@@ -32,7 +32,6 @@
 - (void)getTimelineStartDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
 - (id)lockedTemplate;
-- (id)privacyTemplate;
 - (id)currentSwitcherTemplate;
 - (id)complicationApplicationIdentifier;
 - (_Bool)alwaysShowIdealizedTemplateInSwitcher;

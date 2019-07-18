@@ -15,12 +15,14 @@
     unsigned long long _timeToTap;
     unsigned int _engagedItem;
     PREUMTrialExperiment *_experiment;
+    int _generationStatus;
     int _inputMethod;
     NSMutableArray *_items;
     PREUMMessageMetadata *_msgMetadata;
     struct {
         unsigned int timeToTap:1;
         unsigned int engagedItem:1;
+        unsigned int generationStatus:1;
         unsigned int inputMethod:1;
     } _has;
 }
@@ -41,6 +43,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsGenerationStatus:(id)arg1;
+- (id)generationStatusAsString:(int)arg1;
+@property(nonatomic) _Bool hasGenerationStatus;
+@property(nonatomic) int generationStatus; // @synthesize generationStatus=_generationStatus;
 - (int)StringAsInputMethod:(id)arg1;
 - (id)inputMethodAsString:(int)arg1;
 @property(nonatomic) _Bool hasInputMethod;

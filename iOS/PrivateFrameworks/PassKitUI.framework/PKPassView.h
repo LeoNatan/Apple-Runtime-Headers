@@ -39,7 +39,6 @@
 @property(nonatomic) __weak id <WLCardViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 - (void).cxx_destruct;
-- (void)_resizePassAnimated:(_Bool)arg1 notify:(_Bool)arg2;
 - (void)_updateFrontFaceSuppressedContent;
 - (_Bool)_visibleFaceShouldClipForCurrentViewMode:(double *)arg1;
 - (unsigned long long)_regionsForCurrentModes;
@@ -49,9 +48,9 @@
 - (void)_updateHighEndLayerShadowAnimated:(_Bool)arg1 withDelay:(double)arg2;
 - (void)_updateLowEndLayerShadowAnimated:(_Bool)arg1 withDelay:(double)arg2;
 - (void)_updateLayerShadowAnimated:(_Bool)arg1 withDelay:(double)arg2;
-- (void)resizePassAnimated:(_Bool)arg1 notify:(_Bool)arg2;
 - (void)updateValidityDisplay;
 - (void)presentDiff:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)didAuthenticate;
 - (void)layoutSubviews;
 - (void)setContentMode:(long long)arg1 animated:(_Bool)arg2 withDelay:(double)arg3;
 - (void)setContentMode:(long long)arg1 animated:(_Bool)arg2;
@@ -60,8 +59,6 @@
 - (void)setDimmer:(double)arg1 animated:(_Bool)arg2;
 @property(nonatomic, getter=isPaused) _Bool paused;
 @property(readonly, nonatomic) _Bool frontFaceBodyContentCreated;
-@property(readonly, nonatomic) _Bool isForcedFrontFaceResized;
-@property(readonly, nonatomic) _Bool isFrontFaceResized;
 @property(readonly, nonatomic) NSString *uniqueID;
 @property(readonly, nonatomic) PKPassFaceViewRendererState *rendererState;
 - (id)item;

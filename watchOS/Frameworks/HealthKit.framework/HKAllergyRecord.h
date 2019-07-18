@@ -21,28 +21,35 @@
     HKMedicalCoding *_criticalityCoding;
     HKMedicalDate *_lastOccurenceDate;
     HKMedicalDate *_recordedDate;
+    HKMedicalCoding *_statusCoding;
     HKConcept *_allergy;
     HKConcept *_criticality;
+    HKConcept *_status;
 }
 
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)_newAllergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 allergyCodings:(id)arg11 onsetDate:(id)arg12 asserter:(id)arg13 reactions:(id)arg14 criticalityCoding:(id)arg15 lastOccurenceDate:(id)arg16 recordedDate:(id)arg17 config:(CDUnknownBlockType)arg18;
-+ (id)allergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 allergyCodings:(id)arg11 onsetDate:(id)arg12 asserter:(id)arg13 reactions:(id)arg14 criticalityCoding:(id)arg15 lastOccurenceDate:(id)arg16 recordedDate:(id)arg17;
++ (id)_newAllergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 allergyCodings:(id)arg11 onsetDate:(id)arg12 asserter:(id)arg13 reactions:(id)arg14 criticalityCoding:(id)arg15 lastOccurenceDate:(id)arg16 recordedDate:(id)arg17 statusCoding:(id)arg18 config:(CDUnknownBlockType)arg19;
++ (id)allergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 allergyCodings:(id)arg11 onsetDate:(id)arg12 asserter:(id)arg13 reactions:(id)arg14 criticalityCoding:(id)arg15 lastOccurenceDate:(id)arg16 recordedDate:(id)arg17 statusCoding:(id)arg18;
 + (id)defaultDisplayString;
-+ (id)allergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 allergyCodings:(id)arg10 onsetDate:(id)arg11 asserter:(id)arg12 reactions:(id)arg13 criticalityCoding:(id)arg14 lastOccurenceDate:(id)arg15 recordedDate:(id)arg16;
++ (id)allergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 allergyCodings:(id)arg10 onsetDate:(id)arg11 asserter:(id)arg12 reactions:(id)arg13 criticalityCoding:(id)arg14 lastOccurenceDate:(id)arg15 recordedDate:(id)arg16 statusCoding:(id)arg17;
 + (id)cachedConceptRelationshipKeyPaths;
 + (id)indexableConceptKeyPaths;
++ (id)statusCodingPreferredSystems;
 + (id)criticalityCodingPreferredSystems;
 + (id)allergyCodingsPreferredSystems;
 - (void).cxx_destruct;
 @property(readonly, copy) HKAllergyRecordType *allergyRecordType;
 - (id)_validateConfigurationWithOptions:(unsigned int)arg1;
+- (void)_setStatus:(id)arg1;
+@property(readonly, copy) HKConcept *status;
 - (void)_setCriticality:(id)arg1;
 @property(readonly, copy) HKConcept *criticality;
 - (void)_setAllergy:(id)arg1;
 @property(readonly, copy) HKConcept *allergy;
+- (void)_setStatusCoding:(id)arg1;
+@property(readonly, copy) HKMedicalCoding *statusCoding;
 - (void)_setRecordedDate:(id)arg1;
 @property(readonly, copy) HKMedicalDate *recordedDate;
 - (void)_setLastOccurenceDate:(id)arg1;
@@ -57,6 +64,8 @@
 @property(readonly, copy) HKMedicalDate *onsetDate;
 - (void)_setAllergyCodings:(id)arg1;
 @property(readonly, copy) NSArray *allergyCodings;
+- (id)statusCodingContext;
+- (id)statusCodingCollection;
 - (id)criticalityCodingContext;
 - (id)criticalityCodingCollection;
 - (id)allergyCodingsContext;
@@ -72,6 +81,7 @@
 - (id)indexKeywords;
 - (_Bool)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
 - (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
+- (id)statusCodingTasks;
 - (id)criticalityCodingTasks;
 - (id)allergyCodingsTasks;
 

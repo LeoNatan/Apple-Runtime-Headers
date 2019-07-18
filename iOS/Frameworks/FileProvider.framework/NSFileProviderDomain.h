@@ -15,6 +15,7 @@
     _Bool _disconnected;
     _Bool _hidden;
     _Bool _containsPhotos;
+    _Bool _isEnterpriseDomain;
     NSString *_identifier;
     NSString *_displayName;
     NSString *_pathRelativeToDocumentStorage;
@@ -25,6 +26,7 @@
 
 + (id)domainFromPlistDictionary:(id)arg1 identifier:(id)arg2;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool isEnterpriseDomain; // @synthesize isEnterpriseDomain=_isEnterpriseDomain;
 @property(retain, nonatomic) NSString *personaIdentifier; // @synthesize personaIdentifier=_personaIdentifier;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool containsPhotos; // @synthesize containsPhotos=_containsPhotos;
@@ -39,6 +41,7 @@
 - (id)plistDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)sharedAccountStore;
 - (id)initWithIdentifier:(id)arg1 displayName:(id)arg2 pathRelativeToDocumentStorage:(id)arg3 hidden:(_Bool)arg4;
 - (id)initWithIdentifier:(id)arg1 displayName:(id)arg2 pathRelativeToDocumentStorage:(id)arg3;
 

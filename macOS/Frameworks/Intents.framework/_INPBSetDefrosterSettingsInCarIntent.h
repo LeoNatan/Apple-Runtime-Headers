@@ -19,12 +19,14 @@
         unsigned int enable:1;
     } _has;
     BOOL _enable;
+    BOOL __encodeLegacyGloryData;
     int _defroster;
     _INPBDataString *_carName;
     _INPBIntentMetadata *_intentMetadata;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 @property(nonatomic) BOOL enable; // @synthesize enable=_enable;
 @property(nonatomic) int defroster; // @synthesize defroster=_defroster;

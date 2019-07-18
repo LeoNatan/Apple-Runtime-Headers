@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 {
     struct TNodePtr fParentNode;
     struct TNSRef<FPItemCollection, void> _collection;
-    TNSRef_29886eb6 _FPItems;
     TNSRef_090b95aa _FPError;
 }
 

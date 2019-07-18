@@ -8,7 +8,7 @@
 
 #import <NanoPreferences/_NPRFPreferenceListControllerOptionalMethods-Protocol.h>
 
-@class NPRFSpecifierSet, NSBundle, NSString, PSSpecifier, PUICDictationViewController;
+@class NPRFSpecifierSet, NSBundle, NSString, PSSpecifier, PUICDictationViewController, UIViewController;
 
 @interface NPRFPreferenceListController : NPRFBaseTableViewController <_NPRFPreferenceListControllerOptionalMethods>
 {
@@ -21,10 +21,12 @@
     NPRFSpecifierSet *_specifierSet;
     NSString *_specifierPlistName;
     NSString *_localizedStringTableName;
+    UIViewController *_specifierTargetIfNotSelf;
 }
 
 + (id)readPreferenceValue:(id)arg1;
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
+@property(retain, nonatomic) UIViewController *specifierTargetIfNotSelf; // @synthesize specifierTargetIfNotSelf=_specifierTargetIfNotSelf;
 @property(retain, nonatomic) NSString *localizedStringTableName; // @synthesize localizedStringTableName=_localizedStringTableName;
 @property __weak PSSpecifier *activeSpecifier; // @synthesize activeSpecifier=_activeSpecifier;
 - (void).cxx_destruct;

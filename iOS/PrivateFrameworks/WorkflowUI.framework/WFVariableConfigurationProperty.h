@@ -10,14 +10,16 @@
 
 @interface WFVariableConfigurationProperty : NSObject
 {
+    _Bool _negativeProperty;
     WFContentProperty *_contentProperty;
     NSString *_label;
 }
 
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
+@property(readonly, nonatomic) _Bool negativeProperty; // @synthesize negativeProperty=_negativeProperty;
 @property(readonly, nonatomic) WFContentProperty *contentProperty; // @synthesize contentProperty=_contentProperty;
 - (void).cxx_destruct;
-- (id)initWithContentProperty:(id)arg1;
+- (id)initWithContentProperty:(id)arg1 negativeProperty:(_Bool)arg2;
 - (id)initWithLabel:(id)arg1;
 
 @end

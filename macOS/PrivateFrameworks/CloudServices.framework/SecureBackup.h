@@ -168,6 +168,7 @@
 - (void)updateMetadataWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)stashRecoveryDataWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)disableWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)recoverRecordContents:(CDUnknownBlockType)arg1;
 - (void)recoverWithResults:(CDUnknownBlockType)arg1;
 - (void)enableWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)getAccountInfoWithResults:(CDUnknownBlockType)arg1;

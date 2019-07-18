@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     _Bool mIsSpecial;
     TSCH3DShaderVariable *mGenericName;
     NSArray *mElements;
+    unsigned long long mComponentCount;
 }
 
 + (id)variableWithName:(id)arg1 type:(struct NSString *)arg2 precision:(struct NSString *)arg3 arraySize:(unsigned long long)arg4 shaderType:(struct TSCH3DShaderType)arg5 isSpecial:(_Bool)arg6 generic:(id)arg7;

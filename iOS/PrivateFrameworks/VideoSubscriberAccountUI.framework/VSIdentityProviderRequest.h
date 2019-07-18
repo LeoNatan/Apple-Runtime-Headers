@@ -16,12 +16,15 @@
     VSAccount *_account;
     VSPersistentStorage *_storage;
     VSOptional *_accountMetadataRequest;
+    NSString *_accountProviderAuthenticationToken;
 }
 
++ (id)STBOptOutRequestWithStorage:(id)arg1;
 + (id)deleteAccountRequestWithAccount:(id)arg1 storage:(id)arg2;
-+ (id)accountMetadataRequestWithAccount:(id)arg1 storage:(id)arg2 accountMetadataRequest:(id)arg3 requestingAppDisplayName:(id)arg4 requestingAppAdamID:(id)arg5;
++ (id)accountMetadataRequestWithAccount:(id)arg1 storage:(id)arg2 accountMetadataRequest:(id)arg3 requestingAppDisplayName:(id)arg4 requestingAppAdamID:(id)arg5 accountProviderAuthenticationToken:(id)arg6;
 + (id)silentMakeAccountRequestWithStorage:(id)arg1;
 + (id)makeAccountRequestWithStorage:(id)arg1;
+@property(copy, nonatomic) NSString *accountProviderAuthenticationToken; // @synthesize accountProviderAuthenticationToken=_accountProviderAuthenticationToken;
 @property(retain, nonatomic) VSOptional *accountMetadataRequest; // @synthesize accountMetadataRequest=_accountMetadataRequest;
 @property(retain, nonatomic) VSPersistentStorage *storage; // @synthesize storage=_storage;
 @property(retain, nonatomic) VSAccount *account; // @synthesize account=_account;

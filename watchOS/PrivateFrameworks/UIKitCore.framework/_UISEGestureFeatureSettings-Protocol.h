@@ -15,6 +15,7 @@
 @property(readonly, nonatomic) float edgeAngleWindow;
 @property(readonly, nonatomic) float cornerAngleWindow;
 @property(readonly, nonatomic) struct CGRect bounds;
+@property(readonly, nonatomic) float bottomEdgeRegionSize;
 @property(readonly, nonatomic) float bottomEdgeAngleWindow;
 @end
 

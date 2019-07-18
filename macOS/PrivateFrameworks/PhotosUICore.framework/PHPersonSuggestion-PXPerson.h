@@ -16,6 +16,7 @@
 @property(readonly) BOOL isPersonModel;
 @property(readonly) BOOL isVerified;
 @property(readonly) NSString *px_localIdentifier;
+@property(readonly) NSString *px_localizedName;
 @property(readonly) NSString *px_displayName;
 @property(readonly) NSString *name;
 @property(readonly) unsigned long long numberOfAssets;

@@ -73,6 +73,7 @@
 @property(readonly, nonatomic) _Bool invalidatesSynchronously;
 @property(readonly, nonatomic) _Bool terminateTargetOnOriginatorExit;
 @property(readonly, nonatomic) double warningDuration;
+@property(readonly, nonatomic) unsigned long long legacyReason;
 @property(readonly, nonatomic) double invalidationDuration;
 @property(readonly, nonatomic) unsigned long long endPolicy;
 @property(readonly, nonatomic) unsigned long long startPolicy;

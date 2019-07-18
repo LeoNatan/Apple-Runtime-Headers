@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
 @interface AVCABackdropLayerView : UIView
 {
     _Bool _forceLowQualityEffect;
-    AVCABackdropLayerView *_groupLeader;
     UIColor *_customBackgroundColor;
+    AVCABackdropLayerView *_groupLeader;
     NSHashTable *_dependents;
     long long _activeBackdropEffect;
 }
@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 + (Class)layerClass;
 @property(nonatomic) long long activeBackdropEffect; // @synthesize activeBackdropEffect=_activeBackdropEffect;
 @property(readonly, nonatomic) NSHashTable *dependents; // @synthesize dependents=_dependents;
-@property(retain, nonatomic) UIColor *customBackgroundColor; // @synthesize customBackgroundColor=_customBackgroundColor;
 @property(nonatomic) __weak AVCABackdropLayerView *groupLeader; // @synthesize groupLeader=_groupLeader;
+@property(copy, nonatomic) UIColor *customBackgroundColor; // @synthesize customBackgroundColor=_customBackgroundColor;
 @property(nonatomic) _Bool forceLowQualityEffect; // @synthesize forceLowQualityEffect=_forceLowQualityEffect;
 - (void).cxx_destruct;
 - (void)_enumerateDependents:(CDUnknownBlockType)arg1;
@@ -35,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (void)removeDependent:(id)arg1;
 - (void)addDependent:(id)arg1;
 - (void)updateGroupLeader;
-- (void)setBackgroundColor:(id)arg1;
 @property(nonatomic, getter=isCaptureOnly) _Bool captureOnly;
 - (void)updateActiveBackdropEffectIfGroupLeader;
 - (void)didMoveToSuperview;

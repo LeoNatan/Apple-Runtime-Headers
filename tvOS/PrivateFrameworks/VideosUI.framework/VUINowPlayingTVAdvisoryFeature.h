@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) double duration;
-@property(readonly, nonatomic) double startTime;
+@property(nonatomic) double startTime;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) unsigned long long type;
 @property(retain, nonatomic) id userInfo;

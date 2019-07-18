@@ -19,12 +19,14 @@
 + (id)_loadConfigPlistWithPath:(id)arg1;
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (double)locationDecayHalfLifeSeconds;
+- (double)namedEntityDecayHalfLifeSeconds;
+- (double)topicDecayHalfLifeSeconds;
 - (int)portraitAnalyticsGeohashLength;
 - (int)portraitAnalyticsMaximumNumberOfRecords;
 - (double)portraitAnalyticsTopicsSamplingRate;
 - (int)feedbackSessionLogsGeohashLength;
 - (float)feedbackSessionLogsExtractionsSamplingRate;
-- (float)feedbackSessionLogsMappedTopicsSamplingRate;
 - (float)feedbackSessionLogsSamplingRate;
 - (float)scoreThresholdForLocation;
 - (float)scoreThresholdForTopic;
@@ -39,7 +41,7 @@
 - (double)portraitMusicDataCollectionSamplingRateForAMP;
 - (double)portraitMusicDataCollectionSamplingRateForCTS;
 - (double)portraitAnalyticsSamplingRate;
-- (float)getTopicsMultiplierForSource:(id)arg1 andAlgorithm:(id)arg2;
+- (float)topicsMultiplierForBundleId:(id)arg1 algorithm:(unsigned long long)arg2;
 - (double)nonReaderTextWeight;
 - (double)halfValuePosition;
 - (id)availablePortraitVariantNames;

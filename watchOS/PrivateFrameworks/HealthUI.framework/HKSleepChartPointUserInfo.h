@@ -20,7 +20,7 @@
 }
 
 @property(retain, nonatomic) HKSleepDay *sleepDay; // @synthesize sleepDay=_sleepDay;
-@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
+@property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(retain, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(retain, nonatomic) NSArray *titles; // @synthesize titles=_titles;
 - (void).cxx_destruct;

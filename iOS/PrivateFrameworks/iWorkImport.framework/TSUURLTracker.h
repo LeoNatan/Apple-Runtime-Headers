@@ -8,7 +8,7 @@
 
 #import <iWorkImport/TSUURLWrapper-Protocol.h>
 
-@class NSData, NSString, NSURL, TSUURLTrackerFilePresenter;
+@class NSData, NSString, NSURL, TSUSandboxedURL, TSUURLTrackerFilePresenter;
 @protocol TSULogContext;
 
 __attribute__((visibility("hidden")))
@@ -26,11 +26,17 @@ __attribute__((visibility("hidden")))
 - (void)resume;
 - (void)pause;
 @property(readonly) _Bool deleted;
+- (id)recalculateBookmarkDataAndReturnError:(id *)arg1;
+- (id)bookmarkDataAndReturnError:(id *)arg1;
 @property(readonly) NSData *bookmarkDataIfAvailable;
 @property(readonly) NSData *bookmarkData;
+@property(readonly) TSUSandboxedURL *sandboxedURLIfAvailable;
 @property(readonly) NSURL *URLIfAvailable;
-- (id)URLAndReturnError:(id *)arg1;
+- (id)recalculateSandboxedURLAndReturnError:(id *)arg1;
+- (id)sandboxedURLAndReturnError:(id *)arg1;
+@property(readonly) TSUSandboxedURL *sandboxedURL;
 @property(readonly) NSURL *URL;
+@property(readonly, nonatomic) _Bool isValid;
 - (void)dealloc;
 - (id)initWithBookmarkData:(id)arg1 delegate:(id)arg2;
 - (id)initWithBookmarkData:(id)arg1;

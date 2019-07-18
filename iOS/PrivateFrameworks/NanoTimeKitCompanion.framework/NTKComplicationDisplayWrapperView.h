@@ -22,6 +22,7 @@
     UIView *_clipView;
     UIView *_earlierContainerView;
     UIView *_laterContainerView;
+    CLKComplicationTemplate *_prevTemplate;
     CLKComplicationTemplate *_template;
     NSDate *_timeTravelDate;
     _Bool _didChangeLayoutOverride;

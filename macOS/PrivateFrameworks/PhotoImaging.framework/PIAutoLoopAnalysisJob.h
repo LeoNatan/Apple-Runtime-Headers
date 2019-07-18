@@ -22,6 +22,7 @@
 - (BOOL)prepare:(out id *)arg1;
 - (id)analysisRequest;
 - (id)scalePolicy;
+- (id)cacheKey;
 - (BOOL)wantsCompleteStage;
 - (BOOL)wantsOutputVideo;
 - (BOOL)wantsOutputGeometry;

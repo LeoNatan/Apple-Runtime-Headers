@@ -17,7 +17,6 @@
 }
 
 + (id)_fetchOrCreateSalt;
-+ (id)standardTableViewCellSpacerImage;
 + (id)imageManagerWithHealthRecordsStore:(id)arg1;
 + (double)defaultLogoDimension;
 @property(retain) NSOperationQueue *fileOperationQueue; // @synthesize fileOperationQueue=_fileOperationQueue;

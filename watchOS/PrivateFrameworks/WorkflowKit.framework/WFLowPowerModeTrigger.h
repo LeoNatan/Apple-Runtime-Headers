@@ -15,6 +15,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
++ (_Bool)isSupportedOnThisDevice;
 + (_Bool)isAllowedToRunAutomatically;
 @property(nonatomic) _Bool onDisable; // @synthesize onDisable=_onDisable;
 @property(nonatomic) _Bool onEnable; // @synthesize onEnable=_onEnable;

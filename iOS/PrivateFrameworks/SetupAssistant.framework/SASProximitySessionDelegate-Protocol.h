@@ -6,11 +6,13 @@
 
 #import <SetupAssistant/NSObject-Protocol.h>
 
-@class NSError, SASProximityBackupAction;
+@class NSError, NSString, SASProximityBackupAction;
 
 @protocol SASProximitySessionDelegate <NSObject>
 
 @optional
+- (void)prepareForMigrationToDevice:(NSString *)arg1;
+- (void)startMigration;
 - (void)finishedWithError:(NSError *)arg1;
 - (void)receivedBackupAction:(SASProximityBackupAction *)arg1;
 - (void)ready;

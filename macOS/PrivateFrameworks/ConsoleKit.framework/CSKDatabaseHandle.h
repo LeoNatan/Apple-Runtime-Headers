@@ -49,7 +49,7 @@
 + (id)questionMarkListForCollection:(id)arg1;
 + (BOOL)addSkipBackupAttributeToItemAtURL:(id)arg1;
 + (id)dbPathForArchive:(id)arg1 readOnly:(BOOL)arg2 inMemory:(BOOL)arg3;
-+ (id)queryForColumnIDs:(id)arg1 keyWord:(id)arg2 tableID:(unsigned long long)arg3 whereClause:(id)arg4;
++ (id)queryForColumnIDs:(id)arg1 keyWord:(id)arg2 tableID:(unsigned long long)arg3 whereClause:(id)arg4 comparisonValue:(id)arg5;
 + (id)filterQueryForType:(long long)arg1 keyWord:(id)arg2 comparisonType:(long long)arg3 tableID:(unsigned long long)arg4;
 + (id)filterQueryForType:(long long)arg1 values:(id)arg2 tableID:(unsigned long long)arg3;
 + (id)createQueryWithFilter:(id)arg1 tableID:(unsigned long long)arg2;

@@ -9,6 +9,7 @@
 @interface UIImage (Bridge)
 + (id)ts_systemCloseButton;
 + (id)ts_xmarkForHUD;
++ (id)ts_xmarkCircle;
 + (id)ts_xmark;
 + (id)ts_trash;
 + (id)ts_textFormatSize;
@@ -16,6 +17,7 @@
 + (id)ts_sidebarLeft;
 + (id)ts_safari;
 + (id)ts_rightArrow;
++ (id)ts_plusCirclePinkOnOpaqueFill;
 + (id)ts_plusCirclePinkOnTertiaryFill;
 + (id)ts_plusCircleFill;
 + (id)ts_plusCircleWhite;
@@ -27,6 +29,8 @@
 + (id)ts_minusCircleFillWhite;
 + (id)ts_minusCircleFill;
 + (id)ts_minusCircle;
++ (id)ts_link;
++ (id)ts_iCloudAndArrowDown;
 + (id)ts_heartFill;
 + (id)ts_heartCircleTertiaryFillOnPink;
 + (id)ts_heartCircleFill;
@@ -55,6 +59,7 @@
 + (id)ts_circleFill;
 + (id)ts_chevronRight;
 + (id)ts_checkmarkForHUD;
++ (id)ts_checkmarkCircleOpaqueFillOnPink;
 + (id)ts_checkmarkCircleTertiaryFillOnPink;
 + (id)ts_checkmarkCircleFillWhite;
 + (id)ts_checkmarkCircleFill;

@@ -24,6 +24,7 @@
 @property(readonly) HMDDeviceFileManager *fileManager; // @synthesize fileManager=_fileManager;
 @property(readonly) HMDBulletinBoard *bulletinBoard; // @synthesize bulletinBoard=_bulletinBoard;
 - (void).cxx_destruct;
+- (void)removeEventNotificationForClipWithUUID:(id)arg1;
 - (void)_postClipSignificantEventNotification:(id)arg1 postedNotificationUUIDs:(id)arg2;
 - (void)postClipSignificantEventNotification:(id)arg1;
 - (void)postSignificantEventNotification:(id)arg1;

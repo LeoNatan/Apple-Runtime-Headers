@@ -7,7 +7,7 @@
 #import <Foundation/NSBundle.h>
 
 @interface NSBundle (AppleMediaServices)
-+ (id)ams_iTunesBundle;
++ (id)ams_MusicBundle;
 + (id)ams_AppleMediaServicesBundle;
 @end
 

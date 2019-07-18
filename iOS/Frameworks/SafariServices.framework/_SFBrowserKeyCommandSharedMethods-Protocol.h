@@ -10,7 +10,6 @@
 - (void)saveWebpageAlternativeKeyPressed;
 - (void)saveWebpageKeyPressed;
 - (void)resetPageZoomLevelAndFontSize;
-- (void)emailCurrentPageAsLink;
 - (void)emailCurrentPage;
 - (void)cancelKeyPressed;
 - (void)toggleReaderKeyPressed;

@@ -19,6 +19,7 @@
     NSDateFormatter *_formatterMonthYear;
     NSDateFormatter *_formatterMonthAndDay;
     NSDateFormatter *_formatterMonthDayYear;
+    NSDateFormatter *_formatterMonth;
     UIImage *_statementIcon;
     NSData *_pdfData;
     int _cellStyle;
@@ -26,14 +27,14 @@
 
 @property(nonatomic) int cellStyle; // @synthesize cellStyle=_cellStyle;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChangeFromTrait:(id)arg1 toTrait:(id)arg2 inCollectionView:(id)arg3;
 - (_Bool)_statementIsFromMonthPriorToSummaryForItem:(id)arg1;
 - (_Bool)_shouldInset;
 - (id)_statementCellTitleForItem:(id)arg1;
 - (id)statementIcon;
 - (void)_downloadAndPresentStatementForItem:(id)arg1 inCollectionView:(id)arg2;
 - (void)_configureStatementDownloadCell:(id)arg1 forItem:(id)arg2;
-- (void)_configureAvailableCreditCell:(id)arg1 forItem:(id)arg2;
-- (void)_configureCreditLimitCell:(id)arg1 forItem:(id)arg2;
+- (void)_configureDailyCashCell:(id)arg1 forItem:(id)arg2;
 - (void)_configurePaymentsAndCreditsCell:(id)arg1 forItem:(id)arg2;
 - (void)_configureInterestCell:(id)arg1 forItem:(id)arg2;
 - (void)_configureSpendingCell:(id)arg1 forItem:(id)arg2;

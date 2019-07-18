@@ -6,11 +6,12 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <PassKitUI/UIScrollViewDelegate-Protocol.h>
 #import <PassKitUI/UITextViewDelegate-Protocol.h>
 
 @class NSArray, NSString, PKAccount, UILabel, UIScrollView, UITextView;
 
-@interface PKAccountBillPaymentLearnMoreViewController : UIViewController <UITextViewDelegate>
+@interface PKAccountBillPaymentLearnMoreViewController : UIViewController <UITextViewDelegate, UIScrollViewDelegate>
 {
     PKAccount *_account;
     UIScrollView *_scrollView;
@@ -28,6 +29,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)scrollViewDidScroll:(id)arg1;
 - (id)_customerAgreementAttributedString;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(int)arg4;
 - (void)doneButtonTapped;

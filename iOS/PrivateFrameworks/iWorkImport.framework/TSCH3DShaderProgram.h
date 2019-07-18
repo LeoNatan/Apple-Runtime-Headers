@@ -27,12 +27,17 @@ __attribute__((visibility("hidden")))
     NSString *mFragment;
     TSCH3DVersion *mVersion;
     TSCH3DOrderedDictionary *mTypeDeclarations;
+    NSMutableArray *mSortedLinks;
+    NSMutableDictionary *mVariableToVertexAttributeLocation;
+    NSMutableDictionary *mLinkedInputVariables;
     NSSet *_variablesWithBackingResources;
     NSSet *_interleavedAttributeVariables;
 }
 
 @property(copy, nonatomic) NSSet *interleavedAttributeVariables; // @synthesize interleavedAttributeVariables=_interleavedAttributeVariables;
 @property(copy, nonatomic) NSSet *variablesWithBackingResources; // @synthesize variablesWithBackingResources=_variablesWithBackingResources;
+@property(retain, nonatomic) NSMutableDictionary *variableToVertexAttributeLocation; // @synthesize variableToVertexAttributeLocation=mVariableToVertexAttributeLocation;
+@property(retain, nonatomic) NSMutableArray *sortedLinks; // @synthesize sortedLinks=mSortedLinks;
 @property(readonly, nonatomic) TSCH3DVersion *version; // @synthesize version=mVersion;
 - (unsigned long long)vertexAttributeLocationForVariable:(id)arg1;
 - (id)usedAttributeNameForVariable:(id)arg1;
@@ -60,7 +65,6 @@ __attribute__((visibility("hidden")))
 - (id)linkedUniformVariablesForType:(struct TSCH3DShaderType)arg1 isTexture:(_Bool)arg2;
 - (id)linkedVertexAttributeVariables;
 - (id)linkedInputVariablesForType:(struct TSCH3DShaderType)arg1 scope:(struct TSCH3DShaderVariableScopeType)arg2;
-- (id)sortedLinks;
 - (void)p_addCompatibilityFunctions;
 - (void)p_generateSection:(id)arg1 type:(struct TSCH3DShaderType)arg2;
 - (void)p_generateFunctions;

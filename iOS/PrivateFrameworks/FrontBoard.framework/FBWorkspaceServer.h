@@ -27,9 +27,6 @@
 - (oneway void)sceneID:(id)arg1 sendMessage:(id)arg2 withResponse:(CDUnknownBlockType)arg3;
 - (oneway void)sceneID:(id)arg1 didReceiveActions:(id)arg2;
 - (oneway void)sceneID:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 transitionContext:(id)arg3;
-- (oneway void)sceneID:(id)arg1 didDetachLayer:(id)arg2;
-- (oneway void)sceneID:(id)arg1 didUpdateLayer:(id)arg2;
-- (oneway void)sceneID:(id)arg1 didAttachLayer:(id)arg2;
 - (oneway void)requestSceneWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_handlerForSceneID:(id)arg1;
 - (void)_queue_setConnection:(id)arg1;

@@ -10,7 +10,9 @@
 {
     // Error parsing type: , name: identifier
     // Error parsing type: , name: store
-    // Error parsing type: , name: offlineProvider
+    // Error parsing type: , name: issueService
+    // Error parsing type: , name: issueModelFactory
+    // Error parsing type: , name: tagService
 }
 
 @end

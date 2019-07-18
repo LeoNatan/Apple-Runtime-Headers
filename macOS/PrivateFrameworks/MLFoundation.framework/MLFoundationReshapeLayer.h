@@ -8,21 +8,27 @@
 
 #import <MLFoundation/MLFoundationLayerCompiling-Protocol.h>
 
-@class MLFoundationTensor;
+@class NSArray, NSString;
 
 @interface MLFoundationReshapeLayer : MLFoundationLayer <MLFoundationLayerCompiling>
 {
-    MLFoundationTensor *_reshape;
+    NSArray *_shape;
 }
 
-+ (id)layerWithReshapeTensor:(id)arg1;
++ (id)layerWithShape:(id)arg1;
 + (id)new;
-@property(readonly, nonatomic) MLFoundationTensor *reshape; // @synthesize reshape=_reshape;
+@property(readonly, nonatomic) NSArray *shape; // @synthesize shape=_shape;
 - (void).cxx_destruct;
-- (id)description;
-- (void)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
-- (id)initWithReshapeTensor:(id)arg1;
+@property(readonly, copy) NSString *description;
+- (unsigned long long)computeResultSizeFromSourceSize:(unsigned long long)arg1 dimension:(unsigned long long)arg2;
+- (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
+- (id)initWithShape:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

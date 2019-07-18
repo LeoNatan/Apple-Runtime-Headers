@@ -19,7 +19,6 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 @property(retain, nonatomic) RPBroadcastActivityHostRemoteNSViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 - (void).cxx_destruct;
-- (oneway void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 broadcastConfigurationData:(id)arg4 userInfo:(id)arg5 cancelled:(BOOL)arg6;
 - (oneway void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 cancelled:(BOOL)arg4;
 - (oneway void)presentBroadcastActivitySheet;
 - (id)remoteProxy;

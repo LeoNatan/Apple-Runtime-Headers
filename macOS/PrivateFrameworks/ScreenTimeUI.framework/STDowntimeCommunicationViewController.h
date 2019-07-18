@@ -10,7 +10,7 @@
 #import <ScreenTimeUI/CNFamilyMemberWhitelistedContactsViewControllerDelegate-Protocol.h>
 #import <ScreenTimeUI/STProtectedControlDelegate-Protocol.h>
 
-@class CNFamilyMemberContactsViewController, CNFamilyMemberWhitelistedContactsViewController, NSButton, NSLayoutConstraint, NSString, NSView, STCommunicationContactEditingViewController, STCoreUser;
+@class CNFamilyMemberContactsViewController, CNFamilyMemberWhitelistedContactsViewController, NSButton, NSStackView, NSString, STCommunicationContactEditingViewController, STCoreUser;
 
 @interface STDowntimeCommunicationViewController : NSViewController <CNFamilyMemberContactsViewControllerDelegate, CNFamilyMemberWhitelistedContactsViewControllerDelegate, STProtectedControlDelegate>
 {
@@ -20,9 +20,9 @@
     CNFamilyMemberWhitelistedContactsViewController *_familyMemberWhitelistedContactsViewController;
     STCommunicationContactEditingViewController *_editListViewController;
     NSButton *_everyoneRadioButton;
+    NSButton *_contactsOnlyRadioButton;
     NSButton *_specificContactsRadioButton;
-    NSView *_contactManagementContainerView;
-    NSLayoutConstraint *_contactManagementContainerTopLayoutConstraint;
+    NSStackView *_contactManagementStackView;
     NSButton *_managingOnOffButton;
 }
 
@@ -34,12 +34,13 @@
 + (id)keyPathsForValuesAffectingManagingStateDescriptionString;
 + (id)keyPathsForValuesAffectingContactsLabelValue;
 + (id)keyPathsForValuesAffectingOnOffButtonString;
++ (id)keyPathsForValuesAffectingOnOffButtonEnabled;
 + (id)keyPathsForValuesAffectingOnOffLabelString;
 + (id)keyPathsForValuesAffectingManageContactsDescriptionString;
 @property(retain) NSButton *managingOnOffButton; // @synthesize managingOnOffButton=_managingOnOffButton;
-@property(retain) NSLayoutConstraint *contactManagementContainerTopLayoutConstraint; // @synthesize contactManagementContainerTopLayoutConstraint=_contactManagementContainerTopLayoutConstraint;
-@property(retain) NSView *contactManagementContainerView; // @synthesize contactManagementContainerView=_contactManagementContainerView;
+@property(retain) NSStackView *contactManagementStackView; // @synthesize contactManagementStackView=_contactManagementStackView;
 @property(retain) NSButton *specificContactsRadioButton; // @synthesize specificContactsRadioButton=_specificContactsRadioButton;
+@property(retain) NSButton *contactsOnlyRadioButton; // @synthesize contactsOnlyRadioButton=_contactsOnlyRadioButton;
 @property(retain) NSButton *everyoneRadioButton; // @synthesize everyoneRadioButton=_everyoneRadioButton;
 @property(nonatomic) __weak STCommunicationContactEditingViewController *editListViewController; // @synthesize editListViewController=_editListViewController;
 @property(retain, nonatomic) CNFamilyMemberWhitelistedContactsViewController *familyMemberWhitelistedContactsViewController; // @synthesize familyMemberWhitelistedContactsViewController=_familyMemberWhitelistedContactsViewController;
@@ -68,6 +69,7 @@
 @property(readonly, copy, nonatomic) NSString *managingStateDescriptionString;
 @property(readonly, copy, nonatomic) id contactsLabelValue;
 @property(readonly, nonatomic) NSString *onOffButtonString;
+@property(readonly, nonatomic) BOOL onOffButtonEnabled;
 @property(readonly, nonatomic) NSString *onOffLabelString;
 @property(readonly, nonatomic) NSString *manageContactsDescriptionString;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

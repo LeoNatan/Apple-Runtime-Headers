@@ -6,15 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class HDConceptIndexManagerState, HDProfile;
+@class HDProfile;
 @protocol OS_dispatch_queue;
 
 @interface HDConceptIndexer : NSObject
 {
     HDProfile *_profile;
     NSObject<OS_dispatch_queue> *_syncQueue;
-    _Bool _isInitialized;
-    HDConceptIndexManagerState *_state;
 }
 
 + (_Bool)indexSample:(id)arg1 profile:(id)arg2 error:(id *)arg3;
@@ -24,10 +22,10 @@
 - (_Bool)resetWithError:(id *)arg1;
 - (_Bool)_syncQueue_processSamplesWithLimit:(unsigned int)arg1 countOfSamplesProcessed:(int *)arg2 error:(id *)arg3;
 - (_Bool)processSamplesWithLimit:(unsigned int)arg1 countOfSamplesProcessed:(int *)arg2 error:(id *)arg3;
-- (_Bool)_syncQueue_initializeIfNecessaryWithError:(id *)arg1;
 - (_Bool)_syncQueue_processUpdatedSamplesWithLimit:(unsigned int)arg1 countOfSamplesProcessed:(int *)arg2 error:(id *)arg3;
+- (_Bool)updateHighestSeenAnchorForProfile:(id)arg1;
+- (_Bool)haveNewRecordsBeenIndexedForProfile:(id)arg1;
 - (_Bool)_syncQueue_processDeletedSamplesWithLimit:(unsigned int)arg1 sampleType:(id)arg2 countOfSamplesProcessed:(int *)arg3 error:(id *)arg4;
-- (void)requireStateReload;
 - (id)initWithProfile:(id)arg1;
 - (id)init;
 

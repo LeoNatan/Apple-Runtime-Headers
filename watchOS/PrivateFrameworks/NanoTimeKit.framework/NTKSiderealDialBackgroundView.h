@@ -6,25 +6,27 @@
 
 #import <UIKit/UIView.h>
 
-@class NSDictionary, NSMutableDictionary, NTKAltitudeColorCurveView;
+@class CLKUIQuadView, NTKAltitudeColorCurveView, NTKSiderealBackgroundQuad;
 
 @interface NTKSiderealDialBackgroundView : UIView
 {
-    UIView *_solarIntervalsContentView;
-    NSDictionary *_solarIntervals;
-    NSMutableDictionary *_solarIntervalViews;
+    NTKSiderealBackgroundQuad *_backgroundQuad;
+    _Bool _renderOnProgressUpdate;
+    CLKUIQuadView *_quadView;
+    NTKSiderealBackgroundQuad *_quad;
     NTKAltitudeColorCurveView *_backgroundDialView;
 }
 
 @property(retain, nonatomic) NTKAltitudeColorCurveView *backgroundDialView; // @synthesize backgroundDialView=_backgroundDialView;
+@property(nonatomic) _Bool renderOnProgressUpdate; // @synthesize renderOnProgressUpdate=_renderOnProgressUpdate;
+@property(readonly, nonatomic) NTKSiderealBackgroundQuad *quad; // @synthesize quad=_quad;
+@property(retain, nonatomic) CLKUIQuadView *quadView; // @synthesize quadView=_quadView;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
-- (id)maskForSolarIntervalType:(unsigned int)arg1;
-- (id)_colorCurveViewForSolarInterval:(id)arg1;
-- (void)_updateViewForSolarInterval:(id)arg1;
-- (void)setSolarIntervals:(id)arg1;
-- (void)setAltitude:(CDStruct_869f9c67)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (void)setSectors:(id)arg1;
+- (void)setSolarDayProgress:(float)arg1;
+- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 dialImage:(struct CGImage *)arg2 waypointImage:(struct CGImage *)arg3 dataSource:(id)arg4;
 
 @end
 

@@ -42,6 +42,7 @@ struct CXCallUpdateHasSet {
     unsigned int supportsSendingToVoicemail:1;
     unsigned int videoStreamToken:1;
     unsigned int crossDeviceIdentifier:1;
+    unsigned int ISOCountryCode:1;
     unsigned int localSenderIdentityUUID:1;
     unsigned int localSenderIdentityAccountUUID:1;
     unsigned int remoteParticipantHandles:1;

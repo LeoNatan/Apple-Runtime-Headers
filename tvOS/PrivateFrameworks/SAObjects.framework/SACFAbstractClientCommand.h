@@ -17,6 +17,7 @@
 - (_Bool)requiresResponse;
 @property(nonatomic) _Bool shouldRestartContext;
 @property(nonatomic) _Bool shouldCacheScript;
+@property(nonatomic) _Bool shouldCacheBytecode;
 @property(copy, nonatomic) NSString *jsScript;
 @property(copy, nonatomic) NSString *jsParameters;
 @property(copy, nonatomic) NSArray *jsLibraries;

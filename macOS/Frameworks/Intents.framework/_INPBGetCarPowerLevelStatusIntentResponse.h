@@ -18,6 +18,7 @@
         unsigned int charging:1;
     } _has;
     BOOL _charging;
+    BOOL __encodeLegacyGloryData;
     _INPBDouble *_chargePercentRemaining;
     _INPBDistance *_distanceRemaining;
     _INPBDouble *_fuelPercentRemaining;
@@ -25,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBInteger *minutesToFull; // @synthesize minutesToFull=_minutesToFull;
 @property(retain, nonatomic) _INPBDouble *fuelPercentRemaining; // @synthesize fuelPercentRemaining=_fuelPercentRemaining;
 @property(retain, nonatomic) _INPBDistance *distanceRemaining; // @synthesize distanceRemaining=_distanceRemaining;

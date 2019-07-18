@@ -6,7 +6,7 @@
 
 #import <VideosUI/VUIButton.h>
 
-@class UIAlertController, UIImage, UIViewController, VUICircleProgressIndicator, VUIDownloadButtonViewModel;
+@class UIAlertController, UIImage, UIViewController, VUICircularProgress, VUIDownloadButtonViewModel;
 
 __attribute__((visibility("hidden")))
 @interface VUIDownloadButton : VUIButton
@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
     UIImage *_downloadingImage;
     UIImage *_downloadedImage;
     VUIDownloadButtonViewModel *_viewModel;
-    VUICircleProgressIndicator *_progressIndicator;
+    VUICircularProgress *_progressIndicator;
     UIAlertController *_deleteConfirmationAlertController;
 }
 
@@ -33,7 +33,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool wasCanceled; // @synthesize wasCanceled=_wasCanceled;
 @property(nonatomic) _Bool wasDeleted; // @synthesize wasDeleted=_wasDeleted;
 @property(nonatomic) _Bool observingDownloadProgress; // @synthesize observingDownloadProgress=_observingDownloadProgress;
-@property(retain, nonatomic) VUICircleProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
+@property(retain, nonatomic) VUICircularProgress *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(retain, nonatomic) VUIDownloadButtonViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UIImage *downloadedImage; // @synthesize downloadedImage=_downloadedImage;
 @property(retain, nonatomic) UIImage *downloadingImage; // @synthesize downloadingImage=_downloadingImage;

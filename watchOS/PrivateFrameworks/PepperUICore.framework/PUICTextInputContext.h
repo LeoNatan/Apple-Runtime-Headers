@@ -9,12 +9,15 @@
 #import <PepperUICore/NSSecureCoding-Protocol.h>
 #import <PepperUICore/UITextInputTraits-Protocol.h>
 
-@class NSString, UIColor, UITextInputPasswordRules;
+@class NSAttributedString, NSString, UIColor, UITextInputPasswordRules;
 
 @interface PUICTextInputContext : NSObject <UITextInputTraits, NSSecureCoding>
 {
     _Bool _secureTextEntry;
     NSString *_textContentType;
+    int _minimumLength;
+    int _returnKeyType;
+    NSAttributedString *_attributedHeaderText;
     NSString *_requestingApplicationBundleID;
     NSString *_initialText;
     UIColor *_tintColor;
@@ -26,6 +29,9 @@
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) NSString *initialText; // @synthesize initialText=_initialText;
 @property(retain, nonatomic) NSString *requestingApplicationBundleID; // @synthesize requestingApplicationBundleID=_requestingApplicationBundleID;
+@property(retain, nonatomic) NSAttributedString *attributedHeaderText; // @synthesize attributedHeaderText=_attributedHeaderText;
+@property(nonatomic) int returnKeyType; // @synthesize returnKeyType=_returnKeyType;
+@property(nonatomic) int minimumLength; // @synthesize minimumLength=_minimumLength;
 @property(nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry; // @synthesize secureTextEntry=_secureTextEntry;
 @property(copy, nonatomic) NSString *textContentType; // @synthesize textContentType=_textContentType;
 - (void).cxx_destruct;
@@ -42,7 +48,6 @@
 @property(nonatomic) int keyboardAppearance;
 @property(nonatomic) int keyboardType;
 @property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
-@property(nonatomic) int returnKeyType;
 @property(nonatomic) int smartDashesType;
 @property(nonatomic) int smartInsertDeleteType;
 @property(nonatomic) int smartQuotesType;

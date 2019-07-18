@@ -30,7 +30,7 @@
 - (id)stringArrayFromPreResponseItems:(id)arg1;
 - (id)stringArrayFromConversationTurns:(id)arg1;
 - (id)waitForPreResponseItemsForMessage:(id)arg1 maximumResponses:(unsigned long long)arg2 forConversationHistory:(id)arg3 forContext:(id)arg4 time:(id)arg5 withLanguage:(id)arg6 options:(unsigned long long)arg7;
-- (void)registerImpressionWithPreResponseItems:(id)arg1 language:(id)arg2 isCached:(_Bool)arg3 responseTimePerf:(unsigned long long)arg4 promptMessage:(id)arg5;
+- (void)registerImpressionWithPreResponseItems:(id)arg1 language:(id)arg2 isCached:(_Bool)arg3 responseTimePerf:(unsigned long long)arg4 promptMessage:(id)arg5 generationStatus:(int)arg6;
 - (id)responsesCacheLock;
 - (void)primeResponsesExperimentsIfNeeded;
 - (void)registerResponse:(id)arg1 forMessage:(id)arg2 time:(id)arg3 metadata:(id)arg4 withLanguage:(id)arg5;

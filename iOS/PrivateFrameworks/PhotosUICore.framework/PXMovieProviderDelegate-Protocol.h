@@ -6,11 +6,11 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@class PHMemory, PXMovieProvider;
+@class PXMovieProvider, UIViewController;
 
 @protocol PXMovieProviderDelegate <NSObject>
 
 @optional
-- (_Bool)movieProvider:(PXMovieProvider *)arg1 navigateToMemory:(PHMemory *)arg2;
+- (UIViewController *)presentingViewControllerForMovieProvider:(PXMovieProvider *)arg1;
 @end
 

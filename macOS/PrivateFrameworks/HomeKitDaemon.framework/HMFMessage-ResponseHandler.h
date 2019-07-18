@@ -32,6 +32,7 @@
 @property(readonly, nonatomic, getter=isEntitledForSPIAccess) BOOL entitledForSPIAccess;
 @property(readonly, nonatomic, getter=isEntitledForAPIAccess) BOOL entitledForAPIAccess;
 @property(readonly) HMDXPCClientConnection *proxyConnection;
+@property(readonly, nonatomic) BOOL requiresMultiUserSetupEntitlement;
 @property(readonly, nonatomic) BOOL requiresCameraClipsEntitlement;
 - (BOOL)requiresSetupPayloadEntitlement;
 @property(readonly, nonatomic) BOOL requiresNoSPIEntitlement;

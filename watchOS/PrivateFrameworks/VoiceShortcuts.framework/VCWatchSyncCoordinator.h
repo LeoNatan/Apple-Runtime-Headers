@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <VoiceShortcuts/VCCompanionSyncServiceDelegate-Protocol.h>
+
 @class VCCompanionSyncService, VCDaemonXPCEventHandler;
 @protocol OS_dispatch_queue, VCSyncDataEndpoint;
 
-@interface VCWatchSyncCoordinator : NSObject
+@interface VCWatchSyncCoordinator : NSObject <VCCompanionSyncServiceDelegate>
 {
     id <VCSyncDataEndpoint> _syncDataEndpoint;
     VCDaemonXPCEventHandler *_eventHandler;
@@ -17,7 +19,6 @@
     VCCompanionSyncService *_service;
 }
 
-+ (void)initialize;
 @property(readonly, nonatomic) VCCompanionSyncService *service; // @synthesize service=_service;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) VCDaemonXPCEventHandler *eventHandler; // @synthesize eventHandler=_eventHandler;
@@ -27,6 +28,12 @@
 - (void)handleDeviceDidChangeVersionNotification;
 - (void)stopObservingWatchChangeNotifications;
 - (void)startObservingWatchChangeNotifications;
+- (void)companionSyncService:(id)arg1 outgoingSyncSession:(id)arg2 didUpdateProgress:(double)arg3;
+- (void)companionSyncService:(id)arg1 outgoingSyncSessionDidFinishSendingChanges:(id)arg2;
+- (void)companionSyncService:(id)arg1 didRejectSessionWithError:(id)arg2;
+- (void)companionSyncService:(id)arg1 didFinishSyncSession:(id)arg2 withError:(id)arg3;
+- (int)companionSyncService:(id)arg1 typeForSession:(id)arg2;
+- (_Bool)companionSyncServiceShouldStartSession:(id)arg1;
 - (void)requestSyncIfUnrestricted;
 - (void)dealloc;
 - (id)initWithSyncDataEndpoint:(id)arg1 eventHandler:(id)arg2;

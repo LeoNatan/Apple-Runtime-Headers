@@ -4,22 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/_UIStatusBarItem.h>
-
-@class _UIStatusBarStringView;
+#import <UIKitCore/_UIStatusBarNameItem.h>
 
 __attribute__((visibility("hidden")))
-@interface _UIStatusBarPersonNameItem : _UIStatusBarItem
+@interface _UIStatusBarPersonNameItem : _UIStatusBarNameItem
 {
-    _UIStatusBarStringView *_personNameView;
 }
 
-@property(retain, nonatomic) _UIStatusBarStringView *personNameView; // @synthesize personNameView=_personNameView;
-- (void).cxx_destruct;
-- (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
-- (id)viewForIdentifier:(id)arg1;
-- (void)_create_personNameView;
-- (id)dependentEntryKeys;
+- (id)nameEntryKey;
 
 @end
 

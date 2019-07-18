@@ -13,8 +13,6 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (double)timeIntervalBeforePredictedLocationTransitionMinutesBefore:(unsigned int)arg1;
-+ (double)timeIntervalForPredictedLocationTransitionMinutesBefore:(unsigned int)arg1;
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
 @property(nonatomic) unsigned int minutesBefore; // @synthesize minutesBefore=_minutesBefore;
@@ -23,7 +21,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)localizedTitleWithConfigurationSummary;
-- (_Bool)isEqual:(id)arg1;
 - (_Bool)hasValidConfiguration;
 
 @end

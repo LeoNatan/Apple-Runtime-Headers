@@ -61,6 +61,7 @@
 - (int)bindNamedParamToNull:(const char *)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)prepareForRowDeserialization;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;

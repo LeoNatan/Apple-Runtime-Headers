@@ -17,9 +17,10 @@
     // Error parsing type: , name: modelVersion
     // Error parsing type: , name: modelDirectoryName
     // Error parsing type: , name: $__lazy_storage_$_modelPath
-    // Error parsing type: , name: $__lazy_storage_$_pretrainedModelPath
+    // Error parsing type: , name: pretrainedModelURL
     // Error parsing type: , name: dataSources
     // Error parsing type: , name: $__lazy_storage_$_trainingContext
+    // Error parsing type: , name: $__lazy_storage_$_metricsRecorder
     // Error parsing type: , name: $__lazy_storage_$_relevanceEngine
 }
 

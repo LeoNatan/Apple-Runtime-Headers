@@ -23,9 +23,7 @@
     NSTimer *_reportUpdatedProgressTimer;
     WKWebView *_originatingWebView;
     NSData *_resumeData;
-    NSData *_placeholderBookmarkData;
-    NSURL *_placeholderURL;
-    NSData *_completedFileBookmarkData;
+    SFDownloadFile *_placeholderFile;
     SFDownloadFile *_completedFile;
     NSString *_suggestedFilename;
     NSURLRequest *_request;
@@ -42,6 +40,7 @@
     long long _bytesExpected;
     unsigned long long _bytesLoaded;
     long long _state;
+    NSDate *_dateAdded;
     NSDate *_dateFinished;
     WBSFluidProgressController *_fluidProgressController;
     id <_SFDownloadDelegate> _delegate;
@@ -54,6 +53,7 @@
 @property(nonatomic) __weak id <_SFDownloadDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak WBSFluidProgressController *fluidProgressController; // @synthesize fluidProgressController=_fluidProgressController;
 @property(readonly, nonatomic) NSDate *dateFinished; // @synthesize dateFinished=_dateFinished;
+@property(readonly, nonatomic) NSDate *dateAdded; // @synthesize dateAdded=_dateAdded;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) unsigned long long bytesLoaded; // @synthesize bytesLoaded=_bytesLoaded;
 @property(readonly, nonatomic) long long bytesExpected; // @synthesize bytesExpected=_bytesExpected;
@@ -97,6 +97,7 @@
 - (void)_didImportPlaceholderAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_importPlaceholderIfNeeded:(CDUnknownBlockType)arg1;
 - (void)resumeInProcessPool:(id)arg1;
+- (void)_validateSandboxAccessToURL:(id)arg1;
 @property(readonly, nonatomic) _Bool canResume;
 - (id)completedFileURL:(_Bool *)arg1;
 @property(readonly, nonatomic) NSURL *completedFileURL;

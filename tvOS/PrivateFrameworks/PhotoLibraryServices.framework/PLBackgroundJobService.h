@@ -6,24 +6,31 @@
 
 #import <objc/NSObject.h>
 
+#import <PhotoLibraryServices/PLBackgroundJobCameraWatcherDelegate-Protocol.h>
 #import <PhotoLibraryServices/PLBackgroundJobLibraryCoordinatorDelegate-Protocol.h>
+#import <PhotoLibraryServices/PLForegroundMonitorDelegate-Protocol.h>
 
-@class NSDictionary, NSString, PFCoalescer, PLBackgroundJobLibraryCoordinator;
+@class NSDictionary, NSString, PFCoalescer, PLBackgroundJobCameraWatcher, PLBackgroundJobLibraryCoordinator, PLForegroundMonitor;
 @protocol OS_dispatch_queue, OS_dispatch_source, OS_xpc_object, PLBackgroundJobServiceDelegate;
 
-@interface PLBackgroundJobService : NSObject <PLBackgroundJobLibraryCoordinatorDelegate>
+@interface PLBackgroundJobService : NSObject <PLBackgroundJobLibraryCoordinatorDelegate, PLForegroundMonitorDelegate, PLBackgroundJobCameraWatcherDelegate>
 {
     NSObject<OS_xpc_object> *_xpcActivity;
     unsigned long long _state;
     PLBackgroundJobLibraryCoordinator *_libraryCoordinator;
     PFCoalescer *_registrationCoalescer;
+    PLForegroundMonitor *_foregroundMonitor;
+    PLBackgroundJobCameraWatcher *_cameraWatcher;
+    double _registrationCoalescerPushBackTimeInterval;
+    NSDictionary *_libraryInvalidationCompletionHandlerByLibraryURL;
     NSDictionary *_bundlesToProcessByPriority;
     struct os_unfair_lock_s _stateLock;
     struct os_unfair_lock_s _bundlesToProcessByPriorityLock;
     NSObject<OS_dispatch_queue> *_isolationQueue;
-    NSObject<OS_dispatch_source> *_timer;
-    _Bool _XPCInstructedToDefer;
-    _Bool _simulateXPCDeferring;
+    NSObject<OS_dispatch_source> *_xpcActivityDeferTimer;
+    _Bool _deferringService;
+    _Bool _simulateXpcActivityDeferring;
+    _Bool _cameraForeground;
     id <PLBackgroundJobServiceDelegate> _delegate;
 }
 
@@ -31,10 +38,10 @@
 + (id)_criteriaForActivityPriority:(unsigned long long)arg1;
 @property(nonatomic) __weak id <PLBackgroundJobServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)libraryCoordinatorFinishedJobsOnAllBundles;
-- (void)libraryCoordinatorFinishedJobOnBundle:(id)arg1 priority:(unsigned long long)arg2;
-- (void)_stopRunningBackgroundJobs;
-- (void)_startRunningBackgroundJobsWithPriority:(unsigned long long)arg1;
+- (void)cameraWatcherDidChangeState:(id)arg1;
+- (void)foregroundMonitor:(id)arg1 changedStateToForeground:(_Bool)arg2 forBundleIdentifier:(id)arg3;
+- (void)libraryCoordinatorFinishedJobsOnAllSubmittedBundles;
+- (void)libraryCoordinatorFinishedJobsOnSubmittedBundle:(id)arg1 priority:(unsigned long long)arg2;
 - (id)_getBundleRecordsFromProcessingSetForAllPriorites;
 - (id)_getBundleRecordsFromProcessingSetForPriority:(unsigned long long)arg1;
 - (void)_removeAllBundlesFromProcessingSet;
@@ -43,19 +50,28 @@
 - (void)_loadBundleRecordsDictionaryFromUserDefaults;
 - (void)_persistBundleRecordsDictionaryToUserDefaults;
 - (id)_bundlesToProcessByPriorityAsPathStrings;
+- (void)_updateCameraForegroundState:(_Bool)arg1;
+- (void)_stopRunningBackgroundJobs;
+- (void)_startRunningBackgroundJobsWithPriority:(unsigned long long)arg1;
 - (void)_stopPollingForActivityStatus;
+- (void)_stopRunningBackgroundJobsAndTearDownXPCDeferTimers;
 - (void)_startPollingForActivityStatus;
-- (void)_unregisterActivityIfNeeded;
-- (void)_registerActivityForBundles:(id)arg1 priority:(unsigned long long)arg2;
+- (void)_unregisterActivityIfNeededShouldConsiderDeferring:(_Bool)arg1;
+- (void)_registerActivityWithPriority:(unsigned long long)arg1;
 - (void)_registerActivityIfNecessaryOnBundles:(id)arg1;
+- (_Bool)_serviceReadyForRegistration;
 - (void)_registerActivityWithoutCoalescingIfNecessaryOnBundle:(id)arg1;
 - (void)registerActivityIfNecessaryOnBundle:(id)arg1;
 - (void)signalBackgroundProcessingNeededOnLibrary:(id)arg1;
-- (void)shutdown;
+- (void)_verifyStateTransitionFromState:(unsigned long long)arg1 toState:(unsigned long long)arg2;
+- (void)_setServiceStateAlreadyLocked:(unsigned long long)arg1;
+- (void)_setServiceState:(unsigned long long)arg1;
+- (unsigned long long)_getServiceStateAlreadyLocked;
+- (unsigned long long)_getServiceState;
+- (void)invalidateLibrary:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_shutdown;
 - (void)_simulateXPCShouldDefer;
-- (void)_setState:(unsigned long long)arg1;
 - (id)_getBundlePathsToProcess;
-- (unsigned long long)_serviceState;
 - (id)initWithLibraryCoordinator:(id)arg1;
 - (id)init;
 

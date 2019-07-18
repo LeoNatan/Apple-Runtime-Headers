@@ -12,6 +12,7 @@
     // Error parsing type: , name: predicate
     // Error parsing type: , name: orderedAscending
     // Error parsing type: , name: limit
+    // Error parsing type: , name: queryQualityOfService
     // Error parsing type: , name: healthStore
     // Error parsing type: , name: resultHandler
     // Error parsing type: , name: $__lazy_storage_$_query

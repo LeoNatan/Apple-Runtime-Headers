@@ -17,6 +17,7 @@
     NSArray *_junkResults;
     NSArray *_faceResults;
     NSArray *_actionResults;
+    NSArray *_subtleMotionResults;
     NSArray *_voiceResults;
     NSArray *_humanActionResults;
     NSArray *_humanPoseResults;

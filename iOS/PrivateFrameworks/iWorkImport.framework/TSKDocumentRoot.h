@@ -23,7 +23,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_iCloudTeardownStack;
     _Bool _preventImageConversionOnOpen;
     id <TSULogContext> _logContext;
+    _Bool _shouldMeasureNegativelyTrackedTextCorrectly;
     _Bool _isFindActive;
+    _Bool _documentCurrentlyImporting;
     TSKAccessController *_accessController;
     TSKSelectionDispatcher *_selectionDispatcher;
     TSKPasteboardController *_pasteboardController;
@@ -37,6 +39,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)needsObjectUUID;
 @property(readonly, nonatomic) TSKDocumentSupport *documentSupportIfAvailable; // @synthesize documentSupportIfAvailable=_documentSupportIfAvailable;
 @property(readonly, nonatomic) TSKDocumentSupport *documentSupport; // @synthesize documentSupport=_documentSupport;
+@property(nonatomic) _Bool shouldMeasureNegativelyTrackedTextCorrectly; // @synthesize shouldMeasureNegativelyTrackedTextCorrectly=_shouldMeasureNegativelyTrackedTextCorrectly;
+@property(nonatomic, getter=isDocumentCurrentlyImporting) _Bool documentCurrentlyImporting; // @synthesize documentCurrentlyImporting=_documentCurrentlyImporting;
 @property(readonly, nonatomic) _Bool isBeingLocalized; // @synthesize isBeingLocalized=_isBeingLocalized;
 @property(readonly, nonatomic) TSKChangeNotifier *changeNotifier; // @synthesize changeNotifier=_changeNotifier;
 @property(retain, nonatomic) TSKAnnotationAuthor *authorForFiltering; // @synthesize authorForFiltering=_authorForFiltering;
@@ -66,8 +70,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)updateDocumentLocaleToCurrentIfNeeded;
 @property(readonly, nonatomic) NSDictionary *additionalDocumentSupportPropertiesForWrite;
 @property(readonly, nonatomic) NSDictionary *additionalDocumentPropertiesForWrite;
--     // Error parsing type: v32@0:8^{DocumentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}BBB}16@24, name: saveToArchive:archiver:
--     // Error parsing type: v32@0:8r^{DocumentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}BBB}16@24, name: loadFromArchive:unarchiver:
+-     // Error parsing type: v32@0:8^{DocumentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}BBBB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{DocumentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}BBBB}16@24, name: loadFromArchive:unarchiver:
 - (_Bool)shouldDropOperationHistoryWithDocumentRevision:(id)arg1;
 @property(readonly, nonatomic) _Bool isCollaborativeClientOrServer;
 @property(readonly, nonatomic) _Bool isCollaborativeClient;
@@ -112,6 +116,7 @@ __attribute__((visibility("hidden")))
 - (id)tableIdRemappingCommandsForTablesInDrawables:(id)arg1;
 - (id)tableIdRemappingCommandsForTablesInStorages:(id)arg1;
 - (void)pauseRecalculationForBlock:(CDUnknownBlockType)arg1;
+- (void)blockForRecalcWithTimeout:(double)arg1;
 - (void)resumeRecalculation;
 - (void)pauseRecalculationSometimeSoon;
 - (void)pauseRecalculation;

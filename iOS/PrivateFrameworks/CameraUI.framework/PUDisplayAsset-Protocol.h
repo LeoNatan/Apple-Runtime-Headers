@@ -39,5 +39,8 @@
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;
 @property(readonly, nonatomic) unsigned long long mediaType;
 - (unsigned long long)isContentEqualTo:(id <PUDisplayAsset>)arg1;
+
+@optional
+@property(readonly, nonatomic) CDStruct_1b6d18a9 videoKeyFrameSourceTime;
 @end
 

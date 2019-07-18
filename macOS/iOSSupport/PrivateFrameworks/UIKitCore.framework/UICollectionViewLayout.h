@@ -72,7 +72,10 @@
 - (id)_orthogonalScrollingSections;
 - (BOOL)_hasOrthogonalScrollingSections;
 - (int)_layoutAxis;
+- (unsigned long long)_edgesForSafeAreaPropagationToDescendants;
+- (BOOL)_overridesSafeAreaPropagationToDescendants;
 - (BOOL)_preparedForBoundsChanges;
+- (BOOL)_needsRecomputeOfPreferredAttributesForVisibleEstimatedItemsDuringUpdate;
 - (BOOL)_wantsUntrackedAnimationCleanupForAuxillaryItems;
 - (void)_traitCollectionDidChangeFromPreviousCollection:(id)arg1 newTraitCollection:(id)arg2;
 - (BOOL)flipsHorizontallyInOppositeLayoutDirection;

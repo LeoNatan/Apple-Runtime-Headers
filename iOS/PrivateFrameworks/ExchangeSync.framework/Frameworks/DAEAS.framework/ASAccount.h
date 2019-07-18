@@ -41,6 +41,7 @@
 - (_Bool)isActiveSyncAccount;
 - (id)domainOnly;
 - (void)accountDidUpdateProtocolVersion;
+- (_Bool)_managedConfigurationDisablesNotes;
 - (_Bool)_shouldEditNotesSupportOnProtocolChange;
 - (id)addressBookConstraintsPath;
 - (id)calendarConstraintsPath;

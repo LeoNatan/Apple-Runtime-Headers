@@ -57,6 +57,7 @@
 - (void)updateFirstResponder;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (id)_actionViewForPass:(id)arg1 action:(id)arg2;
 - (id)initWithPass:(id)arg1 action:(id)arg2 paymentDataProvider:(id)arg3;

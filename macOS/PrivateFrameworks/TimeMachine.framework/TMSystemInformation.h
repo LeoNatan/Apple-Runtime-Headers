@@ -15,6 +15,7 @@
 + (id)macAddress;
 + (id)hostUUID;
 + (BOOL)isNetBooted;
++ (BOOL)isAppleInternal;
 
 @end
 

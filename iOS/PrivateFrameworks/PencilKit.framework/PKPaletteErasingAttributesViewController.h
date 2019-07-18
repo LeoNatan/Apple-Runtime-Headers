@@ -6,12 +6,19 @@
 
 #import <UIKit/UIViewController.h>
 
+@protocol PKPaletteErasingAttributesViewControllerDelegate;
+
 @interface PKPaletteErasingAttributesViewController : UIViewController
 {
+    id <PKPaletteErasingAttributesViewControllerDelegate> _delegate;
 }
 
++ (double)_preferredContentSizeWidth;
+@property(nonatomic) __weak id <PKPaletteErasingAttributesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (struct CGSize)preferredContentSize;
 @property(nonatomic) long long eraserType;
+- (void)_segmentedControlDidChangeValue:(id)arg1;
 - (void)loadView;
 
 @end

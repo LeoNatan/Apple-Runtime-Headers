@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)endAccess;
 - (void)beginAccess;
 - (void)dealloc;
-- (id)initWithFileDescriptor:(int)arg1 queue:(id)arg2;
+- (id)initWithFileDescriptor:(int)arg1;
 - (id)init;
 
 @end

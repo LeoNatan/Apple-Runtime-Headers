@@ -8,17 +8,10 @@
 
 @interface _TtC11AppStoreKit22PageRenderMetricsEvent : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: clientCorrelationKey
     // Error parsing type: , name: eventFields
     // Error parsing type: , name: pageRequestedTime
     // Error parsing type: , name: pageAppearTime
     // Error parsing type: , name: pageDisappearTime
-    // Error parsing type: , name: platformRequestStartTime
-    // Error parsing type: , name: platformResponseStartTime
-    // Error parsing type: , name: platformResponseEndTime
-    // Error parsing type: , name: platformResponseWasCached
-    // Error parsing type: , name: platformJsonParseStartTime
-    // Error parsing type: , name: platformJsonParseEndTime
     // Error parsing type: , name: _domChanges
     // Error parsing type: , name: requests
     // Error parsing type: , name: resourceRequestStartTime
@@ -32,6 +25,7 @@
     // Error parsing type: , name: rootViewModelPresentTime
     // Error parsing type: , name: jsCallStartTime
     // Error parsing type: , name: jsCallEndTime
+    // Error parsing type: , name: isLowDataMode
     // Error parsing type: , name: xpSessionDuration
     // Error parsing type: , name: xpSamplingForced
     // Error parsing type: , name: xpSamplingPercentageUsers

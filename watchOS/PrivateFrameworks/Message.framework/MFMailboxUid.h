@@ -67,8 +67,9 @@
 - (void)setMailboxType:(int)arg1;
 @property(readonly, nonatomic) int type;
 - (int)mailboxType;
-@property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 - (id)_privacySafeDescription;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 @property(readonly, copy) NSString *description;
 - (_Bool)isDescendantOfMailbox:(id)arg1;
 - (int)indexToInsertChildMailboxUid:(id)arg1;
@@ -146,7 +147,6 @@
 @property(readonly, nonatomic) MFInvocationQueue *attachmentDownloadQueue;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

@@ -54,8 +54,10 @@
 - (id)_copyLastKnownLocation;
 - (id)_dictionaryRepresentation;
 - (void)_requestActiveLocationChangeUpdates;
+- (_Bool)_locationServicesEnabled;
 - (void)updateLocationIfNeeded;
 @property(readonly, nonatomic) NSDictionary *lastKnownLocation; // @synthesize lastKnownLocation=_lastKnownLocation;
+- (void)requestAuthorizationWithForcedPrompt:(_Bool)arg1;
 - (void)requestAuthorization;
 - (long long)authorizationStatus;
 - (void)dealloc;

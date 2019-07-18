@@ -55,6 +55,7 @@
 @property(readonly, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
+- (id)formattedName;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

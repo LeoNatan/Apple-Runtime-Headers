@@ -40,8 +40,7 @@
 @property BOOL advertising; // @synthesize advertising=_advertising;
 @property __weak id <WPTransferDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)scannerStateDidChange:(long long)arg1;
-- (void)advertiserStateDidChange:(long long)arg1;
+- (void)stateDidChange:(long long)arg1;
 - (void)central:(id)arg1 subscribed:(BOOL)arg2 toCharacteristic:(id)arg3 inService:(id)arg4;
 - (void)transferFailed:(id)arg1;
 - (void)updatedNotificationState:(BOOL)arg1 forCharacteristic:(id)arg2 inService:(id)arg3 withPeripheral:(id)arg4;

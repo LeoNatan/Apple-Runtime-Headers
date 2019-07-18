@@ -14,6 +14,7 @@
 
 @property(readonly, nonatomic) float maximum; // @synthesize maximum;
 @property(readonly, nonatomic) float minimum; // @synthesize minimum;
+- (id)description;
 - (id)initWithMin:(float)arg1 max:(float)arg2;
 
 @end

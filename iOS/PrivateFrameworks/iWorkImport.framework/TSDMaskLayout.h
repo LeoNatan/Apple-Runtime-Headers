@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     struct CGRect mCachedTightPathBounds;
     struct CGRect mCachedTightPathBoundsNoScale;
     double mPathScale;
+    double mOriginalPathScale;
     TSDInfoGeometry *mDynamicInfoGeometry;
     TSDPathSource *mDynamicPathSource;
     _Bool mScalingInMaskMode;

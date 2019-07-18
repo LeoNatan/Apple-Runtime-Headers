@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (int)getSalientRegions:(CDUnknownBlockType)arg1;
 - (float *)getInputBuffer:(int)arg1 srcWidth:(int)arg2 cnnInputHeight:(int *)arg3 cnnInputWidth:(int *)arg4;
-- (int)initializeModel:(int)arg1 srcWidth:(int)arg2;
+- (int)prepareModelForSourceWidth:(int)arg1 andSourceHeight:(int)arg2;
 
 @end
 

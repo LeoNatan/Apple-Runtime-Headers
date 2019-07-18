@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
     NSString *_managedPersona;
 }
 
-+ (id)sharedPersona;
++ (id)sharedPersonaManager;
 + (BOOL)_stopJobLabel:(id)arg1 error:(out id *)arg2;
 + (BOOL)_startJobLabel:(id)arg1 error:(out id *)arg2;
 + (BOOL)startJobLabel:(id)arg1 error:(out id *)arg2;

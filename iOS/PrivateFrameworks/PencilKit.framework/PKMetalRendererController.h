@@ -102,7 +102,6 @@
 - (void)_copyIntoTilesFromRenderQueue:(id)arg1 tileTransform:(struct CGAffineTransform)arg2;
 - (void)copyIntoTiles:(id)arg1;
 - (_Bool)drawStrokes:(id)arg1 intoTile:(id)arg2 renderCount:(long long)arg3;
-- (void)didTeardownTile;
 @property(nonatomic) double backboardPaperMultiply;
 - (void)setLiveRenderingOverrideColor:(struct CGColor *)arg1;
 - (void)setBackgroundColor:(struct CGColor *)arg1;

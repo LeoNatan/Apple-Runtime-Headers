@@ -6,7 +6,7 @@
 
 #import <Navigation/NSObject-Protocol.h>
 
-@class GEOETATrafficUpdateRequest, GEOETATrafficUpdateResponse, MNActiveRouteInfo, MNLocation, MNSessionUpdateManager, NSError, NSSet;
+@class GEOETATrafficUpdateRequest, GEOETATrafficUpdateResponse, GEOTransitRouteUpdateResponse, MNActiveRouteInfo, MNLocation, MNSessionUpdateManager, NSError, NSSet;
 
 @protocol MNSessionUpdateManagerDelegate <NSObject>
 - (MNLocation *)userLocationForUpdateManager:(MNSessionUpdateManager *)arg1;
@@ -19,5 +19,7 @@
 - (void)updateManager:(MNSessionUpdateManager *)arg1 didReceiveTransitError:(NSError *)arg2;
 - (void)updateManager:(MNSessionUpdateManager *)arg1 didReceiveTransitUpdates:(NSSet *)arg2;
 - (void)updateManager:(MNSessionUpdateManager *)arg1 willSendTransitUpdateRequestForRouteIDs:(NSSet *)arg2;
+- (void)updateManager:(MNSessionUpdateManager *)arg1 didReceiveTransitUpdateResponse:(GEOTransitRouteUpdateResponse *)arg2;
+- (void)updateManager:(MNSessionUpdateManager *)arg1 willSendTransitUpdateRequests:(NSSet *)arg2;
 @end
 

@@ -18,6 +18,7 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly) double decisionDelay;
 - (BOOL)detected;
 @property(readonly, nonatomic) __weak id <SNAnalyzing> analyzer;
 - (id)init;

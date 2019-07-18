@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     id _theCakeIsALie;
     char *_timeOutCancelledPtr;
     unsigned long long _scrollingMode;
+    struct _opaque_pthread_mutex_t _mutex;
     long long _state;
     _NSScrollingConcurrentConstantData *_constantData;
     _NSScrollingConcurrentVBLMonitor *_vblMonitor;
@@ -36,13 +37,13 @@ __attribute__((visibility("hidden")))
 - (void)scrollView:(id)arg1 panGestureRecognizerFailed:(id)arg2;
 - (BOOL)scrollView:(id)arg1 panGestureRecognizer:(id)arg2 shouldReceiveTouch:(id)arg3;
 - (void)scrollView:(id)arg1 panWithGestureRecognizer:(id)arg2;
-- (void)_animateFreeMomentum;
-- (void)_animateSwipePageAlignment;
-- (void)_asynchronouslyAllowDelegateToModifyProposedPageAlignedOrigin:(double *)arg1 onAxis:(long long)arg2 withInitialOrigin:(double)arg3 velocity:(double)arg4 synchronousTimeout:(unsigned long long)arg5 gestureToken:(unsigned long long)arg6;
-- (void)_asynchronouslyAllowDelegateToAdjustMomentum:(id)arg1 withInitialOrigin:(struct CGPoint)arg2 velocity:(struct CGPoint)arg3 synchronousTimeout:(unsigned long long)arg4 gestureToken:(unsigned long long)arg5;
+- (BOOL)_animateFreeMomentum;
+- (BOOL)_animateSwipePageAlignment;
+- (BOOL)_asynchronouslyAllowDelegateToModifyProposedPageAlignedOrigin:(double *)arg1 onAxis:(long long)arg2 withInitialOrigin:(double)arg3 velocity:(double)arg4 synchronousTimeout:(unsigned long long)arg5 gestureToken:(unsigned long long)arg6;
+- (BOOL)_asynchronouslyAllowDelegateToAdjustMomentum:(id)arg1 withInitialOrigin:(struct CGPoint)arg2 velocity:(struct CGPoint)arg3 synchronousTimeout:(unsigned long long)arg4 gestureToken:(unsigned long long)arg5;
 - (void)scrollStateEvent:(long long)arg1 sender:(id)arg2;
-- (void)_updateAnimatedMomentumStateMachineWithScrollStateEvent:(long long)arg1 sender:(id)arg2;
-- (void)_updateMomentumEventsStateMachineWithScrollStateEvent:(long long)arg1 sender:(id)arg2;
+- (void)noteUnexpectedScrollCompensated;
+- (void)noteUnexpectedScrollDetected;
 - (void)_stopGestureScrollTracking;
 - (void)waitForEvent;
 - (void)checkForGestureContinuance;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_snapRubberbandIfRequired;
 - (void)_snapRubberband;
 - (void)_snapRubberbandWithInitialOrigin:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2 stretch:(struct CGSize)arg3;
-- (void)_beginMomentumScroll;
 - (void)_beginPhysicalScroll;
 - (BOOL)_isStretched;
 - (void)_startGestureScrollWithVBLFilter:(id)arg1;

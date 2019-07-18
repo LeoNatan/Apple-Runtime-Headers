@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     unsigned int fallback_child_in_progress:1;
     unsigned int primary_child_indefinite_failed:1;
     unsigned int fallback_child_indefinite_failed:1;
+    unsigned int fallback_is_cellular:1;
 }
 
 - (void).cxx_destruct;

@@ -35,7 +35,6 @@
 - (void)startMonitoring;
 - (void)stopObservingReachability;
 - (void)observeReachabilityWithBlock:(CDUnknownBlockType)arg1;
-- (void)handleContactsNotificationNamed:(id)arg1;
 - (void)_reachabilityChanged:(id)arg1;
 - (id)stateString;
 @property(readonly, nonatomic) DATrustHandler *trustHandler;

@@ -20,11 +20,13 @@
     PVVisionAnalyzer *_analyzer;
     NSMutableSet *_outstandingImageRequests;
     VNPersonsModel *_personsModel;
+    unsigned long long _numberOfAssetsToProcess;
 }
 
 + (_Bool)persistsState;
 + (long long)applicationDataFolderIdentifier;
 + (short)workerType;
+@property unsigned long long numberOfAssetsToProcess; // @synthesize numberOfAssetsToProcess=_numberOfAssetsToProcess;
 @property(retain) VNPersonsModel *personsModel; // @synthesize personsModel=_personsModel;
 @property(retain) NSMutableSet *outstandingImageRequests; // @synthesize outstandingImageRequests=_outstandingImageRequests;
 @property(retain) PVVisionAnalyzer *analyzer; // @synthesize analyzer=_analyzer;

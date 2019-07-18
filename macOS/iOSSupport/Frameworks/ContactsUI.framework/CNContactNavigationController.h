@@ -13,7 +13,7 @@
 #import <ContactsUI/CNContactViewControllerAddContactPresenter-Protocol.h>
 #import <ContactsUI/CNContactViewControllerDelegate-Protocol.h>
 
-@class CNAccountsAndGroupsDataSource, CNAccountsAndGroupsViewController, CNContactListStyleApplier, CNContactListViewController, CNContactStore, CNContactStoreDataSource, CNContactStyle, CNContactViewController, CNUIUserActivityManager, NSString, UIAlertController, UIKeyCommand;
+@class CNAccountsAndGroupsDataSource, CNAccountsAndGroupsViewController, CNContactListStyleApplier, CNContactListViewController, CNContactStore, CNContactStoreDataSource, CNContactStyle, CNContactViewController, CNUIUserActivityManager, NSArray, NSString, UIAlertController, UIKeyCommand;
 @protocol CNContactDataSource, CNContactNavigationControllerDelegate, CNScheduler, NSObject;
 
 @interface CNContactNavigationController : UINavigationController <CNContactListViewControllerDelegate, CNContactListViewControllerDelegateInternal, CNContactViewControllerDelegate, CNContactContentViewControllerDelegate, CNAccountsAndGroupsViewControllerDelegate, CNContactViewControllerAddContactPresenter>
@@ -26,6 +26,7 @@
     BOOL _allowsContactBlocking;
     BOOL _hasPendingShowCard;
     BOOL _ignoresMapsData;
+    BOOL _hideGroupsButton;
     CNContactStyle *_contactStyle;
     CNContactStore *_contactStore;
     CNContactViewController *_reusableContactViewController;
@@ -41,9 +42,12 @@
     CNUIUserActivityManager *_activityManager;
     CNContactListStyleApplier *_contactListStyleApplier;
     id <NSObject> _currentStyleDidChangeNotificationToken;
+    NSArray *_prohibitedPropertyKeys;
 }
 
 + (id)newContactFormatter;
+@property(retain, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
+@property(nonatomic) BOOL hideGroupsButton; // @synthesize hideGroupsButton=_hideGroupsButton;
 @property(nonatomic) BOOL ignoresMapsData; // @synthesize ignoresMapsData=_ignoresMapsData;
 @property(retain, nonatomic) id <NSObject> currentStyleDidChangeNotificationToken; // @synthesize currentStyleDidChangeNotificationToken=_currentStyleDidChangeNotificationToken;
 @property(retain, nonatomic) CNContactListStyleApplier *contactListStyleApplier; // @synthesize contactListStyleApplier=_contactListStyleApplier;
@@ -74,6 +78,7 @@
 - (void)checkForFacebookContactsWithDelay:(double)arg1 allowAlert:(BOOL)arg2;
 - (void)selectPreviousContact:(id)arg1;
 - (void)selectNextContact:(id)arg1;
+- (void)executeAddContact;
 - (void)addContact:(id)arg1;
 - (void)cancelSearch:(id)arg1;
 - (void)beginSearch:(id)arg1;
@@ -108,8 +113,15 @@
 - (void)presentGroupsViewController:(id)arg1;
 - (void)updateNavigationButtonsAnimated:(BOOL)arg1;
 - (void)updateNavigationButtonsInSearchMode:(BOOL)arg1;
-- (void)updateNavigationButtonsInSearchMode:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)updateLeftNavigationButtonAnimated:(BOOL)arg1;
+- (BOOL)canAddContacts;
+- (BOOL)shouldShowRightAddButton;
+- (BOOL)shouldShowRightCancelButton;
+- (BOOL)shouldShowRightAddAndCancelButton;
+- (BOOL)shouldShowLeftCancelAndRightAddButton;
+- (BOOL)shouldShowLeftCancelAndRightDoneButton;
+- (BOOL)shouldShowGroupsButton;
+- (void)updateNavigationButtonsInSearchMode:(BOOL)arg1 animated:(BOOL)arg2;
 @property(nonatomic) BOOL hidesSearchableSources;
 - (BOOL)shouldDisplayMeContactBanner;
 - (void)setShouldDisplayMeContactBanner:(BOOL)arg1;

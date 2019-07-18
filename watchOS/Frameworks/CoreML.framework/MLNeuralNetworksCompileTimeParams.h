@@ -17,9 +17,11 @@
     NSDictionary *_optimizerParameters;
     NSDictionary *_lossParameters;
     NSArray *_trainableLayerNames;
+    NSDictionary *_updateParameters;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSDictionary *updateParameters; // @synthesize updateParameters=_updateParameters;
 @property(retain, nonatomic) NSArray *trainableLayerNames; // @synthesize trainableLayerNames=_trainableLayerNames;
 @property(retain, nonatomic) NSDictionary *lossParameters; // @synthesize lossParameters=_lossParameters;
 @property(retain, nonatomic) NSDictionary *optimizerParameters; // @synthesize optimizerParameters=_optimizerParameters;
@@ -30,7 +32,7 @@
 - (_Bool)writeUpdatableParamsToURL:(id)arg1 error:(id *)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithLossType:(int)arg1 optimizerType:(int)arg2 optimizerParameters:(id)arg3 lossParameters:(id)arg4 trainableLayerNames:(id)arg5;
+- (id)initWithLossType:(int)arg1 optimizerType:(int)arg2 optimizerParameters:(id)arg3 lossParameters:(id)arg4 trainableLayerNames:(id)arg5 updateParameters:(id)arg6;
 
 @end
 

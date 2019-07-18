@@ -33,6 +33,7 @@
 - (void)displayBundleFailedToLoad:(QLDisplayBundle *)arg1 withError:(NSError *)arg2;
 - (void)displayBundleDidMismatchLoading:(QLDisplayBundle *)arg1 withHints:(NSDictionary *)arg2 expectedDisplayBundleID:(NSString *)arg3;
 - (void)displayBundleDidLoad:(QLDisplayBundle *)arg1;
+- (void)updateFullScreenFromMagnification:(double)arg1;
 - (void)doubleClickOnPreviewContent;
 - (struct CGPoint)convertPointFromScreen:(struct CGPoint)arg1;
 - (struct CGRect)convertRectFromScreen:(struct CGRect)arg1;

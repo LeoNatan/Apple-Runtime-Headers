@@ -17,6 +17,7 @@
 + (void)connectToUIServiceViewController:(CDUnknownBlockType)arg1;
 + (void)warmUpService;
 - (struct CGSize)preferredContentSize;
+- (void)didShowScreentimeLockout:(BOOL)arg1;
 - (void)didSaveEdit:(BOOL)arg1 toURL:(id)arg2;
 - (void)remoteDesisted:(id)arg1 displayBundle:(id)arg2 error:(id)arg3;
 - (void)closePanel:(long long)arg1;

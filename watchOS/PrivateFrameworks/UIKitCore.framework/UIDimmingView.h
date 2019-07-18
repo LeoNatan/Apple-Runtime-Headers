@@ -24,9 +24,11 @@ __attribute__((visibility("hidden")))
     _Bool _suppressesBackdrops;
     id _delegate;
     float _percentDisplayed;
+    float _percentLightened;
 }
 
 + (id)defaultDimmingColor;
+@property(nonatomic) float percentLightened; // @synthesize percentLightened=_percentLightened;
 @property(nonatomic) float percentDisplayed; // @synthesize percentDisplayed=_percentDisplayed;
 @property(nonatomic) _Bool suppressesBackdrops; // @synthesize suppressesBackdrops=_suppressesBackdrops;
 @property(retain, nonatomic) UIColor *dimmingColor; // @synthesize dimmingColor=_dimmingColor;

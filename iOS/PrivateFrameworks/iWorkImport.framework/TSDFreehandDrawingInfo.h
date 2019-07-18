@@ -19,10 +19,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSDShapeInfo *freehandDrawingSpacerShape; // @synthesize freehandDrawingSpacerShape=_freehandDrawingSpacerShape;
 - (void).cxx_destruct;
 - (id)tsaxTypeDescription;
--     // Error parsing type: v32@0:8^{GroupArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{DrawableArchive}}16@24, name: saveToArchive:archiver:
--     // Error parsing type: v36@0:8r^{GroupArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{DrawableArchive}}16@24B32, name: loadFromArchive:unarchiver:upgradeDOLC:
+-     // Error parsing type: v32@0:8^{GroupArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{DrawableArchive}^{Reference}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v36@0:8r^{GroupArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{DrawableArchive}^{Reference}}16@24B32, name: loadFromArchive:unarchiver:upgradeDOLC:
 - (id)copyWithContext:(id)arg1;
 - (id)allNestedChildrenInfosForWrap;
+- (_Bool)isEffectivelyEmpty;
 - (Class)repClass;
 - (Class)layoutClass;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)animationFilters;
+- (_Bool)shouldHaveFakeShapeInfoForPersistingEmptyGroup;
 - (_Bool)isFreehandDrawing;
 - (id)initWithSpacerShapeAndContext:(id)arg1 geometry:(id)arg2;
 - (_Bool)containsDisallowedElementKind:(unsigned int)arg1;

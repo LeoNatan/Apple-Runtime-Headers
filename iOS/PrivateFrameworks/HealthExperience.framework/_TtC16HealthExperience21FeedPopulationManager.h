@@ -12,8 +12,10 @@
     // Error parsing type: , name: childOperationQueue
     // Error parsing type: , name: requestQueue
     // Error parsing type: , name: mutationLock
-    // Error parsing type: , name: $__lazy_storage_$_relevanceEngineCoordinator
-    // Error parsing type: , name: $__lazy_storage_$_recalculationDebouncer
+    // Error parsing type: , name: relevanceEngineCoordinator
+    // Error parsing type: , name: $__lazy_storage_$_liveFeedsPopulationDebouncer
+    // Error parsing type: , name: $__lazy_storage_$_highlightsFeedPopulationDebouncer
+    // Error parsing type: , name: trainingAnalyticsCache
 }
 
 - (void)feedItemSubmissionOccurred:(id)arg1;

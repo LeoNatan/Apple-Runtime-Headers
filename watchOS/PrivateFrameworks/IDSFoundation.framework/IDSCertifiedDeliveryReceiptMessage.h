@@ -6,18 +6,28 @@
 
 #import <IDSFoundation/IDSMessage.h>
 
-@class NSData, NSNumber, NSString;
+@class NSData, NSDictionary, NSNumber, NSString;
 
 @interface IDSCertifiedDeliveryReceiptMessage : IDSMessage
 {
+    _Bool _generateDeliveryReceipt;
     NSString *_originalGUID;
     NSData *_senderToken;
     NSData *_certifiedDeliveryRTS;
     int _certifiedDeliveryVersion;
     NSNumber *_failureReason;
     NSString *_failureReasonMessage;
+    NSDictionary *_generatedDeliveryStatusContext;
+    NSString *_localURI;
+    NSString *_remoteURI;
+    NSData *_queryHash;
 }
 
+@property(retain, nonatomic) NSData *queryHash; // @synthesize queryHash=_queryHash;
+@property(retain, nonatomic) NSString *remoteURI; // @synthesize remoteURI=_remoteURI;
+@property(retain, nonatomic) NSString *localURI; // @synthesize localURI=_localURI;
+@property(retain, nonatomic) NSDictionary *generatedDeliveryStatusContext; // @synthesize generatedDeliveryStatusContext=_generatedDeliveryStatusContext;
+@property(nonatomic) _Bool generateDeliveryReceipt; // @synthesize generateDeliveryReceipt=_generateDeliveryReceipt;
 @property(retain, nonatomic) NSString *failureReasonMessage; // @synthesize failureReasonMessage=_failureReasonMessage;
 @property(retain, nonatomic) NSNumber *failureReason; // @synthesize failureReason=_failureReason;
 @property(nonatomic) int certifiedDeliveryVersion; // @synthesize certifiedDeliveryVersion=_certifiedDeliveryVersion;

@@ -11,8 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)dealloc;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithController:(id)arg1;
 
 @end

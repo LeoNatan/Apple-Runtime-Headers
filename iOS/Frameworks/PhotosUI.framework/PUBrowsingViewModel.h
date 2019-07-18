@@ -10,7 +10,7 @@
 #import <PhotosUI/PUAssetViewModelChangeObserver-Protocol.h>
 #import <PhotosUI/PXAssetImportStatusObserver-Protocol.h>
 
-@class NSDate, NSMutableSet, NSString, PUAssetReference, PUAssetsDataSource, PUCachedMapTable, PUMediaProvider, PUReviewScreenBarsModel;
+@class NSDate, NSMutableSet, NSString, PUAssetReference, PUAssetViewModel, PUAssetsDataSource, PUCachedMapTable, PUMediaProvider, PUReviewScreenBarsModel;
 @protocol PXAssetImportStatusManager;
 
 @interface PUBrowsingViewModel : PUViewModel <PUAssetViewModelChangeObserver, PUAssetSharedViewModelChangeObserver, PXAssetImportStatusObserver>
@@ -29,10 +29,10 @@
     _Bool _isScrubbing;
     _Bool _isScrolling;
     _Bool _isAnimatingAnyTransition;
+    _Bool _isAttemptingToPlayVideoOverlay;
     _Bool _accessoryViewsDefaultVisibility;
     _Bool _isChromeVisible;
     _Bool _presentingOverOneUp;
-    _Bool _videoMuted;
     PUAssetsDataSource *_assetsDataSource;
     double _currentAssetTransitionProgress;
     NSString *_transitionDriverIdentifier;
@@ -52,6 +52,9 @@
     struct CGSize _secondScreenSize;
 }
 
++ (_Bool)autoplayVideoMuted;
++ (void)setAutoplayVideoMuted:(_Bool)arg1;
++ (void)_handleWillResignActiveNotification:(id)arg1;
 + (void)initialize;
 @property(retain, nonatomic) id <PXAssetImportStatusManager> importStatusManager; // @synthesize importStatusManager=_importStatusManager;
 @property(retain, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
@@ -60,7 +63,6 @@
 @property(nonatomic, setter=_setScrubbingSessionDistance:) long long _scrubbingSessionDistance; // @synthesize _scrubbingSessionDistance=__scrubbingSessionDistance;
 @property(nonatomic, setter=_setUserNavigationDistance:) long long _userNavigationDistance; // @synthesize _userNavigationDistance=__userNavigationDistance;
 @property(retain, nonatomic) PUReviewScreenBarsModel *reviewScreenBarsModel; // @synthesize reviewScreenBarsModel=_reviewScreenBarsModel;
-@property(nonatomic, getter=isVideoMuted) _Bool videoMuted; // @synthesize videoMuted=_videoMuted;
 @property(retain, nonatomic, setter=_setLeadingAssetReference:) PUAssetReference *leadingAssetReference; // @synthesize leadingAssetReference=_leadingAssetReference;
 @property(retain, nonatomic, setter=_setTrailingAssetReference:) PUAssetReference *trailingAssetReference; // @synthesize trailingAssetReference=_trailingAssetReference;
 @property(nonatomic) struct CGSize secondScreenSize; // @synthesize secondScreenSize=_secondScreenSize;
@@ -69,6 +71,7 @@
 @property(nonatomic, setter=_setLastChromeVisibilityChangeReason:) long long lastChromeVisibilityChangeReason; // @synthesize lastChromeVisibilityChangeReason=_lastChromeVisibilityChangeReason;
 @property(nonatomic, setter=setChromeVisible:) _Bool isChromeVisible; // @synthesize isChromeVisible=_isChromeVisible;
 @property(nonatomic) _Bool accessoryViewsDefaultVisibility; // @synthesize accessoryViewsDefaultVisibility=_accessoryViewsDefaultVisibility;
+@property(nonatomic) _Bool isAttemptingToPlayVideoOverlay; // @synthesize isAttemptingToPlayVideoOverlay=_isAttemptingToPlayVideoOverlay;
 @property(nonatomic) long long videoOverlayPlayState; // @synthesize videoOverlayPlayState=_videoOverlayPlayState;
 @property(nonatomic, setter=_setAnimatingAnyTransition:) _Bool isAnimatingAnyTransition; // @synthesize isAnimatingAnyTransition=_isAnimatingAnyTransition;
 @property(nonatomic) _Bool isScrolling; // @synthesize isScrolling=_isScrolling;
@@ -83,7 +86,7 @@
 - (void)_handleAssetSharedViewModel:(id)arg1 didChange:(id)arg2;
 - (void)_handleAssetViewModel:(id)arg1 didChange:(id)arg2;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
-- (void)_handleWillResignActiveNotification:(id)arg1;
+- (void)_handleAutoplayMutedDidChangeNotification:(id)arg1;
 - (long long)_importStateForAssetReference:(id)arg1;
 - (id)_badgeInfoPromiseForAssetReference:(id)arg1;
 - (double)_focusValueForAsset:(id)arg1;
@@ -101,14 +104,17 @@
 - (_Bool)_needsUpdate;
 - (id)_assetSharedViewModelForAsset:(id)arg1 createIfNeeded:(_Bool)arg2;
 - (id)assetSharedViewModelForAsset:(id)arg1;
+@property(readonly, nonatomic) PUAssetViewModel *assetViewModelForCurrentAssetReference;
 - (id)assetViewModelForAssetReference:(id)arg1;
 - (id)activeAssetReferences;
+@property(readonly, nonatomic) _Bool isVideoContentAllowed;
 - (void)_setVideoContentAllowed:(_Bool)arg1;
 - (void)setVideoContentAllowed:(_Bool)arg1 forReason:(id)arg2;
 - (void)setChromeVisible:(_Bool)arg1 changeReason:(long long)arg2 context:(id)arg3;
 - (void)setChromeVisible:(_Bool)arg1 changeReason:(long long)arg2;
 - (void)_resetAccessoryViewsVisibilityToDefaultWithChangeReason:(long long)arg1;
 - (void)setAccessoryViewsDefaultVisibility:(_Bool)arg1 changeReason:(long long)arg2;
+@property(nonatomic, getter=isAutoplayVideoMuted) _Bool autoplayVideoMuted;
 - (void)setAnimating:(_Bool)arg1 transitionWithIdentifier:(id)arg2;
 - (void)_setTransitionDriverIdentifier:(id)arg1;
 - (void)_setCurrentAssetTransitionProgress:(double)arg1;

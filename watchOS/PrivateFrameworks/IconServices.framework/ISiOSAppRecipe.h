@@ -11,9 +11,11 @@
 __attribute__((visibility("hidden")))
 @interface ISiOSAppRecipe : NSObject <ISCompositorRecipe>
 {
+    _Bool _shouldDrawBorder;
     unsigned int _options;
 }
 
+@property _Bool shouldDrawBorder; // @synthesize shouldDrawBorder=_shouldDrawBorder;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
 @property _Bool shouldApplyMask;
 - (id)layerTreeForSize:(struct CGSize)arg1 scale:(float)arg2;

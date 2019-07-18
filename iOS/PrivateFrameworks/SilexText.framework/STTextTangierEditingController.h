@@ -12,14 +12,7 @@
 }
 
 @property(nonatomic) _Bool startingInitialSelectionDrag; // @synthesize startingInitialSelectionDrag=_startingInitialSelectionDrag;
-- (void)lookupAction:(id)arg1;
-- (void)lookup:(id)arg1;
 - (id)editorKeyboardLanguage;
-- (_Bool)handleGesture:(id)arg1;
-- (_Bool)canHandleGesture:(id)arg1;
-- (unsigned int)knobTrackingTapCount;
-- (int)canPerformEditorAction:(SEL)arg1 withSender:(id)arg2;
-- (id)extraMenuItems;
 - (id)editingReps;
 - (void)tappedOnKnob:(id)arg1;
 - (_Bool)isParagraphModeWithSelection:(id)arg1 onStorage:(id)arg2;

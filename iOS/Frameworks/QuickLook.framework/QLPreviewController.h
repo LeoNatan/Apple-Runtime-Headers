@@ -268,6 +268,7 @@
 - (id)excludedActivityTypesForDocumentInteractionController:(id)arg1;
 - (id)printInfoForDocumentInteractionController:(id)arg1;
 - (unsigned long long)_computePresentationMode;
+- (_Bool)_isInPickMode;
 - (void)fetchPDFRepresentationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)unregisterFromScreenshotService;
 - (void)registerForScreenshotService;

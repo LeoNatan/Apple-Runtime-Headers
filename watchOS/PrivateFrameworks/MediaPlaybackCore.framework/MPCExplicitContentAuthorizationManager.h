@@ -29,9 +29,7 @@
 - (void)_setupWithAgeVerificationState:(id)arg1;
 - (void)_setupWithAgeGateForItem:(id)arg1;
 - (void)_updateAuthorizationStatusWithAuthorizationState:(id)arg1 forItem:(id)arg2;
-- (id)_retrieveAgeVerificationState;
-- (void)_handleAgeVerificationStateDidChangeNotification:(id)arg1;
-- (void)_setupNotifications;
+- (id)_retrieveAgeVerificationStateForUserIdentity:(id)arg1;
 @property(readonly, nonatomic) int authorizationReason;
 - (id)_init;
 - (_Bool)isItemAuthorized:(id)arg1 shouldAskForAuthorization:(_Bool)arg2;

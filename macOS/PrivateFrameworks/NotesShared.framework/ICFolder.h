@@ -28,6 +28,7 @@
 + (id)keyPathsForValuesAffectingIsDefaultFolderForAccount;
 + (id)keyPathsForValuesAffectingVisibleNoteContainerChildren;
 + (id)keyPathsForValuesAffectingIsTrashFolder;
++ (id)keyPathsForValuesAffectingDepth;
 + (id)keyPathsForValuesAffectingIsLeaf;
 + (id)keyPathsForValuesAffectingSupportsCustomNoteSortType;
 + (id)keyPathsForValuesAffectingCustomNoteSortType;
@@ -122,6 +123,7 @@
 - (BOOL)canMoveAddOrDeleteContents;
 - (BOOL)isMovable;
 - (BOOL)isDescendantOfFolder:(id)arg1;
+- (unsigned long long)depth;
 - (BOOL)isLeaf;
 - (BOOL)isDeletable;
 - (BOOL)isSubfolderOfReadonlyFolder;

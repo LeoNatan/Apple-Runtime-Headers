@@ -32,7 +32,7 @@
 - (void).cxx_destruct;
 - (void)performDailyExportForChangedConversations:(id)arg1;
 - (void)conversationRemoteStorage:(id)arg1 didChangeEntries:(id)arg2 reason:(int)arg3;
-- (void)_pruneDatabase:(_Bool)arg1;
+- (void)pruneDatabasePurgingOldestEntries:(_Bool)arg1;
 - (void)_mergeServerChanges:(id)arg1;
 - (_Bool)_synchronize;
 - (id)_syncKeyForConversationID:(long long)arg1;

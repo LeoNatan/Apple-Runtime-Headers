@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)handleMessage:(id)arg1;
+- (_Bool)handleMessage:(id)arg1;
 - (id)initWithMessagePersistence:(id)arg1 query:(id)arg2;
 
 @end

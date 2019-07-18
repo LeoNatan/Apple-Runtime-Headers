@@ -39,6 +39,7 @@
 - (void)updateBroadcastURL:(id)arg1;
 - (void)updateServiceInfo:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)setupNewConnection:(id)arg1;
 - (void)invalidateConnection;
 - (void)establishConnectionWithHandler:(CDUnknownBlockType)arg1;
 - (id)initWithBroadcastUploadListenerEndpoint:(id)arg1;

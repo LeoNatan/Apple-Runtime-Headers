@@ -28,7 +28,7 @@
     _Bool _invalidated;
     _Bool _wantsIdleTimerDisabled;
     SBMainDisplaySceneLayoutStatusBarView *_statusBarView;
-    CDStruct_542159fd _statusBarDelegateFlags;
+    CDStruct_418fc906 _statusBarDelegateFlags;
     UIApplicationSceneClientSettingsDiffInspector *_appClientSettingsDiffInspector;
     UIApplicationSceneSettingsDiffInspector *_appSceneSettingsDiffInspector;
     _Bool _intentToTransitionFromSecureAppToFull;
@@ -54,6 +54,7 @@
 @property(readonly, nonatomic) NSString *statusBarSceneIdentifier;
 @property(readonly, nonatomic) SBDeviceApplicationSceneHandle *statusBarControllingSceneHandle;
 - (_Bool)_statusBarAppearsOutsideOfAJailedClassicApp;
+@property(readonly, nonatomic) struct CGRect statusBarAvoidanceFrame;
 @property(readonly, nonatomic) int statusBarStyleOverridesToSuppress;
 @property(readonly, nonatomic) long long statusBarOrientation;
 @property(readonly, nonatomic) _Bool statusBarHidden;

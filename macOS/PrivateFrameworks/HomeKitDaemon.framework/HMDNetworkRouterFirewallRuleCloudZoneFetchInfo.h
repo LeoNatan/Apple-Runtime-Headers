@@ -6,23 +6,32 @@
 
 #import <HomeKitDaemon/HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper.h>
 
-@class CKServerChangeToken, HMBMirrorInput, NSSet;
+#import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@interface HMDNetworkRouterFirewallRuleCloudZoneFetchInfo : HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper
+@class CKServerChangeToken, HMBMirrorInput, NSSet, NSString;
+
+@interface HMDNetworkRouterFirewallRuleCloudZoneFetchInfo : HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper <HMFLogging>
 {
-    NSSet *_recordIDs;
+    NSSet *_interestedRecordIDs;
     CKServerChangeToken *_changeToken;
     CKServerChangeToken *_originalChangeToken;
     HMBMirrorInput *_mirrorInput;
 }
 
++ (id)logCategory;
 @property(retain, nonatomic) HMBMirrorInput *mirrorInput; // @synthesize mirrorInput=_mirrorInput;
 @property(readonly, nonatomic) CKServerChangeToken *originalChangeToken; // @synthesize originalChangeToken=_originalChangeToken;
 @property(retain, nonatomic) CKServerChangeToken *changeToken; // @synthesize changeToken=_changeToken;
-@property(readonly, nonatomic) NSSet *recordIDs; // @synthesize recordIDs=_recordIDs;
+@property(readonly, nonatomic) NSSet *interestedRecordIDs; // @synthesize interestedRecordIDs=_interestedRecordIDs;
 - (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
-- (id)initWithOptions:(id)arg1 changeToken:(id)arg2 promise:(id)arg3 database:(id)arg4 useAnonymousRequests:(BOOL)arg5 recordIDs:(id)arg6 mirrorInput:(id)arg7;
+- (id)initWithOptions:(id)arg1 changeToken:(id)arg2 promise:(id)arg3 database:(id)arg4 useAnonymousRequests:(BOOL)arg5 interestedRecordIDs:(id)arg6 mirrorInput:(id)arg7;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

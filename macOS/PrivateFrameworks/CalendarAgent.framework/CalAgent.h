@@ -47,7 +47,6 @@
 - (unsigned long long)nextNodeOrder;
 - (void)_loadNetworkObjectsAndSynchronizePropertiesWithPersistentStorage;
 - (void)loadNetworkObjectsAndSynchronizePropertiesWithPersistentStorage;
-- (void)exitWithStatus:(int)arg1;
 - (void)verifyLaunchedByLaunchd;
 - (void)shutdown;
 - (void)setupSBSAccounts;

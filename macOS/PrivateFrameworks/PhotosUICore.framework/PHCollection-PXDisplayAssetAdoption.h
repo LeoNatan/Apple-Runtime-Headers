@@ -37,7 +37,7 @@
 @property(readonly, nonatomic) BOOL px_isSharedAlbum;
 @property(readonly, nonatomic) BOOL px_isScreenRecordingsSmartAlbum;
 @property(readonly, nonatomic) BOOL px_isRecentlyEditedSmartAlbum;
-@property(readonly, nonatomic) BOOL px_isRecentlySavedSmartAlbum;
+@property(readonly, nonatomic) BOOL px_isRecentsSmartAlbum;
 @property(readonly, nonatomic) BOOL px_isRecentlyDeletedSmartAlbum;
 @property(readonly, nonatomic) BOOL px_isRecentlyAddedSmartAlbum;
 @property(readonly, nonatomic) BOOL px_isHiddenSmartAlbum;
@@ -59,6 +59,7 @@
 - (id)px_fetchContainedAssetCollections;
 - (id)px_fetchAncestryIncludingRoot:(BOOL)arg1;
 @property(readonly, nonatomic) PHCollectionList *px_rootCollectionList;
+@property(readonly, nonatomic) BOOL px_allowsImplicitSelectionForProjectOrSharingAction;
 @property(readonly, nonatomic) BOOL px_allowsSpringLoading;
 @property(readonly, nonatomic) BOOL px_allowsAssetsDrop;
 

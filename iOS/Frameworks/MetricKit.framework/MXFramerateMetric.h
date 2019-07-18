@@ -20,7 +20,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAverageFramerate:(id)arg1;
-- (id)initWithAverageFramerate:(double)arg1 sampleCount:(long long)arg2 standardDeviation:(double)arg3;
 
 @end
 

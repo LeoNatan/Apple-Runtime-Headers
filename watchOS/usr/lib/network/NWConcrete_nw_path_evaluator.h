@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     unsigned int is_interpose:1;
     unsigned int started:1;
     unsigned int cancelled:1;
+    unsigned int logging:1;
 }
 
 - (void).cxx_destruct;

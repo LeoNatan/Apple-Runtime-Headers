@@ -9,7 +9,7 @@
 #import <HealthMenstrualCycles/HKMCAnalysisProviderObserver-Protocol.h>
 #import <HealthMenstrualCycles/HKMCViewModelProviderDataSourceDelegate-Protocol.h>
 
-@class HKMCAnalysisProvider, HKMCViewModelProviderDataSource, NSArray, NSHashTable, NSMutableDictionary, NSMutableIndexSet, NSString;
+@class HKMCAnalysis, HKMCAnalysisProvider, HKMCViewModelProviderDataSource, NSHashTable, NSMutableDictionary, NSMutableIndexSet, NSNumber, NSString;
 
 @interface HKMCViewModelProvider : NSObject <HKMCViewModelProviderDataSourceDelegate, HKMCAnalysisProviderObserver>
 {
@@ -22,9 +22,8 @@
     NSMutableIndexSet *_fetchStartedDayIndexes;
     NSMutableIndexSet *_fetchCompletedDayIndexes;
     NSMutableDictionary *_daySummariesByDayIndex;
-    NSArray *_cycles;
-    NSArray *_menstruationProjections;
-    NSArray *_fertileWindowProjections;
+    NSNumber *_minimumAnalysisAnchor;
+    HKMCAnalysis *_analysis;
     CDStruct_800a618e _activeDayRange;
 }
 
@@ -38,7 +37,9 @@
 - (void)addObserver:(id)arg1;
 - (void)analysisProvider:(id)arg1 didUpdateAnalysis:(id)arg2;
 - (void)viewModelProviderDataSourceDidUpdateDaySummaries:(id)arg1;
-- (void)viewModelProviderDataSource:(id)arg1 didFetchDaySummaries:(id)arg2 forDayIndexRange:(CDStruct_800a618e)arg3;
+- (void)viewModelProviderDataSource:(id)arg1 didFetchDaySummaries:(id)arg2 forDayIndexRange:(CDStruct_800a618e)arg3 analysisAnchor:(id)arg4;
+- (_Bool)_didFetchMinimumAnalysis;
+- (_Bool)_didFetchInitialAnalysis;
 - (void)_setFetchState:(int)arg1 forDayIndexRange:(CDStruct_800a618e)arg2;
 - (int)_fetchStateForDayIndex:(int)arg1;
 - (void)_updateManagedDayRangeIfNeeded;

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 + (id)messageWithName:(id)arg1 identifier:(id)arg2 target:(id)arg3 payload:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
 @property(copy, nonatomic) CDUnknownBlockType refreshHandler; // @synthesize refreshHandler=_refreshHandler;
 - (void).cxx_destruct;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
+- (void)handleMessage:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
+- (void)handleMessage:(id)arg1;
 - (void)sendMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithRefreshHandler:(CDUnknownBlockType)arg1;
 

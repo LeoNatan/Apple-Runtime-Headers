@@ -6,17 +6,24 @@
 
 #import <objc/NSObject.h>
 
-#import <PeopleSuggester/_PSModel-Protocol.h>
+@class _PSContactResolver;
+@protocol _DKKnowledgeQuerying;
 
-@interface _PSRuleMiningModel : NSObject <_PSModel>
+@interface _PSRuleMiningModel : NSObject
 {
+    id <_DKKnowledgeQuerying> _knowledgeStore;
+    _PSContactResolver *_contactResolver;
 }
 
+@property(readonly, nonatomic) _PSContactResolver *contactResolver; // @synthesize contactResolver=_contactResolver;
+@property(readonly, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
+- (void).cxx_destruct;
 - (id)suggestionArrayWithArray:(id)arg1 appendingUniqueElementsByBundleIdFromArray:(id)arg2;
-- (id)peopleFromPhotosWithAttachments:(id)arg1;
-- (id)scenesFromPhotosWithAttachments:(id)arg1;
+- (id)filterByRegularizingRules:(id)arg1 invalidatedByAnyConflictingItems:(id)arg2 containingItemTypes:(id)arg3;
+- (id)filterByRegularizingRulesByContextOverlap:(id)arg1 regulularizeItems:(id)arg2 queryItems:(id)arg3 regularizationConstraint:(unsigned long long)arg4;
 - (id)shareExtensionSuggestionsFromContext:(id)arg1;
-- (id)predictWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2 filterByBundleIds:(id)arg3;
+- (id)suggestionProxiesWithPredictionContext:(id)arg1 photoSuggestedPeople:(id)arg2;
+- (id)initWithKnowledgeStore:(id)arg1 contactresolver:(id)arg2;
 
 @end
 

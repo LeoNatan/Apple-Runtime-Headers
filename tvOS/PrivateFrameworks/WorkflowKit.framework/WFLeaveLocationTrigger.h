@@ -13,7 +13,6 @@
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
 - (id)localizedTitleWithConfigurationSummary;
-- (id)displayConfiguration;
 
 @end
 

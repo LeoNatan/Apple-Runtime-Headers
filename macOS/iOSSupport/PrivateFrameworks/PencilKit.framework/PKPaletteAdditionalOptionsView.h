@@ -17,7 +17,6 @@
 
 @interface PKPaletteAdditionalOptionsView : UIView <PKPaletteMoreOptionsViewControllerDelegate, UIPopoverPresentationControllerDelegate, PKEdgeLocatable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling>
 {
-    BOOL _supportsOpacityEditing;
     BOOL _supportsAnnotationEditing;
     BOOL _autoHideOn;
     unsigned long long _edgeLocation;
@@ -45,7 +44,6 @@
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(nonatomic, getter=isAutoHideOn) BOOL autoHideOn; // @synthesize autoHideOn=_autoHideOn;
 @property(nonatomic) BOOL supportsAnnotationEditing; // @synthesize supportsAnnotationEditing=_supportsAnnotationEditing;
-@property(nonatomic) BOOL supportsOpacityEditing; // @synthesize supportsOpacityEditing=_supportsOpacityEditing;
 @property(nonatomic) __weak id <PKPalettePopoverPresenting><PKPaletteAdditionalOptionsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
@@ -55,8 +53,6 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
-- (void)moreOptionsViewController:(id)arg1 didSelectShapeWithType:(long long)arg2;
-- (void)moreOptionsViewControllerDidTapOpacityOption:(id)arg1;
 - (void)moreOptionsViewControllerDidToggleAutoHide:(id)arg1;
 - (double)_contentSizeWidth;
 - (struct CGSize)intrinsicContentSize;

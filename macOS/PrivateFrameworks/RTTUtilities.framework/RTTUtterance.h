@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <RTTUtilities/NSCopying-Protocol.h>
 #import <RTTUtilities/NSSecureCoding-Protocol.h>
 
 @class NSDate, NSString;
 
-@interface RTTUtterance : NSObject <NSSecureCoding>
+@interface RTTUtterance : NSObject <NSSecureCoding, NSCopying>
 {
     BOOL _isMe;
     NSString *_contactPath;
@@ -35,6 +36,7 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

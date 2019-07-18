@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVPlayerItem, NSMutableArray;
+@class NSMutableArray;
 
 @interface MPCAudioSpectrumAnalyzer : NSObject
 {
@@ -15,7 +15,7 @@
     float *_absoluteFrequencyData;
     struct DSPSplitComplex _fftBuffer;
     unsigned long _frequencyDataSize;
-    AVPlayerItem *_playerItem;
+    struct opaqueMTAudioProcessingTap *_audioProcessingTap;
     float _sampleRate;
     float _powerLevel;
     struct OpaqueFFTSetup *_fftSetup;
@@ -26,16 +26,18 @@
 @property(nonatomic) struct OpaqueFFTSetup *fftSetup; // @synthesize fftSetup=_fftSetup;
 @property(nonatomic) float powerLevel; // @synthesize powerLevel=_powerLevel;
 @property(nonatomic) float sampleRate; // @synthesize sampleRate=_sampleRate;
-@property(retain, nonatomic) AVPlayerItem *playerItem; // @synthesize playerItem=_playerItem;
 - (void).cxx_destruct;
 - (void)_freeBuffers;
 - (void)_resizeOrResetBuffers:(unsigned long)arg1;
 - (void)_analyzeFrequencies:(struct AudioBufferList *)arg1 numberFrames:(long)arg2 timeRange:(CDStruct_3c1748cc)arg3;
 - (void)_analyzeSamples:(struct AudioBufferList *)arg1 numberFrames:(long)arg2 timeRange:(CDStruct_3c1748cc)arg3;
-- (id)_audioMixForAsset:(id)arg1;
+- (void)_destroyAudioTap;
+- (void)_createAudioTap;
+- (void)_attachAudioTapToPlayerItem:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)reset;
+- (void)configurePlayerItem:(id)arg1;
 - (void)dealloc;
 
 @end

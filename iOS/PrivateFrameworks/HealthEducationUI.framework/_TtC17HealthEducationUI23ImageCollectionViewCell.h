@@ -10,6 +10,7 @@ __attribute__((visibility("hidden")))
 @interface _TtC17HealthEducationUI23ImageCollectionViewCell : UICollectionViewCell
 {
     // Error parsing type: , name: imageView
+    // Error parsing type: , name: $__lazy_storage_$_maxWidthConstraint
 }
 
 - (void).cxx_destruct;

@@ -21,12 +21,15 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _useCompression;
     BOOL _forceHTTPv2;
+    CDUnknownBlockType _connectionMetricsHandler;
 }
 
 + (void)initialize;
+@property(copy, nonatomic) CDUnknownBlockType connectionMetricsHandler; // @synthesize connectionMetricsHandler=_connectionMetricsHandler;
 @property(nonatomic) BOOL forceHTTPv2; // @synthesize forceHTTPv2=_forceHTTPv2;
 @property(nonatomic) BOOL useCompression; // @synthesize useCompression=_useCompression;
 - (void).cxx_destruct;
+- (void)preconnect;
 - (void)URLSession:(id)arg1 betterRouteDiscoveredForStreamTask:(id)arg2;
 - (void)URLSession:(id)arg1 writeClosedForStreamTask:(id)arg2;
 - (void)URLSession:(id)arg1 readClosedForStreamTask:(id)arg2;
@@ -37,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 needNewBodyStream:(CDUnknownBlockType)arg3;
+- (void)URLSession:(id)arg1 task:(id)arg2 didFinishCollectingMetrics:(id)arg3;
 - (void)performBidirectionalStreamingRequest:(id)arg1 context:(id)arg2;
 - (void)performStreamingRequest:(id)arg1 handler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_lengthPrefixedData:(id)arg1 error:(id *)arg2;

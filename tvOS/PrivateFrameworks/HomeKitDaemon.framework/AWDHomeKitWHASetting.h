@@ -15,9 +15,7 @@
     unsigned long long _timestamp;
     NSString *_keyPath;
     AWDHomeKitValue *_value;
-    struct {
-        unsigned int timestamp:1;
-    } _has;
+    CDStruct_b5306035 _has;
 }
 
 @property(retain, nonatomic) AWDHomeKitValue *value; // @synthesize value=_value;

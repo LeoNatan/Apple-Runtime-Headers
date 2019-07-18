@@ -33,6 +33,8 @@
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) UIPreviewTarget *target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_previewMode, setter=_setPreviewMode:) long long previewMode;
+@property(nonatomic) BOOL _springboardPlatterStyle;
 - (id)retargetedPreviewWithTarget:(id)arg1;
 @property(readonly, nonatomic) struct CGSize size;
 - (BOOL)containsPoint:(struct CGPoint)arg1 fromView:(id)arg2;

@@ -11,6 +11,7 @@
 @protocol PXNotificationSuppressionContextManager;
 
 @interface UIApplication (PhotosUICore) <PXPPTDelegate>
+- (void)_px_navigateToURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)px_navigateToOneUpShowingAsset:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)px_navigateToRevealDroppedAsset:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)px_navigateToMomentsViewRevealingAssetWithUUID:(id)arg1 openOneUp:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;

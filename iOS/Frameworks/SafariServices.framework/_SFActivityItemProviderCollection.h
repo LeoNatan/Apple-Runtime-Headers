@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class WKWebView, _SFActivityItemProvider;
+@class WKWebView, _SFActivityItemProvider, _SFPrintActivityItemProvider;
 
 @interface _SFActivityItemProviderCollection : NSObject
 {
@@ -17,14 +17,14 @@
     _SFActivityItemProvider *_webArchiveProvider;
     WKWebView *_webView;
     _SFActivityItemProvider *_linkProvider;
-    _SFActivityItemProvider *_printProvider;
+    _SFPrintActivityItemProvider *_printProvider;
     _SFActivityItemProvider *_javaScriptExtensionProvider;
     _SFActivityItemProvider *_downloadProvider;
 }
 
 @property(retain, nonatomic) _SFActivityItemProvider *downloadProvider; // @synthesize downloadProvider=_downloadProvider;
 @property(retain, nonatomic) _SFActivityItemProvider *javaScriptExtensionProvider; // @synthesize javaScriptExtensionProvider=_javaScriptExtensionProvider;
-@property(retain, nonatomic) _SFActivityItemProvider *printProvider; // @synthesize printProvider=_printProvider;
+@property(retain, nonatomic) _SFPrintActivityItemProvider *printProvider; // @synthesize printProvider=_printProvider;
 @property(retain, nonatomic) _SFActivityItemProvider *linkProvider; // @synthesize linkProvider=_linkProvider;
 @property(nonatomic) _Bool displayingStandaloneMedia; // @synthesize displayingStandaloneMedia=_displayingStandaloneMedia;
 @property(nonatomic) _Bool displayingStandaloneImage; // @synthesize displayingStandaloneImage=_displayingStandaloneImage;

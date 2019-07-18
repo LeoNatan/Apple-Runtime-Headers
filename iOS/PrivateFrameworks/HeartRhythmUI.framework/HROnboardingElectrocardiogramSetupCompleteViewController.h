@@ -40,15 +40,13 @@
 @property(retain, nonatomic) HKAnchoredObjectQuery *electrocardiogramQuery; // @synthesize electrocardiogramQuery=_electrocardiogramQuery;
 @property(nonatomic) long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
-- (double)_bodyLastBaselineToAtrialFibrillationLearnMoreFirstBaseline;
-- (double)_cardBottomToBodyFirstBaseline;
+- (id)_subheadlineFont;
 - (id)_bodyFont;
 - (id)_bodyFontTextStyle;
 - (double)_classificationTextDistance;
-- (double)_titleLastBaselineToClassificationFirstBaseline;
 - (void)_stopElectrocardiogramQuery;
 - (void)_setUpElectrocardiogramQuery;
-- (id)_bodyTextForSetupCompleteState:(long long)arg1;
+- (void)_setupBodyLabelForSetupCompleteState:(long long)arg1;
 - (id)_classificationAttributedTextForElectrocardiogram:(id)arg1;
 - (void)_recomputeState;
 - (void)stackedButtonView:(id)arg1 didTapButtonAtIndex:(long long)arg2;

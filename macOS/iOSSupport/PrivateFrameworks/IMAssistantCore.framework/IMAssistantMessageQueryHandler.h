@@ -15,6 +15,7 @@
 - (id)chatsForChatNames:(id)arg1;
 - (id)chatsWithConversationIdentifiers:(id)arg1;
 - (id)chatsContainingRequiredParticipants:(id)arg1;
+- (id)unifiedContactIdentifiersForPerson:(id)arg1;
 - (id)chatParticipantsForSPIHandles:(id)arg1;
 - (id)chatParticipantForSPIHandle:(id)arg1;
 - (id)messageContentsPredicate:(id)arg1;

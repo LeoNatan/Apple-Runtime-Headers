@@ -6,7 +6,7 @@
 
 #import <ActivityRingsUI/ARUIAnimatableObject.h>
 
-@class NSArray;
+@class ARUISpriteSheet, NSArray;
 @protocol ARUIRingGroupControllerDelegate;
 
 @interface ARUIRingGroupController : ARUIAnimatableObject
@@ -22,6 +22,7 @@
     float _trackOpacity;
     float _zRotation;
     long long _numberOfRings;
+    ARUISpriteSheet *_spriteSheet;
     double _backingOrigin;
     double _additionalSpacingAtIndex;
     NSArray *_rings;
@@ -31,6 +32,8 @@
 
 + (id)animationTimingFunction;
 + (double)defaultAnimationDuration;
++ (id)ringGroupControllerConfiguredForCompanionWithRingType:(long long)arg1 withIcon:(_Bool)arg2;
++ (id)ringGroupControllerConfiguredForWatchWithRingType:(long long)arg1 withIcon:(_Bool)arg2;
 @property(nonatomic) __weak id <ARUIRingGroupControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *rings; // @synthesize rings=_rings;
 @property(nonatomic) double additionalSpacingAtIndex; // @synthesize additionalSpacingAtIndex=_additionalSpacingAtIndex;
@@ -45,12 +48,23 @@
 @property(nonatomic) float opacity; // @synthesize opacity=_opacity;
 @property(nonatomic) float emptyOpacity; // @synthesize emptyOpacity=_emptyOpacity;
 @property(nonatomic) struct CGPoint center; // @synthesize center=_center;
+@property(retain, nonatomic) ARUISpriteSheet *spriteSheet; // @synthesize spriteSheet=_spriteSheet;
 @property(readonly, nonatomic) long long numberOfRings; // @synthesize numberOfRings=_numberOfRings;
 - (void).cxx_destruct;
 - (unsigned long long)_lastRingFrameNumberForRingAtIndex:(unsigned long long)arg1;
 - (void)update:(double)arg1;
 - (id)_newAnimatablePropertyForType:(unsigned long long)arg1;
 - (void)addAnimation:(id)arg1 forRingGroupPropertyType:(unsigned long long)arg2;
+- (void)_setZRotation:(float)arg1;
+- (void)_setTrackOpacity:(float)arg1;
+- (void)_setRingScale:(float)arg1;
+- (void)_setRingThickness:(float)arg1;
+- (void)_setRingInterspacing:(float)arg1;
+- (void)_setRingIconSize:(float)arg1;
+- (void)_setRingDiameter:(float)arg1;
+- (void)_setOpacity:(float)arg1;
+- (void)_setEmptyOpacity:(float)arg1;
+- (void)_setCenter:(struct CGPoint)arg1;
 - (void)_removeAllRingAnimationsForPropertyType:(unsigned long long)arg1;
 - (void)_setNeedsUpdate;
 - (void)dealloc;
@@ -58,6 +72,10 @@
 - (id)init;
 - (void)removeCelebration:(id)arg1 fromRingAtIndex:(long long)arg2;
 - (void)addCelebration:(id)arg1 toRingAtIndex:(long long)arg2;
+- (void)setActiveEnergyPercentage:(double)arg1 briskPercentage:(double)arg2 movingHoursPercentage:(double)arg3 animated:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)setBriskPercentage:(double)arg1 animated:(_Bool)arg2;
+- (void)setMovingHoursPercentage:(double)arg1 animated:(_Bool)arg2;
+- (void)setActiveEnergyPercentage:(double)arg1 animated:(_Bool)arg2;
 - (_Bool)setFloatValue:(float)arg1 fromCurrentValue:(float)arg2 forRingPropertyType:(unsigned long long)arg3 ofRingAtIndex:(long long)arg4 animated:(_Bool)arg5 duration:(double)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)_setFloatValue:(float)arg1 forRingPropertyType:(unsigned long long)arg2 ofRingAtIndex:(long long)arg3 animated:(_Bool)arg4;
 - (_Bool)_setCGPointValue:(struct CGPoint)arg1 forRingPropertyType:(unsigned long long)arg2 ofRingAtIndex:(long long)arg3 animated:(_Bool)arg4;
@@ -79,11 +97,11 @@
 - (double)_ringPercentageAdjustedForProximityToFull:(double)arg1 withRingDiameter:(double)arg2 thickness:(double)arg3;
 - (void)setPercentage:(double)arg1 ofRingAtIndex:(long long)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setPercentage:(double)arg1 ofRingAtIndex:(long long)arg2 animated:(_Bool)arg3;
-- (void)setIconFirstFrameOrigin:(struct CGPoint)arg1 frameSize:(struct CGSize)arg2 frameCount:(long long)arg3 columns:(long long)arg4 ofRingAtIndex:(long long)arg5;
 -     // Error parsing type: v80@0:8{?=[4]}16, name: setSkewAdjustmentMatrix:
 - (void)setRingBoundsDiameter:(float)arg1;
 - (_Bool)areAnimationsInProgress;
 - (_Bool)ringsAreEmpty;
+- (void)setIconFirstFrameOrigin:(struct CGPoint)arg1 frameSize:(struct CGSize)arg2 frameCount:(long long)arg3 columns:(long long)arg4 ofRingAtIndex:(long long)arg5;
 - (void)setIconDotTextureOrigin:(struct CGPoint)arg1 ofRingAtIndex:(long long)arg2;
 - (void)setDotPercentage:(double)arg1 ofRingAtIndex:(long long)arg2 animated:(_Bool)arg3;
 

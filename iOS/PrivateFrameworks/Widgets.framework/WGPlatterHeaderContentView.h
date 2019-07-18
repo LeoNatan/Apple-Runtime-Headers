@@ -13,6 +13,7 @@
 
 @property(nonatomic) struct CGAffineTransform utilityButtonTransform; // @synthesize utilityButtonTransform=_utilityButtonTransform;
 - (void)_layoutUtilityButtonWithScale:(double)arg1;
+- (id)init;
 
 @end
 

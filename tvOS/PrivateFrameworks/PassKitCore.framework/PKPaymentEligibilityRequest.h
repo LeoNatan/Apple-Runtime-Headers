@@ -30,9 +30,11 @@
     NSString *_nonce;
     long long _source;
     NSString *_referrerIdentifier;
+    NSString *_passOwnershipToken;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *passOwnershipToken; // @synthesize passOwnershipToken=_passOwnershipToken;
 @property(copy, nonatomic) NSString *referrerIdentifier; // @synthesize referrerIdentifier=_referrerIdentifier;
 @property(readonly, nonatomic) long long source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *nonce; // @synthesize nonce=_nonce;

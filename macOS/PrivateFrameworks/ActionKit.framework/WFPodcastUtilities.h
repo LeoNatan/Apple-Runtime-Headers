@@ -13,7 +13,7 @@
 + (void)getPodcastsFromLibraryFetchingDetailsFromServer:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
 + (void *)createPlayerPath;
 + (struct _MRSystemAppPlaybackQueue *)createPlaybackQueueWithURLs:(id)arg1 setImmediatePlayback:(BOOL)arg2;
-+ (id)generatePlaybackQueueURL:(id)arg1 withParams:(id)arg2;
++ (id)generatePlaybackQueueURL:(id)arg1 withQueryDictionary:(id)arg2;
 
 @end
 

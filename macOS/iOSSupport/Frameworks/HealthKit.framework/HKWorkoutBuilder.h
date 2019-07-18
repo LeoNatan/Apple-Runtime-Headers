@@ -76,6 +76,7 @@
 - (void)clientRemote_didUpdateEvents:(id)arg1;
 - (void)clientRemote_didUpdateMetadata:(id)arg1;
 - (void)clientRemote_didUpdateStatistics:(id)arg1;
+- (void)_resourceQueue_markRecoveryRequired;
 - (void)_resourceQueue_setStatisticsComputationMethod:(long long)arg1 forType:(id)arg2;
 - (void)_resourceQueue_setStatisticsMergeStrategy:(unsigned long long)arg1 forType:(id)arg2;
 - (void)_resourceQueue_updateDevice:(id)arg1;

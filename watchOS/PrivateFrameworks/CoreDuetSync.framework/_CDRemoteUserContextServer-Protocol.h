@@ -7,6 +7,7 @@
 @class NSArray, NSUUID, _CDContextualChangeRegistration;
 
 @protocol _CDRemoteUserContextServer
+- (void)requestActivateDevicesWithHandler:(void (^)(NSError *))arg1;
 - (void)fetchPropertiesOfRemoteKeyPaths:(NSArray *)arg1 handler:(void (^)(NSError *))arg2;
 - (void)subscribeToDeviceStatusChangeNotificationsForDeviceTypes:(unsigned int)arg1 handler:(void (^)(NSError *))arg2;
 - (void)unsubscribeFromContextValueChangeNotificationsWithRegistration:(_CDContextualChangeRegistration *)arg1 deviceIDs:(NSArray *)arg2 handler:(void (^)(NSError *))arg3;

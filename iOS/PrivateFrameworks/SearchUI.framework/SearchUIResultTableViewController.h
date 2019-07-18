@@ -13,6 +13,7 @@
 
 @interface SearchUIResultTableViewController : SearchUITableViewController <SearchUITableHeaderViewDelegate, UIGestureRecognizerDelegate>
 {
+    _Bool _shortenTopFloatingHeader;
     NSString *_queryString;
     NSMutableSet *_expandedSections;
     NSMutableSet *_sectionsThatHaveBeenExpanded;
@@ -33,10 +34,12 @@
 @property(retain, nonatomic) NSMutableArray *potentiallyVisibleCells; // @synthesize potentiallyVisibleCells=_potentiallyVisibleCells;
 @property(retain, nonatomic) NSMutableSet *sectionsThatHaveBeenExpanded; // @synthesize sectionsThatHaveBeenExpanded=_sectionsThatHaveBeenExpanded;
 @property(retain, nonatomic) NSMutableSet *expandedSections; // @synthesize expandedSections=_expandedSections;
+@property(nonatomic) _Bool shortenTopFloatingHeader; // @synthesize shortenTopFloatingHeader=_shortenTopFloatingHeader;
 @property(retain, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
 - (void).cxx_destruct;
 - (void)toggleShowMoreForSection:(unsigned long long)arg1;
 - (_Bool)view:(id)arg1 isVisibleInBounds:(struct CGRect)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (void)sendVisibleFeedbackIfNecessary;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)indexPathToSelectForKeyboardOnQuickReturn;
@@ -69,12 +72,14 @@
 - (unsigned long long)handleSelectionAtIndexPath:(id)arg1 wasPop:(_Bool)arg2;
 - (void)didEngageResult:(id)arg1;
 - (id)cellForIndexPath:(id)arg1 reuseIfPossible:(_Bool)arg2;
+- (unsigned long long)queryIDForIndexPath:(id)arg1;
 - (_Bool)sectionShouldBeExpanded:(id)arg1;
 - (void)replaceResult:(id)arg1 withResult:(id)arg2;
 - (void)scrollSectionToTop:(unsigned long long)arg1 animate:(_Bool)arg2;
 - (_Bool)updateMustAccountForLayout;
 - (void)scrollTableToTop;
 - (void)updateWithResultSections:(id)arg1 scrollToTop:(_Bool)arg2;
+- (void)purgeAndResetTable;
 - (id)init;
 
 // Remaining properties

@@ -9,10 +9,10 @@
 @class NSDateInterval, NSDictionary, NSNumber, NSString, NSURL;
 
 @protocol STManagementStateServerInterface <NSObject>
+- (void)permitWebFilterURL:(NSURL *)arg1 pageTitle:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)performMigrationFromMCXSettings:(NSDictionary *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)contactManagementStateForDSID:(NSNumber *)arg1 completionHandler:(void (^)(long long, NSError *))arg2;
 - (void)setContactManagementState:(long long)arg1 forDSID:(NSNumber *)arg2 completionHandler:(void (^)(NSError *))arg3;
-- (void)setCommunicationPolicy:(long long)arg1 forDSID:(NSNumber *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)communicationPoliciesForDSID:(NSNumber *)arg1 withCompletionHandler:(void (^)(long long, long long, NSError *))arg2;
 - (void)communicationPoliciesWithCompletionHandler:(void (^)(long long, long long, NSError *))arg1;
 - (void)deleteAllWebApplicationHistory:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;

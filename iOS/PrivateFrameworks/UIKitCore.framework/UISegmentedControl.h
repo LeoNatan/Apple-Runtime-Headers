@@ -23,6 +23,8 @@
     long long _barStyle;
     id _appearanceStorage;
     double _enabledAlpha;
+    UIColor *_selectedSegmentTintColor;
+    UIColor *_backgroundTintColor;
     struct {
         unsigned int size:2;
         unsigned int delegateAlwaysNotifiesDelegateOfSegmentClicks:1;
@@ -53,10 +55,10 @@
 + (double)_dividerWidthForTraitCollection:(id)arg1 size:(int)arg2;
 + (double)_lineWidthForTraitCollection:(id)arg1 size:(int)arg2;
 + (double)_sectionIndicatorOverflowForTraitCollection:(id)arg1 size:(int)arg2;
-+ (void)_updateLowerBackgroundFilter:(id)arg1 upperBackgroundFilter:(id)arg2 traitCollection:(id)arg3;
-+ (void)_updateBackgroundFilter:(id)arg1 traitCollection:(id)arg2 lowerBackground:(_Bool)arg3;
-+ (id)_backgroundFilterForTraitCollection:(id)arg1 lowerBackground:(_Bool)arg2;
-+ (id)_backgroundFilterTypeForTraitCollection:(id)arg1 lowerBackground:(_Bool)arg2;
++ (void)_updateLowerBackgroundFilter:(id)arg1 upperBackgroundFilter:(id)arg2 traitCollection:(id)arg3 tintColor:(id)arg4;
++ (void)_updateBackgroundFilter:(id)arg1 traitCollection:(id)arg2 tintColor:(id)arg3 lowerBackground:(_Bool)arg4;
++ (id)_backgroundFilterForTraitCollection:(id)arg1 tintColor:(id)arg2 lowerBackground:(_Bool)arg3;
++ (id)_backgroundFilterTypeForTraitCollection:(id)arg1 tintColor:(id)arg2 lowerBackground:(_Bool)arg3;
 + (id)_modernDividerImageSelected:(_Bool)arg1 lowerBackground:(_Bool)arg2 traitCollection:(id)arg3 tintColor:(id)arg4 size:(int)arg5;
 + (struct CGColor *)_dividerSeparatorColorSelected:(_Bool)arg1 lowerBackground:(_Bool)arg2 traitCollection:(id)arg3;
 + (struct CGColor *)_dividerPrimaryColorSelected:(_Bool)arg1 lowerBackground:(_Bool)arg2 traitCollection:(id)arg3 tintColor:(id)arg4;
@@ -94,8 +96,7 @@
 - (id)backgroundImageForState:(unsigned long long)arg1 barMetrics:(long long)arg2;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 barMetrics:(long long)arg3;
 - (void)_setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 barMetrics:(long long)arg3;
-- (void)_updateTitleTextAttributes;
-@property(retain, nonatomic) UIColor *tintColor; // @dynamic tintColor;
+- (void)setTintColor:(id)arg1;
 - (id)_focusMapContainerForFocusSystem:(id)arg1;
 - (void)_focusSystem:(id)arg1 didFinishUpdatingFocusInContext:(id)arg2;
 - (id)_preferredFocusEnvironmentsForFocusSystem:(id)arg1;
@@ -112,6 +113,9 @@
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)_axLongPressHandler:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (id)_backgroundTintColor;
+- (void)_setBackgroundTintColor:(id)arg1;
+@property(retain, nonatomic) UIColor *selectedSegmentTintColor;
 - (void)setAlpha:(double)arg1;
 - (void)setEnabled:(_Bool)arg1;
 - (void)_setEnabled:(_Bool)arg1 forcePropagateToSegments:(_Bool)arg2;

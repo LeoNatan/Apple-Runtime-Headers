@@ -30,9 +30,9 @@
 - (void)open;
 - (void)close;
 - (void)reportCorruptTile:(const struct _GEOTileKey *)arg1;
-- (void)cancel:(const struct _GEOTileKey *)arg1;
-- (void)reprioritizeKey:(const struct _GEOTileKey *)arg1 newPriority:(unsigned int)arg2;
-- (void)loadTiles:(id)arg1 priorities:(const unsigned int *)arg2 hasAdditionalInfos:(const _Bool *)arg3 additionalInfos:(const struct GEOTileLoaderAdditionalInfo *)arg4 signpostIDs:(const unsigned long long *)arg5 reason:(unsigned char)arg6 options:(unsigned int)arg7 client:(id)arg8;
+- (void)cancel:(const struct _GEOTileKey *)arg1 batchID:(int)arg2;
+- (void)reprioritizeKey:(const struct _GEOTileKey *)arg1 newPriority:(unsigned int)arg2 batchID:(int)arg3;
+- (void)loadTiles:(id)arg1 batchID:(int)arg2 priorities:(const unsigned int *)arg3 hasAdditionalInfos:(const _Bool *)arg4 additionalInfos:(const struct GEOTileLoaderAdditionalInfo *)arg5 signpostIDs:(const unsigned long long *)arg6 createTimes:(const double *)arg7 reason:(unsigned char)arg8 options:(unsigned int)arg9 client:(id)arg10;
 - (void)_handleEditionUpgrade:(id)arg1;
 - (void)_handleNetworkBegan:(id)arg1;
 - (void)_handleError:(id)arg1;

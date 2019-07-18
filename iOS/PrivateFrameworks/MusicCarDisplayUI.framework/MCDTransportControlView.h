@@ -24,9 +24,11 @@
     NSLayoutConstraint *_leftButtonWidthConstraint;
     NSLayoutConstraint *_playButtonWidthConstraint;
     NSLayoutConstraint *_fastForwardButtonWidthConstraint;
+    NSLayoutConstraint *_containerHeightConstraint;
     struct CGSize _buttonSize;
 }
 
+@property(retain, nonatomic) NSLayoutConstraint *containerHeightConstraint; // @synthesize containerHeightConstraint=_containerHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *fastForwardButtonWidthConstraint; // @synthesize fastForwardButtonWidthConstraint=_fastForwardButtonWidthConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *playButtonWidthConstraint; // @synthesize playButtonWidthConstraint=_playButtonWidthConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *leftButtonWidthConstraint; // @synthesize leftButtonWidthConstraint=_leftButtonWidthConstraint;
@@ -46,7 +48,6 @@
 @property(readonly, nonatomic) double glyphSize;
 - (id)_defaultImageForIdentifier:(id)arg1;
 - (void)_updateProgressActive;
-- (struct CGSize)intrinsicContentSize;
 - (void)updateConstraints;
 - (void)setupConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;

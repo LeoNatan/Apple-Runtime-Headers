@@ -39,6 +39,7 @@
 - (void)_startUpdateTimer;
 - (void)_stopUpdateTimer;
 - (void)_handleTimeZoneChange;
+- (void)_updateFormat;
 - (void)_updateTimeLeadingConstraint;
 - (void)_updateLabels;
 - (void)enableUpdates;

@@ -36,7 +36,7 @@
 - (void)cellSelected;
 - (void)_openExternalAttachmentURLInBrowser:(id)arg1;
 - (void)_presentPreviewWithURL:(id)arg1 filename:(id)arg2;
-- (void)_presentPreviewOnMainThreadWithInfo:(id)arg1;
+- (void)_presentPreviewAttachmentInPreviewWithInfo:(id)arg1;
 - (id)_downloadProgressStringWithDownloadedBytes:(id)arg1 outOfTotalBytes:(id)arg2;
 - (void)tearDown;
 - (void)_clearDownloadID;

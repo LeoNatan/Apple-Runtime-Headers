@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface ISDeviceInfo : NSObject
 {
     unsigned long long _screenClass;

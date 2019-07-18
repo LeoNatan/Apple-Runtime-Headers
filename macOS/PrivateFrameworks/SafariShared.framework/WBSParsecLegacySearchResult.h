@@ -37,6 +37,7 @@
     unsigned long long _displayOptions;
     SFSearchResult *_sfSearchResultValue;
     NSString *_sectionBundleIdentifier;
+    long long _parsecQueryID;
 }
 
 + (BOOL)_validateAndReturnPlacementHintValueForString:(id)arg1 returnValue:(long long *)arg2;
@@ -44,6 +45,7 @@
 + (id)resultWithDictionary:(id)arg1;
 + (id)_specializedSchema;
 + (id)schema;
+@property(nonatomic) long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
 @property(copy, nonatomic) NSString *sectionBundleIdentifier; // @synthesize sectionBundleIdentifier=_sectionBundleIdentifier;
 @property(retain, nonatomic) SFSearchResult *sfSearchResultValue; // @synthesize sfSearchResultValue=_sfSearchResultValue;
 @property(readonly, nonatomic) WBSParsecImageRepresentation *completionIcon; // @synthesize completionIcon=_completionIcon;

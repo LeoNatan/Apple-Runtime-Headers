@@ -6,47 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
-@protocol OS_dispatch_queue;
-
 @interface GEOLogMsgStateFactory : NSObject
 {
-    NSString *_carrierOperatorName;
-    _Bool _cellularDataUsageAllowedForMaps;
-    _Bool _hasCellularDataUsageAllowedForMaps;
-    NSObject<OS_dispatch_queue> *_coreTelephonyIsolationQueue;
-    void *_telephonyServerConnection;
 }
 
-+ (_Bool)deviceHasRadio;
 + (id)sharedInstance;
-- (void).cxx_destruct;
-- (id)logMsgStateForRealtimeTrafficProbeCollectionWithTripId:(id)arg1 probeCount:(unsigned long long)arg2 recvTime:(id)arg3;
 - (id)logMsgStateForExtensionWithTableBookingAppsInstalled:(_Bool)arg1 hasAppsEnabled:(_Bool)arg2;
 - (id)logMsgStateForRidesharingWithNumberOfAppsInstalled:(unsigned long long)arg1 enabled:(unsigned long long)arg2;
 - (id)logMsgStateForSuggestionsWithSearchFieldType:(int)arg1 searchString:(id)arg2 displayedResults:(id)arg3 selectedIndex:(int)arg4 acSequenceNumber:(int)arg5;
 - (id)logMsgStateForNavigationWithLineType:(int)arg1 navState:(int)arg2 distanceToDestination:(double)arg3 upcomingManeuverType:(int)arg4 distanceToManeuver:(int)arg5 isGroupedManeuver:(_Bool)arg6 speedBucket:(int)arg7;
 - (id)logMsgStateForNavigationWithLineType:(int)arg1 navState:(int)arg2 distanceToDestination:(double)arg3 navCameraState:(id)arg4;
-- (id)logMsgStateForPlaceRequestWithStateOrigin:(id)arg1 requestType:(int)arg2 request:(id)arg3;
-- (id)logMsgStateForPlaceRequestWithRequestType:(int)arg1 request:(id)arg2;
-- (id)logMsgStateForTileSetWithStateOrigin:(id)arg1 tileSetInfoArray:(id)arg2;
-- (id)logMsgStateForTileSetWithTileSetInfoArray:(id)arg1;
-- (id)logMsgStateForTileSetWithStateOrigin:(id)arg1 tileSetInfo:(id)arg2;
-- (id)logMsgStateForTileSetWithTileSetInfo:(id)arg1;
-- (id)logMsgStateForMapsServerWithMapsResultsDisplayed:(id)arg1;
-- (id)logMsgStateForMapsServerWithSearchCategoriesDisplayedAsNSData:(id)arg1 selectedSearchCategory:(id)arg2;
-- (id)logMsgStateForMapsServerWithSearchCategoriesDisplayed:(id)arg1 selectedSearchCategory:(id)arg2;
-- (id)logMsgStateForMapsServerWithStateOrigin:(id)arg1 serverMetadata:(id)arg2;
-- (id)logMsgStateForMapsServerWithServerMetadata:(id)arg1;
-- (id)logMsgStateForReportAnIssueWithSelectedIndex:(unsigned int)arg1;
 - (id)logMsgStateForPlaceCardWithStateOrigin:(id)arg1 placeActionDetails:(id)arg2 placeCardType:(int)arg3 mapItemCategory:(id)arg4 actionableActions:(id)arg5 unactionableUIElements:(id)arg6;
 - (id)logMsgStateForPlaceCardWithPlaceActionDetails:(id)arg1 placeCardType:(int)arg2 mapItemCategory:(id)arg3 availableActions:(id)arg4 unactionableUIElements:(id)arg5;
 - (id)logMsgStateForRouteWithStateOrigin:(id)arg1 routeDetails:(id)arg2;
 - (id)logMsgStateForRouteWithRouteDetails:(id)arg1;
 - (id)logMsgStateForUserSessionWithSessionType:(unsigned long long)arg1 isNavSessionAllowed:(_Bool)arg2 userSessionSnapshot:(id)arg3;
-- (id)logMsgStateForMapRestoreWithStateOrigin:(id)arg1 targetLayouts:(id)arg2;
-- (id)logMsgStateForMapRestoreWithTargetLayouts:(id)arg1;
-- (id)logMsgStateForMapRestoreWithUITargets:(id)arg1;
 - (id)logMsgStateForMapSettingsWithStateOrigin:(id)arg1 prefferedTransportMode:(int)arg2 avoidTolls:(_Bool)arg3 avoidHighways:(_Bool)arg4 headingEnabled:(_Bool)arg5 speedLimitEnabled:(_Bool)arg6 navVoiceVolume:(int)arg7 pauseSpokenAudioEnabled:(_Bool)arg8 findMyCarEnabled:(_Bool)arg9 trafficEnabled:(_Bool)arg10 labelEnabled:(_Bool)arg11;
 - (id)logMsgStateForMapSettingsWithPrefferedTransportMode:(int)arg1 avoidTolls:(_Bool)arg2 avoidHighways:(_Bool)arg3 headingEnabled:(_Bool)arg4 speedLimitEnabled:(_Bool)arg5 navVoiceVolume:(int)arg6 pauseSpokenAudioEnabled:(_Bool)arg7 findMyCarEnabled:(_Bool)arg8 trafficEnabled:(_Bool)arg9 labelEnabled:(_Bool)arg10;
 - (id)logMsgStateForMapsUIShownWithStateOrigin:(id)arg1 isAirQualityShown:(_Bool)arg2 isWeatherShown:(_Bool)arg3;
@@ -64,18 +38,6 @@
 - (id)logMsgStateForMapViewWithMapRegion:(id)arg1 zoomLevel:(double)arg2 mapType:(int)arg3;
 - (id)logMsgStateForPairedDeviceWithStateOrigin:(id)arg1 isConnected:(_Bool)arg2 deviceType:(int)arg3 deviceOSVersion:(id)arg4 deviceHardwareId:(id)arg5;
 - (id)logMsgStateForPairedDeviceWithIsConnected:(_Bool)arg1 deviceType:(int)arg2 deviceOSVersion:(id)arg3 deviceHardwareId:(id)arg4;
-- (id)logMsgStateForCarPlayWithStateOrigin:(id)arg1 isConnected:(_Bool)arg2 carInfo:(id)arg3;
-- (id)logMsgStateForCarPlayWithIsConnected:(_Bool)arg1 carInfo:(id)arg2;
-- (void)_retrieveCellularDataUsagePolicyForMaps;
-- (void)_updateCellularDataAllowedForMapsSetting;
-- (int)cellularDataState;
-@property(readonly, nonatomic, getter=isCellularDataUsageAllowedForDevice) _Bool cellularDataUsageAllowedForDevice;
-@property(readonly, nonatomic, getter=isCellularDataUsageAllowedForMaps) _Bool cellularDataUsageAllowedForMaps;
-- (void)_retrieveCarrierOperatorName;
-- (void)_updateCarrierOperatorName;
-- (void)_connectToCoreTelephonyServer;
-@property(readonly, nonatomic) NSString *carrierOperatorName;
-- (void)dealloc;
 - (id)init;
 
 @end

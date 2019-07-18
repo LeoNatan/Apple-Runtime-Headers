@@ -8,11 +8,11 @@
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDCameraAudioParameterSelection, HMDCameraSessionID, HMDCameraVideoParameterSelection, NSString;
+@class HMDCameraAudioParameterSelection, HMDCameraStreamSessionID, HMDCameraVideoParameterSelection, NSString;
 
 @interface HMDCameraParameterSelection : HMFObject <HMFLogging>
 {
-    HMDCameraSessionID *_sessionID;
+    HMDCameraStreamSessionID *_sessionID;
     HMDCameraVideoParameterSelection *_videoParameterSelection;
     HMDCameraAudioParameterSelection *_audioParameterSelection;
 }
@@ -20,7 +20,7 @@
 + (id)logCategory;
 @property(retain, nonatomic) HMDCameraAudioParameterSelection *audioParameterSelection; // @synthesize audioParameterSelection=_audioParameterSelection;
 @property(retain, nonatomic) HMDCameraVideoParameterSelection *videoParameterSelection; // @synthesize videoParameterSelection=_videoParameterSelection;
-@property(readonly, nonatomic) HMDCameraSessionID *sessionID; // @synthesize sessionID=_sessionID;
+@property(readonly, nonatomic) HMDCameraStreamSessionID *sessionID; // @synthesize sessionID=_sessionID;
 - (void).cxx_destruct;
 - (void)setReselectedConfigParameters:(id)arg1 videoTier:(id)arg2;
 - (void)setSelectedConfigParameters:(id)arg1;

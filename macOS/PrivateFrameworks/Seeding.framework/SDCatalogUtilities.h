@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)_clearIASUCatalogURLInSystemWithError:(id *)arg1;
 + (id)_currentCatalog;
 + (void)_setCatalog:(id)arg1;
 

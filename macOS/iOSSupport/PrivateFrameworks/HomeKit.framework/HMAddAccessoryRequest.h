@@ -16,15 +16,15 @@
     BOOL _requiresOwnershipToken;
     HMHome *_home;
     NSString *_accessoryName;
-    NSUUID *_requestIdentifier;
     HMAccessoryCategory *_accessoryCategory;
+    NSUUID *_requestIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) HMAccessoryCategory *accessoryCategory; // @synthesize accessoryCategory=_accessoryCategory;
 @property(readonly, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(readonly, nonatomic) BOOL requiresOwnershipToken; // @synthesize requiresOwnershipToken=_requiresOwnershipToken;
 @property(readonly, nonatomic) BOOL requiresSetupPayloadURL; // @synthesize requiresSetupPayloadURL=_requiresSetupPayloadURL;
+@property(readonly, nonatomic) HMAccessoryCategory *accessoryCategory; // @synthesize accessoryCategory=_accessoryCategory;
 @property(readonly, nonatomic) NSString *accessoryName; // @synthesize accessoryName=_accessoryName;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;

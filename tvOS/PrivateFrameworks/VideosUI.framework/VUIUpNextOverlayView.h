@@ -6,10 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class CALayer, IKViewElement, NSNumber, VUICountDownProgressIndicator, VUILabel, VUIUpNextOverlayLayout, _TVImageView, _TVProgressView;
+#import <VideosUI/VUITextBadgeViewDelegate-Protocol.h>
+
+@class CALayer, IKViewElement, NSNumber, NSString, VUICountDownProgressIndicator, VUILabel, VUITextBadgeView, VUIUpNextOverlayLayout, _TVImageView, _TVProgressView;
 
 __attribute__((visibility("hidden")))
-@interface VUIUpNextOverlayView : UIView
+@interface VUIUpNextOverlayView : UIView <VUITextBadgeViewDelegate>
 {
     _Bool _progressViewShowOnlyOnFocus;
     _Bool _appImageViewShowOnlyOnFocus;
@@ -33,6 +35,8 @@ __attribute__((visibility("hidden")))
     IKViewElement *_subtitleElement;
     _TVImageView *_badgeView;
     IKViewElement *_badgeElement;
+    VUITextBadgeView *_textBadge;
+    IKViewElement *_textBadgeElement;
     UIView *_gradientView;
     CALayer *_blurMaskLayer;
     NSNumber *_autoPlayDuration;
@@ -51,6 +55,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool progressViewShowOnlyOnFocus; // @synthesize progressViewShowOnlyOnFocus=_progressViewShowOnlyOnFocus;
 @property(retain, nonatomic) CALayer *blurMaskLayer; // @synthesize blurMaskLayer=_blurMaskLayer;
 @property(retain, nonatomic) UIView *gradientView; // @synthesize gradientView=_gradientView;
+@property(retain, nonatomic) IKViewElement *textBadgeElement; // @synthesize textBadgeElement=_textBadgeElement;
+@property(retain, nonatomic) VUITextBadgeView *textBadge; // @synthesize textBadge=_textBadge;
 @property(retain, nonatomic) IKViewElement *badgeElement; // @synthesize badgeElement=_badgeElement;
 @property(retain, nonatomic) _TVImageView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) IKViewElement *subtitleElement; // @synthesize subtitleElement=_subtitleElement;
@@ -76,9 +82,16 @@ __attribute__((visibility("hidden")))
 - (void)_setAutoPlayDuration:(id)arg1;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)_toggleLayoutSubviewsSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
+- (void)textBadgeViewContentsUpdated:(id)arg1;
 - (void)reset;
 - (void)layoutSubviews;
 - (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

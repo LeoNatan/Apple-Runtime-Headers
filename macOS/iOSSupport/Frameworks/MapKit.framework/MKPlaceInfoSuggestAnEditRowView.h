@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MapKit/MKPlaceInfoContactRowView.h>
+#import <MapKit/MKPlaceSectionRowView.h>
 
 @class NSLayoutConstraint, _MKRightImageButton;
 
 __attribute__((visibility("hidden")))
-@interface MKPlaceInfoSuggestAnEditRowView : MKPlaceInfoContactRowView
+@interface MKPlaceInfoSuggestAnEditRowView : MKPlaceSectionRowView
 {
     _MKRightImageButton *_suggestAnEditButton;
     NSLayoutConstraint *_topToTitleVerticalConstraint;

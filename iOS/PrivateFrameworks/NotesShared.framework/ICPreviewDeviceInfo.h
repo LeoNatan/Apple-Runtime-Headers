@@ -15,10 +15,13 @@
     ICAppearanceInfo *_appearanceInfo;
 }
 
++ (id)previewDeviceInfoForPreviewImage:(id)arg1;
 @property(retain, nonatomic) ICAppearanceInfo *appearanceInfo; // @synthesize appearanceInfo=_appearanceInfo;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) double imageSize; // @synthesize imageSize=_imageSize;
 - (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)description;
 - (id)deviceInfoFromAddingAppearanceInfo:(id)arg1;
 - (id)initWithImageSize:(double)arg1 scale:(double)arg2 appearanceInfo:(id)arg3;

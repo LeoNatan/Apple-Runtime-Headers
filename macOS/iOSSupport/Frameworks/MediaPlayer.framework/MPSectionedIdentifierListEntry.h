@@ -8,10 +8,11 @@
 
 #import <MediaPlayer/MPSectionedIdentifierListEnumerationResult-Protocol.h>
 #import <MediaPlayer/NSSecureCoding-Protocol.h>
+#import <MediaPlayer/_MPSectionedIdentifierListEncodableNextEntriesProviding-Protocol.h>
 
 @class MPSectionedIdentifierListEntryPositionKey, NSArray, NSMutableArray, NSString;
 
-@interface MPSectionedIdentifierListEntry : NSObject <NSSecureCoding, MPSectionedIdentifierListEnumerationResult>
+@interface MPSectionedIdentifierListEntry : NSObject <_MPSectionedIdentifierListEncodableNextEntriesProviding, NSSecureCoding, MPSectionedIdentifierListEnumerationResult>
 {
     NSMutableArray *_nextEntries;
     BOOL _dataSourceRemoved;

@@ -13,7 +13,6 @@
 @interface AR3DSkeletonDetectionResult : NSObject <NSSecureCoding>
 {
     vector_1cb3ea33 _jointsVector;
-    vector_aab22ae2 _trackingStates;
     AR2DSkeletonDetectionResult *_skeletonDetectionResult2D;
 }
 
@@ -28,13 +27,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)createResultScaledByFactor:(float)arg1;
-- (_Bool)isSJointTracked:(long long)arg1;
+- (_Bool)isJointTracked:(long long)arg1;
 @property(readonly, nonatomic) unsigned long long jointCount;
-@property(readonly, nonatomic) const char *jointTrackingStates;
 // Error parsing type for property joints:
 // Property attributes: Tr^,R,N
 
--     // Error parsing type: @48@0:8^16r*24Q32@40, name: initWithJoints:trackingStates:numberOfJoints:referenceDetectionResult:
+-     // Error parsing type: @40@0:8^16Q24@32, name: initWithJoints:numberOfJoints:referenceDetectionResult:
 
 @end
 

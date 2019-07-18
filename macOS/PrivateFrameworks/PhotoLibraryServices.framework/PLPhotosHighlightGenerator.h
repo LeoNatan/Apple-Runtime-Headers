@@ -35,7 +35,7 @@
 + (void)updateKeyAssetForHighlights:(id)arg1;
 + (void)_updateParentHighlighNeedingNewKeyAsset:(id)arg1 withProvisionalKeyAsset:(id)arg2 updatedHighlights:(id)arg3;
 + (BOOL)_shouldUpdateKeyAssetForParentHighlight:(id)arg1 withKeyAssetObjectID:(id)arg2;
-+ (void)updateTitleForHighlights:(id)arg1 forKind:(unsigned short)arg2;
++ (void)updateTitleForHighlights:(id)arg1 forKind:(unsigned short)arg2 forceUpdateLocale:(BOOL)arg3;
 @property(retain, nonatomic) NSMutableSet *highlightsNeedingNewKeyAsset; // @synthesize highlightsNeedingNewKeyAsset=_highlightsNeedingNewKeyAsset;
 @property(nonatomic) __weak id <PLMomentGenerationDataManagement><PLHighlightItemModelReader> dataManager; // @synthesize dataManager=_dataManager;
 @property(nonatomic) BOOL didCallBeginGeneration; // @synthesize didCallBeginGeneration=_didCallBeginGeneration;
@@ -75,6 +75,7 @@
 - (void)updateHighlightNeedingNewKeyAssetsWithAsset:(id)arg1;
 - (BOOL)setDefaultVisibilityStateForHighlight:(id)arg1 withHighlightCluster:(id)arg2;
 - (void)resetDayGroupCurationForAsset:(id)arg1;
+- (BOOL)_highlightTypeSupportsVisibilityStateDayOnly:(unsigned short)arg1;
 - (void)updateCurationForHighlight:(id)arg1 withAssetsBelongingToCuration:(id)arg2;
 - (void)resetPreviousRecentHighlightCurationForHighlight:(id)arg1;
 - (void)updateRecentHighlightCurationForHighlight:(id)arg1;

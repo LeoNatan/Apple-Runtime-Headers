@@ -103,6 +103,7 @@
 - (void)confirmContactDetailRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)rejectRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)confirmRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_performAction:(id)arg1 onRecord:(id)arg2 completion:(CDUnknownBlockType)arg3 withParentConfirmation:(_Bool)arg4;
 - (void)_performAction:(id)arg1 onRecord:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_performAction:(id)arg1 onContactDetailRecord:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)confirmContact:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -113,6 +114,7 @@
 - (void)originFromRecordId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)launchAppForSuggestedEventUsingLaunchInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)launchInfoForSuggestedEventWithUniqueIdentifier:(id)arg1 sourceURL:(id)arg2 clientLocale:(id)arg3 ignoreUserActivitySupport:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
+- (id)createLaunchIntentForStorageEvent:(id)arg1;
 - (void)eventFromUniqueId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resolveFullDownloadRequests:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)fullDownloadRequestBatch:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -123,7 +125,7 @@
 - (void)contactMatchesByEmailAddress:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)contactMatchesOrLookupIdByPhoneNumber:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)namesForDetailCacheSnapshotsWithCompletion:(CDUnknownBlockType)arg1;
-- (void)namesForDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
+- (void)namesForDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 onlySignificant:(_Bool)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)contactMatchesByPhoneNumber:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)realtimeContactsFromEntity:(id)arg1 enrichments:(id)arg2 sourceTextMessage:(id)arg3 store:(id)arg4;
 - (_Bool)_isContactInteresting:(id)arg1 emailEntity:(id)arg2 enrichments:(id)arg3 hasContactCard:(_Bool)arg4;

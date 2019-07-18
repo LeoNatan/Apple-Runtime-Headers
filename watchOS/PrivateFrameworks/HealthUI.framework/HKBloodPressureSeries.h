@@ -14,9 +14,12 @@
     HKBloodPressureSeriesPresentationStyle *_unselectedPresentationStyle;
 }
 
-+ (id)_imageForGlyph:(id)arg1 compatibleWithFont:(id)arg2;
-+ (id)diastolicImageCompatibleWithFont:(id)arg1;
-+ (id)systolicImageCompatibleWithFont:(id)arg1;
++ (id)diastolicImageCompatibleWithFont:(id)arg1 withColor:(id)arg2;
++ (id)systolicImageCompatibleWithFont:(id)arg1 withColor:(id)arg2;
++ (void)_drawDiastolicSymbolWithColor:(id)arg1 atLocation:(struct CGPoint)arg2 width:(float)arg3 context:(struct CGContext *)arg4;
++ (struct CGRect)_rectCenteredAt:(struct CGPoint)arg1 width:(float)arg2;
++ (void)_drawSystolicSymbolWithColor:(id)arg1 atLocation:(struct CGPoint)arg2 width:(float)arg3 context:(struct CGContext *)arg4;
++ (id)defaultSeriesWithSystolicColor:(id)arg1;
 @property(retain, nonatomic) HKBloodPressureSeriesPresentationStyle *unselectedPresentationStyle; // @synthesize unselectedPresentationStyle=_unselectedPresentationStyle;
 @property(retain, nonatomic) HKBloodPressureSeriesPresentationStyle *selectedPresentationStyle; // @synthesize selectedPresentationStyle=_selectedPresentationStyle;
 - (void).cxx_destruct;
@@ -28,12 +31,9 @@
 - (float)distanceFromPoint:(struct CGPoint)arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect)arg3;
 - (_Bool)supportsMultiTouchSelection;
 - (id)coordinatesForBlock:(id)arg1 blockPath:(CDStruct_48c31d0d)arg2 xAxis:(id)arg3 yAxis:(id)arg4;
-- (void)_drawImage:(id)arg1 centeredAt:(struct CGPoint)arg2 context:(struct CGContext *)arg3;
-- (void)_drawDiastolicSymbolWidthColor:(id)arg1 atLocation:(struct CGPoint)arg2 width:(float)arg3 context:(struct CGContext *)arg4;
-- (struct CGRect)_rectCenteredAt:(struct CGPoint)arg1 width:(float)arg2;
-- (void)_drawSystolicSymbolWithColor:(id)arg1 atLocation:(struct CGPoint)arg2 width:(float)arg3 context:(struct CGContext *)arg4;
 - (void)_drawBloodPressureSymbol:(int)arg1 withColor:(id)arg2 atLocation:(struct CGPoint)arg3 width:(float)arg4 context:(struct CGContext *)arg5;
-- (void)_drawRangeInContext:(struct CGContext *)arg1 coordinate:(id)arg2 width:(float)arg3 symbolType:(int)arg4 symbolColor:(id)arg5 fillColor:(id)arg6;
+- (void)_drawRangeBackgroundInContext:(struct CGContext *)arg1 coordinate:(id)arg2 width:(float)arg3 symbolType:(int)arg4 symbolColor:(id)arg5 fillColor:(id)arg6;
+- (void)_drawRangeDotsInContext:(struct CGContext *)arg1 coordinate:(id)arg2 width:(float)arg3 symbolType:(int)arg4 symbolColor:(id)arg5 fillColor:(id)arg6;
 - (void)drawSeriesWithBlockCoordinates:(id)arg1 axisRect:(struct CGRect)arg2 zoomLevelConfiguration:(id)arg3 pointTransform:(struct CGAffineTransform)arg4 renderContext:(struct CGContext *)arg5 secondaryRenderContext:(id)arg6;
 
 @end

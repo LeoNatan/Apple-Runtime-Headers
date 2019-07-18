@@ -38,6 +38,7 @@
 - (id)generateImageFileForType:(id)arg1 includingMetadata:(BOOL)arg2 compressionQuality:(id)arg3 error:(id *)arg4;
 - (id)imageFile;
 @property(readonly, nonatomic) NSImage *image;
+- (BOOL)isScreenshot;
 - (id)orientation;
 - (id)location;
 - (id)height;

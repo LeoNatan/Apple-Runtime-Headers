@@ -9,22 +9,24 @@
 #import <IMSharedUtilities/CoreTelephonyClientCarrierBundleDelegate-Protocol.h>
 #import <IMSharedUtilities/CoreTelephonyClientDelegate-Protocol.h>
 
-@class CoreTelephonyClient, IDSPhoneCertificateVendor, IMCTXPCServiceSubscriptionInfo, NSArray, NSMutableDictionary, NSString;
+@class CoreTelephonyClient, IDSPhoneSubscriptionSelector, IMCTXPCServiceSubscriptionInfo, NSArray, NSMutableDictionary, NSString;
 
 @interface IMCTSubscriptionUtilities : NSObject <CoreTelephonyClientCarrierBundleDelegate, CoreTelephonyClientDelegate>
 {
     CoreTelephonyClient *_coreTelephonyClient;
     NSMutableDictionary *_cachedCarrierSettings;
     IMCTXPCServiceSubscriptionInfo *_ctSubscriptionInfo;
-    IDSPhoneCertificateVendor *_phoneCertificateVendor;
-    NSString *_registeredSIMID;
-    NSString *_registeredPhoneNumber;
+    IDSPhoneSubscriptionSelector *_phoneSubscriptionSelector;
+    NSArray *_registeredSIMIDs;
+    NSArray *_registeredPhoneNumbers;
+    NSArray *_registeredSubscriptions;
 }
 
 + (id)sharedInstance;
-@property(copy, nonatomic) NSString *registeredPhoneNumber; // @synthesize registeredPhoneNumber=_registeredPhoneNumber;
-@property(copy, nonatomic) NSString *registeredSIMID; // @synthesize registeredSIMID=_registeredSIMID;
-@property(retain, nonatomic) IDSPhoneCertificateVendor *phoneCertificateVendor; // @synthesize phoneCertificateVendor=_phoneCertificateVendor;
+@property(copy, nonatomic) NSArray *registeredSubscriptions; // @synthesize registeredSubscriptions=_registeredSubscriptions;
+@property(copy, nonatomic) NSArray *registeredPhoneNumbers; // @synthesize registeredPhoneNumbers=_registeredPhoneNumbers;
+@property(copy, nonatomic) NSArray *registeredSIMIDs; // @synthesize registeredSIMIDs=_registeredSIMIDs;
+@property(retain, nonatomic) IDSPhoneSubscriptionSelector *phoneSubscriptionSelector; // @synthesize phoneSubscriptionSelector=_phoneSubscriptionSelector;
 @property(retain, nonatomic) IMCTXPCServiceSubscriptionInfo *ctSubscriptionInfo; // @synthesize ctSubscriptionInfo=_ctSubscriptionInfo;
 @property(retain, nonatomic) NSMutableDictionary *cachedCarrierSettings; // @synthesize cachedCarrierSettings=_cachedCarrierSettings;
 @property(retain, nonatomic) CoreTelephonyClient *coreTelephonyClient; // @synthesize coreTelephonyClient=_coreTelephonyClient;

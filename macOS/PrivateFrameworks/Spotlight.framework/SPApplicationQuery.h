@@ -44,7 +44,7 @@
 - (void).cxx_destruct;
 - (void)_sendResponse:(id)arg1;
 - (void)_sendFilteredResponseOfKind:(int)arg1;
-- (void)_sendFastFilteretedResults;
+- (void)_sendFastFilteredResults;
 - (id)filterResultsBasedOnDisplayName:(id)arg1;
 - (BOOL)isCopyrightApple:(id)arg1;
 - (void)setRankingQueries:(id)arg1;

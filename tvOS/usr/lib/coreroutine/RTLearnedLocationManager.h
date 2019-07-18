@@ -15,6 +15,7 @@
 @interface RTLearnedLocationManager : RTService <RTLearnedLocationEngineProtocol, RTPurgable, RTDiagnosticProvider>
 {
     _Bool _available;
+    _Bool _migrationComplete;
     RTAccountManager *_accountManager;
     RTLearnedLocationAlgorithmMetricCalculator *_algorithmMetricCalculator;
     RTContactsManager *_contactsManager;
@@ -41,6 +42,7 @@
 + (double)distanceThresholdFromUncertainty:(double)arg1 otherUncertainty:(double)arg2;
 + (id)migrateLegacyMapItemWithGeoMapItem:(id)arg1 geoMapItemHandle:(id)arg2 source:(unsigned long long)arg3 mapServiceManager:(id)arg4 error:(id *)arg5;
 + (id)modeToString:(long long)arg1;
+@property(readonly, nonatomic) _Bool migrationComplete; // @synthesize migrationComplete=_migrationComplete;
 @property(nonatomic) _Bool available; // @synthesize available=_available;
 @property(readonly, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
@@ -67,7 +69,7 @@
 - (void)reconstructTransitionsWithHandler:(CDUnknownBlockType)arg1;
 - (void)_reconstructTransitionsWithHandler:(CDUnknownBlockType)arg1;
 - (void)updateTransitionWithIdentifier:(id)arg1 motionActivityType:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)logLocationsOfInterestWithHandler:(CDUnknownBlockType)arg1;
+- (void)logDatabasesWithHandler:(CDUnknownBlockType)arg1;
 - (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)onLearnedLocationStoreNotification:(id)arg1;
 - (void)_onLearnedLocationStoreNotification:(id)arg1;
@@ -145,7 +147,6 @@
 - (void)_fetchRecentLocationsOfInterestWithHandler:(CDUnknownBlockType)arg1;
 - (_Bool)validateUpdatedMapItem:(id)arg1 locationOfInterest:(id)arg2 error:(id *)arg3;
 - (id)createAndStoreNewPlaceWithMapItem:(id)arg1 customLabel:(id)arg2 mapItemSource:(unsigned long long)arg3 outError:(id *)arg4;
-- (_Bool)userCorrectionForMapItem:(id)arg1 type:(unsigned long long)arg2 outError:(id *)arg3;
 - (void)_shutdown;
 - (void)_setup;
 - (void)_migrateStateModelLegacy:(CDUnknownBlockType)arg1;

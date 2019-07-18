@@ -14,7 +14,6 @@
 }
 
 - (void).cxx_destruct;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
 - (void)runWithNoUserInterface;
 @property(readonly, nonatomic) WFGiphySessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
 

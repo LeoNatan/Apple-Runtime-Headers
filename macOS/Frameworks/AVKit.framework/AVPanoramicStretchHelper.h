@@ -14,11 +14,8 @@ __attribute__((visibility("hidden")))
     CALayer *_layer;
 }
 
-+ (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-+ (void)updatePanoramicStretchForLayer:(id)arg1;
-+ (id)meshTransformForLayerIfEffective:(id)arg1;
-+ (id)meshTransformForLayer:(id)arg1;
-+ (id)meshTransformForSourceAspectRatio:(double)arg1 destinationAspectRatio:(double)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_updatePanoramicStretchForLayer;
 - (void)dealloc;
 - (id)initWithLayer:(id)arg1;
 

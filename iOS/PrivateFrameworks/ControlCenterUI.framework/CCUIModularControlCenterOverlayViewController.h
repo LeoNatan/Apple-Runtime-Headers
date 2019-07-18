@@ -14,7 +14,7 @@
 #import <ControlCenterUI/CCUIStatusLabelViewControllerDelegate-Protocol.h>
 #import <ControlCenterUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CCUIAnimationRunner, CCUIFlickGestureRecognizer, CCUIHeaderPocketView, CCUIModuleCollectionView, CCUIOverlayTransitionState, CCUIScrollView, CCUIStatusBarStyleSnapshot, CCUIStatusLabelViewController, MTMaterialView, NSHashTable, NSString, NSUUID, UIPanGestureRecognizer, UIScrollView, UIStatusBar, UIStatusBar_Modern, UITapGestureRecognizer, UIView;
+@class CCUIAnimationRunner, CCUIFlickGestureRecognizer, CCUIHeaderPocketView, CCUIModuleCollectionView, CCUIOverlayTransitionState, CCUIScrollView, CCUIStatusBarStyleSnapshot, CCUIStatusLabelViewController, FBSDisplayLayoutMonitor, MTMaterialView, NSHashTable, NSString, NSUUID, UIPanGestureRecognizer, UIScrollView, UIStatusBar, UIStatusBar_Modern, UITapGestureRecognizer, UIView;
 @protocol CCUIHostStatusBarStyleProvider, CCUIModularControlCenterOverlayViewControllerDelegate, CCUIOverlayPresentationProvider;
 
 @interface CCUIModularControlCenterOverlayViewController : CCUIModularControlCenterViewController <CCUIPPTSignpostListener, UIGestureRecognizerDelegate, CCUIScrollViewDelegate, CCUIStatusLabelViewControllerDelegate, CCUIOverlayViewProvider, CCUIOverlayMetricsProvider, CCUIStatusBarDelegate>
@@ -38,6 +38,7 @@
     NSUUID *_currentTransitionUUID;
     CCUIOverlayTransitionState *_previousTransitionState;
     CCUIStatusBarStyleSnapshot *_hostStatusBarStyleSnapshot;
+    FBSDisplayLayoutMonitor *_layoutMonitor;
     _Bool _reachabilityActive;
     unsigned long long _presentationState;
     unsigned long long _transitionState;

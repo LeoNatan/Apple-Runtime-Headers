@@ -11,6 +11,7 @@
 @interface FPExtensionCollection : FPItemCollection
 {
     FPExtensionEnumerationSettings *_settings;
+    FPItemID *_alternateID;
 }
 
 + (_Bool)_item:(id)arg1 isCollectionRootForObservedItemID:(id)arg2;
@@ -22,6 +23,7 @@
 - (id)scopedSearchQuery;
 - (id)createDataSourceWithSortDescriptors:(id)arg1;
 - (_Bool)isCollectionValidForItem:(id)arg1;
+- (void)updateRootItem:(id)arg1;
 - (_Bool)isRootItem:(id)arg1;
 - (id)initWithSettings:(id)arg1;
 

@@ -15,12 +15,14 @@
 @interface _INPBNoteContent : PBCodable <_INPBNoteContent, NSSecureCoding, NSCopying>
 {
     CDStruct_f953fb60 _has;
+    _Bool __encodeLegacyGloryData;
     int _type;
     _INPBImageNoteContent *_image;
     _INPBTextNoteContent *_text;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) _INPBTextNoteContent *text; // @synthesize text=_text;
 @property(retain, nonatomic) _INPBImageNoteContent *image; // @synthesize image=_image;

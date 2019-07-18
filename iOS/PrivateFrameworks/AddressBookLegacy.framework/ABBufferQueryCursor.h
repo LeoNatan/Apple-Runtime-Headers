@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ABBufferQuery, CNManagedConfiguration, NSMutableData;
+@class ABBufferQuery, CNManagedConfiguration, NSMutableData, NSMutableDictionary;
 
 @interface ABBufferQueryCursor : NSObject
 {
@@ -25,6 +25,7 @@
     int _contactPreferredForImageColumn;
     int _personLinkColumn;
     NSMutableData *_mutableData;
+    NSMutableDictionary *_matchInfo;
     struct sqlite3_blob *_incompleteBlob;
     unsigned long long _blobBytesWritten;
     unsigned long long _blobLength;
@@ -61,6 +62,7 @@
 @property(nonatomic) unsigned long long blobLength; // @synthesize blobLength=_blobLength;
 @property(nonatomic) unsigned long long blobBytesWritten; // @synthesize blobBytesWritten=_blobBytesWritten;
 @property(nonatomic) struct sqlite3_blob *incompleteBlob; // @synthesize incompleteBlob=_incompleteBlob;
+@property(retain, nonatomic) NSMutableDictionary *matchInfo; // @synthesize matchInfo=_matchInfo;
 @property(retain, nonatomic) NSMutableData *mutableData; // @synthesize mutableData=_mutableData;
 - (void)dealloc;
 - (void)fetchNextBatchWithReply:(CDUnknownBlockType)arg1;

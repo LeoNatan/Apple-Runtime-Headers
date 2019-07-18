@@ -10,7 +10,7 @@
 #import <MapKit/UIGestureRecognizerDelegate-Protocol.h>
 #import <MapKit/_MKUserInteractionGestureRecognizerTouchObserver-Protocol.h>
 
-@class MKBasicMapView, MKCompassView, MKRotationFilter, MKScaleView, MKTiltGestureRecognizer, MKVariableDelayTapRecognizer, NSString, UIGestureRecognizer, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, UITraitCollection, VKCompoundAnimation, VKDynamicAnimation, _MKOneHandedZoomGestureRecognizer, _MKUserInteractionGestureRecognizer;
+@class MKBasicMapView, MKCompassView, MKRotationFilter, MKScaleView, MKTiltGestureRecognizer, MKVariableDelayTapRecognizer, NSString, UIGestureRecognizer, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, UITraitCollection, VKCompoundAnimation, VKDynamicAnimation, VKTimedAnimation, _MKDirectionalArrowRecognizer, _MKOneHandedZoomGestureRecognizer, _MKUserInteractionGestureRecognizer;
 @protocol MKMapGestureControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -29,6 +29,12 @@ __attribute__((visibility("hidden")))
     UIPanGestureRecognizer *_panGestureRecognizer;
     UIPanGestureRecognizer *_verticalPanGestureRecognizer;
     _MKOneHandedZoomGestureRecognizer *_oneHandedZoomGestureRecognizer;
+    _MKDirectionalArrowRecognizer *_arrowZoomGestureRecognizer;
+    VKTimedAnimation *_currentArrowAnimation;
+    double _arrowZoomSpeed;
+    double _arrowZoomStartTimestamp;
+    double _pinchFactorAverageInGesture;
+    double _lastPinchUpdateTimestamp;
     double _lastScale;
     VKDynamicAnimation *_pinchDecelerationAnimation;
     VKCompoundAnimation *_panDecelerationAnimationGroup;
@@ -62,6 +68,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (void)handleArrowZoom:(id)arg1;
+- (void)handleZoomArrowMask:(long long)arg1 speed:(double)arg2;
 - (double)variableDelayTapRecognizer:(id)arg1 shouldWaitForNextTapForDuration:(double)arg2 afterTouch:(id)arg3;
 - (void)gestureRecognizerTouchesCanceled:(id)arg1;
 - (void)gestureRecognizerTouchesEnded:(id)arg1;

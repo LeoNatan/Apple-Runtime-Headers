@@ -17,8 +17,8 @@
 @property(nonatomic, getter=_additionalRootLayerAffineTransform, setter=_setAdditionalRootLayerAffineTransform:) struct CGAffineTransform additionalRootLayerAffineTransform; // @synthesize additionalRootLayerAffineTransform=_additionalRootLayerAffineTransform;
 - (void)_updateVisibility;
 - (void)_noteScreenDidChangeMode:(id)arg1;
+- (void)_didMoveFromScreen:(id)arg1 toScreen:(id)arg2;
 - (void)setHidden:(BOOL)arg1;
-- (void)setScreen:(id)arg1;
 - (void)_configureRootLayer:(id)arg1 sceneTransformLayer:(id)arg2 transformLayer:(id)arg3;
 - (BOOL)_transformLayerIncludesScreenRotation;
 - (void)_configureContextOptions:(id)arg1;

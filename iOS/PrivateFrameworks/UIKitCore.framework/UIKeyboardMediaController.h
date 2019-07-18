@@ -6,14 +6,13 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitCore/UIKeyboardMediaExtensionHostProtocol-Protocol.h>
 #import <UIKitCore/UIKeyboardMediaServiceRemoteViewControllerDelegate-Protocol.h>
 
 @class NSString, UIView, UIViewController, _UIAsyncInvocation, _UITextDragCaretView;
 @protocol UIKeyboardMediaControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface UIKeyboardMediaController : NSObject <UIKeyboardMediaServiceRemoteViewControllerDelegate, UIKeyboardMediaExtensionHostProtocol>
+@interface UIKeyboardMediaController : NSObject <UIKeyboardMediaServiceRemoteViewControllerDelegate>
 {
     UIViewController *_remoteCardViewController;
     _UIAsyncInvocation *_remoteCardViewControllerRequest;
@@ -36,17 +35,15 @@ __attribute__((visibility("hidden")))
 - (void)stageStickerWithFileHandle:(id)arg1 url:(id)arg2 accessibilityLabel:(id)arg3;
 - (void)pasteImageAtFileHandle:(id)arg1;
 - (void)dismissCard;
-- (void)_instantiateCardFromExtension;
 - (void)_instantiateCardFromViewService;
 - (void)dismissCardAnimated;
 - (void)presentCard;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)_tearDownRemoteViews;
 - (void)_displayiMessageAppWithID:(id)arg1;
+- (void)_keyboardDidChangeFrame:(id)arg1;
 - (void)dismissCardIfNeeded;
-- (void)_instantiateExtensionRecentlyUsedMediaInView:(id)arg1;
 - (void)_instantiateViewServiceRecentlyUsedMediaWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (_Bool)_shouldUseViewService;
 - (void)prefetchRecentsViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)releaseRecentlyUsedMediaViewIfNeeded;
 - (void)showRecentlyUsedMediaInView:(id)arg1;

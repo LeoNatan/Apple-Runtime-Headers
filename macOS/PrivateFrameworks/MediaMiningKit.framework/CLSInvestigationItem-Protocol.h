@@ -14,6 +14,7 @@
 @protocol CLSInvestigationItem <NSObject, PLRegionsClusteringItem, CLSSimilarlyStackableItem>
 + (id <CLSItemScoringContext>)contextForItems:(NSArray *)arg1;
 @property(readonly) BOOL clsHasInterestingScenes;
+@property(readonly) BOOL clsHasPoorResolution;
 @property(readonly) BOOL clsAvoidIfPossibleForKeyItem;
 @property(readonly) BOOL clsIsInhabited;
 @property(readonly, nonatomic) NSDate *cls_localDate;
@@ -31,6 +32,7 @@
 @property(readonly, nonatomic) BOOL clsIsInterestingPanorama;
 @property(readonly, nonatomic) BOOL clsIsInterestingLivePhoto;
 @property(readonly, nonatomic) BOOL clsIsInterestingVideo;
+@property(readonly, nonatomic) BOOL clsIsLongExposure;
 @property(readonly, nonatomic) BOOL clsIsLoopOrBounce;
 @property(readonly, nonatomic) BOOL isBlurry;
 @property(readonly, nonatomic) BOOL clsIsAestheticallyPrettyGood;

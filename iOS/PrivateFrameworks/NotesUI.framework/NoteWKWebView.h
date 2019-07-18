@@ -19,9 +19,14 @@
 - (void)ic_evaluateJavaScript:(id)arg1;
 - (void)paste:(id)arg1;
 - (void)strikethrough:(id)arg1;
+- (void)calloutOptionInvoked:(long long)arg1 sender:(id)arg2;
+- (void)selectAll:(id)arg1;
+- (void)select:(id)arg1;
+- (void)toggleUnderline:(id)arg1;
+- (void)toggleItalics:(id)arg1;
+- (void)toggleBoldface:(id)arg1;
 - (void)_showTextStyleOptions:(id)arg1;
-- (_Bool)resignFirstResponder;
-- (_Bool)canResignFirstResponder;
+- (_Bool)becomeFirstResponder;
 - (_Bool)canBecomeFirstResponder;
 
 @end

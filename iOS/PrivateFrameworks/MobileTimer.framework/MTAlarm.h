@@ -154,7 +154,6 @@
 - (id)intentLabel;
 - (id)alarmIDIntentObject;
 - (id)alarmIntentDisplayString;
-- (_Bool)confirmedLastWakeUp;
 - (_Bool)confirmedLastBedtimeReminder;
 - (id)nextExpectedBedtimeDateAfterDate:(id)arg1;
 - (id)nextExpectedWakeUpDateAfterDate:(id)arg1;

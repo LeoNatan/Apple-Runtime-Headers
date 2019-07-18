@@ -8,11 +8,12 @@
 
 #import <WeatherFoundation/WFWeatherStore-Protocol.h>
 
-@class NSMutableDictionary, NSString, WFWeatherStoreCache, WFWeatherStoreServiceConfiguration;
+@class NSMutableDictionary, NSString, WFNetworkRetryManager, WFWeatherStoreCache, WFWeatherStoreServiceConfiguration;
 @protocol OS_dispatch_queue;
 
 @interface WFWeatherStoreService : NSObject <WFWeatherStore>
 {
+    struct os_unfair_lock_s _retryLock;
     WFWeatherStoreServiceConfiguration *_configuration;
     CDUnknownBlockType _forecastRequestStartingCallback;
     CDUnknownBlockType _locationGeocodeForCoordinateRequestStartingCallback;
@@ -24,13 +25,16 @@
     NSMutableDictionary *_URLToTaskMap;
     NSMutableDictionary *_URLToCallbackMap;
     WFWeatherStoreCache *_cache;
+    WFNetworkRetryManager *_retryManager;
 }
 
+@property(retain, nonatomic) WFNetworkRetryManager *retryManager; // @synthesize retryManager=_retryManager;
 @property(retain) WFWeatherStoreCache *cache; // @synthesize cache=_cache;
 @property(retain) NSMutableDictionary *URLToCallbackMap; // @synthesize URLToCallbackMap=_URLToCallbackMap;
 @property(retain) NSMutableDictionary *URLToTaskMap; // @synthesize URLToTaskMap=_URLToTaskMap;
 @property(retain) NSMutableDictionary *UUIDToURLMap; // @synthesize UUIDToURLMap=_UUIDToURLMap;
 @property(retain) NSMutableDictionary *UUIDToCallbackMap; // @synthesize UUIDToCallbackMap=_UUIDToCallbackMap;
+@property struct os_unfair_lock_s retryLock; // @synthesize retryLock=_retryLock;
 @property(retain) NSObject<OS_dispatch_queue> *mapQueue; // @synthesize mapQueue=_mapQueue;
 @property(retain) NSObject<OS_dispatch_queue> *parseQueue; // @synthesize parseQueue=_parseQueue;
 @property(retain) NSObject<OS_dispatch_queue> *incomingRequestQueue; // @synthesize incomingRequestQueue=_incomingRequestQueue;
@@ -44,7 +48,10 @@
 - (void)_setTask:(id)arg1 requestIdentifier:(id)arg2 callback:(CDUnknownBlockType)arg3 forURL:(id)arg4;
 - (id)_taskForURL:(id)arg1;
 - (void)_cancelWithRequestIdentifier:(id)arg1;
-- (void)_submitRequest:(id)arg1 withIdentifier:(id)arg2 forLocation:(id)arg3 forecastTypes:(unsigned long long)arg4 configuration:(id)arg5 locale:(id)arg6 date:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
+- (void)requestFailureForAPIVersion:(id)arg1 error:(id)arg2;
+- (void)requestSuccessForAPIVersion:(id)arg1;
+- (id)apiVersionForSettings:(id)arg1;
+- (void)_submitRequest:(id)arg1 withIdentifier:(id)arg2 forLocation:(id)arg3 forecastTypes:(unsigned long long)arg4 configuration:(id)arg5 locale:(id)arg6 date:(id)arg7 apiVersion:(id)arg8 completionHandler:(CDUnknownBlockType)arg9;
 - (void)_enumerateForecastTypesIn:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (_Bool)_cacheParsedForecastData:(id)arg1 types:(unsigned long long)arg2 location:(id)arg3 date:(id)arg4 requestIdentifier:(id)arg5;
 - (void)_cacheObject:(id)arg1 type:(unsigned long long)arg2 date:(id)arg3 forLocation:(id)arg4;
@@ -63,8 +70,6 @@
 - (void)hourlyForecastForLocation:(id)arg1 locale:(id)arg2 requestIdentifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)forecastForLocation:(id)arg1 locale:(id)arg2 atDate:(id)arg3 requestIdentifier:(id)arg4 options:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)completeErroneousForecastRequestWithHandler:(CDUnknownBlockType)arg1 requestIdentifier:(id)arg2 error:(id)arg3;
-- (void)historicalForecastForLocation:(id)arg1 locale:(id)arg2 atDate:(id)arg3 requestIdentifier:(id)arg4 options:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
-- (void)almanacForecastForLocation:(id)arg1 locale:(id)arg2 atDate:(id)arg3 requestIdentifier:(id)arg4 options:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)cancelTaskWithIdentifier:(id)arg1;
 - (void)invalidateCacheWithIdentifier:(id)arg1;
 - (id)initWithConfiguration:(id)arg1 error:(id *)arg2;

@@ -36,8 +36,6 @@ __attribute__((visibility("hidden")))
 - (void)_setDatabase:(id)arg1;
 - (BOOL)_checkUserIdentity:(id *)arg1;
 - (BOOL)_setupDatabaseSubscriptionIfNecessary:(id *)arg1;
-- (BOOL)_createSchema:(id *)arg1;
-- (BOOL)_createSchemaIfNecessary:(id *)arg1;
 - (BOOL)_shouldAttemptRecoveryForZone:(id)arg1 byDeletingExistingZone:(char *)arg2 afterError:(id)arg3;
 - (BOOL)_deleteZone:(id)arg1 error:(id *)arg2;
 - (BOOL)_saveZone:(id)arg1 error:(id *)arg2;

@@ -41,7 +41,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)removeContact:(id)arg1;
 - (void)addContact:(id)arg1;
-- (void)replaceByShortcut:(id)arg1;
 - (_Bool)_isPlaceholder;
 @property(readonly, nonatomic) _Bool isSetupPlaceholder;
 @property(readonly, nonatomic) _Bool isBackedPlaceholder;

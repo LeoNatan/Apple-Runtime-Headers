@@ -21,7 +21,7 @@
 - (void)_registerForBackgroundRefreshStatusChangedNotification;
 - (void)removeIdentity:(id)arg1;
 - (void)_handleBackgroundRefreshStatusDidChange;
-- (id)_fetchBackgroundRefreshEnabledForIdentity:(id)arg1;
+- (id)_lock_fetchBackgroundRefreshEnabledForIdentity:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

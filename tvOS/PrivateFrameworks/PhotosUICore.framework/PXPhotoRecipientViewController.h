@@ -21,7 +21,7 @@
     id <PXPhotoRecipientViewControllerDelegate> _delegate;
     NSString *_fieldLabel;
     long long _maxRecipients;
-    NSString *_initialNameToQuery;
+    NSString *_initialLocalizedNameToQuery;
     CNContactPickerViewController *_contactPickerViewController;
     PXSearchRecipientController *_searchRecipientController;
     PXRecipientSearchDataSourceManager *_searchDataSourceManager;
@@ -34,7 +34,7 @@
 @property(readonly, nonatomic) PXRecipientSearchDataSourceManager *searchDataSourceManager; // @synthesize searchDataSourceManager=_searchDataSourceManager;
 @property(retain, nonatomic) PXSearchRecipientController *searchRecipientController; // @synthesize searchRecipientController=_searchRecipientController;
 @property(retain, nonatomic) CNContactPickerViewController *contactPickerViewController; // @synthesize contactPickerViewController=_contactPickerViewController;
-@property(retain, nonatomic) NSString *initialNameToQuery; // @synthesize initialNameToQuery=_initialNameToQuery;
+@property(retain, nonatomic) NSString *initialLocalizedNameToQuery; // @synthesize initialLocalizedNameToQuery=_initialLocalizedNameToQuery;
 @property(nonatomic) long long maxRecipients; // @synthesize maxRecipients=_maxRecipients;
 @property(copy, nonatomic) NSString *fieldLabel; // @synthesize fieldLabel=_fieldLabel;
 @property(nonatomic) __weak id <PXPhotoRecipientViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -61,7 +61,7 @@
 - (void)viewDidLoad;
 - (void)updateViewConstraints;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithInitialNameToQuery:(id)arg1;
+- (id)initWithInitialLocalizedNameToQuery:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_commonInitialization;
 

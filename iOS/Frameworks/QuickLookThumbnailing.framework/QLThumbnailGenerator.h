@@ -44,9 +44,9 @@
 - (_Bool)_requestRepresentationTypeIsMoreRepresentative:(id)arg1 thanType:(long long)arg2;
 - (void)_createSyncThumbnailServiceProxy;
 - (void)_createThumbnailServiceProxy;
-- (void)failedToGenerateThumbnailOfType:(long long)arg1 forRequestWithSequenceNumber:(long long)arg2 error:(id)arg3;
-- (void)didGenerateThumbnailForRequestWithSequenceNumber:(long long)arg1 data:(id)arg2 bitmapFormat:(id)arg3 metadata:(id)arg4 contentRect:(struct CGRect)arg5 iconFlavor:(int)arg6 thumbnailType:(long long)arg7 clientShouldTakeOwnership:(_Bool)arg8;
-- (void)didUpdateStatus:(long long)arg1 ofThumbnailGenerationWithSequenceNumber:(long long)arg2;
+- (void)failedToGenerateThumbnailOfType:(long long)arg1 forRequestWithUUID:(id)arg2 error:(id)arg3;
+- (void)didGenerateThumbnailForRequestWithUUID:(id)arg1 data:(id)arg2 bitmapFormat:(id)arg3 metadata:(id)arg4 contentRect:(struct CGRect)arg5 iconFlavor:(int)arg6 thumbnailType:(long long)arg7 clientShouldTakeOwnership:(_Bool)arg8;
+- (void)didUpdateStatus:(long long)arg1 ofThumbnailGenerationWithUUID:(id)arg2;
 - (void)_logRequestDuration:(id)arg1;
 - (void)_finishAllRequestsWithError:(id)arg1;
 - (_Bool)__finishRequestIfNeeded:(id)arg1;
@@ -66,7 +66,7 @@
 - (id)thumbnailIconForRequest:(id)arg1;
 - (void)__notifyClientWithNewThumbnailRepresentationForRequestIfNeeded:(id)arg1 thumbnail:(id)arg2 type:(long long)arg3 error:(id)arg4;
 - (void)_notifyClientWithNewThumbnailRepresentationForRequestIfNeeded:(id)arg1 thumbnail:(id)arg2 type:(long long)arg3 error:(id)arg4;
-- (void)_handleThumbnailGenerationCompletionWithSequenceNumber:(long long)arg1 data:(id)arg2 format:(id)arg3 metadata:(id)arg4 contentRect:(struct CGRect)arg5 iconFlavor:(int)arg6 thumbnailType:(long long)arg7 clientShouldTakeOwnership:(_Bool)arg8 error:(id)arg9;
+- (void)_handleThumbnailGenerationCompletionWithUUID:(id)arg1 data:(id)arg2 format:(id)arg3 metadata:(id)arg4 contentRect:(struct CGRect)arg5 iconFlavor:(int)arg6 thumbnailType:(long long)arg7 clientShouldTakeOwnership:(_Bool)arg8 error:(id)arg9;
 - (_Bool)_queueThumbnailGenerationForRequestIfNeeded:(id)arg1;
 - (void)_queueIconGenerationForRequestIfNeeded:(id)arg1;
 - (void)_prepareSyncThumbnailRequest:(id)arg1;
@@ -76,10 +76,10 @@
 - (void)_sendPendingGenerationRequests;
 - (void)_sendSyncGenerationRequest:(id)arg1;
 - (void)_sendPendingBatches;
-- (_Bool)__requestWithSequenceNumberIsStillRunning:(unsigned long long)arg1;
-- (id)__requestWithSequenceNumber:(unsigned long long)arg1;
-- (id)_requestWithSequenceNumber:(unsigned long long)arg1;
-- (void)__removeRequestWithSequenceNumber:(long long)arg1;
+- (_Bool)__requestWithUUIDIsStillRunning:(id)arg1;
+- (id)__requestWithUUID:(id)arg1;
+- (id)_requestWithUUID:(id)arg1;
+- (void)__removeRequestWithUUID:(id)arg1;
 - (void)_removeRequest:(id)arg1;
 - (void)_addRequest:(id)arg1;
 - (_Bool)_isBuildingBatch;

@@ -39,7 +39,6 @@
 - (void)loadAssetAndPlayerItem;
 - (_Bool)isValidPlayerSubstituteForItem:(id)arg1;
 - (_Bool)isStreamable;
-- (_Bool)isCloudItem;
 - (_Bool)isAssetURLValid;
 - (double)durationFromExternalMetadata;
 @property(readonly, copy) NSString *description;

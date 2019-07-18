@@ -11,11 +11,12 @@
 #import <CoreSpeech/CSKeywordAnalyzerNDAPIScoreDelegate-Protocol.h>
 #import <CoreSpeech/CSPhraseSpotterEnabledMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSSiriClientBehaviorMonitorDelegate-Protocol.h>
+#import <CoreSpeech/CSVoiceTriggerXPCServiceDelegate-Protocol.h>
 
 @class CSAsset, CSAudioProvider, CSAudioStream, CSKeywordAnalyzerNDAPI, CSPolicy, NSDictionary, NSMutableArray, NSString;
 @protocol CSVoiceTriggerDelegate, OS_dispatch_queue;
 
-@interface CSBuiltInVoiceTriggerWatch : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSAudioStreamProvidingDelegate, CSSiriClientBehaviorMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSPhraseSpotterEnabledMonitorDelegate>
+@interface CSBuiltInVoiceTriggerWatch : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSAudioStreamProvidingDelegate, CSSiriClientBehaviorMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSPhraseSpotterEnabledMonitorDelegate, CSVoiceTriggerXPCServiceDelegate>
 {
     BOOL _listeningEnabled;
     BOOL _voiceTriggerEnabled;
@@ -25,6 +26,7 @@
     BOOL _isListenPollingStarting;
     BOOL _earlyDetected;
     BOOL _isStartSampleCountMarked;
+    BOOL _isPhraseSpotterBypassed;
     float _keywordThreshold;
     float _keywordLoggingThreshold;
     float _lastScore;
@@ -51,6 +53,7 @@
 @property(nonatomic) double cumulativeDowntime; // @synthesize cumulativeDowntime=_cumulativeDowntime;
 @property(nonatomic) double cumulativeUptime; // @synthesize cumulativeUptime=_cumulativeUptime;
 @property(nonatomic) double lastAggTime; // @synthesize lastAggTime=_lastAggTime;
+@property(nonatomic) BOOL isPhraseSpotterBypassed; // @synthesize isPhraseSpotterBypassed=_isPhraseSpotterBypassed;
 @property(retain, nonatomic) NSString *audioProviderUUID; // @synthesize audioProviderUUID=_audioProviderUUID;
 @property(nonatomic) unsigned long long analyzerStartSampleCount; // @synthesize analyzerStartSampleCount=_analyzerStartSampleCount;
 @property(nonatomic) BOOL isStartSampleCountMarked; // @synthesize isStartSampleCountMarked=_isStartSampleCountMarked;
@@ -83,6 +86,7 @@
 - (void)_resetStartAnalyzeTime;
 - (void)_resetUpTime;
 - (void)_logUptimeWithVTSwitchChanged:(BOOL)arg1 VTEnabled:(BOOL)arg2;
+- (void)voiceTriggerXPCService:(id)arg1 setPhraseSpotterBypassing:(BOOL)arg2;
 - (void)CSPhraseSpotterEnabledMonitor:(id)arg1 didReceiveEnabled:(BOOL)arg2;
 - (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
 - (void)CSAudioServerCrashMonitorDidReceiveServerCrash:(id)arg1;
@@ -110,6 +114,7 @@
 - (void)setAsset:(id)arg1;
 - (void)_reset;
 - (void)reset;
+- (void)handleListenStartPolicyChange:(BOOL)arg1;
 - (void)start;
 - (id)init;
 

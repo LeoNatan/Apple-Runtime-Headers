@@ -10,6 +10,7 @@
 #import <Safari/SFSafariExtensionHostDelegate-Protocol.h>
 
 @class NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSString;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface SafariAppExtensionsController : NSObject <ExtensionResourceVerifier, SFSafariExtensionHostDelegate>
@@ -20,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_extensionIdentifierToStateMap;
     NSMutableDictionary *_extensionUniqueIdentifierToExtensionDataMap;
     NSMutableDictionary *_contentBlockerToAssociatedAppExtensionMap;
+    NSObject<OS_dispatch_queue> *_appBundleValidationQueue;
     id _keyBagLockStatusObservationToken;
     BOOL _shouldReadFromKeychainAfterKeyBagIsUnlocked;
     BOOL _allowUnsignedExtensions;
@@ -68,8 +70,8 @@ __attribute__((visibility("hidden")))
 - (void)reloadPage:(id)arg1;
 - (void)dispatchMessageWithName:(id)arg1 fromExtensionWithUUID:(id)arg2 toPage:(id)arg3 userInfo:(id)arg4;
 - (void)verifyExtensionResourceAtExtensionURL:(id)arg1 fileURL:(id)arg2;
-- (void)browserViewController:(id)arg1 willNavigateToURL:(id)arg2;
-- (void)contentBlockerWithIdentifier:(id)arg1 blockedResourceWithURL:(id)arg2 inBrowserViewController:(id)arg3;
+- (void)pageWithUUID:(id)arg1 willNavigateToURL:(id)arg2;
+- (void)contentBlockerWithIdentifier:(id)arg1 blockedResourceWithURL:(id)arg2 inPageWithUUID:(id)arg3;
 - (void)getExtensionHeadersForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)canAnyExtensionsAddHeadersToURL:(id)arg1;
 - (BOOL)_canExtension:(id)arg1 addHeadersToURL:(id)arg2;
@@ -79,11 +81,11 @@ __attribute__((visibility("hidden")))
 - (void)dispatchMessageFromContainingAppWithName:(id)arg1 userInfo:(id)arg2 toExtensionWithUUID:(id)arg3;
 - (void)dispatchPopoverDidCloseInWindow:(id)arg1 toExtensionWithUUID:(id)arg2;
 - (void)dispatchPopoverWillShowInWindow:(id)arg1 toExtensionWithUUID:(id)arg2;
-- (void)dispatchValidateContextMenuItem:(id)arg1 toExtensionWithUUID:(id)arg2 fromContentViewController:(id)arg3 validationHandler:(CDUnknownBlockType)arg4;
-- (void)dispatchContextMenuItemSelected:(id)arg1 toExtensionWithUUID:(id)arg2 fromContentViewController:(id)arg3 withUserInfo:(id)arg4;
+- (void)dispatchValidateContextMenuItem:(id)arg1 toExtensionWithUUID:(id)arg2 fromPageWithUUID:(id)arg3 validationHandler:(CDUnknownBlockType)arg4;
+- (void)dispatchContextMenuItemSelected:(id)arg1 toExtensionWithUUID:(id)arg2 fromPageWithUUID:(id)arg3 withUserInfo:(id)arg4;
 - (void)dispatchValidateToolbarItem:(id)arg1 toExtensionWithUUID:(id)arg2 inWindow:(id)arg3;
 - (void)dispatchToolbarItemClickedInWindow:(id)arg1 toExtensionWithUUID:(id)arg2;
-- (void)dispatchMessage:(id)arg1 userInfo:(id)arg2 fromContentViewController:(id)arg3 toExtensionWithUUID:(id)arg4;
+- (void)dispatchMessage:(id)arg1 userInfo:(id)arg2 fromPageWithUUID:(id)arg3 toExtensionWithUUID:(id)arg4;
 - (void)_connectToExtension:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)completeRequestToExtensionWithUUID:(id)arg1 withRequestIdentifier:(id)arg2;
 - (void)loadPopoverForExtensionWithUUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -104,9 +106,9 @@ __attribute__((visibility("hidden")))
 - (void)_updateExtensionStateIfWebsiteAccessIncreased:(id)arg1;
 - (id)_cdHashForCodeSigningDictionary:(id)arg1;
 - (id)enabledExtensions;
-- (void)setContextMenuEventUserInfo:(id)arg1 forContentViewController:(id)arg2 forExtensionWithUUID:(id)arg3;
-- (void)invalidateContextMenuUserInfoForContentViewController:(id)arg1;
-- (id)contextMenuItemsForEnabledExtensionsForContentViewController:(id)arg1;
+- (void)setContextMenuEventUserInfo:(id)arg1 forPageWithUUID:(id)arg2 forExtensionWithUUID:(id)arg3;
+- (void)invalidateContextMenuUserInfoForPageWithUUID:(id)arg1;
+- (id)contextMenuItemsForEnabledExtensionsForPageWithUUID:(id)arg1 withCurrentURL:(id)arg2;
 - (id)toolbarItemForIdentifier:(id)arg1 browserWindowController:(id)arg2;
 - (id)toolbarItemIdentifiers;
 - (id)appExtensionDataForExtension:(id)arg1;

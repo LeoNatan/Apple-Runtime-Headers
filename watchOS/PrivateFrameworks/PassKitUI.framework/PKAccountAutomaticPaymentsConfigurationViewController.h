@@ -35,13 +35,9 @@
     NSNumber *_selectedAmount;
     NSNumber *_selectedFrequency;
     NSDate *_selectedDate;
-    int _frequencyDay;
+    int _scheduledDay;
     int _selectedRowType;
     NSCalendar *_productCalendar;
-    int _today;
-    int _tomorrow;
-    NSString *_todayString;
-    NSString *_tomorrowString;
     PKMonthDayCollectionViewController *_monthDayCollectionViewController;
     _Bool _shouldShowCollectionView;
     UIPickerView *_amountPicker;

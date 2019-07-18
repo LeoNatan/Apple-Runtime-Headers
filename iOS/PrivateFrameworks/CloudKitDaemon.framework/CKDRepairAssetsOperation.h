@@ -6,17 +6,16 @@
 
 #import <CloudKitDaemon/CKDDatabaseOperation.h>
 
-@class CKDOperation, NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString;
+@class CKDOperation, CKUploadRequestConfiguration, NSArray, NSDictionary, NSMutableDictionary, NSSet;
 
 __attribute__((visibility("hidden")))
 @interface CKDRepairAssetsOperation : CKDDatabaseOperation
 {
     CDUnknownBlockType _assetOrPackageRepairedBlock;
+    CKUploadRequestConfiguration *_uploadRequestConfiguration;
     NSDictionary *_UUIDToAssetOrPackage;
     NSDictionary *_assetOrPackageUUIDToMetadata;
     NSArray *_unavailableAssetsAndPackages;
-    NSString *_repairContainerIdentifier;
-    NSString *_repairSourceApplicationBundleIdentifier;
     CKDOperation *_fetchOperation;
     CKDOperation *_uploadOperation;
     CKDOperation *_updateOperation;
@@ -31,11 +30,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKDOperation *updateOperation; // @synthesize updateOperation=_updateOperation;
 @property(retain, nonatomic) CKDOperation *uploadOperation; // @synthesize uploadOperation=_uploadOperation;
 @property(retain, nonatomic) CKDOperation *fetchOperation; // @synthesize fetchOperation=_fetchOperation;
-@property(retain, nonatomic) NSString *repairSourceApplicationBundleIdentifier; // @synthesize repairSourceApplicationBundleIdentifier=_repairSourceApplicationBundleIdentifier;
-@property(retain, nonatomic) NSString *repairContainerIdentifier; // @synthesize repairContainerIdentifier=_repairContainerIdentifier;
 @property(retain, nonatomic) NSArray *unavailableAssetsAndPackages; // @synthesize unavailableAssetsAndPackages=_unavailableAssetsAndPackages;
 @property(retain, nonatomic) NSDictionary *assetOrPackageUUIDToMetadata; // @synthesize assetOrPackageUUIDToMetadata=_assetOrPackageUUIDToMetadata;
 @property(retain, nonatomic) NSDictionary *UUIDToAssetOrPackage; // @synthesize UUIDToAssetOrPackage=_UUIDToAssetOrPackage;
+@property(retain, nonatomic) CKUploadRequestConfiguration *uploadRequestConfiguration; // @synthesize uploadRequestConfiguration=_uploadRequestConfiguration;
 @property(copy, nonatomic) CDUnknownBlockType assetOrPackageRepairedBlock; // @synthesize assetOrPackageRepairedBlock=_assetOrPackageRepairedBlock;
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;

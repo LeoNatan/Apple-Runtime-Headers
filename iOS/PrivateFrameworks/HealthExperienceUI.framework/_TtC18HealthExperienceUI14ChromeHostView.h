@@ -9,7 +9,6 @@
 @interface _TtC18HealthExperienceUI14ChromeHostView : _TtC18HealthExperienceUI8HostView
 {
     // Error parsing type: , name: header
-    // Error parsing type: , name: headerDetailLabel
 }
 
 - (void).cxx_destruct;

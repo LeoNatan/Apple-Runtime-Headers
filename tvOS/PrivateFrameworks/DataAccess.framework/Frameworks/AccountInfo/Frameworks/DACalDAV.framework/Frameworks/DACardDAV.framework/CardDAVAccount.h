@@ -53,7 +53,6 @@
 - (void)discoveryTask:(id)arg1 gotAccountInfo:(id)arg2 error:(id)arg3;
 - (void)discoverInitialPropertiesWithConsumer:(id)arg1;
 - (id)wellKnownPaths;
-- (void)handleContactsNotificationNamed:(id)arg1;
 - (void)dealloc;
 - (id)initWithBackingAccountInfo:(id)arg1;
 

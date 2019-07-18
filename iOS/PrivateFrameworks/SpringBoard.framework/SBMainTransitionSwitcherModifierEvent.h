@@ -25,7 +25,8 @@
     long long _fromFloatingConfiguration;
     SBAppLayout *_toFloatingAppLayout;
     long long _toFloatingConfiguration;
-    NSString *_appExposeBundleID;
+    NSString *_fromAppExposeBundleID;
+    NSString *_toAppExposeBundleID;
     SBApplicationSceneEntityDestructionIntent *_intentForEntityRemoval;
     unsigned long long _fromInlineAppExposeRoles;
     unsigned long long _toInlineAppExposeRoles;
@@ -39,7 +40,8 @@
 @property(nonatomic) unsigned long long toInlineAppExposeRoles; // @synthesize toInlineAppExposeRoles=_toInlineAppExposeRoles;
 @property(nonatomic) unsigned long long fromInlineAppExposeRoles; // @synthesize fromInlineAppExposeRoles=_fromInlineAppExposeRoles;
 @property(retain, nonatomic) SBApplicationSceneEntityDestructionIntent *intentForEntityRemoval; // @synthesize intentForEntityRemoval=_intentForEntityRemoval;
-@property(copy, nonatomic) NSString *appExposeBundleID; // @synthesize appExposeBundleID=_appExposeBundleID;
+@property(copy, nonatomic) NSString *toAppExposeBundleID; // @synthesize toAppExposeBundleID=_toAppExposeBundleID;
+@property(copy, nonatomic) NSString *fromAppExposeBundleID; // @synthesize fromAppExposeBundleID=_fromAppExposeBundleID;
 @property(nonatomic) _Bool toFloatingSwitcherVisible; // @synthesize toFloatingSwitcherVisible=_toFloatingSwitcherVisible;
 @property(nonatomic) long long toFloatingConfiguration; // @synthesize toFloatingConfiguration=_toFloatingConfiguration;
 @property(retain, nonatomic) SBAppLayout *toFloatingAppLayout; // @synthesize toFloatingAppLayout=_toFloatingAppLayout;

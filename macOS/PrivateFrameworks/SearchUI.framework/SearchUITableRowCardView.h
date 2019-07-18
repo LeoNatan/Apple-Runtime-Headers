@@ -17,7 +17,6 @@
 + (BOOL)supportsRecyclingForCardSection:(id)arg1;
 + (BOOL)hasOnlyImages:(id)arg1;
 + (double)largestImageSizeForSection:(id)arg1;
-+ (int)separatorStyleForCardSection:(id)arg1;
 - (struct NSEdgeInsets)verticalBaselineInsetsForHeader:(BOOL)arg1 isCompactTable:(BOOL)arg2;
 - (struct NSEdgeInsets)verticalBaselineInsetsForRowsWithCompactTable:(BOOL)arg1;
 - (void)updateWithRowModel:(id)arg1;

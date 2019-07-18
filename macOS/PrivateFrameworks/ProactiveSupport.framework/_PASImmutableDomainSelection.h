@@ -15,7 +15,6 @@
 
 - (void).cxx_destruct;
 - (BOOL)isEqualToDomainSelection:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEmpty;
 - (id)allDomains;
 - (BOOL)containsDomain:(id)arg1;

@@ -41,9 +41,12 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) int titleType; // @synthesize titleType=_titleType;
 - (void).cxx_destruct;
-- (void)adoptFinalStateFromTransition:(id)arg1 transitionCompleted:(_Bool)arg2;
+- (void)adoptLayout:(id)arg1;
+- (void)clearTransitionContext;
+- (void)finalizeStateFromTransition:(id)arg1;
 - (void)ensureBackButtonTruncationOccursWithContext:(id)arg1;
 - (void)recordToStateForTransition:(id)arg1;
+- (void)prepareToRecordToState:(id)arg1;
 - (void)recordFromStateForTransition:(id)arg1;
 @property(nonatomic) float restingHeightOfRefreshControl; // @dynamic restingHeightOfRefreshControl;
 - (void)traitCollectionDidChange:(id)arg1;

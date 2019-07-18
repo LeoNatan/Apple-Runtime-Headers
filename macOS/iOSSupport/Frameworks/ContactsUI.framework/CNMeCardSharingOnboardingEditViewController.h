@@ -6,7 +6,7 @@
 
 #import <ContactsUI/CNMeCardSharingOnboardingViewController.h>
 
-#import <ContactsUI/CNAvatarPosePickerDelegate-Protocol.h>
+#import <ContactsUI/CNAvatarEditingManagerDelegate-Protocol.h>
 #import <ContactsUI/CNMeCardSharingOnboardingAvatarCarouselViewControllerDelegate-Protocol.h>
 #import <ContactsUI/CNPhotoPickerVariantListControllerDelegate-Protocol.h>
 #import <ContactsUI/CNPhotoPickerViewControllerDelegate-Protocol.h>
@@ -14,47 +14,51 @@
 #import <ContactsUI/UITableViewDelegate-Protocol.h>
 #import <ContactsUI/UITextFieldDelegate-Protocol.h>
 
-@class CNAvatarPosePickerManager, CNContact, CNContactImage, CNContactStore, CNMeCardSharingLogger, CNMeCardSharingOnboardingAvatarCarouselViewController, CNMeCardSharingOnboardingHeaderViewController, CNMeCardSharingPickerLayoutAttributes, CNMutableContact, CNPhotoPickerVariantsManager, CNPhotoPickerViewController, NSString, UITextField;
+@class CNAvatarEditingManager, CNContact, CNContactStore, CNMeCardSharingLogger, CNMeCardSharingOnboardingAvatarCarouselViewController, CNMeCardSharingOnboardingHeaderViewController, CNMeCardSharingPickerLayoutAttributes, CNMutableContact, CNPhotoPickerVariantsManager, CNPhotoPickerViewController, NSString, UITextField;
 @protocol AVTAvatarRecord, CNMeCardSharingNameProvider, CNMeCardSharingOnboardingEditViewControllerDelegate;
 
-@interface CNMeCardSharingOnboardingEditViewController : CNMeCardSharingOnboardingViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, CNMeCardSharingOnboardingAvatarCarouselViewControllerDelegate, CNPhotoPickerViewControllerDelegate, CNAvatarPosePickerDelegate, CNPhotoPickerVariantListControllerDelegate>
+@interface CNMeCardSharingOnboardingEditViewController : CNMeCardSharingOnboardingViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, CNMeCardSharingOnboardingAvatarCarouselViewControllerDelegate, CNPhotoPickerViewControllerDelegate, CNAvatarEditingManagerDelegate, CNPhotoPickerVariantListControllerDelegate>
 {
     BOOL _delegateDoesRespondToOnboardingResultSelector;
-    BOOL _shouldSaveChangesToMeContact;
     BOOL _shouldSetAsMeContact;
     id <CNMeCardSharingOnboardingEditViewControllerDelegate> _delegate;
     CNContactStore *_contactStore;
     CNContact *_contact;
     id <AVTAvatarRecord> _avatarRecord;
     CNMeCardSharingPickerLayoutAttributes *_layoutAttributes;
+    long long _nameOrder;
     UITextField *_givenNameField;
     UITextField *_familyNameField;
     CNMutableContact *_editingContact;
-    CNContactImage *_editingContactImage;
+    CNMutableContact *_avatarCarouselEditingContact;
+    NSString *_editingGivenName;
+    NSString *_editingFamilyName;
     id <CNMeCardSharingNameProvider> _nameProvider;
     CNMeCardSharingOnboardingAvatarCarouselViewController *_avatarCarouselViewController;
     CNMeCardSharingOnboardingHeaderViewController *_headerViewController;
     CNPhotoPickerViewController *_photoPickerViewController;
     CNPhotoPickerVariantsManager *_variantsManager;
-    CNAvatarPosePickerManager *_posePicker;
+    CNAvatarEditingManager *_posePicker;
     CNMeCardSharingLogger *_logger;
 }
 
 + (id)headerText;
 + (id)descriptorForRequiredKeys;
 @property(readonly, nonatomic) CNMeCardSharingLogger *logger; // @synthesize logger=_logger;
-@property(retain, nonatomic) CNAvatarPosePickerManager *posePicker; // @synthesize posePicker=_posePicker;
+@property(retain, nonatomic) CNAvatarEditingManager *posePicker; // @synthesize posePicker=_posePicker;
 @property(retain, nonatomic) CNPhotoPickerVariantsManager *variantsManager; // @synthesize variantsManager=_variantsManager;
 @property(retain, nonatomic) CNPhotoPickerViewController *photoPickerViewController; // @synthesize photoPickerViewController=_photoPickerViewController;
 @property(retain, nonatomic) CNMeCardSharingOnboardingHeaderViewController *headerViewController; // @synthesize headerViewController=_headerViewController;
 @property(retain, nonatomic) CNMeCardSharingOnboardingAvatarCarouselViewController *avatarCarouselViewController; // @synthesize avatarCarouselViewController=_avatarCarouselViewController;
 @property(retain, nonatomic) id <CNMeCardSharingNameProvider> nameProvider; // @synthesize nameProvider=_nameProvider;
-@property(retain, nonatomic) CNContactImage *editingContactImage; // @synthesize editingContactImage=_editingContactImage;
+@property(retain, nonatomic) NSString *editingFamilyName; // @synthesize editingFamilyName=_editingFamilyName;
+@property(retain, nonatomic) NSString *editingGivenName; // @synthesize editingGivenName=_editingGivenName;
+@property(retain, nonatomic) CNMutableContact *avatarCarouselEditingContact; // @synthesize avatarCarouselEditingContact=_avatarCarouselEditingContact;
 @property(retain, nonatomic) CNMutableContact *editingContact; // @synthesize editingContact=_editingContact;
 @property(nonatomic) BOOL shouldSetAsMeContact; // @synthesize shouldSetAsMeContact=_shouldSetAsMeContact;
-@property(nonatomic) BOOL shouldSaveChangesToMeContact; // @synthesize shouldSaveChangesToMeContact=_shouldSaveChangesToMeContact;
 @property(retain, nonatomic) UITextField *familyNameField; // @synthesize familyNameField=_familyNameField;
 @property(retain, nonatomic) UITextField *givenNameField; // @synthesize givenNameField=_givenNameField;
+@property(nonatomic) long long nameOrder; // @synthesize nameOrder=_nameOrder;
 @property(retain, nonatomic) CNMeCardSharingPickerLayoutAttributes *layoutAttributes; // @synthesize layoutAttributes=_layoutAttributes;
 @property(retain, nonatomic) id <AVTAvatarRecord> avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
@@ -64,12 +68,15 @@
 - (void).cxx_destruct;
 - (void)photoPicker:(id)arg1 didUpdatePhotoForContact:(id)arg2 withContactImage:(id)arg3;
 - (void)photoPickerDidCancel:(id)arg1;
+- (void)avatarCarouselViewControllerDidUpdateCenterMostItem:(id)arg1;
 - (void)avatarCarouselViewControllerDidTapPhotoPickerCell:(id)arg1;
 - (id)textFieldForIndex:(long long)arg1;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (void)textFieldDidEndEditing:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)adjustInsetsForKeyboardOverlap:(double)arg1;
 - (void)keyboardWillHide:(id)arg1;
@@ -80,15 +87,18 @@
 - (void)presentPhotoPickerVariantListFor:(id)arg1 FromViewController:(id)arg2;
 - (void)avatarPosePickerManager:(id)arg1 didFinishWithProviderItem:(id)arg2;
 - (void)showAvatarPosePickerFromItem:(id)arg1;
-- (void)notifyDelegateDidFinishOnboarding;
+- (void)notifyDelegateWithContactImage:(id)arg1 didSaveToMeContact:(BOOL)arg2;
+- (void)finishOnboardingWithDidSaveToMeContact:(BOOL)arg1;
+- (long long)contactImageSourceForType:(unsigned long long)arg1;
 - (void)promptForSavingToMeCard;
-- (void)promptForMeCardOrSaveAsNeeded;
 - (void)finishOnboardingWithProviderItem:(id)arg1;
 - (void)handleConfirmButtonTapped;
 - (id)confirmButtonTitle;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)familyNameDidChange:(id)arg1;
 - (void)givenNameDidChange:(id)arg1;
 - (void)saveDraftContact;
+- (void)updateAvatarCarouselContactName;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithContactStore:(id)arg1 contact:(id)arg2 nameProvider:(id)arg3 avatarRecord:(id)arg4;

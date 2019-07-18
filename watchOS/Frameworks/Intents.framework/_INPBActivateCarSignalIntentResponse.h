@@ -16,9 +16,11 @@
 {
     CDStruct_56d48c16 _signals;
     struct _has;
+    _Bool __encodeLegacyGloryData;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

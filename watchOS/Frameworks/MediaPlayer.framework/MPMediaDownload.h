@@ -9,6 +9,7 @@
 @interface MPMediaDownload : NSObject
 {
     int _downloadReason;
+    unsigned int _downloadPausedReason;
     long long _deviceLibraryID;
     long long _storeItemID;
     double _downloadProgress;
@@ -17,10 +18,12 @@
 }
 
 + (int)_downloadReasonFromStoreDownload:(id)arg1;
++ (unsigned int)MPMediaDownloadPauseReasonForATAsset:(id)arg1;
 + (id)MPMediaDownloadsFromATAssets:(id)arg1;
 + (id)MPMediaDownloadsFromMPStoreDownloads:(id)arg1;
 @property long long storeSagaID; // @synthesize storeSagaID=_storeSagaID;
 @property long long libraryID; // @synthesize libraryID=_libraryID;
+@property(nonatomic) unsigned int downloadPausedReason; // @synthesize downloadPausedReason=_downloadPausedReason;
 @property(nonatomic) double downloadProgress; // @synthesize downloadProgress=_downloadProgress;
 @property(nonatomic) int downloadReason; // @synthesize downloadReason=_downloadReason;
 @property(readonly, nonatomic) long long storeItemID; // @synthesize storeItemID=_storeItemID;

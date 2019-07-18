@@ -6,7 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSString, NTKCDetailTableViewCell, NTKCFaceDetailSectionHeaderView, NTKFace, UITableView;
+@class NSMutableArray, NSString, NTKCDetailTableViewCell, NTKCFaceDetailSectionHeaderView, NTKFace, UITableView, UIViewController;
+@protocol NTKCTableViewProviding;
 
 @interface NTKCFaceDetailSectionController : NSObject
 {
@@ -15,7 +16,7 @@
     long long _section;
     NSString *_titleForHeader;
     NTKFace *_face;
-    UITableView *_tableView;
+    UIViewController<NTKCTableViewProviding> *_tableViewController;
     NTKCDetailTableViewCell *_cell;
     NSMutableArray *_rows;
     NTKCFaceDetailSectionHeaderView *_headerView;
@@ -25,13 +26,15 @@
 @property(retain, nonatomic) NTKCFaceDetailSectionHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) NSMutableArray *rows; // @synthesize rows=_rows;
 @property(retain, nonatomic) NTKCDetailTableViewCell *cell; // @synthesize cell=_cell;
+@property(nonatomic) __weak UIViewController<NTKCTableViewProviding> *tableViewController; // @synthesize tableViewController=_tableViewController;
 @property(nonatomic) _Bool hasSpacerRow; // @synthesize hasSpacerRow=_hasSpacerRow;
 @property(nonatomic) _Bool inGallery; // @synthesize inGallery=_inGallery;
-@property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak NTKFace *face; // @synthesize face=_face;
 @property(readonly, nonatomic) NSString *titleForHeader; // @synthesize titleForHeader=_titleForHeader;
 @property(nonatomic) long long section; // @synthesize section=_section;
 - (void).cxx_destruct;
+- (id)_groupName;
+@property(readonly, nonatomic) __weak UITableView *tableView;
 - (id)_newSectionHeader;
 - (void)faceDidChangeResourceDirectory;
 - (void)faceDidChange;
@@ -45,7 +48,7 @@
 - (double)heightForRow:(long long)arg1;
 @property(readonly, nonatomic) long long numberOfRows;
 - (void)_commonInit;
-- (id)initWithTableView:(id)arg1 face:(id)arg2 inGallery:(_Bool)arg3;
+- (id)initWithTableViewController:(id)arg1 face:(id)arg2 inGallery:(_Bool)arg3;
 
 @end
 

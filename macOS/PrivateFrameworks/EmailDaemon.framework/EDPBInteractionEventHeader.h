@@ -16,14 +16,17 @@
     long long _deviceId;
     long long _userId;
     NSString *_locale;
+    int _timezoneOffset;
     unsigned int _version;
     struct {
         unsigned int deviceId:1;
         unsigned int userId:1;
+        unsigned int timezoneOffset:1;
         unsigned int version:1;
     } _has;
 }
 
+@property(nonatomic) int timezoneOffset; // @synthesize timezoneOffset=_timezoneOffset;
 @property(retain, nonatomic) NSString *locale; // @synthesize locale=_locale;
 @property(nonatomic) long long deviceId; // @synthesize deviceId=_deviceId;
 @property(nonatomic) long long userId; // @synthesize userId=_userId;
@@ -38,6 +41,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasTimezoneOffset;
 @property(readonly, nonatomic) BOOL hasLocale;
 @property(nonatomic) BOOL hasDeviceId;
 @property(nonatomic) BOOL hasUserId;

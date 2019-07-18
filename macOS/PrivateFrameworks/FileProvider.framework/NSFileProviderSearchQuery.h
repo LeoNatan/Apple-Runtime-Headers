@@ -14,11 +14,11 @@
 @interface NSFileProviderSearchQuery : NSObject <NSCopying, NSSecureCoding>
 {
     BOOL _shouldPerformServerSearch;
-    BOOL _includesTrashedItems;
     NSString *_scopeFragment;
     NSString *_scopedToItemIdentifierBundleId;
     NSString *_providerDomainID;
     NSSet *_cachedExtensions;
+    unsigned long long _trashedItemsMembership;
     NSString *_filename;
     NSSet *_allowedContentTypes;
     NSString *_scopedToItemIdentifier;
@@ -37,6 +37,7 @@
 @property(copy, nonatomic) NSString *scopeFragment;
 - (id)toSpotlightQueryString;
 @property(nonatomic) BOOL includesTrashedItems;
+@property(nonatomic) unsigned long long trashedItemsMembership;
 @property(nonatomic) BOOL shouldPerformServerSearch;
 @property(copy, nonatomic) NSString *content;
 @property(copy, nonatomic) NSString *searchString;
@@ -49,6 +50,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithSearchScopedToItemID:(id)arg1;
 - (id)initWithSearchScope:(id)arg1;
+- (id)predicate;
+- (id)allowedContentTypesPredicate;
+- (id)filenamePredicate;
 - (id)initWithSearchScopedToItemIdentifier:(id)arg1 providerDomainID:(id)arg2 searchContainerItemIdentifier:(id)arg3;
 
 @end

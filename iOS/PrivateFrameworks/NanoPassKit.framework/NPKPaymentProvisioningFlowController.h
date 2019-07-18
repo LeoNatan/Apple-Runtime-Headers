@@ -148,6 +148,7 @@
 - (void)_handleFinished:(id)arg1;
 - (void)_performProvision:(id)arg1;
 - (void)_performTerms:(id)arg1;
+- (void)_performPasscodeUpgrade:(id)arg1;
 - (void)_performEligibility:(id)arg1;
 - (void)_requestRequirements:(id)arg1;
 - (id)_newPaymentProvisioningRequest;

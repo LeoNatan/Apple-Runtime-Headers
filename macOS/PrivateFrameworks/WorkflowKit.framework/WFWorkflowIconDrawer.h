@@ -21,8 +21,9 @@
     struct CGSize _glyphSize;
 }
 
++ (id)pngDataForImageWithIcon:(id)arg1 size:(struct CGSize)arg2;
 + (id)glyphImageWithIcon:(id)arg1 size:(struct CGSize)arg2;
-+ (id)imageWithIcon:(id)arg1 size:(struct CGSize)arg2 usingCustomImage:(BOOL)arg3;
++ (id)imageWithIcon:(id)arg1 size:(struct CGSize)arg2;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) BOOL rounded; // @synthesize rounded=_rounded;
 @property(nonatomic) BOOL useCustomImage; // @synthesize useCustomImage=_useCustomImage;
@@ -36,6 +37,7 @@
 - (id)imageWithSize:(struct CGSize)arg1;
 - (void)drawInRect:(struct CGRect)arg1;
 - (id)init;
+- (id)initWithHomeScreenIcon:(id)arg1;
 - (void)setIcon:(id)arg1;
 - (id)initWithIcon:(id)arg1;
 

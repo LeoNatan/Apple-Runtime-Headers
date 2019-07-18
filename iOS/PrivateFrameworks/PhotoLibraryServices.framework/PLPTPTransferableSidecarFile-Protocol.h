@@ -9,6 +9,7 @@
 @class NSDate, NSManagedObjectID, NSNumber, NSString, NSURL;
 
 @protocol PLPTPTransferableSidecarFile <NSObject>
+@property(readonly, nonatomic) unsigned int resourceType;
 @property(readonly, nonatomic) long long ptpTrashedState;
 @property(readonly, retain, nonatomic) NSNumber *compressedSize;
 @property(readonly, retain, nonatomic) NSURL *fileURL;

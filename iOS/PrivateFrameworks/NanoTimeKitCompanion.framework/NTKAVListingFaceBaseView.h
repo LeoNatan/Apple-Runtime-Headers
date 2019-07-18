@@ -60,6 +60,7 @@
 - (void)faultInFaceContentSkippedDuringSwiping;
 - (void)_applyDataMode;
 - (void)_unloadSnapshotContentViews;
+- (void)setNormalComplicationDisplayWrapper:(id)arg1 forSlot:(id)arg2;
 - (void)_loadSnapshotContentViews;
 - (void)_cleanupAfterOrb:(_Bool)arg1;
 - (void)_prepareForOrb;

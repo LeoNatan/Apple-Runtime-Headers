@@ -12,11 +12,13 @@
 
 @interface CTUIWirelessUsageAndAppPolicyController : PSListController <CoreTelephonyClientSubscriberDelegate>
 {
+    _Bool _shouldCalculateUsage;
     PSSpecifier *_groupSpecifier;
     PSUIAppDataUsageGroup *_appDataUsageGroup;
     CoreTelephonyClient *_coreTelephonyClient;
 }
 
+@property _Bool shouldCalculateUsage; // @synthesize shouldCalculateUsage=_shouldCalculateUsage;
 @property(retain, nonatomic) CoreTelephonyClient *coreTelephonyClient; // @synthesize coreTelephonyClient=_coreTelephonyClient;
 @property(retain, nonatomic) PSUIAppDataUsageGroup *appDataUsageGroup; // @synthesize appDataUsageGroup=_appDataUsageGroup;
 @property(retain, nonatomic) PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;

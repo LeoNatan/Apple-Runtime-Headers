@@ -6,38 +6,21 @@
 
 #import <WorkflowKit/WFAccessResource.h>
 
-#import <ActionKit/WFPinboardLoginViewControllerDelegate-Protocol.h>
-
-@class NSString;
-
-@interface WFPinboardAccessResource : WFAccessResource <WFPinboardLoginViewControllerDelegate>
+@interface WFPinboardAccessResource : WFAccessResource
 {
-    CDUnknownBlockType _completionHandler;
 }
 
 + (id)pinboardToken;
 + (id)pinboardPassword;
 + (id)pinboardUsername;
-@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)logOut;
 - (BOOL)canLogOut;
 - (id)username;
 - (id)resourceName;
-- (void)pinboardLoginViewControllerDidCancel:(id)arg1;
-- (void)pinboardLoginViewController:(id)arg1 loggedInWithUsername:(id)arg2 password:(id)arg3;
-- (void)pinboardLoginViewController:(id)arg1 loggedInWithApiToken:(id)arg2;
-- (void)makeAvailableAtGlobalLevelWithUserInterface:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned long long)globalLevelStatus;
 - (id)protectedResourceDescription;
 - (id)icon;
 - (id)name;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

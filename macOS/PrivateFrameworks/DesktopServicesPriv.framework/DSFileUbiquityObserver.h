@@ -12,11 +12,14 @@ __attribute__((visibility("hidden")))
     struct TNSRef<NSMetadataQuery, void> _query;
     struct TNodePtr fParentNode;
     _Bool fSelfObserving;
+    struct TKeyValueObserver _resultsObserver;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)resultsChanged:(id)arg1 kind:(unsigned long long)arg2;
+- (void)stopObserving;
+- (void)startObserving;
 
 @end
 

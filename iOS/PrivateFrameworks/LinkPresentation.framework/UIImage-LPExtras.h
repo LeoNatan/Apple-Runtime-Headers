@@ -8,7 +8,6 @@
 
 @interface UIImage (LPExtras)
 + (id)_lp_createImageWithCGImage:(struct CGImage *)arg1;
-- (id)asFallbackIcon;
 - (struct CGSize)_lp_pixelSize;
 - (struct CGImage *)_lp_CGImage;
 @end

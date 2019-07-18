@@ -6,14 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class ABAddressBook, NSArray, NSURL;
+@class NSArray, NSURL;
 
 @interface ABPersonListDragExportHelper : NSObject
 {
     NSArray *_personIdentifiers;
     NSArray *_names;
     int _options;
-    ABAddressBook *_addressBook;
     NSArray *_people;
     NSURL *_destinationFolder;
 }
@@ -21,7 +20,7 @@
 @property(copy) NSURL *destinationFolder; // @synthesize destinationFolder=_destinationFolder;
 - (BOOL)singleCard;
 - (BOOL)shouldUnify;
-- (id)fetchPeople;
+- (id)fetchContacts;
 - (id)people;
 - (void)serializePeople;
 - (id)filenameFromNames:(id)arg1;
@@ -29,7 +28,7 @@
 - (id)nameOfSingleFile;
 - (id)namesOfPendingFiles;
 - (void)dealloc;
-- (id)initWithPersonIdentifiers:(id)arg1 names:(id)arg2 options:(int)arg3 addressBook:(id)arg4;
+- (id)initWithPersonIdentifiers:(id)arg1 names:(id)arg2 options:(int)arg3;
 
 @end
 

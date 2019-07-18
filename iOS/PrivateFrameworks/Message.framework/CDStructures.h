@@ -64,16 +64,15 @@ struct _NSRange {
     unsigned long long length;
 };
 
-struct _opaque_pthread_t {
-    long long _field1;
-    struct __darwin_pthread_handler_rec *_field2;
-    char _field3[8176];
-};
-
 struct internal_state;
 
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
+};
+
+struct os_unfair_recursive_lock_s {
+    struct os_unfair_lock_s _field1;
+    unsigned int _field2;
 };
 
 struct sqlite3;

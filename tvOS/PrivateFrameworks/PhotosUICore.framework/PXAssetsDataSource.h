@@ -12,9 +12,11 @@
 {
 }
 
+- (void)prefetchIndexPaths:(id)arg1 level:(unsigned long long)arg2;
 - (id)assetCollectionReferenceNearestToObjectReference:(id)arg1;
 - (id)objectReferenceNearestToObjectReference:(id)arg1;
-@property(readonly, nonatomic) long long numberOfEnrichedSections;
+- (long long)estimatedAssetsCountWithEnrichmentState:(unsigned short)arg1;
+- (long long)numberOfSectionsWithEnrichmentState:(unsigned short)arg1;
 - (_Bool)hasCurationForAssetCollection:(id)arg1;
 - (long long)numberOfCuratedItemsInAssetCollection:(id)arg1;
 - (long long)numberOfUncuratedItemsInAssetCollection:(id)arg1;
@@ -29,6 +31,8 @@
 - (struct PXSimpleIndexPath)indexPathForAssetReference:(id)arg1;
 - (id)assetReferenceAtItemIndexPath:(struct PXSimpleIndexPath)arg1;
 - (Class)objectReferenceClassForItem;
+- (id)assetCollectionReferencesWithParentAssetCollectionReference:(id)arg1 assetCollectionReferenceWithSameKeyAssetAsParent:(id *)arg2;
+- (id)assetCollectionReferencesWithParentAssetCollectionReference:(id)arg1;
 - (id)assetCollectionReferenceForAssetCollectionReference:(id)arg1;
 - (struct PXSimpleIndexPath)indexPathForAssetCollectionReference:(id)arg1;
 - (id)assetCollectionReferenceAtSectionIndexPath:(struct PXSimpleIndexPath)arg1;

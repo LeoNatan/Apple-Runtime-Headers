@@ -9,17 +9,18 @@
 #import <MaterialKit/MTVisualStylingProviding-Protocol.h>
 #import <MaterialKit/NSCopying-Protocol.h>
 
-@class MTVibrantStylingProvider, MTVisualStylingProvider, NSBundle, NSDictionary, NSHashTable, NSMutableDictionary, NSString, UIViewFloatAnimatableProperty;
+@class NSBundle, NSDictionary, NSHashTable, NSMutableDictionary, NSString, UIViewFloatAnimatableProperty;
 
 @interface MTMaterialView : UIView <NSCopying, MTVisualStylingProviding>
 {
     _Bool _useBuiltInAlphaTransformerAndBackdropScaleAdjustment;
     _Bool _recipeDynamic;
     NSMutableDictionary *_cmVisualStyleCategoriesToProviders;
-    MTVibrantStylingProvider *_vibrantStylingProvider;
     NSDictionary *_recipeNamesByTraitCollection;
     NSBundle *_recipeBundle;
     NSHashTable *_observers;
+    UIView *_highlightView;
+    _Bool _highlighted;
     NSString *_groupNameBase;
     long long _recipe;
     long long _configuration;
@@ -28,18 +29,15 @@
 
 + (id)_recipeNameForTraitCollection:(id)arg1 withRecipeNamesByTraitCollection:(id)arg2;
 + (Class)layerClass;
++ (id)newDefaultHighlightAnimator;
 + (id)materialViewWithRecipe:(long long)arg1 configuration:(long long)arg2 initialWeighting:(double)arg3;
 + (id)materialViewWithRecipe:(long long)arg1 configuration:(long long)arg2;
 + (void)initialize;
-+ (double)highlightAlpha;
 + (id)materialViewWithRecipeNamesByTraitCollection:(id)arg1 inBundle:(id)arg2 configuration:(long long)arg3 initialWeighting:(double)arg4 scaleAdjustment:(CDUnknownBlockType)arg5;
 + (id)materialViewWithRecipeNamed:(id)arg1 inBundle:(id)arg2 configuration:(long long)arg3 initialWeighting:(double)arg4 scaleAdjustment:(CDUnknownBlockType)arg5;
 + (id)materialViewWithRecipe:(long long)arg1 configuration:(long long)arg2 initialWeighting:(double)arg3 scaleAdjustment:(CDUnknownBlockType)arg4;
-+ (long long)_configurationForRecipe:(long long)arg1 withOptions:(unsigned long long)arg2 configurationBlock:(CDUnknownBlockType *)arg3;
-+ (id)materialViewWithRecipe:(long long)arg1 options:(unsigned long long)arg2;
-+ (id)materialViewWithRecipe:(long long)arg1 options:(unsigned long long)arg2 initialWeighting:(double)arg3;
-+ (id)materialViewWithRecipe:(long long)arg1 options:(unsigned long long)arg2 initialWeighting:(double)arg3 scaleAdjustment:(CDUnknownBlockType)arg4;
 @property(retain, nonatomic, getter=_backdropFloatAnimatableProperty) UIViewFloatAnimatableProperty *backdropFloatAnimatableProperty; // @synthesize backdropFloatAnimatableProperty=_backdropFloatAnimatableProperty;
+@property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) long long configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) long long recipe; // @synthesize recipe=_recipe;
 @property(copy, nonatomic) NSString *groupNameBase; // @synthesize groupNameBase=_groupNameBase;
@@ -52,8 +50,8 @@
 - (id)_groupNameWithBase:(id)arg1;
 - (void)_setRecipeName:(id)arg1 withWeighting:(double)arg2;
 - (id)_materialLayer;
-@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 - (id)visualStylingProviderForCategory:(long long)arg1;
+- (_Bool)addCompletionForCurrentAnimation:(CDUnknownBlockType)arg1 forMaterialLayer:(id)arg2;
 - (_Bool)isManagingCustomOpacityTransitionForMaterialLayer:(id)arg1;
 - (_Bool)isManagingOpacityForMaterialLayer:(id)arg1;
 - (_Bool)managesWeightingForMaterialLayer:(id)arg1;
@@ -71,6 +69,7 @@
 - (id)_initWithRecipe:(long long)arg1 configuration:(long long)arg2 initialWeighting:(double)arg3 scaleAdjustment:(CDUnknownBlockType)arg4;
 - (id)_initWithCoreMaterialRecipe:(id)arg1 fromBundle:(id)arg2 coreMaterialConfiguration:(id)arg3 initialWeighting:(double)arg4 scaleAdjustment:(CDUnknownBlockType)arg5;
 - (id)init;
+@property(nonatomic, getter=isContentReplacedWithSnapshot) _Bool contentReplacedWithSnapshot;
 - (id)newShadowViewWithCaptureOnlyMaterialView:(_Bool)arg1;
 - (id)newShadowView;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -84,13 +83,9 @@
 @property(nonatomic, getter=isCaptureOnly) _Bool captureOnly;
 @property(nonatomic, getter=isZoomEnabled) _Bool zoomEnabled;
 @property(nonatomic, getter=isBlurEnabled) _Bool blurEnabled;
-@property(nonatomic, getter=isHighlighted) _Bool highlighted;
 - (void)_removeObserver:(id)arg1;
 - (void)_addObserver:(id)arg1;
 @property(copy, nonatomic) NSString *recipeName;
-- (void)transitionToRecipe:(long long)arg1 options:(unsigned long long)arg2 weighting:(double)arg3;
-- (void)setFinalRecipe:(long long)arg1 options:(unsigned long long)arg2;
-@property(readonly, nonatomic) MTVibrantStylingProvider *vibrantStylingProvider;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

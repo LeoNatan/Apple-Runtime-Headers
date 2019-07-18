@@ -11,6 +11,7 @@
 
 @interface NPSDomainAccessor : NSObject
 {
+    _Bool _initializedWithActiveDevice;
     NSObject<OS_dispatch_queue> *_externalQueue;
     NSObject<OS_dispatch_queue> *_invalidationQueue;
     NPSDomainAccessorInternal *_internalAccessor;
@@ -20,6 +21,7 @@
 + (id)copyDomainList;
 + (void)resolveActivePairedDevicePairingID:(id *)arg1 pairingDataStore:(id *)arg2;
 + (void)initialize;
+@property(nonatomic) _Bool initializedWithActiveDevice; // @synthesize initializedWithActiveDevice=_initializedWithActiveDevice;
 @property(retain, nonatomic) NPSDomainAccessorInternal *internalAccessor; // @synthesize internalAccessor=_internalAccessor;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *invalidationQueue; // @synthesize invalidationQueue=_invalidationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *externalQueue; // @synthesize externalQueue=_externalQueue;
@@ -56,6 +58,8 @@
 - (id)synchronize;
 - (void)invalidate;
 - (void)dealloc;
+- (id)shouldNotDoWork;
+- (_Bool)activeDeviceChanged;
 - (id)initWithInternalDomainAccessor:(id)arg1 queue:(id)arg2;
 - (id)initWithDomain:(id)arg1 queue:(id)arg2 pairingID:(id)arg3 pairingDataStore:(id)arg4;
 - (id)initWithDomain:(id)arg1 pairingID:(id)arg2 pairingDataStore:(id)arg3;

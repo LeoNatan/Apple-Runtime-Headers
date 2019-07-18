@@ -45,6 +45,7 @@
 - (_Bool)isWallpaperRequiredForSwitcher;
 - (long long)backdropBlurType;
 - (double)opacityForIndex:(unsigned long long)arg1;
+- (double)homeScreenAlpha;
 - (struct UIRectCornerRadii)cardCornerRadiiForIndex:(unsigned long long)arg1;
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (double)scaleForIndex:(unsigned long long)arg1;

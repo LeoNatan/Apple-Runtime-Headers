@@ -10,7 +10,6 @@
 - (id)_ui_onlyObject;
 - (id)_ui_firstObject;
 - (id)_filteredArrayOfObjectsPassingTest:(CDUnknownBlockType)arg1;
-- (id)_copyObjects;
 - (struct CGSize)_legacy_drawComponentsJoinedByString:(id)arg1 atPoint:(struct CGPoint *)arg2 forWidth:(double)arg3 withFont:(id)arg4 lineBreakMode:(long long)arg5;
 - (void)_makeObjectsPerformSelector:(SEL)arg1 object:(id)arg2 range:(struct _NSRange)arg3;
 - (id)_initWithObjectsFromArray:(id)arg1 range:(struct _NSRange)arg2;

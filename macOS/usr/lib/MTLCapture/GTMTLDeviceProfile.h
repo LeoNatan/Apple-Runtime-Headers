@@ -17,7 +17,6 @@
     NSString *_name;
     NSArray *_supportedFeatureSets;
     NSArray *_supportedGPUFamilies;
-    NSArray *_supportedSoftwareVersions;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -25,7 +24,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) id <MTLDevice> device;
-@property(readonly, nonatomic) NSArray *supportedSoftwareVersions;
 @property(readonly, nonatomic) NSArray *supportedGPUFamilies;
 @property(readonly, nonatomic) NSArray *supportedFeatureSets;
 @property(readonly, nonatomic) NSString *name;

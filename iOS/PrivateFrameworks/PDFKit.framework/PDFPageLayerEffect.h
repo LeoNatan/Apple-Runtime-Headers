@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 + (id)createPDFSelectionLayerEffectsForSelections:(id)arg1 withLayer:(id)arg2;
 - (void).cxx_destruct;
 - (id)pdfResult;
+- (void)updateColor:(unsigned long long)arg1;
 - (void)addSelection:(id)arg1;
 - (void)setSelections:(id)arg1;
 - (id)annotation;

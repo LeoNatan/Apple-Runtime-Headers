@@ -6,14 +6,11 @@
 
 #import <MapsSupport/NSObject-Protocol.h>
 
-@class GEOSharedNavState, MSPSharedTripService, NSString;
+@class GEOSharedNavState, MSPSharedTripService;
 
 @protocol MSPSharedTripServiceReceivingObserver <NSObject>
-
-@optional
-- (void)sharedTripService:(MSPSharedTripService *)arg1 sendMessage:(NSString *)arg2 toGroup:(NSString *)arg3;
-- (void)sharedTripService:(MSPSharedTripService *)arg1 sendMessage:(NSString *)arg2 toParticipant:(NSString *)arg3;
 - (void)sharedTripService:(MSPSharedTripService *)arg1 didRemoveSharedTrip:(GEOSharedNavState *)arg2;
+- (void)sharedTripService:(MSPSharedTripService *)arg1 didUpdateClosedTrip:(GEOSharedNavState *)arg2;
 - (void)sharedTripService:(MSPSharedTripService *)arg1 didUpdateReachedDestinationForSharedTrip:(GEOSharedNavState *)arg2;
 - (void)sharedTripService:(MSPSharedTripService *)arg1 didUpdateRouteForSharedTrip:(GEOSharedNavState *)arg2;
 - (void)sharedTripService:(MSPSharedTripService *)arg1 didUpdateETAForSharedTrip:(GEOSharedNavState *)arg2;

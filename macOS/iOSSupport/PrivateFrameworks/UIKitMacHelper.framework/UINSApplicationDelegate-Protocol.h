@@ -10,9 +10,9 @@
 @protocol UINSUserInterfaceTheme, UINSWindow;
 
 @protocol UINSApplicationDelegate <NSObject>
+@property(copy, nonatomic) CDUnknownBlockType acceptsActivatingTouchCallback;
 @property(copy, nonatomic) CDUnknownBlockType printOrExportPanelWasDismissedCallback;
 @property(nonatomic) BOOL nextPrintJobShouldExport;
-@property(readonly) BOOL shouldSizeWindowsAutomatically;
 @property(copy, nonatomic) CDUnknownBlockType appWillTerminateCallback;
 @property(copy, nonatomic) CDUnknownBlockType backgroundTasksWillExpireCallback;
 @property(copy, nonatomic) CDUnknownBlockType appSupportsMultiwindowCallback;

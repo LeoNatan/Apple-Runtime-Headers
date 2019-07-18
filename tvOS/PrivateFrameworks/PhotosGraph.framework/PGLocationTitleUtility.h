@@ -18,12 +18,15 @@
 + (id)_firstComponentInTimeFromComponents:(id)arg1 momentNodes:(id)arg2 curationAddressNodes:(id)arg3 allowFamilyHome:(_Bool)arg4;
 + (_Bool)_titleComponentsAreInSameSupersetCity:(id)arg1 graph:(id)arg2;
 + (id)_locationStringWithDistrictsFromTitleComponents:(id)arg1 momentNodes:(id)arg2 lineBreakBehavior:(unsigned long long)arg3 allowFamilyHome:(_Bool)arg4;
++ (id)_localizedStringForMultipleLocationsWithFirstComponentForTitle:(id)arg1 secondComponentForTitle:(id)arg2 firstLocation:(id)arg3 otherLocation:(id)arg4;
++ (id)_localizedStringForTwoLocationsWithFirstComponentForTitle:(id)arg1 secondComponentForTitle:(id)arg2 firstLocation:(id)arg3 otherLocation:(id)arg4;
 + (id)_beautifiedLocationStringWithTitleComponents:(id)arg1 momentNodes:(id)arg2 lineBreakBehavior:(unsigned long long)arg3 keyAssetAddressNode:(id)arg4 curationAddressNodes:(id)arg5 isMatchingKeyAsset:(_Bool *)arg6 useDistrict:(_Bool)arg7 allowFamilyHome:(_Bool)arg8 showAllCities:(_Bool)arg9;
 + (id)_commonCityTitleComponentsFromMomentNodes:(id)arg1 remainingAddressNodes:(id)arg2 ignoredAddressNodes:(id)arg3 incompleteLocationResolver:(id)arg4;
 + (id)_filteredAOINodeCombinationsForCombinations:(id)arg1 minSize:(unsigned long long)arg2 maxSize:(unsigned long long)arg3 maxTitleLength:(unsigned long long)arg4 minNumberOfAssets:(unsigned long long)arg5 aoiNodesToAddressNodesMapTable:(id)arg6 assetCountByAddressNodeIdentifier:(id)arg7;
 + (id)_sortedAOINodeCombinationsForCombinations:(id)arg1 aoiNodesToAddressNodesMapTable:(id)arg2 assetCountByAddressNodeIdentifier:(id)arg3;
 + (float)_weightForAOINode:(id)arg1 withAddressNodes:(id)arg2;
-+ (id)_aoiSubsetsFromAOI:(id)arg1;
++ (id)_aoiSubsetsFromAOI:(id)arg1 maxSubsetSize:(unsigned long long)arg2;
++ (id)_aoiSubsetsFromAOI:(id)arg1 idx:(unsigned long long)arg2 currentSubset:(id)arg3 subsetSize:(unsigned long long)arg4;
 + (id)_commonAOIComponentsForMomentNodes:(id)arg1 addressNodes:(id)arg2 aoiDisplayType:(unsigned long long)arg3 containsAmusementParkPOI:(_Bool)arg4;
 + (id)_filteredAOINodesForAddressNodes:(id)arg1 aoiTitleMaximumLength:(unsigned long long)arg2;
 + (id)_filteredAddressNodesWithAddressNodes:(id)arg1 momentNodes:(id)arg2 incompleteLocationResolver:(id)arg3 filterSignificantLocationsOption:(unsigned long long)arg4;

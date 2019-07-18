@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 + (id)seriesSymbolType;
 + (id)seriesLabelType;
 + (id)seriesType;
++ (id)seriesEditModeType;
 + (id)axisLabelsType;
 + (id)axisTitleType;
 + (id)categoryAxisType;

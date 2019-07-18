@@ -8,7 +8,7 @@
 
 #import <ScreenTimeUI/NSFetchedResultsControllerDelegate-Protocol.h>
 
-@class NSArray, NSFetchedResultsController, NSMutableArray, NSString, STCoreUser;
+@class NSArray, NSFetchedResultsController, NSMutableArray, NSString, STCoreUser, STUsageReporter;
 
 @interface STAlwaysAllowedController : NSObject <NSFetchedResultsControllerDelegate>
 {
@@ -16,7 +16,7 @@
     long long _sortOrder;
     NSFetchedResultsController *_installedFetchedResultsController;
     NSFetchedResultsController *_alwaysAllowedFetchedResultsController;
-    NSFetchedResultsController *_usageBlockFetchedResultsController;
+    STUsageReporter *_usageReporter;
     NSMutableArray *_mutableAllVisibleItems;
     NSMutableArray *_mutableAlwaysAllowedItems;
     NSMutableArray *_mutableAvailableItems;
@@ -27,13 +27,13 @@
 @property(retain, nonatomic) NSMutableArray *mutableAvailableItems; // @synthesize mutableAvailableItems=_mutableAvailableItems;
 @property(retain, nonatomic) NSMutableArray *mutableAlwaysAllowedItems; // @synthesize mutableAlwaysAllowedItems=_mutableAlwaysAllowedItems;
 @property(retain, nonatomic) NSMutableArray *mutableAllVisibleItems; // @synthesize mutableAllVisibleItems=_mutableAllVisibleItems;
-@property(retain) NSFetchedResultsController *usageBlockFetchedResultsController; // @synthesize usageBlockFetchedResultsController=_usageBlockFetchedResultsController;
+@property(retain) STUsageReporter *usageReporter; // @synthesize usageReporter=_usageReporter;
 @property(retain) NSFetchedResultsController *alwaysAllowedFetchedResultsController; // @synthesize alwaysAllowedFetchedResultsController=_alwaysAllowedFetchedResultsController;
 @property(retain) NSFetchedResultsController *installedFetchedResultsController; // @synthesize installedFetchedResultsController=_installedFetchedResultsController;
 @property(nonatomic) long long sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(retain, nonatomic) STCoreUser *user; // @synthesize user=_user;
 - (void).cxx_destruct;
-- (void)_updateUsage;
+- (void)_updateUsage:(id)arg1;
 - (void)_updateAlwaysAllowedItems;
 - (void)_updateAllVisibleItems;
 - (void)controllerDidChangeContent:(id)arg1;

@@ -22,6 +22,7 @@
 - (void)setPropertiesByName:(id)arg1;
 - (id)propertiesByName;
 - (id)_dictionaryRepresentation;
+@property unsigned long long warnings;
 @property(copy) NSArray *addedTasks;
 @property(copy) INTaskList *modifiedTaskList;
 - (long long)_codeWithName:(id)arg1;

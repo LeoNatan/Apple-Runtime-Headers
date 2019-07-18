@@ -31,6 +31,8 @@
 - (id)_disabledColor;
 - (void)_updateState;
 - (void)_updateDetailText;
+- (id)_traitCollectionAdjustedIfNeeded;
+- (void)_updateLabelFonts;
 - (id)initWithSlot:(id)arg1 dateSlot:(_Bool)arg2 isRichSlot:(_Bool)arg3 inFace:(id)arg4;
 - (double)rowHeight;
 

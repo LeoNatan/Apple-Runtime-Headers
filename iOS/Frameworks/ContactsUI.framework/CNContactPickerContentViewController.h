@@ -41,9 +41,11 @@ __attribute__((visibility("hidden")))
     NSPredicate *_predicateForSelectionOfProperty;
     CNManagedConfiguration *_managedConfiguration;
     FAFamilyMember *_familyMember;
+    NSArray *_prohibitedPropertyKeys;
 }
 
 + (id)descriptorForContactPropertiesSupportingPredicateEvaluation;
+@property(retain, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
 @property(retain, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 @property(retain, nonatomic) CNManagedConfiguration *managedConfiguration; // @synthesize managedConfiguration=_managedConfiguration;
 @property(copy, nonatomic) NSPredicate *predicateForSelectionOfProperty; // @synthesize predicateForSelectionOfProperty=_predicateForSelectionOfProperty;
@@ -84,6 +86,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)contactNavigationController:(id)arg1 shouldShowCardForContact:(id)arg2;
 - (_Bool)contactNavigationController:(id)arg1 shouldSelectContact:(id)arg2 atIndexPath:(id)arg3;
 - (_Bool)contactNavigationController:(id)arg1 canSelectContact:(id)arg2;
+- (_Bool)contactNavigationControllerShouldAddNewContact:(id)arg1;
 - (void)invalidate;
 - (void)invalidateSelectionAnimated:(_Bool)arg1;
 @property(readonly, nonatomic) UINavigationController *navigationController;

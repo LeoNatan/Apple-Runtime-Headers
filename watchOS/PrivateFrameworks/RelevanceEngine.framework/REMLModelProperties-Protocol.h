@@ -9,6 +9,10 @@
 @class NSString;
 
 @protocol REMLModelProperties <REExportedInterface>
+@property(readonly, nonatomic) unsigned int totalPositiveCount;
+@property(readonly, nonatomic) unsigned int totalExampleCount;
+@property(readonly, nonatomic) float normalizedEntropy;
+@property(readonly, nonatomic) float averagePrediction;
 @property(readonly, nonatomic) int getNumberOfCoordinates;
 @property(readonly, nonatomic) unsigned int maxFeatureCount;
 @property(readonly, nonatomic) unsigned int featureBitWidth;

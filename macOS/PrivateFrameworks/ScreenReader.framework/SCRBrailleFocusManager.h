@@ -6,37 +6,35 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSAttributedString, SCRCUserDefaults, SCRElement, SCRTextMarkerRange;
+@class NSArray, SCRCUserDefaults, SCRLineNavigator;
 
 __attribute__((visibility("hidden")))
 @interface SCRBrailleFocusManager : NSObject
 {
     BOOL _singleElementMode;
     NSArray *_lastBrailleLineElements;
-    SCRElement *_lastBrailleFocusedElement;
-    NSAttributedString *_lastBrailleOutputText;
-    SCRTextMarkerRange *_lastBrailleOutputRange;
+    SCRLineNavigator *_textNavigator;
     SCRCUserDefaults *__userDefaults;
-    struct _NSRange _lastNormalizedSelectionRange;
-    struct _NSRange _lastNormalizedEchoRange;
 }
 
 @property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
-@property(retain, nonatomic) SCRTextMarkerRange *lastBrailleOutputRange; // @synthesize lastBrailleOutputRange=_lastBrailleOutputRange;
-@property(nonatomic) struct _NSRange lastNormalizedEchoRange; // @synthesize lastNormalizedEchoRange=_lastNormalizedEchoRange;
-@property(nonatomic) struct _NSRange lastNormalizedSelectionRange; // @synthesize lastNormalizedSelectionRange=_lastNormalizedSelectionRange;
-@property(nonatomic) BOOL singleElementMode; // @synthesize singleElementMode=_singleElementMode;
-@property(retain, nonatomic) NSAttributedString *lastBrailleOutputText; // @synthesize lastBrailleOutputText=_lastBrailleOutputText;
-@property(retain, nonatomic) SCRElement *lastBrailleFocusedElement; // @synthesize lastBrailleFocusedElement=_lastBrailleFocusedElement;
+@property(retain, nonatomic) SCRLineNavigator *textNavigator; // @synthesize textNavigator=_textNavigator;
 @property(retain, nonatomic) NSArray *lastBrailleLineElements; // @synthesize lastBrailleLineElements=_lastBrailleLineElements;
+@property(nonatomic) BOOL singleElementMode; // @synthesize singleElementMode=_singleElementMode;
 - (void).cxx_destruct;
 - (BOOL)brailleLineContainsUIElement:(id)arg1;
 - (id)brailleLineElementMatchingUIElement:(id)arg1;
-- (id)lastBrailleOutputRangeForElementMatching:(id)arg1;
-- (void)_setNormalizedBrailleTextRanges:(id)arg1 echoTextMarkerRange:(id)arg2 selectionTextMarkerRange:(id)arg3;
-- (void)_setAttributedBrailleText:(id)arg1 selectionRange:(struct _NSRange)arg2 echoRange:(struct _NSRange)arg3;
-- (void)setBrailleFocusedTextElement:(id)arg1 outputRange:(id)arg2 selectionRange:(id)arg3;
-- (void)setBrailleFocusedElement:(id)arg1;
+- (BOOL)brailleTextLineMatchesUIElement:(id)arg1;
+- (BOOL)hasBrailleTextLineNavigator;
+- (void)clearStoredBrailleLine;
+- (struct _NSRange)_selectionLineRange;
+- (BOOL)_moveSelectionToLineRange:(struct _NSRange)arg1;
+- (void)replaceTextRange:(struct _NSRange)arg1 withString:(id)arg2 insertCursor:(unsigned long long)arg3 request:(id)arg4;
+- (BOOL)sendEditableTextLine;
+- (BOOL)routeToTextLineIndex:(unsigned long long)arg1 request:(id)arg2;
+- (void)_addBrailleTextLineToRequest:(id)arg1 forward:(BOOL)arg2;
+- (BOOL)panTextLine:(BOOL)arg1 request:(id)arg2;
+- (BOOL)moveToText:(id)arg1 range:(id)arg2 forward:(BOOL)arg3 request:(id)arg4;
 - (void)_preferencesChangedForKeyPath:(id)arg1 value:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_unregisterPreferenceObservers;

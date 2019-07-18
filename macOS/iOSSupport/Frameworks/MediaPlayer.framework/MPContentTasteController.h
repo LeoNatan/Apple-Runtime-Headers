@@ -41,7 +41,6 @@
 - (void)setTasteType:(long long)arg1 forPlaylistGlobalID:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setTasteType:(long long)arg1 forMediaEntity:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setTasteType:(long long)arg1 forModel:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)dealloc;
 - (id)initWithUserIdentity:(id)arg1;
 - (id)init;
 

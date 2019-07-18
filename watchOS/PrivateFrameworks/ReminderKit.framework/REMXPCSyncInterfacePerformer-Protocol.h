@@ -13,7 +13,7 @@
 - (void)debugDownloadMigrationCacheWithCompletion:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)migrateICloudCalDavToCloudKitForAccountID:(REMObjectID *)arg1 disableCache:(_Bool)arg2 completion:(void (^)(REMMigrationResult *, NSError *))arg3;
 - (void)deleteApplicationDataFromCloudKitWithCompletion:(void (^)(NSError *))arg1;
-- (void)syncDataAccessAccountsWithAccountIDs:(NSArray *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)syncDataAccessAccountsWithAccountIDs:(NSArray *)arg1 bypassThrottler:(_Bool)arg2 completion:(void (^)(NSError *))arg3;
 - (void)restartCloudKitSync:(void (^)(NSError *))arg1;
 - (void)syncCloudKit:(void (^)(NSError *))arg1;
 @end

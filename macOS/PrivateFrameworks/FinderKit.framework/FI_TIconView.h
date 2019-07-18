@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 {
     struct TNSRef<FI_TTrackingImageView, void> _iconView;
     struct TNSRef<FI_TIconSelectionView, void> _iconSelectionView;
-    struct TNSRef<FI_TBasicImageView, void> _badgeImageView;
-    struct TNSRef<FI_TBasicImageView, void> _vendorBadgeImageView;
+    TNSRef_cc605514 _badgeImageView;
+    TNSRef_cc605514 _vendorBadgeImageView;
     struct TNSRef<FI_TDesktopInlineProgressView, void> _inlineProgressView;
     struct TNSRef<FI_TDesktopTitleBubbleView, void> _titleBubbleView;
     struct TNSRef<FI_TTextField, void> _subtitleField;
@@ -90,7 +90,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isAccessibilityElement;
 - (void)layoutVendorBadgeImageView:(const struct CGRect *)arg1;
 - (void)layoutBadgeImageView:(const struct CGRect *)arg1;
-- (void)dirtyLayoutIfNeededWithBadge:(id)arg1 badgeImageView:(id)arg2;
+- (void)dirtyLayoutIfNeededWithBadge:(id)arg1 badgeImageView:(TNSRef_cc605514 *)arg2;
 - (void)layoutSubtitleField:(const struct CGRect *)arg1;
 - (void)configureSubtitleFieldBeforeLayout;
 - (void)dirtyLayoutForSubtitleBubbleViewIfNeeded;

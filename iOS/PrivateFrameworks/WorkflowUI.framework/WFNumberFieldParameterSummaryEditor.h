@@ -33,7 +33,7 @@
 - (void)negateText;
 - (id)stateForVariable:(id)arg1;
 - (id)stateForEnteredText:(id)arg1;
-- (id)initialVariableInNumberField;
+- (id)variableStateForVariablePicker;
 - (void)textEntryWillBegin:(id)arg1 allowMultipleLines:(_Bool *)arg2;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (void)setVariableUIDelegate:(id)arg1;

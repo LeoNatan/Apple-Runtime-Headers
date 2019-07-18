@@ -9,6 +9,8 @@
 @class AFUISiriSession, NSString, SAUIDelayedActionCancelCommand, SAUIDelayedActionCommand;
 
 @protocol AFUISiriSessionLocalDelegate <AFUISiriSessionListener>
+- (void)siriSessionShouldEndExtendAudioSessionForImminentPhoneCall;
+- (void)siriSessionShouldExtendAudioSessionForImminentPhoneCall;
 - (void)siriSession:(AFUISiriSession *)arg1 speechRecordingDidBeginOnAVRecordRoute:(NSString *)arg2;
 - (void)siriSessionDidEnd:(AFUISiriSession *)arg1;
 - (void)siriSessionWillEnd:(AFUISiriSession *)arg1;

@@ -11,7 +11,8 @@
 #import <PhotosUICore/PXGViewSource-Protocol.h>
 #import <PhotosUICore/PXLibrarySummaryOutputPresenter-Protocol.h>
 
-@class NSArray, NSAttributedString, NSDictionary, NSSet, NSString, PXAssetCollectionReference, PXCuratedLibraryActionPerformer, PXCuratedLibraryEllipsisButtonActionPerformer, PXCuratedLibrarySectionHeaderLayoutSpec;
+@class NSArray, NSAttributedString, NSDictionary, NSObject, NSSet, NSString, PXAssetCollectionReference, PXCuratedLibraryActionPerformer, PXCuratedLibraryEllipsisButtonActionPerformer, PXCuratedLibrarySectionHeaderLayoutSpec;
+@protocol OS_dispatch_queue;
 
 @interface PXCuratedLibrarySectionHeaderLayout : PXGLayout <PXGTitleSubtitleSource, PXGViewSource, PXGNamedImageSource, PXLibrarySummaryOutputPresenter>
 {
@@ -29,6 +30,8 @@
     struct CGSize _cachedSizeByButtonIdentifier[7];
     struct CGSize _cachedExternalTrailingButtonsSize;
     struct CGSize _cachedExternalLeadingButtonsSize;
+    long long _asyncDateGeneration;
+    NSObject<OS_dispatch_queue> *_asyncDateQueue;
     _Bool _showsBackgroundGradient;
     _Bool _showsDebugDescription;
     _Bool _shouldRespectSafeAreaInsets;
@@ -48,7 +51,6 @@
     PXCuratedLibraryActionPerformer *_zoomOutButtonActionPerformer;
     PXCuratedLibraryActionPerformer *_toggleAspectFitButtonActionPerformer;
     NSString *_selectButtonTitle;
-    NSSet *_selectButtonPossibleTitles;
     NSString *_toggleAspectFitButtonTitle;
     NSSet *_toggleAspectFitButtonPossibleTitles;
     NSArray *_externalTrailingButtonConfigurations;
@@ -65,7 +67,6 @@
 @property(readonly, nonatomic) struct CGRect titleSubtitleFrame; // @synthesize titleSubtitleFrame=_titleSubtitleFrame;
 @property(copy, nonatomic) NSSet *toggleAspectFitButtonPossibleTitles; // @synthesize toggleAspectFitButtonPossibleTitles=_toggleAspectFitButtonPossibleTitles;
 @property(copy, nonatomic) NSString *toggleAspectFitButtonTitle; // @synthesize toggleAspectFitButtonTitle=_toggleAspectFitButtonTitle;
-@property(copy, nonatomic) NSSet *selectButtonPossibleTitles; // @synthesize selectButtonPossibleTitles=_selectButtonPossibleTitles;
 @property(copy, nonatomic) NSString *selectButtonTitle; // @synthesize selectButtonTitle=_selectButtonTitle;
 @property(retain, nonatomic) PXCuratedLibraryActionPerformer *toggleAspectFitButtonActionPerformer; // @synthesize toggleAspectFitButtonActionPerformer=_toggleAspectFitButtonActionPerformer;
 @property(retain, nonatomic) PXCuratedLibraryActionPerformer *zoomOutButtonActionPerformer; // @synthesize zoomOutButtonActionPerformer=_zoomOutButtonActionPerformer;
@@ -94,6 +95,7 @@
 - (id)titleSubtitleSpecForSpriteAtIndex:(unsigned int)arg1;
 - (id)subtitleForSpriteAtIndex:(unsigned int)arg1;
 - (id)titleForSpriteAtIndex:(unsigned int)arg1;
+- (void)_handleAsyncDateDescription:(id)arg1 placement:(long long)arg2 generation:(long long)arg3;
 - (void)_updateTitleAndSubtitle;
 - (void)_updateEffectiveSpec;
 - (void)alphaDidChange;

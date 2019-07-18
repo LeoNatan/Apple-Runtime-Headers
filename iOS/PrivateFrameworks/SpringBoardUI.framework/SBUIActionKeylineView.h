@@ -16,11 +16,13 @@
 
 @property(nonatomic) double height; // @synthesize height=_height;
 - (void).cxx_destruct;
+- (void)_updateCornerMask;
 - (void)_updateVisualStylingIfNecessary;
 - (void)_invalidateVisualStyling;
 - (struct CGSize)intrinsicContentSize;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)layoutSubviews;
+- (double)heightInPixels;
 - (id)init;
 
 @end

@@ -13,12 +13,16 @@
     BOOL _nightMode;
     BOOL _navMode;
     BOOL _transitMode;
+    BOOL _searchResult;
     long long _zoom;
     unsigned long long _variant;
+    unsigned long long _countryCode;
 }
 
+@property(nonatomic) unsigned long long countryCode; // @synthesize countryCode=_countryCode;
 @property(nonatomic) unsigned long long variant; // @synthesize variant=_variant;
 @property(nonatomic) long long zoom; // @synthesize zoom=_zoom;
+@property(nonatomic, getter=isSearchResult) BOOL searchResult; // @synthesize searchResult=_searchResult;
 @property(nonatomic) BOOL transitMode; // @synthesize transitMode=_transitMode;
 @property(nonatomic) BOOL navMode; // @synthesize navMode=_navMode;
 @property(nonatomic) BOOL nightMode; // @synthesize nightMode=_nightMode;

@@ -14,23 +14,24 @@ __attribute__((visibility("hidden")))
 {
     NSMutableArray *dtmfEventQueue;
     NSObject<OS_dispatch_queue> *dtmfQueue;
-    _Bool currentEventInTransmission;
+    int _currentEventState;
     _Bool currentEventNeedsEndBlock;
     unsigned int currentEventRetransmitFinalPacketCount;
-    _Bool currentIsMarker;
     unsigned char currentEvent;
     unsigned char currentVolume;
     unsigned int currentStartTimestamp;
     unsigned int currentDurationCounter;
     unsigned int currentEndTimestamp;
+    unsigned int _currentPauseCompleteTimestamp;
 }
 
+- (_Bool)shouldAdjustForLastPauseCompleteTimestamp:(unsigned int *)arg1;
 - (int)constructDTMFEventPacketWithEvent:(unsigned char)arg1 volume:(unsigned char)arg2 durationCounter:(unsigned int)arg3 interval:(unsigned int)arg4 dataBuffer:(char *)arg5 isEnd:(_Bool)arg6;
 - (_Bool)shouldTransmitDTMFWithTimestamp:(unsigned int)arg1;
-- (void)stopDTMFEvent;
+- (void)stopDTMFEventAtTimestamp:(unsigned int)arg1 withSampleRate:(unsigned long)arg2;
 - (void)sendingDTMFEventWithTimeStamp:(unsigned int)arg1 interval:(unsigned int)arg2 RTPHandle:(struct tagHANDLE *)arg3;
 - (void)sendDTMFEvent:(id)arg1 atTimestamp:(unsigned long)arg2 withSampleRate:(unsigned long)arg3;
-- (_Bool)insertStopBlockWithTimestamp:(unsigned int)arg1;
+- (_Bool)insertStopBlockWithEndTimestamp:(unsigned int)arg1 withPauseCompleteTimestamp:(unsigned int)arg2;
 - (_Bool)insertStartBlockWithEvent:(unsigned char)arg1 volume:(unsigned char)arg2 timestamp:(unsigned int)arg3;
 - (void)dealloc;
 - (id)init;

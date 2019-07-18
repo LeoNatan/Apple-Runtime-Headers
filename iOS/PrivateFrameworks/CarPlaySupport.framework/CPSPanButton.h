@@ -8,19 +8,20 @@
 
 #import <CarPlaySupport/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CALayer, NSString;
+@class NSString, UIView;
 
 @interface CPSPanButton : UIButton <UIGestureRecognizerDelegate>
 {
     long long _direction;
-    CALayer *_backgroundLayer;
+    UIView *_backgroundView;
 }
 
-+ (id)_focusedBackgroundColor;
-+ (id)_backgroundColor;
-@property(retain, nonatomic) CALayer *backgroundLayer; // @synthesize backgroundLayer=_backgroundLayer;
++ (id)dynamicBackgroundColor;
+@property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic) long long direction; // @synthesize direction=_direction;
 - (void).cxx_destruct;
+- (void)_setupPanImages;
+- (void)_updateColors;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)layoutSubviews;

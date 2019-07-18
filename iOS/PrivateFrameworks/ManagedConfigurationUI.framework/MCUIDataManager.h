@@ -13,6 +13,7 @@
 
 @interface MCUIDataManager : NSObject <LSApplicationWorkspaceObserverProtocol>
 {
+    _Bool _observing;
     int _appsChangedNotifyToken;
     int _provisioningProfileInstalledToken;
     int _provisioningProfileRemovedToken;
@@ -32,6 +33,7 @@
 @property(nonatomic) int provisioningProfileRemovedToken; // @synthesize provisioningProfileRemovedToken=_provisioningProfileRemovedToken;
 @property(nonatomic) int provisioningProfileInstalledToken; // @synthesize provisioningProfileInstalledToken=_provisioningProfileInstalledToken;
 @property(nonatomic) int appsChangedNotifyToken; // @synthesize appsChangedNotifyToken=_appsChangedNotifyToken;
+@property(nonatomic) _Bool observing; // @synthesize observing=_observing;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *reloadQueue; // @synthesize reloadQueue=_reloadQueue;
 @property(retain, nonatomic) LSApplicationWorkspace *appWorkspace; // @synthesize appWorkspace=_appWorkspace;
@@ -57,6 +59,8 @@
 - (unsigned long long)itemCount;
 - (_Bool)isProfileSectionEmpty;
 - (void)profilesChanged:(id)arg1;
+- (void)appMovedToForeground:(id)arg1;
+- (void)appMovedToBackground:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

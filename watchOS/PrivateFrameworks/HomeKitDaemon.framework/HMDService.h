@@ -13,10 +13,11 @@
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
 @class HMDApplicationData, HMDBulletinBoardNotification, HMDHAPAccessory, HMDHome, HMFMessageDispatcher, NSArray, NSMutableDictionary, NSNumber, NSObject, NSSet, NSString, NSUUID;
-@protocol HMDServiceOwner, OS_dispatch_queue;
+@protocol HMDServiceOwner, HMFLocking, OS_dispatch_queue;
 
 @interface HMDService : HMFObject <HMDBulletinIdentifiers, NSSecureCoding, HMFDumpState, HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver>
 {
+    id <HMFLocking> _lock;
     _Bool _hidden;
     _Bool _primary;
     HMDApplicationData *_appData;
@@ -36,7 +37,6 @@
     HMDBulletinBoardNotification *_bulletinBoardNotification;
     NSNumber *_mediaSourceIdentifier;
     NSArray *_mediaSourceDisplayOrder;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     HMFMessageDispatcher *_messageDispatcher;
     NSUUID *_cachedAccessoryUUID;
     id <HMDServiceOwner> _owner;
@@ -51,6 +51,7 @@
 
 + (_Bool)hasMessageReceiverChildren;
 + (_Bool)supportsSecureCoding;
++ (_Bool)processUpdateForCharacteristicType:(id)arg1 value:(id)arg2 serviceType:(id)arg3 service:(id)arg4 serviceTransactionGetter:(CDUnknownBlockType)arg5 accessory:(id)arg6 accessoryTransaction:(id)arg7 accInfoChanged:(_Bool *)arg8;
 + (_Bool)validateProvidedName:(id)arg1;
 + (id)logCategory;
 + (id)generateUUIDWithAccessoryUUID:(id)arg1 serviceID:(id)arg2;
@@ -64,7 +65,6 @@
 @property(nonatomic) __weak id <HMDServiceOwner> owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) NSUUID *cachedAccessoryUUID; // @synthesize cachedAccessoryUUID=_cachedAccessoryUUID;
 @property(readonly, nonatomic) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(retain, nonatomic) NSArray *mediaSourceDisplayOrder; // @synthesize mediaSourceDisplayOrder=_mediaSourceDisplayOrder;
 @property(retain, nonatomic) NSNumber *mediaSourceIdentifier; // @synthesize mediaSourceIdentifier=_mediaSourceIdentifier;
 @property(getter=isPrimary) _Bool primary; // @synthesize primary=_primary;
@@ -87,7 +87,9 @@
 - (void)_writeConfiguredNameToAccessory:(id)arg1;
 - (void)_saveCurrentNameAsExpectedAndLastSeen:(id)arg1;
 - (id)backingStoreObjects:(int)arg1;
+- (void)populateModelObjectWithChangeType:(id)arg1 version:(int)arg2;
 - (id)modelObjectWithChangeType:(unsigned int)arg1;
+- (id)transactionWithObjectChangeType:(unsigned int)arg1;
 - (void)_registerForMessages;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
@@ -97,7 +99,6 @@
 - (void)persistLastKnownDiscoveryMode;
 - (_Bool)_validateAndUpdateLastKnownDiscoveryMode:(id)arg1;
 - (_Bool)_validateLastKnownDiscoveryMode:(id)arg1;
-- (_Bool)shouldUpdateLastKnownDiscoveryMode:(id)arg1;
 - (_Bool)_updateLastKnownDiscoveryMode:(id)arg1;
 - (_Bool)isEmptyConfiguredNameAllowed;
 - (_Bool)updateCharacteristics:(id)arg1;
@@ -125,7 +126,6 @@
 - (id)getConfiguredName;
 - (_Bool)updateAssociatedServiceType:(id)arg1 error:(id *)arg2;
 - (id)messagesForUpdatedRoom:(id)arg1;
-- (id)configuredNameChangedMessage;
 - (id)nameChangedMessage;
 - (id)_checkIfDefaultNameChanged;
 - (void)_updateDefaultName;
@@ -133,7 +133,6 @@
 - (id)findCharacteristicWithType:(id)arg1;
 - (id)findCharacteristic:(id)arg1;
 - (void)_readRequiredBTLECharacteristicValuesForceReadFWVersion:(_Bool)arg1;
-- (_Bool)processInitialUpdate:(id)arg1 forCharacteristicType:(id)arg2 serviceTransaction:(id)arg3 changed:(_Bool *)arg4;
 - (id)gatherRequiredReadRequestsForceReadFWVersion:(_Bool)arg1;
 - (_Bool)isReadingRequiredForBTLEServiceCharacteristic:(id)arg1;
 - (id)_updateProvidedName:(id)arg1;
@@ -142,6 +141,7 @@
 - (_Bool)_supportsBulletinNotification;
 - (void)_createNotification;
 - (id)configureWithService:(id)arg1 accessory:(id)arg2 shouldRead:(_Bool)arg3 added:(_Bool)arg4;
+- (id)_sanitizeNameToWriteToAccessory:(id)arg1;
 - (id)configureWithService:(id)arg1 accessory:(id)arg2;
 - (void)_handleSetAppData:(id)arg1;
 @property(retain, nonatomic) HMDApplicationData *appData; // @synthesize appData=_appData;

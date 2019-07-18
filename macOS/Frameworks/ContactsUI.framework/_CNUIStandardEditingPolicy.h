@@ -6,14 +6,20 @@
 
 #import <ContactsUI/CNUIEditingPolicy.h>
 
+@protocol CNUICoreScreentimePasscodeCheck;
+
 @interface _CNUIStandardEditingPolicy : CNUIEditingPolicy
 {
+    id <CNUICoreScreentimePasscodeCheck> _passcodeCheck;
 }
 
+@property(readonly, nonatomic) id <CNUICoreScreentimePasscodeCheck> passcodeCheck; // @synthesize passcodeCheck=_passcodeCheck;
+- (void).cxx_destruct;
 - (BOOL)shouldAuthorizeDeletionOfContact:(id)arg1 fromContainer:(id)arg2;
 - (BOOL)shouldAuthorizeUpdateOfContact:(id)arg1 inContainer:(id)arg2;
 - (BOOL)shouldAuthorizeInsertionOfNewContactToContainer:(id)arg1;
 - (BOOL)shouldSignalSharedAccessToContact:(id)arg1 inContainer:(id)arg2;
+- (id)initWithPasscodeCheck:(id)arg1;
 
 @end
 

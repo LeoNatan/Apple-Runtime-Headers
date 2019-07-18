@@ -25,6 +25,7 @@
 - (_Bool)_deviceSupportsNavigation;
 - (id)hardwareModel;
 - (id)hardwareIdentifier;
+- (id)osAndBuildVersion;
 - (id)buildVersion;
 - (id)osVersion;
 - (id)productName;

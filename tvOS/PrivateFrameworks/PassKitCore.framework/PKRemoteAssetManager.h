@@ -23,11 +23,15 @@
 - (_Bool)addRemoteAssetData:(id)arg1 shouldWriteData:(_Bool)arg2 forManifestItem:(id)arg3 error:(id *)arg4;
 - (_Bool)addRemoteAssetData:(id)arg1 forManifestItem:(id)arg2 error:(id *)arg3;
 - (void)_callCompletionHandlersWithFinishState:(_Bool)arg1 progress:(float)arg2 error:(id)arg3;
+- (void)_downloadRemoteAssetItem:(id)arg1 withCloudStoreCoordinatorDelegate:(id)arg2 shouldWriteData:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_downloadRemoteAssetsWithScreenScale:(double)arg1 suffix:(id)arg2 cloudStoreCoordinatorDelegate:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)downloadRemoteAssetsWithScreenScale:(double)arg1 suffix:(id)arg2 cloudStoreCoordinatorDelegate:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)downloadRemoteAssetItem:(id)arg1 withCloudStoreCoordinatorDelegate:(id)arg2 shouldWriteData:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)assetExistsLocally:(id)arg1;
 - (id)sha1HexFromRelativeManifestWithRelativePath:(id)arg1;
 - (id)itemWithRelativePath:(id)arg1;
+- (id)pendingRemoteAssetsItemsForScreenScale:(double)arg1 suffix:(id)arg2;
+- (id)pendingRemoteAssetsItems;
 - (id)deviceSpecificItemsForScreenScale:(double)arg1 suffix:(id)arg2;
 - (id)deviceSpecificItems;
 - (id)remoteAssetManifests;

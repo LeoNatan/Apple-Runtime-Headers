@@ -115,6 +115,7 @@
 - (id)signerOrganization;
 - (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) NSArray *carPlayInstrumentClusterURLSchemes;
 @property(readonly, nonatomic, getter=isArcadeApp) _Bool arcadeApp;
 @property(readonly, nonatomic) NSNumber *platform;
 @property(readonly, nonatomic) _Bool supportsMultiwindow;

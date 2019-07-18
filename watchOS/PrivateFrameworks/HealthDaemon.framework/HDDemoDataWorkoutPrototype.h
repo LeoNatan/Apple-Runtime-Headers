@@ -27,6 +27,7 @@
     double _restTimePerSegment;
 }
 
++ (id)yogaAndRunningPrototypes;
 + (id)thirdPartyWorkoutPrototype;
 + (id)yogaPrototype;
 + (id)hikingPrototype;

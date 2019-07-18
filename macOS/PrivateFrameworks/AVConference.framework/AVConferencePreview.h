@@ -24,6 +24,8 @@
     NSObject<OS_dispatch_queue> *avConferencePreviewNotificationQueue;
     BOOL _isPreviewRunning;
     BOOL _zoomAvailable;
+    double _currentZoomFactor;
+    double _maxZoomFactor;
     NSString *_localCameraUID;
 }
 
@@ -50,6 +52,8 @@
 - (id)localVideoLayer:(BOOL)arg1;
 - (void)setLocalVideoLayer:(id)arg1 front:(BOOL)arg2;
 - (void)getSnapshot;
+- (double)maxZoomFactor;
+- (double)currentZoomFactor;
 - (BOOL)isCameraZoomAvailable;
 - (BOOL)isPreviewRunning;
 - (void)stopPreview;
@@ -66,7 +70,7 @@
 - (id)init;
 - (void)registerBlocksForDelegateNotifications;
 - (void)connectLayer:(id)arg1 withSlot:(unsigned int)arg2;
-- (void)cameraZoomAvailabilityDidChange:(BOOL)arg1;
+- (void)cameraZoomAvailabilityDidChange:(BOOL)arg1 currentZoomFactor:(double)arg2 maxZoomFactor:(double)arg3;
 - (void)cameraDidBecomeInterruptedForForUniqueID:(id)arg1 reason:(long long)arg2;
 - (void)cameraDidBecomeAvailableForUniqueID:(id)arg1;
 - (void)didGetSnapshot:(id)arg1;

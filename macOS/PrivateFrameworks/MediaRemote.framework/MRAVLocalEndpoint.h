@@ -35,11 +35,9 @@ __attribute__((visibility("hidden")))
 - (void)volumeControlCapabilitiesForOutputDevice:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)outputDeviceVolume:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setOutputDeviceVolume:(float)arg1 outputDevice:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)migrateToDestination:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)setOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)removeOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_addOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)addOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)setOutputDevices:(id)arg1 initiator:(id)arg2 withReplyQueue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)removeOutputDevices:(id)arg1 initiator:(id)arg2 withReplyQueue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)addOutputDevices:(id)arg1 initiator:(id)arg2 withReplyQueue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)connectToExternalDeviceWithCompletion:(CDUnknownBlockType)arg1;
 - (struct _MROriginProtobuf *)origin;
 - (BOOL)canModifyGroupMembership;
@@ -53,7 +51,6 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithOutputDevices:(id)arg1;
 - (id)initWithOutputContext:(id)arg1;
-- (id)initWithOutputContext:(id)arg1 wantsUpdates:(BOOL)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

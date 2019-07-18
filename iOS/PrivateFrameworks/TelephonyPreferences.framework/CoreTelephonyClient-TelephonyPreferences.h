@@ -6,8 +6,19 @@
 
 #import <CoreTelephony/CoreTelephonyClient.h>
 
-@interface CoreTelephonyClient (TelephonyPreferences)
-- (id)localizedCarrierBundleStringForKey:(id)arg1 subscriptionContext:(id)arg2 error:(id *)arg3;
-- (id)carrierBundleForSubscriptionContext:(id)arg1 error:(id *)arg2;
+#import <TelephonyPreferences/TPSTelephonyClient-Protocol.h>
+
+@class NSString;
+
+@interface CoreTelephonyClient (TelephonyPreferences) <TPSTelephonyClient>
+- (id)localizedCarrierBundleStringForKey:(id)arg1 subscription:(id)arg2 error:(id *)arg3;
+- (id)carrierBundleForSubscription:(id)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) __weak id delegate;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

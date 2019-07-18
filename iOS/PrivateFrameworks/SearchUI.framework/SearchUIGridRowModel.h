@@ -10,9 +10,11 @@
 
 @interface SearchUIGridRowModel : SearchUICardSectionRowModel
 {
+    _Bool _shouldHide;
     SearchUIGridLayoutManager *_gridLayoutManager;
 }
 
+@property(nonatomic) _Bool shouldHide; // @synthesize shouldHide=_shouldHide;
 @property(retain, nonatomic) SearchUIGridLayoutManager *gridLayoutManager; // @synthesize gridLayoutManager=_gridLayoutManager;
 - (void).cxx_destruct;
 - (id)initWithResult:(id)arg1 cardSection:(id)arg2 gridLayoutManager:(id)arg3;

@@ -35,7 +35,6 @@
 - (void)clearSections;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
-@property(readonly, nonatomic) _Bool requiresQueryId;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

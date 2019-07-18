@@ -6,14 +6,16 @@
 
 #import <SafariServices/_SFActivityItemProvider.h>
 
-@class _SFWebArchiveProvider;
+@class LPFileMetadata, _SFWebArchiveProvider;
 
 @interface _SFWebArchiveActivityItemProvider : _SFActivityItemProvider
 {
     _SFWebArchiveProvider *_webArchiveProvider;
+    LPFileMetadata *_linkPreviewFileMetadata;
 }
 
 - (void).cxx_destruct;
+- (id)activityViewControllerLinkPresentationMetadata:(id)arg1;
 - (id)_webArchiveItemProvider;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)item;

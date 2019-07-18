@@ -21,6 +21,7 @@
 
 @property(retain, nonatomic) id <_DKSyncRemoteContextStorage> transportMDCSRapport; // @synthesize transportMDCSRapport=_transportMDCSRapport;
 - (void).cxx_destruct;
+- (void)handleContextChangedNotification:(id)arg1;
 - (void)handleStatusChangeForPeer:(id)arg1 previousTransports:(long long)arg2;
 - (id)multiDeviceContextStoreDevices;
 - (void)start;
@@ -29,8 +30,8 @@
 - (void)_syncEnabledToggle;
 - (void)dealloc;
 - (id)initWithContext:(id)arg1;
-- (void)remoteContextStorage:(id)arg1 unsubscribeFromChangesWithPeer:(id)arg2 registrationIdentifier:(id)arg3 predicateIdentifier:(id)arg4;
-- (void)remoteContextStorage:(id)arg1 subscribeToChangesWithPeer:(id)arg2 registrationIdentifier:(id)arg3 predicateIdentifier:(id)arg4;
+- (void)remoteContextStorage:(id)arg1 unsubscribeFromChangesWithPeer:(id)arg2 registrationIdentifier:(id)arg3 predicate:(id)arg4;
+- (void)remoteContextStorage:(id)arg1 subscribeToChangesWithPeer:(id)arg2 registrationIdentifier:(id)arg3 predicate:(id)arg4;
 - (void)remoteContextStorage:(id)arg1 registrationIdentifier:(id)arg2 setArchivedObjects:(id)arg3 peer:(id)arg4;
 - (id)remoteContextStorage:(id)arg1 archivedObjectsForKeyPaths:(id)arg2;
 - (BOOL)remoteContextStorage:(id)arg1 hasKnowledgeOfKeyPath:(id)arg2;
@@ -40,6 +41,8 @@
 - (void)setArchivedObjects:(id)arg1 peer:(id)arg2;
 - (id)archivedObjectsForKeyPaths:(id)arg1;
 - (id)keyPathsByDeviceIDFromRemoteKeyPaths:(id)arg1;
+- (void)_requestActivateDevicesWithHandler:(CDUnknownBlockType)arg1;
+- (void)requestActivateDevicesWithHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchPropertiesOfRemoteKeyPaths:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchPropertiesOfRemoteKeyPaths:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)subscribeToDeviceStatusChangeNotificationsForDeviceTypes:(unsigned long long)arg1 error:(id *)arg2;

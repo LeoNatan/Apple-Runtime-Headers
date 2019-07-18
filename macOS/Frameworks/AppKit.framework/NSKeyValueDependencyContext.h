@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSString;
+@protocol NSDynamicPropertyContainer;
 
 __attribute__((visibility("hidden")))
 @interface NSKeyValueDependencyContext : NSObject
@@ -26,7 +27,8 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (void)dealloc;
 - (id)initWithInvalidationHandler:(CDUnknownBlockType)arg1;
-@property(copy) NSString *name;
+@property(copy) NSString *key;
+@property id <NSDynamicPropertyContainer> container;
 
 @end
 

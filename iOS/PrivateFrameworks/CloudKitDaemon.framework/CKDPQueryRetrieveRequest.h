@@ -19,7 +19,9 @@ __attribute__((visibility("hidden")))
     CKDPQuery *_query;
     CKDPRequestedFields *_requestedFields;
     CKDPRecordZoneIdentifier *_zoneIdentifier;
-    CDStruct_88fc3008 _has;
+    struct {
+        unsigned int limit:1;
+    } _has;
 }
 
 + (id)options;

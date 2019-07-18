@@ -20,7 +20,7 @@
 #import <SpringBoard/SBReachabilityObserver-Protocol.h>
 #import <SpringBoard/UIGestureRecognizerDelegate-Protocol.h>
 
-@class BSSimpleAssertion, CCUIModularControlCenterOverlayViewController, CCUIStatusBarStyleSnapshot, FBDisplayLayoutElement, NSArray, NSHashTable, NSMutableArray, NSSet, NSString, PTSingleTestRecipe, SBAppStatusBarSettingsAssertion, SBBarSwipeAffordanceViewController, SBControlCenterSystemAgent, SBControlCenterWindow, SBGrabberTongue, UIApplicationSceneDeactivationAssertion, UIColor, UIPanGestureRecognizer, _UILegibilitySettings;
+@class BSSimpleAssertion, CCUIModularControlCenterOverlayViewController, CCUIStatusBarStyleSnapshot, FBDisplayLayoutElement, NSArray, NSHashTable, NSMutableArray, NSSet, NSString, PTSingleTestRecipe, SBAppStatusBarSettingsAssertion, SBAsynchronousRenderingAssertion, SBBarSwipeAffordanceViewController, SBControlCenterSystemAgent, SBControlCenterWindow, SBGrabberTongue, UIApplicationSceneDeactivationAssertion, UIColor, UIPanGestureRecognizer, _UILegibilitySettings;
 @protocol BSInvalidatable, SBIdleTimerCoordinating, UICoordinateSpace;
 
 @interface SBControlCenterController : NSObject <CCUIModularControlCenterOverlayViewControllerDelegate, SBGrabberTongueDelegate, CSExternalBehaviorProviding, CSExternalPresentationProviding, CSExternalAppearanceProviding, UIGestureRecognizerDelegate, SBBarSwipeAffordanceObserver, SBBarSwipeAffordanceDelegate, SBFIdleTimerBehaviorProviding, CCUIHostStatusBarStyleProvider, SBReachabilityObserver, SBIdleTimerProviding, CSCoverSheetOverlaying>
@@ -32,6 +32,7 @@
     SBControlCenterSystemAgent *_systemAgent;
     BSSimpleAssertion *_hideStatusBarAssertion;
     SBAppStatusBarSettingsAssertion *_statusBarAssertion;
+    SBAsynchronousRenderingAssertion *_asynchronousRenderingAssertion;
     SBGrabberTongue *_grabberTongue;
     UIPanGestureRecognizer *_statusBarPullGestureRecognizer;
     UIApplicationSceneDeactivationAssertion *_resignActiveAssertion;
@@ -57,6 +58,7 @@
 @property(retain, nonatomic) UIApplicationSceneDeactivationAssertion *resignActiveAssertion; // @synthesize resignActiveAssertion=_resignActiveAssertion;
 @property(retain, nonatomic) UIPanGestureRecognizer *statusBarPullGestureRecognizer; // @synthesize statusBarPullGestureRecognizer=_statusBarPullGestureRecognizer;
 @property(retain, nonatomic) SBGrabberTongue *grabberTongue; // @synthesize grabberTongue=_grabberTongue;
+@property(retain, nonatomic) SBAsynchronousRenderingAssertion *asynchronousRenderingAssertion; // @synthesize asynchronousRenderingAssertion=_asynchronousRenderingAssertion;
 @property(retain, nonatomic) SBAppStatusBarSettingsAssertion *statusBarAssertion; // @synthesize statusBarAssertion=_statusBarAssertion;
 @property(retain, nonatomic) BSSimpleAssertion *hideStatusBarAssertion; // @synthesize hideStatusBarAssertion=_hideStatusBarAssertion;
 @property(retain, nonatomic) SBControlCenterSystemAgent *systemAgent; // @synthesize systemAgent=_systemAgent;
@@ -66,6 +68,7 @@
 @property(nonatomic) __weak id <SBIdleTimerCoordinating> idleTimerCoordinator; // @synthesize idleTimerCoordinator=_idleTimerCoordinator;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CCUIStatusBarStyleSnapshot *hostStatusBarStyle;
+- (_Bool)_isStatusBarHiddenIgnoringControlCenter;
 - (double)_homeAffordanceAnimationDelay;
 - (id)unhideAnimationSettingsForBarSwipeAffordanceView:(id)arg1;
 - (id)hideAnimationSettingsForBarSwipeAffordanceView:(id)arg1;
@@ -154,7 +157,7 @@
 - (_Bool)isDismissedOrDismissing;
 - (_Bool)isPresentedOrDismissing;
 @property(readonly, nonatomic, getter=isPresented) _Bool presented;
-- (id)acquireWindowLevelAssertionWithPriority:(long long)arg1 windowLevel:(double)arg2 reason:(id)arg3 shouldAutomaticallyInvalidateWhenDismissed:(_Bool)arg4;
+- (id)acquireWindowLevelAssertionWithPriority:(long long)arg1 windowLevel:(double)arg2 reason:(id)arg3;
 - (void)dealloc;
 - (id)init;
 

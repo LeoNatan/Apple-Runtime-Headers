@@ -30,6 +30,7 @@
     NSData *_cdhash;
     NSString *_requirement;
     NSURL *_dataContainerURL;
+    NSUUID *_discoveryInstanceUUID;
 }
 
 + (id)readSDKDictionary:(id)arg1;
@@ -41,6 +42,7 @@
 @property(retain) NSDictionary *annotations; // @synthesize annotations=_annotations;
 @property(retain) NSString *localizedContainingName; // @synthesize localizedContainingName=_localizedContainingName;
 @property unsigned long long hubProtocolVersion; // @synthesize hubProtocolVersion=_hubProtocolVersion;
+@property(readonly) NSUUID *discoveryInstanceUUID; // @synthesize discoveryInstanceUUID=_discoveryInstanceUUID;
 @property(retain) NSDictionary *entitlements; // @synthesize entitlements=_entitlements;
 @property(retain) NSDictionary *plugInDictionary; // @synthesize plugInDictionary=_plugInDictionary;
 @property(retain) NSDictionary *bundleInfoDictionary; // @synthesize bundleInfoDictionary=_bundleInfoDictionary;
@@ -51,6 +53,7 @@
 @property(retain) NSString *originalIdentifier; // @synthesize originalIdentifier=_originalIdentifier;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (id)description;
 - (id)_localizedFileProviderActionNamesForPKDict:(id)arg1 fromBundle:(id)arg2;
 - (void)_loadLocalizedNames;
 - (BOOL)useBundle:(id)arg1 error:(id *)arg2;
@@ -95,11 +98,11 @@
 - (id)newPlugInKitDictionaryFrom:(id)arg1;
 - (id)normalizeInfoDictionary:(id)arg1;
 - (BOOL)setDictionaries:(id)arg1;
-- (_Bool)setupWithName:(id)arg1 url:(id)arg2 bundleInfo:(id)arg3 uuid:(id)arg4 extensionPointCache:(struct NSMutableDictionary *)arg5;
+- (_Bool)setupWithName:(id)arg1 url:(id)arg2 bundleInfo:(id)arg3 uuid:(id)arg4 discoveryInstanceUUID:(id)arg5 extensionPointCache:(struct NSMutableDictionary *)arg6;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithForm:(id)arg1;
-- (id)initWithName:(id)arg1 url:(id)arg2 bundleInfo:(id)arg3 uuid:(id)arg4 extensionPointCache:(struct NSMutableDictionary *)arg5;
+- (id)initWithName:(id)arg1 url:(id)arg2 bundleInfo:(id)arg3 uuid:(id)arg4 discoveryInstanceUUID:(id)arg5 extensionPointCache:(struct NSMutableDictionary *)arg6;
 - (id)init;
 
 @end

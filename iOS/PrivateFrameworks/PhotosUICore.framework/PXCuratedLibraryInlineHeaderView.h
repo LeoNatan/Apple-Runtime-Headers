@@ -6,11 +6,12 @@
 
 #import <UIKit/UIView.h>
 
+#import <PhotosUICore/PXAccessibilityView-Protocol.h>
 #import <PhotosUICore/PXGReusableView-Protocol.h>
 
-@class PXCuratedLibraryInlineHeaderViewConfiguration, UILabel, UIVisualEffectView;
+@class NSString, PXCuratedLibraryInlineHeaderViewConfiguration, UILabel, UIVisualEffectView;
 
-@interface PXCuratedLibraryInlineHeaderView : UIView <PXGReusableView>
+@interface PXCuratedLibraryInlineHeaderView : UIView <PXGReusableView, PXAccessibilityView>
 {
     PXCuratedLibraryInlineHeaderViewConfiguration *_configuration;
     UIVisualEffectView *_effectView;
@@ -37,6 +38,9 @@
 - (void)_setEffectViewCornerRadius:(double)arg1;
 - (void)_setupBackgroundView;
 - (void)traitCollectionDidChange:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *accessibilityLabel;
+@property(readonly, nonatomic) _Bool isContainedInAsset;
+@property(readonly, nonatomic) _Bool isAccessible;
 - (void)prepareForReuse;
 - (void)becomeReusable;
 - (void)layoutSubviews;
@@ -46,6 +50,12 @@
 - (void)setHidden:(_Bool)arg1;
 - (void)_updateConfiguration;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

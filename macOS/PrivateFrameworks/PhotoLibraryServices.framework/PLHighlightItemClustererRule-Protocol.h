@@ -12,6 +12,7 @@
 @protocol PLHighlightItemClustererRule <NSObject>
 - (BOOL)highlightItemList:(PLHighlightItemList *)arg1 canBeMergedWithOtherHighlightItemList:(PLHighlightItemList *)arg2;
 - (BOOL)highlightItem:(id <PLHighlightItem>)arg1 belongsToHighlightItemList:(PLHighlightItemList *)arg2;
+- (void)titlesForHighlightItemList:(PLHighlightItemList *)arg1 forceUpdateLocale:(BOOL)arg2 resultBlock:(void (^)(NSString *, NSString *))arg3;
 - (void)titlesForHighlightItemList:(PLHighlightItemList *)arg1 resultBlock:(void (^)(NSString *, NSString *))arg2;
 @end
 

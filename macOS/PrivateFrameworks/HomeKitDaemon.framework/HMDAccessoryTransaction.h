@@ -34,6 +34,7 @@
 @property(retain, nonatomic) NSString *name; // @dynamic name;
 @property(retain, nonatomic) NSNumber *networkClientIdentifier; // @dynamic networkClientIdentifier;
 @property(retain, nonatomic) NSNumber *networkClientLAN; // @dynamic networkClientLAN;
+@property(retain, nonatomic) NSString *networkRouterUUID; // @dynamic networkRouterUUID;
 @property(retain, nonatomic) NSString *productData; // @dynamic productData;
 @property(retain, nonatomic) NSString *providedName; // @dynamic providedName;
 @property(retain, nonatomic) NSString *roomUUID; // @dynamic roomUUID;

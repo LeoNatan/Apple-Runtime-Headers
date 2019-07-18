@@ -11,9 +11,7 @@
 @interface HAMenstrualAlgorithmsHistoricalCycle : NSObject
 {
     _Bool _isDeterminant;
-    unsigned int _julianDayOfFertilityStart;
     NSNumber *_fertilityStartJulianDay;
-    unsigned int _julianDayOfFertilityEnd;
     NSNumber *_fertilityEndJulianDay;
     unsigned int _julianDayOfMenstruationStart;
     unsigned int _julianDayOfMenstruationEnd;
@@ -23,9 +21,7 @@
 @property(nonatomic) unsigned int julianDayOfMenstruationEnd; // @synthesize julianDayOfMenstruationEnd=_julianDayOfMenstruationEnd;
 @property(nonatomic) unsigned int julianDayOfMenstruationStart; // @synthesize julianDayOfMenstruationStart=_julianDayOfMenstruationStart;
 @property(retain, nonatomic) NSNumber *fertilityEndJulianDay; // @synthesize fertilityEndJulianDay=_fertilityEndJulianDay;
-@property(nonatomic) unsigned int julianDayOfFertilityEnd; // @synthesize julianDayOfFertilityEnd=_julianDayOfFertilityEnd;
 @property(retain, nonatomic) NSNumber *fertilityStartJulianDay; // @synthesize fertilityStartJulianDay=_fertilityStartJulianDay;
-@property(nonatomic) unsigned int julianDayOfFertilityStart; // @synthesize julianDayOfFertilityStart=_julianDayOfFertilityStart;
 - (void).cxx_destruct;
 
 @end

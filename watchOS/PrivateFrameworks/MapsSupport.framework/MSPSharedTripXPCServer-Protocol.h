@@ -9,11 +9,7 @@
 @class NSArray, NSString;
 
 @protocol MSPSharedTripXPCServer <NSObject>
-- (void)unblockAllSenders;
-- (void)unblockSharedTripFromSenders:(NSArray *)arg1;
-- (void)blockSharedTripFromSenders:(NSArray *)arg1;
-- (void)unmuteSharedTripUpdatesForSharedTrip:(NSString *)arg1;
-- (void)muteSharedTripUpdatesForSharedTrip:(NSString *)arg1;
+- (void)blockSharedTrip:(NSString *)arg1;
 - (void)fetchSharedTripsWithCompletion:(void (^)(NSArray *))arg1;
 - (void)unsubscribeFromSharedTripUpdatesWithIdentifier:(NSString *)arg1;
 - (void)subscribeToSharedTripUpdatesWithIdentifier:(NSString *)arg1;

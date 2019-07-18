@@ -63,7 +63,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)readSelectionFromPasteboard:(id)arg1;
 - (BOOL)writeSelectionToPasteboard:(id)arg1 types:(id)arg2;
 - (id)validRequestorForSendType:(id)arg1 returnType:(id)arg2;
-- (id)objectsForSharing;
+- (id)copyConfigurationForSharing;
 - (struct CGRect)accessibilityFocusRingMaskBounds;
 - (unsigned long long)focusRingType;
 - (BOOL)resignFirstResponder;
@@ -102,10 +102,11 @@ __attribute__((visibility("hidden")))
 - (void)mouseMoved:(id)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
+- (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)keyDown:(id)arg1;
 - (void)keyUp:(id)arg1;
 - (BOOL)_sendKeyEvent:(id)arg1 isDown:(BOOL)arg2;
-- (id)convertKeyCodeToUIKeyInput:(unsigned long long)arg1;
+- (id)convertKeyCodeToUIKeyInput:(id)arg1;
 - (void)flagsChanged:(id)arg1;
 - (struct CGRect)convertRectFromUnitCoordinates:(struct CGRect)arg1;
 - (struct CGPoint)convertPointToUnitCoordinates:(struct CGPoint)arg1;

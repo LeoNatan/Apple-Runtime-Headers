@@ -82,7 +82,6 @@
 @property(nonatomic) __weak id <RUILoaderDelegate> ruiDelegate; // @synthesize ruiDelegate=_ruiDelegate;
 @property(retain, nonatomic) RUIStyle *remoteUIStyle; // @synthesize remoteUIStyle=_remoteUIStyle;
 - (void).cxx_destruct;
-- (void)acknowledgeBuysOnWatchCredentialIngestion:(id)arg1;
 - (void)sendBuysOnWatchUsername:(id)arg1 andPassword:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)reporterForConnection:(id)arg1;
 - (void)setReporter:(id)arg1 forConnection:(id)arg2;
@@ -91,6 +90,7 @@
 - (void)watchDidIngestWirelessCredentials:(id)arg1;
 - (id)currentWiFiNetworkName;
 - (void)sendDemoWatchWirelessCredentials;
+- (void)tellWatchToChangeDeviceNameFor:(id)arg1;
 - (void)transportBecameUnreachable;
 - (void)transportBecameReachable;
 - (void)handleOfflineTermsResponse:(id)arg1;

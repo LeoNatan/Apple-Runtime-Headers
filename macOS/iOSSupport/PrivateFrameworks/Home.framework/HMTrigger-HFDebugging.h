@@ -15,6 +15,7 @@
 + (id)hf_localizedStringForSignficantEvent:(id)arg1 offset:(id)arg2;
 - (id)hf_stateDumpBuilderWithContext:(id)arg1;
 - (id)hf_forceDisableReasons;
+- (BOOL)hf_shouldDisplayTrigger;
 @property(readonly, nonatomic) BOOL hf_isShortcutOwned;
 @property(readonly, nonatomic) BOOL hf_requiresConfirmationToRun;
 

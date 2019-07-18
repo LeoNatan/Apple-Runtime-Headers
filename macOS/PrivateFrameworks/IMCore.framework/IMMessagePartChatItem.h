@@ -31,7 +31,6 @@
 + (id)_richLinkRangesForMessageText:(id)arg1 sender:(id)arg2 isWhitelistedRichLinkSender:(BOOL)arg3;
 + (id)_additionalSupportedRichLinkSchemesForWhitelistedSender:(id)arg1;
 + (BOOL)_isWhitelistedRichLinkSender:(id)arg1 isBusiness:(BOOL)arg2;
-+ (id)_defaultRichLinkSenderWhitelist;
 + (BOOL)_isWhiteListedURL:(id)arg1;
 + (id)_defaultRichLinkWhiteList;
 + (id)_newMessagePartsForMessageItem:(id)arg1;

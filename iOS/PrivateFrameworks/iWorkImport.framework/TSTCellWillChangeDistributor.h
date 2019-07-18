@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 
 - (id)protocol;
 - (void)willRemoveRows:(const vector_4dc5f307 *)arg1;
+- (void)willApplyConcurrentCellMap:(id)arg1;
 - (void)willApplyBaseCellMap:(id)arg1;
 - (void)willApplyCell:(id)arg1 baseCellCoord:(struct TSUModelCellCoord)arg2;
 

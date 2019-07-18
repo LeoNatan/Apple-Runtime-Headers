@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 - (void)transposeTouch:(id)arg1;
 - (void)_sendTransposedEvent:(id)arg1 toGestureRecognizers:(id)arg2;
+- (void)dealloc;
 - (id)initWithSourceFrame:(struct CGRect)arg1 destinationContentView:(id)arg2 frame:(struct CGRect)arg3;
 
 @end

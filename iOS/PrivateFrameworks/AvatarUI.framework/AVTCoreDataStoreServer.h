@@ -35,10 +35,12 @@
     id <AVTAvatarsDaemonServer> _daemonServer;
     id <AVTCoreDataStoreMaintenance> _storeMaintenance;
     CDUnknownBlockType _migrationActivityCompletion;
+    CDUnknownBlockType _userRequestedBackupActivityCompletion;
 }
 
 + (_Bool)resetSyncShouldPreserveContentForReason:(unsigned long long)arg1;
 + (id)imageGeneratorForEnvironment:(id)arg1;
+@property(copy, nonatomic) CDUnknownBlockType userRequestedBackupActivityCompletion; // @synthesize userRequestedBackupActivityCompletion=_userRequestedBackupActivityCompletion;
 @property(copy, nonatomic) CDUnknownBlockType migrationActivityCompletion; // @synthesize migrationActivityCompletion=_migrationActivityCompletion;
 @property(nonatomic) _Bool setupCompleted; // @synthesize setupCompleted=_setupCompleted;
 @property(readonly, nonatomic) id <AVTCoreDataStoreMaintenance> storeMaintenance; // @synthesize storeMaintenance=_storeMaintenance;
@@ -74,6 +76,7 @@
 - (void)scheduleImportExportIfRequiredWithPostImportHandler:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setupThen:(CDUnknownBlockType)arg1;
 - (void)scheduleSetupThen:(CDUnknownBlockType)arg1;
+- (void)completeUserRequestedBackupActivityIfNeeded;
 - (void)completeMigrationActivityIfNeeded;
 - (void)startListening;
 - (id)initWithLocalBackend:(id)arg1 configuration:(id)arg2 migratorProvider:(CDUnknownBlockType)arg3 pushSupport:(id)arg4 mirroringHandler:(id)arg5 schedulingAuthority:(id)arg6 remoteChangesObserver:(id)arg7 imageGenerator:(id)arg8 stickerChangeObserver:(id)arg9 changeTracker:(id)arg10 daemonServer:(id)arg11 storeMaintenance:(id)arg12 backgroundQueue:(id)arg13 environment:(id)arg14;

@@ -12,11 +12,13 @@
 + (id)rem_dateWithDateComponentsUsingArchivingTimeZone:(id)arg1;
 + (id)rem_dateComponentsWithDate:(id)arg1 timeZone:(id)arg2 isAllDay:(BOOL)arg3;
 + (id)rem_dateComponentsWithDateUsingArchivingTimeZone:(id)arg1 isAllDay:(BOOL)arg2;
+- (long long)rem_compare:(id)arg1;
 - (BOOL)rem_isWeekendDateComponents;
 - (BOOL)rem_isAllDayDateComponents;
 - (BOOL)rem_isValidDateComponents;
 - (id)rem_allDayDateComponents;
 - (id)rem_strippingTimeZone;
 - (id)rem_dateComponentsByAddingTimeInterval:(double)arg1;
+- (id)rem_gregorianEquivalent;
 @end
 

@@ -16,13 +16,14 @@ __attribute__((visibility("hidden")))
 
 + (id)_getDeniedChannels;
 + (id)_getConsentedChannels;
-+ (id)addUniqueVPPAChannels:(id)arg1 channels:(id)arg2;
++ (id)addUniqueChannels:(id)arg1 channels:(id)arg2;
 + (_Bool)channelAlreadyExists:(id)arg1 channelID:(id)arg2;
 + (_Bool)_isReminderDue:(id)arg1 reminderInterval:(double)arg2;
 + (id)sharedInstance;
 @property(retain, nonatomic) VUIAccessViewController *accessViewController; // @synthesize accessViewController=_accessViewController;
 - (void).cxx_destruct;
 - (id)_rootViewController;
+- (id)_getEligibleBulkChannels;
 - (id)_getVPPABulkChannels:(long long)arg1;
 - (void)_presentVPPAConsentScreen:(id)arg1 vppaState:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_isVPPAPromptDueForConfig:(id)arg1;

@@ -15,10 +15,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) unsigned long long userInterfaceStyle; // @dynamic userInterfaceStyle;
 @property(nonatomic) unsigned long long artworkSubtype; // @dynamic artworkSubtype;
+@property(retain, nonatomic) UISApplicationSupportDisplayEdgeInfo *displayEdgeInfo; // @dynamic displayEdgeInfo;
 @property(retain, nonatomic) FBSDisplayConfiguration *displayConfiguration; // @dynamic displayConfiguration;
-
-// Remaining properties
-@property(retain, nonatomic) UISApplicationSupportDisplayEdgeInfo *displayEdgeInfo;
 
 @end
 

@@ -14,6 +14,7 @@
 
 @property(readonly, nonatomic) double maximum; // @synthesize maximum;
 @property(readonly, nonatomic) double minimum; // @synthesize minimum;
+- (id)description;
 - (id)initWithRange:(struct SampleRateRange)arg1;
 - (id)initWithMin:(double)arg1 max:(double)arg2;
 

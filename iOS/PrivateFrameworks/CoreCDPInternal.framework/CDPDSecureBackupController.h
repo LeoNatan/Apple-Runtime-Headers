@@ -41,6 +41,7 @@
 - (id)_recoveryInfoDictionaryFromContext:(id)arg1;
 - (id)_recoverBackupDictionaryWithContext:(id)arg1 error:(id *)arg2;
 - (void)recoverSecureBackupWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)performEscrowRecoveryWithRecoveryContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)performEscrowRecoveryWithRecoveryContext:(id)arg1 error:(id *)arg2;
 - (id)_clientMetadataWithSecretType:(unsigned long long)arg1 length:(unsigned long long)arg2;
 - (id)_currentAnisetteData;

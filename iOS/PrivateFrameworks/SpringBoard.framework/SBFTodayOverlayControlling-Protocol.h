@@ -4,14 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString;
 @protocol SBFTodayOverlayObserving;
 
 @protocol SBFTodayOverlayControlling
 @property(readonly, nonatomic, getter=isPresented) _Bool presented;
 @property(nonatomic) double presentationProgress;
 @property(readonly, nonatomic) double contentWidth;
-- (_Bool)isWidgetExtensionWithIdentifierVisible:(NSString *)arg1;
 - (void)removeTodayOverlayObserver:(id <SBFTodayOverlayObserving>)arg1;
 - (void)addTodayOverlayObserver:(id <SBFTodayOverlayObserving>)arg1;
 - (double)finalPresentationProgressForPresentationProgress:(double)arg1 gestureVelocity:(double)arg2;

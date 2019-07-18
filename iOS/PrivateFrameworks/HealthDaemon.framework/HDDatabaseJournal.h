@@ -7,11 +7,13 @@
 #import <objc/NSObject.h>
 
 @class NSFileHandle, NSLock, NSProgress, NSString;
+@protocol HDDatabaseJournalDelegate;
 
 @interface HDDatabaseJournal : NSObject
 {
     struct os_unfair_lock_s _progressLock;
     long long _type;
+    id <HDDatabaseJournalDelegate> _delegate;
     NSString *_path;
     NSLock *_journalLock;
     NSFileHandle *_fileHandle;
@@ -22,6 +24,7 @@
 @property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 @property(retain, nonatomic) NSLock *journalLock; // @synthesize journalLock=_journalLock;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
+@property(nonatomic) __weak id <HDDatabaseJournalDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (id)_unitTesting_journalFiles;
@@ -37,12 +40,14 @@
 - (id)_loadJournalEntry:(id)arg1;
 - (id)_sortedListOfJournalFiles;
 - (id)_nameOfNextJournalFile;
+- (id)_journalFiles;
 - (_Bool)_appendData:(id)arg1 error:(id *)arg2;
 - (_Bool)_openNextJournalFileWithError:(id *)arg1;
 - (void)_executeAtomically:(CDUnknownBlockType)arg1;
 - (id)_mergeTransactionContextWithContext:(id)arg1;
 - (_Bool)_processJournalFile:(id)arg1 profile:(id)arg2 accessibilityAssertion:(id)arg3;
 - (_Bool)_processJournalFilesWithProfile:(id)arg1;
+- (unsigned long long)journalFileCount;
 - (_Bool)mergeWithProfile:(id)arg1;
 - (id)progressForJournalMerge;
 - (_Bool)performMergeTransactionWithProfile:(id)arg1 transactionContext:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;

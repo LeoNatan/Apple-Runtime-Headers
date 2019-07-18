@@ -11,6 +11,7 @@
 
 @interface PXGridInlinePlaybackRecord : NSObject
 {
+    _Bool _isInvalid;
     float _videoScore;
     float _curationScore;
     id <PXDisplayAsset> _displayAsset;
@@ -25,6 +26,7 @@
 }
 
 @property(copy) NSString *diagnosticLog; // @synthesize diagnosticLog=_diagnosticLog;
+@property(nonatomic) _Bool isInvalid; // @synthesize isInvalid=_isInvalid;
 @property(nonatomic) double cellSizeScore; // @synthesize cellSizeScore=_cellSizeScore;
 @property(nonatomic) double distanceToCenterScore; // @synthesize distanceToCenterScore=_distanceToCenterScore;
 @property(nonatomic) long long visibilityScore; // @synthesize visibilityScore=_visibilityScore;

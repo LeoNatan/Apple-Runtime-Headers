@@ -26,6 +26,7 @@
 - (id)layoutOptionsForSection:(long long)arg1;
 - (BOOL)presentationCoordinatorShouldProvideCancellationFeedback:(id)arg1;
 - (BOOL)presentationCoordinator:(id)arg1 shouldBeginPresentationWithContext:(id)arg2;
+- (void)configureCell:(id)arg1 forItem:(id)arg2;
 - (void)doneButtonPressed:(id)arg1;
 - (void)updateViewConstraints;
 - (void)viewWillAppear:(BOOL)arg1;

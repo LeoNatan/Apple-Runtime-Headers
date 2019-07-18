@@ -285,7 +285,8 @@
 - (id)pictureKeyForBuddy:(id)arg1;
 - (id)pictureOfBuddy:(id)arg1;
 @property(readonly, retain, nonatomic) NSDictionary *buddyPictures;
-- (void)sendNicknameUpdatesToPeerDevices:(id)arg1 toDestinations:(id)arg2;
+- (void)sendNicknameInfoToChatID:(id)arg1;
+- (BOOL)sendNicknameUpdatesToPeerDevices:(id)arg1 toDestinations:(id)arg2;
 - (void)closeSessionChatID:(id)arg1 identifier:(id)arg2 style:(unsigned char)arg3;
 - (void)setProperties:(id)arg1 ofParticipant:(id)arg2 inChatID:(id)arg3 identifier:(id)arg4 style:(unsigned char)arg5;
 - (void)sendLogDumpMessageAtFilePath:(id)arg1 toRecipient:(id)arg2 shouldDeleteFile:(BOOL)arg3 withCompletion:(CDUnknownBlockType)arg4;

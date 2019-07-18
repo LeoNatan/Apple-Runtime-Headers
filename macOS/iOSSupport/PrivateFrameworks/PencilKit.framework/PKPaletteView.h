@@ -11,40 +11,38 @@
 #import <PencilKit/PKPaletteHostViewDelegate-Protocol.h>
 #import <PencilKit/PKPalettePopoverDismissing-Protocol.h>
 #import <PencilKit/PKPalettePopoverPresenting-Protocol.h>
-#import <PencilKit/PKPaletteQuickColorPickerDelegate-Protocol.h>
 #import <PencilKit/PKPaletteToolPickerViewDelegate-Protocol.h>
 #import <PencilKit/PKPaletteToolPreviewDelegate-Protocol.h>
 #import <PencilKit/PKPaletteUndoRedoViewDelegate-Protocol.h>
 #import <PencilKit/PKPaletteViewSizeScaling-Protocol.h>
+#import <PencilKit/PKPaletteViewStateObservable-Protocol.h>
 
-@class NSLayoutConstraint, NSString, NSUndoManager, PKInk, PKPaletteContainerView, PKPaletteContentView, PKPaletteQuickColorPicker, PKPaletteToolPreview, PKPaletteUndoRedoView, UIViewController, UIVisualEffectView;
+@class NSLayoutConstraint, NSString, NSUndoManager, PKInk, PKPaletteContainerView, PKPaletteContentView, PKPaletteToolPreview, PKPaletteUndoRedoView, UIViewController;
 @protocol PKPaletteViewAnnotationDelegate, PKPaletteViewDelegate, PKPaletteViewInternalDelegate;
 
-@interface PKPaletteView : UIView <PKPaletteUndoRedoViewDelegate, PKPaletteToolPickerViewDelegate, PKPaletteColorPickerViewDelegate, PKPaletteAdditionalOptionsViewDelegate, PKPaletteQuickColorPickerDelegate, PKPaletteToolPreviewDelegate, PKPalettePopoverPresenting, PKPalettePopoverDismissing, PKPaletteViewSizeScaling, PKPaletteHostViewDelegate>
+@interface PKPaletteView : UIView <PKPaletteUndoRedoViewDelegate, PKPaletteToolPickerViewDelegate, PKPaletteColorPickerViewDelegate, PKPaletteAdditionalOptionsViewDelegate, PKPaletteToolPreviewDelegate, PKPalettePopoverPresenting, PKPaletteViewStateObservable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling, PKPaletteHostViewDelegate>
 {
     NSUndoManager *_undoManager;
     BOOL _autoHideEnabled;
     CDUnknownBlockType _dockToCornerAnimations;
     CDUnknownBlockType _dockToEdgeAnimations;
-    BOOL _wantsVisualEffectBackgroundInCompactSize;
     BOOL _paletteIsCompactSize;
     BOOL _paletteHasLayoutSubviews;
     BOOL _wantsUndoRedoButtonsInCompactSize;
     BOOL _isEditingOpacity;
+    BOOL _supportsOpacityEditing;
     BOOL _wantsClearBackgroundColorInCompactSize;
-    BOOL _paletteExpandedFromCorner;
     unsigned long long _autoHideCorner;
     double _scalingFactor;
     UIViewController *_presentationController;
     id <PKPaletteViewDelegate> _delegate;
     long long _palettePosition;
+    long long _colorUserInterfaceStyle;
     id <PKPaletteViewInternalDelegate> _internalDelegate;
     PKPaletteUndoRedoView *_undoRedoCompactView;
-    UIVisualEffectView *_visualEffectBackgroundView;
     UIView *_clippingView;
     PKPaletteContainerView *_containerView;
     PKPaletteContentView *_contentView;
-    PKPaletteQuickColorPicker *_quickColorPicker;
     PKPaletteToolPreview *_toolPreview;
     UIView *_bottomThinSeparator;
     unsigned long long _lastEdgeLocation;
@@ -67,11 +65,11 @@
     struct UIEdgeInsets _palettePopoverLayoutSceneMargins;
 }
 
-@property(readonly, nonatomic, getter=isPaletteExpandedFromCorner) BOOL paletteExpandedFromCorner; // @synthesize paletteExpandedFromCorner=_paletteExpandedFromCorner;
 @property(retain, nonatomic) UIViewController *popoverPresentingController; // @synthesize popoverPresentingController=_popoverPresentingController;
 @property(nonatomic) struct UIEdgeInsets palettePopoverLayoutSceneMargins; // @synthesize palettePopoverLayoutSceneMargins=_palettePopoverLayoutSceneMargins;
 @property(nonatomic) BOOL wantsClearBackgroundColorInCompactSize; // @synthesize wantsClearBackgroundColorInCompactSize=_wantsClearBackgroundColorInCompactSize;
 @property(readonly, nonatomic) UIView *opacityEditingView; // @synthesize opacityEditingView=_opacityEditingView;
+@property(nonatomic) BOOL supportsOpacityEditing; // @synthesize supportsOpacityEditing=_supportsOpacityEditing;
 @property(nonatomic) __weak id <PKPaletteViewAnnotationDelegate> annotationDelegate; // @synthesize annotationDelegate=_annotationDelegate;
 @property(nonatomic) unsigned long long lastPaletteEdgePositionWhileDragging; // @synthesize lastPaletteEdgePositionWhileDragging=_lastPaletteEdgePositionWhileDragging;
 @property(retain, nonatomic) NSLayoutConstraint *paletteContainerCompactRightConstraint; // @synthesize paletteContainerCompactRightConstraint=_paletteContainerCompactRightConstraint;
@@ -93,34 +91,32 @@
 @property(nonatomic) BOOL paletteIsCompactSize; // @synthesize paletteIsCompactSize=_paletteIsCompactSize;
 @property(retain, nonatomic) UIView *bottomThinSeparator; // @synthesize bottomThinSeparator=_bottomThinSeparator;
 @property(retain, nonatomic) PKPaletteToolPreview *toolPreview; // @synthesize toolPreview=_toolPreview;
-@property(retain, nonatomic) PKPaletteQuickColorPicker *quickColorPicker; // @synthesize quickColorPicker=_quickColorPicker;
 @property(retain, nonatomic) PKPaletteContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) PKPaletteContainerView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UIView *clippingView; // @synthesize clippingView=_clippingView;
-@property(retain, nonatomic) UIVisualEffectView *visualEffectBackgroundView; // @synthesize visualEffectBackgroundView=_visualEffectBackgroundView;
-@property(nonatomic) BOOL wantsVisualEffectBackgroundInCompactSize; // @synthesize wantsVisualEffectBackgroundInCompactSize=_wantsVisualEffectBackgroundInCompactSize;
 @property(retain, nonatomic) PKPaletteUndoRedoView *undoRedoCompactView; // @synthesize undoRedoCompactView=_undoRedoCompactView;
 @property(nonatomic) __weak id <PKPaletteViewInternalDelegate> internalDelegate; // @synthesize internalDelegate=_internalDelegate;
+@property(nonatomic) long long colorUserInterfaceStyle; // @synthesize colorUserInterfaceStyle=_colorUserInterfaceStyle;
 @property(nonatomic) long long palettePosition; // @synthesize palettePosition=_palettePosition;
 @property(nonatomic) __weak id <PKPaletteViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIViewController *presentationController; // @synthesize presentationController=_presentationController;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(readonly, nonatomic) unsigned long long autoHideCorner; // @synthesize autoHideCorner=_autoHideCorner;
 - (void).cxx_destruct;
-- (id)_toolPreviewForMinimized;
+@property(nonatomic, getter=isBackgroundMaterialUpdatingPaused) BOOL backgroundMaterialUpdatingPaused;
+- (id)toolPreviewForMinimized;
 - (id)palettePopoverPresentingController;
 @property(readonly, nonatomic) UIView *contextualEditingView;
 @property(nonatomic) long long contextEditingMode;
 - (struct CGRect)plusButtonFrame;
 - (unsigned long long)edgeLocationToDockFromCorner:(unsigned long long)arg1;
-@property(readonly, nonatomic, getter=isMinimized) BOOL minimized;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
 - (void)endOpacityEditing;
 - (void)startOpacityEditing;
-@property(nonatomic) BOOL supportsOpacityEditing;
 - (unsigned long long)_nextAutoHideCorner;
-@property(readonly, nonatomic) unsigned long long cornerLocation;
-@property(readonly, nonatomic) unsigned long long edgeLocation;
+- (void)_notifyPaletteDidChangePosition;
+- (void)didEndAppearanceAnimation;
+- (void)willStartAppearanceAnimation;
 - (void)animationToDockToEdge:(unsigned long long)arg1;
 @property(readonly, nonatomic) CDUnknownBlockType dockToCornerAnimations;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
@@ -129,23 +125,19 @@
 - (void)shapesViewController:(id)arg1 didSelectShapeWithType:(long long)arg2;
 - (id)toolsArray;
 - (id)stateDictionary;
-- (void)saveOptions;
-- (BOOL)loadOptions;
+- (void)saveOptionsIfNecessary;
+- (void)_saveOptions;
+- (BOOL)_loadOptions;
 - (BOOL)isToolDictionary:(id)arg1 ofTypeIdentifier:(id)arg2;
-- (void)additionalOptionsViewDidTapOpacityOption:(id)arg1;
 - (void)additionalOptionsView:(id)arg1 didToggleAutoHideOption:(BOOL)arg2;
 - (void)additionalOptionsViewDidSelectPlusButton:(id)arg1;
 - (void)toolPreviewDidChangeToolColor:(id)arg1;
-- (void)quickColorPickerDidChangeSelectedColor:(id)arg1;
-- (void)hostView:(id)arg1 touchesDidEndInPaletteAtPoint:(struct CGPoint)arg2;
-- (void)hostView:(id)arg1 touchesDidChangeInPaletteAtPoint:(struct CGPoint)arg2;
-- (void)hostView:(id)arg1 didExpandPaletteFromCorner:(unsigned long long)arg2;
-- (void)hostView:(id)arg1 willExpandPaletteFromCorner:(unsigned long long)arg2;
 - (void)hostView:(id)arg1 didDockPaletteToCorner:(unsigned long long)arg2;
 - (void)hostView:(id)arg1 willDockPaletteToCorner:(unsigned long long)arg2;
 - (void)hostView:(id)arg1 didDockPaletteToEdge:(unsigned long long)arg2;
 - (void)_centerPaletteContainerSubviewToCurrentlySelectedToolForEdge:(unsigned long long)arg1;
 - (void)hostView:(id)arg1 willDockPaletteToEdge:(unsigned long long)arg2;
+- (BOOL)colorPickerShouldDisplayColorSelection:(id)arg1;
 - (void)colorPickerDidChangeSelectedColor:(id)arg1;
 - (void)toolPickerDidToggleRulerTool:(id)arg1;
 - (void)toolPickerDidChangeSelectedToolInk:(id)arg1;
@@ -154,7 +146,7 @@
 - (void)_updateContainerSizeConstraintsForEdge:(unsigned long long)arg1;
 - (void)_updateToolPreviewForEdge:(unsigned long long)arg1;
 - (void)_updateToolPreview;
-- (void)_updateColorPickersWithSelectedToolInkColor;
+- (void)_updateColorPickerSelectedColor;
 - (void)setSelectedAnnotationType:(long long)arg1;
 - (void)_setSelectedColor:(id)arg1;
 @property(nonatomic) BOOL isRulerActive;
@@ -165,6 +157,8 @@
 - (void)_releaseUndoManager;
 - (void)setUndoManager:(id)arg1;
 - (id)undoManager;
+- (void)_updateUIForAnnotationSupportIfNeeded;
+- (void)updateUndoRedo;
 @property(readonly, nonatomic, getter=isAnnotationSupportEnabled) BOOL annotationSupportEnabled;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) BOOL useCompactSize;
@@ -176,7 +170,7 @@
 - (void)_setCornerRadius:(double)arg1;
 - (void)_installUndoRedoButtonsViewAtTop;
 - (void)_installToolPreview;
-- (void)_installQuickColorPicker;
+- (void)_installBackgroundView;
 - (void)_installContentView;
 - (void)_installClippingView;
 - (void)dealloc;

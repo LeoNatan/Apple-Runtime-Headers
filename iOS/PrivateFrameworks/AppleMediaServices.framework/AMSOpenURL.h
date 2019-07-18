@@ -6,16 +6,31 @@
 
 #import <objc/NSObject.h>
 
+@class AMSProcessInfo, NSMutableSet, NSURL;
+@protocol AMSBagProtocol;
+
 @interface AMSOpenURL : NSObject
 {
+    NSMutableSet *_attemptedTargets;
+    NSURL *_URL;
+    AMSProcessInfo *_clientInfo;
+    id <AMSBagProtocol> _bag;
 }
 
-+ (long long)schemeIndexForBundle:(id)arg1;
-+ (id)schemes;
-+ (id)_sortedSchemes;
-+ (_Bool)_openURL:(id)arg1;
-+ (id)_modifiedURLFromURL:(id)arg1 target:(id)arg2;
++ (id)_sortedTargets;
++ (id)_modifiedURLFromURL:(id)arg1 bundleInfo:(id)arg2;
++ (id)openURL:(id)arg1 clientInfo:(id)arg2 bag:(id)arg3;
 + (void)openURL:(id)arg1 account:(id)arg2 preferredClient:(id)arg3;
++ (_Bool)openStandardURL:(id)arg1;
+@property(retain, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
+@property(retain, nonatomic) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
+@property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
+@property(retain, nonatomic) NSMutableSet *attemptedTargets; // @synthesize attemptedTargets=_attemptedTargets;
+- (void).cxx_destruct;
+- (_Bool)_shouldAttemptUsingInfo:(id)arg1;
+- (_Bool)_openURL:(id)arg1 bundleInfo:(id)arg2;
+- (id)_performOpen;
+- (id)initWithURL:(id)arg1 clientInfo:(id)arg2 bag:(id)arg3;
 
 @end
 

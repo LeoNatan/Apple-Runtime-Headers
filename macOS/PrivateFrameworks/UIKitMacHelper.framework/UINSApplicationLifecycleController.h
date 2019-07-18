@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSRunningApplication, UINSApplicationDelegate;
+@class NSMutableArray, NSRunningApplication, UINSApplicationDelegate;
 
 __attribute__((visibility("hidden")))
 @interface UINSApplicationLifecycleController : NSObject
@@ -20,8 +20,12 @@ __attribute__((visibility("hidden")))
     int _batchWindowAccumulationToken;
     UINSApplicationDelegate *_appDelegate;
     NSRunningApplication *_observedRunningApplication;
+    NSMutableArray *_windowsHiddenForTermination;
+    NSMutableArray *_windowStateForWindowsHiddenForTermination;
 }
 
+@property(retain, nonatomic) NSMutableArray *windowStateForWindowsHiddenForTermination; // @synthesize windowStateForWindowsHiddenForTermination=_windowStateForWindowsHiddenForTermination;
+@property(retain, nonatomic) NSMutableArray *windowsHiddenForTermination; // @synthesize windowsHiddenForTermination=_windowsHiddenForTermination;
 @property(nonatomic) BOOL firstWindowCreationEncountered; // @synthesize firstWindowCreationEncountered=_firstWindowCreationEncountered;
 @property(nonatomic) BOOL areScenesCurrentlyInForeground; // @synthesize areScenesCurrentlyInForeground=_areScenesCurrentlyInForeground;
 @property(nonatomic) int batchWindowAccumulationToken; // @synthesize batchWindowAccumulationToken=_batchWindowAccumulationToken;

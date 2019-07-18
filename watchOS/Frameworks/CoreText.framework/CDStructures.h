@@ -36,10 +36,10 @@ struct GlyphStackEntry {
 };
 
 struct TTraitsValues {
-    unsigned int fSymbolic;
-    double fWeight;
-    double fWidth;
-    double fSlant;
+    unsigned int _field1;
+    double _field2;
+    double _field3;
+    double _field4;
 };
 
 struct TUnfairLock {

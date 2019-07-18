@@ -9,7 +9,7 @@
 #import <PhotosGraph/PGLibraryChangeConsumer-Protocol.h>
 
 @class NSMutableArray, NSMutableSet, NSString, PGGraphUpdateJetsamIndicator, PGGraphUpdateManagerTargetTokenState, PGLibraryChangeListener, PGManager, PGPhotoChangeToGraphChangeConverter;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, PGGraphUpdateHealthRecording;
 
 @interface PGGraphUpdateManager : NSObject <PGLibraryChangeConsumer>
 {
@@ -26,8 +26,10 @@
     PGGraphUpdateJetsamIndicator *_jetsamIndicator;
     PGGraphUpdateManagerTargetTokenState *_targetTokenState;
     long long _executionContext;
+    id <PGGraphUpdateHealthRecording> _updateHealthRecorder;
 }
 
+@property(readonly, nonatomic) id <PGGraphUpdateHealthRecording> updateHealthRecorder; // @synthesize updateHealthRecorder=_updateHealthRecorder;
 @property long long executionContext; // @synthesize executionContext=_executionContext;
 @property(retain, nonatomic) PGGraphUpdateManagerTargetTokenState *targetTokenState; // @synthesize targetTokenState=_targetTokenState;
 @property(readonly, nonatomic) PGGraphUpdateJetsamIndicator *jetsamIndicator; // @synthesize jetsamIndicator=_jetsamIndicator;
@@ -40,6 +42,8 @@
 @property(retain, nonatomic) PGLibraryChangeListener *libraryChangeListener; // @synthesize libraryChangeListener=_libraryChangeListener;
 @property(readonly, nonatomic) NSMutableSet *listeners; // @synthesize listeners=_listeners;
 - (void).cxx_destruct;
+- (void)_recordInformationFromGraphChanges:(id)arg1;
+- (void)_recordInformationFromDatabaseChange:(id)arg1;
 - (id)_graphUpdateForPhotoChanges:(id)arg1;
 - (_Bool)_performEnrichmentWithGraphUpdateInventory:(id)arg1 enrichmentContext:(long long)arg2 progressBlock:(CDUnknownBlockType)arg3;
 - (void)_triggerUpdateForGraphUpdate:(id)arg1;
@@ -48,6 +52,7 @@
 - (void)_processRebuild;
 - (id)_tokensForChanges:(id)arg1;
 - (void)_processPendingChanges;
+@property(readonly, nonatomic) _Bool isConsistencyUpdate;
 - (_Bool)_pauseListening;
 - (void)_startListening;
 - (void)_notifyProgress:(double)arg1;

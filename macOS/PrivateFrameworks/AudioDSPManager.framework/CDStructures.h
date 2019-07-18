@@ -19,9 +19,7 @@ struct AdaptResponse {
     struct set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> _field4;
     struct set<AMCP::Wire_Identifier, std::__1::less<AMCP::Wire_Identifier>, std::__1::allocator<AMCP::Wire_Identifier>> _field5;
     vector_51644792 _field6;
-    struct map<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>>> _field7;
-    struct map<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>>> _field8;
-    struct vector<std::__1::pair<unsigned long long, dspd::AdaptResponse::CaptureStatus>, std::__1::allocator<std::__1::pair<unsigned long long, dspd::AdaptResponse::CaptureStatus>>> _field9;
+    struct vector<std::__1::pair<unsigned long long, dspd::AdaptResponse::CaptureStatus>, std::__1::allocator<std::__1::pair<unsigned long long, dspd::AdaptResponse::CaptureStatus>>> _field7;
 };
 
 struct BusStation;
@@ -58,20 +56,20 @@ struct DynamicBus;
 struct Graph {
     unsigned long long _field1;
     struct map<std::__1::basic_string<char>, std::__1::weak_ptr<adm::graph::Node>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::weak_ptr<adm::graph::Node>>>> _field2;
-    struct unordered_map<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>>> _field3;
-    struct vector<std::__1::shared_ptr<adm::graph::Node>, std::__1::allocator<std::__1::shared_ptr<adm::graph::Node>>> _field4;
-    struct vector<std::__1::shared_ptr<adm::graph::InternalNode>, std::__1::allocator<std::__1::shared_ptr<adm::graph::InternalNode>>> _field5;
-    struct vector<std::__1::shared_ptr<adm::graph::Wire>, std::__1::allocator<std::__1::shared_ptr<adm::graph::Wire>>> _field6;
-    int _field7;
+    struct vector<std::__1::shared_ptr<adm::graph::Node>, std::__1::allocator<std::__1::shared_ptr<adm::graph::Node>>> _field3;
+    struct vector<std::__1::shared_ptr<adm::graph::Wire>, std::__1::allocator<std::__1::shared_ptr<adm::graph::Wire>>> _field4;
+    int _field5;
+    struct unordered_set<std::__1::basic_string<char>, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> _field6;
+    id _field7;
     id _field8;
-    id _field9;
-    struct unique_ptr<adm::graph::KnobController, std::__1::default_delete<adm::graph::KnobController>> _field10;
-    struct function<void (adm::graph::InternalNode *)> _field11;
-    struct vector<std::__1::function<void ()>, std::__1::allocator<std::__1::function<void ()>>> _field12;
-    struct unordered_map<unsigned int, adm::graph::ParameterStorageWriter, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, adm::graph::ParameterStorageWriter>>> _field13;
-    struct shared_ptr<adm::graph::ParameterStorageInterface> _field14;
-    struct unordered_map<unsigned int, adm::graph::PropertyStorageWriter, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, adm::graph::PropertyStorageWriter>>> _field15;
-    struct shared_ptr<adm::graph::PropertyStorageInterface> _field16;
+    struct unique_ptr<adm::graph::KnobController, std::__1::default_delete<adm::graph::KnobController>> _field9;
+    struct function<void (adm::graph::InternalNode *)> _field10;
+    struct vector<std::__1::function<void ()>, std::__1::allocator<std::__1::function<void ()>>> _field11;
+    struct unordered_map<unsigned int, adm::graph::ParameterStorageWriter, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, adm::graph::ParameterStorageWriter>>> _field12;
+    struct shared_ptr<adm::graph::ParameterStorageInterface> _field13;
+    struct unordered_map<unsigned int, adm::graph::PropertyStorageWriter, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, adm::graph::PropertyStorageWriter>>> _field14;
+    struct shared_ptr<adm::graph::PropertyStorageInterface> _field15;
+    struct ProxyFactory *_field16;
 };
 
 struct GraphBuilder {
@@ -218,6 +216,12 @@ struct PortRecord<float>;
 
 struct PropertyStorageInterface;
 
+struct ProxyFactory {
+    struct shared_ptr<adm::vp::detail::ProxyFactoryImplementation> mImplementation;
+};
+
+struct ProxyFactoryImplementation;
+
 struct PublicFormatMap;
 
 struct RemoteProcessingBlockBase {
@@ -320,10 +324,6 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::_
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, adm::graph::NodeContext>, void *>*> *_field1;
 };
 
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>*> *_field1;
-};
-
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::tuple<unsigned long long, unsigned long long>, unsigned int>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::tuple<unsigned long long, unsigned long long>, unsigned int>, void *>*> *__next_;
 };
@@ -366,6 +366,10 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsign
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, adm::vm::Port>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, adm::vm::Port>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*> *_field1;
 };
 
 struct __list_node_base<GraphState *, void *> {
@@ -596,18 +600,6 @@ struct map<unsigned long long, dspd::DeviceConfiguration, std::__1::less<unsigne
     } _field1;
 };
 
-struct map<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>>> {
-    struct __tree<std::__1::__value_type<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>, std::__1::__map_value_compare<unsigned long long, std::__1::__value_type<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>, std::__1::less<unsigned long long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long long, std::__1::__value_type<unsigned long long, std::__1::vector<dspd::AdaptResponse::VolumeControlSupport, std::__1::allocator<dspd::AdaptResponse::VolumeControlSupport>>>, std::__1::less<unsigned long long>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
 struct mutex {
     struct _opaque_pthread_mutex_t {
         long long __sig;
@@ -647,6 +639,14 @@ struct optional<adm::vm::VolumeCurve::TransferFunction> {
 struct optional<adm::vm::VolumeMode> {
     CDUnion_0506adf3 _field1;
     _Bool _field2;
+};
+
+struct optional<adm::vp::ProxyFactory> {
+    union {
+        char __null_state_;
+        struct ProxyFactory __val_;
+    } ;
+    _Bool __engaged_;
 };
 
 struct optional<applesauce::CF::StringRef> {
@@ -860,8 +860,6 @@ struct shared_ptr<AudioNotification::DynamicBus> {
     struct __shared_weak_count *__cntrl_;
 };
 
-struct shared_ptr<adm::graph::InternalNode>;
-
 struct shared_ptr<adm::graph::Node>;
 
 struct shared_ptr<adm::graph::ParameterStorageInterface> {
@@ -875,6 +873,11 @@ struct shared_ptr<adm::graph::PropertyStorageInterface> {
 };
 
 struct shared_ptr<adm::graph::Wire>;
+
+struct shared_ptr<adm::vp::detail::ProxyFactoryImplementation> {
+    struct ProxyFactoryImplementation *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
 
 struct tuple<aura::AudioFormat, std::__1::set<std::__1::tuple<double, double>, std::__1::less<std::__1::tuple<double, double>>, std::__1::allocator<std::__1::tuple<double, double>>>>;
 
@@ -963,17 +966,6 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__h
         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, adm::graph::NodeContext>, void *>*> **_field1;
         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, adm::graph::NodeContext>, void *>*>*>> {
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, adm::graph::NodeContext>, void *>*>*>> {
-                unsigned long long _field1;
-            } _field1;
-        } _field2;
-    } _field1;
-};
-
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>*> **_field1;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>*>*>> {
                 unsigned long long _field1;
             } _field1;
         } _field2;
@@ -1101,6 +1093,17 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__h
     } __ptr_;
 };
 
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*> **_field1;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*>*>> {
+                unsigned long long _field1;
+            } _field1;
+        } _field2;
+    } _field1;
+};
+
 struct unordered_map<std::__1::basic_string<char>, adm::graph::DSPGraphConfiguration, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, adm::graph::DSPGraphConfiguration>>> {
     struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, adm::graph::DSPGraphConfiguration>, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, adm::graph::DSPGraphConfiguration>, std::__1::hash<std::__1::basic_string<char>>, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, adm::graph::DSPGraphConfiguration>, std::__1::equal_to<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, adm::graph::DSPGraphConfiguration>>> {
         struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, adm::graph::DSPGraphConfiguration>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, adm::graph::DSPGraphConfiguration>, void *>*>*>>> _field1;
@@ -1141,21 +1144,6 @@ struct unordered_map<std::__1::basic_string<char>, adm::graph::NodeContext, std:
             unsigned long long _field1;
         } _field3;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, adm::graph::NodeContext>, std::__1::equal_to<std::__1::basic_string<char>>, true>> {
-            float _field1;
-        } _field4;
-    } _field1;
-};
-
-struct unordered_map<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>>> {
-    struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, std::__1::hash<std::__1::basic_string<char>>, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, std::__1::equal_to<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>*>*>>> _field1;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, std::__1::hash<std::__1::basic_string<char>>, true>> {
-            unsigned long long _field1;
-        } _field3;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<adm::graph::InternalNode>>, std::__1::equal_to<std::__1::basic_string<char>>, true>> {
             float _field1;
         } _field4;
     } _field1;
@@ -1324,6 +1312,21 @@ struct unordered_map<unsigned long long, adm::vm::Port, std::__1::hash<unsigned 
             float __value_;
         } __p3_;
     } __table_;
+};
+
+struct unordered_set<std::__1::basic_string<char>, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> {
+    struct __hash_table<std::__1::basic_string<char>, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*>*>>> _field1;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::basic_string<char>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::hash<std::__1::basic_string<char>>> {
+            unsigned long long _field1;
+        } _field3;
+        struct __compressed_pair<float, std::__1::equal_to<std::__1::basic_string<char>>> {
+            float _field1;
+        } _field4;
+    } _field1;
 };
 
 struct vector<adm::graph::NodeDescription, std::__1::allocator<adm::graph::NodeDescription>> {
@@ -1544,14 +1547,6 @@ struct vector<std::__1::pair<unsigned long long, dspd::AdaptResponse::CaptureSta
     } _field3;
 };
 
-struct vector<std::__1::shared_ptr<adm::graph::InternalNode>, std::__1::allocator<std::__1::shared_ptr<adm::graph::InternalNode>>> {
-    struct shared_ptr<adm::graph::InternalNode> *_field1;
-    struct shared_ptr<adm::graph::InternalNode> *_field2;
-    struct __compressed_pair<std::__1::shared_ptr<adm::graph::InternalNode>*, std::__1::allocator<std::__1::shared_ptr<adm::graph::InternalNode>>> {
-        struct shared_ptr<adm::graph::InternalNode> *_field1;
-    } _field3;
-};
-
 struct vector<std::__1::shared_ptr<adm::graph::Node>, std::__1::allocator<std::__1::shared_ptr<adm::graph::Node>>> {
     struct shared_ptr<adm::graph::Node> *_field1;
     struct shared_ptr<adm::graph::Node> *_field2;
@@ -1660,7 +1655,7 @@ typedef struct expected<bool, std::__1::error_code> {
 typedef struct expected<dspd::AdaptResponse, std::__1::error_code> {
     union storage<dspd::AdaptResponse, std::__1::error_code> _field1;
     _Bool _field2;
-} expected_6c7599df;
+} expected_0910f26e;
 
 typedef struct expected<dspd::NegotiateResponse, std::__1::error_code> {
     union storage<dspd::NegotiateResponse, std::__1::error_code> _field1;

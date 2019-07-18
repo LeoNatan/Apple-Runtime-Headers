@@ -15,13 +15,18 @@
 @interface _INPBStartCallIntentResponse : PBCodable <_INPBStartCallIntentResponse, NSSecureCoding, NSCopying>
 {
     struct {
+        unsigned int confirmationReason:1;
         unsigned int shouldDoEmergencyCountdown:1;
     } _has;
     _Bool _shouldDoEmergencyCountdown;
+    _Bool __encodeLegacyGloryData;
+    int _confirmationReason;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) _Bool shouldDoEmergencyCountdown; // @synthesize shouldDoEmergencyCountdown=_shouldDoEmergencyCountdown;
+@property(nonatomic) int confirmationReason; // @synthesize confirmationReason=_confirmationReason;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
@@ -31,6 +36,9 @@
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(nonatomic) _Bool hasShouldDoEmergencyCountdown;
+- (int)StringAsConfirmationReason:(id)arg1;
+- (id)confirmationReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasConfirmationReason;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

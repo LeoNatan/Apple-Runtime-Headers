@@ -38,6 +38,7 @@
     UIView *_contentView;
     long long _wallpaperMode;
     id <SBFWallpaperViewDelegate> _wallpaperDelegate;
+    UIImage *_untreatedWallpaperImage;
     double _parallaxFactor;
     NSString *_wallpaperName;
     long long _logicalContentOrientation;
@@ -62,6 +63,7 @@
 @property(nonatomic) double parallaxFactor; // @synthesize parallaxFactor=_parallaxFactor;
 @property(nonatomic) _Bool parallaxEnabled; // @synthesize parallaxEnabled=_parallaxEnabled;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
+@property(retain, nonatomic) UIImage *untreatedWallpaperImage; // @synthesize untreatedWallpaperImage=_untreatedWallpaperImage;
 @property(nonatomic) __weak id <SBFWallpaperViewDelegate> wallpaperDelegate; // @synthesize wallpaperDelegate=_wallpaperDelegate;
 @property(readonly, nonatomic) long long wallpaperMode; // @synthesize wallpaperMode=_wallpaperMode;
 @property(nonatomic) long long variant; // @synthesize variant=_variant;
@@ -93,11 +95,11 @@
 - (_Bool)_needsFallbackImageForBackdropGeneratedImage:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *cacheUniqueIdentifier;
 @property(readonly, copy, nonatomic) NSString *variantCacheIdentifier;
-- (id)_cacheKeyForParameters:(CDStruct_d8f0d129)arg1 includingTint:(_Bool)arg2 downsampleFactor:(double)arg3;
-- (id)_material_generateImageFromImage:(id)arg1 forBackdropParameters:(CDStruct_d8f0d129)arg2;
-- (id)_backdrop_generateImageFromImage:(id)arg1 forBackdropParameters:(CDStruct_d8f0d129)arg2 includeTint:(_Bool)arg3;
-- (id)_generateImageFromImage:(id)arg1 forBackdropParameters:(CDStruct_d8f0d129)arg2 includeTint:(_Bool)arg3;
-- (id)_imageForBackdropParameters:(CDStruct_d8f0d129)arg1 includeTint:(_Bool)arg2;
+- (id)_cacheKeyForParameters:(CDStruct_d8f0d129)arg1 includingTint:(_Bool)arg2 downsampleFactor:(double)arg3 traitCollection:(id)arg4;
+- (id)_material_generateImageFromImage:(id)arg1 forBackdropParameters:(CDStruct_d8f0d129)arg2 traitCollection:(id)arg3;
+- (id)_backdrop_generateImageFromImage:(id)arg1 forBackdropParameters:(CDStruct_d8f0d129)arg2 includeTint:(_Bool)arg3 traitCollection:(id)arg4;
+- (id)_generateImageFromImage:(id)arg1 forBackdropParameters:(CDStruct_d8f0d129)arg2 includeTint:(_Bool)arg3 traitCollection:(id)arg4;
+- (id)_imageForBackdropParameters:(CDStruct_d8f0d129)arg1 includeTint:(_Bool)arg2 overrideTraitCollection:(id)arg3;
 - (id)_blurredImage;
 - (void)preheatImageData;
 - (void)_stopGeneratingBlurredImages;
@@ -112,7 +114,7 @@
 - (void)setHidden:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)invalidate;
-- (id)imageForBackdropParameters:(CDStruct_d8f0d129)arg1 includeTint:(_Bool)arg2;
+- (id)imageForBackdropParameters:(CDStruct_d8f0d129)arg1 includeTint:(_Bool)arg2 overrideTraitCollection:(id)arg3;
 - (id)blurredImage;
 - (id)snapshotImage;
 - (void)setGeneratesBlurredImages:(_Bool)arg1;

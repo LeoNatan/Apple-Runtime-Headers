@@ -19,6 +19,6 @@
 @property(readonly, nonatomic) NSString *vehicleIdentifier;
 @property(readonly, nonatomic) NSDate *scheduledDepartureDate;
 @property(readonly, nonatomic) NSDate *departureDate;
-- (BOOL)isPastDepartureUsingGracePeriod:(BOOL)arg1;
+- (BOOL)isPastDepartureRelativeToDate:(NSDate *)arg1 usingGracePeriod:(BOOL)arg2;
 @end
 

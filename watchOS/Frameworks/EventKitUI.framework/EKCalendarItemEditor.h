@@ -10,7 +10,7 @@
 #import <EventKitUI/UIActionSheetDelegate-Protocol.h>
 #import <EventKitUI/UIAlertViewDelegate-Protocol.h>
 
-@class EKCalendarItem, EKCalendarItemEditItem, EKEventStore, EKUIRecurrenceAlertController, NSArray, NSMutableSet, NSString, UIBarButtonItem, UIResponder, _UIAccessDeniedView;
+@class EKCalendarItem, EKCalendarItemEditItem, EKChangeSet, EKEventStore, EKUIRecurrenceAlertController, NSArray, NSMutableSet, NSString, UIBarButtonItem, UIResponder, _UIAccessDeniedView;
 @protocol EKCalendarItemEditorDelegate;
 
 __attribute__((visibility("hidden")))
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     EKUIRecurrenceAlertController *_recurrenceAlertController;
     EKCalendarItemEditItem *_currentEditItem;
     _Bool _giveTitleCellKeyboardFocus;
+    _Bool _needsFirstResponderSet;
     int _editItemVisibility;
     _Bool _isIgnoringCellHeightChange;
     _Bool _needsCellHeightChange;
@@ -45,11 +46,13 @@ __attribute__((visibility("hidden")))
     UIResponder *_responderToRestoreOnAppearence;
     unsigned int _visibleSectionToRestoreOnAppearence;
     _UIAccessDeniedView *_accessDeniedView;
+    EKChangeSet *_originalChangeSet;
 }
 
 + (id)_doneLocalizedString;
 + (id)_addLocalizedString;
 + (id)defaultTitleForCalendarItem;
+@property(retain, nonatomic) EKChangeSet *originalChangeSet; // @synthesize originalChangeSet=_originalChangeSet;
 @property(retain, nonatomic) _UIAccessDeniedView *accessDeniedView; // @synthesize accessDeniedView=_accessDeniedView;
 @property(nonatomic) _Bool timeImplicitlySet; // @synthesize timeImplicitlySet=_timeImplicitlySet;
 @property(readonly) EKCalendarItemEditItem *currentEditItem; // @synthesize currentEditItem=_currentEditItem;
@@ -149,12 +152,13 @@ __attribute__((visibility("hidden")))
 - (void)completeAndSave;
 - (void)handleTapOutside;
 - (void)done:(id)arg1;
-- (void)cancelEditingWithDelegateNotification:(_Bool)arg1;
+- (void)cancelEditingWithDelegateNotification:(_Bool)arg1 forceCancel:(_Bool)arg2;
 - (void)cancel:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)applicationDidResume;
 - (void)viewDidLoad;
 - (void)updateNavButtonsWithSpacing;
+- (void)_setupFirstResponder;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

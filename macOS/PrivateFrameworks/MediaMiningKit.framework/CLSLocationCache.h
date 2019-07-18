@@ -21,6 +21,7 @@
 + (BOOL)cachedCoordinate:(struct CLLocationCoordinate2D)arg1 isMatchingOtherCoordinate:(struct CLLocationCoordinate2D)arg2;
 + (id)defaultCacheName;
 - (void).cxx_destruct;
+- (void)invalidateCacheForGeoServiceProviderChangeToProvider:(id)arg1;
 - (id)_litePlacemarkFromManagedPlacemark:(id)arg1;
 - (id)_insertManagedPlacemarkForLitePlacemark:(id)arg1 inContext:(id)arg2;
 - (id)_insertManagedPlacemarksForLitePlacemarks:(id)arg1 inContext:(id)arg2;

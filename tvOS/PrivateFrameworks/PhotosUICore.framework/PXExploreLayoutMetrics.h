@@ -12,6 +12,7 @@
 
 @interface PXExploreLayoutMetrics : PXLayoutMetrics <PXGDiagnosticsProvider>
 {
+    _Bool _allowHeaders;
     _Bool _allowSpecialPanoHeaders;
     long long _layoutType;
     long long _layoutSubtype;
@@ -22,6 +23,7 @@
 }
 
 @property(nonatomic) _Bool allowSpecialPanoHeaders; // @synthesize allowSpecialPanoHeaders=_allowSpecialPanoHeaders;
+@property(nonatomic) _Bool allowHeaders; // @synthesize allowHeaders=_allowHeaders;
 @property(copy, nonatomic) CDUnknownBlockType acceptableLargeHeroPredicate; // @synthesize acceptableLargeHeroPredicate=_acceptableLargeHeroPredicate;
 @property(nonatomic) long long largeHeroDensity; // @synthesize largeHeroDensity=_largeHeroDensity;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;

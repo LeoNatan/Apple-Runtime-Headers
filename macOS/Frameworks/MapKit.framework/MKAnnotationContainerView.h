@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     BOOL _isUpdating;
     double _lastUpdate;
     NSMutableDictionary *_clusterableAnnotationViews;
+    NSMutableArray *_requiredPriorityAnnotationViews;
     NSMutableSet *_collidableAnnotationViews;
     NSMutableDictionary *_collidingAnnotationViews;
     NSMutableDictionary *_existingClusterAnnotationViews;

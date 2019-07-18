@@ -15,6 +15,8 @@
 + (id)tsp_currentReadCompletionInfo;
 + (_Bool)tsp_isRunningFinalizeHandlersForLegacyDocument;
 + (_Bool)tsp_isRunningFinalizeHandlersForUpgrade;
++ (_Bool)tsp_isPerformingLegacyDocumentReferenceResolution;
++ (void)tsp_performSynchronousLegacyDocumentReferenceResolutionUsingBlock:(CDUnknownBlockType)arg1;
 + (void)tsp_performSynchronousArchiverOperationUsingBlock:(CDUnknownBlockType)arg1;
 + (_Bool)tsp_isArchiverThread;
 + (_Bool)tsp_isUnarchiverThread;

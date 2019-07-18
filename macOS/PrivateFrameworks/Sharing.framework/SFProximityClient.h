@@ -19,6 +19,7 @@
     BOOL _invalidateDone;
     NSXPCConnection *_xpcCnx;
     BOOL _shouldAdvertise;
+    BOOL _wantsUpdates;
     CDUnknownBlockType _interruptionHandler;
     CDUnknownBlockType _invalidationHandler;
     CDUnknownBlockType _deviceEnteredImmediateHandler;
@@ -30,9 +31,12 @@
     CDUnknownBlockType _deviceDidUntriggerHandler;
     CDUnknownBlockType _deviceWasDismissedHandlerEx;
     CDUnknownBlockType _deviceWasDismissedHandler;
+    CDUnknownBlockType _deviceUpdateHandler;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL wantsUpdates; // @synthesize wantsUpdates=_wantsUpdates;
+@property(copy, nonatomic) CDUnknownBlockType deviceUpdateHandler; // @synthesize deviceUpdateHandler=_deviceUpdateHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceWasDismissedHandler; // @synthesize deviceWasDismissedHandler=_deviceWasDismissedHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceWasDismissedHandlerEx; // @synthesize deviceWasDismissedHandlerEx=_deviceWasDismissedHandlerEx;
 @property(copy, nonatomic) CDUnknownBlockType deviceDidUntriggerHandler; // @synthesize deviceDidUntriggerHandler=_deviceDidUntriggerHandler;
@@ -47,6 +51,7 @@
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
+- (void)proximityClientDeviceUpdated:(id)arg1 rssi:(long long)arg2 state:(long long)arg3;
 - (void)proximityClientDeviceWillTriggerHandler:(id)arg1;
 - (void)proximityClientDeviceDidUntriggerHandler:(id)arg1;
 - (void)proximityClientDeviceWasSelectedHandler:(id)arg1;

@@ -6,37 +6,21 @@
 
 #import <WorkflowKit/WFAccessResource.h>
 
-#import <ActionKit/WFInstapaperLoginViewControllerDelegate-Protocol.h>
-
-@class NSString;
-
-@interface WFInstapaperAccessResource : WFAccessResource <WFInstapaperLoginViewControllerDelegate>
+@interface WFInstapaperAccessResource : WFAccessResource
 {
-    CDUnknownBlockType _completionHandler;
 }
 
 + (id)instapaperTokenSecret;
 + (id)instapaperToken;
 + (id)instapaperUsername;
 + (void)initialize;
-@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)logOut;
 - (BOOL)canLogOut;
 - (id)username;
 - (id)resourceName;
-- (void)instapaperLoginViewControllerDidCancel:(id)arg1;
-- (void)instapaperLoginViewController:(id)arg1 authenticatedWithUsername:(id)arg2 token:(id)arg3 tokenSecret:(id)arg4;
-- (void)makeAvailableAtGlobalLevelWithUserInterface:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned long long)globalLevelStatus;
 - (id)protectedResourceDescription;
 - (id)associatedAppIdentifier;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

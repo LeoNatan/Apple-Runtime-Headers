@@ -36,7 +36,7 @@
 - (unsigned long long)indexOfClosestMarkerPriorOrEqualToTime:(double)arg1;
 - (id)timeRanges;
 - (_Bool)haveImages;
-- (void)loadFirstImageSynchronously;
+- (_Bool)loadFirstImageSynchronouslyWithTimeout:(double)arg1;
 - (void)loadAllImages;
 - (_Bool)haveImageForMarker:(unsigned long long)arg1;
 - (id)imageForMarker:(unsigned long long)arg1;

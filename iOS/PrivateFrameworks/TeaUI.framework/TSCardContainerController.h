@@ -12,7 +12,10 @@
     // Error parsing type: , name: transitionManager
     // Error parsing type: , name: cardViewLayoutOptions
     // Error parsing type: , name: rootViewController
+    // Error parsing type: , name: dimmingColor
+    // Error parsing type: , name: dimmingAlpha
     // Error parsing type: , name: cardItemStack
+    // Error parsing type: , name: dimmingView
     // Error parsing type: , name: eventManager
 }
 

@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
     int _forceVideoPayload;
     int _forceRecvVideoPayload;
     int _forceKeyFrameInterval;
+    _Bool _forceWiFiAssist;
+    _Bool _forceWiFiAssistOutOfBudget;
 }
 
 + (_Bool)booleanValueForKey:(struct __CFString *)arg1 defaultValue:(_Bool)arg2;
@@ -29,6 +31,8 @@ __attribute__((visibility("hidden")))
 + (long long)integerValueForKey:(struct __CFString *)arg1;
 + (double)getDoubleValueForKey:(struct __CFString *)arg1 defaultValue:(double)arg2;
 + (id)sharedInstance;
+@property(readonly) _Bool forceWiFiAssistOutOfBudget; // @synthesize forceWiFiAssistOutOfBudget=_forceWiFiAssistOutOfBudget;
+@property(readonly) _Bool forceWiFiAssist; // @synthesize forceWiFiAssist=_forceWiFiAssist;
 - (_Bool)forceUseInternalRTPThreadingWithDefaultValue:(_Bool)arg1;
 @property(readonly) double remoteMediaStallTimeout;
 @property(readonly) unsigned int prominenceInactiveAccumulationThreshold;
@@ -66,9 +70,11 @@ __attribute__((visibility("hidden")))
 @property(readonly) _Bool forceEVSWideBand;
 @property(readonly) unsigned int maxActiveVideoDecoders;
 @property(readonly) unsigned int maxActiveVideoEncoders;
+@property(readonly) _Bool rearCameraVideoStablization;
 @property(readonly) _Bool dumpMediaBlob;
 @property(readonly) _Bool momentsUserPreferenceEnabled;
-@property(readonly) _Bool forceWifiAssist;
+- (_Bool)forceWifiAssistOutOfBudget;
+- (_Bool)forceWifiAssist;
 @property(readonly) _Bool shouldDisplayVideoInfoLayer;
 @property(readonly) float pauseHeartbeatInterval;
 @property(readonly) _Bool enableGFTStatsReceiveThread;
@@ -78,11 +84,11 @@ __attribute__((visibility("hidden")))
 @property(readonly) _Bool forceIPv6;
 @property(readonly) int max2GRate;
 @property(readonly) int redundancyControlForceVideoRedundancyPercentage;
+@property(readonly) int packetExpirationTime;
 @property(readonly) int rateControlForceRxRate;
 @property(readonly) int rateControlForceTxRate;
 @property(readonly) int rateControlForceRxCap;
 @property(readonly) int rateControlForceTxCap;
-@property(readonly) _Bool rateControlAllowRedLowBitrates;
 @property(readonly) _Bool rateControlAllowBurstyLossRampDown;
 @property(readonly) _Bool rateControlAllowVideoStop;
 @property(readonly) _Bool rateControlLogEnabled;
@@ -95,7 +101,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) int videoStreamRateControlAlgorithm;
 @property(readonly) _Bool videoStreamRateControlDumpEnabled;
 @property(readonly) _Bool enableHEIFAndHEVCForMoments;
-@property(readonly) int encodingTilesPerVideoFrame;
+@property(readonly) int tilesPerVideoFrame;
 @property(readonly) _Bool forceVideoStreamLowLatency;
 @property(readonly) int forceVideoStreamPayload;
 @property(readonly) _Bool forceVideoStreamDisableBitrateCap;

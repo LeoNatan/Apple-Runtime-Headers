@@ -18,7 +18,6 @@
 }
 
 + (id)tellSiriInfoText;
-+ (id)addToHomeScreenConfiguration;
 + (id)addToSiriConfiguration;
 + (id)newWorkflowConfiguration;
 @property(copy, nonatomic) NSString *doneBarButtonTitle; // @synthesize doneBarButtonTitle=_doneBarButtonTitle;

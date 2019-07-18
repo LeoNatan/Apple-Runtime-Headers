@@ -10,10 +10,10 @@ __attribute__((visibility("hidden")))
 @interface _UIClickPresentationInteractionEndingContext : NSObject
 {
     BOOL _didComplete;
-    BOOL _wasCancelledByClient;
+    unsigned long long _reason;
 }
 
-@property(nonatomic) BOOL wasCancelledByClient; // @synthesize wasCancelledByClient=_wasCancelledByClient;
+@property(nonatomic) unsigned long long reason; // @synthesize reason=_reason;
 @property(nonatomic) BOOL didComplete; // @synthesize didComplete=_didComplete;
 
 @end

@@ -8,7 +8,6 @@
 
 @interface _TtC18HealthExperienceUI27HighlightCategoryDataSource : _$s16HealthExperience15ArrayDataSourceCN
 {
-    // Error parsing type: , name: layout
     // Error parsing type: , name: sectionIdentifer
 }
 

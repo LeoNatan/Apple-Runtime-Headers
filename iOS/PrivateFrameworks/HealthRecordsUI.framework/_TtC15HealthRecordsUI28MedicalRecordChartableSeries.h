@@ -9,7 +9,7 @@
 @interface _TtC15HealthRecordsUI28MedicalRecordChartableSeries : NSObject
 {
     // Error parsing type: , name: concept
-    // Error parsing type: , name: chartableQuantities
+    // Error parsing type: , name: chartableQuantitySets
     // Error parsing type: , name: preferredColors
 }
 

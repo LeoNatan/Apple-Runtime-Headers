@@ -6,14 +6,12 @@
 
 #import <CoreML/MLKey.h>
 
-#import <CoreML/NSSecureCoding-Protocol.h>
-
-@interface MLParameterKey : MLKey <NSSecureCoding>
+@interface MLParameterKey : MLKey
 {
 }
 
-+ (_Bool)supportsSecureCoding;
-+ (id)removeExamples;
++ (id)seed;
++ (id)shuffle;
 + (id)epochs;
 + (id)eps;
 + (id)beta2;
@@ -23,9 +21,9 @@
 + (id)learningRate;
 + (id)linkedModelSearchPath;
 + (id)linkedModelFileName;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (id)initWithKeyName:(id)arg1;
+- (id)deletingPrefixingScope:(id)arg1;
+- (id)scopedTo:(id)arg1;
 
 @end
 

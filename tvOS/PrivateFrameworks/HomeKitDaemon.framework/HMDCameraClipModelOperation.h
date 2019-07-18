@@ -9,26 +9,31 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFObject-Protocol.h>
 
-@class HMBLocalZone, HMCameraClipEncryptionManager, NSArray, NSDate, NSString, NSUUID;
+@class HMBLocalZone, HMCameraClipEncryptionManager, HMDCameraRecordingUploadOperationEvent, NSArray, NSDate, NSString, NSUUID;
+@protocol HMDCameraRecordingUploaderDataSource;
 
 @interface HMDCameraClipModelOperation : HMFOperation <HMFObject, HMFLogging>
 {
     NSUUID *_clipModelID;
     HMBLocalZone *_localZone;
     HMCameraClipEncryptionManager *_encryptionManager;
+    HMDCameraRecordingUploadOperationEvent *_uploadOperationEvent;
     NSString *_logIdentifier;
     NSDate *_createDate;
     NSDate *_startDate;
     NSDate *_endDate;
+    id <HMDCameraRecordingUploaderDataSource> _dataSource;
 }
 
 + (id)logCategory;
 + (id)shortDescription;
 + (double)clipModelOperationTimeout;
+@property(readonly) id <HMDCameraRecordingUploaderDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly) NSDate *createDate; // @synthesize createDate=_createDate;
 @property(readonly, copy) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
+@property(readonly) HMDCameraRecordingUploadOperationEvent *uploadOperationEvent; // @synthesize uploadOperationEvent=_uploadOperationEvent;
 @property(retain) HMCameraClipEncryptionManager *encryptionManager; // @synthesize encryptionManager=_encryptionManager;
 @property(readonly) HMBLocalZone *localZone; // @synthesize localZone=_localZone;
 @property(readonly) NSUUID *clipModelID; // @synthesize clipModelID=_clipModelID;
@@ -41,10 +46,11 @@
 - (id)updateClipModel:(id)arg1 options:(id)arg2;
 - (id)updateClipModel:(id)arg1;
 - (id)fetchClipModel;
+- (void)_markEndDateAndSubmitUploadOperationEvent;
 - (void)cancelWithError:(id)arg1;
 - (void)finish;
 - (void)main;
-- (id)initWithClipModelID:(id)arg1 localZone:(id)arg2 encryptionManager:(id)arg3;
+- (id)initWithClipModelID:(id)arg1 localZone:(id)arg2 encryptionManager:(id)arg3 dataSource:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

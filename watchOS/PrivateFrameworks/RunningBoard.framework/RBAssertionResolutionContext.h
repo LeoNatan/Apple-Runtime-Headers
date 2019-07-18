@@ -40,6 +40,7 @@
 - (void)_resolveSystemState;
 - (void)_finalizeStateChangeSet;
 - (void)_resolveProcessStateForTarget:(id)arg1 ofType:(unsigned int)arg2 viaAssertion:(id)arg3;
+- (void)_suspendOrResumeAssertionsForTarget:(id)arg1 oldState:(id)arg2 newState:(id)arg3;
 - (id)_latestStateForIdentity:(id)arg1;
 - (id)_createContextForAssertion:(id)arg1;
 - (id)_originatorInheritancesForAssertion:(id)arg1;

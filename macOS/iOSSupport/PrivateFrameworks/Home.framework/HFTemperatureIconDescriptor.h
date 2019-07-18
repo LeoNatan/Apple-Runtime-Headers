@@ -12,6 +12,7 @@
 
 @interface HFTemperatureIconDescriptor : NSObject <HFIconDescriptor>
 {
+    BOOL _shouldForceLTR;
     NSString *_imageIdentifier;
     NSString *_formattedTemperature;
     long long _heatingCoolingMode;
@@ -22,6 +23,7 @@
 @property(readonly, nonatomic) long long heatingCoolingMode; // @synthesize heatingCoolingMode=_heatingCoolingMode;
 @property(readonly, nonatomic) NSString *formattedTemperature; // @synthesize formattedTemperature=_formattedTemperature;
 @property(readonly, nonatomic) NSString *imageIdentifier; // @synthesize imageIdentifier=_imageIdentifier;
+@property(readonly, nonatomic) BOOL shouldForceLTR; // @synthesize shouldForceLTR=_shouldForceLTR;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly) unsigned long long hash;

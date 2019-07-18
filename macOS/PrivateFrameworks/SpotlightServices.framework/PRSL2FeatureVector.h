@@ -49,7 +49,7 @@
 - (id)_dictionaryRepresentationWithoutDefaultValues:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (void)setScores:(float *)arg1 forFeatures:(unsigned short *)arg2 count:(unsigned long long)arg3;
-- (float *)getAllScores:(float [1202])arg1;
+- (float *)getAllScores:(float [1235])arg1;
 - (float)scoreForFeature:(unsigned short)arg1;
 @property(readonly, nonatomic) BOOL receiverIsVip;
 @property(readonly, nonatomic) BOOL senderIsVip;

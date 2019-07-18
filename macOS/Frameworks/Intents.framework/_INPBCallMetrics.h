@@ -15,10 +15,12 @@
 @interface _INPBCallMetrics : PBCodable <_INPBCallMetrics, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBCallMetricsValue *_value;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBCallMetricsValue *value; // @synthesize value=_value;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

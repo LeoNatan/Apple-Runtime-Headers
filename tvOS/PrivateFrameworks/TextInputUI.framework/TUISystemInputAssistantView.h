@@ -15,6 +15,7 @@
 @interface TUISystemInputAssistantView : UIView <TUIAssistantButtonBarViewDelegate, TUISystemInputAssistantPageViewDelegate>
 {
     _Bool _buttonBarItemsExpanded;
+    _Bool _needsValidation;
     int _needsValidationGuard;
     _Bool _backgroundVisible;
     _Bool _centerViewHidden;
@@ -28,6 +29,7 @@
     UIView *_centerView;
     double _centerViewWidth;
     UITextInputAssistantItem *_inputAssistantItem;
+    UITextInputAssistantItem *_systemInputAssistantItem;
     TUIAssistantButtonBarView *_leftButtonBar;
     TUIAssistantButtonBarView *_rightButtonBar;
     TUIAssistantButtonBarView *_unifiedButtonBar;
@@ -40,6 +42,7 @@
 @property(retain, nonatomic) TUIAssistantButtonBarView *unifiedButtonBar; // @synthesize unifiedButtonBar=_unifiedButtonBar;
 @property(retain, nonatomic) TUIAssistantButtonBarView *rightButtonBar; // @synthesize rightButtonBar=_rightButtonBar;
 @property(retain, nonatomic) TUIAssistantButtonBarView *leftButtonBar; // @synthesize leftButtonBar=_leftButtonBar;
+@property(retain, nonatomic) UITextInputAssistantItem *systemInputAssistantItem; // @synthesize systemInputAssistantItem=_systemInputAssistantItem;
 @property(retain, nonatomic) UITextInputAssistantItem *inputAssistantItem; // @synthesize inputAssistantItem=_inputAssistantItem;
 @property(nonatomic) _Bool showsButtonBarItemsInline; // @synthesize showsButtonBarItemsInline=_showsButtonBarItemsInline;
 @property(nonatomic) _Bool hidesExpandableButton; // @synthesize hidesExpandableButton=_hidesExpandableButton;
@@ -53,6 +56,10 @@
 @property(retain, nonatomic) UIKBVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIKBRenderConfig *renderConfig; // @synthesize renderConfig=_renderConfig;
 - (void).cxx_destruct;
+- (id)_hostedCenterView;
+- (void)_exchangeCenterViewIfNecessaryForCompatibility;
+- (_Bool)_shouldHostCenterViewOutsidePageView;
+- (_Bool)_swiftPlaygroundsWorkaroundEnabled;
 - (void)assistantPageView:(id)arg1 didSwitchToSecondaryViewVisible:(_Bool)arg2;
 - (void)assistantButtonBarView:(id)arg1 wantsToShowCollapsedItemGroup:(id)arg2 fromButton:(id)arg3;
 - (void)layoutSubviews;

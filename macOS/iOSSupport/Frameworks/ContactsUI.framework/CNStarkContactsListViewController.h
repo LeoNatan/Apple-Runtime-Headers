@@ -28,7 +28,6 @@
 @property(retain, nonatomic) NSArray *displayedContactProperties; // @synthesize displayedContactProperties=_displayedContactProperties;
 - (void).cxx_destruct;
 - (void)contactListViewController:(id)arg1 didSelectContact:(id)arg2;
-- (BOOL)contactListViewController:(id)arg1 canSelectContact:(id)arg2;
 - (id)contactListStyleApplier;
 - (void)showContactListTableView;
 - (void)showOverlayView;

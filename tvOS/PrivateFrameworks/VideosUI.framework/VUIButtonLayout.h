@@ -6,7 +6,7 @@
 
 #import <TVMLKit/TVViewLayout.h>
 
-@class TVImageLayout, VUITextLayout;
+@class NSShadow, TVImageLayout, VUITextLayout;
 
 __attribute__((visibility("hidden")))
 @interface VUIButtonLayout : TVViewLayout
@@ -16,11 +16,13 @@ __attribute__((visibility("hidden")))
     double _cornerRadius;
     VUITextLayout *_titleLayout;
     TVImageLayout *_imageLayout;
+    NSShadow *_shadow;
     struct CGPoint _contentMotionTranslation;
 }
 
 + (id)standardTitleLayoutWithStyle:(unsigned long long)arg1;
 @property(readonly, nonatomic) struct CGPoint contentMotionTranslation; // @synthesize contentMotionTranslation=_contentMotionTranslation;
+@property(retain, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;
 @property(retain, nonatomic) TVImageLayout *imageLayout; // @synthesize imageLayout=_imageLayout;
 @property(retain, nonatomic) VUITextLayout *titleLayout; // @synthesize titleLayout=_titleLayout;
 @property(readonly, nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;

@@ -10,6 +10,7 @@
 {
 }
 
+- (BOOL)shouldUseDeleteAndAddInsteadOfMoveBetweenCalendars;
 - (BOOL)requiresOpeningAttachmentAsLink;
 - (id)supportedCalendarComponentSets;
 - (id)type;

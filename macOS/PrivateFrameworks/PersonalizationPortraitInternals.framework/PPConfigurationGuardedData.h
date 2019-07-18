@@ -37,7 +37,6 @@
     float scoreThresholdForTopic;
     float scoreThresholdForLocation;
     float feedbackSessionLogsSamplingRate;
-    float feedbackSessionLogsMappedTopicsSamplingRate;
     float feedbackSessionLogsExtractionsSamplingRate;
     int feedbackSessionLogsGeohashLength;
     double analyticsTopicsSamplingRate;

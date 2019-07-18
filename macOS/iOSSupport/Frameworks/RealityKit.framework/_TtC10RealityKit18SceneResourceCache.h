@@ -8,8 +8,8 @@
 
 @interface _TtC10RealityKit18SceneResourceCache : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: bundle
-    // Error parsing type: , name: assetBundleCache
+    // Error parsing type: , name: entriesByURL
+    // Error parsing type: , name: lockQueue
 }
 
 @end

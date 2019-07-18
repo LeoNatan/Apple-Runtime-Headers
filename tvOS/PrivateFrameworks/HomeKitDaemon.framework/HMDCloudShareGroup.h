@@ -34,6 +34,7 @@
 - (void)shareOnlyDeleteCloudRecord:(id)arg1;
 - (void)shareOnlyUpdateCloudRecord:(id)arg1;
 - (void)deleteCloudRecord:(id)arg1;
+- (void)deleteCloudRecordNames:(id)arg1;
 - (void)updateCloudRecord:(id)arg1;
 - (void)addCloudRecord:(id)arg1;
 - (id)cloudRecordWithObjectID:(id)arg1;

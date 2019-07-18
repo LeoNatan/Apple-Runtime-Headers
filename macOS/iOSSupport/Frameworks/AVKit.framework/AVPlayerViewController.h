@@ -226,6 +226,7 @@
 - (BOOL)prefersHomeIndicatorAutoHidden;
 - (long long)preferredStatusBarStyle;
 - (BOOL)prefersStatusBarHidden;
+- (long long)preferredInterfaceOrientationForPresentation;
 - (BOOL)modalPresentationCapturesStatusBarAppearance;
 - (long long)preferredWhitePointAdaptivityStyle;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;

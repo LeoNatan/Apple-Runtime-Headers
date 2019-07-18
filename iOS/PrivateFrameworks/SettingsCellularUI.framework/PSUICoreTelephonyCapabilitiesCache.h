@@ -9,10 +9,12 @@
 #import <SettingsCellularUI/CoreTelephonyClientCapabilitiesDelegate-Protocol.h>
 
 @class CoreTelephonyClient, NSMutableDictionary, NSString;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface PSUICoreTelephonyCapabilitiesCache : NSObject <CoreTelephonyClientCapabilitiesDelegate>
 {
+    NSObject<OS_dispatch_queue> *_queue;
     CoreTelephonyClient *_client;
     NSMutableDictionary *_volteCapabilityDict;
     NSMutableDictionary *_volteCapabilityInfoDict;

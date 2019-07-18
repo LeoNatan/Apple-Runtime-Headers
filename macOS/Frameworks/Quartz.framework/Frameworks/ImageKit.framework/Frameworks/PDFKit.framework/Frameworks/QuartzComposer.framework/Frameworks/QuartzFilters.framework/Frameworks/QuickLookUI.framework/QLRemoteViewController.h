@@ -23,6 +23,7 @@
 @property(copy) NSString *serviceViewControllerClass; // @synthesize serviceViewControllerClass=_serviceViewControllerClass;
 @property(copy) NSString *serviceName; // @synthesize serviceName=_serviceName;
 - (void).cxx_destruct;
+- (void)updateFullScreenFromMagnification:(double)arg1;
 - (void)doubleClickOnPreviewContent;
 - (id)exportedInterface;
 - (id)serviceViewControllerInterface;

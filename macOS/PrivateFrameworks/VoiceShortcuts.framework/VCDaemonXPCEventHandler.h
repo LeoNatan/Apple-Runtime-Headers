@@ -16,7 +16,6 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-+ (void)initialize;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSMapTable *observers; // @synthesize observers=_observers;
 @property(readonly, copy, nonatomic) NSArray *streams; // @synthesize streams=_streams;

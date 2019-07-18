@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MKMapSnapshotOptions, NSString, NSXPCConnection, VKMapSnapshotCreator;
+@class MKMapSnapshotOptions, NSXPCConnection, VKMapSnapshotCreator;
 @protocol OS_dispatch_queue;
 
 @interface MKMapSnapshotter : NSObject
@@ -18,8 +18,6 @@
     VKMapSnapshotCreator *_snapshotCreator;
     _Bool _needsResume;
     NSXPCConnection *_snapshotService;
-    NSString *_contentSizeCategory;
-    struct os_unfair_lock_s _contentSizeCategoryLock;
 }
 
 - (void).cxx_destruct;
@@ -35,7 +33,6 @@
 - (void)_cancel;
 - (void)_exitBackground:(id)arg1;
 - (void)_enterBackground:(id)arg1;
-- (void)_preferredContentSizeChanged:(id)arg1;
 - (void)dealloc;
 - (id)initWithOptions:(id)arg1;
 - (id)init;

@@ -20,14 +20,12 @@
 }
 
 + (_Bool)prefersApplicationAudioSession;
-+ (Class)playlistManagerClass;
 @property(retain, nonatomic) NSMutableSet *failedItemsIdentifiers; // @synthesize failedItemsIdentifiers=_failedItemsIdentifiers;
 @property(nonatomic) __weak MPAVItem *firstPlaybackErrorItem; // @synthesize firstPlaybackErrorItem=_firstPlaybackErrorItem;
 @property(nonatomic) _Bool allowsNewPlaybackErrorItem; // @synthesize allowsNewPlaybackErrorItem=_allowsNewPlaybackErrorItem;
 @property(nonatomic, getter=hasPlayedSuccessfully) _Bool playedSuccessfully; // @synthesize playedSuccessfully=_playedSuccessfully;
 @property(readonly, nonatomic) __weak MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 - (void).cxx_destruct;
-- (void)_playbackUserDefaultsEQPresetDidChangeNotification:(id)arg1;
 - (void)_setState:(long long)arg1;
 - (void)_itemDidChange:(id)arg1;
 - (void)_itemWillChange:(id)arg1;
@@ -37,10 +35,11 @@
 - (void)_configureAudioSession;
 - (void)playbackHasStartedForItem:(id)arg1;
 - (void)handlePlaybackErrorWithUserInfo:(id)arg1;
+- (void)queueController:(id)arg1 didChangeShuffleType:(long long)arg2;
+- (void)queueController:(id)arg1 didChangeRepeatType:(long long)arg2;
+- (void)_playbackUserDefaultsEQPresetDidChangeNotification:(id)arg1;
 - (void)_networkPolicyItemCellularRestrictedNotification:(id)arg1;
 - (void)updateAudioSession;
-- (void)setShuffleType:(long long)arg1;
-- (void)setRepeatType:(long long)arg1;
 - (void)endPlayback;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithPlaybackEngine:(id)arg1 options:(unsigned long long)arg2;

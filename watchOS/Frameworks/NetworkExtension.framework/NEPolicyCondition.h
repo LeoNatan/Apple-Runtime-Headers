@@ -35,6 +35,7 @@
 + (id)flowRemoteAddressEmpty;
 + (id)flowLocalAddressEmpty;
 + (id)usesModernNetworkAPI;
++ (id)isListener;
 + (id)isInbound;
 + (id)clientProhibitsExpensive;
 + (id)clientProhibitsContrained;

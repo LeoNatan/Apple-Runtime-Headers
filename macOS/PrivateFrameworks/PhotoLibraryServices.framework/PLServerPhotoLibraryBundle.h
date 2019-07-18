@@ -8,14 +8,12 @@
 
 #import <PhotoLibraryServices/NSFilePresenter-Protocol.h>
 
-@class NSError, NSOperationQueue, NSSet, NSString, NSURL, PLBackgroundJobService;
+@class NSOperationQueue, NSSet, NSString, NSURL, PLBackgroundJobService;
 
 @interface PLServerPhotoLibraryBundle : PLPhotoLibraryBundle <NSFilePresenter>
 {
     Class _libraryServicesDelegateClass;
     PLBackgroundJobService *_backgroundJobService;
-    struct os_unfair_lock_s _lock;
-    NSError *_shutdownReason;
     NSOperationQueue *_presentedItemOperationQueue;
 }
 

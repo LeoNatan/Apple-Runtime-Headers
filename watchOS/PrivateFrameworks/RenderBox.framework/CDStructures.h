@@ -61,7 +61,7 @@ struct Clip;
 
 struct ContextDelegate {
     float _field1;
-    int _field2;
+    struct vector<RB::ContextDelegate::Layer, std::__1::allocator<RB::ContextDelegate::Layer>> _field2;
     struct objc_ptr<RBShape *> _field3;
     struct objc_ptr<RBFill *> _field4;
     id _field5;
@@ -92,7 +92,7 @@ struct Device {
     struct Table<const RB::FormattedRenderState *, const RB::Device::RenderPipelineEntry *> _field19;
     struct objc_ptr<id<MTLSamplerState>> _field20[6];
     struct objc_ptr<id<MTLDepthStencilState>> _field21[3][6];
-    struct Table<unsigned int, RB::Texture *> _field22;
+    struct Table<unsigned long, RB::Texture *> _field22;
     struct unique_ptr<RB::GlyphMaskCache, std::__1::default_delete<RB::GlyphMaskCache>> _field23;
     struct unique_ptr<RB::GlyphPathCache, std::__1::default_delete<RB::GlyphPathCache>> _field24;
     struct CGGlyphLock *_field25;
@@ -216,7 +216,7 @@ struct Table<const RB::RenderFrame::RegionKey *, const RB::RenderFrame::RegionEn
     _Bool _field12;
 };
 
-struct Table<unsigned int, RB::Texture *> {
+struct Table<unsigned long, RB::Texture *> {
     CDUnknownFunctionPointerType _field1;
     CDUnknownFunctionPointerType _field2;
     CDUnknownFunctionPointerType _field3;
@@ -437,6 +437,14 @@ struct unique_ptr<RB::RenderQueue, std::__1::default_delete<RB::RenderQueue>> {
     } _field1;
 };
 
+struct vector<RB::ContextDelegate::Layer, std::__1::allocator<RB::ContextDelegate::Layer>> {
+    struct Layer *_field1;
+    struct Layer *_field2;
+    struct __compressed_pair<RB::ContextDelegate::Layer *, std::__1::allocator<RB::ContextDelegate::Layer>> {
+        struct Layer *_field1;
+    } _field3;
+};
+
 struct vector<RB::refcounted_ptr<(anonymous namespace)::Surface>, std::__1::allocator<RB::refcounted_ptr<(anonymous namespace)::Surface>>> {
     struct refcounted_ptr<(anonymous namespace)::Surface> *__begin_;
     struct refcounted_ptr<(anonymous namespace)::Surface> *__end_;
@@ -493,4 +501,9 @@ typedef struct {
     float blue;
     float alpha;
 } CDStruct_0b1c536a;
+
+typedef struct {
+    int _field1;
+    void *_field2;
+} CDStruct_27041886;
 

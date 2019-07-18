@@ -54,6 +54,7 @@
 - (void)logoff;
 - (void)login:(struct smb_login_out *)arg1 asUser:(id)arg2 withPassword:(id)arg3 inRealm:(id)arg4 callBack:(CDUnknownBlockType)arg5;
 - (void)disconnect;
+- (void)negotiateTo:(id)arg1 netBIOSname:(id)arg2 port:(unsigned short)arg3 withTimeOut:(unsigned int)arg4 outParameters:(struct smb_negotiate *)arg5 callBack:(CDUnknownBlockType)arg6;
 - (void)negotiateTo:(id)arg1 netBIOSname:(id)arg2 port:(unsigned short)arg3 outParameters:(struct smb_negotiate *)arg4 callBack:(CDUnknownBlockType)arg5;
 - (void)negotiateTo:(id)arg1 netBIOSname:(id)arg2 outParameters:(struct smb_negotiate *)arg3 callBack:(CDUnknownBlockType)arg4;
 - (void)negotiateTo:(id)arg1 netBIOSname:(id)arg2 withVPNCookie:(id)arg3 outParameters:(struct smb_negotiate *)arg4 callBack:(CDUnknownBlockType)arg5;

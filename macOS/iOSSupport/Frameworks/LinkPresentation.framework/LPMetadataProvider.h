@@ -17,12 +17,14 @@
     unsigned int _loggingID;
     WKWebView *_webView;
     NSURL *_URL;
+    NSURL *_originalURL;
     NSTimer *_watchdog;
     NSObject<OS_dispatch_semaphore> *_completionSemaphore;
     LPLinkMetadata *_metadata;
     BOOL _complete;
     BOOL _fetchingFromExistingWebView;
     BOOL _hasStartedFetching;
+    BOOL _hasEverStartedFetchingMetadataFromWebView;
     BOOL _useSpecializedProviders;
     unsigned long long _allowedSpecializedProviders;
     NSObject<OS_dispatch_group> *_subresourceFetchGroup;

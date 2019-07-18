@@ -44,7 +44,6 @@ __attribute__((visibility("hidden")))
 - (id)wordRangeBeforePosition:(id)arg1;
 - (id)characterMarkerAfterPosition:(id)arg1;
 - (id)characterMarkerBeforePosition:(id)arg1;
-- (BOOL)performBrailleRouterActionWithIndex:(unsigned long long)arg1 outputRequest:(id)arg2;
 - (void)readCurrentParagraph:(id)arg1;
 - (void)readCurrentSentence:(id)arg1;
 - (BOOL)readPreviousParagraph:(id)arg1;

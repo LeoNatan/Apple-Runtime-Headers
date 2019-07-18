@@ -69,6 +69,7 @@
 - (id)dataTaskWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)dataTaskWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)dataTaskWithURL:(id)arg1;
+- (id)dataTaskWithRequest:(id)arg1 uniqueIdentifier:(id)arg2;
 - (id)dataTaskWithRequest:(id)arg1;
 - (id)_dataTaskWithTaskForClass:(id)arg1;
 - (void)getAllTasksWithCompletionHandler:(CDUnknownBlockType)arg1;

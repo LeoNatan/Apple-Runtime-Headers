@@ -7,7 +7,7 @@
 @class CSLSBacklightAssertionBase;
 
 @protocol CSLSBacklightAssertionProvider
-- (void)releaseBacklightAssertion:(CSLSBacklightAssertionBase *)arg1;
-- (void)takeBacklightAssertion:(CSLSBacklightAssertionBase *)arg1;
+- (void)releaseBacklightAssertion:(CSLSBacklightAssertionBase *)arg1 completion:(void (^)(void))arg2;
+- (void)takeBacklightAssertion:(CSLSBacklightAssertionBase *)arg1 completion:(void (^)(void))arg2;
 @end
 

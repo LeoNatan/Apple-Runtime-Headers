@@ -9,7 +9,7 @@
 #import <CoreUtils/CXCallObserverDelegate-Protocol.h>
 #import <CoreUtils/FMFSessionDelegate-Protocol.h>
 
-@class CUBluetoothClient, CUNetInterfaceMonitor, CUSystemMonitor, CUWiFiManager, CXCallObserver, NSArray, NSData, NSString;
+@class CUBluetoothClient, CUNetInterfaceMonitor, CUSystemMonitor, CUWiFiManager, CXCallObserver, NSArray, NSData, NSMutableArray, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
     int _connectedCallCount;
     unsigned int _consoleUserID;
     NSString *_consoleUserName;
-    struct __SCDynamicStore *_consoleUserStore;
     BOOL _familyFailed;
     NSArray *_familyMembers;
     BOOL _familyObserving;
@@ -48,6 +47,7 @@ __attribute__((visibility("hidden")))
     NSString *_primaryNetworkSignature;
     int _powerSourceToken;
     BOOL _powerUnlimited;
+    NSString *_primaryAppleID;
     BOOL _primaryAppleIDActive;
     BOOL _primaryAppleIDIsHSA2;
     int _primaryAppleIDNotifyToken;
@@ -62,6 +62,13 @@ __attribute__((visibility("hidden")))
     struct IONotificationPort *_screenNotificationPort;
     unsigned int _screenNotification;
     BOOL _screenSaverActive;
+    BOOL _scChangesPending;
+    struct __SCDynamicStore *_scDynamicStore;
+    NSMutableArray *_scInitialKeys;
+    NSString *_scKeyConsoleUser;
+    NSString *_scKeySystemName;
+    NSArray *_scNotificationKeys;
+    NSString *_systemName;
     int _systemLockState;
     int _systemLockStateToken;
     BOOL _firstUnlocked;
@@ -81,6 +88,11 @@ __attribute__((visibility("hidden")))
 - (void)_systemLockStateUpdate:(BOOL)arg1;
 - (void)_systemLockStateMonitorStop;
 - (void)_systemLockStateMonitorStart;
+- (void)_systemConfigSystemNameChanged:(BOOL)arg1;
+- (void)_systemConfigConsoleUserChanged:(BOOL)arg1;
+- (void)_systemConfigChanged:(id)arg1 initial:(BOOL)arg2;
+- (void)_systemConfigUpdateNotifications;
+- (void)_systemConfigUpdateKeyPtr:(id *)arg1 name:(id)arg2 enabled:(BOOL)arg3 creator:(CDUnknownBlockType)arg4;
 - (void)_screenSaverMonitorStop;
 - (void)_screenSaverMonitorStart;
 - (void)_screenChanged:(BOOL)arg1;
@@ -112,9 +124,6 @@ __attribute__((visibility("hidden")))
 - (void)_familyGetMembers:(BOOL)arg1;
 - (void)_familyMonitorStop;
 - (void)_familyMonitorStart;
-- (void)_consoleUserChanged;
-- (void)_consoleUserMonitorStop;
-- (void)_consoleUserMonitorStart;
 - (int)_connectedCallCountUnached;
 - (int)_activeCallCountUnached;
 - (void)callObserver:(id)arg1 callChanged:(id)arg2;

@@ -20,6 +20,7 @@
     _Bool _hasPlaceholder;
     _Bool _shouldAllowFocus;
     PXImageRequester *_imageRequester;
+    double _cornerRadius;
     UIColor *_placeholderColor;
     UIImage *_placeholderImage;
     struct CGSize __contentSize;
@@ -31,6 +32,7 @@
 @property(nonatomic) _Bool shouldAllowFocus; // @synthesize shouldAllowFocus=_shouldAllowFocus;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(retain, nonatomic) UIColor *placeholderColor; // @synthesize placeholderColor=_placeholderColor;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) PXImageRequester *imageRequester; // @synthesize imageRequester=_imageRequester;
 - (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;

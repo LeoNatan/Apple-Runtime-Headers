@@ -8,7 +8,7 @@
 
 #import <HealthRecordsUI/WDMedicalRecordSummarizable-Protocol.h>
 
-@class HKHealthRecordsStore, NSArray, NSMutableOrderedSet, NSString;
+@class HKConceptStore, HKHealthRecordsStore, NSArray, NSMutableOrderedSet, NSString;
 @protocol OS_dispatch_queue, WDMedicalRecordSummaryDelegate;
 
 __attribute__((visibility("hidden")))
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     _Bool _dirty;
     id <WDMedicalRecordSummaryDelegate> _delegate;
     HKHealthRecordsStore *_healthRecordsStore;
+    HKConceptStore *_conceptStore;
     NSMutableOrderedSet *_allRecords;
     NSArray *_allDisplayItems;
     NSObject<OS_dispatch_queue> *_summaryQueue;
@@ -28,10 +29,11 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *summaryQueue; // @synthesize summaryQueue=_summaryQueue;
 @property(retain, nonatomic) NSArray *allDisplayItems; // @synthesize allDisplayItems=_allDisplayItems;
 @property(retain, nonatomic) NSMutableOrderedSet *allRecords; // @synthesize allRecords=_allRecords;
+@property(retain, nonatomic) HKConceptStore *conceptStore; // @synthesize conceptStore=_conceptStore;
 @property(retain, nonatomic) HKHealthRecordsStore *healthRecordsStore; // @synthesize healthRecordsStore=_healthRecordsStore;
 @property(nonatomic) __weak id <WDMedicalRecordSummaryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_updatePlacementForDisplayItems:(id)arg1;
+- (void)_updatePlacementForDisplayItems:(id)arg1 ofRecord:(id)arg2;
 - (void)_displayItemsForGenericMedicalRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_displayItemsForObservation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_displayItemsForRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;

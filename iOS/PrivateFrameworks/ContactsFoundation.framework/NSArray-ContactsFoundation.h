@@ -28,6 +28,7 @@
 - (id)_cn_flatten;
 - (id)_cn_distinctObjects;
 - (id)_cn_indicesForObjects:(id)arg1;
+- (_Bool)_cn_containsObject:(id)arg1;
 - (_Bool)_cn_none:(CDUnknownBlockType)arg1;
 - (_Bool)_cn_any:(CDUnknownBlockType)arg1;
 - (_Bool)_cn_all:(CDUnknownBlockType)arg1;

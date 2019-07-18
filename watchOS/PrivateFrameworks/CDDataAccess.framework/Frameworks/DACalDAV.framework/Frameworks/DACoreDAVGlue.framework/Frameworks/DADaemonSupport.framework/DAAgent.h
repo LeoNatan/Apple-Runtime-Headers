@@ -25,6 +25,7 @@
 @property(retain, nonatomic) DAAccount *account; // @synthesize account=_account;
 @property(nonatomic) _Bool isMonitoring; // @synthesize isMonitoring=_isMonitoring;
 - (void).cxx_destruct;
+- (id)description;
 - (id)getDAAccount;
 - (void)processMeetingRequestDatas:(id)arg1 deliveryIdsToClear:(id)arg2 deliveryIdsToSoftClear:(id)arg3 inFolderWithId:(id)arg4 callback:(CDUnknownBlockType)arg5;
 - (void)syncFolderIDs:(id)arg1 forDataclasses:(int)arg2 isUserRequested:(_Bool)arg3;

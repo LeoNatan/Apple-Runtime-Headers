@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet, NSSet;
+@class NSMutableSet, NSSet, WiFiLexicon;
 @protocol OS_dispatch_queue, WiFiLocationProvider, WiFiScanProvider;
 
 @interface WiFiAvailabilityEngine : NSObject
@@ -19,8 +19,10 @@
     id <WiFiScanProvider> _scanProvider;
     id <WiFiLocationProvider> _locationProvider;
     NSObject<OS_dispatch_queue> *_queue;
+    WiFiLexicon *_wifiLexicon;
 }
 
+@property(retain, nonatomic) WiFiLexicon *wifiLexicon; // @synthesize wifiLexicon=_wifiLexicon;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <WiFiLocationProvider> locationProvider; // @synthesize locationProvider=_locationProvider;
 @property(nonatomic) __weak id <WiFiScanProvider> scanProvider; // @synthesize scanProvider=_scanProvider;
@@ -36,7 +38,7 @@
 - (void)_handleWalletRelevancyAdded:(id)arg1 removed:(id)arg2;
 - (void)_handleScanResultCallback:(id)arg1 error:(id)arg2;
 - (void)_handlePotentialCandidatesMatches:(id)arg1;
-- (id)_findPotentialCandidatesMatchingScanResultNetwork:(id)arg1;
+- (id)_findPotentialCandidatesMatchingScanResultNetwork:(id)arg1 previouslyMatched:(char *)arg2;
 - (void)_removePotentialCandidateNetwork:(id)arg1;
 - (void)_addPotentialCandidateNetwork:(id)arg1;
 - (void)_setupSourceCallbacks:(id)arg1;

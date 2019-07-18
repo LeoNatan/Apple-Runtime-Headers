@@ -40,7 +40,7 @@
 - (id)_instantiateViewControllerWithIdentifier:(id)arg1 creator:(CDUnknownBlockType)arg2 storyboardSegueTemplate:(id)arg3 sender:(id)arg4;
 - (id)instantiateViewControllerWithIdentifier:(id)arg1;
 - (id)instantiateViewControllerWithIdentifier:(id)arg1 creator:(CDUnknownBlockType)arg2;
-- (id)_instantiateInitialCommandMenu;
+- (id)_instantiateInitialMenu;
 - (id)_instantiateViewControllerReferencedByPlaceholderWithIdentifier:(id)arg1 storyboardSegueTemplate:(id)arg2 sender:(id)arg3;
 - (id)referencedStoryboardForExternalReferenceInfo:(id)arg1;
 - (id)nibForViewControllerWithIdentifier:(id)arg1;

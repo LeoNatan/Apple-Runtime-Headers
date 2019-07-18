@@ -11,15 +11,20 @@
 @protocol NoteHTMLEditorViewDelegate <NSObject>
 
 @optional
+- (void)noteHTMLEditorView:(NoteHTMLEditorView *)arg1 didInvokeStyleFormattingOption:(long long)arg2;
+- (void)noteHTMLEditorView:(NoteHTMLEditorView *)arg1 didInvokeFormattingCalloutOption:(long long)arg2;
+- (void)noteHTMLEditorViewNeedsContentReload:(NoteHTMLEditorView *)arg1;
+- (_Bool)isNoteManagedForNoteHTMLEditorView:(NoteHTMLEditorView *)arg1;
 - (NoteAttachmentPresentation *)noteHTMLEditorView:(NoteHTMLEditorView *)arg1 attachmentPresentationForContentID:(NSString *)arg2;
 - (NSURL *)noteHTMLEditorView:(NoteHTMLEditorView *)arg1 fileURLForAttachmentWithContentID:(NSString *)arg2;
+- (void)noteHTMLEditorView:(NoteHTMLEditorView *)arg1 openURL:(NSURL *)arg2;
 - (void)noteHTMLEditorViewDidChangeSelection:(NoteHTMLEditorView *)arg1;
 - (void)noteHTMLEditorViewDidChange:(NoteHTMLEditorView *)arg1;
 - (void)noteHTMLEditorViewWillChange:(NoteHTMLEditorView *)arg1;
 - (void)noteHTMLEditorViewDidEndEditing:(NoteHTMLEditorView *)arg1;
 - (void)noteHTMLEditorViewDidBeginEditing:(NoteHTMLEditorView *)arg1;
-- (_Bool)noteHTMLEditorViewShouldEndEditing:(NoteHTMLEditorView *)arg1;
 - (_Bool)noteHTMLEditorViewShouldBeginEditing:(NoteHTMLEditorView *)arg1 isUserInitiated:(_Bool)arg2;
-- (void)noteHTMLEditorView:(NoteHTMLEditorView *)arg1 didAddAttachmentItemProviders:(NSArray *)arg2;
+- (void)noteHTMLEditorView:(NoteHTMLEditorView *)arg1 addAttachmentItemProviders:(NSArray *)arg2;
+- (_Bool)noteHTMLEditorView:(NoteHTMLEditorView *)arg1 canAddAttachmentItemProviders:(NSArray *)arg2;
 @end
 

@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <ContactsUI/CNMeCardSharingAvatarImageDataProvider-Protocol.h>
 #import <ContactsUI/CNMeCardSharingAvatarProvider-Protocol.h>
 
-@class CNAvatarImageRenderer, CNContact, NSString;
+@class CNAvatarImageRenderer, CNContact, NSData, NSString;
 
-@interface CNMeCardSharingContactAvatarProvider : NSObject <CNMeCardSharingAvatarProvider>
+@interface CNMeCardSharingContactAvatarProvider : NSObject <CNMeCardSharingAvatarProvider, CNMeCardSharingAvatarImageDataProvider>
 {
     CNContact *_contact;
     CNAvatarImageRenderer *_renderer;
@@ -20,6 +21,9 @@
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
 - (void)generateAvatarImageOfSize:(struct CGSize)arg1 imageHandler:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) NSData *thumbnailImageData;
+@property(readonly, nonatomic) struct CGRect cropRect;
+@property(readonly, nonatomic) NSData *imageData;
 - (id)initWithContact:(id)arg1;
 
 // Remaining properties

@@ -118,6 +118,7 @@
 @property(readonly, nonatomic) AXElement *elementParent;
 @property(readonly, nonatomic) int pid;
 @property(readonly, nonatomic) NSDictionary *semanticContext;
+- (BOOL)eligibleForIconVision;
 - (BOOL)setNativeFocus;
 - (BOOL)viewHierarchyHasNativeFocus;
 @property(readonly, nonatomic, getter=isNativeFocused) BOOL nativeFocus;

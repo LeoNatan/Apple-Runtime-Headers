@@ -22,8 +22,13 @@
     RUIChoiceViewElement *_target;
     RUIElement *_header;
     RUISubHeaderElement *_subHeader;
+    struct UIEdgeInsets _customSafeAreaInsets;
 }
 
+@property(nonatomic) struct UIEdgeInsets customSafeAreaInsets; // @synthesize customSafeAreaInsets=_customSafeAreaInsets;
+@property(readonly, nonatomic) UIView *buttonTray; // @synthesize buttonTray=_buttonTray;
+@property(readonly, nonatomic) UIButton *smallChoice; // @synthesize smallChoice=_smallChoice;
+@property(readonly, nonatomic) UIButton *bigChoice; // @synthesize bigChoice=_bigChoice;
 @property(nonatomic) _Bool usesTwoButtonLayout; // @synthesize usesTwoButtonLayout=_usesTwoButtonLayout;
 @property(retain, nonatomic) RUISubHeaderElement *subHeader; // @synthesize subHeader=_subHeader;
 @property(retain, nonatomic) RUIElement *header; // @synthesize header=_header;

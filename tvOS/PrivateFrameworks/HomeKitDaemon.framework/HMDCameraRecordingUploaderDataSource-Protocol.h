@@ -6,10 +6,11 @@
 
 #import <HomeKitDaemon/NSObject-Protocol.h>
 
-@class CKStreamingAssetAppendContext, HMFTimer, NSData, NSURL;
+@class CKStreamingAssetAppendContext, HMDCameraRecordingUploadOperationEvent, HMFTimer, NSData, NSURL;
 
 @protocol HMDCameraRecordingUploaderDataSource <NSObject>
 @property(readonly, copy) NSURL *storeDirectoryURL;
+- (void)submitOperationEvent:(HMDCameraRecordingUploadOperationEvent *)arg1;
 - (HMFTimer *)timerWithTimeInterval:(double)arg1 options:(unsigned long long)arg2;
 - (void)appendData:(NSData *)arg1 toStreamingAssetAppendContext:(CKStreamingAssetAppendContext *)arg2 completion:(void (^)(CKStreamingAsset *, NSError *))arg3;
 - (_Bool)removeItemAtURL:(NSURL *)arg1 error:(id *)arg2;

@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
     BOOL _defaultAnimation;
     BOOL _sourceAnimation;
     BOOL _hasStartedSpringAnimation;
-    BOOL _springBoardStyle;
     BOOL _midwayToTarget;
     BOOL _almostToTarget;
     BOOL _reparentingCrossfadeComplete;
@@ -68,7 +67,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL reparentingCrossfadeComplete; // @synthesize reparentingCrossfadeComplete=_reparentingCrossfadeComplete;
 @property(nonatomic) BOOL almostToTarget; // @synthesize almostToTarget=_almostToTarget;
 @property(nonatomic) BOOL midwayToTarget; // @synthesize midwayToTarget=_midwayToTarget;
-@property(nonatomic) BOOL springBoardStyle; // @synthesize springBoardStyle=_springBoardStyle;
 @property(nonatomic) BOOL hasStartedSpringAnimation; // @synthesize hasStartedSpringAnimation=_hasStartedSpringAnimation;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) UIViewPropertyAnimator *propertyAnimator; // @synthesize propertyAnimator=_propertyAnimator;
@@ -91,6 +89,7 @@ __attribute__((visibility("hidden")))
 - (void)updateDroppedItem:(id)arg1;
 - (void)updateTargetedDropPreview:(id)arg1;
 - (void)updateAnimationTargeting;
+@property(readonly, nonatomic) long long previewMode;
 - (BOOL)needsReparenting;
 - (CDUnknownBlockType)animationCompletionHandler;
 - (void)performSpringAnimations:(CDUnknownBlockType)arg1;

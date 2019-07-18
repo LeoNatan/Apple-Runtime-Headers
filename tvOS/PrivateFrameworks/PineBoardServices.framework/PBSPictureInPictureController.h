@@ -9,7 +9,7 @@
 #import <PineBoardServices/PBSPictureInPictureDelegateServiceInterface-Protocol.h>
 
 @class NSHashTable, NSString, PBSPictureInPictureServiceProxy, PBSPictureInPictureState;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, PBSPictureInPicturePlaybackDelegate;
 
 @interface PBSPictureInPictureController : NSObject <PBSPictureInPictureDelegateServiceInterface>
 {
@@ -18,21 +18,27 @@
     NSObject<OS_dispatch_queue> *_observerQueue;
     NSHashTable *_observers;
     PBSPictureInPictureState *_currentState;
+    id <PBSPictureInPicturePlaybackDelegate> _playbackDelegate;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) __weak id <PBSPictureInPicturePlaybackDelegate> playbackDelegate; // @synthesize playbackDelegate=_playbackDelegate;
 @property(retain, nonatomic) PBSPictureInPictureState *currentState; // @synthesize currentState=_currentState;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *observerQueue; // @synthesize observerQueue=_observerQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(readonly, nonatomic) PBSPictureInPictureServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 - (void).cxx_destruct;
+- (void)_notifyObserversPictureInPictureShouldMute:(_Bool)arg1;
 - (void)_handleStateChange:(id)arg1 error:(id)arg2;
 - (void)_configureRemoteProxy:(id)arg1;
+- (void)pictureInPictureService:(id)arg1 didSendPlaybackCommand:(unsigned long long)arg2;
+- (void)pictureInPictureService:(id)arg1 didRequestMute:(_Bool)arg2;
 - (void)pictureInPictureServiceDidUpdateState:(id)arg1;
+- (void)applyPictureInPictureInsetsValue:(id)arg1 fromSource:(id)arg2 withAnimationSettings:(id)arg3 usingAnimationFence:(id)arg4;
+- (void)mutePictureInPicture:(_Bool)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (void)applyPictureInPictureInsetsValue:(id)arg1 fromSource:(id)arg2 withAnimationSettings:(id)arg3 usingAnimationFence:(id)arg4;
 - (void)cancelPictureInPicture;
 - (id)_init;
 - (id)init;

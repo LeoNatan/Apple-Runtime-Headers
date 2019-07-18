@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     _Bool mShadowOnChildrenDisabled;
     struct CGContext *mCommittedPathContext;
     struct CGImage *mCommittedPathImage;
+    struct CGRect mCommittedPathImageUnscaledRect;
     struct _NSRange mCommittedPointRange;
     struct _NSRange mAvailableToCommitPointRange;
     unsigned int mOverrideState:2;

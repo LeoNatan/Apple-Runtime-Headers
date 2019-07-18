@@ -6,10 +6,18 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class _INPBTask;
+@class NSString, _INPBTask;
 
 @protocol _INPBSetTaskAttributeIntentResponse <NSObject>
+@property(readonly, nonatomic) unsigned long long warningsCount;
+@property(readonly, nonatomic) int *warnings;
 @property(readonly, nonatomic) _Bool hasModifiedTask;
 @property(retain, nonatomic) _INPBTask *modifiedTask;
+- (int)StringAsWarnings:(NSString *)arg1;
+- (NSString *)warningsAsString:(int)arg1;
+- (void)setWarnings:(int *)arg1 count:(unsigned long long)arg2;
+- (int)warningsAtIndex:(unsigned long long)arg1;
+- (void)addWarnings:(int)arg1;
+- (void)clearWarnings;
 @end
 

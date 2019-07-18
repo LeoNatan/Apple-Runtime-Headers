@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDGeographicCoordinate, GEOPDGroundDataBuild, GEOPDOrientedPosition, GEOPDOrientedTilePosition, GEOTileCoordinate, NSMutableArray, PBDataReader;
+@class GEOPDGeographicCoordinate, GEOPDGroundDataBuild, GEOPDOrientedPosition, GEOPDOrientedTilePosition, GEOPDRigMetrics, GEOTileCoordinate, NSMutableArray, PBDataReader;
 
 @interface GEOPDPhotoPosition : PBCodable <NSCopying>
 {
@@ -22,6 +22,7 @@
     GEOTileCoordinate *_parentTile;
     GEOPDGeographicCoordinate *_positionGeo;
     GEOPDOrientedPosition *_position;
+    GEOPDRigMetrics *_rigMetrics;
     GEOPDOrientedTilePosition *_tilePosition;
     unsigned int _buildTableIndex;
     int _revision;
@@ -36,6 +37,7 @@
         unsigned int read_parentTile:1;
         unsigned int read_positionGeo:1;
         unsigned int read_position:1;
+        unsigned int read_rigMetrics:1;
         unsigned int read_tilePosition:1;
         unsigned int wrote_cameraMetadataIndexs:1;
         unsigned int wrote_build:1;
@@ -45,6 +47,7 @@
         unsigned int wrote_parentTile:1;
         unsigned int wrote_positionGeo:1;
         unsigned int wrote_position:1;
+        unsigned int wrote_rigMetrics:1;
         unsigned int wrote_tilePosition:1;
         unsigned int wrote_buildTableIndex:1;
         unsigned int wrote_revision:1;
@@ -64,6 +67,9 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDRigMetrics *rigMetrics;
+@property(readonly, nonatomic) _Bool hasRigMetrics;
+- (void)_readRigMetrics;
 @property(retain, nonatomic) GEOTileCoordinate *parentTile;
 @property(readonly, nonatomic) _Bool hasParentTile;
 - (void)_readParentTile;

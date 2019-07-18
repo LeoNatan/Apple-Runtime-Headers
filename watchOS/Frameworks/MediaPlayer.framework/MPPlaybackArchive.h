@@ -15,22 +15,26 @@
     MPPlaybackArchiveDisplayProperties *_displayProperties;
     NSString *_bundleIdentifier;
     unsigned int _supportedOptions;
+    unsigned int _copyOptions;
     NSString *_playbackSessionIdentifier;
     NSString *_playbackSessionType;
     NSData *_playbackSessionData;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (void)createPlaybackArchiveForBundleIdentifier:(id)arg1 playerIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)createPlaybackArchiveForPlayerID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSData *playbackSessionData; // @synthesize playbackSessionData=_playbackSessionData;
 @property(readonly, copy, nonatomic) NSString *playbackSessionType; // @synthesize playbackSessionType=_playbackSessionType;
 @property(readonly, copy, nonatomic) NSString *playbackSessionIdentifier; // @synthesize playbackSessionIdentifier=_playbackSessionIdentifier;
-@property(readonly, nonatomic) unsigned int supportedOptions; // @synthesize supportedOptions=_supportedOptions;
+@property(nonatomic) unsigned int copyOptions; // @synthesize copyOptions=_copyOptions;
+@property(nonatomic) unsigned int supportedOptions; // @synthesize supportedOptions=_supportedOptions;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) MPPlaybackArchiveDisplayProperties *displayProperties; // @synthesize displayProperties=_displayProperties;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)description;
+- (id)copyWithOptions:(unsigned int)arg1;
 - (_Bool)boolValueForOption:(int)arg1;
 - (void)setBOOLValue:(_Bool)arg1 forOption:(int)arg2;
 - (id)initWithPlaybackSessionIdentifier:(id)arg1 playbackSessionData:(id)arg2 playbackSessionType:(id)arg3 bundleIdentifier:(id)arg4 displayProperties:(id)arg5;

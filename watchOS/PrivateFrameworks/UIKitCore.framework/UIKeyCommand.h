@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UICommand.h>
 
-@class NSIndexSet, NSString, UIEvent, UIResponder, UIViewController;
+@class NSArray, NSIndexSet, NSString, UIEvent, UIImage, UIResponder, UIViewController;
 
 @interface UIKeyCommand : UICommand
 {
@@ -14,6 +14,7 @@
     NSIndexSet *_keyCodes;
     SEL _upAction;
     _Bool _repeatable;
+    _Bool _isPlaceholder;
     int _buttonType;
     UIEvent *_triggeringEvent;
     UIResponder *_originatingResponder;
@@ -38,8 +39,8 @@
 + (id)keyCommandWithInput:(id)arg1 modifierFlags:(int)arg2 action:(SEL)arg3 upAction:(SEL)arg4;
 + (id)keyCommandWithInput:(id)arg1 modifierFlags:(int)arg2 action:(SEL)arg3 discoverabilityTitle:(id)arg4;
 + (id)keyCommandWithInput:(id)arg1 modifierFlags:(int)arg2 action:(SEL)arg3;
-+ (id)commandWithTitle:(id)arg1 action:(SEL)arg2 input:(id)arg3 modifierFlags:(int)arg4 propertyList:(id)arg5 alternates:(id)arg6;
-+ (id)commandWithTitle:(id)arg1 action:(SEL)arg2 input:(id)arg3 modifierFlags:(int)arg4 propertyList:(id)arg5;
++ (id)commandWithTitle:(id)arg1 image:(id)arg2 action:(SEL)arg3 input:(id)arg4 modifierFlags:(int)arg5 propertyList:(id)arg6 alternates:(id)arg7;
++ (id)commandWithTitle:(id)arg1 image:(id)arg2 action:(SEL)arg3 input:(id)arg4 modifierFlags:(int)arg5 propertyList:(id)arg6;
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) int _layoutAwareModifierFlags; // @synthesize _layoutAwareModifierFlags;
 @property(readonly, nonatomic) NSString *_layoutAwareInput; // @synthesize _layoutAwareInput;
@@ -47,7 +48,10 @@
 @property(readonly, nonatomic) NSString *input; // @synthesize input=_input;
 - (void).cxx_destruct;
 - (id)description;
+- (id)_immutableCopy;
 - (void)_setViewControllerForSegue:(id)arg1;
+- (int)_leafKeyModifierFlags;
+- (id)_leafKeyInput;
 @property(readonly, nonatomic) _Bool _handleAfterKeyEvent;
 - (void)_markHandleAfterKeyEvent;
 @property(readonly, nonatomic) UIViewController *_controllerForSegue;
@@ -58,28 +62,35 @@
 @property(readonly, nonatomic) UIEvent *_triggeringEvent;
 @property(readonly, nonatomic) int _buttonType;
 @property(readonly, nonatomic) NSIndexSet *_keyCodes;
+@property(readonly, nonatomic) _Bool isPlaceholder;
 @property(readonly, nonatomic) _Bool repeatable;
 @property(readonly, nonatomic) SEL upAction;
+- (id)_placeholderKeyCommand;
 - (id)_nonRepeatableKeyCommand;
-@property(copy, nonatomic) NSString *discoverabilityTitle; // @dynamic discoverabilityTitle;
 - (_Bool)triggerSegueIfPossible;
 @property(readonly, nonatomic) NSString *discoverabilityInput;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)_localizeWithGSKeyboard:(struct __GSKeyboard *)arg1;
-- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithKeyCommand:(id)arg1;
 - (id)_initWithInput:(id)arg1 modifierFlags:(int)arg2 keyCodes:(id)arg3 action:(SEL)arg4 upAction:(SEL)arg5 discoverabilityTitle:(id)arg6 buttonType:(int)arg7 segueIdentifier:(id)arg8;
-- (id)initWithTitle:(id)arg1 action:(SEL)arg2 input:(id)arg3 modifierFlags:(int)arg4 propertyList:(id)arg5 alternates:(id)arg6 image:(id)arg7 discoverabilityTitle:(id)arg8 enabled:(_Bool)arg9 state:(int)arg10;
+- (id)initWithTitle:(id)arg1 image:(id)arg2 action:(SEL)arg3 input:(id)arg4 modifierFlags:(int)arg5 propertyList:(id)arg6 alternates:(id)arg7 discoverabilityTitle:(id)arg8 attributes:(unsigned int)arg9 state:(int)arg10;
 - (id)initWithCommand:(id)arg1;
-- (id)initWithTitle:(id)arg1 action:(SEL)arg2 propertyList:(id)arg3 alternates:(id)arg4 image:(id)arg5 discoverabilityTitle:(id)arg6 enabled:(_Bool)arg7 state:(int)arg8;
+- (id)initWithTitle:(id)arg1 image:(id)arg2 action:(SEL)arg3 propertyList:(id)arg4 alternates:(id)arg5 discoverabilityTitle:(id)arg6 attributes:(unsigned int)arg7 state:(int)arg8;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) SEL action; // @dynamic action;
+@property(readonly, nonatomic) NSArray *alternates; // @dynamic alternates;
+@property(nonatomic) unsigned int attributes; // @dynamic attributes;
+@property(copy, nonatomic) NSString *discoverabilityTitle; // @dynamic discoverabilityTitle;
+@property(copy, nonatomic) UIImage *image; // @dynamic image;
+@property(readonly, nonatomic) id propertyList; // @dynamic propertyList;
+@property(nonatomic) int state; // @dynamic state;
+@property(copy, nonatomic) NSString *title; // @dynamic title;
 
 @end
 

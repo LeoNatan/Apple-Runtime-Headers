@@ -576,7 +576,6 @@
 - (double)navigationBarCollapsedHeightValue;
 @property(readonly, nonatomic) double navigationBarMaxHeight;
 - (_Bool)_isVerticallyCompact;
-- (id)disabledNavigationBarImageWithGlyph:(id)arg1;
 @property(readonly, nonatomic) UIImage *disabledFacetimeVideoImage;
 @property(readonly, nonatomic) UIImage *disabledFacetimeAudioImage;
 - (id)imageNamed:(id)arg1 pointSize:(double)arg2 insets:(struct UIEdgeInsets)arg3;
@@ -626,6 +625,8 @@
 @property(readonly, nonatomic) double muteEightHourTimeInterval;
 @property(readonly, nonatomic) double muteOneHourTimeInterval;
 @property(readonly, nonatomic) CKUITheme *theme;
+- (double)adjustedLeadingMargin:(double)arg1 isRTL:(_Bool)arg2;
+- (_Bool)shouldShowAvatarForWidth:(double)arg1;
 
 @end
 

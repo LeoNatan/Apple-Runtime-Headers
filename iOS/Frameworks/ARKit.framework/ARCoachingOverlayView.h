@@ -23,13 +23,13 @@
     long long _requestedGoal;
     long long _coachingMessageType;
     long long _nextCoachingMessageType;
+    long long _nextCoachingAnimationState;
     double _lastCoachingUpdateTime;
     ARCoachingAnimationView *_coachingAnimationView;
     NSMutableArray *_uiAnimationQueue;
     _Bool _uiAnimationQueueRunning;
     _Bool _activatesAutomatically;
     _Bool _wasEverActivated;
-    _Bool _wasPreviouslyActivated;
     _Bool _trackingStateNormalOverride;
     id <ARCoachingOverlayViewDelegate> _delegate;
     id <ARSessionProviding> _sessionProvider;
@@ -40,7 +40,6 @@
 
 @property(nonatomic) _Bool trackingStateNormalOverride; // @synthesize trackingStateNormalOverride=_trackingStateNormalOverride;
 @property(nonatomic) long long trackingStateReasonOverride; // @synthesize trackingStateReasonOverride=_trackingStateReasonOverride;
-@property(readonly, nonatomic) _Bool wasPreviouslyActivated; // @synthesize wasPreviouslyActivated=_wasPreviouslyActivated;
 @property(readonly, nonatomic) _Bool wasEverActivated; // @synthesize wasEverActivated=_wasEverActivated;
 @property(nonatomic) _Bool activatesAutomatically; // @synthesize activatesAutomatically=_activatesAutomatically;
 @property(nonatomic) long long goal; // @synthesize goal=_goal;
@@ -60,7 +59,7 @@
 - (void)swapState:(id)arg1;
 - (void)doStateAction:(long long)arg1;
 - (void)crossFadeCoachingMessage:(long long)arg1;
-- (void)setCoachingMessage:(long long)arg1;
+- (void)setCoachingMessage:(long long)arg1 animationState:(long long)arg2;
 - (void)resolveCoachingMessage;
 - (void)restartIfActive;
 - (void)session:(id)arg1 willRunWithConfiguration:(id)arg2;
@@ -73,7 +72,7 @@
 - (void)startup;
 @property(readonly, nonatomic) _Bool isUIAnimating;
 - (void)setActive:(_Bool)arg1 animated:(_Bool)arg2;
-@property(nonatomic, getter=isActive) _Bool active;
+@property(readonly, nonatomic) _Bool isActive;
 - (void)setupView;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

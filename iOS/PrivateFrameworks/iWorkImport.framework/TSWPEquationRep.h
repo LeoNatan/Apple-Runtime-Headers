@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
+@property(nonatomic) _Bool layerContentsAreFlipped; // @synthesize layerContentsAreFlipped=_layerContentsAreFlipped;
 - (id)resizedGeometryForTransform:(struct CGAffineTransform)arg1;
 - (_Bool)canDrawShadowInOneStepWithChildren:(_Bool)arg1;
 - (_Bool)p_drawsInOneStep;

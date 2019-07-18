@@ -12,7 +12,9 @@
 }
 
 @property(readonly, nonatomic) int mode; // @synthesize mode=_mode;
-- (id)groupedActionsWithMode:(int)arg1;
+- (id)groupedIntermediaryActions;
+- (id)groupedCloseAction;
+- (id)groupedOpenAction;
 - (void)resetEvaluationCriteriaWithVariableSource:(id)arg1;
 - (id)outputIcon;
 - (id)icon;

@@ -104,6 +104,14 @@ struct PXGItemsLayout {
     Class _field1;
 };
 
+struct PXGThumbnailRequest {
+    void *_field1;
+    unsigned long long _field2;
+    unsigned int _field3;
+    unsigned short _field4;
+    unsigned short _field5;
+};
+
 struct PXGadgetUpdateFlags {
     _Bool collectionNeedsUpdate;
     _Bool loadRemaingGadgetsAfterViewAppeared;
@@ -277,6 +285,7 @@ struct _PXGEngineScrollState {
     struct CGSize referenceSize;
     struct UIEdgeInsets contentInsets;
     struct CGRect visibleRect;
+    struct CGPoint lastScrollDirection;
 };
 
 struct _PXGSpriteIndexRange {
@@ -542,13 +551,13 @@ typedef struct {
 } CDStruct_fcaf9308;
 
 typedef struct {
-    long long _field1;
-    _Bool _field2;
-    _Bool _field3;
-    unsigned long long _field4;
-    _Bool _field5;
-    _Bool _field6;
-} CDStruct_30adaef5;
+    long long scrollRegime;
+    _Bool isAnimatingScroll;
+    _Bool isAnimatingContent;
+    unsigned long long zoomBehavior;
+    _Bool isViewBoundsChanging;
+    _Bool isInitialLoad;
+} CDStruct_04522d6a;
 
 typedef struct {
     long long _field1;
@@ -572,7 +581,14 @@ typedef struct {
     long long _field1;
     long long _field2;
     long long _field3;
-} CDStruct_2ec95fd7;
+    double _field4;
+} CDStruct_68723fc0;
+
+typedef struct {
+    long long photosCount;
+    long long videosCount;
+    long long othersCount;
+} CDStruct_9bad6f47;
 
 typedef struct CDStruct_183601bc;
 
@@ -581,7 +597,8 @@ typedef struct {
     struct _NSRange _field2;
     float _field3;
     int _field4;
-} CDStruct_af6398b0;
+    unsigned char _field5;
+} CDStruct_dcc83465;
 
 typedef struct {
     _Bool _field1;
@@ -654,10 +671,10 @@ typedef struct {
     _Bool isInteractive;
     long long fromColumnIndex;
     long long toColumnIndex;
-    long long desiredColumnIndex;
-    double progress;
+    double interactiveProgress;
+    double animatedProgress;
     double stickyHeaderOpacity;
-} CDStruct_eae77eb3;
+} CDStruct_3a6a7d8f;
 
 typedef struct {
     struct CGPoint normalizedInitialPosition;
@@ -666,7 +683,9 @@ typedef struct {
     double initialScale;
     double scale;
     double scaleVelocity;
-} CDStruct_0d66156d;
+    long long events;
+    double lastEventTime;
+} CDStruct_7c4e768e;
 
 typedef struct {
     struct CLLocationCoordinate2D _field1;
@@ -716,11 +735,12 @@ typedef struct {
 
 typedef struct {
     struct CGSize _field1;
-    struct CGSize _field2;
-    struct CGPoint _field3;
-    CDStruct_3fe57b01 _field4;
-    double _field5;
-} CDStruct_56d04da7;
+    unsigned short _field2;
+    struct CGSize _field3;
+    struct CGPoint _field4;
+    CDStruct_3fe57b01 _field5;
+    double _field6;
+} CDStruct_ff9a7497;
 
 typedef struct {
     float _field1;
@@ -728,13 +748,14 @@ typedef struct {
     float _field3;
     unsigned short _field4;
     unsigned short _field5;
-} CDStruct_3bc3b9c1;
+    unsigned char _field6;
+} CDStruct_506f5052;
 
 typedef struct {
     CDStruct_ac168a83 _field1;
-    CDStruct_3bc3b9c1 _field2;
+    CDStruct_506f5052 _field2;
     CDStruct_9d1ebe49 _field3;
-} CDStruct_c7f1798e;
+} CDStruct_e9e8c9fc;
 
 // Ambiguous groups
 typedef struct {

@@ -18,7 +18,7 @@
 + (void)setAuthenticationPersonality:(id)arg1;
 + (id)authenticationPersonality;
 - (id)deleteAvatarAlertControllerWithHandler:(CDUnknownBlockType)arg1;
-- (void)deleteCachedMonogramsWithHandler:(CDUnknownBlockType)arg1;
+- (void)deleteMonogramsWithHandler:(CDUnknownBlockType)arg1;
 - (void)setPhoto:(id)arg1 avatarType:(long long)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)deletePhotoWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)deletePhoto;

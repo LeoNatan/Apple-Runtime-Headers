@@ -32,7 +32,6 @@
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)init;
-@property(readonly, nonatomic) _Bool requiresQueryId;
 - (id)initWithTriggerEvent:(int)arg1 input:(id)arg2;
 
 // Remaining properties

@@ -9,9 +9,11 @@
 #import <HearingUtilities/HCHeardControllerProtocol-Protocol.h>
 
 @class NSArray, NSDictionary, NSString;
+@protocol OS_xpc_object;
 
 @interface AXHeardController : NSObject <HCHeardControllerProtocol>
 {
+    NSObject<OS_xpc_object> *_service;
     NSArray *_clients;
     NSDictionary *_handlers;
 }

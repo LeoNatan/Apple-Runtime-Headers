@@ -24,6 +24,7 @@
 - (void)activateAlias:(id)arg1;
 - (id)activeAliases;
 - (id)aliases;
+- (id)connectionForUnicastParameter:(id)arg1 error:(id *)arg2;
 - (id)datagramChannelForSocketDescriptor:(int)arg1 error:(id *)arg2;
 - (id)datagramChannelForSessionDestination:(id)arg1 error:(id *)arg2;
 - (id)streamConnectionForSocketDescriptor:(int)arg1 error:(id *)arg2;
@@ -84,6 +85,8 @@
 - (id)initWithService:(id)arg1 serviceDomain:(id)arg2;
 - (id)initWithService:(id)arg1 commands:(id)arg2 manuallyAckMessages:(_Bool)arg3;
 - (id)internal;
+- (id)accountMatchingSimIdentifier:(id)arg1;
+- (id)accountMatchingSim:(id)arg1;
 
 @end
 

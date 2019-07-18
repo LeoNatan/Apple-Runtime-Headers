@@ -13,7 +13,6 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)registerAccessQueue:(id)arg1;
 - (void)processEvent:(id)arg1;
 - (id)initWithClient:(id)arg1 endpoint:(id)arg2 config:(id)arg3;
 - (id)initWithClient:(id)arg1 endpoint:(id)arg2;

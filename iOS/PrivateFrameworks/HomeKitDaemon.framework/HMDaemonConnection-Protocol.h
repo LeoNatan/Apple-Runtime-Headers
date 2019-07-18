@@ -6,10 +6,9 @@
 
 #import <HomeKitDaemon/HMXPCMessageTransport-Protocol.h>
 
-@class NSDictionary, NSString, NSUUID;
+@class NSString;
 
 @protocol HMDaemonConnection <HMXPCMessageTransport>
-- (void)recheckinWithName:(NSString *)arg1;
-- (void)checkinWithName:(NSString *)arg1 handleMessageWithName:(NSString *)arg2 messageIdentifier:(NSUUID *)arg3 messagePayload:(NSDictionary *)arg4 target:(NSUUID *)arg5 responseHandler:(void (^)(NSError *, NSDictionary *))arg6;
+- (void)checkinWithName:(NSString *)arg1;
 @end
 

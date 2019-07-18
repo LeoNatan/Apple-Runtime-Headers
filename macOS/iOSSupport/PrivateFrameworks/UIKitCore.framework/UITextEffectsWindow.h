@@ -109,7 +109,6 @@
 - (id)_initWithFrame:(struct CGRect)arg1 debugName:(id)arg2 windowScene:(id)arg3;
 - (id)_initWithFrame:(struct CGRect)arg1 attached:(BOOL)arg2;
 - (void)_commonInitWithOptions:(id)arg1;
-- (void)_traitCollectionDidChangeInternal:(const struct _UITraitCollectionChangeDescription *)arg1;
 - (void)_commonTextEffectsInit;
 @property(readonly) NSDictionary *_options;
 @property(readonly) UIWindowScene *_intendedCanvas;

@@ -113,6 +113,8 @@
 - (_Bool)_accessibilityWebViewIsLoading;
 - (id)_accessibilityActiveURL;
 - (_Bool)_accessibilityWebSearchResultsActive;
+- (id)accessibilityPopupValue;
+- (_Bool)accessibilityHasPopup;
 - (_Bool)accessibilityIsComboBox;
 - (void)_accessibilityIncreaseSelection:(id)arg1;
 - (_Bool)_accessibilityIsRealtimeElement;
@@ -256,6 +258,9 @@
 - (_Bool)_accessibilityPerformOrbGesture:(int)arg1;
 - (_Bool)_accessibilityHasTextOperations;
 - (id)_accessibilityTextOperations;
+- (void)_accessibilitySpeak;
+- (void)_accessibilitySpeakSpellOut;
+- (void)_accessibilitySpeakSentence;
 - (void)_accessibilityRedo;
 - (void)_accessibilityUndo;
 - (void)_accessibilityUnderline;
@@ -336,7 +341,7 @@
 - (id)_accessibilityRemoteParent;
 - (id)_accessibilityVisibleElements;
 - (id)_accessibilityAuditIssuesWithOptions:(id)arg1;
-- (void)_accessibilitySetAuditIssueForType:(unsigned long long)arg1;
+- (void)_accessibilitySetAuditIssueDict:(id)arg1;
 - (id)_accessibilityControlDescendantWithAction:(SEL)arg1;
 - (id)_accessibilityControlDescendantWithTarget:(id)arg1;
 - (id)_accessibilityFindUnsortedDescendantsPassingTest:(CDUnknownBlockType)arg1;
@@ -384,6 +389,10 @@
 - (_Bool)isAccessibilityOpaqueElementProvider;
 - (void)_accessibilitySetWantsOpaqueElementProviders:(_Bool)arg1;
 - (_Bool)_accessibilityWantsOpaqueElementProviders;
+- (void)_accessibilitySetShouldIgnoreOpaqueElementProviders:(_Bool)arg1;
+- (_Bool)_accessibilityShouldIgnoreOpaqueElementProviders;
+- (void)_accessibilitySetContainerToStopVisibilityCheck:(id)arg1;
+- (id)_accessibilityContainerToStopVisibilityCheck;
 - (void)setIsAccessibilityOpaqueElementProvider:(_Bool)arg1;
 - (_Bool)_accessibilityDidSetOpaqueElementProvider;
 - (void)_accessibilitySetPagingEnabled:(_Bool)arg1;
@@ -449,7 +458,7 @@
 - (id)_accessibilityObscuredScreenAllowedViews;
 - (void)_accessibilityChangeToKeyplane:(id)arg1;
 - (id)_accessibilityKeyboardKeyForString:(id)arg1;
-- (id)_accessibilityTableViewCellWithRowIndex:(int)arg1 column:(int)arg2 tableView:(id)arg3;
+- (id)_accessibilityCellWithRowIndex:(int)arg1 column:(int)arg2 containingView:(id)arg3;
 - (_Bool)_accessibilityRespectsTableScrollEnabledFlag;
 - (_Bool)_accessibilityKeyboardKeyHasSignificantAlternateActions;
 - (_Bool)_accessibilityHasVariantKeys;
@@ -461,12 +470,12 @@
 - (id)_accessibilityNotificationSummary:(unsigned int)arg1;
 - (unsigned int)_accessibilityNotificationCount;
 - (_Bool)_accessibilityIsAwayAlertElementNew;
-- (id)_accessibilityAwayAlertElements;
 - (_Bool)_accessibilityIsAwayAlertElement;
 - (void)_accessibilitySwitchOrderedChildrenFrom:(id)arg1;
 - (void)_accessibilityJumpToTableIndex:(id)arg1;
 - (_Bool)_accessibilityLoadURL:(id)arg1;
 - (void)_accessibilityFindSearchResult:(_Bool)arg1 withString:(id)arg2;
+- (_Bool)_accessibilityIsInCollectionCell;
 - (_Bool)_accessibilityIsInTableCell;
 - (_Bool)_accessibilityIsTableCell;
 - (id)_accessibilityResponderElement;
@@ -488,6 +497,7 @@
 - (unsigned int)_accessibilityColumnCount;
 - (void)_accessibilitySetRowRange:(struct _NSRange)arg1;
 - (struct _NSRange)accessibilityRowRange;
+- (id)_accessibilityParentCollectionView;
 - (id)_accessibilityParentTableView;
 - (struct _NSRange)_accessibilityIndexPathAsRange;
 - (id)_accessibilityIndexPath;
@@ -705,8 +715,12 @@
 - (_Bool)_accessibilityServesAsContainingParentForOrdering;
 - (id)_accessibilityContainerForAccumulatingCustomRotorItems;
 - (id)accessibilityContainerElements;
-- (void)_accessibilitySetSupportsMediaAnalysis:(_Bool)arg1;
-- (_Bool)_accessibilitySupportsMediaAnalysis;
+- (struct CGRect)_accessibilityMediaAnalysisFrame;
+- (unsigned int)_accessibilityEffectiveMediaAnalysisOptions;
+- (unsigned int)_accessibilityMediaAnalysisOptions;
+- (void)_accessibilitySetUserDefinedMediaAnalysisOptions:(id)arg1;
+- (id)_accessibilityUserDefinedMediaAnalysisOptions;
+- (_Bool)_accessibilityFrameSupportsMediaAnalysis;
 - (float)_accessibilityViewAlpha;
 - (float)_accessibilityFontSize;
 - (float)_accessibilityZoomScale;
@@ -846,6 +860,7 @@
 - (unsigned int)_accessibilityExplorerElementReadPriority;
 - (id)_accessibilityFrameDelegate;
 - (id)_accessibilitySiriContentNativeFocusableElements;
+- (id)_accessibilityNativeFocusableElements:(id)arg1 matchingBlock:(CDUnknownBlockType)arg2;
 - (id)_accessibilityNativeFocusableElements:(id)arg1 withQueryString:(id)arg2;
 - (id)_accessibilityNativeFocusableElements:(id)arg1;
 - (id)_accessibilityExplorerElements;
@@ -855,12 +870,17 @@
 - (id)_accessibilityNativeFocusElement;
 - (id)_accessibilityRetrieveHeaderElements;
 - (void)_accessibilityShowEditingHUD;
+- (int)_accessibilityRemotePid;
 - (_Bool)_accessibilityHandlesRemoteFocusMovement;
-- (void)_accessibilityFocusOnElement;
+- (void)_accessibilitySetFocusOnElement:(_Bool)arg1;
 - (_Bool)_accessibilityMoveFocusWithHeading:(unsigned int)arg1 toElementMatchingQuery:(id)arg2;
 - (_Bool)_accessibilityHandleDefaultActionForNativeFocusedElement;
 - (_Bool)_accessibilityMoveFocusWithHeading:(unsigned int)arg1;
+- (_Bool)_accesibilityIsTopMostDrawsFocusRingWhenChildrenFocused;
 - (_Bool)_drawsFocusRingWhenChildrenFocused;
+- (_Bool)_accessibilityAllowsFocusToLeaveViaHeading:(unsigned int)arg1;
+- (void)_axSetLastFocusedChild:(id)arg1;
+- (id)_axGetLastFocusedChild;
 - (_Bool)_accessibilityDrawsFocusRingWhenChildrenFocused;
 - (id)_accessibilityNativeFocusAncestor;
 - (_Bool)_accessibilityShouldSpeakExplorerElementsAfterFocus;
@@ -896,6 +916,7 @@
 - (void)_setAccessibilityActivateParagraphInTextViewRangeBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityFrameForSortingBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityIsRealtimeElementBlock:(CDUnknownBlockType)arg1;
+- (void)_setAccessibilityPerformEscapeBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityActivateBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityIncrementBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityDecrementBlock:(CDUnknownBlockType)arg1;
@@ -969,7 +990,7 @@
 - (float)_accessibilityMaxValue;
 - (float)_accessibilityMinValue;
 - (id)_accessibilityAbsoluteValue;
-- (unsigned long long)_accessibilityAutomationType;
+@property(nonatomic, setter=_setAccessibilityAutomationType:) unsigned long long _accessibilityAutomationType;
 - (id)_accessibilityUserTestingElementBaseType;
 - (id)_accessibilityUserTestingElementAttributes;
 - (_Bool)_accessibilityUserTestingIsContinuityButton;

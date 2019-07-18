@@ -17,7 +17,7 @@
     _Bool _isHomeKitAccessory;
     _Bool _isAirPlayAccessory;
     _Bool _supportsAirPlay;
-    _Bool _requiresOwnershipProof;
+    _Bool _requiresOwnershipToken;
     _Bool _homeKitPaired;
     _Bool _pairSetupWAC;
     NSString *_name;
@@ -47,7 +47,7 @@
 @property(readonly, nonatomic) _Bool pairSetupWAC; // @synthesize pairSetupWAC=_pairSetupWAC;
 @property(readonly, nonatomic) _Bool homeKitPaired; // @synthesize homeKitPaired=_homeKitPaired;
 @property(readonly, nonatomic) unsigned int supportedWiFiBands; // @synthesize supportedWiFiBands=_supportedWiFiBands;
-@property(readonly, nonatomic) _Bool requiresOwnershipProof; // @synthesize requiresOwnershipProof=_requiresOwnershipProof;
+@property(readonly, nonatomic) _Bool requiresOwnershipToken; // @synthesize requiresOwnershipToken=_requiresOwnershipToken;
 @property(readonly, nonatomic) _Bool supportsAirPlay; // @synthesize supportsAirPlay=_supportsAirPlay;
 @property(readonly, nonatomic) NSDictionary *rawScanResult; // @synthesize rawScanResult=_rawScanResult;
 @property(readonly, nonatomic) NSData *setupHash; // @synthesize setupHash=_setupHash;

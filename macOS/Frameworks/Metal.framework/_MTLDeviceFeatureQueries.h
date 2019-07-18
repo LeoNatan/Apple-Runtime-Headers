@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
         NSString *name;
         long long requirement;
         char supported;
-    } _featureInfo[95];
+    } _featureInfo[96];
     id <MTLDeviceSPI> _device;
 }
 
@@ -104,6 +104,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)supportsLinearTextureFromSharedBuffer;
 - (BOOL)supportsNonPrivateMSAATextures;
 - (BOOL)supportsNonPrivateDepthStencilTextures;
+- (BOOL)supportsOpenCLTextureWriteSwizzles;
 - (BOOL)supportsPlacementHeaps;
 - (BOOL)supportsSamplerReductionMode;
 - (BOOL)supportsQueryTextureLOD;

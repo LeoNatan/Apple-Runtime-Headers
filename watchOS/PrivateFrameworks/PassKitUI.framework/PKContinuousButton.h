@@ -11,10 +11,9 @@
 @interface PKContinuousButton : UIButton
 {
     CDStruct_6b96b72e _configuration;
-    UIColor *_tintColor;
     UIImage *_image;
     NSMutableSet *_disabledImageStates;
-    _Bool _titleColorShouldBeTintColor;
+    UIColor *_overrideTitleColor;
     CAFilter *_highlightFilter;
     UIColor *_normalInputColor;
     UIColor *_highlightInputColor;
@@ -30,6 +29,7 @@
     _Bool _enabled;
     struct CGSize _boundsSize;
     UIActivityIndicatorView *_activityIndicatorView;
+    UIColor *_activityIndicatorColor;
     _Bool _showSpinner;
     _Bool _blurDisabled;
 }
@@ -39,20 +39,22 @@
 @property(nonatomic) _Bool blurDisabled; // @synthesize blurDisabled=_blurDisabled;
 @property(nonatomic) _Bool showSpinner; // @synthesize showSpinner=_showSpinner;
 - (void).cxx_destruct;
-- (void)showSpinner:(_Bool)arg1;
 - (void)_updateFilter;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setEnabled:(_Bool)arg1;
 - (void)_createHighlightFilterIfNecessary;
-- (void)_updateTintColorWithColor:(id)arg1;
+- (void)_updateTitleColor;
+- (void)_updateColor;
 - (void)_accessibilitySettingsDidChange:(id)arg1;
 - (void)_updateBackdropSettings;
 - (void)updateImageView;
 - (void)setImageEnabled:(_Bool)arg1 forState:(unsigned int)arg2;
 - (void)updateWithImage:(id)arg1;
+- (void)updateActivityIndicatorColorWithColor:(id)arg1;
 - (void)updateTitleColorWithColor:(id)arg1;
 - (void)layoutSubviews;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)tintColorDidChange;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)dealloc;

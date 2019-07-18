@@ -19,19 +19,22 @@
     } _dataSourceFlags;
     UIImage *_cachedCustomImage;
     UIImage *_cachedSmallCustomImage;
+    NSString *_internalActivityType;
     id <PXActivityItemSourceController> _itemSourceController;
     NSString *_actionTitle;
     NSString *_actionType;
-    NSString *_actionActivityType;
-    NSString *_actionSystemImageName;
+    NSString *_systemImageName;
+    CDUnknownBlockType _performActivityActionHandler;
+    CDUnknownBlockType _canPerformActivityActionHandler;
     id <PXActivityActionDelegate> _actionDelegate;
     id <PXActivityDataSource> _dataSource;
 }
 
 @property(nonatomic) __weak id <PXActivityDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <PXActivityActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
-@property(copy, nonatomic) NSString *actionSystemImageName; // @synthesize actionSystemImageName=_actionSystemImageName;
-@property(copy, nonatomic) NSString *actionActivityType; // @synthesize actionActivityType=_actionActivityType;
+@property(copy, nonatomic) CDUnknownBlockType canPerformActivityActionHandler; // @synthesize canPerformActivityActionHandler=_canPerformActivityActionHandler;
+@property(copy, nonatomic) CDUnknownBlockType performActivityActionHandler; // @synthesize performActivityActionHandler=_performActivityActionHandler;
+@property(copy, nonatomic) NSString *systemImageName; // @synthesize systemImageName=_systemImageName;
 @property(copy, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
 @property(copy, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;
 @property(nonatomic) __weak id <PXActivityItemSourceController> itemSourceController; // @synthesize itemSourceController=_itemSourceController;
@@ -46,8 +49,7 @@
 - (void)updateActivityViewControllerVisibleShareActions;
 - (id)px_activitySettingsImageNamed:(id)arg1;
 - (id)px_activityImageNamed:(id)arg1;
-- (id)initWithActionTitle:(id)arg1 actionType:(id)arg2 actionActivityType:(id)arg3 actionSystemImageName:(id)arg4;
-- (id)initWithActionTitle:(id)arg1 actionType:(id)arg2 actionActivityType:(id)arg3;
+- (id)initWithActionTitle:(id)arg1 actionType:(id)arg2 activityType:(id)arg3 systemImageName:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

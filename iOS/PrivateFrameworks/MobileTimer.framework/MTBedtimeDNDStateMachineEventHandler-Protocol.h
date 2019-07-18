@@ -10,8 +10,7 @@
 
 @protocol MTBedtimeDNDStateMachineEventHandler <MTStateMachineEventHandler>
 - (void)userWokeUp;
-- (void)bedtimeReached;
 - (void)bedtimeDNDEnabled:(_Bool)arg1 userRequested:(_Bool)arg2 date:(NSDate *)arg3;
-- (void)updateState;
+- (void)updateState:(_Bool)arg1;
 @end
 

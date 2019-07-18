@@ -32,8 +32,10 @@
 - (id)mailboxObjectIDsForMailboxType:(long long)arg1;
 - (void)serverCountsForMailboxScope:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)mailboxDatabaseIDsForMailboxObjectIDs:(id)arg1;
+- (id)legacyMailboxForObjectID:(id)arg1;
 - (id)legacyMailboxForMailboxURL:(id)arg1;
 - (void)fetchMailboxLists;
+- (id)userCreatedMailboxObjectIDs;
 - (void)allMailboxesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)mailboxListInvalidated;
 - (id)allMailboxes;

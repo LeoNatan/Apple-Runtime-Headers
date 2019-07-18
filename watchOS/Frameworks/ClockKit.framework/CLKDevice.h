@@ -11,6 +11,7 @@
     _Bool _isLuxo;
     _Bool _isExplorer;
     _Bool _hasRichMediaComplications;
+    _Bool _runningGraceOrLater;
     unsigned int _sizeClass;
     float _screenScale;
     float _screenCornerRadius;
@@ -23,6 +24,7 @@
 + (id)currentDevice;
 @property(nonatomic) unsigned int materialType; // @synthesize materialType=_materialType;
 @property(nonatomic) unsigned int collectionType; // @synthesize collectionType=_collectionType;
+@property(readonly, nonatomic, getter=isRunningGraceOrLater) _Bool runningGraceOrLater; // @synthesize runningGraceOrLater=_runningGraceOrLater;
 @property(nonatomic) _Bool hasRichMediaComplications; // @synthesize hasRichMediaComplications=_hasRichMediaComplications;
 @property(nonatomic) _Bool isExplorer; // @synthesize isExplorer=_isExplorer;
 @property(nonatomic) _Bool isLuxo; // @synthesize isLuxo=_isLuxo;
@@ -32,7 +34,6 @@
 @property(nonatomic) unsigned int sizeClass; // @synthesize sizeClass=_sizeClass;
 @property(readonly, nonatomic) _Bool unlockedSinceBoot;
 @property(readonly, nonatomic) _Bool isLocked;
-@property(readonly, nonatomic, getter=isRunningGraceOrLater) _Bool runningGraceOrLater;
 - (void)_loadDeviceInfo;
 - (id)_init;
 

@@ -19,7 +19,9 @@
 - (void)logSuccessForEventNamed:(NSString *)arg1;
 - (void)clearApplicationState:(NSString *)arg1 completionBlock:(void (^)(NSError *))arg2;
 - (void)runDutyCycleForActivity:(NSObject<OS_xpc_object> *)arg1;
-- (void)forceConfigUpdate;
+- (void)copyApplicationState:(NSString *)arg1 block:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)forceApplicationKeysDownload:(NSString *)arg1 block:(void (^)(NSData *, unsigned int, NSError *))arg2;
+- (void)forceConfigUpdate:(void (^)(NSError *))arg1;
 - (void)forceValidateUUID:(NSUUID *)arg1 uri:(NSString *)arg2 block:(void (^)(unsigned int, NSError *))arg3;
 - (void)convertToSelfRequest:(NSUUID *)arg1 serverDatas:(NSArray *)arg2 syncedDatas:(NSArray *)arg3 queryResponse:(NSData *)arg4 updateCompletionBlock:(void (^)(NSUUID *, NSError *))arg5;
 - (void)validateEnrollmentUriResult:(NSString *)arg1 uuid:(NSUUID *)arg2 completionBlock:(void (^)(NSString *, unsigned int, KTTransparentData *, NSError *))arg3;

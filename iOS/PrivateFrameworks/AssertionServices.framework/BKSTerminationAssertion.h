@@ -23,6 +23,7 @@
 - (_Bool)acquire;
 - (id)initWithBundleIdentifier:(id)arg1 efficacy:(unsigned long long)arg2 name:(id)arg3 context:(id)arg4 withHandler:(CDUnknownBlockType)arg5;
 - (id)initWithBundleIdentifier:(id)arg1 efficacy:(unsigned long long)arg2 name:(id)arg3 withHandler:(CDUnknownBlockType)arg4;
+- (unsigned long long)_bksErrorForRBSRequestError:(unsigned long long)arg1;
 
 @end
 

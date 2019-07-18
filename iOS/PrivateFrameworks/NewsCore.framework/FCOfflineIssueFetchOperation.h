@@ -12,6 +12,7 @@
 @interface FCOfflineIssueFetchOperation : FCOperation
 {
     _Bool _cachedOnly;
+    CDUnknownBlockType _layeredCoverHandlesProvider;
     double _progress;
     CDUnknownBlockType _progressHandler;
     CDUnknownBlockType _fetchCompletionHandler;
@@ -28,13 +29,19 @@
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletionHandler; // @synthesize fetchCompletionHandler=_fetchCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property double progress; // @synthesize progress=_progress;
+@property(copy, nonatomic) CDUnknownBlockType layeredCoverHandlesProvider; // @synthesize layeredCoverHandlesProvider=_layeredCoverHandlesProvider;
 @property(nonatomic) _Bool cachedOnly; // @synthesize cachedOnly=_cachedOnly;
 - (void).cxx_destruct;
 - (id)_pdfArchiveURLForIssue:(id)arg1;
 - (void)_updateProgress:(double)arg1;
 - (id)_resourceIDsFromMetadataJSONData:(id)arg1;
+- (id)_itemIdentifiersForKey:(id)arg1 fromMetadataJSONData:(id)arg2;
 - (id)_promisePDFPagesForIssue:(id)arg1;
+- (id)_promiseReplicaAdPagesForIssue:(id)arg1 withDownloadProgressMin:(double)arg2 downloadProgressMax:(double)arg3;
+- (id)_promiseANFArticlesForArticleIDs:(id)arg1 withDownloadProgressMin:(double)arg2 downloadProgressMax:(double)arg3;
+- (id)_promiseANFPagesForIssue:(id)arg1;
 - (id)_promiseANFArticlesForIssue:(id)arg1;
+- (id)_promiseLayeredCoverAssetsForIssue:(id)arg1;
 - (id)_promiseCoverImageForIssue:(id)arg1;
 - (id)_promiseMetadataForIssue:(id)arg1;
 - (id)_promiseIssue;

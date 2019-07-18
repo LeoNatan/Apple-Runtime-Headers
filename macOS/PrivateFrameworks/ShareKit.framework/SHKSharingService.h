@@ -92,6 +92,7 @@
 + (void)ensurePlugInCacheInitialized;
 + (void)sharingServiceNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)sharingServiceNamed:(id)arg1 allowInactive:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
++ (id)collapsedSharePlaceholderService;
 + (id)sharingServiceWithIdentifier:(id)arg1 provider:(id)arg2 title:(id)arg3 image:(id)arg4 alternateImage:(id)arg5;
 + (id)sharingServiceWithTitle:(id)arg1 image:(id)arg2 alternateImage:(id)arg3 handler:(CDUnknownBlockType)arg4;
 + (id)sharingServiceWithIdentifier:(id)arg1 title:(id)arg2 image:(id)arg3 alternateImage:(id)arg4 type:(long long)arg5 handler:(CDUnknownBlockType)arg6;

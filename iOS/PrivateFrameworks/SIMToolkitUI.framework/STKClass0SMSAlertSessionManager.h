@@ -8,14 +8,17 @@
 
 #import <SIMToolkitUI/CoreTelephonyClientSMSDelegate-Protocol.h>
 #import <SIMToolkitUI/SBSRemoteAlertHandleObserver-Protocol.h>
+#import <SIMToolkitUI/STKIncomingCallUIStateObserver-Protocol.h>
 
-@class CoreTelephonyClient, NSObject, NSString, STKCarrierSubscriptionMonitor, STKClass0SMSAlertSession;
+@class CoreTelephonyClient, NSMutableArray, NSObject, NSString, STKCarrierSubscriptionMonitor, STKClass0SMSAlertSession, STKIncomingCallUIStateMonitor;
 @protocol OS_dispatch_queue;
 
-@interface STKClass0SMSAlertSessionManager : STKAlertSessionManager <CoreTelephonyClientSMSDelegate, SBSRemoteAlertHandleObserver>
+@interface STKClass0SMSAlertSessionManager : STKAlertSessionManager <CoreTelephonyClientSMSDelegate, SBSRemoteAlertHandleObserver, STKIncomingCallUIStateObserver>
 {
     CoreTelephonyClient *_telephonyClient;
     NSObject<OS_dispatch_queue> *_queue;
+    NSMutableArray *_queue_pendingAlertSessionsDueToInCallUI;
+    STKIncomingCallUIStateMonitor *_queue_incomingCallStateMonitor;
     STKCarrierSubscriptionMonitor *_subscriptionMonitor;
     STKClass0SMSAlertSession *_currentSession;
 }
@@ -23,13 +26,15 @@
 @property(retain, nonatomic, setter=_queue_setCurrentSession:) STKClass0SMSAlertSession *currentSession; // @synthesize currentSession=_currentSession;
 @property(readonly, nonatomic) STKCarrierSubscriptionMonitor *subscriptionMonitor; // @synthesize subscriptionMonitor=_subscriptionMonitor;
 - (void).cxx_destruct;
+- (void)_queue_enqueueSession:(id)arg1;
 - (void)_queue_handleClass0SMSBody:(id)arg1 address:(id)arg2 responder:(id)arg3 forSlot:(long long)arg4;
 - (void)remoteAlertHandle:(id)arg1 didInvalidateWithError:(id)arg2;
 - (void)remoteAlertHandleDidDeactivate:(id)arg1;
+- (void)incomingCallUIStateDidChange:(_Bool)arg1;
 - (void)smsMessageClass0Received:(id)arg1 body:(id)arg2 address:(id)arg3;
 - (void)handleClass0SMSBody:(id)arg1 address:(id)arg2 responder:(id)arg3 forSlot:(long long)arg4;
 - (id)remoteAlertDescriptorForSession:(id)arg1;
-- (id)initWithEventQueue:(id)arg1 subscriptionMonitor:(id)arg2;
+- (id)initWithSubscriptionMonitor:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,7 +8,7 @@
 
 #import <iWorkImport/NSFilePresenter-Protocol.h>
 
-@class NSData, NSError, NSOperationQueue, NSSet, NSString, NSURL, TSUURLTracker;
+@class NSData, NSError, NSOperationQueue, NSSet, NSString, NSURL, TSUSandboxedURL, TSUURLTracker;
 @protocol OS_dispatch_queue, TSULogContext, TSUURLTrackerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -22,12 +22,14 @@ __attribute__((visibility("hidden")))
     NSError *_latestBookmarkError;
     id <TSUURLTrackerDelegate> _delegate;
     struct os_unfair_lock_s _propertiesLock;
-    NSURL *_URLIfAvailable;
+    TSUSandboxedURL *_sandboxedURLIfAvailable;
     NSData *_bookmarkDataIfAvailable;
     _Bool _deleted;
+    _Bool _isValid;
     NSOperationQueue *_presentedItemOperationQueue;
 }
 
+@property(readonly, nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(readonly, retain) NSOperationQueue *presentedItemOperationQueue; // @synthesize presentedItemOperationQueue=_presentedItemOperationQueue;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
@@ -39,23 +41,23 @@ __attribute__((visibility("hidden")))
 - (void)p_notifyURLTrackerPresentedItemContentsDidChange;
 - (void)relinquishPresentedItemToWriter:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSURL *presentedItemURL;
-- (id)p_bookmarkDataAndReturnError:(id *)arg1;
+- (id)p_bookmarkDataForcingRecalculation:(_Bool)arg1 error:(id *)arg2;
+- (id)recalculateBookmarkDataAndReturnError:(id *)arg1;
 - (id)bookmarkDataAndReturnError:(id *)arg1;
+- (void)p_setBookmarkDataIfAvailable:(id)arg1;
+@property(readonly) NSData *bookmarkDataIfAvailable;
 - (void)p_setDeleted:(_Bool)arg1;
 @property(readonly) _Bool deleted;
 - (void)stop;
 - (void)pauseForEnteringBackground:(_Bool)arg1;
 - (void)startOrResumeForEnteringForeground:(_Bool)arg1;
-- (void)p_setBookmarkDataIfAvailable:(id)arg1;
-@property(readonly) NSData *bookmarkDataIfAvailable;
-- (id)p_bookmarkData;
-@property(readonly) NSData *bookmarkData;
 - (id)p_lastKnownURLFromBookmark:(id)arg1;
-- (id)p_URLAndReturnError:(id *)arg1;
-- (id)URLAndReturnError:(id *)arg1;
-- (void)p_setURLIfAvailable:(id)arg1;
-- (id)p_URLIfAvailableLoadingLastKnownURLFromBookmark:(_Bool)arg1;
-@property(readonly) NSURL *URLIfAvailable;
+- (id)p_sandboxedURLForcingRecalculation:(_Bool)arg1 error:(id *)arg2;
+- (id)recalculateSandboxedURLAndReturnError:(id *)arg1;
+- (id)sandboxedURLAndReturnError:(id *)arg1;
+- (void)p_setSandboxedURLIfAvailable:(id)arg1;
+- (id)p_sandboxedURLIfAvailableLoadingLastKnownURLFromBookmark:(_Bool)arg1;
+@property(readonly) TSUSandboxedURL *sandboxedURLIfAvailable;
 - (id)initWithURL:(id)arg1 bookmarkData:(id)arg2 urlTracker:(id)arg3 logContext:(id)arg4 delegate:(id)arg5;
 - (id)init;
 

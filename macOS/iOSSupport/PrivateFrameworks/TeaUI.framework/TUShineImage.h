@@ -11,6 +11,7 @@
     // Error parsing type: , name: image
     // Error parsing type: , name: size
     // Error parsing type: , name: context
+    // Error parsing type: , name: backgroundImage
 }
 
 - (void).cxx_destruct;

@@ -12,6 +12,7 @@
 {
     UIView *_maskedContentView;
     double _slantDistance;
+    UIView *_bleedingContentView;
     UIView *_shearedMaskingView;
     _TVRibbonCellMaskingParameters *_maskingParameters;
     double _shearAngle;
@@ -26,6 +27,7 @@
 @property(nonatomic) double shearAngle; // @synthesize shearAngle=_shearAngle;
 @property(retain, nonatomic) _TVRibbonCellMaskingParameters *maskingParameters; // @synthesize maskingParameters=_maskingParameters;
 @property(retain, nonatomic) UIView *shearedMaskingView; // @synthesize shearedMaskingView=_shearedMaskingView;
+@property(retain, nonatomic) UIView *bleedingContentView; // @synthesize bleedingContentView=_bleedingContentView;
 @property(nonatomic) double slantDistance; // @synthesize slantDistance=_slantDistance;
 @property(nonatomic) struct CGRect frameLastMaskedTo; // @synthesize frameLastMaskedTo=_frameLastMaskedTo;
 @property(readonly, nonatomic) UIView *maskedContentView; // @synthesize maskedContentView=_maskedContentView;
@@ -33,11 +35,11 @@
 - (void)setEdgeExpansion:(double)arg1;
 @property(nonatomic) _Bool antialiasEdges;
 - (void)_updateMaskingModeForParameters:(id)arg1;
+- (struct CGRect)_bleedingContentViewFrame;
 - (void)_updateShearedViewsWithValues:(id)arg1;
 - (id)_shearingValuesForParameters:(id)arg1;
 - (void)_updateShearingTransforms;
 - (void)layoutSubviews;
-- (struct CGRect)_contentViewFrame;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

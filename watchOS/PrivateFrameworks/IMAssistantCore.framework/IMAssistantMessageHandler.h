@@ -34,6 +34,7 @@
 - (id)contactIdentifiersMatchingHandleID:(id)arg1;
 - (id)contactsMatchingPredicate:(id)arg1 forPerson:(id)arg2;
 - (id)contactWithIdentifier:(id)arg1;
+- (id)unifiedContactIdentifierForContactIdentifier:(id)arg1;
 - (id)contactsMatchingINPerson:(id)arg1;
 - (id)_initWithDataSource:(id)arg1 contactKeysToFetch:(id)arg2 intentIdentifier:(id)arg3;
 - (id)initWithDataSource:(id)arg1 keysToFetch:(id)arg2 intentIdentifier:(id)arg3;

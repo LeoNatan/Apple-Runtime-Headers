@@ -8,7 +8,8 @@
 
 #import <PhotosUICore/PXGViewDiagnosticsSource-Protocol.h>
 
-@class NSString, PHPhotoLibrary, PXCuratedLibraryAssetsDataSourceManager, PXCuratedLibraryLayout, PXCuratedLibraryVideoPlaybackController, PXCuratedLibraryViewModel, PXExtendedTraitCollection, PXGView, PXPhotoKitUIMediaProvider;
+@class NSString, PHPhotoLibrary, PXAssetReference, PXCuratedLibraryAssetsDataSourceManager, PXCuratedLibraryFooterController, PXCuratedLibraryItemCountsController, PXCuratedLibraryLayout, PXCuratedLibraryVideoPlaybackController, PXCuratedLibraryViewModel, PXExtendedTraitCollection, PXGView, PXUIMediaProvider;
+@protocol PXCuratedLibraryEventLogger;
 
 @interface PXCuratedLibraryViewProvider : NSObject <PXGViewDiagnosticsSource>
 {
@@ -17,22 +18,34 @@
     PXGView *_gridView;
     PXCuratedLibraryLayout *_layout;
     PXCuratedLibraryViewModel *_viewModel;
-    PXPhotoKitUIMediaProvider *_photoKitMediaProvider;
+    PXUIMediaProvider *_mediaProvider;
     PXCuratedLibraryAssetsDataSourceManager *_assetsDataSourceManager;
     PXCuratedLibraryVideoPlaybackController *_videoPlaybackController;
+    PXCuratedLibraryItemCountsController *_itemCountsController;
+    PXCuratedLibraryFooterController *_footerController;
+    id <PXCuratedLibraryEventLogger> _eventLogger;
 }
 
+@property(readonly, nonatomic) id <PXCuratedLibraryEventLogger> eventLogger; // @synthesize eventLogger=_eventLogger;
+@property(readonly, nonatomic) PXCuratedLibraryFooterController *footerController; // @synthesize footerController=_footerController;
+@property(readonly, nonatomic) PXCuratedLibraryItemCountsController *itemCountsController; // @synthesize itemCountsController=_itemCountsController;
 @property(readonly, nonatomic) PXCuratedLibraryVideoPlaybackController *videoPlaybackController; // @synthesize videoPlaybackController=_videoPlaybackController;
 @property(readonly, nonatomic) PXCuratedLibraryAssetsDataSourceManager *assetsDataSourceManager; // @synthesize assetsDataSourceManager=_assetsDataSourceManager;
-@property(readonly, nonatomic) PXPhotoKitUIMediaProvider *photoKitMediaProvider; // @synthesize photoKitMediaProvider=_photoKitMediaProvider;
+@property(readonly, nonatomic) PXUIMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(readonly, nonatomic) PXCuratedLibraryLayout *layout; // @synthesize layout=_layout;
 @property(readonly, nonatomic) PXGView *gridView; // @synthesize gridView=_gridView;
 @property(readonly, nonatomic) PXExtendedTraitCollection *extendedTraitCollection; // @synthesize extendedTraitCollection=_extendedTraitCollection;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void).cxx_destruct;
+- (id)indexPathsFromIndexPath:(struct PXSimpleIndexPath)arg1 toIndexPath:(struct PXSimpleIndexPath)arg2;
+- (struct PXSimpleIndexPath)selectableIndexPathClosestToIndexPath:(struct PXSimpleIndexPath)arg1 inDirection:(unsigned long long)arg2;
+- (_Bool)canSelectObjectAtIndexPath:(struct PXSimpleIndexPath)arg1;
+- (struct PXSimpleIndexPath)_indexPathClosestToIndexPath:(struct PXSimpleIndexPath)arg1 inDirection:(unsigned long long)arg2;
+- (id)hitTestResultControlsForCurrentZoomLevel;
 - (void)scrollLibraryViewToAssetReference:(id)arg1 scrollPosition:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_stopLibraryViewScrolling;
+@property(readonly, nonatomic) PXAssetReference *preferredAnchorAssetReference;
 - (id)additionalRectDiagnosticsProvidersForView:(id)arg1;
 - (id)initWithPhotoLibrary:(id)arg1 extendedTraitCollection:(id)arg2;
 - (id)init;

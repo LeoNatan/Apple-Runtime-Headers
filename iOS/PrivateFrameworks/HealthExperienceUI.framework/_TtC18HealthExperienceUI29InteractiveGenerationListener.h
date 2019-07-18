@@ -13,8 +13,9 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)didEnterBackgroundNotificationWithNote:(id)arg1;
-- (void)willEnterForegroundNotificationWithNote:(id)arg1;
+- (void)majorInteractionNotificationReceivedWithNote:(id)arg1;
+- (void)willResignActiveWithNote:(id)arg1;
+- (void)didBecomeActiveWithNote:(id)arg1;
 - (void)dealloc;
 
 @end

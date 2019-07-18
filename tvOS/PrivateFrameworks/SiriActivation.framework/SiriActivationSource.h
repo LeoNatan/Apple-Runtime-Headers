@@ -6,11 +6,21 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
+
 @interface SiriActivationSource : NSObject
 {
+    _Bool _active;
+    _Bool _knowsIfActive;
+    NSString *_identifier;
 }
 
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
+- (oneway void)activeChangedTo:(id)arg1;
+- (_Bool)isActive;
 - (_Bool)isEnabled;
+- (id)init;
 
 @end
 

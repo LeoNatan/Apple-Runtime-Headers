@@ -14,16 +14,16 @@
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
 @class HMAccessoryCategory, HMDAccessoryNetworkAccessViolation, HMDAccessoryVersion, HMDApplicationData, HMDHome, HMDRoom, HMDVendorModelEntry, HMFMessageDispatcher, NSArray, NSData, NSMutableSet, NSNumber, NSObject, NSSet, NSString, NSUUID;
-@protocol OS_dispatch_queue;
+@protocol HMFLocking, OS_dispatch_queue;
 
 @interface HMDAccessory : HMFObject <HMDBulletinIdentifiers, NSSecureCoding, HMDHomeMessageReceiver, HMDBackingStoreObjectProtocol, HMFDumpState, HMFLogging>
 {
+    id <HMFLocking> _lock;
     BOOL _primary;
     BOOL _reachable;
     BOOL _remotelyReachable;
     NSMutableSet *_accessoryProfiles;
     BOOL _suspended;
-    BOOL _supportsMediaContentProfile;
     BOOL _suspendCapable;
     BOOL _remoteAccessEnabled;
     BOOL _custom1WoBLE;
@@ -38,6 +38,7 @@
     NSString *_productData;
     unsigned long long _configNumber;
     NSNumber *_networkClientIdentifier;
+    NSUUID *_networkRouterUUID;
     long long _targetNetworkProtectionMode;
     long long _currentNetworkProtectionMode;
     long long _networkClientLAN;
@@ -51,7 +52,6 @@
     NSString *_configurationAppIdentifier;
     HMDAccessoryNetworkAccessViolation *_networkAccessViolation;
     NSObject<OS_dispatch_queue> *_workQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     HMFMessageDispatcher *_msgDispatcher;
     NSNumber *_categoryIdentifier;
     NSString *_configuredName;
@@ -69,13 +69,11 @@
 @property(retain, nonatomic) NSNumber *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(nonatomic, getter=isRemoteAccessEnabled) BOOL remoteAccessEnabled; // @synthesize remoteAccessEnabled=_remoteAccessEnabled;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) HMDAccessoryNetworkAccessViolation *networkAccessViolation; // @synthesize networkAccessViolation=_networkAccessViolation;
 @property(nonatomic, getter=isSuspendCapable) BOOL suspendCapable; // @synthesize suspendCapable=_suspendCapable;
 @property(nonatomic, getter=isPrimary) BOOL primary; // @synthesize primary=_primary;
 @property(copy, nonatomic) NSString *configurationAppIdentifier; // @synthesize configurationAppIdentifier=_configurationAppIdentifier;
-@property(nonatomic) BOOL supportsMediaContentProfile; // @synthesize supportsMediaContentProfile=_supportsMediaContentProfile;
 @property(nonatomic, getter=isSuspended) BOOL suspended; // @synthesize suspended=_suspended;
 @property(copy, nonatomic) NSString *providedName; // @synthesize providedName=_providedName;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
@@ -111,7 +109,7 @@
 - (void)logDuetRoomEvent;
 - (void)didEncounterError:(id)arg1;
 - (void)saveNetworkAccessViolation:(id)arg1;
-- (void)saveWiFiUniquePreSharedKey:(id)arg1;
+- (void)saveWiFiUniquePreSharedKey:(id)arg1 credentialType:(long long)arg2;
 @property(retain, nonatomic) NSData *wiFiUniquePreSharedKey; // @synthesize wiFiUniquePreSharedKey=_wiFiUniquePreSharedKey;
 - (void)setWifiCredentialType:(long long)arg1;
 - (BOOL)supportsWiFiReconfiguration;
@@ -120,14 +118,14 @@
 @property(nonatomic) long long networkClientLAN; // @synthesize networkClientLAN=_networkClientLAN;
 @property(nonatomic) long long currentNetworkProtectionMode; // @synthesize currentNetworkProtectionMode=_currentNetworkProtectionMode;
 @property(nonatomic) long long targetNetworkProtectionMode; // @synthesize targetNetworkProtectionMode=_targetNetworkProtectionMode;
-- (void)saveNetworkClientIdentifier:(id)arg1;
+- (void)saveNetworkClientIdentifier:(id)arg1 networkRouterUUID:(id)arg2;
+@property(retain, nonatomic) NSUUID *networkRouterUUID; // @synthesize networkRouterUUID=_networkRouterUUID;
 @property(retain, nonatomic) NSNumber *networkClientIdentifier; // @synthesize networkClientIdentifier=_networkClientIdentifier;
 - (BOOL)supportsNetworkProtection;
 - (void)setAccessoryProfiles:(id)arg1;
 - (void)removeAccessoryProfile:(id)arg1;
 - (void)addAccessoryProfile:(id)arg1;
 @property(readonly, copy) NSArray *accessoryProfiles;
-- (id)updateAppData:(id)arg1;
 - (void)takeOwnershipOfAppData:(id)arg1;
 - (void)appDataRemoved:(id)arg1 message:(id)arg2;
 - (void)appDataUpdated:(id)arg1 message:(id)arg2;
@@ -139,12 +137,12 @@
 - (void)remoteAccessEnabled:(BOOL)arg1;
 - (void)_notifyConnectivityChangedWithReachabilityState:(BOOL)arg1 remoteAccessChanged:(BOOL)arg2;
 @property(readonly, nonatomic) long long reachableTransports;
-- (void)handleRemoteReachabilityChange:(BOOL)arg1;
 - (BOOL)isReachableForXPCClients;
 @property(nonatomic, getter=isRemotelyReachable) BOOL remotelyReachable; // @synthesize remotelyReachable=_remotelyReachable;
-- (void)handleReachabilityChange:(BOOL)arg1;
 @property(nonatomic, getter=isReachable) BOOL reachable; // @synthesize reachable=_reachable;
 - (void)setSuspendedCapable:(BOOL)arg1;
+@property(readonly, nonatomic) BOOL supportsPersonalRequests;
+@property(readonly, nonatomic) BOOL supportsMediaContentProfile;
 @property(readonly) BOOL requiresHomeAppForManagement;
 - (void)removeAdvertisement:(id)arg1;
 - (void)addAdvertisement:(id)arg1;
@@ -171,7 +169,7 @@
 - (void)__handleGetAccessoryAdvertisingParams:(id)arg1;
 - (id)_updateCategory:(id)arg1 notifyClients:(BOOL)arg2;
 - (void)updateCategory:(id)arg1;
-- (id)_updateRoom:(id)arg1 error:(id *)arg2;
+- (BOOL)_updateRoom:(id)arg1 error:(id *)arg2;
 - (void)__handleUpdateRoom:(id)arg1;
 - (id)modelWithUpdatedRoom:(id)arg1;
 - (void)updateRoom:(id)arg1;
@@ -194,9 +192,12 @@
 - (id)init;
 @property(readonly, copy, nonatomic) NSUUID *contextSPIUniqueIdentifier;
 @property(readonly, copy, nonatomic) NSString *contextID;
+- (id)vendorDetailsForAWD;
 - (id)assistantObject;
 - (id)url;
 - (id)assistantUniqueIdentifier;
+- (id)networkProtectionReportForAWD;
+- (int)networkProtectionStatusForAWD;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

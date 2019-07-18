@@ -20,8 +20,6 @@
 - (void)clearAllVehicleEventsWithHandler:(CDUnknownBlockType)arg1;
 - (void)stopMonitoringVehicleEvents;
 - (BOOL)startMonitoringVehicleEventsWithHandler:(CDUnknownBlockType)arg1;
-- (BOOL)updateLocationOfInterestWithIdentifier:(id)arg1 type:(long long)arg2 customLabel:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (BOOL)addLocationOfInterestOfType:(long long)arg1 mapItem:(id)arg2 customLabel:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (BOOL)fetchRoutineModeFromLocation:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)fetchLocationOfInterestWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)fetchLocationsOfInterestVisitedSinceDate:(id)arg1 handler:(CDUnknownBlockType)arg2;

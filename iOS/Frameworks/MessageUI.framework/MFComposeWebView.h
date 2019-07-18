@@ -23,7 +23,7 @@
     id <MFMailSignatureController> _signatureControllerProxy;
     id <MFComposeBodyFieldController> _bodyFieldProxy;
     UIBarButtonItemGroup *_leadingInputAssistantItemGroup;
-    UIBarButtonItemGroup *_trailingInputAssistantItemGroup;
+    NSArray *_trailingInputAssistantItemGroups;
     _Bool _shouldShowStandardButtons;
     unsigned long long _imageCount;
     _Bool _dirty;
@@ -75,9 +75,9 @@
 - (void)_didTapInsertDrawingOrMarkupButton:(id)arg1;
 - (void)_didTapInsertPhotoButton:(id)arg1;
 - (void)_didTapCameraButton:(id)arg1;
-@property(retain, nonatomic, setter=_setTrailingInputAssistantItemGroup:) UIBarButtonItemGroup *_trailingInputAssistantItemGroup;
+@property(retain, nonatomic, setter=_setTrailingInputAssistantItemGroups:) NSArray *_trailingInputAssistantItemGroups;
 @property(retain, nonatomic, setter=_setLeadingInputAssistantItemGroup:) UIBarButtonItemGroup *_leadingInputAssistantItemGroup;
-@property(readonly, nonatomic) UIBarButtonItemGroup *_mailComposeEditingTrailingInputAssistantGroup;
+@property(readonly, nonatomic) NSArray *_mailComposeEditingTrailingInputAssistantGroups;
 @property(readonly, nonatomic) UIBarButtonItemGroup *_mailComposeEditingLeadingInputAssistantGroup;
 - (void)releaseFocusAfterDismissing;
 - (void)retainFocusAfterPresenting;

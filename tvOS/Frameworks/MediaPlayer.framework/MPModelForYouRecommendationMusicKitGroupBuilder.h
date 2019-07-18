@@ -22,6 +22,7 @@
     } _requestedGroupProperties;
     MPModelForYouRecommendationMusicKitItemBuilder *_itemBuilder;
     NSDateFormatter *_lastUpdatedDateFormatter;
+    NSDictionary *_storeBagDictionary;
     MPPropertySet *_requestedGroupPropertySet;
     MPPropertySet *_requestedItemPropertySet;
     NSDictionary *_storeItemMetadataResults;
@@ -38,7 +39,7 @@
 - (id)modelObjectForRecommendationDictionary:(id)arg1;
 - (id)modelObjectForRecentlyPlayedArray:(id)arg1;
 - (void)initializeRequestedGroupProperties;
-- (id)initWithRequestedGroupPropertySet:(id)arg1 requestedItemPropertySet:(id)arg2 storeItemMetadataResults:(id)arg3 flatSectionedItems:(id)arg4;
+- (id)initWithRequestedGroupPropertySet:(id)arg1 requestedItemPropertySet:(id)arg2 storeItemMetadataResults:(id)arg3 flatSectionedItems:(id)arg4 storeBagDictionary:(id)arg5;
 
 @end
 

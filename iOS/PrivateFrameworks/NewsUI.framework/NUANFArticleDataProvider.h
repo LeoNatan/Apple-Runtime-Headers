@@ -8,7 +8,7 @@
 
 #import <NewsUI/NUArticleDataProvider-Protocol.h>
 
-@class FCArticle, NSString, NUANFAssetLoader, NUANFContextLoader, NUANFFontLoader;
+@class FCArticle, NFEventManager, NSString, NUANFAssetLoader, NUANFContextLoader, NUANFFontLoader;
 @protocol FCContentContext, NUEmbedDataManager, NUFontRegistration, SXHost;
 
 @interface NUANFArticleDataProvider : NSObject <NUArticleDataProvider>
@@ -22,8 +22,10 @@
     NUANFContextLoader *_contextLoader;
     NUANFAssetLoader *_assetLoader;
     id <NUEmbedDataManager> _embedDataManger;
+    NFEventManager *_eventManager;
 }
 
+@property(retain, nonatomic) NFEventManager *eventManager; // @synthesize eventManager=_eventManager;
 @property(retain, nonatomic) id <NUEmbedDataManager> embedDataManger; // @synthesize embedDataManger=_embedDataManger;
 @property(retain, nonatomic) NUANFAssetLoader *assetLoader; // @synthesize assetLoader=_assetLoader;
 @property(retain, nonatomic) NUANFContextLoader *contextLoader; // @synthesize contextLoader=_contextLoader;
@@ -34,8 +36,12 @@
 @property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
 @property(retain, nonatomic) FCArticle *article; // @synthesize article=_article;
 - (void).cxx_destruct;
+- (void)setupAssetPrefetchCancellationWithOperation:(id)arg1;
+- (void)setupAssetPrefetchRequestEventsWithEvents:(id)arg1;
 - (void)reloadArticleIfNeeded;
 - (void)loadArticleWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)cancelAssetPrefetch;
+- (void)prefetchAssets;
 - (void)loadContextWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithArticle:(id)arg1 contentContext:(id)arg2 fontRegistration:(id)arg3 host:(id)arg4 embedDataManager:(id)arg5;

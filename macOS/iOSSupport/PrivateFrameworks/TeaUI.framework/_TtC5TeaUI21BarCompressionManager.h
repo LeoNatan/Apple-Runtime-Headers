@@ -21,6 +21,7 @@
     // Error parsing type: , name: observingToken
     // Error parsing type: , name: lastContentOffset
     // Error parsing type: , name: initialContentOffset
+    // Error parsing type: , name: scrollDebounce
 }
 
 - (void).cxx_destruct;

@@ -8,7 +8,6 @@
 
 @class CNContact, CNGroup;
 
-__attribute__((visibility("hidden")))
 @interface CNChangeHistoryRemoveMemberFromGroupEvent : CNChangeHistoryEvent
 {
     CNContact *_member;

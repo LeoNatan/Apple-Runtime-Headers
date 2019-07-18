@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (_Bool)isUserVisible;
 - (id)extendedAttributes;
 - (id)asShareableItem;
 - (_Bool)isShareableItem;

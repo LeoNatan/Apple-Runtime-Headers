@@ -41,6 +41,9 @@
     struct sqlite3_stmt *_etaTrafficUpdateRequestInsert;
     struct sqlite3_stmt *_etaTrafficUpdateResponseInsert;
     struct sqlite3_stmt *_etaTrafficUpdateResponseErrorInsert;
+    struct sqlite3_stmt *_realtimeTransitUpdateRequestInsert;
+    struct sqlite3_stmt *_realtimeTransitUpdateResponseInsert;
+    struct sqlite3_stmt *_realtimeTransitUpdateResponseErrorInsert;
     struct sqlite3_stmt *_vehicleSpeedInsert;
     struct sqlite3_stmt *_vehicleHeadingInsert;
     struct sqlite3_stmt *_motionDataInsert;
@@ -89,6 +92,9 @@
 - (void)recordMotionUpdate:(unsigned int)arg1 exitType:(unsigned int)arg2 confidence:(unsigned int)arg3;
 - (void)recordVehicleHeading:(double)arg1 timestamp:(id)arg2;
 - (void)recordVehicleSpeed:(double)arg1 timestamp:(id)arg2;
+- (void)recordTransitUpdateError:(id)arg1;
+- (void)recordTransitUpdateResponse:(id)arg1;
+- (void)recordTransitUpdateRequest:(id)arg1 withTimestamp:(double)arg2;
 - (void)recordETATrafficUpdateError:(id)arg1;
 - (void)recordETATrafficUpdateResponse:(id)arg1;
 - (void)recordETATrafficUpdateRequest:(id)arg1;
@@ -124,7 +130,7 @@
 - (void)recordLocation:(id)arg1 timestamp:(double)arg2;
 - (void)_recordLocationEvent:(int)arg1 recordingTimestamp:(double)arg2 location:(id)arg3 correctedLocation:(id)arg4;
 - (void)_recordLocationEvent:(int)arg1 recordingTimestamp:(double)arg2 coordinate:(struct CLLocationCoordinate2D)arg3 rawCoordinate:(struct CLLocationCoordinate2D)arg4 timestamp:(double)arg5 horizontalAccuracy:(double)arg6 verticalAccuracy:(double)arg7 altitude:(double)arg8 speed:(double)arg9 speedAccuracy:(double)arg10 course:(double)arg11 rawCourse:(double)arg12 type:(int)arg13 courseAccuracy:(double)arg14 correctedCoordinate:(struct CLLocationCoordinate2D)arg15 correctedCourse:(double)arg16 matchType:(int)arg17 activeTransportType:(int)arg18 matchInfo:(id)arg19 correctedLocation:(id)arg20 speedLimit:(int)arg21 shieldText:(id)arg22 shieldType:(int)arg23;
-- (void)recordLocation:(id)arg1;
+- (void)recordLocation:(id)arg1 rawLocation:(id)arg2;
 - (void)_recordLocationMatchInfoOnWriteQueue:(id)arg1 forLocationID:(int)arg2;
 - (void)recordMiscInfo:(id)arg1 value:(id)arg2;
 - (void)recordStylesheet:(id)arg1 data:(id)arg2;

@@ -8,14 +8,16 @@
 
 #import <HomeKitDaemon/HMDAWDLogEvent-Protocol.h>
 
-@class AWDHomeKitVendorInformation, NSString;
+@class HMDAccessory, NSString;
 
 @interface HMDAccessoryPairingEvent : HMDLogEvent <HMDAWDLogEvent>
 {
     _Bool _addOperation;
     _Bool _addViaWAC;
     _Bool _wacLegacy;
-    AWDHomeKitVendorInformation *_vendorInfo;
+    _Bool _usedWiFiPPSK;
+    _Bool _usedOwnershipProof;
+    HMDAccessory *_pairedAccessory;
     long long _linkType;
     long long _certificationStatus;
     unsigned long long _authMethod;
@@ -28,17 +30,18 @@
 + (id)uuid;
 + (void)initialize;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic, getter=isUsedOwnershipProof) _Bool usedOwnershipProof; // @synthesize usedOwnershipProof=_usedOwnershipProof;
+@property(nonatomic, getter=isUsedWiFiPPSK) _Bool usedWiFiPPSK; // @synthesize usedWiFiPPSK=_usedWiFiPPSK;
 @property(nonatomic) unsigned long long authMethod; // @synthesize authMethod=_authMethod;
 @property(nonatomic) long long certificationStatus; // @synthesize certificationStatus=_certificationStatus;
 @property(nonatomic, getter=isWacLegacy) _Bool wacLegacy; // @synthesize wacLegacy=_wacLegacy;
 @property(nonatomic, getter=isAddViaWAC) _Bool addViaWAC; // @synthesize addViaWAC=_addViaWAC;
 @property(readonly, nonatomic, getter=isAddOperation) _Bool addOperation; // @synthesize addOperation=_addOperation;
 @property(nonatomic) long long linkType; // @synthesize linkType=_linkType;
-@property(retain, nonatomic) AWDHomeKitVendorInformation *vendorInfo; // @synthesize vendorInfo=_vendorInfo;
+@property(retain, nonatomic) HMDAccessory *pairedAccessory; // @synthesize pairedAccessory=_pairedAccessory;
 - (void).cxx_destruct;
 - (void)pairedAccessory:(id)arg1;
 - (void)pairedToServer:(id)arg1 certificationStatus:(long long)arg2;
-- (void)setcertificationStatus:(long long)arg1;
 - (void)setAuthenticationMethod:(unsigned long long)arg1;
 - (void)setAddedViaWAC:(_Bool)arg1;
 - (id)initWithAccessoryDescription:(id)arg1;

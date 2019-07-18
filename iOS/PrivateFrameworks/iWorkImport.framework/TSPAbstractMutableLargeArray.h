@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (id)segmentAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSMutableArray *mutableArrayWrapper;
 @property(readonly, nonatomic) NSArray *allObjects;
+@property(readonly, nonatomic) _Bool disableSegmentation;
 @property(nonatomic) unsigned long long maxSegmentSize;
 - (void)setMaxSegmentSize:(unsigned long long)arg1 willModify:(_Bool)arg2;
 @property(nonatomic) unsigned long long maxSegmentElementCount;

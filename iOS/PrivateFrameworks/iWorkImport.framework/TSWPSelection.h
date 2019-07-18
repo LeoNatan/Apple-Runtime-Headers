@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
     TSWPRangeArray *_visualRanges;
 }
 
-+ (_Bool)p_checkEndOfLineFlagForRange:(struct _NSRange *)arg1 leadingEdge:(_Bool *)arg2 type:(int *)arg3 endOfLine:(_Bool)arg4 storage:(id)arg5;
++ (_Bool)p_checkEndOfLineFlagForRange:(inout struct _NSRange *)arg1 leadingEdge:(inout _Bool *)arg2 type:(inout int *)arg3 endOfLine:(_Bool)arg4 storage:(id)arg5;
 + (id)selectionFromWPSelection:(id)arg1;
 + (id)selectionWithRange:(struct _NSRange)arg1 type:(int)arg2 leadingEdge:(_Bool)arg3 storage:(id)arg4;
 + (id)selectionWithRange:(struct _NSRange)arg1;

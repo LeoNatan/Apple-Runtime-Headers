@@ -22,6 +22,7 @@
 - (id)cellForIndex:(unsigned long long)arg1 tableView:(id)arg2;
 - (unsigned long long)numberOfRowsInSection;
 - (id)sectionTitle;
+- (id)_valueForRowWithTitle:(id)arg1;
 - (id)_rowTitles;
 - (void)addText:(id)arg1 detail:(id)arg2;
 - (id)initWithTitle:(id)arg1;

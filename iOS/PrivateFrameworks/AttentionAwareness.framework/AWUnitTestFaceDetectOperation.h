@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak AWUnitTestPearlDevice *unitTestDevice; // @synthesize unitTestDevice=_unitTestDevice;
 - (void).cxx_destruct;
+- (void)awSetFaceDetectError;
 - (void)awSetFaceFound;
 - (void)cancel;
 - (void)awDeliverFaceFound;

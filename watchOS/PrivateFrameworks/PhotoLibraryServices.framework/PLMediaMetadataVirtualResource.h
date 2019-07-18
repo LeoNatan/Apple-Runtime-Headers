@@ -8,9 +8,12 @@
 
 @interface PLMediaMetadataVirtualResource : PLVirtualResource
 {
+    unsigned int _dataLength;
 }
 
-- (id)initWithAsset:(id)arg1 resourceType:(unsigned int)arg2 version:(unsigned int)arg3 recipeID:(unsigned int)arg4;
+- (long long)estimatedDataLength;
+- (long long)dataLength;
+- (id)initWithAsset:(id)arg1 resourceType:(unsigned int)arg2 version:(unsigned int)arg3 recipeID:(unsigned int)arg4 dataLength:(unsigned int)arg5;
 
 @end
 

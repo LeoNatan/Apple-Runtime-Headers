@@ -19,6 +19,9 @@
 - (id)standaloneTitleForNote;
 - (_Bool)providesStandaloneTitleForNote;
 - (_Bool)showThumbnailInNoteList;
+- (_Bool)shouldSyncPreviewImageToCloud:(id)arg1;
+- (_Bool)preferLocalPreviewImages;
+- (_Bool)previewsSupportMultipleAppearances;
 - (_Bool)hasPreviews;
 - (_Bool)shouldShowInContentInfoText;
 

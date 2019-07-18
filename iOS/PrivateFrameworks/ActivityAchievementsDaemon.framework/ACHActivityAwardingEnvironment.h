@@ -65,6 +65,7 @@
 - (id)yesterdayMoveValue;
 - (id)todayMoveGoal;
 - (id)todayMoveValue;
+- (id)valueForUndefinedKey:(id)arg1;
 - (id)valueForKey:(id)arg1;
 - (void)setCurrentDateComponents:(id)arg1;
 - (id)initWithDataProvider:(id)arg1;

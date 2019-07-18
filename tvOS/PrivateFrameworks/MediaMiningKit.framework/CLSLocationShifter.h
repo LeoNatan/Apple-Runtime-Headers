@@ -15,6 +15,7 @@
     GEOLocationShifter *_locationShifter;
 }
 
++ (_Bool)isLocationShiftRequiredForCoordinate:(CDStruct_c3b9c2ee)arg1;
 + (id)sharedLocationShifter;
 @property(readonly, nonatomic) GEOLocationShifter *locationShifter; // @synthesize locationShifter=_locationShifter;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *locationShiftQueue; // @synthesize locationShiftQueue=_locationShiftQueue;

@@ -20,7 +20,9 @@
 - (id)hmf_firstObjectWithUUID:(id)arg1;
 - (id)hmf_firstObjectWithName:(id)arg1;
 - (id)hmf_firstObjectWithValue:(id)arg1 forKeyPath:(id)arg2;
+- (id)hmf_objectsWithOptions:(unsigned int)arg1 passingTest:(CDUnknownBlockType)arg2;
 - (id)hmf_objectsPassingTest:(CDUnknownBlockType)arg1;
+- (id)hmf_objectWithOptions:(unsigned int)arg1 passingTest:(CDUnknownBlockType)arg2;
 - (id)hmf_objectPassingTest:(CDUnknownBlockType)arg1;
 - (_Bool)hmf_objectsAreKindOfClass:(Class)arg1;
 @property(readonly, getter=hmf_isEmpty) _Bool hmf_empty;

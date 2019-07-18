@@ -24,8 +24,10 @@ __attribute__((visibility("hidden")))
     id <_UICollectionLayoutSupplementaryEnrolling> _supplementaryEnroller;
     int _solutionRecursionDepth;
     int _maxFrameCount;
+    int _layoutAxis;
 }
 
+@property(readonly, nonatomic) int layoutAxis; // @synthesize layoutAxis=_layoutAxis;
 @property(readonly, nonatomic) int maxFrameCount; // @synthesize maxFrameCount=_maxFrameCount;
 @property(readonly, nonatomic) int solutionRecursionDepth; // @synthesize solutionRecursionDepth=_solutionRecursionDepth;
 @property(retain, nonatomic) id <_UICollectionLayoutSupplementaryEnrolling> supplementaryEnroller; // @synthesize supplementaryEnroller=_supplementaryEnroller;
@@ -63,11 +65,14 @@ __attribute__((visibility("hidden")))
 - (unsigned int)_directionalEdgeForLayoutAxis:(int)arg1 preEdge:(_Bool)arg2;
 - (struct CGPoint)_layoutOffsetForContainer:(id)arg1;
 - (struct CGSize)_effectiveContainerSizeForContainer:(id)arg1;
+- (float)_additionalDimensionForEdgeSpacingAlongAxis:(int)arg1 group:(id)arg2 trailingEdgeOnly:(_Bool)arg3;
+- (void)_warnIfClientSpecifiesFlexibleRootGroupEdgeSpacingAlongLayoutAxisAsNeededForGroup:(id)arg1 layoutAxis:(int)arg2;
+- (struct CGPoint)_outerContainerOffsetForGroup:(id)arg1 groupComputedSize:(struct CGSize)arg2 container:(id)arg3 outerLayoutAxis:(int)arg4;
 - (void)_solveSingleItem;
 - (void)_solveGroup;
 - (void)_solveWithCustomGroupItemProvider;
 - (void)_solve;
-- (void)_solveForContainer:(id)arg1 traitCollection:(id)arg2 maxFrameCount:(int)arg3 layoutRTL:(_Bool)arg4 preferredSizes:(id)arg5 solutionRecursionDepth:(int)arg6;
+- (void)_solveForContainer:(id)arg1 layoutAxis:(int)arg2 traitCollection:(id)arg3 maxFrameCount:(int)arg4 layoutRTL:(_Bool)arg5 preferredSizes:(id)arg6 solutionRecursionDepth:(int)arg7;
 @property(readonly, nonatomic) struct CGRect contentFrame;
 @property(readonly, nonatomic) struct CGRect layoutFrame;
 - (id)supplementaryFrameWithKind:(id)arg1 absoluteIndex:(int)arg2 additionalFrameOffset:(struct CGPoint)arg3 interSolutionSpacing:(float)arg4 repeatAxis:(int)arg5;
@@ -89,13 +94,13 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)contentSizeForFrameCount:(int)arg1 layoutAxis:(int)arg2;
 - (id)visualDescription;
 @property(readonly, copy) NSString *description;
-- (void)solveForContainer:(id)arg1 traitCollection:(id)arg2 maxFrameCount:(int)arg3 layoutRTL:(_Bool)arg4 preferredSizes:(id)arg5;
-- (void)solveForContainer:(id)arg1 traitCollection:(id)arg2 maxFrameCount:(int)arg3 layoutRTL:(_Bool)arg4;
+- (void)solveForContainer:(id)arg1 layoutAxis:(int)arg2 traitCollection:(id)arg3 maxFrameCount:(int)arg4 layoutRTL:(_Bool)arg5 preferredSizes:(id)arg6;
+- (void)solveForContainer:(id)arg1 layoutAxis:(int)arg2 traitCollection:(id)arg3 maxFrameCount:(int)arg4 layoutRTL:(_Bool)arg5;
 - (_Bool)canAccomodateItemWithSize:(struct CGSize)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithItem:(id)arg1 supplementaryEnroller:(id)arg2;
 - (id)initWithItem:(id)arg1;
-- (id)initWithItem:(id)arg1 supplementaryEnroller:(id)arg2 container:(id)arg3 traitCollection:(id)arg4 maxFrameCount:(int)arg5 layoutRTL:(_Bool)arg6 preferredSizes:(id)arg7 solverResult:(id)arg8 solutionRecursionDepth:(int)arg9;
+- (id)initWithItem:(id)arg1 supplementaryEnroller:(id)arg2 container:(id)arg3 layoutAxis:(int)arg4 traitCollection:(id)arg5 maxFrameCount:(int)arg6 layoutRTL:(_Bool)arg7 preferredSizes:(id)arg8 solverResult:(id)arg9 solutionRecursionDepth:(int)arg10;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class FPXExtensionContext, FPXSpotlightIndexer, NSFileProviderDomain, NSFileProviderExtension;
+@protocol OS_os_log;
 
 __attribute__((visibility("hidden")))
 @interface FPXDomainContext : NSObject
@@ -16,10 +17,12 @@ __attribute__((visibility("hidden")))
     FPXExtensionContext *_extensionContext;
     NSFileProviderExtension *_vendorInstance;
     NSFileProviderDomain *_domain;
+    NSObject<OS_os_log> *_log;
     FPXSpotlightIndexer *_spotlightIndexer;
 }
 
 @property(readonly, nonatomic) FPXSpotlightIndexer *spotlightIndexer; // @synthesize spotlightIndexer=_spotlightIndexer;
+@property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(readonly, nonatomic) _Bool usesFPFS; // @synthesize usesFPFS=_usesFPFS;
 @property(readonly, nonatomic) NSFileProviderDomain *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSFileProviderExtension *vendorInstance; // @synthesize vendorInstance=_vendorInstance;

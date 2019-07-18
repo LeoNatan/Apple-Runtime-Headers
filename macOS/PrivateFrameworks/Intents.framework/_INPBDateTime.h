@@ -17,6 +17,7 @@
     struct {
         unsigned int calendarSystem:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _calendarSystem;
     _INPBLocalDate *_date;
     _INPBLocalTime *_time;
@@ -24,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *timeZoneID; // @synthesize timeZoneID=_timeZoneID;
 @property(retain, nonatomic) _INPBLocalTime *time; // @synthesize time=_time;
 @property(retain, nonatomic) _INPBLocalDate *date; // @synthesize date=_date;

@@ -8,21 +8,27 @@
 
 #import <ScreenTimeUI/CAStateControllerDelegate-Protocol.h>
 
-@class CALayer, CAStateController, NSMutableArray;
+@class CALayer, CAStateController, NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface STCAPackageView : UIView <CAStateControllerDelegate>
 {
     CAStateController *_stateController;
-    NSMutableArray *_registeredObservers;
+    NSMutableArray *_completionHandlers;
 }
 
 + (id)keyPathsForValuesAffectingPackageRootLayer;
-@property(readonly) NSMutableArray *registeredObservers; // @synthesize registeredObservers=_registeredObservers;
+@property(readonly) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(retain) CAStateController *stateController; // @synthesize stateController=_stateController;
 - (void).cxx_destruct;
 - (void)stateController:(id)arg1 transitionDidStop:(id)arg2 completed:(_Bool)arg3;
-- (void)setStateName:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)_getStateWithName:(id)arg1;
+- (void)animateToStateName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)setStateName:(id)arg1;
+@property(readonly, copy) NSString *stateName;
+- (void)animateToInitialStateWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)setInitialState;
+@property(readonly, getter=isInitialState) _Bool initialState;
 @property(readonly) CALayer *packageRootLayer;
 - (void)layoutSubviews;
 - (void)_changeAppearance;

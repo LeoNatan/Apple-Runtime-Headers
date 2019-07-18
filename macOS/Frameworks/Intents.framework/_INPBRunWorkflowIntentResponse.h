@@ -22,6 +22,7 @@
     BOOL _continueRunning;
     BOOL _requestsIntentExecution;
     BOOL _waitingForResume;
+    BOOL __encodeLegacyGloryData;
     NSArray *_steps;
     _INPBArchivedObject *_underlyingIntent;
     _INPBArchivedObject *_underlyingIntentResponse;
@@ -30,6 +31,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)stepType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) BOOL waitingForResume; // @synthesize waitingForResume=_waitingForResume;
 @property(copy, nonatomic) NSString *utterance; // @synthesize utterance=_utterance;
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntentResponse; // @synthesize underlyingIntentResponse=_underlyingIntentResponse;

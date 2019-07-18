@@ -12,7 +12,7 @@
 
 @interface HIDAnalyticsHistogramEventField : NSObject <HIDAnalyticsEventFieldProtocol>
 {
-    long long _segmentCount;
+    unsigned char _segmentCount;
     struct _HIDAnalyticsHistogramSegment *_segments;
     NSString *_fieldName;
 }

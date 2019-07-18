@@ -76,6 +76,7 @@
 - (void)_setPasswordFieldHidden:(_Bool)arg1;
 - (void)_cancelPasswordDelegateIfNecessary;
 - (id)_authorizationValueForAuthenticationResults:(id)arg1;
+- (_Bool)_showOnlyPassword;
 - (void)_repairCloudAccountWithAuthenticationResults:(id)arg1;
 - (void)_attemptAuthenticationWithContext:(id)arg1;
 - (void)_attemptAuthentication;

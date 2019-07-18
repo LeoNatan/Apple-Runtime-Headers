@@ -32,7 +32,7 @@
 - (void)close;
 - (id)initWithAccountSession:(id)arg1;
 - (void)fixupItemsAtStartup;
-- (void)applyChangesForServerItem:(id)arg1 localItem:(id)arg2 rank:(long long)arg3 zone:(id)arg4 activity:(id)arg5 forceCreate:(_Bool)arg6 hasFinished:(_Bool *)arg7;
+- (void)applyChangesForServerItem:(id)arg1 localItem:(id)arg2 rank:(long long)arg3 zone:(id)arg4 activity:(id)arg5 hasFinished:(_Bool *)arg6;
 - (_Bool)_handleApplyingDeletedUnlistedDirectoryIfNecessary:(id)arg1 localItem:(id)arg2 parent:(id)arg3;
 
 // Remaining properties

@@ -10,6 +10,7 @@
 
 @interface PKDiscoveryTextBlockShelf : PKDiscoveryShelf
 {
+    int _style;
     NSString *_bodyKey;
     NSString *_ledeKey;
     NSString *_sectionHeaderLineKey;
@@ -25,6 +26,7 @@
 @property(readonly, nonatomic) NSString *sectionHeaderLineKey; // @synthesize sectionHeaderLineKey=_sectionHeaderLineKey;
 @property(readonly, nonatomic) NSString *ledeKey; // @synthesize ledeKey=_ledeKey;
 @property(readonly, nonatomic) NSString *bodyKey; // @synthesize bodyKey=_bodyKey;
+@property(readonly, nonatomic) int style; // @synthesize style=_style;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

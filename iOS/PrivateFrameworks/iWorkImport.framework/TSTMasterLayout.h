@@ -10,8 +10,8 @@
 #import <iWorkImport/TSTTableInternalGeometryProviding-Protocol.h>
 #import <iWorkImport/TSTTableMergeRangeProviding-Protocol.h>
 
-@class NSIndexSet, NSMutableArray, NSMutableSet, NSPointerArray, NSString, TSDFill, TSDInfoGeometry, TSDLayoutGeometry, TSKChangeNotifier, TSTCellRegion, TSTCellSelection, TSTConcurrentMutableIndexSet, TSTDupContentCache, TSTHiddenRowsColumnsCache, TSTLayout, TSTLayoutDynamicResizeInfo, TSTMergeRangeSortedSet, TSTRWRetainedPointerKeyDictionary, TSTStrokeDefaultVendor, TSTStrokeWidthCache, TSTTableInfo, TSTWPColumnCache, TSTWidthHeightCache, TSUColor, TSUWidthLimitedQueue, TSWPColumnStyle;
-@protocol OS_dispatch_group, TSTLayoutDynamicCellFillProtocol, TSTLayoutDynamicContentProtocol;
+@class NSIndexSet, NSMutableArray, NSMutableSet, NSPointerArray, NSString, TSDFill, TSDInfoGeometry, TSDLayoutGeometry, TSKChangeNotifier, TSTCellRegion, TSTCellSelection, TSTConcurrentMutableIndexSet, TSTDupContentCache, TSTFontInfoCache, TSTHiddenRowsColumnsCache, TSTLayout, TSTLayoutDynamicResizeInfo, TSTMergeRangeSortedSet, TSTRWRetainedPointerKeyDictionary, TSTStrokeDefaultVendor, TSTStrokeWidthCache, TSTTableInfo, TSTWPColumnCache, TSTWidthHeightCache, TSUColor, TSUWidthLimitedQueue, TSWPColumnStyle;
+@protocol OS_dispatch_group, OS_dispatch_queue, TSTLayoutDynamicCellFillProtocol, TSTLayoutDynamicContentProtocol;
 
 __attribute__((visibility("hidden")))
 @interface TSTMasterLayout : NSObject <TSTTableHiddenRowColumnProviding, TSTTableInternalGeometryProviding, TSTTableMergeRangeProviding>
@@ -76,7 +76,10 @@ __attribute__((visibility("hidden")))
     struct TSUCellCoord _dynamicSuppressingConditionalStylesCellID;
     NSMutableArray *_changeDescriptors;
     TSTMergeRangeSortedSet *_mergeRanges;
-    TSUWidthLimitedQueue *_layoutQueue;
+    TSTFontInfoCache *_fontInfoCache;
+    TSUWidthLimitedQueue *_layoutValidateQueue;
+    TSUWidthLimitedQueue *_layoutMeasureQueue;
+    NSObject<OS_dispatch_queue> *_layoutConcurrentQueue;
     NSPointerArray *_topRowStrokes;
     NSPointerArray *_bottomRowStrokes;
     NSPointerArray *_leftColumnStrokes;
@@ -158,7 +161,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSPointerArray *leftColumnStrokes; // @synthesize leftColumnStrokes=_leftColumnStrokes;
 @property(retain, nonatomic) NSPointerArray *bottomRowStrokes; // @synthesize bottomRowStrokes=_bottomRowStrokes;
 @property(retain, nonatomic) NSPointerArray *topRowStrokes; // @synthesize topRowStrokes=_topRowStrokes;
-@property(retain, nonatomic) TSUWidthLimitedQueue *layoutQueue; // @synthesize layoutQueue=_layoutQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *layoutConcurrentQueue; // @synthesize layoutConcurrentQueue=_layoutConcurrentQueue;
+@property(retain, nonatomic) TSUWidthLimitedQueue *layoutMeasureQueue; // @synthesize layoutMeasureQueue=_layoutMeasureQueue;
+@property(retain, nonatomic) TSUWidthLimitedQueue *layoutValidateQueue; // @synthesize layoutValidateQueue=_layoutValidateQueue;
+@property(retain, nonatomic) TSTFontInfoCache *fontInfoCache; // @synthesize fontInfoCache=_fontInfoCache;
 @property(nonatomic) _Bool tableNameEnabled; // @synthesize tableNameEnabled=_tableNameEnabled;
 @property(nonatomic) struct CGSize maximumPartitionSize; // @synthesize maximumPartitionSize=_maximumPartitionSize;
 @property(nonatomic) _Bool processHiddenRowsForExport; // @synthesize processHiddenRowsForExport=_processHiddenRowsForExport;
@@ -205,6 +211,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)readSafelyUsingBlock:(CDUnknownBlockType)arg1;
 - (void)modifySafelyUsingBlock:(CDUnknownBlockType)arg1;
+- (_Bool)isLastVisibleBodyRowCategorySummaryOrLabelRow;
 - (_Bool)isCategoryLastSummaryRowCollapsed;
 - (id)indexesForCategoryColumnsInRegion:(id)arg1;
 - (id)indexesForCategoryColumns;
@@ -231,16 +238,21 @@ __attribute__((visibility("hidden")))
 - (struct UIEdgeInsets)paddingForCellID:(struct TSUCellCoord)arg1;
 - (struct UIEdgeInsets)edgeInsetsFromPadding:(id)arg1;
 - (id)formattedDataParagraphStylePropertyMapForCell:(id)arg1 atCellID:(struct TSUCellCoord)arg2;
-- (id)newTextEngineForCell:(id)arg1 atCellID:(struct TSUCellCoord)arg2;
+- (id)newTextEngineForCell:(id)arg1 atCellID:(struct TSUCellCoord)arg2 textStyle:(id)arg3;
+- (id)newTextEngineForCell:(id)arg1 atCellID:(struct TSUCellCoord)arg2 textStyle:(id)arg3 naturalAlignment:(int)arg4 cellDirection:(int)arg5;
+- (id)resolvedTextStyleForCell:(id)arg1 atCellID:(struct TSUCellCoord)arg2 textStyle:(id)arg3 outNaturalAlignment:(int *)arg4 outCellDirection:(int *)arg5;
+- (id)p_validationBundleForRegionToValidate:(id)arg1 rowsNeedingFittingInfo:(id)arg2;
 - (id)unwrappedFittingWidthsForColumnsInCellRegion:(id)arg1;
 - (double)unwrappedFittingWidthsForColumnInCellRegionWorker:(id)arg1;
-- (void)waitForLayoutToComplete;
-- (void)processLayoutTask:(id)arg1;
-- (void)measureTextForLayoutState:(id)arg1;
-- (void)queueCellForValidation:(struct TSUCellRect)arg1 cell:(id)arg2 modelMergeRange:(struct TSUCellRect)arg3 wrap:(_Bool)arg4 verticalAlignment:(int)arg5 padding:(id)arg6 prop:(_Bool)arg7 layoutCacheFlags:(int)arg8 layoutTask:(id)arg9;
+- (void)waitForLayoutToComplete:(id)arg1;
+- (void)processLayoutTask:(id)arg1 validationBundle:(id)arg2;
+- (void)measureWithLayoutState:(id)arg1;
+- (void)queueCellForValidation:(struct TSUCellRect)arg1 cell:(id)arg2 textStyle:(id)arg3 modelMergeRange:(struct TSUCellRect)arg4 wrap:(_Bool)arg5 verticalAlignment:(int)arg6 padding:(id)arg7 prop:(_Bool)arg8 layoutCacheFlags:(int)arg9 validationBundle:(id)arg10 layoutTask:(id)arg11;
 - (id)validateCellForDrawing:(struct TSUCellCoord)arg1 cell:(id)arg2 contents:(id)arg3 wrap:(_Bool)arg4 verticalAlignment:(int)arg5 padding:(id)arg6 layoutCacheFlags:(int)arg7 pageNumber:(unsigned long long)arg8 pageCount:(unsigned long long)arg9;
 - (void)validateFittingWidthsForRegion:(id)arg1;
-- (void)validateFittingInfoForChangeDescriptors:(id)arg1 rowsNeedingFittingInfo:(id)arg2;
+- (id)validateFittingInfoForChangeDescriptors:(id)arg1 rowsNeedingFittingInfo:(id)arg2;
+- (_Bool)p_containsGradientThatFillsContainerInStyle:(id)arg1;
+- (_Bool)p_containsGradientFillThatFillsContainerInCell:(id)arg1 cellContents:(id)arg2;
 - (_Bool)p_deferredMergeExpansionForChangeDescriptorType:(int)arg1;
 - (id)p_validationFittingForChangeDescriptorType:(int)arg1 regionFromChangeDescriptor:(id)arg2 currentRegionToValidate:(id)arg3;
 - (id)p_validationFittingCellRegionForStrokesChanged:(id)arg1 currentRegionToValidate:(id)arg2;
@@ -255,11 +267,12 @@ __attribute__((visibility("hidden")))
 - (void)p_validateFittingInfoForEmptyMergeRange:(struct TSUCellRect)arg1;
 - (struct TSUCellCoord)p_validateFittingInfoForEmptyCellsBetween:(struct TSUCellCoord)arg1 andCellID:(struct TSUCellCoord)arg2 inRange:(struct TSUCellRect)arg3 widthHeightCollection:(id)arg4;
 - (void)p_validateFittingInfoForEmptyCellsOnSingleRowBetween:(struct TSUCellCoord)arg1 andEndCellID:(struct TSUCellCoord)arg2 widthHeightCollection:(id)arg3;
-- (void)validateFittingInfoWithCellRange:(struct TSUCellRect)arg1;
-- (void)validateFittingInfoWithCellRangeWorker:(struct TSUCellRect)arg1;
-- (void)validateFittingInfoForCell:(id)arg1 cellID:(struct TSUCellCoord)arg2 mergeRange:(struct TSUCellRect)arg3 setFitting:(_Bool)arg4 layoutTask:(id)arg5 widthHeightCollection:(id)arg6;
+- (void)validateFittingInfoWithCellRange:(struct TSUCellRect)arg1 validationBundle:(id)arg2;
+- (void)validateFittingInfoWithCellRangeWorker:(struct TSUCellRect)arg1 widthHeightCollection:(id)arg2 validationBundle:(id)arg3;
+- (void)validateFittingInfoForCell:(id)arg1 cellID:(struct TSUCellCoord)arg2 mergeRange:(struct TSUCellRect)arg3 setFitting:(_Bool)arg4 layoutTask:(id)arg5 widthHeightCollection:(id)arg6 validationBundle:(id)arg7;
 - (void)validateRowVisibility:(id)arg1;
 - (void)updateWHCForMergeRanges;
+- (void)p_validateCellIDToWPColumnCacheForChangeDescriptors:(id)arg1;
 - (void)validateChangeDescriptorQueue;
 - (void)validateMasterLayoutForChangeDescriptors:(id)arg1;
 - (void)validate;
@@ -338,9 +351,12 @@ __attribute__((visibility("hidden")))
 - (void)validateBandedFill;
 - (void)invalidateBandedFill;
 - (_Bool)shouldRowUseBandedFill:(unsigned int)arg1;
+- (void)p_validateStrokeWidthCachesForRegion:(id)arg1 invalidateStrokeDefaults:(_Bool)arg2;
 - (void)p_validateStrokesForRegion:(id)arg1;
 - (void)validateStrokesForChangeDescriptors:(id)arg1;
 - (double)contentHeightForCellRange:(struct TSUCellRect)arg1 skipDynamicSwap:(_Bool)arg2;
+- (double)p_contentWidthForCellRange:(struct TSUCellRect)arg1 skipDynamicSwap:(_Bool)arg2 validationBundle:(id)arg3;
+- (double)contentWidthForCellRange:(struct TSUCellRect)arg1 validationBundle:(id)arg2;
 - (double)contentWidthForCellRange:(struct TSUCellRect)arg1 skipDynamicSwap:(_Bool)arg2;
 - (struct CGSize)contentSizeForCellRange:(struct TSUCellRect)arg1 skipDynamicSwap:(_Bool)arg2;
 - (void)p_clearStrokesForMergesInCellRegion:(id)arg1;
@@ -354,12 +370,14 @@ __attribute__((visibility("hidden")))
 - (void)setDynamicCellBorder:(id)arg1 forCellID:(struct TSUCellCoord)arg2;
 - (double)strokeHeightOfGridRow:(unsigned int)arg1 atColumnIndex:(unsigned int)arg2;
 - (double)strokeHeightOfGridRow:(unsigned int)arg1 beginColumn:(unsigned int)arg2 endColumn:(unsigned int)arg3;
+- (double)strokeHeightOfGridRow:(unsigned int)arg1 inColumnRange:(struct TSTSimpleRange)arg2;
 - (id)mergedStrokesForGridRow:(unsigned int)arg1;
 - (id)p_strokesForGridRow:(unsigned int)arg1 isTop:(_Bool)arg2 takeStrokeWriteLock:(_Bool)arg3;
 - (_Bool)adjustGridRowForVisibility:(unsigned int *)arg1 isTop:(_Bool)arg2;
 - (void)p_setDynamicStroke:(id)arg1 strokeOrder:(int)arg2 forGridRow:(unsigned int)arg3 isTop:(_Bool)arg4 beginColumn:(unsigned int)arg5 endColumn:(unsigned int)arg6;
 - (double)strokeWidthOfGridColumn:(unsigned int)arg1 atRowIndex:(unsigned int)arg2;
 - (double)strokeWidthOfGridColumn:(unsigned int)arg1 beginRow:(unsigned int)arg2 endRow:(unsigned int)arg3;
+- (double)strokeWidthOfGridColumn:(unsigned int)arg1 inRowRange:(struct TSTSimpleRange)arg2;
 - (id)mergedStrokesForGridColumn:(unsigned int)arg1;
 - (id)p_strokesForGridColumn:(unsigned int)arg1 isLeft:(_Bool)arg2 takeStrokeWriteLock:(_Bool)arg3;
 - (_Bool)adjustGridColumnForVisibility:(unsigned int *)arg1 isLeft:(_Bool)arg2;

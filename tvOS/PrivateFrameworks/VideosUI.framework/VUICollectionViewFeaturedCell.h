@@ -6,13 +6,12 @@
 
 #import <TVUIKit/_TVRibbonCell.h>
 
-@class IKViewElement, TVImageLayout, VUIButton, VUICollectionViewFeaturedView;
+@class IKViewElement, TVImageLayout, VUICollectionViewFeaturedView;
 
 __attribute__((visibility("hidden")))
 @interface VUICollectionViewFeaturedCell : _TVRibbonCell
 {
     VUICollectionViewFeaturedView *_featuredView;
-    VUIButton *_focusableButton;
     TVImageLayout *_imageLayout;
     IKViewElement *_viewElement;
 }
@@ -21,14 +20,11 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)lockupSizeForElement:(id)arg1;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) TVImageLayout *imageLayout; // @synthesize imageLayout=_imageLayout;
-@property(retain, nonatomic) VUIButton *focusableButton; // @synthesize focusableButton=_focusableButton;
 @property(retain, nonatomic) VUICollectionViewFeaturedView *featuredView; // @synthesize featuredView=_featuredView;
 - (void).cxx_destruct;
 - (void)_updateMaskingModeForParameters:(id)arg1;
-- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
+- (id)preferredFocusEnvironments;
+- (_Bool)canBecomeFocused;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

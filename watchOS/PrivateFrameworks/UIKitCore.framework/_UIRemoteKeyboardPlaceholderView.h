@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize fixedSize;
 - (_Bool)refreshPlaceholder;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGSize)intrinsicContentSize;
 @property(readonly, retain) UIView *placeheldView;
 - (void)dealloc;

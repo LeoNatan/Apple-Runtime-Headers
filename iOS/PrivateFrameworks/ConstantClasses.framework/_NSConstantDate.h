@@ -11,7 +11,6 @@
 }
 
 + (id)alloc;
-+ (void)load;
 - (double)timeIntervalSinceReferenceDate;
 - (void)dealloc;
 - (unsigned long long)retainCount;

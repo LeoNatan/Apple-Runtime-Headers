@@ -10,6 +10,7 @@
 
 @interface ARSkeletonDefinition : NSObject
 {
+    unsigned long long _jointCount;
     NSArray *_jointNames;
     NSArray *_parentIndices;
     ARSkeleton3D *_neutralBodySkeleton3D;
@@ -20,6 +21,7 @@
 @property(readonly, nonatomic) ARSkeleton3D *neutralBodySkeleton3D; // @synthesize neutralBodySkeleton3D=_neutralBodySkeleton3D;
 @property(readonly, nonatomic) NSArray *parentIndices; // @synthesize parentIndices=_parentIndices;
 @property(readonly, nonatomic) NSArray *jointNames; // @synthesize jointNames=_jointNames;
+@property(readonly, nonatomic) unsigned long long jointCount; // @synthesize jointCount=_jointCount;
 - (void).cxx_destruct;
 
 @end

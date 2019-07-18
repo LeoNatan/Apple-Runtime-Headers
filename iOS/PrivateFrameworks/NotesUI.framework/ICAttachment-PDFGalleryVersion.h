@@ -19,10 +19,11 @@
 - (id)fileURLForTypeIdentifier:(id)arg1;
 - (void)notifyDocCamFrameworkAttachmentWasDeleted;
 - (_Bool)fetchThumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceInfo:(id)arg3 cache:(id)arg4 cacheKey:(id)arg5 processingBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7 fallbackBlock:(CDUnknownBlockType)arg8 aboutToLoadHandler:(CDUnknownBlockType)arg9;
-- (_Bool)thumbnailImage:(struct UIImage **)arg1 minSize:(struct CGSize)arg2 scale:(double)arg3 appearanceType:(unsigned long long)arg4 imageScaling:(unsigned long long *)arg5 showAsFileIcon:(_Bool *)arg6 isMovie:(_Bool *)arg7 movieDuration:(CDStruct_1b6d18a9 *)arg8;
+- (_Bool)thumbnailImage:(struct UIImage **)arg1 minSize:(struct CGSize)arg2 scale:(double)arg3 appearanceType:(unsigned long long)arg4 requireAppearance:(_Bool)arg5 imageScaling:(unsigned long long *)arg6 showAsFileIcon:(_Bool *)arg7 isMovie:(_Bool *)arg8 movieDuration:(CDStruct_1b6d18a9 *)arg9;
 - (_Bool)thumbnailImage:(struct UIImage **)arg1 minSize:(struct CGSize)arg2 scale:(double)arg3 imageScaling:(unsigned long long *)arg4 showAsFileIcon:(_Bool *)arg5 isMovie:(_Bool *)arg6 movieDuration:(CDStruct_1b6d18a9 *)arg7;
 - (id)updateAttachmentPreviewImageWithImage:(struct UIImage *)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 scaleWhenDrawing:(_Bool)arg4 metadata:(id)arg5 sendNotification:(_Bool)arg6;
 - (id)updateAttachmentPreviewImageWithImage:(struct UIImage *)arg1 scale:(double)arg2 scaleWhenDrawing:(_Bool)arg3 metadata:(id)arg4 sendNotification:(_Bool)arg5;
+- (id)deviceInfosWithoutPreviewImagesFromDeviceInfos:(id)arg1;
 @property(readonly, nonatomic) NSString *movieDurationForSpeaking;
 @property(readonly, nonatomic) NSString *modificationDateForSpeaking;
 - (id)activityItems;

@@ -18,6 +18,7 @@
     INCExtensionConnection *_connection;
 }
 
++ (id)bundleIdentifierForIntent:(id)arg1;
 + (id)appIdentifierForIntent:(id)arg1;
 @property(retain, nonatomic) INCExtensionConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) WFIntentExecutor *executor; // @synthesize executor=_executor;
@@ -33,13 +34,15 @@
 - (id)errorFromConfirmResponse:(id)arg1 intent:(id)arg2;
 - (id)errorFromResolutionResult:(id)arg1 forSlot:(id)arg2 onIntent:(id)arg3;
 - (void)showDisambiguationAndRetryForSlot:(id)arg1 items:(id)arg2 onIntent:(id)arg3;
+- (void)localizedDisambiguationPromptForAttribute:(id)arg1 intent:(id)arg2 disambiguationItems:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)showAskForValueAndRetryForSlot:(id)arg1 onIntent:(id)arg2;
 - (void)handleResolutionResult:(id)arg1 forSlot:(id)arg2 onIntent:(id)arg3;
-- (id)unknownErrorWithCode:(long long)arg1 localizedDescription:(id)arg2;
+- (id)unknownErrorWithCode:(long long)arg1 localizedDescription:(id)arg2 userInfo:(id)arg3;
 - (void)dismissViewControllerIfNecessary:(CDUnknownBlockType)arg1;
 - (void)showInteractionIfNeeded:(id)arg1 inUserInterface:(id)arg2 requiringConfirmation:(BOOL)arg3 requiringAuthentication:(BOOL)arg4 executionStage:(long long)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)getOutputFromIntentResponse:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)finishRunningByContinuingInApp;
+- (BOOL)shouldOpenAppThroughSiriForIntent:(id)arg1 intentResponse:(id)arg2;
 - (void)populateIntent:(id)arg1 withInput:(id)arg2 processedParameters:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)executorWithIntent:(id)arg1;
 - (void)startExecutingIntent:(id)arg1;
@@ -54,11 +57,11 @@
 - (id)generatedIntentWithInput:(id)arg1 error:(id *)arg2;
 - (void)resolveSlot:(id)arg1 withProcessedValue:(id)arg2 parameter:(id)arg3 input:(id)arg4 completion:(CDUnknownBlockType)arg5;
 @property(readonly, nonatomic) long long intentCategory;
+- (BOOL)allowsInteractiveSlotResolution;
 - (BOOL)opensInApp;
 - (BOOL)showsWhenRun;
 - (BOOL)requiresShowsWhenRun;
 - (void)wasAddedToWorkflowByUser:(id)arg1;
-- (id)parameterKeysIgnoredForParameterSummary;
 - (BOOL)skipsProcessingHiddenParameters;
 - (void)cancel;
 - (void)finishRunningWithError:(id)arg1;

@@ -12,6 +12,6 @@
 - (void)_willPerformDiff:(BOOL)arg1;
 - (void)_reloadData;
 - (void)_deleteAllItems;
-- (void)_performUpdateWithCollectionViewUpdateItems:(NSArray *)arg1 dataSourceSnapshotter:(_NSDataSourceSnapshotter *)arg2 updateHandler:(void (^)(void))arg3;
+- (void)_performUpdateWithCollectionViewUpdateItems:(NSArray *)arg1 dataSourceSnapshotter:(_NSDataSourceSnapshotter *)arg2 updateHandler:(void (^)(void))arg3 completion:(void (^)(void))arg4;
 @end
 

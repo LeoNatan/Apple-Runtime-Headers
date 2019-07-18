@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (_Bool)detectedDataInString:(id)arg1 scanRange:(struct _NSRange)arg2;
 + (id)scanString:(id)arg1 scanRanges:(id)arg2;
 + (id)calculateScanRanges:(id)arg1 changedRange:(struct _NSRange)arg2;
 + (void)registerDataDetectorClass:(Class)arg1;

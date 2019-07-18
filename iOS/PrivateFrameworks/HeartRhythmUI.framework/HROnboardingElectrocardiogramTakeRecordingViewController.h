@@ -37,11 +37,9 @@
 @property(retain, nonatomic) HKAnchoredObjectQuery *electrocardiogramQuery; // @synthesize electrocardiogramQuery=_electrocardiogramQuery;
 @property(retain, nonatomic) HKHeartRhythmAvailability *availability; // @synthesize availability=_availability;
 - (void).cxx_destruct;
-- (double)_bodyTextLastBaselineToRecordingStepFirstBaseline;
-- (double)_titleLastBaselineToBodyFirstBaseline;
+- (id)_recordingStepFont;
 - (id)_bodyFont;
 - (id)_bodyFontTextStyle;
-- (double)_assetBottomToTitleFirstBaseline;
 - (id)_titleFont;
 - (id)_titleFontTextStyle;
 - (void)_stopElectrocardiogramQuery;

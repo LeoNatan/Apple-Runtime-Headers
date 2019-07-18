@@ -41,6 +41,7 @@
 - (_Bool)cycleTrackingSummaryIsFavorited;
 - (void)fetchFavorites;
 - (void)removeAllFavorites;
+- (void)userHasUpdatedFavortiesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)userUpdatedFavorites;
 - (void)setIsFavorited:(_Bool)arg1 displayTypes:(id)arg2;
 - (void)setIsFavorited:(_Bool)arg1 displayType:(id)arg2;

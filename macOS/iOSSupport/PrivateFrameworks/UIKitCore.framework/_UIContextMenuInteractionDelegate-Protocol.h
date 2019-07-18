@@ -6,7 +6,7 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class NSArray, _UIContextMenuInteraction, _UIContextMenuPreviewActionGroup, _UITargetedPreview;
+@class NSArray, UITargetedPreview, _UIContextMenuInteraction, _UIContextMenuPreviewActionGroup;
 
 @protocol _UIContextMenuInteractionDelegate <NSObject>
 - (_UIContextMenuPreviewActionGroup *)contextMenuInteraction:(_UIContextMenuInteraction *)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(NSArray *)arg3;
@@ -14,8 +14,8 @@
 @optional
 - (void)contextMenuInteractionDidEnd:(_UIContextMenuInteraction *)arg1;
 - (void)contextMenuInteractionWillPresent:(_UIContextMenuInteraction *)arg1;
-- (_UITargetedPreview *)targetedPreviewForDismissingContextMenuInteraction:(_UIContextMenuInteraction *)arg1;
-- (_UITargetedPreview *)contextMenuInteraction:(_UIContextMenuInteraction *)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
+- (UITargetedPreview *)targetedPreviewForDismissingContextMenuInteraction:(_UIContextMenuInteraction *)arg1;
+- (UITargetedPreview *)contextMenuInteraction:(_UIContextMenuInteraction *)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
 - (BOOL)contextMenuInteractionShouldBegin:(_UIContextMenuInteraction *)arg1;
 @end
 

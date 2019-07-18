@@ -6,13 +6,16 @@
 
 #import <objc/NSObject.h>
 
+#import <ContactsUI/NSCopying-Protocol.h>
+
 @class NSData, NSDate, NSString, UIImage;
 @protocol CNPhotoPickerProviderItemDelegate, CNScheduler;
 
 __attribute__((visibility("hidden")))
-@interface CNPhotoPickerProviderItem : NSObject
+@interface CNPhotoPickerProviderItem : NSObject <NSCopying>
 {
     NSData *_thumbnailImageData;
+    NSString *_recentsIdentifier;
     NSString *_localizedVariantDisplayName;
     id <CNScheduler> _renderingQueue;
     id <CNScheduler> _callbackQueue;
@@ -42,8 +45,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <CNScheduler> renderingQueue; // @synthesize renderingQueue=_renderingQueue;
 @property(retain, nonatomic) NSString *localizedVariantDisplayName; // @synthesize localizedVariantDisplayName=_localizedVariantDisplayName;
 @property(readonly, nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
+@property(retain, nonatomic) NSString *recentsIdentifier; // @synthesize recentsIdentifier=_recentsIdentifier;
 @property(retain, nonatomic) NSData *thumbnailImageData; // @synthesize thumbnailImageData=_thumbnailImageData;
 - (void).cxx_destruct;
+- (void)updateTintColorIfNeeded:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)contactImageForMetadataStore;
@@ -51,18 +56,20 @@ __attribute__((visibility("hidden")))
 - (id)generatePhotoFilterVariants;
 - (id)createVariantsItemsWithVariantsManager:(id)arg1;
 - (void)updateContact:(id)arg1;
-- (void)applyVariantEffectToFullsizeImage;
+- (void)applyVariantEffectToFullsizeImageWithCompletion:(CDUnknownBlockType)arg1;
 - (void)thumbnailViewWithCompletion:(CDUnknownBlockType)arg1;
 - (void)thumbnailViewWithPlaceholderProvider:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)clearThumbnailImage;
 - (id)generateThumbnailImageDataWithData:(id)arg1;
 - (id)generateThumbnailImageDataIfNeeded;
 - (void)generateAllImageDatasIfNeeded;
-- (id)originalImageData;
+@property(readonly, nonatomic) NSData *originalImageData;
 @property(readonly, nonatomic) NSString *localizedVariantsTitle;
-@property(readonly, nonatomic) BOOL shouldShowCaption;
 @property(readonly, nonatomic) BOOL allowsEditing;
+@property(readonly, nonatomic) BOOL shouldShowCaption;
+@property(readonly, nonatomic) BOOL allowsMoveAndScale;
 @property(readonly, nonatomic) BOOL allowsVariants;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithImageData:(id)arg1 thumbnailImageData:(id)arg2 fullscreenImageData:(id)arg3 imageFilterName:(id)arg4 cropRect:(struct CGRect)arg5 renderingQueue:(id)arg6 callbackQueue:(id)arg7;
 - (id)initWithImageData:(id)arg1 thumbnailImageData:(id)arg2 fullscreenImageData:(id)arg3 cropRect:(struct CGRect)arg4;
 

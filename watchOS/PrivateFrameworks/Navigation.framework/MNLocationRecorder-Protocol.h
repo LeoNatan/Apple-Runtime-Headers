@@ -16,7 +16,7 @@
 - (void)recordLocationUpdateResume;
 - (void)recordLocationUpdatePause;
 - (void)recordError:(NSError *)arg1;
-- (void)recordLocation:(MNLocation *)arg1;
+- (void)recordLocation:(MNLocation *)arg1 rawLocation:(MNLocation *)arg2;
 - (void)recordLocation:(CLLocation *)arg1 correctedLocation:(CLLocation *)arg2;
 @end
 

@@ -27,7 +27,6 @@
 @property(readonly, nonatomic) UIBarButtonItemStateAppearance *disabled;
 @property(readonly, nonatomic) UIBarButtonItemStateAppearance *highlighted;
 @property(readonly, nonatomic) UIBarButtonItemStateAppearance *normal;
-- (void)setupDefaultAppearanceForStyle:(int)arg1;
 - (void)configureWithDefaultForStyle:(int)arg1;
 - (id)_proxyForState:(int)arg1;
 - (id)_dataFromCoder:(id)arg1;
@@ -42,7 +41,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithBarButtonItemAppearance:(id)arg1;
-- (id)initWithBarButtonItemStyle:(int)arg1;
 - (id)initWithStyle:(int)arg1;
 - (id)init;
 - (void)dealloc;

@@ -6,11 +6,14 @@
 
 #import <QuickLook/NSObject-Protocol.h>
 
-@class AVAsset, UIImage;
+@class AVAsset, AVVideoComposition, UIImage;
 
 @protocol PHVideoScrubberFilmstripView <NSObject>
 @property(nonatomic) struct CGRect visibleRect;
 @property(retain, nonatomic) UIImage *placeholderImage;
 @property(copy, nonatomic) AVAsset *asset;
+
+@optional
+@property(copy, nonatomic) AVVideoComposition *videoComposition;
 @end
 

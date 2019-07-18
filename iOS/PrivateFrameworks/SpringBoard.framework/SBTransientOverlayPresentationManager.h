@@ -12,18 +12,15 @@
 #import <SpringBoard/SBIdleTimerProviding-Protocol.h>
 #import <SpringBoard/SBTransientOverlayViewControllerDelegate-Protocol.h>
 
-@class NSMapTable, NSMutableArray, NSNumber, NSString, SBAlertItemsController, SBAppStatusBarSettingsAssertion, SBBannerController, SBHomeGestureArbiter, SBHomeGestureParticipant, SBIdleTimerCoordinatorHelper, SBLockStateAggregator, SBReachabilityManager, SBTransientOverlayViewController, UIScreen, UIStatusBarStyleRequest, _SBTransientOverlayPresentedEntity;
+@class NSMapTable, NSMutableArray, NSNumber, NSString, SBAlertItemsController, SBAppStatusBarSettingsAssertion, SBBannerController, SBHomeGestureArbiter, SBHomeGestureParticipant, SBIdleTimerCoordinatorHelper, SBLockStateAggregator, SBReachabilityManager, SBTransientOverlayViewController, UIScreen, UIStatusBarStyleRequest;
 @protocol BSInvalidatable, CSExternalBehaviorProviding, SBIdleTimerCoordinating, SBTransientOverlayPresentationManagerDelegate;
 
 @interface SBTransientOverlayPresentationManager : NSObject <SBHomeGestureParticipantDelegate, SBIdleTimerCoordinating, SBTransientOverlayViewControllerDelegate, SBIdleTimerProviding, SBButtonEventsHandler>
 {
     SBAlertItemsController *_alertItemsController;
-    _SBTransientOverlayPresentedEntity *_allowedHomeGestureEntity;
     SBBannerController *_bannerController;
-    id <BSInvalidatable> _bannerWindowLevelAssertion;
     id <BSInvalidatable> _bannerSuppressionAssertion;
     NSMutableArray *_contentStatusBarHiddenAssertions;
-    id <BSInvalidatable> _controlCenterWindowLevelAssertion;
     id <CSExternalBehaviorProviding> _coverSheetExternalBehaviorProvider;
     id <BSInvalidatable> _deviceOrientationUpdateDeferralAssertion;
     NSMutableArray *_entities;
@@ -37,10 +34,8 @@
     SBLockStateAggregator *_lockStateAggregator;
     SBReachabilityManager *_reachabilityManager;
     UIScreen *_screen;
-    id <BSInvalidatable> _siriWindowLevelAssertion;
-    SBAppStatusBarSettingsAssertion *_statusBarAssertion;
-    unsigned long long _statusBarRevision;
-    _SBTransientOverlayPresentedEntity *_whitePointAdaptivityEntity;
+    SBAppStatusBarSettingsAssertion *_globalStatusBarAssertion;
+    id <BSInvalidatable> _appStatusBarAssertion;
     _Bool _prefersStatusBarActivityItemVisible;
     NSNumber *_preferredWhitePointAdaptivityStyleValue;
     long long _topmostViewControllerInterfaceOrientation;
@@ -57,13 +52,18 @@
 - (void)_updateFeaturePolicies;
 - (void)_updateDeactivationAssertions;
 - (void)_updateContentStatusBarPresentation;
-- (void)_updateWindowLevelAssertionsForPresentationDismissal;
+- (void)_updateStatusBarWithCurrentExternalStatusBarSettings:(id)arg1 animated:(_Bool)arg2;
+- (void)_updateHomeGestureStateAnimated:(_Bool)arg1;
 - (void)_updateBackgroundWindowForEntity:(id)arg1;
-- (void)_setAllowedStatusBarEntity:(id)arg1 initialStatusBarSettings:(id)arg2 animated:(_Bool)arg3;
-- (void)_setAllowedHomeGestureEntity:(id)arg1 animated:(_Bool)arg2;
+- (id)_topmostPresentedEntity;
+- (id)_statusBarEntity;
 - (double)_windowLevelForEntity:(id)arg1;
+- (int)_preferredStatusBarVisibilityForEntity:(id)arg1;
 - (id)_newSceneDeactivationAssertionWithReason:(long long)arg1;
-- (id)_currentStatusBarSettings;
+- (_Bool)_isPresentationStatusBarHiddenForVisibility:(int)arg1 currentExternalStatusBarSettings:(id)arg2;
+- (void)_invalidateAssertionsForEntity:(id)arg1;
+- (void)_getContentScale:(double *)arg1 translation:(struct CGPoint *)arg2 forEntity:(id)arg3;
+- (id)_currentExternalStatusBarSettings;
 - (double)_backgroundWindowLevelForEntity:(id)arg1;
 - (void)_dismissEntity:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_buttonEventHandlingViewController;
@@ -71,6 +71,7 @@
 - (void)transientOverlayViewControllerDidEndRotation:(id)arg1;
 - (void)transientOverlayViewControllerWillBeginRotation:(id)arg1 toInterfaceOrientation:(long long)arg2;
 - (void)transientOverlayViewControllerNeedsWhitePointAdaptivityStyleUpdate:(id)arg1;
+- (void)transientOverlayViewControllerNeedsStatusBarAppearanceUpdate:(id)arg1;
 - (void)transientOverlayViewControllerNeedsSceneDeactivationUpdate:(id)arg1;
 - (void)transientOverlayViewControllerNeedsProximityDetectionUpdate:(id)arg1;
 - (void)transientOverlayViewControllerNeedsOrientationUpdatesDisabledUpdate:(id)arg1;
@@ -90,6 +91,7 @@
 - (_Bool)handleHomeButtonDoublePress;
 - (_Bool)handleHomeButtonPress;
 - (_Bool)handleHeadsetButtonPress:(_Bool)arg1;
+- (void)setFluidDismissalState:(id)arg1 forViewController:(id)arg2;
 - (void)performPresentationRequest:(id)arg1;
 - (void)performDismissalRequest:(id)arg1;
 - (id)newContentStatusBarHiddenAssertionWithReason:(id)arg1;

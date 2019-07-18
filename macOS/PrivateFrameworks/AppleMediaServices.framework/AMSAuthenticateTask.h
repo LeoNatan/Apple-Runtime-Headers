@@ -6,7 +6,7 @@
 
 #import <AppleMediaServices/AMSTask.h>
 
-@class ACAccount, AMSAuthenticateOptions, NSNumber, NSString;
+@class ACAccount, AMSAuthenticateOptions, NSNumber, NSString, NSUUID;
 
 @interface AMSAuthenticateTask : AMSTask
 {
@@ -16,16 +16,16 @@
     NSString *_rawPassword;
     NSString *_altDSID;
     NSNumber *_DSID;
-    NSString *_homeID;
-    NSString *_homeUserID;
+    NSUUID *_homeIdentifier;
+    NSUUID *_homeUserIdentifier;
     NSString *_username;
     ACAccount *_authenticatedAccount;
 }
 
 @property(retain) ACAccount *authenticatedAccount; // @synthesize authenticatedAccount=_authenticatedAccount;
 @property(retain) NSString *username; // @synthesize username=_username;
-@property(retain) NSString *homeUserID; // @synthesize homeUserID=_homeUserID;
-@property(retain) NSString *homeID; // @synthesize homeID=_homeID;
+@property(retain) NSUUID *homeUserIdentifier; // @synthesize homeUserIdentifier=_homeUserIdentifier;
+@property(retain) NSUUID *homeIdentifier; // @synthesize homeIdentifier=_homeIdentifier;
 @property(retain) NSNumber *DSID; // @synthesize DSID=_DSID;
 @property(retain) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(retain) NSString *rawPassword; // @synthesize rawPassword=_rawPassword;
@@ -33,6 +33,10 @@
 @property(retain) NSString *password; // @synthesize password=_password;
 @property(readonly) AMSAuthenticateOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+- (void)setHomeUserID:(id)arg1;
+- (void)setHomeID:(id)arg1;
+- (id)homeUserID;
+- (id)homeID;
 - (void)_updateAccountWithProvidedInformation:(id)arg1;
 - (id)_performAuthenticationUsingAccount:(id)arg1 credentialSource:(unsigned long long)arg2 error:(id *)arg3;
 - (id)_createVerifyCredentialOptionsWithCredentialSource:(unsigned long long)arg1;

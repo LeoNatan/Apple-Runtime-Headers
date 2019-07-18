@@ -22,10 +22,12 @@
     UILabel *_textLabel;
     UIVisualEffectView *_vibrancyView;
     UIVisualEffect *_vibrancyEffect;
+    UIVisualEffect *_disabledVibrancyEffect;
     NSString *_text;
 }
 
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
+@property(retain, nonatomic) UIVisualEffect *disabledVibrancyEffect; // @synthesize disabledVibrancyEffect=_disabledVibrancyEffect;
 @property(retain, nonatomic) UIVisualEffect *vibrancyEffect; // @synthesize vibrancyEffect=_vibrancyEffect;
 @property(retain, nonatomic) UIVisualEffectView *vibrancyView; // @synthesize vibrancyView=_vibrancyView;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;

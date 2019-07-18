@@ -19,6 +19,7 @@
         unsigned int reference:1;
         unsigned int sortOrder:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     NSArray *_activityNames;
     _INPBString *_albumName;
     _INPBString *_artistName;
@@ -36,6 +37,7 @@
 + (Class)moodNamesType;
 + (Class)genreNamesType;
 + (Class)activityNamesType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(retain, nonatomic) _INPBDateTimeRange *releaseDate; // @synthesize releaseDate=_releaseDate;
 @property(nonatomic) int reference; // @synthesize reference=_reference;

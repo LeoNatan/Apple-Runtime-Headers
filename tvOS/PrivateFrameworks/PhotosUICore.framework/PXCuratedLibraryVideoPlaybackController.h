@@ -8,32 +8,34 @@
 
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXGDisplayAssetPixelBufferSourcesProvider-Protocol.h>
+#import <PhotosUICore/PXGRectDiagnosticsProvider-Protocol.h>
 
-@class NSString, PXCuratedLibraryViewModel, PXGLayout;
+@class NSString, PXCuratedLibraryLayout, PXCuratedLibraryViewModel;
 
-@interface PXCuratedLibraryVideoPlaybackController : PXGridInlinePlaybackController <PXChangeObserver, PXGDisplayAssetPixelBufferSourcesProvider>
+@interface PXCuratedLibraryVideoPlaybackController : PXGridInlinePlaybackController <PXChangeObserver, PXGDisplayAssetPixelBufferSourcesProvider, PXGRectDiagnosticsProvider>
 {
     PXCuratedLibraryViewModel *_viewModel;
     long long _presentedZoomLevel;
     long long _newZoomLevel;
-    PXGLayout *_contentLayout;
+    PXCuratedLibraryLayout *_curatedLibraryLayout;
 }
 
-@property(retain, nonatomic) PXGLayout *contentLayout; // @synthesize contentLayout=_contentLayout;
+@property(retain, nonatomic) PXCuratedLibraryLayout *curatedLibraryLayout; // @synthesize curatedLibraryLayout=_curatedLibraryLayout;
 - (void).cxx_destruct;
+- (void)enumerateRectDiagnosticsForLayout:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (_Bool)_canPlayVideosInZoomLevel:(long long)arg1;
 - (_Bool)canPlayAsset:(id)arg1;
 - (_Bool)shouldEnablePlayback;
 - (_Bool)canProvideGeometriesForRecords;
 - (struct CGRect)frameForPlaybackRecord:(id)arg1 minPlayableSize:(out struct CGSize *)arg2;
+- (id)filterSortedRecordsToPlay:(id)arg1;
+- (void)didUpdatePlayingRecords;
 - (_Bool)canUpdatePlayingRecords;
 - (struct CGRect)currentVisibleRect;
 - (id)createPlaybackRecordForDisplayAsset:(id)arg1 mediaProvider:(id)arg2 geometryReference:(id)arg3;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)recyclePixelBufferSourceForDisplayAssets:(id)arg1;
 - (id)pixelBufferSourceForDisplayAsset:(id)arg1 mediaProvider:(id)arg2 spriteReference:(id)arg3;
-- (void)didUpdatePlayingRecords;
-- (id)filterSortedRecordsToPlay:(id)arg1;
 - (id)init;
 - (id)initViewViewModel:(id)arg1;
 

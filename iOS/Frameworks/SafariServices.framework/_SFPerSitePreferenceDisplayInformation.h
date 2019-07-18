@@ -12,7 +12,6 @@
 {
     NSString *_localizedSiteSpecificSettingsTitle;
     NSString *_localizedAllWebsiteSettingsTitle;
-    NSString *_localizedOtherWebsiteSettingsTitle;
     NSString *_localizedClearAllSettingsPrompt;
     unsigned long long _displayOption;
 }
@@ -21,11 +20,10 @@
 + (id)displayInformationForPerSitePreference:(id)arg1;
 @property(readonly, nonatomic) unsigned long long displayOption; // @synthesize displayOption=_displayOption;
 @property(readonly, copy, nonatomic) NSString *localizedClearAllSettingsPrompt; // @synthesize localizedClearAllSettingsPrompt=_localizedClearAllSettingsPrompt;
-@property(readonly, copy, nonatomic) NSString *localizedOtherWebsiteSettingsTitle; // @synthesize localizedOtherWebsiteSettingsTitle=_localizedOtherWebsiteSettingsTitle;
 @property(readonly, copy, nonatomic) NSString *localizedAllWebsiteSettingsTitle; // @synthesize localizedAllWebsiteSettingsTitle=_localizedAllWebsiteSettingsTitle;
 @property(readonly, copy, nonatomic) NSString *localizedSiteSpecificSettingsTitle; // @synthesize localizedSiteSpecificSettingsTitle=_localizedSiteSpecificSettingsTitle;
 - (void).cxx_destruct;
-- (id)_initWithLocalizedSiteSpecificSettingsTitle:(id)arg1 localizedAllWebsiteSettingsTitle:(id)arg2 localizedOtherWebsiteSettingsTitle:(id)arg3 localizedClearAllSettingsPrompt:(id)arg4 displayOption:(unsigned long long)arg5;
+- (id)_initWithLocalizedSiteSpecificSettingsTitle:(id)arg1 localizedAllWebsiteSettingsTitle:(id)arg2 localizedClearAllSettingsPrompt:(id)arg3 displayOption:(unsigned long long)arg4;
 
 @end
 

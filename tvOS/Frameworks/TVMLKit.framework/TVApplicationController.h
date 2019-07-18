@@ -34,10 +34,10 @@
     IKAppContext *_headlessAppContext;
     _TVMLKitApplication *_headlessApplication;
     _Bool _openURLLaunchedOverSiri;
-    _TVApplicationInspector *_applicationInspector;
     UIWindow *_window;
     TVApplicationControllerContext *_context;
     id <TVApplicationControllerDelegate> _delegate;
+    _TVApplicationInspector *_applicationInspector;
     id <UITraitEnvironment> _keyTraitEnvironment;
 }
 
@@ -45,6 +45,7 @@
 + (_Bool)_shouldLaunchHeadlessWithURL:(id)arg1;
 + (void)initialize;
 @property(nonatomic) __weak id <UITraitEnvironment> keyTraitEnvironment; // @synthesize keyTraitEnvironment=_keyTraitEnvironment;
+@property(readonly, nonatomic) _TVApplicationInspector *applicationInspector; // @synthesize applicationInspector=_applicationInspector;
 @property(readonly, nonatomic) __weak id <TVApplicationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) TVApplicationControllerContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) UIWindow *window; // @synthesize window=_window;

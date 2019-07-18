@@ -21,6 +21,7 @@
 + (id)sharedStore;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)synchronousyClearIdentifiersAddedAfterDate:(id)arg1;
 - (void)clearStoreSynchronously;
 - (void)addPersistentIdentifier:(id)arg1;
 - (void)_addPersistentIdentifier:(id)arg1 withLastWarningDate:(id)arg2;

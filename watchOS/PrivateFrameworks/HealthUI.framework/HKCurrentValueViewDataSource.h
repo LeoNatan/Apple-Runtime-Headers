@@ -17,13 +17,14 @@
     _Bool _pendingData;
     NSArray *_selectedRangeData;
     id <HKCurrentValueViewDataSourceValueRangeFormatter> _valueRangeFormatter;
+    UIColor *_titleColor;
     HKSelectedRangeFormatter *_selectedRangeFormatter;
     HKDateCache *_dateCache;
     HKHealthStore *_healthStore;
     HKDisplayCategoryController *_displayCategoryController;
     HKDisplayType *_displayType;
     NSString *_dateIntervalString;
-    UIColor *_textColor;
+    UIColor *_valueColor;
     UIFont *_majorFont;
     UIFont *_minorFont;
 }
@@ -31,7 +32,7 @@
 + (id)defaultStringForValueRange:(id)arg1 timeScope:(int)arg2;
 @property(retain, nonatomic) UIFont *minorFont; // @synthesize minorFont=_minorFont;
 @property(retain, nonatomic) UIFont *majorFont; // @synthesize majorFont=_majorFont;
-@property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
+@property(retain, nonatomic) UIColor *valueColor; // @synthesize valueColor=_valueColor;
 @property(retain, nonatomic) NSString *dateIntervalString; // @synthesize dateIntervalString=_dateIntervalString;
 @property(retain, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 @property(retain, nonatomic) HKDisplayCategoryController *displayCategoryController; // @synthesize displayCategoryController=_displayCategoryController;
@@ -40,6 +41,7 @@
 @property(retain, nonatomic) HKSelectedRangeFormatter *selectedRangeFormatter; // @synthesize selectedRangeFormatter=_selectedRangeFormatter;
 @property(nonatomic) _Bool pendingData; // @synthesize pendingData=_pendingData;
 @property(nonatomic) _Bool shouldUseLastRecordedDate; // @synthesize shouldUseLastRecordedDate=_shouldUseLastRecordedDate;
+@property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(nonatomic) __weak id <HKCurrentValueViewDataSourceValueRangeFormatter> valueRangeFormatter; // @synthesize valueRangeFormatter=_valueRangeFormatter;
 @property(retain, nonatomic) NSArray *selectedRangeData; // @synthesize selectedRangeData=_selectedRangeData;
 - (void).cxx_destruct;

@@ -9,9 +9,6 @@
 @class NSArray, NSDictionary, NSString;
 
 @interface FBSSceneSpecification (UIKitSceneSpecification)
-@property(readonly, nonatomic) int canvasSystemType;
-@property(readonly, nonatomic) NSArray *baseActionHandlers;
-@property(readonly, nonatomic) NSArray *baseSettingsDiffActions;
 @property(readonly, nonatomic) _Bool isInternal;
 @property(readonly, nonatomic) Class uiSceneMinimumClass;
 @property(readonly, nonatomic) Class sceneSubstrateClass;

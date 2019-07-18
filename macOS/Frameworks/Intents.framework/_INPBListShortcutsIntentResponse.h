@@ -15,11 +15,13 @@
 @interface _INPBListShortcutsIntentResponse : PBCodable <_INPBListShortcutsIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSArray *_shortcuts;
 }
 
 + (BOOL)supportsSecureCoding;
 + (Class)shortcutsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *shortcuts; // @synthesize shortcuts=_shortcuts;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

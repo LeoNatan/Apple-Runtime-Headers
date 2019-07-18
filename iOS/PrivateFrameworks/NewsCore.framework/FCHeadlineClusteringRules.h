@@ -33,6 +33,7 @@
     unsigned long long _maxIdealClusterSizeAutoFavorite;
 }
 
++ (id)rulesWithTreatment:(id)arg1 configurationSet:(long long)arg2 deviceIsiPad:(_Bool)arg3 limitUnpaidArticles:(_Bool)arg4 enforcePublisherCap:(_Bool)arg5;
 + (id)rulesWithTreatment:(id)arg1 deviceIsiPad:(_Bool)arg2 limitUnpaidArticles:(_Bool)arg3 enforcePublisherCap:(_Bool)arg4;
 @property(nonatomic) unsigned long long maxIdealClusterSizeAutoFavorite; // @synthesize maxIdealClusterSizeAutoFavorite=_maxIdealClusterSizeAutoFavorite;
 @property(nonatomic) unsigned long long minIdealClusterSizeAutoFavorite; // @synthesize minIdealClusterSizeAutoFavorite=_minIdealClusterSizeAutoFavorite;

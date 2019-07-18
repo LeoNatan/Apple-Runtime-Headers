@@ -19,12 +19,14 @@
     WFTrigger *_trigger;
     WFWorkflow *_workflow;
     unsigned long long _mode;
+    NSArray *_actionIcons;
     NSArray *_sections;
     UITableView *_tableView;
 }
 
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
+@property(retain, nonatomic) NSArray *actionIcons; // @synthesize actionIcons=_actionIcons;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(readonly, nonatomic) WFTrigger *trigger; // @synthesize trigger=_trigger;
@@ -41,7 +43,9 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)infoForSection:(long long)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)loadActionDescriptionIcons;
 - (void)loadView;
 - (BOOL)isModalInPresentation;
 - (void)updateUI;

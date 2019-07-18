@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (id)formattedDescription:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
+- (_Bool)isDefault;
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;

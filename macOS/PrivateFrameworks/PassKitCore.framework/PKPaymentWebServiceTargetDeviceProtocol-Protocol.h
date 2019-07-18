@@ -6,7 +6,7 @@
 
 #import <PassKitCore/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSSet, NSString, PKAppleAccountInformation, PKApplePayTrustKeyRequest, PKOSVersionRequirement, PKPass, PKPassUpgradeRequest, PKPaymentPass, PKPaymentWebService, PKTrustedDeviceEnrollmentInfo, PKVerificationChannel;
+@class NSArray, NSData, NSDictionary, NSSet, NSString, PKAppleAccountInformation, PKApplePayTrustKeyRequest, PKOSVersionRequirement, PKPass, PKPassUpgradeRequest, PKPaymentPass, PKPaymentProductsActionRequest, PKPaymentWebService, PKTrustedDeviceEnrollmentInfo, PKVerificationChannel;
 
 @protocol PKPaymentWebServiceTargetDeviceProtocol <NSObject>
 - (unsigned long long)secureElementOwnershipStateForCurrentUser;
@@ -47,11 +47,17 @@
 - (void)paymentWebServiceDidUpdateConfiguration:(PKPaymentWebService *)arg1;
 
 @optional
+- (void)paymentWebService:(PKPaymentWebService *)arg1 passOwnershipTokenWithIdentifier:(NSString *)arg2 completion:(void (^)(NSString *))arg3;
+- (void)paymentWebService:(PKPaymentWebService *)arg1 storePassOwnershipToken:(NSString *)arg2 withIdentifier:(NSString *)arg3;
+- (void)performDeviceCheckInWithCompletion:(void (^)(BOOL, NSError *))arg1;
+- (void)performProductActionRequest:(PKPaymentProductsActionRequest *)arg1 completion:(void (^)(PKPaymentAvailableProductsResponse *, NSError *))arg2;
+- (void)availableProductsWithCompletion:(void (^)(PKPaymentAvailableProductsResponse *, NSError *))arg1;
 - (void)paymentWebService:(PKPaymentWebService *)arg1 setDefaultPaymentPassUniqueIdentifier:(NSString *)arg2;
-- (void)performPasscodeUpgradeWithVisibleViewController:(id)arg1 isBuddy:(BOOL)arg2 completion:(void (^)(BOOL, NSError *))arg3;
-- (void)noteProvisioningDidEndRequiringUpgradedPasscode;
-- (void)noteProvisioningDidStartRequiringUpgradedPasscode;
+- (void)endRequiringUpgradedPasscodeIfNecessary;
+- (void)startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(BOOL)arg1;
 - (void)enforceUpgradedPasscodePolicyWithCompletion:(void (^)(BOOL, NSError *))arg1;
+- (void)notePasscodeUpgradeFlowDidEnd;
+- (void)notePasscodeUpgradeFlowWillBeginWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)paymentWebService:(PKPaymentWebService *)arg1 updateAccountWithIdentifier:(NSString *)arg2 completion:(void (^)(PKAccount *, NSError *))arg3;
 - (void)paymentWebService:(PKPaymentWebService *)arg1 deviceMetadataWithFields:(unsigned long long)arg2 completion:(void (^)(PKPaymentDeviceMetadata *))arg3;
 - (void)featureApplicationsForProvisioningWithCompletion:(void (^)(NSArray *))arg1;

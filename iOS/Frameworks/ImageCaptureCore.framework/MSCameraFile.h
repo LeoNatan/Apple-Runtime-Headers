@@ -86,6 +86,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)closeStream;
 - (_Bool)openStream;
 - (void)dealloc;
+- (id)initForReadingOnlyWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 fsSN:(unsigned long long)arg4 fsCreationTime:(struct timespec)arg5 fsModificationTime:(struct timespec)arg6 fsSize:(long long)arg7 fsFlags:(unsigned int)arg8;
 
 @end

@@ -37,6 +37,7 @@
 - (id)vmuVMRegionForAddress:(unsigned long long)arg1;
 - (long long)getFramesForStackID:(unsigned long long)arg1 stackFramesBuffer:(unsigned long long *)arg2;
 - (long long)getFramesForAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 inLiteZone:(_Bool)arg3 stackFramesBuffer:(unsigned long long *)arg4;
+- (unsigned long long)stackIDForNode:(unsigned int)arg1;
 - (long long)getFramesForNode:(unsigned int)arg1 inLiteZone:(_Bool)arg2 stackFramesBuffer:(unsigned long long *)arg3;
 - (int)enumerateMSLRecordsAndPayloads:(CDUnknownBlockType)arg1;
 @property(readonly) _Bool inspectingLiveProcess;

@@ -10,6 +10,7 @@
 
 @interface _TtC7NewsUI225ForYouMagazineFeedManager : _TtCs12_SwiftObject <TSForYouMagazineFeedManagerType>
 {
+    // Error parsing type: , name: magazineFeedServiceConfigFetcher
     // Error parsing type: , name: magazineFeedService
     // Error parsing type: , name: personalizationService
     // Error parsing type: , name: knownCursors

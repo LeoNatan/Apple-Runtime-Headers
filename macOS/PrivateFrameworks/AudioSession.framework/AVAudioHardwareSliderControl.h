@@ -12,6 +12,7 @@
 {
 }
 
+- (id)valueKeys;
 @property(readonly, nonatomic) AVAudioUIntegerRange *range;
 - (BOOL)setValue:(unsigned long long)arg1 controller:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) unsigned long long value;

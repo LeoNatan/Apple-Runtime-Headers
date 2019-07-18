@@ -28,6 +28,7 @@
 - (void)changeFailedOnClientWithLibrary:(id)arg1 error:(id)arg2;
 - (id)initWithXPCDict:(id)arg1 request:(id)arg2 clientAuthorization:(id)arg3;
 - (void)_setDestinationAssetAvailabilityHandler:(CDUnknownBlockType)arg1;
+- (id)initForNewObjectWithUUID:(id)arg1;
 
 @end
 

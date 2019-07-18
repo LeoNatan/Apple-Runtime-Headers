@@ -18,19 +18,17 @@
     _Bool _mutatingQueue;
     id <HFCameraClipPlayerDelegate> _delegate;
     id <HFCameraClipScrubbing> _scrubber;
-    NSError *_error;
-    id _currentItemStateObservationToken;
-    HFCameraClipPlayerItem *_lastPlayerItem;
     NSArray *_clips;
+    NSError *_error;
+    HFCameraClipPlayerItem *_lastPlayerItem;
     HFCameraClipQueuePlayer *_queuePlayer;
 }
 
 @property(readonly, nonatomic) HFCameraClipQueuePlayer *queuePlayer; // @synthesize queuePlayer=_queuePlayer;
-@property(retain, nonatomic) NSArray *clips; // @synthesize clips=_clips;
 @property(nonatomic) __weak HFCameraClipPlayerItem *lastPlayerItem; // @synthesize lastPlayerItem=_lastPlayerItem;
-@property(retain, nonatomic) id currentItemStateObservationToken; // @synthesize currentItemStateObservationToken=_currentItemStateObservationToken;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic, getter=isMutatingQueue) _Bool mutatingQueue; // @synthesize mutatingQueue=_mutatingQueue;
+@property(retain, nonatomic) NSArray *clips; // @synthesize clips=_clips;
 @property(nonatomic, getter=isScrubbing) _Bool scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(nonatomic) __weak id <HFCameraClipScrubbing> scrubber; // @synthesize scrubber=_scrubber;
 @property(nonatomic) __weak id <HFCameraClipPlayerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -44,8 +42,7 @@
 - (void)_rebuildPlayerQueueForPosition:(id)arg1;
 - (void)_setupObservationForLastPlayerItem:(id)arg1;
 - (void)_setupPlayerObservation;
-- (void)_observePlayerKeyPath:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (void)_updateCurrentItemObservation;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_updateErrorState;
 - (void)_updatePlayerActionAtItemEnd;
 - (void)removeTimeObserver:(id)arg1;

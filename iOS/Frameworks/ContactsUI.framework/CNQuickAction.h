@@ -54,7 +54,6 @@
 - (id)subtitleForContext:(long long)arg1;
 - (id)titleForContext:(long long)arg1;
 - (id)defaultTitleForContext:(long long)arg1;
-- (id)coloredImage;
 - (id)imageForContext:(long long)arg1;
 @property(readonly, nonatomic) NSString *globalIdentifier;
 - (_Bool)isEqual:(id)arg1;

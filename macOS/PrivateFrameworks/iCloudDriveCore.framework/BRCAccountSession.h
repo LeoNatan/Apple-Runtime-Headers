@@ -8,7 +8,7 @@
 
 #import <iCloudDriveCore/ICDBRCCloudDocsAppsObserver-Protocol.h>
 
-@class BRCAccountWaitOperation, BRCAnalyticsReporter, BRCApplyScheduler, BRCClientState, BRCCloudDocsAppsMonitor, BRCContainerScheduler, BRCDaemonContainerHelper, BRCDeadlineScheduler, BRCDiskSpaceReclaimer, BRCFSDownloader, BRCFSImporter, BRCFSUploader, BRCFSWriter, BRCFairScheduler, BRCFileUnlinker, BRCGlobalProgress, BRCInflightProgressTracker, BRCNotificationManager, BRCPQLConnection, BRCRecentsEnumerator, BRCRecursiveListDirectoryContentsOperation, BRCServerPersistedState, BRCStageRegistry, BRCSyncUpScheduler, BRCThrottle, BRCUserNotification, BRCVersionsFileProvider, BRCVolume, ICDBRContainerCache, NSFileProviderManager, NSHashTable, NSMutableArray, NSMutableDictionary, NSString, NSURL, icd_pacer;
+@class BRCAccountWaitOperation, BRCAnalyticsReporter, BRCApplyScheduler, BRCClientState, BRCCloudDocsAppsMonitor, BRCContainerScheduler, BRCDaemonContainerHelper, BRCDeadlineScheduler, BRCDiskSpaceReclaimer, BRCFSDownloader, BRCFSImporter, BRCFSUploader, BRCFSWriter, BRCFairScheduler, BRCFileUnlinker, BRCGlobalProgress, BRCInflightProgressTracker, BRCNotificationManager, BRCPQLConnection, BRCRecentsEnumerator, BRCServerPersistedState, BRCStageRegistry, BRCSyncUpScheduler, BRCThrottle, BRCUserNotification, BRCVersionsFileProvider, BRCVolume, ICDBRContainerCache, NSFileProviderManager, NSHashTable, NSMutableArray, NSMutableDictionary, NSString, NSURL, icd_pacer;
 @protocol OS_dispatch_queue, OS_dispatch_source, OS_dispatch_workloop;
 
 @interface BRCAccountSession : NSObject <ICDBRCCloudDocsAppsObserver>
@@ -26,8 +26,7 @@
     CDUnknownBlockType _dbProfilingHook;
     NSString *_databaseID;
     NSHashTable *_miscOperations;
-    BRCRecursiveListDirectoryContentsOperation *_backgroundDataScopeListOperation;
-    BRCRecursiveListDirectoryContentsOperation *_backgroundDocumentsScopeListOperation;
+    NSHashTable *_backgroundListOperations;
     NSObject<OS_dispatch_source> *_backgroundDeferTimer;
     int _registerStateForFullSync;
     BRCPQLConnection *_clientDB;

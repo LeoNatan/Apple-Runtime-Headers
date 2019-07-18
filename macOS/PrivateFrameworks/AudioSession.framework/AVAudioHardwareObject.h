@@ -10,7 +10,7 @@
 
 @interface AVAudioHardwareObject : NSObject
 {
-    struct synchronized<std::__1::shared_ptr<as::client::HardwareObjectBase>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::HardwareObjectBase>>> _guarded_impl;
+    struct synchronized<std::__1::shared_ptr<as::client::HardwareObjectBase>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::HardwareObjectBase>>> _guarded_impl;
 }
 
 - (id).cxx_construct;
@@ -29,6 +29,7 @@
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic) __weak AVAudioHardwareObject *owningObject;
 - (id)initWithImpl:(shared_ptr_b419fc97)arg1;
+- (id)KVOObservableKeys;
 
 @end
 

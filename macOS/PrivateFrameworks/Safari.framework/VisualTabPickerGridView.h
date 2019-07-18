@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (struct _NSRange)_rangeOfVisibleTiles;
 - (void)_resetGridView;
 - (double)_toolbarHeight;
+- (id)accessibilityIdentifier;
 - (id)accessibilityLabel;
 - (id)accessibilityRole;
 - (BOOL)isAccessibilityElement;

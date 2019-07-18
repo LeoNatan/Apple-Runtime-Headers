@@ -10,6 +10,7 @@
 - (void)categoriesTableViewCell:(WFActionDrawerCategoriesTableViewCell *)arg1 didSelectCategoryForContentType:(NSString *)arg2;
 - (void)categoriesTableViewCellDidSelectCategoryScripting:(WFActionDrawerCategoriesTableViewCell *)arg1 title:(NSString *)arg2;
 - (void)categoriesTableViewCellDidSelectCategoryFavorites:(WFActionDrawerCategoriesTableViewCell *)arg1 title:(NSString *)arg2;
+- (void)categoriesTableViewCellDidSelectCategoryApps:(WFActionDrawerCategoriesTableViewCell *)arg1 title:(NSString *)arg2;
 
 @optional
 - (void)categoriesTableViewCell:(WFActionDrawerCategoriesTableViewCell *)arg1 didSelectDocumentationForAction:(WFAction *)arg2 fromView:(UIView *)arg3;

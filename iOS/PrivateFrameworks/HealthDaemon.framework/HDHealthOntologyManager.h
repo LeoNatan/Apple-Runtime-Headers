@@ -6,13 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <HealthDaemon/HDContentProtectionObserver-Protocol.h>
-#import <HealthDaemon/HDHealthDaemonReadyObserver-Protocol.h>
-
-@class HDProfile, HDSimpleGraphDatabase, HKObserverSet, NSArray, NSCache, NSDictionary, NSString, NSURL, NSUUID;
+@class HDProfile, HDSimpleGraphDatabase, HKObserverSet, NSArray, NSCache, NSDictionary, NSURL, NSUUID;
 @protocol OS_dispatch_queue;
 
-@interface HDHealthOntologyManager : NSObject <HDHealthDaemonReadyObserver, HDContentProtectionObserver>
+@interface HDHealthOntologyManager : NSObject
 {
     NSDictionary *_codingSystemPriorityInfo;
     NSArray *_privateCodeCreationCodingSortDescriptors;
@@ -23,6 +20,7 @@
     HKObserverSet *_observers;
     _Bool _useCache;
     NSCache *_conceptsByIdentifierCache;
+    // Error parsing type: AB, name: _enabled
     _Bool _unitTest_useEmbeddedOntology;
     _Bool _unitTest_useEmbeddedOntologyAsset;
     HDProfile *_profile;
@@ -45,31 +43,28 @@
 - (void)hd_unitTesting_disableCache;
 - (void)hd_unitTesting_setupDatabase;
 - (void)hd_unitTesting_closeDatabase;
-- (void)dealloc;
-- (void)daemonReady:(id)arg1;
-- (void)contentProtectionStateChanged:(long long)arg1 previousState:(long long)arg2;
 - (void)_handleOntologyAssetAvailabilityUpdate:(long long)arg1;
 - (void)obliterateWithReason:(id)arg1;
+- (void)importUsingAssetAtLocation:(id)arg1 rememberLocation:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)importWithCompletion:(CDUnknownBlockType)arg1;
+- (_Bool)_createOntologyDirectoryIfNecessaryWithError:(id *)arg1;
 - (_Bool)_work_node:(id)arg1 addAttributeWithCoding:(id)arg2 error:(id *)arg3;
+- (_Bool)performGraphDatabaseWork:(CDUnknownBlockType)arg1 usingTransaction:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)supportsLocale:(id)arg1;
 - (void)_notifyObserversReferenceOntologyCreated;
 - (void)_notifyObserversReferenceOntologyDidUpdateWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_notifyObserversReferenceOntologyWillUpdate;
 - (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;
-- (id)allConceptsAssociatedWithSamplesWithError:(id *)arg1;
 - (id)nameForCodingSystem:(long long)arg1 value:(id)arg2 error:(id *)arg3;
 - (id)allAssociatedConceptsWithError:(id *)arg1;
-- (_Bool)removeAllAssociationsToSamplesWithError:(id *)arg1;
-- (_Bool)_queue_removeAllAssociationsToSamplesWithError:(id *)arg1;
 - (id)conceptsAssociatedWithSampleUUID:(id)arg1 error:(id *)arg2;
 - (id)conceptsAssociatedWithSample:(id)arg1 error:(id *)arg2;
 - (id)sampleUUIDsAssociatedWithConcept:(id)arg1 error:(id *)arg2;
-- (_Bool)removeAllSampleAssociationsToConcept:(id)arg1 error:(id *)arg2;
 - (_Bool)removeAllAssociationsToSampleUUID:(id)arg1 error:(id *)arg2;
 - (_Bool)breakAssociationFromSampleUUID:(id)arg1 toConcept:(id)arg2 error:(id *)arg3;
 - (_Bool)makeAssociationFromSampleUUID:(id)arg1 toConcept:(id)arg2 error:(id *)arg3;
-- (long long)_countOfRecordsAssociatedToConcept:(id)arg1 error:(id *)arg2;
+- (long long)countOfConceptsAssociatedWithUserRecords:(id *)arg1;
 - (id)relationshipsForConceptWithIdentifier:(id)arg1 error:(id *)arg2;
 - (id)conceptsWithRelationship:(id)arg1 fromNodeWithID:(id)arg2 error:(id *)arg3;
 - (id)conceptsWithRelationship:(id)arg1 toNodeWithID:(id)arg2 error:(id *)arg3;
@@ -91,9 +86,11 @@
 - (id)_work_graphDatabase:(id)arg1 findConceptForCoding:(id)arg2;
 - (id)conceptForContext:(id)arg1 locale:(id)arg2;
 - (void)_queue_createAndInitializeIfNeeded;
+- (id)userVersionWithError:(id *)arg1;
+- (id)_queue_graphDatabaseUserVersionWithError:(id *)arg1;
 - (id)versionWithError:(id *)arg1;
-- (long long)_graphDatabaseVersion;
 - (long long)_queue_graphDatabaseVersion;
+- (id)_graphDatabaseUserVersionImplementation:(id)arg1 error:(id *)arg2;
 - (long long)_graphDatabaseVersionImplementation:(id)arg1 error:(id *)arg2;
 - (_Bool)_queue_importReferenceOntology;
 - (_Bool)_queue_copyEmbeddedReferenceOntology;
@@ -109,16 +106,12 @@
 @property(readonly, copy, nonatomic) NSURL *ontologyURL;
 - (id)_queue_graphDatabase;
 - (void)invalidateAndWait;
+@property(nonatomic, getter=isEnabled) _Bool enabled;
 - (void)_queue_closeDatabase;
+- (void)_queue_clearCachedConceptWithIdentifier:(id)arg1;
 - (void)_queue_clearCache;
 - (id)init;
 - (id)initWithProfile:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

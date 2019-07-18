@@ -12,11 +12,13 @@
 
 @interface HUViewControllerTableViewCell : UITableViewCell <HUViewControllerCell>
 {
+    BOOL _ignoreRounding;
     UIViewController *_viewController;
     UIViewController *_parentViewController;
 }
 
 @property(nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
+@property(nonatomic) BOOL ignoreRounding; // @synthesize ignoreRounding=_ignoreRounding;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
 - (void)_removeFromParentViewControllerAndClearProperty:(BOOL)arg1;

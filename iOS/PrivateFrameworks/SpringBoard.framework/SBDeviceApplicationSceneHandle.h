@@ -38,6 +38,7 @@
 @property(readonly, nonatomic, getter=isEffectivelyForeground) _Bool effectivelyForeground; // @synthesize effectivelyForeground=_isEffectivelyForeground;
 @property(nonatomic) long long lastActivationSource; // @synthesize lastActivationSource=_lastActivationSource;
 - (void).cxx_destruct;
+- (id)_potentiallyJailedDisplayConfiguration;
 - (id)_generateIdleTimerBehavior;
 - (void)_updateIdleTimerForReason:(id)arg1;
 - (_Bool)_currentClassicModeAllowsLaunchingToAnySupportedOrientation;
@@ -54,6 +55,7 @@
 - (void)_modifyApplicationTransitionContext:(id)arg1 fromRequestContext:(id)arg2 entity:(id)arg3;
 - (void)_modifyApplicationSceneClientSettings:(id)arg1 fromRequestContext:(id)arg2 entity:(id)arg3 initialSceneSettings:(id)arg4;
 - (id)_sceneCornerRadiusConfigurationFromRequestContext:(id)arg1 forEntity:(id)arg2;
+- (void)_modifySafeAreaInsetsOnApplicationSceneSettings:(id)arg1 isInsetForHomeAffordance:(_Bool)arg2 isFloating:(_Bool)arg3;
 - (id)_defaultStatusBarHeights;
 - (void)_modifyApplicationSceneSettings:(id)arg1 fromRequestContext:(id)arg2 entity:(id)arg3;
 - (void)_modifyProcessExecutionContext:(id)arg1 fromRequestContext:(id)arg2 entity:(id)arg3;

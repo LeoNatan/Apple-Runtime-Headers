@@ -8,20 +8,23 @@
 
 #import <iWorkImport/TSTCellIteratorData-Protocol.h>
 
-@class NSString, TSTCell;
+@class NSString, TSTCell, TSTCellFormulaSpec;
 
 __attribute__((visibility("hidden")))
 @interface TSTMutableCellIteratorData : NSObject <TSTCellIteratorData>
 {
     _Bool _cellIDIsValid;
     _Bool _cellIsValid;
+    _Bool _formulaSpecIsValid;
     _Bool _mergeRangeIsValid;
     struct TSUCellCoord _cellID;
     TSTCell *_cell;
+    TSTCellFormulaSpec *_formulaSpec;
     struct TSUCellRect _mergeRange;
 }
 
 @property(nonatomic) _Bool mergeRangeIsValid; // @synthesize mergeRangeIsValid=_mergeRangeIsValid;
+@property(nonatomic) _Bool formulaSpecIsValid; // @synthesize formulaSpecIsValid=_formulaSpecIsValid;
 @property(nonatomic) _Bool cellIsValid; // @synthesize cellIsValid=_cellIsValid;
 @property(nonatomic) _Bool cellIDIsValid; // @synthesize cellIDIsValid=_cellIDIsValid;
 - (void).cxx_destruct;
@@ -32,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool cellHasFormula;
 @property(readonly, nonatomic) int cellValueType;
 - (void)reset;
+@property(retain, nonatomic) TSTCellFormulaSpec *formulaSpec; // @synthesize formulaSpec=_formulaSpec;
 @property(nonatomic) struct TSUCellRect mergeRange; // @synthesize mergeRange=_mergeRange;
 @property(retain, nonatomic) TSTCell *cell; // @synthesize cell=_cell;
 @property(nonatomic) struct TSUCellCoord cellID; // @synthesize cellID=_cellID;

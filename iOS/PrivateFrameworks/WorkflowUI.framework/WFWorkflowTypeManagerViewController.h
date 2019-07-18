@@ -6,32 +6,41 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class BFFPaneHeaderView, NSString, WFWorkflowTypeManagerResultsController;
+#import <WorkflowUI/UIAdaptivePresentationControllerDelegate-Protocol.h>
 
-@interface WFWorkflowTypeManagerViewController : UITableViewController
+@class NSString, UIView, WFWorkflowTypeManagerResultsController;
+
+@interface WFWorkflowTypeManagerViewController : UITableViewController <UIAdaptivePresentationControllerDelegate>
 {
     WFWorkflowTypeManagerResultsController *_resultsController;
-    BFFPaneHeaderView *_headerView;
     CDUnknownBlockType _doneHandler;
     NSString *_workflowType;
+    UIView *_headerView;
 }
 
 + (void)registerRequestHandler;
+@property(readonly, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(copy, nonatomic) NSString *workflowType; // @synthesize workflowType=_workflowType;
 @property(copy, nonatomic) CDUnknownBlockType doneHandler; // @synthesize doneHandler=_doneHandler;
-@property(readonly, nonatomic) BFFPaneHeaderView *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
-- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 targetIndexPathForMoveFromRowAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
 - (_Bool)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)done;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;
 @property(readonly, nonatomic) WFWorkflowTypeManagerResultsController *resultsController; // @synthesize resultsController=_resultsController;
 - (id)initWithWorkflowType:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -8,20 +8,19 @@
 
 #import <PhotosUI/PXChangeObserver-Protocol.h>
 
-@class NSObject, NSString, PUAssetReference, PUAssetsDataSource, PUCompositeVideoGenerator, PUMergedLivePhotosVideo;
+@class NSError, NSObject, NSString, PUAssetReference, PUAssetsDataSource, PUCompositeVideoGenerator, PUMergedLivePhotosVideo;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface PUMergedLivePhotosVideoRequest : PXObservable <PXChangeObserver>
 {
+    unsigned long long _requestLogID;
     NSObject<OS_dispatch_queue> *_workQueue;
     NSObject<OS_dispatch_queue> *_stateQueue;
     PUCompositeVideoGenerator *_workQueue_generator;
-    _Bool _workQueue_didStart;
-    _Bool _workQueue_isCancelled;
-    unsigned long long _requestLogId;
     long long _stateQueue_state;
     PUMergedLivePhotosVideo *_stateQueue_mergedVideo;
+    NSError *_stateQueue_error;
     PUAssetReference *_assetReference;
     PUAssetsDataSource *_assetsDataSource;
 }
@@ -30,14 +29,15 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PUAssetReference *assetReference; // @synthesize assetReference=_assetReference;
 - (void).cxx_destruct;
 - (id)init;
+- (void)_stateQueue_signalStateChange;
+- (void)_workQueue_finishWithMergedVideo:(id)arg1 error:(id)arg2;
 - (void)_workQueue_handleGeneratorDidChangeState;
-- (void)_handleFinishedWithResult:(id)arg1;
+- (void)_workQueue_generateVideoUsingAssets:(id)arg1;
 - (id)_workQueue_fetchMergeableAssets;
 - (void)_workQueue_start;
-- (void)setMergedVideo:(id)arg1;
-- (void)setState:(long long)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)mutableChangeObject;
+@property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic) PUMergedLivePhotosVideo *mergedVideo;
 @property(readonly, nonatomic) long long state;
 - (void)cancel;

@@ -8,7 +8,7 @@
 
 #import <SpringBoardHome/SBIconAccessoryView-Protocol.h>
 
-@class NSString, SBDarkeningImageView, SBFParallaxSettings, SBIconAccessoryImage;
+@class NSString, SBDarkeningImageView, SBFParallaxSettings, SBIconAccessoryImage, UIImageView;
 @protocol SBIconListLayout;
 
 @interface SBIconContinuityBadgeView : UIView <SBIconAccessoryView>
@@ -18,12 +18,12 @@
     SBIconAccessoryImage *_backgroundImage;
     SBIconAccessoryImage *_foregroundImage;
     SBDarkeningImageView *_backgroundView;
-    SBDarkeningImageView *_foregroundView;
+    UIImageView *_foregroundView;
 }
 
 + (id)_checkoutImageForContinuityBadgeType:(long long)arg1 highlighted:(_Bool)arg2;
 + (id)backgroundImageCache;
-@property(readonly, nonatomic) SBDarkeningImageView *foregroundView; // @synthesize foregroundView=_foregroundView;
+@property(readonly, nonatomic) UIImageView *foregroundView; // @synthesize foregroundView=_foregroundView;
 @property(readonly, nonatomic) SBDarkeningImageView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) SBIconAccessoryImage *foregroundImage; // @synthesize foregroundImage=_foregroundImage;
 @property(readonly, nonatomic) SBIconAccessoryImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;

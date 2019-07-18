@@ -12,6 +12,7 @@
 
 @interface AMSDialogAction : NSObject <NSSecureCoding>
 {
+    _Bool _inferLinkDestination;
     _Bool _shouldRetry;
     _Bool _createAskPermissionRequest;
     NSURL *_deepLink;
@@ -34,6 +35,7 @@
 @property(nonatomic) _Bool shouldRetry; // @synthesize shouldRetry=_shouldRetry;
 @property(copy, nonatomic) NSURLRequest *request; // @synthesize request=_request;
 @property(copy, nonatomic) AMSMetricsEvent *metricsEvent; // @synthesize metricsEvent=_metricsEvent;
+@property(nonatomic) _Bool inferLinkDestination; // @synthesize inferLinkDestination=_inferLinkDestination;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSURL *deepLink; // @synthesize deepLink=_deepLink;
 - (void).cxx_destruct;

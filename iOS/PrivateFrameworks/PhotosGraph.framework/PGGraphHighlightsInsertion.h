@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) NSSet *highlightLocalIdentifiers; // @synthesize highlightLocalIdentifiers=_highlightLocalIdentifiers;
 - (void).cxx_destruct;
 - (id)description;
+- (unsigned long long)changeCount;
 - (unsigned long long)type;
 - (id)initWithHighlights:(id)arg1;
 - (id)initWithHighlightLocalIdentifiers:(id)arg1;

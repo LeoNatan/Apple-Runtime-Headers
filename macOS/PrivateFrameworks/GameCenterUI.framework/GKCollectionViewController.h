@@ -12,7 +12,7 @@
 #import <GameCenterUI/NSTextFieldDelegate-Protocol.h>
 #import <GameCenterUI/_GKStateMachineDelegate-Protocol.h>
 
-@class GKColorPalette, GKComposeController, GKLoadableContentStateMachine, GKPlaceholderView, GKSearchBar, NSMapTable, NSObject, NSString, NSUICollectionViewLayout, NSUUID, UIActivityIndicatorView, UXNavigationController;
+@class GKColorPalette, GKComposeController, GKLoadableContentStateMachine, GKPlaceholderView, GKSearchBar, GKUIActivityIndicatorView, NSMapTable, NSObject, NSString, NSUICollectionViewLayout, NSUUID, UXNavigationController;
 @protocol NSUICollectionViewDataSource, OS_dispatch_queue;
 
 @interface GKCollectionViewController : NSUICollectionViewController <GKComposeControllerDelegate, _GKStateMachineDelegate, GKCollectionViewDataSourceDelegate, NSTextFieldDelegate, GKSegmentedSectionDataSourceEventHandler>
@@ -33,7 +33,7 @@
     NSString *_currentSearchText;
     GKLoadableContentStateMachine *_loadingMachine;
     NSUICollectionViewLayout *_defaultLayout;
-    UIActivityIndicatorView *_loadingIndicatorView;
+    GKUIActivityIndicatorView *_loadingIndicatorView;
     long long _gkFocusBubbleType;
     long long _appearCount;
     NSMapTable *_reusableViewsIHaveSeen;
@@ -53,7 +53,7 @@
 @property BOOL active; // @synthesize active=_active;
 @property(nonatomic) int previousOrientation; // @synthesize previousOrientation=_previousOrientation;
 @property(nonatomic) long long gkFocusBubbleType; // @synthesize gkFocusBubbleType=_gkFocusBubbleType;
-@property(retain, nonatomic) UIActivityIndicatorView *loadingIndicatorView; // @synthesize loadingIndicatorView=_loadingIndicatorView;
+@property(retain, nonatomic) GKUIActivityIndicatorView *loadingIndicatorView; // @synthesize loadingIndicatorView=_loadingIndicatorView;
 @property(retain, nonatomic) NSUICollectionViewLayout *defaultLayout; // @synthesize defaultLayout=_defaultLayout;
 @property(retain, nonatomic) GKLoadableContentStateMachine *loadingMachine; // @synthesize loadingMachine=_loadingMachine;
 @property(retain, nonatomic) NSString *currentSearchText; // @synthesize currentSearchText=_currentSearchText;

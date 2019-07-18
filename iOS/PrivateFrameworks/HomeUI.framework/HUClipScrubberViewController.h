@@ -37,7 +37,6 @@
     NSLayoutConstraint *_feedbackPlatterTopAnchorConstraint;
     NSLayoutConstraint *_nearbyAccessoriesPlatterTopAnchorConstraint;
     NSLayoutConstraint *_selectionPlatterTopAnchorConstraint;
-    unsigned long long _viewMode;
     NSTimer *_liveTimer;
     CADisplayLink *_scrubberUpdateDisplayLink;
 }
@@ -46,7 +45,6 @@
 @property(nonatomic) _Bool isVisible; // @synthesize isVisible=_isVisible;
 @property(retain, nonatomic) CADisplayLink *scrubberUpdateDisplayLink; // @synthesize scrubberUpdateDisplayLink=_scrubberUpdateDisplayLink;
 @property(retain, nonatomic) NSTimer *liveTimer; // @synthesize liveTimer=_liveTimer;
-@property(nonatomic) unsigned long long viewMode; // @synthesize viewMode=_viewMode;
 @property(retain, nonatomic) NSLayoutConstraint *selectionPlatterTopAnchorConstraint; // @synthesize selectionPlatterTopAnchorConstraint=_selectionPlatterTopAnchorConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *nearbyAccessoriesPlatterTopAnchorConstraint; // @synthesize nearbyAccessoriesPlatterTopAnchorConstraint=_nearbyAccessoriesPlatterTopAnchorConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *feedbackPlatterTopAnchorConstraint; // @synthesize feedbackPlatterTopAnchorConstraint=_feedbackPlatterTopAnchorConstraint;
@@ -86,13 +84,14 @@
 - (void)removeLiveButtonHighlighting;
 - (void)showDeleteInterface;
 - (void)deleteClip;
+- (id)_displayableURLForCameraClipURL:(id)arg1;
 - (id)outputURLForClip:(id)arg1;
 - (id)uploadURLCameraClip:(id)arg1;
 - (void)exportLocalClipAtURL:(id)arg1;
 - (void)exportCurrentClipWithCompletion:(CDUnknownBlockType)arg1;
 - (void)consentController:(id)arg1 didFinishConsentWithAnswer:(_Bool)arg2;
 - (void)presentFeedbackConsent;
-- (void)addEditButtons;
+- (unsigned long long)displayMode;
 - (_Bool)_cellBoundsContainsPlayhead:(id)arg1;
 - (id)platterWithView:(id)arg1;
 - (void)didSelectLeftActionButton:(id)arg1;
@@ -108,11 +107,11 @@
 - (void)playbackEngine:(id)arg1 didUpdateTimeControlStatus:(unsigned long long)arg2;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackPosition:(id)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateClipCollection:(id)arg2;
-- (void)togglePlayPauseOrEdit;
 - (void)showAssociatedAccessories;
 - (void)cancelLiveTimer;
 - (void)startLiveTimer;
 - (void)updateDisplayForLiveMode;
+- (void)_updateTimeLabel;
 - (void)changeToLiveMode;
 - (void)togglePlayPause;
 - (void)_addConstraints;

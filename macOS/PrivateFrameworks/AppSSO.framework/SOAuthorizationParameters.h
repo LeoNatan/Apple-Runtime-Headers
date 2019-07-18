@@ -11,8 +11,10 @@
 @interface SOAuthorizationParameters : NSObject
 {
     SOAuthorizationParametersCore *_authorizationParametersCore;
+    long long _responseCode;
 }
 
+@property(nonatomic) long long responseCode; // @synthesize responseCode=_responseCode;
 - (void).cxx_destruct;
 @property(nonatomic) BOOL useInternalExtensions;
 @property(retain, nonatomic) NSData *auditTokenData;

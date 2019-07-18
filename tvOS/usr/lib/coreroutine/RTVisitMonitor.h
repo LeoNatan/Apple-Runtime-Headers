@@ -13,7 +13,6 @@
 {
     RTVisitFeedBuffer *_feedBuffer;
     RTTimer *_feedBufferTimer;
-    NSMutableDictionary *_pipelines;
     _Bool _monitoringVisitIncidents;
     _Bool _monitoringLeechedVisitIncidents;
     _Bool _monitoringLowConfidenceVisitIncidents;
@@ -32,11 +31,13 @@
     unsigned long long _feedBufferReferenceCounter;
     unsigned long long _lowConfidencePipelineReferenceCounter;
     unsigned long long _highConfidencePipelineReferenceCounter;
+    NSMutableDictionary *_pipelines;
 }
 
 + (id)bucketLocations:(id)arg1 interval:(double)arg2;
 + (id)hyperParameterForPipelineType:(id)arg1;
 + (double)LocationHeartbeatWhileAwake;
+@property(retain, nonatomic) NSMutableDictionary *pipelines; // @synthesize pipelines=_pipelines;
 @property(nonatomic) unsigned long long highConfidencePipelineReferenceCounter; // @synthesize highConfidencePipelineReferenceCounter=_highConfidencePipelineReferenceCounter;
 @property(nonatomic) unsigned long long lowConfidencePipelineReferenceCounter; // @synthesize lowConfidencePipelineReferenceCounter=_lowConfidencePipelineReferenceCounter;
 @property(nonatomic) unsigned long long feedBufferReferenceCounter; // @synthesize feedBufferReferenceCounter=_feedBufferReferenceCounter;
@@ -76,7 +77,7 @@
 - (void)startMonitoringVisitIncidents;
 - (void)fetchVisitsFromDate:(id)arg1 toDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_batchProcess:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)_setupRealtimePipelineWithType:(id)arg1;
+- (void)_setupRealtimePipelineWithType:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)_createPipelineWithType:(id)arg1 name:(id)arg2 lastVisit:(id)arg3;
 - (id)_modulesForPipelineType:(id)arg1 hyperParameter:(id)arg2;
 - (id)_configurationForPipelineType:(id)arg1;

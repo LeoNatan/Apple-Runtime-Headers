@@ -23,7 +23,6 @@
 - (oneway void)startPlaybackDidFail:(long long)arg1;
 - (oneway void)willProcessStartPlayback:(long long)arg1 intent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (oneway void)audioPlaybackRequestDidStop:(id)arg1 error:(id)arg2;
-- (oneway void)audioPlaybackRequestDidNotStart:(id)arg1 error:(id)arg2;
 - (oneway void)audioPlaybackRequestDidStart:(id)arg1;
 - (oneway void)audioPlaybackRequestWillStart:(id)arg1;
 - (oneway void)audioSessionDidEndInterruption:(BOOL)arg1;

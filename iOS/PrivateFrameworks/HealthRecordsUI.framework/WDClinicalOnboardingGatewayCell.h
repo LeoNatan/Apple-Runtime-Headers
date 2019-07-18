@@ -6,7 +6,7 @@
 
 #import <HealthRecordsUI/WDMedicalRecordGroupableCell.h>
 
-@class UILabel, UILayoutGuide, WDBrandLogoView, WDHISpecContainerView;
+@class UILabel, UILayoutGuide, UIStackView, WDBrandLogoView;
 
 __attribute__((visibility("hidden")))
 @interface WDClinicalOnboardingGatewayCell : WDMedicalRecordGroupableCell
@@ -15,27 +15,30 @@ __attribute__((visibility("hidden")))
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
     UILabel *_detailLabel;
-    WDHISpecContainerView *_verticalSpecContainerView;
+    UILabel *_tapToConnectLabel;
+    UIStackView *_verticalSpecContainerView;
     UILayoutGuide *_centerLogoInTitlesLayoutGuide;
 }
 
 @property(readonly, nonatomic) UILayoutGuide *centerLogoInTitlesLayoutGuide; // @synthesize centerLogoInTitlesLayoutGuide=_centerLogoInTitlesLayoutGuide;
-@property(readonly, nonatomic) WDHISpecContainerView *verticalSpecContainerView; // @synthesize verticalSpecContainerView=_verticalSpecContainerView;
+@property(readonly, nonatomic) UIStackView *verticalSpecContainerView; // @synthesize verticalSpecContainerView=_verticalSpecContainerView;
+@property(readonly, nonatomic) UILabel *tapToConnectLabel; // @synthesize tapToConnectLabel=_tapToConnectLabel;
 @property(readonly, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(readonly, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) WDBrandLogoView *logoView; // @synthesize logoView=_logoView;
 - (void).cxx_destruct;
+- (void)tintColorDidChange;
 - (void)_updateBasedOnAccessibilityCategory:(_Bool)arg1;
 - (void)_updateForContentSizeCategory:(id)arg1;
 - (void)_updateLabelVisibility;
-- (void)configureWithGateway:(id)arg1 dataProvider:(id)arg2;
+- (void)configureWithGateway:(id)arg1 dataProvider:(id)arg2 connected:(_Bool)arg3;
 - (void)_positionLogoViewContentLeading;
 - (id)_contentViewMarginsGuide;
 - (void)_constrainStackViewContainerWithinContentView;
-- (void)_configureDistinctIntrinsicLayoutPrioritiesForLabels;
 - (void)setUpConstraints;
 - (void)_createVerticalSpecContainerView;
+- (void)_createTapToConnectLabel;
 - (void)_createDetailLabel;
 - (void)_createSubtitleLabel;
 - (void)_createTitleLabel;

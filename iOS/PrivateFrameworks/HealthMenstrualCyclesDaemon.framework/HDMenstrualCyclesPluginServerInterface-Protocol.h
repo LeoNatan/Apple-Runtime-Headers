@@ -16,6 +16,7 @@
 - (void)remote_savePeriodNotYetStartedWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)remote_saveLastMenstrualPeriodWithDayIndexRange:(CDStruct_ef5fcbe6)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_saveMenstrualFlowByDayIndex:(NSDictionary *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)remote_saveMenstrualFlow:(long long)arg1 dayIndex:(long long)arg2 updateAdjacentDays:(_Bool)arg3 completion:(void (^)(_Bool, NSError *))arg4;
 - (void)remote_saveDaySummaries:(NSArray *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_fetchScheduledNotificationsWithCompletion:(void (^)(NSArray *, NSError *))arg1;
 @end

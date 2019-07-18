@@ -108,6 +108,15 @@ struct CIRenderDestinationInternal {
     id _field13;
 };
 
+struct DetectedLineSegment {
+    struct CGPoint _field1;
+    struct CGPoint _field2;
+    double _field3;
+    float _field4;
+    float _field5;
+    float _field6;
+};
+
 struct HoughTransform {
     CDUnknownFunctionPointerType *_field1;
 };
@@ -125,6 +134,13 @@ struct IRect {
 struct ISize {
     unsigned long long _field1;
     unsigned long long _field2;
+};
+
+struct NSEdgeInsets {
+    double top;
+    double left;
+    double bottom;
+    double right;
 };
 
 struct PseudoRand {
@@ -267,6 +283,15 @@ typedef struct {
 } CDStruct_da2e99ad;
 
 typedef struct {
+    double _field1[4];
+    double _field2[2];
+    unsigned int _field3;
+    double *_field4;
+    double *_field5;
+    double *_field6;
+} CDStruct_bae50541;
+
+typedef struct {
     float _field1[4];
     float _field2[4];
     float _field3[4];
@@ -336,6 +361,12 @@ typedef struct {
     int _field14;
     int _field15;
 } CDStruct_6f39cd5e;
+
+typedef struct {
+    double _field1;
+    double _field2;
+    char _field3;
+} CDStruct_202aea77;
 
 typedef struct {
     double i;

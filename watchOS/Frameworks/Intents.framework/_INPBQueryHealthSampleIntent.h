@@ -19,6 +19,7 @@
         unsigned int objectType:1;
         unsigned int questionType:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     int _expectedResultType;
     _INPBIntentMetadata *_intentMetadata;
     int _objectType;
@@ -31,6 +32,7 @@
 + (_Bool)supportsSecureCoding;
 + (Class)thresholdValuesType;
 + (Class)recordDateType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBWellnessUnitType *unit; // @synthesize unit=_unit;
 @property(copy, nonatomic) NSArray *thresholdValues; // @synthesize thresholdValues=_thresholdValues;
 @property(copy, nonatomic) NSArray *recordDates; // @synthesize recordDates=_recordDates;

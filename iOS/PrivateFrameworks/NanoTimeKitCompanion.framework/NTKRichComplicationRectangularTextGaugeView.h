@@ -19,6 +19,7 @@
 + (_Bool)supportsComplicationFamily:(long long)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
 + (long long)progressFillStyle;
++ (_Bool)isMeteredProgressView;
 @property(readonly, nonatomic) NTKRichComplicationLineProgressView *progressView; // @synthesize progressView=_progressView;
 @property(readonly, nonatomic) NTKColoringLabel *line1Label; // @synthesize line1Label=_line1Label;
 @property(readonly, nonatomic) NTKColoringLabel *headerLabel; // @synthesize headerLabel=_headerLabel;
@@ -29,6 +30,7 @@
 - (void)_editingDidEnd;
 - (void)_enumerateLabelsWithBlock:(CDUnknownBlockType)arg1;
 - (void)setPaused:(_Bool)arg1;
+- (void)_handleTemplateUpdateWithReason:(long long)arg1 headerImageProvider:(id)arg2 headerTextProvider:(id)arg3 body1TextProvider:(id)arg4 gaugeProvider:(id)arg5;
 - (void)_handleTemplate:(id)arg1 reason:(long long)arg2;
 - (void)layoutSubviews;
 - (id)init;

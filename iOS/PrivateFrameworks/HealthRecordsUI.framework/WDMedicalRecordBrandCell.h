@@ -6,16 +6,13 @@
 
 #import <HealthRecordsUI/WDMedicalRecordBrandLogoCell.h>
 
-@class UILabel, WDHISpecContainerView;
+@class UILabel;
 
 __attribute__((visibility("hidden")))
 @interface WDMedicalRecordBrandCell : WDMedicalRecordBrandLogoCell
 {
-    WDHISpecContainerView *_verticalSpecContainerView;
 }
 
-@property(readonly, nonatomic) WDHISpecContainerView *verticalSpecContainerView; // @synthesize verticalSpecContainerView=_verticalSpecContainerView;
-- (void).cxx_destruct;
 - (void)setBrandable:(id)arg1 dataProvider:(id)arg2;
 - (void)_updateLabelVisibility;
 - (void)_updateForContentSizeCategory:(id)arg1;

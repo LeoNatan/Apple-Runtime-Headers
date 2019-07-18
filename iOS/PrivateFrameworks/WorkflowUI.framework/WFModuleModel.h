@@ -15,7 +15,6 @@
 {
     _Bool _isMissing;
     _Bool _isDiscontinued;
-    _Bool _isDonated;
     _Bool _hideConfiguration;
     _Bool _hideHeader;
     _Bool _isDimmed;
@@ -43,6 +42,7 @@
     unsigned long long _parameterCollapsingBehavior;
     Class _customConfigurationClass;
     NSArray *_processingParameters;
+    NSString *_firstResponderParameterKey;
     NSArray *_parametersExcludedFromSelection;
     id <WFModuleParameterStateWriter> _parameterStateWriter;
     id <WFVariableProvider> _variableProvider;
@@ -75,6 +75,7 @@
 @property(readonly, nonatomic) _Bool isWorkflowRunning; // @synthesize isWorkflowRunning=_isWorkflowRunning;
 @property(readonly, nonatomic) CKTypedComponentAction_789af415 processingDoneAction; // @synthesize processingDoneAction=_processingDoneAction;
 @property(readonly, nonatomic) CKTypedComponentAction_789af415 processingCancelAction; // @synthesize processingCancelAction=_processingCancelAction;
+@property(readonly, copy, nonatomic) NSString *firstResponderParameterKey; // @synthesize firstResponderParameterKey=_firstResponderParameterKey;
 @property(readonly, nonatomic) NSArray *processingParameters; // @synthesize processingParameters=_processingParameters;
 @property(readonly, nonatomic) _Bool isProcessing; // @synthesize isProcessing=_isProcessing;
 @property(readonly, nonatomic) CKTypedComponentAction_aa963706 removeAction; // @synthesize removeAction=_removeAction;
@@ -93,7 +94,6 @@
 @property(readonly, nonatomic) _Bool hideHeader; // @synthesize hideHeader=_hideHeader;
 @property(readonly, nonatomic) _Bool hideConfiguration; // @synthesize hideConfiguration=_hideConfiguration;
 @property(readonly, nonatomic) WFModuleAppearance *appearance; // @synthesize appearance=_appearance;
-@property(readonly, nonatomic) _Bool isDonated; // @synthesize isDonated=_isDonated;
 @property(readonly, nonatomic) _Bool isDiscontinued; // @synthesize isDiscontinued=_isDiscontinued;
 @property(readonly, nonatomic) _Bool isMissing; // @synthesize isMissing=_isMissing;
 @property(readonly, copy, nonatomic) NSString *localizedParameterSummaryFormatString; // @synthesize localizedParameterSummaryFormatString=_localizedParameterSummaryFormatString;

@@ -11,7 +11,6 @@
 }
 
 + (void)resizeThumbnailSizeForSocialGroupView:(id)arg1 withSize:(struct CGSize)arg2;
-+ (id)_avatarBackgroundColor;
 + (void)_layoutAvatarViews:(id)arg1 inFrame:(struct CGRect)arg2;
 + (id)generateViewForSocialGroup:(id)arg1 withSize:(struct CGSize)arg2;
 

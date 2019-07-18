@@ -13,7 +13,7 @@
 @interface PRSRankingItem : NSObject <SSDataCollectible>
 {
     BOOL _eligibleForDemotion;
-    BOOL _needsDemotion;
+    BOOL _shouldHideUnderShowMore;
     BOOL _matchedQueryTerms;
     BOOL _isPrepared;
     float _rawScore;
@@ -35,21 +35,25 @@
     unsigned long long _importantPropertiesPrefixMatched;
     unsigned long long _importantPropertiesWordMatched;
     unsigned long long _playCount;
+    NSString *_contentType;
     // Error parsing type: T, name: _indexScore
     // Error parsing type: T, name: _inputToModelScore
 }
 
 + (unsigned short)featureFromVirtualIdx:(unsigned long long)arg1;
 + (id)rankingDescriptorForBundleFeature:(unsigned long long)arg1;
++ (unsigned long long)indexOfShortcutBit;
 + (id)deviceClass;
 + (int *)requiredContactAttributesIndexes;
 + (id)requiredContactAttributes;
++ (id)requiredSMSAttributes;
 + (id)requiredMailAttributes;
 + (id)requiredOtherAttributes;
 + (int *)requiredTextFeatureAttributesIndexes;
 + (id)requiredTextFeatureAttributes;
 + (id)requiredAttributes;
 + (void)initialize;
+@property(retain, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) BOOL isPrepared; // @synthesize isPrepared=_isPrepared;
 @property(nonatomic) unsigned long long playCount; // @synthesize playCount=_playCount;
 @property(nonatomic) unsigned long long importantPropertiesWordMatched; // @synthesize importantPropertiesWordMatched=_importantPropertiesWordMatched;
@@ -71,7 +75,7 @@
 @property(nonatomic) double closestUpComingDate; // @synthesize closestUpComingDate=_closestUpComingDate;
 @property(nonatomic) double mostRecentUsedDate; // @synthesize mostRecentUsedDate=_mostRecentUsedDate;
 @property(nonatomic) BOOL matchedQueryTerms; // @synthesize matchedQueryTerms=_matchedQueryTerms;
-@property(nonatomic) BOOL needsDemotion; // @synthesize needsDemotion=_needsDemotion;
+@property(nonatomic) BOOL shouldHideUnderShowMore; // @synthesize shouldHideUnderShowMore=_shouldHideUnderShowMore;
 @property(nonatomic) BOOL eligibleForDemotion; // @synthesize eligibleForDemotion=_eligibleForDemotion;
 @property(retain, nonatomic) NSData *serverFeaturesJSON; // @synthesize serverFeaturesJSON=_serverFeaturesJSON;
 @property(retain, nonatomic) PRSL2FeatureVector *L2FeatureVector; // @synthesize L2FeatureVector=_L2FeatureVector;
@@ -83,13 +87,14 @@
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (long long)passesRecencyTestWithCurrentTime:(double)arg1;
+- (long long)recencyTestForVisibilityWithCurrentTime:(double)arg1;
 - (BOOL)serializeToJSON:(void *)arg1 valuesOnly:(BOOL)arg2;
 - (id)dataCollectionBundle;
 @property(readonly, copy) NSString *description;
 - (id)likelyDisplayTitle;
 - (id)displayName;
-- (long long)compare:(id)arg1;
-- (long long)compareWithDates:(id)arg1;
+- (long long)compare:(id)arg1 currentTime:(double)arg2;
+- (long long)compareWithDates:(id)arg1 currentTime:(double)arg2;
 - (id)moreRecentDateFromDate1:(id)arg1 date2:(id)arg2;
 - (id)interestingDate;
 - (id)dedupeIdentifier;
@@ -97,6 +102,7 @@
 - (void)populateFeaturesWithEvaluator:(id)arg1 updatingBundleFeatures:(float *)arg2 withContext:(struct prs_feature_population_ctx_t *)arg3 keyboardLanguage:(id)arg4 isCJK:(BOOL)arg5 currentTime:(double)arg6;
 - (void)populateOtherFeatures:(struct PRSL2FeatureScoreInfo *)arg1;
 - (void)inferDateBinsFromDates:(id)arg1 intoBins:(int *)arg2;
+- (void)populateSMSFeatures:(struct PRSL2FeatureScoreInfo *)arg1;
 - (void)populateMailFeatures:(struct PRSL2FeatureScoreInfo *)arg1;
 - (void)populateBundleSpecificFeatures:(struct PRSL2FeatureScoreInfo *)arg1 currentTime:(double)arg2;
 - (void)populateCrossAttributeDerivedFeaturesWithContext:(struct prs_feature_population_ctx_t *)arg1 featureScoreInfo:(struct PRSL2FeatureScoreInfo *)arg2;

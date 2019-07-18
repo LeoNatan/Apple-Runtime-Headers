@@ -6,7 +6,7 @@
 
 #import <HealthUI/HKViewController.h>
 
-@class HKMedicalRecord, HRProfile, UITextView;
+@class HKMedicalRecord, HRProfile, UIBarButtonItem, UITextView;
 
 __attribute__((visibility("hidden")))
 @interface WDMedicalRecordSourceDataViewController : HKViewController
@@ -15,8 +15,10 @@ __attribute__((visibility("hidden")))
     HKMedicalRecord *_medicalRecord;
     HRProfile *_profile;
     UITextView *_sourceView;
+    UIBarButtonItem *_shareItem;
 }
 
+@property(retain, nonatomic) UIBarButtonItem *shareItem; // @synthesize shareItem=_shareItem;
 @property(nonatomic) _Bool hasFetchedSourceString; // @synthesize hasFetchedSourceString=_hasFetchedSourceString;
 @property(readonly, nonatomic) UITextView *sourceView; // @synthesize sourceView=_sourceView;
 @property(readonly, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
@@ -24,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)displaySourceString:(id)arg1;
 - (void)_fetchAndDisplaySourceStringIfNecessary;
+- (void)_tapToRadar:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)share:(id)arg1;
 - (void)loadView;

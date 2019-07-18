@@ -21,6 +21,7 @@
 - (void)setCloudPhotoLibraryPauseState:(_Bool)arg1 reason:(short)arg2;
 - (void)setCloudPhotoLibraryEnabledState:(_Bool)arg1;
 - (void)syncCloudPhotoLibrary;
+- (void)shouldAutoEnableiCPLWithReply:(void (^)(_Bool, NSError *))arg1;
 - (void)isReadyForCloudPhotoLibraryWithReply:(void (^)(_Bool))arg1;
 - (void)setPersonInfoDictionary:(NSDictionary *)arg1 forPersonID:(NSString *)arg2;
 - (void)personInfoDictionaryForPersonID:(NSString *)arg1 reply:(void (^)(NSDictionary *, NSError *))arg2;

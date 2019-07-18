@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <MobileTimer/MTAgentNotificationListener-Protocol.h>
 #import <MobileTimer/MTBedtimeSessionTracker-Protocol.h>
 #import <MobileTimer/MTSleepObserver-Protocol.h>
 
 @class MTAlarm, MTAlarmStorage, NSString;
 @protocol MTBedtimeSessionTrackerDelegate;
 
-@interface MTBedtimeSessionTracker : NSObject <MTBedtimeSessionTracker, MTSleepObserver>
+@interface MTBedtimeSessionTracker : NSObject <MTBedtimeSessionTracker, MTSleepObserver, MTAgentNotificationListener>
 {
     struct os_unfair_lock_s _alarmLock;
     id <MTBedtimeSessionTrackerDelegate> _bedtimeSessionTrackerDelegate;
@@ -25,13 +26,14 @@
 @property(retain, nonatomic) MTAlarmStorage *alarmStorage; // @synthesize alarmStorage=_alarmStorage;
 @property(nonatomic) __weak id <MTBedtimeSessionTrackerDelegate> bedtimeSessionTrackerDelegate; // @synthesize bedtimeSessionTrackerDelegate=_bedtimeSessionTrackerDelegate;
 - (void).cxx_destruct;
+- (void)handleNotification:(id)arg1 ofType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)handlesNotification:(id)arg1 ofType:(long long)arg2;
 - (void)endSessionWithDate:(id)arg1 reason:(unsigned long long)arg2;
 - (void)startSession;
 - (Class)sessionClass;
 - (void)sleepCoordinator:(id)arg1 waketimeWasReached:(id)arg2 sleepAlarm:(id)arg3;
 - (void)sleepCoordinator:(id)arg1 wakeUpAlarmWasDismissed:(id)arg2 dismissAction:(unsigned long long)arg3 sleepAlarm:(id)arg4;
-- (void)sleepCoordinator:(id)arg1 bedtimeDNDManuallyExited:(id)arg2 sleepAlarm:(id)arg3;
-- (void)sleepCoordinator:(id)arg1 userWentToBed:(id)arg2 sleepAlarm:(id)arg3;
+- (void)sleepCoordinator:(id)arg1 bedtimeReminderWasConfirmed:(id)arg2 sleepAlarm:(id)arg3;
 - (void)sleepCoordinator:(id)arg1 sleepAlarmDidChange:(id)arg2;
 @property(retain, nonatomic) MTAlarm *cachedAlarm; // @synthesize cachedAlarm=_cachedAlarm;
 @property(readonly, nonatomic) _Bool trackingEnabled;

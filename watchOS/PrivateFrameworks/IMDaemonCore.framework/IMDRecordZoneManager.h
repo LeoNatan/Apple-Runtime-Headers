@@ -42,6 +42,7 @@
 @property(readonly, nonatomic) CKRecordZone *chatRecordZone; // @synthesize chatRecordZone=_chatRecordZone;
 @property(readonly, nonatomic) CKRecordZoneID *chatRecordZoneID; // @synthesize chatRecordZoneID=_chatRecordZoneID;
 - (void)fetchChatZoneToCheckManateeStatus:(CDUnknownBlockType)arg1;
+- (int)derivedQualityOfService;
 - (id)ckUtilities;
 - (void)_deleteAllZonesForDatabase:(id)arg1;
 - (void)deleteAllZones;

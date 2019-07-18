@@ -6,32 +6,19 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class CNMeCardSharingAvatarViewController, NSString, UITextField, UIView;
+@class UITextField;
 
 __attribute__((visibility("hidden")))
 @interface CNMeCardSharingSettingsNameCell : UITableViewCell
 {
-    UITextField *_givenNameField;
-    UITextField *_familyNameField;
-    UIView *_fakeSeparator;
-    CNMeCardSharingAvatarViewController *_avatarViewController;
+    UITextField *_textField;
 }
 
-+ (double)desiredCellHeight;
 + (id)cellIdentifier;
-@property(retain, nonatomic) CNMeCardSharingAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
-@property(retain, nonatomic) UIView *fakeSeparator; // @synthesize fakeSeparator=_fakeSeparator;
-@property(retain, nonatomic) UITextField *familyNameField; // @synthesize familyNameField=_familyNameField;
-@property(retain, nonatomic) UITextField *givenNameField; // @synthesize givenNameField=_givenNameField;
+@property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
 - (void)prepareForReuse;
-@property(copy, nonatomic) NSString *familyName;
-@property(copy, nonatomic) NSString *givenName;
-- (void)setGivenNameField:(id)arg1 familyNameField:(id)arg2;
-- (void)setAvatarController:(id)arg1;
 - (void)layoutSubviews;
-- (double)separatorHeight;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
 

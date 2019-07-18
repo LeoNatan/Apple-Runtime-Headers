@@ -8,8 +8,11 @@
 
 @interface MCDMediaButton : MCDButton
 {
+    double _cornerRadius;
 }
 
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
+- (double)focusLayerCornerRadius;
 - (_Bool)canShowHighlight;
 - (id)colorForKnobFocusLayer;
 - (id)initWithFrame:(struct CGRect)arg1;

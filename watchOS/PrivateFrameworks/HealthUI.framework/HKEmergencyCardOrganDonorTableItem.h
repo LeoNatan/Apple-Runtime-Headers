@@ -13,6 +13,7 @@
 @interface HKEmergencyCardOrganDonorTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate>
 {
     HKMedicalIDEditorPickerCell *_editableCell;
+    _Bool _isEditing;
 }
 
 - (void).cxx_destruct;
@@ -27,7 +28,8 @@
 - (float)tableView:(id)arg1 heightForRowAtIndex:(int)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;
 - (id)_createEditableCell;
-- (int)chosenIndexForOrganDonorStatus:(unsigned int)arg1;
+- (void)setOrganDonationStatus:(unsigned int)arg1;
+- (unsigned int)chosenIndexForOrganDonorStatus:(id)arg1;
 - (id)displayValueForOrganDonorStatus:(unsigned int)arg1;
 - (id)possibleValues;
 - (_Bool)hasPresentableData;

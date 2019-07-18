@@ -16,8 +16,12 @@
     HFItemProvider *_gridItemProvider;
     HFItem<NSCopying> *_supplementaryItem;
     CDUnknownBlockType _gridItemProviderCreator;
+    CDUnknownBlockType _supplementaryItemProviderCreator;
+    HFItemProvider *_supplementaryItemProvider;
 }
 
+@property(retain, nonatomic) HFItemProvider *supplementaryItemProvider; // @synthesize supplementaryItemProvider=_supplementaryItemProvider;
+@property(readonly, copy, nonatomic) CDUnknownBlockType supplementaryItemProviderCreator; // @synthesize supplementaryItemProviderCreator=_supplementaryItemProviderCreator;
 @property(readonly, copy, nonatomic) CDUnknownBlockType gridItemProviderCreator; // @synthesize gridItemProviderCreator=_gridItemProviderCreator;
 @property(readonly, copy, nonatomic) HFItem<NSCopying> *supplementaryItem; // @synthesize supplementaryItem=_supplementaryItem;
 @property(retain, nonatomic) HFItemProvider *gridItemProvider; // @synthesize gridItemProvider=_gridItemProvider;
@@ -25,7 +29,7 @@
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (BOOL)isGridItem:(id)arg1;
-- (id)initWithDelegate:(id)arg1 gridItemProviderCreator:(CDUnknownBlockType)arg2 supplementaryItem:(id)arg3;
+- (id)initWithDelegate:(id)arg1 gridItemProviderCreator:(CDUnknownBlockType)arg2 supplementaryItemProviderCreator:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

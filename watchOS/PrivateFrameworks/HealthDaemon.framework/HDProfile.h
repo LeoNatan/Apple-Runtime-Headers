@@ -8,7 +8,7 @@
 
 #import <HealthDaemon/HDHealthDaemonReadyObserver-Protocol.h>
 
-@class HDAWDSubmissionManager, HDActivityCacheManager, HDAppSubscriptionManager, HDAssertionManager, HDAuthorizationManager, HDCloudSyncManager, HDConceptIndexManager, HDConceptIndexer, HDCurrentActivitySummaryHelper, HDDaemon, HDDaemonSyncEngine, HDDataCollectionManager, HDDataManager, HDDataProvenanceManager, HDDatabase, HDDatabasePruningManager, HDDeviceManager, HDFitnessMachineManager, HDHealthOntologyManager, HDHealthServiceManager, HDMedicalIDDataManager, HDMetadataManager, HDMigrationManager, HDNanoSyncManager, HDNotificationManager, HDRestorableAlarmScheduler, HDServiceConnectionManager, HDSourceManager, HDSourceOrderManager, HDUnitPreferencesManager, HDUserCharacteristicsManager, HDWorkoutCondenser, HDWorkoutManager, HKProfileIdentifier, NSDictionary, NSString, NSURL;
+@class HDAWDSubmissionManager, HDActivityCacheManager, HDAppSubscriptionManager, HDAssertionManager, HDAuthorizationManager, HDCloudSyncManager, HDCurrentActivitySummaryHelper, HDDaemon, HDDaemonSyncEngine, HDDataCollectionManager, HDDataManager, HDDataProvenanceManager, HDDatabase, HDDatabasePruningManager, HDDeviceManager, HDFitnessMachineManager, HDHealthServiceManager, HDMedicalIDDataManager, HDMetadataManager, HDMigrationManager, HDNanoSyncManager, HDNotificationManager, HDOntologyLifecycleManager, HDRestorableAlarmScheduler, HDServiceConnectionManager, HDSourceManager, HDSourceOrderManager, HDUnitPreferencesManager, HDUserCharacteristicsManager, HDWorkoutCondenser, HDWorkoutManager, HKProfileIdentifier, NSDictionary, NSString, NSURL;
 @protocol HDHealthDaemon, HDSyncEngine;
 
 @interface HDProfile : NSObject <HDHealthDaemonReadyObserver>
@@ -30,7 +30,6 @@
     HDSourceOrderManager *_sourceOrderManager;
     HDUserCharacteristicsManager *_userCharacteristicsManager;
     HDWorkoutCondenser *_workoutCondenser;
-    HDHealthOntologyManager *_ontologyManager;
     int _profileType;
     HKProfileIdentifier *_profileIdentifier;
     NSString *_medicalIDDirectoryPath;
@@ -51,7 +50,6 @@
 @property(readonly, copy, nonatomic) NSString *medicalIDDirectoryPath; // @synthesize medicalIDDirectoryPath=_medicalIDDirectoryPath;
 @property(readonly, copy, nonatomic) HKProfileIdentifier *profileIdentifier; // @synthesize profileIdentifier=_profileIdentifier;
 @property(readonly, nonatomic) int profileType; // @synthesize profileType=_profileType;
-@property(readonly, nonatomic) HDHealthOntologyManager *ontologyManager; // @synthesize ontologyManager=_ontologyManager;
 @property(readonly, nonatomic) HDWorkoutCondenser *workoutCondenser; // @synthesize workoutCondenser=_workoutCondenser;
 @property(readonly, nonatomic) HDUserCharacteristicsManager *userCharacteristicsManager; // @synthesize userCharacteristicsManager=_userCharacteristicsManager;
 @property(readonly, nonatomic) HDSourceOrderManager *sourceOrderManager; // @synthesize sourceOrderManager=_sourceOrderManager;
@@ -82,8 +80,7 @@
 - (void)daemonReady:(id)arg1;
 @property(readonly, copy, nonatomic) NSURL *directoryURL;
 @property(readonly, copy, nonatomic) NSString *directoryPath;
-@property(readonly, nonatomic) HDConceptIndexManager *conceptIndexManager;
-@property(readonly, nonatomic) HDConceptIndexer *conceptIndexer;
+@property(readonly, nonatomic) HDOntologyLifecycleManager *ontologyLifecycleManager;
 @property(readonly, nonatomic) HDFitnessMachineManager *fitnessMachineManager;
 @property(readonly, nonatomic) HDWorkoutManager *workoutManager;
 @property(readonly, nonatomic) HDHealthServiceManager *serviceManager;

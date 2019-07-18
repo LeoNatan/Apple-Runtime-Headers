@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     _Bool __useSmoothingTransitionCoordinator;
     _Bool __snapToExpandedItem;
     _Bool __isHandlingScrollViewWillEndDragging;
+    _Bool _currentDragBeganOnContent;
     PUBrowsingSession *_browsingSession;
     long long _type;
     id <PUScrubberViewDelegate> _delegate;
@@ -58,6 +59,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint __decelerationTargetOffset;
 }
 
+@property(nonatomic) _Bool currentDragBeganOnContent; // @synthesize currentDragBeganOnContent=_currentDragBeganOnContent;
 @property(nonatomic, setter=_setHandlingScrollViewWillEndDragging:) _Bool _isHandlingScrollViewWillEndDragging; // @synthesize _isHandlingScrollViewWillEndDragging=__isHandlingScrollViewWillEndDragging;
 @property(nonatomic, setter=_setScrubbingTransitionProgress:) double _scrubbingTransitionProgress; // @synthesize _scrubbingTransitionProgress=__scrubbingTransitionProgress;
 @property(nonatomic, setter=_setLayoutTransitionsDisabledCount:) long long _layoutTransitionsDisabledCount; // @synthesize _layoutTransitionsDisabledCount=__layoutTransitionsDisabledCount;

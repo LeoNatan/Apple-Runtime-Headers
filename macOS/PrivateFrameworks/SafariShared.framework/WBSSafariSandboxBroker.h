@@ -8,11 +8,10 @@
 
 #import <SafariShared/WBSSafariSandboxBrokerProtocol-Protocol.h>
 
-@protocol OS_dispatch_queue, OS_os_log;
+@protocol OS_os_log;
 
 @interface WBSSafariSandboxBroker : NSObject <WBSSafariSandboxBrokerProtocol>
 {
-    NSObject<OS_dispatch_queue> *_internalQueue;
     int _pid;
     NSObject<OS_os_log> *_log;
     CDStruct_4c969caf _auditToken;
@@ -23,6 +22,7 @@
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 - (void).cxx_destruct;
 - (void)relatedExtensionsForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)changeUserWebSearchProviderInfoTo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadLinkPresentationMetdataForMessageWithGUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_sandboxFileExtensionForURL:(id)arg1 class:(const char *)arg2;
 - (id)_URLsRelatedToURL:(id)arg1 containingOriginalURL:(char *)arg2;

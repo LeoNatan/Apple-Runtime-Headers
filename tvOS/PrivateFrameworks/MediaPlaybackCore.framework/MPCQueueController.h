@@ -59,6 +59,7 @@
 - (_Bool)_containsLiveStreamDataSource;
 - (void)_applyVolumeNormalizationForQueuedItems;
 - (void)_addPlaybackContext:(id)arg1 atPosition:(long long)arg2 afterContentItemID:(id)arg3 sectionIdentifier:(id)arg4 actions:(unsigned long long)arg5 completion:(CDUnknownBlockType)arg6;
+- (id)firstContentItemIDForItemIntersectingIdentifierSet:(id)arg1;
 - (void)didDequeueShuffledItemsInSectionedIdentifierList:(id)arg1;
 - (void)sectionedIdentifierList:(id)arg1 dataSourceDidChangeItems:(id)arg2 inSection:(id)arg3;
 - (void)sectionedIdentifierList:(id)arg1 dataSourceDidAddItems:(id)arg2 toSection:(id)arg3;
@@ -74,6 +75,7 @@
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)reloadItemsKeepingCurrentItem:(_Bool)arg1;
 @property(readonly, nonatomic) unsigned long long supportedInsertionPositions;
+- (void)reshuffle;
 - (void)reset;
 - (void)player:(id)arg1 currentItemDidChangeFromItem:(id)arg2 toItem:(id)arg3;
 - (void)moveContentItemID:(id)arg1 afterContentItemID:(id)arg2 completion:(CDUnknownBlockType)arg3;

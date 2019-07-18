@@ -138,6 +138,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isHEVCPreferred;
 - (_Bool)isHEVCSupported;
 - (_Bool)isHEVCRelaxedAverageBitRateTargetSupported;
+- (_Bool)isHEVCMemoryUsageMinimizationSupported;
 - (_Bool)hevcAllowBFramesForHighCTUCount;
 - (int)hevcTurboModeVersion;
 - (_Bool)usesQuantizationScalingMatrix_H264_Steep_16_48;

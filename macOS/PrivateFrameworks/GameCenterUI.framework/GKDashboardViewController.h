@@ -6,7 +6,7 @@
 
 #import <GameCenterUI/GKDashboardCollectionViewController.h>
 
-@class GKChallengeDataSource, GKDashboardLeaderboardScoreViewController, GKGameRecord, NSMutableArray, NSMutableDictionary, NSString, NSTextField, NSView, UIButton, UXSegmentedControl;
+@class GKChallengeDataSource, GKDashboardLeaderboardScoreViewController, GKGameRecord, NSButton, NSMutableArray, NSMutableDictionary, NSString, NSTextField, NSView, UXSegmentedControl;
 
 @interface GKDashboardViewController : GKDashboardCollectionViewController
 {
@@ -23,12 +23,12 @@
     NSView *_containerView;
     UXSegmentedControl *_segmentedControl;
     NSTextField *_titleLabel;
-    UIButton *_shareButton;
+    NSButton *_shareButton;
     GKChallengeDataSource *_challengeDataSource;
 }
 
 @property(nonatomic) GKChallengeDataSource *challengeDataSource; // @synthesize challengeDataSource=_challengeDataSource;
-@property(nonatomic) UIButton *shareButton; // @synthesize shareButton=_shareButton;
+@property(nonatomic) NSButton *shareButton; // @synthesize shareButton=_shareButton;
 @property(nonatomic) NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) UXSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(nonatomic) NSView *containerView; // @synthesize containerView=_containerView;

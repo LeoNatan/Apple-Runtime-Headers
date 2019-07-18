@@ -6,7 +6,7 @@
 
 #import <PineBoardServices/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSString, NSURL, NSXPCListenerEndpoint;
+@class NSArray, NSData, NSDictionary, NSString, NSXPCListenerEndpoint;
 @protocol PBSystemServiceNowPlayingDelegate;
 
 @protocol PBSystemServiceInterface <NSObject>
@@ -28,8 +28,6 @@
 - (void)getStoreFrontCountryCodeWithReply:(void (^)(NSString *))arg1;
 - (void)setWantsVolumeButtonEvents:(_Bool)arg1;
 - (void)setWantsPlayPauseButtonEvents:(_Bool)arg1;
-- (void)cancelScheduledAppActivation;
-- (void)activateAppIfPlayingMusicAfterIdleTime:(double)arg1 openURL:(NSURL *)arg2;
 - (void)pairAppleRemote:(_Bool)arg1 withReply:(void (^)(_Bool))arg2;
 - (void)fetchPairedAppleRemoteStateWithReply:(void (^)(_Bool))arg1;
 - (void)fetchEnforceProvisioningOnSystemAppsEnabledWithReply:(void (^)(_Bool))arg1;

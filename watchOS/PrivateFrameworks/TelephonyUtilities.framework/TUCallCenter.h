@@ -13,7 +13,6 @@
 
 @interface TUCallCenter : NSObject <TUCallContainer>
 {
-    NSObject<OS_dispatch_queue> *_queue;
     TUCallServicesInterface *_callServicesInterface;
     TUAudioDeviceController *_audioDeviceController;
     TUVideoDeviceController *_videoDeviceController;
@@ -24,6 +23,7 @@
     TUCallProviderManager *_providerManager;
     TUConversationManager *_conversationManager;
     CDUnknownBlockType _disconnectCallPreflight;
+    NSObject<OS_dispatch_queue> *_queue;
     struct CGSize _localLandscapeAspectRatio;
     struct CGSize _localPortraitAspectRatio;
 }
@@ -33,6 +33,7 @@
 + (id)sharedInstanceWithQueue:(id)arg1 server:(id)arg2 shouldRegister:(_Bool)arg3;
 + (id)sharedInstance;
 + (id)sharedContactStore;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) CDUnknownBlockType disconnectCallPreflight; // @synthesize disconnectCallPreflight=_disconnectCallPreflight;
 @property(nonatomic) struct CGSize localPortraitAspectRatio; // @synthesize localPortraitAspectRatio=_localPortraitAspectRatio;
 @property(nonatomic) struct CGSize localLandscapeAspectRatio; // @synthesize localLandscapeAspectRatio=_localLandscapeAspectRatio;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) TUVideoDeviceController *videoDeviceController; // @synthesize videoDeviceController=_videoDeviceController;
 @property(retain, nonatomic) TUAudioDeviceController *audioDeviceController; // @synthesize audioDeviceController=_audioDeviceController;
 @property(retain, nonatomic) TUCallServicesInterface *callServicesInterface; // @synthesize callServicesInterface=_callServicesInterface;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (unsigned int)_callGroupCountForCall:(id)arg1 withCall:(id)arg2;
 - (_Bool)canGroupCall:(id)arg1 withCall:(id)arg2;
@@ -68,6 +68,7 @@
 - (id)joinConversationWithConversationRequest:(id)arg1;
 - (_Bool)launchAppForJoinRequest:(id)arg1;
 - (void)joinConversationWithRequest:(id)arg1;
+- (void)pickRouteForRapportDeviceWithMediaSystemIdentifier:(id)arg1 effectiveIdentifier:(id)arg2;
 - (void)pullHostedCallsFromPairedHostDevice;
 - (void)pushHostedCallsToDestination:(id)arg1;
 - (void)pullRelayingCallsFromClient;

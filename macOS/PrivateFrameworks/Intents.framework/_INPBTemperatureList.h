@@ -15,12 +15,14 @@
 @interface _INPBTemperatureList : PBCodable <_INPBTemperatureList, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBCondition *_condition;
     NSArray *_temperatures;
 }
 
 + (BOOL)supportsSecureCoding;
 + (Class)temperatureType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *temperatures; // @synthesize temperatures=_temperatures;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
 - (void).cxx_destruct;

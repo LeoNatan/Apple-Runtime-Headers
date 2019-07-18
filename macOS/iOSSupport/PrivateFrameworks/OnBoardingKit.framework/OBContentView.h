@@ -6,15 +6,30 @@
 
 #import <UIKit/UIView.h>
 
+@class UIColor;
+
 __attribute__((visibility("hidden")))
 @interface OBContentView : UIView
 {
+    BOOL _aboveHeaderLayout;
+    BOOL _customizedBackgroundColor;
     UIView *_bleedView;
+    UIColor *_lightColor;
+    UIColor *_darkColor;
 }
 
+@property(nonatomic) BOOL customizedBackgroundColor; // @synthesize customizedBackgroundColor=_customizedBackgroundColor;
+@property(nonatomic) BOOL aboveHeaderLayout; // @synthesize aboveHeaderLayout=_aboveHeaderLayout;
+@property(retain, nonatomic) UIColor *darkColor; // @synthesize darkColor=_darkColor;
+@property(retain, nonatomic) UIColor *lightColor; // @synthesize lightColor=_lightColor;
 @property(nonatomic) __weak UIView *bleedView; // @synthesize bleedView=_bleedView;
 - (void).cxx_destruct;
+- (BOOL)_colorIsDefault:(id)arg1;
+- (id)_defaultColorForCurrentTraitCollection;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 aboveHeaderLayout:(BOOL)arg2;
 
 @end
 

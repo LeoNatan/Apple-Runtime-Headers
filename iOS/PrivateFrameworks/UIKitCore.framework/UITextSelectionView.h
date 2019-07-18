@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSArray, NSTimer, UITextInteractionAssistant, UITextRangeView, UITextSelection;
+@class NSArray, NSTimer, UITextInteractionAssistant, UITextRangeView, UITextSelection, UITextSelectionWindowAveragedValue;
 
 __attribute__((visibility("hidden")))
 @interface UITextSelectionView : UIView
@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     _Bool m_activeCaret;
     _Bool m_isSuspended;
     int m_showingCommandsCounterForRotate;
+    UITextSelectionWindowAveragedValue *m_velocityWindow;
     _Bool m_forceRangeView;
     _Bool _isIndirectFloatingCaret;
     struct CGRect _stashedCaretRect;

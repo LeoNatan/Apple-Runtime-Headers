@@ -14,17 +14,19 @@
 
 @interface RBProcessMonitor : NSObject <RBProcessMonitoring, RBStateCapturing>
 {
-    NSObject<OS_dispatch_queue> *_queue;
     RBProcessIndex *_processIndex;
     RBProcessMap *_stateMap;
     RBProcessMap *_suppressedState;
     RBProcessMap *_publishedState;
     NSCountedSet *_suppressedIdentities;
+    struct os_unfair_lock_s _observersLock;
     NSMutableSet *_observers;
     id <RBStateCaptureManaging> _stateCaptureManager;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (id)_clientStateForServerState:(id)arg1 process:(id)arg2;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *monitorSerializationQueue; // @synthesize monitorSerializationQueue=_queue;
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

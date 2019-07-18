@@ -24,8 +24,6 @@
 - (void)_updateLocale;
 - (void)rectangularViewDidEndInteractive:(id)arg1;
 - (void)rectangularViewDidBecomeInteractive:(id)arg1;
-- (void)complicationDisplayWrapperView:(id)arg1 updateCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned long long)arg5 animationDuration:(double)arg6 animationFraction:(float)arg7;
-- (_Bool)complicationDisplayWrapperView:(id)arg1 shouldStartCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned long long)arg5;
 - (_Bool)_supportsTimeScrubbing;
 - (id)complicationPickerViewForSlot:(id)arg1;
 - (double)_minimumBreathingScaleForComplicationSlot:(id)arg1;

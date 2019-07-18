@@ -9,12 +9,12 @@
 @class NSArray, NSDictionary, NSString;
 
 @protocol WBSSafariBookmarksSyncAgentProtocol <WBSCyclerCloudBookmarksAssistant>
-- (void)getCloudTabDevicesWithCompletionHandler:(void (^)(NSArray *))arg1;
 - (void)fetchSyncedCloudTabDevicesAndCloseRequestsWithCompletionHandler:(void (^)(NSArray *, NSArray *, NSError *))arg1;
+- (void)getCloudTabDevicesWithCompletionHandler:(void (^)(NSArray *))arg1;
 - (void)deleteCloudTabCloseRequestsWithUUIDStrings:(NSArray *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)deleteDevicesWithUUIDStrings:(NSArray *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)saveCloudTabCloseRequestWithDictionaryRepresentation:(NSDictionary *)arg1 closeRequestUUIDString:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
-- (void)saveTabsForCurrentDeviceWithDictionaryRepresentation:(NSDictionary *)arg1 deviceUUIDString:(NSString *)arg2 comnpletionHandler:(void (^)(NSError *))arg3;
+- (void)saveTabsForCurrentDeviceWithDictionaryRepresentation:(NSDictionary *)arg1 deviceUUIDString:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)collectDiagnosticsDataWithCompletionHandler:(void (^)(NSData *))arg1;
 - (void)beginMigrationFromDAV;
 - (void)observeRemoteMigrationStateForSecondaryMigration;

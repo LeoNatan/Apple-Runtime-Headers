@@ -61,7 +61,6 @@
 @property(readonly, nonatomic) PKSpendingSummary *summary; // @synthesize summary=_summary;
 @property(nonatomic) __weak id <PKSpendingSingleSummaryViewControllerDelegate> scrollingDelegate; // @synthesize scrollingDelegate=_scrollingDelegate;
 - (void).cxx_destruct;
-- (void)accountServiceAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(_Bool)arg2;
 - (void)accountServiceAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)buttonTappedInFooterView:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

@@ -9,7 +9,7 @@
 #import <RunningBoardServices/RBSClientProtocol-Protocol.h>
 #import <RunningBoardServices/RBSServiceLocalProtocol-Protocol.h>
 
-@class NSHashTable, NSMapTable, NSMutableDictionary, NSMutableSet, RBSProcessHandle, RBSProcessIdentity;
+@class NSHashTable, NSMapTable, NSMutableDictionary, NSMutableSet, RBSAssertionIdentifier, RBSProcessHandle, RBSProcessIdentity;
 @protocol OS_dispatch_queue, OS_xpc_object, RBSConnectionServiceDelegate;
 
 @interface RBSConnection : NSObject <RBSClientProtocol, RBSServiceLocalProtocol>
@@ -19,17 +19,19 @@
     RBSProcessHandle *_handle;
     id <RBSConnectionServiceDelegate> _serviceDelegate;
     struct os_unfair_lock_s _lock;
+    struct os_unfair_lock_s _assertionLock;
     struct os_unfair_lock_s _processExpirationLock;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     NSObject<OS_dispatch_queue> *_handshakeQueue;
     NSObject<OS_dispatch_queue> *_monitorCalloutQueue;
     NSMapTable *_acquiredAssertionsByIdentifier;
-    NSMutableSet *_processMonitors;
+    NSHashTable *_processMonitors;
     NSMutableDictionary *_stateByIdentity;
     NSMutableSet *_inheritances;
     NSHashTable *_expirationWarningAssertions;
     NSMutableDictionary *_deathHandlers;
     unsigned long long _state;
+    RBSAssertionIdentifier *_handshakeIdentifier;
 }
 
 + (id)connectionQueue;
@@ -38,10 +40,14 @@
 - (void).cxx_destruct;
 - (void)_handleDaemonDidStart;
 - (void)_disconnect;
+- (_Bool)_invalidateAssertionIdentifier:(id)arg1 error:(out id *)arg2;
 - (void)_handshake;
+- (id)_handshakeDescriptor;
+- (_Bool)_isPlugIn;
 - (id)_lock_connect;
 - (id)_connection;
 - (void)_handleMessage:(id)arg1;
+- (id)_init;
 - (oneway void)async_processDidExit:(id)arg1 withContext:(id)arg2;
 - (oneway void)async_observedProcessStatesDidChange:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (oneway void)async_assertionWillInvalidate:(id)arg1;
@@ -69,13 +75,13 @@
 - (id)assertionDescriptorsByPidWithFlattenedAttributes:(_Bool)arg1 error:(out id *)arg2;
 - (_Bool)invalidateAssertionWithIdentifier:(id)arg1 error:(out id *)arg2;
 - (_Bool)invalidateAssertion:(id)arg1 error:(out id *)arg2;
-- (_Bool)acquireAssertion:(id)arg1 identifier:(out id *)arg2 error:(out id *)arg3;
+- (id)acquireAssertion:(id)arg1 error:(out id *)arg2;
+- (void)plugInHandshakeComplete;
 - (id)observeProcessAssertionsExpirationWarningWithBlock:(CDUnknownBlockType)arg1;
 - (void)registerServiceDelegate:(id)arg1;
 @property(readonly, nonatomic) RBSProcessHandle *handle;
 @property(readonly, copy, nonatomic) RBSProcessIdentity *identity;
 - (void)dealloc;
-- (id)_init;
 - (id)init;
 
 @end

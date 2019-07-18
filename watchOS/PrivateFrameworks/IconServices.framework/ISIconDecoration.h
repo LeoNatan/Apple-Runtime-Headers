@@ -26,6 +26,7 @@
 @property int mode; // @synthesize mode=_mode;
 @property int position; // @synthesize position=_position;
 - (void).cxx_destruct;
+@property(readonly) NSUUID *resourceFingerprint;
 @property(readonly, copy) NSString *description;
 @property(readonly) NSUUID *uuid;
 - (id)initWithCoder:(id)arg1;

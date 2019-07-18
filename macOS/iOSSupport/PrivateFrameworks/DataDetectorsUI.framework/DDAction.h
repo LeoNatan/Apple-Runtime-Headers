@@ -54,6 +54,7 @@
 - (void)addToRecents;
 - (id)context;
 @property(readonly, nonatomic) UIImage *icon;
+- (id)generateIdentifier;
 - (const struct __CFArray *)associatedResults;
 -     // Error parsing type: ^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@0:8, name: coalescedResult
 -     // Error parsing type: ^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@0:8, name: result

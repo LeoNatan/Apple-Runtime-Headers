@@ -6,35 +6,9 @@
 
 #import <UIKitCore/UICanvas.h>
 
-@class FBSScene, NSArray, UIScreen;
-@protocol UICoordinateSpace, _UICanvasDelegate;
-
 @interface _UICanvas : UICanvas
 {
 }
-
-+ (id)canvasForScene:(id)arg1 create:(_Bool)arg2;
-+ (id)canvasForScene:(id)arg1;
-+ (id)canvases;
-+ (id)_actionsHandlers;
-+ (id)_settingsDiffActions;
-- (void)_setAVKitRequestedRefreshRate:(double)arg1 HDRMode:(int)arg2 overscanCompensation:(int)arg3;
-@property(nonatomic) int screenRequestedOverscanCompensation; // @dynamic screenRequestedOverscanCompensation;
-- (id)initWithScene:(id)arg1;
-- (void)_invalidate;
-- (void)attachWindow:(id)arg1;
-- (void)detachWindow:(id)arg1;
-- (void)_willResignActive;
-- (void)_didBecomeActive;
-- (void)_willAttach;
-
-// Remaining properties
-@property(readonly, nonatomic) id <UICoordinateSpace> coordinateSpace; // @dynamic coordinateSpace;
-@property(retain, nonatomic) id <_UICanvasDelegate> delegate; // @dynamic delegate;
-@property(nonatomic) _Bool keepContextAssociationInBackground; // @dynamic keepContextAssociationInBackground;
-@property(readonly, nonatomic) FBSScene *scene; // @dynamic scene;
-@property(readonly, nonatomic) UIScreen *screen; // @dynamic screen;
-@property(readonly, nonatomic) NSArray *windows; // @dynamic windows;
 
 @end
 

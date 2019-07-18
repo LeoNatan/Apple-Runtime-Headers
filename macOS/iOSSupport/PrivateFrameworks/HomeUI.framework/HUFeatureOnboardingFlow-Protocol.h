@@ -11,8 +11,12 @@
 
 @protocol HUFeatureOnboardingFlow <NSObject>
 @property(retain, nonatomic) UIViewController<HUConfigurationViewController> *initialViewController;
+@property(readonly, nonatomic) BOOL shouldAbortAllOnboarding;
 @property(readonly, nonatomic) BOOL shouldAbortThisOnboardingFlowGroup;
 @property(retain, nonatomic) NAFuture *onboardingFuture;
 - (UIViewController<HUConfigurationViewController> *)processUserInput:(NSMutableDictionary *)arg1;
+
+@optional
+- (void)checkIfStillRequiredFromCurrentResults:(NSMutableDictionary *)arg1;
 @end
 

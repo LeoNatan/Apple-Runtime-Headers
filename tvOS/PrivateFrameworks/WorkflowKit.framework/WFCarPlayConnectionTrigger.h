@@ -15,6 +15,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
++ (_Bool)isSupportedOnThisDevice;
 + (_Bool)isAllowedToRunAutomatically;
 @property(nonatomic) _Bool onDisconnect; // @synthesize onDisconnect=_onDisconnect;
 @property(nonatomic) _Bool onConnect; // @synthesize onConnect=_onConnect;

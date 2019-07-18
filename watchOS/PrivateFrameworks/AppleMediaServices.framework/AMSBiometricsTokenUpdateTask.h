@@ -7,15 +7,19 @@
 #import <AppleMediaServices/AMSTask.h>
 
 #import <AppleMediaServices/AMSBagConsumer-Protocol.h>
+#import <AppleMediaServices/AMSSecurityClientInterface-Protocol.h>
 
-@class ACAccount, AMSURLSession, NSDictionary, NSString;
-@protocol AMSBagProtocol;
+@class ACAccount, AMSProcessInfo, AMSURLSession, NSDictionary, NSString;
+@protocol AMSBagProtocol, AMSRequestPresentationDelegate;
 
-@interface AMSBiometricsTokenUpdateTask : AMSTask <AMSBagConsumer>
+@interface AMSBiometricsTokenUpdateTask : AMSTask <AMSSecurityClientInterface, AMSBagConsumer>
 {
+    _Bool _shouldRequestConfirmation;
     _Bool _shouldPromptUser;
     ACAccount *_account;
     NSDictionary *_additionalDialogMetrics;
+    AMSProcessInfo *_clientInfo;
+    id <AMSRequestPresentationDelegate> _presentationDelegate;
     id <AMSBagProtocol> _bag;
     AMSURLSession *_session;
 }
@@ -26,18 +30,18 @@
 @property(nonatomic) _Bool shouldPromptUser; // @synthesize shouldPromptUser=_shouldPromptUser;
 @property(retain, nonatomic) AMSURLSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
+@property(nonatomic) _Bool shouldRequestConfirmation; // @synthesize shouldRequestConfirmation=_shouldRequestConfirmation;
+@property(nonatomic) __weak id <AMSRequestPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
+@property(retain, nonatomic) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(retain, nonatomic) NSDictionary *additionalDialogMetrics; // @synthesize additionalDialogMetrics=_additionalDialogMetrics;
 @property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
-- (_Bool)_takeTimeLock;
-- (_Bool)_sendRequestToDaemonWithError:(id *)arg1;
-- (void)_sendMetricsForUpdate;
-- (void)_sendMetricsForDialog;
-- (int)_runUpdateRequestWithStyle:(unsigned int)arg1 primaryCerts:(id)arg2 extendedCerts:(id)arg3 error:(id *)arg4;
-- (_Bool)_runConfirmationDialogWithError:(id *)arg1;
-- (void)_releaseTimeLock;
-- (id)performUpdate;
 - (id)initWithAccount:(id)arg1 bag:(id)arg2;
+- (void)handleDialogRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)handleAuthenticateRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_sendRequestToDaemon;
+- (id)performUpdate;
+- (id)initWithAccount:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

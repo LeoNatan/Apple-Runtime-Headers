@@ -11,6 +11,8 @@
 @interface PLIndicatorFileCoordinator : NSObject
 {
     PLPhotoLibraryPathManager *_pathManager;
+    int _activityIndicatorFid;
+    struct os_unfair_lock_s _activityIndicatorLock;
 }
 
 + (BOOL)systemLibraryAvailableIndicatorState;
@@ -47,9 +49,8 @@
 - (BOOL)isDisableICloudPhotos;
 - (BOOL)isEnableICloudPhotos;
 - (BOOL)needsRecoveryAfterCrashOptionallyRemoveAllIndicatorFiles:(BOOL)arg1;
-- (void)setImageWriter:(id)arg1 isBusy:(BOOL)arg2;
-- (int)_nonAssetsdProcessSetActivityIndicatorWithPath:(id)arg1 fid:(int)arg2 flag:(BOOL)arg3;
-- (int)_assetsdSetActivityIndicatorWithPath:(id)arg1 imageWriterForCrashRecovery:(id)arg2 fid:(int)arg3 flag:(BOOL)arg4;
+- (void)setImageWriter:(id)arg1 isBusy:(BOOL)arg2 crashRecoverySupport:(id)arg3;
+- (void)_setActivityIndicatorWithPath:(id)arg1 flag:(BOOL)arg2 crashRecovery:(CDUnknownBlockType)arg3;
 - (id)initWithPathManager:(id)arg1;
 
 @end

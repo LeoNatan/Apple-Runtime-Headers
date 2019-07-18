@@ -13,7 +13,8 @@
     // Error parsing type: , name: allowsAutoPlay
     // Error parsing type: , name: looping
     // Error parsing type: , name: canPlayFullScreen
-    // Error parsing type: , name: showPlaybackControls
+    // Error parsing type: , name: playbackControls
+    // Error parsing type: , name: autoPlayPlaybackControls
     // Error parsing type: , name: playbackId
     // Error parsing type: , name: templateMediaEvent
     // Error parsing type: , name: templateClickEvent

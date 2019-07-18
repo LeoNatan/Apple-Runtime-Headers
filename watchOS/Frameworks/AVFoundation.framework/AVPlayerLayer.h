@@ -19,6 +19,10 @@
 + (id)keyPathsForValuesAffectingVideoRect;
 + (id)makeClosedCaptionLayer;
 + (id)playerLayerWithPlayer:(id)arg1;
+- (_Bool)_isPartOfForegroundScene;
+- (void)_updateIsPartOfForegroundScene;
+- (void)_windowSceneDidEnterBackground:(id)arg1;
+- (_Bool)_currentWindowSceneIsForeground;
 - (struct CGRect)_videoRectForBounds:(struct CGRect)arg1;
 @property(readonly, nonatomic) struct CGRect videoRect;
 - (void)setLanczosFilterDownscaleFactor:(int)arg1;

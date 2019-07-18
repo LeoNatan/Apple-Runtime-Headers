@@ -9,7 +9,7 @@
 #import <Photos/PHInsertChangeRequest-Protocol.h>
 #import <Photos/PHMomentSharePropertySet-Protocol.h>
 
-@class NSDictionary, NSManagedObjectID, NSMutableArray, NSMutableDictionary, NSString, PHAssetCreationAdjustmentBakeInOptions, PHAssetCreationPhotoStreamPublishingRequest, PHAssetResourceBag, PHMomentShare, PHRelationshipChangeRequestHelper;
+@class NSData, NSDictionary, NSManagedObjectID, NSMutableArray, NSMutableDictionary, NSString, PHAssetCreationAdjustmentBakeInOptions, PHAssetCreationPhotoStreamPublishingRequest, PHAssetResourceBag, PHMomentShare, PHRelationshipChangeRequestHelper, PLManagedAsset;
 
 @interface PHAssetCreationRequest : PHAssetChangeRequest <PHInsertChangeRequest, PHMomentSharePropertySet>
 {
@@ -18,6 +18,12 @@
     NSMutableDictionary *_movedFiles;
     _Bool _duplicateAllowsPrivateMetadata;
     _Bool _shouldCreateScreenshot;
+    CDUnknownBlockType _concurrentWorkBlock;
+    PLManagedAsset *_asset;
+    struct NSObject *_previewImage;
+    struct NSObject *_thumbnailImage;
+    NSData *_originalHash;
+    _Bool _shouldPerformConcurrentWork;
     _Bool _duplicateLivePhotoAsStill;
     _Bool _duplicateAsOriginal;
     _Bool _duplicateSinglePhotoFromBurst;
@@ -34,6 +40,7 @@
     CDStruct_1b6d18a9 _duplicateStillSourceTime;
 }
 
++ (_Bool)supportsImportAssetResourceTypes:(id)arg1;
 + (_Bool)supportsAssetResourceTypes:(id)arg1;
 + (id)creationRequestForAssetCopyFromAsset:(id)arg1;
 + (id)creationRequestForAssetCopyFromAsset:(id)arg1 options:(id)arg2;
@@ -56,6 +63,7 @@
 @property(nonatomic, setter=_setDuplicateAssetPhotoLibraryType:) unsigned short duplicateAssetPhotoLibraryType; // @synthesize duplicateAssetPhotoLibraryType=_duplicateAssetPhotoLibraryType;
 @property(retain, nonatomic, setter=_setDuplicateAssetIdentifier:) NSString *duplicateAssetIdentifier; // @synthesize duplicateAssetIdentifier=_duplicateAssetIdentifier;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *momentShareHelper; // @synthesize momentShareHelper=_momentShareHelper;
+@property(nonatomic) _Bool shouldPerformConcurrentWork; // @synthesize shouldPerformConcurrentWork=_shouldPerformConcurrentWork;
 @property(retain, nonatomic) NSString *momentShareUUID; // @synthesize momentShareUUID=_momentShareUUID;
 @property(retain, nonatomic) PHMomentShare *momentShare; // @synthesize momentShare=_momentShare;
 @property(retain, nonatomic, setter=_setPhotoStreamPublishingRequest:) PHAssetCreationPhotoStreamPublishingRequest *_photoStreamPublishingRequest; // @synthesize _photoStreamPublishingRequest=__photoStreamPublishingRequest;
@@ -85,7 +93,12 @@
 - (id)initWithHelper:(id)arg1;
 - (id)initForNewObjectWithUUID:(id)arg1;
 - (id)initForNewObject;
+- (void)finalizeRequestWithBatchSuccess:(_Bool)arg1;
+@property(readonly, nonatomic) CDUnknownBlockType concurrentWorkBlock;
+- (_Bool)needsConcurrentWork;
 - (id)createAssetFromValidatedResources:(id)arg1 withUUID:(id)arg2 inPhotoLibrary:(id)arg3 error:(id *)arg4;
+- (id)_sourceOptionsForCreateThumbnailWithAsset:(id)arg1 hasAdjustments:(_Bool)arg2;
+- (void)_setupConcurrentWorkIfNecessaryWithImageSource:(struct CGImageSource *)arg1 originalImageData:(id)arg2;
 - (void)_pairLivePhotoResource:(id)arg1 withAssetInLibrary:(id)arg2 metadata:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)_externalLivePhotoResourceForAsset:(id)arg1;
 - (_Bool)_writeDataToDisk:(id)arg1 imageUTIType:(id)arg2 exifProperties:(id)arg3 mainFileURL:(id)arg4 thumbnailData:(id)arg5;
@@ -93,11 +106,16 @@
 - (id)_managedAssetFromPrimaryResourceData:(id)arg1 withUUID:(id)arg2 photoLibrary:(id)arg3 getImageSource:(struct CGImageSource **)arg4 imageData:(id *)arg5;
 - (short)_savedAssetTypeForAsset;
 - (id)_exifPropertiesFromSourceImageDataExifProperties:(id)arg1;
+- (_Bool)_createOriginalResourceForAsset:(id)arg1 fromValidatedResource:(id)arg2 resourceType:(unsigned int)arg3 photoLibrary:(id)arg4 destinationURL:(id)arg5 error:(id *)arg6;
+- (_Bool)_createAudioResourceForAsset:(id)arg1 fromValidatedResources:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
+- (_Bool)_createXmpResourceForAsset:(id)arg1 fromValidatedResources:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
 - (_Bool)_createRAWSidecarForAsset:(id)arg1 fromValidatedResources:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
 - (_Bool)_createAssetAsPhotoIris:(id)arg1 fromValidatedResources:(id)arg2 error:(id *)arg3;
 - (id)_ingestOriginalFromSrcURL:(id)arg1 toDstURL:(id)arg2 useSecureMove:(_Bool)arg3 resource:(id)arg4 resourceType:(unsigned int)arg5 asset:(id)arg6 error:(id *)arg7;
 - (_Bool)_ingestOriginalInPlaceSrcURL:(id)arg1 dstURL:(id)arg2 asset:(id)arg3 error:(id *)arg4;
 - (_Bool)_createAssetAsAdjusted:(id)arg1 fromValidatedResources:(id)arg2 error:(id *)arg3;
+- (id)makeSubstitueRenderVideoFileFromPath:(id)arg1 primaryResource:(id)arg2 fileSuffix:(id)arg3 error:(id *)arg4;
+- (id)makeSubstitueRenderImageFileFromPath:(id)arg1 primaryResource:(id)arg2 fileSuffix:(id)arg3 error:(id *)arg4;
 - (void)updateOriginalResourceOptionsWithResource:(id)arg1 sourceUrl:(id)arg2;
 - (id)_secureMove:(_Bool)arg1 assetResource:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
 - (id)_secureMove:(_Bool)arg1 fileAtURL:(id)arg2 toURL:(id)arg3 error:(id *)arg4;

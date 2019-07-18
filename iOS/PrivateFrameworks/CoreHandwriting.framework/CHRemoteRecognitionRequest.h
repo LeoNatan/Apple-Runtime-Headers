@@ -13,6 +13,7 @@
 @interface CHRemoteRecognitionRequest : NSObject <NSSecureCoding>
 {
     _Bool _shouldUseTextReplacements;
+    _Bool _shouldEnableCachingIfAvailable;
     _Bool _hasBeenSubmitted;
     int _recognitionMode;
     int _contentType;
@@ -28,6 +29,7 @@
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(nonatomic) _Bool hasBeenSubmitted; // @synthesize hasBeenSubmitted=_hasBeenSubmitted;
+@property(nonatomic) _Bool shouldEnableCachingIfAvailable; // @synthesize shouldEnableCachingIfAvailable=_shouldEnableCachingIfAvailable;
 @property(nonatomic) _Bool shouldUseTextReplacements; // @synthesize shouldUseTextReplacements=_shouldUseTextReplacements;
 @property(copy, nonatomic) CHDrawing *drawing; // @synthesize drawing=_drawing;
 @property(copy, nonatomic) NSDictionary *options; // @synthesize options=_options;

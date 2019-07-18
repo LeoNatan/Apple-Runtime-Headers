@@ -34,6 +34,7 @@
 @property(nonatomic) __weak id <PKAccessibleLayoutObserverDelegate> accessibleLayoutObserverDelegate; // @synthesize accessibleLayoutObserverDelegate=_accessibleLayoutObserverDelegate;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)setBackgroundColor:(id)arg1;
 - (void)prepareForReuse;
 - (void)_updateContent;
 - (void)_actionButtonTapped:(id)arg1;

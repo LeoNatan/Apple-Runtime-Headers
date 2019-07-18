@@ -37,6 +37,7 @@
 - (void)_donePressed;
 - (void)_cancelPressed;
 - (void)viewWillLayoutSubviews;
+- (id)contentScrollView;
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithContext:(int)arg1;

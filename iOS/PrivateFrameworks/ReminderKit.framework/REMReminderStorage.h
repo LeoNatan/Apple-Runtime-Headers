@@ -15,6 +15,8 @@
 
 @interface REMReminderStorage : NSObject <NSCopying, NSSecureCoding, REMObjectIDProviding, REMExternalSyncMetadataWritableProviding>
 {
+    unsigned long long _storeGeneration;
+    unsigned long long _copyGeneration;
     _Bool _completed;
     _Bool _allDay;
     NSString *externalIdentifier;
@@ -48,16 +50,17 @@
     long long _siriFoundInAppsUserConfirmation;
     NSDate *_lastBannerPresentationDate;
     long long _flagged;
+    REMDisplayDate *_displayDate;
 }
 
++ (_Bool)isDate:(id)arg1 overdueAtReferenceDate:(id)arg2 allDay:(_Bool)arg3 showAllDayRemindersAsOverdue:(_Bool)arg4;
 + (id)notesReplicaIDSourceWithAccountID:(id)arg1 reminderID:(id)arg2;
 + (id)titleReplicaIDSourceWithAccountID:(id)arg1 reminderID:(id)arg2;
 + (id)cdEntityName;
 + (id)objectIDWithUUID:(id)arg1;
 + (id)newObjectID;
-+ (_Bool)isOverdueForDisplayDate:(id)arg1;
-+ (id)displayDateFromDueDateComponents:(id)arg1 alarms:(id)arg2;
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) REMDisplayDate *displayDate; // @synthesize displayDate=_displayDate;
 @property(nonatomic) long long flagged; // @synthesize flagged=_flagged;
 @property(copy, nonatomic) NSDate *lastBannerPresentationDate; // @synthesize lastBannerPresentationDate=_lastBannerPresentationDate;
 @property(nonatomic) long long siriFoundInAppsUserConfirmation; // @synthesize siriFoundInAppsUserConfirmation=_siriFoundInAppsUserConfirmation;
@@ -92,11 +95,14 @@
 @property(copy, nonatomic) NSString *externalModificationTag; // @synthesize externalModificationTag;
 @property(copy, nonatomic) NSString *externalIdentifier; // @synthesize externalIdentifier;
 - (void).cxx_destruct;
+- (_Bool)isOverdue;
+- (void)updateDisplayDate;
 - (id)notesReplicaIDSource;
 - (id)titleReplicaIDSource;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
-@property(readonly, nonatomic, getter=isOverdue) _Bool overdue;
-@property(readonly, copy, nonatomic) REMDisplayDate *displayDate;
+@property(readonly, copy, nonatomic) NSString *legacyNotificationIdentifier;
+- (void)setStoreGenerationIfNeeded:(unsigned long long)arg1;
+- (unsigned long long)storeGeneration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)debugDescription;
 - (id)description;

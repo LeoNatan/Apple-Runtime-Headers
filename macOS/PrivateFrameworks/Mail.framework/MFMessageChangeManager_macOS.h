@@ -6,22 +6,23 @@
 
 #import <EmailDaemon/EDMessageChangeManager.h>
 
+#import <Mail/EDMessageChangeHookResponder-Protocol.h>
 #import <Mail/EDMessageChangeManagerSubClassMethods-Protocol.h>
 
 @class NSString;
 
-@interface MFMessageChangeManager_macOS : EDMessageChangeManager <EDMessageChangeManagerSubClassMethods>
+@interface MFMessageChangeManager_macOS : EDMessageChangeManager <EDMessageChangeManagerSubClassMethods, EDMessageChangeHookResponder>
 {
 }
 
+- (void)persistenceDidAddMessages:(id)arg1;
 - (id)transferMessages:(id)arg1 transferType:(long long)arg2 destinationMailboxURL:(id)arg3 userInitiated:(BOOL)arg4;
 - (id)_gmailStoreForMailboxURL:(id)arg1;
 - (id)iterateMessagesInMailboxURL:(id)arg1 excludingMessages:(id)arg2 batchSize:(unsigned long long)arg3 handler:(CDUnknownBlockType)arg4;
 - (id)messagesForRemoteIDs:(id)arg1 mailboxURL:(id)arg2;
 - (id)addLabels:(id)arg1 removeLabels:(id)arg2 toMessagesInDatabase:(id)arg3;
 - (id)applyFlagChange:(id)arg1 toMessagesInDatabase:(id)arg2;
-- (void)adjustUnreadStatusCountsBy:(long long)arg1 forMailboxWithURL:(id)arg2;
-- (void)setUnreadStatusCountsTo:(unsigned long long)arg1 subtractFromTotalCount:(BOOL)arg2 forMailboxWithURL:(id)arg3;
+- (void)resetStatusCountsForMailboxWithURL:(id)arg1;
 - (void)displayErrorForTransferAction:(id)arg1 withResults:(id)arg2;
 - (void)actionHasChangedAccount:(id)arg1;
 - (id)accountForMailboxURL:(id)arg1;

@@ -65,27 +65,6 @@ struct CGSize {
     double height;
 };
 
-struct CannedVideoCapturePrivate {
-    struct _opaque_pthread_mutex_t _field1;
-    int _field2;
-    id _field3;
-    int _field4;
-    struct OpaqueCMClock *_field5;
-    char _field6;
-    char _field7;
-    struct OpaqueFigThread *_field8;
-    char _field9;
-    struct _opaque_pthread_mutex_t _field10;
-    struct _opaque_pthread_cond_t _field11;
-    struct OpaqueFigThread *_field12;
-    char _field13;
-    struct _opaque_pthread_mutex_t _field14;
-    struct _opaque_pthread_cond_t _field15;
-    struct _opaque_pthread_mutex_t _field16;
-    struct Frame *_field17;
-    int _field18;
-};
-
 struct ConnectionStats {
     unsigned char totalPacketsReceived;
     unsigned char connectionStats[2];
@@ -99,8 +78,6 @@ struct ConnectionStatsHistory {
     unsigned char connectionStats[2][5];
     unsigned char connectionStatsRatio[2][5];
 };
-
-struct Frame;
 
 struct NSString {
     Class _field1;
@@ -117,8 +94,6 @@ struct OWRDList {
 struct OpaqueAudioConverter;
 
 struct OpaqueCMBlockBuffer;
-
-struct OpaqueCMClock;
 
 struct OpaqueCMIOGraph;
 
@@ -651,11 +626,6 @@ struct _opaque_pthread_t {
     char _field3[8176];
 };
 
-struct cssm_data {
-    unsigned long long Length;
-    char *Data;
-};
-
 struct fd_set {
     int fds_bits[32];
 };
@@ -701,6 +671,10 @@ struct opaqueVCAudioBufferList;
 struct opaqueVCAudioLimiter;
 
 struct opaqueVCFFTMeter;
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
 
 struct packet_id {
     unsigned char _field1;
@@ -1095,9 +1069,7 @@ struct tagSDES_RTCP {
 };
 
 struct tagSRTPCryptContext {
-    struct cssm_data secAsn1Key;
     struct _CCCryptor *ccCryptorRef;
-    unsigned char ccContext[404];
 };
 
 struct tagSRTPExchangeInfo {
@@ -1130,6 +1102,7 @@ struct tagSRTPINFO {
     void *masterKeyIndexInPacket;
     unsigned int SRTCPIndex;
     unsigned int dwDerivationRate;
+    struct os_unfair_lock_s cryptContextLock;
     struct tagSRTPCryptContext cryptContext;
     struct tagSRTPTransformPolicy policy;
     unsigned int operatingMode;
@@ -1230,7 +1203,7 @@ struct tagVCSourceDestinationInfo {
 };
 
 struct tagVCStatisticsCollection {
-    CDStruct_094a8fc2 _field1;
+    CDStruct_0ee80423 _field1;
     CDStruct_19ab8ee5 _field2;
     CDStruct_38c55c66 _field3;
     CDStruct_4ef6c943 _field4;
@@ -1399,6 +1372,12 @@ struct timespec {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    _Bool reportImmediateMetricsEnabled;
+    _Bool reportRtpErasureMetricsEnabled;
+    _Bool allowPreWarmCellEnabled;
+} CDStruct_21a0265e;
+
+typedef struct {
     unsigned char linkID;
     unsigned int sendTimestamp;
     unsigned int receiveTimestamp;
@@ -1453,9 +1432,10 @@ typedef struct {
     unsigned int owrd;
     double packetLossRate;
     unsigned int actualBitrate;
+    unsigned int instantBitrate;
     double roundTripTime;
     unsigned int receiveQueueTarget;
-} CDStruct_094a8fc2;
+} CDStruct_0ee80423;
 
 typedef struct {
     unsigned int _field1;
@@ -1650,9 +1630,10 @@ typedef struct {
     int _field1;
     int _field2;
     unsigned long long _field3;
-    unsigned long long _field4;
+    char *_field4;
     unsigned long long _field5;
-} CDStruct_d2860d30;
+    unsigned long long _field6;
+} CDStruct_0693755d;
 
 typedef struct {
     int _field1;
@@ -1741,7 +1722,7 @@ typedef struct {
             double normalizedDelay;
             char bbString[64];
         } baseband;
-        CDStruct_094a8fc2 feedback;
+        CDStruct_0ee80423 feedback;
         CDStruct_19ab8ee5 network;
         CDStruct_4c345eff probing;
         CDStruct_38c55c66 serverStats;
@@ -1774,7 +1755,7 @@ typedef struct {
             int rateTrendSuggestion;
         } nwConnection;
     } ;
-} CDStruct_b3eb8f4a;
+} CDStruct_b21f1e06;
 
 typedef struct {
     int type;

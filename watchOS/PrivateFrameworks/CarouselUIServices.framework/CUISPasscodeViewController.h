@@ -61,7 +61,7 @@
 - (_Bool)_privateChangePasscodeFrom:(id)arg1 to:(id)arg2 outError:(id *)arg3;
 - (_Bool)_privateValidatePasscode:(id)arg1 outError:(id *)arg2;
 - (_Bool)validatePasscode:(id)arg1 error:(id *)arg2;
-- (void)_showPasscodeError:(id)arg1;
+- (void)_showPasscodeError:(id)arg1 shouldResetByDefault:(_Bool)arg2;
 - (id)_messageForError:(id)arg1;
 - (id)_defaultMessageForError:(id)arg1;
 - (void)_showDifferingPasscodes;

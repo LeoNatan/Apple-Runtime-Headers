@@ -62,6 +62,7 @@
 + (id)availableVoicesForLanguageCode:(id)arg1;
 + (id)voiceAccessQueue;
 + (id)allAvailableVoices;
++ (void)refreshAllAvailableVoices:(_Bool)arg1;
 + (void)refreshAllAvailableVoices;
 + (id)synthesizerForSynthesizerID:(unsigned long long)arg1;
 + (id)voiceAssetsForTesting;
@@ -130,6 +131,7 @@
 - (unsigned long long)synthesizerInstanceID;
 - (id)_applySubstitution:(id)arg1 toText:(id)arg2 wordRange:(struct _NSRange)arg3 request:(id)arg4 phonemes:(id *)arg5;
 - (void)_processUserSubstitutions:(id)arg1 toText:(id)arg2 request:(id)arg3 bundleIdentifier:(id)arg4 voice:(id)arg5;
+- (_Bool)_skipSubstition:(id)arg1 language:(id)arg2 bundleIdentifier:(id)arg3 voice:(id)arg4;
 - (id)_preprocessText:(id)arg1 languageCode:(id)arg2;
 - (id)resolvedVoiceIdentifierForLanguageCode:(id)arg1;
 @property(readonly, nonatomic) NSString *resolvedVoiceIdentifier;

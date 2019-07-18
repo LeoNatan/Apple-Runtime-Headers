@@ -6,32 +6,34 @@
 
 #import <PhotosUICore/PXFooterViewModel.h>
 
-#import <PhotosUICore/PXAssetsDataSourceManagerObserver-Protocol.h>
 #import <PhotosUICore/PXCPLServiceUIDelegate-Protocol.h>
+#import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXCloudQuotaControllerDelegate-Protocol.h>
 
-@class NSArray, NSObject, NSString, PXCPLServiceUI, PXCloudQuotaController, PXCuratedLibraryAnalysisStatus, PXCuratedLibraryAssetsDataSourceManager;
-@protocol OS_dispatch_queue, PXCuratedLibraryFooterCPLActionDelegate, PXCuratedLibraryFooterViewModelPresentationDelegate;
+@class NSArray, NSString, PXCPLServiceUI, PXCloudQuotaController, PXCuratedLibraryAnalysisStatus, PXCuratedLibraryItemCountsController;
+@protocol PXCuratedLibraryFooterCPLActionDelegate, PXCuratedLibraryFooterViewModelPresentationDelegate;
 
-@interface PXCuratedLibraryFooterViewModel : PXFooterViewModel <PXCPLServiceUIDelegate, PXCloudQuotaControllerDelegate, PXAssetsDataSourceManagerObserver>
+@interface PXCuratedLibraryFooterViewModel : PXFooterViewModel <PXCPLServiceUIDelegate, PXCloudQuotaControllerDelegate, PXChangeObserver>
 {
-    NSObject<OS_dispatch_queue> *_prepareCountsQueue;
     PXCloudQuotaController *_cloudQuotaController;
-    BOOL _isCountingAssetTypes;
-    BOOL _hasUsableCounts;
+    BOOL _hasImportantInformation;
     NSArray *_syncProgressAlbums;
     id <PXCuratedLibraryFooterViewModelPresentationDelegate> _presentingDelegate;
     id <PXCuratedLibraryFooterCPLActionDelegate> _cplActionDelegate;
+    long long _style;
     PXCPLServiceUI *_cplServiceUI;
     PXCuratedLibraryAnalysisStatus *_analysisStatus;
-    PXCuratedLibraryAssetsDataSourceManager *_assetsDataSourceManager;
+    PXCuratedLibraryItemCountsController *_itemCountsController;
 }
 
-@property(nonatomic) BOOL hasUsableCounts; // @synthesize hasUsableCounts=_hasUsableCounts;
-@property(nonatomic) BOOL isCountingAssetTypes; // @synthesize isCountingAssetTypes=_isCountingAssetTypes;
-@property(readonly, nonatomic) PXCuratedLibraryAssetsDataSourceManager *assetsDataSourceManager; // @synthesize assetsDataSourceManager=_assetsDataSourceManager;
++ (BOOL)hasCPLStatusForServiceStatus:(id)arg1 serviceUIStatus:(id)arg2;
++ (BOOL)hasAnalysisProgressForStyle:(long long)arg1 analysisStatus:(id)arg2 serviceStatus:(id)arg3 cloudQuotaController:(id)arg4 outProgress:(float *)arg5 outTitle:(id *)arg6 outDescription:(id *)arg7;
+@property(readonly, nonatomic) PXCuratedLibraryItemCountsController *itemCountsController; // @synthesize itemCountsController=_itemCountsController;
 @property(readonly, nonatomic) PXCuratedLibraryAnalysisStatus *analysisStatus; // @synthesize analysisStatus=_analysisStatus;
+@property(readonly, nonatomic) PXCloudQuotaController *cloudQuotaController; // @synthesize cloudQuotaController=_cloudQuotaController;
 @property(readonly, nonatomic) PXCPLServiceUI *cplServiceUI; // @synthesize cplServiceUI=_cplServiceUI;
+@property(readonly, nonatomic) BOOL hasImportantInformation; // @synthesize hasImportantInformation=_hasImportantInformation;
+@property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) __weak id <PXCuratedLibraryFooterCPLActionDelegate> cplActionDelegate; // @synthesize cplActionDelegate=_cplActionDelegate;
 @property(nonatomic) __weak id <PXCuratedLibraryFooterViewModelPresentationDelegate> presentingDelegate; // @synthesize presentingDelegate=_presentingDelegate;
 - (void).cxx_destruct;
@@ -41,16 +43,14 @@
 - (void)serviceUI:(id)arg1 progressDidChange:(float)arg2;
 - (void)serviceUI:(id)arg1 statusDidChange:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
-- (BOOL)_hasiCplStatusForServiceUIStatus:(id)arg1;
-- (BOOL)_hasAnalysisProgressForAnalysisStatus:(id)arg1 serviceStatus:(id)arg2 cloudQuotaController:(id)arg3 isCPLEnabled:(BOOL)arg4 outProgress:(float *)arg5 outDescription:(id *)arg6;
 - (BOOL)_hasSyncProgressStatusForSyncAlbums:(id)arg1 outImportOperations:(int *)arg2;
+- (id)_titleForStyle:(long long)arg1 itemCountsController:(id)arg2;
 - (void)_updateExposedProperties;
-@property(readonly, nonatomic) BOOL hasPendingSyncProgressAlbums;
+- (void)_updateHasImportantInformation;
+- (BOOL)hasPendingSyncProgressAlbums;
 @property(readonly, nonatomic) NSArray *syncProgressAlbums; // @synthesize syncProgressAlbums=_syncProgressAlbums;
-- (void)_handlePreparationCompletion;
-- (void)_prepareCountsPropertiesIfNeeded;
-@property(readonly, nonatomic) PXCloudQuotaController *cloudQuotaController;
-- (id)initWithDataSourceManager:(id)arg1 cplService:(id)arg2 analysisStatus:(id)arg3;
+- (void)setHasImportantInformation:(BOOL)arg1;
+- (id)initWithItemCountsController:(id)arg1 cplService:(id)arg2 analysisStatus:(id)arg3 style:(long long)arg4;
 - (id)init;
 
 // Remaining properties

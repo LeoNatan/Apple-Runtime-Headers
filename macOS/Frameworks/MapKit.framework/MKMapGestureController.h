@@ -8,7 +8,7 @@
 
 #import <MapKit/NSGestureRecognizerDelegate-Protocol.h>
 
-@class MKCompassView, MKMapView, MKRotationFilter, MKScaleView, NSClickGestureRecognizer, NSMagnificationGestureRecognizer, NSPanGestureRecognizer, NSRotationGestureRecognizer, NSString, VKCompoundAnimation, VKTimedAnimation, _MKDirectionalArrowRecognizer, _MKDirectionalPanGestureRecognizer, _MKMouseDownGestureRecognizer;
+@class MKCompassView, MKMapView, MKRotationFilter, MKScaleView, NSClickGestureRecognizer, NSPanGestureRecognizer, NSString, VKCompoundAnimation, VKTimedAnimation, _MKDirectionalArrowRecognizer, _MKDirectionalPanGestureRecognizer, _MKMagnificationGestureRecognizer, _MKMouseDownGestureRecognizer, _MKRotationGestureRecognizer;
 @protocol MKMapGestureControllerDelegate, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
     _MKDirectionalPanGestureRecognizer *_otherButtonPanRotationGestureRecognizer;
     _MKDirectionalPanGestureRecognizer *_otherButtonPanTiltGestureRecognizer;
     NSClickGestureRecognizer *_doubleClickGestureRecognizer;
-    NSMagnificationGestureRecognizer *_pinchGestureRecognizer;
-    NSRotationGestureRecognizer *_rotationGestureRecognizer;
+    _MKMagnificationGestureRecognizer *_pinchGestureRecognizer;
+    _MKRotationGestureRecognizer *_rotationGestureRecognizer;
     _MKDirectionalPanGestureRecognizer *_scaleDragGestureRecognizer;
     _MKDirectionalPanGestureRecognizer *_compassDragRotationGestureRecognizer;
     _MKDirectionalPanGestureRecognizer *_compassDragTiltGestureRecognizer;
@@ -104,6 +104,8 @@ __attribute__((visibility("hidden")))
 - (void)_handleStandardPan:(id)arg1;
 - (void)smartMagnifyWithEvent:(id)arg1;
 - (void)scrollWithEvent:(id)arg1;
+- (void)rotateWithEvent:(id)arg1;
+- (void)magnifyWithEvent:(id)arg1;
 - (void)handleZoomArrowMask:(long long)arg1 speed:(double)arg2;
 - (void)handleScrollArrowMask:(long long)arg1;
 - (void)cancelZoomInOrOut;

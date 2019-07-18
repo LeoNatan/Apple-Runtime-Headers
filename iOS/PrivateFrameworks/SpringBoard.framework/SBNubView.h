@@ -23,11 +23,8 @@
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(readonly, nonatomic) SBDeviceApplicationSceneHandle *deviceApplicationSceneHandle; // @synthesize deviceApplicationSceneHandle=_deviceApplicationSceneHandle;
 - (void).cxx_destruct;
-- (long long)_nubStyle;
-- (void)_updateNubViewAlphaAndBackgroundColor;
-- (void)_updateNubViewBackgroundColorWithNubStyle:(long long)arg1;
-- (void)_updateNubViewAlphaWithNubStyle:(long long)arg1;
-- (void)_updateNubViewAlpha;
+- (void)_updateNubViewOverrideUserInterfaceStyleAndBackgroundColor;
+- (void)_updateNubViewBackgroundColor;
 - (void)sceneHandle:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 transitionContext:(id)arg3;
 - (void)sceneHandle:(id)arg1 didCreateScene:(id)arg2;
 - (id)initWithCoder:(id)arg1;

@@ -77,6 +77,7 @@
 @property long long segmentDistribution;
 @property(readonly) long long indexOfSelectedItem;
 - (BOOL)selectSegmentWithTag:(long long)arg1;
+- (long long)selectedTag;
 @property long long selectedSegment;
 @property long long segmentCount;
 - (void)springLoadingExited:(id)arg1;

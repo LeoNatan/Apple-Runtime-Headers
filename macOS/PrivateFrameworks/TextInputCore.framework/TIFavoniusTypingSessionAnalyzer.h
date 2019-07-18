@@ -28,6 +28,7 @@
 - (BOOL)handleWordEntry:(id)arg1 withConfidence:(unsigned long long)arg2;
 - (void)logPathedCandidate:(id)arg1 forKey:(id)arg2 withConfidence:(unsigned long long)arg3 isCompletion:(BOOL)arg4;
 - (void)updateDurationCounterForWord:(id)arg1 forTypingContext:(id)arg2;
+- (void)updateTypingSpeedCounterForWord:(id)arg1 forCandText:(id)arg2;
 - (BOOL)isPathable:(id)arg1 context:(id)arg2;
 - (void)incrementTransientCounterForKey:(id)arg1 andContext:(id)arg2 andCandidateString:(id)arg3;
 - (void)addToTransientCounter:(int)arg1 forKey:(id)arg2 andContext:(id)arg3 andCandidateString:(id)arg4;

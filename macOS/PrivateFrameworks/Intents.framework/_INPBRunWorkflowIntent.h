@@ -15,12 +15,14 @@
 @interface _INPBRunWorkflowIntent : PBCodable <_INPBRunWorkflowIntent, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBIntentMetadata *_intentMetadata;
     _INPBArchivedObject *_stepIntentResponse;
     _INPBDataString *_workflow;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDataString *workflow; // @synthesize workflow=_workflow;
 @property(retain, nonatomic) _INPBArchivedObject *stepIntentResponse; // @synthesize stepIntentResponse=_stepIntentResponse;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;

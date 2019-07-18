@@ -91,6 +91,7 @@
 - (void)_keyboardAboutToHide:(id)arg1;
 - (void)_keyboardAboutToChangeFrame:(id)arg1;
 - (void)_keyboardAboutToShow:(id)arg1;
+- (void)_layoutPresentedViewAndContainerViewIfNeeded;
 - (void)_avoidKeyboardAndAnimateSheetForNotification:(id)arg1;
 - (void)presentationTransitionWillBegin;
 @property(readonly, nonatomic) _UISheetPresentationController *_childSheetPresentationController;
@@ -105,6 +106,7 @@
 - (void)_containerViewBoundsDidChange;
 - (void)_tryToConnectToRemoteViewController:(id)arg1;
 @property(readonly, nonatomic) _UIRemoteViewController *_expectedRemoteViewController;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 @property(retain, nonatomic, setter=_setConfiguration:) _UISheetPresentationControllerConfiguration *_configuration;
 @property(nonatomic, setter=_setMode:) long long _mode;
 - (void)_realSourceViewGeometryDidChange;
@@ -113,6 +115,7 @@
 @property(nonatomic, setter=_setIndexOfLastUndimmedDetent:) long long _indexOfLastUndimmedDetent;
 @property(nonatomic, setter=_setIndexOfCurrentDetent:) long long _indexOfCurrentDetent;
 @property(copy, nonatomic, setter=_setDetents:) NSArray *_detents;
+@property(nonatomic, setter=_setWidthFollowsPreferredContentSizeWhenBottomAttached:) BOOL _widthFollowsPreferredContentSizeWhenBottomAttached;
 @property(nonatomic) double _cornerRadiusForPresentationAndDismissal;
 @property(nonatomic, setter=_setWantsGrabber:) BOOL _wantsGrabber;
 @property(nonatomic, setter=_setWantsBottomAttachedInCompactHeight:) BOOL _wantsBottomAttachedInCompactHeight;

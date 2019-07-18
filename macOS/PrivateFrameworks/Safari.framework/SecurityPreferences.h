@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)_defaultsChanged:(id)arg1;
 - (void)toggleJavaScriptEnabled:(id)arg1;
 - (void)toggleAntiPhishingEnabled:(id)arg1;
-- (id)helpAnchor;
+- (id)safariHelpAnchor;
 - (void)moduleWillBeRemoved;
 - (void)moduleWasInstalled;
 - (void)initializeFromDefaults;

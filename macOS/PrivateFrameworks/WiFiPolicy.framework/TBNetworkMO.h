@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) NSString *attributesDescription;
 @property(readonly, nonatomic) NSString *authDescription;
 @property(readonly, nonatomic) NSString *SSID;
+@property(readonly, nonatomic) NSString *remoteIdentifier;
 
 // Remaining properties
 @property(retain, nonatomic) NSSet *accessPoints; // @dynamic accessPoints;

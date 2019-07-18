@@ -23,6 +23,8 @@
 @property(readonly, nonatomic) struct CGRect menuFrame;
 - (void)update;
 @property(copy, nonatomic) NSArray *menuItems;
+- (struct CGRect)_targetRect;
+- (id)_targetView;
 - (void)_setTargetRect:(struct CGRect)arg1 inView:(id)arg2 animated:(_Bool)arg3;
 - (void)setTargetRect:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_windowWillRotate:(id)arg1;

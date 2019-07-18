@@ -8,10 +8,11 @@
 
 #import <AssistantSettingsSupport/AssistantVoiceSettingsConnectionProvider-Protocol.h>
 #import <AssistantSettingsSupport/CNContactPickerDelegate-Protocol.h>
+#import <AssistantSettingsSupport/DevicePINControllerDelegate-Protocol.h>
 
 @class CNContactPickerViewController, CNContactStore, NSArray, NSMutableSet, NSSet, NSString, PSSpecifier, SUICAssistantVoiceSettingsConnection;
 
-@interface AssistantController : PSListController <CNContactPickerDelegate, AssistantVoiceSettingsConnectionProvider>
+@interface AssistantController : PSListController <CNContactPickerDelegate, AssistantVoiceSettingsConnectionProvider, DevicePINControllerDelegate>
 {
     NSArray *_assistantSettings;
     SUICAssistantVoiceSettingsConnection *_settingsConnection;
@@ -53,7 +54,10 @@
 - (_Bool)_isVoiceTriggerEnabled;
 - (void)setDisabledFromLockScreen:(_Bool)arg1;
 - (void)setAccessibleFromLockScreen:(id)arg1 forSpecifier:(id)arg2;
+- (void)_setAccessibleFromLockScreen:(_Bool)arg1;
 - (id)accessibleFromLockScreen:(id)arg1;
+- (void)didCancelEnteringPIN;
+- (void)didAcceptEnteredPIN;
 - (id)assistantVoiceLanguage:(id)arg1;
 - (void)_setAssistantLanguageCancelled:(id)arg1;
 - (void)_setAssistantLanguageConfirmed:(id)arg1;

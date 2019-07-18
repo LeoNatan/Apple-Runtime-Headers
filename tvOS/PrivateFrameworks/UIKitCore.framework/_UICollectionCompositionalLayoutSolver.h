@@ -111,12 +111,14 @@ __attribute__((visibility("hidden")))
 - (void)_computeDeletedItemsAffectingSupplementariesForUpdate:(id)arg1 resolveResult:(id)arg2;
 - (id)_rebasedSectionLayoutsWithDataSourceTranslator:(id)arg1;
 - (id)_rebasedPreferredSizesWithDataSourceTranslator:(id)arg1;
+- (struct CGSize)_adjustedContentSizeIncludingContainerInsetsForSize:(struct CGSize)arg1;
 - (struct CGSize)_clampedSolutionSizeForSolution:(id)arg1 layoutAxis:(int)arg2 scrollsOrthogonally:(_Bool)arg3;
 - (struct CGRect)_globalFrameForSolutionFrame:(struct CGRect)arg1 bookmark:(id)arg2;
 - (void)_recomputeSolutionBookmarksAndContentSize;
 - (void)_invalidateAllAttributes;
 - (void)_invalidateAttributes:(id)arg1;
-- (struct CGPoint)_attributesQueryOffsetFromContainer;
+- (struct CGRect)_attributesQueryRectForRect:(struct CGRect)arg1;
+- (struct CGPoint)_attributesOffsetFromContainer;
 - (void)_layoutAttributesForElementsInRect:(struct CGRect)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_setCachedDecorationAttributesForElementKind:(id)arg1 indexPath:(id)arg2 attributes:(id)arg3;
 - (id)_cachedDecorationAttributesForElementKind:(id)arg1 indexPath:(id)arg2;
@@ -124,7 +126,7 @@ __attribute__((visibility("hidden")))
 - (id)_cachedSupplementaryAttributesForElementKind:(id)arg1 indexPath:(id)arg2;
 - (id)_createAndCacheLayoutAttributesForDecorationItemAtIndexPath:(id)arg1 elementKind:(id)arg2 frame:(struct CGRect)arg3 additionalContentInset:(struct NSDirectionalEdgeInsets)arg4 zIndex:(long long)arg5;
 - (id)_createAndCacheLayoutAttributesForSupplementaryItemAtIndexPath:(id)arg1 elementKind:(id)arg2 frame:(struct CGRect)arg3 zIndex:(long long)arg4;
-- (id)_createAndCacheLayoutAttributesForItemAtIndexPath:(id)arg1 frame:(struct CGRect)arg2;
+- (id)_createAndCacheLayoutAttributesForItemAtIndexPath:(id)arg1 frame:(struct CGRect)arg2 zIndex:(long long)arg3;
 - (void)_enrichLayoutAttributes:(id)arg1 inSection:(id)arg2;
 - (void)_solveWithSectionLayouts:(id)arg1 preferredSizesDict:(id)arg2 dataSourceSnapshot:(id)arg3 update:(id)arg4;
 - (void)_solve;

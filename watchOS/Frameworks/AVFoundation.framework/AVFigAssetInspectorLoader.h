@@ -25,6 +25,8 @@
     NSURL *_URL;
 }
 
++ (id)_figAssetTrackMediaSelectionPropertiesArray;
++ (id)_figAssetMediaSelectionPropertiesArray;
 + (void)_mapAssetKeys:(id)arg1 toFigAssetPropertySet:(id)arg2 figAssetTrackPropertySet:(id)arg3 callerName:(id)arg4;
 + (id)_figAssetTrackPropertiesForKeys;
 + (id)_figAssetPropertiesForKeys;

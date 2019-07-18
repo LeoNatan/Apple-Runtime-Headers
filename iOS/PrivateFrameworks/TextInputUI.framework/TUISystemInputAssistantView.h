@@ -15,6 +15,7 @@
 @interface TUISystemInputAssistantView : UIView <TUIAssistantButtonBarViewDelegate, TUISystemInputAssistantPageViewDelegate>
 {
     _Bool _buttonBarItemsExpanded;
+    _Bool _needsValidation;
     int _needsValidationGuard;
     _Bool _backgroundVisible;
     _Bool _centerViewHidden;
@@ -55,6 +56,10 @@
 @property(retain, nonatomic) UIKBVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIKBRenderConfig *renderConfig; // @synthesize renderConfig=_renderConfig;
 - (void).cxx_destruct;
+- (id)_hostedCenterView;
+- (void)_exchangeCenterViewIfNecessaryForCompatibility;
+- (_Bool)_shouldHostCenterViewOutsidePageView;
+- (_Bool)_swiftPlaygroundsWorkaroundEnabled;
 - (void)assistantPageView:(id)arg1 didSwitchToSecondaryViewVisible:(_Bool)arg2;
 - (void)assistantButtonBarView:(id)arg1 wantsToShowCollapsedItemGroup:(id)arg2 fromButton:(id)arg3;
 - (void)layoutSubviews;

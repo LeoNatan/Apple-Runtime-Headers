@@ -59,6 +59,7 @@
 - (const unsigned long long *)featureIDs;
 - (unsigned long long)businessID;
 - (BOOL)hasBusinessID;
+- (BOOL)isTransitAccessPoint;
 - (BOOL)isTransitLine;
 - (BOOL)isTransit;
 - (BOOL)isFlyoverTour;

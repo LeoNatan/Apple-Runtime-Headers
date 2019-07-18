@@ -8,7 +8,7 @@
 #import <SearchUI/UIScrollViewDelegate-Protocol.h>
 
 @class CNContact, CNLabeledValue, GEOMapServiceTraits, GEOSearchCategory, MKActivityViewController, MKMapItem, MKMuninView, NSArray, NSDictionary, NSNumber, NSString, UIView, _MKPlaceViewController;
-@protocol GEOTransitConnectionInfo, GEOTransitDepartureSequence, MKTransitLineMarker, _MKPlaceItem;
+@protocol GEOTransitConnectionInfo, GEOTransitDepartureSequence, MKTransitLineMarker, _MKInfoCardAnalyticsDelegate, _MKPlaceItem;
 
 @protocol _MKPlaceViewControllerDelegate <NSObject, UIScrollViewDelegate>
 
@@ -19,7 +19,7 @@
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectParent:(MKMapItem *)arg2;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectSearchCategory:(GEOSearchCategory *)arg2;
 - (void)placeViewControllerDidSelectRemoveMarker:(_MKPlaceViewController *)arg1;
-- (void)placeViewController:(_MKPlaceViewController *)arg1 showMapItems:(NSArray *)arg2;
+- (void)placeViewController:(_MKPlaceViewController *)arg1 showRelatedMapItems:(NSArray *)arg2 originalMapItem:(MKMapItem *)arg3 analyticsDelegate:(id <_MKInfoCardAnalyticsDelegate>)arg4;
 - (NSArray *)placeViewController:(_MKPlaceViewController *)arg1 viewsForMapItems:(NSArray *)arg2 prefersAddressOverCategory:(_Bool)arg3;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 selectCollectionIdentifier:(NSString *)arg2;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 addPlaceItemToCollection:(id <_MKPlaceItem>)arg2 sourceView:(UIView *)arg3 result:(void (^)(NSError *))arg4;
@@ -51,8 +51,9 @@
 - (_Bool)placeViewController:(_MKPlaceViewController *)arg1 shouldOpenHomePage:(CNLabeledValue *)arg2;
 - (void)placeViewControllerDidSelectShareLocation:(_MKPlaceViewController *)arg1;
 - (void)placeViewControllerDidSelectAddAPlace:(_MKPlaceViewController *)arg1;
-- (void)placeViewControllerDidSelectReportAProblem:(_MKPlaceViewController *)arg1;
+- (void)placeViewControllerDidSelectReportAProblem:(_MKPlaceViewController *)arg1 fromView:(UIView *)arg2;
 - (void)placeViewControllerDidSelectFlyover:(_MKPlaceViewController *)arg1;
+- (long long)overriddenInterfaceStyleForPlaceViewControllerSubviews:(_MKPlaceViewController *)arg1;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectRouteToCurrentSearchResultWithTransportTypePreference:(NSNumber *)arg2;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectRouteToCurrentSearchResultWithMode:(unsigned long long)arg2;
 - (double)placeViewControllerPlaceCardHeaderTitleTrailingConstant:(_MKPlaceViewController *)arg1;

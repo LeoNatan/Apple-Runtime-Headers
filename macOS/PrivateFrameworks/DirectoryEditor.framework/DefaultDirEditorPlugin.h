@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_retainedOutlineViewObjects;
     NSDictionary *_attrValueTypeTabToMenuItemMapping;
     NSDictionary *_metaAttrStringAttrs;
+    BOOL _outlineViewSelectionIsChanging;
     BOOL selectedRecordIsEditable;
     BOOL selectedAttributeIsEditable;
     BOOL selectedAttributeIsRemovable;
@@ -58,7 +59,6 @@ __attribute__((visibility("hidden")))
 @property BOOL selectedRecordIsEditable; // @synthesize selectedRecordIsEditable;
 - (void)dealloc;
 - (void)awakeFromNib;
-- (void)outlineViewSelectionDidChange:(id)arg1;
 - (void)attributeImageValueChanged:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;
 - (void)newAttributeSheetButtonHit:(id)arg1;
@@ -78,6 +78,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)handleDropOfType:(id)arg1 withPasteboard:(id)arg2;
 - (id)dragTypesForViewToRegisterFor:(id)arg1;
 - (id)outlineView:(id)arg1 dataCellForTableColumn:(id)arg2 item:(id)arg3;
+- (void)outlineViewSelectionDidChange:(id)arg1;
+- (void)outlineViewSelectionIsChanging:(id)arg1;
 - (id)outlineView:(id)arg1 objectValueForTableColumn:(id)arg2 byItem:(id)arg3;
 - (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;
 - (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;

@@ -47,6 +47,7 @@
 - (void)addOverrides:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setOverrides:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_addOverridesWithData:(id)arg1 replace:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)removeAllLocalRulesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_dumpLocalRuleConfigurationsForProductGroup:(id)arg1 productNumber:(id)arg2 firmwareVersion:(id)arg3 ignoreOverrides:(_Bool)arg4 rawOutput:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)dumpLocalRulesForProductGroup:(id)arg1 productNumber:(id)arg2 firmwareVersion:(id)arg3 ignoreOverrides:(_Bool)arg4 rawOutput:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)dumpLocalRulesForProductGroup:(id)arg1 ignoreOverrides:(_Bool)arg2 rawOutput:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
@@ -56,7 +57,7 @@
 - (void)listCloudRecordsForProductGroup:(id)arg1 rawOutput:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_fetchRulesForAccessories:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchRulesForAccessories:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_fetchCloudChangesWithCompletion:(CDUnknownBlockType)arg1 forceChangeNotifications:(_Bool)arg2;
+- (void)_fetchCloudChangesAndForceChangeNotifications:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchCloudChangesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)__finishOperationWithCallbackBlock:(CDUnknownBlockType)arg1;
 - (void)__beginOperationWithBlock:(CDUnknownBlockType)arg1;

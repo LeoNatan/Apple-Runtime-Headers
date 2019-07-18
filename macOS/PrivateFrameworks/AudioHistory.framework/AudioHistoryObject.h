@@ -32,8 +32,8 @@
 - (void)writeEventWithSelector:(SEL)arg1 withPayload:(id)arg2;
 - (void)writeEventWithType:(const char *)arg1 withPayload:(id)arg2 andErrorHandler:(CDUnknownBlockType)arg3;
 - (void)writeEventWithType:(const char *)arg1 withPayload:(id)arg2;
-- (void)unregisterFromSystem:(id)arg1 error:(id *)arg2;
-- (void)registerWithSystem:(id)arg1 name:(id)arg2 error:(id *)arg3;
+- (BOOL)unregisterFromSystem:(id)arg1 error:(id *)arg2;
+- (BOOL)registerWithSystem:(id)arg1 name:(id)arg2 error:(id *)arg3;
 - (id)init;
 @property(nonatomic) __weak id <AudioHistoryObjectDelegate> delegate; // @dynamic delegate;
 

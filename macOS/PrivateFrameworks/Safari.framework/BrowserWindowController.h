@@ -360,7 +360,7 @@ __attribute__((visibility("hidden")))
 - (void)_enterQuickWebsiteSearchMode;
 - (BOOL)_canEnterQuickWebsiteSearchMode;
 - (void)_performWebSearchWithWindowPolicy:(long long)arg1;
-- (void)_searchWebForString:(id)arg1 withWindowPolicy:(long long)arg2;
+- (id)_searchWebForString:(id)arg1 withWindowPolicy:(long long)arg2;
 - (id)_goToUnifiedFieldURLWithWindowPolicy:(long long)arg1 httpReferrer:(id)arg2;
 - (id)_reflectedURLForPossibleURL:(id)arg1 ifPossibleURLMatchesUserTypedString:(id)arg2;
 - (id)_goToUnifiedFieldURLWithWindowPolicy:(long long)arg1;
@@ -756,8 +756,8 @@ __attribute__((visibility("hidden")))
 - (void)_closePreviouslySelectedTabIfNecessaryAfterSwitchingTabs:(id)arg1 wasShowingVisualTabPicker:(BOOL)arg2;
 - (BOOL)_shouldReloadTabAfterAutomaticallySwitchedTo:(id)arg1;
 - (void)goToURLInNewProcessIfPossible:(id)arg1 withTitle:(id)arg2 windowPolicy:(long long)arg3 tabPlacementHint:(const struct TabPlacementHint *)arg4;
-- (BOOL)_tryGoToURLInNewProcessUsingBackgroundLoad:(id)arg1 withTabLabel:(id)arg2;
-- (BOOL)_tryGoToURLsInNewProcessUsingBackgroundLoad:(id)arg1 withTabLabel:(id)arg2 httpReferrer:(id)arg3;
+- (id)_tryGoToURLInNewProcessUsingBackgroundLoad:(id)arg1 withTabLabel:(id)arg2;
+- (id)_tryGoToURLsInNewProcessUsingBackgroundLoad:(id)arg1 withTabLabel:(id)arg2 httpReferrer:(id)arg3;
 - (void)addHistoryOperation:(id)arg1 forBackgroundLoad:(id)arg2;
 - (BOOL)isBackgroundLoadBrowserViewController:(id)arg1;
 - (id)backgroundLoadBeingCommittedIntoBrowserViewController:(id)arg1;

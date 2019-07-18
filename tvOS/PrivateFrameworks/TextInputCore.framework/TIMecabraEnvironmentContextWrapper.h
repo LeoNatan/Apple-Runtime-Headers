@@ -43,6 +43,7 @@
 - (_Bool)predictionCandidatesWithOptions:(unsigned long long)arg1 maxNumberOfCandidates:(unsigned long long)arg2;
 - (_Bool)analyzeInput:(id)arg1 options:(unsigned long long)arg2;
 - (_Bool)analyzeString:(id)arg1 options:(unsigned long long)arg2;
+- (id)contextString:(id)arg1 forRightContext:(_Bool)arg2;
 - (void)syncEnvironmentAndContextCandidates;
 - (void)revertLearningForCandidate:(void *)arg1;
 - (void)revertInlineCandidate;

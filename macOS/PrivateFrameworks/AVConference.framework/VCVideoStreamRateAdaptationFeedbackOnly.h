@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) BOOL didReceiveVideo; // @synthesize didReceiveVideo=_didReceiveVideo;
 - (double)owrd;
-- (void)updateRateControlInfoWithStatisticsMessage:(CDStruct_b3eb8f4a)arg1;
+- (void)updateRateControlInfoWithStatisticsMessage:(CDStruct_b21f1e06)arg1;
 - (void)updateRTPReceiveWithTimestamp:(unsigned int)arg1 sampleRate:(unsigned int)arg2 time:(double)arg3 size:(unsigned int)arg4 endOfFrame:(BOOL)arg5;
 - (void)sendRateControlFeedback;
 - (void)stopFeedbackSource;

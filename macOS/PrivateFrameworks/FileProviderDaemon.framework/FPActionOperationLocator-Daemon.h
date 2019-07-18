@@ -7,6 +7,7 @@
 #import <FileProvider/FPActionOperationLocator.h>
 
 @interface FPActionOperationLocator (Daemon)
++ (BOOL)_isMoveAcrossZonesOrSharedRootsForSource:(id)arg1 destination:(id)arg2;
 @property(readonly, nonatomic) BOOL isDownloaded;
 - (unsigned long long)materializeOptionForDestinationItem:(id)arg1 recursively:(BOOL)arg2 isCopy:(BOOL)arg3 extensionManager:(id)arg4;
 - (BOOL)willRequireDownloadForSourceItem:(id)arg1 extensionManager:(id)arg2;

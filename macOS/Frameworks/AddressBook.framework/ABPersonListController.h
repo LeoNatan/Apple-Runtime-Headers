@@ -150,6 +150,7 @@
 - (void)rearrangeObjects;
 - (void)clearExtraUniqueIdsInSearchResults;
 - (void)appendExtraUniqueIdToSearchResults:(id)arg1;
+- (void)expandPersonEntriesCacheWithEntry:(id)arg1;
 - (id)fetchPredicate;
 @property(copy) NSString *filterTerms;
 - (BOOL)nonCuratedMeCardSelected;

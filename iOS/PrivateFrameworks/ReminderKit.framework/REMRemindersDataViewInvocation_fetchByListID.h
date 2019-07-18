@@ -12,18 +12,20 @@
 
 @interface REMRemindersDataViewInvocation_fetchByListID : REMStoreInvocation <NSSecureCoding>
 {
+    _Bool _includingSubtasks;
     REMObjectID *_listID;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) REMObjectID *listID; // @synthesize listID=_listID;
+@property(readonly, nonatomic) _Bool includingSubtasks; // @synthesize includingSubtasks=_includingSubtasks;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithListID:(id)arg1;
+- (id)initWithListID:(id)arg1 includingSubtasks:(_Bool)arg2;
 
 @end
 

@@ -18,14 +18,10 @@
     NSObject<OS_dispatch_queue> *_queue;
     id <MTLRenderPipelineState> _renderPipelines[4][2];
     id <MTLBuffer> _mtlBuffer;
-    unsigned int _bufferOffset1;
-    unsigned int _bufferOffset2;
 }
 
 + (void)_deallocInstance:(id)arg1;
 + (id)sharedInstanceWithPixelFormat:(unsigned int)arg1;
-@property(readonly, nonatomic) unsigned int bufferOffset2; // @synthesize bufferOffset2=_bufferOffset2;
-@property(readonly, nonatomic) unsigned int bufferOffset1; // @synthesize bufferOffset1=_bufferOffset1;
 @property(readonly, nonatomic) id <MTLBuffer> mtlBuffer; // @synthesize mtlBuffer=_mtlBuffer;
 - (void).cxx_destruct;
 - (id)getGeometryBuffer;

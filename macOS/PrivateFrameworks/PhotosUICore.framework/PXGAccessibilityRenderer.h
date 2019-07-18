@@ -24,10 +24,12 @@
     PXScrollViewController *_scrollViewController;
     id <PXGAccessibilityRendererDelegate> _accessibilityDelegate;
     struct CGRect _visibleRect;
+    CDStruct_73ead4b7 _interactionState;
 }
 
 @property(nonatomic) __weak id <PXGAccessibilityRendererDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 @property(retain, nonatomic) PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
+@property(nonatomic) CDStruct_73ead4b7 interactionState; // @synthesize interactionState=_interactionState;
 @property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
 @property(readonly, nonatomic) id <PXGTextureConverter> textureConverter; // @synthesize textureConverter=_textureConverter;
 @property(nonatomic) __weak id <PXGRendererDelegate> delegate; // @synthesize delegate=_delegate;
@@ -35,6 +37,9 @@
 - (id)accessibilityViewForSpriteIndex:(unsigned int)arg1;
 - (void)_selectAsset:(id)arg1;
 - (id)accessibilityContentsWithMode:(int)arg1;
+- (void)scrollToAccessibilityElement:(id)arg1;
+- (id)siblingForElement:(id)arg1 inDirection:(unsigned long long)arg2;
+- (void)handleAccessibilitySelectedCells:(id)arg1;
 - (void)handleAccessibilitySelectedChildren:(id)arg1;
 - (struct CGPoint)_locationForElement:(id)arg1 inView:(id)arg2;
 - (BOOL)accessibilityPerformShowDefaultUIWithElement:(id)arg1;

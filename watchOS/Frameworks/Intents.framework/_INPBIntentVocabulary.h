@@ -15,6 +15,7 @@
 @interface _INPBIntentVocabulary : PBCodable <_INPBIntentVocabulary, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     NSArray *_intentSlotVocabularyPolicies;
     NSArray *_intentTypePhrases;
 }
@@ -22,6 +23,7 @@
 + (_Bool)supportsSecureCoding;
 + (Class)intentTypePhrasesType;
 + (Class)intentSlotVocabularyPoliciesType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *intentTypePhrases; // @synthesize intentTypePhrases=_intentTypePhrases;
 @property(copy, nonatomic) NSArray *intentSlotVocabularyPolicies; // @synthesize intentSlotVocabularyPolicies=_intentSlotVocabularyPolicies;
 - (void).cxx_destruct;

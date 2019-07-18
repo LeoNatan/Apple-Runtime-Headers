@@ -15,12 +15,14 @@
 @interface _INPBStartPhotoPlaybackIntentResponse : PBCodable <_INPBStartPhotoPlaybackIntentResponse, NSSecureCoding, NSCopying>
 {
     CDStruct_a60b8694 _has;
+    _Bool __encodeLegacyGloryData;
     NSString *_albumName;
     _INPBLocation *_locationCreated;
     int _searchResultsCount;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int searchResultsCount; // @synthesize searchResultsCount=_searchResultsCount;
 @property(retain, nonatomic) _INPBLocation *locationCreated; // @synthesize locationCreated=_locationCreated;
 @property(copy, nonatomic) NSString *albumName; // @synthesize albumName=_albumName;

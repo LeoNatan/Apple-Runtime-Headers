@@ -34,6 +34,7 @@
 @property(nonatomic) BOOL accountIsU18; // @dynamic accountIsU18;
 @property(retain, nonatomic) NSString *iAdIDBeforeReset; // @dynamic iAdIDBeforeReset;
 @property(retain, nonatomic) NSString *iCloudDSID; // @dynamic iCloudDSID;
+@property(nonatomic) BOOL isDPIDManatee; // @dynamic isDPIDManatee;
 @property(nonatomic) int lastSegmentServedTimestamp; // @dynamic lastSegmentServedTimestamp;
 @property(nonatomic) int lastSentSegmentDataTimestamp; // @dynamic lastSentSegmentDataTimestamp;
 @property(nonatomic) int limitAdTrackingTimestamp; // @dynamic limitAdTrackingTimestamp;

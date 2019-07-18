@@ -14,7 +14,6 @@
 __attribute__((visibility("hidden")))
 @interface BRDocumentsSymlinkItem : NSObject <NSFileProviderItem_Private>
 {
-    NSString *_acAccountID;
     ICDBRFileObjectID *_rootFileObjectID;
     ICDBRFileObjectID *_documentsFileObjectID;
 }
@@ -24,7 +23,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *typeIdentifier;
 @property(readonly, copy, nonatomic) NSString *itemIdentifier;
 @property(readonly, copy, nonatomic) NSString *parentItemIdentifier;
-- (id)initWithACAccountID:(id)arg1 rootFileObjectID:(id)arg2 documentsFileObjectID:(id)arg3;
+- (id)initWithRootFileObjectID:(id)arg1 documentsFileObjectID:(id)arg2;
 
 // Remaining properties
 @property(readonly, nonatomic) unsigned long long capabilities;

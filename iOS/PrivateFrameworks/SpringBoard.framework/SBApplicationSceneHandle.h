@@ -6,14 +6,15 @@
 
 #import <SpringBoardUI/SBSceneHandle.h>
 
-@class NSDictionary, NSString, SBApplication;
+@class NSString, SBApplication;
 
 @interface SBApplicationSceneHandle : SBSceneHandle
 {
     SBApplication *_application;
     NSString *_persistenceIdentifier;
     _Bool _isSecure;
-    NSDictionary *_pptTestParameters;
+    unsigned long long _userLaunchSignpostID;
+    double _userLaunchEventTime;
     long long _layoutRole;
 }
 

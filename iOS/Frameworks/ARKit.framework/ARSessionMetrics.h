@@ -38,10 +38,11 @@
 - (id)configBasedKey:(id)arg1;
 - (void)_recordSessionEnd;
 - (void)sessionStopped;
-- (void)recordRaycast:(id)arg1 tracked:(_Bool)arg2 withResults:(unsigned long long)arg3;
+- (void)recordRaycast:(id)arg1 tracked:(_Bool)arg2;
 - (void)saveMapWithFrame:(id)arg1;
 - (void)sessionDidUpdateFrame:(id)arg1;
-- (void)sessionStartedWithConfiguration:(id)arg1;
+- (void)sessionStarted:(id)arg1 withConfiguration:(id)arg2;
+- (int)_checkRenderEngine:(id)arg1 withConfiguration:(id)arg2;
 - (id)queue;
 - (id)initWithReporter:(id)arg1;
 - (id)init;

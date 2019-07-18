@@ -76,7 +76,6 @@
 - (_Bool)getTcpInfo:(id *)arg1 forKey:(id)arg2;
 - (void)setMultipathSubflowSwitchCounts:(int)arg1 forKey:(id)arg2;
 - (_Bool)getMultipathSubflowSwitchCounts:(int *)arg1 forKey:(id)arg2;
-- (_Bool)requiresQueryId;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

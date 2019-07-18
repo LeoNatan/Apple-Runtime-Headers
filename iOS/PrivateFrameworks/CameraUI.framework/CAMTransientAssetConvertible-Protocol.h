@@ -17,6 +17,7 @@
 @property(readonly, nonatomic) unsigned long long numberOfRepresentedAssets;
 @property(readonly, copy, nonatomic) NSString *burstIdentifier;
 @property(readonly, copy, nonatomic) NSDictionary *stillImageMetadata;
+@property(readonly, nonatomic) struct CGSize finalExpectedPixelSize;
 @property(readonly, nonatomic) UIImage *placeholderImage;
 @property(readonly, nonatomic) NSDate *captureDate;
 @property(readonly, copy, nonatomic) NSURL *persistenceURL;

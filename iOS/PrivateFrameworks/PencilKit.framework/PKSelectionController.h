@@ -48,7 +48,9 @@
 - (_Bool)_isValidDropPointForStrokes:(struct CGPoint)arg1;
 - (id)drawingForUUID:(id)arg1;
 - (id)_visibleStrokesWithinExtendedBounds:(id)arg1 forDrawing:(id)arg2;
+- (struct CGRect)_scrollViewVisibleBounds;
 - (struct CGRect)boundsForDrawing:(id)arg1;
+- (struct CGRect)_scrollViewDrawingFrame;
 - (struct CGPoint)_pointInStrokeSpace:(struct CGPoint)arg1 inDrawing:(id)arg2;
 - (void)_setAdditionalStrokes:(id)arg1 inDrawing:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_resetSelectedStrokeStateForRenderer;

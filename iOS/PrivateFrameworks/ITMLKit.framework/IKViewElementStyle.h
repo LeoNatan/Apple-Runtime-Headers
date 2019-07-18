@@ -17,6 +17,7 @@
     IKCSSRule *_cssRule;
     NSArray *_mediaQueryList;
     NSMutableDictionary *_styleDict;
+    NSMutableDictionary *_overridingValuesByStyle;
 }
 
 + (id)elementStyleWithParentStyle:(id)arg1 elementStyle:(id)arg2 elementStyleOverrides:(id)arg3;
@@ -39,7 +40,9 @@
 + (void)registerEdgeInsetStyle:(id)arg1 aliasName:(id)arg2 withPositionStyleNames:(id)arg3 inherited:(_Bool)arg4;
 + (void)registerStyle:(id)arg1 aliasName:(id)arg2 withType:(unsigned long long)arg3 inherited:(_Bool)arg4;
 + (void)registerStyle:(id)arg1 withType:(unsigned long long)arg2 inherited:(_Bool)arg3;
++ (id)propertiesForStyleName:(id)arg1;
 + (void)initialize;
+@property(retain, nonatomic) NSMutableDictionary *overridingValuesByStyle; // @synthesize overridingValuesByStyle=_overridingValuesByStyle;
 @property(retain, nonatomic) NSMutableDictionary *styleDict; // @synthesize styleDict=_styleDict;
 @property(retain, nonatomic) NSArray *mediaQueryList; // @synthesize mediaQueryList=_mediaQueryList;
 @property(readonly, copy, nonatomic) IKCSSRule *cssRule; // @synthesize cssRule=_cssRule;
@@ -53,6 +56,7 @@
 - (id)_newColorFromString:(id)arg1;
 - (id)_gradientFromString:(id)arg1;
 - (unsigned long long)typeForStyle:(id)arg1;
+- (id)prototype;
 - (_Bool)requiresDynamicEvaluation;
 @property(readonly, nonatomic) _Bool hidden;
 @property(readonly, nonatomic) NSNumber *lineHeight;
@@ -104,6 +108,7 @@
 @property(readonly, nonatomic) UIColor *borderColor;
 @property(readonly, nonatomic) UIColor *color;
 - (unsigned long long)edgeFlagForStyle:(id)arg1;
+- (id)cssValueForStyle:(id)arg1;
 - (id)valueForStyle:(id)arg1;
 - (id)debugDescription;
 - (id)description;

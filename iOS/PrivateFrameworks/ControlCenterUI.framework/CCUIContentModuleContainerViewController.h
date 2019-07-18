@@ -92,7 +92,7 @@
 - (void)willBecomeActive;
 - (void)displayWillTurnOff;
 @property(readonly, nonatomic) CCUIContentModuleContentContainerView *moduleContentView;
-- (void)_closeExpandedModule;
+- (void)_closeExpandedModule:(_Bool)arg1;
 - (void)dismissModulePresentedContentAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissPresentedContentAnimated:(_Bool)arg1;
 - (void)dismissExpandedModuleAnimated:(_Bool)arg1;
@@ -103,6 +103,7 @@
 - (id)init;
 - (void)transitionToExpandedMode:(_Bool)arg1;
 - (void)_loadBackgroundViewController:(id)arg1;
+- (void)dismissViewControllerWithTransition:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_loadContentViewController:(id)arg1;
 - (id)initWithModuleIdentifier:(id)arg1 contentModule:(id)arg2 presentationContext:(id)arg3;
 

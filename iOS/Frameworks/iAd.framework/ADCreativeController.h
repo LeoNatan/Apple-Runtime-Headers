@@ -75,6 +75,7 @@
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
+- (void)tearDown;
 - (void)_navigationAttemptBlockedDueToAccidentalTapForMRAIDActionType:(long long)arg1;
 - (void)_tapGestureTimerDidExpireForRequestedActionType:(long long)arg1;
 - (void)_requestOpenURL:(id)arg1;

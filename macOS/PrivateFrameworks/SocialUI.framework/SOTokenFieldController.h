@@ -71,6 +71,7 @@
 - (void)_updatePlaceholderAttributedString;
 - (void)_newChatDisplayControllerIDSValidationDidChange:(id)arg1;
 - (void)_chatDisplayControllerRecipientsDidChange:(id)arg1;
+- (unsigned long long)_visibleTokenCountWithLineCount:(unsigned long long)arg1 tokenCount:(unsigned long long)arg2 recipients:(id)arg3 tokenFieldHeight:(double)arg4;
 - (unsigned long long)visibleTokenCountForLineCount:(unsigned long long)arg1 width:(double)arg2;
 - (void)appendIMHandles:(id)arg1;
 - (void)showContactCard:(id)arg1;

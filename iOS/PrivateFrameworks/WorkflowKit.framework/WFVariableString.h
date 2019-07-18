@@ -23,6 +23,7 @@
 @property(readonly, nonatomic) NSArray *variables;
 @property(readonly, nonatomic) NSString *stringByReplacingVariablesWithNames;
 @property(readonly, nonatomic) NSString *stringByRemovingVariables;
+- (void)processIntoContentItemsWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)processWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)serializedRepresentation;
 - (id)initWithSerializedRepresentation:(id)arg1 variableProvider:(id)arg2 parameter:(id)arg3;

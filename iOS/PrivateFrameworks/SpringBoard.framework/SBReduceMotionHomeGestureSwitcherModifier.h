@@ -36,6 +36,7 @@
 - (void).cxx_destruct;
 - (void)_applyPrototypeSettings;
 - (id)_updateReduceMotionAxisIfNecessaryWithEvent:(id)arg1;
+- (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)wantsMinificationFilter;
 - (_Bool)wantsAsynchronousRenderingAssertion;
 - (long long)keyboardSuppressionMode;

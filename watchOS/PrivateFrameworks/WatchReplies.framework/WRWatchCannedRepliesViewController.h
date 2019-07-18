@@ -8,16 +8,20 @@
 
 #import <WatchReplies/PUICQuickboardViewControllerDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, PUICQuickboardMessageViewController, WRCannedRepliesStore;
+@class NSMutableArray, NSString, PUICQuickboardMessageViewController, UISwitch, WRCannedRepliesStore;
 
 @interface WRWatchCannedRepliesViewController : PUICTableViewController <PUICQuickboardViewControllerDelegate>
 {
+    _Bool _showSmartRepliesSection;
     unsigned int _category;
     WRCannedRepliesStore *_repliesStore;
     NSMutableArray *_cannedReplies;
     PUICQuickboardMessageViewController *_quickboardMessageViewController;
+    UISwitch *_smartRepliesSwitch;
 }
 
+@property(retain, nonatomic) UISwitch *smartRepliesSwitch; // @synthesize smartRepliesSwitch=_smartRepliesSwitch;
+@property(nonatomic) _Bool showSmartRepliesSection; // @synthesize showSmartRepliesSection=_showSmartRepliesSection;
 @property(retain, nonatomic) PUICQuickboardMessageViewController *quickboardMessageViewController; // @synthesize quickboardMessageViewController=_quickboardMessageViewController;
 @property(retain, nonatomic) NSMutableArray *cannedReplies; // @synthesize cannedReplies=_cannedReplies;
 @property(retain, nonatomic) WRCannedRepliesStore *repliesStore; // @synthesize repliesStore=_repliesStore;
@@ -30,6 +34,7 @@
 - (void)_addNewReply:(id)arg1;
 - (id)_replyTextAtIndex:(int)arg1;
 - (void)_openAddNewReplyController;
+- (id)_createSmartRepliesSwitch;
 - (void)quickboardInputCancelled:(id)arg1;
 - (void)quickboard:(id)arg1 textEntered:(id)arg2;
 - (id)tableView:(id)arg1 trailingSwipeActionsForRowAtIndexPath:(id)arg2;
@@ -38,6 +43,7 @@
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)smartRepliesValueChanged:(id)arg1;
 - (void)viewDidLoad;
 
 // Remaining properties

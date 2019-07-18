@@ -40,6 +40,8 @@
 - (id)availableActionsForPaymentTransactionWithServiceIdentifier:(id)arg1;
 - (unsigned long long)statusOfPaymentTransactionWithServiceIdentifier:(id)arg1;
 @property(copy) NSString *peerPaymentPassUniqueID; // @synthesize peerPaymentPassUniqueID=_peerPaymentPassUniqueID;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_passLibraryChanged:(id)arg1;
 - (id)initWithPeerPaymentPassUniqueID:(id)arg1 paymentService:(id)arg2;
 - (void)dealloc;
 - (id)initWithPeerPaymentPassUniqueID:(id)arg1;

@@ -17,6 +17,7 @@
     UILabel *_nameLabel;
     UIImageView *_profileImageView;
     UIView *_ringView;
+    float _monochromeTintAmount;
     _Bool _usesLegibility;
     CLKImageProvider *_imageProvider;
     UIColor *_color;

@@ -32,6 +32,7 @@
 - (id)pushStoreWithIdentifier:(id)arg1 container:(id)arg2 error:(id *)arg3;
 - (id)pushStoreIdentifierForContainer:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) _Bool rebaseProhibited;
+- (void)dealloc;
 - (id)initWithRepository:(id)arg1 operationGroup:(id)arg2 syncContainerPrefix:(id)arg3 options:(unsigned long long)arg4 reason:(long long)arg5 accessibilityAssertion:(id)arg6 syncIdentifier:(id)arg7;
 
 @end

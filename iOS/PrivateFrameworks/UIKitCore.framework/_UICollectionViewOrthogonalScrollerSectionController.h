@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 @interface _UICollectionViewOrthogonalScrollerSectionController : NSObject <UIScrollViewDelegate>
 {
     UICollectionView *_collectionView;
-    NSMapTable *_scrollViewMap;
+    NSMapTable *_scrollViewFromSectionMap;
     NSMapTable *_scrollViewToSectionMap;
     NSHashTable *_frontMostElements;
     NSIndexSet *_currentOrthogonalSectionIndexes;
@@ -23,22 +23,22 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSIndexSet *currentOrthogonalSectionIndexes; // @synthesize currentOrthogonalSectionIndexes=_currentOrthogonalSectionIndexes;
 @property(retain, nonatomic) NSHashTable *frontMostElements; // @synthesize frontMostElements=_frontMostElements;
 @property(retain, nonatomic) NSMapTable *scrollViewToSectionMap; // @synthesize scrollViewToSectionMap=_scrollViewToSectionMap;
-@property(retain, nonatomic) NSMapTable *scrollViewMap; // @synthesize scrollViewMap=_scrollViewMap;
+@property(retain, nonatomic) NSMapTable *scrollViewFromSectionMap; // @synthesize scrollViewFromSectionMap=_scrollViewFromSectionMap;
 @property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+- (id)_managedScrollViews;
 - (void)_forceElementsOnTopAsNeeded;
 - (struct CGSize)_contentSizeForSection:(long long)arg1 layout:(id)arg2;
 - (void)_configureScrollView:(id)arg1 forSection:(long long)arg2 baseContentInsets:(struct UIEdgeInsets)arg3;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)_scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned long long)arg2 animated:(_Bool)arg3;
-- (void)_deleteSectionScrollView:(id)arg1 forSection:(long long)arg2;
 - (id)_addSectionScrollViewForSection:(long long)arg1;
 - (id)_addSectionScrollViewForIndexPath:(id)arg1;
 - (id)_sectionScrollViewForSection:(long long)arg1;
 - (id)_sectionScrollViewForIndexPath:(id)arg1;
 - (void)adjustElementHierarchyOrderingForOrthogonalElementIfNeeded:(id)arg1 layoutAttributes:(id)arg2;
-- (void)insertDeleteOrthogonalSectionsOnLayoutInvalidation;
+- (void)reconfigureOrthogonalSectionsForUpdate:(id)arg1;
 - (void)performLayout;
 - (void)addElementIfNeeded:(id)arg1;
 - (void)scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned long long)arg2 animated:(_Bool)arg3;

@@ -19,6 +19,7 @@
 - (void)setContentInset:(struct UIEdgeInsets)arg1;
 - (void)setContentOffset:(struct CGPoint)arg1;
 - (void)setContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2;
+- (unsigned int)_edgesPropagatingSafeAreaInsetsToDescendants;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 collectionViewLayout:(id)arg2;
 

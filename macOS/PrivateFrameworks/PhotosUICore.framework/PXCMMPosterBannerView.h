@@ -15,7 +15,7 @@
     BOOL _loadingPeopleSuggestions;
     NSString *_headline;
     NSString *_subheadline;
-    NSArray *_namesForHeadline;
+    NSArray *_localizedNamesForHeadline;
     NSTextField *_headlineLabel;
     NSTextField *_subheadlineLabel;
     NSButton *_actionButton;
@@ -35,7 +35,7 @@
 @property(nonatomic) struct _NSRange headlineBoldRange; // @synthesize headlineBoldRange=_headlineBoldRange;
 @property(nonatomic, getter=isLoadingPeopleSuggestions) BOOL loadingPeopleSuggestions; // @synthesize loadingPeopleSuggestions=_loadingPeopleSuggestions;
 @property(nonatomic) BOOL containsUnverifiedPersons; // @synthesize containsUnverifiedPersons=_containsUnverifiedPersons;
-@property(copy, nonatomic) NSArray *namesForHeadline; // @synthesize namesForHeadline=_namesForHeadline;
+@property(copy, nonatomic) NSArray *localizedNamesForHeadline; // @synthesize localizedNamesForHeadline=_localizedNamesForHeadline;
 @property(copy, nonatomic) NSString *subheadline; // @synthesize subheadline=_subheadline;
 @property(copy, nonatomic) NSString *headline; // @synthesize headline=_headline;
 - (void).cxx_destruct;

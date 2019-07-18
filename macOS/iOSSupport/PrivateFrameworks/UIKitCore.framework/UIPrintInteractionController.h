@@ -71,6 +71,7 @@
 - (void)_printPanelWillDismiss:(BOOL)arg1;
 - (void)_printPanelDidPresent;
 - (void)_cancelAllPreviewGeneration;
+- (CDUnknownBlockType)_makePrintDocumentGenerator;
 - (void)_addPDFWithData:(id)arg1 toContext:(struct CGContext *)arg2;
 - (void)_generatePrintPreview:(CDUnknownBlockType)arg1;
 - (id)_newPDFPreviewURLWithPath:(id)arg1 isContentManaged:(BOOL)arg2;

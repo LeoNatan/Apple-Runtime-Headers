@@ -6,11 +6,22 @@
 
 #import <VideoSubscriberAccountUI/VSAppDocumentController.h>
 
+#import <VideoSubscriberAccountUI/VSCredentialEntryViewModelDelegate-Protocol.h>
+
+@class IKViewElement, NSArray, NSString;
+
 __attribute__((visibility("hidden")))
-@interface VSCredentialEntryAppDocumentController : VSAppDocumentController
+@interface VSCredentialEntryAppDocumentController : VSAppDocumentController <VSCredentialEntryViewModelDelegate>
 {
+    IKViewElement *_pickerElement;
+    NSArray *_buttonElements;
 }
 
+@property(retain, nonatomic) NSArray *buttonElements; // @synthesize buttonElements=_buttonElements;
+@property(retain, nonatomic) IKViewElement *pickerElement; // @synthesize pickerElement=_pickerElement;
+- (void).cxx_destruct;
+- (void)viewModel:(id)arg1 pickerDidSelectRow:(unsigned long long)arg2;
+- (void)viewModel:(id)arg1 buttonTappedAtIndex:(unsigned long long)arg2;
 - (_Bool)_updateCredentialEntryViewModel:(id)arg1 withTemplate:(id)arg2 error:(id *)arg3;
 - (_Bool)_updateCredentialEntryViewModel:(id)arg1 error:(id *)arg2;
 - (id)_credentialEntryViewModelWithViewModel:(id)arg1;
@@ -19,6 +30,12 @@ __attribute__((visibility("hidden")))
 - (id)_newViewModel;
 - (void)_stopObservingViewModel:(id)arg1;
 - (void)_startObservingViewModel:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

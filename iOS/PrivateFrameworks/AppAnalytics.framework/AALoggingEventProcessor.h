@@ -13,7 +13,6 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)registerAccessQueue:(id)arg1;
 - (void)processEvent:(id)arg1;
 - (id)initWithFormat:(long long)arg1;
 

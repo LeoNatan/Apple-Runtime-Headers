@@ -61,6 +61,8 @@
 - (void)_updateWithUpdateMode:(long long)arg1 contentAnimationSettings:(id)arg2 commitProgress:(double)arg3 additionalContentTranslation:(struct CGPoint)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_updateWithUpdateMode:(long long)arg1 commitProgress:(double)arg2 additionalContentTranslation:(struct CGPoint)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_updateCropLinesMultiPartAnimationForCropsProgress;
+- (_Bool)_isGestureStyleReducedMotion:(long long)arg1;
+- (_Bool)_isGestureStyleDisabled:(long long)arg1;
 - (void)_injectCommitProgressVelocity:(double)arg1;
 - (void)_updateContentTransformUsingPresentationValues:(_Bool)arg1;
 - (void)_prepareViewHierarchyForCommittedScreenshot:(_Bool)arg1 gestureStyle:(long long)arg2;

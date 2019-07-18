@@ -19,7 +19,7 @@
 @property(readonly, copy, nonatomic) NSArray *contactIdentifiers; // @synthesize contactIdentifiers=_contactIdentifiers;
 @property(readonly, copy, nonatomic) NSString *handle; // @synthesize handle=_handle;
 - (void).cxx_destruct;
-- (_Bool)matchesPerson:(id)arg1;
+- (_Bool)matchesPerson:(id)arg1 withUnifiedContactIdentifiers:(id)arg2;
 - (id)initWithHandle:(id)arg1 contactIdentifiers:(id)arg2 isMe:(_Bool)arg3;
 
 @end

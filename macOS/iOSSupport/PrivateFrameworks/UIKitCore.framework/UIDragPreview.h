@@ -14,7 +14,6 @@
 {
     NSValue *_preferredAnchorPoint;
     BOOL _avoidAnimation;
-    BOOL __springboardPlatterStyle;
     UIView *_view;
     UIDragPreviewParameters *_parameters;
     NSDictionary *__springboardParameters;
@@ -25,12 +24,12 @@
 + (id)previewForURL:(id)arg1 title:(id)arg2;
 + (id)previewForURL:(id)arg1;
 @property(copy, nonatomic) NSDictionary *_springboardParameters; // @synthesize _springboardParameters=__springboardParameters;
-@property(nonatomic) BOOL _springboardPlatterStyle; // @synthesize _springboardPlatterStyle=__springboardPlatterStyle;
 @property(nonatomic) BOOL avoidAnimation; // @synthesize avoidAnimation=_avoidAnimation;
 @property(readonly, copy, nonatomic) UIDragPreviewParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(nonatomic) BOOL _springboardPlatterStyle;
 @property(nonatomic) struct CGPoint preferredAnchorPoint;
 @property(readonly, nonatomic) _DUIPreview *_duiPreview;
 - (id)initWithView:(id)arg1;

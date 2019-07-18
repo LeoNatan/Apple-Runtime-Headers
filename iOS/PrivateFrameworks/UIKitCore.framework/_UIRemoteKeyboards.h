@@ -67,6 +67,7 @@
 - (void)queue_setLastEventSource:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)updateLastEventSource:(long long)arg1;
 - (void)userSelectedSceneWithToken:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
+- (void)userSelectedProcessIdentifier:(int)arg1 sceneDeferringToken:(id)arg2 onCompletion:(CDUnknownBlockType)arg3;
 - (void)userSelectedApp:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
 - (void)forceKeyboardAway;
 - (void)queue_setKeyboardDisabled:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -84,7 +85,7 @@
 @property(readonly) double intersectionHeight;
 @property(readonly) _Bool keyboardVisible;
 - (void)finishWithHostedWindow;
-- (id)prepareForHostedWindow;
+- (id)prepareForHostedWindowWithScene:(id)arg1;
 - (id)_activeScreen;
 - (void)performOnDistributedControllers:(CDUnknownBlockType)arg1;
 - (void)_performOnDistributedControllersExceptSelf:(CDUnknownBlockType)arg1;
@@ -97,14 +98,17 @@
 - (void)completeMoveKeyboardForWindow:(id)arg1;
 - (id)viewHostForWindow:(id)arg1;
 - (void)prepareToMoveKeyboard:(struct CGRect)arg1 withIAV:(struct CGRect)arg2 isIAVRelevant:(_Bool)arg3 showing:(_Bool)arg4 forScene:(id)arg5;
+- (_Bool)wantsToShowKeyboardForViewServiceHostWindow:(id)arg1;
 - (_Bool)wantsToShowKeyboardForWindow:(id)arg1;
 - (_Bool)isOnScreenRotating;
 - (_Bool)allowedToShowKeyboard;
+- (_Bool)needsToShowKeyboardForViewServiceHostWindow:(id)arg1;
 - (_Bool)needsToShowKeyboardForWindow:(id)arg1;
 - (void)applicationResume:(id)arg1;
 - (void)willResume:(id)arg1;
 - (void)didSuspend:(id)arg1;
 - (void)_lostWindow:(id)arg1;
+- (void)setWindowEnabled:(_Bool)arg1 force:(_Bool)arg2;
 - (void)setWindowEnabled:(_Bool)arg1;
 @property(readonly, retain) FBSScene *requiredScene;
 @property(readonly) _Bool oldPathForSnapshot;
@@ -121,6 +125,7 @@
 - (void)queue_keyboardIAVChanged:(double)arg1 onComplete:(CDUnknownBlockType)arg2;
 - (void)queue_keyboardChangedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)queue_keyboardChanged:(id)arg1 onComplete:(CDUnknownBlockType)arg2;
+- (_Bool)isKeyboardExtension;
 - (void)keyboardChangedCompleted;
 - (_Bool)didHandleKeyboardChange:(id)arg1 shouldConsiderSnapshottingKeyboard:(_Bool)arg2 isLocalEvent:(_Bool)arg3;
 - (void)resetSnapshotWithWindowCheck:(_Bool)arg1;

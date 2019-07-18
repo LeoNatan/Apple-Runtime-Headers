@@ -8,10 +8,8 @@
 
 @interface UIImage (TVSystemUI)
 + (id)tvsui_placeholderImageWithScale:(double)arg1;
-+ (id)tvsui_topShelfBannerImageForBundleURL:(id)arg1 scale:(double)arg2;
-+ (id)tvsui_topShelfBannerImageForBundleIdentifier:(id)arg1;
++ (id)tvsui_assetCatalogImageNamed:(id)arg1 inBundleWithURL:(id)arg2 compatibleWithTraitCollection:(id)arg3;
 + (id)tvsui_applicationIconImageForBundleURL:(id)arg1 iconName:(id)arg2 scale:(double)arg3;
 + (id)tvsui_applicationIconImageForBundleIdentifier:(id)arg1;
-- (void)_tvsui_setAssociatedAssetManager:(id)arg1;
 @end
 

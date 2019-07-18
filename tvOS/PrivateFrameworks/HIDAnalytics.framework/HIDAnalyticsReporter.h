@@ -22,6 +22,9 @@
 - (void)start;
 - (void)unregisterEvent:(id)arg1;
 - (void)registerEvent:(id)arg1;
+- (void)logAnalyticsEvent:(id)arg1;
+- (void)logAnalyticsEvent:(id)arg1 eventDescription:(id)arg2 eventValue:(id)arg3;
+- (id)createBucketData:(id)arg1 fieldvalue:(id)arg2 fieldDescription:(id)arg3;
 - (void)dealloc;
 - (id)init;
 

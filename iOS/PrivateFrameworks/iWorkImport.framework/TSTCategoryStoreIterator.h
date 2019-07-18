@@ -90,6 +90,7 @@ __attribute__((visibility("hidden")))
 - (void)iterateCellsUsingBlock:(CDUnknownBlockType)arg1;
 - (struct TSUCellCoord)advanceToCellID:(struct TSUCellCoord)arg1;
 - (struct TSUCellCoord)getNext;
+- (void)updateFormulaForCellData:(id)arg1;
 - (void)updateCellData:(id)arg1;
 - (_Bool)p_searchSummaryVendorCell:(id)arg1 searchFlags:(unsigned long long)arg2;
 - (id)tempSummaryCell;

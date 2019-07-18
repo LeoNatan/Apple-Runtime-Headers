@@ -8,7 +8,7 @@
 
 #import <VideosUI/VUIRentalExpirationLabelDelegate-Protocol.h>
 
-@class IKViewElement, NSArray, NSString, UIFocusContainerGuide, VUIFocusableTextView, VUILabel, VUIMediaTagsView, VUIProductBannerCastInfoView, VUIProductBannerLayout, _TVImageView;
+@class IKViewElement, NSArray, NSString, UIFocusContainerGuide, VUIComingSoonBannerCardView, VUIFocusableTextView, VUILabel, VUIMediaTagsView, VUIProductBannerCastInfoView, VUIProductBannerLayout, _TVImageView;
 
 __attribute__((visibility("hidden")))
 @interface VUIProductBannerView : UIView <VUIRentalExpirationLabelDelegate>
@@ -18,12 +18,14 @@ __attribute__((visibility("hidden")))
     VUIProductBannerLayout *_layout;
     _TVImageView *_logoImageView;
     VUILabel *_logoTextView;
+    VUILabel *_subTextView;
+    VUILabel *_episodeInfoView;
     _TVImageView *_coverArtImageView;
     NSArray *_buttonViews;
+    VUIComingSoonBannerCardView *_comingSoonView;
     VUIFocusableTextView *_descriptionTextView;
     VUIProductBannerCastInfoView *_castInfoView;
     VUIMediaTagsView *_tagsView;
-    VUIMediaTagsView *_infoTagsView;
     VUILabel *_disclaimerTextView;
     VUILabel *_availabilityTextView;
     _TVImageView *_availabilityImageView;
@@ -41,12 +43,14 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVImageView *availabilityImageView; // @synthesize availabilityImageView=_availabilityImageView;
 @property(retain, nonatomic) VUILabel *availabilityTextView; // @synthesize availabilityTextView=_availabilityTextView;
 @property(retain, nonatomic) VUILabel *disclaimerTextView; // @synthesize disclaimerTextView=_disclaimerTextView;
-@property(retain, nonatomic) VUIMediaTagsView *infoTagsView; // @synthesize infoTagsView=_infoTagsView;
 @property(retain, nonatomic) VUIMediaTagsView *tagsView; // @synthesize tagsView=_tagsView;
 @property(retain, nonatomic) VUIProductBannerCastInfoView *castInfoView; // @synthesize castInfoView=_castInfoView;
 @property(retain, nonatomic) VUIFocusableTextView *descriptionTextView; // @synthesize descriptionTextView=_descriptionTextView;
+@property(retain, nonatomic) VUIComingSoonBannerCardView *comingSoonView; // @synthesize comingSoonView=_comingSoonView;
 @property(retain, nonatomic) NSArray *buttonViews; // @synthesize buttonViews=_buttonViews;
 @property(retain, nonatomic) _TVImageView *coverArtImageView; // @synthesize coverArtImageView=_coverArtImageView;
+@property(retain, nonatomic) VUILabel *episodeInfoView; // @synthesize episodeInfoView=_episodeInfoView;
+@property(retain, nonatomic) VUILabel *subTextView; // @synthesize subTextView=_subTextView;
 @property(retain, nonatomic) VUILabel *logoTextView; // @synthesize logoTextView=_logoTextView;
 @property(retain, nonatomic) _TVImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
 @property(retain, nonatomic) VUIProductBannerLayout *layout; // @synthesize layout=_layout;

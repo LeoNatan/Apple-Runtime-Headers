@@ -8,9 +8,9 @@
 
 @protocol AMPDevicesProtocol
 - (void)deleteItemAtURL:(NSURL *)arg1 withReply:(void (^)(NSError *))arg2;
-- (void)renameItemAtURL:(NSURL *)arg1 to:(NSString *)arg2 withReply:(void (^)(NSError *))arg3;
-- (NSProgress *)moveItemAtURL:(NSURL *)arg1 toURL:(NSURL *)arg2 withReply:(void (^)(NSError *))arg3;
-- (NSProgress *)copyItemAtURL:(NSURL *)arg1 toURL:(NSURL *)arg2 withReply:(void (^)(NSError *))arg3;
+- (void)renameItemAtURL:(NSURL *)arg1 to:(NSString *)arg2 withReply:(void (^)(NSDictionary *, NSError *))arg3;
+- (NSProgress *)moveItemAtURL:(NSURL *)arg1 toURL:(NSURL *)arg2 withReply:(void (^)(NSDictionary *, NSError *))arg3;
+- (NSProgress *)copyItemAtURL:(NSURL *)arg1 toURL:(NSURL *)arg2 withReply:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)fetchFileSharingItemsForApp:(NSString *)arg1 forDevice:(AMPDevice *)arg2 withReply:(void (^)(NSArray *, NSError *))arg3;
 - (void)fetchFileSharingAppsForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSArray *, NSError *))arg2;
 - (void)ejectDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
@@ -20,6 +20,7 @@
 - (void)fetchBatteryInfoForDevice:(AMPDevice *)arg1 withReply:(void (^)(AMPDeviceBatteryInfo *, NSError *))arg2;
 - (void)fetchDeviceIdentifiersWithReply:(void (^)(NSArray *, NSError *))arg1;
 - (NSProgress *)registerForSoftwareUpdateRestoreProgressForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
+- (void)isSoftwareUpdateOrRestoreInProgressForDevice:(AMPDevice *)arg1 withReply:(void (^)(BOOL, NSError *))arg2;
 - (void)startSoftwareRestoreForDevice:(AMPDevice *)arg1 withOptions:(unsigned long long)arg2 withReply:(void (^)(NSError *))arg3;
 - (void)startSoftwareUpdateForDevice:(AMPDevice *)arg1 withOptions:(unsigned long long)arg2 withReply:(void (^)(NSError *))arg3;
 - (void)checkForSoftwareUpdatesForDevice:(AMPDevice *)arg1 withOptions:(unsigned long long)arg2 withReply:(void (^)(NSError *))arg3;
@@ -32,8 +33,10 @@
 - (NSProgress *)registerForRestoreProgressForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (NSProgress *)registerForBackupProgressForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (NSProgress *)restoreDevice:(AMPDevice *)arg1 fromBackup:(NSDictionary *)arg2 withPassword:(NSString *)arg3 withReply:(void (^)(NSError *))arg4;
+- (void)isRestoreFromBackupInProgressForDevice:(AMPDevice *)arg1 withReply:(void (^)(BOOL, NSError *))arg2;
 - (void)cancelBackupForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (NSProgress *)backupDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
+- (void)isBackupInProgressForDevice:(AMPDevice *)arg1 withReply:(void (^)(BOOL, NSError *))arg2;
 - (void)setKeychainBackupPassword:(NSString *)arg1 forDevice:(AMPDevice *)arg2 withReply:(void (^)(NSError *))arg3;
 - (void)fetchPasswordFromKeychainForBackup:(NSDictionary *)arg1 withReply:(void (^)(NSString *, NSError *))arg2;
 - (void)fetchBackupPasswordFromKeychainForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSString *, NSError *))arg2;
@@ -55,6 +58,8 @@
 - (void)stopSyncForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (NSProgress *)registerForSyncProgressForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (NSProgress *)startSyncForDevice:(AMPDevice *)arg1 withOptions:(unsigned long long)arg2 withReply:(void (^)(NSError *))arg3;
+- (void)isSyncInProgressForDevice:(AMPDevice *)arg1 withReply:(void (^)(BOOL, NSError *))arg2;
+- (void)isSyncAllowedForDevice:(AMPDevice *)arg1 withReply:(void (^)(BOOL, NSError *))arg2;
 - (void)fetchTotalsForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)setAccessibilityPrefs:(AMPDeviceAccessibilityPrefs *)arg1 forDevice:(AMPDevice *)arg2 withReply:(void (^)(NSError *))arg3;
 - (void)fetchAccessibilityPrefsForDevice:(AMPDevice *)arg1 withReply:(void (^)(AMPDeviceAccessibilityPrefs *, NSError *))arg2;

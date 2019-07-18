@@ -18,7 +18,6 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSObject<OS_dispatch_queue> *_accessQueue;
     _Bool _isEnforcingApplicationFilter;
-    _Bool _shouldFetchNextTrack;
     MPCPlayerPath *_playerPath;
     unsigned int _filteringOptions;
     MPRequestResponseController *_requestResponseController;
@@ -53,7 +52,6 @@
 - (void)endObserving;
 - (void)beginObserving;
 - (void)sendMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 launchApp:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)preparePlayerRequestForNewPlaybackIntent;
 @property(readonly, copy) NSString *description;
 - (id)initWithPlayerPath:(id)arg1 options:(unsigned int)arg2;
 

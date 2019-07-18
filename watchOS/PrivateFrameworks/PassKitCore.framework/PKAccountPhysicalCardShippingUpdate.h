@@ -9,7 +9,7 @@
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 #import <PassKitCore/PKRecordObject-Protocol.h>
 
-@class NSDate, NSString, NSURL;
+@class NSDate, NSDateComponents, NSString, NSURL;
 
 @interface PKAccountPhysicalCardShippingUpdate : NSObject <NSSecureCoding, PKRecordObject>
 {
@@ -19,13 +19,13 @@
     NSString *_trackingNumber;
     NSString *_shippingCompany;
     NSDate *_timestamp;
-    NSDate *_estimatedDeliveryDate;
+    NSDateComponents *_estimatedDeliveryDate;
 }
 
 + (id)recordNamePrefix;
 + (id)recordType;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSDate *estimatedDeliveryDate; // @synthesize estimatedDeliveryDate=_estimatedDeliveryDate;
+@property(retain, nonatomic) NSDateComponents *estimatedDeliveryDate; // @synthesize estimatedDeliveryDate=_estimatedDeliveryDate;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) NSString *shippingCompany; // @synthesize shippingCompany=_shippingCompany;
 @property(copy, nonatomic) NSString *trackingNumber; // @synthesize trackingNumber=_trackingNumber;
@@ -37,6 +37,7 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqualToPhysicalCardShippingUpdate:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *formattedEstimatedDeliveryDate;
 @property(readonly, nonatomic) NSURL *shipmentTrackingURL;
 - (void)encodeWithRecord:(id)arg1;
 - (id)initWithRecord:(id)arg1;

@@ -45,6 +45,7 @@
 - (void)setRecipients:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *recipients;
 - (id)initWithRecipients:(id)arg1 content:(id)arg2 speakableGroupName:(id)arg3 conversationIdentifier:(id)arg4 serviceName:(id)arg5 sender:(id)arg6;
+- (int)_preferredInteractionDirection;
 - (id)_categoryVerb;
 - (int)_intentCategory;
 - (void)_setMetadata:(id)arg1;

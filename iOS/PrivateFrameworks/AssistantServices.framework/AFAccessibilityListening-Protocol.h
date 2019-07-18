@@ -6,10 +6,9 @@
 
 #import <AssistantServices/NSObject-Protocol.h>
 
-@class AFAccessibilityObserver;
+@class AFAccessibilityObserver, AFAccessibilityState;
 
 @protocol AFAccessibilityListening <NSObject>
-- (void)accessibilityObserver:(AFAccessibilityObserver *)arg1 didChangeVibrationDisabledPreference:(_Bool)arg2;
-- (void)accessibilityObserver:(AFAccessibilityObserver *)arg1 didChangeVoiceOverTouchEnabledPreference:(_Bool)arg2;
+- (void)accessibilityObserver:(AFAccessibilityObserver *)arg1 stateDidChangeFrom:(AFAccessibilityState *)arg2 to:(AFAccessibilityState *)arg3;
 @end
 

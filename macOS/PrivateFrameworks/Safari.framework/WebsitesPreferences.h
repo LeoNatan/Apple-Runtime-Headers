@@ -132,7 +132,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)tableView:(id)arg1 isGroupRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
-- (id)helpAnchor;
+- (id)safariHelpAnchor;
 - (void)_showWebsitesPreferences;
 - (void)openPreference:(id)arg1;
 - (void)clearSelectedPreferenceValues:(id)arg1;

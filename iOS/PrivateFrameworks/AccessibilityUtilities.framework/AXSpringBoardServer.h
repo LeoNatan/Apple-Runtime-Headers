@@ -30,8 +30,8 @@
 - (id)focusedAppProcess;
 - (id)applicationWithIdentifier:(id)arg1;
 - (_Bool)isMagnifierVisible;
-- (void)didDismissNonExclusiveSystemUI;
-- (_Bool)isNonExclusiveSystemUIVisible;
+- (void)didPotentiallyDismissNonExclusiveSystemUI;
+- (_Bool)isNonExclusiveSystemUIFocusable;
 - (void)setLockScreenDimTimerEnabled:(_Bool)arg1;
 - (void)userEventOccurred;
 - (void)isMagnifierVisibleWithCompletion:(CDUnknownBlockType)arg1;
@@ -43,6 +43,7 @@
 - (id)focusedApps;
 - (_Bool)isMultiTaskingActive;
 - (_Bool)isSettingsAppFrontmost;
+- (_Bool)dismissBuddyIfNecessary;
 - (_Bool)isPurpleBuddyAppFrontmost;
 - (_Bool)_isSystemAppFrontmostExcludingSiri:(_Bool)arg1;
 - (void)_isSystemAppFrontmostExcludingSiri:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
@@ -68,6 +69,8 @@
 - (_Bool)isSiriTalkingOrListening;
 - (_Bool)isSiriVisible;
 - (_Bool)dismissSiri;
+- (_Bool)isSpotlightVisible;
+@property(readonly, nonatomic) _Bool isGuidedAccessActive;
 - (void)revealSpotlight;
 - (void)toggleSpotlight;
 - (void)simulateEdgePressHaptics;
@@ -76,6 +79,7 @@
 - (_Bool)isAppSwitcherVisible;
 - (_Bool)isShowingHomescreen;
 - (_Bool)isShowingNonSystemApp;
+- (_Bool)isStatusBarNativeFocusable;
 - (_Bool)isDockVisible;
 - (void)toggleDock;
 - (void)armApplePay;
@@ -162,6 +166,7 @@
 - (void)setVolume:(double)arg1;
 - (void)openCommandAndControlVocabulary;
 - (void)openCommandAndControlCommands;
+- (void)openCommandAndControlSettings;
 - (void)openSCATCustomGestureCreation;
 - (void)openAssistiveTouchCustomGestureCreation;
 - (void)takeScreenshot;

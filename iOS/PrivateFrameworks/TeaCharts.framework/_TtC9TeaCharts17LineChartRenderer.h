@@ -13,6 +13,7 @@
     // Error parsing type: , name: zoneMaskProvider
     // Error parsing type: , name: animationSynchronizer
     // Error parsing type: , name: reuseProtector
+    // Error parsing type: , name: accessibilityElementProvider
 }
 
 @end

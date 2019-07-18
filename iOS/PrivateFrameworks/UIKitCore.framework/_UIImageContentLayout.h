@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     struct {
         unsigned int contentsIsGenerator:1;
         unsigned int contentsIsCGImage:1;
+        unsigned int rendersContentAtNaturalSize:1;
     } _flags;
     id _contents;
     UIColor *_contentsMultiplyColor;
@@ -30,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (struct CGImage *)CGImageContents;
 - (_Bool)hasCGImageContents;
+- (_Bool)rendersContentsAtNaturalSize;
 - (_Bool)hasContents;
 @property(readonly, nonatomic) UIColor *contentsMultiplyColor;
 @property(readonly, nonatomic) id contents;

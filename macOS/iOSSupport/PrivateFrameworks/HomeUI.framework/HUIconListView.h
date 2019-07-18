@@ -6,38 +6,22 @@
 
 #import <UIKit/UIView.h>
 
-#import <HomeUI/UICollectionViewDataSource-Protocol.h>
-#import <HomeUI/UICollectionViewDelegate-Protocol.h>
-#import <HomeUI/UICollectionViewDelegateFlowLayout-Protocol.h>
+@class NSArray, NSMutableArray;
 
-@class NSArray, NSString, UICollectionView, UICollectionViewFlowLayout;
-
-@interface HUIconListView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface HUIconListView : UIView
 {
     NSArray *_iconNames;
-    unsigned long long _iconLimit;
-    UICollectionView *_iconCollectionView;
-    UICollectionViewFlowLayout *_flowLayout;
+    NSMutableArray *_iconViews;
 }
 
-@property(retain, nonatomic) UICollectionViewFlowLayout *flowLayout; // @synthesize flowLayout=_flowLayout;
-@property(retain, nonatomic) UICollectionView *iconCollectionView; // @synthesize iconCollectionView=_iconCollectionView;
-@property(nonatomic) unsigned long long iconLimit; // @synthesize iconLimit=_iconLimit;
+@property(retain, nonatomic) NSMutableArray *iconViews; // @synthesize iconViews=_iconViews;
 @property(retain, nonatomic) NSArray *iconNames; // @synthesize iconNames=_iconNames;
 - (void).cxx_destruct;
-- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-- (long long)numberOfSectionsInCollectionView:(id)arg1;
-- (void)_setUpCollectionViewConstraints;
-- (void)_setUpCollectionView;
-- (void)_setUpFlowLayout;
+- (void)_prepareIconArray;
+- (void)_addIconNamed:(id)arg1;
+- (void)layoutSubviews;
+- (void)_setUpIcons;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

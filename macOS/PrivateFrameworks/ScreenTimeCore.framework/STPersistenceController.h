@@ -8,7 +8,7 @@
 
 #import <ScreenTimeCore/STPersistenceControllerProtocol-Protocol.h>
 
-@class NSManagedObjectContext, NSMutableDictionary, NSPersistentContainer, NSString;
+@class NSManagedObjectContext, NSMutableDictionary, NSPersistentContainer, NSPersistentStore, NSString;
 @protocol OS_dispatch_queue;
 
 @interface STPersistenceController : NSObject <STPersistenceControllerProtocol>
@@ -23,6 +23,7 @@
 @property(readonly, copy, nonatomic) NSMutableDictionary *lastPersistentHistoryTokenByStoreIdentifier; // @synthesize lastPersistentHistoryTokenByStoreIdentifier=_lastPersistentHistoryTokenByStoreIdentifier;
 @property(retain, nonatomic) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
 - (void).cxx_destruct;
+- (void)_logAboutMissingStoreName:(id)arg1;
 - (void)_persistentStoreCoordinatorStoresDidChange:(id)arg1;
 - (void)_remotePersistentStoreDidChange:(id)arg1;
 - (id)descriptionForPersistentStore:(id)arg1;
@@ -31,11 +32,14 @@
 @property(readonly, nonatomic) BOOL hasStoreLoaded;
 - (void)setLocalPersistentStoreValue:(id)arg1 forKey:(id)arg2;
 - (id)localPersistentStoreMetadataValueForKey:(id)arg1;
+@property(readonly) NSPersistentStore *cloudStore;
+@property(readonly) NSPersistentStore *localStore;
 @property(readonly, nonatomic) NSManagedObjectContext *viewContext;
 - (id)newBackgroundContext;
 - (void)performBackgroundTaskAndWait:(CDUnknownBlockType)arg1;
 - (void)performBackgroundTask:(CDUnknownBlockType)arg1;
 - (id)init;
+- (id)initWithPersistentContainer:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,6 +8,7 @@
 
 @class PHAssetCollection;
 
+__attribute__((visibility("hidden")))
 @interface WFPHAssetCollectionPredicate : NSComparisonPredicate
 {
     PHAssetCollection *_assetCollection;

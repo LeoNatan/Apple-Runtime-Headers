@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (id)_swatchImageForColor:(unsigned long long)arg1 andDialShape:(unsigned long long)arg2;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
+- (_Bool)_wantsConstantSpeedZoom;
 - (void)reloadDataSources;
 - (void)setupDataSources;
 - (void)_updateDialSize;

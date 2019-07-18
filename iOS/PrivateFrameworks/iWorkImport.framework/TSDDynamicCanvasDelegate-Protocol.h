@@ -6,13 +6,9 @@
 
 #import <iWorkImport/TSDCanvasDelegate-Protocol.h>
 
-@class TSDCanvas, TSDLayout;
+@class TSDCanvas;
 
 @protocol TSDDynamicCanvasDelegate <TSDCanvasDelegate>
-- (void)i_layoutUnregistered:(TSDLayout *)arg1;
-- (void)i_layoutRegistered:(TSDLayout *)arg1;
-
-@optional
 - (void)i_canvasWillLayout:(TSDCanvas *)arg1;
 @end
 

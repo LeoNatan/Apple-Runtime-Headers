@@ -16,7 +16,6 @@
 }
 
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (BOOL)shouldAcceptNewConnection:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

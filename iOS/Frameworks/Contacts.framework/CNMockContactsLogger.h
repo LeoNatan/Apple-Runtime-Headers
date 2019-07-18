@@ -15,6 +15,12 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)setContactImageDataZeroCropRect:(id)arg1 format:(const char *)arg2;
+- (void)setContactImageData:(id)arg1 format:(const char *)arg2 cropRect:(struct CGRect)arg3;
+- (void)removeContactImageData;
+- (void)setContactImageData:(id)arg1;
+- (void)applyContactUpdateOfKind:(const char *)arg1 value:(id)arg2 property:(id)arg3;
+- (void)postingNotificationWithName:(id)arg1;
 - (void)XPCConnectionWasInterrupted;
 - (void)XPCConnectionWasInvalidated;
 - (void)errorWhenQueryingTetheredSyncData:(id)arg1;
@@ -37,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)contactsAccessWasGranted:(_Bool)arg1;
 - (void)tccAccessRequestWasDenied;
 - (void)tccAccessPreflightWasDenied;
+- (void)postingNotification:(CDUnknownBlockType)arg1;
 - (void)servicingContactsRequest:(CDUnknownBlockType)arg1;
 - (void)settingDefaultAccount:(CDUnknownBlockType)arg1;
 - (void)resettingSortDataIfNeeded:(CDUnknownBlockType)arg1;

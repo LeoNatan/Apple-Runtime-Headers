@@ -18,7 +18,7 @@
 + (id)boldSystemFontOfSize:(double)arg1;
 + (id)systemFontOfSize:(double)arg1;
 + (id)fontWithName:(id)arg1 size:(double)arg2;
-+ (id)fontWithUIFont:(id)arg1;
++ (id)fontWithPlatformFont:(id)arg1;
 @property(readonly, nonatomic) struct __CTFont *CTFont; // @synthesize CTFont=_ctFont;
 - (id)convertFontToBold:(_Bool)arg1 italic:(_Bool)arg2;
 - (id)fontWithScale:(double)arg1;
@@ -34,8 +34,7 @@
 - (void)dealloc;
 - (id)initWithCTFont:(struct __CTFont *)arg1;
 @property(readonly, nonatomic) UIFont *platformFont;
-@property(readonly, nonatomic) UIFont *UIFont;
-- (id)initWithUIFont:(id)arg1;
+- (id)initWithPlatformFont:(id)arg1;
 
 @end
 

@@ -12,6 +12,7 @@
 }
 
 @property(readonly, nonatomic) unsigned int numberOfFirstPartyWorkoutsOver15MinutesDuringCurrentFitnessWeek; // @synthesize numberOfFirstPartyWorkoutsOver15MinutesDuringCurrentFitnessWeek=_numberOfFirstPartyWorkoutsOver15MinutesDuringCurrentFitnessWeek;
+- (id)valueForUndefinedKey:(id)arg1;
 - (id)initWithNumberOfFirstPartyWorkoutsOver15MinutesDuringCurrentFitnessWeek:(unsigned int)arg1;
 
 @end

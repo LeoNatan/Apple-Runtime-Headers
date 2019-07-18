@@ -28,6 +28,7 @@
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(nonatomic, getter=isBlacklisted) _Bool blacklisted; // @synthesize blacklisted=_blacklisted;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isEnRoute;
 @property(readonly, nonatomic, getter=isInStation) _Bool inStation;
 @property(readonly, nonatomic) NSDecimalNumber *decimalTransitBalance;
 @property(readonly, nonatomic) NSString *displayableTransitBalance;

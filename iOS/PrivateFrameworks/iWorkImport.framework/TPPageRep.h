@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSDFill *cachedBackgroundFill; // @synthesize cachedBackgroundFill=_cachedBackgroundFill;
 @property(readonly, nonatomic) TPiOSMarginAdjustRep *marginAdjustRep; // @synthesize marginAdjustRep=_marginAdjustRep;
 - (void).cxx_destruct;
+- (id)parentRepForMagnification;
 - (id)bodyReps;
 - (_Bool)masksToBounds;
 - (void)drawInContext:(struct CGContext *)arg1;

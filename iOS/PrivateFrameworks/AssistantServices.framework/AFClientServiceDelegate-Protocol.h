@@ -6,16 +6,15 @@
 
 #import <AssistantServices/NSObject-Protocol.h>
 
-@class AFAudioPlaybackRequest, AFSpeechInterpretation, AFXPCWrapper, AceObject, INImage, NSArray, NSDictionary, NSError, NSString, NSURL, SASSpeechPartialResult, SASSpeechRecognized;
+@class AFAudioPlaybackRequest, AFSpeechInterpretation, AFXPCWrapper, AceObject, INImage, INIntent, NSArray, NSDictionary, NSError, NSString, NSURL, SASSpeechPartialResult, SASSpeechRecognized;
 @protocol SAAceCommand;
 
 @protocol AFClientServiceDelegate <NSObject>
 - (oneway void)audioSessionDidBecomeActive:(_Bool)arg1;
 - (oneway void)audioSessionWillBecomeActive:(_Bool)arg1;
 - (oneway void)startPlaybackDidFail:(long long)arg1;
-- (oneway void)willProcessStartPlayback:(long long)arg1 completion:(void (^)(_Bool))arg2;
+- (oneway void)willProcessStartPlayback:(long long)arg1 intent:(INIntent *)arg2 completion:(void (^)(_Bool, _Bool))arg3;
 - (oneway void)audioPlaybackRequestDidStop:(AFAudioPlaybackRequest *)arg1 error:(NSError *)arg2;
-- (oneway void)audioPlaybackRequestDidNotStart:(AFAudioPlaybackRequest *)arg1 error:(NSError *)arg2;
 - (oneway void)audioPlaybackRequestDidStart:(AFAudioPlaybackRequest *)arg1;
 - (oneway void)audioPlaybackRequestWillStart:(AFAudioPlaybackRequest *)arg1;
 - (oneway void)audioSessionDidEndInterruption:(_Bool)arg1;
@@ -51,7 +50,6 @@
 - (oneway void)requestRequestedOpenURL:(NSURL *)arg1 reply:(void (^)(_Bool))arg2;
 - (oneway void)requestRequestedOpenApplicationWithBundleID:(NSString *)arg1 URL:(NSURL *)arg2 reply:(void (^)(_Bool))arg3;
 - (oneway void)requestHandleCommand:(AceObject<SAAceCommand> *)arg1 reply:(void (^)(AceObject<SAAceCommand> *, NSError *))arg2;
-- (oneway void)requestDidReceiveCommand:(AceObject<SAAceCommand> *)arg1 reply:(void (^)(AceObject<SAAceCommand> *))arg2;
 - (oneway void)audioSessionIDChanged:(unsigned int)arg1;
 - (oneway void)shouldSpeakChanged:(_Bool)arg1;
 @end

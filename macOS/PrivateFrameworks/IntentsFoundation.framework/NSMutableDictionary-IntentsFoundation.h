@@ -7,7 +7,8 @@
 #import <Foundation/NSMutableDictionary.h>
 
 @interface NSMutableDictionary (IntentsFoundation)
-- (void)_inf_setBoolIfYES:(BOOL)arg1 forKey:(id)arg2;
-- (void)_inf_setObjectIfNonNil:(id)arg1 forKey:(id)arg2;
+- (id)if_popObjectForKey:(id)arg1;
+- (void)if_setBoolIfYES:(BOOL)arg1 forKey:(id)arg2;
+- (void)if_setObjectIfNonNil:(id)arg1 forKey:(id)arg2;
 @end
 

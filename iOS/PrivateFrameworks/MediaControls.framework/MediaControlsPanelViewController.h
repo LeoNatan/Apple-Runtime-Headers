@@ -6,19 +6,17 @@
 
 #import <UIKit/UIViewController.h>
 
-@class MPAVRoutingViewController, MTVibrantStylingProvider, UIView;
+@class MPAVRoutingViewController, UIView;
 
 @interface MediaControlsPanelViewController : UIViewController
 {
     id _delegate;
     MPAVRoutingViewController *_routingViewController;
-    MTVibrantStylingProvider *_vibrantStylingProvider;
     UIView *_backgroundView;
 }
 
 + (id)panelViewControllerForCoverSheet;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
-@property(retain, nonatomic) MTVibrantStylingProvider *vibrantStylingProvider; // @synthesize vibrantStylingProvider=_vibrantStylingProvider;
 @property(retain, nonatomic) MPAVRoutingViewController *routingViewController; // @synthesize routingViewController=_routingViewController;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 - (void)etaUpdated:(id)arg1;
 - (void)addParticipants:(id)arg1;
 - (void)_sendDestinationIfNeeded;
-- (_Bool)_needToSendEtaRefreshFor:(id)arg1;
+- (_Bool)_needToSendEtaRefreshFor:(id)arg1 state:(id)arg2;
 - (_Bool)_validDestinationState:(id)arg1;
 
 @end

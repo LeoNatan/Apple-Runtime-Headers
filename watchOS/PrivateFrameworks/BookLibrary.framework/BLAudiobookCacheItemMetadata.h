@@ -25,6 +25,7 @@
 @property(retain, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 - (void).cxx_destruct;
 - (void)_load;
+- (void)remove;
 - (void)save;
 @property(readonly, nonatomic) double cachedDuration;
 @property(readonly, nonatomic) double cachedStartTime;

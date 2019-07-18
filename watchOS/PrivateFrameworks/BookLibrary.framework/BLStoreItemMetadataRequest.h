@@ -17,6 +17,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)_responseDictionaryForKeyCertificateURL:(id)arg1 keyServerURL:(id)arg2;
 - (void)_performBuyProductRequest;
 - (void)execute;
 - (void)performRequestWithResponseHandler:(CDUnknownBlockType)arg1;

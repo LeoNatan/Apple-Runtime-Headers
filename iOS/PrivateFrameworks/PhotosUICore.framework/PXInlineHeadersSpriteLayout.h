@@ -8,7 +8,7 @@
 
 #import <PhotosUICore/PXGViewSource-Protocol.h>
 
-@class NSCalendar, NSDateComponents, NSDateFormatter, NSDictionary, NSString, PXCuratedLibraryInlineHeadersDataSource, PXCuratedLibraryInlineHeadersLayoutSpec;
+@class NSCalendar, NSDateFormatter, NSString, PXCuratedLibraryInlineHeadersDataSource, PXCuratedLibraryInlineHeadersLayoutSpec;
 @protocol PXCuratedLibraryInlineHeadersLayoutGeometrySource;
 
 @interface PXInlineHeadersSpriteLayout : PXGItemsLayout <PXGViewSource>
@@ -17,8 +17,6 @@
     NSDateFormatter *_yearFormatter;
     NSDateFormatter *_monthFormatter;
     NSCalendar *_calendar;
-    NSDateComponents *_dateComponents;
-    NSDictionary *_textAttributes;
     unsigned short _mediaVersion;
     _Bool _didHideSprites;
     unsigned long long _level;
@@ -40,6 +38,8 @@
 - (void)update;
 - (void)_bumpMediaVersion;
 - (void)invalidateAnchorItemFrames;
+- (void)_currentLocaleChanged:(id)arg1;
+- (void)_setupDateFormatters;
 - (void)alphaDidChange;
 - (void)screenScaleDidChange;
 - (void)visibleRectDidChange;

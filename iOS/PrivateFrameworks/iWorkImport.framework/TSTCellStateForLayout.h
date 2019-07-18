@@ -6,13 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class TSTCell, TSTLayoutContentCachedKey, TSWPColumn;
+#import <iWorkImport/NSCopying-Protocol.h>
+
+@class TSTCell, TSTLayoutContentCachedKey, TSWPColumn, TSWPParagraphStyle;
 
 __attribute__((visibility("hidden")))
-@interface TSTCellStateForLayout : NSObject
+@interface TSTCellStateForLayout : NSObject <NSCopying>
 {
     _Bool _cellPropsRowHeight;
     _Bool _cellWraps;
+    _Bool _needWPColumn;
+    _Bool _shouldFastPathMeasureFitWidth;
     _Bool _forDrawing;
     _Bool _inDynamicLayout;
     int _verticalAlignment;
@@ -21,6 +25,7 @@ __attribute__((visibility("hidden")))
     TSTCell *_cell;
     id _cellContents;
     double _maxWidthForChildren;
+    TSWPParagraphStyle *_textStyle;
     TSTLayoutContentCachedKey *_keyVal;
     TSWPColumn *_wpColumn;
     unsigned long long _pageNumber;
@@ -28,6 +33,7 @@ __attribute__((visibility("hidden")))
     struct TSUCellRect _layoutMergeRange;
     struct CGSize _minSize;
     struct CGSize _maxSize;
+    struct CGSize _sizeOfText;
     struct UIEdgeInsets _paddingInsets;
 }
 
@@ -35,11 +41,15 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long pageNumber; // @synthesize pageNumber=_pageNumber;
 @property(retain, nonatomic) TSWPColumn *wpColumn; // @synthesize wpColumn=_wpColumn;
 @property(retain, nonatomic) TSTLayoutContentCachedKey *keyVal; // @synthesize keyVal=_keyVal;
+@property(nonatomic) struct CGSize sizeOfText; // @synthesize sizeOfText=_sizeOfText;
 @property(nonatomic) int layoutCacheFlags; // @synthesize layoutCacheFlags=_layoutCacheFlags;
 @property(nonatomic) _Bool inDynamicLayout; // @synthesize inDynamicLayout=_inDynamicLayout;
 @property(nonatomic) _Bool forDrawing; // @synthesize forDrawing=_forDrawing;
+@property(nonatomic) _Bool shouldFastPathMeasureFitWidth; // @synthesize shouldFastPathMeasureFitWidth=_shouldFastPathMeasureFitWidth;
+@property(nonatomic) _Bool needWPColumn; // @synthesize needWPColumn=_needWPColumn;
 @property(nonatomic) _Bool cellWraps; // @synthesize cellWraps=_cellWraps;
 @property(nonatomic) _Bool cellPropsRowHeight; // @synthesize cellPropsRowHeight=_cellPropsRowHeight;
+@property(retain, nonatomic) TSWPParagraphStyle *textStyle; // @synthesize textStyle=_textStyle;
 @property(nonatomic) int verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic) struct UIEdgeInsets paddingInsets; // @synthesize paddingInsets=_paddingInsets;
 @property(nonatomic) double maxWidthForChildren; // @synthesize maxWidthForChildren=_maxWidthForChildren;
@@ -51,6 +61,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct TSUCellCoord modelCellID; // @synthesize modelCellID=_modelCellID;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasContent;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 
 @end

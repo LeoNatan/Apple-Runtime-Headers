@@ -12,8 +12,10 @@ __attribute__((visibility("hidden")))
     double _bootstrapInterval;
     double _documentUpdateOffsetInterval;
     unsigned long long _maximumAutoPlayableItems;
+    double _duration;
 }
 
+@property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned long long maximumAutoPlayableItems; // @synthesize maximumAutoPlayableItems=_maximumAutoPlayableItems;
 @property(nonatomic) double documentUpdateOffsetInterval; // @synthesize documentUpdateOffsetInterval=_documentUpdateOffsetInterval;
 @property(nonatomic) double bootstrapInterval; // @synthesize bootstrapInterval=_bootstrapInterval;

@@ -32,6 +32,7 @@
 - (_Bool)pauseHapticSequence:(unsigned int)arg1 atTime:(double)arg2;
 - (_Bool)stopHapticSequence:(unsigned int)arg1 atTime:(double)arg2;
 - (_Bool)playHapticSequence:(unsigned int)arg1 atTime:(double)arg2 offset:(double)arg3;
+- (void)expectNotifyAfter:(double)arg1;
 - (_Bool)finishWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)stopRunningWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)stopRunning;

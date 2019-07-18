@@ -6,7 +6,7 @@
 
 #import <MapKit/MKCustomSeparatorTableViewCell.h>
 
-@class MKThemeMultiPartLabel, NSArray, NSDate, NSLayoutConstraint, NSMutableDictionary, NSString, NSTimeZone, UIButton, UIImageView, UIStackView, _MKUILabel;
+@class MKThemeMultiPartLabel, NSArray, NSDate, NSLayoutConstraint, NSMapTable, NSMutableDictionary, NSString, NSTimeZone, UIButton, UIImageView, UIStackView, _MKUILabel;
 @protocol MKTransitDeparturesCellDelegate;
 
 @interface MKTransitDeparturesCell : MKCustomSeparatorTableViewCell
@@ -27,7 +27,7 @@
     NSLayoutConstraint *_labelLeadingMarginConstraint;
     BOOL _enforceMinimumDepartureLabelWidth;
     NSLayoutConstraint *_minimumDepartureLabelWidthConstraint;
-    NSArray *_departureDependentConstraints;
+    NSMapTable *_departureDependentConstraintsByView;
     double _lineImageCenteringValue;
     NSLayoutConstraint *_lineImageToContainerTrailingConstraint;
     NSLayoutConstraint *_lineImageViewTopConstraint;
@@ -45,6 +45,8 @@
     NSLayoutConstraint *_lineImageToTextGutterConstraint;
     NSLayoutConstraint *_lineImageLeadingConstraint;
     NSLayoutConstraint *_lineImageCompressedLeadingConstraint;
+    UIImageView *_disclosureArrowImageView;
+    NSLayoutConstraint *_labelToDisclosureArrowConstraint;
     BOOL _showNoConnectionEmDash;
     BOOL _showIncidentIcon;
     BOOL _inactive;
@@ -110,7 +112,10 @@
 - (double)_separatorHeight;
 - (void)_updateLabelFonts;
 - (void)infoCardThemeChanged;
+- (void)_updateDepartureDependentConstraintsForCurrentState;
+- (void)_getDepartureDependentConstraintsToActivate:(id *)arg1 toDeactivate:(id *)arg2;
 - (BOOL)_shouldPinSecondaryStackViewToBottom;
+- (BOOL)_isDisplayingDepartureInfo;
 - (BOOL)_shouldEnforceMinimumDepartureLabelWidth;
 - (BOOL)_shouldEnforceDepartureDependentConstraints;
 - (void)_updateLineImageViewConstraintConstants;

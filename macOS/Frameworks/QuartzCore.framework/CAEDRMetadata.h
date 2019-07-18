@@ -16,6 +16,7 @@
 + (id)HDR10MetadataWithMinLuminance:(float)arg1 maxLuminance:(float)arg2 opticalOutputScale:(float)arg3;
 + (id)HDR10MetadataWithDisplayInfo:(id)arg1 contentInfo:(id)arg2 opticalOutputScale:(float)arg3;
 - (id)description;
+- (void)dealloc;
 - (id)initWithBT2100HLG;
 - (id)initWithMasteringDisplayMinNits:(float)arg1 maxNits:(float)arg2 opticalOutputScale:(float)arg3;
 - (id)initWithSEIMasteringDisplayData:(id)arg1 contentLightLevelData:(id)arg2 opticalOutputScale:(float)arg3;

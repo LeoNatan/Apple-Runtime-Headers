@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)configureMinRowCount:(double)arg1 maxRowCount:(double)arg2;
 - (unsigned int)notificationOptionsForNodes:(const struct TFENodeVector *)arg1;
 - (void)updateSeparatorsInStackViews;
+@property(readonly, nonatomic) _Bool shouldBeVisible;
 - (void)aboutToTearDown;
 - (void)loadValueControllers;
 - (void)viewLoaded;

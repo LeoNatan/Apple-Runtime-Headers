@@ -12,13 +12,14 @@
 {
     NSProgress *_remoteProgress;
     NSString *_actionIdentifier;
-    NSArray *_items;
+    NSArray *_itemIdentifiers;
+    NSString *_domainIdentifier;
 }
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)actionMain;
-- (id)initWithActionIdentifier:(id)arg1 items:(id)arg2;
+- (id)initWithActionIdentifier:(id)arg1 providerDomainID:(id)arg2 itemIdentifiers:(id)arg3;
 
 @end
 

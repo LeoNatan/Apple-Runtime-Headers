@@ -21,6 +21,7 @@
 
 + (id)serviceQuality;
 + (id)interface;
++ (void)_unregisterConnection:(id)arg1;
 + (id)serverForConnection:(id)arg1;
 @property(nonatomic) long long presentationIdentifier; // @synthesize presentationIdentifier=_presentationIdentifier;
 @property(nonatomic) __weak id <SASPresentationServerDelegate> weak_delegate; // @synthesize weak_delegate=_weak_delegate;

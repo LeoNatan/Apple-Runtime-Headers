@@ -31,6 +31,7 @@
 - (id)updatedTileInfoWithNewHeadline:(id)arg1;
 @property(readonly, nonatomic) unsigned long long bookmarkOffsetType;
 @property(readonly, nonatomic) NFLHeadlineTileInfo *feedTileInfoForBookmarking;
+@property(readonly, nonatomic, getter=isSelectable) BOOL selectable;
 @property(readonly, nonatomic) BOOL pageable;
 - (id)underlyingTileInfoForID:(id)arg1;
 - (BOOL)underlyingTileInfosContainsTileInfoForID:(id)arg1;

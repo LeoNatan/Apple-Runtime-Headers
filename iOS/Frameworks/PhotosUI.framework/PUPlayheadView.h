@@ -10,6 +10,7 @@ __attribute__((visibility("hidden")))
 @interface PUPlayheadView : UIView
 {
     UIView *_line;
+    UIView *_outline;
     _Bool _tintColorForPlayhead;
 }
 

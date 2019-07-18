@@ -12,16 +12,17 @@
 {
     NSArray *_processes;
     NSMutableDictionary *_pidToFootprint;
-    NSMutableDictionary *_memoryObjects;
-    NSMutableDictionary *_sharedCache64MemoryObjects;
-    NSMutableDictionary *_sharedCache32MemoryObjects;
-    NSMutableDictionary *_textMemoryObjects;
-    NSMutableDictionary *_linkeditMemoryObjects;
+    struct __CFDictionary *_memoryObjects;
+    struct __CFDictionary *_sharedCache64MemoryObjects;
+    struct __CFDictionary *_sharedCache32MemoryObjects;
+    struct __CFDictionary *_textMemoryObjects;
+    struct __CFDictionary *_linkeditMemoryObjects;
     NSMutableArray *_uniqueMemoryObjects;
     NSMutableArray *_outputFormatters;
     BOOL _earlyExit;
 }
 
++ (id)_processesBySortingPidDesc:(id)arg1;
 + (void)_totalForCategories:(id)arg1 outTotal:(CDStruct_8346b022 *)arg2;
 + (id)installCancelHandler:(CDUnknownBlockType)arg1;
 + (void)setSharingAnalysisDisabled:(BOOL)arg1;
@@ -30,8 +31,8 @@
 + (BOOL)breakDownPhysFootprint;
 @property(readonly, nonatomic) NSArray *processes; // @synthesize processes=_processes;
 - (void).cxx_destruct;
-- (id)_getProcessListSortedByFootprint;
-- (id)_getProcessListSortedByPidDesc;
+- (id)_processesBySortingFootprint:(id)arg1;
+- (id)_notHiddenProcesses;
 - (void)_buildProcessToFootprintMap;
 - (unsigned long long)_calculateFootprintForProcess:(id)arg1;
 - (id)_categoriesForObjects:(id)arg1 viewedByProcess:(id)arg2 hasProcessView:(char *)arg3 summarize:(BOOL)arg4;
@@ -41,9 +42,10 @@
 - (void)printOutputVerbose:(BOOL)arg1 summarize:(BOOL)arg2;
 - (void)addOutputFormatter:(id)arg1;
 - (void)_addProcess:(id)arg1;
-- (void)calculateSizes;
+- (void)finalizeObjects;
 - (void)gatherData;
 - (void)cancel;
+- (void)dealloc;
 - (id)initWithProcesses:(id)arg1;
 
 @end

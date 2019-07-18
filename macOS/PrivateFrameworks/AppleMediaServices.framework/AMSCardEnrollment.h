@@ -10,12 +10,14 @@
 {
 }
 
++ (id)_shouldAttemptApplePayWithCountryCode:(id)arg1 paymentNetworks:(id)arg2;
 + (id)_paymentServicesMerchantURLPromise;
 + (id)_currentIdentifier;
 + (id)_cardEligibilityStatusForCountryCode:(id)arg1;
 + (void)updateAutoEnrollmentIdentifier;
 + (BOOL)shouldUseAutoEnrollmentWithPercentage:(double)arg1 sessionDuration:(double)arg2;
 + (BOOL)shouldAttemptAutoEnrollmentWithCountryCode:(id)arg1;
++ (BOOL)shouldAttemptApplePayClassicWithCountryCode:(id)arg1 paymentNetworks:(id)arg2;
 + (void)clearAutoEnrollmentIdentifier;
 + (BOOL)shouldAttemptAutoEnrollment;
 + (id)paymentServicesMerchantURL;

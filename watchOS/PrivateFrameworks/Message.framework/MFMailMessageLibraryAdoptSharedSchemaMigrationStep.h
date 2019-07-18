@@ -14,14 +14,20 @@
     NSString *_protectedDatabaseName;
 }
 
++ (void)cleanUpAfterMigrationWithConnection:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *protectedDatabaseName; // @synthesize protectedDatabaseName=_protectedDatabaseName;
 @property(retain, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (_Bool)_cleanupOldSchema;
-- (id)_addressListFromDatabaseEncodedString:(id)arg1;
-- (id)_findOrCreateDatabaseIDForSummary:(id)arg1 cache:(id)arg2 insertStatement:(id)arg3 connection:(id)arg4;
-- (id)_findOrCreateDatabaseIDForAddress:(id)arg1 cache:(id)arg2 insertStatement:(id)arg3 connection:(id)arg4;
+- (_Bool)_createIndexes;
+- (_Bool)_migrateMessages;
+- (_Bool)_migrateSendersAndRecipients;
+- (_Bool)_migrateSummaries;
+- (_Bool)_migrateSubjects;
+- (_Bool)_migrateNonMessages;
 - (_Bool)_migrateData;
+- (_Bool)_dropTemporaryTables;
+- (_Bool)_createTemporaryTables;
 - (_Bool)_transformProtectedSchema;
 - (_Bool)_transformSchema;
 - (_Bool)_initializeOldProtectedSchema;
@@ -35,7 +41,6 @@
 - (id)_spotlightTombstonesTableSchema;
 - (id)_accountsTableSchema;
 - (id)_popUIDsTableSchema;
-- (id)_messageMetadataTableSchema;
 - (id)_messageDataDeletedTableSchema;
 - (id)_messageDataTableSchema;
 - (id)_propertiesTableSchema;

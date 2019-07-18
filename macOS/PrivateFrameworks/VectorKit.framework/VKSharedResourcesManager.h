@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)resources;
+- (BOOL)hasResoruces;
 - (void)dealloc;
 - (id)init;
 

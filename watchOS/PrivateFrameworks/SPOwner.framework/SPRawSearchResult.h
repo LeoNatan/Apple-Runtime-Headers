@@ -38,6 +38,7 @@
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithHashedPublicKey:(id)arg1 publicKey:(id)arg2 datePublished:(id)arg3 status:(int)arg4 timestamp:(id)arg5 latitude:(double)arg6 longitude:(double)arg7 horizontalAccuracy:(double)arg8 rssi:(int)arg9;
 - (id)initWithHashedPublicKey:(id)arg1 publicKey:(id)arg2 datePublished:(id)arg3 status:(int)arg4 timestamp:(id)arg5 latitude:(double)arg6 longitude:(double)arg7 horizontalAcuracy:(double)arg8 rssi:(int)arg9;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

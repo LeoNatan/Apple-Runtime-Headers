@@ -27,12 +27,13 @@
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
 - (id)startDownloadForContentItem:(id)arg1 userInitiated:(_Bool)arg2 shouldLoadRemainingMessageContent:(_Bool)arg3;
+- (void)inlineImageFinishedDownloading:(id)arg1;
 - (void)setPercentCompleted:(double)arg1 forContentItem:(id)arg2;
 - (void)setDisplayState:(long long)arg1 forContentItem:(id)arg2;
 - (long long)displayStateForContentItem:(id)arg1;
 - (void)_injectAttachmentViewForElementWithSourceAttributeValue:(id)arg1 forContentItem:(id)arg2;
 - (void)updateDragItemProvider:(id)arg1 forContentID:(id)arg2;
-- (id)_futureForContentItem:(id)arg1;
+- (id)futureForContentItem:(id)arg1;
 - (void)showMenuForContentItem:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;
 - (void)displayViewerForContentItem:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;
 - (void)attachmentWasTappedWithContentID:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;

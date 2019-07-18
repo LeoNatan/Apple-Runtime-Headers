@@ -20,7 +20,10 @@
 
 + (id)identifierWithImmediateInvocationForIdentifier:(id)arg1;
 + (double)gracePeriodForPriority:(long long)arg1 deviceCount:(long long)arg2;
++ (const char *)xpcActivityPriorityForPriority:(long long)arg1 deviceCount:(long long)arg2;
 + (id)baseCoreAnalyticsEventPayloadForActivity:(id)arg1;
++ (_Bool)shouldReportAnalyticsForContainerIdentifier:(id)arg1;
++ (_Bool)shouldReportAnalyticsForActivity:(id)arg1;
 + (id)activityFromXPCActivity:(id)arg1;
 + (id)xpcActivityIdentifierForCKActivityIdentifier:(id)arg1;
 + (id)sharedScheduler;
@@ -34,7 +37,7 @@
 - (long long)currentPriorityForActivityIdentifier:(id)arg1;
 - (id)activityForActivityIdentifier:(id)arg1;
 - (_Bool)hasPendingActivityWithActivityIdentifier:(id)arg1;
-- (void)getGracePeriodForActivity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)getDeviceCountForActivity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)populateCriteria:(id)arg1 withAdditionalCriteriaFromActivity:(id)arg2;
 - (void)getSuggestedXPCActivityCriteriaForActivity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)xpcActivityForActivityWithIdentifier:(id)arg1;

@@ -31,6 +31,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSString *asString;
 - (BOOL)_stringPrefix;
+@property(nonatomic) _Bool isDocumentsFolderSymlink;
 @property(readonly, nonatomic) _Bool isDocument;
 - (_Bool)isFolderOrAliasID;
 - (void)sqliteBind:(struct sqlite3_stmt *)arg1 index:(int)arg2;
@@ -40,7 +41,7 @@
 @property(readonly, nonatomic) _Bool isAppLibraryRoot;
 - (_Bool)isCloudDocsRoot;
 - (id)initAsCloudDocsRoot;
-- (id)initWithALDocumentsRowID:(unsigned long long)arg1;
+- (id)initWithALDocumentsRowID:(unsigned long long)arg1 isSymlink:(_Bool)arg2;
 - (id)initWithALRootRowID:(unsigned long long)arg1;
 - (id)initWithRowID:(unsigned long long)arg1 isDocument:(_Bool)arg2;
 

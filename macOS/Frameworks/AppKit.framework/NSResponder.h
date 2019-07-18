@@ -24,7 +24,6 @@
 }
 
 + (BOOL)automaticallyTracksDependenciesOnValueForKey:(id)arg1;
-+ (void)initialize;
 + (id)restorableStateKeyPaths;
 + (BOOL)automaticallyNotifiesObserversOfTouchBar;
 + (BOOL)automaticallyNotifiesObserversOfServicesRequestor;
@@ -47,6 +46,8 @@
 - (BOOL)accessibilityPerformDecrement;
 - (BOOL)accessibilityPerformConfirm;
 - (BOOL)accessibilityPerformCancel;
+- (void)setAccessibilityOverridesAlwaysTakePrecedence:(BOOL)arg1;
+- (BOOL)accessibilityOverridesAlwaysTakePrecedence;
 - (void)setAccessibilityContentSiblingBelow:(id)arg1;
 - (id)accessibilityContentSiblingBelow;
 - (void)setAccessibilityContentSiblingAbove:(id)arg1;
@@ -417,7 +418,6 @@
 @property(retain) NSKeyValueDependencyInfo *dependencyInfo;
 @property NSResponder *nextResponder;
 - (id)_nextResponderForEvent:(id)arg1;
-- (void)_swizzledSetupForwarderForClassMethodSelector:(SEL)arg1;
 - (id)colorFactory;
 - (void)setInterfaceStyle:(unsigned long long)arg1;
 - (unsigned long long)interfaceStyle;
@@ -425,6 +425,7 @@
 - (id)NS_touchBarProviders;
 - (id)_eventResponderChainDescription;
 @property(readonly) NSString *_responderDebugDescription;
+- (BOOL)_hasDependent:(id)arg1 forKey:(id)arg2 currentlyValid:(char *)arg3;
 - (void)_invalidateDependenciesOnValueForKey:(id)arg1;
 - (void)_addDependencyOnValueForKey:(id)arg1;
 - (id)presentationWindowForError:(id)arg1 originatedInWindow:(id)arg2;

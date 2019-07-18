@@ -46,6 +46,7 @@
     _Bool _shouldUseNetworkingResourcesForLiveStreamingWhilePaused;
     _Bool __hasBegunObservation;
     _Bool _hasPerformedInitialSetup;
+    _Bool _wasInitializedUsingWebKitSPI;
     _Bool _requiresImmediateAssetInspection;
     _Bool _showsTimecodes;
     _Bool _canPausePlaybackWhenExitingFullScreen;
@@ -90,6 +91,7 @@
 @property(nonatomic) _Bool showsTimecodes; // @synthesize showsTimecodes=_showsTimecodes;
 @property(nonatomic) _Bool requiresImmediateAssetInspection; // @synthesize requiresImmediateAssetInspection=_requiresImmediateAssetInspection;
 @property(copy, nonatomic) NSString *overrideRoutingContextUID; // @synthesize overrideRoutingContextUID=_overrideRoutingContextUID;
+@property(nonatomic) _Bool wasInitializedUsingWebKitSPI; // @synthesize wasInitializedUsingWebKitSPI=_wasInitializedUsingWebKitSPI;
 @property(nonatomic) _Bool hasPerformedInitialSetup; // @synthesize hasPerformedInitialSetup=_hasPerformedInitialSetup;
 @property(retain, nonatomic) __AVPlayerLayerView *playerLayerView; // @synthesize playerLayerView=_playerLayerView;
 @property(retain, nonatomic) AVPlayerControllerVolumeAnimator *volumeAnimator; // @synthesize volumeAnimator=_volumeAnimator;
@@ -164,7 +166,7 @@
 - (_Bool)_canEnterFullScreen;
 - (void)_transitionFromFullScreenWithReason:(long long)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)_isDescendantOfRootViewController;
-- (id)_transitionController;
+@property(readonly, nonatomic) AVTransitionController *_transitionController;
 - (id)_avkitPreferredTransitioningDelegate;
 - (id)_transitionControllerIfLoaded;
 @property(readonly, nonatomic) AVFullScreenViewController *fullScreenViewController;
@@ -216,9 +218,11 @@
 - (_Bool)_requiresCustomPresentationController;
 - (long long)_preferredModalPresentationStyle;
 - (id)transitioningDelegate;
+- (_Bool)avkit_isEffectivelyFullScreen;
 - (_Bool)prefersHomeIndicatorAutoHidden;
 - (long long)preferredStatusBarStyle;
 - (_Bool)prefersStatusBarHidden;
+- (long long)preferredInterfaceOrientationForPresentation;
 - (_Bool)modalPresentationCapturesStatusBarAppearance;
 - (long long)preferredWhitePointAdaptivityStyle;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
@@ -234,6 +238,7 @@
 - (void)setView:(id)arg1;
 - (void)_ensureBehaviorStorage;
 @property(readonly, nonatomic) UIViewController *viewControllerForFullScreenPresentation;
+- (id)_activeViewControllerForContentView;
 @property(nonatomic) double defaultPlaybackRate;
 @property(copy, nonatomic) CDUnknownBlockType playButtonHandlerForLazyPlayerLoading;
 - (void)flashPlaybackControlsWithDuration:(double)arg1;

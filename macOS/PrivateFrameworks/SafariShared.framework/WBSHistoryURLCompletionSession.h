@@ -25,10 +25,10 @@
 @property(readonly, nonatomic, getter=isEnumeratingBookmarkMatches) BOOL enumeratingBookmarkMatches;
 - (id)fakeBookmarkMatchDataWithURLString:(id)arg1 title:(id)arg2;
 - (void)enumerateMatchDataForTypedStringHint:(id)arg1 options:(unsigned long long)arg2 withBlock:(CDUnknownBlockType)arg3;
-- (void)getBestMatchesForTypedString:(id)arg1 limit:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)getBestMatchesForTypedString:(id)arg1 limit:(unsigned long long)arg2 forQueryID:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_ensureDatabaseIsWarmed;
 - (id)_databaseConnectionOptions;
-- (void)_getBestMatchesForTypedString:(id)arg1 limit:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_getBestMatchesForTypedString:(id)arg1 limit:(unsigned long long)arg2 forQueryID:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)_matchSnapshotForCompletionMatch:(id)arg1;
 - (void)dealloc;
 - (id)initWithHistoryService:(id)arg1;

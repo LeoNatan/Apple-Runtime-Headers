@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (BOOL)isMobileReminders;
 + (BOOL)isMessagesViewService;
 + (BOOL)isCNNMobile;
 

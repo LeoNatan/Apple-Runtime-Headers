@@ -34,6 +34,7 @@
 + (id)_compositionMetadataURLForCompositionBundleURL:(id)arg1;
 + (id)compositionBundleURLForComposedAVURL:(id)arg1;
 + (BOOL)migrateBackupExclusionFlag:(id)arg1;
++ (id)excludedFromICloudBackup:(id)arg1 error:(id *)arg2;
 + (BOOL)includeInBackup:(id)arg1 error:(id *)arg2;
 + (BOOL)excludeFromBackup:(id)arg1 error:(id *)arg2;
 + (void)deleteFromFilesystem:(id)arg1;

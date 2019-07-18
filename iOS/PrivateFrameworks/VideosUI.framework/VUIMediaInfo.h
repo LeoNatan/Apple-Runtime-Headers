@@ -24,9 +24,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _playbackStopReason;
     unsigned long long _playbackContext;
     IKAppContext *_appContext;
+    double _playbackDelayInterval;
 }
 
 @property(nonatomic) _Bool overridesStartTimeWithResumeTime; // @synthesize overridesStartTimeWithResumeTime=_overridesStartTimeWithResumeTime;
+@property(nonatomic) double playbackDelayInterval; // @synthesize playbackDelayInterval=_playbackDelayInterval;
 @property(nonatomic) _Bool allowsPictureInPicture; // @synthesize allowsPictureInPicture=_allowsPictureInPicture;
 @property(retain, nonatomic) IKAppContext *appContext; // @synthesize appContext=_appContext;
 @property(nonatomic) unsigned long long playbackContext; // @synthesize playbackContext=_playbackContext;
@@ -54,6 +56,14 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithPlaybackContext:(unsigned long long)arg1 videosPlayables:(id)arg2 imageProxies:(id)arg3 storeDictionary:(id)arg4;
 - (id)init;
+- (long long)_videoDynamimcRangeFromMPColorCapability:(long long)arg1;
+- (long long)_videoResolutionFromMPVideoQuality:(long long)arg1;
+- (id)_storeMediaItemFromMPMediaItem:(id)arg1;
+- (id)_playlistFromMPMediaItems:(id)arg1;
+- (id)initWithPlaybackContext:(unsigned long long)arg1 mpMediaItems:(id)arg2;
+- (id)_playlistForVUIMediaItems:(id)arg1;
+- (id)initWithPlaybackContext:(unsigned long long)arg1 vuiMediaItems:(id)arg2;
+- (id)initWithBackgroundImageDictionary:(id)arg1;
 
 @end
 

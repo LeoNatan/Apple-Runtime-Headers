@@ -32,10 +32,10 @@
     _Bool _hasPendingUpdate;
     long long _pendingUpdateStyle;
     _Bool _invalidated;
-    _Bool _forwarding;
     _Bool _effectivePaused;
     _Bool _needsDraw;
-    // Error parsing type: {?="startTime"d"bucketCount"Q"magnitudeForBucket"^f"colorForBucket"^"uniforms"{?="projectionMatrix"{?="columns"[4]}"motionMatrix"{?="columns"[4]}"data"}"singleCircle"{?="position""velocity""radius"f"scale"f"scaleTarget"f"created"f"color""matrix"{?="columns"[4]}}"circleCount"Q"circles"[80{?="position""velocity""radius"f"scale"f"scaleTarget"f"created"f"color""matrix"{?="columns"[4]}}]"categoryCount"Q"gravity""isEmptying"B"isAnimating"B}, name: _state
+    _Bool _emptying;
+    // Error parsing type: {?="startTime"d"bucketCount"Q"magnitudeForBucket"^d"colorForBucket"^"uniforms"{?="projectionMatrix"{?="columns"[4]}"motionMatrix"{?="columns"[4]}"data"}"singleCircle"{?="position""velocity""radius"f"scale"f"scaleTarget"f"created"f"color""matrix"{?="columns"[4]}}"circleCount"Q"circles"[88{?="position""velocity""radius"f"scale"f"scaleTarget"f"created"f"color""matrix"{?="columns"[4]}}]"categoryCount"Q"gravity""framesToRender"I"isAnimating"B}, name: _state
     _Bool _motionEnabled;
     _Bool _paused;
     _Bool _blurDisabled;
@@ -58,18 +58,15 @@
 - (id)_makePipelineStateWithVertexFunction:(id)arg1 fragmentFunction:(id)arg2;
 - (void)_updateTextureAndBlurShader;
 - (void)_createMetalResourcesWithTextures:(id)arg1;
-- (void)mtkView:(id)arg1 drawableSizeWillChange:(struct CGSize)arg2;
 - (void)drawInMTKView:(id)arg1;
+- (void)mtkView:(id)arg1 drawableSizeWillChange:(struct CGSize)arg2;
 - (void)_updatePausedState;
 - (void)setMagnitudes:(id)arg1 withStyle:(long long)arg2;
-- (void)moveAnimationForwardByTimeInterval:(double)arg1;
 - (void)invalidate;
 - (id)rendererState;
 - (void)renderWithTextures:(id)arg1 rendererState:(id)arg2;
-- (void)setFrame:(struct CGRect)arg1;
 - (void)didMoveToWindow;
 - (void)layoutSubviews;
-- (void)_freeState;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;

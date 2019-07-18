@@ -15,11 +15,13 @@
 @interface _INPBPayloadNeedsDisambiguation : PBCodable <_INPBPayloadNeedsDisambiguation, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     NSArray *_disambiguationItems;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)disambiguationItemsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *disambiguationItems; // @synthesize disambiguationItems=_disambiguationItems;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

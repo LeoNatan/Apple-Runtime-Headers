@@ -38,6 +38,7 @@
 - (void)remote_resetHealthRecordsLastExtractedRowIDWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)remote_ingestHealthRecordsWithFHIRDocumentHandle:(NSFileHandle *)arg1 accountIdentifier:(NSUUID *)arg2 options:(unsigned long long)arg3 completion:(void (^)(_Bool, NSError *))arg4;
 - (void)remote_ingestHealthRecordsWithOptions:(unsigned long long)arg1 completion:(void (^)(_Bool, NSString *, NSError *))arg2;
+- (void)remote_ingestionStateWithCompletion:(void (^)(long long))arg1;
 - (void)remote_hasHealthRecordsAccountWithCompletion:(void (^)(_Bool, _Bool, NSError *))arg1;
 - (void)remote_invalidateCredentialForAccountWithIdentifier:(NSUUID *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_deleteAccountWithIdentifier:(NSUUID *)arg1 completion:(void (^)(_Bool, NSError *))arg2;

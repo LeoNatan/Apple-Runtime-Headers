@@ -107,7 +107,6 @@
 - (void)_setup;
 - (id)initWithLocationManager:(id)arg1 config:(id)arg2 metricManager:(id)arg3 motionActivityManager:(id)arg4 authorizationManager:(id)arg5 wifiManager:(id)arg6 xpcActivityManager:(id)arg7;
 - (id)init;
-- (void)logActiveRequestStatus;
 - (void)resetActiveRequestSummaryVariables;
 - (void)incrementBasicHistogram:(id)arg1 forTimestamp:(id)arg2;
 - (_Bool)activeRequestInterruptedCheck;

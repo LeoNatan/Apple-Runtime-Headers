@@ -18,6 +18,7 @@
     _Bool _sent;
     NSString *_replyText;
     _Bool _activated;
+    _Bool _didOpenApplication;
     NSArray *_lifeAssertions;
     int _actionType;
     NSString *_buttonID;
@@ -32,6 +33,7 @@
 
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSDictionary *context; // @synthesize context=_context;
+@property(nonatomic) _Bool didOpenApplication; // @synthesize didOpenApplication=_didOpenApplication;
 @property(copy, nonatomic) BSServiceConnectionEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(nonatomic) int actionBehavior; // @synthesize actionBehavior=_actionBehavior;
 @property(nonatomic) unsigned int actionActivationMode; // @synthesize actionActivationMode=_actionActivationMode;

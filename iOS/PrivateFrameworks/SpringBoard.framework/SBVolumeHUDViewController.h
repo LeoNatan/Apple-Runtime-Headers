@@ -40,7 +40,6 @@
 - (void)noteVolumeDidChange:(float)arg1;
 - (void)noteVolumeDownWasHit:(_Bool)arg1;
 - (void)noteVolumeUpWasHit:(_Bool)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)isEqual:(id)arg1;
 - (id)init;

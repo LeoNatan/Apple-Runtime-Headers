@@ -12,13 +12,15 @@
 
 @interface WKInterfaceVolumeControl : WKInterfaceObject <WKInterfaceObjectDynamicCreatable>
 {
+    int _origin;
 }
 
+@property(nonatomic) int origin; // @synthesize origin=_origin;
 - (id)interfaceDescriptionForDynamicCreation;
 - (void)resignFocus;
 - (void)focus;
 - (void)setTintColor:(id)arg1;
-- (id)init;
+- (id)initWithOrigin:(int)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -23,6 +23,7 @@
 @property(nonatomic) double timeScale; // @synthesize timeScale=_timeScale;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (void)cacheDemoPosterFramesForAsset:(id)arg1 forClip:(id)arg2;
 - (void)_addPosterFrameImage:(id)arg1 forClip:(id)arg2 withOffset:(double)arg3;
 - (void)purgePosterFrames;
 - (id)keyForClip:(id)arg1 posterFrame:(id)arg2;

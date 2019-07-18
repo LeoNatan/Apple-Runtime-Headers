@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 
 - (void)done:(id)arg1;
 - (void)viewDidLoad;
+- (void)loadView;
 
 @end
 

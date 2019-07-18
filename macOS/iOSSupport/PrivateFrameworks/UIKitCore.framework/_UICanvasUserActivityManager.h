@@ -7,14 +7,14 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/UIActivityContinuationManagerApplicationContext-Protocol.h>
-#import <UIKitCore/_UICanvasComponentProviding-Protocol.h>
+#import <UIKitCore/_UISceneComponentProviding-Protocol.h>
 
-@class NSDictionary, NSSet, NSString, NSUserActivity, UIActivityContinuationManager, UICanvas;
+@class NSDictionary, NSSet, NSString, NSUserActivity, UIActivityContinuationManager, UIScene;
 
 __attribute__((visibility("hidden")))
-@interface _UICanvasUserActivityManager : NSObject <UIActivityContinuationManagerApplicationContext, _UICanvasComponentProviding>
+@interface _UICanvasUserActivityManager : NSObject <UIActivityContinuationManagerApplicationContext, _UISceneComponentProviding>
 {
-    UICanvas *_weakCanvas;
+    UIScene *_weakScene;
     NSUserActivity *_restorationActivity;
     NSDictionary *_connectionOptionsRestorationActivityDictionary;
     UIActivityContinuationManager *_activityContinuationManager;
@@ -24,16 +24,16 @@ __attribute__((visibility("hidden")))
 
 + (id)_activityContinuationDictionaryWithAction:(id)arg1;
 + (id)_getCanvasRestorationUserActivityForCanvasIdentifier:(id)arg1 error:(id *)arg2;
-+ (void)_saveCanvasRestorationStateForCanvas:(id)arg1;
++ (id)_getUserInfoForSceneIdentifier:(id)arg1 error:(id *)arg2;
++ (void)_saveCanvasRestorationStateForScene:(id)arg1;
 + (BOOL)_restorationUserActivityAvailableForCanvasIdentifier:(id)arg1;
 + (id)_fetchSceneSessionWithPersistentIdentifier:(id)arg1;
 + (id)_knownSceneSessionMap;
 + (void)_deleteSceneSessionsWithPersistentIdentifiers:(id)arg1;
 + (void)_updatePersistedSceneSession:(id)arg1;
-+ (void)_queue_scheduleUpdateAndSaveForPersistedSceneSessions;
-+ (void)_deleteRestorationUserActivityForCanvasWithIdentifier:(id)arg1;
++ (void)_deleteSavedSceneSessionDirectoryWithIdentifier:(id)arg1;
 + (void)_showProgressForScene:(id)arg1 whenFetchingUserActivityForTypes:(id)arg2;
-+ (id)_userActivityManagerForCanvas:(id)arg1;
++ (id)_userActivityManagerForScene:(id)arg1;
 + (void)_initializeUserActivityManager;
 @property(nonatomic, getter=_isDisplayingActivityContinuationUI, setter=_setIsDisplayingActivityContinuationUI:) BOOL isDisplayingActivityContinuationUI; // @synthesize isDisplayingActivityContinuationUI=_isDisplayingActivityContinuationUI;
 - (void).cxx_destruct;
@@ -52,12 +52,12 @@ __attribute__((visibility("hidden")))
 - (void)activityContinuationManager:(id)arg1 hideProgressUIWithCompletion:(CDUnknownBlockType)arg2;
 - (void)activityContinuationManager:(id)arg1 configureProgressUIWithError:(id)arg2;
 - (void)activityContinuationManager:(id)arg1 displayProgressUI:(id)arg2 dismissalHandler:(CDUnknownBlockType)arg3;
-- (void)_canvasWillInvalidate:(id)arg1;
-- (void)_canvas:(id)arg1 didTransitionFromActivationState:(long long)arg2 withReasonsMask:(unsigned long long)arg3;
-- (void)_canvas:(id)arg1 willTransitionToActivationState:(long long)arg2 withReasonsMask:(unsigned long long)arg3;
+- (void)_sceneWillInvalidate:(id)arg1;
+- (void)_scene:(id)arg1 didTransitionFromActivationState:(long long)arg2 withReasonsMask:(unsigned long long)arg3;
+- (void)_scene:(id)arg1 willTransitionToActivationState:(long long)arg2 withReasonsMask:(unsigned long long)arg3;
 @property(readonly, nonatomic, getter=_activityContinuationManager) UIActivityContinuationManager *_activityContinuationManager;
-@property(nonatomic, getter=_canvas, setter=_setCanvas:) __weak UICanvas *_canvas;
-- (id)initWithCanvas:(id)arg1;
+@property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene;
+- (id)initWithScene:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

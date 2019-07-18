@@ -16,10 +16,10 @@
     BSTransaction *_animationTransaction;
 }
 
-+ (void)_registerSceneComponent;
 @property(retain, nonatomic) BSTransaction *animationTransaction; // @synthesize animationTransaction=_animationTransaction;
 @property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
 - (void).cxx_destruct;
+- (void)_failAnimationWithAction:(id)arg1;
 - (void)_performLaunchAnimationWithAction:(id)arg1;
 - (void)_prepareForScreenSaverAnimationWithAction:(id)arg1;
 - (void)_prepareForApplicationAnimationWithAction:(id)arg1;

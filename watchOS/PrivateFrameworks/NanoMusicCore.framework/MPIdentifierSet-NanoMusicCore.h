@@ -7,7 +7,7 @@
 #import <MediaPlayer/MPIdentifierSet.h>
 
 @interface MPIdentifierSet (NanoMusicCore)
-+ (id)nmc_identifierSetWithURLQueryItems:(id)arg1;
++ (id)nmc_identifierSetWithURLQueryItems:(id)arg1 modelKind:(id)arg2;
 - (_Bool)nmc_isEmpty;
 - (id)nmc_urlQueryItems;
 @end

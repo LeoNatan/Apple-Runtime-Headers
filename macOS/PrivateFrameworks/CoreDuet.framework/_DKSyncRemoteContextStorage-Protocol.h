@@ -13,7 +13,7 @@
 - (void)setDelegate:(id <_DKSyncRemoteContextStorageDelegate>)arg1;
 - (void)sendContextValuesToPeer:(_DKSyncPeer *)arg1 registrationIdentifier:(NSString *)arg2 archivedObjects:(NSDictionary *)arg3 highPriority:(BOOL)arg4 completion:(void (^)(NSError *))arg5;
 - (void)fetchContextValuesFromPeer:(_DKSyncPeer *)arg1 forKeyPaths:(NSArray *)arg2 highPriority:(BOOL)arg3 completion:(void (^)(NSDictionary *, NSError *))arg4;
-- (void)unsubscribeFromContextValueChangeNotificationsFromPeer:(_DKSyncPeer *)arg1 registrationIdentifier:(NSString *)arg2 predicateIdentifier:(NSString *)arg3 highPriority:(BOOL)arg4 completion:(void (^)(NSError *))arg5;
-- (void)subscribeToContextValueChangeNotificationsFromPeer:(_DKSyncPeer *)arg1 registrationIdentifier:(NSString *)arg2 predicateIdentifier:(NSString *)arg3 highPriority:(BOOL)arg4 completion:(void (^)(NSError *))arg5;
+- (void)unsubscribeFromContextValueChangeNotificationsFromPeer:(_DKSyncPeer *)arg1 registrationIdentifier:(NSString *)arg2 predicate:(NSDictionary *)arg3 highPriority:(BOOL)arg4 completion:(void (^)(NSError *))arg5;
+- (void)subscribeToContextValueChangeNotificationsFromPeer:(_DKSyncPeer *)arg1 registrationIdentifier:(NSString *)arg2 predicate:(NSDictionary *)arg3 highPriority:(BOOL)arg4 completion:(void (^)(NSError *))arg5;
 @end
 

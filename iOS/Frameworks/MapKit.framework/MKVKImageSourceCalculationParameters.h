@@ -13,14 +13,12 @@ __attribute__((visibility("hidden")))
 {
     NSArray *_imageSourceKeys;
     double _scale;
-    struct CLLocationCoordinate2D _coordinate;
 }
 
-@property(readonly, nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, copy, nonatomic) NSArray *imageSourceKeys; // @synthesize imageSourceKeys=_imageSourceKeys;
 - (void).cxx_destruct;
-- (id)initWithImageSourceKeys:(id)arg1 scale:(double)arg2 coordinate:(struct CLLocationCoordinate2D)arg3;
+- (id)initWithImageSourceKeys:(id)arg1 scale:(double)arg2;
 
 @end
 

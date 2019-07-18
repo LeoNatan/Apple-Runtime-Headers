@@ -9,6 +9,7 @@
 @class NSDictionary, NSNumber, NSString, NSURL;
 
 @protocol SKUIServiceProductPageViewController <NSObject>
+- (void)setPresentationStyle:(NSNumber *)arg1;
 - (void)setVisibleInClientWindow:(NSNumber *)arg1;
 - (void)setPromptString:(NSString *)arg1;
 - (void)setShowsRightBarButton:(NSNumber *)arg1;

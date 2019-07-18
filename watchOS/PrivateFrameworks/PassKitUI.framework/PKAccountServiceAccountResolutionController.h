@@ -6,39 +6,27 @@
 
 #import <objc/NSObject.h>
 
-#import <PassKitUI/PKAccountServicePerformActionViewControllerDelegate-Protocol.h>
+@class PKAccount, PKPaymentPass;
+@protocol PKAccountBillPaymentObserver, PKAccountServiceAccountResolutionControllerDelegate;
 
-@class NSString, PKAccount, PKAccountServicePerformActionViewController, PKPaymentPass;
-@protocol PKAccountServiceAccountResolutionControllerDelegate, PKAccountServicePerformActionViewControllerDelegate;
-
-@interface PKAccountServiceAccountResolutionController : NSObject <PKAccountServicePerformActionViewControllerDelegate>
+@interface PKAccountServiceAccountResolutionController : NSObject
 {
-    PKAccountServicePerformActionViewController *_actionViewController;
     PKAccount *_account;
     PKPaymentPass *_pass;
     id <PKAccountServiceAccountResolutionControllerDelegate> _delegate;
-    id <PKAccountServicePerformActionViewControllerDelegate> _performActionDelegate;
+    id <PKAccountBillPaymentObserver> _billPaymentObserver;
 }
 
-@property(nonatomic) __weak id <PKAccountServicePerformActionViewControllerDelegate> performActionDelegate; // @synthesize performActionDelegate=_performActionDelegate;
+@property(nonatomic) __weak id <PKAccountBillPaymentObserver> billPaymentObserver; // @synthesize billPaymentObserver=_billPaymentObserver;
 @property(nonatomic) __weak id <PKAccountServiceAccountResolutionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 @property(retain, nonatomic) PKAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 - (void)_handleAccountServiceAccountDidChangeNotification:(id)arg1;
-- (void)accountServicePerformActionViewControllerDidPerformAction:(id)arg1;
-- (void)accountServicePerformActionViewControllerDidCancel:(id)arg1;
-- (void)_dismissViewController;
 - (void)_presentViewController:(id)arg1;
 - (void)_presentAccountServiceAction:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentFlowForAccountResolution:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)initWithAccount:(id)arg1 pass:(id)arg2 delegate:(id)arg3 performActionDelegate:(id)arg4;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+- (id)initWithAccount:(id)arg1 pass:(id)arg2;
 
 @end
 

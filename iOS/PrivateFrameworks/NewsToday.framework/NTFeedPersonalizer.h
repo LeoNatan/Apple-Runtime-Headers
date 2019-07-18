@@ -34,6 +34,8 @@
 @property(retain, nonatomic) id <FCReadonlyPersonalizationAggregateStore> readonlyPersonalizationAggregateStore; // @synthesize readonlyPersonalizationAggregateStore=_readonlyPersonalizationAggregateStore;
 @property(copy, nonatomic) FCPersonalizationTreatment *personalizationTreatment; // @synthesize personalizationTreatment=_personalizationTreatment;
 - (void).cxx_destruct;
+- (id)_userProfile;
+- (id)scoreProfilesForItems:(id)arg1 configurationSet:(long long)arg2;
 - (id)limitItemsByMinimumItemQuality:(id)arg1;
 - (double)decayedPublisherDiversificationPenalty;
 - (unsigned long long)whitelistLevelForTagID:(id)arg1;

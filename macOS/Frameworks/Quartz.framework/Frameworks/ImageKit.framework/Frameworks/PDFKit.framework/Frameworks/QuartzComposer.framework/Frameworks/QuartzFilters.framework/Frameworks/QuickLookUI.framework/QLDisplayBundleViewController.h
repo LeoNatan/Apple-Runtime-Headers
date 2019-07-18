@@ -9,7 +9,7 @@
 #import <QuickLookUI/QLMarkupControllerDelegate-Protocol.h>
 #import <QuickLookUI/QLPreviewOverlayDataSource-Protocol.h>
 
-@class CALayer, LOViewController, NSArray, NSString, NSURL, NSView, QLDisplayBundle, QLMarkupController, QLOverlayBorderView, QLPreviewNavigationController, QLPreviewOverlayController;
+@class CALayer, NSArray, NSString, NSURL, NSView, QLDisplayBundle, QLMarkupController, QLOverlayBorderView, QLPreviewNavigationController, QLPreviewOverlayController, STLockoutViewController;
 
 @interface QLDisplayBundleViewController : NSViewController <QLPreviewOverlayDataSource, QLMarkupControllerDelegate>
 {
@@ -24,7 +24,7 @@
     struct CGRect _customRolloverFrame;
     NSArray *_contentViewSizingConstraints;
     QLMarkupController *_markupController;
-    LOViewController *_lockoutViewController;
+    STLockoutViewController *_lockoutViewController;
 }
 
 + (id)keyPathsForValuesAffectingPlaying;
@@ -33,7 +33,7 @@
 + (id)keyPathsForValuesAffectingProgress;
 + (id)keyPathsForValuesAffectingCurrentPage;
 + (id)keyPathsForValuesAffectingOverlayFrame;
-@property(retain) LOViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
+@property(retain) STLockoutViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
 @property(retain) QLMarkupController *markupController; // @synthesize markupController=_markupController;
 @property struct CGRect customRolloverFrame; // @synthesize customRolloverFrame=_customRolloverFrame;
 @property struct CGRect customOverlayFrame; // @synthesize customOverlayFrame=_customOverlayFrame;
@@ -54,7 +54,7 @@
 - (void)exitMarkup:(long long)arg1 needsSave:(char *)arg2;
 - (void)enterMarkupWithSaveInPlace:(BOOL)arg1;
 - (void)promptSaveForCloseWithCloseHandler:(CDUnknownBlockType)arg1;
-- (void)presentScreenTimeLockout:(BOOL)arg1 withBundleID:(id)arg2;
+- (void)presentScreenTimeLockout:(BOOL)arg1 withScreentimeID:(id)arg2;
 - (void)_updateOverlayControls;
 @property(readonly) double backingScaleFactor;
 @property BOOL playing;

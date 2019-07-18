@@ -25,6 +25,8 @@
 - (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 didTransitionSectionHeaderView:(NCNotificationListSectionHeaderView *)arg2 toClearState:(_Bool)arg3;
 - (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 didTransitionCoalescingControlsHandler:(id <NCNotificationListCoalescingControlsHandler>)arg2 toClearState:(_Bool)arg3;
 - (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 didTransitionActionsForNotificationCell:(NCNotificationListCell *)arg2 revealed:(_Bool)arg3;
+- (_Bool)notificationListComponentShouldAllowLongPressGesture:(id <NCNotificationListComponent>)arg1;
+- (_Bool)notificationListComponentShouldAllowClickPresentationInteraction:(id <NCNotificationListComponent>)arg1;
 - (UIView *)containerViewForPreviewInteractionPresentedContentForNotificationListComponent:(id <NCNotificationListComponent>)arg1;
 - (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 didRemoveNotificationViewController:(NCNotificationViewController *)arg2;
 - (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 didAddNotificationViewController:(NCNotificationViewController *)arg2;
@@ -33,7 +35,7 @@
 - (void)notificationListComponentDidSignificantUserInteraction:(id <NCNotificationListComponent>)arg1;
 - (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 requestsPresentingManagementViewForNotificationRequest:(NCNotificationRequest *)arg2 managementViewType:(unsigned long long)arg3 withPresentingView:(UIView *)arg4 completion:(void (^)(_Bool))arg5;
 - (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 isPresentingLongLookForViewController:(NCNotificationViewController *)arg2;
-- (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 shouldFinishLongLookTransitionForNotificationRequest:(NCNotificationRequest *)arg2 withCompletionBlock:(void (^)(_Bool))arg3;
+- (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 shouldFinishLongLookTransitionForNotificationRequest:(NCNotificationRequest *)arg2 trigger:(long long)arg3 withCompletionBlock:(void (^)(_Bool))arg4;
 - (double)insetHorizontalMarginForNotificationListComponent:(id <NCNotificationListComponent>)arg1;
 - (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 requestsAuthenticationAndPerformBlock:(void (^)(_Bool))arg2;
 - (_Bool)notificationListComponent:(id <NCNotificationListComponent>)arg1 shouldAllowInteractionsForNotificationRequest:(NCNotificationRequest *)arg2;

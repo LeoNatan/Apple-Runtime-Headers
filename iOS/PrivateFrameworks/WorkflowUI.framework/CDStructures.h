@@ -193,10 +193,6 @@ struct SpringSolver<POP::Vector4<double>> {
     _Bool _field10;
 };
 
-struct UIColor {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     double top;
     double left;
@@ -441,11 +437,6 @@ struct WFWrappingStackLayoutComponentStyle {
     double rowHeight;
 };
 
-struct _DDRange {
-    unsigned long long _field1;
-    unsigned long long _field2;
-};
-
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;
@@ -513,13 +504,6 @@ struct __list_node_base<std::__1::shared_ptr<POPAnimatorItem>, void *> {
 
 struct __shared_weak_count;
 
-struct __va_list_tag {
-    unsigned int _field1;
-    unsigned int _field2;
-    void *_field3;
-    void *_field4;
-};
-
 struct _opaque_pthread_mutex_t {
     long long __sig;
     char __opaque[56];
@@ -553,18 +537,6 @@ struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>
     } _field1;
 };
 
-struct in6_addr {
-    union {
-        unsigned char _field1[16];
-        unsigned short _field2[8];
-        unsigned int _field3[4];
-    } _field1;
-};
-
-struct in_addr {
-    unsigned int _field1;
-};
-
 struct list<std::__1::shared_ptr<POPAnimatorItem>, std::__1::allocator<std::__1::shared_ptr<POPAnimatorItem>>> {
     struct __list_node_base<std::__1::shared_ptr<POPAnimatorItem>, void *> __end_;
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::shared_ptr<POPAnimatorItem>, void *>>> {
@@ -585,29 +557,6 @@ struct shared_ptr<const CKComponentViewConfiguration::Repr> {
 struct shared_ptr<const std::__1::vector<CKComponentLayoutChild, std::__1::allocator<CKComponentLayoutChild>>> {
     struct vector<CKComponentLayoutChild, std::__1::allocator<CKComponentLayoutChild>> *_field1;
     struct __shared_weak_count *_field2;
-};
-
-struct sockaddr_in {
-    unsigned char _field1;
-    unsigned char _field2;
-    unsigned short _field3;
-    struct in_addr _field4;
-    char _field5[8];
-};
-
-struct sockaddr_in6 {
-    unsigned char _field1;
-    unsigned char _field2;
-    unsigned short _field3;
-    unsigned int _field4;
-    struct in6_addr _field5;
-    unsigned int _field6;
-};
-
-struct sockaddr_un {
-    unsigned char _field1;
-    unsigned char _field2;
-    char _field3[104];
 };
 
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<CKComponentViewAttribute, CKBoxedValue>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<CKComponentViewAttribute, CKBoxedValue>, void *>*>*>>> {

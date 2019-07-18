@@ -36,7 +36,6 @@ __attribute__((visibility("hidden")))
 - (void)cleanUpMediaItem;
 - (void)updatePlayCountForElapsedTime:(double)arg1 duration:(double)arg2;
 - (void)updateBookmarkWithSuggestedTime:(double)arg1 forElapsedTime:(double)arg2 duration:(double)arg3 playbackOfMediaItemIsEnding:(_Bool)arg4;
-- (void)setMediaItemMetadata:(id)arg1 forProperty:(id)arg2;
 - (id)mediaItemMetadataForProperty:(id)arg1;
 - (_Bool)hasTrait:(id)arg1;
 - (id)mediaItemURL;

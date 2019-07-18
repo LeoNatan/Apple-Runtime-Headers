@@ -11,10 +11,10 @@
     unsigned int _numAuraIndices;
     unsigned int _numAuraIndicesCulled;
     unsigned int _numWaveIndices;
-    unsigned int *_gl_indices;
+    unsigned int *_metal_indices;
 }
 
-@property(nonatomic) unsigned int *gl_indices; // @synthesize gl_indices=_gl_indices;
+@property(nonatomic) unsigned int *metal_indices; // @synthesize metal_indices=_metal_indices;
 @property(nonatomic) unsigned int numWaveIndices; // @synthesize numWaveIndices=_numWaveIndices;
 @property(nonatomic) unsigned int numAuraIndicesCulled; // @synthesize numAuraIndicesCulled=_numAuraIndicesCulled;
 @property(nonatomic) unsigned int numAuraIndices; // @synthesize numAuraIndices=_numAuraIndices;

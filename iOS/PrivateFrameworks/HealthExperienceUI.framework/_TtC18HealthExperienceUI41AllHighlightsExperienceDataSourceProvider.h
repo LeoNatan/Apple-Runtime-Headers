@@ -10,7 +10,6 @@
 {
     // Error parsing type: , name: store
     // Error parsing type: , name: keyword
-    // Error parsing type: , name: hkType
 }
 
 @end

@@ -24,7 +24,6 @@
 @property(readonly, nonatomic) NSURL *harrierBaseURL; // @synthesize harrierBaseURL=_harrierBaseURL;
 - (void).cxx_destruct;
 - (id)description;
-- (id)mappepURL:(id)arg1;
 - (void)setRemoteExactMatch:(id)arg1;
 - (void)setRemoteCSSearchIndex:(id)arg1;
 - (void)setRemoteSearchIndex:(id)arg1;

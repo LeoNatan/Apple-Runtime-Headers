@@ -34,6 +34,7 @@
 @property(nonatomic) __weak id <PXGLayoutContentSource> decorationSource; // @synthesize decorationSource=_decorationSource;
 @property(retain, nonatomic) PXGLayout *decoratedLayout; // @synthesize decoratedLayout=_decoratedLayout;
 - (void).cxx_destruct;
+- (BOOL)canHandleVisibleRectRejection;
 - (id)itemsLayout;
 - (BOOL)isSpriteIndex:(unsigned int)arg1 decoratingSpriteWithIndex:(out unsigned int *)arg2;
 @property(readonly, nonatomic) unsigned int debugDecorationIndex;

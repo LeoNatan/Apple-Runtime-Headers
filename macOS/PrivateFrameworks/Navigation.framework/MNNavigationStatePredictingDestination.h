@@ -20,7 +20,6 @@
 - (void)addCommuteDestinationSuggestion:(id)arg1;
 - (void)startNavigationWithDetails:(id)arg1 activeBlock:(CDUnknownBlockType)arg2;
 - (void)setRoutesForPreview:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
-- (void)requestDirections:(id)arg1 withIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)stopPredictingDestinations;
 - (void)leaveState;
 - (void)enterState;

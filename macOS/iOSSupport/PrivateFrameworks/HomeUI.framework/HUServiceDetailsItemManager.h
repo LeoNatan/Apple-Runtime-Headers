@@ -6,17 +6,19 @@
 
 #import <Home/HFItemManager.h>
 
+#import <HomeUI/HFAccessorySettingDeviceOptionsAdapterUtilityDelegate-Protocol.h>
 #import <HomeUI/HUCameraRecordingSettingsModuleDelegate-Protocol.h>
 #import <HomeUI/HUServiceDetailsControlAndCharacteristicStateItemModuleDelegate-Protocol.h>
 
-@class HFAccessoryInfoDetailsItemProvider, HFAccessorySettingDeviceOptionsAdapter, HFAssociatedServiceTypeOptionItemProvider, HFItem, HFItemBuilder, HFItemProvider, HFRemoteControlItemModule, HFSelectedRoomItemProvider, HFStaticItemProvider, HMAccessory, HUAccessoryDebugModule, HUAccessoryServicesItemModule, HUAccessorySettingsItemModule, HUAssociatedSceneAndTriggerModule, HUCameraRecordingSettingsModule, HUFirmwareUpdateItemProvider, HUInputSourceItemModule, HULinkedApplicationItemProvider, HUNameItemModule, HUServiceDetailsControlAndCharacteristicStateItemModule, HUServiceDetailsProgrammableSwitchItemModule, HUSoftwareUpdateItemModule, HUTelevisionSettingsItemModule, HUValveItemModule, NSArray, NSString;
+@class HFAccessoryInfoDetailsItemProvider, HFAccessorySettingDeviceOptionsAdapter, HFAccessorySettingDeviceOptionsAdapterUtility, HFAssociatedServiceTypeOptionItemProvider, HFItem, HFItemBuilder, HFItemProvider, HFRemoteControlItemModule, HFSelectedRoomItemProvider, HFStaticItemProvider, HMAccessory, HUAccessoryDebugModule, HUAccessoryServicesItemModule, HUAccessorySettingsItemModule, HUAssociatedSceneAndTriggerModule, HUCameraRecordingSettingsModule, HUFirmwareUpdateItemProvider, HUInputSourceItemModule, HULinkedApplicationItemProvider, HUNameItemModule, HUServiceDetailsControlAndCharacteristicStateItemModule, HUServiceDetailsProgrammableSwitchItemModule, HUSoftwareUpdateItemModule, HUTelevisionSettingsItemModule, HUValveItemModule, NSArray, NSString;
 @protocol HFHomeKitObject, HFItemBuilderItem, HFServiceLikeBuilder, HFServiceLikeItem, HUServiceDetailsItemManagerDelegate;
 
-@interface HUServiceDetailsItemManager : HFItemManager <HUServiceDetailsControlAndCharacteristicStateItemModuleDelegate, HUCameraRecordingSettingsModuleDelegate>
+@interface HUServiceDetailsItemManager : HFItemManager <HUServiceDetailsControlAndCharacteristicStateItemModuleDelegate, HUCameraRecordingSettingsModuleDelegate, HFAccessorySettingDeviceOptionsAdapterUtilityDelegate>
 {
     BOOL _shouldHideAccessoryItem;
     BOOL _showRoomsList;
     BOOL _showAssociatedServiceTypeList;
+    BOOL _homePodsActiveInStereoSetUp;
     HFItem<HFItemBuilderItem> *_builderItem;
     HFItemBuilder<HFServiceLikeBuilder> *_serviceLikeBuilder;
     HFItemProvider *_existingRoomItemProvider;
@@ -51,6 +53,7 @@
     HFItem *_audioSettingsItem;
     HFItem *_cameraNightModeItem;
     HFItem *_internalDebuggingItem;
+    HFItem *_restartItem;
     HUServiceDetailsProgrammableSwitchItemModule *_programmableSwitchItemModule;
     HUServiceDetailsControlAndCharacteristicStateItemModule *_serviceDetailsControlStateAndCharacteristicItemModule;
     NSArray *_nameAndIconSections;
@@ -69,10 +72,13 @@
     HULinkedApplicationItemProvider *_linkedApplicationItemProvider;
     HUFirmwareUpdateItemProvider *_firmwareUpdateItemProvider;
     HFAccessorySettingDeviceOptionsAdapter *_deviceOptionsAdapter;
+    HFAccessorySettingDeviceOptionsAdapterUtility *_deviceOptionsAdapterUtility;
     id <HUServiceDetailsItemManagerDelegate> _serviceDetailsDelegate;
 }
 
 @property(nonatomic) __weak id <HUServiceDetailsItemManagerDelegate> serviceDetailsDelegate; // @synthesize serviceDetailsDelegate=_serviceDetailsDelegate;
+@property(nonatomic) BOOL homePodsActiveInStereoSetUp; // @synthesize homePodsActiveInStereoSetUp=_homePodsActiveInStereoSetUp;
+@property(retain, nonatomic) HFAccessorySettingDeviceOptionsAdapterUtility *deviceOptionsAdapterUtility; // @synthesize deviceOptionsAdapterUtility=_deviceOptionsAdapterUtility;
 @property(retain, nonatomic) HFAccessorySettingDeviceOptionsAdapter *deviceOptionsAdapter; // @synthesize deviceOptionsAdapter=_deviceOptionsAdapter;
 @property(retain, nonatomic) HUFirmwareUpdateItemProvider *firmwareUpdateItemProvider; // @synthesize firmwareUpdateItemProvider=_firmwareUpdateItemProvider;
 @property(retain, nonatomic) HULinkedApplicationItemProvider *linkedApplicationItemProvider; // @synthesize linkedApplicationItemProvider=_linkedApplicationItemProvider;
@@ -94,6 +100,7 @@
 @property(nonatomic) BOOL showAssociatedServiceTypeList; // @synthesize showAssociatedServiceTypeList=_showAssociatedServiceTypeList;
 @property(nonatomic) BOOL showRoomsList; // @synthesize showRoomsList=_showRoomsList;
 @property(nonatomic) BOOL shouldHideAccessoryItem; // @synthesize shouldHideAccessoryItem=_shouldHideAccessoryItem;
+@property(retain, nonatomic) HFItem *restartItem; // @synthesize restartItem=_restartItem;
 @property(retain, nonatomic) HFItem *internalDebuggingItem; // @synthesize internalDebuggingItem=_internalDebuggingItem;
 @property(retain, nonatomic) HFItem *cameraNightModeItem; // @synthesize cameraNightModeItem=_cameraNightModeItem;
 @property(retain, nonatomic) HFItem *audioSettingsItem; // @synthesize audioSettingsItem=_audioSettingsItem;
@@ -129,6 +136,8 @@
 @property(retain, nonatomic) HFItemBuilder<HFServiceLikeBuilder> *serviceLikeBuilder; // @synthesize serviceLikeBuilder=_serviceLikeBuilder;
 @property(readonly, nonatomic) HFItem<HFItemBuilderItem> *builderItem; // @synthesize builderItem=_builderItem;
 - (void).cxx_destruct;
+- (void)currentAccessoryReachableOverRapportUpdated:(BOOL)arg1;
+- (void)_setupDeviceOptionsAdapterUtilityForGroupedAccessories:(id)arg1;
 - (id)_restartAccessory;
 - (void)restartAccessory;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -137,6 +146,7 @@
 - (void)_setupDeviceOptionsAdapterForMediaAccessoryItem:(id)arg1;
 - (id)hf_MediaAccessoryItem;
 - (BOOL)shouldShowDeviceOptionsForAccessoryItem:(id)arg1;
+- (BOOL)_isGroupedHomePod:(id)arg1;
 - (BOOL)_shouldShowLinkedApplicationSection;
 - (BOOL)_shouldShowFirmwareUpdateSection;
 - (id)_characteristicSectionForIdentifier:(id)arg1;

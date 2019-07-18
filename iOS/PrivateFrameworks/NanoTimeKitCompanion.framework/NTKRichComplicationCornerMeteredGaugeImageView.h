@@ -12,6 +12,7 @@
 
 + (long long)progressFillStyle;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
+- (void)_handleTemplate:(id)arg1 reason:(long long)arg2;
 - (id)init;
 
 @end

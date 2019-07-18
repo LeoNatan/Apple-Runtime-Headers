@@ -27,7 +27,6 @@
 + (id)auxiliaryOutputContext;
 + (id)sharedAudioPresentationOutputContext;
 + (id)outputContext;
-+ (id)allOutputContextImplClasses;
 + (Class)defaultOutputContextImplClass;
 + (void)initialize;
 + (CDUnknownBlockType)commChannelUUIDCommunicationChannelManagerCreator;
@@ -36,9 +35,6 @@
 + (id)outputContextWithFigRoutingContextCreator:(CDUnknownBlockType)arg1 communicationChannelManagerCreator:(CDUnknownBlockType)arg2;
 + (id)outputContextWithFigRoutingContextCreator:(CDUnknownBlockType)arg1 volumeController:(struct OpaqueFigVolumeControllerState *)arg2;
 + (id)outputContextWithFigRoutingContextCreator:(CDUnknownBlockType)arg1 outputDeviceTranslator:(id)arg2;
-+ (void)resetRoutingContextFactoryForQueue:(id)arg1;
-+ (void)setRoutingContextFactory:(id)arg1 forQueue:(id)arg2;
-+ (id)currentRoutingContextFactory;
 - (void)outputContextImpl:(id)arg1 didExpireWithReplacement:(id)arg2;
 - (void)outputContextImpl:(id)arg1 didCloseCommunicationChannel:(id)arg2;
 - (void)outputContextImpl:(id)arg1 didReceiveData:(id)arg2 fromCommunicationChannel:(id)arg3;
@@ -77,6 +73,7 @@
 - (id)associatedAudioDeviceID;
 @property(readonly, nonatomic) NSString *deviceName;
 - (void)setApplicationProcessID:(int)arg1;
+- (BOOL)getApplicationProcessID:(int *)arg1;
 - (int)applicationProcessID;
 - (id)outputContextType;
 - (id)ID;

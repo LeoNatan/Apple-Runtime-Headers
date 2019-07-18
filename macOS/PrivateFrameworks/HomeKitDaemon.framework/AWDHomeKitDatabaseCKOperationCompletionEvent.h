@@ -8,11 +8,14 @@
 
 #import <HomeKitDaemon/NSCopying-Protocol.h>
 
+@class NSString;
+
 @interface AWDHomeKitDatabaseCKOperationCompletionEvent : PBCodable <NSCopying>
 {
     long long _errorCode;
     unsigned long long _timestamp;
     int _containerType;
+    NSString *_errorDomain;
     BOOL _didSucceed;
     struct {
         unsigned int errorCode:1;
@@ -22,9 +25,11 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 @property(nonatomic) BOOL didSucceed; // @synthesize didSucceed=_didSucceed;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
+- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -34,6 +39,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasErrorDomain;
 - (int)StringAsContainerType:(id)arg1;
 - (id)containerTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasContainerType;

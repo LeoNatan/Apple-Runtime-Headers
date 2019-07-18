@@ -35,7 +35,7 @@
 - (id)_draggableTextInRange:(id)arg1;
 - (id)performSameViewDropOperation:(id)arg1;
 - (id)attributedStringsForTextRanges:(id)arg1;
-- (id)previewForDroppingText:(id)arg1 toPosition:(id)arg2 inContainerView:(id)arg3;
+- (id)previewForDroppingTextInRange:(id)arg1 toPosition:(id)arg2 inContainerView:(id)arg3;
 - (id)draggableObjectsForTextRange:(id)arg1;
 - (id)textRangeForAttachmentInTextRange:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (id)textRangesForAttachmentsInTextRange:(id)arg1;

@@ -8,7 +8,7 @@
 
 #import <NanoPassKit/PKFieldDetectorObserver-Protocol.h>
 
-@class NSDictionary, NSDistributedNotificationCenter, NSSet, NSString, PKFieldDetector, PKPass, PKPassLibrary, PKPaymentService;
+@class NSDictionary, NSDistributedNotificationCenter, NSSet, NSString, PKExpressPassInformation, PKFieldDetector, PKPass, PKPassLibrary, PKPaymentService;
 @protocol NPKExpressPassControllerDelegate, OS_dispatch_queue;
 
 @interface NPKExpressPassController : NSObject <PKFieldDetectorObserver>
@@ -24,10 +24,12 @@
     NSDistributedNotificationCenter *_distributedNotificationCenter;
     id <NPKExpressPassControllerDelegate> _delegate;
     NSDictionary *_expressPasses;
+    PKExpressPassInformation *_currentTransactionExpressPassInformation;
     PKFieldDetector *_fieldDetector;
 }
 
 @property(retain, nonatomic) PKFieldDetector *fieldDetector; // @synthesize fieldDetector=_fieldDetector;
+@property(retain, nonatomic) PKExpressPassInformation *currentTransactionExpressPassInformation; // @synthesize currentTransactionExpressPassInformation=_currentTransactionExpressPassInformation;
 @property(retain) NSDictionary *expressPasses; // @synthesize expressPasses=_expressPasses;
 @property(retain) NSSet *expressPassesInformation; // @synthesize expressPassesInformation=_expressPassesInformation;
 @property(retain, nonatomic) PKPass *currentTransactionPass; // @synthesize currentTransactionPass=_currentTransactionPass;
@@ -41,11 +43,12 @@
 - (void)_queue_updateExpressPasses;
 - (void)updateExpressPasses;
 - (id)_queue_expressPassForTransactionApplicationIdentifier:(id)arg1;
+- (_Bool)_hasNoTransactionStartOrEndNotificationForTechnologyType:(int)arg1;
 - (void)_handlePassesLibraryChangedNotification:(id)arg1;
 - (void)_handleExitNearFieldNotification:(id)arg1;
-- (void)_transactionFailedWithApplicationIdentifier:(id)arg1;
-- (void)_transactionEndedWithApplicationIdentifier:(id)arg1;
-- (void)_transactionStartedWithApplicationIdentifier:(id)arg1;
+- (void)_onqueue_transactionFailedWithApplicationIdentifier:(id)arg1;
+- (void)_onqueue_transactionEndedWithApplicationIdentifier:(id)arg1;
+- (void)_onqueue_transactionStartedWithApplicationIdentifier:(id)arg1;
 - (void)_handleExpressTransactionFailedNotification:(id)arg1;
 - (void)_handleExpressTransactionEndNotification:(id)arg1;
 - (void)_handleExpressTransactionTimeOutNotification:(id)arg1;
@@ -53,7 +56,7 @@
 - (void)_handleEnterNearFieldNotification:(id)arg1;
 - (void)_stopListeningForExpressNotifications;
 - (void)_startListeningForExpressNotifications;
-- (void)_transitionToStatus:(unsigned int)arg1 forExpressPass:(id)arg2;
+- (void)_transitionToStatus:(unsigned int)arg1 forExpressPass:(id)arg2 paymentApplicationIdentifier:(id)arg3;
 @property(readonly, nonatomic) __weak NSDistributedNotificationCenter *distributedNotificationCenter; // @synthesize distributedNotificationCenter=_distributedNotificationCenter;
 @property(readonly, nonatomic) __weak PKPassLibrary *passLibrary; // @synthesize passLibrary=_passLibrary;
 - (id)_queue_paymentService;

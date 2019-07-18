@@ -4,36 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HMFoundation/HMFObject.h>
+#import <HomeKitDaemon/HMDNetworkRouterFirewallRuleConfiguration.h>
 
-#import <HomeKitDaemon/HMDNetworkRouterFirewallRuleConfiguration-Protocol.h>
-
-@class HMDNetworkRouterFirewallRuleAccessoryIdentifier, NSArray, NSDate, NSString;
-@protocol HMDNetworkRouterFirewallRuleConfiguration;
-
-@interface HMDNetworkRouterHomeKitOnlyFirewallConfiguration : HMFObject <HMDNetworkRouterFirewallRuleConfiguration>
+@interface HMDNetworkRouterHomeKitOnlyFirewallConfiguration : HMDNetworkRouterFirewallRuleConfiguration
 {
-    id <HMDNetworkRouterFirewallRuleConfiguration> _source;
-    NSArray *_wanRules;
-    NSArray *_lanRules;
-    _Bool _fallbackRTP;
-    _Bool _fallbackHDS;
+    _Bool _isFiltered;
+    _Bool _useFallbackForRTP;
+    _Bool _useFallbackForHDS;
+    _Bool _useFallbackForAirPlay2;
 }
 
-- (void).cxx_destruct;
-@property(readonly, nonatomic) NSArray *wanRules;
-@property(readonly, nonatomic, getter=hasFullAccessToWAN) _Bool fullAccessWAN;
-@property(readonly, nonatomic) NSArray *lanRules;
-@property(readonly, nonatomic, getter=hasFullAccessToLAN) _Bool fullAccessLAN;
-@property(readonly, nonatomic) NSDate *lastModifiedTime;
-@property(readonly, nonatomic) HMDNetworkRouterFirewallRuleAccessoryIdentifier *accessoryIdentifier;
-@property(readonly, copy) NSString *description;
++ (id)fallbackConfigurationForRuleset:(id)arg1;
++ (id)fallbackIdentifier;
+- (id)description;
 - (id)initWithAccessory:(id)arg1 sourceConfiguration:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

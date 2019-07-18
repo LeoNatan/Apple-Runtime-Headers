@@ -11,6 +11,7 @@
 
 @interface REDonatedActionStore : REObservableSingleton
 {
+    _Bool _isMonitoringLockState;
     _Bool _synchronized;
     NSObject<OS_dispatch_queue> *_queue;
     REUpNextScheduler *_donationsScheduler;
@@ -18,6 +19,9 @@
 }
 
 - (void).cxx_destruct;
+- (void)_deviceUnlocked_removeThenDistributeAllActions;
+- (void)_applicationStateChanged_removeThenDistributeAllActions;
+- (void)_agedOut_removeThenDistributeAllActions;
 - (void)_removeThenDistributeAllActions;
 - (void)_queue_distributeRecentDeletedActions;
 - (void)_distributeRecentDeletedActions;

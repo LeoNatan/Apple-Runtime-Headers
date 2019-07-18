@@ -6,13 +6,14 @@
 
 #import <PersonalizationPortrait/PPNamedEntityStore.h>
 
+#import <PersonalizationPortraitInternals/PPFeedbackProcessing-Protocol.h>
+
 @class PPLocalTopicStore, PPM2FeedbackPortraitRegistered, PPMFeedbackRegistered, PPMNamedEntitiesDonation, PPMObjectsDeletion, PPNamedEntityStorage, _PASLock, _PASNotificationToken;
 
-@interface PPLocalNamedEntityStore : PPNamedEntityStore
+@interface PPLocalNamedEntityStore : PPNamedEntityStore <PPFeedbackProcessing>
 {
     _PASLock *_lock;
     PPLocalTopicStore *_topicStoreForNamedEntityMapping;
-    unsigned long long _hardFetchLimit;
     // Error parsing type: AB, name: _isCacheInvalidated
     int _bundleIdBlacklistNotificationToken;
     _PASNotificationToken *_assetUpdateNotificationToken;
@@ -40,6 +41,8 @@
 - (id)getScoredNamedEntityFeaturesWithNamedEntity:(id)arg1 excludingSourceBundleId:(id)arg2 decayRate:(double)arg3 error:(id *)arg4 strictFiltering:(BOOL)arg5 scoreInterpreter:(id)arg6;
 - (BOOL)_logFeedbackSessionsWithFeedback:(id)arg1 error:(id *)arg2;
 - (id)_feedbackItemToNamedEntityMapForFeedback:(id)arg1 error:(id *)arg2;
+- (id)namedEntityToMatchedStringMappingForNamedEntities:(id)arg1 timestamp:(double)arg2 error:(id *)arg3;
+- (void)processFeedback:(id)arg1;
 - (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)disableSyncForBundleIds:(id)arg1;
 - (BOOL)donateLocationNamedEntities:(id)arg1 bundleId:(id)arg2 groupId:(id)arg3 error:(id *)arg4;
@@ -71,9 +74,10 @@
 - (BOOL)monitorNamedEntityRecordChangesWithError:(id *)arg1 setup:(CDUnknownBlockType)arg2 handler:(CDUnknownBlockType)arg3 finish:(CDUnknownBlockType)arg4;
 - (id)namedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2;
 - (BOOL)iterNamedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
+- (BOOL)_shouldIgnoreHomeOrWorkAddress:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)initWithStorage:(id)arg1 topicStoreForNamedEntityMapping:(id)arg2 recordFetchLimit:(unsigned long long)arg3;
+- (id)initWithStorage:(id)arg1 topicStoreForNamedEntityMapping:(id)arg2;
 
 @end
 

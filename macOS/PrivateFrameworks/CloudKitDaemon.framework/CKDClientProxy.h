@@ -8,7 +8,7 @@
 
 #import <CloudKitDaemon/CKDSystemAvailabilityWatcher-Protocol.h>
 
-@class CKDClientContext, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, NSXPCConnection;
+@class CKDClientContext, CKDPCSFetchAggregator, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, NSXPCConnection;
 @protocol NSObject, OS_dispatch_queue;
 
 @interface CKDClientProxy : NSObject <CKDSystemAvailabilityWatcher>
@@ -41,11 +41,13 @@
     NSString *_cachedApplicationBundleID;
     NSString *_sourceApplicationBundleID;
     NSXPCConnection *_connection;
+    CKDPCSFetchAggregator *_fetchAggregator;
 }
 
 + (id)operationStatusReport:(id)arg1;
 + (id)sharedClientThrottlingOperationQueue;
 + (id)accountStatusWorkloop;
+@property(retain, nonatomic) CKDPCSFetchAggregator *fetchAggregator; // @synthesize fetchAggregator=_fetchAggregator;
 @property(nonatomic) __weak NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSString *sourceApplicationBundleID; // @synthesize sourceApplicationBundleID=_sourceApplicationBundleID;
 @property(retain, nonatomic) NSString *cachedApplicationBundleID; // @synthesize cachedApplicationBundleID=_cachedApplicationBundleID;
@@ -85,9 +87,11 @@
 - (void)clearContextFromMetadataCache;
 - (void)wipeAllCachesAndDie;
 - (id)CKStatusReportArray;
+- (id)CKStatusReportArrayIncludingSharedOperations:(BOOL)arg1;
 - (void)repairZonePCSWithOperationInfo:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)getRecordPCSDiagnosticsForZonesWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getPCSDiagnosticsForZonesWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)getOutstandingOperationCountWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)clearPCSCachesForKnownContextsWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestClientSyncWithOperationInfo:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)wipeAllCachedLongLivedProxiesWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -193,11 +197,13 @@
 - (BOOL)_isConnectionAuthorizedForOperation:(id)arg1 error:(id *)arg2;
 - (id)apsEnvironmentEntitlement;
 @property(readonly, nonatomic) NSString *applicationBundleIDForPush;
+@property(readonly, nonatomic) unsigned long long _outstandingOperationCount;
 - (id)_clientPrefixEntitlement;
 @property(readonly, nonatomic) NSString *associatedApplicationBundleID;
 - (id)applicationBundleID;
 - (id)applicationIdentifier;
 - (id)serviceNameForContainerMapEntitlement;
+- (BOOL)hasExplicitCodeOperationURLEntitlement;
 - (BOOL)hasCloudKitSupportServiceEntitlement;
 - (BOOL)hasAllowUnverifiedAccountEntitlement;
 - (BOOL)hasNonLegacyShareURLEntitlement;

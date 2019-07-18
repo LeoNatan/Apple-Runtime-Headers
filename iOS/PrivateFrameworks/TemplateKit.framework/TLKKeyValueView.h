@@ -12,17 +12,17 @@
 
 @interface TLKKeyValueView : TLKView <NUIContainerViewDelegate>
 {
-    _Bool _isInMeasurementPass;
     NSArray *_leadingTuples;
     NSArray *_trailingTuples;
     TLKImage *_image;
     TLKKeyValueGridView *_leadingGrid;
     TLKKeyValueGridView *_trailingGrid;
     TLKImageView *_imageView;
+    double _lastMeasuredWidth;
 }
 
 + (unsigned long long)visibleRowsInGrid:(id)arg1;
-@property(nonatomic) _Bool isInMeasurementPass; // @synthesize isInMeasurementPass=_isInMeasurementPass;
+@property(nonatomic) double lastMeasuredWidth; // @synthesize lastMeasuredWidth=_lastMeasuredWidth;
 @property(retain, nonatomic) TLKImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) TLKKeyValueGridView *trailingGrid; // @synthesize trailingGrid=_trailingGrid;
 @property(retain, nonatomic) TLKKeyValueGridView *leadingGrid; // @synthesize leadingGrid=_leadingGrid;
@@ -38,7 +38,8 @@
 - (long long)currentStackViewDistribution;
 - (struct CGRect)containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect)arg3;
 - (void)observedPropertiesChanged;
-- (_Bool)isLayoutSizeDependentOnPerpendicularAxis;
+- (_Bool)containerView:(id)arg1 shouldRestartMeasurementDueToCompressionInAxis:(long long)arg2 forReason:(long long)arg3;
+- (void)_reconfigureForCompressedState;
 - (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize)arg2 forReason:(long long)arg3;
 - (id)setupContentView;
 

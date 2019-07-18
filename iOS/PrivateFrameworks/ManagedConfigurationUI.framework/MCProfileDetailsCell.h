@@ -9,8 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface MCProfileDetailsCell : MCProfileInfoCell
 {
+    unsigned long long _cellStyle;
 }
 
+@property(nonatomic) unsigned long long cellStyle; // @synthesize cellStyle=_cellStyle;
 - (id)_combineSubtitleAndApplyAttributeWithSubtitle1:(id)arg1 subtitle2:(id)arg2 font:(id)arg3 defaultColor:(id)arg4 expirationColor:(id)arg5 nearExpiration:(_Bool)arg6;
 - (id)_attributedTextForSolitaryTitleLabel:(id)arg1 defaultColor:(id)arg2;
 - (id)_textForLabel:(id)arg1 value:(id)arg2;
@@ -27,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)_setTitle:(id)arg1 subtitle1:(id)arg2 subtitle2:(id)arg3 nearExpiration:(_Bool)arg4;
 - (void)_setTitle:(id)arg1 subtitle1:(id)arg2 subtitle2:(id)arg3;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

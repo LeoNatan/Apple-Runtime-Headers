@@ -51,6 +51,7 @@
     NSIndexPath *_savedSelectedIndexPath;
     _Bool _edgeToEdgeCells;
     _Bool _prefetchingEnabled;
+    _Bool _contentSizeDidChange;
     _Bool _usesDarkTheme;
     NSDictionary *_pendingURLResourceDictionary;
     NSString *_specifierIDPendingPush;
@@ -60,6 +61,7 @@
     UIColor *_foregroundColor;
     UIColor *_separatorColor;
     UIColor *_cellHighlightColor;
+    UIColor *_padSelectionColor;
     UIColor *_cellAccessoryColor;
     UIColor *_cellAccessoryHighlightColor;
     UIColor *_textColor;
@@ -95,11 +97,13 @@
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) UIColor *cellAccessoryHighlightColor; // @synthesize cellAccessoryHighlightColor=_cellAccessoryHighlightColor;
 @property(retain, nonatomic) UIColor *cellAccessoryColor; // @synthesize cellAccessoryColor=_cellAccessoryColor;
+@property(retain, nonatomic) UIColor *padSelectionColor; // @synthesize padSelectionColor=_padSelectionColor;
 @property(retain, nonatomic) UIColor *cellHighlightColor; // @synthesize cellHighlightColor=_cellHighlightColor;
 @property(retain, nonatomic) UIColor *separatorColor; // @synthesize separatorColor=_separatorColor;
 @property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) _Bool usesDarkTheme; // @synthesize usesDarkTheme=_usesDarkTheme;
+@property(nonatomic) _Bool contentSizeDidChange; // @synthesize contentSizeDidChange=_contentSizeDidChange;
 @property(retain, nonatomic) PSURLControllerHandler *urlHandler; // @synthesize urlHandler=_urlHandler;
 @property(nonatomic, getter=isPrefetchingEnabled) _Bool prefetchingEnabled; // @synthesize prefetchingEnabled=_prefetchingEnabled;
 @property(copy, nonatomic) CDUnknownBlockType urlHandlingCompletion; // @synthesize urlHandlingCompletion=_urlHandlingCompletion;
@@ -221,9 +225,9 @@
 - (long long)tableViewStyle;
 - (Class)tableViewClass;
 - (id)initForContentSize:(struct CGSize)arg1;
-- (void)contentSizeChangedNotificationPosted:(id)arg1;
 - (void)contentSizeDidChange:(id)arg1;
-- (void)fontSliderDidEndSlidingNotificationPosted:(id)arg1;
+- (void)delayedContentSizeDidChange;
+- (void)didBecomeActive:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void)_unloadBundleControllers;

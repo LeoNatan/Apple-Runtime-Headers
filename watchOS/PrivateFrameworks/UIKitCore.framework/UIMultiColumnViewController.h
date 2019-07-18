@@ -60,6 +60,7 @@
 - (void)_adjustNonOverlayScrollViewsForKeyboardInfo:(id)arg1;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (id)_splitViewControllerImageForDisplayModeButtonToShowPrimary:(id)arg1;
+- (id)_sideBarImage;
 - (void)_splitViewControllerDidUpdate:(id)arg1 withSize:(struct CGSize)arg2;
 - (void)_marginInfoForChild:(id)arg1 leftMargin:(float *)arg2 rightMargin:(float *)arg3;
 - (struct UIEdgeInsets)_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(_Bool *)arg2;

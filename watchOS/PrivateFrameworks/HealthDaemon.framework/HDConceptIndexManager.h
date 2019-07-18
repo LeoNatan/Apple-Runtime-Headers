@@ -7,13 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <HealthDaemon/HDDataObserver-Protocol.h>
-#import <HealthDaemon/HDHealthDaemonReadyObserver-Protocol.h>
-#import <HealthDaemon/HDHealthOntologyManagerObserver-Protocol.h>
 
 @class HDConceptIndexer, HDProfile, HKObserverSet, NSMutableArray, NSString;
 @protocol HDBlockDispatcher;
 
-@interface HDConceptIndexManager : NSObject <HDDataObserver, HDHealthDaemonReadyObserver, HDHealthOntologyManagerObserver>
+@interface HDConceptIndexManager : NSObject <HDDataObserver>
 {
     HDConceptIndexer *_conceptIndexer;
     id <HDBlockDispatcher> _dispatcher;
@@ -28,17 +26,21 @@
 
 + (void)_updateConceptIndexWithBlockDispatcher:(id)arg1 conceptIndexer:(id)arg2 batchSize:(int)arg3 initialCount:(int)arg4 completion:(CDUnknownBlockType)arg5;
 - (void).cxx_destruct;
-- (void)ontologyManagerReferenceOntologyCreated:(id)arg1;
-- (void)ontologyManagerReferenceOntologyFinishedUpdate:(id)arg1 success:(_Bool)arg2 error:(id)arg3;
-- (void)ontologyManagerReferenceOntologyWillUpdate:(id)arg1;
-- (void)daemonReady:(id)arg1;
+- (void)_badgeForNewHealthRecordsFromTask:(id)arg1;
+- (void)badgeForNewHealthRecords;
+- (void)_notifyForNewHealthRecordsFromTask:(id)arg1;
+- (void)notifyForNewHealthRecords;
+- (void)stopWithDescription:(id)arg1;
+- (void)startWithDescription:(id)arg1;
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (void)invalidateAndWait;
 - (void)setEnabled:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resetWithReindex:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateConceptIndexWithCompletion:(CDUnknownBlockType)arg1;
+- (void)updateWithDescription:(id)arg1;
 - (id)initWithConceptIndexer:(id)arg1 blockDispatcher:(id)arg2 batchSize:(unsigned int)arg3 profile:(id)arg4;
 - (id)init;
 

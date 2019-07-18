@@ -21,7 +21,6 @@
 + (id)languageArrayAfterSettingLanguage:(id)arg1 fallback:(id)arg2 toLanguageArray:(id)arg3;
 + (_Bool)shouldShowPreferredLanguages;
 + (void)updateShouldShowPreferredLanguages:(_Bool)arg1;
-+ (_Bool)localeLanguageMatchesPrimaryLanguage;
 + (id)canonicalLocaleIdentifierWithValidCalendarForComponents:(id)arg1;
 + (void)setLocaleAfterRegionChange:(id)arg1;
 + (void)setLocaleAfterLanguageChange:(id)arg1;
@@ -41,7 +40,9 @@
 + (id)deviceLanguageLocale;
 - (id)defaultLanguagesForMultilingualSetup;
 - (id)languagesForMultilingualSetup;
+- (id)_languagesForMultilingualSetupWithKeyboardsIDs:(id)arg1;
 @property(readonly, copy) NSString *explanationTextForSelectableScripts;
+@property(readonly, copy) NSString *optionNameWithColonForSelectableScripts;
 @property(readonly, copy) NSString *optionNameForSelectableScripts;
 @property(readonly, copy) NSArray *selectableScriptCodes;
 @property(readonly, nonatomic) NSString *languageIdentifier;

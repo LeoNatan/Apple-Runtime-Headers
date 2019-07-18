@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)addPolicyExceptionForURL:(id)arg1 error:(id *)arg2;
+- (void)dealloc;
 - (id)init;
 
 @end

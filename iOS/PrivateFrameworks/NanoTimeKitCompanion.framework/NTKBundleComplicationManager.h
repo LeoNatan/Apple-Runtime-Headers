@@ -22,6 +22,7 @@
 - (id)localizedAppNameForBundleIdentifier:(id)arg1;
 - (_Bool)bundleExistsWithIdentifier:(id)arg1 appBundleIdentifier:(id)arg2;
 - (Class)dataSourceClassForBundleComplication:(id)arg1;
+- (_Bool)bundleComplicationExistsForAppBundleIdentifier:(id)arg1;
 - (id)init;
 
 // Remaining properties

@@ -8,7 +8,7 @@
 
 #import <NanoMedicalID/HKNanoMedicalIDCell-Protocol.h>
 
-@class NSLayoutConstraint, NSString, UIButton, UIImageView, UILabel;
+@class NSLayoutConstraint, NSString, PUICKeylineView, UIButton, UIImageView, UILabel;
 
 __attribute__((visibility("hidden")))
 @interface HKNanoMedicalIDTitleCell : PUICTableViewCell <HKNanoMedicalIDCell>
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     UILabel *_headerLabel;
     UIButton *_doneButton;
     UIImageView *_medicalIdImageView;
+    PUICKeylineView *_separator;
     NSLayoutConstraint *_imageViewBottomConstraint;
     NSLayoutConstraint *_imageViewTopConstraint;
     NSLayoutConstraint *_headerLabelTopConstraint;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_doneButtonPressed:(id)arg1;
+- (void)_addSeparatorConstraints;
 - (void)_addDoneButtonConstraints;
 - (void)_addHeaderLabelConstraints;
 - (void)_addImageViewConstraints:(struct CGSize)arg1;

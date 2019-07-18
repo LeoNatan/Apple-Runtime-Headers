@@ -7,7 +7,7 @@
 @class NSError;
 
 @protocol CHHapticClientInterface
-- (void)clientStoppedWithError:(NSError *)arg1;
+- (void)clientStoppedForReason:(unsigned int)arg1 error:(NSError *)arg2;
 - (void)clientCompletedWithError:(NSError *)arg1;
 - (void)sequenceFinished:(unsigned int)arg1 error:(NSError *)arg2;
 @end

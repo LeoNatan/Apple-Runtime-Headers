@@ -8,47 +8,46 @@
 
 #import <NanoMusicSync/NSCopying-Protocol.h>
 
-@class MPArtworkCatalog, MPModelObject, NSArray, NSDate, NSString;
+@class MPArtworkCatalog, NSArray, NSDate, NSMapTable, NSOrderedSet, NSString;
 @protocol OS_dispatch_queue;
 
 @interface NMSMusicRecommendation : NSObject <NSCopying>
 {
-    MPModelObject *_modelObject;
-    NSArray *_storeRecommendationModelObjects;
+    NSOrderedSet *_items;
+    NSMapTable *_itemSectionMap;
     NSString *_subtitle;
     NSDate *_lastModifiedDate;
     MPArtworkCatalog *_artworkCatalog;
     NSObject<OS_dispatch_queue> *_serializerQueue;
     _Bool _selected;
     NSString *_identifier;
-    NSString *_storeRecommendationID;
     unsigned int _type;
 }
 
 + (void)_fillArtworkMutableArray:(id)arg1 toCount:(unsigned int)arg2;
 + (id)_missingArtImage;
-@property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-@property(readonly, nonatomic) NSString *storeRecommendationID; // @synthesize storeRecommendationID=_storeRecommendationID;
+@property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) NSOrderedSet *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *storeRecommendationModelObjects;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_stringForDayOfWeek:(int)arg1;
 - (id)_artworkCatalogsForLibraryRecommendationAlbumsWithCount:(unsigned int)arg1;
 - (id)_artworkCatalogsForLibraryRecommendationPlaylistsWithCount:(unsigned int)arg1;
 @property(readonly, nonatomic) MPArtworkCatalog *artworkCatalog;
 - (id)_tiledArtworkRequestForPlaylists:(id)arg1 albums:(id)arg2;
+- (id)sectionForItemWithIdentifiers:(id)arg1;
 @property(readonly, nonatomic) NSDate *lastModifiedDate;
 @property(readonly, nonatomic) NSString *subtitle;
 @property(readonly, nonatomic) NSString *title;
-@property(readonly, nonatomic) NSArray *storeRecommendationModelObjects;
 @property(readonly, nonatomic) _Bool isHeavyRotation;
-@property(readonly, nonatomic) _Bool referencesOnlyLibraryContainers;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
-- (id)initWithPlaylist:(id)arg1 recommendationGroup:(id)arg2;
-- (id)initWithRecommendationGroup:(id)arg1;
-- (id)initLibraryRecommendation;
+- (id)initWithPlaylist:(id)arg1 section:(id)arg2;
+- (id)initWithItems:(id)arg1 itemSectionMap:(id)arg2;
+- (id)initWithLibraryRecommendation;
 - (void)_commonInit;
 
 @end

@@ -10,6 +10,7 @@
 - (void)configureWithContext:(SBSRemoteAlertConfigurationContext *)arg1 completion:(void (^)(void))arg2;
 
 @optional
+- (void)didInvalidateForRemoteAlert;
 - (void)setUserInfo:(NSDictionary *)arg1;
 - (void)prepareForActivationWithContext:(SBSRemoteAlertActivationContext *)arg1 completion:(void (^)(void))arg2;
 - (void)noteActivatedForActivityContinuationWithIdentifier:(NSUUID *)arg1;

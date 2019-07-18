@@ -7,6 +7,9 @@
 #import <WebUI/WBSAnalyticsLogger.h>
 
 @interface WBSAnalyticsLogger (_SFAnalyticsLogger)
+- (void)_sf_didCloseTabsAutomaticallyWithCount:(unsigned long long)arg1 tabClosingInterval:(id)arg2;
+- (void)_sf_reportAutomaticTabClosingInterval:(id)arg1;
+- (void)_sf_didChooseIntervalFromAutomaticTabClosingFirstTimeExperiencePrompt:(id)arg1;
 - (void)_sf_didBeginDownloadWithMIMEType:(id)arg1 uti:(id)arg2 downloadType:(long long)arg3 promptType:(long long)arg4 browserPersona:(unsigned long long)arg5;
 - (void)_sf_didTerminateWebProcessBeforeNavigationForReason:(int)arg1;
 - (void)_sf_activatedHomeScreenQuickAction:(int)arg1;

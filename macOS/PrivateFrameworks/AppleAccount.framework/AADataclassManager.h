@@ -13,7 +13,7 @@
 + (id)appBundleIdentifierDictionary;
 + (id)sharedManager;
 - (void)attemptToEnableDataclasses:(id)arg1 forAccount:(id)arg2 inStore:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (BOOL)shouldProvisionNotesForAccount:(id)arg1;
+- (BOOL)_shouldProvisionNotesForAccount:(id)arg1;
 - (BOOL)shouldProvisionDataclass:(id)arg1 forAccount:(id)arg2;
 - (BOOL)shouldAutoEnableDataclass:(id)arg1 forAccount:(id)arg2;
 - (BOOL)_isRunningInStoreDemoMode;

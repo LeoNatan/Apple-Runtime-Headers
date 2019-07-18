@@ -9,11 +9,11 @@
 @interface _TtC18HealthExperienceUI25DismissibleTileHeaderView : UIView
 {
     // Error parsing type: , name: chromeHostView
-    // Error parsing type: , name: delegate
     // Error parsing type: , name: dataSource
     // Error parsing type: , name: detailLabel
     // Error parsing type: , name: titleLabel
-    // Error parsing type: , name: dismissLabel
+    // Error parsing type: , name: accessoryLabel
+    // Error parsing type: , name: detailContainerView
     // Error parsing type: , name: accessorySeparator
     // Error parsing type: , name: minimumViewHeight
     // Error parsing type: , name: titleToTop
@@ -25,13 +25,16 @@
     // Error parsing type: , name: dismissToTop
     // Error parsing type: , name: dismissToBottom
     // Error parsing type: , name: dismissToTrailing
-    // Error parsing type: , name: tappableDismissWidth
+    // Error parsing type: , name: minimumTappableDismissWidth
+    // Error parsing type: , name: minimumTappableDismissHeight
 }
 
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)didTapDismiss:(id)arg1;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 @end
 

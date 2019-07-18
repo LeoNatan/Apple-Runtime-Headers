@@ -45,7 +45,6 @@
 - (void)loadDispatchQueue;
 - (id)initWithCoalescingStrategy:(unsigned int)arg1 options:(unsigned int)arg2;
 - (id)mostRecentCallWithHandle:(id)arg1;
-- (_Bool)outgoingRecentCallsContainsHandle:(id)arg1;
 - (_Bool)coalesceCall:(id)arg1 withCall:(id)arg2;
 - (_Bool)canCoalesceCall:(id)arg1 withCall:(id)arg2;
 - (void)reloadWithOptions:(unsigned int)arg1;

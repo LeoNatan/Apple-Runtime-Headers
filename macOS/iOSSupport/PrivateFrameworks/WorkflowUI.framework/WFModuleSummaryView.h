@@ -65,6 +65,7 @@
 - (void)summaryEditorDidFinish:(id)arg1 returnToKeyboard:(BOOL)arg2;
 - (void)summaryEditorDidRequestTextEntry:(id)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)startEditingForParameterKey:(id)arg1;
 - (void)destroyCurrentEditor;
 - (void)removeElementFromArrayAtIndex:(unsigned long long)arg1 forParameterKey:(id)arg2;
 - (id)addElementToArrayForParameterKey:(id)arg1;

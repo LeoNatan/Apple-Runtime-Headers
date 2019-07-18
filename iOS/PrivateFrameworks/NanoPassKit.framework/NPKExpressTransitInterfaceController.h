@@ -33,13 +33,15 @@
 @property(nonatomic) __weak id <NPKExpressTransitInterfaceControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <NPKExpressTransitInterfaceControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)_paymentApplicationFromPass:(id)arg1 applicationIdentifier:(id)arg2;
 - (void)transitAppletHistoryFetcher:(id)arg1 gotTransitAppletHistory:(id)arg2 forAppletWithAID:(id)arg3;
 - (void)_dismissExpressTransitAlert;
 - (void)_scheduleDismissalOfExpressTransitAlertWithTimeout:(double)arg1;
+- (void)_updateWithPass:(id)arg1 paymentApplicationIdentifier:(id)arg2;
 - (void)expressPassController:(id)arg1 didUpdateExpressPasses:(id)arg2 expressPassesInformation:(id)arg3;
 - (void)expressPassController:(id)arg1 didFailTransactionForPass:(id)arg2;
 - (void)expressPassController:(id)arg1 didCompleteTransactionForPass:(id)arg2;
-- (void)expressPassController:(id)arg1 didStartTransactionForPass:(id)arg2;
+- (void)expressPassController:(id)arg1 didStartTransactionForPass:(id)arg2 paymentApplicationIdentifier:(id)arg3;
 - (_Bool)canHandleExpressEventsFromPass:(id)arg1;
 - (void)dealloc;
 - (id)init;

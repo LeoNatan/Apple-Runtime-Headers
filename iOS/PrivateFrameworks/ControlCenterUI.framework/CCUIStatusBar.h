@@ -14,18 +14,19 @@
     UIStatusBar_Modern *_compactTrailingStatusBar;
     UIStatusBar_Modern *_expandedStatusBar;
     double _trailingMarginDelta;
+    double _verticalBatteryAlignmentDelta;
     id <CCUIStatusBarDelegate> _delegate;
     unsigned long long _leadingState;
     unsigned long long _trailingState;
-    double _verticalAlignmentDelta;
     double _maxCompactScaleFactor;
+    double _verticalSecondaryServiceDelta;
     struct UIEdgeInsets _compactEdgeInsets;
     struct UIEdgeInsets _expandedEdgeInsets;
     struct CGAffineTransform _compactScaleTransform;
 }
 
+@property(readonly, nonatomic) double verticalSecondaryServiceDelta; // @synthesize verticalSecondaryServiceDelta=_verticalSecondaryServiceDelta;
 @property(readonly, nonatomic) double maxCompactScaleFactor; // @synthesize maxCompactScaleFactor=_maxCompactScaleFactor;
-@property(readonly, nonatomic) double verticalAlignmentDelta; // @synthesize verticalAlignmentDelta=_verticalAlignmentDelta;
 @property(nonatomic) struct UIEdgeInsets expandedEdgeInsets; // @synthesize expandedEdgeInsets=_expandedEdgeInsets;
 @property(nonatomic) struct UIEdgeInsets compactEdgeInsets; // @synthesize compactEdgeInsets=_compactEdgeInsets;
 @property(nonatomic) unsigned long long trailingState; // @synthesize trailingState=_trailingState;

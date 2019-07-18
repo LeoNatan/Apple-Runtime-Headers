@@ -18,15 +18,11 @@
     NSDate *_endDateForReferenceDate;
     NSDate *_localSolarMidnightDate;
     GEOAlmanac *_sunriseSunsetSolarAlmanac;
-    GEOAlmanac *_civilTwilightSolarAlmanac;
-    GEOAlmanac *_nauticalTwilightSolarAlmanac;
-    GEOAlmanac *_astronomicalTwilightSolarAlmanac;
+    GEOAlmanac *_dawnDuskSolarAlmanac;
     double _effectiveSolarDayLength;
 }
 
-@property(retain, nonatomic) GEOAlmanac *astronomicalTwilightSolarAlmanac; // @synthesize astronomicalTwilightSolarAlmanac=_astronomicalTwilightSolarAlmanac;
-@property(retain, nonatomic) GEOAlmanac *nauticalTwilightSolarAlmanac; // @synthesize nauticalTwilightSolarAlmanac=_nauticalTwilightSolarAlmanac;
-@property(retain, nonatomic) GEOAlmanac *civilTwilightSolarAlmanac; // @synthesize civilTwilightSolarAlmanac=_civilTwilightSolarAlmanac;
+@property(retain, nonatomic) GEOAlmanac *dawnDuskSolarAlmanac; // @synthesize dawnDuskSolarAlmanac=_dawnDuskSolarAlmanac;
 @property(retain, nonatomic) GEOAlmanac *sunriseSunsetSolarAlmanac; // @synthesize sunriseSunsetSolarAlmanac=_sunriseSunsetSolarAlmanac;
 @property(nonatomic) _Bool dependentValuesNeedUpdate; // @synthesize dependentValuesNeedUpdate=_dependentValuesNeedUpdate;
 @property(nonatomic) double effectiveSolarDayLength; // @synthesize effectiveSolarDayLength=_effectiveSolarDayLength;
@@ -37,12 +33,14 @@
 @property(nonatomic) _Bool usePlaceholderData; // @synthesize usePlaceholderData=_usePlaceholderData;
 @property(retain, nonatomic) CLLocation *referenceLocation; // @synthesize referenceLocation=_referenceLocation;
 - (void).cxx_destruct;
+- (id)ntkCacheableKey;
 - (void)updateForTimeZoneChange;
 - (void)updateModelWithDate:(id)arg1;
 - (void)_updateDependentValues;
 - (id)dateForPercentageThroughPeriod:(float)arg1;
 - (float)percentageThroughPeriodForDate:(id)arg1;
 - (float)percentageThroughPeriodInCurrentSolarDayForDate:(id)arg1;
+- (id)normalizeDateIntervalForDate:(id)arg1;
 - (float)percentageThroughPeriodForIdealizedTimeInCurrentSolarDay;
 - (_Bool)includesDate:(id)arg1;
 - (id)initWithReferenceDate:(id)arg1 referenceLocation:(id)arg2;

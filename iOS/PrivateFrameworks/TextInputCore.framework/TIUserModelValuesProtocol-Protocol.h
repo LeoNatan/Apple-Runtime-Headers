@@ -7,11 +7,12 @@
 #import <TextInputCore/NSObject-Protocol.h>
 
 @class NSArray, NSNumber, NSString;
+@protocol TIUserModeling;
 
 @protocol TIUserModelValuesProtocol <NSObject>
 - (NSString *)stringValue:(NSString *)arg1;
 - (NSArray *)counterValueWithWordLength:(NSString *)arg1;
 - (NSNumber *)counterValue:(NSString *)arg1;
-- (NSString *)featureUsage:(NSString *)arg1;
+- (NSString *)featureUsage:(NSString *)arg1 userModel:(id <TIUserModeling>)arg2;
 @end
 

@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@class NSNumber;
-
 @interface HAMenstrualAlgorithmsHistoricalAnalyzer : NSObject
 {
     struct unique_ptr<Nightingale::ngt_HistoricalAnalyzer, std::__1::default_delete<Nightingale::ngt_HistoricalAnalyzer>> _historicalAnalyzer;
-    NSNumber *_julianDayOfLastInput;
+    struct optional<unsigned int> _julianDayOfLastInput;
 }
 
 - (id).cxx_construct;

@@ -16,8 +16,8 @@
     CDStruct_2bc666a5 _espresso_net;
     CDStruct_b527887c _espresso_processing_params;
     _Bool _espressoInitialized;
-    vector_aab22ae2 _randomNumbers;
-    vector_aab22ae2 _srgbToLogLUT;
+    struct vector<unsigned char, std::__1::allocator<unsigned char>> _randomNumbers;
+    struct vector<unsigned char, std::__1::allocator<unsigned char>> _srgbToLogLUT;
     struct vImage_Buffer _vImageBuffer;
     ARGPUCubemapConverter *_cubemapConverter;
     ARGPUSphericalBlur *_sphericalBlur;

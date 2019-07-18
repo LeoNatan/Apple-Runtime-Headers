@@ -16,7 +16,7 @@
 #import <Navigation/MNTracePlayerObserver-Protocol.h>
 #import <Navigation/MNVoiceControllerObserver-Protocol.h>
 
-@class GEOApplicationAuditToken, GEOComposedWaypoint, GEOMotionContext, GEONavigationGuidanceState, MNClassicGuidanceManager, MNGuidanceEventManager, MNGuidanceSignInfo, MNLocation, MNLocationTracker, MNNavigationSessionLogger, MNNavigationTraceManager, MNObserverHashTable, MNRouteManager, MNTimeAndDistanceUpdater, MNTraceNavigationEventRecorder, MNTrafficIncidentAlert, NSString, NSUUID;
+@class GEOApplicationAuditToken, GEOComposedWaypoint, GEOMotionContext, GEONavigationGuidanceState, GEOResourceManifestUpdateAssertion, MNClassicGuidanceManager, MNGuidanceEventManager, MNGuidanceSignInfo, MNLocation, MNLocationTracker, MNNavigationSessionLogger, MNNavigationTraceManager, MNObserverHashTable, MNRouteManager, MNTimeAndDistanceUpdater, MNTraceNavigationEventRecorder, MNTrafficIncidentAlert, NSString, NSUUID;
 @protocol MNAudioSession, MNGuidanceManager;
 
 @interface MNNavigationSession : NSObject <MNGuidanceManagerDelegate, MNLocationManagerHeadingObserver, MNLocationManagerObserver, MNLocationTrackerDelegate, MNNavigationAudioSessionDelegate, MNTimeAndDistanceUpdaterDelegate, MNTracePlayerObserver, MNVoiceControllerObserver, MNSessionUpdateManagerDelegate>
@@ -43,6 +43,7 @@
     MNObserverHashTable *_observers;
     NSString *_tileLoaderClient;
     GEOApplicationAuditToken *_auditToken;
+    GEOResourceManifestUpdateAssertion *_manifestUpdateAssertion;
     MNGuidanceSignInfo *_lastSignInfo;
     NSUUID *_lastLaneID;
     NSUUID *_lastJunctionViewID;
@@ -124,7 +125,6 @@
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
 - (void)locationManagerUpdatedLocation:(id)arg1;
-- (void)locationTracker:(id)arg1 didUpdateTraffic:(id)arg2;
 - (void)locationTracker:(id)arg1 updatedTrafficIncidentAlert:(id)arg2;
 - (void)locationTracker:(id)arg1 invalidatedTrafficIncidentAlert:(id)arg2;
 - (void)locationTracker:(id)arg1 receivedTrafficIncidentAlert:(id)arg2 responseCallback:(CDUnknownBlockType)arg3;

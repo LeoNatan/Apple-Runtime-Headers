@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <Navigation/MNNavigationStateInterface-Protocol.h>
+@class MNNavigationStateManager, MNNavigationTraceManager;
 
-@class MNNavigationStateManager, MNNavigationTraceManager, NSString;
-
-@interface MNNavigationState : NSObject <MNNavigationStateInterface>
+@interface MNNavigationState : NSObject
 {
     double _locationUpdateInterval;
     double _suggestionUpdateFrequency;
@@ -21,41 +19,10 @@
 @property(readonly, nonatomic) double suggestionUpdateFrequency; // @synthesize suggestionUpdateFrequency=_suggestionUpdateFrequency;
 @property(readonly, nonatomic) double locationUpdateInterval; // @synthesize locationUpdateInterval=_locationUpdateInterval;
 - (void).cxx_destruct;
-- (void)checkinForNavigationService;
-- (void)resumeRealtimeUpdatesForSubscriber:(id)arg1;
-- (void)pauseRealtimeUpdatesForSubscriber:(id)arg1;
-- (void)updateGuidanceWithData:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)interfaceHashesWithHandler:(CDUnknownBlockType)arg1;
-- (void)recordPedestrianTracePath:(id)arg1;
-- (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;
-- (void)setTracePosition:(double)arg1;
-- (void)setTracePlaybackSpeed:(double)arg1;
-- (void)setTraceIsPlaying:(BOOL)arg1;
-- (void)acceptReroute:(BOOL)arg1 forTrafficIncidentAlertDetails:(id)arg2;
-- (void)setJunctionViewImageWidth:(double)arg1 height:(double)arg2;
-- (void)setRideIndex:(unsigned long long)arg1 forLegIndex:(unsigned long long)arg2;
-- (void)setDisplayedStepIndex:(unsigned long long)arg1;
-- (void)setIsConnectedToCarplay:(BOOL)arg1;
-- (void)setCurrentAudioOutputSetting:(id)arg1;
-- (void)setHFPPreference:(BOOL)arg1 forSetting:(id)arg2;
-- (void)setGuidancePromptsEnabled:(BOOL)arg1;
-- (void)setHeadingOrientation:(int)arg1;
-- (void)stopCurrentGuidancePrompt;
-- (void)vibrateForPrompt:(unsigned long long)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)repeatCurrentTrafficAlertWithReply:(CDUnknownBlockType)arg1;
-- (void)repeatCurrentGuidanceWithReply:(CDUnknownBlockType)arg1;
-- (void)changeSettings:(id)arg1;
-- (void)setFullGuidanceMode:(BOOL)arg1;
-- (void)switchToRoute:(id)arg1;
-- (void)resumeOriginalDestination;
-- (void)updateDestination:(id)arg1;
-- (void)stopPredictingDestinations;
-- (void)startPredictingDestinationsWithHandler:(CDUnknownBlockType)arg1;
-- (void)stopNavigation;
-- (void)startNavigationWithDetails:(id)arg1 activeBlock:(CDUnknownBlockType)arg2;
-- (void)setRoutesForPreview:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
-- (void)cancelDirectionsRequestWithIdentifier:(id)arg1;
-- (void)requestDirections:(id)arg1 withIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (BOOL)_isSelectorValidForForwarding:(SEL)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (void)forwardInvocation:(id)arg1;
 - (void)addCommuteDestinationSuggestion:(id)arg1;
 - (void)updateWithLocation:(id)arg1;
 - (void)preEnterState;
@@ -66,15 +33,10 @@
 - (id)init;
 @property(readonly, nonatomic) MNNavigationTraceManager *traceManager;
 @property(readonly, nonatomic) unsigned long long desiredLocationProviderType;
+@property(readonly, nonatomic) BOOL shouldClearStoredRoutes;
 @property(readonly, nonatomic) BOOL requiresLocationAccess;
 @property(readonly, nonatomic) BOOL requiresHighMemoryThreshold;
 @property(readonly, nonatomic) unsigned long long type;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

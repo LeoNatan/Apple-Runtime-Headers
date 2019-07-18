@@ -4,18 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <iWorkImport/TSDLayoutChangeObserver.h>
 
 #import <iWorkImport/TSDCanvasDelegate-Protocol.h>
-#import <iWorkImport/TSDDynamicCanvasDelegate-Protocol.h>
 #import <iWorkImport/TSDPartitioner-Protocol.h>
-#import <iWorkImport/TSKChangeSourceObserver-Protocol.h>
 
 @class NSString, TSDCanvas, TSDDrawableInfo, TSUPointerKeyDictionary;
 @protocol TSDCanvasProxyDelegate;
 
 __attribute__((visibility("hidden")))
-@interface TSDDefaultPartitioner : NSObject <TSKChangeSourceObserver, TSDDynamicCanvasDelegate, TSDPartitioner, TSDCanvasDelegate>
+@interface TSDDefaultPartitioner : TSDLayoutChangeObserver <TSDPartitioner, TSDCanvasDelegate>
 {
     TSDDrawableInfo *mInfo;
     TSDCanvas *mCanvas;
@@ -26,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly, nonatomic) _Bool paginateRightToLeft; // @synthesize paginateRightToLeft=mPaginateRightToLeft;
+- (void)didProcessAllChanges;
 - (void)processChanges:(id)arg1 forChangeSource:(id)arg2;
 - (void)preprocessChanges:(id)arg1 forChangeSource:(id)arg2;
 - (void)i_layoutUnregistered:(id)arg1;

@@ -8,7 +8,7 @@
 
 #import <PassKitUI/PKPaymentDataProviderDelegate-Protocol.h>
 
-@class NSDate, NSDictionary, NSString, PKMerchant, PKPaymentPass;
+@class NSArray, NSDate, NSDictionary, NSString, PKMerchant, PKPaymentPass;
 @protocol OS_dispatch_queue, PKDashboardTransactionFetcherDelegate, PKPaymentDataProvider;
 
 @interface PKDashboardTransactionFetcher : NSObject <PKPaymentDataProviderDelegate>
@@ -31,6 +31,8 @@
     PKPaymentPass *_cashbackPass;
     _Bool _needsCashbackUniqueID;
     NSDictionary *_cashbackGroups;
+    _Bool _needsInstantWithdrawalFees;
+    NSArray *_instantWithdrawalFeeGroups;
     unsigned long long _type;
     NSDate *_startDate;
     NSDate *_endDate;
@@ -46,7 +48,13 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)_sendUpdatedTransactions;
 - (id)_sortedTransactions:(id)arg1 ascending:(_Bool)arg2;
+- (id)_feeTotalForTransaction:(id)arg1;
+- (void)_processPaymentPassTransactionsWithTransactions:(id)arg1 sendTransactionsBlock:(CDUnknownBlockType)arg2;
+- (void)_addInstantWidthdrawalTransactionsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_addCashbackTransactions:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)instantWithdrawalFeesTransactionGroups;
 - (id)cashbackPass;
+- (id)cashbackGroupForDateComponents:(id)arg1;
 - (id)cashbackGroupForTransactionWithIdentifier:(id)arg1;
 - (void)transactionsMonthlyAmountsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)transactionsYearlyCountsWithCompletion:(CDUnknownBlockType)arg1;

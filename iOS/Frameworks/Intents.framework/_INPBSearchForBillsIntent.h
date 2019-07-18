@@ -15,6 +15,7 @@
 @interface _INPBSearchForBillsIntent : PBCodable <_INPBSearchForBillsIntent, NSSecureCoding, NSCopying>
 {
     CDStruct_c8e9def3 _has;
+    _Bool __encodeLegacyGloryData;
     int _billType;
     int _status;
     _INPBBillPayeeValue *_billPayee;
@@ -24,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) _INPBDateTimeRange *paymentDateRange; // @synthesize paymentDateRange=_paymentDateRange;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;

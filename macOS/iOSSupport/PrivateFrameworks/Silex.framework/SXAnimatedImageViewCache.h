@@ -6,18 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableIndexSet, SXAnimatedImage;
-@protocol OS_dispatch_queue, OS_dispatch_semaphore, SXAnimatedImageViewCacheDelegate;
+@class NSMutableArray, NSMutableIndexSet, NSOperationQueue, SXAnimatedImage;
+@protocol SXAnimatedImageViewCacheDelegate;
 
 @interface SXAnimatedImageViewCache : NSObject
 {
     BOOL _cachingEnabled;
+    struct os_unfair_lock_s _lock;
     id <SXAnimatedImageViewCacheDelegate> _delegate;
     SXAnimatedImage *_animatedImage;
     long long _singleImageByteSize;
     unsigned long long _lastRequestedIndex;
-    NSObject<OS_dispatch_queue> *_decodingQueue;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
+    NSOperationQueue *_queue;
     unsigned long long _numberOfCachedImages;
     NSMutableArray *_cachedImages;
     NSMutableIndexSet *_indicesToCache;
@@ -28,11 +28,11 @@
 @property(readonly, nonatomic) NSMutableIndexSet *indicesToCache; // @synthesize indicesToCache=_indicesToCache;
 @property(readonly, nonatomic) NSMutableArray *cachedImages; // @synthesize cachedImages=_cachedImages;
 @property(nonatomic) unsigned long long numberOfCachedImages; // @synthesize numberOfCachedImages=_numberOfCachedImages;
-@property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *decodingQueue; // @synthesize decodingQueue=_decodingQueue;
+@property(readonly, nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
+@property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property unsigned long long lastRequestedIndex; // @synthesize lastRequestedIndex=_lastRequestedIndex;
 @property long long singleImageByteSize; // @synthesize singleImageByteSize=_singleImageByteSize;
-@property BOOL cachingEnabled; // @synthesize cachingEnabled=_cachingEnabled;
+@property(nonatomic) BOOL cachingEnabled; // @synthesize cachingEnabled=_cachingEnabled;
 @property(nonatomic) __weak SXAnimatedImage *animatedImage; // @synthesize animatedImage=_animatedImage;
 @property(nonatomic) __weak id <SXAnimatedImageViewCacheDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -43,9 +43,9 @@
 - (void)restoreCacheSize;
 - (void)decreaseCacheSize;
 @property(readonly, nonatomic) unsigned long long maxCacheSize;
+@property(nonatomic, getter=preloadingSuspended) BOOL suspendPreloading;
 - (void)prune;
 - (id)imageForFrameIndex:(unsigned long long)arg1;
-- (long long)cacheStatusForFrameIndex:(unsigned long long)arg1;
 - (unsigned long long)nearestCachedFrameIndexForFrameIndex:(unsigned long long)arg1;
 - (void)prepareImageForFrameIndex:(unsigned long long)arg1;
 - (id)initWithImageSize:(struct CGSize)arg1;

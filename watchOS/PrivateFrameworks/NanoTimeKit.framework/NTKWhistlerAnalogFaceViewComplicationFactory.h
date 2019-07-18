@@ -36,7 +36,7 @@
 - (void)loadLayoutRulesForFaceView:(id)arg1;
 - (id)customEditOptionContainerViewForSlot:(id)arg1;
 - (int)complicationPickerStyleForSlot:(id)arg1;
-- (id)curvedPickerMaskForSlot:(id)arg1;
+- (id)pickerMaskForSlot:(id)arg1;
 - (id)keylineViewForComplicationSlot:(id)arg1;
 - (struct CGPoint)circularComplicationCenterForSlot:(id)arg1 inFaceBounds:(struct CGRect)arg2;
 - (id)newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;

@@ -47,7 +47,6 @@ __attribute__((visibility("hidden")))
     NSDictionary *_ancillaryModels;
     NSDictionary *_ancillarySQLModels;
     NSDictionary *_historyTrackingOptions;
-    NSDictionary *_transactionStringPKForName;
     NSData *_dbKey;
     BOOL _remoteStoresDidChange;
     int _remoteNotificationToken;
@@ -76,8 +75,6 @@ __attribute__((visibility("hidden")))
 + (int)debugDefault;
 + (void)setColoredLoggingDefault:(BOOL)arg1;
 + (void)setDebugDefault:(int)arg1;
-- (id)transactionStringPKForName:(id)arg1;
-- (void)addTransactionStringName:(id)arg1 forPK:(id)arg2;
 - (id)entitiesToExclude;
 - (id)entitiesToInclude;
 - (id)notifyPostName;

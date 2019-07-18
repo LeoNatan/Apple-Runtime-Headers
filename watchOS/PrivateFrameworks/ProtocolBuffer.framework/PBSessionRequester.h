@@ -41,10 +41,26 @@
     NSDictionary *_connectionProperties;
     _Bool _shouldHandleCookies;
     NSString *_apsRelayTopic;
-    CDStruct_dca542ad _flags;
+    unsigned int _nwActivityDomain;
+    unsigned int _nwActivityLabel;
+    struct {
+        unsigned int ignoresResponse:1;
+        unsigned int loading:1;
+        unsigned int needsCancel:1;
+        unsigned int responseStatusSet:1;
+        unsigned int parsedResponseHeader:1;
+        unsigned int delegateDidReceiveResponse:1;
+        unsigned int delegateDidFinish:1;
+        unsigned int delegateDidCancel:1;
+        unsigned int delegateDidFailWithError:1;
+        unsigned int paused:1;
+        unsigned int resuming:1;
+    } _flags;
 }
 
 + (_Bool)usesEncodedMessages;
+@property(nonatomic) unsigned int nwActivityLabel; // @synthesize nwActivityLabel=_nwActivityLabel;
+@property(nonatomic) unsigned int nwActivityDomain; // @synthesize nwActivityDomain=_nwActivityDomain;
 @property(copy, nonatomic) NSString *apsRelayTopic; // @synthesize apsRelayTopic=_apsRelayTopic;
 @property(nonatomic) _Bool shouldHandleCookies; // @synthesize shouldHandleCookies=_shouldHandleCookies;
 @property(retain, nonatomic) NSArray *clientCertificates; // @synthesize clientCertificates=_clientCertificates;

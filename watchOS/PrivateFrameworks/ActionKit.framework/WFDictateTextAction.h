@@ -31,6 +31,7 @@
 - (void)stopListening;
 - (void)cancel;
 - (id)keyCommands;
+- (void)runWithSiriUserInterface:(id)arg1 input:(id)arg2;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 
 // Remaining properties

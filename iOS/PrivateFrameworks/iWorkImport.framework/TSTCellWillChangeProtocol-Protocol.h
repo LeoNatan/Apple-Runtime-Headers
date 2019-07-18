@@ -4,10 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class TSTCell, TSTCellMap;
+@class TSTCell, TSTCellMap, TSTConcurrentCellMap;
 
 @protocol TSTCellWillChangeProtocol
 - (void)willRemoveRows:(const vector_4dc5f307 *)arg1;
+- (void)willApplyConcurrentCellMap:(TSTConcurrentCellMap *)arg1;
 - (void)willApplyBaseCellMap:(TSTCellMap *)arg1;
 - (void)willApplyCell:(TSTCell *)arg1 baseCellCoord:(struct TSUModelCellCoord)arg2;
 @end

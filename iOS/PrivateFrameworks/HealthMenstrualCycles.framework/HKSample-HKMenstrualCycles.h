@@ -7,7 +7,9 @@
 #import <HealthKit/HKSample.h>
 
 @interface HKSample (HKMenstrualCycles)
-- (long long)hkmc_creationDayIndex;
-- (CDStruct_ef5fcbe6)hkmc_dayIndexRange;
++ (id)hkmc_defaultMetadata;
+- (CDStruct_ef5fcbe6)hkmc_dayIndexRangeWithCalendar:(id)arg1;
+- (id)hkmc_timeZone;
+- (_Bool)hkmc_wasEnteredFromCycleTracking;
 @end
 

@@ -108,6 +108,7 @@
 - (_Bool)_calculateAllowsCellularNetworking;
 - (id)streamingPlaybackPurchaseBundleDestinationFilePathForAssetFilePath:(id)arg1;
 - (id)streamingPlaybackAssetDestinationFilePathForAssetQuality:(unsigned int)arg1 assetFlavor:(id)arg2 protectionType:(unsigned int)arg3 pathExtension:(id)arg4;
+- (void)setLikedState:(int)arg1 forUserIdentity:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setLikedState:(int)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)clearLocalPlaybackAssetFilePathWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setCachedLocalPlaybackAssetFilePath:(id)arg1 protectionType:(unsigned int)arg2 assetQuality:(unsigned int)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
@@ -119,6 +120,7 @@
 @property(readonly, copy, nonatomic) NSString *iTunesStoreContentType;
 @property(readonly, copy, nonatomic) NSString *iTunesStoreContentPurchasedMediaKind;
 @property(readonly, copy, nonatomic) NSString *iTunesStoreContentDownloadParameters;
+- (int)likedState:(id)arg1;
 @property(readonly, nonatomic) int likedState;
 @property(readonly, copy, nonatomic) NSDictionary *additionalHTTPHeaderFields;
 @property(readonly, nonatomic) _Bool allowsCellularNetworking;

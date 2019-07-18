@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSError, NSMutableArray, NSMutableDictionary, NSProgress, NSURL, PLBackgroundJobService, PLClientServerTransaction, PLCloudPhotoLibraryManager, PLDatabaseContext, PLDupeManager, PLImageWriter, PLJournalManager, PLKeywordManager, PLLazyObject, PLLibraryServicesStateNode, PLModelMigrator, PLMomentGenerationDataManager, PLPhotoLibrary, PLPhotoLibraryBundle, PLPhotoLibraryPathManager, PLQuickActionManager, PLRelationshipOrderKeyManager, PLSearchIndexManager;
+@class NSError, NSMutableArray, NSMutableDictionary, NSProgress, NSString, NSURL, PLAssetsdCrashRecoverySupport, PLBackgroundJobService, PLClientServerTransaction, PLCloudPhotoLibraryManager, PLDatabaseContext, PLDupeManager, PLImageWriter, PLJournalManager, PLKeywordManager, PLLazyObject, PLLibraryServicesStateNode, PLModelMigrator, PLMomentGenerationDataManager, PLPhotoLibrary, PLPhotoLibraryBundle, PLPhotoLibraryPathManager, PLQuickActionManager, PLRelationshipOrderKeyManager, PLSearchIndexManager;
 @protocol OS_dispatch_queue, PLLibraryServicesDelegate;
 
 @interface PLLibraryServicesManager : NSObject
@@ -26,6 +26,7 @@
     PLLazyObject *_lazyKeywordManager;
     PLLazyObject *_lazyAlbumCountCoalescer;
     PLLazyObject *_lazyCloudPhotoLibraryManager;
+    PLLazyObject *_lazyCrashRecoverySupport;
     PLClientServerTransaction *_serverTransaction;
     NSObject<OS_dispatch_queue> *_albumCountQueue;
     NSMutableDictionary *_externalWaiterCompletionBlocksByState;
@@ -38,6 +39,7 @@
     PLBackgroundJobService *_backgroundJobService;
     NSProgress *_preRunningProgress;
     NSProgress *_postRunningProgress;
+    NSString *_upgradeClient;
     PLLibraryServicesStateNode *_currentStateNode;
     id _operationCountObservee;
     NSMutableArray *_mutablePendingOperations;
@@ -45,6 +47,7 @@
     NSObject<OS_dispatch_queue> *_helperQueue;
 }
 
++ (id)errorForInvalidationError:(id)arg1 userInfo:(id)arg2;
 + (id)libraryServicesManagerForLibraryURL:(id)arg1;
 + (long long)_finalState;
 + (long long)_initialState;
@@ -57,6 +60,7 @@
 @property(readonly, nonatomic) NSMutableArray *mutablePendingOperations; // @synthesize mutablePendingOperations=_mutablePendingOperations;
 @property(retain, nonatomic) id operationCountObservee; // @synthesize operationCountObservee=_operationCountObservee;
 @property(retain, nonatomic, setter=_setCurrentStateNode:) PLLibraryServicesStateNode *currentStateNode; // @synthesize currentStateNode=_currentStateNode;
+@property(copy) NSString *upgradeClient; // @synthesize upgradeClient=_upgradeClient;
 @property(getter=isCreateMode) _Bool createMode; // @synthesize createMode=_createMode;
 @property(retain, nonatomic) NSProgress *postRunningProgress; // @synthesize postRunningProgress=_postRunningProgress;
 @property(retain, nonatomic) NSProgress *preRunningProgress; // @synthesize preRunningProgress=_preRunningProgress;
@@ -88,7 +92,10 @@
 - (void)_enqueueExternalWaiterCompletionBlockForState:(long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)awaitLibraryState:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)awaitLibraryState:(long long)arg1 error:(id *)arg2;
+- (void)_waitForAwaitOperation:(id)arg1;
+- (id)_enqueueAwaitOperation;
 - (void)_awaitLibraryState:(long long)arg1 sync:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_dispatchAwaitLibraryStateCompletionHandler:(CDUnknownBlockType)arg1 group:(id)arg2 error:(id)arg3;
 - (_Bool)activate:(id *)arg1;
 - (id)pendingOperations;
 - (id)activeOperations;
@@ -106,6 +113,8 @@
 @property(readonly) PLDupeManager *dupeManager;
 @property(readonly) PLMomentGenerationDataManager *momentGenerationDataManager;
 @property(readonly) PLRelationshipOrderKeyManager *relationshipOrderKeyManager;
+- (void)_invalidateBackgroundJobService;
+- (void)_invalidateCrashRecoverySupport;
 - (void)_invalidateCloudPhotoLibraryManager;
 - (void)_invalidateDatabaseContext;
 - (void)_invalidateQuickActionManager;
@@ -121,6 +130,8 @@
 - (void)_invalidateMomentGenerationDataManager;
 - (id)newMomentGenerationDataManager;
 - (id)newSearchIndexManager;
+@property(readonly) PLAssetsdCrashRecoverySupport *crashRecoverySupport;
+- (id)newCrashRecoverySupport;
 @property(readonly) PLCloudPhotoLibraryManager *cloudPhotoLibraryManager;
 - (id)newCloudPhotoLibraryManager;
 @property(readonly) PLDatabaseContext *databaseContext;
@@ -134,7 +145,7 @@
 @property(readonly, getter=isCloudPhotoLibraryEnabled) _Bool cloudPhotoLibraryEnabled;
 @property(readonly) PLPhotoLibrary *photoLibrary;
 @property(readonly, copy) NSURL *libraryURL;
-- (void)currentLocalDidChange:(id)arg1;
+- (void)currentLocaleDidChange:(id)arg1;
 - (id)initWithLibraryBundle:(id)arg1 backgroundJobService:(id)arg2 delegateClass:(Class)arg3;
 - (id)statusDescription;
 

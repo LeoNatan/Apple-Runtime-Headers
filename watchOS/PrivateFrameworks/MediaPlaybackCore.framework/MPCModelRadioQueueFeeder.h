@@ -6,13 +6,14 @@
 
 #import <MediaPlayer/MPQueueFeeder.h>
 
+#import <MediaPlaybackCore/MPAVItemObserver-Protocol.h>
 #import <MediaPlaybackCore/MPCQueueControllerDataSource-Protocol.h>
 #import <MediaPlaybackCore/MPRTCReportingItemSessionContaining-Protocol.h>
 
 @class ICStoreRequestContext, ICUserIdentity, ICUserIdentityStore, MPAVItem, MPCModelRadioPersonalizationResponse, MPCModelRadioPlaybackQueue, MPCPlaybackRequestEnvironment, NSDictionary, NSOperationQueue, NSString, SSVPlayActivityController;
-@protocol MPAVItemQueueIdentifier, MPMutableIdentifierListSection;
+@protocol MPMutableIdentifierListSection;
 
-@interface MPCModelRadioQueueFeeder : MPQueueFeeder <MPRTCReportingItemSessionContaining, MPCQueueControllerDataSource>
+@interface MPCModelRadioQueueFeeder : MPQueueFeeder <MPRTCReportingItemSessionContaining, MPAVItemObserver, MPCQueueControllerDataSource>
 {
     id <MPMutableIdentifierListSection> _section;
     MPCModelRadioPlaybackQueue *_playbackQueue;
@@ -20,8 +21,8 @@
     unsigned int _backgroundTasks;
     MPAVItem *_currentItem;
     _Bool _hasReachedTracklistEnd;
-    id <MPAVItemQueueIdentifier> _lastCleanPlayedIdentifier;
-    id <MPAVItemQueueIdentifier> _lastPlayedIdentifier;
+    NSString *_lastCleanPlayedIdentifier;
+    NSString *_lastPlayedIdentifier;
     MPCModelRadioPersonalizationResponse *_lastResponse;
     NSOperationQueue *_loadingOperationQueue;
     _Bool _mayHaveRestrictedContent;
@@ -44,7 +45,6 @@
 - (void)_removeRestrictedTracks;
 - (void)_observePersonalizationResponse:(id)arg1;
 - (void)_loadTracksWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (int)_indexOfAVItem:(id)arg1;
 - (void)_handlePersonalizationResponse:(id)arg1 personalizationError:(id)arg2 fromRequest:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_handleGetTracksResponse:(id)arg1 getTracksError:(id)arg2 fromRequest:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)_errorForRequest:(id)arg1 withError:(id)arg2;
@@ -56,7 +56,6 @@
 - (void)_beginBackgroundTaskAssertion;
 - (void)_responseDidInvalidateNotification:(id)arg1;
 - (void)_detectSignOutForIdentityStoreChangeNotification:(id)arg1;
-- (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *rtcReportingSessionAdditionalUserInfo;
 @property(readonly, copy, nonatomic) NSString *rtcReportingPlayQueueSourceIdentifier;
 - (id)modelPlayEvent;
@@ -68,17 +67,13 @@
 - (id)itemForItem:(id)arg1 inSection:(id)arg2;
 - (void)loadPlaybackContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) _Bool containsLiveStream;
+- (void)didSignificantlyChangeItem:(id)arg1;
 - (id)supplementalPlaybackContext;
 - (int)supplementalPlaybackContextBehavior;
-- (void)generateContentIDForItem:(id)arg1;
 - (_Bool)canSkipItem:(id)arg1;
-- (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)itemDidBeginPlayback:(id)arg1;
-- (unsigned int)itemCount;
-- (unsigned int)indexOfItemWithIdentifier:(id)arg1;
-- (id)identifierSetAtIndex:(unsigned int)arg1;
-- (id)identifierAtIndex:(unsigned int)arg1;
-- (id)copyRawItemAtIndex:(unsigned int)arg1;
+- (int)itemCount;
+- (void)getRepresentativeMetadataForPlaybackContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)init;
 

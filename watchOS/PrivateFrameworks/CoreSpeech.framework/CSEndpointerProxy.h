@@ -48,6 +48,7 @@
 - (void)endpointer:(id)arg1 detectedTwoShotAtTime:(double)arg2;
 - (void)endpointer:(id)arg1 didDetectHardEndpointAtTime:(double)arg2 withMetrics:(id)arg3;
 - (void)endpointer:(id)arg1 didDetectStartpointAtTime:(double)arg2;
+- (double)trailingSilenceDurationAtEndpoint;
 @property(readonly, nonatomic) double lastEndOfVoiceActivityTime;
 @property(readonly, nonatomic) double lastStartOfVoiceActivityTime;
 - (void)recordingStoppedForReason:(int)arg1;
@@ -55,6 +56,7 @@
 - (void)preheat;
 - (void)setActiveChannel:(unsigned int)arg1;
 - (void)resetForVoiceTriggerTwoShotWithSampleRate:(unsigned int)arg1;
+- (void)stopEndpointer;
 - (void)resetForNewRequestWithSampleRate:(unsigned int)arg1 recordContext:(id)arg2 recordSettings:(id)arg3;
 - (void)_setupNNVADEndpointer;
 - (id)init;

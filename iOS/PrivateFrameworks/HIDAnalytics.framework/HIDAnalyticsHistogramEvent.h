@@ -6,13 +6,12 @@
 
 #import <HIDAnalytics/HIDAnalyticsEvent.h>
 
-@class HIDAnalyticsHistogramEventField, NSDictionary;
+@class HIDAnalyticsHistogramEventField;
 
 @interface HIDAnalyticsHistogramEvent : HIDAnalyticsEvent
 {
     HIDAnalyticsHistogramEventField *_field;
     _Bool _isUpdated;
-    NSDictionary *_description;
 }
 
 - (void).cxx_destruct;

@@ -32,6 +32,7 @@
 - (void)_lowLevelAddReminderChangeItemToOrdering:(id)arg1 atIndexOfSibling:(id)arg2 isAfter:(_Bool)arg3 withParent:(id)arg4;
 - (void)_reassignReminderChangeItem:(id)arg1 withParentReminderChangeItem:(id)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (_Bool)respondsToSelector:(SEL)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 @property(nonatomic) _Bool daIsNotificationsCollection; // @dynamic daIsNotificationsCollection;
@@ -63,6 +64,7 @@
 - (id)initWithObjectID:(id)arg1 name:(id)arg2 insertIntoAccountChangeItem:(id)arg3;
 - (id)initWithSaveRequest:(id)arg1 storage:(id)arg2 accountCapabilities:(id)arg3 observeInitialValues:(_Bool)arg4;
 - (id)initWithSaveRequest:(id)arg1 storage:(id)arg2 accountCapabilities:(id)arg3 changedKeysObserver:(id)arg4;
+- (void)copyListDataFrom:(id)arg1;
 
 // Remaining properties
 @property(retain, nonatomic) REMObjectID *accountID; // @dynamic accountID;
@@ -77,10 +79,12 @@
 @property(copy, nonatomic) NSString *daPushKey; // @dynamic daPushKey;
 @property(copy, nonatomic) NSString *daSyncToken; // @dynamic daSyncToken;
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic) NSString *displayName; // @dynamic displayName;
 @property(copy, nonatomic) NSString *externalIdentifier; // @dynamic externalIdentifier;
 @property(copy, nonatomic) NSString *externalModificationTag; // @dynamic externalModificationTag;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) _Bool isGroup; // @dynamic isGroup;
+@property(readonly, nonatomic) _Bool isPlaceholder; // @dynamic isPlaceholder;
 @property(copy, nonatomic) NSDate *lastUserAccessDate; // @dynamic lastUserAccessDate;
 @property(copy, nonatomic) NSString *name; // @dynamic name;
 @property(retain, nonatomic) REMObjectID *objectID; // @dynamic objectID;

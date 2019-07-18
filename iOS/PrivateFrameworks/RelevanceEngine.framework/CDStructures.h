@@ -21,6 +21,7 @@ struct BayesianModel {
     double m_dSumPredictions;
     double m_dLogScore;
     double m_dNormalizedLogScore;
+    double m_dEpsilon;
     int m_nModelVersion;
     unsigned long long m_nCalibrationCurveTrue[10];
     unsigned long long m_nCalibrationCurveCount[10];

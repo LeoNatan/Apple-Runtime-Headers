@@ -14,7 +14,8 @@
 @property(readonly, nonatomic) void *addressBook; // @synthesize addressBook=_addressBook;
 - (id)accountForContainerWithIdentifier:(id)arg1;
 - (id)allAccounts;
-- (id)accountWithExternalIdentifier:(id)arg1 createIfNecessary:(_Bool)arg2;
+- (id)accountByCreatingAccountWithExternalIdentifier:(id)arg1;
+- (id)fetchedAccountWithExternalIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)initWithAddressBook:(void *)arg1;
 

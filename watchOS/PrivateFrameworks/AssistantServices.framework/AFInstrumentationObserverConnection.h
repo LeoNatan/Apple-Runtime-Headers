@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class AFAnalyticsObserverConnection, NSSet;
+#import <AssistantServices/AFInvalidating-Protocol.h>
 
-@interface AFInstrumentationObserverConnection : NSObject
+@class AFAnalyticsObserverConnection, NSSet, NSString;
+
+@interface AFInstrumentationObserverConnection : NSObject <AFInvalidating>
 {
     AFAnalyticsObserverConnection *_observerConnection;
     NSSet *_filteredTagIdentifiers;
@@ -17,8 +19,15 @@
 - (void).cxx_destruct;
 - (void)flushWithCompletion:(CDUnknownBlockType)arg1;
 - (void)waitUntilInvalidated;
+- (void)invalidate;
 - (id)initWithObservation:(CDUnknownBlockType)arg1 filterByInstrumentationTypes:(id)arg2;
 - (id)initWithObservation:(CDUnknownBlockType)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

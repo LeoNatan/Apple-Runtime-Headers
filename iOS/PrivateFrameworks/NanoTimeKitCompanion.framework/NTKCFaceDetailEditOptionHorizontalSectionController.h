@@ -20,7 +20,7 @@
 - (void)reloadActionRow;
 - (void)setSelectedOptions:(id)arg1;
 - (void)didSelectRow:(long long)arg1;
-- (id)initWithTableView:(id)arg1 face:(id)arg2 inGallery:(_Bool)arg3 editOptionCollection:(id)arg4 faceView:(id)arg5;
+- (id)initWithTableViewController:(id)arg1 face:(id)arg2 inGallery:(_Bool)arg3 editOptionCollection:(id)arg4 faceView:(id)arg5;
 
 // Remaining properties
 @property(retain, nonatomic) NTKCFaceDetailEditOptionCell *cell; // @dynamic cell;

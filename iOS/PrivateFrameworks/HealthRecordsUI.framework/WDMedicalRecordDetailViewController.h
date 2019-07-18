@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) HKClinicalAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 - (void)detailDataProviderHasDisplayItemUpdate:(id)arg1;
+- (void)_tapToRadar:(id)arg1;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;

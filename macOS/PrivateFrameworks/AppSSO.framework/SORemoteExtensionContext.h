@@ -8,7 +8,7 @@
 
 #import <AppSSO/SORemoteExtensionContextProtocol-Protocol.h>
 
-@class ASAuthorizationProviderExtensionAuthorizationRequest, NSString, SOExtensionServiceConnection, SOExtensionViewService;
+@class ASAuthorizationProviderExtensionAuthorizationRequest, NSString, NSValue, SOExtensionServiceConnection, SOExtensionViewService;
 @protocol ASAuthorizationProviderExtensionAuthorizationRequestHandler;
 
 __attribute__((visibility("hidden")))
@@ -17,10 +17,12 @@ __attribute__((visibility("hidden")))
     SOExtensionServiceConnection *_extensionServiceConnection;
     SOExtensionViewService *_viewService;
     ASAuthorizationProviderExtensionAuthorizationRequest *_extensionAuthorizationRequest;
+    NSValue *_extensionWindowSize;
 }
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
+@property(retain, nonatomic) NSValue *extensionWindowSize; // @synthesize extensionWindowSize=_extensionWindowSize;
 @property(readonly, nonatomic) ASAuthorizationProviderExtensionAuthorizationRequest *extensionAuthorizationRequest; // @synthesize extensionAuthorizationRequest=_extensionAuthorizationRequest;
 @property __weak SOExtensionViewService *viewService; // @synthesize viewService=_viewService;
 - (void).cxx_destruct;

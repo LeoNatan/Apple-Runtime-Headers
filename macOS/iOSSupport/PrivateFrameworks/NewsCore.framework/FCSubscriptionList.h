@@ -81,9 +81,9 @@
 - (void)addSubscriptionsForTagIDs:(id)arg1 typeProvider:(CDUnknownBlockType)arg2 originProvider:(CDUnknownBlockType)arg3 groupID:(id)arg4 notificationsEnabled:(BOOL)arg5 eventInitiationLevelProvider:(CDUnknownBlockType)arg6 completion:(CDUnknownBlockType)arg7;
 - (id)recordsForRestoringZoneName:(id)arg1;
 - (BOOL)canHelpRestoreZoneName:(id)arg1;
-- (void)handleSyncDidResetLocalData;
+- (void)handleSyncDidResetLocalDataForRecordZoneWithID:(id)arg1;
 - (void)handleSyncCompletion;
-- (id)allKnownRecordNames;
+- (id)allKnownRecordNamesWithinRecordZoneWithID:(id)arg1;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
 - (void)loadLocalCachesFromStore;
 - (void)removeObserver:(id)arg1;

@@ -15,6 +15,8 @@
 }
 
 + (id)attributeWithDuration:(double)arg1 warningDuration:(double)arg2 startPolicy:(unsigned long long)arg3 endPolicy:(unsigned long long)arg4;
++ (id)invalidateAfterInterval:(double)arg1;
++ (id)terminateAfterInterval:(double)arg1;
 + (id)attributeWithDuration:(double)arg1;
 @property(nonatomic) unsigned long long endPolicy; // @synthesize endPolicy=_endPolicy;
 @property(nonatomic) unsigned long long startPolicy; // @synthesize startPolicy=_startPolicy;

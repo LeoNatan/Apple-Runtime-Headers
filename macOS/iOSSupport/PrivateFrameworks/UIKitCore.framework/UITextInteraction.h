@@ -83,6 +83,8 @@
 - (void)removeGestureRecognizerWithName:(id)arg1;
 - (void)addGestureRecognizer:(id)arg1 withName:(id)arg2;
 - (BOOL)doesControlDelegate;
+- (void)_applyTransientState:(id)arg1;
+- (id)_transientState;
 @property(readonly) __weak UITextInteraction *root;
 @property(readonly) __weak UITextInteraction *parent;
 - (void)finishSetup;

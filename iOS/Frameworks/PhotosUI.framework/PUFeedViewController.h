@@ -25,12 +25,11 @@
 #import <PhotosUI/UICollectionViewDragSource-Protocol.h>
 #import <PhotosUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <PhotosUI/UIPopoverPresentationControllerDelegate-Protocol.h>
-#import <PhotosUI/_UIContextMenuInteractionDelegate-Protocol.h>
 #import <PhotosUI/_UISettingsKeyObserver-Protocol.h>
 
 @class NSDictionary, NSIndexPath, NSMutableArray, NSMutableSet, NSString, PHCachingImageManager, PLCloudSharedAlbum, PLCloudSharedComment, PLManagedAlbumList, PLManagedAsset, PUAlbumStreamActivity, PUFeedViewControllerRestorableState, PUFeedViewControllerSpec, PUOneUpPresentationHelper, PUPhotoBrowserOneUpPresentationAdaptor, PUPhotoPinchGestureRecognizer, PUPhotosPickerViewController, PUScrollViewSpeedometer, PXFeedAssetContainerList, PXFeedDateFormatter, PXFeedSectionInfosManager, UIBarButtonItem, UICollectionView, UITapGestureRecognizer, _UIContentUnavailableView;
 
-@interface PUFeedViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIPopoverPresentationControllerDelegate, PUFeedCollectionViewLayoutDelegate, PXFeedSectionInfosManagerDelegate, PUPhotoBrowserZoomTransitionDelegate, PUFeedImageCellDelegate, PUFeedPlayerCellDelegate, PUFeedTextCellDelegate, PUFeedInvitationCellDelegate, PUFeedCaptionCellDelegate, UIGestureRecognizerDelegate, PUAlbumStreamActivityDelegate, _UISettingsKeyObserver, PUScrollViewSpeedometerDelegate, PUOneUpPresentationHelperDelegate, PXSettingsKeyObserver, UICollectionViewDragSource, _UIContextMenuInteractionDelegate, PLCloudFeedNavigating, PXNavigableCloudFeedViewController>
+@interface PUFeedViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIPopoverPresentationControllerDelegate, PUFeedCollectionViewLayoutDelegate, PXFeedSectionInfosManagerDelegate, PUPhotoBrowserZoomTransitionDelegate, PUFeedImageCellDelegate, PUFeedPlayerCellDelegate, PUFeedTextCellDelegate, PUFeedInvitationCellDelegate, PUFeedCaptionCellDelegate, UIGestureRecognizerDelegate, PUAlbumStreamActivityDelegate, _UISettingsKeyObserver, PUScrollViewSpeedometerDelegate, PUOneUpPresentationHelperDelegate, PXSettingsKeyObserver, UICollectionViewDragSource, PLCloudFeedNavigating, PXNavigableCloudFeedViewController>
 {
     _Bool __flowDirectionReversed;
     _Bool __collectionViewScrolledToNewest;
@@ -314,10 +313,6 @@
 - (void)_tearDownBrowsing;
 - (void)_setupBrowsingFromAsset:(id)arg1 orComment:(id)arg2;
 - (_Bool)_setupBrowsingFromItemAtIndexPath:(id)arg1 inCollectionView:(id)arg2;
-- (id)_indexPathForPosition:(struct CGPoint)arg1 inCollectionView:(id)arg2 outHitCell:(id *)arg3;
-- (id)contextMenuInteraction:(id)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(id)arg3;
-- (id)contextMenuInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
-- (_Bool)contextMenuInteractionShouldBegin:(id)arg1;
 - (void)_stopObservingPopoverContentSizeIfNecessary;
 - (void)_startObservingPopoverContentSizeIfNecessary;
 - (void)_configureSpeedometer:(id)arg1;

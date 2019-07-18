@@ -6,33 +6,33 @@
 
 #import <HMFoundation/HMFObject.h>
 
-#import <HomeKitDaemon/HMDNetworkRouterFirewallRuleConfiguration-Protocol.h>
+#import <HomeKitDaemon/HMFLogging-Protocol.h>
 
 @class HMDNetworkRouterFirewallRuleAccessoryIdentifier, NSArray, NSDate, NSDictionary, NSString;
 
-@interface HMDNetworkRouterFirewallRuleConfiguration : HMFObject <HMDNetworkRouterFirewallRuleConfiguration>
+@interface HMDNetworkRouterFirewallRuleConfiguration : HMFObject <HMFLogging>
 {
     HMDNetworkRouterFirewallRuleAccessoryIdentifier *_accessoryIdentifier;
-    struct NSDictionary *_jsonDictionary;
     NSDate *_lastModifiedTime;
     NSArray *_lanRules;
     NSArray *_wanRules;
 }
 
++ (BOOL)__decodeRulesFromNetworkDeclarations:(struct NSDictionary *)arg1 key:(id)arg2 class:(Class)arg3 rules:(id *)arg4;
++ (BOOL)__decodeFullAccessFromNetworkDeclarations:(struct NSDictionary *)arg1 key:(id)arg2 fullAccess:(char *)arg3;
++ (BOOL)__decodeNetworkDeclarationsFromJSONDictionary:(struct NSDictionary *)arg1 networkDeclarations:(struct NSDictionary **)arg2;
++ (id)logCategory;
 @property(readonly, nonatomic) NSArray *wanRules; // @synthesize wanRules=_wanRules;
 @property(readonly, nonatomic) NSArray *lanRules; // @synthesize lanRules=_lanRules;
 @property(readonly, nonatomic) NSDate *lastModifiedTime; // @synthesize lastModifiedTime=_lastModifiedTime;
-@property(readonly, nonatomic) NSDictionary *jsonDictionary; // @synthesize jsonDictionary=_jsonDictionary;
 @property(readonly, nonatomic) HMDNetworkRouterFirewallRuleAccessoryIdentifier *accessoryIdentifier; // @synthesize accessoryIdentifier=_accessoryIdentifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *prettyJSONDictionary;
+- (id)attributeDescriptions;
 @property(readonly, nonatomic, getter=hasFullAccessToWAN) BOOL fullAccessWAN;
 @property(readonly, nonatomic, getter=hasFullAccessToLAN) BOOL fullAccessLAN;
 - (id)initWithAccessoryIdentifier:(id)arg1 jsonDictionary:(struct NSDictionary *)arg2;
-- (id)initWithAccessoryIdentifier:(id)arg1 jsonDictionary:(struct NSDictionary *)arg2 lastModifiedTime:(id)arg3 lanRules:(id)arg4 wanRules:(id)arg5;
-- (BOOL)__decodeRulesFromNetworkDeclarations:(struct NSDictionary *)arg1 key:(id)arg2 class:(Class)arg3 rules:(id *)arg4;
-- (BOOL)__decodeFullAccessFromNetworkDeclarations:(struct NSDictionary *)arg1 key:(id)arg2 fullAccess:(char *)arg3;
-- (BOOL)__decodeNetworkDeclarationsFromJSONDictionary:(struct NSDictionary *)arg1 networkDeclarations:(struct NSDictionary **)arg2;
+- (id)initWithAccessoryIdentifier:(id)arg1 lastModifiedTime:(id)arg2 lanRules:(id)arg3 wanRules:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

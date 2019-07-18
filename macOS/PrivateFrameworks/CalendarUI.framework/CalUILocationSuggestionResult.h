@@ -7,7 +7,6 @@
 #import <objc/NSObject.h>
 
 @class CLLocation, MKSearchCompletion, NSArray, NSData, NSString;
-@protocol CNCancelable;
 
 @interface CalUILocationSuggestionResult : NSObject
 {
@@ -22,10 +21,8 @@
     long long _proximity;
     MKSearchCompletion *_searchCompletion;
     NSString *_searchTerm;
-    id <CNCancelable> _fetch;
 }
 
-@property(retain) id <CNCancelable> fetch; // @synthesize fetch=_fetch;
 @property(retain) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
 @property(retain) MKSearchCompletion *searchCompletion; // @synthesize searchCompletion=_searchCompletion;
 @property long long proximity; // @synthesize proximity=_proximity;

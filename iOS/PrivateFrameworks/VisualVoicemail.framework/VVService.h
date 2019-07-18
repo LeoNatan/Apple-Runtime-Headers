@@ -107,6 +107,8 @@
 - (void)reportError:(id)arg1;
 - (void)moveRecordsWithIdentifiersToInbox:(id)arg1;
 - (void)moveRecordsWithIdentifiersToTrash:(id)arg1;
+- (void)movePendingMessagesToInboxTask:(id)arg1;
+- (void)movePendingMessagesToTrashTask:(id)arg1;
 - (void)setGreetingType:(long long)arg1 data:(id)arg2 duration:(unsigned long long)arg3 forAccountUUID:(id)arg4;
 - (_Bool)greetingAvailable;
 - (void)retrieveGreetingForAccountUUID:(id)arg1;

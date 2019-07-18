@@ -18,6 +18,8 @@
 }
 
 + (id)logCategory;
++ (_Bool)isProductTypeJ105A;
++ (id)qosMap;
 + (id)sharedInstance;
 @property(readonly, nonatomic) NSMutableDictionary *preferenceOverridesInternal; // @synthesize preferenceOverridesInternal=_preferenceOverridesInternal;
 @property(readonly, nonatomic) NSMutableDictionary *preferenceLoggedValues; // @synthesize preferenceLoggedValues=_preferenceLoggedValues;
@@ -25,6 +27,7 @@
 - (void).cxx_destruct;
 - (id)stringPreferenceForKey:(id)arg1 defaultValue:(id)arg2;
 - (_Bool)boolPreferenceForKey:(id)arg1 defaultValue:(_Bool)arg2;
+- (_Bool)hasPreferenceForKey:(id)arg1;
 - (id)numberPreferenceForKey:(id)arg1 defaultValue:(id)arg2;
 - (id)valuePreferenceForKey:(id)arg1 defaultValue:(id)arg2 withMap:(id)arg3;
 - (id)valuePreferenceForKey:(id)arg1 defaultValue:(id)arg2 withParser:(CDUnknownBlockType)arg3;
@@ -36,6 +39,7 @@
 - (void)addPreferenceOverrideFromDictionary:(id)arg1;
 @property(readonly) NSDictionary *preferenceOverrides;
 - (id)init;
+@property(readonly) _Bool usesCPUOnly;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -11,8 +11,6 @@
 }
 
 + (id)authToken:(id *)arg1;
-+ (id)enabledAccount:(id *)arg1;
-+ (id)primaryAccount:(id *)arg1;
 + (id)sharedAccountStore;
 + (id)createAuthkitSession;
 

@@ -53,6 +53,7 @@
 - (void)logAvatarsDaemonClientChecksIn:(int)arg1;
 - (void)logAvatarsDaemonReceivesIncomingConnection;
 - (void)logUpdatingBackupExclusionStatus:(_Bool)arg1;
+- (void)logErrorMigratingBackupInclusionStatus:(NSString *)arg1;
 - (void)logErrorUpdatingBackupInclusionStatus:(NSString *)arg1;
 - (void)logErrorGettingAccountInfo:(NSString *)arg1;
 - (void)logAccountInfo:(NSString *)arg1 status:(long long)arg2 deviceToDeviceEncryption:(_Bool)arg3;
@@ -125,6 +126,8 @@
 - (void)logExportRequestResult:(_Bool)arg1 error:(NSString *)arg2;
 - (void)logImportRequestResult:(_Bool)arg1 error:(NSString *)arg2;
 - (void)logSyncEnabled;
+- (void)logUserRequestedBackupXPCActivityFinished;
+- (void)performingUserRequestedBackupActivity:(void (^)(void (^)(void)))arg1;
 - (void)logMigrationXPCActivityFinished;
 - (void)performingMigrationXPCActivity:(void (^)(void (^)(void)))arg1;
 - (void)importingRecords:(void (^)(void (^)(void)))arg1;

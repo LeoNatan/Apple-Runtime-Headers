@@ -17,6 +17,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)kindWithVariants:(unsigned int)arg1 songKind:(id)arg2 options:(unsigned int)arg3;
++ (id)identityKind;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, nonatomic) MPModelSongKind *songKind; // @synthesize songKind=_songKind;
 @property(readonly, nonatomic) unsigned int variants; // @synthesize variants=_variants;

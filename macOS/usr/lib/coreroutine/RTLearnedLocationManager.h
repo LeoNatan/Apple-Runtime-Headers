@@ -147,7 +147,6 @@
 - (void)_fetchRecentLocationsOfInterestWithHandler:(CDUnknownBlockType)arg1;
 - (BOOL)validateUpdatedMapItem:(id)arg1 locationOfInterest:(id)arg2 error:(id *)arg3;
 - (id)createAndStoreNewPlaceWithMapItem:(id)arg1 customLabel:(id)arg2 mapItemSource:(unsigned long long)arg3 outError:(id *)arg4;
-- (BOOL)userCorrectionForMapItem:(id)arg1 type:(unsigned long long)arg2 outError:(id *)arg3;
 - (void)_shutdown;
 - (void)_setup;
 - (void)_migrateStateModelLegacy:(CDUnknownBlockType)arg1;

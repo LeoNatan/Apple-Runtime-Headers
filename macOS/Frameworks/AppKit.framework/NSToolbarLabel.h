@@ -6,6 +6,8 @@
 
 #import <AppKit/NSTextField.h>
 
+@class NSString;
+
 __attribute__((visibility("hidden")))
 @interface NSToolbarLabel : NSTextField
 {
@@ -13,6 +15,7 @@ __attribute__((visibility("hidden")))
 
 - (BOOL)isEnabled;
 - (void)setEnabled:(BOOL)arg1;
+@property(copy) NSString *title;
 - (id)init;
 
 @end

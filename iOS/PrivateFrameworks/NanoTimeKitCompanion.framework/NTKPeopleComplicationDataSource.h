@@ -33,7 +33,7 @@
 - (id)complicationApplicationIdentifier;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
 - (id)currentSwitcherTemplate;
-- (id)privacyTemplate;
+- (id)lockedTemplate;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (unsigned long long)timelineAnimationBehavior;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;

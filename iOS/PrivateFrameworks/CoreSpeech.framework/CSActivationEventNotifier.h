@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CSActivationEvent, CSActivationXPCClient, NSMapTable;
+@class CSActivationEvent, NSMapTable;
 @protocol OS_dispatch_queue;
 
 @interface CSActivationEventNotifier : NSObject
@@ -16,19 +16,17 @@
     NSMapTable *_delegates;
     CSActivationEvent *_pendingActivationEvent;
     CDUnknownBlockType _pendingCompletion;
-    CSActivationXPCClient *_activationXPCClient;
 }
 
 + (id)sharedNotifierForCoreSpeechDaemon;
 + (id)sharedNotifier;
-@property(retain, nonatomic) CSActivationXPCClient *activationXPCClient; // @synthesize activationXPCClient=_activationXPCClient;
 @property(copy, nonatomic) CDUnknownBlockType pendingCompletion; // @synthesize pendingCompletion=_pendingCompletion;
 @property(retain, nonatomic) CSActivationEvent *pendingActivationEvent; // @synthesize pendingActivationEvent=_pendingActivationEvent;
 @property(retain, nonatomic) NSMapTable *delegates; // @synthesize delegates=_delegates;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) int notifyToken; // @synthesize notifyToken=_notifyToken;
 - (void).cxx_destruct;
-- (_Bool)_createXPCClientConnectionIfNeeded;
+- (id)_createXPCClientConnection;
 - (void)receiveTestNotificationAOPMode;
 - (void)receiveTestNotificationAPMode;
 - (void)_setupTestNotification;

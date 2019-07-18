@@ -28,6 +28,7 @@
 - (void).cxx_destruct;
 - (id)scriptingSectionTitle;
 - (id)favoritesSectionTitle;
+- (id)appsSectionTitle;
 - (double)preferredCollectionViewHeight;
 - (void)_configureCell:(id)arg1 withContentTypeCategory:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

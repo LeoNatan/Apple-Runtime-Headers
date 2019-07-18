@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     } bits;
 }
 
+- (long long)compare:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

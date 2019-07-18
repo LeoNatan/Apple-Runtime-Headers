@@ -60,7 +60,6 @@
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 @property(readonly, getter=isControllable) _Bool controllable;
 @property(readonly) __weak HMHome *containerHome;
-- (void)_handleAppDataUpdatedNotification:(id)arg1;
 - (void)_handleSystemUpdatedNotification:(id)arg1;
 - (void)_handleRootSettingsUpdated:(id)arg1;
 - (void)_updateApplicationData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -8,7 +8,7 @@
 
 #import <SpringBoard/SBSwitcherLiveContentOverlayCoordinating-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString;
+@class NSArray, NSMutableDictionary, NSString, SBFloatingApplicationLiveContentWindow;
 @protocol SBSwitcherLiveContentOverlayCoordinatorDelegate;
 
 @interface SBFloatingFluidSwitcherLiveContentOverlayCoordinator : NSObject <SBSwitcherLiveContentOverlayCoordinating>
@@ -16,20 +16,32 @@
     _Bool _liveContentOverlayUpdatesSuspended;
     long long _containerOrientation;
     id <SBSwitcherLiveContentOverlayCoordinatorDelegate> _delegate;
+    NSString *_keyboardFocusSceneID;
+    SBFloatingApplicationLiveContentWindow *_recycledApplicationSceneLiveContentWindow;
     NSMutableDictionary *_liveContentOverlays;
 }
 
 @property(retain, nonatomic) NSMutableDictionary *liveContentOverlays; // @synthesize liveContentOverlays=_liveContentOverlays;
+@property(retain, nonatomic) SBFloatingApplicationLiveContentWindow *recycledApplicationSceneLiveContentWindow; // @synthesize recycledApplicationSceneLiveContentWindow=_recycledApplicationSceneLiveContentWindow;
+@property(copy, nonatomic) NSString *keyboardFocusSceneID; // @synthesize keyboardFocusSceneID=_keyboardFocusSceneID;
 @property(nonatomic) __weak id <SBSwitcherLiveContentOverlayCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long containerOrientation; // @synthesize containerOrientation=_containerOrientation;
 @property(nonatomic, getter=areLiveContentOverlayUpdatesSuspended) _Bool liveContentOverlayUpdatesSuspended; // @synthesize liveContentOverlayUpdatesSuspended=_liveContentOverlayUpdatesSuspended;
 - (void).cxx_destruct;
 - (_Bool)_isLayoutElementBlockedForScreenTimeExpiration:(id)arg1;
 - (_Bool)_shouldAnimateAddingLiveContentOverlayForTransitionContext:(id)arg1;
+- (void)_removeApplicationSceneLiveContentOverlay:(id)arg1 forAppLayout:(id)arg2;
+- (void)_removeInlineAppExposeLiveContentOverlay:(id)arg1 forAppLayout:(id)arg2;
 - (void)_removeLiveContentOverlayForAppLayout:(id)arg1;
+- (void)_addApplicationSceneLiveContentOverlay:(id)arg1 forAppLayout:(id)arg2 animated:(_Bool)arg3;
+- (void)_addInlineAppExposeLiveContentOverlay:(id)arg1 forAppLayout:(id)arg2 animated:(_Bool)arg3;
 - (void)_addLiveContentOverlay:(id)arg1 forAppLayout:(id)arg2 animated:(_Bool)arg3;
 - (void)_configureLiveContentOverlayView:(id)arg1 forTransitionContext:(id)arg2;
+- (id)_newInlineLiveContentOverlayViewForTransitionContext:(id)arg1;
+- (id)_newApplicationLiveContentOverlayViewForTransitionContext:(id)arg1;
 - (id)_newLiveContentOverlayViewForTransitionContext:(id)arg1;
+- (void)_updateDisplayLayoutElementsForActiveAppLayout:(id)arg1;
+- (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
 - (id)animationControllerForTransitionRequest:(id)arg1;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionWillEndWithTransitionContext:(id)arg2;

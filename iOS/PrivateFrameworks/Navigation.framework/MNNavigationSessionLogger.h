@@ -8,15 +8,19 @@
 
 #import <Navigation/MNNavigationSessionObserver-Protocol.h>
 
-@class NSString;
+@class NSString, NSUUID;
 
 __attribute__((visibility("hidden")))
 @interface MNNavigationSessionLogger : NSObject <MNNavigationSessionObserver>
 {
+    NSUUID *_lastGuidanceSignID;
 }
 
+- (void).cxx_destruct;
 - (id)_stringForLocationType:(unsigned long long)arg1;
+- (void)navigationSession:(id)arg1 updateSignsWithInfo:(id)arg2;
 - (void)navigationSession:(id)arg1 didUpdateDestination:(id)arg2;
+- (void)navigationSession:(id)arg1 didFailRerouteWithError:(id)arg2;
 - (void)navigationSession:(id)arg1 didReroute:(id)arg2 withLocation:(id)arg3 withAlternateRoutes:(id)arg4;
 - (void)navigationSessionWillReroute:(id)arg1;
 - (void)navigationSession:(id)arg1 didUpdateDisplayETA:(id)arg2 displayRemainingMinutes:(unsigned long long)arg3 forRoute:(id)arg4;

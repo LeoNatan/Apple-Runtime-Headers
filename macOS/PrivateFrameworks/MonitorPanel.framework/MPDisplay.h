@@ -59,6 +59,7 @@
     BOOL _hasRotationSensor;
     BOOL _usePreciseRefreshRate;
     BOOL _loadingPresets;
+    BOOL _isAppleProDisplay;
 }
 
 @property(readonly) BOOL hasRotationSensor; // @synthesize hasRotationSensor=_hasRotationSensor;
@@ -140,6 +141,7 @@
 - (BOOL)isAlias:(int)arg1;
 - (id)multiscanModesForMode:(id)arg1;
 @property(readonly) BOOL hasMenuBar;
+@property(readonly) BOOL isAppleProDisplay;
 @property(readonly) BOOL isBuiltInRetina;
 @property(readonly) NSString *titleName;
 @property(retain, nonatomic) NSString *displayName;

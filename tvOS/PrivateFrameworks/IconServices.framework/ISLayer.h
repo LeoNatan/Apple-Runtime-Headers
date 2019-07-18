@@ -6,14 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSString;
-@protocol ISEffect;
+@class ISColor, NSArray, NSMutableArray, NSString;
+@protocol ISCompositorResource, ISEffect;
 
 __attribute__((visibility("hidden")))
 @interface ISLayer : NSObject
 {
+    ISColor *_backgroundColor;
     NSString *_name;
     id <ISEffect> _effect;
+    id <ISCompositorResource> _content;
+    ISLayer *_mask;
     ISLayer *_internalSuperlayer;
     NSMutableArray *_internalSublayers;
     struct CGRect _frame;
@@ -21,12 +24,14 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) NSMutableArray *internalSublayers; // @synthesize internalSublayers=_internalSublayers;
 @property(nonatomic) __weak ISLayer *internalSuperlayer; // @synthesize internalSuperlayer=_internalSuperlayer;
+@property(retain, nonatomic) ISLayer *mask; // @synthesize mask=_mask;
+@property(retain, nonatomic) id <ISCompositorResource> content; // @synthesize content=_content;
 @property(retain, nonatomic) id <ISEffect> effect; // @synthesize effect=_effect;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property(retain, nonatomic) ISColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 - (void).cxx_destruct;
 - (id)debugDescription;
-- (id)filterWithScale:(double)arg1 resourceProvider:(id)arg2;
 @property(readonly, copy, nonatomic) NSArray *sublayers;
 - (void)insertSublayer:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)addSublayer:(id)arg1;

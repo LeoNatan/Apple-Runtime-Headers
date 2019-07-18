@@ -14,7 +14,7 @@
 #import <HomeKit/HMObjectMerge-Protocol.h>
 #import <HomeKit/NSSecureCoding-Protocol.h>
 
-@class HMAccessoryCategory, HMAccessorySettings, HMApplicationData, HMDevice, HMFPairingIdentity, HMFSoftwareVersion, HMFUnfairLock, HMFWiFiNetworkInfo, HMHome, HMMutableArray, HMRemoteLoginHandler, HMRoom, HMSoftwareUpdateController, HMSymptomsHandler, NSArray, NSDictionary, NSNumber, NSString, NSUUID, _HMContext;
+@class HMAccessoryCategory, HMAccessorySettings, HMApplicationData, HMDevice, HMFPairingIdentity, HMFSoftwareVersion, HMFUnfairLock, HMFWiFiNetworkInfo, HMHome, HMMutableArray, HMNetworkConfigurationProfile, HMRemoteLoginHandler, HMRoom, HMSoftwareUpdateController, HMSymptomsHandler, NSArray, NSDictionary, NSNumber, NSString, NSUUID, _HMContext;
 @protocol HMAccessoryDelegate, OS_dispatch_queue;
 
 @interface HMAccessory : NSObject <HMFLogging, NSSecureCoding, HMFMessageReceiver, HMObjectMerge, HMMutableApplicationData, HMAccessorySettingsContainer, HMControllable>
@@ -33,6 +33,7 @@
     _Bool _supportsTargetController;
     _Bool _targetControllerHardwareSupport;
     _Bool _supportsMultiUser;
+    _Bool _suspendCapable;
     _Bool _paired;
     NSUUID *_uniqueIdentifier;
     id <HMAccessoryDelegate> _delegate;
@@ -83,11 +84,12 @@
 @property(retain, nonatomic) HMMutableArray *accessoryProfiles; // @synthesize accessoryProfiles=_accessoryProfiles;
 @property(retain) HMRemoteLoginHandler *remoteLoginHandler; // @synthesize remoteLoginHandler=_remoteLoginHandler;
 @property(nonatomic) unsigned int accessoryReprovisionState; // @synthesize accessoryReprovisionState=_accessoryReprovisionState;
+@property(nonatomic) _Bool paired; // @synthesize paired=_paired;
 @property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) HMMutableArray *currentServices; // @synthesize currentServices=_currentServices;
-@property(nonatomic) _Bool paired; // @synthesize paired=_paired;
 @property(nonatomic) int reachableTransports; // @synthesize reachableTransports=_reachableTransports;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
+@property(readonly, nonatomic) _Bool suspendCapable; // @synthesize suspendCapable=_suspendCapable;
 @property(nonatomic) int associationOptions; // @synthesize associationOptions=_associationOptions;
 @property(retain, nonatomic) NSNumber *accessoryFlags; // @synthesize accessoryFlags=_accessoryFlags;
 @property(nonatomic) unsigned int additionalSetupStatus; // @synthesize additionalSetupStatus=_additionalSetupStatus;
@@ -112,7 +114,6 @@
 - (void)_notifyDelegatesOfUpdatedControllable;
 - (void)_notifyDelegatesOfAdditionalSetupRequiredChange;
 - (void)_handleAccessoryControllableChanged:(id)arg1;
-- (void)_handleAppDataUpdatedNotification:(id)arg1;
 - (void)_notifyDelegateOfAppDataUpdateForService:(id)arg1;
 - (void)notifyDelegateOfAppDataUpdateForService:(id)arg1;
 - (void)_updateApplicationData:(id)arg1 forService:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -126,7 +127,6 @@
 - (void)_handleServiceSubtype:(id)arg1;
 - (void)_handleServiceTypeAssociated:(id)arg1;
 - (void)_handleServiceDefaultNameUpdate:(id)arg1;
-- (void)_handleServiceConfiguredNameUpdate:(id)arg1;
 - (void)_handleServiceRenamed:(id)arg1;
 - (void)_listPairingsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_updateFromAccessory:(id)arg1;
@@ -137,17 +137,14 @@
 @property(readonly, copy) NSString *description;
 - (void)updateAccessoryInfo:(id)arg1;
 - (void)_handleAccessoryFlagsChanged:(id)arg1;
-- (void)_handleServicesUpdated:(id)arg1;
 - (void)_checkForTelevisionProfileChanges:(id)arg1;
 - (void)_handleAccessoryNotificationsUpdated:(id)arg1;
 - (void)_handleCharacteristicsUpdated:(id)arg1;
 - (void)_handleConnectivityChanged:(id)arg1;
 - (void)handleRuntimeStateUpdate:(id)arg1;
 - (void)__handleConnectivityChanged:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_handleConfiguredNameChanged:(id)arg1;
 - (void)_handleRenamed:(id)arg1;
 - (void)_handleCharacteristicValueUpdated:(id)arg1;
-- (void)_handleUpdateRoom:(id)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (id)logIdentifier;
@@ -157,6 +154,7 @@
 - (_Bool)_mergeServices:(id)arg1 operations:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, copy) NSUUID *applicationDataIdentifier;
 - (id)_handleMultipleCharacteristicsUpdated:(id)arg1 informDelegate:(_Bool)arg2;
 - (void)_updateName:(id)arg1 forService:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_updateAuthorizationData:(id)arg1 forService:(id)arg2 characteristic:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -175,6 +173,8 @@
 @property(nonatomic) int certificationStatus; // @synthesize certificationStatus=_certificationStatus;
 - (void)setApplicationData:(id)arg1;
 @property(readonly, nonatomic) HMApplicationData *applicationData;
+- (void)setSuspendCapable:(_Bool)arg1;
+- (_Bool)isSuspendCapable;
 @property(readonly, nonatomic, getter=isBlocked) _Bool blocked;
 @property(readonly, copy, nonatomic) NSArray *services;
 - (void)queryAdvertisementInformationWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -218,6 +218,7 @@
 @property(nonatomic) __weak HMHome *home; // @synthesize home=_home;
 @property(nonatomic) __weak HMRoom *room; // @synthesize room=_room;
 @property(retain, nonatomic) HMAccessoryCategory *category; // @synthesize category=_category;
+@property(readonly, nonatomic) NSArray *bridgedAccessories;
 @property(readonly, copy, nonatomic) NSArray *identifiersForBridgedAccessories;
 @property(copy, nonatomic) NSArray *uniqueIdentifiersForBridgedAccessories; // @synthesize uniqueIdentifiersForBridgedAccessories=_uniqueIdentifiersForBridgedAccessories;
 @property(nonatomic) _Bool bridgedAccessory; // @synthesize bridgedAccessory=_bridgedAccessory;
@@ -239,7 +240,7 @@
 - (id)networkRouterProfile;
 @property(readonly, copy) NSDictionary *serializedDictionaryRepresentation;
 @property(readonly, copy, nonatomic) NSArray *cameraProfiles;
-- (id)networkConfigurationProfile;
+@property(readonly, nonatomic) HMNetworkConfigurationProfile *networkConfigurationProfile;
 - (id)mediaProfile;
 
 // Remaining properties

@@ -28,8 +28,7 @@
 @property(retain, nonatomic) PSSpecifier *specifier; // @synthesize specifier=_specifier;
 - (void).cxx_destruct;
 - (id)localizedStringForKey:(id)arg1;
-- (_Bool)isCellEnabled;
-- (void)setCellEnabled:(_Bool)arg1;
+@property(nonatomic, getter=isCellEnabled) _Bool cellEnabled; // @synthesize cellEnabled=_cellEnabled;
 - (id)cellAccesoryForSpecifier:(id)arg1 controller:(id)arg2;
 - (void)setContentsFromSpecifier:(id)arg1 controller:(id)arg2;
 - (void)prepareForReuse;

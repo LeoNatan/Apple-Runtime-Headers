@@ -6,11 +6,12 @@
 
 #import <PencilKit/PKPaletteToolView.h>
 
+#import <PencilKit/PKPaletteErasingAttributesViewControllerDelegate-Protocol.h>
 #import <PencilKit/PKPaletteErasingTool-Protocol.h>
 
 @class NSString, UIViewController;
 
-@interface PKPaletteErasingToolView : PKPaletteToolView <PKPaletteErasingTool>
+@interface PKPaletteErasingToolView : PKPaletteToolView <PKPaletteErasingTool, PKPaletteErasingAttributesViewControllerDelegate>
 {
     _Bool _bitmapEraser;
     UIViewController *_attributeViewController;
@@ -18,8 +19,9 @@
 
 @property(nonatomic, getter=isBitmapEraser) _Bool bitmapEraser; // @synthesize bitmapEraser=_bitmapEraser;
 - (void).cxx_destruct;
+- (void)erasingAttributesViewControllerDidChangeErasingType:(id)arg1;
+- (void)_updateAttributesViewController;
 - (id)attributeViewController;
-- (void)toggleErasingBehavior;
 - (id)toolIdentifier;
 - (id)initWithToolIdentifier:(id)arg1;
 

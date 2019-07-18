@@ -12,12 +12,14 @@
 {
     long long _action;
     ACHEarnedInstance *_earnedInstance;
+    long long _persistentID;
     long long _provenance;
 }
 
 + (_Bool)supportsSecureCoding;
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
 @property(readonly, nonatomic) long long provenance; // @synthesize provenance=_provenance;
+@property(readonly, nonatomic) long long persistentID; // @synthesize persistentID=_persistentID;
 @property(readonly, nonatomic) ACHEarnedInstance *earnedInstance; // @synthesize earnedInstance=_earnedInstance;
 @property(readonly, nonatomic) long long action; // @synthesize action=_action;
 - (void).cxx_destruct;

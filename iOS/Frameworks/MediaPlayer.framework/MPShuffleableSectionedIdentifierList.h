@@ -6,12 +6,12 @@
 
 #import <MediaPlayer/MPSectionedIdentifierList.h>
 
-#import <MediaPlayer/MPShuffleableSectionedIdentifierListDelegate-Protocol.h>
+#import <MediaPlayer/_MPSSILDelegate-Protocol.h>
 
 @class NSString, _MPSSILImplementation;
 @protocol MPShuffleableSectionedIdentifierListDelegate;
 
-@interface MPShuffleableSectionedIdentifierList : MPSectionedIdentifierList <MPShuffleableSectionedIdentifierListDelegate>
+@interface MPShuffleableSectionedIdentifierList : MPSectionedIdentifierList <_MPSSILDelegate>
 {
     _MPSSILImplementation *_shuffledList;
     long long _shuffleType;
@@ -30,7 +30,7 @@
 - (id)_shuffledListWithExclusiveAccessToken:(id)arg1;
 - (void)_dequeueCandidatesWithQuota:(long long)arg1 withExclusiveAccessToken:(id)arg2;
 - (id)_candidateItemsWithExclusiveAccessToken:(id)arg1;
-- (void)didDequeueShuffledItemsInSectionedIdentifierList:(id)arg1;
+- (void)didDequeueShuffledItemsInSSIL:(id)arg1;
 - (void)dataSourceReloadItem:(id)arg1 inSection:(id)arg2;
 - (void)dataSourceRemoveItem:(id)arg1 fromSection:(id)arg2;
 - (void)dataSourceInsertItemsAtTail:(id)arg1 inSection:(id)arg2;

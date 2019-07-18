@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long documentCount; // @synthesize documentCount=_documentCount;
 - (void).cxx_destruct;
 - (id)accessibilityHint;
+- (id)accessibilityUserInputLabels;
 - (id)accessibilityLabel;
 - (id)saveButtonCountStringForDocumentCount:(unsigned long long)arg1;
 - (id)saveButtonTitleForDocumentCount:(unsigned long long)arg1;

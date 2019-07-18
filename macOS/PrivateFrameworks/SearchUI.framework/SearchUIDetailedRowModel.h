@@ -30,6 +30,7 @@
     NSArray *_contactIdentifiersNeeded;
 }
 
++ (BOOL)urlIsDraggable:(id)arg1;
 @property(retain) NSArray *contactIdentifiersNeeded; // @synthesize contactIdentifiersNeeded=_contactIdentifiersNeeded;
 @property(retain) SFFormattedText *trailingBottomText; // @synthesize trailingBottomText=_trailingBottomText;
 @property(retain) SFFormattedText *trailingMiddleText; // @synthesize trailingMiddleText=_trailingMiddleText;

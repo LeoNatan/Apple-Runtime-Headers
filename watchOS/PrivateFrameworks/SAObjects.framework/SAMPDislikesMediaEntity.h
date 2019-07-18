@@ -6,6 +6,8 @@
 
 #import <SAObjects/SABaseClientBoundCommand.h>
 
+@class NSString;
+
 @interface SAMPDislikesMediaEntity : SABaseClientBoundCommand
 {
 }
@@ -13,6 +15,7 @@
 + (id)dislikesMediaEntityWithDictionary:(id)arg1 context:(id)arg2;
 + (id)dislikesMediaEntity;
 - (_Bool)requiresResponse;
+@property(copy, nonatomic) NSString *influencedUserSharedUserId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

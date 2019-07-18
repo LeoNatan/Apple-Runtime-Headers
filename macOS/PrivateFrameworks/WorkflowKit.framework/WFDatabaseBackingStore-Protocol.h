@@ -16,6 +16,7 @@
 - (void)setSyncToken:(WFCloudKitSyncToken *)arg1;
 - (WFCloudKitSyncToken *)syncToken;
 - (void)clearTombstonesAndSyncState;
+- (WFWorkflowRunEvent *)latestRunEvent;
 - (NSArray *)sortedRunEventsForTriggerID:(NSString *)arg1;
 - (NSArray *)sortedRunEventsWithSource:(NSString *)arg1;
 - (WFDatabaseResult *)allConfiguredTriggers;

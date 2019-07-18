@@ -10,11 +10,14 @@
 {
 }
 
++ (id)messageTypeFromEvent:(id)arg1;
++ (id)requestActivateDevicesReplyWithEvent:(id)arg1 error:(id)arg2;
++ (id)requestActivateDevicesEvent;
 + (id)parseProxySourceDeviceUUIDEvent:(id)arg1 error:(id *)arg2;
 + (id)fetchProxySourceDeviceUUIDReplyWithEvent:(id)arg1 sourceDeviceUUID:(id)arg2 error:(id)arg3;
 + (id)fetchProxySourceDeviceUUIDEvent;
-+ (BOOL)parseNotificationEvent:(id)arg1 registrationIdentifier:(id *)arg2 error:(id *)arg3;
-+ (id)notificationEventWithRegistrationIdentifier:(id)arg1 error:(id *)arg2;
++ (BOOL)parseNotificationEvent:(id)arg1 registrationIdentifier:(id *)arg2 info:(id *)arg3 error:(id *)arg4;
++ (id)notificationEventWithRegistrationIdentifier:(id)arg1 info:(id)arg2 error:(id *)arg3;
 + (id)keepAliveReplyWithEvent:(id)arg1 error:(id)arg2;
 + (BOOL)keepAliveFromKeepAliveEvent:(id)arg1 error:(id *)arg2;
 + (id)keepAliveEventWithKeepAlive:(BOOL)arg1 error:(id *)arg2;

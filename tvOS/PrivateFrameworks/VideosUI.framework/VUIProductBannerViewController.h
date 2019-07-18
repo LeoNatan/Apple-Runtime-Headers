@@ -13,10 +13,8 @@ __attribute__((visibility("hidden")))
 {
     IKViewElement *_viewElement;
     VUIProductBannerView *_bannerView;
-    long long _overrideInterfaceStyle;
 }
 
-@property(nonatomic) long long overrideInterfaceStyle; // @synthesize overrideInterfaceStyle=_overrideInterfaceStyle;
 @property(retain, nonatomic) VUIProductBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;

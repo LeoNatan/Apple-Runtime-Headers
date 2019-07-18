@@ -7,6 +7,7 @@
 @class CTPNRRequestType, CTXPCServiceSubscriptionContext;
 
 @protocol CTXPCServicePNRInterface
+- (void)context:(CTXPCServiceSubscriptionContext *)arg1 getPhoneNumberSignatureWithCompletion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)isPhoneNumberCredentialValid:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)getPNRContext:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(CTPNRContextInfo *, NSError *))arg2;
 - (void)issuePNRRequest:(CTXPCServiceSubscriptionContext *)arg1 pnrReqType:(CTPNRRequestType *)arg2 completion:(void (^)(_Bool, _Bool, NSError *))arg3;

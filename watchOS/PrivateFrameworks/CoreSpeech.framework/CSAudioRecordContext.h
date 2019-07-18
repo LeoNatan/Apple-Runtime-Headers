@@ -25,6 +25,7 @@
 + (id)contextForBTLE;
 + (id)contextForJarvisWithDeviceId:(id)arg1;
 + (id)contextForBuiltInVoiceTrigger;
++ (id)contextForOpportuneSpeakerListener;
 + (id)contextForHearstVoiceTriggerWithDeviceId:(id)arg1;
 @property(nonatomic) _Bool alwaysUseRemoteBuiltInMic; // @synthesize alwaysUseRemoteBuiltInMic=_alwaysUseRemoteBuiltInMic;
 @property(retain, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
@@ -34,6 +35,15 @@
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *xpcObject;
 - (int)avvcActivationMode:(long long)arg1;
 - (long long)recordTypeFromAVVCActivationMode:(int)arg1;
+- (_Bool)isStarkTriggered;
+- (_Bool)isServerInvoked;
+- (_Bool)isJarvisVoiceTriggered;
+- (_Bool)isRTSTriggered;
+- (_Bool)isHearstDoubleTapTriggered;
+- (_Bool)isHearstVoiceTriggered;
+- (_Bool)isTriggeredFromHearst;
+- (_Bool)isBuiltInVoiceTriggered;
+- (_Bool)isVoiceTriggered;
 - (_Bool)isEqual:(id)arg1;
 - (id)_createAVVCContextWithType:(long long)arg1 deviceId:(id)arg2;
 - (id)avvcContext;

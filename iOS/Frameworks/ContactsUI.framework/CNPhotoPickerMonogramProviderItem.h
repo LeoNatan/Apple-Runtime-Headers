@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 @interface CNPhotoPickerMonogramProviderItem : CNPhotoPickerProviderItem
 {
     _Bool _isContactImage;
+    _Bool _hasUnknownColor;
     _Bool _isVariantOptionItem;
     CNContact *_contact;
     CNAvatarImageRenderer *_avatarRenderer;
@@ -22,6 +23,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) _Bool isVariantOptionItem; // @synthesize isVariantOptionItem=_isVariantOptionItem;
 @property(retain, nonatomic) NSData *monogramData; // @synthesize monogramData=_monogramData;
+@property(nonatomic) _Bool hasUnknownColor; // @synthesize hasUnknownColor=_hasUnknownColor;
 @property(nonatomic) _Bool isContactImage; // @synthesize isContactImage=_isContactImage;
 @property(retain, nonatomic) id <CNAvatarImageRenderingScope> renderingScope; // @synthesize renderingScope=_renderingScope;
 @property(retain, nonatomic) CNAvatarImageRenderer *avatarRenderer; // @synthesize avatarRenderer=_avatarRenderer;
@@ -41,8 +43,11 @@ __attribute__((visibility("hidden")))
 - (id)imageData;
 - (id)localizedVariantsTitle;
 - (_Bool)isDefaultMonogramItem;
+- (_Bool)allowsMoveAndScale;
+- (_Bool)allowsEditing;
 - (_Bool)shouldShowCaption;
 - (_Bool)allowsVariants;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithImageData:(id)arg1 thumbnailImageData:(id)arg2 fullscreenImageData:(id)arg3 cropRect:(struct CGRect)arg4 renderingScope:(id)arg5 avatarRenderer:(id)arg6 isVariantOptionItem:(_Bool)arg7;
 
 @end

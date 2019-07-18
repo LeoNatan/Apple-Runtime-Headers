@@ -15,7 +15,7 @@
 #import <SafariServices/_UIBasicAnimationFactory-Protocol.h>
 #import <SafariServices/_UIClickInteractionDelegate-Protocol.h>
 
-@class NSArray, NSAttributedString, NSString, NSTimer, SFDismissButton, SFNavigationBarMetrics, SFNavigationBarToggleButton, SFToolbarContainer, UIBlurEffect, UIButton, UIColor, UIImageView, UILabel, UITextField, UIVisualEffectView, _SFDimmingButton, _SFFluidProgressView, _SFNavigationBarItem, _SFNavigationBarLabelsContainer, _SFNavigationBarURLButton, _SFToolbar, _UIBackdropViewSettings, _UIClickInteraction;
+@class NSArray, NSAttributedString, NSString, NSTimer, SFDismissButton, SFNavigationBarAccessoryButtonArrangement, SFNavigationBarMetrics, SFNavigationBarToggleButton, SFToolbarContainer, UIBlurEffect, UIButton, UIImageView, UILabel, UITextField, UIVisualEffectView, _SFBarTheme, _SFDimmingButton, _SFFluidProgressView, _SFNavigationBarItem, _SFNavigationBarLabelsContainer, _SFNavigationBarTheme, _SFNavigationBarURLButton, _SFToolbar, _UIClickInteraction;
 @protocol _SFNavigationBarDelegate, _SFPopoverSourceInfo;
 
 @interface _SFNavigationBar : UIView <UIGestureRecognizerDelegate, _SFFluidProgressViewDelegate, _SFNavigationBarURLButtonDelegate, _UIBasicAnimationFactory, UIDragInteractionDelegate_Private, UIDropInteractionDelegate_Private, _UIClickInteractionDelegate, _SFBarCommon>
@@ -27,6 +27,9 @@
     UILabel *_URLLabel;
     UILabel *_expandedURLLabel;
     UILabel *_privateBrowsingLabel;
+    UIVisualEffectView *_URLLabelEffectView;
+    UIVisualEffectView *_lockEffectView;
+    UIVisualEffectView *_squishedLockEffectView;
     UILabel *_readerAvailabilityLabel;
     UILabel *_notSecureAnnotationLabel;
     double _URLWidth;
@@ -59,10 +62,10 @@
     _SFNavigationBarURLButton *_URLOutline;
     _SFFluidProgressView *_progressView;
     UIVisualEffectView *_backdrop;
-    _Bool _usingLightControlsWhenSquished;
     UIView *_separator;
     _Bool _lockViewNeedsUpdate;
     NSAttributedString *_attributedTextWhenExpanded;
+    SFNavigationBarAccessoryButtonArrangement *_accessoryButtonArrangement;
     SFNavigationBarToggleButton *_formatToggleButton;
     _SFDimmingButton *_stopButton;
     _SFDimmingButton *_reloadButton;
@@ -76,20 +79,15 @@
     CDUnknownBlockType _readerAvailabilityAnimationBlock;
     SFDismissButton *_dismissButton;
     unsigned long long _inputMode;
-    _Bool _preferredBarTintColorIsDark;
-    _Bool _preferredBarTintColorIsGreen;
-    _Bool _preferredBarTintColorIsRed;
-    _Bool _preferredBarTintColorIsExtreme;
     _Bool _usesNarrowLayout;
     _Bool _unifiedFieldShowsProgressView;
-    _Bool _usingLightControls;
     _Bool _controlsHidden;
     _Bool _expanded;
     _Bool _backdropGroupDisabled;
     _Bool _suppressesBlur;
     _SFNavigationBarItem *_item;
-    unsigned long long _tintStyle;
-    _UIBackdropViewSettings *_customBackdropSettings;
+    _SFBarTheme *_theme;
+    _SFNavigationBarTheme *_effectiveTheme;
     UITextField *_textField;
     NSString *_backdropGroupName;
     id <_SFNavigationBarDelegate> _delegate;
@@ -97,17 +95,15 @@
     double _maximumHeight;
     double _minimumBackdropHeight;
     UIView *_inputAccessoryView;
-    UIColor *_preferredBarTintColor;
-    UIColor *_preferredControlsTintColor;
+    UIBlurEffect *_backdropEffect;
 }
 
 + (double)separatorHeight;
-+ (double)estimatedMinimumHeight;
-+ (double)estimatedDefaultHeight;
++ (double)estimatedMinimumHeightForStatusBarHeight:(double)arg1;
++ (double)estimatedDefaultHeightForStatusBarHeight:(double)arg1;
 + (long long)_metricsCategory;
 + (void)initialize;
-@property(retain, nonatomic) UIColor *preferredControlsTintColor; // @synthesize preferredControlsTintColor=_preferredControlsTintColor;
-@property(retain, nonatomic) UIColor *preferredBarTintColor; // @synthesize preferredBarTintColor=_preferredBarTintColor;
+@property(readonly, nonatomic) UIBlurEffect *backdropEffect; // @synthesize backdropEffect=_backdropEffect;
 @property(retain, nonatomic) UIView *inputAccessoryView; // @synthesize inputAccessoryView=_inputAccessoryView;
 @property(nonatomic) double minimumBackdropHeight; // @synthesize minimumBackdropHeight=_minimumBackdropHeight;
 @property(nonatomic) double maximumHeight; // @synthesize maximumHeight=_maximumHeight;
@@ -118,10 +114,9 @@
 @property(nonatomic, getter=isBackdropGroupDisabled) _Bool backdropGroupDisabled; // @synthesize backdropGroupDisabled=_backdropGroupDisabled;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
-@property(retain, nonatomic) _UIBackdropViewSettings *customBackdropSettings; // @synthesize customBackdropSettings=_customBackdropSettings;
 @property(nonatomic, getter=areControlsHidden) _Bool controlsHidden; // @synthesize controlsHidden=_controlsHidden;
-@property(nonatomic, getter=isUsingLightControls) _Bool usingLightControls; // @synthesize usingLightControls=_usingLightControls;
-@property(nonatomic) unsigned long long tintStyle; // @synthesize tintStyle=_tintStyle;
+@property(readonly, nonatomic) _SFNavigationBarTheme *effectiveTheme; // @synthesize effectiveTheme=_effectiveTheme;
+@property(retain, nonatomic) _SFBarTheme *theme; // @synthesize theme=_theme;
 @property(nonatomic) _Bool unifiedFieldShowsProgressView; // @synthesize unifiedFieldShowsProgressView=_unifiedFieldShowsProgressView;
 @property(nonatomic) _Bool usesNarrowLayout; // @synthesize usesNarrowLayout=_usesNarrowLayout;
 @property(retain, nonatomic) _SFNavigationBarItem *item; // @synthesize item=_item;
@@ -148,8 +143,6 @@
 - (void)setTextFieldPlaceHolderColor:(id)arg1;
 - (double)placeholderHorizontalInset;
 - (id)newTextField;
-- (void)updateToolbarTintColor:(id)arg1;
-- (void)_updateToolbarTintColor;
 - (_Bool)canBecomeFirstResponder;
 - (id)_timingFunctionForAnimation;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
@@ -164,13 +157,8 @@
 - (id)_placeholderText;
 - (void)_configureNavigationBarTrailingButtonTintedImages;
 - (void)_updateControlTints;
-- (id)_controlsTintColor;
-- (void)_updateTintColorForControls;
-- (_Bool)_shouldUseLightControls;
 - (id)_tintForWarningImage;
 - (id)_lockImageTintColorForSquishTransformFactor:(double)arg1;
-- (id)_colorForLightColor:(id)arg1 darkColor:(id)arg2 squishTransformFactor:(double)arg3;
-- (double)_lightControlsFactorForSquishTransformFactor:(double)arg1;
 - (double)_backgroundAlphaFactorForSquishTransformFactor:(double)arg1;
 - (id)_EVCertLockAndTextColor:(double)arg1;
 - (id)_notSecureWarningColor;
@@ -184,14 +172,10 @@
 - (void)_updateSearchIndicator;
 - (void)_updateTextMetrics;
 - (void)_updateTextColor;
-- (id)_URLTextColor;
-- (id)_URLControlsColor;
-- (id)_placeholderColor;
 - (void)_adjustLabelRectForLeadingButtonWithDelay:(double)arg1;
 - (void)_updateMediaCaptureMuteButton;
 - (id)_mediaCaptureMuteButtonColor;
 - (void)_updateReaderButtonSelected;
-- (void)_updateToggleButtonTint;
 - (void)_updateReaderButtonAndAvailabilityTextVisibility;
 - (void)_updateReaderButtonVisibilityAnimated:(_Bool)arg1 showAvailabilityText:(_Bool)arg2 adjustURLLabels:(_Bool)arg3;
 - (void)_hideReaderAvailabilityLabelAnimated:(_Bool)arg1;
@@ -212,6 +196,8 @@
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)_hitTestCandidateViews;
 - (void)clearEphemeralUI;
+- (id)_viewForAccessoryButtonType:(long long)arg1;
+- (double)_widthForAccessoryButtonType:(long long)arg1;
 - (void)layoutSubviews;
 - (double)_textFieldTopMargin;
 - (void)_updateTextFieldFrame;
@@ -224,12 +210,9 @@
 - (void)_updateProgressView;
 - (id)_navigationBarTrailingButtonWithType:(long long)arg1;
 - (void)_updateNavigationBarTrailingButtonType;
-- (long long)_inferredNavigationBarTrailingButtonType;
-- (void)_updateNavigationBarTrailingButtonsAlpha;
-- (void)_updateNavigationBarTrailingButtonsVisibility;
-- (long long)_preferredLeadingButtonType;
-- (void)_updateNavigationBarLeadingButtonsAlpha;
-- (void)_updateNavigationBarLeadingButtonsVisibility;
+- (void)_updateAccessoryButtonsAlpha;
+- (void)_updateAccessoryButtonsVisibility;
+- (void)_updateAccessoryButtonsArrangement;
 - (void)_setUpFormatToggleButtonIfNeeded;
 - (void)_transitionFromView:(id)arg1 toView:(id)arg2 animated:(_Bool)arg3;
 @property(readonly, nonatomic, getter=_controlsAlpha) double controlsAlpha;
@@ -264,17 +247,13 @@
 @property(readonly, nonatomic) double visualHeight;
 @property(readonly, nonatomic) double minimumHeight;
 @property(readonly, nonatomic) double defaultHeight;
-- (void)_updateBarTintColorMetrics;
-- (id)_notSecureWarningRed;
-- (void)_updateBackdropStyle;
+- (void)_didUpdateEffectiveTheme;
+- (void)_updateEffectiveTheme;
 - (_Bool)_shouldUpdateBackdropStyleForTransitionFromItem:(id)arg1 toItem:(id)arg2;
-@property(readonly, nonatomic) UIBlurEffect *backdropEffect;
 @property(readonly, nonatomic) double dismissButtonPadding;
 @property(readonly, nonatomic) struct CGSize dismissButtonSize;
 - (void)setDismissButtonHidden:(_Bool)arg1;
 - (void)setDismissButtonStyle:(long long)arg1 animated:(_Bool)arg2;
-@property(readonly, nonatomic) _Bool isShowingPreferredControlsTintColor;
-- (_Bool)_shouldShowPreferredBarTintColor;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

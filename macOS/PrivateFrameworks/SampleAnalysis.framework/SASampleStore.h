@@ -43,6 +43,7 @@
     NSMutableArray *_namesToUseDsymForUUID;
     NSMutableArray *_idsToUseDsymForUUID;
     BOOL _bulkSymbolicationFailed;
+    unsigned long long _numMicrostackshotsSkippedDueToMissingLoadInfos;
     unsigned long long _targetHIDEventMachAbs;
     BOOL _keepMicrostackshotsWithoutLoadInfo;
     BOOL _sanitizePaths;
@@ -191,7 +192,7 @@
 - (unsigned long long)addKCDataStackshot:(id)arg1 returningTimestamp:(id *)arg2;
 - (unsigned long long)addKCDataStackshots:(id)arg1 createSeparateSamplePerStackshot:(BOOL)arg2;
 - (void)addProcessInfoFromTailspin:(id)arg1;
-- (unsigned long long)addKCDataThreadV4:(const struct thread_snapshot_v4 *)arg1 threadV2:(const struct thread_snapshot_v2 *)arg2 deltaThreadV3:(const struct thread_delta_snapshot_v3 *)arg3 deltaThreadV2:(const struct thread_delta_snapshot_v2 *)arg4 timestamp:(id)arg5 sampleIndex:(unsigned long long)arg6 stack:(id)arg7 name:(const char *)arg8 waitInfo:(const struct stackshot_thread_waitinfo *)arg9 instructionCycles:(const struct instrs_cycles_snapshot *)arg10 task:(id)arg11 kernelTask:(id)arg12 taskIsSuspended:(BOOL)arg13;
+- (unsigned long long)addKCDataThreadV4:(const struct thread_snapshot_v4 *)arg1 threadV2:(const struct thread_snapshot_v2 *)arg2 deltaThreadV3:(const struct thread_delta_snapshot_v3 *)arg3 deltaThreadV2:(const struct thread_delta_snapshot_v2 *)arg4 timestamp:(id)arg5 sampleIndex:(unsigned long long)arg6 stack:(id)arg7 threadName:(const char *)arg8 dispatchQueueLabel:(const char *)arg9 waitInfo:(const struct stackshot_thread_waitinfo *)arg10 turnstileInfo:(const struct stackshot_thread_turnstileinfo *)arg11 instructionCycles:(const struct instrs_cycles_snapshot *)arg12 task:(id)arg13 kernelTask:(id)arg14 taskIsSuspended:(BOOL)arg15;
 - (unsigned long long)indexOfLastSampleOnOrBeforeTimestamp:(id)arg1;
 - (unsigned long long)indexOfFirstSampleOnOrAfterTimestamp:(id)arg1;
 - (void)dealloc;
@@ -265,7 +266,7 @@
 - (id)tidsForPid:(int)arg1;
 - (id)tidToPidDict;
 - (void)backfillTask:(id)arg1 lastSampleIndex:(unsigned long long)arg2 timestamp:(id)arg3 haveSnap:(BOOL)arg4 terminatedThreadsUserTimeInNs:(unsigned long long)arg5 terminatedThreadsSystemTimeInNs:(unsigned long long)arg6 terminatedThreadsCycles:(unsigned long long)arg7 terminatedThreadsInstructions:(unsigned long long)arg8 suspendCount:(unsigned int)arg9 pageins:(unsigned int)arg10 isDarwinBG:(BOOL)arg11 isForeground:(BOOL)arg12 isBoosted:(BOOL)arg13 isDirty:(BOOL)arg14 haveWQFlags:(BOOL)arg15 wqExceededTotalThreadLimit:(BOOL)arg16 wqExceededConstrainedThreadLimit:(BOOL)arg17 haveMem:(BOOL)arg18 taskSizeInBytes:(unsigned long long)arg19 haveLatencyQos:(BOOL)arg20 latencyQos:(unsigned int)arg21;
-- (void)backfillThread:(id)arg1 inTask:(id)arg2 lastSampleIndex:(unsigned long long)arg3 timestamp:(id)arg4 haveName:(BOOL)arg5 name:(const char *)arg6 haveDispatchQueueId:(BOOL)arg7 dispatchQueueId:(unsigned long long)arg8 leafKernelFrame:(id)arg9 haveUserStack:(BOOL)arg10 leafUserFrame:(id)arg11 haveSched:(BOOL)arg12 systemCpuTimeNs:(unsigned long long)arg13 userCpuTimeNs:(unsigned long long)arg14 basePriority:(int)arg15 scheduledPriority:(int)arg16 state:(unsigned int)arg17 threadQos:(unsigned char)arg18 threadRequestedQos:(unsigned char)arg19 threadRequestedQosOverride:(unsigned char)arg20 threadQosPromote:(unsigned char)arg21 threadQosIpcOverride:(unsigned char)arg22 threadQosSyncIpcOverride:(unsigned char)arg23 haveCycIns:(BOOL)arg24 instructions:(unsigned long long)arg25 cycles:(unsigned long long)arg26 haveSnap:(BOOL)arg27 ioTier:(unsigned char)arg28 isIOPassive:(BOOL)arg29 isDarwinBG:(BOOL)arg30 isSuspended:(BOOL)arg31 isGlobalForcedIdle:(BOOL)arg32 isIdleWorkQueue:(BOOL)arg33 lastMadeRunnableTime:(id)arg34 isOnCore:(BOOL)arg35;
+- (void)backfillThread:(id)arg1 inTask:(id)arg2 lastSampleIndex:(unsigned long long)arg3 timestamp:(id)arg4 haveName:(BOOL)arg5 name:(const char *)arg6 haveDispatchQueueId:(BOOL)arg7 dispatchQueueId:(unsigned long long)arg8 dispatchQueueLabel:(const char *)arg9 leafKernelFrame:(id)arg10 haveUserStack:(BOOL)arg11 leafUserFrame:(id)arg12 haveSched:(BOOL)arg13 systemCpuTimeNs:(unsigned long long)arg14 userCpuTimeNs:(unsigned long long)arg15 basePriority:(int)arg16 scheduledPriority:(int)arg17 state:(unsigned int)arg18 threadQos:(unsigned char)arg19 threadRequestedQos:(unsigned char)arg20 threadRequestedQosOverride:(unsigned char)arg21 threadQosPromote:(unsigned char)arg22 threadQosIpcOverride:(unsigned char)arg23 threadQosSyncIpcOverride:(unsigned char)arg24 haveCycIns:(BOOL)arg25 instructions:(unsigned long long)arg26 cycles:(unsigned long long)arg27 haveSnap:(BOOL)arg28 ioTier:(unsigned char)arg29 isIOPassive:(BOOL)arg30 isDarwinBG:(BOOL)arg31 isSuspended:(BOOL)arg32 isGlobalForcedIdle:(BOOL)arg33 isIdleWorkQueue:(BOOL)arg34 lastMadeRunnableTime:(id)arg35 isOnCore:(BOOL)arg36;
 - (BOOL)saveBinaryFormatToStream:(struct __sFILE *)arg1;
 - (id)binaryFormat;
 

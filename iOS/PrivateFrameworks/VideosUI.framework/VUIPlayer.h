@@ -11,6 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (void)setSavedPreferredAudioLanguageCode:(id)arg1;
++ (id)savedPreferredAudioLanguageCode;
 - (void)_configurePlayerForCurrentNetworkSettingsAndMediaItem;
 - (void)_videoPlaybackSettingsOrNetworkConfigurationDidChange:(id)arg1;
 - (void)_currentMediaItemDidChange:(id)arg1;

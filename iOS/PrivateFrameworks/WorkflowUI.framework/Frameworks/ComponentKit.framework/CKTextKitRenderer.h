@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKTextKitContext, CKTextKitShadower;
+@class CKTextKitContext, CKTextKitShadower, UITraitCollection;
 @protocol CKTextKitTruncating;
 
 @interface CKTextKitRenderer : NSObject
@@ -16,10 +16,12 @@
     CKTextKitContext *_context;
     id <CKTextKitTruncating> _truncater;
     CKTextKitShadower *_shadower;
+    UITraitCollection *_traitCollection;
     struct CGSize _constrainedSize;
     struct CKTextKitAttributes _attributes;
 }
 
+@property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) struct CGSize constrainedSize; // @synthesize constrainedSize=_constrainedSize;
 @property(readonly, nonatomic) struct CKTextKitAttributes attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) CKTextKitShadower *shadower; // @synthesize shadower=_shadower;

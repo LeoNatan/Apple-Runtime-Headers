@@ -14,7 +14,7 @@
 {
 }
 
-+ (void)adjustGeometry:(inout CDStruct_ac168a83 *)arg1 style:(inout CDStruct_506f5052 *)arg2 info:(inout CDStruct_9d1ebe49 *)arg3 forTextSpriteAnimatingFromAttributes:(const CDStruct_366bba6a *)arg4 toAttributes:(const CDStruct_366bba6a *)arg5;
++ (void)adjustGeometry:(inout CDStruct_ac168a83 *)arg1 style:(inout CDStruct_506f5052 *)arg2 info:(inout CDStruct_9d1ebe49 *)arg3 forTextSpriteAnimatingFromAttributes:(const CDStruct_366bba6a *)arg4 toAttributes:(const CDStruct_366bba6a *)arg5 inRootLayout:(id)arg6;
 + (id)sharedInstance;
 - (void)animation:(id)arg1 adjustGeometries:(inout CDStruct_ac168a83 *)arg2 styles:(inout CDStruct_506f5052 *)arg3 infos:(inout CDStruct_9d1ebe49 *)arg4 forSpriteDisappearingFromRootIndexRange:(struct _PXGSpriteIndexRange)arg5;
 - (void)animation:(id)arg1 adjustGeometries:(inout CDStruct_ac168a83 *)arg2 styles:(inout CDStruct_506f5052 *)arg3 infos:(inout CDStruct_9d1ebe49 *)arg4 forSpriteAppearingIntoRootIndexRange:(struct _PXGSpriteIndexRange)arg5;

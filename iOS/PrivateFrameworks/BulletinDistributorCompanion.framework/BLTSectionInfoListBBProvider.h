@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <BulletinDistributorCompanion/BLTSectionInfoListProvider-Protocol.h>
+#import <BulletinDistributorCompanion/BLTSectionInfoListBBProvider-Protocol.h>
 #import <BulletinDistributorCompanion/BLTSectionInfoObserverDelegate-Protocol.h>
 #import <BulletinDistributorCompanion/LSApplicationWorkspaceObserverProtocol-Protocol.h>
 
 @class BLTSectionInfoObserver, LSApplicationWorkspace, NSString;
 @protocol BLTSectionInfoListProviderDelegate, OS_dispatch_queue;
 
-@interface BLTSectionInfoListBBProvider : NSObject <LSApplicationWorkspaceObserverProtocol, BLTSectionInfoObserverDelegate, BLTSectionInfoListProvider>
+@interface BLTSectionInfoListBBProvider : NSObject <LSApplicationWorkspaceObserverProtocol, BLTSectionInfoObserverDelegate, BLTSectionInfoListBBProvider>
 {
     BLTSectionInfoObserver *_observer;
     LSApplicationWorkspace *_appWorkspace;
@@ -27,7 +27,8 @@
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)sectionInfoObserver:(id)arg1 removedSectionWithSectionID:(id)arg2;
-- (void)sectionInfoObserver:(id)arg1 updatedSectionInfo:(id)arg2 withUniversalSectionID:(id)arg3 displayName:(id)arg4;
+- (void)sectionInfoObserver:(id)arg1 updatedSectionInfoForSectionIDs:(id)arg2;
+- (id)sectionInfoForSectionID:(id)arg1;
 - (void)reloadSection:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)reloadWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;

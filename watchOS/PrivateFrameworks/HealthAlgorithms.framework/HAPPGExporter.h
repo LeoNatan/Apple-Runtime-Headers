@@ -6,12 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <HealthAlgorithms/SRSampleExporting-Protocol.h>
-#import <HealthAlgorithms/SRSampling-Protocol.h>
+@class NSData;
 
-@class NSData, NSString;
-
-@interface HAPPGExporter : NSObject <SRSampleExporting, SRSampling>
+@interface HAPPGExporter : NSObject
 {
     double _srTimestamp;
     NSData *_mimosaData;
@@ -20,12 +17,6 @@
 - (void).cxx_destruct;
 - (id)sr_exportRepresentationEnumerator;
 - (id)initWithBinarySampleRepresentation:(id)arg1 metadata:(id)arg2 timestamp:(double)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

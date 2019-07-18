@@ -18,6 +18,9 @@
     NSObject<OS_dispatch_workloop> *_workloop;
 }
 
++ (id)requestDownloadLocation:(id)arg1 error:(id *)arg2;
++ (id)requestDownloadFilename:(id)arg1;
++ (id)requestIdentifier:(id)arg1;
 @property(retain) NSObject<OS_dispatch_workloop> *workloop; // @synthesize workloop=_workloop;
 @property(retain) NSURLSession *foregroundSession; // @synthesize foregroundSession=_foregroundSession;
 @property(retain) NSURLSession *backgroundSession; // @synthesize backgroundSession=_backgroundSession;
@@ -28,6 +31,7 @@
 - (void)URLSession:(id)arg1 task:(id)arg2 _willSendRequestForEstablishedConnection:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)download:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)fetch:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)createErrorFromURLResonse:(id)arg1 data:(id)arg2;
 - (id)createAuthenticatedForegroundSession;
 - (id)initWithWorkloop:(id)arg1;
 

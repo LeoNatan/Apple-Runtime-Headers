@@ -27,8 +27,10 @@
     BOOL _videoOverlayPlayStateDidChange;
     BOOL _isAttemptingToPlayVideoOverlayDidChange;
     BOOL _isScrubbingActivationDidChange;
+    BOOL _isVideoContentAllowedDidChange;
 }
 
+@property(nonatomic) BOOL isVideoContentAllowedDidChange; // @synthesize isVideoContentAllowedDidChange=_isVideoContentAllowedDidChange;
 @property(nonatomic, setter=_setIsScrubbingActivationDidChange:) BOOL isScrubbingActivationDidChange; // @synthesize isScrubbingActivationDidChange=_isScrubbingActivationDidChange;
 @property(nonatomic, setter=_setIsAttemptingToPlayVideoOverlayDidChange:) BOOL isAttemptingToPlayVideoOverlayDidChange; // @synthesize isAttemptingToPlayVideoOverlayDidChange=_isAttemptingToPlayVideoOverlayDidChange;
 @property(nonatomic, setter=_setVideoOverlayPlayStateDidChange:) BOOL videoOverlayPlayStateDidChange; // @synthesize videoOverlayPlayStateDidChange=_videoOverlayPlayStateDidChange;

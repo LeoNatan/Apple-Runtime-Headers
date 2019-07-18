@@ -22,6 +22,7 @@
 }
 
 - (void)dealloc;
+- (_Bool)canConvertTime;
 - (void)changeToNewFilterSize:(unsigned char)arg1;
 - (void)resetFilterWithNewExpectedDomainAInterval:(unsigned long long)arg1 expectedDomainBInterval:(unsigned long long)arg2 multiIntervalCount:(unsigned int)arg3;
 - (void)resetFilterWithNewExpectedDomainAInterval:(unsigned long long)arg1 expectedDomainBInterval:(unsigned long long)arg2;

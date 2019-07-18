@@ -15,6 +15,7 @@
     int _idleExitStatus;
     NSMutableArray *_errors;
     NSMutableArray *_warnings;
+    BOOL _hiddenFromDisplay;
     NSString *_name;
     NSArray *_memoryRegions;
     NSString *_displayString;
@@ -32,6 +33,7 @@
 + (void)_addGlobalError:(id)arg1;
 + (id)processWithPid:(int)arg1;
 + (id)processWithBsdInfo:(struct proc_bsdinfo *)arg1;
+@property(nonatomic) BOOL hiddenFromDisplay; // @synthesize hiddenFromDisplay=_hiddenFromDisplay;
 @property(nonatomic) unsigned long long pageSize; // @synthesize pageSize=_pageSize;
 @property(retain, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
 @property(readonly, nonatomic) int idleExitStatus; // @synthesize idleExitStatus=_idleExitStatus;

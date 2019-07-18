@@ -18,14 +18,15 @@
 + (id)interface;
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)topAppsForAccount:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)subscriptionStateWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)sendPayoutWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)sendMetricsWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)sendSummaryWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)sbsyncWithDuration:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)sbsyncWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)sbsyncIfSubscribedWithAccount:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)resetPayoutWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)resetMetricsWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)resetSummaryWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)reportAppEvent:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)recordMetricsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)recordLaunchesWithCompletionBlock:(CDUnknownBlockType)arg1;

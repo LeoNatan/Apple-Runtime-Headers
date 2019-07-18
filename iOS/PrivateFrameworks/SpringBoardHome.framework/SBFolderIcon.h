@@ -10,13 +10,12 @@
 #import <SpringBoardHome/SBIconIndexNodeObserver-Protocol.h>
 #import <SpringBoardHome/SBIconObserver-Protocol.h>
 
-@class NSHashTable, NSMapTable, NSMutableSet, NSString, SBFolder;
+@class NSHashTable, NSMutableSet, NSString, SBFolder;
 
 @interface SBFolderIcon : SBIcon <SBFolderObserver, SBIconObserver, SBIconIndexNodeObserver>
 {
     NSHashTable *_nodeObservers;
     NSMutableSet *_finishedDownloadIdentifiers;
-    NSMapTable *_cachedMiniGridImages;
     long long _progressState;
     double _progressPercent;
     SBFolder *_folder;
@@ -26,6 +25,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) SBFolder *folder; // @synthesize folder=_folder;
 - (_Bool)isFolderIcon;
+- (void)folder:(id)arg1 didReplaceIcon:(id)arg2 withIcon:(id)arg3;
 - (void)folder:(id)arg1 didAddIcons:(id)arg2 removedIcons:(id)arg3;
 - (void)folder:(id)arg1 didRemoveLists:(id)arg2 atIndexes:(id)arg3;
 - (void)folder:(id)arg1 didAddList:(id)arg2;
@@ -45,8 +45,6 @@
 - (void)iconLaunchEnabledDidChange:(id)arg1;
 - (void)iconAccessoriesDidUpdate:(id)arg1;
 - (void)iconImageDidUpdate:(id)arg1;
-- (id)miniGridCellImageOfSize:(struct CGSize)arg1 forIconAtIndex:(unsigned long long)arg2 listIndex:(unsigned long long)arg3 iconImageInfo:(struct SBIconImageInfo)arg4;
-- (id)miniGridCellImageOfSize:(struct CGSize)arg1 forIcon:(id)arg2 iconImageInfo:(struct SBIconImageInfo)arg3;
 - (id)iconAtListIndex:(unsigned long long)arg1 iconIndex:(unsigned long long)arg2;
 - (unsigned long long)gridCellIndexForIconIndex:(unsigned long long)arg1;
 - (unsigned long long)listIndexForContainedIcon:(id)arg1;
@@ -54,6 +52,8 @@
 - (id)leafIconsWithBadgesSortedByImportance;
 - (void)ancestryDidChange;
 - (void)rootFolderDelegateDidChange:(id)arg1;
+- (void)_containedIconLaunchEnabledDidUpdate:(id)arg1;
+- (void)_containedIconAccessoriesDidUpdate:(id)arg1;
 - (void)_containedIconImageChanged:(id)arg1;
 - (void)noteContainedIcon:(id)arg1 replacedIcon:(id)arg2;
 - (void)noteContainedIconsAdded:(id)arg1 removed:(id)arg2;

@@ -185,6 +185,7 @@
         unsigned int semanticContentAttribute:3;
         unsigned int hasDynamicBackgroundColor:1;
         unsigned int hasLocalOverrideTraitCollection:1;
+        unsigned int hasPendingTraitStorageConstraints:1;
     } _viewFlags;
     unsigned short _unsatisfiableConstraintsLoggingSuspensionCount;
     unsigned int _pseudo_id;
@@ -453,7 +454,6 @@
 @property(readonly, copy, nonatomic) NSArray *preferredFocusEnvironments;
 @property(readonly, nonatomic) __weak UIView *preferredFocusedView;
 @property(readonly, nonatomic) __weak id <UIFocusEnvironment> parentFocusEnvironment;
-- (id)_parentFocusEnvironment;
 @property(readonly, nonatomic, getter=_focusTouchSensitivityStyle) long long focusTouchSensitivityStyle;
 @property(readonly, nonatomic, getter=_mayRemainFocused) BOOL mayRemainFocused;
 - (double)_preferredDurationScaleFactorForFocusAnimation:(long long)arg1 inContext:(id)arg2;
@@ -518,6 +518,7 @@
 @property(nonatomic, setter=_setFrameIgnoringLayerTransform:) struct CGRect _frameIgnoringLayerTransform;
 - (void)_reestablishConstraintsForTransformChange;
 @property(nonatomic) struct CGPoint center;
+- (void)_synchronizeAutoLayoutWithCALayoutIfNecessaryForOldBounds:(struct CGRect)arg1 updateSuperview:(BOOL)arg2;
 - (void)_updateCombinedInsetsIfNecessary;
 @property(readonly, nonatomic) struct CGRect bounds;
 - (struct CGRect)convertRect:(struct CGRect)arg1 fromCoordinateSpace:(id)arg2;
@@ -615,9 +616,9 @@
 - (void)_effectiveThemeTraitCollectionDidChangeInternal;
 - (void)_traitCollectionDidChangeOnSubtreeInternal:(const struct _UITraitCollectionChangeDescription *)arg1;
 - (void)_traitCollectionDidChangeInternal:(const struct _UITraitCollectionChangeDescription *)arg1;
-- (void)_noteTraitsDidChangeRecursivelyFrom:(id)arg1;
+- (void)_noteLocalTraitsDidChangeRecursively;
 - (void)_noteTraitsDidChangeRecursively;
-- (void)_localOverrideTraitCollectionDidChangeWithPreviousTraitCollection:(id)arg1;
+- (void)_localOverrideTraitCollectionDidChange;
 - (void)_localOverrideTraitCollectionWillChange:(id)arg1;
 @property(retain, nonatomic, getter=_localOverrideTraitCollection, setter=_setLocalOverrideTraitCollection:) UITraitCollection *_localOverrideTraitCollection;
 @property(nonatomic, getter=_canBeParentTraitEnvironment, setter=_setCanBeParentTraitEnvironment:) BOOL _canBeParentTraitEnviroment;
@@ -718,6 +719,7 @@
 - (void)_layoutConstraintCleanup;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)_isRestrictedSplashboardClass;
 - (void)_finishDecodingLayoutGuideConnections:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (BOOL)_wantsDeepDrawing;
@@ -732,6 +734,8 @@
 - (Class)_layerClass;
 - (void)_setTraitStorageSubviews:(id)arg1;
 - (id)_traitStorageSubviews;
+- (void)_applyTraitStorageConstraintsByRemoving:(id)arg1 adding:(id)arg2;
+- (void)_applyPendingTraitStorageConstraints;
 - (void)_setTraitStorageConstraints:(id)arg1;
 - (id)_traitStorageConstraints;
 - (id)_appearanceTraitCollection;
@@ -742,6 +746,7 @@
 - (id)_alignmentRectOriginCacheCreateIfNecessary:(BOOL)arg1;
 - (double)_firstBaselineOffsetFromTop;
 - (double)_baselineOffsetFromBottom;
+- (BOOL)_isHasBaselinePropertyChangeable;
 - (BOOL)_hasBaseline;
 - (id)_constraintsArray;
 - (id)nsli_contentYOffsetVariable;
@@ -810,6 +815,7 @@
 - (void)_beginDragWithInteractionGestureRecognizer:(id)arg1;
 @property(nonatomic, getter=_draggingSourceDelegate, setter=_setDraggingSourceDelegate:) __weak id <_UIViewInternalDraggingSourceDelegate> _draggingSourceDelegate;
 @property(readonly, nonatomic) UIInputResponderController *inputResponderController;
+- (id)_copyConfigurationAtLocation:(struct CGPoint)arg1;
 - (long long)_depthFirstCompare:(id)arg1;
 - (id)_fallbackTraitCollection;
 - (double)_findAutolayoutHeightConstraint;
@@ -1211,7 +1217,6 @@
 - (BOOL)isMultipleTouchEnabled;
 - (void)setMultipleTouchEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect)arg1;
-- (void)_synchronizeAutoLayoutWithCALayoutIfNecessaryForOldBounds:(struct CGRect)arg1;
 - (BOOL)_needsLayoutOnAnimatedFrameChangeForNewFrame:(struct CGRect)arg1;
 - (struct CGRect)extent;
 @property(readonly, nonatomic) struct CGRect frame;
@@ -1384,6 +1389,7 @@
 - (void)_monitoredView:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (BOOL)_monitorsView:(id)arg1;
 @property(nonatomic, getter=_monitorsSubtree, setter=_setMonitorsSubtree:) BOOL monitorsSubtree;
+@property(readonly, nonatomic, getter=_acceptsActivatingTouch) BOOL _acceptsActivatingTouch;
 - (BOOL)_shouldApplyExclusiveTouch;
 - (BOOL)_isInExclusiveTouchSubviewTree;
 - (BOOL)_appliesExclusiveTouchToSubviewTree;
@@ -1393,6 +1399,8 @@
 - (void)_unsubscribeToScrollNotificationsIfNecessary:(id)arg1;
 - (void)_subscribeToScrollNotificationsIfNecessary:(id)arg1;
 - (BOOL)_canHostViewControllerContentScrollView;
+- (BOOL)_hasActingParentViewForGestureRecognizers:(id)arg1;
+- (id)_actingParentViewForGestureRecognizers;
 - (id)_containingScrollView;
 - (id)_viewIndexPath;
 - (BOOL)_isAncestorOfFirstResponder;
@@ -1575,10 +1583,9 @@
 - (unsigned long long)_defaultFocusRingType;
 - (id)_designatedFocusRingView;
 - (BOOL)_validateUserInterfaceItem:(id)arg1;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)doesNotRecognizeSelector:(SEL)arg1;
+- (void)_showContextMenuToShareCopyConfiguration:(id)arg1 touchLocation:(struct CGPoint)arg2;
 - (void)_showContextMenuToShareObjects:(id)arg1 touchLocation:(struct CGPoint)arg2;
-- (id)_objectsForServicesAndSharing;
+- (id)_copyConfigurationForServicesMenu;
 - (BOOL)_readServicesMenuDataFromPasteboard:(id)arg1;
 - (id)_servicesMenuProviderForReturnType:(id)arg1;
 - (id)_asTextInputServicesMenuDataProvider;

@@ -7,7 +7,6 @@
 #import <iTunesStoreUI/SUStorePageViewController.h>
 
 @class ACAccount, NSDictionary, NSString, NSURL, SUMescalSession;
-@protocol SUCardEnrollmentUpsellViewControllerDelegate;
 
 @interface SUAccountViewController : SUStorePageViewController
 {
@@ -19,11 +18,9 @@
     NSString *_primingSignature;
     NSDictionary *_tidHeaders;
     ACAccount *_account;
-    id <SUCardEnrollmentUpsellViewControllerDelegate> _upsellDelegate;
 }
 
 + (id)_latestAccountViewController;
-@property id <SUCardEnrollmentUpsellViewControllerDelegate> upsellDelegate; // @synthesize upsellDelegate=_upsellDelegate;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, nonatomic, getter=_mescalSession) SUMescalSession *_mescalSession; // @synthesize _mescalSession;
@@ -36,7 +33,6 @@
 - (id)_authenticationQueryParametersForStyle:(long long)arg1;
 - (void)_closeMescalSession;
 - (void)viewWillDisappear:(_Bool)arg1;
-- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (_Bool)shouldSignRequests;

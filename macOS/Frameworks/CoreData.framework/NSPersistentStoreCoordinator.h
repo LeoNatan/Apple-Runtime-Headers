@@ -155,7 +155,7 @@
 - (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned long long)arg2;
 - (BOOL)_validateQueryGeneration:(id)arg1 error:(id *)arg2;
 - (id)_reopenQueryGenerationWithIdentifier:(id)arg1 inStoreWithIdentifier:(id)arg2 error:(id *)arg3;
-- (id)_retainedCurrentQueryGeneration;
+- (id)_retainedCurrentQueryGeneration:(id)arg1;
 - (id)_retainedIdentifierFromStores:(id)arg1;
 - (BOOL)_refreshTriggerValuesInStore:(id)arg1 error:(id *)arg2;
 - (BOOL)validateManagedObjectModel:(id)arg1 forHistoryTrackingWithOptions:(id)arg2 error:(id *)arg3;

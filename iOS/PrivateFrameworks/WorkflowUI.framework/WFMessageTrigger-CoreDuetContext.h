@@ -7,6 +7,6 @@
 #import <WorkflowKit/WFMessageTrigger.h>
 
 @interface WFMessageTrigger (CoreDuetContext)
-+ (id)triggerTypeIconName;
++ (id)triggerTypeIcon;
 @end
 

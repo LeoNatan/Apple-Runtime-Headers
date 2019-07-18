@@ -11,6 +11,7 @@
 @protocol EMCollectionItemID;
 
 @protocol EMMessageListItem <EMCollectionItem, EMObject>
+@property(readonly) _Bool isEditable;
 @property(readonly) _Bool shouldArchiveByDefault;
 @property(readonly) _Bool supportsArchiving;
 @property(readonly) _Bool deleteMovesToTrash;

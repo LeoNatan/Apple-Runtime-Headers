@@ -17,7 +17,7 @@
     struct CGRect _contentsRect;
 }
 
-+ (id)imageContainersForSelectionSnapshot:(id)arg1 gridView:(id)arg2 includeAllAssets:(BOOL)arg3;
++ (id)imageContainersForSelectionSnapshot:(id)arg1 gridView:(id)arg2 fallbackMediaProvider:(id)arg3 includeAllAssets:(BOOL)arg4;
 @property(readonly, nonatomic) struct CGRect contentsRect; // @synthesize contentsRect=_contentsRect;
 @property(readonly, nonatomic) struct CGImage *imageRef; // @synthesize imageRef=_imageRef;
 @property(readonly, nonatomic) PXRegionOfInterest *regionOfInterest; // @synthesize regionOfInterest=_regionOfInterest;

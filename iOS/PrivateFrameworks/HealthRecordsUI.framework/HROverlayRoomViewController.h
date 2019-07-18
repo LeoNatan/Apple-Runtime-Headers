@@ -6,7 +6,7 @@
 
 #import <HealthUI/HKOverlayRoomViewController.h>
 
-@class HKConcept, NSArray, _TtC15HealthRecordsUI32MedicalRecordChartOverlayContext;
+@class HKConcept, NSArray, _TtC15HealthRecordsUI28MedicalRecordChartDataSource;
 @protocol _TtP15HealthRecordsUI31MedicalRecordChartConfiguration_;
 
 __attribute__((visibility("hidden")))
@@ -16,14 +16,18 @@ __attribute__((visibility("hidden")))
     HKConcept *_concept;
     id <_TtP15HealthRecordsUI31MedicalRecordChartConfiguration_> _configuration;
     NSArray *_displayTypes;
-    NSArray *_overlayContexts;
-    _TtC15HealthRecordsUI32MedicalRecordChartOverlayContext *_outOfRangeContext;
+    _TtC15HealthRecordsUI28MedicalRecordChartDataSource *_masterDataSource;
+    NSArray *_seriesDataSources;
+    _TtC15HealthRecordsUI28MedicalRecordChartDataSource *_outOfRangeDataSource;
+    _TtC15HealthRecordsUI28MedicalRecordChartDataSource *_noRangeDataSource;
 }
 
 + (id)_verticalAxis;
 + (void)determineChartabilityOfConcept:(id)arg1 withApplicationItems:(id)arg2 completion:(CDUnknownBlockType)arg3;
-@property(retain, nonatomic) _TtC15HealthRecordsUI32MedicalRecordChartOverlayContext *outOfRangeContext; // @synthesize outOfRangeContext=_outOfRangeContext;
-@property(copy, nonatomic) NSArray *overlayContexts; // @synthesize overlayContexts=_overlayContexts;
+@property(retain, nonatomic) _TtC15HealthRecordsUI28MedicalRecordChartDataSource *noRangeDataSource; // @synthesize noRangeDataSource=_noRangeDataSource;
+@property(retain, nonatomic) _TtC15HealthRecordsUI28MedicalRecordChartDataSource *outOfRangeDataSource; // @synthesize outOfRangeDataSource=_outOfRangeDataSource;
+@property(copy, nonatomic) NSArray *seriesDataSources; // @synthesize seriesDataSources=_seriesDataSources;
+@property(retain, nonatomic) _TtC15HealthRecordsUI28MedicalRecordChartDataSource *masterDataSource; // @synthesize masterDataSource=_masterDataSource;
 @property(copy, nonatomic) NSArray *displayTypes; // @synthesize displayTypes=_displayTypes;
 @property(retain, nonatomic) id <_TtP15HealthRecordsUI31MedicalRecordChartConfiguration_> configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) HKConcept *concept; // @synthesize concept=_concept;
@@ -36,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (id)controllerTitleWithApplicationItems:(id)arg1;
 - (id)createChartOverlayViewController;
 - (_Bool)_usePreferredOverlayAndAllFiltersButton;
-- (id)initWithConcept:(id)arg1 configuration:(id)arg2 displayDate:(id)arg3 displayTypes:(id)arg4 overlayMode:(long long)arg5 overlayContexts:(id)arg6 outOfRangeContext:(id)arg7 applicationItems:(id)arg8;
+- (id)initWithConcept:(id)arg1 configuration:(id)arg2 displayDate:(id)arg3 masterDataSource:(id)arg4 seriesDataSources:(id)arg5 outOfRangeDataSource:(id)arg6 noRangeDataSource:(id)arg7 overlayMode:(long long)arg8 applicationItems:(id)arg9;
 
 @end
 

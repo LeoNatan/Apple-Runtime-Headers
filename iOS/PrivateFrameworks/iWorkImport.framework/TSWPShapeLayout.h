@@ -45,7 +45,9 @@ __attribute__((visibility("hidden")))
 - (struct CGAffineTransform)autosizedTransformForInfoGeometry:(id)arg1;
 - (struct CGAffineTransform)autosizedTransform;
 - (struct CGAffineTransform)computeLayoutTransform;
+- (void)transferLayoutGeometryToInfo:(id)arg1 withAdditionalTransform:(struct CGAffineTransform)arg2 assertIfInDocument:(_Bool)arg3;
 - (id)dependentLayouts;
+- (_Bool)descendersCannotClip;
 - (_Bool)textLayoutShouldLayoutVertically:(id)arg1;
 - (_Bool)textLayoutShouldWrapAroundExternalDrawables:(id)arg1;
 - (Class)repClassForTextLayout:(id)arg1;
@@ -68,6 +70,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)p_isEmptyParagraphWithFillOrBorders;
 - (_Bool)p_isEmptyList;
 - (_Bool)p_hasVisibleContents;
+- (id)layoutsForProvidingGuidesForChildLayouts;
+- (_Bool)providesGuidesForChildLayouts;
 - (void)invalidatePath;
 - (void)invalidateSize;
 - (void)replaceChild:(id)arg1 with:(id)arg2;

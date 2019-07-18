@@ -15,7 +15,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TListNameCellView : FI_TListBaseCellView <TICloudBadgeButtonContainer, TInlineProgressViewContainer>
 {
-    struct TNSRef<FI_TBasicImageView, void> _iconImageView;
+    TNSRef_cc605514 _iconImageView;
     struct TNSRef<NSLayoutConstraint, void> _iconImageViewWidthConstraint;
     struct TNSRef<NSLayoutConstraint, void> _iconImageViewTrailingConstraint;
     struct TNSRef<FI_TListNameSubtitleTextField, void> _subtitleTextField;
@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
     struct TNSRef<FI_TTagsImageView, void> _tagsImageView;
     NSLayoutConstraint *_tagsTrailingConstraint;
     NSLayoutConstraint *_tagsSpacingConstraintOnMaster;
-    struct TNSRef<FI_TBasicImageView, void> _vendorBadgeImageView;
+    TNSRef_cc605514 _vendorBadgeImageView;
     NSLayoutConstraint *_vendorBadgeTrailingConstraint;
     NSLayoutConstraint *_vendorBadgeSpacingConstraintOnMaster;
     struct TNSRef<FI_TICloudBadgeButton, void> _syncBadgeImageButton;

@@ -16,6 +16,7 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1 device:(id)arg2;
+- (void)resetSeedOnCommandBuffer:(id)arg1 seed:(unsigned long long)arg2;
 - (void)synchronizeStateOnCommandBuffer:(id)arg1;
 - (void)encodeToCommandBuffer:(id)arg1 destinationMatrix:(id)arg2;
 - (void)encodeToCommandBuffer:(id)arg1 destinationVector:(id)arg2;

@@ -11,7 +11,7 @@
 #import <AvatarUI/UICollectionViewDataSource-Protocol.h>
 #import <AvatarUI/UICollectionViewDelegate-Protocol.h>
 
-@class AVTAvatarListCell, AVTAvatarRecordDataSource, AVTCenteringCollectionViewDelegate, AVTPlusButtonView, AVTRenderingScope, AVTTransitionCoordinator, AVTUIEnvironment, AVTViewSession, AVTZIndexEngagementListCollectionViewLayout, NSArray, NSString, UICollectionView, UIView, _AVTAvatarRecordImageProvider;
+@class AVTAvatarListCell, AVTAvatarRecordDataSource, AVTCarouselPlusButtonView, AVTCenteringCollectionViewDelegate, AVTRenderingScope, AVTTransitionCoordinator, AVTUIEnvironment, AVTViewSession, AVTZIndexEngagementListCollectionViewLayout, NSArray, NSString, UICollectionView, UIView, _AVTAvatarRecordImageProvider;
 @protocol AVTAvatarDisplayingControllerDelegate, AVTAvatarListItem, AVTAvatarRecord, AVTPresenterDelegate, AVTUILogger, AVTViewCarouselLayout;
 
 @interface AVTMultiAvatarController : NSObject <UICollectionViewDelegate, UICollectionViewDataSource, AVTNotifyingContainerViewDelegate, AVTAvatarDisplayingController>
@@ -28,7 +28,7 @@
     AVTCenteringCollectionViewDelegate *_centeringDelegate;
     NSArray *_recordListItems;
     AVTViewSession *_avtViewSession;
-    AVTPlusButtonView *_addItemView;
+    AVTCarouselPlusButtonView *_addItemView;
     id <AVTAvatarListItem> _addListItem;
     id <AVTAvatarRecord> _displayedRecord;
     AVTAvatarListCell *_liveCell;
@@ -55,7 +55,7 @@
 @property(retain, nonatomic) AVTAvatarListCell *liveCell; // @synthesize liveCell=_liveCell;
 @property(retain, nonatomic) id <AVTAvatarRecord> displayedRecord; // @synthesize displayedRecord=_displayedRecord;
 @property(retain, nonatomic) id <AVTAvatarListItem> addListItem; // @synthesize addListItem=_addListItem;
-@property(retain, nonatomic) AVTPlusButtonView *addItemView; // @synthesize addItemView=_addItemView;
+@property(retain, nonatomic) AVTCarouselPlusButtonView *addItemView; // @synthesize addItemView=_addItemView;
 @property(retain, nonatomic) AVTViewSession *avtViewSession; // @synthesize avtViewSession=_avtViewSession;
 @property(retain, nonatomic) NSArray *recordListItems; // @synthesize recordListItems=_recordListItems;
 @property(retain, nonatomic) AVTCenteringCollectionViewDelegate *centeringDelegate; // @synthesize centeringDelegate=_centeringDelegate;

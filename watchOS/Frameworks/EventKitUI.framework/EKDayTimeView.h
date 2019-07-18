@@ -51,6 +51,8 @@
 + (float)timeInsetForSizeClass:(int)arg1 orientation:(int)arg2;
 + (void)setVerticalPadding:(float)arg1;
 + (float)verticalPadding;
++ (float)_widthForOrientation:(int)arg1 sizeClass:(int)arg2 excludeCurrentTime:(_Bool)arg3;
++ (void)_setWidth:(float)arg1 forOrientation:(int)arg2 sizeClass:(int)arg3 excludeCurrentTime:(_Bool)arg4;
 + (float)_timeTextWidthForSizeClass:(int)arg1 orientation:(int)arg2;
 + (void)_calculateWidthForSizeClass:(int)arg1 orientation:(int)arg2 excludeCurrentTime:(_Bool)arg3;
 + (float)_noonLocalizedWidthForOrientation:(int)arg1;
@@ -97,6 +99,7 @@
 - (void)_sizeClassChanged;
 - (void)_fontSizeChanged;
 - (void)_localeChanged;
+- (void)didMoveToWindow;
 - (void)setNeedsDisplay;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 sizeClass:(int)arg2;

@@ -15,11 +15,13 @@
 @interface _INPBSnoozeTasksIntentResponse : PBCodable <_INPBSnoozeTasksIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     NSArray *_snoozedTasks;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)snoozedTasksType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *snoozedTasks; // @synthesize snoozedTasks=_snoozedTasks;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

@@ -9,5 +9,7 @@
 @protocol CAMViewfinderTransitionable
 @property(readonly, nonatomic) long long desiredAspectRatio;
 @property(readonly, nonatomic) CAMPreviewView *previewView;
+- (void)prepareForResumingUsingCrossfade;
+- (void)removeInflightBlurAnimations;
 @end
 

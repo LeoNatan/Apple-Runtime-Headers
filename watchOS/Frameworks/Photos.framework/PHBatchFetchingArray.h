@@ -25,6 +25,7 @@
     NSObject<OS_dispatch_queue> *_uuidsQueue;
     NSMutableDictionary *_uuidsByOIDs;
     unsigned int _batchSize;
+    Class _fetchedObjectClass;
     unsigned int _propertyHint;
 }
 

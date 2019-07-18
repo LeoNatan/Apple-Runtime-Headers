@@ -9,7 +9,7 @@
 #import <HomeUI/HFCameraPlaybackEngineObserver-Protocol.h>
 #import <HomeUI/HUCameraPlayerScrubbing-Protocol.h>
 
-@class AVBackgroundView, CADisplayLink, HFCameraPlaybackEngine, HMCameraClip, HUMiniScrubber, NSDate, NSString, UIButton;
+@class AVBackgroundView, CADisplayLink, HFCameraPlaybackEngine, HMCameraClip, HUBlendedSeparatorView, HUMiniScrubber, NSDate, NSString, UIButton;
 
 @interface HUCameraMiniScrubberViewController : UIViewController <HFCameraPlaybackEngineObserver, HUCameraPlayerScrubbing>
 {
@@ -23,8 +23,10 @@
     UIButton *_liveButton;
     CADisplayLink *_displayLink;
     NSDate *_clipStartDate;
+    HUBlendedSeparatorView *_rightBlendedSeparator;
 }
 
+@property(retain, nonatomic) HUBlendedSeparatorView *rightBlendedSeparator; // @synthesize rightBlendedSeparator=_rightBlendedSeparator;
 @property(retain, nonatomic) NSDate *clipStartDate; // @synthesize clipStartDate=_clipStartDate;
 @property(nonatomic) _Bool isScrubbing; // @synthesize isScrubbing=_isScrubbing;
 @property(nonatomic) _Bool isVisible; // @synthesize isVisible=_isVisible;

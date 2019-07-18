@@ -49,8 +49,10 @@
 - (long long)_assetResourceTypeForImageWithBaseVersion:(long long)arg1;
 - (BOOL)_canRenderMediaForResult:(id)arg1;
 - (void)_prepareAndAddMediaRequestsToChildRequests:(id)arg1;
+- (id)_baseMediaRequestsForBaseVersion:(long long)arg1 error:(id *)arg2;
 - (void)_renderTemporaryVideoForObjectBuilder:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (void)_renderVideoFromVideoURL:(id)arg1 asset:(id)arg2 adjustmentData:(id)arg3 canHandleAdjustmentData:(BOOL)arg4 resultHandler:(CDUnknownBlockType)arg5;
+- (long long)_adjustmentBaseVersionFromResult:(id)arg1 request:(id)arg2 canHandleAdjustmentData:(char *)arg3;
 - (id)_imageBehaviorSpecForBaseVersion:(long long)arg1;
 - (id)_videoBehaviorSpecForBaseVersion:(long long)arg1;
 - (id)_lazyVideoProgress;

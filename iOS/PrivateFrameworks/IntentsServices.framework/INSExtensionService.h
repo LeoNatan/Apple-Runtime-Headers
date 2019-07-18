@@ -16,7 +16,9 @@
 @interface INSExtensionService : NSObject <INSAnalyticsObserver, INSAnalyticsDataSource, INSAppLaunchCommandDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_requestDelegateQueue;
     INCExtensionConnection *_currentConnection;
+    NSString *_currentBundleIdForDisplay;
     INExtensionContext *_extensionContext;
     NSDictionary *_options;
     id <INSExtensionServiceDelegate> _delegate;
@@ -39,6 +41,8 @@
 - (id)_connectionForIntent:(id)arg1;
 - (id)_updatedEventContextWithExtensionLoadType:(id)arg1 wasPrewarmed:(_Bool)arg2;
 - (id)_extensionInputItems;
+- (void)_extensionRequestDidFinishForIntent:(id)arg1 error:(id)arg2;
+- (void)_extensionRequestWillStartForIntent:(id)arg1;
 @property(copy, nonatomic) NSArray *airPlayRouteIdentifiers;
 @property(readonly, nonatomic) INExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void)resetExternalResources;

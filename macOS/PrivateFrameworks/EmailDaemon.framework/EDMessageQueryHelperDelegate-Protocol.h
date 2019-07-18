@@ -9,6 +9,7 @@
 @class EDMessageQueryHelper, EMMessage, EMMessageObjectID, NSArray;
 
 @protocol EDMessageQueryHelperDelegate <NSObject>
+- (void)queryHelperNeedsRestart:(EDMessageQueryHelper *)arg1;
 - (void)queryHelperDidFinishRemoteSearch:(EDMessageQueryHelper *)arg1;
 - (void)queryHelper:(EDMessageQueryHelper *)arg1 didDeleteMessages:(NSArray *)arg2;
 - (void)queryHelper:(EDMessageQueryHelper *)arg1 didUpdateMessages:(NSArray *)arg2 forKeyPaths:(NSArray *)arg3;

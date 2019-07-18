@@ -9,6 +9,7 @@
 @class NSXPCConnection;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface Core_Audio_XPC_Connection_To_Server : NSObject
 {
     _Bool _first_contact;

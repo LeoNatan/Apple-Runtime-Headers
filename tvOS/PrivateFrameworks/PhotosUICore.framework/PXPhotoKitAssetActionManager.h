@@ -31,7 +31,7 @@
 - (void)_handlePreviewAction:(id)arg1 actionType:(id)arg2;
 - (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;
 - (id)alertActionForActionType:(id)arg1;
-- (id)previewActionGroupableForActionType:(id)arg1 image:(id)arg2;
+- (id)previewActionForActionType:(id)arg1 image:(id)arg2;
 - (id)barButtonItemForActionType:(id)arg1;
 - (id)actionPerformerForActionType:(id)arg1;
 - (_Bool)canPerformAssetVariationActions;

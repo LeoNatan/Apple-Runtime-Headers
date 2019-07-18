@@ -6,15 +6,16 @@
 
 #import <ManagedConfigurationUI/MCSectionBasedTableViewController.h>
 
+#import <ManagedConfigurationUI/DevicePINControllerDelegate-Protocol.h>
 #import <ManagedConfigurationUI/MCProfileQuestionsControllerDelegate-Protocol.h>
 #import <ManagedConfigurationUI/MCProfileTitlePageViewModelDelegate-Protocol.h>
 #import <ManagedConfigurationUI/MCUIDismissalAwareViewController-Protocol.h>
 #import <ManagedConfigurationUI/MCUISignInViewControllerDelegate-Protocol.h>
 #import <ManagedConfigurationUI/UIScrollViewDelegate-Protocol.h>
 
-@class MCInstallProfileQuestionViewController, MCProfileTitlePageMetaDataSectionAnimationController, MCProfileTitlePageMetaDataSectionController, MCProfileTitlePageView, MCProfileTitlePageViewModel, NSString;
+@class MCActivityViewController, MCInstallProfileQuestionViewController, MCProfileTitlePageMetaDataSectionAnimationController, MCProfileTitlePageMetaDataSectionController, MCProfileTitlePageView, MCProfileTitlePageViewModel, NSString;
 
-@interface MCProfileTitlePageViewController : MCSectionBasedTableViewController <UIScrollViewDelegate, MCProfileTitlePageViewModelDelegate, MCUISignInViewControllerDelegate, MCProfileQuestionsControllerDelegate, MCUIDismissalAwareViewController>
+@interface MCProfileTitlePageViewController : MCSectionBasedTableViewController <UIScrollViewDelegate, MCProfileTitlePageViewModelDelegate, MCUISignInViewControllerDelegate, MCProfileQuestionsControllerDelegate, DevicePINControllerDelegate, MCUIDismissalAwareViewController>
 {
     _Bool _hasUpdatedBottomInset;
     MCProfileTitlePageViewModel *_viewModel;
@@ -23,6 +24,7 @@
     MCProfileTitlePageMetaDataSectionController *_metaDataSectionController;
     MCProfileTitlePageMetaDataSectionAnimationController *_animationController;
     MCInstallProfileQuestionViewController *_questionsController;
+    MCActivityViewController *_activityViewController;
     CDUnknownBlockType _passcodeCompletionHandler;
     CDUnknownBlockType _authenticationCompletionHandler;
     CDUnknownBlockType _authenticationPreparationHandler;
@@ -33,6 +35,7 @@
 @property(copy, nonatomic) CDUnknownBlockType authenticationPreparationHandler; // @synthesize authenticationPreparationHandler=_authenticationPreparationHandler;
 @property(copy, nonatomic) CDUnknownBlockType authenticationCompletionHandler; // @synthesize authenticationCompletionHandler=_authenticationCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType passcodeCompletionHandler; // @synthesize passcodeCompletionHandler=_passcodeCompletionHandler;
+@property(retain, nonatomic) MCActivityViewController *activityViewController; // @synthesize activityViewController=_activityViewController;
 @property(retain, nonatomic) MCInstallProfileQuestionViewController *questionsController; // @synthesize questionsController=_questionsController;
 @property(retain, nonatomic) MCProfileTitlePageMetaDataSectionAnimationController *animationController; // @synthesize animationController=_animationController;
 @property(retain, nonatomic) MCProfileTitlePageMetaDataSectionController *metaDataSectionController; // @synthesize metaDataSectionController=_metaDataSectionController;
@@ -51,7 +54,7 @@
 - (void)didAcceptEnteredPIN:(id)arg1;
 - (void)_showAlertForInstallError:(id)arg1;
 - (void)setUserInteractionEnabled:(_Bool)arg1;
-- (void)installationFinishedShouldDismiss:(_Bool)arg1 shouldRedirect:(_Bool)arg2 errorToDisplay:(id)arg3;
+- (void)installationFinishedSuccessfully:(_Bool)arg1 shouldDismiss:(_Bool)arg2 shouldRedirect:(_Bool)arg3 errorToDisplay:(id)arg4;
 - (void)presentSpinnerViewController;
 - (void)presentAuthenticationViewControllerWithContext:(id)arg1 authenticationPreparationHandler:(CDUnknownBlockType)arg2 authenticationCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)informQuestionViewControllerOfPreflightResult:(id)arg1 profileConnection:(id)arg2;

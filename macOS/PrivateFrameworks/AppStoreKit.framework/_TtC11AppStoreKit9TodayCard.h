@@ -10,13 +10,14 @@
 {
     // Error parsing type: , name: heading
     // Error parsing type: , name: title
-    // Error parsing type: , name: titleCharacteristics
     // Error parsing type: , name: media
     // Error parsing type: , name: overlay
+    // Error parsing type: , name: titleCharacteristics
     // Error parsing type: , name: style
     // Error parsing type: , name: heroMedia
     // Error parsing type: , name: backgroundColor
     // Error parsing type: , name: inlineDescription
+    // Error parsing type: , name: collapsedHeading
     // Error parsing type: , name: impressionMetrics
     // Error parsing type: , name: clickAction
 }

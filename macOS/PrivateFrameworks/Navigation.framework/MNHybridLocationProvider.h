@@ -32,6 +32,7 @@
 - (void)locationProvider:(id)arg1 didUpdateHeading:(id)arg2;
 - (void)locationProvider:(id)arg1 didUpdateLocation:(id)arg2;
 @property(readonly, nonatomic) double timeScale;
+@property(readonly, nonatomic) unsigned long long traceVersion;
 @property(readonly, nonatomic) BOOL isTracePlayer;
 @property(readonly, nonatomic) BOOL isSimulation;
 @property(readonly, nonatomic) BOOL usesCLMapCorrection;

@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     BOOL _hasAlternateAppearance;
     BOOL _hasFullScreenAppearance;
     BOOL _removed;
+    BOOL _animatingVolumeChange;
     BOOL _hasChangedLocationAtLeastOnce;
     BOOL _scrubsWhenTappedAnywhere;
     float _effectiveVolumeLimit;
@@ -31,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL scrubsWhenTappedAnywhere; // @synthesize scrubsWhenTappedAnywhere=_scrubsWhenTappedAnywhere;
 @property(nonatomic) BOOL hasChangedLocationAtLeastOnce; // @synthesize hasChangedLocationAtLeastOnce=_hasChangedLocationAtLeastOnce;
 @property(nonatomic) __weak AVVolumeWarningView *volumeWarningView; // @synthesize volumeWarningView=_volumeWarningView;
+@property(nonatomic, getter=isAnimatingVolumeChange) BOOL animatingVolumeChange; // @synthesize animatingVolumeChange=_animatingVolumeChange;
 @property(nonatomic, getter=isRemoved) BOOL removed; // @synthesize removed=_removed;
 @property(retain, nonatomic) NSNumber *unclampedValue; // @synthesize unclampedValue=_unclampedValue;
 @property(nonatomic) float effectiveVolumeLimit; // @synthesize effectiveVolumeLimit=_effectiveVolumeLimit;
@@ -55,9 +57,11 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)hitRect;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)layoutSubviews;
+- (void)didMoveToWindow;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (struct CGSize)intrinsicContentSize;
 - (BOOL)avkit_shouldPreventExternalGestureRecognizerAtPoint:(struct CGPoint)arg1;
+- (void)setHidden:(BOOL)arg1;
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) BOOL collapsedOrExcluded;
 - (id)initWithFrame:(struct CGRect)arg1;
 

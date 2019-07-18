@@ -10,8 +10,5 @@
 
 @protocol MTVisualStylingProviding <NSObject>
 - (MTVisualStylingProvider *)visualStylingProviderForCategory:(long long)arg1;
-
-@optional
-@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 @end
 

@@ -103,6 +103,7 @@
 - (_Bool)isEditingAllowedForIconManager:(SBHIconManager *)arg1;
 - (_Bool)isIconContentPossiblyVisibleOverApplicationForIconManager:(SBHIconManager *)arg1;
 - (_Bool)isRootFolderContentVisibleForIconManager:(SBHIconManager *)arg1;
+- (unsigned long long)allowedInterfaceOrientationsForIconManager:(SBHIconManager *)arg1;
 - (long long)interfaceOrientationForIconManager:(SBHIconManager *)arg1;
 - (SBHIconModel *)additionalIconModelForIconManager:(SBHIconManager *)arg1;
 - (void)iconManager:(SBHIconManager *)arg1 didCreateRootViewController:(UIViewController<SBHIconRootViewProviding> *)arg2;

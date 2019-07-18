@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
 @property(readonly, nonatomic) __weak id <IKAppPlaylist> appPlaylist; // @synthesize appPlaylist=_appPlaylist;
 - (void).cxx_destruct;
+- (void)_evaluateDelegateBlockSync:(CDUnknownBlockType)arg1;
 @property(nonatomic) long long repeatMode;
 @property(nonatomic) long long endAction;
 @property(readonly) unsigned long long length;

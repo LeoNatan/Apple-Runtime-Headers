@@ -15,6 +15,7 @@
     REFeature *_identificationFeature;
     REFeatureSet *_featureSet;
     float _priorMean;
+    float _varianceEpsilon;
     NSMutableDictionary *_models;
 }
 
@@ -27,7 +28,7 @@
 - (id)_modelForKey:(id)arg1;
 - (id)_modelForFeatureMap:(id)arg1;
 - (void)enumerateModels:(CDUnknownBlockType)arg1;
-- (id)initWithFeature:(id)arg1 featureSet:(id)arg2 priorMean:(float)arg3 biasFeature:(id)arg4;
+- (id)initWithFeature:(id)arg1 featureSet:(id)arg2 priorMean:(float)arg3 biasFeature:(id)arg4 modelVarianceEpsilon:(float)arg5;
 
 @end
 

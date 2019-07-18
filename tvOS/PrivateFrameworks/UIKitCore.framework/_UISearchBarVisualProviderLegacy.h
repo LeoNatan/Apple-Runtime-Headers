@@ -146,6 +146,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double scopeBarHeight;
 @property(readonly, nonatomic) struct UIEdgeInsets scopeBarInsets;
 - (void)updateEffectiveContentInset;
+- (void)getOverrideContentInsets:(struct UIEdgeInsets *)arg1 overriddenEdges:(unsigned long long *)arg2;
+- (void)setOverrideContentInsets:(struct UIEdgeInsets)arg1 forRectEdges:(unsigned long long)arg2;
 @property(readonly, nonatomic) _Bool alwaysUsesLayoutMarginsForHorizontalContentInset;
 - (void)getTopInset:(double *)arg1 bottomInset:(double *)arg2 forBarMetrics:(long long)arg3 barPosition:(long long)arg4;
 - (_Bool)_getNavigationTitleLeadingInset:(double *)arg1 trailingInset:(double *)arg2 isRTL:(_Bool)arg3;

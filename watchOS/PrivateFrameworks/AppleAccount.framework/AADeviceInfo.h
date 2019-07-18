@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)hasiCloudSignOutRestriction;
 + (_Bool)isMultiUserMode;
 + (_Bool)isInternalBuild;
 + (_Bool)locationServicesRestricted;

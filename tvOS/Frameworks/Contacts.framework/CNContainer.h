@@ -9,7 +9,7 @@
 #import <Contacts/NSCopying-Protocol.h>
 #import <Contacts/NSSecureCoding-Protocol.h>
 
-@class CNContainerPermissions, NSData, NSString;
+@class CNContainerPermissions, NSData, NSDate, NSString;
 
 @interface CNContainer : NSObject <NSCopying, NSSecureCoding>
 {
@@ -30,6 +30,7 @@
     CNContainer *_snapshot;
     _Bool _guardianRestricted;
     _Bool _guardianStateDirty;
+    NSDate *_lastSyncDate;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -47,6 +48,7 @@
 + (id)predicateForContainersInAccountWithExternalIdentifier:(id)arg1;
 + (id)predicateForContainersInAccountWithIdentifier:(id)arg1;
 + (id)predicateForContainersInAccountWithIdentifier:(id)arg1 includingDisabledContainers:(_Bool)arg2;
+@property(readonly, nonatomic) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;
 @property(readonly, nonatomic, getter=isGuardianRestricted) _Bool guardianRestricted; // @synthesize guardianRestricted=_guardianRestricted;
 @property(readonly, copy, nonatomic) CNContainerPermissions *permissions; // @synthesize permissions=_permissions;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
@@ -75,7 +77,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContainer:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 name:(id)arg2 type:(long long)arg3 iOSLegacyIdentifier:(int)arg4 accountIdentifier:(id)arg5 enabled:(_Bool)arg6 permissions:(id)arg7 externalIdentifier:(id)arg8 externalModificationTag:(id)arg9 externalSyncTag:(id)arg10 externalSyncData:(id)arg11 constraintsPath:(id)arg12 meIdentifier:(id)arg13 restrictions:(unsigned long long)arg14 guardianRestricted:(_Bool)arg15;
+- (id)initWithIdentifier:(id)arg1 name:(id)arg2 type:(long long)arg3 iOSLegacyIdentifier:(int)arg4 accountIdentifier:(id)arg5 enabled:(_Bool)arg6 permissions:(id)arg7 externalIdentifier:(id)arg8 externalModificationTag:(id)arg9 externalSyncTag:(id)arg10 externalSyncData:(id)arg11 constraintsPath:(id)arg12 meIdentifier:(id)arg13 restrictions:(unsigned long long)arg14 guardianRestricted:(_Bool)arg15 lastSyncDate:(id)arg16;
 - (id)initWithIdentifier:(id)arg1 accountIdentifier:(id)arg2 name:(id)arg3 type:(long long)arg4 permissions:(id)arg5;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 type:(long long)arg3;
 - (id)initWithName:(id)arg1 type:(long long)arg2;

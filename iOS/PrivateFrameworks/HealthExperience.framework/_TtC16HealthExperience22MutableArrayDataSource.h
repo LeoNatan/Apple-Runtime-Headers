@@ -12,6 +12,7 @@
     // Error parsing type: , name: promise
     // Error parsing type: , name: changes
     // Error parsing type: , name: arrangedSections
+    // Error parsing type: , name: $__lazy_storage_$_identifier
     // Error parsing type: , name: lock
 }
 

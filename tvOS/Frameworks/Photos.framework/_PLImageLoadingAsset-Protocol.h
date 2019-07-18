@@ -5,17 +5,17 @@
 //
 
 #import <Photos/NSObject-Protocol.h>
+#import <Photos/_PLThumbnailLoadingAsset-Protocol.h>
 
-@class NSManagedObjectID, NSString, NSURL, PLManagedAsset, PLPhotoLibrary;
+@class NSString, NSURL, PLManagedAsset, PLPhotoLibrary;
 
-@protocol _PLImageLoadingAsset <NSObject>
+@protocol _PLImageLoadingAsset <_PLThumbnailLoadingAsset, NSObject>
 - (unsigned long long)localResourcesState;
 - (_Bool)isOriginalSRGB;
 - (void)generateLargeThumbnailFileIfNecessary;
 - (_Bool)isTimelapsePlaceholder;
 - (PLManagedAsset *)managedAssetForPhotoLibrary:(PLPhotoLibrary *)arg1;
 - (double)duration;
-- (long long)cloudPlaceholderKind;
 - (_Bool)isCloudPlaceholder;
 - (_Bool)isCloudPhotoLibraryAsset;
 - (long long)cloudSharedAssetPlaceholderKind;
@@ -34,22 +34,18 @@
 - (_Bool)isLoopingVideo;
 - (_Bool)isVideo;
 - (NSString *)uniformTypeIdentifier;
-- (NSManagedObjectID *)objectID;
 - (struct CGSize)originalImageSize;
 - (struct CGSize)imageSize;
 - (NSString *)thumbnailIdentifier;
-- (_Bool)complete;
 - (short)kindSubtype;
 - (short)kind;
 - (short)savedAssetType;
 - (NSString *)uuid;
-- (unsigned long long)effectiveThumbnailIndex;
 - (NSString *)debugFilename;
 - (_Bool)hasAdjustments;
 - (_Bool)hasLegacyAdjustments;
 - (long long)originalImageOrientation;
 - (NSURL *)assetsLibraryURL;
 - (double)aspectRatio;
-- (PLPhotoLibrary *)pl_photoLibrary;
 @end
 

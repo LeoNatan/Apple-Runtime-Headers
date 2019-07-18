@@ -6,12 +6,13 @@
 
 #import <HomeKitDaemon/NSObject-Protocol.h>
 
-@class HMDCameraBackingStore, HMDCameraClipSignificantEventNotification, HMDCameraSignificantEventNotification;
+@class HMDCameraBackingStore, HMDCameraClipSignificantEventNotification, HMDCameraSignificantEventNotification, _HMCameraClip;
 
 @protocol HMDCameraBackingStoreDelegate <NSObject>
 
 @optional
 - (void)cameraBackingStoreDidDisableCloudStorage:(HMDCameraBackingStore *)arg1;
+- (void)cameraBackingStore:(HMDCameraBackingStore *)arg1 didDeleteClip:(_HMCameraClip *)arg2;
 - (void)cameraBackingStore:(HMDCameraBackingStore *)arg1 didAddClipSignificantEventNotification:(HMDCameraClipSignificantEventNotification *)arg2;
 - (void)cameraBackingStore:(HMDCameraBackingStore *)arg1 didAddSignificantEventNotification:(HMDCameraSignificantEventNotification *)arg2;
 - (void)cameraBackingStoreDidStop:(HMDCameraBackingStore *)arg1;

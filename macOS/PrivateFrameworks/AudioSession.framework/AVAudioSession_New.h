@@ -13,7 +13,7 @@
 @interface AVAudioSession_New : NSObject <AVAudioHardwareControlling>
 {
     void *_impl;
-    struct synchronized<std::__1::shared_ptr<as::client::Session>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::Session>>> _guarded_impl;
+    struct synchronized<std::__1::shared_ptr<as::client::Session>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::Session>>> _guarded_impl;
 }
 
 + (id)auxiliarySessionWithName:(id)arg1;
@@ -54,6 +54,7 @@
 @property(readonly, nonatomic) unsigned int hardwareControlToken;
 - (void)_invalidate;
 - (id)initAuxiliarySessionWithName:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (id)initWithName:(id)arg1 manager:(id)arg2 proxying:(unsigned int)arg3;
 - (void)deactivateWithOptions:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)activateWithOptions:(unsigned long long)arg1 activationHandler:(CDUnknownBlockType)arg2;
@@ -118,7 +119,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

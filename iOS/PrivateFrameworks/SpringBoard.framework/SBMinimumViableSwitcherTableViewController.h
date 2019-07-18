@@ -17,10 +17,12 @@
     SBApplicationSceneView *_temporaryAppView;
     SBApplicationSceneView *_temporarySideAppView;
     SBBestAppSuggestion *_bestAppSuggestion;
+    _Bool _asynchronousRenderingDisabled;
     id <SBSwitcherContentViewControllerDataSource> _dataSource;
     long long _contentOrientation;
 }
 
+@property(nonatomic, getter=isAsynchronousRenderingDisabled) _Bool asynchronousRenderingDisabled; // @synthesize asynchronousRenderingDisabled=_asynchronousRenderingDisabled;
 @property(nonatomic) long long contentOrientation; // @synthesize contentOrientation=_contentOrientation;
 @property(retain, nonatomic) SBBestAppSuggestion *bestAppSuggestion; // @synthesize bestAppSuggestion=_bestAppSuggestion;
 @property(nonatomic) __weak id <SBSwitcherContentViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
@@ -37,7 +39,8 @@
 - (void)noteAppLayoutsDidChange;
 - (void)removeAppLayout:(id)arg1 forReason:(long long)arg2 modelMutationBlock:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)insertAppLayout:(id)arg1 atIndex:(unsigned long long)arg2 modelMutationBlock:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)enterAppExposeForBundleID:(id)arg1;
+- (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
+- (id)enterAppExposeForBundleID:(id)arg1;
 - (void)handleModifierAction:(id)arg1;
 @property(nonatomic, getter=isShowingModifierTimeline) _Bool showModifierTimeline;
 - (id)handleGestureDidEnd:(id)arg1;
@@ -46,10 +49,11 @@
 - (id)animationControllerForTransitionRequest:(id)arg1;
 @property(readonly, copy, nonatomic) BSAnimationSettings *defaultTransitionAnimationSettings;
 @property(readonly, nonatomic) _Bool canInterruptActiveTransition;
-- (void)performTransitionWithContext:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)performTransitionWithContext:(id)arg1 animated:(_Bool)arg2 alongsideAnimationController:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)_appLayouts;
 - (void)respondToInAppStatusBarRequestedHiddenUpdate;
 - (_Bool)isStatusBarHiddenForAppLayout:(id)arg1;
+- (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)shouldAcceleratedHomeButtonPressBegin;
 - (_Bool)isUserInteractionEnabled;
 - (_Bool)isWindowVisible;

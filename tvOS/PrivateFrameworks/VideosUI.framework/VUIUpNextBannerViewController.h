@@ -10,7 +10,7 @@
 #import <VideosUI/TVMediaProviding-Protocol.h>
 #import <VideosUI/__TVShelfViewControllerDelegate-Protocol.h>
 
-@class IKViewElement, NSString, TVMediaInfo, TVObservableEventController, _TVShelfViewController;
+@class IKViewElement, NSString, TVMediaInfo, TVObservableEventController, UIView, _TVShelfViewController;
 
 __attribute__((visibility("hidden")))
 @interface VUIUpNextBannerViewController : UIViewController <__TVShelfViewControllerDelegate, TVMediaProviding, TVAppTemplateImpressionable>
@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (id)_focusedMediaInfoForElementAtIndex:(long long)arg1;
 - (id)_selectedMediaInfoForEvent:(id)arg1 forElementAtIndex:(long long)arg2;
+@property(readonly, nonatomic) UIView *visualEffectView;
 - (void)dealloc;
 - (void)loadView;
 - (void)updateWithElement:(id)arg1;

@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
     NSView *_leadingAccessoryView;
 }
 
-+ (unsigned long long)dragOperationForProposedIndexPath:(id *)arg1 proposedDropOperation:(long long *)arg2 currentFolder:(id)arg3 sourceIndexPathAndFolderUUID:(id)arg4 isPerformingSameCollectionViewDrag:(BOOL)arg5;
++ (unsigned long long)dragOperationForProposedIndexPath:(id *)arg1 proposedDropOperation:(long long *)arg2 currentFolder:(id)arg3 sourceIndexPathAndFolderUUID:(id)arg4 isPerformingSameCollectionViewDrag:(BOOL)arg5 pasteboard:(id)arg6;
 @property(nonatomic) BOOL usesPrivateBrowsing; // @synthesize usesPrivateBrowsing=_usesPrivateBrowsing;
 @property(nonatomic) BOOL hasContentToDisplay; // @synthesize hasContentToDisplay=_hasContentToDisplay;
 @property(retain, nonatomic) NSView *leadingAccessoryView; // @synthesize leadingAccessoryView=_leadingAccessoryView;

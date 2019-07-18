@@ -4,15 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSDateInterval, NSDictionary, NSProgress, NSString, NSURL;
+#import <HealthPluginHost/HKHealthAppPluginHost-Protocol.h>
 
-@protocol HealthPluginHost
+@class NSArray, NSDateInterval, NSDictionary, NSProgress, NSString;
+
+@protocol HealthPluginHost <HKHealthAppPluginHost>
+- (void)submitFeedPersonalizationAnalyticsWithFeedsToPopulateWhenFinished:(NSArray *)arg1 completion:(void (^)(void))arg2;
+- (void)submitHighlightsAnalyticsWithCompletion:(void (^)(void))arg1;
 - (void)collectFeedPopulationDiagnosticLogsWithCompletion:(void (^)(NSArray *))arg1;
 - (void)postNotificationWith:(NSString *)arg1 userInfo:(NSDictionary *)arg2;
+- (void)indicateMajorUserInteractionWithCompletion:(void (^)(_Bool))arg1;
 - (void)submitTrainingFor:(NSArray *)arg1 completion:(void (^)(void))arg2;
-- (void)setFeedWithFeedURI:(NSURL *)arg1 isLockedForDisplay:(_Bool)arg2 completion:(void (^)(void))arg3;
 - (void)populateFeedWithFeedKinds:(NSArray *)arg1 for:(NSDateInterval *)arg2 completion:(void (^)(void))arg3;
-- (NSProgress *)startInteractiveFeedItemGenerationWithCompletion:(void (^)(void))arg1;
-- (NSProgress *)runBackgroundGenerationFor:(NSDateInterval *)arg1 pluginIdentifier:(NSString *)arg2 completion:(void (^)(_Bool))arg3;
+- (NSProgress *)startInteractiveFeedItemGenerationWithCompletion:(void (^)(_Bool))arg1;
 @end
 

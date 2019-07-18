@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     TSWPParagraphStyle *_paragraphStyle;
 }
 
++ (double)columnLayoutWidthForBodyWidth:(double)arg1 padding:(double)arg2 delta:(inout double *)arg3;
 @property(readonly, nonatomic) TSWPParagraphStyle *paragraphStyle; // @synthesize paragraphStyle=_paragraphStyle;
 @property(nonatomic) NSObject<TSWPTextDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) TSUColor *textColorOverride; // @synthesize textColorOverride=_textColorOverride;
@@ -53,8 +54,12 @@ __attribute__((visibility("hidden")))
 - (void)layoutManager:(id)arg1 didClearDirtyRangeWithDelta:(long long)arg2 afterCharIndex:(unsigned long long)arg3;
 - (void)layoutManagerNeedsLayout:(id)arg1;
 - (_Bool)caresAboutStorageChanges;
+- (id)interiorClippingPath;
 @property(readonly, nonatomic) _Bool shouldWrapAroundExternalDrawables;
+- (_Bool)containsStartOfRange:(struct _NSRange)arg1;
 @property(readonly, nonatomic) _Bool layoutIsValid;
+- (void)markHiddenInlineDrawableLayout:(id)arg1;
+- (void)clearHiddenInlineDrawableLayoutMarks;
 - (_Bool)isLayoutOffscreen;
 @property(readonly, nonatomic) _Bool textIsVertical;
 @property(readonly, nonatomic) unsigned long long pageCount;
@@ -65,6 +70,7 @@ __attribute__((visibility("hidden")))
 - (id)currentInlineDrawableLayouts;
 - (id)validatedLayoutForAnchoredDrawable:(id)arg1;
 - (id)validatedLayoutForInlineDrawable:(id)arg1;
+- (double)textScaleForChild:(id)arg1;
 - (struct CGRect)targetRectForCanvasRect:(struct CGRect)arg1;
 - (void)setNeedsDisplayInTargetRect:(struct CGRect)arg1;
 @property(readonly, nonatomic) _Bool wantsLineFragments;
@@ -107,6 +113,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *childLayouts;
 - (id)layoutTextStorage:(id)arg1 minSize:(struct CGSize)arg2 maxSize:(struct CGSize)arg3 anchor:(struct CGPoint)arg4 pageNumber:(unsigned long long)arg5 pageCount:(unsigned long long)arg6 flags:(int)arg7;
 - (id)layoutTextStorage:(id)arg1 minSize:(struct CGSize)arg2 maxSize:(struct CGSize)arg3 anchor:(struct CGPoint)arg4 flags:(int)arg5;
+- (_Bool)descendersCannotClip;
 - (id)init;
 - (id)initWithParagraphStyle:(id)arg1 columnStyle:(id)arg2;
 - (id)initWithParagraphStyle:(id)arg1 listStyle:(id)arg2 columnStyle:(id)arg3;

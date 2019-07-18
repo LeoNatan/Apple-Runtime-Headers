@@ -12,10 +12,8 @@
 @interface HUServiceGroupEditorGridViewController : HUSelectableServiceGridViewController
 {
     HFServiceGroupBuilder *_serviceGroupBuilder;
-    id <HUServiceGroupEditorGridViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <HUServiceGroupEditorGridViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HFServiceGroupBuilder *serviceGroupBuilder; // @synthesize serviceGroupBuilder=_serviceGroupBuilder;
 - (void).cxx_destruct;
 - (id)_serviceVendorItemForItem:(id)arg1;
@@ -28,6 +26,7 @@
 - (id)initWithServiceGridItemManager:(id)arg1;
 
 // Remaining properties
+@property(nonatomic) __weak id <HUServiceGroupEditorGridViewControllerDelegate> delegate;
 @property(retain, nonatomic) HUServiceGroupEditorGridItemManager *itemManager; // @dynamic itemManager;
 
 @end

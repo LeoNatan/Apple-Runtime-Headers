@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 + (long long)activityCategory;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)_systemImageNamed;
+- (id)_systemImageName;
 - (id)activityTitle;
 - (id)activityType;
 

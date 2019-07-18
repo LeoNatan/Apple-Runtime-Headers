@@ -9,6 +9,7 @@
 
 @protocol FCPurchaseManagerType
 @property(nonatomic) __weak id <FCPurchaseManagerDelegate> delegate;
+- (_Bool)anyOngoingPurchases;
 - (_Bool)isPurchaseOngoingForTagID:(NSString *)arg1;
 - (void)authenticateAppleIDWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)simulateFailurePurchaseWithProductID:(NSString *)arg1 transactionState:(long long)arg2 error:(NSError *)arg3;

@@ -21,7 +21,7 @@
 - (id)actions;
 - (id)actionsForCategory:(id)arg1;
 - (_Bool)filteringForResidentCompatibleActions;
-- (id)homeSections;
+- (id)homeSectionsIncludingRelatedActions:(_Bool)arg1;
 - (id)suggestedCategoriesForContentClasses:(id)arg1;
 - (void)getDeveloperSuggestedResultsForAppIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSiriSuggestedGroupedResultsWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -30,8 +30,8 @@
 - (id)resultsForSuggestionsWithWorkflow:(id)arg1;
 - (id)resultsForAppWithIdentifier:(id)arg1;
 - (id)resultsForCategory:(id)arg1;
+- (void)getResultsForAppIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resultsForSearchQuery:(id)arg1 includingSiriSuggestedResults:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)resultsForSearchQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithActionRegistry:(id)arg1;
 
 @end

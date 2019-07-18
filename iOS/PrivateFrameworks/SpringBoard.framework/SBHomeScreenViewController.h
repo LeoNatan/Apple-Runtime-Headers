@@ -13,7 +13,6 @@
 {
     NSMutableSet *_iconRotationPreventionReasons;
     _Bool _disableAnimationForNextIconRotation;
-    _Bool _useExtraLargeHammerForNextPossibleIconRotation;
     SBFloatingDockBehaviorAssertion *_homeScreenFloatingDockAssertion;
     SBAppStatusBarSettingsAssertion *_childOrPresentedStatusBarAssertion;
     UIView *_contentView;
@@ -23,8 +22,10 @@
     SBIconController *_iconController;
     SBUIController *_UIController;
     SBFloatingDockBehaviorAssertion *_widgetEditFloatingDockAssertion;
+    id <BSInvalidatable> _widgetEditViewControllerOrientationUpdateDeferralAssertion;
 }
 
+@property(retain, nonatomic) id <BSInvalidatable> widgetEditViewControllerOrientationUpdateDeferralAssertion; // @synthesize widgetEditViewControllerOrientationUpdateDeferralAssertion=_widgetEditViewControllerOrientationUpdateDeferralAssertion;
 @property(retain, nonatomic) SBFloatingDockBehaviorAssertion *widgetEditFloatingDockAssertion; // @synthesize widgetEditFloatingDockAssertion=_widgetEditFloatingDockAssertion;
 @property(nonatomic) _Bool homeScreenAutorotatesEvenWhenIconIsDragging; // @synthesize homeScreenAutorotatesEvenWhenIconIsDragging=_homeScreenAutorotatesEvenWhenIconIsDragging;
 @property(readonly, nonatomic) __weak SBUIController *UIController; // @synthesize UIController=_UIController;
@@ -36,7 +37,6 @@
 - (void)_widgetEditViewDidDisappearImplementation;
 - (void)_widgetEditViewDidDisappear:(id)arg1;
 - (void)_widgetEditViewWillAppear:(id)arg1;
-- (void)useExtraLargeHammerForNextPossibleIconRotation;
 - (void)disableAnimationForNextIconRotation;
 - (void)setAllowIconRotation:(_Bool)arg1 forReason:(id)arg2;
 - (void)nudgeIconInterfaceOrientation:(long long)arg1 duration:(double)arg2;

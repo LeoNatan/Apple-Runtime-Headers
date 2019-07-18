@@ -14,7 +14,6 @@
 
 @interface HKDataMetadataViewController : HKTableViewController <HKDataMetadataSubsampleDelegate, HKDataMetadataReportAccessDelegate>
 {
-    _Bool _useInsetStyling;
     HKSample *_sample;
     NSArray *_subSampleTypes;
     id <HKDataMetadataViewControllerDelegate> _delegate;

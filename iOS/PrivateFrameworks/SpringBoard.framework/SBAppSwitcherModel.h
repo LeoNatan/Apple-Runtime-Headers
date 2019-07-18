@@ -6,18 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class SBHIconImageCache, SBIconController, SBRecentAppLayouts;
+@class SBIconController, SBRecentAppLayouts;
 
 @interface SBAppSwitcherModel : NSObject
 {
     SBIconController *_iconController;
     SBRecentAppLayouts *_recents;
     id _recentsChangedNotificationObserver;
-    SBHIconImageCache *_iconImageCache;
 }
 
-+ (id)iconImageDescriptorName;
-@property(readonly, nonatomic) SBHIconImageCache *iconImageCache; // @synthesize iconImageCache=_iconImageCache;
++ (id)appSwitcherHeaderIconImageDescriptorName;
 - (void).cxx_destruct;
 - (id)_recentAppLayoutsController;
 - (id)recentDisplayItemsForBundleIdentifier:(id)arg1;

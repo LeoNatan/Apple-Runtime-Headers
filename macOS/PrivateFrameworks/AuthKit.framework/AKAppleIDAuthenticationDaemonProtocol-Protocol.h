@@ -29,9 +29,10 @@
 - (void)configurationInfoWithIdentifiers:(NSArray *)arg1 forAltDSID:(NSString *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)setConfigurationInfo:(id <NSSecureCoding>)arg1 forIdentifier:(NSString *)arg2 forAltDSID:(NSString *)arg3 completion:(void (^)(BOOL, NSError *))arg4;
 - (void)warmUpVerificationSessionWithCompletion:(void (^)(BOOL, NSError *))arg1;
-- (void)revokeAuthorizationForTeamWithTeamID:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
+- (void)revokeAuthorizationForApplicationWithClientID:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 - (void)deleteAuthorizationDatabaseWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)fetchAppListWithAltDSID:(NSString *)arg1 completion:(void (^)(AKApplicationMetadataInfo *, NSError *))arg2;
+- (void)fetchPrimaryBundleIDForServiceWithInfo:(NSDictionary *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (void)fetchDeviceMapWithContext:(AKDeviceListRequestContext *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)fetchAuthModeWithContext:(AKAppleIDAuthenticationContext *)arg1 completion:(void (^)(unsigned long long, NSError *))arg2;
 - (void)getUserInformationForAltDSID:(NSString *)arg1 completion:(void (^)(AKUserInformation *, NSError *))arg2;

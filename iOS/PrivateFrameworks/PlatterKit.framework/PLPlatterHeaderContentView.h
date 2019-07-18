@@ -7,14 +7,13 @@
 #import <UIKit/UIView.h>
 
 #import <PlatterKit/BSUIDateLabelDelegate-Protocol.h>
-#import <PlatterKit/MTVisualStylingProviderObserving-Protocol.h>
 #import <PlatterKit/MTVisualStylingRequiring-Protocol.h>
 #import <PlatterKit/PLContentSizeCategoryAdjusting-Protocol.h>
 
 @class BSUIFontProvider, MTVisualStylingProvider, NSArray, NSDate, NSString, NSTimeZone, PLPlatterHeaderContentViewLayoutManager, UIButton, UIFont, UIImageView, UILabel;
 @protocol BSUIDateLabel;
 
-@interface PLPlatterHeaderContentView : UIView <BSUIDateLabelDelegate, MTVisualStylingProviderObserving, MTVisualStylingRequiring, PLContentSizeCategoryAdjusting>
+@interface PLPlatterHeaderContentView : UIView <BSUIDateLabelDelegate, MTVisualStylingRequiring, PLContentSizeCategoryAdjusting>
 {
     UILabel<BSUIDateLabel> *_dateLabel;
     NSArray *_iconButtons;
@@ -53,11 +52,10 @@
 - (void).cxx_destruct;
 - (void)dateLabelDidChange:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
-- (CDUnknownBlockType)visualStylingProvider:(id)arg1 willReplaceStylingOfView:(id)arg2;
 - (void)setVisualStylingProvider:(id)arg1;
 - (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
 @property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
-@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
+- (id)visualStylingProvider;
 - (id)visualStylingProviderForCategory:(long long)arg1;
 - (void)layoutSubviews;
 - (void)layoutMarginsDidChange;

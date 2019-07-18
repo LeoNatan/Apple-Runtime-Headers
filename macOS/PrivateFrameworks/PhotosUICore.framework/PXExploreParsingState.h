@@ -9,6 +9,8 @@
 @interface PXExploreParsingState : NSObject
 {
     BOOL _canIgnoreNextHeroSide;
+    BOOL _didMoveBestItemOutOfNextShortRow;
+    BOOL _didMoveBestItemOutOfPreviousShortRowIntoHeroRow;
     long long _parseLocation;
     double _buildingBlockAspectRatio;
     long long _nextRowType;
@@ -19,6 +21,8 @@
     long long _lastHeroRowTag;
 }
 
+@property(nonatomic) BOOL didMoveBestItemOutOfPreviousShortRowIntoHeroRow; // @synthesize didMoveBestItemOutOfPreviousShortRowIntoHeroRow=_didMoveBestItemOutOfPreviousShortRowIntoHeroRow;
+@property(nonatomic) BOOL didMoveBestItemOutOfNextShortRow; // @synthesize didMoveBestItemOutOfNextShortRow=_didMoveBestItemOutOfNextShortRow;
 @property(nonatomic) long long lastHeroRowTag; // @synthesize lastHeroRowTag=_lastHeroRowTag;
 @property(nonatomic) long long numberOfColumnsOverride; // @synthesize numberOfColumnsOverride=_numberOfColumnsOverride;
 @property(nonatomic) long long effectiveLargeHeroDensity; // @synthesize effectiveLargeHeroDensity=_effectiveLargeHeroDensity;

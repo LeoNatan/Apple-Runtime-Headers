@@ -15,12 +15,14 @@
     double _pitchRadians;
     double _yawRadians;
     double _rollRadians;
+    double _fovRadians;
     BOOL _isAutoCrop;
     unsigned long long _hitVertexID;
     struct CGSize _masterImageSize;
     CDStruct_d58201db _aspectRatio;
 }
 
++ (double)defaultFocalLength;
 + (CDStruct_912cb5d2)freeFormAspectRatio;
 +     // Error parsing type: {?=[4]}72@0:8d16d24d32{CGRect={CGPoint=dd}{CGSize=dd}}40, name: _imageTransformFromPitch:yaw:roll:imageRect:
 @property(nonatomic) BOOL isAutoCrop; // @synthesize isAutoCrop=_isAutoCrop;

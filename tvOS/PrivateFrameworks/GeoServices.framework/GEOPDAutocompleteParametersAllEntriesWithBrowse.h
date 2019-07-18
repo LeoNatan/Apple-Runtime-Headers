@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     PBDataReader *_reader;
     CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
+    CDStruct_95bda58d _supportedAutocompleteResultCellTypes;
     CDStruct_95bda58d _supportedListTypes;
     NSData *_categorySuggestionEntryMetadata;
     GEOPDAutocompleteEntry *_categorySuggestionEntry;
@@ -30,6 +31,7 @@ __attribute__((visibility("hidden")))
     _Bool _interleaveCategorySuggestions;
     _Bool _supportClientRankingFeatureMetadata;
     _Bool _supportDirectionIntentSuggestions;
+    _Bool _supportSectionHeader;
     _Bool _supportUnresolvedDirectionIntent;
     struct {
         unsigned int has_maxQueryBuilderSuggestions:1;
@@ -38,8 +40,10 @@ __attribute__((visibility("hidden")))
         unsigned int has_interleaveCategorySuggestions:1;
         unsigned int has_supportClientRankingFeatureMetadata:1;
         unsigned int has_supportDirectionIntentSuggestions:1;
+        unsigned int has_supportSectionHeader:1;
         unsigned int has_supportUnresolvedDirectionIntent:1;
         unsigned int read_unknownFields:1;
+        unsigned int read_supportedAutocompleteResultCellTypes:1;
         unsigned int read_supportedListTypes:1;
         unsigned int read_categorySuggestionEntryMetadata:1;
         unsigned int read_categorySuggestionEntry:1;
@@ -49,6 +53,7 @@ __attribute__((visibility("hidden")))
         unsigned int read_venueIdentifier:1;
         unsigned int read_viewportInfo:1;
         unsigned int wrote_unknownFields:1;
+        unsigned int wrote_supportedAutocompleteResultCellTypes:1;
         unsigned int wrote_supportedListTypes:1;
         unsigned int wrote_categorySuggestionEntryMetadata:1;
         unsigned int wrote_categorySuggestionEntry:1;
@@ -63,6 +68,7 @@ __attribute__((visibility("hidden")))
         unsigned int wrote_interleaveCategorySuggestions:1;
         unsigned int wrote_supportClientRankingFeatureMetadata:1;
         unsigned int wrote_supportDirectionIntentSuggestions:1;
+        unsigned int wrote_supportSectionHeader:1;
         unsigned int wrote_supportUnresolvedDirectionIntent:1;
     } _flags;
 }
@@ -76,11 +82,24 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
+- (void)clearSensitiveFields;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsSupportedAutocompleteResultCellTypes:(id)arg1;
+- (id)supportedAutocompleteResultCellTypesAsString:(int)arg1;
+- (void)setSupportedAutocompleteResultCellTypes:(int *)arg1 count:(unsigned long long)arg2;
+- (int)supportedAutocompleteResultCellTypeAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsSupportedAutocompleteResultCellType:(int)arg1;
+- (void)addSupportedAutocompleteResultCellType:(int)arg1;
+- (void)clearSupportedAutocompleteResultCellTypes;
+@property(readonly, nonatomic) int *supportedAutocompleteResultCellTypes;
+@property(readonly, nonatomic) unsigned long long supportedAutocompleteResultCellTypesCount;
+- (void)_readSupportedAutocompleteResultCellTypes;
+@property(nonatomic) _Bool hasSupportSectionHeader;
+@property(nonatomic) _Bool supportSectionHeader;
 @property(nonatomic) _Bool hasMaxQueryBuilderSuggestions;
 @property(nonatomic) int maxQueryBuilderSuggestions;
 @property(nonatomic) _Bool hasSupportClientRankingFeatureMetadata;

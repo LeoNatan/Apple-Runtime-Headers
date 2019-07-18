@@ -12,7 +12,6 @@
 @interface UNSApplicationService : NSObject
 {
     NSMutableSet *_foregroundBundleIdentifiers;
-    NSMutableSet *_authorizedBundleIdentifiers;
     NSMutableDictionary *_processBundleIdentifiersToApplicationBundleIdentifiers;
     UNSApplicationLauncher *_applicationLauncher;
     UNSNotificationCategoryRepository *_categoryRepository;
@@ -25,15 +24,11 @@
 - (void)_queue_didChangeApplicationState:(unsigned int)arg1 forBundleIdentifier:(id)arg2;
 - (void)_queue_notificationSourcesDidUninstall:(id)arg1;
 - (void)_queue_notificationSourcesDidInstall:(id)arg1;
-- (void)_queue_applicationsDidDenyNotificationSettings:(id)arg1;
-- (void)_queue_applicationsDidAuthorizeNotificationSettings:(id)arg1;
 - (void)willPresentNotification:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)isApplicationForeground:(id)arg1;
 - (void)didChangeApplicationState:(unsigned int)arg1 forBundleIdentifier:(id)arg2;
 - (void)notificationSourcesDidUninstall:(id)arg1;
 - (void)notificationSourcesDidInstall:(id)arg1;
-- (void)applicationsDidDenyNotificationSettings:(id)arg1;
-- (void)applicationsDidAuthorizeNotificationSettings:(id)arg1;
 - (id)initWithApplicationLauncher:(id)arg1 categoryRepository:(id)arg2 localizationService:(id)arg3;
 
 @end

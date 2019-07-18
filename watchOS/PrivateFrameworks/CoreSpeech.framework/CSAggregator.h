@@ -37,6 +37,10 @@
 - (void)logTdPsrSATRetrainingTimedOut;
 - (void)logProfileUpdateScoreMSE:(double)arg1;
 - (void)logVoiceProfilePruningFailureWithReasonCode:(unsigned int)arg1;
+- (void)logTdPsrFailedDuringSATRetraining;
+- (void)logTdPsrFailedDuringSATDetection;
+- (void)logTdPsrSATDetectionWaitTimeMs:(double)arg1;
+- (void)logTdPsrSATDetectionTimedOut;
 - (void)_logUptime;
 - (void)setAssetString:(id)arg1;
 - (void)setLanguageCode:(id)arg1;

@@ -8,13 +8,12 @@
 
 #import <WeatherFoundation/NSCopying-Protocol.h>
 
-@class NSString, NSURL, NSURLSession, NWPathEvaluator, WFAggregateDictionary, WFSettingsManager;
+@class NSString, NSURL, NSURLSession, NWPathEvaluator, WFSettingsManager;
 
 @interface WFWeatherStoreServiceConfiguration : NSObject <NSCopying>
 {
     NWPathEvaluator *_serviceConnectivityEvaluator;
     NSURLSession *_session;
-    WFAggregateDictionary *_aggDictionary;
     NSURL *_cacheURL;
     Class _cacheClass;
     NSURL *_serviceConnectivityEvaluationURL;
@@ -28,12 +27,8 @@
 @property(retain, nonatomic) NSURL *serviceConnectivityEvaluationURL; // @synthesize serviceConnectivityEvaluationURL=_serviceConnectivityEvaluationURL;
 @property(retain, nonatomic) Class cacheClass; // @synthesize cacheClass=_cacheClass;
 @property(copy, nonatomic) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
-@property(retain, nonatomic) WFAggregateDictionary *aggDictionary; // @synthesize aggDictionary=_aggDictionary;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
-- (_Bool)usesRemoteAppSettings;
-- (void)reactToRequestFailure:(id)arg1;
-- (void)reactToRequestSuccess;
 - (id)parseForecast:(unsigned int)arg1 data:(id)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 apiVersion:(id)arg6 error:(id *)arg7;
 - (id)parseForecast:(unsigned int)arg1 data:(id)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6;
 - (id)forecastRequestForTypes:(unsigned int)arg1 location:(id)arg2 date:(id)arg3 apiVersion:(id)arg4 error:(id *)arg5;

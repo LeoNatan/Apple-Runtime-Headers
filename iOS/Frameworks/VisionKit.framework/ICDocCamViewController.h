@@ -464,8 +464,10 @@
 - (void)setupCaptureSession;
 - (void)setAutoMode:(_Bool)arg1;
 - (_Bool)autoMode;
+- (void)retakeButtonWasPressed;
 - (void)disableRetakeMode;
 @property(readonly, nonatomic) _Bool isInRetakeMode;
+- (void)updateLabelColors;
 - (void)killFeedbackDisplayInternalIncludingUserPrompts:(_Bool)arg1;
 - (void)killFeedbackDisplayIncludingUserPrompts:(_Bool)arg1;
 - (void)enableUIElements:(_Bool)arg1;
@@ -484,6 +486,7 @@
 - (void)preWarmFilters;
 - (void)setUpUserDefaults;
 - (void)initializeUserInterface;
+- (void)traitCollectionDidChange:(id)arg1;
 - (long long)preferredStatusBarStyle;
 - (_Bool)prefersStatusBarHidden;
 - (void)viewSafeAreaInsetsDidChange;

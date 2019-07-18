@@ -34,6 +34,7 @@
 - (void)categoriesTableViewCell:(id)arg1 didSelectCategoryForContentType:(id)arg2;
 - (void)categoriesTableViewCellDidSelectCategoryScripting:(id)arg1 title:(id)arg2;
 - (void)categoriesTableViewCellDidSelectCategoryFavorites:(id)arg1 title:(id)arg2;
+- (void)categoriesTableViewCellDidSelectCategoryApps:(id)arg1 title:(id)arg2;
 - (void)siriSuggestionsTableViewCell:(id)arg1 infoButtonTappedForSuggestion:(id)arg2;
 - (void)siriSuggestionsTableViewCell:(id)arg1 didSelectAction:(id)arg2;
 - (void)actionCell:(id)arg1 infoButtonTappedForAction:(id)arg2;

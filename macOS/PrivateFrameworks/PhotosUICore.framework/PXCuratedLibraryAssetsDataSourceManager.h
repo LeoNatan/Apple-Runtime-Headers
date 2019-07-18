@@ -17,6 +17,8 @@
     struct {
         char isSelectingAssets;
         char visibleAssetCollections;
+        char willTransitionFromZoomLevelToZoomLevel;
+        char didTransitionFromZoomLevelToZoomLevel;
         char dominantAssetCollectionReferenceForZoomLevel;
         char transitionTypeFromZoomLevelToZoomLevel;
     } _delegateRespondsTo;

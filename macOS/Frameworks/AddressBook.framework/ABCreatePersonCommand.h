@@ -28,7 +28,7 @@
 @property(retain) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 @property(retain) ABPersonListController *personListController; // @synthesize personListController=_personListController;
 - (void).cxx_destruct;
-- (void)moveEntryForPerson:(id)arg1 toIndex:(unsigned long long)arg2;
+- (id)findAndMoveEntryForPerson:(id)arg1 toIndex:(unsigned long long)arg2;
 - (unsigned long long)indexOfFirstNonMeEntry;
 - (unsigned long long)indexToMoveNewPersonEntryToGivenPreviousSelection:(unsigned long long)arg1;
 - (void)saveAddressBookAndUpdatePersonListControllerForNewPerson:(id)arg1;

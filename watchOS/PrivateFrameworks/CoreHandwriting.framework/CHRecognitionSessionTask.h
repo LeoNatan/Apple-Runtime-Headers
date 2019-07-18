@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (id)newStrokeClassifier;
 - (id)clutterFilter;
 - (id)_recognitionResultsForNonTextStrokeGroup:(id)arg1 groupingManager:(id)arg2;
+- (id)_tokenizedTextResultForDrawing:(id)arg1 usingRecognizer:(id)arg2 isRemoteRecognizer:(_Bool)arg3 locale:(id)arg4 strokeLimit:(int)arg5 recognitionError:(id *)arg6;
 - (id)_textRecognitionResultsForTextStrokeGroup:(id)arg1 groupingManager:(id)arg2;
 - (id)recognitionResultsForGroupingResult:(id)arg1 groupingManager:(id)arg2;
 - (void)_logResultsIfAppropriateWithStrokeProvider:(id)arg1;

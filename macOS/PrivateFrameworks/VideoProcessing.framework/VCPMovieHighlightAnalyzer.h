@@ -15,6 +15,7 @@
     NSArray *_faceResults;
     NSArray *_saliencyResults;
     NSArray *_actionResults;
+    NSArray *_subtleMotionResults;
     NSArray *_voiceResults;
     NSArray *_featureResults;
     NSArray *_humanActionResults;
@@ -32,6 +33,7 @@
 
 - (void).cxx_destruct;
 - (float)junkScoreForTimerange:(CDStruct_e83c9415)arg1;
+- (float)subtleMotionScoreForTimerange:(CDStruct_e83c9415)arg1;
 - (float)cameraMotionScoreForTimerange:(CDStruct_e83c9415)arg1;
 - (float)visualPleasingScoreForTimerange:(CDStruct_e83c9415)arg1;
 - (float)voiceScoreForTimerange:(CDStruct_e83c9415)arg1;
@@ -54,6 +56,7 @@
 - (id)pickKeyFramesInRange:(CDStruct_e83c9415)arg1;
 - (void)SetKeyFramesForSegments:(id)arg1;
 - (float)computeHighlightScoreOfRange:(CDStruct_e83c9415)arg1;
+- (CDStruct_e83c9415)computeSteadyTranslationTrimFor:(CDStruct_e83c9415)arg1;
 - (CDStruct_e83c9415)computeActionFaceTrimFor:(CDStruct_e83c9415)arg1;
 - (CDStruct_e83c9415)computeQualityTrimFor:(CDStruct_e83c9415)arg1;
 - (void)generateExpressionSegments:(CDStruct_e83c9415)arg1;
@@ -62,7 +65,7 @@
 - (struct CGRect)computeBestPlaybackCrop:(CDStruct_e83c9415)arg1;
 - (id)movieSummary;
 - (int)generateHighlights;
-- (int)prepareRequiredQualityResult:(id)arg1 junkDetectionResult:(id)arg2 descriptorResult:(id)arg3 faceResult:(id)arg4 saliencyResult:(id)arg5 actionResult:(id)arg6 voiceResult:(id)arg7 keyFrameResult:(id)arg8 humanActionResults:(id)arg9 humanPoseResults:(id)arg10 cameraMotionResults:(id)arg11 frameSize:(struct CGSize)arg12;
+- (int)prepareRequiredQualityResult:(id)arg1 junkDetectionResult:(id)arg2 descriptorResult:(id)arg3 faceResult:(id)arg4 saliencyResult:(id)arg5 actionResult:(id)arg6 subtleMotionResult:(id)arg7 voiceResult:(id)arg8 keyFrameResult:(id)arg9 humanActionResults:(id)arg10 humanPoseResults:(id)arg11 cameraMotionResults:(id)arg12 frameSize:(struct CGSize)arg13;
 - (id)initWithAnalysisType:(unsigned long long)arg1 isLivePhoto:(BOOL)arg2 hadFlash:(BOOL)arg3;
 
 @end

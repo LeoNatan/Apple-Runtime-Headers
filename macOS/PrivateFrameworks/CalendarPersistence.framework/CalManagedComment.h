@@ -12,6 +12,7 @@
 {
 }
 
++ (BOOL)userGeneratedCommentChangedWithPreviousComment:(id)arg1 newComment:(id)arg2;
 + (id)entityName;
 - (id)uniqueKeyForObject;
 @property(retain) NSURL *address;
@@ -24,6 +25,7 @@
 @property(retain) NSString *commentString; // @dynamic commentString;
 @property(retain) CalManagedCalendarItem *item; // @dynamic item;
 @property(retain) NSDate *timeStamp; // @dynamic timeStamp;
+@property BOOL userGeneratedCommentChanged; // @dynamic userGeneratedCommentChanged;
 
 @end
 

@@ -28,7 +28,6 @@
     long long _endTimeZoneOffset;
     double _promotionScore;
     unsigned long long _mood;
-    unsigned long long _overviewCount;
     NSDate *_localStartDate;
     NSDate *_localEndDate;
     unsigned long long _dayGroupAssetsCount;
@@ -47,6 +46,10 @@
 + (_Bool)updateHighlightTitles;
 + (_Bool)processUnprocessedMomentLocations;
 + (_Bool)processRecentHighlights;
++ (id)fetchPhotosHighlightUUIDByMomentUUIDForMomentUUIDs:(id)arg1 options:(id)arg2;
++ (id)_fetchPhotosHighlightUUIDByAssetUUIDForAssetUUIDs:(id)arg1 photoLibrary:(id)arg2;
++ (id)fetchPhotosHighlightUUIDByAssetUUIDForAssetUUIDs:(id)arg1 options:(id)arg2;
++ (id)fetchPhotosHighlightUUIDByAssetUUIDForAssets:(id)arg1 options:(id)arg2;
 + (id)fetchChildDayGroupHighlightsForHighlight:(id)arg1 options:(id)arg2;
 + (id)fetchParentDayGroupHighlightForHighlight:(id)arg1 options:(id)arg2;
 + (id)fetchChildHighlightsForHighlight:(id)arg1 options:(id)arg2;
@@ -76,7 +79,6 @@
 @property(readonly, nonatomic) unsigned long long dayGroupAssetsCount; // @synthesize dayGroupAssetsCount=_dayGroupAssetsCount;
 @property(retain, nonatomic) NSDate *localEndDate; // @synthesize localEndDate=_localEndDate;
 @property(retain, nonatomic) NSDate *localStartDate; // @synthesize localStartDate=_localStartDate;
-@property(readonly, nonatomic) unsigned long long overviewCount; // @synthesize overviewCount=_overviewCount;
 @property(readonly, nonatomic) unsigned long long mood; // @synthesize mood=_mood;
 @property(nonatomic, getter=isRecent) _Bool recent; // @synthesize recent=_recent;
 @property(nonatomic, getter=isEnriched) _Bool enriched; // @synthesize enriched=_enriched;
@@ -91,8 +93,10 @@
 @property(readonly, nonatomic) NSString *verboseSmartDescription; // @synthesize verboseSmartDescription=_verboseSmartDescription;
 - (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) unsigned short preferredCurationType;
 @property(readonly, nonatomic) NSManagedObjectID *keyAssetForKind;
 @property(readonly, nonatomic) NSString *smartDescription;
+- (id)dateDescriptionWithOptions:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSString *dateDescription;
 - (id)localizedSubtitle;
 - (id)title;

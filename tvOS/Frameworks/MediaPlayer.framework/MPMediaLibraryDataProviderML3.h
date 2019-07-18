@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <MediaPlayer/MPMediaLibraryDataProviderPrivate-Protocol.h>
+#import <MediaPlayer/MPUserIdentityConsuming-Protocol.h>
 
-@class ML3MusicLibrary, MPMediaEntityCache, NSArray, NSOperationQueue, NSSet, NSString;
+@class ICUserIdentity, ML3MusicLibrary, MPMediaEntityCache, MPMediaLibrary, NSArray, NSOperationQueue, NSSet, NSString;
 @protocol MPArtworkDataSource, OS_dispatch_queue, OS_dispatch_source;
 
-@interface MPMediaLibraryDataProviderML3 : NSObject <MPMediaLibraryDataProviderPrivate>
+@interface MPMediaLibraryDataProviderML3 : NSObject <MPMediaLibraryDataProviderPrivate, MPUserIdentityConsuming>
 {
     NSObject<OS_dispatch_queue> *_backgroundTaskQueue;
     unsigned long long _backgroundTask;
@@ -25,6 +26,8 @@
     ML3MusicLibrary *_library;
     MPMediaEntityCache *_entityCache;
     id <MPArtworkDataSource> _artworkDataSource;
+    ICUserIdentity *_userIdentity;
+    MPMediaLibrary *_mediaLibrary;
 }
 
 + (id)_unadjustedValueForMPProperty:(id)arg1 withDefaultValue:(id)arg2;
@@ -33,6 +36,8 @@
 + (id)_unadjustedValueForItemPropertyRatingWithDefaultValue:(id)arg1;
 + (id)_unadjustedValueForItemPropertyVolumeAdjustmentWithDefaultValue:(id)arg1;
 + (id)_unadjustedValueForItemPropertyVolumeNormalizationWithDefaultValue:(id)arg1;
+@property(nonatomic) __weak MPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
+@property(copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 @property(readonly, nonatomic) id <MPArtworkDataSource> artworkDataSource; // @synthesize artworkDataSource=_artworkDataSource;
 @property(readonly, nonatomic) MPMediaEntityCache *entityCache; // @synthesize entityCache=_entityCache;
 @property(retain, nonatomic) ML3MusicLibrary *library; // @synthesize library=_library;

@@ -4,18 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MapKit/MKPlaceInfoContactRowView.h>
+#import <MapKit/MKPlaceSectionRowView.h>
 
-@class MKVibrantLabel, NSLayoutConstraint, _MKRightImageButton;
+@class NSLayoutConstraint, _MKRightImageButton;
 
 __attribute__((visibility("hidden")))
-@interface MKPlaceInfoSuggestAnEditRowView : MKPlaceInfoContactRowView
+@interface MKPlaceInfoSuggestAnEditRowView : MKPlaceSectionRowView
 {
-    MKVibrantLabel *_titleLabel;
     _MKRightImageButton *_suggestAnEditButton;
     NSLayoutConstraint *_topToTitleVerticalConstraint;
-    NSLayoutConstraint *_titleToSubtitleVerticalConstraint;
-    NSLayoutConstraint *_subtitleToBottomVerticalConstraint;
+    NSLayoutConstraint *_titleToBottomVerticalConstraint;
     CDUnknownBlockType _selectionBlock;
 }
 

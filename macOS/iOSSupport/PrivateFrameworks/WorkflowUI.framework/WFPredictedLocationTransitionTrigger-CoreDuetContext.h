@@ -7,6 +7,6 @@
 #import <WorkflowKit/WFPredictedLocationTransitionTrigger.h>
 
 @interface WFPredictedLocationTransitionTrigger (CoreDuetContext)
-+ (id)triggerTypeIconName;
++ (id)triggerTypeIcon;
 @end
 

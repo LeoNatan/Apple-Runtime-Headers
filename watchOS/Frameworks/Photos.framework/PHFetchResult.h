@@ -15,6 +15,7 @@
 @interface PHFetchResult : NSObject <NSCopying, NSFastEnumeration>
 {
     PHBatchFetchingArray *_fetchedObjects;
+    PHBatchFetchingArray *_thumbnailAssets;
     NSArray *_seedOIDs;
     NSObject<OS_dispatch_queue> *_isolationQueue;
     _Bool _registeredForChangeNotificationDeltas;
@@ -80,6 +81,7 @@
 - (void)setRegisteredForChangeNotificationDeltas:(_Bool)arg1;
 - (_Bool)isRegisteredForChangeNotificationDeltas;
 - (void)updateRegistrationForChangeNotificationDeltas;
+@property(readonly) NSArray *thumbnailAssets;
 - (id)objectIDAtIndex:(unsigned int)arg1;
 @property(readonly) NSSet *fetchedObjectIDsSet;
 - (id)objectIDs;
@@ -92,6 +94,7 @@
 @property(readonly) NSFetchRequest *fetchRequest;
 - (id)changeHandlingValueUsingSeedOids:(id)arg1 withChange:(id)arg2 usingManagedObjectContext:(id)arg3;
 - (id)changeHandlingKey;
+- (void)prefetchThumbnailAssetsAtIndexes:(id)arg1;
 - (void)prefetchObjectsAtIndexes:(id)arg1;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary;
 - (id)copyWithOptions:(id)arg1;

@@ -7,6 +7,8 @@
 #import <HomeKit/HMSetupAccessoryDescription.h>
 
 @interface HMSetupAccessoryDescription (Internal)
+- (BOOL)matchesSetupID:(id)arg1 serverIdentifier:(id)arg2;
+- (BOOL)matchesAccessoryServer:(id)arg1;
 - (id)debugDescription;
 @end
 

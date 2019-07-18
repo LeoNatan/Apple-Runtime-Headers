@@ -12,6 +12,7 @@
 
 - (id)_feedTransformation;
 - (void)createSpotlightGroupWithResult:(id)arg1;
+- (void)_performOperation;
 - (void)performOperation;
 
 @end

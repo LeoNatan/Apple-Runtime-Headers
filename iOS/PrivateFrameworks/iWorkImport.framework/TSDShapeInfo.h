@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsTextInset;
 - (_Bool)shouldBeIgnoredWhenCopying;
 @property(readonly, nonatomic) _Bool isFreehandDrawingSpacerShape;
+- (_Bool)canCopyData;
 - (_Bool)needsDownload;
 @property(readonly, nonatomic) TSDShapeStyle *shapeStyle;
 - (Class)styleClass;

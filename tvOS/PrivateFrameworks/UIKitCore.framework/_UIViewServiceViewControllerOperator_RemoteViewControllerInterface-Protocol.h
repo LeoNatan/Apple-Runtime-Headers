@@ -50,7 +50,7 @@
 - (void)__hostViewDidDisappear:(_Bool)arg1;
 - (void)__hostViewWillDisappear:(_Bool)arg1;
 - (void)__hostViewDidAppear:(_Bool)arg1;
-- (void)__hostViewWillAppear:(_Bool)arg1 inInterfaceOrientation:(long long)arg2 traitCollection:(UITraitCollection *)arg3 statusBarHeight:(double)arg4 underlapsStatusBar:(_Bool)arg5 sheetConfiguration:(_UISheetPresentationControllerConfiguration *)arg6 completionHandler:(void (^)(struct CGSize))arg7;
+- (void)__hostViewWillAppear:(_Bool)arg1 inInterfaceOrientation:(long long)arg2 traitCollection:(UITraitCollection *)arg3 statusBarHeight:(double)arg4 underlapsStatusBar:(_Bool)arg5 completionHandler:(void (^)(struct CGSize))arg6;
 - (void)__hostReadyToReceiveMessagesFromServiceViewController;
 - (void)__createViewController:(NSString *)arg1 withContextToken:(NSUUID *)arg2 fbsDisplays:(NSArray *)arg3 appearanceSerializedRepresentations:(NSArray *)arg4 traitCollection:(UITraitCollection *)arg5 initialInterfaceOrientation:(long long)arg6 hostAccessibilityServerPort:(BSMachPortSendRight *)arg7 canShowTextServices:(_Bool)arg8 replyHandler:(void (^)(_UIHostedWindowHostingHandle *, NSArray *, long long, int, BSMachPortSendRight *, NSError *))arg9;
 - (void)__createViewController:(NSString *)arg1 withAppearanceSerializedRepresentations:(NSArray *)arg2 hostAccessibilityServerPort:(BSMachPortSendRight *)arg3 canShowTextServices:(_Bool)arg4 replyHandler:(void (^)(_UIHostedWindowHostingHandle *, NSArray *, long long, int, BSMachPortSendRight *, NSError *))arg5;

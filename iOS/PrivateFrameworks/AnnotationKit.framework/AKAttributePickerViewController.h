@@ -35,6 +35,7 @@
 - (void)_attributeStyleChanged:(id)arg1;
 - (void)_updatePreferredContentSize;
 - (void)updateLayoutForSelectedAnnotations;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (id)initWithController:(id)arg1 selectedAnnotations:(id)arg2;
 

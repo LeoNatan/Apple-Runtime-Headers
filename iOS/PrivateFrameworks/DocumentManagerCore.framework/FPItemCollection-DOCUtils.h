@@ -9,14 +9,9 @@
 @interface FPItemCollection (DOCUtils)
 - (void)doc_restartObservation;
 - (void)doc_startObservationIfNeeded;
-- (_Bool)_doc_isSearchCollection;
+@property(readonly) _Bool doc_displaysSearchResults;
 - (void)doc_stopObserving;
 - (void)doc_startObserving;
-- (void)doc_pauseObserving;
-- (id)doc_willBecomeForegroundObserver;
-- (void)doc_setWillBecomeForegroundObserver:(id)arg1;
-- (id)doc_didEnterBackgroundObserver;
-- (void)doc_setDidEnterBackgroundObserver:(id)arg1;
 @property(readonly, nonatomic) _Bool doc_isObserving;
 - (void)doc_setIsObserving:(_Bool)arg1;
 @end

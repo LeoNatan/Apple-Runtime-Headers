@@ -24,7 +24,7 @@
 - (oneway void)speechRecognitionDidFinishWithError:(id)arg1;
 - (oneway void)speechDidRecognizeTranscriptionObjects:(id)arg1 usingSpeechModel:(id)arg2;
 - (oneway void)speechDidProcessAudioDuration:(double)arg1;
-- (oneway void)speechDidRecognizePartialResult:(id)arg1 usingSpeechModel:(id)arg2;
+- (oneway void)speechDidRecognizePartialResult:(id)arg1;
 - (oneway void)speechDidRecognizeTokens:(id)arg1 usingSpeechModel:(id)arg2;
 - (oneway void)speechDidRecognizePhrases:(id)arg1 utterances:(id)arg2 usingSpeechModel:(id)arg3 correctionContext:(id)arg4 audioAnalytics:(id)arg5;
 - (oneway void)speechDidRecognizePackage:(id)arg1;

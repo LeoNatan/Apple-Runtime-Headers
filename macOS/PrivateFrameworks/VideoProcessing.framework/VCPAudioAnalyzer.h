@@ -28,7 +28,7 @@
 - (int)processSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (int)finalizeAnalysisAtTime:(const CDStruct_1b6d18a9 *)arg1;
 - (int)processAudioSamples:(struct AudioBufferList *)arg1 timestamp:(struct AudioTimeStamp)arg2;
-- (int)initialize:(struct opaqueCMSampleBuffer *)arg1;
+- (int)setupWithSample:(struct opaqueCMSampleBuffer *)arg1;
 - (id)audioFormatRequirements;
 - (void)dealloc;
 - (id)initWithAnalysisTypes:(unsigned long long)arg1 forStreaming:(BOOL)arg2;

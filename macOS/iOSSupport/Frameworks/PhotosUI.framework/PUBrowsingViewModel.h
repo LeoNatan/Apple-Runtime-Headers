@@ -10,7 +10,7 @@
 #import <PhotosUI/PUAssetViewModelChangeObserver-Protocol.h>
 #import <PhotosUI/PXAssetImportStatusObserver-Protocol.h>
 
-@class NSDate, NSMutableSet, NSString, PUAssetReference, PUAssetsDataSource, PUCachedMapTable, PUMediaProvider, PUReviewScreenBarsModel;
+@class NSDate, NSMutableSet, NSString, PUAssetReference, PUAssetViewModel, PUAssetsDataSource, PUCachedMapTable, PUMediaProvider, PUReviewScreenBarsModel;
 @protocol PXAssetImportStatusManager;
 
 @interface PUBrowsingViewModel : PUViewModel <PUAssetViewModelChangeObserver, PUAssetSharedViewModelChangeObserver, PXAssetImportStatusObserver>
@@ -33,7 +33,6 @@
     BOOL _accessoryViewsDefaultVisibility;
     BOOL _isChromeVisible;
     BOOL _presentingOverOneUp;
-    BOOL _videoMuted;
     PUAssetsDataSource *_assetsDataSource;
     double _currentAssetTransitionProgress;
     NSString *_transitionDriverIdentifier;
@@ -53,6 +52,9 @@
     struct CGSize _secondScreenSize;
 }
 
++ (BOOL)autoplayVideoMuted;
++ (void)setAutoplayVideoMuted:(BOOL)arg1;
++ (void)_handleWillResignActiveNotification:(id)arg1;
 + (void)initialize;
 @property(retain, nonatomic) id <PXAssetImportStatusManager> importStatusManager; // @synthesize importStatusManager=_importStatusManager;
 @property(retain, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
@@ -61,7 +63,6 @@
 @property(nonatomic, setter=_setScrubbingSessionDistance:) long long _scrubbingSessionDistance; // @synthesize _scrubbingSessionDistance=__scrubbingSessionDistance;
 @property(nonatomic, setter=_setUserNavigationDistance:) long long _userNavigationDistance; // @synthesize _userNavigationDistance=__userNavigationDistance;
 @property(retain, nonatomic) PUReviewScreenBarsModel *reviewScreenBarsModel; // @synthesize reviewScreenBarsModel=_reviewScreenBarsModel;
-@property(nonatomic, getter=isVideoMuted) BOOL videoMuted; // @synthesize videoMuted=_videoMuted;
 @property(retain, nonatomic, setter=_setLeadingAssetReference:) PUAssetReference *leadingAssetReference; // @synthesize leadingAssetReference=_leadingAssetReference;
 @property(retain, nonatomic, setter=_setTrailingAssetReference:) PUAssetReference *trailingAssetReference; // @synthesize trailingAssetReference=_trailingAssetReference;
 @property(nonatomic) struct CGSize secondScreenSize; // @synthesize secondScreenSize=_secondScreenSize;
@@ -85,7 +86,7 @@
 - (void)_handleAssetSharedViewModel:(id)arg1 didChange:(id)arg2;
 - (void)_handleAssetViewModel:(id)arg1 didChange:(id)arg2;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
-- (void)_handleWillResignActiveNotification:(id)arg1;
+- (void)_handleAutoplayMutedDidChangeNotification:(id)arg1;
 - (long long)_importStateForAssetReference:(id)arg1;
 - (id)_badgeInfoPromiseForAssetReference:(id)arg1;
 - (double)_focusValueForAsset:(id)arg1;
@@ -103,14 +104,17 @@
 - (BOOL)_needsUpdate;
 - (id)_assetSharedViewModelForAsset:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)assetSharedViewModelForAsset:(id)arg1;
+@property(readonly, nonatomic) PUAssetViewModel *assetViewModelForCurrentAssetReference;
 - (id)assetViewModelForAssetReference:(id)arg1;
 - (id)activeAssetReferences;
+@property(readonly, nonatomic) BOOL isVideoContentAllowed;
 - (void)_setVideoContentAllowed:(BOOL)arg1;
 - (void)setVideoContentAllowed:(BOOL)arg1 forReason:(id)arg2;
 - (void)setChromeVisible:(BOOL)arg1 changeReason:(long long)arg2 context:(id)arg3;
 - (void)setChromeVisible:(BOOL)arg1 changeReason:(long long)arg2;
 - (void)_resetAccessoryViewsVisibilityToDefaultWithChangeReason:(long long)arg1;
 - (void)setAccessoryViewsDefaultVisibility:(BOOL)arg1 changeReason:(long long)arg2;
+@property(nonatomic, getter=isAutoplayVideoMuted) BOOL autoplayVideoMuted;
 - (void)setAnimating:(BOOL)arg1 transitionWithIdentifier:(id)arg2;
 - (void)_setTransitionDriverIdentifier:(id)arg1;
 - (void)_setCurrentAssetTransitionProgress:(double)arg1;

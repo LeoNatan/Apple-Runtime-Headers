@@ -28,6 +28,7 @@
 @property(nonatomic) float fontSize; // @synthesize fontSize=_fontSize;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+- (struct CGRect)imageRect;
 - (id)emojiPlatterColor;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)layoutSubviews;

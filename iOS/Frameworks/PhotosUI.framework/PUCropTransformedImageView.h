@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isDecelerating) _Bool decelerating; // @synthesize decelerating=_decelerating;
 @property(readonly, nonatomic, getter=isTracking) _Bool tracking; // @synthesize tracking=_tracking;
 @property(nonatomic) struct CGRect canvasFrame; // @synthesize canvasFrame=_canvasFrame;
-@property(nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
+@property(readonly, nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) double yawAngle; // @synthesize yawAngle=_yawAngle;
 @property(nonatomic) double pitchAngle; // @synthesize pitchAngle=_pitchAngle;
@@ -45,9 +45,9 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)setVideoComposition:(id)arg1 withSeekTime:(CDStruct_1b6d18a9)arg2;
 - (void)setNeedsLayerTransformsUpdateAnimated:(_Bool)arg1;
-- (void)fitImageRegion:(struct CGRect)arg1 inCropRectAnimated:(_Bool)arg2;
 - (void)setImageCropRectFromViewCropRect:(struct CGRect)arg1 animated:(_Bool)arg2;
 - (struct CGRect)validateViewCropRectAgainstModelCropRect:(struct CGRect)arg1;
+- (struct CGRect)viewCropRectForImageRect:(struct CGRect)arg1;
 - (struct CGRect)imageCropRectForViewRect:(struct CGRect)arg1;
 - (void)_resetCropRect;
 - (struct CGRect)_imageBounds;

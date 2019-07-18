@@ -9,12 +9,12 @@
 #import <NanoTimeKitCompanion/CLKMonochromeFilterProvider-Protocol.h>
 #import <NanoTimeKitCompanion/NTKRichComplicationBezelViewDelegate-Protocol.h>
 
-@class NSString, NTKWhistlerAnalogColorPalette, NTKWhistlerAnalogDialView, NTKWhistlerAnalogFaceViewComplicationFactory;
+@class NSString, NTKCircularAnalogDialView, NTKWhistlerAnalogColorPalette, NTKWhistlerAnalogFaceViewComplicationFactory;
 
 @interface NTKWhistlerAnalogFaceView : NTKAnalogFaceView <NTKRichComplicationBezelViewDelegate, CLKMonochromeFilterProvider>
 {
     NTKWhistlerAnalogFaceViewComplicationFactory *_faceViewComplicationFactory;
-    NTKWhistlerAnalogDialView *_dialView;
+    NTKCircularAnalogDialView *_dialView;
     NTKWhistlerAnalogColorPalette *_colorPalette;
     double _bezelLabelCurvedRadius;
     unsigned long long _color;
@@ -32,7 +32,6 @@
 - (void)bezelViewDidBecomeInteractive:(id)arg1;
 - (void)didUpdateBezelTextForRichComplicationBezelView:(id)arg1;
 - (void)complicationDisplayWrapperView:(id)arg1 updateCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned long long)arg5 animationDuration:(double)arg6 animationFraction:(float)arg7;
-- (_Bool)complicationDisplayWrapperView:(id)arg1 shouldStartCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned long long)arg5;
 - (void)_updateDialTicksForBezelText;
 - (double)_bezelLabelCurvedRadiusForColor:(unsigned long long)arg1;
 - (double)_bezelCircularBackgroundFromComplication:(id)arg1;
@@ -57,7 +56,7 @@
 - (id)filterForView:(id)arg1 style:(long long)arg2 fraction:(double)arg3;
 - (id)filterForView:(id)arg1 style:(long long)arg2;
 - (id)_customEditOptionContainerViewForSlot:(id)arg1;
-- (id)_curvedPickerMaskForSlot:(id)arg1;
+- (id)_pickerMaskForSlot:(id)arg1;
 - (long long)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_applyExitingEditingWithTransitionFraction:(double)arg1;
 - (void)_applyEnteringEditingWithTransitionFraction:(double)arg1;

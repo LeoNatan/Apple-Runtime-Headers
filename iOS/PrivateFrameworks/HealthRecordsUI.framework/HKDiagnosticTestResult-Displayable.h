@@ -11,9 +11,9 @@
 - (void)_displayItemsForValuePreferedStyle:(long long)arg1 healthRecordsStore:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)titleDisplayStringForDetailViewController;
 - (long long)recordCategoryType;
-- (void)fetchConceptRoomItemsWithHealthRecordsStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchObservationDetailItemsWithHealthRecordsStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchDetailItemsWithHealthRecordsStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fetchObservationDetailItemsWithHealthRecordsStore:(id)arg1 style:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)fetchConceptRoomItemsWithHealthRecordsStore:(id)arg1 conceptStore:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)fetchDetailItemsWithHealthRecordsStore:(id)arg1 conceptStore:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)codings;
 - (id)chartValue;
 - (id)title;

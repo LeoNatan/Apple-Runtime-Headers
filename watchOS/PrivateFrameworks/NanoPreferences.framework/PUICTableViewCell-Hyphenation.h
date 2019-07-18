@@ -8,6 +8,7 @@
 
 @interface PUICTableViewCell (Hyphenation)
 - (void)setDetailLabelText:(id)arg1 isHyphenated:(_Bool)arg2;
+- (void)setTextLabelText:(id)arg1 isHyphenated:(_Bool)arg2 lineBreakMode:(int)arg3;
 - (void)setTextLabelText:(id)arg1 isHyphenated:(_Bool)arg2;
 - (id)hyphenationParagraphStyleAttributes;
 @end

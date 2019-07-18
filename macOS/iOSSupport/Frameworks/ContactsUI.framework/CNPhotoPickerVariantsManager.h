@@ -15,6 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)generateGradientColorsByColor;
++ (id)compositeColorForTopColor:(id)arg1 bottomColor:(id)arg2;
++ (id)nonAlphaColorForBackgroundColor:(id)arg1;
 + (id)gradientStartColor:(id)arg1;
 + (id)colorGradientBackground:(id)arg1;
 + (id)colorVariantWithColorNamed:(id)arg1;

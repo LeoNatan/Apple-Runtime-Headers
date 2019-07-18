@@ -8,7 +8,7 @@
 
 #import <ControlCenterUI/_UIClickPresentationTransition-Protocol.h>
 
-@class CCUIContentModuleContainerViewController, NSString, UIViewPropertyAnimator, _UITargetedPreview;
+@class CCUIContentModuleContainerViewController, NSString, UITargetedPreview, UIViewPropertyAnimator;
 
 @interface CCUIContentModuleContainerTransition : NSObject <_UIClickPresentationTransition>
 {
@@ -30,7 +30,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(copy, nonatomic) _UITargetedPreview *sourcePreview;
+@property(copy, nonatomic) UITargetedPreview *sourcePreview;
 @property(readonly) Class superclass;
 
 @end

@@ -14,14 +14,15 @@
 __attribute__((visibility("hidden")))
 @interface SFDownloadFile : NSObject <NSFilePresenter>
 {
-    NSData *_bookmarkData;
     _Bool _invalidated;
     _Bool _usingSecurityScopedURL;
     _Bool _suspended;
     id <SFDownloadFileDelegate> _delegate;
     NSURL *_URL;
+    NSData *_bookmarkData;
 }
 
+@property(readonly, nonatomic) NSData *bookmarkData; // @synthesize bookmarkData=_bookmarkData;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic) __weak id <SFDownloadFileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

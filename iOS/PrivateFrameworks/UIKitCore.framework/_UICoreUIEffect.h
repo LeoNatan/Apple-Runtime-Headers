@@ -6,31 +6,11 @@
 
 #import <UIKitCore/UIBlurEffect.h>
 
-@class CALayer, NSString;
-
 @interface _UICoreUIEffect : UIBlurEffect
 {
-    long long _blurStyle;
-    NSString *_materialName;
-    CALayer *_activeMaterialLayer;
-    CALayer *_inactiveMaterialLayer;
 }
 
 + (id)coreUIEffectForBlurStyle:(long long)arg1;
-@property(retain, nonatomic) CALayer *inactiveMaterialLayer; // @synthesize inactiveMaterialLayer=_inactiveMaterialLayer;
-@property(retain, nonatomic) CALayer *activeMaterialLayer; // @synthesize activeMaterialLayer=_activeMaterialLayer;
-@property(copy, nonatomic) NSString *materialName; // @synthesize materialName=_materialName;
-@property(nonatomic) long long blurStyle; // @synthesize blurStyle=_blurStyle;
-- (void).cxx_destruct;
-- (id)description;
-- (long long)_expectedUsage;
-- (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(long long)arg3;
-- (_Bool)_needsUpdateForTransitionFromEnvironment:(id)arg1 toEnvironment:(id)arg2 usage:(long long)arg3;
-- (long long)_style;
-- (_Bool)_canProvideCoreMaterialVibrancyEffect;
-- (_Bool)_canProvideVibrancyEffect;
-- (_Bool)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithMaterialName:(id)arg1 blurStyle:(long long)arg2;
 - (id)initWithMaterialName:(id)arg1;
 

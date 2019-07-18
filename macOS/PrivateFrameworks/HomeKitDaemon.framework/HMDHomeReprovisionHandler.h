@@ -44,7 +44,7 @@
 - (void)handleReprovionedAccessory:(id)arg1 identifier:(id)arg2 error:(id)arg3;
 - (void)_reportAccessoryNeedingReprovision:(id)arg1 error:(id)arg2;
 - (void)handleFoundAccessoryNeedingReprovisioning:(id)arg1 error:(id)arg2;
-- (void)_reprovisionAccessory:(id)arg1 wiFiUnqiuePSK:(id)arg2 clientIdentifier:(id)arg3 requestMessage:(id)arg4;
+- (void)_reprovisionAccessory:(id)arg1 networkCredential:(id)arg2 requestMessage:(id)arg3;
 - (void)_handleReprovisionAccessory:(id)arg1;
 - (void)_handleRequestSearchForAccessoriesNeedingReprovisioning:(id)arg1;
 - (id)logIdentifier;

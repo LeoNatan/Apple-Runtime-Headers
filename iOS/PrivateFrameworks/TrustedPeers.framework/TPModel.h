@@ -12,6 +12,7 @@
 @interface TPModel : NSObject
 {
     NSSet *_allowedMachineIDs;
+    NSSet *_disallowedMachineIDs;
     NSMutableDictionary *_peersByID;
     NSMutableDictionary *_policiesByVersion;
     NSMutableSet *_uncheckedVouchers;
@@ -29,13 +30,15 @@
 @property(retain, nonatomic) NSMutableSet *uncheckedVouchers; // @synthesize uncheckedVouchers=_uncheckedVouchers;
 @property(retain, nonatomic) NSMutableDictionary *policiesByVersion; // @synthesize policiesByVersion=_policiesByVersion;
 @property(retain, nonatomic) NSMutableDictionary *peersByID; // @synthesize peersByID=_peersByID;
+@property(retain, nonatomic) NSSet *disallowedMachineIDs; // @synthesize disallowedMachineIDs=_disallowedMachineIDs;
 @property(retain, nonatomic) NSSet *allowedMachineIDs; // @synthesize allowedMachineIDs=_allowedMachineIDs;
 - (void).cxx_destruct;
-- (void)setRecoveryKeys:(id)arg1 encryptionKey:(id)arg2;
+- (void)setRecoveryKeys:(id)arg1;
 - (_Bool)isRecoveryKeyEnrolled;
-- (id)peerIDThatTrustsRecoveryKeys:(id)arg1 encryptionKey:(id)arg2;
-- (void)updateEgoPeerRecoveryKeySet:(id)arg1 recoverySigningPubKey:(id *)arg2 recoveryEncryption:(id *)arg3;
-- (_Bool)doesEgoPeerRecoveryKeysMatchItsPeersSet:(id)arg1;
+- (id)peerIDThatTrustsRecoveryKeys:(id)arg1;
+- (id)untrustedPeerIDs;
+- (id)bestRecoveryKeyWithDynamicInfo:(id)arg1;
+- (_Bool)doesPeerRecoveryKeyMatchPeers:(id)arg1;
 - (id)vectorClock;
 - (id)getPeerIDsTrustedByPeerWithDynamicInfo:(id)arg1 toAccessView:(id)arg2 error:(id *)arg3;
 - (id)getPeerIDsTrustedByPeerWithID:(id)arg1 toAccessView:(id)arg2 error:(id *)arg3;
@@ -45,6 +48,7 @@
 - (id)policyForPeerIDs:(id)arg1 error:(id *)arg2;
 - (id)dynamicInfoForJoiningPeerID:(id)arg1 peerPermanentInfo:(id)arg2 sponsorID:(id)arg3 preapprovedKeys:(id)arg4 signingKeyPair:(id)arg5 error:(id *)arg6;
 - (void)filterPreapprovals:(id)arg1 forExistingPeers:(id)arg2;
+- (id)peersWithMachineID:(id)arg1;
 - (id)filterPeerListByMachineID:(id)arg1 dispositions:(id)arg2;
 - (id)calculateDynamicInfoFromModel:(id)arg1 peer:(id)arg2 peerPermanentInfo:(id)arg3 startingDynamicInfo:(id)arg4 addingPeerIDs:(id)arg5 removingPeerIDs:(id)arg6 preapprovedKeys:(id)arg7 signingKeyPair:(id)arg8 error:(id *)arg9;
 - (id)calculateDynamicInfoForPeerWithID:(id)arg1 addingPeerIDs:(id)arg2 removingPeerIDs:(id)arg3 preapprovedKeys:(id)arg4 signingKeyPair:(id)arg5 error:(id *)arg6;
@@ -69,7 +73,8 @@
 - (unsigned long long)statusOfPeerWithID:(id)arg1;
 - (_Bool)validatePeerWithPreApproval:(id)arg1 sponsor:(id)arg2;
 - (_Bool)hasPeerPreapprovingKey:(id)arg1;
-- (_Bool)isAllowedMachineID:(id)arg1;
+- (unsigned long long)statusOfMachineID:(id)arg1;
+- (_Bool)anyUnknownMachineIDs;
 - (id)actualPeerWithID:(id)arg1 error:(id *)arg2;
 - (id)peerWithID:(id)arg1;
 - (_Bool)hasPeerWithID:(id)arg1;

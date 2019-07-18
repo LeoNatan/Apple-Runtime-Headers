@@ -9,14 +9,14 @@
 #import <HealthDaemon/HDDecoding-Protocol.h>
 #import <HealthDaemon/NSCopying-Protocol.h>
 
-@class HDCodableObject, NSString;
+@class HDCodableHealthObject, NSString;
 
 @interface HDCodableSample : PBCodable <HDDecoding, NSCopying>
 {
     long long _dataType;
     double _endDate;
     double _startDate;
-    HDCodableObject *_object;
+    HDCodableHealthObject *_object;
     struct {
         unsigned int dataType:1;
         unsigned int endDate:1;
@@ -27,7 +27,7 @@
 @property(nonatomic) double endDate; // @synthesize endDate=_endDate;
 @property(nonatomic) double startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) long long dataType; // @synthesize dataType=_dataType;
-@property(retain, nonatomic) HDCodableObject *object; // @synthesize object=_object;
+@property(retain, nonatomic) HDCodableHealthObject *object; // @synthesize object=_object;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;

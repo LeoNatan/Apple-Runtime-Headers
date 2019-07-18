@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSDictionary *documentFrequencyMap;
 @property(readonly, copy) NSDictionary *vocabularyMap;
 @property(readonly, copy) NSDictionary *labelMap;
+@property(readonly) unsigned long long systemVersion;
 @property(readonly, copy) NLModelConfiguration *configuration;
 - (id)modelData;
 - (id)initWithModelTrainer:(id)arg1;

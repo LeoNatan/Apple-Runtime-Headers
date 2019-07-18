@@ -11,6 +11,7 @@
 @protocol SBApplicationSceneStatusBarDescribing <NSObject>
 @property(readonly, nonatomic) SBDeviceApplicationSceneHandle *statusBarControllingSceneHandle;
 @property(readonly, nonatomic) NSString *statusBarSceneIdentifier;
+@property(readonly, nonatomic) struct CGRect statusBarAvoidanceFrame;
 @property(readonly, nonatomic) int statusBarStyleOverridesToSuppress;
 @property(readonly, nonatomic) long long statusBarOrientation;
 @property(readonly, nonatomic) double statusBarAlpha;

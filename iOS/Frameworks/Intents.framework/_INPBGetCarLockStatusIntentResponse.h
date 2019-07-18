@@ -16,9 +16,11 @@
 {
     CDStruct_b1e20226 _has;
     _Bool _locked;
+    _Bool __encodeLegacyGloryData;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) _Bool locked; // @synthesize locked=_locked;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;

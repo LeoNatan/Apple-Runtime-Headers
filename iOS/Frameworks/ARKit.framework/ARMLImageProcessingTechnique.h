@@ -49,12 +49,12 @@
 - (void)_startLoadingMLModelSignpost;
 - (_Bool)isBusy;
 - (long long)_getDeviceOrientation;
-- (_Bool)preProcessNetworkInputImage:(struct vImage_Buffer)arg1;
+- (_Bool)preProcessNetworkInputImage:(struct __CVBuffer *)arg1;
 - (id)createResultDataFromTensors:(CDStruct_cf098810 *)arg1 numberOfOutputTensors:(unsigned long long)arg2 imageDataForNeuralNetwork:(id)arg3 inputImageData:(id)arg4 rotationNeeded:(long long)arg5 regionOfInterest:(struct CGSize)arg6;
 - (id)processEspressoTensor:(id)arg1;
 - (id)processImageDataThroughNeuralNetwork:(id)arg1 originalImageData:(id)arg2 regionOfInterest:(struct CGSize)arg3 rotationOfResultTensor:(long long)arg4;
 - (CDStruct_b527887c)networkInputParams;
-- (id)_resampleImage:(id)arg1 rotationOfResultTensor:(long long)arg2;
+- (id)_resampleImage:(id)arg1 rotationOfResultTensor:(long long)arg2 networkInputSize:(struct CGSize)arg3;
 - (void)_asynchronousProcessEspressoTensor:(id)arg1;
 - (id)runNeuralNetworkWithImageData:(id)arg1 originalImageData:(id)arg2 regionOfInterest:(struct CGSize)arg3 rotationOfResultTensor:(long long)arg4;
 - (void)_asynchronousProcessDownSampledImage:(id)arg1;

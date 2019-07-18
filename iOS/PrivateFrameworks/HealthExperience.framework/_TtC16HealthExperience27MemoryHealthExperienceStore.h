@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: $__lazy_storage_$_viewContext
     // Error parsing type: , name: $__lazy_storage_$_sharedBackgroundContext
+    // Error parsing type: , name: persistentStoreDescription
     // Error parsing type: , name: $__lazy_storage_$_persistentContainer
 }
 

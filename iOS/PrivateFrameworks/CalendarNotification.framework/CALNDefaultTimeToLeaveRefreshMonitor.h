@@ -15,11 +15,13 @@
 @interface CALNDefaultTimeToLeaveRefreshMonitor : NSObject <CALNTimeToLeaveRefreshMonitor, CADModule>
 {
     _Bool _active;
+    _Bool _registeredForBackgroundTaskAgentJobs;
     id <CALNTimeToLeaveRefreshMonitorDelegate> _delegate;
     id <CALNTimeToLeaveRefreshStorage> _storage;
 }
 
 + (id)_refreshTimerBTAJobNameForEventExternalURL:(id)arg1;
+@property(nonatomic, getter=isRegisteredForBackgroundTaskAgentJobs) _Bool registeredForBackgroundTaskAgentJobs; // @synthesize registeredForBackgroundTaskAgentJobs=_registeredForBackgroundTaskAgentJobs;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) id <CALNTimeToLeaveRefreshStorage> storage; // @synthesize storage=_storage;
 @property(nonatomic) __weak id <CALNTimeToLeaveRefreshMonitorDelegate> delegate; // @synthesize delegate=_delegate;
@@ -30,7 +32,9 @@
 - (void)protectedDataDidBecomeAvailable;
 - (void)receivedAlarmNamed:(id)arg1;
 - (void)receivedNotificationNamed:(id)arg1;
+- (void)didRegisterForAlarms;
 - (void)handleBTAJob:(id)arg1 named:(const char *)arg2;
+- (void)didRegisterForBackgroundTaskAgentJobs;
 - (void)deactivate;
 - (void)activate;
 - (id)initWithStorage:(id)arg1;

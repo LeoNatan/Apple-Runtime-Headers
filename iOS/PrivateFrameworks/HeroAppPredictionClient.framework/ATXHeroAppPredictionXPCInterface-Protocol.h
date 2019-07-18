@@ -8,6 +8,7 @@
 
 @protocol ATXHeroAppPredictionXPCInterface
 - (void)invalidatePredictionsWithCompletion:(void (^)(NSError *))arg1;
+- (void)donateHeroAppPredictionsWithBundleIds:(NSArray *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)donateHeroAppPredictions:(NSArray *)arg1 completion:(void (^)(NSError *))arg2;
 @end
 

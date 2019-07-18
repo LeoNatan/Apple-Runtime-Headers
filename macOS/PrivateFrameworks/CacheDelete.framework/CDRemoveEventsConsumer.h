@@ -37,7 +37,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)consumeStream:(struct __FSEventStream *)arg1 forVolume:(id)arg2;
 - (void)callback:(id)arg1;
-- (void)stopStream;
 - (void)dealloc;
 - (id)initWithConsumer:(CDUnknownBlockType)arg1 identifier:(id)arg2;
 

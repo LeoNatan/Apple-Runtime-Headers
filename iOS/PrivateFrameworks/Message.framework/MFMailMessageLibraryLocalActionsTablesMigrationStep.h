@@ -28,7 +28,6 @@
 - (id)_localMessageActionsTableDefinition;
 - (id)_serverLabelsTableDefinition;
 - (id)_serverMessagesMessageIndexDefinition;
-- (id)_serverMessagesMailboxRemoteIDIndexDefinition;
 - (id)_serverMessagesTableDefinition;
 - (id)_offlineCacheOperations;
 - (_Bool)_populateServerMessages;

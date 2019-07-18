@@ -9,7 +9,7 @@
 #import <CFNetwork/NSCopying-Protocol.h>
 #import <CFNetwork/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage;
+@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSNumber, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage;
 @protocol NSURLSessionAppleIDContext;
 
 @interface NSURLSessionConfiguration : NSObject <NSSecureCoding, NSCopying>
@@ -25,6 +25,7 @@
 + (id)sessionConfigurationForSharedSession;
 + (id)defaultSessionConfiguration;
 + (id)_defaultProtocolClasses;
++ (id)new;
 @property _Bool _collectsTimingData; // @synthesize _collectsTimingData=__collectsTimingData;
 @property int multipathServiceType; // @synthesize multipathServiceType=_multipathServiceType;
 - (struct _CFHSTSPolicy *)copyHSTSPolicy;
@@ -34,6 +35,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyImmutableVariant:(CDUnknownBlockType)arg1;
+- (id)init;
 - (id)initWithDisposition:(id)arg1;
 
 // Remaining properties
@@ -44,7 +46,9 @@
 @property _Bool HTTPShouldSetCookies; // @dynamic HTTPShouldSetCookies;
 @property _Bool HTTPShouldUsePipelining; // @dynamic HTTPShouldUsePipelining;
 @property int TLSMaximumSupportedProtocol; // @dynamic TLSMaximumSupportedProtocol;
+@property unsigned short TLSMaximumSupportedProtocolVersion; // @dynamic TLSMaximumSupportedProtocolVersion;
 @property int TLSMinimumSupportedProtocol; // @dynamic TLSMinimumSupportedProtocol;
+@property unsigned short TLSMinimumSupportedProtocolVersion; // @dynamic TLSMinimumSupportedProtocolVersion;
 @property(retain) NSURLCache *URLCache; // @dynamic URLCache;
 @property(retain) NSURLCredentialStorage *URLCredentialStorage; // @dynamic URLCredentialStorage;
 @property(copy) NSString *_CTDataConnectionServiceType; // @dynamic _CTDataConnectionServiceType;
@@ -62,6 +66,7 @@
 @property _Bool _allowsSensitiveLogging; // @dynamic _allowsSensitiveLogging;
 @property _Bool _allowsTCPFastOpen; // @dynamic _allowsTCPFastOpen;
 @property _Bool _allowsTLSFallback; // @dynamic _allowsTLSFallback;
+@property _Bool _allowsTLSFalseStart; // @dynamic _allowsTLSFalseStart;
 @property _Bool _allowsTLSSessionResumption; // @dynamic _allowsTLSSessionResumption;
 @property _Bool _allowsTLSSessionTickets; // @dynamic _allowsTLSSessionTickets;
 @property _Bool _allowsWCA; // @dynamic _allowsWCA;
@@ -90,6 +95,7 @@
 @property _Bool _infersDiscretionaryFromOriginatingClient; // @dynamic _infersDiscretionaryFromOriginatingClient;
 @property double _longLivedConnectionCacheCellPurgeTimeout; // @dynamic _longLivedConnectionCacheCellPurgeTimeout;
 @property double _longLivedConnectionCachePurgeTimeout; // @dynamic _longLivedConnectionCachePurgeTimeout;
+@property(copy) NSNumber *_maximumWatchCellularTransferSize; // @dynamic _maximumWatchCellularTransferSize;
 @property unsigned int _multipathAlternatePort; // @dynamic _multipathAlternatePort;
 @property _Bool _onBehalfOfPairedDevice; // @dynamic _onBehalfOfPairedDevice;
 @property(copy) NSDictionary *_overriddenDelegateOptions; // @dynamic _overriddenDelegateOptions;

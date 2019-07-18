@@ -6,12 +6,9 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@protocol PXDisplayAsset;
-
 @protocol PXGDisplayAssetPixelBufferSource <NSObject>
 @property(readonly, nonatomic) struct CGAffineTransform videoRotationTransform;
 @property(copy, nonatomic) CDUnknownBlockType pixelBufferDidChangeHandler;
 @property(readonly, nonatomic) struct __CVBuffer *currentPixelBuffer;
-@property(readonly, nonatomic) id <PXDisplayAsset> displayAsset;
 @end
 

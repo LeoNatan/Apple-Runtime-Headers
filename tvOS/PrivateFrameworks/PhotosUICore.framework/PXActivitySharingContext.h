@@ -6,28 +6,35 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString, PHFetchResult;
+@class NSArray, NSString, PHFetchResult, PXPhotosDataSource;
 @protocol PXDisplayAsset;
 
 @interface PXActivitySharingContext : NSObject
 {
     _Bool _wantsActionSheet;
     _Bool _excludeShareActivity;
-    PHFetchResult *_fetchResult;
+    PHFetchResult *_assetCollectionsFetchResult;
+    PXPhotosDataSource *_photosDataSource;
     NSArray *_activities;
     NSString *_title;
+    NSString *_subtitle;
     id <PXDisplayAsset> _keyAsset;
     unsigned long long _sourceOrigin;
 }
 
 @property(nonatomic) unsigned long long sourceOrigin; // @synthesize sourceOrigin=_sourceOrigin;
 @property(retain, nonatomic) id <PXDisplayAsset> keyAsset; // @synthesize keyAsset=_keyAsset;
+@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) _Bool excludeShareActivity; // @synthesize excludeShareActivity=_excludeShareActivity;
 @property(nonatomic) _Bool wantsActionSheet; // @synthesize wantsActionSheet=_wantsActionSheet;
 @property(copy, nonatomic) NSArray *activities; // @synthesize activities=_activities;
-@property(copy, nonatomic) PHFetchResult *fetchResult; // @synthesize fetchResult=_fetchResult;
+@property(readonly, nonatomic) PXPhotosDataSource *photosDataSource; // @synthesize photosDataSource=_photosDataSource;
+@property(readonly, copy, nonatomic) PHFetchResult *assetCollectionsFetchResult; // @synthesize assetCollectionsFetchResult=_assetCollectionsFetchResult;
 - (void).cxx_destruct;
+- (id)init;
+- (id)initWithAssetCollection:(id)arg1 assetsDataSource:(id)arg2;
+- (id)initWithAssetCollection:(id)arg1 photosDataSource:(id)arg2;
 
 @end
 

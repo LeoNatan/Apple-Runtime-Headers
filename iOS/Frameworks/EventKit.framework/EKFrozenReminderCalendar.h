@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (int)allowedEntities;
 - (int)flags;
 - (id)UUID;
+- (int)displayOrder;
 - (id)updateListWithSaveRequest:(id)arg1 error:(id *)arg2;
 - (id)frozenReminderSource;
 - (_Bool)_applyChangesToSaveRequest:(id)arg1 error:(id *)arg2;
@@ -32,6 +33,9 @@ __attribute__((visibility("hidden")))
 - (id)calendarIdentifier;
 - (id)hexColorStringFromREMColor:(id)arg1;
 - (id)REMColorFromEKHexColorString:(id)arg1;
+- (id)publishedURL;
+- (unsigned long long)ekSharingStatusFromREMSharingStatus:(long long)arg1;
+- (unsigned long long)sharingStatus;
 - (id)colorString;
 - (id)title;
 - (id)remObjectID;

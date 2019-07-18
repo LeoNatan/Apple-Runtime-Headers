@@ -14,11 +14,15 @@ __attribute__((visibility("hidden")))
     TSSStyle *_style;
 }
 
-@property(readonly, nonatomic) TSSStyle *style; // @synthesize style=_style;
++ (id)objectWithStyle:(id)arg1 refCount:(unsigned int)arg2;
+- (id)style;
 - (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
+- (unsigned long long)estimateByteSize;
 - (unsigned long long)hash;
+-     // Error parsing type: v36@0:8^{TableDataList_ListEntry=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{FormulaArchive}^{FormatStructArchive}^{CustomFormatArchive}^{Reference}^{Reference}^{ImportWarningSetArchive}^{CellSpecArchive}II}16I24@28, name: encodeToArchive:key:archiver:
+-     // Error parsing type: v40@0:8r^{TableDataList_ListEntry=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{FormulaArchive}^{FormatStructArchive}^{CustomFormatArchive}^{Reference}^{Reference}^{ImportWarningSetArchive}^{CellSpecArchive}II}16@24@?32, name: loadFromArchive:unarchiver:completion:
 - (id)initObjectWithStyle:(id)arg1 refCount:(unsigned int)arg2;
 
 @end

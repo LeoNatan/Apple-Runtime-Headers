@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)userInterfaceName;
 - (_Bool)supportsBarGap;
 - (id)elementBuilder;
 - (unsigned long long)numberOfSeriesForCalculatingBarWidth:(id)arg1;

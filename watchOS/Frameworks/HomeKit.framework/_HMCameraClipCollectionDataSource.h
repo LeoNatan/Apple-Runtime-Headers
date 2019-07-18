@@ -15,18 +15,17 @@
 @interface _HMCameraClipCollectionDataSource : NSObject <HMFLogging, HMFMessageReceiver>
 {
     NSMutableSet *_clips;
+    unsigned int _state;
     HMCameraProfile *_cameraProfile;
     NSHashTable *_observers;
     HMFUnfairLock *_lock;
     _HMContext *_context;
     NSUUID *_uuid;
-    unsigned int _state;
     NSMutableArray *_pendingCompletions;
 }
 
 + (id)logCategory;
 @property(readonly) NSMutableArray *pendingCompletions; // @synthesize pendingCompletions=_pendingCompletions;
-@property unsigned int state; // @synthesize state=_state;
 @property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly) _HMContext *context; // @synthesize context=_context;
 @property(readonly) HMFUnfairLock *lock; // @synthesize lock=_lock;
@@ -36,6 +35,7 @@
 - (id)logIdentifier;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+- (void)handleDaemonReconnectedNotification:(id)arg1;
 - (void)_handleAddedClips:(id)arg1 removedClips:(id)arg2 updatedClips:(id)arg3;
 - (id)_parseSubscribeResponse:(id)arg1;
 @property(readonly) NSString *subscribeMessageName;
@@ -49,6 +49,7 @@
 - (void)close;
 - (void)connect:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSSet *clips;
+@property unsigned int state; // @synthesize state=_state;
 - (void)dealloc;
 - (id)initWithCameraProfile:(id)arg1 context:(id)arg2;
 

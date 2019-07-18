@@ -27,6 +27,7 @@
     BCSOpenHours *_callingOpenHours;
     _Bool _isVerified;
     NSString *_intentID;
+    NSString *_groupID;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -35,6 +36,7 @@
 @property(readonly, nonatomic) NSArray *visibilityItems; // @synthesize visibilityItems=_visibilityItems;
 @property(readonly, nonatomic) BCSOpenHours *callingOpenHours; // @synthesize callingOpenHours=_callingOpenHours;
 @property(readonly, nonatomic) BCSOpenHours *messagingOpenHours; // @synthesize messagingOpenHours=_messagingOpenHours;
+@property(readonly, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
 @property(readonly, nonatomic) NSString *intentID; // @synthesize intentID=_intentID;
 @property(readonly, nonatomic) _Bool isVerified; // @synthesize isVerified=_isVerified;
 @property(readonly, nonatomic) NSArray *callToActions; // @synthesize callToActions=_callToActions;
@@ -63,7 +65,7 @@
 @property(readonly, nonatomic) _Bool isAvailableForMessaging;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
-- (id)initWithBizID:(id)arg1 phoneNumber:(id)arg2 name:(id)arg3 phoneHash:(long long)arg4 squareLogoURL:(id)arg5 wideLogoURL:(id)arg6 tintColor:(unsigned long long)arg7 backgroundColor:(unsigned long long)arg8 callToActions:(id)arg9 messagingOpenHours:(id)arg10 callingOpenHours:(id)arg11 isVerified:(_Bool)arg12 intentID:(id)arg13 visibilityItems:(id)arg14;
+- (id)initWithBizID:(id)arg1 phoneNumber:(id)arg2 name:(id)arg3 phoneHash:(long long)arg4 squareLogoURL:(id)arg5 wideLogoURL:(id)arg6 tintColor:(unsigned long long)arg7 backgroundColor:(unsigned long long)arg8 callToActions:(id)arg9 messagingOpenHours:(id)arg10 callingOpenHours:(id)arg11 isVerified:(_Bool)arg12 intentID:(id)arg13 groupID:(id)arg14 visibilityItems:(id)arg15;
 - (id)initWithChatSuggestMessage:(id)arg1 bucketID:(id)arg2;
 - (unsigned long long)_integerForHexString:(id)arg1;
 - (id)initWithJSONObj:(id)arg1;

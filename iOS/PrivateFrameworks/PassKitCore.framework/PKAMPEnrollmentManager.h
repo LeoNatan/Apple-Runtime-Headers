@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, PKInAppPaymentService;
+@class NSHashTable, NSMutableDictionary, PKInAppPaymentService;
 @protocol OS_dispatch_queue;
 
 @interface PKAMPEnrollmentManager : NSObject
@@ -15,10 +15,15 @@
     NSMutableDictionary *_promiseMap;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_queue> *_callbackQueue;
+    struct os_unfair_lock_s _lockObservers;
+    NSHashTable *_observers;
 }
 
 + (id)sharedManager;
 - (void).cxx_destruct;
+- (void)_accessObserversWithHandler:(CDUnknownBlockType)arg1;
+- (void)unregisterObserver:(id)arg1;
+- (void)registerObserver:(id)arg1;
 - (id)performEnrollPaymentPass:(id)arg1 isDefault:(_Bool)arg2;
 - (void)enrollPaymentPass:(id)arg1 isDefault:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)performCanEnrollPaymentPass:(id)arg1;

@@ -148,7 +148,8 @@ struct statfs {
     char f_fstypename[16];
     char f_mntonname[1024];
     char f_mntfromname[1024];
-    unsigned int f_reserved[8];
+    unsigned int f_flags_ext;
+    unsigned int f_reserved[7];
 };
 
 struct throttle_stamps {

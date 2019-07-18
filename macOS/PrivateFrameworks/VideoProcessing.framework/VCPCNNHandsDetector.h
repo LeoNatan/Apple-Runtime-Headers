@@ -18,7 +18,7 @@
 - (int)generateHandsBoxes:(id)arg1;
 - (float *)getInputBuffer:(int)arg1 srcWidth:(int)arg2 cnnInputHeight:(int *)arg3 cnnInputWidth:(int *)arg4;
 - (int)createInput:(float *)arg1 withBuffer:(struct __CVBuffer *)arg2 cnnInputHeight:(int)arg3 cnnInputWidth:(int)arg4;
-- (int)initWithImage:(float *)arg1 image:(struct __CVBuffer *)arg2;
+- (int)copyImage:(struct __CVBuffer *)arg1 toData:(float *)arg2;
 
 @end
 

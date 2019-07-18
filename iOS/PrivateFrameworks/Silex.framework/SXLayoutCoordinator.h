@@ -11,7 +11,7 @@
 #import <Silex/SXLayoutPipelineDelegate-Protocol.h>
 
 @class NSString, SXDOMObjectProvider, SXLayoutBlueprintProvider, SXLayoutOptions, SXLayoutParametersManager;
-@protocol SXDocumentControllerProvider, SXLayoutCoordinatorDelegate, SXLayoutInstructionFactory, SXLayoutIntegrator, SXLayoutInvalidationManager, SXLayoutPipeline;
+@protocol SXDocumentProviding, SXLayoutCoordinatorDelegate, SXLayoutInstructionFactory, SXLayoutIntegrator, SXLayoutInvalidationManager, SXLayoutPipeline;
 
 @interface SXLayoutCoordinator : NSObject <SXLayoutPipelineDelegate, SXLayoutInvalidationManagerDelegate, SXLayoutCoordinator>
 {
@@ -23,12 +23,12 @@
     SXLayoutBlueprintProvider *_blueprintProvider;
     SXDOMObjectProvider *_DOMObjectProvider;
     SXLayoutParametersManager *_layoutParametersManager;
-    id <SXDocumentControllerProvider> _documentControllerProvider;
+    id <SXDocumentProviding> _documentProvider;
     SXLayoutOptions *_layoutOptions;
 }
 
 @property(retain, nonatomic) SXLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
-@property(readonly, nonatomic) id <SXDocumentControllerProvider> documentControllerProvider; // @synthesize documentControllerProvider=_documentControllerProvider;
+@property(readonly, nonatomic) id <SXDocumentProviding> documentProvider; // @synthesize documentProvider=_documentProvider;
 @property(readonly, nonatomic) SXLayoutParametersManager *layoutParametersManager; // @synthesize layoutParametersManager=_layoutParametersManager;
 @property(readonly, nonatomic) SXDOMObjectProvider *DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 @property(readonly, nonatomic) SXLayoutBlueprintProvider *blueprintProvider; // @synthesize blueprintProvider=_blueprintProvider;
@@ -43,7 +43,7 @@
 - (void)layoutInvalidationManager:(id)arg1 didInvalidateBlueprint:(id)arg2;
 - (void)layoutPipeline:(id)arg1 finishedTask:(id)arg2 withResult:(id)arg3;
 - (void)layoutWithOptions:(id)arg1;
-- (id)initWithPipeline:(id)arg1 integrator:(id)arg2 instructionFactory:(id)arg3 invalidationManager:(id)arg4 blueprintProvider:(id)arg5 DOMObjectProvider:(id)arg6 layoutParametersManager:(id)arg7 documentControllerProvider:(id)arg8;
+- (id)initWithPipeline:(id)arg1 integrator:(id)arg2 instructionFactory:(id)arg3 invalidationManager:(id)arg4 blueprintProvider:(id)arg5 DOMObjectProvider:(id)arg6 layoutParametersManager:(id)arg7 documentProvider:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

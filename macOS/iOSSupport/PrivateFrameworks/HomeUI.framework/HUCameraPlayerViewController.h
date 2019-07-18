@@ -25,6 +25,8 @@
     BOOL _enteringFullScreen;
     BOOL _viewVisible;
     BOOL _observingReadyForDisplay;
+    BOOL _currentlyDisplayingInPictureInPictureMode;
+    BOOL _shouldResumePlaying;
     id <HUPresentationDelegate> presentationDelegate;
     id <HUCameraPlayerViewControllerDelegate> _cameraDelegate;
     HFCameraItem *_cameraItem;
@@ -55,6 +57,8 @@
     UIAlertController *_airplaneAlertController;
 }
 
+@property(nonatomic) BOOL shouldResumePlaying; // @synthesize shouldResumePlaying=_shouldResumePlaying;
+@property(nonatomic, getter=isCurrentlyDisplayingInPictureInPictureMode) BOOL currentlyDisplayingInPictureInPictureMode; // @synthesize currentlyDisplayingInPictureInPictureMode=_currentlyDisplayingInPictureInPictureMode;
 @property(nonatomic) __weak UIAlertController *airplaneAlertController; // @synthesize airplaneAlertController=_airplaneAlertController;
 @property(nonatomic) __weak AVQueuePlayer *demoModeQueuePlayer; // @synthesize demoModeQueuePlayer=_demoModeQueuePlayer;
 @property(retain, nonatomic) AVPlayerLooper *looper; // @synthesize looper=_looper;
@@ -101,9 +105,18 @@
 - (void)playbackEngine:(id)arg1 didUpdateScrubbingStatus:(BOOL)arg2;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackPosition:(id)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateClipPlayer:(id)arg2;
+- (void)playerViewController:(id)arg1 restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart:(id)arg1;
+- (void)playerViewControllerDidStopPictureInPicture:(id)arg1;
+- (void)playerViewControllerWillStopPictureInPicture:(id)arg1;
+- (void)playerViewController:(id)arg1 failedToStartPictureInPictureWithError:(id)arg2;
+- (void)playerViewControllerDidStartPictureInPicture:(id)arg1;
+- (void)playerViewControllerWillStartPictureInPicture:(id)arg1;
 - (void)playerViewController:(id)arg1 willEndFullScreenPresentationWithAnimationCoordinator:(id)arg2;
 - (void)playerViewController:(id)arg1 willBeginFullScreenPresentationWithAnimationCoordinator:(id)arg2;
 - (void)playerViewController:(id)arg1 willTransitionToVisibilityOfPlaybackControls:(BOOL)arg2 withAnimationCoordinator:(id)arg3;
+- (void)_handleApplicationWillResignActive;
+- (void)_handleApplicationDidBecomeActive;
 - (void)_updateIdleTimer;
 - (BOOL)_homeHasSingleCameraProfile;
 - (id)_microphoneGlyphForState:(BOOL)arg1;
@@ -117,6 +130,7 @@
 - (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;
 - (void)_presentNearbyAccessoriesViewController;
 - (void)_presentDetailsViewController;
+- (void)pauseEngineIfNeeded;
 - (void)_addFooterConstraints;
 - (void)_configureFooterViewController;
 - (void)_configureClipScrubberViewController;

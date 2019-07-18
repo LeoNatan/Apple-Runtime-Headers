@@ -24,6 +24,7 @@
 - (void)_queue_handleBatchedQueryResult:(long long)arg1 error:(id)arg2;
 - (long long)batchObjectsWithError:(id *)arg1 batchHandler:(CDUnknownBlockType)arg2;
 - (void)_queue_start;
+- (_Bool)isQueryingForHealthRecordsTypes;
 - (id)queryCursorWithState:(id)arg1;
 - (id)queryClient;
 - (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4;

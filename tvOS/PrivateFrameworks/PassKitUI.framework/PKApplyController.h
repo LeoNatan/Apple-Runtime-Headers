@@ -54,12 +54,14 @@
 - (void)_queueActionFlowWithPage:(id)arg1;
 - (void)_queueAcceptedFlowWithPage:(id)arg1;
 - (void)_queueCannotResumeIDVFlow;
+- (void)_queueEmailRequiredErrorViewController;
 - (void)_queuePassActiviationFlowWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_queueDeclinedFlowWithPage:(id)arg1;
 - (void)_queueStateReasonExplanationFlowWithPage:(id)arg1;
 - (void)_queueApplicationTermsFlow;
 - (void)_queueOfferFlowWithPage:(id)arg1;
 - (void)_queueFieldsFlowWithNextStepInfo:(id)arg1;
+- (void)_queueInfoFlowWithNextWithPage:(id)arg1;
 - (void)_invalidateIDVSession;
 - (void)_startCoreIDVSessionWithStepInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleApplyResponse:(id)arg1 originalFeatureApplication:(id)arg2 error:(id)arg3 completion:(CDUnknownBlockType)arg4;

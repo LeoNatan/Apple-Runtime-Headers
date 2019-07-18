@@ -40,6 +40,7 @@
     SBFolder *_folder;
     id <SBIconListLayoutProvider> _listLayoutProvider;
     long long _orientation;
+    unsigned long long _allowedOrientations;
     id <SBIconViewProviding> _iconViewProvider;
     id _context;
     SBIconView *_folderIconView;
@@ -80,6 +81,7 @@
 @property(retain, nonatomic) SBIconView *folderIconView; // @synthesize folderIconView=_folderIconView;
 @property(readonly, nonatomic) id context; // @synthesize context=_context;
 @property(readonly, nonatomic) __weak id <SBIconViewProviding> iconViewProvider; // @synthesize iconViewProvider=_iconViewProvider;
+@property(readonly, nonatomic) unsigned long long allowedOrientations; // @synthesize allowedOrientations=_allowedOrientations;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(readonly, nonatomic) id <SBIconListLayoutProvider> listLayoutProvider; // @synthesize listLayoutProvider=_listLayoutProvider;
 @property(retain, nonatomic) SBFolder *folder; // @synthesize folder=_folder;
@@ -97,6 +99,7 @@
 @property(readonly, copy, nonatomic) NSSet *presentedIconLocations;
 - (_Bool)isPresentingIconLocation:(id)arg1;
 - (double)minimumHomeScreenScaleForFolderControllerBackgroundView:(id)arg1;
+- (void)folder:(id)arg1 didReplaceIcon:(id)arg2 withIcon:(id)arg3;
 - (void)folder:(id)arg1 didAddIcons:(id)arg2 removedIcons:(id)arg3;
 - (void)folder:(id)arg1 didRemoveLists:(id)arg2 atIndexes:(id)arg3;
 - (void)folder:(id)arg1 didAddList:(id)arg2;
@@ -167,7 +170,8 @@
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (struct UIEdgeInsets)statusBarInsetsForOrientation:(long long)arg1;
 @property(readonly, copy, nonatomic) NSArray *extraViews;
-@property(readonly, copy, nonatomic) UIView *extraViewsContainer;
+@property(readonly, nonatomic) _Bool shouldAnimateLastTwoViewsAsOne;
+@property(readonly, nonatomic) UIView *extraViewsContainer;
 - (void)setContentAlpha:(double)arg1;
 - (void)prepareForAnimation:(id)arg1 withTargetIcon:(id)arg2;
 - (void)returnScalingView;
@@ -288,6 +292,7 @@
 @property(retain, nonatomic) SBIconLayoutOverrideStrategy *iconLayoutOverrideStrategy;
 @property(nonatomic) double statusBarHeight;
 - (void)beginEditingTitle;
+- (void)_updateFolderRequiredTrailingEmptyListCount;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) double currentScrollingOffset;
 @property(readonly, nonatomic) long long currentPageIndex;

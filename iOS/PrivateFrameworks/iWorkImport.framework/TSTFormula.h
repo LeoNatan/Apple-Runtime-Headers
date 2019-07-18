@@ -44,7 +44,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool formulaWasFixable; // @synthesize formulaWasFixable=_formulaWasFixable;
 @property(nonatomic) _Bool fixupFormulas; // @synthesize fixupFormulas=_fixupFormulas;
 @property(nonatomic, getter=isSyntaxError) _Bool syntaxError; // @synthesize syntaxError=_syntaxError;
-@property(nonatomic) TSCECalculationEngine *calculationEngine; // @synthesize calculationEngine=_calculationEngine;
+@property(nonatomic) __weak TSCECalculationEngine *calculationEngine; // @synthesize calculationEngine=_calculationEngine;
 @property(retain, nonatomic) TSTExpressionNode *expressionTree; // @synthesize expressionTree=_expressionTree;
 - (void).cxx_destruct;
 - (id)simplify;

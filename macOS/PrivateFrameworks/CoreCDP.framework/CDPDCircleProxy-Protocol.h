@@ -6,10 +6,12 @@
 
 #import <CoreCDP/NSObject-Protocol.h>
 
-@class CDPContext, KCPairingChannel, NSDictionary, NSSet, NSString, OTClique;
+@class CDPContext, KCPairingChannel, NSDictionary, NSError, NSSet, NSString, OTClique;
 
 @protocol CDPDCircleProxy <NSObject>
 @property(readonly, nonatomic) CDPContext *cdpContext;
+- (void)reportFailure:(NSError *)arg1;
+- (void)reportSuccess;
 - (KCPairingChannel *)pairingChannelAcceptor:(id *)arg1;
 - (KCPairingChannel *)pairingChannelInitiator:(id *)arg1;
 - (BOOL)tryRegisteringCredentials;

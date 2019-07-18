@@ -18,6 +18,7 @@
     struct RefPtr<WebKit::ShareableBitmap, WTF::DumbPtrTraits<WebKit::ShareableBitmap>> _image;
     struct RetainPtr<UIImage> _uiImage;
     struct RetainPtr<NSDictionary> _userInfo;
+    _Bool _animatedImage;
     long long _type;
     struct CGRect _boundingRect;
 }
@@ -29,6 +30,7 @@
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) UIImage *image;
 @property(readonly, nonatomic) NSDictionary *userInfo;
+@property(readonly, nonatomic) _Bool isAnimatedImage;
 @property(readonly, nonatomic) struct CGPoint _interactionLocation;
 @property(readonly, nonatomic) NSString *ID;
 @property(readonly, nonatomic) NSString *title;

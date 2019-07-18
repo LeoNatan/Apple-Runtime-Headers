@@ -12,13 +12,17 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_gradientLayerWithViewElement:(id)arg1 overlayType:(long long)arg2 existingLayer:(id)arg3;
++ (struct UIEdgeInsets)_overlayPaddingWithMediaItem:(id)arg1;
 + (struct UIEdgeInsets)_overlayPaddingWithElement:(id)arg1;
 + (long long)_overlayTypeFromString:(id)arg1;
 + (id)_appImageLayout;
++ (id)_overlayWithMediaItem:(id)arg1 overlayType:(long long)arg2 existingView:(id)arg3;
 + (id)_overlayWithElement:(id)arg1 overlayType:(long long)arg2 existingView:(id)arg3;
 + (id)_upnextOverlayWithElement:(id)arg1 existingView:(id)arg2;
 + (id)_sportsOverlayWithElement:(id)arg1 cardlayoutType:(long long)arg2 overlayType:(long long)arg3 existingView:(id)arg4;
++ (id)overlayViewWithMediaItem:(id)arg1 overlayType:(long long)arg2 existingView:(id)arg3;
 + (id)overlayViewWithElement:(id)arg1 cardlayoutType:(long long)arg2 existingView:(id)arg3 canFallbackToInterfaceFactory:(_Bool)arg4;
++ (long long)overlayTypeOfElement:(id)arg1;
 
 @end
 

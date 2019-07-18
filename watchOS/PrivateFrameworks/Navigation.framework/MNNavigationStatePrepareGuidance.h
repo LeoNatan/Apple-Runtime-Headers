@@ -25,6 +25,7 @@
 - (void)enterState;
 - (id)initWithStateManager:(id)arg1 previewRoutes:(id)arg2 selectedRouteIndex:(unsigned int)arg3;
 - (id)traceManager;
+- (_Bool)shouldClearStoredRoutes;
 - (unsigned int)desiredLocationProviderType;
 - (_Bool)requiresHighMemoryThreshold;
 - (unsigned int)type;

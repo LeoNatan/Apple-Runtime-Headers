@@ -6,7 +6,7 @@
 
 #import <iWorkImport/NSObject-Protocol.h>
 
-@class NSObject, NSString;
+@class NSObject, NSString, TSKDocumentRoot;
 @protocol TSWPTextSpanningObject;
 
 @protocol TSWPTextSpanningObject <NSObject>
@@ -15,6 +15,7 @@
 - (_Bool)isEquivalentToObject:(NSObject<TSWPTextSpanningObject> *)arg1;
 
 @optional
+- (void)migrateWithDocumentRoot:(TSKDocumentRoot *)arg1;
 - (_Bool)supportsDeepCopyForUndo;
 @end
 

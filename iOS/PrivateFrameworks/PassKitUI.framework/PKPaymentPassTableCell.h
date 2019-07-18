@@ -6,19 +6,20 @@
 
 #import <Preferences/PSTableCell.h>
 
-@class CALayer, PKPassFaceViewRendererState, PKPassView, PKPaymentApplication, PKPaymentPass, UIActivityIndicatorView, UIControl, UILabel, UIView;
+@class CALayer, PKPassFaceViewRendererState, PKPassView, PKPaymentApplication, PKPaymentPass, UIActivityIndicatorView, UIControl, UIImageView, UILabel;
 @protocol PKPaymentPassTableCellDelegate;
 
 @interface PKPaymentPassTableCell : PSTableCell
 {
     PKPaymentApplication *_paymentApplication;
     long long _settingsContext;
-    UIView *_cardSnapshotView;
+    unsigned int _snapshotCounter;
+    UIActivityIndicatorView *_snapshotSpinner;
+    PKPassView *_passView;
+    UIImageView *_cardSnapshotView;
     CALayer *_cardSnapshotMask;
-    _Bool _snapshotLoaded;
     UIActivityIndicatorView *_spinner;
     _Bool _showState;
-    PKPassView *_passView;
     _Bool _showSubTitle;
     _Bool _showAddButton;
     PKPaymentPass *_pass;
@@ -34,10 +35,10 @@
 @property(readonly, nonatomic) UIControl *actionButton; // @synthesize actionButton=_actionButton;
 @property(readonly, nonatomic) UILabel *subTextLabel; // @synthesize subTextLabel=_subTextLabel;
 @property(readonly, nonatomic) UILabel *mainLabel; // @synthesize mainLabel=_mainLabel;
-@property(nonatomic) id <PKPaymentPassTableCellDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <PKPaymentPassTableCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool showAddButton; // @synthesize showAddButton=_showAddButton;
 @property(nonatomic) _Bool showSubTitle; // @synthesize showSubTitle=_showSubTitle;
-@property(retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
+@property(readonly, retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 - (void).cxx_destruct;
 - (void)_updateSubtitleColorWithSpecifier:(id)arg1;
 - (void)setSpecifier:(id)arg1;
@@ -50,6 +51,7 @@
 - (id)_stringForPassState:(unsigned long long)arg1;
 - (void)tintColorDidChange;
 - (void)layoutSubviews;
+- (void)setPass:(id)arg1 passView:(id)arg2;
 @property(readonly, nonatomic) PKPassFaceViewRendererState *rendererState;
 - (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;

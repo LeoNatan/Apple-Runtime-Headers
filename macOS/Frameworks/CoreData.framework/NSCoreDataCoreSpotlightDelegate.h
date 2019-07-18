@@ -21,6 +21,7 @@
     int _enabled;
     BOOL _supportsPersistentHistory;
     BOOL _usesSharedCoordinatorStack;
+    BOOL _usesPrivateIndex;
 }
 
 - (id)_lastImportedTransaction;
@@ -51,6 +52,7 @@
 @property(readonly, nonatomic) NSManagedObjectContext *_context;
 - (void)stopSpotlightIndexing;
 - (void)startSpotlightIndexing;
+- (BOOL)usePrivateIndex;
 - (id)protectionClass;
 - (id)bundleIdentifier;
 - (id)initForStoreWithDescription:(id)arg1 coordinator:(id)arg2;

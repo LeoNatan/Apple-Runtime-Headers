@@ -12,9 +12,11 @@
 
 @interface PMCoreAnalyticsEvent : NSObject <CoreAnalyticsEventProtocol>
 {
+    BOOL _appendBundleName;
 }
 
 + (id)bundleForAnalytics;
+@property(nonatomic) BOOL appendBundleName; // @synthesize appendBundleName=_appendBundleName;
 - (id)eventName;
 - (id)eventPayload;
 - (void)sendToCoreAnalytics;

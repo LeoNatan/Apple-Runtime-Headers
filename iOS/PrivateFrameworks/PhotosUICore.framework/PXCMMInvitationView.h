@@ -22,6 +22,16 @@
     PXCMMInvitationViewModel *_viewModel;
 }
 
++ (id)subtitle2Color;
++ (id)subtitle1Color;
++ (id)titleBulletColor;
++ (long long)subtitle2TextStyle;
++ (long long)subtitle1TextStyle;
++ (long long)titleTextStyle;
++ (struct UIFont *)subtitle2Font;
++ (struct UIFont *)subtitle1Font;
++ (struct UIFont *)titleEmphasizedFont;
++ (struct UIFont *)titleFont;
 + (struct CGSize)posterHeaderViewSizeForSize:(struct CGSize)arg1 scale:(double)arg2;
 + (struct CGSize)posterImageSizeThatFits:(struct CGSize)arg1 scale:(double)arg2;
 + (struct CGSize)sizeThatFits:(struct CGSize)arg1 viewModel:(id)arg2;

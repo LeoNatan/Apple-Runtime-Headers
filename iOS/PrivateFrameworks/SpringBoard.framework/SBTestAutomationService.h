@@ -22,6 +22,7 @@
 - (_Bool)_authenticateClient:(id)arg1;
 - (void)systemServiceServer:(id)arg1 client:(id)arg2 countScenesForBundleIdentifier:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)systemServiceServer:(id)arg1 client:(id)arg2 setTestRunnerRecoveryApplicationBundleIdentifier:(id)arg3;
+- (void)systemServiceServer:(id)arg1 client:(id)arg2 port:(id)arg3 acquireHUDHiddenAssertionForIdentifier:(id)arg4;
 - (void)systemServiceServer:(id)arg1 client:(id)arg2 setApplicationBundleIdentifier:(id)arg3 blockedForScreenTime:(_Bool)arg4;
 - (void)systemServiceServer:(id)arg1 client:(id)arg2 resetToHomeScreenAnimated:(_Bool)arg3;
 - (void)systemServiceServer:(id)arg1 client:(id)arg2 setOrientationLockEnabled:(_Bool)arg3;

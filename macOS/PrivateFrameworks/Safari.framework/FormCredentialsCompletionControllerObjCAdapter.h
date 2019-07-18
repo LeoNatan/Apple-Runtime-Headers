@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     AutoFillLocalAuthenticationManager *_autoFillLocalAuthenticationManager;
 }
 
-+ (id)titleForCredentialMatch:(id)arg1;
 - (void).cxx_destruct;
 - (id)_itemNameForAutoFillAuthorizationSheetWithItem:(const struct CompletionListItem *)arg1;
 - (void)didRefreshCompletionListItems:(const Vector_9c080eda *)arg1;
@@ -23,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (id)_url;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
-- (id)_hostDescriptionForHost:(id)arg1;
 -     // Error parsing type: ^{FormCredentialsCompletionController=^^?{atomic<unsigned int>=AI}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@QB^{SafeAutoFillConfirmationController}@@{Frame={WKRetainPtr<const void *>=^v}}@@BBB@BBB@@@i@@@@}16@0:8, name: _formCredentialsCompletionController
 @property(readonly, nonatomic) BOOL abortCompletionBlocked;
 - (double)widthOfWidestCell;

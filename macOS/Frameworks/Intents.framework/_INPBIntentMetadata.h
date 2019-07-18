@@ -32,6 +32,7 @@
     BOOL _isOwnedByCurrentUser;
     BOOL _isPrimaryDisplayDisabled;
     BOOL _userConfirmationRequired;
+    BOOL __encodeLegacyGloryData;
     int _executionContext;
     int _intentCategory;
     int _idiom;
@@ -54,6 +55,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)parameterImagesType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBString *userUtterance; // @synthesize userUtterance=_userUtterance;
 @property(nonatomic) BOOL userConfirmationRequired; // @synthesize userConfirmationRequired=_userConfirmationRequired;
 @property(nonatomic) int triggerMethod; // @synthesize triggerMethod=_triggerMethod;
@@ -129,8 +131,8 @@
 @property(nonatomic) BOOL hasExecutionContext;
 @property(readonly, nonatomic) BOOL hasDefaultImageValue;
 @property(readonly, nonatomic) BOOL hasCategoryVerb;
-- (id)_intents_encodeWithJSONEncoder:(id)arg1;
-- (void)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
+- (void)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

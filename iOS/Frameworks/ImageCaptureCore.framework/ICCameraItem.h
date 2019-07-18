@@ -64,7 +64,7 @@
 @property(nonatomic, getter=isLocked) _Bool locked; // @synthesize locked=_locked;
 @property(copy, nonatomic) NSString *UTI; // @synthesize UTI=_UTI;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-@property(nonatomic) ICCameraFolder *parentFolder; // @synthesize parentFolder=_parentFolder;
+@property(retain, nonatomic) ICCameraFolder *parentFolder; // @synthesize parentFolder=_parentFolder;
 @property(retain, nonatomic) ICCameraDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) unsigned long long unsignedIntegerValue;
 - (id)description;

@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)pointAtLabelInChartCoordinateSpaceOnFarXSideMiddleYWithStartPoint:(struct CGPoint)arg1;
 - (struct CGPoint)pointAtLabelInChartCoordinateSpace;
 @property(readonly, nonatomic) _Bool stackLabels;
-@property(readonly, nonatomic) int enableCalloutLineSetting;
+@property(readonly, nonatomic) long long enableCalloutLineSetting;
 - (void)realignPieLabels:(long long)arg1;
 - (void)concatenateCombinedLabelTransformWithTransform:(struct CGAffineTransform)arg1;
 @property(readonly, nonatomic) struct CGRect combinedLabelErasableFrameInChartCoordinateSpace;

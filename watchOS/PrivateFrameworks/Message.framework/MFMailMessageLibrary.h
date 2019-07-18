@@ -44,14 +44,14 @@
     id <EFScheduler> _reconciliationCleanupScheduler;
 }
 
-+ (void)_removeLibrary:(_Bool)arg1 atPath:(id)arg2;
++ (void)_renameLibraryAtPath:(id)arg1;
 + (void)removeLibraryOnNextLaunch;
-+ (void)removeLibraryAtPath:(id)arg1;
 + (id)defaultPath;
 + (void)setDefaultInstance:(id)arg1;
 + (id)defaultInstance;
 + (_Bool)canUsePersistence;
 + (id)propertyMapper;
++ (id)log;
 @property(retain, nonatomic) id <EFScheduler> reconciliationCleanupScheduler; // @synthesize reconciliationCleanupScheduler=_reconciliationCleanupScheduler;
 @property(retain, nonatomic) EDMessageQueryParser *queryParser; // @synthesize queryParser=_queryParser;
 @property _Bool isReconciling; // @synthesize isReconciling=_isReconciling;
@@ -82,19 +82,9 @@
 - (id)_stringsForIndexSet:(id)arg1;
 - (void)pruneConversationTables:(double)arg1;
 - (void)renameOrRemoveDatabaseIfNeeded;
-- (void)renameOrRemoveDatabase;
 - (void)persistenceDidReconcileProtectedData;
-- (void)_handleBusyError;
-- (void)_handleProtectedDataIOError;
-- (void)_handleIOError;
-- (void)_handleDetachedDatabaseIOError;
-- (void)_handleInvalidDatabaseIOError;
-- (void)_handleFullDatabase;
 - (void)handleFailedMigration;
-- (void)_handleProtectedDataInconsistencies;
 - (void)journalReconciliationFailed;
-- (void)_handleJournalWriteFailure;
-- (void)_handleCorruptDatabase;
 - (void)closeDatabaseConnections;
 - (void)_scheduleIncrementalVacuum;
 - (void)performIncrementalVacuumForSchema:(id)arg1;
@@ -164,8 +154,6 @@
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
 - (id)loadMeetingDataForMessage:(id)arg1;
 - (id)loadData:(id)arg1 forMessage:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
-- (id)metadataForMessage:(id)arg1 ofClass:(Class)arg2 key:(id)arg3;
-- (void)updateMessage:(id)arg1 withMetadata:(CDUnknownBlockType)arg2;
 - (_Bool)_setSummary:(id)arg1 forMessageWithRowID:(long long)arg2 connection:(id)arg3;
 - (void)setSummary:(id)arg1 forMessage:(id)arg2;
 - (_Bool)_setMessageData:(id)arg1 libraryID:(long long)arg2 part:(id)arg3 partial:(_Bool)arg4 complete:(_Bool)arg5 connection:(id)arg6;
@@ -188,6 +176,7 @@
 - (_Bool)renameMailboxes:(id)arg1 to:(id)arg2;
 - (void)compactMailbox:(id)arg1;
 - (_Bool)_deleteRows:(id)arg1 fromTable:(id)arg2 connection:(id)arg3;
+- (long long)_maxRowIDInSet:(id)arg1;
 - (id)_existingValuesForColumn:(id)arg1 table:(id)arg2 fromValues:(id)arg3 connection:(id)arg4;
 - (_Bool)_deleteMessages:(id)arg1 andCleanUpAddresses:(id)arg2 subjects:(id)arg3 summaries:(id)arg4 connection:(id)arg5;
 - (_Bool)_addAddressesFromRecipientsForMessages:(id)arg1 toSet:(id)arg2 connection:(id)arg3;
@@ -201,6 +190,7 @@
 - (void)setFlags:(unsigned long long)arg1 forConversationId:(long long)arg2;
 - (unsigned long long)flagsForConversationId:(long long)arg1;
 - (id)syncedConversations;
+- (void)clearServerSearchFlagsForMessagesWithLibraryIDs:(id)arg1;
 - (_Bool)_canSelectMessagesWithOptions:(unsigned int)arg1 connection:(id)arg2;
 - (_Bool)shouldCancel;
 - (id)accountForMessage:(id)arg1;
@@ -240,8 +230,7 @@
 - (id)oldestMessageInMailbox:(id)arg1;
 - (void)setMostRecentStatusCount:(unsigned int)arg1 forMailbox:(id)arg2;
 - (unsigned int)mostRecentStatusCountForMailbox:(id)arg1;
-- (void)adjustLastSyncAndMostRecentStatusCount:(int)arg1 forMailbox:(id)arg2;
-- (void)setLastSyncAndMostRecentStatusCount:(unsigned int)arg1 forMailbox:(id)arg2;
+- (void)setLastSyncAndMostRecentStatusCount:(int)arg1 forMailbox:(id)arg2;
 - (int)statusCountDeltaForMailbox:(id)arg1;
 - (void)setServerUnreadOnlyOnServerCount:(unsigned int)arg1 forMailbox:(id)arg2;
 - (unsigned int)indexedCountForMailbox:(id)arg1 limit:(unsigned int)arg2;
@@ -280,7 +269,8 @@
 - (long long)_libraryIDForOldestKnownMessageInMailbox:(id)arg1;
 - (id)oldestKnownMessageInMailbox:(id)arg1;
 - (long long)oldestKnownConversationInMailbox:(id)arg1;
-- (id)countMessagesMatchingCriterion:(id)arg1 groupBy:(unsigned int)arg2;
+- (id)groupedMessagesCountForCriterion:(id)arg1 groupBy:(unsigned int)arg2;
+- (id)groupedMessagesCountByMailboxMatchingQuery:(unsigned int)arg1 variable:(id)arg2;
 - (unsigned int)countMessagesMatchingCriterion:(id)arg1;
 - (unsigned int)countOfRelatedMessagesMatchingCriterion:(id)arg1 forConversationsContainingMessagesMatchingCriterion:(id)arg2 forMailboxCriterion:(id)arg3;
 - (id)copyMessageInfosForConversationsContainingMessagesMatchingCriterion:(id)arg1 forMailbox:(id)arg2;
@@ -303,7 +293,7 @@
 - (long long)_findOrCreateDatabaseIDForSummary:(id)arg1 cache:(id)arg2 connection:(id)arg3;
 - (long long)_findOrCreateDatabaseIDForSubject:(id)arg1 cache:(id)arg2 connection:(id)arg3;
 - (long long)_findOrCreateDatabaseIDForAddress:(id)arg1 comment:(id)arg2 cache:(id)arg3 connection:(id)arg4;
-- (void)_addRecipients:(id)arg1 toMessageWithDatabaseID:(long long)arg2 cache:(id)arg3 connection:(id)arg4;
+- (_Bool)_addRecipients:(id)arg1 toMessageWithDatabaseID:(long long)arg2 cache:(id)arg3 connection:(id)arg4;
 - (void)persistenceDidAddMessages:(id)arg1;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(_Bool)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(_Bool)arg9 addPOPUIDs:(_Bool)arg10 dataSectionsByMessage:(id)arg11;
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry;

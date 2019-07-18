@@ -36,7 +36,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)execute:(out id *)arg1 error:(out id *)arg2;
 - (_Bool)execute:(out id *)arg1;
-- (id)initForManagedWithContext:(id)arg1;
+- (id)initForAllManagedWithReason:(id)arg1;
 - (id)initWithProcessIdentifier:(id)arg1 context:(id)arg2;
 - (id)initWithProcessIdentity:(id)arg1 context:(id)arg2;
 

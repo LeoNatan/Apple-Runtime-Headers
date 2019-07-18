@@ -6,41 +6,24 @@
 
 #import <objc/NSObject.h>
 
-#import <BookKit/BKSecureUserDefaults-Protocol.h>
+@protocol BKSecurePreferencesDelegate;
 
-@class NSString, NSXPCConnection;
-@protocol BKSecureUserDefaults;
-
-@interface BKSecurePreferences : NSObject <BKSecureUserDefaults>
+@interface BKSecurePreferences : NSObject
 {
-    NSXPCConnection *_connection;
-    CDUnknownBlockType _interruptionHandler;
+    id <BKSecurePreferencesDelegate> _delegate;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
-@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
+@property(nonatomic) __weak id <BKSecurePreferencesDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_loadConnection;
-@property(readonly, nonatomic) id <BKSecureUserDefaults> remoteProxy;
-- (void)getParentalControlValuesForUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)setStoreDisabled:(BOOL)arg1 authBlob:(id)arg2 uid:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)setExplicitContentRestricted:(BOOL)arg1 authBlob:(id)arg2 uid:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)ping:(CDUnknownBlockType)arg1;
 - (BOOL)_parentalPreferenceBoolForKey:(id)arg1 iTunesKey:(id)arg2;
 - (BOOL)_parentalPreferenceIsForcedForKey:(id)arg1;
+- (void)_systemProfilePreferencesDidChange:(id)arg1;
 @property(readonly, nonatomic) BOOL explicitContentRestrictedForced;
 @property(readonly, nonatomic) BOOL bookstoreDisabledForced;
 @property(readonly, nonatomic) BOOL explicitContentRestricted;
 @property(readonly, nonatomic) BOOL bookstoreDisabled;
 - (void)dealloc;
 - (id)init;
-- (id)initWithInterruptionHandler:(CDUnknownBlockType)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

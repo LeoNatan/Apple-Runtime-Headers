@@ -15,6 +15,7 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (id)loggableOverviewForKey:(id)arg1;
 - (id)loggableOverview;
 - (_Bool)_addBlock:(CDUnknownBlockType)arg1 withGUID:(id)arg2 forKey:(id)arg3 description:(id)arg4;
 - (_Bool)addBlock:(CDUnknownBlockType)arg1 forKey:(id)arg2 description:(id)arg3;

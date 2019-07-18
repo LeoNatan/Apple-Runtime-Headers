@@ -70,7 +70,6 @@
 @property(readonly, nonatomic) id badgeNumberOrString;
 @property(readonly, nonatomic) long long badgeValue;
 - (void)reloadIconImage;
-- (id)gridCellImageWithInfo:(struct SBIconImageInfo)arg1;
 - (id)genericIconImageWithInfo:(struct SBIconImageInfo)arg1;
 - (id)unmaskedIconImageWithInfo:(struct SBIconImageInfo)arg1;
 - (id)iconImageWithInfo:(struct SBIconImageInfo)arg1;
@@ -114,6 +113,7 @@
 - (id)applicationBundleID;
 - (id)leafIdentifier;
 - (_Bool)isLeafIcon;
+- (id)parentFolderIcon;
 - (id)folder;
 - (_Bool)isFolderIcon;
 - (_Bool)isGrabbedIconPlaceholder;

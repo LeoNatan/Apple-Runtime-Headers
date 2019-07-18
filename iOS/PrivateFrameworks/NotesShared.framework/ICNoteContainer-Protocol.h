@@ -12,6 +12,7 @@
 @protocol ICNoteContainer <ICNoteVisibilityTesting>
 @property(retain, nonatomic) NSData *subFolderOrderMergeableData;
 @property(readonly, nonatomic) NSArray *visibleSubFolders;
+@property(readonly, nonatomic) NSString *containerIdentifier;
 @property(readonly, nonatomic) _Bool isTrashFolder;
 @property(readonly, nonatomic) _Bool supportsEditingNotes;
 @property(readonly, nonatomic) _Bool isAllNotesContainer;

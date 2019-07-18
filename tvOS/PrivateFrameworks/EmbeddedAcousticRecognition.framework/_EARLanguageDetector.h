@@ -12,7 +12,8 @@
 }
 
 + (shared_ptr_9fadee34)updateContext:(const struct LDContext *)arg1 withMessageLocales:(const vector_4ce8f3d5 *)arg2;
-+ (vector_4ce8f3d5)localesOfMessages:(id)arg1;
++ (vector_4ce8f3d5)quasarLocalesOfMessages:(id)arg1;
++ (id)localesOfMessages:(id)arg1;
 + (void)initialize;
 - (id).cxx_construct;
 - (void).cxx_destruct;

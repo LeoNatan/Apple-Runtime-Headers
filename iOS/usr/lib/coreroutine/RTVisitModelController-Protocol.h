@@ -6,10 +6,7 @@
 
 #import <coreroutine/NSObject-Protocol.h>
 
-@class MLMultiArray, NSString;
-
 @protocol RTVisitModelController <NSObject>
-@property(readonly, nonatomic) NSString *uuid;
-- (MLMultiArray *)predictFromInput:(MLMultiArray *)arg1;
+- (const float *)predictFromInput:(const float *)arg1 featureVectorStride:(unsigned long long)arg2 firstSequenceIndex:(unsigned long long)arg3 firstSequenceLength:(unsigned long long)arg4 batchSize:(unsigned long long)arg5;
 @end
 

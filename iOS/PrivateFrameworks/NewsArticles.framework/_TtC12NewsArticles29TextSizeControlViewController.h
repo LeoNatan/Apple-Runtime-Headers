@@ -10,7 +10,6 @@ __attribute__((visibility("hidden")))
 @interface _TtC12NewsArticles29TextSizeControlViewController : UIViewController
 {
     // Error parsing type: , name: styler
-    // Error parsing type: , name: eventHandler
     // Error parsing type: , name: divider
     // Error parsing type: , name: stackView
     // Error parsing type: , name: increaseButton

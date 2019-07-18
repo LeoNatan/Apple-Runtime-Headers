@@ -73,6 +73,7 @@
 - (void)_updatePrivacyState;
 - (id)initWithAppDescription:(id)arg1 privacyVoucher:(id)arg2 restrictionsCenter:(id)arg3 privacyFacade:(id)arg4;
 - (id)initWithBundle:(struct __CFBundle *)arg1 restrictionsCenter:(id)arg2 privacyFacade:(id)arg3;
+- (id)initWithBundle:(struct __CFBundle *)arg1 restrictionsCenter:(id)arg2 privacyFacade:(id)arg3 adamID:(id)arg4;
 - (id)init;
 - (void)dealloc;
 - (id)initWithApplicationWorkspace:(id)arg1;

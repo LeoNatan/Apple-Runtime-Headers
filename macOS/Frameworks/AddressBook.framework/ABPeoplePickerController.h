@@ -27,7 +27,7 @@
     NSArray *_allSections;
     NSMutableDictionary *_entryForRecordReverseMap;
     NSMenu *newSourceOrGroupMenu;
-    BOOL _singleCard;
+    BOOL _optionKeyWasDownAtStartOfDraggingSession;
     BOOL _shouldAutomaticallyEditInsertedGroupNames;
     BOOL _inDistributionListEditor;
     NSView *pickerView;
@@ -84,6 +84,7 @@
 - (void)personListDidDoubleClick:(id)arg1;
 - (void)personList:(id)arg1 didSelectEntries:(id)arg2;
 - (void)clearExtraUniqueIdsInSearchResults;
+- (void)expandPersonEntriesCacheWithEntry:(id)arg1;
 @property(retain, nonatomic) NSString *displayedProperty;
 @property(nonatomic) int valueSelectionBehavior;
 - (void)setHasTableBorder:(BOOL)arg1;

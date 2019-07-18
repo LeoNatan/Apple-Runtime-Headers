@@ -18,8 +18,12 @@
     float _alpha;
     _Bool _hidden;
     _Bool _clippingDisabled;
+    unsigned int _renderingMode;
+    NSString *_minificationFilterName;
 }
 
+@property(copy, nonatomic, setter=_setMinificationFilterName:) NSString *_minificationFilterName; // @synthesize _minificationFilterName;
+@property(nonatomic) unsigned int renderingMode; // @synthesize renderingMode=_renderingMode;
 @property(nonatomic, getter=isClippingDisabled) _Bool clippingDisabled; // @synthesize clippingDisabled=_clippingDisabled;
 @property(nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) float alpha; // @synthesize alpha=_alpha;
@@ -34,6 +38,7 @@
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
+- (_Bool)_isEqualToDefaultContext;
 - (id)_initWithSceneLayerPresentationContext:(id)arg1;
 - (id)init;
 

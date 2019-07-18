@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     float _pinchSeparationValues[4];
     NSMutableSet *_activeTouches;
     NSMutableDictionary *_initialTouchPoints;
+    double _beginPinchTimestamp;
 }
 
 @property(readonly, nonatomic) float initialPinchSeparation; // @synthesize initialPinchSeparation=_initialPinchSeparation;

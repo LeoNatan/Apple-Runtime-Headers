@@ -27,6 +27,7 @@
 + (id)_recursiveFindWindowTabViewController:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversOfSelectedTabViewItemIndex;
 + (Class)_classToCheckForRequiresConstraintBasedLayout;
++ (unsigned long long)defaultTransitionOptions;
 - (long long)_associatedTabStyleForUIProvider:(id)arg1;
 - (id)_implicitUIProviderForTabStyle:(long long)arg1;
 - (void)setUIProvider:(id)arg1;

@@ -6,13 +6,14 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <WorkflowUI/UIAdaptivePresentationControllerDelegate-Protocol.h>
 #import <WorkflowUI/VCUIShortcutViewControllerDelegate-Protocol.h>
 #import <WorkflowUI/WFImportQuestionContainerViewControllerDelegate-Protocol.h>
 
 @class NSString, UIActivityIndicatorView, UIBarButtonItem, VCUIShortcutViewController, WFGalleryWorkflow, WFImportQuestionContainerViewController, WFSharedShortcut, WFWorkflow, WFWorkflowIcon, WFWorkflowRecord;
 @protocol WFGalleryImportViewControllerDelegate;
 
-@interface WFGalleryImportViewController : UIViewController <WFImportQuestionContainerViewControllerDelegate, VCUIShortcutViewControllerDelegate>
+@interface WFGalleryImportViewController : UIViewController <WFImportQuestionContainerViewControllerDelegate, VCUIShortcutViewControllerDelegate, UIAdaptivePresentationControllerDelegate>
 {
     BOOL _previewingFor3DTouch;
     BOOL _importingSharedShortcut;
@@ -51,6 +52,7 @@
 @property(readonly, nonatomic) WFGalleryWorkflow *galleryWorkflow; // @synthesize galleryWorkflow=_galleryWorkflow;
 @property(nonatomic) __weak id <WFGalleryImportViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (BOOL)presentationControllerShouldDismiss:(id)arg1;
 - (void)shortcutViewControllerDidCancel:(id)arg1;
 - (void)shortcutViewController:(id)arg1 didFinishWithName:(id)arg2;
 - (void)importQuestionViewControllerDidSelectNext:(id)arg1;

@@ -14,7 +14,7 @@
 - (void)cancelUpdate;
 - (void)resumeUpdate;
 - (void)resumeUpdateWithParameters:(NSDictionary *)arg1;
-- (void)updateModelWithData:(id <MLBatchProvider>)arg1 parameters:(NSDictionary *)arg2;
+- (void)updateModelWithData:(id <MLBatchProvider>)arg1;
 - (void)setUpdateProgressHandlers:(MLUpdateProgressHandlers *)arg1 dispatchQueue:(NSObject<OS_dispatch_queue> *)arg2;
 @end
 

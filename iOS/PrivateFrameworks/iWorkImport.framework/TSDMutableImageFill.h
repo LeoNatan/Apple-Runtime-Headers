@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double scale; // @dynamic scale;
 @property(nonatomic) struct CGSize fillSize; // @dynamic fillSize;
 @property(retain, nonatomic) TSPData *imageData; // @dynamic imageData;
-@property(nonatomic) int technique; // @dynamic technique;
+@property(nonatomic) unsigned long long technique; // @dynamic technique;
 @property(copy, nonatomic) TSUColor *tintColor; // @dynamic tintColor;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

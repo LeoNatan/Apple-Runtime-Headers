@@ -40,10 +40,10 @@
 @property(retain, nonatomic) NSDictionary *messagePayload; // @synthesize messagePayload=_messagePayload;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
-- (void)callMessageResponseHandlerWithPayload:(id)arg1 error:(id)arg2;
-- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)callMessageResponseHandlerWithPayload:(id)arg1 error:(id)arg2;
+- (id)attributeDescriptions;
 - (id)transactionIdentifier;
 - (id)initWithLabel:(id)arg1;
 

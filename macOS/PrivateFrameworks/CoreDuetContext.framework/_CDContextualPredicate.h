@@ -13,6 +13,7 @@
 
 @interface _CDContextualPredicate : NSObject <NSCopying, NSSecureCoding>
 {
+    BOOL _evaluateOnEveryKeyPathUpdate;
     NSSet *_keyPaths;
     NSPredicate *_predicate;
     NSPredicate *_predicateForPreviousState;
@@ -36,6 +37,7 @@
 + (id)predicateForChangeAtKeyPath:(id)arg1;
 @property(retain, nonatomic) NSSet *circularLocationRegions; // @synthesize circularLocationRegions=_circularLocationRegions;
 @property(retain, nonatomic) NSOrderedSet *timeBasedPredicateEvaluationIntervals; // @synthesize timeBasedPredicateEvaluationIntervals=_timeBasedPredicateEvaluationIntervals;
+@property(nonatomic) BOOL evaluateOnEveryKeyPathUpdate; // @synthesize evaluateOnEveryKeyPathUpdate=_evaluateOnEveryKeyPathUpdate;
 @property(nonatomic) double minimumDurationInPreviousState; // @synthesize minimumDurationInPreviousState=_minimumDurationInPreviousState;
 @property(retain, nonatomic) NSPredicate *predicateForPreviousState; // @synthesize predicateForPreviousState=_predicateForPreviousState;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;

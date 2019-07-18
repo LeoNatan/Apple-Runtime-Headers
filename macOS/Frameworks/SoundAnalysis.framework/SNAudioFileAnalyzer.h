@@ -18,7 +18,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)primeWithFormat:(id)arg1;
+- (BOOL)primeWithFormat:(id)arg1;
 - (id)detailedDescription;
 - (void)removeAllRequests;
 - (void)removeRequest:(id)arg1;

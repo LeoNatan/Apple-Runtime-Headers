@@ -11,11 +11,14 @@
 __attribute__((visibility("hidden")))
 @interface PUImagePickerCameraPreviewView : UIView
 {
+    AVCaptureVideoPreviewLayer *_videoPreviewLayer;
 }
 
 + (Class)layerClass;
+@property(readonly, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer; // @synthesize videoPreviewLayer=_videoPreviewLayer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVCaptureSession *session;
-@property(readonly, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

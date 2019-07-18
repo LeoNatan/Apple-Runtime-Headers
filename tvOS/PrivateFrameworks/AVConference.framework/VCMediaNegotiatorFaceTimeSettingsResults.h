@@ -12,8 +12,10 @@ __attribute__((visibility("hidden")))
     _Bool _SIPDisabled;
     _Bool _secureMessagingRequired;
     unsigned int _faceTimeSwitches;
+    _Bool _remoteFaceTimeSwitchesAvailable;
 }
 
+@property(nonatomic) _Bool remoteFaceTimeSwitchesAvailable; // @synthesize remoteFaceTimeSwitchesAvailable=_remoteFaceTimeSwitchesAvailable;
 @property(nonatomic) unsigned int faceTimeSwitches; // @synthesize faceTimeSwitches=_faceTimeSwitches;
 @property(nonatomic) _Bool secureMessagingRequired; // @synthesize secureMessagingRequired=_secureMessagingRequired;
 @property(nonatomic) _Bool SIPDisabled; // @synthesize SIPDisabled=_SIPDisabled;

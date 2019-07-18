@@ -6,7 +6,7 @@
 
 #import <PassKitCore/PDXPCServiceExportedInterface-Protocol.h>
 
-@class NSString, PKPayment, PKPaymentAuthorizationResult, PKPaymentClientUpdate, PKPaymentHostUpdate, PKRemoteDevice, PKRemotePaymentInstrument, PKRemotePaymentRequest;
+@class NSString, PKPayment, PKPaymentAuthorizationResult, PKPaymentClientUpdate, PKPaymentHostUpdate, PKRemoteDevice, PKRemotePaymentInstrument, PKRemotePaymentRequest, PKVirtualCard;
 
 @protocol PDContinuityPaymentServiceExportedInterface <PDXPCServiceExportedInterface>
 - (void)sendPaymentSetupRequest:(PKRemoteDevice *)arg1 appDisplayName:(NSString *)arg2 handler:(void (^)(NSError *))arg3;
@@ -24,6 +24,7 @@
 - (void)updatePaymentDevicesWithHandler:(void (^)(NSError *))arg1;
 
 @optional
+- (void)promptDetailsForVirtualCard:(PKVirtualCard *)arg1 handler:(void (^)(NSError *))arg2;
 - (void)noteAccountDeletedWithHandler:(void (^)(NSError *))arg1;
 - (void)sendPaymentStatus:(long long)arg1 forRemotePaymentRequest:(PKRemotePaymentRequest *)arg2 handler:(void (^)(NSError *))arg3;
 @end

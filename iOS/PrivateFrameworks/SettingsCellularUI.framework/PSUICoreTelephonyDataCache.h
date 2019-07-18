@@ -10,11 +10,12 @@
 #import <SettingsCellularUI/RadiosPreferencesDelegate-Protocol.h>
 
 @class CoreTelephonyClient, NSMutableDictionary, NSString, RadiosPreferences;
-@protocol OS_dispatch_group;
+@protocol OS_dispatch_group, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface PSUICoreTelephonyDataCache : NSObject <CoreTelephonyClientDataDelegate, RadiosPreferencesDelegate>
 {
+    NSObject<OS_dispatch_queue> *_queue;
     _Bool _intlDataAccessStatus;
     _Bool _intlDataAccessStatusInitialized;
     _Bool _cellularDataSetting;

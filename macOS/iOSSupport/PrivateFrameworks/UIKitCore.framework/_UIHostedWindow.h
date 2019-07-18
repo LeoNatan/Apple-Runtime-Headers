@@ -39,7 +39,7 @@
 - (BOOL)_allowsLinkPreviewInteractionInViewServices;
 - (void)didSetResponderTargetForCalloutBar:(id)arg1;
 - (void)_setFirstResponder:(id)arg1;
-- (void)setScreen:(id)arg1;
+- (void)_didMoveFromScreen:(id)arg1 toScreen:(id)arg2;
 - (void)_configureContextOptions:(id)arg1;
 - (long long)_defaultTintAdjustmentMode;
 - (id)_normalInheritedTintColor;

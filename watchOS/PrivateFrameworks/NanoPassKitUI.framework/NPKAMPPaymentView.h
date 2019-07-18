@@ -18,6 +18,7 @@
     UIStackView *_stackView;
 }
 
++ (float)_appIconImageViewHeightForDisplayStyle:(unsigned int)arg1;
 + (_Bool)_isRightToLeft;
 + (id)_stackViewWithArrangedSubviews:(id)arg1;
 + (id)ampPaymentViewWithFrame:(struct CGRect)arg1;
@@ -29,16 +30,17 @@
 @property(nonatomic) unsigned int displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(nonatomic) struct CGImage *appIconImage; // @synthesize appIconImage=_appIconImage;
 - (void).cxx_destruct;
-- (unsigned int)_numberOfLinesInAttributedString:(id)arg1 forLabel:(id)arg2;
+- (float)_heightForAttributedText:(id)arg1 inDisplayStyle:(unsigned int)arg2;
+- (unsigned int)displayStyleFittingHeight:(float)arg1 withAttributedText:(id)arg2;
 - (id)_applyStylingToValueString:(id)arg1 displayStyle:(unsigned int)arg2;
-- (unsigned int)_displayStyleForAttributedText:(id)arg1;
-- (id)_detailParagraphStyle;
+- (id)_detailParagraphStyleForDisplayStyle:(unsigned int)arg1;
 - (id)_headlineParagraphStyle;
 - (id)_detailFontForDisplayStyle:(unsigned int)arg1;
 - (id)_headlineFontForDisplayStyle:(unsigned int)arg1;
 - (id)_secondaryTextColor;
 - (id)_primaryTextColor;
-- (float)_verticalPaddingForDisplayStyle:(unsigned int)arg1;
+- (float)_bottomPaddingForDisplayStyle:(unsigned int)arg1;
+- (float)_verticalInterItemPaddingForDisplayStyle:(unsigned int)arg1;
 - (void)_updateAmountLabelFontForDisplayStyle:(unsigned int)arg1;
 - (void)_updateAppIconImageWithImage:(struct CGImage *)arg1 forDisplayStyle:(unsigned int)arg2;
 - (void)_updateRelativeConstraintsForDisplayStyle:(unsigned int)arg1;
@@ -50,6 +52,7 @@
 - (void)_setUpAppIconImageView;
 @property(copy, nonatomic) NSString *amountText;
 @property(copy, nonatomic) NSAttributedString *appDetailsAttributedText;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -7,6 +7,7 @@
 @class NSString, PXGadgetSpec;
 
 @protocol PXMutableGadgetSectionHeader
+@property(nonatomic) _Bool shouldShowDividerOnFirstSection;
 @property(nonatomic) _Bool isFirstSection;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec;
 @property(copy, nonatomic) CDUnknownBlockType accessoryButtonPressed;

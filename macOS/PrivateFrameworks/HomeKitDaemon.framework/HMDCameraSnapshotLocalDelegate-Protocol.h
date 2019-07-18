@@ -6,9 +6,9 @@
 
 #import <HomeKitDaemon/NSObject-Protocol.h>
 
-@class HMDCameraSessionID, HMDCameraSnapshotLocal, HMDSnapshotFile, NSError;
+@class HMDCameraSnapshotLocal, HMDCameraSnapshotSessionID, HMDSnapshotFile, NSError;
 
 @protocol HMDCameraSnapshotLocalDelegate <NSObject>
-- (void)snapshotLocal:(HMDCameraSnapshotLocal *)arg1 didSaveSnapshotFile:(HMDSnapshotFile *)arg2 error:(NSError *)arg3 sessionID:(HMDCameraSessionID *)arg4;
+- (void)snapshotLocal:(HMDCameraSnapshotLocal *)arg1 didSaveSnapshotFile:(HMDSnapshotFile *)arg2 error:(NSError *)arg3 sessionID:(HMDCameraSnapshotSessionID *)arg4;
 @end
 

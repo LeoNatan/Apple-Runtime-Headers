@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)manualEntryItemDidUpdate:(id)arg1;
+- (void)validateDataWithCompletion:(CDUnknownBlockType)arg1;
 - (id)defaultEditingItem;
 - (id)manualEntryItemsForSection:(long long)arg1;
 - (long long)numberOfSections;

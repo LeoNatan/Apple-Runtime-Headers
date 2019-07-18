@@ -63,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (void)p_writeLockAndBlockPrimaryThread:(_Bool)arg1;
 - (void)p_asyncPerformBlockOnPrimaryThread:(CDUnknownBlockType)arg1;
 - (void)p_blockPrimaryThreadForWrite;
+- (void)p_decrementCountForReaderAtIndex:(unsigned int)arg1 releasingRealLock:(_Bool)arg2;
 - (void)p_readUnlockReleasingRealLock:(_Bool)arg1;
 - (void)p_readUnlock;
 @property(readonly) _Bool hasWrite;

@@ -13,14 +13,14 @@
 
 @interface HUClipScrubberDataSource : NSObject <HFCameraPlaybackEngineObserver, UICollectionViewDataSource>
 {
-    _Bool _isEditing;
+    _Bool _editing;
     _Bool _selectionViewHidden;
     NSArray *_clips;
     HUClipScrubberTimeController *_timeController;
     HMCameraClip *_currentClip;
     UICollectionView *_clipCollectionView;
     unsigned long long _currentTimelineState;
-    unsigned long long _currentDisplayMode;
+    unsigned long long _displayMode;
     NSDate *_currentDate;
     HFCameraPlaybackEngine *_playbackEngine;
     unsigned long long _mostRecentClipIndex;
@@ -38,8 +38,8 @@
 @property(readonly, nonatomic) unsigned long long mostRecentClipIndex; // @synthesize mostRecentClipIndex=_mostRecentClipIndex;
 @property(nonatomic) __weak HFCameraPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 @property(retain, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
-@property(nonatomic) _Bool isEditing; // @synthesize isEditing=_isEditing;
-@property(nonatomic) unsigned long long currentDisplayMode; // @synthesize currentDisplayMode=_currentDisplayMode;
+@property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
+@property(nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
 @property(nonatomic) unsigned long long currentTimelineState; // @synthesize currentTimelineState=_currentTimelineState;
 @property(nonatomic) __weak UICollectionView *clipCollectionView; // @synthesize clipCollectionView=_clipCollectionView;
 @property(nonatomic) __weak HMCameraClip *currentClip; // @synthesize currentClip=_currentClip;

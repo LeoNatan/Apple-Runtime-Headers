@@ -45,6 +45,9 @@
 @property(readonly, getter=isStreamingDisparitySupported) _Bool streamingDisparitySupported;
 @property(readonly) NSArray *AVCaptureSessionPresets;
 @property(readonly, getter=isHighProfileH264Supported) _Bool highProfileH264Supported;
+@property(readonly) float maxPortraitLightingEffectStrength;
+@property(readonly) float minPortraitLightingEffectStrength;
+@property(readonly) float defaultPortraitLightingEffectStrength;
 @property(readonly) float maxSimulatedAperture;
 @property(readonly) float minSimulatedAperture;
 @property(readonly) float defaultSimulatedAperture;
@@ -97,6 +100,9 @@
 @property(readonly, getter=isSIFRSupported) _Bool SIFRSupported;
 - (id)frontEndScalerCompanionFormats;
 @property(readonly) int autoFocusSystem;
+- (float)lowLightVideoAEMaxGain;
+- (float)depthDataMaxIntegrationTimeOverride;
+- (float)depthDataAEMaxGain;
 - (int)maxIntegrationTimeOverride;
 - (float)aeMaxGain;
 @property(readonly) CDStruct_1b6d18a9 maxExposureDuration;

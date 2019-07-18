@@ -15,11 +15,13 @@
 @interface _INPBPayloadNeedsValue : PBCodable <_INPBPayloadNeedsValue, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     NSArray *_promptItems;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)promptItemsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *promptItems; // @synthesize promptItems=_promptItems;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

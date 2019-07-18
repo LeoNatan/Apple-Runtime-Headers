@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)registeredCollissions;
-- (id)viewsCollidingWithAnnotationView:(id)arg1 fromIndex:(long long)arg2 length:(double)arg3;
+- (id)viewsCollidingWithAnnotationView:(id)arg1 inCollidableList:(_Bool)arg2 fromIndex:(long long)arg3 length:(double)arg4;
 - (id)viewsCollidingWithAnnotationViewAtIndex:(unsigned long long)arg1;
-- (id)viewsCollidingWithAnnotationView:(id)arg1;
+- (id)viewsCollidingWithAnnotationView:(id)arg1 inCollidableList:(_Bool)arg2;
 - (unsigned long long)insertAnnotationView:(id)arg1;
 - (id)annotationViewAtIndex:(unsigned long long)arg1;
 - (unsigned long long)viewCount;

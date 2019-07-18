@@ -6,28 +6,11 @@
 
 #import <WorkflowKit/WFAction.h>
 
-#import <ActionKit/QLPreviewControllerDelegate-Protocol.h>
-
-@class NSString, QLPreviewController, WFContentCollection;
-
-@interface WFQuickLookAction : WFAction <QLPreviewControllerDelegate>
+@interface WFQuickLookAction : WFAction
 {
-    WFContentCollection *_dataSource;
-    QLPreviewController *_previewController;
 }
 
-@property(retain, nonatomic) QLPreviewController *previewController; // @synthesize previewController=_previewController;
-@property(copy, nonatomic) WFContentCollection *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
-- (void)previewControllerDidDismiss:(id)arg1;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
 - (void)initializeParameters;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

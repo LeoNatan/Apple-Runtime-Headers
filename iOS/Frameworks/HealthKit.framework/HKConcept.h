@@ -8,7 +8,7 @@
 
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKConceptIdentifier, NSArray, NSMutableArray, NSString;
+@class HKConceptAttribute, HKConceptIdentifier, NSArray, NSMutableArray, NSString;
 
 @interface HKConcept : NSObject <NSSecureCoding>
 {
@@ -48,9 +48,11 @@
 - (void)addAttribute:(id)arg1;
 - (id)_attributesMutableArray;
 - (void)updateRelationshipsOwners;
+@property(readonly, copy, nonatomic) HKConceptAttribute *adHocCode;
 @property(readonly, nonatomic) _Bool isAdHoc;
 @property(readonly, nonatomic) _Bool isUndefined;
 - (id)attributesForName:(id)arg1;
+- (id)firstAttributeForName:(id)arg1;
 @property(readonly, nonatomic) long long version;
 @property(readonly, copy, nonatomic) HKConcept *chartedWithConcept;
 - (id)_firstConceptOfRelationshipType:(id)arg1;

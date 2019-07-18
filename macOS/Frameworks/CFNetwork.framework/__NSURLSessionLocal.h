@@ -57,7 +57,7 @@
 - (void)_URLSession:(id)arg1 companionAvailabilityChanged:(BOOL)arg2;
 - (id)_delegateForTask:(id)arg1;
 - (id)_cacheOnlyDataTaskForRequest:(id)arg1 withDelegate:(id)arg2;
-- (id)_proxyDataTaskForRequest:(id)arg1 withDelegate:(id)arg2;
+- (id)_proxyDataTaskForRequest:(id)arg1 withDelegate:(id)arg2 uniqueIdentifier:(id)arg3;
 - (void)_removeProtocolClassForDefaultSession:(Class)arg1;
 - (_Bool)_prependProtocolClassForDefaultSession:(Class)arg1;
 - (struct URLProtocol *)_newURLProtocolForTask:(id)arg1 client:(struct URLProtocolClient *)arg2;

@@ -45,6 +45,10 @@
 - (void)_requestUserPermissionForLegacyWACAccessory:(id)arg1 withContext:(id)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_showUserDialogForIncompatibleAccessory:(id)arg1 name:(id)arg2 category:(id)arg3 withContext:(id)arg4 queue:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)showUserDialogForIncompatibleAccessory:(id)arg1 name:(id)arg2 category:(id)arg3 withContext:(id)arg4 queue:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)_requestUserPermissionForRemovalOfRouter:(id)arg1 accessoriesRequiringManualReconfiguration:(id)arg2 withContext:(id)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)requestUserPermissionForRemovalOfRouter:(id)arg1 accessoriesRequiringManualReconfiguration:(id)arg2 withContext:(id)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_requestUserPermissionForDeletionOfHomeWithName:(id)arg1 withContext:(id)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)requestUserPermissionForDeletionOfHomeWithName:(id)arg1 withContext:(id)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_requestUserPermissionWithAccessoryPPIDInfo:(id)arg1 name:(id)arg2 category:(id)arg3 withContext:(id)arg4 queue:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)requestUserPermissionWithAccessoryPPIDInfo:(id)arg1 name:(id)arg2 category:(id)arg3 withContext:(id)arg4 queue:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)requestUserPermissionForLegacyWACAccessory:(id)arg1 withContext:(id)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

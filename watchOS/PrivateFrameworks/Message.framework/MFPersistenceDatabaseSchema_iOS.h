@@ -14,7 +14,6 @@
 
 + (id)accountsTableSchema;
 + (id)popUIDsTableSchema;
-+ (id)messageMetadataTableSchema;
 + (id)messageDataDeletedTableSchema;
 + (id)messageDataTableSchema;
 + (id)mailboxesTableSchema;

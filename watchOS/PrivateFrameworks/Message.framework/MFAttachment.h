@@ -25,6 +25,7 @@
     struct CGSize _imageDimensions;
 }
 
++ (_Bool)isSinglePagePDF:(id)arg1;
 @property(nonatomic) struct CGSize imageDimensions; // @synthesize imageDimensions=_imageDimensions;
 @property(nonatomic) _Bool wantsCompletionBlockOffMainThread; // @synthesize wantsCompletionBlockOffMainThread=_wantsCompletionBlockOffMainThread;
 @property(retain, nonatomic) id <MFDataConsumer> customConsumer; // @synthesize customConsumer=_customConsumer;
@@ -53,6 +54,8 @@
 - (_Bool)isCached;
 @property(nonatomic) unsigned int encodedFileSize;
 @property(nonatomic) unsigned int decodedFileSize;
+- (_Bool)isSinglePagePDFFile;
+- (_Bool)_isSinglePagePDFFileFetchLocalData:(_Bool)arg1;
 @property(copy, nonatomic) NSString *mimeType; // @dynamic mimeType;
 @property(copy) NSString *contentID;
 - (id)attachmentContentTypeForFileName:(id)arg1;
@@ -62,6 +65,7 @@
 @property(copy, nonatomic) NSString *remoteImageFileName;
 @property(copy, nonatomic) NSString *fileName; // @dynamic fileName;
 - (id)fileNameByStrippingZipIfNeeded:(_Bool)arg1;
+- (_Bool)isPDFFile;
 @property(readonly, nonatomic) _Bool isMediaFile;
 @property(readonly, nonatomic) _Bool isVideoFile;
 @property(readonly, nonatomic) _Bool isImageFile;

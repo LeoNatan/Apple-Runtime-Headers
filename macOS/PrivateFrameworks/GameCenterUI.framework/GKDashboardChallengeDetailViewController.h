@@ -6,7 +6,7 @@
 
 #import <GameCenterUI/GKDetailViewController.h>
 
-@class GKAchievementIconView, GKChallenge, GKPlayerWithSpeechBalloonView, NSLayoutConstraint, NSTextField, UIButton;
+@class GKAchievementIconView, GKChallenge, GKPlayerWithSpeechBalloonView, NSButton, NSLayoutConstraint, NSTextField;
 
 @interface GKDashboardChallengeDetailViewController : GKDetailViewController
 {
@@ -17,8 +17,8 @@
     NSTextField *_titleLabel;
     NSTextField *_descriptionLabel;
     NSTextField *_fromLabel;
-    UIButton *_playButton;
-    UIButton *_declineButton;
+    NSButton *_playButton;
+    NSButton *_declineButton;
     GKPlayerWithSpeechBalloonView *_playerSpeechView;
     NSLayoutConstraint *_topConstraint;
     double _topMargin;
@@ -31,8 +31,8 @@
 @property(nonatomic) double topMargin; // @synthesize topMargin=_topMargin;
 @property(nonatomic) NSLayoutConstraint *topConstraint; // @synthesize topConstraint=_topConstraint;
 @property(nonatomic) GKPlayerWithSpeechBalloonView *playerSpeechView; // @synthesize playerSpeechView=_playerSpeechView;
-@property(nonatomic) UIButton *declineButton; // @synthesize declineButton=_declineButton;
-@property(nonatomic) UIButton *playButton; // @synthesize playButton=_playButton;
+@property(nonatomic) NSButton *declineButton; // @synthesize declineButton=_declineButton;
+@property(nonatomic) NSButton *playButton; // @synthesize playButton=_playButton;
 @property(nonatomic) NSTextField *fromLabel; // @synthesize fromLabel=_fromLabel;
 @property(nonatomic) NSTextField *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(nonatomic) NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;

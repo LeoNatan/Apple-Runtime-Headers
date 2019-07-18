@@ -14,13 +14,12 @@
 {
     HDMCProfileExtension *_profileExtension;
     HKMCAnalysis *_analysis;
-    _Bool _shouldForceAnalysis;
-    _Bool _didForceAnalysis;
 }
 
 + (id)requiredEntitlements;
 + (Class)queryClass;
 - (void).cxx_destruct;
+- (void)_handleAnalysis:(id)arg1;
 - (void)analysisManager:(id)arg1 didUpdateAnalysis:(id)arg2;
 - (void)_queue_stop;
 - (void)_queue_start;

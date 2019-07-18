@@ -16,6 +16,7 @@
 @property(readonly, nonatomic) NSObject<OS_nw_path> *networkPath; // @synthesize networkPath=_networkPath;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
+- (id)redactedDescription;
 - (id)description;
 @property(readonly, nonatomic, getter=isConstrained) BOOL constrained;
 @property(readonly, nonatomic, getter=isCellular) BOOL cellular;

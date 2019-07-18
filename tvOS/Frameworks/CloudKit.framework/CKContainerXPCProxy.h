@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <CloudKit/CKXPCClient-Protocol.h>
+#import <CloudKit/CKXPCDiscretionaryClient-Protocol.h>
 
 @class CKContainer, NSString;
 
 __attribute__((visibility("hidden")))
-@interface CKContainerXPCProxy : NSObject <CKXPCClient>
+@interface CKContainerXPCProxy : NSObject <CKXPCClient, CKXPCDiscretionaryClient>
 {
     CKContainer *_container;
 }
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)handleOperationStatistics:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2;
+- (void)cancelOperationID:(id)arg1;
 - (id)initWithContainer:(id)arg1;
 
 // Remaining properties

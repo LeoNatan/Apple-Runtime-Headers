@@ -26,6 +26,7 @@
     _Bool _isDisplayLayoutElementActive;
     SBUIKeyboardHomeAffordanceAssertion *_keyboardHomeAffordanceAssertion;
     UIWindow *_keyboardHomeAffordanceAssertionWindow;
+    UIView *_presentationBackgroundView;
     long long _presentationPrefersHomeGrabberHidden;
     UIStatusBar *_statusBar;
     long long _keyboardVisible;
@@ -95,10 +96,13 @@
 - (void)_updateGrabberViewHiddenConfigurationAnimated:(_Bool)arg1;
 - (void)_updateGrabberViewConfiguration;
 - (void)_invalidateKeyboardHomeAffordanceAssertion;
+- (struct CGRect)_currentStatusBarFrameForStyle:(long long)arg1;
 - (void)_applyStatusBarStyleRequestWithInitialStatusBarSettings:(id)arg1;
 - (id)_newHomeGrabberViewWithFrame:(struct CGRect)arg1;
 - (void)_keyboardWillShowNotification:(id)arg1;
 - (void)_keyboardWillHideNotification:(id)arg1;
+- (void)removePresentationBackgroundView:(id)arg1;
+- (void)addPresentationBackgroundView:(id)arg1;
 - (void)setPresentationPrefersStatusBarHidden:(_Bool)arg1 initialStatusBarSettings:(id)arg2;
 - (void)setPresentationPrefersHomeGrabberHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setNeedsSceneDeactivationUpdate;
@@ -112,6 +116,7 @@
 - (void)preserveInputViewsAnimated:(_Bool)arg1;
 - (id)newTransientOverlayPresentationTransitionCoordinator;
 - (id)newTransientOverlayDismissalTransitionCoordinator;
+- (void)handlePictureInPictureDidBegin;
 - (_Bool)handleDoubleHeightStatusBarTap;
 - (void)endIgnoringContentOverlayInsetUpdates;
 - (void)beginIgnoringContentOverlayInsetUpdates;

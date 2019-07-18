@@ -17,6 +17,7 @@
     unsigned char _rssiIndex;
     BOOL _insideBubble;
     BOOL _paired;
+    BOOL _tempPaired;
     BOOL _triggered;
     int _rssiEstimate;
     unsigned int _connectedServices;
@@ -43,6 +44,7 @@
 + (BOOL)supportsSecureCoding;
 + (void)setRSSIEstimatorInfo:(id)arg1;
 @property(nonatomic) BOOL triggered; // @synthesize triggered=_triggered;
+@property(nonatomic) BOOL tempPaired; // @synthesize tempPaired=_tempPaired;
 @property(retain, nonatomic) SFProximityEstimator *setupProximityEstimator; // @synthesize setupProximityEstimator=_setupProximityEstimator;
 @property(retain, nonatomic) SFProximityEstimator *proxPairProximityEstimator; // @synthesize proxPairProximityEstimator=_proxPairProximityEstimator;
 @property(nonatomic) unsigned int productID2; // @synthesize productID2=_productID2;

@@ -20,6 +20,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofOtherSetting:(unsigned long long)arg3;
 - (id)keyDescriptionForOtherSetting:(unsigned long long)arg1;
+@property(readonly, nonatomic) long long sceneActivationBias;
 @property(readonly, nonatomic) NSData *activationConditionsData;
 @property(readonly, nonatomic) BOOL shouldHideHostWindow;
 @property(readonly, copy, nonatomic) NSString *canvasTitle;

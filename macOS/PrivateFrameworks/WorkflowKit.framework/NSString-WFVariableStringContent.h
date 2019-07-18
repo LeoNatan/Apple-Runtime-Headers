@@ -9,6 +9,8 @@
 #import <WorkflowKit/WFVariableStringContent-Protocol.h>
 
 @interface NSString (WFVariableStringContent) <WFVariableStringContent>
+- (unsigned long long)wf_lengthInVariableString;
+- (void)wf_getContentItemsWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)wf_isEmpty;
 - (id)wf_trimmedString;
 

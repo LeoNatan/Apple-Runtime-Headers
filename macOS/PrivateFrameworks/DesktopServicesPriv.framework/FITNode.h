@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (oneway void)releaseUnderMonitor;
 - (void *)asTNode;
--     // Error parsing type: ^{TNode={atomic<int>=Ai}^{TNode}{shared_ptr<TFSVolumeInfo>=^{TFSVolumeInfo}^{__shared_weak_count}}{shared_ptr<TFSInfo>=^{TFSInfo}^{__shared_weak_count}}^{TChildrenList}{TNodePtr=^{TNode}}^v^{TNotifierList}{shared_ptr<TOperationLock>=^{TOperationLock}^{__shared_weak_count}}CBBBBBB{TNSRef<TFPItemProgressObserver, void>=@}{TNSRef<TFPItemProgressObserver, void>=@}}16@0:8, name: asTNodeObject
+-     // Error parsing type: ^{TNode={atomic<int>=Ai}^{TNode}{shared_ptr<TFSVolumeInfo>=^{TFSVolumeInfo}^{__shared_weak_count}}{shared_ptr<TFSInfo>=^{TFSInfo}^{__shared_weak_count}}^{TChildrenList}{TNodePtr=^{TNode}}^v^{TNotifierList}{shared_ptr<TOperationLock>=^{TOperationLock}^{__shared_weak_count}}CBBBBBB{TNSRef<DS_TFPItemProgressObserver, void>=@}{TNSRef<DS_TFPItemProgressObserver, void>=@}}16@0:8, name: asTNodeObject
 - (void)dealloc;
 - (void)deleteTNode;
 

@@ -21,6 +21,7 @@
     unsigned int _requestedDefaultActionMenu;
 }
 
++ (id)singleNotificationPerAlertForBulletin:(id)arg1;
 + (id)appBundleIdentifierForBulletin:(id)arg1;
 + (id)appBundleIdentifierOverrideForBulletin:(id)arg1;
 + (_Bool)sendBulletinsToApp:(id)arg1;

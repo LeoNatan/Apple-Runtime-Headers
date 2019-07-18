@@ -7,6 +7,7 @@
 #import <MIME/MFMessageStore.h>
 
 @class MFActivityMonitor, MFMailboxUid, MailAccount;
+@protocol EFScheduler;
 
 @interface MFMailMessageStore : MFMessageStore
 {
@@ -31,6 +32,7 @@
     unsigned int _generationNumber;
     unsigned int _lastFetchCount;
     MFActivityMonitor *_openMonitor;
+    id <EFScheduler> _calculateAttachmentScheduler;
 }
 
 + (Class)headersClass;
@@ -38,6 +40,7 @@
 + (_Bool)storeAtPathIsWritable:(id)arg1;
 + (_Bool)createEmptyStoreForPath:(id)arg1;
 + (_Bool)createEmptyStoreIfNeededForPath:(id)arg1;
+@property(readonly, nonatomic) id <EFScheduler> calculateAttachmentScheduler; // @synthesize calculateAttachmentScheduler=_calculateAttachmentScheduler;
 - (void).cxx_destruct;
 - (unsigned int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2;
 - (id)messageIdRollCall:(id)arg1;
@@ -142,7 +145,9 @@
 - (void)didOpen;
 - (void)openSynchronously;
 - (void)openAsynchronously;
+- (void)_commonInit;
 - (id)initWithMailboxUid:(id)arg1 readOnly:(_Bool)arg2;
+- (id)init;
 
 @end
 

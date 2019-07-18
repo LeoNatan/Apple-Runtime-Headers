@@ -24,9 +24,6 @@
 - (void)devicesDiscovered:(id)arg1;
 - (void)deviceDiscovered:(id)arg1;
 - (void)stateDidChange:(long long)arg1;
-- (void)updateAdvertisingKeys:(id)arg1;
-- (void)stopAdvertising;
-- (void)startAdvertising;
 - (void)stopScanning;
 - (void)startScanningWithMode:(long long)arg1;
 - (void)startScanning;
@@ -35,9 +32,12 @@
 - (id)init;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)updateNearOwnerTokens:(id)arg1;
+- (void)updateBeaconingExtended:(id)arg1;
+- (void)updateBeaconingStatus:(id)arg1;
 - (void)updateBeaconingKeys:(id)arg1;
-- (void)stopBeaconing;
-- (void)startBeaconing;
+- (void)updateBeaconingState:(id)arg1;
+- (void)stopTest;
+- (void)startTest;
 - (void)receivedTestResponse:(id)arg1;
 
 @end

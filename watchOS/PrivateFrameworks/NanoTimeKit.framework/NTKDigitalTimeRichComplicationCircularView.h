@@ -13,6 +13,7 @@
     NTKDigitalTimeLabel *_timeLabel;
 }
 
++ (unsigned int)timelineAnimationFadeType;
 - (void).cxx_destruct;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;

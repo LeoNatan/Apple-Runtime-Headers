@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)isAdministrativeGuardianFamilyMember:(id)arg1;
 + (_Bool)isDelegateChildFamilyMember:(id)arg1;
 
 @end

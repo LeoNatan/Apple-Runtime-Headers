@@ -55,6 +55,7 @@
 - (void)dismissUserDefaults;
 - (void)doneEditingUserDefaults;
 - (void)editUserDefaults;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithFavoritesProxies:(id)arg1 suggestionProxies:(id)arg2 activitiesByUUID:(id)arg3 activityCategory:(long long)arg4;
 - (id)initWithActivities:(id)arg1 userDefaults:(id)arg2;

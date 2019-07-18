@@ -9,15 +9,17 @@
 #import <HearingUI/HACCContentModuleDelegate-Protocol.h>
 #import <HearingUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class AXRemoteHearingAidDevice, CCUIContentModuleContext, HACCContentViewController, NSMutableArray, NSMutableDictionary, NSString, UIScrollView;
+@class AXDispatchTimer, AXRemoteHearingAidDevice, CCUIContentModuleContext, HACCContentViewController, NSMutableArray, NSMutableDictionary, NSString, UIScrollView;
 @protocol AXHAShortcutUpdateProtocol;
 
 @interface HACCShortcutViewController : UIViewController <UIGestureRecognizerDelegate, HACCContentModuleDelegate>
 {
     double _dismissalGestureYOffset;
     struct CGPoint _backgroundViewDismissalOrigin;
+    AXDispatchTimer *_bluetoothAvailabilityTimer;
     _Bool _expanded;
     _Bool _bluetoothAvailable;
+    _Bool _listeningForUpdates;
     id <AXHAShortcutUpdateProtocol> _delegate;
     HACCContentViewController *_expandedController;
     CCUIContentModuleContext *_contentModuleContext;
@@ -29,6 +31,7 @@
     AXRemoteHearingAidDevice *_currentHearingDevice;
 }
 
+@property(nonatomic) _Bool listeningForUpdates; // @synthesize listeningForUpdates=_listeningForUpdates;
 @property(nonatomic) _Bool bluetoothAvailable; // @synthesize bluetoothAvailable=_bluetoothAvailable;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 @property(retain, nonatomic) AXRemoteHearingAidDevice *currentHearingDevice; // @synthesize currentHearingDevice=_currentHearingDevice;
@@ -41,8 +44,6 @@
 @property(nonatomic) __weak HACCContentViewController *expandedController; // @synthesize expandedController=_expandedController;
 @property(nonatomic) __weak id <AXHAShortcutUpdateProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)content:(id)arg1 shouldPreview:(_Bool)arg2 withController:(id)arg3 andCompletion:(CDUnknownBlockType)arg4;
-- (_Bool)animateAlongsideTransition:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setAlpha:(double)arg1 forAllModulesExcept:(id)arg2;
 - (void)controlDidActivate:(id)arg1;
 - (void)updateViewForProperties:(id)arg1;
@@ -61,6 +62,7 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)listenForUpdates;
 - (void)viewDidLoad;
 - (id)initWithDelegate:(id)arg1;
 

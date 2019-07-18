@@ -16,7 +16,7 @@
     QLExtensionManagerCache *_thumbnailHighMemoryExtensionCache;
 }
 
-+ (id)supportedContentTypesForExtension:(id)arg1;
++ (_Bool)extension:(id)arg1 supportsExactType:(id)arg2;
 + (void)_resetSharedManager;
 + (void)_setSharedManager:(id)arg1;
 + (id)sharedManager;

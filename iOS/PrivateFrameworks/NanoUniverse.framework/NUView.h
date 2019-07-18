@@ -9,7 +9,7 @@
 #import <NanoUniverse/CLKUIQuadViewDelegate-Protocol.h>
 #import <NanoUniverse/CLKUIResourceProviderDelegate-Protocol.h>
 
-@class CLKDevice, CLKUIQuadView, CLKUIResourceProviderKey, NSBundle, NSString, NUGLQuad, NUResources, NUScene;
+@class CLKDevice, CLKUIQuadView, CLKUIResourceProviderKey, NSBundle, NSString, NUMetalQuad, NUResources, NUScene;
 @protocol NUViewDelegate;
 
 @interface NUView : UIView <CLKUIQuadViewDelegate, CLKUIResourceProviderDelegate>
@@ -18,7 +18,7 @@
     CLKUIQuadView *_quadView;
     CLKUIResourceProviderKey *_resourceProviderKey;
     NUResources *_resources;
-    NUGLQuad *_quad;
+    NUMetalQuad *_quad;
     NSBundle *_bundle;
     id <NUViewDelegate> _delegate;
 }
@@ -35,6 +35,7 @@
 - (void)setAnimationFrameInterval:(int)arg1;
 - (void)layoutSubviews;
 - (void)setOpaque:(_Bool)arg1;
+- (id)quadView;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

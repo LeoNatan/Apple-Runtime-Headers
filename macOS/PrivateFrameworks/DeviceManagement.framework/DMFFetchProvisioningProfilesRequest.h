@@ -8,12 +8,17 @@
 
 @interface DMFFetchProvisioningProfilesRequest : DMFTaskRequest
 {
+    BOOL _managedOnly;
 }
 
++ (BOOL)supportsSecureCoding;
 + (BOOL)isPermittedOnUserConnection;
 + (BOOL)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
+@property(nonatomic) BOOL managedOnly; // @synthesize managedOnly=_managedOnly;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

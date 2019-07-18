@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/NSCopying-Protocol.h>
+#import <UIKitCore/_UINavigationBarTransitionContextParticipant-Protocol.h>
 
-@class NSArray, NSMutableArray, UILabel, UISearchBar, UIView, _UIBarBackground, _UIBarBackgroundLayout, _UIBarInsertLayoutData, _UINavigationBarContentView, _UINavigationBarContentViewLayout, _UINavigationBarLargeTitleView, _UINavigationBarLargeTitleViewLayout, _UINavigationBarModernPromptView, _UINavigationBarPalette;
+@class NSArray, NSMutableArray, NSString, UILabel, UISearchBar, UIView, _UIBarBackground, _UIBarBackgroundLayout, _UIBarInsertLayoutData, _UINavigationBarContentView, _UINavigationBarContentViewLayout, _UINavigationBarLargeTitleView, _UINavigationBarLargeTitleViewLayout, _UINavigationBarModernPromptView, _UINavigationBarPalette;
 
 __attribute__((visibility("hidden")))
-@interface _UINavigationBarLayout : NSObject <NSCopying>
+@interface _UINavigationBarLayout : NSObject <NSCopying, _UINavigationBarTransitionContextParticipant>
 {
     _UIBarInsertLayoutData *_promptLayoutData;
     _UIBarInsertLayoutData *_contentLayoutData;
@@ -80,7 +81,12 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UINavigationBarContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) _UINavigationBarModernPromptView *promptView; // @synthesize promptView=_promptView;
 - (void).cxx_destruct;
-- (id)description;
+- (void)finalizeStateFromTransition:(id)arg1;
+- (void)ensureBackButtonTruncationOccursWithContext:(id)arg1;
+- (void)recordToStateForTransition:(id)arg1;
+- (void)prepareToRecordToState:(id)arg1;
+- (void)recordFromStateForTransition:(id)arg1;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) CDStruct_869f9c67 layoutHeights;
 @property(readonly, copy, nonatomic) NSArray *restingHeights;
 - (id)layoutForMeasuringWidth:(float)arg1;
@@ -107,6 +113,7 @@ __attribute__((visibility("hidden")))
 - (void)updateLayout;
 - (void)_updateLayoutOutputs;
 - (void)_updateLayoutParametersForWidth:(float)arg1;
+- (void)_updateLargeTitleViewLayoutItem;
 - (void)_resolveContentAndCanvasLayouts;
 - (void)_reprioritizeLayoutItem:(id)arg1 toPriority:(int)arg2;
 - (void)_removeLayoutItem:(id)arg1;
@@ -114,6 +121,11 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 - (id)initWithLayout:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

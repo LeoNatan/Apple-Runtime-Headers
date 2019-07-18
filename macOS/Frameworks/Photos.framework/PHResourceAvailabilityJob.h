@@ -6,12 +6,14 @@
 
 #import <PhotoLibraryServices/PLDaemonJob.h>
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, NSMutableSet;
 
 @interface PHResourceAvailabilityJob : PLDaemonJob
 {
     NSMutableArray *_requests;
     NSArray *_cancelledRequestIdentifiers;
+    NSMutableSet *_unsentRequestIdentifiers;
+    struct os_unfair_lock_s _lock;
 }
 
 - (void).cxx_destruct;

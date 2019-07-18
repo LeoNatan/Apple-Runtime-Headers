@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 + (id)cellForRow:(long long)arg1 tableColumn:(id)arg2;
 + (id)cellForRow:(long long)arg1 column:(long long)arg2 tableView:(id)arg3;
 - (id)deepestAccessibilityDescendants;
+- (id)accessibilityCustomActions;
 - (void)accessibilityPerformAction:(id)arg1;
 - (id)accessibilityActionDescription:(id)arg1;
 - (id)accessibilityActionNames;

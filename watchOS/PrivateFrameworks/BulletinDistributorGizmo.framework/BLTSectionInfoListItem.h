@@ -6,18 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class BBSectionInfo, NSString;
+@class NSString;
 
 @interface BLTSectionInfoListItem : NSObject
 {
-    BBSectionInfo *_sectionInfo;
     NSString *_universalSectionID;
-    NSString *_displayName;
 }
 
-@property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *universalSectionID; // @synthesize universalSectionID=_universalSectionID;
-@property(retain, nonatomic) BBSectionInfo *sectionInfo; // @synthesize sectionInfo=_sectionInfo;
 - (void).cxx_destruct;
 
 @end

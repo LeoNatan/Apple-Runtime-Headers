@@ -27,6 +27,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSPDocumentResourceCache *documentResourceCache; // @synthesize documentResourceCache=_documentResourceCache;
 - (void).cxx_destruct;
 - (id)newDataStorageForDocumentResourceInfo:(id)arg1 createResourceRequestIfNeeded:(_Bool)arg2 error:(id *)arg3;
+- (id)performResourceAccessUsingQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void)conditionallyBeginAccessingResourcesWithCompletionQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeResourceRequests:(id)arg1;
 - (void)accessQueue_addResourceRequest:(id)arg1;
 - (void)addResourceRequests:(id)arg1;

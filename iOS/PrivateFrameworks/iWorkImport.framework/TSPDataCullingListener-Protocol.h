@@ -6,10 +6,10 @@
 
 #import <iWorkImport/NSObject-Protocol.h>
 
-@class TSPData;
+@class TSPDataUniqueIdentifier;
 
 @protocol TSPDataCullingListener <NSObject>
-- (void)didReplaceContentsOfData:(TSPData *)arg1;
-- (void)willCullData:(TSPData *)arg1;
+- (void)didReplaceContentsOfDataWithUniqueIdentifier:(TSPDataUniqueIdentifier *)arg1 flags:(unsigned long long)arg2;
+- (void)willCullDataWithUniqueIdentifier:(TSPDataUniqueIdentifier *)arg1 flags:(unsigned long long)arg2;
 @end
 

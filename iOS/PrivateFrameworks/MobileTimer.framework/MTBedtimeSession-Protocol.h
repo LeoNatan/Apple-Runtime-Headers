@@ -10,14 +10,12 @@
 @class NSArray, NSDate, NSDictionary;
 
 @protocol MTBedtimeSession <NSSecureCoding, NSObject>
+@property(readonly, nonatomic) _Bool needsAdditionalProcessing;
 @property(readonly, nonatomic) unsigned long long endReason;
 @property(readonly, nonatomic) NSDictionary *metadata;
 @property(readonly, nonatomic) long long sampleType;
 @property(readonly, nonatomic) NSArray *intervals;
 @property(readonly, nonatomic) NSDate *endDate;
 @property(readonly, nonatomic) NSDate *startDate;
-
-@optional
-@property(readonly, nonatomic) _Bool needsAdditionalProcessing;
 @end
 

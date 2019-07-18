@@ -6,9 +6,9 @@
 
 #import <HealthMenstrualCycles/HKQueryClientInterface-Protocol.h>
 
-@class NSArray, NSUUID;
+@class NSArray, NSNumber, NSUUID;
 
 @protocol HKMCDaySummaryQueryClientInterface <HKQueryClientInterface>
-- (void)client_deliverDaySummaries:(NSArray *)arg1 clearPending:(_Bool)arg2 isFinalBatch:(_Bool)arg3 queryUUID:(NSUUID *)arg4;
+- (void)client_deliverDaySummaries:(NSArray *)arg1 clearPending:(_Bool)arg2 isFinalBatch:(_Bool)arg3 analysisAnchor:(NSNumber *)arg4 queryUUID:(NSUUID *)arg5;
 @end
 

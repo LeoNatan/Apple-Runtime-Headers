@@ -8,15 +8,19 @@
 
 #import <NotesUI/NSCopying-Protocol.h>
 
-@class NSString, UIColor;
+@class ICAppearanceInfo, NSString, UIColor;
 
 @interface ICLetterpressImageCacheKey : NSObject <NSCopying>
 {
     double _scale;
     UIColor *_tintColor;
     NSString *_name;
+    unsigned long long _version;
+    ICAppearanceInfo *_appearanceInfo;
 }
 
+@property(readonly, nonatomic) ICAppearanceInfo *appearanceInfo; // @synthesize appearanceInfo=_appearanceInfo;
+@property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
@@ -24,7 +28,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithName:(id)arg1 tintColor:(id)arg2 scale:(double)arg3;
+- (id)initWithName:(id)arg1 tintColor:(id)arg2 scale:(double)arg3 appearanceInfo:(id)arg4 version:(unsigned long long)arg5;
 
 @end
 

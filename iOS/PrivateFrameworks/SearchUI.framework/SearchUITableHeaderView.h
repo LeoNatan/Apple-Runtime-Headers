@@ -14,6 +14,8 @@
 @interface SearchUITableHeaderView : UITableViewHeaderFooterView <NUIContainerViewDelegate>
 {
     _Bool _shouldUseInsetRoundedSections;
+    _Bool _shouldUseStandardSectionInsets;
+    _Bool _useShorterHeaders;
     _Bool _usesInsetRoundedSections;
     id <SearchUITableHeaderViewDelegate> _delegate;
     id <SFFeedbackListener> _feedbackListener;
@@ -31,6 +33,8 @@
 @property(retain, nonatomic) TLKTextButton *headerOptionButton; // @synthesize headerOptionButton=_headerOptionButton;
 @property(retain, nonatomic) UIView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) TLKLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(nonatomic) _Bool useShorterHeaders; // @synthesize useShorterHeaders=_useShorterHeaders;
+@property(nonatomic) _Bool shouldUseStandardSectionInsets; // @synthesize shouldUseStandardSectionInsets=_shouldUseStandardSectionInsets;
 @property(nonatomic) _Bool shouldUseInsetRoundedSections; // @synthesize shouldUseInsetRoundedSections=_shouldUseInsetRoundedSections;
 @property(retain, nonatomic) SFResultSection *section; // @synthesize section=_section;
 @property(nonatomic) unsigned long long headerType; // @synthesize headerType=_headerType;

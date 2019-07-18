@@ -35,7 +35,7 @@
 - (void)_addObserver:(id)arg1;
 - (void)_unblockExecutionForFutureAccountChange;
 - (void)_blockExecutionForOnGoingAccountChangeIfNeeded;
-- (id)initWithAccountInfo:(id)arg1 accountChangeObserver:(id)arg2 lockManager:(id)arg3;
+- (id)initWithAccountChangeObserver:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)terminateForFailureToPerformDatabasePathChange;
 - (void)emergencyDisconnectWithCompletion:(CDUnknownBlockType)arg1;

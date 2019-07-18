@@ -8,7 +8,7 @@
 
 #import <SAObjects/SAAceSerializable-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, SAHomeMemberSettings;
 
 @interface SAHomeMemberInfo : AceObject <SAAceSerializable>
 {
@@ -19,6 +19,9 @@
 @property(copy, nonatomic) NSString *speechId;
 @property(copy, nonatomic) NSString *sharedUserId;
 @property(copy, nonatomic) NSString *loggableSharedUserId;
+@property(copy, nonatomic) NSString *loggableMultiUserSharedUserId;
+@property(copy, nonatomic) NSString *loggableCompanionAssistantId;
+@property(retain, nonatomic) SAHomeMemberSettings *homeMemberSettings;
 @property(copy, nonatomic) NSString *enrollmentName;
 @property(copy, nonatomic) NSString *companionSpeechId;
 @property(copy, nonatomic) NSString *companionAssistantId;

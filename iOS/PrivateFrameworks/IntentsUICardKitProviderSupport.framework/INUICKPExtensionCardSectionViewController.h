@@ -13,6 +13,7 @@
 
 @interface INUICKPExtensionCardSectionViewController : INUICKPSynchronousRemoteViewController <CRKCardSectionViewControlling>
 {
+    id _touchDeliveryPolicyAssertion;
     id <CRKCardSectionViewControllingDelegate> _cardSectionViewControllingDelegate;
 }
 

@@ -6,9 +6,11 @@
 
 #import <FileProvider/FPQueryCollection.h>
 
+#import <FileProvider/FPSearchQueryResultsProviding-Protocol.h>
+
 @class NSFileProviderSearchQuery;
 
-@interface FPSearchCollection : FPQueryCollection
+@interface FPSearchCollection : FPQueryCollection <FPSearchQueryResultsProviding>
 {
 }
 

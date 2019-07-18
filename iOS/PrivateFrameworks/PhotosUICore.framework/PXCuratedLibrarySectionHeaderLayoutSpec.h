@@ -14,8 +14,10 @@
     _Bool _showAspectFitButtons;
     _Bool _wantsTitle;
     _Bool _wantsSubtitle;
+    _Bool _shouldOmitYear;
     _Bool _shouldAvoidOverlapWithSecondaryToolbar;
     _Bool _wantsInlineHeader;
+    _Bool _requiresTitleRenderedAsView;
     _Bool _swapTitleWithSubtitle;
     _Bool _shouldFadeOutWhenReachingTop;
     _Bool _shouldAccomdateAccessibilityButtonLayout;
@@ -56,6 +58,7 @@
 @property(nonatomic) _Bool shouldFadeOutWhenReachingTop; // @synthesize shouldFadeOutWhenReachingTop=_shouldFadeOutWhenReachingTop;
 @property(nonatomic) _Bool swapTitleWithSubtitle; // @synthesize swapTitleWithSubtitle=_swapTitleWithSubtitle;
 @property(nonatomic) unsigned long long inlineHeaderStyle; // @synthesize inlineHeaderStyle=_inlineHeaderStyle;
+@property(nonatomic) _Bool requiresTitleRenderedAsView; // @synthesize requiresTitleRenderedAsView=_requiresTitleRenderedAsView;
 @property(nonatomic) _Bool wantsInlineHeader; // @synthesize wantsInlineHeader=_wantsInlineHeader;
 @property(copy, nonatomic) PXTitleSubtitleLabelSpec *debugNonInterestingTitleSubtitleLabelSpec; // @synthesize debugNonInterestingTitleSubtitleLabelSpec=_debugNonInterestingTitleSubtitleLabelSpec;
 @property(copy, nonatomic) PXTitleSubtitleLabelSpec *debugInterestingTitleSubtitleLabelSpec; // @synthesize debugInterestingTitleSubtitleLabelSpec=_debugInterestingTitleSubtitleLabelSpec;
@@ -63,6 +66,7 @@
 @property(nonatomic) _Bool shouldAvoidOverlapWithSecondaryToolbar; // @synthesize shouldAvoidOverlapWithSecondaryToolbar=_shouldAvoidOverlapWithSecondaryToolbar;
 @property(nonatomic) struct UIEdgeInsets titlePadding; // @synthesize titlePadding=_titlePadding;
 @property(nonatomic) struct UIEdgeInsets contentPadding; // @synthesize contentPadding=_contentPadding;
+@property(nonatomic) _Bool shouldOmitYear; // @synthesize shouldOmitYear=_shouldOmitYear;
 @property(nonatomic) _Bool wantsSubtitle; // @synthesize wantsSubtitle=_wantsSubtitle;
 @property(nonatomic) _Bool wantsTitle; // @synthesize wantsTitle=_wantsTitle;
 @property(nonatomic) _Bool showAspectFitButtons; // @synthesize showAspectFitButtons=_showAspectFitButtons;

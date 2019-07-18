@@ -34,6 +34,7 @@
 - (id)_reorderButtonActions;
 - (long long)_keyboardTypeFor:(long long)arg1;
 - (id)_handleResponseForNote:(struct __CFUserNotification *)arg1 buttonActions:(id)arg2 keys:(struct ButtonKey *)arg3;
+- (long long)_defaultButtonIndexForActions:(id)arg1;
 - (struct __CFUserNotification *)_createNotificationFromDictionary:(struct __CFDictionary *)arg1 options:(unsigned long long)arg2;
 - (struct __CFDictionary *)_createNoteDictionaryWithKeys:(struct ButtonKey *)arg1 buttonActions:(id)arg2 outOptions:(unsigned long long *)arg3;
 - (id)present;

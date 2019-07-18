@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)toggleInstallExtensionUpdatesAutomatically:(id)arg1;
 - (void)initializeFromDefaults;
 - (void)openExtensionsGallery:(id)arg1;
-- (id)helpAnchor;
+- (id)safariHelpAnchor;
 - (void)resizeWindowToEnabledHeight;
 - (void)resizeWindowToDisabledHeight;
 - (void)_resizeWindowToContentHeight:(double)arg1;

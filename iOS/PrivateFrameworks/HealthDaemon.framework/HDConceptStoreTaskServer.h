@@ -10,36 +10,30 @@
 #import <HealthDaemon/HDHealthOntologyManagerObserver-Protocol.h>
 #import <HealthDaemon/HKConceptStoreServerInterface-Protocol.h>
 
-@class NSObject, NSString;
-@protocol OS_dispatch_queue;
+@class NSString;
 
 @interface HDConceptStoreTaskServer : HDStandardTaskServer <HDHealthOntologyManagerObserver, HDConceptIndexManagerObserver, HKConceptStoreServerInterface>
 {
-    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (_Bool)validateConfiguration:(id)arg1 error:(id *)arg2;
 + (Class)configurationClass;
 + (id)requiredEntitlements;
 + (id)taskIdentifier;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)conceptIndexManagerDidBecomeQuiescent:(id)arg1 samplesProcessedCount:(long long)arg2;
 - (void)conceptIndexManagerDidChangeExecutionState:(unsigned long long)arg1;
-- (void)remote_resetOntologyDatabaseWithCompletion:(CDUnknownBlockType)arg1;
+- (void)remote_resetOntologyUsingAssetAtLocation:(id)arg1 rememberLocation:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remote_cleanUpAfterUnitTestWithCompletion:(CDUnknownBlockType)arg1;
 - (void)remote_queryNodeNameForAttributeWithKeyID:(id)arg1 value:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)newConceptsAssociatedWithUserRecords:(id)arg1;
-- (void)conceptRecordAssociationCountChanged:(id)arg1;
-- (void)conceptAssociationsRemovedFromUserRecords:(id)arg1;
-- (void)remote_removeAllAssociationsToSamplesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)remote_queryCountOfConceptsAssociatedToUserRecordsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)remote_queryConceptsAssociatedToUserRecordsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)remote_breakAssociationFromSample:(id)arg1 toConcept:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remote_makeAssociationFromSample:(id)arg1 toConcept:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remote_queryRelationshipsForNodeWithID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_queryConceptsByRelationship:(id)arg1 fromNodeWithID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remote_queryConceptsByRelationship:(id)arg1 toNodeWithID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remote_queryConceptsByAttribute:(long long)arg1 withValue:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)remote_queryConceptByExactNameMatch:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)remote_unitTest_queryConceptByExactNameMatch:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_queryConceptByID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_conceptByResolvingContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_ontologyVersionWithCompletion:(CDUnknownBlockType)arg1;

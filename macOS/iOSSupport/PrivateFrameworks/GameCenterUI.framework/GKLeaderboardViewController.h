@@ -16,10 +16,12 @@
     long long _timeScope;
 }
 
-@property(nonatomic) id <GKLeaderboardViewControllerDelegate> leaderboardDelegate; // @synthesize leaderboardDelegate=_leaderboardDelegate;
+@property(nonatomic) __weak id <GKLeaderboardViewControllerDelegate> leaderboardDelegate; // @synthesize leaderboardDelegate=_leaderboardDelegate;
+- (void).cxx_destruct;
 - (BOOL)remoteViewControllerRequestingDismiss:(id)arg1;
 @property(nonatomic) long long timeScope; // @synthesize timeScope=_timeScope;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
+- (void)dealloc;
 - (id)init;
 
 @end

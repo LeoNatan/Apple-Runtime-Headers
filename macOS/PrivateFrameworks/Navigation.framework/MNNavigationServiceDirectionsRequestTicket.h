@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class GEODirectionsRequest, GEODirectionsResponse, MNDirectionsRequestDetails, MNTraceRecordingData, NSUUID;
-@protocol MNNavigationServiceProxy;
+@class GEODirectionsRequest, GEODirectionsResponse, MNDirectionsRequestDetails, MNNavigationClientProxy, MNTraceRecordingData, NSUUID;
 
 @interface MNNavigationServiceDirectionsRequestTicket : NSObject
 {
     NSUUID *_requestIdentifier;
-    id <MNNavigationServiceProxy> _proxy;
+    MNNavigationClientProxy *_proxy;
     MNDirectionsRequestDetails *_request;
     GEODirectionsRequest *_directionsRequest;
     GEODirectionsResponse *_directionsResponse;

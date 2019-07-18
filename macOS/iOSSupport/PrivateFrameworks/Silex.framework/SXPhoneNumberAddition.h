@@ -12,7 +12,6 @@
 {
 }
 
-+ (void)load;
 - (id)action;
 
 // Remaining properties

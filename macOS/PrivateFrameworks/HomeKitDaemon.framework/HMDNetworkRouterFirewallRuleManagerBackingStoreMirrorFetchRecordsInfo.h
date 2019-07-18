@@ -6,17 +6,17 @@
 
 #import <HomeKitDaemon/HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper.h>
 
-@class CKRecordID, CKRecordZoneID, NSArray, NSMutableArray;
+@class CKRecordID, CKRecordZoneID, NSArray, NSMutableSet;
 
 @interface HMDNetworkRouterFirewallRuleManagerBackingStoreMirrorFetchRecordsInfo : HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper
 {
     CKRecordZoneID *_zoneID;
     CKRecordID *_recordID;
     NSArray *_desiredKeys;
-    NSMutableArray *_records;
+    NSMutableSet *_records;
 }
 
-@property(readonly, nonatomic) NSMutableArray *records; // @synthesize records=_records;
+@property(readonly, nonatomic) NSMutableSet *records; // @synthesize records=_records;
 @property(readonly, nonatomic) NSArray *desiredKeys; // @synthesize desiredKeys=_desiredKeys;
 @property(readonly, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(readonly, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;

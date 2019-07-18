@@ -29,9 +29,10 @@ __attribute__((visibility("hidden")))
     UIPanGestureRecognizer *_panGestureRecognizer;
     UIPanGestureRecognizer *_verticalPanGestureRecognizer;
     _MKOneHandedZoomGestureRecognizer *_oneHandedZoomGestureRecognizer;
-    _MKConditionalPanGestureRecognizer *_panRotationGestureRecognizer;
+    UIPanGestureRecognizer *_panZoomGestureRecognizer;
+    _MKConditionalPanGestureRecognizer *_conditionalPanRotationGestureRecognizer;
     struct CGPoint _panRotateStartPoint;
-    _MKConditionalPanGestureRecognizer *_panZoomGestureRecognizer;
+    _MKConditionalPanGestureRecognizer *_conditionalPanZoomGestureRecognizer;
     struct CGPoint _panZoomStartPoint;
     UIPanGestureRecognizer *_scaleDragGestureRecognizer;
     UIPanGestureRecognizer *_compassRotationGestureRecognizer;

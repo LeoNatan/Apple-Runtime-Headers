@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSSecureCoding-Protocol.h>
 
-@class GEOComposedRoute, GEOComposedRouteLeg, GEOComposedTransitTripRouteStep, GEOInstructionSet, GEOPBTransitStop, GEOStep, GEOTransitStep, GEOTransitStepUpdate, NSArray, NSString;
+@class GEOComposedRoute, GEOComposedRouteLeg, GEOComposedTransitTripRouteStep, GEOInstructionSet, GEOPBTransitStop, GEOStep, GEOTransitStep, NSArray, NSString;
 @protocol GEOTransitArtworkDataSource;
 
 @interface GEOComposedRouteStep : NSObject <NSSecureCoding>
@@ -23,8 +23,6 @@
     NSString *_maneuverRoadName;
     unsigned int _actualDistance;
     long long _routeLegType;
-    GEOTransitStepUpdate *_stepUpdate;
-    GEOInstructionSet *_mergedInstructions;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -36,7 +34,6 @@
 @property(readonly, nonatomic) unsigned long long stepIndex; // @synthesize stepIndex=_stepIndex;
 @property(readonly, nonatomic) int drivingSide; // @synthesize drivingSide=_drivingSide;
 @property(readonly, nonatomic) GEOStep *geoStep; // @synthesize geoStep=_geoStep;
-@property(readonly, nonatomic) GEOTransitStepUpdate *stepUpdate; // @synthesize stepUpdate=_stepUpdate;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -45,8 +42,6 @@
 @property(readonly, nonatomic) id <GEOTransitArtworkDataSource> routeDetailsSecondaryArtwork;
 @property(readonly, nonatomic) NSArray *routeDetailsPrimaryArtwork;
 @property(readonly, nonatomic) NSArray *steppingArtwork;
-- (void)updateTransitStep:(id)arg1;
-@property(readonly, nonatomic) GEOInstructionSet *originalInstructions;
 @property(readonly, nonatomic) GEOInstructionSet *instructions;
 @property(readonly, nonatomic) GEOTransitStep *transitStep;
 - (id)firstNameOrBranch;

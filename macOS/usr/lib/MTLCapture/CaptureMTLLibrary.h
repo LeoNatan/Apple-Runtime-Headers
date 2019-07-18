@@ -16,14 +16,13 @@
 {
     id <MTLLibrarySPI> _baseObject;
     CaptureMTLDevice *_captureDevice;
-    struct GTTraceContext *_traceContext;
-    struct GTTraceStream *_traceStream;
+    // Error parsing type: ^{GTTraceContext={_opaque_pthread_mutex_t=q[56c]}^{GTTraceStore}AQAQ^{apr_hash_t}^(FreeNode)Ai^{GTTraceStream}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}}, name: _traceContext
+    // Error parsing type: ^{GTTraceStream=QQQ^{GTTraceMemPool}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}AQ}, name: _traceStream
 }
 
 - (void).cxx_destruct;
 - (id)newFunctionWithName:(id)arg1 constantValues:(id)arg2 pipelineLibrary:(id)arg3 error:(id *)arg4;
 - (id)newFunctionWithName:(id)arg1 constantValues:(id)arg2 functionCache:(id)arg3 error:(id *)arg4;
-- (void)dealloc;
 @property(copy) NSString *overrideTriple;
 @property(copy) NSString *label;
 @property(readonly) NSArray *functionNames;
@@ -33,13 +32,18 @@
 @property(readonly, copy) NSString *description;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 @property(readonly) unsigned long long streamReference;
-@property(readonly) struct GTTraceStream *traceStream;
-@property(readonly) struct GTTraceContext *traceContext;
+// Error parsing type for property traceStream:
+// Property attributes: T^{GTTraceStream=QQQ^{GTTraceMemPool}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}AQ},R
+
+// Error parsing type for property traceContext:
+// Property attributes: T^{GTTraceContext={_opaque_pthread_mutex_t=q[56c]}^{GTTraceStore}AQAQ^{apr_hash_t}^(FreeNode)Ai^{GTTraceStream}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}},R
+
 - (void)touch;
 - (id)newFunctionWithName:(id)arg1 constantValues:(id)arg2 error:(id *)arg3;
 - (void)newFunctionWithName:(id)arg1 constantValues:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)newFunctionWithName:(id)arg1;
 - (id)newExternFunctionWithName:(id)arg1;
+- (void)dealloc;
 - (void)swapObject:(id)arg1;
 - (id)initWithBaseObject:(id)arg1 captureDevice:(id)arg2;
 @property(readonly) id <MTLLibrary> baseObject;

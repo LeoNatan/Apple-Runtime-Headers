@@ -7,9 +7,7 @@
 @class NSArray, NSError, SidecarTransfer;
 
 @protocol SidecarTransferDelegate
+- (void)sidecarTransfer:(SidecarTransfer *)arg1 receivedItems:(NSArray *)arg2 messageType:(long long)arg3;
 - (void)sidecarTransfer:(SidecarTransfer *)arg1 didComplete:(NSError *)arg2;
-
-@optional
-- (void)sidecarTransfer:(SidecarTransfer *)arg1 receivedItems:(NSArray *)arg2;
 @end
 

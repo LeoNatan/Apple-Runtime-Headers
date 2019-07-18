@@ -10,7 +10,6 @@
 
 @interface NTKZeusAnalogScene : NTKAnalogScene
 {
-    NSCalendar *_calendar;
     NSDate *_overrideDate;
     SKNode *_fontContainerNodes[2];
     NSArray *_fontHourNodes[2];
@@ -32,9 +31,11 @@
     _Bool _isStatusIconVisible;
     float _bleedZRotation;
     _Bool _scrubbing;
+    NSCalendar *_calendar;
 }
 
 @property(nonatomic, getter=isScrubbing) _Bool scrubbing; // @synthesize scrubbing=_scrubbing;
+@property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (void).cxx_destruct;
 @property(nonatomic) float backgroundAlpha;
 - (float)_splitAngle;
@@ -57,6 +58,7 @@
 - (id)_hoursNodeForStyle:(unsigned int)arg1 bleed:(unsigned int)arg2;
 - (struct CGPoint)_logoContainerPositionForStyle:(unsigned int)arg1;
 - (void)_displayZoomScale:(float)arg1 fraction:(float)arg2;
+- (void)setOverrideDate:(id)arg1 hourRadians:(float)arg2 minuteRadians:(float)arg3 secondRadians:(float)arg4;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (void)update:(double)arg1;
 - (struct CGPoint)centerOf4NumeralForStyle:(unsigned int)arg1;

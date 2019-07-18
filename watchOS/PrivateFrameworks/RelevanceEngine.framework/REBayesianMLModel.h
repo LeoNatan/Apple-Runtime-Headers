@@ -22,6 +22,10 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) REExportedTable *content;
 - (void)logCoreAnalyticsMetrics;
+- (unsigned int)_getTotalPositiveCount;
+- (unsigned int)_getTotalExampleCount;
+- (float)_getNormalizedEntropy;
+- (float)_getAveragePrediction;
 - (int)_getNumberOfCoordinates;
 - (void)_clearModel;
 - (_Bool)_loadModelFromURL:(id)arg1 error:(id *)arg2;
@@ -32,7 +36,7 @@
 - (id)_predictWithFeatures:(id)arg1;
 - (void)_trainWithFeatures:(id)arg1 positiveEvent:(id)arg2;
 - (unsigned long long)_maxFeatureCoordinates;
-- (id)initWithFeatureSet:(id)arg1 priorMean:(float)arg2;
+- (id)initWithFeatureSet:(id)arg1 priorMean:(float)arg2 modelVarianceEpsilon:(float)arg3;
 
 @end
 

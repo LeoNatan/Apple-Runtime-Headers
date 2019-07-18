@@ -6,18 +6,20 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <TVSystemUI/TVSUITextAlertButtonDelegate-Protocol.h>
 #import <TVSystemUI/UICollectionViewDataSource-Protocol.h>
 #import <TVSystemUI/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <TVSystemUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <TVSystemUI/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class NSArray, NSLayoutConstraint, NSMapTable, NSMutableArray, NSString, TVSUITextAlertButton, UIButton, UICollectionView, UIImage, UIImageView, UILabel, UILayoutGuide, UIStackView, UITapGestureRecognizer, UITextView;
+@class NSArray, NSLayoutConstraint, NSMutableArray, NSString, TVSUITextAlertButton, UICollectionView, UIImage, UIImageView, UILabel, UILayoutGuide, UIStackView, UITapGestureRecognizer, UITextView;
 
-@interface TVSUITextAlertController : UIViewController <UIViewControllerTransitioningDelegate, UIGestureRecognizerDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface TVSUITextAlertController : UIViewController <UIViewControllerTransitioningDelegate, UIGestureRecognizerDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, TVSUITextAlertButtonDelegate>
 {
     NSArray *_footers;
     _Bool _shouldDismissAutomatically;
     _Bool _shouldCenterAlignShortText;
+    _Bool _menuGestureEnabled;
     _Bool _hasLongText;
     UIImage *_headerImage;
     NSString *_text;
@@ -27,10 +29,8 @@
     UITextView *_textView;
     UICollectionView *_buttonCollectionView;
     UIStackView *_footerStackView;
-    UIButton *_cancelButton;
-    UIButton *_initialFocusButton;
+    TVSUITextAlertButton *_initialFocusButton;
     NSMutableArray *_buttonSections;
-    NSMapTable *_buttonHandlers;
     UITapGestureRecognizer *_menuRecognizer;
     double _maxButtonWidth;
     NSLayoutConstraint *_contentGuideTopGreaterThanConstraint;
@@ -63,10 +63,9 @@
 @property(readonly, nonatomic) double maxButtonWidth; // @synthesize maxButtonWidth=_maxButtonWidth;
 @property(readonly, nonatomic) _Bool hasLongText; // @synthesize hasLongText=_hasLongText;
 @property(readonly, nonatomic) UITapGestureRecognizer *menuRecognizer; // @synthesize menuRecognizer=_menuRecognizer;
-@property(readonly, nonatomic) NSMapTable *buttonHandlers; // @synthesize buttonHandlers=_buttonHandlers;
 @property(readonly, nonatomic) NSMutableArray *buttonSections; // @synthesize buttonSections=_buttonSections;
-@property(readonly, nonatomic) UIButton *initialFocusButton; // @synthesize initialFocusButton=_initialFocusButton;
-@property(readonly, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
+@property(readonly, nonatomic) TVSUITextAlertButton *initialFocusButton; // @synthesize initialFocusButton=_initialFocusButton;
+@property(readonly, nonatomic) _Bool menuGestureEnabled; // @synthesize menuGestureEnabled=_menuGestureEnabled;
 @property(readonly, nonatomic) UIStackView *footerStackView; // @synthesize footerStackView=_footerStackView;
 @property(readonly, nonatomic) UICollectionView *buttonCollectionView; // @synthesize buttonCollectionView=_buttonCollectionView;
 @property(readonly, nonatomic) UITextView *textView; // @synthesize textView=_textView;
@@ -91,6 +90,7 @@
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
@@ -101,6 +101,8 @@
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusEnvironments;
+- (void)textAlertButtonDidSelect:(id)arg1;
+- (void)textAlertButtonDidChange:(id)arg1;
 - (void)removeAllButtons;
 - (void)addButtonWithTitle:(id)arg1 type:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)addButton:(id)arg1;

@@ -131,6 +131,7 @@
 - (void)getHandlesSharingLocationsWithMeWithGroupId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getHandlesSharingLocationsWithMe:(CDUnknownBlockType)arg1;
 - (void)setActiveDevice:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getThisDeviceAndCompanion:(CDUnknownBlockType)arg1;
 - (void)getActiveLocationSharingDevice:(CDUnknownBlockType)arg1;
 - (void)encryptPayload:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)decryptPayload:(id)arg1 withToken:(id)arg2 completion:(CDUnknownBlockType)arg3;

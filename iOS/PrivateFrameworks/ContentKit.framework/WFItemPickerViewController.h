@@ -6,11 +6,14 @@
 
 #import <UIKit/UITableViewController.h>
 
+#import <ContentKit/UIAdaptivePresentationControllerDelegate-Protocol.h>
+#import <ContentKit/UIPopoverPresentationControllerDelegate-Protocol.h>
+#import <ContentKit/UISearchResultsUpdating-Protocol.h>
 #import <ContentKit/WFPresentedAlert-Protocol.h>
 
 @class NSArray, NSString, WFAlertButton;
 
-@interface WFItemPickerViewController : UITableViewController <WFPresentedAlert>
+@interface WFItemPickerViewController : UITableViewController <WFPresentedAlert, UISearchResultsUpdating, UIPopoverPresentationControllerDelegate, UIAdaptivePresentationControllerDelegate>
 {
     NSArray *_allButtons;
     NSArray *_buttons;
@@ -24,13 +27,16 @@
 @property(copy, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(copy, nonatomic) NSArray *allButtons; // @synthesize allButtons=_allButtons;
 - (void).cxx_destruct;
+- (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)setAlertButton:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setAlertButtons:(id)arg1;
 - (void)dismissAlertWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)filteredButtons;
 - (void)reloadNavigationItems;
 - (void)cancel;
 - (_Bool)accessibilityPerformEscape;

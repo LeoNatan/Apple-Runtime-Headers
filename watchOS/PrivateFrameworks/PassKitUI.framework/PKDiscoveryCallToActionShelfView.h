@@ -6,7 +6,7 @@
 
 #import <PassKitUI/PKDiscoveryShelfView.h>
 
-@class PKDiscoveryCallToAction, PKDiscoveryMedia, UIActivityIndicatorView, UIButton, UIImageView, UILabel;
+@class PKContinuousButton, PKDiscoveryCallToAction, PKDiscoveryMedia, UIImageView, UILabel;
 @protocol PKDiscoveryCardViewDelegate;
 
 @interface PKDiscoveryCallToActionShelfView : PKDiscoveryShelfView
@@ -16,8 +16,8 @@
     UILabel *_titleLabel;
     UILabel *_editorialDescriptionLabel;
     UIImageView *_iconImageView;
-    UIButton *_button;
-    UIActivityIndicatorView *_activityIndicator;
+    PKContinuousButton *_button;
+    struct CGSize _iconSize;
     _Bool _showActivityIndicator;
     id <PKDiscoveryCardViewDelegate> _delegate;
 }
@@ -25,11 +25,12 @@
 @property(nonatomic) _Bool showActivityIndicator; // @synthesize showActivityIndicator=_showActivityIndicator;
 @property(nonatomic) __weak id <PKDiscoveryCardViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_loadImageData;
+- (struct CGSize)_iconSize;
 - (struct CGSize)_sizeForMedia;
 - (float)_leadingEditorialTextSpace;
 - (float)_leadingTitleSpace;
 - (void)_buttonPressed:(id)arg1;
+- (void)setImage:(id)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithShelf:(id)arg1;

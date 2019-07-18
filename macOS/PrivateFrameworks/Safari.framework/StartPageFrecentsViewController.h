@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double expandedHeight;
 - (void)collectionView:(id)arg1 draggingSession:(id)arg2 endedAtPoint:(struct CGPoint)arg3 dragOperation:(unsigned long long)arg4;
 - (void)collectionViewPlus:(id)arg1 draggingSession:(id)arg2 movedToPoint:(struct CGPoint)arg3;
+- (BOOL)_isScreenPointOverACollectionView:(struct CGPoint)arg1 inWindow:(id)arg2;
 - (void)collectionView:(id)arg1 draggingSession:(id)arg2 willBeginAtPoint:(struct CGPoint)arg3 forItemsAtIndexPaths:(id)arg4;
 - (BOOL)collectionView:(id)arg1 writeItemsAtIndexPaths:(id)arg2 toPasteboard:(id)arg3;
 - (BOOL)collectionView:(id)arg1 canDragItemsAtIndexPaths:(id)arg2 withEvent:(id)arg3;

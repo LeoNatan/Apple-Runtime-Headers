@@ -6,6 +6,10 @@
 
 #import <WorkflowKit/NSObject-Protocol.h>
 
+@protocol WFVariableDataSource;
+
 @protocol WFVariableStringContent <NSObject>
+- (unsigned long long)wf_lengthInVariableString;
+- (void)wf_getContentItemsWithVariableSource:(id <WFVariableDataSource>)arg1 completionHandler:(void (^)(NSArray *, NSError *))arg2;
 @end
 

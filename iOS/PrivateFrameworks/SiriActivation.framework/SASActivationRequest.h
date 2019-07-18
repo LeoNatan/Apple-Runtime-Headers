@@ -46,6 +46,7 @@
 - (id)initWithSpotlightContext:(id)arg1;
 - (id)initWithSimpleActivation:(long long)arg1;
 - (id)initWithBreadcrumbRequest;
+- (id)initWithVoiceTriggerContext:(id)arg1;
 - (id)initWithContinuityContext:(id)arg1;
 - (id)initWithDirectActionEvent:(long long)arg1 context:(id)arg2;
 - (id)initWithButtonIdentifier:(long long)arg1 context:(id)arg2;

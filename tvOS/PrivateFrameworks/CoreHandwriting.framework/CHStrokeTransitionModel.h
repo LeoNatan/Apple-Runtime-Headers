@@ -28,7 +28,7 @@
 @property(readonly, nonatomic) long long cosAlphaFeatureIndex; // @synthesize cosAlphaFeatureIndex=_cosAlphaFeatureIndex;
 @property(readonly, nonatomic) long long sinAlphaFeatureIndex; // @synthesize sinAlphaFeatureIndex=_sinAlphaFeatureIndex;
 @property(readonly, nonatomic) long long distanceFeatureIndex; // @synthesize distanceFeatureIndex=_distanceFeatureIndex;
-- (set_54c7c768)detectedDelayedStrokes:(const vector_8f06c10f *)arg1 spaceProbabilities:(const vector_8f06c10f *)arg2;
+- (set_54c7c768)detectedDelayedStrokes:(const vector_8f06c10f *)arg1;
 - (vector_f9ed6fc8)_extractFeaturesFromDrawing:(id)arg1 inputName:(id)arg2 interpointDistance:(double)arg3 error:(id *)arg4;
 - (_Bool)classifyStrokesInDrawing:(id)arg1 minimumDrawingSize:(struct CGSize)arg2 outDelayedStrokeProbabilities:(vector_8f06c10f *)arg3 outSpaceProbabilities:(vector_8f06c10f *)arg4 outCharBoundaryProbabilities:(vector_8f06c10f *)arg5;
 - (long long)windowOverlap;

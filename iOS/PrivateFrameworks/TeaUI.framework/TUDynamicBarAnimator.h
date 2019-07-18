@@ -41,9 +41,9 @@
 @property(readonly, nonatomic) double minimumBottomBarOffset;
 @property(readonly, nonatomic) double maximumTopBarHeight;
 - (void)setTopBarHeight:(double)arg1 forState:(long long)arg2;
-- (void)endDraggingWithTargetOffset:(double)arg1 velocity:(double)arg2;
-- (void)updateDraggingWithOffset:(double)arg1;
-- (void)beginDraggingWithOffset:(double)arg1;
+- (void)endScrollingWithTargetOffset:(double)arg1 velocity:(double)arg2;
+- (void)updateScrollingWithOffset:(double)arg1;
+- (void)beginScrollingWithOffset:(double)arg1;
 - (void)_updateDisplayLink;
 - (void)_displayLinkFired:(id)arg1;
 - (double)_constrainTopBarHeight:(double)arg1;

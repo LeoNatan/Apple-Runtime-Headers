@@ -15,6 +15,7 @@
 @property(readonly, nonatomic, getter=isBackgroundRefreshEnabled) _Bool backgroundRefreshEnabled;
 @property(readonly, nonatomic) _Bool usesSocketMonitoring;
 @property(readonly, nonatomic) _Bool supportsUnboundedTaskCompletion;
+@property(readonly, nonatomic) _Bool supportsBackgroundAudio;
 @property(readonly, nonatomic) _Bool supportsBackgroundNetworkAuthentication;
 @property(readonly, nonatomic) _Bool supportsBackgroundContentFetching;
 @property(readonly, nonatomic) NSDictionary *environmentVariables;

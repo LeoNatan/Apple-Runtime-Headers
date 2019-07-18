@@ -8,7 +8,7 @@
 
 #import <ToneLibrary/TLAlertPlaybackBackEndController-Protocol.h>
 
-@class AVAsset, AVQueuePlayer, CSLSBacklightAssertion, NSString, TLAlert;
+@class AVAsset, AVQueuePlayer, NSString, TLAlert;
 @protocol OS_dispatch_queue, TLAlertPlaybackObserver;
 
 @interface TLAlertQueuePlayerController : NSObject <TLAlertPlaybackBackEndController>
@@ -31,10 +31,8 @@
     _Bool _isAudioSessionActive;
     unsigned int _audioSessionDeactivationPreventionRequestsCount;
     _Bool _isObservingAudioSessionInterruptionNotification;
-    CSLSBacklightAssertion *_backlightAssertion;
 }
 
-+ (_Bool)_shouldTakeBacklightAssertionForAlert:(id)arg1;
 + (_Bool)_shouldVibrateForAlert:(id)arg1;
 + (_Bool)_shouldHandleAudioSessionActivationForAlert:(id)arg1;
 + (_Bool)_shouldBypassRingerSwitchPolicyForAlert:(id)arg1;
@@ -46,9 +44,6 @@
 - (void).cxx_destruct;
 - (id)_audioMixForVolumeRampingWithDuration:(double)arg1 toneAsset:(id)arg2 toneAssetDuration:(double)arg3 itemIndex:(unsigned int)arg4;
 - (float)_adjustAudioVolumeForOptimalRampingPerception:(float)arg1;
-- (void)_handleTimeoutOfBacklightAssertionWithIdentifier:(id)arg1;
-- (void)_releaseBacklightAssertion;
-- (void)_takeBacklightAssertion;
 - (void)_didCompletePlaybackWithCompletionType:(int)arg1 error:(id)arg2;
 - (id)_fallbackToneIdentifierForPlayingAlert;
 - (void)_endPreventingAudioSessionDeactivation;

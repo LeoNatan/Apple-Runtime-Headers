@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class UIButton, UITextView, WFAction, WFActionDrawerButton;
+@class UIStackView, UITextView, WFAction, WFActionDrawerButton;
 @protocol WFActionDocumentationViewDelegate;
 
 @interface WFActionDocumentationView : UIView
@@ -14,12 +14,14 @@
     id <WFActionDocumentationViewDelegate> _delegate;
     WFAction *_action;
     WFActionDrawerButton *_favoriteButton;
-    UIButton *_addToWorkflowButton;
+    WFActionDrawerButton *_addToWorkflowButton;
+    UIStackView *_buttonStackView;
     UITextView *_descriptionView;
 }
 
 @property(nonatomic) __weak UITextView *descriptionView; // @synthesize descriptionView=_descriptionView;
-@property(nonatomic) __weak UIButton *addToWorkflowButton; // @synthesize addToWorkflowButton=_addToWorkflowButton;
+@property(nonatomic) __weak UIStackView *buttonStackView; // @synthesize buttonStackView=_buttonStackView;
+@property(nonatomic) __weak WFActionDrawerButton *addToWorkflowButton; // @synthesize addToWorkflowButton=_addToWorkflowButton;
 @property(nonatomic) __weak WFActionDrawerButton *favoriteButton; // @synthesize favoriteButton=_favoriteButton;
 @property(retain, nonatomic) WFAction *action; // @synthesize action=_action;
 @property(nonatomic) __weak id <WFActionDocumentationViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -28,6 +30,7 @@
 - (void)didSelectAddToThisWorkflow;
 - (void)didSelectFavorite;
 - (void)configureWithAction:(id)arg1;
+- (void)updateButtonVisibility;
 - (id)init;
 
 @end

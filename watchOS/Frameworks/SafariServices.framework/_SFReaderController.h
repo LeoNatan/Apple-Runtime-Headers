@@ -48,8 +48,6 @@
 - (id)_webView:(id)arg1 actionsForElement:(id)arg2 defaultActions:(id)arg3;
 - (void)_webView:(id)arg1 getAlternateURLFromImage:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
-- (void)didDetermineReaderAvailabilityForDynamicCheck:(_Bool)arg1;
-- (void)checkReaderAvailability;
 - (void)owningWebViewDidCommitNavigation;
 - (void)contentDidBecomeReadyWithDetectedLanguage:(id)arg1;
 - (void)didPrepareReaderContentForPrinting:(id)arg1;

@@ -34,6 +34,7 @@
 - (id)defaultTitleForEmptyNote;
 - (id)dataForTypeIdentifier:(id)arg1;
 - (id)searchableItemAttributeSet;
+- (id)userActivityContentAttributeSet;
 - (id)searchDomainIdentifier;
 - (id)contentIdentifier;
 - (id)searchIndexingIdentifier;

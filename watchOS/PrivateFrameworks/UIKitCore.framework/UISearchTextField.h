@@ -33,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setPreventSelectionViewActivation:) _Bool _preventSelectionViewActivation; // @synthesize _preventSelectionViewActivation=__preventSelectionViewActivation;
 @property(nonatomic, setter=_setSearchBar:) __weak UISearchBar *_searchBar; // @synthesize _searchBar;
 - (void).cxx_destruct;
-- (void)setSearchText:(id)arg1;
 - (_Bool)_textShouldFillFieldEditorHeight;
 - (int)_blurEffectStyle;
 - (_Bool)_shouldDetermineInterfaceStyleTextColor;

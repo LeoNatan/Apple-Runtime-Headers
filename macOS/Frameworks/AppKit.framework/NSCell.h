@@ -97,6 +97,8 @@
 - (BOOL)accessibilityPerformDecrement;
 - (BOOL)accessibilityPerformConfirm;
 - (BOOL)accessibilityPerformCancel;
+- (void)setAccessibilityOverridesAlwaysTakePrecedence:(BOOL)arg1;
+- (BOOL)accessibilityOverridesAlwaysTakePrecedence;
 - (void)setAccessibilityContentSiblingBelow:(id)arg1;
 - (id)accessibilityContentSiblingBelow;
 - (void)setAccessibilityContentSiblingAbove:(id)arg1;

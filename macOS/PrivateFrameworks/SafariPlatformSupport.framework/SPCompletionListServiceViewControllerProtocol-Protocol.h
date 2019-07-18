@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString;
+@class NSString, NSURL;
 
 @protocol SPCompletionListServiceViewControllerProtocol
-- (void)setPartialUsername:(NSString *)arg1 completionHandler:(void (^)(void))arg2;
+- (void)dismiss;
+- (void)setPartialUsername:(NSString *)arg1 completionHandler:(void (^)(struct CGSize))arg2;
+- (void)setPartialUsername:(NSString *)arg1 webViewURL:(NSURL *)arg2 completionHandler:(void (^)(struct CGSize))arg3;
 @end
 

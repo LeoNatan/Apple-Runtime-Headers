@@ -9,12 +9,12 @@
 #import <iWorkImport/TSPDocumentResourceDataStorageInfo-Protocol.h>
 
 @class NSString, TSPDocumentResourceInfo;
-@protocol TSPDocumentResourceFileURLProvider><TSUResourceRequest, TSUResourceRequest;
+@protocol TSUResourceFileURLProvider><TSUResourceRequest, TSUResourceRequest;
 
 __attribute__((visibility("hidden")))
 @interface TSPDocumentResourceFileDataStorage : TSPFileDataStorage <TSPDocumentResourceDataStorageInfo>
 {
-    id <TSPDocumentResourceFileURLProvider><TSUResourceRequest> _resourceRequest;
+    id <TSUResourceFileURLProvider><TSUResourceRequest> _resourceRequest;
     TSPDocumentResourceInfo *_documentResourceInfo;
 }
 
@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)needsDownload;
 -     // Error parsing type: B40@0:8^{DataInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DataAttributes}^{EncryptionInfo}QBi}16@24@32, name: archiveInfoMessage:archiver:packageWriter:
 - (id)fileURL;
+- (struct CGSize)pixelSize;
 - (id)fallbackColor;
 - (void)performReadWithAccessor:(CDUnknownBlockType)arg1;
 - (unsigned long long)encodedLength;

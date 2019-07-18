@@ -31,6 +31,7 @@
     NSLayoutXAxisAnchor *_centerX;
     NSLayoutYAxisAnchor *_centerY;
     struct CGRect _frame;
+    struct CGRect _internalFrame;
     id _aux;
     id _systemConstraints;
     unsigned int _shouldBeArchived:1;
@@ -104,6 +105,7 @@
 - (void)_discardEngine:(id)arg1;
 - (void)_didMoveFromLayoutEngine:(id)arg1 toEngine:(id)arg2;
 - (void)_updateFrameIfNeeded;
+- (void)_updateInternalFrameIfNeeded;
 - (void)setShouldBeArchived:(BOOL)arg1;
 - (BOOL)shouldBeArchived;
 @property(copy) NSString *identifier;

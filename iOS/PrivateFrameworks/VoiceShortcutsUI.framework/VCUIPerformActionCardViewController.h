@@ -33,6 +33,7 @@
 - (void)workflowControllerDidFinishRunning:(id)arg1 withOutput:(id)arg2;
 - (void)workflowControllerWillRun:(id)arg1;
 - (void)handleCardCommand:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(retain, nonatomic) id <CRCard> card;

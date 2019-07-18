@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int cosAlphaFeatureIndex; // @synthesize cosAlphaFeatureIndex=_cosAlphaFeatureIndex;
 @property(readonly, nonatomic) int sinAlphaFeatureIndex; // @synthesize sinAlphaFeatureIndex=_sinAlphaFeatureIndex;
 @property(readonly, nonatomic) int distanceFeatureIndex; // @synthesize distanceFeatureIndex=_distanceFeatureIndex;
-- (set_c64ac980)detectedDelayedStrokes:(const vector_f9ed6fc8 *)arg1 spaceProbabilities:(const vector_f9ed6fc8 *)arg2;
+- (set_c64ac980)detectedDelayedStrokes:(const vector_f9ed6fc8 *)arg1;
 - (vector_f9ed6fc8)_extractFeaturesFromDrawing:(id)arg1 inputName:(id)arg2 interpointDistance:(float)arg3 error:(id *)arg4;
 - (_Bool)classifyStrokesInDrawing:(id)arg1 minimumDrawingSize:(struct CGSize)arg2 outDelayedStrokeProbabilities:(vector_f9ed6fc8 *)arg3 outSpaceProbabilities:(vector_f9ed6fc8 *)arg4 outCharBoundaryProbabilities:(vector_f9ed6fc8 *)arg5;
 - (int)windowOverlap;

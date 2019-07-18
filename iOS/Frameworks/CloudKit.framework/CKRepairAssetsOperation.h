@@ -6,13 +6,11 @@
 
 #import <CloudKit/CKDatabaseOperation.h>
 
-@class NSArray, NSMutableDictionary, NSString;
+@class CKUploadRequestConfiguration, NSArray, NSMutableDictionary;
 
 @interface CKRepairAssetsOperation : CKDatabaseOperation
 {
     CDUnknownBlockType _repairAssetsCompletionBlock;
-    NSString *_repairContainerIdentifier;
-    NSString *_repairSourceApplicationBundleIdentifier;
     NSArray *_assets;
     NSArray *_packages;
     NSArray *_assetMetadata;
@@ -20,8 +18,10 @@
     NSArray *_unavailableAssets;
     NSArray *_unavailablePackages;
     NSMutableDictionary *_perItemErrorsByRecordID;
+    CKUploadRequestConfiguration *_uploadRequestConfiguration;
 }
 
+@property(copy, nonatomic) CKUploadRequestConfiguration *uploadRequestConfiguration; // @synthesize uploadRequestConfiguration=_uploadRequestConfiguration;
 @property(retain, nonatomic) NSMutableDictionary *perItemErrorsByRecordID; // @synthesize perItemErrorsByRecordID=_perItemErrorsByRecordID;
 @property(retain, nonatomic) NSArray *unavailablePackages; // @synthesize unavailablePackages=_unavailablePackages;
 @property(retain, nonatomic) NSArray *unavailableAssets; // @synthesize unavailableAssets=_unavailableAssets;
@@ -29,8 +29,6 @@
 @property(retain, nonatomic) NSArray *assetMetadata; // @synthesize assetMetadata=_assetMetadata;
 @property(retain, nonatomic) NSArray *packages; // @synthesize packages=_packages;
 @property(retain, nonatomic) NSArray *assets; // @synthesize assets=_assets;
-@property(retain, nonatomic) NSString *repairSourceApplicationBundleIdentifier; // @synthesize repairSourceApplicationBundleIdentifier=_repairSourceApplicationBundleIdentifier;
-@property(retain, nonatomic) NSString *repairContainerIdentifier; // @synthesize repairContainerIdentifier=_repairContainerIdentifier;
 - (void).cxx_destruct;
 - (id)includedMetadata;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
@@ -42,6 +40,7 @@
 - (void)fillOutOperationInfo:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType repairAssetsCompletionBlock; // @synthesize repairAssetsCompletionBlock=_repairAssetsCompletionBlock;
 - (id)activityCreate;
+@property(readonly, copy, nonatomic) CKUploadRequestConfiguration *resolvedUploadRequestConfiguration;
 - (id)initWithAssets:(id)arg1 packages:(id)arg2 assetMetadata:(id)arg3 packageMetadata:(id)arg4 unavailableAssets:(id)arg5 unavailablePackages:(id)arg6;
 
 @end

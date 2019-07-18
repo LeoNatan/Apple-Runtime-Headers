@@ -30,6 +30,7 @@
 @property(readonly, nonatomic) CDStruct_bd2f613f nwClientID;
 @property(readonly) unsigned long long flags;
 @property(readonly) long long type;
+@property(readonly, nonatomic) long long transport;
 @property(readonly) NSString *identifier;
 @property(readonly) long long fileDescriptor;
 @property(readonly) RPStreamSession *rapportStream;

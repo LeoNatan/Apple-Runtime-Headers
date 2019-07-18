@@ -22,10 +22,9 @@
 - (id)actionPerformerForActionType:(id)arg1;
 - (_Bool)canPerformActionType:(id)arg1;
 - (id)activityForActionType:(id)arg1;
-- (id)previewActionGroupGroupableForActionType:(id)arg1;
 - (id)alertActionViewControllerForActionType:(id)arg1;
 - (id)alertActionForActionType:(id)arg1;
-- (id)previewActionGroupableForActionType:(id)arg1 image:(id)arg2;
+- (id)previewActionForActionType:(id)arg1 image:(id)arg2;
 - (id)barButtonItemForActionType:(id)arg1;
 
 @end

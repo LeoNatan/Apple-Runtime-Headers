@@ -26,6 +26,7 @@
 @property(copy, nonatomic) NSNumber *supportsKeyTransferServer; // @dynamic supportsKeyTransferServer;
 @property(copy, nonatomic) NSNumber *supportsKeychainSync; // @dynamic supportsKeychainSync;
 @property(copy, nonatomic) NSNumber *supportsMultiUser; // @dynamic supportsMultiUser;
+@property(copy, nonatomic) NSNumber *supportsRouterManagement; // @dynamic supportsRouterManagement;
 @property(copy, nonatomic) NSNumber *supportsStandaloneMode; // @dynamic supportsStandaloneMode;
 @property(copy, nonatomic) NSNumber *supportsTargetControl; // @dynamic supportsTargetControl;
 @property(copy, nonatomic) NSNumber *supportsWholeHouseAudio; // @dynamic supportsWholeHouseAudio;

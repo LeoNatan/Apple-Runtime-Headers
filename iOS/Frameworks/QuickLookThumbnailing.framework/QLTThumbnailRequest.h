@@ -9,7 +9,7 @@
 #import <QuickLookThumbnailing/NSCopying-Protocol.h>
 #import <QuickLookThumbnailing/NSSecureCoding-Protocol.h>
 
-@class NSString, QLCacheVersionedFileIdentifier;
+@class NSString, NSUUID, QLCacheVersionedFileIdentifier;
 
 @interface QLTThumbnailRequest : NSObject <NSCopying, NSSecureCoding>
 {
@@ -18,7 +18,7 @@
     _Bool _wantsBaseline;
     int _flavor;
     QLCacheVersionedFileIdentifier *_fileIdentifier;
-    long long _sequenceNumber;
+    NSUUID *_uuid;
     double _scale;
     NSString *_contentType;
     unsigned long long _badgeType;
@@ -44,7 +44,7 @@
 @property(copy, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
-@property long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
+@property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly) QLCacheVersionedFileIdentifier *fileIdentifier; // @synthesize fileIdentifier=_fileIdentifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long requestedMostRepresentativeType;

@@ -285,7 +285,6 @@
 @property(readonly, nonatomic) id <UIFocusItemContainer> focusItemContainer;
 @property(readonly, nonatomic, getter=_focusMapContainer) __weak id <_UIFocusRegionContainer> focusMapContainer;
 @property(readonly, nonatomic) __weak id <UIFocusEnvironment> parentFocusEnvironment;
-- (id)_parentFocusEnvironment;
 - (id)_overridingPreferredFocusEnvironment;
 - (void)_rememberPresentingFocusedItem:(id)arg1;
 - (_Bool)_canRestoreFocusAfterTransitionToPresentingFocusedItem:(id)arg1;
@@ -444,7 +443,6 @@
 - (void)_showViewController:(id)arg1 withAction:(SEL)arg2 sender:(id)arg3;
 - (double)durationForTransition:(int)arg1;
 - (id)_backgroundColorForModalFormSheet;
-- (_Bool)_shouldIgnoreTouchesForModalFormSheet;
 @property(readonly, nonatomic) _Bool disablesAutomaticKeyboardDismissal;
 - (void)setDisablesAutomaticKeyboardDismissal:(_Bool)arg1;
 - (_Bool)_shouldAutoPinInputViewsForModalFormSheet;
@@ -510,6 +508,8 @@
 - (id)_customInteractionControllerForPresentation:(id)arg1;
 - (id)_customAnimatorForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)_customPresentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (void)_presentationControllerDidDismiss:(id)arg1;
+- (void)_presentationControllerWillDismiss:(id)arg1;
 - (void)_presentationController:(id)arg1 prepareAdaptivePresentationController:(id)arg2;
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)_endDelayingPresentation;
@@ -767,6 +767,7 @@
 - (id)init;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)_doCommonSetup;
+- (void)_populateInitialTraitCollection;
 @property(readonly, nonatomic) _Bool _viewHostsLayoutEngineAllowsTAMIC_NO;
 - (_Bool)_viewHostsLayoutEngine;
 - (void)_setViewHostsLayoutEngine:(_Bool)arg1;
@@ -954,6 +955,7 @@
 - (id)_navigationBarForDragAffordance;
 - (void)_dismissAccessibilityHUD;
 - (void)_showAccessibilityHUDItem:(id)arg1;
+- (id)_accessibilityLargeContentHUDWindow;
 - (id)autorelease;
 - (_Bool)_isDeallocating;
 - (_Bool)_tryRetain;

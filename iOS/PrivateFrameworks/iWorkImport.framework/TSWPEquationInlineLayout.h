@@ -15,13 +15,15 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) double fontSizeAdjustedForXHeight; // @synthesize fontSizeAdjustedForXHeight=_fontSizeAdjustedForXHeight;
 @property(nonatomic) _Bool disableXHeightMatching; // @synthesize disableXHeightMatching=_disableXHeightMatching;
+- (id)p_layoutTarget;
 - (double)p_fontSizeThatMatchesXHeightForFontName:(id)arg1 fontSize:(double)arg2;
 - (id)computeInfoGeometryFromPureLayoutGeometry:(id)arg1;
-- (void)willLayoutInlineWithMaximumSize:(struct CGSize)arg1;
+- (void)willLayoutInlineWithMaximumSize:(struct CGSize)arg1 textScale:(double)arg2;
 - (id)computeLayoutGeometry;
 - (id)layoutGeometryFromInfo;
 - (double)inlineCenteredAlignmentHorizontalOffset;
 - (double)descentForInlineLayout;
+- (void)invalidateTextScalePercent;
 - (_Bool)wantsRoundedInlinePosition;
 
 @end

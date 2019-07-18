@@ -6,7 +6,7 @@
 
 #import <AccountsUI/ACUIViewController.h>
 
-@class ACAccount, NSArray, NSMutableDictionary, NSString, PSSpecifier;
+@class ACAccount, MCUIUserEnrollmentAccountSpecifierProvider, NSArray, NSMutableDictionary, NSString, PSSpecifier;
 
 @interface ACUIDataclassConfigurationViewController : ACUIViewController
 {
@@ -19,6 +19,7 @@
     NSArray *_dataclassSpecifiers;
     NSArray *_otherSpecifiers;
     _Bool _didShowDataclassActionPickerDuringRemoval;
+    MCUIUserEnrollmentAccountSpecifierProvider *_userEnrollmentAccountSpecifierProvider;
     _Bool _firstTimeSetup;
     _Bool _shouldShowDeleteAccountButton;
     _Bool _shouldEnableDeleteAccountButton;
@@ -42,6 +43,7 @@
 @property(copy, nonatomic) NSArray *preEnabledDataclasses; // @synthesize preEnabledDataclasses=_preEnabledDataclasses;
 @property(nonatomic, getter=isFirstTimeSetup) _Bool firstTimeSetup; // @synthesize firstTimeSetup=_firstTimeSetup;
 - (void).cxx_destruct;
+- (id)userEnrollmentAccountSpecifierProvider;
 - (_Bool)isUserEnrollment;
 - (_Bool)_confirmSyncDelete;
 - (_Bool)_confirmDeleteLocalDataForDataclasses:(id)arg1;
@@ -72,6 +74,7 @@
 - (id)dataclassSwitchStateForSpecifier:(id)arg1;
 - (void)reloadDynamicSpecifiersWithAnimation:(_Bool)arg1;
 - (id)otherSpecifiers;
+- (_Bool)_isUserOverridableForDataclass:(id)arg1;
 - (id)specifierForDataclass:(id)arg1;
 - (_Bool)shouldShowSpecifierForDataclass:(id)arg1;
 - (id)_specifiersForDataclasses:(id)arg1;

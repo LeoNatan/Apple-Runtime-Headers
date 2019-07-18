@@ -10,7 +10,6 @@
 
 @interface SBSAppDragLocalContext : NSObject
 {
-    _Bool _showingInlineAppExpose;
     _Bool _cancelsViaScaleAndFade;
     NSString *_applicationBundleIdentifier;
     NSSet *_launchActions;
@@ -23,7 +22,6 @@
 @property(nonatomic) _Bool cancelsViaScaleAndFade; // @synthesize cancelsViaScaleAndFade=_cancelsViaScaleAndFade;
 @property(retain, nonatomic) UIView *portaledPreview; // @synthesize portaledPreview=_portaledPreview;
 @property(copy, nonatomic) NSURL *launchURL; // @synthesize launchURL=_launchURL;
-@property(nonatomic) _Bool showingInlineAppExpose; // @synthesize showingInlineAppExpose=_showingInlineAppExpose;
 @property(copy, nonatomic) NSString *draggedSceneIdentifier; // @synthesize draggedSceneIdentifier=_draggedSceneIdentifier;
 @property(readonly, nonatomic) long long startLocation; // @synthesize startLocation=_startLocation;
 @property(readonly, copy, nonatomic) NSSet *launchActions; // @synthesize launchActions=_launchActions;

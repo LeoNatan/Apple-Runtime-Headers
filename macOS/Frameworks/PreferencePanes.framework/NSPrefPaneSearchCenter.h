@@ -24,6 +24,7 @@
 - (id)searchString:(id)arg1;
 - (BOOL)openSearchIndex;
 - (void)createSearchIndexForPrefPaneBundles:(id)arg1;
+- (id)_indexExtensions;
 - (void)dealloc;
 - (id)init;
 - (id)loadSearchTermsForPath:(id)arg1 key:(id)arg2;

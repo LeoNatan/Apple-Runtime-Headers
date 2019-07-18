@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (struct Message *)newDataMessageForDatabaseObject:(id)arg1;
 - (void)enumerateDataAppRelativePathsUsingBlock:(CDUnknownBlockType)arg1;
 -     // Error parsing type: @24@0:8r^{DatabaseDataArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}QIB}16, name: appRelativePathForOldDataArchive:
+- (void)resolveReferences;
 - (_Bool)validateObjectIdentifierForObject:(id)arg1;
 - (void)didUnarchiveObject:(id)arg1 withUnarchiver:(id)arg2;
 - (id)newUnarchiverWithDatabaseObject:(id)arg1;

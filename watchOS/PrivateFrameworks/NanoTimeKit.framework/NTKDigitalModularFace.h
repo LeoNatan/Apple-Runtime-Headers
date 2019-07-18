@@ -10,7 +10,6 @@
 {
 }
 
-+ (id)_richComplicationSlotsForDevice:(id)arg1;
 + (id)_orderedComplicationSlots;
 + (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
 + (id)_complicationSlotDescriptors;

@@ -6,18 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class CARSessionStatus, CRCarPlayAppBlacklist, NSSet;
+@class CARSessionStatus, CRCarPlayAppBlacklist;
 
 @interface CRCarPlayAppPolicyEvaluator : NSObject
 {
     CARSessionStatus *_sessionStatus;
     _Bool _geoSupported;
     CRCarPlayAppBlacklist *_blacklist;
-    NSSet *__simulatedAccessoryProtocols;
 }
 
 + (id)_carIntentIdentifiers;
-@property(retain, nonatomic) NSSet *_simulatedAccessoryProtocols; // @synthesize _simulatedAccessoryProtocols=__simulatedAccessoryProtocols;
 @property(retain, nonatomic) CRCarPlayAppBlacklist *blacklist; // @synthesize blacklist=_blacklist;
 @property(nonatomic, getter=isGeoSupported) _Bool geoSupported; // @synthesize geoSupported=_geoSupported;
 - (void).cxx_destruct;

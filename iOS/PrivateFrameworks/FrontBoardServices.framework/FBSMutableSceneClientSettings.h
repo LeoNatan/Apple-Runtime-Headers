@@ -20,6 +20,7 @@
 @property(copy, nonatomic) NSSet *occlusions; // @dynamic occlusions;
 @property(nonatomic) long long preferredInterfaceOrientation; // @dynamic preferredInterfaceOrientation;
 @property(nonatomic) double preferredLevel; // @dynamic preferredLevel;
+- (void)setLayers:(id)arg1;
 
 @end
 

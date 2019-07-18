@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)removeSharedWindow;
-+ (void)createSharedWindow;
++ (void)createSharedWindowWithScene:(id)arg1;
 + (id)sharedWindow;
 - (double)_adjustedWindowLevelFromLevel:(double)arg1;
 

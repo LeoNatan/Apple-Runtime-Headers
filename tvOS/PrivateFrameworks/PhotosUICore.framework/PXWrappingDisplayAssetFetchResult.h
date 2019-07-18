@@ -18,6 +18,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)thumbnailAssetAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) long long count;
 - (unsigned long long)countOfAssetsWithMediaType:(long long)arg1;
 - (_Bool)containsObject:(id)arg1;

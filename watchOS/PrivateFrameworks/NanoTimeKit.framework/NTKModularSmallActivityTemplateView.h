@@ -19,12 +19,11 @@
 - (void).cxx_destruct;
 - (void)applyTransitionFraction:(float)arg1 fromFaceColor:(unsigned int)arg2 toFaceColor:(unsigned int)arg3 units:(unsigned int)arg4 brightenedUnits:(unsigned int)arg5;
 - (void)applyColorScheme:(id)arg1;
-- (void)_setLayoutEmptyRingsNoDot;
+- (void)_setLayoutEmptyRings;
 - (void)_update;
 - (void)_layoutContentView;
 - (void)setIsXL:(_Bool)arg1;
 - (void)_configureContentSubviews;
-- (void)setSecondaryForegroundColor:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

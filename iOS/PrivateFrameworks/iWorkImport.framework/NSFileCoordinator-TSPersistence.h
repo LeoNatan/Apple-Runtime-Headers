@@ -13,5 +13,6 @@
 + (_Bool)tsp_coordinateReadingItemAtURL:(id)arg1 urlType:(long long)arg2 options:(unsigned long long)arg3 filePresenter:(id)arg4 error:(id *)arg5 byAccessor:(CDUnknownBlockType)arg6;
 + (void)tsp_removeFilePresenter:(id)arg1;
 + (void)tsp_addFilePresenter:(id)arg1;
+- (void)tsp_coordinateAccessWithIntents:(id)arg1 queue:(id)arg2 byAccessor:(CDUnknownBlockType)arg3;
 @end
 

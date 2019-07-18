@@ -13,6 +13,7 @@
 
 @interface SYDClientToDaemonConnection : SYDRemotePreferencesSource <SYDClientProtocol>
 {
+    BOOL _forceNilChangeDictionaryResponse;
     NSString *_storeIdentifier;
     long long _storeType;
     NSXPCConnection *_xpcConnection;
@@ -23,6 +24,7 @@
 
 + (void)processAccountChangesWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)changeTokenURLForStoreIdentifier:(id)arg1;
+@property(nonatomic) BOOL forceNilChangeDictionaryResponse; // @synthesize forceNilChangeDictionaryResponse=_forceNilChangeDictionaryResponse;
 @property(retain, nonatomic) NSURL *changeTokenURL; // @synthesize changeTokenURL=_changeTokenURL;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;

@@ -14,15 +14,17 @@
 
 @interface HDMCNotificationManager : NSObject <HDMCAnalysisManagerObserver, HKMCSettingsManagerObserver>
 {
-    HDMCAnalysisManager *_analysisManager;
     HDProfile *_profile;
+    HDMCAnalysisManager *_analysisManager;
+    HKMCSettingsManager *_settingsManager;
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _observingAnalysisUpdates;
     HDRestorableAlarm *_scheduler;
-    HKMCSettingsManager *_settingsManager;
 }
 
+@property(readonly, nonatomic) HDRestorableAlarm *scheduler; // @synthesize scheduler=_scheduler;
 - (void).cxx_destruct;
+- (void)_queue_removeAllScheduledNotifications;
 - (void)_queue_rescheduleNotificationsForAnalysis:(id)arg1;
 - (void)_queue_alarm:(id)arg1 didReceiveDueEvents:(id)arg2;
 - (void)settingsManagerDidUpdateNotificationSettings:(id)arg1;
@@ -30,7 +32,7 @@
 - (id)scheduledNotificationsWithError:(id *)arg1;
 - (void)invalidate;
 - (void)start;
-- (id)initWithProfile:(id)arg1 analysisManager:(id)arg2;
+- (id)initWithProfile:(id)arg1 analysisManager:(id)arg2 settingsManager:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

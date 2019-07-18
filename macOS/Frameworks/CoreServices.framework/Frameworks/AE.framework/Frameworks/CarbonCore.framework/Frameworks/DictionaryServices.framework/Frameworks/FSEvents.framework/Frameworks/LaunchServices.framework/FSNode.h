@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
 + (BOOL)shimFSRef:(const struct FSRef *)arg1 reason:(unsigned char)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
 + (BOOL)getFSRef:(struct FSRef *)arg1 fromURL:(id)arg2 reason:(unsigned char)arg3 error:(id *)arg4;
 + (void)warnAboutFSRefUsageWithReason:(unsigned char)arg1;
-+ (id)systemDataVolumeNode;
 + (id)rootVolumeNode;
 + (BOOL)looksLikeTrashFolderName:(id)arg1;
 + (id)validURLSchemesForInternetLocatorFileExtension:(id)arg1;

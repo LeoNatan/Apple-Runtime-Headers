@@ -43,15 +43,15 @@
 - (void)updateSharingWhitelist:(id)arg1 blacklist:(id)arg2;
 - (void)updatePendingNicknames:(id)arg1 handledNicknames:(id)arg2;
 - (void)_updateLocalNicknameStore;
+- (BOOL)shouldOfferNicknameSharingForChat:(id)arg1;
 - (void)updatePersonalNickname:(id)arg1;
 - (void)fetchPersonalNicknameWithCompletion:(CDUnknownBlockType)arg1;
 - (void)blacklistHandlesForNicknameSharing:(id)arg1;
-- (void)whitelistHandlesForNicknameSharing:(id)arg1;
+- (void)whitelistHandlesForNicknameSharing:(id)arg1 forChat:(id)arg2;
 - (BOOL)handleIsBlacklistedForSharing:(id)arg1;
 - (BOOL)handleIsWhitelistedForSharing:(id)arg1;
 - (void)clearPendingNicknameUpdatesForHandle:(id)arg1;
 - (id)IMSharedHelperMD5Helper:(id)arg1;
-- (id)_combinedNameForContact:(id)arg1;
 - (unsigned long long)nicknameUpdateForHandle:(id)arg1 nicknameIfAvailable:(id *)arg2;
 - (id)nicknameForHandle:(id)arg1;
 - (void)_broadcastNicknamePreferencesDidChange:(id)arg1;

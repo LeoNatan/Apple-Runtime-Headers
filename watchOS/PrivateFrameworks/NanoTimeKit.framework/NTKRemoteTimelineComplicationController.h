@@ -60,7 +60,7 @@
 - (void)performTapAction;
 - (_Bool)hasTapAction;
 - (void)_updateComplicationDimState;
-- (id)privacyTemplate;
+- (id)lockedTemplate;
 - (id)_currentEntry;
 - (void)_startExtendLeftOperationFromDate:(id)arg1;
 - (void)_startExtendRightOperationFromDate:(id)arg1;

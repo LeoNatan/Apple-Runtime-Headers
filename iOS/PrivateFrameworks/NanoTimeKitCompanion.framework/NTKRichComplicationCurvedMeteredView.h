@@ -15,11 +15,11 @@
 
 @property(retain, nonatomic) NSArray *meterLayers; // @synthesize meterLayers=_meterLayers;
 - (void).cxx_destruct;
-- (void)updateMonochromeColor;
-- (void)transitionToMonochromeWithFraction:(double)arg1;
 - (double)rotationAngleAtProgress:(float)arg1;
 - (void)colorMetersWithProgress:(double)arg1;
+- (void)_updateGradient;
 - (void)setProgress:(double)arg1;
+- (id)_shapeStrokeColor;
 - (void)_setupShapeLayer:(id)arg1;
 - (CDUnknownBlockType)customizeMeterLayerBlock;
 

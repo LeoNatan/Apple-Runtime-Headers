@@ -27,9 +27,6 @@
 @property(copy, nonatomic) UIColor *backgroundColor;
 @property(copy, nonatomic) NSArray *backgroundEffects;
 @property(copy, nonatomic) UIBlurEffect *backgroundEffect;
-- (void)setupTransparentBackground;
-- (void)setupOpaqueBackground;
-- (void)setupDefaultBackground;
 - (void)configureWithTransparentBackground;
 - (void)configureWithOpaqueBackground;
 - (void)configureWithDefaultBackground;

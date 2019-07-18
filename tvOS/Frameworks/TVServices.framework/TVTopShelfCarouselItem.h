@@ -16,6 +16,7 @@
     TVTopShelfRottenTomatoesRating *_rottenTomatoesRating;
     NSNumber *_commonSenseRecommendedAge;
     NSString *_contextImageName;
+    NSString *_photosAssetIdentifier;
     NSString *_contextTitle;
     NSString *_summary;
     NSString *_genre;
@@ -25,11 +26,9 @@
     NSURL *_previewVideoURL;
     NSURL *_cinemagraphURL;
     NSArray *_namedAttributes;
-    NSString *__subtitle;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *_subtitle; // @synthesize _subtitle=__subtitle;
 @property(copy, nonatomic) NSArray *namedAttributes; // @synthesize namedAttributes=_namedAttributes;
 @property(copy, nonatomic) NSURL *cinemagraphURL; // @synthesize cinemagraphURL=_cinemagraphURL;
 @property(copy, nonatomic) NSURL *previewVideoURL; // @synthesize previewVideoURL=_previewVideoURL;
@@ -39,6 +38,7 @@
 @property(copy, nonatomic) NSString *genre; // @synthesize genre=_genre;
 @property(copy, nonatomic) NSString *summary; // @synthesize summary=_summary;
 @property(copy, nonatomic) NSString *contextTitle; // @synthesize contextTitle=_contextTitle;
+@property(copy, nonatomic, setter=_setPhotosAssetIdentifier:) NSString *_photosAssetIdentifier; // @synthesize _photosAssetIdentifier;
 @property(copy, nonatomic) NSString *_contextImageName; // @synthesize _contextImageName;
 @property(copy, nonatomic, setter=_setCommonSenseRecommendedAge:) NSNumber *_commonSenseRecommendedAge; // @synthesize _commonSenseRecommendedAge;
 @property(retain, nonatomic, setter=_setRottenTomatoesRating:) TVTopShelfRottenTomatoesRating *_rottenTomatoesRating; // @synthesize _rottenTomatoesRating;

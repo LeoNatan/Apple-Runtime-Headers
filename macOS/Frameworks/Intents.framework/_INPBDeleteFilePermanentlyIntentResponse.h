@@ -20,9 +20,11 @@
     } _has;
     BOOL _confirm;
     BOOL _success;
+    BOOL __encodeLegacyGloryData;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) BOOL success; // @synthesize success=_success;
 @property(nonatomic) BOOL confirm; // @synthesize confirm=_confirm;
 - (id)dictionaryRepresentation;

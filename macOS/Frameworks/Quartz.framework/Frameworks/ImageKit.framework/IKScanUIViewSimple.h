@@ -49,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property IKScannerPreviewSimple *preview; // @synthesize preview=_preview;
 - (void)reLayoutUI;
 - (void)scannerDeviceChanged:(id)arg1;
-- (void)reduceCompressionResistance;
 - (void)updatePathControl;
 - (void)updateConstraints;
 - (int)scanSizePopupWidth;

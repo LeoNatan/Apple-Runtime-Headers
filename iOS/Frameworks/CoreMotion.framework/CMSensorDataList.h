@@ -28,6 +28,7 @@
     unsigned long long fBlockOffset;
     struct AccelUnpacker fAccelUnpacker;
     struct GyroUnpacker fGyroUnpacker;
+    struct PressureUnpacker fPressureUnpacker;
     NSMutableArray *fCachedData;
     NSArray *fMetaArray;
     int fDataType;

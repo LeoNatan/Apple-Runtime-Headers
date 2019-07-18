@@ -18,6 +18,7 @@
 }
 
 @property(retain, nonatomic) id <MPSNDArrayAllocator> destinationArrayAllocator; // @synthesize destinationArrayAllocator=_destinationArrayAllocator;
+- (id)reshapeFitToTileToCommandBuffer:(id)arg1 currentSource:(id)arg2 kernelDimension:(unsigned long long)arg3 dimensionsToBeRetained: /* Error: Ran out of types for this method. */;
 - (id)destinationArrayDescriptorForSourceArrays:(id)arg1 sourceState:(id)arg2;
 - (void)setDilationRates:(CDStruct_27bd5d57)arg1 sourceIndex:(unsigned long long)arg2;
 - (CDStruct_27bd5d57)dilationRatesForSourceIndex:(unsigned long long)arg1;

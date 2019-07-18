@@ -6,7 +6,7 @@
 
 #import <ITMLKit/IKViewElement.h>
 
-@class NSHashTable;
+@class UIView;
 
 @interface IKViewElement (TVMLKitAdditions)
 + (id)tv_approximateViewElementForView:(id)arg1;
@@ -20,8 +20,6 @@
 - (unsigned long long)tv_elementType;
 - (id)tv_associatedViewElementWithDefaultClass:(Class)arg1;
 - (id)tv_associatedViewElement;
-- (id)tv_approximateView;
-- (void)tv_addViewProxy:(id)arg1;
-@property(readonly, nonatomic) NSHashTable *tv_viewProxyMap;
+@property(nonatomic, setter=tv_setProxyView:) __weak UIView *tv_proxyView;
 @end
 

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CUICatalog, CUIMutableCatalog, NSBundle, NSMapTable, NSString, UITraitCollection, _UICache;
+@class CUICatalog, CUIMutableCatalog, NSDictionary, NSMapTable, NSString, UITraitCollection, _UIAssetBundle, _UICache;
 
 @interface _UIAssetManager : NSObject
 {
@@ -18,8 +18,9 @@
     unsigned long long _preferredIdiomSubtype;
     long long _preferredGamut;
     long long _preferredLayoutDirectionTrait;
-    NSBundle *_bundle;
+    _UIAssetBundle *_bundle;
     NSMapTable *_assetMap;
+    NSDictionary *_systemSymbolNameAliases;
     CUIMutableCatalog *_runtimeCatalog;
     struct os_unfair_lock_s _runtimeCatalogCreationLock;
     UITraitCollection *_preferredTraitCollection;
@@ -45,15 +46,17 @@
 + (id)sharedRuntimeCatalog;
 + (long long)_userInterfaceIdiomForDeviceClass:(unsigned long long)arg1;
 + (void)_convertTraitCollection:(id)arg1 toCUIScale:(double *)arg2 CUIIdiom:(long long *)arg3 UIKitIdiom:(long long *)arg4 UIKitUserInterfaceStyle:(long long *)arg5 subtype:(unsigned long long *)arg6 CUIDisplayGamut:(long long *)arg7 UIKitLayoutDirection:(long long *)arg8 CUILayoutDirection:(unsigned long long *)arg9;
-+ (id)newAssetNamed:(id)arg1 fromBundle:(id)arg2;
++ (id)newAssetNamed:(id)arg1 fromNSBundle:(id)arg2;
 + (id)assetManagerForBundle:(id)arg1;
++ (id)assetManagerForCFBundle:(struct __CFBundle *)arg1;
++ (id)assetManagerForNSBundle:(id)arg1;
 + (void)_saveAssetManager:(id)arg1 forBundle:(id)arg2 lock:(_Bool)arg3;
 + (void)_executeUnitTestWithAssetManagerCache:(CDUnknownBlockType)arg1;
 + (id)_assetManagerCache;
 @property(retain, nonatomic) UITraitCollection *preferredTraitCollection; // @synthesize preferredTraitCollection=_preferredTraitCollection;
 @property(nonatomic) double preferredScale; // @synthesize preferredScale=_preferredScale;
 @property(retain, nonatomic) _UIAssetManager *nextAssetManager; // @synthesize nextAssetManager=_nextAssetManager;
-@property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
+@property(readonly, nonatomic) _UIAssetBundle *bundle; // @synthesize bundle=_bundle;
 - (id)_lookUpObjectForTraitCollection:(id)arg1 withAccessorWithAppearanceName:(CDUnknownBlockType)arg2;
 - (id)_translateAppearanceNameToNative:(id)arg1;
 - (id)_defaultAppearanceNames;
@@ -89,6 +92,7 @@
 - (id)imageNamed:(id)arg1 idiom:(long long)arg2 subtype:(unsigned long long)arg3;
 - (id)imageNamed:(id)arg1 scale:(double)arg2 idiom:(long long)arg3 subtype:(unsigned long long)arg4;
 - (id)imageNamed:(id)arg1 configuration:(id)arg2 cachingOptions:(unsigned long long)arg3 attachCatalogImage:(_Bool)arg4;
+- (id)_symbolNameAliasForName:(id)arg1;
 - (_Bool)_isSystemAssetManager;
 @property(readonly, nonatomic, getter=_managingCoreGlyphs) _Bool managingCoreGlyphs;
 @property(readonly, nonatomic, getter=_managingUIKitAssets) _Bool managingUIKitAssets;
@@ -97,7 +101,7 @@
 - (id)initManagerWithoutCatalogWithName:(id)arg1;
 - (id)initWithURL:(id)arg1 idiom:(long long)arg2 error:(id *)arg3;
 - (id)_initWithName:(id)arg1 inBundle:(id)arg2 idiom:(long long)arg3 lock:(_Bool)arg4 allowMissingCatalog:(_Bool)arg5;
-- (id)initWithName:(id)arg1 inBundle:(id)arg2 idiom:(long long)arg3;
+- (id)initWithName:(id)arg1 inNSBundle:(id)arg2 idiom:(long long)arg3;
 
 @end
 

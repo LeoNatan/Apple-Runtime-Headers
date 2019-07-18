@@ -62,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (id)_visibleRestrictions;
 - (id)_localDeviceRestrictions;
 - (id)_remoteDeviceRestrictions;
+- (void)_contactStoreDidChange:(id)arg1;
 - (id)initWithPersistenceController:(id)arg1 organizationIdentifier:(id)arg2 userDSID:(id)arg3 userName:(id)arg4;
 
 // Remaining properties

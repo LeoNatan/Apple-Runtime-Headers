@@ -269,7 +269,6 @@
 - (id)_topHTMLView;
 - (void)_setMouseDownEvent:(struct NSEvent *)arg1;
 - (void)_writeSelectionWithPasteboardTypes:(id)arg1 toPasteboard:(id)arg2 cachedAttributedString:(id)arg3;
-- (id)_hitViewForEvent:(id)arg1;
 - (id)_selectedRange;
 - (BOOL)_shouldReplaceSelectionWithText:(id)arg1 givenAction:(long long)arg2;
 - (BOOL)_shouldInsertText:(id)arg1 replacingDOMRange:(id)arg2 givenAction:(long long)arg3;
@@ -287,6 +286,7 @@
 - (id)_webView;
 - (id)_dataSource;
 - (id)_documentRange;
+- (id)_hitViewForEvent:(id)arg1;
 - (double)_adjustedBottomOfPageWithTop:(double)arg1 bottom:(double)arg2 limit:(double)arg3;
 - (void)_endScreenPaginationMode;
 - (BOOL)_beginScreenPaginationModeWithPageSize:(struct CGSize)arg1 shrinkToFit:(BOOL)arg2;

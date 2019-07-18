@@ -16,11 +16,13 @@
     long long _leadingCellThumbnailSizePreset;
     long long _nonLeadingCellThumbnailSizePreset;
     long long _qualityOfService;
+    double _scale;
     double _slotsLimit;
     long long _sourceNameImageSizePreset;
     NSString *_assetsDirectoryFileURLString;
     unsigned int _dynamicThumbnailSizePresetMinimumHeightInPixels;
     unsigned int _dynamicThumbnailSizePresetMinimumWidthInPixels;
+    NSString *_keyboardInputMode;
     NTPBSectionSlotCostInfo *_nonVideoSectionSlotCostInfo;
     NTPBSectionSlotCostInfo *_videoSectionSlotCostInfo;
     _Bool _allowLeadingCell;
@@ -36,6 +38,7 @@
         unsigned int leadingCellThumbnailSizePreset:1;
         unsigned int nonLeadingCellThumbnailSizePreset:1;
         unsigned int qualityOfService:1;
+        unsigned int scale:1;
         unsigned int slotsLimit:1;
         unsigned int sourceNameImageSizePreset:1;
         unsigned int dynamicThumbnailSizePresetMinimumHeightInPixels:1;
@@ -51,6 +54,8 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *keyboardInputMode; // @synthesize keyboardInputMode=_keyboardInputMode;
+@property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) long long embedsLimit; // @synthesize embedsLimit=_embedsLimit;
 @property(nonatomic) _Bool allowSectionTitles; // @synthesize allowSectionTitles=_allowSectionTitles;
 @property(nonatomic) unsigned int dynamicThumbnailSizePresetMinimumHeightInPixels; // @synthesize dynamicThumbnailSizePresetMinimumHeightInPixels=_dynamicThumbnailSizePresetMinimumHeightInPixels;
@@ -79,6 +84,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasKeyboardInputMode;
+@property(nonatomic) _Bool hasScale;
 @property(nonatomic) _Bool hasEmbedsLimit;
 @property(nonatomic) _Bool hasAllowSectionTitles;
 @property(nonatomic) _Bool hasDynamicThumbnailSizePresetMinimumHeightInPixels;

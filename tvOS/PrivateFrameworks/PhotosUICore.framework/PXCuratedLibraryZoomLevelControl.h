@@ -8,7 +8,7 @@
 
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@class NSArray, NSString, PXCuratedLibraryStyleGuide, PXCuratedLibraryViewModel, PXUpdater, UIColor;
+@class NSArray, NSString, PXCuratedLibraryStyleGuide, PXCuratedLibraryViewModel, PXUpdater, UIColor, UIVisualEffectView;
 @protocol PXCuratedLibraryZoomLevelControlDelegate;
 
 @interface PXCuratedLibraryZoomLevelControl : UIView <PXChangeObserver>
@@ -18,6 +18,7 @@
     struct CGSize *_segmentSizes;
     double _minimumInterSegmentSpacing;
     struct CGSize _intrinsicSize;
+    UIVisualEffectView *_backgroundEffectView;
     UIView *_contentView;
     UIView *_selectionView;
     UIColor *_selectedButtonTextColor;

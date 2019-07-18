@@ -14,6 +14,8 @@
 + (id)truncatedClientBundleId:(id)arg1;
 + (struct PPMTypeSafeBool_)typeSafeBoolOfCond:(_Bool)arg1;
 + (id)osBuild;
++ (int)feedbackTypeForPET2:(unsigned int)arg1;
++ (struct PPMPortraitFeedbackType_)feedbackTypeForPET:(unsigned int)arg1;
 + (struct PPMObjectDonationSource_)donationSourceForBundleId:(id)arg1;
 + (struct PPMLocationDonationSource_)locationSourceForBundleId:(id)arg1;
 + (struct PPMNamedEntityDonationSource_)namedEntitySourceForBundleId:(id)arg1;

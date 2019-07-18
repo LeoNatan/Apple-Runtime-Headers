@@ -16,6 +16,7 @@
 - (_Bool)isPlayable;
 - (_Bool)isRemotelyAvailable;
 - (_Bool)isStreamable;
+- (_Bool)isLocallyGeneratable;
 - (_Bool)isLocallyAvailable;
 @end
 

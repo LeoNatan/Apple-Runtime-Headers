@@ -6,22 +6,22 @@
 
 #import <UIKit/UIViewController.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC12NewsArticles21ArticleViewController : UIViewController
 {
+    // Error parsing type: , name: identifier
+    // Error parsing type: , name: observableScrollView
+    // Error parsing type: , name: modalHostStyle
+    // Error parsing type: , name: isImpressionable
+    // Error parsing type: , name: pageDelegate
+    // Error parsing type: , name: contentBackgroundColor
     // Error parsing type: , name: styler
     // Error parsing type: , name: eventHandler
-    // Error parsing type: , name: identifier
     // Error parsing type: , name: articleViewController
     // Error parsing type: , name: keyCommandManager
     // Error parsing type: , name: documentSectionBlueprintProvider
     // Error parsing type: , name: hardPaywallViewController
     // Error parsing type: , name: footerProvider
     // Error parsing type: , name: urlHandler
-    // Error parsing type: , name: observableScrollView
-    // Error parsing type: , name: modalHostStyle
-    // Error parsing type: , name: isImpressionable
-    // Error parsing type: , name: pageDelegate
     // Error parsing type: , name: paywallPreparationEventManager
     // Error parsing type: , name: deferredHardPaywallIsVisible
     // Error parsing type: , name: deferredHardPaywallHeightProvider

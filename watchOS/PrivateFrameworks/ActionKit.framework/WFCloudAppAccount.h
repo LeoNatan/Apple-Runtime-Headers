@@ -15,7 +15,6 @@
     CLAPIEngine *_engine;
 }
 
-+ (Class)loginViewControllerClass;
 + (id)localizedServiceName;
 + (id)serviceID;
 + (unsigned int)storageBehaviorForPropertyWithKey:(id)arg1;

@@ -17,6 +17,7 @@
     struct {
         unsigned int fileType:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     _INPBDateTimeRange *_dateTime;
     int _fileType;
     _INPBContact *_person;
@@ -25,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBString *value; // @synthesize value=_value;
 @property(retain, nonatomic) _INPBLong *quantity; // @synthesize quantity=_quantity;
 @property(retain, nonatomic) _INPBContact *person; // @synthesize person=_person;

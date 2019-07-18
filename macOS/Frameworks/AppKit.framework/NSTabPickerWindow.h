@@ -14,6 +14,8 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)minSize;
 - (BOOL)_supportsNewTabButton;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
+- (void)performCloseTabbedWindowGroup:(id)arg1;
+- (void)performClose:(id)arg1;
 - (id)_tabBarItem;
 - (void)toggleTabOverview:(id)arg1;
 

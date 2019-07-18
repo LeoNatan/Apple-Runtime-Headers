@@ -16,6 +16,7 @@
     SOExtensionFinder *_extensionFinder;
 }
 
++ (BOOL)isAppleConnectExtensionBundleIdentifier:(id)arg1;
 + (BOOL)isInternalExtensionBundleIdentifier:(id)arg1;
 + (id)internalExtensionsBundleIdentifiers;
 + (id)internalExtensionBundleIdentifier;

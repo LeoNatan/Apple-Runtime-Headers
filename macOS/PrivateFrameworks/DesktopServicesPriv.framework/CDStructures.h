@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class AMPDevice, DeviceCollection, FITNode, FPItemCollection, NSArray, NSError, NSMetadataQuery, NSMutableArray, NSObject, NSProgress;
+@class AMPDevice, DS_TKeyValueObserverGlue, DeviceCollection, FITNode, FPItemCollection, NSArray, NSError, NSIndexSet, NSMetadataQuery, NSMutableArray, NSObject, NSProgress;
 
 #pragma mark Named Structures
 
@@ -26,15 +26,31 @@ struct TDSHelperContext {
     unsigned char _field8[16];
     struct AuthorizationOpaqueRef *_field9;
     struct TRef<NSObject<OS_xpc_object>*, TRetainReleasePolicy<xpc_object_t>> _field10;
-    struct TNSRef<TDSHelperConnectionHandler, void> _field11;
+    struct TNSRef<DS_TDSHelperConnectionHandler, void> _field11;
 };
 
 struct TDSMutex {
     struct _opaque_pthread_mutex_t fMutex;
 };
 
+struct TKeyValueObserver {
+    struct TNSRef<DS_TKeyValueObserverGlue, void> fObserver;
+    NSObject *fObjectToObserve;
+    NSArray *fArrayOfObjectsToObserve;
+    struct TNSRef<NSIndexSet, void> fIndexesOfObjectsToObserve;
+    struct TString fKeyPathToObserve;
+};
+
 struct TNSRef<AMPDevice, void> {
     AMPDevice *fRef;
+};
+
+struct TNSRef<DS_TDSHelperConnectionHandler, void> {
+    id _field1;
+};
+
+struct TNSRef<DS_TKeyValueObserverGlue, void> {
+    DS_TKeyValueObserverGlue *fRef;
 };
 
 struct TNSRef<DeviceCollection, void> {
@@ -65,6 +81,10 @@ struct TNSRef<NSError, void> {
     NSError *fRef;
 };
 
+struct TNSRef<NSIndexSet, void> {
+    NSIndexSet *fRef;
+};
+
 struct TNSRef<NSMetadataQuery, void> {
     NSMetadataQuery *fRef;
 };
@@ -81,10 +101,6 @@ struct TNSRef<NSProgress, void> {
     NSProgress *fRef;
 };
 
-struct TNSRef<TDSHelperConnectionHandler, void> {
-    id _field1;
-};
-
 struct TNode;
 
 struct TNodePtr {
@@ -96,11 +112,15 @@ struct TRef<NSObject<OS_xpc_object>*, TRetainReleasePolicy<xpc_object_t>> {
 };
 
 struct TRef<const __CFString *, TRetainReleasePolicy<CFStringRef>> {
-    struct __CFString *_field1;
+    struct __CFString *fRef;
 };
 
 struct TString {
-    struct TRef<const __CFString *, TRetainReleasePolicy<CFStringRef>> _field1;
+    struct TRef<const __CFString *, TRetainReleasePolicy<CFStringRef>> fString;
+};
+
+struct __hash_node_base<std::__1::__hash_node<NSObject *, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<NSObject *, void *>*> *__next_;
 };
 
 struct _opaque_pthread_mutex_t {
@@ -120,6 +140,16 @@ struct condition_variable_any {
     struct shared_ptr<std::__1::mutex> __mut_;
 };
 
+struct function<void ()> {
+    struct type __buf_;
+    struct __base<void ()> *__f_;
+};
+
+struct function<void (NSDictionary<NSString *, NSObject *>*)> {
+    struct type __buf_;
+    struct __base<void (NSDictionary<NSString *, NSObject *>*)> *__f_;
+};
+
 struct mutex {
     struct _opaque_pthread_mutex_t __m_;
 };
@@ -127,6 +157,44 @@ struct mutex {
 struct shared_ptr<std::__1::mutex> {
     struct mutex *__ptr_;
     struct __shared_weak_count *__cntrl_;
+};
+
+struct type {
+    unsigned char __lx[32];
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<NSObject *, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unordered_set<NSObject *, std::__1::hash<NSObject *>, std::__1::equal_to<NSObject *>, std::__1::allocator<NSObject *>> {
+    struct __hash_table<NSObject *, std::__1::hash<NSObject *>, std::__1::equal_to<NSObject *>, std::__1::allocator<NSObject *>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>, std::__1::allocator<std::__1::__hash_node<NSObject *, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<NSObject *, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::hash<NSObject *>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::equal_to<NSObject *>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct vector<TKeyValueObserver, std::__1::allocator<TKeyValueObserver>> {
+    struct TKeyValueObserver *__begin_;
+    struct TKeyValueObserver *__end_;
+    struct __compressed_pair<TKeyValueObserver *, std::__1::allocator<TKeyValueObserver>> {
+        struct TKeyValueObserver *__value_;
+    } __end_cap_;
 };
 
 #pragma mark Typedef'd Structures
@@ -151,4 +219,29 @@ typedef struct TNSRef<NSError, void> {
 typedef struct TNSRef<NSProgress, void> {
     NSProgress *fRef;
 } TNSRef_b16f0fdb;
+
+typedef struct function<void ()> {
+    struct type __buf_;
+    struct __base<void ()> *__f_;
+} function_b1fce659;
+
+typedef struct function<void (NSDictionary<NSString *, NSObject *>*)> {
+    struct type __buf_;
+    struct __base<void (NSDictionary<NSString *, NSObject *>*)> *__f_;
+} function_e1076a84;
+
+typedef struct unordered_set<NSObject *, std::__1::hash<NSObject *>, std::__1::equal_to<NSObject *>, std::__1::allocator<NSObject *>> {
+    struct __hash_table<NSObject *, std::__1::hash<NSObject *>, std::__1::equal_to<NSObject *>, std::__1::allocator<NSObject *>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>, std::__1::allocator<std::__1::__hash_node<NSObject *, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<NSObject *, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::hash<NSObject *>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::equal_to<NSObject *>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+} unordered_set_24e1661d;
 

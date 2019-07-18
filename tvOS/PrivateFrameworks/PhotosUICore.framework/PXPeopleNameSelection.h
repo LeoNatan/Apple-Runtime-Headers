@@ -22,7 +22,7 @@
 @property(readonly, nonatomic) id <PXPerson> person; // @synthesize person=_person;
 @property(readonly, nonatomic) unsigned long long selectionType; // @synthesize selectionType=_selectionType;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSString *displayName;
+@property(readonly, nonatomic) NSString *localizedName;
 - (void)setLinkedPerson:(id)arg1;
 - (id)initWithName:(id)arg1 contact:(id)arg2 person:(id)arg3 type:(unsigned long long)arg4;
 - (id)initWithSelectedPerson:(id)arg1;

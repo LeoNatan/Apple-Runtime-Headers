@@ -7,12 +7,11 @@
 #import <UIKit/UIViewController.h>
 
 #import <StoreKit/SKScreenTrackingDelegate-Protocol.h>
-#import <StoreKit/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class NSDictionary, NSString, SKInvocationQueueProxy, SKRemoteProductViewController, SKScrollDetector, _UIAsyncInvocation, _UIRemoteViewController;
+@class NSDictionary, NSString, SKInvocationQueueProxy, SKRemoteProductViewController, SKScrollDetector, _UIAsyncInvocation;
 @protocol SKStoreProductViewControllerDelegate, SKStoreProductViewControllerDelegatePrivate, SKUIServiceProductPageViewController;
 
-@interface SKStoreProductViewController : UIViewController <SKScreenTrackingDelegate, _UIRemoteViewControllerContaining>
+@interface SKStoreProductViewController : UIViewController <SKScreenTrackingDelegate>
 {
     NSString *_additionalBuyParameters;
     NSString *_affiliateIdentifier;
@@ -36,6 +35,7 @@
     BOOL _viewWasOnScreen;
 }
 
++ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) BOOL automaticallyDismisses; // @synthesize automaticallyDismisses=_automaticallyDismisses;
 @property(copy, nonatomic) NSString *promptString; // @synthesize promptString=_promptString;
 @property(nonatomic) BOOL showsRightBarButton; // @synthesize showsRightBarButton=_showsRightBarButton;
@@ -50,7 +50,6 @@
 @property(copy, nonatomic) NSString *additionalBuyParameters; // @synthesize additionalBuyParameters=_additionalBuyParameters;
 @property(nonatomic) __weak id <SKStoreProductViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)sk_didBecomeOffScreen:(id)arg1;
 - (void)sk_didBecomeOnScreen:(id)arg1;
 - (void)_sk_applicationWillEnterForeground:(id)arg1;
@@ -67,6 +66,8 @@
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)loadView;
 - (void)loadProductWithParameters:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (long long)modalTransitionStyle;
+- (long long)modalPresentationStyle;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

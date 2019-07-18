@@ -30,6 +30,7 @@
     long long _currentMediaRemoteInputMode;
     struct __IOHIDEventSystemClient *_hidSystemClient;
     NSObject<OS_dispatch_queue> *_hidSystemClientQueue;
+    _Bool _shouldMonitorBackgroundEvents;
     _Bool _isAppInBackground;
     GCController *_firstMicroGamepad;
     NSThread *_hidInputThread;
@@ -65,6 +66,7 @@
 - (void)controllerWithUDID:(unsigned long long)arg1 setData:(id)arg2;
 - (void)addControllerForAppStoreRemote:(id)arg1;
 - (void)addController:(id)arg1;
+- (_Bool)shouldStoreController:(id)arg1;
 - (void)storeController:(id)arg1;
 - (_Bool)combineSiriRemoteHIDDevicesWithNewController:(id)arg1 existingController:(id)arg2;
 - (_Bool)detectAndSetIfFirstMicroGamepad:(id)arg1;

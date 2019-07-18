@@ -9,7 +9,7 @@
 #import <network/OS_nw_socks5_connection-Protocol.h>
 
 @class NSString;
-@protocol OS_dispatch_queue, OS_nw_connection, OS_nw_error;
+@protocol OS_dispatch_queue, OS_nw_connection, OS_nw_error, OS_nw_path_evaluator;
 
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_socks5_connection : NSObject <OS_nw_socks5_connection>
@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType sc_cancel;
     unsigned char sc_state;
     unsigned char sc_out_address_type;
+    NSObject<OS_nw_path_evaluator> *sc_prefer_wifi_path_evaluator;
     union {
         char *byte_pointer;
         struct in_addr *ipv4_addr;
@@ -37,6 +38,7 @@ __attribute__((visibility("hidden")))
     unsigned int sc_sent_reply:1;
     unsigned int sc_has_read_from_in_connection:1;
     unsigned int sc_out_udp:1;
+    unsigned int sc_should_prefer_wifi:1;
     unsigned long long sc_out_connection_bytes_read;
     unsigned long long sc_out_connection_bytes_written;
     unsigned long long sc_in_connection_bytes_read;

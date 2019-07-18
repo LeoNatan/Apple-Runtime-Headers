@@ -59,7 +59,6 @@
 - (void)setFeedback:(id)arg1;
 - (void)setResourceVersions:(id)arg1 forKey:(id)arg2;
 - (BOOL)getResourceVersions:(id *)arg1 forKey:(id)arg2;
-- (BOOL)requiresQueryId;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

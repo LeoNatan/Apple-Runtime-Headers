@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) AMSBagValue *bu_searchHints;
 @property(readonly, nonatomic) AMSBagValue *bu_saveUserReviewURL;
 @property(readonly, nonatomic) AMSBagValue *bu_resetAndRedirectURL;
+@property(readonly, nonatomic) AMSBagValue *bu_readingGoalShareURL;
 @property(readonly, nonatomic) AMSBagValue *bu_purchaseDAAP;
 @property(readonly, nonatomic) AMSBagValue *bu_processRedirectURL;
 @property(readonly, nonatomic) AMSBagValue *bu_privacyAcknowledgementURL;

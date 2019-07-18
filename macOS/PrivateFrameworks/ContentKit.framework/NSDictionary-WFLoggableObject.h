@@ -16,7 +16,6 @@
 
 @interface NSDictionary (WFLoggableObject) <WFLoggableObject, WFPropertyListObject, WFJavaScriptCoreBridgeableObject, WFSerializableContent, WFJSONObject>
 + (id)objectWithWFSerializedRepresentation:(id)arg1;
-+ (Class)wf_mappedDictionaryClass;
 @property(readonly, nonatomic) NSDictionary *propertiesForEventLogging;
 @property(retain, nonatomic) WFFileType *wf_preferredFileType;
 - (id)wfSerializedRepresentation;

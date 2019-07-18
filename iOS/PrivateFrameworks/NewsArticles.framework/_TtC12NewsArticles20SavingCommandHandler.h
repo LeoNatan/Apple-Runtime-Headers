@@ -9,6 +9,9 @@
 @interface _TtC12NewsArticles20SavingCommandHandler : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: readingList
+    // Error parsing type: , name: bundleSubscriptionManager
+    // Error parsing type: , name: paidAccessChecker
+    // Error parsing type: , name: featureAvailability
 }
 
 @end

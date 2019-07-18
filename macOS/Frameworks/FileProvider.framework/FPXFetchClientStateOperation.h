@@ -6,7 +6,7 @@
 
 #import <FileProvider/FPOperation.h>
 
-@class CSSearchableIndex, NSString;
+@class CSSearchableIndex, FPXDomainContext, NSString;
 
 __attribute__((visibility("hidden")))
 @interface FPXFetchClientStateOperation : FPOperation
@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSString *_indexName;
     NSString *_domainIdentifier;
     NSString *_reason;
+    FPXDomainContext *_domainContext;
 }
 
 + (id)_currentIndexerVersion;
@@ -25,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)_markClientStateResetDone;
 - (id)_clientStateCurrentVersionIfNeedReset;
 - (id)operationDescription;
-- (id)initWithIndex:(id)arg1 indexName:(id)arg2 domainID:(id)arg3 reason:(id)arg4;
+- (id)initWithIndex:(id)arg1 context:(id)arg2 indexName:(id)arg3 domainID:(id)arg4 reason:(id)arg5;
 
 @end
 

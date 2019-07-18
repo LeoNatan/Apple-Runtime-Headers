@@ -6,9 +6,16 @@
 
 #import <CoreData/NSCloudKitMirroringRequest.h>
 
+@class NSSet;
+
 @interface NSCloudKitMirroringResetMetadataRequest : NSCloudKitMirroringRequest
 {
+    NSSet *_objectIDsToReset;
 }
+
+@property(copy, nonatomic) NSSet *objectIDsToReset; // @synthesize objectIDsToReset=_objectIDsToReset;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)dealloc;
 
 @end
 

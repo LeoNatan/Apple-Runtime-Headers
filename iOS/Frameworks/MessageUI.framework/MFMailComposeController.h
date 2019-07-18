@@ -10,7 +10,6 @@
 #import <MessageUI/CNComposeHeaderViewDelegate-Protocol.h>
 #import <MessageUI/CNContactContentViewControllerDelegate-Protocol.h>
 #import <MessageUI/CNContactPickerDelegate-Protocol.h>
-#import <MessageUI/DCDocumentCameraViewControllerDelegate-Protocol.h>
 #import <MessageUI/MFComposeActivityHandoffOperationDelegate-Protocol.h>
 #import <MessageUI/MFComposeImageSizeViewDelegate-Protocol.h>
 #import <MessageUI/MFComposeSubjectViewDelegate-Protocol.h>
@@ -25,11 +24,12 @@
 #import <MessageUI/UIImagePickerControllerDelegate-Protocol.h>
 #import <MessageUI/UINavigationControllerDelegate-Protocol.h>
 #import <MessageUI/UIPopoverPresentationControllerDelegate-Protocol.h>
+#import <MessageUI/VNDocumentCameraViewControllerDelegate-Protocol.h>
 
-@class CNComposeRecipient, CNComposeRecipientAtom, CNContactPickerViewController, CNContactViewController, CNRecentComposeRecipient, DCDocumentCameraViewController, EFFuture, EMMailboxObjectID, EMMessageObjectID, MFAddressPickerReformatter, MFAttachment, MFComposeActivityHandoffOperation, MFComposeDisplayMetrics, MFComposeImageSizeView, MFComposeSubjectView, MFLANHandoffAgent, MFLock, MFMailComposeRecipientTextView, MFMailComposeToField, MFMailPopoverManager, MFMailSignatureController, MFMessageContentProgressLayer, MFMutableMessageHeaders, MFOutgoingMessageDelivery, MFPhotoPickerController, MFSecureMIMECompositionManager, NSArray, NSDate, NSDictionary, NSMutableSet, NSObject, NSString, NSTimer, QLPreviewController, UIAlertController, UIBarButtonItem, UIButton, UIImagePickerController, UIKeyCommand, UIProgressView, UIResponder, UIView, _MFMailCompositionContext;
+@class CNComposeRecipient, CNComposeRecipientAtom, CNContactPickerViewController, CNContactViewController, CNRecentComposeRecipient, EFFuture, EMMailboxObjectID, EMMessageObjectID, MFAddressPickerReformatter, MFAttachment, MFComposeActivityHandoffOperation, MFComposeDisplayMetrics, MFComposeImageSizeView, MFComposeSubjectView, MFLANHandoffAgent, MFLock, MFMailComposeRecipientTextView, MFMailComposeToField, MFMailPopoverManager, MFMailSignatureController, MFMessageContentProgressLayer, MFMutableMessageHeaders, MFOutgoingMessageDelivery, MFPhotoPickerController, MFSecureMIMECompositionManager, NSArray, NSDate, NSDictionary, NSMutableSet, NSObject, NSString, NSTimer, QLPreviewController, UIAlertController, UIBarButtonItem, UIButton, UIImagePickerController, UIKeyCommand, UIProgressView, UIResponder, UIView, VNDocumentCameraViewController, _MFMailCompositionContext;
 @protocol EFScheduler, MFComposeBodyField, MFMailAccountProxyGenerator, OS_dispatch_group;
 
-@interface MFMailComposeController : UIViewController <UINavigationControllerDelegate, CNContactContentViewControllerDelegate, MFMailComposeToFieldDelegate, NSUserActivityDelegate, MFComposeActivityHandoffOperationDelegate, MFPhotoPickerControllerDelegate, QLPreviewControllerDelegate, DCDocumentCameraViewControllerDelegate, MFMailComposeViewDelegate, CNComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate, MFSecureMIMECompositionManagerDelegate, MFComposeTypeFactoryDelegate, MFMailComposeRecipientTextViewDelegate, UIImagePickerControllerDelegate, UIPopoverPresentationControllerDelegate, CNAutocompleteGroupDetailViewControllerDelegate, CNContactPickerDelegate>
+@interface MFMailComposeController : UIViewController <UINavigationControllerDelegate, CNContactContentViewControllerDelegate, MFMailComposeToFieldDelegate, NSUserActivityDelegate, MFComposeActivityHandoffOperationDelegate, MFPhotoPickerControllerDelegate, QLPreviewControllerDelegate, VNDocumentCameraViewControllerDelegate, MFMailComposeViewDelegate, CNComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate, MFSecureMIMECompositionManagerDelegate, MFComposeTypeFactoryDelegate, MFMailComposeRecipientTextViewDelegate, UIImagePickerControllerDelegate, UIPopoverPresentationControllerDelegate, CNAutocompleteGroupDetailViewControllerDelegate, CNContactPickerDelegate>
 {
     id _remoteViewControllerProxy;
     _MFMailCompositionContext *_compositionContext;
@@ -139,7 +139,7 @@
     unsigned long long _markupReplyAttachmentLoadingProgress;
     NSMutableSet *_drawingFileAttachments;
     id <EFScheduler> _autosaveQueue;
-    DCDocumentCameraViewController *_documentCameraController;
+    VNDocumentCameraViewController *_documentCameraViewController;
     MFComposeDisplayMetrics *_displayMetrics;
 }
 
@@ -150,7 +150,7 @@
 + (void)initialize;
 + (id)signpostLog;
 @property(retain, nonatomic) MFComposeDisplayMetrics *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
-@property(nonatomic) __weak DCDocumentCameraViewController *documentCameraController; // @synthesize documentCameraController=_documentCameraController;
+@property(nonatomic) __weak VNDocumentCameraViewController *documentCameraViewController; // @synthesize documentCameraViewController=_documentCameraViewController;
 @property(retain, nonatomic) id <EFScheduler> autosaveQueue; // @synthesize autosaveQueue=_autosaveQueue;
 @property(retain, nonatomic) NSMutableSet *drawingFileAttachments; // @synthesize drawingFileAttachments=_drawingFileAttachments;
 @property(nonatomic) unsigned long long markupReplyAttachmentLoadingProgress; // @synthesize markupReplyAttachmentLoadingProgress=_markupReplyAttachmentLoadingProgress;
@@ -222,7 +222,6 @@
 - (id)pickerView:(id)arg1 attributedTitleForRow:(long long)arg2 forComponent:(long long)arg3;
 - (unsigned long long)pickerView:(id)arg1 numberOfRowsInComponent:(unsigned long long)arg2;
 - (int)numberOfComponentsInPickerView:(id)arg1;
-- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect *)arg2 inView:(inout id *)arg3;
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (void)_finishPopoverAlertClosingComposition:(_Bool)arg1;
@@ -465,7 +464,7 @@
 - (id)_backgroundColorForMarkupController;
 - (void)_documentCameraViewControllerDidFinish;
 - (void)documentCameraViewControllerDidCancel:(id)arg1;
-- (void)documentCameraViewController:(id)arg1 didFinishWithDocument:(id)arg2;
+- (void)documentCameraViewController:(id)arg1 didFinishWithScan:(id)arg2;
 - (void)scanDocument;
 - (void)insertDrawing;
 - (void)markupAttachment:(id)arg1;

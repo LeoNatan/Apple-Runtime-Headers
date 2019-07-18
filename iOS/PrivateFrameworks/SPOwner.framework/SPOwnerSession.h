@@ -9,11 +9,12 @@
 #import <SPOwner/SPOwnerSessionPrivateProtocol-Protocol.h>
 #import <SPOwner/SPTrackingAvoidanceServiceProtocol-Protocol.h>
 
-@class FMXPCServiceDescription, FMXPCSession, NSDate, NSOperationQueue, NSSet, NSString;
-@protocol OS_dispatch_queue, SPOwnerSessionXPCProtocol;
+@class FMXPCServiceDescription, FMXPCSession, NSDictionary, NSOperationQueue, NSSet, NSString;
+@protocol OS_dispatch_queue, OS_dispatch_source, SPOwnerSessionXPCProtocol;
 
 @interface SPOwnerSession : NSObject <SPTrackingAvoidanceServiceProtocol, SPOwnerSessionPrivateProtocol>
 {
+    _Bool _cacheFetchInProgress;
     CDUnknownBlockType beaconAddedBlock;
     CDUnknownBlockType beaconRemovedBlock;
     CDUnknownBlockType beaconsChangedBlock;
@@ -23,22 +24,25 @@
     id <SPOwnerSessionXPCProtocol> _proxy;
     id <SPOwnerSessionXPCProtocol> _userAgentProxy;
     NSSet *_allBeaconsCache;
+    NSSet *_clientObservedBeacons;
     NSObject<OS_dispatch_queue> *_queue;
     NSOperationQueue *_notificationQueue;
     id _beaconsChangedNotificationToken;
     id _tagSeparationBeaconsChangedNotificationToken;
-    id _beaconEphemeralLocationChangedNotificationToken;
     id _beaconEstimatedLocationChangedNotificationToken;
-    NSDate *_ephemeralLocationLastUpdatedDate;
+    NSDictionary *_locationCache;
+    NSObject<OS_dispatch_source> *_locationFetchDispatchTimer;
 }
 
-@property(copy, nonatomic) NSDate *ephemeralLocationLastUpdatedDate; // @synthesize ephemeralLocationLastUpdatedDate=_ephemeralLocationLastUpdatedDate;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *locationFetchDispatchTimer; // @synthesize locationFetchDispatchTimer=_locationFetchDispatchTimer;
+@property(nonatomic) _Bool cacheFetchInProgress; // @synthesize cacheFetchInProgress=_cacheFetchInProgress;
+@property(retain, nonatomic) NSDictionary *locationCache; // @synthesize locationCache=_locationCache;
 @property(nonatomic) __weak id beaconEstimatedLocationChangedNotificationToken; // @synthesize beaconEstimatedLocationChangedNotificationToken=_beaconEstimatedLocationChangedNotificationToken;
-@property(nonatomic) __weak id beaconEphemeralLocationChangedNotificationToken; // @synthesize beaconEphemeralLocationChangedNotificationToken=_beaconEphemeralLocationChangedNotificationToken;
 @property(nonatomic) __weak id tagSeparationBeaconsChangedNotificationToken; // @synthesize tagSeparationBeaconsChangedNotificationToken=_tagSeparationBeaconsChangedNotificationToken;
 @property(nonatomic) __weak id beaconsChangedNotificationToken; // @synthesize beaconsChangedNotificationToken=_beaconsChangedNotificationToken;
 @property(retain, nonatomic) NSOperationQueue *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(retain, nonatomic) NSSet *clientObservedBeacons; // @synthesize clientObservedBeacons=_clientObservedBeacons;
 @property(retain, nonatomic) NSSet *allBeaconsCache; // @synthesize allBeaconsCache=_allBeaconsCache;
 @property(retain, nonatomic) id <SPOwnerSessionXPCProtocol> userAgentProxy; // @synthesize userAgentProxy=_userAgentProxy;
 @property(retain, nonatomic) id <SPOwnerSessionXPCProtocol> proxy; // @synthesize proxy=_proxy;
@@ -55,7 +59,6 @@
 - (void)allBeaconsWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) NSSet *allBeacons;
 - (void)updateAllBeaconLocations;
-- (void)udpateBeaconLocationsIfNeeded;
 - (void)updateAllBeacons;
 - (void)stopRefreshing;
 - (void)startRefreshingBeacons:(id)arg1;
@@ -67,12 +70,13 @@
 - (oneway void)forceDistributeKeysWithCompletion:(CDUnknownBlockType)arg1;
 - (oneway void)beaconForUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)rawSearchResultsForBeacon:(id)arg1 dateInterval:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)locationFetchTimerFired;
+- (void)setLocationFetchDispatchTimerWithInterval:(double)arg1;
 - (void)locationsForBeacons:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)remoteInterface;
 - (void)_invalidate;
 - (void)dealloc;
 - (id)init;
-- (void)didDetectInitialWildStaticPayload:(id)arg1 finalWildStaticPayload:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

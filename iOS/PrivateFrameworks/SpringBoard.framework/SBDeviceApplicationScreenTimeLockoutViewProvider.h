@@ -17,6 +17,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)_newLockoutViewControllerWithBundleIdentifier:(id)arg1;
 - (id)_realOverlayViewController;
 - (void)_deactivateIfPossible;
 - (void)_activateIfPossible;

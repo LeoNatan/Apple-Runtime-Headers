@@ -49,9 +49,10 @@
 - (void)configurationInfoWithIdentifiers:(id)arg1 forAltDSID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setConfigurationInfo:(id)arg1 forIdentifier:(id)arg2 forAltDSID:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)warmUpVerificationSessionWithCompletion:(CDUnknownBlockType)arg1;
-- (_Bool)revokeAuthorizationForTeamWithTeamID:(id)arg1 error:(id *)arg2;
+- (_Bool)revokeAuthorizationForApplicationWithClientID:(id)arg1 error:(id *)arg2;
 - (_Bool)deleteAuthorizationDatabase:(id *)arg1;
 - (id)fetchAuthorizedAppListWithContext:(id)arg1 error:(id *)arg2;
+- (id)fetchPrimaryBundleIDForWebServiceWithInfo:(id)arg1 error:(id *)arg2;
 - (id)fetchDeviceListWithContext:(id)arg1 error:(id *)arg2;
 - (void)fetchDeviceMapWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchDeviceListWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;

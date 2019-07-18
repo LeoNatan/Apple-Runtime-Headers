@@ -8,13 +8,14 @@
 
 #import <SpringBoard/SBDeviceApplicationSceneHandleObserver-Protocol.h>
 
-@class NSString, SBBreadcrumbActionContext, SBDeviceApplicationSceneHandle, SiriBreadcrumbSource;
+@class NSHashTable, NSString, SBBreadcrumbActionContext, SBDeviceApplicationSceneHandle, SiriBreadcrumbSource;
 
 @interface SBDeviceApplicationSceneStatusBarBreadcrumbProvider : NSObject <SBDeviceApplicationSceneHandleObserver>
 {
     SiriBreadcrumbSource *_siriSource;
     SBBreadcrumbActionContext *_currentBreadcrumbActionContext;
     SBDeviceApplicationSceneHandle *_sceneHandle;
+    NSHashTable *_observers;
 }
 
 + (id)_breadcrumbSceneIdForForAppWithBundleID:(id)arg1 activatingSceneEntity:(id)arg2 withTransitionContext:(id)arg3;
@@ -35,6 +36,7 @@
 - (void)_presentAssistantFromBreadcrumb;
 - (void)_handleBreadcrumbAction:(unsigned long long)arg1 analyticsSide:(unsigned long long)arg2;
 - (id)_breadcrumbNavigationActionContextForActivatingSceneEntity:(id)arg1 withTransitionContext:(id)arg2;
+- (void)noteDidUpdateDisplayProperties;
 - (void)prepareForReuse;
 - (_Bool)activateSecondaryBreadcrumbIfPossible;
 - (_Bool)activateBreadcrumbIfPossible;
@@ -45,6 +47,8 @@
 @property(readonly, nonatomic) _Bool hasBreadcrumb;
 - (id)breadcrumbActionsForActivatingSceneEntity:(id)arg1 withTransitionContext:(id)arg2;
 - (void)captureContextForActivatingSceneEntity:(id)arg1 withTransitionContext:(id)arg2;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 - (id)initWithSceneHandle:(id)arg1;
 
 // Remaining properties

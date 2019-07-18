@@ -21,7 +21,10 @@
 @property(retain, nonatomic) BKDevice *biometricDevice; // @synthesize biometricDevice=_biometricDevice;
 @property(nonatomic) __weak id <CSBiometricMatchMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (unsigned long long)getBiometricMatchResultForTriggerTimeStamp:(unsigned long long)arg1;
 - (void)device:(id)arg1 matchEventOccurred:(id)arg2;
+- (void)_stopMonitoring;
+- (void)_startMonitoringWithQueue:(id)arg1;
 - (_Bool)getLastBiometricMatchEvent:(_Bool *)arg1 atTime:(unsigned long long *)arg2;
 - (void)startObserving;
 - (id)init;

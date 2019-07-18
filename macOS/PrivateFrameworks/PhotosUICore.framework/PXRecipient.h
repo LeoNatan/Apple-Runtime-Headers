@@ -21,15 +21,14 @@
     NSString *_phoneNumberString;
     NSString *_emailAddressString;
     PXRecipientTransport *_suggestedTransport;
-    NSString *_displayName;
+    NSString *_localizedName;
     CNContact *_contact;
 }
 
-+ (id)displayNameForAddress:(id)arg1 recipientKind:(long long)arg2;
 + (id)_contactForAddress:(id)arg1 recipientKind:(long long)arg2;
 + (id)new;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-@property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
+@property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(retain, nonatomic) PXRecipientTransport *suggestedTransport; // @synthesize suggestedTransport=_suggestedTransport;
 @property(readonly, copy, nonatomic) NSString *emailAddressString; // @synthesize emailAddressString=_emailAddressString;
 @property(readonly, copy, nonatomic) NSString *phoneNumberString; // @synthesize phoneNumberString=_phoneNumberString;

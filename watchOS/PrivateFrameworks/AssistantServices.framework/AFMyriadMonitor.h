@@ -8,32 +8,40 @@
 
 #import <AssistantServices/AFNotifyObserverDelegate-Protocol.h>
 
-@class AFNotifyObserver, AFWatchdogTimer, NSMutableArray, NSString;
+@class AFNotifyObserver, AFQueue, AFWatchdogTimer, NSString;
 @protocol OS_dispatch_queue;
 
 @interface AFMyriadMonitor : NSObject <AFNotifyObserverDelegate>
 {
     int _state;
     AFWatchdogTimer *_timer;
-    struct __CFNotificationCenter *_center;
     NSObject<OS_dispatch_queue> *_myriadMonitorQueue;
-    NSMutableArray *_completions;
+    AFQueue *_completions;
+    AFNotifyObserver *_beginObserver;
     AFNotifyObserver *_wonObserver;
     AFNotifyObserver *_lostObserver;
-    AFNotifyObserver *_beganObserver;
+    double _myriadEventMonitorTimeout;
+    _Bool _isRegisteredForMyriadEventNotification;
+    _Bool _ignoreMyriadEvents;
 }
 
-+ (void)clear;
-+ (void)waitForMyriadDecisionWithCompletion:(CDUnknownBlockType)arg1;
 + (id)sharedMonitor;
 - (void).cxx_destruct;
-- (void)resultSeenWithValue:(_Bool)arg1;
+- (void)_resultSeenWithValue:(_Bool)arg1;
 - (void)_flushCompletions:(_Bool)arg1;
-- (void)clear;
-- (void)addCompletion:(CDUnknownBlockType)arg1;
-- (void)setDecisionIsPending;
+- (void)_clear;
+- (void)_dequeueBlocksWithSignal:(int)arg1;
+- (void)_setDecisionIsPending;
 - (void)notifyObserver:(id)arg1 didReceiveNotificationWithToken:(int)arg2;
+- (void)_deregisterFromMyriadEventNotifications;
+- (void)_registerForMyriadEvents;
+- (id)_myriadStateToString:(int)arg1;
 - (void)dealloc;
+- (void)stopMonitoring;
+- (void)dequeueBlocksWaitingForMyriadDecision;
+- (void)ignoreMyriadEvents:(_Bool)arg1;
+- (void)startMonitoringWithTimeoutInterval:(double)arg1;
+- (void)waitForMyriadDecisionWithCompletion:(CDUnknownBlockType)arg1;
 - (id)init;
 
 // Remaining properties

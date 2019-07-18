@@ -19,12 +19,13 @@
     RBSProcessHandle *_handle;
     id <RBSConnectionServiceDelegate> _serviceDelegate;
     struct os_unfair_lock_s _lock;
+    struct os_unfair_lock_s _assertionLock;
     struct os_unfair_lock_s _processExpirationLock;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     NSObject<OS_dispatch_queue> *_handshakeQueue;
     NSObject<OS_dispatch_queue> *_monitorCalloutQueue;
     NSMapTable *_acquiredAssertionsByIdentifier;
-    NSMutableSet *_processMonitors;
+    NSHashTable *_processMonitors;
     NSMutableDictionary *_stateByIdentity;
     NSMutableSet *_inheritances;
     NSHashTable *_expirationWarningAssertions;
@@ -39,13 +40,14 @@
 - (void).cxx_destruct;
 - (void)_handleDaemonDidStart;
 - (void)_disconnect;
+- (BOOL)_invalidateAssertionIdentifier:(id)arg1 error:(out id *)arg2;
 - (void)_handshake;
-- (void)plugInHandshakeComplete;
-- (id)handshakeDescriptor;
-- (BOOL)isPlugIn;
+- (id)_handshakeDescriptor;
+- (BOOL)_isPlugIn;
 - (id)_lock_connect;
 - (id)_connection;
 - (void)_handleMessage:(id)arg1;
+- (id)_init;
 - (oneway void)async_processDidExit:(id)arg1 withContext:(id)arg2;
 - (oneway void)async_observedProcessStatesDidChange:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (oneway void)async_assertionWillInvalidate:(id)arg1;
@@ -73,13 +75,13 @@
 - (id)assertionDescriptorsByPidWithFlattenedAttributes:(BOOL)arg1 error:(out id *)arg2;
 - (BOOL)invalidateAssertionWithIdentifier:(id)arg1 error:(out id *)arg2;
 - (BOOL)invalidateAssertion:(id)arg1 error:(out id *)arg2;
-- (BOOL)acquireAssertion:(id)arg1 identifier:(out id *)arg2 error:(out id *)arg3;
+- (id)acquireAssertion:(id)arg1 error:(out id *)arg2;
+- (void)plugInHandshakeComplete;
 - (id)observeProcessAssertionsExpirationWarningWithBlock:(CDUnknownBlockType)arg1;
 - (void)registerServiceDelegate:(id)arg1;
 @property(readonly, nonatomic) RBSProcessHandle *handle;
 @property(readonly, copy, nonatomic) RBSProcessIdentity *identity;
 - (void)dealloc;
-- (id)_init;
 - (id)init;
 
 @end

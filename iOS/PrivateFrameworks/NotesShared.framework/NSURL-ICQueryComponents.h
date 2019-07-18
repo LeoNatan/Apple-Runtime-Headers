@@ -22,6 +22,8 @@
 @property(readonly, nonatomic) _Bool ic_isNewsURL;
 @property(readonly, nonatomic) _Bool ic_isMapURL;
 @property(readonly, nonatomic) NSURL *ic_uniquedURL;
+@property(readonly, nonatomic) _Bool ic_isExcludedFromCloudBackups;
+@property(readonly, nonatomic) _Bool ic_isExcludedFromNonCloudBackups;
 - (void)ic_updateFlagToExcludeFromCloudBackup:(_Bool)arg1;
 - (id)ic_dedupedURLWithProhibitedNames:(id)arg1;
 @end

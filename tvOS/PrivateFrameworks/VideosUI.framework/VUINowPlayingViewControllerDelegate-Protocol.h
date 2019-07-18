@@ -6,12 +6,15 @@
 
 #import <VideosUI/NSObject-Protocol.h>
 
-@class VUINowPlayingViewController;
+@class TVMediaInfo, VUINowPlayingViewController;
 
 @protocol VUINowPlayingViewControllerDelegate <NSObject>
 - (void)nowPlayingViewControllerMenuButtonPressedToDismiss:(VUINowPlayingViewController *)arg1;
 
 @optional
+- (void)nowPlayingViewController:(VUINowPlayingViewController *)arg1 mediaInfoDidChange:(TVMediaInfo *)arg2 canPlay:(_Bool)arg3;
+- (void)nowPlayingViewControllerUserDidInteract:(VUINowPlayingViewController *)arg1;
+- (void)nowPlayingController:(VUINowPlayingViewController *)arg1 safeAreaDidChange:(struct UIEdgeInsets)arg2;
 - (void)nowPlayingControllerDidSelectSkipIntro:(VUINowPlayingViewController *)arg1;
 - (void)nowPlayingController:(VUINowPlayingViewController *)arg1 didEnableUIMode:(long long)arg2 enabled:(_Bool)arg3;
 - (void)nowPlayingControllerViewDidDisappear:(VUINowPlayingViewController *)arg1;

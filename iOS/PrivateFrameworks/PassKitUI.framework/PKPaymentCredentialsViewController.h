@@ -10,7 +10,7 @@
 #import <PassKitUI/PKPaymentSetupHideSetupLaterButtonProtocol-Protocol.h>
 #import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
 
-@class NSMutableArray, NSString, PKPaymentCredentialCache, PKPaymentCredentialTableViewCell, PKPaymentProvisioningController, PKPaymentSetupFooterView, PKPaymentSetupProduct, PKTableHeaderView, UIImage;
+@class NSMutableArray, NSMutableOrderedSet, NSString, PKPaymentCredentialCache, PKPaymentCredentialTableViewCell, PKPaymentProvisioningController, PKPaymentSetupFooterView, PKPaymentSetupProduct, PKTableHeaderView, UIImage;
 @protocol PKPaymentSetupViewControllerDelegate;
 
 @interface PKPaymentCredentialsViewController : PKPaymentSetupTableViewController <PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentProvisioningControllerDelegate, PKPaymentSetupPresentationProtocol>
@@ -20,6 +20,8 @@
     NSMutableArray *_credentialCaches;
     PKPaymentCredentialCache *_peerPaymentCredentialCache;
     NSMutableArray *_refundedCredentialCaches;
+    NSMutableArray *_unavailableCredentialCaches;
+    NSMutableOrderedSet *_ordering;
     PKTableHeaderView *_tableHeader;
     PKPaymentSetupFooterView *_tableFooter;
     _Bool _allowsManualEntry;
@@ -38,6 +40,7 @@
 - (void)_createPassSnapshotFromPaymentPass:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_presentSecurityCapabilitiesFlowWithFeature:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performSecurityCheckForCredentials:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_queue_updatePassSnapshot:(id)arg1 paymentCredential:(id)arg2 credentialsInCache:(id)arg3;
 - (void)paymentPassUpdatedOnCredential:(id)arg1;
 - (void)_terminateSetupFlow;
 - (void)_startProvisioningForCredentials:(id)arg1;
@@ -48,11 +51,14 @@
 - (unsigned long long)_numberOfSelectedCredentials;
 - (void)_updateMaximumSelectableCredentials;
 - (void)_sortCredentialCaches:(id)arg1;
+- (void)_populateOrderCredentialCaches;
 - (void)_updateRemoteCredentialCache;
 - (void)_updateTableHeaderViewSubtitle;
 - (_Bool)_canSelectCredential:(id)arg1;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
 - (void)_showRefund:(id)arg1;
+- (void)_showUnavailableDetail:(id)arg1;
+- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)_setPassSnapshotOnCell:(id)arg1 cell:(id)arg2;
@@ -61,6 +67,7 @@
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (unsigned long long)_credentialSectionForSection:(long long)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

@@ -21,6 +21,7 @@
 + (id)new;
 - (void).cxx_destruct;
 - (void)_openApplication:(id)arg1 withOptions:(id)arg2 clientHandle:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)_remoteTarget;
 - (void)openApplication:(id)arg1 withOptions:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)canOpenApplication:(id)arg1 reason:(long long *)arg2;
 - (void)openApplication:(id)arg1 withOptions:(id)arg2 clientHandle:(id)arg3 completion:(CDUnknownBlockType)arg4;

@@ -16,18 +16,23 @@
 - (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)loadView;
+- (void)updateAllWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateAll;
+- (void)deleteCellsWithIndexPaths:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteCellsWithIndexPaths:(id)arg1;
 - (void)deleteCellWithIndexPath:(id)arg1;
+- (void)insertCellsWithIndexPaths:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)insertCellsWithIndexPaths:(id)arg1;
 - (void)insertCellWithIndexPath:(id)arg1;
 - (void)updateCellsWithIndexPaths:(id)arg1;
 - (void)updateCellWithIndexPath:(id)arg1;
-- (_Bool)_indexPathsAreValid:(id)arg1;
+- (_Bool)_indexPathsExistInTable:(id)arg1;
+- (_Bool)_indexPathsAreValidForInsertion:(id)arg1;
 - (void)deleteSectionsAtIndices:(id)arg1;
 - (void)deleteSectionAtIndex:(int)arg1;
 - (void)insertSectionsAtIndices:(id)arg1;
 - (void)insertSectionAtIndex:(int)arg1;
+- (void)reloadSections:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)reloadSections:(id)arg1;
 - (void)reloadSection:(int)arg1;
 

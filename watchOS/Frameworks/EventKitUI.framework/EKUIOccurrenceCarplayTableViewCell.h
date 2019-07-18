@@ -10,9 +10,9 @@
 {
 }
 
-+ (id)timeLabelsFont;
-+ (id)secondaryTextLabelFont;
-+ (id)scalablePrimaryTextLabelFont;
+- (id)timeLabelsFont;
+- (id)secondaryTextLabelFont;
+- (id)primaryTextLabelFont;
 - (id)tentativeAngledStripeBackground;
 - (id)needsReplyAngledStripeBackground;
 - (id)needsReplyStripeColor;
@@ -24,6 +24,8 @@
 - (id)secondaryStrikethroughTextColor;
 - (id)colorBarColor;
 - (id)normalBackgroundColor;
+- (id)coloredBackgroundViewFilter;
+- (id)coloredBackgroundViewFilterColor;
 - (id)coloredBackgroundViewColor;
 - (id)topTimeColor;
 - (id)secondaryTextColor;

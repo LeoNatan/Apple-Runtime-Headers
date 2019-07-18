@@ -6,13 +6,10 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class NSArray, NSSet, NSString, STTextTangierInteractiveCanvasController;
+@class NSArray, NSSet, STTextTangierInteractiveCanvasController;
 
 @protocol STTextTangierInteractiveCanvasControllerDataSource <NSObject>
 - (NSSet *)topLevelLayersForInteractiveCanvasController:(STTextTangierInteractiveCanvasController *)arg1;
 - (NSArray *)topLevelRepsForInteractiveCanvasController:(STTextTangierInteractiveCanvasController *)arg1;
-
-@optional
-- (NSString *)stringForLookupItemForInteractiveCanvasController:(STTextTangierInteractiveCanvasController *)arg1;
 @end
 

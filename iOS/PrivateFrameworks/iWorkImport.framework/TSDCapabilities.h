@@ -20,9 +20,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long device; // @synthesize device=_device;
 @property(readonly, nonatomic) long long deviceType; // @synthesize deviceType=_deviceType;
 @property(readonly, nonatomic) long long platform; // @synthesize platform=_platform;
+@property(readonly, nonatomic) unsigned long long physicalMemory;
 @property(readonly, nonatomic) _Bool isMetalCapable;
 - (_Bool)p_isMetalCapable;
 - (struct CGSize)maximumMetalTextureSizeForDevice:(id)arg1;
+@property(readonly, nonatomic) struct CGSize maximumImageSize;
 @property(readonly, nonatomic) struct CGSize maximumHardcodedTextureSize;
 - (struct CGSize)maximumTextureSizeWithGLContext:(id)arg1;
 @property(readonly, nonatomic) _Bool hasLightningPort;

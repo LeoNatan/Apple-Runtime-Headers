@@ -8,21 +8,23 @@
 
 #import <AudioSession/SessionManagerXPCServerCallbackProtocol-Protocol.h>
 
-@class AVAudioSessionManager;
+@class AVAudioHardwareSystem, AVAudioSessionManager;
 
 __attribute__((visibility("hidden")))
 @interface AVAudioSessionCallbackDispatcher : NSObject <SessionManagerXPCServerCallbackProtocol>
 {
     AVAudioSessionManager *mSessionManager;
+    AVAudioHardwareSystem *mHardwareSystem;
 }
 
 - (void).cxx_destruct;
-- (void)sessionAvailablePortsChange:(unsigned int)arg1 userInfo:(id)arg2;
+- (void)controlValueChanged:(id)arg1;
+- (void)serverConfigurationChange:(id)arg1;
 - (void)sessionNeedsStateSync:(unsigned int)arg1;
 - (void)session:(unsigned int)arg1 hasProxies:(BOOL)arg2;
 - (void)sessionStoppedForAppStateChange:(unsigned int)arg1;
 - (void)interruptionMessageForSession:(unsigned int)arg1 userInfo:(id)arg2;
-- (id)initWithSessionManager:(id)arg1;
+- (id)initWithSessionManager:(id)arg1 hardwareSystem:(id)arg2;
 
 @end
 

@@ -17,6 +17,7 @@
     struct {
         unsigned int status:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     int _status;
     _INPBCurrencyAmount *_currencyAmount;
     _INPBCurrencyAmount *_feeAmount;
@@ -27,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) _INPBPaymentMethodValue *paymentMethod; // @synthesize paymentMethod=_paymentMethod;
 @property(retain, nonatomic) _INPBContact *payer; // @synthesize payer=_payer;

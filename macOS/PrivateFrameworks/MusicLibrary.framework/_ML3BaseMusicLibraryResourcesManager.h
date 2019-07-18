@@ -14,11 +14,11 @@
 __attribute__((visibility("hidden")))
 @interface _ML3BaseMusicLibraryResourcesManager : NSObject <ML3MusicLibraryResourcesProviding, NSSecureCoding>
 {
-    NSString *_accountHash;
+    NSString *_libraryContainerIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSString *accountHash; // @synthesize accountHash=_accountHash;
+@property(readonly, copy, nonatomic) NSString *libraryContainerIdentifier; // @synthesize libraryContainerIdentifier=_libraryContainerIdentifier;
 - (void).cxx_destruct;
 - (id)_pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 isFolder:(char *)arg4;
 - (id)_controlDirectoryPathWithBasePath:(id)arg1;
@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
 - (id)libraryContainerPath;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithAccountHash:(id)arg1;
+- (id)initWithLibraryContainerIdentifier:(id)arg1;
 - (id)initWithAccountInfo:(id)arg1;
 - (id)init;
 

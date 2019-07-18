@@ -20,6 +20,7 @@
         unsigned int taskReference:1;
         unsigned int taskType:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _priority;
     int _status;
     int _taskReference;
@@ -35,6 +36,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDataString *title; // @synthesize title=_title;
 @property(retain, nonatomic) _INPBTemporalEventTrigger *temporalEventTrigger; // @synthesize temporalEventTrigger=_temporalEventTrigger;
 @property(nonatomic) int taskType; // @synthesize taskType=_taskType;

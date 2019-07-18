@@ -6,14 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@interface EMMessageListItemPredicates : NSObject
+#import <Email/EFLoggable-Protocol.h>
+
+@class NSString;
+
+@interface EMMessageListItemPredicates : NSObject <EFLoggable>
 {
 }
 
 + (id)_keyPathsForFlagChange:(id)arg1;
 + (_Bool)predicate:(id)arg1 appliesToFlagChange:(id)arg2;
++ (id)_spotlightPredicateForPredicate:(id)arg1;
++ (id)spotlightPredicateForPredicate:(id)arg1;
++ (id)mailboxURLsForPredicate:(id)arg1;
 + (id)threadScopeForPredicate:(id)arg1;
 + (id)mailboxScopeForPredicate:(id)arg1 withMailboxTypeResolver:(id)arg2;
++ (int)dateSortOrderFromSortDescriptors:(id)arg1;
 + (id)sortDescriptorForDateAscending:(_Bool)arg1;
 + (id)predicateFromPredicate:(id)arg1 ignoringKeyPaths:(id)arg2;
 + (id)predicateForMessagesNewerThanDate:(id)arg1;
@@ -46,6 +54,13 @@
 + (id)_predicateForMessagesInMailboxWithType:(id)arg1;
 + (id)predicateForMessagesInMailboxWithType:(int)arg1;
 + (id)predicateForMessagesInConversation:(long long)arg1;
++ (id)log;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -12,11 +12,11 @@
 {
     unsigned long long _optionStyle;
     HFAccessorySettingSiriLanguageAdapter *_adapter;
-    HFSiriLanguageOption *_langaugeOption;
+    HFSiriLanguageOption *_languageOption;
 }
 
 + (id)selectionKeyForLanguageOption:(id)arg1 withOptionStyle:(unsigned long long)arg2;
-@property(retain, nonatomic) HFSiriLanguageOption *langaugeOption; // @synthesize langaugeOption=_langaugeOption;
+@property(retain, nonatomic) HFSiriLanguageOption *languageOption; // @synthesize languageOption=_languageOption;
 @property(readonly, nonatomic) HFAccessorySettingSiriLanguageAdapter *adapter; // @synthesize adapter=_adapter;
 @property(readonly, nonatomic) unsigned long long optionStyle; // @synthesize optionStyle=_optionStyle;
 - (void).cxx_destruct;

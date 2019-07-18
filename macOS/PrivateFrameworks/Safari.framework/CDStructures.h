@@ -435,24 +435,6 @@ struct Frame {
     struct WKRetainPtr<const void *> m_webKit2Object;
 };
 
-struct GeolocationController {
-    struct HashMap<Safari::CF::String, std::__1::pair<Safari::GeolocationController::Permission, double>, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashTraits<Safari::CF::String>, WTF::HashTraits<std::__1::pair<Safari::GeolocationController::Permission, double>>> _field1;
-    _Bool _field2;
-    struct HashSet<Safari::WK::GeolocationManager, Safari::WK::ObjectSubclassHash<Safari::WK::GeolocationManager>, WTF::HashTraits<Safari::WK::GeolocationManager>> _field3;
-    _Bool _field4;
-    id _field5;
-    id _field6;
-    double _field7;
-    double _field8;
-    double _field9;
-    double _field10;
-    id _field11;
-    id _field12;
-    id _field13;
-};
-
-struct GeolocationManager;
-
 struct GeolocationProvider {
     CDUnknownFunctionPointerType *_field1;
 };
@@ -463,10 +445,6 @@ struct HashMap<Safari::CF::String, Safari::Extension *, Safari::CF::ObjectSubcla
 
 struct HashMap<Safari::CF::String, Safari::TopSite *, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashTraits<Safari::CF::String>, WTF::HashTraits<Safari::TopSite *>> {
     struct HashTable<Safari::CF::String, WTF::KeyValuePair<Safari::CF::String, Safari::TopSite *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<Safari::CF::String, Safari::TopSite *>>, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashMap<Safari::CF::String, Safari::TopSite *, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashTraits<Safari::CF::String>, WTF::HashTraits<Safari::TopSite *>>::KeyValuePairTraits, WTF::HashTraits<Safari::CF::String>> _field1;
-};
-
-struct HashMap<Safari::CF::String, std::__1::pair<Safari::GeolocationController::Permission, double>, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashTraits<Safari::CF::String>, WTF::HashTraits<std::__1::pair<Safari::GeolocationController::Permission, double>>> {
-    struct HashTable<Safari::CF::String, WTF::KeyValuePair<Safari::CF::String, std::__1::pair<Safari::GeolocationController::Permission, double>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<Safari::CF::String, std::__1::pair<Safari::GeolocationController::Permission, double>>>, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashMap<Safari::CF::String, std::__1::pair<Safari::GeolocationController::Permission, double>, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashTraits<Safari::CF::String>, WTF::HashTraits<std::__1::pair<Safari::GeolocationController::Permission, double>>>::KeyValuePairTraits, WTF::HashTraits<Safari::CF::String>> _field1;
 };
 
 struct HashMap<Safari::EventTargetTracker *, WTF::HashMap<WTF::RetainPtr<const __CFString *>, WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener, WTF::DumbPtrTraits<Safari::RegisteredEventListener>>, 0, WTF::CrashOnOverflow, 16>*, WTF::RetainPtrObjectHash<const __CFString *>, WTF::RetainPtrObjectHashTraits<const __CFString *>, WTF::HashTraits<WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener, WTF::DumbPtrTraits<Safari::RegisteredEventListener>>, 0, WTF::CrashOnOverflow, 16>*>>*, WTF::PtrHash<Safari::EventTargetTracker *>, WTF::HashTraits<Safari::EventTargetTracker *>, WTF::HashTraits<WTF::HashMap<WTF::RetainPtr<const __CFString *>, WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener, WTF::DumbPtrTraits<Safari::RegisteredEventListener>>, 0, WTF::CrashOnOverflow, 16>*, WTF::RetainPtrObjectHash<const __CFString *>, WTF::RetainPtrObjectHashTraits<const __CFString *>, WTF::HashTraits<WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener, WTF::DumbPtrTraits<Safari::RegisteredEventListener>>, 0, WTF::CrashOnOverflow, 16>*>>*>> {
@@ -533,10 +511,6 @@ struct HashSet<Safari::WK::BackForwardListItem, Safari::WK::ObjectSubclassHash<S
     struct HashTable<Safari::WK::BackForwardListItem, Safari::WK::BackForwardListItem, WTF::IdentityExtractor, Safari::WK::ObjectSubclassHash<Safari::WK::BackForwardListItem>, WTF::HashTraits<Safari::WK::BackForwardListItem>, WTF::HashTraits<Safari::WK::BackForwardListItem>> m_impl;
 };
 
-struct HashSet<Safari::WK::GeolocationManager, Safari::WK::ObjectSubclassHash<Safari::WK::GeolocationManager>, WTF::HashTraits<Safari::WK::GeolocationManager>> {
-    struct HashTable<Safari::WK::GeolocationManager, Safari::WK::GeolocationManager, WTF::IdentityExtractor, Safari::WK::ObjectSubclassHash<Safari::WK::GeolocationManager>, WTF::HashTraits<Safari::WK::GeolocationManager>, WTF::HashTraits<Safari::WK::GeolocationManager>> _field1;
-};
-
 struct HashSet<Safari::WK::Page, Safari::WK::ObjectSubclassHash<Safari::WK::Page>, WTF::HashTraits<Safari::WK::Page>> {
     struct HashTable<Safari::WK::Page, Safari::WK::Page, WTF::IdentityExtractor, Safari::WK::ObjectSubclassHash<Safari::WK::Page>, WTF::HashTraits<Safari::WK::Page>, WTF::HashTraits<Safari::WK::Page>> m_impl;
 };
@@ -559,14 +533,6 @@ struct HashTable<Safari::CF::String, WTF::KeyValuePair<Safari::CF::String, Safar
 
 struct HashTable<Safari::CF::String, WTF::KeyValuePair<Safari::CF::String, Safari::TopSite *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<Safari::CF::String, Safari::TopSite *>>, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashMap<Safari::CF::String, Safari::TopSite *, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashTraits<Safari::CF::String>, WTF::HashTraits<Safari::TopSite *>>::KeyValuePairTraits, WTF::HashTraits<Safari::CF::String>> {
     struct KeyValuePair<Safari::CF::String, Safari::TopSite *> *_field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
-};
-
-struct HashTable<Safari::CF::String, WTF::KeyValuePair<Safari::CF::String, std::__1::pair<Safari::GeolocationController::Permission, double>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<Safari::CF::String, std::__1::pair<Safari::GeolocationController::Permission, double>>>, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashMap<Safari::CF::String, std::__1::pair<Safari::GeolocationController::Permission, double>, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashTraits<Safari::CF::String>, WTF::HashTraits<std::__1::pair<Safari::GeolocationController::Permission, double>>>::KeyValuePairTraits, WTF::HashTraits<Safari::CF::String>> {
-    struct KeyValuePair<Safari::CF::String, std::__1::pair<Safari::GeolocationController::Permission, double>> *_field1;
     unsigned int _field2;
     unsigned int _field3;
     unsigned int _field4;
@@ -635,14 +601,6 @@ struct HashTable<Safari::WK::Frame, WTF::KeyValuePair<Safari::WK::Frame, WTF::Re
     unsigned int m_tableSizeMask;
     unsigned int m_keyCount;
     unsigned int m_deletedCount;
-};
-
-struct HashTable<Safari::WK::GeolocationManager, Safari::WK::GeolocationManager, WTF::IdentityExtractor, Safari::WK::ObjectSubclassHash<Safari::WK::GeolocationManager>, WTF::HashTraits<Safari::WK::GeolocationManager>, WTF::HashTraits<Safari::WK::GeolocationManager>> {
-    struct GeolocationManager *_field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
 };
 
 struct HashTable<Safari::WK::Page, Safari::WK::Page, WTF::IdentityExtractor, Safari::WK::ObjectSubclassHash<Safari::WK::Page>, WTF::HashTraits<Safari::WK::Page>, WTF::HashTraits<Safari::WK::Page>> {
@@ -716,8 +674,6 @@ struct Image {
 struct KeyValuePair<Safari::CF::String, Safari::Extension *>;
 
 struct KeyValuePair<Safari::CF::String, Safari::TopSite *>;
-
-struct KeyValuePair<Safari::CF::String, std::__1::pair<Safari::GeolocationController::Permission, double>>;
 
 struct KeyValuePair<Safari::EventTargetTracker *, WTF::HashMap<WTF::RetainPtr<const __CFString *>, WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener, WTF::DumbPtrTraits<Safari::RegisteredEventListener>>, 0, WTF::CrashOnOverflow, 16>*, WTF::RetainPtrObjectHash<const __CFString *>, WTF::RetainPtrObjectHashTraits<const __CFString *>, WTF::HashTraits<WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener, WTF::DumbPtrTraits<Safari::RegisteredEventListener>>, 0, WTF::CrashOnOverflow, 16>*>>*>;
 
@@ -1138,6 +1094,7 @@ struct SidebarAnimationContext {
     int revealingOrCoveringSidebar;
     char sidebarAnimationInProgress;
     char layoutAnalysisClaimsPageIsCentered;
+    char sidebarWillAppearAsOverlay;
 };
 
 struct SiteMetadataFetcher;

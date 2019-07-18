@@ -8,7 +8,7 @@
 
 #import <AvatarUI/AVTUsageTrackingSession-Protocol.h>
 
-@class AVTAvatarConfiguration, AVTAvatarRecord, AVTUsageTrackingRecordTimedEvent, NSDate;
+@class AVTAvatarConfiguration, AVTAvatarRecord, AVTUsageTrackingRecordTimedEvent, NSDate, NSString;
 @protocol AVTAggDClient, AVTAvatarConfigurationMetric, AVTAvatarStoreInternal, AVTDifferentialPrivacyRecorder, AVTUILogger, OS_dispatch_queue;
 
 @interface AVTUsageTrackingSession : NSObject <AVTUsageTrackingSession>
@@ -18,6 +18,7 @@
     NSObject<OS_dispatch_queue> *_workQueue;
     id <AVTUILogger> _logger;
     id <AVTAggDClient> _ntsAggDClient;
+    NSString *_aggDKeyBasePrefix;
     id <AVTDifferentialPrivacyRecorder> _ntsDPRecorder;
     id <AVTAvatarConfigurationMetric> _metric;
     CDUnknownBlockType _recordTransformer;
@@ -27,24 +28,19 @@
     NSDate *_editorEnterDate;
     AVTUsageTrackingRecordTimedEvent *_faceTrackingEvent;
     id <AVTAvatarStoreInternal> _avatarStore;
-    CDUnknownBlockType _puppetIndexProvider;
 }
 
-+ (CDUnknownBlockType)puppetIndexProviderForStore:(id)arg1 callbackQueue:(id)arg2 logger:(id)arg3;
 + (CDUnknownBlockType)likenessComparator;
 + (CDUnknownBlockType)configurationDistanceClassifierWithMetric:(id)arg1;
 + (id)makeDPKey:(id)arg1;
 + (id)makeKeyAggDCompliant:(id)arg1;
-+ (id)makeAggDDistributionKey:(id)arg1;
-+ (id)makeAggDScalarKey:(id)arg1;
++ (id)aggDKeyBasePrefixForBundleIdentifier:(id)arg1;
 + (id)dpKeyBasePrefix;
-+ (id)aggDKeyBasePrefix;
 + (id)colorPresetDescriptionForAvatarConfiguration:(id)arg1;
 + (void)getPresetDescription:(out id *)arg1 usedCategoriesDescription:(out id *)arg2 forAvatarConfiguration:(id)arg3 defaultConfiguration:(id)arg4;
-+ (id)keyContentForAvatarRecord:(id)arg1 puppetIndexProvider:(CDUnknownBlockType)arg2 action:(id)arg3 includingPuppetIndex:(_Bool)arg4;
++ (id)keyContentForAvatarRecord:(id)arg1 action:(id)arg2 includingPuppetName:(_Bool)arg3;
 + (CDUnknownBlockType)defaultTimeProvider;
 + (CDUnknownBlockType)defaultRecordTransformerForCoreModel:(id)arg1;
-@property(copy, nonatomic) CDUnknownBlockType puppetIndexProvider; // @synthesize puppetIndexProvider=_puppetIndexProvider;
 @property(retain, nonatomic) id <AVTAvatarStoreInternal> avatarStore; // @synthesize avatarStore=_avatarStore;
 @property(retain, nonatomic) AVTUsageTrackingRecordTimedEvent *faceTrackingEvent; // @synthesize faceTrackingEvent=_faceTrackingEvent;
 @property(retain, nonatomic) NSDate *editorEnterDate; // @synthesize editorEnterDate=_editorEnterDate;
@@ -56,6 +52,7 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType recordTransformer; // @synthesize recordTransformer=_recordTransformer;
 @property(readonly, nonatomic) id <AVTAvatarConfigurationMetric> metric; // @synthesize metric=_metric;
 @property(readonly, nonatomic) id <AVTDifferentialPrivacyRecorder> ntsDPRecorder; // @synthesize ntsDPRecorder=_ntsDPRecorder;
+@property(readonly, nonatomic) NSString *aggDKeyBasePrefix; // @synthesize aggDKeyBasePrefix=_aggDKeyBasePrefix;
 @property(readonly, nonatomic) id <AVTAggDClient> ntsAggDClient; // @synthesize ntsAggDClient=_ntsAggDClient;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
@@ -70,6 +67,12 @@
 - (void)nts_loadDefaultConfigurationIfNeeded;
 - (void)end;
 - (void)beginWithStore:(id)arg1;
+- (void)sentStickerFromStickersApp:(id)arg1 withAvatarRecord:(id)arg2 action:(id)arg3;
+- (void)didOpenStickersAppFromRecents;
+- (void)didTapStickerFromRecents:(id)arg1;
+- (void)didChangeCurrentAvatarInStickers:(id)arg1;
+- (void)didTapStickerFromStickersApp:(id)arg1 withAvatar:(id)arg2;
+- (void)didPeelOffStickerFromStickersApp:(id)arg1 withAvatar:(id)arg2;
 - (void)didResumeFaceTracking;
 - (void)didPauseFaceTracking;
 - (void)didStopFaceTrackingInCarousel;
@@ -89,6 +92,8 @@
 - (void)didDiscardVideoWithDuration:(double)arg1;
 - (void)didSendVideoWithAvatar:(id)arg1 duration:(double)arg2;
 - (void)reportAddOneForScalarKey:(id)arg1;
+- (id)makeAggDDistributionKey:(id)arg1;
+- (id)makeAggDScalarKey:(id)arg1;
 - (void)performClientWork:(CDUnknownBlockType)arg1;
 - (id)initWithAggDClient:(id)arg1 dpRecorder:(id)arg2 serialQueueProvider:(CDUnknownBlockType)arg3 recordTransformer:(CDUnknownBlockType)arg4 avatarRecord:(id)arg5 defaultConfiguration:(id)arg6 timeProvider:(CDUnknownBlockType)arg7 configurationMetric:(id)arg8 logger:(id)arg9;
 - (id)initWithSerialQueueProvider:(CDUnknownBlockType)arg1 recordTransformer:(CDUnknownBlockType)arg2 logger:(id)arg3;

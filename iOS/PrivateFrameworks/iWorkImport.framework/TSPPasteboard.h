@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 + (id)activePasteboardForName:(id)arg1;
 + (id)activePasteboards;
 + (id)activePasteboardsQueue;
-+ (id)stylePasteboard;
 - (void).cxx_destruct;
 - (id)newReadChannelForDataWithIdentifier:(long long)arg1 info:(id)arg2;
 - (id)newReadChannelForRootObjectComponent;

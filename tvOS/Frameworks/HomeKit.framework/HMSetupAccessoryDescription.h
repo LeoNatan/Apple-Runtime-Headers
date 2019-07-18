@@ -9,7 +9,7 @@
 #import <HomeKit/NSCopying-Protocol.h>
 #import <HomeKit/NSSecureCoding-Protocol.h>
 
-@class HMAccessory, HMAccessoryCategory, HMAccessoryOwnershipProof, HMSetupAccessoryBrowsingRequest, HMSetupAccessoryPayload, NSString, NSUUID, NSUserActivity;
+@class HMAccessory, HMAccessoryCategory, HMAccessoryOwnershipToken, HMSetupAccessoryBrowsingRequest, HMSetupAccessoryPayload, NSString, NSUUID;
 
 @interface HMSetupAccessoryDescription : NSObject <NSCopying, NSSecureCoding>
 {
@@ -23,7 +23,7 @@
     _Bool _legacyAPI;
     NSString *_setupID;
     NSString *_setupCode;
-    HMAccessoryOwnershipProof *_ownershipProof;
+    HMAccessoryOwnershipToken *_ownershipToken;
     HMAccessoryCategory *_category;
     unsigned long long _certificationStatus;
     unsigned long long _userConsentReasons;
@@ -39,17 +39,15 @@
     HMSetupAccessoryPayload *_setupAccessoryPayload;
     HMSetupAccessoryBrowsingRequest *_accessoryBrowsingRequest;
     HMAccessory *_accessoryBeingReplaced;
-    NSString *_activityIdentifier;
-    NSString *_activityType;
-    NSUUID *_userActivityID;
+    NSUUID *_addRequestIdentifier;
+    NSString *_accessoryServerIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)setupAccessoryProgressAsString:(long long)arg1;
+@property(retain, nonatomic) NSString *accessoryServerIdentifier; // @synthesize accessoryServerIdentifier=_accessoryServerIdentifier;
 @property(nonatomic) _Bool legacyAPI; // @synthesize legacyAPI=_legacyAPI;
-@property(readonly, nonatomic) NSUUID *userActivityID; // @synthesize userActivityID=_userActivityID;
-@property(retain, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
-@property(retain, nonatomic) NSString *activityIdentifier; // @synthesize activityIdentifier=_activityIdentifier;
+@property(retain, nonatomic) NSUUID *addRequestIdentifier; // @synthesize addRequestIdentifier=_addRequestIdentifier;
 @property(nonatomic) __weak HMAccessory *accessoryBeingReplaced; // @synthesize accessoryBeingReplaced=_accessoryBeingReplaced;
 @property(retain, nonatomic) HMSetupAccessoryBrowsingRequest *accessoryBrowsingRequest; // @synthesize accessoryBrowsingRequest=_accessoryBrowsingRequest;
 @property(retain, nonatomic) HMSetupAccessoryPayload *setupAccessoryPayload; // @synthesize setupAccessoryPayload=_setupAccessoryPayload;
@@ -68,8 +66,7 @@
 @property(nonatomic) unsigned long long certificationStatus; // @synthesize certificationStatus=_certificationStatus;
 @property(nonatomic) _Bool isTrustedOrigin; // @synthesize isTrustedOrigin=_isTrustedOrigin;
 @property(retain, nonatomic) HMAccessoryCategory *category; // @synthesize category=_category;
-@property(readonly, nonatomic) HMAccessoryOwnershipProof *ownershipProof; // @synthesize ownershipProof=_ownershipProof;
-@property(retain, nonatomic) NSString *setupCode; // @synthesize setupCode=_setupCode;
+@property(readonly, nonatomic) HMAccessoryOwnershipToken *ownershipToken; // @synthesize ownershipToken=_ownershipToken;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -78,18 +75,19 @@
 - (id)initWithCoder:(id)arg1;
 - (id)dumpState;
 - (id)description;
-@property(readonly, copy, nonatomic) NSUserActivity *addAccessoryToHomeActivity;
+@property(readonly, nonatomic) _Bool hasAddRequest;
 @property(readonly, nonatomic) NSString *setupID; // @synthesize setupID=_setupID;
+@property(retain, nonatomic) NSString *setupCode; // @synthesize setupCode=_setupCode;
 @property(readonly, nonatomic, getter=isPaired) _Bool paired; // @synthesize paired=_paired;
 @property(readonly, nonatomic) _Bool supportsBTLE; // @synthesize supportsBTLE=_supportsBTLE;
 @property(readonly, nonatomic) _Bool supportsWAC; // @synthesize supportsWAC=_supportsWAC;
 @property(readonly, nonatomic) _Bool supportsIP; // @synthesize supportsIP=_supportsIP;
 - (void)updateAppIdentifier:(id)arg1;
-- (void)updateOwnershipProof:(id)arg1;
+- (void)updateOwnershipToken:(id)arg1;
 - (void)updateWithAccessory:(id)arg1;
 - (void)updateWithSetupAccessoryPayload:(id)arg1;
-- (id)initWithUserActivityID:(id)arg1 appID:(id)arg2 ownershipProof:(id)arg3;
-- (id)initToSetupAccessoriesWithSetupAccessoryPayload:(id)arg1 appID:(id)arg2 homeName:(id)arg3 homeUUID:(id)arg4 trustedOrigin:(_Bool)arg5 ownershipProof:(id)arg6;
+- (id)initWithAddRequest:(id)arg1 setupAccessoryPayload:(id)arg2 appID:(id)arg3 ownershipToken:(id)arg4;
+- (id)initToSetupAccessoriesWithSetupAccessoryPayload:(id)arg1 appID:(id)arg2 homeName:(id)arg3 homeUUID:(id)arg4 trustedOrigin:(_Bool)arg5 ownershipToken:(id)arg6;
 - (id)initToSetupAccessoriesWithSetupAccessoryPayload:(id)arg1 appID:(id)arg2 homeName:(id)arg3 homeUUID:(id)arg4;
 - (id)initToSetupAccessories:(id)arg1 legacyAPI:(_Bool)arg2 homeName:(id)arg3 homeUUID:(id)arg4 trustedOrigin:(_Bool)arg5 browseRequest:(id)arg6;
 - (id)initToSetupAccessories:(id)arg1 legacyAPI:(_Bool)arg2 homeName:(id)arg3 homeUUID:(id)arg4 trustedOrigin:(_Bool)arg5;

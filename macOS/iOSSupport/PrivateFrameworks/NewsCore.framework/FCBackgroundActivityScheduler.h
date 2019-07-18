@@ -14,8 +14,6 @@
 {
 }
 
-- (id)_makeFullIdentifierFromIdentifier:(id)arg1;
-- (long long)_makeFromFCResult:(long long)arg1;
 - (void)requestBackgroundAppRefreshStartingAfter:(id)arg1 before:(id)arg2;
 - (void)cancelRepeatingTaskWithIdentifier:(id)arg1;
 - (void)scheduleBackgroundTaskRepeatingAtInterval:(double)arg1 identifier:(id)arg2 task:(CDUnknownBlockType)arg3;

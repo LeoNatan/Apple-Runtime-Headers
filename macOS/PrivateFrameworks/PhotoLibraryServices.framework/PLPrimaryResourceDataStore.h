@@ -31,7 +31,7 @@
 @property(nonatomic) unsigned int masterThumbRecipeID; // @synthesize masterThumbRecipeID=_masterThumbRecipeID;
 - (void).cxx_destruct;
 - (void)transitional_reconsiderLocalAvailabilityBasedOnExistingLocationOfCPLResource:(id)arg1 givenFilePath:(id)arg2;
-- (void)requestStreamingURLForResource:(id)arg1 asset:(id)arg2 inContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)requestStreamingURLForResource:(id)arg1 asset:(id)arg2 intent:(unsigned long long)arg3 inContext:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (BOOL)canStreamResource:(id)arg1;
 - (BOOL)videoResource:(id)arg1 matchesOrExceedsQualityLevel:(unsigned int)arg2;
 - (void)requestRemoteAvailabilityChange:(short)arg1 forResource:(id)arg2 asset:(id)arg3 inContext:(id)arg4 options:(id)arg5 completion:(CDUnknownBlockType)arg6;
@@ -47,6 +47,7 @@
 - (id)descriptionForSubtype:(long long)arg1;
 - (id)name;
 @property(readonly, getter=_cplManager) PLCloudPhotoLibraryManager *cplManager;
+- (void)dealloc;
 - (id)initWithPathManager:(id)arg1;
 - (id)_masterThumbnailVirtualResourceForAsset:(id)arg1;
 - (id)_expectedFilePathForMasterThumbnailForAsset:(id)arg1;

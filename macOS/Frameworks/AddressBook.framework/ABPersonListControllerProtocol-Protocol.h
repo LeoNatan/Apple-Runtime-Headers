@@ -6,7 +6,7 @@
 
 #import <AddressBook/NSObject-Protocol.h>
 
-@class ABAccount, ABAddressBook, ABGroup, NSArray, NSDictionary, NSString;
+@class ABAccount, ABAddressBook, ABGroup, ABPersonEntry, NSArray, NSDictionary, NSString;
 @protocol ABPersonListHeadlining;
 
 @protocol ABPersonListControllerProtocol <NSObject>
@@ -20,6 +20,7 @@
 - (void)reflectChangesInUIForNotificationUserInfo:(NSDictionary *)arg1;
 - (void)selectNext:(id)arg1;
 - (void)selectPrevious:(id)arg1;
+- (void)expandPersonEntriesCacheWithEntry:(ABPersonEntry *)arg1;
 - (void)clearExtraUniqueIdsInSearchResults;
 - (void)updateSuggestedContacts;
 - (void)fetchContacts;

@@ -22,6 +22,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)addNumberToTransientCounter:(id)arg1 forKey:(id)arg2 andCandidateLength:(int)arg3 andContext:(id)arg4;
 - (int)valueForDurableKey:(id)arg1;
 - (void)addToTransientCounter:(int)arg1 forKey:(id)arg2 andCandidateLength:(int)arg3 andContext:(id)arg4;
 - (id)getValues:(id)arg1;

@@ -11,6 +11,7 @@
 }
 
 + (id)server;
+- (BOOL)isBluetoothBrailleDisplayConnected;
 - (BOOL)isHandwritingInputUIShowing;
 - (BOOL)isBrailleInputUIShowing;
 - (BOOL)triggerCommand:(long long)arg1 withArgument:(id)arg2;

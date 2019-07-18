@@ -13,9 +13,13 @@
 
 @interface PLBackgroundJobWorker : NSObject <PLBackgroundJobWorkerProtocol>
 {
+    CDUnknownBlockType _workerCompleteCompletionHandler;
+    CDUnknownBlockType _currentManagedObjectCompletionHandler;
+    // Error parsing type: Aq, name: _workerAtomicCounter
+    // Error parsing type: Aq, name: _completionHandlerAtomicCounter
+    CDUnknownBlockType _workerForcefullyStopHandler;
     NSMutableArray *_pendingJobs;
     unsigned long long _totalJobsCount;
-    CDUnknownBlockType _completionHandler;
     NSObject<OS_dispatch_queue> *_processingQueue;
     struct os_unfair_lock_s _lock;
     BOOL _shouldStop;

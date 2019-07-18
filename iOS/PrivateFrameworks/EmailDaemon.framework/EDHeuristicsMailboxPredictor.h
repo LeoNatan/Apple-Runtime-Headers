@@ -38,6 +38,7 @@
 - (id)_listIDCountsForMessage:(id)arg1;
 - (id)_senderCountsForMessage:(id)arg1;
 - (id)_conversationIDCountsForMessage:(id)arg1;
+- (id)_groupedMessagesCountByMailboxMatchingQuery:(unsigned long long)arg1 variable:(id)arg2;
 - (_Bool)_limitToRecents;
 - (id)_countsForField:(id)arg1 message:(id)arg2;
 - (id)_weightedModePredictionsForMessage:(id)arg1;

@@ -15,6 +15,7 @@
 - (id)recordIDForManagedObjectID:(id)arg1;
 - (id)recordsForManagedObjectIDs:(id)arg1;
 - (id)recordForManagedObjectID:(id)arg1;
+- (BOOL)initializeCloudKitSchemaWithOptions:(unsigned long long)arg1 error:(id *)arg2;
 - (void)_loadStoreDescriptons:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)setPersistentStoreDescriptions:(id)arg1;
 - (id)initWithName:(id)arg1 managedObjectModel:(id)arg2;

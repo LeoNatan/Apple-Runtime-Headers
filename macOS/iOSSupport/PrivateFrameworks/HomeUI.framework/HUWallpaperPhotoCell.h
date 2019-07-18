@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class CAShapeLayer, NSString, UIActivityIndicatorView, UIButton, UIImage, UIImageView, UILabel, UIStackView, UIView;
+@class CAShapeLayer, NSLayoutConstraint, NSString, UIActivityIndicatorView, UIButton, UIImage, UIImageView, UILabel, UIStackView, UIView;
 @protocol HUWallpaperPhotoCellDelegate;
 
 @interface HUWallpaperPhotoCell : UICollectionViewCell
@@ -17,6 +17,7 @@
     BOOL _showBorder;
     NSString *_assetIdentifier;
     double _cornerRadius;
+    long long _contentMode;
     id <HUWallpaperPhotoCellDelegate> _delegate;
     UIImageView *_imageView;
     UIActivityIndicatorView *_spinnerView;
@@ -25,8 +26,10 @@
     UILabel *_choosePhotoLabel;
     UIStackView *_stackView;
     CAShapeLayer *_borderLayer;
+    NSLayoutConstraint *_imageWidthConstraint;
 }
 
+@property(retain, nonatomic) NSLayoutConstraint *imageWidthConstraint; // @synthesize imageWidthConstraint=_imageWidthConstraint;
 @property(retain, nonatomic) CAShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) UILabel *choosePhotoLabel; // @synthesize choosePhotoLabel=_choosePhotoLabel;
@@ -35,6 +38,7 @@
 @property(retain, nonatomic) UIActivityIndicatorView *spinnerView; // @synthesize spinnerView=_spinnerView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak id <HUWallpaperPhotoCellDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) BOOL showBorder; // @synthesize showBorder=_showBorder;
 @property(nonatomic) BOOL removable; // @synthesize removable=_removable;
@@ -50,6 +54,7 @@
 - (void)updateView;
 - (void)layoutSubviews;
 - (void)deleteButtonPressed;
+- (void)prepareForReuse;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)resumeUpdateRequests;
-- (void)startUpdateRequestsForRoutes:(id)arg1;
+- (void)startUpdateRequestsForRoutes:(id)arg1 andNavigationType:(int)arg2;
 - (void)_handleDelayTimerWithUpdateRow:(id)arg1;
 - (void)playETAUpdate:(id)arg1;
 - (void)dealloc;

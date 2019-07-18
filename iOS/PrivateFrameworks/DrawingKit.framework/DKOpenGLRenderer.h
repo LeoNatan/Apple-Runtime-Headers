@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     float mParticleLifespan;
     struct CGRect mDirtyCanvasRegion;
     int mCompositeProgViewportUniformLocation;
+    int mCompositeColorUniformLocation;
     int mWetPaintProgTimeUniformLocation;
     int mWetPaintProgSubtractEndPointsOnlyUniformLocation;
     int mWetPaintProgLifespanUniformLocation;

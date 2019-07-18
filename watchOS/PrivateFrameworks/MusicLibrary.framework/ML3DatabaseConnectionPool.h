@@ -26,6 +26,7 @@
         long __sig;
         char __opaque[40];
     } _poolLockMutex;
+    _Bool _closed;
     _Bool _locked;
     NSString *_databasePath;
     id <ML3DatabaseConnectionPoolDelegate> _delegate;
@@ -47,7 +48,8 @@
 - (id)_connectionForIdentifier:(id)arg1;
 - (id)_generateDiagnostic;
 - (void)_closeAllConnectionsAndWaitForBusyConnections:(_Bool)arg1;
-- (void)close;
+@property(nonatomic, getter=isClosed) _Bool closed; // @synthesize closed=_closed;
+- (void)lockAndCloseAllConnectionsForTermination;
 - (void)unlock;
 - (void)lock;
 - (void)closeAllConnections;

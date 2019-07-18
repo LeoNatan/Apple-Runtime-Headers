@@ -41,6 +41,8 @@
 + (_Bool)isIAPDExtendedModeActive;
 + (_Bool)automaticallyNotifiesObserversOfAutoSwitchStreamVariants;
 + (id)makePlayerLoggingIdentifier;
+- (_Bool)_pausesAudioVisualPlaybackInBackground;
+- (void)_setPausesAudioVisualPlaybackInBackground:(_Bool)arg1;
 - (_Bool)_isVideoPlaybackAllowedWhileInBackground;
 - (_Bool)_limitsBandwidthForCellularAccess;
 - (void)_setLimitsBandwidthForCellularAccess:(_Bool)arg1;
@@ -62,6 +64,7 @@
 - (id)_performanceDictionary;
 - (void)_updatePixelBufferAttributesForLayer:(id)arg1;
 - (void)_pixelBufferAttributesDidChangeForLayer:(id)arg1;
+- (_Bool)_hasForegroundLayers;
 - (void)_addLayer:(id)arg1;
 - (void)_removeLayer:(id)arg1;
 - (void)_detachClosedCaptionLayersFromFigPlayer:(struct OpaqueFigPlayer *)arg1;
@@ -218,9 +221,9 @@
 - (id)initWithPlayerItem:(id)arg1;
 @property(nonatomic) _Bool preventsDisplaySleepDuringVideoPlayback;
 - (_Bool)outputObscuredDueToInsufficientExternalProtection;
-- (_Bool)_outputObscuredDueToInsufficientExternalProtection;
 - (long long)_extractFPExternalProtectionStatus:(id)arg1;
 @property(readonly, nonatomic) long long _externalProtectionStatus;
+- (long long)_externalProtectionStatusCopiedFromFig;
 @property(copy, nonatomic, setter=_setDisplaysUsedForPlayback:) NSArray *_displaysUsedForPlayback;
 - (id)_playbackDisplaysForFigPlayer;
 @property(readonly, nonatomic, getter=_isPIPModePossible) _Bool PIPModePossible;
@@ -228,11 +231,16 @@
 @property float minRateForAudioPlayback;
 @property(readonly, nonatomic, getter=isAudioPlaybackEnabledAtAllRates) _Bool audioPlaybackEnabledAtAllRates;
 - (void)removeAudioPlaybackRateLimits;
+- (void)_restoreVideoLayersForForeground;
 - (void)_willEnterForeground:(id)arg1;
+- (void)_detachVideoLayersForSuspension;
 - (void)_didFinishSuspension:(id)arg1;
 - (void)_didEnterBackground:(id)arg1;
+- (void)_layerVisibilityChanged:(id)arg1;
 - (_Bool)_shouldDetachVideoLayersFromFigPlayer;
 - (long long)_itemOkayToPlayWhileTransitioningToBackground:(id)arg1;
+- (void)_setHostApplicationInForeground:(_Bool)arg1;
+- (_Bool)_hostApplicationInForeground;
 - (_Bool)_carplayIsActive;
 - (_Bool)_isIAPDExtendedModeActive;
 - (_Bool)_hasAssociatedOnscreenAVPlayerLayer;

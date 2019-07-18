@@ -20,7 +20,7 @@
 @property(readonly, nonatomic) SBPlatformController *_platformController;
 - (id)_layoutStateForApplicationTransitionContext:(id)arg1;
 - (id)_mostRecentAppLayoutMatchingWorkspaceUniqueIdentifiers:(id)arg1;
-- (id)defaultSceneIdentifierForBundleIdentifier:(id)arg1 targetContentIdentifier:(id)arg2 excludingSceneIdentifiers:(id)arg3;
+- (id)defaultSceneIdentifierForBundleIdentifier:(id)arg1 targetContentIdentifier:(id)arg2 allowCanMatches:(_Bool)arg3 preferNewScene:(_Bool)arg4 visibleSceneIdentifiers:(id)arg5 excludingSceneIdentifiers:(id)arg6;
 - (id)layoutStateForApplicationTransitionContext:(id)arg1;
 
 @end

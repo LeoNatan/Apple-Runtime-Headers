@@ -12,19 +12,20 @@
 @interface DNDSPairedDeviceStateMonitor : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
-    DNDSPairedDevice *_currentPairedDevice;
     int _pairedDeviceDidChangeNotificationToken;
+    DNDSPairedDevice *_pairedDevice;
     id <DNDSPairedDeviceStateMonitorDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <DNDSPairedDeviceStateMonitorDelegate> delegate; // @synthesize delegate=_delegate;
+@property(copy) DNDSPairedDevice *pairedDevice; // @synthesize pairedDevice=_pairedDevice;
 - (void).cxx_destruct;
 - (void)_pairedDeviceStateChanged:(id)arg1;
 - (void)_endMonitoringForChanges;
 - (void)_beginMonitoringForChanges;
 - (id)_getCurrentPairedDevice;
-- (void)_updatePairedState;
-- (id)pairedDeviceWithError:(id *)arg1;
+- (void)_queue_updatePairedState;
+- (void)resume;
 - (void)dealloc;
 - (id)init;
 

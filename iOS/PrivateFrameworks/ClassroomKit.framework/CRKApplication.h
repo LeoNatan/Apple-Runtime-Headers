@@ -16,9 +16,11 @@
     NSString *_name;
     NSData *_iconData;
     NSData *_badgeIconData;
+    NSString *_shortVersionString;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *shortVersionString; // @synthesize shortVersionString=_shortVersionString;
 @property(retain, nonatomic) NSData *badgeIconData; // @synthesize badgeIconData=_badgeIconData;
 @property(retain, nonatomic) NSData *iconData; // @synthesize iconData=_iconData;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;

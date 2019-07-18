@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (id)warningSetForCondFormatComplexFormula;
 + (id)warningSetForCondFormatAboveAvgStdDev;
 + (id)warningSetForCondFormatAboveAvgEqualAvg;
++ (id)warningSetForFilteredColumnFormulaNotCopied;
 + (id)warningSetForTransposeUnmodifiedWithIssues;
 + (id)warningSetForTransposedWithIssues:(id)arg1;
 + (id)warningSetForTransposedWithoutIssues:(id)arg1;
@@ -52,11 +53,13 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
--     // Error parsing type: v24@0:8^{ImportWarningSetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ImportWarningSetArchive_FormulaImportWarning}BBBBBBBBBBBBB}16, name: saveToArchive:
--     // Error parsing type: @24@0:8r^{ImportWarningSetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ImportWarningSetArchive_FormulaImportWarning}BBBBBBBBBBBBB}16, name: initFromArchive:
+-     // Error parsing type: v24@0:8^{ImportWarningSetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ImportWarningSetArchive_FormulaImportWarning}BBBBBBBBBBBBBB}16, name: saveToArchive:
+- (int)TSTImportFormulaWarningTypeToArchive;
+-     // Error parsing type: @24@0:8r^{ImportWarningSetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ImportWarningSetArchive_FormulaImportWarning}BBBBBBBBBBBBBB}16, name: initFromArchive:
+- (long long)TSTImportFormulaWarningTypeFromArchive:(int)arg1;
 - (void)saveToPropertyCommandMessage:(struct Message *)arg1 archiver:(id)arg2;
 - (id)initFromPropertyCommandMessage:(const struct Message *)arg1 unarchiver:(id)arg2;
-- (_Bool)isTransposeWarning;
+- (_Bool)p_isPersistedWithFormulaWarningTypeEnumeration;
 - (id)warningSetByRemovingWarningsFromSet:(id)arg1;
 - (id)cellDiffClearingWarningsWithContext:(id)arg1;
 - (id)warningSetByAddingWarningsFromSet:(id)arg1;

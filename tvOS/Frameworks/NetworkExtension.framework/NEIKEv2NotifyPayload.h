@@ -29,6 +29,7 @@
 - (_Bool)parsePayloadData;
 - (_Bool)generatePayloadData;
 - (id)copyError;
+@property(readonly) _Bool isPrivateError;
 @property(readonly) _Bool isError;
 - (_Bool)hasRequiredFields;
 - (id)description;

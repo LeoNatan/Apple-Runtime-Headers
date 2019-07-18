@@ -7,6 +7,7 @@
 #import <CoreServices/LSApplicationProxy.h>
 
 @interface LSApplicationProxy (Suggestions)
-- (BOOL)supportsActivityType:(id)arg1;
++ (id)sg_preferredApplicationProxyForUserActivityType:(id)arg1 withTeamIdentifier:(id)arg2 preferredBundleIdentifier:(id)arg3;
+- (BOOL)sg_isAppleBundleIdentifier;
 @end
 

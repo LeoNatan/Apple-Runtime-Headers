@@ -20,6 +20,7 @@
 - (NSURL *)draggedURL;
 
 @optional
+- (long long)draggingFormation;
 - (NSArray *)draggingItems;
 - (BOOL)setupDragPasteboard:(NSPasteboard *)arg1;
 @end

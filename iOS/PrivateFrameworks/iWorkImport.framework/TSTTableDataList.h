@@ -8,21 +8,27 @@
 
 #import <iWorkImport/TSPCopying-Protocol.h>
 
-@class NSObject;
+@class NSMutableArray, NSMutableIndexSet, NSObject, TSTTableDataListSegment;
 @protocol TSDContainerInfo><TSWPStorageParent;
 
 __attribute__((visibility("hidden")))
 @interface TSTTableDataList : TSPObject <TSPCopying>
 {
-    struct unordered_map<unsigned int, TSTTableDataObject *, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, TSTTableDataObject *>>> _data;
+    NSMutableArray *_segments;
     struct unordered_map<TSTTableDataObject *, unsigned int, TSTTableDataObjectHash, TSTTableDataObjectEqual, std::__1::allocator<std::__1::pair<TSTTableDataObject *const, unsigned int>>> _dataToKeyDict;
+    NSMutableIndexSet *_unusedKeySet;
     _Bool _isNewForBraveNewCell;
+    _Bool _useReverseMap;
     int _listType;
     unsigned int _nextID;
     NSObject<TSDContainerInfo><TSWPStorageParent> *_richTextParentInfo;
+    TSTTableDataListSegment *_cachedSegment;
 }
 
++ (id)stringForListType:(int)arg1;
 + (Class)classForUnarchiver:(id)arg1;
+@property(nonatomic) TSTTableDataListSegment *cachedSegment; // @synthesize cachedSegment=_cachedSegment;
+@property(readonly, nonatomic) _Bool useReverseMap; // @synthesize useReverseMap=_useReverseMap;
 @property(nonatomic) unsigned int nextID; // @synthesize nextID=_nextID;
 @property(nonatomic) _Bool isNewForBraveNewCell; // @synthesize isNewForBraveNewCell=_isNewForBraveNewCell;
 @property(nonatomic) int listType; // @synthesize listType=_listType;
@@ -31,9 +37,10 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)copyWithContext:(id)arg1;
 - (id)listTypeString;
-- (void)dropReferenceForKey:(unsigned int)arg1;
-- (void)p_addReferencesForKey:(unsigned int)arg1 fromObject:(id)arg2;
-- (void)takeReferenceForKey:(unsigned int)arg1;
+- (void)dropReferences:(unsigned int)arg1 forKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
+- (void)dropReferenceForKey:(unsigned int)arg1 callWillModify:(_Bool)arg2;
+- (void)takeReferences:(unsigned int)arg1 forKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
+- (void)takeReferenceForKey:(unsigned int)arg1 callWillModify:(_Bool)arg2;
 - (unsigned int)refCountForKey:(unsigned int)arg1;
 - (unsigned long long)count;
 - (void)replaceConditionalStyleSetsUsingBlock:(CDUnknownBlockType)arg1;
@@ -41,13 +48,19 @@ __attribute__((visibility("hidden")))
 - (void)enumerateDataObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)objectForKey:(unsigned int)arg1;
 - (void)removeObjectForKey:(unsigned int)arg1;
-- (unsigned int)setObject:(id)arg1 atSuggestedKey:(unsigned int)arg2;
+- (unsigned int)setObject:(id)arg1 atSuggestedKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
+- (unsigned long long)p_objectCount;
+- (unsigned int)p_nextAvailableKey;
+- (void)p_clearReverseMapForObject:(id)arg1 atKey:(unsigned int)arg2;
+- (void)p_setObject:(id)arg1 atKey:(unsigned int)arg2 updateReverseMap:(_Bool)arg3;
+- (id)p_segmentForKey:(unsigned int)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)packageLocator;
 - (id)initWithType:(int)arg1 context:(id)arg2;
 - (void)p_setupWithType:(int)arg1 nextKeyID:(unsigned int)arg2;
-- (_Bool)useReverseMap;
+- (void)p_addInitialSegment;
+- (_Bool)p_shouldUseReverseMap;
 - (id)styleForKey:(unsigned int)arg1;
 - (id)stringForKey:(unsigned int)arg1;
 - (id)richTextForKey:(unsigned int)arg1;
@@ -59,17 +72,17 @@ __attribute__((visibility("hidden")))
 - (id)conditionalStyleSetForKey:(unsigned int)arg1;
 - (id)commentStorageForKey:(unsigned int)arg1;
 - (id)cellFormatForKey:(unsigned int)arg1;
-- (unsigned int)addStyle:(id)arg1 atSuggestedKey:(unsigned int)arg2;
-- (unsigned int)addString:(id)arg1 atSuggestedKey:(unsigned int)arg2;
-- (unsigned int)addRichText:(id)arg1 atSuggestedKey:(unsigned int)arg2;
-- (unsigned int)addMultipleChoiceListFormat:(id)arg1 atSuggestedKey:(unsigned int)arg2;
-- (unsigned int)addImportWarningSet:(id)arg1 atSuggestedKey:(unsigned int)arg2;
-- (unsigned int)addFormulaError:(id)arg1 atSuggestedKey:(unsigned int)arg2;
-- (unsigned int)addControlCellSpec:(id)arg1 atSuggestedKey:(unsigned int)arg2;
-- (unsigned int)addFormula:(id)arg1 atSuggestedKey:(unsigned int)arg2;
-- (unsigned int)addConditionalStyleSet:(id)arg1 atSuggestedKey:(unsigned int)arg2;
-- (unsigned int)addCommentStorage:(id)arg1 atSuggestedKey:(unsigned int)arg2;
-- (unsigned int)addCellFormat:(id)arg1 atSuggestedKey:(unsigned int)arg2;
+- (unsigned int)addStyle:(id)arg1 atSuggestedKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
+- (unsigned int)addString:(id)arg1 atSuggestedKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
+- (unsigned int)addRichText:(id)arg1 atSuggestedKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
+- (unsigned int)addMultipleChoiceListFormat:(id)arg1 atSuggestedKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
+- (unsigned int)addImportWarningSet:(id)arg1 atSuggestedKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
+- (unsigned int)addFormulaError:(id)arg1 atSuggestedKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
+- (unsigned int)addControlCellSpec:(id)arg1 atSuggestedKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
+- (unsigned int)addFormula:(id)arg1 atSuggestedKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
+- (unsigned int)addConditionalStyleSet:(id)arg1 atSuggestedKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
+- (unsigned int)addCommentStorage:(id)arg1 atSuggestedKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
+- (unsigned int)addCellFormat:(id)arg1 atSuggestedKey:(unsigned int)arg2 callWillModify:(_Bool)arg3;
 - (_Bool)containsFormulas;
 - (_Bool)containsControlCellSpecs;
 - (id)allRichTextStorages;

@@ -31,7 +31,9 @@
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)handleConfirmButtonTapped;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)viewDidLoad;
+- (void)dealloc;
 - (id)initWithSelectedSharingAudience:(unsigned long long)arg1;
 
 // Remaining properties

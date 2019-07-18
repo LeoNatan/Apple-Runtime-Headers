@@ -17,11 +17,13 @@
     struct {
         unsigned int deviceType:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     _INPBContact *_contact;
     int _deviceType;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int deviceType; // @synthesize deviceType=_deviceType;
 @property(retain, nonatomic) _INPBContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;

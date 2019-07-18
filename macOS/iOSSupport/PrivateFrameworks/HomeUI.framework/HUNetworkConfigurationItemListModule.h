@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)itemProviders;
+- (id)networkConfigurationGroupItemForProfile:(id)arg1;
 - (BOOL)isItemNetworkConfigurationGroupItem:(id)arg1;
 - (id)initWithItemUpdater:(id)arg1;
 - (id)initWithItemUpdater:(id)arg1 home:(id)arg2;

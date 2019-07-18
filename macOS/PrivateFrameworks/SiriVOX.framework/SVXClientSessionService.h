@@ -33,7 +33,6 @@
 - (void)handleDidBecomeActiveWithActivationContext:(id)arg1;
 - (void)handleWillBecomeActiveWithActivationContext:(id)arg1;
 - (void)handleDidStopSoundWithID:(long long)arg1 error:(id)arg2;
-- (void)handleDidNotStartSoundWithID:(long long)arg1 error:(id)arg2;
 - (void)handleDidStartSoundWithID:(long long)arg1;
 - (void)handleWillStartSoundWithID:(long long)arg1;
 - (void)handleWillPresentFeedbackWithDialogIdentifier:(id)arg1;

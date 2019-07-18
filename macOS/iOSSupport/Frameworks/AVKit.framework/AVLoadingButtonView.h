@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize extrinsicContentSize;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
+- (void)setHidden:(BOOL)arg1;
 - (id)initWithTitle:(id)arg1;
 
 // Remaining properties

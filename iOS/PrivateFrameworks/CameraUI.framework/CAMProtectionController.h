@@ -28,9 +28,10 @@
 @property(readonly, nonatomic) NSCountedSet *_persistenceProtectionInflightRequestsByType; // @synthesize _persistenceProtectionInflightRequestsByType=__persistenceProtectionInflightRequestsByType;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_protectionQueue; // @synthesize _protectionQueue=__protectionQueue;
 - (void).cxx_destruct;
-- (void)_protectionQueueAbortProtectionForNebulaDaemonWrites;
+- (void)_protectionQueueAbortProtectionForNebulaDaemonWritesForReason:(id)arg1;
 - (void)_protectionQueueStopProtectingNebulaDaemonWritesForIdentifier:(id)arg1 closeFile:(_Bool)arg2;
 - (void)_protectionQueueStartProtectingNebulaDaemonWritesForIdentifier:(id)arg1;
+- (void)abortOutstandingNebulaDaemonWriteProtectionsForReason:(id)arg1;
 - (void)stopProtectingNebulaDaemonWritesForIdentifier:(id)arg1;
 - (void)startProtectingNebulaDaemonWritesForIdentifier:(id)arg1;
 - (void)stopProtectingBurstProcessingForIdentifier:(id)arg1;

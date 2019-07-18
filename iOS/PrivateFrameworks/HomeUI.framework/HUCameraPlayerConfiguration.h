@@ -10,6 +10,7 @@
 
 @interface HUCameraPlayerConfiguration : NSObject
 {
+    _Bool _shouldFetchClipCollection;
     HMHome *_home;
     HMCameraProfile *_cameraProfile;
     long long _scrubberType;
@@ -17,6 +18,7 @@
     NSDate *_startingPlaybackDate;
 }
 
+@property(nonatomic) _Bool shouldFetchClipCollection; // @synthesize shouldFetchClipCollection=_shouldFetchClipCollection;
 @property(retain, nonatomic) NSDate *startingPlaybackDate; // @synthesize startingPlaybackDate=_startingPlaybackDate;
 @property(readonly, nonatomic) NSUUID *notificationUUID; // @synthesize notificationUUID=_notificationUUID;
 @property(readonly, nonatomic) long long scrubberType; // @synthesize scrubberType=_scrubberType;

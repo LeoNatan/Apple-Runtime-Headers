@@ -6,7 +6,7 @@
 
 #import <RunningBoard/NSObject-Protocol.h>
 
-@class BSAuditToken, NSSet, NSXPCConnection, RBProcess, RBProcessStateChangeSet, RBSLaunchRequest, RBSProcessHandle, RBSProcessIdentity, RBSProcessInstance, RBSProcessPredicate, RBSTerminateRequest, RBSystemState;
+@class BSAuditToken, NSSet, RBProcess, RBProcessStateChangeSet, RBSLaunchRequest, RBSProcessHandle, RBSProcessIdentity, RBSProcessInstance, RBSProcessPredicate, RBSTerminateRequest, RBSystemState;
 @protocol RBSProcessIdentifier;
 
 @protocol RBProcessManaging <NSObject>
@@ -22,6 +22,5 @@
 - (RBProcess *)processForIdentity:(RBSProcessIdentity *)arg1;
 - (RBProcess *)processForAuditToken:(BSAuditToken *)arg1;
 - (RBProcess *)processForIdentifier:(id <RBSProcessIdentifier>)arg1;
-- (RBProcess *)processForConnection:(NSXPCConnection *)arg1;
 @end
 

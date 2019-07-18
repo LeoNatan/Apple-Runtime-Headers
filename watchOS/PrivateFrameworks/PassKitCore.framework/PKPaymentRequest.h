@@ -39,6 +39,7 @@
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_sourceApplicationSecondaryIdentifier;
     NSString *_CTDataConnectionServiceType;
+    NSString *_boundInterfaceIdentifier;
     PKApplePayTrustSignatureRequest *_applePayTrustSignatureRequest;
     NSArray *_bankAccounts;
     int _paymentFrequency;
@@ -103,6 +104,7 @@
 @property(nonatomic) _Bool accountPaymentSupportsPeerPayment; // @synthesize accountPaymentSupportsPeerPayment=_accountPaymentSupportsPeerPayment;
 @property(retain, nonatomic) NSArray *bankAccounts; // @synthesize bankAccounts=_bankAccounts;
 @property(retain, nonatomic) PKApplePayTrustSignatureRequest *applePayTrustSignatureRequest; // @synthesize applePayTrustSignatureRequest=_applePayTrustSignatureRequest;
+@property(copy, nonatomic) NSString *boundInterfaceIdentifier; // @synthesize boundInterfaceIdentifier=_boundInterfaceIdentifier;
 @property(retain, nonatomic) NSString *CTDataConnectionServiceType; // @synthesize CTDataConnectionServiceType=_CTDataConnectionServiceType;
 @property(retain, nonatomic) NSString *sourceApplicationSecondaryIdentifier; // @synthesize sourceApplicationSecondaryIdentifier=_sourceApplicationSecondaryIdentifier;
 @property(retain, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
@@ -125,6 +127,8 @@
 @property(copy, nonatomic) NSString *merchantIdentifier; // @synthesize merchantIdentifier=_merchantIdentifier;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1 error:(id *)arg2;
+@property(readonly) _Bool _isAMPPayment;
+@property(readonly) _Bool _isPSD2StyleRequest;
 - (id)_transactionAmount;
 - (unsigned int)_contactFieldsToAddressFields:(id)arg1;
 - (id)_addressFieldsToContactFields:(unsigned int)arg1;

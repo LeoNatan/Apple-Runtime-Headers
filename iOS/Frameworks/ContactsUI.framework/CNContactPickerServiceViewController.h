@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (void)pickerDidCancel;
 - (void)pickerDidSelectContacts:(id)arg1 properties:(id)arg2;
 - (void)pickerDidSelectContact:(id)arg1 property:(id)arg2;
+- (void)pickerDidSelectAddNewContact;
 - (id)_filteredProperty:(id)arg1;
 - (id)_filteredContact:(id)arg1 withKeys:(id)arg2;
 - (id)init;

@@ -49,6 +49,7 @@ struct WGWidgetListSettings {
     unsigned long long carouselEdges;
     _Bool useFavorites;
     _Bool carouselIgnoresHeader;
+    _Bool pinned;
 };
 
 struct _NSRange {

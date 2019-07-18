@@ -24,7 +24,7 @@
 @property(readonly, copy, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-- (id)definitionWithDatabase:(id)arg1;
+- (id)definitionWithDatabaseName:(id)arg1;
 - (id)initWithTableName:(id)arg1 columnNames:(id)arg2;
 - (id)initWithTableName:(id)arg1 columnNames:(id)arg2 where:(id)arg3 unique:(BOOL)arg4;
 - (id)initWithTableName:(id)arg1 indexedColumns:(id)arg2;

@@ -6,8 +6,14 @@
 
 #import <Intents/NSObject-Protocol.h>
 
+@class NSString;
+
 @protocol _INPBStartCallIntentResponse <NSObject>
 @property(nonatomic) _Bool hasShouldDoEmergencyCountdown;
 @property(nonatomic) _Bool shouldDoEmergencyCountdown;
+@property(nonatomic) _Bool hasConfirmationReason;
+@property(nonatomic) int confirmationReason;
+- (int)StringAsConfirmationReason:(NSString *)arg1;
+- (NSString *)confirmationReasonAsString:(int)arg1;
 @end
 

@@ -17,6 +17,7 @@
 - (oneway void)cancelPendingActivationEventWithReason:(SiriPresentationActivationCancelReasonTransport *)arg1;
 - (oneway void)preheat;
 - (oneway void)cancelTTS;
+- (_Bool)presentationisIdleAndQuiet;
 - (oneway void)handleRequestWithOptions:(SASRequestOptions *)arg1;
 - (oneway void)presentationDismissalRequestedWithOptions:(SiriDismissalOptions *)arg1;
 - (oneway void)presentationRequestedWithPresentationOptions:(SiriPresentationOptions *)arg1 requestOptions:(SASRequestOptions *)arg2;

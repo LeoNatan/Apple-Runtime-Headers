@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (void)_safelyStopQuery:(id)arg1;
 - (void)_stopQueries;
 - (id)_countQueryForType:(long long)arg1;
+- (void)updateController:(id)arg1 didReceiveHighFrequencyUpdateForType:(id)arg2;
 - (void)updateController:(id)arg1 didReceiveUpdateForType:(id)arg2 samplesAdded:(id)arg3 objectsRemoved:(id)arg4;
 - (id)displayStringCountForType:(long long)arg1;
 - (long long)countForType:(long long)arg1;

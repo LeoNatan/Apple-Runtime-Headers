@@ -19,6 +19,7 @@
     NSDateComponents *_dueDateComponents;
     CLLocation *_location;
     NSString *_locationString;
+    long long _locationProximity;
     NSURL *_url;
     NSData *_siriFoundInAppsData;
     NSUserActivity *_userActivity;
@@ -30,6 +31,7 @@
 @property(retain, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 @property(copy, nonatomic) NSData *siriFoundInAppsData; // @synthesize siriFoundInAppsData=_siriFoundInAppsData;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
+@property(nonatomic) long long locationProximity; // @synthesize locationProximity=_locationProximity;
 @property(copy, nonatomic) NSString *locationString; // @synthesize locationString=_locationString;
 @property(copy, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(copy, nonatomic) NSDateComponents *dueDateComponents; // @synthesize dueDateComponents=_dueDateComponents;

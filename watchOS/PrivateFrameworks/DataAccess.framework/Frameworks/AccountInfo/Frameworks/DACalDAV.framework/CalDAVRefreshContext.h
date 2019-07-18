@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSError;
+@class CalDAVDBChangeTrackingHelper, NSError;
 
 @interface CalDAVRefreshContext : NSObject
 {
     _Bool _isForced;
     _Bool _wasUserRequested;
     _Bool _wasDueToPush;
-    _Bool _isPrincipalOnly;
+    _Bool _isDisabledAccount;
     _Bool _isCalendarsOnly;
     _Bool _didDownloadEvents;
     _Bool _didSaveDatabase;
@@ -26,10 +26,12 @@
     int _retryTime;
     NSError *_error;
     unsigned int _localItems;
+    CalDAVDBChangeTrackingHelper *_changeTracker;
     double _startTime;
 }
 
 + (id)defaultContext;
+@property(retain, nonatomic) CalDAVDBChangeTrackingHelper *changeTracker; // @synthesize changeTracker=_changeTracker;
 @property(nonatomic) unsigned int localItems; // @synthesize localItems=_localItems;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) int retryTime; // @synthesize retryTime=_retryTime;
@@ -43,7 +45,7 @@
 @property(nonatomic) _Bool didSaveDatabase; // @synthesize didSaveDatabase=_didSaveDatabase;
 @property(nonatomic) _Bool didDownloadEvents; // @synthesize didDownloadEvents=_didDownloadEvents;
 @property(nonatomic) _Bool isCalendarsOnly; // @synthesize isCalendarsOnly=_isCalendarsOnly;
-@property(nonatomic) _Bool isPrincipalOnly; // @synthesize isPrincipalOnly=_isPrincipalOnly;
+@property(nonatomic) _Bool isDisabledAccount; // @synthesize isDisabledAccount=_isDisabledAccount;
 @property(nonatomic) _Bool wasDueToPush; // @synthesize wasDueToPush=_wasDueToPush;
 @property(nonatomic) _Bool wasUserRequested; // @synthesize wasUserRequested=_wasUserRequested;
 @property(nonatomic) _Bool isForced; // @synthesize isForced=_isForced;

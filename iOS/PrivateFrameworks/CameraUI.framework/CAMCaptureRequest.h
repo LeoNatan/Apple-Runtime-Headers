@@ -59,9 +59,11 @@
 @property(readonly, nonatomic) long long captureOrientation; // @synthesize captureOrientation=_captureOrientation;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
-- (_Bool)shouldProtectPersistence;
-- (_Bool)shouldPersistToIncomingDirectory;
+@property(readonly, nonatomic) _Bool shouldProtectPersistenceForVideo;
+@property(readonly, nonatomic) _Bool shouldProtectPersistence;
+@property(readonly, nonatomic) _Bool shouldPersistToIncomingDirectory;
 - (id)distinctPersistenceCopy;
+@property(readonly, nonatomic) long long captureDevicePosition;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRequest:(id)arg1 distinctPersistence:(_Bool)arg2;
 - (id)initWithType:(long long)arg1;

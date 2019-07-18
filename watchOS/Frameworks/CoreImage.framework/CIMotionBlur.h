@@ -4,19 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CoreImage/CILinearBlur.h>
+#import <CoreImage/CIFilter.h>
 
-@class NSNumber;
+@class CIImage, NSNumber;
 
 __attribute__((visibility("hidden")))
-@interface CIMotionBlur : CILinearBlur
+@interface CIMotionBlur : CIFilter
 {
+    CIImage *inputImage;
+    NSNumber *inputRadius;
     NSNumber *inputAngle;
 }
 
 + (id)customAttributes;
 @property(retain, nonatomic) NSNumber *inputAngle; // @synthesize inputAngle;
-- (id)_blur:(id)arg1 pass:(int)arg2 weightsFactor:(float)arg3;
+@property(retain, nonatomic) NSNumber *inputRadius; // @synthesize inputRadius;
+@property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage;
+- (id)outputImage;
+- (_Bool)_isIdentity;
+- (id)_blur:(id)arg1 pass:(int)arg2 weightsFactor:(float)arg3 legacyExtent:(struct CGRect *)arg4;
 - (id)_kernel;
 
 @end

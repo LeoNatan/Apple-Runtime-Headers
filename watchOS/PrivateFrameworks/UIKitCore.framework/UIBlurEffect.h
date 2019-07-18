@@ -15,12 +15,15 @@
 
 + (void)_addBlurToEffectDescriptor:(id)arg1 blurRadius:(float)arg2 scale:(float)arg3 environment:(id)arg4;
 + (_Bool)supportsSecureCoding;
++ (id)_effectWithInfiniteRadius;
++ (id)_effectForLightMaterial:(id)arg1 darkMaterial:(id)arg2 bundle:(id)arg3;
 + (id)_effectWithBlurRadius:(float)arg1 scale:(float)arg2;
 + (id)effectWithBlurRadius:(float)arg1;
 + (id)_effectWithStyle:(int)arg1 tintColor:(id)arg2 invertAutomaticStyle:(_Bool)arg3;
 + (id)_effectWithStyle:(int)arg1 invertAutomaticStyle:(_Bool)arg2;
 + (id)_effectWithTintColor:(id)arg1;
 + (id)effectWithStyle:(int)arg1;
++ (id)_coreUIImplementationForStyle:(int)arg1;
 - (void).cxx_destruct;
 - (id)effectSettings;
 - (id)description;

@@ -8,10 +8,8 @@
 
 @protocol ATXActionPredictionInterface
 - (void)sendFeedbackWithResponse:(ATXActionResponse *)arg1;
-- (void)getActionsPredictionsFromContext:(ATXContext *)arg1 includeActionTypes:(NSArray *)arg2 excludeActionTypes:(NSArray *)arg3 limit:(unsigned int)arg4 reply:(void (^)(ATXActionResponse *, NSError *))arg5;
 - (void)getActionPredictionsForContext:(ATXContext *)arg1 includeBundleIds:(NSArray *)arg2 excludeBundleIds:(NSArray *)arg3 includeActionTypes:(NSArray *)arg4 excludeActionTypes:(NSArray *)arg5 limit:(unsigned int)arg6 reply:(void (^)(ATXActionResponse *, NSError *))arg7;
 - (void)shouldDisplayDailyRoutineForContext:(ATXContext *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
-- (void)shouldDisplayEverydayShortcutFromContext:(ATXContext *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
 - (void)getActionPredictionsForCandidateBundleIdentifiers:(NSArray *)arg1 candidateActionTypes:(NSArray *)arg2 consumerType:(unsigned int)arg3 consumerSubType:(unsigned char)arg4 limit:(int)arg5 reply:(void (^)(ATXActionResponse *, NSError *))arg6;
 @end
 

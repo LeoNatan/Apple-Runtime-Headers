@@ -12,15 +12,16 @@
 {
     BOOL _isSummary;
     NSMutableSet *_memoryObjects;
-    NSMutableSet *_memoryRegions;
     unsigned char _segment;
     unsigned long long _totalDirtySize;
     unsigned long long _totalSwappedSize;
     unsigned long long _totalCleanSize;
     unsigned long long _totalReclaimableSize;
     unsigned long long _totalWiredSize;
+    NSMutableSet *_memoryRegions;
 }
 
+@property(retain, nonatomic) NSMutableSet *memoryRegions; // @synthesize memoryRegions=_memoryRegions;
 @property(readonly, nonatomic) unsigned char segment; // @synthesize segment=_segment;
 @property(nonatomic) unsigned long long totalWiredSize; // @synthesize totalWiredSize=_totalWiredSize;
 @property(nonatomic) unsigned long long totalReclaimableSize; // @synthesize totalReclaimableSize=_totalReclaimableSize;
@@ -29,7 +30,6 @@
 @property(nonatomic) unsigned long long totalDirtySize; // @synthesize totalDirtySize=_totalDirtySize;
 @property(readonly, nonatomic) NSSet *memoryObjects; // @synthesize memoryObjects=_memoryObjects;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) BOOL purgeableNonVolatile;
 @property(readonly, nonatomic) int totalRegions;
 - (void)addMemoryObject:(id)arg1;
 @property(readonly, nonatomic) NSString *fullName;

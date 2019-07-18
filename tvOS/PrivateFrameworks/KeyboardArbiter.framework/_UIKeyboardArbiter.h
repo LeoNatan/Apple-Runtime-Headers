@@ -8,7 +8,7 @@
 
 #import <KeyboardArbiter/NSXPCListenerDelegate-Protocol.h>
 
-@class BKSApplicationStateMonitor, FBSScene, FBSWorkspace, NSMutableArray, NSString, NSXPCListener, _UIKeyboardArbiterHandle, _UIKeyboardChangedInformation;
+@class BKSApplicationStateMonitor, FBSScene, FBSSceneLayer, FBSWorkspace, NSMutableArray, NSString, NSXPCListener, UIDelayedAction, _UIKeyboardArbiterHandle, _UIKeyboardChangedInformation;
 @protocol OS_dispatch_queue, _UIKeyboardArbiterLink;
 
 @interface _UIKeyboardArbiter : NSObject <NSXPCListenerDelegate>
@@ -18,13 +18,17 @@
     NSMutableArray *_clients;
     _UIKeyboardArbiterHandle *_activeHandle;
     _UIKeyboardArbiterHandle *_previouslyActiveHandle;
-    NSString *_currentBundleIdForHardwareKeyboard;
+    int _currentFocusPID;
+    NSString *_currentFocusSceneIdentifier;
     _UIKeyboardArbiterHandle *_keyboardFocusHandle;
     _UIKeyboardArbiterHandle *_commandFocusHandle;
     FBSWorkspace *_workspace;
     FBSScene *_scene;
     int _updateCounter;
     BKSApplicationStateMonitor *_stateMonitor;
+    long long _lastEventSource;
+    UIDelayedAction *_delayedClearLastEventSource;
+    FBSSceneLayer *_sceneLayer;
     _UIKeyboardArbiterHandle *_disablingHandle;
     id <_UIKeyboardArbiterLink> _sceneLink;
     _UIKeyboardChangedInformation *_lastUpdate;
@@ -34,6 +38,8 @@
 @property(readonly, nonatomic) id <_UIKeyboardArbiterLink> sceneLink; // @synthesize sceneLink=_sceneLink;
 - (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)_clearLastEventSource:(id)arg1;
+- (void)signalEventSourceChanged:(long long)arg1 fromHandler:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setKeyboardTotalDisable:(_Bool)arg1 withFence:(id)arg2 fromHandler:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)handlerRequestedFocus:(id)arg1;
 - (void)transition:(id)arg1 eventStage:(unsigned long long)arg2 withInfo:(id)arg3 fromHandler:(id)arg4;
@@ -43,7 +49,7 @@
 - (id)handlerForBundleID:(id)arg1;
 - (id)handlerForPID:(int)arg1;
 - (void)activateClients;
-- (void)reevaluateSceneSettings;
+- (void)reevaluateSceneClientSettings;
 - (void)updateSuppression:(_Bool)arg1 ofPIDs:(id)arg2;
 - (void)updateSceneSettings:(id)arg1;
 - (void)handleUnexpectedDeallocForHandler:(id)arg1;

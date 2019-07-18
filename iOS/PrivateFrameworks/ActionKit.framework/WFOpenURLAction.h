@@ -10,7 +10,6 @@
 {
 }
 
-+ (id)webPageForOpeningURLs:(id)arg1 loadHandler:(CDUnknownBlockType)arg2;
 - (_Bool)populatesInputFromInputParameter;
 - (void)openURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)runAsynchronouslyWithInput:(id)arg1;

@@ -26,7 +26,6 @@
 + (id)preferredLocalizationsForXCTests;
 + (id)localizedStringForCanonicalString:(id)arg1 preferredLocalizations:(id)arg2 context:(struct LSContext *)arg3;
 + (void)findKeysToLocalizeInInfoDictionary:(id)arg1 forArrayKey:(struct __CFString *)arg2 stringKey:(struct __CFString *)arg3 localizedKeys:(id)arg4;
-+ (_Bool)isChinaSKU;
 + (id)IOQueue;
 - (void).cxx_destruct;
 - (id)debugDescription;

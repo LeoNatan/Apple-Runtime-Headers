@@ -13,6 +13,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)enumerateDebugDescriptionOfNotches:(CDUnknownBlockType)arg1;
 - (id)debugDescription;
 - (unsigned int)notchEdgeTypeCrossedFromPosition:(float)arg1 toPosition:(float)arg2 crownInputSequencerIsContinuous:(_Bool)arg3;
 - (float)nextRestingPositionForPreviousPosition:(float)arg1 nextPosition:(float)arg2 crownInputSequencerIsContinuous:(_Bool)arg3 notchStrengthExitingPreviousNotch:(int *)arg4;

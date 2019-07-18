@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class AVTUIAnimatingImageView, CAShapeLayer, NSUUID, UIButton, UILabel;
+@class AVTUIAnimatingImageView, CAShapeLayer, NSUUID, UIButton;
 
 @interface AVTFunCamAvatarPickerCollectionViewCell : UICollectionViewCell
 {
@@ -17,7 +17,6 @@
     CDUnknownBlockType _imageInsetProvider;
     long long _imageContentMode;
     AVTUIAnimatingImageView *_imageView;
-    UILabel *_titleLabel;
     UIButton *_accessoryButton;
     CAShapeLayer *_selectionLayer;
     struct CGSize _engagedSize;
@@ -27,7 +26,6 @@
 + (id)cellIdentifier;
 @property(readonly, nonatomic) CAShapeLayer *selectionLayer; // @synthesize selectionLayer=_selectionLayer;
 @property(retain, nonatomic) UIButton *accessoryButton; // @synthesize accessoryButton=_accessoryButton;
-@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) AVTUIAnimatingImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) struct CGSize engagedSize; // @synthesize engagedSize=_engagedSize;
 @property(nonatomic) _Bool showsTitle; // @synthesize showsTitle=_showsTitle;
@@ -42,7 +40,6 @@
 - (void)setSelected:(_Bool)arg1;
 - (void)setImageZoomFactor:(double)arg1;
 - (void)updateWithTintColor:(id)arg1;
-- (void)updateWithTitle:(id)arg1;
 - (void)updateWithImage:(id)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

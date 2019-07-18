@@ -64,6 +64,7 @@ __attribute__((visibility("hidden")))
 - (void)_fetchDataSourcesForSampleType:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_fetchOrderedSourcesForType:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_loadDataWithCompletion:(CDUnknownBlockType)arg1;
+- (_Bool)_canEditDataSources;
 - (void)_gatherDataAndRefreshUI;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

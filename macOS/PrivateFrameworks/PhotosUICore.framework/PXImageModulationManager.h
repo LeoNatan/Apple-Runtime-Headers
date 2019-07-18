@@ -24,6 +24,7 @@
         char finalRequestedEDRHeadroomFactor;
         char desiredDynamicRange;
         char imageLayerModulators;
+        char currentScreenSupportsHDR;
     } _needsUpdateFlags;
     double _lastRequestedEDRHeadroomChangeTime;
     BOOL _lowPowerModeEnabled;
@@ -31,6 +32,7 @@
     BOOL _mainScreen;
     BOOL _enabled;
     BOOL _active;
+    BOOL _currentScreenSupportsHDR;
     PXImageModulationSettings *_settings;
     NSHashTable *_imageLayerModulators;
     PXRequestedEDRHeadroomFactorFilter *_requestedEDRHeadroomFactorFilter;
@@ -47,6 +49,7 @@
 @property(readonly, nonatomic) double requestedEDRHeadroomFactor; // @synthesize requestedEDRHeadroomFactor=_requestedEDRHeadroomFactor;
 @property(readonly, nonatomic) double imageModulationIntensity; // @synthesize imageModulationIntensity=_imageModulationIntensity;
 @property(readonly, nonatomic) double HDRFocus; // @synthesize HDRFocus=_HDRFocus;
+@property(readonly, nonatomic) BOOL currentScreenSupportsHDR; // @synthesize currentScreenSupportsHDR=_currentScreenSupportsHDR;
 @property(readonly, nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 @property(readonly, nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic, getter=isMainScreen) BOOL mainScreen; // @synthesize mainScreen=_mainScreen;
@@ -61,6 +64,8 @@
 - (void)preferencesDidChange;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (void)_updateCurrentScreenSupportsHDRIfNeeded;
+- (void)_invalidateCurrentScreenSupportsHDR;
 - (void)_updateImageLayerModulatorsIfNeeded;
 - (void)_invalidateImageLayerModulators;
 - (void)_updateDesiredDynamicRangeIfNeeded;
@@ -84,9 +89,12 @@
 - (void)_updateIfNeeded;
 - (void)didPerformChanges;
 - (id)mutableChangeObject;
+- (void)_windowDidChangeScreen:(id)arg1;
+- (void)_applicationDidChangeScreenParameters:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidResignActive:(id)arg1;
 - (void)_processInfoPowerStateDidChange:(id)arg1;
+- (void)setCurrentScreenSupportsHDR:(BOOL)arg1;
 - (void)_updateCoreAnimationContext;
 - (void)setRequestedEDRHeadroomFactor:(double)arg1;
 - (void)setImageModulationIntensity:(double)arg1;

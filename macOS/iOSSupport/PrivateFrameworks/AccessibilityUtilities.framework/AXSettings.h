@@ -224,6 +224,7 @@
 @property(nonatomic) long long voiceOverTouchBrailleDisplayInputMode;
 @property(retain, nonatomic) NSArray *customPronunciationSubstitutions;
 @property(nonatomic) struct CGPoint quickSpeakNubbitNormalizedPosition;
+@property(nonatomic) BOOL siriAutoUpdateListInitialized;
 @property(copy, nonatomic) NSSet *downloadedSiriVoices;
 - (void)_removeSpeakingRatePreferenceForLanguage:(id)arg1;
 - (float)quickSpeakSpeakingRateForLanguage:(id)arg1;
@@ -345,7 +346,6 @@
 @property(nonatomic) BOOL zoomPeekZoomEnabled;
 @property(nonatomic) BOOL zoomShouldShowSlug;
 @property(nonatomic) BOOL zoomShouldFollowFocus;
-@property(retain, nonatomic) NSString *zoomCurrentDockPosition;
 @property(retain, nonatomic) NSString *zoomCurrentLensMode;
 @property(nonatomic) BOOL zoomInStandby;
 @property(retain, nonatomic) NSString *zoomCurrentLensEffect;
@@ -410,8 +410,12 @@
 - (double)assistiveTouchMouseDwellControlActivationTimeout;
 - (BOOL)assistiveTouchMouseDwellControlEnabled;
 - (void)setAssistiveTouchMouseDwellControlEnabled:(BOOL)arg1;
-- (BOOL)assistiveTouchMouseUsesLargerPointer;
-- (void)setAssistiveTouchMouseUsesLargerPointer:(BOOL)arg1;
+- (double)assistiveTouchMousePointerTimeout;
+- (void)setAssistiveTouchMousePointerTimeout:(double)arg1;
+- (BOOL)assistiveTouchMousePointerTimeoutEnabled;
+- (void)setAssistiveTouchMousePointerTimeoutEnabled:(BOOL)arg1;
+- (double)assistiveTouchMousePointerSizeMultiplier;
+- (void)setAssistiveTouchMousePointerSizeMultiplier:(double)arg1;
 - (long long)assistiveTouchMousePointerColor;
 - (void)setAssistiveTouchMousePointerColor:(long long)arg1;
 @property(nonatomic) long long assistiveTouchCursorColor;
@@ -452,6 +456,8 @@
 - (long long)assistiveTouchMouseKeysMaxSpeed;
 - (void)setAssistiveTouchMouseKeysMaxSpeed:(long long)arg1;
 - (long long)assistiveTouchMouseKeysDelay;
+- (void)setAssistiveTouchMouseAllowAppleBluetoothDevicesPairing:(BOOL)arg1;
+- (BOOL)assistiveTouchMouseAllowAppleBluetoothDevicesPairing;
 - (void)setAssistiveTouchMouseAlwaysShowSoftwareKeyboardEnabled:(BOOL)arg1;
 - (BOOL)assistiveTouchMouseAlwaysShowSoftwareKeyboardEnabled;
 - (void)setAssistiveTouchMouseKeysDelay:(long long)arg1;

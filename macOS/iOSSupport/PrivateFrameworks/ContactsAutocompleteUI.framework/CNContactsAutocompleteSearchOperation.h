@@ -8,7 +8,7 @@
 
 #import <ContactsAutocompleteUI/CNAutocompleteFetchDelegate-Protocol.h>
 
-@class CNAutocompleteFetchContext, CNAutocompleteStore, CNCancelationToken, CNPromise, NSString;
+@class CNAutocompleteFetchContext, CNAutocompleteStore, CNCancelationToken, CNPromise, NSNumber, NSString;
 
 @interface CNContactsAutocompleteSearchOperation : CNAutocompleteSearchOperation <CNAutocompleteFetchDelegate>
 {
@@ -20,6 +20,7 @@
     BOOL _simulateResults;
     CNCancelationToken *_fetchRequestToken;
     CNPromise *_fetchRequestPromise;
+    struct NSNumber *_shouldIncludeGroupResults;
     CNAutocompleteFetchContext *_fetchContext;
     CNAutocompleteStore *_autocompleteStore;
 }
@@ -29,6 +30,7 @@
 @property(copy, nonatomic) CNAutocompleteFetchContext *fetchContext; // @synthesize fetchContext=_fetchContext;
 @property(nonatomic) BOOL simulateResults; // @synthesize simulateResults=_simulateResults;
 @property(nonatomic) BOOL shouldUnifyResults; // @synthesize shouldUnifyResults=_shouldUnifyResults;
+@property(retain, nonatomic) NSNumber *shouldIncludeGroupResults; // @synthesize shouldIncludeGroupResults=_shouldIncludeGroupResults;
 @property(nonatomic) BOOL includeServers; // @synthesize includeServers=_includeServers;
 @property(nonatomic) BOOL includeSuggestions; // @synthesize includeSuggestions=_includeSuggestions;
 @property(nonatomic) BOOL includeRecents; // @synthesize includeRecents=_includeRecents;

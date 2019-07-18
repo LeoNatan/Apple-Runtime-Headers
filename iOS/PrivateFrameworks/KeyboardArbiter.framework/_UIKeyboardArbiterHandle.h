@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     FBSCAContextSceneLayer *_sceneLayer;
     NSString *_remoteSceneID;
     _Bool _active;
-    _Bool _wantedActive;
+    unsigned long long _wantedState;
     double _level;
     NSMutableSet *_hostedPids;
     _Bool _checkingShowability;
@@ -39,7 +39,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) _Bool wantsFence; // @synthesize wantsFence=_wantsFence;
 @property(readonly) double iavHeight; // @synthesize iavHeight=_iavHeight;
 @property(readonly) double level; // @synthesize level=_level;
-@property(readonly) _Bool wantedActive; // @synthesize wantedActive=_wantedActive;
+@property(readonly) unsigned long long wantedState; // @synthesize wantedState=_wantedState;
 @property(readonly) _Bool active; // @synthesize active=_active;
 @property(readonly, retain) NSString *remoteSceneID; // @synthesize remoteSceneID=_remoteSceneID;
 @property(readonly, retain) FBSCAContextSceneLayer *sceneLayer; // @synthesize sceneLayer=_sceneLayer;
@@ -49,7 +49,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)signalEventSourceChanged:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setKeyboardTotalDisable:(_Bool)arg1 withFence:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)sceneShouldFocusWithToken:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
+- (void)focusApplicationWithProcessIdentifier:(int)arg1 sceneDeferringToken:(id)arg2 onCompletion:(CDUnknownBlockType)arg3;
 - (void)applicationShouldFocusWithBundle:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
 - (void)invalidate;
 - (void)uncacheWindowContext;
@@ -70,8 +70,9 @@ __attribute__((visibility("hidden")))
 - (void)setWantsFencing:(_Bool)arg1;
 - (void)didDetachLayer;
 - (void)didAttachLayer;
-- (void)checkActivation:(_Bool)arg1;
-- (void)setWindowContextID:(unsigned int)arg1 sceneIdentifier:(id)arg2 forKeyboard:(_Bool)arg3 withLevel:(double)arg4;
+- (void)checkActivation:(unsigned long long)arg1;
+- (void)_reevaluateRemoteSceneID:(id)arg1;
+- (void)setWindowContextID:(unsigned int)arg1 sceneIdentifier:(id)arg2 windowState:(unsigned long long)arg3 withLevel:(double)arg4;
 - (void)_deactivateScene;
 - (void)startArbitrationWithExpectedState:(id)arg1 hostingPIDs:(id)arg2 usingFence:(_Bool)arg3 withSuppression:(int)arg4 onConnected:(CDUnknownBlockType)arg5;
 @property(readonly) int processIdentifier;

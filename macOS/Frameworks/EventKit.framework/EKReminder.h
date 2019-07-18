@@ -14,6 +14,8 @@
 @interface EKReminder : EKCalendarItem <EKProtocolMutableReminderOccurrence>
 {
     BOOL cachedHasLocationAlarm;
+    NSDateComponents *_startDateComponents;
+    NSDateComponents *_dueDateComponents;
 }
 
 + (id)sortDescriptorsForSortOrder:(int)arg1;
@@ -33,7 +35,10 @@
 + (Class)frozenClass;
 + (id)itemWithIdentifier:(id)arg1 inStore:(id)arg2;
 + (id)reminderWithEventStore:(id)arg1;
+@property(copy, nonatomic) NSDateComponents *dueDateComponents; // @synthesize dueDateComponents=_dueDateComponents;
+@property(copy, nonatomic) NSDateComponents *startDateComponents; // @synthesize startDateComponents=_startDateComponents;
 @property(readonly, nonatomic) BOOL cachedHasLocationAlarm; // @synthesize cachedHasLocationAlarm;
+- (void).cxx_destruct;
 - (BOOL)_validateEntityTypeIsSupported:(id *)arg1;
 - (id)humanReadableRecurrenceDescription;
 - (id)prepareReminderKitObjectForSaveWithUpdatedBackingObjectProvider:(id)arg1;
@@ -45,8 +50,6 @@
 - (unsigned long long)displayOrder;
 - (BOOL)currentUserMayActAsOrganizer;
 - (id)externalURI;
-- (void)setAllDay:(BOOL)arg1;
-- (void)setTimeZoneObject:(id)arg1;
 - (BOOL)hasLocationAlarm;
 - (id)bestDisplayAlarm;
 @property(readonly, nonatomic) BOOL canEditRecurrence;
@@ -59,10 +62,6 @@
 @property(readonly, copy, nonatomic) NSNumber *orderNumber;
 - (void)setDueDateUnadjustedFromUTC:(id)arg1;
 @property(readonly, copy, nonatomic) NSDate *dueDateUnadjustedFromUTC;
-- (void)setDueDate:(id)arg1;
-- (id)dueDate;
-@property(copy, nonatomic) NSDateComponents *dueDateComponents;
-@property(copy, nonatomic) NSDateComponents *startDateComponents;
 @property(copy, nonatomic) NSDate *completionDate;
 - (void)updateWithAppLink:(id)arg1 usedSelectedText:(char *)arg2;
 - (void)setAppLink:(id)arg1;
@@ -74,6 +73,25 @@
 - (unsigned long long)entityType;
 - (BOOL)canMoveOrCopyFromCalendar:(id)arg1 toCalendar:(id)arg2 error:(id *)arg3;
 - (BOOL)canMoveToCalendar:(id)arg1 fromCalendar:(id)arg2 error:(id *)arg3;
+- (BOOL)refresh;
+- (void)rollback;
+- (void)reset;
+- (BOOL)isAllDay;
+- (void)_adjustPersistedStartDateComponentsForNewTimeZone:(id)arg1;
+- (void)setAllDay:(BOOL)arg1;
+- (void)setStartTimeZone:(id)arg1;
+- (id)startTimeZone;
+- (id)timeZone;
+- (void)setTimeZone:(id)arg1;
+- (void)setDueDate:(id)arg1;
+- (id)dueDate;
+- (BOOL)dueDateAllDay;
+@property(readonly, nonatomic) NSTimeZone *dueDateTimeZone;
+- (id)startDateComponentsRaw;
+- (void)setStartDateAllDay:(BOOL)arg1;
+- (BOOL)startDateAllDay;
+- (void)setStartDateTimeZone:(id)arg1;
+- (id)startDateTimeZone;
 - (void)forceUpdateFrozenCalendar:(id)arg1;
 
 // Remaining properties

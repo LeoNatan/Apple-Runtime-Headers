@@ -13,11 +13,13 @@
     CLKDevice *_device;
     UIImageView *_iconImageView;
     UILabel *_headerLabel;
+    NSString *_headerLabelText;
     UILabel *_bodyLabel;
     NSString *_bodyLabelText;
 }
 
 @property(retain, nonatomic) NSString *bodyLabelText; // @synthesize bodyLabelText=_bodyLabelText;
+@property(retain, nonatomic) NSString *headerLabelText; // @synthesize headerLabelText=_headerLabelText;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initForDevice:(id)arg1;

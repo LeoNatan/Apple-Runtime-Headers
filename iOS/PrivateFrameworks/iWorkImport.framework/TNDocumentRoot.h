@@ -9,7 +9,7 @@
 #import <iWorkImport/TSTFormsSheetProvider-Protocol.h>
 #import <iWorkImport/TSTResolverContainerNameProvider-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, TNDocumentViewController, TNTheme, TNUIState, TSKTreeNode, TSSStylesheet;
+@class NSArray, NSMutableArray, NSString, TNDocumentViewController, TNHyperlinkController, TNTheme, TNUIState, TSKTreeNode, TSSStylesheet;
 
 __attribute__((visibility("hidden")))
 @interface TNDocumentRoot : TSADocumentRoot <TSTResolverContainerNameProvider, TSTFormsSheetProvider>
@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     TNTheme *_theme;
     TSKTreeNode *_sidebarOrder;
     TNUIState *_uiState;
+    TNHyperlinkController *_tn_hyperlinkController;
     NSMutableArray *_mutableSheets;
     TSSStylesheet *_stylesheet;
 }
@@ -29,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)previewImageSizeForType:(unsigned long long)arg1;
 @property(retain, nonatomic) TSSStylesheet *stylesheet; // @synthesize stylesheet=_stylesheet;
 @property(retain, nonatomic) NSMutableArray *mutableSheets; // @synthesize mutableSheets=_mutableSheets;
+@property(retain, nonatomic) TNHyperlinkController *tn_hyperlinkController; // @synthesize tn_hyperlinkController=_tn_hyperlinkController;
 @property(nonatomic, getter=isPrintingAllSheets) _Bool printingAllSheets; // @synthesize printingAllSheets=_printingAllSheets;
 @property(retain, nonatomic) TNUIState *uiState; // @synthesize uiState=_uiState;
 @property(retain, nonatomic) TSKTreeNode *sidebarOrder; // @synthesize sidebarOrder=_sidebarOrder;
@@ -90,7 +92,7 @@ __attribute__((visibility("hidden")))
 - (id)activeSheet;
 - (id)uniqueNameForSheet:(id)arg1 appendNewTag:(_Bool)arg2;
 - (id)untitledSheetName;
-- (void)prepareNewDocumentWithTemplateBundle:(id)arg1 documentLocale:(id)arg2;
+- (void)prepareNewDocumentWithTemplateIdentifier:(id)arg1 bundle:(id)arg2 documentLocale:(id)arg3;
 - (void)setThemeForTemplateImport:(id)arg1;
 - (void)setTheme:(id)arg1;
 - (void)setStylesheet:(id)arg1 andThemeForImport:(id)arg2;

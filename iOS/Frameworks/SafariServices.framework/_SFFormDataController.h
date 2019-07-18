@@ -8,16 +8,18 @@
 
 #import <SafariServices/_SFAuthenticationContextDelegate-Protocol.h>
 
-@class NSString, _SFAuthenticationContext;
+@class NSString, WBSOneTimeCodeMonitor, _SFAuthenticationContext;
 
 @interface _SFFormDataController : WBUFormDataController <_SFAuthenticationContextDelegate>
 {
+    WBSOneTimeCodeMonitor *_oneTimeCodeMonitor;
     _SFAuthenticationContext *_autoFillAuthenticationContext;
 }
 
 + (id)sharedController;
 @property(readonly, nonatomic) _SFAuthenticationContext *autoFillAuthenticationContext; // @synthesize autoFillAuthenticationContext=_autoFillAuthenticationContext;
 - (void).cxx_destruct;
+- (id)oneTimeCodeMonitor;
 - (double)invalidationTimeoutIfApplicationEntersBackgroundDuringAuthenticationForContext:(id)arg1;
 - (_Bool)contextShouldAllowMultipleBiometricFailures:(id)arg1;
 - (_Bool)contextShouldAllowPasscodeFallback:(id)arg1;

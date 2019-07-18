@@ -40,7 +40,9 @@
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property BOOL hideStatus; // @synthesize hideStatus=_hideStatus;
 - (void).cxx_destruct;
+- (id)_statusImageViewSymbolConfiguration;
 - (void)setOptionalInviteeCellSubtext:(id)arg1;
+- (void)updateCommonElements:(id)arg1 statusImage:(id)arg2;
 - (void)updateWithParticipantForSorting:(id)arg1 availabilityType:(long long)arg2 showSpinner:(BOOL)arg3 animated:(BOOL)arg4;
 - (void)updateWithParticipantForSorting:(id)arg1;
 - (void)updateConstraints;

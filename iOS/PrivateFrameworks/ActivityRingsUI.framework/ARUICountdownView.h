@@ -16,8 +16,6 @@
 + (id)countdownViewConfiguredForCompanion;
 + (id)countdownViewConfiguredForWatch;
 - (void).cxx_destruct;
-- (id)renderPipelineFactoryWithDevice:(id)arg1 library:(id)arg2;
-- (id)renderPipelineFactoryWithDeviceSPI:(id)arg1 librarySPI:(id)arg2;
 @property(readonly, nonatomic) ARUICountdownController *countdownController;
 - (id)initWithCountdownController:(id)arg1;
 

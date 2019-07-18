@@ -6,11 +6,16 @@
 
 #import <UIKitCore/UIInterfaceActionConcreteVisualStyle_iOSSheet.h>
 
+@class UIFont;
+
 __attribute__((visibility("hidden")))
 @interface UIInterfaceActionConcreteVisualStylePreviewPlatter : UIInterfaceActionConcreteVisualStyle_iOSSheet
 {
+    UIFont *_labelFont;
 }
 
+- (void).cxx_destruct;
+- (id)newSectionSeparatorViewForGroupViewState:(id)arg1;
 - (double)actionSectionSpacing;
 - (struct CGSize)minimumActionContentSize;
 - (double)minimumImageGapWidth;
@@ -20,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (id)actionTitleLabelFontForViewState:(id)arg1;
 - (id)actionTitleLabelColorForViewState:(id)arg1;
 - (double)contentCornerRadius;
+- (id)_labelFont;
 
 @end
 

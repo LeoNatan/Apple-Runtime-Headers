@@ -20,6 +20,7 @@
     _Bool _areMeDeviceInfoLoaded;
     _Bool _isFindMyDeviceOn;
     _Bool _meDeviceChangePending;
+    _Bool _isAccessibilitySize;
     NSArray *_followersSpecifiers;
     NSArray *_familySpecifiers;
     NSArray *_deviceSpecifiers;
@@ -36,6 +37,7 @@
 
 @property(retain, nonatomic) NSSet *meDevices; // @synthesize meDevices=_meDevices;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *specifiersQueue; // @synthesize specifiersQueue=_specifiersQueue;
+@property(nonatomic) _Bool isAccessibilitySize; // @synthesize isAccessibilitySize=_isAccessibilitySize;
 @property(nonatomic) _Bool meDeviceChangePending; // @synthesize meDeviceChangePending=_meDeviceChangePending;
 @property(nonatomic) _Bool isFindMyDeviceOn; // @synthesize isFindMyDeviceOn=_isFindMyDeviceOn;
 @property(nonatomic) _Bool areMeDeviceInfoLoaded; // @synthesize areMeDeviceInfoLoaded=_areMeDeviceInfoLoaded;
@@ -54,6 +56,7 @@
 @property(retain, nonatomic) NSArray *familySpecifiers; // @synthesize familySpecifiers=_familySpecifiers;
 @property(retain, nonatomic) NSArray *followersSpecifiers; // @synthesize followersSpecifiers=_followersSpecifiers;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateFindMyDeviceStatus;
 - (void)saveActiveDeviceSelection;
 - (void)networkReachabilityUpdated:(_Bool)arg1;

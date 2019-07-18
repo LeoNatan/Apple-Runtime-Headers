@@ -19,19 +19,21 @@
 }
 
 + (id)fontDescriptorWithVictoryStyle:(unsigned long long)arg1;
-+ (id)loadFonts:(double)arg1 style:(unsigned long long)arg2;
++ (id)loadFonts:(double)arg1 style:(unsigned long long)arg2 monospacedNumbers:(_Bool)arg3;
++ (id)victoryFontWithSize:(double)arg1 style:(unsigned long long)arg2 monospacedNumbers:(_Bool)arg3;
 + (id)victoryFontWithSize:(double)arg1 style:(unsigned long long)arg2;
 @property(nonatomic) _Bool requiresDrawingRectAdjustments; // @synthesize requiresDrawingRectAdjustments=_requiresDrawingRectAdjustments;
 @property(retain, nonatomic) NTKVictoryLabel *outlineLabel; // @synthesize outlineLabel=_outlineLabel;
 @property(nonatomic) double outlineAlpha; // @synthesize outlineAlpha=_outlineAlpha;
 @property(retain, nonatomic) UIColor *outlineColor; // @synthesize outlineColor=_outlineColor;
 @property(nonatomic) struct CGVector drawingRectOffset; // @synthesize drawingRectOffset=_drawingRectOffset;
-@property(nonatomic) double additionalPaddingInsets; // @synthesize additionalPaddingInsets=_additionalPaddingInsets;
 - (void).cxx_destruct;
 - (void)drawTextInRect:(struct CGRect)arg1;
+@property(nonatomic) double additionalPaddingInsets; // @synthesize additionalPaddingInsets=_additionalPaddingInsets;
 - (void)setTextColor:(id)arg1;
 - (void)_applyDrawingOffsetForTextIfNeeded:(id)arg1;
 - (void)setText:(id)arg1;
+- (id)outlinedLabelAttributedStringFromAttributedString:(id)arg1;
 - (void)setAttributedText:(id)arg1;
 - (void)_layoutOutlineLabelIfNeeded;
 - (void)layoutSubviews;

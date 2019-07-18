@@ -18,12 +18,12 @@
 - (void).cxx_destruct;
 - (void)_handleDNDListChanged;
 - (void)performMigrationIfNecessary;
-- (void)syncToWatchIncludingVersion:(_Bool)arg1;
+- (void)syncToPairedDeviceIncludingVersion:(_Bool)arg1;
 - (id)groupHashForHandleIDs:(id)arg1;
 - (id)groupHashForChat:(id)arg1;
 - (id)_deprecated_globalIdentifierForChat:(id)arg1;
-- (void)muteChat:(id)arg1 usingIdentifier:(id)arg2 untilDate:(id)arg3 syncToWatch:(_Bool)arg4;
-- (void)muteChat:(id)arg1 untilDate:(id)arg2 syncToWatch:(_Bool)arg3;
+- (void)muteChat:(id)arg1 usingIdentifier:(id)arg2 untilDate:(id)arg3 syncToPairedDevice:(_Bool)arg4;
+- (void)muteChat:(id)arg1 untilDate:(id)arg2 syncToPairedDevice:(_Bool)arg3;
 - (void)muteChat:(id)arg1 untilDate:(id)arg2;
 - (id)unmuteDateForIdentifier:(id)arg1;
 - (id)unmuteDateForChat:(id)arg1;

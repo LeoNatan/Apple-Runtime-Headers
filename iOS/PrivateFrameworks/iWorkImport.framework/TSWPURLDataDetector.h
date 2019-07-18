@@ -15,7 +15,10 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (_Bool)detectedDataInString:(id)arg1 scanRange:(struct _NSRange)arg2;
++ (id)p_rangesSplitByNewLineOfString:(id)arg1 scanRange:(struct _NSRange)arg2;
 + (id)newURLFromString:(id)arg1;
++ (id)p_newArrayByScanningString:(id)arg1 scanRange:(struct _NSRange)arg2 returnAllResults:(_Bool)arg3;
 + (id)newArrayByScanningString:(id)arg1 scanRange:(struct _NSRange)arg2;
 + (id)scanString:(id)arg1 scanRange:(struct _NSRange)arg2;
 + (struct _NSRange)calculateScanRangeForString:(id)arg1 changedRange:(struct _NSRange)arg2;

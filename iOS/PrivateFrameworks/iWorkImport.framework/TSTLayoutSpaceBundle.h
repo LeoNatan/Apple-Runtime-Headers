@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)enumerateLayoutSpacesUsingBlock:(CDUnknownBlockType)arg1;
 - (int)validateLayoutSpaces;
 - (id)getSpaceContainingCellID:(struct TSUCellCoord)arg1;
+- (void)invalidateCoordinatesForEditingCellID:(struct TSUCellCoord)arg1;
 - (void)invalidateTableOffsets;
 - (void)invalidateCoordinatesAfterRow:(unsigned int)arg1;
 - (void)invalidateCoordinatesAfterColumn:(unsigned short)arg1;

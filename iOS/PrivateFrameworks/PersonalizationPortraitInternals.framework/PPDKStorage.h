@@ -25,6 +25,7 @@
 - (_Bool)deleteAllEventsInEventStream:(id)arg1 error:(id *)arg2;
 - (_Bool)deleteEvents:(id)arg1 error:(id *)arg2;
 - (_Bool)saveEvents:(id)arg1 error:(id *)arg2;
+- (_Bool)iterEventBatchesMatchingPredicate:(id)arg1 streams:(id)arg2 sortDescriptors:(id)arg3 batchSize:(unsigned long long)arg4 readMetaData:(_Bool)arg5 error:(id *)arg6 block:(CDUnknownBlockType)arg7;
 - (_Bool)iterEventBatchesMatchingPredicate:(id)arg1 streams:(id)arg2 sortDescriptors:(id)arg3 batchSize:(unsigned long long)arg4 error:(id *)arg5 block:(CDUnknownBlockType)arg6;
 - (id)_readWriteKnowledgeStore;
 - (id)tombstoneStream;

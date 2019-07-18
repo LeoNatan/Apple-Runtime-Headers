@@ -13,8 +13,8 @@
 __attribute__((visibility("hidden")))
 @interface WebCoreAVFMovieObserver : NSObject <AVPlayerItemLegibleOutputPushDelegate>
 {
-    WeakPtr_09470f09 m_player;
-    // Error parsing type: {GenericTaskQueue<WebCore::Timer, std::__1::atomic<unsigned int> >="m_weakFactory"{WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, std::__1::atomic<unsigned int> > >="m_ref"{RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference> >="m_ptr"^{WeakReference}}}"m_dispatcher"{TaskDispatcher<WebCore::Timer>="m_weakFactory"{WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer> >="m_ref"{RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference> >="m_ptr"^{WeakReference}}}"m_pendingTasks"{Deque<WTF::Function<void ()>, 0>="m_start"Q"m_end"Q"m_buffer"{VectorBuffer<WTF::Function<void ()>, 0>="m_buffer"^{Function<void ()>}"m_capacity"I"m_size"I}}}"m_pendingTasks"{atomic<unsigned int>="__a_"AI}"m_isClosed"B}, name: m_taskQueue
+    WeakPtr_1a409454 m_player;
+    // Error parsing type: {GenericTaskQueue<WebCore::Timer, std::__1::atomic<unsigned int> >="m_weakPtrFactory"{WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, std::__1::atomic<unsigned int> > >="m_impl"{RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl> >="m_ptr"^{WeakPtrImpl}}}"m_dispatcher"{TaskDispatcher<WebCore::Timer>="m_weakPtrFactory"{WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer> >="m_impl"{RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl> >="m_ptr"^{WeakPtrImpl}}}"m_pendingTasks"{Deque<WTF::Function<void ()>, 0>="m_start"Q"m_end"Q"m_buffer"{VectorBuffer<WTF::Function<void ()>, 0>="m_buffer"^{Function<void ()>}"m_capacity"I"m_size"I}}}"m_pendingTasks"{atomic<unsigned int>="__a_"AI}"m_isClosed"B}, name: m_taskQueue
     int m_delayCallbacks;
 }
 
@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)didEnd:(id)arg1;
 - (void)metadataLoaded;
 - (void)disconnect;
-- (id)initWithPlayer:(WeakPtr_09470f09 *)arg1;
+- (id)initWithPlayer:(WeakPtr_1a409454 *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

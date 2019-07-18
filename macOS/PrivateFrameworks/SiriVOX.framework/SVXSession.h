@@ -84,10 +84,9 @@
 - (void)_handleAudioSessionDidBecomeActive:(BOOL)arg1;
 - (void)_handleAudioSessionWillBecomeActive:(BOOL)arg1;
 - (void)_handleDidFailStartPlaybackWithDestination:(long long)arg1;
-- (void)_handleWillProcessStartPlaybackWithDestination:(long long)arg1;
+- (void)_handleWillProcessStartPlaybackWithDestination:(long long)arg1 intent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_handleDidHandleQuickStopWithActions:(unsigned long long)arg1;
 - (void)_handleDidStopAudioPlaybackRequest:(id)arg1 error:(id)arg2;
-- (void)_handleDidNotStartAudioPlaybackRequest:(id)arg1 error:(id)arg2;
 - (void)_handleDidStartAudioPlaybackRequest:(id)arg1;
 - (void)_handleWillStartAudioPlaybackRequest:(id)arg1;
 - (void)_handleAudioSessionDidEndInterruption:(BOOL)arg1;
@@ -138,7 +137,7 @@
 - (void)_startActiveAudioSessionRequestWithOptions:(unsigned long long)arg1 taskTracker:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_startSpeechSynthesisRequest:(id)arg1 languageCode:(id)arg2 gender:(long long)arg3 introductionSoundID:(long long)arg4 conclusionSoundID:(long long)arg5 taskTracker:(id)arg6 postActivationHandler:(CDUnknownBlockType)arg7 completion:(CDUnknownBlockType)arg8;
 - (void)_startRequestWithInfo:(id)arg1 clearsContext:(BOOL)arg2 clockAlarmSnapshot:(id)arg3 clockTimerSnapshot:(id)arg4 deviceSetupContext:(id)arg5 taskTracker:(id)arg6 completion:(CDUnknownBlockType)arg7;
-- (void)_transitSpeechToUseAutomaticEndpointingWithCurrentSpeechRequestOptions:(BOOL)arg1;
+- (void)_updateSpeechEndpointerOperationMode:(long long)arg1;
 - (void)_transitSpeechToAutomaticEndpointing;
 - (void)_transitSpeechToManualEndpointing;
 - (void)_stopSpeechWithCurrentSpeechRequestOptions;
@@ -165,10 +164,9 @@
 - (void)assistantConnection:(id)arg1 audioSessionDidBecomeActive:(BOOL)arg2;
 - (void)assistantConnection:(id)arg1 audioSessionWillBecomeActive:(BOOL)arg2;
 - (void)assistantConnection:(id)arg1 startPlaybackDidFail:(long long)arg2;
-- (void)assistantConnection:(id)arg1 willProcessStartPlayback:(long long)arg2;
+- (void)assistantConnection:(id)arg1 willProcessStartPlayback:(long long)arg2 intent:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)assistantConnection:(id)arg1 didHandleQuickStopWithAction:(unsigned long long)arg2;
 - (void)assistantConnection:(id)arg1 didStopAudioPlaybackRequest:(id)arg2 error:(id)arg3;
-- (void)assistantConnection:(id)arg1 didNotStartAudioPlaybackRequest:(id)arg2 error:(id)arg3;
 - (void)assistantConnection:(id)arg1 didStartAudioPlaybackRequest:(id)arg2;
 - (void)assistantConnection:(id)arg1 willStartAudioPlaybackRequest:(id)arg2;
 - (void)assistantConnection:(id)arg1 setUserActivtiyInfoAndMakeCurrent:(id)arg2 webpageURL:(id)arg3;

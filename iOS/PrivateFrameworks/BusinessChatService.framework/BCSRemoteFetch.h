@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 + (id)_requestDispatchQueue;
 - (id)dequeueCompletionBlocksForRequest:(id)arg1;
 - (id)_dequeueCompletionBlocksForRequestHash:(id)arg1 inCompletionPool:(id)arg2;
-- (void)enqueueCompletionBlock:(CDUnknownBlockType)arg1 forRequest:(id)arg2;
-- (void)_enqueueCompletionBlock:(CDUnknownBlockType)arg1 forRequestHash:(id)arg2 inCompletionPool:(id)arg3;
+- (void)enqueueCompletionBlock:(CDUnknownBlockType)arg1 forRequest:(id)arg2 isDuplicateRequest:(_Bool *)arg3;
+- (void)_enqueueCompletionBlock:(CDUnknownBlockType)arg1 forRequestHash:(id)arg2 inCompletionPool:(id)arg3 isDuplicateRequest:(_Bool *)arg4;
 - (id)_hashForRequest:(id)arg1;
 
 @end

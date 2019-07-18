@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SCRElement *focusedElement; // @synthesize focusedElement=_focusedElement;
 - (void).cxx_destruct;
 - (void)_refreshOrderedNavigableElements;
-- (id)_appThread_deepestDescendantOfElement:(id)arg1 containingPoint:(struct CGPoint)arg2;
+- (id)_appThread_deepestDescendantOfFunctionRowElement:(id)arg1 containingPoint:(struct CGPoint)arg2;
 - (id)_appThread_deepestFocusableDescendantOfElement:(id)arg1 leadingEdge:(BOOL)arg2;
 - (id)_appThread_adjacentLeafElementTo:(id)arg1 movingForward:(BOOL)arg2;
 - (id)_adjacentElementInElements:(id)arg1 relativeToIndex:(unsigned long long)arg2 searchingForward:(BOOL)arg3;

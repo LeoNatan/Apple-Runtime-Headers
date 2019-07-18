@@ -13,6 +13,10 @@
 - (void)dayViewController:(EKDayViewController *)arg1 didSelectEvent:(EKEvent *)arg2 animated:(_Bool)arg3;
 
 @optional
+- (void)dayViewControllerDidChangeDisplayedOccurrences:(EKDayViewController *)arg1;
+- (void)dayViewController:(EKDayViewController *)arg1 didChangeDisplayedOccurrencesDueToTrigger:(int)arg2;
+- (void)dayViewControllerDidReloadData:(EKDayViewController *)arg1;
+- (void)dayViewController:(EKDayViewController *)arg1 didReloadDataDueToTrigger:(int)arg2;
 - (void)dayViewControllerDidEndDecelerating:(EKDayViewController *)arg1;
 - (void)dayViewController:(EKDayViewController *)arg1 didStartDeceleratingTargettingDate:(NSDateComponents *)arg2;
 - (void)dayViewControllerDidEndScrolling:(EKDayViewController *)arg1;
@@ -30,8 +34,6 @@
 - (_Bool)dayviewControllerShouldAllowSwipeToChangeDays:(EKDayViewController *)arg1;
 - (void)dayViewController:(EKDayViewController *)arg1 handleGestureCommittingOccurrence:(EKEvent *)arg2;
 - (_Bool)delegateWantsToHandleDayViewController:(EKDayViewController *)arg1 gestureCommittingOccurrence:(EKEvent *)arg2;
-- (void)dayViewControllerDidChangeDisplayedOccurrences:(EKDayViewController *)arg1;
-- (void)dayViewControllerDidReloadData:(EKDayViewController *)arg1;
 - (void)dayViewControllerDidTapEmptySpace:(EKDayViewController *)arg1;
 - (_Bool)dayViewControllerShouldAllowLongPress:(EKDayViewController *)arg1;
 - (void)dayViewController:(EKDayViewController *)arg1 awaitsDeletingOccurrence:(EKEvent *)arg2;

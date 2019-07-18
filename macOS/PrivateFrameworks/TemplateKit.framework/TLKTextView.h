@@ -19,6 +19,7 @@
 @property(retain, nonatomic) TLKMultilineText *multilineText; // @synthesize multilineText=_multilineText;
 @property(nonatomic) unsigned long long prominence; // @synthesize prominence=_prominence;
 - (void).cxx_destruct;
+- (struct CGSize)calculateLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (BOOL)_usesNonVibrantAppearance;
 - (void)tlk_updateForAppearance:(id)arg1;

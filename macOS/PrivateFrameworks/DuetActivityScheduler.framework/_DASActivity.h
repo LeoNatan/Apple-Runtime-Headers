@@ -18,6 +18,7 @@
     BOOL _requiresNetwork;
     BOOL _isUpload;
     BOOL _requiresInexpensiveNetworking;
+    BOOL _requiresUnconstrainedNetworking;
     BOOL _cpuIntensive;
     BOOL _memoryIntensive;
     BOOL _diskIntensive;
@@ -159,6 +160,7 @@
 @property(nonatomic) BOOL diskIntensive; // @synthesize diskIntensive=_diskIntensive;
 @property(nonatomic) BOOL memoryIntensive; // @synthesize memoryIntensive=_memoryIntensive;
 @property(nonatomic) BOOL cpuIntensive; // @synthesize cpuIntensive=_cpuIntensive;
+@property(nonatomic) BOOL requiresUnconstrainedNetworking; // @synthesize requiresUnconstrainedNetworking=_requiresUnconstrainedNetworking;
 @property(nonatomic) BOOL requiresInexpensiveNetworking; // @synthesize requiresInexpensiveNetworking=_requiresInexpensiveNetworking;
 @property(nonatomic) BOOL isUpload; // @synthesize isUpload=_isUpload;
 @property(nonatomic) unsigned long long downloadSize; // @synthesize downloadSize=_downloadSize;

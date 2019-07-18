@@ -9,7 +9,7 @@
 #import <SetupAssistant/BYBuddyDaemonProximitySourceProtocol-Protocol.h>
 #import <SetupAssistant/SASProximitySessionDelegate-Protocol.h>
 
-@class BYBuddyDaemonProximitySourceClient, CUMessageSession, NSString;
+@class BYBuddyDaemonMigrationSourceClient, BYBuddyDaemonProximitySourceClient, CUMessageSession, NSString, RPFileTransferSession;
 
 @interface BYDeviceSetupSourceSession : NSObject <BYBuddyDaemonProximitySourceProtocol, SASProximitySessionDelegate>
 {
@@ -18,7 +18,9 @@
     CDUnknownBlockType _sendObjectHandler;
     CDUnknownBlockType _progressHandler;
     CUMessageSession *_messageSession;
+    RPFileTransferSession *_fileTransferSessionTemplate;
     BYBuddyDaemonProximitySourceClient *_client;
+    BYBuddyDaemonMigrationSourceClient *_migrationSourceClient;
     double _backupProgress;
     double _syncProgress;
     double _timeRemaining;
@@ -31,7 +33,9 @@
 @property _Bool hasBackupCompleted; // @synthesize hasBackupCompleted=_hasBackupCompleted;
 @property double syncProgress; // @synthesize syncProgress=_syncProgress;
 @property double backupProgress; // @synthesize backupProgress=_backupProgress;
+@property(retain, nonatomic) BYBuddyDaemonMigrationSourceClient *migrationSourceClient; // @synthesize migrationSourceClient=_migrationSourceClient;
 @property(retain) BYBuddyDaemonProximitySourceClient *client; // @synthesize client=_client;
+@property(retain, nonatomic) RPFileTransferSession *fileTransferSessionTemplate; // @synthesize fileTransferSessionTemplate=_fileTransferSessionTemplate;
 @property(retain, nonatomic) CUMessageSession *messageSession; // @synthesize messageSession=_messageSession;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(copy, nonatomic) CDUnknownBlockType sendObjectHandler; // @synthesize sendObjectHandler=_sendObjectHandler;

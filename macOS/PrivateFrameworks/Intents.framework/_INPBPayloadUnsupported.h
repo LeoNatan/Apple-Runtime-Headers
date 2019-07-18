@@ -44,6 +44,7 @@
         unsigned int setTaskAttributeIntentTemporalEventTriggerUnsupportedReason:1;
         unsigned int runWorkflowIntentWorkflowUnsupportedReason:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _startCallIntentCallCapabilityUnsupportedReason;
     int _addTasksIntentContactEventTriggerUnsupportedReason;
     int _setTaskAttributeIntentContactEventTriggerUnsupportedReason;
@@ -77,6 +78,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)conflictingParametersType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int runWorkflowIntentWorkflowUnsupportedReason; // @synthesize runWorkflowIntentWorkflowUnsupportedReason=_runWorkflowIntentWorkflowUnsupportedReason;
 @property(nonatomic) int setTaskAttributeIntentTemporalEventTriggerUnsupportedReason; // @synthesize setTaskAttributeIntentTemporalEventTriggerUnsupportedReason=_setTaskAttributeIntentTemporalEventTriggerUnsupportedReason;
 @property(nonatomic) int addTasksIntentTemporalEventTriggerUnsupportedReason; // @synthesize addTasksIntentTemporalEventTriggerUnsupportedReason=_addTasksIntentTemporalEventTriggerUnsupportedReason;

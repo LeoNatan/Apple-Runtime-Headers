@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ARKit/ARTechnique.h>
+#import <ARKit/ARImageBasedTechnique.h>
 
-@class ARImageCroppingTechnique, ARImageRotationTechnique, ARImageScalingTechnique, ARMattingImageMetaData, NSObject;
-@protocol OS_dispatch_semaphore;
+@class ARImageCroppingTechnique, ARImageRotationTechnique, ARImageScalingTechnique, ARMLImageDownScalingResultData, ARMattingImageMetaData, NSObject;
+@protocol OS_dispatch_queue;
 
-@interface ARMLImageDownScalingTechnique : ARTechnique
+@interface ARMLImageDownScalingTechnique : ARImageBasedTechnique
 {
     ARImageScalingTechnique *_imageScalingTechnique;
     ARImageScalingTechnique *_mattingImageScalingTechnique;
@@ -19,24 +19,27 @@
     struct __CVPixelBufferPool *_bgraPixelBufferPool;
     struct CGSize _imageSize;
     int _lockedOrientation;
-    NSObject<OS_dispatch_semaphore> *_processingSemaphore;
     ARMattingImageMetaData *_mattingImageData;
+    ARMLImageDownScalingResultData *_downSamplingResultData;
     _Bool _enableDoubleMLResolutionForIPad;
     _Bool _isIpad;
+    NSObject<OS_dispatch_queue> *_processingQueue;
+    double _resultLatency;
     _Bool _centerCropImage;
 }
 
 @property(nonatomic) _Bool centerCropImage; // @synthesize centerCropImage=_centerCropImage;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
-- (void)requestResultDataAtTimestamp:(double)arg1 context:(id)arg2;
 - (id)_convertImageColorSpace:(id)arg1;
 - (id)_imageDataForNeuralNetwork:(id)arg1 scaledSize:(struct CGSize)arg2 deviceOrientation:(long long)arg3 pRegionOfInterest:(struct CGSize *)arg4 pRotationOfResultTensor:(long long *)arg5;
 - (long long)_getDeviceOrientation;
 - (id)processData:(id)arg1;
+- (double)requiredTimeInterval;
 - (void)lockOrientation:(long long)arg1;
 - (void)dealloc;
 - (id)initWithSize:(struct CGSize)arg1;
+- (id)initWithSize:(struct CGSize)arg1 requiredTimeInterval:(double)arg2;
 
 @end
 

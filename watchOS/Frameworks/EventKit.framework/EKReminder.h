@@ -6,24 +6,26 @@
 
 #import <EventKit/EKCalendarItem.h>
 
-@class EKObjectID, NSDate, NSDateComponents;
+@class EKObjectID, NSDate, NSDateComponents, NSTimeZone;
 
 @interface EKReminder : EKCalendarItem
 {
+    NSDateComponents *_startDateComponents;
+    NSDateComponents *_dueDateComponents;
     EKObjectID *_parentID;
 }
 
 + (id)generateUniqueIDWithReminder:(id)arg1 calendar:(id)arg2;
 + (void)_removeSnoozedAlarmsFromReminder:(id)arg1 usingDueDate:(id)arg2;
-+ (id)_dateComponentsWithDate:(id)arg1 timeZone:(id)arg2 allDay:(_Bool)arg3;
 + (id)reminderWithEventStore:(id)arg1;
 + (Class)frozenClass;
 @property(retain, nonatomic) EKObjectID *parentID; // @synthesize parentID=_parentID;
+@property(copy, nonatomic) NSDateComponents *dueDateComponents; // @synthesize dueDateComponents=_dueDateComponents;
+@property(copy, nonatomic) NSDateComponents *startDateComponents; // @synthesize startDateComponents=_startDateComponents;
 - (void).cxx_destruct;
 - (id)startDateForRecurrence;
 - (id)bestDisplayAlarm;
 - (_Bool)_reset;
-- (_Bool)commit:(id *)arg1;
 - (id)_generateNewUniqueID;
 - (_Bool)validate:(id *)arg1;
 - (void)snoozeAlarm:(id)arg1 withTimeIntervalFromNow:(double)arg2;
@@ -35,28 +37,29 @@
 - (void)setFirstAlertDate:(id)arg1;
 - (id)firstAlertDate;
 @property(copy, nonatomic) NSDate *completionDate;
+- (id)externalURI;
+- (id)reminderIdentifier;
+- (id)init;
+- (id)initWithPersistentObject:(id)arg1;
+- (_Bool)refresh;
+- (void)rollback;
+- (void)reset;
+- (_Bool)isAllDay;
+- (void)_adjustPersistedStartDateComponentsForNewTimeZone:(id)arg1;
+- (void)setAllDay:(_Bool)arg1;
+- (void)setStartTimeZone:(id)arg1;
+- (id)startTimeZone;
+- (id)timeZone;
 - (void)setTimeZone:(id)arg1;
-@property(copy, nonatomic) NSDateComponents *dueDateComponents;
 - (void)setDueDate:(id)arg1;
 - (id)dueDate;
-- (void)setDueDateAllDay:(_Bool)arg1;
 - (_Bool)dueDateAllDay;
-- (void)setDueDateTimeZone:(id)arg1;
-- (id)dueDateTimeZone;
-- (void)setDueDateTimeZoneName:(id)arg1;
-- (id)dueDateTimeZoneName;
-- (void)setDueDateRaw:(id)arg1;
-- (id)dueDateRaw;
-@property(copy, nonatomic) NSDateComponents *startDateComponents;
+@property(readonly, nonatomic) NSTimeZone *dueDateTimeZone;
+- (id)startDateComponentsRaw;
 - (void)setStartDateAllDay:(_Bool)arg1;
 - (_Bool)startDateAllDay;
 - (void)setStartDateTimeZone:(id)arg1;
 - (id)startDateTimeZone;
-- (void)setStartDateRaw:(id)arg1;
-- (id)startDateRaw;
-- (id)externalURI;
-- (id)reminderIdentifier;
-- (id)initWithPersistentObject:(id)arg1;
 - (void)forceUpdateFrozenCalendar:(id)arg1;
 
 // Remaining properties

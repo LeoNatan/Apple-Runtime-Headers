@@ -129,7 +129,7 @@ __attribute__((visibility("hidden")))
 - (double)min;
 - (double)axisInterceptPosition;
 - (double)interceptForAxis:(id)arg1;
-@property(readonly, nonatomic) int currentAxisScaleSetting;
+@property(readonly, nonatomic) long long currentAxisScaleSetting;
 - (void)invalidateMultiDataSetAnalysis;
 - (void)invalidateTransientState;
 - (id)multiDataSetAnalysis;

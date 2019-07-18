@@ -47,6 +47,7 @@
 - (void)scrollViewLayoutIfNeeded;
 - (void)setScrollViewNeedsLayout;
 - (void)scrollRectToVisible:(struct CGRect)arg1 avoidingContentInsetEdges:(unsigned long long)arg2 animated:(BOOL)arg3;
+- (BOOL)isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
 - (void)setVisibleOrigin:(struct CGPoint)arg1;
 - (void)removeGestureRecognizer:(id)arg1;
 - (void)addGestureRecognizer:(id)arg1;

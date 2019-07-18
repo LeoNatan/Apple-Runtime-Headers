@@ -8,12 +8,12 @@
 
 #import <MessageUI/MFComposeColorPickerControllerDelegate-Protocol.h>
 #import <MessageUI/MFPreferredHeightProviding-Protocol.h>
-#import <MessageUI/UIFontPickerDelegate-Protocol.h>
+#import <MessageUI/UIFontPickerViewControllerDelegate-Protocol.h>
 
 @class MFComposeColorPickerController, MFComposeFontSelectorButton, MFComposeStyleSelectorButton, MFComposeTextColorButton, MFRoundedCornersStackView, NSString, UIStackView;
 @protocol MFComposeStyleSelectorViewControllerDelegate;
 
-@interface MFComposeStyleSelectorViewController : UIViewController <MFComposeColorPickerControllerDelegate, UIFontPickerDelegate, MFPreferredHeightProviding>
+@interface MFComposeStyleSelectorViewController : UIViewController <MFComposeColorPickerControllerDelegate, UIFontPickerViewControllerDelegate, MFPreferredHeightProviding>
 {
     id <MFComposeStyleSelectorViewControllerDelegate> _styleDelegate;
     UIStackView *_containerStackView;
@@ -85,8 +85,8 @@
 - (id)_composeStyleSelectorButtonForAttributeType:(long long)arg1;
 - (id)_roundedEquallyFilledHorizontalStackView;
 - (void)_setupContainer;
-- (void)fontPickerDidPickFont:(id)arg1;
-- (void)fontPickerDidCancel:(id)arg1;
+- (void)fontPickerViewControllerDidPickFont:(id)arg1;
+- (void)fontPickerViewControllerDidCancel:(id)arg1;
 - (void)colorPicker:(id)arg1 didChangeSelectedColor:(id)arg2;
 - (void)colorPickerDidCancel:(id)arg1;
 - (void)updateStateUsingFontAttributes:(id)arg1;

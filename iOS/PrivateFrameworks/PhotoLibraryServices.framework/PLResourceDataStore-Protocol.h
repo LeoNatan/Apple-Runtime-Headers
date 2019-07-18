@@ -15,7 +15,7 @@
 + (unsigned short)keyLengthWithDataPreview:(unsigned char)arg1;
 + (unsigned int)storeClassID;
 @property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager;
-- (void)requestStreamingURLForResource:(id <PLResource>)arg1 asset:(PLManagedAsset *)arg2 inContext:(NSManagedObjectContext *)arg3 completion:(void (^)(NSError *, NSURL *, NSDate *))arg4;
+- (void)requestStreamingURLForResource:(id <PLResource>)arg1 asset:(PLManagedAsset *)arg2 intent:(unsigned long long)arg3 inContext:(NSManagedObjectContext *)arg4 completion:(void (^)(NSError *, NSURL *, NSDate *))arg5;
 - (_Bool)canStreamResource:(id <PLResource>)arg1;
 - (_Bool)videoResource:(id <PLResource>)arg1 matchesOrExceedsQualityLevel:(unsigned int)arg2;
 - (void)requestRemoteAvailabilityChange:(short)arg1 forResource:(id <PLResource>)arg2 asset:(PLManagedAsset *)arg3 inContext:(NSManagedObjectContext *)arg4 options:(id)arg5 completion:(void (^)(NSError *, PLInternalResource *))arg6;

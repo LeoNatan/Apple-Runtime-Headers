@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
     struct tcp_info *tcp_info;
     struct tcp_connection_info *tcp_connection_info;
     struct nw_data_transfer_snapshot *data_transfer_snapshot;
+    unsigned long long snapshot_length;
     unsigned int snapshot_count;
     NSObject<OS_nw_path_flow_registration> *flow_registration;
     NSObject<OS_dispatch_queue> *client_queue;

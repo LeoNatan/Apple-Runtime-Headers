@@ -9,14 +9,16 @@
 #import <AMPDevices/AMPDevicesClientEventsProtocol-Protocol.h>
 #import <AMPDevices/AMPDevicesProtocol-Protocol.h>
 
-@class NSHashTable, NSXPCConnection;
+@class NSHashTable, NSMutableDictionary, NSXPCConnection;
 
 @interface AMPDevicesClient : NSObject <AMPDevicesProtocol, AMPDevicesClientEventsProtocol>
 {
     NSXPCConnection *_connection;
     NSHashTable *_listeners;
+    NSMutableDictionary *_deviceStateFlagsMap;
 }
 
+@property(retain, nonatomic) NSMutableDictionary *deviceStateFlagsMap; // @synthesize deviceStateFlagsMap=_deviceStateFlagsMap;
 @property(retain, nonatomic) NSHashTable *listeners; // @synthesize listeners=_listeners;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
@@ -25,6 +27,7 @@
 - (void)showReportWithParameters:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)promptForPasswordWithParameters:(id)arg1 inParentWindow:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)askUserWithParameters:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)canShowUserInteractionForDeviceWithIdentifier:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)updateAvailableWithSoftwareInfo:(id)arg1 forDeviceWithIdentifier:(id)arg2;
 - (void)didRemoveDeviceWithIdentifier:(id)arg1;
 - (void)didCompleteSoftwareUpdateRestoreForDeviceWithIdentifier:(id)arg1 withError:(id)arg2;
@@ -61,6 +64,7 @@
 - (void)fetchBatteryInfoForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)fetchDeviceIdentifiersWithReply:(CDUnknownBlockType)arg1;
 - (id)registerForSoftwareUpdateRestoreProgressForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)isSoftwareUpdateOrRestoreInProgressForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)startSoftwareRestoreForDevice:(id)arg1 withOptions:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)startSoftwareUpdateForDevice:(id)arg1 withOptions:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)checkForSoftwareUpdatesForDevice:(id)arg1 withOptions:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
@@ -73,8 +77,10 @@
 - (id)registerForRestoreProgressForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (id)registerForBackupProgressForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (id)restoreDevice:(id)arg1 fromBackup:(id)arg2 withPassword:(id)arg3 withReply:(CDUnknownBlockType)arg4;
+- (void)isRestoreFromBackupInProgressForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)cancelBackupForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (id)backupDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)isBackupInProgressForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)setKeychainBackupPassword:(id)arg1 forDevice:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)fetchPasswordFromKeychainForBackup:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)fetchBackupPasswordFromKeychainForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
@@ -98,12 +104,24 @@
 - (void)stopSyncForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (id)registerForSyncProgressForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (id)startSyncForDevice:(id)arg1 withOptions:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
+- (void)isSyncInProgressForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)isSyncAllowedForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)fetchTotalsForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)setAccessibilityPrefs:(id)arg1 forDevice:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)fetchAccessibilityPrefsForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)setSyncPrefs:(id)arg1 forDevice:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)fetchSettingsForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)configureNewDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (BOOL)isSoftwareUpdateOrRestoreInProgressForDevice:(id)arg1;
+- (BOOL)isSoftwareDownloadInProgressForDevice:(id)arg1;
+- (BOOL)isRestoreFromBackupInProgressForDevice:(id)arg1;
+- (BOOL)isBackupInProgressForDevice:(id)arg1;
+- (BOOL)isSyncInProgressForDevice:(id)arg1;
+- (BOOL)isSyncAllowedForDevice:(id)arg1;
+- (void)clearStateFlag:(unsigned long long)arg1 forDeviceWithIdentifier:(id)arg2;
+- (void)setStateFlag:(unsigned long long)arg1 forDeviceWithIdentifier:(id)arg2;
+- (unsigned long long)stateFlagsForDevice:(id)arg1;
+- (BOOL)isSyncEnabledForDevice:(id)arg1;
 - (void)removeListener:(id)arg1;
 - (void)addListener:(id)arg1;
 - (void)disconnect;

@@ -10,7 +10,9 @@
 
 @protocol PHInsertChangeRequest <PHChangeRequest>
 + (BOOL)canGenerateUUIDWithoutEntitlements;
+@property(readonly, nonatomic) CDUnknownBlockType concurrentWorkBlock;
 @property(readonly) BOOL isNewRequest;
+- (void)finalizeRequestWithBatchSuccess:(BOOL)arg1;
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(PLPhotoLibrary *)arg1;
 - (NSManagedObject *)createManagedObjectForInsertIntoPhotoLibrary:(PLPhotoLibrary *)arg1 error:(id *)arg2;
 - (BOOL)validateInsertIntoPhotoLibrary:(PLPhotoLibrary *)arg1 error:(id *)arg2;

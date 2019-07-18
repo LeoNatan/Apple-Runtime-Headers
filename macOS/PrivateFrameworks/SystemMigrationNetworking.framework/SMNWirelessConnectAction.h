@@ -24,8 +24,10 @@
 @property(retain) NSString *wirelessSSID; // @synthesize wirelessSSID=_wirelessSSID;
 - (void).cxx_destruct;
 - (BOOL)success;
+- (id)setOfClassesToDecodeInTheResult;
 - (BOOL)returnsData;
 - (BOOL)expectsAResult;
+- (BOOL)setResultFromDict:(id)arg1;
 - (id)resultData;
 - (id)requestPayload;
 - (BOOL)isEqual:(id)arg1;

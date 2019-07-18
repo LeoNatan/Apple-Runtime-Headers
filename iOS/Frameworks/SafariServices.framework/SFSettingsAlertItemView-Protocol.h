@@ -13,8 +13,5 @@
 @property(nonatomic) long long defaultBackgroundMode;
 @property(nonatomic) _Bool hidesSeparator;
 @property(nonatomic) __weak _SFSettingsAlertItem *item;
-
-@optional
-- (void)prepareForLayoutInAlertWithWidth:(double)arg1;
 @end
 

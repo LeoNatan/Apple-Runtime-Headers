@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *lqueue;
     const char *interfaceName;
     unsigned int state;
+    unsigned long long _countPremiumModeClients;
     BOOL _localFlowTracking;
     unsigned long long _interfaceIndex;
 }

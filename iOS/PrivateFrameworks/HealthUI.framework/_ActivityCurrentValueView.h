@@ -18,7 +18,6 @@
 @property(readonly, nonatomic) HKInteractiveChartAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
 - (void).cxx_destruct;
 - (id)_findFirstActivitySeriesInGraphView:(id)arg1;
-- (id)_activitySummaryForVisiblePointsInGraphView:(id)arg1 timeScope:(long long)arg2;
 - (void)updateWithGraphView:(id)arg1 timeScope:(long long)arg2;
 - (id)initWithDisplayTypeController:(id)arg1 unitPreferenceController:(id)arg2 wheelchairUseCharacteristicCache:(id)arg3 currentValueViewCallbacks:(id)arg4;
 

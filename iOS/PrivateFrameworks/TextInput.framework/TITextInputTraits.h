@@ -29,6 +29,9 @@
             unsigned int smartQuotesEnabled:1;
             unsigned int smartDashesEnabled:1;
             unsigned int disablePrediction:1;
+            unsigned int smartInsertDeleteType:2;
+            unsigned int smartQuotesType:2;
+            unsigned int smartDashesType:2;
         } fields;
     } _mask;
     NSString *_textContentType;
@@ -45,6 +48,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) _Bool disablePrediction;
+@property(nonatomic) unsigned long long smartDashesType;
+@property(nonatomic) unsigned long long smartQuotesType;
+@property(nonatomic) unsigned long long smartInsertDeleteType;
 @property(nonatomic) _Bool smartDashesEnabled;
 @property(nonatomic) _Bool smartQuotesEnabled;
 @property(nonatomic) _Bool smartInsertDeleteEnabled;

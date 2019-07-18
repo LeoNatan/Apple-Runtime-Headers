@@ -18,6 +18,8 @@
     NSObject<OS_dispatch_source> *_timeoutTimer;
     BOOL _alwaysUseCallbacksQueue;
     BOOL _yoDontLeaveMeHangingBro;
+    NSObject *_parentObject;
+    void *_parentObjectKey;
     BOOL _isComplete;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
@@ -31,6 +33,7 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) BOOL isComplete; // @synthesize isComplete=_isComplete;
 - (void).cxx_destruct;
+- (void)disassociateFromParentObject;
 - (id)waitWithTimeout:(double)arg1;
 - (void)_clearTimeoutNonThreadSafe;
 - (void)clearTimeout;

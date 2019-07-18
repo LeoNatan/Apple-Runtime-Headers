@@ -66,7 +66,7 @@
 - (id)_complicationsPlatterColor;
 - (void)_faceLibraryDismissed;
 - (struct CGPoint)_contentCenterOffset;
-- (id)_curvedPickerMaskForSlot:(id)arg1;
+- (id)_pickerMaskForSlot:(id)arg1;
 - (void)_curvedComplicationCircleRadius:(float *)arg1 centerAngle:(float *)arg2 maxAngularWidth:(float *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(id)arg6;
 - (_Bool)_slotSupportsCurvedText:(id)arg1;
 - (_Bool)slotUsesCurvedText:(id)arg1;
@@ -98,6 +98,7 @@
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (int)_legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
+- (void)setNormalComplicationDisplayWrapper:(id)arg1 forSlot:(id)arg2;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;

@@ -19,7 +19,6 @@
 @property(readonly, nonatomic) long long width;
 @property(readonly, nonatomic) long long height;
 @property(readonly, retain, nonatomic) CPLScopedIdentifier *scopedIdentifier;
-@property(readonly, retain, nonatomic) NSString *itemIdentifier;
 @property(readonly, retain, nonatomic) NSString *fingerprint;
 @property(readonly, retain, nonatomic) NSString *filePath;
 @property(readonly, nonatomic) unsigned long long fileSize;

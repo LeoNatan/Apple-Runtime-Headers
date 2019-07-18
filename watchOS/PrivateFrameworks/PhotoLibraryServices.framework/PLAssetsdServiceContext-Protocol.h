@@ -11,7 +11,6 @@
 @protocol PLAssetsdServiceContext <NSObject>
 @property(copy, nonatomic) NSError *replyWarning;
 @property(readonly, copy, nonatomic) NSString *clientDebugDescription;
-@property(readonly, nonatomic) _Bool allowsMissingEntitlements;
 @property(readonly, nonatomic) _Bool isClientAuthorizedForTCCServicePhotosAdd;
 @property(readonly, nonatomic) _Bool isClientAuthorizedForTCCServicePhotos;
 - (void)awaitLibraryState:(int)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;

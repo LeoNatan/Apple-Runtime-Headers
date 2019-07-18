@@ -34,6 +34,7 @@
 + (void)_addPrefetchRelationshipsForCalendarItemFetch:(id)arg1 prefetchItemsThatSupportFaulting:(BOOL)arg2;
 + (void)_addPrefetchRelationshipsForCalendarItemFetch:(id)arg1;
 + (double)defaultUpdateIntervalForBundleIdentifier:(id)arg1;
++ (id)externalChangesLogHandle;
 + (id)backingStoreLogHandle;
 @property double ensureExternalUpdateInterval; // @synthesize ensureExternalUpdateInterval=_ensureExternalUpdateInterval;
 @property(retain) NSDate *lastExternalChangeProcessed; // @synthesize lastExternalChangeProcessed=_lastExternalChangeProcessed;

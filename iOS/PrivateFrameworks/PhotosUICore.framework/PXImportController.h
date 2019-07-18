@@ -7,15 +7,15 @@
 #import <PhotosUICore/PXObservable.h>
 
 #import <PhotosUICore/PHImportServiceImporterDelegate-Protocol.h>
-#import <PhotosUICore/PHImportSourceDelegate-Protocol.h>
+#import <PhotosUICore/PHImportSourceObserver-Protocol.h>
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXImportAssetsDataSourceManagerDelegate-Protocol.h>
 #import <PhotosUICore/PXMutableImportController-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSMutableSet, NSObject, NSProgress, NSString, NSTimer, PHAssetCollection, PHImportSource, PHPhotoLibrary, PXImportAssetsDataSourceManager, PXImportDeleteAction, PXImportMediaLoadingCoordinator, PXImportMediaProvider, PXImportPowerController, PXImportSessionInfo, PXSectionedSelectionManager, PXSelectionSnapshot;
+@class NSArray, NSMutableDictionary, NSMutableSet, NSObject, NSProgress, NSString, NSTimer, PHAssetCollection, PHImportSource, PHPhotoLibrary, PXImportAssetsDataSourceManager, PXImportDeleteAction, PXImportMediaLoadingCoordinator, PXImportMediaProvider, PXImportSessionInfo, PXPowerController, PXSectionedSelectionManager, PXSelectionSnapshot;
 @protocol OS_dispatch_queue, PXImportControllerImportCompletionDelegate;
 
-@interface PXImportController : PXObservable <PXImportAssetsDataSourceManagerDelegate, PXMutableImportController, PHImportServiceImporterDelegate, PHImportSourceDelegate, PXChangeObserver>
+@interface PXImportController : PXObservable <PXImportAssetsDataSourceManagerDelegate, PXMutableImportController, PHImportServiceImporterDelegate, PHImportSourceObserver, PXChangeObserver>
 {
     NSArray *_lastSelectedModels;
     _Bool _loadingContent;
@@ -47,7 +47,7 @@
     NSObject<OS_dispatch_queue> *_sharedViewModelsUpdateQueue;
     NSMutableSet *_otherDataSourceManagers;
     NSObject<OS_dispatch_queue> *_otherDataSourceManagersQueue;
-    PXImportPowerController *_powerController;
+    PXPowerController *_powerController;
     NSTimer *_assetLoadingPowerAssertionTimer;
     CDUnknownBlockType _importCompletionHandler;
     CDUnknownBlockType _deleteCompletionHandler;
@@ -69,7 +69,7 @@
 @property(nonatomic) unsigned int loadAssetsPowerAssertionIdentifier; // @synthesize loadAssetsPowerAssertionIdentifier=_loadAssetsPowerAssertionIdentifier;
 @property(nonatomic) unsigned int deleteAssetsPowerAssertionIdentifier; // @synthesize deleteAssetsPowerAssertionIdentifier=_deleteAssetsPowerAssertionIdentifier;
 @property(nonatomic) unsigned int importAssetsPowerAssertionIdentifier; // @synthesize importAssetsPowerAssertionIdentifier=_importAssetsPowerAssertionIdentifier;
-@property(retain, nonatomic) PXImportPowerController *powerController; // @synthesize powerController=_powerController;
+@property(retain, nonatomic) PXPowerController *powerController; // @synthesize powerController=_powerController;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *otherDataSourceManagersQueue; // @synthesize otherDataSourceManagersQueue=_otherDataSourceManagersQueue;
 @property(readonly, nonatomic) NSMutableSet *otherDataSourceManagers; // @synthesize otherDataSourceManagers=_otherDataSourceManagers;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *sharedViewModelsUpdateQueue; // @synthesize sharedViewModelsUpdateQueue=_sharedViewModelsUpdateQueue;

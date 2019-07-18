@@ -15,6 +15,7 @@
 @interface _INPBAppNames : PBCodable <_INPBAppNames, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSString *_appName;
     NSString *_axSpokenName;
     NSString *_displayName;
@@ -22,6 +23,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *spotlightName; // @synthesize spotlightName=_spotlightName;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *axSpokenName; // @synthesize axSpokenName=_axSpokenName;

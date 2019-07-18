@@ -13,6 +13,8 @@
 + (id)indexesForValidRatiosInArray:(id)arg1;
 + (int)computeCommonExtentForArrays:(id)arg1;
 + (id)bucketRatio:(id)arg1;
++ (id)toInteger:(id)arg1;
++ (id)toFloat:(id)arg1;
 + (id)roundCount:(id)arg1 toSignificantDigits:(long long)arg2;
 
 @end

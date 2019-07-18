@@ -23,13 +23,13 @@
 - (id)_profileForURLWithRealmScheme:(id)arg1;
 - (_Bool)_matchHost:(id)arg1 inCredentialProfile:(id)arg2;
 - (id)_profileForURLWithHostScheme:(id)arg1;
-- (id)_profileForURLWithStandardScheme:(id)arg1;
+- (id)_profileForURLWithStandardScheme:(id)arg1 isCredential:(_Bool)arg2;
 - (id)description;
 @property(readonly, nonatomic) _Bool empty;
 - (id)realms;
 @property(readonly, nonatomic) NSArray *profiles;
-- (id)profileForURL:(id)arg1;
-- (long long)willHandleURL:(id)arg1 callerBundleIdentifier:(id)arg2 profile:(id *)arg3;
+- (id)profileForURL:(id)arg1 responseCode:(long long)arg2;
+- (long long)willHandleURL:(id)arg1 responseCode:(long long)arg2 callerBundleIdentifier:(id)arg3 profile:(id *)arg4;
 - (_Bool)willHandleURL:(id)arg1 responseCode:(long long)arg2 callerBundleIdentifier:(id)arg3;
 - (id)initWithProfiles:(id)arg1;
 

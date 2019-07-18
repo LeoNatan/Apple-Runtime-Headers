@@ -8,13 +8,13 @@
 
 #import <VideosUI/AVPlayerViewControllerDelegate-Protocol.h>
 #import <VideosUI/AVScanningDelegate-Protocol.h>
+#import <VideosUI/PBSPictureInPictureControllerObserver_Private-Protocol.h>
 #import <VideosUI/VUINowPlayingFeatureMonitorDelegate-Protocol.h>
 #import <VideosUI/VUINowPlayingViewControllerDelegate-Protocol.h>
 
-@class NSString, TVPStateMachine, UIAlertController, VUIPlaybackInfo;
+@class NSString, NSTimer, TVPStateMachine, UIAlertController, VUIPlaybackInfo;
 
-__attribute__((visibility("hidden")))
-@interface VUITVOSPlaybackManager : NSObject <VUINowPlayingFeatureMonitorDelegate, VUINowPlayingViewControllerDelegate, AVPlayerViewControllerDelegate, AVScanningDelegate>
+@interface VUITVOSPlaybackManager : NSObject <VUINowPlayingFeatureMonitorDelegate, VUINowPlayingViewControllerDelegate, AVPlayerViewControllerDelegate, AVScanningDelegate, PBSPictureInPictureControllerObserver_Private>
 {
     _Bool _suppressErrorAlerts;
     _Bool _pausedDueToViewDisappeared;
@@ -25,9 +25,11 @@ __attribute__((visibility("hidden")))
     VUIPlaybackInfo *_pipPlaybackInfo;
     UIAlertController *_errorAlertController;
     TVPStateMachine *_stateMachine;
+    NSTimer *_postPlayUIDismissTimer;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) __weak NSTimer *postPlayUIDismissTimer; // @synthesize postPlayUIDismissTimer=_postPlayUIDismissTimer;
 @property(nonatomic) _Bool ignorePictureInPictureStop; // @synthesize ignorePictureInPictureStop=_ignorePictureInPictureStop;
 @property(nonatomic) _Bool waitingForBootstrappingToFinishToShowPostPlay; // @synthesize waitingForBootstrappingToFinishToShowPostPlay=_waitingForBootstrappingToFinishToShowPostPlay;
 @property(nonatomic, getter=isBootstrappingPostPlay) _Bool bootstrappingPostPlay; // @synthesize bootstrappingPostPlay=_bootstrappingPostPlay;
@@ -43,10 +45,13 @@ __attribute__((visibility("hidden")))
 - (void)featureMonitor:(id)arg1 featureDidChangeState:(id)arg2 animated:(_Bool)arg3;
 - (void)skipIntroWithPlaybackInfo:(id)arg1;
 - (void)_bootstrapPostPlayForPlaybackInfo:(id)arg1;
+- (void)_schedulePostPlayDismissTimerWithInterval:(double)arg1;
 - (void)_showPostPlayUI:(_Bool)arg1 playbackInfo:(id)arg2 animated:(_Bool)arg3;
+- (void)_configurePostPlayForPlaybackInfo:(id)arg1 forMediaItem:(id)arg2;
+- (_Bool)_postPlayAllowedForPlaybackInfo:(id)arg1;
 - (void)_updatePlaybackInfoForUI:(id)arg1 forFeature:(id)arg2 animated:(_Bool)arg3;
 - (void)_updatePlaybackInfo:(id)arg1 forFeature:(id)arg2 animated:(_Bool)arg3;
-- (void)_updateNowPlayingFeaturesForMonitor:(id)arg1 fromMediaItem:(id)arg2;
+- (void)_updateNowPlayingFeaturesForPlaybackInfo:(id)arg1 fromMediaItem:(id)arg2;
 - (void)_addSkipInfoFeaturesToMonitor:(id)arg1 fromMediaItem:(id)arg2;
 - (void)_addRollsInfoFeaturesToMonitor:(id)arg1 fromMediaItem:(id)arg2;
 - (void)_addTVRatingFeatureToMonitor:(id)arg1 fromMediaItem:(id)arg2;
@@ -59,17 +64,25 @@ __attribute__((visibility("hidden")))
 - (void)_playbackErrorDidOccur:(id)arg1;
 - (void)_currentMediaItemDidChange:(id)arg1;
 - (void)_playbackStateDidChange:(id)arg1;
+- (void)_resetPictureInPictureInset;
+- (void)_applyPictureInPictureInsets:(struct UIEdgeInsets)arg1;
+- (void)_notifyExtrasMainTemplateToStop:(_Bool)arg1;
 - (void)_updateAVPlayerViewControllerWithAVPlayerForPlayer:(id)arg1;
 - (_Bool)_supportsDualStreamPlayback;
 - (_Bool)dualStreamPlaybackOverride;
 - (id)_stillWatchingAlertDurationOverride;
 - (void)_configureShowsNowPlayingHUD:(id)arg1;
+- (void)_handleDurationChangeForPlayer:(id)arg1;
 - (id)_playbackInfoForAVPlayerViewController:(id)arg1;
 - (id)_playbackInfoForMonitor:(id)arg1;
 - (id)_playbackInfoForPlayer:(id)arg1;
 - (_Bool)_isPlayingWithinExtras;
 - (_Bool)_isCurrentNavigationControllerExtrasNavigationController;
 - (id)_currentNavigationController;
+- (void)_setPictureInPictureMuted:(_Bool)arg1;
+- (void)pictureInPictureController:(id)arg1 didRequestPlayerMute:(_Bool)arg2;
+- (void)pictureInPictureControllerDidDestroyPictureInPicture:(id)arg1;
+- (void)pictureInPictureControllerDidActivatePictureInPicture:(id)arg1;
 - (_Bool)playerViewController:(id)arg1 shouldHandleScanningForPlayerItem:(id)arg2;
 - (void)stopScanningPlayerViewController:(id)arg1;
 - (long long)playerViewController:(id)arg1 scanFromElapsedTime:(CDStruct_198678f7)arg2 rate:(double)arg3 imageBlock:(CDUnknownBlockType)arg4;
@@ -82,12 +95,18 @@ __attribute__((visibility("hidden")))
 - (void)playerViewControllerWillStartPictureInPicture:(id)arg1;
 - (void)playerViewController:(id)arg1 willResumePlaybackAfterUserNavigatedFromDate:(id)arg2 toDate:(id)arg3;
 - (void)playerViewController:(id)arg1 willResumePlaybackAfterUserNavigatedFromTime:(CDStruct_198678f7)arg2 toTime:(CDStruct_198678f7)arg3;
+- (void)nowPlayingViewController:(id)arg1 mediaInfoDidChange:(id)arg2 canPlay:(_Bool)arg3;
+- (void)nowPlayingViewControllerUserDidInteract:(id)arg1;
+- (void)nowPlayingController:(id)arg1 safeAreaDidChange:(struct UIEdgeInsets)arg2;
 - (void)nowPlayingViewControllerMenuButtonPressedToDismiss:(id)arg1;
 - (void)nowPlayingControllerDidSelectSkipIntro:(id)arg1;
 - (void)nowPlayingController:(id)arg1 didEnableUIMode:(long long)arg2 enabled:(_Bool)arg3;
 - (void)nowPlayingControllerViewWillDisappear:(id)arg1 withDisappearanceReason:(unsigned long long)arg2;
 - (void)nowPlayingControllerViewDidAppear:(id)arg1;
 - (void)nowPlayingControllerViewWillAppear:(id)arg1;
+- (void)stopAllPlayback;
+- (void)mutePictureInPicture:(_Bool)arg1 reason:(id)arg2;
+@property(readonly, nonatomic, getter=isPictureInPictureActive) _Bool pictureInPictureActive;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dismissMediaInfoAnimated:(_Bool)arg1;
 - (void)playMediaInfo:(id)arg1 animated:(_Bool)arg2;

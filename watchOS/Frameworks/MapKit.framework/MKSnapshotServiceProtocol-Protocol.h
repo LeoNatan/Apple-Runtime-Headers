@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class GEOFeatureStyleAttributes, MKMapSnapshotOptions, NSString;
+@class GEOFeatureStyleAttributes, MKMapSnapshotOptions;
 
 @protocol MKSnapshotServiceProtocol
 - (void)requestIconWithStyleAttributes:(GEOFeatureStyleAttributes *)arg1 size:(unsigned int)arg2 scale:(float)arg3 completionHandler:(void (^)(UIImage *))arg4;
-- (void)requestSnapshotWithOptions:(MKMapSnapshotOptions *)arg1 contentSizeCategory:(NSString *)arg2 completionHandler:(void (^)(VKMapSnapshot *, NSError *))arg3;
+- (void)requestSnapshotWithOptions:(MKMapSnapshotOptions *)arg1 completionHandler:(void (^)(VKMapSnapshot *, NSError *))arg2;
 @end
 

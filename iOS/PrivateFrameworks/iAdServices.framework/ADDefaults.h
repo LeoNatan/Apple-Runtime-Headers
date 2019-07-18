@@ -14,6 +14,8 @@
     struct __CFString *_defaultsBundleID;
 }
 
++ (void)setDictionary:(id)arg1 forKey:(id)arg2;
++ (id)dictionaryForKey:(id)arg1;
 + (void)setArray:(id)arg1 forKey:(id)arg2;
 + (id)arrayForKey:(id)arg1;
 + (void)setString:(id)arg1 forKey:(id)arg2;

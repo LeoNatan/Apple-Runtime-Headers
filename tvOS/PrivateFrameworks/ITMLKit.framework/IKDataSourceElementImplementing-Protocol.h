@@ -12,7 +12,6 @@
 @protocol IKDataSourceElementImplementing <NSObject>
 @property(readonly, copy, nonatomic) NSDictionary *indexTitles;
 @property(readonly, nonatomic) IKChangeSet *itemsChangeSet;
-@property(readonly, copy, nonatomic) NSArray *proxiedItemElements;
 @property(readonly, nonatomic) NSArray *prototypes;
 - (void)resetUpdates;
 - (void)updateStylesUsingUpdater:(void (^)(void))arg1;
@@ -28,8 +27,11 @@
 - (long long)numberOfItems;
 
 @optional
+@property(readonly, copy, nonatomic) NSArray *proxiedItemElements;
+@property(readonly, nonatomic) NSArray *masterPrototypes;
 - (_Bool)canProxyUnloadedChildElement:(IKViewElement *)arg1;
 - (IKViewElement *)proxyElementForLoadedChildElement:(IKViewElement *)arg1;
 - (void)resetImplicitUpdates;
+- (IKViewElement *)masterPrototypeForItemAtIndex:(unsigned long long)arg1;
 @end
 

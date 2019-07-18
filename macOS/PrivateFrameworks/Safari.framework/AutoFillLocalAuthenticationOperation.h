@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
 @property long long runningState; // @synthesize runningState=_runningState;
 - (BOOL)isAsynchronous;
 - (void)cancel;
-- (BOOL)isCancelled;
 - (BOOL)isFinished;
 - (BOOL)isExecuting;
 - (void)start;

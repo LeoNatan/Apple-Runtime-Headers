@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double translationScaleFactor; // @synthesize translationScaleFactor=_translationScaleFactor;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void).cxx_destruct;
+- (BOOL)_allowsBounce;
 - (long long)_modifierFlags;
 - (void)_scrollingChangedWithEvent:(id)arg1;
 - (BOOL)_shouldReceiveScrollEvent:(id)arg1;

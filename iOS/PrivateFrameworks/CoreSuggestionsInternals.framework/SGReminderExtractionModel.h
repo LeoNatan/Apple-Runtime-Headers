@@ -12,7 +12,7 @@
 
 + (id)enrichTaggedCharacterRangesWithModelOutput:(id)arg1 usingInputCharacterRanges:(id)arg2;
 + (id)inputFromTaggedCharacterRanges:(id)arg1 usingTokenMapping:(id)arg2;
-+ (id)loadPlist:(id)arg1;
++ (id)loadLazyPlistWithBasename:(id)arg1;
 + (_Bool)hasWhitelistedVerbInContent:(id)arg1;
 + (id)outputConfig;
 + (id)inputTokenMapping;

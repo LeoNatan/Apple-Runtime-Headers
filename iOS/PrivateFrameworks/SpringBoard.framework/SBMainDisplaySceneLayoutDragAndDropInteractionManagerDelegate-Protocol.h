@@ -6,11 +6,14 @@
 
 #import <SpringBoard/NSObject-Protocol.h>
 
-@class NSString, SBDisplayItem, SBMainDisplaySceneLayoutDragAndDropInteractionManager, UIGestureRecognizer;
+@class NSString, SBDisplayItem, SBFluidSwitcherGesture, SBMainDisplaySceneLayoutDragAndDropInteractionManager, UIGestureRecognizer;
 @protocol SBAppPlatterDragSourceViewProviding;
 
 @protocol SBMainDisplaySceneLayoutDragAndDropInteractionManagerDelegate <NSObject>
-- (void)dragAndDropInteractionManager:(SBMainDisplaySceneLayoutDragAndDropInteractionManager *)arg1 didEndDraggingWindowWithSceneIdentifier:(NSString *)arg2;
+- (void)dragAndDropInteractionManager:(SBMainDisplaySceneLayoutDragAndDropInteractionManager *)arg1 didEndGesture:(SBFluidSwitcherGesture *)arg2;
+- (void)dragAndDropInteractionManager:(SBMainDisplaySceneLayoutDragAndDropInteractionManager *)arg1 didUpdateGesture:(SBFluidSwitcherGesture *)arg2;
+- (void)dragAndDropInteractionManager:(SBMainDisplaySceneLayoutDragAndDropInteractionManager *)arg1 didBeginGesture:(SBFluidSwitcherGesture *)arg2;
+- (void)dragAndDropInteractionManager:(SBMainDisplaySceneLayoutDragAndDropInteractionManager *)arg1 willEndDraggingWindowWithSceneIdentifier:(NSString *)arg2;
 - (void)dragAndDropInteractionManager:(SBMainDisplaySceneLayoutDragAndDropInteractionManager *)arg1 didBeginDraggingWindowWithSceneIdentifier:(NSString *)arg2;
 - (id <SBAppPlatterDragSourceViewProviding>)dragAndDropInteractionManager:(SBMainDisplaySceneLayoutDragAndDropInteractionManager *)arg1 sourceViewProviderForDraggingWindowWithGestureRecognizer:(UIGestureRecognizer *)arg2;
 - (SBDisplayItem *)dragAndDropInteractionManager:(SBMainDisplaySceneLayoutDragAndDropInteractionManager *)arg1 displayItemForDraggingWindowWithGestureRecognizer:(UIGestureRecognizer *)arg2;

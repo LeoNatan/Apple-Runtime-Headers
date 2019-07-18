@@ -25,6 +25,7 @@
 - (id)description;
 - (void)_decodeMeta;
 - (void)dealloc;
+- (id)itemsIterator;
 - (id)initWithBufferAndLength:(char *)arg1 length:(unsigned long)arg2;
 - (id)initWithData:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -8,16 +8,24 @@
 
 #import <MLFoundation/NSCopying-Protocol.h>
 
+@class NSData;
+
 @interface MLFoundationDeviceOptimizer : NSObject <NSCopying>
 {
     id _kernel;
+    NSData *_params;
+    void *_BNNSFilter;
 }
 
++ (id)deviceOptimizerWithParams:(id)arg1;
 + (id)deviceOptimizerWithKernel:(id)arg1;
+@property(nonatomic) void *BNNSFilter; // @synthesize BNNSFilter=_BNNSFilter;
+@property(readonly, nonatomic) NSData *params; // @synthesize params=_params;
 @property(readonly, nonatomic) id kernel; // @synthesize kernel=_kernel;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
+- (id)initWithParams:(id)arg1;
 - (id)initWithKernel:(id)arg1;
 
 @end

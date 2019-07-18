@@ -19,6 +19,7 @@
     _UIStatusBar *_statusBar;
     id <_UIStatusBarRegionLayout> _layout;
     NSSet *_dependentRegionIdentifiers;
+    _UIStatusBarRegion *_enabilityRegion;
     float _alpha;
     int _overriddenStyle;
     _UIStatusBarStyleAttributes *_overriddenStyleAttributes;
@@ -51,6 +52,7 @@
 @property(nonatomic) float alpha; // @synthesize alpha=_alpha;
 @property(nonatomic) struct UIOffset offset; // @synthesize offset=_offset;
 @property(nonatomic) _Bool offsetable; // @synthesize offsetable=_offsetable;
+@property(nonatomic) __weak _UIStatusBarRegion *enabilityRegion; // @synthesize enabilityRegion=_enabilityRegion;
 @property(retain, nonatomic) NSSet *dependentRegionIdentifiers; // @synthesize dependentRegionIdentifiers=_dependentRegionIdentifiers;
 @property(retain, nonatomic) id <_UIStatusBarRegionLayout> layout; // @synthesize layout=_layout;
 @property(nonatomic) __weak _UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;

@@ -16,7 +16,6 @@
 @property(readonly, nonatomic) _Bool authenticated;
 @property(nonatomic, getter=isTransitioning) _Bool transitioning;
 @property(nonatomic) __weak id <CSCoverSheetViewControllerProtocol> coverSheetViewController;
-- (_Bool)isWidgetExtensionWithIdentifierVisible:(NSString *)arg1;
 
 @optional
 @property(readonly, copy, nonatomic) NSString *pageRole;

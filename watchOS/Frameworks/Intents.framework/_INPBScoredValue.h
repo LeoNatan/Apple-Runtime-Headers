@@ -14,14 +14,14 @@
 
 @interface _INPBScoredValue : PBCodable <_INPBScoredValue, NSSecureCoding, NSCopying>
 {
-    struct {
-        unsigned int score:1;
-    } _has;
+    CDStruct_4b1634df _has;
+    _Bool __encodeLegacyGloryData;
     NSString *_value;
     long long _score;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(nonatomic) long long score; // @synthesize score=_score;
 - (void).cxx_destruct;

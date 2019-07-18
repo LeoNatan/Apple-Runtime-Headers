@@ -11,6 +11,7 @@
 
 @interface MLFoundationConvolutionDescriptor : NSObject <NSSecureCoding, NSCopying>
 {
+    BOOL _depthWiseConvolution;
     unsigned long long _kernelWidth;
     unsigned long long _kernelHeight;
     unsigned long long _inputFeatureChannels;
@@ -23,9 +24,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)depthWiseConvolutionDescriptorWithKernelWidth:(unsigned long long)arg1 kernelHeight:(unsigned long long)arg2 inputFeatureChannels:(unsigned long long)arg3 channelMultiplier:(unsigned long long)arg4 strideInX:(unsigned long long)arg5 strideInY:(unsigned long long)arg6 dilationRateInX:(unsigned long long)arg7 dilationRateInY:(unsigned long long)arg8 paddingSize:(unsigned long long)arg9;
++ (id)depthWiseConvolutionDescriptorWithKernelWidth:(unsigned long long)arg1 kernelHeight:(unsigned long long)arg2 inputFeatureChannels:(unsigned long long)arg3 channelMultiplier:(unsigned long long)arg4 strideInX:(unsigned long long)arg5 strideInY:(unsigned long long)arg6 paddingSize:(unsigned long long)arg7;
++ (id)depthWiseConvolutionDescriptorWithKernelWidth:(unsigned long long)arg1 kernelHeight:(unsigned long long)arg2 inputFeatureChannels:(unsigned long long)arg3 channelMultiplier:(unsigned long long)arg4;
 + (id)convolutionDescriptorWithKernelWidth:(unsigned long long)arg1 kernelHeight:(unsigned long long)arg2 inputFeatureChannels:(unsigned long long)arg3 outputFeatureChannels:(unsigned long long)arg4 strideInX:(unsigned long long)arg5 strideInY:(unsigned long long)arg6 dilationRateInX:(unsigned long long)arg7 dilationRateInY:(unsigned long long)arg8 paddingSize:(unsigned long long)arg9;
 + (id)convolutionDescriptorWithKernelWidth:(unsigned long long)arg1 kernelHeight:(unsigned long long)arg2 inputFeatureChannels:(unsigned long long)arg3 outputFeatureChannels:(unsigned long long)arg4 strideInX:(unsigned long long)arg5 strideInY:(unsigned long long)arg6 paddingSize:(unsigned long long)arg7;
 + (id)convolutionDescriptorWithKernelWidth:(unsigned long long)arg1 kernelHeight:(unsigned long long)arg2 inputFeatureChannels:(unsigned long long)arg3 outputFeatureChannels:(unsigned long long)arg4;
+@property(readonly, nonatomic) BOOL depthWiseConvolution; // @synthesize depthWiseConvolution=_depthWiseConvolution;
 @property(readonly, nonatomic) unsigned long long paddingSize; // @synthesize paddingSize=_paddingSize;
 @property(readonly, nonatomic) unsigned long long dilationRateInY; // @synthesize dilationRateInY=_dilationRateInY;
 @property(readonly, nonatomic) unsigned long long dilationRateInX; // @synthesize dilationRateInX=_dilationRateInX;
@@ -39,7 +44,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithKernelWidth:(unsigned long long)arg1 kernelHeight:(unsigned long long)arg2 inputFeatureChannels:(unsigned long long)arg3 outputFeatureChannels:(unsigned long long)arg4 strideInX:(unsigned long long)arg5 strideInY:(unsigned long long)arg6 dilationRateInX:(unsigned long long)arg7 dilationRateInY:(unsigned long long)arg8 paddingSize:(unsigned long long)arg9;
+- (id)initWithKernelWidth:(unsigned long long)arg1 kernelHeight:(unsigned long long)arg2 inputFeatureChannels:(unsigned long long)arg3 outputFeatureChannels:(unsigned long long)arg4 strideInX:(unsigned long long)arg5 strideInY:(unsigned long long)arg6 dilationRateInX:(unsigned long long)arg7 dilationRateInY:(unsigned long long)arg8 paddingSize:(unsigned long long)arg9 depthWiseConvolution:(BOOL)arg10;
 - (id)init;
 
 @end

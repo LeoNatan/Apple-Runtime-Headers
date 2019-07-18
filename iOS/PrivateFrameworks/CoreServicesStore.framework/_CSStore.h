@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)new;
++ (void)initialize;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;

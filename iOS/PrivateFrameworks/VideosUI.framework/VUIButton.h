@@ -40,9 +40,12 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) VUIButtonLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
+- (void)_updateBackgroundColor;
+- (void)traitCollectionDidChange:(id)arg1;
 - (struct CGPoint)_centerWithViewSize:(struct CGSize)arg1 withParentSize:(struct CGSize)arg2;
 - (void)_updateLayout;
 - (void)_buttonTapped:(id)arg1;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_configureWithLayout:(id)arg1;
 - (_Bool)_hasBackgroundImage;
 - (_Bool)_hasImage;

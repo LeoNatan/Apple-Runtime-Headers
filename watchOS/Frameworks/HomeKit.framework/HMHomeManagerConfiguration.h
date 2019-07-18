@@ -9,7 +9,7 @@
 #import <HomeKit/NSCopying-Protocol.h>
 #import <HomeKit/NSMutableCopying-Protocol.h>
 
-@class NSOperationQueue, NSURL;
+@class HMFLocationAuthorization, NSOperationQueue, NSURL;
 
 @interface HMHomeManagerConfiguration : NSObject <NSCopying, NSMutableCopying>
 {
@@ -17,12 +17,14 @@
     _Bool _shouldConnect;
     unsigned int _options;
     NSOperationQueue *_delegateQueue;
+    HMFLocationAuthorization *_locationAuthorization;
     NSURL *_cacheURL;
 }
 
 + (id)defaultPrivateConfiguration;
 + (id)defaultConfiguration;
 @property(readonly) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
+@property(readonly) HMFLocationAuthorization *locationAuthorization; // @synthesize locationAuthorization=_locationAuthorization;
 @property(readonly) NSOperationQueue *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly) unsigned int options; // @synthesize options=_options;
 @property(nonatomic) _Bool shouldConnect; // @synthesize shouldConnect=_shouldConnect;

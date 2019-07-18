@@ -6,12 +6,11 @@
 
 #import <SafariServices/NSObject-Protocol.h>
 
-@class NSDictionary, STLockoutViewController;
+@class STLockoutViewController;
 
 @protocol STLockoutViewControllerDelegate <NSObject>
 
 @optional
-- (_Bool)sender:(id)arg1 requestsAction:(long long)arg2 withParameters:(NSDictionary *)arg3;
 - (void)lockoutViewControllerDidFinishDismissing:(STLockoutViewController *)arg1;
 @end
 

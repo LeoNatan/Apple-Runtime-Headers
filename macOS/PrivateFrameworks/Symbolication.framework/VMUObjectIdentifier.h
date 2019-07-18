@@ -77,12 +77,17 @@
 - (id)labelForObjectOfClass:(id)arg1 atOffset:(unsigned int)arg2 ofObject:(void *)arg3;
 - (id)labelForMallocBlock:(struct _VMURange)arg1 usingHandlerBlock:(CDUnknownBlockType)arg2;
 - (id)labelForMallocBlock:(struct _VMURange)arg1;
+- (id)labelForClassStructure:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
+- (id)labelForClassDataRW:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
+- (id)labelForClassDataRO:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelFor__NSMallocBlock__:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForNSXPCConnection:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForNSXPCInterface:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForProtocol:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
+- (id)labelForOSXPCActivity:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForOSXPCConnection:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (void)_findOffsetsInOSXPCConnection:(void *)arg1 length:(unsigned long long)arg2;
+- (id)labelFor_NSActivityAssertion:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForOSTransaction:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForOSXPCObject:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)noLabelForOSXPCObject:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
@@ -122,6 +127,7 @@
 - (unsigned long long)translateIsaPointer:(unsigned long long)arg1;
 - (void)setupIsaTranslator;
 - (void)findObjCAndSwiftClasses;
+- (void)_findObjCAndSwiftClassesFromClass:(unsigned long long)arg1 recursionDepth:(unsigned int)arg2;
 - (void)findCFTypes;
 - (void)_faultClass:(unsigned long long)arg1 ofType:(unsigned int)arg2;
 - (id)_returnFaultedClass:(unsigned long long)arg1 ofType:(unsigned int)arg2;

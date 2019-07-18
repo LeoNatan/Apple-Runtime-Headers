@@ -20,6 +20,7 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (id)stringFromTimeInterval:(double)arg1;
+- (id)stringFromDate:(id)arg1 fallback:(id)arg2;
 - (id)stringFromDate:(id)arg1;
 - (id)formattedTable;
 - (void)_enumerateFormattedRowsWithColumnWidths:(id)arg1 handler:(CDUnknownBlockType)arg2;

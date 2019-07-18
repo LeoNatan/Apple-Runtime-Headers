@@ -14,8 +14,11 @@
 @interface NFReaderSession : NFSession <NFReaderSessionCallbacks>
 {
     NFWeakReference *_delegate;
+    long long _actionSheetUI;
 }
 
+@property(readonly) long long actionSheetUI; // @synthesize actionSheetUI=_actionSheetUI;
+- (id)updateUIAlertMessage:(id)arg1;
 - (id)felicaRequestService:(id)arg1 error:(id *)arg2;
 - (unsigned int)runScript:(id)arg1 parameters:(id)arg2 results:(id *)arg3;
 - (id)felicaStateForSystemCode:(id)arg1 withRequestService:(id)arg2 withBlockReadList:(id)arg3 performSearchServiceCode:(BOOL)arg4 error:(id *)arg5;
@@ -51,6 +54,7 @@
 - (void)endSession;
 @property id <NFReaderSessionDelegate> delegate;
 - (void)dealloc;
+- (id)initWithUIType:(long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

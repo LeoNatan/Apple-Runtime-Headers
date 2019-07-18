@@ -13,7 +13,7 @@
 #import <iWorkImport/TSPObjectModifyDelegate-Protocol.h>
 #import <iWorkImport/TSPPersistedObjectUUIDMapDelegate-Protocol.h>
 
-@class NSHashTable, NSMutableArray, NSMutableSet, NSSet, NSString, NSURL, TSPArchiverManager, TSPComponentExternalReferenceMap, TSPDataAttributesSnapshot, TSPDocumentRevision, TSPObject, TSPObjectContainer, TSPObjectContext, TSPObjectReferenceMap, TSPPackageMetadata, TSPPersistedObjectUUIDMap;
+@class NSHashTable, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, NSURL, TSPArchiverManager, TSPComponentExternalReferenceMap, TSPDataAttributesSnapshot, TSPDocumentRevision, TSPObject, TSPObjectContainer, TSPObjectContext, TSPObjectReferenceMap, TSPPackageMetadata, TSPPersistedObjectUUIDMap;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_packageLocatorSet;
     TSPObjectContainer *_objectContainer;
     TSPPersistedObjectUUIDMap *_persistedUUIDMap;
+    NSMapTable *_loadedObjects;
     NSObject<OS_dispatch_queue> *_modifyObjectQueue;
     NSHashTable *_modifiedObjectsDuringWrite;
     _Bool _captureSnapshots;
@@ -58,11 +59,12 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_featureIdentifiers;
     NSHashTable *_referencedDatas;
     NSMutableArray *_dataFinalizeHandlers;
-    _Bool _writeSuccess;
-    _Bool _isRecoverableError;
-    _Bool _isCancelled;
-    _Bool _didWriteRootObject;
-    _Bool _didWriteMetadata;
+    // Error parsing type: AB, name: _writeSuccess
+    // Error parsing type: AB, name: _didAttemptRecoveryByDirtyingAllComponents
+    // Error parsing type: AB, name: _isRecoverableError
+    // Error parsing type: AB, name: _isCancelled
+    // Error parsing type: AB, name: _didWriteRootObject
+    // Error parsing type: AB, name: _didWriteMetadata
     NSURL *_documentTargetURL;
     NSURL *_relativeURLForExternalData;
     TSPPackageMetadata *_packageMetadata;
@@ -92,7 +94,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)didWriteData:(id)arg1;
 - (_Bool)didWriteComponent:(id)arg1 wasCopied:(_Bool *)arg2;
 - (_Bool)didWriteObject:(id)arg1 claimingComponent:(id *)arg2;
-- (id)createPackageMetadataWritingDatasWithPackageWriter:(id)arg1 saveOperationState:(id)arg2;
+- (id)createPackageMetadataWritingDatasWithPackageWriter:(id)arg1 saveOperationState:(id)arg2 error:(id *)arg3;
 - (void)didReferenceData:(id)arg1;
 - (void)calculateExternalReferences;
 - (void)updateExternalReferencesForLinkedComponent:(id)arg1;
@@ -105,6 +107,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isComponentPersisted:(id)arg1;
 - (_Bool)shouldArchiveComponent:(id)arg1 checkForceArchive:(_Bool)arg2;
 - (_Bool)shouldArchiveComponent:(id)arg1;
+- (void)attemptDocumentRecovery;
 - (void)copyComponent:(id)arg1 locator:(id)arg2 packageWriter:(id)arg3;
 - (void)writeExternalReferences:(id)arg1 andUpdateLazyReferences:(id)arg2 withPackageWriter:(id)arg3 forComponent:(id)arg4 locator:(id)arg5;
 - (void)archiveComponent:(id)arg1 locator:(id)arg2 compressionAlgorithm:(long long)arg3 storeOutsideObjectArchive:(_Bool)arg4 rootObject:(id)arg5 withPackageWriter:(id)arg6;

@@ -8,7 +8,6 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface ISHintedValue : NSObject
 {
     unsigned long long _options;

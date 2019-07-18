@@ -23,8 +23,9 @@ __attribute__((visibility("hidden")))
     NSArray *_displayItems;
     NSArray *_addedItems;
     NSArray *_removedItems;
-    NSArray *_availablePaddingItems;
     NSMutableDictionary *_itemsGroupedByProvider;
+    NSArray *_availablePaddingItems;
+    NSArray *_paddingItems;
     CNPhotoPickerProviderItem *_addItem;
     id <CNScheduler> _workQueue;
     id <CNScheduler> _callbackQueue;
@@ -35,8 +36,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <CNScheduler> callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(readonly, nonatomic) id <CNScheduler> workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) CNPhotoPickerProviderItem *addItem; // @synthesize addItem=_addItem;
-@property(retain, nonatomic) NSMutableDictionary *itemsGroupedByProvider; // @synthesize itemsGroupedByProvider=_itemsGroupedByProvider;
+@property(retain, nonatomic) NSArray *paddingItems; // @synthesize paddingItems=_paddingItems;
 @property(retain, nonatomic) NSArray *availablePaddingItems; // @synthesize availablePaddingItems=_availablePaddingItems;
+@property(retain, nonatomic) NSMutableDictionary *itemsGroupedByProvider; // @synthesize itemsGroupedByProvider=_itemsGroupedByProvider;
 @property(retain, nonatomic) NSArray *removedItems; // @synthesize removedItems=_removedItems;
 @property(retain, nonatomic) NSArray *addedItems; // @synthesize addedItems=_addedItems;
 @property(retain, nonatomic) NSArray *displayItems; // @synthesize displayItems=_displayItems;

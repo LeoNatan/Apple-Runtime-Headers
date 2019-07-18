@@ -46,6 +46,7 @@
 - (void)modifyAdjustmentWithKey:(id)arg1 modificationBlock:(CDUnknownBlockType)arg2;
 - (id)adjustmentControllerForKey:(id)arg1;
 - (void)removeAdjustmentWithKey:(id)arg1;
+- (void)replaceAdjustment:(id)arg1 withKey:(id)arg2;
 - (void)addAdjustmentWithKey:(id)arg1;
 - (id)availableKeys;
 - (id)compositionKeys;

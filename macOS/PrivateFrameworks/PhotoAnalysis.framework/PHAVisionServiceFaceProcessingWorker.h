@@ -43,6 +43,14 @@
 @property(nonatomic) BOOL personBuilderMergeCandidatesEnabled; // @synthesize personBuilderMergeCandidatesEnabled=_personBuilderMergeCandidatesEnabled;
 @property(nonatomic) unsigned long long incrementalPersonProcessingStage; // @synthesize incrementalPersonProcessingStage=_incrementalPersonProcessingStage;
 - (void).cxx_destruct;
+- (BOOL)shouldProcessContact:(id)arg1;
+- (id)sortedPoolOfContactIdentifiersExcludingContactIdentifiers:(id)arg1;
+- (id)_persistentStorageDirectoryURLWithPhotoLibrary:(id)arg1;
+- (id)_loadPersonsModelWithPhotoLibrary:(id)arg1;
+- (BOOL)classifyContactsWithProgress:(id)arg1 extendTimeoutBlock:(CDUnknownBlockType)arg2;
+- (void)markLastBackgroundContactClassificationJobDate;
+- (BOOL)contactClassificationDidExceedTimeInterval;
+- (BOOL)shouldReclassifyContacts;
 - (void)generateFaceIDModelShouldForce:(BOOL)arg1 progress:(id)arg2 extendTimeoutBlock:(CDUnknownBlockType)arg3;
 - (BOOL)deletePersonModelWithError:(id *)arg1;
 - (BOOL)persistPersonModel:(id)arg1;
@@ -101,6 +109,7 @@
 - (BOOL)hasStandaloneJobsForScenario:(unsigned long long)arg1;
 - (BOOL)hasAdditionalJobsForScenario:(unsigned long long)arg1 requestReason:(unsigned long long)arg2;
 - (id)statusAsDictionary;
+- (BOOL)_needsToRunContactClassificationForScenario:(unsigned long long)arg1;
 - (BOOL)_needToRunFaceIDModelCreationForScenario:(unsigned long long)arg1;
 - (BOOL)_needToRunPersonPromoterForScenario:(unsigned long long)arg1;
 - (BOOL)_needToRunPersonBuildingJobForScenario:(unsigned long long)arg1;
@@ -112,7 +121,7 @@
 - (void)cooldown;
 - (void)warmup;
 - (void)shutdown;
-- (BOOL)performPersonBuildingWithCanceler:(id)arg1 error:(id *)arg2;
+- (BOOL)performPersonBuildingWithCanceler:(id)arg1 extendTimeoutBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
 - (BOOL)_setAllFaceGroupsNeedPersonBuilding;
 - (BOOL)processDirtyFaceCrop:(id)arg1 error:(id *)arg2;
 - (BOOL)_updateFaceCropFace:(id)arg1 withFaceprintForFaceCrop:(id)arg2 createFaceTorsoprint:(BOOL)arg3 error:(id *)arg4;

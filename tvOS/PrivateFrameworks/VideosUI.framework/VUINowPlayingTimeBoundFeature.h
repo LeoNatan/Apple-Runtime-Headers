@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic, getter=isSkippable) _Bool skippable; // @synthesize skippable=_skippable;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
-@property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
+@property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic, getter=shouldAutoRemove) _Bool autoRemove; // @synthesize autoRemove=_autoRemove;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 - (void).cxx_destruct;

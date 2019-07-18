@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (long long)comparatorMode;
 @property(retain, nonatomic) PXLabeledValue *unitValue;
 @property(readonly, nonatomic) NSArray *unitValues;
 @property(retain, nonatomic) NSNumber *numberOfUnitValue;

@@ -10,6 +10,7 @@
 
 @interface VUIAuthenticationManager : NSObject
 {
+    _Bool __isObservingAccountStoreChange;
     SSAuthenticateRequest *__authRequest;
 }
 
@@ -17,15 +18,18 @@
 + (id)_userAccount;
 + (void)signOutUserWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)signInUserWithAppleID:(id)arg1 password:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-+ (void)requestAuthenticationWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (void)requestAuthenticationAlwaysPrompt:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
++ (_Bool)allowsAccountModification;
 + (id)userFullName;
 + (id)userLastName;
 + (id)userFirstName;
 + (id)userAccountName;
 + (_Bool)userHasActiveAccount;
 + (id)sharedInstance;
+@property(nonatomic) _Bool _isObservingAccountStoreChange; // @synthesize _isObservingAccountStoreChange=__isObservingAccountStoreChange;
 @property(retain, nonatomic) SSAuthenticateRequest *_authRequest; // @synthesize _authRequest=__authRequest;
 - (void).cxx_destruct;
+- (void)_accountStoreDidChange:(id)arg1;
 
 @end
 

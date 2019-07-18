@@ -28,6 +28,7 @@
 - (id)localizedDescriptionSummary;
 - (id)appIdentifier;
 - (long long)intentCategory;
+- (id)localizedKeyParameterDisplayName;
 - (id)localizedSubtitle;
 - (id)localizedName;
 - (id)name;

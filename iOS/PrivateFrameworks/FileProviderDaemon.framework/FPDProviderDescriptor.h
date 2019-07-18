@@ -24,8 +24,7 @@
     _Bool _hasExplicitExtensionStorageURLs;
     NSString *_identifier;
     NSString *_localizedName;
-    NSString *_owningApplicationIdentifier;
-    NSString *_containingBundleIdentifier;
+    NSString *_topLevelBundleIdentifier;
     NSString *_bundleVersion;
     NSString *_extensionPointVersion;
     NSString *_purposeIdentifier;
@@ -55,8 +54,7 @@
 @property(nonatomic) _Bool readonly; // @synthesize readonly=_readonly;
 @property(retain, nonatomic) NSString *extensionPointVersion; // @synthesize extensionPointVersion=_extensionPointVersion;
 @property(retain, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
-@property(retain, nonatomic) NSString *containingBundleIdentifier; // @synthesize containingBundleIdentifier=_containingBundleIdentifier;
-@property(retain, nonatomic) NSString *owningApplicationIdentifier; // @synthesize owningApplicationIdentifier=_owningApplicationIdentifier;
+@property(retain, nonatomic) NSString *topLevelBundleIdentifier; // @synthesize topLevelBundleIdentifier=_topLevelBundleIdentifier;
 @property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;

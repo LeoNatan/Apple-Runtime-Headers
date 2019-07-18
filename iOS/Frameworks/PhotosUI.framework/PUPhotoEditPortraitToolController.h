@@ -11,13 +11,13 @@
 #import <PhotosUI/PUPhotoEditApertureToolbarDelegate-Protocol.h>
 #import <PhotosUI/PXChangeObserver-Protocol.h>
 
-@class CEKApertureButton, CEKLightingControl, CEKLightingNameBadge, CEKSlider, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PFCoalescer, PULightingIntensityButton, PUPhotoEditApertureToolbar, UIButton, UIView, _PULightingGradientView;
+@class CEKApertureButton, CEKLightingControl, CEKLightingNameBadge, CEKSlider, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PFCoalescer, PUPhotoEditApertureToolbar, UIButton, UIView, _PULightingGradientView;
 
 __attribute__((visibility("hidden")))
 @interface PUPhotoEditPortraitToolController : PUPhotoEditToolController <PUPhotoEditApertureToolbarDelegate, CEKLightingControlDelegate, CEKSliderDelegate, PXChangeObserver>
 {
     CEKApertureButton *_apertureButton;
-    PULightingIntensityButton *_lightingIntensityButton;
+    UIButton *_lightingIntensityButton;
     UIView *_lightingContainer;
     UIView *_apertureContainer;
     NSMutableArray *_containerConstraints;

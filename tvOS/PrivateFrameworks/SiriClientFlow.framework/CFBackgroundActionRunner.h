@@ -10,15 +10,17 @@
 
 @interface CFBackgroundActionRunner : NSObject
 {
+    _Bool _runningLocally;
     _Bool _backgroundActionRunnerSuccess;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-+ (void)_handleBackgroundActionRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property _Bool backgroundActionRunnerSuccess; // @synthesize backgroundActionRunnerSuccess=_backgroundActionRunnerSuccess;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property _Bool runningLocally; // @synthesize runningLocally=_runningLocally;
 - (void).cxx_destruct;
 - (id)init;
+- (void)_handleBackgroundActionRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleBackgroundAction:(id)arg1 onDispatchGroup:(id)arg2;
 - (void)runBackgroundActions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 

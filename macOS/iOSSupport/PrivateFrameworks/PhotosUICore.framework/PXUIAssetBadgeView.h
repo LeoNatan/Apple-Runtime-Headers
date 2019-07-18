@@ -59,7 +59,7 @@
 - (void)_invalidateBottomTrailingImage;
 - (void)_updateBottomLeadingImageIfNeeded;
 - (void)_invalidateBottomLeadingImage;
-- (id)_updateTopGroup:(id)arg1 withBadgeInfo:(struct PXAssetBadgeInfo)arg2 origin:(struct CGPoint)arg3;
+- (id)_updateTopGroup:(id)arg1 withBadgeInfo:(struct PXAssetBadgeInfo)arg2;
 - (void)_updateTopRightElementsIfNeeded;
 - (void)_updateTopLeftElementsIfNeeded;
 - (void)_invalidateTopRightElements;

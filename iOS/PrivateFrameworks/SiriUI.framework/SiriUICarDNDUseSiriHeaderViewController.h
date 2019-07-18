@@ -33,6 +33,8 @@
 @property(nonatomic) __weak id <SiriUICarDNDDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)contextProvided:(id)arg1;
+- (_Bool)_canShowWhileLocked;
+- (void)_sendCardAppearedAnalyticsEvent;
 - (void)_removeContextProvider;
 - (id)_hintContext;
 - (void)_addContextProvider;

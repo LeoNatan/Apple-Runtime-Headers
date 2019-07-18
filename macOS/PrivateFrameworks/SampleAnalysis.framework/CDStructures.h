@@ -203,6 +203,14 @@ struct stack_snapshot_frame64 {
     unsigned long long _field2;
 };
 
+struct stackshot_thread_turnstileinfo {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned char _field3;
+    unsigned char _field4;
+    unsigned long long _field5;
+};
+
 struct stackshot_thread_waitinfo {
     unsigned long long _field1;
     unsigned long long _field2;
@@ -434,6 +442,15 @@ typedef struct {
     unsigned char _field1;
     unsigned char _field2;
     unsigned long long _field3;
+    unsigned char _field4;
+    unsigned char _field5;
+    unsigned long long _field6;
+} CDStruct_f186406e;
+
+typedef struct {
+    unsigned char _field1;
+    unsigned char _field2;
+    unsigned long long _field3;
     unsigned int _field4;
 } CDStruct_b1ad6422;
 
@@ -487,6 +504,13 @@ typedef struct {
     unsigned int _field11;
     unsigned int _field12;
 } CDStruct_0ce2a4d3;
+
+typedef struct {
+    unsigned char _field1;
+    unsigned char _field2;
+    unsigned long long _field3;
+    unsigned char _field4[16];
+} CDStruct_e7a0f457;
 
 typedef struct {
     unsigned char _field1;
@@ -743,6 +767,40 @@ typedef struct {
         } _field2;
     } _field7;
 } CDStruct_bc1efd6c;
+
+typedef struct {
+    unsigned char _field1;
+    unsigned char _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    unsigned long long _field5;
+    unsigned long long _field6;
+    unsigned long long _field7;
+    unsigned long long _field8;
+    unsigned long long _field9;
+    unsigned long long _field10;
+    unsigned long long _field11;
+    unsigned long long _field12;
+    unsigned long long _field13;
+    unsigned long long _field14;
+    unsigned long long _field15;
+    unsigned long long _field16;
+    int _field17;
+    int _field18;
+    unsigned int _field19;
+    unsigned long long _field20;
+    unsigned char _field21;
+    unsigned char _field22;
+    unsigned char _field23;
+    unsigned char _field24;
+    unsigned char _field25;
+    unsigned char _field26;
+    unsigned char _field27;
+    unsigned int _field28;
+    unsigned char _field29;
+    CDUnion_ac6a3b09 _field30;
+    unsigned long long _field31;
+} CDStruct_cb201eb0;
 
 typedef struct {
     unsigned char _field1;

@@ -6,12 +6,12 @@
 
 #import <IconServices/ISShapeCompositorResource.h>
 
-__attribute__((visibility("hidden")))
 @interface ISCircle : ISShapeCompositorResource
 {
 }
 
 - (id)imageForSize:(struct CGSize)arg1 scale:(double)arg2;
+- (id)init;
 
 @end
 

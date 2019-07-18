@@ -20,6 +20,7 @@
 + (void)setPrototypePrefCache:(id)arg1;
 + (id)prototypePrefCache;
 + (id)prefWithDomain:(id)arg1 key:(id)arg2 title:(id)arg3 defaultValue:(id)arg4 valueChangedBlock:(CDUnknownBlockType)arg5;
++ (id)smartWidgetRelaxHomeInRangeCheck;
 + (id)smartWidgetDebugGestures;
 + (id)smartWidgetDebugShowScore;
 + (id)showInternalSettings;

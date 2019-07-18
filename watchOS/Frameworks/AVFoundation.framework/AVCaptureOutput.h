@@ -17,9 +17,9 @@
 + (id)availableVideoCodecTypesForSourceDevice:(id)arg1 sourceFormat:(id)arg2 outputDimensions:(CDStruct_1ef3fb1f)arg3 fileType:(id)arg4 videoCodecTypesWhiteList:(id)arg5;
 + (void)initialize;
 - (_Bool)updateVideoSettingsForConnection:(id)arg1;
-- (id)recommendedOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2 videoCodecType:(id)arg3 fileType:(id)arg4;
+- (id)recommendedOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2 videoCodecType:(id)arg3 fileType:(id)arg4 isIris:(_Bool)arg5;
 - (id)_recommendedAudioOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2 fileType:(id)arg3;
-- (id)_recommendedVideoOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2 videoCodec:(id)arg3;
+- (id)_recommendedVideoOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2 videoCodec:(id)arg3 isIris:(_Bool)arg4;
 - (void)bumpChangeSeed;
 - (int)changeSeed;
 - (id)liveConnections;

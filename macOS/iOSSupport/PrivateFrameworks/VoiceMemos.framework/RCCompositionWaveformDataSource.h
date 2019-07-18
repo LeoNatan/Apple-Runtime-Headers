@@ -8,24 +8,22 @@
 
 #import <VoiceMemos/RCWaveformDataSourceObserver-Protocol.h>
 
-@class NSObject, NSOperationQueue, NSString, RCComposition, _RCTimeRangeFileInputWaveformDataSource;
+@class NSObject, NSString, RCComposition, _RCTimeRangeFileInputWaveformDataSource;
 @protocol OS_dispatch_queue;
 
 @interface RCCompositionWaveformDataSource : RCWaveformDataSource <RCWaveformDataSourceObserver>
 {
-    NSObject<OS_dispatch_queue> *_searialQueue;
+    NSObject<OS_dispatch_queue> *_serialQueue;
     float _progressOfFinishedFragments;
     float _progressWeightPerFragment;
-    _RCTimeRangeFileInputWaveformDataSource *_activeFragmentDataSource;
     BOOL _preferLoadingFragmentWaveforms;
     BOOL _saveGeneratedWaveform;
     BOOL _highlightLastDecomposedFragment;
     RCComposition *_composition;
-    NSOperationQueue *_fragmentLoadingOperationQueue;
+    _RCTimeRangeFileInputWaveformDataSource *_activeFragmentDataSource;
 }
 
-+ (id)fragmentLoadingOperationQueue;
-@property(retain, nonatomic) NSOperationQueue *fragmentLoadingOperationQueue; // @synthesize fragmentLoadingOperationQueue=_fragmentLoadingOperationQueue;
+@property(retain) _RCTimeRangeFileInputWaveformDataSource *activeFragmentDataSource; // @synthesize activeFragmentDataSource=_activeFragmentDataSource;
 @property(nonatomic) BOOL highlightLastDecomposedFragment; // @synthesize highlightLastDecomposedFragment=_highlightLastDecomposedFragment;
 @property(nonatomic) BOOL saveGeneratedWaveform; // @synthesize saveGeneratedWaveform=_saveGeneratedWaveform;
 @property(readonly, nonatomic) BOOL preferLoadingFragmentWaveforms; // @synthesize preferLoadingFragmentWaveforms=_preferLoadingFragmentWaveforms;
@@ -39,10 +37,12 @@
 - (id)saveableWaveform;
 - (double)duration;
 - (id)synchronouslyApproximateWaveformSegmentsByReadingCurrentFileAheadTimeRange:(CDStruct_73a5d3ca)arg1;
-- (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (BOOL)_synchronouslyAppendSegmentsForAVContentURL:(id)arg1 isDecomposedFragment:(BOOL)arg2 sourceTimeRange:(CDStruct_73a5d3ca)arg3 destinationTime:(double)arg4;
+- (BOOL)_synchronouslyAppendSegmentsFromDataSource:(id)arg1;
+- (id)_dataSourceForAVContentURL:(id)arg1 isDecomposedFragment:(BOOL)arg2 sourceTimeRange:(CDStruct_73a5d3ca)arg3 destinationTime:(double)arg4;
 - (float)loadingProgress;
 - (void)startLoading;
+- (void)dealloc;
+- (void)cancelLoading;
 - (id)initWithComposition:(id)arg1;
 
 // Remaining properties

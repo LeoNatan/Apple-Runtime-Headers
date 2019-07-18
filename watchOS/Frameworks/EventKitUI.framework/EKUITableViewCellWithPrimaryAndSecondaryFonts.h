@@ -19,7 +19,9 @@
 + (id)timeLabelsFont;
 + (void)initialize;
 - (struct UIEdgeInsets)layoutMargins;
+- (id)secondaryTextLabelFont;
 - (id)primaryTextLabelFont;
+- (id)timeLabelsFont;
 
 @end
 

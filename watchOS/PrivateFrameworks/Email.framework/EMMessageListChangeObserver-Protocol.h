@@ -6,7 +6,7 @@
 
 #import <Email/EMCollectionChangeObserver-Protocol.h>
 
-@class EMCollection, NSArray;
+@class EMCollection, NSArray, NSDictionary;
 @protocol EMCollectionItemID;
 
 @protocol EMMessageListChangeObserver <EMCollectionChangeObserver>
@@ -14,6 +14,7 @@
 - (void)collection:(EMCollection *)arg1 addedItemIDs:(NSArray *)arg2 toThreadWithItemID:(id <EMCollectionItemID>)arg3 before:(id <EMCollectionItemID>)arg4 unreadItemIDs:(NSArray *)arg5;
 
 @optional
+- (void)collection:(EMCollection *)arg1 oldestItemsUpdatedForMailboxes:(NSDictionary *)arg2;
 - (void)collection:(EMCollection *)arg1 didFinishInitialLoadForThreadWithItemID:(id <EMCollectionItemID>)arg2;
 @end
 

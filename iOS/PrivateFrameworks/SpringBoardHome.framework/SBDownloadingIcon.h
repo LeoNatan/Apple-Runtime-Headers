@@ -15,6 +15,8 @@
     id <SBDownloadingIconDataSource> _downloadingIconDataSource;
 }
 
++ (_Bool)isDownloadingIconLeafIdentifier:(id)arg1;
++ (id)applicationPlaceholderBundleIDForDownloadingIconLeafIdentifier:(id)arg1;
 + (id)leafIdentifierForApplicationPlaceholderBundleID:(id)arg1;
 @property(nonatomic) _Bool uninstalledByUser; // @synthesize uninstalledByUser=_uninstalledByUser;
 @property(readonly, nonatomic) id <SBDownloadingIconDataSource> downloadingIconDataSource; // @synthesize downloadingIconDataSource=_downloadingIconDataSource;
@@ -26,8 +28,6 @@
 - (void)setDownloadingIconDataSource:(id)arg1;
 - (void)reloadForStatusChange;
 @property(readonly, copy, nonatomic) NSString *realDisplayName;
-- (id)_darkenedIconImageForImage:(id)arg1;
-- (id)gridCellImageWithInfo:(struct SBIconImageInfo)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDownloadingIconDataSource:(id)arg1;
 

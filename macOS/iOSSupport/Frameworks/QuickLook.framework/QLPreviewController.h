@@ -20,6 +20,8 @@
     unsigned long long _quickLookVisibility;
 }
 
++ (id)keyPathsForValuesAffectingCurrentPreviewItemIndex;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (BOOL)canPreviewItem:(id)arg1;
 @property(nonatomic) unsigned long long quickLookVisibility; // @synthesize quickLookVisibility=_quickLookVisibility;
 @property(retain) NSURL *currentlyPresentedThumbnailURL; // @synthesize currentlyPresentedThumbnailURL=_currentlyPresentedThumbnailURL;

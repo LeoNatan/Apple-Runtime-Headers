@@ -13,8 +13,6 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (double)timeIntervalBeforePredictedLocationTransitionMinutesBefore:(unsigned long long)arg1;
-+ (double)timeIntervalForPredictedLocationTransitionMinutesBefore:(unsigned long long)arg1;
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
 @property(nonatomic) unsigned long long minutesBefore; // @synthesize minutesBefore=_minutesBefore;

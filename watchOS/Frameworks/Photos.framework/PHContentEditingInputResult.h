@@ -39,8 +39,9 @@
 - (id)flipImageURLs;
 - (void)addVideoResult:(id)arg1;
 - (void)addImageResult:(id)arg1;
+- (void)clearAdjustmentData;
 - (void)addAdjustmentDataResult:(id)arg1;
-- (void)_mergeInfoDictionaryFromResult:(id)arg1;
+- (void)mergeInfoDictionaryFromResult:(id)arg1;
 - (id)videoSandboxExtensionToken;
 - (id)imageSandboxExtensionToken;
 - (_Bool)isCancelled;

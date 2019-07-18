@@ -9,11 +9,12 @@
 #import <SpringBoard/BSInvalidatable-Protocol.h>
 #import <SpringBoard/SBSceneHandleObserver-Protocol.h>
 
-@class CADisplay, CADisplayMode, FBSDisplayConfiguration, FBSDisplayIdentity, FBScene, NSString, SBApplication, SBApplicationSceneHandle, _UIRootWindow;
-@protocol OS_dispatch_queue;
+@class CADisplay, CADisplayMode, FBSDisplayConfiguration, FBSDisplayIdentity, FBSDisplayLayoutPublisher, FBScene, NSString, SBApplication, SBApplicationSceneHandle, SBSExternalDisplayLayoutElement, _UIRootWindow;
+@protocol BSInvalidatable, OS_dispatch_queue;
 
 @interface SBExternalDisplayPresenter : NSObject <SBSceneHandleObserver, BSInvalidatable>
 {
+    FBSDisplayLayoutPublisher *_layoutPublisher;
     FBSDisplayIdentity *_identity;
     CADisplay *_caDisplay;
     _Bool _invalidated;
@@ -34,6 +35,8 @@
     FBScene *_presentationScene;
     FBSDisplayConfiguration *_presentationSceneConfiguration;
     _Bool _hasEnqueuedPresentationUpdate;
+    SBSExternalDisplayLayoutElement *_presentedLayoutElement;
+    id <BSInvalidatable> _presentedLayoutElementAssertion;
 }
 
 - (void).cxx_destruct;
@@ -46,7 +49,7 @@
 - (id)updateToConfiguration:(id)arg1 withForegroundApp:(id)arg2;
 - (void)dealloc;
 - (void)invalidate;
-- (id)initWithDisplayConfiguration:(id)arg1;
+- (id)initWithLayoutPublisher:(id)arg1 displayConfiguration:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

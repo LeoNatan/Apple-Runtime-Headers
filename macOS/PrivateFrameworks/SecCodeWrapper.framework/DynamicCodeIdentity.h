@@ -8,19 +8,21 @@
 
 @interface DynamicCodeIdentity : CodeIdentity
 {
-    int _pid;
+    CDStruct_4c969caf _token;
 }
 
++ (id)dynamicCodeIdentityForAuditToken:(CDStruct_4c969caf)arg1 error:(id *)arg2;
++ (id)dynamicCodeIdentityForAuditToken:(CDStruct_4c969caf)arg1;
 + (id)dynamicCodeIdentityForProcessIdentifier:(int)arg1 error:(id *)arg2;
 + (id)dynamicCodeIdentityForProcessIdentifier:(int)arg1;
 + (id)signingRoot;
 + (id)currentApplication;
 - (id)description;
 - (id)staticCodeIdentity;
-- (id)guestWithProcessIdentifier:(int)arg1 error:(id *)arg2;
-- (id)guestWithProcessIdentifier:(int)arg1;
+- (id)guestWithAuditToken:(CDStruct_4c969caf)arg1 error:(id *)arg2;
+- (id)guestWithAuditToken:(CDStruct_4c969caf)arg1;
 - (id)initWithSecCodeRef:(struct __SecCode *)arg1;
-- (id)initWithSecCodeRef:(struct __SecCode *)arg1 processIdentifier:(int)arg2;
+- (id)initWithSecCodeRef:(struct __SecCode *)arg1 auditToken:(CDStruct_4c969caf)arg2;
 - (BOOL)validateWithFlags:(unsigned int)arg1 additionalRequirement:(id)arg2 error:(id *)arg3;
 
 @end

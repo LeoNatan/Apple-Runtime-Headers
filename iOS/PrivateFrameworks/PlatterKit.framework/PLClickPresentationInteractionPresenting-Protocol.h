@@ -16,5 +16,6 @@
 @property(readonly, nonatomic) struct CGRect finalDismissedFrameOfViewForPreview;
 @property(readonly, nonatomic) struct CGRect finalPresentedFrameOfViewForPreview;
 @property(readonly, nonatomic) struct CGRect initialPresentedFrameOfViewForPreview;
+@property(nonatomic, getter=isHighlighted) _Bool highlighted;
 @end
 

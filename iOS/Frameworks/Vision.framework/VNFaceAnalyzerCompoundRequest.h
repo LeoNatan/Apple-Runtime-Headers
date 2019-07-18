@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 + (id)compoundRequestsForOriginalRequests:(id)arg1 withPerformingContext:(id)arg2 error:(id *)arg3;
 + (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
 - (void)assignOriginalRequestsResultsFromObservations:(id)arg1 obtainedInPerformingContext:(id)arg2;
+- (unsigned long long)detectionLevel;
 - (void)_determineFacesToProcessFrom:(id)arg1 outputFacesThatNeedNoProcessing:(id)arg2 outputfacesThatNeedAttributes:(id)arg3 isFaceprintRequest:(_Bool)arg4 isAttributeRequest:(_Bool)arg5;
 - (_Bool)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)initWithDetectorType:(id)arg1 configuration:(id)arg2;

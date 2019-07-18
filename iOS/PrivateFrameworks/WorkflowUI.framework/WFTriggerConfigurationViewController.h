@@ -25,7 +25,7 @@
 - (void)finish;
 - (void)dismiss:(id)arg1;
 - (void)viewDidLoad;
-- (_Bool)isModalInPopover;
+- (_Bool)isModalInPresentation;
 - (void)updateNextButtonEnabledState;
 - (id)initWithTrigger:(id)arg1 triggerManager:(id)arg2 mode:(unsigned long long)arg3;
 

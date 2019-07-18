@@ -15,6 +15,7 @@
     _Bool _btConfigured;
     _Bool _btConnecting;
     struct BTDeviceImpl *_btDevice;
+    _Bool _btDisconnected;
     struct BTPairingAgentImpl *_btPairingAgent;
     _Bool _btPairingAgentStarted;
     struct BTSessionImpl *_btSession;
@@ -29,6 +30,8 @@
     NSObject<OS_dispatch_source> *_timeoutTimer;
     NSObject<OS_os_transaction> *_transaction;
     struct LogCategory *_ucat;
+    _Bool _connectOnly;
+    _Bool _disconnectOnly;
     _Bool _guestMode;
     CDUnknownBlockType _completionHandler;
     NSString *_deviceAddress;
@@ -43,7 +46,9 @@
 @property(copy, nonatomic) NSData *guestKey; // @synthesize guestKey=_guestKey;
 @property(copy, nonatomic) NSString *guestAddress; // @synthesize guestAddress=_guestAddress;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
+@property(nonatomic) _Bool disconnectOnly; // @synthesize disconnectOnly=_disconnectOnly;
 @property(copy, nonatomic) NSString *deviceAddress; // @synthesize deviceAddress=_deviceAddress;
+@property(nonatomic) _Bool connectOnly; // @synthesize connectOnly=_connectOnly;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
 - (void)_btDeletePairingAndRetry;

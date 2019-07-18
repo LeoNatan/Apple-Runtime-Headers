@@ -4,37 +4,51 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <HMFoundation/HMFObject.h>
 
+#import <HomeAI/HMFLogging-Protocol.h>
 #import <HomeAI/NSSecureCoding-Protocol.h>
 
-@class HMICameraVideoFrameMotionAnalysisResult;
+@class HMICameraVideoFrameMotionAnalysisResult, NSData, NSString;
 
-@interface HMICameraVideoFrame : NSObject <NSSecureCoding>
+@interface HMICameraVideoFrame : HMFObject <NSSecureCoding, HMFLogging>
 {
     unsigned long long _frameId;
     unsigned long long _fragmentSequenceNumber;
     struct __CVBuffer *_pixelBuffer;
+    struct __CVBuffer *_regionOfInterestPixelBuffer;
+    NSData *_jpegData;
     HMICameraVideoFrameMotionAnalysisResult *_motionResult;
+    struct CGSize _size;
     CDStruct_1b6d18a9 _presentationTime;
 }
 
++ (id)logCategory;
 + (_Bool)supportsSecureCoding;
 @property(retain) HMICameraVideoFrameMotionAnalysisResult *motionResult; // @synthesize motionResult=_motionResult;
+@property(readonly) NSData *jpegData; // @synthesize jpegData=_jpegData;
+@property(readonly) struct __CVBuffer *regionOfInterestPixelBuffer; // @synthesize regionOfInterestPixelBuffer=_regionOfInterestPixelBuffer;
 @property(readonly) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
 @property(readonly) unsigned long long fragmentSequenceNumber; // @synthesize fragmentSequenceNumber=_fragmentSequenceNumber;
 @property(readonly) unsigned long long frameId; // @synthesize frameId=_frameId;
+@property(readonly) struct CGSize size; // @synthesize size=_size;
 @property(readonly) CDStruct_1b6d18a9 presentationTime; // @synthesize presentationTime=_presentationTime;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
-@property(readonly) unsigned long long height;
-- (struct __CVBuffer *)getCroppedPixelBuffer:(id *)arg1;
+- (_Bool)convertToJPEGAndGenerateRegionOfInterestWithSize:(struct CGSize)arg1 error:(id *)arg2;
 - (id)JPEGRepresentationWithDownscaleFactor:(float)arg1 outSize:(struct CGSize *)arg2;
+- (id)initWithJPEGData:(id)arg1 presentationTime:(CDStruct_1b6d18a9)arg2 frameId:(unsigned long long)arg3 fragmentSequenceNumber:(unsigned long long)arg4 size:(struct CGSize)arg5;
 - (id)initWithPixelBuffer:(struct __CVBuffer *)arg1 presentationTime:(CDStruct_1b6d18a9)arg2 frameId:(unsigned long long)arg3 fragmentSequenceNumber:(unsigned long long)arg4;
 - (id)initWithPixelBuffer:(struct __CVBuffer *)arg1;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

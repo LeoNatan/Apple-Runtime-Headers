@@ -177,8 +177,8 @@ struct ModelDescription {
 struct MultiArrayBuffer {
     CDUnknownFunctionPointerType *_field1;
     struct shared_ptr<unsigned char> _field2;
-    vector_55d7bafa _field3;
-    vector_55d7bafa _field4;
+    vector_8b7b626a _field3;
+    vector_8b7b626a _field4;
     int _field5;
     unsigned int _field6;
     unsigned short _field7;
@@ -192,6 +192,14 @@ struct OArchive {
     _Bool _field1;
     struct shared_ptr<Archiver::_OArchiveImpl> _field2;
     struct map<std::__1::basic_string<char>, OArchive, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, OArchive>>> _field3;
+};
+
+struct Pipeline {
+    CDUnknownFunctionPointerType *_field1;
+    struct InternalMetadataWithArenaLite _field2;
+    RepeatedPtrField_f3160e5f _field3;
+    RepeatedPtrField_fe7cf120 _field4;
+    int _field5;
 };
 
 struct Prediction {
@@ -219,6 +227,13 @@ struct RepeatedPtrField<CoreML::Specification::FeatureDescription> {
 };
 
 struct RepeatedPtrField<CoreML::Specification::Model> {
+    struct Arena *_field1;
+    int _field2;
+    int _field3;
+    struct Rep *_field4;
+};
+
+struct RepeatedPtrField<std::__1::basic_string<char>> {
     struct Arena *_field1;
     int _field2;
     int _field3;
@@ -271,7 +286,7 @@ struct _IArchiveImpl;
 
 struct _KDBoundingBox {
     struct vector<_KDInterval, std::__1::allocator<_KDInterval>> _intervals;
-    unsigned int _numDimensions;
+    unsigned long _numDimensions;
 };
 
 struct _KDInterval;
@@ -352,6 +367,10 @@ struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>
             } ;
         } __value_;
     } __r_;
+};
+
+struct linear_congruential_engine<unsigned int, 48271, 0, 2147483647> {
+    unsigned int __x_;
 };
 
 struct map<std::__1::basic_string<char>, IArchive, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, IArchive>>> {
@@ -610,6 +629,14 @@ struct vector<float, std::__1::allocator<float>> {
     } __end_cap_;
 };
 
+struct vector<int, std::__1::allocator<int>> {
+    int *__begin_;
+    int *__end_;
+    struct __compressed_pair<int *, std::__1::allocator<int>> {
+        int *__value_;
+    } __end_cap_;
+};
+
 struct vector<long long, std::__1::allocator<long long>> {
     long long *__begin_;
     long long *__end_;
@@ -682,14 +709,6 @@ struct vector<unsigned char, std::__1::allocator<unsigned char>> {
     } __end_cap_;
 };
 
-struct vector<unsigned int, std::__1::allocator<unsigned int>> {
-    unsigned int *__begin_;
-    unsigned int *__end_;
-    struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
-        unsigned int *__value_;
-    } __end_cap_;
-};
-
 struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
     unsigned long long *__begin_;
     unsigned long long *__end_;
@@ -699,11 +718,11 @@ struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
 };
 
 struct vector<unsigned long, std::__1::allocator<unsigned long>> {
-    unsigned long *_field1;
-    unsigned long *_field2;
+    unsigned long *__begin_;
+    unsigned long *__end_;
     struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long>> {
-        unsigned long *_field1;
-    } _field3;
+        unsigned long *__value_;
+    } __end_cap_;
 };
 
 #pragma mark Typedef'd Structures
@@ -752,6 +771,13 @@ typedef struct RepeatedPtrField<CoreML::Specification::Model> {
     int _field3;
     struct Rep *_field4;
 } RepeatedPtrField_f3160e5f;
+
+typedef struct RepeatedPtrField<std::__1::basic_string<char>> {
+    struct Arena *_field1;
+    int _field2;
+    int _field3;
+    struct Rep *_field4;
+} RepeatedPtrField_fe7cf120;
 
 typedef struct __map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, void *>*, int>> {
     struct __tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, void *>*, int> {
@@ -932,12 +958,12 @@ typedef struct vector<unsigned long long, std::__1::allocator<unsigned long long
 } vector_7984f87c;
 
 typedef struct vector<unsigned long, std::__1::allocator<unsigned long>> {
-    unsigned long *_field1;
-    unsigned long *_field2;
+    unsigned long *__begin_;
+    unsigned long *__end_;
     struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long>> {
-        unsigned long *_field1;
-    } _field3;
-} vector_55d7bafa;
+        unsigned long *__value_;
+    } __end_cap_;
+} vector_8b7b626a;
 
 #pragma mark Named Unions
 

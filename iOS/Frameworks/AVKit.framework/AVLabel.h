@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool showsLoadingIndicator; // @synthesize showsLoadingIndicator=_showsLoadingIndicator;
 - (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) _Bool collapsedOrExcluded;
+- (void)setHidden:(_Bool)arg1;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
 - (struct CGSize)intrinsicContentSize;

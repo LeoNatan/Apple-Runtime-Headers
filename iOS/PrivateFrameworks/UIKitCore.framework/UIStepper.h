@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIStepperControl-Protocol.h>
 
-@class NSMutableDictionary, UIColor, UIView;
+@class NSMutableDictionary, UIView;
 @protocol UIStepperVisualElement;
 
 @interface UIStepper : UIControl <UIStepperControl>
@@ -39,7 +39,8 @@
 @property(nonatomic) double minimumValue; // @synthesize minimumValue=_minimumValue;
 @property(nonatomic) double value; // @synthesize value=_value;
 - (void).cxx_destruct;
-@property(retain, nonatomic) UIColor *tintColor; // @dynamic tintColor;
+- (void)tintColorDidChange;
+- (void)setTintColor:(id)arg1;
 - (id)decrementImageForState:(unsigned long long)arg1;
 - (void)setDecrementImage:(id)arg1 forState:(unsigned long long)arg2;
 - (id)incrementImageForState:(unsigned long long)arg1;
@@ -60,7 +61,7 @@
 - (_Bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)_refreshVisualElementForTraitCollection:(id)arg1;
+- (void)_refreshVisualElementForTraitCollection:(id)arg1 populatingAPIProperties:(_Bool)arg2;
 - (void)_refreshVisualElement;
 - (void)_commonStepperInit;
 - (void)encodeWithCoder:(id)arg1;

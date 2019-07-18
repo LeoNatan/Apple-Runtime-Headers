@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     HKUIMetricColors *_metricColors;
     HKInspectableValueInRange *_chartValueWithRange;
     NSString *_valueString;
+    NSString *_unitString;
     HKMedicalRecord *_medicalRecord;
     WDMedicalRecordCategorySummary *_categorySummary;
     id <HKClinicalBrandable> _brandableObject;
@@ -66,6 +67,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <HKClinicalBrandable> brandableObject; // @synthesize brandableObject=_brandableObject;
 @property(nonatomic) __weak WDMedicalRecordCategorySummary *categorySummary; // @synthesize categorySummary=_categorySummary;
 @property(retain, nonatomic) HKMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
+@property(retain, nonatomic) NSString *unitString; // @synthesize unitString=_unitString;
 @property(retain, nonatomic) NSString *valueString; // @synthesize valueString=_valueString;
 @property(retain, nonatomic) HKInspectableValueInRange *chartValueWithRange; // @synthesize chartValueWithRange=_chartValueWithRange;
 @property(retain, nonatomic) HKUIMetricColors *metricColors; // @synthesize metricColors=_metricColors;
@@ -81,7 +83,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool separatorHidden; // @synthesize separatorHidden=_separatorHidden;
 @property(nonatomic) long long separatorStyle; // @synthesize separatorStyle=_separatorStyle;
 @property(nonatomic) _Bool extraTopPadding; // @synthesize extraTopPadding=_extraTopPadding;
-@property(nonatomic) long long displayItemType; // @synthesize displayItemType=_displayItemType;
+@property(nonatomic) long long displayItemType;
 - (void).cxx_destruct;
 - (id)description;
 - (id)init;

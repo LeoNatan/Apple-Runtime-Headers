@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)_createImageViewIfNeccessary;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (void)_multiselectColorChanged;
 @property(readonly, nonatomic) _Bool wantsImageShadow;
@@ -43,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithTableViewCell:(id)arg1 editingStyle:(int)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)defaultSize;
+- (id)_renderedImage;
 - (id)_currentImage;
 - (void)_updateImageView;
 - (id)_multiSelectSelectedImage;

@@ -8,31 +8,31 @@
 
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXCuratedLibraryActionPerformerDelegate-Protocol.h>
-#import <PhotosUICore/PXCuratedLibraryFooterVisibilityManagerDelegate-Protocol.h>
+#import <PhotosUICore/PXCuratedLibraryFooterControllerDelegate-Protocol.h>
 #import <PhotosUICore/PXCuratedLibrarySkimmingControllerDelegate-Protocol.h>
 #import <PhotosUICore/PXCuratedLibraryZoomLevelControlDelegate-Protocol.h>
+#import <PhotosUICore/PXMovieProviderDelegate-Protocol.h>
 #import <PhotosUICore/PXOneUpPresentationDelegate-Protocol.h>
 #import <PhotosUICore/PXPhotosGlobalFooterViewDelegate-Protocol.h>
 #import <PhotosUICore/PXScrollViewControllerObserver-Protocol.h>
 #import <PhotosUICore/PXSwipeSelectionManagerDelegate-Protocol.h>
 #import <PhotosUICore/PXTouchingUIGestureRecognizerDelegate-Protocol.h>
+#import <PhotosUICore/PXUserInterfaceFeatureViewController-Protocol.h>
 #import <PhotosUICore/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSString, PHPhotoLibrary, PXAssetReference, PXChangeDirectionNumberFilter, PXContentUnavailableView, PXCuratedLibraryBarsController, PXCuratedLibraryFooterVisibilityManager, PXCuratedLibrarySecondaryToolbarController, PXCuratedLibrarySelectModeCaptionLabel, PXCuratedLibrarySkimmingController, PXCuratedLibraryViewProvider, PXCuratedLibraryZoomLevelControl, PXGTransition, PXGView, PXProgrammaticNavigationRequest, PXRelaxedScreenEdgePanGestureRecognizer, PXSwipeSelectionManager, PXTouchingUIGestureRecognizer, PXUITapGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer;
+@class NSString, PHPhotoLibrary, PXAssetReference, PXChangeDirectionNumberFilter, PXContentUnavailableView, PXCuratedLibraryBarsController, PXCuratedLibrarySecondaryToolbarController, PXCuratedLibrarySkimmingController, PXCuratedLibraryViewProvider, PXCuratedLibraryZoomLevelControl, PXCuratedLibraryZoomLevelPinchFilter, PXGTransition, PXGView, PXMovieProvider, PXProgrammaticNavigationRequest, PXRelaxedScreenEdgePanGestureRecognizer, PXSwipeSelectionManager, PXTouchingUIGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UITapGestureRecognizer;
 
-@interface PXCuratedLibraryUIViewController : UIViewController <PXScrollViewControllerObserver, PXOneUpPresentationDelegate, UIGestureRecognizerDelegate, PXSwipeSelectionManagerDelegate, PXCuratedLibrarySkimmingControllerDelegate, PXTouchingUIGestureRecognizerDelegate, PXCuratedLibraryZoomLevelControlDelegate, PXChangeObserver, PXPhotosGlobalFooterViewDelegate, PXCuratedLibraryFooterVisibilityManagerDelegate, PXCuratedLibraryActionPerformerDelegate>
+@interface PXCuratedLibraryUIViewController : UIViewController <PXUserInterfaceFeatureViewController, PXScrollViewControllerObserver, PXOneUpPresentationDelegate, UIGestureRecognizerDelegate, PXSwipeSelectionManagerDelegate, PXCuratedLibrarySkimmingControllerDelegate, PXTouchingUIGestureRecognizerDelegate, PXCuratedLibraryZoomLevelControlDelegate, PXChangeObserver, PXPhotosGlobalFooterViewDelegate, PXCuratedLibraryFooterControllerDelegate, PXCuratedLibraryActionPerformerDelegate, PXMovieProviderDelegate>
 {
     _Bool _canDragIn;
     _Bool _isGridViewReady;
     PXCuratedLibraryViewProvider *_viewProvider;
     PXCuratedLibrarySkimmingController *_skimmingController;
     PHPhotoLibrary *_photoLibrary;
-    PXCuratedLibraryFooterVisibilityManager *_footerVisibilityManager;
     PXCuratedLibraryBarsController *_barsController;
     PXCuratedLibrarySecondaryToolbarController *_secondaryToolbarController;
     PXCuratedLibraryZoomLevelControl *_zoomLevelControl;
-    PXCuratedLibrarySelectModeCaptionLabel *_selectModeCaptionLabel;
-    PXUITapGestureRecognizer *_tapGesture;
+    UITapGestureRecognizer *_tapGesture;
     PXTouchingUIGestureRecognizer *_skimmingTouchGesture;
     UIPinchGestureRecognizer *_pinchGesture;
     UIPanGestureRecognizer *_panGesture;
@@ -40,8 +40,11 @@
     long long _zoomLevelBeforeBackNavigationTransition;
     PXGTransition *_backNavigationTransition;
     PXRelaxedScreenEdgePanGestureRecognizer *_screenEdgePanGestureRecognizer;
+    long long _trackedScrollZoomLevel;
     PXSwipeSelectionManager *_swipeSelectionManager;
     PXAssetReference *_navigatedAssetReference;
+    PXMovieProvider *_movieProvider;
+    PXCuratedLibraryZoomLevelPinchFilter *_zoomLevelPinchFilter;
     PXProgrammaticNavigationRequest *_initialNavigationRequest;
     PXContentUnavailableView *_emptyPlaceHolderView;
 }
@@ -49,9 +52,12 @@
 @property(retain, nonatomic) PXContentUnavailableView *emptyPlaceHolderView; // @synthesize emptyPlaceHolderView=_emptyPlaceHolderView;
 @property(retain, nonatomic) PXProgrammaticNavigationRequest *initialNavigationRequest; // @synthesize initialNavigationRequest=_initialNavigationRequest;
 @property(nonatomic) _Bool isGridViewReady; // @synthesize isGridViewReady=_isGridViewReady;
+@property(readonly, nonatomic) PXCuratedLibraryZoomLevelPinchFilter *zoomLevelPinchFilter; // @synthesize zoomLevelPinchFilter=_zoomLevelPinchFilter;
 @property(readonly, nonatomic) _Bool canDragIn; // @synthesize canDragIn=_canDragIn;
+@property(retain, nonatomic) PXMovieProvider *movieProvider; // @synthesize movieProvider=_movieProvider;
 @property(retain, nonatomic) PXAssetReference *navigatedAssetReference; // @synthesize navigatedAssetReference=_navigatedAssetReference;
 @property(readonly, nonatomic) PXSwipeSelectionManager *swipeSelectionManager; // @synthesize swipeSelectionManager=_swipeSelectionManager;
+@property(nonatomic) long long trackedScrollZoomLevel; // @synthesize trackedScrollZoomLevel=_trackedScrollZoomLevel;
 @property(readonly, nonatomic) PXRelaxedScreenEdgePanGestureRecognizer *screenEdgePanGestureRecognizer; // @synthesize screenEdgePanGestureRecognizer=_screenEdgePanGestureRecognizer;
 @property(retain, nonatomic) PXGTransition *backNavigationTransition; // @synthesize backNavigationTransition=_backNavigationTransition;
 @property(nonatomic) long long zoomLevelBeforeBackNavigationTransition; // @synthesize zoomLevelBeforeBackNavigationTransition=_zoomLevelBeforeBackNavigationTransition;
@@ -59,17 +65,15 @@
 @property(readonly, nonatomic) UIPanGestureRecognizer *panGesture; // @synthesize panGesture=_panGesture;
 @property(readonly, nonatomic) UIPinchGestureRecognizer *pinchGesture; // @synthesize pinchGesture=_pinchGesture;
 @property(readonly, nonatomic) PXTouchingUIGestureRecognizer *skimmingTouchGesture; // @synthesize skimmingTouchGesture=_skimmingTouchGesture;
-@property(readonly, nonatomic) PXUITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
-@property(readonly, nonatomic) PXCuratedLibrarySelectModeCaptionLabel *selectModeCaptionLabel; // @synthesize selectModeCaptionLabel=_selectModeCaptionLabel;
+@property(readonly, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(readonly, nonatomic) PXCuratedLibraryZoomLevelControl *zoomLevelControl; // @synthesize zoomLevelControl=_zoomLevelControl;
 @property(readonly, nonatomic) PXCuratedLibrarySecondaryToolbarController *secondaryToolbarController; // @synthesize secondaryToolbarController=_secondaryToolbarController;
 @property(readonly, nonatomic) PXCuratedLibraryBarsController *barsController; // @synthesize barsController=_barsController;
-@property(readonly, nonatomic) PXCuratedLibraryFooterVisibilityManager *footerVisibilityManager; // @synthesize footerVisibilityManager=_footerVisibilityManager;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void).cxx_destruct;
-- (_Bool)footerVisibilityManager:(id)arg1 performCPLAction:(long long)arg2;
-- (struct NSObject *)presentingViewControllerForFooterVisibilityManager:(id)arg1;
-- (void)footerVisibilityManagerRevealFooter:(id)arg1;
+- (_Bool)footerController:(id)arg1 performCPLAction:(long long)arg2;
+- (struct NSObject *)presentingViewControllerForFooterController:(id)arg1;
+- (void)footerControllerRevealFooter:(id)arg1;
 - (void)photosGlobalFooterView:(id)arg1 presentViewController:(id)arg2;
 - (void)px_navigateToStateAllowingTabSwitchingWithOptions:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_rescheduleNavigationRequest:(id)arg1;
@@ -78,6 +82,7 @@
 - (void)_navigateToInitialScrollPositionForNavigationRequest:(id)arg1;
 - (void)navigateToDestination:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)canRouteToDestination:(id)arg1;
+- (id)_previewImageViewForImage:(id)arg1 frame:(struct CGRect)arg2 regionOfInterest:(id)arg3;
 @property(readonly, nonatomic) _Bool isDraggingOut;
 @property(readonly, nonatomic) _Bool canDragOut;
 - (void)zoomLevelControl:(id)arg1 didTapOnAlreadySelectedZoomLevel:(long long)arg2;
@@ -89,9 +94,10 @@
 - (id)assetCollectionReferenceForSkimmingSlideshow:(id)arg1;
 - (id)assetCollectionReferenceToShowSkimmingHints:(id)arg1;
 - (id)_dominantAssetCollectionReferenceForSkimming;
+- (void)_updateSkimmingSlideshowEnabled;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (id)oneUpPresentationHelperScrollView:(id)arg1;
-- (_Bool)oneUpPresentationShouldPreventShowPhotosFromThisDayAction:(id)arg1;
+- (_Bool)oneUpPresentationShouldPreventShowInAllPhotosAction:(id)arg1;
 - (id)oneUpPresentationActionManagerForPreviewing:(id)arg1;
 - (void)oneUpPresentation:(id)arg1 setHiddenAssetReferences:(id)arg2;
 - (void)oneUpPresentation:(id)arg1 scrollAssetReferenceToVisible:(id)arg2;
@@ -101,8 +107,10 @@
 - (id)oneUpPresentationMediaProvider:(id)arg1;
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
 - (long long)oneUpPresentationOrigin:(id)arg1;
+- (id)presentingViewControllerForMovieProvider:(id)arg1;
 - (void)assetCollectionActionPerformer:(id)arg1 playMovieForAssetCollection:(id)arg2;
 - (_Bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject *)arg2;
+- (void)curatedLibraryActionPerformer:(id)arg1 presentShareSheetWithSharingContext:(id)arg2;
 - (id)_hitTestResultAtLocation:(struct CGPoint)arg1 withPadding:(struct UIEdgeInsets)arg2 swipeSelectionManager:(id)arg3;
 - (struct PXSimpleIndexPath)_indexPathForAssetAtLocation:(struct CGPoint)arg1 withPadding:(struct UIEdgeInsets)arg2 forSwipeSelectionManager:(id)arg3;
 - (struct PXSimpleIndexPath)swipeSelectionManager:(id)arg1 itemIndexPathClosestAboveLocation:(struct CGPoint)arg2;
@@ -111,10 +119,10 @@
 - (void)swipeSelectionManagerAutomaticallyTransitionToMultiSelectMode:(id)arg1;
 - (_Bool)swipeSelectionManager:(id)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg2;
 - (_Bool)swipeSelectionManagerIsInMultiSelectMode:(id)arg1;
-- (void)_scrollLibraryViewToAssetReference:(id)arg1 scrollPosition:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_scrollLibraryViewToInitialPositionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_stopLibraryViewScrolling;
-- (void)_presentOneUpForAssetReference:(id)arg1 withInteractiveMode:(long long)arg2;
+- (void)_presentOneUpForAssetReference:(id)arg1 animated:(_Bool)arg2 withInteractiveMode:(long long)arg3;
+- (void)scrollViewControllerDidEndScrolling:(id)arg1;
 - (_Bool)scrollViewControllerShouldScrollToTop:(id)arg1;
 - (void)scrollViewControllerWillEndScrolling:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewControllerDidScroll:(id)arg1;
@@ -122,9 +130,8 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
-- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (id)_buttonHitTestResultAtPoint:(struct CGPoint)arg1;
-- (id)_hitTestAssetReferenceAtLocation:(struct CGPoint)arg1;
+- (id)_buttonHitTestResultAtPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
+- (id)_hitTestAssetReferenceAtLocation:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)touchingUIGestureRecognizerDidEndTouching:(id)arg1;
 - (void)touchingUIGestureRecognizerDidBeginTouching:(id)arg1;
 - (void)_handleScreenEdgePan:(id)arg1;
@@ -145,6 +152,7 @@
 - (void)_prepareSelectionManager;
 - (void)_prepareDragAndDrop;
 - (void)_prepareGestureRecognizers;
+- (void)_updateTrackedScrollLevelIfNeeded;
 - (void)_updateStatusBarStyle;
 - (void)_updateSecondaryToolbarContent;
 - (void)_invalidateSecondaryToolbarContent;
@@ -155,11 +163,13 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (long long)preferredStatusBarStyle;
 - (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)_updateEmptyPlaceholder;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+@property(readonly, nonatomic) long long userInterfaceFeature;
 @property(readonly, nonatomic) PXGView *gridView;
 @property(readonly, nonatomic) PXCuratedLibrarySkimmingController *skimmingController; // @synthesize skimmingController=_skimmingController;
 @property(readonly, nonatomic) PXCuratedLibraryViewProvider *viewProviderIfLoaded;

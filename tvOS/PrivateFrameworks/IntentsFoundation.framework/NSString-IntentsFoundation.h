@@ -7,9 +7,12 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (IntentsFoundation)
-+ (id)_inf_hexStringFromData:(id)arg1;
-+ (id)_inf_hexStringFromBytes:(const char *)arg1 length:(unsigned long long)arg2;
-- (id)_inf_stringByUppercasingFirstCharacter;
-- (id)_inf_stringByLowercasingFirstCharacter;
++ (id)if_stringWithData:(id)arg1;
++ (id)if_hexStringFromData:(id)arg1;
++ (id)if_hexStringFromBytes:(const char *)arg1 length:(unsigned long long)arg2;
+- (id)if_ASCIIStringByUppercasingFirstCharacter;
+- (id)if_ASCIIStringByLowercasingFirstCharacter;
+- (id)if_stringByUppercasingFirstCharacter;
+- (id)if_stringByLowercasingFirstCharacter;
 @end
 

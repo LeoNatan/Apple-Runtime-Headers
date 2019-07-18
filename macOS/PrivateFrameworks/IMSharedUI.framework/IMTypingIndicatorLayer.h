@@ -13,10 +13,10 @@
 @interface IMTypingIndicatorLayer : CALayer <IMTypingIndicatorLayerProtocol>
 {
     BOOL _hasDarkBackground;
-    struct NSColor *_bubbleColor;
-    double _bubbleOpacity;
     id _iconImage;
+    struct NSColor *_bubbleColor;
     struct NSColor *_thinkingDotColor;
+    double _bubbleOpacity;
     double _thinkingDotOpacity;
     struct NSColor *_customBubbleColor;
     CALayer *_bubbleContainer;
@@ -56,10 +56,10 @@
 @property(retain, nonatomic) CALayer *bubbleContainer; // @synthesize bubbleContainer=_bubbleContainer;
 @property(copy, nonatomic) NSColor *customBubbleColor; // @synthesize customBubbleColor=_customBubbleColor;
 @property(nonatomic) double thinkingDotOpacity; // @synthesize thinkingDotOpacity=_thinkingDotOpacity;
-@property(copy, nonatomic) NSColor *thinkingDotColor; // @synthesize thinkingDotColor=_thinkingDotColor;
-@property(retain, nonatomic) id iconImage; // @synthesize iconImage=_iconImage;
 @property(nonatomic) double bubbleOpacity; // @synthesize bubbleOpacity=_bubbleOpacity;
+@property(copy, nonatomic) NSColor *thinkingDotColor; // @synthesize thinkingDotColor=_thinkingDotColor;
 @property(copy, nonatomic) NSColor *bubbleColor; // @synthesize bubbleColor=_bubbleColor;
+@property(retain, nonatomic) id iconImage; // @synthesize iconImage=_iconImage;
 @property(nonatomic) BOOL hasDarkBackground; // @synthesize hasDarkBackground=_hasDarkBackground;
 - (void).cxx_destruct;
 - (void)stopAnimation;

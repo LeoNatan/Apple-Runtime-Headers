@@ -6,7 +6,6 @@
 
 #import <Contacts/CNChangeHistoryEvent.h>
 
-__attribute__((visibility("hidden")))
 @interface CNChangeHistoryDropEverythingEvent : CNChangeHistoryEvent
 {
 }

@@ -8,7 +8,7 @@
 
 #import <FileProviderDaemon/NSXPCListenerDelegate-Protocol.h>
 
-@class FPDAccessControlStore, FPDActionOperationEngine, FPDAppMonitor, FPDCacheDeleteService, FPDExtensionManager, FPDPresenterManager, NSString, NSXPCListener;
+@class FPDActionOperationEngine, FPDAppMonitor, FPDCacheDeleteService, FPDExtensionManager, FPDPresenterManager, NSString, NSXPCListener;
 @protocol OS_dispatch_group, OS_dispatch_queue, OS_dispatch_source;
 
 @interface FPDServer : NSObject <NSXPCListenerDelegate>
@@ -26,10 +26,11 @@
     FPDCacheDeleteService *_cacheDelete;
     FPDActionOperationEngine *_operationEngine;
     FPDAppMonitor *_appMonitor;
-    FPDAccessControlStore *_accessControlStore;
     FPDExtensionManager *_extensionManager;
     FPDPresenterManager *_presenterManager;
     Class _fpfsClass;
+    Class _fpfsSQLBackupManagerClass;
+    Class _fpfsSQLRestoreManagerClass;
     NSXPCListener *_listener;
 }
 
@@ -37,10 +38,11 @@
 + (id)cloudStoragePath;
 + (id)homeDirectory;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
+@property(retain, nonatomic) Class fpfsSQLRestoreManagerClass; // @synthesize fpfsSQLRestoreManagerClass=_fpfsSQLRestoreManagerClass;
+@property(retain, nonatomic) Class fpfsSQLBackupManagerClass; // @synthesize fpfsSQLBackupManagerClass=_fpfsSQLBackupManagerClass;
 @property(retain, nonatomic) Class fpfsClass; // @synthesize fpfsClass=_fpfsClass;
 @property(readonly, nonatomic) FPDPresenterManager *presenterManager; // @synthesize presenterManager=_presenterManager;
 @property(readonly, nonatomic) FPDExtensionManager *extensionManager; // @synthesize extensionManager=_extensionManager;
-@property(nonatomic) __weak FPDAccessControlStore *accessControlStore; // @synthesize accessControlStore=_accessControlStore;
 @property(readonly, nonatomic) FPDAppMonitor *appMonitor; // @synthesize appMonitor=_appMonitor;
 @property(readonly, nonatomic) FPDCacheDeleteService *cacheDelete; // @synthesize cacheDelete=_cacheDelete;
 @property(readonly, nonatomic) FPDActionOperationEngine *operationEngine; // @synthesize operationEngine=_operationEngine;

@@ -17,6 +17,7 @@
     BOOL _hasAccentKey;
     BOOL _canMultitap;
     BOOL _isAlphabeticPlane;
+    BOOL _isKanaPlane;
     BOOL _diacriticForwardCompose;
     BOOL _interfaceIdiomIsPad;
     NSString *_inputMode;
@@ -29,6 +30,7 @@
 @property(nonatomic) long long userInterfaceIdiom; // @synthesize userInterfaceIdiom=_userInterfaceIdiom;
 @property(copy, nonatomic) NSString *layoutTag; // @synthesize layoutTag=_layoutTag;
 @property(nonatomic) BOOL diacriticForwardCompose; // @synthesize diacriticForwardCompose=_diacriticForwardCompose;
+@property(nonatomic) BOOL isKanaPlane; // @synthesize isKanaPlane=_isKanaPlane;
 @property(nonatomic) BOOL isAlphabeticPlane; // @synthesize isAlphabeticPlane=_isAlphabeticPlane;
 @property(nonatomic) BOOL canMultitap; // @synthesize canMultitap=_canMultitap;
 @property(nonatomic) BOOL hasAccentKey; // @synthesize hasAccentKey=_hasAccentKey;

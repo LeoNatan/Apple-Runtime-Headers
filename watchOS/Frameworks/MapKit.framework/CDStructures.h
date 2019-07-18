@@ -63,6 +63,11 @@ struct GEOJunctionElement {
     CDStruct_81fb2dc1 _field4;
 };
 
+struct GEOOnce_s {
+    struct os_unfair_lock_s lock;
+    _Bool didRun;
+};
+
 struct NSArray {
     Class _field1;
 };
@@ -250,7 +255,8 @@ typedef struct {
     _Bool spoken;
     _Bool dropTimestampAMPM;
     _Bool rightToLeft;
-} CDStruct_f0a7d2be;
+    double referenceDate;
+} CDStruct_91d4396b;
 
 typedef struct {
     _Bool _field1;

@@ -17,12 +17,13 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)viewDidAppearForContactViewController:(id)arg1;
+- (void)didExecuteDeleteFromDowntimeWhitelistAction;
 - (void)didExecuteClearRecentsDataAction;
 - (void)viewDidAppear;
 - (void)didChangePreferredContentSize:(struct CGSize)arg1;
 - (void)isPresentingEditingController:(_Bool)arg1;
 - (void)isPresentingFullscreen:(_Bool)arg1;
-- (void)dimnjnjnDeleteContact:(id)arg1;
+- (void)didDeleteContact:(id)arg1;
 - (void)didCompleteWithContact:(id)arg1;
 - (void)updateEditing:(_Bool)arg1 doneButtonEnabled:(_Bool)arg2 doneButtonText:(id)arg3;
 - (_Bool)shouldPerformDefaultActionForContact:(id)arg1 propertyKey:(id)arg2 propertyIdentifier:(id)arg3;

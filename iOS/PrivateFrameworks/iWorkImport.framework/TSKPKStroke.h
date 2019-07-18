@@ -8,22 +8,27 @@
 
 #import <iWorkImport/NSCopying-Protocol.h>
 
-@class PKInk, PKStroke;
+@class NSArray, PKInk, PKStroke;
 
 __attribute__((visibility("hidden")))
 @interface TSKPKStroke : NSObject <NSCopying>
 {
+    unsigned long long _hash;
     double _pencilAnnotationDrawingScale;
     PKStroke *_internalPencilKitStroke;
+    NSArray *_locations;
 }
 
 + (unsigned long long)p_pointsCountOfStroke:(id)arg1;
 + (struct CGPoint)p_locationAtIndex:(unsigned long long)arg1 ofStroke:(id)arg2;
 + (id)p_copyOfPKStroke:(id)arg1;
 + (id)substrokeOfStroke:(id)arg1 withRange:(struct _NSRange)arg2;
++ (id)strokesForPKStrokes:(id)arg1 withPencilAnnotationDrawingScale:(double)arg2;
+@property(retain, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 @property(retain, nonatomic) PKStroke *internalPencilKitStroke; // @synthesize internalPencilKitStroke=_internalPencilKitStroke;
 @property(readonly, nonatomic) double pencilAnnotationDrawingScale; // @synthesize pencilAnnotationDrawingScale=_pencilAnnotationDrawingScale;
 - (void).cxx_destruct;
+- (_Bool)isUnderlineStrokeWithVerticalTextLayout:(_Bool)arg1;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -34,12 +39,16 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long pointsCount;
 - (id)substrokeWithRange:(struct _NSRange)arg1;
 - (double)timestampAtIndex:(unsigned long long)arg1;
+- (struct CGPoint)unscaledLocationAtIndex:(unsigned long long)arg1;
 - (struct CGPoint)locationAtIndex:(unsigned long long)arg1;
+- (struct CGRect)strokePointsFrame;
+- (struct CGRect)unscaledStrokePointsFrame;
 - (struct CGRect)p_incorrectPencilKitFastFrame;
 @property(readonly, nonatomic) struct CGRect incorrectUnscaledFastFrame;
 @property(readonly, nonatomic) PKInk *ink;
+- (double)timestampForLastPointInStroke;
+- (double)timestampForFirstPointInStroke;
 @property(readonly, nonatomic) double timestamp;
-- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithPKStroke:(id)arg1 pencilAnnotationDrawingScale:(double)arg2;
 

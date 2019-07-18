@@ -6,9 +6,10 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class UIFontDescriptor, UIFontPickerViewControllerConfiguration;
+@class NSXPCListenerEndpoint, UIFontDescriptor, UIFontPickerViewControllerConfiguration;
 
 @protocol _UIFontPickerRemoteViewController <NSObject>
+- (void)_setFontServicesFontPickerSupportListenerEndpoint:(NSXPCListenerEndpoint *)arg1;
 - (void)_prepareForDisplayWithCompletion:(void (^)(void))arg1;
 - (void)_setHideNavigationBar:(_Bool)arg1;
 - (void)_setConfiguration:(UIFontPickerViewControllerConfiguration *)arg1;

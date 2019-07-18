@@ -31,6 +31,7 @@
 - (void).cxx_destruct;
 - (_Bool)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(id)arg4;
 - (void)showMore:(id)arg1;
+- (void)updateNavigationItems;
 - (void)updateViewControllers;
 - (id)regularFontSizeConstraints;
 - (id)accessibilityFontSizeConstraints;

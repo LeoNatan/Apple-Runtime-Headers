@@ -21,6 +21,7 @@
 
 @property(nonatomic) _Bool shouldAttemptToDownloadConfiguration; // @synthesize shouldAttemptToDownloadConfiguration=_shouldAttemptToDownloadConfiguration;
 - (void).cxx_destruct;
+- (_Bool)isStreamlinedLoginDisallowedOnURL:(id)arg1;
 - (_Bool)isAutomaticLoginDisallowedOnURL:(id)arg1;
 - (id)_domainsIneligibleForPasswordAuditingFromCurrentSnapshot;
 - (id)_domainsWithAssociatedCredentialsFromCurrentSnapshot;

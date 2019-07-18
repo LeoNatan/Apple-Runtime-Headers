@@ -79,6 +79,7 @@
 - (id)notificationManagementSuggestionManager:(id)arg1 requestsSectionSettingsForSectionIdentifier:(id)arg2;
 - (void)notificationManagementSuggestionManager:(id)arg1 requestsPresentingNotificationManagementViewType:(unsigned long long)arg2 forNotificationRequest:(id)arg3 withPresentingView:(id)arg4;
 - (void)notificationManagementSuggestionManager:(id)arg1 requestsUpdatingContentForNotificationRequest:(id)arg2;
+- (void)revealCoordinatorDidScrollToReveal:(id)arg1;
 - (void)notificationListRevealCoordinator:(id)arg1 updatedRevealState:(_Bool)arg2;
 - (id)subListsForNotificationListRevealCoordinator:(id)arg1;
 - (_Bool)notificationListRevealCoordinatorShouldAllowReveal:(id)arg1;

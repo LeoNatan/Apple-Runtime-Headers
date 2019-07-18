@@ -17,7 +17,6 @@
 - (void)activityDidFinish:(_Bool)arg1;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)_beforeActivity;
 - (id)_systemImageName;
 - (id)activityTitle;
 - (id)activityType;

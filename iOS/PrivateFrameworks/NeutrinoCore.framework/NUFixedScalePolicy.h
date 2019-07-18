@@ -19,6 +19,7 @@
 @property(readonly) CDStruct_912cb5d2 scale; // @synthesize scale=_scale;
 @property(readonly, copy) NSString *description;
 - (CDStruct_912cb5d2)scaleForImageSize:(CDStruct_912cb5d2)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)initWithScale:(CDStruct_912cb5d2)arg1;
 - (id)init;
 

@@ -29,7 +29,7 @@
     unsigned long long _currentMaximumBatchSize;
     NSObject<OS_os_activity> *_batchIndexingActivity;
     NSMutableArray *_pendingItems;
-    NSMutableSet *_preprocessingItems;
+    NSMutableArray *_preprocessingItems;
     NSMutableSet *_pendingDomainRemovals;
     _EMSearchableIndexPendingRemovals *_pendingIdentifierRemovals;
     NSObject<OS_dispatch_queue> *_indexingQueue;
@@ -52,6 +52,7 @@
     BOOL _persistenceAvailable;
     BOOL _skipIndexExclusionCheck;
     BOOL _clientStateFetched;
+    BOOL _enableSpotlightVerification;
     id <EDSearchableIndexDataSource> _dataSource;
     id <EDSearchableIndexReasonProvider> _reasonProvider;
     id <EDSearchableIndexSchedulableDelegate> _schedulableDelegate;
@@ -70,6 +71,7 @@
 + (id)log;
 @property(nonatomic) double coalescingDelaySeconds; // @synthesize coalescingDelaySeconds=_coalescingDelaySeconds;
 @property(copy, nonatomic) NSString *searchableIndexBundleID; // @synthesize searchableIndexBundleID=_searchableIndexBundleID;
+@property(nonatomic) BOOL enableSpotlightVerification; // @synthesize enableSpotlightVerification=_enableSpotlightVerification;
 @property(nonatomic) BOOL clientStateFetched; // @synthesize clientStateFetched=_clientStateFetched;
 @property(nonatomic) BOOL skipIndexExclusionCheck; // @synthesize skipIndexExclusionCheck=_skipIndexExclusionCheck;
 @property(retain, nonatomic) CSSearchableIndex *csIndex; // @synthesize csIndex=_csIndex;
@@ -101,6 +103,7 @@
 - (void)removeItemsForDomainIdentifier:(id)arg1;
 - (void)removeItemsWithIdentifiers:(id)arg1 reasons:(id)arg2 fromRefresh:(BOOL)arg3;
 - (void)removeItemsWithIdentifiers:(id)arg1;
+- (void)_indexItems:(id)arg1 fromRefresh:(BOOL)arg2 immediately:(BOOL)arg3;
 - (void)indexItems:(id)arg1 fromRefresh:(BOOL)arg2 immediately:(BOOL)arg3;
 - (void)indexItems:(id)arg1 immediately:(BOOL)arg2;
 - (void)indexItems:(id)arg1;

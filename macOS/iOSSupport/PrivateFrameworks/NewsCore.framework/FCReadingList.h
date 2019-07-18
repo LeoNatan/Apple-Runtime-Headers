@@ -46,7 +46,7 @@
 - (void)readingListContentControllerDidUpdateArticleAvailabilityInOfflineMode:(id)arg1;
 - (id)recordsForRestoringZoneName:(id)arg1;
 - (BOOL)canHelpRestoreZoneName:(id)arg1;
-- (id)allKnownRecordNames;
+- (id)allKnownRecordNamesWithinRecordZoneWithID:(id)arg1;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
 - (void)loadLocalCachesFromStore;
 - (void)expressInterestInOfflineArticlesWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -63,14 +63,14 @@
 - (id)debugURLsForDiagnostics;
 @property(readonly, nonatomic) UIViewController *px_nextViewControllerInNavigationController;
 @property(readonly, nonatomic) UIViewController *px_previousViewControllerInNavigationController;
-@property(retain, nonatomic, setter=px_setPreviewActionGroupables:) NSArray *px_previewActionGroupables;
+@property(retain, nonatomic, setter=px_setPreviewActionMenus:) NSArray *px_previewActionMenus;
 @property(copy, nonatomic, setter=px_setSubtitle:) NSString *px_subtitle;
 - (void)px_enumerateDescendantViewControllersWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (_Bool)px_isDescendantOfViewController:(id)arg1;
 - (_Bool)px_canPresentViewControllerAnimated:(_Bool)arg1;
 @property(readonly, nonatomic) struct UIEdgeInsets px_layoutMargins;
 @property(readonly, nonatomic) struct UIEdgeInsets px_safeAreaInsets;
-@property(readonly, nonatomic, getter=px_isVisible) _Bool px_visible;
+@property(readonly, nonatomic) _Bool px_isVisible;
 - (void)px_setNeedsImageModulationIntensityUpdate;
 @property(readonly, nonatomic) double px_imageModulationIntensity;
 - (void)px_setNeedsHDRFocusUpdate;
@@ -80,6 +80,7 @@
 @property(readonly, nonatomic) _Bool px_photosUICategoriesAvailable;
 - (_Bool)px_canPerformSwipeDownTransitionWithMasterViewController:(id)arg1;
 - (_Bool)px_canPerformSwipeDownTransitionWithDetailViewController:(id)arg1;
+@property(readonly, nonatomic) struct CGSize px_referenceSize;
 - (void)_pxswizzled_oneUpPresentation_viewDidDisappear:(_Bool)arg1;
 - (void)_pxswizzled_oneUpPresentation_viewWillDisappear:(_Bool)arg1;
 - (void)_pxswizzled_oneUpPresentation_viewDidAppear:(_Bool)arg1;
@@ -94,7 +95,6 @@
 - (_Bool)canRouteToDestination:(id)arg1;
 - (void)px_navigateToStateAllowingTabSwitchingWithOptions:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) _Bool px_allowsTabSwitching;
-- (id)px_sharePresentation;
 @property(readonly, nonatomic) NSString *px_snapBackHistorySubtitle;
 @property(readonly, nonatomic) NSString *px_snapBackHistoryTitle;
 @property(readonly, nonatomic) _Bool px_isSnapBackDestination;
@@ -106,6 +106,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic, getter=px_isVisible) _Bool px_visible;
 @property(readonly) Class superclass;
 @end
 

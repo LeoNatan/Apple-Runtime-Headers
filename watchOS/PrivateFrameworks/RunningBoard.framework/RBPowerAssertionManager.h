@@ -10,23 +10,30 @@
 #import <RunningBoard/RBStateCapturing-Protocol.h>
 
 @class NSString, RBProcessMap, RBSystemPowerAssertion;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, RBPowerAssertionManagerDelegate;
 
 @interface RBPowerAssertionManager : NSObject <RBPowerAssertionManaging, RBStateCapturing>
 {
     RBProcessMap *_stateMap;
     RBProcessMap *_assertionMap;
     RBSystemPowerAssertion *_systemAssertion;
+    unsigned int _assertionCount;
     NSObject<OS_dispatch_queue> *_queue;
+    id <RBPowerAssertionManagerDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <RBPowerAssertionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)captureState;
-@property(readonly, copy, nonatomic) NSString *stateCaptureTitle;
 - (id)_unitTest_nameOfPowerAssertionForProcess:(id)arg1;
 - (id)_unitTest_nameOfPowerAssertionForSystem;
 - (_Bool)_unitTest_hasPowerAssertionForProcess:(id)arg1;
 - (_Bool)_unitTest_hasSystemPowerAssertion;
+- (void)_queue_willInvalidateAssertion;
+- (void)_queue_didAcquireAssertion;
+- (void)_queue_invalidateAssertion:(id)arg1;
+- (void)_queue_updateProcessAssertion:(id)arg1 withState:(id)arg2;
+- (id)captureState;
+@property(readonly, copy, nonatomic) NSString *stateCaptureTitle;
 - (void)removeProcess:(id)arg1;
 - (void)addProcess:(id)arg1;
 - (void)applySystemState:(id)arg1;

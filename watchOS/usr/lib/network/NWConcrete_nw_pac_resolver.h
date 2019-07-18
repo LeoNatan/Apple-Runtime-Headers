@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
     struct __CFString *pacScript;
     struct __CFData *auditToken;
     struct __CFString *bundleIdentifier;
+    char logging_id_str[75];
+    unsigned int is_dry_run:1;
 }
 
 - (void).cxx_destruct;

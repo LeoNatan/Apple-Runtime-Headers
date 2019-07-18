@@ -15,11 +15,11 @@
 
 @interface BKSHIDEventKeyCommandsDispatchingPredicate : NSObject <NSSecureCoding, BSDescriptionProviding, NSCopying, NSMutableCopying>
 {
-    NSSet *_displays;
+    NSSet *_senderDescriptors;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSSet *displays; // @synthesize displays=_displays;
+@property(readonly, copy, nonatomic) NSSet *senderDescriptors; // @synthesize senderDescriptors=_senderDescriptors;
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
@@ -33,7 +33,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)_initWithDisplays:(id)arg1;
+@property(readonly, copy, nonatomic) NSSet *displays;
+- (id)_initWithSenderDescriptors:(id)arg1;
 - (id)init;
 
 // Remaining properties

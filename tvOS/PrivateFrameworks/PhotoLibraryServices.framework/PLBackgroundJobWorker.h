@@ -6,16 +6,20 @@
 
 #import <objc/NSObject.h>
 
-#import <PhotoLibraryServices/PLbackgroundJobWorkerProtocol-Protocol.h>
+#import <PhotoLibraryServices/PLBackgroundJobWorkerProtocol-Protocol.h>
 
 @class NSMutableArray, NSString, PLPhotoLibrary;
 @protocol OS_dispatch_queue;
 
-@interface PLBackgroundJobWorker : NSObject <PLbackgroundJobWorkerProtocol>
+@interface PLBackgroundJobWorker : NSObject <PLBackgroundJobWorkerProtocol>
 {
+    CDUnknownBlockType _workerCompleteCompletionHandler;
+    CDUnknownBlockType _currentManagedObjectCompletionHandler;
+    // Error parsing type: Aq, name: _workerAtomicCounter
+    // Error parsing type: Aq, name: _completionHandlerAtomicCounter
+    CDUnknownBlockType _workerForcefullyStopHandler;
     NSMutableArray *_pendingJobs;
     unsigned long long _totalJobsCount;
-    CDUnknownBlockType _completionHandler;
     NSObject<OS_dispatch_queue> *_processingQueue;
     struct os_unfair_lock_s _lock;
     _Bool _shouldStop;
@@ -31,9 +35,11 @@
 @property(readonly, nonatomic) NSString *workerName; // @synthesize workerName=_workerName;
 @property(readonly, nonatomic) unsigned long long workerPriority; // @synthesize workerPriority=_workerPriority;
 - (void).cxx_destruct;
+- (void)stopWorkingOnManagedObjectID:(id)arg1;
 - (void)performWorkOnManagedObjectID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)managedObjectIDsNeedingProcessing;
 - (_Bool)hasPendingJobs;
+- (_Bool)isInterruptible;
 - (void)stopAllWork;
 - (void)startWorkWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_handleAllJobsComplete;

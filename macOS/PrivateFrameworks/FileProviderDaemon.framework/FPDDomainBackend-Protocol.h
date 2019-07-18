@@ -4,16 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <FileProviderDaemon/FPProviderDomainAccessControl-Protocol.h>
 #import <FileProviderDaemon/NSObject-Protocol.h>
 
 @class FPCTLTermDumper, FPDDomain, FPDDomainIndexer, FPDExtension, FPDRequest, FPExtensionEnumerationSettings, FPItem, FPItemID, FPSandboxingURLWrapper, NSArray, NSData, NSProgress, NSURL;
 @protocol FPDLifetimeExtender, FPXEnumeratorObserver;
 
-@protocol FPDDomainBackend <NSObject>
+@protocol FPDDomainBackend <NSObject, FPProviderDomainAccessControl>
 @property(readonly, copy) NSArray *rootURLs;
+- (void)resolveProviderItemID:(FPItemID *)arg1 completionHandler:(void (^)(FPItemID *, NSError *))arg2;
 - (void)fetchOperationServiceOrEndpointWithRequest:(FPDRequest *)arg1 completionHandler:(void (^)(id <FPXOperationService>, NSXPCListenerEndpoint *, NSError *))arg2;
 - (FPDDomainIndexer *)createIndexerWithExtension:(FPDExtension *)arg1 enabled:(BOOL)arg2 error:(id *)arg3;
-- (void)reimportItemsBelowItemWithID:(FPItemID *)arg1 removeCachedItems:(BOOL)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)reimportItemsBelowItemWithID:(FPItemID *)arg1 removeCachedItems:(BOOL)arg2 markItemDataless:(BOOL)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)valuesForAttributes:(NSArray *)arg1 forURL:(NSURL *)arg2 request:(FPDRequest *)arg3 completionHandler:(void (^)(NSDictionary *, NSError *))arg4;
 - (void)enumerateWithSettings:(FPExtensionEnumerationSettings *)arg1 lifetimeExtender:(id <FPDLifetimeExtender>)arg2 observer:(id <FPXEnumeratorObserver>)arg3 completionHandler:(void (^)(id <FPXEnumerator>, NSError *))arg4;
 - (BOOL)stashAllFilesInArchiveFolderWithError:(id *)arg1;
@@ -36,7 +38,7 @@
 - (NSURL *)createRootByImportingURL:(NSURL *)arg1 error:(id *)arg2;
 - (BOOL)needsRootCreation;
 - (BOOL)isProviderForURL:(NSURL *)arg1;
-- (unsigned long long)startAndGetSyncAnchor:(id *)arg1;
+- (BOOL)startAndGetSyncAnchor:(id *)arg1;
 - (void)invalidate;
 - (id)initWithDomain:(FPDDomain *)arg1;
 
@@ -46,7 +48,7 @@
 - (void)didChangeItemID:(FPItemID *)arg1;
 - (void)unpinItemWithID:(FPItemID *)arg1 request:(FPDRequest *)arg2 completionHandler:(void (^)(FPItem *, NSError *))arg3;
 - (void)pinItemWithID:(FPItemID *)arg1 request:(FPDRequest *)arg2 completionHandler:(void (^)(FPItem *, NSError *))arg3;
-- (void)downloadItemWithID:(FPItemID *)arg1 downloadPolicy:(unsigned long long)arg2 request:(FPDRequest *)arg3 completionHandler:(void (^)(NSError *))arg4;
+- (void)setDownloadPolicy:(unsigned long long)arg1 forItemWithID:(FPItemID *)arg2 request:(FPDRequest *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)downloadItemWithItemID:(FPItemID *)arg1 request:(FPDRequest *)arg2 progress:(NSProgress *)arg3 completionHandler:(void (^)(NSURL *, NSError *))arg4;
 - (long long)nonEvictableSpace;
 - (void)forceIngestionForItemID:(FPItemID *)arg1 completionHandler:(void (^)(FPItem *, NSError *))arg2;

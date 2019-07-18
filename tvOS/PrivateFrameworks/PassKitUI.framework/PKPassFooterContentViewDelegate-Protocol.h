@@ -13,5 +13,6 @@
 - (unsigned long long)suppressedContentForContentView:(PKPassFooterContentView *)arg1;
 - (_Bool)isPassFooterContentViewInGroup:(PKPassFooterContentView *)arg1;
 - (void)passFooterContentViewRequestsSessionSuppression:(PKPassFooterContentView *)arg1;
+- (void)passFooterContentViewDidAuthenticate:(PKPassFooterContentView *)arg1;
 @end
 

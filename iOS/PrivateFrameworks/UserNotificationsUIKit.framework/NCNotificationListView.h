@@ -11,7 +11,6 @@
 
 @interface NCNotificationListView : UIScrollView
 {
-    _Bool _scrollable;
     _Bool _grouped;
     _Bool _subviewPerformingGroupingAnimation;
     _Bool _performingContentRevealAnimation;
@@ -22,6 +21,7 @@
     _Bool _performingRevealAnimation;
     _Bool _performingVisibleRectAdjustment;
     _Bool _performedFirstLayout;
+    _Bool _cachedSizeValid;
     id <NCNotificationListViewDataSource> _dataSource;
     double _groupedTranslation;
     double _revealPercentage;
@@ -34,9 +34,12 @@
     UILabel *_titleLabel;
     UIView *_headerView;
     UIView *_footerView;
+    struct CGSize _cachedSize;
     struct CGRect _visibleRect;
 }
 
+@property(nonatomic) struct CGSize cachedSize; // @synthesize cachedSize=_cachedSize;
+@property(nonatomic, getter=isCachedSizeValid) _Bool cachedSizeValid; // @synthesize cachedSizeValid=_cachedSizeValid;
 @property(nonatomic, getter=hasPerformedFirstLayout) _Bool performedFirstLayout; // @synthesize performedFirstLayout=_performedFirstLayout;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
@@ -58,7 +61,6 @@
 @property(nonatomic, getter=isSubviewPerformingGroupingAnimation) _Bool subviewPerformingGroupingAnimation; // @synthesize subviewPerformingGroupingAnimation=_subviewPerformingGroupingAnimation;
 @property(nonatomic) double groupedTranslation; // @synthesize groupedTranslation=_groupedTranslation;
 @property(nonatomic, getter=isGrouped) _Bool grouped; // @synthesize grouped=_grouped;
-@property(nonatomic, getter=isScrollable) _Bool scrollable; // @synthesize scrollable=_scrollable;
 @property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
 @property(nonatomic) __weak id <NCNotificationListViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
@@ -106,8 +108,10 @@
 - (void)_layoutHiddenViewsForGroupingLayoutIfNecessaryWithLeadingViewHeight:(double)arg1;
 - (void)_setOverlayAlphaForGroupedView:(id)arg1 transform:(struct CGAffineTransform)arg2;
 - (void)_setStackingShadowForGroupedView:(id)arg1 hasShadow:(_Bool)arg2;
+- (void)revealNotificationContentBelowGroupedViewIfNecessary:(id)arg1;
+- (void)_setContentHiddenForGroupedView:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)_layoutGroupedViewForGroupingLayout:(id)arg1 atIndex:(unsigned long long)arg2 isExistingView:(_Bool)arg3 leadingViewHeight:(double)arg4;
-- (void)_layoutLeadingViewForGroupingLayoutIfNecessary:(id)arg1;
+- (void)_layoutLeadingViewForGroupingLayoutIfNecessary:(id)arg1 hasShadow:(_Bool)arg2;
 - (struct CGRect)_frameForViewAtIndex:(unsigned long long)arg1;
 - (void)_layoutFooterViewForGroupingIfNecessary;
 - (void)_layoutHeaderViewForGroupingIfNecessary;
@@ -120,6 +124,7 @@
 - (double)_positionOffsetForRevealHintingForHeaderView;
 - (void)_adjustContentSizeIfNecessaryForUpdatedHeight:(double)arg1;
 - (_Bool)_isViewWithinVisibleRectForHeight:(double)arg1 layoutOffset:(double)arg2;
+- (void)didMoveToSuperview;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

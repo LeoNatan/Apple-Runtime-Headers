@@ -25,8 +25,8 @@
 - (id)unknownImage;
 - (id)safariDocumentImage;
 - (id)prefPaneImage;
+- (id)iconForBundle:(id)arg1 key:(id)arg2;
 - (id)contactImage;
-- (id)groupId;
 - (id)title_note;
 @property(readonly) NSString *displayInfo;
 @property(readonly) NSImage *iconImageForApplication;
@@ -55,6 +55,7 @@
 - (BOOL)isContact;
 - (BOOL)isPrefPane;
 - (BOOL)isVideo;
+- (BOOL)isValidResultForFeedback;
 - (BOOL)isMusic;
 - (BOOL)isApplicationQueryResult;
 - (BOOL)isApplication;

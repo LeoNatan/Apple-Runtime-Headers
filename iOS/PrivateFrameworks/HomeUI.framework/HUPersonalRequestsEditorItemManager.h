@@ -10,6 +10,7 @@
 
 @interface HUPersonalRequestsEditorItemManager : HFItemManager
 {
+    _Bool _onlyShowDeviceSwitches;
     HUPersonalRequestsDevicesItemModule *_prDevicesModule;
     HFItem *_requireAuthenticationForSecureRequestsItem;
     HFItem *_neverRequireAuthenticationItem;
@@ -17,6 +18,7 @@
     HFStaticItemProvider *_staticItemProvider;
 }
 
+@property(nonatomic) _Bool onlyShowDeviceSwitches; // @synthesize onlyShowDeviceSwitches=_onlyShowDeviceSwitches;
 @property(readonly, nonatomic) HFStaticItemProvider *staticItemProvider; // @synthesize staticItemProvider=_staticItemProvider;
 @property(readonly, nonatomic) HMHome *homeForUser; // @synthesize homeForUser=_homeForUser;
 @property(readonly, nonatomic) HFItem *neverRequireAuthenticationItem; // @synthesize neverRequireAuthenticationItem=_neverRequireAuthenticationItem;
@@ -32,7 +34,7 @@
 - (_Bool)_arePersonalRequestsEnabled;
 @property(readonly, nonatomic) HMAssistantAccessControl *accessControl;
 @property(readonly, nonatomic) HMUser *user;
-- (id)initWithDelegate:(id)arg1 userItem:(id)arg2;
+- (id)initWithDelegate:(id)arg1 userItem:(id)arg2 onlyShowDeviceSwitches:(_Bool)arg3;
 - (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2;
 
 // Remaining properties

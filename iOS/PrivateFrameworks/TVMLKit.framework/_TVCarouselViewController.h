@@ -11,7 +11,7 @@
 #import <TVMLKit/TVCarouselViewDelegate-Protocol.h>
 #import <TVMLKit/TVCollectionViewLockupCellDelegate-Protocol.h>
 
-@class IKCollectionElement, NSString, TVCarouselLayout, _TVCarouselView;
+@class IKCollectionElement, IKViewElement, NSString, TVCarouselLayout, _TVCarouselView;
 
 __attribute__((visibility("hidden")))
 @interface _TVCarouselViewController : UIViewController <TVCarouselViewDataSource, TVCarouselViewDelegate, TVCollectionViewLockupCellDelegate, TVAppTemplateImpressionable>
@@ -19,12 +19,14 @@ __attribute__((visibility("hidden")))
     TVCarouselLayout *_carouselLayout;
     IKCollectionElement *_collectionElement;
     _TVCarouselView *_carouselView;
+    IKViewElement *_headerElement;
     struct {
         _Bool didAppear;
         _Bool indexesDirty;
     } _flags;
 }
 
++ (id)headerElementFromCollectionElement:(id)arg1;
 - (void).cxx_destruct;
 - (void)_updateLayoutAndReload;
 - (void)_updateLayout;
@@ -40,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)_recordImpressionsForVisibleView;
 - (void)_cancelImpressionsUpdate;
 - (void)_updateImpressions;
+- (void)carouselView:(id)arg1 didSelectItemAtIndex:(unsigned long long)arg2;
 - (void)carouselView:(id)arg1 didEndDisplayingItemAtIndex:(unsigned long long)arg2;
 - (void)carouselView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndex:(unsigned long long)arg3;
 - (void)carouselView:(id)arg1 willDisplayItemAtIndex:(unsigned long long)arg2;
@@ -55,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;
+- (void)_updateHeaderView;
 - (void)dealloc;
 
 // Remaining properties

@@ -6,11 +6,10 @@
 
 #import <FrontBoard/FBSServiceFacility.h>
 
-@protocol SBSystemServiceServerAppSwitcherDelegate, SBSystemServiceServerBiometricsDelegate, SBSystemServiceServerHardwareButtonDelegate, SBSystemServiceServerHomeScreenDelegate, SBSystemServiceServerSoftwareUpdateDelegate, SBSystemServiceServerStateDumpDelegate, SBSystemServiceServerTestAutomationDelegate;
+@protocol SBSystemServiceServerAppSwitcherDelegate, SBSystemServiceServerBiometricsDelegate, SBSystemServiceServerHardwareButtonDelegate, SBSystemServiceServerSoftwareUpdateDelegate, SBSystemServiceServerStateDumpDelegate, SBSystemServiceServerTestAutomationDelegate;
 
 @interface SBSystemServiceServer : FBSServiceFacility
 {
-    id <SBSystemServiceServerHomeScreenDelegate> _homeScreenDelegate;
     id <SBSystemServiceServerAppSwitcherDelegate> _appSwitcherDelegate;
     id <SBSystemServiceServerBiometricsDelegate> _biometricsDelegate;
     id <SBSystemServiceServerHardwareButtonDelegate> _hardwareButtonDelegate;
@@ -26,13 +25,13 @@
 @property(nonatomic) __weak id <SBSystemServiceServerHardwareButtonDelegate> hardwareButtonDelegate; // @synthesize hardwareButtonDelegate=_hardwareButtonDelegate;
 @property(nonatomic) __weak id <SBSystemServiceServerBiometricsDelegate> biometricsDelegate; // @synthesize biometricsDelegate=_biometricsDelegate;
 @property(nonatomic) __weak id <SBSystemServiceServerAppSwitcherDelegate> appSwitcherDelegate; // @synthesize appSwitcherDelegate=_appSwitcherDelegate;
-@property(nonatomic) __weak id <SBSystemServiceServerHomeScreenDelegate> homeScreenDelegate; // @synthesize homeScreenDelegate=_homeScreenDelegate;
 - (void).cxx_destruct;
 - (void)_handleStateDumpServiceClientMessageTypeDisableRemoteStateDump:(id)arg1 fromClient:(id)arg2;
 - (void)_handleStateDumpServiceClientMessageTypeEnableRemoteStateDump:(id)arg1 fromClient:(id)arg2;
 - (void)_handleStateDumpServiceClientMessageTypeStateDump:(id)arg1 fromClient:(id)arg2;
 - (void)_handleTestAutomationGetScencesForBundleIdentifier:(id)arg1 fromClient:(id)arg2;
 - (void)_handleTestAutomationSetTestRunnerRecoveryApplicationBundleIdentifier:(id)arg1 fromClient:(id)arg2;
+- (void)_handleTestAutomationRequestHUDHiddenAssertion:(id)arg1 fromClient:(id)arg2;
 - (void)_handleTestAutomationBlockApplicationForScreenTime:(id)arg1 fromClient:(id)arg2;
 - (void)_handleTestAutomationResetToHomeScreen:(id)arg1 fromClient:(id)arg2;
 - (void)_handleTestAutomationSetOrientationLockState:(id)arg1 fromClient:(id)arg2;
@@ -49,8 +48,6 @@
 - (void)_handleHardwareButtonAcquireAssertionMessage:(id)arg1 fromClient:(id)arg2;
 - (void)_handleBiometricsFetchUnlockCredentialSetMessage:(id)arg1 fromClient:(id)arg2;
 - (void)_handleRequestAppSwitcherAppearanceForHiddenApp:(id)arg1 fromClient:(id)arg2;
-- (void)_handleRequestSuggestedApplication:(id)arg1 fromClient:(id)arg2;
-- (void)_handleHomeScreenResetLayout:(id)arg1 fromClient:(id)arg2;
 - (void)noteDidReceiveMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
 - (void)noteClientDidDisconnect:(id)arg1;
 - (void)dealloc;

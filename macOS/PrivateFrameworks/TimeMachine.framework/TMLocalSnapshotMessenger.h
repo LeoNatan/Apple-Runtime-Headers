@@ -17,6 +17,7 @@
 + (BOOL)mountLocalSnapshotsForDisk:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (BOOL)mountLocalSnapshotForDate:(id)arg1 forDisk:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)thinLocalSnapshotsForDisk:(id)arg1 purgeAmount:(unsigned long long)arg2 urgency:(int)arg3;
++ (id)deleteAllLocalSnapshotsForMountpoint:(id)arg1;
 + (id)deleteLocalSnapshotsForDates:(id)arg1;
 + (id)mountedLocalSnapshotsForDisk:(id)arg1;
 + (id)localSnapshotDatesForDisk:(id)arg1;

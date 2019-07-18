@@ -14,6 +14,7 @@
 @property(nonatomic) _Bool useLegibilityShadow; // @synthesize useLegibilityShadow=_useLegibilityShadow;
 - (void)drawRect:(struct CGRect)arg1;
 - (_Bool)isOpaque;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

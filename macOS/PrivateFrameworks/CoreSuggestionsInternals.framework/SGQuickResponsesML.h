@@ -15,7 +15,7 @@
 
 - (void).cxx_destruct;
 - (void)trainQuickResponsesForMessageEntity:(id)arg1 withConversationHistory:(id)arg2;
-- (id)_dynamicLabelContentForEntity:(id)arg1 reply:(id)arg2;
+- (id)_dynamicLabelContentForReply:(id)arg1;
 - (id)init;
 - (id)initWithTraining:(id)arg1;
 

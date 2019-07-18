@@ -166,6 +166,8 @@
 - (void)delegateSessionRequestToOpenURLResult:(int)arg1;
 - (void)dtDelegateSessionRequestToResumeResult:(id)arg1;
 - (void)delegateSessionRequestToResumeResult:(int)arg1;
+- (void)dtDelegateSessionDidSetLocalWindowUIResolution:(id)arg1;
+- (void)delegateSessionDidSetLocalWindowUIResolution:(id)arg1;
 - (void)dtDelegateSessionAllowsControl:(id)arg1;
 - (void)delegateSessionAllowsControl:(BOOL)arg1;
 - (void)dtDelegateDisplaysDidSleep;

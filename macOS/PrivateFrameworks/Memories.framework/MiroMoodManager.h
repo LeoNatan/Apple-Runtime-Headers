@@ -71,8 +71,7 @@ __attribute__((visibility("hidden")))
 + (id)transitionsByMoodIDSortedForBlueprint:(id)arg1;
 + (id)editStyleIDsByMoodIDSorted;
 + (id)titleIDsByMoodIDSorted;
-+ (id)blueprintFromFontName:(id)arg1;
-+ (id)blueprintWithMood:(id)arg1;
++ (id)blueprintWithMood:(id)arg1 keywords:(id)arg2 musicGenreDistribution:(id)arg3;
 + (id)incrementAnimationStyleForBlueprint:(id)arg1 by:(unsigned long long)arg2;
 + (id)requestStyleBForBlueprint:(id)arg1;
 + (id)blueprintForBlueprint:(id)arg1 replaceProjectFilterByID:(id)arg2;
@@ -118,7 +117,7 @@ __attribute__((visibility("hidden")))
 - (id)_prunedMoodPartList:(id)arg1 forMood:(id)arg2 defaultsOnly:(BOOL)arg3;
 - (id)fontToDefaultStyleMap;
 - (id)fontToStandardMoodMap;
-- (id)_randomBlueprintForMoodID:(id)arg1 andSongID:(id)arg2 excludingPartsInMood:(id)arg3 defaultsOnly:(BOOL)arg4;
+- (id)_randomBlueprintForMoodID:(id)arg1 keywords:(id)arg2 musicGenreDistribution:(id)arg3 andSongID:(id)arg4 excludingPartsInMood:(id)arg5 defaultsOnly:(BOOL)arg6;
 - (id)defaultTitleFrom:(id)arg1;
 - (id)_prunedTitlesRemovingDuplicateEffects:(id)arg1;
 - (void)_ingestMoodPartLists;

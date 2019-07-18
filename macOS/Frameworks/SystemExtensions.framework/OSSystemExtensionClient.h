@@ -22,6 +22,7 @@
 - (unsigned long long)shouldMoveAppAtURL:(id)arg1 toURL:(id)arg2;
 - (void)testing__routine:(id)arg1 withAuthorization:(struct AuthorizationOpaqueRef *)arg2 error:(id *)arg3;
 - (void)testing__routine:(id)arg1 error:(id *)arg2;
+- (BOOL)resetExtensionDatabase:(struct AuthorizationOpaqueRef *)arg1 error:(id *)arg2;
 - (BOOL)checkExtension:(id)arg1 teamID:(id)arg2 teamIDPlatformBinary:(BOOL)arg3 teamIDNone:(BOOL)arg4 error:(id *)arg5;
 - (id)updateExtensions:(id)arg1;
 - (BOOL)uninstallExtension:(id)arg1 withAuthorization:(const struct AuthorizationOpaqueRef *)arg2 error:(id *)arg3;

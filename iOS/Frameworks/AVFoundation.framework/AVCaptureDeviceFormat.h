@@ -14,6 +14,9 @@
 }
 
 + (void)initialize;
+- (float)maxPortraitLightingEffectStrength;
+- (float)minPortraitLightingEffectStrength;
+- (float)defaultPortraitLightingEffectStrength;
 - (float)maxSimulatedAperture;
 - (float)minSimulatedAperture;
 - (float)defaultSimulatedAperture;

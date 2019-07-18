@@ -14,12 +14,10 @@
     double _horizontalMargin;
     PXGGradient *_skimmingHintGradient;
     double _distanceToNextLayout;
-    double _autoplayMinimumRelativeWidth;
     CDStruct_2bd92d94 _cornerRadius;
     struct UIEdgeInsets _padding;
 }
 
-@property(nonatomic) double autoplayMinimumRelativeWidth; // @synthesize autoplayMinimumRelativeWidth=_autoplayMinimumRelativeWidth;
 @property(nonatomic) double distanceToNextLayout; // @synthesize distanceToNextLayout=_distanceToNextLayout;
 @property(readonly, nonatomic) PXGGradient *skimmingHintGradient; // @synthesize skimmingHintGradient=_skimmingHintGradient;
 @property(nonatomic) double horizontalMargin; // @synthesize horizontalMargin=_horizontalMargin;
@@ -27,7 +25,6 @@
 @property(nonatomic) CDStruct_2bd92d94 cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 - (void).cxx_destruct;
-- (void)adjustHorizontalMarginForMaximumContentRelativeWidth:(double)arg1;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
 
 @end

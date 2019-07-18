@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC7NewsUI234NewIssueLocalNotificationScheduler : NSObject
 {
     // Error parsing type: , name: newIssueThreadIdentifier

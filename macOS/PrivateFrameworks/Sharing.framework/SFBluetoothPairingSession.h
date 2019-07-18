@@ -21,6 +21,7 @@
     struct LogCategory *_ucat;
     WPClient *_wpClient;
     BOOL _connectOnly;
+    BOOL _disconnectOnly;
     BOOL _guestMode;
     CDUnknownBlockType _completionHandler;
     NSString *_deviceAddress;
@@ -35,6 +36,7 @@
 @property(copy, nonatomic) NSData *guestKey; // @synthesize guestKey=_guestKey;
 @property(copy, nonatomic) NSString *guestAddress; // @synthesize guestAddress=_guestAddress;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
+@property(nonatomic) BOOL disconnectOnly; // @synthesize disconnectOnly=_disconnectOnly;
 @property(copy, nonatomic) NSString *deviceAddress; // @synthesize deviceAddress=_deviceAddress;
 @property(nonatomic) BOOL connectOnly; // @synthesize connectOnly=_connectOnly;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;

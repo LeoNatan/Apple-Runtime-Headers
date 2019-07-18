@@ -16,7 +16,6 @@
 __attribute__((visibility("hidden")))
 @interface TSWPShapeRep : TSDShapeRep <TSDMagicMoveMatching, TSWPContainerTextEditingRep, TSWPShapeLayoutDelegate>
 {
-    _Bool _editingContainedRep;
     CALayer *_overflowGlyphLayer;
     struct CGPoint _originalAutosizePositionOffset;
     TSWPRep *_containedRep;

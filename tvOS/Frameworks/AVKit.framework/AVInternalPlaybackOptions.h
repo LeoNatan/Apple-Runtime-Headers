@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     _Bool _skipBackwardEnabled;
     _Bool _allowInfoMetadataSubpanel;
     _Bool _allowsPictureInPicturePlayback;
+    _Bool _waitingForNextStream;
     NSArray *_allowedSubtitleOptionLanguages;
     AVTransportBarViewController *_clientTransportBarViewController;
     UIViewController *_customOverlayViewController;
@@ -30,6 +31,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) AVControlItem *interactiveOverlayItem; // @synthesize interactiveOverlayItem=_interactiveOverlayItem;
+@property(nonatomic) _Bool waitingForNextStream; // @synthesize waitingForNextStream=_waitingForNextStream;
 @property(nonatomic) _Bool allowsPictureInPicturePlayback; // @synthesize allowsPictureInPicturePlayback=_allowsPictureInPicturePlayback;
 @property(nonatomic) _Bool allowInfoMetadataSubpanel; // @synthesize allowInfoMetadataSubpanel=_allowInfoMetadataSubpanel;
 @property(nonatomic, getter=isSkipBackwardEnabled) _Bool skipBackwardEnabled; // @synthesize skipBackwardEnabled=_skipBackwardEnabled;

@@ -21,6 +21,7 @@
     NSMutableSet *_registeredNotifications;
     NSMutableDictionary *_synchronizeDomains;
     NSMutableDictionary *_updateBlocks;
+    double _voiceOverHapticIntensity;
     double _lastPlatformSwitchTimeResetCount;
     double _lastGuidedAccessTimeLimitResetCount;
     double _lastGuidedAccessTimeResetCount;
@@ -29,7 +30,6 @@
 }
 
 + (id)sharedInstance;
-+ (void)initialize;
 @property(retain, nonatomic) NSMutableDictionary *updateBlocks; // @synthesize updateBlocks=_updateBlocks;
 @property(retain, nonatomic) NSMutableDictionary *synchronizeDomains; // @synthesize synchronizeDomains=_synchronizeDomains;
 @property(retain, nonatomic) NSMutableSet *registeredNotifications; // @synthesize registeredNotifications=_registeredNotifications;
@@ -41,6 +41,7 @@
 @property(nonatomic) float reduceWhitePointLevel; // @synthesize reduceWhitePointLevel=_reduceWhitePointLevel;
 @property(nonatomic) _Bool touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass; // @synthesize touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass=_touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass;
 @property(nonatomic) _Bool voiceOverVerbositySpeakCustomActionsHint; // @synthesize voiceOverVerbositySpeakCustomActionsHint=_voiceOverVerbositySpeakCustomActionsHint;
+@property(nonatomic) double voiceOverHapticIntensity; // @synthesize voiceOverHapticIntensity=_voiceOverHapticIntensity;
 @property(nonatomic) _Bool writeAXLogsToFile; // @synthesize writeAXLogsToFile=_writeAXLogsToFile;
 @property(nonatomic) _Bool assistiveTouchInternalOnlyHiddenNubbitModeEnabled; // @synthesize assistiveTouchInternalOnlyHiddenNubbitModeEnabled=_assistiveTouchInternalOnlyHiddenNubbitModeEnabled;
 - (void).cxx_destruct;
@@ -134,7 +135,7 @@
 @property(nonatomic) _Bool voiceOverTouchBrailleShowTextStyleStatus;
 @property(nonatomic) _Bool voiceOverTouchBrailleShouldReverseDots;
 @property(nonatomic) int voiceOverTapticChimesFrequencyEncoding;
-@property(nonatomic) int voiceOverTapticChimesStyleEncoding;
+@property(nonatomic) int voiceOverTapticChimesAvailability;
 @property(nonatomic) _Bool tapticTimeInternalFlashScreenEnabled;
 @property(nonatomic) _Bool voiceOverTapticChimesEnabled;
 @property(nonatomic) float voiceOverTapticTimeSpeed;
@@ -185,9 +186,12 @@
 @property(nonatomic) _Bool voiceOverSpeakNotificationsEnabled;
 @property(nonatomic) _Bool voiceOverSpeakingRateInRotorEnabled;
 @property(nonatomic) _Bool voiceOverHapticsEnabled;
-@property(nonatomic) _Bool voiceOverSoundEffectsEnabled;
+@property(nonatomic) _Bool voiceOverAdjustSoundVolumeIndependently;
+@property(nonatomic) double voiceOverSoundVolume;
 @property(nonatomic) _Bool voiceOverVerbosityEmojiSuffixEnabled;
 @property(nonatomic) _Bool voiceOverVerbosityEmojisEnabled;
+@property(nonatomic) _Bool voiceOverLanguageDetectionEnabled;
+@property(nonatomic) _Bool voiceOverSoundEffectsEnabled;
 @property(nonatomic) _Bool voiceOverPitchChangeEnabled;
 @property(nonatomic) double voiceOverPitch;
 @property(nonatomic) _Bool voiceOverAudioFollowsHDMIAudio;
@@ -220,6 +224,7 @@
 @property(nonatomic) int voiceOverTouchBrailleDisplayInputMode;
 @property(retain, nonatomic) NSArray *customPronunciationSubstitutions;
 @property(nonatomic) struct CGPoint quickSpeakNubbitNormalizedPosition;
+@property(nonatomic) _Bool siriAutoUpdateListInitialized;
 @property(copy, nonatomic) NSSet *downloadedSiriVoices;
 - (void)_removeSpeakingRatePreferenceForLanguage:(id)arg1;
 - (float)quickSpeakSpeakingRateForLanguage:(id)arg1;
@@ -341,7 +346,6 @@
 @property(nonatomic) _Bool zoomPeekZoomEnabled;
 @property(nonatomic) _Bool zoomShouldShowSlug;
 @property(nonatomic) _Bool zoomShouldFollowFocus;
-@property(retain, nonatomic) NSString *zoomCurrentDockPosition;
 @property(retain, nonatomic) NSString *zoomCurrentLensMode;
 @property(nonatomic) _Bool zoomInStandby;
 @property(retain, nonatomic) NSString *zoomCurrentLensEffect;
@@ -406,8 +410,12 @@
 - (double)assistiveTouchMouseDwellControlActivationTimeout;
 - (_Bool)assistiveTouchMouseDwellControlEnabled;
 - (void)setAssistiveTouchMouseDwellControlEnabled:(_Bool)arg1;
-- (_Bool)assistiveTouchMouseUsesLargerPointer;
-- (void)setAssistiveTouchMouseUsesLargerPointer:(_Bool)arg1;
+- (double)assistiveTouchMousePointerTimeout;
+- (void)setAssistiveTouchMousePointerTimeout:(double)arg1;
+- (_Bool)assistiveTouchMousePointerTimeoutEnabled;
+- (void)setAssistiveTouchMousePointerTimeoutEnabled:(_Bool)arg1;
+- (float)assistiveTouchMousePointerSizeMultiplier;
+- (void)setAssistiveTouchMousePointerSizeMultiplier:(float)arg1;
 - (int)assistiveTouchMousePointerColor;
 - (void)setAssistiveTouchMousePointerColor:(int)arg1;
 @property(nonatomic) int assistiveTouchCursorColor;
@@ -448,6 +456,8 @@
 - (int)assistiveTouchMouseKeysMaxSpeed;
 - (void)setAssistiveTouchMouseKeysMaxSpeed:(int)arg1;
 - (int)assistiveTouchMouseKeysDelay;
+- (void)setAssistiveTouchMouseAllowAppleBluetoothDevicesPairing:(_Bool)arg1;
+- (_Bool)assistiveTouchMouseAllowAppleBluetoothDevicesPairing;
 - (void)setAssistiveTouchMouseAlwaysShowSoftwareKeyboardEnabled:(_Bool)arg1;
 - (_Bool)assistiveTouchMouseAlwaysShowSoftwareKeyboardEnabled;
 - (void)setAssistiveTouchMouseKeysDelay:(int)arg1;

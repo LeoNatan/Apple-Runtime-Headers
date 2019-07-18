@@ -9,7 +9,7 @@
 @class SBFluidSwitcherItemContainer;
 
 @protocol SBFluidSwitcherItemContainerDelegate <NSObject>
-- (_Bool)shouldUseDarkModeTreatmentForItemContainer:(SBFluidSwitcherItemContainer *)arg1;
+- (_Bool)shouldUseBackgroundWallpaperTreatmentForItemContainer:(SBFluidSwitcherItemContainer *)arg1;
 - (double)switcherCardScale;
 - (long long)homeScreenInterfaceOrientation;
 - (long long)switcherInterfaceOrientation;

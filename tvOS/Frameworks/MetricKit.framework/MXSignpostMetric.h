@@ -26,7 +26,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithSignpostName:(id)arg1 withSignpostCategory:(id)arg2 withTotalCount:(unsigned long long)arg3 withSignpostIntervalData:(id)arg4;
-- (id)initWithSignpostName:(id)arg1 withSignpostCategory:(id)arg2 withTotalCount:(unsigned long long)arg3 withHistogramDurationData:(id)arg4 withCPUMetrics:(id)arg5 withMemoryMetrics:(id)arg6 withDiskIOMetrics:(id)arg7;
 
 @end
 

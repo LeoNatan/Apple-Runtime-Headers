@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_backButtonToLeadingBarSpacer;
     NSLayoutConstraint *_leadingBarToTitleSpacer;
     NSLayoutConstraint *_titleToTrailingBarSpacer;
+    NSArray *_layoutGuideConstraints;
     NSArray *_alignmentConstraints;
     NSArray *_heightConstraints;
     NSArray *_backButtonConstraints;
@@ -99,7 +100,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UILayoutGuide *backButtonGuide; // @synthesize backButtonGuide=_backButtonGuide;
 @property(readonly, nonatomic) _UINavigationBarContentView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
-- (void)invalidate;
+- (void)removeContent;
 - (void)replaceBackButtonWithSnapshot;
 - (void)replaceTitleViewWithSnapshot;
 - (void)replaceTrailingBarWithSnapshot;

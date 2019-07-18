@@ -10,7 +10,7 @@ __attribute__((visibility("hidden")))
 @interface _TtC12NewsArticles26SubscriptionStatusProvider : NSObject
 {
     // Error parsing type: , name: headline
-    // Error parsing type: , name: purchaseController
+    // Error parsing type: , name: purchaseProvider
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: observers
     // Error parsing type: , name: bundleSubscriptionStatus

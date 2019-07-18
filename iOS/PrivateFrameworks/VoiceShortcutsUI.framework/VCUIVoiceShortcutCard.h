@@ -16,7 +16,6 @@
     NSArray *_sectionCommands;
 }
 
-+ (void)initialize;
 @property(readonly, nonatomic) NSArray *sectionCommands; // @synthesize sectionCommands=_sectionCommands;
 @property(readonly, nonatomic) INIntentResponse *intentResponse; // @synthesize intentResponse=_intentResponse;
 @property(readonly, nonatomic) INIntent *intent; // @synthesize intent=_intent;

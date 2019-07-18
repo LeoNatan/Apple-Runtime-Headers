@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)handleMessage:(id)arg1 transferID:(long long)arg2;
+- (id)initWithSession:(id)arg1 requestID:(long long)arg2;
 
 @end
 

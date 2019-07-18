@@ -6,11 +6,11 @@
 
 #import <PassKitUI/PKFeatureTermsAndConditionsViewController.h>
 
-#import <PassKitUI/PKPaymentSetupRequiresPreflightProtocol-Protocol.h>
+#import <PassKitUI/PKViewControllerPreflightable-Protocol.h>
 
 @class CLInUseAssertion, NSString, PKApplyController;
 
-@interface PKApplyTermsAndConditionsViewController : PKFeatureTermsAndConditionsViewController <PKPaymentSetupRequiresPreflightProtocol>
+@interface PKApplyTermsAndConditionsViewController : PKFeatureTermsAndConditionsViewController <PKViewControllerPreflightable>
 {
     PKApplyController *_applyController;
     NSString *_termsIdentifier;
@@ -25,8 +25,10 @@
 - (void)pdfTermsDataWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)htmlTermsDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)initalTermsDataWithCompletion:(CDUnknownBlockType)arg1;
+- (id)displayTitle;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)dealloc;
 - (id)initWithController:(id)arg1 setupDelegate:(id)arg2 context:(int)arg3 termsIdentifier:(id)arg4;
 
 // Remaining properties

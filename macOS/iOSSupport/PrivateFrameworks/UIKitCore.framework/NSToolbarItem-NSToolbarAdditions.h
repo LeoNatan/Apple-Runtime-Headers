@@ -6,7 +6,10 @@
 
 #import <AppKit/NSToolbarItem.h>
 
+@protocol _UICopyConfigurationReading;
+
 @interface NSToolbarItem (NSToolbarAdditions)
 + (id)itemWithItemIdentifier:(id)arg1 barButtonItem:(id)arg2;
+@property(retain, nonatomic, setter=_setCopyConfiguration:) id <_UICopyConfigurationReading> _copyConfiguration;
 @end
 

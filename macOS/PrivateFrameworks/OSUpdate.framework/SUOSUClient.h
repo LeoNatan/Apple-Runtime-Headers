@@ -28,10 +28,12 @@
 @property BOOL isAutomaticallyInstallMacOSUpdatesPreferenceEnabled;
 @property BOOL isAutomaticallyDownloadUpdatesPreferenceEnabled;
 @property BOOL isAutomaticallyCheckForUpdatesPreferenceEnabled;
+- (void)removeAllNotifications;
 - (BOOL)authorizeForModifyingPreferences;
 - (void)cancelCurrentUpdates;
 - (BOOL)cancelUpdatesQueuedForLater;
 - (BOOL)resetToProductionCatalog;
+- (void)startInstallingMajorOSVersion:(id)arg1 orWithMajorOSBundleIdentifier:(id)arg2 majorOSVariant:(id)arg3 shouldOpenIA:(BOOL)arg4 inForeground:(BOOL)arg5 isMDMInitiated:(BOOL)arg6 fromAvailableMajorUpdates:(id)arg7;
 - (void)startInstallingMajorOSVersion:(id)arg1 orWithMajorOSBundleIdentifier:(id)arg2 majorOSVariant:(id)arg3 shouldOpenIA:(BOOL)arg4 inForeground:(BOOL)arg5 isMDMInitiated:(BOOL)arg6;
 - (BOOL)unenrollFromSeedProgram;
 - (void)queueUpdatesForLater:(id)arg1;

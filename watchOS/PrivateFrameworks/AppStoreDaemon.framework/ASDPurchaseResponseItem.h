@@ -12,8 +12,8 @@
 
 @interface ASDPurchaseResponseItem : NSObject <NSSecureCoding>
 {
-    _Bool _cancelsPurchaseBatch;
     _Bool _success;
+    _Bool _cancelsPurchaseBatch;
     NSError *_error;
     ASDPurchase *_purchase;
     NSArray *_results;
@@ -30,11 +30,11 @@
 @property(nonatomic) double responseStartTime; // @synthesize responseStartTime=_responseStartTime;
 @property(nonatomic) double responseEndTime; // @synthesize responseEndTime=_responseEndTime;
 @property(nonatomic) double requestStartTime; // @synthesize requestStartTime=_requestStartTime;
+@property(readonly, nonatomic) _Bool cancelsPurchaseBatch; // @synthesize cancelsPurchaseBatch=_cancelsPurchaseBatch;
 @property(readonly, nonatomic) _Bool success; // @synthesize success=_success;
 @property(readonly, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(readonly, copy, nonatomic) ASDPurchase *purchase; // @synthesize purchase=_purchase;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-@property(readonly, nonatomic) _Bool cancelsPurchaseBatch; // @synthesize cancelsPurchaseBatch=_cancelsPurchaseBatch;
 - (void).cxx_destruct;
 - (void)_setTransactionIDs:(id)arg1;
 - (void)_setSuccess:(_Bool)arg1;

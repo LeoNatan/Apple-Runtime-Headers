@@ -19,6 +19,6 @@
 @property(readonly, nonatomic) id <MTLTexture> texture;
 - (void)cleanupAfterRender:(long long)arg1;
 - (void)prepareForRender:(long long)arg1;
-- (void)getTextureInfos:(CDStruct_183601bc *)arg1 maxSpriteCount:(unsigned int)arg2;
+- (void)getTextureInfos:(CDStruct_183601bc *)arg1 forSpriteIndexes:(unsigned int *)arg2 geometries:(const CDStruct_ac168a83 *)arg3 spriteStyles:(const CDStruct_506f5052 *)arg4 spriteInfos:(const CDStruct_9d1ebe49 *)arg5 screenScale:(double)arg6 count:(unsigned int)arg7;
 @end
 

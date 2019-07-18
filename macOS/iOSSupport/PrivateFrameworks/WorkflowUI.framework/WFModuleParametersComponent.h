@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)newWithParameters:(id)arg1 states:(id)arg2 editable:(BOOL)arg3 processing:(BOOL)arg4 actionName:(id)arg5 actionSubtitle:(id)arg6 keyImage:(id)arg7 appearance:(id)arg8 stateWriter:(id)arg9 variableProvider:(id)arg10 variableUIDelegate:(id)arg11 navigationContext:(id)arg12;
++ (id)newWithParameters:(id)arg1 states:(id)arg2 editable:(BOOL)arg3 processing:(BOOL)arg4 actionName:(id)arg5 actionSubtitle:(id)arg6 keyImage:(id)arg7 appearance:(id)arg8 stateWriter:(id)arg9 variableProvider:(id)arg10 variableUIDelegate:(id)arg11 navigationContext:(id)arg12 firstResponderParameterKey:(id)arg13;
 - (BOOL)shouldMemoizeLayout;
 
 @end

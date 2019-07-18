@@ -10,11 +10,10 @@
 
 @interface PLJournal : NSObject
 {
-    unsigned char _prepareMode;
-    NSDictionary *_metadata;
-    NSURL *_baseURL;
     PLJournalFile *_snapshotJournal;
     PLJournalFile *_changeJournal;
+    unsigned char _prepareMode;
+    NSURL *_baseURL;
     Class _payloadClass;
     PLJournalFile *_pendingJournal;
     PLJournalFile *_prepareMarker;
@@ -26,30 +25,35 @@
 + (_Bool)removeSnapshotFinishMarkerForBaseURL:(id)arg1 error:(id *)arg2;
 + (_Bool)createSnapshotFinishMarkerForBaseURL:(id)arg1 error:(id *)arg2;
 + (id)snapshotFinishMarkerURLForBaseURL:(id)arg1;
-+ (id)metadataURLForBaseURL:(id)arg1 payloadClassId:(id)arg2;
++ (id)metadataURLForBaseURL:(id)arg1 payloadClassId:(id)arg2 pending:(_Bool)arg3;
 + (id)journalURLForBaseURL:(id)arg1 payloadClassId:(id)arg2 journalType:(id)arg3;
 @property(readonly, nonatomic) PLJournalFile *prepareMarker; // @synthesize prepareMarker=_prepareMarker;
 @property(readonly, nonatomic) PLJournalFile *pendingJournal; // @synthesize pendingJournal=_pendingJournal;
 @property(readonly, nonatomic) Class payloadClass; // @synthesize payloadClass=_payloadClass;
-@property(readonly, nonatomic) PLJournalFile *changeJournal; // @synthesize changeJournal=_changeJournal;
-@property(readonly, nonatomic) PLJournalFile *snapshotJournal; // @synthesize snapshotJournal=_snapshotJournal;
 @property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 - (void).cxx_destruct;
 - (_Bool)enumerateEntriesUsingBlock:(CDUnknownBlockType)arg1 decodePayload:(_Bool)arg2 error:(id *)arg3;
+- (unsigned int)currentPayloadVersionWithError:(id *)arg1;
 - (unsigned int)countOfInsertEntriesWithError:(id *)arg1;
 - (_Bool)enumeratePayloadsUsingBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
+@property(readonly, nonatomic) PLJournalFile *changeJournal;
+@property(readonly, nonatomic) PLJournalFile *snapshotJournal;
 - (_Bool)appendChangeEntries:(id)arg1 error:(id *)arg2;
 - (_Bool)coalesceChangesToSnapshotWithError:(id *)arg1;
 - (_Bool)createSnapshotUsingNextPayloadBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
-- (_Bool)_finishSnapshot:(_Bool)arg1 metadata:(id)arg2 replaceMetadata:(_Bool)arg3 error:(id *)arg4;
 - (_Bool)finishSnapshot:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)prepareForSnapshotWithError:(id *)arg1;
+- (_Bool)_finishSnapshot:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)_recoverJournalWithError:(id *)arg1;
 - (_Bool)_isPendingJournalAuthoritative;
-- (_Bool)_removeJournalFilesWithError:(id *)arg1;
-- (_Bool)_updateMetadataWithMetadata:(id)arg1 replace:(_Bool)arg2 error:(id *)arg3;
-- (void)removeMetadata;
+- (_Bool)removeJournalFilesWithError:(id *)arg1;
+- (_Bool)_updateMetadataWithMetadata:(id)arg1 replace:(_Bool)arg2 pending:(_Bool)arg3 error:(id *)arg4;
+- (id)_readMetadataPending:(_Bool)arg1;
+- (_Bool)_replaceMetadataWithPendingMetadataError:(id *)arg1;
+- (_Bool)_removeMetadataPending:(_Bool)arg1 error:(id *)arg2;
+- (id)metadataURLPending:(_Bool)arg1;
 @property(readonly, nonatomic) NSDictionary *metadata;
+- (void)removeMetadata;
 - (id)initWithBaseURL:(id)arg1 payloadClass:(Class)arg2;
 
 @end

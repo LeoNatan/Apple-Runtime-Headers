@@ -23,6 +23,7 @@
 - (id)contentLayer;
 - (id)quickLookLayer;
 - (id)quickLookView;
+- (void)updateFullScreenFromMagnification:(double)arg1;
 - (void)doubleClickOnPreviewContent;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (id)serviceCrashError;

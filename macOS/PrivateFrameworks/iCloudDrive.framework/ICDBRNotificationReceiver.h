@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     id <ICDBRNotificationReceiverDelegate> _delegate;
     NSObject<OS_dispatch_source> *_source;
     NSObject<OS_dispatch_source> *_timer;
+    NSObject<OS_dispatch_queue> *_receiverQueue;
     unsigned long long _receivedChanges;
     unsigned long long _batchingChanges;
     double _batchingDelay;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
     id <NSObject> _accountTokenDidChangeNotificationObserver;
 }
 
++ (void)consumeDocumentsExtension:(id)arg1 dataExtension:(id)arg2 forContainerID:(id)arg3;
 @property(retain, nonatomic) id <ICDBRNotificationReceiverDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double batchingDelay; // @synthesize batchingDelay=_batchingDelay;
 @property(nonatomic) unsigned long long batchingChanges; // @synthesize batchingChanges=_batchingChanges;
@@ -61,7 +63,7 @@ __attribute__((visibility("hidden")))
 - (void)dequeue:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) unsigned long long pendingCount;
 - (void)dealloc;
-- (id)init;
+- (id)initWithQueue:(id)arg1;
 
 @end
 

@@ -14,8 +14,10 @@
     _Bool _filterRenderingEnabled;
     NSArray *_filters;
     float _simulatedAperture;
+    float _portraitLightingEffectStrength;
 }
 
+@property(nonatomic) float portraitLightingEffectStrength; // @synthesize portraitLightingEffectStrength=_portraitLightingEffectStrength;
 @property(nonatomic) float simulatedAperture; // @synthesize simulatedAperture=_simulatedAperture;
 @property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 @property(nonatomic) _Bool filterRenderingEnabled; // @synthesize filterRenderingEnabled=_filterRenderingEnabled;

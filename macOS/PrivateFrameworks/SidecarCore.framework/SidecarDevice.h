@@ -36,6 +36,7 @@
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic) NSString *model;
 @property(readonly, nonatomic) NSUUID *identifier;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

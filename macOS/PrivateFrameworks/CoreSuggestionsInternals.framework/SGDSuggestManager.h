@@ -114,6 +114,7 @@
 - (void)originFromRecordId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)launchAppForSuggestedEventUsingLaunchInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)launchInfoForSuggestedEventWithUniqueIdentifier:(id)arg1 sourceURL:(id)arg2 clientLocale:(id)arg3 ignoreUserActivitySupport:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
+- (id)createLaunchIntentForStorageEvent:(id)arg1;
 - (void)eventFromUniqueId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)reportMessagesFound:(id)arg1 lost:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)updateMessages:(id)arg1 state:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
@@ -122,7 +123,7 @@
 - (void)contactMatchesByEmailAddress:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)contactMatchesOrLookupIdByPhoneNumber:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)namesForDetailCacheSnapshotsWithCompletion:(CDUnknownBlockType)arg1;
-- (void)namesForDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(BOOL)arg3 withCompletion:(CDUnknownBlockType)arg4;
+- (void)namesForDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(BOOL)arg3 onlySignificant:(BOOL)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)contactMatchesByPhoneNumber:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)realtimeContactsFromEntity:(id)arg1 enrichments:(id)arg2 sourceTextMessage:(id)arg3 store:(id)arg4;
 - (BOOL)_isContactInteresting:(id)arg1 emailEntity:(id)arg2 enrichments:(id)arg3 hasContactCard:(BOOL)arg4;

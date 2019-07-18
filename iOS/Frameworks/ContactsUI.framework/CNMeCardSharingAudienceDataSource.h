@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)indexForSharingAudience:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long selectedIndex;
 - (_Bool)supportsSelection;
-- (id)initWithSelectedSharingAudience:(unsigned long long)arg1 shouldShowEveryoneAudience:(_Bool)arg2;
+- (id)initWithSelectedSharingAudience:(unsigned long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

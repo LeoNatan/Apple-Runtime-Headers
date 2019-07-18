@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     _Bool _expanded;
     _Bool _hideCollapsedShadow;
     _Bool _alwaysCompact;
+    _Bool _preventPreviewRasterization;
     UITargetedPreview *_collapsedPreview;
     UITargetedPreview *_expandedPreview;
     UIView *_contentView;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIVisualEffectView *expandedShadowView; // @synthesize expandedShadowView=_expandedShadowView;
 @property(retain, nonatomic) _UIPlatterSoftShadowView *collapsedShadowView; // @synthesize collapsedShadowView=_collapsedShadowView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
+@property(nonatomic) _Bool preventPreviewRasterization; // @synthesize preventPreviewRasterization=_preventPreviewRasterization;
 @property(nonatomic) _Bool alwaysCompact; // @synthesize alwaysCompact=_alwaysCompact;
 @property(nonatomic) _Bool hideCollapsedShadow; // @synthesize hideCollapsedShadow=_hideCollapsedShadow;
 @property(nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
@@ -42,7 +44,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)_previewIsLikelyOpaque:(id)arg1;
 - (void)_updateCollapsedShadow;
 - (void)didTearOffForDrag;
+- (void)freezeExpandedPreview;
 - (void)layoutSubviews;
+@property(nonatomic) _Bool allowsUserInteractionInExpandedPreview;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

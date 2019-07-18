@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)wcmGetCallConfig:(unsigned int *)arg1 targetBitrate:(unsigned int *)arg2;
 - (void)wcmSetCallConfig:(unsigned int)arg1 interferenceLevel:(unsigned int)arg2;
 - (void)setPreWarmState:(_Bool)arg1;
-- (void)setWRMNotification:(CDStruct_d2860d30 *)arg1;
+- (void)setWRMNotification:(CDStruct_0693755d *)arg1;
 - (void)setWRMMetricConfig:(CDStruct_69d7cc99 *)arg1;
 - (void)requestWRMNotification;
 - (void)sendStatusUpdate:(const CDStruct_8aeecdac *)arg1;

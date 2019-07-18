@@ -22,8 +22,6 @@
 
 + (long long)requiredLibraryServicesState;
 - (void).cxx_destruct;
-- (BOOL)lightweightPermissionCheckWithPath:(id)arg1 isDir:(BOOL)arg2;
-- (BOOL)lightweightPermissionCheckWithError:(id *)arg1;
 - (id)libraryBundle;
 - (void)pendingEventsForRequest:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)publishRemoteChangeEvent:(id)arg1 delayedSaveActionsDetail:(id)arg2 reply:(CDUnknownBlockType)arg3;
@@ -39,6 +37,7 @@
 - (id)postOpenProgressWithReply:(CDUnknownBlockType)arg1;
 - (void)openPhotoLibraryDatabaseWithReply:(CDUnknownBlockType)arg1;
 - (void)createPhotoLibraryDatabaseWithReply:(CDUnknownBlockType)arg1;
+- (id)newLibraryOpener;
 - (void)getCurrentModelVersionWithReply:(CDUnknownBlockType)arg1;
 - (void)launchAssetsd;
 - (id)initWithLibraryServicesManager:(id)arg1 bundleController:(id)arg2 connectionAuthorization:(id)arg3 assetsdService:(id)arg4;

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 @interface _UICollectionLayoutFramesQueryResult : NSObject <_UICollectionLayoutFramesQueryResult, NSCopying>
 {
     int _index;
+    int _zIndex;
     int _resultKind;
     NSCollectionLayoutItem *_item;
     NSUUID *_supplementaryEnrollmentIdentifier;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSUUID *supplementaryEnrollmentIdentifier; // @synthesize supplementaryEnrollmentIdentifier=_supplementaryEnrollmentIdentifier;
 @property(readonly, nonatomic) NSCollectionLayoutItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) int resultKind; // @synthesize resultKind=_resultKind;
+@property(readonly, nonatomic) int zIndex; // @synthesize zIndex=_zIndex;
 @property(readonly, nonatomic) int index; // @synthesize index=_index;
 @property(readonly, nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 - (void).cxx_destruct;
@@ -46,10 +48,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isSupplementary;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
+@property(readonly, nonatomic) int effectiveZIndex;
 @property(readonly, nonatomic) id <_UICollectionLayoutAuxillaryItem> auxillaryItem;
 @property(readonly, nonatomic) NSCollectionLayoutSupplementaryItem *supplementaryItem;
-- (id)initWithFrame:(struct CGRect)arg1 index:(int)arg2 resultKind:(int)arg3 item:(id)arg4;
-- (id)initWithFrame:(struct CGRect)arg1 index:(int)arg2 resultKind:(int)arg3 item:(id)arg4 auxillaryKind:(int)arg5 supplementaryEnrollmentIdentifier:(id)arg6;
+- (id)initWithFrame:(struct CGRect)arg1 index:(int)arg2 zIndex:(int)arg3 resultKind:(int)arg4 item:(id)arg5;
+- (id)initWithFrame:(struct CGRect)arg1 index:(int)arg2 zIndex:(int)arg3 resultKind:(int)arg4 item:(id)arg5 auxillaryKind:(int)arg6 supplementaryEnrollmentIdentifier:(id)arg7;
 
 @end
 

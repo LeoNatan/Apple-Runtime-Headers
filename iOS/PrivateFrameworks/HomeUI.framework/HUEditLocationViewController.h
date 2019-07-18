@@ -78,8 +78,10 @@
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (id)buildItemModuleControllerForModule:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)doneButtonPressed:(id)arg1;
 - (void)addButtonPressed:(id)arg1;
+- (id)presentNetworkSettings:(_Bool)arg1;
 - (id)showNotificationSettingsForHomeKitObject:(id)arg1 animated:(_Bool)arg2;
 - (void)scrollToNotificationTopicsAnimated:(_Bool)arg1;
 @property(readonly, nonatomic) HUHomeUsersCollectionViewController *usersViewController; // @synthesize usersViewController=_usersViewController;

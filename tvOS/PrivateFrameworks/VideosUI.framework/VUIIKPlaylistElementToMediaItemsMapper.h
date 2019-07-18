@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 - (id)_clipMediaItemsMediaItem:(id)arg1 fromTimelineElement:(id)arg2;
 - (id)_auxMediaItemForVideoElement:(id)arg1;
 - (id)_storeMediaItemsForVideoElement:(id)arg1;
-- (id)mediaItemsFromIKPlaylistElement:(id)arg1;
+- (id)playlistForIKMediaElements:(id)arg1;
 - (_Bool)_shouldDisableResumeMenuForAsset:(id)arg1;
 - (id)init;
 

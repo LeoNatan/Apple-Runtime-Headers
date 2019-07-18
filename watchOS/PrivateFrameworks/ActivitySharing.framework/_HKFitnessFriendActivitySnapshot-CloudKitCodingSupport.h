@@ -19,7 +19,7 @@
 - (id)recordWithZoneID:(id)arg1;
 @property(readonly, nonatomic) ASCodableCloudKitActivitySnapshot *codableSnapshot;
 - (_Bool)isAmm;
-- (double)percent;
+- (double)mmPercent;
 @property(readonly, nonatomic) HKQuantity *mmgQuantity;
 @property(readonly, nonatomic) HKQuantity *mmvQuantity;
 

@@ -16,10 +16,14 @@
     NSData *_data;
     NSDictionary *_headers;
     NSData *_absintheSigningData;
+    NSString *_clientTraceId;
+    NSString *_userAgent;
 }
 
 + (id)requestWithMethodName:(id)arg1;
 + (void)initialize;
+@property(readonly, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
+@property(copy, nonatomic) NSString *clientTraceId; // @synthesize clientTraceId=_clientTraceId;
 @property(nonatomic) BOOL forceHTTPv2; // @synthesize forceHTTPv2=_forceHTTPv2;
 @property(nonatomic) BOOL useCompression; // @synthesize useCompression=_useCompression;
 @property(retain, nonatomic) NSData *absintheSigningData; // @synthesize absintheSigningData=_absintheSigningData;
@@ -27,6 +31,7 @@
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) NSString *methodName; // @synthesize methodName=_methodName;
 - (void).cxx_destruct;
+- (id)_createUserAgentString;
 - (id)grpcRequestWithBaseURL:(id)arg1;
 - (id)initWithMethodName:(id)arg1;
 

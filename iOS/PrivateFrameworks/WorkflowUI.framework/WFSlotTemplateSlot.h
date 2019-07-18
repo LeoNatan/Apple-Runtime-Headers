@@ -15,9 +15,11 @@
 {
     _Bool _enabled;
     _Bool _prefersNoWrapping;
+    _Bool _standaloneTextAttachment;
     WFSlotIdentifier *_identifier;
     NSString *_placeholder;
     NSAttributedString *_contentAttributedString;
+    long long _userInputInsertionIndex;
     NSMutableDictionary *_titleColorsByState;
     NSMutableDictionary *_backgroundColorsByState;
 }
@@ -26,6 +28,8 @@
 + (id)addingSlotWithKey:(id)arg1;
 @property(readonly, nonatomic) NSMutableDictionary *backgroundColorsByState; // @synthesize backgroundColorsByState=_backgroundColorsByState;
 @property(readonly, nonatomic) NSMutableDictionary *titleColorsByState; // @synthesize titleColorsByState=_titleColorsByState;
+@property(nonatomic) long long userInputInsertionIndex; // @synthesize userInputInsertionIndex=_userInputInsertionIndex;
+@property(nonatomic) _Bool standaloneTextAttachment; // @synthesize standaloneTextAttachment=_standaloneTextAttachment;
 @property(nonatomic) _Bool prefersNoWrapping; // @synthesize prefersNoWrapping=_prefersNoWrapping;
 @property(copy, nonatomic) NSAttributedString *contentAttributedString; // @synthesize contentAttributedString=_contentAttributedString;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
@@ -41,6 +45,7 @@
 - (void)setTitleColor:(id)arg1 forControlState:(unsigned long long)arg2;
 @property(readonly, nonatomic, getter=isPopulated) _Bool populated;
 - (id)initWithPlaceholder:(id)arg1 identifier:(id)arg2;
+- (void)applyErrorColors;
 - (void)populateWithVariableString:(id)arg1;
 - (void)populateWithVariable:(id)arg1;
 - (void)populateWithIcon:(id)arg1 string:(id)arg2;

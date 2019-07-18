@@ -45,6 +45,7 @@
 - (void)didSelectSettingsSectionImportQuestionsAtRow:(long long)arg1;
 - (void)didSelectSettingsSectionHomeScreenAtRow:(long long)arg1;
 - (void)didSelectSettingsSectionShowInAtRow:(long long)arg1;
+- (void)didSelectSettingsSectionHelpAtRow:(long long)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;

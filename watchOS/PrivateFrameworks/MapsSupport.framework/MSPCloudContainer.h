@@ -8,24 +8,28 @@
 
 #import <MapsSupport/MSPCloudNotificationReceiver-Protocol.h>
 
-@class CKContainer, MSPCloudContainerCache, MSPContainer, MSPJournal, NSHashTable;
+@class CKContainer, MSPCloudContainerCache, MSPCloudKitAccountAccess, MSPContainer, MSPJournal, NSHashTable;
 @protocol OS_dispatch_queue;
 
 @interface MSPCloudContainer : NSObject <MSPCloudNotificationReceiver>
 {
     _Bool _hasActiveSubscription;
+    _Bool _useSecureContainer;
     MSPContainer *_container;
+    MSPCloudKitAccountAccess *_access;
     MSPCloudContainerCache *_cache;
     NSObject<OS_dispatch_queue> *_observerQueue;
     MSPJournal *_journal;
     NSHashTable *_observers;
 }
 
+@property(nonatomic) _Bool useSecureContainer; // @synthesize useSecureContainer=_useSecureContainer;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) MSPJournal *journal; // @synthesize journal=_journal;
 @property(nonatomic) _Bool hasActiveSubscription; // @synthesize hasActiveSubscription=_hasActiveSubscription;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *observerQueue; // @synthesize observerQueue=_observerQueue;
 @property(retain, nonatomic) MSPCloudContainerCache *cache; // @synthesize cache=_cache;
+@property(retain, nonatomic) MSPCloudKitAccountAccess *access; // @synthesize access=_access;
 @property(retain, nonatomic) MSPContainer *container; // @synthesize container=_container;
 - (void).cxx_destruct;
 - (id)zoneSubscriptionName;

@@ -14,7 +14,6 @@
     double _topToSenderBaseline;
     double _baselineToBaselineSpacing;
     double _recipientBaselineToFirstSeparator;
-    double _recipientBaselineToFirstSeparatorInConversation;
     double _firstSeparatorToSubjectBaseline;
     double _headerBottomPadding;
     double _statusIndicatorVerticalSpacing;
@@ -31,7 +30,6 @@
 @property(readonly, nonatomic) double statusIndicatorVerticalSpacing; // @synthesize statusIndicatorVerticalSpacing=_statusIndicatorVerticalSpacing;
 @property(readonly, nonatomic) double headerBottomPadding; // @synthesize headerBottomPadding=_headerBottomPadding;
 @property(readonly, nonatomic) double firstSeparatorToSubjectBaseline; // @synthesize firstSeparatorToSubjectBaseline=_firstSeparatorToSubjectBaseline;
-@property(readonly, nonatomic) double recipientBaselineToFirstSeparatorInConversation; // @synthesize recipientBaselineToFirstSeparatorInConversation=_recipientBaselineToFirstSeparatorInConversation;
 @property(readonly, nonatomic) double recipientBaselineToFirstSeparator; // @synthesize recipientBaselineToFirstSeparator=_recipientBaselineToFirstSeparator;
 @property(readonly, nonatomic) double baselineToBaselineSpacing; // @synthesize baselineToBaselineSpacing=_baselineToBaselineSpacing;
 @property(readonly, nonatomic) double topToSenderBaseline; // @synthesize topToSenderBaseline=_topToSenderBaseline;
@@ -39,6 +37,13 @@
 @property(nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double conversationHeaderViewExpandedTitleBottomToLastBaseline;
+@property(readonly, nonatomic) double conversationHeaderViewExpandedTitleTopToFirstBaseline;
+@property(readonly, nonatomic) double conversationHeaderViewCollapsedTitleBottomToLastBaseline;
+@property(readonly, nonatomic) double conversationHeaderViewCollapsedTitleTopToFirstBaseline;
+@property(readonly, nonatomic) _Bool conversationHeaderViewShouldHideCollapsedSuperTitle;
+@property(readonly, nonatomic) double conversationHeaderViewExpandedSuperTitleTopToFirstBaseline;
+@property(readonly, nonatomic) double conversationHeaderViewCollapsedSuperTitleTopToFirstBaseline;
 @property(readonly, nonatomic) double bottomSpacingInMailActionCardVerticalGroup;
 @property(readonly, nonatomic) double topToBaselineSpacingInMailActionCardVerticalGroup;
 @property(readonly, nonatomic) double bottomSpacingInMailActionCardHorizontalGroup;
@@ -54,10 +59,12 @@
 - (id)_cachedFontForStyle:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) double messageBottomPaddingInConversationForMailActionHeader;
+@property(readonly, nonatomic) double messageTopPaddingInConversationForMailActionHeader;
 @property(readonly, nonatomic) double messageBottomPaddingInConversation;
-@property(readonly, nonatomic) double footerTopToFirstBaselineInConversation;
+@property(readonly, nonatomic) double messageTopPaddingInConversation;
 @property(readonly, nonatomic) double statusIndicatorHorizontalSpacing;
 @property(readonly, nonatomic) double avatarDiameterForCurrentContentSize;
+@property(readonly, nonatomic) double recipientBaselineToFirstSeparatorInConversation;
 @property(readonly, nonatomic) double baselineToBaselineSpacingInConversationForMailActionHeader;
 @property(readonly, nonatomic) double topToSenderBaselineInConversationForMailActionHeader;
 @property(readonly, nonatomic) double baselineToBaselineSpacingInConversation;

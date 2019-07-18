@@ -13,6 +13,8 @@
 
 @interface PMmacOSPlayerViewController : NSViewController <PMMovieProviderDelegate, PMEditProviderDelegate>
 {
+    BOOL _isFirstTime;
+    BOOL _downloadInProgress;
     PHAssetCollection *_assetCollection;
     VEKProduction *_production;
     AVPlayerView *_playerView;
@@ -27,8 +29,12 @@
     PMMoodProvider *_moodProvider;
     AVPlayer *_playerForObserving;
     id _playerTimeObserver;
+    long long _initialNumberOfAssetsInMovie;
 }
 
+@property(nonatomic) long long initialNumberOfAssetsInMovie; // @synthesize initialNumberOfAssetsInMovie=_initialNumberOfAssetsInMovie;
+@property(nonatomic) BOOL downloadInProgress; // @synthesize downloadInProgress=_downloadInProgress;
+@property(nonatomic) BOOL isFirstTime; // @synthesize isFirstTime=_isFirstTime;
 @property(retain, nonatomic) id playerTimeObserver; // @synthesize playerTimeObserver=_playerTimeObserver;
 @property(retain, nonatomic) AVPlayer *playerForObserving; // @synthesize playerForObserving=_playerForObserving;
 @property(retain, nonatomic) PMMoodProvider *moodProvider; // @synthesize moodProvider=_moodProvider;
@@ -61,6 +67,7 @@
 - (void)setupTitleView;
 - (void)viewDidAppear;
 - (void)viewDidDisappear;
+- (void)viewWillDisappear;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;

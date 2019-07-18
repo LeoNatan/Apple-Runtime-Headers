@@ -6,6 +6,7 @@
 
 #import <HomeUI/HUItemTableViewController.h>
 
+#import <HomeUI/HUMediaSelectionViewControllerDelegate-Protocol.h>
 #import <HomeUI/HUSwitchCellDelegate-Protocol.h>
 #import <HomeUI/HUTriggerDurationPickerDelegate-Protocol.h>
 #import <HomeUI/HUTriggerEditorDelegate-Protocol.h>
@@ -16,7 +17,7 @@
 @class HFTriggerBuilder, HUForwardingTriggerActionBuilderDelegate, HUTriggerSummaryActionGridViewController, HUTriggerSummaryItemManager, NSString;
 @protocol HUTriggerEditorDelegate;
 
-@interface HUTriggerSummaryViewController : HUItemTableViewController <HUTriggerEditorDelegate, HUSwitchCellDelegate, HUTriggerSummaryActionGridViewControllerDelegate, HUTriggerDurationPickerDelegate, UITextViewDelegate, WFHomeComposeViewControllerDelegate>
+@interface HUTriggerSummaryViewController : HUItemTableViewController <HUTriggerEditorDelegate, HUSwitchCellDelegate, HUTriggerSummaryActionGridViewControllerDelegate, HUTriggerDurationPickerDelegate, UITextViewDelegate, WFHomeComposeViewControllerDelegate, HUMediaSelectionViewControllerDelegate>
 {
     _Bool _viewHasAppeared;
     HUTriggerSummaryActionGridViewController *_actionSetsGridViewController;
@@ -35,11 +36,14 @@
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
 - (void).cxx_destruct;
+- (id)mediaSelectionViewControllerMessageForMediaActionPlayUnavailable:(id)arg1;
+- (id)mediaSelectionViewController:(id)arg1 messageForMediaPickerUnavailableReason:(long long)arg2;
 - (void)homeComposeViewController:(id)arg1 didFinishWithHomeWorkflow:(id)arg2;
 - (void)_commitTriggerBuilder;
 - (_Bool)_canCommitTriggerBuilder;
 - (id)_durationEventBuilder;
 - (void)_updateTableHeaderConfiguration;
+- (void)serviceGridViewController:(id)arg1 didTapItem:(id)arg2;
 - (void)triggerSummaryActionGridViewController:(id)arg1 didUpdateTriggerBuilder:(id)arg2;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)durationPicker:(id)arg1 didSelectDuration:(id)arg2;

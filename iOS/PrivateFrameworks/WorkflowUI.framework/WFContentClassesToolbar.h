@@ -22,11 +22,15 @@
     UIImageView *_chevronImageView;
     NSLayoutConstraint *_contentViewLeadingConstraint;
     NSLayoutConstraint *_contentViewTrailingConstraint;
+    NSLayoutConstraint *_chevronVisibleConstraint;
+    NSLayoutConstraint *_chevronHiddenConstraint;
 }
 
 + (double)preferredHeight;
 + (id)headingFont;
 + (struct NSDirectionalEdgeInsets)contentViewInsets;
+@property(readonly, nonatomic) NSLayoutConstraint *chevronHiddenConstraint; // @synthesize chevronHiddenConstraint=_chevronHiddenConstraint;
+@property(readonly, nonatomic) NSLayoutConstraint *chevronVisibleConstraint; // @synthesize chevronVisibleConstraint=_chevronVisibleConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *contentViewTrailingConstraint; // @synthesize contentViewTrailingConstraint=_contentViewTrailingConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *contentViewLeadingConstraint; // @synthesize contentViewLeadingConstraint=_contentViewLeadingConstraint;
 @property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;

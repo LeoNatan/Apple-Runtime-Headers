@@ -62,6 +62,10 @@ struct __va_list_tag {
     void *_field4;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -91,11 +95,11 @@ typedef struct {
 } CDStruct_aa45ca86;
 
 typedef struct {
-    double _field1;
-    double _field2;
-    double _field3;
-    double _field4;
-} CDStruct_d2b197d1;
+    double x;
+    double y;
+    double z;
+    double w;
+} CDStruct_91d2e2b9;
 
 typedef struct {
     long long _field1;

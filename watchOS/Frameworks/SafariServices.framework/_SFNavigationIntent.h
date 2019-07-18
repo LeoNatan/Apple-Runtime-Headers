@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSString, NSURL, NSUUID, WBSCloudTab, WebBookmark, _WKActivatedElementInfo;
+@class NSArray, NSDictionary, NSString, NSURL, NSUUID, WBSCloudTab, WebBookmark, _SFTabStateData, _WKActivatedElementInfo;
 
 @interface _SFNavigationIntent : NSObject
 {
     id _value;
+    _Bool _isUnifiedFieldNavigation;
     _Bool _shouldRelateToSourceTab;
     unsigned int _type;
     int _policy;
@@ -23,6 +24,7 @@
 @property(retain, nonatomic) _WKActivatedElementInfo *sourceElementInfo; // @synthesize sourceElementInfo=_sourceElementInfo;
 @property(retain, nonatomic) NSUUID *sourceWindowUUID; // @synthesize sourceWindowUUID=_sourceWindowUUID;
 @property(retain, nonatomic) NSUUID *sourceTabUUID; // @synthesize sourceTabUUID=_sourceTabUUID;
+@property(nonatomic) _Bool isUnifiedFieldNavigation; // @synthesize isUnifiedFieldNavigation=_isUnifiedFieldNavigation;
 @property(nonatomic) int policy; // @synthesize policy=_policy;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 - (void).cxx_destruct;
@@ -36,6 +38,7 @@
 @property(readonly, copy, nonatomic) NSString *text;
 @property(readonly, copy, nonatomic) NSURL *URL;
 @property(readonly, nonatomic) WBSCloudTab *cloudTab;
+@property(readonly, nonatomic) _SFTabStateData *recentlyClosedTabStateData;
 @property(readonly, nonatomic) WebBookmark *bookmark;
 - (id)description;
 - (id)_initWithType:(unsigned int)arg1 value:(id)arg2 policy:(int)arg3;

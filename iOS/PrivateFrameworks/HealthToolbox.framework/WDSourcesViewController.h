@@ -13,7 +13,6 @@
 @interface WDSourcesViewController : WDHealthTableViewController <WDUserActivityResponder>
 {
     HKSourceListDataSource *_dataSource;
-    _Bool _useInsetStyling;
     NSString *_restorationSourceBundleIdentifier;
 }
 

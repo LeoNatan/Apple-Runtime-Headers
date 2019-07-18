@@ -17,6 +17,7 @@
     struct {
         unsigned int shareMode:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _shareMode;
     NSArray *_entityNames;
     _INPBIntentMetadata *_intentMetadata;
@@ -26,6 +27,7 @@
 + (BOOL)supportsSecureCoding;
 + (Class)recipientsType;
 + (Class)entityNameType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int shareMode; // @synthesize shareMode=_shareMode;
 @property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;

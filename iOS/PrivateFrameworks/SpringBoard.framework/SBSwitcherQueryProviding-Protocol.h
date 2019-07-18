@@ -56,6 +56,7 @@
 - (_Bool)isContentStatusBarVisibleForIndex:(unsigned long long)arg1;
 - (double)containerStatusBarAnimationDuration;
 - (_Bool)isContainerStatusBarVisible;
+- (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)isHomeGrabberVisible;
 - (_Bool)isTetheredScrollingEnabled;
 - (_Bool)isScrollEnabled;

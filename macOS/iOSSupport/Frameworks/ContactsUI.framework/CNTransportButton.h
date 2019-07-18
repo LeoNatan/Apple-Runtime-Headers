@@ -24,7 +24,6 @@
 @property(nonatomic) long long transportType; // @synthesize transportType=_transportType;
 - (void).cxx_destruct;
 - (void)_updateTouchInsetsToFillContainerWithSize:(struct CGSize)arg1;
-- (id)symbolImageNameForTransportType:(long long)arg1;
 - (void)_updateImageWithType:(long long)arg1;
 - (void)tintColorDidChange;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

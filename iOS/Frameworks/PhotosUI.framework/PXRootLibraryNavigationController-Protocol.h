@@ -7,7 +7,7 @@
 #import <PhotosUI/NSObject-Protocol.h>
 #import <PhotosUI/PLCloudFeedNavigating-Protocol.h>
 
-@class NSString, NSURL, PHAsset, PHAssetCollection, PLCloudSharedAlbum, PLCloudSharedComment, PLManagedAsset;
+@class NSString, NSURL, PLCloudSharedAlbum, PLCloudSharedComment, PLManagedAsset;
 
 @protocol PXRootLibraryNavigationController <NSObject, PLCloudFeedNavigating>
 - (void)navigateToPeopleAlbumAnimated:(_Bool)arg1 revealPersonWithLocalIdentifier:(NSString *)arg2 completion:(void (^)(UIViewController *))arg3;
@@ -34,7 +34,6 @@
 - (void)navigateToCloudFeedAsset:(PLManagedAsset *)arg1 completion:(void (^)(UIViewController *))arg2;
 - (void)navigateToRevealCloudFeedAsset:(PLManagedAsset *)arg1 completion:(void (^)(UIViewController *))arg2;
 - (void)navigateToCloudFeedWithCompletion:(void (^)(UIViewController *))arg1;
-- (void)navigateToOneUpForAsset:(PHAsset *)arg1 inAssetContainer:(PHAssetCollection *)arg2 animated:(_Bool)arg3;
 - (void)navigateToOneYearAgoSearch;
 - (void)navigateToPhotosContentBottomAnimated:(_Bool)arg1;
 - (void)navigateToAsset:(PLManagedAsset *)arg1 openOneUp:(_Bool)arg2 animated:(_Bool)arg3;

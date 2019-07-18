@@ -19,7 +19,6 @@
 }
 
 + (id)getCoreDuetValues;
-+ (id)getCoreDuetValuesWhilePossiblyBlocking;
 + (void)fetchDuetValues;
 @property BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 @property BOOL isInternalDevice; // @synthesize isInternalDevice=_isInternalDevice;
@@ -34,7 +33,7 @@
 - (id)rankSectionsUsingBundleIDToSectionMapping:(id)arg1 withRanker:(id)arg2 isPeopleSearch:(BOOL)arg3 isScopedAppSearch:(BOOL)arg4 queryId:(unsigned long long)arg5 isCJK:(BOOL)arg6;
 - (id)removeBlackListedSectionsForMapping:(id)arg1;
 - (id)makeTopHitSectionUsingSections:(id)arg1 withItemRanker:(id)arg2 sectionHeader:(id)arg3 shortcutResult:(id)arg4;
-- (void)applyTopHitRankingPolicyToSection:(id)arg1 maxTopHitCount:(long long)arg2;
+- (void)applyTopHitRankingPolicyToSection:(id)arg1 topResultSection:(id)arg2 maxTopHitCount:(long long)arg3;
 - (id)relativeRankWithAbsRank:(id)arg1 numberValues:(unsigned long long)arg2;
 - (id)removeBlackListedSectionsForMapping:(id)arg1 withRankingConfiguration:(id)arg2;
 - (double)roundedValueForScore:(double)arg1;

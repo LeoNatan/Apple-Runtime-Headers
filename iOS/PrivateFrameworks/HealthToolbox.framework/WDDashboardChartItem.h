@@ -45,11 +45,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <WDDashboardCellPrimaryValueSourceDelegate> primaryValueSourceDelegate; // @synthesize primaryValueSourceDelegate=_primaryValueSourceDelegate;
 @property(readonly, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
 - (void)activitySummaryDataProviderDidUpdateActivitySummaries:(id)arg1;
-- (long long)activitySummaryTimeScopeForRenderer:(id)arg1;
-- (_Bool)activitySummaryDataSourceIsLoadingForRenderer:(id)arg1;
-- (id)unitController;
 - (struct UIEdgeInsets)_chartInsetsForTimeScope:(long long)arg1;
 - (void)dataProviderDidUpdateValues:(id)arg1;
 - (_Bool)shouldHideMinMaxOnBackgroundForTimeScope:(long long)arg1;
@@ -65,6 +61,7 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

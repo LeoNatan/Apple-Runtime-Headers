@@ -11,6 +11,7 @@
 }
 
 + (unsigned int)supportedVersion;
++ (_Bool)isVersionSupported:(unsigned int)arg1;
 
 @end
 

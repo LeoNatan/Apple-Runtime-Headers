@@ -6,10 +6,9 @@
 
 #import <ChatKit/NSObject-Protocol.h>
 
-@class CNContact, IMCNMeCardSharingOnboardingEditViewController, IMCNMeCardSharingResult;
+@class IMCNMeCardSharingOnboardingEditViewController, IMCNMeCardSharingResult;
 
 @protocol IMCNMeCardSharingOnboardingEditViewControllerDelegate <NSObject>
 - (void)meCardSharingOnboardingEditController:(IMCNMeCardSharingOnboardingEditViewController *)arg1 didFinishWithOnboardingResult:(IMCNMeCardSharingResult *)arg2;
-- (void)meCardSharingOnboardingEditController:(IMCNMeCardSharingOnboardingEditViewController *)arg1 didFinishWithContact:(CNContact *)arg2;
 @end
 

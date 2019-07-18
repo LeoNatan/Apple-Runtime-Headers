@@ -6,29 +6,17 @@
 
 #import <CoreSpeech/CSEventMonitor.h>
 
-@class NSObject;
-@protocol OS_dispatch_queue;
-
 @interface CSAudioRouteChangeMonitor : CSEventMonitor
 {
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _isHearstConnected;
-    CDUnknownBlockType _pickedRoutesChangedBlock;
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
-- (BOOL)_fetchHearstConnectionState;
-- (void)_notifyHearstConnectionState:(BOOL)arg1;
-- (BOOL)_fetchHearstConnectionStateWithDeviceID:(unsigned int)arg1;
-- (void)_stopMonitoring;
-- (void)_startMonitoringWithQueue:(id)arg1;
-- (void)preferredExternalRouteDidChange;
 - (BOOL)jarvisConnected;
 - (void)getJarvisConnected:(CDUnknownBlockType)arg1;
 - (BOOL)hearstConnected;
 - (void)getHearstConnected:(CDUnknownBlockType)arg1;
-- (id)init;
+- (void)_stopMonitoring;
+- (void)_startMonitoringWithQueue:(id)arg1;
 
 @end
 

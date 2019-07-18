@@ -20,7 +20,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAveragePictureLevel:(id)arg1;
-- (id)initWithAveragePictureLevel:(double)arg1 aplSampleCount:(int)arg2 aplStandardDeviation:(double)arg3;
 
 @end
 

@@ -10,6 +10,7 @@
 {
 }
 
++ (id)SessionMultiplexer;
 + (id)interface;
 + (id)IDSUDPLink;
 + (id)CrossLayerLogging;

@@ -52,16 +52,17 @@
 @property(retain, nonatomic) NSPredicate *predicateIgnoringFlags; // @synthesize predicateIgnoringFlags=_predicateIgnoringFlags;
 @property(retain, nonatomic) EFQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
-- (void)persistenceDidAdjustLastSyncAndMostRecentStatusCountBy:(int)arg1 forMailboxWithObjectID:(id)arg2;
 - (void)persistenceDidUpdateLastSyncAndMostRecentStatusCount:(int)arg1 forMailboxWithObjectID:(id)arg2;
 - (void)persistenceDidUpdateMostRecentStatusCount:(int)arg1 forMailboxWithObjectID:(id)arg2;
 - (void)persistenceDidUpdateServerCount:(int)arg1 forMailboxWithObjectID:(id)arg2;
 - (void)persistenceIsAddingMailboxWithDatabaseID:(long long)arg1 objectID:(id)arg2;
+- (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 message:(id)arg2;
 - (void)persistenceDidDeleteMessages:(id)arg1;
 - (void)persistenceDidChangeFlags:(id)arg1 messages:(id)arg2;
 - (void)persistenceWillChangeFlags:(id)arg1 messages:(id)arg2;
 - (void)persistenceDidAddMessages:(id)arg1;
-- (void)persistenceWillAddMessage:(id)arg1;
+- (void)persistenceWillAddMessage:(id)arg1 fromExistingMessage:(_Bool)arg2;
+- (_Bool)_moreThan:(int)arg1 messagesExistWithMessageIDHeaderHash:(id)arg2;
 - (id)_filterMessages:(id)arg1 potentiallyMatchingMessages:(id *)arg2;
 - (void)_processChangedMessages:(id)arg1 changeKey:(id)arg2;
 - (void)_prepareForChangeWithMessages:(id)arg1 changeKey:(id)arg2;
@@ -71,7 +72,7 @@
 - (void)_notifyObserverWithLogMessage:(id)arg1;
 - (void)_decrementLocalCount:(int)arg1;
 - (void)_incrementLocalCount:(int)arg1;
-- (void)_scheduleCountCalculationWithQualityOfService:(unsigned int)arg1;
+- (void)_scheduleCountCalculation;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithQuery:(id)arg1 serverCountMailboxScope:(id)arg2 messagePersistence:(id)arg3 hookRegistry:(id)arg4 observer:(id)arg5;

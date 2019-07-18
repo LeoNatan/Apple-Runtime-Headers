@@ -39,7 +39,9 @@
 @property(retain, nonatomic) NSSet *referencePersonUUIDs; // @synthesize referencePersonUUIDs=_referencePersonUUIDs;
 @property(retain, nonatomic) CLLocation *referenceLocation; // @synthesize referenceLocation=_referenceLocation;
 - (void).cxx_destruct;
+- (id)dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithReferenceAsset:(id)arg1;
 - (id)init;
 

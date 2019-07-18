@@ -25,8 +25,6 @@
 - (id)tvsui_supportedUserInterfaceStyles;
 - (_Bool)tvsui_applicationLaunchImageIsTemplate;
 - (id)tvsui_applicationLaunchImageName;
-- (id)tvsui_volatileTopShelfImage;
-- (id)tvsui_volatileApplicationLayeredIcon;
 - (id)tvsui_applicationFlatIcon;
 @end
 

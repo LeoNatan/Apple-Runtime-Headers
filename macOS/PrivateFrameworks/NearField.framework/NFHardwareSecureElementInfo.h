@@ -13,11 +13,13 @@
 @interface NFHardwareSecureElementInfo : NSObject <NSSecureCoding>
 {
     BOOL _restrictedMode;
+    BOOL _restrictedPerformanceMode;
     BOOL _osUpdateMode;
     BOOL _personalisable;
     BOOL _jcopTooOld;
     NSString *_identifier;
     unsigned long long _OSVersion;
+    unsigned long long _fullOSVersion;
     unsigned long long _firmwareVersion;
     NSNumber *_compiledFWVersion;
     unsigned long long _hardwareVersion;
@@ -76,6 +78,7 @@
 @property(readonly, nonatomic) unsigned long long signingKeyType; // @synthesize signingKeyType=_signingKeyType;
 @property(readonly, nonatomic) unsigned long long OSMode; // @synthesize OSMode=_OSMode;
 @property(readonly, nonatomic) BOOL osUpdateMode; // @synthesize osUpdateMode=_osUpdateMode;
+@property(readonly, nonatomic) BOOL restrictedPerformanceMode; // @synthesize restrictedPerformanceMode=_restrictedPerformanceMode;
 @property(readonly, nonatomic) BOOL restrictedMode; // @synthesize restrictedMode=_restrictedMode;
 @property(readonly, nonatomic) NSNumber *otherOSValid; // @synthesize otherOSValid=_otherOSValid;
 @property(readonly, nonatomic) unsigned long long osid; // @synthesize osid=_osid;
@@ -85,12 +88,14 @@
 @property(readonly, nonatomic) unsigned long long hardwareVersion; // @synthesize hardwareVersion=_hardwareVersion;
 @property(readonly, nonatomic) NSNumber *compiledFWVersion; // @synthesize compiledFWVersion=_compiledFWVersion;
 @property(readonly, nonatomic) unsigned long long firmwareVersion; // @synthesize firmwareVersion=_firmwareVersion;
+@property(readonly, nonatomic) unsigned long long fullOSVersion; // @synthesize fullOSVersion=_fullOSVersion;
 @property(readonly, nonatomic) unsigned long long OSVersion; // @synthesize OSVersion=_OSVersion;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)asDictionary;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setBootHistory:(id)arg1;
+- (void)_setIsInRestrictedPerformanceMode:(BOOL)arg1;
 - (void)_setIsInRestrictedMode:(BOOL)arg1;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;

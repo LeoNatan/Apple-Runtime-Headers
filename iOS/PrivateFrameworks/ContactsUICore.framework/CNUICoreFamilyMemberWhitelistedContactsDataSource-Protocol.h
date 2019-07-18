@@ -10,8 +10,10 @@
 @protocol CNUICoreFamilyMemberContactsObserver;
 
 @protocol CNUICoreFamilyMemberWhitelistedContactsDataSource <NSObject>
+@property(readonly, nonatomic) _Bool familyMemberContainerIsEmpty;
 @property(readonly, nonatomic) NSArray *familyMemberContactItems;
-@property(retain, nonatomic) id <CNUICoreFamilyMemberContactsObserver> observer;
+@property(readonly, nonatomic) long long fetchStatus;
+@property(nonatomic) __weak id <CNUICoreFamilyMemberContactsObserver> observer;
 - (void)finishWhitelistedContactsTasks;
 - (CNContact *)contactRepresentingItem:(CNUICoreFamilyMemberContactItem *)arg1;
 - (void)updateWhitelistByRemovingContacts:(NSArray *)arg1;

@@ -87,6 +87,7 @@ __attribute__((visibility("hidden")))
     _Bool isRemoteMediaStalled;
     unsigned int _mediaStallCount;
     double _mediaStallTotalTime;
+    double _maxMediaStallTime;
     double _lastMediaStallStartTime;
     _Bool _isRemoteMediaStalledShort;
     int packetsSinceStall;
@@ -152,7 +153,7 @@ __attribute__((visibility("hidden")))
     unsigned short maxPacketLength;
     long long initialSentBytes;
     long long initialReceivedBytes;
-    // Error parsing type: ^{tagVCAudioReceiver={tagVCAudioReceiverConfig=I[3{tagVCAudioReceiverStream=^{tagHANDLE}S^{tagVCAudioReceiver}}]^v^vIiiB^{opaqueRTCReporting}iB^{__CFString}^{__CFString}SB}^v^v^{opaqueVCJitterBuffer}B^{AudioStreamBasicDescription}id{?=qiIq}^{tagVCRealTimeThread}{tagVCAudioReceiverReportingTask=^{opaqueRTCReporting}i^{tagHANDLE}}B{_opaque_pthread_mutex_t=l[40c]}{_opaque_pthread_mutex_t=l[40c]}{tagVCAudioDecoderList=^{tagDecoderSettings}I}I{tagVCAudioReceiverStatistics=AI}^{tagWRMMetricsInfo}^?{tagVCAudioReceiverCallbackContext=^v^?^?}^?{tagVCAudioReceiverCallbackContext=^v^?^?}I[2{_RTCPPacketList=(tagNTP=Q{?=II})C[10^{tagRTCPPACKET}]^{OpaqueCMBlockBuffer}*II[1472C]}]dI[300{tagPacketHistoryInfo=ISIBB}]SS^{tagVCAudioReceiverStream}SSBSSSSIB}, name: audioReceiver
+    // Error parsing type: ^{tagVCAudioReceiver={tagVCAudioReceiverConfig=I[3{tagVCAudioReceiverStream=^{tagHANDLE}S^{tagVCAudioReceiver}}]^v^vIiiB^{opaqueRTCReporting}iB^{__CFString}^{__CFString}SB}^v^v^{opaqueVCJitterBuffer}B^{AudioStreamBasicDescription}id{?=qiIq}^{tagVCRealTimeThread}{tagVCAudioReceiverReportingTask=^{opaqueRTCReporting}i^{tagHANDLE}}BB{_opaque_pthread_mutex_t=l[40c]}{_opaque_pthread_mutex_t=l[40c]}{tagVCAudioDecoderList=^{tagDecoderSettings}I}I{tagVCAudioReceiverStatistics=AI}^{tagWRMMetricsInfo}^?{tagVCAudioReceiverCallbackContext=^v^?^?}^?{tagVCAudioReceiverCallbackContext=^v^?^?}I[2{_RTCPPacketList=(tagNTP=Q{?=II})C[10^{tagRTCPPACKET}]^{OpaqueCMBlockBuffer}*II[1472C]}]dI[300{tagPacketHistoryInfo=ISIBB}]SS^{tagVCAudioReceiverStream}SSBSSSSIB}, name: audioReceiver
     VCAudioTransmitter *audioTransmitter;
     VCCaptionsReceiver *_captionsReceiver;
     struct tagHANDLE *hVideoReceiver;
@@ -225,7 +226,7 @@ __attribute__((visibility("hidden")))
 @property unsigned int remoteFrameHeight; // @synthesize remoteFrameHeight;
 @property unsigned int remoteFrameWidth; // @synthesize remoteFrameWidth;
 // Error parsing type for property audioReceiver:
-// Property attributes: T^{tagVCAudioReceiver={tagVCAudioReceiverConfig=I[3{tagVCAudioReceiverStream=^{tagHANDLE}S^{tagVCAudioReceiver}}]^v^vIiiB^{opaqueRTCReporting}iB^{__CFString}^{__CFString}SB}^v^v^{opaqueVCJitterBuffer}B^{AudioStreamBasicDescription}id{?=qiIq}^{tagVCRealTimeThread}{tagVCAudioReceiverReportingTask=^{opaqueRTCReporting}i^{tagHANDLE}}B{_opaque_pthread_mutex_t=l[40c]}{_opaque_pthread_mutex_t=l[40c]}{tagVCAudioDecoderList=^{tagDecoderSettings}I}I{tagVCAudioReceiverStatistics=AI}^{tagWRMMetricsInfo}^?{tagVCAudioReceiverCallbackContext=^v^?^?}^?{tagVCAudioReceiverCallbackContext=^v^?^?}I[2{_RTCPPacketList=(tagNTP=Q{?=II})C[10^{tagRTCPPACKET}]^{OpaqueCMBlockBuffer}*II[1472C]}]dI[300{tagPacketHistoryInfo=ISIBB}]SS^{tagVCAudioReceiverStream}SSBSSSSIB},R,VaudioReceiver
+// Property attributes: T^{tagVCAudioReceiver={tagVCAudioReceiverConfig=I[3{tagVCAudioReceiverStream=^{tagHANDLE}S^{tagVCAudioReceiver}}]^v^vIiiB^{opaqueRTCReporting}iB^{__CFString}^{__CFString}SB}^v^v^{opaqueVCJitterBuffer}B^{AudioStreamBasicDescription}id{?=qiIq}^{tagVCRealTimeThread}{tagVCAudioReceiverReportingTask=^{opaqueRTCReporting}i^{tagHANDLE}}BB{_opaque_pthread_mutex_t=l[40c]}{_opaque_pthread_mutex_t=l[40c]}{tagVCAudioDecoderList=^{tagDecoderSettings}I}I{tagVCAudioReceiverStatistics=AI}^{tagWRMMetricsInfo}^?{tagVCAudioReceiverCallbackContext=^v^?^?}^?{tagVCAudioReceiverCallbackContext=^v^?^?}I[2{_RTCPPacketList=(tagNTP=Q{?=II})C[10^{tagRTCPPACKET}]^{OpaqueCMBlockBuffer}*II[1472C]}]dI[300{tagPacketHistoryInfo=ISIBB}]SS^{tagVCAudioReceiverStream}SSBSSSSIB},R,VaudioReceiver
 
 @property(retain, nonatomic) VideoAttributes *remoteVideoAttributes; // @synthesize remoteVideoAttributes;
 @property(retain, nonatomic) VCImageAttributeRules *imageAttributeRules; // @synthesize imageAttributeRules;
@@ -334,7 +335,7 @@ __attribute__((visibility("hidden")))
 - (void)requestWRMNotification;
 - (void)sendWRMStatusUpdate:(const CDStruct_8aeecdac *)arg1;
 - (void)setPreWarmState:(_Bool)arg1;
-- (void)setWRMNotification:(CDStruct_d2860d30 *)arg1;
+- (void)setWRMNotification:(CDStruct_0693755d *)arg1;
 - (void)setWRMMetricConfig:(CDStruct_69d7cc99 *)arg1;
 - (void)reportImmediateWRMMetric:(int)arg1 value:(unsigned long long)arg2;
 - (void)reportWRMMetrics:(const CDStruct_dea828ac *)arg1;
@@ -529,13 +530,13 @@ __attribute__((visibility("hidden")))
 - (void)handleMediaReceivedOverRelayLinkWithConnectionId:(int)arg1;
 - (void)handleMediaReceivedOverPeerToPeerLinkWithConnectionId:(int)arg1;
 - (long)flushBasebandQueueWithPayloads:(id)arg1 flushCount:(unsigned int *)arg2;
+- (void)controlChannel:(id)arg1 receivedData:(id)arg2 transactionID:(unsigned int)arg3 fromParticipant:(id)arg4;
 - (void)setupSymptomEnabledMessage;
 - (void)setupPreferredInterfaceMessage;
 - (void)setupMomentsMessages;
 - (void)setupCellTechChangeMessages;
 - (void)setupPiPStateChangeMessage;
 - (void)setupHandoverCandidateChangeMessage;
-- (void)setupDataMessage;
 - (void)setupDisconnectMessage;
 - (void)setupBasebandCodecInfoMessages;
 - (void)setupCallingModeMessages;
@@ -552,7 +553,7 @@ __attribute__((visibility("hidden")))
 - (void)rateController:(void *)arg1 targetBitrateDidChange:(unsigned int)arg2 rateChangeCounter:(unsigned int)arg3;
 - (void)mediaController:(void *)arg1 mediaSuggestionDidChange:(struct VCRateControlMediaSuggestion)arg2;
 - (void)packMeters:(char *)arg1 withLength:(char *)arg2;
-- (void)updateStatistics:(CDStruct_b3eb8f4a)arg1;
+- (void)updateStatistics:(CDStruct_b21f1e06)arg1;
 - (void)displayLinkTick:(id)arg1;
 - (void)callAlarmsWithRTPTimeStamp:(CDStruct_1b6d18a9 *)arg1;
 - (void)processResolutionChangeToVideoRule:(id)arg1 captureRule:(id)arg2 featuresListString:(id)arg3;

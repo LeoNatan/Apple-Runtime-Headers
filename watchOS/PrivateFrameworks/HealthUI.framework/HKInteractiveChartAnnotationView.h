@@ -11,7 +11,6 @@
 
 @interface HKInteractiveChartAnnotationView : UIView
 {
-    _Bool _showSeparators;
     id <HKInteractiveChartAnnotationViewDataSource> _dataSource;
     UIStackView *_columnStack;
     UIStackView *_containerStack;
@@ -21,11 +20,11 @@
 @property(retain, nonatomic) UIStackView *marginStack; // @synthesize marginStack=_marginStack;
 @property(retain, nonatomic) UIStackView *containerStack; // @synthesize containerStack=_containerStack;
 @property(retain, nonatomic) UIStackView *columnStack; // @synthesize columnStack=_columnStack;
-@property(nonatomic) _Bool showSeparators; // @synthesize showSeparators=_showSeparators;
 @property(nonatomic) __weak id <HKInteractiveChartAnnotationViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (id)_createSeparatorView;
 - (void)reloadData;
+- (void)lowerPriorityConstraint:(id)arg1;
 - (void)_configureStacks;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

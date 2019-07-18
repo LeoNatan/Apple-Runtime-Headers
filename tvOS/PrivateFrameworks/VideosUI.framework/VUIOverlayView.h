@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     UIView *_gradientView;
 }
 
++ (id)overlayViewFromMediaItem:(id)arg1 overlayLayout:(id)arg2 existingView:(id)arg3;
 + (id)overlayViewFromElement:(id)arg1 overlayLayout:(id)arg2 existingView:(id)arg3;
 @property(retain, nonatomic) UIView *gradientView; // @synthesize gradientView=_gradientView;
 @property(retain, nonatomic) _TVProgressView *progressView; // @synthesize progressView=_progressView;

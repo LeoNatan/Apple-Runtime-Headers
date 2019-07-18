@@ -22,7 +22,7 @@
 - (id)_maxQuantity:(id)arg1 otherQuantity:(id)arg2;
 - (id)_divideQuantity:(id)arg1 divisor:(double)arg2;
 - (id)_addQuantity:(id)arg1 toQuantity:(id)arg2;
-- (void)finishCollatingSummary;
+- (void)finishCollatingSummaryWithGraphView:(id)arg1;
 - (id)dateComponentsForCalendar:(id)arg1;
 - (void)combineWithActivitySummary:(id)arg1;
 - (id)initWithTimeScope:(int)arg1;

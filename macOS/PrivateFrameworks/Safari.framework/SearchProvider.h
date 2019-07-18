@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     NSString *_localizableName;
     NSMutableSet *_homepageURLs;
     BOOL _usesSecureSearchURL;
-    NSString *_shortName;
     NSString *_identifier;
     NSString *_parsecSearchIdentifier;
     NSString *_parsecSearchSuggestionIdentifier;
@@ -25,7 +24,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *parsecSearchSuggestionIdentifier; // @synthesize parsecSearchSuggestionIdentifier=_parsecSearchSuggestionIdentifier;
 @property(copy, nonatomic) NSString *parsecSearchIdentifier; // @synthesize parsecSearchIdentifier=_parsecSearchIdentifier;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(readonly, nonatomic) NSString *shortName; // @synthesize shortName=_shortName;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *displayName;
 - (BOOL)searchShouldUseSafeSearchTemplate;

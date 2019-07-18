@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TVPPlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
 - (void)_updateRequiresLinearPlayback;
-@property(readonly, nonatomic, getter=isCurrentMediaATVShow) _Bool currentMediaATVShow;
+@property(readonly, nonatomic, getter=isCurrentMediaTVShow) _Bool currentMediaTVShow;
 - (id)initWithMediaInfo:(id)arg1;
 
 @end

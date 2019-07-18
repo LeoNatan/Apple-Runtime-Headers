@@ -9,9 +9,11 @@
 @interface _SBInlineGridFloorSwitcherModifier : SBSwitcherModifier
 {
     _Bool _floating;
+    _Bool _overlay;
 }
 
 + (void)load;
+@property(nonatomic, getter=isOverlay) _Bool overlay; // @synthesize overlay=_overlay;
 @property(nonatomic, getter=isFloating) _Bool floating; // @synthesize floating=_floating;
 - (_Bool)wantsAsynchronousSurfaceRetentionAssertion;
 - (_Bool)wantsMinificationFilter;
@@ -36,7 +38,7 @@
 - (_Bool)shouldTruncateAnimationsUponTransitionCompletion;
 - (_Bool)shouldFireTransitionCompletionInDefaultRunLoopMode;
 - (_Bool)shouldWaitForLayoutAndStyleUpdatesForTransactionCompletion;
-- (_Bool)acceleratedHomeButtonPressShouldBegin;
+- (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)shouldAcceleratedHomeButtonPressBegin;
 - (id)appLayoutToScrollToBeforeTransitioning;
 - (id)topMostAppLayouts;

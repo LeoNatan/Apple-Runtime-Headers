@@ -87,6 +87,7 @@
 - (void)focusKey:(id)arg1;
 - (BOOL)isPhoneticKey:(id)arg1;
 - (BOOL)shouldPrunePhoneticView:(id)arg1;
+- (BOOL)isKeyExplicitlyDisabled:(id)arg1;
 - (BOOL)shouldPruneView:(id)arg1;
 - (BOOL)defaultVisibilityForKey:(id)arg1;
 - (BOOL)shouldPruneKey:(id)arg1;

@@ -18,12 +18,14 @@
     float _exploreBias;
     float _trainingSimulationExploreBias;
     float _initialProbability;
+    float _varianceEpsilon;
     NSString *_name;
     REFeature *_identificationFeature;
     REFeature *_selectionFeature;
     REFeature *_biasFeature;
 }
 
+@property(nonatomic) float varianceEpsilon; // @synthesize varianceEpsilon=_varianceEpsilon;
 @property(nonatomic) float initialProbability; // @synthesize initialProbability=_initialProbability;
 @property(nonatomic) float trainingSimulationExploreBias; // @synthesize trainingSimulationExploreBias=_trainingSimulationExploreBias;
 @property(nonatomic) float exploreBias; // @synthesize exploreBias=_exploreBias;

@@ -4,10 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <ContactsUI/NSObject-Protocol.h>
+
 @class UIViewController;
 
-@protocol CNPickerControllerDelegate
+@protocol CNPickerControllerDelegate <NSObject>
 - (void)pickerDidCancel:(UIViewController *)arg1;
 - (void)picker:(UIViewController *)arg1 didPickItem:(id)arg2;
+
+@optional
+- (void)picker:(UIViewController *)arg1 didDeleteItem:(id)arg2;
 @end
 

@@ -14,6 +14,7 @@
 {
 }
 
+- (_Bool)_isPlayingMediaFromMRPlaybackState:(unsigned int)arg1;
 - (_Bool)_timer:(id)arg1 conflictsWithRunningTimersInTimers:(id)arg2;
 - (id)_responseToCreateTimerIntent:(id)arg1 withCreatedTimer:(id)arg2 error:(id)arg3 dryRun:(_Bool)arg4;
 - (void)_createTimerWithIntent:(id)arg1 dryRun:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

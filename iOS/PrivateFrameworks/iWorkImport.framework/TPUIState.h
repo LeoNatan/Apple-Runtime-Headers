@@ -24,10 +24,12 @@ __attribute__((visibility("hidden")))
     _Bool _showsCTDeletions;
     _Bool _changeTrackingPaused;
     _Bool _showsPageNavigator;
+    _Bool _showsTOCNavigator;
     _Bool _pencilAnnotationsHidden;
-    _Bool _showsActivitySidebar;
+    _Bool _shouldShowCommentSidebar;
     _Bool _inspectorHidden;
     _Bool _showUserDefinedGuides;
+    _Bool _showUserDefinedMasterGuides;
     int _wordCountHUDType;
     TSKSelectionPath *_selectionPath;
     NSDictionary *_chartUIState;
@@ -45,6 +47,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _windowFrame;
 }
 
+@property(nonatomic) _Bool showUserDefinedMasterGuides; // @synthesize showUserDefinedMasterGuides=_showUserDefinedMasterGuides;
 @property(nonatomic) double presentationAutoScrollSpeed; // @synthesize presentationAutoScrollSpeed=_presentationAutoScrollSpeed;
 @property(nonatomic) long long viewScaleModeiOS; // @synthesize viewScaleModeiOS=_viewScaleModeiOS;
 @property(retain, nonatomic) TSDFreehandDrawingToolkitUIState *freehandDrawingToolkitUIState; // @synthesize freehandDrawingToolkitUIState=_freehandDrawingToolkitUIState;
@@ -57,8 +60,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double viewScale; // @synthesize viewScale=_viewScale;
 @property(nonatomic) long long pageViewState; // @synthesize pageViewState=_pageViewState;
 @property(nonatomic) long long viewScaleMode; // @synthesize viewScaleMode=_viewScaleMode;
-@property(nonatomic) _Bool showsActivitySidebar; // @synthesize showsActivitySidebar=_showsActivitySidebar;
+@property(nonatomic) _Bool shouldShowCommentSidebar; // @synthesize shouldShowCommentSidebar=_shouldShowCommentSidebar;
 @property(nonatomic) _Bool pencilAnnotationsHidden; // @synthesize pencilAnnotationsHidden=_pencilAnnotationsHidden;
+@property(nonatomic) _Bool showsTOCNavigator; // @synthesize showsTOCNavigator=_showsTOCNavigator;
 @property(nonatomic) _Bool showsPageNavigator; // @synthesize showsPageNavigator=_showsPageNavigator;
 @property(nonatomic) _Bool changeTrackingPaused; // @synthesize changeTrackingPaused=_changeTrackingPaused;
 @property(nonatomic) _Bool showsCTDeletions; // @synthesize showsCTDeletions=_showsCTDeletions;
@@ -79,8 +83,8 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
--     // Error parsing type: v40@0:8^{UIStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{RepeatedPtrField<TSCH::ChartUIState>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Point}^{Reference}^{Reference}^{Size}^{Point}^{Size}^{SelectionPathArchive}^{SelectionPathArchive}^{Reference}^{Reference}^{Reference}fBBBBiIfBBBBfiBffBBBBBi{CachedSize={atomic<int>=Ai}}}16@24@32, name: saveToArchive:archiver:context:
--     // Error parsing type: @32@0:8r^{UIStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{RepeatedPtrField<TSCH::ChartUIState>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Point}^{Reference}^{Reference}^{Size}^{Point}^{Size}^{SelectionPathArchive}^{SelectionPathArchive}^{Reference}^{Reference}^{Reference}fBBBBiIfBBBBfiBffBBBBBi{CachedSize={atomic<int>=Ai}}}16@24, name: initWithArchive:unarchiver:
+-     // Error parsing type: v40@0:8^{UIStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{RepeatedPtrField<TSCH::ChartUIState>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Point}^{Reference}^{Reference}^{Size}^{Point}^{Size}^{SelectionPathArchive}^{SelectionPathArchive}^{Reference}^{Reference}^{Reference}fBBBBiIfBBBBfifBBfBBBBiBB{CachedSize={atomic<int>=Ai}}}16@24@32, name: saveToArchive:archiver:context:
+-     // Error parsing type: @32@0:8r^{UIStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{RepeatedPtrField<TSCH::ChartUIState>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Point}^{Reference}^{Reference}^{Size}^{Point}^{Size}^{SelectionPathArchive}^{SelectionPathArchive}^{Reference}^{Reference}^{Reference}fBBBBiIfBBBBfifBBfBBBBiBB{CachedSize={atomic<int>=Ai}}}16@24, name: initWithArchive:unarchiver:
 - (id)archivedUIStateInContext:(id)arg1;
 - (_Bool)isEqualToUIState:(id)arg1;
 - (id)init;

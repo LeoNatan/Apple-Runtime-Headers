@@ -16,9 +16,8 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-+ (id)_localizedGeniusErrorForError:(id)arg1;
++ (id)_localizedGeniusErrorForError:(id)arg1 geniusEnabled:(BOOL)arg2;
 + (id)_localizedCloudGeniusErrorForError:(id)arg1;
-+ (BOOL)_isGeniusEnabled;
 - (void).cxx_destruct;
 - (BOOL)supportsEntityChangeTrackingForMediaEntityType:(long long)arg1 collectionGroupingType:(long long)arg2 dataProviderClass:(out Class *)arg3;
 - (void)updateEntitesToCurrentRevision;

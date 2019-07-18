@@ -1745,7 +1745,7 @@
 - (BOOL)_gatheringActiveGestureRecognizers;
 - (id)_activeGestureRecognizers;
 - (id)_gestureRecognizersStartingWithView:(id)arg1 onEvent:(id)arg2 requireAcceptsFirstMouse:(BOOL)arg3;
-- (void)_removeActiveGestureRecognizer:(id)arg1 withEvent:(id)arg2;
+- (void)_removeActiveGestureRecognizer:(id)arg1;
 - (id)_firstResponderIvar;
 - (void)_setFirstResponderIvar:(id)arg1;
 - (BOOL)_firstResponderCanBeWeak;

@@ -29,7 +29,7 @@
 @property(readonly, nonatomic) BOOL px_isSharedAlbum;
 @property(readonly, nonatomic) BOOL px_isScreenRecordingsSmartAlbum;
 @property(readonly, nonatomic) BOOL px_isRecentlyEditedSmartAlbum;
-@property(readonly, nonatomic) BOOL px_isRecentlySavedSmartAlbum;
+@property(readonly, nonatomic) BOOL px_isRecentsSmartAlbum;
 @property(readonly, nonatomic) BOOL px_isImportSessionCollection;
 @property(readonly, nonatomic) BOOL px_isImportHistoryCollection;
 @property(readonly, nonatomic) BOOL px_isSharedActivityVirtualCollection;
@@ -66,6 +66,7 @@
 @property(readonly, nonatomic) unsigned long long px_estimatedCuratedAssetsCount;
 @property(readonly, nonatomic) unsigned short px_curationType;
 - (id)px_debugDictionary;
+- (BOOL)px_allowsImplicitSelectionForProjectOrSharingAction;
 - (BOOL)px_allowsAssetsDrop;
 - (BOOL)px_shouldUseFacesRectForSmartCropping;
 - (BOOL)px_fetchContainsAnyAssets;

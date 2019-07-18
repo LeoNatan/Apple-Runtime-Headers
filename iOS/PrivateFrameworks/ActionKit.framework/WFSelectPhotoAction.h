@@ -6,15 +6,17 @@
 
 #import <WorkflowKit/WFAction.h>
 
+#import <ActionKit/UIAdaptivePresentationControllerDelegate-Protocol.h>
 #import <ActionKit/UIImagePickerControllerDelegate-Protocol.h>
 #import <ActionKit/UINavigationControllerDelegate-Protocol.h>
 
 @class NSString;
 
-@interface WFSelectPhotoAction : WFAction <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface WFSelectPhotoAction : WFAction <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAdaptivePresentationControllerDelegate>
 {
 }
 
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)imagePickerControllerDidCancel:(id)arg1;
 - (void)imagePickerController:(id)arg1 didFinishPickingMultipleMediaWithInfo:(id)arg2;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;

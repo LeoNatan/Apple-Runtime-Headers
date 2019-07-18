@@ -20,6 +20,7 @@
     } _requestedItemProperties;
     MPModelStoreBrowseContentItemBuilder *_contentItemBuilder;
     MPModelForYouRecommendationMusicKitGroupBuilder *_subgroupBuilder;
+    NSDictionary *_storeBagDictionary;
     MPPropertySet *_requestedPropertySet;
     NSDictionary *_storeItemMetadataResults;
     MPMutableSectionedCollection *_flatSectionedItems;
@@ -33,7 +34,7 @@
 - (id)convertToStoreItemMetadataDictionary:(id)arg1;
 - (id)storeItemMetadataWithMusicAPIMetadataDictionary:(id)arg1;
 - (id)modelObjectForRecommendationChildDictionary:(id)arg1 parentGroup:(id)arg2 subgroupsAccumulator:(id)arg3;
-- (id)initWithRequestedPropertySet:(id)arg1 storeItemMetadataResults:(id)arg2 flatSectionedItems:(id)arg3;
+- (id)initWithRequestedPropertySet:(id)arg1 storeItemMetadataResults:(id)arg2 flatSectionedItems:(id)arg3 storeBagDictionary:(id)arg4;
 
 @end
 

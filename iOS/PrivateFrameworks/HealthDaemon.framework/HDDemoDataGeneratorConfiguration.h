@@ -12,7 +12,7 @@
     _Bool _shouldPresentNotifications;
     _Bool _shouldGenerateHealthDocuments;
     _Bool _shouldGenerateMedicalID;
-    _Bool _shouldGenerateRecentWorkout;
+    _Bool _shouldEnsureRecentWorkoutHasRoute;
     _Bool _shouldGenerateRecentLiquidsIntake;
     long long _profileType;
     long long _generationPeriodInDays;
@@ -24,7 +24,7 @@
 
 + (id)configurationFromDefaults:(id)arg1;
 @property(nonatomic) _Bool shouldGenerateRecentLiquidsIntake; // @synthesize shouldGenerateRecentLiquidsIntake=_shouldGenerateRecentLiquidsIntake;
-@property(nonatomic) _Bool shouldGenerateRecentWorkout; // @synthesize shouldGenerateRecentWorkout=_shouldGenerateRecentWorkout;
+@property(nonatomic) _Bool shouldEnsureRecentWorkoutHasRoute; // @synthesize shouldEnsureRecentWorkoutHasRoute=_shouldEnsureRecentWorkoutHasRoute;
 @property(nonatomic) _Bool shouldGenerateMedicalID; // @synthesize shouldGenerateMedicalID=_shouldGenerateMedicalID;
 @property(nonatomic) _Bool shouldGenerateHealthDocuments; // @synthesize shouldGenerateHealthDocuments=_shouldGenerateHealthDocuments;
 @property(nonatomic) long long resultsTrackingType; // @synthesize resultsTrackingType=_resultsTrackingType;

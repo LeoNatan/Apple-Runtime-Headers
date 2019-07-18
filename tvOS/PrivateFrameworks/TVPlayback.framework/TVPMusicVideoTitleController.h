@@ -12,6 +12,7 @@
 @interface TVPMusicVideoTitleController : NSObject
 {
     _Bool _isShowingAddButton;
+    _Bool _isFingerResting;
     UIView *_musicVideoView;
     id <TVPMusicVideoTitleControllerDelegate> _delegate;
     TVPMusicVideoTitleCardView *_titleCardView;
@@ -20,6 +21,7 @@
 }
 
 + (void)initialize;
+@property(nonatomic) _Bool isFingerResting; // @synthesize isFingerResting=_isFingerResting;
 @property(nonatomic) long long mediaItemIdentifier; // @synthesize mediaItemIdentifier=_mediaItemIdentifier;
 @property(retain, nonatomic) id <TVPAVFPlayback> player; // @synthesize player=_player;
 @property(nonatomic) _Bool isShowingAddButton; // @synthesize isShowingAddButton=_isShowingAddButton;
@@ -28,10 +30,14 @@
 @property(nonatomic) __weak UIView *musicVideoView; // @synthesize musicVideoView=_musicVideoView;
 - (void).cxx_destruct;
 - (void)_mediaItemDidChange:(id)arg1;
+- (void)_handleTogglePlayPause:(id)arg1;
+- (void)_handleSelectButton:(id)arg1;
+- (void)_fingerRestRecognized:(id)arg1;
 - (void)_getCurrentItemTitle:(id *)arg1 andSubtitle:(id *)arg2;
 - (void)_selectedAddButton;
+- (void)_addGestureRecognizers;
 - (void)_showTitleCardForMediaItem:(id)arg1;
-- (void)_hideCurrentTitleCardAnimated:(_Bool)arg1;
+- (void)_hideCurrentTitleCardAnimated:(_Bool)arg1 force:(_Bool)arg2;
 - (void)_removeCurrentTitleCard;
 - (void)_scheduleTitleCardWithTitleInfo:(id)arg1;
 - (id)initWithPlayer:(id)arg1;

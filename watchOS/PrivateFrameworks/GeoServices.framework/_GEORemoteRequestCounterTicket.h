@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)requestCounterTicketForType:(unsigned char)arg1 appId:(id)arg2 remoteProxy:(id)arg3;
-+ (id)requestCounterTicketForType:(unsigned char)arg1;
++ (id)requestCounterTicketForType:(unsigned char)arg1 appId:(id)arg2;
 - (void).cxx_destruct;
 - (void)requestCompletedWithResult:(unsigned char)arg1 xmitBytes:(long long)arg2 recvBytes:(long long)arg3;
 - (void)startingRequestWithTask:(id)arg1;

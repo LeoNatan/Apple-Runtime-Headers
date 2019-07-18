@@ -16,7 +16,6 @@
     _Bool _showLoopBadges;
     _Bool _invalidateCachedPreviews;
     _Bool _useLiveRenderedPreviews;
-    long long _selectionBehavior;
     double _selectionDetailsDismissalDelay;
     long long _suggestionsScheme;
     long long _layoutStyle;
@@ -35,7 +34,6 @@
 @property(nonatomic) _Bool addSimulatedProgressComponent; // @synthesize addSimulatedProgressComponent=_addSimulatedProgressComponent;
 @property(nonatomic) long long suggestionsScheme; // @synthesize suggestionsScheme=_suggestionsScheme;
 @property(nonatomic) double selectionDetailsDismissalDelay; // @synthesize selectionDetailsDismissalDelay=_selectionDetailsDismissalDelay;
-@property(nonatomic) long long selectionBehavior; // @synthesize selectionBehavior=_selectionBehavior;
 - (void)setDefaultValues;
 - (id)parentSettings;
 

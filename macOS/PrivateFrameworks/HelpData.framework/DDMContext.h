@@ -34,6 +34,8 @@
 @property(readonly) NSString *hardware;
 - (id)preferredLocalizationsFromLanguages:(id)arg1;
 @property(readonly) NSString *languages;
+- (id)mappedRequest:(id)arg1;
+- (id)mappedURL:(id)arg1;
 @property(readonly) HPDEnvironment *environment;
 @property(readonly) BOOL isInternalBuild;
 - (id)init;

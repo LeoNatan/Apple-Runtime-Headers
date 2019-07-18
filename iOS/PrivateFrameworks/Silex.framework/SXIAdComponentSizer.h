@@ -15,6 +15,7 @@
 
 @property(readonly, nonatomic) SXAdController *adController; // @synthesize adController=_adController;
 - (void).cxx_destruct;
+- (unsigned long long)shouldIgnoreViewportPaddingForColumnLayout:(id)arg1;
 - (unsigned long long)shouldIgnoreMarginsForColumnLayout:(id)arg1;
 - (struct _NSRange)overrideColumnLayoutForColumnRange:(struct _NSRange)arg1 inColumnLayout:(id)arg2;
 - (double)calculateHeightForWidth:(double)arg1 layoutContext:(id)arg2;

@@ -36,12 +36,12 @@ __attribute__((visibility("hidden")))
 - (void)_longForcePressDetected:(id)arg1;
 - (void)_beginLongForcePressTimerForGesture:(id)arg1;
 - (void)indirectPanGestureWithState:(long long)arg1 withTranslation:(struct CGPoint)arg2 withFlickDirection:(unsigned long long)arg3;
-- (void)cancelTwoFingerLongPressWithExecutionContext:(id)arg1;
-- (void)endTwoFingerLongPressWithExecutionContext:(id)arg1;
-- (void)finishTwoFingerLongPressWithExecutionContext:(id)arg1;
-- (void)updateTwoFingerLongPressWithTranslation:(struct CGPoint)arg1 executionContext:(id)arg2;
-- (void)beginTwoFingerLongPressWithTranslation:(struct CGPoint)arg1 executionContext:(id)arg2;
-- (void)twoFingerLongPressGestureWithState:(long long)arg1 withTranslation:(struct CGPoint)arg2;
+- (void)cancelLongPressWithExecutionContext:(id)arg1;
+- (void)endLongPressWithExecutionContext:(id)arg1;
+- (void)finishLongPressWithExecutionContext:(id)arg1;
+- (void)updateLongPressWithTranslation:(struct CGPoint)arg1 executionContext:(id)arg2;
+- (void)beginLongPressWithTranslation:(struct CGPoint)arg1 touchCount:(unsigned long long)arg2 executionContext:(id)arg3;
+- (void)longPressGestureWithState:(long long)arg1 withTranslation:(struct CGPoint)arg2 touchCount:(unsigned long long)arg3;
 - (void)disableEnclosingScrollViewScrolling;
 - (void)_granularityExpandingGestureWithTimeInterval:(double)arg1 timeGranularity:(double)arg2 isMidPan:(BOOL)arg3;
 - (void)clearKeyboardTouchesForGesture:(id)arg1;

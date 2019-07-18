@@ -9,16 +9,13 @@
 @interface HKMCCycleTimelinePillConfiguration : NSObject
 {
     float _width;
-    float _height;
     float _spacing;
-    float _yOffset;
 }
 
-+ (id)pillConfigurationWithWidth:(float)arg1 height:(float)arg2 spacing:(float)arg3 yOffset:(float)arg4;
-@property(readonly, nonatomic) float yOffset; // @synthesize yOffset=_yOffset;
++ (id)pillConfigurationWithWidth:(float)arg1 spacing:(float)arg2;
 @property(readonly, nonatomic) float spacing; // @synthesize spacing=_spacing;
-@property(readonly, nonatomic) float height; // @synthesize height=_height;
 @property(readonly, nonatomic) float width; // @synthesize width=_width;
+- (float)heightWithAspectRatio:(float)arg1;
 
 @end
 

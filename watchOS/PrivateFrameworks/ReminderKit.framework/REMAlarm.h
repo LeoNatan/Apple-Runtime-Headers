@@ -35,6 +35,7 @@
 - (_Bool)isAcknowledged;
 - (id)description;
 - (unsigned int)hash;
+- (_Bool)isContentEqual:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

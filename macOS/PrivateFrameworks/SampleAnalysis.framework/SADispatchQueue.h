@@ -15,12 +15,14 @@
     NSMutableArray *_dispatchQueueStates;
     BOOL _isConcurrent;
     unsigned long long _dispatchQueueId;
+    NSString *_dispatchQueueLabel;
 }
 
 + (id)dispatchQueueWithId:(unsigned long long)arg1;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_0eb10942 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
 @property BOOL isConcurrent; // @synthesize isConcurrent=_isConcurrent;
+@property(retain) NSString *dispatchQueueLabel; // @synthesize dispatchQueueLabel=_dispatchQueueLabel;
 @property(readonly) unsigned long long dispatchQueueId; // @synthesize dispatchQueueId=_dispatchQueueId;
 @property(readonly) NSArray *dispatchQueueStates; // @synthesize dispatchQueueStates=_dispatchQueueStates;
 - (void).cxx_destruct;

@@ -25,6 +25,7 @@
 - (void)notifyPostActionHandlers:(id)arg1 action:(id)arg2 state:(unsigned long long)arg3;
 - (void)commitPreviewViewController:(id)arg1;
 - (id)previewViewControllerForAction:(id)arg1;
+- (id)contextMenuConfigurationForAction:(id)arg1;
 - (void)performAction:(id)arg1 postActionHandlers:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4 mode:(unsigned long long)arg5;
 - (void)performAction:(id)arg1 postActionHandlers:(id)arg2;
 - (id)initWithActionActivityManager:(id)arg1 viewManager:(id)arg2;

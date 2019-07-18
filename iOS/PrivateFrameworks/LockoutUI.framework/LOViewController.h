@@ -15,7 +15,6 @@
 + (id)messageForApplicationName:(id)arg1 style:(unsigned long long)arg2;
 + (id)lockoutViewControllerWithBundleIdentifier:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
-- (id)initWithWebsiteURL:(id)arg1;
 
 @end
 

@@ -7,6 +7,7 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (BRAdditions)
++ (id)brc_errorNoThumbnailButDownloadingFile;
 + (id)brc_errorCodeRemoved;
 + (id)brc_errorItemNotShareable;
 + (id)brc_errorFolderHierarchyTooDeep;

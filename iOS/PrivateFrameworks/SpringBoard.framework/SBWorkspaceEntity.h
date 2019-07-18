@@ -74,6 +74,8 @@
 @property(readonly, nonatomic) _Bool isHomeScreenEntity;
 - (id)applicationSceneEntity;
 - (_Bool)isApplicationSceneEntity;
+- (id)inlineAppExposeWorkspaceEntity;
+- (_Bool)isInlineAppExposeWorkspaceEntity;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

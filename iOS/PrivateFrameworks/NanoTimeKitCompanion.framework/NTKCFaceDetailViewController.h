@@ -13,6 +13,7 @@
 #import <NanoTimeKitCompanion/NTKCFaceDetailEditOptionSectionDelegate-Protocol.h>
 #import <NanoTimeKitCompanion/NTKCFaceDetailOtherSectionDelegate-Protocol.h>
 #import <NanoTimeKitCompanion/NTKCFaceDetailPhotosSectionDelegate-Protocol.h>
+#import <NanoTimeKitCompanion/NTKCTableViewProviding-Protocol.h>
 #import <NanoTimeKitCompanion/NTKFaceCollectionObserver-Protocol.h>
 #import <NanoTimeKitCompanion/NTKFaceObserver-Protocol.h>
 #import <NanoTimeKitCompanion/UITableViewDataSource-Protocol.h>
@@ -21,7 +22,7 @@
 @class NSArray, NSMutableArray, NSString, NTKCFaceContainerView, NTKCFaceDetailDescriptionSectionController, NTKCFaceDetailKaleidoscopeContentSectionController, NTKCFaceDetailKaleidoscopeStyleSectionController, NTKCFaceDetailOtherSectionController, NTKCFaceDetailPhotosSectionController, NTKCompanionFaceViewController, NTKFace, NTKFaceCollection, UIActivityIndicatorView, UILabel, UITableView, UITableViewCell, UIView, _NTKCDetailActionButton, _NTKCDetailHeaderView;
 @protocol NTKCFaceDetailViewControllerDelegate;
 
-@interface NTKCFaceDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NTKFaceObserver, NTKFaceCollectionObserver, NTKCFaceDetailDescriptionSectionDelegate, NTKCFaceDetailEditOptionSectionDelegate, NTKCFaceDetailPhotosSectionDelegate, NTKCFaceDetailComplicationSectionDelegate, NTKCFaceDetailOtherSectionDelegate, NTKCFaceDetailActionSectionDelegate, NTKCFaceDetailDataSourcesSectionDelegate>
+@interface NTKCFaceDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NTKFaceObserver, NTKFaceCollectionObserver, NTKCFaceDetailDescriptionSectionDelegate, NTKCFaceDetailEditOptionSectionDelegate, NTKCFaceDetailPhotosSectionDelegate, NTKCFaceDetailComplicationSectionDelegate, NTKCFaceDetailOtherSectionDelegate, NTKCFaceDetailActionSectionDelegate, NTKCFaceDetailDataSourcesSectionDelegate, NTKCTableViewProviding>
 {
     _Bool _shared;
     _Bool _inGallery;
@@ -78,6 +79,7 @@
 @property(nonatomic) __weak id <NTKCFaceDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NTKFace *face; // @synthesize face=_face;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UITableView *ntk_tableView;
 - (void)actionSectionDidDelete:(id)arg1;
 - (void)actionSectionDidSelect:(id)arg1;
 - (void)dataSourcesSectionDidFinishLoading:(id)arg1;

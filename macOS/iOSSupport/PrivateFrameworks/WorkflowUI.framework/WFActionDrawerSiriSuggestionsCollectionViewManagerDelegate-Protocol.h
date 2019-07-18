@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class WFAction, WFActionDrawerSiriSuggestionsCollectionViewManager;
+@class UIViewController, WFAction, WFActionDrawerSiriSuggestionsCollectionViewManager;
 
 @protocol WFActionDrawerSiriSuggestionsCollectionViewManagerDelegate
+- (void)siriSuggestionsCollectionViewManager:(WFActionDrawerSiriSuggestionsCollectionViewManager *)arg1 showViewController:(UIViewController *)arg2;
 - (void)siriSuggestionsCollectionViewManager:(WFActionDrawerSiriSuggestionsCollectionViewManager *)arg1 didSelectAction:(WFAction *)arg2;
 @end
 

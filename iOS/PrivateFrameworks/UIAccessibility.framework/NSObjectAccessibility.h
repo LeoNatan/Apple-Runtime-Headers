@@ -28,6 +28,7 @@
 - (id)storedShouldGroupAccessibilityChildren;
 - (_Bool)shouldGroupAccessibilityChildren;
 - (id)accessibilityUserDefinedActivationPoint;
+- (_Bool)accessibilityPerformEscape;
 - (struct CGPoint)accessibilityActivationPoint;
 - (_Bool)accessibilityActivate;
 - (id)accessibilityUserDefinedIdentifier;

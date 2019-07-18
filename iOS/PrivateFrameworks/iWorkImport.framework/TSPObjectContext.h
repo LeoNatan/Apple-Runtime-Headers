@@ -79,6 +79,7 @@ __attribute__((visibility("hidden")))
         unsigned int delegateRespondsToFilePresenter:1;
         unsigned int delegateRespondsToSupportDirectoryURLReturningIsUnique:1;
         unsigned int delegateRespondsToSupportDirectoryURL:1;
+        unsigned int delegateRespondsToArchiveValidationMode:1;
         unsigned int delegateRespondsToIgnoreDocumentSupport:1;
         unsigned int delegateRespondsToIsDocumentSupportTemporary:1;
         unsigned int delegateRespondsToShouldLoadAllComponents:1;
@@ -108,7 +109,6 @@ __attribute__((visibility("hidden")))
 
 + (void)waitForPendingEndSaveGroup:(id)arg1;
 + (_Bool)dumpMessagesForDocument:(id)arg1 decryptionKey:(id)arg2 toURL:(id)arg3;
-+ (void)purgeSharedDocumentResourceCache;
 + (void)garbageCollectDocumentSupportWithKnownDocumentUUIDs:(id)arg1 delegate:(id)arg2;
 + (id)supportBundleURLForDocumentUUID:(id)arg1 delegate:(id)arg2;
 + (void)removeDefaultSupportDirectory;
@@ -165,10 +165,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool ignoreUnknownContentWhileReading;
 @property(readonly, nonatomic) _Bool isDocumentSupportTemporary;
 @property(readonly, nonatomic) _Bool ignoreDocumentSupport;
+- (long long)archiveValidationMode;
 - (void)enumerateObjectProvidersUsingBlock:(CDUnknownBlockType)arg1;
 - (void)registerObjectProvider:(id)arg1;
 - (id)supportDirectoryURLReturningIsBundleURL:(_Bool *)arg1;
 - (void)willModifyObject:(id)arg1 duringReadOperation:(_Bool)arg2;
+- (_Bool)canModifyObject:(id)arg1;
 - (void)endIgnoringModificationsForObject:(id)arg1;
 - (void)beginIgnoringModificationsForObject:(id)arg1;
 - (long long)modifyObjectTokenForNewObject;
@@ -202,7 +204,7 @@ __attribute__((visibility("hidden")))
 - (id)documentResourceDataForDigestString:(id)arg1 locator:(id)arg2 filename:(id)arg3 canDownload:(_Bool)arg4;
 - (void)updateAdditionalResourceRequests;
 - (id)performResourceAccessUsingQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (void)conditionallyPerformResourceAccessUsingQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void)conditionallyBeginAccessingResourcesWithCompletionQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)areExternalReferencesToDataAllowedAtURL:(id)arg1;
 @property(readonly, nonatomic) _Bool areNewExternalReferencesToDataAllowed;
 - (_Bool)areExternalReferencesSupported;
@@ -234,6 +236,7 @@ __attribute__((visibility("hidden")))
 - (void)performReadOperationOnKnownObjects:(CDUnknownBlockType)arg1;
 - (id)objectForIdentifier:(long long)arg1;
 - (_Bool)didFinishSuccessfullyReadingObjects:(id)arg1 readCoordinator:(id)arg2 finalizeHandlerQueue:(id)arg3;
+- (void)presentPersistenceError:(id)arg1;
 - (_Bool)readWithReadCoordinator:(id)arg1 finalizeHandlerQueue:(id)arg2 rootObject:(id *)arg3 error:(id *)arg4 readCompletion:(CDUnknownBlockType)arg5;
 - (_Bool)continueReadingDocumentObjectFromDatabasePackageURL:(id)arg1 error:(id *)arg2;
 - (_Bool)readDocumentObjectFromDatabasePackageURL:(id)arg1 error:(id *)arg2;
@@ -287,12 +290,12 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)createInternalMetadataIfNeeded;
 @property(readonly, nonatomic) _Bool isReadCancelled;
-- (id)initWithURL:(id)arg1 delegate:(id)arg2 registry:(id)arg3 mode:(unsigned int)arg4 passphrase:(id)arg5 skipDocumentUpgrade:(_Bool)arg6 error:(id *)arg7;
-- (id)initWithURL:(id)arg1 delegate:(id)arg2 mode:(unsigned int)arg3 passphrase:(id)arg4 skipDocumentUpgrade:(_Bool)arg5 error:(id *)arg6;
-- (id)initWithURL:(id)arg1 delegate:(id)arg2 passphrase:(id)arg3 skipDocumentUpgrade:(_Bool)arg4 error:(id *)arg5;
+- (id)initWithURL:(id)arg1 delegate:(id)arg2 registry:(id)arg3 resourceContext:(id)arg4 mode:(unsigned int)arg5 passphrase:(id)arg6 skipDocumentUpgrade:(_Bool)arg7 error:(id *)arg8;
+- (id)initWithURL:(id)arg1 delegate:(id)arg2 resourceContext:(id)arg3 mode:(unsigned int)arg4 passphrase:(id)arg5 skipDocumentUpgrade:(_Bool)arg6 error:(id *)arg7;
+- (id)initWithURL:(id)arg1 delegate:(id)arg2 resourceContext:(id)arg3 passphrase:(id)arg4 skipDocumentUpgrade:(_Bool)arg5 error:(id *)arg6;
 - (id)initWithURL:(id)arg1 delegate:(id)arg2 passphrase:(id)arg3 error:(id *)arg4;
 - (id)initWithURL:(id)arg1 delegate:(id)arg2 error:(id *)arg3;
-- (id)initWithDelegate:(id)arg1 registry:(id)arg2;
+- (id)initWithDelegate:(id)arg1 registry:(id)arg2 resourceContext:(id)arg3;
 - (id)initWithDelegate:(id)arg1;
 - (id)init;
 - (id)dataWithLegacyDataIdentifier:(long long)arg1;

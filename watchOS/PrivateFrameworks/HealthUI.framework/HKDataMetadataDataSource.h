@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)_mediaSourceDisplayNamesForSample:(id)arg1;
 - (void)addDetailValuesToSection:(id)arg1;
 - (id)initWithSample:(id)arg1;
 

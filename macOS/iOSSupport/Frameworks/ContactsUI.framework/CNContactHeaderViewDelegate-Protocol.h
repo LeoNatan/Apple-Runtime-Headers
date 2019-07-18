@@ -10,6 +10,7 @@
 
 @protocol CNContactHeaderViewDelegate <NSObject>
 - (CNContactViewCache *)contactViewCache;
+- (BOOL)isNicknameProhibited;
 - (void)headerViewDidPickPreferredChannel:(NSString *)arg1;
 - (UIViewController *)viewControllerForHeaderView:(CNContactHeaderView *)arg1;
 - (void)headerPhotoDidSaveEditsForImageDrop;

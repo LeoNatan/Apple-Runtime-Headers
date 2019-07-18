@@ -11,6 +11,7 @@
 
 @interface UIPrinterPickerController : NSObject
 {
+    CDUnknownBlockType _completionHandler;
     UIPrinter *_selectedPrinter;
     id <UIPrinterPickerControllerDelegate> _delegate;
 }
@@ -20,7 +21,7 @@
 @property(retain, nonatomic) UIPrinter *selectedPrinter; // @synthesize selectedPrinter=_selectedPrinter;
 - (void).cxx_destruct;
 - (void)_dismissMacPrinterSelection;
-- (BOOL)_showMacPrinterSelection;
+- (BOOL)_showMacPrinterSelectionWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)_shouldShowPrinter:(id)arg1;
 - (BOOL)_delegateFiltersPrinters;
 - (void)_printerPickerDidDismiss;

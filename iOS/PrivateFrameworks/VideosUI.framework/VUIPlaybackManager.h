@@ -13,7 +13,6 @@
 @class AVPlayerViewController, MPAVRoutingController, NSString, TVPStateMachine, UIButton, UIImage, UIViewController, VUINowPlayingFeatureMonitor, VUIPlayer, VUIVideoAdvisoryLogoImageDownloader, VUIVideoAdvisoryView, VideosExtrasContext, VideosExtrasPresenter;
 @protocol TVPMediaItem;
 
-__attribute__((visibility("hidden")))
 @interface VUIPlaybackManager : NSObject <AVPlayerViewControllerDelegatePrivate, VideosExtrasContextDelegate, VUINowPlayingFeatureMonitorDelegate>
 {
     _Bool _requiresLinearPlayback;
@@ -39,14 +38,6 @@ __attribute__((visibility("hidden")))
     VUIVideoAdvisoryView *_ratingView;
 }
 
-+ (id)_storeAuxMediaItemForIKMediaElement:(id)arg1 isExtrasContent:(_Bool)arg2;
-+ (id)_storeMediaItemsForAdamID:(long long)arg1 IKMediaElement:(id)arg2;
-+ (id)_playlistForIKMediaElements:(id)arg1 isExtrasContent:(_Bool)arg2;
-+ (id)playlistForVUIMediaItems:(id)arg1;
-+ (id)playlistForIKMediaElements:(id)arg1;
-+ (id)playlistForIKPlaylistElement:(id)arg1;
-+ (id)mediaItemForMPMediaItem:(id)arg1;
-+ (id)playlistForMPMediaItems:(id)arg1;
 + (id)sharedInstance;
 + (void)_performRatingAndAgeVerificationWithMediaItem:(id)arg1 presentingController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)_verifyMediaItemIsPlayableOnCellular:(id)arg1 presentingViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -132,6 +123,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSObject<TVPMediaItem> *currentMediaItem;
 @property(readonly, nonatomic) _Bool isPIPing;
 @property(readonly, nonatomic) _Bool isPlaybackUIBeingShown;
+@property(readonly, nonatomic) _Bool isFullscreenPlaybackUIBeingShown;
 - (void)dismissPlaybackAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentExtrasWithURL:(id)arg1 storeID:(id)arg2 actionParams:(id)arg3 fromViewController:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)presentPlaylist:(id)arg1 fromViewController:(id)arg2 dismissalOperation:(long long)arg3 animated:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DMFApplicationPolicyMonitor, DMFCategoryPolicyMonitor, NSDictionary;
+@class DMFApplicationPolicyMonitor, DMFCategoryPolicyMonitor, NSArray, NSDictionary, NSUUID;
 
 @interface DMFCommunicationPolicyMonitor : NSObject
 {
@@ -14,9 +14,16 @@
     NSDictionary *_policiesByBundleIdentifier;
     DMFApplicationPolicyMonitor *_applicationPolicyMonitor;
     DMFCategoryPolicyMonitor *_categoryPolicyMonitor;
+    NSArray *_policyTypes;
+    NSUUID *_identifier;
 }
 
-+ (id)_bundleIdentifiers;
++ (id)_equivalentCommunicationBundleIdentifiersForCommunicationBundleIdentifier:(id)arg1;
++ (id)_communicationBundleIdentifiers;
++ (id)_calculateCommunicationPoliciesWithApplicationPoliciesByBundleIdentifier:(id)arg1 socialNetworkingCategoryPolicy:(long long)arg2;
++ (id)_transformEffectivePoliciesIntoCommunicationPolicies:(id)arg1;
+@property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
+@property(readonly, copy, nonatomic) NSArray *policyTypes; // @synthesize policyTypes=_policyTypes;
 @property(readonly, nonatomic) DMFCategoryPolicyMonitor *categoryPolicyMonitor; // @synthesize categoryPolicyMonitor=_categoryPolicyMonitor;
 @property(readonly, nonatomic) DMFApplicationPolicyMonitor *applicationPolicyMonitor; // @synthesize applicationPolicyMonitor=_applicationPolicyMonitor;
 @property(nonatomic) BOOL didFetchInitialPolicies; // @synthesize didFetchInitialPolicies=_didFetchInitialPolicies;
@@ -25,6 +32,10 @@
 - (void)_updateWithPoliciesByBundleIdentifier:(id)arg1 policiesByCategoryIdentifier:(id)arg2;
 - (void)_updatePoliciesByBundleIdentifier;
 - (id)init;
+- (void)requestPoliciesByBundleIdentifierWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)requestPoliciesByBundleIdentifierWithError:(id *)arg1;
+- (void)dealloc;
+- (id)initWithPolicyChangeHandler:(CDUnknownBlockType)arg1;
 
 @end
 

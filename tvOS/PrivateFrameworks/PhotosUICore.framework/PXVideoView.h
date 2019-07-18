@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class ISWrappedAVPlayer, NSString, NSTimer;
+@class ISAVPlayerLayer, ISWrappedAVPlayer, NSString, NSTimer;
 @protocol PXVideoViewDelegate;
 
 @interface PXVideoView : UIView
@@ -16,6 +16,7 @@
         _Bool readinessDidChange;
     } _delegateRespondsTo;
     NSTimer *_readinessTimer;
+    ISAVPlayerLayer *_playerLayer;
     _Bool _videoIsReadyForDisplay;
     id <PXVideoViewDelegate> _delegate;
 }
@@ -29,6 +30,7 @@
 - (void)_startReadinessTimerIfNeeded;
 @property(retain, nonatomic) ISWrappedAVPlayer *player;
 - (void)dealloc;
+- (id)initWithFrame:(struct CGRect)arg1;
 @property(copy, nonatomic) NSString *videoGravity;
 
 @end

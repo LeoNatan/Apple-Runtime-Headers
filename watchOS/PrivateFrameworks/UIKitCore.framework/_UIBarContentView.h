@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 @interface _UIBarContentView : UIView <_UIButtonBarAppearanceDelegate>
 {
     _Bool _barWantsLetterpress;
+    _Bool _barIsBlack;
     _Bool _centerTextButtons;
     Class _appearanceGuideClass;
     _UIBarButtonItemAppearanceStorage *_appearanceStorage;
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _UIBarButtonItemAppearanceStorage *appearanceStorage; // @synthesize appearanceStorage=_appearanceStorage;
 @property(nonatomic) _Bool centerTextButtons; // @synthesize centerTextButtons=_centerTextButtons;
 @property(retain, nonatomic, setter=_setAppearanceGuideClass:) Class _appearanceGuideClass; // @synthesize _appearanceGuideClass;
+@property(nonatomic) _Bool barIsBlack; // @synthesize barIsBlack=_barIsBlack;
 @property(nonatomic) _Bool barWantsLetterpress; // @synthesize barWantsLetterpress=_barWantsLetterpress;
 - (void).cxx_destruct;
 - (unsigned int)_edgesPropagatingSafeAreaInsetsToDescendants;

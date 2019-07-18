@@ -18,22 +18,27 @@
     id <AVTStickerCollectionViewCellDelegate> _delegate;
     UIImageView *_imageView;
     AVTMSStickerView *_stickerView;
-    double _longPressBeganTime;
+    struct CGSize _fullImageSize;
+    struct CGRect _clippingRect;
 }
 
 + (double)imageInsetForWidth:(double)arg1;
 + (id)cellIdentifier;
-@property(nonatomic) double longPressBeganTime; // @synthesize longPressBeganTime=_longPressBeganTime;
+@property(nonatomic) struct CGSize fullImageSize; // @synthesize fullImageSize=_fullImageSize;
 @property(nonatomic) _Bool stickerViewIsAnimating; // @synthesize stickerViewIsAnimating=_stickerViewIsAnimating;
 @property(readonly, nonatomic) AVTMSStickerView *stickerView; // @synthesize stickerView=_stickerView;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak id <AVTStickerCollectionViewCellDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) struct CGRect clippingRect; // @synthesize clippingRect=_clippingRect;
 @property(retain, nonatomic) NSUUID *displaySessionUUID; // @synthesize displaySessionUUID=_displaySessionUUID;
 - (void).cxx_destruct;
 - (void)stickerViewWasTapped:(id)arg1;
 - (void)stickerViewDidBeginPeel:(id)arg1;
 - (void)prepareForReuse;
 - (void)updateWithImage:(id)arg1 sticker:(id)arg2 animated:(_Bool)arg3;
+- (struct CGSize)imageSizeFromURL:(id)arg1;
+- (struct CGRect)stickerViewFrameForImageSize:(struct CGSize)arg1 clippingRect:(struct CGRect)arg2;
+- (void)layoutSubviews;
 @property(nonatomic) __weak id <AVTStickerDisclosureValidationDelegate> disclosureValidationDelegate;
 @property(nonatomic) _Bool allowsPeel;
 - (id)initWithFrame:(struct CGRect)arg1;

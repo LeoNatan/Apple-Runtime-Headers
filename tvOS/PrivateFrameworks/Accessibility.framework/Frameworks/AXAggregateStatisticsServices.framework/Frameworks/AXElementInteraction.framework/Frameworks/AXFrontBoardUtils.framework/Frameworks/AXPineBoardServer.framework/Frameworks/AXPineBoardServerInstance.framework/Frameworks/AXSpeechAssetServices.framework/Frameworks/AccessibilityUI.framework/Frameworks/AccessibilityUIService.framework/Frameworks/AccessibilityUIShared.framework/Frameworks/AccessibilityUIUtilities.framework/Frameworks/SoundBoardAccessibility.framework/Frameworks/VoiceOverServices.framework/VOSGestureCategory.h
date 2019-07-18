@@ -20,6 +20,7 @@
 + (_Bool)isTapGesture:(id)arg1;
 + (_Bool)isFlickGesture:(id)arg1;
 + (id)allCategories;
++ (id)threeFingerDoubleTapHoldAndFlicks;
 + (id)threeFingerTapAndHolds;
 + (id)twoFingerTapAndHolds;
 + (id)oneFingerTapAndHolds;

@@ -17,13 +17,16 @@ __attribute__((visibility("hidden")))
 {
     NSArray *_pickableGroups;
     UITableView *_tableView;
+    NSArray *_prohibitedPropertyKeys;
     id <CNContactGroupPickerDelegate> _groupPickerDelegate;
 }
 
-+ (id)pickableGroupsWithPickedGroups:(id)arg1 policy:(id)arg2;
++ (id)pickableGroupsWithPickedGroups:(id)arg1 policy:(id)arg2 prohibitedPropertyKeys:(id)arg3;
 + (id)propertySections;
++ (_Bool)propertiesLeftToPickWithPickedGroups:(id)arg1 policy:(id)arg2 prohibitedPropertyKeys:(id)arg3;
 + (_Bool)propertiesLeftToPickWithPickedGroups:(id)arg1 policy:(id)arg2;
 @property(nonatomic) __weak id <CNContactGroupPickerDelegate> groupPickerDelegate; // @synthesize groupPickerDelegate=_groupPickerDelegate;
+@property(retain, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
 - (void).cxx_destruct;
 - (id)_loadPickableGroupsWithPickedGroups:(id)arg1 policy:(id)arg2;
 - (void)cancel:(id)arg1;

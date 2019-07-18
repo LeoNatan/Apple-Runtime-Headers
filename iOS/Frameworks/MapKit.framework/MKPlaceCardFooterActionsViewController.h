@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 - (void)reloadData;
 - (void)viewDidLoad;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

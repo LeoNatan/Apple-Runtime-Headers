@@ -34,6 +34,7 @@
     NSMutableArray *_connections;
 }
 
++ (void)registerSignPostForImageData:(id)arg1;
 + (float)defaultLensPosition;
 @property _Bool runningSingleShotAutoFocus; // @synthesize runningSingleShotAutoFocus=_runningSingleShotAutoFocus;
 @property float defaultLensPosition; // @synthesize defaultLensPosition=_defaultLensPosition;
@@ -68,11 +69,13 @@
 - (id)configureCaptureSession;
 - (void)enableSensor:(_Bool)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)forceUpdatePowerUsage:(unsigned long long)arg1;
 - (void)start;
 - (void)stop;
 - (id)prepareToStart;
 - (unsigned long long)providedDataTypes;
 - (void)triggerVisionDataBurst;
+- (id)logPrefix;
 - (void)reconfigure:(id)arg1;
 - (_Bool)canReconfigure:(id)arg1;
 @property(readonly, nonatomic) NSArray *outputsForSynchronizer;

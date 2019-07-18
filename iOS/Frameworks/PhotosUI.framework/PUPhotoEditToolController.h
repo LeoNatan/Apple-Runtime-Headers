@@ -9,7 +9,7 @@
 #import <PhotosUI/PUPhotoEditLayoutDynamicAdaptable-Protocol.h>
 #import <PhotosUI/PUViewControllerSpecChangeObserver-Protocol.h>
 
-@class CEKEdgeGradientView, NSString, NURenderPipelineFilter, PICompositionController, PLEditSource, PUPhotoEditAggregateSession, PUPhotoEditToolControllerSpec, PUPhotoEditValuesCalculator, PUPhotoEditViewControllerSpec, UIButton, UIColor, UIImage, UIView, _PUPhotoEditToolGradientView;
+@class CEKEdgeGradientView, NSArray, NSMutableArray, NSString, NURenderPipelineFilter, PFSlowMotionTimeRangeMapper, PICompositionController, PLEditSource, PUPhotoEditAggregateSession, PUPhotoEditToolControllerSpec, PUPhotoEditValuesCalculator, PUPhotoEditViewControllerSpec, UIButton, UIColor, UIImage, UIView, _PUPhotoEditToolGradientView;
 @protocol PUEditableAsset, PUPhotoEditToolControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -35,10 +35,14 @@ __attribute__((visibility("hidden")))
     UIImage *_selectedToolbarIcon;
     UIButton *_preferredAlternateToolbarButton;
     UIView *_leftToolbarView;
+    NSMutableArray *_mutableEditActionActivites;
+    PFSlowMotionTimeRangeMapper *_slowMotionTimeMapper;
     CDUnknownBlockType _ppt_didBecomeActiveToolBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType ppt_didBecomeActiveToolBlock; // @synthesize ppt_didBecomeActiveToolBlock=_ppt_didBecomeActiveToolBlock;
+@property(retain, nonatomic) PFSlowMotionTimeRangeMapper *slowMotionTimeMapper; // @synthesize slowMotionTimeMapper=_slowMotionTimeMapper;
+@property(retain, nonatomic) NSMutableArray *mutableEditActionActivites; // @synthesize mutableEditActionActivites=_mutableEditActionActivites;
 @property(readonly, nonatomic) UIView *leftToolbarView; // @synthesize leftToolbarView=_leftToolbarView;
 @property(retain, nonatomic) UIButton *preferredAlternateToolbarButton; // @synthesize preferredAlternateToolbarButton=_preferredAlternateToolbarButton;
 @property(nonatomic, getter=isPerformingLiveInteraction) _Bool performingLiveInteraction; // @synthesize performingLiveInteraction=_performingLiveInteraction;
@@ -58,6 +62,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long layoutOrientation;
 @property(copy, nonatomic) NSString *backdropViewGroupName; // @synthesize backdropViewGroupName=_backdropViewGroupName;
 - (void).cxx_destruct;
+- (id)_newTimeMapper;
+- (CDStruct_1b6d18a9)displayedTimeForOriginalAssetTime:(CDStruct_1b6d18a9)arg1;
+- (CDStruct_1b6d18a9)originalAssetTimeForDisplayedTime:(CDStruct_1b6d18a9)arg1;
 - (id)accessibilityHUDItemForButton:(id)arg1;
 - (struct CGRect)contentRectInCoordinateSpace:(id)arg1;
 - (void)didResignActiveTool;
@@ -77,7 +84,7 @@ __attribute__((visibility("hidden")))
 - (void)setPlaceholderImage:(id)arg1;
 - (void)photoEditLivePhotoModelUpdated;
 - (void)setUseGradientBackground:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)prepareForSave;
+- (void)prepareForSave:(_Bool)arg1;
 - (void)basePhotoInvalidated;
 - (void)baseLivePhotoInvalidated;
 - (void)resetToDefaultValueAnimated:(_Bool)arg1;
@@ -92,6 +99,8 @@ __attribute__((visibility("hidden")))
 - (id)leadingToolbarViews;
 - (void)updateForIncomingAnimation;
 - (void)setOriginalStillImageTime:(CDStruct_1b6d18a9)arg1;
+@property(readonly, nonatomic) NSArray *editActionActivities;
+- (void)addEditActionActivity:(id)arg1;
 - (void)_layoutToolGradient;
 @property(readonly, nonatomic) PICompositionController *uneditedCompositionController;
 - (void)setLayoutOrientation:(long long)arg1 withTransitionCoordinator:(id)arg2;

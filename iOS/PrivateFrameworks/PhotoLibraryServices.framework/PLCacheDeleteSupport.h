@@ -21,11 +21,13 @@
 + (_Bool)supportsCentralizedCacheDeleteForPhotoLibraryAtURL:(id)arg1;
 + (_Bool)_supportsCentralizedCacheDeleteDefault;
 + (_Bool)clearPurgeableFlagsForAllResourcesInPhotoLibraryURL:(id)arg1;
++ (void)registerNullHandler;
 @property(copy, nonatomic) NSDate *exitDeleteTime; // @synthesize exitDeleteTime=_exitDeleteTime;
 - (void).cxx_destruct;
-- (void)_markAsNotLocallyAvailableForResourceWithFileID:(id)arg1 purgedPath:(id)arg2;
+- (void)_markAsNotLocallyAvailableForResourcesWithFileIDsToPath:(id)arg1;
 - (void)_rescanResourcesFromFileSystem;
-- (void)_processRemovedFiles:(const struct __CFArray *)arg1 inMountPoint:(id)arg2;
+- (_Bool)_isFilePurgedForFileID:(id)arg1 purgedPath:(id)arg2;
+- (void)_processRemovedFiles:(id)arg1 inMountPoint:(id)arg2;
 - (void)_installPurgeObserverAndProcessAlreadyRemovedFiles;
 - (_Bool)clearPurgeableFlagsForAllResources;
 - (_Bool)clearPurgeableFlagForResource:(id)arg1;

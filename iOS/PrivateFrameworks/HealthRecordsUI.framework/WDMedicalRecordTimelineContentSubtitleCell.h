@@ -6,7 +6,7 @@
 
 #import <HealthRecordsUI/WDMedicalRecordGroupableCell.h>
 
-@class NSLayoutConstraint, NSString, UIImageView, UILabel;
+@class NSLayoutConstraint, NSString, UILabel, UIView;
 
 __attribute__((visibility("hidden")))
 @interface WDMedicalRecordTimelineContentSubtitleCell : WDMedicalRecordGroupableCell
@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     _Bool _showDisclosureIndicator;
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
-    UIImageView *_disclosureChevronView;
+    UIView *_disclosureChevronView;
     NSLayoutConstraint *_titlePillConstraint;
     NSLayoutConstraint *_titleChevronConstraint;
 }
@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 + (id)_titleLabelFont;
 @property(retain, nonatomic) NSLayoutConstraint *titleChevronConstraint; // @synthesize titleChevronConstraint=_titleChevronConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titlePillConstraint; // @synthesize titlePillConstraint=_titlePillConstraint;
-@property(retain, nonatomic) UIImageView *disclosureChevronView; // @synthesize disclosureChevronView=_disclosureChevronView;
+@property(retain, nonatomic) UIView *disclosureChevronView; // @synthesize disclosureChevronView=_disclosureChevronView;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) _Bool showDisclosureIndicator; // @synthesize showDisclosureIndicator=_showDisclosureIndicator;

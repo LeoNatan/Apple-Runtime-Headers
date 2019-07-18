@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, OBBoldTrayButton, STIntroductionModel, UINavigationController, UIStoryboard, UIViewController;
+@class NSString, STIntroductionModel, UINavigationController, UIViewController;
 
 __attribute__((visibility("hidden")))
 @interface STIntroductionController : NSObject
@@ -17,43 +17,24 @@ __attribute__((visibility("hidden")))
     _Bool _isModalPresentation;
     NSString *_childName;
     CDUnknownBlockType _completionBlock;
-    UIStoryboard *_storyboard;
     STIntroductionModel *_introductionModel;
     UINavigationController *_navigationController;
-    OBBoldTrayButton *_setAppLimitButton;
 }
 
-@property(retain) OBBoldTrayButton *setAppLimitButton; // @synthesize setAppLimitButton=_setAppLimitButton;
 @property(retain) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(nonatomic) _Bool isModalPresentation; // @synthesize isModalPresentation=_isModalPresentation;
 @property(readonly) STIntroductionModel *introductionModel; // @synthesize introductionModel=_introductionModel;
-@property(readonly) UIStoryboard *storyboard; // @synthesize storyboard=_storyboard;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property _Bool skipWelcome; // @synthesize skipWelcome=_skipWelcome;
 @property(copy) NSString *childName; // @synthesize childName=_childName;
 @property _Bool forceParentalControls; // @synthesize forceParentalControls=_forceParentalControls;
 @property _Bool allowParentalControls; // @synthesize allowParentalControls=_allowParentalControls;
 - (void).cxx_destruct;
-- (id)_newContentPrivacyViewController;
-- (void)_notNowRestrictions:(id)arg1;
-- (void)_updateSetAppLimitButtonWithTime:(id)arg1 selectedCategories:(id)arg2;
-- (void)_allowanceSelectedCategoriesDidChange:(id)arg1;
-- (void)_allowanceTimeDidChange:(id)arg1;
-- (id)_newRestrictionsViewController;
-- (void)_notNowDowntime:(id)arg1;
-- (void)_setDowntime:(id)arg1;
-- (id)_newDowntimeViewController;
-- (void)_myChildsDevice:(id)arg1;
-- (void)_myDevice:(id)arg1;
-- (id)_newIdentityViewController;
-- (id)_newWelcomeViewController;
-- (id)_viewControllerFollowingTag:(long long)arg1;
-- (id)_getNavigationControllerFromView:(id)arg1;
+- (id)_viewControllerFollowingViewController:(id)arg1;
 - (void)_viewControllerCompleted:(id)arg1;
+- (void)_cancel:(id)arg1;
 @property(readonly) UIViewController *initialViewController;
 - (void)presentOverViewController:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -16,6 +16,7 @@
 - (void)_setOverrideTraitCollection:(UITraitCollection *)arg1;
 - (void)_setLegacyAppearance:(_Bool)arg1;
 - (void)_setParticipantDetails:(NSDictionary *)arg1;
+- (void)_setShowRootFolder:(_Bool)arg1;
 - (void)_setShowAddPeople:(_Bool)arg1;
 - (void)_setThumbnail:(UIImage *)arg1;
 - (void)_setCollaborationUIEnabled:(_Bool)arg1;

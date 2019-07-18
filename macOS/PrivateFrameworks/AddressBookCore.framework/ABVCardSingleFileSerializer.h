@@ -20,7 +20,7 @@
 @property(copy) NSURL *cardURL; // @synthesize cardURL=_cardURL;
 - (void)serializePersonWithName:(id)arg1 vCardData:(id)arg2;
 - (id)makeProgress;
-- (void)serializePeople:(id)arg1 addressBook:(id)arg2;
+- (void)serializePeople:(id)arg1;
 - (void)overrideNames:(id)arg1;
 - (void)dealloc;
 - (id)initWithBasePath:(id)arg1;

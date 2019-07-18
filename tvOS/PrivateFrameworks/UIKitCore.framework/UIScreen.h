@@ -31,7 +31,6 @@
     NSArray *_availableDisplayModes;
     double _pointsPerInch;
     _UIScreenFixedCoordinateSpace *_fixedCoordinateSpace;
-    UITraitCollection *_contentSizeCategoryTraits;
     id <_UIDisplayInfoProviding> _displayInfoProvider;
     FBSDisplayConfiguration *__displayConfiguration;
     struct {
@@ -134,6 +133,7 @@
 @property(readonly, nonatomic) __weak id <UIFocusItem> focusedItem;
 - (void)setFocusEnabled:(_Bool)arg1;
 - (void)_ensureFocusSystemIsLoaded;
+- (_Bool)_isFocusSystemLoaded;
 @property(readonly, nonatomic, getter=_focusSystem) UIFocusSystem *focusSystem; // @synthesize focusSystem=_focusSystem;
 @property(readonly, nonatomic, getter=_focusSystemManager) _UIScreenFocusSystemManager *focusSystemManager; // @synthesize focusSystemManager=_focusSystemManager;
 @property(readonly, nonatomic, getter=_focusMovementPerformer) _UIFocusMovementPerformer *focusMovementPerformer; // @synthesize focusMovementPerformer=_focusMovementPerformer;
@@ -215,6 +215,7 @@
 - (_Bool)_isCarPlayHumanPresenceInRange;
 - (_Bool)_supportsCarPlayHumanPresence;
 - (void)_fetchInitialCarPlayHumanPresenceStatusIfNeeded;
+- (_Bool)_isCarInstrumentsScreen;
 - (_Bool)_isCarScreen;
 - (_Bool)_isMainScreenPointer;
 - (_Bool)_isExternal;

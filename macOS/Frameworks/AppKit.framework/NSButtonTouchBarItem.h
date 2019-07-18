@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 @property(copy) NSString *customizationLabel;
+@property(getter=isEnabled) BOOL enabled;
 @property(copy) NSColor *bezelColor;
 @property(retain) NSImage *image;
 @property(copy) NSString *title;

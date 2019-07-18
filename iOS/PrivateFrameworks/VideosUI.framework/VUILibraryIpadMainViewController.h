@@ -50,7 +50,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
 - (void)dealloc;
 - (id)initWithMediaLibrary:(id)arg1;
 

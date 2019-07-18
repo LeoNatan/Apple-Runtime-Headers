@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)windowDidBecomeKeyNotification:(id)arg1;
 - (void)draggedWindowMovedToSpace:(unsigned long long)arg1 repositionUnderMouseIfDetached:(BOOL)arg2;
 - (BOOL)dragShouldSnapBackForMinimize;
+- (id)_activeWindow;
 - (id)selectedWindow;
 - (id)beforeStackedSavedWindowFrameString;
 - (id)backgroundWindowIDs;

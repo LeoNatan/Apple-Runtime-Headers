@@ -67,6 +67,7 @@
 @property(nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 - (void)switchToPanelIfUndoing;
 @property(retain, nonatomic) NSString *spokenDescription; // @synthesize spokenDescription=_spokenDescription;
+@property(readonly, nonatomic, getter=isGroupElementWithSingleChild) BOOL groupElementWithSingleChild;
 @property(readonly, nonatomic) ACSHPanel *parentPanel;
 @property(readonly, nonatomic) ACSHResourceCollection *resourceCollection;
 - (id)panelElementsInGroup:(id)arg1;

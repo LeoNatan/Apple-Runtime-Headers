@@ -15,15 +15,16 @@
     // Error parsing type: , name: countProvider
     // Error parsing type: , name: currentViewController
     // Error parsing type: , name: displayMode
+    // Error parsing type: , name: isModePickerHidden
     // Error parsing type: , name: $__lazy_storage_$_modePicker
+    // Error parsing type: , name: $__lazy_storage_$_navigationPalette
     // Error parsing type: , name: $__lazy_storage_$_lastUpdatedViewController
     // Error parsing type: , name: $__lazy_storage_$_alphabeticalViewController
-    // Error parsing type: , name: $__lazy_storage_$_navigationPalette
-    // Error parsing type: , name: $__lazy_storage_$_navigationpaletteContraints
 }
 
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)tapToRadar:(id)arg1;
 - (void)modePickerDidChange:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;

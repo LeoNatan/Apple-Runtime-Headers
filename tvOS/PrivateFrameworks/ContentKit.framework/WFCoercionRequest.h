@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <ContentKit/NSCopying-Protocol.h>
+
 @class NSArray, WFCoercionOptions, WFFileType;
 
-@interface WFCoercionRequest : NSObject
+@interface WFCoercionRequest : NSObject <NSCopying>
 {
     CDUnknownBlockType _objectRepresentationResultHandler;
     CDUnknownBlockType _fileRepresentationResultHandler;
@@ -32,6 +34,7 @@
 @property(retain, nonatomic) WFCoercionOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) CDUnknownBlockType contentItemsCompletionHandler; // @synthesize contentItemsCompletionHandler=_contentItemsCompletionHandler;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)completeContentItemCoercionRequestWithResultItems:(id)arg1 originalItem:(id)arg2 error:(id)arg3;
 @property(readonly, nonatomic) CDUnknownBlockType contentCollectionResultHandler; // @synthesize contentCollectionResultHandler=_contentCollectionResultHandler;
 @property(readonly, nonatomic) CDUnknownBlockType objectRepresentationResultHandler; // @synthesize objectRepresentationResultHandler=_objectRepresentationResultHandler;

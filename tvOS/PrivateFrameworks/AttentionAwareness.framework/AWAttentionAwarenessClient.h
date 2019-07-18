@@ -7,39 +7,46 @@
 #import <objc/NSObject.h>
 
 #import <AttentionAwareness/AWFrameworkClient-Protocol.h>
+#import <AttentionAwareness/AWServiceObserver-Protocol.h>
 
 @class AWAttentionAwarenessConfiguration, AWAttentionEvent, AWClientPollWaiter, NSString;
 @protocol NSXPCProxyCreating, OS_dispatch_queue;
 
-@interface AWAttentionAwarenessClient : NSObject <AWFrameworkClient>
+@interface AWAttentionAwarenessClient : NSObject <AWServiceObserver, AWFrameworkClient>
 {
     NSObject<OS_dispatch_queue> *_queue;
     AWClientPollWaiter *_pollWaiter;
     id <NSXPCProxyCreating> _remoteClientProxy;
     unsigned long long _suspensionCount;
     _Bool _invalidated;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    CDUnknownBlockType _clientBlock;
+    NSObject<OS_dispatch_queue> *_clientNotifQueue;
+    CDUnknownBlockType _clientNotifBlock;
+    NSObject<OS_dispatch_queue> *_clientEventQueue;
+    CDUnknownBlockType _clientEventBlock;
     AWAttentionAwarenessConfiguration *_configuration;
-    int _clientState;
     _Bool _unitTestMode;
+    int _clientIndex;
+    _Bool _lastAttentionState;
 }
 
 + (void)initialize;
 - (void).cxx_destruct;
+- (void)serviceInterrupted;
 - (id)unitTestSampler;
 - (void)setUnitTestMode:(_Bool)arg1;
 - (void)notifyPollEventType:(unsigned long long)arg1 event:(id)arg2;
 - (void)notifyEvent:(id)arg1;
+- (void)notify:(unsigned long long)arg1;
 - (_Bool)invalidateWithError:(id *)arg1;
 - (_Bool)suspendWithError:(id *)arg1;
 - (_Bool)invalidateRemoteClientWithError:(id *)arg1;
 - (_Bool)resumeWithError:(id *)arg1;
-- (id)reconnect;
+- (id)connect:(_Bool)arg1;
 - (_Bool)cancelPollForAttentionWithError:(id *)arg1;
 - (_Bool)pollForAttentionWithTimeout:(double)arg1 event:(id *)arg2 error:(id *)arg3;
 - (_Bool)pollForAttentionWithTimeout:(double)arg1 queue:(id)arg2 block:(CDUnknownBlockType)arg3 error:(id *)arg4;
 - (void)setEventHandlerWithQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void)setNotificationHandlerWithQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (_Bool)resetAttentionLostTimeoutWithError:(id *)arg1;
 @property(readonly, retain, nonatomic) AWAttentionEvent *lastEvent;
 - (_Bool)invokeRequiringClient:(_Bool)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;

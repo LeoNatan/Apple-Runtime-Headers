@@ -8,7 +8,7 @@
 
 #import <SpringBoard/FBSDisplayObserving-Protocol.h>
 
-@class NSMutableDictionary, NSString, SBMainDisplaySceneManager, SBMainWorkspace;
+@class FBSDisplayLayoutPublisher, NSMutableDictionary, NSString, SBMainDisplaySceneManager, SBMainWorkspace;
 @protocol SBFAuthenticationStatusProvider;
 
 @interface SBExternalDisplayManager : NSObject <FBSDisplayObserving>
@@ -16,6 +16,7 @@
     SBMainWorkspace *_mainWorkspace;
     id <SBFAuthenticationStatusProvider> _userAuthenticationProvider;
     SBMainDisplaySceneManager *_mainDisplaySceneManager;
+    FBSDisplayLayoutPublisher *_layoutPublisher;
     NSMutableDictionary *_displayToControllerMap;
 }
 

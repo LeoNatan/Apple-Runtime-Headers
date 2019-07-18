@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (void)removeInfoUsingObjectPlaceholderGeometry:(id)arg1;
 - (void)addInfoUsingObjectPlaceholderGeometry:(id)arg1;
 @property(retain, nonatomic) KNMasterSlide *master;
+- (void)setMaster:(id)arg1 resetMasterBackgroundObjects:(_Bool)arg2;
 - (id)initWithSlideNode:(id)arg1 master:(id)arg2 andShow:(id)arg3;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;

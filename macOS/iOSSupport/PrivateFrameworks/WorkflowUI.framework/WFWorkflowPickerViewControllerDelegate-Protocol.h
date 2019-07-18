@@ -11,5 +11,6 @@
 @protocol WFWorkflowPickerViewControllerDelegate <NSObject>
 - (void)workflowPickerViewController:(WFWorkflowPickerViewController *)arg1 didSelectVariable:(WFVariable *)arg2;
 - (void)workflowPickerViewController:(WFWorkflowPickerViewController *)arg1 didSelectWorkflowWithName:(NSString *)arg2;
+- (void)workflowPickerViewControllerDidCancel:(WFWorkflowPickerViewController *)arg1;
 @end
 

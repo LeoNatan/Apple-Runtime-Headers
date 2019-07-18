@@ -6,7 +6,7 @@
 
 #import <PepperUICore/PUICTableViewController.h>
 
-@class FIUIFormattingManager, FIUIWorkoutCompletionPercentageRingViewCell, FIUIWorkoutSummaryRowBuilder, FIUIWorkoutSwimStrokeStyleTableViewCell, HKActivitySummary, HKHealthStore, HKWorkout, NSDictionary, NSObject, NSUserActivity, UIButton;
+@class ARUIRingsViewRenderer, FIUIFormattingManager, FIUIWorkoutCompletionPercentageRingViewCell, FIUIWorkoutSummaryRowBuilder, FIUIWorkoutSwimStrokeStyleTableViewCell, HKActivitySummary, HKHealthStore, HKWorkout, NSDictionary, NSObject, NSUserActivity, UIButton;
 @protocol FIUIWorkoutSummaryViewControllerDelegate, OS_dispatch_queue;
 
 @interface FIUIWorkoutSummaryViewController : PUICTableViewController
@@ -25,6 +25,7 @@
     FIUIWorkoutCompletionPercentageRingViewCell *_completionRingCell;
     _Bool _shouldShowSplits;
     unsigned int _buttonBehavior;
+    ARUIRingsViewRenderer *_ringsViewRenderer;
     double _minHeartRate;
     double _maxHeartRate;
     double _averageHeartRate;
@@ -58,7 +59,7 @@
 - (id)_heartRateButton;
 - (void)_didTapActivityRingsButton;
 - (void)_removeAppStateObserver;
-- (void)_renderRingsIntoButton:(id)arg1 forActivitySummary:(id)arg2;
+- (void)_renderRingsIntoButton:(id)arg1 forActivitySummary:(id)arg2 ringsViewRenderer:(id)arg3;
 - (id)_activityRingsButtonWithActivitySummary:(id)arg1;
 - (void)_handleUpdateForActivitySummary:(id)arg1;
 - (void)_fetchActivitySummary;
@@ -87,7 +88,7 @@
 - (id)UUIDForFinalWorkoutForWorkout:(id)arg1;
 - (void)updateSnapshotWithWorkout:(id)arg1 swimDistanceByStrokeStyle:(id)arg2 hasLinkedWorkoutSeries:(_Bool)arg3 workoutIsFinal:(_Bool)arg4;
 - (void)setWorkout:(id)arg1 swimDistanceByStrokeStyle:(id)arg2 overrideAverageHeartRate:(id)arg3;
-- (id)initWithWorkout:(id)arg1 healthStore:(id)arg2 formattingManager:(id)arg3 shouldShowSaveDiscardButtons:(_Bool)arg4;
+- (id)initWithWorkout:(id)arg1 healthStore:(id)arg2 formattingManager:(id)arg3 ringsViewRenderer:(id)arg4 shouldShowSaveDiscardButtons:(_Bool)arg5;
 
 @end
 

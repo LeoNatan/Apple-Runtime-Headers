@@ -10,6 +10,7 @@
 {
 }
 
+- (id)valueKeys;
 - (BOOL)setValue:(BOOL)arg1 controller:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) BOOL value;
 

@@ -21,7 +21,6 @@
     UIFont *_titleFont;
     NSString *_valueText;
     UIFont *_valueFont;
-    long long _compressionResistancePolicy;
     NSArray *_stackViewConstraints;
     UIStackView *_labelsStackView;
 }
@@ -29,7 +28,6 @@
 + (BOOL)requiresConstraintBasedLayout;
 @property(retain, nonatomic) UIStackView *labelsStackView; // @synthesize labelsStackView=_labelsStackView;
 @property(retain, nonatomic) NSArray *stackViewConstraints; // @synthesize stackViewConstraints=_stackViewConstraints;
-@property(nonatomic) long long compressionResistancePolicy; // @synthesize compressionResistancePolicy=_compressionResistancePolicy;
 @property(nonatomic) BOOL allowCopyValueToPasteboard; // @synthesize allowCopyValueToPasteboard=_allowCopyValueToPasteboard;
 @property(nonatomic) BOOL valueColorFollowsTintColor; // @synthesize valueColorFollowsTintColor=_valueColorFollowsTintColor;
 @property(nonatomic) BOOL titleColorFollowsTintColor; // @synthesize titleColorFollowsTintColor=_titleColorFollowsTintColor;
@@ -42,7 +40,6 @@
 @property(readonly, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
-- (void)_updateCompressionResistance;
 - (void)_updateValue;
 - (void)_updateTitle;
 - (void)_addValueLabel;

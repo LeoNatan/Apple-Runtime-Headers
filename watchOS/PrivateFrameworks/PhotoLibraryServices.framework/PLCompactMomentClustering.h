@@ -6,21 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSDateFormatter;
-
 @interface PLCompactMomentClustering : NSObject
 {
-    NSDateFormatter *_debugDateFormatter;
 }
 
-@property(retain, nonatomic) NSDateFormatter *debugDateFormatter; // @synthesize debugDateFormatter=_debugDateFormatter;
 - (id)_clusterAssetsWithUnusableLocation:(id)arg1;
 - (id)_clusterAssetsWithUsableLocation:(id)arg1;
 - (id)_assetClustersFromDataClusters:(id)arg1;
 - (id)_mergeAssetClustersWithLocation:(id)arg1 withAssetClustersWithoutLocation:(id)arg2;
 - (id)_runDBSCANClusteringWithAssets:(id)arg1;
 - (id)createAssetClustersForAssetsInDay:(id)arg1;
-- (void)dealloc;
 
 @end
 

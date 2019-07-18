@@ -6,27 +6,27 @@
 
 #import <UIKit/UITableViewCell.h>
 
-#import <WorkflowUI/WFActionDrawerAppsCollectionViewManagerDelegate-Protocol.h>
+#import <WorkflowUI/WFActionDrawerAppsCollectionViewSectionsManagerDelegate-Protocol.h>
 
-@class NSArray, NSLayoutConstraint, UICollectionView, WFActionDrawerAppsCollectionViewManager;
+@class NSArray, NSLayoutConstraint, UICollectionView, WFActionDrawerAppsCollectionViewSectionsManager;
 @protocol WFActionDrawerAppsTableViewCellDelegate;
 
-@interface WFActionDrawerAppsTableViewCell : UITableViewCell <WFActionDrawerAppsCollectionViewManagerDelegate>
+@interface WFActionDrawerAppsTableViewCell : UITableViewCell <WFActionDrawerAppsCollectionViewSectionsManagerDelegate>
 {
     NSArray *_appSections;
     id <WFActionDrawerAppsTableViewCellDelegate> _delegate;
     UICollectionView *_appsCollectionView;
     NSLayoutConstraint *_collectionViewHeightConstraint;
-    WFActionDrawerAppsCollectionViewManager *_collectionViewManager;
+    WFActionDrawerAppsCollectionViewSectionsManager *_collectionViewManager;
 }
 
-@property(retain, nonatomic) WFActionDrawerAppsCollectionViewManager *collectionViewManager; // @synthesize collectionViewManager=_collectionViewManager;
+@property(retain, nonatomic) WFActionDrawerAppsCollectionViewSectionsManager *collectionViewManager; // @synthesize collectionViewManager=_collectionViewManager;
 @property(retain, nonatomic) NSLayoutConstraint *collectionViewHeightConstraint; // @synthesize collectionViewHeightConstraint=_collectionViewHeightConstraint;
 @property(retain, nonatomic) UICollectionView *appsCollectionView; // @synthesize appsCollectionView=_appsCollectionView;
 @property(nonatomic) __weak id <WFActionDrawerAppsTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *appSections; // @synthesize appSections=_appSections;
 - (void).cxx_destruct;
-- (void)appsCollectionViewManager:(id)arg1 didSelectSection:(id)arg2;
+- (void)appsCollectionViewSectionsManager:(id)arg1 didSelectSection:(id)arg2;
 - (void)configureWithActionDrawerSections:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

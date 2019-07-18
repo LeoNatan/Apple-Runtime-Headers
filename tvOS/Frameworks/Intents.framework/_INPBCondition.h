@@ -17,10 +17,12 @@
     struct {
         unsigned int conditionalOperator:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     int _conditionalOperator;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int conditionalOperator; // @synthesize conditionalOperator=_conditionalOperator;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;

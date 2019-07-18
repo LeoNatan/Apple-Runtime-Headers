@@ -12,7 +12,7 @@
 
 + (id)presetsGivenOneMemojiWithIdentifier:(id)arg1;
 + (id)presetsGivenNoMemoji;
-+ (id)paddedStickerRecordsWithRecents:(id)arg1 memojiIdentifiers:(id)arg2 numberOfStickers:(long long)arg3;
++ (id)paddedStickerRecordsWithRecents:(id)arg1 paddingMemojiIdentifier:(id)arg2 numberOfStickers:(long long)arg3;
 
 @end
 

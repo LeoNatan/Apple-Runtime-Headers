@@ -181,8 +181,6 @@
 - (long long)groupViewContentModeForFrontmostPassWhenStacked:(id)arg1;
 - (id)groupViewReusablePassViewQueue:(id)arg1;
 - (unsigned long long)groupViewPassesSuppressedContent:(id)arg1;
-- (void)groupViewFrontPassDidUpdateBarcodeVisibility:(id)arg1 animated:(_Bool)arg2;
-- (_Bool)groupViewCanShowBarcode:(id)arg1;
 - (void)groupView:(id)arg1 panned:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
 - (_Bool)groupViewShouldAllowPanning:(id)arg1;
 - (void)groupViewPanDidEnd:(id)arg1;

@@ -6,12 +6,34 @@
 
 #import <UIKitCore/UIPanGestureRecognizer.h>
 
+@class NSMutableSet, _UIGestureRecognizerTransformAnalyzer;
+
 __attribute__((visibility("hidden")))
 @interface UIUndoGestureRecognizer : UIPanGestureRecognizer
 {
+    NSMutableSet *_activeTouches;
+    NSMutableSet *_shiftTouches;
+    _UIGestureRecognizerTransformAnalyzer *_transformAnalyzer;
+    double _beginPanTimestamp;
+    struct CGPoint _beginPanCentroid;
 }
 
+@property(retain, nonatomic) _UIGestureRecognizerTransformAnalyzer *transformAnalyzer; // @synthesize transformAnalyzer=_transformAnalyzer;
+@property(retain, nonatomic) NSMutableSet *shiftTouches; // @synthesize shiftTouches=_shiftTouches;
+@property(retain, nonatomic) NSMutableSet *activeTouches; // @synthesize activeTouches=_activeTouches;
+@property(nonatomic) struct CGPoint beginPanCentroid; // @synthesize beginPanCentroid=_beginPanCentroid;
+@property(nonatomic) double beginPanTimestamp; // @synthesize beginPanTimestamp=_beginPanTimestamp;
+- (void).cxx_destruct;
 - (_Bool)shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
+- (struct CGPoint)centroidOfTouches:(id)arg1;
+- (void)reset;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (_Bool)isShiftOrMoreKeyForTouch:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 
 @end
 

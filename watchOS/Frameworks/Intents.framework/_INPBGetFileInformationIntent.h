@@ -19,6 +19,7 @@
         unsigned int propertyName:1;
         unsigned int qualifier:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     _INPBString *_entityName;
     int _entityType;
     _INPBIntentMetadata *_intentMetadata;
@@ -27,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int qualifier; // @synthesize qualifier=_qualifier;
 @property(nonatomic) int propertyName; // @synthesize propertyName=_propertyName;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;

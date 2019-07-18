@@ -114,6 +114,7 @@ __attribute__((visibility("hidden")))
 - (void)insertSelExtraView;
 - (_Bool)usesShadowView;
 - (_Bool)usesDimmingView;
+- (void)returnToKeyboardIfNeeded;
 - (void)dimmingViewWasTapped:(id)arg1;
 - (id)dimmingView;
 - (id)inputView;

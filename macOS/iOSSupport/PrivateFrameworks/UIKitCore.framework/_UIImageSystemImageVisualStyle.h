@@ -16,15 +16,18 @@ __attribute__((visibility("hidden")))
     UIImage *_addImage;
     UIImage *_removeImage;
     UIImage *_actionsImage;
+    UIImage *_checkmarkImage;
+    UIImage *_strokedCheckmarkImage;
 }
 
 + (id)_iosVisualStyle;
 + (id)styleForThemeKey:(id)arg1;
 + (id)styleForConfiguration:(id)arg1;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) UIImage *systemCheckmarkImage;
 @property(readonly, nonatomic) UIImage *systemTableViewCellDetailedDisclosureIndicatorImage;
 @property(readonly, nonatomic) UIImage *systemTableViewCellDisclosureIndicatorImage;
+@property(readonly, nonatomic) UIImage *strokedCheckmarkImage; // @synthesize strokedCheckmarkImage=_strokedCheckmarkImage;
+@property(readonly, nonatomic) UIImage *checkmarkImage; // @synthesize checkmarkImage=_checkmarkImage;
 @property(readonly, nonatomic) UIImage *actionsImage; // @synthesize actionsImage=_actionsImage;
 - (id)_removeImageWithColor:(id)arg1 name:(id)arg2;
 - (id)removeImageWithColor:(id)arg1;

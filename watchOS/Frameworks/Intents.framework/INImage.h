@@ -31,7 +31,7 @@
 + (id)imageWithURL:(id)arg1;
 + (void)registerImageLoadersOnce;
 + (void)initialize;
-+ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (void)buildFromCachePayload:(id)arg1 identifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(nonatomic, setter=_setImageSize:) CDStruct_8caa76fc _imageSize; // @synthesize _imageSize;
 @property(copy, nonatomic, setter=_setIdentifier:) NSString *_identifier; // @synthesize _identifier;
@@ -62,7 +62,7 @@
 - (id)_initWithIdentifier:(id)arg1;
 - (id)init;
 - (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
-- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 - (int)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
 @property(readonly) INImage *_keyImage;
 @property(readonly, copy, nonatomic) NSString *cacheIdentifier;

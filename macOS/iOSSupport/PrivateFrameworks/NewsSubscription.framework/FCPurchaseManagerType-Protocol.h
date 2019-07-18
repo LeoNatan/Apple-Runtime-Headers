@@ -8,6 +8,7 @@
 @protocol FCPurchaseManagerDelegate;
 
 @protocol FCPurchaseManagerType
+- (BOOL)anyOngoingPurchases;
 - (BOOL)isPurchaseOngoingForTagID:(NSString *)arg1;
 - (void)authenticateAppleIDWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)simulateFailurePurchaseWithProductID:(NSString *)arg1 transactionState:(long long)arg2 error:(NSError *)arg3;

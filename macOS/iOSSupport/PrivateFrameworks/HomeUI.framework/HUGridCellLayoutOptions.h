@@ -13,6 +13,7 @@
 
 @interface HUGridCellLayoutOptions : NSObject <HUGridDisplayOptions, NSCopying>
 {
+    BOOL _drawsBorderForOnState;
     unsigned long long _contentColorStyle;
     HUGridCellBackgroundDisplayOptions *_backgroundDisplayOptions;
     UIVisualEffect *_vibrancyEffect;
@@ -29,6 +30,7 @@
 + (id)defaultOptionsForCellSizeSubclass:(long long)arg1;
 @property(readonly, nonatomic) long long cellSizeSubclass; // @synthesize cellSizeSubclass=_cellSizeSubclass;
 @property(nonatomic) double cellScaleFactor; // @synthesize cellScaleFactor=_cellScaleFactor;
+@property(nonatomic) BOOL drawsBorderForOnState; // @synthesize drawsBorderForOnState=_drawsBorderForOnState;
 @property(nonatomic) double cellCornerRadius; // @synthesize cellCornerRadius=_cellCornerRadius;
 @property(nonatomic) double cellInnerMargin; // @synthesize cellInnerMargin=_cellInnerMargin;
 @property(nonatomic) double iconSize; // @synthesize iconSize=_iconSize;

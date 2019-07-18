@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface AVStreamDataAsset : AVAsset
 {
-    AVStreamDataParser *_parser;
+    AVStreamDataParser *_weakReferenceToParser;
     AVStreamDataAssetInspector *_inspector;
     AVAssetSynchronousInspectorLoader *_inspectorLoader;
     AVDispatchOnce *_tracksOnce;
@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_trackDictsByTrackID;
 }
 
+- (void).cxx_destruct;
 - (Class)_classForTrackInspectors;
 - (id)_assetInspectorLoader;
 - (id)_assetInspector;

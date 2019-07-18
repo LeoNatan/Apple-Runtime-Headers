@@ -12,7 +12,7 @@
 
 @interface CNChangeHistoryFetchRequest : CNFetchRequest <NSSecureCoding>
 {
-    _Bool _unifyResults;
+    _Bool _shouldUnifyResults;
     _Bool _mutableObjects;
     _Bool _includeGroupChanges;
     _Bool _enforceClientIdentifier;
@@ -21,10 +21,10 @@
     _Bool _includeExternalIDs;
     _Bool _includeImagesChanged;
     _Bool _includeLabeledValueChanges;
-    NSString *_clientIdentifier;
     NSData *_startingToken;
     NSArray *_additionalContactKeyDescriptors;
     NSArray *_excludedTransactionAuthors;
+    NSString *_clientIdentifier;
     NSString *_containerIdentifier;
 }
 
@@ -35,15 +35,16 @@
 @property(nonatomic) _Bool includeExternalIDs; // @synthesize includeExternalIDs=_includeExternalIDs;
 @property(nonatomic) _Bool includeChangeIDs; // @synthesize includeChangeIDs=_includeChangeIDs;
 @property(nonatomic) _Bool includeChangeAnchors; // @synthesize includeChangeAnchors=_includeChangeAnchors;
+@property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(readonly, nonatomic, getter=shouldEnforceClientIdentifer) _Bool enforceClientIdentifier; // @synthesize enforceClientIdentifier=_enforceClientIdentifier;
 @property(copy, nonatomic) NSArray *excludedTransactionAuthors; // @synthesize excludedTransactionAuthors=_excludedTransactionAuthors;
 @property(nonatomic) _Bool includeGroupChanges; // @synthesize includeGroupChanges=_includeGroupChanges;
 @property(nonatomic) _Bool mutableObjects; // @synthesize mutableObjects=_mutableObjects;
-@property(nonatomic) _Bool unifyResults; // @synthesize unifyResults=_unifyResults;
+@property(nonatomic) _Bool shouldUnifyResults; // @synthesize shouldUnifyResults=_shouldUnifyResults;
 @property(copy, nonatomic) NSArray *additionalContactKeyDescriptors; // @synthesize additionalContactKeyDescriptors=_additionalContactKeyDescriptors;
 @property(copy, nonatomic) NSData *startingToken; // @synthesize startingToken=_startingToken;
-@property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool unifyResults;
 - (void)setStartingAnchor:(id)arg1;
 @property(readonly, nonatomic) CNChangeHistoryAnchor *startingAnchor;
 - (id)description;

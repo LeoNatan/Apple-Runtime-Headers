@@ -13,6 +13,7 @@
 + (id)_whiteImageNamed:(id)arg1;
 + (id)_imageNamed:(id)arg1;
 + (id)_cachedObjectForKey:(id)arg1 withCreationBlock:(CDUnknownBlockType)arg2;
++ (id)downloadContentFromPhoneImage;
 + (id)processedArtworkImageWithSourceImage:(id)arg1 destinationSize:(struct CGSize)arg2 unprocessedImageScale:(float)arg3;
 + (id)progressStringForElapsedTime:(double)arg1;
 + (id)artworkViewPlaceholderBackgroundColor;
@@ -35,7 +36,8 @@
 + (id)actionSheetPlayNextImage;
 + (id)actionSheetRemoveImage;
 + (id)actionSheetAddToLibraryImage;
-+ (id)actionSheetMoreActionsDislikeImage;
++ (id)actionSheetMoreActionsSuggestLessImage;
++ (id)actionSheetMoreActionsUnloveImage;
 + (id)actionSheetMoreActionsLoveImage;
 + (id)actionSheetBookmarkImageWithSelection:(_Bool)arg1;
 + (id)actionSheetDislikeImage;

@@ -6,19 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class MLModel;
+@class MLModel, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CRTextRecognizerModel : NSObject
 {
     MLModel *_model;
+    NSString *_codemap;
+    long long _ctcBlankLabelIndex;
 }
 
 + (id)urlOfModelInThisBundle;
+@property long long ctcBlankLabelIndex; // @synthesize ctcBlankLabelIndex=_ctcBlankLabelIndex;
+@property(retain, nonatomic) NSString *codemap; // @synthesize codemap=_codemap;
 @property(readonly, nonatomic) MLModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
 - (id)predictionsFromInputs:(id)arg1 options:(id)arg2 error:(id *)arg3;
-- (id)predictionFromImg_input:(id)arg1 rnn_block1_bilstm_h_in:(id)arg2 rnn_block1_bilstm_c_in:(id)arg3 rnn_block1_bilstm_h_in_rev:(id)arg4 rnn_block1_bilstm_c_in_rev:(id)arg5 rnn_block2_bilstm_h_in:(id)arg6 rnn_block2_bilstm_c_in:(id)arg7 rnn_block2_bilstm_h_in_rev:(id)arg8 rnn_block2_bilstm_c_in_rev:(id)arg9 error:(id *)arg10;
+- (id)predictionFromImg_input:(id)arg1 error:(id *)arg2;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionFromFeatures:(id)arg1 error:(id *)arg2;
 - (id)initWithContentsOfURL:(id)arg1 configuration:(id)arg2 error:(id *)arg3;

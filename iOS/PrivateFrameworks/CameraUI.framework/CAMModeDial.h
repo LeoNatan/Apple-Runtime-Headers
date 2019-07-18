@@ -7,59 +7,40 @@
 #import <UIKit/UIControl.h>
 
 #import <CameraUI/CAMAccessibilityHUDItemProvider-Protocol.h>
-#import <CameraUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CADisplayLink, CAGradientLayer, CAMDisplayLinkTarget, CAMFeedbackController, CAMTrackingSpring, NSArray, NSDictionary, NSString, UITapGestureRecognizer, UIView;
-@protocol CAMModeDialDataSource, CAMModeDialDelegate;
+@class CAGradientLayer, NSArray, NSDictionary, NSString, UIView;
+@protocol CAMModeDialDataSource;
 
-@interface CAMModeDial : UIControl <UIGestureRecognizerDelegate, CAMAccessibilityHUDItemProvider>
+@interface CAMModeDial : UIControl <CAMAccessibilityHUDItemProvider>
 {
-    _Bool _allowsHapticsOnTap;
     long long _layoutStyle;
     id <CAMModeDialDataSource> _dataSource;
-    id <CAMModeDialDelegate> _delegate;
-    long long _highlightedMode;
     long long _selectedMode;
-    CADisplayLink *__displayLink;
-    CAMDisplayLinkTarget *__displayLinkTarget;
-    CAMTrackingSpring *__dialCenterSpring;
-    UIView *__highlightedItemBackgroundView;
+    UIView *__selectedItemBackgroundView;
     NSArray *__modes;
     NSDictionary *__items;
     UIView *__meshTransformView;
     CAGradientLayer *__gradientLayer;
     UIView *__itemsContainerView;
-    UITapGestureRecognizer *__tapGestureRecognizer;
-    CAMFeedbackController *__feedbackController;
 }
 
 + (_Bool)wantsVerticalModeDialForLayoutStyle:(long long)arg1;
-@property(readonly, nonatomic) CAMFeedbackController *_feedbackController; // @synthesize _feedbackController=__feedbackController;
-@property(readonly, nonatomic) UITapGestureRecognizer *_tapGestureRecognizer; // @synthesize _tapGestureRecognizer=__tapGestureRecognizer;
 @property(readonly, nonatomic) UIView *_itemsContainerView; // @synthesize _itemsContainerView=__itemsContainerView;
 @property(readonly, nonatomic) CAGradientLayer *_gradientLayer; // @synthesize _gradientLayer=__gradientLayer;
 @property(readonly, nonatomic) UIView *_meshTransformView; // @synthesize _meshTransformView=__meshTransformView;
 @property(retain, nonatomic, setter=_setItems:) NSDictionary *_items; // @synthesize _items=__items;
 @property(retain, nonatomic, setter=_setModes:) NSArray *_modes; // @synthesize _modes=__modes;
-@property(readonly, nonatomic) UIView *_highlightedItemBackgroundView; // @synthesize _highlightedItemBackgroundView=__highlightedItemBackgroundView;
-@property(readonly, nonatomic) CAMTrackingSpring *_dialCenterSpring; // @synthesize _dialCenterSpring=__dialCenterSpring;
-@property(readonly, nonatomic) CAMDisplayLinkTarget *_displayLinkTarget; // @synthesize _displayLinkTarget=__displayLinkTarget;
-@property(readonly, nonatomic) CADisplayLink *_displayLink; // @synthesize _displayLink=__displayLink;
+@property(readonly, nonatomic) UIView *_selectedItemBackgroundView; // @synthesize _selectedItemBackgroundView=__selectedItemBackgroundView;
 @property(nonatomic) long long selectedMode; // @synthesize selectedMode=_selectedMode;
-@property(nonatomic, setter=_setHighlightedMode:) long long highlightedMode; // @synthesize highlightedMode=_highlightedMode;
-@property(nonatomic) _Bool allowsHapticsOnTap; // @synthesize allowsHapticsOnTap=_allowsHapticsOnTap;
-@property(nonatomic) id <CAMModeDialDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) id <CAMModeDialDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 - (void).cxx_destruct;
 - (void)selectedByAccessibilityHUDManager:(id)arg1;
 - (id)hudItemForAccessibilityHUDManager:(id)arg1;
-- (void)_updateHighlightedItemBackgroundForLayoutStyle:(long long)arg1;
+- (void)_updateSelectedItemBackgroundForLayoutStyle:(long long)arg1;
 - (void)_updateForLayoutStyle;
 - (void)updateToContentSize:(id)arg1;
-- (void)_updateForTargetTimestamp:(double)arg1;
-- (void)_handleTap:(id)arg1;
-- (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_configureMeshTransformForLayoutStyle:(long long)arg1;
 - (id)_meshTransformForLayoutStyle:(long long)arg1;
 - (id)_horizontalMeshTransform;
@@ -67,16 +48,13 @@
 - (long long)_nearestCaptureModeForLocation:(struct CGPoint)arg1;
 - (void)reloadData;
 - (id)_selectedItem;
-- (id)_highlightedItem;
 - (void)_updateItemsForLayoutStyle:(long long)arg1;
 - (id)_fontForLayoutStyle:(long long)arg1;
-- (void)_updateDialCenterForMode:(long long)arg1 animated:(_Bool)arg2;
+- (void)_updateContainerCenterFromSelectedModeAnimated:(_Bool)arg1;
 - (struct CGPoint)_verticalContainerCenterForMode:(long long)arg1;
 - (struct CGPoint)_horizontalContainerCenterForMode:(long long)arg1;
 - (double)_centeringNudgeForMode:(long long)arg1;
-- (void)_selectHighlightedModeIfNecessary;
 - (void)setSelectedMode:(long long)arg1 animated:(_Bool)arg2;
-- (void)_setHighlightedMode:(long long)arg1 animated:(_Bool)arg2;
 - (void)_layoutVerticalModeDial;
 - (void)_layoutHorizontalModeDial;
 - (struct CGSize)_interpolatedHorizontalMeshTransformSize;

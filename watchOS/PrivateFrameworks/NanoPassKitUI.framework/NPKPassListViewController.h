@@ -35,8 +35,8 @@
     _Bool _paymentStatusViewShouldBeVisible;
     _Bool _tableViewShouldBeVisible;
     _Bool _isDisplayingBarcode;
-    _Bool _showServiceModeForInitialPass;
     _Bool _passesHaveLoaded;
+    _Bool _passesHaveReloaded;
     _Bool _useTransitionalContentOffset;
     _Bool _shouldDelayReleaseScreenOnAssertion;
     NPKActivatingUIAssertion *_activatingUIAssertion;
@@ -57,8 +57,8 @@
     PKFieldDetector *_fieldDetector;
     NPKTransientPassAssertion *_transientPassAssertion;
     NPKVASPassContactlessInterfaceManager *_VASPassContactlessInterfaceManager;
-    NSString *_initialPassUniqueID;
     NSMutableArray *_workToPerformWhenPassesHaveLoaded;
+    NSMutableArray *_workToPerformWhenPassesHaveReloaded;
     struct CGPoint *_originalCollectionViewContentOffset;
     NPKPassGroupPagingBar *_groupPagingBar;
     PKGroupsController *_groupsController;
@@ -91,10 +91,10 @@
 @property(nonatomic) struct CGPoint transitionalContentOffset; // @synthesize transitionalContentOffset=_transitionalContentOffset;
 @property(nonatomic) _Bool useTransitionalContentOffset; // @synthesize useTransitionalContentOffset=_useTransitionalContentOffset;
 @property(nonatomic) struct CGPoint *originalCollectionViewContentOffset; // @synthesize originalCollectionViewContentOffset=_originalCollectionViewContentOffset;
+@property(retain, nonatomic) NSMutableArray *workToPerformWhenPassesHaveReloaded; // @synthesize workToPerformWhenPassesHaveReloaded=_workToPerformWhenPassesHaveReloaded;
+@property(nonatomic) _Bool passesHaveReloaded; // @synthesize passesHaveReloaded=_passesHaveReloaded;
 @property(retain, nonatomic) NSMutableArray *workToPerformWhenPassesHaveLoaded; // @synthesize workToPerformWhenPassesHaveLoaded=_workToPerformWhenPassesHaveLoaded;
 @property(nonatomic) _Bool passesHaveLoaded; // @synthesize passesHaveLoaded=_passesHaveLoaded;
-@property(nonatomic) _Bool showServiceModeForInitialPass; // @synthesize showServiceModeForInitialPass=_showServiceModeForInitialPass;
-@property(retain, nonatomic) NSString *initialPassUniqueID; // @synthesize initialPassUniqueID=_initialPassUniqueID;
 @property(readonly, nonatomic) NPKVASPassContactlessInterfaceManager *VASPassContactlessInterfaceManager; // @synthesize VASPassContactlessInterfaceManager=_VASPassContactlessInterfaceManager;
 @property(retain, nonatomic) NPKTransientPassAssertion *transientPassAssertion; // @synthesize transientPassAssertion=_transientPassAssertion;
 @property(retain, nonatomic) PKFieldDetector *fieldDetector; // @synthesize fieldDetector=_fieldDetector;
@@ -142,8 +142,6 @@
 - (void)_enablePaymentSessionWithPass:(id)arg1;
 - (void)_disableFieldDetector;
 - (void)_enableFieldDetector;
-- (void)applicationWillResignActive;
-- (void)applicationDidBecomeActive;
 @property(readonly, nonatomic) NSString *noContentMessage;
 @property(readonly, nonatomic) NSString *noContentTitle;
 @property(readonly, nonatomic) _Bool listViewAllowed;
@@ -161,7 +159,9 @@
 - (void)setShowGroupPagingBar:(_Bool)arg1 numberOfItemsInGroup:(unsigned int)arg2 selectedIndexInGroup:(unsigned int)arg3;
 - (id)_allIndexPathsInGroupForPassWithIndexPath:(id)arg1;
 - (void)setPaymentStatusViewVisible:(_Bool)arg1 tableViewVisible:(_Bool)arg2 animated:(_Bool)arg3;
+- (void)performWorkWhenPassesHaveReloaded:(CDUnknownBlockType)arg1;
 - (void)performWorkWhenPassesHaveLoaded:(CDUnknownBlockType)arg1;
+- (void)reloadContentWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)_isPassAvailableAtIndexPath:(id)arg1;
 - (id)_passForIndexPath:(id)arg1;
 - (id)_singleVisibleCollectionViewCell;
@@ -178,8 +178,11 @@
 - (void)_collectionView:(id)arg1 tappedIndexPath:(id)arg2 animated:(_Bool)arg3 transitionType:(unsigned int)arg4;
 - (void)_handleServiceModeRequestChanged:(id)arg1;
 - (void)_handleWillEnterForeground:(id)arg1;
+- (void)_handleDidEnterBackground:(id)arg1;
+- (void)_handleBecameActive:(id)arg1;
 - (void)_handleResignedActive:(id)arg1;
 - (void)_handlePassesChanged:(id)arg1;
+- (void)_handleServiceModeRequestCancelled;
 - (void)_handleDefaultCardChanged;
 - (void)_handleBarcodeModeChanged:(id)arg1;
 - (void)_handleLocaleChanged:(id)arg1;

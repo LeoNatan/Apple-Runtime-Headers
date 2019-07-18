@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
     // Error parsing type: , name: delegate
     // Error parsing type: , name: navigationController
-    // Error parsing type: , name: statusBar
     // Error parsing type: , name: tapGestureRecognizer
     // Error parsing type: , name: barHider
 }

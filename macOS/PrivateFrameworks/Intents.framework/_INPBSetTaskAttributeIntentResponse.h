@@ -14,11 +14,14 @@
 
 @interface _INPBSetTaskAttributeIntentResponse : PBCodable <_INPBSetTaskAttributeIntentResponse, NSSecureCoding, NSCopying>
 {
+    CDStruct_95bda58d _warnings;
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBTask *_modifiedTask;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBTask *modifiedTask; // @synthesize modifiedTask=_modifiedTask;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
@@ -27,8 +30,17 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (int)StringAsWarnings:(id)arg1;
+- (id)warningsAsString:(int)arg1;
+- (int)warningsAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long warningsCount;
+- (void)addWarnings:(int)arg1;
+- (void)clearWarnings;
+@property(readonly, nonatomic) int *warnings;
+- (void)setWarnings:(int *)arg1 count:(unsigned long long)arg2;
 @property(readonly, nonatomic) BOOL hasModifiedTask;
 
 // Remaining properties

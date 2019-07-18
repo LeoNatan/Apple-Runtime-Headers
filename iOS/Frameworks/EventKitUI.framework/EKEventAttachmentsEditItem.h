@@ -31,11 +31,11 @@ __attribute__((visibility("hidden")))
 - (void)documentPickerWasCancelled:(id)arg1;
 - (void)documentPicker:(id)arg1 didPickDocumentsAtURLs:(id)arg2;
 - (void)_showAddAttachmentViewController;
+- (void)attachmentEditViewController:(id)arg1 attachmentDidChange:(long long)arg2;
 - (id)owningEventForAttachmentEditViewController:(id)arg1;
 - (id)owningEventForAttachmentCellController:(id)arg1;
 - (id)parentViewControllerForAttachmentCellController:(id)arg1;
 - (id)trailingSwipeActionsConfigurationForRowAtIndex:(long long)arg1;
-- (_Bool)forceTableReloadOnSave;
 - (_Bool)_shouldShowAddAttachmentCell;
 - (_Bool)usesDetailViewControllerForSubitem:(unsigned long long)arg1;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned long long)arg2;
@@ -47,6 +47,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)_shouldCondenseIntoSingleItem;
 - (_Bool)canBeConfiguredForCalendarConstraints:(id)arg1;
 - (void)dealloc;
+- (void)prepareForReload;
+- (_Bool)forceTableReloadOnSave;
 - (void)refreshFromCalendarItemAndStore;
 - (void)_cleanUpCellControllers;
 

@@ -22,11 +22,14 @@
 
 @property(retain, nonatomic) MediaControlsVolumeController *volumeController; // @synthesize volumeController=_volumeController;
 - (void).cxx_destruct;
+- (id)_localizedStringForBluetoothListeningMode:(id)arg1;
+- (id)expandableButtonOptionsForAvailableBluetoothListeningMode:(id)arg1;
+- (void)configureOptionsButtion:(id)arg1 forRouteType:(unsigned long long)arg2;
 - (void)_performLayoutWithAnimation:(CDUnknownBlockType)arg1;
 - (void)_configureRouteViews;
-- (void)didChangeSecondaryANCValue:(id)arg1;
+- (void)secondaryExpandableButtonDidChangeValue:(id)arg1;
 - (void)didTapSecondaryExpandableButton:(id)arg1;
-- (void)didChangePrimaryANCValue:(id)arg1;
+- (void)primaryExpandableButtonDidChangeValue:(id)arg1;
 - (void)didTapPrimaryExpandableButton:(id)arg1;
 - (void)mediaControlsVolumeController:(id)arg1 didUpdateSplitRoute:(_Bool)arg2;
 - (double)_horizontalPadding;

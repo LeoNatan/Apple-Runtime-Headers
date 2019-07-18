@@ -21,7 +21,6 @@
 - (void).cxx_destruct;
 - (id)extensionObjectProxy;
 - (oneway void)presentationInfoWithCompletion:(CDUnknownBlockType)arg1;
-- (oneway void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 broadcastConfigurationData:(id)arg4 userInfo:(id)arg5 cancelled:(_Bool)arg6;
 - (oneway void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 cancelled:(_Bool)arg4;
 
 @end

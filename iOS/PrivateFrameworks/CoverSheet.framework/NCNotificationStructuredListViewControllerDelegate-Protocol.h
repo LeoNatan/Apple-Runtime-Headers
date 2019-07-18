@@ -10,7 +10,7 @@
 @protocol PLKeyboardHomeAffordanceAssertion, UIViewSpringAnimationBehaviorDescribing;
 
 @protocol NCNotificationStructuredListViewControllerDelegate <UIScrollViewDelegate>
-- (void)notificationStructuredListViewController:(NCNotificationStructuredListViewController *)arg1 shouldFinishLongLookTransitionForNotificationRequest:(NCNotificationRequest *)arg2 withCompletionBlock:(void (^)(_Bool))arg3;
+- (void)notificationStructuredListViewController:(NCNotificationStructuredListViewController *)arg1 shouldFinishLongLookTransitionForNotificationRequest:(NCNotificationRequest *)arg2 trigger:(long long)arg3 withCompletionBlock:(void (^)(_Bool))arg4;
 - (void)notificationStructuredListViewController:(NCNotificationStructuredListViewController *)arg1 requestsClearingFromIncomingSectionNotificationRequests:(NSArray *)arg2;
 - (void)notificationStructuredListViewController:(NCNotificationStructuredListViewController *)arg1 requestsAuthenticationAndPerformBlock:(void (^)(_Bool))arg2;
 - (void)notificationStructuredListViewController:(NCNotificationStructuredListViewController *)arg1 requestsExecuteAction:(NCNotificationAction *)arg2 forNotificationRequest:(NCNotificationRequest *)arg3 requestAuthentication:(_Bool)arg4 withParameters:(NSDictionary *)arg5 completion:(void (^)(_Bool))arg6;
@@ -25,6 +25,8 @@
 - (void)notificationStructuredListViewController:(NCNotificationStructuredListViewController *)arg1 setDeliverQuietly:(_Bool)arg2 forSectionIdentifier:(NSString *)arg3;
 - (void)notificationStructuredListViewController:(NCNotificationStructuredListViewController *)arg1 setAllowsNotifications:(_Bool)arg2 forSectionIdentifier:(NSString *)arg3;
 - (_UILegibilitySettings *)legibilitySettingsForNotificationStructuredListViewController:(NCNotificationStructuredListViewController *)arg1;
+- (void)notificationStructuredListViewControllerDidScrollToRevealNotificationHistory:(NCNotificationStructuredListViewController *)arg1;
+- (_Bool)notificationStructuredListViewControllerShouldAllowLongPressGesture:(NCNotificationStructuredListViewController *)arg1;
 - (_Bool)notificationStructuredListViewControllerShouldAllowNotificationHistoryReveal:(NCNotificationStructuredListViewController *)arg1;
 - (_Bool)notificationStructuredListViewControllerShouldHintForDefaultAction:(NCNotificationStructuredListViewController *)arg1;
 - (_Bool)notificationStructuredListViewController:(NCNotificationStructuredListViewController *)arg1 isClockNotificationRequest:(NCNotificationRequest *)arg2;

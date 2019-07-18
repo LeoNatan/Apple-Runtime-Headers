@@ -52,7 +52,7 @@
 - (void)_configurePhotoCollectionGlobalFooterTitleLabel:(id)arg1;
 - (void)_configurePhotoCollectionGlobalFooterLabel:(id)arg1 withFont:(id)arg2 textColor:(id)arg3;
 - (void)_updateAccessory;
-- (void)_updateProgress;
+- (void)_updateProgressAnimated:(_Bool)arg1;
 - (void)_updateSubtitle2;
 - (void)_updateSubtitle1;
 - (void)_updateTitle;

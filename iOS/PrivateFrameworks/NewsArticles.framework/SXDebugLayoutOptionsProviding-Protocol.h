@@ -14,8 +14,5 @@
 - (long long)overrideChannelSubscriptionStatus:(long long)arg1;
 - (long long)overrideBundleSubscriptionStatus:(long long)arg1;
 - (unsigned long long)overrideViewingLocation:(unsigned long long)arg1;
-
-@optional
-- (long long)overrideIgnoreDocumentMarginBehavior:(long long)arg1;
 @end
 

@@ -15,11 +15,13 @@
 @interface _INPBIntegerValue : PBCodable <_INPBIntegerValue, NSSecureCoding, NSCopying>
 {
     CDStruct_01ef6375 _has;
+    _Bool __encodeLegacyGloryData;
     int _value;
     _INPBValueMetadata *_valueMetadata;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(nonatomic) int value; // @synthesize value=_value;
 - (void).cxx_destruct;

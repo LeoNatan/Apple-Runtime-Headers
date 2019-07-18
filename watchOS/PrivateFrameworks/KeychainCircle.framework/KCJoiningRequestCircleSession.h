@@ -32,6 +32,7 @@
 - (_Bool)isDone;
 - (id)processMessage:(id)arg1 error:(id *)arg2;
 - (id)handleCircleBlob:(id)arg1 error:(id *)arg2;
+- (void)attemptSosUpgrade;
 - (id)initialMessage:(id *)arg1;
 - (id)encryptedInitialMessage:(id)arg1 error:(id *)arg2;
 - (id)encryptedPeerInfo:(id *)arg1;

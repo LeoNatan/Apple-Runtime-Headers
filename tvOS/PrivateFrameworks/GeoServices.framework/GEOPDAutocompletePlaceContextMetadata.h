@@ -21,9 +21,11 @@ __attribute__((visibility("hidden")))
     NSString *_matchedDisplayName;
     _Bool _isDefaultName;
     _Bool _isProminentResult;
+    _Bool _shouldSuppressDirectionsAction;
     struct {
         unsigned int has_isDefaultName:1;
         unsigned int has_isProminentResult:1;
+        unsigned int has_shouldSuppressDirectionsAction:1;
         unsigned int read_unknownFields:1;
         unsigned int read_clientizationFeatures:1;
         unsigned int read_matchedDisplayNameLanguageCode:1;
@@ -34,6 +36,7 @@ __attribute__((visibility("hidden")))
         unsigned int wrote_matchedDisplayName:1;
         unsigned int wrote_isDefaultName:1;
         unsigned int wrote_isProminentResult:1;
+        unsigned int wrote_shouldSuppressDirectionsAction:1;
     } _flags;
 }
 
@@ -51,6 +54,8 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasShouldSuppressDirectionsAction;
+@property(nonatomic) _Bool shouldSuppressDirectionsAction;
 @property(retain, nonatomic) NSString *matchedDisplayNameLanguageCode;
 @property(readonly, nonatomic) _Bool hasMatchedDisplayNameLanguageCode;
 - (void)_readMatchedDisplayNameLanguageCode;

@@ -9,7 +9,7 @@
 #import <GeoServices/GEOBatchOpportunisticTileDownloaderDelegate-Protocol.h>
 
 @class GEOBatchOpportunisticTileDownloader, GEODataSaverTileLoaderManager, GEOPowerAssertion, GEORequestCounter, GEOResourceManifestManager, GEOStaleTileUpdater, GEOTileDB, GEOXPCActivity, NSDictionary, NSMutableArray, NSString;
-@protocol GEOProactiveTileDownloaderDelegate, OS_dispatch_queue;
+@protocol GEOProactiveTileDownloaderDelegate, OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
 @interface GEOProactiveTileDownloader : NSObject <GEOBatchOpportunisticTileDownloaderDelegate>
@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     _Bool _policyEnabled[1];
     GEOPowerAssertion *_powerAssertion;
     GEOXPCActivity *_activity;
+    NSObject<OS_dispatch_source> *_deferCheckinTimer;
 }
 
 + (_Bool)shouldDownloadTileType:(int)arg1;
@@ -52,6 +53,8 @@ __attribute__((visibility("hidden")))
 - (void)_registerXPCActivity;
 - (void)cancel;
 - (void)start;
+- (void)_clearXPCDeferralTimer;
+- (void)_registerXPCDeferralTimer;
 - (void)_clearPowerAssertion;
 - (void)_takePowerAssertionIfNecessary;
 - (id)initWithDelegate:(id)arg1 delegateQueue:(id)arg2 diskCache:(id)arg3 dataSaverManager:(id)arg4 manifestManager:(id)arg5 requestCounter:(id)arg6 downloaders:(id)arg7;

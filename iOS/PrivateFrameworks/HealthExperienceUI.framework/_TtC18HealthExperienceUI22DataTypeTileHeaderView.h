@@ -9,11 +9,12 @@
 @interface _TtC18HealthExperienceUI22DataTypeTileHeaderView : UIView
 {
     // Error parsing type: , name: chromeHostView
-    // Error parsing type: , name: delegate
     // Error parsing type: , name: dataSource
     // Error parsing type: , name: titleLabel
     // Error parsing type: , name: detailLabel
     // Error parsing type: , name: accessoryLabel
+    // Error parsing type: , name: detailContainerView
+    // Error parsing type: , name: minimumViewHeight
     // Error parsing type: , name: titleToTop
     // Error parsing type: , name: titleToBottom
     // Error parsing type: , name: titleToAccessory
@@ -25,7 +26,6 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)didTapHeader:(id)arg1;
 
 @end
 

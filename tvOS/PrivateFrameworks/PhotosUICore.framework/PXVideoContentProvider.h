@@ -22,7 +22,7 @@
 @property(retain, nonatomic) AVPlayerItem *playerItem; // @synthesize playerItem=_playerItem;
 - (void).cxx_destruct;
 - (void)cancelLoading;
-- (void)beginLoading;
+- (void)beginLoadingWithPriority:(long long)arg1;
 - (id)mutableChangeObject;
 
 @end

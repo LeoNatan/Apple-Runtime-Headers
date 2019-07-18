@@ -142,7 +142,7 @@ struct AggregateLogger;
 
 struct ArchiveResource;
 
-struct AtomicString {
+struct AtomString {
     struct String _field1;
 };
 
@@ -546,7 +546,7 @@ struct HTMLVideoElement {
     _Bool _field125;
     _Bool _field126;
     struct unique_ptr<WebCore::HTMLImageLoader, std::__1::default_delete<WebCore::HTMLImageLoader>> _field127;
-    struct AtomicString _field128;
+    struct AtomString _field128;
     unsigned int _field129;
     unsigned int _field130;
 };
@@ -1157,8 +1157,8 @@ struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl>> {
     struct StringImpl *_field1;
 };
 
-struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> {
-    struct WeakReference *m_ptr;
+struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> {
+    struct WeakPtrImpl *m_ptr;
 };
 
 struct RefPtr<WebCore::AccessibilityObject, WTF::DumbPtrTraits<WebCore::AccessibilityObject>> {
@@ -1734,52 +1734,52 @@ struct Weak<WebCore::JSDOMObject> {
 struct WeakImpl;
 
 struct WeakPtr<WebCore::MediaPlayerPrivateAVFoundationObjC> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> m_ref;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> m_impl;
 };
 
 struct WeakPtr<WebCore::PlatformMediaSession>;
 
 struct WeakPtr<WebCore::PlaybackSessionModel> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtr<WebCore::RenderObject> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtr<const WebCore::MediaResourceLoader> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::AccessibilityRenderObject> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::ContainerNode> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::DeferrableTask<WebCore::Timer>> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::MediaProducer> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::PlaybackSessionModel> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer>> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
-struct WeakReference;
+struct WeakPtrImpl;
 
 struct WebAccessibilityObjectWrapper {
     Class _field1;
@@ -1986,8 +1986,8 @@ typedef struct Vector<WebCore::SelectionRect, 0, WTF::CrashOnOverflow, 16> {
 } Vector_2a2f4e8a;
 
 typedef struct WeakPtr<WebCore::MediaPlayerPrivateAVFoundationObjC> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> m_ref;
-} WeakPtr_09470f09;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> m_impl;
+} WeakPtr_1a409454;
 
 #pragma mark Named Unions
 

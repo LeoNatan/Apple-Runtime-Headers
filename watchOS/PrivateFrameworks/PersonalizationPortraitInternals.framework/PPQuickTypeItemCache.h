@@ -15,6 +15,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)clear;
 - (void)setEntry:(id)arg1 key:(id)arg2;
 - (id)entryWithKey:(id)arg1;
 - (id)init;

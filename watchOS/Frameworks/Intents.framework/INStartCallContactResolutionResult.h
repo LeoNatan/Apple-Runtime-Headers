@@ -11,6 +11,7 @@
 }
 
 + (id)unsupportedForReason:(int)arg1;
++ (id)confirmationRequiredWithPersonToConfirm:(id)arg1 forReason:(int)arg2;
 - (id)_buildIntentSlotResolutionResultWithIntentSlotDescription:(id)arg1;
 - (id)_initWithIntentSlotResolutionResult:(id)arg1 slotDescription:(id)arg2;
 - (id)initWithPersonResolutionResult:(id)arg1;

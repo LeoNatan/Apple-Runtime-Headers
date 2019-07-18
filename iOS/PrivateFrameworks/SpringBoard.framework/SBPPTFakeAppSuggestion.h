@@ -15,6 +15,10 @@
 }
 
 - (void).cxx_destruct;
+- (id)suggestedLocationName;
+- (id)originatingDeviceType;
+- (id)originatingDeviceName;
+- (id)activityType;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)bundleIdentifier;

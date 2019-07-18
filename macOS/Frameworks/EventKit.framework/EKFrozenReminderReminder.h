@@ -15,8 +15,8 @@
 {
 }
 
-+ (id)_componentsFromDate:(id)arg1 allDay:(BOOL)arg2 timeZone:(id)arg3;
 + (Class)meltedClass;
+- (BOOL)allDay;
 - (BOOL)cachedHasLocationAlarm;
 - (id)appLink;
 - (id)action;
@@ -52,7 +52,6 @@
 - (id)priorityNumber;
 - (BOOL)statusCompleteNotByDate;
 - (id)dueDateUnadjustedFromUTC;
-- (BOOL)allDay;
 @property(readonly, copy, nonatomic) NSDate *startDateUnadjustedFromUTC;
 @property(readonly, copy, nonatomic) NSString *recurrenceRuleString;
 - (id)recurrenceRules;
@@ -60,7 +59,6 @@
 - (id)attendeeSet;
 @property(readonly, nonatomic) BOOL cachedHasAttendee;
 @property(readonly, nonatomic) BOOL cachedHasAlarm;
-- (id)timeZone;
 @property(readonly, copy, nonatomic) NSTimeZone *timeZoneObject;
 - (id)ekLocation;
 - (id)sharedUID;
@@ -68,10 +66,9 @@
 - (id)localUID;
 - (unsigned long long)priority;
 - (id)completionDate;
-- (BOOL)dueDateAllDay;
-- (id)dueDate;
-- (BOOL)startDateAllDay;
-- (id)startDate;
+- (id)timeZone;
+- (id)dueDateComponents;
+- (id)startDateComponents;
 - (id)alarms;
 - (id)creationDate;
 - (id)lastModifiedDate;

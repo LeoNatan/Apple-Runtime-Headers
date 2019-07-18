@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)shouldFreezeCurrentSeries:(id)arg1 lastDatum:(id)arg2 seriesLength:(int)arg3 configuration:(id)arg4 aggregationInterval:(double)arg5;
 - (id)initialAggregationState;
 - (id)_startSeriesWithDatum:(id)arg1 device:(id)arg2;
 - (id)aggregateForState:(id)arg1 collector:(id)arg2 device:(id)arg3 requestedAggregationDate:(id)arg4 mode:(int)arg5 freezeSeries:(_Bool)arg6 error:(id *)arg7;

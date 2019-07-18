@@ -56,6 +56,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+- (void)submitMetrics:(id)arg1 metricName:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)fetchMotionActivitiesFromStartDate:(id)arg1 endDate:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)fetchFMCEnabledWithReply:(CDUnknownBlockType)arg1;
 - (void)tearDownPersistenceStack:(CDUnknownBlockType)arg1;
@@ -63,7 +64,7 @@
 - (void)performZoneResetMirroringRequest:(CDUnknownBlockType)arg1;
 - (void)performImportMirroringRequest:(CDUnknownBlockType)arg1;
 - (void)performExportMirroringRequest:(CDUnknownBlockType)arg1;
-- (void)logLocationsOfInterestWithReply:(CDUnknownBlockType)arg1;
+- (void)logDatabasesWithReply:(CDUnknownBlockType)arg1;
 - (void)injectWiFiAccessPointWithMac:(id)arg1 rssi:(long long)arg2 channel:(long long)arg3 age:(double)arg4 date:(id)arg5 reply:(CDUnknownBlockType)arg6;
 - (void)injectFingerprintWithSettledState:(_Bool)arg1 start:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)injectFingerprintWithIdentifier:(id)arg1 settledState:(unsigned long long)arg2 start:(id)arg3 reply:(CDUnknownBlockType)arg4;

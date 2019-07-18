@@ -13,36 +13,33 @@
 {
     BOOL _shouldHighlightCompleteMatches;
     id <CNComposeRecipientTableViewCellDelegate> _delegate;
-    unsigned long long _actionType;
     UIButton *_actionButton;
     CNAvatarViewController *_avatarViewController;
     NSArray *_activeConstraints;
+    unsigned long long _actionType;
 }
 
-+ (id)labelDetailStringAttributes;
-+ (id)groupDetailStringAttributes;
-+ (id)highlightedDetailStringAttributes;
-+ (id)defaultDetailStringAttributes;
-+ (id)highlightedTitleStringAttributes;
-+ (id)regularTitleStringAttributes;
-+ (id)defaultTitleStringAttributes;
-+ (id)_attributedStringRepresentationOfPartialEmailMatchForSingleRecipient:(id)arg1 useHighlighting:(BOOL)arg2;
-+ (id)_attributedTitleForRecipient:(id)arg1 constrainedToWidth:(double)arg2 font:(id)arg3;
-+ (id)_attributedStringForGroupMembersOfRecipient:(id)arg1 constrainedToWidth:(double)arg2 font:(id)arg3;
++ (id)attributedStringWithBoldedRangesForMatchedStrings:(id)arg1 inString:(id)arg2 font:(id)arg3 boldAllMatches:(BOOL)arg4;
++ (id)_attributedTitleForRecipient:(id)arg1 matchedStrings:(id)arg2 constrainedToWidth:(double)arg3 font:(id)arg4;
++ (id)_attributedStringForListOfGroupMemberNames:(id)arg1 numberTruncated:(unsigned long long)arg2;
++ (id)_attributedStringForGroupMembersOfRecipient:(id)arg1 matchedStrings:(id)arg2 constrainedToWidth:(double)arg3 font:(id)arg4;
 + (id)identifier;
+@property(nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;
 @property(retain, nonatomic) NSArray *activeConstraints; // @synthesize activeConstraints=_activeConstraints;
 @property(readonly, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
-@property(nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;
 @property(nonatomic) BOOL shouldHighlightCompleteMatches; // @synthesize shouldHighlightCompleteMatches=_shouldHighlightCompleteMatches;
 @property __weak id <CNComposeRecipientTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)actionButtonTapped;
 - (double)trailingButtonWidth;
+- (void)setActionType:(unsigned long long)arg1 animated:(BOOL)arg2;
 - (void)setRecipient:(id)arg1;
 - (void)updateLabelsContrainedToWidth:(double)arg1;
 - (void)labelsChangedWidth:(double)arg1;
+- (void)applyActionButtonTouchInsets;
+- (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

@@ -28,6 +28,7 @@
 - (id)notReadyError;
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
+- (void)setSession:(id)arg1;
 @property(readonly, nonatomic) AVCaptureDevice *device;
 - (id)description;
 - (void)dealloc;

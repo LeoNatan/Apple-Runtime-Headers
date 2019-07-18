@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <EmailDaemon/EDMailboxPredictionQueryAdapter-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
 @class EDConversationPersistence, EDMailboxPersistence, EDPersistenceDatabase, EDVIPManager, NSNumber, NSString;
 @protocol EDRemoteSearchProvider, OS_dispatch_queue;
 
-@interface EDMessagePersistence : NSObject <EFLoggable>
+@interface EDMessagePersistence : NSObject <EFLoggable, EDMailboxPredictionQueryAdapter>
 {
     int _cachedMetadataUpdatesSinceLastCheck;
     EDMailboxPersistence *_mailboxPersistence;
@@ -53,6 +54,7 @@
 - (id)requestSummaryForMessageObjectID:(id)arg1;
 - (id)requestContentForMessageObjectID:(id)arg1 options:(id)arg2 delegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)groupedMessagesCountByMailboxMatchingQuery:(unsigned long long)arg1 variable:(id)arg2;
+- (id)validMailboxesForPrediction;
 - (void)_checkCachedMetadataRowLimitWithConnection:(id)arg1;
 - (void)_setCachedMetadataJSON:(id)arg1 forKey:(id)arg2 messageIDHash:(id)arg3;
 - (void)setCachedMetadataJSON:(id)arg1 forKey:(id)arg2 messageID:(id)arg3;

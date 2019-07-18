@@ -84,6 +84,8 @@
 - (void)_addCardViewControllerAsChildViewController:(id)arg1;
 - (void)_removeCardViewControllerFromParentViewController:(id)arg1;
 - (void)siriDidReceiveViewsWithDialogPhase:(id)arg1;
+- (void)siriDidScrollVisible:(_Bool)arg1;
+- (void)siriWillBeginScrolling;
 - (void)siriDidStopSpeakingWithIdentifier:(id)arg1 speechQueueIsEmpty:(_Bool)arg2;
 - (void)siriDidStartSpeakingWithIdentifier:(id)arg1;
 - (void)willCancel;

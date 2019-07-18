@@ -14,12 +14,10 @@
 @interface SBFWallpaperConfigurationManager : NSObject <BSDescriptionProviding>
 {
     NSMutableDictionary *_wallpaperImageCache;
-    NSMutableDictionary *_proceduralWallpaperCache;
     int _externalNotificationToken;
     unsigned long long _batchChangeCount;
     long long _batchNotifyVariants;
     _Bool _enableWallpaperDimming;
-    _Bool _needsWallpaperDimmingTreatment;
     _Bool _cachedVariantsShareWallpaperConfiguration;
     _Bool _cachedVariantsShareWallpaperConfigurationValid;
     NSArray *_dataStores;
@@ -39,7 +37,6 @@
 @property(retain, nonatomic) SBFMagnifyMode *magnifyMode; // @synthesize magnifyMode=_magnifyMode;
 @property(nonatomic) __weak id <SBFProceduralWallpaperProvider> proceduralWallpaperProvider; // @synthesize proceduralWallpaperProvider=_proceduralWallpaperProvider;
 @property(readonly, nonatomic) long long wallpaperSizeType; // @synthesize wallpaperSizeType=_wallpaperSizeType;
-@property(readonly, nonatomic) _Bool needsWallpaperDimmingTreatment; // @synthesize needsWallpaperDimmingTreatment=_needsWallpaperDimmingTreatment;
 @property(nonatomic) _Bool enableWallpaperDimming; // @synthesize enableWallpaperDimming=_enableWallpaperDimming;
 @property(nonatomic) long long wallpaperMode; // @synthesize wallpaperMode=_wallpaperMode;
 @property(readonly, nonatomic) double wallpaperScale; // @synthesize wallpaperScale=_wallpaperScale;
@@ -73,7 +70,6 @@
 - (id)proceduralWallpaperInfoForVariant:(long long)arg1;
 - (_Bool)isProceduralWallpaperInfoValid:(id)arg1;
 - (Class)proceduralWallpaperClassForIdentifier:(id)arg1;
-- (id)cachedProceduralWallpaperWithIdentifier:(id)arg1 options:(id)arg2 forVariant:(long long)arg3;
 - (void)removeVideoForVariants:(long long)arg1;
 - (void)saveCroppedVideo:(id)arg1 toURL:(id)arg2 cropRect:(struct CGRect)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)setVideoURL:(id)arg1 forVariant:(long long)arg2 shoudCrop:(_Bool)arg3 relativeCropRect:(struct CGRect)arg4;

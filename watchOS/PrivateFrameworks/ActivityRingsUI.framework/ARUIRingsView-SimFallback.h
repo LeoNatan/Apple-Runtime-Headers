@@ -12,7 +12,5 @@
 - (void)sim_updateFallbackRings;
 - (id)sim_snapshot;
 - (void)sim_setOpaque:(_Bool)arg1;
-- (void)sim_setNeedsDisplay;
-- (void)sim_displayLayer:(id)arg1;
 @end
 

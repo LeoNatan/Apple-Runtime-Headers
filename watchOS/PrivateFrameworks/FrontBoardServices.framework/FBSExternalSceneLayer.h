@@ -15,14 +15,17 @@
 
 @property(readonly, copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 - (void).cxx_destruct;
+- (_Bool)isExternalSceneLayer;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
+- (id)_succinctDescription;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (int)alignment;
 - (id)initWithExternalSceneID:(id)arg1 trackingContext:(id)arg2;
 - (id)initWithExternalSceneID:(id)arg1 level:(float)arg2;
-- (id)_initWithExternalSceneID:(id)arg1 level:(float)arg2 trackingContext:(id)arg3;
+- (id)_initWithCAContext:(id)arg1 fallbackLevel:(float)arg2 sceneID:(id)arg3;
 
 @end
 

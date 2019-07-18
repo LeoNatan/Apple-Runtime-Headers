@@ -30,7 +30,6 @@
     NSString *_controlExtensionIdentifier;
     NSXPCListenerEndpoint *_clientListenerEndpoint;
     NEFilterProviderConfiguration *_configuration;
-    struct NESocketContentFilter_s *_controlSocketHandle;
     NSArray *_extensionUUIDs;
     struct cfil_crypto_state *_crypto_state;
     int _crypto_kernel_salt;
@@ -40,7 +39,6 @@
 @property int crypto_kernel_salt; // @synthesize crypto_kernel_salt=_crypto_kernel_salt;
 @property struct cfil_crypto_state *crypto_state; // @synthesize crypto_state=_crypto_state;
 @property(readonly, nonatomic) NSArray *extensionUUIDs; // @synthesize extensionUUIDs=_extensionUUIDs;
-@property struct NESocketContentFilter_s *controlSocketHandle; // @synthesize controlSocketHandle=_controlSocketHandle;
 @property(retain) NEFilterProviderConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain) NSXPCListenerEndpoint *clientListenerEndpoint; // @synthesize clientListenerEndpoint=_clientListenerEndpoint;
 @property _Bool controlExtensionInitialized; // @synthesize controlExtensionInitialized=_controlExtensionInitialized;

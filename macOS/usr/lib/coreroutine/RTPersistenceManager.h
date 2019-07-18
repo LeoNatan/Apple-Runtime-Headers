@@ -14,10 +14,10 @@
 
 @interface RTPersistenceManager : RTNotifier <RTPersistenceModelProvider, RTPersistenceContextDelegate>
 {
-    RTPersistenceStore *_stores[3];
     NSURL *_modelsDirectory;
     NSURL *_storesDirectory;
     NSArray *_sortedModelNames;
+    RTPersistenceStore *_stores[3];
     RTPersistenceContainer *_container;
     NSManagedObjectModel *_latestModel;
     NSRecursiveLock *_pointerArrayLock;
@@ -35,6 +35,8 @@
 @property(nonatomic) __weak id <RTPersistenceDelegate> delegate; // @synthesize delegate=_delegate;
 @property unsigned long long availability; // @synthesize availability=_availability;
 - (void).cxx_destruct;
+- (unsigned long long)countOfPersistenceStores;
+- (id)persistenceStoreForType:(unsigned long long)arg1;
 - (id)historyTokenForStoreType:(unsigned long long)arg1;
 - (id)outstandingContexts;
 - (void)_onCoreDataResetSync:(id)arg1;

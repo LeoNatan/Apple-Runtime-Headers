@@ -11,7 +11,6 @@
 }
 
 - (int)forward;
-- (int)initializeRest;
 
 @end
 

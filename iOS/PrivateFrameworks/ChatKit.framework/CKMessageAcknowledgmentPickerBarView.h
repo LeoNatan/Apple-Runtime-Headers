@@ -26,6 +26,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGPoint anchorBubblePosition; // @synthesize anchorBubblePosition=_anchorBubblePosition;
 @property(copy, nonatomic) NSArray *acknowledgmentViews; // @synthesize acknowledgmentViews=_acknowledgmentViews;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateDynamicColorsForBubbleLayers;
 - (void)performCancelAnimation:(CDUnknownBlockType)arg1;
 - (void)performSendAnimation:(CDUnknownBlockType)arg1;
 - (void)performSelectedAnimation:(CDUnknownBlockType)arg1;

@@ -16,6 +16,7 @@
 - (id)photoBrowserTitleViewTextColor;
 - (long long)photoBrowserBarStyle;
 - (id)playheadBackgroundColor;
+- (id)playheadOutlineColor;
 - (id)playheadColor;
 
 @end

@@ -34,6 +34,8 @@ __attribute__((visibility("hidden")))
 - (void)loadFromUnarchiver:(id)arg1;
 -     // Error parsing type: v32@0:8r^{HyperlinkFieldArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{SmartFieldArchive}}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
+- (void)saveToHyperlinkArchive:(id)arg1;
+- (void)saveToUnsupportedHyperlinkArchive:(id)arg1;
 -     // Error parsing type: v32@0:8^{HyperlinkFieldArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{SmartFieldArchive}}16@24, name: saveToArchive:archiver:
 @property(readonly, nonatomic) NSString *fullPath;
 @property(readonly, nonatomic) NSString *filePath;
@@ -45,7 +47,6 @@ __attribute__((visibility("hidden")))
 - (int)smartFieldKind;
 - (id)copyWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 url:(id)arg2;
-@property(readonly, nonatomic) _Bool isInGroupedShape;
 @property(readonly, nonatomic) NSString *displayText;
 - (void)setUrlString:(id)arg1;
 - (id)urlString;

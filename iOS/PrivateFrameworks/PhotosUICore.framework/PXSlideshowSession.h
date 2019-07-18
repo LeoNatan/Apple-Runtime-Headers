@@ -19,7 +19,7 @@
     long long _startIndex;
 }
 
-+ (void)preloadSlideshowFrameworkInBackground;
++ (void)preloadSlideshowFrameworkIfNeeded;
 + (void *)_loadSlideshowFrameworkIfNeeded;
 + (void)initialize;
 @property(readonly, nonatomic) long long startIndex; // @synthesize startIndex=_startIndex;

@@ -11,13 +11,14 @@
     // Error parsing type: , name: menu
     // Error parsing type: , name: commandCenter
     // Error parsing type: , name: menuItems
+    // Error parsing type: , name: alternateMenuItems
 }
 
 - (void).cxx_destruct;
 - (id)init;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (id)validationForCommand:(id)arg1;
-- (void)buildCommandsWithBuilder:(id)arg1;
+- (void)validateCommand:(id)arg1;
+- (void)buildMenuWithBuilder:(id)arg1;
 
 @end
 

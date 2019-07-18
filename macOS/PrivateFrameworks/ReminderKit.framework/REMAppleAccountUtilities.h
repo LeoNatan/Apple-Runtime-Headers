@@ -26,6 +26,7 @@
 - (void)accountStoreDidChange:(id)arg1;
 - (void)invalidatePrimaryICloudACAccount;
 - (void)internalInvalidatePrimaryICloudACAccount;
+- (id)allICloudAccountsWithCloudKitEnabled;
 @property(readonly) ACAccount *primaryICloudACAccount; // @synthesize primaryICloudACAccount=_primaryICloudACAccount;
 - (id)accessQueue;
 - (void)dealloc;

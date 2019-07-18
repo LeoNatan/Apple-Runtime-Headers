@@ -10,9 +10,11 @@
 #import <SettingsCellular/CoreTelephonyClientSubscriberDelegate-Protocol.h>
 
 @class CTXPCServiceSubscriptionInfo, CoreTelephonyClient, NSMutableDictionary, NSString;
+@protocol OS_dispatch_queue;
 
 @interface PSSimStatusCache : NSObject <CoreTelephonyClientDelegate, CoreTelephonyClientSubscriberDelegate>
 {
+    NSObject<OS_dispatch_queue> *_queue;
     CoreTelephonyClient *_coreTelephonyClient;
     CTXPCServiceSubscriptionInfo *_subscriptionInfo;
     NSMutableDictionary *_simStatusDict;

@@ -9,7 +9,7 @@
 #import <InputMethodKit/IMKCandidateMenuDelegate-Protocol.h>
 #import <InputMethodKit/IMKInputMethod-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSString, NSTimer;
 @protocol IMKCandidateEngine, IMKInputMethod, IMKKeyboard, IMKTextDocument;
 
 @interface IMKAbstractInputMethod : NSObject <IMKCandidateMenuDelegate, IMKInputMethod>
@@ -22,6 +22,8 @@
     id <IMKCandidateEngine> _candidateEngine;
     NSMutableArray *_textDocumentStack;
     CDUnknownBlockType _compositionCompletionHandler;
+    NSTimer *_candidateFireTimer;
+    double _candidateDelayTimeInterval;
 }
 
 + (id)inputMethod;
@@ -29,12 +31,14 @@
 + (id)inputMethodVerbatimChainWithAttachedKeyboard:(id)arg1;
 + (id)inputMethodWithAttachedKeyboard:(id)arg1;
 + (id)inputMethodWithChainedInputMethod:(id)arg1;
+@property(nonatomic) double candidateDelayTimeInterval; // @synthesize candidateDelayTimeInterval=_candidateDelayTimeInterval;
 @property(retain, nonatomic) id <IMKCandidateEngine> candidateEngine; // @synthesize candidateEngine=_candidateEngine;
 @property(copy, nonatomic) CDUnknownBlockType compositionCompletionHandler; // @synthesize compositionCompletionHandler=_compositionCompletionHandler;
 @property(retain, nonatomic) id <IMKInputMethod> composingInputMethod; // @synthesize composingInputMethod=_composingInputMethod;
 @property(readonly, nonatomic) id <IMKInputMethod> chainedInputMethod; // @synthesize chainedInputMethod=_chainedInputMethod;
 @property(readonly, nonatomic) __weak id <IMKKeyboard> attachedKeyboard; // @synthesize attachedKeyboard=_attachedKeyboard;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)candidateHandled:(id)arg1;
 - (BOOL)handleBoundedCandidate:(id)arg1;
 - (BOOL)handleCandidateRelativeToCursor:(id)arg1;
@@ -43,6 +47,9 @@
 - (BOOL)didAcceptCandidate:(id)arg1;
 - (id)verbatimFromString:(id)arg1;
 - (void)alignVerbatimWithComposingText;
+- (void)runShowCandidatesFor:(id)arg1 withKeyboardState:(id)arg2;
+- (id)newDeferredCandidatesTimerFor:(id)arg1 withKeyboardState:(id)arg2 withDelay:(double)arg3;
+- (void)showCandidatesOnKeyboardFor:(id)arg1 withKeyboardState:(id)arg2 afterDelay:(double)arg3;
 - (void)showCandidatesOnKeyboardFor:(id)arg1 withKeyboardState:(id)arg2;
 - (void)showCandidatesOnKeyboardFor:(id)arg1;
 - (id)_candidateSeparator;

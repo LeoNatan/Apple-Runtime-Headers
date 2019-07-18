@@ -15,6 +15,7 @@
     double _spacingBetweenMonths;
     double _spacingBetweenDays;
     BOOL _allowsPaginatedScrollingInYearsAndMonths;
+    BOOL _allowsSlideshowInYears;
     long long _axis;
     PXCuratedLibrarySectionHeaderLayoutSpec *_daysTopHeaderSpec;
     PXCuratedLibrarySectionHeaderLayoutSpec *_allPhotosFloatingHeaderSpec;
@@ -26,6 +27,7 @@
     double _spacingBetweenSafeAreaTopAndFirstMonthTitle;
 }
 
+@property(readonly, nonatomic) BOOL allowsSlideshowInYears; // @synthesize allowsSlideshowInYears=_allowsSlideshowInYears;
 @property(readonly, nonatomic) BOOL allowsPaginatedScrollingInYearsAndMonths; // @synthesize allowsPaginatedScrollingInYearsAndMonths=_allowsPaginatedScrollingInYearsAndMonths;
 @property(readonly, nonatomic) double spacingBetweenSafeAreaTopAndFirstMonthTitle; // @synthesize spacingBetweenSafeAreaTopAndFirstMonthTitle=_spacingBetweenSafeAreaTopAndFirstMonthTitle;
 @property(readonly, nonatomic) double spacingBetweenSafeAreaTopAndFirstYearCard; // @synthesize spacingBetweenSafeAreaTopAndFirstYearCard=_spacingBetweenSafeAreaTopAndFirstYearCard;

@@ -8,6 +8,7 @@
 
 @class DCMapsLink, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface DCMapsURLGenerator : DCURLGenerator
 {
     NSMutableDictionary *_queryDictionary;

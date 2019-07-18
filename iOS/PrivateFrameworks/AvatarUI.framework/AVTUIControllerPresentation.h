@@ -7,18 +7,23 @@
 #import <objc/NSObject.h>
 
 @class MSMessagesAppViewController, UIViewController;
+@protocol AVTUIControllerPresentationDelegate;
 
 @interface AVTUIControllerPresentation : NSObject
 {
     UIViewController *_controller;
     MSMessagesAppViewController *_modalMessagesController;
+    id <AVTUIControllerPresentationDelegate> _delegate;
 }
 
++ (id)presentationWithWrappingForController:(id)arg1;
 + (id)pendingGlobalPresentation;
 + (void)setPendingGlobalPresentation:(id)arg1;
+@property(nonatomic) __weak id <AVTUIControllerPresentationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak MSMessagesAppViewController *modalMessagesController; // @synthesize modalMessagesController=_modalMessagesController;
 @property(readonly, nonatomic) UIViewController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+- (void)viewWillBeObstructed;
 - (id)initWithController:(id)arg1;
 
 @end

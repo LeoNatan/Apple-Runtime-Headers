@@ -26,6 +26,9 @@
 @property(retain, nonatomic) OTConfigurationContext *ctx; // @synthesize ctx=_ctx;
 @property(copy, nonatomic) NSString *cliqueMemberIdentifier; // @synthesize cliqueMemberIdentifier=_cliqueMemberIdentifier;
 - (void).cxx_destruct;
+- (void)performedSuccessfulCDPStateMachineRun:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)performedFailureCDPStateMachineRun:(id)arg1 error:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)performedCDPStateMachineRun:(id)arg1 success:(_Bool)arg2 error:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)performedCoreFollowUp:(id)arg1 error:(id)arg2;
 - (void)fetchEscrowContents:(CDUnknownBlockType)arg1;
 - (_Bool)accountUserKeyAvailable;

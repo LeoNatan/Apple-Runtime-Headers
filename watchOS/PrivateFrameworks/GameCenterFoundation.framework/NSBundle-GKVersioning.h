@@ -18,7 +18,9 @@
 - (_Bool)_gkIsGameCenterExtension;
 - (_Bool)_gkIsGameCenter;
 - (id)_gkLocalizedStringForKey:(id)arg1 defaultValue:(id)arg2 arguments:(id)arg3;
+- (id)_gkLocalizedStringFromLocaleName:(id)arg1 key:(id)arg2 tableName:(id)arg3 value:(id)arg4;
 - (id)_gkLocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 language:(id)arg4;
+- (id)_gkSystemLocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)_gkPreferredLanguage;
 - (id)_gkLocalizedName;
 - (id)_gkBundleShortVersion;

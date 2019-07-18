@@ -26,6 +26,7 @@
     NSString *_cachedSizeCategory;
     BOOL _springLoaded;
     BOOL _showsSeparatorAboveActions;
+    BOOL _scrubbingEnabled;
     BOOL _drawsBackground;
     BOOL _alignActionSeparatorLeadingEdgeWithContent;
     id <UIInterfaceActionVisualStyleProviding> _visualStyleProvider;
@@ -64,6 +65,7 @@
 @property(retain, nonatomic, setter=_setVisualStyleOverrideActionHighlightAttributes:) UIInterfaceActionHighlightAttributes *visualStyleOverrideActionHighlightAttributes; // @synthesize visualStyleOverrideActionHighlightAttributes=_visualStyleOverrideActionHighlightAttributes;
 @property(retain, nonatomic) UIInterfaceActionRepresentationView *preferredActionRepresentation; // @synthesize preferredActionRepresentation=_preferredActionRepresentation;
 @property(nonatomic) double requiredActionRepresentationWidth; // @synthesize requiredActionRepresentationWidth=_requiredActionRepresentationWidth;
+@property(nonatomic) BOOL scrubbingEnabled; // @synthesize scrubbingEnabled=_scrubbingEnabled;
 @property(retain, nonatomic) UILongPressGestureRecognizer *actionSelectionGestureRecognizer; // @synthesize actionSelectionGestureRecognizer=_actionSelectionGestureRecognizer;
 @property(readonly, nonatomic) _UIInterfaceActionRepresentationsSequenceView *actionSequenceView; // @synthesize actionSequenceView=_actionSequenceView;
 @property(nonatomic) BOOL showsSeparatorAboveActions; // @synthesize showsSeparatorAboveActions=_showsSeparatorAboveActions;

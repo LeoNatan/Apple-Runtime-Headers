@@ -15,6 +15,8 @@
 }
 
 + (id)countDescription;
++ (id)pluralFilterDescription;
++ (id)filterDescription;
 + (id)pluralTypeDescription;
 + (id)typeDescription;
 + (id)contentCategories;

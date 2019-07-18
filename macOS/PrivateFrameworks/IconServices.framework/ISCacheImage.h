@@ -8,7 +8,6 @@
 
 @class NSData, NSUUID;
 
-__attribute__((visibility("hidden")))
 @interface ISCacheImage : ISConcreteImage
 {
     NSUUID *_uuid;

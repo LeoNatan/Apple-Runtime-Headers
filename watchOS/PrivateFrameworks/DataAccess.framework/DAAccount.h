@@ -135,7 +135,6 @@
 @property(copy, nonatomic) NSString *host;
 - (id)domainOnly;
 - (id)usernameWithoutDomain;
-- (void)handleContactsNotificationNamed:(id)arg1;
 - (int)portFromDataclassPropertiesForDataclass:(id)arg1;
 - (_Bool)useSSLFromDataclassPropertiesForDataclass:(id)arg1;
 - (id)hostFromDataclassPropertiesForDataclass:(id)arg1;

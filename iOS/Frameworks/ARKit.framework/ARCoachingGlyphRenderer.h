@@ -9,13 +9,12 @@
 #import <ARKit/ARCoachingGlyphStateDelegate-Protocol.h>
 
 @class ARCoachingAnimTime, ARCoachingBasicSpring, ARCoachingDeviceController, ARCoachingDotsRenderer, ARCoachingGlyphState, ARCoachingMetalSplineData, ARCoachingQuaternionSpring, ARCoachingSpringDouble3, ARCoachingStateSpring, CALayer, NSString;
-@protocol MTLComputePipelineState, MTLDevice, MTLLibrary, MTLRenderPipelineState, MTLTexture;
+@protocol MTLComputePipelineState, MTLDevice, MTLRenderPipelineState, MTLTexture;
 
 @interface ARCoachingGlyphRenderer : NSObject <ARCoachingGlyphStateDelegate>
 {
     id <MTLDevice> _device;
     unsigned long long _pixelFormat;
-    id <MTLLibrary> _defaultLibrary;
     id <MTLComputePipelineState> _computePipelineState;
     id <MTLRenderPipelineState> _postTessellationPipelineState;
     id <MTLTexture> _msaaTex;
@@ -44,7 +43,7 @@
     ARCoachingMetalSplineData *_splineData;
     ARCoachingDotsRenderer *_dotsRenderer;
     ARCoachingDeviceController *_deviceController;
-    ARCoachingDeviceController *_paralaxDeviceController;
+    ARCoachingDeviceController *_parallaxDeviceController;
     struct CGSize _lastDrawableSize;
     _Bool _dirty_tesselation_factors;
     float _rotationAngleY;

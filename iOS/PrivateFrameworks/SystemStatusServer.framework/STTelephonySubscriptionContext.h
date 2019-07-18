@@ -8,13 +8,14 @@
 
 #import <SystemStatusServer/BSDebugDescriptionProviding-Protocol.h>
 
-@class NSArray, NSString, NSTimer, STMutableTelephonyCarrierBundleInfo, STMutableTelephonyMobileEquipmentInfo, STMutableTelephonySubscriptionInfo;
+@class NSArray, NSString, STMutableTelephonyCarrierBundleInfo, STMutableTelephonyMobileEquipmentInfo, STMutableTelephonySubscriptionInfo;
 
 @interface STTelephonySubscriptionContext : NSObject <BSDebugDescriptionProviding>
 {
     _Bool _pretendingToSearch;
     STMutableTelephonySubscriptionInfo *_subscriptionInfo;
-    NSTimer *_fakeServiceTimer;
+    _Bool *_fakeServiceCanceled;
+    _Bool *_fakeRegistrationCanceled;
     NSString *_cachedCTRegistrationDisplayStatus;
     unsigned long long _modemDataConnectionType;
     NSString *_cachedCTOperatorName;
@@ -30,7 +31,8 @@
 @property(nonatomic) unsigned long long modemDataConnectionType; // @synthesize modemDataConnectionType=_modemDataConnectionType;
 @property(copy, nonatomic) NSString *cachedCTRegistrationDisplayStatus; // @synthesize cachedCTRegistrationDisplayStatus=_cachedCTRegistrationDisplayStatus;
 @property(nonatomic, getter=isPretendingToSearch) _Bool pretendingToSearch; // @synthesize pretendingToSearch=_pretendingToSearch;
-@property(retain, nonatomic) NSTimer *fakeServiceTimer; // @synthesize fakeServiceTimer=_fakeServiceTimer;
+@property(nonatomic) _Bool *fakeRegistrationCanceled; // @synthesize fakeRegistrationCanceled=_fakeRegistrationCanceled;
+@property(nonatomic) _Bool *fakeServiceCanceled; // @synthesize fakeServiceCanceled=_fakeServiceCanceled;
 @property(retain, nonatomic) STMutableTelephonySubscriptionInfo *subscriptionInfo; // @synthesize subscriptionInfo=_subscriptionInfo;
 - (void).cxx_destruct;
 - (id)debugDescriptionBuilderWithMultilinePrefix:(id)arg1;
@@ -41,6 +43,8 @@
 - (id)succinctDescription;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic, getter=isFakingRegistration) _Bool fakingRegistration;
+@property(readonly, nonatomic, getter=isFakingService) _Bool fakingService;
 
 // Remaining properties
 @property(readonly) unsigned long long hash;

@@ -27,7 +27,6 @@
 + (id)movieWithURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (void).cxx_destruct;
 - (void)_determineMediaType;
-- (id)_MPArrayQueueItem;
 - (void)_typeAvailableNotification:(id)arg1;
 - (void)_naturalSizeAvailableNotification:(id)arg1;
 - (void)_durationAvailableNotification:(id)arg1;

@@ -6,11 +6,13 @@
 
 #import <SystemStatusServer/NSObject-Protocol.h>
 
-@class STBatteryStatusDomainData, STBatteryStatusDomainDataDiff, STTelephonyStatusDomainData, STTelephonyStatusDomainDataDiff, STWifiStatusDomainData, STWifiStatusDomainDataDiff;
+@class STBatteryStatusDomainData, STBatteryStatusDomainDataDiff, STTelephonyStatusDomainData, STTelephonyStatusDomainDataDiff, STVoiceControlStatusDomainData, STVoiceControlStatusDomainDataDiff, STWifiStatusDomainData, STWifiStatusDomainDataDiff;
 
 @protocol STStatusDomainPublisherXPCServer <NSObject>
 - (void)publishWifiDataDiff:(STWifiStatusDomainDataDiff *)arg1;
 - (void)publishWifiData:(STWifiStatusDomainData *)arg1;
+- (void)publishVoiceControlDataDiff:(STVoiceControlStatusDomainDataDiff *)arg1;
+- (void)publishVoiceControlData:(STVoiceControlStatusDomainData *)arg1;
 - (void)publishTelephonyDataDiff:(STTelephonyStatusDomainDataDiff *)arg1;
 - (void)publishTelephonyData:(STTelephonyStatusDomainData *)arg1;
 - (void)publishBatteryDataDiff:(STBatteryStatusDomainDataDiff *)arg1;

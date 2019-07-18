@@ -11,6 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)_handleMusicRecommendationArtworkDidUpdateNotification:(id)arg1;
+- (void)_handleMusicRecommendationsDidUpdateNotification:(id)arg1;
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1;
 

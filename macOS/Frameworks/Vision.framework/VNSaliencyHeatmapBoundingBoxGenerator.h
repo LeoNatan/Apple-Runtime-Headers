@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)keyForDetectorWithConfigurationOptions:(id)arg1;
 + (id)configurationOptionKeysForDetectorKey;
 + (void)recordDefaultConfigurationOptionsInDictionary:(id)arg1;
 - (id)processWithOptions:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 error:(id *)arg4;

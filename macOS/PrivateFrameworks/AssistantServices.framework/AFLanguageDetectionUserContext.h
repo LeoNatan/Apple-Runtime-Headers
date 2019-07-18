@@ -18,6 +18,7 @@
     BOOL _simulateLanguageDetectorAssetsAvailability;
     NSArray *_simulatingLanguageCodes;
     NSArray *_finalDictationLanguages;
+    NSMutableDictionary *_dictationLanguageMappingCache;
     BOOL _languageToggled;
     NSString *_currentKeyboard;
     NSString *_primaryLanguageCode;
@@ -53,10 +54,12 @@
 - (void)setShouldSimulateLanguageDetectorAssetsAvailability:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)finalFilteredDictationLanguages;
+- (id)userContextLanguageCodeForKeyboardLangauge:(id)arg1 overrideLanguageCode:(id)arg2;
 - (id)getDictationLanguagesForSupportedLocales:(id)arg1 error:(id *)arg2;
 - (id)getContextForAnalytics;
 - (id)languageDetectorUserContext;
 - (id)context;
+- (void)_setDictationLanguageCodeMappingCache:(id)arg1;
 - (void)_setFinalFilteredDictationLanguages:(id)arg1;
 - (void)_setLanguageDetectorContext:(id)arg1;
 - (void)_setUserContextChangeBit:(unsigned int)arg1;
@@ -65,7 +68,6 @@
 - (id)priorsByReplacingKeyboardLanguage:(id)arg1;
 - (id)getSiriDictationLanguagesFromLanguages:(id)arg1;
 - (id)siriDictationLanguageForLanguage:(id)arg1;
-- (id)_siriDictationLanguageCodeFromLanguageCode:(id)arg1 langaugeOverrideCode:(id)arg2;
 - (void)_setContextValue:(id)arg1 forKey:(id)arg2 context:(id)arg3;
 - (void)_updateContextValue:(id)arg1 forKey:(id)arg2 context:(id)arg3;
 - (void)_removeContextValueForKey:(id)arg1 context:(id)arg2;

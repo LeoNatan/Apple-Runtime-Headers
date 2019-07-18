@@ -21,6 +21,7 @@
 + (id)systemPolicySpecifierForAppName:(id)arg1 bundleID:(id)arg2 icon:(id)arg3 enabled:(_Bool)arg4;
 + (id)systemPolicySpecifierForAppName:(id)arg1 bundleID:(id)arg2 icon:(id)arg3;
 + (void)setIconForSpecifier:(id)arg1 bundleID:(id)arg2;
++ (id)watchOnlyAppSpecifierWithBundleID:(id)arg1 statisticsCache:(id)arg2;
 + (id)appSpecifierWithBundleID:(id)arg1 statisticsCache:(id)arg2;
 + (id)_specifierWithCellTitle:(id)arg1 bundleID:(id)arg2 shouldShowUsage:(_Bool)arg3 icon:(id)arg4 statisticsCache:(id)arg5;
 @property(retain, nonatomic) PSDataUsageStatisticsCache *statisticsCache; // @synthesize statisticsCache=_statisticsCache;

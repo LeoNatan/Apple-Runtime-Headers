@@ -18,11 +18,11 @@
 - (void)updateHighlightTitlesWithReply:(void (^)(void))arg1;
 - (void)processUnprocessedMomentLocationsWithReply:(void (^)(void))arg1;
 - (void)processRecentHighlightsWithReply:(void (^)(void))arg1;
+- (void)prefetchResourcesWithMode:(long long)arg1 reply:(void (^)(NSError *))arg2;
 - (void)prefetchResourcesForHighlights:(NSArray *)arg1 reply:(void (^)(void))arg2;
 - (void)prefetchResourcesForMemories:(NSArray *)arg1 reply:(void (^)(void))arg2;
 - (void)pruneAssetsWithUUID:(NSArray *)arg1 resourceTypes:(NSArray *)arg2 reply:(void (^)(void))arg3;
 - (void)debugSidecarURLsWithObjectURI:(NSURL *)arg1 reply:(void (^)(_Bool, NSDictionary *, NSError *))arg2;
-- (void)computeFingerPrintsOfAssetWithObjectURI:(NSURL *)arg1 reply:(void (^)(NSString *, NSString *, NSError *))arg2;
 - (void)revertToOriginalWithObjectURI:(NSURL *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)getCPLStateWithReply:(void (^)(NSString *))arg1;
 - (void)getXPCTransactionStatusWithReply:(void (^)(NSString *))arg1;

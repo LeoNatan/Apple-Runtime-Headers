@@ -19,7 +19,7 @@
 - (void)fetchRecords:(CDUnknownBlockType)arg1;
 - (void)storeAlignedSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)shouldRecordToDES;
-- (void)storeTypingSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)storeTypingSession:(id)arg1 containsCP:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)init;
 
 @end

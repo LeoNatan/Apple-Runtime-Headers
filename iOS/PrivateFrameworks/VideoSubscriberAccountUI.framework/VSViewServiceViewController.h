@@ -67,6 +67,7 @@ __attribute__((visibility("hidden")))
 - (void)_didDetermineIdentityProvider:(id)arg1 withPickerViewController:(id)arg2;
 - (void)_showIdentityProviderPickerViewControllerWithIdentityProviders:(id)arg1;
 - (void)_performRequestWithIdentityProvider:(id)arg1 account:(id)arg2;
+- (void)_determinePreAuthAppIsAuthorized:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_presentWelcomeMessageForIdentityProvider:(id)arg1 withLogoCacheURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_identityProviderRequestForViewServiceRequest:(id)arg1 withAccount:(id)arg2;
 - (void)_performRequestInternal:(id)arg1 withID:(id)arg2 identityProviders:(id)arg3 accounts:(id)arg4;

@@ -213,6 +213,7 @@
 @property BOOL inheritsTiming;
 @property BOOL contentsOpaque;
 @property BOOL contentsDither;
+@property BOOL contentsAlignsToPixels;
 @property struct CGAffineTransform contentsTransform;
 @property BOOL shadowPathIsBounds;
 @property BOOL invertsShadow;

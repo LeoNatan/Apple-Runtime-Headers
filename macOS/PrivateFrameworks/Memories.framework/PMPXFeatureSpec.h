@@ -18,6 +18,7 @@
 @property(retain, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
 - (void).cxx_destruct;
 - (id)specForFont:(id)arg1 size:(struct CGSize)arg2;
+- (id)verticalExportSpecForFont:(id)arg1 size:(struct CGSize)arg2;
 - (id)viewSpecWithDescriptor:(struct PXViewSpecDescriptor)arg1;
 
 @end

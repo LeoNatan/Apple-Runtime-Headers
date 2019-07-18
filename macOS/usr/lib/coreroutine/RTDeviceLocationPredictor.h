@@ -77,7 +77,6 @@
 - (void)_registerForNotifications;
 - (id)initWithQueue:(id)arg1 defaultsManager:(id)arg2 distanceCalculator:(id)arg3 learnedLocationManager:(id)arg4 locationManager:(id)arg5 mapServiceManager:(id)arg6 metricManager:(id)arg7 platfrom:(id)arg8 providers:(id)arg9;
 - (id)init;
-- (void)logStateModelAvailabilityMetricWithAvailability:(long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

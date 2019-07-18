@@ -32,6 +32,7 @@
 - (id)accessibilityChildren;
 - (void)_contentViewBoundsDidChange:(id)arg1;
 - (void)_clearVisibleOriginRequirement;
+- (BOOL)isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
 - (void)scrollToEdge:(unsigned int)arg1;
 - (struct CGPoint)contentOffsetForEdge:(unsigned int)arg1;
 @property(nonatomic) struct CGRect contentBounds;

@@ -6,18 +6,19 @@
 
 #import <SpringBoard/NSObject-Protocol.h>
 
-@class SBTetheredRemovalSwitcherModifierEvent, UIPanGestureRecognizer;
+@class SBFluidSwitcherContentView, SBTetheredRemovalSwitcherModifierEvent, UIPanGestureRecognizer;
 @protocol SBTetheredSwitcherContentViewControlling;
 
 @protocol SBTetheredSwitcherContentViewControlling <NSObject>
+- (double)distanceToLeadingEdgeOfLeadingCardFromTrailingEdgeOfScreen;
 - (unsigned long long)numberOfAppLayouts;
 - (struct CGSize)contentSize;
 - (void)returnScrollViewPanGestureRecognizer:(UIPanGestureRecognizer *)arg1;
 - (UIPanGestureRecognizer *)borrowScrollViewPanGestureRecognizer;
+- (_Bool)hasItemContainerAtLocationInContentView:(struct CGPoint)arg1;
 - (void)dispatchAndHandleTetheredRemovalEvent:(SBTetheredRemovalSwitcherModifierEvent *)arg1;
-- (void)tetheredViewController:(id <SBTetheredSwitcherContentViewControlling>)arg1 didUpdateStyleWithAnimationMode:(long long)arg2;
-- (void)tetheredViewController:(id <SBTetheredSwitcherContentViewControlling>)arg1 didUpdateLayoutWithAnimationMode:(long long)arg2;
-- (void)tetheredViewControllerDidUpdateVisibleItems:(id <SBTetheredSwitcherContentViewControlling>)arg1;
+- (void)tetheredViewController:(id <SBTetheredSwitcherContentViewControlling>)arg1 didPerformTransitionWithMode:(long long)arg2;
+- (void)setTetheredContentView:(SBFluidSwitcherContentView *)arg1;
 - (void)setTetheredScrollViewContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2;
 - (void)endTetheringWithViewController:(id <SBTetheredSwitcherContentViewControlling>)arg1;
 - (void)beginTetheringWithViewController:(id <SBTetheredSwitcherContentViewControlling>)arg1 asTetheree:(_Bool)arg2;

@@ -53,6 +53,7 @@
 - (id)meContactIdentifiers:(id *)arg1;
 - (id)identifierWithError:(id *)arg1;
 - (_Bool)fetchEncodedContactsForFetchRequest:(id)arg1 error:(id *)arg2 cancelationToken:(id)arg3 batchHandler:(CDUnknownBlockType)arg4;
+- (id)mapTableFromMatchInfoDictionary:(id)arg1;
 - (_Bool)fetchAndDecodeEncodedContactsForFetchRequest:(id)arg1 error:(id *)arg2 cancelationToken:(id)arg3 batchHandler:(CDUnknownBlockType)arg4;
 - (_Bool)fetchContactsForFetchRequest:(id)arg1 error:(id *)arg2 batchHandler:(CDUnknownBlockType)arg3;
 - (id)contactObservableForFetchRequest:(id)arg1;

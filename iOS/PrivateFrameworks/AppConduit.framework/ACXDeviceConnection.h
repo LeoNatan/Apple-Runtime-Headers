@@ -59,7 +59,7 @@
 - (void)enumerateInstalledApplicationsOnPairedDevice:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)cancelUpdatePendingForCompanionApp:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setUpdatePendingForCompanionApp:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)updatePreferencesForApplicationWithIdentifier:(id)arg1 preferences:(id)arg2 writingToPreferencesLocation:(unsigned long long)arg3 forPairedDevice:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)updatePreferencesForApplicationWithIdentifier:(id)arg1 preferences:(id)arg2 writingToPreferencesLocation:(unsigned long long)arg3 forPairedDevice:(id)arg4 options:(unsigned long long)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)updatePreferencesForApplicationWithIdentifier:(id)arg1 preferences:(id)arg2 forPairedDevice:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)updatePreferencesForApplicationWithIdentifier:(id)arg1 preferences:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchProvisioningProfilesForApplicationWithBundleID:(id)arg1 forPairedDevice:(id)arg2 completion:(CDUnknownBlockType)arg3;

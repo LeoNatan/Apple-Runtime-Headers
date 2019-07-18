@@ -61,10 +61,10 @@
 - (void)_configureLiveSnapshotView;
 - (void)_configurePlaceholderContentView;
 - (void)_configureViewForEffectiveDisplayMode:(long long)arg1;
+- (id)_transitionViewForHostView;
 - (_Bool)_addContentLikeViewToHierarchyForTransitionIfPossible:(id)arg1;
 - (_Bool)_shouldViewBeInHierarchyForTransition:(id)arg1;
 - (void)_transitionFromDisplayMode:(long long)arg1 showingView:(id)arg2 toDisplayMode:(long long)arg3 showingView:(id)arg4 withAnimationFactory:(id)arg5 completion:(CDUnknownBlockType)arg6;
-- (id)_wrappedIfNecessaryViewForCrossfading:(id)arg1;
 - (id)_viewForDisplayMode:(long long)arg1;
 - (long long)_bestDisplayModeLessThanMode:(long long)arg1;
 - (void)_evaluateEffectiveDisplayModeWithAnimationFactory:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -83,8 +83,6 @@
 - (void)_configureSceneSnapshotContext:(id)arg1;
 - (void)_refresh;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
-- (struct CGRect)_frameForHostView;
-- (struct CGAffineTransform)_transformForHostView;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)invalidate;

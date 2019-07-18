@@ -10,23 +10,30 @@
 #import <HomeUI/HUSwitchCellDelegate-Protocol.h>
 
 @class HUMediaSelectionItemManager, NSString;
+@protocol HUMediaSelectionViewControllerDelegate;
 
 @interface HUMediaSelectionViewController : HUItemTableViewController <HUSwitchCellDelegate, HUSliderValueTableViewCellDelegate>
 {
+    id <HUMediaSelectionViewControllerDelegate> _delegate;
     HUMediaSelectionItemManager *_mediaSelectionItemManager;
 }
 
 @property(retain, nonatomic) HUMediaSelectionItemManager *mediaSelectionItemManager; // @synthesize mediaSelectionItemManager=_mediaSelectionItemManager;
+@property(nonatomic) __weak id <HUMediaSelectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)itemManager:(id)arg1 didUpdateResultsForItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)sliderValueTableViewCell:(id)arg1 didChangeValue:(double)arg2;
 - (void)switchCell:(id)arg1 didTurnOn:(BOOL)arg2;
 - (void)_updateMediaCell;
+- (id)_musicAppURL;
+- (void)_presentMediaPickerUnavailablePromptWithReason:(long long)arg1 storeKitErrorObject:(id)arg2;
 - (void)_presentMediaPicker;
 - (BOOL)_allowRowInteractionForIndexPath:(id)arg1;
 - (void)applyAccessory:(long long)arg1 toItem:(id)arg2 onTableView:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(BOOL)arg4;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;

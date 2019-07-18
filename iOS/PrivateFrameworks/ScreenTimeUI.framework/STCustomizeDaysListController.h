@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)datePickerChanged:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)budgetTime:(id)arg1;
-- (void)showPickerSpecifierForSpecifier:(id)arg1;
+- (void)_showOrHidePickerSpecifierForSpecifier:(id)arg1;
 - (id)specifiers;
 - (id)_localizedDayNames;
 - (id)_localizedDayOrder;

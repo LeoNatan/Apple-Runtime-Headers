@@ -6,13 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@interface PMLPlanDescriptor : NSObject
+#import <ProactiveML/NSCopying-Protocol.h>
+
+@class NSString;
+
+@interface PMLPlanDescriptor : NSObject <NSCopying>
 {
+    NSString *_name;
+    NSString *_version;
+    NSString *_locale;
 }
 
 + (struct NSString *)planIdFromString:(id)arg1;
-+ (id)sessionDescriptorFromPlanId:(struct NSString *)arg1;
++ (id)descriptorFromPlanId:(struct NSString *)arg1;
 + (_Bool)isValidPlanId:(struct NSString *)arg1;
+@property(readonly, nonatomic) NSString *locale; // @synthesize locale=_locale;
+@property(readonly, nonatomic) NSString *version; // @synthesize version=_version;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
+- (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithName:(id)arg1 version:(id)arg2 locale:(id)arg3;
 
 @end
 

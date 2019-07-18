@@ -15,6 +15,8 @@
 - (void)viewControllerDidFailToChangePasscodeComplex:(UIViewController *)arg1;
 - (void)viewControllerDidFinishChangingPasscodeComplex:(UIViewController *)arg1;
 - (void)viewControllerWillPresentChangePasscodeComplex:(UIViewController *)arg1;
+- (void)viewController:(UIViewController *)arg1 requestPasscodeUpgradeWithCompletion:(void (^)(_Bool, NSError *))arg2;
+- (void)viewController:(UIViewController *)arg1 willPerformPasscodeUpgradeWithCompletionHandler:(void (^)(NSString *))arg2;
 - (void)viewControllerDidShowEligibilityIssue:(UIViewController *)arg1;
 - (void)viewController:(UIViewController *)arg1 didShowProvisioningError:(NSError *)arg2;
 - (void)viewControllerDidCancelSetupFlow:(UIViewController *)arg1;

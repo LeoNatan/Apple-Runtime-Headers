@@ -11,6 +11,7 @@
 @class NSArray, NSDictionary, NSString;
 @protocol OS_os_log;
 
+__attribute__((visibility("hidden")))
 @interface WFAggDLoggingBackend : NSObject <WFLoggingBackend>
 {
     NSObject<OS_os_log> *_log;

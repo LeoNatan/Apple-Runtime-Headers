@@ -143,6 +143,7 @@
 @property(readonly, nonatomic) BOOL supportsLinearTextureFromSharedBuffer;
 @property(readonly, nonatomic) BOOL supportsNonPrivateMSAATextures;
 @property(readonly, nonatomic) BOOL supportsNonPrivateDepthStencilTextures;
+@property(readonly, nonatomic) BOOL supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) BOOL supportsPlacementHeaps;
 @property(readonly, nonatomic) BOOL supportsSamplerReductionMode;
 @property(readonly, nonatomic) BOOL supportsQueryTextureLOD;
@@ -265,7 +266,6 @@
 - (unsigned long long)minLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (BOOL)supportsSampleCount:(unsigned long long)arg1;
 - (BOOL)supportsTextureSampleCount:(unsigned long long)arg1;
-- (BOOL)supportsVersion:(long long)arg1;
 - (BOOL)supportsFamily:(long long)arg1;
 - (BOOL)supportsFeatureSet:(unsigned long long)arg1;
 - (BOOL)deviceOrFeatureProfileSupportsFeatureSet:(unsigned long long)arg1;

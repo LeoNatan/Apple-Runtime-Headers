@@ -20,9 +20,11 @@
 @property(readonly, nonatomic) HMNetworkRouterProfile *profile; // @synthesize profile=_profile;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_enableNetworkProtectionAndFinishWithActionResult:(unsigned long long)arg1;
+- (void)_updateNetworkProtection:(long long)arg1 andFinishWithActionResult:(unsigned long long)arg2;
+- (void)_disablePressed:(id)arg1;
 - (void)_customizePressed:(id)arg1;
 - (void)_continuePressed:(id)arg1;
+- (_Bool)_hasNetworkCustomizableAccessories;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(_Bool)arg1;
 - (id)initWithProfile:(id)arg1 configurationDelegate:(id)arg2;

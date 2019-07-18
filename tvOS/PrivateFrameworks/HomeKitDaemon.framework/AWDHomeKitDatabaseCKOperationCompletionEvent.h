@@ -8,23 +8,28 @@
 
 #import <HomeKitDaemon/NSCopying-Protocol.h>
 
+@class NSString;
+
 @interface AWDHomeKitDatabaseCKOperationCompletionEvent : PBCodable <NSCopying>
 {
-    long long _error;
+    long long _errorCode;
     unsigned long long _timestamp;
     int _containerType;
+    NSString *_errorDomain;
     _Bool _didSucceed;
     struct {
-        unsigned int error:1;
+        unsigned int errorCode:1;
         unsigned int timestamp:1;
         unsigned int containerType:1;
         unsigned int didSucceed:1;
     } _has;
 }
 
-@property(nonatomic) long long error; // @synthesize error=_error;
+@property(retain, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
+@property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 @property(nonatomic) _Bool didSucceed; // @synthesize didSucceed=_didSucceed;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
+- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -34,11 +39,12 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasErrorDomain;
 - (int)StringAsContainerType:(id)arg1;
 - (id)containerTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasContainerType;
 @property(nonatomic) int containerType; // @synthesize containerType=_containerType;
-@property(nonatomic) _Bool hasError;
+@property(nonatomic) _Bool hasErrorCode;
 @property(nonatomic) _Bool hasDidSucceed;
 @property(nonatomic) _Bool hasTimestamp;
 

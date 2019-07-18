@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
     NSError *_error;
     TVPMediaItemTimingData *_timingData;
     AVURLAsset *_existingAVAsset;
-    NSObject *_reportingHierarchyToken;
+    id _reportingHierarchyToken;
     AVURLAsset *_AVAsset;
     TVPStateMachine *_stateMachine;
     AVURLAsset *_AVAssetInternal;
@@ -52,7 +52,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVURLAsset *AVAssetInternal; // @synthesize AVAssetInternal=_AVAssetInternal;
 @property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(retain, nonatomic) AVURLAsset *AVAsset; // @synthesize AVAsset=_AVAsset;
-@property(retain, nonatomic) NSObject *reportingHierarchyToken; // @synthesize reportingHierarchyToken=_reportingHierarchyToken;
+@property(retain, nonatomic) id reportingHierarchyToken; // @synthesize reportingHierarchyToken=_reportingHierarchyToken;
 @property(retain, nonatomic) AVURLAsset *existingAVAsset; // @synthesize existingAVAsset=_existingAVAsset;
 @property(retain, nonatomic) TVPMediaItemTimingData *timingData; // @synthesize timingData=_timingData;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -77,6 +77,7 @@ __attribute__((visibility("hidden")))
 - (id)_skipInfoFromMetadata:(id)arg1 keyIdentifierMap:(id)arg2 forType:(unsigned long long)arg3 withTotalCount:(unsigned long long)arg4;
 - (id)_rollInfoFromMetadata:(id)arg1 keyIdentifierMap:(id)arg2 forType:(unsigned long long)arg3 withTotalCount:(unsigned long long)arg4;
 - (void)_loadMediaItemMetadataAsynchronously;
+- (id)_contentKeyRequestParamsFromBase64String:(id)arg1;
 - (id)_tomatoFreshnessFromString:(id)arg1;
 - (id)_advisoryKeyNamesWithCount:(unsigned long long)arg1;
 - (id)_skipKeyNamesForType:(unsigned long long)arg1 withCount:(unsigned long long)arg2;

@@ -36,6 +36,7 @@
     GEOMapServiceTraits *_traits;
     unsigned long long _maxNumberOfConcurrentRequests;
     NSMutableArray *_inFlightTickets;
+    NSMutableArray *_pendingTickets;
     BOOL _shouldDisplayNoResults;
     BOOL _autocompleteTopSectionIsQuerySuggestions;
     BOOL _showAutocompleteClientSource;

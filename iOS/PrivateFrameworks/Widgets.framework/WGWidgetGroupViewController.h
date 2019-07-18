@@ -13,22 +13,24 @@
 #import <Widgets/WGWidgetIconAnimationExtraViewsProviding-Protocol.h>
 #import <Widgets/WGWidgetListViewControllerDelegatePrivate-Protocol.h>
 
-@class NSArray, NSString, UILabel, UIScrollView, UIView, WGMajorListViewController, WGWidgetDiscoveryController;
+@class NSArray, NSString, UIControl, UILabel, UIScrollView, UIView, WGCarouselListViewController, WGWidgetDiscoveryController;
 @protocol WGWidgetGroupViewControllerDelegate;
 
 @interface WGWidgetGroupViewController : UIViewController <WGWidgetDebugging, WGWidgetDiscoveryObserving, WGWidgetListViewControllerDelegatePrivate, WGMajorListViewControllerDelegate, WGWidgetExtensionVisibilityProviding, WGWidgetIconAnimationExtraViewsProviding>
 {
     WGWidgetDiscoveryController *_discoveryController;
-    WGMajorListViewController *_majorColumnListViewController;
+    WGCarouselListViewController *_majorColumnListViewController;
     unsigned long long _lastWidgetCount;
     struct WGWidgetListSettings _listSettings;
     UILabel *_debugLabel;
     _Bool _shouldBlurContent;
     id <WGWidgetGroupViewControllerDelegate> _delegate;
     unsigned long long _location;
+    UIControl *_editButton;
     struct UIEdgeInsets _contentOccludingInset;
 }
 
+@property(retain, nonatomic) UIControl *editButton; // @synthesize editButton=_editButton;
 @property(nonatomic) struct WGWidgetListSettings listSettings; // @synthesize listSettings=_listSettings;
 @property(nonatomic) struct UIEdgeInsets contentOccludingInset; // @synthesize contentOccludingInset=_contentOccludingInset;
 @property(nonatomic) _Bool shouldBlurContent; // @synthesize shouldBlurContent=_shouldBlurContent;
@@ -58,7 +60,8 @@
 - (void)_loadWidgetListViewController;
 - (long long)_activeLayoutMode;
 - (long long)_layoutModeForSize:(struct CGSize)arg1;
-@property(readonly, copy, nonatomic) UIView *extraViewsContainer;
+@property(readonly, nonatomic) UIView *extraViewsContainer;
+@property(readonly, nonatomic) _Bool shouldAnimateLastTwoViewsAsOne;
 @property(readonly, copy, nonatomic) NSArray *extraViews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
@@ -66,6 +69,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)viewDidLoad;
+@property(nonatomic, getter=isEditingIcons) _Bool editingIcons;
 @property(readonly, nonatomic, getter=isHeaderVisible) _Bool headerVisible;
 @property(retain, nonatomic) UIViewController *headerContentViewController;
 - (void)invalidateVisibleWidgets;

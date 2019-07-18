@@ -29,7 +29,6 @@
     CKOperationGroup *_group;
     NSString *_operationID;
     NSObject<OS_dispatch_source> *_timeoutSource;
-    NSError *_cancelError;
     NSMutableArray *_savedRequestUUIDs;
     NSMutableDictionary *_savedResponseHTTPHeadersByRequestUUID;
     NSMutableDictionary *_savedW3CNavigationTimingByRequestUUID;
@@ -38,6 +37,7 @@
     unsigned int _duetPreClearedMode;
     unsigned int _discretionaryWhenBackgroundedState;
     unsigned int _systemScheduler;
+    NSError *_cancelError;
     CKPlaceholderOperation *_placeholderOperation;
     NSError *_error;
     NSString *_sectionID;
@@ -62,6 +62,7 @@
 @property(readonly, nonatomic) _Bool isFinishingOnCallbackQueue; // @synthesize isFinishingOnCallbackQueue=_isFinishingOnCallbackQueue;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 @property(retain) CKPlaceholderOperation *placeholderOperation; // @synthesize placeholderOperation=_placeholderOperation;
+@property(retain, nonatomic) NSError *cancelError; // @synthesize cancelError=_cancelError;
 @property(nonatomic) unsigned int systemScheduler; // @synthesize systemScheduler=_systemScheduler;
 @property(nonatomic) unsigned int discretionaryWhenBackgroundedState; // @synthesize discretionaryWhenBackgroundedState=_discretionaryWhenBackgroundedState;
 @property(nonatomic) unsigned int duetPreClearedMode; // @synthesize duetPreClearedMode=_duetPreClearedMode;
@@ -71,7 +72,6 @@
 @property(retain, nonatomic) NSMutableDictionary *savedW3CNavigationTimingByRequestUUID; // @synthesize savedW3CNavigationTimingByRequestUUID=_savedW3CNavigationTimingByRequestUUID;
 @property(retain, nonatomic) NSMutableDictionary *savedResponseHTTPHeadersByRequestUUID; // @synthesize savedResponseHTTPHeadersByRequestUUID=_savedResponseHTTPHeadersByRequestUUID;
 @property(retain, nonatomic) NSMutableArray *savedRequestUUIDs; // @synthesize savedRequestUUIDs=_savedRequestUUIDs;
-@property(retain, nonatomic) NSError *cancelError; // @synthesize cancelError=_cancelError;
 @property(nonatomic) _Bool usesBackgroundSession; // @synthesize usesBackgroundSession=_usesBackgroundSession;
 @property(nonatomic) _Bool isOutstandingOperation; // @synthesize isOutstandingOperation=_isOutstandingOperation;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timeoutSource; // @synthesize timeoutSource=_timeoutSource;

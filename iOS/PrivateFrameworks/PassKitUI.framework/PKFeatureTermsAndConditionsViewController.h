@@ -7,7 +7,7 @@
 #import <PassKitUI/PKPortraitNavigationController.h>
 
 #import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
-#import <PassKitUI/PKPaymentSetupRequiresPreflightProtocol-Protocol.h>
+#import <PassKitUI/PKViewControllerPreflightable-Protocol.h>
 #import <PassKitUI/QLPreviewControllerDataSource-Protocol.h>
 #import <PassKitUI/QLPreviewControllerDelegate-Protocol.h>
 #import <PassKitUI/QLPreviewItemDataProvider-Protocol.h>
@@ -16,7 +16,7 @@
 @class NSData, NSString, QLItem, QLPreviewController, RemoteUIController;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKFeatureTermsAndConditionsViewController : PKPortraitNavigationController <QLPreviewItemDataProvider, QLPreviewControllerDelegate, QLPreviewControllerDataSource, RemoteUIControllerDelegate, PKPaymentSetupPresentationProtocol, PKPaymentSetupRequiresPreflightProtocol>
+@interface PKFeatureTermsAndConditionsViewController : PKPortraitNavigationController <QLPreviewItemDataProvider, QLPreviewControllerDelegate, QLPreviewControllerDataSource, RemoteUIControllerDelegate, PKPaymentSetupPresentationProtocol, PKViewControllerPreflightable>
 {
     _Bool _isIpad;
     RemoteUIController *_termsUIController;

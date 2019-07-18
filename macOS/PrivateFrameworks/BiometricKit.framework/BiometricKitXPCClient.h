@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 @interface BiometricKitXPCClient : NSObject
 {
     unsigned long long _clientID;
+    unsigned long long _connectionID;
     long long _clientType;
     BiometricKitXPCClientConnection *_connection;
     BOOL _connectionInitialized;

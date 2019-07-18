@@ -19,7 +19,7 @@
 }
 
 + (BOOL)_shouldExtendCandidateWord:(id)arg1 withSuffix:(id)arg2;
-@property(retain, nonatomic) id <AXKTextProviding> _textProvider; // @synthesize _textProvider=__textProvider;
+@property(nonatomic) __weak id <AXKTextProviding> _textProvider; // @synthesize _textProvider=__textProvider;
 @property(retain, nonatomic) AXFTextRange *currentWordRange; // @synthesize currentWordRange=_currentWordRange;
 @property(copy, nonatomic) NSString *currentWord; // @synthesize currentWord=_currentWord;
 @property(retain, nonatomic) AXFTextPosition *currentPosition; // @synthesize currentPosition=_currentPosition;

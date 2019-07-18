@@ -12,9 +12,12 @@
 + (id)internalMessageWithName:(id)arg1 destination:(id)arg2 messagePayload:(id)arg3;
 + (id)internalMessageWithName:(id)arg1 messagePayload:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 + (id)internalMessageWithName:(id)arg1 messagePayload:(id)arg2;
+- (void)setRequiresMultiUserSetupEntitlement;
 - (void)setRequiresCameraClipsEntitlement;
 - (void)setRequiresSetupPayloadEntitlement;
+@property(nonatomic) BOOL requiresNoSPIEntitlement;
 - (void)setRequiresNoSPIEntitlement;
+@property(nonatomic) BOOL requiresSPIEntitlement;
 - (void)setRequiresSPIEntitlement;
 @property(nonatomic, getter=isInternal) BOOL internal;
 @property(nonatomic) unsigned long long remoteRestriction;

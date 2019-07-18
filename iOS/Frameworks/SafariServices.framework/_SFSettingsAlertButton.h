@@ -8,18 +8,15 @@
 
 #import <SafariServices/_SFSettingsAlertOptionsGroupItemConfiguration-Protocol.h>
 
-@class NSArray, NSAttributedString, NSLayoutConstraint, NSString, UIImage, UIImageView, UILabel, UIView;
+@class NSArray, NSAttributedString, NSString, UIImage, UIImageView, UILabel, UIView;
 
 __attribute__((visibility("hidden")))
 @interface _SFSettingsAlertButton : _SFSettingsAlertControl <_SFSettingsAlertOptionsGroupItemConfiguration>
 {
-    NSLayoutConstraint *_textLabelToImageViewConstraint;
-    NSLayoutConstraint *_textLabelToTrailingConstraint;
-    NSLayoutConstraint *_imageViewToTrailingConstraint;
-    NSLayoutConstraint *_imageViewToCenterConstraint;
     NSString *_text;
     NSAttributedString *_attributedText;
     NSArray *_contentConstraints;
+    NSString *_textStyle;
     UIImage *_image;
     UIImageView *_imageView;
     UIView *_accessoryView;
@@ -30,16 +27,18 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(copy, nonatomic) NSString *textStyle; // @synthesize textStyle=_textStyle;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_updateTintColor;
 @property(nonatomic, getter=isEnabled) _Bool enabled;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (id)_arrangedSubviews;
 - (void)updateConstraints;
+@property(readonly, nonatomic) UIView *trailingView;
 @property(copy, nonatomic) NSAttributedString *attributedText;
 - (void)layoutSubviews;
-- (void)prepareForLayoutInAlertWithWidth:(double)arg1;
 @property(copy, nonatomic) NSString *text;
 - (id)initWithFrame:(struct CGRect)arg1;
 

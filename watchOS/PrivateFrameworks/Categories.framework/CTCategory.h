@@ -14,7 +14,8 @@
 {
     NSString *_identifier;
     NSString *_bundleIdentifier;
-    NSArray *_equivalentBundleIdentifers;
+    NSString *_canonicalBundleIdentifier;
+    NSArray *_equivalentBundleIdentifiers;
     NSArray *_webDomains;
     NSString *_primaryWebDomain;
     NSString *_primaryIdentifier;
@@ -25,21 +26,24 @@
 }
 
 + (id)_getAssociatedDomainsForHostNames:(id)arg1;
++ (id)_equivalentBundleIDsMapping;
 + (id)_equivalentBundleIDsMappingForWatchOSBundleID:(id)arg1;
-+ (id)_getequivalentBundleIdentifers:(id)arg1;
++ (id)itemWith:(id)arg1 platform:(id)arg2 array:(id)arg3;
++ (id)canonicalBundleIdentifierFor:(id)arg1 platform:(id)arg2;
++ (id)equivalentIdentifiersForBundleID:(id)arg1;
++ (id)_getequivalentBundleIdentifiers:(id)arg1;
 + (void)_lookupAppStoreUsing:(id)arg1 platform:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-+ (id)_macAppStoreIDToDHIDCategoriesMap;
-+ (id)_AppStoreIDToDHIDCategoriesMap;
-+ (id)_AppStoreToDHIDCategoriesMap;
 + (id)_DHToAppStoreCategoriesMap;
 + (id)_DHIDtoPrimaryCategoriesMap;
 + (void)_getCategoryTypeForDomainName:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
++ (id)_overrideEquivalentIdentifiers:(id)arg1 forBundleID:(id)arg2;
 + (id)systemAppCategoryIdentifierForBundleIdentifier:(id)arg1;
 + (void)categoryForDomainName:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 + (void)categoryForDomainURL:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 + (void)categoryForBundleID:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 + (void)categoryForBundleIdentifiers:(id)arg1 platform:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 + (void)categoryForBundleID:(id)arg1 platform:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
++ (id)shortLocalizedNameForIdentifier:(id)arg1;
 + (id)localizedNameForIdentifier:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)_newXpcConnection;
@@ -51,7 +55,8 @@
 @property(readonly, copy, nonatomic) NSString *primaryIdentifier; // @synthesize primaryIdentifier=_primaryIdentifier;
 @property(copy, nonatomic) NSString *primaryWebDomain; // @synthesize primaryWebDomain=_primaryWebDomain;
 @property(copy, nonatomic) NSArray *webDomains; // @synthesize webDomains=_webDomains;
-@property(readonly, copy, nonatomic) NSArray *equivalentBundleIdentifers; // @synthesize equivalentBundleIdentifers=_equivalentBundleIdentifers;
+@property(readonly, copy, nonatomic) NSArray *equivalentBundleIdentifiers; // @synthesize equivalentBundleIdentifiers=_equivalentBundleIdentifiers;
+@property(copy, nonatomic) NSString *canonicalBundleIdentifier; // @synthesize canonicalBundleIdentifier=_canonicalBundleIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
@@ -59,13 +64,14 @@
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToCategory:(id)arg1;
 - (id)description;
+@property(readonly, copy, nonatomic) NSArray *equivalentBundleIdentifers;
 @property(readonly, copy, nonatomic) NSString *localizedName;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)_ctCategoryCommonInitWithIdentifier:(id)arg1 equivalentBundleIdentifers:(id)arg2 webDomains:(id)arg3 bundleIdentifier:(id)arg4 primaryWebDomain:(id)arg5;
-- (id)initWithIdentifier:(id)arg1 equivalentBundleIdentifers:(id)arg2 webDomains:(id)arg3 bundleIdentifier:(id)arg4 primaryWebDomain:(id)arg5;
+- (void)_ctCategoryCommonInitWithIdentifier:(id)arg1 equivalentBundleIdentifiers:(id)arg2 webDomains:(id)arg3 bundleIdentifier:(id)arg4 primaryWebDomain:(id)arg5;
+- (id)initWithIdentifier:(id)arg1 equivalentBundleIdentifiers:(id)arg2 webDomains:(id)arg3 bundleIdentifier:(id)arg4 primaryWebDomain:(id)arg5;
 - (id)initWithIdentifier:(id)arg1 webDomains:(id)arg2 bundleIdentifier:(id)arg3 primaryWebDomain:(id)arg4;
-- (id)initWithIdentifier:(id)arg1 equivalentBundleIdentifers:(id)arg2 webDomains:(id)arg3 bundleIdentifier:(id)arg4;
+- (id)initWithIdentifier:(id)arg1 equivalentBundleIdentifiers:(id)arg2 webDomains:(id)arg3 bundleIdentifier:(id)arg4;
 - (id)initWithIdentifier:(id)arg1 webDomains:(id)arg2 bundleIdentifier:(id)arg3;
 
 @end

@@ -12,6 +12,7 @@
 
 @interface PXCPLState : NSObject <NSCopying>
 {
+    BOOL _isEnabled;
     BOOL _isSyncing;
     BOOL _isUserPaused;
     BOOL _isInLowDataMode;
@@ -50,6 +51,7 @@
 @property(copy, nonatomic) NSDate *exitDate; // @synthesize exitDate=_exitDate;
 @property(copy, nonatomic) NSDate *syncDate; // @synthesize syncDate=_syncDate;
 @property(nonatomic) BOOL isSyncing; // @synthesize isSyncing=_isSyncing;
+@property(nonatomic) BOOL isEnabled; // @synthesize isEnabled=_isEnabled;
 - (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqualToCPLState:(id)arg1;

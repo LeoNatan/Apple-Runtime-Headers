@@ -8,7 +8,7 @@
 
 #import <MetricKit/MXXPCClient-Protocol.h>
 
-@class NSArray, NSHashTable, NSMutableArray, NSXPCConnection;
+@class NSArray, NSHashTable, NSXPCConnection;
 @protocol OS_dispatch_queue, OS_os_log;
 
 @interface MXMetricManager : NSObject <MXXPCClient>
@@ -18,19 +18,17 @@
     NSObject<OS_dispatch_queue> *_iVarQueue;
     NSObject<OS_os_log> *_managerLogHandle;
     NSXPCConnection *_connection;
-    NSMutableArray *_payloadsToAdd;
     NSHashTable *_subscribers;
 }
 
 + (id)makeLogHandleWithCategory:(id)arg1;
 + (id)sharedManager;
 @property(retain, nonatomic) NSHashTable *subscribers; // @synthesize subscribers=_subscribers;
-@property(retain) NSMutableArray *payloadsToAdd; // @synthesize payloadsToAdd=_payloadsToAdd;
 @property(nonatomic) int metricToken; // @synthesize metricToken=_metricToken;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSObject<OS_os_log> *managerLogHandle; // @synthesize managerLogHandle=_managerLogHandle;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *iVarQueue; // @synthesize iVarQueue=_iVarQueue;
-@property(readonly) NSArray *pastPayloads; // @synthesize pastPayloads=_pastPayloads;
+@property(retain) NSArray *pastPayloads; // @synthesize pastPayloads=_pastPayloads;
 - (void).cxx_destruct;
 - (void)registrationProcessed;
 - (void)_checkAndDeliverMetricReports;

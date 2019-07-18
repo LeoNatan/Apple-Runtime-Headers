@@ -16,6 +16,7 @@
 - (NSProgress *)remote_disableCloudSyncAndDeleteAllCloudDataWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)remote_fetchCloudSyncStatusWithCompletion:(void (^)(_Bool, NSDate *, NSDate *, _Bool, NSError *))arg1;
 - (NSProgress *)remote_fetchCloudDescriptionWithCompletion:(void (^)(NSString *, NSError *))arg1;
+- (NSProgress *)remote_forceCloudSyncDataUploadForProfileWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (NSProgress *)remote_forceCloudResetWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (NSProgress *)remote_forceCloudSyncWithOptions:(unsigned long long)arg1 reason:(long long)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 @end

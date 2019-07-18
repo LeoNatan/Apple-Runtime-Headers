@@ -15,10 +15,12 @@
 + (long long)_pu_mediaTypeForAssets:(id)arg1;
 + (long long)pu_commonMediaTypeForPhotoCount:(long long)arg1 videoCount:(long long)arg2 otherCount:(long long)arg3;
 + (id)pu_typeStringForAssets:(id)arg1;
+@property(readonly, nonatomic) CDStruct_1b6d18a9 videoKeyFrameSourceTime;
 @property(readonly, nonatomic) unsigned long long deferredLogInfo;
 @property(readonly, copy, nonatomic) NSString *pathForTrimmedVideoFile;
 @property(readonly, copy, nonatomic) NSString *pathForOriginalVideoFile;
 @property(readonly, copy, nonatomic) NSString *pathForOriginalImageFile;
+@property(readonly, nonatomic, getter=isCloudPhotoLibraryEnabled) _Bool cloudPhotoLibraryEnabled;
 @property(readonly, nonatomic, getter=isResourceDownloadPossible) _Bool resourceDownloadPossible;
 @property(readonly, nonatomic) unsigned long long originalFilesize;
 @property(readonly, nonatomic) int originalEXIFOrientation;

@@ -19,7 +19,7 @@
     BOOL _HTTPMethod;
     CDStruct_d1a7ebee _kind;
     _Bool _HTTPShouldHandleCookies;
-    _Bool _allowsCellularAccess;
+    unsigned long long _constraints;
 }
 
 + (const char *)decoderType;

@@ -9,25 +9,32 @@
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
 
 @class MKMapItem, NSArray, NSString;
-@protocol MKPlaceRelatedViewControllerDelegate;
+@protocol MKPlaceRelatedViewControllerDelegate, _MKInfoCardAnalyticsDelegate;
 
 __attribute__((visibility("hidden")))
 @interface MKPlaceRelatedViewController : MKPlaceSectionViewController <MKModuleViewControllerProtocol>
 {
     NSArray *_fetchedMapItems;
+    NSArray *_cells;
     MKMapItem *_mapItem;
     id <MKPlaceRelatedViewControllerDelegate> _delegate;
+    id <_MKInfoCardAnalyticsDelegate> _analyticsDelegate;
 }
 
 + (id)placeRelatedViewControllerFor:(id)arg1;
+@property(nonatomic) __weak id <_MKInfoCardAnalyticsDelegate> analyticsDelegate; // @synthesize analyticsDelegate=_analyticsDelegate;
 @property(nonatomic) __weak id <MKPlaceRelatedViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 - (void).cxx_destruct;
+- (void)_captureSeeAllAction;
+- (void)_captureTapActionWithMapItem:(id)arg1;
 - (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)_seeAllAction:(id)arg1;
 - (id)_moduleTitle;
 - (void)_updateTitle;
+- (void)_updateHeightConstraints;
 - (void)_updateRows;
+- (void)preferredContentSizeChanged:(id)arg1;
 - (void)_reloadRelatedMapItems:(id)arg1;
 - (void)fetchPOIs;
 - (void)viewDidLoad;

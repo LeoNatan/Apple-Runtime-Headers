@@ -30,6 +30,7 @@
 - (void)clientViewControllerDidSelectDismiss:(id)arg1 shouldAnimateActionMenu:(_Bool)arg2;
 - (void)clientViewControllerDidDisappear:(id)arg1;
 - (void)clientViewControllerDidAppear:(id)arg1;
+- (_Bool)shouldDisplayActionMenuPresentation;
 - (id)coachingEventSampleForPresentationDate:(id)arg1 dismissDate:(id)arg2 dismissReason:(int)arg3 dwelltime:(double)arg4;
 @property(readonly, copy, nonatomic) NSString *aggdKeyName;
 

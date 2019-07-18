@@ -160,6 +160,7 @@
 - (void)invalidateCachedDecorationAttributesForElementKind:(id)arg1 atIndexPaths:(id)arg2;
 - (void)invalidateCachedSupplementaryAttributesForElementKind:(id)arg1 atIndexPaths:(id)arg2;
 - (id)updateContainerOffsetForPinnedSupplementarySectionItems:(struct CGPoint)arg1;
+- (struct CGRect)_horizontallyFlipFrameForRTLIfNeeded:(struct CGRect)arg1 inSection:(long long)arg2;
 - (id)initWithContainer:(id)arg1 traitCollection:(id)arg2 layoutAxis:(int)arg3 dataSourceSnapshot:(id)arg4 options:(id)arg5 sectionProvider:(CDUnknownBlockType)arg6;
 
 // Remaining properties

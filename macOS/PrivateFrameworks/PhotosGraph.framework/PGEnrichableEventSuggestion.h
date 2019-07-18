@@ -47,6 +47,7 @@
 @property(readonly, nonatomic) unsigned short state;
 @property(readonly, nonatomic) NSDate *creationDate;
 @property(readonly, nonatomic) long long version;
+- (id)_whitelistedMeaningLabels;
 - (id)initWithType:(unsigned short)arg1 subtype:(unsigned short)arg2 enrichableEvent:(id)arg3 sharingSuggestionResults:(id)arg4 manager:(id)arg5 loggingConnection:(id)arg6;
 
 // Remaining properties

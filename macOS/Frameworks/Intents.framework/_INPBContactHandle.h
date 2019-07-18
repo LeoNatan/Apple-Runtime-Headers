@@ -18,6 +18,7 @@
         unsigned int emergencyType:1;
         unsigned int type:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _emergencyType;
     int _type;
     NSString *_label;
@@ -25,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;

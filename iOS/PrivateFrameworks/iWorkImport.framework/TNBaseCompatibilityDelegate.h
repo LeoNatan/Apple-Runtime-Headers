@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (id)nestedDocumentFilename;
 - (id)needNewerVersionIndexXmlContentString;
 - (id)indexXmlFilename;
+- (_Bool)isTextOnlyType:(id)arg1;
 - (_Bool)isSageDocumentType:(id)arg1;
 - (_Bool)isTCMessageExceptionErrorDomain:(id)arg1;
 - (id)exportableTypes;

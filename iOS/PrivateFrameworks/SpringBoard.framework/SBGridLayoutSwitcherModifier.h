@@ -20,11 +20,13 @@
     id <SBGridLayoutSwitcherModifierDelegate> _gridDelegate;
     unsigned long long _scrollAxis;
     unsigned long long _fixedGroupingSize;
+    NSString *_softFilteredBundleIdentifier;
     unsigned long long _alignment;
     struct CGSize _fixedCardSize;
 }
 
 @property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
+@property(copy, nonatomic) NSString *softFilteredBundleIdentifier; // @synthesize softFilteredBundleIdentifier=_softFilteredBundleIdentifier;
 @property(nonatomic) struct CGSize fixedCardSize; // @synthesize fixedCardSize=_fixedCardSize;
 @property(nonatomic, getter=isUsingFixedCardSize) _Bool usesFixedCardSize; // @synthesize usesFixedCardSize=_usesFixedCardSize;
 @property(nonatomic) unsigned long long fixedGroupingSize; // @synthesize fixedGroupingSize=_fixedGroupingSize;
@@ -33,6 +35,7 @@
 @property(nonatomic) double cardScale; // @synthesize cardScale=_unroundedCardScale;
 @property(nonatomic) __weak id <SBFluidSwitcherScrollProvidingDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
 - (void).cxx_destruct;
+- (id)_softFilteredAppLayouts;
 - (struct CGSize)_scaledCardSize;
 - (struct CGSize)_cardSize;
 - (unsigned long long)_numberOfRows;
@@ -40,6 +43,7 @@
 - (struct CGRect)_scaleTransformedFrameWithUntransformedFrame:(struct CGRect)arg1 scale:(double)arg2;
 - (struct CGRect)_frameWithScaleAppliedForIndex:(unsigned long long)arg1 ignoringScrollOffset:(_Bool)arg2;
 - (double)_gridSwitcherPageScale;
+- (double)_cardHeaderHeight;
 - (unsigned long long)_columnForIndex:(unsigned long long)arg1;
 - (unsigned long long)_rowForIndex:(unsigned long long)arg1;
 - (double)_horizontalSpacing;
@@ -49,9 +53,10 @@
 - (struct CGRect)_frameForIndex:(unsigned long long)arg1 ignoringScrollOffset:(_Bool)arg2;
 @property(readonly, nonatomic) double effectiveHorizontalSpacing;
 - (void)_applyPrototypeSettings;
-- (_Bool)cardsNeedDarkModeTreatment;
+- (_Bool)cardsNeedBackgroundWallpaperTreatment;
 - (void)resetAdjustedScrollingState;
 - (struct CGPoint)adjustedOffsetForOffset:(struct CGPoint)arg1 translation:(struct CGPoint)arg2 startPoint:(struct CGPoint)arg3 locationInView:(struct CGPoint)arg4 horizontalVelocity:(inout double *)arg5 verticalVelocity:(inout double *)arg6;
+- (double)distanceToLeadingEdgeOfLeadingCardFromTrailingEdgeOfScreenWithVisibleIndexToStartSearch:(unsigned long long)arg1;
 - (struct CGPoint)restingOffsetForScrollOffset:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
 - (struct CGPoint)contentOffsetForIndex:(unsigned long long)arg1;
 - (struct CGSize)fittedContentSize;

@@ -45,7 +45,7 @@
 - (void)startInstallingAdminUpdates:(NSArray *)arg1 replyWhenDone:(void (^)(SUUpdateStatus *))arg2;
 - (void)startUpdatesForProductKeys:(NSArray *)arg1 inForeground:(BOOL)arg2 clientBlocksRestart:(BOOL)arg3 replyWhenDone:(void (^)(NSDictionary *))arg4;
 - (void)startDownloadingForProductKeys:(NSArray *)arg1 replyWhenDone:(void (^)(NSDictionary *))arg2;
-- (void)calculateDiskSpaceRequiredForUpdatesWithProductKeys:(NSArray *)arg1 downloadingOnly:(BOOL)arg2 reply:(void (^)(unsigned long long))arg3;
+- (void)calculateDiskSpaceRequiredForUpdatesWithProductKeys:(NSArray *)arg1 downloadingOnly:(BOOL)arg2 invokeCacheDelete:(BOOL)arg3 reply:(void (^)(unsigned long long))arg4;
 - (void)preventFurtherScansWhileConnected:(void (^)(BOOL))arg1;
 - (void)buildTagCacheIfNecessaryWithReply:(void (^)(void))arg1;
 - (void)markRampedUpdatesAsSeenWithReply:(void (^)(void))arg1;

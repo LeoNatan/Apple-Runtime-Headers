@@ -9,8 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface _TtC7NewsUI216MyMagazinesStore : NSObject
 {
+    // Error parsing type: , name: state
+    // Error parsing type: , name: badgeIssueIDs
     // Error parsing type: , name: currentIssues
-    // Error parsing type: , name: mostRecentlyReadIssue
+    // Error parsing type: , name: recentlyReadIssues
     // Error parsing type: , name: downloadedIssues
     // Error parsing type: , name: currentIssuesChecker
     // Error parsing type: , name: issueService
@@ -18,8 +20,10 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: subscriptionController
     // Error parsing type: , name: offlineIssueList
     // Error parsing type: , name: offlineIssueManager
-    // Error parsing type: , name: lazyRecentInitializingPromise
-    // Error parsing type: , name: lazyDownloadedInitializingPromise
+    // Error parsing type: , name: paidBundleConfigManager
+    // Error parsing type: , name: persistentStore
+    // Error parsing type: , name: $__lazy_storage_$_lazyInitializingPromise
+    // Error parsing type: , name: firstFullRefresh
 }
 
 - (void).cxx_destruct;

@@ -23,13 +23,11 @@
     _Bool _initialSyncPerformed;
     BLTSectionInfoListBridgeProvider *_bridgeProvider;
     NSMutableDictionary *_reloadBBCompletions;
-    unsigned long long _stateHandler;
     BLTSiriActionAppList *_siriActionAppList;
     BLTWatchKitAppList *_watchKitAppList;
 }
 
 - (void).cxx_destruct;
-- (id)_stateDescription;
 - (void)_callAndRemoveReloadBBCompletion:(CDUnknownBlockType)arg1 sectionID:(id)arg2;
 - (void)_addReloadBBCompletion:(CDUnknownBlockType)arg1 sectionID:(id)arg2;
 - (void)_callReloadBBCompletionsForSectionID:(id)arg1;

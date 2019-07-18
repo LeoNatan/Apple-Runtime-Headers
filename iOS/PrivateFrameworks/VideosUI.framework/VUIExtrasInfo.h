@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSNumber, NSString;
+@class NSDictionary, NSNumber, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface VUIExtrasInfo : NSObject
@@ -15,6 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isEntitledToPlay;
+@property(readonly, nonatomic) NSURL *tvAppDeeplinkURL;
 @property(readonly, nonatomic) _Bool isLightTheme;
 @property(readonly, nonatomic) NSString *loadingImage;
 @property(retain, nonatomic) NSString *actionParams;

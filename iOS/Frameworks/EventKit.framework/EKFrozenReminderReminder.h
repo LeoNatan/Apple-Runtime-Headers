@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)_componentsFromDate:(id)arg1 allDay:(_Bool)arg2 timeZone:(id)arg3;
 + (Class)meltedClass;
 - (_Bool)defaultAlarmRemoved;
 - (id)appLink;
@@ -24,25 +23,19 @@ __attribute__((visibility("hidden")))
 - (id)selfAttendee;
 - (id)organizer;
 - (id)clientLocation;
-- (id)dueDateTimeZone;
-- (id)endTimeZoneName;
-- (_Bool)allDay;
 - (id)recurrenceRules;
 - (id)attendees;
 - (_Bool)hasNotes;
 - (_Bool)hasAttendees;
 - (_Bool)hasRecurrenceRules;
-- (id)timeZone;
-- (id)startTimeZoneName;
 - (id)structuredLocationWithoutPrediction;
 - (id)uniqueID;
 - (id)UUID;
 - (unsigned long long)priority;
 - (id)completionDate;
-- (_Bool)dueDateAllDay;
-- (id)dueDate;
-- (_Bool)startDateAllDay;
-- (id)startDate;
+- (id)timeZone;
+- (id)dueDateComponents;
+- (id)startDateComponents;
 - (id)alarms;
 - (id)creationDate;
 - (id)lastModifiedDate;

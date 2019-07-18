@@ -28,6 +28,7 @@
 + (id)keyPathsForValuesAffectingIsDefaultFolderForAccount;
 + (id)keyPathsForValuesAffectingVisibleNoteContainerChildren;
 + (id)keyPathsForValuesAffectingIsTrashFolder;
++ (id)keyPathsForValuesAffectingDepth;
 + (id)keyPathsForValuesAffectingIsLeaf;
 + (id)keyPathsForValuesAffectingSupportsCustomNoteSortType;
 + (id)keyPathsForValuesAffectingCustomNoteSortType;
@@ -46,6 +47,7 @@
 + (id)folderWithIdentifier:(id)arg1 context:(id)arg2;
 + (id)defaultFolderInContext:(id)arg1;
 + (void)purgeFolder:(id)arg1;
++ (id)purgableFoldersFetchRequest;
 + (void)deleteFolder:(id)arg1;
 + (id)newFolderWithIdentifier:(id)arg1 parentFolder:(id)arg2;
 + (id)newFolderInParentFolder:(id)arg1;
@@ -116,10 +118,12 @@
 - (unsigned long long)visibleChildrenCount;
 - (id)visibleNoteContainerChildren;
 - (id)visibleNoteContainerChildrenUnsorted;
+- (id)containerIdentifier;
 - (_Bool)isTrashFolder;
 - (_Bool)canMoveAddOrDeleteContents;
 - (_Bool)isMovable;
 - (_Bool)isDescendantOfFolder:(id)arg1;
+- (unsigned long long)depth;
 - (_Bool)isLeaf;
 - (_Bool)isDeletable;
 - (_Bool)isSubfolderOfReadonlyFolder;

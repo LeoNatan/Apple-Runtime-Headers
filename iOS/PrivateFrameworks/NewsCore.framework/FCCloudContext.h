@@ -15,7 +15,7 @@
 #import <NewsCore/FCTestingContext-Protocol.h>
 
 @class FCAccessChecker, FCArticleController, FCAssetManager, FCClientEndpointConnection, FCCommandQueue, FCFeedManager, FCFlintResourceManager, FCIssueReadingHistory, FCNetworkBehaviorMonitor, FCNotificationController, FCNotificationsEndpointConnection, FCPersonalizationData, FCPrivateChannelMembershipController, FCPurchaseController, FCReadingHistory, FCReadingList, FCSubscriptionController, FCSubscriptionList, FCTagController, FCTagSettings, FCTranslationManager, FCUserInfo, NSString, NSURL;
-@protocol FCAppActivityMonitor, FCBackgroundTaskable, FCBundleSubscriptionManagerType, FCClearableReadingHistory, FCContentContext, FCContentContextInternal, FCCoreConfigurationManager, FCCurrentIssuesChecker, FCFeedPersonalizing, FCFlintHelper, FCForYouMagazineFeedManaging, FCNewsAppConfigurationManager, FCPPTContext, FCPaidAccessCheckerType, FCPrivateDataContext, FCPrivateDataContextInternal, FCPurchaseManagerType, FCPushNotificationHandling, FCWebArchiveSource;
+@protocol FCAppActivityMonitor, FCBackgroundTaskable, FCBundleSubscriptionManagerType, FCContentContext, FCContentContextInternal, FCCoreConfigurationManager, FCCurrentIssuesChecker, FCFeedPersonalizing, FCFlintHelper, FCForYouMagazineFeedManaging, FCNewsAppConfigurationManager, FCPPTContext, FCPaidAccessCheckerType, FCPrivateDataContext, FCPrivateDataContextInternal, FCPurchaseManagerType, FCPurchaseProviderType, FCPushNotificationHandling, FCWebArchiveSource;
 
 @interface FCCloudContext : NSObject <FCTestingContext, FCCKDatabaseEncryptionDelegate, FCAssetKeyManagerDelegate, FCBundleSubscriptionChangeObserver, FCContentContext, FCPrivateDataContext, FCCacheFlushing>
 {
@@ -30,6 +30,7 @@
     FCCommandQueue *_notificationsEndpointCommandQueue;
     FCNotificationController *_notificationController;
     FCPurchaseController *_purchaseController;
+    id <FCPurchaseProviderType> _purchaseProvider;
     id <FCPurchaseManagerType> _purchaseManager;
     id <FCBundleSubscriptionManagerType> _bundleSubscriptionManager;
     FCTranslationManager *_translationManager;
@@ -64,6 +65,7 @@
 @property(retain, nonatomic) FCTranslationManager *translationManager; // @synthesize translationManager=_translationManager;
 @property(readonly, nonatomic) id <FCBundleSubscriptionManagerType> bundleSubscriptionManager; // @synthesize bundleSubscriptionManager=_bundleSubscriptionManager;
 @property(readonly, nonatomic) id <FCPurchaseManagerType> purchaseManager; // @synthesize purchaseManager=_purchaseManager;
+@property(readonly, nonatomic) id <FCPurchaseProviderType> purchaseProvider; // @synthesize purchaseProvider=_purchaseProvider;
 @property(readonly, nonatomic) FCPurchaseController *purchaseController; // @synthesize purchaseController=_purchaseController;
 @property(readonly, nonatomic) FCNotificationController *notificationController; // @synthesize notificationController=_notificationController;
 @property(retain, nonatomic) id <FCAppActivityMonitor> appActivityMonitor; // @synthesize appActivityMonitor=_appActivityMonitor;
@@ -76,7 +78,6 @@
 - (void)fetchPrivateDataEncryptionIsAllowedForDatabase:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)insertTestArticlesWithCount:(unsigned long long)arg1;
 - (id)insertTestArticle;
-@property(readonly, nonatomic) id <FCClearableReadingHistory> clearReadingHistoryManager;
 @property(readonly, nonatomic) id <FCPushNotificationHandling> privatePushNotificationHandler;
 @property(readonly, copy, nonatomic) NSString *privateDataDirectory;
 @property(readonly, nonatomic) id <FCPrivateDataContextInternal> internalPrivateDataContext;

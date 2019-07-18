@@ -17,8 +17,8 @@
     id <MTLFunctionSPI> _baseObject;
     CaptureMTLDevice *_captureDevice;
     CaptureMTLLibrary *_captureLibrary;
-    struct GTTraceContext *_traceContext;
-    struct GTTraceStream *_traceStream;
+    // Error parsing type: ^{GTTraceContext={_opaque_pthread_mutex_t=q[56c]}^{GTTraceStore}AQAQ^{apr_hash_t}^(FreeNode)Ai^{GTTraceStream}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}}, name: _traceContext
+    // Error parsing type: ^{GTTraceStream=QQQ^{GTTraceMemPool}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}AQ}, name: _traceStream
 }
 
 + (BOOL)newCaptureFunction:(out id *)arg1 associatedWithBaseFunction:(id)arg2 captureLibrary:(id)arg3;
@@ -47,8 +47,12 @@
 @property(readonly, copy) NSString *description;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 @property(readonly) unsigned long long streamReference;
-@property(readonly) struct GTTraceStream *traceStream;
-@property(readonly) struct GTTraceContext *traceContext;
+// Error parsing type for property traceStream:
+// Property attributes: T^{GTTraceStream=QQQ^{GTTraceMemPool}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}AQ},R
+
+// Error parsing type for property traceContext:
+// Property attributes: T^{GTTraceContext={_opaque_pthread_mutex_t=q[56c]}^{GTTraceStore}AQAQ^{apr_hash_t}^(FreeNode)Ai^{GTTraceStream}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}},R
+
 - (void)touch;
 - (id)newArgumentEncoderWithBufferIndex:(unsigned long long)arg1 reflection:(id *)arg2;
 @property(readonly) id <MTLFunction> baseObject;

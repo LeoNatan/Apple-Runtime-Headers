@@ -8,7 +8,7 @@
 
 #import <ActionKit/WKNavigationDelegate-Protocol.h>
 
-@class NSString, TMTumblrAuthenticator, UIBarButtonItem, WKWebView;
+@class NSString, TMTumblrAuthenticator, WKWebView;
 @protocol WFTumblrViewControllerDelegate;
 
 @interface WFTumblrViewController : UIViewController <WKNavigationDelegate>
@@ -16,15 +16,12 @@
     WKWebView *_webView;
     id <WFTumblrViewControllerDelegate> _delegate;
     TMTumblrAuthenticator *_authenticator;
-    UIBarButtonItem *_onePasswordBarButtonItem;
 }
 
-@property(nonatomic) __weak UIBarButtonItem *onePasswordBarButtonItem; // @synthesize onePasswordBarButtonItem=_onePasswordBarButtonItem;
 @property(retain, nonatomic) TMTumblrAuthenticator *authenticator; // @synthesize authenticator=_authenticator;
 @property(nonatomic) __weak id <WFTumblrViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak WKWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
-- (void)findLoginFrom1Password;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)cancel;

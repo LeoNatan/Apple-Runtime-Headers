@@ -11,6 +11,7 @@
 @interface PRDeviceScore : NSObject
 {
     NSData *_macAddress;
+    NSData *_btAddress;
     int _proximity;
     double _score;
     double _scoreUncertainty;
@@ -19,9 +20,10 @@
 @property(readonly) double scoreUncertainty; // @synthesize scoreUncertainty=_scoreUncertainty;
 @property(readonly) double score; // @synthesize score=_score;
 @property(readonly) int proximity; // @synthesize proximity=_proximity;
+@property(readonly) NSData *btAddress; // @synthesize btAddress=_btAddress;
 @property(readonly) NSData *macAddress; // @synthesize macAddress=_macAddress;
 - (void).cxx_destruct;
-- (id)initWithValues:(id)arg1 proximity:(int)arg2 score:(double)arg3 scoreUncertainty:(double)arg4;
+- (id)initWithValues:(id)arg1 btAddress:(id)arg2 proximity:(int)arg3 score:(double)arg4 scoreUncertainty:(double)arg5;
 - (id)init;
 
 @end

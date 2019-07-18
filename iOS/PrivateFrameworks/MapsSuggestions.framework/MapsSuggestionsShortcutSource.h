@@ -8,12 +8,14 @@
 
 #import <MapsSuggestions/MapsSuggestionsSource-Protocol.h>
 
-@class MapsSuggestionsShortcutManager, NSString;
-@protocol MapsSuggestionsSourceDelegate;
+@class MapsSuggestionsShortcutManager, NSObject, NSString;
+@protocol MapsSuggestionsSourceDelegate, OS_dispatch_queue;
 
 @interface MapsSuggestionsShortcutSource : MapsSuggestionsBaseSource <MapsSuggestionsSource>
 {
     struct NSMutableDictionary *_currentCache;
+    NSObject<OS_dispatch_queue> *_queue;
+    CDUnknownBlockType _treatShortcutsBlock;
     MapsSuggestionsShortcutManager *_shortcutManager;
 }
 
@@ -26,6 +28,9 @@
 - (double)updateSuggestionEntries;
 - (void)stop;
 - (void)start;
+- (void)_updateSuggestionEntries;
+- (id)initWithDelegate:(id)arg1 name:(struct NSString *)arg2;
+- (void)_renameDuplicateMeCardTypes:(struct NSArray *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

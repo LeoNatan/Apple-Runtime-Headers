@@ -15,8 +15,7 @@
     unsigned char _rawStatus;
     NSData *_address;
     NSData *_publicKey;
-    NSData *_advertisementType;
-    NSData *_alarmState;
+    NSData *_deviceType;
     NSData *_batteryState;
     long long _rssi;
     NSDate *_scanDate;
@@ -31,14 +30,13 @@
 @property(nonatomic) long long rssi; // @synthesize rssi=_rssi;
 @property(nonatomic) unsigned char rawStatus; // @synthesize rawStatus=_rawStatus;
 @property(copy, nonatomic) NSData *batteryState; // @synthesize batteryState=_batteryState;
-@property(copy, nonatomic) NSData *alarmState; // @synthesize alarmState=_alarmState;
-@property(copy, nonatomic) NSData *advertisementType; // @synthesize advertisementType=_advertisementType;
+@property(copy, nonatomic) NSData *deviceType; // @synthesize deviceType=_deviceType;
 @property(copy, nonatomic) NSData *publicKey; // @synthesize publicKey=_publicKey;
 @property(copy, nonatomic) NSData *address; // @synthesize address=_address;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithAddress:(id)arg1 publicKey:(id)arg2 advertisementType:(id)arg3 alarmState:(id)arg4 batteryState:(id)arg5 rawStatus:(unsigned char)arg6 rssi:(long long)arg7 scanDate:(id)arg8 recordIdentifier:(id)arg9;
+- (id)initWithAddress:(id)arg1 publicKey:(id)arg2 deviceType:(id)arg3 batteryState:(id)arg4 rawStatus:(unsigned char)arg5 rssi:(long long)arg6 scanDate:(id)arg7 recordIdentifier:(id)arg8;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import <HomeUI/HUCameraSettingsModule-Protocol.h>
 
-@class HFItemProvider, HUCameraPresenceRecordingSettingsModule, HUCameraRecordingOptionsItem, NSArray, NSSet, NSString, UIViewController;
+@class HFItemProvider, HUCameraPresenceRecordingSettingsModule, HUCameraRecordingOptionsItem, HULocationDeviceManager, NSArray, NSSet, NSString, UIViewController;
 @protocol HUCameraRecordingSettingsModuleDelegate;
 
 @interface HUCameraRecordingSettingsModule : HUExpandableItemContainerModule <HUCameraSettingsModule>
@@ -21,8 +21,12 @@
     HUCameraPresenceRecordingSettingsModule *_whenHomeSectionModule;
     HUCameraPresenceRecordingSettingsModule *_whenAwaySectionModule;
     HFItemProvider *_headerItemProvider;
+    HULocationDeviceManager *_locationDeviceManager;
+    NSString *_locationDeviceName;
 }
 
+@property(retain, nonatomic) NSString *locationDeviceName; // @synthesize locationDeviceName=_locationDeviceName;
+@property(retain, nonatomic) HULocationDeviceManager *locationDeviceManager; // @synthesize locationDeviceManager=_locationDeviceManager;
 @property(readonly, nonatomic) HFItemProvider *headerItemProvider; // @synthesize headerItemProvider=_headerItemProvider;
 @property(retain, nonatomic) HUCameraPresenceRecordingSettingsModule *whenAwaySectionModule; // @synthesize whenAwaySectionModule=_whenAwaySectionModule;
 @property(retain, nonatomic) HUCameraPresenceRecordingSettingsModule *whenHomeSectionModule; // @synthesize whenHomeSectionModule=_whenHomeSectionModule;

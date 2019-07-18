@@ -12,6 +12,7 @@
 
 @interface HKReferenceRangeViewData : NSObject <NSCopying>
 {
+    _Bool _useOutOfRangeValueColor;
     NSString *_valueString;
     NSString *_unitString;
     NSString *_rangeLowString;
@@ -24,6 +25,7 @@
 + (id)_codedQuantityForValueCollection:(id)arg1;
 + (id)_codedQuantityForValue:(id)arg1;
 + (id)referenceRangeViewDataFromInspectableValueInRange:(id)arg1;
+@property(nonatomic) _Bool useOutOfRangeValueColor; // @synthesize useOutOfRangeValueColor=_useOutOfRangeValueColor;
 @property(copy, nonatomic) NSNumber *rangeHigh; // @synthesize rangeHigh=_rangeHigh;
 @property(copy, nonatomic) NSNumber *rangeLow; // @synthesize rangeLow=_rangeLow;
 @property(copy, nonatomic) NSNumber *value; // @synthesize value=_value;

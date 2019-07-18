@@ -6,12 +6,12 @@
 
 #import <UIKit/UIActivity.h>
 
-#import <WorkflowUI/WFWorkflowWizardNameViewControllerDelegate-Protocol.h>
+#import <WorkflowUI/WFAddToHomeScreenViewControllerDelegate-Protocol.h>
 
 @class NSString, UINavigationController, WFWorkflow;
 @protocol WFAddToHomeScreenActivityDelegate;
 
-@interface WFAddToHomeScreenActivity : UIActivity <WFWorkflowWizardNameViewControllerDelegate>
+@interface WFAddToHomeScreenActivity : UIActivity <WFAddToHomeScreenViewControllerDelegate>
 {
     id <WFAddToHomeScreenActivityDelegate> _delegate;
     NSString *_source;
@@ -24,11 +24,10 @@
 @property(copy, nonatomic) NSString *source; // @synthesize source=_source;
 @property(nonatomic) __weak id <WFAddToHomeScreenActivityDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)workflowWizardNameViewController:(id)arg1 didFinishWithName:(id)arg2;
+- (void)addToHomeScreenViewController:(id)arg1 didFinishWithName:(id)arg2 icon:(id)arg3;
 - (void)cancel;
-- (void)addToHomeScreenWithName:(id)arg1;
+- (void)addToHomeScreenWithName:(id)arg1 icon:(id)arg2;
 - (void)activityDidFinish:(_Bool)arg1;
-- (void)performActivity;
 - (id)activityViewController;
 - (void)prepareWithActivityItems:(id)arg1;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
@@ -37,12 +36,6 @@
 - (id)activityType;
 - (id)initWithSource:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

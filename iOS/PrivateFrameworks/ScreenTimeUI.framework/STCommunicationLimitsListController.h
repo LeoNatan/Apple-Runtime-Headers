@@ -43,9 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_setManageContacts:(id)arg1 specifier:(id)arg2;
 - (id)_manageContacts:(id)arg1;
 - (id)specifiers;
-- (void)viewWillDisappear:(_Bool)arg1;
-- (void)willResignActive;
-- (void)_communicationLimitsDidChange:(id)arg1;
+- (void)_communicationLimitsDidChangeFrom:(id)arg1 to:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setCoordinator:(id)arg1;
 - (void)dealloc;

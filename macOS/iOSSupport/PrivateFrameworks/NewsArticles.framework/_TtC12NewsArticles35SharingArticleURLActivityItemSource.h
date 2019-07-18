@@ -16,8 +16,6 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
-- (id)activityViewControllerPlaceholderItem:(id)arg1;
 
 @end
 

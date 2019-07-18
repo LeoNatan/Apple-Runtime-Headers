@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, NSString, UIActivityIndicatorView, UIButton, UIImage, UIImageView, UILabel;
+@class NSArray, NSString, UIActivityIndicatorView, UIImage, UIImageView, UILabel;
 
 @interface AKAuthorizationTTSUContentView : UIView
 {
@@ -16,9 +16,7 @@
     UIImageView *_rapportNotificationImageView;
     UILabel *_titleLabel;
     UILabel *_instructionsLabel;
-    UILabel *_privacyLabel;
     UILabel *_footerLabel;
-    UIButton *_privacyButton;
     UIActivityIndicatorView *_activityIndicatorView;
     NSArray *_viewsToHideWhenInProgress;
     NSArray *_constraints;
@@ -31,9 +29,7 @@
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) NSArray *viewsToHideWhenInProgress; // @synthesize viewsToHideWhenInProgress=_viewsToHideWhenInProgress;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
-@property(retain, nonatomic) UIButton *privacyButton; // @synthesize privacyButton=_privacyButton;
 @property(retain, nonatomic) UILabel *footerLabel; // @synthesize footerLabel=_footerLabel;
-@property(retain, nonatomic) UILabel *privacyLabel; // @synthesize privacyLabel=_privacyLabel;
 @property(retain, nonatomic) UILabel *instructionsLabel; // @synthesize instructionsLabel=_instructionsLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *rapportNotificationImageView; // @synthesize rapportNotificationImageView=_rapportNotificationImageView;
@@ -44,8 +40,6 @@
 - (void)startInProgressAnimation;
 - (void)setFooterIsHidden:(_Bool)arg1 animated:(_Bool)arg2;
 @property(retain, nonatomic) NSString *footer;
-@property(retain, nonatomic) NSString *privacyButtonTitle;
-@property(retain, nonatomic) NSString *privacyButtonCaption;
 @property(retain, nonatomic) NSString *instructions;
 @property(retain, nonatomic) NSString *title;
 @property(retain, nonatomic) UIImage *appIcon;

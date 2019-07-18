@@ -6,7 +6,7 @@
 
 #import <AXMediaUtilities/AXMVisionEngine.h>
 
-@class AXMCaptionDetectorNode, AXMFaceDetectorNode, AXMImageNode, AXMProminentObjectsDetectorNode, AXMSceneDetectorNode, AXMScreenCaptureNode, AXMTextDetectorNode, AXMTraitDetectorNode;
+@class AXMCaptionDetectorNode, AXMFaceDetectorNode, AXMIconClassDetectorNode, AXMImageNode, AXMProminentObjectsDetectorNode, AXMSceneDetectorNode, AXMScreenCaptureNode, AXMTextDetectorNode, AXMTraitDetectorNode;
 
 @interface AXMVoiceOverVisionEngine : AXMVisionEngine
 {
@@ -18,8 +18,10 @@
     AXMTraitDetectorNode *_traitDetector;
     AXMProminentObjectsDetectorNode *_prominentObjectsDetector;
     AXMCaptionDetectorNode *_captionDetector;
+    AXMIconClassDetectorNode *_iconClassDetector;
 }
 
+@property(nonatomic) __weak AXMIconClassDetectorNode *iconClassDetector; // @synthesize iconClassDetector=_iconClassDetector;
 @property(nonatomic) __weak AXMCaptionDetectorNode *captionDetector; // @synthesize captionDetector=_captionDetector;
 @property(nonatomic) __weak AXMProminentObjectsDetectorNode *prominentObjectsDetector; // @synthesize prominentObjectsDetector=_prominentObjectsDetector;
 @property(nonatomic) __weak AXMTraitDetectorNode *traitDetector; // @synthesize traitDetector=_traitDetector;

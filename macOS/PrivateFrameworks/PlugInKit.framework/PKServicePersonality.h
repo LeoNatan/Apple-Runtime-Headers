@@ -31,6 +31,7 @@
 - (void)prefsObjectForKey:(id)arg1 inPlugIn:(id)arg2 result:(CDUnknownBlockType)arg3;
 - (void)shutdownPlugIn;
 - (id)defaultPrincipalObject;
+- (void)hostHasControl;
 - (void)setEmbeddedContext:(id)arg1;
 - (id)findProtocol:(id)arg1;
 - (void)beginUsingPlugIn:(id)arg1 ready:(CDUnknownBlockType)arg2;

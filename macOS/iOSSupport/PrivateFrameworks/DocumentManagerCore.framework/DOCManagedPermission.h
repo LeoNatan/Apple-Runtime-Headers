@@ -31,12 +31,15 @@
 - (BOOL)canCopyItems:(id)arg1;
 - (BOOL)canCopyfromContainingBundleIdentifer:(id)arg1;
 - (id)defaultFileProviderForAppBundle:(id)arg1;
+- (unsigned long long)dataOwnerStateForAccountIdentifier:(id)arg1;
 - (unsigned long long)dataOwnerStateForBundleIdentifier:(id)arg1;
 - (unsigned long long)dataOwnerStateForItem:(id)arg1;
 - (BOOL)canAppWithDataOwnerState:(unsigned long long)arg1 performAction:(unsigned long long)arg2 dataOwnerState:(unsigned long long)arg3;
+- (BOOL)canAppWithBundleIdentifier:(id)arg1 performAction:(unsigned long long)arg2 accountIdentifier:(id)arg3;
 - (BOOL)canAppWithBundleIdentifier:(id)arg1 performAction:(unsigned long long)arg2 bundleIdentifier:(id)arg3;
 - (BOOL)canAppWithDataOwnerState:(unsigned long long)arg1 performAction:(unsigned long long)arg2 item:(id)arg3;
 - (BOOL)canItem:(id)arg1 performAction:(unsigned long long)arg2 item:(id)arg3;
+- (BOOL)canHostAppPerformAction:(unsigned long long)arg1 accountIdentifier:(id)arg2;
 - (BOOL)canHostAppPerformAction:(unsigned long long)arg1 bundleIdentifier:(id)arg2;
 - (BOOL)canHostAppPerformAction:(unsigned long long)arg1 legacyPickerExtension:(id)arg2;
 - (BOOL)canHostAppPerformAction:(unsigned long long)arg1 targetItem:(id)arg2;

@@ -6,7 +6,7 @@
 
 #import <HomeKit/HMHomeManagerConfiguration.h>
 
-@class NSOperationQueue;
+@class HMFLocationAuthorization, NSOperationQueue;
 @protocol HMFLocking;
 
 @interface HMMutableHomeManagerConfiguration : HMHomeManagerConfiguration
@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(retain) HMFLocationAuthorization *locationAuthorization;
 @property(retain) NSOperationQueue *delegateQueue;
 @property unsigned long long options;
 @property unsigned long long cachePolicy;

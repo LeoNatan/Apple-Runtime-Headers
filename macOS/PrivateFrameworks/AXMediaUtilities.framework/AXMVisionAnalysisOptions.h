@@ -26,6 +26,7 @@
     BOOL _detectHorizon;
     BOOL _detectProminentObjects;
     BOOL _detectAesthetics;
+    BOOL _detectIconClass;
     BOOL _detectText;
     BOOL _includeImageInResult;
     long long _clientID;
@@ -40,6 +41,7 @@
 @property(nonatomic) BOOL includeImageInResult; // @synthesize includeImageInResult=_includeImageInResult;
 @property(retain, nonatomic) AXMTextDetectionOptions *textDetectionOptions; // @synthesize textDetectionOptions=_textDetectionOptions;
 @property(nonatomic) BOOL detectText; // @synthesize detectText=_detectText;
+@property(nonatomic) BOOL detectIconClass; // @synthesize detectIconClass=_detectIconClass;
 @property(nonatomic) BOOL detectAesthetics; // @synthesize detectAesthetics=_detectAesthetics;
 @property(nonatomic) BOOL detectProminentObjects; // @synthesize detectProminentObjects=_detectProminentObjects;
 @property(nonatomic) BOOL detectHorizon; // @synthesize detectHorizon=_detectHorizon;

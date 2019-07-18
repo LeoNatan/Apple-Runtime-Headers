@@ -44,6 +44,7 @@
 + (id)clearFlagged;
 + (id)setFlagged;
 + (id)clearRead;
++ (id)setDeleted;
 + (id)setRead;
 + (id)changeFrom:(id)arg1 to:(id)arg2;
 @property(nonatomic) int reason; // @synthesize reason=_reason;

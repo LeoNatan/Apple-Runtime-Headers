@@ -32,6 +32,7 @@
 + (id)px_localizedAttributedStringForUserCommentWithText:(id)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 + (id)px_localizedAttributedStringForPostWithSubjectFullName:(id)arg1 photoCount:(long long)arg2 videoCount:(long long)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
 + (id)px_localizedAttributedStringForUserPostWithPhotoCount:(long long)arg1 videoCount:(long long)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
+- (BOOL)px_rangeExists:(struct _NSRange)arg1;
 - (id)px_bulletPrefixAttributedStringWithBulletAttributes:(id)arg1 isLeftToRight:(BOOL)arg2;
 - (id)px_stringByReplacingOccurrencesOfString:(id)arg1 withString:(id)arg2;
 - (id)px_attributedStringByDeletingCharactersInSet:(id)arg1;

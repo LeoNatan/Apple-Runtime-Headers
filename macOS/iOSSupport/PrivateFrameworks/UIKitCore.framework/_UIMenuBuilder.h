@@ -7,33 +7,24 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/NSCopying-Protocol.h>
-#import <UIKitCore/UICommandBuilder-Protocol.h>
 #import <UIKitCore/UIMenuBuilder-Protocol.h>
 
-@class NSArray;
+@class NSArray, UIMenuSystem;
 
 __attribute__((visibility("hidden")))
-@interface _UIMenuBuilder : NSObject <NSCopying, UICommandBuilder, UIMenuBuilder>
+@interface _UIMenuBuilder : NSObject <NSCopying, UIMenuBuilder>
 {
-    CDStruct_1628dbfe _analysis;
+    CDStruct_5ddd6656 _analysis;
     NSArray *_keyCommandsCache;
-    id _system;
+    UIMenuSystem *_system;
     unsigned long long __changeCount;
     unsigned long long __actualChangeCount;
 }
 
 @property(readonly, nonatomic) unsigned long long _actualChangeCount; // @synthesize _actualChangeCount=__actualChangeCount;
 @property(readonly, nonatomic) unsigned long long _changeCount; // @synthesize _changeCount=__changeCount;
-@property(nonatomic) __weak id system; // @synthesize system=_system;
+@property(nonatomic) __weak UIMenuSystem *system; // @synthesize system=_system;
 - (void).cxx_destruct;
-- (void)removeGroupForIdentifier:(id)arg1;
-- (void)insertChildGroup:(id)arg1 atEndOfGroupForIdentifier:(id)arg2;
-- (void)insertChildGroup:(id)arg1 atStartOfGroupForIdentifier:(id)arg2;
-- (void)insertSiblingGroup:(id)arg1 afterGroupForIdentifier:(id)arg2;
-- (void)insertSiblingGroup:(id)arg1 beforeGroupForIdentifier:(id)arg2;
-- (void)replaceChildrenOfGroupForIdentifier:(id)arg1 fromBlock:(CDUnknownBlockType)arg2;
-- (void)replaceGroupForIdentifier:(id)arg1 withGroup:(id)arg2;
-- (id)groupForIdentifier:(id)arg1;
 - (void)removeMenuForIdentifier:(id)arg1;
 - (void)insertChildMenu:(id)arg1 atEndOfMenuForIdentifier:(id)arg2;
 - (void)insertChildMenu:(id)arg1 atStartOfMenuForIdentifier:(id)arg2;
@@ -50,12 +41,12 @@ __attribute__((visibility("hidden")))
 - (id)_menuForMenu:(id)arg1;
 - (void)_recacheCommandsIfNeeded;
 - (void)_setNeedsRecacheCommands;
-- (id)commandForAction:(SEL)arg1;
 - (id)commandForAction:(SEL)arg1 propertyList:(id)arg2;
+- (id)actionForIdentifier:(id)arg1;
 - (id)menuForIdentifier:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRootMenu:(id)arg1;
-- (id)initWithSystem:(id)arg1 analysis:(CDStruct_1628dbfe)arg2;
+- (id)initWithSystem:(id)arg1 analysis:(CDStruct_5ddd6656)arg2;
 - (void)_patch:(id)arg1;
 - (void)_patchInternalDiff:(id)arg1;
 - (id)_internalDiffForDiffv1:(id)arg1;

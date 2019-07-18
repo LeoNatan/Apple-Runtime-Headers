@@ -6,16 +6,11 @@
 
 #import <SettingsCellularUI/PSUIPlanPendingTransferTableCell.h>
 
-@class UIActivityIndicatorView;
-
 __attribute__((visibility("hidden")))
 @interface PSUIPlanPendingTransferActivatingTableCell : PSUIPlanPendingTransferTableCell
 {
-    UIActivityIndicatorView *_spinner;
 }
 
-@property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
-- (void).cxx_destruct;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)_setView;
 

@@ -75,11 +75,12 @@
 - (void)setShadowImage:(id)arg1 forToolbarPosition:(long long)arg2;
 - (void)setBackgroundImage:(id)arg1 forToolbarPosition:(long long)arg2 barMetrics:(long long)arg3;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
+- (long long)tagForPKPaletteAnnotationType:(long long)arg1;
 - (void)endOpacityEditing;
 - (void)paletteViewDidSelectOpacityOption:(id)arg1;
 - (void)paletteViewDidSelectPlusButton:(id)arg1;
-- (long long)tagForPKPaletteAnnotationType:(long long)arg1;
 - (id)paletteViewSelectedAnnotationColor:(id)arg1;
+- (void)paletteViewDidChangePosition:(id)arg1;
 - (void)paletteViewDidToggleRuler:(id)arg1;
 - (void)paletteViewSelectedToolInkDidChange:(id)arg1;
 - (id)paletteViewUndoManager:(id)arg1;
@@ -126,7 +127,8 @@
 - (void)_annotationSelectionNotification:(id)arg1;
 - (void)_undoManagerNotification:(id)arg1;
 - (void)revalidateItems;
-- (void)upateAttributesPickerButtonWithCurrentSelection:(id)arg1;
+- (void)_installAttributesPickerButtonInPaletteContextEditingViewIfNeeded;
+- (void)_updateAttributesPickerButtonWithCurrentSelection:(id)arg1;
 - (id)createUndoViewController;
 - (void)resetToLastDrawingTool;
 - (id)selectedAnnotations;

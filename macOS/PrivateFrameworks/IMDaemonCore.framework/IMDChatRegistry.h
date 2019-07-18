@@ -58,7 +58,7 @@
 - (void)_aliasToCNIDMapForAliases:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_contactsBasedMerginEnabled;
 - (void)invalidatePersonCentricGroupedChatsCache;
-- (void)simulateMessageReceive:(id)arg1 serviceName:(id)arg2 handles:(id)arg3 sender:(id)arg4;
+- (void)simulateMessageReceive:(id)arg1 serviceName:(id)arg2 groupID:(id)arg3 handles:(id)arg4 sender:(id)arg5;
 - (id)_existingiMessageChatForChatIdentifier:(id)arg1 style:(unsigned char)arg2;
 - (BOOL)isBeingSetup;
 - (BOOL)doneLoadingAfterMerge;

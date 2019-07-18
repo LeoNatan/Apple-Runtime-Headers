@@ -16,6 +16,8 @@
 {
     struct {
         unsigned int startCallIntentCallCapabilityUnsupportedReason:1;
+        unsigned int addTasksIntentContactEventTriggerUnsupportedReason:1;
+        unsigned int setTaskAttributeIntentContactEventTriggerUnsupportedReason:1;
         unsigned int startCallIntentContactsUnsupportedReason:1;
         unsigned int requestPaymentIntentCurrencyAmountUnsupportedReason:1;
         unsigned int sendPaymentIntentCurrencyAmountUnsupportedReason:1;
@@ -33,13 +35,19 @@
         unsigned int reason:1;
         unsigned int sendMessageIntentRecipientUnsupportedReason:1;
         unsigned int saveHealthSampleIntentRecordDateUnsupportedReason:1;
+        unsigned int addTasksIntentTargetTaskListMembersUnsupportedReason:1;
         unsigned int setTimerAttributeIntentTargetTimerUnsupportedReason:1;
         unsigned int deleteTasksIntentTaskListUnsupportedReason:1;
         unsigned int deleteTasksIntentTaskUnsupportedReason:1;
         unsigned int snoozeTasksIntentTaskUnsupportedReason:1;
+        unsigned int addTasksIntentTemporalEventTriggerUnsupportedReason:1;
+        unsigned int setTaskAttributeIntentTemporalEventTriggerUnsupportedReason:1;
         unsigned int runWorkflowIntentWorkflowUnsupportedReason:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     int _startCallIntentCallCapabilityUnsupportedReason;
+    int _addTasksIntentContactEventTriggerUnsupportedReason;
+    int _setTaskAttributeIntentContactEventTriggerUnsupportedReason;
     int _startCallIntentContactsUnsupportedReason;
     int _requestPaymentIntentCurrencyAmountUnsupportedReason;
     int _sendPaymentIntentCurrencyAmountUnsupportedReason;
@@ -57,21 +65,28 @@
     int _reason;
     int _sendMessageIntentRecipientUnsupportedReason;
     int _saveHealthSampleIntentRecordDateUnsupportedReason;
+    int _addTasksIntentTargetTaskListMembersUnsupportedReason;
     int _setTimerAttributeIntentTargetTimerUnsupportedReason;
     int _deleteTasksIntentTaskListUnsupportedReason;
     int _deleteTasksIntentTaskUnsupportedReason;
     int _snoozeTasksIntentTaskUnsupportedReason;
+    int _addTasksIntentTemporalEventTriggerUnsupportedReason;
+    int _setTaskAttributeIntentTemporalEventTriggerUnsupportedReason;
     int _runWorkflowIntentWorkflowUnsupportedReason;
     NSArray *_conflictingParameters;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)conflictingParametersType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int runWorkflowIntentWorkflowUnsupportedReason; // @synthesize runWorkflowIntentWorkflowUnsupportedReason=_runWorkflowIntentWorkflowUnsupportedReason;
+@property(nonatomic) int setTaskAttributeIntentTemporalEventTriggerUnsupportedReason; // @synthesize setTaskAttributeIntentTemporalEventTriggerUnsupportedReason=_setTaskAttributeIntentTemporalEventTriggerUnsupportedReason;
+@property(nonatomic) int addTasksIntentTemporalEventTriggerUnsupportedReason; // @synthesize addTasksIntentTemporalEventTriggerUnsupportedReason=_addTasksIntentTemporalEventTriggerUnsupportedReason;
 @property(nonatomic) int snoozeTasksIntentTaskUnsupportedReason; // @synthesize snoozeTasksIntentTaskUnsupportedReason=_snoozeTasksIntentTaskUnsupportedReason;
 @property(nonatomic) int deleteTasksIntentTaskUnsupportedReason; // @synthesize deleteTasksIntentTaskUnsupportedReason=_deleteTasksIntentTaskUnsupportedReason;
 @property(nonatomic) int deleteTasksIntentTaskListUnsupportedReason; // @synthesize deleteTasksIntentTaskListUnsupportedReason=_deleteTasksIntentTaskListUnsupportedReason;
 @property(nonatomic) int setTimerAttributeIntentTargetTimerUnsupportedReason; // @synthesize setTimerAttributeIntentTargetTimerUnsupportedReason=_setTimerAttributeIntentTargetTimerUnsupportedReason;
+@property(nonatomic) int addTasksIntentTargetTaskListMembersUnsupportedReason; // @synthesize addTasksIntentTargetTaskListMembersUnsupportedReason=_addTasksIntentTargetTaskListMembersUnsupportedReason;
 @property(nonatomic) int saveHealthSampleIntentRecordDateUnsupportedReason; // @synthesize saveHealthSampleIntentRecordDateUnsupportedReason=_saveHealthSampleIntentRecordDateUnsupportedReason;
 @property(nonatomic) int sendMessageIntentRecipientUnsupportedReason; // @synthesize sendMessageIntentRecipientUnsupportedReason=_sendMessageIntentRecipientUnsupportedReason;
 @property(nonatomic) int reason; // @synthesize reason=_reason;
@@ -89,6 +104,8 @@
 @property(nonatomic) int sendPaymentIntentCurrencyAmountUnsupportedReason; // @synthesize sendPaymentIntentCurrencyAmountUnsupportedReason=_sendPaymentIntentCurrencyAmountUnsupportedReason;
 @property(nonatomic) int requestPaymentIntentCurrencyAmountUnsupportedReason; // @synthesize requestPaymentIntentCurrencyAmountUnsupportedReason=_requestPaymentIntentCurrencyAmountUnsupportedReason;
 @property(nonatomic) int startCallIntentContactsUnsupportedReason; // @synthesize startCallIntentContactsUnsupportedReason=_startCallIntentContactsUnsupportedReason;
+@property(nonatomic) int setTaskAttributeIntentContactEventTriggerUnsupportedReason; // @synthesize setTaskAttributeIntentContactEventTriggerUnsupportedReason=_setTaskAttributeIntentContactEventTriggerUnsupportedReason;
+@property(nonatomic) int addTasksIntentContactEventTriggerUnsupportedReason; // @synthesize addTasksIntentContactEventTriggerUnsupportedReason=_addTasksIntentContactEventTriggerUnsupportedReason;
 @property(copy, nonatomic) NSArray *conflictingParameters; // @synthesize conflictingParameters=_conflictingParameters;
 @property(nonatomic) int startCallIntentCallCapabilityUnsupportedReason; // @synthesize startCallIntentCallCapabilityUnsupportedReason=_startCallIntentCallCapabilityUnsupportedReason;
 - (void).cxx_destruct;
@@ -103,6 +120,12 @@
 - (int)StringAsRunWorkflowIntentWorkflowUnsupportedReason:(id)arg1;
 - (id)runWorkflowIntentWorkflowUnsupportedReasonAsString:(int)arg1;
 @property(nonatomic) _Bool hasRunWorkflowIntentWorkflowUnsupportedReason;
+- (int)StringAsSetTaskAttributeIntentTemporalEventTriggerUnsupportedReason:(id)arg1;
+- (id)setTaskAttributeIntentTemporalEventTriggerUnsupportedReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasSetTaskAttributeIntentTemporalEventTriggerUnsupportedReason;
+- (int)StringAsAddTasksIntentTemporalEventTriggerUnsupportedReason:(id)arg1;
+- (id)addTasksIntentTemporalEventTriggerUnsupportedReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasAddTasksIntentTemporalEventTriggerUnsupportedReason;
 - (int)StringAsSnoozeTasksIntentTaskUnsupportedReason:(id)arg1;
 - (id)snoozeTasksIntentTaskUnsupportedReasonAsString:(int)arg1;
 @property(nonatomic) _Bool hasSnoozeTasksIntentTaskUnsupportedReason;
@@ -115,6 +138,9 @@
 - (int)StringAsSetTimerAttributeIntentTargetTimerUnsupportedReason:(id)arg1;
 - (id)setTimerAttributeIntentTargetTimerUnsupportedReasonAsString:(int)arg1;
 @property(nonatomic) _Bool hasSetTimerAttributeIntentTargetTimerUnsupportedReason;
+- (int)StringAsAddTasksIntentTargetTaskListMembersUnsupportedReason:(id)arg1;
+- (id)addTasksIntentTargetTaskListMembersUnsupportedReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasAddTasksIntentTargetTaskListMembersUnsupportedReason;
 - (int)StringAsSaveHealthSampleIntentRecordDateUnsupportedReason:(id)arg1;
 - (id)saveHealthSampleIntentRecordDateUnsupportedReasonAsString:(int)arg1;
 @property(nonatomic) _Bool hasSaveHealthSampleIntentRecordDateUnsupportedReason;
@@ -164,6 +190,12 @@
 - (int)StringAsStartCallIntentContactsUnsupportedReason:(id)arg1;
 - (id)startCallIntentContactsUnsupportedReasonAsString:(int)arg1;
 @property(nonatomic) _Bool hasStartCallIntentContactsUnsupportedReason;
+- (int)StringAsSetTaskAttributeIntentContactEventTriggerUnsupportedReason:(id)arg1;
+- (id)setTaskAttributeIntentContactEventTriggerUnsupportedReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasSetTaskAttributeIntentContactEventTriggerUnsupportedReason;
+- (int)StringAsAddTasksIntentContactEventTriggerUnsupportedReason:(id)arg1;
+- (id)addTasksIntentContactEventTriggerUnsupportedReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasAddTasksIntentContactEventTriggerUnsupportedReason;
 - (id)conflictingParametersAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long conflictingParametersCount;
 - (void)addConflictingParameters:(id)arg1;

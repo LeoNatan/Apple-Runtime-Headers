@@ -8,34 +8,35 @@
 
 #import <UIKitCore/UIViewControllerAnimatedTransitioning-Protocol.h>
 #import <UIKitCore/UIViewControllerTransitioningDelegate-Protocol.h>
+#import <UIKitCore/_UIClickPresentationAssisting-Protocol.h>
 
-@class NSString, UIView, UIViewController, UIViewPropertyAnimator, _UIClickPresentation, _UIPortalView, _UIStateMachine, _UITargetedPreview;
+@class NSString, UITargetedPreview, UIView, UIViewController, UIViewPropertyAnimator, _UIClickPresentation, _UIPortalView, _UIStateMachine;
 @protocol UIViewControllerContextTransitioning;
 
 __attribute__((visibility("hidden")))
-@interface _UIClickPresentationAssistant : NSObject <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
+@interface _UIClickPresentationAssistant : NSObject <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, _UIClickPresentationAssisting>
 {
     id <UIViewControllerContextTransitioning> _currentContext;
     int _animationCount;
     UIViewPropertyAnimator *_presentationAnimator;
+    CDUnknownBlockType dismissalCompletion;
     _UIClickPresentation *_presentation;
     _UIPortalView *_presentationSourcePortalView;
-    _UITargetedPreview *_sourcePreview;
+    UITargetedPreview *_sourcePreview;
     UIViewController *_stashedParentViewController;
     UIView *_stashedSuperView;
-    CDUnknownBlockType _dismissalCompletion;
     CDUnknownBlockType _transitionCompletion;
     _UIStateMachine *_stateMachine;
 }
 
 @property(retain, nonatomic) _UIStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(copy, nonatomic) CDUnknownBlockType transitionCompletion; // @synthesize transitionCompletion=_transitionCompletion;
-@property(copy, nonatomic) CDUnknownBlockType dismissalCompletion; // @synthesize dismissalCompletion=_dismissalCompletion;
 @property(retain, nonatomic) UIView *stashedSuperView; // @synthesize stashedSuperView=_stashedSuperView;
 @property(retain, nonatomic) UIViewController *stashedParentViewController; // @synthesize stashedParentViewController=_stashedParentViewController;
-@property(retain, nonatomic) _UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
+@property(retain, nonatomic) UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
 @property(retain, nonatomic) _UIPortalView *presentationSourcePortalView; // @synthesize presentationSourcePortalView=_presentationSourcePortalView;
 @property(retain, nonatomic) _UIClickPresentation *presentation; // @synthesize presentation=_presentation;
+@property(copy, nonatomic) CDUnknownBlockType dismissalCompletion; // @synthesize dismissalCompletion;
 @property(readonly, nonatomic) UIViewPropertyAnimator *presentationAnimator; // @synthesize presentationAnimator=_presentationAnimator;
 - (void).cxx_destruct;
 - (void)_animateUsingFluidSpringWithType:(unsigned long long)arg1 animations:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
@@ -56,7 +57,7 @@ __attribute__((visibility("hidden")))
 - (void)_didTransitionToPresented;
 - (void)_didTransitionToPresenting;
 - (void)_prepareStateMachine;
-- (void)dismissViewController;
+- (void)dismissWithStyle:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentFromViewController:(id)arg1 sourcePreview:(id)arg2 dismissalCompletion:(CDUnknownBlockType)arg3;
 - (id)initWithClickPresentation:(id)arg1;
 

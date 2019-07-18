@@ -19,6 +19,8 @@
 + (id)nfl_colorByInterpolatingFromColor:(id)arg1 toColor:(id)arg2 percent:(double)arg3;
 + (id)nfl_colorComponentsFromString:(id)arg1;
 + (id)nfl_topicColorsArray;
++ (id)nfl_numberedCircleColor;
++ (id)nfl_bylineFontColor;
 + (id)nfl_editorialPicksHeadercolor;
 + (id)nfl_trendingStoriesHeadercolor;
 + (id)nfl_topStoriesHeadercolor;
@@ -31,7 +33,6 @@
 + (id)nfl_keyColor;
 + (id)nfl_defaultSystemTintColor;
 + (id)nfl_dynamicColor:(id)arg1 withDarkStyleVariant:(id)arg2;
-+ (id)nfl_colorWithHexString:(id)arg1 darkStyleHexString:(id)arg2;
 + (id)nfl_colorWithHexString:(id)arg1;
 - (id)nfl_colorOrBlackIfTooBright;
 @property(readonly, nonatomic) double brightness;

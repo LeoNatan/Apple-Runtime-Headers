@@ -111,6 +111,9 @@
 - (_Bool)_isNonForcedSubtitleDisplayEnabled;
 - (void)_updateNonForcedSubtitleDisplayEnabledOnFigPlaybackItem;
 - (id)currentMediaSelection;
+- (void)_setCurrentMediaSelection:(id)arg1;
+- (id)_currentMediaSelectionFromFigSelectedMediaArray:(id)arg1;
+- (id)_figSelectedMediaArray;
 - (id)selectedMediaOptionInMediaSelectionGroup:(id)arg1;
 - (_Bool)playerAppliesAutomaticMediaSelectionToGroup:(id)arg1;
 - (void)selectMediaOptionAutomaticallyInMediaSelectionGroup:(id)arg1;
@@ -126,7 +129,7 @@
 - (void)_cacheMediaSelectionOption:(id)arg1 forMediaSelectionGroup:(id)arg2;
 - (void)_applyMediaSelectionOptions;
 - (void)_markAsReadyForInspectionOfMediaSelectionOptions;
-- (_Bool)_isReadyForInspectionOfMediaSelectionOptions;
+- (_Bool)_isReadyForInspectionOfMediaSelectionOptionsAndHasFigPlaybackItem;
 - (void)_removeMediaOptionsSelectedByClient;
 - (void)_setMediaOptionsSelectedByClient:(id)arg1 forKey:(id)arg2;
 - (id)_mediaOptionsSelectedByClientForKey:(id)arg1;
@@ -352,6 +355,7 @@
 - (void)_changeStatusToFailedWithError:(id)arg1;
 @property(readonly) NSError *error;
 @property(readonly) int status;
+- (void)_informObserversAboutAvailabilityOfCurrentMediaSelection;
 - (void)_informObserversAboutAvailabilityOfDuration:(CDStruct_1b6d18a9)arg1;
 - (void)_informObserversAboutAvailabilityOfPresentationSize;
 - (void)_informObserversAboutAvailabilityOfTracks;

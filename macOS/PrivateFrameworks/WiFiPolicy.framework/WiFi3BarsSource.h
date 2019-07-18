@@ -31,10 +31,12 @@
 @property(copy, nonatomic) CDUnknownBlockType changeHandler; // @synthesize changeHandler;
 - (void).cxx_destruct;
 - (id)_descriptorForType:(unsigned long long)arg1;
+- (void)submitCacheAnalyticsEvent;
 - (id)relevantNetworks;
 - (void)forceFetch3BarsNetworkMatchingBSSID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_matchSearchBSSIDs:(id)arg1 toResults:(id)arg2;
 - (void)fetchCandidateNetworksMatchingBSSIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)prune3BarsNetworks:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetch3BarsNetworksPredictedForLocation:(id)arg1 duration:(double)arg2 maxLocations:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)fetch3BarsNetworksPredictedFor:(id)arg1 duration:(double)arg2 maxLocations:(unsigned long long)arg3;
 - (void)_handleRemoteFetchResponse:(id)arg1;

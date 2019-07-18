@@ -39,6 +39,7 @@
 - (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (double)_updateFlexibleSpecifier;
+- (void)viewDidLayout;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

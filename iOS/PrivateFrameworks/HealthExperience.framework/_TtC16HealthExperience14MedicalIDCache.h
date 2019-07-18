@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <swiftCore/_TtCs12_SwiftObject.h>
+#import <objc/NSObject.h>
 
-@interface _TtC16HealthExperience14MedicalIDCache : _TtCs12_SwiftObject
+@interface _TtC16HealthExperience14MedicalIDCache : NSObject
 {
     // Error parsing type: , name: medicalIDDataResult
     // Error parsing type: , name: medicalIDFetchOperation
@@ -14,7 +14,8 @@
     // Error parsing type: , name: healthStore
 }
 
-- (void)refreshMedicalIDWithNotification:(id)arg1;
+- (void).cxx_destruct;
+- (id)init;
 
 @end
 

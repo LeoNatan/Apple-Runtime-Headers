@@ -13,6 +13,9 @@
 {
     _Bool _fetchOperationsPending;
     _Bool _needsToUpdateSubscriptions;
+    _Bool _enableLongLivedOperations;
+    _Bool _disableAutomaticallyRetryNetworkFailures;
+    _Bool _disableRetryTimer;
     _Bool _disabled;
     _Bool _disabledInternal;
     _Bool _needsToProcessAllObjects;
@@ -56,6 +59,7 @@
 + (id)userRecordNameForContainer:(id)arg1;
 + (id)errorFromOperations:(id)arg1;
 + (id)errorFromErrors:(id)arg1;
++ (id)errorForWaitingForRetryTimer;
 + (id)errorForDisabledCloudSyncing;
 + (id)metadataZoneID;
 + (id)notesZoneID;
@@ -83,6 +87,9 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
+@property(nonatomic) _Bool disableRetryTimer; // @synthesize disableRetryTimer=_disableRetryTimer;
+@property(nonatomic) _Bool disableAutomaticallyRetryNetworkFailures; // @synthesize disableAutomaticallyRetryNetworkFailures=_disableAutomaticallyRetryNetworkFailures;
+@property(nonatomic) _Bool enableLongLivedOperations; // @synthesize enableLongLivedOperations=_enableLongLivedOperations;
 @property(nonatomic) unsigned long long discretionaryNetworkBehavior; // @synthesize discretionaryNetworkBehavior=_discretionaryNetworkBehavior;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property _Bool needsToUpdateSubscriptions; // @synthesize needsToUpdateSubscriptions=_needsToUpdateSubscriptions;
@@ -175,6 +182,7 @@
 - (id)newPlaceholderObjectForRecordID:(id)arg1 recordType:(id)arg2 accountID:(id)arg3 context:(id)arg4;
 - (id)newCloudObjectForRecord:(id)arg1 accountID:(id)arg2 context:(id)arg3;
 - (id)existingCloudObjectForUserSpecificRecordID:(id)arg1 createPlaceholderIfNecessary:(_Bool)arg2 accountID:(id)arg3 context:(id)arg4;
+- (id)existingCloudObjectForRecordID:(id)arg1 recordType:(id)arg2 accountID:(id)arg3 context:(id)arg4 excludingRecordTypes:(id)arg5;
 - (id)existingCloudObjectForRecordID:(id)arg1 recordType:(id)arg2 accountID:(id)arg3 context:(id)arg4;
 - (id)existingCloudObjectForRecord:(id)arg1 accountID:(id)arg2 context:(id)arg3;
 - (void)fetchUserRecordWithContainer:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

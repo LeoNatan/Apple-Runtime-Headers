@@ -31,7 +31,6 @@
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)APIBaseURL;
 - (id)utsc;
 - (_Bool)isValid;
 - (id)dictionaryRepresentation;

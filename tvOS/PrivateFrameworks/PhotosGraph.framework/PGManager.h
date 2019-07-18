@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSMutableArray, NSMutableDictionary, NSString, NSURL, PGCurationCache, PGGraph, PGMemoryController, PHPhotoLibrary;
-@protocol OS_dispatch_queue, OS_os_log;
+@protocol OS_dispatch_queue, OS_os_log, PGGraphHealthRecording;
 
 @interface PGManager : NSObject
 {
@@ -27,7 +27,6 @@
     NSObject<OS_dispatch_queue> *_notificationQueue;
     PGGraph *_graph;
     NSString *_graphName;
-    NSObject<OS_os_log> *_loggingConnection;
     _Bool _shouldPostGraphAvailableNotification;
     _Bool _photoLibraryIsReadonly;
     PHPhotoLibrary *_photoLibrary;
@@ -36,6 +35,7 @@
     NSURL *_metadataSnapshotOutputPathURL;
     NSMutableDictionary *_curationScoreByAsset;
     NSMutableDictionary *_interactionScoreByAsset;
+    NSObject<OS_os_log> *_loggingConnection;
     NSObject<OS_os_log> *_memoriesLoggingConnection;
     NSObject<OS_os_log> *_curationLoggingConnection;
     NSObject<OS_os_log> *_relatedLoggingConnection;
@@ -46,15 +46,20 @@
     NSObject<OS_os_log> *_suggestionsLoggingConnection;
     NSObject<OS_os_log> *_metricsLoggingConnection;
     PGCurationCache *_curationCache;
+    id <PGGraphHealthRecording> _graphHealthRecorder;
 }
 
 + (_Bool)clientIsPhotoAnalysis;
 + (id)stringFromPGRelatedType:(unsigned long long)arg1;
 + (id)stringFromPGDuration:(unsigned long long)arg1;
 + (id)stringFromPGPrecision:(unsigned long long)arg1;
-+ (_Bool)shouldInvalidatePersistentGraph:(id)arg1 logger:(id)arg2;
++ (_Bool)shouldInvalidateConstructionGraph:(id)arg1;
++ (_Bool)shouldInvalidatePersistentGraph:(id)arg1;
++ (_Bool)geoServiceProviderDidChangeForGraph:(id)arg1;
 + (void)initialize;
 + (id)_locationsByDateIntervalForAssetsMetadata:(id)arg1;
++ (unsigned long long)numberOfExistingMemoriesToKeepForOverlapCheckWithBeta:(double)arg1;
++ (double)durationForExistingMemoriesOverlapCheckWithBeta:(double)arg1;
 + (id)meaningsForSurvey;
 + (_Bool)memoriesAreWorthNotifying:(id)arg1;
 + (double)contentScoreForAssets:(id)arg1;
@@ -69,6 +74,7 @@
 + (id)_summaryClusteringForDuration:(unsigned long long)arg1 andPrecision:(unsigned long long)arg2;
 + (id)matchingWeightToDictionary;
 + (id)assetPropertySetsForCuration;
+@property(readonly, nonatomic) id <PGGraphHealthRecording> graphHealthRecorder; // @synthesize graphHealthRecorder=_graphHealthRecorder;
 @property(readonly) PGCurationCache *curationCache; // @synthesize curationCache=_curationCache;
 @property(readonly, nonatomic) NSObject<OS_os_log> *metricsLoggingConnection; // @synthesize metricsLoggingConnection=_metricsLoggingConnection;
 @property(readonly, nonatomic) NSObject<OS_os_log> *suggestionsLoggingConnection; // @synthesize suggestionsLoggingConnection=_suggestionsLoggingConnection;
@@ -79,6 +85,7 @@
 @property(readonly, nonatomic) NSObject<OS_os_log> *relatedLoggingConnection; // @synthesize relatedLoggingConnection=_relatedLoggingConnection;
 @property(readonly, nonatomic) NSObject<OS_os_log> *curationLoggingConnection; // @synthesize curationLoggingConnection=_curationLoggingConnection;
 @property(readonly, nonatomic) NSObject<OS_os_log> *memoriesLoggingConnection; // @synthesize memoriesLoggingConnection=_memoriesLoggingConnection;
+@property(readonly, nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 @property(readonly) NSMutableDictionary *interactionScoreByAsset; // @synthesize interactionScoreByAsset=_interactionScoreByAsset;
 @property(readonly) NSMutableDictionary *curationScoreByAsset; // @synthesize curationScoreByAsset=_curationScoreByAsset;
 @property(readonly) _Bool photoLibraryIsReadonly; // @synthesize photoLibraryIsReadonly=_photoLibraryIsReadonly;
@@ -105,6 +112,7 @@
 - (void)invalidatePersistentCaches;
 - (void)invalidateTransientCaches;
 - (void)_invalidatePersistentCaches;
+- (void)_invalidatePersistentCachesForGeoServiceProviderChange;
 - (void)_invalidateTransientCaches;
 - (void)performApplicationDataBlock:(CDUnknownBlockType)arg1;
 - (void)performAsynchronousNotification:(CDUnknownBlockType)arg1;
@@ -137,8 +145,7 @@
 - (_Bool)isPGMemoryTriggered:(id)arg1;
 - (_Bool)isPHMemoryTriggered:(id)arg1;
 - (id)createMemoriesWithOptions:(id)arg1 progress:(CDUnknownBlockType)arg2;
-@property(readonly) unsigned long long numberOfExistingMemoriesToKeepForOverlapCheck;
-@property(readonly) double durationForExistingMemoriesOverlapCheck;
+- (double)durationForExistingMemoriesOverlapCheck:(unsigned long long *)arg1;
 - (id)_featuresFromOptions:(id)arg1;
 - (id)_allFeatureVectorBasedMemoriesWithOptions:(id)arg1;
 - (id)_memoriesWithOptions:(id)arg1 isFinalOne:(_Bool)arg2;
@@ -362,6 +369,7 @@
 - (id)_messagesStatistics;
 - (id)_peopleNameGenderStatistics;
 - (id)_peopleVisionGenderStatistics;
+- (id)_peopleVisionAgeStatistics;
 - (id)_stringDescriptionForContactCache;
 - (id)_peopleContactSuggestionStatisticsIncludingDebugInfo:(_Bool)arg1;
 - (id)_oneOnOneTrips;

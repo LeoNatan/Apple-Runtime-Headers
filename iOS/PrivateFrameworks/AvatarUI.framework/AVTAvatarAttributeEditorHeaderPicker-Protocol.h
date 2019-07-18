@@ -9,6 +9,7 @@
 @class NSArray, NSString;
 
 @protocol AVTAvatarAttributeEditorHeaderPicker <NSObject>
+@property(readonly, nonatomic) _Bool alwaysPresentAlert;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly, copy, nonatomic) NSArray *choices;
 @end

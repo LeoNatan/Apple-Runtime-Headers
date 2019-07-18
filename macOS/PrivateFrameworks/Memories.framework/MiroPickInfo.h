@@ -37,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float distance; // @synthesize distance=_distance;
 @property(nonatomic) float score; // @synthesize score=_score;
 - (void).cxx_destruct;
-- (float)_speedForVideoSegment:(id)arg1;
 - (double)_idealDurationForBlueprint:(id)arg1 biased:(BOOL)arg2 max:(BOOL)arg3;
 - (double)voiceRangeDuration;
 - (double)trimmedDuration;

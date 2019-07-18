@@ -7,54 +7,65 @@
 #import <UIKit/UIView.h>
 
 @class NSString, STBlockingBackdropView, STButtonSpecification, STHourglassView, UIButton, UILabel, UIStackView;
-@protocol STLockoutViewControllerDelegate;
+@protocol STLockoutViewDelegate;
 
 __attribute__((visibility("hidden")))
 @interface STLockoutView : UIView
 {
     UIStackView *_middleStackView;
+    UIStackView *_bottomStackView;
     STBlockingBackdropView *_backdropView;
     STHourglassView *_hourglassView;
     _Bool _forSnapshot;
-    id <STLockoutViewControllerDelegate> _delegate;
+    id <STLockoutViewDelegate> _delegate;
     STButtonSpecification *_mainButtonSpecification;
     UILabel *_titleLabel;
     UILabel *_messageLabel;
     UIButton *_mainButton;
-    NSString *_backdropState;
-    NSString *_hourglassState;
+    UIButton *_okButton;
 }
 
-@property(copy, nonatomic) NSString *hourglassState; // @synthesize hourglassState=_hourglassState;
-@property(copy, nonatomic) NSString *backdropState; // @synthesize backdropState=_backdropState;
+@property(readonly, nonatomic) UIButton *okButton; // @synthesize okButton=_okButton;
 @property(readonly, nonatomic) UIButton *mainButton; // @synthesize mainButton=_mainButton;
 @property(readonly, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) STButtonSpecification *mainButtonSpecification; // @synthesize mainButtonSpecification=_mainButtonSpecification;
 @property(readonly, nonatomic, getter=isForSnapshot) _Bool forSnapshot; // @synthesize forSnapshot=_forSnapshot;
-@property(nonatomic) __weak id <STLockoutViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <STLockoutViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)buttonFont;
 - (id)messageFont;
 - (id)titleFont;
 - (id)defaultButtonColor;
 - (void)_sendDelegateAction:(long long)arg1 parameters:(id)arg2;
+- (void)_okButtonTapped:(id)arg1;
 - (void)_mainButtonTapped:(id)arg1;
 @property(copy, nonatomic) NSString *message;
 @property(copy, nonatomic) NSString *title;
+- (void)_addOKButton;
 - (void)_addMainButton;
 - (void)_addMessageLabel;
 - (void)_addTitleLabel;
 - (void)_addHourglassView;
 - (id)_newStackView;
+- (void)_setupBottomStackView;
 - (void)_setupMiddleStackView;
 - (void)_setupBackdrops;
 - (void)_setupConstraints;
 - (void)_setup;
 @property(nonatomic) double hourglassAlpha;
-- (void)setBackdropState:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)setBackdropState:(id)arg1 animated:(_Bool)arg2;
-- (void)setHourglassState:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)setHourglassState:(id)arg1 animated:(_Bool)arg2;
+- (void)animateHourglassToStateName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)setHourglassStateName:(id)arg1;
+@property(readonly, copy) NSString *hourglassStateName;
+- (void)animateHourglassToInitialStateWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)setHourglassInitialState;
+@property(readonly, getter=isHourglassInitialState) _Bool hourglassInitialState;
+- (void)animateBackdropToStateName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)setBackdropStateName:(id)arg1;
+@property(readonly, copy) NSString *backdropStateName;
+- (void)animateBackdropToInitialStateWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)setBackdropInitialState;
+@property(readonly, getter=isBackdropInitialState) _Bool backdropInitialState;
 - (id)initWithFrame:(struct CGRect)arg1 forSnapshot:(_Bool)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 

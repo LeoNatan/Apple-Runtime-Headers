@@ -14,10 +14,12 @@
     double _distanceThresholdForIdenticalSimilarityWithPeople;
     double _distanceThresholdForSemanticalSimilarity;
     double _distanceThresholdForSemanticalSimilarityWithPeople;
+    double _distanceThresholdForSemanticalSimilarityWithPersons;
 }
 
 + (CDUnknownBlockType)distanceBlockForAlgorithm:(long long)arg1 sceneprintGetterBlock:(CDUnknownBlockType)arg2;
 + (double)defaultDistanceThresholdForAlgorithm:(long long)arg1 similarity:(long long)arg2;
+@property(nonatomic) double distanceThresholdForSemanticalSimilarityWithPersons; // @synthesize distanceThresholdForSemanticalSimilarityWithPersons=_distanceThresholdForSemanticalSimilarityWithPersons;
 @property(nonatomic) double distanceThresholdForSemanticalSimilarityWithPeople; // @synthesize distanceThresholdForSemanticalSimilarityWithPeople=_distanceThresholdForSemanticalSimilarityWithPeople;
 @property(nonatomic) double distanceThresholdForSemanticalSimilarity; // @synthesize distanceThresholdForSemanticalSimilarity=_distanceThresholdForSemanticalSimilarity;
 @property(nonatomic) double distanceThresholdForIdenticalSimilarityWithPeople; // @synthesize distanceThresholdForIdenticalSimilarityWithPeople=_distanceThresholdForIdenticalSimilarityWithPeople;

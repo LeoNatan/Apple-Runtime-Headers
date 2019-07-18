@@ -35,8 +35,10 @@
 @property(readonly, nonatomic) UIColor *carplayUnreadImageColor_Dark;
 @property(readonly, nonatomic) UIColor *carplayUnreadImageColor_Highlighted_Light;
 @property(readonly, nonatomic) UIColor *carplayUnreadImageColor_Light;
-@property(readonly, nonatomic) UIColor *carplayNavBarComposeButtonColor_Dark;
-@property(readonly, nonatomic) UIColor *carplayNavBarComposeButtonColor_Light;
+@property(readonly, nonatomic) UIColor *carplayNavBarComposeButtonFocusColor_Highlight;
+@property(readonly, nonatomic) UIColor *carplayNavBarComposeButtonColor_Highlight;
+@property(readonly, nonatomic) UIColor *carplayNavBarComposeButtonFocusColor;
+@property(readonly, nonatomic) UIColor *carplayNavBarComposeButtonColor;
 @property(readonly, nonatomic) UIColor *syncProgressActionButtonDisabledColor;
 @property(readonly, nonatomic) UIColor *syncProgressIndeterminateProgressBarTintColor;
 @property(readonly, nonatomic) UIColor *syncProgressUserActionButtonTextColor;
@@ -124,6 +126,7 @@
 @property(readonly, nonatomic) UIColor *entryFieldDarkStyleButtonColor;
 @property(readonly, nonatomic) UIColor *entryFieldHighlightedButtonColor;
 @property(readonly, nonatomic) UIColor *entryFieldButtonColor;
+- (BOOL)surfSendButtonColorForEntryViewStyle:(long long)arg1;
 - (id)background_sendButtonColor;
 - (id)multiway_sendButtonColor;
 - (id)business_sendButtonColor;

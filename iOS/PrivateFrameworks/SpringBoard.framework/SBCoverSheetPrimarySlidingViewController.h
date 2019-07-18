@@ -37,6 +37,7 @@
 @property(retain, nonatomic) SBFTouchPassThroughView *unlockedContentOverlayView; // @synthesize unlockedContentOverlayView=_unlockedContentOverlayView;
 @property(nonatomic) __weak id <SBCoverSheetGrabberDelegate> grabberDelegate; // @synthesize grabberDelegate=_grabberDelegate;
 - (void).cxx_destruct;
+- (void)_setupPanelPartsIfNecessary;
 - (void)_createFadeOutWallpaperEffectView;
 - (void)_createPanelWallpaperEffectViewIfNeeded;
 - (void)_updatePanelWallpaperEffectView;
@@ -50,6 +51,7 @@
 - (void)grabberTongueWillPresent:(id)arg1;
 - (_Bool)grabberTongue:(id)arg1 shouldShowTongueOnFirstSwipeWithEdgeLocation:(double)arg2;
 - (_Bool)grabberTongueOrPullEnabled:(id)arg1;
+- (id)customGestureRecognizerForGrabberTongue:(id)arg1;
 - (void)handleReachabilityModeDeactivated;
 - (void)handleReachabilityModeActivated;
 - (struct CGRect)_animationTickedWithProgress:(double)arg1 forPresentationValue:(_Bool)arg2;

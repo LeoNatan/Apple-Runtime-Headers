@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (id)delegateAccounts;
 - (id)primaryAccount;
+- (id)myFamilyMemberRecord;
 @property(readonly, copy) NSString *description;
 - (id)initWithFamilyCircle:(id)arg1;
 

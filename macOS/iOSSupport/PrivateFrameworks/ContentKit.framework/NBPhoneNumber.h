@@ -11,6 +11,7 @@
 
 @class NSNumber, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NBPhoneNumber : NSObject <NSCopying, NSCoding>
 {
     BOOL _italianLeadingZero;

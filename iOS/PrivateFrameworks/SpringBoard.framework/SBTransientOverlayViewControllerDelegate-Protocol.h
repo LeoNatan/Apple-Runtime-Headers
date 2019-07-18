@@ -12,6 +12,7 @@
 - (void)transientOverlayViewControllerDidEndRotation:(SBTransientOverlayViewController *)arg1;
 - (void)transientOverlayViewControllerWillBeginRotation:(SBTransientOverlayViewController *)arg1 toInterfaceOrientation:(long long)arg2;
 - (void)transientOverlayViewControllerNeedsWhitePointAdaptivityStyleUpdate:(SBTransientOverlayViewController *)arg1;
+- (void)transientOverlayViewControllerNeedsStatusBarAppearanceUpdate:(SBTransientOverlayViewController *)arg1;
 - (void)transientOverlayViewControllerNeedsSceneDeactivationUpdate:(SBTransientOverlayViewController *)arg1;
 - (void)transientOverlayViewControllerNeedsProximityDetectionUpdate:(SBTransientOverlayViewController *)arg1;
 - (void)transientOverlayViewControllerNeedsOrientationUpdatesDisabledUpdate:(SBTransientOverlayViewController *)arg1;

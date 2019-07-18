@@ -4,27 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TVMLKit/TVContainerRibbonViewCell.h>
+#import <TVMLKit/TVFeaturedRibbonCell.h>
 
-@class TVImageProxy, TVLSMDocumentProxy, TVStackedMediaView, UIImage;
+@class IKViewElement, UIView;
 
 __attribute__((visibility("hidden")))
-@interface VUICollectionViewRibbonCell : TVContainerRibbonViewCell
+@interface VUICollectionViewRibbonCell : TVFeaturedRibbonCell
 {
-    TVLSMDocumentProxy *_lsmDocumentProxy;
-    TVImageProxy *_fallbackImageProxy;
-    TVStackedMediaView *_stackedMediaView;
+    IKViewElement *_viewElement;
+    UIView *_overlayView;
 }
 
 + (id)ribbonCellWithElement:(id)arg1 existingCell:(id)arg2;
-@property(readonly, nonatomic) TVStackedMediaView *stackedMediaView; // @synthesize stackedMediaView=_stackedMediaView;
-@property(readonly, nonatomic) TVImageProxy *fallbackImageProxy; // @synthesize fallbackImageProxy=_fallbackImageProxy;
-@property(readonly, nonatomic) TVLSMDocumentProxy *lsmDocumentProxy; // @synthesize lsmDocumentProxy=_lsmDocumentProxy;
+@property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
+@property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;
 - (id)selectingView;
-- (void)setLSMDocumentProxy:(id)arg1 withFallbackImageProxy:(id)arg2;
-@property(retain, nonatomic) UIImage *placeholderImage;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (void)_updateMaskingModeForParameters:(id)arg1;
 
 @end
 

@@ -15,12 +15,14 @@
     _Bool _isAppJustLaunched;
     _Bool _isAppJustDeepLinkOpened;
     _Bool _isGDPRConsented;
+    _Bool _shouldPostAppLaunchData;
     NSDictionary *_baseFields;
     NSString *_currentTabIdentifier;
     NSString *_exitEventDestinationUrl;
     VUIMetricsPageEventData *_lastRecordedPageEventData;
     MTMetricsKit *_activeMetricsKit;
     MTMetricsKit *_metricsKitMain;
+    MTMetricsKit *_loggerKit;
     MTMetricsKit *_metricsKitUnidentified;
     MTMetricsKit *_perfMetricsKit;
     NSObject<OS_dispatch_queue> *_metricsDataDispatchSQ;
@@ -33,12 +35,14 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *metricsDataDispatchSQ; // @synthesize metricsDataDispatchSQ=_metricsDataDispatchSQ;
 @property(retain, nonatomic) MTMetricsKit *perfMetricsKit; // @synthesize perfMetricsKit=_perfMetricsKit;
 @property(retain, nonatomic) MTMetricsKit *metricsKitUnidentified; // @synthesize metricsKitUnidentified=_metricsKitUnidentified;
+@property(retain, nonatomic) MTMetricsKit *loggerKit; // @synthesize loggerKit=_loggerKit;
 @property(retain, nonatomic) MTMetricsKit *metricsKitMain; // @synthesize metricsKitMain=_metricsKitMain;
 @property(retain, nonatomic) MTMetricsKit *activeMetricsKit; // @synthesize activeMetricsKit=_activeMetricsKit;
 @property(retain, nonatomic) VUIMetricsPageEventData *lastRecordedPageEventData; // @synthesize lastRecordedPageEventData=_lastRecordedPageEventData;
 @property(retain, nonatomic) NSString *exitEventDestinationUrl; // @synthesize exitEventDestinationUrl=_exitEventDestinationUrl;
 @property(readonly, copy, nonatomic) NSString *currentTabIdentifier; // @synthesize currentTabIdentifier=_currentTabIdentifier;
 @property(copy, nonatomic) NSDictionary *baseFields; // @synthesize baseFields=_baseFields;
+@property(nonatomic) _Bool shouldPostAppLaunchData; // @synthesize shouldPostAppLaunchData=_shouldPostAppLaunchData;
 - (void).cxx_destruct;
 - (id)getRecentEventsForDebuggerUI;
 - (void)_saveRecentEvents:(id)arg1;
@@ -52,6 +56,7 @@
 - (void)registerForBaseFieldChanges;
 - (id)_createDataAddingBaseAndPageFieldsToEventData:(id)arg1;
 - (void)_initializeBaseFields;
+- (void)jsDelegateRecordLogEvent:(id)arg1;
 - (void)jsDelegateRecordPerfEvent:(id)arg1;
 - (void)_flushUnreportedEvents:(id)arg1;
 - (void)_recordEvent:(id)arg1 withEventData:(id)arg2;
@@ -68,6 +73,7 @@
 - (void)recordAppBecameActive;
 - (void)recordAppLaunched;
 - (id)_createMetricsKitForTopic:(id)arg1;
+- (void)setupMetricsController;
 - (id)init;
 @property(readonly, copy, nonatomic) NSDictionary *iTunesVPAF;
 @property(readonly, copy, nonatomic) NSDictionary *baseFieldsForVPAF;

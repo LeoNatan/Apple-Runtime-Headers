@@ -155,10 +155,10 @@
 - (id)_configurationForDisplayType:(id)arg1;
 - (id)_configurationForSeries:(id)arg1;
 - (void)_setSelectedGraphSeries:(id)arg1 animated:(_Bool)arg2;
-- (_Bool)annotationViewUsesSeparators;
 - (id)makeAnnotationDataSourceWithMetrics:(id)arg1;
 - (id)makeAnnotationDataSource;
 - (float)lollipopExtensionLength;
+- (id)lollipopExtensionColor;
 - (id)lollipopAnnotationColor;
 - (id)lollipopFieldColor;
 - (void)updateAnnotationDataSource:(id)arg1 pointContexts:(id)arg2;

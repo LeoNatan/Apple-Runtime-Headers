@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class EDGmailLabelPersistence, EDPersistenceDatabase;
+#import <EmailDaemon/EFLoggable-Protocol.h>
 
-@interface EDServerMessagePersistence : NSObject
+@class EDGmailLabelPersistence, EDPersistenceDatabase, NSString;
+
+@interface EDServerMessagePersistence : NSObject <EFLoggable>
 {
     _Bool _supportsLabels;
     _Bool _useNumericSearch;
@@ -20,6 +22,7 @@
 + (id)serverLabelsTableSchema;
 + (id)serverMessagesTableSchema;
 + (id)tablesAndForeignKeysToResolve:(id *)arg1 associationsToResolve:(id *)arg2;
++ (id)log;
 @property(readonly, nonatomic) _Bool useNumericSearch; // @synthesize useNumericSearch=_useNumericSearch;
 @property(readonly, nonatomic) long long mailboxID; // @synthesize mailboxID=_mailboxID;
 @property(readonly, nonatomic) EDGmailLabelPersistence *gmailLabelPersistence; // @synthesize gmailLabelPersistence=_gmailLabelPersistence;
@@ -45,6 +48,12 @@
 @property(readonly, nonatomic) unsigned int messageCount;
 - (id)init;
 - (id)initWithDatabase:(id)arg1 gmailLabelPersistence:(id)arg2 mailboxID:(long long)arg3 useNumericSearch:(_Bool)arg4 supportsLabels:(_Bool)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

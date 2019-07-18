@@ -138,6 +138,7 @@
 - (void)_updatePrimaryTextLabel;
 - (void)_updateNumberOfLinesForLabel:(id)arg1 isRightAlignedInStandardLayout:(BOOL)arg2;
 - (void)_updateColoredBackgroundViewColor;
+- (id)_coloredBackgroundViewLayer;
 - (void)updateAngleBackgroundColor;
 - (void)_updateColorBarColor;
 - (id)_setUpLargeTextConstraints;
@@ -180,6 +181,8 @@
 - (id)primaryTextColor;
 - (id)prefixTextColor;
 - (id)invitationPrimaryTextColor;
+- (id)coloredBackgroundViewFilter;
+- (id)coloredBackgroundViewFilterColor;
 - (id)coloredBackgroundViewColor;
 - (id)_selectedBackgroundViewWithColor:(id)arg1;
 - (id)imageView;

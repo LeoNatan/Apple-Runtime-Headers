@@ -6,14 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class MLModel;
+@class MLModel, NSString;
 
 @interface CRTextRecognizerModel : NSObject
 {
     MLModel *_model;
+    NSString *_codemap;
+    long long _ctcBlankLabelIndex;
 }
 
 + (id)urlOfModelInThisBundle;
+@property long long ctcBlankLabelIndex; // @synthesize ctcBlankLabelIndex=_ctcBlankLabelIndex;
+@property(retain, nonatomic) NSString *codemap; // @synthesize codemap=_codemap;
 @property(readonly, nonatomic) MLModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
 - (id)predictionsFromInputs:(id)arg1 options:(id)arg2 error:(id *)arg3;

@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (void)dismissViewController;
 - (void)presentSafariViewController;
 - (void)showClinicalAccountEducationViewControllerWithAccount:(id)arg1;
-- (void)_proceedWithConsentResponse:(unsigned long long)arg1;
 - (id)_onboardingViewController;
 - (void)createRootViewController;
 - (void)completionNotificationHandler:(id)arg1;

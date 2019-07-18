@@ -24,6 +24,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)viewDidLoad;
 - (id)initWithItems:(id)arg1;
+- (id)initWithTextItems:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

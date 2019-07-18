@@ -9,11 +9,12 @@
 #import <CoreDuetContext/_CDContextInternal-Protocol.h>
 #import <CoreDuetContext/_CDLocalContext-Protocol.h>
 
-@class NSMutableDictionary, _CDContextualLocationRegistrationMonitor, _CDDevice, _CDSystemTimeCallbackScheduler;
+@class NSMutableDictionary, NSString, _CDContextualLocationRegistrationMonitor, _CDDevice, _CDSystemTimeCallbackScheduler;
 @protocol OS_dispatch_queue, OS_dispatch_workloop;
 
 @interface _CDInMemoryContext : NSObject <_CDLocalContext, _CDContextInternal>
 {
+    NSString *_deviceID;
     NSObject<OS_dispatch_queue> *_syncQueue;
     NSObject<OS_dispatch_workloop> *_callbackWorkloop;
     NSMutableDictionary *_context;
@@ -23,6 +24,7 @@
     _CDDevice *_device;
 }
 
++ (id)contextWithDeviceID:(id)arg1;
 + (id)context;
 @property(retain, nonatomic) _CDDevice *device; // @synthesize device=_device;
 @property(retain, nonatomic) _CDSystemTimeCallbackScheduler *systemTimeCallbackScheduler; // @synthesize systemTimeCallbackScheduler=_systemTimeCallbackScheduler;
@@ -31,6 +33,7 @@
 @property(retain, nonatomic) NSMutableDictionary *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSObject<OS_dispatch_workloop> *callbackWorkloop; // @synthesize callbackWorkloop=_callbackWorkloop;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
+@property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
 - (void).cxx_destruct;
 - (id)description;
 - (id)allRegistrations;

@@ -12,7 +12,7 @@
 #import <TelephonyUtilities/TUFilteredRequest-Protocol.h>
 #import <TelephonyUtilities/TUVideoRequest-Protocol.h>
 
-@class IDSDestination, NSArray, NSDate, NSString, NSURL, NSUUID, NSUserActivity, TUCallProvider, TUCallProviderManager, TUHandle, TUSenderIdentity, TUSenderIdentityClient;
+@class BSProcessHandle, IDSDestination, NSArray, NSDate, NSString, NSURL, NSUUID, NSUserActivity, TUCallProvider, TUCallProviderManager, TUHandle, TUSenderIdentity, TUSenderIdentityClient;
 
 @interface TUDialRequest : NSObject <TUCallRequest, TUVideoRequest, TUFilteredRequest, NSSecureCoding, NSCopying>
 {
@@ -47,6 +47,7 @@
     long long _originatingUIType;
     NSString *_successNotification;
     NSString *_failureNotification;
+    BSProcessHandle *_processHandle;
     struct CGSize _localPortraitAspectRatio;
     struct CGSize _localLandscapeAspectRatio;
 }
@@ -66,6 +67,7 @@
 + (long long)handleTypeForQueryItem:(id)arg1;
 + (id)stringForDialType:(long long)arg1;
 + (long long)dialRequestTTYTypeForCHRecentCallTTYType:(long long)arg1;
+@property(retain, nonatomic) BSProcessHandle *processHandle; // @synthesize processHandle=_processHandle;
 @property(copy, nonatomic) NSString *failureNotification; // @synthesize failureNotification=_failureNotification;
 @property(copy, nonatomic) NSString *successNotification; // @synthesize successNotification=_successNotification;
 @property(nonatomic) BOOL shouldSuppressInCallUI; // @synthesize shouldSuppressInCallUI=_shouldSuppressInCallUI;

@@ -19,7 +19,9 @@
 + (void)_scheduleReferenceDateUpdate;
 + (void)_updateReferenceDate;
 + (_Bool)_needsUpdateReferenceDate;
++ (unsigned int)updaterCount;
 + (id)referenceDateUpdaters;
++ (double)referenceDateAsTimeInterval;
 + (id)referenceDate;
 + (id)_currentTimeWithRoundedSeconds;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;

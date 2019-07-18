@@ -27,6 +27,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLoad;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(nonatomic, copy) NSArray *viewControllers;
 @property(nonatomic, readonly) UIViewController *childViewControllerForStatusBarHidden;

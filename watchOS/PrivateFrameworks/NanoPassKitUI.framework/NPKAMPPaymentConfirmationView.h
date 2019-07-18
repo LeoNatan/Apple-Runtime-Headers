@@ -19,6 +19,7 @@
     UIImageView *_checkmarkView;
 }
 
++ (_Bool)_isRightToLeft;
 + (id)ampPaymentConfirmationViewWithFrame:(struct CGRect)arg1;
 + (id)ampPaymentConfirmationView;
 @property(retain, nonatomic) UIImageView *checkmarkView; // @synthesize checkmarkView=_checkmarkView;
@@ -29,6 +30,7 @@
 @property(retain, nonatomic) NPKApprovalConfirmationView *approvalConfirmationView; // @synthesize approvalConfirmationView=_approvalConfirmationView;
 @property(nonatomic) unsigned int displayState; // @synthesize displayState=_displayState;
 - (void).cxx_destruct;
+- (id)_moveInFromBottomTransition;
 - (void)_updateVisibleViewsToDisplayView:(id)arg1 removingViews:(id)arg2;
 - (void)_updateDisplayState;
 - (void)displayDoneState;

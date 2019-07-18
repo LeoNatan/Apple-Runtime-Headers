@@ -79,10 +79,9 @@
     NSArray *customActions;
 }
 
-+ (void)_waitForURL:(id)arg1 useSecurityScopedURL:(BOOL)arg2 withNameFieldString:(id)arg3 thenSetTags:(id)arg4;
++ (void)_waitForURL:(id)arg1 useSecurityScopedURL:(BOOL)arg2 withNameFieldString:(id)arg3 thenSetTagNames:(id)arg4;
 + (id)keyPathsForValuesAffectingTags;
-+ (id)_tagNamesForTags:(id)arg1;
-+ (id)_tagsForTagNames:(id)arg1;
++ (id)keyPathsForValuesAffectingTagNames;
 + (BOOL)_allowTagsFieldInPanel;
 + (BOOL)_qlSeamlessOpenerActuallyAvailable;
 + (Class)_qlSeamlessOpenerClass;
@@ -289,6 +288,7 @@
 - (BOOL)finderView:(id)arg1 showAsPackageForURL:(id)arg2;
 - (id)finderViewQuerySearchUTIs:(id)arg1;
 - (BOOL)_allowSearchingForFolders;
+- (BOOL)finderView:(id)arg1 canSelectURL:(id)arg2 itemIsContainer:(BOOL)arg3 itemIsPackage:(BOOL)arg4 pathExtension:(id)arg5 itemHFSType:(unsigned int)arg6 typeIdentifier:(id)arg7;
 - (BOOL)finderView:(id)arg1 canSelectURL:(id)arg2 itemIsContainer:(BOOL)arg3 itemIsPackage:(BOOL)arg4;
 - (BOOL)finderView:(id)arg1 canSelectURL:(id)arg2;
 - (void)finderView:(id)arg1 shouldEnableItems:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -300,8 +300,8 @@
 - (BOOL)_shouldEnableURL:(id)arg1;
 - (BOOL)_shouldEnableURL:(id)arg1 isDirectoryURLHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_canChooseURL:(id)arg1;
-- (BOOL)_nonDelegateShouldEnableURL:(id)arg1 isDirectory:(BOOL)arg2;
-- (BOOL)_isFileTypeEnabledForURL:(id)arg1;
+- (BOOL)_nonDelegateShouldEnableURL:(id)arg1 isDirectory:(BOOL)arg2 pathExtension:(id)arg3 hfsType:(unsigned int)arg4 typeIdentifier:(id)arg5;
+- (BOOL)_isFileTypeEnabledForURL:(id)arg1 pathExtension:(id)arg2 hfsType:(unsigned int)arg3 typeIdentifier:(id)arg4;
 - (BOOL)_isEnabledItemWithExtensionProvider:(CDUnknownBlockType)arg1 HFSTypeProvider:(CDUnknownBlockType)arg2 UTIProvider:(CDUnknownBlockType)arg3;
 - (BOOL)_isDirectoryURL:(id)arg1;
 - (BOOL)_isFauxFilePackageURL:(id)arg1;

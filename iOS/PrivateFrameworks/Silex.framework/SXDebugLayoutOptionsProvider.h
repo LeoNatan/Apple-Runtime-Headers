@@ -15,12 +15,10 @@
     unsigned long long _viewingLocation;
     long long _bundleSubscriptionStatus;
     long long _channelSubscriptionStatus;
-    long long _ignoreDocumentMarginBehavior;
     NSHashTable *_observers;
 }
 
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
-@property(nonatomic) long long ignoreDocumentMarginBehavior; // @synthesize ignoreDocumentMarginBehavior=_ignoreDocumentMarginBehavior;
 @property(nonatomic) long long channelSubscriptionStatus; // @synthesize channelSubscriptionStatus=_channelSubscriptionStatus;
 @property(nonatomic) long long bundleSubscriptionStatus; // @synthesize bundleSubscriptionStatus=_bundleSubscriptionStatus;
 @property(nonatomic) unsigned long long viewingLocation; // @synthesize viewingLocation=_viewingLocation;
@@ -28,7 +26,6 @@
 - (void)notifyObservers;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (long long)overrideIgnoreDocumentMarginBehavior:(long long)arg1;
 - (long long)overrideChannelSubscriptionStatus:(long long)arg1;
 - (long long)overrideBundleSubscriptionStatus:(long long)arg1;
 - (unsigned long long)overrideViewingLocation:(unsigned long long)arg1;

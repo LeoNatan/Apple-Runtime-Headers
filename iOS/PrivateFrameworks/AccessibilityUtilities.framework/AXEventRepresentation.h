@@ -28,6 +28,7 @@
     unsigned int _taskPort;
     int _pid;
     unsigned int _contextId;
+    unsigned int _displayId;
     unsigned int _willUpdateMask;
     unsigned int _didUpdateMask;
     unsigned long long _time;
@@ -90,6 +91,7 @@
 @property(nonatomic) long long generationCount; // @synthesize generationCount=_generationCount;
 @property(nonatomic) _Bool isDisplayIntegrated; // @synthesize isDisplayIntegrated=_isDisplayIntegrated;
 @property(nonatomic) _Bool isBuiltIn; // @synthesize isBuiltIn=_isBuiltIn;
+@property(nonatomic) unsigned int displayId; // @synthesize displayId=_displayId;
 @property(nonatomic) unsigned int contextId; // @synthesize contextId=_contextId;
 @property(nonatomic) unsigned long long additionalFlags; // @synthesize additionalFlags=_additionalFlags;
 @property(nonatomic) long long scrollAmount; // @synthesize scrollAmount=_scrollAmount;

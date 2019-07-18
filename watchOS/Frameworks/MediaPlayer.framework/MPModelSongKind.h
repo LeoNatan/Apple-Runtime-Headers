@@ -14,6 +14,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)kindWithVariants:(unsigned int)arg1 options:(unsigned int)arg2;
++ (id)identityKind;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, nonatomic) unsigned int variants; // @synthesize variants=_variants;
 - (void)encodeWithCoder:(id)arg1;

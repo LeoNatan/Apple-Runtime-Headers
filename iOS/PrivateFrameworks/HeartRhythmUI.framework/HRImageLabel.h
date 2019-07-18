@@ -6,17 +6,21 @@
 
 #import <UIKit/UIView.h>
 
-@class NSLayoutConstraint, NSString, UIImage, UIImageView, UILabel;
+@class NSArray, NSLayoutConstraint, NSString, UIImage, UIImageView, UILabel;
 
 @interface HRImageLabel : UIView
 {
-    _Bool _centerImageToFirstLine;
     _Bool _boldText;
     UIImageView *_imageView;
     UILabel *_textLabel;
+    long long _imageAlignment;
+    double _imageLeadingSpacing;
+    double _imageTrailingSpacing;
     UIImage *_image;
     NSString *_text;
-    NSLayoutConstraint *_imageTextAlignmentConstraint;
+    NSLayoutConstraint *_imageLeadingConstraint;
+    NSLayoutConstraint *_imageTrailingConstraint;
+    NSArray *_imageTextAlignmentConstraints;
     long long _currentUserInterfaceStyle;
     CDUnknownBlockType _userInterfaceStyleChanged;
     struct CGSize _imageSize;
@@ -24,19 +28,24 @@
 
 @property(copy, nonatomic) CDUnknownBlockType userInterfaceStyleChanged; // @synthesize userInterfaceStyleChanged=_userInterfaceStyleChanged;
 @property(nonatomic) long long currentUserInterfaceStyle; // @synthesize currentUserInterfaceStyle=_currentUserInterfaceStyle;
-@property(retain, nonatomic) NSLayoutConstraint *imageTextAlignmentConstraint; // @synthesize imageTextAlignmentConstraint=_imageTextAlignmentConstraint;
+@property(retain, nonatomic) NSArray *imageTextAlignmentConstraints; // @synthesize imageTextAlignmentConstraints=_imageTextAlignmentConstraints;
+@property(retain, nonatomic) NSLayoutConstraint *imageTrailingConstraint; // @synthesize imageTrailingConstraint=_imageTrailingConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *imageLeadingConstraint; // @synthesize imageLeadingConstraint=_imageLeadingConstraint;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(nonatomic) double imageTrailingSpacing; // @synthesize imageTrailingSpacing=_imageTrailingSpacing;
+@property(nonatomic) double imageLeadingSpacing; // @synthesize imageLeadingSpacing=_imageLeadingSpacing;
 @property(nonatomic) _Bool boldText; // @synthesize boldText=_boldText;
-@property(nonatomic) _Bool centerImageToFirstLine; // @synthesize centerImageToFirstLine=_centerImageToFirstLine;
+@property(nonatomic) long long imageAlignment; // @synthesize imageAlignment=_imageAlignment;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
 - (id)_textLabelBoldFont;
 - (id)_textLabelFont;
 - (id)_textLabelFontStyle;
-- (void)_updateImageTextAlignmentConstraint;
+- (_Bool)_isTextTallerThanImage;
+- (void)_updateImageTextAlignmentConstraints;
 - (void)_updateTextLabelFont;
 - (void)_setUpConstraints;
 - (void)_setUpUI;

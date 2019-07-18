@@ -28,7 +28,7 @@
 - (void)ams_addClientIdentifierHeaderForClient:(id)arg1;
 - (void)ams_addCachePolicyHeader;
 - (void)ams_addCacheBusterParameter;
-- (void)ams_addBiometricsHeadersForOptions:(id)arg1;
+- (void)ams_addBiometricsHeadersForAccount:(id)arg1 options:(id)arg2;
 - (void)ams_addAuthKitHeaders;
 - (void)ams_addCookiesForAccounts:(id)arg1;
 - (void)ams_addAcceptLanguageHeader;

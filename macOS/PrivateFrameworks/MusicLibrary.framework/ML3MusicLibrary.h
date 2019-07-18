@@ -46,6 +46,7 @@
 + (id)assistantSyncDataChangedNotificationName;
 + (id)widthLimitedSetValuesQueue;
 + (BOOL)updateTrackIntegrityOnConnection:(id)arg1;
++ (void)removeOrphanedTracks;
 + (void)enumerateSortMapTablesUsingBlock:(CDUnknownBlockType)arg1;
 + (id)sectionIndexTitleForSectionHeader:(id)arg1;
 + (id)sectionIndexTitles;
@@ -155,7 +156,6 @@
 - (id)valueForDatabaseProperty:(id)arg1;
 - (void)removeItemsWithFamilyAccountID:(unsigned long long)arg1 purchaserAccountID:(unsigned long long)arg2 downloaderAccountID:(unsigned long long)arg3;
 - (void)removeOrphanedTracksOnlyInCaches:(BOOL)arg1;
-- (void)removeOrphanedTracks;
 - (void)removeTombstonesForDeletedItems;
 - (BOOL)cleanupArtworkWithOptions:(unsigned long long)arg1 usingConnection:(id)arg2;
 - (BOOL)cleanupArtworkWithOptions:(unsigned long long)arg1;

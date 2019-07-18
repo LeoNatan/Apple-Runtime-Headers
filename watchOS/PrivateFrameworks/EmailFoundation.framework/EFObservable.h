@@ -41,6 +41,7 @@
 - (id)multicast:(id)arg1;
 - (id)map:(CDUnknownBlockType)arg1;
 - (id)filter:(CDUnknownBlockType)arg1;
+- (id)skip:(unsigned int)arg1;
 - (id)take:(unsigned int)arg1;
 - (id)first;
 - (id)distinctUntilChanged;

@@ -6,27 +6,20 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <SpringBoard/SBInlineAppExposeContainerViewControllerDelegate-Protocol.h>
 #import <SpringBoard/SBMedusaDecoratedDeviceApplicationSceneViewControlling-Protocol.h>
 #import <SpringBoard/SBMedusaDecoratedDeviceApplicationSceneViewControlling_Internal-Protocol.h>
 #import <SpringBoard/SBSceneViewStatusBarAssertionObserver-Protocol.h>
-#import <SpringBoard/SBSwitcherContentViewControllerDataSource-Protocol.h>
-#import <SpringBoard/SBSwitcherContentViewControllerDelegate-Protocol.h>
 
-@class BSCornerRadiusConfiguration, MTLumaDodgePillSettings, MTMaterialView, NSArray, NSHashTable, NSMutableSet, NSString, SBApplicationBlurContentView, SBAsymmetricalCornerRadiusWrapperView, SBDeviceApplicationSceneHandle, SBDeviceApplicationSceneViewController, SBFluidSwitcherViewController, SBHomeGrabberView, SBInlineAppExposeLiveContentOverlayCoordinator, SBInlineAppExposeRootSwitcherModifier, SBNubView, SBSceneHandle, SBSceneViewStatusBarAssertion, SBWallpaperEffectView, UIDropInteraction, UIView;
+@class BSCornerRadiusConfiguration, MTLumaDodgePillSettings, NSHashTable, NSMutableSet, NSString, SBApplicationBlurContentView, SBAsymmetricalCornerRadiusWrapperView, SBDeviceApplicationSceneHandle, SBDeviceApplicationSceneViewController, SBHomeGrabberView, SBInlineAppExposeContainerViewController, SBNubView, SBSceneHandle, SBSceneViewStatusBarAssertion, UIDropInteraction, UIView;
 @protocol SBApplicationSceneViewControllingStatusBarDelegate, SBScenePlaceholderContentContext;
 
-@interface SBMedusaDecoratedDeviceApplicationSceneViewController : UIViewController <SBSwitcherContentViewControllerDelegate, SBSwitcherContentViewControllerDataSource, SBSceneViewStatusBarAssertionObserver, SBMedusaDecoratedDeviceApplicationSceneViewControlling_Internal, SBMedusaDecoratedDeviceApplicationSceneViewControlling>
+@interface SBMedusaDecoratedDeviceApplicationSceneViewController : UIViewController <SBSceneViewStatusBarAssertionObserver, SBInlineAppExposeContainerViewControllerDelegate, SBMedusaDecoratedDeviceApplicationSceneViewControlling_Internal, SBMedusaDecoratedDeviceApplicationSceneViewControlling>
 {
     SBDeviceApplicationSceneHandle *_deviceApplicationSceneHandle;
     SBDeviceApplicationSceneViewController *_deviceApplicationSceneViewController;
-    long long _layoutRole;
-    SBFluidSwitcherViewController *_inlineAppExposeViewController;
-    SBInlineAppExposeLiveContentOverlayCoordinator *_liveContentCoordinator;
-    SBInlineAppExposeRootSwitcherModifier *_inlineRootModifier;
-    NSArray *_appLayouts;
-    SBWallpaperEffectView *_inlineWallpaperView;
-    MTMaterialView *_inlineBackdropView;
     UIView *_inlineAppExposeContainerView;
+    SBInlineAppExposeContainerViewController *_inlineContainerViewController;
     _Bool _nubViewHidden;
     _Bool _nubViewHighlighted;
     UIView *_rimShadowView;
@@ -35,14 +28,12 @@
     UIView *_blurViewContainerView;
     SBNubView *_nubView;
     UIView *_darkenView;
-    UIView *_hitTestView;
     _Bool _isBlurred;
     _Bool _isTransitioningBlur;
     SBApplicationBlurContentView *_blurView;
     NSHashTable *_statusBarAssertions;
     SBSceneViewStatusBarAssertion *_inlineAppExposeStatusBarAssertion;
     NSMutableSet *_matchMoveAnimationRequiringReasons;
-    _Bool _didPerformInitialSetup;
     _Bool _clipsToBounds;
     double _shadowOpacity;
     double _shadowOffset;
@@ -71,45 +62,25 @@
 - (void)_setBlurContentView:(id)arg1;
 - (id)_blurContentView;
 @property(readonly, nonatomic) UIView *_blurViewContainerView;
-- (id)_inlineAppLayoutForDisplayItem:(id)arg1;
-- (struct CGRect)_frameForInlineAppExposeItemAspectFill:(_Bool)arg1 referenceSize:(struct CGSize)arg2 interfaceOrientation:(long long)arg3 scale:(inout double *)arg4;
-- (void)_updateLiveContentCoordinatorWithSceneViewController:(id)arg1 layoutRole:(long long)arg2;
-- (void)_updateDeviceApplicationSceneViewControllerForSceneHandle:(id)arg1;
-- (void)_addAppLayoutToFront:(id)arg1;
-- (id)_liveSceneIDsExcludingCurrentRoleMatchingBundleIdentifier:(id)arg1 forTransitionContext:(id)arg2;
-- (id)_unfilteredAppLayoutsForSceneHandle:(id)arg1 outActiveAppLayout:(inout id *)arg2;
+- (void)_handleNubTapGestureRecognizerAction:(id)arg1;
 @property(retain, nonatomic) MTLumaDodgePillSettings *homeGrabberPillSettings;
 @property(nonatomic) long long homeGrabberDisplayMode;
-- (_Bool)nubViewContainsPoint:(struct CGPoint)arg1;
 - (double)effectiveCornerRadius;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)loadView;
 - (void)viewWillLayoutSubviews;
-- (_Bool)switcherContentController:(id)arg1 shouldMorphToPiPForTransitionContext:(id)arg2;
-- (id)switcherContentController:(id)arg1 transitionEventForContext:(id)arg2 identifier:(id)arg3 phase:(unsigned long long)arg4 animated:(_Bool)arg5;
-- (id)switcherContentController:(id)arg1 transitionEventForLayoutState:(id)arg2 identifier:(id)arg3 phase:(unsigned long long)arg4 animated:(_Bool)arg5;
-- (long long)backdropInterfaceStyleForContentController:(id)arg1;
-- (struct CGRect)frameForInlineAppExposeItemAspectFill:(_Bool)arg1;
-- (long long)sbActiveInterfaceOrientation;
-- (long long)switcherInterfaceOrientationForContentController:(id)arg1;
-- (long long)shadowStyleForSwitcherContentController:(id)arg1;
-- (id)appLayoutsForSwitcherContentController:(id)arg1;
-- (void)switcherContentController:(id)arg1 setContainerStatusBarHidden:(_Bool)arg2 animationDuration:(double)arg3;
-- (void)switcherContentController:(id)arg1 setBackdropBlurType:(long long)arg2;
-- (void)switcherContentController:(id)arg1 handlePlusButtonActionForBundleIdentifier:(id)arg2;
-- (void)switcherContentController:(id)arg1 deletedAppLayout:(id)arg2 forReason:(long long)arg3;
-- (void)switcherContentController:(id)arg1 setContentOrientation:(long long)arg2;
-- (void)switcherContentController:(id)arg1 performTransitionWithRequest:(id)arg2 gestureInitiated:(_Bool)arg3;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionWillEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidBeginWithTransitionContext:(id)arg2;
+- (void)inlineContainerViewController:(id)arg1 setStatusBarHidden:(_Bool)arg2;
 - (id)animationControllerForTransitionRequest:(id)arg1;
 @property(nonatomic, getter=isNubViewHighlighted) _Bool nubViewHighlighted;
 @property(nonatomic, getter=isNubViewHidden) _Bool nubViewHidden;
 - (void)_updateNubViewAlpha;
 - (void)statusBarAssertionDidInvalidate:(id)arg1;
 - (void)statusBarAssertionDidUpdate:(id)arg1;
-- (id)statusBarAssertionWithStatusBarHidden:(_Bool)arg1 nubViewHidden:(_Bool)arg2 atLevel:(unsigned long long)arg3;
+- (id)statusBarAssertionWithStatusBarHidden:(_Bool)arg1 nubViewHidden:(long long)arg2 atLevel:(unsigned long long)arg3;
 - (id)statusBarAssertionWithStatusBarHidden:(_Bool)arg1 atLevel:(unsigned long long)arg2;
 @property(nonatomic) __weak id <SBApplicationSceneViewControllingStatusBarDelegate> applicationSceneStatusBarDelegate;
 @property(readonly, nonatomic) long long overrideStatusBarStyle;
@@ -128,11 +99,12 @@
 @property(readonly, nonatomic) long long displayMode;
 @property(readonly, nonatomic) SBSceneHandle *sceneHandle;
 - (id)initWithCoder:(id)arg1;
-- (void)updateDeviceApplicationSceneHandle:(id)arg1 layoutRole:(long long)arg2;
+@property(nonatomic) long long layoutRole;
+- (void)setInlineAppExposeContainerViewController:(id)arg1;
 - (void)blurApplicationContent:(_Bool)arg1 withAnimationFactory:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic, getter=isBlurred) _Bool blurred;
 - (void)invalidate;
-- (id)initWithDeviceApplicationSceneHandle:(id)arg1 layoutRole:(long long)arg2;
+- (id)initWithDeviceApplicationSceneHandle:(id)arg1 inlineContainerViewController:(id)arg2 layoutRole:(long long)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

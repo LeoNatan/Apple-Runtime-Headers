@@ -24,6 +24,7 @@
     NSString *_utterance;
     NSString *_voiceAssetKey;
     NSString *_voiceResourceAssetKey;
+    NSString *_audioOutputRoute;
     long long _requestCreatedTimestamp;
     long long _eagerRequestCreatedTimeStampDiffs;
     long long _synthesisBeginTimestamp;
@@ -60,6 +61,7 @@
 @property long long synthesisBeginTimestamp; // @synthesize synthesisBeginTimestamp=_synthesisBeginTimestamp;
 @property long long eagerRequestCreatedTimeStampDiffs; // @synthesize eagerRequestCreatedTimeStampDiffs=_eagerRequestCreatedTimeStampDiffs;
 @property long long requestCreatedTimestamp; // @synthesize requestCreatedTimestamp=_requestCreatedTimestamp;
+@property(copy) NSString *audioOutputRoute; // @synthesize audioOutputRoute=_audioOutputRoute;
 @property(copy) NSString *voiceResourceAssetKey; // @synthesize voiceResourceAssetKey=_voiceResourceAssetKey;
 @property(copy) NSString *voiceAssetKey; // @synthesize voiceAssetKey=_voiceAssetKey;
 @property(copy) NSString *utterance; // @synthesize utterance=_utterance;

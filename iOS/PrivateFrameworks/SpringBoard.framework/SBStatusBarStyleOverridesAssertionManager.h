@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <SpringBoard/BSDescriptionProviding-Protocol.h>
 #import <SpringBoard/NSXPCListenerDelegate-Protocol.h>
 #import <SpringBoard/SBStatusBarStyleOverridesAssertionServer-Protocol.h>
 
 @class FBWorkspaceEventQueue, NSMapTable, NSMutableArray, NSString, NSXPCListener, SBStatusBarTapManager;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
-@interface SBStatusBarStyleOverridesAssertionManager : NSObject <NSXPCListenerDelegate, SBStatusBarStyleOverridesAssertionServer>
+@interface SBStatusBarStyleOverridesAssertionManager : NSObject <NSXPCListenerDelegate, SBStatusBarStyleOverridesAssertionServer, BSDescriptionProviding>
 {
     NSMutableArray *_runningUpdateTransactions;
     int _statusBarStyleOverrides;
@@ -53,6 +54,11 @@
 - (id)_internalQueue_coordinatorClientForConnection:(id)arg1;
 - (id)_internalQueue_coordinatorClientForStyleOverrides:(int)arg1;
 - (_Bool)_verifyCoordinatorEntitlementForStyleOverride:(id)arg1 onConnection:(id)arg2;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+@property(readonly, copy) NSString *description;
 - (void)setStatusString:(id)arg1 forAssertionWithIdentifier:(id)arg2;
 - (void)deactivateStatusBarStyleOverridesAssertionsWithIdentifiers:(id)arg1;
 - (void)activateStatusBarStyleOverridesAssertions:(id)arg1 reply:(CDUnknownBlockType)arg2;
@@ -63,7 +69,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

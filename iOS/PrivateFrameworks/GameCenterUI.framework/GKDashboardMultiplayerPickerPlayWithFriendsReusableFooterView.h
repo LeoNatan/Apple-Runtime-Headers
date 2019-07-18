@@ -6,15 +6,19 @@
 
 #import <UIKit/UICollectionReusableView.h>
 
-@class UIButton, UIView;
+@class UIButton, UIImageView, UIView;
 
 @interface GKDashboardMultiplayerPickerPlayWithFriendsReusableFooterView : UICollectionReusableView
 {
     CDUnknownBlockType _manageInSettingsHandler;
     UIView *_backgroundView;
     UIButton *_manageInSettingsButton;
+    UIImageView *_chevronLeftImage;
+    UIImageView *_chevronRightImage;
 }
 
+@property(retain, nonatomic) UIImageView *chevronRightImage; // @synthesize chevronRightImage=_chevronRightImage;
+@property(retain, nonatomic) UIImageView *chevronLeftImage; // @synthesize chevronLeftImage=_chevronLeftImage;
 @property(retain, nonatomic) UIButton *manageInSettingsButton; // @synthesize manageInSettingsButton=_manageInSettingsButton;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(copy, nonatomic) CDUnknownBlockType manageInSettingsHandler; // @synthesize manageInSettingsHandler=_manageInSettingsHandler;

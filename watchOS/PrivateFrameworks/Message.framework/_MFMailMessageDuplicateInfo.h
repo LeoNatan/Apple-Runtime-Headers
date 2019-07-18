@@ -6,23 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableSet;
+@class MFMailboxProvider, NSMutableArray, NSMutableSet;
 
 @interface _MFMailMessageDuplicateInfo : NSObject
 {
-    NSMutableSet *_mailboxObjectIDs;
+    MFMailboxProvider *_mailboxProvider;
+    NSMutableSet *_mailboxes;
     NSMutableArray *_flags;
     NSMutableArray *_dates;
 }
 
 @property(retain, nonatomic) NSMutableArray *dates; // @synthesize dates=_dates;
 @property(retain, nonatomic) NSMutableArray *flags; // @synthesize flags=_flags;
-@property(retain, nonatomic) NSMutableSet *mailboxObjectIDs; // @synthesize mailboxObjectIDs=_mailboxObjectIDs;
+@property(retain, nonatomic) NSMutableSet *mailboxes; // @synthesize mailboxes=_mailboxes;
+@property(retain, nonatomic) MFMailboxProvider *mailboxProvider; // @synthesize mailboxProvider=_mailboxProvider;
 - (void).cxx_destruct;
 - (id)combinedDate;
 - (id)combinedMessageFlags;
-- (id)combinedMailboxObjectIDs;
+- (id)combinedMailboxes;
 - (void)addMessage:(id)arg1;
+- (id)initWithMailboxProvider:(id)arg1;
 
 @end
 

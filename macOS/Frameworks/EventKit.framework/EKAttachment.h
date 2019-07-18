@@ -32,7 +32,6 @@
 @property(readonly, retain) NSString *filenameSuggestedByServer; // @synthesize filenameSuggestedByServer;
 @property(readonly, retain) NSString *contentType; // @synthesize contentType;
 - (void).cxx_destruct;
-- (BOOL)isAttachmentLink;
 @property(retain) NSString *attachmentIDOnServer;
 @property(readonly, retain) NSURL *urlOnServer;
 @property(retain) NSString *contentTypeFromServer;

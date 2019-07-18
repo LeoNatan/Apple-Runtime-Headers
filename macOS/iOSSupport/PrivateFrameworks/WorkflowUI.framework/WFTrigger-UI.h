@@ -8,7 +8,6 @@
 
 @interface WFTrigger (UI)
 + (id)triggerTypeIcon;
-+ (id)triggerTypeIconName;
 - (Class)viewControllerClassForConfiguration;
 @end
 

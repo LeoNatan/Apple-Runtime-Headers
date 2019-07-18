@@ -13,8 +13,10 @@ __attribute__((visibility("hidden")))
 {
     NSString *_username;
     VSOptional *_authenticationToken;
+    NSString *_appBundleIdentifier;
 }
 
+@property(copy, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
 @property(retain, nonatomic) VSOptional *authenticationToken; // @synthesize authenticationToken=_authenticationToken;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 - (void).cxx_destruct;

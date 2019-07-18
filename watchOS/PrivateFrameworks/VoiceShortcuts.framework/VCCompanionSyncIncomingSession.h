@@ -10,7 +10,7 @@
 {
 }
 
-+ (int)sessionType;
++ (int)direction;
 - (void)resetDataStoreForSyncSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)syncSession:(id)arg1 applyChanges:(id)arg2 completion:(CDUnknownBlockType)arg3;
 

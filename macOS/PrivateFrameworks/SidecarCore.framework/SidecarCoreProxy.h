@@ -21,8 +21,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <SidecarPresenterDelegate> presenterDelegate; // @synthesize presenterDelegate=_presenterDelegate;
 @property(retain, nonatomic) id <SidecarSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)relayTerminateService;
 - (void)relayPresenterLaunchService:(id)arg1 results:(CDUnknownBlockType)arg2;
-- (void)relaySession:(long long)arg1 receivedOPACKData:(id)arg2;
+- (void)relaySession:(long long)arg1 receivedOPACKData:(id)arg2 transport:(long long)arg3;
 - (void)relaySession:(long long)arg1 invalidatedWithError:(id)arg2;
 
 @end

@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     struct Spring<double, 1, mdc::SpringType::Angular> _panSpring;
     Unit_3d259e8a _heading;
     Unit_3d259e8a _pitch;
+    _Bool _restrictWidestFieldOfView;
     Unit_3d259e8a _widestFieldOfView;
     Coordinate3D_bc242218 _rigPosition;
     CameraFrame_406dbd31 _previousCameraFrame;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (double)zoomLevelAdjustmentForTileSize:(long long)arg1;
-- (void)_preloadPointWithPriority:(const struct PointView *)arg1 viewList:(vector_b54e5eb4 *)arg2 priority:(unsigned int)arg3;
 - (id)viewportInfo;
 - (double)topDownMinimumZoomLevelForTileSize:(long long)arg1;
 - (_Bool)restoreViewportFromInfo:(id)arg1;
@@ -60,11 +60,12 @@ __attribute__((visibility("hidden")))
 - (void)updatePitchWithFocusPoint:(struct CGPoint)arg1 translation:(double)arg2;
 - (void)startPitchingWithFocusPoint:(struct CGPoint)arg1;
 - (void)zoomAnimated:(Unit_3d259e8a)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)zoomAnimatedWithDuration:(Unit_3d259e8a)arg1 duration:(float)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)stopPinchingWithFocusPoint:(struct CGPoint)arg1;
 - (void)updatePinchWithFocusPoint:(struct CGPoint)arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
 - (void)startPinchingWithFocusPoint:(struct CGPoint)arg1;
 - (void)setWidestFieldOfView:(Unit_3d259e8a)arg1;
-- (double)_zoomRubberBandScaleForScale:(double)arg1;
+- (double)_zoomRubberBandFov:(double)arg1;
 - (void)stopPanningAtPoint:(struct CGPoint)arg1;
 - (void)willStopPanningAtPoint:(struct CGPoint)arg1 withVelocity:(struct CGPoint)arg2;
 - (void)updatePanWithTranslation:(struct CGPoint)arg1;
@@ -72,13 +73,14 @@ __attribute__((visibility("hidden")))
 - (Unit_3d259e8a)_horizontalFieldOfView:(Unit_3d259e8a)arg1;
 - (void)startPanningAtPoint:(struct CGPoint)arg1 panAtStartPoint:(_Bool)arg2;
 - (_Bool)tapAtPoint:(struct CGPoint)arg1;
-- (void)animatePath:(vector_e91c9c3b *)arg1 withTarget:(const Geocentric_d8fde6f2 *)arg2 lookAtTarget:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)animatePath:(vector_e91c9c3b *)arg1 withTarget:(const Geocentric_d8fde6f2 *)arg2 lookAtTarget:(_Bool)arg3 constantLod:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (_Bool)isAnimationsRunning;
 - (_Bool)cancelPendingMove;
 - (void)stopAnimations;
 - (void)setCurrentSegment:(struct PointSegment *)arg1;
-- (_Bool)moveToPoint:(const struct CollectionPoint *)arg1 withHeading:(Unit_3d259e8a)arg2 animated:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (_Bool)moveToPoint:(const struct CollectionPoint *)arg1 withHeading:(Unit_3d259e8a)arg2 withPitch:(Unit_3d259e8a)arg3 animated:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)selectLabelMarker:(const shared_ptr_2d33c5e4 *)arg1 completion:(CDUnknownBlockType)arg2;
+- (Matrix_8746f91e)screenPointWithOffset:(struct CGPoint)arg1;
 - (void)updateCurrentPointView:(_Bool)arg1;
 - (const struct CollectionPoint *)currentPoint;
 - (void)setCurrentPoint:(const struct CollectionPoint *)arg1;

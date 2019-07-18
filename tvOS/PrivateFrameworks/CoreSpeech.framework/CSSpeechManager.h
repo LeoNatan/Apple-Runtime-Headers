@@ -7,16 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <CoreSpeech/CSActivationEventNotifierDelegate-Protocol.h>
+#import <CoreSpeech/CSAudioProviderDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioRecorderDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioServerCrashMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSSiriEnabledMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSStateMachineDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerAssetHandlerDelegate-Protocol.h>
+#import <CoreSpeech/CSVoiceTriggerXPCServiceDelegate-Protocol.h>
 
-@class CSAudioRecorder, CSInvalidSATEntriesCleaner, CSOpportuneSpeakListnerTestService, CSSmartSiriVolume, CSSpIdImplicitTraining, NSMutableDictionary, NSString;
+@class CSAudioRecorder, CSOpportuneSpeakListnerTestService, CSSmartSiriVolume, CSSpIdImplicitTraining, NSMutableDictionary, NSString;
 @protocol CSSmartSiriVolumeDelegate, CSSpeechManagerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
-@interface CSSpeechManager : NSObject <CSStateMachineDelegate, CSSiriEnabledMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSVoiceTriggerAssetHandlerDelegate, CSActivationEventNotifierDelegate, CSAudioRecorderDelegate>
+@interface CSSpeechManager : NSObject <CSStateMachineDelegate, CSSiriEnabledMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSVoiceTriggerAssetHandlerDelegate, CSActivationEventNotifierDelegate, CSAudioRecorderDelegate, CSVoiceTriggerXPCServiceDelegate, CSAudioProviderDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
     CSSmartSiriVolume *_smartSiriVolume;
@@ -26,7 +28,6 @@
     id <CSSpeechManagerDelegate> _clientController;
     id <CSSmartSiriVolumeDelegate> _volumeClientController;
     CSSpIdImplicitTraining *_voiceTriggerImplicitTraining;
-    CSInvalidSATEntriesCleaner *_voiceTriggerSATCleaner;
     NSObject<OS_dispatch_source> *_clearLoggingFileTimer;
     long long _clearLoggingFileTimerCount;
     CSOpportuneSpeakListnerTestService *_opportuneSpeakListnerTestService;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) CSOpportuneSpeakListnerTestService *opportuneSpeakListnerTestService; // @synthesize opportuneSpeakListnerTestService=_opportuneSpeakListnerTestService;
 @property(nonatomic) long long clearLoggingFileTimerCount; // @synthesize clearLoggingFileTimerCount=_clearLoggingFileTimerCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *clearLoggingFileTimer; // @synthesize clearLoggingFileTimer=_clearLoggingFileTimer;
-@property(retain, nonatomic) CSInvalidSATEntriesCleaner *voiceTriggerSATCleaner; // @synthesize voiceTriggerSATCleaner=_voiceTriggerSATCleaner;
 @property(retain, nonatomic) CSSpIdImplicitTraining *voiceTriggerImplicitTraining; // @synthesize voiceTriggerImplicitTraining=_voiceTriggerImplicitTraining;
 @property(nonatomic) __weak id <CSSmartSiriVolumeDelegate> volumeClientController; // @synthesize volumeClientController=_volumeClientController;
 @property(nonatomic) __weak id <CSSpeechManagerDelegate> clientController; // @synthesize clientController=_clientController;
@@ -47,6 +47,7 @@
 @property(readonly, nonatomic) CSSmartSiriVolume *smartSiriVolume; // @synthesize smartSiriVolume=_smartSiriVolume;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
 - (void)_startClearLoggingFilesTimer;
 - (void)_createClearLoggingFileTimer;
 - (void)_reinitializeSmartSiriVolumeWithAsset:(id)arg1;
@@ -54,7 +55,9 @@
 - (void)audioRecorderWillBeDestroyed:(id)arg1;
 - (void)audioRecorderBufferAvailable:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 buffer:(id)arg3;
 - (void)audioRecorderBufferAvailable:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 buffer:(id)arg3 remoteVAD:(id)arg4 atTime:(unsigned long long)arg5;
+- (void)audioProviderInvalidated:(id)arg1 streamHandleId:(unsigned long long)arg2;
 - (id)_getAudioRecorderWithError:(id *)arg1;
+- (id)audioProviderWithStreamID:(unsigned long long)arg1;
 - (id)audioProviderWithContext:(id)arg1 error:(id *)arg2;
 - (id)audioProviderWithUUID:(id)arg1;
 - (void)registerVolumeController:(id)arg1;

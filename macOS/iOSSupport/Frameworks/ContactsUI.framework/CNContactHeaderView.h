@@ -32,7 +32,7 @@
     CNContactPhotoView *_photoView;
 }
 
-+ (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(BOOL)arg2 shouldAllowImageDrops:(BOOL)arg3;
++ (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(BOOL)arg2 shouldAllowImageDrops:(BOOL)arg3 monogramOnly:(BOOL)arg4;
 + (struct CGSize)defaultPhotoSize;
 + (BOOL)requiresConstraintBasedLayout;
 + (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(BOOL)arg1;
@@ -76,7 +76,7 @@
 - (double)safeAreaTop;
 - (id)contactStyle;
 - (void)dealloc;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 monogrammerStyle:(long long)arg3 shouldAllowTakePhotoAction:(BOOL)arg4 shouldAllowImageDrops:(BOOL)arg5 delegate:(id)arg6;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 monogrammerStyle:(long long)arg3 shouldAllowTakePhotoAction:(BOOL)arg4 shouldAllowImageDrops:(BOOL)arg5 monogramOnly:(BOOL)arg6 delegate:(id)arg7;
 - (id)descriptorForRequiredKeys;
 
 // Remaining properties

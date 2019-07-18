@@ -35,6 +35,8 @@
     NSNumber *_enableNotesUserOverridableNum;
     NSNumber *_useSSL;
     NSNumber *_useOAuth;
+    NSString *_OAuthSignInURL;
+    NSString *_OAuthTokenRequestURL;
     NSDictionary *_communicationServiceRules;
     NSNumber *_syncDefaultFoldersOnlyNum;
 }
@@ -44,6 +46,8 @@
 + (id)typeStrings;
 @property(readonly, nonatomic) NSNumber *syncDefaultFoldersOnlyNum; // @synthesize syncDefaultFoldersOnlyNum=_syncDefaultFoldersOnlyNum;
 @property(readonly, nonatomic) NSDictionary *communicationServiceRules; // @synthesize communicationServiceRules=_communicationServiceRules;
+@property(retain, nonatomic) NSString *OAuthTokenRequestURL; // @synthesize OAuthTokenRequestURL=_OAuthTokenRequestURL;
+@property(retain, nonatomic) NSString *OAuthSignInURL; // @synthesize OAuthSignInURL=_OAuthSignInURL;
 @property(retain, nonatomic) NSNumber *useOAuth; // @synthesize useOAuth=_useOAuth;
 @property(retain, nonatomic) NSNumber *useSSL; // @synthesize useSSL=_useSSL;
 @property(nonatomic) _Bool syncDefaultFoldersOnly; // @synthesize syncDefaultFoldersOnly=_syncDefaultFoldersOnly;

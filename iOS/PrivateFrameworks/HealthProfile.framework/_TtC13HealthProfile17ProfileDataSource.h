@@ -11,7 +11,7 @@
     // Error parsing type: , name: $__lazy_storage_$_profileNameSection
     // Error parsing type: , name: $__lazy_storage_$_medicalDetailSection
     // Error parsing type: , name: $__lazy_storage_$_meContactItem
-    // Error parsing type: , name: $__lazy_storage_$_medicalIDItem
+    // Error parsing type: , name: medicalIDItem
 }
 
 - (void)didChangeName:(id)arg1;

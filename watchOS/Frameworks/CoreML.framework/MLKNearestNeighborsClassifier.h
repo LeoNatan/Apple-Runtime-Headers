@@ -59,7 +59,7 @@
 - (void)resumeUpdateWithParameters:(id)arg1;
 - (void)cancelUpdate;
 - (void)resumeUpdate;
-- (void)updateModelWithData:(id)arg1 parameters:(id)arg2;
+- (void)updateModelWithData:(id)arg1;
 - (void)setUpdateProgressHandlers:(id)arg1 dispatchQueue:(id)arg2;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (void)extractNearestNeighborLabels:(id *)arg1 distances:(id *)arg2 from:(vector_8999e6c6)arg3;

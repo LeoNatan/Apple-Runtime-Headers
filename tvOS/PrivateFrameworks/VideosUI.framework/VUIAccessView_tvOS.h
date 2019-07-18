@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     UILabel *_titleLabel;
     UIStackView *_logoStack;
     UILabel *_bodyLabel;
+    UIStackView *_seeAllButtonStack;
     UIStackView *_buttonStack;
     UIButton *_allowButton;
     UIButton *_disallowButton;
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)_buttonWithTitleForTV:(id)arg1 textStyle:(id)arg2;
 - (id)_buildButtonStack;
+- (id)_buildSeeAllButtonStack;
 - (id)_imageViewForIndex:(unsigned long long)arg1;
 - (id)_buildLogoStack;
 - (id)_buildCarousel;

@@ -7,6 +7,6 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (PlatterKitAdditions)
-- (id)pl_alphaOnlyImageForMask;
++ (id)pl_resizableShadowTemplateImageWithAttributes:(CDStruct_b48b9fb5)arg1 maskCornerRadius:(double)arg2;
 @end
 

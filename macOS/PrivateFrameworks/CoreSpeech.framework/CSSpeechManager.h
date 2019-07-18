@@ -7,16 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <CoreSpeech/CSActivationEventNotifierDelegate-Protocol.h>
+#import <CoreSpeech/CSAudioProviderDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioRecorderDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioServerCrashMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSSiriEnabledMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSStateMachineDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerAssetHandlerDelegate-Protocol.h>
+#import <CoreSpeech/CSVoiceTriggerXPCServiceDelegate-Protocol.h>
 
-@class CSAudioRecorder, CSBuiltInVoiceTrigger, CSInvalidSATEntriesCleaner, CSKeywordDetector, CSMyriadPHash, CSMyriadSelfTriggerCoordinator, CSOpportuneSpeakListnerTestService, CSSelfTriggerDetector, CSSmartSiriVolume, CSSpIdImplicitTraining, CSVoiceProfileRetrainManager, CSVoiceTriggerEventNotifier, CSVoiceTriggerFidesClient, CSVoiceTriggerFileLogger, CSVoiceTriggerFirstPassHearst, CSVoiceTriggerFirstPassJarvis, CSVoiceTriggerSecondPass, NSMutableDictionary, NSString;
+@class CSAudioRecorder, CSBuiltInVoiceTrigger, CSKeywordDetector, CSMyriadPHash, CSMyriadSelfTriggerCoordinator, CSOpportuneSpeakListnerTestService, CSSelfTriggerDetector, CSSmartSiriVolume, CSSpIdImplicitTraining, CSVoiceProfileRetrainManager, CSVoiceTriggerEventNotifier, CSVoiceTriggerFidesClient, CSVoiceTriggerFileLogger, CSVoiceTriggerFirstPassHearst, CSVoiceTriggerFirstPassJarvis, NSMutableDictionary, NSString;
 @protocol CSSmartSiriVolumeDelegate, CSSpeechManagerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
-@interface CSSpeechManager : NSObject <CSStateMachineDelegate, CSSiriEnabledMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSVoiceTriggerAssetHandlerDelegate, CSActivationEventNotifierDelegate, CSAudioRecorderDelegate>
+@interface CSSpeechManager : NSObject <CSStateMachineDelegate, CSSiriEnabledMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSVoiceTriggerAssetHandlerDelegate, CSActivationEventNotifierDelegate, CSAudioRecorderDelegate, CSVoiceTriggerXPCServiceDelegate, CSAudioProviderDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
     CSSmartSiriVolume *_smartSiriVolume;
@@ -25,8 +27,8 @@
     NSMutableDictionary *_audioProviders;
     id <CSSpeechManagerDelegate> _clientController;
     id <CSSmartSiriVolumeDelegate> _volumeClientController;
+    NSObject<OS_dispatch_queue> *_voiceTriggerQueue;
     CSBuiltInVoiceTrigger *_voiceTrigger;
-    CSVoiceTriggerSecondPass *_voiceTriggerSecondPass;
     CSVoiceTriggerEventNotifier *_voiceTriggerEventNotifier;
     CSVoiceTriggerFileLogger *_voiceTriggerFileLogger;
     CSSelfTriggerDetector *_selfTriggerDetector;
@@ -38,7 +40,6 @@
     CSVoiceTriggerFirstPassHearst *_voiceTriggerFirstPassHearst;
     CSVoiceProfileRetrainManager *_voiceTriggerRetrainer;
     CSSpIdImplicitTraining *_voiceTriggerImplicitTraining;
-    CSInvalidSATEntriesCleaner *_voiceTriggerSATCleaner;
     NSObject<OS_dispatch_source> *_clearLoggingFileTimer;
     long long _clearLoggingFileTimerCount;
     CSOpportuneSpeakListnerTestService *_opportuneSpeakListnerTestService;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) CSOpportuneSpeakListnerTestService *opportuneSpeakListnerTestService; // @synthesize opportuneSpeakListnerTestService=_opportuneSpeakListnerTestService;
 @property(nonatomic) long long clearLoggingFileTimerCount; // @synthesize clearLoggingFileTimerCount=_clearLoggingFileTimerCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *clearLoggingFileTimer; // @synthesize clearLoggingFileTimer=_clearLoggingFileTimer;
-@property(retain, nonatomic) CSInvalidSATEntriesCleaner *voiceTriggerSATCleaner; // @synthesize voiceTriggerSATCleaner=_voiceTriggerSATCleaner;
 @property(retain, nonatomic) CSSpIdImplicitTraining *voiceTriggerImplicitTraining; // @synthesize voiceTriggerImplicitTraining=_voiceTriggerImplicitTraining;
 @property(retain, nonatomic) CSVoiceProfileRetrainManager *voiceTriggerRetrainer; // @synthesize voiceTriggerRetrainer=_voiceTriggerRetrainer;
 @property(retain, nonatomic) CSVoiceTriggerFirstPassHearst *voiceTriggerFirstPassHearst; // @synthesize voiceTriggerFirstPassHearst=_voiceTriggerFirstPassHearst;
@@ -61,8 +61,8 @@
 @property(retain, nonatomic) CSSelfTriggerDetector *selfTriggerDetector; // @synthesize selfTriggerDetector=_selfTriggerDetector;
 @property(retain, nonatomic) CSVoiceTriggerFileLogger *voiceTriggerFileLogger; // @synthesize voiceTriggerFileLogger=_voiceTriggerFileLogger;
 @property(retain, nonatomic) CSVoiceTriggerEventNotifier *voiceTriggerEventNotifier; // @synthesize voiceTriggerEventNotifier=_voiceTriggerEventNotifier;
-@property(retain, nonatomic) CSVoiceTriggerSecondPass *voiceTriggerSecondPass; // @synthesize voiceTriggerSecondPass=_voiceTriggerSecondPass;
 @property(retain, nonatomic) CSBuiltInVoiceTrigger *voiceTrigger; // @synthesize voiceTrigger=_voiceTrigger;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *voiceTriggerQueue; // @synthesize voiceTriggerQueue=_voiceTriggerQueue;
 @property(nonatomic) __weak id <CSSmartSiriVolumeDelegate> volumeClientController; // @synthesize volumeClientController=_volumeClientController;
 @property(nonatomic) __weak id <CSSpeechManagerDelegate> clientController; // @synthesize clientController=_clientController;
 @property(retain, nonatomic) NSMutableDictionary *audioProviders; // @synthesize audioProviders=_audioProviders;
@@ -72,6 +72,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
+- (void)voiceTriggerXPCService:(id)arg1 setPhraseSpotterBypassing:(BOOL)arg2;
 - (void)_teardownForBluetoothDevice;
 - (void)_prepareForBluetoothDeviceWithDeviceType:(unsigned long long)arg1 asset:(id)arg2;
 - (void)_setupForBluetoothDeviceIfNeededWithDeviceType:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
@@ -87,7 +88,9 @@
 - (void)audioRecorderWillBeDestroyed:(id)arg1;
 - (void)audioRecorderBufferAvailable:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 buffer:(id)arg3;
 - (void)audioRecorderBufferAvailable:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 buffer:(id)arg3 remoteVAD:(id)arg4 atTime:(unsigned long long)arg5;
+- (void)audioProviderInvalidated:(id)arg1 streamHandleId:(unsigned long long)arg2;
 - (id)_getAudioRecorderWithError:(id *)arg1;
+- (id)audioProviderWithStreamID:(unsigned long long)arg1;
 - (id)audioProviderWithContext:(id)arg1 error:(id *)arg2;
 - (id)audioProviderWithUUID:(id)arg1;
 - (void)registerVolumeController:(id)arg1;

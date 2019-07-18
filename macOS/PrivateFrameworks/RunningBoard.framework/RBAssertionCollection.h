@@ -24,6 +24,7 @@
 - (BOOL)hasResolvedAssertion:(id)arg1;
 - (void)noteResolvedAssertion:(id)arg1;
 - (unsigned long long)assertionCountForOriginator:(id)arg1;
+- (BOOL)hasAssertionsForOriginator:(id)arg1 exceedingCount:(unsigned long long)arg2;
 - (unsigned long long)assertionCountForTargetProcessIdentity:(id)arg1;
 - (BOOL)hasAssertionsForOriginator:(id)arg1;
 - (BOOL)hasAssertion:(id)arg1;

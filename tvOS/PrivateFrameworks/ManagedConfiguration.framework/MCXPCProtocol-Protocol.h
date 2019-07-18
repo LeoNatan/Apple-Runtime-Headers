@@ -9,6 +9,7 @@
 @class NSArray, NSData, NSDate, NSDictionary, NSString;
 
 @protocol MCXPCProtocol <NSObject>
+- (void)managingOrganizationInformationWithCompletion:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)createMDMUnlockTokenIfNeededWithPasscode:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)isPasscodeCompliantWithNamedPolicy:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)mayShareToAirDropForOriginatingAppBundleID:(NSString *)arg1 originatingAccountIsManaged:(_Bool)arg2 completion:(void (^)(_Bool, NSError *))arg3;
@@ -19,7 +20,7 @@
 - (void)recomputeProfileRestrictionsWithCompletionBlock:(void (^)(NSError *))arg1;
 - (void)validateAppBundleIDs:(NSArray *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)setupAssistantDidFinishCompletion:(void (^)(NSError *))arg1;
-- (void)loadMailAccountsWithFilteringEnabled:(_Bool)arg1 sourceAccountManagement:(int)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
+- (void)hasMailAccountsWithFilteringEnabled:(_Bool)arg1 sourceAccountManagement:(int)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)allowedKeyboardBundleIDsAfterApplyingFilterToBundleIDs:(NSArray *)arg1 hostAppBundleID:(NSString *)arg2 accountIsManaged:(_Bool)arg3 completion:(void (^)(NSArray *))arg4;
 - (void)unstashWhitelistURLStringsWithCompletion:(void (^)(NSError *))arg1;
 - (void)stashWhitelistURLStringsWithCompletion:(void (^)(NSError *))arg1;
@@ -67,7 +68,6 @@
 - (void)updateProfileIdentifier:(NSString *)arg1 interactive:(_Bool)arg2 completion:(void (^)(NSString *, NSError *))arg3;
 - (void)popProvisioningProfileFromHeadOfInstallationQueueWithCompletion:(void (^)(NSData *, NSError *))arg1;
 - (void)peekProfileDataFromPurgatoryForDeviceType:(unsigned long long)arg1 withCompletion:(void (^)(NSData *, NSError *))arg2;
-- (void)popProfileDataFromPurgatoryForDeviceType:(unsigned long long)arg1 withCompletion:(void (^)(NSData *, NSError *))arg2;
 - (void)popProfileDataFromHeadOfInstallationQueueWithCompletion:(void (^)(NSData *, NSError *))arg1;
 - (void)queueProfileDataForInstallation:(NSData *)arg1 originalFileName:(NSString *)arg2 originatingBundleID:(NSString *)arg3 transitionToUI:(_Bool)arg4 completion:(void (^)(NSString *, unsigned long long, NSError *))arg5;
 - (void)installProfileData:(NSData *)arg1 interactive:(_Bool)arg2 options:(NSDictionary *)arg3 completion:(void (^)(NSString *, NSError *))arg4;

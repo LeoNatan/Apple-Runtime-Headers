@@ -9,6 +9,7 @@
 @class MSPNavigationListener, NSError;
 
 @protocol MSPNavigationListenerDelegate <NSObject>
+- (void)navigationListenerStopped:(MSPNavigationListener *)arg1;
 - (void)navigationListenerArrived:(MSPNavigationListener *)arg1;
 - (void)navigationListenerTrafficUpdated:(MSPNavigationListener *)arg1;
 - (void)navigationListenerRouteUpdated:(MSPNavigationListener *)arg1;

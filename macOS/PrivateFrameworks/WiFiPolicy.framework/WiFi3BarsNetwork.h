@@ -14,6 +14,7 @@
 @interface WiFi3BarsNetwork : NSObject <WiFiCandidateNetwork>
 {
     BOOL matched;
+    BOOL _unwantedNetworkName;
     NSString *_SSID;
     NSString *password;
     NSSet *_attributes;
@@ -23,6 +24,7 @@
     id <TBNetwork> _network;
 }
 
+@property(nonatomic) BOOL unwantedNetworkName; // @synthesize unwantedNetworkName=_unwantedNetworkName;
 @property(retain, nonatomic) id <TBNetwork> network; // @synthesize network=_network;
 @property(copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(nonatomic) BOOL matched; // @synthesize matched;

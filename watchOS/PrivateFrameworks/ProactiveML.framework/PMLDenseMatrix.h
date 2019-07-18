@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class PMLMutableDenseVector;
+@class PMLDenseVector;
 
 @interface PMLDenseMatrix : NSObject
 {
-    PMLMutableDenseVector *_data;
+    PMLDenseVector *_data;
     unsigned int _numberOfRows;
     unsigned int _numberOfColumns;
 }
@@ -20,9 +20,8 @@
 @property(readonly, nonatomic) unsigned int numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(readonly, nonatomic) unsigned int numberOfRows; // @synthesize numberOfRows=_numberOfRows;
 - (void).cxx_destruct;
-- (void)processValuesInPlaceWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateNonZeroValuesWithBlock:(CDUnknownBlockType)arg1;
-- (float *)values;
+- (const float *)values;
 - (id)initWithData:(id)arg1 numberOfRows:(unsigned int)arg2 numberOfColumns:(unsigned int)arg3;
 
 @end

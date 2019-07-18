@@ -17,14 +17,10 @@
     unsigned long long _onboardType;
     NSString *_homeId;
     NSString *_userName;
-    NSNumber *_baseVersion;
-    NSNumber *_implicitVersion;
     NSString *_siriDebugProfileId;
 }
 
 @property(retain, nonatomic) NSString *siriDebugProfileId; // @synthesize siriDebugProfileId=_siriDebugProfileId;
-@property(retain, nonatomic) NSNumber *implicitVersion; // @synthesize implicitVersion=_implicitVersion;
-@property(retain, nonatomic) NSNumber *baseVersion; // @synthesize baseVersion=_baseVersion;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(retain, nonatomic) NSString *homeId; // @synthesize homeId=_homeId;
 @property(nonatomic) unsigned long long onboardType; // @synthesize onboardType=_onboardType;

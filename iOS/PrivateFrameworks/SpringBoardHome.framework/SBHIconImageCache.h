@@ -9,12 +9,14 @@
 #import <SpringBoardHome/BSDescriptionProviding-Protocol.h>
 #import <SpringBoardHome/SBIconObserver-Protocol.h>
 
-@class CPMemoryPool, NSHashTable, NSMutableDictionary, NSString, UIImage;
+@class CPMemoryPool, NSHashTable, NSMutableDictionary, NSMutableSet, NSString, UIImage;
 
 @interface SBHIconImageCache : NSObject <SBIconObserver, BSDescriptionProviding>
 {
     NSMutableDictionary *_images;
     NSMutableDictionary *_unmaskedImages;
+    NSMutableSet *_failedCacheKeys;
+    UIImage *_genericImage;
     UIImage *_overlayImage;
     UIImage *_unmaskedOverlayImage;
     NSHashTable *_observeredIcons;
@@ -27,6 +29,7 @@
 
 + (id)unmaskedOverlayImageWithInfo:(struct SBIconImageInfo)arg1;
 + (id)overlayImageWithInfo:(struct SBIconImageInfo)arg1;
++ (id)genericImageWithInfo:(struct SBIconImageInfo)arg1;
 + (_Bool)supportsMemoryPooling;
 + (id)_backgroundQueue;
 @property(readonly, nonatomic) CPMemoryPool *iconImagesMemoryPool; // @synthesize iconImagesMemoryPool=_iconImagesMemoryPool;
@@ -50,20 +53,24 @@
 - (id)_iconImageOfSize:(struct CGSize)arg1 scale:(double)arg2 failGracefully:(_Bool)arg3 drawing:(CDUnknownBlockType)arg4;
 - (_Bool)_canPoolImage;
 - (id)_cacheKeyForIcon:(id)arg1;
+@property(readonly, nonatomic) unsigned long long numberOfCacheMisses;
+@property(readonly, nonatomic) unsigned long long numberOfCacheHits;
+@property(readonly, nonatomic) unsigned long long numberOfCachedImages;
 @property(readonly, nonatomic) UIImage *unmaskedOverlayImage;
 @property(readonly, nonatomic) UIImage *overlayImage;
+@property(readonly, nonatomic) UIImage *genericImage;
 - (void)notifyObserversOfUpdateForIcon:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)purgeAllCachedImages;
 - (void)purgeCachedImagesForIcons:(id)arg1;
 - (void)cacheImagesForIcons:(id)arg1;
-- (void)preWarmImagesForIcons:(id)arg1;
 - (void)cacheImageForIcon:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)cachedUnmaskedImageForIcon:(id)arg1;
 - (id)unmaskedImageForIcon:(id)arg1;
 - (void)cacheImage:(id)arg1 forIcon:(id)arg2;
 - (id)cachedImageForIcon:(id)arg1;
+- (id)realImageForIcon:(id)arg1;
 - (id)imageForIcon:(id)arg1;
 - (id)initWithName:(id)arg1 iconImageInfo:(struct SBIconImageInfo)arg2;
 

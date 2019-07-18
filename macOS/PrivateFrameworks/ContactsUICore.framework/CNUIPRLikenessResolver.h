@@ -43,6 +43,8 @@
 - (id)resolveLikenessesForContacts:(id)arg1 workScheduler:(id)arg2 withContentHandler:(CDUnknownBlockType)arg3;
 - (void)emptyCache:(id)arg1;
 - (void)dealloc;
+- (id)initWithLikenessResolver:(id)arg1 capacity:(unsigned long long)arg2 schedulerProvider:(id)arg3;
+- (id)initWithLikenessResolver:(id)arg1 capacity:(unsigned long long)arg2;
 - (id)initWithLikenessResolver:(id)arg1;
 
 // Remaining properties

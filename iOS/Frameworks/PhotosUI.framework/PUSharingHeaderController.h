@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 @interface PUSharingHeaderController : NSObject
 {
     LPImage *_icloudLinkImage;
+    LPImage *_placeholderImage;
     id <PXDisplayAsset> _sharingHeaderFrontAsset;
     id <PXDisplayAsset> _sharingHeaderBackAsset;
     id <PUSharingHeaderDataProvider> _dataProvider;

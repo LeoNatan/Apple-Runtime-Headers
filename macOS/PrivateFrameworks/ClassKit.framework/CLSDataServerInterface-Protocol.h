@@ -6,11 +6,11 @@
 
 #import <ClassKit/NSObject-Protocol.h>
 
-@class CLSSearchSpecification, NSArray, NSDate, NSObject, NSPredicate, NSString;
+@class CLSObject, CLSSearchSpecification, NSArray, NSDate, NSObject, NSPredicate, NSString;
 @protocol CLSChangeNotifiable, CLSQuery, CLSSaveResponse;
 
 @protocol CLSDataServerInterface <NSObject>
-- (oneway void)remote_publishClassGraph:(NSArray *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
+- (oneway void)remote_publishClass:(CLSObject *)arg1 membersToInsert:(NSArray *)arg2 membersToDelete:(NSArray *)arg3 completion:(void (^)(BOOL, NSError *))arg4;
 - (oneway void)remote_publishHandoutGraph:(NSArray *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 - (oneway void)remote_fetchAndCompleteActiveAssignedActivitiesForContextPath:(NSArray *)arg1 withCompletion:(void (^)(BOOL, NSError *))arg2;
 - (oneway void)remote_authTreeWithCompletion:(void (^)(id, NSError *))arg1;

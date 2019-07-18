@@ -117,6 +117,8 @@
 
 + (id)_audioSelectionCriteriaForMediaItemLoader:(id)arg1;
 + (id)_newAVQueuePlayer;
++ (void)setSavedPreferredAudioLanguageCode:(id)arg1;
++ (id)savedPreferredAudioLanguageCode;
 + (void)_playerDidBecomeInactive:(id)arg1;
 + (void)setShouldDeactivateAVAudioSession:(_Bool)arg1;
 + (_Bool)shouldDeactivateAVAudioSession;
@@ -203,6 +205,7 @@
 @property(nonatomic) __weak id <TVPPlaybackDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
+- (void)_savePreferredAudioLanguageFromAudioOption:(id)arg1;
 - (void)_populatePlayerItem:(id)arg1 withUpNextInfoFromCurrentMediaItem:(id)arg2 nextMediaItem:(id)arg3 playlist:(id)arg4;
 - (void)_configurePlayerItemForExternalImageScrubbing:(id)arg1;
 - (id)_avContentProposalForProposal:(id)arg1 previewImage:(id)arg2;

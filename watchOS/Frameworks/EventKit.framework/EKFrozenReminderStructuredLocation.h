@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (int)referenceFrame;
 - (double)longitude;
 - (double)latitude;
+- (id)mapKitHandle;
 - (id)updateParentToCommitSelf:(id)arg1;
 - (id)title;
 - (id)uuid;

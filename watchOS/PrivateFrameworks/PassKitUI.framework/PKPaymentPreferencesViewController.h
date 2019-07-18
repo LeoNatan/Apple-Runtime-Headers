@@ -66,6 +66,8 @@
 - (id)tableView:(id)arg1 editActionsForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (id)_hyperlinkFooterViewForPreference:(id)arg1;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;

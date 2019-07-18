@@ -82,6 +82,7 @@
 - (void)processArtworkForCurrentlyPlayingSong;
 - (void)_processResponse:(id)arg1 error:(id)arg2;
 - (void)controller:(id)arg1 defersResponseReplacement:(CDUnknownBlockType)arg2;
+- (_Bool)_shouldShowPlaybackQueueForItemCount:(long long)arg1;
 - (void)modelResponseDidInvalidate:(id)arg1;
 - (id)_setupRequest;
 - (void)_performRequest;

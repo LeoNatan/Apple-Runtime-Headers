@@ -96,7 +96,6 @@
 - (void)navigateToCloudFeedAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)navigateToRevealCloudFeedAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)navigateToCloudFeedWithCompletion:(CDUnknownBlockType)arg1;
-- (void)navigateToOneUpForAsset:(id)arg1 inAssetContainer:(id)arg2 animated:(_Bool)arg3;
 - (void)navigateToOneYearAgoSearch;
 - (void)navigateToPhotosContentBottomAnimated:(_Bool)arg1;
 - (void)navigateToAsset:(id)arg1 openOneUp:(_Bool)arg2 animated:(_Bool)arg3;

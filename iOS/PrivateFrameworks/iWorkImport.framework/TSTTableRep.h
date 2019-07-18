@@ -96,7 +96,6 @@ __attribute__((visibility("hidden")))
 @property _Bool tableRepIsBeingRemovedFromBackgroundLayout; // @synthesize tableRepIsBeingRemovedFromBackgroundLayout=_tableRepIsBeingRemovedFromBackgroundLayout;
 @property(readonly, nonatomic) NSMutableDictionary *childTextReps; // @synthesize childTextReps=_childTextReps;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (void)recursivelyDrawInContext:(struct CGContext *)arg1 keepingChildrenPassingTest:(CDUnknownBlockType)arg2;
 - (_Bool)canDrawInParallel;
@@ -152,6 +151,7 @@ __attribute__((visibility("hidden")))
 - (void)p_removeObservers;
 - (void)dealloc;
 - (struct CGRect)layerFrameInScaledCanvas;
+- (_Bool)p_isTableRenderingRotated;
 - (id)hitRepChrome:(struct CGPoint)arg1;
 - (id)hitRep:(struct CGPoint)arg1 withPrecision:(_Bool)arg2;
 @property(readonly, nonatomic) long long selectionType;
@@ -167,6 +167,7 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

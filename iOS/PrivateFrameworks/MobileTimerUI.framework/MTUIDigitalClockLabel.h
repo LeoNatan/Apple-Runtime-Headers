@@ -17,6 +17,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)setTimeLabelText:(id)arg1;
 - (void)forceSetHour:(long long)arg1 minute:(long long)arg2;
 - (_Bool)setHour:(long long)arg1 minute:(long long)arg2;
 - (void)refreshUI;

@@ -6,23 +6,11 @@
 
 #import <CDDataAccess/DAAccount.h>
 
-#import <DACalDAV/REMDAAccountProviding-Protocol.h>
-
-@class NSString, REMObjectID;
-
-@interface DAAccount (ReminderKitExtensions) <REMDAAccountProviding>
+@interface DAAccount (ReminderKitExtensions)
 - (void)_debug_resetBabysitterWithRestrictedAccountID:(id)arg1;
-@property(readonly, nonatomic) NSString *loggingDescription;
-@property(readonly, nonatomic) REMObjectID *rem_accountObjectID;
+- (id)rem_provideAccountInfo;
 - (id)rem_account;
 - (id)rem_saveRequest;
 - (id)rem_store;
-
-// Remaining properties
-@property(readonly, nonatomic) NSString *accountID;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 @end
 

@@ -22,7 +22,7 @@
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (id)_timelineEntryFromModel:(id)arg1 family:(int)arg2;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
-- (id)privacyTemplate;
+- (id)lockedTemplate;
 - (id)currentSwitcherTemplate;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
 - (Class)richComplicationDisplayViewClassForDevice:(id)arg1;

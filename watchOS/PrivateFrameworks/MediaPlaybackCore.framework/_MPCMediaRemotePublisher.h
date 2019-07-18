@@ -34,11 +34,12 @@
 - (void)_updateSupportedCommands;
 - (void)_updateSubscriptionStatus;
 - (void)_updateLaunchCommands;
+- (id)_supportedSessionTypes;
 - (void)_enqueueFallbackIntentIfNeededForCommandEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)_copySupportedSessionTypes;
 - (void)_becomeActiveIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_userIdentityStoreChangedNotification:(id)arg1;
 - (void)_subscriptionStatusChangedNotification:(id)arg1;
+- (void)_cloudLibraryEnabledDidChangeNotification:(id)arg1;
 - (void)_likedStateChangedNotification:(id)arg1;
 - (void)_durationAvailableNotification:(id)arg1;
 - (void)_disableQueueModificationsChangedNotification:(id)arg1;
@@ -56,9 +57,9 @@
 - (void)publishIfNeeded;
 @property(readonly, nonatomic) MPCPlayerPath *playerPath;
 - (void)becomeActive;
+- (void)dealloc;
 - (id)initWithPlaybackEngine:(id)arg1;
-- (void)_nowPlayingInfoCenter:(id)arg1 getTransportablePlaybackSessionRepresentationWithCompletion:(CDUnknownBlockType)arg2;
-- (void)nowPlayingInfoCenter:(id)arg1 getTransportablePlaybackSessionRepresentationWithCompletion:(CDUnknownBlockType)arg2;
+- (void)nowPlayingInfoCenter:(id)arg1 getTransportablePlaybackSessionRepresentationForRequest:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)nowPlayingInfoCenter:(id)arg1 lyricsForContentItem:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)nowPlayingInfoCenter:(id)arg1 artworkCatalogForContentItem:(id)arg2;
 - (id)nowPlayingInfoCenter:(id)arg1 artworkForContentItem:(id)arg2 size:(struct CGSize)arg3 completion:(CDUnknownBlockType)arg4;

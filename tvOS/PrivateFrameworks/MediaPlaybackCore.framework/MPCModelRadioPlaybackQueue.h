@@ -29,8 +29,6 @@
 @property(readonly, copy, nonatomic) ICRadioPlaybackHistory *playbackHistory;
 @property(readonly, nonatomic) long long numberOfItems;
 - (_Bool)isExplicitItemAtIndex:(long long)arg1;
-- (long long)indexOfItemWithAVItemQueueIdentifier:(id)arg1;
-- (id)AVItemQueueIdentifierAtIndex:(long long)arg1;
 - (id)AVItemAtIndex:(long long)arg1;
 - (id)initWithPlaybackContext:(id)arg1 identityPropertySet:(id)arg2;
 

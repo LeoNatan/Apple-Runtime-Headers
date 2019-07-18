@@ -52,6 +52,7 @@
 + (id)currentProductBuild;
 + (id)currentProductVersion;
 + (id)currentProductType;
++ (id)currentDeviceName;
 + (id)currentProductCategory;
 + (id)serialNumber;
 + (_Bool)cellularDataIsEnabled;

@@ -25,6 +25,7 @@
     SBWallpaperController *_wallpaperController;
 }
 
++ (id)_imageForStyle:(inout long long *)arg1 withSource:(id)arg2 rootSettings:(id)arg3 overrideTraitCollection:(id)arg4;
 + (id)_imageForStyle:(inout long long *)arg1 withSource:(id)arg2 rootSettings:(id)arg3;
 @property(readonly, nonatomic) __weak SBWallpaperController *wallpaperController; // @synthesize wallpaperController=_wallpaperController;
 @property(nonatomic) unsigned long long transformOptions; // @synthesize transformOptions=_transformOptions;
@@ -39,7 +40,8 @@
 - (void)offsetWallpaperBy:(struct CGPoint)arg1;
 - (void)rotateToInterfaceOrientation:(long long)arg1;
 - (void)_setImage:(id)arg1 style:(long long)arg2 notify:(_Bool)arg3;
-- (void)_updateImageWithSource:(id)arg1 notifyObserver:(_Bool)arg2;
+- (void)_updateImageWithSource:(id)arg1 overrideTraitCollection:(id)arg2 notifyObserver:(_Bool)arg3;
+- (void)updateImageWithSource:(id)arg1 overrideTraitCollection:(id)arg2;
 - (void)updateImageWithSource:(id)arg1;
 - (void)reconfigureWithSource:(id)arg1;
 @property(readonly, nonatomic) long long variant;

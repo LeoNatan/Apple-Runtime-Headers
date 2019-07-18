@@ -55,6 +55,7 @@
 @property(readonly, nonatomic) REMObjectID *remObjectID;
 - (id)stringValueAsDateOnly:(_Bool)arg1 isFloating:(_Bool)arg2;
 - (id)iCalendarDescription;
+- (id)debugDescription;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqualToRecurrenceRule:(id)arg1;

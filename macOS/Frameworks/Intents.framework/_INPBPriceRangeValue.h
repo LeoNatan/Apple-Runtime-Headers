@@ -15,6 +15,7 @@
 @interface _INPBPriceRangeValue : PBCodable <_INPBPriceRangeValue, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSString *_currencyCode;
     _INPBDecimalNumberValue *_maximumPrice;
     _INPBDecimalNumberValue *_minimumPrice;
@@ -22,6 +23,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(retain, nonatomic) _INPBDecimalNumberValue *minimumPrice; // @synthesize minimumPrice=_minimumPrice;
 @property(retain, nonatomic) _INPBDecimalNumberValue *maximumPrice; // @synthesize maximumPrice=_maximumPrice;

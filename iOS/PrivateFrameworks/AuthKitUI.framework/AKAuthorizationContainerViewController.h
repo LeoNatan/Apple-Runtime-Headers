@@ -29,6 +29,7 @@
 - (void)_clearPaneDelegateForViewController:(id)arg1;
 - (void)_setPaneDelegateForViewController:(id)arg1;
 - (void)_setPaneDelegateForTopViewController;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithRootViewController:(id)arg1 authorizationContext:(id)arg2;

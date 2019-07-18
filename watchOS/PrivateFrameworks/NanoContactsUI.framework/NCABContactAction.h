@@ -8,14 +8,13 @@
 
 #import <NanoContactsUI/CNContactChangesObserver-Protocol.h>
 #import <NanoContactsUI/NCABIDSDestinationsStatusControllerDelegate-Protocol.h>
-#import <NanoContactsUI/PUICActionContentControllerDelegate-Protocol.h>
 #import <NanoContactsUI/PUICActionSheetControllerDelegate-Protocol.h>
 #import <NanoContactsUI/TUCallCapabilitiesDelegate-Protocol.h>
 
 @class CNContact, CNContactStore, NCABIDSDestinationsStatusController, NSArray, NSString, PUICActionSheetController, TUCallProviderManager, UIViewController;
 @protocol NCABContactActionDelegate, OS_dispatch_queue;
 
-@interface NCABContactAction : NSObject <PUICActionSheetControllerDelegate, NCABIDSDestinationsStatusControllerDelegate, CNContactChangesObserver, TUCallCapabilitiesDelegate, PUICActionContentControllerDelegate>
+@interface NCABContactAction : NSObject <PUICActionSheetControllerDelegate, NCABIDSDestinationsStatusControllerDelegate, CNContactChangesObserver, TUCallCapabilitiesDelegate>
 {
     UIViewController *_viewController;
     CNContactStore *_contactStore;
@@ -80,7 +79,6 @@
 - (void)contactDidChange:(id)arg1;
 - (void)actionSheetController:(id)arg1 didDismissWithActionAtIndexPath:(id)arg2;
 - (void)idsDestinationsStatusControllerStatusDidChange:(id)arg1;
-- (void)actionContentControllerCancel:(id)arg1;
 - (void)_showBlockedContactViewController:(id)arg1;
 - (void)walkieTalkie;
 - (_Bool)canWalkieTalkie;

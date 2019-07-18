@@ -6,13 +6,15 @@
 
 #import <CoreData/NSManagedObject.h>
 
+#import <coreroutine/RTPersistenceImportable-Protocol.h>
+
 @class NSData, NSDate, NSString, NSUUID, RTDeviceMO;
 
-@interface RTCloudManagedObject : NSManagedObject
+@interface RTCloudManagedObject : NSManagedObject <RTPersistenceImportable>
 {
 }
 
-+ (id)entityNamesEligibleForDeletion;
++ (id)entityNamesEligibleForDeletionByOtherDevices;
 + (id)notTombstonedPredicate;
 - (void)willChangeValueForKey:(id)arg1;
 - (void)awakeFromInsert;
@@ -22,9 +24,13 @@
 @property(copy, nonatomic) NSString *ckRecordID; // @dynamic ckRecordID;
 @property(copy, nonatomic) NSData *ckRecordSystemFields; // @dynamic ckRecordSystemFields;
 @property(copy, nonatomic) NSDate *creationDate; // @dynamic creationDate;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(retain, nonatomic) RTDeviceMO *device; // @dynamic device;
 @property(copy, nonatomic) NSDate *expirationDate; // @dynamic expirationDate;
 @property(nonatomic) unsigned long long flags; // @dynamic flags;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

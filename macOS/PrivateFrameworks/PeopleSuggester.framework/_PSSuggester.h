@@ -11,6 +11,7 @@
 @interface _PSSuggester : NSObject
 {
     NSXPCConnection *_connection;
+    struct os_unfair_lock_s _lock;
     _PSSuggesterConfiguration *_configuration;
 }
 
@@ -19,9 +20,9 @@
 - (void).cxx_destruct;
 - (void)provideFeedbackForSuggestions:(id)arg1;
 - (id)relativeAppUsageProbabilitiesForCandidateBundleIds:(id)arg1 daysAgo:(long long)arg2;
+- (id)hourOfDayProbabilitiesToInteractWithContacts:(id)arg1;
 - (id)hourOfDayProbabilitiesToInteractWithContact:(id)arg1;
 - (id)shareExtensionSuggestionsFromContext:(id)arg1;
-- (id)appExtensionSuggestionsFromContext:(id)arg1;
 - (id)rankedAutocompleteSuggestionsFromContext:(id)arg1 candidates:(id)arg2;
 - (id)rankedZKWSuggestionsFromContext:(id)arg1;
 - (id)rankedGlobalSuggestionsFromContext:(id)arg1 contactsOnly:(BOOL)arg2;

@@ -10,6 +10,7 @@
 
 @protocol BYDaemonCloudSyncProtocol <NSObject>
 - (void)cloudSyncProgressUpdate:(long long)arg1 completedClients:(long long)arg2 errors:(NSArray *)arg3 completion:(void (^)(void))arg4;
+- (void)isSyncInProgress:(void (^)(_Bool))arg1;
 - (void)cancelSync:(void (^)(void))arg1;
 - (void)startSync:(void (^)(void))arg1;
 - (void)needsToSync:(void (^)(unsigned long long))arg1;

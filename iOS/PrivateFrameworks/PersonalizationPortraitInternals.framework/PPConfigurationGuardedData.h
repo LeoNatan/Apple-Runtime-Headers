@@ -37,12 +37,14 @@
     float scoreThresholdForTopic;
     float scoreThresholdForLocation;
     float feedbackSessionLogsSamplingRate;
-    float feedbackSessionLogsMappedTopicsSamplingRate;
     float feedbackSessionLogsExtractionsSamplingRate;
     int feedbackSessionLogsGeohashLength;
     double analyticsTopicsSamplingRate;
     int analyticsMaximumNumberOfRecords;
     int analyticsGeohashLength;
+    double topicDecayHalfLifeSeconds;
+    double namedEntityDecayHalfLifeSeconds;
+    double locationDecayHalfLifeSeconds;
 }
 
 - (void).cxx_destruct;

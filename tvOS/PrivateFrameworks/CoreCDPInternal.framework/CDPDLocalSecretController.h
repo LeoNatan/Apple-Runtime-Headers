@@ -12,7 +12,7 @@
 @class CDPContext, CDPDCircleController, CDPDSecureBackupController;
 @protocol CDPLocalSecretFollowUpProvider, CDPStateUIProviderInternal;
 
-@interface CDPDLocalSecretController : NSObject <CDPDSecureBackupDelegate, CDPDCircleDelegate>
+@interface CDPDLocalSecretController : NSObject <CDPDCircleDelegate, CDPDSecureBackupDelegate>
 {
     CDPContext *_context;
     CDPDCircleController *_circleController;

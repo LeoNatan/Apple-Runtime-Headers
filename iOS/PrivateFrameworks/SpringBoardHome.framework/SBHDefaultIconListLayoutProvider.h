@@ -15,9 +15,11 @@
 {
     NSMutableDictionary *_cachedListLayouts;
     unsigned long long _screenType;
+    unsigned long long _layoutOptions;
 }
 
 + (unsigned long long)currentDeviceScreenType;
+@property(readonly, nonatomic) unsigned long long layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(readonly, nonatomic) unsigned long long screenType; // @synthesize screenType=_screenType;
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
@@ -26,7 +28,15 @@
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
 - (id)layoutForIconLocation:(id)arg1;
+- (void)configureSidebarConfiguration:(id)arg1 forScreenType:(unsigned long long)arg2;
+- (void)configureClockIconConfiguration:(id)arg1 forScreenType:(unsigned long long)arg2 layoutOptions:(unsigned long long)arg3;
+- (void)configureFolderIconConfiguration:(id)arg1 forScreenType:(unsigned long long)arg2 layoutOptions:(unsigned long long)arg3;
+- (void)configureFloatyFolderConfiguration:(id)arg1 forScreenType:(unsigned long long)arg2;
+- (void)configureIconAccessoryConfiguration:(id)arg1 forScreenType:(unsigned long long)arg2 layoutOptions:(unsigned long long)arg3;
+- (void)configureLabelConfigurations:(id)arg1 forScreenType:(unsigned long long)arg2;
 - (id)makeLayoutForIconLocation:(id)arg1;
+- (id)initWithScreenType:(unsigned long long)arg1 layoutOptions:(unsigned long long)arg2;
+- (id)initWithLayoutOptions:(unsigned long long)arg1;
 - (id)initWithScreenType:(unsigned long long)arg1;
 - (id)init;
 

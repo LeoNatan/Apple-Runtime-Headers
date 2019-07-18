@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _memoryCacheEvictCount;
 }
 
-+ (void)registerEvictionActivity;
++ (void)registerEvictionTimer;
 + (id)globalEvictQueue;
 @property unsigned long long memoryCacheEvictCount; // @synthesize memoryCacheEvictCount=_memoryCacheEvictCount;
 @property unsigned long long memoryCacheUpdateCount; // @synthesize memoryCacheUpdateCount=_memoryCacheUpdateCount;

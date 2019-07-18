@@ -13,10 +13,12 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: secondaryMargin
     // Error parsing type: , name: primaryMarginPipeline
     // Error parsing type: , name: secondaryMarginPipeline
+    // Error parsing type: , name: extraMargin
 }
 
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
 

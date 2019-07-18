@@ -14,7 +14,7 @@
 #import <TelephonyUtilities/TURouteControllerActions-Protocol.h>
 
 @class NSArray, NSMapTable, NSString, NSXPCConnection, TUCallCenter, TUCallNotificationManager, TUCallServicesClientCapabilities, TURouteController;
-@protocol OS_dispatch_queue, OS_dispatch_semaphore, TUCallContainerPrivate, TUCallServicesXPCServer;
+@protocol OS_dispatch_queue, TUCallContainerPrivate, TUCallServicesXPCServer;
 
 @interface TUCallServicesInterface : NSObject <TUCallServicesXPCClient, TUCallServicesProxyCallActions, TUCallServicesClientCapabilitiesActions, TUAudioDeviceControllerActions, TURouteControllerActions, TUCallFilterControllerActions>
 {
@@ -28,7 +28,6 @@
     NSObject<OS_dispatch_queue> *_queue;
     int _connectionRequestNotificationToken;
     NSXPCConnection *_xpcConnection;
-    NSObject<OS_dispatch_semaphore> *_initialStateSemaphore;
     NSArray *_currentCalls;
     NSMapTable *_uniqueProxyIdentifierToProxyCall;
     TUCallNotificationManager *_callNotificationManager;
@@ -40,7 +39,6 @@
 @property(readonly, nonatomic) TUCallNotificationManager *callNotificationManager; // @synthesize callNotificationManager=_callNotificationManager;
 @property(readonly, nonatomic) NSMapTable *uniqueProxyIdentifierToProxyCall; // @synthesize uniqueProxyIdentifierToProxyCall=_uniqueProxyIdentifierToProxyCall;
 @property(copy, nonatomic) NSArray *currentCalls; // @synthesize currentCalls=_currentCalls;
-@property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *initialStateSemaphore; // @synthesize initialStateSemaphore=_initialStateSemaphore;
 @property(nonatomic) _Bool hasRequestedInitialState; // @synthesize hasRequestedInitialState=_hasRequestedInitialState;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(readonly, nonatomic) int connectionRequestNotificationToken; // @synthesize connectionRequestNotificationToken=_connectionRequestNotificationToken;
@@ -60,6 +58,7 @@
 - (oneway void)handlePairedHostDeviceRoutesByUniqueIdentifierUpdated:(id)arg1;
 - (oneway void)handleLocalRoutesByUniqueIdentifierUpdated:(id)arg1;
 - (oneway void)setClientCapabilities:(id)arg1;
+- (_Bool)isUnknownAddress:(id)arg1 normalizedAddress:(id)arg2 forBundleIdentifier:(id)arg3;
 - (_Bool)shouldRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
 - (_Bool)willRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)policyForAddresses:(id)arg1 forBundleIdentifier:(id)arg2;

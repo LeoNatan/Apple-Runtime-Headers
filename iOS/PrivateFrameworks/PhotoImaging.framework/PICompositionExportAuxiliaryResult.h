@@ -4,21 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PhotoImaging/PICompositionExportResult.h>
 
 @class NSDictionary;
 
-@interface PICompositionExportAuxiliaryResult : NSObject
+@interface PICompositionExportAuxiliaryResult : PICompositionExportResult
 {
     NSDictionary *_auxiliaryImages;
     NSDictionary *_properties;
-    CDStruct_d58201db _inputSize;
 }
 
-@property CDStruct_912cb5d2 inputSize; // @synthesize inputSize=_inputSize;
 @property(copy) NSDictionary *properties; // @synthesize properties=_properties;
 @property(retain) NSDictionary *auxiliaryImages; // @synthesize auxiliaryImages=_auxiliaryImages;
 - (void).cxx_destruct;
+
+// Remaining properties
+@property CDStruct_912cb5d2 inputSize; // @dynamic inputSize;
 
 @end
 

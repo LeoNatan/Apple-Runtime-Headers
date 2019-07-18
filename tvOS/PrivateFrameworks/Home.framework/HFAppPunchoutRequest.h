@@ -19,8 +19,10 @@
     NSURL *_storeURL;
 }
 
++ (id)_openApplicationService;
 + (_Bool)supportsSecureCoding;
 + (id)handleRequest:(id)arg1;
++ (_Bool)canHandleBundleID:(id)arg1;
 @property(readonly, nonatomic) NSURL *storeURL; // @synthesize storeURL=_storeURL;
 @property(readonly, nonatomic) NSURL *payloadURL; // @synthesize payloadURL=_payloadURL;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;

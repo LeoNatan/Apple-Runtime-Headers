@@ -22,7 +22,8 @@
 + (void)px_animateView:(id)arg1 toCenter:(struct CGPoint)arg2 bounds:(struct CGRect)arg3 transform:(struct CGAffineTransform)arg4 usingDefaultDampedSpringWithDelay:(double)arg5 initialVelocity:(struct PXDisplayVelocity)arg6 options:(unsigned long long)arg7 completion:(CDUnknownBlockType)arg8;
 + (void)px_animateView:(id)arg1 toCenter:(struct CGPoint)arg2 bounds:(struct CGRect)arg3 transform:(struct CGAffineTransform)arg4 withDuration:(double)arg5 delay:(double)arg6 usingSpringWithDamping:(double)arg7 initialVelocity:(struct PXDisplayVelocity)arg8 options:(unsigned long long)arg9 completion:(CDUnknownBlockType)arg10;
 - (id)px_allGridKitViews;
-- (void)pxg_configureWithTexture:(id)arg1 geometry:(CDStruct_ac168a83 *)arg2 info:(CDStruct_9d1ebe49 *)arg3 style:(CDStruct_3bc3b9c1 *)arg4 textureInfo:(CDStruct_183601bc *)arg5 resizableCapInsets:(CDStruct_0054b44d *)arg6;
+- (void)pxg_shiftPosition:(struct CGPoint)arg1;
+- (void)pxg_configureWithTexture:(id)arg1 geometry:(CDStruct_ac168a83 *)arg2 info:(CDStruct_9d1ebe49 *)arg3 style:(CDStruct_506f5052 *)arg4 textureInfo:(CDStruct_183601bc *)arg5 resizableCapInsets:(CDStruct_0054b44d *)arg6;
 - (void)pxg_prepareForReuse;
 - (void)pxg_becomeReusable;
 - (void)pxg_addToScrollViewController:(id)arg1;

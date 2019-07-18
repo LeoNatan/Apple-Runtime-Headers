@@ -6,12 +6,13 @@
 
 #import <SafariServices/NSObject-Protocol.h>
 
-@class NSArray, NSAttributedString;
+@class NSArray, NSAttributedString, NSString;
 @protocol _SFSettingsAlertOptionsGroupItemConfiguration;
 
 @protocol _SFSettingsAlertOptionsGroupController <NSObject>
 @property(readonly, nonatomic) NSArray *values;
 - (_Bool)isSelectedValue:(id)arg1;
+- (NSString *)textStyleForValue:(id)arg1;
 - (NSAttributedString *)attributedStringForValue:(id)arg1;
 - (void)setSelectedValue:(id)arg1;
 - (void)prepareItem:(id <_SFSettingsAlertOptionsGroupItemConfiguration>)arg1 forValue:(id)arg2;

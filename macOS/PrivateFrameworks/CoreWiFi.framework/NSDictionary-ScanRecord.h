@@ -50,6 +50,9 @@
 @property(readonly, nonatomic) BOOL isInternetAccessible;
 @property(readonly, nonatomic) int accessNetworkType;
 @property(readonly, nonatomic) BOOL hasInterworkingIE;
+@property(readonly, nonatomic) BOOL isMFPRequired;
+@property(readonly, nonatomic) BOOL isMFPCapable;
+@property(readonly, nonatomic) BOOL hasRSNIE;
 @property(readonly, nonatomic) BOOL isPasspoint;
 @property(readonly, nonatomic) unsigned long long cacheAge;
 @property(readonly, copy, nonatomic) NSData *informationElementData;

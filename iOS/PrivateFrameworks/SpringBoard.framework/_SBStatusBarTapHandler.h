@@ -6,22 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSURL;
+@class NSURL, _SBStatusBarTapApplicationDestination;
 
 @interface _SBStatusBarTapHandler : NSObject
 {
     NSURL *_url;
     CDUnknownBlockType _block;
-    NSString *_sceneIdentifier;
-    NSString *_bundleIdentifier;
+    _SBStatusBarTapApplicationDestination *_appDestination;
+    _SBStatusBarTapApplicationDestination *_applicationDestination;
 }
 
-@property(readonly, copy, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
-@property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+@property(readonly, copy, nonatomic) _SBStatusBarTapApplicationDestination *applicationDestination; // @synthesize applicationDestination=_applicationDestination;
 - (void).cxx_destruct;
 - (_Bool)handleTap;
 @property(readonly, nonatomic) _Bool canRequestUnlock;
-- (id)initWithSceneIdentifier:(id)arg1 bundleIdentifier:(id)arg2;
+- (id)initWithApplicationDestination:(id)arg1;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 - (id)initWithURL:(id)arg1;
 

@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
     _Bool mErrorBarsInvalid;
 }
 
-+ (int)p_errorBarSettingForSeries:(id)arg1 useXAxis:(_Bool)arg2 axisID:(id)arg3;
++ (long long)p_errorBarSettingForSeries:(id)arg1 useXAxis:(_Bool)arg2 axisID:(id)arg3;
 + (_Bool)hasErrorBarsForSeries:(id)arg1;
 @property(readonly, nonatomic) long long minValueGroupIndex; // @synthesize minValueGroupIndex=mMinValueGroupIndex;
 @property(readonly, nonatomic) long long maxValueGroupIndex; // @synthesize maxValueGroupIndex=mMaxValueGroupIndex;
@@ -55,8 +55,8 @@ __attribute__((visibility("hidden")))
 - (double)p_stdErrorErrorForAxisID:(id)arg1;
 - (double)p_percentageErrorForAxisID:(id)arg1;
 - (double)p_fixedErrorForAxisID:(id)arg1;
-- (int)p_errorBarTypeForAxisID:(id)arg1;
-- (int)p_errorBarSettingForAxisID:(id)arg1 value:(double)arg2 barType:(int)arg3;
+- (long long)p_errorBarTypeForAxisID:(id)arg1;
+- (long long)p_errorBarSettingForAxisID:(id)arg1 value:(double)arg2 barType:(long long)arg3;
 - (void)p_clearData;
 - (double)maxValueForAxisID:(id)arg1;
 - (double)minValueForAxisID:(id)arg1;

@@ -10,7 +10,7 @@
 - (void)transferRemotePlan:(CTRemotePlanIdentifier *)arg1 fromDevice:(CTDeviceIdentifier *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)getRemoteDeviceOfType:(unsigned int)arg1 withEID:(NSString *)arg2 completion:(void (^)(CTRemoteDevice *, NSError *))arg3;
 - (void)getRemoteDevicesOfType:(unsigned int)arg1 completion:(void (^)(CTRemoteDeviceList *, NSError *))arg2;
-- (void)endPlanTransferWithCompletion:(void (^)(NSError *))arg1;
+- (void)endPlanTransferForEndPoint:(unsigned int)arg1 completion:(void (^)(NSError *))arg2;
 - (void)isAnyPlanOfTransferCapability:(unsigned int)arg1 availableForThisDeviceWithCompletion:(void (^)(_Bool, NSError *))arg2;
 - (void)bootstrapPlanTransferForEndpoint:(unsigned int)arg1 usingMessageSession:(CUMessageSession *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)isAnyPlanTransferableFromThisDeviceWithCompletion:(void (^)(_Bool, NSError *))arg1;
@@ -21,9 +21,10 @@
 - (void)deleteTransferPlansForEid:(NSString *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)transferPlans:(CTRemotePlanIdentifierList *)arg1 fromDevice:(CTDeviceIdentifier *)arg2 completionHandler:(void (^)(_Bool, NSString *, NSDictionary *, NSError *))arg3;
 - (void)transferPlan:(CTRemotePlanIdentifier *)arg1 fromDevice:(CTDeviceIdentifier *)arg2 completionHandler:(void (^)(_Bool, NSString *, NSDictionary *, NSError *))arg3;
+- (void)getTransferPlansWithCompletion:(void (^)(CTRemoteDeviceList *, _Bool, NSError *))arg1;
 - (void)getTransferPlanListWithCompletion:(void (^)(CTRemoteDeviceList *, NSError *))arg1;
 - (void)getCameraScanInfoForCardData:(NSString *)arg1 completionHandler:(void (^)(CTCellularPlanManagerCameraScanAction *, NSError *))arg2;
-- (void)addPlanWith:(CTXPCServiceSubscriptionContext *)arg1 request:(CTCellularPlanProvisioningRequest *)arg2 appName:(NSString *)arg3 completionHandler:(void (^)(unsigned int, NSError *))arg4;
+- (void)addPlanWith:(CTCellularPlanProvisioningRequest *)arg1 appName:(NSString *)arg2 appType:(unsigned int)arg3 completionHandler:(void (^)(unsigned int, NSError *))arg4;
 - (void)supportsPlanProvisioning:(CTXPCServiceSubscriptionContext *)arg1 carrierDescriptors:(NSArray *)arg2 smdpUrl:(NSString *)arg3 iccidPrefix:(NSString *)arg4 completionHandler:(void (^)(_Bool))arg5;
 @end
 

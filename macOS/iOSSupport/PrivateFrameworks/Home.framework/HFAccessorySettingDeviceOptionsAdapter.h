@@ -8,34 +8,28 @@
 
 #import <Home/HFAccessorySettingAdapterButtonHandling-Protocol.h>
 #import <Home/HFAccessorySettingAdapterDisplayArbitrating-Protocol.h>
+#import <Home/HFAccessorySettingDeviceOptionsAdapterUtilityDelegate-Protocol.h>
 
-@class NAFuture, NSString, RPCompanionLinkClient;
+@class HFAccessorySettingDeviceOptionsAdapterUtility, NAFuture, NSString;
 
-@interface HFAccessorySettingDeviceOptionsAdapter : HFAccessorySettingAdapter <HFAccessorySettingAdapterButtonHandling, HFAccessorySettingAdapterDisplayArbitrating>
+@interface HFAccessorySettingDeviceOptionsAdapter : HFAccessorySettingAdapter <HFAccessorySettingDeviceOptionsAdapterUtilityDelegate, HFAccessorySettingAdapterButtonHandling, HFAccessorySettingAdapterDisplayArbitrating>
 {
     BOOL _isAccessoryActive;
-    RPCompanionLinkClient *_client;
     NAFuture *_inProgressSysdiagnoseCollectionFuture;
-    NAFuture *_linkIsActivatedFuture;
-    NAFuture *_accessoryCompanionLinkDeviceFuture;
+    HFAccessorySettingDeviceOptionsAdapterUtility *_adapterUtility;
 }
 
-@property(readonly, nonatomic) NAFuture *accessoryCompanionLinkDeviceFuture; // @synthesize accessoryCompanionLinkDeviceFuture=_accessoryCompanionLinkDeviceFuture;
-@property(readonly, nonatomic) NAFuture *linkIsActivatedFuture; // @synthesize linkIsActivatedFuture=_linkIsActivatedFuture;
+@property(retain, nonatomic) HFAccessorySettingDeviceOptionsAdapterUtility *adapterUtility; // @synthesize adapterUtility=_adapterUtility;
 @property(nonatomic) BOOL isAccessoryActive; // @synthesize isAccessoryActive=_isAccessoryActive;
 @property(retain, nonatomic) NAFuture *inProgressSysdiagnoseCollectionFuture; // @synthesize inProgressSysdiagnoseCollectionFuture=_inProgressSysdiagnoseCollectionFuture;
-@property(readonly, nonatomic) RPCompanionLinkClient *client; // @synthesize client=_client;
 - (void).cxx_destruct;
 - (id)_home;
-- (id)_homeKitAccessoryUniqueIdentifier;
-- (void)_updateDevices;
-- (void)_resetRapportClientWithInvalidation:(BOOL)arg1;
-- (void)_setupRapportClient;
-- (id)_sendRapportMessageWithIdentifier:(id)arg1 request:(id)arg2 options:(id)arg3;
+- (void)currentAccessoryReachableOverRapportUpdated:(BOOL)arg1;
 - (id)inProgressButtonPressFutureForEntity:(id)arg1;
 - (BOOL)supportButtonPressForEntity:(id)arg1;
 - (id)handleButtonPressForEntity:(id)arg1;
 - (BOOL)shouldShowSettingsEntity:(id)arg1;
+- (id)restartAccessories;
 - (id)restartAccessory;
 - (id)identifyAccessory;
 - (id)initWithHomeKitSettingsVendor:(id)arg1 mode:(unsigned long long)arg2;

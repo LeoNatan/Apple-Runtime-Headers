@@ -19,6 +19,7 @@
         unsigned int confirmed:1;
     } _has;
     BOOL _confirmed;
+    BOOL __encodeLegacyGloryData;
     NSString *_canonicalValue;
     _INPBConfidenceScore *_confidenceScore;
     NSString *_input;
@@ -28,6 +29,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) NSString *sourceAppBundleIdentifier; // @synthesize sourceAppBundleIdentifier=_sourceAppBundleIdentifier;
 @property(copy, nonatomic) NSString *source; // @synthesize source=_source;

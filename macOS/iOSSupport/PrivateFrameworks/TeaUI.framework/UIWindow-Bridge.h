@@ -8,5 +8,6 @@
 
 @interface UIWindow (Bridge)
 - (void)ts_installDebugMenuHandler:(CDUnknownBlockType)arg1;
+@property(nonatomic) BOOL ts_canResizeToFitContent;
 @end
 

@@ -23,6 +23,7 @@
 - (id)description;
 - (void)_localeChanged:(id)arg1;
 - (void)dealloc;
+- (void)startServerClassIfNecessary:(Class)arg1;
 - (void)addServerClass:(Class)arg1;
 - (void)addServerInstance:(id)arg1;
 - (void)peerDidDisconnect:(id)arg1;

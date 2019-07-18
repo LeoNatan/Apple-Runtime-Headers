@@ -66,6 +66,7 @@ __attribute__((visibility("hidden")))
     NWConcrete_nw_protocol_stack *default_stack;
     NSObject<OS_nw_array> *proxy_options;
     NSObject<OS_nw_endpoint> *url_endpoint;
+    NSObject<OS_xpc_object> *metadata;
 }
 
 - (void).cxx_destruct;

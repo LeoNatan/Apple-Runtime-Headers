@@ -9,7 +9,6 @@
 @interface HMCameraClipCollection (HFAdditions)
 + (unsigned int)hf_indexOfClipForDate:(id)arg1 inClips:(id)arg2 enumerationOptions:(unsigned int)arg3 searchOptions:(unsigned int)arg4;
 + (id)hf_findClipPositionForDate:(id)arg1 inClips:(id)arg2 options:(unsigned int)arg3;
-- (_Bool)hf_isFirstClipInDay:(id)arg1;
 - (id)hf_cameraClipForIdentifier:(id)arg1;
 - (id)hf_findClipPositionForDate:(id)arg1 options:(unsigned int)arg2;
 - (id)hf_findClipPositionForDate:(id)arg1;

@@ -9,6 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface _TtC18HealthExperienceUI11PlatterView : UIView
 {
+    // Error parsing type: , name: isHighlighted
 }
 
 - (id)initWithCoder:(id)arg1;

@@ -14,7 +14,7 @@
 @interface PKAccountAutomaticPaymentsDateViewController : PKSectionTableViewController <PKAddBankAccountInformationViewControllerDelegate, PKMonthDayCollectionViewControllerDelegate>
 {
     NSDate *_date;
-    long long _frequencyDay;
+    long long _scheduledDay;
     PKAccountAutomaticPaymentsController *_controller;
     PKAccount *_account;
     unsigned long long _featureIdentifier;

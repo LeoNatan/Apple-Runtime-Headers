@@ -29,8 +29,7 @@
 + (BOOL)outputContextExistsWithRemoteOutputDevice;
 + (void)resetOutputDeviceForAllOutputContexts;
 + (struct OpaqueFigRoutingContext *)copySystemVideoRoutingContext;
-+ (BOOL)supportsSecureCoding;
-+ (id)outputContextImplForID:(id)arg1;
++ (id)outputContextImplForID:(id)arg1 type:(id)arg2;
 + (id)outputContextImplForControllingOutputDeviceGroupWithID:(id)arg1 options:(id)arg2;
 + (id)iTunesAudioContext;
 + (id)sharedSystemScreenContext;
@@ -84,12 +83,10 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithFigRoutingContext:(struct OpaqueFigRoutingContext *)arg1 routingContextReplacementBlock:(CDUnknownBlockType)arg2 outputDeviceTranslator:(id)arg3 volumeController:(struct OpaqueFigVolumeControllerState *)arg4 communicationChannelManagerCreator:(CDUnknownBlockType)arg5;
 - (id)initWithFigRoutingContext:(struct OpaqueFigRoutingContext *)arg1 routingContextReplacementBlock:(CDUnknownBlockType)arg2;
 - (id)initWithFigRoutingContextCreator:(CDUnknownBlockType)arg1;
-- (id)initWithRoutingContextUUID:(id)arg1;
+- (id)initWithRoutingContextUUID:(id)arg1 type:(id)arg2;
 - (id)init;
 
 // Remaining properties

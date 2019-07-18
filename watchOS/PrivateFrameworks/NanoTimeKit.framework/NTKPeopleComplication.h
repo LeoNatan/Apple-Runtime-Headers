@@ -33,6 +33,8 @@
 - (_Bool)snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;
 - (id)customDailySnapshotKey;
 - (_Bool)appearsInDailySnapshotForFamily:(int)arg1;
+- (id)localizedRichKeylineLabelText;
+- (id)localizedRichDetailText;
 - (id)localizedKeylineLabelText;
 - (id)localizedDetailText;
 

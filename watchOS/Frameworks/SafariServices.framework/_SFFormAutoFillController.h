@@ -9,7 +9,7 @@
 #import <SafariServices/SFFormMetadataObserver-Protocol.h>
 #import <SafariServices/_SFAuthenticationClient-Protocol.h>
 
-@class NSMutableIndexSet, NSMutableSet, NSString, NSTimer, SFFormAutoFillFrameHandle, SFFormAutocompleteState, SFNanoDomainContainerView, UIView, WBSFormMetadata, WKWebView, _SFAuthenticationContext, _WKRemoteObjectInterface;
+@class CNContact, NSMutableIndexSet, NSMutableSet, NSString, NSTimer, SFFormAutoFillFrameHandle, SFFormAutocompleteState, SFNanoDomainContainerView, UIView, WBSFormMetadata, WKWebView, _SFAuthenticationContext, _WKRemoteObjectInterface;
 @protocol SFFormAutoFillControllerDelegate, SFFormAutoFiller, WBUFormAutoFillWebView;
 
 @interface _SFFormAutoFillController : NSObject <SFFormMetadataObserver, _SFAuthenticationClient>
@@ -28,10 +28,12 @@
     NSMutableSet *_uniqueIDsOfControlsThatWereAutoFilled;
     SFNanoDomainContainerView *_formContextView;
     _Bool _metadataCorrectionsEnabled;
+    CNContact *_lastFilledContact;
     NSString *_accessoryText;
 }
 
 @property(copy, nonatomic) NSString *accessoryText; // @synthesize accessoryText=_accessoryText;
+@property(retain, nonatomic) CNContact *lastFilledContact; // @synthesize lastFilledContact=_lastFilledContact;
 @property(nonatomic) _Bool metadataCorrectionsEnabled; // @synthesize metadataCorrectionsEnabled=_metadataCorrectionsEnabled;
 - (void).cxx_destruct;
 - (void)_didFocusSensitiveFormField;

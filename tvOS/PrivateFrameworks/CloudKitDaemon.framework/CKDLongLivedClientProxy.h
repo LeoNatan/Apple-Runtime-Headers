@@ -19,9 +19,11 @@
 - (void)addOperationWithOperationInfo:(id)arg1;
 - (_Bool)hasTCCAuthorization;
 - (id)apsEnvironmentEntitlement;
-- (id)pushBundleIdentifier;
+- (id)applicationBundleIDForPush;
 - (id)_clientPrefixEntitlement;
-- (id)applicationIdentifier;
+- (id)associatedApplicationBundleID;
+- (id)applicationBundleID;
+- (_Bool)hasExplicitCodeOperationURLEntitlement;
 - (_Bool)hasAllowUnverifiedAccountEntitlement;
 - (_Bool)hasNonLegacyShareURLEntitlement;
 - (id)serviceNameForContainerMapEntitlement;

@@ -56,6 +56,7 @@
 @property(readonly, nonatomic) GEOComposedTransitStationRouteStep *transitStationStep;
 @property(readonly, nonatomic) GEOComposedTransitTripRouteStep *transitTripStep;
 @property(readonly, nonatomic) GEOComposedRouteStep *step;
+@property(readonly, nonatomic) _Bool isOnParkingLotRoad;
 @property(readonly, nonatomic) _Bool routeMatchedToEnd;
 - (double)fractionOfCurrentStepTraveled;
 - (_Bool)routeMatchBehind:(id)arg1;

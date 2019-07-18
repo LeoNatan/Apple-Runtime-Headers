@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)actionByExpandingWithAction:(id)arg1;
 - (id)shrinkAction;
-- (id)changeDescriptorForTable:(id)arg1;
+- (id)cellRegionForTable:(id)arg1;
 - (id)remapUIDsByColumnMap:(const UUIDMap_b66c2694 *)arg1 rowMap:(const UUIDMap_b66c2694 *)arg2 ownerMap:(const UUIDMap_b66c2694 *)arg3;
 - (void)enumerateMergeFormulasUsingBlock:(CDUnknownBlockType)arg1;
 -     // Error parsing type: v32@0:8^{MergeOperationArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUIDRectArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}16@24, name: saveToArchive:archiver:

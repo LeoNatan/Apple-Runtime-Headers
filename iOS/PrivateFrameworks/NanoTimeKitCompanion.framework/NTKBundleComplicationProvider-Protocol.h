@@ -9,6 +9,7 @@
 @class CLKDevice, NSString, NTKComplication;
 
 @protocol NTKBundleComplicationProvider <NSObject>
+- (_Bool)bundleComplicationExistsForAppBundleIdentifier:(NSString *)arg1;
 - (Class)dataSourceClassForBundleComplication:(NTKComplication *)arg1;
 - (NSString *)localizedAppNameForBundleIdentifier:(NSString *)arg1;
 - (void)enumerateBundlesForComplicationFamily:(long long)arg1 device:(CLKDevice *)arg2 withBlock:(void (^)(NSString *, NSString *, NSNumber *))arg3;

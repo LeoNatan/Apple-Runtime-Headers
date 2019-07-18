@@ -36,6 +36,7 @@
 - (struct UIEdgeInsets)capEdgeInsets:(struct UIEdgeInsets)arg1 min:(struct UIEdgeInsets)arg2 max:(struct UIEdgeInsets)arg3;
 - (struct UIEdgeInsets)scaledEdgeInsets:(struct UIEdgeInsets)arg1;
 - (double)scaledValueForValue:(double)arg1;
+@property(readonly, nonatomic) unsigned long long appIconFormat;
 @property(readonly, nonatomic) struct UIEdgeInsets workflowContentEdgeInsets;
 @property(readonly, nonatomic) struct UIEdgeInsets workflowGlyphOutsets;
 @property(readonly, nonatomic) struct CGSize workflowPlusGlyphSize;

@@ -10,7 +10,7 @@
 {
 }
 
-+ (_Bool)workflowNeedsMigration:(id)arg1 fromClientVersion:(int)arg2;
++ (_Bool)workflowNeedsMigration:(id)arg1 fromClientVersion:(id)arg2;
 - (void)migrateLegacyInputVariablesInParameterDictionary:(id)arg1 toVariable:(id)arg2;
 - (void)recursivelyFindDictionaryWithKey:(id)arg1 inArray:(id)arg2 then:(CDUnknownBlockType)arg3;
 - (void)recursivelyFindDictionaryWithKey:(id)arg1 inDictionary:(id)arg2 then:(CDUnknownBlockType)arg3;

@@ -10,7 +10,6 @@
 
 @interface PXAssetsTilingLayout : PXTilingLayout
 {
-    _Bool _showsAnimatedOverlays;
     PXOverlayBadgeTileUserData *_overlayBadgeTileUserData;
     PXAssetsDataSource *_dataSource;
     PXIndexPathSet *_hiddenIndexPaths;
@@ -18,6 +17,7 @@
     PXIndexPathSet *_draggingIndexPaths;
     unsigned long long _selectionBadgeOptions;
     unsigned long long _badgeOptions;
+    unsigned long long _animatedOverlayBehavior;
     PXSelectionBadgeTileUserData *__selectedUserData;
     PXSelectionBadgeTileUserData *__unselectedUserData;
     PXBasicTileUserData *__highlightedDimmingUserData;
@@ -34,7 +34,7 @@
 @property(readonly, nonatomic) PXBasicTileUserData *_highlightedDimmingUserData; // @synthesize _highlightedDimmingUserData=__highlightedDimmingUserData;
 @property(readonly, nonatomic) PXSelectionBadgeTileUserData *_unselectedUserData; // @synthesize _unselectedUserData=__unselectedUserData;
 @property(readonly, nonatomic) PXSelectionBadgeTileUserData *_selectedUserData; // @synthesize _selectedUserData=__selectedUserData;
-@property(nonatomic) _Bool showsAnimatedOverlays; // @synthesize showsAnimatedOverlays=_showsAnimatedOverlays;
+@property(nonatomic) unsigned long long animatedOverlayBehavior; // @synthesize animatedOverlayBehavior=_animatedOverlayBehavior;
 @property(nonatomic) unsigned long long badgeOptions; // @synthesize badgeOptions=_badgeOptions;
 @property(nonatomic) unsigned long long selectionBadgeOptions; // @synthesize selectionBadgeOptions=_selectionBadgeOptions;
 @property(retain, nonatomic) PXIndexPathSet *draggingIndexPaths; // @synthesize draggingIndexPaths=_draggingIndexPaths;

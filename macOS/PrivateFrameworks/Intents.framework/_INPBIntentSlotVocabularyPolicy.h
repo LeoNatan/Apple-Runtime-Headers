@@ -15,12 +15,14 @@
 @interface _INPBIntentSlotVocabularyPolicy : PBCodable <_INPBIntentSlotVocabularyPolicy, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSArray *_intentSlotNames;
     NSArray *_intentSlotVocabularyConcepts;
 }
 
 + (BOOL)supportsSecureCoding;
 + (Class)intentSlotVocabularyConceptsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *intentSlotVocabularyConcepts; // @synthesize intentSlotVocabularyConcepts=_intentSlotVocabularyConcepts;
 @property(copy, nonatomic) NSArray *intentSlotNames; // @synthesize intentSlotNames=_intentSlotNames;
 - (void).cxx_destruct;

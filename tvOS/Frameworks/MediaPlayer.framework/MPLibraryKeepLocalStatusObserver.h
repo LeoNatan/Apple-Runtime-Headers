@@ -13,12 +13,15 @@
 @interface MPLibraryKeepLocalStatusObserver : NSObject <MPMediaDownloadObserver>
 {
     NSSet *_activeDownloads;
+    NSSet *_pausedDownloads;
     MPLibraryKeepLocalStatusObserverConfiguration *_configuration;
+    unsigned long long _downloadPausedReason;
     CDUnknownBlockType _statusBlock;
     struct MPLibraryActiveKeepLocalStatus _currentStatus;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType statusBlock; // @synthesize statusBlock=_statusBlock;
+@property(readonly, nonatomic) unsigned long long downloadPausedReason; // @synthesize downloadPausedReason=_downloadPausedReason;
 @property(readonly, nonatomic) struct MPLibraryActiveKeepLocalStatus currentStatus; // @synthesize currentStatus=_currentStatus;
 @property(retain, nonatomic) MPLibraryKeepLocalStatusObserverConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
@@ -26,7 +29,10 @@
 - (_Bool)_updateActiveDownloadsAllowingDownloadRemoval:(_Bool)arg1;
 - (struct MPLibraryActiveKeepLocalStatus)_calculateCurrentStatus;
 - (id)_activeDownloadForIdentifierSet:(id)arg1;
+- (id)_pausedDownloadForIdentifierSet:(id)arg1;
+- (void)_handleDownloadStateChanged:(id)arg1;
 - (void)_transientStateDidChangeNotification:(id)arg1;
+- (void)downloadManager:(id)arg1 didChangeDownloadPausedReasonForAssets:(id)arg2;
 - (void)downloadManager:(id)arg1 didUpdateDownloadProgress:(id)arg2;
 - (void)downloadManager:(id)arg1 didEnqueueAssetDownloads:(id)arg2 didRemoveAssetDownloads:(id)arg3;
 - (void)dealloc;

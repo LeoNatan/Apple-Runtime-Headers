@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     struct CGColor *_cachedColor;
 }
 
+- (_Bool)getHue:(float *)arg1 saturation:(float *)arg2 brightness:(float *)arg3 alpha:(float *)arg4;
 - (_Bool)getRed:(float *)arg1 green:(float *)arg2 blue:(float *)arg3 alpha:(float *)arg4;
 - (_Bool)getWhite:(float *)arg1 alpha:(float *)arg2;
 - (_Bool)isPatternColor;

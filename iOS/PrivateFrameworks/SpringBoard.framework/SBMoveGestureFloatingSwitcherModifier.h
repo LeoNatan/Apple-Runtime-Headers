@@ -16,7 +16,6 @@
 @property(nonatomic) struct CGPoint translation; // @synthesize translation=_translation;
 @property(nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(nonatomic) long long initialFloatingConfiguration; // @synthesize initialFloatingConfiguration=_initialFloatingConfiguration;
-- (long long)_floatingConfigurationWithTranslation:(double)arg1 velocity:(double)arg2;
 - (id)topMostAppLayouts;
 - (unsigned long long)numberOfAppLayoutsToCacheSnapshots;
 - (double)shadowOffsetForIndex:(unsigned long long)arg1;

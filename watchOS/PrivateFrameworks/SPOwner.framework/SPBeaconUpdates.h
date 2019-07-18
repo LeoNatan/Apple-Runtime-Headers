@@ -15,12 +15,17 @@
 {
     NSString *_name;
     int _roleId;
+    int _timeShift;
+    int _clockDrift;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) int clockDrift; // @synthesize clockDrift=_clockDrift;
+@property(readonly, nonatomic) int timeShift; // @synthesize timeShift=_timeShift;
 @property(readonly, nonatomic) int roleId; // @synthesize roleId=_roleId;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)initWithTimeShift:(int)arg1 clockDrift:(int)arg2 name:(id)arg3 roleId:(int)arg4;
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

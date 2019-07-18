@@ -146,10 +146,27 @@ struct unordered_map<MapsSuggestionsSignalType, MSg::Signal, std::__1::hash<Maps
     } __table_;
 };
 
+struct vector<MapsSuggestionsEntryType, std::__1::allocator<MapsSuggestionsEntryType>> {
+    int *__begin_;
+    int *__end_;
+    struct __compressed_pair<MapsSuggestionsEntryType *, std::__1::allocator<MapsSuggestionsEntryType>> {
+        int *__value_;
+    } __end_cap_;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
     double _field1;
     double _field2;
 } CDStruct_c3b9c2ee;
+
+// Template types
+typedef struct vector<MapsSuggestionsEntryType, std::__1::allocator<MapsSuggestionsEntryType>> {
+    int *__begin_;
+    int *__end_;
+    struct __compressed_pair<MapsSuggestionsEntryType *, std::__1::allocator<MapsSuggestionsEntryType>> {
+        int *__value_;
+    } __end_cap_;
+} vector_49968e81;
 

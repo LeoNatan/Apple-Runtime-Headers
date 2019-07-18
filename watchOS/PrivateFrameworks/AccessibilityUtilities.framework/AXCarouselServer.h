@@ -27,7 +27,7 @@
 - (_Bool)showNotificationCenter:(_Bool)arg1;
 - (_Bool)canShowNotificationCenter;
 - (_Bool)isNotificationCenterVisible;
-- (_Bool)isNonExclusiveSystemUIVisible;
+- (_Bool)isNonExclusiveSystemUIFocusable;
 - (_Bool)isSystemSleeping;
 - (void)wakeUpDeviceIfNecessary;
 - (void)activeInterfaceOrientation:(CDUnknownBlockType)arg1;

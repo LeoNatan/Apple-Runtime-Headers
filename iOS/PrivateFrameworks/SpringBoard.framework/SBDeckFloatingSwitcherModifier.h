@@ -30,9 +30,10 @@
 - (struct UIEdgeInsets)_contentInsetsWithContainerViewBounds:(struct CGRect)arg1 switcherViewBounds:(struct CGRect)arg2;
 - (struct CGSize)_fittedContentSizeWithCardSize:(struct CGSize)arg1 contentInsets:(struct UIEdgeInsets)arg2 switcherViewBounds:(struct CGRect)arg3 numberOfItems:(unsigned long long)arg4;
 - (struct CGSize)_contentSizeWithWithCardSize:(struct CGSize)arg1 contentInsets:(struct UIEdgeInsets)arg2 switcherViewBounds:(struct CGRect)arg3 numberOfItems:(unsigned long long)arg4;
-- (_Bool)cardsNeedDarkModeTreatment;
+- (_Bool)cardsNeedBackgroundWallpaperTreatment;
 - (void)resetAdjustedScrollingState;
 - (struct CGPoint)adjustedOffsetForOffset:(struct CGPoint)arg1 translation:(struct CGPoint)arg2 startPoint:(struct CGPoint)arg3 locationInView:(struct CGPoint)arg4 horizontalVelocity:(inout double *)arg5 verticalVelocity:(inout double *)arg6;
+- (double)distanceToLeadingEdgeOfLeadingCardFromTrailingEdgeOfScreenWithVisibleIndexToStartSearch:(unsigned long long)arg1;
 - (struct CGPoint)restingOffsetForScrollOffset:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
 - (struct CGPoint)contentOffsetForIndex:(unsigned long long)arg1;
 - (struct CGSize)fittedContentSize;
@@ -69,7 +70,7 @@
 - (_Bool)shouldTruncateAnimationsUponTransitionCompletion;
 - (_Bool)shouldFireTransitionCompletionInDefaultRunLoopMode;
 - (_Bool)shouldWaitForLayoutAndStyleUpdatesForTransactionCompletion;
-- (_Bool)acceleratedHomeButtonPressShouldBegin;
+- (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)shouldAcceleratedHomeButtonPressBegin;
 - (id)appLayoutToScrollToBeforeTransitioning;
 - (id)topMostAppLayouts;
@@ -125,6 +126,7 @@
 - (id)adjustedAppLayoutsForAppLayouts:(id)arg1;
 - (id)handleSwitcherSettingsChangedEvent:(id)arg1;
 - (id)handleTapOutsideToDismissEvent:(id)arg1;
+- (id)handleTapAppLayoutEvent:(id)arg1;
 - (id)handleRemovalEvent:(id)arg1;
 - (void)didMoveToParentModifier:(id)arg1;
 

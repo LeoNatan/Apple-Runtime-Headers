@@ -13,6 +13,7 @@
 
 @interface AVTAvatarActionsModel : NSObject <AVTAvatarEditorViewControllerDelegate>
 {
+    _Bool _allowCreate;
     _Bool _isCreatingAvatar;
     _Bool _buttonsDisabled;
     id <AVTAvatarActionsModelDelegate> _delegate;
@@ -25,6 +26,7 @@
 
 + (_Bool)actionIsDestructive:(long long)arg1;
 + (id)buttonForActionType:(long long)arg1 withActionBlock:(CDUnknownBlockType)arg2;
++ (unsigned long long)maximumNumberOfButtons;
 + (id)localizedTitleForActionType:(long long)arg1;
 @property(nonatomic) _Bool buttonsDisabled; // @synthesize buttonsDisabled=_buttonsDisabled;
 @property(nonatomic) _Bool isCreatingAvatar; // @synthesize isCreatingAvatar=_isCreatingAvatar;
@@ -32,6 +34,7 @@
 @property(readonly, nonatomic) AVTViewSessionProvider *avtViewSessionProvider; // @synthesize avtViewSessionProvider=_avtViewSessionProvider;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) AVTAvatarRecordDataSource *dataSource; // @synthesize dataSource=_dataSource;
+@property(readonly, nonatomic) _Bool allowCreate; // @synthesize allowCreate=_allowCreate;
 @property(retain, nonatomic) AVTAvatarRecord *avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 @property(nonatomic) __weak id <AVTAvatarActionsModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -41,13 +44,12 @@
 - (void)didTapDelete;
 - (void)didTapDuplicate;
 - (void)didTapEdit;
-- (void)didTapCreateNew:(id)arg1;
-- (id)createBarButtonItem;
+- (void)didTapCreateNew;
 - (id)generateInlineActionButtons;
 - (void)updateForChangedContentCategorySize;
 @property(readonly, nonatomic) NSArray *inlineActionButtons;
 - (_Bool)canPerformActionType:(long long)arg1;
-- (id)initWithAvatarRecord:(id)arg1 dataSource:(id)arg2 avtViewSessionProvider:(id)arg3 environment:(id)arg4;
+- (id)initWithAvatarRecord:(id)arg1 dataSource:(id)arg2 avtViewSessionProvider:(id)arg3 environment:(id)arg4 allowCreate:(_Bool)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -26,6 +26,7 @@
 - (NSArray *)objectIDURIsToBeDeleted;
 - (NSArray *)objectIDsNeedingIndexing;
 - (NSArray *)indexableObjectIDsWithURIs:(NSArray *)arg1;
+- (void)clearObjectIDsToProcess;
 - (_Bool)needsReindexing;
 - (NSManagedObjectContext *)newManagedObjectContext;
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator;

@@ -170,6 +170,7 @@
 - (void)_hoverExited:(id)arg1 withEvent:(id)arg2;
 - (void)_hoverMoved:(id)arg1 withEvent:(id)arg2;
 - (void)_hoverEntered:(id)arg1 withEvent:(id)arg2;
+- (long long)_defaultAllowedMouseButtons;
 - (BOOL)_shouldReceiveTouch:(id)arg1 forEvent:(id)arg2 recognizerView:(id)arg3;
 @property(readonly, nonatomic, getter=_modifierFlags) long long modifierFlags;
 - (void)_lookupChangedWithEvent:(id)arg1;

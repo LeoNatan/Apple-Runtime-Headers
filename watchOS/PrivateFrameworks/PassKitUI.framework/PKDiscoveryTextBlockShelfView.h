@@ -16,6 +16,10 @@
 }
 
 - (void).cxx_destruct;
+- (id)_uiFontTextStyle;
+- (id)_textColorForHeaderline;
+- (id)_textColorForLede;
+- (id)_textColorForBody;
 - (id)_attributedStringForBody:(id)arg1 lede:(id)arg2 headerline:(id)arg3;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

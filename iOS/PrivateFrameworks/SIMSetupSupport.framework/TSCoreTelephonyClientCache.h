@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (void)installPendingPlan:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)pendingInstallItemsWithCompletion:(CDUnknownBlockType)arg1;
-- (void)setDataFallbackEnabled:(_Bool)arg1;
+- (void)setDataFallbackEnabled:(_Bool)arg1 forIccid:(id)arg2;
 - (_Bool)getTransferCapability:(unsigned long long)arg1;
 - (void)isAnyPlanOfTransferCapability:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)bootstrapPlanTransferUsingMessageSession:(id)arg1;

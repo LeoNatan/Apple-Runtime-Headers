@@ -60,6 +60,7 @@
 - (id)valueForProperty:(id)arg1;
 - (id)properties;
 - (void)_setEnabled:(BOOL)arg1 withOptions:(int)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)setEnabled:(BOOL)arg1 withOptions:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setEnabled:(BOOL)arg1 withOptions:(int)arg2;
 - (void)_setEnabled:(BOOL)arg1;
 - (BOOL)hasDataToMerge;
@@ -76,6 +77,7 @@
 - (id)enableAlertTitle;
 - (id)disableAlertMessage;
 - (id)disableAlertTitle;
+- (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
 - (void)reconcileEnableStatus;
 - (BOOL)supportsSavingLocally;

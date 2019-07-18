@@ -9,7 +9,7 @@
 @class NSArray, PMLSparseVector;
 
 @protocol PMLMultiLabelRegressionModelProtocol <NSObject>
-+ (id)withWeightsArray:(NSArray *)arg1 andIntercept:(BOOL)arg2;
+- (id)initWithWeightsArray:(NSArray *)arg1 andIntercept:(BOOL)arg2;
 - (NSArray *)predict:(PMLSparseVector *)arg1;
 @end
 

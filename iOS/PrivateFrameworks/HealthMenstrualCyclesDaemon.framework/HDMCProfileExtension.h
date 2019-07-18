@@ -8,15 +8,18 @@
 
 #import <HealthMenstrualCyclesDaemon/HDProfileExtension-Protocol.h>
 
-@class HDMCAnalysisManager, HDMCNotificationManager, HDProfile, NSString;
+@class HDMCAnalysisManager, HDMCAnalyticsManager, HDMCNotificationManager, HDProfile, HKMCSettingsManager, NSString;
 
 @interface HDMCProfileExtension : NSObject <HDProfileExtension>
 {
-    HDMCNotificationManager *_notificationManager;
+    HDMCAnalyticsManager *_analyticsManager;
     HDProfile *_profile;
     HDMCAnalysisManager *_analysisManager;
+    HDMCNotificationManager *_notificationManager;
+    HKMCSettingsManager *_settingsManager;
 }
 
+@property(readonly, nonatomic) HKMCSettingsManager *settingsManager; // @synthesize settingsManager=_settingsManager;
 @property(readonly, nonatomic) HDMCNotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(retain, nonatomic) HDMCAnalysisManager *analysisManager; // @synthesize analysisManager=_analysisManager;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;

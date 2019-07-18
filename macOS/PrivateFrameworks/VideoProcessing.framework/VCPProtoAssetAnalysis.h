@@ -48,19 +48,24 @@
     NSMutableArray *_movieFeatureResults;
     NSMutableArray *_movieFineSubjectMotionResults;
     NSMutableArray *_movieHighlightResults;
+    NSMutableArray *_movieHumanActionResults;
     NSMutableArray *_movieHumanPoseResults;
     NSMutableArray *_movieInterestingnessResults;
     NSMutableArray *_movieLaughterResults;
+    NSMutableArray *_movieLoudnessResults;
     NSMutableArray *_movieMovingObjectResults;
     NSMutableArray *_movieMusicResults;
     NSMutableArray *_movieObstructionResults;
     NSMutableArray *_movieOrientationResults;
+    NSMutableArray *_moviePetsFaceResults;
+    NSMutableArray *_moviePetsResults;
     NSMutableArray *_moviePreEncodeResults;
     NSMutableArray *_movieQualityResults;
     NSMutableArray *_movieSaliencyResults;
     NSMutableArray *_movieSceneResults;
     NSMutableArray *_movieSceneprintResults;
     NSMutableArray *_movieSubjectMotionResults;
+    NSMutableArray *_movieSubtleMotionResults;
     NSMutableArray *_movieSummaryResults;
     NSMutableArray *_movieUtteranceResults;
     NSMutableArray *_movieVoiceResults;
@@ -72,6 +77,10 @@
     } _has;
 }
 
++ (Class)moviePetsFaceResultsType;
++ (Class)moviePetsResultsType;
++ (Class)movieLoudnessResultsType;
++ (Class)movieHumanActionResultsType;
 + (Class)movieLaughterResultsType;
 + (Class)movieCheeringResultsType;
 + (Class)movieBabbleResultsType;
@@ -83,6 +92,7 @@
 + (Class)movieSummaryResultsType;
 + (Class)movieVoiceResultsType;
 + (Class)movieUtteranceResultsType;
++ (Class)movieSubtleMotionResultsType;
 + (Class)movieSubjectMotionResultsType;
 + (Class)movieSceneprintResultsType;
 + (Class)movieSceneResultsType;
@@ -118,6 +128,10 @@
 + (Class)imageBlurResultsType;
 + (id)movieAnalysisFromLegacyDictionary:(id)arg1;
 + (id)imageAnalysisFromLegacyDictionary:(id)arg1;
+@property(retain, nonatomic) NSMutableArray *moviePetsFaceResults; // @synthesize moviePetsFaceResults=_moviePetsFaceResults;
+@property(retain, nonatomic) NSMutableArray *moviePetsResults; // @synthesize moviePetsResults=_moviePetsResults;
+@property(retain, nonatomic) NSMutableArray *movieLoudnessResults; // @synthesize movieLoudnessResults=_movieLoudnessResults;
+@property(retain, nonatomic) NSMutableArray *movieHumanActionResults; // @synthesize movieHumanActionResults=_movieHumanActionResults;
 @property(retain, nonatomic) NSMutableArray *movieLaughterResults; // @synthesize movieLaughterResults=_movieLaughterResults;
 @property(retain, nonatomic) NSMutableArray *movieCheeringResults; // @synthesize movieCheeringResults=_movieCheeringResults;
 @property(retain, nonatomic) NSMutableArray *movieBabbleResults; // @synthesize movieBabbleResults=_movieBabbleResults;
@@ -129,6 +143,7 @@
 @property(retain, nonatomic) NSMutableArray *movieSummaryResults; // @synthesize movieSummaryResults=_movieSummaryResults;
 @property(retain, nonatomic) NSMutableArray *movieVoiceResults; // @synthesize movieVoiceResults=_movieVoiceResults;
 @property(retain, nonatomic) NSMutableArray *movieUtteranceResults; // @synthesize movieUtteranceResults=_movieUtteranceResults;
+@property(retain, nonatomic) NSMutableArray *movieSubtleMotionResults; // @synthesize movieSubtleMotionResults=_movieSubtleMotionResults;
 @property(retain, nonatomic) NSMutableArray *movieSubjectMotionResults; // @synthesize movieSubjectMotionResults=_movieSubjectMotionResults;
 @property(retain, nonatomic) NSMutableArray *movieSceneprintResults; // @synthesize movieSceneprintResults=_movieSceneprintResults;
 @property(retain, nonatomic) NSMutableArray *movieSceneResults; // @synthesize movieSceneResults=_movieSceneResults;
@@ -182,6 +197,22 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)moviePetsFaceResultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)moviePetsFaceResultsCount;
+- (void)addMoviePetsFaceResults:(id)arg1;
+- (void)clearMoviePetsFaceResults;
+- (id)moviePetsResultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)moviePetsResultsCount;
+- (void)addMoviePetsResults:(id)arg1;
+- (void)clearMoviePetsResults;
+- (id)movieLoudnessResultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)movieLoudnessResultsCount;
+- (void)addMovieLoudnessResults:(id)arg1;
+- (void)clearMovieLoudnessResults;
+- (id)movieHumanActionResultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)movieHumanActionResultsCount;
+- (void)addMovieHumanActionResults:(id)arg1;
+- (void)clearMovieHumanActionResults;
 - (id)movieLaughterResultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)movieLaughterResultsCount;
 - (void)addMovieLaughterResults:(id)arg1;
@@ -226,6 +257,10 @@
 - (unsigned long long)movieUtteranceResultsCount;
 - (void)addMovieUtteranceResults:(id)arg1;
 - (void)clearMovieUtteranceResults;
+- (id)movieSubtleMotionResultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)movieSubtleMotionResultsCount;
+- (void)addMovieSubtleMotionResults:(id)arg1;
+- (void)clearMovieSubtleMotionResults;
 - (id)movieSubjectMotionResultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)movieSubjectMotionResultsCount;
 - (void)addMovieSubjectMotionResults:(id)arg1;

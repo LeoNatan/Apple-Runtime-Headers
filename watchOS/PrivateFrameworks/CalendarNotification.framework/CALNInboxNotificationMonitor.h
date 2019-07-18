@@ -22,7 +22,9 @@
 - (void).cxx_destruct;
 - (void)protectedDataDidBecomeAvailable;
 - (void)handleBTAJob:(id)arg1 named:(const char *)arg2;
+- (void)didRegisterForBackgroundTaskAgentJobs;
 - (void)receivedAlarmNamed:(id)arg1;
+- (void)didRegisterForAlarms;
 - (void)receivedNotificationNamed:(id)arg1;
 - (void)deactivate;
 - (void)activate;

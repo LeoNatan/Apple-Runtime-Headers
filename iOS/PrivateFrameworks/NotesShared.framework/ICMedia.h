@@ -8,7 +8,7 @@
 
 #import <NotesShared/ICCloudObject-Protocol.h>
 
-@class ICAccount, ICAttachment, NSData, NSString;
+@class ICAccount, ICAttachment, NSData, NSSet, NSString;
 
 @interface ICMedia : ICCloudSyncingObject <ICCloudObject>
 {
@@ -70,6 +70,7 @@
 - (_Bool)writeDataFromAsset:(id)arg1 accountID:(id)arg2 isArchivedDirectory:(_Bool)arg3 error:(id *)arg4;
 - (_Bool)writeDataFromFileURL:(id)arg1 error:(id *)arg2;
 - (void)updateFlagToExcludeFromCloudBackup;
+@property(readonly, nonatomic) NSSet *urlsToConsiderForCloudBackup;
 - (_Bool)isArchivedDirectory;
 - (_Bool)hasFile;
 - (_Bool)isValid;

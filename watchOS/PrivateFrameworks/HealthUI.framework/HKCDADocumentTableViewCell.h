@@ -21,7 +21,7 @@
 }
 
 @property(retain, nonatomic) HKAdjustableTapTargetButton *checkboxButton; // @synthesize checkboxButton=_checkboxButton;
-@property(retain, nonatomic) id <HKCDADocumentTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <HKCDADocumentTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool showsCheckbox; // @synthesize showsCheckbox=_showsCheckbox;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;

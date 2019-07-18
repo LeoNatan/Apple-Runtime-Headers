@@ -7,6 +7,8 @@
 #import <Foundation/NSUndoManager.h>
 
 @interface NSUndoManager (IC)
-- (_Bool)ic_isUndoingOrRedoing;
+- (void)ic_performUndoGroupWithActionName:(id)arg1 undoGroup:(CDUnknownBlockType)arg2;
+- (void)ic_performUndoGroup:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool ic_isUndoingOrRedoing;
 @end
 

@@ -9,23 +9,14 @@
 #import <Silex/SXColumnCalculator-Protocol.h>
 
 @class NSString;
-@protocol SXDebugLayoutOptionsProviding;
 
 @interface SXColumnCalculator : NSObject <SXColumnCalculator>
 {
-    id <SXDebugLayoutOptionsProviding> _debugLayoutOptionsProvider;
-    long long _ignoreDocumentMarginBehavior;
 }
 
-@property(readonly, nonatomic) long long ignoreDocumentMarginBehavior; // @synthesize ignoreDocumentMarginBehavior=_ignoreDocumentMarginBehavior;
-@property(readonly, nonatomic) id <SXDebugLayoutOptionsProviding> debugLayoutOptionsProvider; // @synthesize debugLayoutOptionsProvider=_debugLayoutOptionsProvider;
-- (void).cxx_destruct;
-- (id)columnLayoutWithConstrainedViewportSize:(struct CGSize)arg1 scaledConstrainedViewportSize:(struct CGSize)arg2 viewportSize:(struct CGSize)arg3 additionalMargin:(double)arg4 leftScreenMargin:(double)arg5 rightScreenMargin:(double)arg6 documentLayout:(id)arg7 contentScaleFactor:(double)arg8;
-- (id)columnLayoutWithConstrainedViewportSize:(struct CGSize)arg1 viewportSize:(struct CGSize)arg2 additionalMargin:(double)arg3 leftScreenMargin:(double)arg4 rightScreenMargin:(double)arg5 documentLayout:(id)arg6;
+- (id)columnLayoutWithConstrainedViewportSize:(struct CGSize)arg1 scaledConstrainedViewportSize:(struct CGSize)arg2 viewportSize:(struct CGSize)arg3 documentLayout:(id)arg4 contentScaleFactor:(double)arg5;
+- (id)columnLayoutWithConstrainedViewportSize:(struct CGSize)arg1 viewportSize:(struct CGSize)arg2 documentLayout:(id)arg3;
 - (id)columnLayoutWithViewportSize:(struct CGSize)arg1 constrainedToWidth:(double)arg2 documentLayout:(id)arg3 contentScaleFactor:(double)arg4;
-- (id)initWithDebugLayoutOptionsProvider:(id)arg1 ignoreDocumentMarginBehavior:(long long)arg2;
-- (id)initWithIgnoreDocumentMarginBehavior:(long long)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

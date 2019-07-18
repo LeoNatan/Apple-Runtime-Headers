@@ -48,6 +48,8 @@
 + (double)trailingCenteringEdgeInset;
 + (double)leadingCenteringEdgeInset;
 + (double)leadingSmallPillSpacing;
++ (double)leadingPillInset;
++ (double)leadingPillSpacing;
 + (double)leadingItemSpacing;
 + (double)notchBottomCornerRadius;
 + (double)notchTopCornerRadius;
@@ -92,6 +94,7 @@
 - (double)airplaneShouldFadeForAnimationType:(long long)arg1;
 - (double)airplaneSpeedForAnimationType:(long long)arg1;
 - (double)airplaneTravelOffsetInProposedPartWithIdentifier:(id *)arg1 animationType:(long long)arg2;
+- (id)animationForBackgroundActivityPillWithDuration:(double)arg1 scale:(double)arg2;
 - (void)_updateSystemNavigationWithData:(id)arg1;
 - (void)updateDataForSystemNavigation:(id)arg1;
 - (void)updateDataForService:(id)arg1;

@@ -16,21 +16,21 @@
     NSUUID *_identifier;
     NSUUID *_parentIdentifier;
     NSString *_name;
+    NSMutableArray *_constraints;
     NSNumber *_type;
     NSNumber *_properties;
     HMSettingValue *_internalValue;
-    NSMutableArray *_constraints;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
 + (id)settingValueWithModel:(id)arg1;
-@property(retain) NSMutableArray *constraints; // @synthesize constraints=_constraints;
 @property(copy) HMSettingValue *internalValue; // @synthesize internalValue=_internalValue;
 @property(copy) NSNumber *properties; // @synthesize properties=_properties;
 @property(copy) NSNumber *type; // @synthesize type=_type;
 @property(getter=isReadOnly) _Bool readOnly; // @synthesize readOnly=_readOnly;
-@property(readonly, copy) NSString *name; // @synthesize name=_name;
+@property(retain) NSMutableArray *constraints; // @synthesize constraints=_constraints;
+@property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSUUID *parentIdentifier; // @synthesize parentIdentifier=_parentIdentifier;
 @property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;

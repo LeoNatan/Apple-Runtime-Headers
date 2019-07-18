@@ -18,7 +18,6 @@
 - (float)overwritingRemoteVADScore;
 - (_Bool)shouldOverwriteRemoteVADScore;
 - (_Bool)iOSBargeInSupportEnabled;
-- (_Bool)iOSBargeInPowerSavingEnabled;
 - (_Bool)useSiriActivationSPIForwatchOS;
 - (_Bool)useSiriActivationSPIForHomePod;
 - (unsigned int)maxNumLoggingFiles;

@@ -20,6 +20,7 @@
 - (void)scrollViewControllerWillEndScrolling:(PXScrollViewController *)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewControllerDidScroll:(PXScrollViewController *)arg1;
 - (void)scrollViewControllerWillBeginScrolling:(PXScrollViewController *)arg1;
+- (void)scrollViewControllerDidLayoutSubviews:(PXScrollViewController *)arg1;
 - (void)scrollViewControllerWillLayoutSubviews:(PXScrollViewController *)arg1;
 @end
 

@@ -41,6 +41,8 @@ __attribute__((visibility("hidden")))
 - (unsigned int)fetchCoalescedCallCountWithPredicate:(id)arg1 sortDescriptors:(id)arg2;
 - (id)fetchCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned int)arg3 offset:(unsigned int)arg4 batchSize:(unsigned int)arg5;
 - (unsigned int)fetchCallCountWithPredicate:(id)arg1 sortDescriptors:(id)arg2;
+- (int)deleteCallsWithPredicate:(id)arg1 error:(id *)arg2;
+- (int)setRead:(_Bool)arg1 forCallsWithPredicate:(id)arg2 error:(id *)arg3;
 - (void)insertRecordsWithoutTransactions:(id)arg1;
 - (void)insertWithoutTransaction:(id)arg1;
 - (void)insert:(id)arg1;

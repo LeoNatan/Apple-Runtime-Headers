@@ -6,7 +6,7 @@
 
 #import <coreroutine/RTCloudManagedObject.h>
 
-@class NSData, NSNumber, NSString, NSUUID, RTAddressMO, RTLearnedPlaceMO, RTMapItemExtendedAttributesMO, RTUserCorrectionMO;
+@class NSData, NSNumber, NSString, NSUUID, RTAddressMO, RTLearnedPlaceMO, RTMapItemExtendedAttributesMO;
 
 @interface RTMapItemMO : RTCloudManagedObject
 {
@@ -36,7 +36,6 @@
 @property(copy, nonatomic) NSNumber *referenceFrame; // @dynamic referenceFrame;
 @property(copy, nonatomic) NSNumber *resultProviderID; // @dynamic resultProviderID;
 @property(copy, nonatomic) NSNumber *uncertainty; // @dynamic uncertainty;
-@property(retain, nonatomic) RTUserCorrectionMO *userCorrection; // @dynamic userCorrection;
 
 @end
 

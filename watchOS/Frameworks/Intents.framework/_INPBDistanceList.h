@@ -15,12 +15,14 @@
 @interface _INPBDistanceList : PBCodable <_INPBDistanceList, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     _INPBCondition *_condition;
     NSArray *_distances;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)distanceType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *distances; // @synthesize distances=_distances;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
 - (void).cxx_destruct;

@@ -118,6 +118,10 @@ struct map<unsigned int, std::__1::stack<unsigned int, std::__1::deque<unsigned 
     } __tree_;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 struct unique_ptr<NU::Histogram<long, double>, std::__1::default_delete<NU::Histogram<long, double>>> {
     struct __compressed_pair<NU::Histogram<long, double>*, std::__1::default_delete<NU::Histogram<long, double>>> {
         struct Histogram<long, double> *__value_;

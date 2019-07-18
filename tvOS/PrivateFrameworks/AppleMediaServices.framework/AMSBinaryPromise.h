@@ -17,6 +17,7 @@
 + (id)_globalPromiseStorage;
 + (id)promiseWithSuccess;
 + (id)promiseWithPromise:(id)arg1;
++ (id)promiseWithFlattenedPromises:(id)arg1;
 + (id)promiseWithError:(id)arg1;
 + (id)promiseWithAny:(id)arg1;
 + (id)promiseWithAll:(id)arg1;

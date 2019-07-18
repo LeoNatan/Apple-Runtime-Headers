@@ -6,11 +6,12 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class NSArray, UIResponder;
+@class NSArray, UIInputViewSet;
+@protocol UIKeyInput;
 
 @protocol UIPredictiveViewController <NSObject>
 @property(readonly, nonatomic) NSArray *displayedCandidates;
 - (_Bool)hidesExpandableButton;
-- (_Bool)isVisibleForInputResponder:(UIResponder *)arg1;
+- (_Bool)isVisibleForInputDelegate:(id <UIKeyInput>)arg1 inputViews:(UIInputViewSet *)arg2;
 @end
 

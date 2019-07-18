@@ -11,6 +11,7 @@
 @interface HUNearbyDevice : NSObject
 {
     BOOL _activating;
+    BOOL _shouldTrack;
     RPCompanionLinkDevice *_device;
     unsigned long long _connectionStatus;
     RPCompanionLinkClient *_client;
@@ -18,6 +19,7 @@
 }
 
 @property(retain, nonatomic) NSMutableDictionary *previousMessageCache; // @synthesize previousMessageCache=_previousMessageCache;
+@property(nonatomic) BOOL shouldTrack; // @synthesize shouldTrack=_shouldTrack;
 @property(nonatomic, getter=isActivating) BOOL activating; // @synthesize activating=_activating;
 @property(retain) RPCompanionLinkClient *client; // @synthesize client=_client;
 @property(nonatomic) unsigned long long connectionStatus; // @synthesize connectionStatus=_connectionStatus;

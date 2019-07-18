@@ -51,6 +51,7 @@
     NSArray *_displayElements;
     NSString *_explicitString;
     long long _failedArtworkRetryCount;
+    id _volumeControlAssertion;
     NSString *_label;
     unsigned long long _supportedModes;
     long long _selectedMode;
@@ -67,6 +68,7 @@
 @property(nonatomic) long long selectedMode; // @synthesize selectedMode=_selectedMode;
 @property(nonatomic) unsigned long long supportedModes; // @synthesize supportedModes=_supportedModes;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(retain, nonatomic) id volumeControlAssertion; // @synthesize volumeControlAssertion=_volumeControlAssertion;
 @property(readonly, nonatomic) long long failedArtworkRetryCount; // @synthesize failedArtworkRetryCount=_failedArtworkRetryCount;
 @property(nonatomic) _Bool failedToLoadArtwork; // @synthesize failedToLoadArtwork=_failedToLoadArtwork;
 @property(copy, nonatomic) NSString *explicitString; // @synthesize explicitString=_explicitString;
@@ -128,7 +130,7 @@
 - (void)_updateSecondaryStringFormat;
 - (void)_updatePlaceholderArtwork;
 - (void)_updateRouteNameLabel;
-- (void)_updateControlCenterMetadata:(id)arg1;
+- (void)_updateControlCenterMetadata:(id)arg1 sectionMetadata:(id)arg2;
 - (void)_updateHeaderUI;
 - (void)endpointControllerRouteDidUpdate:(id)arg1;
 - (void)endpointControllerDidUpdateRoutingAvailability:(id)arg1;
@@ -142,6 +144,8 @@
 - (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
 @property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
 - (id)visualStylingProviderForCategory:(long long)arg1;
+- (void)_updateHardwareVolumeButtons;
+- (_Bool)_isExpanded;
 - (_Bool)_shouldUseViewServiceToPresentTVRemote;
 - (void)_prewarmTVRemoteIfNeeded;
 - (id)_tvAirplayIdentifier;
@@ -173,7 +177,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 
 @end
 

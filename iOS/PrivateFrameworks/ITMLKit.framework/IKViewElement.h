@@ -48,6 +48,8 @@
     unsigned long long _implicitUpdateType;
 }
 
++ (id)_eventXMLNameMap;
++ (id)DOMEventTypeNameMap;
 + (unsigned long long)evaluateElementUpdateType:(id)arg1;
 + (unsigned long long)updateTypeForChangeInAttribute:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
 + (id)supportedFeaturesForElementName:(id)arg1;

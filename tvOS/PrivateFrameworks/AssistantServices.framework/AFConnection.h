@@ -201,9 +201,8 @@
 - (void)_tellDelegateAudioSessionDidBecomeActive:(_Bool)arg1;
 - (void)_tellDelegateAudioSessionWillBecomeActive:(_Bool)arg1;
 - (void)_tellDelegateStartPlaybackDidFail:(long long)arg1;
-- (void)_tellDelegateWillProcessStartPlayback:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_tellDelegateWillProcessStartPlayback:(long long)arg1 intent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_tellDelegateAudioPlaybackRequestDidStop:(id)arg1 error:(id)arg2;
-- (void)_tellDelegateAudioPlaybackRequestDidNotStart:(id)arg1 error:(id)arg2;
 - (void)_tellDelegateAudioPlaybackRequestDidStart:(id)arg1;
 - (void)_tellDelegateAudioPlaybackRequestWillStart:(id)arg1;
 - (void)_tellDelegateAudioSessionDidEndInterruption:(_Bool)arg1;

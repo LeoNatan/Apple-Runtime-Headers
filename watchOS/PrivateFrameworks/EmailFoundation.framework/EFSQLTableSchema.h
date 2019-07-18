@@ -44,8 +44,10 @@
 @property(readonly, copy, nonatomic) NSArray *uniqueColumns;
 @property(readonly, copy, nonatomic) NSArray *columns;
 @property(readonly, nonatomic) EFSQLColumnSchema *rowIDColumn;
-- (id)fullNameWithDatabase:(id)arg1;
-- (id)definitionWithDatabase:(id)arg1;
+- (id)fullNameWithDatabaseName:(id)arg1;
+- (id)indexDefinitionsWithDatabaseName:(id)arg1;
+- (id)definitionWithDatabaseName:(id)arg1 includeIndexes:(_Bool)arg2;
+- (id)definitionWithDatabaseName:(id)arg1;
 - (id)description;
 - (id)initWithName:(id)arg1 rowIDType:(unsigned int)arg2 rowIDAlias:(id)arg3 columns:(id)arg4 primaryKeyColumns:(id)arg5 conflictResolution:(unsigned int)arg6;
 - (id)initWithName:(id)arg1 columns:(id)arg2 primaryKeyColumns:(id)arg3 conflictResolution:(unsigned int)arg4;

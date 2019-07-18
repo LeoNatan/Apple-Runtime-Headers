@@ -11,26 +11,24 @@
 @interface SBEntityRemovalDeclineFloatingSwitcherModifier : SBTransitionSwitcherModifier
 {
     SBAppLayout *_fromAppLayout;
+    SBAppLayout *_toAppLayout;
     long long _floatingConfiguration;
 }
 
 - (void).cxx_destruct;
+- (_Bool)_isIndexToAppLayout:(unsigned long long)arg1;
+- (_Bool)_isIndexFromAppLayout:(unsigned long long)arg1;
 - (id)layoutSettings;
 - (double)shadowOpacityForIndex:(unsigned long long)arg1;
 - (double)opacityForIndex:(unsigned long long)arg1;
+- (id)topMostAppLayouts;
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (double)scaleForIndex:(unsigned long long)arg1;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;
 - (long long)layoutUpdateMode;
-- (_Bool)isContentStatusBarVisible;
-- (id)cornerRadiusSettingsForIndex:(unsigned long long)arg1;
-- (struct UIRectCornerRadii)cardCornerRadiiForIndex:(unsigned long long)arg1;
-- (long long)dockUpdateMode;
-- (double)dockProgress;
-- (_Bool)wantsDockWindowLevelAssertion;
-- (_Bool)isSwitcherWindowVisible;
 - (struct CGRect)containerViewBounds;
-- (id)initWithTransitionID:(id)arg1 appLayout:(id)arg2 floatingConfiguration:(long long)arg3;
+- (id)transitionWillBegin;
+- (id)initWithTransitionID:(id)arg1 fromAppLayout:(id)arg2 toAppLayout:(id)arg3 floatingConfiguration:(long long)arg4;
 
 @end
 

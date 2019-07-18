@@ -13,6 +13,7 @@
 @optional
 - (void)moduleController:(HUAccessorySettingsItemModuleController *)arg1 settingUpdatedForItem:(HFAccessorySettingItem *)arg2;
 - (void)moduleController:(HUAccessorySettingsItemModuleController *)arg1 preflightCheckToAllowSwitchingForSettingItem:(HFAccessorySettingItem *)arg2 changingToOn:(BOOL)arg3 withCompletion:(void (^)(NAFuture *))arg4;
+- (BOOL)moduleController:(HUAccessorySettingsItemModuleController *)arg1 shouldDisableItem:(HFAccessorySettingItem *)arg2;
 - (NAFuture *)moduleController:(HUAccessorySettingsItemModuleController *)arg1 requestPresentViewController:(UIViewController *)arg2 animated:(BOOL)arg3;
 - (void)moduleController:(HUAccessorySettingsItemModuleController *)arg1 presentGroup:(HFAccessorySettingGroupItem *)arg2;
 @end

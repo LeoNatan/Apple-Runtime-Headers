@@ -74,6 +74,7 @@
 - (id)UUIDForKey:(id)arg1;
 - (id)URLForKey:(id)arg1;
 - (id)dateForKey:(id)arg1;
+- (_Bool)booleanForKey:(id)arg1 is:(_Bool)arg2;
 - (_Bool)booleanForKey:(id)arg1;
 - (unsigned long long)uint64ForKey:(id)arg1;
 - (long long)integerForKey:(id)arg1;
@@ -126,7 +127,7 @@
 - (_Bool)updateUndecoratedTitle:(id)arg1;
 - (id)departingAirportCode;
 - (id)fullFlightCode;
-- (_Bool)hasFullFlightInfo;
+- (_Bool)hasFullFlightInfoAndGate;
 - (_Bool)hasEssentialFlightInfo;
 @property(readonly, nonatomic) NSString *shortcutIdentifier;
 @property(readonly, nonatomic) _Bool isShortcutForSetup;

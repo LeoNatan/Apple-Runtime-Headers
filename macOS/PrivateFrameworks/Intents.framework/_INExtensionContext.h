@@ -16,6 +16,7 @@
 {
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _isPrivateExtension;
+    id _handlerForIntent;
     id <INIntentHandlerProvidingPrivate> _extensionHandler;
     id _activeHandlerForIntent;
 }

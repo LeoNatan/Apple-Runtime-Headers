@@ -105,7 +105,6 @@
 - (void)removeInflightBlurAnimations;
 - (void)_createPlaceholderSnapshotAndPerformDoubleSidedFadeForView:(id)arg1 fadeOutDuration:(double)arg2 fadeOutDelay:(double)arg3 fadeInDuration:(double)arg4 fadeInDelay:(double)arg5;
 - (void)_createPlaceholderSnapshotAndPerformSingleSidedFadeForView:(id)arg1 fadeOutDuration:(double)arg2 fadeOutDelay:(double)arg3;
-- (void)handleApplicationDidEnterBackground;
 - (void)prepareForAutorotation;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;
 - (void)instructionLabelDidChangeIntrinsicContentSize:(id)arg1;

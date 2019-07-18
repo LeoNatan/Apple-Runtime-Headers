@@ -6,9 +6,13 @@
 
 #import <Foundation/NSError.h>
 
+@class NSString;
+
 @interface NSError (AppleMediaServices)
 - (_Bool)ams_hasDomain:(id)arg1 code:(unsigned int)arg2;
 - (id)ams_errorByAddingUserInfo:(id)arg1;
 @property(readonly, nonatomic, getter=ams_isUserCancelledError) _Bool ams_userCancelledError;
+@property(readonly, nonatomic) NSString *ams_title;
+@property(readonly, nonatomic) NSString *ams_message;
 @end
 

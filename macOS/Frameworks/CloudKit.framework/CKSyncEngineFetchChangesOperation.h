@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _recordWithIDWasDeletedBlock;
     CDUnknownBlockType _recordZoneChangeTokensUpdatedBlock;
     CDUnknownBlockType _recordZoneFetchCompletionBlock;
-    CDUnknownBlockType _didEnqueueOperationBlock;
+    CDUnknownBlockType _willEnqueueOperationBlock;
     CDUnknownBlockType _fetchChangesCompletionBlock;
     NSError *_error;
     NSOperationQueue *_operationQueue;
@@ -37,7 +37,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) CDUnknownBlockType fetchChangesCompletionBlock; // @synthesize fetchChangesCompletionBlock=_fetchChangesCompletionBlock;
-@property(copy, nonatomic) CDUnknownBlockType didEnqueueOperationBlock; // @synthesize didEnqueueOperationBlock=_didEnqueueOperationBlock;
+@property(copy, nonatomic) CDUnknownBlockType willEnqueueOperationBlock; // @synthesize willEnqueueOperationBlock=_willEnqueueOperationBlock;
 @property(copy, nonatomic) CDUnknownBlockType recordZoneFetchCompletionBlock; // @synthesize recordZoneFetchCompletionBlock=_recordZoneFetchCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType recordZoneChangeTokensUpdatedBlock; // @synthesize recordZoneChangeTokensUpdatedBlock=_recordZoneChangeTokensUpdatedBlock;
 @property(copy, nonatomic) CDUnknownBlockType recordWithIDWasDeletedBlock; // @synthesize recordWithIDWasDeletedBlock=_recordWithIDWasDeletedBlock;

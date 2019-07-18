@@ -38,7 +38,7 @@
 - (void).cxx_destruct;
 - (double)getRadiusForDate:(id)arg1;
 - (void)addOutlier:(id)arg1;
-- (void)addNewPoint:(id)arg1;
+- (void)addNewPoint:(id)arg1 event:(unsigned long long)arg2 lcFSMState:(unsigned long long)arg3 fsmState:(unsigned long long)arg4;
 - (id)createVisit:(long long)arg1 confidence:(double)arg2;
 @property(readonly, nonatomic) unsigned long long numOfOutliers;
 @property(readonly, nonatomic) unsigned long long numOfResiduePoints;

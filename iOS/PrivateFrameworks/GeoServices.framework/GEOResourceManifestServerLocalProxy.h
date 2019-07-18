@@ -83,6 +83,7 @@
 - (void)_manifestURLDidChange:(id)arg1;
 - (void)protectedDataDidBecomeAvailable:(id)arg1;
 - (void)_reachabilityChanged:(id)arg1;
+- (void)_terminationRequested:(id)arg1;
 - (void)_networkDefaultsDidChange:(id)arg1;
 - (void)_countryProvidersDidChange:(id)arg1;
 - (_Bool)_writeActiveTileGroupToDisk:(id)arg1 error:(id *)arg2;

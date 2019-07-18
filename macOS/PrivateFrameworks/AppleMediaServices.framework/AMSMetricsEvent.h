@@ -15,7 +15,6 @@
 {
     NSMutableDictionary *_underlyingDictionary;
     ACAccount *_account;
-    NSString *_app;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSNumber *_databasePID;
 }
@@ -28,7 +27,6 @@
 + (id)createEventFromAuthenticationContext:(id)arg1 error:(id)arg2;
 @property(retain) NSNumber *databasePID; // @synthesize databasePID=_databasePID;
 @property(readonly) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
-@property(retain, nonatomic) NSString *app; // @synthesize app=_app;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 - (void)_setProperty:(id)arg1 forBodyKey:(id)arg2 clientOnly:(BOOL)arg3;
@@ -44,9 +42,11 @@
 @property(retain, nonatomic) NSNumber *eventVersion;
 @property(retain, nonatomic) NSString *eventType;
 @property(retain, nonatomic) NSNumber *eventTime;
+@property(retain) NSString *clientEventID;
 @property(retain, nonatomic) NSString *canaryIdentifier;
 @property(retain, nonatomic) NSNumber *baseVersion;
 @property(retain, nonatomic) NSString *appVersion;
+@property(retain, nonatomic) NSString *app;
 @property(readonly, nonatomic) NSMutableDictionary *underlyingDictionary; // @synthesize underlyingDictionary=_underlyingDictionary;
 @property(readonly) NSDictionary *dictionaryForPosting;
 @property(readonly) NSDictionary *databaseEventBody;

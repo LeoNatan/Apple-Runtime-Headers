@@ -105,6 +105,7 @@
 - (void)showNewMessageCompositionPanelWithRecipients:(id)arg1 composition:(id)arg2 animated:(_Bool)arg3;
 - (id)_sharedBalloonPluginManager;
 - (void)executeDeferredHandleURLBlock;
+- (void)executeDeferredTasks;
 - (void)_appStateChange:(id)arg1;
 - (void)_chatItemsDidChange:(id)arg1;
 - (void)_chatRegistryDidLoad:(id)arg1;
@@ -153,12 +154,14 @@
 - (id)conversationList;
 - (_Bool)becomeFirstResponder;
 - (void)didReceiveMemoryWarning;
+- (unsigned int)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
 - (id)childViewControllerForStatusBarHidden;
 - (int)preferredStatusBarStyle;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;

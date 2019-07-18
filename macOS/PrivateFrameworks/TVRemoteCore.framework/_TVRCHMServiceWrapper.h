@@ -37,6 +37,7 @@
 @property(nonatomic) __weak id <_TVRCHMServiceWrapperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL connected; // @synthesize connected=_connected;
 - (void).cxx_destruct;
+- (void)_writeValue:(id)arg1 toCharacteristic:(id)arg2;
 - (void)_checkVolumeServicesForAccessory:(id)arg1;
 - (void)_setCharacteristicsForService:(id)arg1;
 - (id)_televisionServiceForAccessory:(id)arg1;

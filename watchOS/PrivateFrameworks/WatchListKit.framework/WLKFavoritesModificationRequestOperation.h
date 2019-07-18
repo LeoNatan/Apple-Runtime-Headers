@@ -17,6 +17,7 @@
 @property(readonly, copy, nonatomic) NSString *entityID; // @synthesize entityID=_entityID;
 @property(readonly, nonatomic) unsigned int action; // @synthesize action=_action;
 - (void).cxx_destruct;
+- (void)processResponse;
 - (id)initWithAction:(unsigned int)arg1 entityId:(id)arg2 caller:(id)arg3;
 
 @end

@@ -31,6 +31,7 @@
 
 + (id)_loadImageSubsampledToScreenSizeFromData:(id)arg1;
 + (_Bool)supportsSecureCoding;
++ (id)_PDFImageNamed:(id)arg1 template:(_Bool)arg2;
 + (id)_PNGImageNamed:(id)arg1 template:(_Bool)arg2;
 + (id)_PNGImageNamed:(id)arg1;
 @property(retain, nonatomic) UIImage *platformImage; // @synthesize platformImage=_platformImage;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSArray *_remoteURLsForEmailCompatibleOutput; // @synthesize _remoteURLsForEmailCompatibleOutput;
 @property(nonatomic, getter=_isFallbackIcon) _Bool _fallbackIcon; // @synthesize _fallbackIcon;
 - (void).cxx_destruct;
-- (id)_asFallbackIcon;
 - (id)_asTemplate;
 @property(readonly, retain, nonatomic) NSItemProvider *_itemProvider;
 - (void)loadAsynchronouslyWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -15,17 +15,22 @@
 @interface _INPBPayloadConfirmation : PBCodable <_INPBPayloadConfirmation, NSSecureCoding, NSCopying>
 {
     struct {
+        unsigned int startCallIntentContactsConfirmationReason:1;
         unsigned int reason:1;
         unsigned int addTasksIntentTargetTaskListConfirmationReason:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
+    int _startCallIntentContactsConfirmationReason;
     int _reason;
     int _addTasksIntentTargetTaskListConfirmationReason;
     _INPBSelectionItem *_confirmationItem;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int addTasksIntentTargetTaskListConfirmationReason; // @synthesize addTasksIntentTargetTaskListConfirmationReason=_addTasksIntentTargetTaskListConfirmationReason;
 @property(nonatomic) int reason; // @synthesize reason=_reason;
+@property(nonatomic) int startCallIntentContactsConfirmationReason; // @synthesize startCallIntentContactsConfirmationReason=_startCallIntentContactsConfirmationReason;
 @property(retain, nonatomic) _INPBSelectionItem *confirmationItem; // @synthesize confirmationItem=_confirmationItem;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
@@ -42,6 +47,9 @@
 - (int)StringAsReason:(id)arg1;
 - (id)reasonAsString:(int)arg1;
 @property(nonatomic) _Bool hasReason;
+- (int)StringAsStartCallIntentContactsConfirmationReason:(id)arg1;
+- (id)startCallIntentContactsConfirmationReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasStartCallIntentContactsConfirmationReason;
 @property(readonly, nonatomic) _Bool hasConfirmationItem;
 
 // Remaining properties

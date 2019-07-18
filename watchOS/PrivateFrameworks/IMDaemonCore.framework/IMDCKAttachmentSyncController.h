@@ -6,7 +6,7 @@
 
 #import <IMDaemonCore/IMDCKAbstractSyncController.h>
 
-@class CKServerChangeToken, IMDCKAttachmentSyncCKOperationFactory, IMDRecordZoneManager, NSMutableArray, NSMutableDictionary, NSObject;
+@class IMDCKAttachmentSyncCKOperationFactory, IMDRecordZoneManager, NSMutableArray, NSMutableDictionary, NSObject;
 @protocol IMDCKSyncTokenStore, OS_dispatch_queue, OS_xpc_object;
 
 @interface IMDCKAttachmentSyncController : IMDCKAbstractSyncController
@@ -49,8 +49,9 @@
 - (void)clearLocalSyncState;
 - (void)deleteAttachmentZone;
 - (void)_deleteStingRayToken;
-@property(retain, nonatomic) CKServerChangeToken *latestSyncToken;
-- (id)_changeTokenKey;
+- (id)latestSyncTokenForSyncType:(int)arg1;
+- (void)setLatestSyncToken:(id)arg1 forSyncType:(int)arg2;
+- (id)_changeTokenKeyForSyncType:(int)arg1;
 - (void)_migrateSyncToken;
 - (void)_resetAttachmentSyncStateForRecord:(id)arg1 toState:(int)arg2;
 - (void)_markTransferAsNotBeingAbleToSyncUsingCKRecord:(id)arg1;
@@ -63,7 +64,7 @@
 - (void)_processAssetFetchPerRecordProgressBlock:(id)arg1 progress:(double)arg2;
 - (void)_processModifyRecordCompletion:(id)arg1 deletedRecordIDs:(id)arg2 error:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)_operationErrorForModifyingRecordCompletion:(id)arg1;
-- (void)_processRecordZoneChangeTokenUpdated:(id)arg1 zoneID:(id)arg2 clienChangeToken:(id)arg3;
+- (void)_processRecordZoneChangeTokenUpdated:(id)arg1 zoneID:(id)arg2 clienChangeToken:(id)arg3 syncType:(int)arg4;
 - (void)_processRecordChanged:(id)arg1;
 - (void)_processRecordDeletion:(id)arg1;
 - (void)_processFetchRecordChangesCompleted:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

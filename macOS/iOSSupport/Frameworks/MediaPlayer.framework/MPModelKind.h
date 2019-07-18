@@ -18,13 +18,17 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)kindWithModelClass:(Class)arg1;
++ (id)identityKind;
 @property(readonly, nonatomic) Class modelClass; // @synthesize modelClass=_modelClass;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSString *humanDescription;
 - (id)debugDescription;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)_init;
+@property(readonly, nonatomic) MPModelKind *identityKind;
 
 @end
 

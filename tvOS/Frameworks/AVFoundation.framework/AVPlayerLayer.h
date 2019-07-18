@@ -20,6 +20,10 @@
 + (id)keyPathsForValuesAffectingVideoRect;
 + (id)makeClosedCaptionLayer;
 + (id)playerLayerWithPlayer:(id)arg1;
+- (_Bool)_isPartOfForegroundScene;
+- (void)_updateIsPartOfForegroundScene;
+- (void)_windowSceneDidEnterBackground:(id)arg1;
+- (_Bool)_currentWindowSceneIsForeground;
 - (void)removeFromSuperlayer;
 - (void)replaceSublayer:(id)arg1 with:(id)arg2;
 - (void)insertSublayer:(id)arg1 above:(id)arg2;

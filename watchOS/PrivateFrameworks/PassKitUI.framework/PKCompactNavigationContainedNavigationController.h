@@ -29,6 +29,7 @@
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)viewWillLayoutSubviews;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithStyle:(unsigned int)arg1;

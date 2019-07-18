@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)collectDebuggingInformationWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)movingItemAtURL:(id)arg1 requiresProvidingWithDestinationURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (oneway void)observeEndOfWriteAtURL:(id)arg1 forClaimWithID:(id)arg2 fromProcessWithIdentifier:(int)arg3;
 - (oneway void)observePresentationChangeOfKind:(id)arg1 forPresenterWithID:(id)arg2 fromProcessWithIdentifier:(int)arg3 observedUbiquityAttributes:(id)arg4 url:(id)arg5 newURL:(id)arg6;
 - (void)providePhysicalItemForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -21,9 +21,8 @@
 - (oneway void)audioSessionDidBecomeActive:(_Bool)arg1;
 - (oneway void)audioSessionWillBecomeActive:(_Bool)arg1;
 - (oneway void)startPlaybackDidFail:(int)arg1;
-- (oneway void)willProcessStartPlayback:(int)arg1 completion:(CDUnknownBlockType)arg2;
+- (oneway void)willProcessStartPlayback:(int)arg1 intent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (oneway void)audioPlaybackRequestDidStop:(id)arg1 error:(id)arg2;
-- (oneway void)audioPlaybackRequestDidNotStart:(id)arg1 error:(id)arg2;
 - (oneway void)audioPlaybackRequestDidStart:(id)arg1;
 - (oneway void)audioPlaybackRequestWillStart:(id)arg1;
 - (oneway void)audioSessionDidEndInterruption:(_Bool)arg1;

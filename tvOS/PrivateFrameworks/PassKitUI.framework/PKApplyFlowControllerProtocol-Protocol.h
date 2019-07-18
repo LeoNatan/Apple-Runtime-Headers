@@ -6,9 +6,9 @@
 
 #import <PassKitUI/NSObject-Protocol.h>
 
-@class PKApplyPage;
+@class PKDynamicProvisioningPageContent;
 
 @protocol PKApplyFlowControllerProtocol <NSObject>
-- (PKApplyPage *)currentPage;
+- (PKDynamicProvisioningPageContent *)currentPage;
 @end
 

@@ -15,12 +15,14 @@ __attribute__((visibility("hidden")))
 {
     NSString *_domainIdentifier;
     SFSearchResult *_sfSearchResult;
+    long long _parsecQueryID;
 }
 
-+ (id)itemForNavigationToURL;
-+ (id)itemForSearchEngineProvider:(id)arg1;
++ (id)itemForNavigationToURLWithQueryID:(long long)arg1;
++ (id)itemForSearchEngineProvider:(id)arg1 forQueryID:(long long)arg2;
+@property(readonly, nonatomic) long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
 - (void).cxx_destruct;
-- (id)_initWithDomainIdentifier:(id)arg1;
+- (id)_initWithDomainIdentifier:(id)arg1 forQueryID:(long long)arg2;
 @property(readonly, nonatomic) unsigned long long engagementDestination;
 @property(readonly, nonatomic) SFSearchResult *sfSearchResultValue;
 @property(readonly, nonatomic) NSString *parsecDomainIdentifier;

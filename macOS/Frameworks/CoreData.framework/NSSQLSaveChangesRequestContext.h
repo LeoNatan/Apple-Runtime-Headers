@@ -14,6 +14,8 @@ __attribute__((visibility("hidden")))
     NSDictionary *_metadataToWrite;
     NSSQLSavePlan *_savePlan;
     NSFaultHandler *_faultHandler;
+    NSSet *_objectIDsInsertUpdatedToPruneDATrigger;
+    NSSet *_objectIDsUpdatedToPruneDATrigger;
     NSSet *_objectIDsToPruneTrigger;
     NSMutableDictionary *_originalCachedRows;
     NSMutableDictionary *_updateMasksForHistoryTracking;

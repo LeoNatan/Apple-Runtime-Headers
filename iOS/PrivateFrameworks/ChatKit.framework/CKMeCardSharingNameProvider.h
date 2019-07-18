@@ -21,6 +21,7 @@
 + (id)nameContactForPrimaryAccount;
 + (id)nameProviderForPrimaryAccount;
 + (id)nameProviderForAccount:(id)arg1;
++ (id)nameProviderForNickname:(id)arg1;
 + (id)nameProviderForContact:(id)arg1;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 @property(retain, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;

@@ -16,12 +16,14 @@
     NSURL *_passURL;
     NSString *_passTypeIdentifier;
     NSString *_passSerialNumber;
+    NSString *_ownershipTokenIdentifier;
     NSArray *_postProvisioningContent;
     PKPaymentRemoteCredential *_remoteCredential;
 }
 
 @property(retain, nonatomic) PKPaymentRemoteCredential *remoteCredential; // @synthesize remoteCredential=_remoteCredential;
 @property(readonly, nonatomic) NSArray *postProvisioningContent; // @synthesize postProvisioningContent=_postProvisioningContent;
+@property(readonly, copy, nonatomic) NSString *ownershipTokenIdentifier; // @synthesize ownershipTokenIdentifier=_ownershipTokenIdentifier;
 @property(readonly, copy, nonatomic) NSString *passSerialNumber; // @synthesize passSerialNumber=_passSerialNumber;
 @property(readonly, copy, nonatomic) NSString *passTypeIdentifier; // @synthesize passTypeIdentifier=_passTypeIdentifier;
 @property(readonly, copy, nonatomic) NSURL *passURL; // @synthesize passURL=_passURL;

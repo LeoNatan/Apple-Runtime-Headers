@@ -23,6 +23,7 @@
     NSString *currentNetworkPath;
 }
 
++ (_Bool)supportsANE;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct __IOSurface *)executeSyncWithImage:(struct __CVBuffer *)arg1 smallImage:(struct __CVBuffer *)arg2;

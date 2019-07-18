@@ -21,6 +21,7 @@
 #import <CoverSheet/CSPersistentContentLayoutProviding-Protocol.h>
 #import <CoverSheet/CSScrollGestureControllerDelegate-Protocol.h>
 #import <CoverSheet/CSTimerViewControllerDelegate-Protocol.h>
+#import <CoverSheet/FBSDisplayLayoutPublisherObserving-Protocol.h>
 #import <CoverSheet/SBFIrisWallpaperViewDelegate-Protocol.h>
 #import <CoverSheet/SBFTodayOverlayObserving-Protocol.h>
 #import <CoverSheet/SBLockScreenActionProvider-Protocol.h>
@@ -30,7 +31,7 @@
 @class BSTimer, CSAppearance, CSBehavior, CSChargingViewController, CSCoverSheetView, CSDismissableModalViewController, CSFixedFooterViewController, CSHomeButtonShowPasscodeRecognizer, CSHomeButtonSuppressAfterUnlockRecognizer, CSInterstitialTransitionSource, CSLayoutStrategy, CSLockScreenSettings, CSLocketForcePressGestureRecognizer, CSLocketTransitionSource, CSMainPageContentViewController, CSModalPresentationViewController, CSNotificationClearingTrigger, CSNotificationDispatcher, CSPowerChangeObserver, CSPresentation, CSPresentationViewController, CSProudLockViewController, CSQuickActionsViewController, CSScrollGestureController, CSTeachableMomentsContainerViewController, CSTimerViewController, FBDisplayLayoutTransition, NSArray, NSHashTable, NSSet, NSString, SBFLockScreenActionContext, SBFLockScreenDateSubtitleView, SBFLockScreenDateViewController, SBFLockScreenWakeAnimator, SBFSteppedAnimationTimingFunctionCalculator, SBLockScreenDefaults, SBWallpaperAggdLogger, UIColor, UIGestureRecognizer, UIStatusBar, UITapGestureRecognizer, UIVisualEffectView, _UILegibilitySettings;
 @protocol CSApplicationLaunching, CSCameraPrewarming, CSCoverSheetContextProviding, CSCoverSheetViewControllerDelegate, CSCoverSheetViewPresenting, CSCoverSheetViewTransitionSource, CSEmergencyCalling, CSIdleTimerControlling, CSLegibilityProviding, CSNotificationDispatcher, CSOrientationUpdateControlling, CSSpotlightPresenting, CSWallpaperColorProvider, SBFIrisWallpaperView, SBFLockOutStatusProvider, SBFScreenWakeAnimationControlling, SBFScreenWakeAnimationTarget, SBFTodayOverlayControlling><CSExternalBehaviorProviding><CSExternalEventHandling, SBNotificationDestination, UICoordinateSpace;
 
-@interface CSCoverSheetViewController : UIViewController <CSPersistentContentLayoutProviding, CSDateTimeLayoutAggregating, CSCoverSheetViewDelegate, UIGestureRecognizerDelegate, CSLegibilityProviderDelegate, SBLockScreenActionProvider, SBFIrisWallpaperViewDelegate, CSCoverSheetViewTransitionSource, CSNotificationDestination, CSTimerViewControllerDelegate, _UISettingsKeyObserver, CSScrollGestureControllerDelegate, CSNotificationClearingTriggerDelegate, CSInterstitialTransitionDelegate, CSLocketTransitionDelegate, CSPasscodeViewControllerDelegate, CSLocketViewControllerDelegate, SBFTodayOverlayObserving, CSCoverSheetViewControllerProtocol, BSDescriptionProviding>
+@interface CSCoverSheetViewController : UIViewController <CSPersistentContentLayoutProviding, CSDateTimeLayoutAggregating, CSCoverSheetViewDelegate, UIGestureRecognizerDelegate, CSLegibilityProviderDelegate, SBLockScreenActionProvider, SBFIrisWallpaperViewDelegate, CSCoverSheetViewTransitionSource, CSNotificationDestination, CSTimerViewControllerDelegate, _UISettingsKeyObserver, CSScrollGestureControllerDelegate, CSNotificationClearingTriggerDelegate, CSInterstitialTransitionDelegate, CSLocketTransitionDelegate, CSPasscodeViewControllerDelegate, CSLocketViewControllerDelegate, SBFTodayOverlayObserving, FBSDisplayLayoutPublisherObserving, CSCoverSheetViewControllerProtocol, BSDescriptionProviding>
 {
     id <CSCoverSheetContextProviding> _coverSheetContext;
     CSLockScreenSettings *_prototypeSettings;
@@ -189,7 +190,7 @@
 - (void)_setModalPresentationControllerVisibility:(_Bool)arg1;
 - (void)_updateModalPresentationControllerVisibility;
 - (void)_setHasContentAboveCoverSheet:(_Bool)arg1;
-- (void)_displayLayoutDidUpdate:(id)arg1;
+- (void)publisher:(id)arg1 didUpdateLayout:(id)arg2 withTransition:(id)arg3;
 - (void)_displayWillTurnOnWhileOnCoverSheet:(id)arg1;
 - (_Bool)_isMainPageShowing;
 - (void)_transitionChargingDateSubtitleToVisible:(_Bool)arg1 animated:(_Bool)arg2 force:(_Bool)arg3;
@@ -253,6 +254,7 @@
 - (void)_updateActiveBehaviorsForReason:(id)arg1 updatingAppearanceIfNeeded:(_Bool)arg2;
 - (void)_updateActiveBehaviorsForReason:(id)arg1;
 - (void)_updateActiveAppearanceForReason:(id)arg1;
+- (id)__currentDesiredAppearanceWithStartIndex:(unsigned long long *)arg1 targetIndex:(unsigned long long *)arg2 targetAppearance:(id *)arg3 targetPresentation:(id *)arg4 modalAppearance:(id *)arg5 proudLockAppearance:(id *)arg6;
 - (_Bool)_shouldUpdateActiveAppearanceForReason:(id)arg1;
 - (_Bool)_wouldUpdateActiveAppearance;
 - (void)_updateLocalAppearanceForPresentation;
@@ -367,7 +369,7 @@
 @property(readonly, nonatomic) _Bool shouldShowLockStatusBarTime;
 - (void)updateCallToActionForMesaMatchFailure;
 - (_Bool)isLockScreenShowingDefaultContent;
-- (void)todayOverlayControllerDidDismiss:(id)arg1;
+- (void)todayOverlayController:(id)arg1 didChangePresentationProgress:(double)arg2;
 - (void)dismissTodayOverlay;
 - (void)scrollPanGestureDidUpdate:(id)arg1;
 - (void)idleTimerWillRefresh;
@@ -466,7 +468,6 @@
 - (void)activateCameraViewAnimated:(_Bool)arg1 sendingActions:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)activateMainPageWithCompletion:(CDUnknownBlockType)arg1;
 - (void)activateTodayViewWithCompletion:(CDUnknownBlockType)arg1;
-- (_Bool)isWidgetExtensionWithIdentifierVisible:(id)arg1;
 - (_Bool)isShowingTodayView;
 @property(readonly, nonatomic) id <SBNotificationDestination> notificationDestination;
 @property(readonly, nonatomic) CSPresentationViewController *mainPagePresentationViewController;

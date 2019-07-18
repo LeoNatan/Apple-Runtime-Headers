@@ -12,6 +12,7 @@
 @interface NUAVPlayerView : NSView
 {
     // Error parsing type: Ai, name: _updateReadyForDisplayID
+    BOOL _observerDetached;
     BOOL _readyForDisplay;
     AVPlayer *_player;
     id <NUAVPlayerViewDelegate> _delegate;
@@ -25,6 +26,7 @@
 - (void)_updateReadyForDisplayWithID: /* Error: Ran out of types for this method. */;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
+- (void)dispose;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

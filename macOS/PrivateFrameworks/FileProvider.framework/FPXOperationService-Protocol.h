@@ -11,7 +11,7 @@
 - (void)userInteractionErrorsForPerformingAction:(NSString *)arg1 sourceItems:(NSArray *)arg2 destinationItem:(FPItem *)arg3 completionHandler:(void (^)(NSArray *))arg4;
 - (void)attemptRecoveryFromError:(NSError *)arg1 optionIndex:(unsigned long long)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)wakeForSessionIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (NSProgress *)performActionWithIdentifier:(NSString *)arg1 onItemsWithIDs:(NSArray *)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (NSProgress *)performActionWithIdentifier:(NSString *)arg1 onItemsWithIdentifiers:(NSArray *)arg2 domainIdentifier:(NSString *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (NSProgress *)disconnectDomainID:(NSString *)arg1 options:(unsigned long long)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (NSProgress *)fetchPublishingURLForItemID:(FPItemID *)arg1 completionHandler:(void (^)(NSURL *, NSError *))arg2;
 - (void)preflightTrashItemIDs:(NSArray *)arg1 completionHandler:(void (^)(NSArray *))arg2;

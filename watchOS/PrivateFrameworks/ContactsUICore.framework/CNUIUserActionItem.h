@@ -20,6 +20,7 @@
     NSDictionary *_associatedRecentContactMetadata;
 }
 
++ (id)workspace;
 + (id)itemWithType:(id)arg1 contactProperty:(id)arg2 bundleIdentifier:(id)arg3 url:(id)arg4 isSensitive:(_Bool)arg5 group:(int)arg6 options:(unsigned int)arg7;
 + (id)itemWithType:(id)arg1 contactProperty:(id)arg2 bundleIdentifier:(id)arg3 url:(id)arg4 group:(int)arg5 options:(unsigned int)arg6;
 + (id)ttyRelayItemWithLabel:(id)arg1 targetStringValue:(id)arg2 url:(id)arg3 bundleIdentifier:(id)arg4;

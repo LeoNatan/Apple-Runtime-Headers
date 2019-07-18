@@ -28,6 +28,7 @@
     long long _installType;
     NSString *_volumeUUIDToErase;
     NSString *_targetVolumeName;
+    NSString *_localizedProductName;
     NSURL *_distributionURL;
     NSURL *_choiceChangesURL;
     NSURL *_baseSystemURL;
@@ -43,6 +44,7 @@
 @property(retain) NSURL *baseSystemURL; // @synthesize baseSystemURL=_baseSystemURL;
 @property(retain) NSURL *choiceChangesURL; // @synthesize choiceChangesURL=_choiceChangesURL;
 @property(retain) NSURL *distributionURL; // @synthesize distributionURL=_distributionURL;
+@property(retain) NSString *localizedProductName; // @synthesize localizedProductName=_localizedProductName;
 @property(retain) NSString *targetVolumeName; // @synthesize targetVolumeName=_targetVolumeName;
 @property BOOL doROSVInstall; // @synthesize doROSVInstall=_doROSVInstall;
 @property(retain) NSString *volumeUUIDToErase; // @synthesize volumeUUIDToErase=_volumeUUIDToErase;

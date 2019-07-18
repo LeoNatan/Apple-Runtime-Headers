@@ -9,7 +9,7 @@
 #import <CFNetwork/NSCopying-Protocol.h>
 #import <CFNetwork/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage;
+@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSNumber, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage;
 @protocol NSURLSessionAppleIDContext;
 
 @interface __NSCFURLSessionConfiguration : NSURLSessionConfiguration <NSCopying, NSSecureCoding>
@@ -77,6 +77,7 @@
     _Bool _allowsTCPFastOpen;
     _Bool _allowsTLSSessionTickets;
     _Bool _allowsTLSSessionResumption;
+    _Bool _allowsTLSFalseStart;
     _Bool _preventsDirectWiFiAccess;
     _Bool _allowTCPIOConnectionStreamTask;
     _Bool _preventsSystemHTTPProxyAuthentication;
@@ -89,6 +90,7 @@
     _Bool _ignoreDidReceiveResponseDisposition;
     _Bool _alwaysPerformDefaultTrustEvaluation;
     _Bool _allowsWCA;
+    NSNumber *_maximumWatchCellularTransferSize;
     int _companionProxyPreference;
     unsigned int _multipathAlternatePort;
     NSString *_disposition;
@@ -207,6 +209,8 @@
 - (unsigned int)_multipathAlternatePort;
 - (void)set_companionProxyPreference:(int)arg1;
 - (int)_companionProxyPreference;
+- (void)set_maximumWatchCellularTransferSize:(id)arg1;
+- (id)_maximumWatchCellularTransferSize;
 - (void)set_allowsWCA:(_Bool)arg1;
 - (_Bool)_allowsWCA;
 - (void)set_alwaysPerformDefaultTrustEvaluation:(_Bool)arg1;
@@ -241,6 +245,8 @@
 - (_Bool)_allowsTLSFallback;
 - (void)set_tlsTrustPinningPolicyName:(id)arg1;
 - (id)_tlsTrustPinningPolicyName;
+- (void)set_allowsTLSFalseStart:(_Bool)arg1;
+- (_Bool)_allowsTLSFalseStart;
 - (void)set_allowsTLSSessionResumption:(_Bool)arg1;
 - (_Bool)_allowsTLSSessionResumption;
 - (void)set_allowsTLSSessionTickets:(_Bool)arg1;
@@ -368,6 +374,10 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (void)setTLSMaximumSupportedProtocolVersion:(unsigned short)arg1;
+- (unsigned short)TLSMaximumSupportedProtocolVersion;
+- (void)setTLSMinimumSupportedProtocolVersion:(unsigned short)arg1;
+- (unsigned short)TLSMinimumSupportedProtocolVersion;
 - (void)setURLCredentialStorage:(id)arg1;
 - (id)URLCredentialStorage;
 - (void)setURLCache:(id)arg1;

@@ -21,7 +21,7 @@
 @property(retain, nonatomic) id <MFMailMessageLibraryMiddleware> middleware; // @synthesize middleware=_middleware;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
-- (void)persistenceWillAddMessage:(id)arg1;
+- (void)persistenceWillAddMessage:(id)arg1 fromExistingMessage:(_Bool)arg2;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)initWithLibrary:(id)arg1 middleware:(id)arg2;
 

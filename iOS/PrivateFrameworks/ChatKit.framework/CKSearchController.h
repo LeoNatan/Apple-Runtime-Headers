@@ -11,7 +11,6 @@
 
 @interface CKSearchController : NSObject
 {
-    _Bool _hasMoreResults;
     _Bool _suppressAvatars;
     _Bool _queryRunning;
     id <CKSearchControllerDelegate> _delegate;
@@ -29,12 +28,14 @@
 + (id)reuseIdentifier;
 + (id)sectionIdentifier;
 + (id)sectionTitle;
++ (unsigned long long)recencyRankedTargetResultCount;
++ (_Bool)previewControllerPresentsModally;
 + (_Bool)supportsMenuInteraction;
 + (_Bool)supportsQuicklook;
++ (_Bool)useRecencyRankedSearchForMode:(unsigned long long)arg1;
 + (id)rankingQueriesWithText:(id)arg1;
 @property(nonatomic) _Bool queryRunning; // @synthesize queryRunning=_queryRunning;
 @property(nonatomic) _Bool suppressAvatars; // @synthesize suppressAvatars=_suppressAvatars;
-@property(nonatomic) _Bool hasMoreResults; // @synthesize hasMoreResults=_hasMoreResults;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(nonatomic) unsigned long long sectionIndex; // @synthesize sectionIndex=_sectionIndex;
 @property(copy, nonatomic) CDUnknownBlockType queryCompletionHandler; // @synthesize queryCompletionHandler=_queryCompletionHandler;
@@ -76,6 +77,7 @@
 - (id)detailsFilterQueriesForChatGUIDs:(id)arg1;
 - (id)zkwFilterQueries;
 - (id)filterQueries;
+@property(readonly, nonatomic) _Bool hasMoreResults;
 - (unsigned long long)maxResultsForMode:(unsigned long long)arg1;
 - (id)fetchAttributes;
 - (id)queryAttributesForText:(id)arg1;

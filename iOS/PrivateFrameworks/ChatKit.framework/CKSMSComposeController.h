@@ -19,6 +19,7 @@
     _Bool _safeToAdd;
     _Bool _didChangeStatusBarStyle;
     long long _savedStatusBarStyle;
+    _Bool _firstItemWasInserted;
     id _delegate;
     CKSMSComposeRemoteViewController *_remoteViewController;
     CKSMSComposeQueuingRemoteViewControllerProxy *_remoteViewControllerProxy;
@@ -28,6 +29,7 @@
 + (double)maxTrimDurationForVideo;
 + (double)maxTrimDurationForAudio;
 + (_Bool)acceptsMIMEType:(id)arg1;
+@property(nonatomic) _Bool firstItemWasInserted; // @synthesize firstItemWasInserted=_firstItemWasInserted;
 @property(retain, nonatomic) CKSMSComposeQueuingRemoteViewControllerProxy *remoteViewControllerProxy; // @synthesize remoteViewControllerProxy=_remoteViewControllerProxy;
 @property(retain, nonatomic) CKSMSComposeRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;

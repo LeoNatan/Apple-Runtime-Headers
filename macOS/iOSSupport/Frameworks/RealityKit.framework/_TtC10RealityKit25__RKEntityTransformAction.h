@@ -21,6 +21,9 @@
     // Error parsing type: , name: originalTranslation
     // Error parsing type: , name: originalOrientation
     // Error parsing type: , name: originalScale
+    // Error parsing type: , name: currentAnimation
+    // Error parsing type: , name: updateSubscription
+    // Error parsing type: , name: deadline
 }
 
 - (id)copyWithZone:(void *)arg1;

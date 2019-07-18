@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TVMediaInfo *lastSelectedMediaInfo; // @synthesize lastSelectedMediaInfo=_lastSelectedMediaInfo;
 @property(nonatomic) __weak id <VUIPostPlayControllerDelegate> postPlayDelegate; // @synthesize postPlayDelegate=_postPlayDelegate;
 - (void).cxx_destruct;
+- (_Bool)automaticallyProvidesMediaController;
 - (void)documentDidUpdate:(id)arg1;
 - (void)didCompleteDocumentCreationWithStatus:(long long)arg1 errorDictionary:(id)arg2;
 - (_Bool)handleEvent:(id)arg1 targetResponder:(id)arg2 viewElement:(id)arg3 extraInfo:(id *)arg4;

@@ -38,7 +38,7 @@
 @property(readonly, nonatomic) NSArray *hourlyConditions; // @synthesize hourlyConditions=_hourlyConditions;
 @property(readonly, nonatomic) WFAirQualityConditions *airQualityConditions; // @synthesize airQualityConditions=_airQualityConditions;
 @property(readonly, nonatomic) WFWeatherConditions *currentConditions; // @synthesize currentConditions=_currentConditions;
-@property(readonly, nonatomic) WFLocation *location; // @synthesize location=_location;
+@property(retain, nonatomic) WFLocation *location; // @synthesize location=_location;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) WFWeatherConditions *nowConditions;
 @property(readonly, nonatomic) NSString *naturalLanguageDescription;

@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSMutableArray *columns; // @synthesize columns=_columns;
 @property(readonly, nonatomic) TSWPStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+- (_Bool)containsStartOfRange:(struct _NSRange)arg1;
 @property(readonly, nonatomic) _Bool columnsAreLeftToRight;
 @property(readonly, nonatomic) _Bool shrinkTextToFit;
 @property(readonly, nonatomic) _Bool alwaysStartsNewTarget;
@@ -41,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)layoutManager:(id)arg1 didClearDirtyRangeWithDelta:(long long)arg2 afterCharIndex:(unsigned long long)arg3;
 - (void)layoutManagerNeedsLayout:(id)arg1;
 - (_Bool)caresAboutStorageChanges;
+- (id)interiorClippingPath;
 @property(readonly, nonatomic) _Bool shouldWrapAroundExternalDrawables;
 @property(readonly, nonatomic) _Bool layoutIsValid;
 - (_Bool)isLayoutOffscreen;
@@ -48,6 +50,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long pageCount;
 @property(readonly, nonatomic) unsigned long long pageNumber;
 @property(readonly, nonatomic) double maxAnchorInBlockDirection;
+- (void)markHiddenInlineDrawableLayout:(id)arg1;
+- (void)clearHiddenInlineDrawableLayoutMarks;
 - (id)currentAnchoredDrawableLayouts;
 - (void)addAttachmentLayout:(id)arg1;
 - (id)currentInlineDrawableLayouts;
@@ -65,6 +69,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGSize currentSize;
 @property(readonly, nonatomic) struct CGSize maxSize;
 @property(readonly, nonatomic) struct CGSize minSize;
+- (_Bool)descendersCannotClip;
 @property(readonly, nonatomic) _Bool isInstructional;
 - (_Bool)isLastTarget;
 @property(readonly, nonatomic) TSPObject<TSDHint> *nextTargetFirstChildHint;
@@ -75,6 +80,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSObject<TSWPTopicNumberHints> *previousTargetTopicNumbers;
 @property(readonly, nonatomic) id <TSWPOffscreenColumn> previousTargetLastColumn;
 - (id)columnMetricsForCharIndex:(unsigned long long)arg1 outRange:(struct _NSRange *)arg2;
+- (double)textScaleForChild:(id)arg1;
 - (struct CGSize)measuredSizeWithFlags:(unsigned int)arg1 minSize:(struct CGSize)arg2 maxSize:(struct CGSize)arg3;
 - (struct CGSize)measuredSizeWithFlags:(unsigned int)arg1;
 - (id)pLayoutWithMinSize:(struct CGSize)arg1 maxSize:(struct CGSize)arg2 anchor:(struct CGPoint)arg3 flags:(unsigned int)arg4;

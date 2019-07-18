@@ -9,6 +9,7 @@
 @class SFWatchWebViewController, _SFNavigationBarItem;
 
 @protocol SFWatchWebViewControllerDelegate <NSObject>
+- (void)webViewControllerDidCommitNavigation:(SFWatchWebViewController *)arg1;
 - (void)webViewcontroller:(SFWatchWebViewController *)arg1 updateTopBarHeight:(float)arg2;
 - (void)webViewController:(SFWatchWebViewController *)arg1 didUpdateNavigationBarItem:(_SFNavigationBarItem *)arg2;
 @end

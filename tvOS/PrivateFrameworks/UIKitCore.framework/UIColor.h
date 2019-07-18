@@ -139,6 +139,7 @@
 + (id)__darkSystemColorForColor:(id)arg1;
 + (id)_composedColorFromSourceColor:(id)arg1 destinationColor:(id)arg2 tintColor:(id)arg3 alpha:(double)arg4;
 + (id)_systemColorForColor:(id)arg1 withName:(id)arg2;
++ (id)_systemColorWithUnvalidatedName:(id)arg1;
 + (id)_systemColorWithName:(id)arg1;
 + (id)colorWithDisplayP3Red:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 + (id)colorWithCIColor:(id)arg1;
@@ -249,6 +250,7 @@
 + (id)_controlHighlightColor;
 + (id)_controlForegroundColor;
 + (id)_searchBarBackgroundColor;
++ (id)_searchFieldPlaceholderTextClearButtonColor;
 + (id)_searchFieldDisabledBackgroundColor;
 + (id)quaternarySystemFillColor;
 + (id)tertiarySystemFillColor;

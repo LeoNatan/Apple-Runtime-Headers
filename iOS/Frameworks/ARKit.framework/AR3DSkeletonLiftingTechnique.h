@@ -13,6 +13,7 @@
     NSString *_inputTensorName;
 }
 
++     // Error parsing type: v32@0:8^16Q24, name: _transformRelativeToHip:count:
 +     // Error parsing type: B32@0:8^16Q24, name: _adjustBoneLength:count:
 - (void).cxx_destruct;
 - (void)_endMLCreateResultSignpostWithTimestamp:(double)arg1;

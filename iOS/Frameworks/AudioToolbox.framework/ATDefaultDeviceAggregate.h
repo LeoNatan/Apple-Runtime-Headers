@@ -10,11 +10,14 @@
 
 @interface ATDefaultDeviceAggregate : NSObject
 {
+    shared_ptr_57118bb5 _impl;
 }
 
 + (id)sharedDefaultDeviceAggregateNoInit;
 + (id)sharedDefaultDeviceAggregate;
-- (struct DefaultDeviceAggregate *)impl;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (shared_ptr_57118bb5)impl;
 - (id)outputStreamsToUse;
 - (id)inputStreamsToUse;
 - (id)_streamsToUse:(_Bool)arg1;
@@ -23,6 +26,7 @@
 @property(readonly, nonatomic) NSString *deviceUID;
 @property(readonly, nonatomic) unsigned int deviceID;
 - (id)init;
+- (shared_ptr_4c923a7b)_state;
 
 @end
 

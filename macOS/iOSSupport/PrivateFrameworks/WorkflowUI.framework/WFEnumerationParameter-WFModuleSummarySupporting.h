@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface WFEnumerationParameter (WFModuleSummarySupporting) <WFModuleSummarySupporting>
+- (BOOL)moduleSummaryShowsAddButtonForState:(id)arg1;
 - (id)moduleSummarySlotsForState:(id)arg1;
 
 // Remaining properties

@@ -6,26 +6,35 @@
 
 #import <objc/NSObject.h>
 
-@class HMBCloudZone;
+#import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@interface HMDCameraClipsQuotaManager : NSObject
+@class HMBCloudDatabase, NSString;
+
+@interface HMDCameraClipsQuotaManager : NSObject <HMFLogging>
 {
     _Bool _enabled;
-    HMBCloudZone *_cloudZone;
-    CDUnknownBlockType _functionInvokeOperationFactory;
+    HMBCloudDatabase *_cloudDatabase;
 }
 
++ (id)logCategory;
 + (id)_quotaErrorFromServerError:(id)arg1;
 + (id)_underlyingQuotaServerErrorFromServerError:(id)arg1;
-@property(copy) CDUnknownBlockType functionInvokeOperationFactory; // @synthesize functionInvokeOperationFactory=_functionInvokeOperationFactory;
++ (id)defaultManager;
 @property(readonly, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-@property(readonly) HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
+@property(readonly) HMBCloudDatabase *cloudDatabase; // @synthesize cloudDatabase=_cloudDatabase;
 - (void).cxx_destruct;
-- (id)_addFunctionInvokeOperationWithFunctionName:(id)arg1 serializedParameters:(id)arg2;
-- (id)disableCloudStorage;
-- (id)enableCloudStorage;
-- (id)initWithCloudZone:(id)arg1 isEnabled:(_Bool)arg2;
-- (id)initWithCloudZone:(id)arg1;
+- (id)logIdentifier;
+- (id)_addFunctionInvokeOperationWithFunctionName:(id)arg1 serializedRequest:(id)arg2;
+- (id)disableCloudStorageForZoneWithName:(id)arg1;
+- (id)enableCloudStorageForZoneWithName:(id)arg1;
+- (id)initWithCloudDatabase:(id)arg1 isEnabled:(_Bool)arg2;
+- (id)initWithCloudDatabase:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -7,9 +7,11 @@
 #import <objc/NSObject.h>
 
 @class NSMutableArray;
+@protocol OS_dispatch_queue;
 
 @interface SASAnalytics : NSObject
 {
+    NSObject<OS_dispatch_queue> *_analyticsEventQueue;
     _Bool _shouldLogAnalyticsEvents;
     NSMutableArray *_pendingAnalyticsEventQueue;
 }

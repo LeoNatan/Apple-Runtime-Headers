@@ -12,6 +12,7 @@
 @interface SBUIRemoteAlertServiceViewController : UIViewController <SBUIRemoteAlertServiceInterface_Internal, SBUIRemoteAlertServiceInterface>
 {
     _Bool _hasPreservedInputViews;
+    _Bool _hasSentAnimationFence;
 }
 
 + (id)_exportedInterface;
@@ -23,6 +24,7 @@
 - (void)sb_preserveInputViewsAnimated:(_Bool)arg1;
 - (void)sb_resignFirstResponder;
 - (void)sb_becomeFirstResponder;
+- (void)synchronizeAnimationsInActions:(CDUnknownBlockType)arg1;
 - (void)configureWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setUserInfo:(id)arg1;
 - (void)handleButtonActions:(id)arg1;
@@ -30,6 +32,7 @@
 - (void)prepareForActivationWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)noteActivatedForActivityContinuationWithIdentifier:(id)arg1;
 - (void)handleDoubleHeightStatusBarTap;
+- (void)didInvalidateForRemoteAlert;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

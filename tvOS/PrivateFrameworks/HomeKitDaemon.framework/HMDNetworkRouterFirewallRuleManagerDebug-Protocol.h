@@ -14,6 +14,7 @@
 - (void)removeAllOverridesWithCompletion:(void (^)(NSError *))arg1;
 - (void)addOverrides:(NSData *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)setOverrides:(NSData *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)removeAllLocalRulesWithCompletion:(void (^)(NSError *))arg1;
 - (void)dumpLocalRulesForProductGroup:(NSString *)arg1 productNumber:(NSString *)arg2 firmwareVersion:(HMFVersion *)arg3 ignoreOverrides:(_Bool)arg4 rawOutput:(_Bool)arg5 completion:(void (^)(NSError *, NSString *))arg6;
 - (void)dumpLocalRulesForProductGroup:(NSString *)arg1 ignoreOverrides:(_Bool)arg2 rawOutput:(_Bool)arg3 completion:(void (^)(NSError *, NSString *))arg4;
 - (void)dumpAllLocalRulesIgnoringOverrides:(_Bool)arg1 rawOutput:(_Bool)arg2 completion:(void (^)(NSError *, NSString *))arg3;

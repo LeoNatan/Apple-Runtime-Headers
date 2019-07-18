@@ -43,6 +43,7 @@
 - (void)enterState;
 - (id)initWithStateManager:(id)arg1 navigationSessionManager:(id)arg2 startDetails:(id)arg3;
 - (id)traceManager;
+- (BOOL)shouldClearStoredRoutes;
 - (unsigned long long)desiredLocationProviderType;
 - (BOOL)requiresHighMemoryThreshold;
 - (id)currentDestination;

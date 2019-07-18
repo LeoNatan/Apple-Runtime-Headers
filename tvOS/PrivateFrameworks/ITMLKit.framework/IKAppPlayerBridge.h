@@ -42,6 +42,7 @@
 @property(readonly, copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
 - (void).cxx_destruct;
+- (void)_evaluateDelegateBlockSync:(CDUnknownBlockType)arg1;
 - (void)dispatchEvent:(id)arg1 userInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)stopObservingEvent:(id)arg1;
 - (void)startObservingEvent:(id)arg1 extraInfo:(id)arg2;

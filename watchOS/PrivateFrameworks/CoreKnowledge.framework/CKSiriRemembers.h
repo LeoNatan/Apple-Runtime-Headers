@@ -10,6 +10,8 @@
 {
 }
 
++ (void)findRelativeAppUsageProbabilitiesWithBundleIDs:(id)arg1 days:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (void)findAppMatchesForJSONIntent:(id)arg1 candidateBundleIDs:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)findAppMatchesForIntent:(id)arg1 candidateBundleIDs:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)saveInteractionWithInteraction:(id)arg1;
 - (id)init;

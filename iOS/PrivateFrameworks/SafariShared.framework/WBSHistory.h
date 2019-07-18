@@ -15,6 +15,8 @@
 {
     NSObject<OS_dispatch_queue> *_entriesByURLStringAccessQueue;
     NSMutableDictionary *_entriesByURLString;
+    NSObject<OS_dispatch_queue> *_hostnameToHistoryItemCountAccessQueue;
+    NSCountedSet *_hostnameToHistoryItemCount;
     NSCountedSet *_stringsForUserTypedDomainExpansion;
     double _historyAgeLimit;
     _Bool _hasStartedLoadingHistory;
@@ -41,6 +43,7 @@
 - (void)historyStore:(id)arg1 didAddVisits:(id)arg2;
 - (void)historyStoreDidFailDatabaseIntegrityCheck:(id)arg1;
 - (_Bool)historyStoreShouldCheckDatabaseIntegrity:(id)arg1;
+- (void)_dispatchDidRemoveHostnames:(id)arg1;
 - (void)_dispatchHistoryVisitAdded:(id)arg1;
 - (void)_dispatchHistoryCleared:(id)arg1;
 - (void)_dispatchHistoryItemsRemovedDuringLoading:(id)arg1;
@@ -65,6 +68,9 @@
 - (void)close;
 - (void)performMaintenance:(CDUnknownBlockType)arg1;
 - (void)performMaintenance;
+- (void)_clearHostnameCount;
+- (id)_updateHostnameCountWithDeletedHistoryItems:(id)arg1;
+- (void)_updateHostnameCountWithAddedHistoryItems:(id)arg1;
 - (void)vacuumHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearHistory;

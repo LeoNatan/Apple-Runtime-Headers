@@ -13,9 +13,9 @@
 + (id)serializedRepresentationFromValue:(id)arg1;
 + (id)valueFromSerializedRepresentation:(id)arg1 variableProvider:(id)arg2 parameter:(id)arg3;
 + (Class)processingValueClass;
-- (void)getContentItemFromValue:(id)arg1 withVariableSource:(id)arg2 parameter:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)getContentCollectionWithVariableSource:(id)arg1 parameter:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
+- (void)getContentItemFromValue:(id)arg1 withVariableSource:(id)arg2 parameter:(id)arg3 environment:(int)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)getContentCollectionWithVariableSource:(id)arg1 parameter:(id)arg2 environment:(int)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 environment:(int)arg3 userInputRequiredHandler:(CDUnknownBlockType)arg4 valueHandler:(CDUnknownBlockType)arg5;
 - (id)initWithValue:(id)arg1;
 
 @end

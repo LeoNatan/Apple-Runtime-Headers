@@ -6,13 +6,12 @@
 
 #import <ReplayKit/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSString, NSURL;
+@class NSArray, NSString, NSURL;
 @protocol ReplayKitMacHelper;
 
 @protocol ReplayKitMacHelperDelegate <NSObject>
 
 @optional
-- (void)extensionDidFinishWithLaunchURL:(NSURL *)arg1 broadcastURL:(NSURL *)arg2 extensionBundleID:(NSString *)arg3 broadcastConfigurationData:(NSData *)arg4 userInfo:(NSDictionary *)arg5 cancelled:(BOOL)arg6;
 - (void)extensionDidFinishWithLaunchURL:(NSURL *)arg1 broadcastURL:(NSURL *)arg2 extensionBundleID:(NSString *)arg3 cancelled:(BOOL)arg4;
 - (void)macApplicationDidBecomeActive;
 - (void)macApplicationDidResignActive;

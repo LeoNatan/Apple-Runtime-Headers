@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: eventHandler
     // Error parsing type: , name: $__lazy_storage_$_debugDescription
+    // Error parsing type: , name: $__lazy_storage_$_identifier
     // Error parsing type: , name: arrangedSections
 }
 

@@ -6,57 +6,61 @@
 
 #import <UIKitCore/UIMenuElement.h>
 
-#import <UIKitCore/NSCopying-Protocol.h>
-#import <UIKitCore/NSMutableCopying-Protocol.h>
-#import <UIKitCore/NSSecureCoding-Protocol.h>
+#import <UIKitCore/_UIMenuLeaf-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, UIImage;
 
-@interface UICommand : UIMenuElement <NSCopying, NSMutableCopying, NSSecureCoding>
+@interface UICommand : UIMenuElement <_UIMenuLeaf>
 {
-    _Bool _enabled;
     NSString *_discoverabilityTitle;
     SEL _action;
     id _propertyList;
+    unsigned int _attributes;
     int _state;
     NSArray *_alternates;
     id __target;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)commandWithTitle:(id)arg1 discoverabilityTitle:(id)arg2 action:(SEL)arg3 propertyList:(id)arg4 supportedStates:(unsigned int)arg5 input:(id)arg6 modifierFlags:(int)arg7 alternates:(id)arg8;
-+ (id)commandWithTitle:(id)arg1 discoverabilityTitle:(id)arg2 action:(SEL)arg3 propertyList:(id)arg4 supportedStates:(unsigned int)arg5 input:(id)arg6 modifierFlags:(int)arg7;
-+ (id)commandWithTitle:(id)arg1 discoverabilityTitle:(id)arg2 action:(SEL)arg3 propertyList:(id)arg4 supportedStates:(unsigned int)arg5 alternates:(id)arg6;
-+ (id)commandWithTitle:(id)arg1 discoverabilityTitle:(id)arg2 action:(SEL)arg3 propertyList:(id)arg4 supportedStates:(unsigned int)arg5;
-+ (id)commandWithTitle:(id)arg1 action:(SEL)arg2 propertyList:(id)arg3 alternates:(id)arg4;
-+ (id)commandWithTitle:(id)arg1 action:(SEL)arg2 propertyList:(id)arg3;
++ (id)commandWithTitle:(id)arg1 image:(id)arg2 action:(SEL)arg3 propertyList:(id)arg4 alternates:(id)arg5;
++ (id)commandWithTitle:(id)arg1 image:(id)arg2 action:(SEL)arg3 propertyList:(id)arg4;
 + (id)_defaultCommandForAction:(SEL)arg1;
 + (id)_defaultCommands;
 @property(readonly, nonatomic) id _target; // @synthesize _target=__target;
 @property(readonly, nonatomic) NSArray *alternates; // @synthesize alternates=_alternates;
-@property(readonly, nonatomic) int state; // @synthesize state=_state;
-@property(readonly, nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
+@property(nonatomic) int state; // @synthesize state=_state;
+@property(nonatomic) unsigned int attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) id propertyList; // @synthesize propertyList=_propertyList;
 @property(readonly, nonatomic) SEL action; // @synthesize action=_action;
-@property(readonly, nonatomic) NSString *discoverabilityTitle; // @synthesize discoverabilityTitle=_discoverabilityTitle;
+@property(copy, nonatomic) NSString *discoverabilityTitle; // @synthesize discoverabilityTitle=_discoverabilityTitle;
 - (void).cxx_destruct;
-- (void)_setState:(int)arg1;
-- (void)_setEnabled:(_Bool)arg1;
-- (void)_setDiscoverabilityTitle:(id)arg1;
-- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)_validatedLeafWithAlternate:(id)arg1 validation:(id)arg2;
+- (id)_resolvedTargetFromFirstTarget:(id)arg1;
+- (void)_performWithTarget:(id)arg1;
+- (int)_leafKeyModifierFlags;
+- (id)_leafKeyInput;
+- (id)_leafAlternates;
+- (id)_identifier;
+- (id)_immutableCopy;
 - (id)_alternateForModifierFlags:(int)arg1;
-- (_Bool)_acceptBoolMenuVisit:(CDUnknownBlockType)arg1 itemVisit:(CDUnknownBlockType)arg2;
-- (void)_acceptMenuVisit:(CDUnknownBlockType)arg1 itemVisit:(CDUnknownBlockType)arg2;
+- (_Bool)_acceptBoolMenuVisit:(CDUnknownBlockType)arg1 leafVisit:(CDUnknownBlockType)arg2;
+- (void)_acceptMenuVisit:(CDUnknownBlockType)arg1 leafVisit:(CDUnknownBlockType)arg2;
+- (_Bool)_acceptBoolMenuVisit:(CDUnknownBlockType)arg1 commandVisit:(CDUnknownBlockType)arg2 actionVisit:(CDUnknownBlockType)arg3;
+- (void)_acceptMenuVisit:(CDUnknownBlockType)arg1 commandVisit:(CDUnknownBlockType)arg2 actionVisit:(CDUnknownBlockType)arg3;
+@property(copy, nonatomic) UIImage *image; // @dynamic image;
+@property(copy, nonatomic) NSString *title; // @dynamic title;
 - (id)initWithCommand:(id)arg1;
-- (id)initWithTitle:(id)arg1 action:(SEL)arg2 propertyList:(id)arg3 alternates:(id)arg4 image:(id)arg5 discoverabilityTitle:(id)arg6 enabled:(_Bool)arg7 state:(int)arg8;
+- (id)initWithTitle:(id)arg1 image:(id)arg2 action:(SEL)arg3 propertyList:(id)arg4 alternates:(id)arg5 discoverabilityTitle:(id)arg6 attributes:(unsigned int)arg7 state:(int)arg8;
 - (id)initWithCoder:(id)arg1;
-@property(readonly, nonatomic) unsigned int supportedStates;
-@property(readonly, nonatomic) id __propertyList;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

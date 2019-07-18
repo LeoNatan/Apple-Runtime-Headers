@@ -6,10 +6,12 @@
 
 #import <Foundation/NSData.h>
 
+@class NSString;
+
 @interface NSData (HMB)
 + (id)hmbDataWithSQLite3Column:(struct sqlite3_stmt *)arg1 column:(int)arg2;
 + (id)hmbDataWithSQLite3ColumnNoCopy:(struct sqlite3_stmt *)arg1 column:(int)arg2;
-- (id)hmbDescription;
+@property(readonly, copy) NSString *hmbDescription;
 - (id)hmbUncompress;
 - (id)hmbCompress;
 @end

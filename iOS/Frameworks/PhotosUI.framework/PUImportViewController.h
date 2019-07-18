@@ -144,7 +144,7 @@
 @property(retain, nonatomic, setter=_setSpec:) PUPhotosGridViewControllerSpec *_spec; // @synthesize _spec=__spec;
 - (void).cxx_destruct;
 - (id)ppt_importButton;
-- (_Bool)contextMenuInteractionShouldBegin:(id)arg1;
+- (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)uninstallGestureRecognizers;
@@ -154,7 +154,6 @@
 - (struct PXSimpleIndexPath)swipeSelectionManager:(id)arg1 itemIndexPathClosestLeadingLocation:(struct CGPoint)arg2;
 - (struct PXSimpleIndexPath)swipeSelectionManager:(id)arg1 itemIndexPathAtLocation:(struct CGPoint)arg2;
 - (_Bool)swipeSelectionManager:(id)arg1 shouldBeginSelectionAtLocation:(struct CGPoint)arg2;
-- (_Bool)swipeSelectionManager:(id)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg2;
 - (_Bool)swipeSelectionManagerIsInMultiSelectMode:(id)arg1;
 - (void)disableSwipeSelection;
 - (void)enableSwipeSelection;

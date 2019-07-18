@@ -6,18 +6,20 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray;
+@class CAGradientLayer, NSArray;
 
 @interface PXGradientView : UIView
 {
     NSArray *_colors;
-    NSArray *_locations;
 }
 
 + (Class)layerClass;
-@property(copy, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 @property(copy, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGPoint endPoint;
+@property(nonatomic) struct CGPoint startPoint;
+@property(copy, nonatomic) NSArray *locations;
+@property(readonly, nonatomic) CAGradientLayer *gradientLayer;
 
 @end
 

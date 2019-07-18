@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <NotesShared/ICManagedObjectContextUpdaterDelegate-Protocol.h>
 #import <NotesShared/ICNoteContainer-Protocol.h>
 
 @class ICAccount, ICAccountUtilities, ICFolderCustomNoteSortType, ICManagedObjectContextUpdater, ICNote, ICNotesCrossProcessChangeCoordinator, ICPersistentContainer, NSArray, NSData, NSDictionary, NSError, NSManagedObjectContext, NSString, NSTimer;
 @protocol OS_dispatch_queue;
 
-@interface ICNoteContext : NSObject <ICNoteContainer>
+@interface ICNoteContext : NSObject <ICNoteContainer, ICManagedObjectContextUpdaterDelegate>
 {
     BOOL _delaySaving;
     BOOL _databaseOpenFailedDueToLowDiskSpace;
@@ -60,6 +61,7 @@
 @property(nonatomic) BOOL delaySaving; // @synthesize delaySaving=_delaySaving;
 @property(retain, nonatomic) ICNotesCrossProcessChangeCoordinator *crossProcessChangeCoordinator; // @synthesize crossProcessChangeCoordinator=_crossProcessChangeCoordinator;
 - (void).cxx_destruct;
+- (void)managedObjectContextUpdater:(id)arg1 objectDidChange:(id)arg2;
 - (void)postMoveUpdateChangeCountForNote:(id)arg1;
 - (void)cloudContextFetchRecordChangeOperationDidFinish:(id)arg1;
 @property(readonly, nonatomic) BOOL isSharedContext;

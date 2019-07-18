@@ -26,7 +26,7 @@
 - (void).cxx_destruct;
 - (void)viewControllerDidFailToChangePasscodeComplex:(id)arg1;
 - (void)viewControllerDidFinishChangingPasscodeComplex:(id)arg1;
-- (void)viewControllerWillPresentChangePasscodeComplex:(id)arg1;
+- (void)viewController:(id)arg1 requestPasscodeUpgradeWithCompletion:(CDUnknownBlockType)arg2;
 - (void)viewControllerDidShowEligibilityIssue:(id)arg1;
 - (void)viewController:(id)arg1 didShowProvisioningError:(id)arg2;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;

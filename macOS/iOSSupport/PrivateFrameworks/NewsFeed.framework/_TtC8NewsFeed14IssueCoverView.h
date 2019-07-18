@@ -11,6 +11,7 @@
     // Error parsing type: , name: staticContentView
     // Error parsing type: , name: dynamicContentView
     // Error parsing type: , name: dynamicView
+    // Error parsing type: , name: backgroundLayer
     // Error parsing type: , name: shadowView
     // Error parsing type: , name: shadowMotionLayer
     // Error parsing type: , name: observingMotion

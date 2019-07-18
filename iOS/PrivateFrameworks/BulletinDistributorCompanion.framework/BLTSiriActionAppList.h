@@ -31,6 +31,7 @@
 @property(readonly, nonatomic) NSSet *removed;
 @property(readonly, nonatomic) NSDictionary *installed;
 - (void)dealloc;
+- (id)_siriActionAppListStoreURL;
 - (id)init;
 
 // Remaining properties

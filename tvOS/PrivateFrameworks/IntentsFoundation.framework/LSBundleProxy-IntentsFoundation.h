@@ -9,9 +9,10 @@
 @class LSApplicationProxy;
 
 @interface LSBundleProxy (IntentsFoundation)
-@property(readonly) _Bool _inf_isWatchKitAppExtension;
-@property(readonly) _Bool _inf_isAppExtension;
-@property(readonly) LSApplicationProxy *_inf_containingAppProxy;
+@property(readonly) _Bool if_isWatchKitAppExtension;
+@property(readonly) _Bool if_isAppExtension;
+@property(readonly) LSApplicationProxy *if_containingAppProxy;
+@property(readonly) _Bool if_isSystem;
 @property(readonly) _Bool _inf_isSystem;
 @end
 

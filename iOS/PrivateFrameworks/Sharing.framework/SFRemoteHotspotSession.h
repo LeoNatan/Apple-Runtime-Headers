@@ -21,7 +21,7 @@
 
 @property(retain) id <SFRemoteHotspotProtocol> connectionProxy; // @synthesize connectionProxy=_connectionProxy;
 @property _Bool browsing; // @synthesize browsing=_browsing;
-@property id <SFRemoteHotspotSessionDelegate> delegate; // @synthesize delegate=_delegate;
+@property __weak id <SFRemoteHotspotSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)xpcManagerConnectionInterrupted;
 - (void)updatedFoundDeviceList:(id)arg1;

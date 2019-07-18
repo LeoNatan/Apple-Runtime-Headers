@@ -17,6 +17,7 @@
 {
     CWDisplayedScanResult *_scanResult;
     id _delegate;
+    NSArray *_updateScanResults;
     NSArray *_scanResults;
     BOOL _showingNetworkBrowser;
     NSString *_customTitle;
@@ -38,6 +39,7 @@
 + (id)browseDialogWithScanResults:(id)arg1 title:(id)arg2 description:(id)arg3;
 @property(copy) NSString *customDescription; // @synthesize customDescription=_customDescription;
 @property(copy) NSString *customTitle; // @synthesize customTitle=_customTitle;
+@property(copy) NSArray *updateScanResults; // @synthesize updateScanResults=_updateScanResults;
 @property(copy) NSArray *scanResults; // @synthesize scanResults=_scanResults;
 @property(copy) CWDisplayedScanResult *scanResult; // @synthesize scanResult=_scanResult;
 @property id delegate; // @synthesize delegate=_delegate;

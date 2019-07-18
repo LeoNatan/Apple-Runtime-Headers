@@ -121,6 +121,7 @@
 - (BOOL)isBackingObjectSignificantlyDetached;
 @property(readonly, nonatomic) BOOL isSignificantlyDetached;
 - (BOOL)isDifferentAndModifiedAttendeesWithDiff:(id)arg1;
+- (BOOL)selfAttendeeStatusIsOnlyChangeWithDiff:(id)arg1;
 - (BOOL)isDifferentAndHasForwardedAttendeesWithDiff:(id)arg1;
 - (BOOL)isDifferentAndHasOnlyUnscheduledAttendeesWithDiff:(id)arg1;
 - (BOOL)isDifferentAndHasUnscheduledAttendeesWithDiff:(id)arg1;

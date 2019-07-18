@@ -30,6 +30,7 @@
 + (id)FHIRConditionClinicalStatus;
 + (id)FHIRAllergyIntoleranceSeverity;
 + (id)FHIRAllergyIntoleranceCriticality;
++ (id)FHIRAllergyIntoleranceStatus;
 + (id)FHIRProcedureStatus;
 + (id)FHIRMedicationOrderStatus;
 + (id)FHIRMedicationDispenseStatus;

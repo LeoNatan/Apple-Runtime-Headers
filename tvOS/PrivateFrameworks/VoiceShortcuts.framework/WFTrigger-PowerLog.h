@@ -8,7 +8,9 @@
 
 @interface WFTrigger (PowerLog)
 + (id)powerLogEventKindForTrigger:(id)arg1;
-- (id)predicateForContextStore;
+- (_Bool)contextStoreRegistrationIsForWatch;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

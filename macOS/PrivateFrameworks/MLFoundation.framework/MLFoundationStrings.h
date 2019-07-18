@@ -10,6 +10,7 @@
 {
 }
 
++ (id)unitTestOutputDirectoryPath;
 + (id)testing_ResourcePath;
 + (id)errorDomainGeneric;
 

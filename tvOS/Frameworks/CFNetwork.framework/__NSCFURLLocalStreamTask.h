@@ -154,6 +154,7 @@
 - (id)description;
 - (id)describePending:(id)arg1;
 - (struct __CFDictionary *)_copySocketStreamProperties;
+- (_Bool)_cacheOnly;
 - (void)adjustConditionalConnectionProperties:(struct __CFDictionary *)arg1;
 - (long long)computeAdjustedPoolPriority;
 - (id)copyWithZone:(struct _NSZone *)arg1;

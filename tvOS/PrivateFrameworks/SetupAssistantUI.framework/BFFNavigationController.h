@@ -29,6 +29,7 @@
 - (void)_reapObservers;
 - (void)setDelegate:(id)arg1;
 - (void)setViewControllers:(id)arg1 animated:(_Bool)arg2;
+- (void)popToViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)pushViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)popToRootViewControllerAnimated:(_Bool)arg1;
 - (id)popToViewController:(id)arg1 animated:(_Bool)arg2;

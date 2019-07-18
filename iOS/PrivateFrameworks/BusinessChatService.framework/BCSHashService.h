@@ -10,7 +10,6 @@
 {
 }
 
-- (_Bool)isPhoneHash:(long long)arg1 inBloomFilter:(id)arg2;
 - (long long)SHA256HashForInputString:(id)arg1;
 - (long long)chatSuggestHashForPhoneNumber:(id)arg1;
 - (long long)_SHA256HashForInputString:(id)arg1 includedBytes:(unsigned long long)arg2;

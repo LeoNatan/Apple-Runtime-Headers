@@ -25,6 +25,7 @@
     NSSet *_supportedHandleTypes;
     NSURL *_bundleURL;
     NSString *_bundleIdentifier;
+    NSArray *_emergencyHandles;
     NSArray *_emergencyLabeledHandles;
     NSArray *_handoffIdentifiers;
     NSOrderedSet *_prioritizedSenderIdentities;
@@ -47,6 +48,7 @@
 @property(copy, nonatomic) NSOrderedSet *prioritizedSenderIdentities; // @synthesize prioritizedSenderIdentities=_prioritizedSenderIdentities;
 @property(copy, nonatomic) NSArray *handoffIdentifiers; // @synthesize handoffIdentifiers=_handoffIdentifiers;
 @property(copy, nonatomic) NSArray *emergencyLabeledHandles; // @synthesize emergencyLabeledHandles=_emergencyLabeledHandles;
+@property(copy, nonatomic) NSArray *emergencyHandles; // @synthesize emergencyHandles=_emergencyHandles;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSURL *bundleURL; // @synthesize bundleURL=_bundleURL;
 @property(copy, nonatomic) NSSet *supportedHandleTypes; // @synthesize supportedHandleTypes=_supportedHandleTypes;

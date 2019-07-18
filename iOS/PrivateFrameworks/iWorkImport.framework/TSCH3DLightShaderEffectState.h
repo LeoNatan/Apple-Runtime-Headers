@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <iWorkImport/NSCopying-Protocol.h>
+
 @class NSMutableArray;
 
 __attribute__((visibility("hidden")))
-@interface TSCH3DLightShaderEffectState : NSObject
+@interface TSCH3DLightShaderEffectState : NSObject <NSCopying>
 {
     NSMutableArray *mLights;
     struct LightingPackageShaderEffectState mPackageState;

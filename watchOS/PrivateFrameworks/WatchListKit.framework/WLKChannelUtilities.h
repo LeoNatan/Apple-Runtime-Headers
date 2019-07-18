@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary;
+@class NSArray, NSDictionary, WLKChannelsResponse;
 @protocol OS_dispatch_queue;
 
 @interface WLKChannelUtilities : NSObject
 {
     NSObject<OS_dispatch_queue> *_accessQueue;
     _Bool _filtered;
+    WLKChannelsResponse *_cachedResponse;
     NSDictionary *_channelsByBundleID;
 }
 

@@ -50,12 +50,13 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize)arg2;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
 - (unsigned long long)autosizeFlagsForTextLayout:(id)arg1;
+- (_Bool)descendersCannotClip;
 - (void)invalidateSize;
 - (id)dependentLayouts;
 - (void)parentDidChange;
 - (Class)repClassOverride;
 - (id)computeLayoutGeometry;
-- (void)storage:(id)arg1 didChangeRange:(struct _NSRange)arg2 delta:(long long)arg3 broadcastKind:(int)arg4;
+- (void)storage:(id)arg1 didChangeRange:(struct _NSRange)arg2 delta:(long long)arg3 broadcastKind:(unsigned long long)arg4;
 - (void)updateChildrenFromInfo;
 - (_Bool)containsLayoutForInfo:(id)arg1;
 - (void)setChildren:(id)arg1;

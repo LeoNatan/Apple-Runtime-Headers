@@ -6,27 +6,18 @@
 
 #import <UIKit/UIView.h>
 
-@class CAGradientLayer, CAShapeLayer, NSArray;
+@class CAGradientLayer, CAShapeLayer;
 
 @interface NTKSiderealSolarOrbitView : UIView
 {
-    NSArray *_waypoints;
     double _orbitDiameter;
-    UIView *_orbitContainerView;
-    double _waypointDiameter;
-    UIView *_waypointContainerView;
     UIView *_glowView;
     CAShapeLayer *_glowOrbitMask;
     CAGradientLayer *_glowGnomon;
 }
 
 - (void).cxx_destruct;
-- (double)_distanceBetweenAngleA:(double)arg1 angleB:(double)arg2;
 - (id)_newGnomonLayer;
-- (id)_newWaypointView;
-- (id)waypointBetweenPreviousOffset:(double)arg1 currentOffset:(double)arg2;
-- (id)closestWaypointForSolarDayProgress:(double)arg1 range:(double)arg2;
-- (void)setWaypoints:(id)arg1;
 - (void)setGlowPath:(id)arg1 gnomonAngle:(double)arg2;
 - (id)initWithFrame:(struct CGRect)arg1 orbitDiameter:(double)arg2;
 

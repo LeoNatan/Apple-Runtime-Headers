@@ -15,11 +15,13 @@
     long long _persistentId;
     long long _storeId;
     NSString *_artworkId;
+    NSString *_cloudUniversalLibraryId;
     NSString *_name;
     NSString *_sortName;
     CDStruct_0ee5a09b _has;
 }
 
+@property(retain, nonatomic) NSString *cloudUniversalLibraryId; // @synthesize cloudUniversalLibraryId=_cloudUniversalLibraryId;
 @property(nonatomic) long long persistentId; // @synthesize persistentId=_persistentId;
 @property(retain, nonatomic) NSString *artworkId; // @synthesize artworkId=_artworkId;
 @property(retain, nonatomic) NSString *sortName; // @synthesize sortName=_sortName;
@@ -35,6 +37,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasCloudUniversalLibraryId;
 @property(nonatomic) _Bool hasPersistentId;
 @property(readonly, nonatomic) _Bool hasArtworkId;
 @property(readonly, nonatomic) _Bool hasSortName;

@@ -23,6 +23,7 @@
     long long _portraitModeEffectFilterType;
     long long _portraitModeLightingEffectType;
     double _portraitModeApertureValue;
+    double _portraitModeIntensityValue;
 }
 
 + (id)configuration:(id)arg1 withDevice:(long long)arg2;
@@ -32,6 +33,7 @@
 + (long long)audioConfigurationForMode:(long long)arg1 device:(long long)arg2 emulationMode:(long long)arg3 duringCall:(_Bool)arg4 forceMonoAudioRecording:(_Bool)arg5;
 + (id)captureGraphConfigurationUsingConfiguration:(id)arg1;
 @property(readonly, nonatomic, getter=isPhotoBooth) _Bool photoBooth; // @synthesize photoBooth=_photoBooth;
+@property(readonly, nonatomic) double portraitModeIntensityValue; // @synthesize portraitModeIntensityValue=_portraitModeIntensityValue;
 @property(readonly, nonatomic) double portraitModeApertureValue; // @synthesize portraitModeApertureValue=_portraitModeApertureValue;
 @property(readonly, nonatomic) long long portraitModeLightingEffectType; // @synthesize portraitModeLightingEffectType=_portraitModeLightingEffectType;
 @property(readonly, nonatomic) long long portraitModeEffectFilterType; // @synthesize portraitModeEffectFilterType=_portraitModeEffectFilterType;
@@ -49,7 +51,7 @@
 - (id)_previewFilters;
 - (id)initForPhotoBoothWithCaptureDevice:(long long)arg1;
 - (id)initWithConfiguration:(id)arg1;
-- (id)initWithCaptureMode:(long long)arg1 captureDevice:(long long)arg2 videoConfiguration:(long long)arg3 audioConfiguration:(long long)arg4 flashMode:(long long)arg5 torchMode:(long long)arg6 HDRMode:(long long)arg7 irisMode:(long long)arg8 timerDuration:(long long)arg9 photoModeEffectFilterType:(long long)arg10 squareModeEffectFilterType:(long long)arg11 portraitModeEffectFilterType:(long long)arg12 portraitModeLightingEffectType:(long long)arg13 portraitModeApertureValue:(double)arg14;
+- (id)initWithCaptureMode:(long long)arg1 captureDevice:(long long)arg2 videoConfiguration:(long long)arg3 audioConfiguration:(long long)arg4 flashMode:(long long)arg5 torchMode:(long long)arg6 HDRMode:(long long)arg7 irisMode:(long long)arg8 timerDuration:(long long)arg9 photoModeEffectFilterType:(long long)arg10 squareModeEffectFilterType:(long long)arg11 portraitModeEffectFilterType:(long long)arg12 portraitModeLightingEffectType:(long long)arg13 portraitModeApertureValue:(double)arg14 portraitModeIntensityValue:(double)arg15;
 
 @end
 

@@ -25,16 +25,29 @@
 
 - (void).cxx_destruct;
 - (void)addToTransientCounterFromDatabaseEntry:(id)arg1;
+- (void)addNumber:(id)arg1 toCounterWithKey:(id)arg2 andCandidateLength:(int)arg3;
 - (void)addValue:(int)arg1 toCounterWithKey:(id)arg2 andCandidateLength:(int)arg3;
 - (id)getTransientCounterForKey:(id)arg1;
 - (void)persistForDate:(id)arg1;
 - (id)counterValueWithWordLength:(id)arg1;
+- (int)calculateReportingIndexFromInternalIndex:(int)arg1;
 - (id)counterValue:(id)arg1;
 - (id)stringValue:(id)arg1;
 - (id)calcTypingSpeed;
-- (id)featureUsage:(id)arg1;
+- (id)featureStateFromFeatureDescriptor:(id)arg1 andValue:(double)arg2;
+- (float)valueFromNumerator:(float)arg1 andDenominator:(float)arg2;
+- (float)denominatorFromFeatureDescriptor:(id)arg1;
+- (float)numeratorFromFeatureDescriptor:(id)arg1;
+- (id)floatingKeyboardUsage:(id)arg1;
+- (id)featureUsage:(id)arg1 userModel:(id)arg2;
 - (void)updateCounterValue:(id)arg1 index:(int)arg2 forKey:(id)arg3;
 - (id)initWithInputMode:(id)arg1 context:(id)arg2 userModelDataStore:(id)arg3 durableCounters:(id)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

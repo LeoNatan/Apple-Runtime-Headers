@@ -26,6 +26,7 @@
 - (id)getHIDElementForUsage:(long long)arg1;
 - (id)getHIDDevices;
 - (BOOL)setupPresets;
+- (id)initWithService:(unsigned int)arg1;
 - (id)initWithContainerID:(id)arg1;
 - (id)initWithMatching:(id)arg1;
 

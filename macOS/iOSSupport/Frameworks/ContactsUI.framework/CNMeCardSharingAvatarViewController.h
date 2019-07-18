@@ -7,30 +7,32 @@
 #import <UIKit/UIViewController.h>
 
 @class CAShapeLayer, CNAvatarViewController, UIImageView, UILabel, UITapGestureRecognizer, UIView;
-@protocol CNMeCardSharingAvatarProvider, CNMeCardSharingAvatarViewControllerDelegate;
+@protocol CNAvatarImageProvider, CNMeCardSharingAvatarProvider, CNMeCardSharingAvatarViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface CNMeCardSharingAvatarViewController : UIViewController
 {
+    BOOL _hasImage;
     id <CNMeCardSharingAvatarViewControllerDelegate> _delegate;
     UIView *_avatarContainerView;
     CAShapeLayer *_circularLayer;
     UIImageView *_imageView;
     UILabel *_addPhotoLabel;
-    UILabel *_editPhotoLabel;
     id <CNMeCardSharingAvatarProvider> _avatarProvider;
+    id <CNAvatarImageProvider> _fallbackImageProvider;
     CNAvatarViewController *_avatarViewController;
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
+@property(retain, nonatomic) id <CNAvatarImageProvider> fallbackImageProvider; // @synthesize fallbackImageProvider=_fallbackImageProvider;
 @property(retain, nonatomic) id <CNMeCardSharingAvatarProvider> avatarProvider; // @synthesize avatarProvider=_avatarProvider;
-@property(retain, nonatomic) UILabel *editPhotoLabel; // @synthesize editPhotoLabel=_editPhotoLabel;
 @property(retain, nonatomic) UILabel *addPhotoLabel; // @synthesize addPhotoLabel=_addPhotoLabel;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) CAShapeLayer *circularLayer; // @synthesize circularLayer=_circularLayer;
 @property(retain, nonatomic) UIView *avatarContainerView; // @synthesize avatarContainerView=_avatarContainerView;
+@property(nonatomic) BOOL hasImage; // @synthesize hasImage=_hasImage;
 @property(nonatomic) __weak id <CNMeCardSharingAvatarViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)didTapAvatarView:(id)arg1;

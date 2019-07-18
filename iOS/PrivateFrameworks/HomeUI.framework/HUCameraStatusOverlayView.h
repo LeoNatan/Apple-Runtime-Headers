@@ -10,6 +10,7 @@
 
 @interface HUCameraStatusOverlayView : UIView
 {
+    _Bool _isDisplayingForSingleCamera;
     _Bool _didUpdateConstraints;
     NSString *_statusString;
     UIColor *_statusColor;
@@ -22,14 +23,15 @@
 @property(nonatomic) _Bool didUpdateConstraints; // @synthesize didUpdateConstraints=_didUpdateConstraints;
 @property(retain, nonatomic) HUCircleView *statusIndicator; // @synthesize statusIndicator=_statusIndicator;
 @property(retain, nonatomic) HULegibilityLabel *statusLabel; // @synthesize statusLabel=_statusLabel;
+@property(nonatomic) _Bool isDisplayingForSingleCamera; // @synthesize isDisplayingForSingleCamera=_isDisplayingForSingleCamera;
 @property(retain, nonatomic) UIColor *statusColor; // @synthesize statusColor=_statusColor;
 @property(copy, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
 - (void).cxx_destruct;
 - (id)_chevronImage;
 - (id)_exclamationImage;
-- (void)updateBadgeStatus:(unsigned long long)arg1;
-- (void)updateStatusForReachability:(_Bool)arg1;
-- (struct CGSize)intrinsicContentSize;
+- (void)updateStatusLabelBounds;
+- (void)setBadgeStatus:(unsigned long long)arg1;
+- (void)updateStatusForCameraProfile:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

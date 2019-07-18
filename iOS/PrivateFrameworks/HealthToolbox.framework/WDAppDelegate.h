@@ -10,7 +10,7 @@
 #import <HealthToolbox/UIApplicationDelegate-Protocol.h>
 #import <HealthToolbox/WDFavoriteDisplayTypesControllerObserver-Protocol.h>
 
-@class HKNavigationController, NSString, UIWindow, WDHealthDataViewController, WDProfile, WDTabBarController, WDTodayViewController;
+@class HKNavigationController, NSString, UIWindow, WDHealthDataViewController, WDProfile, WDTabBarController;
 
 __attribute__((visibility("hidden")))
 @interface WDAppDelegate : UIResponder <HKProfileIconObserver, WDFavoriteDisplayTypesControllerObserver, UIApplicationDelegate>
@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
     HKNavigationController *_sourcesNavigationController;
     WDTabBarController *_tabBarController;
     WDHealthDataViewController *_healthDataViewController;
-    WDTodayViewController *_todayViewController;
     UIWindow *_window;
 }
 

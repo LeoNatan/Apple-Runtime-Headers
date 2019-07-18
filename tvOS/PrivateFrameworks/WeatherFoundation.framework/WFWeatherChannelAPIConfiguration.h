@@ -30,8 +30,8 @@
 - (void)setDefaultForecastFormatter:(Class)arg1;
 - (void)setRequestParser:(id)arg1 forForecastType:(unsigned long long)arg2;
 - (void)setRequestFormatter:(Class)arg1 forForecastType:(unsigned long long)arg2;
-- (id)parseForecast:(unsigned long long)arg1 data:(id)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6;
-- (id)forecastRequestForTypes:(unsigned long long)arg1 location:(id)arg2 date:(id)arg3 error:(id *)arg4;
+- (id)parseForecast:(unsigned long long)arg1 data:(id)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6 rules:(id)arg7;
+- (id)forecastRequestForTypes:(unsigned long long)arg1 location:(id)arg2 date:(id)arg3 error:(id *)arg4 rules:(id)arg5;
 - (id)initWithVersion:(id)arg1;
 
 // Remaining properties

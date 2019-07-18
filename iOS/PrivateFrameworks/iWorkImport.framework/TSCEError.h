@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (void)raiseInvalidLiveCurrencyAttributeError;
 + (void)raiseInvalidHistoricalStockAttributeError;
 + (void)raiseInvalidLiveStockAttributeError;
++ (void)raiseUnsupportedFeatureError;
 + (void)raiseUnsupportedFunctionError;
 + (void)raiseStringTooLongError;
 + (void)raiseInvalidHeadingError;
@@ -191,6 +192,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isInvalidReference;
 - (struct TSCERangeRef)rangeRef;
 - (_Bool)isErrorReferenceError;
+- (_Bool)isUnsupportedFeatureError;
 - (_Bool)isUnsupportedFunctionError;
 - (_Bool)isNotReadyError;
 - (_Bool)isAbortedError;

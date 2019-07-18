@@ -20,6 +20,8 @@
 - (void)_updateRealBackgroundColor;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setHighlighted:(_Bool)arg1;
+- (void)layoutSubviews;
+- (struct CGSize)intrinsicContentSize;
 
 @end
 

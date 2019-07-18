@@ -42,6 +42,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _watchedAppLibrariesFlags;
     unsigned long long _initialGatherMaxRank;
     unsigned long long _secondaryGatherMaxRank;
+    BOOL _invalidateAfterGathering;
+    BOOL _isGathering;
     BRCNotificationManager *_manager;
     NSObject<OS_dispatch_queue> *_queue;
     id <BRCNotificationPipeDelegate> _delegate;
@@ -78,6 +80,7 @@ __attribute__((visibility("hidden")))
 - (void)addNotification:(id)arg1 asDead:(BOOL)arg2;
 - (void)_registerAsWatcherIfNeeded;
 - (void)dealloc;
+- (void)invalidateAfterGathering;
 - (void)asynchronousInvalidate;
 - (void)synchronousInvalidate;
 - (oneway void)_invalidate;

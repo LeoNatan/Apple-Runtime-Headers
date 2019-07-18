@@ -6,15 +6,17 @@
 
 #import <HealthRecordsUI/WDMedicalRecordGroupableCell.h>
 
-@class NSString, UILabel;
+@class NSString, UIImageView, UILabel;
 
 __attribute__((visibility("hidden")))
 @interface WDMedicalRecordTimelineAppendixCell : WDMedicalRecordGroupableCell
 {
     NSString *_title;
     UILabel *_titleLabel;
+    UIImageView *_disclosureChevronView;
 }
 
+@property(retain, nonatomic) UIImageView *disclosureChevronView; // @synthesize disclosureChevronView=_disclosureChevronView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;

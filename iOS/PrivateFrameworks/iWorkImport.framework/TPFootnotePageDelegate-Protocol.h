@@ -7,6 +7,7 @@
 @protocol TSWPLayoutTarget;
 
 @protocol TPFootnotePageDelegate
+- (_Bool)canHaveFootnotesFromPreviousTarget:(id <TSWPLayoutTarget>)arg1;
 - (_Bool)isFootnoteContainerOnSamePageAsTarget:(id <TSWPLayoutTarget>)arg1;
 @end
 

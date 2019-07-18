@@ -14,6 +14,7 @@
 @interface HMDCameraRecordingResidentElector : HMFObject <HMISystemResourceUsageMonitorDelegate, HMFLogging>
 {
     HMFUnfairLock *_lock;
+    _Bool _readyToRecord;
     unsigned long long _totalNumberOfStreams;
     HMISystemResourceUsageMonitor *_systemResourceUsageMonitor;
     HMDHomeManager *_homeManager;
@@ -25,6 +26,7 @@
 @property unsigned long long totalNumberOfStreams; // @synthesize totalNumberOfStreams=_totalNumberOfStreams;
 - (void).cxx_destruct;
 - (id)preferredResidentDevicesForAccessory:(id)arg1;
+@property(getter=isReadyToRecord) _Bool readyToRecord; // @synthesize readyToRecord=_readyToRecord;
 - (void)recordingDidEndForCamera:(id)arg1;
 - (void)recordingDidStartForCamera:(id)arg1;
 - (void)systemResourceUsageDidChangeTo:(long long)arg1;

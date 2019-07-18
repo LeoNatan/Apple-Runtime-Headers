@@ -23,6 +23,7 @@
 - (void)_beginWithGesture:(id)arg1;
 - (void)_didComplete;
 - (void)_begin;
+- (id)selectedAppLayoutForGestureRecognizer:(id)arg1;
 - (long long)_gestureType;
 
 // Remaining properties

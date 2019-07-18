@@ -47,10 +47,12 @@
     NSDictionary *_recognitionOverrides;
     NSURL *_modelOverrideURL;
     AFLanguageDetectionUserContext *_languageDetectionUserContext;
+    int _dictationInputOrigin;
     double _maximumRecognitionDuration;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) int dictationInputOrigin; // @synthesize dictationInputOrigin=_dictationInputOrigin;
 @property(copy, nonatomic) AFLanguageDetectionUserContext *languageDetectionUserContext; // @synthesize languageDetectionUserContext=_languageDetectionUserContext;
 @property(copy, nonatomic) NSURL *modelOverrideURL; // @synthesize modelOverrideURL=_modelOverrideURL;
 @property(copy, nonatomic) NSDictionary *recognitionOverrides; // @synthesize recognitionOverrides=_recognitionOverrides;

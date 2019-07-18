@@ -9,6 +9,7 @@
 @interface PXImageModulationSettings : PXSettings
 {
     _Bool _enabled;
+    _Bool _forceCurrentScreenSupportsHDR;
     long long _filterType;
     long long _HDRConsideration;
     double _HDRModulationIntensity;
@@ -26,6 +27,7 @@
 
 + (id)sharedInstance;
 + (id)settingsControllerModule;
+@property(nonatomic) _Bool forceCurrentScreenSupportsHDR; // @synthesize forceCurrentScreenSupportsHDR=_forceCurrentScreenSupportsHDR;
 @property(nonatomic) double deviceMaximumEDRHeadroomStops; // @synthesize deviceMaximumEDRHeadroomStops=_deviceMaximumEDRHeadroomStops;
 @property(nonatomic) double highEDRRequestedHeadroomStops; // @synthesize highEDRRequestedHeadroomStops=_highEDRRequestedHeadroomStops;
 @property(nonatomic) double lowEDRRequestedHeadroomStops; // @synthesize lowEDRRequestedHeadroomStops=_lowEDRRequestedHeadroomStops;

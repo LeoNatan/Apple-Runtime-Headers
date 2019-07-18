@@ -66,6 +66,7 @@
     ACAccountStore *_accountStore;
     PSSpecifier *_specifierToSelect;
     NSObject<OS_dispatch_queue> *_loadAllSpecifiersQueue;
+    NSObject<OS_dispatch_queue> *_spyglassUpdateQueue;
     CoreTelephonyClient *_coreTelephonyClient;
     _Bool skipSelectingDefaultCategoryOnLaunch;
     _Bool _deferredURLLoadForThirdPartyApp;
@@ -148,7 +149,6 @@
 - (void)_setupAppleAccountSpecifier:(id)arg1 title:(id)arg2;
 - (void)_setupAppleAccountSpecifierForLogin:(id)arg1;
 - (id)_silhouetteMonogramIcon;
-- (id)_monogrammer;
 - (void)_setupAppleAccountSpecifier:(id)arg1;
 - (void)setupPrimaryAppleAccountGroup:(id)arg1;
 - (_Bool)_removeCachedAppleAccountIcon;

@@ -62,7 +62,6 @@
 - (void)clearRecentItems;
 - (id)modelNameWithModelID:(id)arg1 major:(long long *)arg2 minor:(long long *)arg3;
 - (void)buildDeviceIconMap;
-- (struct CGImageSource *)iconForModelIcon:(id)arg1;
 - (void)addDevices:(id)arg1 withLoginID:(id)arg2 isIOS:(BOOL)arg3;
 - (id)deviceForUniqueID:(id)arg1;
 - (id)componentsForBuildVersion:(id)arg1;

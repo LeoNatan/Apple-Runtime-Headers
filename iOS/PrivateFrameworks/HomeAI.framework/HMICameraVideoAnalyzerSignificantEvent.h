@@ -21,6 +21,8 @@
 @property(readonly) long long events; // @synthesize events=_events;
 - (void).cxx_destruct;
 - (id)initWithEvents:(long long)arg1 videoFrame:(id)arg2;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

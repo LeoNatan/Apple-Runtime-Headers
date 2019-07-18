@@ -23,7 +23,6 @@
 - (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)buttonPressed;
-- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 punchout:(id)arg3 cardSectionView:(id)arg4;
 
 @end

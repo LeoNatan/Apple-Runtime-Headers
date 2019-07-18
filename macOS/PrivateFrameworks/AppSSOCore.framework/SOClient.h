@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)cancelAuthorizationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)beginAuthorizationWithRequestParameters:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performAuthorizationWithRequestParameters:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getAuthorizationHintsWithURL:(id)arg1 responseCode:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)init;
 
 // Remaining properties

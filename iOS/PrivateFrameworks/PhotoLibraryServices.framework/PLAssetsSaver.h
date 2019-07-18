@@ -26,7 +26,6 @@
 - (void)reenqueueAssetUUIDsForPhotoStreamPublication:(id)arg1;
 - (void)deletePhotoStreamAssetsWithUUIDs:(id)arg1 streamID:(id)arg2;
 - (void)deletePhotoStreamDataForStreamID:(id)arg1;
-- (void)savePhotoStreamVideoAtPath:(id)arg1 properties:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)savePhotoStreamImage:(struct NSObject *)arg1 imageData:(id)arg2 properties:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)saveVideoAtPath:(id)arg1 properties:(id)arg2 completionTarget:(id)arg3 completionSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (void)saveVideoAtPath:(id)arg1 properties:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

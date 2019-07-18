@@ -37,6 +37,8 @@
 @property(retain, nonatomic) HMDUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
+- (void)insertCameraAccessModeChangedBulletin:(id)arg1;
+- (void)fetchNotificationUUIDsForClipBulletinWithIndentifier:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)insertCameraSignificantEventBulletin:(id)arg1;
 - (_Bool)isTargetCharacteristic:(id)arg1 matchCurrentCharacteristic:(id)arg2;
 - (_Bool)_shouldPostBulletinOnCurrentValueChangeForCharacteristic:(id)arg1;

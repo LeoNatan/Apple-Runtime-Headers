@@ -61,6 +61,7 @@
 @property(nonatomic, getter=isMergingUnappliedEncryptedRecord) _Bool mergingUnappliedEncryptedRecord; // @synthesize mergingUnappliedEncryptedRecord;
 @property(nonatomic) _Bool needsToLoadDecryptedValues; // @synthesize needsToLoadDecryptedValues=_needsToLoadDecryptedValues;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isVisible;
 - (id)ic_loggingValues;
 - (id)ic_loggingIdentifier;
 - (id)shortLoggingDescription;

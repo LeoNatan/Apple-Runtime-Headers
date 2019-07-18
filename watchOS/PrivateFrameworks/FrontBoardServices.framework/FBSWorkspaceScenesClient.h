@@ -40,9 +40,6 @@
 - (void)scene:(id)arg1 sendMessage:(id)arg2 withResponse:(CDUnknownBlockType)arg3;
 - (void)scene:(id)arg1 didReceiveActions:(id)arg2;
 - (void)scene:(id)arg1 didUpdateClientSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4;
-- (void)scene:(id)arg1 didDetachLayer:(id)arg2;
-- (void)scene:(id)arg1 didUpdateLayer:(id)arg2;
-- (void)scene:(id)arg1 didAttachLayer:(id)arg2;
 - (id)endpoint;
 - (id)hostProcess;
 - (id)callOutQueue;

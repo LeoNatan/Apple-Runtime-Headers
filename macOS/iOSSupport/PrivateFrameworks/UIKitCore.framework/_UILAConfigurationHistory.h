@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 {
     NSMutableSet *_newlyHiddenItems;
     NSMutableSet *_newlyUnhiddenItems;
+    NSMutableSet *_invalidBaselineConstraints;
     BOOL _layoutFillsCanvas;
     BOOL _layoutUsesCanvasMarginsWhenFilling;
     BOOL _hasEstablishedBaseValues;
@@ -25,12 +26,14 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic, getter=isInLayoutArrangementUpdateSection) BOOL inLayoutArrangementUpdateSection; // @synthesize inLayoutArrangementUpdateSection=_inLayoutArrangementUpdateSection;
 @property(nonatomic) BOOL hasEstablishedBaseValues; // @synthesize hasEstablishedBaseValues=_hasEstablishedBaseValues;
+@property(readonly, nonatomic) NSSet *invalidBaselineConstraints; // @synthesize invalidBaselineConstraints=_invalidBaselineConstraints;
 @property(readonly, nonatomic) NSSet *_newlyUnhiddenItems; // @synthesize _newlyUnhiddenItems;
 @property(readonly, nonatomic) NSSet *_newlyHiddenItems; // @synthesize _newlyHiddenItems;
 @property(nonatomic) BOOL layoutUsesCanvasMarginsWhenFilling; // @synthesize layoutUsesCanvasMarginsWhenFilling=_layoutUsesCanvasMarginsWhenFilling;
 @property(nonatomic) BOOL layoutFillsCanvas; // @synthesize layoutFillsCanvas=_layoutFillsCanvas;
 @property(nonatomic) long long axis; // @synthesize axis=_axis;
 - (void).cxx_destruct;
+- (void)_invalidateBaselineConstraint:(id)arg1;
 - (id)init;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

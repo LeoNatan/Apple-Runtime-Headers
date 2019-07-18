@@ -21,6 +21,7 @@
     HMDUserCloudShareController *_userCloudShareController;
 }
 
++ (id)logCategory;
 @property(readonly, nonatomic) HMDUserCloudShareController *userCloudShareController; // @synthesize userCloudShareController=_userCloudShareController;
 @property(retain, nonatomic) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
 @property(readonly, nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
@@ -32,7 +33,7 @@
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (void)_handleXPCConnectionInvalidated:(id)arg1;
 - (void)_handleDeregisterRequest:(id)arg1;
-- (void)_handleRemoteShareRequest:(id)arg1;
+- (void)handleRemoteUserClientCloudShareRequest:(id)arg1;
 - (void)_handleRegisterRequest:(id)arg1;
 - (void)_handleUserSettingsUpdatedNotification:(id)arg1;
 - (void)_handleEnableMultiUserChangedNotification:(id)arg1;

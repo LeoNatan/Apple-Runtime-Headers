@@ -74,6 +74,8 @@
 @property(nonatomic) _Bool supportsTimeRangeFilter; // @synthesize supportsTimeRangeFilter=_supportsTimeRangeFilter;
 @property(nonatomic) double version; // @synthesize version=_version;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool shouldUseDeleteAndAddInsteadOfMoveBetweenCalendars;
+@property(readonly, nonatomic) _Bool requiresOpeningAttachmentAsLink;
 - (id)propertyValue;
 @property(readonly, nonatomic) NSString *type;
 - (id)description;

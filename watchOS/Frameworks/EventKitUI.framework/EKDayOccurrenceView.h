@@ -55,7 +55,6 @@
     _Bool _showsTravelTime;
     _Bool _reduceLayoutProcessingForAnimation;
     _Bool _touchesAreBeingTracked;
-    _Bool _originalEventLocationIsPrediction;
     NSObject<EKDayOccurrenceViewDelegate> *_delegate;
     EKDayOccurrenceView *_selectedCopy;
     EKEvent *_occurrence;
@@ -64,10 +63,8 @@
     int _occurrenceBackgroundStyle;
     float _bottomPinningProximity;
     float _topYBoundaryForText;
-    NSString *_originalEventLocation;
     double _travelTime;
     struct UIEdgeInsets _margin;
-    struct CGRect _contentRect;
 }
 
 + (struct UIEdgeInsets)defaultPadding;
@@ -79,10 +76,6 @@
 + (float)minNaturalTextHeightForEvent:(id)arg1 usingSmallText:(_Bool)arg2 sizeClass:(int)arg3;
 + (id)_color:(id)arg1 darkenedToPercentage:(float)arg2 withFinalAlpha:(float)arg3;
 + (id)_color:(id)arg1 lightenedToPercentage:(float)arg2 withFinalAlpha:(float)arg3;
-+ (id)_cachedLocationForEventID:(id)arg1;
-+ (void)_clearCacheForEventID:(id)arg1;
-+ (void)_cacheLocation:(id)arg1 forEventID:(id)arg2;
-+ (id)_recentlyDisplayedLocations;
 + (id)imageForExternalDragOperationFromEvent:(id)arg1;
 + (id)framePathForExternalDragOperationWithSize:(struct CGSize)arg1;
 + (struct CGRect)contentStretchRectForFrame:(struct CGRect)arg1;
@@ -94,8 +87,6 @@
 + (void)clearCaches;
 + (void)_clearViewCache;
 + (id)_viewCache;
-@property(copy, nonatomic) NSString *originalEventLocation; // @synthesize originalEventLocation=_originalEventLocation;
-@property(nonatomic) _Bool originalEventLocationIsPrediction; // @synthesize originalEventLocationIsPrediction=_originalEventLocationIsPrediction;
 @property(nonatomic) _Bool touchesAreBeingTracked; // @synthesize touchesAreBeingTracked=_touchesAreBeingTracked;
 @property(readonly, nonatomic) EKDayOccurrenceState *currentImageState; // @synthesize currentImageState=_currentImageState;
 @property(nonatomic) float topYBoundaryForText; // @synthesize topYBoundaryForText=_topYBoundaryForText;
@@ -111,7 +102,6 @@
 @property(nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic, getter=isDeclined) _Bool declined; // @synthesize declined=_declined;
 @property(nonatomic, getter=isTentative) _Bool tentative; // @synthesize tentative=_tentative;
-@property(readonly, nonatomic) struct CGRect contentRect; // @synthesize contentRect=_contentRect;
 @property(nonatomic) _Bool isProposedTime; // @synthesize isProposedTime=_isProposedTime;
 @property(nonatomic) float travelTimeSubviewHeightInPoints; // @synthesize travelTimeSubviewHeightInPoints=_travelTimeSubviewHeightInPoints;
 @property(nonatomic) _Bool isSelectedCopyView; // @synthesize isSelectedCopyView=_isSelectedCopyView;
@@ -151,6 +141,7 @@
 - (void)bringResizeHandlesToFront;
 - (id)arrayOfResizeHandles;
 - (int)dragTypeFromPoint:(struct CGPoint)arg1;
+- (void)updateAlpha;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
@@ -167,7 +158,6 @@
 - (void)layoutSubviews;
 - (struct CGRect)frameOfOpaqueContent;
 - (struct CGRect)_frameMutatedForProximityToHourLine:(struct CGRect)arg1;
-- (struct CGRect)contentRectForPreview;
 - (struct CGRect)_computeTravelTimeContentRect;
 - (id)_newResizeHandleView;
 - (void)animateToFrame:(struct CGRect)arg1 isAllDay:(_Bool)arg2 beginFromCurrentState:(_Bool)arg3 whenFinished:(CDUnknownBlockType)arg4;
@@ -179,7 +169,6 @@
 - (void)setAllDayDrawingStyle:(_Bool)arg1 animated:(_Bool)arg2;
 - (_Bool)hasIcon;
 - (void)_invalidateContentBounds;
-- (id)combineLocationStringWithProposeNewTimeString:(id)arg1;
 @property(nonatomic) int routingMode;
 @property(nonatomic) struct UIEdgeInsets padding;
 - (void)_removeTravelTimeSubviews;

@@ -22,7 +22,6 @@
         _Bool respondsToActionBadgeSizeForItemAtIndexPath;
         _Bool respondsToAssetExplorerReviewScreenBadgeSizeForItemAtIndexPath;
         _Bool respondsToShouldShowPlayButtonForItemAtIndexPath;
-        _Bool respondsToShouldShowMuteButtonForItemAtIndexPath;
         _Bool respondsToShouldShowProgressIndicatorForItemAtIndexPath;
         _Bool respondsToShouldMoveProgressIndicatorForItemAtIndexPath;
         _Bool respondsToShouldShowBufferingIndicatorForItemAtIndexPath;
@@ -48,7 +47,7 @@
     _Bool _canDisplayLoadingIndicators;
     _Bool _useUserTransformTiles;
     _Bool _shouldPinContentToTop;
-    _Bool _shouldDisplayContentOvelay;
+    _Bool _shouldHideMainContent;
     id <PUOneUpTilingLayoutDelegate> _delegate;
     long long _windowInterfaceOrientation;
     long long _tileInitialContentMode;
@@ -56,7 +55,6 @@
     PUParallaxComputer *_parallaxComputer;
     struct CGSize _interpageSpacing;
     struct CGSize _playButtonSize;
-    struct CGSize _muteButtonSize;
     struct CGSize _progressIndicatorSize;
     struct CGSize _assetExplorerReviewScreenProgressIndicatorSize;
     struct CGSize _bufferingIndicatorSize;
@@ -68,7 +66,7 @@
 + (struct CGRect)untransformedRectForItemWithAspectRatio:(double)arg1 pageRect:(struct CGRect)arg2 safeInsets:(struct UIEdgeInsets)arg3;
 + (id)centerTileKinds;
 + (void)initialize;
-@property(nonatomic) _Bool shouldDisplayContentOvelay; // @synthesize shouldDisplayContentOvelay=_shouldDisplayContentOvelay;
+@property(nonatomic) _Bool shouldHideMainContent; // @synthesize shouldHideMainContent=_shouldHideMainContent;
 @property(retain, nonatomic) PUParallaxComputer *parallaxComputer; // @synthesize parallaxComputer=_parallaxComputer;
 @property(nonatomic) _Bool shouldPinContentToTop; // @synthesize shouldPinContentToTop=_shouldPinContentToTop;
 @property(nonatomic) struct CGSize displaySizeForInsetMatching; // @synthesize displaySizeForInsetMatching=_displaySizeForInsetMatching;
@@ -79,7 +77,6 @@
 @property(nonatomic) struct CGSize bufferingIndicatorSize; // @synthesize bufferingIndicatorSize=_bufferingIndicatorSize;
 @property(nonatomic) struct CGSize assetExplorerReviewScreenProgressIndicatorSize; // @synthesize assetExplorerReviewScreenProgressIndicatorSize=_assetExplorerReviewScreenProgressIndicatorSize;
 @property(nonatomic) struct CGSize progressIndicatorSize; // @synthesize progressIndicatorSize=_progressIndicatorSize;
-@property(nonatomic) struct CGSize muteButtonSize; // @synthesize muteButtonSize=_muteButtonSize;
 @property(nonatomic) struct CGSize playButtonSize; // @synthesize playButtonSize=_playButtonSize;
 @property(nonatomic) _Bool useVerticalReviewScreenControlBarLayout; // @synthesize useVerticalReviewScreenControlBarLayout=_useVerticalReviewScreenControlBarLayout;
 @property(nonatomic) long long windowInterfaceOrientation; // @synthesize windowInterfaceOrientation=_windowInterfaceOrientation;

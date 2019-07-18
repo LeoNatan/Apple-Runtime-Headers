@@ -7,7 +7,9 @@
 #import <WorkflowKit/WFWorkoutTrigger.h>
 
 @interface WFWorkoutTrigger (CoreDuetContext)
-- (id)predicateForContextStore;
+- (unsigned int)contextStoreRegistrationIsForWatch;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class AVTImageStore, AVTUIEnvironment, AVTUILogger, AVTUIStickerGeneratorPool;
+@class AVTClippableImageStore, AVTUIEnvironment, AVTUILogger, AVTUIStickerGeneratorPool;
 @protocol AVTAvatarRecord, AVTCacheableResource, AVTResourceCache, AVTTaskScheduler, OS_dispatch_queue;
 
 @interface AVTUIStickerRenderer : NSObject
 {
     _Bool _parallelizeEncoding;
     id <AVTResourceCache> _cache;
-    AVTImageStore *_imageStore;
+    AVTClippableImageStore *_imageStore;
     AVTUIEnvironment *_environment;
     AVTUILogger *_logger;
     id <AVTTaskScheduler> _renderingScheduler;
@@ -29,7 +29,7 @@
 + (id)imageEncoder;
 @property(nonatomic) _Bool parallelizeEncoding; // @synthesize parallelizeEncoding=_parallelizeEncoding;
 @property(readonly, nonatomic) AVTUIStickerGeneratorPool *stickerGeneratorPool; // @synthesize stickerGeneratorPool=_stickerGeneratorPool;
-@property(retain, nonatomic) id <AVTCacheableResource> cacheableResourceItem; // @synthesize cacheableResourceItem=_cacheableResourceItem;
+@property(readonly, nonatomic) id <AVTCacheableResource> cacheableResourceItem; // @synthesize cacheableResourceItem=_cacheableResourceItem;
 @property(readonly, nonatomic) id <AVTAvatarRecord> avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *encodingQueue; // @synthesize encodingQueue=_encodingQueue;
@@ -37,7 +37,7 @@
 @property(readonly, nonatomic) id <AVTTaskScheduler> renderingScheduler; // @synthesize renderingScheduler=_renderingScheduler;
 @property(readonly, nonatomic) AVTUILogger *logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
-@property(readonly, nonatomic) AVTImageStore *imageStore; // @synthesize imageStore=_imageStore;
+@property(readonly, nonatomic) AVTClippableImageStore *imageStore; // @synthesize imageStore=_imageStore;
 @property(readonly, nonatomic) id <AVTResourceCache> cache; // @synthesize cache=_cache;
 - (void).cxx_destruct;
 - (void)stopUsingResources;

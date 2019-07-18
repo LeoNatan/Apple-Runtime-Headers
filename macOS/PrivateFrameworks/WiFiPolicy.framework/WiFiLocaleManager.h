@@ -48,7 +48,11 @@
 - (void)didFailWithError:(id)arg1;
 - (void)didUpdateLocations:(id)arg1;
 - (void)didChangeAuthorizationStatus;
+- (id)getRestrictedCountryCodeFromTimezone;
+- (id)getRestrictedCountryCodeFromRegionInfo;
+- (id)getLocaleFromTimezone;
 - (void)setCountryCode:(id)arg1 source:(int)arg2;
+- (id)applyCountryCodeExceptions:(id)arg1;
 - (unsigned char)getNetworkReachability;
 - (id)getLocaleFromPeer;
 - (id)getLocaleFrom80211dInfo;

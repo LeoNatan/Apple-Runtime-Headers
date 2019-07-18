@@ -62,8 +62,6 @@ struct ActiveDOMObject;
 
 struct AdClickAttributionManager;
 
-struct AnnotatedRegionValue;
-
 struct ApplicationStateChangeListener;
 
 struct Array {
@@ -72,7 +70,7 @@ struct Array {
     struct Vector<WTF::RefPtr<API::Object, WTF::DumbPtrTraits<API::Object>>, 0, WTF::CrashOnOverflow, 16> _field3;
 };
 
-struct AtomicString {
+struct AtomString {
     struct String _field1;
 };
 
@@ -301,11 +299,12 @@ struct Data {
     struct String _field5;
     struct String _field6;
     struct String _field7;
-    _Bool _field8;
+    struct URL _field8;
     _Bool _field9;
-    double _field10;
-    _Bool _field11;
-    struct RefPtr<WebKit::WebCertificateInfo, WTF::DumbPtrTraits<WebKit::WebCertificateInfo>> _field12;
+    _Bool _field10;
+    double _field11;
+    _Bool _field12;
+    struct RefPtr<WebKit::WebCertificateInfo, WTF::DumbPtrTraits<WebKit::WebCertificateInfo>> _field13;
 };
 
 struct DataListSuggestionInformation {
@@ -522,85 +521,85 @@ struct Document {
     struct HashSet<WebCore::SVGUseElement *, WTF::PtrHash<WebCore::SVGUseElement *>, WTF::HashTraits<WebCore::SVGUseElement *>> _field122;
     struct OptionSet<WebCore::ColorScheme> _field123;
     _Bool _field124;
-    struct Vector<WebCore::AnnotatedRegionValue, 0, WTF::CrashOnOverflow, 16> _field125;
-    _Bool _field126;
-    _Bool _field127;
-    struct HashMap<WTF::String, WTF::RefPtr<WebCore::HTMLCanvasElement, WTF::DumbPtrTraits<WebCore::HTMLCanvasElement>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RefPtr<WebCore::HTMLCanvasElement, WTF::DumbPtrTraits<WebCore::HTMLCanvasElement>>>> _field128;
+    struct HashMap<WTF::String, WTF::RefPtr<WebCore::HTMLCanvasElement, WTF::DumbPtrTraits<WebCore::HTMLCanvasElement>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RefPtr<WebCore::HTMLCanvasElement, WTF::DumbPtrTraits<WebCore::HTMLCanvasElement>>>> _field125;
+    struct HashSet<WebCore::Element *, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>> _field126;
+    struct HashSet<WebCore::Element *, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>> _field127;
+    struct HashSet<WebCore::Element *, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>> _field128;
     struct HashSet<WebCore::Element *, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>> _field129;
-    struct HashSet<WebCore::Element *, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>> _field130;
+    struct Element *_field130;
     struct HashSet<WebCore::Element *, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>> _field131;
-    struct HashSet<WebCore::Element *, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>> _field132;
-    struct Element *_field133;
-    struct HashSet<WebCore::Element *, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>> _field134;
+    struct HashSet<WebCore::HTMLMediaElement *, WTF::PtrHash<WebCore::HTMLMediaElement *>, WTF::HashTraits<WebCore::HTMLMediaElement *>> _field132;
+    struct HashSet<WebCore::HTMLMediaElement *, WTF::PtrHash<WebCore::HTMLMediaElement *>, WTF::HashTraits<WebCore::HTMLMediaElement *>> _field133;
+    struct HashSet<WebCore::VisibilityChangeClient *, WTF::PtrHash<WebCore::VisibilityChangeClient *>, WTF::HashTraits<WebCore::VisibilityChangeClient *>> _field134;
     struct HashSet<WebCore::HTMLMediaElement *, WTF::PtrHash<WebCore::HTMLMediaElement *>, WTF::HashTraits<WebCore::HTMLMediaElement *>> _field135;
-    struct HashSet<WebCore::HTMLMediaElement *, WTF::PtrHash<WebCore::HTMLMediaElement *>, WTF::HashTraits<WebCore::HTMLMediaElement *>> _field136;
-    struct HashSet<WebCore::VisibilityChangeClient *, WTF::PtrHash<WebCore::VisibilityChangeClient *>, WTF::HashTraits<WebCore::VisibilityChangeClient *>> _field137;
-    struct HashSet<WebCore::HTMLMediaElement *, WTF::PtrHash<WebCore::HTMLMediaElement *>, WTF::HashTraits<WebCore::HTMLMediaElement *>> _field138;
-    struct unique_ptr<WTF::HashMap<WTF::String, WebCore::Element *, WTF::ASCIICaseInsensitiveHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WebCore::Element *>>, std::__1::default_delete<WTF::HashMap<WTF::String, WebCore::Element *, WTF::ASCIICaseInsensitiveHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WebCore::Element *>>>> _field139;
-    struct unique_ptr<WebCore::ConstantPropertyMap, std::__1::default_delete<WebCore::ConstantPropertyMap>> _field140;
-    struct unique_ptr<WebCore::SelectorQueryCache, std::__1::default_delete<WebCore::SelectorQueryCache>> _field141;
-    unsigned char _field142;
-    struct unique_ptr<WebCore::RenderView, WebCore::RenderObjectDeleter> _field143;
-    struct DocumentEventQueue _field144;
-    struct HashSet<WebCore::MediaCanStartListener *, WTF::PtrHash<WebCore::MediaCanStartListener *>, WTF::HashTraits<WebCore::MediaCanStartListener *>> _field145;
-    struct UniqueRef<WebCore::FullscreenManager> _field146;
-    struct HashSet<WebCore::HTMLPictureElement *, WTF::PtrHash<WebCore::HTMLPictureElement *>, WTF::HashTraits<WebCore::HTMLPictureElement *>> _field147;
-    struct HashSet<WebCore::HTMLPictureElement *, WTF::PtrHash<WebCore::HTMLPictureElement *>, WTF::HashTraits<WebCore::HTMLPictureElement *>> _field148;
-    struct Vector<WTF::WeakPtr<WebCore::IntersectionObserver>, 0, WTF::CrashOnOverflow, 16> _field149;
-    struct Vector<WTF::WeakPtr<WebCore::IntersectionObserver>, 0, WTF::CrashOnOverflow, 16> _field150;
+    struct unique_ptr<WTF::HashMap<WTF::String, WebCore::Element *, WTF::ASCIICaseInsensitiveHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WebCore::Element *>>, std::__1::default_delete<WTF::HashMap<WTF::String, WebCore::Element *, WTF::ASCIICaseInsensitiveHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WebCore::Element *>>>> _field136;
+    struct unique_ptr<WebCore::ConstantPropertyMap, std::__1::default_delete<WebCore::ConstantPropertyMap>> _field137;
+    struct unique_ptr<WebCore::SelectorQueryCache, std::__1::default_delete<WebCore::SelectorQueryCache>> _field138;
+    unsigned char _field139;
+    struct unique_ptr<WebCore::RenderView, WebCore::RenderObjectDeleter> _field140;
+    struct DocumentEventQueue _field141;
+    struct HashSet<WebCore::MediaCanStartListener *, WTF::PtrHash<WebCore::MediaCanStartListener *>, WTF::HashTraits<WebCore::MediaCanStartListener *>> _field142;
+    struct UniqueRef<WebCore::FullscreenManager> _field143;
+    struct HashSet<WebCore::HTMLPictureElement *, WTF::PtrHash<WebCore::HTMLPictureElement *>, WTF::HashTraits<WebCore::HTMLPictureElement *>> _field144;
+    struct HashSet<WebCore::HTMLPictureElement *, WTF::PtrHash<WebCore::HTMLPictureElement *>, WTF::HashTraits<WebCore::HTMLPictureElement *>> _field145;
+    struct Vector<WTF::WeakPtr<WebCore::IntersectionObserver>, 0, WTF::CrashOnOverflow, 16> _field146;
+    struct Vector<WTF::WeakPtr<WebCore::IntersectionObserver>, 0, WTF::CrashOnOverflow, 16> _field147;
+    struct Timer _field148;
+    struct Timer _field149;
+    struct Vector<WTF::WeakPtr<WebCore::ResizeObserver>, 0, WTF::CrashOnOverflow, 16> _field150;
     struct Timer _field151;
-    struct Timer _field152;
-    struct Vector<WTF::WeakPtr<WebCore::ResizeObserver>, 0, WTF::CrashOnOverflow, 16> _field153;
-    struct Timer _field154;
-    struct ViewportArguments _field155;
-    struct OptionSet<WebCore::DisabledAdaptations> _field156;
-    struct DocumentTiming _field157;
-    struct RefPtr<WebCore::MediaQueryMatcher, WTF::DumbPtrTraits<WebCore::MediaQueryMatcher>> _field158;
-    struct unique_ptr<WTF::HashCountedSet<WebCore::Node *, WTF::PtrHash<WebCore::Node *>, WTF::HashTraits<WebCore::Node *>>, std::__1::default_delete<WTF::HashCountedSet<WebCore::Node *, WTF::PtrHash<WebCore::Node *>, WTF::HashTraits<WebCore::Node *>>>> _field159;
-    struct MonotonicTime _field160;
-    struct MonotonicTime _field161;
-    struct RefPtr<WebCore::ScriptedAnimationController, WTF::DumbPtrTraits<WebCore::ScriptedAnimationController>> _field162;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field163;
+    struct ViewportArguments _field152;
+    struct OptionSet<WebCore::DisabledAdaptations> _field153;
+    struct DocumentTiming _field154;
+    struct RefPtr<WebCore::MediaQueryMatcher, WTF::DumbPtrTraits<WebCore::MediaQueryMatcher>> _field155;
+    struct unique_ptr<WTF::HashCountedSet<WebCore::Node *, WTF::PtrHash<WebCore::Node *>, WTF::HashTraits<WebCore::Node *>>, std::__1::default_delete<WTF::HashCountedSet<WebCore::Node *, WTF::PtrHash<WebCore::Node *>, WTF::HashTraits<WebCore::Node *>>>> _field156;
+    struct MonotonicTime _field157;
+    struct MonotonicTime _field158;
+    struct RefPtr<WebCore::ScriptedAnimationController, WTF::DumbPtrTraits<WebCore::ScriptedAnimationController>> _field159;
+    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field160;
+    struct Timer _field161;
+    struct Vector<WebCore::ScriptExecutionContext::Task, 0, WTF::CrashOnOverflow, 16> _field162;
+    struct unique_ptr<WebCore::TextAutoSizing, std::__1::default_delete<WebCore::TextAutoSizing>> _field163;
     struct Timer _field164;
-    struct Vector<WebCore::ScriptExecutionContext::Task, 0, WTF::CrashOnOverflow, 16> _field165;
-    struct unique_ptr<WebCore::TextAutoSizing, std::__1::default_delete<WebCore::TextAutoSizing>> _field166;
-    struct Timer _field167;
-    struct Timer _field168;
-    struct unique_ptr<WebCore::DocumentSharedObjectPool, std::__1::default_delete<WebCore::DocumentSharedObjectPool>> _field169;
-    struct HashMap<WTF::AtomicString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>, WTF::AtomicStringHash, WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>> _field170;
-    struct RefPtr<WebCore::Document, WTF::DumbPtrTraits<WebCore::Document>> _field171;
-    struct WeakPtr<WebCore::Document> _field172;
-    struct Ref<WebCore::CSSFontSelector, WTF::DumbPtrTraits<WebCore::CSSFontSelector>> _field173;
-    struct WeakHashSet<WebCore::MediaProducer> _field174;
-    struct HashSet<WebCore::ShadowRoot *, WTF::PtrHash<WebCore::ShadowRoot *>, WTF::HashTraits<WebCore::ShadowRoot *>> _field175;
-    struct HashMap<unsigned long long, WebCore::MediaPlaybackTargetClient *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebCore::MediaPlaybackTargetClient *>> _field176;
-    struct HashMap<WebCore::MediaPlaybackTargetClient *, unsigned long long, WTF::PtrHash<WebCore::MediaPlaybackTargetClient *>, WTF::HashTraits<WebCore::MediaPlaybackTargetClient *>, WTF::HashTraits<unsigned long long>> _field177;
-    struct RefPtr<WebCore::IDBClient::IDBConnectionProxy, WTF::DumbPtrTraits<WebCore::IDBClient::IDBConnectionProxy>> _field178;
-    struct HashMap<WTF::String, WTF::Ref<WebCore::HTMLAttachmentElement, WTF::DumbPtrTraits<WebCore::HTMLAttachmentElement>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::Ref<WebCore::HTMLAttachmentElement, WTF::DumbPtrTraits<WebCore::HTMLAttachmentElement>>>> _field179;
-    struct Timer _field180;
-    struct Timer _field181;
-    struct RefPtr<WebCore::SocketProvider, WTF::DumbPtrTraits<WebCore::SocketProvider>> _field182;
-    struct String _field183;
-    struct Optional<WTF::WallTime> _field184;
-    struct HashSet<WTF::RefPtr<WebCore::Element, WTF::DumbPtrTraits<WebCore::Element>>, WTF::PtrHash<WTF::RefPtr<WebCore::Element, WTF::DumbPtrTraits<WebCore::Element>>>, WTF::HashTraits<WTF::RefPtr<WebCore::Element, WTF::DumbPtrTraits<WebCore::Element>>>> _field185;
-    unsigned int _field186;
+    struct Timer _field165;
+    struct unique_ptr<WebCore::DocumentSharedObjectPool, std::__1::default_delete<WebCore::DocumentSharedObjectPool>> _field166;
+    struct HashMap<WTF::AtomString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>, WTF::AtomStringHash, WTF::HashTraits<WTF::AtomString>, WTF::HashTraits<std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>> _field167;
+    struct RefPtr<WebCore::Document, WTF::DumbPtrTraits<WebCore::Document>> _field168;
+    struct WeakPtr<WebCore::Document> _field169;
+    struct Ref<WebCore::CSSFontSelector, WTF::DumbPtrTraits<WebCore::CSSFontSelector>> _field170;
+    struct WeakHashSet<WebCore::MediaProducer> _field171;
+    struct HashSet<WebCore::ShadowRoot *, WTF::PtrHash<WebCore::ShadowRoot *>, WTF::HashTraits<WebCore::ShadowRoot *>> _field172;
+    struct HashMap<unsigned long long, WebCore::MediaPlaybackTargetClient *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebCore::MediaPlaybackTargetClient *>> _field173;
+    struct HashMap<WebCore::MediaPlaybackTargetClient *, unsigned long long, WTF::PtrHash<WebCore::MediaPlaybackTargetClient *>, WTF::HashTraits<WebCore::MediaPlaybackTargetClient *>, WTF::HashTraits<unsigned long long>> _field174;
+    struct RefPtr<WebCore::IDBClient::IDBConnectionProxy, WTF::DumbPtrTraits<WebCore::IDBClient::IDBConnectionProxy>> _field175;
+    struct HashMap<WTF::String, WTF::Ref<WebCore::HTMLAttachmentElement, WTF::DumbPtrTraits<WebCore::HTMLAttachmentElement>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::Ref<WebCore::HTMLAttachmentElement, WTF::DumbPtrTraits<WebCore::HTMLAttachmentElement>>>> _field176;
+    struct Timer _field177;
+    struct Timer _field178;
+    struct RefPtr<WebCore::SocketProvider, WTF::DumbPtrTraits<WebCore::SocketProvider>> _field179;
+    struct String _field180;
+    struct Optional<WTF::WallTime> _field181;
+    struct HashSet<WTF::RefPtr<WebCore::Element, WTF::DumbPtrTraits<WebCore::Element>>, WTF::PtrHash<WTF::RefPtr<WebCore::Element, WTF::DumbPtrTraits<WebCore::Element>>>, WTF::HashTraits<WTF::RefPtr<WebCore::Element, WTF::DumbPtrTraits<WebCore::Element>>>> _field182;
+    unsigned int _field183;
+    unsigned int _field184;
+    unsigned int _field185;
+    int _field186;
     unsigned int _field187;
     unsigned int _field188;
-    int _field189;
+    unsigned int _field189;
     unsigned int _field190;
     unsigned int _field191;
     unsigned int _field192;
     unsigned int _field193;
-    unsigned int _field194;
+    int _field194;
     unsigned int _field195;
-    unsigned int _field196;
+    _Bool _field196;
     int _field197;
-    unsigned int _field198;
-    _Bool _field199;
-    int _field200;
-    struct Optional<WebCore::ReferrerPolicy> _field201;
-    int _field202;
-    unsigned char _field203;
+    struct Optional<WebCore::ReferrerPolicy> _field198;
+    int _field199;
+    unsigned char _field200;
+    _Bool _field201;
+    _Bool _field202;
+    _Bool _field203;
     _Bool _field204;
     _Bool _field205;
     _Bool _field206;
@@ -608,10 +607,10 @@ struct Document {
     _Bool _field208;
     _Bool _field209;
     _Bool _field210;
-    _Bool _field211;
+    unsigned char _field211;
     _Bool _field212;
     _Bool _field213;
-    unsigned char _field214;
+    _Bool _field214;
     _Bool _field215;
     _Bool _field216;
     _Bool _field217;
@@ -637,31 +636,28 @@ struct Document {
     _Bool _field237;
     _Bool _field238;
     _Bool _field239;
-    _Bool _field240;
-    _Bool _field241;
+    struct HashSet<WebCore::HTMLMediaElement *, WTF::PtrHash<WebCore::HTMLMediaElement *>, WTF::HashTraits<WebCore::HTMLMediaElement *>> _field240;
+    struct String _field241;
     _Bool _field242;
-    struct HashSet<WebCore::HTMLMediaElement *, WTF::PtrHash<WebCore::HTMLMediaElement *>, WTF::HashTraits<WebCore::HTMLMediaElement *>> _field243;
-    struct String _field244;
-    _Bool _field245;
-    struct OrientationNotifier _field246;
-    struct SessionID _field247;
-    struct RefPtr<WTF::Logger, WTF::DumbPtrTraits<WTF::Logger>> _field248;
-    struct RefPtr<WebCore::StringCallback, WTF::DumbPtrTraits<WebCore::StringCallback>> _field249;
-    struct RefPtr<WebCore::DocumentTimeline, WTF::DumbPtrTraits<WebCore::DocumentTimeline>> _field250;
-    struct ObjectIdentifier<WebCore::DocumentIdentifierType> _field251;
-    struct RefPtr<WebCore::SWClientConnection, WTF::DumbPtrTraits<WebCore::SWClientConnection>> _field252;
-    struct HashSet<WebCore::ApplicationStateChangeListener *, WTF::PtrHash<WebCore::ApplicationStateChangeListener *>, WTF::HashTraits<WebCore::ApplicationStateChangeListener *>> _field253;
-    struct RegistrableDomain _field254;
-    struct String _field255;
-    struct HashMap<WTF::String, std::__1::unique_ptr<WebCore::CSSRegisteredCustomProperty, std::__1::default_delete<WebCore::CSSRegisteredCustomProperty>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<std::__1::unique_ptr<WebCore::CSSRegisteredCustomProperty, std::__1::default_delete<WebCore::CSSRegisteredCustomProperty>>>> _field256;
-    struct RefPtr<WebCore::Worklet, WTF::DumbPtrTraits<WebCore::Worklet>> _field257;
-    struct HashMap<WTF::String, WTF::Ref<WebCore::PaintWorkletGlobalScope, WTF::DumbPtrTraits<WebCore::PaintWorkletGlobalScope>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::Ref<WebCore::PaintWorkletGlobalScope, WTF::DumbPtrTraits<WebCore::PaintWorkletGlobalScope>>>> _field258;
+    struct OrientationNotifier _field243;
+    struct SessionID _field244;
+    struct RefPtr<WTF::Logger, WTF::DumbPtrTraits<WTF::Logger>> _field245;
+    struct RefPtr<WebCore::StringCallback, WTF::DumbPtrTraits<WebCore::StringCallback>> _field246;
+    struct RefPtr<WebCore::DocumentTimeline, WTF::DumbPtrTraits<WebCore::DocumentTimeline>> _field247;
+    struct ObjectIdentifier<WebCore::DocumentIdentifierType> _field248;
+    struct RefPtr<WebCore::SWClientConnection, WTF::DumbPtrTraits<WebCore::SWClientConnection>> _field249;
+    struct HashSet<WebCore::ApplicationStateChangeListener *, WTF::PtrHash<WebCore::ApplicationStateChangeListener *>, WTF::HashTraits<WebCore::ApplicationStateChangeListener *>> _field250;
+    struct RegistrableDomain _field251;
+    struct String _field252;
+    struct HashMap<WTF::String, std::__1::unique_ptr<WebCore::CSSRegisteredCustomProperty, std::__1::default_delete<WebCore::CSSRegisteredCustomProperty>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<std::__1::unique_ptr<WebCore::CSSRegisteredCustomProperty, std::__1::default_delete<WebCore::CSSRegisteredCustomProperty>>>> _field253;
+    struct RefPtr<WebCore::Worklet, WTF::DumbPtrTraits<WebCore::Worklet>> _field254;
+    struct HashMap<WTF::String, WTF::Ref<WebCore::PaintWorkletGlobalScope, WTF::DumbPtrTraits<WebCore::PaintWorkletGlobalScope>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::Ref<WebCore::PaintWorkletGlobalScope, WTF::DumbPtrTraits<WebCore::PaintWorkletGlobalScope>>>> _field255;
+    _Bool _field256;
+    _Bool _field257;
+    _Bool _field258;
     _Bool _field259;
-    _Bool _field260;
-    _Bool _field261;
-    _Bool _field262;
-    struct Ref<WebCore::UndoManager, WTF::DumbPtrTraits<WebCore::UndoManager>> _field263;
-    struct HashMap<WebCore::Element *, WTF::ObjectIdentifier<WebCore::ElementIdentifierType>, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>, WTF::HashTraits<WTF::ObjectIdentifier<WebCore::ElementIdentifierType>>> _field264;
+    struct Ref<WebCore::UndoManager, WTF::DumbPtrTraits<WebCore::UndoManager>> _field260;
+    struct HashMap<WebCore::Element *, WTF::ObjectIdentifier<WebCore::ElementIdentifierType>, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>, WTF::HashTraits<WTF::ObjectIdentifier<WebCore::ElementIdentifierType>>> _field261;
 };
 
 struct DocumentEventQueue {
@@ -694,19 +690,20 @@ struct DocumentTiming {
 
 struct Download {
     CDUnknownFunctionPointerType *_field1;
-    struct DownloadManager *_field2;
-    struct DownloadID _field3;
-    struct Ref<WebKit::DownloadManager::Client, WTF::DumbPtrTraits<WebKit::DownloadManager::Client>> _field4;
-    struct Vector<WTF::RefPtr<WebCore::BlobDataFileReference, WTF::DumbPtrTraits<WebCore::BlobDataFileReference>>, 0, WTF::CrashOnOverflow, 16> _field5;
-    RefPtr_ea257445 _field6;
-    struct RefPtr<WebKit::NetworkDataTask, WTF::DumbPtrTraits<WebKit::NetworkDataTask>> _field7;
-    struct RetainPtr<NSURLSessionDownloadTask> _field8;
-    struct RetainPtr<NSProgress> _field9;
-    struct SessionID _field10;
-    struct String _field11;
-    _Bool _field12;
+    struct WeakPtrFactory<WebKit::Download> _field2;
+    struct DownloadManager *_field3;
+    struct DownloadID _field4;
+    struct Ref<WebKit::DownloadManager::Client, WTF::DumbPtrTraits<WebKit::DownloadManager::Client>> _field5;
+    struct Vector<WTF::RefPtr<WebCore::BlobDataFileReference, WTF::DumbPtrTraits<WebCore::BlobDataFileReference>>, 0, WTF::CrashOnOverflow, 16> _field6;
+    RefPtr_ea257445 _field7;
+    struct RefPtr<WebKit::NetworkDataTask, WTF::DumbPtrTraits<WebKit::NetworkDataTask>> _field8;
+    struct RetainPtr<NSURLSessionDownloadTask> _field9;
+    struct RetainPtr<NSProgress> _field10;
+    struct SessionID _field11;
+    struct String _field12;
     _Bool _field13;
-    struct DownloadMonitor _field14;
+    _Bool _field14;
+    struct DownloadMonitor _field15;
 };
 
 struct DownloadClient;
@@ -821,6 +818,7 @@ struct FrameState {
     float _field11;
     struct Optional<WebKit::HTTPBody> _field12;
     struct Vector<WebKit::FrameState, 0, WTF::CrashOnOverflow, 16> _field13;
+    _Bool _field14;
 };
 
 struct FullscreenClient;
@@ -925,8 +923,8 @@ struct HashMap<SEL *, MethodInfo, WTF::PtrHash<SEL *>, WTF::HashTraits<SEL *>, W
     struct HashTable<SEL *, WTF::KeyValuePair<SEL *, MethodInfo>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<SEL *, MethodInfo>>, WTF::PtrHash<SEL *>, WTF::HashMap<SEL *, MethodInfo, WTF::PtrHash<SEL *>, WTF::HashTraits<SEL *>, WTF::HashTraits<MethodInfo>>::KeyValuePairTraits, WTF::HashTraits<SEL *>> m_impl;
 };
 
-struct HashMap<WTF::AtomicString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>, WTF::AtomicStringHash, WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>> {
-    struct HashTable<WTF::AtomicString, WTF::KeyValuePair<WTF::AtomicString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::AtomicString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>>, WTF::AtomicStringHash, WTF::HashMap<WTF::AtomicString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>, WTF::AtomicStringHash, WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>>::KeyValuePairTraits, WTF::HashTraits<WTF::AtomicString>> _field1;
+struct HashMap<WTF::AtomString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>, WTF::AtomStringHash, WTF::HashTraits<WTF::AtomString>, WTF::HashTraits<std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>> {
+    struct HashTable<WTF::AtomString, WTF::KeyValuePair<WTF::AtomString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::AtomString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>>, WTF::AtomStringHash, WTF::HashMap<WTF::AtomString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>, WTF::AtomStringHash, WTF::HashTraits<WTF::AtomString>, WTF::HashTraits<std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>>::KeyValuePairTraits, WTF::HashTraits<WTF::AtomString>> _field1;
 };
 
 struct HashMap<WTF::ObjectIdentifier<WebCore::ProcessIdentifierType>, std::__1::unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>>, WTF::ObjectIdentifierHash<WebCore::ProcessIdentifierType>, WTF::HashTraits<WTF::ObjectIdentifier<WebCore::ProcessIdentifierType>>, WTF::HashTraits<std::__1::unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>>>> {
@@ -1153,6 +1151,10 @@ struct HashMap<unsigned long long, WebKit::NetworkDataTaskCocoa *, WTF::IntHash<
     struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::NetworkDataTaskCocoa *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::NetworkDataTaskCocoa *>>, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::NetworkDataTaskCocoa *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkDataTaskCocoa *>>::KeyValuePairTraits, WTF::HashTraits<unsigned long long>> _field1;
 };
 
+struct HashMap<unsigned long long, WebKit::WebSocketTask *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::WebSocketTask *>> {
+    struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::WebSocketTask *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::WebSocketTask *>>, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::WebSocketTask *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::WebSocketTask *>>::KeyValuePairTraits, WTF::HashTraits<unsigned long long>> _field1;
+};
+
 struct HashMap<unsigned long long, WebKit::WebURLSchemeHandlerProxy *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::WebURLSchemeHandlerProxy *>> {
     struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::WebURLSchemeHandlerProxy *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::WebURLSchemeHandlerProxy *>>, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::WebURLSchemeHandlerProxy *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::WebURLSchemeHandlerProxy *>>::KeyValuePairTraits, WTF::HashTraits<unsigned long long>> _field1;
 };
@@ -1165,8 +1167,8 @@ struct HashMap<unsigned long long, unsigned long long, WTF::IntHash<unsigned lon
     struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, unsigned long long>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, unsigned long long>>, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, unsigned long long, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<unsigned long long>>::KeyValuePairTraits, WTF::HashTraits<unsigned long long>> _field1;
 };
 
-struct HashSet<WTF::Ref<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>>, WTF::PtrHash<WTF::Ref<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>>>, WTF::HashTraits<Ref<WTF::WeakReference>>> {
-    struct HashTable<WTF::Ref<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>>, WTF::Ref<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>>, WTF::IdentityExtractor, WTF::PtrHash<WTF::Ref<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>>>, WTF::HashTraits<Ref<WTF::WeakReference>>, WTF::HashTraits<Ref<WTF::WeakReference>>> _field1;
+struct HashSet<WTF::Ref<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>>, WTF::PtrHash<WTF::Ref<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>>>, WTF::HashTraits<Ref<WTF::WeakPtrImpl>>> {
+    struct HashTable<WTF::Ref<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>>, WTF::Ref<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>>, WTF::IdentityExtractor, WTF::PtrHash<WTF::Ref<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>>>, WTF::HashTraits<Ref<WTF::WeakPtrImpl>>, WTF::HashTraits<Ref<WTF::WeakPtrImpl>>> _field1;
 };
 
 struct HashSet<WTF::Ref<WebKit::NetworkResourceLoader, WTF::DumbPtrTraits<WebKit::NetworkResourceLoader>>, WTF::PtrHash<WTF::Ref<WebKit::NetworkResourceLoader, WTF::DumbPtrTraits<WebKit::NetworkResourceLoader>>>, WTF::HashTraits<WTF::Ref<WebKit::NetworkResourceLoader, WTF::DumbPtrTraits<WebKit::NetworkResourceLoader>>>> {
@@ -1265,10 +1267,6 @@ struct HashSet<WebKit::WebEditCommandProxy *, WTF::PtrHash<WebKit::WebEditComman
     struct HashTable<WebKit::WebEditCommandProxy *, WebKit::WebEditCommandProxy *, WTF::IdentityExtractor, WTF::PtrHash<WebKit::WebEditCommandProxy *>, WTF::HashTraits<WebKit::WebEditCommandProxy *>, WTF::HashTraits<WebKit::WebEditCommandProxy *>> _field1;
 };
 
-struct HashSet<WebKit::WebProcessLifetimeObserver *, WTF::PtrHash<WebKit::WebProcessLifetimeObserver *>, WTF::HashTraits<WebKit::WebProcessLifetimeObserver *>> {
-    struct HashTable<WebKit::WebProcessLifetimeObserver *, WebKit::WebProcessLifetimeObserver *, WTF::IdentityExtractor, WTF::PtrHash<WebKit::WebProcessLifetimeObserver *>, WTF::HashTraits<WebKit::WebProcessLifetimeObserver *>, WTF::HashTraits<WebKit::WebProcessLifetimeObserver *>> _field1;
-};
-
 struct HashSet<WebKit::WebProcessProxy *, WTF::PtrHash<WebKit::WebProcessProxy *>, WTF::HashTraits<WebKit::WebProcessProxy *>> {
     struct HashTable<WebKit::WebProcessProxy *, WebKit::WebProcessProxy *, WTF::IdentityExtractor, WTF::PtrHash<WebKit::WebProcessProxy *>, WTF::HashTraits<WebKit::WebProcessProxy *>, WTF::HashTraits<WebKit::WebProcessProxy *>> _field1;
 };
@@ -1325,8 +1323,8 @@ struct HashTable<SEL *, WTF::KeyValuePair<SEL *, MethodInfo>, WTF::KeyValuePairK
     unsigned int m_deletedCount;
 };
 
-struct HashTable<WTF::AtomicString, WTF::KeyValuePair<WTF::AtomicString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::AtomicString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>>, WTF::AtomicStringHash, WTF::HashMap<WTF::AtomicString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>, WTF::AtomicStringHash, WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>>::KeyValuePairTraits, WTF::HashTraits<WTF::AtomicString>> {
-    struct KeyValuePair<WTF::AtomicString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>> *_field1;
+struct HashTable<WTF::AtomString, WTF::KeyValuePair<WTF::AtomString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::AtomString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>>, WTF::AtomStringHash, WTF::HashMap<WTF::AtomString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>, WTF::AtomStringHash, WTF::HashTraits<WTF::AtomString>, WTF::HashTraits<std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>>::KeyValuePairTraits, WTF::HashTraits<WTF::AtomString>> {
+    struct KeyValuePair<WTF::AtomString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>> *_field1;
     unsigned int _field2;
     unsigned int _field3;
     unsigned int _field4;
@@ -1381,8 +1379,8 @@ struct HashTable<WTF::ObjectIdentifier<WebCore::ServiceWorkerIdentifierType>, WT
     unsigned int _field5;
 };
 
-struct HashTable<WTF::Ref<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>>, WTF::Ref<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>>, WTF::IdentityExtractor, WTF::PtrHash<WTF::Ref<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>>>, WTF::HashTraits<Ref<WTF::WeakReference>>, WTF::HashTraits<Ref<WTF::WeakReference>>> {
-    struct Ref<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> *_field1;
+struct HashTable<WTF::Ref<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>>, WTF::Ref<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>>, WTF::IdentityExtractor, WTF::PtrHash<WTF::Ref<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>>>, WTF::HashTraits<Ref<WTF::WeakPtrImpl>>, WTF::HashTraits<Ref<WTF::WeakPtrImpl>>> {
+    struct Ref<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> *_field1;
     unsigned int _field2;
     unsigned int _field3;
     unsigned int _field4;
@@ -1797,14 +1795,6 @@ struct HashTable<WebKit::WebEditCommandProxy *, WebKit::WebEditCommandProxy *, W
     unsigned int _field5;
 };
 
-struct HashTable<WebKit::WebProcessLifetimeObserver *, WebKit::WebProcessLifetimeObserver *, WTF::IdentityExtractor, WTF::PtrHash<WebKit::WebProcessLifetimeObserver *>, WTF::HashTraits<WebKit::WebProcessLifetimeObserver *>, WTF::HashTraits<WebKit::WebProcessLifetimeObserver *>> {
-    struct WebProcessLifetimeObserver **_field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
-};
-
 struct HashTable<WebKit::WebProcessProxy *, WebKit::WebProcessProxy *, WTF::IdentityExtractor, WTF::PtrHash<WebKit::WebProcessProxy *>, WTF::HashTraits<WebKit::WebProcessProxy *>, WTF::HashTraits<WebKit::WebProcessProxy *>> {
     struct WebProcessProxy **_field1;
     unsigned int _field2;
@@ -2037,6 +2027,14 @@ struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKi
     unsigned int _field5;
 };
 
+struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::WebSocketTask *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::WebSocketTask *>>, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::WebSocketTask *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::WebSocketTask *>>::KeyValuePairTraits, WTF::HashTraits<unsigned long long>> {
+    struct KeyValuePair<unsigned long long, WebKit::WebSocketTask *> *_field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+};
+
 struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::WebURLSchemeHandlerProxy *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::WebURLSchemeHandlerProxy *>>, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::WebURLSchemeHandlerProxy *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::WebURLSchemeHandlerProxy *>>::KeyValuePairTraits, WTF::HashTraits<unsigned long long>> {
     struct KeyValuePair<unsigned long long, WebKit::WebURLSchemeHandlerProxy *> *_field1;
     unsigned int _field2;
@@ -2155,7 +2153,7 @@ struct KeyValuePair<PAL::SessionID, WTF::HashSet<WTF::ObjectIdentifier<WebCore::
 
 struct KeyValuePair<SEL *, MethodInfo>;
 
-struct KeyValuePair<WTF::AtomicString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>;
+struct KeyValuePair<WTF::AtomString, std::__1::unique_ptr<WebCore::Locale, std::__1::default_delete<WebCore::Locale>>>;
 
 struct KeyValuePair<WTF::ObjectIdentifier<WebCore::ProcessIdentifierType>, std::__1::unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>>>;
 
@@ -2267,6 +2265,8 @@ struct KeyValuePair<unsigned long long, WebKit::DownloadID>;
 
 struct KeyValuePair<unsigned long long, WebKit::NetworkDataTaskCocoa *>;
 
+struct KeyValuePair<unsigned long long, WebKit::WebSocketTask *>;
+
 struct KeyValuePair<unsigned long long, WebKit::WebURLSchemeHandlerProxy *>;
 
 struct KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeNode, std::__1::default_delete<WebKit::RemoteLayerTreeNode>>>;
@@ -2285,11 +2285,6 @@ struct LayoutSize {
 
 struct LayoutUnit {
     int _field1;
-};
-
-struct LazyInitialized<WTF::RetainPtr<NSString>> {
-    _Bool m_isInitialized;
-    struct RetainPtr<NSString> m_value;
 };
 
 struct LazyInitialized<WTF::RetainPtr<WKPreferences>> {
@@ -2451,6 +2446,7 @@ struct NetworkDataTaskCocoa {
     unsigned long long _field24;
     ObjectIdentifier_8136369e _field25;
     _Bool _field26;
+    _Bool _field27;
 };
 
 struct NetworkLoadMetrics {
@@ -2503,18 +2499,22 @@ struct NetworkSessionCocoa {
     struct HashMap<unsigned long long, WebKit::NetworkDataTaskCocoa *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkDataTaskCocoa *>> _field17;
     struct HashMap<unsigned long long, WebKit::NetworkDataTaskCocoa *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkDataTaskCocoa *>> _field18;
     struct HashMap<unsigned long long, WebKit::DownloadID, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::DownloadID>> _field19;
-    struct RetainPtr<NSURLSession> _field20;
-    struct RetainPtr<WKNetworkSessionDelegate> _field21;
-    struct RetainPtr<NSURLSession> _field22;
-    struct RetainPtr<WKNetworkSessionDelegate> _field23;
-    struct RetainPtr<NSURLSession> _field24;
-    struct RetainPtr<WKNetworkSessionDelegate> _field25;
-    struct String _field26;
+    struct HashMap<unsigned long long, WebKit::WebSocketTask *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::WebSocketTask *>> _field20;
+    struct RetainPtr<NSURLSession> _field21;
+    struct RetainPtr<WKNetworkSessionDelegate> _field22;
+    struct RetainPtr<NSURLSession> _field23;
+    struct RetainPtr<WKNetworkSessionDelegate> _field24;
+    struct RetainPtr<NSURLSession> _field25;
+    struct RetainPtr<WKNetworkSessionDelegate> _field26;
     struct String _field27;
     struct String _field28;
-    struct RetainPtr<const __CFDictionary *> _field29;
-    _Bool _field30;
-    struct Seconds _field31;
+    struct String _field29;
+    struct RetainPtr<const __CFDictionary *> _field30;
+    struct RetainPtr<DMFWebsitePolicyMonitor> _field31;
+    _Bool _field32;
+    _Bool _field33;
+    _Bool _field34;
+    struct Seconds _field35;
 };
 
 struct NetworkSessionCreationParameters {
@@ -2534,10 +2534,14 @@ struct NetworkSessionCreationParameters {
     _Bool _field14;
     _Bool _field15;
     _Bool _field16;
-    struct RegistrableDomain _field17;
-    struct String _field18;
-    struct Handle _field19;
+    _Bool _field17;
+    _Bool _field18;
+    struct RegistrableDomain _field19;
+    struct String _field20;
+    struct Handle _field21;
 };
+
+struct NetworkSocketChannel;
 
 struct Node {
     CDUnknownFunctionPointerType *_field1;
@@ -2842,6 +2846,11 @@ struct OptionSet<WebKit::WebsiteAutoplayQuirk> {
 struct Optional<WTF::MonotonicTime> {
     _Bool _field1;
     union constexpr_storage_t<WTF::MonotonicTime> _field2;
+};
+
+struct Optional<WTF::RetainPtr<NSString>> {
+    _Bool init_;
+    union storage_t<WTF::RetainPtr<NSString>> storage_;
 };
 
 struct Optional<WTF::URL> {
@@ -3155,7 +3164,7 @@ struct Ref<WTF::Thread, WTF::DumbPtrTraits<WTF::Thread>> {
     struct Thread *_field1;
 };
 
-struct Ref<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>>;
+struct Ref<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>>;
 
 struct Ref<WebCore::CSSFontSelector, WTF::DumbPtrTraits<WebCore::CSSFontSelector>> {
     struct CSSFontSelector *_field1;
@@ -3318,8 +3327,8 @@ struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl>> {
     struct StringImpl *m_ptr;
 };
 
-struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> {
-    struct WeakReference *m_ptr;
+struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> {
+    struct WeakPtrImpl *m_ptr;
 };
 
 struct RefPtr<WebCore::BlobDataFileReference, WTF::DumbPtrTraits<WebCore::BlobDataFileReference>>;
@@ -3709,11 +3718,11 @@ struct ResourceRequest {
 
 struct ResourceResponse {
     struct URL _field1;
-    struct AtomicString _field2;
+    struct AtomString _field2;
     long long _field3;
-    struct AtomicString _field4;
-    struct AtomicString _field5;
-    struct AtomicString _field6;
+    struct AtomString _field4;
+    struct AtomString _field5;
+    struct AtomString _field6;
     struct HTTPHeaderMap _field7;
     struct NetworkLoadMetrics _field8;
     struct Optional<WebCore::CertificateInfo> _field9;
@@ -3757,6 +3766,10 @@ struct RetainPtr<CGColorSpace *> {
 
 struct RetainPtr<DDActionContext> {
     void *m_ptr;
+};
+
+struct RetainPtr<DMFWebsitePolicyMonitor> {
+    void *_field1;
 };
 
 struct RetainPtr<NSAccessibilityRemoteUIElement> {
@@ -3929,6 +3942,10 @@ struct RetainPtr<NSURLSessionDataTask> {
 
 struct RetainPtr<NSURLSessionDownloadTask> {
     void *m_ptr;
+};
+
+struct RetainPtr<NSURLSessionWebSocketTask> {
+    void *_field1;
 };
 
 struct RetainPtr<NSView> {
@@ -4569,12 +4586,6 @@ struct Vector<WTF::WeakPtr<WebCore::ResizeObserver>, 0, WTF::CrashOnOverflow, 16
     unsigned int _field3;
 };
 
-struct Vector<WebCore::AnnotatedRegionValue, 0, WTF::CrashOnOverflow, 16> {
-    struct AnnotatedRegionValue *_field1;
-    unsigned int _field2;
-    unsigned int _field3;
-};
-
 struct Vector<WebCore::Color, 0, WTF::CrashOnOverflow, 16> {
     struct Color *_field1;
     unsigned int _field2;
@@ -4917,7 +4928,7 @@ struct Weak<WebCore::JSDOMObject> {
 };
 
 struct WeakHashSet<WebCore::MediaProducer> {
-    struct HashSet<WTF::Ref<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>>, WTF::PtrHash<WTF::Ref<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>>>, WTF::HashTraits<Ref<WTF::WeakReference>>> _field1;
+    struct HashSet<WTF::Ref<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>>, WTF::PtrHash<WTF::Ref<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>>>, WTF::HashTraits<Ref<WTF::WeakPtrImpl>>> _field1;
 };
 
 struct WeakImpl;
@@ -5011,98 +5022,110 @@ struct WeakObjCPtr<id<_WKInputDelegate>> {
 };
 
 struct WeakPtr<WebCore::Document> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtr<WebCore::IntersectionObserver>;
 
 struct WeakPtr<WebCore::ResizeObserver>;
 
+struct WeakPtr<WebKit::Download> {
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> m_impl;
+};
+
 struct WeakPtr<WebKit::LegacyCustomProtocolManagerProxy> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> m_ref;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> m_impl;
 };
 
 struct WeakPtr<WebKit::PageClient> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtr<WebKit::PaymentAuthorizationPresenter> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> m_ref;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> m_impl;
 };
 
 struct WeakPtr<WebKit::PopUpSOAuthorizationSession> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> m_ref;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> m_impl;
 };
 
 struct WeakPtr<WebKit::RemoteObjectRegistry> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtr<WebKit::SuspendedPageProxy> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtr<WebKit::WebDataListSuggestionPicker> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtr<WebKit::WebPageProxy> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::ContainerNode> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer>> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
+};
+
+struct WeakPtrFactory<WebKit::Download> {
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebKit::LegacyCustomProtocolManagerProxy> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebKit::NetworkDataTask> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebKit::NetworkSession> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebKit::PaymentAuthorizationPresenter> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebKit::RemoteObjectRegistry> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebKit::SOAuthorizationSession> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebKit::WebPage> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebKit::WebPageProxy> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebKit::WebProcessPool> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
+};
+
+struct WeakPtrFactory<WebKit::WebSocketTask> {
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebKit::WebViewImpl> {
-    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
-struct WeakReference;
+struct WeakPtrImpl;
 
 struct WebAuthenticatorCoordinatorProxy;
 
@@ -5114,9 +5137,10 @@ struct WebBackForwardListItem {
     CDUnknownFunctionPointerType *_field1;
     id _field2;
     struct BackForwardListItemState _field3;
-    ObjectIdentifier_8136369e _field4;
-    struct ObjectIdentifier<WebCore::ProcessIdentifierType> _field5;
-    struct WeakPtr<WebKit::SuspendedPageProxy> _field6;
+    struct URL _field4;
+    ObjectIdentifier_8136369e _field5;
+    struct ObjectIdentifier<WebCore::ProcessIdentifierType> _field6;
+    struct WeakPtr<WebKit::SuspendedPageProxy> _field7;
 };
 
 struct WebCertificateInfo;
@@ -5430,8 +5454,9 @@ struct WebPage {
     struct OptionSet<WebKit::WebPage::LayerTreeFreezeReason> _field135;
     _Bool _field136;
     _Bool _field137;
-    struct WeakPtr<WebKit::RemoteObjectRegistry> _field138;
-    struct IntSize _field139;
+    _Bool _field138;
+    struct WeakPtr<WebKit::RemoteObjectRegistry> _field139;
+    struct IntSize _field140;
 };
 
 struct WebPageDebuggable;
@@ -5481,13 +5506,13 @@ struct WebPageProxy {
     struct Ref<WebKit::WebProcessProxy, WTF::DumbPtrTraits<WebKit::WebProcessProxy>> _field32;
     struct Ref<WebKit::WebPageGroup, WTF::DumbPtrTraits<WebKit::WebPageGroup>> _field33;
     struct Ref<WebKit::WebPreferences, WTF::DumbPtrTraits<WebKit::WebPreferences>> _field34;
-    struct WebProcessLifetimeTracker _field35;
-    struct Ref<WebKit::WebUserContentControllerProxy, WTF::DumbPtrTraits<WebKit::WebUserContentControllerProxy>> _field36;
-    struct Ref<WebKit::VisitedLinkStore, WTF::DumbPtrTraits<WebKit::VisitedLinkStore>> _field37;
-    struct Ref<WebKit::WebsiteDataStore, WTF::DumbPtrTraits<WebKit::WebsiteDataStore>> _field38;
+    struct Ref<WebKit::WebUserContentControllerProxy, WTF::DumbPtrTraits<WebKit::WebUserContentControllerProxy>> _field35;
+    struct Ref<WebKit::VisitedLinkStore, WTF::DumbPtrTraits<WebKit::VisitedLinkStore>> _field36;
+    struct Ref<WebKit::WebsiteDataStore, WTF::DumbPtrTraits<WebKit::WebsiteDataStore>> _field37;
+    struct RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy>> _field38;
     struct RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy>> _field39;
     struct RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy>> _field40;
-    struct RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy>> _field41;
+    struct String _field41;
     struct String _field42;
     struct String _field43;
     struct String _field44;
@@ -5620,51 +5645,53 @@ struct WebPageProxy {
     _Bool _field171;
     _Bool _field172;
     _Bool _field173;
-    struct HashMap<WTF::String, WTF::String, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String>> _field174;
-    struct unique_ptr<WebCore::RunLoopObserver, std::__1::default_delete<WebCore::RunLoopObserver>> _field175;
-    struct unique_ptr<WebKit::RemoteLayerTreeScrollingPerformanceData, std::__1::default_delete<WebKit::RemoteLayerTreeScrollingPerformanceData>> _field176;
-    _Bool _field177;
-    struct RefPtr<WTF::RefCounter<WebKit::UserObservablePageCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::UserObservablePageCounterType>::Count>> _field178;
-    struct RefPtr<WTF::RefCounter<WebKit::ProcessSuppressionDisabledCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ProcessSuppressionDisabledCounterType>::Count>> _field179;
-    struct RefPtr<WTF::RefCounter<WebKit::HiddenPageThrottlingAutoIncreasesCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::HiddenPageThrottlingAutoIncreasesCounterType>::Count>> _field180;
-    struct RefPtr<WTF::RefCounter<WebKit::VisibleWebPageCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::VisibleWebPageCounterType>::Count>> _field181;
-    unsigned char _field182;
-    struct Optional<WebCore::ScrollbarOverlayStyle> _field183;
-    unsigned long long _field184;
-    struct HashMap<WTF::String, WTF::Variant<WTF::String, bool, unsigned int, double>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::Variant<WTF::String, bool, unsigned int, double>>> _field185;
-    struct OptionSet<WebCore::ActivityState::Flag> _field186;
-    _Bool _field187;
-    struct Vector<WebKit::CallbackID, 0, WTF::CrashOnOverflow, 16> _field188;
-    unsigned int _field189;
-    _Bool _field190;
+    _Bool _field174;
+    struct HashMap<WTF::String, WTF::String, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String>> _field175;
+    struct unique_ptr<WebCore::RunLoopObserver, std::__1::default_delete<WebCore::RunLoopObserver>> _field176;
+    struct unique_ptr<WebKit::RemoteLayerTreeScrollingPerformanceData, std::__1::default_delete<WebKit::RemoteLayerTreeScrollingPerformanceData>> _field177;
+    _Bool _field178;
+    struct RefPtr<WTF::RefCounter<WebKit::UserObservablePageCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::UserObservablePageCounterType>::Count>> _field179;
+    struct RefPtr<WTF::RefCounter<WebKit::ProcessSuppressionDisabledCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ProcessSuppressionDisabledCounterType>::Count>> _field180;
+    struct RefPtr<WTF::RefCounter<WebKit::HiddenPageThrottlingAutoIncreasesCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::HiddenPageThrottlingAutoIncreasesCounterType>::Count>> _field181;
+    struct RefPtr<WTF::RefCounter<WebKit::VisibleWebPageCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::VisibleWebPageCounterType>::Count>> _field182;
+    unsigned char _field183;
+    struct Optional<WebCore::ScrollbarOverlayStyle> _field184;
+    unsigned long long _field185;
+    struct HashMap<WTF::String, WTF::Variant<WTF::String, bool, unsigned int, double>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::Variant<WTF::String, bool, unsigned int, double>>> _field186;
+    struct OptionSet<WebCore::ActivityState::Flag> _field187;
+    _Bool _field188;
+    struct Vector<WebKit::CallbackID, 0, WTF::CrashOnOverflow, 16> _field189;
+    unsigned int _field190;
     _Bool _field191;
     _Bool _field192;
     _Bool _field193;
     _Bool _field194;
-    struct Optional<WebCore::FontAttributes> _field195;
-    _Bool _field196;
+    _Bool _field195;
+    struct Optional<WebCore::FontAttributes> _field196;
     _Bool _field197;
     _Bool _field198;
     _Bool _field199;
     _Bool _field200;
-    struct HashMap<WTF::String, WTF::Ref<WebKit::WebURLSchemeHandler, WTF::DumbPtrTraits<WebKit::WebURLSchemeHandler>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::Ref<WebKit::WebURLSchemeHandler, WTF::DumbPtrTraits<WebKit::WebURLSchemeHandler>>>> _field201;
-    struct HashMap<unsigned long long, WTF::Ref<WebKit::WebURLSchemeHandler, WTF::DumbPtrTraits<WebKit::WebURLSchemeHandler>>, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::Ref<WebKit::WebURLSchemeHandler, WTF::DumbPtrTraits<WebKit::WebURLSchemeHandler>>>> _field202;
-    struct HashMap<WTF::String, WTF::Ref<API::Attachment, WTF::DumbPtrTraits<API::Attachment>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::Ref<API::Attachment, WTF::DumbPtrTraits<API::Attachment>>>> _field203;
-    struct unique_ptr<WebKit::WebPageInspectorController, std::__1::default_delete<WebKit::WebPageInspectorController>> _field204;
-    struct unique_ptr<WebKit::WebPageDebuggable, std::__1::default_delete<WebKit::WebPageDebuggable>> _field205;
-    struct Optional<long long> _field206;
-    struct Optional<WTF::MonotonicTime> _field207;
-    struct HashSet<WTF::String, WTF::StringHash, WTF::HashTraits<WTF::String>> _field208;
-    struct Timer<WebKit::WebPageProxy> _field209;
-    unsigned int _field210;
-    _Bool _field211;
-    _Bool _field212;
-    struct unique_ptr<WebKit::ProvisionalPageProxy, std::__1::default_delete<WebKit::ProvisionalPageProxy>> _field213;
-    struct WeakPtr<WebKit::SuspendedPageProxy> _field214;
-    struct HashMap<WebKit::WebViewDidMoveToWindowObserver *, WTF::WeakPtr<WebKit::WebViewDidMoveToWindowObserver>, WTF::PtrHash<WebKit::WebViewDidMoveToWindowObserver *>, WTF::HashTraits<WebKit::WebViewDidMoveToWindowObserver *>, WTF::HashTraits<WTF::WeakPtr<WebKit::WebViewDidMoveToWindowObserver>>> _field215;
-    struct RefPtr<WTF::Logger, WTF::DumbPtrTraits<WTF::Logger>> _field216;
-    struct Optional<WebKit::WebPageProxy::SpeechSynthesisData> _field217;
-    _Bool _field218;
+    _Bool _field201;
+    _Bool _field202;
+    struct HashMap<WTF::String, WTF::Ref<WebKit::WebURLSchemeHandler, WTF::DumbPtrTraits<WebKit::WebURLSchemeHandler>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::Ref<WebKit::WebURLSchemeHandler, WTF::DumbPtrTraits<WebKit::WebURLSchemeHandler>>>> _field203;
+    struct HashMap<unsigned long long, WTF::Ref<WebKit::WebURLSchemeHandler, WTF::DumbPtrTraits<WebKit::WebURLSchemeHandler>>, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::Ref<WebKit::WebURLSchemeHandler, WTF::DumbPtrTraits<WebKit::WebURLSchemeHandler>>>> _field204;
+    struct HashMap<WTF::String, WTF::Ref<API::Attachment, WTF::DumbPtrTraits<API::Attachment>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::Ref<API::Attachment, WTF::DumbPtrTraits<API::Attachment>>>> _field205;
+    struct unique_ptr<WebKit::WebPageInspectorController, std::__1::default_delete<WebKit::WebPageInspectorController>> _field206;
+    struct unique_ptr<WebKit::WebPageDebuggable, std::__1::default_delete<WebKit::WebPageDebuggable>> _field207;
+    struct Optional<long long> _field208;
+    struct Optional<WTF::MonotonicTime> _field209;
+    struct HashSet<WTF::String, WTF::StringHash, WTF::HashTraits<WTF::String>> _field210;
+    struct Timer<WebKit::WebPageProxy> _field211;
+    unsigned int _field212;
+    _Bool _field213;
+    _Bool _field214;
+    struct unique_ptr<WebKit::ProvisionalPageProxy, std::__1::default_delete<WebKit::ProvisionalPageProxy>> _field215;
+    struct WeakPtr<WebKit::SuspendedPageProxy> _field216;
+    struct HashMap<WebKit::WebViewDidMoveToWindowObserver *, WTF::WeakPtr<WebKit::WebViewDidMoveToWindowObserver>, WTF::PtrHash<WebKit::WebViewDidMoveToWindowObserver *>, WTF::HashTraits<WebKit::WebViewDidMoveToWindowObserver *>, WTF::HashTraits<WTF::WeakPtr<WebKit::WebViewDidMoveToWindowObserver>>> _field217;
+    struct RefPtr<WTF::Logger, WTF::DumbPtrTraits<WTF::Logger>> _field218;
+    struct Optional<WebKit::WebPageProxy::SpeechSynthesisData> _field219;
+    _Bool _field220;
 };
 
 struct WebPaymentCoordinatorProxy;
@@ -5681,13 +5708,6 @@ struct WebPreferencesStore {
 };
 
 struct WebProcessCache;
-
-struct WebProcessLifetimeObserver;
-
-struct WebProcessLifetimeTracker {
-    struct WebPageProxy *_field1;
-    struct HashSet<WebKit::WebProcessLifetimeObserver *, WTF::PtrHash<WebKit::WebProcessLifetimeObserver *>, WTF::HashTraits<WebKit::WebProcessLifetimeObserver *>> _field2;
-};
 
 struct WebProcessPool {
     CDUnknownFunctionPointerType *_field1;
@@ -5766,31 +5786,32 @@ struct WebProcessPool {
     _Bool _field74;
     _Bool _field75;
     _Bool _field76;
-    struct RefCounter<WebKit::UserObservablePageCounterType> _field77;
-    struct RefCounter<WebKit::ProcessSuppressionDisabledCounterType> _field78;
-    struct RefCounter<WebKit::HiddenPageThrottlingAutoIncreasesCounterType> _field79;
-    struct Timer<WebKit::WebProcessPool> _field80;
-    struct RetainPtr<NSMutableDictionary> _field81;
-    struct RefPtr<WTF::RefCounter<WebKit::ProcessSuppressionDisabledCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ProcessSuppressionDisabledCounterType>::Count>> _field82;
-    struct HashMap<WTF::String, WTF::String, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String>> _field83;
-    struct HashMap<WTF::String, WTF::HashMap<WTF::String, WTF::HashMap<WTF::String, unsigned char, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<unsigned char>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::HashMap<WTF::String, unsigned char, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<unsigned char>>>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::HashMap<WTF::String, WTF::HashMap<WTF::String, unsigned char, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<unsigned char>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::HashMap<WTF::String, unsigned char, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<unsigned char>>>>>> _field84;
-    struct HashSet<WebKit::WebProcessProxy *, WTF::PtrHash<WebKit::WebProcessProxy *>, WTF::HashTraits<WebKit::WebProcessProxy *>> _field85;
-    _Bool _field86;
+    _Bool _field77;
+    struct RefCounter<WebKit::UserObservablePageCounterType> _field78;
+    struct RefCounter<WebKit::ProcessSuppressionDisabledCounterType> _field79;
+    struct RefCounter<WebKit::HiddenPageThrottlingAutoIncreasesCounterType> _field80;
+    struct Timer<WebKit::WebProcessPool> _field81;
+    struct RetainPtr<NSMutableDictionary> _field82;
+    struct RefPtr<WTF::RefCounter<WebKit::ProcessSuppressionDisabledCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ProcessSuppressionDisabledCounterType>::Count>> _field83;
+    struct HashMap<WTF::String, WTF::String, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String>> _field84;
+    struct HashMap<WTF::String, WTF::HashMap<WTF::String, WTF::HashMap<WTF::String, unsigned char, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<unsigned char>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::HashMap<WTF::String, unsigned char, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<unsigned char>>>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::HashMap<WTF::String, WTF::HashMap<WTF::String, unsigned char, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<unsigned char>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::HashMap<WTF::String, unsigned char, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<unsigned char>>>>>> _field85;
+    struct HashSet<WebKit::WebProcessProxy *, WTF::PtrHash<WebKit::WebProcessProxy *>, WTF::HashTraits<WebKit::WebProcessProxy *>> _field86;
     _Bool _field87;
-    struct Paths _field88;
-    struct HashMap<PAL::SessionID, WTF::HashSet<WTF::ObjectIdentifier<WebCore::PageIdentifierType>, WTF::ObjectIdentifierHash<WebCore::PageIdentifierType>, WTF::HashTraits<WTF::ObjectIdentifier<WebCore::PageIdentifierType>>>, WTF::SessionIDHash, WTF::HashTraits<PAL::SessionID>, WTF::HashTraits<WTF::HashSet<WTF::ObjectIdentifier<WebCore::PageIdentifierType>, WTF::ObjectIdentifierHash<WebCore::PageIdentifierType>, WTF::HashTraits<WTF::ObjectIdentifier<WebCore::PageIdentifierType>>>>> _field89;
-    struct Timer<WebKit::WebProcessPool> _field90;
-    struct Deque<std::__1::unique_ptr<WebKit::SuspendedPageProxy, std::__1::default_delete<WebKit::SuspendedPageProxy>>, 0> _field91;
-    unsigned int _field92;
-    struct UniqueRef<WebKit::WebProcessCache> _field93;
-    struct HashMap<WebCore::RegistrableDomain, WTF::RefPtr<WebKit::WebProcessProxy, WTF::DumbPtrTraits<WebKit::WebProcessProxy>>, WebCore::RegistrableDomain::RegistrableDomainHash, WTF::HashTraits<WebCore::RegistrableDomain>, WTF::HashTraits<WTF::RefPtr<WebKit::WebProcessProxy, WTF::DumbPtrTraits<WebKit::WebProcessProxy>>>> _field94;
-    struct HashMap<WebCore::RegistrableDomain, std::__1::unique_ptr<WebCore::PrewarmInformation, std::__1::default_delete<WebCore::PrewarmInformation>>, WebCore::RegistrableDomain::RegistrableDomainHash, WTF::HashTraits<WebCore::RegistrableDomain>, WTF::HashTraits<std::__1::unique_ptr<WebCore::PrewarmInformation, std::__1::default_delete<WebCore::PrewarmInformation>>>> _field95;
-    struct Vector<std::__1::unique_ptr<WebKit::DisplayLink, std::__1::default_delete<WebKit::DisplayLink>>, 0, WTF::CrashOnOverflow, 16> _field96;
-    struct HashMap<WTF::ObjectIdentifier<WebCore::ProcessIdentifierType>, std::__1::unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>>, WTF::ObjectIdentifierHash<WebCore::ProcessIdentifierType>, WTF::HashTraits<WTF::ObjectIdentifier<WebCore::ProcessIdentifierType>>, WTF::HashTraits<std::__1::unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>>>> _field97;
-    struct unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>> _field98;
-    struct HashMap<WTF::ObjectIdentifier<WebCore::ProcessIdentifierType>, std::__1::unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>>, WTF::ObjectIdentifierHash<WebCore::ProcessIdentifierType>, WTF::HashTraits<WTF::ObjectIdentifier<WebCore::ProcessIdentifierType>>, WTF::HashTraits<std::__1::unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>>>> _field99;
-    struct unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>> _field100;
-    _Bool _field101;
+    _Bool _field88;
+    struct Paths _field89;
+    struct HashMap<PAL::SessionID, WTF::HashSet<WTF::ObjectIdentifier<WebCore::PageIdentifierType>, WTF::ObjectIdentifierHash<WebCore::PageIdentifierType>, WTF::HashTraits<WTF::ObjectIdentifier<WebCore::PageIdentifierType>>>, WTF::SessionIDHash, WTF::HashTraits<PAL::SessionID>, WTF::HashTraits<WTF::HashSet<WTF::ObjectIdentifier<WebCore::PageIdentifierType>, WTF::ObjectIdentifierHash<WebCore::PageIdentifierType>, WTF::HashTraits<WTF::ObjectIdentifier<WebCore::PageIdentifierType>>>>> _field90;
+    struct Timer<WebKit::WebProcessPool> _field91;
+    struct Deque<std::__1::unique_ptr<WebKit::SuspendedPageProxy, std::__1::default_delete<WebKit::SuspendedPageProxy>>, 0> _field92;
+    unsigned int _field93;
+    struct UniqueRef<WebKit::WebProcessCache> _field94;
+    struct HashMap<WebCore::RegistrableDomain, WTF::RefPtr<WebKit::WebProcessProxy, WTF::DumbPtrTraits<WebKit::WebProcessProxy>>, WebCore::RegistrableDomain::RegistrableDomainHash, WTF::HashTraits<WebCore::RegistrableDomain>, WTF::HashTraits<WTF::RefPtr<WebKit::WebProcessProxy, WTF::DumbPtrTraits<WebKit::WebProcessProxy>>>> _field95;
+    struct HashMap<WebCore::RegistrableDomain, std::__1::unique_ptr<WebCore::PrewarmInformation, std::__1::default_delete<WebCore::PrewarmInformation>>, WebCore::RegistrableDomain::RegistrableDomainHash, WTF::HashTraits<WebCore::RegistrableDomain>, WTF::HashTraits<std::__1::unique_ptr<WebCore::PrewarmInformation, std::__1::default_delete<WebCore::PrewarmInformation>>>> _field96;
+    struct Vector<std::__1::unique_ptr<WebKit::DisplayLink, std::__1::default_delete<WebKit::DisplayLink>>, 0, WTF::CrashOnOverflow, 16> _field97;
+    struct HashMap<WTF::ObjectIdentifier<WebCore::ProcessIdentifierType>, std::__1::unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>>, WTF::ObjectIdentifierHash<WebCore::ProcessIdentifierType>, WTF::HashTraits<WTF::ObjectIdentifier<WebCore::ProcessIdentifierType>>, WTF::HashTraits<std::__1::unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>>>> _field98;
+    struct unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>> _field99;
+    struct HashMap<WTF::ObjectIdentifier<WebCore::ProcessIdentifierType>, std::__1::unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>>, WTF::ObjectIdentifierHash<WebCore::ProcessIdentifierType>, WTF::HashTraits<WTF::ObjectIdentifier<WebCore::ProcessIdentifierType>>, WTF::HashTraits<std::__1::unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>>>> _field100;
+    struct unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion>> _field101;
+    _Bool _field102;
 };
 
 struct WebProcessProxy;
@@ -5798,6 +5819,13 @@ struct WebProcessProxy;
 struct WebProtectionSpace;
 
 struct WebResourceLoadStatisticsStore;
+
+struct WebSocketTask {
+    struct WeakPtrFactory<WebKit::WebSocketTask> _field1;
+    struct NetworkSocketChannel *_field2;
+    struct RetainPtr<NSURLSessionWebSocketTask> _field3;
+    _Bool _field4;
+};
 
 struct WebUserContentController;
 
@@ -6776,6 +6804,11 @@ union constexpr_storage_t<unsigned int> {
 union constexpr_storage_t<unsigned long> {
     unsigned char dummy_;
     unsigned long long value_;
+};
+
+union storage_t<WTF::RetainPtr<NSString>> {
+    unsigned char dummy_;
+    struct RetainPtr<NSString> value_;
 };
 
 union storage_t<WTF::URL> {

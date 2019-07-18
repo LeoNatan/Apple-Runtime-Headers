@@ -15,7 +15,7 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (id)_accountStore;
+@property(readonly, nonatomic) ACAccountStore *accountStore;
 - (id)_primaryAppleAccount;
 - (id)_aidaAccount;
 - (void)renewAppleAccountWithCompletionHandler:(CDUnknownBlockType)arg1;

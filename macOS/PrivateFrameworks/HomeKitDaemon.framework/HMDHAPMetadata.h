@@ -127,7 +127,7 @@
 - (BOOL)isTargetCharacteristic:(id)arg1;
 - (BOOL)requiresTimedWrite:(id)arg1 forService:(id)arg2;
 - (BOOL)requiresDeviceUnlock:(id)arg1 forService:(id)arg2;
-- (BOOL)shouldAllowWriteToWakeSuspendedAccessory:(id)arg1 withCharacteristic:(id)arg2 withValue:(id)arg3;
+- (BOOL)shouldAllowWriteToWakeSuspendedAccessoryForService:(id)arg1 characteristicType:(id)arg2 value:(id)arg3;
 - (BOOL)allowsSecuringWriteFor:(id)arg1 withValue:(id)arg2;
 - (id)descriptionForCharacteristicType:(id)arg1;
 - (id)descriptionForServiceType:(id)arg1;

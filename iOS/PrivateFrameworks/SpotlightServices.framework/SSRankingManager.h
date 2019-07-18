@@ -35,15 +35,15 @@
 - (void)addCEPValuesForTTR;
 - (id)rankAppsAtTopForScopedSearchWithSections:(id)arg1;
 - (id)groupSectionsByCategory:(id)arg1 genreMap:(id)arg2;
-- (void)updateServerScoresUsingBlockOrder:(id)arg1;
-- (id)applyTopSectionPolicy:(id)arg1 withTopHitSection:(id)arg2 isPeopleSearch:(_Bool)arg3 triggerEvent:(unsigned long long)arg4;
+- (void)updateServerScoresUsingBlockOrder:(id)arg1 bundleFeatures:(id)arg2;
+- (id)applyTopSectionPolicy:(id)arg1 withTopHitSection:(id)arg2 isPeopleSearch:(_Bool)arg3 triggerEvent:(unsigned long long)arg4 correction:(id)arg5;
 - (void)refineSectionShowingVisibleResultsWithBetterTextMatches:(id)arg1;
 - (id)rankSectionsUsingBundleIDToSectionMapping:(id)arg1 withRanker:(id)arg2 isPeopleSearch:(_Bool)arg3 isScopedAppSearch:(_Bool)arg4 queryId:(unsigned long long)arg5 isCJK:(_Bool)arg6;
 - (long long)compareDate:(id)arg1 withDate:(id)arg2;
 - (id)initWithQuery:(id)arg1;
 - (id)removeBlackListedSectionsForMapping:(id)arg1;
 - (id)makeTopHitSectionUsingSections:(id)arg1 withItemRanker:(id)arg2 sectionHeader:(id)arg3 shortcutResult:(id)arg4;
-- (void)applyTopHitRankingPolicyToSection:(id)arg1 maxTopHitCount:(long long)arg2;
+- (void)applyTopHitRankingPolicyToSection:(id)arg1 topResultSection:(id)arg2 maxTopHitCount:(long long)arg3;
 - (id)relativeRankWithAbsRank:(id)arg1 numberValues:(unsigned long long)arg2;
 - (id)removeBlackListedSectionsForMapping:(id)arg1 withRankingConfiguration:(id)arg2;
 - (double)roundedValueForScore:(double)arg1;

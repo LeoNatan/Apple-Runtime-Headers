@@ -30,6 +30,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)updateColumnLayoutForSize:(struct CGSize)arg1;
+- (_Bool)shouldUseTwoColumnLayoutForSize:(struct CGSize)arg1;
 - (void)setupNoContentView:(id)arg1 withError:(id)arg2;
 - (void)dataUpdated:(_Bool)arg1 withError:(id)arg2;
 - (void)viewDidLoad;

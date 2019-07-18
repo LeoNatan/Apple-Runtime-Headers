@@ -17,12 +17,10 @@ __attribute__((visibility("hidden")))
     NSString *_fontName;
     double _fontSize;
     NSArray *_fontFeatures;
-    unsigned long long _fontNameSizeHash;
 }
 
 + (id)cacheKeyWithFontName:(id)arg1 fontSize:(double)arg2 bold:(_Bool)arg3 italic:(_Bool)arg4 fontFeatures:(id)arg5;
 + (id)cacheKeyWithFontName:(id)arg1 size:(double)arg2;
-@property(readonly, nonatomic) unsigned long long fontNameSizeHash; // @synthesize fontNameSizeHash=_fontNameSizeHash;
 @property(readonly, copy, nonatomic) NSArray *fontFeatures; // @synthesize fontFeatures=_fontFeatures;
 @property(readonly, nonatomic) _Bool italic; // @synthesize italic=_italic;
 @property(readonly, nonatomic) _Bool bold; // @synthesize bold=_bold;

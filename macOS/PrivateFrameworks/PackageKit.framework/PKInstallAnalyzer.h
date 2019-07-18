@@ -47,7 +47,7 @@
 - (BOOL)_isUnsafeToObsoleteComponent:(id)arg1;
 - (id)extendedAttributesForComponent:(id)arg1;
 - (id)actualFileInstallPathsViolatingReadOnlySystemLocationsEvaluatingDestinationPath:(BOOL)arg1;
-- (id)_parseFirmlinksOnDestination;
+- (id)_parseFirmlinksOnDestinationIsAppleInternal:(BOOL)arg1;
 - (id)actualFileInstallPathsWithoutParents;
 - (id)actualFileInstallPaths;
 - (id)topBundleIdentifiers;

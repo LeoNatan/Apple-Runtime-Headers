@@ -11,20 +11,30 @@
     double _maxDistanceThreshold;
     double _minDistanceThreshold;
     double _softDistanceThreshold;
-    double _knownMapItemsConfidence;
-    double _unknownMapItemsConfidence;
+    double _homeConfidence;
+    double _workConfidence;
+    double _schoolConfidence;
+    double _gymConfidence;
+    double _nonRevGeoConfidence;
+    double _revGeoConfidence;
+    unsigned long long _revGeoSourceMask;
     unsigned long long _removeSourceMask;
 }
 
 @property(readonly, nonatomic) unsigned long long removeSourceMask; // @synthesize removeSourceMask=_removeSourceMask;
-@property(readonly, nonatomic) double unknownMapItemsConfidence; // @synthesize unknownMapItemsConfidence=_unknownMapItemsConfidence;
-@property(readonly, nonatomic) double knownMapItemsConfidence; // @synthesize knownMapItemsConfidence=_knownMapItemsConfidence;
+@property(readonly, nonatomic) unsigned long long revGeoSourceMask; // @synthesize revGeoSourceMask=_revGeoSourceMask;
+@property(readonly, nonatomic) double revGeoConfidence; // @synthesize revGeoConfidence=_revGeoConfidence;
+@property(readonly, nonatomic) double nonRevGeoConfidence; // @synthesize nonRevGeoConfidence=_nonRevGeoConfidence;
+@property(readonly, nonatomic) double gymConfidence; // @synthesize gymConfidence=_gymConfidence;
+@property(readonly, nonatomic) double schoolConfidence; // @synthesize schoolConfidence=_schoolConfidence;
+@property(readonly, nonatomic) double workConfidence; // @synthesize workConfidence=_workConfidence;
+@property(readonly, nonatomic) double homeConfidence; // @synthesize homeConfidence=_homeConfidence;
 @property(readonly, nonatomic) double softDistanceThreshold; // @synthesize softDistanceThreshold=_softDistanceThreshold;
 @property(readonly, nonatomic) double minDistanceThreshold; // @synthesize minDistanceThreshold=_minDistanceThreshold;
 @property(readonly, nonatomic) double maxDistanceThreshold; // @synthesize maxDistanceThreshold=_maxDistanceThreshold;
 - (id)description;
 - (id)initWithDefaultsManager:(id)arg1;
-- (id)initWithMaxDistanceThreshold:(double)arg1 minDistanceThreshold:(double)arg2 softDistanceThreshold:(double)arg3 knownMapItemsConfidence:(double)arg4 unknownMapItemsConfidence:(double)arg5 removeSourceMask:(unsigned long long)arg6;
+- (id)initWithMaxDistanceThreshold:(double)arg1 minDistanceThreshold:(double)arg2 softDistanceThreshold:(double)arg3 homeConfidence:(double)arg4 workConfidence:(double)arg5 schoolConfidence:(double)arg6 gymConfidence:(double)arg7 nonRevGeoConfidence:(double)arg8 revGeoConfidence:(double)arg9 revGeoSourceMask:(unsigned long long)arg10 removeSourceMask:(unsigned long long)arg11;
 - (id)init;
 
 @end

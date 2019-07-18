@@ -8,25 +8,26 @@
 
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/UIInteraction-Protocol.h>
+#import <UIKitCore/_UIMultiSelectOneFingerPanGestureDelegate-Protocol.h>
 
-@class NSArray, NSString, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, _UIMultiSelectOneFingerPanGesture;
+@class NSArray, NSString, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, _UIMultiSelectOneFingerPanGesture, _UISingleFingerTapExtensionGesture;
 @protocol UIMultiSelectInteractionDelegate;
 
-@interface UIMultiSelectInteraction : NSObject <UIGestureRecognizerDelegate, UIInteraction>
+@interface UIMultiSelectInteraction : NSObject <UIGestureRecognizerDelegate, _UIMultiSelectOneFingerPanGestureDelegate, UIInteraction>
 {
     _Bool _isScrollView;
     _Bool _delegateConformsToProtocol;
     _UIMultiSelectOneFingerPanGesture *_multiSelectModePan;
     UIPanGestureRecognizer *_multiFingerPan;
     UITapGestureRecognizer *_multiFingerTap;
-    UITapGestureRecognizer *_singleFingerExtensionTap;
+    _UISingleFingerTapExtensionGesture *_singleFingerExtensionTap;
     id <UIMultiSelectInteractionDelegate> _delegate;
     UIView *_view;
 }
 
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <UIMultiSelectInteractionDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) UITapGestureRecognizer *_singleFingerExtensionTap; // @synthesize _singleFingerExtensionTap;
+@property(retain, nonatomic) _UISingleFingerTapExtensionGesture *_singleFingerExtensionTap; // @synthesize _singleFingerExtensionTap;
 @property(retain, nonatomic) UITapGestureRecognizer *_multiFingerTap; // @synthesize _multiFingerTap;
 @property(retain, nonatomic) UIPanGestureRecognizer *_multiFingerPan; // @synthesize _multiFingerPan;
 @property(retain, nonatomic) _UIMultiSelectOneFingerPanGesture *_multiSelectModePan; // @synthesize _multiSelectModePan;
@@ -43,7 +44,10 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
-- (unsigned long long)_currentExtensionTypeForOneFingerTap;
+- (_Bool)multiSelectOneFingerPanGestureShouldPreventDragInteractionGesture:(id)arg1;
+- (unsigned long long)_currentExtensionTypeForOneFingerTapGesture:(id)arg1;
+- (_Bool)_isCommandKeyBeingHeldWithGesture:(id)arg1;
+- (_Bool)_isShiftKeyBeingHeldWithGesture:(id)arg1;
 - (void)_askDelegateToAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg1 keepingSelection:(_Bool)arg2;
 - (_Bool)_attemptToAutomaticallyTransitionToMultiSelectModeIfNecessaryAtPoint:(struct CGPoint)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

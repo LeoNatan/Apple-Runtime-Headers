@@ -9,7 +9,6 @@
 @interface _TtC12NewsArticles16PDFReplicaModule : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: resolver
-    // Error parsing type: , name: tracker
 }
 
 @end

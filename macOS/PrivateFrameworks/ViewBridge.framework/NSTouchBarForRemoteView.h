@@ -6,17 +6,15 @@
 
 #import <AppKit/NSTouchBar.h>
 
-@class NSString, NSXPCListenerEndpoint;
+@class NSXPCListenerEndpoint;
 
 __attribute__((visibility("hidden")))
 @interface NSTouchBarForRemoteView : NSTouchBar
 {
     NSXPCListenerEndpoint *_serviceListenerEndpoint;
-    NSString *_serviceName;
 }
 
 @property(readonly) NSXPCListenerEndpoint *serviceListenerEndpoint; // @synthesize serviceListenerEndpoint=_serviceListenerEndpoint;
-@property(readonly) NSString *serviceName; // @synthesize serviceName=_serviceName;
 - (id)initWithServiceBarIdentifier:(id)arg1 remoteView:(id)arg2;
 - (void)dealloc;
 

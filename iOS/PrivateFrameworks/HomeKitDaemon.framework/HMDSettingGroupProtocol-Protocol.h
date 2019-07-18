@@ -4,17 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HomeKitDaemon/NSObject-Protocol.h>
-#import <HomeKitDaemon/NSSecureCoding-Protocol.h>
+#import <HomeKitDaemon/HMDSettingBaseProtocol-Protocol.h>
 
-@class NSArray, NSCoder, NSString, NSUUID;
+@class NSArray, NSCoder;
 
-@protocol HMDSettingGroupProtocol <NSObject, NSSecureCoding>
+@protocol HMDSettingGroupProtocol <HMDSettingBaseProtocol>
 @property(readonly, copy) NSArray *groups;
 @property(readonly, copy) NSArray *settings;
-@property(readonly, copy) NSString *name;
-@property(readonly, copy) NSUUID *parentIdentifier;
-@property(readonly, copy) NSUUID *identifier;
 - (id)initWithCoder:(NSCoder *)arg1;
 - (id)init;
 @end

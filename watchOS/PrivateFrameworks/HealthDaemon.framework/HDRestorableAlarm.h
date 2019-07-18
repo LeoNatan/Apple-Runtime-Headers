@@ -31,8 +31,8 @@
 - (_Bool)removeEvents:(id)arg1 error:(id *)arg2;
 - (_Bool)scheduleEvents:(id)arg1 error:(id *)arg2;
 - (id)allScheduledEventsWithError:(id *)arg1;
-- (id)eventWithIdentifier:(id)arg1 dueDateComponents:(id)arg2;
-- (id)eventWithIdentifier:(id)arg1 dueDate:(id)arg2;
+- (id)eventWithIdentifier:(id)arg1 dueDateComponents:(id)arg2 eventOptions:(unsigned int)arg3;
+- (id)eventWithIdentifier:(id)arg1 dueDate:(id)arg2 eventOptions:(unsigned int)arg3;
 - (void)invalidate;
 - (void)beginReceivingEventsWithHandler:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;

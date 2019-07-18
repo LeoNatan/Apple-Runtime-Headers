@@ -15,7 +15,6 @@
 @property(readonly, nonatomic) double recordingDuration;
 @property(readonly, nonatomic) _Bool startImmediately;
 @property(readonly, nonatomic) int outputFormat;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
 
 @end
 

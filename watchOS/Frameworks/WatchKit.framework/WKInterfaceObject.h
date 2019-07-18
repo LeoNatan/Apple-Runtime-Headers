@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, UIView;
+@class NSMutableArray, NSString, UIView;
 
 @interface WKInterfaceObject : NSObject
 {
     NSString *_interfaceProperty;
+    NSMutableArray *_deferredValuesToSet;
     UIView *__interfaceView;
     NSString *_viewControllerID;
     NSString *_propertyIndex;
@@ -23,6 +24,7 @@
 @property(retain, nonatomic) NSString *propertyIndex; // @synthesize propertyIndex=_propertyIndex;
 @property(copy, nonatomic) NSString *viewControllerID; // @synthesize viewControllerID=_viewControllerID;
 @property(retain, nonatomic) UIView *_interfaceView; // @synthesize _interfaceView=__interfaceView;
+@property(retain, nonatomic) NSMutableArray *deferredValuesToSet; // @synthesize deferredValuesToSet=_deferredValuesToSet;
 @property(copy, nonatomic) NSString *interfaceProperty; // @synthesize interfaceProperty=_interfaceProperty;
 - (void).cxx_destruct;
 - (void)setSemanticContentAttribute:(int)arg1;

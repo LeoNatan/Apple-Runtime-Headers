@@ -31,6 +31,7 @@
 @property(retain, nonatomic) INUIAppIntentDeliverer *currentAppIntentDeliverer; // @synthesize currentAppIntentDeliverer=_currentAppIntentDeliverer;
 @property(retain, nonatomic) AFRemoteRequestWatcher *remoteRequestWatcher; // @synthesize remoteRequestWatcher=_remoteRequestWatcher;
 - (void).cxx_destruct;
+- (id)_stringForPocketState:(long long)arg1;
 - (_Bool)_requestWatcherVoiceActivationEnabled;
 - (void)_setPocketStateShouldPreventVoiceTrigger:(_Bool)arg1;
 - (void)_updateForPocketState:(long long)arg1;
@@ -39,6 +40,7 @@
 - (void)_startFetchingPocketStateUpdates;
 - (void)_handlePendingVoiceTriggerActivationsWithInfo:(id)arg1;
 - (void)_handleRemoteRequestDismissalWithReason:(long long)arg1 options:(unsigned long long)arg2 analyticsContext:(id)arg3;
+- (void)_processPendingVoiceTriggerActivationsWithInfo:(id)arg1 delay:(double)arg2;
 - (void)_handleRequestWatcherVoiceTriggerRequestWithInfo:(id)arg1;
 - (void)_handleNewRemoteRequestWithInfo:(id)arg1;
 - (void)_handleRemotePrewarmWithInfo:(id)arg1;

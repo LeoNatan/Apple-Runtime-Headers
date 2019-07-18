@@ -6,9 +6,11 @@
 
 #import <WorkflowKit/WFDynamicEnumerationParameter.h>
 
-@class INCodableAttribute;
+#import <WorkflowKit/WFCodableAttributeBackedParameter-Protocol.h>
 
-@interface WFCustomIntentDynamicEnumerationParameter : WFDynamicEnumerationParameter
+@class INCodableAttribute, NSString;
+
+@interface WFCustomIntentDynamicEnumerationParameter : WFDynamicEnumerationParameter <WFCodableAttributeBackedParameter>
 {
     INCodableAttribute *_codableAttribute;
 }
@@ -16,6 +18,12 @@
 @property(retain, nonatomic) INCodableAttribute *codableAttribute; // @synthesize codableAttribute=_codableAttribute;
 - (void).cxx_destruct;
 - (Class)singleStateClass;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

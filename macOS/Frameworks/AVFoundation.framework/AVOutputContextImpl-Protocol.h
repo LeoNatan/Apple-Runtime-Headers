@@ -5,14 +5,13 @@
 //
 
 #import <AVFoundation/NSObject-Protocol.h>
-#import <AVFoundation/NSSecureCoding-Protocol.h>
 
 @class AVOutputContext, AVOutputContextCommunicationChannel, AVOutputDevice, NSArray, NSDictionary, NSString;
 
-@protocol AVOutputContextImpl <NSObject, NSSecureCoding>
+@protocol AVOutputContextImpl <NSObject>
 + (BOOL)outputContextExistsWithRemoteOutputDevice;
 + (void)resetOutputDeviceForAllOutputContexts;
-+ (id)outputContextImplForID:(NSString *)arg1;
++ (id)outputContextImplForID:(NSString *)arg1 type:(NSString *)arg2;
 + (id)outputContextImplForControllingOutputDeviceGroupWithID:(NSString *)arg1 options:(NSDictionary *)arg2;
 + (id)iTunesAudioContext;
 + (id)sharedSystemScreenContext;

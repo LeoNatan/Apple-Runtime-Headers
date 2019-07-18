@@ -107,7 +107,7 @@
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)tilingControllerZoomAnimationCoordinator:(id)arg1 enumerateTilesToAnimateInLayerWithType:(long long)arg2 layout:(id)arg3 zoomAnimationContext:(id)arg4 usingBlock:(CDUnknownBlockType)arg5;
 - (id)slideshowViewTileHostViewController:(id)arg1;
-- (_Bool)movieProvider:(id)arg1 navigateToMemory:(id)arg2;
+- (id)presentingViewControllerForMovieProvider:(id)arg1;
 - (void)playMiroMovieWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)containsPoint:(struct CGPoint)arg1 forCoordinateSpace:(id)arg2;
 - (id)zoomAnimationCoordinatorForContext:(id)arg1;

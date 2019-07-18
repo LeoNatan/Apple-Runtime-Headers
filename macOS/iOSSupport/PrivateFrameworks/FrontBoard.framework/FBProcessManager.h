@@ -29,6 +29,8 @@
     FBApplicationProcessWatchdogPolicy *_noDirectAccess_defaultWatchdogPolicy;
 }
 
++ (id)_sharedInstanceCreateIfNeeded:(BOOL)arg1;
++ (id)sharedInstanceIfExists;
 + (id)sharedInstance;
 @property(retain) FBApplicationProcessWatchdogPolicy *defaultWatchdogPolicy; // @synthesize defaultWatchdogPolicy=_noDirectAccess_defaultWatchdogPolicy;
 @property(readonly, nonatomic) FBApplicationProcess *systemApplicationProcess; // @synthesize systemApplicationProcess=_systemAppProcess;

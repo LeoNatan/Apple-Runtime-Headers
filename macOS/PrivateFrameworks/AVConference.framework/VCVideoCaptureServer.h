@@ -69,7 +69,7 @@ __attribute__((visibility("hidden")))
 + (id)VCVideoCaptureServerSingleton;
 @property(retain) NSString *currentCameraUniqueID; // @synthesize currentCameraUniqueID=_currentCameraUniqueID;
 @property(retain, nonatomic) NSObject<AVConferencePreviewDelegate> *appDelegate; // @synthesize appDelegate;
-- (void)setCameraZoomAvailable:(BOOL)arg1;
+- (void)setCameraZoomAvailable:(BOOL)arg1 currentZoomFactor:(double)arg2 maxZoomFactor:(double)arg3;
 - (BOOL)cameraSupportsWidth:(int)arg1 height:(int)arg2;
 - (void)resetCameraToPreviewSettingsForced:(BOOL)arg1;
 - (void)setCaptureWidth:(int)arg1 height:(int)arg2 rate:(int)arg3;

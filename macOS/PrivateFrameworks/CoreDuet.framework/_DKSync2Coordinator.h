@@ -92,6 +92,7 @@
 - (void)_unregisterSyncPolicyChangedObserver;
 - (void)_registerSyncPolicyChangedObserver;
 - (void)_syncPolicyDidChange:(id)arg1;
+- (void)_registerRapportLaunchOnDemandHandler;
 - (void)_unregisterSiriSyncEnabledObserver;
 - (void)_registerSiriSyncEnabledObserver;
 - (void)_siriSyncEnabledDidChange;

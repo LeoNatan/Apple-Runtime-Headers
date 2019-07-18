@@ -67,6 +67,7 @@
 + (id)sunbeamsGeneratorFilter;
 + (id)stripesGeneratorFilter;
 + (id)starShineGeneratorFilter;
++ (id)roundedRectangleGeneratorFilter;
 + (id)randomGeneratorFilter;
 + (id)QRCodeGenerator;
 + (id)PDF417BarcodeGenerator;
@@ -228,6 +229,7 @@
 + (id)filterWithImageURL:(id)arg1 options:(id)arg2;
 + (id)metalFilterWithName:(id)arg1;
 + (id)metalFilterWithName:(id)arg1 withInputParameters:(id)arg2;
++ (int)getMinMaxSimulatedApertureFrom:(struct __CFData *)arg1 minValue:(float *)arg2 maxValue:(float *)arg3 version:(int *)arg4;
 @property(getter=isEnabled) BOOL enabled;
 - (BOOL)enabled;
 @property(copy, nonatomic) NSString *name;

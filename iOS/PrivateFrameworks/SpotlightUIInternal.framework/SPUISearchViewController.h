@@ -14,7 +14,7 @@
 #import <SpotlightUIInternal/SearchUIResultsViewDelegate-Protocol.h>
 #import <SpotlightUIInternal/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSMutableSet, NSString, NSTimer, SPUILockScreenFooterView, SPUIResultsViewController, SPUISearchFirstTimeViewController, SPUISearchHeader, SPUITestingHelper, _UILegibilitySettings;
+@class NSMutableSet, NSString, SPUILockScreenFooterView, SPUIResultsViewController, SPUISearchFirstTimeViewController, SPUISearchHeader, SPUITestingHelper, _UILegibilitySettings;
 @protocol SPUISearchViewControllerDelegate;
 
 @interface SPUISearchViewController : UIViewController <SPUISearchHeaderDelegate, SearchUIFirstTimeExperienceDelegate, SPUIResultsViewDelegate, UIGestureRecognizerDelegate, SFFeedbackListener, SearchUIResultsViewDelegate, APUIShortLookViewControllerDelegate>
@@ -30,15 +30,17 @@
     SPUIResultsViewController *_proactiveResultViewController;
     SPUILockScreenFooterView *_lockScreenFooterView;
     unsigned long long _presentationMode;
-    NSTimer *_clearResultsTimer;
+    double _timeAtDismissal;
     SPUITestingHelper *_testingHelper;
+    unsigned long long _queryId;
 }
 
 + (_Bool)isFeedbackSelector:(SEL)arg1;
 + (void)_updateHeaderView:(id)arg1 fromText:(id)arg2 fromToken:(id)arg3;
 + (_Bool)shouldShowAsTypedSuggestion;
+@property unsigned long long queryId; // @synthesize queryId=_queryId;
 @property(retain) SPUITestingHelper *testingHelper; // @synthesize testingHelper=_testingHelper;
-@property(retain) NSTimer *clearResultsTimer; // @synthesize clearResultsTimer=_clearResultsTimer;
+@property double timeAtDismissal; // @synthesize timeAtDismissal=_timeAtDismissal;
 @property _Bool lastQueryWasAuthenticated; // @synthesize lastQueryWasAuthenticated=_lastQueryWasAuthenticated;
 @property _Bool internetOverrideForPPT; // @synthesize internetOverrideForPPT=_internetOverrideForPPT;
 @property unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
@@ -88,6 +90,7 @@
 - (void)searchViewWillDismissWithReason:(unsigned long long)arg1;
 - (void)searchViewDidPresentFromSource:(unsigned long long)arg1;
 @property(readonly, nonatomic) double distanceToTopOfAppIcons;
+- (void)dismissCancelButtonAnimated;
 - (void)purgeMemory;
 - (void)searchViewDidUpdatePresentationProgress:(double)arg1;
 - (void)searchViewWillPresentFromSource:(unsigned long long)arg1;

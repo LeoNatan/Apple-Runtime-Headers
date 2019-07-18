@@ -8,13 +8,12 @@
 
 #import <HomeUI/HUCellProtocol-Protocol.h>
 
-@class HFItem, HUGridLayoutOptions, NSArray, NSString, UILabel;
+@class HFItem, NSArray, NSString, UILabel;
 @protocol HUResizableCellDelegate;
 
 @interface HUInstructionsCell : UITableViewCell <HUCellProtocol>
 {
     HFItem *_item;
-    HUGridLayoutOptions *_layoutOptions;
     double _contentBottomMargin;
     UILabel *_titleLabel;
     UILabel *_descriptionLabel;
@@ -25,11 +24,11 @@
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) double contentBottomMargin; // @synthesize contentBottomMargin=_contentBottomMargin;
-@property(retain, nonatomic) HUGridLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)updateUIWithAnimation:(BOOL)arg1;
+- (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

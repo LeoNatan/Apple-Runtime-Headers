@@ -15,11 +15,13 @@
 @interface _INPBBool : PBCodable <_INPBBool, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSArray *_values;
 }
 
 + (BOOL)supportsSecureCoding;
 + (Class)valueType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *values; // @synthesize values=_values;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

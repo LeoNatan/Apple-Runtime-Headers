@@ -7,10 +7,10 @@
 #import <GeoServices/NSObject-Protocol.h>
 
 @class NSDate, NSString;
-@protocol GEOTransitShieldDataSource;
+@protocol GEOTransitArtworkDataSource;
 
 @protocol GEOTransitVehiclePosition <NSObject>
-@property(readonly, nonatomic) id <GEOTransitShieldDataSource> shieldDataSource;
+@property(readonly, nonatomic) id <GEOTransitArtworkDataSource> artworkDataSource;
 @property(readonly, copy, nonatomic) NSString *colorHexString;
 @property(readonly, copy, nonatomic) NSString *headsign;
 @property(readonly, copy, nonatomic) NSString *direction;

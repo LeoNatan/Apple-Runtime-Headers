@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
+@property(readonly, nonatomic) NSSet *invalidBaselineConstraints;
 @property(nonatomic) _Bool layoutFillsCanvas;
 @property(nonatomic) _Bool layoutUsesCanvasMarginsWhenFilling;
 @property(readonly) Class superclass;

@@ -15,6 +15,7 @@
     _Bool _supportsTransitOnly;
     NSString *_cobrandName;
     NSURL *_transactionServiceURL;
+    NSURL *_transactionServiceRegistrationURL;
     NSString *_transactionPushTopic;
     NSURL *_messageServiceURL;
     NSString *_messagePushTopic;
@@ -33,6 +34,7 @@
 @property(copy, nonatomic) NSString *messagePushTopic; // @synthesize messagePushTopic=_messagePushTopic;
 @property(copy, nonatomic) NSURL *messageServiceURL; // @synthesize messageServiceURL=_messageServiceURL;
 @property(copy, nonatomic) NSString *transactionPushTopic; // @synthesize transactionPushTopic=_transactionPushTopic;
+@property(copy, nonatomic) NSURL *transactionServiceRegistrationURL; // @synthesize transactionServiceRegistrationURL=_transactionServiceRegistrationURL;
 @property(copy, nonatomic) NSURL *transactionServiceURL; // @synthesize transactionServiceURL=_transactionServiceURL;
 @property(copy, nonatomic) NSString *cobrandName; // @synthesize cobrandName=_cobrandName;
 - (void).cxx_destruct;

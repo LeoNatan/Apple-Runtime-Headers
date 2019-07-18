@@ -18,8 +18,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)historyViewControllerForTransaction:(id)arg1 pass:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)historyViewControllerForTransaction:(id)arg1 pass:(id)arg2;
+- (void)historyViewControllerForTransaction:(id)arg1 pass:(id)arg2 account:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)historyViewControllerForTransaction:(id)arg1 pass:(id)arg2 account:(id)arg3;
 - (id)detailViewControllerForTransaction:(id)arg1 pass:(id)arg2;
 - (id)_transactionFetcherWithPaymentPass:(id)arg1 transaction:(id)arg2;
 - (_Bool)canShowTransactionHistoryForTransaction:(id)arg1 pass:(id)arg2;

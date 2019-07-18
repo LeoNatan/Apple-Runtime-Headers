@@ -53,7 +53,6 @@ __attribute__((visibility("hidden")))
 - (void)_setSplitProgress:(float)arg1;
 - (void)_endSplitTransitionIfNeeded;
 - (void)_beginSplitTransitionIfNeeded;
-- (void)setAssistantBarVisible:(_Bool)arg1 delay:(float)arg2 animated:(_Bool)arg3;
 - (_Bool)_accessorySuppressesShadow;
 - (id)_splittableInputAccessoryView;
 - (id)_themableInputAccessoryView;

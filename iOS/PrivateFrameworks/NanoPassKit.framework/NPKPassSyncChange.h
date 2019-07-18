@@ -37,6 +37,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
+- (_Bool)isEqualToChangeIgnoringUUID:(id)arg1;
 - (_Bool)isEqualToChange:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

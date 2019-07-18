@@ -6,7 +6,7 @@
 
 #import <Preferences/PSSpecifier.h>
 
-@class CTXPCServiceSubscriptionContext, PSListController, PSListItemsController;
+@class CTXPCServiceSubscriptionContext, PSConfirmationSpecifier, PSListController, PSListItemsController;
 
 __attribute__((visibility("hidden")))
 @interface PSUICellularRATSpecifier : PSSpecifier
@@ -21,8 +21,10 @@ __attribute__((visibility("hidden")))
     _Bool _supports4G;
     CTXPCServiceSubscriptionContext *_subscriptionContext;
     PSListItemsController *_RATModeDrilldownController;
+    PSConfirmationSpecifier *_warning;
 }
 
+@property(retain, nonatomic) PSConfirmationSpecifier *warning; // @synthesize warning=_warning;
 @property(nonatomic) __weak PSListItemsController *RATModeDrilldownController; // @synthesize RATModeDrilldownController=_RATModeDrilldownController;
 @property(retain, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 - (void).cxx_destruct;

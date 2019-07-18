@@ -15,6 +15,7 @@
     NSNumber *_allPhotosColumns;
     double _defaultUserInterfaceTimeoutDuration;
     NSNumber *_curatedLibraryZoomLevel;
+    NSNumber *_daysMarginScale;
     NSNumber *_allPhotosPreferredIndividualItemsColumns;
     NSNumber *_allPhotosAspectFit;
     id <PXUserDefaultsDataSource> _dataSource;
@@ -24,6 +25,7 @@
 @property(readonly, nonatomic) __weak id <PXUserDefaultsDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(copy, nonatomic) NSNumber *allPhotosAspectFit; // @synthesize allPhotosAspectFit=_allPhotosAspectFit;
 @property(copy, nonatomic) NSNumber *allPhotosPreferredIndividualItemsColumns; // @synthesize allPhotosPreferredIndividualItemsColumns=_allPhotosPreferredIndividualItemsColumns;
+@property(copy, nonatomic) NSNumber *daysMarginScale; // @synthesize daysMarginScale=_daysMarginScale;
 @property(copy, nonatomic) NSNumber *curatedLibraryZoomLevel; // @synthesize curatedLibraryZoomLevel=_curatedLibraryZoomLevel;
 @property(readonly, nonatomic) double defaultUserInterfaceTimeoutDuration; // @synthesize defaultUserInterfaceTimeoutDuration=_defaultUserInterfaceTimeoutDuration;
 - (void).cxx_destruct;

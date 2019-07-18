@@ -55,6 +55,8 @@ __attribute__((visibility("hidden")))
 - (void)drawInContext:(struct CGContext *)arg1;
 - (void)_drawInContext:(struct CGContext *)arg1 offset:(struct CGPoint)arg2 clip:(struct CGPath *)arg3;
 - (void)layerWillDraw:(id)arg1;
+- (void)_didSetDelegate;
+- (void)setUnsafeUnretainedDelegate:(id)arg1;
 @property __weak id <_UITextTiledLayerDelegate> delegate; // @dynamic delegate;
 - (id)init;
 

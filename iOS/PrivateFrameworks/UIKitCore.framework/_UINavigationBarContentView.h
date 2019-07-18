@@ -107,10 +107,15 @@ __attribute__((visibility("hidden")))
 - (long long)barType;
 - (double)defaultEdgeSpacing;
 - (unsigned long long)edgesPaddingBarButtonItem:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateAugmentedTitleViewNavigationBarTraitsTo:(id)arg1 from:(id)arg2;
 - (void)tintColorDidChange;
-- (void)adoptFinalStateFromTransition:(id)arg1 transitionCompleted:(_Bool)arg2;
+- (void)adoptLayout:(id)arg1;
+- (void)clearTransitionContext;
+- (void)finalizeStateFromTransition:(id)arg1;
 - (void)ensureBackButtonTruncationOccursWithContext:(id)arg1;
 - (void)recordToStateForTransition:(id)arg1;
+- (void)prepareToRecordToState:(id)arg1;
 - (void)recordFromStateForTransition:(id)arg1;
 - (void)updateContent;
 - (void)updateContentAnimated:(_Bool)arg1;
@@ -122,6 +127,9 @@ __attribute__((visibility("hidden")))
 - (void)_updateLayoutMarginsForLayout:(id)arg1;
 - (void)safeAreaInsetsDidChange;
 - (void)layoutMarginsDidChange;
+- (void)_setDirectionalLayoutMargins:(struct NSDirectionalEdgeInsets)arg1;
+- (void)setDirectionalLayoutMargins:(struct NSDirectionalEdgeInsets)arg1;
+- (void)setLayoutMargins:(struct UIEdgeInsets)arg1;
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
 - (void)resolvedSizeDidChange;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

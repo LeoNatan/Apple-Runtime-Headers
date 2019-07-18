@@ -58,6 +58,7 @@
 - (void)_showUpdatingParticipantSpinner;
 - (void)configureWithViewModel:(id)arg1;
 - (void)layoutSubviews;
+- (id)_ckSymbolImageNamed:(id)arg1 preferredContentSizeCategory:(id)arg2 preferredFontTextStyle:(id)arg3;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 

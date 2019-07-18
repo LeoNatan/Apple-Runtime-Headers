@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     _Bool _isMeCard;
     _Bool _enabled;
     _Bool _isEmergencyContact;
+    _Bool _hasBeenDisplayed;
     CNContact *_contact;
     CNContactMatchInfo *_contactMatchInfo;
     CNContactFormatter *_contactFormatter;
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
     id <CNCancelable> _summaryCancelationToken;
 }
 
+@property(nonatomic) _Bool hasBeenDisplayed; // @synthesize hasBeenDisplayed=_hasBeenDisplayed;
 @property(retain, nonatomic) id <CNCancelable> summaryCancelationToken; // @synthesize summaryCancelationToken=_summaryCancelationToken;
 @property(copy, nonatomic) CDUnknownBlockType selectedBackgroundViewConfiguration; // @synthesize selectedBackgroundViewConfiguration=_selectedBackgroundViewConfiguration;
 @property(nonatomic) _Bool isEmergencyContact; // @synthesize isEmergencyContact=_isEmergencyContact;
@@ -35,8 +37,10 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)prepareForReuse;
+- (void)setContactMatchInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

@@ -14,6 +14,7 @@
 {
 }
 
+- (id)_timerFromIntentTargetTimer:(id)arg1 defaultState:(int)arg2;
 - (void)_deleteTimer:(id)arg1 multiple:(_Bool)arg2 dryRun:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)_responseToDeleteTimerIntent:(id)arg1 withDeletedTimers:(id)arg2 error:(id)arg3 dryRun:(_Bool)arg4;
 - (void)handleDeleteTimer:(id)arg1 completion:(CDUnknownBlockType)arg2;

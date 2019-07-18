@@ -19,7 +19,6 @@
 - (void)_remindersDidChange;
 - (void)_stopObserving;
 - (void)_startObserving;
-- (id)privacyTemplate;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (id)complicationApplicationIdentifier;
 - (void)getTimelineEndDateWithHandler:(CDUnknownBlockType)arg1;

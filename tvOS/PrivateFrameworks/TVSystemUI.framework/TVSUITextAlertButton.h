@@ -6,30 +6,30 @@
 
 #import <objc/NSObject.h>
 
-#import <TVSystemUI/NSCopying-Protocol.h>
+@class NSString, UIView;
+@protocol TVSUITextAlertButtonDelegate, _TVSUITextAlertButtonViewInterface;
 
-@class NSString, UIButton;
-
-@interface TVSUITextAlertButton : NSObject <NSCopying>
+@interface TVSUITextAlertButton : NSObject
 {
-    NSString *_title;
+    UIView<_TVSUITextAlertButtonViewInterface> *_contentView;
     unsigned long long _type;
-    UIButton *_button;
-    CDUnknownBlockType _handler;
+    CDUnknownBlockType _selectHandler;
+    id <TVSUITextAlertButtonDelegate> _delegate;
 }
 
 + (id)buttonWithTitle:(id)arg1 type:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
-@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-@property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
+@property(nonatomic) __weak id <TVSUITextAlertButtonDelegate> delegate; // @synthesize delegate=_delegate;
+@property(copy, nonatomic) CDUnknownBlockType selectHandler; // @synthesize selectHandler=_selectHandler;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
-- (unsigned long long)hash;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (_Bool)isEqual:(id)arg1;
-- (void)insertInSection:(id)arg1 target:(id)arg2 action:(SEL)arg3;
+@property(readonly, nonatomic) UIView<_TVSUITextAlertButtonViewInterface> *contentView;
+- (void)_handleSelect:(id)arg1;
+@property(readonly, nonatomic) double minimumWidth;
+- (void)setDetailText:(id)arg1 animated:(_Bool)arg2;
+@property(retain, nonatomic) NSString *detailText;
 - (void)setTitle:(id)arg1 animated:(_Bool)arg2;
-- (id)initWithTitle:(id)arg1 type:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
+@property(retain, nonatomic) NSString *title;
+- (id)initWithType:(unsigned long long)arg1;
 - (id)init;
 
 @end

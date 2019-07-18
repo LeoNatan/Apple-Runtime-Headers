@@ -6,19 +6,14 @@
 
 #import <WorkflowKit/WFHandleCustomIntentAction.h>
 
-@class NSString, UITextField;
+@class NSString;
 
 @interface WFAskForInputAction : WFHandleCustomIntentAction
 {
-    UITextField *_numberTextField;
 }
 
-@property(nonatomic) __weak UITextField *numberTextField; // @synthesize numberTextField=_numberTextField;
-- (void).cxx_destruct;
 - (void)finishRunningWithDate:(id)arg1;
 - (void)finishRunningWithResultText:(id)arg1;
-- (void)negateText;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
 - (void)getOutputFromIntentResponse:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)runWithSiriUserInterface:(id)arg1 input:(id)arg2;
 - (void)runAsynchronouslyWithInput:(id)arg1;

@@ -16,7 +16,7 @@
 - (void)documentCameraControllerDidCancel:(ICDocCamViewController *)arg1;
 
 @optional
-- (void)documentCameraControllerDidRetake:(ICDocCamViewController *)arg1;
+- (void)documentCameraControllerDidRetake:(ICDocCamViewController *)arg1 pageCount:(unsigned long long)arg2;
 - (ICDocCamImageCache *)documentCameraControllerImageCache;
 - (void)documentCameraController:(ICDocCamViewController *)arg1 didFinishWithDocInfoCollection:(ICDocCamDocumentInfoCollection *)arg2 imageCache:(ICDocCamImageCache *)arg3 warnUser:(BOOL)arg4 closeViewController:(BOOL)arg5;
 - (void)documentCameraController:(ICDocCamViewController *)arg1 didFinishWithDocInfoCollection:(ICDocCamDocumentInfoCollection *)arg2 imageCache:(ICDocCamImageCache *)arg3 warnUser:(BOOL)arg4;

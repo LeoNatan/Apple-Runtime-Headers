@@ -6,13 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-@class NSLayoutConstraint, NSMutableArray, OBPrivacyLinkController, OBTemplateLabel, UILayoutGuide, UIStackView, UIVisualEffectView;
+@class NSLayoutConstraint, NSMutableArray, OBButtonTrayLayoutGuide, OBPrivacyLinkController, OBTemplateLabel, UIStackView, UIVisualEffectView;
 
 @interface OBButtonTray : UIView
 {
     long long _backdropStyle;
     NSMutableArray *_buttons;
-    UILayoutGuide *_buttonLayoutGuide;
+    OBButtonTrayLayoutGuide *_buttonLayoutGuide;
     OBPrivacyLinkController *_privacyLinkController;
     OBTemplateLabel *_captionLabel;
     UIStackView *_stackView;
@@ -20,8 +20,12 @@
     UIVisualEffectView *_effectView;
     NSLayoutConstraint *_stackViewTopConstraint;
     NSLayoutConstraint *_stackViewBottomConstraint;
+    NSLayoutConstraint *_stackViewLeadingConstraint;
+    NSLayoutConstraint *_stackViewTrailingConstraint;
 }
 
+@property(retain, nonatomic) NSLayoutConstraint *stackViewTrailingConstraint; // @synthesize stackViewTrailingConstraint=_stackViewTrailingConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *stackViewLeadingConstraint; // @synthesize stackViewLeadingConstraint=_stackViewLeadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewBottomConstraint; // @synthesize stackViewBottomConstraint=_stackViewBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewTopConstraint; // @synthesize stackViewTopConstraint=_stackViewTopConstraint;
 @property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
@@ -29,7 +33,7 @@
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) OBTemplateLabel *captionLabel; // @synthesize captionLabel=_captionLabel;
 @property(retain, nonatomic) OBPrivacyLinkController *privacyLinkController; // @synthesize privacyLinkController=_privacyLinkController;
-@property(retain, nonatomic) UILayoutGuide *buttonLayoutGuide; // @synthesize buttonLayoutGuide=_buttonLayoutGuide;
+@property(retain, nonatomic) OBButtonTrayLayoutGuide *buttonLayoutGuide; // @synthesize buttonLayoutGuide=_buttonLayoutGuide;
 @property(retain, nonatomic) NSMutableArray *buttons; // @synthesize buttons=_buttons;
 @property(nonatomic) long long backdropStyle; // @synthesize backdropStyle=_backdropStyle;
 - (void).cxx_destruct;
@@ -43,6 +47,7 @@
 - (void)addPrivacyLinkForBundles:(id)arg1;
 - (void)addButton:(id)arg1;
 - (void)layoutSubviews;
+- (void)removeFromSuperview;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

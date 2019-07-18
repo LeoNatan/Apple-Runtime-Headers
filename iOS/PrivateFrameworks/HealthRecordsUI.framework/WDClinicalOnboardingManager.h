@@ -21,9 +21,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) WDClinicalGatewayProxy *pendingOnboardingGateway; // @synthesize pendingOnboardingGateway=_pendingOnboardingGateway;
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
-- (void)_loginDidCompleteWithNotification:(id)arg1;
-- (void)_stopObservingLoginCompletionNotification;
-- (void)_startObservingLoginCompletionNotification;
 - (void)_didDismissLoginViewController:(id)arg1;
 - (void)_dismissInFlightLoginViewControllerIfExistsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_startLoginWithLoginViewController:(id)arg1 presentingViewController:(id)arg2;

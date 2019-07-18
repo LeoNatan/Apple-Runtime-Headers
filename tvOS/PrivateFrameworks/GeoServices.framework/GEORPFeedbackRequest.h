@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOABSecondPartyPlaceRequestClientMetaData, GEOPDAnalyticMetadata, GEOPDClientMetadata, GEORPClientCapabilities, GEORPFeedbackRequestParameters, GEORPFeedbackUserInfo, NSMutableArray, PBDataReader, PBUnknownFields;
+@class GEOABSecondPartyPlaceRequestClientMetaData, GEOPDAnalyticMetadata, GEOPDClientMetadata, GEORPClientCapabilities, GEORPDebugSettings, GEORPFeedbackRequestParameters, GEORPFeedbackUserInfo, NSMutableArray, PBDataReader, PBUnknownFields;
 
 @interface GEORPFeedbackRequest : PBRequest <NSCopying>
 {
@@ -19,19 +19,19 @@
     GEOPDAnalyticMetadata *_analyticMetadata;
     GEORPClientCapabilities *_clientCapabilities;
     GEOPDClientMetadata *_clientMetadata;
+    GEORPDebugSettings *_debugSettings;
     NSMutableArray *_displayLanguages;
     GEORPFeedbackRequestParameters *_feedbackRequestParameters;
     GEORPFeedbackUserInfo *_userInfo;
-    int _debugUserType;
     int _feedbackRequestType;
     struct {
-        unsigned int has_debugUserType:1;
         unsigned int has_feedbackRequestType:1;
         unsigned int read_unknownFields:1;
         unsigned int read_abClientMetadata:1;
         unsigned int read_analyticMetadata:1;
         unsigned int read_clientCapabilities:1;
         unsigned int read_clientMetadata:1;
+        unsigned int read_debugSettings:1;
         unsigned int read_displayLanguages:1;
         unsigned int read_feedbackRequestParameters:1;
         unsigned int read_userInfo:1;
@@ -40,10 +40,10 @@
         unsigned int wrote_analyticMetadata:1;
         unsigned int wrote_clientCapabilities:1;
         unsigned int wrote_clientMetadata:1;
+        unsigned int wrote_debugSettings:1;
         unsigned int wrote_displayLanguages:1;
         unsigned int wrote_feedbackRequestParameters:1;
         unsigned int wrote_userInfo:1;
-        unsigned int wrote_debugUserType:1;
         unsigned int wrote_feedbackRequestType:1;
     } _flags;
 }
@@ -65,10 +65,9 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-- (int)StringAsDebugUserType:(id)arg1;
-- (id)debugUserTypeAsString:(int)arg1;
-@property(nonatomic) _Bool hasDebugUserType;
-@property(nonatomic) int debugUserType;
+@property(retain, nonatomic) GEORPDebugSettings *debugSettings;
+@property(readonly, nonatomic) _Bool hasDebugSettings;
+- (void)_readDebugSettings;
 @property(retain, nonatomic) GEOABSecondPartyPlaceRequestClientMetaData *abClientMetadata;
 @property(readonly, nonatomic) _Bool hasAbClientMetadata;
 - (void)_readAbClientMetadata;

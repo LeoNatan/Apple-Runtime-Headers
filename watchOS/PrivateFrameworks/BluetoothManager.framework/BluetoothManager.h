@@ -58,6 +58,7 @@
 - (void)_pairedStatusChanged;
 - (void)acceptSSP:(int)arg1 forDevice:(id)arg2;
 - (void)setPincode:(id)arg1 forDevice:(id)arg2;
+- (id)pairedNonAppleHAEDevices;
 - (id)pairedDevices;
 - (void)unpairDevice:(id)arg1;
 - (void)cancelPairing;

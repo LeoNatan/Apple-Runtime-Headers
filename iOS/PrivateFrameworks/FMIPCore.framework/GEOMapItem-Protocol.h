@@ -6,7 +6,7 @@
 
 #import <FMIPCore/NSObject-Protocol.h>
 
-@class GEOAddress, GEOAddressObject, GEOAssociatedApp, GEOFeatureStyleAttributes, GEOMapItemAdditionalPlaceInfo, GEOMapItemClientAttributes, GEOMapItemContainedPlace, GEOMapItemDetourInfo, GEOMapItemIdentifier, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOMessageLink, GEOPDBusinessClaim, GEOPDFlyover, GEOPDPlace, GEOPlace, GEOPlaceResult, GEOPlacecardLayoutConfiguration, GEOPriceDescription, GEORestaurantFeaturesLink, GEOStyleAttributes, NSArray, NSData, NSDate, NSDictionary, NSString, NSTimeZone, NSURL;
+@class GEOAddress, GEOAddressObject, GEOAssociatedApp, GEOFeatureStyleAttributes, GEOMapItemAdditionalPlaceInfo, GEOMapItemClientAttributes, GEOMapItemContainedPlace, GEOMapItemDetourInfo, GEOMapItemIdentifier, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOMessageLink, GEOMuninViewState, GEOPDBusinessClaim, GEOPDFlyover, GEOPDPlace, GEOPlace, GEOPlaceResult, GEOPlacecardLayoutConfiguration, GEOPriceDescription, GEORestaurantFeaturesLink, GEOStyleAttributes, NSArray, NSData, NSDate, NSDictionary, NSString, NSTimeZone, NSURL;
 @protocol GEOEncyclopedicInfo, GEOMapItem, GEOMapItemTransitInfo, GEOMapItemVenueInfo, GEOTransitAttribution, GEOTransitVehiclePosition;
 
 @protocol GEOMapItem <NSObject>
@@ -26,6 +26,7 @@
 - (_Bool)_isInLinkedPlaceRelationship;
 - (GEOMapItemContainedPlace *)_containedPlace;
 - (_Bool)isEqualToMapItem:(id <GEOMapItem>)arg1;
+- (NSURL *)_bestHeroBrandIconURLForSize:(struct CGSize)arg1 allowSmaller:(_Bool)arg2;
 - (NSURL *)_bestNavbarBrandIconURLForSize:(struct CGSize)arg1 allowSmaller:(_Bool)arg2;
 - (NSURL *)_bestAvatarBrandIconURLForSize:(struct CGSize)arg1 allowSmaller:(_Bool)arg2;
 - (int)_wifiFingerprintLabelStatusCode;
@@ -73,6 +74,7 @@
 - (GEOPDBusinessClaim *)_businessClaim;
 - (_Bool)_hasBusinessClaim;
 - (NSArray *)_additionalPlaceInfos;
+- (NSString *)_mapsCategoryId;
 - (unsigned long long)_customIconID;
 - (GEOFeatureStyleAttributes *)_styleAttributes;
 - (NSString *)_poiCategory;
@@ -112,6 +114,7 @@
 - (GEOMapItemIdentifier *)_identifier;
 - (unsigned long long)_muid;
 - (_Bool)_hasMUID;
+- (GEOMuninViewState *)_muninViewState;
 - (NSString *)_flyoverAnnouncementMessage;
 - (GEOPDFlyover *)_flyover;
 - (_Bool)_hasFlyover;
@@ -221,8 +224,10 @@
 @property(nonatomic, readonly) _Bool isStandAloneBrand;
 @property(nonatomic, readonly) _Bool isTransitDisplayFeature;
 @property(nonatomic, readonly) NSArray *linkedServices;
+@property(nonatomic, readonly) NSString *mapsCategoryId;
 @property(nonatomic, readonly) GEOMessageLink *messageLink;
 @property(nonatomic, readonly) unsigned long long muid;
+@property(nonatomic, readonly) GEOMuninViewState *muninViewState;
 @property(nonatomic, readonly) _Bool needsAttribution;
 @property(nonatomic, readonly) float normalizedUserRatingScore;
 @property(nonatomic, readonly) unsigned long long openingHoursOptions;

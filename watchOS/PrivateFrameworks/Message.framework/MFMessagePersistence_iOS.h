@@ -32,18 +32,19 @@
 @property(retain, nonatomic) EDMailDropMetadataGeneratorFactory *maildropContentItemGeneratorFactory; // @synthesize maildropContentItemGeneratorFactory=_maildropContentItemGeneratorFactory;
 - (void).cxx_destruct;
 - (id)_libraryMessageForMessageObjectID:(id)arg1;
-- (void)requestSummaryForMessageObjectID:(id)arg1;
+- (id)requestSummaryForMessageObjectID:(id)arg1;
 - (id)requestContentForMessageObjectID:(id)arg1 options:(id)arg2 delegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)groupedMessagesCountByMailboxMatchingQuery:(unsigned int)arg1 variable:(id)arg2;
 - (id)persistedMessageForOutgoingMessage:(id)arg1 isDraft:(_Bool)arg2;
 - (id)persistedMessagesForDatabaseIDs:(id)arg1;
 - (id)messagesForPersistedMessages:(id)arg1 mailboxScope:(id)arg2;
 - (void)_iterateMessagesMatchingQuery:(id)arg1 cancelationToken:(id)arg2 resultHandler:(id)arg3 monitor:(id)arg4;
 - (void)iteratePersistedMessagesMatchingQuery:(id)arg1 limit:(int)arg2 cancelationToken:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)iterateMessagesMatchingQuery:(id)arg1 batchSize:(int)arg2 firstBatchSize:(int)arg3 limit:(int)arg4 cancelationToken:(id)arg5 handler:(CDUnknownBlockType)arg6;
-- (unsigned int)_countOfMessagesMatchingCriteria:(id)arg1;
+- (unsigned int)_countOfMessagesMatchingCriteria:(id)arg1 includingDuplicates:(_Bool)arg2;
 - (int)countOfMessagesMatchingQuery:(id)arg1;
-- (_Bool)messagesExistWithMessageIDHeaderHash:(id)arg1 matchingQuery:(id)arg2;
-- (id)initWithConversationPersistence:(id)arg1 mailboxPersistence:(id)arg2 database:(id)arg3 vipManager:(id)arg4 library:(id)arg5;
+- (int)countOfMessagesWithMessageIDHeaderHash:(id)arg1 matchingQuery:(id)arg2;
+- (id)initWithConversationPersistence:(id)arg1 mailboxPersistence:(id)arg2 database:(id)arg3 vipManager:(id)arg4 library:(id)arg5 remoteSearchProvider:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

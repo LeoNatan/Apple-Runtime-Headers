@@ -16,10 +16,20 @@ __attribute__((visibility("hidden")))
     NSString *_modelMetadata;
     unsigned long long _batchSize;
     NSNumber *_learningRate;
+    NSNumber *_gradientClipMin;
+    NSNumber *_gradientClipMax;
+    NSNumber *_clippingNorm;
+    unsigned long long _normBinCount;
+    NSString *_privacyIdentifier;
 }
 
 + (struct __CFData *)copyToFlatBuffer:(void *)arg1;
 + (void)initialize;
+@property(readonly, nonatomic) NSString *privacyIdentifier; // @synthesize privacyIdentifier=_privacyIdentifier;
+@property(nonatomic) unsigned long long normBinCount; // @synthesize normBinCount=_normBinCount;
+@property(retain, nonatomic) NSNumber *clippingNorm; // @synthesize clippingNorm=_clippingNorm;
+@property(retain, nonatomic) NSNumber *gradientClipMax; // @synthesize gradientClipMax=_gradientClipMax;
+@property(retain, nonatomic) NSNumber *gradientClipMin; // @synthesize gradientClipMin=_gradientClipMin;
 @property(retain, nonatomic) NSNumber *learningRate; // @synthesize learningRate=_learningRate;
 @property(nonatomic) unsigned long long batchSize; // @synthesize batchSize=_batchSize;
 @property(copy, nonatomic) NSString *modelMetadata; // @synthesize modelMetadata=_modelMetadata;
@@ -28,7 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)writeModelToURL:(id)arg1;
 - (id)getWeightUpdatesAddNoise:(_Bool)arg1 encryptionKey:(id)arg2;
 - (_Bool)trainOn:(id)arg1 forNEpochs:(unsigned long long)arg2;
-- (id)initWithSeedModelPath:(id)arg1;
+- (id)initWithSeedModelPath:(id)arg1 andPrivacyIdentifier:(id)arg2;
 
 @end
 

@@ -27,6 +27,7 @@
 - (_Bool)fmipActive;
 - (void)recalculateLostMode;
 - (void)setFMiPActive:(_Bool)arg1;
+- (id)init;
 
 @end
 

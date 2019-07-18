@@ -117,7 +117,7 @@
 + (id)propertySetAccessorsByPropertySet;
 + (Class)propertySetClassForPropertySet:(id)arg1;
 + (id)identifierCode;
-+ (id)_transformMediaSubtypeComparisonPredicate:(id)arg1 options:(id)arg2;
++ (id)_transformMediaSubtypeReferences:(id)arg1 inComparisonPredicate:(id)arg2 options:(id)arg3;
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyMap;
 + (BOOL)managedObjectSupportsMontage;

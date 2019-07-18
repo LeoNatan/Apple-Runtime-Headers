@@ -15,10 +15,12 @@
 @interface _INPBGetVisualCodeIntentResponse : PBCodable <_INPBGetVisualCodeIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     _INPBImageValue *_visualCodeImage;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBImageValue *visualCodeImage; // @synthesize visualCodeImage=_visualCodeImage;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

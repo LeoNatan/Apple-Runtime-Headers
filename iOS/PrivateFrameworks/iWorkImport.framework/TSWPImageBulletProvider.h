@@ -20,6 +20,8 @@ __attribute__((visibility("hidden")))
 - (id)p_predefinedImageNames;
 - (id)p_pathToPredefinedImages;
 - (id)dataForImageBullet:(id)arg1 withContext:(id)arg2;
+- (id)predefinedImagesWithContext:(id)arg1;
+- (id)predefinedImageFilenamesWithContext:(id)arg1;
 @property(readonly, nonatomic) NSArray *predefinedImages;
 
 @end

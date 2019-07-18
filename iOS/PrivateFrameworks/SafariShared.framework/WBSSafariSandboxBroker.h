@@ -8,11 +8,10 @@
 
 #import <SafariShared/WBSSafariSandboxBrokerProtocol-Protocol.h>
 
-@protocol OS_dispatch_queue, OS_os_log;
+@protocol OS_os_log;
 
 @interface WBSSafariSandboxBroker : NSObject <WBSSafariSandboxBrokerProtocol>
 {
-    NSObject<OS_dispatch_queue> *_internalQueue;
     int _pid;
     NSObject<OS_os_log> *_log;
     CDStruct_4c969caf _auditToken;

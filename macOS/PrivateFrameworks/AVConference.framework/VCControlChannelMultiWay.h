@@ -55,7 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)sendReliableMessage:(id)arg1 participantID:(unsigned long long)arg2;
 - (BOOL)sendReliableMessageAndWait:(id)arg1 participantID:(unsigned long long)arg2;
 - (void)messageReceived:(id)arg1 participantInfo:(CDStruct_94aa5fb4 *)arg2;
-- (id)processEncryptedMessage:(id)arg1 sequenceNumber:(id)arg2 MKIData:(id)arg3 participantID:(id)arg4;
+- (id)processEncryptedPayload:(id)arg1 isData:(BOOL)arg2 sequenceNumber:(id)arg3 MKIData:(id)arg4 participantID:(id)arg5;
 - (BOOL)decryptMessageWithMKI:(void *)arg1 message:(id)arg2 buffer:(char *)arg3 size:(unsigned int)arg4 sequenceNumber:(unsigned short)arg5;
 - (void)flushActiveMessages;
 - (void)stop;

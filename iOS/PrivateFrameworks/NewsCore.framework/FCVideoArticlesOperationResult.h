@@ -23,15 +23,15 @@
 }
 
 @property(readonly, copy, nonatomic) NSString *mutingChannelID; // @synthesize mutingChannelID=_mutingChannelID;
-@property(copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo; // @synthesize discoverMoreVideosInfo=_discoverMoreVideosInfo;
+@property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo; // @synthesize discoverMoreVideosInfo=_discoverMoreVideosInfo;
 @property(readonly, copy, nonatomic) FCColorGradient *darkStyleBackgroundColorGradient; // @synthesize darkStyleBackgroundColorGradient=_darkStyleBackgroundColorGradient;
-@property(copy, nonatomic) FCColorGradient *backgroundColorGradient; // @synthesize backgroundColorGradient=_backgroundColorGradient;
-@property(copy, nonatomic) NSString *subtitleText; // @synthesize subtitleText=_subtitleText;
+@property(readonly, copy, nonatomic) FCColorGradient *backgroundColorGradient; // @synthesize backgroundColorGradient=_backgroundColorGradient;
+@property(readonly, copy, nonatomic) NSString *subtitleText; // @synthesize subtitleText=_subtitleText;
 @property(readonly, copy, nonatomic) FCColor *darkStyleTitleColor; // @synthesize darkStyleTitleColor=_darkStyleTitleColor;
-@property(copy, nonatomic) FCColor *titleColor; // @synthesize titleColor=_titleColor;
-@property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-@property(copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
-@property(retain, nonatomic) NSArray *headlines; // @synthesize headlines=_headlines;
+@property(readonly, copy, nonatomic) FCColor *titleColor; // @synthesize titleColor=_titleColor;
+@property(readonly, copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
+@property(readonly, copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
+@property(readonly, nonatomic) NSArray *headlines; // @synthesize headlines=_headlines;
 - (void).cxx_destruct;
 - (id)initWithVideoGroupConfig:(id)arg1 headlines:(id)arg2;
 

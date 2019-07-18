@@ -36,6 +36,8 @@
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
+@property(readonly, nonatomic) struct CGPoint avatarOffsetRTL;
+@property(readonly, nonatomic) struct CGPoint avatarOffsetLTR;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

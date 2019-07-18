@@ -14,6 +14,7 @@
     // Error parsing type: , name: resultHandler
     // Error parsing type: , name: baseDate
     // Error parsing type: , name: configuration
+    // Error parsing type: , name: queryQualityOfService
     // Error parsing type: , name: queryStartDate
     // Error parsing type: , name: queryEndDate
     // Error parsing type: , name: anchorDate

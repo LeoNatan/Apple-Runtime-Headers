@@ -18,6 +18,7 @@
     NSArray *_hallucinatedUUIDs;
 }
 
++ (BOOL)placeholderCandidate:(struct RTPair *)arg1 knownPlaceTypeThreshold:(double)arg2;
 @property(nonatomic) BOOL loggingEnabled; // @synthesize loggingEnabled=_loggingEnabled;
 @property(readonly, nonatomic) NSArray *hallucinatedUUIDs; // @synthesize hallucinatedUUIDs=_hallucinatedUUIDs;
 @property(readonly, nonatomic) NSUUID *placeholderUUID; // @synthesize placeholderUUID=_placeholderUUID;

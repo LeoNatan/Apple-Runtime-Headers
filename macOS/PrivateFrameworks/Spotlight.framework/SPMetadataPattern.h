@@ -20,6 +20,7 @@
 - (BOOL)matches:(id)arg1;
 - (id)mutableFilterResults:(id)arg1;
 - (id)filterResults:(id)arg1;
+- (id)initWithQuery:(id)arg1 isCoreSpotlight:(BOOL)arg2;
 - (id)initWithQuery:(id)arg1;
 
 @end

@@ -21,8 +21,10 @@
 @property(retain, nonatomic) NSArray *searchTokens; // @synthesize searchTokens=_searchTokens;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *searchTermsString;
 - (void)_generateRelatedSearchObjects;
 - (_Bool)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) unsigned long long searchTermCount;
 @property(readonly, nonatomic) unsigned long long searchTokenCount;
 @property(readonly, nonatomic) _Bool isEmpty;

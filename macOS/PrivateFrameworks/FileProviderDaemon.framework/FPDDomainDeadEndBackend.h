@@ -17,11 +17,13 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (void)resolveProviderItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)isAllowedToProvideItemID:(id)arg1 toConsumerWithIdentifier:(id)arg2;
 - (void)fetchOperationServiceOrEndpointWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)needsRootCreation;
 - (id)createRootByImportingURL:(id)arg1 error:(id *)arg2;
 - (id)createIndexerWithExtension:(id)arg1 enabled:(BOOL)arg2 error:(id *)arg3;
-- (void)reimportItemsBelowItemWithID:(id)arg1 removeCachedItems:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)reimportItemsBelowItemWithID:(id)arg1 removeCachedItems:(BOOL)arg2 markItemDataless:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)valuesForAttributes:(id)arg1 forURL:(id)arg2 request:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)enumerateWithSettings:(id)arg1 lifetimeExtender:(id)arg2 observer:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)stashAllFilesInArchiveFolderWithError:(id *)arg1;
@@ -43,7 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)itemForItemID:(id)arg1 request:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, copy) NSArray *rootURLs; // @dynamic rootURLs;
 - (BOOL)isProviderForURL:(id)arg1;
-- (unsigned long long)startAndGetSyncAnchor:(id *)arg1;
+- (BOOL)startAndGetSyncAnchor:(id *)arg1;
 - (void)invalidate;
 - (id)initWithDomain:(id)arg1;
 

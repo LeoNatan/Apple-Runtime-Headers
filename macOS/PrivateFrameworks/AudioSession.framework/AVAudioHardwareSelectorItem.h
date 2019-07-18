@@ -10,11 +10,15 @@
 
 @interface AVAudioHardwareSelectorItem : NSObject
 {
+    struct SelectorControlItem _serverState;
 }
 
-@property(readonly, nonatomic) unsigned long long kind;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int kind;
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic) unsigned long long ID;
+- (id)initWithServerState:(const struct SelectorControlItem *)arg1;
 
 @end
 

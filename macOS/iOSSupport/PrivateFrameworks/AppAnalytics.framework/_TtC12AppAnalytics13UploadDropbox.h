@@ -13,6 +13,7 @@
     // Error parsing type: , name: files
     // Error parsing type: , name: pathProvider
     // Error parsing type: , name: fileManager
+    // Error parsing type: , name: lock
 }
 
 @end

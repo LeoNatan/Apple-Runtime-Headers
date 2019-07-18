@@ -29,6 +29,7 @@
 - (id)stringWithCount:(id)arg1:(long long)arg2;
 - (id)string:(id)arg1;
 - (id)decimal:(id)arg1:(long long)arg2;
+@property(nonatomic, readonly) NSString *arcadeWordmarkAssetName;
 @property(nonatomic, readonly) NSString *identifier;
 
 @end

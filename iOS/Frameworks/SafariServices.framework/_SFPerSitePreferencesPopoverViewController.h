@@ -35,7 +35,6 @@
 - (void)_setPreferenceValue:(id)arg1 forPreference:(id)arg2;
 - (void)_setPreferenceValueIndex:(long long)arg1 forView:(id)arg2;
 - (id)_indexPathForView:(id)arg1;
-- (void)_stepperDidUpdate:(id)arg1;
 - (void)_done:(id)arg1;
 - (void)reloadPreferences;
 - (void)viewDidLayoutSubviews;

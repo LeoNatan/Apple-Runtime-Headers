@@ -186,6 +186,7 @@
 @property(getter=_proposedDropOperation, setter=_setProposedDropOperation:) long long proposedDropOperation;
 @property(retain, getter=_dropTargetIndexPath, setter=_setDropTargetIndexPath:) NSIndexPath *dropTargetIndexPath;
 - (void)_stopAutoscrollTimer;
+- (void)_orthogonalScrollingSection:(long long)arg1 didScrollToOffset:(struct CGPoint)arg2;
 - (double)_trackedLayoutValueForKey:(id)arg1;
 - (void)_trackLayoutValue:(double)arg1 forKey:(id)arg2;
 - (struct CGPoint)_contentOffsetForNewFrame:(struct CGRect)arg1 oldFrame:(struct CGRect)arg2 newContentSize:(struct CGSize)arg3 andOldContentSize:(struct CGSize)arg4;

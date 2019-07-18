@@ -10,7 +10,7 @@
 {
 }
 
-- (id)serializedParametersForDonatedIntent:(id)arg1;
+- (id)serializedParametersForDonatedIntent:(id)arg1 allowDroppingUnconfigurableValues:(BOOL)arg2;
 - (void)sendTextViaMailtoURL:(id)arg1 withUserInterface:(id)arg2;
 - (void)generateBodyFromCollection:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)generateEmailFromInput:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

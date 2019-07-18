@@ -67,6 +67,7 @@
 - (BOOL)anyUpdatedObjectsWithChangedRelationships:(unsigned long long)arg1 ofEntity:(id)arg2;
 - (BOOL)anyUpdatedObjectsWithChangedAttributes:(unsigned long long)arg1 ofEntity:(id)arg2;
 - (void)_prepareCachedValuesForEntity:(id)arg1;
+@property(readonly, nonatomic) unsigned long long totalChangeCount;
 - (id)changedRelationshipsByOID;
 - (id)changedAttributesByOID;
 - (id)deletedObjectIDs;

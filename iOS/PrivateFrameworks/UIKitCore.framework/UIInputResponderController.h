@@ -120,7 +120,7 @@
 - (void)disableInterfaceAutorotation:(_Bool)arg1;
 - (void)updateRenderConfigForResponder:(id)arg1;
 - (void)updateRenderConfigForCurrentResponder;
-- (void)traitCollectionDidChange:(id)arg1;
+- (void)traitCollectionDidChange;
 - (id)_renderConfigForResponder:(id)arg1;
 - (void)setTextEffectsWindowLevelForInputView:(id)arg1 responder:(id)arg2;
 - (void)_updateContainerWindowLevel;
@@ -152,6 +152,7 @@
 @property(readonly, nonatomic) UIWindowScene *scene;
 @property(readonly, nonatomic) _Bool deactivated;
 - (void)inputResponderControllerWillResume:(id)arg1;
+- (void)inputModeChangedForRenderConfig:(id)arg1;
 - (void)dealloc;
 - (void)_scene:(id)arg1 willTransitionToActivationState:(long long)arg2 withReasonsMask:(unsigned long long)arg3;
 - (id)initWithScene:(id)arg1;

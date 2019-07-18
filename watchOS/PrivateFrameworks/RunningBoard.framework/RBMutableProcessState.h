@@ -16,8 +16,8 @@
 - (void)addTag:(id)arg1;
 - (void)setMaxCPUUsageLimits:(id)arg1 forRole:(unsigned char)arg2;
 - (void)removeAllInheritances;
-- (void)removeInheritance:(id)arg1 fromEnvironment:(id)arg2;
-- (void)addInheritance:(id)arg1 forEnvironment:(id)arg2;
+- (void)removeInheritance:(id)arg1;
+- (void)addInheritance:(id)arg1;
 - (void)setThrottleBestEffortNetworking:(_Bool)arg1;
 - (void)setRole:(unsigned char)arg1;
 - (void)setPreventLaunch:(_Bool)arg1;
@@ -26,7 +26,6 @@
 - (void)removeAllPreventIdleSleepIdentifiers;
 - (void)removePreventIdleSleepIdentifier:(id)arg1;
 - (void)addPreventIdleSleepIdentifier:(id)arg1;
-- (void)setMaxMemory:(unsigned int)arg1;
 - (void)setLegacyFinishTaskReason:(unsigned int)arg1;
 - (void)setJetsamLenientMode:(_Bool)arg1;
 - (void)setJetsamBand:(unsigned char)arg1;

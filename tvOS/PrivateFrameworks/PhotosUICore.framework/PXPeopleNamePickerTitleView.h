@@ -13,7 +13,7 @@
 @interface PXPeopleNamePickerTitleView : UIView <PXPhotoLibraryUIChangeObserver>
 {
     UITextField *_nameField;
-    NSString *_name;
+    NSString *_localizedName;
     UIFont *_nameFont;
     NSString *_placeholder;
     UIFont *_placeholderFont;
@@ -28,7 +28,7 @@
 @property(retain, nonatomic) UIFont *placeholderFont; // @synthesize placeholderFont=_placeholderFont;
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(retain, nonatomic) UIFont *nameFont; // @synthesize nameFont=_nameFont;
-@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, nonatomic) UITextField *nameField; // @synthesize nameField=_nameField;
 - (void).cxx_destruct;
 - (id)prepareForPhotoLibraryChange:(id)arg1;

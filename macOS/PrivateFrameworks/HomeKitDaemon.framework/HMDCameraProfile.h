@@ -55,6 +55,7 @@
 - (void)cameraBackingStoreDidDisableCloudStorage:(id)arg1;
 - (void)cameraBackingStoreDidStop:(id)arg1;
 - (void)cameraBackingStoreDidStart:(id)arg1;
+- (void)cameraBackingStore:(id)arg1 didDeleteClip:(id)arg2;
 - (void)cameraBackingStore:(id)arg1 didAddClipSignificantEventNotification:(id)arg2;
 - (void)cameraBackingStore:(id)arg1 didAddSignificantEventNotification:(id)arg2;
 - (BOOL)canPostSignificantEventNotification:(id)arg1;

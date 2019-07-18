@@ -28,6 +28,7 @@
     BOOL _enableAutoMode;
     BOOL _enableClimateControl;
     BOOL _enableFan;
+    BOOL __encodeLegacyGloryData;
     int _airCirculationMode;
     int _climateZone;
     int _relativeFanSpeedSetting;
@@ -40,6 +41,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBTemperature *temperature; // @synthesize temperature=_temperature;
 @property(nonatomic) int relativeTemperatureSetting; // @synthesize relativeTemperatureSetting=_relativeTemperatureSetting;
 @property(nonatomic) int relativeFanSpeedSetting; // @synthesize relativeFanSpeedSetting=_relativeFanSpeedSetting;

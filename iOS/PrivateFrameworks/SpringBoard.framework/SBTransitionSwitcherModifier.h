@@ -11,7 +11,6 @@
 @interface SBTransitionSwitcherModifier : SBSwitcherModifier
 {
     _Bool _wantsResignActiveAndAsyncRenderingAssertions;
-    _Bool _shouldPreventAsyncRenderingForInlineAppExposeTransitioning;
     unsigned long long _transitionPhase;
     NSUUID *_transitionID;
 }

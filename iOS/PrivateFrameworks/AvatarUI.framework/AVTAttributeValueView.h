@@ -9,7 +9,7 @@
 #import <AvatarUI/AVTDiscardableContent-Protocol.h>
 #import <AvatarUI/AVTSectionItemTransitionModel-Protocol.h>
 
-@class CALayer, CAShapeLayer, NSString, NSUUID, UIImage;
+@class CALayer, CAShapeLayer, NSString, NSUUID, UIImage, UILabel;
 
 @interface AVTAttributeValueView : UIView <AVTSectionItemTransitionModel, AVTDiscardableContent>
 {
@@ -21,14 +21,14 @@
     NSUUID *_displaySessionUUID;
     CAShapeLayer *_clippingLayer;
     CAShapeLayer *_selectionLayer;
-    UIView *_highlightView;
     CALayer *_transitionImageLayer;
+    UILabel *_titleLabel;
     struct CGSize _imageSizeRatio;
 }
 
 + (struct CGRect)imageViewRectForBounds:(struct CGRect)arg1 imageSizeRatio:(struct CGSize)arg2 scale:(double)arg3;
+@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) CALayer *transitionImageLayer; // @synthesize transitionImageLayer=_transitionImageLayer;
-@property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic) CAShapeLayer *selectionLayer; // @synthesize selectionLayer=_selectionLayer;
 @property(retain, nonatomic) CAShapeLayer *clippingLayer; // @synthesize clippingLayer=_clippingLayer;
 @property(retain, nonatomic) NSUUID *displaySessionUUID; // @synthesize displaySessionUUID=_displaySessionUUID;
@@ -42,6 +42,7 @@
 - (void)cleanupAfterTransition;
 - (id)toLayer;
 - (id)fromLayer;
+@property(retain, nonatomic) NSString *displayedTitle;
 @property(nonatomic) _Bool showPlaceholder; // @synthesize showPlaceholder=_showPlaceholder;
 - (void)prepareForTransitionToImage:(id)arg1;
 - (void)updateWithImage:(id)arg1;

@@ -7,13 +7,14 @@
 #import <iWorkImport/KNBuildRenderer.h>
 
 #import <iWorkImport/KNAmbientBuildRenderer-Protocol.h>
+#import <iWorkImport/KNAnimationMovieHost-Protocol.h>
 #import <iWorkImport/TSKMediaPlayerControllerDelegate-Protocol.h>
 
-@class CALayer, NSObject, NSString, TSUWeakReference;
+@class CALayer, NSObject, NSString, TSDMovieInfo, TSUWeakReference;
 @protocol NSCopying, TSKLayerMediaPlayerController, TSKMediaPlayerController;
 
 __attribute__((visibility("hidden")))
-@interface KNMovieRenderer : KNBuildRenderer <TSKMediaPlayerControllerDelegate, KNAmbientBuildRenderer>
+@interface KNMovieRenderer : KNBuildRenderer <TSKMediaPlayerControllerDelegate, KNAmbientBuildRenderer, KNAnimationMovieHost>
 {
     NSObject<TSKLayerMediaPlayerController> *_playerController;
     CALayer *_videoLayer;
@@ -76,6 +77,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)addAnimationsAtLayerTime:(double)arg1;
 - (void)animate;
 @property(nonatomic) __weak KNBuildRenderer *buildInRenderer;
+@property(readonly, nonatomic) TSDMovieInfo *movieInfo;
 - (void)dealloc;
 - (id)initWithAnimatedBuild:(id)arg1 info:(id)arg2 buildStage:(id)arg3 animatedSlideView:(id)arg4;
 

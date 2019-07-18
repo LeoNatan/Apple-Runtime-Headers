@@ -13,13 +13,14 @@
 #import <PhotosUICore/PXGSublayoutProvider-Protocol.h>
 #import <PhotosUICore/PXMonthsSublayoutProvider-Protocol.h>
 
-@class NSString, PXAssetsDataSource, PXAssetsSectionLayout, PXCuratedLibraryLayoutSpec, PXCuratedLibraryViewModel, PXGSpriteReference;
+@class NSMutableIndexSet, NSString, PXAssetsDataSource, PXAssetsSectionLayout, PXCuratedLibraryLayoutSpec, PXCuratedLibraryViewModel, PXGSpriteReference;
 
 @interface PXCuratedLibrarySectionedLayout : PXGCompositeLayout <PXAssetsDataSourceManagerObserver, PXChangeObserver, PXGSublayoutProvider, PXMonthsSublayoutProvider, PXCuratedLibraryViewModelPresenter, PXCuratedLibraryBodyLayout>
 {
     CDStruct_d97c9657 _updateFlags;
     PXAssetsDataSource *_currentDataSource;
     long long _currentZoomLevel;
+    NSMutableIndexSet *_zoomLevelsPreferringDominantHeros;
     long long *_accumulatedSectionItems;
     long long _accumulatedSectionItemsCount;
     _Bool _isUpdatingSublayouts;
@@ -48,8 +49,11 @@
 - (void).cxx_destruct;
 - (id)_targetAssetCollectionReferenceInZoomLevel:(long long)arg1 forTransitionFromAssetCollectionReference:(id)arg2;
 - (id)viewModel:(id)arg1 dominantAssetCollectionReferenceForZoomLevel:(long long)arg2;
+- (id)_heroAssetCollectionReferenceClosestToAssetCollectionReference:(id)arg1 zoomLevel:(long long)arg2;
+- (id)_heroSectionLayoutClosestToSectionLayout:(id)arg1 zoomLevel:(long long)arg2;
 @property(readonly, nonatomic) PXAssetsSectionLayout *dominantSectionLayout;
 - (struct CGRect)sectionBoundariesForAssetCollectionReference:(id)arg1;
+- (void)enumerateHeroSpritesInRect:(struct CGRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateScrollablePagesWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateSectionBoundariesWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateAssetsSectionSublayoutsInRect:(struct CGRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
@@ -61,10 +65,14 @@
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (CDUnknownBlockType)locationNamesFutureForContentInRect:(struct CGRect)arg1;
 - (CDUnknownBlockType)dateIntervalFutureForContentInRect:(struct CGRect)arg1;
+@property(retain, nonatomic) id dominantHeroPreferences;
+- (void)setPrefersDominantHero:(_Bool)arg1 forZoomLevel:(long long)arg2;
+- (_Bool)prefersDominantHeroForZoomLevel:(long long)arg1;
 - (void)setSafeAreaInsets:(struct UIEdgeInsets)arg1;
 - (long long)sublayoutIndexForObjectReference:(id)arg1 options:(unsigned long long)arg2 updatedObjectReference:(out id *)arg3;
 - (void)clearLastVisibleAreaAnchoringInformation;
 - (void)enumerateVisibleAnchoringLayoutsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)_anchorVisibleArea;
 - (void)_updateSublayoutsForSkimming;
 - (void)_prepareAccumulatedSectionItemsBufferForSections:(long long)arg1;
 - (void)_updateSublayoutsDataSource;

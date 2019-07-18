@@ -25,7 +25,7 @@
 @property(retain, nonatomic) VCRateControlMediaController *mediaController;
 - (void)enableBasebandDump:(void *)arg1;
 - (void)enableLogDump:(void *)arg1 enablePeriodicLogging:(BOOL)arg2;
-- (BOOL)doRateControlWithStatistics:(CDStruct_b3eb8f4a)arg1;
+- (BOOL)doRateControlWithStatistics:(CDStruct_b21f1e06)arg1;
 - (void)configure:(struct VCRateControlAlgorithmConfig)arg1 restartRequired:(BOOL)arg2;
 @end
 

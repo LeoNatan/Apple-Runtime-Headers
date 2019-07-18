@@ -6,19 +6,26 @@
 
 #import <CoreData/NSManagedObject.h>
 
+#import <WorkflowKit/WFRecordStorage-Protocol.h>
+
 @class NSDate, NSString, WFCoreDataTrigger;
 
-@interface WFCoreDataRunEvent : NSManagedObject
+@interface WFCoreDataRunEvent : NSManagedObject <WFRecordStorage>
 {
 }
 
 + (id)fetchRequest;
+- (id)descriptor;
 
 // Remaining properties
 @property(copy, nonatomic) NSDate *date; // @dynamic date;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
 @property(copy, nonatomic) NSString *identifier; // @dynamic identifier;
 @property(nonatomic) int outcome; // @dynamic outcome;
 @property(copy, nonatomic) NSString *source; // @dynamic source;
+@property(readonly) Class superclass;
 @property(retain, nonatomic) WFCoreDataTrigger *trigger; // @dynamic trigger;
 
 @end

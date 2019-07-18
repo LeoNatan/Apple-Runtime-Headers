@@ -19,6 +19,7 @@
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_disablePressed:(id)arg1;
+- (void)_cancelPressed:(id)arg1;
 - (void)_continuePressed:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

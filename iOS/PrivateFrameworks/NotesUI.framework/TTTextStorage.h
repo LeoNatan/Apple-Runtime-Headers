@@ -28,6 +28,7 @@
     _Bool _filterSubstringAttributesForPlainText;
     _Bool _disableUndoCoalesceBreaking;
     _Bool _isDictating;
+    _Bool _isPerformingAccessibilityUndoableTextInsertion;
     _Bool _isHandlingTextCheckingResults;
     _Bool _isTypingOrMarkingText;
     _Bool _isSelectingText;
@@ -88,6 +89,7 @@
 @property(nonatomic) _Bool isSelectingText; // @synthesize isSelectingText=_isSelectingText;
 @property(nonatomic) _Bool isTypingOrMarkingText; // @synthesize isTypingOrMarkingText=_isTypingOrMarkingText;
 @property(nonatomic) _Bool isHandlingTextCheckingResults; // @synthesize isHandlingTextCheckingResults=_isHandlingTextCheckingResults;
+@property(nonatomic) _Bool isPerformingAccessibilityUndoableTextInsertion; // @synthesize isPerformingAccessibilityUndoableTextInsertion=_isPerformingAccessibilityUndoableTextInsertion;
 @property(nonatomic) _Bool isDictating; // @synthesize isDictating=_isDictating;
 @property(nonatomic) _Bool disableUndoCoalesceBreaking; // @synthesize disableUndoCoalesceBreaking=_disableUndoCoalesceBreaking;
 @property(nonatomic) _Bool filterSubstringAttributesForPlainText; // @synthesize filterSubstringAttributesForPlainText=_filterSubstringAttributesForPlainText;

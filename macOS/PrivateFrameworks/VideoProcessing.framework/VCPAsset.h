@@ -30,6 +30,7 @@
 @property(readonly, nonatomic) BOOL isScreenshot;
 @property(readonly, nonatomic) BOOL isLivePhoto;
 @property(readonly, nonatomic) BOOL isPano;
+@property(readonly, nonatomic) float originalPhotoOffsetSeconds;
 @property(readonly, nonatomic) float photoOffsetSeconds;
 @property(readonly, nonatomic) float exposureTimeSeconds;
 @property(readonly, nonatomic) BOOL hadFlash;

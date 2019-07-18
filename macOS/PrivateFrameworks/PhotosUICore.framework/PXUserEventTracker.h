@@ -34,6 +34,7 @@
 - (void)_logMessageTracerDurationCounterForLogSubSubState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)_logMessageTracerViewCountCounterForLogSubState:(unsigned long long)arg1;
 - (void)_logMessageTracerViewCountCounterForLogSubSubState:(unsigned long long)arg1;
+- (void)logFirstTimeExpericeReadiness:(BOOL)arg1 forLibrarySize:(long long)arg2;
 - (void)logInterestingMemoryNotificationRespondedCount;
 - (void)logInterestingMemoryNotificationSeenCount;
 - (void)logNavigationListViewTapWithKey:(struct __CFString *)arg1;
@@ -80,6 +81,7 @@
 - (void)logPeopleMeSuggestionConfirmed:(BOOL)arg1;
 - (void)logPeopleDetailCount;
 - (void)logPeopleHomeCount;
+- (void)logImpressionCountForEventSource:(unsigned long long)arg1;
 - (void)logCounterValuesForLogState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)logCounterValuesForLogSubState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)logCounterValuesForLogSubSubState:(unsigned long long)arg1 duration:(double)arg2;

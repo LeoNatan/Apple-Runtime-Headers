@@ -16,13 +16,14 @@
     id <HMNetworkConfigurationProfileDelegate> _delegate;
 }
 
-@property __weak id <HMNetworkConfigurationProfileDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <HMNetworkConfigurationProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)networkConfigurationProfileDidUpdateWiFiCredentialType:(id)arg1;
 - (void)networkConfigurationProfileDidUpdateWiFiReconfigurationSupport:(id)arg1;
 - (void)networkConfigurationProfileDidUpdateAccessViolation:(id)arg1;
 - (void)networkConfigurationProfileDidUpdateAllowedHosts:(id)arg1;
-- (void)networkConfigurationProfileDidUpdateProtectionMode:(id)arg1;
+- (void)networkConfigurationProfileDidUpdateProtectionMode:(id)arg1 accessModeChanged:(_Bool)arg2;
+@property(readonly, nonatomic, getter=isNetworkAccessRestricted) _Bool networkAccessRestricted;
 - (void)reconfigureWiFiWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateProtectionMode:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly) int credentialType;

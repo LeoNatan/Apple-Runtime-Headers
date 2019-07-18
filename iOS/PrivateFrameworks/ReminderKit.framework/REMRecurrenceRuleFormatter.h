@@ -11,6 +11,7 @@
 }
 
 + (id)localizedDescriptionForRepeatType:(long long)arg1;
++ (long long)repeatTypeForFrequency:(long long)arg1 interval:(long long)arg2 daysOfTheWeek:(id)arg3 daysOfTheMonth:(id)arg4 monthsOfTheYear:(id)arg5 weeksOfTheYear:(id)arg6 daysOfTheYear:(id)arg7 setPositions:(id)arg8 end:(id)arg9 recurrenceDate:(id)arg10 recurrenceTimeZone:(id)arg11 getRepeatEnd:(out id *)arg12;
 + (long long)repeatTypeForRecurrenceRules:(id)arg1 recurrenceDate:(id)arg2 recurrenceTimeZone:(id)arg3 getRepeatEnd:(out id *)arg4;
 + (id)_localizedOfMonthStringForMonth:(id)arg1;
 + (id)_stringForByDayOfWeek:(id)arg1 setPositions:(id)arg2;

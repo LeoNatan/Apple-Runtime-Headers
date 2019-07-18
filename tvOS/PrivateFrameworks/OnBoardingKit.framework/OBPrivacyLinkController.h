@@ -12,6 +12,7 @@
 {
     NSArray *_bundles;
     NSArray *_bundleIdentifiers;
+    _Bool _didOverrideShowUnifiedAbout;
     _Bool _displayIcon;
     _Bool _displayLargeIcon;
     _Bool _displayCaptionText;

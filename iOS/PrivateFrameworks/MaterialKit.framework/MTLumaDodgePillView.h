@@ -8,7 +8,7 @@
 
 #import <MaterialKit/CAAnimationDelegate-Protocol.h>
 
-@class MTLumaDodgePillSettings, NSMutableArray, NSString;
+@class MTLumaDodgePillSettings, NSMutableArray, NSString, _MTLumaDodgePillLowQualityEffectView;
 @protocol MTLumaDodgePillBackgroundLuminanceObserver;
 
 @interface MTLumaDodgePillView : MTPillView <CAAnimationDelegate>
@@ -21,6 +21,7 @@
     long long _graphicsQuality;
     double _luma;
     _Bool _lumaIsValid;
+    _MTLumaDodgePillLowQualityEffectView *_lowQualityEffectView;
     unsigned int _bounceAnimationsInFlight;
     NSMutableArray *_bounceAnimationKeys;
 }
@@ -42,6 +43,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)_shouldAnimatePropertyAdditivelyWithKey:(id)arg1;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (void)layoutSubviews;
 - (void)_updateStyle;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 settings:(id)arg2 graphicsQuality:(long long)arg3;

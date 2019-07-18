@@ -6,31 +6,37 @@
 
 #import <PersonalizationPortrait/PPTopicStore.h>
 
-@class PPMObjectsDeletion, PPMTopicDonation, PPMTopicDonationError, PPTopicStorage, _PASLock;
+#import <PersonalizationPortraitInternals/PPFeedbackProcessing-Protocol.h>
 
-@interface PPLocalTopicStore : PPTopicStore
+@class PPM2FeedbackPortraitRegistered, PPMFeedbackRegistered, PPMObjectsDeletion, PPMTopicDonation, PPMTopicDonationError, PPTopicStorage, _PASLock;
+
+@interface PPLocalTopicStore : PPTopicStore <PPFeedbackProcessing>
 {
-    unsigned long long _hardFetchLimit;
     _PASLock *_lock;
     PPMTopicDonationError *_errorTracker;
     PPMTopicDonation *_donationTracker;
     PPMObjectsDeletion *_deletionTracker;
+    PPMFeedbackRegistered *_feedbackTracker;
+    PPM2FeedbackPortraitRegistered *_feedbackTracker2;
     PPTopicStorage *_storage;
 }
 
 + (id)getScoredTopicsFeaturesWithTopicId:(id)arg1 excludingSourceBundleId:(id)arg2 decayRate:(double)arg3 error:(id *)arg4 strictFiltering:(_Bool)arg5 scoreInterpreter:(id)arg6;
 + (_Bool)_yesWithProbability:(double)arg1;
 + (id)ppFeedbackItemToPPPBFeedbackItem:(id)arg1;
-+ (id)recordsForTopics:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 decayRate:(double)arg4;
++ (float)resolvedPerRecordDecayRateForRecord:(id)arg1 perRecordDecayRate:(float)arg2;
++ (id)recordsForTopics:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3;
 + (id)_topicTransformForId:(id)arg1;
 + (void)calibrate:(id)arg1;
 + (void)sortAndTruncate:(id)arg1 queryLimit:(unsigned long long)arg2;
-+ (id)scoreTopics:(id)arg1 scoringDate:(id)arg2 overrideDecayRate:(_Bool)arg3 decayRate:(double)arg4 strictFiltering:(_Bool)arg5;
-+ (id)aggregateRecords:(id)arg1 overrideDecayRate:(_Bool)arg2 decayRate:(double)arg3;
++ (struct PPScoredItem *)scoreTopics:(id)arg1 scoringDate:(id)arg2 decayRate:(double)arg3 strictFiltering:(_Bool)arg4 sourceStats:(id)arg5 scoreInterpreter:(id)arg6;
++ (id)_loadScoreInterpreter;
++ (id)aggregateRecords:(id)arg1 scoringDate:(id)arg2 perRecordDecayRate:(float)arg3 decayRate:(float)arg4;
 + (id)defaultStore;
 @property(readonly, nonatomic) PPTopicStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
 - (_Bool)_logFeedbackSessionsWithFeedback:(id)arg1 error:(id *)arg2;
+- (void)processFeedback:(id)arg1;
 - (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_logDonationForTopics:(id)arg1 bundleId:(id)arg2 algorithm:(unsigned long long)arg3;
 - (void)disableSyncForBundleIds:(id)arg1;
@@ -59,11 +65,12 @@
 - (id)scoresForTopicMapping:(id)arg1 query:(id)arg2 error:(id *)arg3;
 - (_Bool)iterScoresForTopicMapping:(id)arg1 query:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
 - (id)rankedTopicsWithQuery:(id)arg1 error:(id *)arg2 clientProcessName:(id)arg3;
+- (void)_petLoggingForQuery:(id)arg1 count:(unsigned long long)arg2 clientProcessName:(id)arg3 hasError:(_Bool)arg4;
 - (id)rankedTopicsWithQuery:(id)arg1 error:(id *)arg2;
-- (id)_topicRecordsForRankedQuery:(id)arg1 error:(id *)arg2;
+- (_Bool)_unlimitedTopicRecordsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)sourceStatsExcludedAlgorithms:(id)arg1;
 - (id)init;
-- (id)initWithStorage:(id)arg1 recordFetchLimit:(unsigned long long)arg2;
+- (id)initWithStorage:(id)arg1;
 
 @end
 

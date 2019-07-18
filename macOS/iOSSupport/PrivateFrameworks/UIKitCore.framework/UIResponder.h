@@ -17,7 +17,7 @@
 #import <UIKitCore/_UIUserInterfaceValidations-Protocol.h>
 
 @class NSArray, NSString, NSTouchBar, NSUndoManager, NSUserActivity, UIInputViewController, UITextInputAssistantItem, UITextInputMode, UIView;
-@protocol UITextInput, UITextInputPrivate;
+@protocol UINSCopyConfiguration, UITextInput, UITextInputPrivate, _UICopyConfigurationReading;
 
 @interface UIResponder : NSObject <NSTouchBarProvider, UITextInput_Internal, UITextInputAdditions, UIUserActivityRestoring, _UIStateRestorationContinuation, _UIServicesMenuDataProviding, _UIUserInterfaceValidations, _UITouchable, UIResponderStandardEditActions>
 {
@@ -135,10 +135,8 @@
 - (void)_share:(id)arg1;
 - (void)_lookup:(id)arg1;
 - (void)_define:(id)arg1;
-- (id)validationForCommand:(id)arg1;
 - (void)validateCommand:(id)arg1;
 - (void)_buildMenuFromChainWithBuilder:(id)arg1;
-- (void)buildCommandsWithBuilder:(id)arg1;
 - (void)buildMenuWithBuilder:(id)arg1;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (id)_targetCanPerformBlock:(CDUnknownBlockType)arg1;
@@ -282,6 +280,7 @@
 @property(readonly, nonatomic, getter=isEditable) BOOL editable;
 - (id)__textInteractionFromAssistant;
 - (void)__tearDownInteractionAssistantIfNecessary;
+- (void)__prepareInteractionAssistantIfNecessary;
 - (void)__createInteractionAssistantIfNecessaryWithMode:(long long)arg1;
 - (id)interactionAssistant;
 - (id)textInputView;
@@ -307,6 +306,13 @@
 - (id)_restorationIdentifierPath;
 @property(copy, nonatomic) NSString *restorationIdentifier;
 - (void)_rebuildStateRestorationIdentifierPath;
+- (BOOL)_handleCopyConfigurationShare:(id)arg1;
+- (BOOL)_handleCopyConfigurationDoesNotHandleSelector:(SEL)arg1;
+- (BOOL)_handleCopyConfigurationCanPerformAction:(SEL)arg1;
+- (id)_firstNonnullCopyConfigurationInResponderChainForView:(id)arg1 location:(struct CGPoint)arg2 responder:(id *)arg3;
+@property(retain, nonatomic, setter=_setCopyConfiguration:) id <_UICopyConfigurationReading> _copyConfiguration;
+- (id)_effectiveCopyConfigurationForView:(id)arg1 location:(struct CGPoint)arg2;
+- (id)_effectiveCopyConfiguration;
 - (struct UIEdgeInsets)_focusRingContentMargins;
 - (void)_noteFocusRingMaskChanged;
 - (void)_drawFocusRingMask;
@@ -314,7 +320,7 @@
 - (unsigned long long)_effectiveFocusRingType;
 - (unsigned long long)_defaultFocusRingType;
 - (id)_designatedFocusRingView;
-- (id)_objectsForServicesAndSharing;
+@property(readonly, nonatomic) id <UINSCopyConfiguration> _copyConfigurationForServicesMenu;
 - (BOOL)_readServicesMenuDataFromPasteboard:(id)arg1;
 - (id)_servicesMenuProviderForReturnType:(id)arg1;
 - (id)_dataProviderForServicesMenu;

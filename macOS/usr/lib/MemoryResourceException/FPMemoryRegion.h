@@ -13,7 +13,7 @@
     unsigned int _wired:1;
     unsigned int _inSharedCache:1;
     unsigned int _unusedSharedCacheRegion:1;
-    unsigned int _purgeableNonVolatile:1;
+    unsigned int _ownedExclusivelyByParentProcess:1;
     unsigned char _segment;
     unsigned char _share_mode;
     unsigned int _user_tag;
@@ -48,16 +48,16 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) FPMemoryObject *memoryObject; // @synthesize memoryObject=_memoryObject;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isFake) BOOL fake;
 - (BOOL)eligibleForSubrangesUsingPageSize:(unsigned long long)arg1;
 @property(readonly, nonatomic) BOOL eligibleForProcessView;
 @property(readonly, nonatomic) NSString *fullName;
 - (void)freeSubrangeList;
 - (void)addSubrange:(struct _NSRange)arg1 memoryTotal:(CDStruct_8346b022 *)arg2 pageSize:(unsigned long long)arg3;
-@property(readonly, nonatomic) BOOL ownedExclusivelyByParentProcess;
 @property(readonly, nonatomic) unsigned long long wiredSize;
 - (long long)compare:(id)arg1;
 @property(nonatomic) unsigned long long end;
-@property(nonatomic) BOOL purgeableNonVolatile;
+@property(nonatomic) BOOL ownedExclusivelyByParentProcess;
 @property(nonatomic) BOOL unusedSharedCacheRegion;
 @property(nonatomic) BOOL inSharedCache;
 @property(nonatomic) BOOL wired;

@@ -8,10 +8,10 @@
 
 @protocol AWRemoteClient
 - (void)pingWithReply:(void (^)(_Bool))arg1;
-- (void)pollWithTimeout:(unsigned long long)arg1 reply:(void (^)(AWAttentionAwarenessClientState *, NSError *))arg2;
-- (void)resetAttentionLostTimerWithReply:(void (^)(AWAttentionAwarenessClientState *))arg1;
+- (void)pollWithTimeout:(unsigned long long)arg1 reply:(void (^)(NSError *))arg2;
+- (void)resetAttentionLostTimerWithReply:(void (^)(NSError *))arg1;
 - (void)getLastEvent:(void (^)(AWAttentionEvent *))arg1;
-- (void)setClientConfig:(AWAttentionAwarenessConfiguration *)arg1 shouldReset:(_Bool)arg2 reply:(void (^)(AWAttentionAwarenessClientState *, NSError *))arg3;
+- (void)setClientConfig:(AWAttentionAwarenessConfiguration *)arg1 shouldReset:(_Bool)arg2 reply:(void (^)(NSError *))arg3;
 - (void)invalidate;
 @end
 

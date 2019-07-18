@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PassKitCore/PKApplyPage.h>
+#import <PassKitCore/PKDynamicProvisioningPageContent.h>
 
 @class PKPaymentSetupFieldsModel;
 
-@interface PKApplyRequiredFieldsPage : PKApplyPage
+@interface PKApplyRequiredFieldsPage : PKDynamicProvisioningPageContent
 {
     PKPaymentSetupFieldsModel *_fieldModel;
 }

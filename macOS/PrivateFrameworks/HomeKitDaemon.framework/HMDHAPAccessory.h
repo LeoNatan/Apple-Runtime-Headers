@@ -14,7 +14,7 @@
 #import <HomeKitDaemon/HMDTimeInformationMonitorDelegate-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDAccessorySymptomHandler, HMDCharacteristic, HMDDataStreamController, HMDNetworkRouterController, HMDNetworkRouterProfile, HMDPendingCharacteristic, HMDService, HMDTargetControllerManager, HMFConnectivityInfo, HMFPairingIdentity, HMFTimer, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSMutableArray, NSNumber, NSSet, NSString;
+@class HMDAccessorySymptomHandler, HMDCharacteristic, HMDDataStreamController, HMDNetworkRouterController, HMDNetworkRouterProfile, HMDNetworkRouterSatelliteProfile, HMDPendingCharacteristic, HMDService, HMDTargetControllerManager, HMFConnectivityInfo, HMFPairingIdentity, HMFTimer, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSMutableArray, NSNumber, NSSet, NSString;
 
 @interface HMDHAPAccessory : HMDAccessory <HMDAccessoryMinimumUserPrivilegeCapable, HMDServiceOwner, HAPRelayAccessoryDelegate, HMDTimeInformationMonitorDelegate, HMFTimerDelegate, HMDAccessoryIdentify, HMDAccessoryUserManagement>
 {
@@ -235,6 +235,7 @@
 - (void)unconfigureAccessoryWithServerIdentifier:(id)arg1 linkType:(long long)arg2 updateReachability:(BOOL)arg3;
 - (void)unconfigure;
 - (void)configureWithAccessory:(id)arg1 homeNotificationsEnabled:(BOOL)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)enableNotificationsWithHAPAccessory:(id)arg1 homeNotificationsEnabled:(BOOL)arg2;
 - (id)configureService:(id)arg1;
 - (id)tunneledHAPAccessories;
 - (id)getPrimaryHAPAccessories;
@@ -261,7 +262,6 @@
 - (void)_setSupportsRelay:(BOOL)arg1;
 @property(retain, nonatomic) HMDNetworkRouterController *networkRouterController; // @synthesize networkRouterController=_networkRouterController;
 @property(readonly, getter=isCameraRecordingFeatureSupported) BOOL supportsCameraRecordingFeature;
-- (id)_getCameraProfiles;
 - (BOOL)containsCameraService;
 - (void)removeTransportInformationInstance:(id)arg1;
 - (void)addTransportInformationInstances:(id)arg1;
@@ -292,7 +292,6 @@
 - (void)_removeService:(id)arg1;
 - (void)_addService:(id)arg1;
 - (void)_updatePrimaryServiceIfNeededWithService:(id)arg1;
-- (void)_updatePrimaryServiceIfNeeded;
 - (void)updatePrimaryServiceIfNeeded;
 @property(readonly, nonatomic) HMDService *primaryService; // @synthesize primaryService=_primaryService;
 @property(readonly, copy) NSArray *services;
@@ -387,11 +386,12 @@
 - (void)scanningCompleteWithAccessoryFound:(BOOL)arg1 suspended:(BOOL)arg2;
 - (BOOL)initiateScan:(CDUnknownBlockType)arg1;
 - (BOOL)_handleUpdatedServicesForNetworkRouterProfileAndController:(id)arg1;
-- (BOOL)__removeNetworkRouterProfile;
+- (BOOL)__createSatelliteNetworkRouterProfile:(id)arg1;
 - (BOOL)__createNetworkRouterProfileAndController:(id)arg1;
-- (void)postNetworkRouterProfileNotification:(id)arg1;
+- (void)postNetworkRouterProfileNotification:(id)arg1 object:(id)arg2;
 - (BOOL)__removeNetworkRouterController;
 - (void)__createNetworkRouterController:(id)arg1;
+@property(readonly, nonatomic) HMDNetworkRouterSatelliteProfile *networkRouterSatelliteProfile;
 @property(readonly, nonatomic) HMDNetworkRouterProfile *networkRouterProfile;
 - (void)writeValue:(id)arg1 toCharacteristic:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)assistantObject;
@@ -411,6 +411,7 @@
 - (void)removeDataStreamBulkSendListener:(id)arg1;
 - (void)addDataStreamBulkSendListener:(id)arg1 fileType:(id)arg2;
 - (void)_handleUpdatedServicesForDataStreamController:(id)arg1;
+- (BOOL)isPoweringOn;
 - (void)cancelPowerOn;
 - (void)wirelessPowerOn:(CDUnknownBlockType)arg1;
 - (void)powerOnComplete:(id)arg1;

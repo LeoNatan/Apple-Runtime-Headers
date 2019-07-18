@@ -11,8 +11,8 @@
     // Error parsing type: , name: delegate
     // Error parsing type: , name: groupTitleViewRenderer
     // Error parsing type: , name: feedItemSupplementaryRenderer
-    // Error parsing type: , name: groupSeeAllViewRenderer
     // Error parsing type: , name: separatorViewContainerViewRenderer
+    // Error parsing type: , name: sectionFooterViewRenderer
 }
 
 @end

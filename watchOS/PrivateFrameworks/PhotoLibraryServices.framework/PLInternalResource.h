@@ -27,8 +27,10 @@
 + (id)insertResourceForAssetObjectID:(id)arg1 resourceIdentity:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)cloudUUIDKeyForDeletion;
 + (int)cloudDeletionTypeForTombstone:(id)arg1;
++ (_Bool)supportsTrashedStateForResourceIdentity:(id)arg1;
 + (id)listOfSyncedProperties;
 + (id)entityName;
++ (id)purgeablePushedPredicateForCPLResourceTypes:(id)arg1 urgency:(int)arg2;
 + (id)predicateForPurgeableOriginalResources;
 + (id)predicateForAvailableResources;
 + (id)predicateForOriginalsToDownload;
@@ -89,7 +91,10 @@
 - (id)validateForAssetID:(id)arg1 resourceIdentity:(id)arg2;
 @property(readonly, copy) NSString *cloudUUIDForDeletion;
 @property(readonly) int cloudDeletionType;
+- (void)willSave;
 - (void)prepareForDeletion;
+- (void)persistTrashedStateToFilesystem;
+- (_Bool)shouldPersistTrashedState;
 - (void)applyTrashedState:(short)arg1 trashedDate:(id)arg2;
 - (void)applyTrashedState:(short)arg1;
 - (_Bool)isTrashedOrExpunged;
@@ -111,7 +116,6 @@
 @property(readonly, nonatomic) long long height;
 @property(readonly, nonatomic) long long width;
 @property(readonly, nonatomic) _Bool isLocallyAvailable;
-@property(readonly, retain, nonatomic) NSString *itemIdentifier;
 @property(readonly, retain, nonatomic) NSString *filePath;
 @property(readonly, nonatomic) unsigned long long fileSize;
 @property(readonly, retain, nonatomic) NSString *assetUuid;

@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (id)_uidIndexSet;
 - (_Bool)_deleteUIDs:(id)arg1;
-- (_Bool)_copyAllMessagesAndDelete:(_Bool)arg1;
+- (id)_copyAllMessages:(_Bool)arg1;
 - (_Bool)_moveAllMessages;
 - (id)replayAction;
 

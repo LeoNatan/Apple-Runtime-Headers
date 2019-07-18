@@ -168,6 +168,7 @@
 - (void)registerChangeObserver:(id)arg1;
 - (id)_sectionCache;
 - (unsigned long long)_cachedSectionForAssetCollection:(id)arg1;
+- (long long)estimatedAssetsCountWithEnrichmentState:(unsigned short)arg1;
 - (long long)numberOfSectionsWithEnrichmentState:(unsigned short)arg1;
 @property(readonly, nonatomic) long long estimatedOtherCount;
 @property(readonly, nonatomic) long long estimatedVideosCount;
@@ -194,6 +195,7 @@
 - (BOOL)_reverseSortOrderForAssetCollection:(id)arg1;
 - (BOOL)_isAssetCollectionAccurate:(id)arg1;
 - (BOOL)_allSectionsConsideredAccurate;
+@property(readonly, nonatomic) BOOL areAllSectionsConsideredAccurate;
 - (id)_fetcher;
 - (void)_observersQueue_copyChangeObserversForWriteIfNeeded;
 - (void)_enumerateChangeObserversWithBlock:(CDUnknownBlockType)arg1;

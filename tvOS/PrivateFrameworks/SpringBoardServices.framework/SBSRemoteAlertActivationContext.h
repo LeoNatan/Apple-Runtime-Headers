@@ -16,6 +16,7 @@
 @interface SBSRemoteAlertActivationContext : NSObject <BSDescriptionProviding, BSSettingDescriptionProvider, BSXPCCoding, NSSecureCoding>
 {
     _Bool _activatingForSiri;
+    _Bool _shouldInvalidateWhenDeactivated;
     _Bool _switcherEligible;
     NSString *_reason;
     NSSet *_actions;
@@ -28,6 +29,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)activationContextWithLegacyAlertOptions:(id)arg1;
 @property(nonatomic, getter=isSwitcherEligible) _Bool switcherEligible; // @synthesize switcherEligible=_switcherEligible;
+@property(nonatomic) _Bool shouldInvalidateWhenDeactivated; // @synthesize shouldInvalidateWhenDeactivated=_shouldInvalidateWhenDeactivated;
 @property(copy, nonatomic) NSDictionary *legacyAlertOptions; // @synthesize legacyAlertOptions=_legacyAlertOptions;
 @property(copy, nonatomic) NSUUID *activityContinuationIdentifier; // @synthesize activityContinuationIdentifier=_activityContinuationIdentifier;
 @property(retain, nonatomic) SBSRemoteAlertPresentationTarget *presentationTarget; // @synthesize presentationTarget=_presentationTarget;

@@ -53,6 +53,7 @@
 - (_Bool)centerPlaceholder;
 - (void)setCenterPlaceholder:(_Bool)arg1;
 - (id)_presentationBackgroundBlurEffectForTraitCollection:(id)arg1;
+- (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(_Bool)arg3;
 - (unsigned int)_backdropStyle;
 - (void)_setBackdropStyle:(unsigned int)arg1;
 @property(nonatomic) unsigned int searchBarStyle;
@@ -111,6 +112,8 @@
 - (void)_containerSafeAreaInsetsDidChange:(id)arg1;
 - (void)safeAreaInsetsDidChange;
 - (void)layoutMarginsDidChange;
+- (void)_getOverrideContentInsets:(struct UIEdgeInsets *)arg1 overriddenEdges:(unsigned int *)arg2;
+- (void)_setOverrideContentInsets:(struct UIEdgeInsets)arg1 forRectEdges:(unsigned int)arg2;
 - (struct UIEdgeInsets)contentInset;
 - (void)setContentInset:(struct UIEdgeInsets)arg1;
 - (void)_setShadowVisibleIfNecessary:(_Bool)arg1;
@@ -136,6 +139,7 @@
 - (void)_animateTransitionToSearchLayoutState:(int)arg1;
 - (void)_prepareForTransitionToSearchLayoutState:(int)arg1;
 - (void)_driveTransitionToSearchLayoutState:(int)arg1;
+- (void)_navigationBarTraitCollectionDidChangeTo:(id)arg1 from:(id)arg2;
 - (void)_navigationBarTransitionCompleted:(int)arg1 willBeDisplayed:(_Bool)arg2;
 - (void)_performNavigationBarTransition:(int)arg1 willBeDisplayed:(_Bool)arg2;
 - (void)_navigationBarTransitionWillBegin:(int)arg1 willBeDisplayed:(_Bool)arg2;
@@ -293,10 +297,12 @@
 @property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically; // @dynamic enablesReturnKeyAutomatically;
 @property(nonatomic) _Bool enablesReturnKeyOnNonWhiteSpaceContent;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
 @property(nonatomic) _Bool forceDefaultDictationInfo;
 @property(nonatomic) int forceDictationKeyboardType;
 @property(nonatomic) _Bool forceDisableDictation;
 @property(nonatomic) _Bool forceEnableDictation;
+@property(nonatomic) _Bool forceFloatingKeyboard;
 @property(nonatomic) _Bool hasDefaultContents;
 @property(readonly) unsigned int hash;
 @property(nonatomic) _Bool hidePrediction;

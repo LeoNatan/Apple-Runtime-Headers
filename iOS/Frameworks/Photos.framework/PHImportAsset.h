@@ -8,7 +8,7 @@
 
 #import <Photos/PHImportDuplicateCheckerItem-Protocol.h>
 
-@class AVAssetImageGenerator, IPAMetadata, NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSSet, NSString, NSTimeZone, NSURL, PHImportAssetFilePresenter, PHImportSource;
+@class AVAssetImageGenerator, IPAMetadata, NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSSet, NSString, NSTimeZone, NSURL, PHImportSource;
 @protocol OS_dispatch_queue;
 
 @interface PHImportAsset : NSObject <PHImportDuplicateCheckerItem>
@@ -16,31 +16,18 @@
     PHImportSource *_source;
     PHImportSource *_strongSource;
     struct os_unfair_lock_s _metadataLock;
-    NSDictionary *_userMetdata;
+    NSDictionary *_userMetadata;
     NSDictionary *_userInfo;
     NSString *_basenameForOriginalAdjustment;
-    _Bool _isImage;
     unsigned char _duplicateStateConfidence;
-    _Bool _isJPEG;
-    _Bool _isJPEG2000;
-    _Bool _isRAW;
-    _Bool _isTIFF;
-    _Bool _isHEIF;
-    _Bool _isGIF;
-    _Bool _isPNG;
-    _Bool _isPDF;
-    _Bool _isPSD;
-    _Bool _isMovie;
-    _Bool _isAudio;
-    _Bool _isSidecar;
     _Bool _canReference;
     _Bool _isDuplicate;
     _Bool _treatAsUnsupportedRAW;
     _Bool _sidecarsLoaded;
     unsigned char _fileLocation;
+    unsigned short _resourceSubType;
     id _uuid;
     IPAMetadata *_metadata;
-    PHImportAssetFilePresenter *_filePresenter;
     NSMutableArray *_relatedBurstAssets;
     PHImportAsset *_burstPick;
     id _avchdAssetId;
@@ -67,6 +54,7 @@
     AVAssetImageGenerator *_imageGenerator;
     NSObject<OS_dispatch_queue> *_loadSidecars;
     NSString *_importIdentifier;
+    NSMutableDictionary *_filePresenters;
     NSDate *_exifImageDate;
     unsigned long long _copyMethod;
     NSData *_fileData;
@@ -81,17 +69,19 @@
 + (void)determineIfTIFFIsRAW:(id)arg1 url:(id)arg2;
 + (id)loadDatesForAssets:(id)arg1 atEnd:(CDUnknownBlockType)arg2;
 + (id)loadDatesForAssetSequence:(id)arg1 atEnd:(CDUnknownBlockType)arg2;
-+ (_Bool)isSidecarType:(id)arg1;
 + (void)logImageDateFileDateDifferencesForAsset:(id)arg1;
 + (id)assetFileForURL:(id)arg1 source:(id)arg2;
 + (id)assetFileForURL:(id)arg1 source:(id)arg2 withUuid:(id)arg3;
++ (_Bool)isValidAsSidecar:(id)arg1;
 @property(retain, nonatomic) NSMutableDictionary *sidecarAssetsByType; // @synthesize sidecarAssetsByType=_sidecarAssetsByType;
+@property(nonatomic) unsigned short resourceSubType; // @synthesize resourceSubType=_resourceSubType;
 @property(nonatomic) long long resourceType; // @synthesize resourceType=_resourceType;
 @property(readonly, nonatomic) __weak PHImportSource *source; // @synthesize source=_source;
 @property(nonatomic) unsigned char fileLocation; // @synthesize fileLocation=_fileLocation;
 @property(retain, nonatomic) NSData *fileData; // @synthesize fileData=_fileData;
 @property(nonatomic) unsigned long long copyMethod; // @synthesize copyMethod=_copyMethod;
 @property(retain, nonatomic) NSDate *exifImageDate; // @synthesize exifImageDate=_exifImageDate;
+@property(retain, nonatomic) NSMutableDictionary *filePresenters; // @synthesize filePresenters=_filePresenters;
 @property(retain, nonatomic) NSString *importIdentifier; // @synthesize importIdentifier=_importIdentifier;
 @property(nonatomic) _Bool sidecarsLoaded; // @synthesize sidecarsLoaded=_sidecarsLoaded;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *loadSidecars; // @synthesize loadSidecars=_loadSidecars;
@@ -123,14 +113,6 @@
 @property(readonly) id avchdAssetId; // @synthesize avchdAssetId=_avchdAssetId;
 @property(retain, nonatomic) PHImportAsset *burstPick; // @synthesize burstPick=_burstPick;
 @property(retain, nonatomic) NSMutableArray *relatedBurstAssets; // @synthesize relatedBurstAssets=_relatedBurstAssets;
-@property(readonly, nonatomic) _Bool isSidecar; // @synthesize isSidecar=_isSidecar;
-@property(readonly, nonatomic) _Bool isPSD; // @synthesize isPSD=_isPSD;
-@property(readonly, nonatomic) _Bool isPDF; // @synthesize isPDF=_isPDF;
-@property(readonly, nonatomic) _Bool isPNG; // @synthesize isPNG=_isPNG;
-@property(readonly, nonatomic) _Bool isGIF; // @synthesize isGIF=_isGIF;
-@property(readonly, nonatomic) _Bool isHEIF; // @synthesize isHEIF=_isHEIF;
-@property(readonly, nonatomic) _Bool isJPEG2000; // @synthesize isJPEG2000=_isJPEG2000;
-@property(retain, nonatomic) PHImportAssetFilePresenter *filePresenter; // @synthesize filePresenter=_filePresenter;
 @property unsigned char duplicateStateConfidence; // @synthesize duplicateStateConfidence=_duplicateStateConfidence;
 @property(retain, nonatomic) id uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
@@ -146,6 +128,8 @@
 @property(readonly) id sizeKey;
 @property(readonly) NSDate *dateKey;
 @property(readonly) id nameKey;
+@property(readonly, nonatomic) NSString *assetDescription;
+@property(readonly, nonatomic) NSString *title;
 @property(readonly, nonatomic) NSTimeZone *exifTimeZone;
 - (id)timezoneCorrectedExifImageDate;
 @property(readonly) id originatingAssetID;
@@ -175,7 +159,7 @@
 - (void)addBurstAsset:(id)arg1;
 - (_Bool)isAppropriateForUI;
 - (id)xmpSidecar;
-- (id)baseAaeSidecar;
+- (id)originalAaeSidecar;
 - (id)aaeSidecar;
 - (id)slmSidecar;
 - (void)removeSidecarAsset:(id)arg1;
@@ -186,7 +170,6 @@
 - (void)loadSidecarFiles;
 - (id)checkForSidecarWithName:(id)arg1;
 - (id)checkForSidecarWithExtension:(id)arg1;
-- (id)sidecarAssetAtPath:(id)arg1;
 - (unsigned long long)relatedBytes;
 - (id)relatedAssets;
 @property(readonly, nonatomic) unsigned long long approximateBytesRequiredToImport;
@@ -237,12 +220,19 @@
 @property(readonly, nonatomic) _Bool isTimelapse;
 @property(readonly, nonatomic) _Bool isAVCHD;
 @property(readonly, nonatomic) _Bool isSloMo;
-@property(readonly, nonatomic) _Bool isTIFF; // @synthesize isTIFF=_isTIFF;
-@property(readonly, nonatomic) _Bool isRAW; // @synthesize isRAW=_isRAW;
-@property(readonly, nonatomic) _Bool isJPEG; // @synthesize isJPEG=_isJPEG;
-@property(readonly, nonatomic) _Bool isAudio; // @synthesize isAudio=_isAudio;
-@property(readonly, nonatomic) _Bool isMovie; // @synthesize isMovie=_isMovie;
-@property(readonly, nonatomic) _Bool isImage; // @synthesize isImage=_isImage;
+@property(readonly, nonatomic) _Bool isSidecar;
+@property(readonly, nonatomic) _Bool isPSD;
+@property(readonly, nonatomic) _Bool isPNG;
+@property(readonly, nonatomic) _Bool isPDF;
+@property(readonly, nonatomic) _Bool isGIF;
+@property(readonly, nonatomic) _Bool isHEIF;
+@property(readonly, nonatomic) _Bool isTIFF;
+@property(readonly, nonatomic) _Bool isRAW;
+@property(readonly, nonatomic) _Bool isJPEG2000;
+@property(readonly, nonatomic) _Bool isJPEG;
+@property(readonly, nonatomic) _Bool isAudio;
+@property(readonly, nonatomic) _Bool isMovie;
+@property(readonly, nonatomic) _Bool isImage;
 - (_Bool)isValidForReference;
 @property(readonly, nonatomic) _Bool canDelete;
 @property(readonly, nonatomic) _Bool canReference; // @synthesize canReference=_canReference;

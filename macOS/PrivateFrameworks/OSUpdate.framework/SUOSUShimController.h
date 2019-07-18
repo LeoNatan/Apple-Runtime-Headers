@@ -81,6 +81,7 @@
 - (id)_createProgress;
 - (void)_promptAndQueueDownloadedUpdatesRequiringPostInstallAction:(id)arg1;
 - (void)_startDownloadingAndArmRestartCountdownForUpdates:(id)arg1 nowIsLater:(BOOL)arg2 shouldConfirm:(BOOL)arg3;
+- (void)_installConfigDataUpdateWithProductKeys:(id)arg1;
 - (void)_startInstallingUpdatesRequiringNoPostInstallAction:(id)arg1 inForeground:(BOOL)arg2 nowIsLater:(BOOL)arg3 mdmInitiated:(BOOL)arg4;
 - (BOOL)_authorizeForInstall;
 - (void)_startInstallingUpdates:(id)arg1 isDoItLaterUpdate:(BOOL)arg2 inForeground:(BOOL)arg3 mdmInitiated:(BOOL)arg4;
@@ -93,6 +94,7 @@
 - (BOOL)_prepareForInstallingUpdates:(id)arg1 isDoItLater:(BOOL)arg2;
 - (void)_startShowingProgressForProductKeys:(id)arg1;
 - (id)_productKeysInActiveForegroundTransactions;
+- (void)startInstallingMajorOSVersion:(id)arg1 orWithMajorOSBundleIdentifier:(id)arg2 majorOSVariant:(id)arg3 shouldOpenIA:(BOOL)arg4 inForeground:(BOOL)arg5 isMDMInitiated:(BOOL)arg6 fromAvailableMajorUpdates:(id)arg7;
 - (void)startInstallingMajorOSVersion:(id)arg1 orWithMajorOSBundleIdentifier:(id)arg2 majorOSVariant:(id)arg3 shouldOpenIA:(BOOL)arg4 inForeground:(BOOL)arg5 isMDMInitiated:(BOOL)arg6;
 - (BOOL)resetToProductionCatalog;
 - (BOOL)unenrollFromSeedProgram;
@@ -105,6 +107,7 @@
 - (void)_handleAvailableUpdatesChangedWithNotificationNamed:(id)arg1;
 - (void)_registerForStateChangeNotifications;
 - (void)_startUpAndDetermineCurrentState;
+- (void)removeAllNotifications;
 - (BOOL)availableUpdatesDownloaded;
 - (id)queuedForLaterUpdates;
 - (void)queueUpdatesForLater:(id)arg1;

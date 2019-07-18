@@ -9,10 +9,12 @@
 @interface _TtC5TeaUI15ContextMenuItem : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: identifier
-    // Error parsing type: , name: image
+    // Error parsing type: , name: imageBlock
     // Error parsing type: , name: style
+    // Error parsing type: , name: optionsBlock
     // Error parsing type: , name: actionBlock
     // Error parsing type: , name: titleBlock
+    // Error parsing type: , name: canExecute
 }
 
 @end

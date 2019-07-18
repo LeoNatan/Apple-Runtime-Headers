@@ -22,6 +22,7 @@
 - (id)_performValidation;
 - (id)_updateEvents;
 - (id)_allActionSets;
+@property(readonly, nonatomic) _Bool locationCanBeEdited;
 @property(readonly, nonatomic) _Bool isCustomLocationTrigger;
 - (_Bool)requiresFMFDeviceToRun;
 - (_Bool)requiresLocationServicesAuthorization;

@@ -11,7 +11,7 @@
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
 #import <PassKitUI/PKPostalAddressEditorViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSButton, NSImage, NSNumberFormatter, NSPopUpButton, NSString, NSTabView, NSTabViewItem, NSTableView, NSTextField, NSView, NSWindow, PKInAppPaymentService, PKPassLibrary, PKPaymentCardVerificationViewController, PKPaymentOptionsDefaults, PKPaymentPass, PKPaymentPreferenceContact, PKPaymentService;
+@class NSArray, NSButton, NSImage, NSNumberFormatter, NSPopUpButton, NSProgressIndicator, NSString, NSTabView, NSTabViewItem, NSTableView, NSTextField, NSView, NSWindow, PKInAppPaymentService, PKPassLibrary, PKPaymentCardVerificationViewController, PKPaymentOptionsDefaults, PKPaymentPass, PKPaymentPreferenceContact, PKPaymentService;
 
 @interface PKCardInfoViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource, PKPaymentServiceDelegate, PKPostalAddressEditorViewControllerDelegate>
 {
@@ -38,6 +38,7 @@
     NSButton *_automaticallySelectCheckbox;
     NSTextField *_automaticallySelectLabel;
     NSButton *_termsAndConditionsButton;
+    NSProgressIndicator *_termsAndConditionsProgressIndicator;
     NSButton *_privacyPolicyButton;
     NSArray *_transactions;
     NSNumberFormatter *_numberFormatter;
@@ -67,6 +68,7 @@
 @property(retain) NSNumberFormatter *numberFormatter; // @synthesize numberFormatter=_numberFormatter;
 @property(retain) NSArray *transactions; // @synthesize transactions=_transactions;
 @property __weak NSButton *privacyPolicyButton; // @synthesize privacyPolicyButton=_privacyPolicyButton;
+@property __weak NSProgressIndicator *termsAndConditionsProgressIndicator; // @synthesize termsAndConditionsProgressIndicator=_termsAndConditionsProgressIndicator;
 @property __weak NSButton *termsAndConditionsButton; // @synthesize termsAndConditionsButton=_termsAndConditionsButton;
 @property(retain) NSTextField *automaticallySelectLabel; // @synthesize automaticallySelectLabel=_automaticallySelectLabel;
 @property(retain) NSButton *automaticallySelectCheckbox; // @synthesize automaticallySelectCheckbox=_automaticallySelectCheckbox;

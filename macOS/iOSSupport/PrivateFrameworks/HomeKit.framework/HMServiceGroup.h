@@ -40,6 +40,7 @@
 - (id)logIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, copy) NSUUID *applicationDataIdentifier;
 - (void)_registerNotificationHandlers;
 - (void)updateApplicationData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_handleServiceGroupRenamedNotification:(id)arg1;

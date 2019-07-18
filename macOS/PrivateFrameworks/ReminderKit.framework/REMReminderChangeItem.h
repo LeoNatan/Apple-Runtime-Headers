@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (id)resolutionTokenKeyForChangedKey:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)changedKeys;
@@ -102,12 +103,13 @@
 @property(nonatomic) long long flagged; // @dynamic flagged;
 @property(readonly) unsigned long long hash;
 @property(retain, nonatomic) NSData *importedICSData; // @dynamic importedICSData;
+@property(readonly, nonatomic) BOOL isOverdue; // @dynamic isOverdue;
 @property(copy, nonatomic) NSDate *lastBannerPresentationDate; // @dynamic lastBannerPresentationDate;
 @property(copy, nonatomic) NSDate *lastModifiedDate; // @dynamic lastModifiedDate;
+@property(readonly, copy, nonatomic) NSString *legacyNotificationIdentifier; // @dynamic legacyNotificationIdentifier;
 @property(retain, nonatomic) REMObjectID *listID; // @dynamic listID;
 @property(retain, nonatomic) REMCRMergeableStringDocument *notesDocument; // @dynamic notesDocument;
 @property(retain, nonatomic) REMObjectID *objectID; // @dynamic objectID;
-@property(readonly, nonatomic, getter=isOverdue) BOOL overdue; // @dynamic overdue;
 @property(retain, nonatomic) REMObjectID *parentReminderID; // @dynamic parentReminderID;
 @property(nonatomic) unsigned long long priority; // @dynamic priority;
 @property(retain, nonatomic) NSArray *recurrenceRules; // @dynamic recurrenceRules;

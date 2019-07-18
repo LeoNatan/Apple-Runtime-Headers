@@ -37,6 +37,8 @@ __attribute__((visibility("hidden")))
 - (double)scoreSong:(id)arg1 withMusicGenreDistribution:(id)arg2;
 - (double)scoreSong:(id)arg1 withKeywords:(id)arg2;
 - (double)scoreSong:(id)arg1 withMoodID:(id)arg2;
+- (double)scoreLocalityForSong:(id)arg1;
+- (void)storeDatePlayedForSongID:(id)arg1;
 - (void)purgeAllLocalCachedAssets;
 - (BOOL)songHasSpecialKeyword:(id)arg1;
 - (id)unusedLocalSongsForMoodID:(id)arg1;

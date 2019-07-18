@@ -40,6 +40,8 @@
 - (id)didSelectItem:(id)arg1;
 - (id)_titleString;
 - (void)_dispatchUpdateForCameraProfile:(id)arg1;
+- (void)presentMissingSupportedHubAlert;
+- (void)presentInsufficientPrivilegesAlert;
 - (void)presentCloudUpgradeFlowWithCameraCount:(unsigned long long)arg1;
 - (id)updateStreamingSetting:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long accessModeSetting;

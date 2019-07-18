@@ -10,7 +10,7 @@
 #import <Silex/SXFullscreenCanvasViewControllerDelegate-Protocol.h>
 #import <Silex/UIGestureRecognizerDelegate-Protocol.h>
 
-@class MKMapView, NSArray, NSMutableDictionary, NSString, SXFullscreenCanvasViewController, SXMapSnapShotter, SXMediaEngageEvent, UIBarButtonItem, UIImageView, UISegmentedControl, UITapGestureRecognizer;
+@class MKMapView, NSArray, NSCache, NSString, SXFullscreenCanvasViewController, SXMapSnapShotter, SXMediaEngageEvent, UIBarButtonItem, UIImageView, UISegmentedControl, UITapGestureRecognizer;
 @protocol SXDocumentTitleProviding;
 
 @interface SXMapComponentView : SXMediaComponentView <UIGestureRecognizerDelegate, MKMapViewDelegate, SXFullscreenCanvasViewControllerDelegate>
@@ -23,24 +23,20 @@
     SXFullscreenCanvasViewController *_fullScreenCanvasViewController;
     UISegmentedControl *_segmentedControl;
     NSArray *_toolbarItems;
-    NSMutableDictionary *_cachedSnapshots;
     SXMapSnapShotter *_snapShotter;
     UIImageView *_imageView;
     CDUnknownBlockType _snapShotCancelHandler;
+    NSCache *_cachedSnapshots;
     SXMediaEngageEvent *_activeMediaEngageEvent;
-    struct CGSize _snapShotViewportSize;
-    struct CGSize _snapShotSize;
     CDStruct_02837cd9 _mapRect;
 }
 
 @property(retain, nonatomic) SXMediaEngageEvent *activeMediaEngageEvent; // @synthesize activeMediaEngageEvent=_activeMediaEngageEvent;
-@property(nonatomic) CDStruct_02837cd9 mapRect; // @synthesize mapRect=_mapRect;
-@property(nonatomic) struct CGSize snapShotSize; // @synthesize snapShotSize=_snapShotSize;
-@property(nonatomic) struct CGSize snapShotViewportSize; // @synthesize snapShotViewportSize=_snapShotViewportSize;
+@property(readonly, nonatomic) NSCache *cachedSnapshots; // @synthesize cachedSnapshots=_cachedSnapshots;
 @property(copy, nonatomic) CDUnknownBlockType snapShotCancelHandler; // @synthesize snapShotCancelHandler=_snapShotCancelHandler;
-@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-@property(retain, nonatomic) SXMapSnapShotter *snapShotter; // @synthesize snapShotter=_snapShotter;
-@property(retain, nonatomic) NSMutableDictionary *cachedSnapshots; // @synthesize cachedSnapshots=_cachedSnapshots;
+@property(nonatomic) CDStruct_02837cd9 mapRect; // @synthesize mapRect=_mapRect;
+@property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
+@property(readonly, nonatomic) SXMapSnapShotter *snapShotter; // @synthesize snapShotter=_snapShotter;
 @property(retain, nonatomic) NSArray *toolbarItems; // @synthesize toolbarItems=_toolbarItems;
 @property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(retain, nonatomic) SXFullscreenCanvasViewController *fullScreenCanvasViewController; // @synthesize fullScreenCanvasViewController=_fullScreenCanvasViewController;
@@ -75,7 +71,7 @@
 - (CDStruct_2b0c6e0b)region;
 - (void)cancelSnapShot;
 - (void)createSnapShot;
-- (BOOL)shouldCreateSnapShot;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)discardContents;
 - (void)presentComponentWithChanges:(CDStruct_74be42e1)arg1;
 - (void)renderContents;

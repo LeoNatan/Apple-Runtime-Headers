@@ -6,33 +6,19 @@
 
 #import <HealthKit/HKQuery.h>
 
-#import <HealthMenstrualCycles/HKMCAnalysisQueryClientInterface-Protocol.h>
-
-@class NSString;
-
-@interface HKMCAnalysisQuery : HKQuery <HKMCAnalysisQueryClientInterface>
+@interface HKMCAnalysisQuery : HKQuery
 {
     CDUnknownBlockType _updateHandler;
-    _Bool _shouldForceAnalysis;
 }
 
 + (id)clientInterfaceProtocol;
-+ (Class)configurationClass;
 - (void).cxx_destruct;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (_Bool)queue_shouldDeactivateAfterInitialResults;
 - (void)queue_validate;
 - (void)queue_deliverError:(id)arg1;
-- (void)queue_populateConfiguration:(id)arg1;
 - (void)client_deliverAnalysis:(id)arg1 queryUUID:(id)arg2;
-- (id)initWithUpdateHandler:(CDUnknownBlockType)arg1 shouldForceAnalysis:(_Bool)arg2;
 - (id)initWithUpdateHandler:(CDUnknownBlockType)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

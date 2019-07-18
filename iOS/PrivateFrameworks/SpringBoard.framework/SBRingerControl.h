@@ -28,8 +28,7 @@
 - (void)toggleRingerMute;
 - (void)hideRingerHUDIfVisible;
 - (void)activateRingerHUD:(int)arg1;
-- (_Bool)canAcceptVolumeChanges;
-- (_Bool)isHUDVisible;
+- (void)activateRingerHUD;
 - (_Bool)lastSavedRingerMutedState;
 @property(nonatomic, getter=isRingerMuted) _Bool ringerMuted;
 - (id)initWithHUDController:(id)arg1 soundController:(id)arg2;

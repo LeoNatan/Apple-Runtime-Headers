@@ -7,6 +7,6 @@
 #import <WorkflowKit/WFArriveLocationTrigger.h>
 
 @interface WFArriveLocationTrigger (CoreDuetContext)
-+ (id)triggerTypeIconName;
++ (id)triggerTypeIcon;
 @end
 

@@ -34,7 +34,6 @@
 - (id)_ringColumn;
 - (id)_valueUnitAttributedStringWithValueString:(id)arg1 unitString:(id)arg2;
 - (id)_percentStringWithQuantity:(id)arg1 goalQuantity:(id)arg2;
-- (_Bool)_columnsAreAverage;
 - (id)_moveColumnValueString;
 - (id)_moveColumn;
 - (id)_energyColumn;
@@ -47,6 +46,7 @@
 - (id)_standColumnValueString;
 - (id)_standColumnTitle;
 - (_Bool)_hasRingView;
+- (_Bool)showSeparators;
 - (id)valueViewForColumnAtIndex:(int)arg1 orientation:(int)arg2;
 - (int)numberOfValuesForAnnotationView:(id)arg1;
 - (id)leftMarginViewWithOrientation:(int)arg1;

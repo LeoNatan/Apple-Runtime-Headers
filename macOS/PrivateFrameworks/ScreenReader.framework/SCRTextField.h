@@ -38,8 +38,6 @@ __attribute__((visibility("hidden")))
 - (void)readCurrentStyleInfo:(id)arg1;
 - (BOOL)isControlElement;
 - (BOOL)handleEvent:(id)arg1 request:(id)arg2;
-- (BOOL)performBrailleReplaceTextRangeWithEvent:(id)arg1 request:(id)arg2;
-- (BOOL)performBrailleStartEditingWithEvent:(id)arg1 request:(id)arg2;
 - (void)sendBrailleLineForEchoRange:(id)arg1 selectionRange:(id)arg2;
 - (id)stringForRange:(id)arg1;
 - (void)echoContentChange;

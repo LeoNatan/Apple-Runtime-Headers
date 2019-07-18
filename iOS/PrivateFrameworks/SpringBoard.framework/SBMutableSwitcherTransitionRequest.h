@@ -15,6 +15,8 @@
 
 // Remaining properties
 @property(retain, nonatomic) SBAppLayout *appLayout; // @dynamic appLayout;
+@property(nonatomic) long long appLayoutEnvironment; // @dynamic appLayoutEnvironment;
+@property(nonatomic) long long dismissInlineAppExpose; // @dynamic dismissInlineAppExpose;
 @property(nonatomic) long long floatingConfiguration; // @dynamic floatingConfiguration;
 @property(nonatomic) long long floatingSwitcherVisible; // @dynamic floatingSwitcherVisible;
 @property(nonatomic) long long unlockedEnvironmentMode; // @dynamic unlockedEnvironmentMode;

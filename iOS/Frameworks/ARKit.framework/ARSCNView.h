@@ -54,7 +54,6 @@
     _Bool _rendersMotionBlur;
     _Bool _providesOcclusionGeometry;
     _Bool _segmentationUseEstimatedDepthData;
-    _Bool _compositorDebug;
     _Bool _shouldRestrictFrameRate;
     _Bool _drawsCameraImage;
     unsigned long long _occlusionExcludedBitMask;
@@ -71,7 +70,6 @@
 @property long long developerPreferredFramesPerSecond; // @synthesize developerPreferredFramesPerSecond=_developerPreferredFramesPerSecond;
 @property long long targetFramesPerSecond; // @synthesize targetFramesPerSecond=_targetFramesPerSecond;
 @property _Bool shouldRestrictFrameRate; // @synthesize shouldRestrictFrameRate=_shouldRestrictFrameRate;
-@property(nonatomic) _Bool compositorDebug; // @synthesize compositorDebug=_compositorDebug;
 @property(nonatomic) _Bool segmentationUseEstimatedDepthData; // @synthesize segmentationUseEstimatedDepthData=_segmentationUseEstimatedDepthData;
 @property(nonatomic) _Bool providesOcclusionGeometry; // @synthesize providesOcclusionGeometry=_providesOcclusionGeometry;
 @property(nonatomic) _Bool rendersMotionBlur; // @synthesize rendersMotionBlur=_rendersMotionBlur;

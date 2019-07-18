@@ -12,7 +12,7 @@
 }
 
 @property(readonly, nonatomic) _Bool presentedSingleColumn; // @synthesize presentedSingleColumn=_presentedSingleColumn;
-- (void)updateContentSize:(out struct CGSize *)arg1 itemRects:(out struct CGRect *)arg2;
+- (void)updateContentSize:(out struct CGSize *)arg1 itemRects:(out struct CGRect *)arg2 itemKinds:(out long long *)arg3;
 
 @end
 

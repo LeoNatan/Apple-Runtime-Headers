@@ -9,7 +9,6 @@
 @class PKAccountServiceAccountResolutionController, UIViewController;
 
 @protocol PKAccountServiceAccountResolutionControllerDelegate <NSObject>
-- (void)accountServiceAccountResolutionController:(PKAccountServiceAccountResolutionController *)arg1 requestsDismissCurrentViewControllerAnimated:(_Bool)arg2;
 - (void)accountServiceAccountResolutionController:(PKAccountServiceAccountResolutionController *)arg1 requestsPresentViewController:(UIViewController *)arg2 animated:(_Bool)arg3;
 @end
 

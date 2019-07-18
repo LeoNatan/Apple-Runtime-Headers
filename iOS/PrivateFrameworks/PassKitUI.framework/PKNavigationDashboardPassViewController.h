@@ -98,6 +98,7 @@
 - (void)presentTransaction:(id)arg1 forPaymentPass:(id)arg2;
 - (id)_barcodePassDetailsViewControllerForBarcodePass:(id)arg1;
 - (id)_paymentPassDetailsViewControllerForPaymentPass:(id)arg1;
+- (void)presentDailyCashForComponents:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_canPresentCreditDetailsViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)presentBalanceDetailsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)summaryTypeDidChange;

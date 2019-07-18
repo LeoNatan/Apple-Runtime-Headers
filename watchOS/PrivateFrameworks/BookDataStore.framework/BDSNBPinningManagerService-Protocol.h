@@ -6,11 +6,13 @@
 
 #import <BookDataStore/NSObject-Protocol.h>
 
-@class NSNumber;
+@class NSNumber, NSProgress;
 
 @protocol BDSNBPinningManagerService <NSObject>
 - (void)updateBitrateForItemWithAdamID:(NSNumber *)arg1 completion:(void (^)(NSError *))arg2;
-- (void)updateWantToReadAndReadingNowWithCompletion:(void (^)(NSError *))arg1;
+- (NSProgress *)updateReadingNowWithCompletion:(void (^)(NSError *))arg1;
+- (NSProgress *)updateWantToReadWithCompletion:(void (^)(NSError *))arg1;
+- (NSProgress *)updateWantToReadAndReadingNowWithCompletion:(void (^)(NSError *))arg1;
 - (void)fetchMostRecentAudiobookWithCompletion:(void (^)(NSString *, NSError *))arg1;
 @end
 

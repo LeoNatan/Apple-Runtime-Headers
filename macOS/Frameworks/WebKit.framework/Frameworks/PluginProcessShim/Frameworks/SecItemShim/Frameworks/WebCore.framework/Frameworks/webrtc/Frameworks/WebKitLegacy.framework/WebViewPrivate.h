@@ -79,10 +79,6 @@ __attribute__((visibility("hidden")))
     NSString *mediaStyle;
     BOOL hasSpellCheckerDocumentTag;
     long long spellCheckerDocumentTag;
-    BOOL dashboardBehaviorAlwaysSendMouseEventsToAllWindows;
-    BOOL dashboardBehaviorAlwaysSendActiveNullEventsToPlugIns;
-    BOOL dashboardBehaviorAlwaysAcceptsFirstMouse;
-    BOOL dashboardBehaviorAllowWheelScrolling;
     WebPluginDatabase *pluginDatabase;
     struct HashMap<unsigned long, WTF::RetainPtr<id>, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id>>> identifierMap;
     BOOL _keyboardUIModeAccessed;

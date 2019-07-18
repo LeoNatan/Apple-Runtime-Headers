@@ -11,17 +11,16 @@ __attribute__((visibility("hidden")))
 {
     struct CGImage *_imageRef;
     long long _orientation;
-    CDUnknownBlockType _orientationDeterminedAction;
 }
 
 + (void)flushCaches;
-@property(copy, nonatomic) CDUnknownBlockType orientationDeterminedAction; // @synthesize orientationDeterminedAction=_orientationDeterminedAction;
-- (void).cxx_destruct;
+- (long long)waitForOrientation;
 - (struct CGImage *)waitForImageRef;
 - (void)dealloc;
-- (void)start;
 @property(readonly, nonatomic) _Bool _isHardwareBased;
-- (id)initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize)arg2 renderingIntent:(int)arg3 cache:(_Bool)arg4;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
+- (id)initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize)arg2 renderingIntent:(unsigned long long)arg3 cache:(_Bool)arg4;
 
 @end
 

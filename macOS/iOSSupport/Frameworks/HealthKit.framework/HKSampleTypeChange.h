@@ -12,15 +12,17 @@
 
 @interface HKSampleTypeChange : NSObject <NSSecureCoding>
 {
+    BOOL _samplesWereDeleted;
     HKSampleType *_sampleType;
     double _startTime;
     double _endTime;
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)sampleTypeChangeWithSampleType:(id)arg1 dateInterval:(id)arg2;
++ (id)sampleTypeChangeWithSampleType:(id)arg1 dateInterval:(id)arg2 samplesWereDeleted:(BOOL)arg3;
 @property(readonly, nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
+@property(readonly, nonatomic) BOOL samplesWereDeleted; // @synthesize samplesWereDeleted=_samplesWereDeleted;
 @property(readonly, copy, nonatomic) HKSampleType *sampleType; // @synthesize sampleType=_sampleType;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -29,7 +31,7 @@
 - (id)description;
 - (void)_extendDateIntervalWithSample:(id)arg1;
 @property(readonly, copy, nonatomic) NSDateInterval *dateInterval;
-- (id)_initWithSampleType:(id)arg1 startTime:(double)arg2 endTime:(double)arg3;
+- (id)_initWithSampleType:(id)arg1 startTime:(double)arg2 endTime:(double)arg3 deletions:(BOOL)arg4;
 
 @end
 

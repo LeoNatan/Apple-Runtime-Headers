@@ -36,6 +36,7 @@
 - (_Bool)isTrashed;
 - (_Bool)isAudio;
 - (_Bool)isVideo;
+- (_Bool)isPhoto;
 - (_Bool)isHidden;
 - (_Bool)isFavorite;
 @end

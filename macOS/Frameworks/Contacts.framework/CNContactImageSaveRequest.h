@@ -15,10 +15,13 @@
     NSArray *_contactIdentifiers;
     CNContactImage *_image;
     long long _operationType;
+    NSString *_attributeName;
 }
 
++ (id)saveRequestToDeleteImageForIdentifier:(id)arg1;
 + (id)saveRequestToDeleteImagesForContactIdentifiers:(id)arg1;
 + (id)saveRequestToCreateImage:(id)arg1 forContactIdentifier:(id)arg2;
+@property(readonly, nonatomic) NSString *attributeName; // @synthesize attributeName=_attributeName;
 @property(readonly, nonatomic) long long operationType; // @synthesize operationType=_operationType;
 @property(readonly, nonatomic) CNContactImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSArray *contactIdentifiers; // @synthesize contactIdentifiers=_contactIdentifiers;
@@ -26,7 +29,7 @@
 - (id)createStoreRequest;
 - (id)deleteStoreRequest;
 @property(readonly, nonatomic) NSPersistentStoreRequest *persistentStoreRequest;
-- (id)initWithContactImage:(id)arg1 contactIdentifiers:(id)arg2 operationType:(long long)arg3;
+- (id)initWithContactImage:(id)arg1 contactIdentifiers:(id)arg2 attributeName:(id)arg3 operationType:(long long)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

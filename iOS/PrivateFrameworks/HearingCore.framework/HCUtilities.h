@@ -10,9 +10,9 @@
 {
 }
 
++ (_Bool)deviceIsPhone;
 + (_Bool)watchSupportsPairingHearingAids;
 + (_Bool)deviceHasHomeButton;
-+ (_Bool)deviceIsPhone;
 + (_Bool)deviceIsPod;
 + (_Bool)deviceIsWatch;
 + (_Bool)deviceIsPad;

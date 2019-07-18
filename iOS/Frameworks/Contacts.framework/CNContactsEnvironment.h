@@ -9,7 +9,7 @@
 #import <Contacts/NSCopying-Protocol.h>
 
 @class CNiOSABPredicateRunner, CNiOSAddressBook, NSArray, NSURL;
-@protocol CNContactsLoggerProvider, CNSchedulerProvider, SGSuggestionsServiceContactsProtocol;
+@protocol CNContactsLoggerProvider, CNSchedulerProvider, CNSiriIntelligenceSettingsProtocol, SGSuggestionsServiceContactsProtocol;
 
 @interface CNContactsEnvironment : NSObject <NSCopying>
 {
@@ -17,6 +17,7 @@
     id <CNSchedulerProvider> _schedulerProvider;
     NSURL *_baseURL;
     id <SGSuggestionsServiceContactsProtocol> _suggestionsService;
+    id <CNSiriIntelligenceSettingsProtocol> _siriIntelligenceSettings;
     NSArray *_delegateInfos;
     CNiOSABPredicateRunner *_abPredicateRunner;
     id <CNContactsLoggerProvider> _loggerProvider;
@@ -34,6 +35,7 @@
 @property(readonly, nonatomic) id <CNContactsLoggerProvider> loggerProvider; // @synthesize loggerProvider=_loggerProvider;
 @property(retain, nonatomic) CNiOSABPredicateRunner *abPredicateRunner; // @synthesize abPredicateRunner=_abPredicateRunner;
 @property(retain, nonatomic) NSArray *delegateInfos; // @synthesize delegateInfos=_delegateInfos;
+@property(retain, nonatomic) id <CNSiriIntelligenceSettingsProtocol> siriIntelligenceSettings; // @synthesize siriIntelligenceSettings=_siriIntelligenceSettings;
 @property(retain, nonatomic) id <SGSuggestionsServiceContactsProtocol> suggestionsService; // @synthesize suggestionsService=_suggestionsService;
 @property(copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;

@@ -16,7 +16,7 @@
 #import <PhotosUI/UITableViewDataSourcePrefetching-Protocol.h>
 #import <PhotosUI/UITableViewDelegate-Protocol.h>
 
-@class NSIndexPath, NSString, PUSearchResultsFooterView, PXSearchLoggingUtility, PXSearchResultsOneUpViewModel, PXSearchResultsSectionedDataSourceManager, PXSearchResultsViewModel, UISearchController, UITableView;
+@class NSIndexPath, NSString, PUSearchResultsFooterView, PXSearchAnalyticsSession, PXSearchLoggingUtility, PXSearchResultsOneUpViewModel, PXSearchResultsSectionedDataSourceManager, PXSearchResultsViewModel, UISearchController, UITableView;
 
 @interface PUSearchResultsViewController : UIViewController <PXOneUpPresentationDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching, UITableViewDelegate, PUSearchResultsFooterViewDelegate, PXSearchResultsLayoutDataSource, PXSearchResultsSectionedDataSourceChangeObserver, UISearchResultsUpdating>
 {
@@ -25,6 +25,7 @@
     _Bool _shouldMergePendingChanges;
     UISearchController *_searchController;
     CDUnknownBlockType _siriSearchCompletionHandler;
+    unsigned long long _nextAnalyticsSessionBeginType;
     PUSearchResultsFooterView *_tableFooterView;
     UITableView *_searchResultsTableView;
     NSIndexPath *_selectedTopAssetsResultIndexPath;
@@ -32,6 +33,7 @@
     PXSearchLoggingUtility *_suggestionsAggdLogHelper;
     PXSearchResultsOneUpViewModel *_oneUpViewModel;
     PXSearchResultsSectionedDataSourceManager *_dataSourceManager;
+    PXSearchAnalyticsSession *_analyticsSession;
     CDUnknownBlockType _ppt_searchTestCompletionHandler;
 }
 
@@ -39,6 +41,7 @@
 + (id)_gridViewControllerSpec;
 + (id)_newSearchResultsControllerWithSpec:(id)arg1 searchResults:(id)arg2 orAlbum:(struct NSObject *)arg3 title:(id)arg4 headerViewTitle:(id)arg5;
 @property(copy, nonatomic) CDUnknownBlockType ppt_searchTestCompletionHandler; // @synthesize ppt_searchTestCompletionHandler=_ppt_searchTestCompletionHandler;
+@property(retain, nonatomic) PXSearchAnalyticsSession *analyticsSession; // @synthesize analyticsSession=_analyticsSession;
 @property(nonatomic) _Bool shouldMergePendingChanges; // @synthesize shouldMergePendingChanges=_shouldMergePendingChanges;
 @property(nonatomic) _Bool aggdSearchSucceeded; // @synthesize aggdSearchSucceeded=_aggdSearchSucceeded;
 @property(retain, nonatomic) PXSearchResultsSectionedDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
@@ -49,21 +52,23 @@
 @property(retain, nonatomic) NSIndexPath *selectedTopAssetsResultIndexPath; // @synthesize selectedTopAssetsResultIndexPath=_selectedTopAssetsResultIndexPath;
 @property(retain, nonatomic) UITableView *searchResultsTableView; // @synthesize searchResultsTableView=_searchResultsTableView;
 @property(retain, nonatomic) PUSearchResultsFooterView *tableFooterView; // @synthesize tableFooterView=_tableFooterView;
+@property(nonatomic) unsigned long long nextAnalyticsSessionBeginType; // @synthesize nextAnalyticsSessionBeginType=_nextAnalyticsSessionBeginType;
 @property(copy, nonatomic) CDUnknownBlockType siriSearchCompletionHandler; // @synthesize siriSearchCompletionHandler=_siriSearchCompletionHandler;
 @property(nonatomic) __weak UISearchController *searchController; // @synthesize searchController=_searchController;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (void)ppt_expandAllSections;
 - (void)_preferredContentSizeChanged:(id)arg1;
+- (double)topAssetGridCustomWidthMargin;
+- (struct CGSize)topAssetThumbnailViewSize;
 - (void)topResultCell:(id)arg1 didSelectAssetIndex:(unsigned long long)arg2 inRect:(struct CGRect)arg3 withNumberOfImages:(unsigned long long)arg4;
-- (double)interItemSpacing;
+- (double)topAssetThumbnailInterItemSpacing;
 - (void)viewWillLayoutSubviews;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)_thumbnailAssetsForIndexPaths:(id)arg1;
 - (void)tableView:(id)arg1 cancelPrefetchingForRowsAtIndexPaths:(id)arg2;
 - (void)tableView:(id)arg1 prefetchRowsAtIndexPaths:(id)arg2;
-- (void)_handleTopAssetsDidChangeForSearchResult:(id)arg1;
 - (void)searchResultsDataSource:(id)arg1 didChangeThumbnailAssetsForSearchResult:(id)arg2 atIndexes:(id)arg3;
 - (void)searchResultsDataSource:(id)arg1 didChangeThumbnailAssetsForSearchResult:(id)arg2 topAssetsSectionExists:(_Bool)arg3;
 - (void)searchResultsDataSource:(id)arg1 didFetchAssetsForSearchResult:(id)arg2 indexPath:(id)arg3;
@@ -72,14 +77,21 @@
 - (_Bool)_rowShouldAllowTapForIndexPath:(id)arg1;
 - (unsigned long long)maximumNumberSuggestionRows;
 - (double)_collectiveInterItemSpacing;
-- (double)_collectiveMarginWidth;
+- (double)_marginWidthTotal;
 - (double)_availableContentWidth;
 - (struct CGSize)imageSize;
+- (void)_endAnalyticsSession;
+- (void)_notifyAnalyticsSearchResult:(id)arg1;
+- (void)_notifyAnalyticsOneUpTopAssets;
+- (void)_notifyAnalyticsInteractedWithCurrentSearch;
+- (void)_notifyAnalyticsSearchChanged;
+- (void)_unregisterNotificationsForAnalytics;
+- (void)_registerNotificationsForAnalytics;
 - (struct CGSize)imageViewSize;
 - (unsigned long long)maximumNumberOfThumbnailsPerRow;
 - (unsigned long long)maximumNumberWordEmbeddingRows;
 - (void)shouldShowSearchResultsController:(_Bool)arg1;
-- (void)updateSearchResultsTableTopAssetsSectionWithFetchResult:(id)arg1;
+- (void)updateSearchResultsTableTopAssetsSectionWithResult:(id)arg1;
 - (void)updateSearchResultsTableAtIndexPath:(id)arg1;
 - (void)updateSearchResultsTable;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
@@ -104,6 +116,7 @@
 - (void)updateTableFooterViewFrame;
 - (void)_updateIndexingProgressViewVisibility:(_Bool)arg1;
 - (void)_setupResultsTableView;
+- (void)prepareDataSource;
 - (id)init;
 - (_Bool)_shouldApplyReadabilityInset;
 - (id)_configureSearchResultsCellInTableView:(id)arg1 atIndexPath:(id)arg2;

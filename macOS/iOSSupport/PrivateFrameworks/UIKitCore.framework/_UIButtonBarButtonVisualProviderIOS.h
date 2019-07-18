@@ -55,7 +55,7 @@ __attribute__((visibility("hidden")))
 - (double)_defaultPaddingForInsets:(struct UIEdgeInsets)arg1;
 - (double)_defaultBackIndicatorBaselineInsetCompact:(BOOL)arg1;
 - (struct UIEdgeInsets)_insetsForCompact:(BOOL)arg1;
-- (void)_addConstraintsForBackgroundImageWithOffset:(double)arg1 isBackButton:(BOOL)arg2;
+- (void)_addConstraintsForBackgroundImageWithOffset:(double)arg1 isBackButton:(BOOL)arg2 resizesImage:(BOOL)arg3;
 - (void)_configureBackgroundFromBarButtonItem:(id)arg1 isBackButton:(BOOL)arg2;
 - (void)_configureImageOrTitleFromBarButtonItem:(id)arg1 compact:(BOOL)arg2;
 - (void)_removeTitleButton;

@@ -12,7 +12,7 @@
 #import <CarPlay/_UISceneUIWindowHosting-Protocol.h>
 
 @class CPInterfaceController, CPWindow, NSString, UIScreen, UITraitCollection, _UIContextBinder;
-@protocol CPTemplateApplicationSceneDelegate, UICoordinateSpace;
+@protocol CPTemplateApplicationSceneDelegate, NSObject, UICoordinateSpace;
 
 @interface CPTemplateApplicationScene : UIScene <_UIContextBinderContextCreationPolicyHolding, CPWindowProviding, _UISceneUIWindowHosting, UICoordinateSpace>
 {
@@ -20,6 +20,9 @@
     UIScreen *_screen;
     UITraitCollection *_traitCollection;
     long long _screenRequestedOverscanCompensation;
+    id <NSObject> _sceneWillConnectObserver;
+    id <NSObject> _didFinishLaunchingObserver;
+    _Bool _sceneWillConnect;
     CPWindow *_carWindow;
     CPInterfaceController *_interfaceController;
     struct CGRect _bounds;
@@ -30,8 +33,9 @@
 @property(readonly, nonatomic) CPInterfaceController *interfaceController; // @synthesize interfaceController=_interfaceController;
 @property(retain, nonatomic) CPWindow *carWindow; // @synthesize carWindow=_carWindow;
 - (void).cxx_destruct;
+- (struct UIEdgeInsets)_safeAreaInsetsForInterfaceOrientation:(long long)arg1;
 - (id)_definition;
-- (CDUnknownBlockType)_connectionBlock;
+- (void)_deliverInterfaceControllerToDelegate;
 - (id)_componentForKey:(id)arg1;
 - (id)_fbsSceneLayerForWindow:(id)arg1;
 - (void)updateLayoutGuideWithInsets:(struct UIEdgeInsets)arg1;
@@ -57,7 +61,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(retain, nonatomic) id <CPTemplateApplicationSceneDelegate> delegate;
+@property(retain, nonatomic) id <CPTemplateApplicationSceneDelegate> delegate; // @dynamic delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

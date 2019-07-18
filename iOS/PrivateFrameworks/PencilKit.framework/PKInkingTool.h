@@ -17,6 +17,7 @@
 + (double)_calculateEdgeWidthForWeight:(double)arg1 type:(id)arg2;
 + (double)_calculateWidthForWeight:(double)arg1 type:(id)arg2;
 + (CDStruct_5237edf5)_contextForStroke:(id)arg1 weight:(double)arg2 type:(id)arg3;
++ (id)convertColor:(id)arg1 fromUserInterfaceStyle:(long long)arg2 to:(long long)arg3;
 + (double)maximumWidthForInkType:(id)arg1;
 + (double)minimumWidthForInkType:(id)arg1;
 + (double)defaultWidthForInkType:(id)arg1;

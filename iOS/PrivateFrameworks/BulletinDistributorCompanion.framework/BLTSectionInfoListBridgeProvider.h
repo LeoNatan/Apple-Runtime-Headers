@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-#import <BulletinDistributorCompanion/BLTSectionInfoListProvider-Protocol.h>
+#import <BulletinDistributorCompanion/BLTSectionInfoListOverrideProvider-Protocol.h>
 #import <BulletinDistributorCompanion/LSApplicationWorkspaceObserverProtocol-Protocol.h>
 
 @class BLTSectionConfiguration, NPSDomainAccessor, NSDate, NSString;
 @protocol BLTSectionInfoListProviderDelegate;
 
-@interface BLTSectionInfoListBridgeProvider : NSObject <LSApplicationWorkspaceObserverProtocol, BLTSectionInfoListProvider>
+@interface BLTSectionInfoListBridgeProvider : NSObject <LSApplicationWorkspaceObserverProtocol, BLTSectionInfoListOverrideProvider>
 {
     struct _opaque_pthread_mutex_t _lock;
     NSDate *_lastKnownBridgeSettingsChangeDate;

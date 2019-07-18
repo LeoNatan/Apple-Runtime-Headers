@@ -6,8 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <HomeKitDaemon/HMBCloudZoneDelegate-Protocol.h>
-#import <HomeKitDaemon/HMBLocalZoneDelegate-Protocol.h>
+#import <HomeKitDaemon/HMBLocalZoneModelObserver-Protocol.h>
 #import <HomeKitDaemon/HMDCloudShareMessengerDelegate-Protocol.h>
 #import <HomeKitDaemon/HMDCloudShareParticipantsManagerDataSource-Protocol.h>
 #import <HomeKitDaemon/HMDCloudShareParticipantsManagerDelegate-Protocol.h>
@@ -18,7 +17,7 @@
 @class HMBCloudZone, HMBLocalZone, HMDCloudShareMessenger, HMDCloudShareParticipantsManager, NSString, NSUUID;
 @protocol HMDAssistantAccessControlModelUpdateReceiver, HMDDatabase, HMDMediaContentProfileAccessControlModelUpdateReceiver, HMDSettingTransactionReceiverProtocol, HMDUserSettingsBackingStoreControllerDelegate, OS_dispatch_queue;
 
-@interface HMDUserSettingsBackingStoreController : NSObject <HMBLocalZoneDelegate, HMBCloudZoneDelegate, HMFLogging, HMDCloudShareParticipantsManagerDataSource, HMDCloudShareParticipantsManagerDelegate, HMDCloudShareMessengerDelegate, HMDDatabaseDelegate, HMDSettingsBackingStoreController>
+@interface HMDUserSettingsBackingStoreController : NSObject <HMBLocalZoneModelObserver, HMFLogging, HMDCloudShareParticipantsManagerDataSource, HMDCloudShareParticipantsManagerDelegate, HMDCloudShareMessengerDelegate, HMDDatabaseDelegate, HMDSettingsBackingStoreController>
 {
     id <HMDUserSettingsBackingStoreControllerDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_workQueue;
@@ -57,8 +56,9 @@
 - (void)runSettingTransaction:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)registerForSettingsTransactions:(id)arg1;
 - (void)_localZone:(id)arg1 updatedModel:(id)arg2 previousModel:(id)arg3 options:(id)arg4 result:(id)arg5;
-- (id)localZone:(id)arg1 updatedModel:(id)arg2 previousModel:(id)arg3 options:(id)arg4;
-- (id)localZone:(id)arg1 deletedModel:(id)arg2 options:(id)arg3;
+- (id)localZone:(id)arg1 didProcessModelUpdate:(id)arg2;
+- (id)localZone:(id)arg1 didProcessModelDeletion:(id)arg2;
+- (id)localZone:(id)arg1 didProcessModelCreation:(id)arg2;
 - (void)messengerDidReceiveInvitationRequest:(id)arg1;
 - (void)messenger:(id)arg1 didReceiveInvitationData:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)manager:(id)arg1 didRequestSendForInvitation:(id)arg2 toUser:(id)arg3;
@@ -78,7 +78,7 @@
 - (id)loadPrivateUserDataModelWithError:(id *)arg1;
 - (void)start;
 - (id)logIdentifier;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2 database:(id)arg3 shareMessenger:(id)arg4;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2 database:(id)arg3 home:(id)arg4 shareMessenger:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

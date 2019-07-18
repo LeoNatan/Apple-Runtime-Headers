@@ -10,7 +10,5 @@
 {
 }
 
-+ (void)load;
-
 @end
 

@@ -9,7 +9,7 @@
 #import <VoiceShortcuts/SYServiceDelegate-Protocol.h>
 #import <VoiceShortcuts/VCCompanionSyncSessionDelegate-Protocol.h>
 
-@class NSSet, NSString, SYService, VCCompanionSyncDebouncer, VCCompanionSyncSession, VCNRDeviceSyncService;
+@class NSSet, NSString, SYService, VCCompanionSyncSession, VCNRDeviceSyncService, WFDebouncer;
 @protocol OS_dispatch_queue, VCCompanionSyncServiceDelegate, VCSyncDataEndpoint;
 
 @interface VCCompanionSyncService : NSObject <SYServiceDelegate, VCCompanionSyncSessionDelegate>
@@ -18,32 +18,35 @@
     SYService *_service;
     NSObject<OS_dispatch_queue> *_queue;
     id <VCSyncDataEndpoint> _syncDataEndpoint;
-    VCCompanionSyncDebouncer *_debouncer;
+    WFDebouncer *_debouncer;
     NSSet *_currentDataHandlers;
     VCCompanionSyncSession *_currentSession;
     VCNRDeviceSyncService *_currentSyncService;
 }
 
-+ (void)initialize;
 @property(copy, nonatomic) VCNRDeviceSyncService *currentSyncService; // @synthesize currentSyncService=_currentSyncService;
 @property(retain, nonatomic) VCCompanionSyncSession *currentSession; // @synthesize currentSession=_currentSession;
 @property(copy, nonatomic) NSSet *currentDataHandlers; // @synthesize currentDataHandlers=_currentDataHandlers;
-@property(readonly, nonatomic) VCCompanionSyncDebouncer *debouncer; // @synthesize debouncer=_debouncer;
+@property(readonly, nonatomic) WFDebouncer *debouncer; // @synthesize debouncer=_debouncer;
 @property(readonly, nonatomic) id <VCSyncDataEndpoint> syncDataEndpoint; // @synthesize syncDataEndpoint=_syncDataEndpoint;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) SYService *service; // @synthesize service=_service;
 @property(nonatomic) __weak id <VCCompanionSyncServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)companionSyncSession:(id)arg1 didUpdateProgress:(double)arg2;
+- (void)companionSyncSessionDidFinishSendingChanges:(id)arg1;
 - (void)companionSyncSession:(id)arg1 didFinishWithError:(id)arg2;
 - (void)service:(id)arg1 didSwitchFromPairingID:(id)arg2 toPairingID:(id)arg3;
 - (void)service:(id)arg1 willSwitchFromPairingID:(id)arg2 toPairingID:(id)arg3;
 - (void)service:(id)arg1 encounteredError:(id)arg2 context:(id)arg3;
 - (_Bool)service:(id)arg1 startSession:(id)arg2 error:(id *)arg3;
+- (void)configureReasonForUnderlyingSession:(id)arg1 withSession:(id)arg2;
 - (void)updateCurrentSyncServiceIfNecessary;
 - (void)updateSyncDataHandlers;
 - (void)resetSession;
 - (void)requestFullResync;
 - (void)requestSyncImmediately;
+- (void)resumeServiceIfNecessary;
 - (void)requestSync;
 - (_Bool)isRunningOnWatch;
 - (void)dealloc;

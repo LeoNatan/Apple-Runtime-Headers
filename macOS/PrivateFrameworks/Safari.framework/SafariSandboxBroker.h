@@ -8,20 +8,27 @@
 
 #import <Safari/SafariSandboxBrokerProtocol-Protocol.h>
 
-@class NSString;
+@class NSMutableDictionary, NSObject, NSString;
+@protocol OS_dispatch_group;
 
 @interface SafariSandboxBroker : WBSSafariSandboxBroker <SafariSandboxBrokerProtocol>
 {
+    NSMutableDictionary *_unarchivingOperations;
+    NSObject<OS_dispatch_group> *_archiveGroup;
 }
 
+- (void).cxx_destruct;
 - (void)migrateResourcesToSandbox:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)synchronouslyRemoveQuarantineHardAttributeFromFileAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)cancelUnarchivingOperationWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)extractArchiveAtPath:(id)arg1 type:(unsigned long long)arg2 identifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)writeWebArchiveWithoutQuarantineFlag:(id)arg1 atURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)synchronouslyIssueExtensionForDirectoryContainingDownloadDestinationAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)issueDevelopModeExtensionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_URLsRelatedToURL:(id)arg1 containingOriginalURL:(char *)arg2;
 - (BOOL)_canHostWriteFileAtURL:(id)arg1;
 - (void)_addFileExtensionToMigratedResources:(id)arg1 forURL:(id)arg2 migrationType:(unsigned long long)arg3 permissions:(long long)arg4;
+- (void)dealloc;
 - (id)initWithPID:(int)arg1 auditToken:(CDStruct_6ad76789)arg2;
 
 // Remaining properties

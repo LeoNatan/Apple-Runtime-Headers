@@ -46,7 +46,6 @@
 + (id)rankedNamedEntitiesWithLimit:(unsigned int)arg1 sinceDate:(id)arg2 error:(id *)arg3;
 + (id)rankedNamedEntitiesWithLimit:(unsigned int)arg1 error:(id *)arg2;
 + (void)flushNamedEntityDonation;
-+ (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned int)arg3 cloudSync:(_Bool)arg4 decayRate:(double)arg5 error:(id *)arg6;
 + (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned int)arg3 cloudSync:(_Bool)arg4 error:(id *)arg5;
 + (void)registerXPCListenerWithStringDonationHandler:(id)arg1;
 + (void)registerMaintenanceTasks;

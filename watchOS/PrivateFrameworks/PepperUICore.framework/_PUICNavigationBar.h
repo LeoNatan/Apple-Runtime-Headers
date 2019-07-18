@@ -13,6 +13,7 @@
 - (_Bool)_isAlwaysHidden;
 - (_Bool)_suppressBackIndicator;
 - (_Bool)_wantsAdaptiveBackdrop;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

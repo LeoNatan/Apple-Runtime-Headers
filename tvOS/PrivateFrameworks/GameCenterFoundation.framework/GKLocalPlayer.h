@@ -20,6 +20,7 @@
     _Bool _enteringForeground;
     _Bool _newToGameCenter;
     _Bool _showingInGameUI;
+    _Bool _shouldPreserveOnboardingUI;
     GKInvite *_acceptedInvite;
     CDUnknownBlockType _validateAccountCompletionHandler;
     UIAlertView *_loginAlertView;
@@ -30,7 +31,7 @@
     double _authStartTimeStamp;
     unsigned long long _authenticationType;
     NSString *_lastPersonalizationVersionDisplayed;
-    NSString *_lastPrivacyNoticeVersionDisplayed;
+    unsigned long long _lastPrivacyNoticeVersionDisplayed;
 }
 
 + (void)switchLocalPlayerWithUserAltDSID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -51,7 +52,7 @@
 + (void)performSync:(CDUnknownBlockType)arg1;
 + (id)localPlayerAccessQueue;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSString *lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
+@property(nonatomic) unsigned long long lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
 @property(retain, nonatomic) NSString *lastPersonalizationVersionDisplayed; // @synthesize lastPersonalizationVersionDisplayed=_lastPersonalizationVersionDisplayed;
 @property(nonatomic) unsigned long long authenticationType; // @synthesize authenticationType=_authenticationType;
 @property(nonatomic) double authStartTimeStamp; // @synthesize authStartTimeStamp=_authStartTimeStamp;
@@ -78,6 +79,7 @@
 - (void)acceptFriendRequestWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)cancelFriendRequestWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)createFriendRequestWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)getPlayerIDFromFriendCode:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)generateIdentityVerificationSignatureWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadDefaultLeaderboardCategoryIDWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadDefaultLeaderboardIdentifierWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -110,11 +112,13 @@
 - (void)updateFromLocalPlayer:(id)arg1;
 @property(readonly, nonatomic, getter=isMultiplayerGamingRestricted) _Bool multiplayerGamingRestricted;
 - (id)displayNameWithOptions:(unsigned char)arg1;
+@property(nonatomic) _Bool shouldPreserveOnboardingUI; // @synthesize shouldPreserveOnboardingUI=_shouldPreserveOnboardingUI;
 - (void)setStatus:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)setStatus:(id)arg1;
 @property(nonatomic, getter=isShowingInGameUI) _Bool showingInGameUI; // @synthesize showingInGameUI=_showingInGameUI;
 @property(nonatomic) _Bool appIsInBackground;
 - (void)dealloc;
+- (_Bool)scopedIDsArePersistent;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)unregisterAllListeners;

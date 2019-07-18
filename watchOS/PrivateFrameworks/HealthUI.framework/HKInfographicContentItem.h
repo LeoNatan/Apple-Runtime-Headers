@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSAttributedString;
+#import <HealthUI/HKInfographicItem-Protocol.h>
 
-@interface HKInfographicContentItem : NSObject
+@class NSAttributedString, NSString;
+
+@interface HKInfographicContentItem : NSObject <HKInfographicItem>
 {
     NSAttributedString *_titleString;
     NSAttributedString *_descriptionString;
@@ -18,6 +20,12 @@
 @property(retain, nonatomic) NSAttributedString *titleString; // @synthesize titleString=_titleString;
 - (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 description:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

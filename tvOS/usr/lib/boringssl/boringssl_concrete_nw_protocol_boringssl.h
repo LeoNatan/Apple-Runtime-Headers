@@ -36,7 +36,7 @@
     NSObject<OS_nw_association> *association;
     void *boringssl_ctx_handle;
     void *boringssl_bio;
-    char *address_string;
+    const char *address_string;
     NSObject<OS_dispatch_queue> *client_queue;
     CDUnknownBlockType boringssl_prepare_block;
     unsigned int input_frame_byte_count;

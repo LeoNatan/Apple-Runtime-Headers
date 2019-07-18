@@ -15,6 +15,7 @@
 @interface _INPBBillDetailsValue : PBCodable <_INPBBillDetailsValue, NSSecureCoding, NSCopying>
 {
     CDStruct_c8e9def3 _has;
+    _Bool __encodeLegacyGloryData;
     _INPBCurrencyAmountValue *_amountDue;
     _INPBBillPayeeValue *_billPayee;
     int _billType;
@@ -27,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) _INPBDateTime *paymentDate; // @synthesize paymentDate=_paymentDate;

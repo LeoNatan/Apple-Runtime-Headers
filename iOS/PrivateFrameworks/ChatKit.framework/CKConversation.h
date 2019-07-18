@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSDate, NSNumber, NSSet, NSString;
+@class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSDate, NSNumber, NSSet, NSString, STConversationContext;
 
 @interface CKConversation : NSObject
 {
@@ -27,6 +27,7 @@
     NSString *_selectedLastAddressedSIMID;
     NSSet *_pendingRecipients;
     NSAttributedString *_groupName;
+    STConversationContext *_screenTimeConversationContext;
     NSString *_previewText;
     NSNumber *_businessConversation;
     NSDate *_dateLastViewed;
@@ -59,6 +60,7 @@
 @property(nonatomic) _Bool hasLoadedAllMessages; // @synthesize hasLoadedAllMessages=_hasLoadedAllMessages;
 @property(copy, nonatomic) NSString *previewText; // @synthesize previewText=_previewText;
 @property(retain, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
+@property(nonatomic) __weak STConversationContext *screenTimeConversationContext; // @synthesize screenTimeConversationContext=_screenTimeConversationContext;
 @property(readonly, nonatomic) NSAttributedString *groupName; // @synthesize groupName=_groupName;
 @property(retain, nonatomic) NSSet *pendingRecipients; // @synthesize pendingRecipients=_pendingRecipients;
 @property(retain, nonatomic) NSString *selectedLastAddressedSIMID; // @synthesize selectedLastAddressedSIMID=_selectedLastAddressedSIMID;

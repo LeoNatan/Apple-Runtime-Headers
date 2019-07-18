@@ -18,6 +18,7 @@
 - (id)safari_firstInlineCardSectionOfClass:(Class)arg1;
 - (id)safari_firstCardSectionOfClass:(Class)arg1;
 @property(readonly, nonatomic) unsigned long long engagementDestination;
+@property(readonly, nonatomic) long long parsecQueryID;
 @property(readonly, nonatomic) SFSearchResult *sfSearchResultValue;
 @property(readonly, nonatomic) NSString *parsecDomainIdentifier;
 

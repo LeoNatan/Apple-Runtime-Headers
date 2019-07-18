@@ -41,7 +41,7 @@
     HMDHomeManager *_homeManager;
 }
 
-+ (_Bool)isWhitelistedRemoteTransportMessage:(id)arg1;
++ (_Bool)isWhitelistedMessage:(id)arg1;
 @property(nonatomic, getter=isCloudDataSyncPeerAvailable) _Bool cloudDataSyncPeerAvailable; // @synthesize cloudDataSyncPeerAvailable=_cloudDataSyncPeerAvailable;
 @property(nonatomic, getter=isKeychainSyncPeerAvailable) _Bool keychainSyncPeerAvailable; // @synthesize keychainSyncPeerAvailable=_keychainSyncPeerAvailable;
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;

@@ -132,6 +132,7 @@
 - (void)setImage:(UIImage *)arg1 forSearchBarIcon:(long long)arg2 state:(unsigned long long)arg3;
 - (UIImage *)searchFieldBackgroundImageForState:(unsigned long long)arg1;
 - (void)setSearchFieldBackgroundImage:(UIImage *)arg1 forState:(unsigned long long)arg2;
+- (void)applySearchBarStyle;
 - (void)updateRightView;
 - (void)setUpScopeBar;
 - (void)setShowsDeleteButton:(BOOL)arg1;

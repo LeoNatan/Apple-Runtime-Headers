@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
     UIActivityIndicatorView *_spinner;
     long long _cellStyle;
     _UIContentUnavailableView *_noContentView;
-    _Bool _useInsetStyling;
     id <WDDataListViewControllerDataProvider> _dataProvider;
     HKDisplayType *_displayType;
     NSDate *_scrollToDate;

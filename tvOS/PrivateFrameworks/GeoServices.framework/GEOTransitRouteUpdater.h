@@ -21,7 +21,7 @@
 @property(nonatomic) __weak id <GEOTransitRouteUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 andInitialTTL:(double)arg2;
 
 @end
 

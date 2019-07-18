@@ -11,11 +11,10 @@
 @interface SBHHomeScreenSettings : PTSettings
 {
     _Bool _usesMinimumViableHomeScreen;
-    _Bool _padQuickActionsShouldUseDimmingView;
-    _Bool _padQuickActionsShouldUseBlur;
-    _Bool _showPopOversEverywhere;
-    float _padQuickActionsDimmingAlpha;
-    double _popoverDelay;
+    _Bool _usesLowDensityLayout;
+    _Bool _showPopOvers;
+    _Bool _showWidgets;
+    double _defaultDragInteractionLiftDelay;
     SBHIconAnimationRootSettings *_iconAnimationSettings;
     SBHIconSettings *_iconSettings;
     SBHFolderSettings *_folderSettings;
@@ -27,11 +26,10 @@
 @property(retain, nonatomic) SBHFolderSettings *folderSettings; // @synthesize folderSettings=_folderSettings;
 @property(retain, nonatomic) SBHIconSettings *iconSettings; // @synthesize iconSettings=_iconSettings;
 @property(retain, nonatomic) SBHIconAnimationRootSettings *iconAnimationSettings; // @synthesize iconAnimationSettings=_iconAnimationSettings;
-@property(nonatomic) double popoverDelay; // @synthesize popoverDelay=_popoverDelay;
-@property(nonatomic) _Bool showPopOversEverywhere; // @synthesize showPopOversEverywhere=_showPopOversEverywhere;
-@property(nonatomic) _Bool padQuickActionsShouldUseBlur; // @synthesize padQuickActionsShouldUseBlur=_padQuickActionsShouldUseBlur;
-@property(nonatomic) float padQuickActionsDimmingAlpha; // @synthesize padQuickActionsDimmingAlpha=_padQuickActionsDimmingAlpha;
-@property(nonatomic) _Bool padQuickActionsShouldUseDimmingView; // @synthesize padQuickActionsShouldUseDimmingView=_padQuickActionsShouldUseDimmingView;
+@property(nonatomic) double defaultDragInteractionLiftDelay; // @synthesize defaultDragInteractionLiftDelay=_defaultDragInteractionLiftDelay;
+@property(nonatomic) _Bool showWidgets; // @synthesize showWidgets=_showWidgets;
+@property(nonatomic) _Bool showPopOvers; // @synthesize showPopOvers=_showPopOvers;
+@property(nonatomic) _Bool usesLowDensityLayout; // @synthesize usesLowDensityLayout=_usesLowDensityLayout;
 @property(nonatomic) _Bool usesMinimumViableHomeScreen; // @synthesize usesMinimumViableHomeScreen=_usesMinimumViableHomeScreen;
 - (void).cxx_destruct;
 - (void)setDefaultValues;

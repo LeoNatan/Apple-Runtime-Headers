@@ -37,11 +37,13 @@ __attribute__((visibility("hidden")))
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)validateMaximumAllowedDurationFor:(id)arg1 endDate:(id)arg2 competion:(CDUnknownBlockType)arg3;
 - (void)reloadManualEntryItemsAndReloadTableView:(_Bool)arg1;
 - (void)reloadManualEntryItems;
 - (void)_loadTableViewCellsBySectionIfNecessary;
 - (void)_dataValidated;
-- (void)_showValidationAlertWithErrorString:(id)arg1;
+- (void)_showValidationConfirmAlertWithErrorString:(id)arg1;
+- (void)_showValidationErrorAlertWithErrorString:(id)arg1;
 - (void)addButtonTapped:(id)arg1;
 - (void)cancelButtonTapped:(id)arg1;
 @property(nonatomic) _Bool savingEnabled;

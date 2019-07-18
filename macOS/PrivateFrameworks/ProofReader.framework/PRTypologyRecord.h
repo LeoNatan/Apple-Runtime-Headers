@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSArray *_results;
     double _openTime;
     double _closeTime;
+    unsigned long long _offset;
     BOOL _autocorrect;
     BOOL _initialCapitalize;
     BOOL _autocapitalize;
@@ -40,7 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)addCandidate:(id)arg1;
 - (void)addCorrection:(id)arg1;
 - (void)dealloc;
-- (id)initWithString:(id)arg1 range:(struct _NSRange)arg2 language:(id)arg3 languages:(id)arg4 topLanguages:(id)arg5 autocorrect:(BOOL)arg6 initialCapitalize:(BOOL)arg7 autocapitalize:(BOOL)arg8 keyEventArray:(id)arg9 appIdentifier:(id)arg10 selectedRangeValue:(id)arg11;
+- (id)initWithString:(id)arg1 offset:(unsigned long long)arg2 range:(struct _NSRange)arg3 language:(id)arg4 languages:(id)arg5 topLanguages:(id)arg6 autocorrect:(BOOL)arg7 initialCapitalize:(BOOL)arg8 autocapitalize:(BOOL)arg9 keyEventArray:(id)arg10 appIdentifier:(id)arg11 selectedRangeValue:(id)arg12;
 
 @end
 

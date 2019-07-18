@@ -28,7 +28,6 @@
 - (_Bool)allowsInteractiveCardSizing;
 - (_Bool)needsPlaybackSpacerView;
 - (_Bool)hasBeginAndEndTimeLabelAtOverviewWaveform;
-- (_Bool)shouldAskForDeletionConfirmation;
 - (_Bool)usesLargeTitles;
 - (_Bool)pinsSearchBarInLibrary;
 - (_Bool)hasTwoLinesInRecentlyDeleted;
@@ -49,6 +48,7 @@
 - (_Bool)allowsScrollingUnderNavBar;
 - (_Bool)showsVirtualNavBarInPlaybackView;
 - (_Bool)alwaysHidesDetailNavBar;
+- (_Bool)clipUnderlapWhileTransitioning;
 - (_Bool)hasTransparentMasterNavBarBackground;
 - (_Bool)usesSystemToolBarForRecordingLibrary;
 - (_Bool)usesExtraWidePrimaryColumnWidth;
@@ -345,6 +345,7 @@
 - (double)topMarginForCardView;
 - (double)topMarginMinSafeAreaTopInsetForCardView;
 - (double)cornerRadiusForCardView;
+- (double)shuttleBarAdditionalSliderSpacingLibrary;
 - (double)shuttleBarButtonContainerHeightLibrary;
 - (double)shuttleBarButtonContainerHeightCard;
 - (double)shuttleBarHeight;
@@ -367,6 +368,7 @@
 - (double)recordingControlSectionHeight;
 - (double)topScreenSpacerHeight;
 - (double)recordingControlHeight;
+- (struct CGSize)centerClusterControlSizeRecentlyDeleted;
 - (struct CGSize)centerClusterControlSize;
 - (double)librarySelectedMoreAndTrashButtonPadding;
 - (double)centerClusterWidthLibrary;

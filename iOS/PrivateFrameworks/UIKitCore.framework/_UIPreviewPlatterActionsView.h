@@ -6,28 +6,34 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSArray, UIInterfaceActionGroupView;
+@class UIFont, UIInterfaceActionGroupView, UIMenu;
 @protocol _UIPreviewPlatterActionsViewDelegate;
 
 __attribute__((visibility("hidden")))
 @interface _UIPreviewPlatterActionsView : UIView
 {
+    UIFont *_labelFont;
     _Bool _surfacesActionRadius;
+    _Bool _showsTitle;
     id <_UIPreviewPlatterActionsViewDelegate> _delegate;
-    NSArray *_actions;
     UIInterfaceActionGroupView *_currentActionGroupView;
+    UIMenu *_actions;
 }
 
+@property(copy, nonatomic) UIMenu *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) UIInterfaceActionGroupView *currentActionGroupView; // @synthesize currentActionGroupView=_currentActionGroupView;
+@property(nonatomic) _Bool showsTitle; // @synthesize showsTitle=_showsTitle;
 @property(nonatomic) _Bool surfacesActionRadius; // @synthesize surfacesActionRadius=_surfacesActionRadius;
-@property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(nonatomic) __weak id <_UIPreviewPlatterActionsViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_performActionForPreviewAction:(id)arg1;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)_interfaceActionGroupForDisplayedActions;
 - (id)_interfaceActionGroupForDisplayedActions:(id)arg1;
-- (void)_updateVisibleActions;
+- (void)setActions:(id)arg1 animated:(_Bool)arg2 alongsideAnimations:(CDUnknownBlockType)arg3;
+- (struct CGSize)maxImageSize;
+- (id)_labelFont;
+- (void)kickstartActionScrubbingWithGesture:(id)arg1;
 - (id)initWithActions:(id)arg1;
 
 @end

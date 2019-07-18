@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) CDStruct_1b6d18a9 irisStillDisplayTime;
 @property(readonly, nonatomic) NSURL *irisVideoPersistenceURL;
 @property(readonly, nonatomic) NSString *irisStillImageUUID;
+@property(readonly, nonatomic) struct CGSize finalExpectedPixelSize;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 duration;
 @property(readonly, nonatomic) unsigned long long numberOfRepresentedAssets;
 @property(readonly, copy, nonatomic) NSDictionary *stillImageMetadata;
@@ -35,8 +36,7 @@
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;
 @property(readonly, nonatomic) unsigned long long mediaType;
 @property(readonly, copy) NSString *description;
-- (id)initWithUUID:(id)arg1 captureSession:(unsigned short)arg2 url:(id)arg3 creationDate:(id)arg4 scubberImage:(id)arg5 metadata:(id)arg6 burstIdentifier:(id)arg7 burstRepresentedCount:(unsigned long long)arg8 expectingPairedVideo:(_Bool)arg9;
-- (id)initWithUUID:(id)arg1 captureSession:(unsigned short)arg2 url:(id)arg3 creationDate:(id)arg4 scubberImage:(id)arg5;
+- (id)initWithUUID:(id)arg1 captureSession:(unsigned short)arg2 url:(id)arg3 creationDate:(id)arg4 scrubberImage:(id)arg5 finalExpectedPixelSize:(struct CGSize)arg6 metadata:(id)arg7 burstIdentifier:(id)arg8 burstRepresentedCount:(unsigned long long)arg9 expectingPairedVideo:(_Bool)arg10 coordinationInfo:(id)arg11;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

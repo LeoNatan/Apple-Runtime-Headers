@@ -14,8 +14,8 @@
 + (id)_mapkit_imageNamed:(id)arg1 compatibleWithTraitCollection:(id)arg2;
 + (id)_mapkit_imageNamed:(id)arg1;
 + (id)_mapkit_imageFromVKImage:(id)arg1;
-+ (id)_mapkit_transitArtworkImageWithDataSource:(id)arg1 size:(long long)arg2 scale:(double)arg3 withWidthPaddingMultiple:(double)arg4 coordinate:(struct CLLocationCoordinate2D)arg5;
-+ (id)_mapkit_transitArtworkImageWithDataSource:(id)arg1 size:(long long)arg2 scale:(double)arg3 coordinate:(struct CLLocationCoordinate2D)arg4;
++ (id)_mapkit_transitArtworkImageWithDataSource:(id)arg1 size:(long long)arg2 scale:(double)arg3 withWidthPaddingMultiple:(double)arg4;
++ (id)_mapkit_transitArtworkImageWithDataSource:(id)arg1 size:(long long)arg2 scale:(double)arg3;
 - (id)_mapkit_imageWithAlpha:(double)arg1;
 - (id)_mapkit_templateImageWithTintColor:(id)arg1;
 - (id)_mapkit_horizontallyFlippedImage;

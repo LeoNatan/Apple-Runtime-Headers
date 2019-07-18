@@ -6,13 +6,14 @@
 
 #import <AppKit/NSView.h>
 
-@class NSArray, NSImage, NSMutableArray, NSMutableIndexSet, NSPopUpButton, NSSegmentedControl, NSString;
+@class NSArray, NSImage, NSLayoutConstraint, NSMutableIndexSet, NSPopUpButton, NSSegmentedControl, NSString;
 
 __attribute__((visibility("hidden")))
 @interface NSToolbarItemGroupPickerView : NSView
 {
     NSArray *_subitems;
     long long _controlRepresentation;
+    long long _effectiveControlRepresentation;
     long long _selectionMode;
     NSString *_title;
     NSImage *_image;
@@ -21,10 +22,14 @@ __attribute__((visibility("hidden")))
     BOOL _enabled;
     id _target;
     SEL _action;
+    struct CGSize _minimumCollapsedSize;
+    struct CGSize _minimumExpandedSize;
+    struct CGSize _maximumExpandedSize;
+    NSLayoutConstraint *_minWidthConstraint;
+    NSLayoutConstraint *_maxWidthConstraint;
+    NSLayoutConstraint *_heightConstraint;
     NSSegmentedControl *_segmentedControl;
     NSPopUpButton *_popUpButton;
-    NSMutableArray *_popUpButtonConstraints;
-    NSMutableArray *_segmentedControlConstraints;
 }
 
 @property SEL action; // @synthesize action=_action;
@@ -42,11 +47,17 @@ __attribute__((visibility("hidden")))
 - (void)_loadExpandedRepresentation;
 - (void)itemToggledAtIndex:(long long)arg1;
 - (void)_optionInvoked:(id)arg1;
+- (void)layout;
+- (struct CGSize)sizeThatFitsProposedLayoutSize:(struct CGSize)arg1;
+- (void)updateConstraints;
+- (void)_invalidateCachedSizes;
+- (struct CGSize)_maximumExpandedSize;
+- (struct CGSize)_minimumExpandedSize;
+- (struct CGSize)_minimumCollapsedSize;
 - (BOOL)isSelectedAtIndex:(long long)arg1;
 - (void)setSelected:(BOOL)arg1 atIndex:(long long)arg2;
 @property long long selectedIndex;
 @property long long selectionMode;
-- (long long)_effectiveControlRepresentation;
 @property long long controlRepresentation;
 @property(retain) NSImage *image;
 @property(copy) NSString *title;

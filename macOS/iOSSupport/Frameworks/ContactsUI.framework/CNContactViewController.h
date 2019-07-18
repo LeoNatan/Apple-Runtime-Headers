@@ -7,11 +7,13 @@
 #import <UIKit/UIViewController.h>
 
 #import <ContactsUI/CNContactViewHostProtocol-Protocol.h>
+#import <ContactsUI/UIAdaptivePresentationControllerDelegate-Protocol.h>
+#import <ContactsUI/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class CNContact, CNContactContentViewController, CNContactFormatter, CNContactRecentsReference, CNContactStore, CNContainer, CNGroup, CNPolicy, NSArray, NSString, UIView, _UIAccessDeniedView;
+@class CNContact, CNContactContentViewController, CNContactFormatter, CNContactRecentsReference, CNContactStore, CNContainer, CNGroup, CNPolicy, NSArray, NSString, UIView, _UIAccessDeniedView, _UIRemoteViewController;
 @protocol CNContactContentViewController, CNContactViewControllerDelegate, CNContactViewControllerPPTDelegate, CNContactViewControllerPrivateDelegate;
 
-@interface CNContactViewController : UIViewController <CNContactViewHostProtocol>
+@interface CNContactViewController : UIViewController <CNContactViewHostProtocol, _UIRemoteViewControllerContaining, UIAdaptivePresentationControllerDelegate>
 {
     long long _mode;
     BOOL _ignoreViewWillBePresented;
@@ -41,6 +43,7 @@
     CNPolicy *_policy;
     CNContact *_additionalContact;
     id <CNContactViewControllerPPTDelegate> _pptDelegate;
+    NSArray *_prohibitedPropertyKeys;
     long long _displayMode;
     long long _editMode;
     long long _actions;
@@ -48,6 +51,7 @@
     CNContactRecentsReference *_recentsData;
     NSString *_primaryPropertyKey;
     NSString *_importantMessage;
+    NSString *_warningMessage;
     UIView *_contactHeaderView;
     UIViewController *_contactHeaderViewController;
 }
@@ -59,6 +63,7 @@
 + (id)descriptorForRequiredKeys;
 @property(retain, nonatomic) UIViewController *contactHeaderViewController; // @synthesize contactHeaderViewController=_contactHeaderViewController;
 @property(retain, nonatomic) UIView *contactHeaderView; // @synthesize contactHeaderView=_contactHeaderView;
+@property(copy, nonatomic) NSString *warningMessage; // @synthesize warningMessage=_warningMessage;
 @property(copy, nonatomic) NSString *importantMessage; // @synthesize importantMessage=_importantMessage;
 @property(nonatomic) BOOL ignoresParentalRestrictions; // @synthesize ignoresParentalRestrictions=_ignoresParentalRestrictions;
 @property(nonatomic) BOOL allowsEditPhoto; // @synthesize allowsEditPhoto=_allowsEditPhoto;
@@ -69,6 +74,7 @@
 @property(nonatomic) long long actions; // @synthesize actions=_actions;
 @property(nonatomic) long long editMode; // @synthesize editMode=_editMode;
 @property(nonatomic) long long displayMode; // @synthesize displayMode=_displayMode;
+@property(retain, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
 @property(nonatomic) __weak id <CNContactViewControllerPPTDelegate> pptDelegate; // @synthesize pptDelegate=_pptDelegate;
 @property(nonatomic) BOOL showingMeContact; // @synthesize showingMeContact=_showingMeContact;
 @property(retain, nonatomic) CNContact *additionalContact; // @synthesize additionalContact=_additionalContact;
@@ -94,6 +100,7 @@
 @property(copy, nonatomic) NSArray *displayedPropertyKeys; // @synthesize displayedPropertyKeys=_displayedPropertyKeys;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
+- (void)didExecuteDeleteFromDowntimeWhitelistAction;
 - (void)didExecuteClearRecentsDataAction;
 - (void)viewDidAppear;
 - (void)didChangePreferredContentSize:(struct CGSize)arg1;
@@ -119,6 +126,7 @@
 - (void)_setViewController:(id)arg1;
 - (void)_endDelayingPresentation;
 - (BOOL)_isDelayingPresentation;
+@property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
@@ -126,6 +134,9 @@
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (void)loadView;
 @property(readonly, nonatomic) id <CNContactViewControllerPrivateDelegate> privateDelegate;
+- (void)presentationControllerDidAttemptToDismiss:(id)arg1;
+- (BOOL)presentationControllerShouldDismiss:(id)arg1;
+- (BOOL)isModalInPresentation;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)highlightPropertyWithKey:(id)arg1 identifier:(id)arg2;
 - (void)highlightPropertyWithKey:(id)arg1 identifier:(id)arg2 important:(BOOL)arg3;

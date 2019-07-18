@@ -6,7 +6,7 @@
 
 #import <ContactsUI/NSObject-Protocol.h>
 
-@class UIView, UIViewPropertyAnimator, _UITargetedPreview;
+@class UITargetedPreview, UIView, UIViewPropertyAnimator;
 
 @protocol _UIClickPresentationTransition <NSObject>
 - (void)transitionDidEnd:(_Bool)arg1;
@@ -14,7 +14,7 @@
 
 @optional
 @property(readonly, nonatomic) UIViewPropertyAnimator *customAnimator;
-@property(copy, nonatomic) _UITargetedPreview *sourcePreview;
+@property(copy, nonatomic) UITargetedPreview *sourcePreview;
 - (void)transitionWillReverse;
 - (void)prepareTransitionFromView:(UIView *)arg1 toView:(UIView *)arg2 containerView:(UIView *)arg3;
 @end

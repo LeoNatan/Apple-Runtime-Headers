@@ -72,6 +72,7 @@
 @property(readonly, nonatomic) NSNumber *friendPlayedWith; // @dynamic friendPlayedWith;
 @property(readonly, nonatomic) NSNumber *friendBiDirectional; // @dynamic friendBiDirectional;
 @property(readonly, nonatomic) NSNumber *friendLevel; // @dynamic friendLevel;
+- (_Bool)scopedIDsArePersistent;
 @property(readonly, retain, nonatomic) NSString *teamPlayerID; // @dynamic teamPlayerID;
 @property(readonly, retain, nonatomic) NSString *gamePlayerID; // @dynamic gamePlayerID;
 @property(retain, nonatomic) NSString *playerID; // @dynamic playerID;
@@ -96,6 +97,7 @@
 @property(readonly, nonatomic) NSString *lastName; // @dynamic lastName;
 @property(readonly, nonatomic) NSDate *lastPlayedDate; // @dynamic lastPlayedDate;
 @property(readonly, nonatomic, getter=isLoaded) _Bool loaded; // @dynamic loaded;
+@property(retain, nonatomic) NSArray *monogramComponents; // @dynamic monogramComponents;
 @property(nonatomic) unsigned long long numberOfFriends; // @dynamic numberOfFriends;
 @property(retain, nonatomic) NSString *reason; // @dynamic reason;
 @property(retain, nonatomic) NSString *reason2; // @dynamic reason2;

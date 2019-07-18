@@ -4,27 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <TelephonyPreferences/TPSController.h>
 
 #import <TelephonyPreferences/CoreTelephonyClientDelegate-Protocol.h>
 
-@class CoreTelephonyClient, NSDictionary, NSMapTable, NSOrderedSet, NSString;
+@class CTXPCServiceSubscriptionInfo, CoreTelephonyClient, NSDictionary, NSObject, NSOrderedSet, NSString;
 @protocol OS_dispatch_queue;
 
-@interface TPSTelephonyController : NSObject <CoreTelephonyClientDelegate>
+@interface TPSTelephonyController : TPSController <CoreTelephonyClientDelegate>
 {
     struct os_unfair_lock_s _accessorLock;
-    struct os_unfair_lock_s _delegateLock;
+    NSOrderedSet *_activeSubscriptions;
+    CTXPCServiceSubscriptionInfo *_subscriptionInfo;
     NSOrderedSet *_subscriptions;
     NSDictionary *_systemCapabilities;
     CoreTelephonyClient *_telephonyClient;
-    NSMapTable *_delegateToQueue;
     NSObject<OS_dispatch_queue> *_serialDispatchQueue;
 }
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
-@property(readonly, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
-@property(nonatomic) struct os_unfair_lock_s delegateLock; // @synthesize delegateLock=_delegateLock;
 @property(nonatomic) struct os_unfair_lock_s accessorLock; // @synthesize accessorLock=_accessorLock;
 @property(readonly, nonatomic) CoreTelephonyClient *telephonyClient; // @synthesize telephonyClient=_telephonyClient;
 - (void).cxx_destruct;
@@ -37,14 +35,13 @@
 - (_Bool)supportsSystemCapabilityCallerIDForSubscriptionContext:(id)arg1;
 - (_Bool)supportsSystemCapabilityWithName:(id)arg1 subscriptionContext:(id)arg2;
 - (id)fetchSystemCapabilitiesForSubscriptions:(id)arg1;
-- (id)fetchSubscriptions;
+- (id)fetchSubscriptionInfo;
 - (_Bool)supportsCellularNetworkSelectionForSubscriptionContext:(id)arg1;
-- (void)performAtomicDelegateBlock:(CDUnknownBlockType)arg1;
 - (void)performAtomicAccessorBlock:(CDUnknownBlockType)arg1;
-- (void)removeDelegate:(id)arg1;
-- (void)addDelegate:(id)arg1 queue:(id)arg2;
 @property(copy, nonatomic) NSDictionary *systemCapabilities; // @synthesize systemCapabilities=_systemCapabilities;
+@property(retain, nonatomic) CTXPCServiceSubscriptionInfo *subscriptionInfo; // @synthesize subscriptionInfo=_subscriptionInfo;
 @property(copy, nonatomic) NSOrderedSet *subscriptions; // @synthesize subscriptions=_subscriptions;
+@property(copy, nonatomic) NSOrderedSet *activeSubscriptions; // @synthesize activeSubscriptions=_activeSubscriptions;
 - (id)init;
 
 // Remaining properties

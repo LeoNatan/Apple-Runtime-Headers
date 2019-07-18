@@ -44,6 +44,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *externalIdentifierForMarkedForDeletionObject;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
@@ -82,12 +83,13 @@
 @property(readonly, nonatomic) long long flagged; // @dynamic flagged;
 @property(readonly, nonatomic) unsigned long long icsDisplayOrder; // @dynamic icsDisplayOrder;
 @property(readonly, nonatomic) NSData *importedICSData; // @dynamic importedICSData;
+@property(readonly, nonatomic) BOOL isOverdue; // @dynamic isOverdue;
 @property(readonly, nonatomic) NSDate *lastBannerPresentationDate; // @dynamic lastBannerPresentationDate;
 @property(readonly, copy, nonatomic) NSDate *lastModifiedDate; // @dynamic lastModifiedDate;
+@property(readonly, copy, nonatomic) NSString *legacyNotificationIdentifier; // @dynamic legacyNotificationIdentifier;
 @property(retain, nonatomic) REMObjectID *listID; // @dynamic listID;
 @property(readonly, nonatomic) REMCRMergeableStringDocument *notesDocument; // @dynamic notesDocument;
 @property(readonly, nonatomic) REMObjectID *objectID; // @dynamic objectID;
-@property(readonly, nonatomic, getter=isOverdue) BOOL overdue; // @dynamic overdue;
 @property(readonly, nonatomic) REMObjectID *parentReminderID; // @dynamic parentReminderID;
 @property(readonly, nonatomic) unsigned long long priority; // @dynamic priority;
 @property(readonly, nonatomic) NSArray *recurrenceRules; // @dynamic recurrenceRules;

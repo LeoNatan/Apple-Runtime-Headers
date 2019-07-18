@@ -8,13 +8,10 @@
 
 #import <MaterialKit/MTVisualStylingProviding-Protocol.h>
 
-@class MTVisualStylingProvider, NSString;
+@class NSString;
 
 @interface UIView (MTVisualStylingProviderAdditions) <MTVisualStylingProviding>
 - (id)visualStylingProviderForCategory:(long long)arg1;
-@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
-- (void)mt_removeAllVibrantStyling;
-- (void)mt_applyVibrantStyling:(id)arg1;
 - (void)mt_removeAllVisualStyling;
 - (void)mt_replaceVisualStyling:(id)arg1;
 - (void)_mt_applyVisualStyling:(id)arg1;

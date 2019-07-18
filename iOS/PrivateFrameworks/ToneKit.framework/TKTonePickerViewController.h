@@ -119,6 +119,7 @@
 - (id)selectedIdentifier:(_Bool *)arg1;
 @property(nonatomic, getter=isMediaAtTop) _Bool mediaAtTop;
 - (void)_handleMediaLibraryDidChangeNotification;
+- (void)_handlePreferredContentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_updateCell:(id)arg1 withDownloadProgress:(float)arg2 animated:(_Bool)arg3;
 - (_Bool)_shouldShowCheckmarkOnTrailingEdge;
 - (void)_resetScrollingPosition;

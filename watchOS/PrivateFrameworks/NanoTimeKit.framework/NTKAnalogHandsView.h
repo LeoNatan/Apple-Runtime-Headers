@@ -8,7 +8,7 @@
 
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
 
-@class CALayer, CLKDevice, NSCalendar, NSDate, NSNumber, NSString, NSTimer, NTKColoringImageView, NTKHandView, UIColor;
+@class CALayer, CLKDevice, NSCalendar, NSDate, NSNumber, NSString, NSTimeZone, NSTimer, NTKColoringImageView, NTKHandView, PUICClientSideAnimation, UIColor;
 
 @interface NTKAnalogHandsView : UIView <NTKTimeView>
 {
@@ -20,6 +20,7 @@
     NSNumber *_displayLinkToken;
     NSTimer *_animationUpdateTimer;
     double _timeOffset;
+    PUICClientSideAnimation *_overrideAnimation;
     CALayer *_minuteHandTransitionBodyLayer;
     CALayer *_minuteHandTransitionStemLayer;
     CALayer *_minuteHandTransitionPegLayer;
@@ -41,9 +42,11 @@
     NTKHandView *_hourHandView_clientSide;
     NTKHandView *_minuteHandView_clientSide;
     NTKHandView *_secondHandView_clientSide;
+    NSTimeZone *_timeZone;
 }
 
 + (int)preferredCountOfInstancesToCache;
+@property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(nonatomic) _Bool shouldRestoreSecondHandAfterScrubbing; // @synthesize shouldRestoreSecondHandAfterScrubbing=_shouldRestoreSecondHandAfterScrubbing;
 @property(nonatomic) _Bool showDebugClientSideHands; // @synthesize showDebugClientSideHands=_showDebugClientSideHands;
 @property(readonly, nonatomic) NTKHandView *secondHandView_clientSide; // @synthesize secondHandView_clientSide=_secondHandView_clientSide;

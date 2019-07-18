@@ -6,12 +6,13 @@
 
 #import <UIKit/UIView.h>
 
+#import <PhotosUICore/ISChangeObserver-Protocol.h>
 #import <PhotosUICore/PXVideoViewDelegate-Protocol.h>
 
 @class NSString, PXVideoSession, PXVideoView, UIImage, UIImageView;
 @protocol PXVideoSessionUIViewDelegate;
 
-@interface PXVideoSessionUIView : UIView <PXVideoViewDelegate>
+@interface PXVideoSessionUIView : UIView <PXVideoViewDelegate, ISChangeObserver>
 {
     UIView *_videoContainerView;
     PXVideoView *_videoView;
@@ -37,6 +38,7 @@
 - (void).cxx_destruct;
 - (void)_updateEdgeAntialiasing;
 - (void)_updatePlaceholderVisibility;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)videoViewReadinessDidChange:(id)arg1;
 - (void)dealloc;
 @property(readonly, nonatomic) BOOL isVideoLayerReadyForDisplay;

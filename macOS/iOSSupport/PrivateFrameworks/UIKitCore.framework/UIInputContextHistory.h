@@ -15,6 +15,7 @@
 
 @property(readonly, nonatomic) TIInputContextHistory *tiInputContextHistory; // @synthesize tiInputContextHistory=_tiInputContextHistory;
 - (void).cxx_destruct;
+- (id)mostRecentTextEntries:(unsigned long long)arg1;
 - (void)addTextEntry:(id)arg1 timestamp:(id)arg2;
 - (id)initWithRecipientIdentifiers:(id)arg1 senderIdentifier:(id)arg2;
 @property(readonly, nonatomic) NSString *senderIdentifier;

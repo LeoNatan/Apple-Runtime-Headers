@@ -41,6 +41,7 @@
 - (id)changedKeys;
 - (id)resolutionTokenKeyForChangedKey:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (_Bool)respondsToSelector:(SEL)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 @property(readonly, nonatomic) REMAccountGroupContextChangeItem *groupContext;

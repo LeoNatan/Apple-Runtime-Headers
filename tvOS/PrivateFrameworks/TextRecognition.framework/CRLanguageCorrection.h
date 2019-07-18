@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CHPatternNetwork, NSCharacterSet, NSLocale, NSString;
+@class CRCHPatternNetwork, NSCharacterSet, NSLocale, NSString;
 
 @interface CRLanguageCorrection : NSObject
 {
@@ -14,12 +14,12 @@
     struct _LXLexicon *_staticLexicon;
     struct _LXLexicon *_dynamicLexicon;
     NSString *_invalidSingleCharCNNCode;
-    CHPatternNetwork *_patternFST;
+    CRCHPatternNetwork *_patternFST;
     NSLocale *_locale;
 }
 
 @property(readonly) NSLocale *locale; // @synthesize locale=_locale;
-@property(retain, nonatomic) CHPatternNetwork *patternFST; // @synthesize patternFST=_patternFST;
+@property(retain, nonatomic) CRCHPatternNetwork *patternFST; // @synthesize patternFST=_patternFST;
 @property(retain, nonatomic) NSString *invalidSingleCharCNNCode; // @synthesize invalidSingleCharCNNCode=_invalidSingleCharCNNCode;
 @property(nonatomic) struct _LXLexicon *dynamicLexicon; // @synthesize dynamicLexicon=_dynamicLexicon;
 @property(nonatomic) struct _LXLexicon *staticLexicon; // @synthesize staticLexicon=_staticLexicon;

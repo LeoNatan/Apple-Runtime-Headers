@@ -8,14 +8,16 @@
 
 #import <ReminderKit/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class NSString, REMObjectID;
 
 @interface REMListsDataViewInvocation_userActivityFetchByExternalIdentifier : REMStoreInvocation <NSSecureCoding>
 {
     NSString *_externalIdentifier;
+    REMObjectID *_accountObjectID;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) REMObjectID *accountObjectID; // @synthesize accountObjectID=_accountObjectID;
 @property(readonly, nonatomic) NSString *externalIdentifier; // @synthesize externalIdentifier=_externalIdentifier;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -23,7 +25,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithExternalIdentifier:(id)arg1;
+- (id)initWithExternalIdentifier:(id)arg1 accountObjectID:(id)arg2;
 
 @end
 

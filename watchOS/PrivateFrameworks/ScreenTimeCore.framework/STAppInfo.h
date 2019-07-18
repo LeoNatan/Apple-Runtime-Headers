@@ -6,26 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSURL;
+@class NSData, NSString, NSURL;
 
 @interface STAppInfo : NSObject
 {
-    unsigned int _source;
+    int _source;
     NSString *_bundleIdentifier;
     NSString *_displayName;
     NSString *_developerName;
     NSString *_ratingLabel;
     NSURL *_localURL;
     NSURL *_artworkURL;
+    NSData *_artworkData;
 }
 
+@property(copy) NSData *artworkData; // @synthesize artworkData=_artworkData;
 @property(copy, nonatomic) NSURL *artworkURL; // @synthesize artworkURL=_artworkURL;
 @property(copy, nonatomic) NSURL *localURL; // @synthesize localURL=_localURL;
 @property(copy, nonatomic) NSString *ratingLabel; // @synthesize ratingLabel=_ratingLabel;
 @property(copy, nonatomic) NSString *developerName; // @synthesize developerName=_developerName;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-@property(nonatomic) unsigned int source; // @synthesize source=_source;
+@property(nonatomic) int source; // @synthesize source=_source;
 - (void).cxx_destruct;
 - (id)description;
 

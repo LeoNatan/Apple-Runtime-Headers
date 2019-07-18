@@ -18,6 +18,7 @@
         unsigned int repeated:1;
     } _has;
     BOOL _repeated;
+    BOOL __encodeLegacyGloryData;
     NSString *_key;
     NSArray *_pairCurrencyAmountValues;
     NSArray *_pairCustomObjects;
@@ -48,6 +49,7 @@
 + (Class)pairDataStringType;
 + (Class)pairCustomObjectType;
 + (Class)pairCurrencyAmountValueType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) BOOL repeated; // @synthesize repeated=_repeated;
 @property(copy, nonatomic) NSArray *pairUrlValues; // @synthesize pairUrlValues=_pairUrlValues;
 @property(copy, nonatomic) NSArray *pairTemperatureValues; // @synthesize pairTemperatureValues=_pairTemperatureValues;

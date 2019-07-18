@@ -18,6 +18,7 @@
         unsigned int defaultProfile:1;
     } _has;
     BOOL _defaultProfile;
+    BOOL __encodeLegacyGloryData;
     _INPBDataString *_carName;
     _INPBIntentMetadata *_intentMetadata;
     _INPBString *_profileName;
@@ -25,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBInteger *profileNumber; // @synthesize profileNumber=_profileNumber;
 @property(retain, nonatomic) _INPBString *profileName; // @synthesize profileName=_profileName;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;

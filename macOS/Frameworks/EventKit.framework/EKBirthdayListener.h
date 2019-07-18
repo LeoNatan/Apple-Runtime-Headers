@@ -30,6 +30,7 @@
 - (void)disableBirthdayCalendarsInStore:(id)arg1;
 - (void)disableBirthdayCalendars;
 - (id)birthdayCalendarsInStore:(id)arg1;
+- (void)_localeChanged;
 - (void)addBirthdayCalendars;
 - (BOOL)areBirthdaysEnabled;
 - (id)eventStore;

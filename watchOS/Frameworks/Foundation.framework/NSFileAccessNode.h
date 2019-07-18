@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     _Bool _isArbitrationBoundary;
     _Bool _isFilePackageIsFigured;
     _Bool _isFilePackage;
+    _Bool _symbolicLinkIsFirmlink;
     NSString *_lastRequestedChildName;
     NSFileAccessNode *_lastRequestedChild;
     id _progressPublisherOrPublishers;
@@ -91,7 +92,9 @@ __attribute__((visibility("hidden")))
 - (void)setChild:(id)arg1 forName:(id)arg2 normalizedName:(id)arg3;
 - (id)pathToDescendantForFileURL:(id)arg1 componentRange:(struct _NSRange *)arg2;
 - (void)dealloc;
+- (void)setFirmlinkDestination:(id)arg1;
 - (void)setSymbolicLinkDestination:(id)arg1;
+- (void)_setLinkDestination:(id)arg1;
 - (id)initWithParent:(id)arg1 name:(id)arg2 normalizedName:(id)arg3;
 
 @end

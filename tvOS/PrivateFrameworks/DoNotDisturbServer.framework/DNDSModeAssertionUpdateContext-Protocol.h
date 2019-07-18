@@ -6,10 +6,10 @@
 
 #import <DoNotDisturbServer/DNDSModeAssertionQuerying-Protocol.h>
 
-@class DNDModeAssertionDetails, DNDModeAssertionSource, DNDSModeAssertionInvalidationPredicate, DNDSModeAssertionUpdateResult, NSDate;
+@class DNDModeAssertionDetails, DNDModeAssertionInvalidationDetails, DNDModeAssertionSource, DNDSModeAssertionInvalidationPredicate, DNDSModeAssertionUpdateResult, NSDate;
 
 @protocol DNDSModeAssertionUpdateContext <DNDSModeAssertionQuerying>
-- (DNDSModeAssertionUpdateResult *)invalidateAssertionsMatchingPredicate:(DNDSModeAssertionInvalidationPredicate *)arg1 forReason:(unsigned long long)arg2 source:(DNDModeAssertionSource *)arg3;
+- (DNDSModeAssertionUpdateResult *)invalidateAssertionsMatchingPredicate:(DNDSModeAssertionInvalidationPredicate *)arg1 details:(DNDModeAssertionInvalidationDetails *)arg2 source:(DNDModeAssertionSource *)arg3 reason:(unsigned long long)arg4 reasonOverride:(unsigned long long)arg5;
 - (DNDSModeAssertionUpdateResult *)takeAssertionWithDetails:(DNDModeAssertionDetails *)arg1 source:(DNDModeAssertionSource *)arg2 startDate:(NSDate *)arg3;
 @end
 

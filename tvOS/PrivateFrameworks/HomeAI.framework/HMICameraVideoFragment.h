@@ -8,28 +8,27 @@
 
 #import <HomeAI/NSSecureCoding-Protocol.h>
 
-@class NSData, NSDate, NSMutableData, NSURL;
+@class NSData, NSMutableData, NSURL;
 
 @interface HMICameraVideoFragment : NSObject <NSSecureCoding>
 {
-    NSURL *_url;
     unsigned long long _sequenceNumber;
     NSData *_data;
     NSData *_moovFragment;
     long long _eventTypes;
-    NSDate *_analysisSubmissionTime;
+    NSURL *_url;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain) NSDate *analysisSubmissionTime; // @synthesize analysisSubmissionTime=_analysisSubmissionTime;
+@property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly) long long eventTypes; // @synthesize eventTypes=_eventTypes;
 @property(readonly, nonatomic) NSData *moovFragment; // @synthesize moovFragment=_moovFragment;
 @property(readonly) NSData *data; // @synthesize data=_data;
 @property(readonly) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 - (void).cxx_destruct;
 - (id)description;
-@property(readonly) NSURL *url; // @synthesize url=_url;
 @property(readonly) NSMutableData *fragmentData;
+- (id)initWithSequenceNumber:(unsigned long long)arg1 fragmentData:(id)arg2 eventTypes:(long long)arg3 url:(id)arg4;
 - (id)initWithSequenceNumber:(unsigned long long)arg1 fragmentData:(id)arg2 eventTypes:(long long)arg3;
 - (id)initWithSequenceNumber:(unsigned long long)arg1 data:(id)arg2 moovFragment:(id)arg3 eventTypes:(long long)arg4;
 - (id)initWithSequenceNumber:(unsigned long long)arg1 data:(id)arg2 moovFragment:(id)arg3;

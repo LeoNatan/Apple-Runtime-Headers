@@ -6,19 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class PLAssetsdClientXPCConnection, PLAssetsdLibraryManagementClient;
+@class PLAssetsdClientXPCConnection, PLAssetsdDemoClient, PLAssetsdLibraryManagementClient, PLAssetsdSystemLibraryURLReadOnlyClient;
 @protocol OS_dispatch_queue;
 
 @interface PLNonBindingAssetsdClient : NSObject
 {
     PLAssetsdClientXPCConnection *_connection;
     NSObject<OS_dispatch_queue> *_isolationQueue;
+    PLAssetsdSystemLibraryURLReadOnlyClient *_systemLibraryURLReadOnlyClient;
     PLAssetsdLibraryManagementClient *_libraryManagementClient;
+    PLAssetsdDemoClient *_demoClient;
 }
 
 - (void).cxx_destruct;
 - (void)_updateLibraryStateConnectionInterrupted:(id)arg1;
+@property(readonly) PLAssetsdDemoClient *demoClient;
 @property(readonly) PLAssetsdLibraryManagementClient *libraryManagementClient;
+@property(readonly) PLAssetsdSystemLibraryURLReadOnlyClient *systemLibraryURLReadOnlyClient;
 - (id)init;
 
 @end

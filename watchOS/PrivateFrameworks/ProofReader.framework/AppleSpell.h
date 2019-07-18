@@ -33,6 +33,7 @@
     NSArray *_userPreferredLatinLanguages;
     NSArray *_userTopLanguages;
     NSArray *_userTransliterationLocalizations;
+    NSArray *_userAdditionalEnglishLocalizations;
     NSMutableDictionary *_learnedResponses;
     NSMutableDictionary *_probationaryLearnedResponses;
     NSMutableDictionary *_probationaryLearnedResponseTimes;
@@ -218,7 +219,7 @@
 - (id)spellServer:(id)arg1 suggestGuessDictionariesForWordRange:(struct _NSRange)arg2 inString:(id)arg3 inLanguage:(id)arg4 options:(id)arg5 errorModel:(id)arg6;
 - (id)spellServer:(id)arg1 suggestGuessesForWordRange:(struct _NSRange)arg2 inString:(id)arg3 inLanguage:(id)arg4 options:(id)arg5;
 - (id)_spellServer:(id)arg1 suggestGuessesForWordRange:(struct _NSRange)arg2 inString:(id)arg3 inLanguage:(id)arg4 options:(id)arg5 tagger:(id)arg6 taggerIndex:(unsigned int)arg7 errorModel:(id)arg8 guessesDictionaries:(id)arg9;
-- (void)addLexiconGuessesForWord:(id)arg1 buffer:(char *)arg2 length:(unsigned int)arg3 language:(id)arg4 minCorrectionLength:(unsigned int)arg5 minExtendedCorrectionLength:(unsigned int)arg6 stopAfterFreeInsertions:(_Bool)arg7 toGuesses:(id)arg8;
+- (void)addLexiconGuessesForWord:(id)arg1 buffer:(char *)arg2 length:(unsigned int)arg3 language:(id)arg4 minCorrectionLength:(unsigned int)arg5 minExtendedCorrectionLength:(unsigned int)arg6 isCapitalized:(_Bool)arg7 stopAfterFreeInsertions:(_Bool)arg8 toGuesses:(id)arg9;
 - (id)spellServer:(id)arg1 finalModificationsForPinyinInputString:(id)arg2;
 - (id)spellServer:(id)arg1 modificationsForPinyinInputString:(id)arg2 geometryModelData:(id)arg3;
 - (id)spellServer:(id)arg1 modificationsForPinyinInputString:(id)arg2;

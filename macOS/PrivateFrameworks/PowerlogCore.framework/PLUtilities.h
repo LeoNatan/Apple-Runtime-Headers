@@ -11,6 +11,7 @@
 }
 
 + (id)hardwareModel;
++ (id)getMarketingModelNameMac;
 + (id)MavRevStringQuery;
 + (void)refreshBUI;
 + (BOOL)isValidString:(id)arg1;
@@ -52,6 +53,11 @@
 + (void)exitSafe:(int)arg1;
 + (void)exitWithReasonSync:(short)arg1;
 + (void)exitWithReason:(short)arg1;
++ (unsigned long long)getCurrMachAbsTimeInSecs;
++ (struct mach_timebase_info *)getMachTimebase;
++ (void)getCurrentMonotonicAndMachAbsTime:(id *)arg1 machAbsTime:(unsigned long long *)arg2;
++ (BOOL)deviceRebooted;
++ (id)deviceBootUUID;
 + (id)deviceBootTime;
 + (id)dateFromTimevalSystemTime:(struct timeval)arg1;
 + (id)dateFromTimeval:(struct timeval)arg1;
@@ -65,7 +71,8 @@
 + (id)workQueueForKey:(id)arg1;
 + (id)workQueueForClass:(Class)arg1;
 + (id)extractDateStringAndUUIDStringFromFilePath:(id)arg1;
-+ (int)compressWithSource:(struct __sFILE *)arg1 withDestination:(struct __sFILE *)arg2 withLevel:(int)arg3;
++ (int)compressWithSourceStream:(struct __sFILE *)arg1 withDestination:(struct __sFILE *)arg2 withLevel:(int)arg3;
++ (BOOL)compressWithSource:(id)arg1 withDestination:(id)arg2 withLevel:(int)arg3;
 + (void)setMobileOwnerForFile:(id)arg1;
 + (BOOL)createAndChownDirectoryIfDirectoryDoesNotExist:(id)arg1;
 + (BOOL)createAndChownDirectory:(id)arg1;

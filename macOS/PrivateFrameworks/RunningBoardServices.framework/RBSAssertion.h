@@ -6,12 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSHashTable, NSString, RBSAssertionDescriptor, RBSTarget;
+#import <RunningBoardServices/BSDescriptionProviding-Protocol.h>
+
+@class NSArray, NSHashTable, NSString, RBSAssertionDescriptor, RBSAssertionIdentifier, RBSTarget;
 @protocol RBSServiceLocalProtocol;
 
-@interface RBSAssertion : NSObject
+@interface RBSAssertion : NSObject <BSDescriptionProviding>
 {
     NSHashTable *_observers;
+    CDUnknownBlockType _invalidationHandler;
+    CDUnknownBlockType _warningHandler;
     struct os_unfair_lock_s _lock;
     RBSAssertionDescriptor *_descriptor;
     unsigned long long _state;
@@ -20,34 +24,40 @@
 
 - (void).cxx_destruct;
 - (id)_observers;
-- (void)_notifyObserversOfInvalidationWithError:(id)arg1;
-- (void)_serverValidatedWithIdentifier:(id)arg1;
+- (void)_serverDidChangeIdentifier:(id)arg1;
 - (void)_serverWillInvalidate;
-- (void)_serverWillValidate;
 - (void)_serverInvalidateWithError:(id)arg1;
 - (BOOL)_clientInvalidateWithError:(out id *)arg1;
+@property(readonly, copy, nonatomic) RBSAssertionDescriptor *descriptor;
+@property(readonly, copy, nonatomic) RBSAssertionIdentifier *identifier;
+@property(readonly, nonatomic) unsigned long long state;
 - (id)_initWithDescriptor:(id)arg1 service:(id)arg2;
+- (id)_initWithServerValidatedDescriptor:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
-- (id)description;
+@property(readonly, copy) NSString *description;
+- (void)setExpirationWarningHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
+- (void)setInvalidationHandler:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (id)identifier;
 @property(readonly, copy, nonatomic) NSArray *attributes;
 @property(readonly, nonatomic) RBSTarget *target;
 @property(readonly, copy, nonatomic) NSString *explanation;
-- (unsigned long long)state;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
-- (void)setDescriptor:(id)arg1;
-- (id)descriptor;
 - (oneway void)invalidate;
 - (BOOL)invalidateWithError:(out id *)arg1;
+- (oneway void)acquireWithInvalidationHandler:(CDUnknownBlockType)arg1;
 - (BOOL)acquireWithError:(out id *)arg1;
 - (id)initWithExplanation:(id)arg1 target:(id)arg2 attributes:(id)arg3;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

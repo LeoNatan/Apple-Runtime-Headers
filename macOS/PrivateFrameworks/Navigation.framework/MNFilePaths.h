@@ -10,8 +10,11 @@
 {
 }
 
++ (BOOL)createFolderIfNotPresent:(id)arg1 error:(id *)arg2;
 + (id)timeballDatabasePath;
++ (id)routeHandleExtension;
 + (id)navTraceExtension;
++ (id)navTempDirectoryPath;
 + (id)navTracesDirectoryPath;
 + (id)navdCacheDirectoryPath;
 + (id)_cachesDirectoryPath;

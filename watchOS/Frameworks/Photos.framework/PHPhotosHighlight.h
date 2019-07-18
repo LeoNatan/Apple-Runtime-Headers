@@ -6,7 +6,7 @@
 
 #import <Photos/PHAssetCollection.h>
 
-@class NSDate, NSString;
+@class NSDate, NSManagedObjectID, NSString;
 
 @interface PHPhotosHighlight : PHAssetCollection
 {
@@ -26,13 +26,17 @@
     NSString *_verboseSmartDescription;
     int _startTimeZoneOffset;
     int _endTimeZoneOffset;
-    unsigned int _overviewCount;
     NSDate *_localStartDate;
     NSDate *_localEndDate;
     unsigned int _dayGroupAssetsCount;
     unsigned int _dayGroupExtendedAssetsCount;
     unsigned int _dayGroupSummaryAssetsCount;
     NSString *_subtitle;
+    NSManagedObjectID *_parentPhotosHighlight;
+    NSManagedObjectID *_keyAsset;
+    NSManagedObjectID *_dayGroupKeyAsset;
+    NSManagedObjectID *_monthKeyAsset;
+    NSManagedObjectID *_yearKeyAsset;
     double _promotionScore;
     unsigned long long _mood;
 }
@@ -42,6 +46,10 @@
 + (_Bool)updateHighlightTitles;
 + (_Bool)processUnprocessedMomentLocations;
 + (_Bool)processRecentHighlights;
++ (id)fetchPhotosHighlightUUIDByMomentUUIDForMomentUUIDs:(id)arg1 options:(id)arg2;
++ (id)_fetchPhotosHighlightUUIDByAssetUUIDForAssetUUIDs:(id)arg1 photoLibrary:(id)arg2;
++ (id)fetchPhotosHighlightUUIDByAssetUUIDForAssetUUIDs:(id)arg1 options:(id)arg2;
++ (id)fetchPhotosHighlightUUIDByAssetUUIDForAssets:(id)arg1 options:(id)arg2;
 + (id)fetchChildDayGroupHighlightsForHighlight:(id)arg1 options:(id)arg2;
 + (id)fetchParentDayGroupHighlightForHighlight:(id)arg1 options:(id)arg2;
 + (id)fetchChildHighlightsForHighlight:(id)arg1 options:(id)arg2;
@@ -57,6 +65,11 @@
 + (id)fetchType;
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
+@property(readonly, nonatomic) NSManagedObjectID *yearKeyAsset; // @synthesize yearKeyAsset=_yearKeyAsset;
+@property(readonly, nonatomic) NSManagedObjectID *monthKeyAsset; // @synthesize monthKeyAsset=_monthKeyAsset;
+@property(readonly, nonatomic) NSManagedObjectID *dayGroupKeyAsset; // @synthesize dayGroupKeyAsset=_dayGroupKeyAsset;
+@property(readonly, nonatomic) NSManagedObjectID *keyAsset; // @synthesize keyAsset=_keyAsset;
+@property(readonly, nonatomic) NSManagedObjectID *parentPhotosHighlight; // @synthesize parentPhotosHighlight=_parentPhotosHighlight;
 @property(readonly, nonatomic) short enrichmentVersion; // @synthesize enrichmentVersion=_enrichmentVersion;
 @property(readonly, nonatomic) short highlightVersion; // @synthesize highlightVersion=_highlightVersion;
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -66,7 +79,6 @@
 @property(readonly, nonatomic) unsigned int dayGroupAssetsCount; // @synthesize dayGroupAssetsCount=_dayGroupAssetsCount;
 @property(retain, nonatomic) NSDate *localEndDate; // @synthesize localEndDate=_localEndDate;
 @property(retain, nonatomic) NSDate *localStartDate; // @synthesize localStartDate=_localStartDate;
-@property(readonly, nonatomic) unsigned int overviewCount; // @synthesize overviewCount=_overviewCount;
 @property(readonly, nonatomic) unsigned long long mood; // @synthesize mood=_mood;
 @property(nonatomic, getter=isRecent) _Bool recent; // @synthesize recent=_recent;
 @property(nonatomic, getter=isEnriched) _Bool enriched; // @synthesize enriched=_enriched;
@@ -81,7 +93,10 @@
 @property(readonly, nonatomic) NSString *verboseSmartDescription; // @synthesize verboseSmartDescription=_verboseSmartDescription;
 - (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) unsigned short preferredCurationType;
+@property(readonly, nonatomic) NSManagedObjectID *keyAssetForKind;
 @property(readonly, nonatomic) NSString *smartDescription;
+- (id)dateDescriptionWithOptions:(unsigned int)arg1;
 @property(readonly, nonatomic) NSString *dateDescription;
 - (id)localizedSubtitle;
 - (id)title;

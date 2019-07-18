@@ -8,10 +8,11 @@
 
 #import <OnBoardingKit/OBNavigationBarTitleTransistor-Protocol.h>
 #import <OnBoardingKit/UIScrollViewDelegate-Protocol.h>
+#import <OnBoardingKit/_UIScrollViewLayoutObserver-Protocol.h>
 
 @class NSLayoutConstraint, NSString, OBBulletedList, OBButtonTray, OBContentView, OBHeaderView, OBNavigationBarDisplayState, UINavigationController, UIScrollView, UIView;
 
-@interface OBWelcomeController : OBBaseWelcomeController <UIScrollViewDelegate, OBNavigationBarTitleTransistor>
+@interface OBWelcomeController : OBBaseWelcomeController <UIScrollViewDelegate, _UIScrollViewLayoutObserver, OBNavigationBarTitleTransistor>
 {
     BOOL _darkMode;
     BOOL _scrollingDisabled;
@@ -52,6 +53,7 @@
 @property(retain, nonatomic) OBContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) OBHeaderView *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
+- (void)_scrollViewDidLayoutSubviews:(id)arg1;
 - (void)restoreNavigationBarAppearance;
 - (void)setCurrentNavigationBarDisplayState:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
@@ -65,6 +67,8 @@
 - (double)_headerTopOffset;
 - (void)_updateHeaderTopOffsetConstraint;
 - (double)_contentViewHeight;
+- (BOOL)contentViewUnderButtonTray;
+- (long long)navigationBarScrollToEdgeBehavior;
 - (double)contentViewsTopPaddingFromBottomOfHeader;
 - (void)setupBulletedListIfNeeded;
 - (BOOL)shouldInlineButtonTray;
@@ -82,6 +86,8 @@
 - (id)initWithTitle:(id)arg1 detailText:(id)arg2 symbolName:(id)arg3 contentLayout:(long long)arg4;
 - (id)initWithTitle:(id)arg1 detailText:(id)arg2 icon:(id)arg3;
 - (id)initWithTitle:(id)arg1 detailText:(id)arg2 symbolName:(id)arg3;
+- (void)scrollRectToVisible:(struct CGRect)arg1 animated:(BOOL)arg2;
+- (void)setContentOffset:(struct CGPoint)arg1 animated:(BOOL)arg2;
 - (void)addBulletedListItemWithTitle:(id)arg1 description:(id)arg2 image:(id)arg3;
 
 // Remaining properties

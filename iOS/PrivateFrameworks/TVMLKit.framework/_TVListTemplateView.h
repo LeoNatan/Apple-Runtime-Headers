@@ -17,12 +17,14 @@ __attribute__((visibility("hidden")))
     UIFocusContainerGuide *_previewFocusGuide;
     _Bool _backdropEnabled;
     _Bool _floatingBanner;
+    _Bool _insideFloatingTabBar;
     UIView *_bgImageView;
     UIView *_bannerView;
     UIView *_listView;
     UIView *_previewView;
 }
 
+@property(nonatomic, getter=isInsideFloatingTabBar) _Bool insideFloatingTabBar; // @synthesize insideFloatingTabBar=_insideFloatingTabBar;
 @property(nonatomic) _Bool floatingBanner; // @synthesize floatingBanner=_floatingBanner;
 @property(nonatomic, getter=isBackdropEnabled) _Bool backdropEnabled; // @synthesize backdropEnabled=_backdropEnabled;
 @property(retain, nonatomic) UIView *previewView; // @synthesize previewView=_previewView;

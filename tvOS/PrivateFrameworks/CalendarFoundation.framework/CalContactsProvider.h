@@ -8,7 +8,7 @@
 
 #import <CalendarFoundation/CalContactsProviderProtocol-Protocol.h>
 
-@class CNContact, CNContactStore, CNReputationStore, NSArray, NSData, NSMutableSet, NSString;
+@class CNContact, CNContactStore, CNReputationStore, NSArray, NSMutableSet, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CalContactsProvider : NSObject <CalContactsProviderProtocol>
@@ -18,7 +18,6 @@
     CNReputationStore *_reputationStore;
     NSObject<OS_dispatch_queue> *_syncQueue;
     NSString *_testMeContactIdentifer;
-    NSData *_lastAnchor;
     NSMutableSet *_delegates;
     NSArray *_unitTestEmails;
 }
@@ -32,7 +31,6 @@
 + (id)defaultProvider;
 @property(retain) NSArray *unitTestEmails; // @synthesize unitTestEmails=_unitTestEmails;
 @property(retain) NSMutableSet *delegates; // @synthesize delegates=_delegates;
-@property(retain) NSData *lastAnchor; // @synthesize lastAnchor=_lastAnchor;
 @property(retain) NSString *testMeContactIdentifer; // @synthesize testMeContactIdentifer=_testMeContactIdentifer;
 @property(retain) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 @property(retain) CNReputationStore *reputationStore; // @synthesize reputationStore=_reputationStore;
@@ -64,13 +62,12 @@
 - (void)setTestMeContactIdentifier:(id)arg1;
 - (id)_fetchedUnifiedMeContact;
 - (id)_meWithKeys:(id)arg1;
-- (_Bool)_deltaSyncContacts:(id)arg1;
-- (_Bool)_fullSyncContacts;
+- (void)_setLastHistoryToken:(id)arg1;
+- (id)_lastHistoryToken;
 - (void)_syncContacts;
 - (void)meCardChanged:(id)arg1;
 - (void)contactsChanged:(id)arg1;
 - (id)contactStore;
-- (id)clientIdentifier;
 - (void)setMeCardEmailsForUnitTesting:(id)arg1;
 @property(retain) CNContact *meContact;
 - (void)deregisterForContactChangeNotifications:(id)arg1;

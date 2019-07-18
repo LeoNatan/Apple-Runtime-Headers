@@ -13,6 +13,9 @@
 {
     _Bool _areItemsBound;
     struct {
+        _Bool hasMasterPrototypes;
+        _Bool hasProxiedItemElements;
+        _Bool hasMasterPrototypeForItemAtIndex;
         _Bool hasResetImplicitUpdates;
         _Bool hasProxyElementForLoadedChildElement;
         _Bool hasCanProxyUnloadedChildElement;
@@ -36,6 +39,9 @@
 - (void)appDocumentDidMarkStylesDirty;
 - (void)resetImplicitUpdates;
 - (void)resetUpdates;
+- (id)masterPrototypeForItemAtIndex:(unsigned long long)arg1;
+@property(readonly, copy, nonatomic) NSArray *proxiedItemElements;
+@property(readonly, nonatomic) NSArray *masterPrototypes;
 - (void)unloadIndex:(long long)arg1;
 - (void)loadIndex:(long long)arg1;
 - (long long)indexOfItemForElement:(id)arg1;
@@ -43,7 +49,6 @@
 - (id)prototypeForItemAtIndex:(long long)arg1;
 - (long long)numberOfItems;
 @property(readonly, nonatomic) IKChangeSet *itemsChangeSet;
-@property(readonly, copy, nonatomic) NSArray *proxiedItemElements;
 @property(readonly, nonatomic) NSArray *prototypes;
 - (void)resetProperty:(unsigned long long)arg1;
 - (id)applyUpdatesWithElement:(id)arg1;

@@ -9,9 +9,6 @@
 @interface HKMedicationOrder (Displayable)
 - (id)titleDisplayStringForDetailViewController;
 - (long long)recordCategoryType;
-- (void)fetchConceptRoomItemsWithHealthRecordsStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchStructuredFieldItemsWithHealthRecordsStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchDetailItemsWithHealthRecordsStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)codings;
 - (id)title;
 @end

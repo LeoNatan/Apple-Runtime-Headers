@@ -15,7 +15,7 @@
 
 @property(readonly, copy, nonatomic) NSArray *payments; // @synthesize payments=_payments;
 - (void).cxx_destruct;
-- (id)initWithData:(id)arg1;
+- (id)initWithData:(id)arg1 account:(id)arg2;
 
 @end
 

@@ -13,16 +13,15 @@
 #import <ChatKit/CKComposeChatControllerDelegate-Protocol.h>
 #import <ChatKit/CKCoreChatControllerDelegate-Protocol.h>
 #import <ChatKit/CKOnboardingControllerDelegate-Protocol.h>
-#import <ChatKit/CKWhatsNewControllerDelegate-Protocol.h>
 #import <ChatKit/UIActionSheetDelegate-Protocol.h>
 #import <ChatKit/UIAlertViewDelegate-Protocol.h>
 #import <ChatKit/UINavigationControllerDelegate-Protocol.h>
 #import <ChatKit/UISplitViewControllerDelegate-Protocol.h>
 
-@class CKAlertUtilities, CKConversation, CKConversationListController, CKCoreChatController, CKNavigationController, CKOnboardingController, CKViewController, CKWhatsNewController, NSMutableArray, NSSet, NSString, NSURL, UIViewController;
+@class CKAlertUtilities, CKConversation, CKConversationListController, CKCoreChatController, CKNavigationController, CKOnboardingController, CKViewController, NSMutableArray, NSSet, NSString, NSURL, UIViewController;
 @protocol CKBrowserViewControllerProtocol, CKMessagesControllerDelegate;
 
-@interface CKMessagesController : UISplitViewController <UISplitViewControllerDelegate, UIActionSheetDelegate, CKCoreChatControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, CKChatControllerDelegate, CKComposeChatControllerDelegate, CKBrowserViewControllerStoreSendDelegate, CKWhatsNewControllerDelegate, CKOnboardingControllerDelegate, CKAlertUtilitiesProtocol, CKAlertSuppressionContextsProviding>
+@interface CKMessagesController : UISplitViewController <UISplitViewControllerDelegate, UIActionSheetDelegate, CKCoreChatControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, CKChatControllerDelegate, CKComposeChatControllerDelegate, CKBrowserViewControllerStoreSendDelegate, CKOnboardingControllerDelegate, CKAlertUtilitiesProtocol, CKAlertSuppressionContextsProviding>
 {
     CKConversation *_currentConversation;
     NSMutableArray *_conversationCache;
@@ -39,7 +38,6 @@
     NSURL *_deferredMessagesStoreLaunchURL;
     CDUnknownBlockType _deferredHandleURLBlock;
     NSString *_deferredMessagesStoreLaunchURLSourceApplication;
-    CKWhatsNewController *_whatsNewController;
     CKOnboardingController *_onboardingController;
     CKViewController *_blankViewController;
     UIViewController *_statusBarStyleViewController;
@@ -54,7 +52,6 @@
 @property(copy, nonatomic) CDUnknownBlockType alertViewHandler; // @synthesize alertViewHandler=_alertViewHandler;
 @property(retain, nonatomic) CKViewController *blankViewController; // @synthesize blankViewController=_blankViewController;
 @property(retain, nonatomic) CKOnboardingController *onboardingController; // @synthesize onboardingController=_onboardingController;
-@property(retain, nonatomic) CKWhatsNewController *whatsNewController; // @synthesize whatsNewController=_whatsNewController;
 @property(copy, nonatomic) NSString *deferredMessagesStoreLaunchURLSourceApplication; // @synthesize deferredMessagesStoreLaunchURLSourceApplication=_deferredMessagesStoreLaunchURLSourceApplication;
 @property(copy, nonatomic) CDUnknownBlockType deferredHandleURLBlock; // @synthesize deferredHandleURLBlock=_deferredHandleURLBlock;
 @property(copy, nonatomic) NSURL *deferredMessagesStoreLaunchURL; // @synthesize deferredMessagesStoreLaunchURL=_deferredMessagesStoreLaunchURL;
@@ -72,8 +69,6 @@
 - (id)_newCameraBrowser;
 - (void)didFinishCheckingMissingCarrierSetting;
 - (void)presentCKAlertController:(id)arg1;
-- (void)whatsNewController:(id)arg1 didDismissViewController:(id)arg2;
-- (void)whatsNewControllerWillNotPresentViewController:(id)arg1;
 - (void)onboardingControllerDidFinish:(id)arg1;
 - (id)presentingViewControllerForOnboardingController:(id)arg1;
 - (void)presentOnboardingViewControllerIfNeeded;
@@ -127,6 +122,7 @@
 - (void)showNewMessageCompositionPanelWithRecipients:(id)arg1 composition:(id)arg2 animated:(_Bool)arg3;
 - (id)_sharedBalloonPluginManager;
 - (void)executeDeferredHandleURLBlock;
+- (void)executeDeferredTasks;
 - (void)_appStateChange:(id)arg1;
 - (void)_chatItemsDidChange:(id)arg1;
 - (void)_chatRegistryDidLoad:(id)arg1;
@@ -176,12 +172,14 @@
 - (id)conversationList;
 - (_Bool)becomeFirstResponder;
 - (void)didReceiveMemoryWarning;
+- (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
 - (id)childViewControllerForStatusBarHidden;
 - (long long)preferredStatusBarStyle;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;

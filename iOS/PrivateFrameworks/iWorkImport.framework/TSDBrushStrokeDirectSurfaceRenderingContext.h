@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class IOSurface;
+@protocol MTLDevice;
 
 __attribute__((visibility("hidden")))
 @interface TSDBrushStrokeDirectSurfaceRenderingContext : NSObject
@@ -14,10 +15,12 @@ __attribute__((visibility("hidden")))
     IOSurface *_surface;
     double _contentsScale;
     struct CGColorSpace *_destinationColorSpaceOverride;
+    id <MTLDevice> _metalDeviceOverride;
     struct CGRect _frame;
     struct CGAffineTransform _transform;
 }
 
+@property(readonly, nonatomic) id <MTLDevice> metalDeviceOverride; // @synthesize metalDeviceOverride=_metalDeviceOverride;
 @property(readonly, nonatomic) struct CGColorSpace *destinationColorSpaceOverride; // @synthesize destinationColorSpaceOverride=_destinationColorSpaceOverride;
 @property(readonly, nonatomic) double contentsScale; // @synthesize contentsScale=_contentsScale;
 @property(readonly, nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
@@ -25,7 +28,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) IOSurface *surface; // @synthesize surface=_surface;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithSurface:(id)arg1 frame:(struct CGRect)arg2 transform:(struct CGAffineTransform)arg3 contentsScale:(double)arg4 destinationColorSpaceOverride:(struct CGColorSpace *)arg5;
+- (id)initWithSurface:(id)arg1 frame:(struct CGRect)arg2 transform:(struct CGAffineTransform)arg3 contentsScale:(double)arg4 destinationColorSpaceOverride:(struct CGColorSpace *)arg5 metalDeviceOverride:(id)arg6;
 
 @end
 

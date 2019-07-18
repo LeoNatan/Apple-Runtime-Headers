@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MPMediaLibrary, MPModelKind, NSArray;
+@class MPMediaLibrary, MPModelKind, NSArray, NSString;
 
 @interface MPMediaLibraryEntityTranslationContext : NSObject
 {
@@ -16,8 +16,10 @@
     NSArray *_scopedContainers;
     unsigned long long _filteringOptions;
     MPModelKind *_modelKind;
+    NSString *_personID;
 }
 
+@property(retain, nonatomic) NSString *personID; // @synthesize personID=_personID;
 @property(retain, nonatomic) MPModelKind *modelKind; // @synthesize modelKind=_modelKind;
 @property(nonatomic) unsigned long long filteringOptions; // @synthesize filteringOptions=_filteringOptions;
 @property(nonatomic, getter=isMultiQuery) BOOL multiQuery; // @synthesize multiQuery=_multiQuery;

@@ -13,8 +13,9 @@
     NSString *_altDSID;
     ACAccount *_authkitAccount;
     NSArray *_requestedScopes;
-    NSString *_state;
     NSDictionary *_appProvidedData;
+    NSString *_state;
+    NSString *_nonce;
     NSString *_clientID;
     NSString *_teamID;
     long long _existingStatus;
@@ -24,8 +25,9 @@
 @property(nonatomic) long long existingStatus; // @synthesize existingStatus=_existingStatus;
 @property(copy, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
 @property(copy, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
-@property(copy, nonatomic) NSDictionary *appProvidedData; // @synthesize appProvidedData=_appProvidedData;
+@property(copy, nonatomic) NSString *nonce; // @synthesize nonce=_nonce;
 @property(copy, nonatomic) NSString *state; // @synthesize state=_state;
+@property(copy, nonatomic) NSDictionary *appProvidedData; // @synthesize appProvidedData=_appProvidedData;
 @property(copy, nonatomic) NSArray *requestedScopes; // @synthesize requestedScopes=_requestedScopes;
 @property(retain, nonatomic) ACAccount *authkitAccount; // @synthesize authkitAccount=_authkitAccount;
 - (void).cxx_destruct;

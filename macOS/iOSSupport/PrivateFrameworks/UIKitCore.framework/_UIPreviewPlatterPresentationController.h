@@ -10,7 +10,7 @@
 #import <UIKitCore/_UIPreviewPlatterActionsViewDelegate-Protocol.h>
 #import <UIKitCore/_UIPreviewPlatterPanControllerDelegate-Protocol.h>
 
-@class NSString, UITapGestureRecognizer, UITargetedPreview, UIView, UIVisualEffectView, _UIFufilledContextMenuConfiguration, _UIPreviewPlatterActionsView, _UIPreviewPlatterLayoutArbiter, _UIPreviewPlatterPanController, _UIPreviewPlatterView;
+@class NSString, UIPanGestureRecognizer, UITapGestureRecognizer, UITargetedPreview, UIView, UIVisualEffectView, _UIContextMenuStyle, _UIFulfilledContextMenuConfiguration, _UIPreviewPlatterActionsView, _UIPreviewPlatterLayoutArbiter, _UIPreviewPlatterPanController, _UIPreviewPlatterView;
 @protocol _UIPreviewPlatterPresentationControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -22,25 +22,27 @@ __attribute__((visibility("hidden")))
     UIVisualEffectView *_backgroundEffectView;
     _UIPreviewPlatterView *_contentPlatterView;
     _UIPreviewPlatterActionsView *_actionsView;
+    _UIFulfilledContextMenuConfiguration *_displayedConfiguration;
     UITapGestureRecognizer *_platterActionTapGestureRecognizer;
     UITapGestureRecognizer *_dismissalTapGestureRecognizer;
-    _UIFufilledContextMenuConfiguration *_displayedConfiguration;
+    UIPanGestureRecognizer *_actionScrubbingHandoffGestureRecognizer;
     UITargetedPreview *_sourcePreview;
     _UIPreviewPlatterPanController *_platterPanController;
     _UIPreviewPlatterLayoutArbiter *_layoutArbiter;
-    unsigned long long _currentLayout;
+    _UIContextMenuStyle *_currentStyle;
     struct CGSize _platterContentSize;
 }
 
 @property(nonatomic) BOOL platterContentSizeDidChange; // @synthesize platterContentSizeDidChange=_platterContentSizeDidChange;
 @property(nonatomic) struct CGSize platterContentSize; // @synthesize platterContentSize=_platterContentSize;
-@property(nonatomic) unsigned long long currentLayout; // @synthesize currentLayout=_currentLayout;
+@property(copy, nonatomic) _UIContextMenuStyle *currentStyle; // @synthesize currentStyle=_currentStyle;
 @property(retain, nonatomic) _UIPreviewPlatterLayoutArbiter *layoutArbiter; // @synthesize layoutArbiter=_layoutArbiter;
 @property(retain, nonatomic) _UIPreviewPlatterPanController *platterPanController; // @synthesize platterPanController=_platterPanController;
 @property(retain, nonatomic) UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
-@property(retain, nonatomic) _UIFufilledContextMenuConfiguration *displayedConfiguration; // @synthesize displayedConfiguration=_displayedConfiguration;
+@property(retain, nonatomic) UIPanGestureRecognizer *actionScrubbingHandoffGestureRecognizer; // @synthesize actionScrubbingHandoffGestureRecognizer=_actionScrubbingHandoffGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *dismissalTapGestureRecognizer; // @synthesize dismissalTapGestureRecognizer=_dismissalTapGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *platterActionTapGestureRecognizer; // @synthesize platterActionTapGestureRecognizer=_platterActionTapGestureRecognizer;
+@property(retain, nonatomic) _UIFulfilledContextMenuConfiguration *displayedConfiguration; // @synthesize displayedConfiguration=_displayedConfiguration;
 @property(readonly, nonatomic) _UIPreviewPlatterActionsView *actionsView; // @synthesize actionsView=_actionsView;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) UIVisualEffectView *backgroundEffectView; // @synthesize backgroundEffectView=_backgroundEffectView;
@@ -48,6 +50,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIView *platterTransitionView; // @synthesize platterTransitionView=_platterTransitionView;
 @property(readonly, nonatomic) _UIPreviewPlatterView *contentPlatterView; // @synthesize contentPlatterView=_contentPlatterView;
 - (void)previewActionsView:(id)arg1 didSelectAction:(id)arg2;
+- (id)_actionsOnlyViewControllerForSourcePreview:(id)arg1;
 - (void)_createActionsViewIfNecessary;
 - (void)_updatePlatterAndActionViewLayoutForce:(BOOL)arg1;
 - (void)_updatePresentedViewFrame;
@@ -57,16 +60,15 @@ __attribute__((visibility("hidden")))
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)_handleActionHandoffGesture:(id)arg1;
 - (void)_handlePlatterActionTapGesture:(id)arg1;
 - (void)_handleDismissalTapGesture:(id)arg1;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)tearOffForDraggingWithDragContainerView:(id)arg1;
 - (void)platterPanControllerDidSwipeDown:(id)arg1;
 - (void)platterPanControllerDidTearOff:(id)arg1;
-- (void)_postDismissalTasks;
 - (void)_preDismissalTasks;
-- (void)presentationTransitionWasInterrupted;
-- (void)dismissalTransitionDidEnd:(BOOL)arg1;
 - (void)dismissalTransitionWillBegin;
 - (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (void)presentationTransitionWillBegin;
@@ -74,7 +76,7 @@ __attribute__((visibility("hidden")))
 - (long long)presentationStyle;
 - (BOOL)_shouldDisableInteractionDuringTransitions;
 - (struct CGRect)frameOfPresentedViewInContainerView;
-- (id)initWithPresentingViewController:(id)arg1 configuration:(id)arg2 sourcePreview:(id)arg3 layout:(unsigned long long)arg4;
+- (id)initWithPresentingViewController:(id)arg1 configuration:(id)arg2 sourcePreview:(id)arg3 style:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

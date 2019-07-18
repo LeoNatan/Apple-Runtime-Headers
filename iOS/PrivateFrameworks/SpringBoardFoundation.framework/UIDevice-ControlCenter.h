@@ -11,5 +11,6 @@
 - (id)_currentProduct;
 - (id)_mediumQualityDevicesForHomeScreenBlur;
 - (long long)sbf_homeScreenBlurGraphicsQuality;
+- (long long)sbf_homeGrabberGraphicsQuality;
 @end
 

@@ -20,14 +20,10 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)menuByReplacingChildren:(id)arg1;
 - (id)groupByReplacingChildren:(id)arg1;
 - (id)initWithTitle:(id)arg1 discoverabilityTitle:(id)arg2 identifier:(id)arg3 options:(unsigned int)arg4 children:(id)arg5;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-
-// Remaining properties
-@property(readonly, nonatomic) unsigned int options; // @dynamic options;
 
 @end
 

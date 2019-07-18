@@ -10,7 +10,7 @@
 #import <GeoServices/NSCopying-Protocol.h>
 
 @class GEOLatLng, GEOPBTransitArtwork, GEOPBTransitShield, GEOStyleAttributes, NSDate, NSString, PBDataReader, PBUnknownFields;
-@protocol GEOTransitShieldDataSource;
+@protocol GEOTransitArtworkDataSource;
 
 @interface GEOPBTransitVehiclePosition : PBCodable <GEOTransitVehiclePosition, NSCopying>
 {
@@ -100,16 +100,16 @@
 - (void)_readLatLng;
 @property(nonatomic) _Bool hasTripId;
 @property(nonatomic) unsigned long long tripId;
-@property(readonly, nonatomic) id <GEOTransitShieldDataSource> shieldDataSource;
+@property(readonly, nonatomic) id <GEOTransitArtworkDataSource> artworkDataSource;
 @property(readonly, copy, nonatomic) NSString *colorHexString;
 @property(readonly, nonatomic) NSDate *timestamp;
+@property(readonly, copy, nonatomic) NSString *direction;
 @property(readonly, nonatomic) double heading;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee coordinate;
 @property(readonly, nonatomic) unsigned int tripID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy, nonatomic) NSString *direction; // @dynamic direction;
 @property(readonly) Class superclass;
 
 @end

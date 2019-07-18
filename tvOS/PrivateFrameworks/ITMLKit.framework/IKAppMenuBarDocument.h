@@ -31,6 +31,7 @@
 @property(readonly, copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
 - (void).cxx_destruct;
+- (void)_evaluateDelegateBlockSync:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) IKViewElement *selectedMenuItem;
 - (id)_menuItemElementForEntityUniqueIdentifier:(id)arg1;
 - (id)documentOptionsForEntityUniqueIdentifier:(id)arg1;

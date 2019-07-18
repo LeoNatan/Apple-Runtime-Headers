@@ -10,7 +10,6 @@
 
 @interface NSPersistentCloudKitContainerOptions : NSObject
 {
-    BOOL _shouldInitializeSchema;
     BOOL _useEncryptedStorage;
     NSString *_containerIdentifier;
     NSString *_apsConnectionMachServiceName;
@@ -19,7 +18,6 @@
 @property(retain, nonatomic) NSString *apsConnectionMachServiceName; // @synthesize apsConnectionMachServiceName=_apsConnectionMachServiceName;
 @property BOOL useEncryptedStorage; // @synthesize useEncryptedStorage=_useEncryptedStorage;
 @property(readonly, copy) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
-@property BOOL shouldInitializeSchema; // @synthesize shouldInitializeSchema=_shouldInitializeSchema;
 - (void)dealloc;
 - (id)initWithContainerIdentifier:(id)arg1;
 

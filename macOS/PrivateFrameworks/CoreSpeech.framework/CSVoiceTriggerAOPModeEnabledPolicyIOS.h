@@ -10,6 +10,7 @@
 {
 }
 
+- (BOOL)_isSpeechDetectionDevicePresent;
 - (void)_addConditionsForIOSAOP;
 - (void)_addConditionsForIOSBargeIn;
 - (void)_addVoiceTriggerAOPModeEnabledConditions;

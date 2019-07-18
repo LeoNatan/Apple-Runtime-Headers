@@ -105,8 +105,11 @@
 @property(readonly, nonatomic) HKSampleType *sampleType;
 @property(readonly, copy, nonatomic) NSSet *objectTypes;
 @property(readonly) int queryState;
+@property(readonly, nonatomic) id <HKQueryClientInterface><NSXPCProxyCreating> clientProxy;
 - (void)remote_deactivateServer;
 - (void)remote_startQueryWithCompletion:(CDUnknownBlockType)arg1;
+- (_Bool)isQueryingForHealthRecordsTypes;
+- (void)_queue_notifyIfQueryingForHealthRecords;
 - (void)_queue_setSampleTypeObservationAssertions:(id)arg1;
 - (void)_queue_updateSampleTypeObservationAssertions;
 - (void)_queue_stopDataCollection;
@@ -131,7 +134,7 @@
 - (void)_queue_activateServerWithClientState:(id)arg1 error:(id)arg2;
 - (void)activateServerWithClientState:(id)arg1 error:(id)arg2;
 - (_Bool)prepareToActivateServerWithError:(id *)arg1;
-@property(readonly, nonatomic) id <HKQueryClientInterface><NSXPCProxyCreating> clientProxy;
+- (id)createDatabaseTransactionContext;
 - (id)filteredSamplesForClientWithSamples:(id)arg1;
 - (id)sanitizedSampleForQueryClient:(id)arg1;
 - (void)dealloc;

@@ -8,22 +8,22 @@
 
 #import <UIKitCore/UIInteractionEffect-Protocol.h>
 
-@class NSString, _UIClickHighlightEffectPlatter, _UITargetedPreview;
+@class NSString, UITargetedPreview, _UIClickHighlightEffectPlatter;
 
 __attribute__((visibility("hidden")))
 @interface _UIClickHighlightInteractionEffect : NSObject <UIInteractionEffect>
 {
     long long _phase;
     _UIClickHighlightEffectPlatter *_highlightPlatter;
-    _UITargetedPreview *_targetedPreview;
+    UITargetedPreview *_targetedPreview;
 }
 
-@property(retain, nonatomic) _UITargetedPreview *targetedPreview; // @synthesize targetedPreview=_targetedPreview;
+@property(retain, nonatomic) UITargetedPreview *targetedPreview; // @synthesize targetedPreview=_targetedPreview;
 @property(retain, nonatomic) _UIClickHighlightEffectPlatter *highlightPlatter; // @synthesize highlightPlatter=_highlightPlatter;
 - (void).cxx_destruct;
 - (void)_createHighlightPlatterIfNeeded;
 - (void)interaction:(id)arg1 didChangeWithContext:(id)arg2;
-@property(readonly, nonatomic) _UITargetedPreview *targetedPreviewForEffectContinuation;
+@property(readonly, nonatomic) UITargetedPreview *targetedPreviewForEffectContinuation;
 - (id)initWithTargetedPreview:(id)arg1;
 
 // Remaining properties

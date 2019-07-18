@@ -16,5 +16,6 @@
 
 @optional
 @property(nonatomic) unsigned long long powerUsage;
+- (void)forceUpdatePowerUsage:(unsigned long long)arg1;
 @end
 

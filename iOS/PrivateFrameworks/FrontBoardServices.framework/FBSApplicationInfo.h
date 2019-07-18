@@ -18,6 +18,7 @@
     NSURL *_sandboxURL;
     double _lastModifiedDate;
     NSString *_preferenceDomain;
+    NSString *_teamIdentifier;
     NSString *_signerIdentity;
     NSDictionary *_environmentVariables;
     NSDictionary *_lazy_entitlements;
@@ -91,6 +92,7 @@
 @property(readonly, nonatomic) _Bool hasViewServicesEntitlement; // @synthesize hasViewServicesEntitlement=_hasViewServicesEntitlement;
 @property(readonly, nonatomic) NSDictionary *environmentVariables; // @synthesize environmentVariables=_environmentVariables;
 @property(readonly, copy, nonatomic) NSString *signerIdentity; // @synthesize signerIdentity=_signerIdentity;
+@property(readonly, nonatomic) NSString *teamIdentifier; // @synthesize teamIdentifier=_teamIdentifier;
 @property(readonly, copy, nonatomic) NSString *preferenceDomain; // @synthesize preferenceDomain=_preferenceDomain;
 @property(readonly, nonatomic) double lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
 @property(readonly, nonatomic) NSURL *sandboxURL; // @synthesize sandboxURL=_sandboxURL;

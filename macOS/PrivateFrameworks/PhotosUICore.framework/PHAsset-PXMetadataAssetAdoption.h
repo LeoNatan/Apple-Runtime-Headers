@@ -70,7 +70,7 @@
 @property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic, getter=isFavorite) BOOL favorite;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) float hdrGain;
+@property(readonly, nonatomic) double hdrGain;
 @property(readonly, nonatomic) NSDate *localCreationDate;
 @property(readonly, nonatomic) CLLocation *location;
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;

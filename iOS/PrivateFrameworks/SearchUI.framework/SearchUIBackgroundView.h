@@ -10,10 +10,14 @@
 {
     _Bool _shouldUseInsetRoundedSections;
     _Bool _inPreviewPlatter;
+    UIView *_platterView;
 }
 
++ (id)platterMaterialView;
+@property(retain) UIView *platterView; // @synthesize platterView=_platterView;
 @property(nonatomic, getter=isInPreviewPlatter) _Bool inPreviewPlatter; // @synthesize inPreviewPlatter=_inPreviewPlatter;
 @property(nonatomic) _Bool shouldUseInsetRoundedSections; // @synthesize shouldUseInsetRoundedSections=_shouldUseInsetRoundedSections;
+- (void).cxx_destruct;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)didMoveToWindow;
 - (void)_dynamicUserInterfaceTraitDidChange;

@@ -77,7 +77,6 @@
 - (void)customContentRequestsDefaultAction:(id)arg1;
 - (void)customContent:(id)arg1 forwardAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4;
 - (void)customContent:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)contentProvider:(id)arg1 requestsPresentingLongLookAnimated:(_Bool)arg2;
 - (void)contentProvider:(id)arg1 performAction:(id)arg2 animated:(_Bool)arg3;
 - (void)_askDelegateToExecuteAction:(id)arg1 withParameters:(id)arg2 animated:(_Bool)arg3;
 - (void)_updateScrollViewContentSize;
@@ -114,6 +113,10 @@
 - (void)_updateWithProvidedAuxiliaryOptionsContent;
 - (void)_updateWithProvidedCustomContent;
 - (long long)_dateFormatStyle;
+- (unsigned long long)_maximumNumberOfSecondaryLargeTextLinesForProvidedStaticContent;
+- (unsigned long long)_maximumNumberOfSecondaryTextLinesForProvidedStaticContent;
+- (unsigned long long)_maximumNumberOfPrimaryLargeTextLinesForProvidedStaticContent;
+- (unsigned long long)_maximumNumberOfPrimaryTextLinesForProvidedStaticContent;
 - (void)_updateWithProvidedStaticContent;
 - (struct UIView *)_lookView;
 - (struct UIView *)_lookViewIfLoaded;
@@ -138,7 +141,7 @@
 - (void)_setupAuxiliaryOptionsContentProvider;
 - (void)_setupCustomContentProvider;
 - (void)_setupStaticContentProvider;
-- (void)reloadContentProviders;
+- (void)invalidateContentProviders;
 @property(readonly, nonatomic, getter=hasCommittedToPresentingCustomContentProvidingViewController) _Bool committedToPresentingCustomContentProvidingViewController;
 @property(readonly, nonatomic, getter=_isPresentingCustomContentProvidingViewController) _Bool presentingCustomContentProvidingViewController;
 @property(readonly, nonatomic, getter=isDragging) _Bool dragging;
@@ -148,9 +151,10 @@
 - (id)initWithNotificationRequest:(id)arg1;
 - (id)initWithNotificationRequest:(id)arg1 revealingAdditionalContentOnPresentation:(_Bool)arg2;
 - (id)_initWithNotificationRequest:(id)arg1 revealingAdditionalContentOnPresentation:(_Bool)arg2;
-- (void)presentLongLookAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)presentLongLookAnimated:(_Bool)arg1 trigger:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic, getter=_presentedLongLookViewController) NCNotificationViewController *presentedLongLookViewController;
 @property(readonly, nonatomic, getter=isLookStyleLongLook) _Bool lookStyleLongLook;
+- (void)reloadContentProviders;
 
 // Remaining properties
 @property(readonly) unsigned long long hash;

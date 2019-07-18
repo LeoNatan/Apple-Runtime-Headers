@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 // Remaining properties
 @property(readonly, nonatomic) NSDictionary *additionalDocumentPropertiesForWrite;
 @property(readonly, nonatomic) NSDictionary *additionalDocumentSupportPropertiesForWrite;
+@property(readonly, nonatomic) long long archiveValidationMode;
 @property(readonly, nonatomic) _Bool areNewExternalReferencesToDataAllowed;
 @property(readonly, nonatomic) NSUUID *baseUUIDForObjectUUID;
 @property(readonly, copy) NSString *debugDescription;

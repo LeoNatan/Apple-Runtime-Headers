@@ -39,6 +39,7 @@
         } ;
         unsigned int _value;
     } _flags;
+    NSArray *_monogramComponents;
 }
 
 + (Class)classForFamiliarity:(int)arg1;
@@ -46,6 +47,7 @@
 + (id)compositeNameForFirstName:(id)arg1 lastName:(id)arg2;
 + (id)secureCodedPropertyKeys;
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSArray *monogramComponents; // @synthesize monogramComponents=_monogramComponents;
 @property(retain, nonatomic) NSNumber *friendPlayedNearby; // @synthesize friendPlayedNearby=_friendPlayedNearby;
 @property(retain, nonatomic) NSNumber *friendPlayedWith; // @synthesize friendPlayedWith=_friendPlayedWith;
 @property(retain, nonatomic) NSNumber *friendBiDirectional; // @synthesize friendBiDirectional=_friendBiDirectional;

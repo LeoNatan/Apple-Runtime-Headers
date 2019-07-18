@@ -9,8 +9,14 @@
 @interface _TtC7NewsUI231MagazineCategoryGridModelLoader : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: identifier
+    // Error parsing type: , name: title
     // Error parsing type: , name: configService
+    // Error parsing type: , name: paidBundleConfigManager
     // Error parsing type: , name: categoryService
+    // Error parsing type: , name: issueService
+    // Error parsing type: , name: issueModelFactory
+    // Error parsing type: , name: tagService
+    // Error parsing type: , name: assetHandleFactory
 }
 
 @end

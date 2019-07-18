@@ -10,7 +10,6 @@
 {
 }
 
-- (double)_offsetForPushingCardsOffscreenAtIndex:(unsigned long long)arg1;
 - (id)opacitySettings;
 - (id)layoutSettings;
 - (unsigned long long)numberOfAppLayoutsToCacheSnapshots;

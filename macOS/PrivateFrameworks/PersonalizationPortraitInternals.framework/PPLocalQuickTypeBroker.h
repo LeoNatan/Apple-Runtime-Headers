@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <PersonalizationPortraitInternals/PPFeedbackAccepting-Protocol.h>
+#import <PersonalizationPortraitInternals/PPFeedbackProcessing-Protocol.h>
 
 @class PPM2FeedbackPortraitRegistered, PPMFeedbackRegistered, PPQuickTypeConnectionsServant, PPQuickTypeContactsServant, PPQuickTypeEventsServant, PPQuickTypeNavigationServant, _PASLock;
 
-@interface PPLocalQuickTypeBroker : NSObject <PPFeedbackAccepting>
+@interface PPLocalQuickTypeBroker : NSObject <PPFeedbackAccepting, PPFeedbackProcessing>
 {
     PPQuickTypeNavigationServant *_navigationServant;
     PPQuickTypeContactsServant *_contactsServant;
@@ -23,12 +24,17 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (id)filterFeedback:(id)arg1;
+- (void)processFeedback:(id)arg1;
 - (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_cacheEntryWithRecipients:(id)arg1;
 - (id)_cachedQuickTypeItemsWithRecipients:(id)arg1;
 - (id)_cachedQuickTypeItemsWithQuery:(id)arg1;
 - (id)_recipientItemCacheKeyForRecipients:(id)arg1;
+- (BOOL)_shouldUseCacheWithCacheEntry:(id)arg1 query:(id)arg2;
 - (id)_quickTypeItemsFromServantsWithQuery:(id)arg1 limit:(unsigned long long)arg2 explanationSet:(id)arg3;
+- (void)_registerForNotifications;
+- (void)_clearCaches;
 - (void)hibernateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)warmUpWithCompletion:(CDUnknownBlockType)arg1;
 - (void)recentQuickTypeItemsForRecipients:(id)arg1 completion:(CDUnknownBlockType)arg2;

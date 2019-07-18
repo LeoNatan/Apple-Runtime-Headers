@@ -6,12 +6,16 @@
 
 #import <ComponentKit/CKStatefulViewComponentController.h>
 
+#import <WorkflowUI/WFComponentEditingSession-Protocol.h>
 #import <WorkflowUI/WFModuleSummaryViewDelegate-Protocol.h>
 
-@class NSString;
+@class NSDictionary, NSString;
 
-@interface WFModuleSummaryComponentController : CKStatefulViewComponentController <WFModuleSummaryViewDelegate>
+@interface WFModuleSummaryComponentController : CKStatefulViewComponentController <WFModuleSummaryViewDelegate, WFComponentEditingSession>
 {
+    _Bool _summaryIsEditing;
+    _Bool _shouldReflowWhenComponentRemounted;
+    NSDictionary *_stagedParameterStates;
 }
 
 + (void)configureStatefulView:(id)arg1 forComponent:(id)arg2;
@@ -19,12 +23,21 @@
 + (id)summaryUnpopulatedFont;
 + (id)summaryFont;
 + (id)newStatefulView:(id)arg1;
+@property(retain, nonatomic) NSDictionary *stagedParameterStates; // @synthesize stagedParameterStates=_stagedParameterStates;
+@property(nonatomic) _Bool shouldReflowWhenComponentRemounted; // @synthesize shouldReflowWhenComponentRemounted=_shouldReflowWhenComponentRemounted;
+@property(nonatomic) _Bool summaryIsEditing; // @synthesize summaryIsEditing=_summaryIsEditing;
+- (void).cxx_destruct;
+- (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)summaryViewDidInvalidateSize:(id)arg1;
 - (void)summaryViewDidEndEditing:(id)arg1;
 - (void)summaryViewWillBeginEditing:(id)arg1;
 - (id)viewControllerContainingSummaryView:(id)arg1;
+- (void)reflowWithStagedParameterStates:(id)arg1;
+- (void)didUpdateComponent;
+- (_Bool)canRelinquishStatefulView;
 - (void)willRelinquishStatefulView:(id)arg1;
 - (void)didAcquireStatefulView:(id)arg1;
+- (id)summaryView;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

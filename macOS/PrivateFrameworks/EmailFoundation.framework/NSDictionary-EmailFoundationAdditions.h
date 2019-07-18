@@ -7,6 +7,8 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (EmailFoundationAdditions)
+- (id)ef_mapValues:(CDUnknownBlockType)arg1;
+- (id)ef_filter:(CDUnknownBlockType)arg1;
 - (id)ef_objectOfClass:(Class)arg1 forKey:(id)arg2;
 @end
 

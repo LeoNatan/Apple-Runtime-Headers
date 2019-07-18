@@ -14,6 +14,7 @@
 {
 }
 
+- (void)resetGuardianManagedValueOnContact:(id)arg1;
 - (void)setCNValue:(id)arg1 onContact:(id)arg2;
 - (id)CNValueForContact:(id)arg1;
 - (Class)valueClass;

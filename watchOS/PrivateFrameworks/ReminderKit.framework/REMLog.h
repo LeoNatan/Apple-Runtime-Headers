@@ -10,6 +10,7 @@
 {
 }
 
++ (id)scripting;
 + (id)ppt;
 + (id)analytics;
 + (id)account;
@@ -20,7 +21,8 @@
 + (id)userAction;
 + (id)dataAccess;
 + (id)migration;
-+ (id)cloud;
++ (id)cloudkitCollaboration;
++ (id)cloudkit;
 + (id)utility;
 + (id)accountPlugin;
 + (id)alarmEngine;

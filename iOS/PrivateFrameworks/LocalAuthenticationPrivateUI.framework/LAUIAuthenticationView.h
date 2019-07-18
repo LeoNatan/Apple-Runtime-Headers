@@ -32,6 +32,8 @@
 @property(nonatomic) long long glyphStyle; // @synthesize glyphStyle=_glyphStyle;
 @property(nonatomic) __weak id <LAUIAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)localizedCallerName;
+- (id)callerIconBundlePath;
 - (void)biometricNoMatch;
 - (void)authenticationResult:(id)arg1 error:(id)arg2 context:(id)arg3;
 - (void)biometryState:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;

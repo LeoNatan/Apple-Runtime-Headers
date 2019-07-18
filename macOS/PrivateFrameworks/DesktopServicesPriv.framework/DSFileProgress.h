@@ -9,9 +9,14 @@
 __attribute__((visibility("hidden")))
 @interface DSFileProgress : NSObject
 {
+    struct vector<TKeyValueObserver, std::__1::allocator<TKeyValueObserver>> _observers;
 }
 
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)progressChanged:(id)arg1;
+- (void)stopObserving;
+- (void)startObserving:(id)arg1;
 
 @end
 

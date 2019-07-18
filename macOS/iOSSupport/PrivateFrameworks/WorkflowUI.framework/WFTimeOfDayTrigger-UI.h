@@ -7,6 +7,6 @@
 #import <WorkflowKit/WFTimeOfDayTrigger.h>
 
 @interface WFTimeOfDayTrigger (UI)
-+ (id)triggerTypeIconName;
++ (id)triggerTypeIcon;
 @end
 

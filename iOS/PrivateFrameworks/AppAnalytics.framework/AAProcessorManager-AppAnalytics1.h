@@ -7,6 +7,7 @@
 #import <AppAnalytics/AAProcessorManager.h>
 
 @interface AAProcessorManager (AppAnalytics1)
+- (void)flushWithCallbackQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resumeBackgroundProcessingForIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @end
 

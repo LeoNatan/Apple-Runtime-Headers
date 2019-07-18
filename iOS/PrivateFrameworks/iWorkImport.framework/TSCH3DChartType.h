@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (int)labelOrientation;
 - (id)animationDeliveryStylesForFilter:(id)arg1;
 - (id)animationFilters;
+- (_Bool)supportsAxisLabelAngle;
 - (_Bool)supportsBubbleOptions;
 - (_Bool)supportsConnectingLines;
 - (_Bool)supportsSeriesStroke;

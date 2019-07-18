@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_gridParentViews;
     double _cachedWidthForOffMainThreadWork;
     long long _sizeClass;
+    BOOL _needsLayoutInWindow;
     BOOL _rightBorderInsetsOccurrences;
     BOOL _showsTimeLine;
     BOOL _showsTimeMarker;
@@ -95,6 +96,7 @@ __attribute__((visibility("hidden")))
 - (double)bottomPadding;
 @property(readonly, nonatomic) double topPadding;
 - (void)setOrientation:(long long)arg1;
+- (void)didMoveToWindow;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (long long)_sizeClass;

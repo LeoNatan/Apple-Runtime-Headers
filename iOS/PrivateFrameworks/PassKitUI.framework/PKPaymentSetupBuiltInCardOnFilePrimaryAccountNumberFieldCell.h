@@ -6,21 +6,27 @@
 
 #import <PassKitUI/PKPaymentSetupFieldCell.h>
 
+@class UIImageView;
+
 @interface PKPaymentSetupBuiltInCardOnFilePrimaryAccountNumberFieldCell : PKPaymentSetupFieldCell
 {
+    UIImageView *_accessoryImageView;
     _Bool _hasDarkAppearance;
     long long _paymentCredentialType;
 }
 
 @property(nonatomic) _Bool hasDarkAppearance; // @synthesize hasDarkAppearance=_hasDarkAppearance;
 @property(nonatomic) long long paymentCredentialType; // @synthesize paymentCredentialType=_paymentCredentialType;
-- (id)_imageForPaymentCredentialType:(long long)arg1;
+- (void).cxx_destruct;
+- (id)_networkImage;
 - (_Bool)textFieldShouldClear:(id)arg1;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (_Bool)textFieldShouldBeginEditing:(id)arg1;
+- (void)_updateNetworkImage;
 - (void)setPaymentSetupField:(id)arg1;
 - (void)setEnabled:(_Bool)arg1;
 - (_Bool)isEnabled;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)dealloc;
 - (id)init;
 - (void)pk_applyAppearance:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class PKDiscoveryCallToAction, PKDiscoveryMedia, UIActivityIndicatorView, UIButton, UIImageView, UILabel;
+@class PKContinuousButton, PKDiscoveryCallToAction, PKDiscoveryMedia, UIImageView, UILabel;
 @protocol PKDiscoveryCardViewDelegate;
 
 @interface PKDiscoveryCallToActionFooterView : UIView
@@ -16,8 +16,7 @@
     UILabel *_titleLabel;
     UILabel *_editorialDescriptionLabel;
     UIImageView *_iconImageView;
-    UIButton *_button;
-    UIActivityIndicatorView *_activityIndicator;
+    PKContinuousButton *_button;
     int _displayType;
     _Bool _hasIcon;
     _Bool _hasButton;
@@ -31,7 +30,12 @@
 @property(nonatomic) _Bool showActivityIndicator; // @synthesize showActivityIndicator=_showActivityIndicator;
 - (void).cxx_destruct;
 - (void)_loadImageData;
+- (float)_maxButtonWidth;
+- (struct CGSize)_iconSize;
+- (id)_editorialDescriptionLabelFont;
+- (id)_titleLabelFont;
 - (void)_buttonPressed:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)_descriptionLabelColor;
 - (id)_titleLabelColor;
 - (void)setCallToActionTappedOverride:(CDUnknownBlockType)arg1;

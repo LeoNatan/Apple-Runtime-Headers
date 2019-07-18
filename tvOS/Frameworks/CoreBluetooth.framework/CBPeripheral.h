@@ -32,6 +32,7 @@
     _Bool _canSendWriteWithoutResponse;
     _Bool _ancsAuthorized;
     _Bool _isConnectedToSystem;
+    _Bool _visibleInSettings;
     _Bool _connectedToSystem;
     unsigned int _writesPending;
     id <CBPeripheralDelegate> _delegate;
@@ -41,13 +42,10 @@
     NSArray *_services;
     NSHashTable *_l2capChannels;
     NSString *_BDAddress;
-    long long _PID;
-    long long _VID;
 }
 
 @property(readonly, nonatomic, getter=isConnectedToSystem) _Bool connectedToSystem; // @synthesize connectedToSystem=_connectedToSystem;
-@property long long VID; // @synthesize VID=_VID;
-@property long long PID; // @synthesize PID=_PID;
+@property(readonly) _Bool visibleInSettings; // @synthesize visibleInSettings=_visibleInSettings;
 @property(retain) NSString *BDAddress; // @synthesize BDAddress=_BDAddress;
 @property(readonly, retain, nonatomic) NSHashTable *l2capChannels; // @synthesize l2capChannels=_l2capChannels;
 @property unsigned int writesPending; // @synthesize writesPending=_writesPending;
@@ -75,6 +73,7 @@
 - (void)handleL2CAPChannelOpened:(id)arg1;
 - (void)handleServicesDiscovered:(id)arg1;
 - (void)handleTimeSyncResponse:(id)arg1;
+- (void)handleVisibilityChanged:(id)arg1;
 - (void)handleRSSIUpdated:(id)arg1;
 - (void)handleServicesChanged:(id)arg1;
 - (void)handleNameUpdated:(id)arg1;

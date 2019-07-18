@@ -10,7 +10,6 @@
 {
     // Error parsing type: , name: delegate
     // Error parsing type: , name: store
-    // Error parsing type: , name: displayMode
 }
 
 @end

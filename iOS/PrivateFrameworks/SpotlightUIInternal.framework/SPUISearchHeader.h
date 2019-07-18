@@ -55,7 +55,6 @@
 @property(nonatomic) _Bool useInPlaceFilteredBlur;
 - (double)bottomPadding;
 - (double)topPadding;
-- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (void)performTestSearchWithQuery:(id)arg1 event:(unsigned long long)arg2 sourcePreference:(long long)arg3;
 - (void)searchForQuery:(id)arg1 forSuggestions:(_Bool)arg2;
 - (void)searchForSuggestion:(id)arg1;
@@ -81,6 +80,7 @@
 @property(readonly, nonatomic) NSString *currentQuery;
 - (void)triggerSearchForUnlock;
 - (_Bool)textFieldShouldReturn;
+- (void)escapeKeyPressed;
 - (void)cancelButtonClicked:(id)arg1;
 - (void)textFieldDidBeginEditing;
 - (void)textDidChange:(id)arg1 whyQuery:(unsigned long long)arg2 allowZKW:(_Bool)arg3;

@@ -6,35 +6,48 @@
 
 #import <objc/NSObject.h>
 
-@class PPLocationStorage, PPMLocationDonation, PPMObjectsDeletion;
+#import <PersonalizationPortraitInternals/PPFeedbackAccepting-Protocol.h>
+#import <PersonalizationPortraitInternals/PPFeedbackProcessing-Protocol.h>
 
-@interface PPLocalLocationStore : NSObject
+@class PPLocationCache, PPLocationStorage, PPM2FeedbackPortraitRegistered, PPMFeedbackRegistered, PPMLocationDonation, PPMObjectsDeletion;
+
+@interface PPLocalLocationStore : NSObject <PPFeedbackAccepting, PPFeedbackProcessing>
 {
     PPLocationStorage *_storage;
+    PPLocationCache *_cache;
     PPMLocationDonation *_donationTracker;
     PPMObjectsDeletion *_deletionTracker;
+    PPMFeedbackRegistered *_feedbackTracker;
+    PPM2FeedbackPortraitRegistered *_feedbackTracker2;
 }
 
++ (float)resolvedPerRecordDecayRateForRecord:(id)arg1 perRecordDecayRate:(float)arg2;
 + (void)sortAndTruncate:(id)arg1 queryLimit:(unsigned int)arg2;
 + (id)scoredLocationFromName:(id)arg1 category:(unsigned short)arg2 score:(double)arg3 sentimentScore:(double)arg4;
++ (unsigned short)routineLOITypeToLocationCategory:(int)arg1;
 + (unsigned short)namedEntityCategoryToLocationCategory:(unsigned int)arg1;
 + (_Bool)isLocationRelevantNamedEntityCategory:(unsigned int)arg1;
 + (unsigned short)poiCategoryToPPLocationCategory:(id)arg1;
 + (id)locationFromMapItem:(id)arg1;
 + (id)locationNamedEntityToPPScoredLocation:(id)arg1;
 + (id)locationFromMapItemDictionary:(id)arg1;
-+ (id)scoreLocations:(id)arg1 scoringDate:(id)arg2 overrideDecayRate:(_Bool)arg3 decayRate:(double)arg4;
++ (id)scoreLocations:(id)arg1 scoringDate:(id)arg2 perRecordDecayRate:(float)arg3 decayRate:(float)arg4;
 + (id)defaultStore;
 - (void).cxx_destruct;
+- (void)processFeedback:(id)arg1;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)deleteAllLocationsOlderThanDate:(id)arg1 deletedCount:(unsigned int *)arg2 error:(id *)arg3;
 - (_Bool)deleteAllLocationsFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 olderThan:(id)arg3 deletedCount:(unsigned int *)arg4 error:(id *)arg5;
 - (_Bool)deleteAllLocationsFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 deletedCount:(unsigned int *)arg3 error:(id *)arg4;
 - (_Bool)deleteAllLocationsFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 deletedCount:(unsigned int *)arg3 error:(id *)arg4;
 - (_Bool)deleteAllLocationsFromSourcesWithBundleId:(id)arg1 deletedCount:(unsigned int *)arg2 error:(id *)arg3;
-- (_Bool)registerFeedback:(id)arg1 error:(id *)arg2;
 - (_Bool)clearWithError:(id *)arg1 deletedCount:(unsigned int *)arg2;
 - (id)_unlimitedLocationRecordsWithQuery:(id)arg1 error:(id *)arg2;
 - (id)locationRecordsWithQuery:(id)arg1 error:(id *)arg2;
+- (id)homeOrWorkAddresses;
+- (id)locationForWork;
+- (id)locationForHome;
+- (id)locationRecordOfCategory:(unsigned short)arg1;
 - (_Bool)iterLocationRecordsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)rankedLocationsWithQuery:(id)arg1 error:(id *)arg2;
 - (_Bool)iterRankedLocationsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;

@@ -66,7 +66,6 @@ __attribute__((visibility("hidden")))
 - (void)navigationSessionManagerWillReroute:(id)arg1;
 - (void)navigationSessionManager:(id)arg1 didUpdatePreviewRoutes:(id)arg2 withSelectedRouteIndex:(unsigned long long)arg3;
 - (void)navigationSessionManager:(id)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
-- (void)navigationSessionManager:(id)arg1 didUpdateTraffic:(id)arg2;
 - (void)navigationSessionManager:(id)arg1 didUpdateETAResponseForRoute:(id)arg2;
 - (void)navigationSessionManager:(id)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
 - (void)navigationSessionManager:(id)arg1 didUpdateDisplayETA:(id)arg2 displayRemainingMinutes:(unsigned long long)arg3 forRoute:(id)arg4;
@@ -87,7 +86,7 @@ __attribute__((visibility("hidden")))
 - (void)stateManager:(id)arg1 willChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (void)resumeRealtimeUpdatesForSubscriber:(id)arg1;
 - (void)pauseRealtimeUpdatesForSubscriber:(id)arg1;
-- (void)checkinForNavigationService;
+- (void)checkinForNavigationService:(CDUnknownBlockType)arg1;
 - (void)updateGuidanceWithData:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)interfaceHashesWithHandler:(CDUnknownBlockType)arg1;
 - (void)recordPedestrianTracePath:(id)arg1;
@@ -118,8 +117,6 @@ __attribute__((visibility("hidden")))
 - (void)stopNavigation;
 - (void)startNavigationWithDetails:(id)arg1 activeBlock:(CDUnknownBlockType)arg2;
 - (void)setRoutesForPreview:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
-- (void)cancelDirectionsRequestWithIdentifier:(id)arg1;
-- (void)requestDirections:(id)arg1 withIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)reset;
 - (void)start;
 - (void)dealloc;

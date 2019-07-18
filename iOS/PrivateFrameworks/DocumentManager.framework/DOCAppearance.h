@@ -9,7 +9,7 @@
 #import <DocumentManager/NSCopying-Protocol.h>
 #import <DocumentManager/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString, UIColor;
+@class NSString, UIColor;
 
 @interface DOCAppearance : NSObject <NSSecureCoding, NSCopying>
 {
@@ -49,9 +49,6 @@
 - (_Bool)isEqual:(id)arg1;
 @property(retain, nonatomic) NSString *collectionCreateButtonTitle;
 - (id)init;
-@property(readonly) UIColor *progressViewInactiveStrokeColor;
-@property(readonly) NSArray *backgroundGradientColors;
-@property(readonly) UIColor *selectedBackgroundColor;
 @property(readonly) UIColor *backgroundColor;
 
 @end

@@ -20,8 +20,9 @@ __attribute__((visibility("hidden")))
         unsigned int bottomAttached:1;
         unsigned int percentFullScreen:1;
         unsigned int floatingUntransformedFrame:1;
+        unsigned int bottomAttachedUntransformedFrame:1;
         unsigned int fullHeightUntransformedFrame:1;
-        unsigned int stackTopAlignmentOffset:1;
+        unsigned int stackAlignmentFrame:1;
         unsigned int dismissOffset:1;
         unsigned int activeDetents:1;
         unsigned int rubberBandExtentBeyondMinimumOffset:1;
@@ -48,6 +49,7 @@ __attribute__((visibility("hidden")))
     BOOL __wantsFullScreen;
     BOOL __wantsBottomAttached;
     BOOL __wantsBottomAttachedInCompactHeight;
+    BOOL __widthFollowsPreferredContentSizeWhenBottomAttached;
     BOOL __presented;
     BOOL __shouldScaleDownBehindDescendants;
     BOOL __reduceMotionEnabled;
@@ -60,7 +62,6 @@ __attribute__((visibility("hidden")))
     double __maximumWidth;
     double __depthLevel;
     double __percentFullScreen;
-    double __stackTopAlignmentOffset;
     double __dismissOffset;
     long long __indexOfCurrentActiveDetent;
     long long __indexOfActiveDimmingDetent;
@@ -97,7 +98,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *__mutableActiveReversedDetentIndexes;
     struct CGSize __preferredSize;
     struct CGRect __floatingUntransformedFrame;
+    struct CGRect __bottomAttachedUntransformedFrame;
     struct CGRect __fullHeightUntransformedFrame;
+    struct CGRect __stackAlignmentFrame;
     struct CGRect __untransformedFrame;
     struct UIRectCornerRadii __cornerRadii;
     struct CGRect __containerBounds;
@@ -131,6 +134,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=_isReduceMotionEnabled, setter=_setReduceMotionEnabled:) BOOL _reduceMotionEnabled; // @synthesize _reduceMotionEnabled=__reduceMotionEnabled;
 @property(nonatomic, setter=_setShouldScaleDownBehindDescendants:) BOOL _shouldScaleDownBehindDescendants; // @synthesize _shouldScaleDownBehindDescendants=__shouldScaleDownBehindDescendants;
 @property(nonatomic, getter=_isPresented, setter=_setPresented:) BOOL _presented; // @synthesize _presented=__presented;
+@property(nonatomic, setter=_setWidthFollowsPreferredContentSizeWhenBottomAttached:) BOOL _widthFollowsPreferredContentSizeWhenBottomAttached; // @synthesize _widthFollowsPreferredContentSizeWhenBottomAttached=__widthFollowsPreferredContentSizeWhenBottomAttached;
 @property(nonatomic, setter=_setWantsBottomAttachedInCompactHeight:) BOOL _wantsBottomAttachedInCompactHeight; // @synthesize _wantsBottomAttachedInCompactHeight=__wantsBottomAttachedInCompactHeight;
 @property(nonatomic, setter=_setWantsBottomAttached:) BOOL _wantsBottomAttached; // @synthesize _wantsBottomAttached=__wantsBottomAttached;
 @property(nonatomic, setter=_setWantsFullScreen:) BOOL _wantsFullScreen; // @synthesize _wantsFullScreen=__wantsFullScreen;
@@ -170,8 +174,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long _reversedIndexOfLastUndimmedDetent;
 @property(nonatomic, setter=_setReversedIndexOfCurrentDetent:) long long _reversedIndexOfCurrentDetent;
 @property(readonly, nonatomic) double _dismissOffset; // @synthesize _dismissOffset=__dismissOffset;
-@property(readonly, nonatomic) double _stackTopAlignmentOffset; // @synthesize _stackTopAlignmentOffset=__stackTopAlignmentOffset;
+@property(readonly, nonatomic) struct CGRect _stackAlignmentFrame; // @synthesize _stackAlignmentFrame=__stackAlignmentFrame;
 @property(readonly, nonatomic) struct CGRect _fullHeightUntransformedFrame; // @synthesize _fullHeightUntransformedFrame=__fullHeightUntransformedFrame;
+@property(readonly, nonatomic) struct CGRect _bottomAttachedUntransformedFrame; // @synthesize _bottomAttachedUntransformedFrame=__bottomAttachedUntransformedFrame;
 @property(readonly, nonatomic) struct CGRect _floatingUntransformedFrame; // @synthesize _floatingUntransformedFrame=__floatingUntransformedFrame;
 @property(readonly, nonatomic) double _percentFullScreen; // @synthesize _percentFullScreen=__percentFullScreen;
 @property(readonly, nonatomic, getter=_isBottomAttached) BOOL _bottomAttached; // @synthesize _bottomAttached=__bottomAttached;
@@ -181,6 +186,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double _maximumWidth; // @synthesize _maximumWidth=__maximumWidth;
 @property(readonly, nonatomic) double _minimumTopInset; // @synthesize _minimumTopInset=__minimumTopInset;
 @property(retain, nonatomic, setter=_setDetents:) NSArray *_detents;
+- (void)_invalidatePreferredSize;
 - (id)init;
 
 @end

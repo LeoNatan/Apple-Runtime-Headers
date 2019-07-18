@@ -7,7 +7,7 @@
 #import <Foundation/NSCoder.h>
 
 @interface NSCoder (IntentsFoundation)
-- (void)_inf_encodeBytesNoCopy:(id)arg1 forKey:(id)arg2;
-- (id)_inf_decodeBytesNoCopyForKey:(id)arg1;
+- (void)if_encodeBytesNoCopy:(id)arg1 forKey:(id)arg2;
+- (id)if_decodeBytesNoCopyForKey:(id)arg1;
 @end
 

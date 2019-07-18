@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (void)waitForXpcActivityQueue;
 - (void)dealloc;
-- (void)_performModelMobileAssetMetadataDownloadActivity:(id)arg1;
+- (void)_performMobileAssetMetadataDownloadActivity:(id)arg1;
 - (void)_registerMobileAssetMetadataDownloadActivity;
 - (void)registerForCTS;
 - (id)initWithHarvestStore:(id)arg1 xpcActivityManager:(id)arg2;

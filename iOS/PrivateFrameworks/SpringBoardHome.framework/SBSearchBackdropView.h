@@ -13,29 +13,14 @@
 @interface SBSearchBackdropView : UIView <SBUIProgressiveBlur>
 {
     MTMaterialView *_materialView;
-    UIView *_reduceTransparencyView;
-    UIView *_tintView;
-    NSString *_privateGroupName;
-    _Bool _usesTint;
-    unsigned long long _lowQualityStyle;
-    _Bool _transitioning;
     _Bool _transitioningToBlur;
 }
 
-@property(nonatomic) unsigned long long lowQualityStyle; // @synthesize lowQualityStyle=_lowQualityStyle;
-@property(nonatomic) _Bool usesTint; // @synthesize usesTint=_usesTint;
-@property(copy, nonatomic) NSString *groupName; // @synthesize groupName=_privateGroupName;
 - (void).cxx_destruct;
 - (void)completeIncrementalTransitionSuccessfully:(_Bool)arg1;
-- (void)completeTransitionSuccessfully:(_Bool)arg1;
 - (void)setTransitionProgress:(double)arg1;
+- (void)completeTransitionSuccessfully:(_Bool)arg1;
 - (void)prepareForTransitionToBlurred:(_Bool)arg1;
-- (_Bool)usesAnimatedBlurRadiusTransition;
-- (_Bool)shouldUseBlurView;
-- (void)reduceTransparencyStatusDidChange:(id)arg1;
-- (void)_createMaterialView;
-- (void)layoutSubviews;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

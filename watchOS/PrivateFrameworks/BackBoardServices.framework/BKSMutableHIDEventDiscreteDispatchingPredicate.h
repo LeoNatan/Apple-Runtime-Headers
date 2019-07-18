@@ -17,6 +17,7 @@
 + (id)new;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(copy, nonatomic) NSSet *descriptors; // @dynamic descriptors;
+@property(copy, nonatomic) NSSet *senderDescriptors; // @dynamic senderDescriptors;
 @property(copy, nonatomic) NSSet *displays; // @dynamic displays;
 - (id)init;
 

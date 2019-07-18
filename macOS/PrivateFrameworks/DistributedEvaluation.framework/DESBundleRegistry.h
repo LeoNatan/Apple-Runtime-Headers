@@ -23,7 +23,6 @@
 - (id)supportedRecordTypesForBundleId:(id)arg1;
 - (unsigned long long)daysToExpirationOfRecordsForBundleId:(id)arg1;
 - (unsigned long long)maximumNumberOfRecordsForBundleId:(id)arg1;
-- (double)maximumSamplingRateForBundleId:(id)arg1;
 - (id)evaluatorForBundleId:(id)arg1 error:(id *)arg2;
 - (id)_init;
 - (id)init;

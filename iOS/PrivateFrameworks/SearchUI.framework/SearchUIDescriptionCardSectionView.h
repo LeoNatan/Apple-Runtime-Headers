@@ -19,6 +19,7 @@
 + (id)dragTitleForCardSection:(id)arg1;
 + (_Bool)supportsRecyclingForCardSection:(id)arg1;
 @property(nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
+- (void)didPressFootnoteButton;
 - (void)didPressMoreButton;
 - (void)updateWithRowModel:(id)arg1;
 - (id)setupContentView;

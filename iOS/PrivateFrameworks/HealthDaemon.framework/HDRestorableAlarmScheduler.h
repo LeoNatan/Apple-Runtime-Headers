@@ -21,10 +21,16 @@
     _Bool _hasInitializedSystemScheduler;
     _Bool _maintenanceOperationQueued;
     _Bool _needsMaintenanceNotifyAndSchedule;
+    _Bool _needsLockStateUpdates;
+    _Bool _isDeviceOnWrist;
+    _Bool _isRegisteredForOnWristUpdates;
+    _Bool _isRegisteredForLockStateUpdates;
     HDXPCAlarm *_systemScheduler;
     NSDate *__unitTest_currentDate;
 }
 
+@property(readonly, nonatomic) _Bool isRegisteredForLockStateUpdates; // @synthesize isRegisteredForLockStateUpdates=_isRegisteredForLockStateUpdates;
+@property(readonly, nonatomic) _Bool isRegisteredForOnWristUpdates; // @synthesize isRegisteredForOnWristUpdates=_isRegisteredForOnWristUpdates;
 @property(copy, nonatomic) NSDate *_unitTest_currentDate; // @synthesize _unitTest_currentDate=__unitTest_currentDate;
 @property(readonly, nonatomic) HDXPCAlarm *systemScheduler; // @synthesize systemScheduler=_systemScheduler;
 - (void).cxx_destruct;
@@ -39,13 +45,18 @@
 - (_Bool)scheduleEvents:(id)arg1 error:(id *)arg2;
 - (void)removeAlarm:(id)arg1;
 - (void)addAlarm:(id)arg1;
+- (void)_queue_registerForWristStateUpdates:(_Bool)arg1;
 - (void)_queue_notifyClientsOfDueEventsAndScheduleNextFireDate;
+- (void)_queue_processDueEvents;
+- (void)_queue_fetchCurrentWristStateWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_currentDate;
 - (void)_queue_beginReceivingSystemEventsIfNecessary;
 - (void)_runMaintenanceNotifyAndSchedule;
 - (void)_queue_enqueueMaintenanceNotifyAndSchedule;
-- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
+- (void)_queue_updateProtectedDataObserverStateIfRequired;
+- (void)_queue_registerForLockStateUpdates:(_Bool)arg1;
 - (void)_queue_setNeedsMaintenanceNotifyAndSchedule:(_Bool)arg1;
+- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
 - (void)_queue_significantTimeChangeDidOccur;
 - (void)_stopObservingSignificantTimeChangeNotification;
 - (void)_startObservingSignificantTimeChangeNotification;

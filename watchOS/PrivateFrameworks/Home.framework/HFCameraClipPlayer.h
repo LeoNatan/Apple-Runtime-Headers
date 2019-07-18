@@ -9,31 +9,29 @@
 #import <Home/HFCameraClipPlaying-Protocol.h>
 #import <Home/HFCameraClipQueueing-Protocol.h>
 
-@class AVPlayer, HFCameraClipPlayerItem, HFCameraClipPosition, HFCameraClipQueuePlayer, HMCameraClipCollection, NSArray, NSError, NSString;
+@class AVPlayer, HFCameraClipPlayerItem, HFCameraClipPosition, HFCameraClipQueuePlayer, NSArray, NSError, NSString;
 @protocol HFCameraClipPlayerDelegate, HFCameraClipScrubbing;
 
 @interface HFCameraClipPlayer : NSObject <HFCameraClipQueueing, HFCameraClipPlaying>
 {
     _Bool _scrubbing;
     _Bool _mutatingQueue;
-    HMCameraClipCollection *_clipCollection;
     id <HFCameraClipPlayerDelegate> _delegate;
     id <HFCameraClipScrubbing> _scrubber;
+    NSArray *_clips;
     NSError *_error;
-    id _currentItemStateObservationToken;
     HFCameraClipPlayerItem *_lastPlayerItem;
     HFCameraClipQueuePlayer *_queuePlayer;
 }
 
 @property(readonly, nonatomic) HFCameraClipQueuePlayer *queuePlayer; // @synthesize queuePlayer=_queuePlayer;
 @property(nonatomic) __weak HFCameraClipPlayerItem *lastPlayerItem; // @synthesize lastPlayerItem=_lastPlayerItem;
-@property(retain, nonatomic) id currentItemStateObservationToken; // @synthesize currentItemStateObservationToken=_currentItemStateObservationToken;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic, getter=isMutatingQueue) _Bool mutatingQueue; // @synthesize mutatingQueue=_mutatingQueue;
+@property(retain, nonatomic) NSArray *clips; // @synthesize clips=_clips;
 @property(nonatomic, getter=isScrubbing) _Bool scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(nonatomic) __weak id <HFCameraClipScrubbing> scrubber; // @synthesize scrubber=_scrubber;
 @property(nonatomic) __weak id <HFCameraClipPlayerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) HMCameraClipCollection *clipCollection; // @synthesize clipCollection=_clipCollection;
 - (void).cxx_destruct;
 - (void)seekToOffset:(double)arg1 inItem:(id)arg2;
 - (void)removeQueueableItem:(id)arg1;
@@ -44,8 +42,7 @@
 - (void)_rebuildPlayerQueueForPosition:(id)arg1;
 - (void)_setupObservationForLastPlayerItem:(id)arg1;
 - (void)_setupPlayerObservation;
-- (void)_observePlayerKeyPath:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (void)_updateCurrentItemObservation;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_updateErrorState;
 - (void)_updatePlayerActionAtItemEnd;
 - (void)removeTimeObserver:(id)arg1;
@@ -57,8 +54,8 @@
 @property(copy, nonatomic) HFCameraClipPosition *currentPosition;
 @property(readonly, nonatomic) AVPlayer *player;
 - (void)dealloc;
-- (id)initWithClipCollection:(id)arg1 queuePlayer:(id)arg2;
-- (id)initWithClipCollection:(id)arg1;
+- (id)initWithClips:(id)arg1 queuePlayer:(id)arg2;
+- (id)initWithClips:(id)arg1;
 - (id)init;
 
 // Remaining properties

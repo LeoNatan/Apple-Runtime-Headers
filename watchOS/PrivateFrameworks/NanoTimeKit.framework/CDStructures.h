@@ -194,6 +194,11 @@ typedef struct {
 } CDStruct_669ca518;
 
 typedef struct {
+    double _field1;
+    double _field2;
+} CDStruct_c3b9c2ee;
+
+typedef struct {
     float _field1;
     float _field2;
     float _field3;
@@ -209,6 +214,12 @@ typedef struct {
     float _field13;
     float _field14;
 } CDStruct_4dcbcf9b;
+
+typedef struct {
+    float movePercentage;
+    float exercisePercentage;
+    float standPercentage;
+} CDStruct_06f44955;
 
 typedef struct {
     _Bool smallTicksMatchingMinutes;
@@ -238,11 +249,4 @@ typedef struct {
     float _field12;
     struct UIEdgeInsets _field13;
 } CDStruct_4eca2615;
-
-// Ambiguous groups
-typedef struct {
-    float _field1;
-    float _field2;
-    float _field3;
-} CDStruct_869f9c67;
 

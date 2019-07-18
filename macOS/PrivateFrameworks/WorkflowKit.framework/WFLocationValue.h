@@ -26,7 +26,6 @@
 - (id)serializedRepresentation;
 - (id)initWithSerializedRepresentation:(id)arg1 variableProvider:(id)arg2 parameter:(id)arg3;
 - (id)initWithLegacyVariableString:(id)arg1;
-@property(readonly, nonatomic) double radius;
 @property(readonly, nonatomic) NSString *defaultSearchText;
 @property(readonly, nonatomic) NSString *displayString;
 - (id)initWithCurrentLocation;

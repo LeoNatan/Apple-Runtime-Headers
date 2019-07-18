@@ -8,7 +8,6 @@
 
 @class CNGroup;
 
-__attribute__((visibility("hidden")))
 @interface CNChangeHistoryRemoveSubgroupFromGroupEvent : CNChangeHistoryEvent
 {
     CNGroup *_subgroup;

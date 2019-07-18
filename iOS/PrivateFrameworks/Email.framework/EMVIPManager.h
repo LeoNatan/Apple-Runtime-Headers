@@ -11,22 +11,20 @@
 #import <Email/EMVIPManager-Protocol.h>
 #import <Email/EMVIPManagerObserver-Protocol.h>
 
-@class EAEmailAddressSet, EFPromise, EMRemoteConnection, NSSet, NSString;
-@protocol EFCancelable;
+@class EAEmailAddressSet, EFCancelationToken, EFPromise, EMRemoteConnection, NSSet, NSString;
 
 @interface EMVIPManager : NSObject <EFFutureDelegate, EFLoggable, EMVIPManagerObserver, EMVIPManager>
 {
     struct os_unfair_lock_s _vipsLock;
     EAEmailAddressSet *_cachedEmailAddresses;
+    EFCancelationToken *_observerCancelationToken;
     EMRemoteConnection *_connection;
-    id <EFCancelable> _observerCancelable;
     EFPromise *_vipsByIdentifierPromise;
 }
 
 + (id)remoteInterface;
 + (id)log;
 @property(retain) EFPromise *vipsByIdentifierPromise; // @synthesize vipsByIdentifierPromise=_vipsByIdentifierPromise;
-@property(retain, nonatomic) id <EFCancelable> observerCancelable; // @synthesize observerCancelable=_observerCancelable;
 @property(retain, nonatomic) EMRemoteConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (void)didFinishBlockingMainThreadForFuture:(id)arg1;
@@ -41,7 +39,8 @@
 @property(readonly, copy, nonatomic) NSSet *allVIPs;
 - (id)vipWithIdentifier:(id)arg1;
 @property(readonly, nonatomic) _Bool hasVIPs;
-- (void)_restartObservingVIPChangesIfNecessary;
+- (id)_vipsByIdentifier;
+- (void)_reset;
 - (void)_startObservingVIPChangesIfNecessary;
 - (void)dealloc;
 - (id)initWithRemoteConnection:(id)arg1;

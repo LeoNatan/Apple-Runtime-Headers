@@ -10,6 +10,7 @@
 
 @interface DAAction : NSObject <NSSecureCoding>
 {
+    _Bool _ignoresGuardianRestrictions;
     unsigned int _itemChangeType;
     id _serverId;
     id _instanceId;
@@ -20,6 +21,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions=_ignoresGuardianRestrictions;
 @property(retain, nonatomic) id forwardedAttendeeUUIDs; // @synthesize forwardedAttendeeUUIDs=_forwardedAttendeeUUIDs;
 @property(retain, nonatomic) id forwardedAttendees; // @synthesize forwardedAttendees=_forwardedAttendees;
 @property(nonatomic) int changeId; // @synthesize changeId=_changeId;

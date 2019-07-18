@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)imageViewFrameForHUD:(id)arg1 preferredSizeForLabel:(struct CGSize)arg2;
 - (struct CGSize)imageViewSizeForHUD:(id)arg1;
 - (struct UIEdgeInsets)imageInsetsForHUD:(id)arg1;
+- (id)itemContainerViewForHUD:(id)arg1;
 - (id)containerViewForHUD:(id)arg1;
 - (struct CGRect)layoutBoundsForHUD:(id)arg1;
 - (struct CGSize)minimumUnscaledSizeForHUD:(id)arg1 preferredLabelSize:(struct CGSize)arg2;

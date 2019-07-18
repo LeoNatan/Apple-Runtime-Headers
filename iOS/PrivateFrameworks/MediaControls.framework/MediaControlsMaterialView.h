@@ -8,7 +8,7 @@
 
 #import <MediaControls/MTVisualStylingProviding-Protocol.h>
 
-@class MTVisualStylingProvider, NSString;
+@class NSString;
 
 __attribute__((visibility("hidden")))
 @interface MediaControlsMaterialView : UIView <MTVisualStylingProviding>
@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 
 @end
 

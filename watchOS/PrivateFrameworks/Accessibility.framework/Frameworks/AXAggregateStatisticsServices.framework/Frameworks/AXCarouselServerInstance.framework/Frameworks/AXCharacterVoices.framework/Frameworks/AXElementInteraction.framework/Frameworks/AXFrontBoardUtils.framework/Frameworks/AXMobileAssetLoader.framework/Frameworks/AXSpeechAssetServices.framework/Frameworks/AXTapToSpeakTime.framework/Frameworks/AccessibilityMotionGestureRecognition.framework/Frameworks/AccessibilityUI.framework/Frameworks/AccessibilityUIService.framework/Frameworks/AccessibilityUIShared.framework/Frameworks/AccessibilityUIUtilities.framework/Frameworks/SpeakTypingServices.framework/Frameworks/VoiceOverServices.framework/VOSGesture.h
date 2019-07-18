@@ -39,6 +39,10 @@
 + (id)FourFingerFlickLeft;
 + (id)FourFingerFlickDown;
 + (id)FourFingerFlickUp;
++ (id)ThreeFingerDoubleTapHoldAndFlickRight;
++ (id)ThreeFingerDoubleTapHoldAndFlickLeft;
++ (id)ThreeFingerDoubleTapHoldAndFlickDown;
++ (id)ThreeFingerDoubleTapHoldAndFlickUp;
 + (id)ThreeFingerFlickRight;
 + (id)ThreeFingerFlickLeft;
 + (id)ThreeFingerFlickDown;

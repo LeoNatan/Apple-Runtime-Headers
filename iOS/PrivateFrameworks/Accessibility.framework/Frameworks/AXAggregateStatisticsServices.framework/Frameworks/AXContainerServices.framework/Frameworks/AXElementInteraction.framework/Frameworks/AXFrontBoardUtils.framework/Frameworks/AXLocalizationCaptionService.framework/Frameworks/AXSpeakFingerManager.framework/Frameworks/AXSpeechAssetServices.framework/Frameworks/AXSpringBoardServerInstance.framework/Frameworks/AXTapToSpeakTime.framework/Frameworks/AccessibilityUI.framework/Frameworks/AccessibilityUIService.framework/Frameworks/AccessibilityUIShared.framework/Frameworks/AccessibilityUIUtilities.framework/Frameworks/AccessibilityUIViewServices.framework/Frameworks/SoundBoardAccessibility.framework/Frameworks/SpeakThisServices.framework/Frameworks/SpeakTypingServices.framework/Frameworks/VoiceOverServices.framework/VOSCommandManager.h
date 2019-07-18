@@ -30,7 +30,6 @@
 - (id)gestureBindingsForCommand:(id)arg1 withResolver:(id)arg2;
 - (id)userPresentableAllShortcutBindingsWithResolver:(id)arg1;
 - (id)allShortcutBindingsWithResolver:(id)arg1;
-- (id)allSiriShortcutCommandsWithResolver:(id)arg1;
 - (id)allCommandsWithResolver:(id)arg1;
 - (id)commandForKeyChord:(id)arg1 withResolver:(id)arg2;
 - (id)commandForTouchGesture:(id)arg1 withResolver:(id)arg2;
@@ -42,7 +41,6 @@
 - (_Bool)addKeyChord:(id)arg1 toCommand:(id)arg2 withResolver:(id)arg3;
 - (_Bool)removeGesture:(id)arg1 fromCommand:(id)arg2 withResolver:(id)arg3;
 - (_Bool)addGesture:(id)arg1 toCommand:(id)arg2 withResolver:(id)arg3;
-- (id)availableSiriShortcuts:(id)arg1;
 - (void)batchUpdateActiveProfile:(CDUnknownBlockType)arg1 saveIfSuccessful:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)saveAsUserProfile;
 - (void)restoreDefaultProfile;

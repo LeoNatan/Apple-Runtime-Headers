@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSCloudKitMirroringDelegateResetRequest, NSCloudKitMirroringDelegateSetupRequest, NSCloudKitMirroringExportRequest, NSCloudKitMirroringFetchRecordsRequest, NSCloudKitMirroringImportRequest, NSCloudKitMirroringRequest, NSCloudKitMirroringResetMetadataRequest, NSCloudKitMirroringResetZoneRequest;
+@class NSCloudKitMirroringDelegateResetRequest, NSCloudKitMirroringDelegateSerializationRequest, NSCloudKitMirroringDelegateSetupRequest, NSCloudKitMirroringExportProgressRequest, NSCloudKitMirroringExportRequest, NSCloudKitMirroringFetchRecordsRequest, NSCloudKitMirroringImportRequest, NSCloudKitMirroringInitializeSchemaRequest, NSCloudKitMirroringRequest, NSCloudKitMirroringResetMetadataRequest, NSCloudKitMirroringResetZoneRequest;
 
 __attribute__((visibility("hidden")))
 @interface NSCloudKitMirroringRequestManager : NSObject
@@ -18,10 +18,16 @@ __attribute__((visibility("hidden")))
     NSCloudKitMirroringResetZoneRequest *_pendingResetRequest;
     NSCloudKitMirroringFetchRecordsRequest *_pendingFetchRecordsRequest;
     NSCloudKitMirroringResetMetadataRequest *_pendingResetMetadataRequest;
+    NSCloudKitMirroringDelegateSerializationRequest *_pendingSerializationRequest;
+    NSCloudKitMirroringInitializeSchemaRequest *_pendingInitializeSchemaRequest;
+    NSCloudKitMirroringExportProgressRequest *_pendingExportProgressRequest;
     NSCloudKitMirroringRequest *_activeRequest;
 }
 
 @property(readonly, nonatomic) NSCloudKitMirroringRequest *activeRequest; // @synthesize activeRequest=_activeRequest;
+@property(readonly, nonatomic) NSCloudKitMirroringExportProgressRequest *pendingExportProgressRequest; // @synthesize pendingExportProgressRequest=_pendingExportProgressRequest;
+@property(readonly, nonatomic) NSCloudKitMirroringInitializeSchemaRequest *pendingInitializeSchemaRequest; // @synthesize pendingInitializeSchemaRequest=_pendingInitializeSchemaRequest;
+@property(readonly, nonatomic) NSCloudKitMirroringDelegateSerializationRequest *pendingSerializationRequest; // @synthesize pendingSerializationRequest=_pendingSerializationRequest;
 @property(readonly, nonatomic) NSCloudKitMirroringResetMetadataRequest *pendingResetMetadataRequest; // @synthesize pendingResetMetadataRequest=_pendingResetMetadataRequest;
 @property(readonly, nonatomic) NSCloudKitMirroringFetchRecordsRequest *pendingFetchRecordsRequest; // @synthesize pendingFetchRecordsRequest=_pendingFetchRecordsRequest;
 @property(readonly, nonatomic) NSCloudKitMirroringResetZoneRequest *pendingResetRequest; // @synthesize pendingResetRequest=_pendingResetRequest;
@@ -29,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSCloudKitMirroringDelegateSetupRequest *pendingSetupRequest; // @synthesize pendingSetupRequest=_pendingSetupRequest;
 @property(readonly, nonatomic) NSCloudKitMirroringExportRequest *pendingExportRequest; // @synthesize pendingExportRequest=_pendingExportRequest;
 @property(readonly, nonatomic) NSCloudKitMirroringImportRequest *pendingImportRequest; // @synthesize pendingImportRequest=_pendingImportRequest;
+- (id)dequeueAllPendingRequests;
 - (void)requestFinished:(id)arg1;
 - (id)dequeueNextRequest;
 - (id)duplicateRequestErrorForRequest:(id)arg1;

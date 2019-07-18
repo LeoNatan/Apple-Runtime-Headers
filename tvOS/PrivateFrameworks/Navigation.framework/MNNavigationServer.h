@@ -38,7 +38,7 @@
 - (void)navigationServiceProxy:(id)arg1 didUpdateTrafficIncidentAlert:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didReceiveTrafficIncidentAlert:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateAlternateRoutes:(id)arg2;
-- (void)navigationServiceProxy:(id)arg1 failedRerouteWithErrorCode:(long long)arg2;
+- (void)navigationServiceProxy:(id)arg1 didFailRerouteWithError:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(id)arg3;
 - (void)navigationServiceProxy:(id)arg1 didUpdateRouteWithNewRideSelection:(id)arg2;
 - (void)navigationServiceProxyDidCancelReroute:(id)arg1;
@@ -46,7 +46,6 @@
 - (void)navigationServiceProxyWillReroute:(id)arg1;
 - (void)navigationServiceProxy:(id)arg1 didUpdatePreviewRoutes:(id)arg2 withSelectedRouteIndex:(unsigned long long)arg3;
 - (void)navigationServiceProxy:(id)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
-- (void)navigationServiceProxy:(id)arg1 didUpdateTraffic:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateETAResponseForRoute:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
 - (void)navigationServiceProxy:(id)arg1 didUpdateDisplayETA:(id)arg2 displayRemainingMinutes:(unsigned long long)arg3 forRoute:(id)arg4;

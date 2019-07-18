@@ -27,7 +27,7 @@
 - (unsigned int)keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (void)configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)customEditOptionContainerViewForSlot:(id)arg1;
-- (id)curvedPickerMaskForSlot:(id)arg1;
+- (id)pickerMaskForSlot:(id)arg1;
 - (int)complicationPickerStyleForSlot:(id)arg1;
 - (void)setAlpha:(float)arg1 faceView:(id)arg2;
 - (unsigned int)keylineLabelAlignmentForComplicationSlot:(id)arg1 faceView:(id)arg2;

@@ -17,6 +17,7 @@
     CCUICAPackageView *_glyphPackageView;
     CCUICAPackageView *_compensatingGlyphPackageView;
     MTVisualStylingProvider *_visualStylingProvider;
+    _Bool _didConfigureGlyphPackageView;
     _Bool _glyphVisible;
     _Bool _interactiveWhenUnexpanded;
     float _value;

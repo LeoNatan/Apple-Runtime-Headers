@@ -11,7 +11,7 @@
 @interface AVAudioSessionPortDescription_New : AVAudioHardwarePort
 {
     void *_impl;
-    struct synchronized<std::__1::shared_ptr<as::client::Port>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::Port>>> _guarded_impl;
+    struct synchronized<std::__1::shared_ptr<as::client::Port>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::Port>>> _guarded_impl;
 }
 
 - (id).cxx_construct;
@@ -25,11 +25,11 @@
 - (id)hardwareFormat;
 - (id)UID;
 - (id)name;
+- (id)owningDevice;
 - (id)portName;
 - (id)type;
 - (id)portType;
 - (id)streams;
-- (id)deviceUID;
 - (id)description;
 - (id)initWithImpl:(shared_ptr_7f50e664)arg1;
 @property(readonly) BOOL isLiveListenSupported;

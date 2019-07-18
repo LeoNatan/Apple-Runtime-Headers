@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 
 + (id)pillCombinedDisplayIdentifier;
 - (id)_overriddenStyleAttributesForVoiceControlType:(int)arg1;
-- (float)_imageOpacityForVoiceControlType:(int)arg1;
+- (float)imageOpacityForVoiceControlType:(int)arg1;
 - (id)imageForUpdate:(id)arg1;
 - (id)systemImageNameForUpdate:(id)arg1;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;

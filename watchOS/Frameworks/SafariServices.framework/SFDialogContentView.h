@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSArray *_actionButtons;
     UIStackView *_actionButtonsView;
     UIButton *_closeButton;
+    unsigned int _actionIndexTriggeredByOptionReturnKey;
     unsigned int _actionIndexTriggeredByEscapeKey;
     unsigned int _actionIndexTriggeredByReturnKey;
     _Bool _hasAttemptedHardwareKeyboardFocus;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_invokeDelegateWithSelectedIndex:(unsigned int)arg1;
 - (void)_escapeAction:(id)arg1;
+- (void)_optionReturnAction:(id)arg1;
 - (void)_returnAction:(id)arg1;
 - (void)_focusInputTextField:(id)arg1;
 - (void)_actionTriggered:(id)arg1;

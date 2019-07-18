@@ -6,8 +6,8 @@
 
 #import <MobileMailUI/WKUIDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, NSURL, UIDragItem, UIDropProposal, UIImage, UIScrollView, UITargetedDragPreview, UIViewController, WKFrameInfo, WKNavigationAction, WKSecurityOrigin, WKWebView, WKWebViewConfiguration, WKWindowFeatures, _WKActivatedElementInfo, _WKAttachment, _WKFrameHandle;
-@protocol NSSecureCoding, UIDragSession, UIDropSession;
+@class NSArray, NSDictionary, NSString, NSURL, UIDragItem, UIDropProposal, UIImage, UIScrollView, UITargetedDragPreview, UIViewController, WKContextMenuElementInfo, WKFrameInfo, WKNavigationAction, WKSecurityOrigin, WKWebView, WKWebViewConfiguration, WKWindowFeatures, _WKActivatedElementInfo, _WKAttachment, _WKFrameHandle;
+@protocol NSSecureCoding, UIContextMenuInteractionCommitAnimating, UIDragSession, UIDropSession;
 
 @protocol WKUIDelegatePrivate <WKUIDelegate>
 
@@ -41,6 +41,10 @@
 - (NSArray *)_attachmentListForWebView:(WKWebView *)arg1;
 - (void)_webView:(WKWebView *)arg1 alternateActionForURL:(NSURL *)arg2;
 - (_Bool)_webView:(WKWebView *)arg1 showCustomSheetForElement:(_WKActivatedElementInfo *)arg2;
+- (void)_webView:(WKWebView *)arg1 contextMenuDidEndForElement:(WKContextMenuElementInfo *)arg2;
+- (void)_webView:(WKWebView *)arg1 contextMenuWillPresentForElement:(WKContextMenuElementInfo *)arg2;
+- (void)_webView:(WKWebView *)arg1 contextMenuForElement:(WKContextMenuElementInfo *)arg2 willCommitWithAnimator:(id <UIContextMenuInteractionCommitAnimating>)arg3;
+- (void)_webView:(WKWebView *)arg1 contextMenuConfigurationForElement:(WKContextMenuElementInfo *)arg2 completionHandler:(void (^)(UIContextMenuConfiguration *))arg3;
 - (void)_webView:(WKWebView *)arg1 didDismissPreviewViewController:(UIViewController *)arg2;
 - (void)_webView:(WKWebView *)arg1 didDismissPreviewViewController:(UIViewController *)arg2 committing:(_Bool)arg3;
 - (void)_webView:(WKWebView *)arg1 commitPreviewedImageWithURL:(NSURL *)arg2;

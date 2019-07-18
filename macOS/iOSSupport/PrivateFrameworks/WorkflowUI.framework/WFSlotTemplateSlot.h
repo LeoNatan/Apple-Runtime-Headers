@@ -19,6 +19,7 @@
     WFSlotIdentifier *_identifier;
     NSString *_placeholder;
     NSAttributedString *_contentAttributedString;
+    long long _userInputInsertionIndex;
     NSMutableDictionary *_titleColorsByState;
     NSMutableDictionary *_backgroundColorsByState;
 }
@@ -27,6 +28,7 @@
 + (id)addingSlotWithKey:(id)arg1;
 @property(readonly, nonatomic) NSMutableDictionary *backgroundColorsByState; // @synthesize backgroundColorsByState=_backgroundColorsByState;
 @property(readonly, nonatomic) NSMutableDictionary *titleColorsByState; // @synthesize titleColorsByState=_titleColorsByState;
+@property(nonatomic) long long userInputInsertionIndex; // @synthesize userInputInsertionIndex=_userInputInsertionIndex;
 @property(nonatomic) BOOL standaloneTextAttachment; // @synthesize standaloneTextAttachment=_standaloneTextAttachment;
 @property(nonatomic) BOOL prefersNoWrapping; // @synthesize prefersNoWrapping=_prefersNoWrapping;
 @property(copy, nonatomic) NSAttributedString *contentAttributedString; // @synthesize contentAttributedString=_contentAttributedString;

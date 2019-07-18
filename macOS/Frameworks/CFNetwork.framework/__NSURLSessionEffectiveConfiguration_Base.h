@@ -45,6 +45,7 @@
 @property(readonly) BOOL _allowsPowerNapScheduling; // @dynamic _allowsPowerNapScheduling;
 @property(readonly) BOOL _allowsResponseMonitoringDuringBodyTranmission; // @dynamic _allowsResponseMonitoringDuringBodyTranmission;
 @property(readonly) BOOL _allowsTCPFastOpen; // @dynamic _allowsTCPFastOpen;
+@property(readonly) BOOL _allowsTLSFalseStart; // @dynamic _allowsTLSFalseStart;
 @property(readonly) BOOL _allowsTLSSessionResumption; // @dynamic _allowsTLSSessionResumption;
 @property(readonly) BOOL _allowsTLSSessionTickets; // @dynamic _allowsTLSSessionTickets;
 @property(readonly) BOOL _allowsWCA; // @dynamic _allowsWCA;

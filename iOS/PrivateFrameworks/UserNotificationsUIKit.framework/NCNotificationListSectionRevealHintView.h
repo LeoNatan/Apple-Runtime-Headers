@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UICollectionReusableView.h>
+#import <UIKit/UIView.h>
 
 #import <UserNotificationsUIKit/NCLegibilitySettingsAdjusting-Protocol.h>
 #import <UserNotificationsUIKit/PLContentSizeCategoryAdjusting-Protocol.h>
 
 @class NSString, SBUILegibilityLabel, _UILegibilitySettings;
 
-@interface NCNotificationListSectionRevealHintView : UICollectionReusableView <NCLegibilitySettingsAdjusting, PLContentSizeCategoryAdjusting>
+@interface NCNotificationListSectionRevealHintView : UIView <NCLegibilitySettingsAdjusting, PLContentSizeCategoryAdjusting>
 {
     _Bool _adjustsFontForContentSizeCategory;
     _Bool _forceRevealed;

@@ -106,6 +106,7 @@
 - (void)setup;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (_Bool)_canShowWhileLocked;
 - (void)dealloc;
 - (id)initWithPDFDocument:(id)arg1 delegate:(id)arg2;
 

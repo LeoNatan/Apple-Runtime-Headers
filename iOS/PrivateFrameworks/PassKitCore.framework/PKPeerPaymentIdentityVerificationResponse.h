@@ -13,8 +13,8 @@
     _Bool _complete;
     _Bool _manuallyTriggered;
     PKPeerPaymentAccount *_account;
-    NSString *_contextLocalizedTitle;
-    NSString *_contextLocalizedDescription;
+    NSString *_title;
+    NSString *_subtitle;
     NSString *_localizedTitle;
     NSString *_localizedDescription;
     NSArray *_requiredFieldsByPage;
@@ -30,8 +30,8 @@
 @property(readonly, copy, nonatomic) NSArray *requiredFieldsByPage; // @synthesize requiredFieldsByPage=_requiredFieldsByPage;
 @property(readonly, copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(readonly, copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
-@property(readonly, copy, nonatomic) NSString *contextLocalizedDescription; // @synthesize contextLocalizedDescription=_contextLocalizedDescription;
-@property(readonly, copy, nonatomic) NSString *contextLocalizedTitle; // @synthesize contextLocalizedTitle=_contextLocalizedTitle;
+@property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
+@property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) PKPeerPaymentAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) _Bool complete; // @synthesize complete=_complete;
 - (void).cxx_destruct;

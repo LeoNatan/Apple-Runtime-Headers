@@ -51,6 +51,7 @@
 - (long long)_diskFootprintOfTableThumbnailTables;
 - (id)_tableDescriptions;
 - (id)placeholderDataForFormat:(unsigned short)arg1 photoImageSize:(struct CGSize)arg2 width:(int *)arg3 height:(int *)arg4 bytesPerRow:(int *)arg5 dataWidth:(int *)arg6 dataHeight:(int *)arg7 imageDataOffset:(int *)arg8;
+- (void)preheatThumbnailDataWithFormat:(unsigned short)arg1 thumbnailIndexes:(id)arg2;
 - (id)dataForPhoto:(id)arg1 format:(unsigned short)arg2 allowPlaceholder:(_Bool)arg3 width:(int *)arg4 height:(int *)arg5 bytesPerRow:(int *)arg6 dataWidth:(int *)arg7 dataHeight:(int *)arg8 imageDataOffset:(int *)arg9;
 - (void)deleteThumbnailsWithIdentifier:(id)arg1 orIndex:(unsigned long long)arg2 uuid:(id)arg3;
 - (void)setThumbnailsForAsset:(id)arg1 withImage:(id)arg2;

@@ -6,9 +6,9 @@
 
 #import <VideosUI/NSObject-Protocol.h>
 
-@class VUIAppDocumentUpdateEvent, VUIAppDocumentUpdateEventMonitor;
+@class VUIAppDocumentUpdateEvent;
 
 @protocol VUIAppDocumentUpdateEventMonitorObserving <NSObject>
-- (void)appDocumentUpdateEventMonitor:(VUIAppDocumentUpdateEventMonitor *)arg1 didReceiveEvent:(VUIAppDocumentUpdateEvent *)arg2;
+- (void)appDocumentDidReceiveEvent:(VUIAppDocumentUpdateEvent *)arg1;
 @end
 

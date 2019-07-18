@@ -10,7 +10,7 @@
 #import <GameCenterUI/NSTextFieldDelegate-Protocol.h>
 #import <GameCenterUI/UISearchBarDelegate-Protocol.h>
 
-@class GKChallenge, GKComposeController, NSArray, NSLayoutConstraint, NSString, NSTextField, NSView, UIButton;
+@class GKChallenge, GKComposeController, NSArray, NSButton, NSLayoutConstraint, NSString, NSTextField, NSView;
 
 @interface GKDashboardChallengePlayerPickerViewController : GKDashboardCollectionViewController <NSTextFieldDelegate, UISearchBarDelegate, GKComposeControllerDelegate>
 {
@@ -21,8 +21,8 @@
     GKChallenge *_challenge;
     NSArray *_initiallySelectedPlayers;
     NSTextField *_descriptionLabel;
-    UIButton *_sendButton;
-    UIButton *_customizeMessageButton;
+    NSButton *_sendButton;
+    NSButton *_customizeMessageButton;
     NSTextField *_messageField;
     NSView *_scrollingHeader;
     NSLayoutConstraint *_scrollingHeaderTopConstraint;
@@ -42,8 +42,8 @@
 @property(nonatomic) NSLayoutConstraint *scrollingHeaderTopConstraint; // @synthesize scrollingHeaderTopConstraint=_scrollingHeaderTopConstraint;
 @property(nonatomic) NSView *scrollingHeader; // @synthesize scrollingHeader=_scrollingHeader;
 @property(nonatomic) NSTextField *messageField; // @synthesize messageField=_messageField;
-@property(nonatomic) UIButton *customizeMessageButton; // @synthesize customizeMessageButton=_customizeMessageButton;
-@property(nonatomic) UIButton *sendButton; // @synthesize sendButton=_sendButton;
+@property(nonatomic) NSButton *customizeMessageButton; // @synthesize customizeMessageButton=_customizeMessageButton;
+@property(nonatomic) NSButton *sendButton; // @synthesize sendButton=_sendButton;
 @property(nonatomic) NSTextField *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(nonatomic) BOOL shouldIgnoreClearSelection; // @synthesize shouldIgnoreClearSelection=_shouldIgnoreClearSelection;
 @property(retain, nonatomic) NSArray *initiallySelectedPlayers; // @synthesize initiallySelectedPlayers=_initiallySelectedPlayers;

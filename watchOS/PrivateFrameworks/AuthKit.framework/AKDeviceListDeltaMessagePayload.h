@@ -6,19 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSString;
+@class NSArray, NSDate, NSString;
 
 @interface AKDeviceListDeltaMessagePayload : NSObject
 {
     NSString *_altDSID;
     unsigned int _operation;
     NSString *_machineID;
+    NSArray *_machineIDs;
     NSString *_serialNumber;
     NSDate *_timestamp;
 }
 
 @property(readonly, copy) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, copy) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
+@property(readonly, copy) NSArray *machineIDs; // @synthesize machineIDs=_machineIDs;
 @property(readonly, copy) NSString *machineID; // @synthesize machineID=_machineID;
 @property(readonly) unsigned int operation; // @synthesize operation=_operation;
 @property(readonly, copy) NSString *altDSID; // @synthesize altDSID=_altDSID;

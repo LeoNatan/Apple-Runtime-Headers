@@ -15,6 +15,7 @@
     UITraitCollection *_traitCollection;
 }
 
++ (id)createSnapshotWithOptions:(id)arg1 timeoutInSeconds:(long long)arg2;
 @property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;

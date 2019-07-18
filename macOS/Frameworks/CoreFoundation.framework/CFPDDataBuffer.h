@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)purgable;
 - (void)endAccessing;
 - (BOOL)beginAccessing;
+- (void)quicklyValidatePlistAndOnFailureInvokeBlock:(CDUnknownBlockType)arg1;
 - (BOOL)validatePlist;
 - (void *)copyPropertyListWithMutability:(unsigned long long)arg1 error:(struct __CFError **)arg2;
 - (id)copyXPCData;

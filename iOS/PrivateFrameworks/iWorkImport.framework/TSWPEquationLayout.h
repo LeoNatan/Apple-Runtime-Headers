@@ -41,7 +41,6 @@ __attribute__((visibility("hidden")))
 - (void)offsetGeometryBy:(struct CGPoint)arg1;
 @property(readonly, nonatomic) TSDShadow *textShadow;
 @property(readonly, nonatomic) struct CGColor *textColor;
-- (_Bool)isDraggable;
 @property(nonatomic) TSUColor *fontSmoothingBackgroundColor;
 - (_Bool)canFlip;
 - (_Bool)supportsRotation;

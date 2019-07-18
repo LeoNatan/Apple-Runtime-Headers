@@ -19,12 +19,14 @@
     _Bool _forSnapshot;
     _UILegibilitySettings *_legibilitySettings;
     unsigned long long _dockEdge;
+    double _dockListOffset;
     id <SBDockViewDelegate> _delegate;
 }
 
 + (double)defaultHeightPadding;
 + (double)defaultHeight;
 @property(nonatomic) __weak id <SBDockViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) double dockListOffset; // @synthesize dockListOffset=_dockListOffset;
 @property(nonatomic) unsigned long long dockEdge; // @synthesize dockEdge=_dockEdge;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;

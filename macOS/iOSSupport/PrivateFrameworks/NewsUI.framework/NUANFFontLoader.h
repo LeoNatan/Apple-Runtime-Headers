@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class FCAsyncOnceOperation, FCFlintManifest, FCFlintResourceManager, NSMutableArray;
+#import <NewsUI/NUFontRegistrator-Protocol.h>
+
+@class FCAsyncOnceOperation, FCFlintManifest, FCFlintResourceManager, NSMutableArray, NSString;
 @protocol NUFontRegistration;
 
-@interface NUANFFontLoader : NSObject
+@interface NUANFFontLoader : NSObject <NUFontRegistrator>
 {
     long long _relativePriority;
     FCFlintManifest *_flintManifest;
@@ -33,6 +35,12 @@
 - (void)unregisterFontsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)registerFontsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithFlintManifest:(id)arg1 flintResourceManager:(id)arg2 fontRegistration:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

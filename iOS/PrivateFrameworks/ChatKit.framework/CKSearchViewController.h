@@ -12,10 +12,10 @@
 #import <ChatKit/UISearchResultsUpdating-Protocol.h>
 #import <ChatKit/_UIContextMenuInteractionDelegate-Protocol.h>
 
-@class CKSearchCollectionView, NSArray, NSMutableSet, NSString, _UICollectionViewCompositionalLayout, _UICollectionViewDiffableDataSource, _UIContextMenuInteraction;
+@class CKSearchCollectionView, IMTimingCollection, NSArray, NSMutableSet, NSString, UICollectionViewDiffableDataSource, _UICollectionViewCompositionalLayout, _UIContextMenuInteraction;
 @protocol CKContainerSearchControllerDelegate;
 
-@interface CKSearchViewController : CKScrollViewController <CKSearchControllerDelegate, CKSearchResultsTitleHeaderCellDelegate, _UIContextMenuInteractionDelegate, UISearchResultsUpdating, UICollectionViewDelegate>
+@interface CKSearchViewController : CKScrollViewController <CKSearchResultsTitleHeaderCellDelegate, _UIContextMenuInteractionDelegate, UISearchResultsUpdating, UICollectionViewDelegate, CKSearchControllerDelegate>
 {
     _Bool _isInitialLoad;
     id <CKContainerSearchControllerDelegate> _delegate;
@@ -23,19 +23,21 @@
     NSArray *_searchControllers;
     NSString *_searchText;
     CKSearchCollectionView *_collectionView;
-    _UICollectionViewDiffableDataSource *_dataSource;
+    UICollectionViewDiffableDataSource *_dataSource;
     _UICollectionViewCompositionalLayout *_collectionViewLayout;
     CDUnknownBlockType _performAfterInitialLoadBlock;
     NSMutableSet *_searchCompleteControllerSet;
+    IMTimingCollection *_timingCollection;
     _UIContextMenuInteraction *_contextMenuInteraction;
 }
 
 @property(retain, nonatomic) _UIContextMenuInteraction *contextMenuInteraction; // @synthesize contextMenuInteraction=_contextMenuInteraction;
+@property(retain, nonatomic) IMTimingCollection *timingCollection; // @synthesize timingCollection=_timingCollection;
 @property(retain, nonatomic) NSMutableSet *searchCompleteControllerSet; // @synthesize searchCompleteControllerSet=_searchCompleteControllerSet;
 @property(copy, nonatomic) CDUnknownBlockType performAfterInitialLoadBlock; // @synthesize performAfterInitialLoadBlock=_performAfterInitialLoadBlock;
 @property(nonatomic) _Bool isInitialLoad; // @synthesize isInitialLoad=_isInitialLoad;
 @property(retain, nonatomic) _UICollectionViewCompositionalLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
-@property(retain, nonatomic) _UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
+@property(retain, nonatomic) UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) CKSearchCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(retain, nonatomic) NSArray *searchControllers; // @synthesize searchControllers=_searchControllers;
@@ -48,6 +50,8 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)_currentModeIsDetails;
 - (Class)_searchResultsHeaderClass;
+- (id)footerBoundryItemsForController:(id)arg1 withEnvironment:(id)arg2;
+- (id)headerBoundryItemsForController:(id)arg1 withEnvironment:(id)arg2;
 - (id)_layoutSectionForController:(id)arg1 withEnvironment:(id)arg2;
 - (id)_identifiersToAppendForResults:(id)arg1;
 - (id)_newSnapshotForCurrentControllerState;
@@ -65,13 +69,13 @@
 - (id)scrollView;
 - (void)searchResultsTitleCellShowAllButtonTapped:(id)arg1;
 - (void)collectionView:(id)arg1 willDisplaySupplementaryView:(id)arg2 forElementKind:(id)arg3 atIndexPath:(id)arg4;
-- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (id)cellForSupplementryItemInCollectionView:(id)arg1 atIndexPath:(id)arg2 forSupplementryViewKind:(id)arg3;
 - (id)cellForItemInCollectionView:(id)arg1 atIndexPath:(id)arg2 withIdentifier:(id)arg3;
 - (id)layoutSectionForSection:(long long)arg1 withEnvironment:(id)arg2;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDissapeaer:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;

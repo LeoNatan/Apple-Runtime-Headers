@@ -106,6 +106,7 @@
 @property(retain, nonatomic) NSData *shiftedLocationData; // @dynamic shiftedLocationData;
 @property(copy, nonatomic) NSString *snowdayIdentifier; // @dynamic snowdayIdentifier;
 @property(copy, nonatomic) NSString *snowdaySnowplowIdentifier; // @dynamic snowdaySnowplowIdentifier;
+@property(copy, nonatomic) NSString *snowplowGroupUUID; // @dynamic snowplowGroupUUID;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) NSString *timeZoneName; // @dynamic timeZoneName;
 @property(retain, nonatomic) NSNumber *timeZoneOffset; // @dynamic timeZoneOffset;

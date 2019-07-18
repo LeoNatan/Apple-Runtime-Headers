@@ -6,20 +6,23 @@
 
 #import <objc/NSObject.h>
 
-#import <SearchUI/_UIContextMenuInteractionDelegate-Protocol.h>
+#import <SearchUI/UIContextMenuInteractionDelegate-Protocol.h>
 
 @class NSString, SearchUITableViewController;
 
-@interface SearchUIPeekDelegate : NSObject <_UIContextMenuInteractionDelegate>
+@interface SearchUIPeekDelegate : NSObject <UIContextMenuInteractionDelegate>
 {
     SearchUITableViewController *_viewController;
 }
 
 @property(nonatomic) __weak SearchUITableViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
-- (id)contextMenuInteraction:(id)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(id)arg3;
-- (id)contextMenuInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
-- (_Bool)contextMenuInteractionShouldBegin:(id)arg1;
+- (id)_contextMenuInteraction:(id)arg1 styleForMenuWithConfiguration:(id)arg2;
+- (void)contextMenuInteractionDidEnd:(id)arg1;
+- (void)contextMenuInteractionWillPresent:(id)arg1;
+- (void)contextMenuInteraction:(id)arg1 willCommitWithAnimator:(id)arg2;
+- (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
+- (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
 - (id)initWithViewController:(id)arg1;
 
 // Remaining properties

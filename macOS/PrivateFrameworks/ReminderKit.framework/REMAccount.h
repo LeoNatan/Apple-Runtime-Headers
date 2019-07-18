@@ -35,8 +35,10 @@
 @property(readonly, nonatomic) BOOL daSupportsPhoneNumbers;
 @property(readonly, nonatomic) NSOrderedSet *listIDsOrdering;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)fetchListIncludingSpecialContainerWithExternalIdentifier:(id)arg1 error:(id *)arg2;
 - (id)fetchListsIncludingSpecialContainersWithError:(id *)arg1;
 - (BOOL)isConsideredEmptyWithResultPtr:(char *)arg1 withError:(id *)arg2;
 - (BOOL)canCopyReminderLosslesslyToAccount:(id)arg1;

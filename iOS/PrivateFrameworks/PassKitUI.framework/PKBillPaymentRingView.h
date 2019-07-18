@@ -25,6 +25,8 @@
     NSDictionary *_standardRingStates;
     NSDictionary *_colorStops;
     NSDecimalNumber *_displayAmount;
+    NSDecimalNumber *_overrideDisplayAmount;
+    NSDecimalNumber *_effectiveDisplayAmount;
     _Bool _selectedSuggestedAmountIsTarget;
     PKBillPaymentSuggestedAmount *_selectedSuggestedAmount;
     PKBillPaymentSuggestedAmount *_highlightedSuggestedAmount;
@@ -61,6 +63,7 @@
     UILabel *_interestLabel;
     PKCurvedTextLabel *_topCurvedTextLabel;
     PKCurvedTextLabel *_bottomCurvedTextLabel;
+    _Bool _enabled;
     _Bool _isSmall;
     id <PKBillPaymentRingViewDelegate> _delegate;
     id <PKBillPaymentRingViewDataSource> _dataSource;
@@ -69,6 +72,7 @@
 @property(nonatomic) _Bool isSmall; // @synthesize isSmall=_isSmall;
 @property(nonatomic) id <PKBillPaymentRingViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) id <PKBillPaymentRingViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
 - (void)_createSuggestedAmountRingColorStops;
 - (void)_createStandardColors;
@@ -87,7 +91,6 @@
 - (double)_offsetCurrentAngle;
 - (double)_offsetAngle:(double)arg1;
 - (struct CGPoint)_centerPointAtAngle:(double)arg1;
-- (struct CGRect)_insetBounds;
 - (_Bool)_isAmount:(id)arg1 withinRoundingUnitOfAmount:(id)arg2;
 - (id)_roundedAmountForAngle:(double)arg1;
 - (double)_angleForAmount:(id)arg1;
@@ -96,9 +99,12 @@
 - (void)_updateHandleImage;
 - (void)_setHighlightedSuggestedAmount:(id)arg1;
 - (void)_setSelectedSuggestedAmount:(id)arg1;
+- (_Bool)_updateEffectiveDisplayAmount;
 - (_Bool)_setDisplayAmount:(id)arg1;
 - (void)_setDotsVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_setResponse:(double)arg1;
+- (void)_updateCurvedText;
+- (void)_updateForEnabledState;
 - (id)_blendFromLinearColor:(id)arg1 toLinearColor:(id)arg2 withProgress:(double)arg3;
 - (id)_blendFromGradientState:(id)arg1 toState:(id)arg2 withProgress:(double)arg3;
 - (void)_updatePausedState;
@@ -131,8 +137,6 @@
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)renderLoop:(id)arg1 drawAtTime:(double)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (struct CGSize)smallRingSize;
-- (struct CGSize)ringSizeWhenIsSmall:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)didMoveToWindow;
 - (void)dealloc;

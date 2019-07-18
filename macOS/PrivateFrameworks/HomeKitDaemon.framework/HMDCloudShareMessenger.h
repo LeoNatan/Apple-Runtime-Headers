@@ -33,7 +33,7 @@
 - (void)requestShareInvitationDataFromUser:(id)arg1;
 - (void)sendShareInvitationData:(id)arg1 toUser:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)unconfigure;
-- (void)configure;
+- (void)configureWithHome:(id)arg1;
 - (id)initWithMessageTargetUUID:(id)arg1 workQueue:(id)arg2 messageDispatcher:(id)arg3;
 - (id)initWithMessageTargetUUID:(id)arg1 workQueue:(id)arg2;
 

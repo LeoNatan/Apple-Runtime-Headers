@@ -19,7 +19,7 @@
 + (id)na_identity;
 - (id)cachedPlaybackStateWriteErrorForRouteID:(id)arg1;
 - (_Bool)hasPendingWritesForRouteID:(id)arg1;
-- (id)writePlaybackState:(int)arg1 forRouteID:(id)arg2;
+- (id)writePlaybackState:(int)arg1 playbackArchive:(id)arg2 playbackOptions:(int)arg3 forRouteID:(id)arg4;
 - (int)lastPlaybackStateForProfileForRouteID:(id)arg1;
 - (id)mediaProfileContainerForRouteID:(id)arg1;
 @property(readonly) unsigned int hash;

@@ -7,12 +7,12 @@
 #import <PassKitUI/PKExplanationViewController.h>
 
 #import <PassKitUI/PKAccountFlowControllerDelegate-Protocol.h>
-#import <PassKitUI/PKPaymentSetupRequiresPreflightProtocol-Protocol.h>
+#import <PassKitUI/PKViewControllerPreflightable-Protocol.h>
 
 @class CLInUseAssertion, NSString, PKAccountFlowController, PKAccountPostProvisioningContent, UIView;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKAccountPassMakeDefaultViewContoller : PKExplanationViewController <PKAccountFlowControllerDelegate, PKPaymentSetupRequiresPreflightProtocol>
+@interface PKAccountPassMakeDefaultViewContoller : PKExplanationViewController <PKAccountFlowControllerDelegate, PKViewControllerPreflightable>
 {
     PKAccountFlowController *_accountController;
     id <PKPaymentSetupViewControllerDelegate> _delegate;
@@ -36,6 +36,7 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
+- (void)dealloc;
 - (id)initWithAccountFlowController:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3;
 
 // Remaining properties

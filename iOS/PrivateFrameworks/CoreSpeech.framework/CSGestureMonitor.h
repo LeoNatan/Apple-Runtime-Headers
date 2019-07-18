@@ -15,6 +15,7 @@
 + (id)sharedInstance;
 @property(nonatomic) unsigned long long dismissalTimestamp; // @synthesize dismissalTimestamp=_dismissalTimestamp;
 @property(nonatomic) unsigned long long wakeGestureTimestamp; // @synthesize wakeGestureTimestamp=_wakeGestureTimestamp;
+- (_Bool)isTriggerHandheld;
 - (void)_stopMonitoring;
 - (void)_startMonitoringWithQueue:(id)arg1;
 

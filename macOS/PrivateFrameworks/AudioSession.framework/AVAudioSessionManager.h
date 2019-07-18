@@ -8,7 +8,7 @@
 
 @interface AVAudioSessionManager : NSObject
 {
-    struct synchronized<std::__1::shared_ptr<as::client::SessionManager>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::SessionManager>>> _guarded_impl;
+    struct synchronized<std::__1::shared_ptr<as::client::SessionManager>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::SessionManager>>> _guarded_impl;
 }
 
 + (id)defaultManager;

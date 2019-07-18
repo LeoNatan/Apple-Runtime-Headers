@@ -6,7 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@interface EFAutoBugCaptureReporter : NSObject
+#import <EmailFoundation/EFLoggable-Protocol.h>
+
+@class NSString;
+
+@interface EFAutoBugCaptureReporter : NSObject <EFLoggable>
 {
 }
 
@@ -14,6 +18,12 @@
 + (id)log;
 - (void)reportIssueType:(id)arg1 description:(id)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString, NSURL;
+@class NSDate, NSDictionary, NSMutableDictionary, NSSet, NSString, NSURL;
 
 @interface PFAssetBundle : NSObject
 {
@@ -25,7 +25,7 @@
     NSURL *_adjustmentBaseVideoURL;
     NSURL *_originalAdjustmentDataURL;
     NSDictionary *_propertyList;
-    NSDictionary *_metadata;
+    NSMutableDictionary *_metadata;
     NSString *_livePhotoOriginalPairingIdentifier;
     CDStruct_1b6d18a9 _livePhotoOriginalImageDisplayTime;
     CDStruct_1b6d18a9 _livePhotoOriginalVideoDuration;
@@ -36,7 +36,7 @@
 @property(nonatomic) CDStruct_1b6d18a9 livePhotoOriginalImageDisplayTime; // @synthesize livePhotoOriginalImageDisplayTime=_livePhotoOriginalImageDisplayTime;
 @property(copy, nonatomic) NSString *livePhotoOriginalPairingIdentifier; // @synthesize livePhotoOriginalPairingIdentifier=_livePhotoOriginalPairingIdentifier;
 @property(readonly, nonatomic) _Bool didReadOriginalPairedVideoMetadata; // @synthesize didReadOriginalPairedVideoMetadata=_didReadOriginalPairedVideoMetadata;
-@property(readonly, copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(readonly, copy, nonatomic) NSMutableDictionary *metadata; // @synthesize metadata=_metadata;
 @property(copy, nonatomic) NSDictionary *propertyList; // @synthesize propertyList=_propertyList;
 @property(readonly, nonatomic) NSURL *originalAdjustmentDataURL; // @synthesize originalAdjustmentDataURL=_originalAdjustmentDataURL;
 @property(readonly, nonatomic) NSURL *adjustmentBaseVideoURL; // @synthesize adjustmentBaseVideoURL=_adjustmentBaseVideoURL;
@@ -53,9 +53,8 @@
 @property(readonly, nonatomic) NSURL *photoURL; // @synthesize photoURL=_photoURL;
 - (void).cxx_destruct;
 - (id)writeDowngradedRepresentationToDirectory:(id)arg1 error:(id *)arg2;
-- (id)initWithOriginalVideoURL:(id)arg1 fullSizeRenderedVideoURL:(id)arg2 adjustmentBaseVideoURL:(id)arg3 adjustmentsURL:(id)arg4 originalAdjustmentsURL:(id)arg5 mediaSubtypes:(unsigned int)arg6 playbackStyle:(int)arg7;
-- (id)initWithOriginalPhotoURL:(id)arg1 alternatePhotoURL:(id)arg2 fullSizePhotoURL:(id)arg3 adjustmentBaseFullSizePhotoURL:(id)arg4 originalPairedVideoURL:(id)arg5 fullSizePairedVideoURL:(id)arg6 adjustmentBaseFullSizePairedVideoURL:(id)arg7 fullSizeVideoURL:(id)arg8 adjustmentsURL:(id)arg9 originalAdjustmentsURL:(id)arg10 mediaSubtypes:(unsigned int)arg11 playbackStyle:(int)arg12 playbackVariation:(unsigned int)arg13;
-- (id)initWithOriginalPhotoURL:(id)arg1 alternatePhotoURL:(id)arg2 fullSizePhotoURL:(id)arg3 adjustmentBaseFullSizePhotoURL:(id)arg4 adjustmentsURL:(id)arg5 originalAdjustmentsURL:(id)arg6 mediaSubtypes:(unsigned int)arg7 playbackStyle:(int)arg8 playbackVariation:(unsigned int)arg9;
+- (id)initWithOriginalVideoURL:(id)arg1 fullSizeRenderedVideoURL:(id)arg2 adjustmentBaseVideoURL:(id)arg3 adjustmentsURL:(id)arg4 originalAdjustmentsURL:(id)arg5 mediaSubtypes:(unsigned int)arg6 playbackStyle:(int)arg7 playbackVariation:(unsigned int)arg8;
+- (id)initWithOriginalPhotoURL:(id)arg1 alternatePhotoURL:(id)arg2 fullSizePhotoURL:(id)arg3 adjustmentBaseFullSizePhotoURL:(id)arg4 originalPairedVideoURL:(id)arg5 fullSizePairedVideoURL:(id)arg6 adjustmentBaseFullSizePairedVideoURL:(id)arg7 fullSizeVideoURL:(id)arg8 adjustmentsURL:(id)arg9 originalAdjustmentsURL:(id)arg10 mediaSubtypes:(unsigned int)arg11 playbackStyle:(int)arg12 playbackVariation:(unsigned int)arg13 videoComplementVisibilityState:(unsigned short)arg14;
 - (_Bool)_writeFileAtURL:(id)arg1 toDirectory:(id)arg2 withUpdatedFilename:(id)arg3 writtenFileURL:(id *)arg4 error:(id *)arg5;
 - (_Bool)_writeFileAtURL:(id)arg1 toDirectory:(id)arg2 writtenFileURL:(id *)arg3 error:(id *)arg4;
 - (id)createAssetBundleWritingErrorWithDescription:(id)arg1;
@@ -65,10 +64,16 @@
 - (id)urlsByPathKey;
 - (_Bool)writeToBundleAtURL:(id)arg1 error:(id *)arg2;
 - (_Bool)linkOrCopyURL:(id)arg1 toURL:(id)arg2 forceCopy:(_Bool)arg3 error:(id *)arg4;
+@property(retain, nonatomic) id libraryLocation;
+@property(copy, nonatomic) NSDate *libraryCreationDate;
+@property(copy, nonatomic) NSString *assetTitle;
+@property(copy, nonatomic) NSString *assetDescription;
+@property(copy, nonatomic) NSSet *keywordTitles;
 - (_Bool)isMediaSubtype:(unsigned int)arg1;
 - (void)_readLivePhotoVideoMetadataIfNeeded;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 livePhotoImageDisplayTime;
 @property(readonly, copy, nonatomic) NSString *livePhotoPairingIdentifier;
+@property(readonly, nonatomic) unsigned short videoComplementVisibilityState;
 @property(readonly, nonatomic) unsigned int playbackVariation;
 @property(readonly, nonatomic) unsigned int mediaSubtypes;
 @property(readonly, nonatomic) int mediaType;

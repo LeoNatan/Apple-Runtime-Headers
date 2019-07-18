@@ -7,11 +7,13 @@
 #import <HealthDaemon/NSObject-Protocol.h>
 
 @class HDAssertion, HDDatabaseTransactionContext, HDJournalEntry, NSArray, NSObject, NSString;
-@protocol HDDatabaseProtectedDataObserver, OS_dispatch_queue;
+@protocol HDDatabaseJournalMergeObserver, HDDatabaseProtectedDataObserver, OS_dispatch_queue;
 
 @protocol HDHealthDatabase <NSObject>
 @property(readonly, nonatomic, getter=isProtectedDataAvailable) _Bool protectedDataAvailable;
 @property(readonly, nonatomic, getter=isDataProtectedByFirstUnlockAvailable) _Bool dataProtectedByFirstUnlockAvailable;
+- (void)removeDatabaseJournalMergeObserver:(id <HDDatabaseJournalMergeObserver>)arg1 journalType:(int)arg2;
+- (void)addDatabaseJournalMergeObserver:(id <HDDatabaseJournalMergeObserver>)arg1 journalType:(int)arg2 queue:(NSObject<OS_dispatch_queue> *)arg3;
 - (void)removeProtectedDataObserver:(id <HDDatabaseProtectedDataObserver>)arg1;
 - (void)addProtectedDataObserver:(id <HDDatabaseProtectedDataObserver>)arg1 queue:(NSObject<OS_dispatch_queue> *)arg2;
 - (void)addProtectedDataObserver:(id <HDDatabaseProtectedDataObserver>)arg1;

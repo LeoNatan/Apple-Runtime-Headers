@@ -13,15 +13,15 @@
 {
     NSObject<GKFriendRequestViewControllerDelegate> *_delegate;
     NSString *_friendCode;
-    NSString *_friendUrl;
+    NSString *_friendSupportPageURL;
     UIViewController *_requestingViewController;
 }
 
 + (void)presentAlertControllerOn:(id)arg1 withMessage:(id)arg2 andTitle:(id)arg3;
-+ (void)presentFriendRequestOn:(id)arg1 withFriendCode:(id)arg2 andFriendUrl:(id)arg3;
++ (void)presentFriendRequestOn:(id)arg1 withFriendCode:(id)arg2 andFriendSupportPageURL:(id)arg3;
 + (void)addFriends:(id)arg1;
 @property(nonatomic) __weak UIViewController *requestingViewController; // @synthesize requestingViewController=_requestingViewController;
-@property(retain, nonatomic) NSString *friendUrl; // @synthesize friendUrl=_friendUrl;
+@property(retain, nonatomic) NSString *friendSupportPageURL; // @synthesize friendSupportPageURL=_friendSupportPageURL;
 @property(retain, nonatomic) NSString *friendCode; // @synthesize friendCode=_friendCode;
 @property(nonatomic) __weak NSObject<GKFriendRequestViewControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

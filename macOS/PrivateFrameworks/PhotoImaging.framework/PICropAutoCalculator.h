@@ -7,24 +7,26 @@
 #import <NeutrinoCore/NUAutoCalculator.h>
 
 #import <PhotoImaging/NUTimeBased-Protocol.h>
+#import <PhotoImaging/PIFaceObservingAutoCalculator-Protocol.h>
 
-@class NSString;
+@class NSString, PIFaceObservationCache;
 
-@interface PICropAutoCalculator : NUAutoCalculator <NUTimeBased>
+@interface PICropAutoCalculator : NUAutoCalculator <NUTimeBased, PIFaceObservingAutoCalculator>
 {
-    BOOL _shouldPreserveInputOrientation;
     BOOL _shouldPerformAutoCrop;
     BOOL _shouldPerformAutoStraighten;
+    PIFaceObservationCache *_faceObservationCache;
     double _maxAutoStraighten;
 }
 
 @property double maxAutoStraighten; // @synthesize maxAutoStraighten=_maxAutoStraighten;
 @property BOOL shouldPerformAutoStraighten; // @synthesize shouldPerformAutoStraighten=_shouldPerformAutoStraighten;
 @property BOOL shouldPerformAutoCrop; // @synthesize shouldPerformAutoCrop=_shouldPerformAutoCrop;
-@property BOOL shouldPreserveInputOrientation; // @synthesize shouldPreserveInputOrientation=_shouldPreserveInputOrientation;
+@property(retain, nonatomic) PIFaceObservationCache *faceObservationCache; // @synthesize faceObservationCache=_faceObservationCache;
+- (void).cxx_destruct;
 - (void)submit:(CDUnknownBlockType)arg1;
+- (BOOL)undoExifOrientation:(CDStruct_996ac03c *)arg1 error:(out id *)arg2;
 - (id)imageProperties:(out id *)arg1;
-- (CDStruct_996ac03c)orientedRectForRect:(CDStruct_996ac03c)arg1 imageSize:(CDStruct_912cb5d2)arg2 orientation:(long long)arg3;
 - (id)initWithComposition:(id)arg1;
 
 // Remaining properties

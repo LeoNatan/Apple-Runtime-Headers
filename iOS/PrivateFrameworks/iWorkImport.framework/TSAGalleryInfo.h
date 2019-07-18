@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 + (id)p_paragraphStyleWithLocalizedNameKey:(id)arg1 inStylesheet:(id)arg2;
 + (id)p_overrideCaptionParagraphStyleIdentifier;
 + (id)defaultGalleryCaptionParagraphStyleInStylesheet:(id)arg1;
++ (void)i_configureCaptionStorage:(id)arg1;
 + (id)i_newCaptionStorageWithContext:(id)arg1;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
@@ -64,11 +65,12 @@ __attribute__((visibility("hidden")))
 - (void)removeContainedModel:(id)arg1;
 - (void)insertContainedModel:(id)arg1 atIndex:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSArray *containedModels;
-@property(readonly, nonatomic) NSArray *childInfos;
+@property(readonly, copy, nonatomic) NSArray *childInfos;
 - (void)acceptVisitor:(id)arg1;
 - (id)childEnumeratorForUserSearch;
 - (id)childEnumerator;
 - (int)elementKind;
+- (_Bool)canCopyData;
 - (_Bool)needsDownload;
 - (_Bool)supportsParentRotation;
 - (_Bool)isSelectable;
@@ -90,12 +92,12 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) TSDInfoGeometry *geometry;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic, getter=isInlineWithText) _Bool inlineWithText;
+@property(readonly, nonatomic) _Bool isMaster;
 @property(nonatomic) _Bool matchesObjectPlaceholderGeometry;
 @property(nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
 @property(readonly, nonatomic) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
 @property(nonatomic) NSObject<TSDContainerInfo> *parentInfo;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsCollaborativeEditing;
 
 @end
 

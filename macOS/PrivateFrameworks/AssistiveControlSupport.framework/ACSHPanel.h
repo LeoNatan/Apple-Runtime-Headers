@@ -36,6 +36,7 @@
     unsigned long long _glidingLensSize;
     NSString *_currentInputSourceName;
     unsigned long long _productSupportType;
+    NSString *__observedThemeKeyForACPE;
     struct CGRect _postContextButtonRect;
 }
 
@@ -45,6 +46,7 @@
 + (struct CGSize)windowPaddingForZoomScale:(double)arg1 nonProportionalScaleFactor:(double)arg2 isHorizontal:(BOOL)arg3;
 + (double)windowPaddingZoomScaleFactor;
 + (Class)classForDict:(id)arg1;
+@property(copy, nonatomic) NSString *_observedThemeKeyForACPE; // @synthesize _observedThemeKeyForACPE=__observedThemeKeyForACPE;
 @property(nonatomic) BOOL _didRegisterForDisplayTheme; // @synthesize _didRegisterForDisplayTheme=__didRegisterForDisplayTheme;
 @property(nonatomic) struct CGRect postContextButtonRect; // @synthesize postContextButtonRect=_postContextButtonRect;
 @property(nonatomic) unsigned long long productSupportType; // @synthesize productSupportType=_productSupportType;
@@ -73,6 +75,8 @@
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)resolvedDisplayColor;
+- (unsigned long long)resolvedDisplayTheme;
+- (void)_updateThemeObservationForPanelEditor;
 - (void)mergePanel:(id)arg1 withRelativePosition:(unsigned long long)arg2 orientation:(unsigned long long)arg3 panelDistance:(double)arg4;
 @property(readonly, nonatomic) BOOL hasGroupAsTopLevelElement;
 @property(readonly, nonatomic) ACSHKeyboardData *keyboardDataBasedOnPanelMetadata;

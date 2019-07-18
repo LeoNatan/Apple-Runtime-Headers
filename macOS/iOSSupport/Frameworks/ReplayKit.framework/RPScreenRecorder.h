@@ -86,12 +86,13 @@
 - (void)notifyDelegateOfRecorderAvailability;
 - (void)resumeRecording;
 - (void)pauseRecording;
-- (void)clientDidBecomeActive;
-- (void)clientWillResignActive;
+- (void)recordingShouldResume;
+- (void)recordingDidPause;
 - (void)discardRecordingWithHandler:(CDUnknownBlockType)arg1;
 - (void)recordingDidStopWithError:(id)arg1 movieURL:(id)arg2;
 - (void)updateScreenRecordingStateWithCurrentState:(id)arg1;
 - (void)recordingTimerDidUpdate:(id)arg1;
+- (void)recordingLockInterrupted:(id)arg1;
 - (void)didStopRecordingWithError:(id)arg1 previewViewController:(id)arg2;
 - (void)stopRecordingWithVideoURLHandler:(CDUnknownBlockType)arg1;
 - (void)stopRecordingAndSaveToCameraRoll:(CDUnknownBlockType)arg1;
@@ -106,7 +107,7 @@
 - (void)startCaptureWithHandler:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startRecordingWithHandler:(CDUnknownBlockType)arg1;
 - (void)startBroadcastWithHandler:(CDUnknownBlockType)arg1;
-- (void)startRecordingWithMicrophoneEnabled:(BOOL)arg1 windowToRecord:(id)arg2 systemRecording:(BOOL)arg3 handler:(CDUnknownBlockType)arg4;
+- (void)startSystemRecordingWithMicrophoneEnabled:(BOOL)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)setWindowRotationLocked:(BOOL)arg1;
 - (unsigned int)currentWindowLayerContextID;
 - (struct CGSize)currentWindowSize;
@@ -115,7 +116,6 @@
 - (id)processQueue;
 - (id)videoQueue;
 - (id)audioQueue;
-- (void)setMicrophoneEnabledPersistent:(BOOL)arg1;
 - (id)init;
 
 // Remaining properties

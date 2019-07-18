@@ -8,34 +8,40 @@
 
 #import <iTunesCloud/NSCopying-Protocol.h>
 
-@class ICAgeVerifier, NSError, NSURL;
+@class ICAgeVerifier, ICUserIdentity, NSError, NSURL;
 
 @interface ICAgeVerificationState : NSObject <NSCopying>
 {
     long long _status;
+    ICUserIdentity *_userIdentity;
     long long _treatment;
     NSURL *_verificationURL;
     NSError *_error;
     ICAgeVerifier *_ageVerifier;
 }
 
-+ (id)ageVerificationStateNotRequiredWithTreatment:(long long)arg1 verificationURL:(id)arg2;
-+ (id)ageVerificationStateNotRequiredWithTreatment:(long long)arg1;
-+ (id)ageVerificationStateNotRequiredWithError:(id)arg1;
-+ (id)ageVerificationStateNotRequired;
++ (id)_stateFromDictionaryRepresentation:(id)arg1 DSID:(id)arg2;
++ (id)cachedStateForDSID:(id)arg1;
++ (id)ageVerificationStateNotRequiredForUserIdentity:(id)arg1 withTreatment:(long long)arg2 verificationURL:(id)arg3;
++ (id)ageVerificationStateNotRequiredForUserIdentity:(id)arg1 withTreatment:(long long)arg2;
++ (id)ageVerificationStateNotRequiredForUserIdentity:(id)arg1 withError:(id)arg2;
++ (id)ageVerificationStateNotRequiredForUserIdentity:(id)arg1;
 @property(readonly, copy, nonatomic) ICAgeVerifier *ageVerifier; // @synthesize ageVerifier=_ageVerifier;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, copy, nonatomic) NSURL *verificationURL; // @synthesize verificationURL=_verificationURL;
 @property(readonly, nonatomic) long long treatment; // @synthesize treatment=_treatment;
+@property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentationWithDSID:(id)arg1;
 @property(readonly, nonatomic) long long status; // @synthesize status=_status;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)saveToUserDefaults;
 @property(readonly, nonatomic, getter=isDynamic) _Bool dynamic;
 @property(readonly, nonatomic, getter=isExplicitContentAllowed) _Bool explicitContentAllowed;
-- (id)initWithAgeVerifier:(id)arg1 treatment:(long long)arg2 verificationURL:(id)arg3;
-- (id)_initWithStatus:(long long)arg1 treatment:(long long)arg2 verificationURL:(id)arg3 error:(id)arg4;
+- (id)initWithUserIdentity:(id)arg1 ageVerifier:(id)arg2 treatment:(long long)arg3 verificationURL:(id)arg4;
+- (id)_initWithUserIdentity:(id)arg1 status:(long long)arg2 treatment:(long long)arg3 verificationURL:(id)arg4 error:(id)arg5;
 
 @end
 

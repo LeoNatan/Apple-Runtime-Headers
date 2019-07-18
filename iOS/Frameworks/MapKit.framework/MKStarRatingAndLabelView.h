@@ -6,37 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-@class MKStarRatingView, NSArray, NSString, UILabel, _MKUILabel;
-
 @interface MKStarRatingAndLabelView : UIView
 {
-    MKStarRatingView *_starRatingView;
-    _MKUILabel *_reviewsLabel;
-    NSString *_sourceName;
-    unsigned long long _numberOfReviews;
-    _Bool _displaysSourceOfReviews;
-    NSArray *_reviewsLabelConstraints;
-    NSString *_fontStyleOverride;
 }
 
-+ (id)starRatingAndProviderForCarPlayAsAttributedStringForMapItem:(id)arg1 font:(id)arg2 textColor:(id)arg3 showNumberOfReviews:(_Bool)arg4 isFocused:(_Bool)arg5;
 + (id)starRatingAndProviderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(_Bool)arg4 showNumberOfReviews:(_Bool)arg5 ratingStyle:(long long)arg6 theme:(id)arg7;
 + (id)starRatingAndProviderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(_Bool)arg4 theme:(id)arg5;
 + (id)ratingAndReviewsAsAttributedString:(double)arg1 style:(long long)arg2 font:(id)arg3 numberOfReviews:(unsigned long long)arg4 textColor:(id)arg5 theme:(id)arg6;
 + (id)reviewsString:(unsigned long long)arg1 providerName:(id)arg2;
-@property(retain, nonatomic) NSString *fontStyleOverride; // @synthesize fontStyleOverride=_fontStyleOverride;
-@property(retain, nonatomic) NSString *sourceName; // @synthesize sourceName=_sourceName;
-@property(nonatomic) unsigned long long numberOfReviews; // @synthesize numberOfReviews=_numberOfReviews;
-@property(readonly, nonatomic) UILabel *reviewsLabel; // @synthesize reviewsLabel=_reviewsLabel;
-@property(readonly, nonatomic) MKStarRatingView *starRatingView; // @synthesize starRatingView=_starRatingView;
-- (void).cxx_destruct;
-- (id)viewForLastBaselineLayout;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (struct CGSize)intrinsicContentSize;
-- (void)_updateFonts;
-- (void)setDisplaysSourceOfReviews:(_Bool)arg1;
-- (void)_mapkit_setCalloutTextColor:(id)arg1;
-- (id)initWithStyle:(long long)arg1;
 
 @end
 

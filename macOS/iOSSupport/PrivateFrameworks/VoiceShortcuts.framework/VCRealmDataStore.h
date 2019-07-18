@@ -13,7 +13,6 @@
     WFDatabase *_database;
 }
 
-+ (void)initialize;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
 - (BOOL)isPhraseUsable:(id)arg1 inDatabase:(id)arg2 error:(id *)arg3;

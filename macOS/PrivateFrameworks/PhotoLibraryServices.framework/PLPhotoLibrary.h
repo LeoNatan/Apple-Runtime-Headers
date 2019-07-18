@@ -37,7 +37,7 @@
 + (void)refreshCachedCountsOnAllAssetContainersInContext:(id)arg1;
 + (BOOL)canSaveVideoToLibrary:(id)arg1;
 + (id)resourcesInfoFromMoc:(id)arg1;
-+ (void)_getResourceData:(id)arg1 originalsSizeOut:(unsigned long long *)arg2 derivativesSizeOut:(unsigned long long *)arg3 fileBackedThumbnailsSizeOut:(float *)arg4 tableThumbnailsSizeOut:(float *)arg5;
++ (void)_getResourceData:(id)arg1 nonDerivativeSizeOut:(unsigned long long *)arg2 derivativesSizeOut:(unsigned long long *)arg3 fileBackedThumbnailsSizeOut:(float *)arg4 tableThumbnailsSizeOut:(float *)arg5;
 + (int)priorityForFileExtension:(id)arg1;
 + (BOOL)isAdjustmentEnvelopeExtension:(id)arg1;
 + (BOOL)isAudioFileExtension:(id)arg1;
@@ -148,6 +148,7 @@
 - (void)recreateMemoriesAndPersonsFromMetadata;
 - (void)recreateAlbumsAndPersonsFromMetadata;
 - (void)setICloudPhotosEnabled:(BOOL)arg1 withClient:(id)arg2;
+- (void)invalidateWithReason:(id)arg1;
 - (id)managedObjectContextStoreUUID;
 - (void)setGlobalValue:(id)arg1 forKey:(id)arg2;
 - (id)globalValueForKey:(id)arg1;

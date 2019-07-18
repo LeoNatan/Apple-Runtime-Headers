@@ -18,12 +18,14 @@
         unsigned int name:1;
         unsigned int qualifier:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _name;
     int _qualifier;
     _INPBFilePropertyValue *_value;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBFilePropertyValue *value; // @synthesize value=_value;
 @property(nonatomic) int qualifier; // @synthesize qualifier=_qualifier;
 @property(nonatomic) int name; // @synthesize name=_name;

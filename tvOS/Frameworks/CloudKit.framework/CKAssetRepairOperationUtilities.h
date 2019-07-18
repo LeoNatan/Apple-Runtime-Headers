@@ -15,9 +15,8 @@
 + (_Bool)repairErrorShouldBeMarkedAsBroken:(id)arg1;
 + (id)uploadRequestMetadataFromRepairRecord:(id)arg1;
 + (id)repairRecordFromRecord:(id)arg1 field:(id)arg2 listIndex:(long long)arg3 repairZoneID:(id)arg4;
-+ (void)clearRepairZoneInDatabase:(id)arg1 withRepairContainer:(id)arg2 repairZone:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-+ (void)markBrokenAssetOrPackageInDatabase:(id)arg1 withRepairContainer:(id)arg2 repairZone:(id)arg3 inRecordWithID:(id)arg4 field:(id)arg5 index:(long long)arg6 simulatingAssetCorruption:(_Bool)arg7 writingRepairRecord:(_Bool)arg8 completionHandler:(CDUnknownBlockType)arg9;
-+ (id)createRepairContainerFromContainer:(id)arg1 withID:(id)arg2;
++ (void)clearRepairZoneForDatabase:(id)arg1 withRepairContainerOverrides:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (id)createRepairContainerFromContainer:(id)arg1 withOverrides:(id)arg2;
 + (id)createRepairContainerFromContainer:(id)arg1;
 + (id)createRepairOperationGroupWithName:(id)arg1;
 

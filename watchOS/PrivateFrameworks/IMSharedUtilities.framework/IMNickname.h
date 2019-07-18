@@ -21,7 +21,9 @@
     NSString *_recordID;
 }
 
++ (id)nameHashWithFirstName:(id)arg1 lastName:(id)arg2;
 + (_Bool)supportsSecureCoding;
++ (id)uniqueFilePathForWritingImageData;
 @property(retain, nonatomic) NSString *recordID; // @synthesize recordID=_recordID;
 @property(retain, nonatomic) NSString *handle; // @synthesize handle=_handle;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
@@ -30,6 +32,7 @@
 @property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 - (_Bool)isDifferentFromNickname:(id)arg1 withOptions:(unsigned int)arg2;
 - (id)_sharingState;
+- (id)_imageHashCreatedInChunks;
 @property(readonly, nonatomic) NSString *imageHash;
 @property(readonly, nonatomic) NSString *nameHash;
 - (id)dataRepresentation;

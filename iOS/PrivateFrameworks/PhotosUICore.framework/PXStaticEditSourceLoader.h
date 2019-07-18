@@ -34,6 +34,7 @@
 - (id)initWithEditSource:(id)arg1 compositionController:(id)arg2 baseVersion:(long long)arg3 contentIdentifier:(id)arg4;
 
 // Remaining properties
+@property(readonly, nonatomic) PLEditSource *activeEditSource; // @dynamic activeEditSource;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

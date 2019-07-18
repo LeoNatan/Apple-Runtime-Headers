@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface WFAggregateDictionary : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
+    NSMutableDictionary *_failTrackerDict;
     NSString *_domain;
     unsigned long long _requestFailures;
     unsigned long long _requestSuccesses;
@@ -21,13 +22,17 @@
 @property(nonatomic) unsigned long long requestSuccesses; // @synthesize requestSuccesses=_requestSuccesses;
 @property(nonatomic) unsigned long long requestFailures; // @synthesize requestFailures=_requestFailures;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
+@property(retain, nonatomic) NSMutableDictionary *failTrackerDict; // @synthesize failTrackerDict=_failTrackerDict;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (void)_queue_addValueForScalarKey:(id)arg1 value:(long long)arg2;
 - (void)_queue_pushValue:(double)arg1 forKey:(id)arg2;
 - (void)logLocationAccuracy:(double)arg1;
-- (void)logRequestSuccess;
-- (void)logRequestFailure;
+- (id)failTrackerForAPIVersion:(id)arg1;
+- (void)logFallbackFromAPIVersion:(id)arg1 date:(id)arg2;
+- (void)logRequestSuccessForAPIVersion:(id)arg1 date:(id)arg2;
+- (void)logRequestFailureForAPIVersion:(id)arg1 date:(id)arg2;
+- (double)failureRate;
 - (id)init;
 
 @end

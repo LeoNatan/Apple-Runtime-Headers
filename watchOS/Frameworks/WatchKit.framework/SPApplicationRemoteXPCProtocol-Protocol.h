@@ -13,8 +13,9 @@
 - (void)extensionDelegate:(NSString *)arg1 handlesBGTasksDidChange:(_Bool)arg2;
 - (void)extensionDidEndNotificationUICreation:(NSString *)arg1;
 - (void)extensionDidBeginNotificationUICreation:(NSString *)arg1;
+- (void)scheduledSessonInvalidatedWhileRunning;
 - (void)showSystemAlertForBARDisabledWithReply:(void (^)(_Bool))arg1;
-- (void)hapticPlayedDuringScheduledExtendedRuntimeSession;
+- (void)playHapticDuringScheduledExtendedRuntimeSession:(int)arg1;
 - (NSString *)redirectClientIDForSelector:(SEL)arg1;
 - (void)interfaceViewController:(NSString *)arg1 setupDynamicInterfaceObject:(NSDictionary *)arg2 completion:(void (^)(UIView *))arg3;
 - (void)interfaceViewController:(NSString *)arg1 setTimerSupportVC:(UIViewController *)arg2;

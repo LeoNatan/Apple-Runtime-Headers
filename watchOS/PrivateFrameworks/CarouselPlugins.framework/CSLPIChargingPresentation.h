@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (void)dismissed;
 - (void)finishingAnimation;
+- (void)animatingAfterStaticImage;
 - (void)showingStaticImage:(unsigned int)arg1;
 - (void)animatingFromBlackToStaticImage;
 - (void)showingBlack;

@@ -36,7 +36,7 @@
 - (id)performStandardUpdateWithOptions:(id)arg1;
 - (void)_decorateWithMediaSystemSpecificKeys:(id)arg1;
 - (void)_decorateServiceLikeItemKeys:(id)arg1;
-- (void)_decorateWithMediaSessionKeys:(id)arg1;
+- (void)_decorateWithMediaSessionKeys:(id)arg1 inServiceAction:(BOOL)arg2;
 - (void)_decorateWithSoftwareUpdateStateKeys:(id)arg1;
 - (void)_decorateOutcomeWithAccessorySpecificKeys:(id)arg1;
 - (BOOL)supportsAlarmQuickControls;

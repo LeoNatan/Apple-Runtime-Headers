@@ -6,7 +6,7 @@
 
 #import <PepperUICore/PUICTableViewController.h>
 
-@class AKAuthorizationPaneContext, NSLayoutConstraint, NSMutableArray, UIStackView, UIView;
+@class AKAuthorizationPaneContext, NSLayoutConstraint, NSMutableArray, UIStackView;
 @protocol AKAuthorizationEditableDataSources, AKAuthorizationPaneViewControllerDelegate;
 
 @interface AKAuthorizationPaneViewController : PUICTableViewController
@@ -18,14 +18,12 @@
     AKAuthorizationPaneContext *_headerPaneContext;
     AKAuthorizationPaneContext *_footerPaneContext;
     NSMutableArray *_mutableConstraints;
-    UIView *_rightStatusBarItemView;
     NSLayoutConstraint *_headerWidthConstraint;
     NSLayoutConstraint *_footerWidthConstraint;
 }
 
 @property(readonly, nonatomic) NSLayoutConstraint *footerWidthConstraint; // @synthesize footerWidthConstraint=_footerWidthConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *headerWidthConstraint; // @synthesize headerWidthConstraint=_headerWidthConstraint;
-@property(retain, nonatomic) UIView *rightStatusBarItemView; // @synthesize rightStatusBarItemView=_rightStatusBarItemView;
 @property(readonly, nonatomic) NSMutableArray *mutableConstraints; // @synthesize mutableConstraints=_mutableConstraints;
 @property(readonly, nonatomic) AKAuthorizationPaneContext *footerPaneContext; // @synthesize footerPaneContext=_footerPaneContext;
 @property(readonly, nonatomic) AKAuthorizationPaneContext *headerPaneContext; // @synthesize headerPaneContext=_headerPaneContext;
@@ -34,6 +32,7 @@
 @property(nonatomic) __weak id <AKAuthorizationEditableDataSources> editableDataSources; // @synthesize editableDataSources=_editableDataSources;
 @property(nonatomic) __weak id <AKAuthorizationPaneViewControllerDelegate> paneDelegate; // @synthesize paneDelegate=_paneDelegate;
 - (void).cxx_destruct;
+- (_Bool)isWristDetectionEnabled;
 - (id)iconForData:(id)arg1 scale:(float)arg2;
 - (id)iconForContext:(id)arg1;
 - (id)initWithStyle:(int)arg1;
@@ -43,7 +42,6 @@
 - (id)tableViewHeaderStackView;
 - (id)_newStackView;
 - (id)_newContainerView;
-- (void)_setUpRightStatusBarItemView;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;

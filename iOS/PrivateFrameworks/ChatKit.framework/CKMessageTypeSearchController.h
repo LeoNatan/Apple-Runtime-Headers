@@ -6,24 +6,35 @@
 
 #import <ChatKit/CKSearchController.h>
 
-@class NSSet;
+@class IMTimingCollection, NSArray, NSSet;
 
 @interface CKMessageTypeSearchController : CKSearchController
 {
-    _Bool _gotResults;
     _Bool _searchTerminated;
-    NSSet *_streamingResults;
+    _Bool _gotResults;
+    NSSet *_intermediaryResults;
+    NSArray *_resultsToCheck;
+    IMTimingCollection *_timingCollection;
 }
 
-@property(nonatomic) _Bool searchTerminated; // @synthesize searchTerminated=_searchTerminated;
++ (unsigned long long)recencyRankedTargetResultCount;
++ (_Bool)useRecencyRankedSearchForMode:(unsigned long long)arg1;
++ (id)timeRankedQueries;
++ (id)rankingQueriesWithText:(id)arg1;
+@property(retain, nonatomic) IMTimingCollection *timingCollection; // @synthesize timingCollection=_timingCollection;
+@property(retain, nonatomic) NSArray *resultsToCheck; // @synthesize resultsToCheck=_resultsToCheck;
 @property(nonatomic) _Bool gotResults; // @synthesize gotResults=_gotResults;
-@property(retain, nonatomic) NSSet *streamingResults; // @synthesize streamingResults=_streamingResults;
+@property(retain, nonatomic) NSSet *intermediaryResults; // @synthesize intermediaryResults=_intermediaryResults;
+@property(nonatomic) _Bool searchTerminated; // @synthesize searchTerminated=_searchTerminated;
 - (void).cxx_destruct;
 - (struct NSDirectionalEdgeInsets)additionalGroupInsets;
 - (Class)footerClass;
 - (_Bool)wantsFooterSection;
 - (id)chatGUIDForSearchableItem:(id)arg1;
+- (void)_asyncCheckIfResultsExistOnDisk:(id)arg1 firstBatch:(_Bool)arg2;
+- (void)checkIfResultsExistOnDiskAndNotify:(id)arg1;
 - (void)postProcessAndUpdateResults:(id)arg1;
+- (id)queryResultsForItems:(id)arg1;
 - (void)searchEnded;
 - (void)searchWithText:(id)arg1 mode:(unsigned long long)arg2;
 - (void)fractionalWidth:(double *)arg1 count:(unsigned long long *)arg2 forLayoutWidth:(unsigned long long)arg3;

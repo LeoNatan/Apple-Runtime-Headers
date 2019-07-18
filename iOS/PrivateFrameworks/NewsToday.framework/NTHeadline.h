@@ -30,6 +30,7 @@
     double _sourceNameImageScale;
     NSURL *_compactSourceNameImageRemoteURL;
     NSURL *_thumbnailRemoteURL;
+    NSString *_thumbnailIdentifier;
     unsigned long long _thumbnailSizePreset;
     NSURL *_webURL;
     NSURL *_NewsURL;
@@ -73,6 +74,7 @@
 @property(copy, nonatomic) NSURL *webURL; // @synthesize webURL=_webURL;
 @property(nonatomic) struct CGRect thumbnailFocalFrame; // @synthesize thumbnailFocalFrame=_thumbnailFocalFrame;
 @property(nonatomic) unsigned long long thumbnailSizePreset; // @synthesize thumbnailSizePreset=_thumbnailSizePreset;
+@property(copy, nonatomic) NSString *thumbnailIdentifier; // @synthesize thumbnailIdentifier=_thumbnailIdentifier;
 @property(copy, nonatomic) NSURL *thumbnailRemoteURL; // @synthesize thumbnailRemoteURL=_thumbnailRemoteURL;
 @property(copy, nonatomic) NSURL *compactSourceNameImageRemoteURL; // @synthesize compactSourceNameImageRemoteURL=_compactSourceNameImageRemoteURL;
 @property(nonatomic) double sourceNameImageScale; // @synthesize sourceNameImageScale=_sourceNameImageScale;

@@ -9,6 +9,7 @@
 @class NSData, NSDictionary, NSError, NSHTTPURLResponse, NSString, NSURLRequest, NSURLResponse;
 
 @protocol IKNetworkRequestRecord <NSObject>
+@property(readonly, nonatomic) long long state;
 @property(readonly, nonatomic) long long initiatorType;
 @property(readonly, nonatomic) long long resourceType;
 @property(readonly, copy, nonatomic) NSString *identifier;
@@ -19,6 +20,7 @@
 - (void)didCompleteLoadingFromCache:(long long)arg1 mimeType:(NSString *)arg2 withResponseBody:(NSData *)arg3;
 - (void)didReceiveData:(NSData *)arg1;
 - (void)didReceiveResponse:(NSHTTPURLResponse *)arg1 timingData:(NSDictionary *)arg2;
+- (void)willSendRequest:(NSURLRequest *)arg1 redirectResponse:(NSHTTPURLResponse *)arg2;
 - (void)willSendRequest:(NSURLRequest *)arg1;
 @end
 

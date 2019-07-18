@@ -46,7 +46,7 @@
 - (void)syncLocalNotificationsUserID:(id)arg1 withRemoteNotificationsUserID:(id)arg2;
 - (void)handleSyncWithDeletedUserInfoRecord;
 - (void)handleSyncWithUserInfoRecord:(id)arg1;
-- (id)allKnownRecordNames;
+- (id)allKnownRecordNamesWithinRecordZoneWithID:(id)arg1;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
 - (void)accessTokenRemovedForTagID:(id)arg1 userInitiated:(BOOL)arg2;
 - (void)accessTokenDidChangeForTagID:(id)arg1;

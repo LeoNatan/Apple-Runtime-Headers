@@ -17,11 +17,13 @@ __attribute__((visibility("hidden")))
     BOOL _includeRecents;
     BOOL _allowPhotoCapture;
     BOOL _allowAnimojiCreation;
+    BOOL _allowRotation;
 }
 
 + (id)gameCenterConfiguration;
 + (id)contactsConfiguration;
 + (id)defaultConfiguration;
+@property(readonly, nonatomic) BOOL allowRotation; // @synthesize allowRotation=_allowRotation;
 @property(readonly, nonatomic) BOOL allowAnimojiCreation; // @synthesize allowAnimojiCreation=_allowAnimojiCreation;
 @property(readonly, nonatomic) BOOL allowPhotoCapture; // @synthesize allowPhotoCapture=_allowPhotoCapture;
 @property(readonly, nonatomic) BOOL includeRecents; // @synthesize includeRecents=_includeRecents;
@@ -30,7 +32,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL includeFaces; // @synthesize includeFaces=_includeFaces;
 @property(readonly, nonatomic) BOOL includeUnifiedContactImages; // @synthesize includeUnifiedContactImages=_includeUnifiedContactImages;
 @property(readonly, nonatomic) BOOL includeContactImage; // @synthesize includeContactImage=_includeContactImage;
-- (id)initWithIncludeContactImage:(BOOL)arg1 includeUnifiedContactImages:(BOOL)arg2 includeFaces:(BOOL)arg3 includeMonograms:(BOOL)arg4 includeAnimoji:(BOOL)arg5 includeRecents:(BOOL)arg6 allowPhotoCapture:(BOOL)arg7 allowAnimojiCreation:(BOOL)arg8;
+- (id)initWithIncludeContactImage:(BOOL)arg1 includeUnifiedContactImages:(BOOL)arg2 includeFaces:(BOOL)arg3 includeMonograms:(BOOL)arg4 includeAnimoji:(BOOL)arg5 includeRecents:(BOOL)arg6 allowPhotoCapture:(BOOL)arg7 allowAnimojiCreation:(BOOL)arg8 allowRotation:(BOOL)arg9;
 - (id)configurationBySettingAllowsPhotoCapture:(BOOL)arg1;
 
 @end

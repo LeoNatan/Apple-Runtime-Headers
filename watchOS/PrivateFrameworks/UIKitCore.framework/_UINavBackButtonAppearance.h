@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 - (id)_dataFromCoder:(id)arg1;
 - (id)_dataForStyle:(int)arg1;
 - (void)_updateDataTo:(id)arg1 signal:(_Bool)arg2;
-- (id)initWithBarButtonItemStyle:(int)arg1;
+- (id)initWithStyle:(int)arg1;
 
 // Remaining properties
 @property(retain, nonatomic, setter=_setData:) _UINavBackButtonAppearanceData *_data; // @dynamic _data;

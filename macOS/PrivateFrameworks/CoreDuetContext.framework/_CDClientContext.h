@@ -88,6 +88,7 @@
 - (id)cachedValueIfClientHasRegistrationsForKeyPath:(id)arg1;
 - (BOOL)hasKnowledgeOfContextualKeyPath:(id)arg1;
 - (void)handleNotificationEvent:(id)arg1;
+- (void)handleRequestActivateDevicesEvent:(id)arg1;
 - (void)handleFetchProxySourceDeviceUUIDEvent:(id)arg1;
 - (void)handleKeepAliveEvent:(id)arg1;
 - (void)handleUnsubscribeFromContextValueNotificationsEvent:(id)arg1;

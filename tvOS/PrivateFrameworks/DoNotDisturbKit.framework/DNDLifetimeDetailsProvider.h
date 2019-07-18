@@ -14,6 +14,7 @@
 @interface DNDLifetimeDetailsProvider : NSObject <CLLocationManagerDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_eventStoreQueue;
     NSObject<OS_dispatch_queue> *_calloutQueue;
     _Bool _monitoringLifetimes;
     CLLocationManager *_locationManager;
@@ -28,7 +29,7 @@
 @property(nonatomic) __weak id <DNDLifetimeDetailsProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSArray *availableLifetimeDetails; // @synthesize availableLifetimeDetails=_availableLifetimeDetails;
 - (void).cxx_destruct;
-- (void)_requestRelevantEvent;
+- (void)_eventStoreQueue_requestRelevantEvent;
 - (void)_queue_requestLifetimeDetails;
 - (void)_queue_resetLifetimeDetails;
 - (void)_queue_gotPlaceInferences:(id)arg1;

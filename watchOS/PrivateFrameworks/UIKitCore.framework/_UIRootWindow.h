@@ -28,8 +28,8 @@
 - (id)_visibilityLock_environment;
 - (void)_updateVisibility;
 - (void)_noteScreenDidChangeMode:(id)arg1;
+- (void)_didMoveFromScreen:(id)arg1 toScreen:(id)arg2;
 - (void)setHidden:(_Bool)arg1;
-- (void)setScreen:(id)arg1;
 - (void)_configureRootLayer:(id)arg1 sceneTransformLayer:(id)arg2 transformLayer:(id)arg3;
 - (_Bool)_transformLayerIncludesScreenRotation;
 - (void)_configureContextOptions:(id)arg1;

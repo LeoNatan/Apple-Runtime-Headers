@@ -133,9 +133,9 @@
 - (id)suggestContactByKey:(id)arg1;
 - (id)storageContactByKey:(id)arg1;
 - (id)suggestContactMatchesByEmailAddress:(id)arg1;
-- (id)suggestContactMatchesByEmailAddress:(id)arg1 isMaybe:(_Bool)arg2;
+- (id)suggestContactMatchesByEmailAddress:(id)arg1 isMaybe:(_Bool)arg2 onlySignificant:(_Bool)arg3;
 - (id)suggestContactMatchesByPhoneNumber:(id)arg1;
-- (id)suggestContactMatchesByPhoneNumber:(id)arg1 isMaybe:(_Bool)arg2;
+- (id)suggestContactMatchesByPhoneNumber:(id)arg1 isMaybe:(_Bool)arg2 onlySignificant:(_Bool)arg3;
 - (id)allContactsMasterEntityIdsLimitedTo:(unsigned long long)arg1;
 - (id)allContactsLimitedTo:(unsigned long long)arg1;
 - (id)_queryForAllContactsWithLimit;
@@ -183,6 +183,7 @@
 - (_Bool)deleteURLsFromBundleIdentifier:(id)arg1;
 - (_Bool)deleteURLsOlderThanDate:(id)arg1;
 - (_Bool)trimURLTableDownToLimit:(long long)arg1;
+- (_Bool)trimURLs;
 - (_Bool)writeURL:(id)arg1;
 - (struct _PASDBIterAction_)_updateURLs:(id)arg1 stmt:(struct sqlite3_stmt *)arg2;
 - (id)_columnList;
@@ -251,10 +252,12 @@
 - (void)deleteInteractionsWithBundleId:(id)arg1 groupIdentifiers:(id)arg2;
 - (void)deleteInteractionsWithBundleId:(id)arg1 identifiers:(id)arg2;
 - (void)deleteInteractionsWithBundleId:(id)arg1;
+- (void)deleteItemsWithEntityTag:(id)arg1 preserveEventConfirmationHistory:(_Bool)arg2;
 - (void)deleteItemsWithEntityTag:(id)arg1;
 - (void)deleteInteractionEntitiesExceedingLimit:(id)arg1 withSuspensionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteInteractionEntitiesOnBlacklist:(id)arg1;
 - (void)deleteMessagesByDuplicateKey:(id)arg1;
+- (void)deleteEntitiesByDuplicateKey:(id)arg1 preserveEventConfirmationHistory:(_Bool)arg2 emitChangeNotifications:(_Bool)arg3;
 - (void)deleteEntitiesByDuplicateKey:(id)arg1 emitChangeNotifications:(_Bool)arg2;
 - (id)_deleteMessageMetadataByDuplicateKeyNoRecurse:(id)arg1;
 - (id)_deleteEntitiesByDuplicateKeyNoRecurse:(id)arg1;
@@ -264,6 +267,7 @@
 - (id)childrenFromParentKey:(id)arg1;
 - (void)deleteMessages:(id)arg1;
 - (void)pruneNLEventEntitiesOlderThan:(struct SGUnixTimestamp_)arg1;
+- (void)pruneReminders;
 - (void)pruneNLEventEntitiesOlderThanTwoWeeks;
 - (void)pruneDuplicateWebPageExtractions:(id)arg1;
 - (void)pruneEntitiesOlderThan:(struct SGUnixTimestamp_)arg1 suspensionHandler:(CDUnknownBlockType)arg2 batchSize:(unsigned long long)arg3;
@@ -305,7 +309,9 @@
 - (_Bool)anyEmailAddressIsSignificant:(id)arg1;
 - (_Bool)realtimeContactIsSignificantOrSignificanceIsDisabled:(id)arg1;
 - (_Bool)realtimeContactIsSignificant:(id)arg1;
+- (_Bool)contactIsSignificantOrSignificanceIsDisabled:(id)arg1 usingCoreRecents:(_Bool)arg2;
 - (_Bool)contactIsSignificantOrSignificanceIsDisabled:(id)arg1;
+- (_Bool)contactIsSignificant:(id)arg1 usingCoreRecents:(_Bool)arg2;
 - (_Bool)contactIsSignificant:(id)arg1;
 - (void)writeIdentityBlobs:(id)arg1 forceRewrite:(_Bool)arg2;
 - (void)_writeLabeledBlobs:(id)arg1 isDelete:(_Bool)arg2;
@@ -405,7 +411,7 @@
 - (void)startJournaling;
 - (void)registerJournalUnlockHandler;
 - (void)tryExecuteSnippetsJournal;
-- (long long)migration_deleteSerializedContactsForEmergencyExtractions;
+- (long long)migration_deleteSerializedContacts;
 - (long long)migration_deleteEmergencyExtractions;
 - (long long)migration_reimport;
 - (long long)migration_deleteInteractions;
@@ -455,9 +461,12 @@
 - (_Bool)tombstoneExistsForSpotlightReferenceWithBundleIdentifier:(id)arg1 uniqueIdentifier:(id)arg2 domainIdentifier:(id)arg3;
 - (void)clearAllTombstonesForSpotlightReferences;
 - (void)writeTombstoneForSpotlightReferenceWithBundleIdentifier:(id)arg1;
+- (void)writeTombstoneForSpotlightReferenceWithBundleIdentifier:(id)arg1 uniqueIdentifiers:(id)arg2;
 - (void)writeTombstoneForSpotlightReferenceWithBundleIdentifier:(id)arg1 uniqueIdentifier:(id)arg2;
+- (void)writeTombstoneForSpotlightReferenceWithBundleIdentifier:(id)arg1 domainIdentifiers:(id)arg2;
 - (void)writeTombstoneForSpotlightReferenceWithBundleIdentifier:(id)arg1 domainIdentifier:(id)arg2;
-- (void)_writeTombstoneForSpotlightReferenceWithBundleIdentifier:(id)arg1 uniqueIdentifier:(id)arg2 domainIdentifier:(id)arg3;
+- (_Bool)_tombstoneExistsForBundleIdentifier:(id)arg1;
+- (id)_selectingDomainsForDomainIdentifier:(id)arg1;
 - (void)deleteSpotlightReferencesWithNoBundleIdentifier;
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(id)arg1;
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(id)arg1 domainIdentifiers:(id)arg2;

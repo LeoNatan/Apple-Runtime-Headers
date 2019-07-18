@@ -46,6 +46,7 @@
     double _visibleReferenceAssetRelativeYBeforeChange;
     NSIndexSet *_visibleSectionsBeforeChange;
     UIBarButtonItem *_selectSessionDoneBarButtonItem;
+    UIBarButtonItem *_selectSessionCancelBarButtonItem;
     UIBarButtonItem *_cancelButtonItem;
     UINavigationButton *_selectionButton;
     UIBarButtonItem *_selectAllBarButtonItem;
@@ -67,6 +68,7 @@
     BOOL _alwaysHideTabBar;
     BOOL __needsNewEmptyPlaceholderView;
     BOOL _showsCustomDoneButtonItemOnLeft;
+    BOOL _showsSelectionSessionCancelButtonItemOnLeft;
     BOOL __didForceDataSource;
     BOOL _hasKnownNonEmptyContent_toWorkAround31995766;
     PLDateRangeFormatter *__dateRangeFormatter;
@@ -143,6 +145,7 @@
 @property(retain, nonatomic, setter=_setPushedPhotoBrowserController:) UIViewController *_pushedPhotoBrowserController; // @synthesize _pushedPhotoBrowserController=__pushedPhotoBrowserController;
 @property(nonatomic) struct UIEdgeInsets collectionViewLayoutReferenceSafeAreaInsets; // @synthesize collectionViewLayoutReferenceSafeAreaInsets=_collectionViewLayoutReferenceSafeAreaInsets;
 @property(nonatomic) double collectionViewLayoutReferenceWidth; // @synthesize collectionViewLayoutReferenceWidth=_collectionViewLayoutReferenceWidth;
+@property(nonatomic) BOOL showsSelectionSessionCancelButtonItemOnLeft; // @synthesize showsSelectionSessionCancelButtonItemOnLeft=_showsSelectionSessionCancelButtonItemOnLeft;
 @property(nonatomic) BOOL showsCustomDoneButtonItemOnLeft; // @synthesize showsCustomDoneButtonItemOnLeft=_showsCustomDoneButtonItemOnLeft;
 @property(retain, nonatomic) UIBarButtonItem *customDoneButtonItem; // @synthesize customDoneButtonItem=_customDoneButtonItem;
 @property(retain, nonatomic, setter=setAlbumListTransitionLayout:) UICollectionViewLayout *_albumListTransitionLayout; // @synthesize _albumListTransitionLayout=__albumListTransitionLayout;
@@ -279,6 +282,7 @@
 - (id)_selectAllBarButtonItem;
 - (id)_selectionButton;
 - (id)_cancelButtonItem;
+- (id)_selectSessionCancelBarButtonItem;
 - (id)_selectSessionDoneBarButtonItem;
 - (void)_updateSubviewsOrderingAndVisibility;
 - (void)_updateNavigationBannerAnimated:(BOOL)arg1;
@@ -326,6 +330,7 @@
 - (id)_selectionManagerWithSelectedSharableAssets;
 - (void)_handleSelectionButton:(id)arg1;
 - (void)_handleCancelButton:(id)arg1;
+- (void)_handleSelectSessionCancelButton:(id)arg1;
 - (void)_handleSelectSessionDoneButton:(id)arg1;
 - (void)paste:(id)arg1;
 - (void)copy:(id)arg1;

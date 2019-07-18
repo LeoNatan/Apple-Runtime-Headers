@@ -42,7 +42,6 @@
     _Bool _hidesShadow;
     _Bool _showsHighlightedState;
     _Bool _scrollsItems;
-    _Bool _shouldForceFocusedState;
     long long _itemPositioning;
     double _itemDimension;
     double _itemSpacing;
@@ -61,7 +60,6 @@
 @property(copy, nonatomic) NSArray *backgroundEffects; // @synthesize backgroundEffects=_backgroundEffects;
 @property(nonatomic, getter=_displayStyle, setter=_setDisplayStyle:) long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(nonatomic, getter=_preferredFocusHeading, setter=_setPreferredFocusHeading:) unsigned long long preferredFocusHeading; // @synthesize preferredFocusHeading=_preferredFocusHeading;
-@property(nonatomic, setter=_setFocusedItemShouldAppearFocused:) _Bool shouldForceFocusedState; // @synthesize shouldForceFocusedState=_shouldForceFocusedState;
 @property(nonatomic) __weak UITabBarItem *selectedItem; // @synthesize selectedItem=_selectedItem;
 @property(nonatomic) __weak id <UITabBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, setter=_setScrollsItems:) _Bool _scrollsItems; // @synthesize _scrollsItems;
@@ -117,7 +115,7 @@
 - (id)_shadowView;
 @property(retain, nonatomic) UIColor *selectedImageTintColor;
 @property(copy, nonatomic) UIColor *unselectedItemTintColor;
-- (id)_defaultUnselectedTintColorForFloating;
+- (id)_defaultUnselectedTintColorForDefaultTV;
 - (id)_effectiveUnselectedLabelTintColor;
 - (id)_effectiveUnselectedTintColor;
 @property(retain, nonatomic) UIColor *barTintColor;
@@ -152,6 +150,7 @@
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
 - (void)_accessibilityButtonShapesEnabledDidChangeNotification:(id)arg1;
 - (void)_accessibilityButtonShapesParametersDidChange;
+- (double)_heightForCustomizingItems;
 - (id)_tabBarItemForButtonAtPoint:(struct CGPoint)arg1;
 @property(copy, nonatomic) NSArray *items;
 @property(nonatomic, getter=isLocked) _Bool locked;
@@ -166,6 +165,7 @@
 @property(nonatomic, setter=_setInterTabButtonSpacing:) double _interTabButtonSpacing;
 @property(nonatomic, setter=_setTabButtonWidth:) double _tabButtonWidth;
 @property(retain, nonatomic, getter=_backdropViewLayerGroupName, setter=_setBackdropViewLayerGroupName:) NSString *backdropViewLayerGroupName;
+@property(copy, nonatomic, setter=_setBackdropGroupName:) NSString *_backdropGroupName;
 - (id)_effectiveUnselectedTabTintColorConsideringView:(id)arg1;
 - (id)_appearanceStorage;
 @property(nonatomic) long long barStyle;

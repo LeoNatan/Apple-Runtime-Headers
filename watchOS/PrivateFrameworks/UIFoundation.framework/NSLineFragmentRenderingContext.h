@@ -8,7 +8,7 @@
 
 #import <UIFoundation/NSTextApplicationFrameworkContextClient-Protocol.h>
 
-@class CUICatalog, CUIStyleEffectConfiguration, NSString;
+@class CUICatalog, CUIStyleEffectConfiguration, NSString, __NSImmutableTextStorage;
 
 @interface NSLineFragmentRenderingContext : NSObject <NSTextApplicationFrameworkContextClient>
 {
@@ -34,6 +34,7 @@
     int _resolvedAlignment;
     CUICatalog *_catalog;
     CUIStyleEffectConfiguration *_styleEffects;
+    __NSImmutableTextStorage *_textStorage;
 }
 
 + (void)initialize;
@@ -53,7 +54,7 @@
 @property(nonatomic, getter=_usesSimpleTextEffects, setter=_setUsesSimpleTextEffects:) _Bool usesSimpleTextEffects;
 - (void)finalize;
 - (void)dealloc;
-- (id)initWithRuns:(struct __CFArray *)arg1 glyphOrigin:(float)arg2 lineFragmentWidth:(float)arg3 elasticWidth:(float)arg4 usesScreenFonts:(_Bool)arg5 isRTL:(_Bool)arg6;
+- (id)initWithTextStorage:(id)arg1 runs:(struct __CFArray *)arg2 glyphOrigin:(float)arg3 lineFragmentWidth:(float)arg4 elasticWidth:(float)arg5 usesScreenFonts:(_Bool)arg6 isRTL:(_Bool)arg7;
 - (oneway void)release;
 - (_Bool)_isDeallocating;
 - (_Bool)_tryRetain;

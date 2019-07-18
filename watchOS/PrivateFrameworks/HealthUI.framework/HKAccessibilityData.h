@@ -16,7 +16,7 @@
 }
 
 @property(retain, nonatomic) NSArray *values; // @synthesize values=_values;
-@property(retain, nonatomic) NSString *horizontalTimeCoordinate; // @synthesize horizontalTimeCoordinate=_horizontalTimeCoordinate;
+@property(copy, nonatomic) NSString *horizontalTimeCoordinate; // @synthesize horizontalTimeCoordinate=_horizontalTimeCoordinate;
 @property(nonatomic) float horizontalScreenCoordinate; // @synthesize horizontalScreenCoordinate=_horizontalScreenCoordinate;
 - (void).cxx_destruct;
 

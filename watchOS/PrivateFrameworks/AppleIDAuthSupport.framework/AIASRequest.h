@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSMutableURLRequest *URLRequest; // @synthesize URLRequest=_URLRequest;
 - (void).cxx_destruct;
 - (void)resume;
-- (id)initWithURL:(id)arg1 data:(struct __CFDictionary *)arg2 clientInfo:(id)arg3 proxiedClientInfo:(id)arg4 companionClientInfo:(id)arg5;
+- (id)initWithURL:(id)arg1 data:(struct __CFDictionary *)arg2 clientInfo:(id)arg3 proxiedClientInfo:(id)arg4 companionClientInfo:(id)arg5 appleITeamId:(id)arg6 appleIClientId:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

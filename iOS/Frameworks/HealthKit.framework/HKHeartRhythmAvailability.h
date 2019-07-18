@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class HKActiveWatchFeatureAvailabilityDataSource, HKHealthStore, HKKeyValueDomain, HKMobileCountryCodeManager, HKObserverSet, NSDate, NSNumber, NSUserDefaults;
+@class HKActiveWatchFeatureAvailabilityDataSource, HKHealthStore, HKKeyValueDomain, HKMobileCountryCodeManager, HKObserverSet, HKWatchAppAvailability, NSDate, NSMutableSet, NSNumber, NSUserDefaults;
 
 @interface HKHeartRhythmAvailability : NSObject
 {
     struct os_unfair_lock_s _cacheLock;
+    struct os_unfair_lock_s _onboardingKeysReadLock;
     NSNumber *_isAtrialFibrillationDetectionDisabledCache;
     NSNumber *_isElectrocardiogramDisabledCache;
     int _onboardingStateDidChangeNotificationToken;
@@ -21,7 +22,9 @@
     NSUserDefaults *_heartRhythmUserDefaults;
     HKObserverSet *_heartRhythmAvailabilityObservers;
     HKActiveWatchFeatureAvailabilityDataSource *_availabilityDataSource;
+    NSMutableSet *_onboardingKeysReadSet;
     HKMobileCountryCodeManager *_mobileCountryCodeManager;
+    HKWatchAppAvailability *_ecgAppAvailability;
 }
 
 + (long long)currentAtrialFibrillationDetectionOnboardingVersion;
@@ -38,10 +41,12 @@
 + (_Bool)isAtrialFibrillationDetectionStateSupportedOrNeedsGeolocationOnAllWatches;
 + (_Bool)isAtrialFibrillationDetectionStateSupportedOrNeedsGeolocationOnActiveWatch;
 + (_Bool)isAtrialFibrillationDetectionStateSupportedOrNeedsGeolocationOnAnyWatch;
-+ (_Bool)_isAtrialFibrillationDetectionStateSupportedOrNeedsGeolocationOnWatch:(id)arg1;
++ (_Bool)isAtrialFibrillationDetectionStateSupportedOrNeedsGeolocationOnWatch:(id)arg1;
 + (_Bool)isAtrialFibrillationDetectionSettingEnabled;
 + (long long)currentElectrocardiogramOnboardingVersion;
 + (_Bool)_isElectrocardiogramDisabledWithDataSource:(id)arg1;
++ (id)electrocardiogramAppBundleID;
++ (void)installElectrocardiogramAppOnActiveWatch:(CDUnknownBlockType)arg1;
 + (_Bool)_isElectrocardiogramSupportedOnPhone:(id)arg1;
 + (_Bool)electrocardiogramSupportedForDevice:(id)arg1;
 + (_Bool)isElectrocardiogramSupportedOnPairedPhone;
@@ -59,10 +64,12 @@
 + (id)pairedDevices;
 + (id)activePairedDevice;
 + (_Bool)isHeartRateEnabledInPrivacy;
+@property(retain, nonatomic) HKWatchAppAvailability *ecgAppAvailability; // @synthesize ecgAppAvailability=_ecgAppAvailability;
 @property(retain, nonatomic) HKMobileCountryCodeManager *mobileCountryCodeManager; // @synthesize mobileCountryCodeManager=_mobileCountryCodeManager;
 @property(nonatomic) int userCharacteristicsDidChangeNotificationToken; // @synthesize userCharacteristicsDidChangeNotificationToken=_userCharacteristicsDidChangeNotificationToken;
 @property(nonatomic) int featureAvailabilityConditionsDidUpdateNotificationToken; // @synthesize featureAvailabilityConditionsDidUpdateNotificationToken=_featureAvailabilityConditionsDidUpdateNotificationToken;
 @property(nonatomic) int onboardingStateDidChangeNotificationToken; // @synthesize onboardingStateDidChangeNotificationToken=_onboardingStateDidChangeNotificationToken;
+@property(retain, nonatomic) NSMutableSet *onboardingKeysReadSet; // @synthesize onboardingKeysReadSet=_onboardingKeysReadSet;
 @property(retain, nonatomic) HKActiveWatchFeatureAvailabilityDataSource *availabilityDataSource; // @synthesize availabilityDataSource=_availabilityDataSource;
 @property(retain, nonatomic) HKObserverSet *heartRhythmAvailabilityObservers; // @synthesize heartRhythmAvailabilityObservers=_heartRhythmAvailabilityObservers;
 @property(retain, nonatomic) NSUserDefaults *heartRhythmUserDefaults; // @synthesize heartRhythmUserDefaults=_heartRhythmUserDefaults;
@@ -84,6 +91,7 @@
 @property(readonly, nonatomic) NSDate *electrocardiogramFirstOnboardingCompletedDate;
 @property(readonly, nonatomic, getter=isElectrocardiogramRecordingDisabled) _Bool electrocardiogramRecordingDisabled;
 - (void)_resetIsElectrocardiogramDisabledCacheWithLock:(_Bool)arg1;
+- (void)electrocardiogramAppInstallStateOnActiveWatch:(CDUnknownBlockType)arg1;
 - (void)isElectrocardiogramOnboardingAvailableInCurrentLocationForWatch:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)isElectrocardiogramOnboardingAvailableInCurrentLocationForActiveWatch:(CDUnknownBlockType)arg1;
 - (void)isElectrocardiogramOnboardingAvailableInCurrentLocation:(CDUnknownBlockType)arg1;

@@ -29,7 +29,6 @@
 + (id)pk_selectedPickerButtonBackgroundColor;
 + (id)pk_opacityValueLabel;
 + (id)pk_opacityTitleLabel;
-+ (id)pk_dragIndicatorColor;
 + (id)pk_paletteShadowColor;
 + (id)pk_paletteStrokeColor;
 + (id)pk_buttonImageColor;

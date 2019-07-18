@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)glExport;
 + (id)sharegroupPool;
 + (id)animation;
 + (id)interactiveCanvas;
@@ -21,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canBeCreatedFromOtherThread;
 - (id)targetThreadForFlushingWithOwningThread:(id)arg1;
 - (_Bool)isOneShot;
+- (_Bool)forceGL;
 
 @end
 

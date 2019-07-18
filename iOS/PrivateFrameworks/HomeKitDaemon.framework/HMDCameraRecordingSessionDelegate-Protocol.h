@@ -9,8 +9,6 @@
 @class HMDCameraRecordingSession, NSError;
 
 @protocol HMDCameraRecordingSessionDelegate <NSObject>
-@property(readonly, getter=isDoorbellActive) _Bool doorbellActive;
-@property(readonly, getter=isMotionActive) _Bool motionActive;
 - (void)closeSession:(HMDCameraRecordingSession *)arg1 withError:(NSError *)arg2;
 @end
 

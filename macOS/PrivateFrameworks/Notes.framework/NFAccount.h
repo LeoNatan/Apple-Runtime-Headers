@@ -40,7 +40,8 @@
 @property(readonly, nonatomic) __weak NSArray *allFolders;
 - (BOOL)hasNotes;
 @property(readonly, nonatomic) __weak NFFolder *defaultFolder;
-@property(readonly, nonatomic) BOOL isAOSAccount;
+@property(readonly, nonatomic) BOOL isYahooAccount;
+@property(readonly, nonatomic) BOOL isICloudAccount;
 @property(copy, nonatomic) NSString *username; // @dynamic username;
 @property(copy, nonatomic) NSString *accountDescription; // @dynamic accountDescription;
 @property(copy, nonatomic) NSString *emailAddress; // @dynamic emailAddress;

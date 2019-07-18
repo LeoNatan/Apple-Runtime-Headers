@@ -23,6 +23,7 @@
 + (id)sharedHelperProxyIfAvailable;
 + (id)sharedHelperProxy;
 @property long long recentRights; // @synthesize recentRights=_recentRights;
+- (unsigned long long)attemptToReclaimSpaceUsingCacheDeleteWithSpaceRequired:(unsigned long long)arg1;
 - (BOOL)rebootForPostLogoutUpdatesAfterSuccess:(BOOL)arg1 nightInstall:(BOOL)arg2 shouldShutDown:(BOOL)arg3;
 - (BOOL)armBaseSystemUpdates:(id)arg1 productKey:(id)arg2 recoveryUpdatePackageURL:(id)arg3 error:(id *)arg4;
 - (id)lookupURLCredentialInSystemKeychainForHost:(id)arg1 port:(long long)arg2;

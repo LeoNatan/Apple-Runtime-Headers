@@ -32,6 +32,7 @@
     _Bool _gathering;
     _Bool _immutable;
     _Bool _hasMoreUpdates;
+    _Bool _showHiddenFiles;
     _Bool _observing;
     id <FPItemCollectionMinimalDelegate> _delegate;
     NSPredicate *_additionalItemFilteringPredicate;
@@ -56,6 +57,7 @@
 @property(readonly, nonatomic) id <FPCollectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workingQueue; // @synthesize workingQueue=_workingQueue;
 @property(readonly, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
+@property(nonatomic) _Bool showHiddenFiles; // @synthesize showHiddenFiles=_showHiddenFiles;
 @property(readonly, nonatomic) _Bool hasMoreUpdates; // @synthesize hasMoreUpdates=_hasMoreUpdates;
 @property(readonly, nonatomic, getter=isImmutable) _Bool immutable; // @synthesize immutable=_immutable;
 @property(nonatomic) __weak id <FPItemCollectionMinimalDelegate> delegate; // @synthesize delegate=_delegate;
@@ -65,6 +67,7 @@
 - (void)_replaceContentsWithVendorItems:(id)arg1;
 @property(retain, nonatomic) NSPredicate *itemFilteringPredicate;
 - (_Bool)isHiddenItem:(id)arg1;
+- (void)updateRootItem:(id)arg1;
 - (_Bool)isRootItem:(id)arg1;
 - (_Bool)isCollectionValidForItem:(id)arg1;
 - (id)scopedSearchQuery;
@@ -80,6 +83,7 @@
 - (void)_receivedBatchWithUpdatedItems:(id)arg1 deletedItemsIdentifiers:(id)arg2 forceFlush:(_Bool)arg3;
 - (void)_receivedBatchWithUpdatedItems:(id)arg1 deletedItemsIdentifiers:(id)arg2;
 - (void)receivedBatchWithUpdatedItems:(id)arg1 deletedItemsIdentifiers:(id)arg2;
+- (void)receivedBatchWithUpdatedItems:(id)arg1 deletedItemsIdentifiers:(id)arg2 hasMoreChanges:(_Bool)arg3;
 - (void)_updateObservedItem:(id)arg1;
 - (void)replacePlaceholders:(id)arg1 withActualItems:(id)arg2 deletedIDs:(id)arg3;
 - (void)_didEncounterError:(id)arg1 forObservationID:(unsigned long long)arg2;

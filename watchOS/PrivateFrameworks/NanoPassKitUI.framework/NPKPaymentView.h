@@ -15,7 +15,7 @@
 @class CALayer, NPKAccountPassManager, NPKPaymentReadyView, NPKPaymentStatusView, NPKPaymentStatusViewAnimationCoordinator, NPKPaymentThreePartTopView, NPKPeerPaymentAccountManager, NPKPickPaymentApplicationController, NPKSynchronizedAnimationCoordinator, NPKTransactionAndBalanceView, NPKVASCardAppliedView, NSArray, NSObject, NSString, PUICActionController, PUICActionGroup, PUICActionItem, PUICPageIndicatorView, UIImageView, UILabel, UIScrollView;
 @protocol NPKPaymentViewDataSource, NPKPaymentViewDelegate, OS_dispatch_source;
 
-@interface NPKPaymentView : UIView <UIScrollViewDelegate, NPKPaymentStatusViewAnimationCoordinatorDelegate, NPKPickPaymentApplicationControllerDelegate, NPKPassViewDelegate, CAAnimationDelegate>
+@interface NPKPaymentView : UIView <UIScrollViewDelegate, NPKPickPaymentApplicationControllerDelegate, NPKPassViewDelegate, CAAnimationDelegate, NPKPaymentStatusViewAnimationCoordinatorDelegate>
 {
     _Bool _passSelectionEnabled;
     _Bool _paymentCardsChanged;
@@ -38,7 +38,6 @@
     UIView *_bottomContainerView;
     UIView *_topClippingView;
     UIView *_bottomClippingView;
-    NPKPaymentReadyView *_readyView;
     UILabel *_unavailableTopLabel;
     UILabel *_needsVerificationTopLabel;
     UILabel *_readerRequestingPaymentTopLabel;
@@ -60,9 +59,6 @@
     NSArray *_passScrollViews;
     NSArray *_passViews;
     NSString *_selectedUniqueID;
-    UIScrollView *_passScrollView;
-    PUICPageIndicatorView *_pageIndicatorView;
-    NPKPaymentStatusViewAnimationCoordinator *_statusViewAnimationCoordinator;
     NPKSynchronizedAnimationCoordinator *_paymentReadyAnimationCoordinator;
     CALayer *_animationContainerLayer;
     CALayer *_animationCardContainerLayer;
@@ -77,11 +73,19 @@
     NPKPickPaymentApplicationController *_pickPaymentApplicationController;
     NPKPeerPaymentAccountManager *_peerPaymentAccountManager;
     NPKAccountPassManager *_accountPassManager;
+    UIScrollView *_passScrollView;
+    NPKPaymentReadyView *_readyView;
+    PUICPageIndicatorView *_pageIndicatorView;
+    NPKPaymentStatusViewAnimationCoordinator *_statusViewAnimationCoordinator;
     struct CGRect _previousLayoutRect;
     struct CGRect _topContainerViewFrame;
     struct CGRect _bottomContainerViewFrame;
 }
 
+@property(retain, nonatomic) NPKPaymentStatusViewAnimationCoordinator *statusViewAnimationCoordinator; // @synthesize statusViewAnimationCoordinator=_statusViewAnimationCoordinator;
+@property(retain, nonatomic) PUICPageIndicatorView *pageIndicatorView; // @synthesize pageIndicatorView=_pageIndicatorView;
+@property(retain, nonatomic) NPKPaymentReadyView *readyView; // @synthesize readyView=_readyView;
+@property(retain, nonatomic) UIScrollView *passScrollView; // @synthesize passScrollView=_passScrollView;
 @property(retain, nonatomic) NPKAccountPassManager *accountPassManager; // @synthesize accountPassManager=_accountPassManager;
 @property(retain, nonatomic) NPKPeerPaymentAccountManager *peerPaymentAccountManager; // @synthesize peerPaymentAccountManager=_peerPaymentAccountManager;
 @property(retain, nonatomic) NPKPickPaymentApplicationController *pickPaymentApplicationController; // @synthesize pickPaymentApplicationController=_pickPaymentApplicationController;
@@ -105,10 +109,7 @@
 @property(retain, nonatomic) CALayer *animationCardContainerLayer; // @synthesize animationCardContainerLayer=_animationCardContainerLayer;
 @property(retain, nonatomic) CALayer *animationContainerLayer; // @synthesize animationContainerLayer=_animationContainerLayer;
 @property(retain, nonatomic) NPKSynchronizedAnimationCoordinator *paymentReadyAnimationCoordinator; // @synthesize paymentReadyAnimationCoordinator=_paymentReadyAnimationCoordinator;
-@property(retain, nonatomic) NPKPaymentStatusViewAnimationCoordinator *statusViewAnimationCoordinator; // @synthesize statusViewAnimationCoordinator=_statusViewAnimationCoordinator;
 @property(nonatomic, getter=isReady) _Bool ready; // @synthesize ready=_ready;
-@property(retain, nonatomic) PUICPageIndicatorView *pageIndicatorView; // @synthesize pageIndicatorView=_pageIndicatorView;
-@property(retain, nonatomic) UIScrollView *passScrollView; // @synthesize passScrollView=_passScrollView;
 @property(retain, nonatomic) NSString *selectedUniqueID; // @synthesize selectedUniqueID=_selectedUniqueID;
 @property(retain, nonatomic) NSArray *passViews; // @synthesize passViews=_passViews;
 @property(retain, nonatomic) NSArray *passScrollViews; // @synthesize passScrollViews=_passScrollViews;
@@ -130,7 +131,6 @@
 @property(retain, nonatomic) UILabel *readerRequestingPaymentTopLabel; // @synthesize readerRequestingPaymentTopLabel=_readerRequestingPaymentTopLabel;
 @property(retain, nonatomic) UILabel *needsVerificationTopLabel; // @synthesize needsVerificationTopLabel=_needsVerificationTopLabel;
 @property(retain, nonatomic) UILabel *unavailableTopLabel; // @synthesize unavailableTopLabel=_unavailableTopLabel;
-@property(retain, nonatomic) NPKPaymentReadyView *readyView; // @synthesize readyView=_readyView;
 @property(retain, nonatomic) UIView *bottomClippingView; // @synthesize bottomClippingView=_bottomClippingView;
 @property(retain, nonatomic) UIView *topClippingView; // @synthesize topClippingView=_topClippingView;
 @property(retain, nonatomic) UIView *bottomContainerView; // @synthesize bottomContainerView=_bottomContainerView;
@@ -155,6 +155,7 @@
 - (id)_instructionViewWithBalanceString:(id)arg1;
 - (id)_instructionViewWithBalance:(id)arg1 currencyCode:(id)arg2;
 - (id)_instructionViewWithAvailableCredit:(id)arg1 currencyCode:(id)arg2;
+- (void)_validateAndCorrectDynamicViewIfNecessary;
 - (id)_instructionViewForTransitPassProperties:(id)arg1 pass:(id)arg2;
 - (id)_instructionLabelWithAttributedLabelText:(id)arg1 numberOfLines:(int)arg2;
 - (id)_instructionLabelWithAttributedLabelText:(id)arg1 numberOfLines:(int)arg2 shouldConstrainWidth:(_Bool)arg3;

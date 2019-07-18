@@ -9,6 +9,7 @@
 @interface _TtC7NewsUI228SidebarTableViewCellRenderer : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: imageApplier
+    // Error parsing type: , name: styler
 }
 
 @end

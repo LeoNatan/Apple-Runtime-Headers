@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)_accessibility_controlToActivateForHUDGestureLiftAtPoint:(struct CGPoint)arg1;
 - (id)_accessibility_HUDItemForPoint:(struct CGPoint)arg1;
+- (BOOL)_accessibility_shouldBeginHUDGestureAtPoint:(struct CGPoint)arg1;
 - (void)_shim_setDisableBlurTinting:(BOOL)arg1;
 - (BOOL)_shim_disableBlurTinting;
 - (void)_shim_setShadowAlpha:(double)arg1;

@@ -9,7 +9,7 @@
 #import <AppleMediaServices/NSCopying-Protocol.h>
 #import <AppleMediaServices/NSSecureCoding-Protocol.h>
 
-@class AMSProcessInfo, NSDictionary, NSString;
+@class AMSProcessInfo, NSDictionary, NSString, NSURL;
 
 @interface AMSAuthenticateOptions : NSObject <NSCopying, NSSecureCoding>
 {
@@ -25,6 +25,7 @@
     AMSProcessInfo *_clientInfo;
     NSString *_defaultButtonString;
     NSDictionary *_HTTPHeaders;
+    NSURL *_iconBundleURL;
     NSString *_logKey;
     NSString *_promptTitle;
     NSString *_proxyAppBundleID;
@@ -47,6 +48,7 @@
 @property(retain, nonatomic) NSString *proxyAppBundleID; // @synthesize proxyAppBundleID=_proxyAppBundleID;
 @property(retain, nonatomic) NSString *promptTitle; // @synthesize promptTitle=_promptTitle;
 @property(retain, nonatomic) NSString *logKey; // @synthesize logKey=_logKey;
+@property(retain, nonatomic) NSURL *iconBundleURL; // @synthesize iconBundleURL=_iconBundleURL;
 @property(retain, nonatomic) NSDictionary *HTTPHeaders; // @synthesize HTTPHeaders=_HTTPHeaders;
 @property(retain, nonatomic) NSString *defaultButtonString; // @synthesize defaultButtonString=_defaultButtonString;
 @property(retain, nonatomic) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;

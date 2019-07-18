@@ -23,6 +23,7 @@
     PKBillPaymentSuggestedAmountList *_suggestionList;
     PKAccount *_account;
     _Bool _showDescriptionLabels;
+    _Bool _showDescriptionSubtitle;
     id <PKAccountBillPaymentAmountDescriptionViewDelegate> _delegate;
     PKAccountBillPaymentAmountContainerView *_amountContainerView;
     NSString *_titleText;
@@ -31,6 +32,7 @@
     NSDecimalNumber *_maximumAmount;
 }
 
+@property(nonatomic) _Bool showDescriptionSubtitle; // @synthesize showDescriptionSubtitle=_showDescriptionSubtitle;
 @property(nonatomic) _Bool showDescriptionLabels; // @synthesize showDescriptionLabels=_showDescriptionLabels;
 @property(copy, nonatomic) NSDecimalNumber *maximumAmount; // @synthesize maximumAmount=_maximumAmount;
 @property(copy, nonatomic) NSDecimalNumber *minimumAmount; // @synthesize minimumAmount=_minimumAmount;
@@ -39,7 +41,6 @@
 @property(readonly, nonatomic) PKAccountBillPaymentAmountContainerView *amountContainerView; // @synthesize amountContainerView=_amountContainerView;
 @property(nonatomic) id <PKAccountBillPaymentAmountDescriptionViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (_Bool)_currentStatementIsLastMonthsStatement;
 - (id)_keypadSuggestions;
 - (_Bool)_shouldShakeWithNewAmount:(id)arg1;
 - (_Bool)_isEnteredAmountValid;
@@ -50,6 +51,7 @@
 - (void)dismissKeyboard;
 - (void)showKeyboard;
 @property(copy, nonatomic) NSDecimalNumber *amount;
+- (void)_updateDescriptionAlpha;
 @property(nonatomic) _Bool showAmount;
 - (id)_sugestedAmountDescriptionAttributedString;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(int)arg4;

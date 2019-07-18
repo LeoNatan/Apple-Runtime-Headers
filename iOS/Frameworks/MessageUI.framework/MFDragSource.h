@@ -33,7 +33,7 @@
 @property(retain, nonatomic) UIDragInteraction *dragInteraction; // @synthesize dragInteraction=_dragInteraction;
 @property(nonatomic) __weak id <MFDragSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool allowsDragOverridingMasterSwitch; // @synthesize allowsDragOverridingMasterSwitch=_allowsDragOverridingMasterSwitch;
-@property(readonly, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
+@property(readonly, nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
 - (void).cxx_destruct;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForSession:(id)arg2;
 - (_Bool)dragInteraction:(id)arg1 sessionIsRestrictedToDraggingApplication:(id)arg2;

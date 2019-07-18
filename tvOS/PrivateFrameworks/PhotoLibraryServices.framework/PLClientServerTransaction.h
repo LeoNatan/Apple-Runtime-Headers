@@ -23,6 +23,7 @@
 + (id)_libraryURLFromXPCDictionary:(id)arg1;
 + (id)_changeScopesFromXPCDictionary:(id)arg1;
 + (id)_transactionTokenFromXPCDictionary:(id)arg1;
++ (void)_cleanupAllTransactionsScopesByPath:(id)arg1;
 + (void)handleOutstandingTransactionsForPathManager:(id)arg1 handler:(CDUnknownBlockType)arg2;
 + (id)_outstandingTransactionScopesByPathForPathManager:(id)arg1;
 + (_Bool)_isOutstandingTransactionAtPath:(id)arg1 getScopeValues:(unsigned long long *)arg2;

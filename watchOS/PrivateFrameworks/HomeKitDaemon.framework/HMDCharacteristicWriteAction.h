@@ -33,6 +33,7 @@
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (unsigned int)entitlementsForNotification;
 - (_Bool)requiresDeviceUnlock;
 - (_Bool)isActionForCharacteristic:(id)arg1;
 - (_Bool)isSecureAction;

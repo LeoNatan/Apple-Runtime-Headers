@@ -11,5 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)valueForUndefinedKey:(id)arg1;
+
 @end
 

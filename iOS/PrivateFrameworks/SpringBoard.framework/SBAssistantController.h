@@ -55,6 +55,7 @@
 - (void)siriPresentation:(id)arg1 isEnabledDidChange:(_Bool)arg2;
 - (void)siriPresentation:(id)arg1 requestsDismissalWithOptions:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)siriPresentation:(id)arg1 requestsPresentationWithOptions:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
+- (_Bool)siriPresentation:(id)arg1 requestsDeviceUnlockWithPassword:(id)arg2;
 - (void)deviceUnlockRequestedWithPassword:(id)arg1;
 - (void)screenWakeIdleTimerResetRequested;
 - (void)screenWakeRequested;
@@ -112,7 +113,7 @@
 - (void)dismissAssistantViewIfNecessaryWithAnimation:(long long)arg1;
 - (void)dismissAssistantViewIfNecessary;
 - (_Bool)requestPasscodeUnlockWithCompletion:(CDUnknownBlockType)arg1;
-- (id)acquireWindowLevelAssertionWithPriority:(long long)arg1 windowLevel:(double)arg2 reason:(id)arg3 shouldAutomaticallyInvalidateWhenDismissed:(_Bool)arg4;
+- (id)acquireWindowLevelAssertionWithPriority:(long long)arg1 windowLevel:(double)arg2 reason:(id)arg3;
 - (void)dealloc;
 - (id)_init;
 - (id)init;

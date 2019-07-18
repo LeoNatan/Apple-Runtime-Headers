@@ -18,6 +18,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
+@property(readonly, nonatomic) NSString *label;
 @property(readonly, nonatomic) NSString *phoneNumber;
 @property(readonly) Class superclass;
 @end

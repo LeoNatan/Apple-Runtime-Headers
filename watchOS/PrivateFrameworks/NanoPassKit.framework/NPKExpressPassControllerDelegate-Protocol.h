@@ -6,15 +6,15 @@
 
 #import <NanoPassKit/NSObject-Protocol.h>
 
-@class NPKExpressPassController, NSSet, PKPass;
+@class NPKExpressPassController, NSSet, NSString, PKPass;
 
 @protocol NPKExpressPassControllerDelegate <NSObject>
-
-@optional
 - (void)expressPassController:(NPKExpressPassController *)arg1 didUpdateExpressPasses:(NSSet *)arg2 expressPassesInformation:(NSSet *)arg3;
-- (void)expressPassController:(NPKExpressPassController *)arg1 didReceiveAuthenticationRequestForPass:(PKPass *)arg2;
 - (void)expressPassController:(NPKExpressPassController *)arg1 didCompleteTransactionForPass:(PKPass *)arg2;
 - (void)expressPassController:(NPKExpressPassController *)arg1 didFailTransactionForPass:(PKPass *)arg2;
-- (void)expressPassController:(NPKExpressPassController *)arg1 didStartTransactionForPass:(PKPass *)arg2;
+- (void)expressPassController:(NPKExpressPassController *)arg1 didStartTransactionForPass:(PKPass *)arg2 paymentApplicationIdentifier:(NSString *)arg3;
+
+@optional
+- (void)expressPassController:(NPKExpressPassController *)arg1 didReceiveAuthenticationRequestForPass:(PKPass *)arg2;
 @end
 

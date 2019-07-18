@@ -16,6 +16,7 @@
 {
     _Bool _dataSourceIndexingPermitted;
     _Bool _scheduling;
+    _Bool _scheduledDeferralCheck;
     int _budgetedItemCountRemaining;
     id <EDSearchableIndexSchedulable> _schedulable;
     EDSearchableIndexBudgetConfiguration *_budgetConfiguration;
@@ -37,6 +38,7 @@
 @property(retain, nonatomic) NSMutableDictionary *activities; // @synthesize activities=_activities;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *indexingStateQueue; // @synthesize indexingStateQueue=_indexingStateQueue;
 @property(copy, nonatomic) NSString *budgetTimeUserDefaultsKey; // @synthesize budgetTimeUserDefaultsKey=_budgetTimeUserDefaultsKey;
+@property(nonatomic) _Bool scheduledDeferralCheck; // @synthesize scheduledDeferralCheck=_scheduledDeferralCheck;
 @property(readonly, nonatomic) EDSearchableIndexBudgetConfiguration *budgetConfiguration; // @synthesize budgetConfiguration=_budgetConfiguration;
 @property(readonly, nonatomic) __weak id <EDSearchableIndexSchedulable> schedulable; // @synthesize schedulable=_schedulable;
 @property(nonatomic, getter=isScheduling) _Bool scheduling; // @synthesize scheduling=_scheduling;
@@ -47,6 +49,7 @@
 - (void)searchableIndexSchedulable:(id)arg1 didGenerateImportantPowerEventWithIdentifier:(id)arg2 eventData:(id)arg3;
 - (void)searchableIndexSchedulable:(id)arg1 didGeneratePowerEventWithIdentifier:(id)arg2 eventData:(id)arg3;
 - (void)didFinishIndexingBacklogForSearchableIndexSchedulable:(id)arg1;
+- (void)indexingDidSuspendForSearchableIndexSchedulable:(id)arg1;
 - (void)indexingDidResumeForSearchableIndexSchedulable:(id)arg1;
 - (void)searchableIndexSchedulable:(id)arg1 didIndexItemCount:(int)arg2;
 - (void)searchableIndexSchedulable:(id)arg1 didIndexForTime:(double)arg2;
@@ -64,6 +67,7 @@
 - (_Bool)_isIndexingEnabledByActivities;
 - (void)_disableIndexingForActivityType:(id)arg1 defer:(_Bool)arg2;
 - (void)_enableIndexingForActivityType:(id)arg1;
+- (void)_periodicallyCheckForDeferralIfNecessary;
 - (void)_stopAllIndexing;
 - (void)_deferActivitiesIfNecessary;
 - (void)deferIndexingForActivityType:(id)arg1;

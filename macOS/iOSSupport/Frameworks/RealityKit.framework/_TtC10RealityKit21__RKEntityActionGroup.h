@@ -13,6 +13,7 @@
     // Error parsing type: , name: loopCount
     // Error parsing type: , name: completedActions
     // Error parsing type: , name: completedLoops
+    // Error parsing type: , name: stopped
 }
 
 - (id)copyWithZone:(void *)arg1;

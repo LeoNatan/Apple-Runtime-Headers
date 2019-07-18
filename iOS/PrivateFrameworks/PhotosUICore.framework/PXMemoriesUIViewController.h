@@ -16,13 +16,13 @@
 #import <PhotosUICore/PXTilingControllerZoomAnimationCoordinatorDelegate-Protocol.h>
 #import <PhotosUICore/PXUIViewControllerZoomTransitionEndPoint-Protocol.h>
 #import <PhotosUICore/PXUserInterfaceFeatureViewController-Protocol.h>
+#import <PhotosUICore/UIContextMenuInteractionDelegate-Protocol.h>
 #import <PhotosUICore/UIGestureRecognizerDelegate-Protocol.h>
 #import <PhotosUICore/UIPopoverPresentationControllerDelegate-Protocol.h>
-#import <PhotosUICore/_UIContextMenuInteractionDelegate-Protocol.h>
 
 @class NSString, PXBasicUIViewTileAnimator, PXMemoriesDataSourceManager, PXMemoriesFeedViewControllerHelper, PXMemoriesSpec, PXMemoriesSpecManager, PXMemoriesUITileSource, PXSectionedLayoutEngine, PXSectionedObjectReference, PXTilingController, PXTouchingUIGestureRecognizer, PXUIScrollViewController, PXUITapGestureRecognizer;
 
-@interface PXMemoriesUIViewController : UIViewController <_UIContextMenuInteractionDelegate, PXChangeObserver, PXAssetCollectionActionPerformerDelegate, PXSectionedDataSourceManagerObserver, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, PXUIViewControllerZoomTransitionEndPoint, PXTilingControllerZoomAnimationCoordinatorDelegate, PXTilingControllerScrollDelegate, PXTilingControllerTransitionDelegate, PXScrollViewControllerObserver, PXMemoriesUITileSourceDelegate, PXUserInterfaceFeatureViewController>
+@interface PXMemoriesUIViewController : UIViewController <UIContextMenuInteractionDelegate, PXChangeObserver, PXAssetCollectionActionPerformerDelegate, PXSectionedDataSourceManagerObserver, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, PXUIViewControllerZoomTransitionEndPoint, PXTilingControllerZoomAnimationCoordinatorDelegate, PXTilingControllerScrollDelegate, PXTilingControllerTransitionDelegate, PXScrollViewControllerObserver, PXMemoriesUITileSourceDelegate, PXUserInterfaceFeatureViewController>
 {
     struct {
         _Bool layoutEngine;
@@ -93,10 +93,11 @@
 - (struct PXSimpleIndexPath)_memoryIndexPathForViewController:(id)arg1;
 - (id)_memoryObjectReferenceForPhotosDetailsContext:(id)arg1;
 - (id)_photosDetailsContextForIndexPath:(struct PXSimpleIndexPath)arg1;
+- (id)_previewActionMenusForIndexPath:(struct PXSimpleIndexPath)arg1;
 - (id)_memoryTileViewForLocation:(struct CGPoint)arg1;
-- (id)contextMenuInteraction:(id)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(id)arg3;
-- (id)contextMenuInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
-- (_Bool)contextMenuInteractionShouldBegin:(id)arg1;
+- (void)contextMenuInteraction:(id)arg1 willCommitWithAnimator:(id)arg2;
+- (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
+- (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
 - (void)_configureLayout:(id)arg1;
 - (void)_reconfigureTargetLayout;
 - (void)_handleTouch:(id)arg1;

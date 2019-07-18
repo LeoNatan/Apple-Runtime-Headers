@@ -6,11 +6,11 @@
 
 #import <HMFoundation/HMFObject.h>
 
-#import <HomeKitBackingStore/HMBLocalZoneUpdateProtocol-Protocol.h>
+#import <HomeKitBackingStore/HMBLocalZoneModelObserver-Protocol.h>
 
 @class HMBBackedObject, HMBBackedObjectMetaProtocol, HMBBackedObjectRoot, HMBLocalZone, NSString, NSUUID;
 
-@interface HMBBackedObjectBase : HMFObject <HMBLocalZoneUpdateProtocol>
+@interface HMBBackedObjectBase : HMFObject <HMBLocalZoneModelObserver>
 {
     NSUUID *_hmbModelID;
     HMBBackedObjectMetaProtocol *_hmbMetaProtocol;
@@ -25,8 +25,9 @@
 @property(readonly, nonatomic) HMBBackedObjectMetaProtocol *hmbMetaProtocol; // @synthesize hmbMetaProtocol=_hmbMetaProtocol;
 @property(readonly, nonatomic) NSUUID *hmbModelID; // @synthesize hmbModelID=_hmbModelID;
 - (void).cxx_destruct;
-- (id)localZone:(id)arg1 updatedModel:(id)arg2 previousModel:(id)arg3 options:(id)arg4;
-- (id)localZone:(id)arg1 deletedModel:(id)arg2 options:(id)arg3;
+- (id)localZone:(id)arg1 didProcessModelUpdate:(id)arg2;
+- (id)localZone:(id)arg1 didProcessModelDeletion:(id)arg2;
+- (id)localZone:(id)arg1 didProcessModelCreation:(id)arg2;
 - (id)shortDescription;
 - (void)hmbRunBlock:(CDUnknownBlockType)arg1;
 - (id)hmbRunTransaction:(id)arg1 block:(CDUnknownBlockType)arg2;
@@ -45,13 +46,14 @@
 - (id)hmbPropertyChangedWithKey:(id)arg1 from:(id)arg2 to:(id)arg3 options:(id)arg4;
 - (id)hmbModelUpdated:(id)arg1 previously:(id)arg2 options:(id)arg3;
 - (id)hmbModelDeleted:(id)arg1 options:(id)arg2;
+- (id)hmbModelCreated:(id)arg1 options:(id)arg2;
 @property(readonly, nonatomic) HMBBackedObjectRoot *hmbRoot;
 - (id)hmbDependentsWithDataVersion:(id)arg1;
 - (id)hmbModelAndDependentsWithDataVersion:(id)arg1;
 - (_Bool)hmbPopulateModel:(id)arg1 forDataVersion:(id)arg2;
 - (id)hmbModelWithDataVersion:(id)arg1;
-- (id)hmbEmptyModelWithDataVersion:(id)arg1;
-- (id)hmbModelWithModelID:(id)arg1 parentModelID:(id)arg2 dataVersion:(id)arg3;
+- (id)hmbEmptyModelForDataVersion:(id)arg1;
+- (id)hmbModelWithModelID:(id)arg1 parentModelID:(id)arg2;
 @property(readonly, nonatomic) HMBBackedObject *hmbParent;
 - (id)parentModelID;
 @property(readonly, nonatomic) HMBLocalZone *hmbLocalZone;

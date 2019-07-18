@@ -25,7 +25,7 @@
 - (void)highlightSelectorWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 highlightConfig:(RWIProtocolDOMHighlightConfig *)arg3 selectorString:(NSString *)arg4 frameId:(id *)arg5;
 - (void)highlightQuadWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 quad:(NSArray *)arg3 color:(id *)arg4 outlineColor:(id *)arg5 usePageCoordinates:(_Bool *)arg6;
 - (void)highlightRectWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 x:(int)arg3 y:(int)arg4 width:(int)arg5 height:(int)arg6 color:(id *)arg7 outlineColor:(id *)arg8 usePageCoordinates:(_Bool *)arg9;
-- (void)setInspectModeEnabledWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 enabled:(_Bool)arg3 highlightConfig:(id *)arg4;
+- (void)setInspectModeEnabledWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 enabled:(_Bool)arg3 highlightConfig:(id *)arg4 showRulers:(_Bool *)arg5;
 - (void)requestNodeWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(int))arg2 objectId:(NSString *)arg3;
 - (void)discardSearchResultsWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 searchId:(NSString *)arg3;
 - (void)getSearchResultsWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(NSArray *))arg2 searchId:(NSString *)arg3 fromIndex:(int)arg4 toIndex:(int)arg5;

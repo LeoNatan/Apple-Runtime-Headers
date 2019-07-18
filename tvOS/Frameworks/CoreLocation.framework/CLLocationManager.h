@@ -33,9 +33,6 @@
 + (void)setAuthorizationStatus:(_Bool)arg1 forBundleIdentifier:(id)arg2;
 + (int)authorizationStatus;
 + (int)_authorizationStatus;
-+ (int)regionMonitoringAuthorizationStatusForBundle:(id)arg1;
-+ (int)regionMonitoringAuthorizationStatusForBundleIdentifier:(id)arg1;
-+ (int)_regionMonitoringAuthorizationStatusForBundleIdentifier:(id)arg1 bundle:(id)arg2;
 + (int)authorizationStatusForBundle:(id)arg1;
 + (int)authorizationStatusForBundleIdentifier:(id)arg1;
 + (int)_authorizationStatusForBundleIdentifier:(id)arg1 bundle:(id)arg2;
@@ -43,6 +40,8 @@
 + (id)_archivedAuthorizationDecisionsWithError:(id *)arg1;
 + (_Bool)isPeerRangingAvailable;
 + (_Bool)deferredLocationUpdatesAvailable;
++ (_Bool)_checkAndExerciseAuthorizationForBundle:(id)arg1 error:(id *)arg2;
++ (_Bool)_checkAndExerciseAuthorizationForBundleID:(id)arg1 error:(id *)arg2;
 + (_Bool)mapCorrectionAvailable;
 + (_Bool)isRangingAvailable;
 + (_Bool)regionMonitoringEnabled;
@@ -50,6 +49,8 @@
 + (_Bool)isMonitoringAvailableForClass:(Class)arg1;
 + (_Bool)significantLocationChangeMonitoringAvailable;
 + (_Bool)headingAvailable;
++ (_Bool)authorizationPromptMapDisplayEnabled;
++ (id)setAuthorizationPromptMapDisplayEnabled:(_Bool)arg1;
 + (void)setLocationServicesEnabled:(_Bool)arg1;
 + (_Bool)locationServicesEnabled:(_Bool)arg1;
 + (_Bool)locationServicesEnabled;

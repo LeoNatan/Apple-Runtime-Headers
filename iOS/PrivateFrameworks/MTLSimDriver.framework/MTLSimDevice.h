@@ -104,6 +104,7 @@ __attribute__((visibility("hidden")))
 - (id)newVertexVariantWithCompilerOutput:(id)arg1 pipelineStatisticsOutput:(id)arg2;
 - (id)newFragmentVariantWithCompilerOutput:(id)arg1 pipelineStatisticsOutput:(id)arg2;
 - (id)newFunctionVariantWithCompilerOutput:(id)arg1 functionType:(unsigned long long)arg2;
+- (id)reportLeaks;
 - (void)freeVertexFunctionKey:(void *)arg1 vertexKeySize:(unsigned long long)arg2;
 - (void)freeFragmentFunctionKey:(void *)arg1 fragmentKeySize:(unsigned long long)arg2;
 - (void *)vertexFunctionKeyWithRenderPipelineDescriptor:(id)arg1 options:(unsigned long long)arg2 nextStageVariant:(id)arg3 vertexKeySize:(unsigned long long *)arg4;
@@ -297,7 +298,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsSamplerCompareFunction;
 @property(readonly, nonatomic) _Bool supportsSeparateDepthStencil;
 @property(readonly, nonatomic) _Bool supportsSeparateVisibilityAndShadingRate;
-@property(readonly, nonatomic) _Bool supportsShaderBarycentricCoordinates;
 @property(readonly, nonatomic) _Bool supportsShaderLODAverage;
 @property(readonly, nonatomic) _Bool supportsShaderMinLODClamp;
 @property(readonly, nonatomic) _Bool supportsStencilFeedback;

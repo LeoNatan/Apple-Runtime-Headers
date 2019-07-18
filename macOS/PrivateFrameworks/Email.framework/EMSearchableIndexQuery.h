@@ -101,7 +101,6 @@
 - (void)_foundItems:(id)arg1;
 @property(readonly) NSProgress *progress;
 - (BOOL)_isFinishedQueryStatus:(id)arg1;
-- (id)truncatedDescription;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithExpression:(id)arg1 builder:(CDUnknownBlockType)arg2;

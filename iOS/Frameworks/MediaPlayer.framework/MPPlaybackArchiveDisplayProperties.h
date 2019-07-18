@@ -19,13 +19,15 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)_createNowPlayingItemDisplayPropertiesForMetadataObject:(id)arg1 completion:(CDUnknownBlockType)arg2;
-+ (void)createPlaybackArchiveDisplayPropertiesForBundleIdentifier:(id)arg1 playerIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)createPlaybackArchiveDisplayPropertiesForPlayerID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSData *artworkImageData; // @synthesize artworkImageData=_artworkImageData;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)description;
+- (id)copyWithOptions:(unsigned long long)arg1;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 artworkImageData:(id)arg3;
 
 @end

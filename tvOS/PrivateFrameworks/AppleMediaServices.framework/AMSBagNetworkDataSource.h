@@ -22,12 +22,11 @@ __attribute__((visibility("hidden")))
     NSString *_cachedStorefront;
     NSObject<OS_dispatch_queue> *_cachedStorefrontAccessQueue;
     AMSUniqueExecutionQueue *_loadDataQueue;
+    NSObject<OS_dispatch_queue> *_processAccountStoreDidChangeNotificationQueue;
     AMSProcessInfo *_processInfo;
     AMSURLSession *_URLSession;
 }
 
-+ (id)_OSVersionString;
-+ (id)_OSString;
 + (id)_OSBuildTypeString;
 + (id)_deviceString;
 + (_Bool)_shouldReloadDataForSetStorefront:(id)arg1 bagData:(id)arg2;
@@ -37,11 +36,13 @@ __attribute__((visibility("hidden")))
 + (_Bool)_shouldReloadDataForOriginalCookies:(id)arg1 newCookies:(id)arg2;
 + (void)_setURLCookieNames:(id)arg1 forProfile:(id)arg2;
 + (id)_defaultURLCookieNames;
++ (_Bool)_shouldProcessAccountStoreDidChangeNotification:(id)arg1 withMediaType:(id)arg2;
 + (_Bool)_isDataDictionary:(id)arg1 equalToDataDictionary:(id)arg2;
 + (id)_currentStorefrontForAccountMediaType:(id)arg1;
 + (id)_accountForAccountMediaType:(id)arg1;
 @property(retain, nonatomic) AMSURLSession *URLSession; // @synthesize URLSession=_URLSession;
 @property(retain, nonatomic) AMSProcessInfo *processInfo; // @synthesize processInfo=_processInfo;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *processAccountStoreDidChangeNotificationQueue; // @synthesize processAccountStoreDidChangeNotificationQueue=_processAccountStoreDidChangeNotificationQueue;
 @property(retain, nonatomic) AMSUniqueExecutionQueue *loadDataQueue; // @synthesize loadDataQueue=_loadDataQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cachedStorefrontAccessQueue; // @synthesize cachedStorefrontAccessQueue=_cachedStorefrontAccessQueue;
 @property(retain, nonatomic) NSString *cachedStorefront; // @synthesize cachedStorefront=_cachedStorefront;

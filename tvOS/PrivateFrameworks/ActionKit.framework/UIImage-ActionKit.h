@@ -8,5 +8,9 @@
 
 @interface UIImage (ActionKit)
 + (id)wf_actionKitImageNamed:(id)arg1;
+- (struct CGAffineTransform)wf_affineTransformForImageMirroringOrientation:(struct CGAffineTransform)arg1;
+- (struct CGAffineTransform)wf_affineTransformForImageOrientation:(struct CGAffineTransform)arg1;
+- (struct CGSize)wf_majorAxisOrientedSize;
+- (id)wf_imageInIntrinsicOrientation;
 @end
 

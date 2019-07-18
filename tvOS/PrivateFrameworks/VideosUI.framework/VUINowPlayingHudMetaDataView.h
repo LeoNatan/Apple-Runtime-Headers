@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) VUINowPlayingHudMetaDataViewLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
+- (void)_updateAppearance;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_configureSubviews;
 - (void)layoutSubviews;
 - (void)setDescriptionTextSelectionHandler:(CDUnknownBlockType)arg1;

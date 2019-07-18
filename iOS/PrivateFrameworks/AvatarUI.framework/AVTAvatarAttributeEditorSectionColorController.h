@@ -61,12 +61,13 @@
 - (void)colorSliderVariationChanged:(double)arg1 forItem:(id)arg2;
 - (void)setSelectedState:(_Bool)arg1 animated:(_Bool)arg2 forCellAtIndexPath:(id)arg3;
 - (void)colorDataSource:(id)arg1 didChangeDisplayMode:(long long)arg2 previousDisplayMode:(long long)arg3;
-- (void)colorDataSource:(id)arg1 didSelectItemAtIndex:(long long)arg2;
-- (void)colorDataSource:(id)arg1 didDeselectItemAtIndex:(long long)arg2;
+- (void)colorDataSource:(id)arg1 didSelectItemAtIndex:(long long)arg2 shouldReloadModel:(_Bool)arg3;
+- (void)colorDataSource:(id)arg1 didDeselectItemAtIndex:(long long)arg2 shouldReloadModel:(_Bool)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didUnhighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didHighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)updateCellLayer:(id)arg1 withColorItem:(id)arg2 withColorPreset:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
@@ -87,6 +88,7 @@
 - (void)layoutSubviewsForIndex:(long long)arg1;
 - (void)willDisplayViewForIndex:(long long)arg1;
 - (id)viewForIndex:(long long)arg1;
+- (void)updateSliderForSectionItemIfNeeded:(id)arg1;
 - (void)updateWithSection:(id)arg1;
 - (void)reloadData;
 - (void)scrollCollectionViewToOrigin;

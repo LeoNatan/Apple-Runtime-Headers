@@ -11,7 +11,6 @@
 
 @class NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface ISCompositVariantResource : NSObject <ISVariantResourceProviderProtocol, ISVariantResourceProtocol>
 {
     NSString *_variantName;

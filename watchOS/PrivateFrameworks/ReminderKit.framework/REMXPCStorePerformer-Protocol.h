@@ -9,6 +9,9 @@
 @protocol REMXPCStorePerformer
 - (void)setObjectInDaemonDefaults:(id)arg1 forKey:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)objectInDaemonDefaultsForKey:(NSString *)arg1 completion:(void (^)(id, NSError *))arg2;
+- (void)requestToDeleteLocalDataWithCompletion:(void (^)(NSError *))arg1;
+- (void)requestToDeleteSyncDataWithAccountIdentifier:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)requestToMergeLocalDataIntoSyncDataWithAccountIdentifier:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)removeOrphanedAccountWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)updateAccountWithACAccountID:(NSString *)arg1 restartDA:(_Bool)arg2 completion:(void (^)(_Bool, _Bool, NSError *))arg3;
 - (void)updateAccountsAndFetchMigrationState:(_Bool)arg1 completion:(void (^)(_Bool, _Bool, NSError *))arg2;

@@ -4,14 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TemplateKit/TLKProminenceView.h>
+#import <UIKit/UIView.h>
 
-@interface SearchUIHorizontallyScrollingContainerSeparatorView : TLKProminenceView
+@interface SearchUIHorizontallyScrollingContainerSeparatorView : UIView
 {
 }
 
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
-- (id)init;
+- (void)tlk_updateForAppearance:(id)arg1;
+- (void)didMoveToWindow;
+- (void)_dynamicUserInterfaceTraitDidChange;
 
 @end
 

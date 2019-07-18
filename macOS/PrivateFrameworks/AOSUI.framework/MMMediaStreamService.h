@@ -18,7 +18,6 @@
     BOOL _hasCheckedQuota;
     BOOL _hasCheckedRampedState;
     BOOL _didEncounterLoadError;
-    long long _enableOverride;
     NSString *_infoButtonURLString;
     NSMutableDictionary *_cachedExitingStatus;
     CPSConfigurationClient *_gSharedCPSConfigurationClient;
@@ -30,7 +29,6 @@
 @property(retain) CPSConfigurationClient *gSharedCPSConfigurationClient; // @synthesize gSharedCPSConfigurationClient=_gSharedCPSConfigurationClient;
 @property(retain) NSMutableDictionary *cachedExitingStatus; // @synthesize cachedExitingStatus=_cachedExitingStatus;
 @property(retain) NSString *infoButtonURLString; // @synthesize infoButtonURLString=_infoButtonURLString;
-@property long long enableOverride; // @synthesize enableOverride=_enableOverride;
 @property BOOL hasCheckedRampedState; // @synthesize hasCheckedRampedState=_hasCheckedRampedState;
 @property(retain) MMWebKitViewController *webKitViewController; // @synthesize webKitViewController=_webKitViewController;
 - (void).cxx_destruct;
@@ -97,7 +95,6 @@
 - (void)_handleWillExceedCloudStorage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
 - (_Bool)needsPassword;
-- (BOOL)_isEnabledForDisplay;
 - (void)_setEnabled:(BOOL)arg1 withOptions:(int)arg2;
 - (void)_setEnabled:(BOOL)arg1;
 - (id)icon;

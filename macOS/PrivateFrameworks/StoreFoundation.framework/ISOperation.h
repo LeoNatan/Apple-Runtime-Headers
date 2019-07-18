@@ -44,7 +44,9 @@
 @property(retain) NSRunLoop *operationRunLoop; // @synthesize operationRunLoop=_operationRunLoop;
 @property(retain) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+- (id)urlForURLBagKey:(id)arg1 dsID:(id)arg2;
 - (id)urlForURLBagKey:(id)arg1;
+- (id)valueForURLBagKey:(id)arg1 dsID:(id)arg2;
 - (id)valueForURLBagKey:(id)arg1;
 - (BOOL)_loadRequredBagReturningError:(id *)arg1;
 - (void)_sendSuccessToDelegate;

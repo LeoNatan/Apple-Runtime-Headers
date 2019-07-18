@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 
 - (void)setPreferenceValue:(id)arg1 forKey:(id)arg2 forApplicationAtURL:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)garbageCollectDatabaseWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)unregisterApplicationAtURL:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)uninstallApplication:(id)arg1 withOptions:(id)arg2 uninstallType:(unsigned long long)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)installApplication:(id)arg1 atURL:(id)arg2 withOptions:(id)arg3 installType:(unsigned long long)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)synchronizeWithMobileInstallation;

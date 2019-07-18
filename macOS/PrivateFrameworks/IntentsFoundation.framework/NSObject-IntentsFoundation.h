@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (IntentsFoundation)
-- (void)_inf_setValueIfYES:(BOOL)arg1 forKey:(id)arg2;
-- (void)_inf_setValueIfNonNil:(id)arg1 forKey:(id)arg2;
+- (void)if_setValueIfYES:(BOOL)arg1 forKey:(id)arg2;
+- (void)if_setValueIfNonNil:(id)arg1 forKey:(id)arg2;
 @end
 

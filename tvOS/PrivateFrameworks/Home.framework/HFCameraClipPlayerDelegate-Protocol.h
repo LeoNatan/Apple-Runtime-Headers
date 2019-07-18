@@ -13,6 +13,7 @@
 
 @optional
 - (void)clipPlayerDidPlayToEndTime:(id <HFCameraClipPlaying>)arg1;
+- (void)clipPlayer:(id <HFCameraClipPlaying>)arg1 didUpdateMuted:(_Bool)arg2;
 - (void)clipPlayer:(id <HFCameraClipPlaying>)arg1 didUpdateError:(NSError *)arg2 isFatal:(_Bool)arg3;
 - (void)clipPlayer:(id <HFCameraClipPlaying>)arg1 didUpdateTimeControlStatus:(long long)arg2;
 @end

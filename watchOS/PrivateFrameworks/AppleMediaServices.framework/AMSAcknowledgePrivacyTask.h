@@ -14,6 +14,7 @@
     NSString *_privacyIdentifier;
 }
 
++ (id)_appStorePrivacyIdentifiers;
 + (id)_storePrivacyIdentifiers;
 + (id)_multiplexPrivacyIdentifier:(id)arg1 contentVersion:(unsigned int)arg2;
 + (unsigned int)_contentVersionForPrivacyIdentifier:(id)arg1;

@@ -73,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (void)setNeedsUpdateGlyphRenderingMode;
 - (void)triggerSelectionChangedFeedback;
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) BOOL collapsedOrExcluded;
+- (void)setHidden:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

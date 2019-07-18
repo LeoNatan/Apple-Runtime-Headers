@@ -8,7 +8,7 @@
 
 #import <NanoTimeKitCompanion/NTKUtilityComplicationFactoryDelegate-Protocol.h>
 
-@class NSString, NTKChronoButton, NTKChronoHandsView, NTKChronoPalette, NTKChronoScene, NTKStopwatchButton, NTKTimeIntervalLabel, NTKUtilityComplicationFactory, UIColor, UILabel, _LapLabel;
+@class CLKRelativeDateTextProvider, NSDate, NSString, NSTimer, NTKChronoButton, NTKChronoHandsView, NTKChronoPalette, NTKChronoScene, NTKColoringLabel, NTKStopwatchButton, NTKUtilityComplicationFactory, UIColor, UILabel, _LapLabel;
 
 @interface NTKChronoFaceView : NTKSpriteKitAnalogFaceView <NTKUtilityComplicationFactoryDelegate>
 {
@@ -19,11 +19,15 @@
     NTKChronoPalette *_palette;
     UIColor *_labelColor;
     UILabel *_totalLabel;
-    NTKTimeIntervalLabel *_totalTimeLabel;
-    NTKTimeIntervalLabel *_lapTimeLabel;
+    NTKColoringLabel *_totalTimeLabel;
+    NTKColoringLabel *_lapTimeLabel;
     _LapLabel *_lapLabel;
+    NSTimer *_resetLabelTimer;
     unsigned long long _currentMode;
-    double _lastStartTime;
+    CLKRelativeDateTextProvider *_totalTimeTextProvider;
+    CLKRelativeDateTextProvider *_lapTimeTextProvider;
+    _Bool _stopwatchShouldShowSeconds;
+    NSDate *_stopwatchStartDate;
 }
 
 + (id)_swatchColorForColorOption:(id)arg1 forDevice:(id)arg2;
@@ -37,6 +41,11 @@
 - (struct CGPoint)_dateComplicationRightAlignment;
 - (void)reload;
 - (void)lapAdded;
+- (void)_updateLapLabelLaps;
+- (unsigned long long)_chronoTimeUnitsWithSeconds:(_Bool)arg1;
+- (void)_updateChronoTimeLabelsWithUnmodifiedDateForNow:(id)arg1;
+- (void)_synchronizeStopwatchStartDate;
+- (void)_synchronizeChronoTimeLabelsWithStopwatch;
 - (void)stateChanged;
 - (void)_setDateComplicationAlpha:(double)arg1 animated:(_Bool)arg2;
 - (void)fadeOutLowerSubdialAnimated:(_Bool)arg1;
@@ -44,7 +53,9 @@
 - (_Bool)startStop;
 - (_Bool)lapReset;
 - (void)_applyPaletteToTimeView:(id)arg1;
-- (void)_updateStopwatchLabels;
+- (void)_resetLapLabelAfterSplit;
+- (void)_applyFrozenLapTimeWithTimeInterval:(double)arg1;
+- (void)_showLapSplitIfNecessary;
 - (void)_updateStopwatchButtons;
 - (void)_stopStopwatchUpdates;
 - (void)_startStopwatchUpdates;
@@ -58,13 +69,13 @@
 - (void)_lapResetButtonPressed;
 - (void)_pauseButtonPressed;
 - (void)_startSessionButtonPressed;
-- (void)_considerUpdatingLabels;
 - (id)_dateComplicationFontForStyle:(unsigned long long)arg1;
 - (_Bool)slotUsesCurvedText:(long long)arg1;
 - (id)utilityDateComplicationFontForDateStyle:(unsigned long long)arg1;
 - (void)_performWristRaiseAnimation;
 - (void)_prepareWristRaiseAnimation;
 - (double)_verticalPaddingForStatusBar;
+- (_Bool)_isStopwatchUIVisible;
 - (_Bool)_wantsStatusBarHidden;
 - (void)_applyTransformToForegroundViews:(struct CGAffineTransform)arg1;
 - (void)_cleanupAfterZoom;
@@ -75,6 +86,7 @@
 - (void)_applyDataMode;
 - (void)fadeStartSessionButtonToAlpha:(double)arg1 animated:(_Bool)arg2;
 - (void)setUserInteractionForButtonsEnabled:(_Bool)arg1;
+- (void)updateStartSessionButtonGlyphWithCustomPalette:(id)arg1;
 - (void)updateStartSessionButtonGlyph;
 - (void)_applyTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(long long)arg4 slot:(id)arg5;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
@@ -98,7 +110,7 @@
 - (double)_keylineCornerRadiusForComplicationSlot:(id)arg1;
 - (id)_keylineViewForComplicationSlot:(id)arg1;
 - (long long)_legacyLayoutOverrideforComplicationType:(unsigned long long)arg1 slot:(id)arg2;
-- (id)_curvedPickerMaskForSlot:(id)arg1;
+- (id)_pickerMaskForSlot:(id)arg1;
 - (void)_curvedComplicationCircleRadius:(double *)arg1 centerAngle:(double *)arg2 maxAngularWidth:(double *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(id)arg6;
 - (_Bool)_slotSupportsCurvedText:(id)arg1;
 - (long long)_complicationPickerStyleForSlot:(id)arg1;
@@ -107,6 +119,7 @@
 - (id)_slotForUtilitySlot:(long long)arg1;
 - (long long)_utilitySlotForSlot:(id)arg1;
 - (_Bool)_canStartTimeScrubbing;
+- (void)_layoutStopwatchTimeViews;
 - (void)_layoutForegroundContainerView;
 - (void)_loadLayoutRules;
 - (_Bool)_supportsUnadornedSnapshot;
@@ -114,6 +127,8 @@
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)_loadTimeModeViews;
+- (id)_timeLabelWithFontSize:(double)arg1;
+- (double)_chronoLabelFontSize;
 - (void)_loadChronoModeViews;
 - (void)_loadScene;
 - (_Bool)inSession;

@@ -24,6 +24,8 @@
 @property(readonly, nonatomic) NSCollectionLayoutSupplementaryItem *supplementaryItem;
 @property(readonly, nonatomic) NSCollectionLayoutItem *item;
 @property(readonly, nonatomic) int resultKind;
+@property(readonly, nonatomic) int effectiveZIndex;
+@property(readonly, nonatomic) int zIndex;
 @property(readonly, nonatomic) int index;
 @property(readonly, nonatomic) struct CGRect frame;
 - (id)copyWithOffset:(struct CGPoint)arg1 index:(int)arg2 supplementaryEnrollmentIdentifier:(NSUUID *)arg3;

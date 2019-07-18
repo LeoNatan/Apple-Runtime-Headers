@@ -6,10 +6,13 @@
 
 #import <MediaConversionService/NSObject-Protocol.h>
 
-@class PHMediaFormatConversionRequest;
+@class NSSet, PHMediaFormatConversionRequest;
 
 @protocol PHMediaFormatConversionImplementation <NSObject>
 @property(readonly) long long transferBehaviorUserPreference;
 - (void)performConversionRequest:(PHMediaFormatConversionRequest *)arg1 completionHandler:(void (^)(void))arg2;
+
+@optional
+@property(readonly) NSSet *ut_objectsToBeDeallocatedWithReceiver;
 @end
 

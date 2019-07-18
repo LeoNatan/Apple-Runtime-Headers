@@ -156,6 +156,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateRemainingTimeText;
 - (void)_updateStartTimeText;
 - (void)setDisplaysClockTimes:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_updateBorderWidth;
 - (void)_updateTransportBarMaskIfNeeded;
 - (void)layoutSubviews;
 - (void)stopScrubbingWithResetToPauseMarker:(_Bool)arg1 animated:(_Bool)arg2;

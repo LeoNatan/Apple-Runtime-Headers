@@ -9,16 +9,13 @@
 #import <HealthKit/HKConceptStoreClientInterface-Protocol.h>
 #import <HealthKit/_HKXPCExportable-Protocol.h>
 
-@class HKHealthStore, HKObserverSet, HKTaskServerProxyProvider, NSCache, NSMutableDictionary, NSString, NSUUID;
+@class HKHealthStore, HKObserverSet, HKTaskServerProxyProvider, NSString, NSUUID;
 
 @interface HKConceptStore : NSObject <_HKXPCExportable, HKConceptStoreClientInterface>
 {
     HKObserverSet *_conceptObservers;
-    struct os_unfair_lock_s _conceptMapLock;
     struct os_unfair_lock_s _conceptIndexManagerStateLock;
     unsigned int _conceptIndexManagerState;
-    NSMutableDictionary *_conceptsByIdentifier;
-    NSCache *_conceptByIdentifierCache;
     HKHealthStore *_healthStore;
     NSUUID *_identifier;
     HKTaskServerProxyProvider *_proxyProvider;
@@ -31,36 +28,30 @@
 @property(retain, nonatomic) HKTaskServerProxyProvider *proxyProvider; // @synthesize proxyProvider=_proxyProvider;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-@property(readonly, copy, nonatomic) NSCache *conceptByIdentifierCache; // @synthesize conceptByIdentifierCache=_conceptByIdentifierCache;
-@property(readonly, copy, nonatomic) NSMutableDictionary *conceptsByIdentifier; // @synthesize conceptsByIdentifier=_conceptsByIdentifier;
 - (void).cxx_destruct;
 - (void)connectionInvalidated;
 - (id)remoteInterface;
 - (id)exportedInterface;
 - (void)clientRemote_conceptIndexManagerDidChangeState:(unsigned int)arg1;
-- (void)clientRemote_newConceptsAssociatedWithUserRecords:(id)arg1;
-- (void)clientRemote_conceptRecordAssociationCountChanged:(id)arg1;
-- (void)clientRemote_conceptAssociationsRemovedFromUserRecords:(id)arg1;
 - (void)unregisterAsConceptObserver:(id)arg1 onQueue:(id)arg2;
 - (void)registerAsConceptObserver:(id)arg1 onQueue:(id)arg2;
-- (void)resetOntologyDatabase;
+@property(readonly, nonatomic) unsigned int currentConceptIndexerState;
+- (void)resetOntologyUsingAssetAtLocation:(id)arg1 rememberLocation:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)cleanUpAfterUnitTest;
-- (_Bool)removeAllConceptAssociations;
+- (id)conceptsAssociatedToUserRecordsWithError:(id *)arg1;
+- (long long)countOfConceptsAssociatedToUserRecordsWithError:(id *)arg1;
 - (_Bool)breakAssociationFromSample:(id)arg1 toConcept:(id)arg2;
 - (_Bool)makeAssociationFromSample:(id)arg1 toConcept:(id)arg2;
 - (_Bool)loadRelationshipsForConcept:(id)arg1;
 - (id)displayNameForCodingSystemWithID:(long long)arg1 value:(id)arg2;
 - (id)conceptsWithRelationship:(id)arg1 fromNodeWithID:(id)arg2;
 - (id)conceptsWithRelationship:(id)arg1 toNode:(id)arg2;
-- (id)_conceptForName:(id)arg1;
-- (id)_cacheConcept:(id)arg1 forIdentifier:(id)arg2;
-- (id)_cacheConcept:(id)arg1 forIdentifierValue:(long long)arg2;
+- (id)_unitTest_conceptForName:(id)arg1;
 - (id)_conceptForCoding:(id)arg1;
 - (id)_conceptForIdentifier:(id)arg1;
 - (id)conceptForIdentifier:(id)arg1;
 - (id)conceptsWithAttribute:(long long)arg1 matchingValue:(id)arg2;
 - (void)_startTaskServerIfNeeded;
-- (_Bool)prefetchConceptsForIdentifiers:(id)arg1 error:(id *)arg2;
 - (id)resolveConceptForContext:(id)arg1;
 - (id)ontologyVersionWithError:(id *)arg1;
 - (id)initWithHealthStore:(id)arg1;

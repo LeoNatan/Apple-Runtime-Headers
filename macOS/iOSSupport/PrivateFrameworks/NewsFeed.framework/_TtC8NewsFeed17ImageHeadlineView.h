@@ -14,9 +14,7 @@
     // Error parsing type: , name: publisherLabel
     // Error parsing type: , name: publisherLogoImageView
     // Error parsing type: , name: accessoryLabel
-    // Error parsing type: , name: segmentedColorView
     // Error parsing type: , name: premiumBadgeView
-    // Error parsing type: , name: cardView
     // Error parsing type: , name: debugButton
 }
 

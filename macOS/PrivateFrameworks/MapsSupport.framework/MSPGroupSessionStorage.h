@@ -20,6 +20,8 @@
     NSMutableArray *_messageStrategyIdentifiers;
     NSMutableArray *_minimalStrategyIdentifiers;
     NSString *_originatorIdentifier;
+    NSString *_receivingAccountIdentifier;
+    NSString *_receivingHandle;
     GEOSharedNavState *_state;
     struct {
         unsigned int lastUpdateTimestamp:1;
@@ -29,7 +31,9 @@
 + (Class)messageStrategyIdentifierType;
 + (Class)liveStrategyIdentifierType;
 + (Class)minimalStrategyIdentifierType;
-+ (id)groupStorageWithIdentifier:(id)arg1 originator:(id)arg2;
++ (id)groupStorageWithIdentifier:(id)arg1 originator:(id)arg2 receivingHandle:(id)arg3 receivingAccountIdentifier:(id)arg4;
+@property(retain, nonatomic) NSString *receivingAccountIdentifier; // @synthesize receivingAccountIdentifier=_receivingAccountIdentifier;
+@property(retain, nonatomic) NSString *receivingHandle; // @synthesize receivingHandle=_receivingHandle;
 @property(retain, nonatomic) NSMutableArray *messageStrategyIdentifiers; // @synthesize messageStrategyIdentifiers=_messageStrategyIdentifiers;
 @property(retain, nonatomic) NSMutableArray *liveStrategyIdentifiers; // @synthesize liveStrategyIdentifiers=_liveStrategyIdentifiers;
 @property(retain, nonatomic) NSMutableArray *minimalStrategyIdentifiers; // @synthesize minimalStrategyIdentifiers=_minimalStrategyIdentifiers;
@@ -49,6 +53,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasReceivingAccountIdentifier;
+@property(readonly, nonatomic) BOOL hasReceivingHandle;
 - (id)messageStrategyIdentifierAtIndex:(unsigned long long)arg1;
 - (unsigned long long)messageStrategyIdentifiersCount;
 - (void)addMessageStrategyIdentifier:(id)arg1;

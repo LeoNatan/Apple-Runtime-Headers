@@ -15,10 +15,12 @@
 @interface _INPBPlayMediaIntentResponse : PBCodable <_INPBPlayMediaIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBDictionary *_nowPlayingInfo;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDictionary *nowPlayingInfo; // @synthesize nowPlayingInfo=_nowPlayingInfo;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

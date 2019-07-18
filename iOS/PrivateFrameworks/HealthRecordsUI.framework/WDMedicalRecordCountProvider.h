@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_includeCategoryInAllRecordCount:(id)arg1;
 - (void)_queue_updateAllCategoryRecordCount;
 - (void)_queue_incorporateAndNotifyObserversWithCategoryCounts:(id)arg1 sampleTypeCounts:(id)arg2;
+- (void)updateController:(id)arg1 didReceiveHighFrequencyUpdateForType:(id)arg2;
 - (void)updateController:(id)arg1 didReceiveUpdateForType:(id)arg2 samplesAdded:(id)arg3 objectsRemoved:(id)arg4;
 - (void)_loadInitialCounts;
 - (void)removeObserver:(id)arg1;

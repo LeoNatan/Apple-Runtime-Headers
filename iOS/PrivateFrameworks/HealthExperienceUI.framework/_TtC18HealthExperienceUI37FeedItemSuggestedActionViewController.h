@@ -19,6 +19,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCollectionViewLayout:(id)arg1;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
 

@@ -23,7 +23,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)fileWithFileURL:(id)arg1 filename:(id)arg2 typeIdentifier:(id)arg3;
 + (id)fileWithData:(id)arg1 filename:(id)arg2 typeIdentifier:(id)arg3;
-+ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 @property(readonly, copy, nonatomic) NSString *typeIdentifier; // @synthesize typeIdentifier=_typeIdentifier;
 @property(copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 - (void).cxx_destruct;
@@ -38,7 +38,7 @@
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
 - (void)_enumerateFileURLsWithMutatingBlock:(CDUnknownBlockType)arg1;
-- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

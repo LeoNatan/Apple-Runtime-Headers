@@ -8,15 +8,16 @@
 
 #import <coreroutine/RTVisitPipelineModule-Protocol.h>
 
-@class NSArray, NSString, RTVisitCluster, RTVisitDecoder, RTVisitHyperParameter;
+@class NSArray, NSString, RTLocation, RTVisitCluster, RTVisitDecoder, RTVisitHyperParameter;
 @protocol RTVisitModelController;
 
 @interface RTVisitPipelineModuleTrajectorySequenceCluster : NSObject <RTVisitPipelineModule>
 {
-    float _sumOfLat;
-    _Complex float _sumOfVectorLon;
-    float _sumOfSquaredLat;
-    float _sumOfSquaredLon;
+    double _sumOfNorthing;
+    double _sumOfEasting;
+    double _sumOfSquaredNorthing;
+    double _sumOfSquaredEasting;
+    RTLocation *_referenceLocation;
     id <RTVisitModelController> _trajectorySequenceClassifier;
     RTVisitHyperParameter *_hyperParameter;
     RTVisitDecoder *_decoder;

@@ -11,17 +11,20 @@
 #import <SIMSetupSupport/UITableViewDataSource-Protocol.h>
 #import <SIMSetupSupport/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSLayoutConstraint, NSString, OBBoldTrayButton;
+@class NSArray, NSLayoutConstraint, NSString, OBBoldTrayButton, UIView;
 @protocol TSSIMSetupFlowDelegate;
 
 @interface TSTransferListViewController : OBTableWelcomeController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, TSSetupFlowItem>
 {
+    NSLayoutConstraint *_tableHeightAnchor;
     OBBoldTrayButton *_continueButton;
     id <TSSIMSetupFlowDelegate> _delegate;
     NSArray *_transferItems;
     NSLayoutConstraint *_heightAnchor;
+    UIView *_tableFooter;
 }
 
+@property(retain) UIView *tableFooter; // @synthesize tableFooter=_tableFooter;
 @property(retain, nonatomic) NSLayoutConstraint *heightAnchor; // @synthesize heightAnchor=_heightAnchor;
 @property(retain) NSArray *transferItems; // @synthesize transferItems=_transferItems;
 @property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
@@ -32,6 +35,7 @@
 - (void)_continueButtonTapped;
 - (void)_skipButtonTapped;
 - (void)_cancelButtonTapped;
+- (double)_heightAnchorConstant;
 - (void)_setNavigationItems;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
@@ -39,7 +43,8 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
-- (void)updateTableData:(id)arg1;
+- (void)updateFooterView;
+- (void)updateTableData:(id)arg1 isInEligiblePlanPresent:(_Bool)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithTransferItems:(id)arg1;

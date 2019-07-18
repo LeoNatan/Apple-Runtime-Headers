@@ -15,6 +15,7 @@
 @property(nonatomic) double timeOffset; // @synthesize timeOffset=_timeOffset;
 - (void)_updateTimeOffset:(_Bool)arg1;
 - (void)_loadTimeOffset;
+- (void)forceUpdateTimeOffset;
 - (void)_handleFaceLibraryReloaded;
 - (void)_handleFaceDefaultsChanged;
 - (id)displayTimeForRealTime:(id)arg1;

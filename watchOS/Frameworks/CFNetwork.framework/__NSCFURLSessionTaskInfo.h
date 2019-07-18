@@ -22,7 +22,7 @@
     _Bool _shouldCancelOnDisconnect;
     _Bool _discretionary;
     _Bool _mayBeDemotedToDiscretionary;
-    _Bool _forceDirectNoCellular;
+    _Bool _forceWatchNoCellular;
     _Bool __hasSZExtractor;
     _Bool __doesSZExtractorConsumeExtractedData;
     _Bool _startedUserInitiated;
@@ -78,7 +78,7 @@
 @property(nonatomic) _Bool _doesSZExtractorConsumeExtractedData; // @synthesize _doesSZExtractorConsumeExtractedData=__doesSZExtractorConsumeExtractedData;
 @property(nonatomic) _Bool _hasSZExtractor; // @synthesize _hasSZExtractor=__hasSZExtractor;
 @property(retain, nonatomic) id <SZExtractor> _extractor; // @synthesize _extractor=__extractor;
-@property _Bool forceDirectNoCellular; // @synthesize forceDirectNoCellular=_forceDirectNoCellular;
+@property _Bool forceWatchNoCellular; // @synthesize forceWatchNoCellular=_forceWatchNoCellular;
 @property double timeoutIntervalForResource; // @synthesize timeoutIntervalForResource=_timeoutIntervalForResource;
 @property(copy) NSString *pathToDownloadTaskFile; // @synthesize pathToDownloadTaskFile=_pathToDownloadTaskFile;
 @property _Bool mayBeDemotedToDiscretionary; // @synthesize mayBeDemotedToDiscretionary=_mayBeDemotedToDiscretionary;

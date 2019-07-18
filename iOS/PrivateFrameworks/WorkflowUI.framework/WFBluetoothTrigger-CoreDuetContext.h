@@ -7,6 +7,6 @@
 #import <WorkflowKit/WFBluetoothTrigger.h>
 
 @interface WFBluetoothTrigger (CoreDuetContext)
-+ (id)triggerTypeIconName;
++ (id)triggerTypeIcon;
 @end
 

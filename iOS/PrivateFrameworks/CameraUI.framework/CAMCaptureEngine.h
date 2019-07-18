@@ -9,7 +9,7 @@
 #import <CameraUI/AVCaptureVideoThumbnailContentsDelegate-Protocol.h>
 #import <CameraUI/CAMPanoramaProcessorDelegate-Protocol.h>
 
-@class AVCaptureDevice, AVCaptureDeviceInput, AVCaptureMetadataOutput, AVCapturePhotoOutput, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, AVCaptureVideoThumbnailOutput, CAMCaptureMovieFileOutput, CAMMemoizationCache, CAMPanoramaConfiguration, CAMPanoramaOutput, CAMPanoramaProcessor, CAMPowerController, CIContext, NSHashTable, NSMutableArray, NSMutableDictionary, NSString;
+@class AVCaptureDevice, AVCaptureDeviceInput, AVCaptureMetadataOutput, AVCapturePhotoOutput, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, AVCaptureVideoThumbnailOutput, CAMCaptureMovieFileOutput, CAMMemoizationCache, CAMPanoramaConfiguration, CAMPanoramaOutput, CAMPanoramaProcessor, CAMPowerController, CIContext, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface CAMCaptureEngine : NSObject <CAMPanoramaProcessorDelegate, AVCaptureVideoThumbnailContentsDelegate>
@@ -33,8 +33,10 @@
     NSObject<OS_dispatch_queue> *__captureSessionQueue;
     AVCaptureVideoPreviewLayer *__videoPreviewLayer;
     CAMPowerController *__powerController;
-    AVCaptureDevice *_cameraDevice;
+    AVCaptureDevice *_currentCameraDevice;
+    AVCapturePhotoOutput *_currentStillImageOutput;
     NSMutableDictionary *__sessionQueueRegisteredStillImageRequests;
+    NSMutableSet *__sessionQueueRegisteredStillImageRequestsDispatchedToFilteringQueue;
     NSMutableDictionary *__sessionQueueRequestsBeingRecorded;
     NSObject<OS_dispatch_queue> *__captureServicesQueue;
     NSMutableArray *__servicesQueueCaptureServices;
@@ -74,9 +76,11 @@
 @property(readonly, nonatomic) NSMutableArray *_servicesQueueCaptureServices; // @synthesize _servicesQueueCaptureServices=__servicesQueueCaptureServices;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_captureServicesQueue; // @synthesize _captureServicesQueue=__captureServicesQueue;
 @property(readonly, nonatomic) NSMutableDictionary *_sessionQueueRequestsBeingRecorded; // @synthesize _sessionQueueRequestsBeingRecorded=__sessionQueueRequestsBeingRecorded;
+@property(readonly, nonatomic) NSMutableSet *_sessionQueueRegisteredStillImageRequestsDispatchedToFilteringQueue; // @synthesize _sessionQueueRegisteredStillImageRequestsDispatchedToFilteringQueue=__sessionQueueRegisteredStillImageRequestsDispatchedToFilteringQueue;
 @property(readonly, nonatomic) NSMutableDictionary *_sessionQueueRegisteredStillImageRequests; // @synthesize _sessionQueueRegisteredStillImageRequests=__sessionQueueRegisteredStillImageRequests;
 @property(nonatomic, getter=areManagedDevicesLockedForConfiguration) _Bool managedDevicesLockedForConfiguration; // @synthesize managedDevicesLockedForConfiguration=_managedDevicesLockedForConfiguration;
-@property(retain, nonatomic) AVCaptureDevice *cameraDevice; // @synthesize cameraDevice=_cameraDevice;
+@property(retain, nonatomic) AVCapturePhotoOutput *currentStillImageOutput; // @synthesize currentStillImageOutput=_currentStillImageOutput;
+@property(retain, nonatomic) AVCaptureDevice *currentCameraDevice; // @synthesize currentCameraDevice=_currentCameraDevice;
 @property(nonatomic, setter=_setPanoramaAssertionIdentifier:) unsigned int _panoramaAssertionIdentifier; // @synthesize _panoramaAssertionIdentifier=__panoramaAssertionIdentifier;
 @property(readonly, nonatomic) CAMPowerController *_powerController; // @synthesize _powerController=__powerController;
 @property(readonly, nonatomic) AVCaptureVideoPreviewLayer *_videoPreviewLayer; // @synthesize _videoPreviewLayer=__videoPreviewLayer;
@@ -93,7 +97,6 @@
 - (id)movieFileOutput;
 - (id)stillImageOutput;
 - (id)audioCaptureDeviceInput;
-- (id)panoramaConfiguration;
 - (id)audioCaptureDevice;
 - (id)_captureEngineDeviceForDeviceType:(id)arg1 position:(long long)arg2;
 - (id)backDualCameraDevice;
@@ -149,7 +152,7 @@
 - (void)registerCaptureService:(id)arg1;
 - (void)enqueueCommand:(id)arg1;
 - (void)_executeCommand:(id)arg1 withContext:(id)arg2;
-- (void)_updateCurrentCameraDevice;
+- (void)_updateCurrentlyConfiguredObjects;
 - (void)_unlockAllEngineManagedDevices;
 - (void)_unlockManagedCaptureDevice:(id)arg1;
 - (_Bool)_lockAllEngineManagedDevices;
@@ -159,6 +162,7 @@
 - (id)_accumulatedUserInfoFromCommand:(id)arg1;
 - (_Bool)_isSessionModificationRequiredByCommand:(id)arg1 logReason:(out id *)arg2;
 - (void)_updateContext:(id)arg1;
+- (id)_photoOutputFromSession:(id)arg1;
 - (id)_videoDeviceInputFromSession:(id)arg1;
 - (void)_handleApplicationDidEnterBackground:(id)arg1;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;

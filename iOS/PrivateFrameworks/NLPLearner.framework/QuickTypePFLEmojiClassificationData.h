@@ -6,7 +6,7 @@
 
 #import <NLPLearner/QuickTypePFLTrainingData.h>
 
-@class NSDictionary, NSLocale, NSMutableArray;
+@class NSDictionary, NSLocale, NSMutableArray, NSNumber;
 
 __attribute__((visibility("hidden")))
 @interface QuickTypePFLEmojiClassificationData : QuickTypePFLTrainingData
@@ -14,18 +14,22 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_labels;
     NSDictionary *_labelClasses;
     NSLocale *_locale;
+    NSNumber *_noneClassProbability;
     struct CFScopedPtr<void *> _embedding;
     unsigned long long _embeddingDimension;
 }
 
-+ (id)labelClasses;
 + (void)initialize;
+@property(readonly, nonatomic) NSDictionary *labelClasses; // @synthesize labelClasses=_labelClasses;
 @property(readonly, nonatomic) unsigned long long embeddingDimension; // @synthesize embeddingDimension=_embeddingDimension;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)addResource:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numOutputClasses;
+- (id)getEvaluationDataPoint;
 - (id)getTrainingDataBatch:(unsigned long long)arg1;
 - (_Bool)loadFromCoreDuet:(id)arg1;
+- (void)sampleNoneClassExample:(id)arg1;
 - (id)initWithLocale:(id)arg1;
 - (_Bool)addExamples:(id)arg1;
 

@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIPreviewInteractionViewControllerTransition-Protocol.h>
 
-@class NSString, _UITargetedPreview;
+@class NSString, UITargetedPreview;
 
 __attribute__((visibility("hidden")))
 @interface _UIPreviewInteractionCrossBlurViewControllerTransition : NSObject <_UIPreviewInteractionViewControllerTransition>
@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(copy, nonatomic) _UITargetedPreview *sourcePreview;
+@property(copy, nonatomic) UITargetedPreview *sourcePreview;
 @property(readonly) Class superclass;
 
 @end

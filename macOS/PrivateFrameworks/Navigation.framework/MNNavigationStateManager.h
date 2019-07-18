@@ -33,7 +33,7 @@
 - (void).cxx_destruct;
 - (void)resumeRealtimeUpdatesForSubscriber:(id)arg1;
 - (void)pauseRealtimeUpdatesForSubscriber:(id)arg1;
-- (void)checkinForNavigationService;
+- (void)checkinForNavigationService:(CDUnknownBlockType)arg1;
 - (void)updateGuidanceWithData:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)interfaceHashesWithHandler:(CDUnknownBlockType)arg1;
 - (void)recordPedestrianTracePath:(id)arg1;
@@ -64,8 +64,6 @@
 - (void)stopNavigation;
 - (void)startNavigationWithDetails:(id)arg1 activeBlock:(CDUnknownBlockType)arg2;
 - (void)setRoutesForPreview:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
-- (void)cancelDirectionsRequestWithIdentifier:(id)arg1;
-- (void)requestDirections:(id)arg1 withIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)suggestionsManager:(id)arg1 didAddSuggestion:(id)arg2;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;

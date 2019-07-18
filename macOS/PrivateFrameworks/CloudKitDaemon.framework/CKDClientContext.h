@@ -159,6 +159,7 @@
 @property(copy) NSURL *publicCloudDBURL; // @synthesize publicCloudDBURL=_publicCloudDBURL;
 @property(retain, nonatomic) CKDServerConfiguration *config; // @synthesize config=_config;
 - (void).cxx_destruct;
+- (unsigned long long)aggregatedOutstandingOperationCount;
 - (void)clearAuthTokensForRecordWithID:(id)arg1 databaseScope:(long long)arg2;
 - (void)clearPILSCacheForLookupInfos:(id)arg1;
 - (void)clearContextFromMetadataCache;
@@ -172,6 +173,7 @@
 - (unsigned long long)countAssetCacheItems;
 - (void)setFakeResponseOperationResult:(id)arg1 forNextRequestOfClassName:(id)arg2 forItemID:(id)arg3 withLifetime:(int)arg4;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2;
+@property(nonatomic) BOOL hasExplicitCodeOperationURLEntitlement;
 @property(nonatomic) BOOL hasAllowUnverifiedAccountEntitlement;
 @property(nonatomic) BOOL hasNonLegacyShareURLEntitlement;
 @property(readonly, nonatomic) NSString *applicationBundleIDForServer;

@@ -6,7 +6,7 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class UINavigationItem;
+@class UINavigationItem, UITraitCollection;
 @protocol _UINavigationBarTitleViewDataSource;
 
 @protocol _UINavigationBarAugmentedTitleView <NSObject>
@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) double _navigationBarBackButtonMaximumWidth;
 @property(readonly, nonatomic) double _navigationBarContentHeight;
 @property(readonly, nonatomic) _Bool _underlayNavigationBarContent;
+- (void)_navigationBarTraitCollectionDidChangeTo:(UITraitCollection *)arg1 from:(UITraitCollection *)arg2;
 - (void)_navigationBarTransitionCompleted:(long long)arg1 willBeDisplayed:(_Bool)arg2;
 - (void)_performNavigationBarTransition:(long long)arg1 willBeDisplayed:(_Bool)arg2;
 - (void)_navigationBarTransitionWillBegin:(long long)arg1 willBeDisplayed:(_Bool)arg2;

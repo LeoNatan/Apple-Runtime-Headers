@@ -8,11 +8,11 @@
 
 #import <PassKitUI/PKDashboardItemPresenter-Protocol.h>
 
-@class NSDateFormatter, NSString, PKFileDownloader, UICollectionViewCell, UIImage;
+@class NSDateFormatter, NSString, PKObjectDownloader, UICollectionViewCell, UIImage;
 
 @interface PKTransactionHistoryHeaderPresenter : NSObject <PKDashboardItemPresenter>
 {
-    PKFileDownloader *_fileDownloader;
+    PKObjectDownloader *_fileDownloader;
     UICollectionViewCell *_templateCell;
     UIImage *_logoImage;
     UIImage *_logoBackgroundImage;

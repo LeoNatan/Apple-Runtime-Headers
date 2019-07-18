@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class RTContactsManager, RTDistanceCalculator, RTLearnedLocationAlgorithmMetricCalculator, RTLearnedLocationStore, RTMapServiceManager, RTPlatform;
+@class RTContactsManager, RTDistanceCalculator, RTLearnedLocationAlgorithmMetricCalculator, RTLearnedLocationStore, RTMapServiceManager, RTMapsSupportManager, RTPlatform;
 @protocol OS_dispatch_queue;
 
 @interface RTPlaceTypeClassifier : NSObject
@@ -16,12 +16,14 @@
     RTDistanceCalculator *_distanceCalculator;
     RTLearnedLocationStore *_learnedLocationStore;
     RTMapServiceManager *_mapServiceManager;
+    RTMapsSupportManager *_mapsSupportManager;
     RTPlatform *_platform;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
+@property(retain, nonatomic) RTMapsSupportManager *mapsSupportManager; // @synthesize mapsSupportManager=_mapsSupportManager;
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(retain, nonatomic) RTLearnedLocationStore *learnedLocationStore; // @synthesize learnedLocationStore=_learnedLocationStore;
 @property(retain, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
@@ -39,7 +41,7 @@
 - (void)donateInferredPlaces:(id)arg1;
 - (id)getExistingClassifiedPlacesWithError:(id *)arg1;
 - (_Bool)isRottedMeCard:(id)arg1 inferredHome:(id)arg2;
-- (id)initWithAlgorithmMetricCalculator:(id)arg1 contactsManager:(id)arg2 distanceCalculator:(id)arg3 learnedLocationStore:(id)arg4 mapServiceManager:(id)arg5 platform:(id)arg6 queue:(id)arg7;
+- (id)initWithAlgorithmMetricCalculator:(id)arg1 contactsManager:(id)arg2 distanceCalculator:(id)arg3 learnedLocationStore:(id)arg4 mapServiceManager:(id)arg5 mapsSupportManager:(id)arg6 platform:(id)arg7 queue:(id)arg8;
 - (id)init;
 
 @end

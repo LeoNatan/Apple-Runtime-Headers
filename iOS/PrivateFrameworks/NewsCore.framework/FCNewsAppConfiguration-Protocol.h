@@ -52,6 +52,7 @@
 @property(readonly, nonatomic) NSArray *onboardingFeedIDs;
 
 @optional
+@property(readonly, nonatomic) unsigned long long bestOfBundleFeedGroupKind;
 @property(readonly, nonatomic) unsigned long long likeDislikeBehavior;
 @property(readonly, nonatomic) long long maximumTrendingGroupSizeiPhone;
 @property(readonly, nonatomic) long long maximumTrendingGroupSizeiPad;
@@ -63,6 +64,7 @@
 @property(readonly, nonatomic) NSString *translationMapResourceID;
 @property(readonly, nonatomic) _Bool enableBadgeInSpotlightTabBar;
 @property(readonly, nonatomic) NSString *description;
+@property(readonly, nonatomic) NSString *anfRenderingConfiguration;
 @property(readonly, nonatomic) NSString *webEmbedContentBlockers;
 @property(readonly, nonatomic) NSString *feedNavigationConfigJSON;
 @property(readonly, nonatomic) _Bool disableThumbnailsForArticleRecirculation;

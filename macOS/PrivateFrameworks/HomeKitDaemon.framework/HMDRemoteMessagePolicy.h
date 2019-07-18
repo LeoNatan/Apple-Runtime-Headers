@@ -11,6 +11,7 @@
 @interface HMDRemoteMessagePolicy : HMFMessagePolicy <NSMutableCopying>
 {
     BOOL _requiresSecureMessage;
+    BOOL _allowsAnonymousMessage;
     BOOL _requiresAccountMessage;
     unsigned long long _transportRestriction;
     unsigned long long _roles;
@@ -20,6 +21,7 @@
 @property(readonly) unsigned long long roles; // @synthesize roles=_roles;
 @property(readonly) unsigned long long transportRestriction; // @synthesize transportRestriction=_transportRestriction;
 @property(readonly) BOOL requiresAccountMessage; // @synthesize requiresAccountMessage=_requiresAccountMessage;
+@property(readonly) BOOL allowsAnonymousMessage; // @synthesize allowsAnonymousMessage=_allowsAnonymousMessage;
 @property(readonly) BOOL requiresSecureMessage; // @synthesize requiresSecureMessage=_requiresSecureMessage;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

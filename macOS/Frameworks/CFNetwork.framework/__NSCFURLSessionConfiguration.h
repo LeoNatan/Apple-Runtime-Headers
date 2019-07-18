@@ -77,6 +77,7 @@
     BOOL _allowsTCPFastOpen;
     BOOL _allowsTLSSessionTickets;
     BOOL _allowsTLSSessionResumption;
+    BOOL _allowsTLSFalseStart;
     BOOL _preventsDirectWiFiAccess;
     BOOL _allowTCPIOConnectionStreamTask;
     BOOL _preventsSystemHTTPProxyAuthentication;
@@ -238,6 +239,8 @@
 - (BOOL)_allowsTLSFallback;
 - (void)set_tlsTrustPinningPolicyName:(id)arg1;
 - (id)_tlsTrustPinningPolicyName;
+- (void)set_allowsTLSFalseStart:(BOOL)arg1;
+- (BOOL)_allowsTLSFalseStart;
 - (void)set_allowsTLSSessionResumption:(BOOL)arg1;
 - (BOOL)_allowsTLSSessionResumption;
 - (void)set_allowsTLSSessionTickets:(BOOL)arg1;
@@ -365,6 +368,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (void)setTLSMaximumSupportedProtocolVersion:(unsigned short)arg1;
+- (unsigned short)TLSMaximumSupportedProtocolVersion;
+- (void)setTLSMinimumSupportedProtocolVersion:(unsigned short)arg1;
+- (unsigned short)TLSMinimumSupportedProtocolVersion;
 - (void)setURLCredentialStorage:(id)arg1;
 - (id)URLCredentialStorage;
 - (void)setURLCache:(id)arg1;

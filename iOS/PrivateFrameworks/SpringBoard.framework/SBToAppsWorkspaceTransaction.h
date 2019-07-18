@@ -29,12 +29,12 @@
     _Bool _dismissedOverlays;
     _Bool _shouldDismissOverlays;
     SBSceneLayoutWorkspaceTransaction *_layoutTransaction;
-    SBFloatingDockBehaviorAssertion *_floatingDockAssertion;
+    SBFloatingDockBehaviorAssertion *_floatingDockBehaviorAssertion;
 }
 
 + (_Bool)canInterruptTransaction:(id)arg1 forTransitionRequest:(id)arg2;
 + (id)_copyTransitionRequest:(id)arg1;
-@property(retain, nonatomic) SBFloatingDockBehaviorAssertion *floatingDockAssertion; // @synthesize floatingDockAssertion=_floatingDockAssertion;
+@property(retain, nonatomic) SBFloatingDockBehaviorAssertion *floatingDockBehaviorAssertion; // @synthesize floatingDockBehaviorAssertion=_floatingDockBehaviorAssertion;
 @property(readonly, nonatomic) SBSceneLayoutWorkspaceTransaction *layoutTransaction; // @synthesize layoutTransaction=_layoutTransaction;
 - (void).cxx_destruct;
 - (void)_fireAndClearResultBlockIfNecessaryForFailure:(_Bool)arg1;

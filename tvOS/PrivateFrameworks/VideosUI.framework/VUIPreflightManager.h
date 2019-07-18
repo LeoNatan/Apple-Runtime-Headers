@@ -40,7 +40,9 @@ __attribute__((visibility("hidden")))
 - (long long)_lastConfirmedAge;
 - (void)_performAgeGateVerificationWithCompletion:(CDUnknownBlockType)arg1;
 - (long long)_requiredAgeForPlayback;
+- (void)_showMediaNotAllowedBySettingsAlert;
 - (void)_validateRestrictionsForPurchase:(CDUnknownBlockType)arg1;
+- (void)_validateRestrictionsForPlayback:(CDUnknownBlockType)arg1;
 - (id)_pbrestrictedValueToString:(unsigned long long)arg1;
 - (void)_performRestrictionsCheckWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_contentRatingValue;

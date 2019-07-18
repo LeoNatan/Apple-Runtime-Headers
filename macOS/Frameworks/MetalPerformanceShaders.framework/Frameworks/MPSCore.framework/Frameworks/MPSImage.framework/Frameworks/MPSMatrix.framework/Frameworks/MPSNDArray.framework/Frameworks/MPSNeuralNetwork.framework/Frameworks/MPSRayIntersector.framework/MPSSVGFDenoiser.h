@@ -20,30 +20,18 @@
     BOOL _clear;
     MPSSVGF *_svgf;
     id <MPSSVGFTextureAllocator> _textureAllocator;
-    id <MTLTexture> _sourceTexture;
-    id <MTLTexture> _sourceTexture2;
-    id <MTLTexture> _motionVectorTexture;
-    id <MTLTexture> _depthNormalTexture;
-    id <MTLTexture> _previousDepthNormalTexture;
-    id <MTLTexture> _destinationTexture;
-    id <MTLTexture> _destinationTexture2;
 }
 
-@property(readonly, nonatomic) id <MTLTexture> destinationTexture2; // @synthesize destinationTexture2=_destinationTexture2;
-@property(readonly, nonatomic) id <MTLTexture> destinationTexture; // @synthesize destinationTexture=_destinationTexture;
-@property(retain, nonatomic) id <MTLTexture> previousDepthNormalTexture; // @synthesize previousDepthNormalTexture=_previousDepthNormalTexture;
-@property(retain, nonatomic) id <MTLTexture> depthNormalTexture; // @synthesize depthNormalTexture=_depthNormalTexture;
-@property(retain, nonatomic) id <MTLTexture> motionVectorTexture; // @synthesize motionVectorTexture=_motionVectorTexture;
-@property(retain, nonatomic) id <MTLTexture> sourceTexture2; // @synthesize sourceTexture2=_sourceTexture2;
-@property(retain, nonatomic) id <MTLTexture> sourceTexture; // @synthesize sourceTexture=_sourceTexture;
 @property(readonly, nonatomic) id <MPSSVGFTextureAllocator> textureAllocator; // @synthesize textureAllocator=_textureAllocator;
 @property(readonly, nonatomic) MPSSVGF *svgf; // @synthesize svgf=_svgf;
-- (void)encodeToCommandBuffer:(id)arg1;
+- (id)encodeToCommandBuffer:(id)arg1 sourceTexture:(id)arg2 motionVectorTexture:(id)arg3 depthNormalTexture:(id)arg4 previousDepthNormalTexture:(id)arg5;
+- (void)encodeToCommandBuffer:(id)arg1 sourceTexture:(id)arg2 destinationTexture:(id *)arg3 sourceTexture2:(id)arg4 destinationTexture2:(id *)arg5 motionVectorTexture:(id)arg6 depthNormalTexture:(id)arg7 previousDepthNormalTexture:(id)arg8;
 - (void)encodeClearToCommandBuffer:(id)arg1;
 - (void)clearTemporalHistory;
 - (void)releaseTemporaryTextures;
 - (void)dealloc;
 - (id)initWithSVGF:(id)arg1 textureAllocator:(id)arg2;
+- (id)initWithDevice:(id)arg1;
 @property(nonatomic) unsigned long long bilateralFilterIterations;
 
 @end

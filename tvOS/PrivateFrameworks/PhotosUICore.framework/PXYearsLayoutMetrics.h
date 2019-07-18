@@ -12,12 +12,10 @@
     long long _orientation;
     double _interitemSpacing;
     double _defaultItemAspectRatio;
-    double _alternateHorizontalPadding;
-    struct UIEdgeInsets _defaultPadding;
+    struct UIEdgeInsets _padding;
 }
 
-@property(nonatomic) double alternateHorizontalPadding; // @synthesize alternateHorizontalPadding=_alternateHorizontalPadding;
-@property(nonatomic) struct UIEdgeInsets defaultPadding; // @synthesize defaultPadding=_defaultPadding;
+@property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) double defaultItemAspectRatio; // @synthesize defaultItemAspectRatio=_defaultItemAspectRatio;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;

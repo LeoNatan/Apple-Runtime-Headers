@@ -6,9 +6,11 @@
 
 #import <WorkflowKit/WFRecord.h>
 
+#import <WorkflowKit/WFNaming-Protocol.h>
+
 @class NSArray, NSDate, NSString, WFWorkflowIcon, WFWorkflowQuarantine;
 
-@interface WFWorkflowRecord : WFRecord
+@interface WFWorkflowRecord : WFRecord <WFNaming>
 {
     BOOL _hiddenInComplication;
     BOOL _hiddenFromLibraryAndSync;
@@ -60,6 +62,7 @@
 - (BOOL)isEquivalentForSyncTo:(id)arg1;
 - (BOOL)saveChangesToStorage:(id)arg1 error:(id *)arg2;
 - (id)fileRepresentation;
+@property(readonly, copy, nonatomic) NSString *wfName;
 
 @end
 

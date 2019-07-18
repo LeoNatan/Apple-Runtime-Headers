@@ -15,11 +15,13 @@
 @interface _INPBQueryHealthSampleIntentResponse : PBCodable <_INPBQueryHealthSampleIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     NSArray *_resultValues;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)resultValuesType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *resultValues; // @synthesize resultValues=_resultValues;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

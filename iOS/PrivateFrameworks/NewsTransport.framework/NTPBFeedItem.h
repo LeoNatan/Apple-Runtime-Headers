@@ -31,6 +31,7 @@
     _Bool _hasVideo;
     _Bool _isBundlePaid;
     _Bool _isExplicitContent;
+    _Bool _isFeatured;
     _Bool _isFromBlockedStorefront;
     _Bool _isHiddenFromAutoFavorites;
     _Bool _isPaid;
@@ -47,6 +48,7 @@
         unsigned int hasVideo:1;
         unsigned int isBundlePaid:1;
         unsigned int isExplicitContent:1;
+        unsigned int isFeatured:1;
         unsigned int isFromBlockedStorefront:1;
         unsigned int isHiddenFromAutoFavorites:1;
         unsigned int isPaid:1;
@@ -54,6 +56,7 @@
 }
 
 + (Class)topicIDsType;
+@property(nonatomic) _Bool isFeatured; // @synthesize isFeatured=_isFeatured;
 @property(nonatomic) long long bodyTextLength; // @synthesize bodyTextLength=_bodyTextLength;
 @property(nonatomic) _Bool isBundlePaid; // @synthesize isBundlePaid=_isBundlePaid;
 @property(retain, nonatomic) NSString *parentIssueID; // @synthesize parentIssueID=_parentIssueID;
@@ -84,6 +87,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsFeatured;
 @property(nonatomic) _Bool hasBodyTextLength;
 @property(nonatomic) _Bool hasIsBundlePaid;
 @property(readonly, nonatomic) _Bool hasParentIssueID;

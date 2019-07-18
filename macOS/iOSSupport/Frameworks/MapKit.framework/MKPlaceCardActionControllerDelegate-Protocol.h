@@ -9,7 +9,7 @@
 @class MKPlaceActionManager, MKPlaceCardActionsViewController, UIView;
 
 @protocol MKPlaceCardActionControllerDelegate <NSObject>
-- (void)placeCardActionControllerDidSelectReportAProblem:(MKPlaceCardActionsViewController *)arg1;
+- (void)placeCardActionControllerDidSelectReportAProblem:(MKPlaceCardActionsViewController *)arg1 fromView:(UIView *)arg2;
 - (void)placeActionManager:(MKPlaceActionManager *)arg1 didSelectShareFromView:(UIView *)arg2;
 
 @optional

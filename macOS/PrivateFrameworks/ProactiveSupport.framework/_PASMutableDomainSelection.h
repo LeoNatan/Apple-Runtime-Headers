@@ -11,10 +11,13 @@
 @interface _PASMutableDomainSelection : _PASDomainSelection
 {
     NSMutableDictionary *_domains;
+    unsigned long long _count;
+    BOOL _taintedByDeepDomain;
 }
 
 - (void).cxx_destruct;
 - (unsigned long long)count;
+- (void)_decrementCountAndMaybePruneItems:(id)arg1;
 - (BOOL)isEqualToDomainSelection:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)addDomainsFromSelection:(id)arg1;
@@ -25,8 +28,8 @@
 - (BOOL)addDomain:(id)arg1;
 - (BOOL)isEmpty;
 - (id)allDomains;
-- (void)_addAllDomainsFromDictionary:(id)arg1 usingPrefix:(id)arg2 toMutableSet:(id)arg3;
 - (BOOL)containsDomain:(id)arg1;
+- (void)dealloc;
 - (id)_initWithNonOverlappingDomainSet:(id)arg1;
 - (id)init;
 

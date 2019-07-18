@@ -11,6 +11,8 @@
 @protocol NUArticleDataProvider <NSObject>
 @property(readonly, nonatomic) FCArticle *article;
 @property(readonly, copy, nonatomic) NSString *articleID;
-- (void)loadContextWithCompletionBlock:(void (^)(SXContext *, NSError *))arg1;
+- (void)cancelAssetPrefetch;
+- (void)prefetchAssets;
+- (void)loadContextWithCompletionBlock:(void (^)(SXContext *, id <NUFontRegistrator>, NSError *))arg1;
 @end
 

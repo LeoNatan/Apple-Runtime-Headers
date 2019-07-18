@@ -15,6 +15,7 @@
     HKObjectType *_objectType;
     NSString *_debugIdentifier;
     _HKFilter *_filter;
+    long long _qualityOfService;
     double _activationTime;
 }
 
@@ -22,6 +23,7 @@
 @property(nonatomic) double activationTime; // @synthesize activationTime=_activationTime;
 @property(nonatomic) BOOL shouldSuppressDataCollection; // @synthesize shouldSuppressDataCollection=_shouldSuppressDataCollection;
 @property(nonatomic) BOOL shouldDeactivateAfterInitialResults; // @synthesize shouldDeactivateAfterInitialResults=_shouldDeactivateAfterInitialResults;
+@property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(retain, nonatomic) _HKFilter *filter; // @synthesize filter=_filter;
 @property(copy, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 @property(copy, nonatomic) HKObjectType *objectType; // @synthesize objectType=_objectType;
@@ -29,6 +31,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)init;
 
 @end
 

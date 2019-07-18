@@ -7,6 +7,7 @@
 #import <GeoServices/GEOFeatureStyleAttributes.h>
 
 @interface GEOFeatureStyleAttributes (MapKitExtras)
++ (id)styleAttributesForTransitType:(long long)arg1;
 + (id)annotationViewProvidedCustomFeatureStyleAttributes;
 + (id)genericMarkerStyleAttributes;
 + (id)trainStationStyleAttributes;
@@ -14,6 +15,7 @@
 + (id)markerStyleAttributes;
 + (id)styleAttributesForDraggingWithAttributes:(id)arg1;
 + (id)styleAttributesForCalloutWithAttributes:(id)arg1;
++ (id)styleAttributesForSearchResultWithAttributes:(id)arg1;
 + (id)styleAttributesForTrafficIncidentType:(long long)arg1;
 + (id)styleAttributesForTrafficCameraType:(long long)arg1 isAboveThreshold:(_Bool)arg2;
 @end

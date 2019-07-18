@@ -8,7 +8,7 @@
 
 #import <ContactsUI/_UIClickPresentationTransition-Protocol.h>
 
-@class CNAvatarCardViewController, CNContactOrbHeaderView, NSString, UIView, UIViewPropertyAnimator, UIVisualEffectView, _UITargetedPreview;
+@class CNAvatarCardViewController, CNContactOrbHeaderView, NSString, UITargetedPreview, UIView, UIViewPropertyAnimator, UIVisualEffectView;
 @protocol CNAvatarCardControllerOrbTransitionDelegate;
 
 __attribute__((visibility("hidden")))
@@ -51,7 +51,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(copy, nonatomic) _UITargetedPreview *sourcePreview;
+@property(copy, nonatomic) UITargetedPreview *sourcePreview;
 @property(readonly) Class superclass;
 
 @end

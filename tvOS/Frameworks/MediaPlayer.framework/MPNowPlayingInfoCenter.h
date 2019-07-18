@@ -67,6 +67,7 @@
 - (void)_onDataSourceQueue_getContentItemIDsInRange:(struct _MSVSignedRange)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_onDataSourceQueue_artworkCatalogForContentItem:(id)arg1;
 - (void)_invalidatePlaybackQueueImmediately;
+- (void)_getTransportablePlaybackSessionRepresentationWithIdentifier:(id)arg1 preferredSessionType:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_getMetadataForContentItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void *)_createPlaybackQueueForRequest:(void *)arg1;
 - (id)_contentItemForIdentifier:(id)arg1 alreadyOnDataSourceQueue:(_Bool)arg2;

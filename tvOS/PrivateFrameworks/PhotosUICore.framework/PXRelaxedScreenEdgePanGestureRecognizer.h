@@ -8,6 +8,7 @@
 
 @interface PXRelaxedScreenEdgePanGestureRecognizer : UIPanGestureRecognizer
 {
+    struct CGPoint _initialTouchLocation;
     unsigned long long _edges;
     double _minAngleToEdge;
     unsigned long long _trackingEdge;
@@ -23,6 +24,7 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)setMaximumNumberOfTouches:(unsigned long long)arg1;
 - (void)setMinimumNumberOfTouches:(unsigned long long)arg1;
+@property(nonatomic) double minTranslation;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 
 @end

@@ -10,6 +10,7 @@
 {
 }
 
+- (id)browserBackgroundColor;
 - (id)messageAcknowledgmentBalloonColorForStyle:(int)arg1;
 - (id)messageAcknowledgment:(int)arg1 selectedAcknowledgmentImageColor:(int)arg2;
 - (id)messageAcknowledgment:(int)arg1 acknowledgmentImageColor:(int)arg2;

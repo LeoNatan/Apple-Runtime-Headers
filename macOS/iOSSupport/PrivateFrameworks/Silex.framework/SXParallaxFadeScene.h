@@ -12,7 +12,6 @@
 {
 }
 
-+ (void)load;
 - (BOOL)userControllable;
 - (Class)handlerClass;
 

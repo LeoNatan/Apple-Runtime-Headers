@@ -16,14 +16,12 @@
 {
     unsigned long long _rowID;
     unsigned char _type;
-    BOOL _isRemapItem;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)newFromSqliteStatement:(struct sqlite3_stmt *)arg1 atIndex:(int)arg2;
 + (id)newFromSqliteValue:(struct sqlite3_value *)arg1;
 + (id)fileObjectIDWithString:(id)arg1;
-@property(nonatomic) BOOL isRemapItem; // @synthesize isRemapItem=_isRemapItem;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToFileObjectID:(id)arg1;
@@ -33,6 +31,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSString *asString;
 - (BOOL)_stringPrefix;
+@property(nonatomic) BOOL isDocumentsFolderSymlink;
 @property(readonly, nonatomic) BOOL isDocument;
 - (BOOL)isFolderOrAliasID;
 - (void)sqliteBind:(struct sqlite3_stmt *)arg1 index:(int)arg2;
@@ -42,7 +41,7 @@
 @property(readonly, nonatomic) BOOL isAppLibraryRoot;
 - (BOOL)isCloudDocsRoot;
 - (id)initAsCloudDocsRoot;
-- (id)initWithALDocumentsRowID:(unsigned long long)arg1;
+- (id)initWithALDocumentsRowID:(unsigned long long)arg1 isSymlink:(BOOL)arg2;
 - (id)initWithALRootRowID:(unsigned long long)arg1;
 - (id)initWithRowID:(unsigned long long)arg1 isDocument:(BOOL)arg2;
 

@@ -43,7 +43,7 @@
 - (void)dealloc;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithMultiverseIdentifier:(id)arg1;
+- (id)initWithMultiverseIdentifier:(id)arg1 library:(id)arg2;
 - (id)initWithIdentifier:(long long)arg1 itemsQuery:(id)arg2 grouping:(int)arg3;
 - (id)initWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(long long)arg5;
 - (id)_initWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(long long)arg5 propertiesCache:(id)arg6;

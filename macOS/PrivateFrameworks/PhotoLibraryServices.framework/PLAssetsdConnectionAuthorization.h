@@ -17,6 +17,7 @@
     int _kTCCPhotosAuthorized;
     int _kTCCPhotosAddAuthorized;
     BOOL _libraryUpgradeAuthorized;
+    BOOL _directDatabaseWriteAuthorized;
     BOOL _photoKitEntitled;
     int _clientProcessIdentifier;
     NSString *_trustedCallerBundleID;
@@ -31,6 +32,7 @@
 - (void)setupFromConnection:(id)arg1;
 @property(readonly, nonatomic) CDStruct_4c969caf clientAuditToken;
 - (BOOL)isPhotosClient;
+@property(readonly, nonatomic) BOOL directDatabaseWriteAuthorized;
 - (BOOL)isClientAuthorizedForLibraryUpgrade;
 - (BOOL)isClientAuthorizedForLithiumSystemPhotoLibraryURL;
 - (BOOL)isClientAuthorizedForTCCServicePhotosAdd;

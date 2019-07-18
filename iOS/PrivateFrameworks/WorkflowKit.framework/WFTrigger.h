@@ -9,27 +9,22 @@
 #import <WorkflowKit/NSCopying-Protocol.h>
 #import <WorkflowKit/NSSecureCoding-Protocol.h>
 
-@class NSString;
-
 @interface WFTrigger : NSObject <NSSecureCoding, NSCopying>
 {
-    NSString *_workflowID;
 }
 
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
++ (_Bool)isSupportedOnThisDevice;
 + (_Bool)isAllowedToRunAutomatically;
 + (_Bool)supportsSecureCoding;
 + (id)triggerWithSerializedData:(id)arg1;
-@property(copy, nonatomic) NSString *workflowID; // @synthesize workflowID=_workflowID;
-- (void).cxx_destruct;
 - (_Bool)hasValidConfiguration;
 - (id)localizedTitleWithConfigurationSummary;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)serializedData;
-- (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)init;
 - (void)configureWithConfiguration:(id)arg1;

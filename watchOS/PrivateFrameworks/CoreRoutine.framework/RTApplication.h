@@ -6,20 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
-
 @interface RTApplication : NSObject
 {
-    NSString *_bundleId;
-    NSString *_localizedDisplayName;
-    int _capabilities;
+    unsigned int _capabilities;
 }
 
-@property(nonatomic) int capabilities; // @synthesize capabilities=_capabilities;
-@property(readonly, nonatomic) NSString *localizedDisplayName; // @synthesize localizedDisplayName=_localizedDisplayName;
-@property(readonly, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
-- (void).cxx_destruct;
-- (id)initWithBundleId:(id)arg1 localizedDisplayName:(id)arg2 capabilities:(int)arg3;
+@property(readonly, nonatomic) unsigned int capabilities; // @synthesize capabilities=_capabilities;
 - (id)init;
 
 @end

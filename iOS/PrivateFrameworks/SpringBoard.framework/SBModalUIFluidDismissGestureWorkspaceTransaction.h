@@ -6,17 +6,15 @@
 
 #import <SpringBoard/SBSystemGestureWorkspaceTransaction.h>
 
-@class SBAppStatusBarSettingsAssertion, SBAppSwitcherSettings, SBAssistantController, SBMainWorkspaceTransaction, SBTransientOverlayViewController, UINotificationFeedbackGenerator, UIViewController, UIWindow;
-@protocol SBFluidGestureDismissable;
+@class SBAppStatusBarSettingsAssertion, SBAppSwitcherSettings, SBAssistantController, SBAssistantRootViewController, SBMainWorkspaceTransaction, SBTransientOverlayPresentationManager, SBTransientOverlayViewController, UINotificationFeedbackGenerator;
 
 @interface SBModalUIFluidDismissGestureWorkspaceTransaction : SBSystemGestureWorkspaceTransaction
 {
     SBAppSwitcherSettings *_settings;
     SBAppStatusBarSettingsAssertion *_statusBarAssertion;
     UINotificationFeedbackGenerator *_dismissalFeedbackGenerator;
-    UIWindow *_gestureWindow;
-    UIViewController *_dismissingViewController;
-    id <SBFluidGestureDismissable> _dismissableController;
+    SBAssistantRootViewController *_assistantRootViewController;
+    SBTransientOverlayPresentationManager *_transientOverlayPresentationManager;
     SBTransientOverlayViewController *_transientOverlayViewController;
     struct CGPoint _dismissingViewTouchOffset;
     struct CGRect _originalBounds;
@@ -33,8 +31,8 @@
 @property(retain, nonatomic) SBAssistantController *assistantController; // @synthesize assistantController=_assistantController;
 - (void).cxx_destruct;
 - (void)_cleanupHierarchyForDismissal:(_Bool)arg1;
-- (struct CGRect)_containerWindowBounds;
-- (id)_containerWindow;
+- (id)_viewForGesture;
+- (void)_setFluidDismissalState:(id)arg1;
 - (_Bool)_shouldDismissImmmediatelyAtFullGestureProgress;
 - (double)_swipeUpGestureProgress;
 - (double)_swipeUpGestureTranslation;

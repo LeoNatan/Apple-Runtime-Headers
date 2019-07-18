@@ -21,6 +21,7 @@
 @property(nonatomic) unsigned long long logSize; // @dynamic logSize;
 @property(nonatomic) int logType; // @dynamic logType;
 @property(nonatomic) unsigned long long revision; // @dynamic revision;
+@property(nonatomic) unsigned long long treeId; // @dynamic treeId;
 
 @end
 

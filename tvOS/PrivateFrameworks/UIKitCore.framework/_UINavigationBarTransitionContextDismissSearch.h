@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 
 - (void)cancel;
 - (void)complete;
-- (void)_resetContentAndLargeTitleViewCompleted:(_Bool)arg1;
 - (void)animate;
 - (void)prepare;
 - (int)transition;

@@ -138,6 +138,7 @@
 @property(readonly, nonatomic) long long bodyTextLength;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool isFeatured;
 @property(readonly, nonatomic) _Bool isLocalDraft;
 @property(readonly, nonatomic, getter=isIssueOnly) _Bool issueOnly;
 @property(readonly, copy, nonatomic) NSArray *linkedArticleIDs;
@@ -146,6 +147,7 @@
 @property(readonly, nonatomic) _Bool showBundleSoftPaywall;
 @property(readonly, nonatomic) id <FCHeadlineStocksFields> stocksFields;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool useTransparentNavigationBar;
 @property(readonly, nonatomic) _Bool webEmbedsEnabled;
 
 @end

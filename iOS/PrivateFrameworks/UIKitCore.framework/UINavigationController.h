@@ -576,6 +576,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;
 - (id)initWithRootViewController:(id)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (void)_commonInitWithBuiltinTransitionGap:(double)arg1;
 - (void)_commonNonCoderInit;
 - (void)decodeRestorableStateWithCoder:(id)arg1;

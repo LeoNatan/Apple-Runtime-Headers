@@ -22,7 +22,6 @@
 + (id)imageNamed:(id)arg1 keepInCache:(BOOL)arg2;
 - (long long)imageOrientation;
 - (id)imageFlippedForRightToLeftLayoutDirection;
-- (struct CGImage *)CGImage;
 - (float)scale;
 - (BOOL)_isSRGB;
 - (id)extendedRangeSafeDrawInRect:(struct CGRect)arg1 opaque:(BOOL)arg2 scale:(float)arg3;

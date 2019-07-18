@@ -21,9 +21,12 @@
 @property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)optionsByAddingContentsOfOptions:(id)arg1;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)coercionPathIsDisallowed:(id)arg1;
+- (void)makeRemoteServerAccessResourceAvailableIfNeededWithURLs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)makeContactAccessResourceAvailableIfNeededWithCompletionHandler:(CDUnknownBlockType)arg1;
 
 @end
 

@@ -18,8 +18,6 @@
     NSURL *_backingURL;
 }
 
-+ (void)_reconcileAudiobookBookmarkForAsset:(id)arg1;
-+ (id)_reconcileAudiobookDurationForAsset:(id)arg1;
 + (CDUnknownBlockType)_backingDictionaryComparator;
 + (id)_bookSubURLWithBaseURL:(id)arg1 filename:(id)arg2;
 + (id)sinfXMLURLWithBaseURL:(id)arg1;
@@ -49,7 +47,6 @@
 @property(nonatomic) long long assetType; // @synthesize assetType=_assetType;
 @property(retain, nonatomic) NSMutableDictionary *backingDictionary; // @synthesize backingDictionary=_backingDictionary;
 - (void).cxx_destruct;
-- (void)_reconcileAudiobookAllocatedSize;
 - (id)rating;
 - (id)purchaseDate;
 - (id)lastOpenDate;
@@ -61,6 +58,7 @@
 - (id)sortTitle;
 - (id)title;
 - (id)accountID;
+- (long long)discNumber;
 - (id)duration;
 - (id)trackTitle;
 - (long long)trackNumber;
@@ -130,6 +128,7 @@
 - (BOOL)isAggregate;
 - (BOOL)isAudiobookTrack;
 - (BOOL)isAudiobook;
+- (BOOL)containsAssetExceptBookmarkTime:(id)arg1;
 - (BOOL)containsAsset:(id)arg1;
 - (id)isCompressedBookWithError:(id *)arg1;
 - (BOOL)isUbiquitous;

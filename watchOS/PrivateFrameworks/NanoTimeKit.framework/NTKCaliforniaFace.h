@@ -10,6 +10,7 @@
 {
 }
 
++ (id)_localizedNameOverrideForCustomEditMode:(int)arg1 forDevice:(id)arg2;
 + (id)_richComplicationSlotsForDevice:(id)arg1;
 + (id)_orderedComplicationSlots;
 + (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
@@ -20,6 +21,7 @@
 - (unsigned int)_numberOfOptionsForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (unsigned int)_indexOfOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (Class)_optionClassForCustomEditMode:(int)arg1;
+- (id)defaultColorForDevice:(id)arg1;
 - (id)_defaultOptionForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_customEditModes;
 - (_Bool)complicationExistenceInvalidatesSnapshot;

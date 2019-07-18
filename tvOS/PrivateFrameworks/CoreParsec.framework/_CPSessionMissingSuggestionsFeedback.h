@@ -34,7 +34,6 @@
 - (void)addSuggestions:(id)arg1;
 - (void)clearSuggestions;
 - (id)init;
-@property(readonly, nonatomic) _Bool requiresQueryId;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

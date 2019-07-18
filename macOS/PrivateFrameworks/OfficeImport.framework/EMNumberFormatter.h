@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     struct __CFDateFormatter *_dateFormatter;
     NSString *_excelFormatString;
     NSString *_baseICUFormatString;
-    _Bool _isNegativeRed;
-    unsigned short _currencySymbol;
+    BOOL _isNegativeRed;
+    BOOL _hasLocales;
     int _formatType;
 }
 

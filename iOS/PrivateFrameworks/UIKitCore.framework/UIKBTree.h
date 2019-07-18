@@ -185,6 +185,7 @@
 - (_Bool)shouldSkipCandidateSelectionForVariants;
 - (_Bool)shouldSkipCandidateSelection;
 - (_Bool)diacriticForwardCompose;
+- (_Bool)isKanaPlane;
 - (_Bool)isAlphabeticPlane;
 - (_Bool)isShiftKeyplane;
 - (id)shiftAlternateKeyplaneName;

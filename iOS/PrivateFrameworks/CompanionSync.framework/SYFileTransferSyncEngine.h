@@ -26,10 +26,13 @@ __attribute__((visibility("hidden")))
     _SYOutputStreamer *_responseStream;
     _Bool _responsesCanceled;
     IDSService *_idsService;
-    NSObject<OS_dispatch_queue> *_idsQueue;
     SYDevice *_activeDevice;
     SYDevice *_sessionDevice;
     SYDevice *_responseDevice;
+    struct os_unfair_lock_s _idsQueueLock;
+    NSObject<OS_dispatch_queue> *_idsQueue;
+    _Bool _idsQueueIsSuspended;
+    _Bool _idsQueueResumedLock;
     NSMutableIndexSet *_messageRows;
     NSMutableIndexSet *_responseMessageRows;
     NSMutableArray *_deferredIncomingSessions;
@@ -90,6 +93,9 @@ __attribute__((visibility("hidden")))
 - (void)endFileTransferForStream:(id)arg1 atURL:(id)arg2 target:(id)arg3 wasCancelled:(_Bool)arg4 messageRows:(id)arg5;
 - (void)suspend;
 - (_Bool)resume:(id *)arg1;
+- (void)dealloc;
+- (void)_resumeIdsQueue;
+- (void)_suspendIdsQueue;
 - (id)initWithService:(id)arg1 queue:(id)arg2;
 
 // Remaining properties

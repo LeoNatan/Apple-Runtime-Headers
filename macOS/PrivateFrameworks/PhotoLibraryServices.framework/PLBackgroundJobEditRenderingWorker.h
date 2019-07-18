@@ -19,6 +19,7 @@
 - (void)performWorkOnManagedObjectID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)managedObjectIDsNeedingProcessing;
 - (BOOL)hasPendingJobs;
+- (void)dealloc;
 - (id)_predicateToFetchDeferredAdjustmentNeededAssets;
 
 @end

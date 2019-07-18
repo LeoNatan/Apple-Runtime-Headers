@@ -9,7 +9,7 @@
 #import <CoreData/NSCoding-Protocol.h>
 #import <CoreData/NSLocking-Protocol.h>
 
-@class NSMutableDictionary, NSMutableSet, NSPersistentStoreCoordinator, NSQueryGenerationToken, NSSet, NSString, NSUndoManager;
+@class NSArray, NSMutableDictionary, NSMutableSet, NSPersistentStoreCoordinator, NSQueryGenerationToken, NSSet, NSString, NSUndoManager;
 
 @interface NSManagedObjectContext : NSObject <NSCoding, NSLocking>
 {
@@ -71,6 +71,7 @@
     int _cd_rc;
     int _ignoreChangeNotification;
     NSString *_contextLabel;
+    NSArray *_persistentStoreIdentifiers;
     id *_additionalPrivateIvars;
 }
 
@@ -103,7 +104,7 @@
 - (BOOL)_setChangeTrackingTokenFromToken:(id)arg1 error:(id *)arg2;
 - (BOOL)setQueryGenerationFromToken:(id)arg1 error:(id *)arg2;
 - (BOOL)_setQueryGenerationFromToken:(id)arg1 error:(id *)arg2;
-- (id)_retainedCurrentQueryGeneration;
+- (id)_retainedCurrentQueryGeneration:(id)arg1;
 @property(copy) NSString *transactionAuthor;
 @property(copy) NSString *name;
 @property(readonly) unsigned long long concurrencyType;
@@ -248,8 +249,11 @@
 - (id)performFetch:(id)arg1 error:(id *)arg2;
 - (id)_unsafeTransactionAuthor;
 - (id)_unsafeName;
+@property(copy, setter=_setPersistentStoresScope:) NSArray *_persistentStoresScope;
 - (void)_setPersistentStoreCoordinator:(id)arg1;
 - (void)_addObjectIDsUpdatedByTriggers:(id)arg1;
+- (void)_addObjectIDsUpdatedByDATriggers:(id)arg1;
+- (void)_addObjectIDsInsertUpdatedByDATriggers:(id)arg1;
 - (void)_processObjectStoreChanges:(id)arg1;
 - (void)_propagateDeletesUsingTable:(id)arg1;
 - (BOOL)_processDeletedObjects:(id *)arg1;

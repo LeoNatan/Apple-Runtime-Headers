@@ -16,6 +16,7 @@
 - (_Bool)getListThumbnail:(CDUnknownBlockType)arg1 forSize:(struct CGSize)arg2;
 - (_Bool)getListAltText:(CDUnknownBlockType)arg1;
 - (_Bool)getListSubtitle:(CDUnknownBlockType)arg1;
+- (id)mediaTrackObject;
 - (id)storeObject;
 
 @end

@@ -68,8 +68,16 @@ struct CAStreamBasicDescription {
     unsigned int _field9;
 };
 
+struct CF<OpaqueVTPixelTransferSession *> {
+    struct OpaqueVTPixelTransferSession *value_;
+};
+
 struct CF<__CVMetalTextureCache *> {
     struct __CVMetalTextureCache *value_;
+};
+
+struct CF<__CVPixelBufferPool *> {
+    struct __CVPixelBufferPool *value_;
 };
 
 struct CGAffineTransform {
@@ -172,10 +180,11 @@ struct EncodeAnalysis {
     float *_field24;
     float *_field25;
     _Bool _field26;
-    long long _field27;
-    float _field28;
+    _Bool _field27;
+    long long _field28;
     float _field29;
     float _field30;
+    float _field31;
 };
 
 struct EncodeParameters {
@@ -466,6 +475,7 @@ struct MotionResult {
     float action_score_;
     float track_score_;
     float rotation_angle_;
+    float subtle_motion_score_;
     int action_blocks_;
     float action_motion_;
     _Bool valid_mb_;
@@ -682,12 +692,13 @@ struct SceneAnalysis {
     struct CameraMotionAnalysis _field17;
     struct SubjectMotionAnalysis _field18;
     struct FineSubjectMotionAnalysis _field19;
-    struct TrackingAnalysis _field20;
-    struct DescriptorAnalysis _field21;
-    struct MovingObjectAnalysis _field22;
-    struct InterestingnessAnalysis _field23;
-    struct QualityAnalysis _field24;
-    struct SlowMotionAnalysis _field25;
+    struct SubtleMotionAnalysis _field20;
+    struct TrackingAnalysis _field21;
+    struct DescriptorAnalysis _field22;
+    struct MovingObjectAnalysis _field23;
+    struct InterestingnessAnalysis _field24;
+    struct QualityAnalysis _field25;
+    struct SlowMotionAnalysis _field26;
 };
 
 struct SceneSegment;
@@ -717,6 +728,19 @@ struct SubjectMotionAnalysis {
 };
 
 struct SubjectMotionSegment;
+
+struct SubtleMotionAnalysis {
+    struct Vector<ma::SubtleMotionSegment *> _field1;
+    struct SubtleMotionSegment *_field2;
+    struct __CFArray *_field3;
+    CDStruct_1b6d18a9 _field4;
+    _Bool _field5;
+    float _field6;
+    struct HinkleyDetector _field7;
+    _Bool _field8;
+};
+
+struct SubtleMotionSegment;
 
 struct TrackSegment;
 
@@ -792,6 +816,10 @@ struct Vector<ma::SubjectMotionSegment *> {
     struct __CFArray *_field1;
 };
 
+struct Vector<ma::SubtleMotionSegment *> {
+    struct __CFArray *_field1;
+};
+
 struct Vector<ma::TrackSegment *> {
     struct __CFArray *_field1;
 };
@@ -852,6 +880,11 @@ struct future<unsigned int> {
 
 struct future<void> {
     struct __assoc_sub_state *_field1;
+};
+
+struct mach_timebase_info {
+    unsigned int numer;
+    unsigned int denom;
 };
 
 struct tplTracker_resampler_context;

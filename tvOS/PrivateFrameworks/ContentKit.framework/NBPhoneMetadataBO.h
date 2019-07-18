@@ -6,6 +6,7 @@
 
 #import <ContentKit/NBPhoneMetaData.h>
 
+__attribute__((visibility("hidden")))
 @interface NBPhoneMetadataBO : NBPhoneMetaData
 {
 }

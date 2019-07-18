@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isCarPlayIdiom;
 - (long long)getCurrentUIUserInterfaceStyle;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)updateComposeButtonWithInterfaceStyle:(long long)arg1;
 - (void)setupComposeButton;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

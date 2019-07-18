@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
     TSTLayoutSpaceBezierPathCache *mBezierPathCache;
     _Bool mLayoutDirectionIsLeftToRight;
     struct _opaque_pthread_rwlock_t mLock;
+    _Bool mInvalidatedForEditingCell;
 }
 
 @property(nonatomic) struct CGPoint tableOffset; // @synthesize tableOffset=mTableOffset;
@@ -62,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (int)validateTableOffset:(id)arg1;
 - (void)validateCoordinateDirection;
 - (int)validate:(id)arg1;
+- (void)invalidateCoordinatesForEditingCellID:(struct TSUCellCoord)arg1;
 - (void)invalidateTableOffset;
 - (void)invalidateCoordinatesAfterRow:(unsigned int)arg1;
 - (void)invalidateCoordinatesAfterColumn:(unsigned short)arg1;

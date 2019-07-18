@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class UILabel, UIStackView, WDBrandLogoView, WDClinicalSourcesDataProvider, WDHISpecContainerView;
+@class UILabel, UIStackView, WDBrandLogoView, WDClinicalSourcesDataProvider;
 @protocol HKClinicalBrandable;
 
 __attribute__((visibility("hidden")))
@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     WDBrandLogoView *_logoView;
     UIStackView *_stackView;
     UIView *_logoAlignedContentView;
-    WDHISpecContainerView *_verticalSpecContainerView;
+    UIStackView *_verticalSpecContainerView;
 }
 
-@property(readonly, nonatomic) WDHISpecContainerView *verticalSpecContainerView; // @synthesize verticalSpecContainerView=_verticalSpecContainerView;
+@property(readonly, nonatomic) UIStackView *verticalSpecContainerView; // @synthesize verticalSpecContainerView=_verticalSpecContainerView;
 @property(readonly, nonatomic) UIView *logoAlignedContentView; // @synthesize logoAlignedContentView=_logoAlignedContentView;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(readonly, nonatomic) WDBrandLogoView *logoView; // @synthesize logoView=_logoView;

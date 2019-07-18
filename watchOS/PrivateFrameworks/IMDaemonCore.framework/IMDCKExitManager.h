@@ -6,7 +6,7 @@
 
 #import <IMDaemonCore/IMDCKAbstractSyncController.h>
 
-@class CKOperationConfiguration, CKRecordID, IMDCKDatabaseManager, IMDRecordZoneManager, NSDate, NSError, NSNumber, NSObject;
+@class CKRecordID, IMDCKDatabaseManager, IMDRecordZoneManager, NSDate, NSError, NSNumber, NSObject;
 @protocol OS_dispatch_queue;
 
 @interface IMDCKExitManager : IMDCKAbstractSyncController
@@ -15,7 +15,6 @@
     NSDate *_exitRecordDate;
     NSError *_errorFetchingExitDate;
     CKRecordID *_exitRecordID;
-    CKOperationConfiguration *_exitConfigurtation;
     NSNumber *_saltZoneCreatedOverride;
     NSNumber *_subscriptionCreatedOverride;
     NSObject<OS_dispatch_queue> *_ckQueue;
@@ -30,7 +29,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *ckQueue; // @synthesize ckQueue=_ckQueue;
 @property(retain, nonatomic) NSNumber *subscriptionCreatedOverride; // @synthesize subscriptionCreatedOverride=_subscriptionCreatedOverride;
 @property(retain, nonatomic) NSNumber *saltZoneCreatedOverride; // @synthesize saltZoneCreatedOverride=_saltZoneCreatedOverride;
-@property(retain, nonatomic) CKOperationConfiguration *exitConfigurtation; // @synthesize exitConfigurtation=_exitConfigurtation;
 @property(retain, nonatomic) CKRecordID *exitRecordID; // @synthesize exitRecordID=_exitRecordID;
 - (void)sendCloudKitZoneFetchRequestToNoteFeatureIsOn;
 - (void)submitCloudKitAnalyticWithDictionary:(id)arg1 operationGroupName:(id)arg2 useManatee:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
@@ -49,6 +47,8 @@
 - (_Bool)_subscriptionCreated;
 - (_Bool)_saltZoneCreated;
 - (void)_scheduleOperation:(id)arg1;
+- (id)exitConfiguration;
+- (int)derivedQualityOfService;
 - (id)analyticZoneRecordID;
 - (id)syncCompleteRecordID;
 - (void)deleteExitRecordWithCompletion:(CDUnknownBlockType)arg1;

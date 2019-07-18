@@ -30,6 +30,7 @@
 - (unsigned int)length;
 - (id)string;
 - (id)attributesAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange *)arg2;
+- (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 effectiveRange:(struct _NSRange *)arg3;
 - (void)cleanupCachedContentSizeValues;
 - (id)initWithAttributedString:(id)arg1;
 

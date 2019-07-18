@@ -31,9 +31,10 @@
 @property(retain, nonatomic) _TVAppDocumentRequestController *documentController; // @synthesize documentController=_documentController;
 @property(retain, nonatomic) id lockupImageProxy; // @synthesize lockupImageProxy=_lockupImageProxy;
 - (void).cxx_destruct;
-- (void)_loadDataIfNeeded;
+- (void)_loadDataConditionally:(_Bool)arg1;
 - (void)normalizedPositionDidChange;
 - (void)layoutSubviews;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)willMoveToWindow:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (void)prepareForReuse;

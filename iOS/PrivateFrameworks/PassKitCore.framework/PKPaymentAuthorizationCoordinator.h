@@ -43,6 +43,7 @@
 - (void).cxx_destruct;
 - (void)_viewServiceTimerFired:(id)arg1;
 - (void)_invokeCallbackWithSuccess:(_Bool)arg1;
+- (id)_remoteObjectProxyWithFailureHandler:(CDUnknownBlockType)arg1;
 - (id)_remoteObjectProxy;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)dismissWithCompletion:(CDUnknownBlockType)arg1;

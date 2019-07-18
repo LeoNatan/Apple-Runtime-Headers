@@ -10,7 +10,7 @@
 #import <EventKitUI/EKDayOccurrenceViewDelegate-Protocol.h>
 #import <EventKitUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class EKCalendarDate, EKDayGridView, EKDayViewContentGeometryDelegate, EKEvent, NSCalendar, NSMutableArray, NSString, NSTimeZone, UIColor, UITraitCollection;
+@class EKCalendarDate, EKDayGridView, EKDayViewContentGeometryDelegate, EKEvent, NSCalendar, NSMutableArray, NSMutableDictionary, NSString, NSTimeZone, UIColor, UITraitCollection;
 @protocol EKDayViewContentDelegate;
 
 @interface EKDayViewContent : UIView <CUIKSingleDayTimelineLayoutScreenUtils, EKDayOccurrenceViewDelegate, UIGestureRecognizerDelegate>
@@ -39,6 +39,7 @@
     _Bool _shouldLayoutInReverse;
     _Bool _shouldAnimateLayout;
     NSMutableArray *_temporaryViewCacheByDay;
+    NSMutableDictionary *_cachedLayoutsByDay;
     int _saveTemporaryViewsEntryCount;
     _Bool _offscreenOccurrencePinningEnabled;
     _Bool _allowsOccurrenceSelection;
@@ -99,7 +100,7 @@
 - (void)applyContentItem:(id)arg1 toView:(id)arg2;
 - (void)applyLoadedOccurrencesWithBatching:(_Bool)arg1 animated:(_Bool)arg2 reverse:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)movePreloadedItemsToVisible;
-- (void)applyLoadedOccurrenceBatchStartingAtIndex:(int)arg1 batchSize:(int)arg2 fromArray:(id)arg3 animated:(_Bool)arg4 reverse:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)applyLoadedOccurrenceBatchStartingAtIndex:(int)arg1 batchSize:(int)arg2 fromArray:(id)arg3 withStartDate:(id)arg4 animated:(_Bool)arg5 reverse:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;
 - (unsigned int)_dayIndexForAllIndex:(unsigned int)arg1;
 - (void)_configureOccurrenceViewMarginAndPadding:(id)arg1;
 - (void)configureOccurrenceViewForGestureController:(id)arg1;

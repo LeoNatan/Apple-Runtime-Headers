@@ -45,6 +45,7 @@ struct WGWidgetListSettings {
     unsigned long long _field1;
     _Bool _field2;
     _Bool _field3;
+    _Bool _field4;
 };
 
 #pragma mark Typedef'd Structures

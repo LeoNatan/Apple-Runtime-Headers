@@ -27,6 +27,7 @@
 - (void)dealloc;
 - (id)initWithInstallRequest:(id)arg1;
 - (int)_isCompatibleWithMDMAppManagementWithReason;
+- (BOOL)_isCompatibleWithMDMAppManagementReturningError:(id *)arg1;
 - (BOOL)_isCompatibleWithMDMAppManagement;
 
 @end

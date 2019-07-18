@@ -15,6 +15,7 @@
     unsigned long long _source;
 }
 
++ (id)sortFusedInferredMapItems:(id)arg1 confidenceEqualityEpsilon:(double)arg2 referenceLocation:(id)arg3 distanceCalculator:(id)arg4 ascending:(_Bool)arg5;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
 @property(nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(retain, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;

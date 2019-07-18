@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)updateColors;
-- (void)setTintColor:(id)arg1;
+- (void)tintColorDidChange;
 - (id)accentColorForStyle:(unsigned long long)arg1;
 - (id)mainColorForStyle:(unsigned long long)arg1;
 @property(copy, nonatomic) NSString *title;

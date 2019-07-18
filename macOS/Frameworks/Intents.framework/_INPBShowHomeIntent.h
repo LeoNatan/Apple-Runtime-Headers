@@ -15,6 +15,7 @@
 @interface _INPBShowHomeIntent : PBCodable <_INPBShowHomeIntent, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSArray *_filters;
     _INPBIntentMetadata *_intentMetadata;
     _INPBDateTimeRange *_time;
@@ -22,6 +23,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)filtersType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDateTimeRange *time; // @synthesize time=_time;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 @property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;

@@ -17,22 +17,21 @@
     NSObject<OS_xpc_object> *_xpcRequest;
     GEOApplicationAuditToken *_auditToken;
     NSDictionary *_additionalHTTPHeaders;
-    BOOL _needsProxy;
     NSData *_bodyData;
     NSData *_cachedData;
-    double _timeoutInterval;
-    BOOL _HTTPMethod;
-    CDStruct_d1a7ebee _kind;
-    BOOL _HTTPShouldHandleCookies;
-    BOOL _allowsCellularAccess;
-    BOOL _requiresPowerPluggedIn;
-    BOOL _allowTLSSessionTicketUse;
-    BOOL _allowTFOUse;
     id <GEORequestCounterTicket> _requestCounterTicket;
     NSString *_backgroundSessionIdentifier;
+    GEODataRequestThrottlerToken *_throttleToken;
+    double _timeoutInterval;
+    CDStruct_d1a7ebee _kind;
     unsigned long long _multipathServiceType;
     unsigned long long _multipathAlternatePort;
-    GEODataRequestThrottlerToken *_throttleToken;
+    BOOL _needsProxy;
+    BOOL _HTTPShouldHandleCookies;
+    unsigned long long _constraints;
+    BOOL _allowTLSSessionTicketUse;
+    BOOL _allowTFOUse;
+    BOOL _HTTPMethod;
 }
 
 @property(readonly, nonatomic) NSString *backgroundSessionIdentifier; // @synthesize backgroundSessionIdentifier=_backgroundSessionIdentifier;
@@ -46,8 +45,7 @@
 @property(readonly, nonatomic) BOOL needsProxy; // @synthesize needsProxy=_needsProxy;
 @property(readonly, nonatomic) NSDictionary *additionalHTTPHeaders; // @synthesize additionalHTTPHeaders=_additionalHTTPHeaders;
 @property(copy, nonatomic) NSData *cachedData; // @synthesize cachedData=_cachedData;
-@property(readonly, nonatomic) BOOL requiresPowerPluggedIn; // @synthesize requiresPowerPluggedIn=_requiresPowerPluggedIn;
-@property(readonly, nonatomic) BOOL allowsCellularAccess; // @synthesize allowsCellularAccess=_allowsCellularAccess;
+@property(readonly, nonatomic) unsigned long long constraints; // @synthesize constraints=_constraints;
 @property(readonly, nonatomic) BOOL HTTPShouldHandleCookies; // @synthesize HTTPShouldHandleCookies=_HTTPShouldHandleCookies;
 @property(readonly, nonatomic) double timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;
 @property(readonly, copy, nonatomic) NSData *bodyData; // @synthesize bodyData=_bodyData;
@@ -58,8 +56,8 @@
 - (void).cxx_destruct;
 - (id)publicLogDescription;
 @property(readonly, copy) NSString *description;
-- (id)initWithKind:(CDStruct_d1a7ebee)arg1 URL:(id)arg2 xpcRequest:(id)arg3 auditToken:(id)arg4 timeoutInterval:(double)arg5 additionalHTTPHeaders:(id)arg6 needsProxy:(BOOL)arg7 HTTPMethod:(BOOL)arg8 bodyData:(id)arg9 HTTPShouldHandleCookies:(BOOL)arg10 allowsCellularAccess:(BOOL)arg11 requiresPowerPluggedIn:(BOOL)arg12 allowTLSSessionTicketUse:(BOOL)arg13 allowTFOUse:(BOOL)arg14 userAgent:(id)arg15 entityTag:(id)arg16 cachedData:(id)arg17 requestCounterTicket:(id)arg18 multipathServiceType:(unsigned long long)arg19 multipathAlternatePort:(unsigned long long)arg20 throttleToken:(id)arg21;
-- (id)initWithKind:(CDStruct_d1a7ebee)arg1 URL:(id)arg2 xpcRequest:(id)arg3 auditToken:(id)arg4 timeoutInterval:(double)arg5 additionalHTTPHeaders:(id)arg6 needsProxy:(BOOL)arg7 HTTPMethod:(BOOL)arg8 bodyData:(id)arg9 HTTPShouldHandleCookies:(BOOL)arg10 allowsCellularAccess:(BOOL)arg11 requiresPowerPluggedIn:(BOOL)arg12 allowTLSSessionTicketUse:(BOOL)arg13 allowTFOUse:(BOOL)arg14 userAgent:(id)arg15 entityTag:(id)arg16 cachedData:(id)arg17 requestCounterTicket:(id)arg18 multipathServiceType:(unsigned long long)arg19 multipathAlternatePort:(unsigned long long)arg20 backgroundSessionIdentifier:(id)arg21 throttleToken:(id)arg22;
+- (id)initWithKind:(CDStruct_d1a7ebee)arg1 URL:(id)arg2 xpcRequest:(id)arg3 auditToken:(id)arg4 timeoutInterval:(double)arg5 additionalHTTPHeaders:(id)arg6 needsProxy:(BOOL)arg7 HTTPMethod:(BOOL)arg8 bodyData:(id)arg9 HTTPShouldHandleCookies:(BOOL)arg10 constraints:(unsigned long long)arg11 allowTLSSessionTicketUse:(BOOL)arg12 allowTFOUse:(BOOL)arg13 userAgent:(id)arg14 entityTag:(id)arg15 cachedData:(id)arg16 requestCounterTicket:(id)arg17 multipathServiceType:(unsigned long long)arg18 multipathAlternatePort:(unsigned long long)arg19 throttleToken:(id)arg20;
+- (id)initWithKind:(CDStruct_d1a7ebee)arg1 URL:(id)arg2 xpcRequest:(id)arg3 auditToken:(id)arg4 timeoutInterval:(double)arg5 additionalHTTPHeaders:(id)arg6 needsProxy:(BOOL)arg7 HTTPMethod:(BOOL)arg8 bodyData:(id)arg9 HTTPShouldHandleCookies:(BOOL)arg10 constraints:(unsigned long long)arg11 allowTLSSessionTicketUse:(BOOL)arg12 allowTFOUse:(BOOL)arg13 userAgent:(id)arg14 entityTag:(id)arg15 cachedData:(id)arg16 requestCounterTicket:(id)arg17 multipathServiceType:(unsigned long long)arg18 multipathAlternatePort:(unsigned long long)arg19 backgroundSessionIdentifier:(id)arg20 throttleToken:(id)arg21;
 - (id)init;
 - (id)captureStateWithHints:(struct os_state_hints_s *)arg1;
 - (id)newURLRequest;

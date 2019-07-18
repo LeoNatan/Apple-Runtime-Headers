@@ -11,7 +11,6 @@
 @protocol EDMailboxChangeHookResponder <NSObject>
 
 @optional
-- (void)persistenceDidAdjustLastSyncAndMostRecentStatusCountBy:(int)arg1 forMailboxWithObjectID:(EMMailboxObjectID *)arg2;
 - (void)persistenceDidUpdateLastSyncAndMostRecentStatusCount:(int)arg1 forMailboxWithObjectID:(EMMailboxObjectID *)arg2;
 - (void)persistenceDidUpdateMostRecentStatusCount:(int)arg1 forMailboxWithObjectID:(EMMailboxObjectID *)arg2;
 - (void)persistenceDidUpdateServerCount:(int)arg1 forMailboxWithObjectID:(EMMailboxObjectID *)arg2;

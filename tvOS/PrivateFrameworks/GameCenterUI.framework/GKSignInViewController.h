@@ -69,7 +69,6 @@
 - (void).cxx_destruct;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
-- (void)keyboardDidShow:(id)arg1;
 - (void)iForgotTapped;
 - (void)createAppleID;
 - (id)viewsToAnimateOutWhileDisappearingWithBubbleFlow;
@@ -116,6 +115,7 @@
 - (_Bool)authenticationController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4;
 - (void)signInViewController:(id)arg1 didAuthenticateWithResults:(id)arg2 error:(id)arg3;
 - (void)setupAuthKitInlineViewController;
+- (id)barBackgroundImage;
 - (void)loadView;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

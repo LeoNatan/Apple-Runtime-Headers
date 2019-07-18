@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng, NSMutableArray, NSString, PBDataReader;
+@class GEOLatLng, GEOLatLngE7, NSMutableArray, NSString, PBDataReader;
 
 @interface GEOWiFiBSS : PBCodable <NSCopying>
 {
@@ -16,17 +16,23 @@
     CDStruct_30d0674c _readerMark;
     CDStruct_56d48c16 _attributes;
     NSString *_identifier;
+    GEOLatLngE7 *_latLngE7;
     GEOLatLng *_location;
     NSMutableArray *_qualities;
+    long long _uniqueIdentifier;
     struct {
+        unsigned int has_uniqueIdentifier:1;
         unsigned int read_attributes:1;
         unsigned int read_identifier:1;
+        unsigned int read_latLngE7:1;
         unsigned int read_location:1;
         unsigned int read_qualities:1;
         unsigned int wrote_attributes:1;
         unsigned int wrote_identifier:1;
+        unsigned int wrote_latLngE7:1;
         unsigned int wrote_location:1;
         unsigned int wrote_qualities:1;
+        unsigned int wrote_uniqueIdentifier:1;
     } _flags;
 }
 
@@ -43,6 +49,11 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOLatLngE7 *latLngE7;
+@property(readonly, nonatomic) _Bool hasLatLngE7;
+- (void)_readLatLngE7;
+@property(nonatomic) _Bool hasUniqueIdentifier;
+@property(nonatomic) long long uniqueIdentifier;
 - (id)qualitiesAtIndex:(unsigned int)arg1;
 - (unsigned int)qualitiesCount;
 - (void)_addNoFlagsQualities:(id)arg1;

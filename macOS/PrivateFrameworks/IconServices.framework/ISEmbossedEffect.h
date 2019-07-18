@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface ISEmbossedEffect : NSObject <ISEffect>
 {
     double _range;
@@ -19,7 +18,7 @@ __attribute__((visibility("hidden")))
 
 @property double range; // @synthesize range=_range;
 @property struct CGSize offset; // @synthesize offset=_offset;
-- (id)filterWithBackgroundFilter:(id)arg1 inputFilter:(id)arg2;
+- (id)filterWithBackgroundImage:(id)arg1 inputImage:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -27,6 +27,7 @@
     long long _swimmingStrokeStyle;
 }
 
++ (id)yogaAndRunningPrototypes;
 + (id)thirdPartyWorkoutPrototype;
 + (id)yogaPrototype;
 + (id)hikingPrototype;

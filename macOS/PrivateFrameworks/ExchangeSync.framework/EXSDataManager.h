@@ -117,6 +117,8 @@
 - (id)_createAccountMetadataForACAccount:(id)arg1;
 - (id)_loadAccountsMetadataFromDatabase;
 - (void)validateDatabaseTableStructure;
+- (BOOL)removeDatabaseFiles;
+- (id)exchangeSyncDirectory;
 - (void)shutdown;
 - (void)startup;
 - (id)init;

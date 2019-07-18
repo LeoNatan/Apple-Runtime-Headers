@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCEditorialOperation, FCFeedPersonalizedItems, FCForYouConfig, FCMyArticlesOperation, FCSpotlightOperationResult, FCTopStoriesOperation, FCTopStoriesOperationResult, FCVideoArticlesOperationResult, NFUnfairLock, NSArray, NSDictionary, NSError, NSHashTable, NSOperationQueue;
+@class FCEditorialOperation, FCForYouConfig, FCMyArticlesOperation, FCSpotlightOperationResult, FCTopStoriesOperation, FCTopStoriesOperationResult, FCVideoArticlesOperationResult, NFUnfairLock, NSArray, NSDictionary, NSError, NSHashTable, NSMapTable, NSOperationQueue;
 @protocol FCChannelProviding;
 
 @interface FCForYouCatchUpOperation : FCOperation
@@ -39,9 +39,8 @@
 @property(readonly, copy, nonatomic) FCVideoArticlesOperationResult *topVideosResult;
 - (void)enumerateEditorialSectionsByRecencyAfterTransformation:(id)arg1 minFamilySize:(unsigned long long)arg2 block:(CDUnknownBlockType)arg3;
 - (id)orphanedEditorialHeadlinesAfterTransformation:(id)arg1 minFamilySize:(unsigned long long)arg2;
-@property(readonly, copy, nonatomic) FCFeedPersonalizedItems *nonEditorialPersonalizedArticles;
+@property(readonly, copy, nonatomic) NSMapTable *nonEditorialScoreProfiles;
 @property(readonly, copy, nonatomic) NSArray *nonEditorialFeedItems;
-- (id)sortedNonEditorialFeedItemsAfterTransformation:(id)arg1;
 - (id)allNonEditorialFeedItemsAfterTransformation:(id)arg1;
 - (id)allFeedItemsAfterTransformation:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *trendingHeadlines;

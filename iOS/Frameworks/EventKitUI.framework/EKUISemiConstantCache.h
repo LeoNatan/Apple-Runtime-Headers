@@ -22,10 +22,7 @@
     UIFont *_weekAllDayLabelFontCompact;
     UIFont *_weekAllDayLabelFontRegular;
     UIFont *_weekAllDayTodayLabelFontCompact;
-    double _currentWindowWidth;
-    double _currentWindowHeight;
     double _currentScaleFactor;
-    unsigned long long _currentWindowSizeParadigm;
     double _weekAllDayOccurrenceHeight;
     double _minYearMonthHeaderFontSizeUsed;
 }
@@ -35,11 +32,7 @@
 @property double weekAllDayOccurrenceHeight; // @synthesize weekAllDayOccurrenceHeight=_weekAllDayOccurrenceHeight;
 @property double weekAllDayBaselineForSmallFormatWeekView; // @synthesize weekAllDayBaselineForSmallFormatWeekView=_weekAllDayBaselineForSmallFormatWeekView;
 @property double weekAllDayBaselineForLargeFormatWeekView; // @synthesize weekAllDayBaselineForLargeFormatWeekView=_weekAllDayBaselineForLargeFormatWeekView;
-@property(readonly) _Bool calInterfaceIsLeftToRight; // @synthesize calInterfaceIsLeftToRight=_calInterfaceIsLeftToRight;
-@property(readonly) unsigned long long currentWindowSizeParadigm; // @synthesize currentWindowSizeParadigm=_currentWindowSizeParadigm;
 @property(readonly) double currentScaleFactor; // @synthesize currentScaleFactor=_currentScaleFactor;
-@property(readonly) double currentWindowHeight; // @synthesize currentWindowHeight=_currentWindowHeight;
-@property(readonly) double currentWindowWidth; // @synthesize currentWindowWidth=_currentWindowWidth;
 @property(readonly) _Bool usesLargeText; // @synthesize usesLargeText=_usesLargeText;
 - (void).cxx_destruct;
 @property(readonly) UIFont *weekAllDayTodayLabelFontRegular;

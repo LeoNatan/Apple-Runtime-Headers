@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class CNiOSAddressBook, CNiOSAddressBookDataMapper, NSData;
+@class CNContainerCache, CNiOSAddressBook, CNiOSAddressBookDataMapper, NSData;
 
 @interface CNContactStore : NSObject
 {
+    CNContainerCache *_containerCache;
 }
 
 + (_Bool)isAccessRestrictedForEntityType:(long long)arg1;
@@ -32,6 +33,9 @@
 + (_Bool)isXPCDataMapperStore:(id)arg1;
 + (id)contactStoreForPublicAddressBook:(void *)arg1;
 + (id)_contactStoreForPublicAddressBook:(void *)arg1;
+@property(retain, nonatomic) CNContainerCache *containerCache; // @synthesize containerCache=_containerCache;
+- (void).cxx_destruct;
+- (_Bool)hasAccountFirstSyncCompleted;
 - (id)authorizedKeysForContactKeys:(id)arg1;
 - (void)requestAuthorization:(long long)arg1 entityType:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)individualContactCountWithError:(id *)arg1;

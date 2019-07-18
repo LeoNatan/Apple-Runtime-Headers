@@ -46,6 +46,8 @@
     UICollectionViewLayout *__transitionLayout;
     PUPhotosSharingTransitionContext *_photosSharingTransitionContext;
     PUAssetTransitionInfo *_assetTransitionInfo;
+    PUAssetTransitionInfo *_leadingAssetTransitionInfo;
+    PUAssetTransitionInfo *_trailingAssetTransitionInfo;
     PHAsset *__lastKnownReferenceAsset;
     NSIndexPath *__lastKnownReferenceIndexPath;
     PXAssetBadgeManager *__badgeManager;
@@ -64,6 +66,8 @@
 @property(nonatomic, getter=_isLoopingPlaybackAllowed, setter=_setLoopingPlaybackAllowed:) _Bool _loopingPlaybackAllowed; // @synthesize _loopingPlaybackAllowed=__loopingPlaybackAllowed;
 @property(retain, nonatomic, setter=_setLastKnownReferenceIndexPath:) NSIndexPath *_lastKnownReferenceIndexPath; // @synthesize _lastKnownReferenceIndexPath=__lastKnownReferenceIndexPath;
 @property(retain, nonatomic, setter=_setLastKnownReferenceAsset:) PHAsset *_lastKnownReferenceAsset; // @synthesize _lastKnownReferenceAsset=__lastKnownReferenceAsset;
+@property(retain, nonatomic) PUAssetTransitionInfo *trailingAssetTransitionInfo; // @synthesize trailingAssetTransitionInfo=_trailingAssetTransitionInfo;
+@property(retain, nonatomic) PUAssetTransitionInfo *leadingAssetTransitionInfo; // @synthesize leadingAssetTransitionInfo=_leadingAssetTransitionInfo;
 @property(retain, nonatomic) PUAssetTransitionInfo *assetTransitionInfo; // @synthesize assetTransitionInfo=_assetTransitionInfo;
 @property(retain, nonatomic) PUPhotosSharingTransitionContext *photosSharingTransitionContext; // @synthesize photosSharingTransitionContext=_photosSharingTransitionContext;
 @property(retain, nonatomic, setter=_setTransitionLayout:) UICollectionViewLayout *_transitionLayout; // @synthesize _transitionLayout=__transitionLayout;
@@ -82,6 +86,7 @@
 @property(readonly, nonatomic) NSObject<OS_os_log> *sharingLog;
 - (void)photoViewContentHelper:(id)arg1 livePhotoWillBeginPlaybackWithStyle:(long long)arg2;
 - (void)oneUpAssetTransition:(id)arg1 requestTransitionContextWithCompletion:(CDUnknownBlockType)arg2;
+- (id)_badgeTransitionInfosForCell:(id)arg1;
 - (id)adjacentVisibleAssetsTransitionInfos;
 - (id)referenceAssetTransitionInfo;
 - (struct CGRect)oneUpAssetTransitionAssetFinalFrame:(id)arg1;
@@ -133,6 +138,8 @@
 - (id)_optionViewAtIndexPath:(id)arg1 forCollectionView:(id)arg2;
 - (id)_selectionViewAtIndexPath:(id)arg1 forCollectionView:(id)arg2;
 - (void)setPhotosSharingTransitionLayout:(id)arg1 animated:(_Bool)arg2;
+- (void)_updateCellAtIndexPath:(id)arg1 withTransitionInfo:(id)arg2;
+- (void)_updateAssetTransitionInfo:(id)arg1;
 - (void)setOneUpPhotosSharingTransitionInfo:(id)arg1;
 - (void)setOneUpPhotosSharingTransitionContext:(id)arg1;
 - (id)transitionCollectionView;
@@ -154,6 +161,7 @@
 - (_Bool)isItemAtIndexPathSelected:(id)arg1;
 - (_Bool)_isAnyAssetSelected;
 - (void)_setSelected:(_Bool)arg1 atIndexPath:(id)arg2 animated:(_Bool)arg3;
+- (void)_replaceActivityAssetItem:(id)arg1 withAssetItem:(id)arg2;
 - (void)_removeActivityAssetItem:(id)arg1;
 - (void)_addActivityAssetItem:(id)arg1;
 - (id)_updatedActivityAssetItemsForAssets:(id)arg1;

@@ -62,6 +62,7 @@
 - (void)handleInvalidation;
 - (void)registerRequestIDsWithClient:(id)arg1;
 - (void)startRapport;
+- (unsigned long long)_additionalFlagsForInternal;
 - (long long)transportType;
 - (id)name;
 - (void)cancelOutstandingOperations;

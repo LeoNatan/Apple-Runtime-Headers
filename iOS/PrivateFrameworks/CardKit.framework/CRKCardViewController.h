@@ -64,6 +64,7 @@
 - (void)cardSectionViewControllerDidFinishLoading:(id)arg1;
 - (id)init;
 - (struct CGSize)preferredContentSize;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

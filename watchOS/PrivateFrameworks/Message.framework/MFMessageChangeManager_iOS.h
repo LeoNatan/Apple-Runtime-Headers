@@ -23,8 +23,7 @@
 - (id)remoteMessageForDatabaseID:(long long)arg1;
 - (id)addLabels:(id)arg1 removeLabels:(id)arg2 toMessagesInDatabase:(id)arg3;
 - (id)applyFlagChange:(id)arg1 toMessagesInDatabase:(id)arg2;
-- (void)adjustUnreadStatusCountsBy:(int)arg1 forMailboxWithURL:(id)arg2;
-- (void)setUnreadStatusCountsTo:(unsigned int)arg1 subtractFromTotalCount:(_Bool)arg2 forMailboxWithURL:(id)arg3;
+- (void)resetStatusCountsForMailboxWithURL:(id)arg1;
 - (void)displayErrorForTransferAction:(id)arg1 withResults:(id)arg2;
 - (void)actionHasChangedAccount:(id)arg1;
 - (void)checkForNewActionsInMailboxID:(long long)arg1;

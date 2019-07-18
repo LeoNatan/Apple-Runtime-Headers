@@ -16,7 +16,7 @@
 #import <VideosUI/VUIMediaItemEntityTypesFetchControllerDelegate-Protocol.h>
 #import <VideosUI/VUIMediaLibraryFetchControllerQueueDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, UIBarButtonItem, VUIDownloadDataSource, VUIDownloadViewController, VUILibraryBannerCollectionViewCell, VUILibraryListPopoverViewCell, VUILibraryMediaEntityShelvesViewModel, VUILibraryMenuItemViewCell, VUILibraryPopoverViewController, VUIMediaLibrary, _VUILibrarySeeAllController;
+@class NSArray, NSDictionary, NSString, UIBarButtonItem, VUIDownloadDataSource, VUIDownloadViewController, VUILibraryBannerCollectionViewCell, VUILibraryListPopoverViewCell, VUILibraryMediaEntityShelvesViewModel, VUILibraryMenuItemViewCell, VUILibraryPopoverViewController, VUIMediaEntitiesFetchController, VUIMediaLibrary, _VUILibrarySeeAllController;
 
 __attribute__((visibility("hidden")))
 @interface VUILibraryViewController : VUILibraryStackViewController <UICollectionViewDataSource, VUILibraryShelfCollectionViewControllerDelegate, VUIMediaItemEntityTypesFetchControllerDelegate, VUIMediaEntitiesFetchControllerDelegate, VUIMediaLibraryFetchControllerQueueDelegate, VUILibraryPopoverDataSource, VUILibraryPopoverDelegate, UIGestureRecognizerDelegate, VUIDownloadDataSourceDelegate>
@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
     _Bool _hasMenuItemFetchCompleted;
     _Bool _areLocalMediaItemsAvailable;
     _Bool _hasMediaEntitiesFetchCompleted;
-    _Bool _isUpdatingRentals;
     _Bool _hasDownloadFetchCompleted;
     _Bool _doesDeviceSupportHDR;
     _Bool _isIpad;
@@ -45,6 +44,7 @@ __attribute__((visibility("hidden")))
     VUILibraryMediaEntityShelvesViewModel *_shelvesViewModel;
     NSDictionary *_shelfTypeByFetchRequestIdentifier;
     _VUILibrarySeeAllController *_currentSeeAllController;
+    VUIMediaEntitiesFetchController *_rentalsUpdateFetchController;
     VUIDownloadDataSource *_downloadDataSource;
 }
 
@@ -54,7 +54,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool doesDeviceSupportHDR; // @synthesize doesDeviceSupportHDR=_doesDeviceSupportHDR;
 @property(nonatomic) _Bool hasDownloadFetchCompleted; // @synthesize hasDownloadFetchCompleted=_hasDownloadFetchCompleted;
 @property(retain, nonatomic) VUIDownloadDataSource *downloadDataSource; // @synthesize downloadDataSource=_downloadDataSource;
-@property(nonatomic) _Bool isUpdatingRentals; // @synthesize isUpdatingRentals=_isUpdatingRentals;
+@property(retain, nonatomic) VUIMediaEntitiesFetchController *rentalsUpdateFetchController; // @synthesize rentalsUpdateFetchController=_rentalsUpdateFetchController;
 @property(retain, nonatomic) _VUILibrarySeeAllController *currentSeeAllController; // @synthesize currentSeeAllController=_currentSeeAllController;
 @property(retain, nonatomic) NSDictionary *shelfTypeByFetchRequestIdentifier; // @synthesize shelfTypeByFetchRequestIdentifier=_shelfTypeByFetchRequestIdentifier;
 @property(nonatomic) _Bool hasMediaEntitiesFetchCompleted; // @synthesize hasMediaEntitiesFetchCompleted=_hasMediaEntitiesFetchCompleted;

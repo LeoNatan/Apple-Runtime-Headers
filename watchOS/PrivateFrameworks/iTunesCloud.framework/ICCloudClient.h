@@ -76,6 +76,7 @@
 - (void)loadUpdateProgressWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadIsUpdateInProgressWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)loadMissingArtwork;
 - (void)loadArtworkInfoForSubscriptionContainerPersistentIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadArtworkInfoForSubscriptionContainerPersistentID:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadScreenshotInfoForSubscriptionPersistentIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -75,7 +75,7 @@
 - (void)setReadHandleClosed:(BOOL)arg1;
 - (void)setReadHandleClosed;
 - (void)closeReadHandle;
-- (BOOL)readDictionary:(id *)arg1 error:(id *)arg2;
+- (BOOL)readDictionary:(id *)arg1 error:(id *)arg2 shouldDecodeClasses:(id)arg3;
 - (BOOL)writeDictionary:(id)arg1 error:(id *)arg2;
 - (BOOL)writeData:(id)arg1;
 - (id)readDataOfLength:(unsigned long long)arg1;

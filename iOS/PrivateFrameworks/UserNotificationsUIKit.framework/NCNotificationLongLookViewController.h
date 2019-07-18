@@ -36,7 +36,7 @@
 - (id)_longLookViewIfLoaded;
 - (id)_expandedPlatterPresentationViewLoadingIfNecessary:(_Bool)arg1;
 - (id)_presentingNotificationViewController;
-- (void)presentLongLookAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)presentLongLookAnimated:(_Bool)arg1 trigger:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_presentedLongLookViewController;
 - (_Bool)isLookStyleLongLook;
 - (void)customContentDidLoadExtension:(id)arg1;
@@ -73,6 +73,11 @@
 - (void)_updateTitleWithProvidedCustomContent;
 - (void)_updateWithProvidedAuxiliaryOptionsContent;
 - (void)_updateWithProvidedCustomContent;
+- (unsigned long long)_maximumNumberOfTextLinesForProvidedStaticContentWithDefaultNumber:(unsigned long long)arg1 isPrimary:(_Bool)arg2 isLarge:(_Bool)arg3;
+- (unsigned long long)_maximumNumberOfSecondaryLargeTextLinesForProvidedStaticContent;
+- (unsigned long long)_maximumNumberOfSecondaryTextLinesForProvidedStaticContent;
+- (unsigned long long)_maximumNumberOfPrimaryLargeTextLinesForProvidedStaticContent;
+- (unsigned long long)_maximumNumberOfPrimaryTextLinesForProvidedStaticContent;
 - (void)_updateWithProvidedStaticContent;
 - (void)expandedPlatterPresentable:(id)arg1 requestsDismissalWithTrigger:(long long)arg2;
 @property(readonly, nonatomic) UIView *viewForTouchContinuation;

@@ -42,7 +42,9 @@
     int _audioInterruptionProvider;
     int _audioInterruptionOperationMode;
     int _verificationStatus;
+    int _priority;
     NSString *_crossDeviceIdentifier;
+    NSString *_ISOCountryCode;
     NSUUID *_localSenderIdentityUUID;
     NSUUID *_localSenderIdentityAccountUUID;
     NSSet *_remoteParticipantHandles;
@@ -69,7 +71,9 @@
 @property(copy, nonatomic) NSSet *remoteParticipantHandles; // @synthesize remoteParticipantHandles=_remoteParticipantHandles;
 @property(copy, nonatomic) NSUUID *localSenderIdentityAccountUUID; // @synthesize localSenderIdentityAccountUUID=_localSenderIdentityAccountUUID;
 @property(copy, nonatomic) NSUUID *localSenderIdentityUUID; // @synthesize localSenderIdentityUUID=_localSenderIdentityUUID;
+@property(copy, nonatomic) NSString *ISOCountryCode; // @synthesize ISOCountryCode=_ISOCountryCode;
 @property(copy, nonatomic) NSString *crossDeviceIdentifier; // @synthesize crossDeviceIdentifier=_crossDeviceIdentifier;
+@property(nonatomic) int priority; // @synthesize priority=_priority;
 @property(nonatomic) int verificationStatus; // @synthesize verificationStatus=_verificationStatus;
 @property(nonatomic) int audioInterruptionOperationMode; // @synthesize audioInterruptionOperationMode=_audioInterruptionOperationMode;
 @property(nonatomic) int audioInterruptionProvider; // @synthesize audioInterruptionProvider=_audioInterruptionProvider;

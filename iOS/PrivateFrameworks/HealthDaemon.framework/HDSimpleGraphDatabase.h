@@ -68,7 +68,7 @@
 - (_Bool)work_doesRelationshipNameExist:(id)arg1;
 - (id)work_nodeNameForAttributeWithKeyID:(long long)arg1 value:(id)arg2 error:(id *)arg3;
 - (id)work_nodesWithRelationshipOfType:(long long)arg1 toNodeWithID:(long long)arg2 error:(id *)arg3;
-- (id)work_allNodesWithFromRelationship:(id)arg1 error:(id *)arg2;
+- (id)work_allNodesWithFromRelationshipID:(long long)arg1 error:(id *)arg2;
 - (_Bool)work_deleteAllRelationshipsWithName:(id)arg1 withError:(id *)arg2;
 - (id)work_nodesContainingAttribute:(id)arg1 withValue:(id)arg2 error:(id *)arg3;
 - (id)work_nodesContainingAttributeWithID:(long long)arg1 withValue:(id)arg2 error:(id *)arg3;
@@ -80,12 +80,14 @@
 - (id)work_nodeForName:(id)arg1;
 - (_Bool)work_doesNodeExist:(id)arg1;
 - (long long)work_countOfNodes;
+- (long long)work_countOfNodesWithRelationship:(long long)arg1 error:(id *)arg2;
 - (id)work_addNodeWithName:(id)arg1 error:(id *)arg2;
 - (id)work_makeNodeWithName:(id)arg1 error:(id *)arg2;
 - (id)work_addNodesWithNames:(id)arg1 error:(id *)arg2;
 - (long long)work_uniquedNodeWithName:(id)arg1 error:(id *)arg2;
 - (long long)work_firstRowIDForNodeNamed:(id)arg1 error:(id *)arg2;
 - (void)work_validateExistingDatabaseVersion;
+- (id)work_userVersionWithError:(id *)arg1;
 - (_Bool)work_dropIndicesWithError:(id *)arg1;
 - (_Bool)work_createIndicesIfNeededwithError:(id *)arg1;
 - (_Bool)work_createTablesIfNeededWithError:(id *)arg1;

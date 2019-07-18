@@ -21,6 +21,7 @@
 - (BOOL)isContentBlockedInStorefrontID:(id)arg1 withAllowedStorefrontIDs:(id)arg2 blockedStorefrontIDs:(id)arg3;
 - (BOOL)isContentAllowedInStorefrontID:(id)arg1 withAllowedStorefrontIDs:(id)arg2 blockedStorefrontIDs:(id)arg3;
 - (BOOL)isNewsVersionAllowed:(long long)arg1;
+@property(readonly, nonatomic) BOOL isDiagnosticsUsageEnabled;
 - (void)t_stopForcingExplicitContentDisallowed;
 - (void)t_startForcingExplicitContentDisallowed;
 @property(readonly, nonatomic) BOOL isExplicitContentAllowed;

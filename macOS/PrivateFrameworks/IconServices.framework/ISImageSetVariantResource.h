@@ -10,7 +10,6 @@
 
 @class NSMutableDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ISImageSetVariantResource : NSObject <ISVariantResourceProtocol>
 {
     NSString *_variantName;

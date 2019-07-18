@@ -15,11 +15,16 @@
     UIView *_fromView;
     UIView *_snapshotView;
     PUAssetTransitionInfo *_transitionInfo;
+    PUAssetTransitionInfo *_trailingAssetTransitionInfo;
+    PUAssetTransitionInfo *_leadingAssetTransitionInfo;
     CDUnknownBlockType _animationBlock;
 }
 
++ (id)oneUpAssetTransitionContextWithContainerView:(id)arg1 fromView:(id)arg2 snapshotView:(id)arg3 transitionInfo:(id)arg4 trailingAssetTransitionInfo:(id)arg5 leadingAssetTransitionInfo:(id)arg6;
 + (id)oneUpAssetTransitionContextWithContainerView:(id)arg1 fromView:(id)arg2 snapshotView:(id)arg3 transitionInfo:(id)arg4;
 @property(copy, nonatomic, setter=_setAnimationBlock:) CDUnknownBlockType animationBlock; // @synthesize animationBlock=_animationBlock;
+@property(retain, nonatomic, setter=_setLeadingAssetTransitionInfo:) PUAssetTransitionInfo *leadingAssetTransitionInfo; // @synthesize leadingAssetTransitionInfo=_leadingAssetTransitionInfo;
+@property(retain, nonatomic, setter=_setTrailingAssetTransitionInfo:) PUAssetTransitionInfo *trailingAssetTransitionInfo; // @synthesize trailingAssetTransitionInfo=_trailingAssetTransitionInfo;
 @property(retain, nonatomic, setter=_setTransitionInfo:) PUAssetTransitionInfo *transitionInfo; // @synthesize transitionInfo=_transitionInfo;
 @property(nonatomic, setter=_setShouldHideBackground:) _Bool shouldHideBackground; // @synthesize shouldHideBackground=_shouldHideBackground;
 @property(retain, nonatomic, setter=_setSnapshotView:) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;

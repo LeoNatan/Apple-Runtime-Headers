@@ -6,14 +6,18 @@
 
 #import <WorkflowKit/WFAction.h>
 
+@class NSDate;
+
 @interface WFLogHealthSampleAction : WFAction
 {
+    NSDate *_currentDate;
 }
 
+@property(retain, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
+- (void).cxx_destruct;
 - (void)saveObject:(id)arg1 withObjectType:(id)arg2 item:(id)arg3;
 - (void)forceUpdateSelectedUnit;
-- (void)updateQuantityEnumeration;
-- (void)updateCategoryEnumeration;
+- (void)updateParameterStates;
 - (_Bool)setParameterState:(id)arg1 forKey:(id)arg2;
 - (void)resourceAvailabilityChanged;
 - (void)wasRemovedFromWorkflow:(id)arg1;

@@ -13,6 +13,7 @@
 @protocol PXDisplayAsset;
 
 @interface PHFetchResult (PXDisplayAssetAdoption) <PXDisplayAssetFetchResult, PXPeopleFetchResult>
+- (id)thumbnailAssetAtIndex:(unsigned long long)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) long long count;

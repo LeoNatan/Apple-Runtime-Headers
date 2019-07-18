@@ -46,7 +46,7 @@
 @property(retain, nonatomic) NSArray *level1Topics; // @synthesize level1Topics=_level1Topics;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-@property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
+@property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (void)discardCompleter:(id)arg1;
 - (void)logTransactionSuccessfulForInput:(id)arg1 completion:(id)arg2;

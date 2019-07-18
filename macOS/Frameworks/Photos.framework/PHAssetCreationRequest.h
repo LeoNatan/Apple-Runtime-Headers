@@ -9,7 +9,7 @@
 #import <Photos/PHInsertChangeRequest-Protocol.h>
 #import <Photos/PHMomentSharePropertySet-Protocol.h>
 
-@class NSDictionary, NSManagedObjectID, NSMutableArray, NSMutableDictionary, NSString, PHAssetCreationAdjustmentBakeInOptions, PHAssetCreationPhotoStreamPublishingRequest, PHAssetResourceBag, PHMomentShare, PHRelationshipChangeRequestHelper;
+@class NSData, NSDictionary, NSManagedObjectID, NSMutableArray, NSMutableDictionary, NSString, PHAssetCreationAdjustmentBakeInOptions, PHAssetCreationPhotoStreamPublishingRequest, PHAssetResourceBag, PHMomentShare, PHRelationshipChangeRequestHelper, PLManagedAsset;
 
 @interface PHAssetCreationRequest : PHAssetChangeRequest <PHInsertChangeRequest, PHMomentSharePropertySet>
 {
@@ -18,6 +18,12 @@
     NSMutableDictionary *_movedFiles;
     BOOL _duplicateAllowsPrivateMetadata;
     BOOL _shouldCreateScreenshot;
+    CDUnknownBlockType _concurrentWorkBlock;
+    PLManagedAsset *_asset;
+    struct NSObject *_previewImage;
+    struct NSObject *_thumbnailImage;
+    NSData *_originalHash;
+    BOOL _shouldPerformConcurrentWork;
     BOOL _duplicateLivePhotoAsStill;
     BOOL _duplicateAsOriginal;
     BOOL _duplicateSinglePhotoFromBurst;
@@ -57,6 +63,7 @@
 @property(nonatomic, setter=_setDuplicateAssetPhotoLibraryType:) unsigned short duplicateAssetPhotoLibraryType; // @synthesize duplicateAssetPhotoLibraryType=_duplicateAssetPhotoLibraryType;
 @property(retain, nonatomic, setter=_setDuplicateAssetIdentifier:) NSString *duplicateAssetIdentifier; // @synthesize duplicateAssetIdentifier=_duplicateAssetIdentifier;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *momentShareHelper; // @synthesize momentShareHelper=_momentShareHelper;
+@property(nonatomic) BOOL shouldPerformConcurrentWork; // @synthesize shouldPerformConcurrentWork=_shouldPerformConcurrentWork;
 @property(retain, nonatomic) NSString *momentShareUUID; // @synthesize momentShareUUID=_momentShareUUID;
 @property(retain, nonatomic) PHMomentShare *momentShare; // @synthesize momentShare=_momentShare;
 @property(retain, nonatomic, setter=_setPhotoStreamPublishingRequest:) PHAssetCreationPhotoStreamPublishingRequest *_photoStreamPublishingRequest; // @synthesize _photoStreamPublishingRequest=__photoStreamPublishingRequest;
@@ -86,7 +93,12 @@
 - (id)initWithHelper:(id)arg1;
 - (id)initForNewObjectWithUUID:(id)arg1;
 - (id)initForNewObject;
+- (void)finalizeRequestWithBatchSuccess:(BOOL)arg1;
+@property(readonly, nonatomic) CDUnknownBlockType concurrentWorkBlock;
+- (BOOL)needsConcurrentWork;
 - (id)createAssetFromValidatedResources:(id)arg1 withUUID:(id)arg2 inPhotoLibrary:(id)arg3 error:(id *)arg4;
+- (id)_sourceOptionsForCreateThumbnailWithAsset:(id)arg1 hasAdjustments:(BOOL)arg2;
+- (void)_setupConcurrentWorkIfNecessaryWithImageSource:(struct CGImageSource *)arg1 originalImageData:(id)arg2;
 - (void)_pairLivePhotoResource:(id)arg1 withAssetInLibrary:(id)arg2 metadata:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)_externalLivePhotoResourceForAsset:(id)arg1;
 - (BOOL)_writeDataToDisk:(id)arg1 imageUTIType:(id)arg2 exifProperties:(id)arg3 mainFileURL:(id)arg4 thumbnailData:(id)arg5;

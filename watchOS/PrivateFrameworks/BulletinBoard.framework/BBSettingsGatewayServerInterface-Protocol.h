@@ -9,6 +9,7 @@
 @class BBSectionInfo, NSSet, NSString;
 
 @protocol BBSettingsGatewayServerInterface <NSObject>
+- (void)getSectionIDsWithHandler:(void (^)(NSArray *, NSError *))arg1;
 - (void)setSectionInfo:(BBSectionInfo *)arg1 forSectionID:(NSString *)arg2 withHandler:(void (^)(void))arg3;
 - (void)setSectionInfo:(BBSectionInfo *)arg1 forSectionID:(NSString *)arg2;
 - (void)getEffectiveSectionInfoForSectionIDs:(NSSet *)arg1 withHandler:(void (^)(NSArray *))arg2;

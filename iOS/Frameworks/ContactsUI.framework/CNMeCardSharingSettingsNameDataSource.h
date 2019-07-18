@@ -13,25 +13,21 @@
 __attribute__((visibility("hidden")))
 @interface CNMeCardSharingSettingsNameDataSource : NSObject <CNMeCardSharingSectionDataSource>
 {
-    NSString *_formattedName;
     CNContact *_contact;
     NSArray *_items;
+    NSString *_formattedName;
 }
 
-+ (id)descriptorForRequiredKeys;
+@property(retain, nonatomic) NSString *formattedName; // @synthesize formattedName=_formattedName;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-@property(retain, nonatomic) NSString *formattedName; // @synthesize formattedName=_formattedName;
 - (void).cxx_destruct;
 - (void)didSelectItemAtIndex:(unsigned long long)arg1;
 - (id)itemForIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfItems;
 - (id)sectionFooterLabel;
 - (id)sectionHeaderLabel;
-- (void)reloadItems;
-- (void)updateForChangedName;
 - (_Bool)supportsSelection;
-- (id)initWithContact:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

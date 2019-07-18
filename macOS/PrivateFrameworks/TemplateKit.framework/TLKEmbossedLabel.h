@@ -32,6 +32,7 @@
 - (void)viewDidMoveToWindow;
 - (void)viewDidChangeEffectiveAppearance;
 - (BOOL)allowsVibrancy;
+@property(nonatomic) BOOL adjustsFontSizeToFitWidth;
 - (void)observedPropertiesChanged;
 - (void)setText:(id)arg1 font:(id)arg2 customInsets:(struct NSEdgeInsets)arg3 badge:(BOOL)arg4;
 - (id)init;

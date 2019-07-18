@@ -69,8 +69,7 @@
 + (id)sampleFaceOfStyle:(int)arg1 forDevice:(id)arg2 differentFromFaces:(id)arg3;
 + (id)defaultFaceOfStyle:(int)arg1 forDevice:(id)arg2 initCustomization:(CDUnknownBlockType)arg3;
 + (id)defaultFaceOfStyle:(int)arg1 forDevice:(id)arg2;
-+ (id)allowedComplicationTypesForSlot:(id)arg1;
-+ (id)allowedComplicationTypesFromDescriptors:(id)arg1 slot:(id)arg2;
++ (id)possibleComplicationTypesForSlot:(id)arg1;
 + (void)enumerateComplicationSlotsWithBlock:(CDUnknownBlockType)arg1;
 + (void)enumerateComplicationSlots:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 + (_Bool)customEditMode:(int)arg1 hasActionForOption:(id)arg2 forDevice:(id)arg3;
@@ -164,6 +163,7 @@
 - (void)performCustomSwitcherSelectionAction;
 - (_Bool)hasCustomSwitcherSelectionAction;
 - (void)_updateComplicationTombstones;
+- (id)_disabledComplicationTypesIndexSet;
 - (_Bool)hasComplicationsOfType:(unsigned int)arg1 forSlot:(id)arg2;
 - (id)_allowedComplicationsOfType:(unsigned int)arg1 forSlot:(id)arg2;
 - (void)clearComplicationTombstones;
@@ -171,9 +171,10 @@
 - (id)allowedComplicationsForSlot:(id)arg1;
 - (id)possibleComplicationTypesForSlot:(id)arg1;
 - (id)allowedComplicationTypesForSlot:(id)arg1;
+- (id)allowedComplicationTypesFromDescriptors:(id)arg1 slot:(id)arg2;
 - (int)complicationFamilyForSlot:(id)arg1;
 - (_Bool)isFullscreenConfiguration;
-- (id)_allVisibleComplicationsForCurrentConfiguration;
+- (id)allVisibleComplicationsForCurrentConfiguration;
 - (id)_allComplications;
 - (void)enumerateVisibleComplicationSlotsForCurrentConfigurationWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateComplicationSlotsWithBlock:(CDUnknownBlockType)arg1;

@@ -25,6 +25,8 @@
 + (id)standardFolderIdentifierWithPrefix:(id)arg1 accountIdentifier:(id)arg2 accountType:(int)arg3;
 + (void)localeDidChange:(id)arg1;
 + (void)initialize;
++ (void)setAccountUtilities:(id)arg1;
++ (id)accountUtilities;
 + (BOOL)hasActiveCloudKitAccountInContext:(id)arg1;
 + (id)accountsMatchingPredicate:(id)arg1 context:(id)arg2;
 + (id)localizedLocalAccountNameMidSentence;
@@ -94,7 +96,7 @@
 - (id)mediaDirectoryURL;
 - (id)fallbackImageDirectoryURL;
 - (id)accountFilesDirectoryURL;
-- (BOOL)shouldExcludeFilesFromBackup;
+- (BOOL)shouldExcludeFilesFromCloudBackup;
 - (id)allChildObjects;
 - (id)allItemsFolderLocalizedTitle;
 - (id)folderWithIdentifier:(id)arg1;
@@ -141,6 +143,7 @@
 - (void)awakeFromInsert;
 - (void)awakeFromFetch;
 - (id)cacheKey;
+@property(readonly, nonatomic) BOOL isManaged;
 - (id)newlyCreatedRecord;
 - (void)mergeDataFromRecord:(id)arg1 accountID:(id)arg2;
 - (BOOL)shouldBeDeletedFromLocalDatabase;

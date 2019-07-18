@@ -72,9 +72,11 @@ __attribute__((visibility("hidden")))
 - (void)showCandidates:(id)arg1 forString:(id)arg2 inRect:(struct CGRect)arg3 view:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)setCandidates:(id)arg1 forSelectedRange:(struct _NSRange)arg2 inString:(id)arg3 rect:(struct CGRect)arg4 view:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)setCandidates:(id)arg1 forSelectedRange:(struct _NSRange)arg2 inString:(id)arg3;
+- (void)setCandidates:(id)arg1 forSelectedRange:(struct _NSRange)arg2 offset:(unsigned long long)arg3 inString:(id)arg4 rect:(struct CGRect)arg5 view:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)setCandidates:(id)arg1 forSelectedRange:(struct _NSRange)arg2 inString:(id)arg3 replacedString:(id)arg4 rect:(struct CGRect)arg5 view:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
+- (void)setCandidates:(id)arg1 forSelectedRange:(struct _NSRange)arg2 offset:(unsigned long long)arg3 inString:(id)arg4 replacedString:(id)arg5 rect:(struct CGRect)arg6 view:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)_setNonTextCheckingResultCandidates:(id)arg1;
-- (void)_setTextCheckingResultCandidates:(id)arg1 forSelectedRange:(struct _NSRange)arg2 inString:(id)arg3 replacedString:(id)arg4;
+- (void)_setTextCheckingResultCandidates:(id)arg1 forSelectedRange:(struct _NSRange)arg2 offset:(unsigned long long)arg3 inString:(id)arg4 replacedString:(id)arg5;
 - (id)_replacementStringForRange:(struct _NSRange)arg1 inString:(id)arg2 firstCandidateString:(id)arg3;
 - (id)_stringForCandidate:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)_compositeCandidateForCandidate:(id)arg1 atIndex:(unsigned long long)arg2 addQuotes:(BOOL)arg3 isCorrection:(BOOL)arg4 isEmoji:(BOOL)arg5;

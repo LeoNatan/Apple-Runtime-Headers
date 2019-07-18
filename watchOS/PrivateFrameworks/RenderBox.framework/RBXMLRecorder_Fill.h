@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)set9PartImage:(struct CGImage *)arg1 transform:(struct CGAffineTransform)arg2 destinationRect:(struct CGRect)arg3 capInsets:(CDStruct_0b1c536a)arg4 repeat:(_Bool)arg5 interpolation:(int)arg6 tintColor:(CDStruct_0b1c536a)arg7 flags:(unsigned int)arg8;
-- (void)setTiledImage:(struct CGImage *)arg1 transform:(struct CGAffineTransform)arg2 sourceRect:(struct CGRect)arg3 interpolation:(int)arg4 tintColor:(CDStruct_0b1c536a)arg5 flags:(unsigned int)arg6;
-- (void)setImage:(struct CGImage *)arg1 transform:(struct CGAffineTransform)arg2 interpolation:(int)arg3 tintColor:(CDStruct_0b1c536a)arg4 flags:(unsigned int)arg5;
+- (void)set9PartRBImage:(CDStruct_27041886)arg1 transform:(struct CGAffineTransform)arg2 destinationRect:(struct CGRect)arg3 capInsets:(CDStruct_0b1c536a)arg4 repeat:(_Bool)arg5 interpolation:(int)arg6 tintColor:(CDStruct_0b1c536a)arg7 flags:(unsigned int)arg8;
+- (void)setTiledRBImage:(CDStruct_27041886)arg1 transform:(struct CGAffineTransform)arg2 sourceRect:(struct CGRect)arg3 interpolation:(int)arg4 tintColor:(CDStruct_0b1c536a)arg5 flags:(unsigned int)arg6;
+- (void)setRBImage:(CDStruct_27041886)arg1 transform:(struct CGAffineTransform)arg2 interpolation:(int)arg3 tintColor:(CDStruct_0b1c536a)arg4 flags:(unsigned int)arg5;
 - (void)setConicGradientCenter:(struct CGPoint)arg1 angle:(double)arg2 stopCount:(int)arg3 colors:(const CDStruct_0b1c536a *)arg4 locations:(const float *)arg5 flags:(unsigned int)arg6;
 - (void)setRadialGradientCenter:(struct CGPoint)arg1 startRadius:(float)arg2 endRadius:(float)arg3 stopCount:(int)arg4 colors:(const CDStruct_0b1c536a *)arg5 locations:(const float *)arg6 flags:(unsigned int)arg7;
 - (void)setAxialGradientStartPoint:(struct CGPoint)arg1 endPoint:(struct CGPoint)arg2 stopCount:(int)arg3 colors:(const CDStruct_0b1c536a *)arg4 locations:(const float *)arg5 flags:(unsigned int)arg6;

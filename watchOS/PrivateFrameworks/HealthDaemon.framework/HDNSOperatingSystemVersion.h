@@ -13,7 +13,7 @@
 
 + (id)unknownVersion;
 + (id)versionWithMajor:(int)arg1 minor:(int)arg2 patch:(int)arg3;
-@property CDStruct_4bb15e50 versionStruct; // @synthesize versionStruct=_versionStruct;
+@property CDStruct_77932685 versionStruct; // @synthesize versionStruct=_versionStruct;
 
 @end
 

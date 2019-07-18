@@ -11,5 +11,6 @@
 
 @protocol CalBackgroundTaskAgentReceiver <NSObject>
 - (void)handleBTAJob:(NSObject<OS_xpc_object> *)arg1 named:(const char *)arg2;
+- (void)didRegisterForBackgroundTaskAgentJobs;
 @end
 

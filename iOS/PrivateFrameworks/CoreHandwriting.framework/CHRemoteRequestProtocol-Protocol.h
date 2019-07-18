@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class CHRemoteRecognitionRequest;
+@class CHRemoteRecognitionRequest, CHTokenizedTextResult;
 
 @protocol CHRemoteRequestProtocol
+- (void)transcriptionPathsForTokenizedResult:(CHTokenizedTextResult *)arg1 recognitionRequest:(CHRemoteRecognitionRequest *)arg2 withReply:(void (^)(NSArray *, NSArray *, NSError *))arg3;
 - (void)handleRecognitionRequest:(CHRemoteRecognitionRequest *)arg1 withReply:(void (^)(CHTokenizedTextResult *, NSError *))arg2;
 @end
 

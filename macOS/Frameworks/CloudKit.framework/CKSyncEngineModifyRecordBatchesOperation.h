@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _perRecordSaveCompletionBlock;
     CDUnknownBlockType _batchCompletionBlock;
     CDUnknownBlockType _modifyRecordBatchesCompletionBlock;
-    CDUnknownBlockType _didEnqueueOperationBlock;
+    CDUnknownBlockType _willEnqueueOperationBlock;
     NSError *_error;
     NSOperationQueue *_operationQueue;
 }
@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL isExecuting; // @synthesize isExecuting=_isExecuting;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-@property(copy, nonatomic) CDUnknownBlockType didEnqueueOperationBlock; // @synthesize didEnqueueOperationBlock=_didEnqueueOperationBlock;
+@property(copy, nonatomic) CDUnknownBlockType willEnqueueOperationBlock; // @synthesize willEnqueueOperationBlock=_willEnqueueOperationBlock;
 @property(copy, nonatomic) CDUnknownBlockType modifyRecordBatchesCompletionBlock; // @synthesize modifyRecordBatchesCompletionBlock=_modifyRecordBatchesCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType batchCompletionBlock; // @synthesize batchCompletionBlock=_batchCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType perRecordSaveCompletionBlock; // @synthesize perRecordSaveCompletionBlock=_perRecordSaveCompletionBlock;

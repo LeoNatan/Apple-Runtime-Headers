@@ -40,7 +40,6 @@
 @property(readonly, copy, nonatomic) NSString *pageRole;
 - (unsigned long long)dateTimeLayout;
 - (void)updateTransitionWhileRubberBandingInProgress:(_Bool)arg1;
-- (_Bool)isWidgetExtensionWithIdentifierVisible:(id)arg1;
 - (id)displayLayoutElementIdentifier;
 - (void)aggregateBehavior:(id)arg1;
 - (void)aggregateAppearance:(id)arg1;

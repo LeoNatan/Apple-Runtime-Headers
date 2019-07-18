@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UICollectionViewCell.h>
 
-@class NSLayoutConstraint, UIImageView, UIView, _UIActivityActionCellTitleLabel, _UIHostActivityProxy;
+@class NSLayoutConstraint, UIImageView, UIView, UIVisualEffectView, _UIActivityActionCellTitleLabel, _UIHostActivityProxy;
 
 @interface UIActivityActionGroupCell : UICollectionViewCell
 {
@@ -16,18 +16,23 @@
     UIImageView *_activityImageView;
     UIView *_activitySlotView;
     UIView *_titleSlotView;
-    _UIHostActivityProxy *_activityProxy;
     UIView *_platterView;
+    _UIHostActivityProxy *_activityProxy;
+    UIVisualEffectView *_effectView;
+    UIView *_fillView;
 }
 
-@property(retain, nonatomic) UIView *platterView; // @synthesize platterView=_platterView;
+@property(retain, nonatomic) UIView *fillView; // @synthesize fillView=_fillView;
+@property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(retain, nonatomic) _UIHostActivityProxy *activityProxy; // @synthesize activityProxy=_activityProxy;
+@property(retain, nonatomic) UIView *platterView; // @synthesize platterView=_platterView;
 @property(retain, nonatomic) UIView *titleSlotView; // @synthesize titleSlotView=_titleSlotView;
 @property(retain, nonatomic) UIView *activitySlotView; // @synthesize activitySlotView=_activitySlotView;
 @property(retain, nonatomic) UIImageView *activityImageView; // @synthesize activityImageView=_activityImageView;
 @property(retain, nonatomic) _UIActivityActionCellTitleLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) unsigned long long sequence; // @synthesize sequence=_sequence;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)prepareForReuse;

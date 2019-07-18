@@ -9,22 +9,30 @@
 #import <PhotosUI/PUBrowsingViewModelChangeObserver-Protocol.h>
 #import <PhotosUI/PXChangeObserver-Protocol.h>
 
-@class NSString, PUBrowsingViewModel, PUMergedLivePhotosVideo, PUMergedLivePhotosVideoRequest;
+@class ISLivePhotoPlayer, NSError, NSString, PUBrowsingViewModel, PUMergedLivePhotosVideo, PUMergedLivePhotosVideoRequest;
 
 __attribute__((visibility("hidden")))
 @interface PUOneUpMergedVideoProvider : PXObservable <PUBrowsingViewModelChangeObserver, PXChangeObserver>
 {
     PUBrowsingViewModel *_browsingViewModel;
     PUMergedLivePhotosVideo *_mergedVideo;
+    ISLivePhotoPlayer *_livePhotoPlayer;
+    NSError *_error;
+    long long _state;
     PUMergedLivePhotosVideoRequest *_currentRequest;
 }
 
 @property(retain, nonatomic) PUMergedLivePhotosVideoRequest *currentRequest; // @synthesize currentRequest=_currentRequest;
+@property(nonatomic) long long state; // @synthesize state=_state;
+@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
+@property(readonly, nonatomic) ISLivePhotoPlayer *livePhotoPlayer; // @synthesize livePhotoPlayer=_livePhotoPlayer;
 @property(retain, nonatomic) PUMergedLivePhotosVideo *mergedVideo; // @synthesize mergedVideo=_mergedVideo;
 @property(readonly, nonatomic) PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
 - (void).cxx_destruct;
-- (void)_updateMergedVideo;
-- (void)_updateMergedVideoRequest;
+- (void)_updateLivePhotoPlayerItem;
+- (void)setError:(id)arg1;
+- (void)_handleRequestChanges:(id)arg1;
+- (void)_handleViewModelChanges;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (id)mutableChangeObject;

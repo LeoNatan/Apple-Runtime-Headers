@@ -10,12 +10,12 @@
 #import <PassKitUI/PKExplanationViewDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentAuthorizationCoordinatorDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentAuthorizationCoordinatorPrivateDelegate-Protocol.h>
-#import <PassKitUI/PKPaymentSetupRequiresPreflightProtocol-Protocol.h>
+#import <PassKitUI/PKViewControllerPreflightable-Protocol.h>
 
 @class CLInUseAssertion, CNPostalAddress, NSString, PKBusinessChatController, PKOrderPhysicalCardController, PKOrderPhysicalCardHeroView, PKPaymentAuthorizationCoordinator, PKPhysicalCardArtworkOption;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKOrderPhysicalCardAddressConfirmationViewController : PKExplanationViewController <PKExplanationViewDelegate, PKExplanationViewControllerDelegate, PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKPaymentSetupRequiresPreflightProtocol>
+@interface PKOrderPhysicalCardAddressConfirmationViewController : PKExplanationViewController <PKExplanationViewDelegate, PKExplanationViewControllerDelegate, PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKViewControllerPreflightable>
 {
     PKOrderPhysicalCardController *_controller;
     unsigned int _featureIdentifier;
@@ -45,6 +45,7 @@
 - (id)_addressBodyStringWithPostalAddress:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)dealloc;
 - (id)initWithOrderPhysicalCardController:(id)arg1;
 
 // Remaining properties

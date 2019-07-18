@@ -28,7 +28,9 @@
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
-- (double)_maxTextWidth;
+- (struct _textSizeResult)_textSizeForSubtitle;
+- (struct _textSizeResult)_textSizeForTitle;
+- (struct _textSizeResult)_textSizeForLabel:(id)arg1 lines:(long long)arg2 minWidth:(double)arg3 step:(double)arg4 maxWidth:(double)arg5;
 - (void)_updateColorsForUserInterfaceStyle:(long long)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;

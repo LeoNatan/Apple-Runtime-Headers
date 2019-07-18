@@ -6,7 +6,7 @@
 
 #import <Contacts/CNContainer.h>
 
-@class NSData, NSString;
+@class NSData, NSDate, NSString;
 
 @interface CNMutableContainer : CNContainer
 {
@@ -16,6 +16,7 @@
 - (id)freeze;
 - (void)adoptValuesFromAndSetSnapshot:(id)arg1;
 - (void)setSnapshot:(id)arg1;
+@property(copy, nonatomic) NSDate *lastSyncDate;
 - (void)setGuardianRestricted:(_Bool)arg1 shouldPushChangeToServer:(_Bool)arg2;
 @property(nonatomic, getter=isGuardianStateDirty) _Bool guardianStateDirty;
 - (void)setParentallyManaged:(_Bool)arg1;

@@ -16,6 +16,7 @@
     CALayer *_fullscreenLayer;
     CLKDevice *_device;
     UIColor *_color;
+    unsigned int _style;
 }
 
 - (void).cxx_destruct;

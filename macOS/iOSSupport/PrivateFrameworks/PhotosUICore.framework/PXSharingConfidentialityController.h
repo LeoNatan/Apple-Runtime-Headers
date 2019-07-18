@@ -14,6 +14,7 @@
 + (id)confidentialityWarningMessage;
 + (id)confidentialityWarningTitle;
 + (BOOL)confidentialityCheckRequired;
++ (BOOL)confidentialWarningRequiredForShareableSelection:(id)arg1;
 + (BOOL)confidentialWarningRequiredForAssetReferences:(id)arg1;
 + (BOOL)confidentialWarningRequiredForAssets:(id)arg1;
 + (BOOL)confidentialWarningRequiredForAsset:(id)arg1;

@@ -14,11 +14,16 @@
 {
     ISImageBag *_imageBag;
     CUICatalog *_catalog;
-    NSString *_name;
+    NSString *_imageName;
+    NSString *_symbolName;
 }
 
++ (id)assetCatalogResourceWithURL:(id)arg1 imageName:(id)arg2 symbolName:(id)arg3 error:(id *)arg4;
++ (id)coreGlyphsCatalog;
++ (id)assetCatalogResourceWithURL:(id)arg1 symbolName:(id)arg2 error:(id *)arg3;
 + (id)assetCatalogResourceWithURL:(id)arg1 imageName:(id)arg2 error:(id *)arg3;
-@property(readonly) NSString *name; // @synthesize name=_name;
+@property(readonly) NSString *symbolName; // @synthesize symbolName=_symbolName;
+@property(readonly) NSString *imageName; // @synthesize imageName=_imageName;
 @property(readonly) CUICatalog *catalog; // @synthesize catalog=_catalog;
 - (void).cxx_destruct;
 @property(readonly, getter=isPrecomposed) _Bool precomposed;
@@ -27,7 +32,9 @@
 - (id)imageWithName:(id)arg1 scale:(float)arg2;
 - (id)multisizedImageWithName:(id)arg1 size:(struct CGSize)arg2 scale:(float)arg3;
 - (int)deviceIdiomWithName:(id)arg1;
-- (id)initWithCatalog:(id)arg1 imageName:(id)arg2;
+- (id)initWithCatalog:(id)arg1 imageName:(id)arg2 symbolName:(id)arg3;
+- (id)symbolImageForFontSize:(float)arg1 scale:(float)arg2 symbolSize:(unsigned int)arg3 symbolWeight:(int)arg4;
+- (id)symbolImageForSize:(struct CGSize)arg1 scale:(float)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

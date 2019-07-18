@@ -14,7 +14,8 @@
     id <GKLeaderboardViewControllerDelegate> _leaderboardDelegate;
 }
 
-@property(nonatomic) id <GKLeaderboardViewControllerDelegate> leaderboardDelegate; // @synthesize leaderboardDelegate=_leaderboardDelegate;
+@property(nonatomic) __weak id <GKLeaderboardViewControllerDelegate> leaderboardDelegate; // @synthesize leaderboardDelegate=_leaderboardDelegate;
+- (void).cxx_destruct;
 - (void)notifyDelegateOnWillFinish;
 @property(copy, nonatomic) NSString *category;
 @property(nonatomic) long long timeScope;

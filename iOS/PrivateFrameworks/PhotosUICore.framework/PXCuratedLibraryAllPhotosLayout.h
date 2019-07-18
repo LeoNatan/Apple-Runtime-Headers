@@ -19,7 +19,8 @@
 
 @interface PXCuratedLibraryAllPhotosLayout : PXGSplitLayout <PXAssetsDataSourceManagerObserver, PXChangeObserver, PXCuratedLibraryViewModelPresenter, PXGDisplayAssetSource, PXCuratedLibraryInlineHeadersLayoutGeometrySource, PXGItemsLayoutDelegate, PXCuratedLibraryBodyLayout>
 {
-    CDStruct_d97c9657 _updateFlags;
+    CDStruct_d97c9657 _preUpdateFlags;
+    CDStruct_d97c9657 _postUpdateFlags;
     PXGZoomLayout *_zoomLayout;
     PXGPinchEffect *_pinchEffect;
     unsigned int _pinchEffectCaptureSpriteIndex;
@@ -45,6 +46,8 @@
     NSDateInterval *_lastReturnedDateInterval;
     NSArray *_lastReturnedLocationNames;
     _Bool _performedInitialVisualShift;
+    long long _visuallyStableAnchorItem;
+    long long _visuallyStableAnchorItemDesiredColumn;
     _Bool _shouldAnimateTowardsAnchor;
     _Bool _wasTracking;
     PXCuratedLibraryLayoutSpec *_spec;
@@ -81,7 +84,7 @@
 - (id)displayAssetRequestObserverForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (id)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(struct PXGItemsLayout *)arg2;
 - (struct CGSize)minSpriteSizeForPresentationStyle:(unsigned long long)arg1;
-@property(readonly, nonatomic) unsigned long long supportedDisplayAssetPresentationStyles;
+- (unsigned long long)supportedDisplayAssetPresentationStylesInLayout:(struct PXGItemsLayout *)arg1;
 - (CDUnknownBlockType)locationNamesFutureForContentInRect:(struct CGRect)arg1;
 - (CDUnknownBlockType)dateIntervalFutureForContentInRect:(struct CGRect)arg1;
 - (_Bool)_layoutWantsSingleDateTitle;
@@ -116,7 +119,7 @@
 - (_Bool)_layoutIsAspectFit:(struct PXGItemsLayout *)arg1;
 - (void)_configureLayout:(struct PXGItemsLayout *)arg1;
 - (struct PXGItemsLayout *)_createLayoutWithNumberOfColumns:(long long)arg1;
-- (struct CGSize)_scaleForLayout:(struct PXGItemsLayout *)arg1 stickEdges:(_Bool)arg2;
+- (struct CGSize)_scaleForLayout:(struct PXGItemsLayout *)arg1;
 - (unsigned long long)zoomBehavior;
 - (_Bool)isAnimating;
 - (id)hitTestResultForSpriteIndex:(unsigned int)arg1;

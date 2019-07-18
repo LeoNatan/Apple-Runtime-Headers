@@ -8,19 +8,21 @@
 
 #import <KeyboardArbiter/_UIKeyboardArbiterLink-Protocol.h>
 
-@class NSString, SBUIScene, SBUIWorkspace, _UIKeyboardArbiter;
+@class FBSScene, FBSSceneClientSettings, NSString, _UIKeyboardArbiter;
+@protocol OS_dispatch_queue;
 
 @interface _UIKeyboardArbiter_ForSpringBoard : NSObject <_UIKeyboardArbiterLink>
 {
-    SBUIWorkspace *_workspace;
-    SBUIScene *_scene;
+    FBSScene *_scene;
+    FBSSceneClientSettings *_clientSettings;
+    NSObject<OS_dispatch_queue> *_queue;
     _UIKeyboardArbiter *owner;
 }
 
 + (void)launch;
 @property(nonatomic) __weak _UIKeyboardArbiter *owner; // @synthesize owner;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
+- (id)_createSceneWithIdentifier:(id)arg1 initialClientSettings:(id)arg2;
 - (void)detach:(id)arg1;
 - (void)attach:(id)arg1;
 - (void)updateSceneSettings;
@@ -28,6 +30,7 @@
 - (void)connectWithQueue:(id)arg1;
 @property(readonly, nonatomic) _Bool isAvailable;
 @property(readonly, nonatomic) NSString *serviceName;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 
 // Remaining properties

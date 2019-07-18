@@ -8,6 +8,7 @@
 
 @interface INRunWorkflowIntent (Workflow)
 - (id)workflowForIntentInDatabase:(id)arg1;
+- (id)initWithWorkflowReference:(id)arg1 includeIcon:(BOOL)arg2;
 - (id)initWithWorkflowReference:(id)arg1;
 @end
 

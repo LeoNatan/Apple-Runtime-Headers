@@ -12,16 +12,14 @@
     long long _orientation;
     double _interitemSpacing;
     double _defaultSectionAspectRatio;
-    double _alternateHorizontalPadding;
     double _chapterHeaderHeight;
-    struct UIEdgeInsets _defaultPadding;
+    struct UIEdgeInsets _padding;
     struct UIEdgeInsets _chapterHeaderPadding;
 }
 
 @property(nonatomic) struct UIEdgeInsets chapterHeaderPadding; // @synthesize chapterHeaderPadding=_chapterHeaderPadding;
 @property(nonatomic) double chapterHeaderHeight; // @synthesize chapterHeaderHeight=_chapterHeaderHeight;
-@property(nonatomic) double alternateHorizontalPadding; // @synthesize alternateHorizontalPadding=_alternateHorizontalPadding;
-@property(nonatomic) struct UIEdgeInsets defaultPadding; // @synthesize defaultPadding=_defaultPadding;
+@property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) double defaultSectionAspectRatio; // @synthesize defaultSectionAspectRatio=_defaultSectionAspectRatio;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;

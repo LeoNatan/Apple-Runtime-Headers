@@ -35,6 +35,7 @@
 - (void)saveState;
 - (id)objectIDsFromSearchableItems:(id)arg1;
 - (void)stageObjectIDURIsForIndexing:(id)arg1;
+- (void)clearObjectIDsToProcess;
 - (void)stageForReindexing;
 - (void)searchIndexerDidFinishDeletingSearchableItemsWithObjectIDURIs:(id)arg1 error:(id)arg2;
 - (void)searchIndexerWillDeleteSearchableItemsWithObjectIDURIs:(id)arg1;

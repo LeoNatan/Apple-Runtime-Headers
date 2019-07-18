@@ -9,7 +9,7 @@
 #import <WorkflowKit/NSCopying-Protocol.h>
 #import <WorkflowKit/WFVariableDelegate-Protocol.h>
 
-@class UIFont, UIImage, WFVariable;
+@class UIFont, WFVariable, WFVariableAttachmentCell;
 
 @interface WFVariableAttachment : NSTextAttachment <WFVariableDelegate, NSCopying>
 {
@@ -18,20 +18,18 @@
     _Bool _highlighted;
     UIFont *_font;
     WFVariable *_variable;
-    UIImage *_cachedImage;
+    WFVariableAttachmentCell *_wf_attachmentCell;
 }
 
-@property(retain, nonatomic) UIImage *cachedImage; // @synthesize cachedImage=_cachedImage;
+@property(retain, nonatomic) WFVariableAttachmentCell *wf_attachmentCell; // @synthesize wf_attachmentCell=_wf_attachmentCell;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) WFVariable *variable; // @synthesize variable=_variable;
-- (void).cxx_destruct;
-- (struct CGRect)attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned int)arg4;
-- (id)imageForBounds:(struct CGRect)arg1 textContainer:(id)arg2 characterIndex:(unsigned int)arg3;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
+- (void).cxx_destruct;
+- (id)attachmentCell;
 - (id)accessibilityLabel;
-- (unsigned int)controlState;
 - (void)variableDidChange:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

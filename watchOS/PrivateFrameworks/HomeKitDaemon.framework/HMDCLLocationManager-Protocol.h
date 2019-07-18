@@ -15,6 +15,7 @@
 @property(readonly, copy, nonatomic) NSSet *monitoredRegions;
 @property(nonatomic) double desiredAccuracy;
 @property(nonatomic) __weak id <HMDCLLocationManagerDelegate> delegate;
+- (void)requestStateForRegion:(CLRegion *)arg1;
 - (void)stopMonitoringForRegion:(CLRegion *)arg1;
 - (void)startMonitoringForRegion:(CLRegion *)arg1;
 - (void)stopUpdatingLocation;

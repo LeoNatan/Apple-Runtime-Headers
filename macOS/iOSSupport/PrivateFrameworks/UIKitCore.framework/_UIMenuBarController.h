@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, RVItem, UIView, _UIMenuBarMenu;
+@class NSDictionary, RVItem, UIView, _UIMenuBarMenu;
+@protocol _UICopyConfigurationReading;
 
 __attribute__((visibility("hidden")))
 @interface _UIMenuBarController : NSObject
 {
-    NSArray *__objectsForSharing;
+    id <_UICopyConfigurationReading> __copyConfiguration;
     UIView *_contextMenuView;
     RVItem *_contextMenuRVItem;
     CDUnknownBlockType _contextMenuDidClose;
@@ -29,13 +30,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) RVItem *contextMenuRVItem; // @synthesize contextMenuRVItem=_contextMenuRVItem;
 @property(nonatomic) struct CGPoint contextMenuLocation; // @synthesize contextMenuLocation=_contextMenuLocation;
 @property(retain, nonatomic) UIView *contextMenuView; // @synthesize contextMenuView=_contextMenuView;
-@property(copy, nonatomic, setter=_setObjectsForSharing:) NSArray *_objectsForSharing; // @synthesize _objectsForSharing=__objectsForSharing;
+@property(retain, nonatomic, setter=_setCopyConfiguration:) id <_UICopyConfigurationReading> _copyConfiguration; // @synthesize _copyConfiguration=__copyConfiguration;
 - (void).cxx_destruct;
 - (id)_newSpeechMenuItem;
 - (void)_notifyContextMenuClosed;
-- (void)_makeContextMenuMoreMacLike:(id)arg1 isTextContextMenu:(BOOL)arg2 textIsEditable:(BOOL)arg3 hasObjectsToShare:(BOOL)arg4;
-- (void)_showContextMenu:(id)arg1 inWindow:(id)arg2 atLocationInWindow:(struct CGPoint)arg3 objectsForServicesAndSharing:(id)arg4 notifyingWhenClosed:(CDUnknownBlockType)arg5;
-- (void)showContextMenu:(id)arg1 inWindow:(id)arg2 atLocationInWindow:(struct CGPoint)arg3 objectsForServicesAndSharing:(id)arg4 notifyingWhenClosed:(CDUnknownBlockType)arg5;
+- (void)_makeContextMenuMoreMacLike:(id)arg1 isTextContextMenu:(BOOL)arg2 textIsEditable:(BOOL)arg3 hasItemsToShare:(BOOL)arg4;
+- (void)_showContextMenu:(id)arg1 inWindow:(id)arg2 atLocationInWindow:(struct CGPoint)arg3 copyConfiguration:(id)arg4 notifyingWhenClosed:(CDUnknownBlockType)arg5;
+- (void)showContextMenu:(id)arg1 inWindow:(id)arg2 atLocationInWindow:(struct CGPoint)arg3 copyConfiguration:(id)arg4 notifyingWhenClosed:(CDUnknownBlockType)arg5;
 - (void)_examineContextMenuForAlwaysVisibleItems:(id)arg1;
 - (void)buildAndShowContextMenuForActionGroup:(id)arg1 inView:(id)arg2 locationInOwningView:(struct CGPoint)arg3;
 - (id)commandMenuForActionGroup:(id)arg1;

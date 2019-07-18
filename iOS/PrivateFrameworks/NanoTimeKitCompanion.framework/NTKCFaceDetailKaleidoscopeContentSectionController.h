@@ -39,7 +39,7 @@
 - (void)setSelectedOptions:(id)arg1;
 - (Class)editCellClass;
 - (_Bool)collectionChanged:(id)arg1 withSelectedOptions:(id)arg2;
-- (id)initWithTableView:(id)arg1 face:(id)arg2 inGallery:(_Bool)arg3 editOptionCollection:(id)arg4 faceView:(id)arg5;
+- (id)initWithTableViewController:(id)arg1 face:(id)arg2 inGallery:(_Bool)arg3 editOptionCollection:(id)arg4 faceView:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

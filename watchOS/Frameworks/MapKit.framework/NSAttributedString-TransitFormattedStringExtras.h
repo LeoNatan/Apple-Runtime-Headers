@@ -7,7 +7,7 @@
 #import <Foundation/NSAttributedString.h>
 
 @interface NSAttributedString (TransitFormattedStringExtras)
-+ (id)_mapkit_attributedTransitStringForServerFormattedString:(id)arg1 defaultAttributes:(id)arg2 options:(CDStruct_f0a7d2be)arg3;
++ (id)_mapkit_attributedTransitStringForServerFormattedString:(id)arg1 defaultAttributes:(id)arg2 options:(CDStruct_91d4396b)arg3;
 + (id)_mapkit_attributedTransitStringForServerFormattedString:(id)arg1 defaultAttributes:(id)arg2;
 + (void)_handleFormattingError:(id)arg1 forString:(id)arg2;
 + (id)_mapkit_attributedStringWithBindingFormat:(id)arg1 replacements:(id)arg2 attributes:(id)arg3;

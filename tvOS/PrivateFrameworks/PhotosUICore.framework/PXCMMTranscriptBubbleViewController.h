@@ -52,8 +52,8 @@
 - (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
-- (void)touchingUIGestureRecognizerDidEndTouching:(id)arg1;
-- (void)touchingUIGestureRecognizerDidBeginTouching:(id)arg1;
+- (void)touchingUIGestureRecognizerWillEndTouching:(id)arg1;
+- (void)touchingUIGestureRecognizerWillBeginTouching:(id)arg1;
 - (void)_readyForStateTransition;
 - (void)_ensureBubbleStateTransition;
 - (void)_updateBubbleState;

@@ -25,15 +25,16 @@
     UIView *_iPadBufferView;
     _Bool _showTTYPredictions;
     _Bool _isHandlingKeyboardFrameChanged;
-    UICollectionView *_predictionsCollectionView;
     NSArray *_ttyAbbreviations;
+    UICollectionView *_predictionsCollectionView;
 }
 
 @property(nonatomic) _Bool isHandlingKeyboardFrameChanged; // @synthesize isHandlingKeyboardFrameChanged=_isHandlingKeyboardFrameChanged;
-@property(retain, nonatomic) NSArray *ttyAbbreviations; // @synthesize ttyAbbreviations=_ttyAbbreviations;
 @property(retain, nonatomic) UICollectionView *predictionsCollectionView; // @synthesize predictionsCollectionView=_predictionsCollectionView;
+@property(retain, nonatomic) NSArray *ttyAbbreviations; // @synthesize ttyAbbreviations=_ttyAbbreviations;
 @property(nonatomic) _Bool showTTYPredictions; // @synthesize showTTYPredictions=_showTTYPredictions;
 - (void).cxx_destruct;
+- (unsigned long long)accessibilityTraits;
 - (_Bool)_accessibilityIsRealtimeElement;
 - (id)accessibilityIdentifier;
 - (int)_predictionsPerPage;

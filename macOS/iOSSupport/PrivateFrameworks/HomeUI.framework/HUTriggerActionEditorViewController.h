@@ -30,6 +30,7 @@
 - (void)_showShortcutsEditor;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (BOOL)shouldHideSeparatorsForCell:(id)arg1 indexPath:(id)arg2;
+- (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(BOOL)arg4;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (void)viewDidLoad;
 - (id)initWithTriggerBuilder:(id)arg1 mode:(unsigned long long)arg2 delegate:(id)arg3 placeholderMode:(BOOL)arg4;

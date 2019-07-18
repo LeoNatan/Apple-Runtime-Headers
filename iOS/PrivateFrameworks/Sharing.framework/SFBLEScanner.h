@@ -52,8 +52,18 @@
     _Bool _timeoutFired;
     NSObject<OS_dispatch_source> *_timeoutTimer;
     NSSet *_trackedPeersApplied;
-    _Bool _updating;
     struct LogCategory *_ucat;
+    _Bool _updating;
+    _Bool _scanParamActive;
+    _Bool _scanParamCache;
+    _Bool _scanParamDups;
+    NSData *_scanParamFilterData;
+    NSData *_scanParamFilterMask;
+    long long _scanParamInterval;
+    long long _scanParamWindow;
+    long long _scanParamMode;
+    NSArray *_scanParamPeers;
+    long long _scanParamRSSI;
     _Bool _rssiLog;
     _Bool _rssiLogStdOut;
     _Bool _scanCache;
@@ -112,6 +122,7 @@
 - (void)_startTimeoutIfNeeded;
 - (void)_rssiLogClose;
 - (void)_rssiLogOpen;
+- (void)_restartIfNeeded:(_Bool)arg1;
 - (void)_restartIfNeeded;
 - (void)_rescanLostFired;
 - (void)_rescanTimerFired;

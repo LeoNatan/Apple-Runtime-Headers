@@ -19,6 +19,8 @@
 + (BOOL)supportsSecureCoding;
 + (id)conversationWithID:(id)arg1 andUtterances:(id)arg2;
 + (id)conversationWithCall:(id)arg1;
++ (void)conversationWithCall:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
++ (void)conversationWithCallUID:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) NSMutableArray *utterances; // @synthesize utterances=_utterances;
 @property(retain, nonatomic) NSString *callIdentifier; // @synthesize callIdentifier=_callIdentifier;
 - (void).cxx_destruct;
@@ -34,7 +36,6 @@
 - (id)otherContactPath;
 - (BOOL)isEqualToConversation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

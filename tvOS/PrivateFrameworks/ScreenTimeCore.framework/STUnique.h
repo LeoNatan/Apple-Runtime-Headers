@@ -6,28 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class NSPersistentHistoryToken, NSPersistentStore, NSPersistentStoreCoordinator;
+@class NSPersistentHistoryToken;
+@protocol STPersistenceControllerProtocol;
 
 @interface STUnique : NSObject
 {
-    NSPersistentStoreCoordinator *_coordinator;
-    NSPersistentStore *_localStore;
-    NSPersistentStore *_cloudStore;
     NSPersistentHistoryToken *_migratedToken;
+    id <STPersistenceControllerProtocol> _persistenceController;
 }
 
 + (id)mirroredEntityNames;
 + (id)cloudToLocalMapping;
 + (id)localToCloudMapping;
+@property(retain, nonatomic) id <STPersistenceControllerProtocol> persistenceController; // @synthesize persistenceController=_persistenceController;
 - (void).cxx_destruct;
 - (_Bool)addHistoryToken:(id)arg1 forAuthor:(id)arg2 toMetadataForStore:(id)arg3 error:(id *)arg4;
 - (id)historyTokenForAuthor:(id)arg1 fromStore:(id)arg2;
-- (_Bool)_checkPreconditionsError:(id *)arg1;
 - (void)resolveConflictsBetweenLocalDeltas:(id)arg1 cloudDeltas:(id)arg2;
 - (void)newResolveConflictsBetweenLocalDeltas:(id)arg1 cloudDeltas:(id)arg2;
 - (_Bool)migrateWithError:(id *)arg1;
 - (_Bool)areLocalChangesInterestingWithError:(id *)arg1;
-- (id)initWithPersistentStoreCoordinator:(id)arg1;
+- (id)initWithPersistenceController:(id)arg1;
 
 @end
 

@@ -6,13 +6,13 @@
 
 #import <Home/HFItemManager.h>
 
-@class HFActionSetBuilder, HFMediaPlaybackActionBuilder, HFStaticItem, HUMediaItem, MPPlaybackArchive, NSArray, NSNumber;
+@class HFActionSetBuilder, HFMediaPlaybackActionBuilder, HFPlaybackArchive, HFStaticItem, HUMediaItem, NSArray, NSNumber, SKCloudServiceController;
 
 @interface HUMediaSelectionItemManager : HFItemManager
 {
     HFStaticItem *_selectedPlaybackStateItem;
     HFActionSetBuilder *_actionSetBuilder;
-    HFStaticItem *_playbackStateNoneItem;
+    HFStaticItem *_playbackStateAdjustVolumeOnlyItem;
     HFStaticItem *_playbackStatePauseItem;
     HFStaticItem *_playbackStateResumeItem;
     HFStaticItem *_playbackStatePlayItem;
@@ -30,14 +30,16 @@
     HFStaticItem *_shuffleItem;
     NSArray *_customVolumeItems;
     NSArray *_volumeSliderItems;
-    MPPlaybackArchive *_lastSelectedArchive;
+    SKCloudServiceController *_cloudServiceController;
+    HFPlaybackArchive *_lastSelectedArchive;
     NSNumber *_lastSelectedVolume;
     long long _lastSelectedPlaybackOptions;
 }
 
 @property(nonatomic) long long lastSelectedPlaybackOptions; // @synthesize lastSelectedPlaybackOptions=_lastSelectedPlaybackOptions;
 @property(retain, nonatomic) NSNumber *lastSelectedVolume; // @synthesize lastSelectedVolume=_lastSelectedVolume;
-@property(retain, nonatomic) MPPlaybackArchive *lastSelectedArchive; // @synthesize lastSelectedArchive=_lastSelectedArchive;
+@property(retain, nonatomic) HFPlaybackArchive *lastSelectedArchive; // @synthesize lastSelectedArchive=_lastSelectedArchive;
+@property(retain, nonatomic) SKCloudServiceController *cloudServiceController; // @synthesize cloudServiceController=_cloudServiceController;
 @property(retain, nonatomic) NSArray *volumeSliderItems; // @synthesize volumeSliderItems=_volumeSliderItems;
 @property(retain, nonatomic) NSArray *customVolumeItems; // @synthesize customVolumeItems=_customVolumeItems;
 @property(retain, nonatomic) HFStaticItem *shuffleItem; // @synthesize shuffleItem=_shuffleItem;
@@ -55,7 +57,7 @@
 @property(retain, nonatomic) HFStaticItem *playbackStatePlayItem; // @synthesize playbackStatePlayItem=_playbackStatePlayItem;
 @property(retain, nonatomic) HFStaticItem *playbackStateResumeItem; // @synthesize playbackStateResumeItem=_playbackStateResumeItem;
 @property(retain, nonatomic) HFStaticItem *playbackStatePauseItem; // @synthesize playbackStatePauseItem=_playbackStatePauseItem;
-@property(retain, nonatomic) HFStaticItem *playbackStateNoneItem; // @synthesize playbackStateNoneItem=_playbackStateNoneItem;
+@property(retain, nonatomic) HFStaticItem *playbackStateAdjustVolumeOnlyItem; // @synthesize playbackStateAdjustVolumeOnlyItem=_playbackStateAdjustVolumeOnlyItem;
 @property(readonly, nonatomic) HFActionSetBuilder *actionSetBuilder; // @synthesize actionSetBuilder=_actionSetBuilder;
 @property(retain, nonatomic) HFStaticItem *selectedPlaybackStateItem; // @synthesize selectedPlaybackStateItem=_selectedPlaybackStateItem;
 - (void).cxx_destruct;
@@ -66,7 +68,7 @@
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (void)mediaVolumeValueChanged:(double)arg1;
 - (void)mediaPlaybackOptionsItem:(id)arg1 switchedOn:(_Bool)arg2;
-@property(retain, nonatomic) MPPlaybackArchive *pickedPlaybackArchive; // @dynamic pickedPlaybackArchive;
+@property(retain, nonatomic) HFPlaybackArchive *pickedPlaybackArchive; // @dynamic pickedPlaybackArchive;
 - (id)selectedVolumeItemBasedOnActionBuilderState;
 - (id)selectedPlaybackStateItemBasedOnActionBuilderState;
 - (id)initWithDelegate:(id)arg1 mediaPlaybackActionBuilder:(id)arg2;

@@ -8,16 +8,24 @@
 
 @interface AAUploadBatchEventConfig : NSObject
 {
-    // Error parsing type: , name: batchSize
-    // Error parsing type: , name: batchDebugging
+    // Error parsing type: , name: maxEventsPerSessionBatch
+    // Error parsing type: , name: maxByteSizePerSessionBatch
+    // Error parsing type: , name: debuggingEnabled
+    // Error parsing type: , name: maxUploadTries
 }
 
 + (id)default;
 - (void).cxx_destruct;
 - (id)init;
+- (id)withMaxUploadTries:(long long)arg1;
+- (id)withDebuggingEnabled:(_Bool)arg1;
+- (id)withMaxByteSizePerSessionBatch:(long long)arg1;
+- (id)withMaxEventsPerSessionBatch:(long long)arg1;
 - (id)initWithBatchSize:(long long)arg1 enableDebugging:(_Bool)arg2;
-@property(nonatomic, readonly) _Bool batchDebugging; // @synthesize batchDebugging;
-@property(nonatomic, readonly) long long batchSize; // @synthesize batchSize;
+@property(nonatomic, readonly) long long maxUploadTries; // @synthesize maxUploadTries;
+@property(nonatomic, readonly) _Bool debuggingEnabled; // @synthesize debuggingEnabled;
+@property(nonatomic, readonly) long long maxByteSizePerSessionBatch; // @synthesize maxByteSizePerSessionBatch;
+@property(nonatomic, readonly) long long maxEventsPerSessionBatch; // @synthesize maxEventsPerSessionBatch;
 
 @end
 

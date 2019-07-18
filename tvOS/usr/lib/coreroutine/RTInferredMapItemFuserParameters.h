@@ -12,19 +12,17 @@
     double _aoiUseThreshold;
     double _confidenceEqualityEpsilon;
     double _distanceThreshold;
-    double _homeWorkConfidence;
     double _placeholderMultiplier;
 }
 
 @property(readonly, nonatomic) double placeholderMultiplier; // @synthesize placeholderMultiplier=_placeholderMultiplier;
-@property(readonly, nonatomic) double homeWorkConfidence; // @synthesize homeWorkConfidence=_homeWorkConfidence;
 @property(readonly, nonatomic) double distanceThreshold; // @synthesize distanceThreshold=_distanceThreshold;
 @property(readonly, nonatomic) double confidenceEqualityEpsilon; // @synthesize confidenceEqualityEpsilon=_confidenceEqualityEpsilon;
 @property(readonly, nonatomic) double aoiUseThreshold; // @synthesize aoiUseThreshold=_aoiUseThreshold;
 @property(readonly, nonatomic) double aoiConsiderThreshold; // @synthesize aoiConsiderThreshold=_aoiConsiderThreshold;
 - (id)description;
 - (id)initWithDefaultsManager:(id)arg1;
-- (id)initWithAoiConsiderThreshold:(double)arg1 aoiUseThreshold:(double)arg2 confidenceEqualityEpsilon:(double)arg3 distanceThreshold:(double)arg4 homeWorkConfidence:(double)arg5 placeholderMultiplier:(double)arg6;
+- (id)initWithAoiConsiderThreshold:(double)arg1 aoiUseThreshold:(double)arg2 confidenceEqualityEpsilon:(double)arg3 distanceThreshold:(double)arg4 placeholderMultiplier:(double)arg5;
 - (id)init;
 
 @end

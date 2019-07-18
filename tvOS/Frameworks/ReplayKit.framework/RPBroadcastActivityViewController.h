@@ -26,7 +26,6 @@
 @property(retain, nonatomic) UIPopoverPresentationController *popoverPresentationControllerProxy; // @synthesize popoverPresentationControllerProxy=_popoverPresentationControllerProxy;
 @property(nonatomic) __weak id <RPBroadcastActivityViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 broadcastConfigurationData:(id)arg4 userInfo:(id)arg5 cancelled:(_Bool)arg6;
 - (void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 cancelled:(_Bool)arg4;
 
 @end

@@ -6,9 +6,10 @@
 
 #import <VideoSubscriberAccountUI/NSObject-Protocol.h>
 
-@class NSError, VSApplicationController, VSApplicationControllerRequest, VSApplicationControllerResponse, VSViewModel;
+@class NSError, VSApplicationController, VSApplicationControllerAlert, VSApplicationControllerRequest, VSApplicationControllerResponse, VSViewModel;
 
 @protocol VSApplicationControllerDelegate <NSObject>
+- (_Bool)applicationController:(VSApplicationController *)arg1 requestsAlert:(VSApplicationControllerAlert *)arg2;
 - (void)applicationController:(VSApplicationController *)arg1 request:(VSApplicationControllerRequest *)arg2 didFailWithError:(NSError *)arg3;
 - (void)applicationController:(VSApplicationController *)arg1 request:(VSApplicationControllerRequest *)arg2 didCompleteWithResponse:(VSApplicationControllerResponse *)arg3;
 - (void)applicationController:(VSApplicationController *)arg1 didReceiveViewModelError:(NSError *)arg2;

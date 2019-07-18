@@ -55,7 +55,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isTrafficUpToDate;
 - (void)createMeshIfNecessary:(long long)arg1;
 - (void)generateArrowsForManeuverDisplayMode:(int)arg1 routeLineWidth:(double)arg2;
-- (_Bool)buildRouteLine:(const unordered_set_1129f115 *)arg1 layerDatas:(const set_e712f9e3 *)arg2 viewUnitsPerPoint:(double)arg3 force:(_Bool)arg4 selected:(_Bool)arg5 isNavMode:(_Bool)arg6;
+- (_Bool)buildRouteLine:(id)arg1 matchToRoads:(_Bool)arg2 viewUnitsPerPoint:(double)arg3 force:(_Bool)arg4;
 - (void)_updateTilesCovered:(id)arg1;
 - (void)dealloc;
 - (id)initWithPolylineOverlay:(id)arg1;

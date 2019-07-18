@@ -6,19 +6,20 @@
 
 #import <DoNotDisturbServer/DNDSModeAssertionStore.h>
 
-@class DNDModeAssertionSource, NSArray, NSDate;
+@class NSArray;
 
 @interface DNDSMutableModeAssertionStore : DNDSModeAssertionStore
 {
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(copy, nonatomic) NSDate *lastUpdateDate; // @dynamic lastUpdateDate;
-@property(copy, nonatomic) DNDModeAssertionSource *lastCompleteInvalidationSource; // @dynamic lastCompleteInvalidationSource;
-@property(nonatomic) unsigned int lastCompleteInvalidationReason; // @dynamic lastCompleteInvalidationReason;
-@property(copy, nonatomic) NSDate *lastCompleteInvalidationDate; // @dynamic lastCompleteInvalidationDate;
+@property(copy, nonatomic) NSArray *invalidationRequests; // @dynamic invalidationRequests;
 @property(copy, nonatomic) NSArray *invalidations; // @dynamic invalidations;
 @property(copy, nonatomic) NSArray *assertions; // @dynamic assertions;
+- (void)resolveSourcesForSyncFromPairedDevice:(id)arg1;
+- (void)unresolveSourcesForSyncToPairedDevice:(id)arg1;
+- (void)filterForSyncToPairedDevice:(id)arg1 clientDetailsProvider:(id)arg2;
+- (void)sanitizeDatesForThreshold:(id)arg1;
 
 @end
 

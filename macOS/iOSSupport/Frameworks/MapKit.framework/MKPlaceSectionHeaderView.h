@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (void)updateContent;
 - (void)createConstraints;
 - (BOOL)shouldStack;
+- (void)_updateConstraints;
 - (void)contentSizeDidChange;
 - (id)initWithFrame:(struct CGRect)arg1;
 

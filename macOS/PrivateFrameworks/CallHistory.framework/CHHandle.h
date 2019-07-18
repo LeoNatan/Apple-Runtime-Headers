@@ -20,6 +20,8 @@
 
 + (long long)handleTypeForValue:(id)arg1;
 + (id)normalizedPhoneNumberHandleForValue:(id)arg1 isoCountryCode:(id)arg2;
++ (id)normalizedGenericHandleForValue:(id)arg1;
++ (id)normalizedEmailAddressHandleForValue:(id)arg1;
 + (BOOL)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSString *normalizedValue; // @synthesize normalizedValue=_normalizedValue;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;

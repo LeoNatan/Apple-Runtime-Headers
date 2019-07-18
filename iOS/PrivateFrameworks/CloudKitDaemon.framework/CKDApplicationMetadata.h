@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     _Bool _displaysSystemAcceptPrompt;
     _Bool _canUseNonLegacyShareURL;
     _Bool _allowUnverifiedAccount;
+    _Bool _canSetExplicitCodeOperationURL;
     NSString *_apsEnvironmentString;
     long long _isApplication;
     NSString *_entitlementSpecifiedPCSServiceName;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
     NSString *_associatedApplicationBundleID;
 }
 
+@property(nonatomic) _Bool canSetExplicitCodeOperationURL; // @synthesize canSetExplicitCodeOperationURL=_canSetExplicitCodeOperationURL;
 @property(nonatomic) _Bool allowUnverifiedAccount; // @synthesize allowUnverifiedAccount=_allowUnverifiedAccount;
 @property(nonatomic) _Bool canUseNonLegacyShareURL; // @synthesize canUseNonLegacyShareURL=_canUseNonLegacyShareURL;
 @property(retain, nonatomic) NSString *associatedApplicationBundleID; // @synthesize associatedApplicationBundleID=_associatedApplicationBundleID;

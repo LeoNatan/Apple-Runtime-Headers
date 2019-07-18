@@ -49,6 +49,7 @@
 @property(readonly, nonatomic) NSURL *trustedSignatureDatabaseURL;
 - (id)dataVaultURLWithUID:(unsigned int)arg1;
 @property(readonly) NSData *HMACSecret;
+@property(readonly, getter=isRegionChina) BOOL regionChina; // @dynamic regionChina;
 @property(readonly) BOOL alwaysUseDebugOpenWithMenus; // @dynamic alwaysUseDebugOpenWithMenus;
 @property(readonly) BOOL markLocalizationsStoredInDatabase; // @dynamic markLocalizationsStoredInDatabase;
 @property(readonly) NSArray *preferredLocalizations; // @dynamic preferredLocalizations;

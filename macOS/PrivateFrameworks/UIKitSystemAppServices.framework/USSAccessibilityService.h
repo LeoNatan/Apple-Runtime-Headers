@@ -10,15 +10,26 @@
 
 @interface USSAccessibilityService : NSObject
 {
-    BOOL __isAccessibilityEnabled;
+    BOOL _isGrayscaleEnabled;
     id <USSAccessibilityEnvironmentDelegate> _delegate;
 }
 
-@property(nonatomic) BOOL _isAccessibilityEnabled; // @synthesize _isAccessibilityEnabled=__isAccessibilityEnabled;
 @property(nonatomic) __weak id <USSAccessibilityEnvironmentDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) BOOL isGrayscaleEnabled; // @synthesize isGrayscaleEnabled=_isGrayscaleEnabled;
 - (void).cxx_destruct;
-- (void)handleApplicationAccessibilityChangedNotification:(id)arg1;
-- (void)handleAccessibilityInterfaceChangedNotification:(id)arg1;
+- (BOOL)_isGrayscaleColorFilterEnabled;
+- (void)_handleApplicationAccessibilityChangedNotification:(id)arg1;
+- (void)_handleAccessibilityInterfaceChangedNotification:(id)arg1;
+@property(readonly, nonatomic) BOOL isVoiceOverEnabled;
+@property(readonly, nonatomic) BOOL isVoiceControlEnabled;
+@property(readonly, nonatomic) BOOL isSwitchControlEnabled;
+@property(readonly, nonatomic) BOOL isFullKeyboardAccessEnabled;
+@property(readonly, nonatomic) BOOL isReduceTransparencyEnabled;
+@property(readonly, nonatomic) BOOL isReduceMotionEnabled;
+@property(readonly, nonatomic) BOOL isInvertColorsEnabled;
+@property(readonly, nonatomic) BOOL isIncreaseContrastEnabled;
+@property(readonly, nonatomic) BOOL isDifferentiateWithoutColorEnabled;
+@property(readonly, nonatomic) BOOL isClassicInvertColorsEnabled;
 - (void)applySystemSettings;
 - (void)dealloc;
 - (id)init;

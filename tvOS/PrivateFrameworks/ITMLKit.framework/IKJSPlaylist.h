@@ -23,7 +23,7 @@
 - (id)item:(long long)arg1;
 - (id)pop;
 - (void)push:(id)arg1;
-- (id)splice:(long long)arg1:(long long)arg2:(id)arg3;
+- (id)splice:(unsigned long long)arg1:(unsigned long long)arg2:(id)arg3;
 - (void)dealloc;
 - (id)init;
 

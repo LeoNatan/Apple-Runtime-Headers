@@ -16,19 +16,10 @@ __attribute__((visibility("hidden")))
 {
     NSTextInputContext *_inputContext;
     __NSDelegateObservingTextView *_textView;
-    BOOL automaticQuoteSubstitutionEnabled;
-    BOOL automaticLinkDetectionEnabled;
-    BOOL automaticDashSubstitutionEnabled;
-    BOOL automaticTextReplacementEnabled;
     BOOL contentsValid;
 }
 
-+ (id)keyPathsForValuesAffectingEnabledTextCheckingTypes;
 @property(getter=isContentsValid) BOOL contentsValid; // @synthesize contentsValid;
-@property(getter=isAutomaticTextReplacementEnabled) BOOL automaticTextReplacementEnabled; // @synthesize automaticTextReplacementEnabled;
-@property(getter=isAutomaticDashSubstitutionEnabled) BOOL automaticDashSubstitutionEnabled; // @synthesize automaticDashSubstitutionEnabled;
-@property(getter=isAutomaticLinkDetectionEnabled) BOOL automaticLinkDetectionEnabled; // @synthesize automaticLinkDetectionEnabled;
-@property(getter=isAutomaticQuoteSubstitutionEnabled) BOOL automaticQuoteSubstitutionEnabled; // @synthesize automaticQuoteSubstitutionEnabled;
 - (void)convertToHalfWidth:(id)arg1;
 - (void)convertToFullWidth:(id)arg1;
 - (void)convertToTraditionalChinese:(id)arg1;
@@ -47,15 +38,8 @@ __attribute__((visibility("hidden")))
 - (void)prepareContextMenu:(id)arg1;
 - (id)_mainSmartInsertDeleteMenuItem;
 - (id)_findSmartInsertDeleteMenuItemInMenu:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_prepareForTextInputStates;
 - (void)textStorage:(id)arg1 didProcessEditing:(unsigned long long)arg2 range:(struct _NSRange)arg3 changeInLength:(long long)arg4;
-- (void)_resetToDefaults;
-@property unsigned long long enabledTextCheckingTypes; // @dynamic enabledTextCheckingTypes;
-- (void)toggleAutomaticTextReplacement:(id)arg1;
-- (void)toggleAutomaticDashSubstitution:(id)arg1;
-- (void)toggleAutomaticLinkDetection:(id)arg1;
-- (void)toggleAutomaticQuoteSubstitution:(id)arg1;
 - (void)dealloc;
 - (id)initWithTextInputContext:(id)arg1;
 

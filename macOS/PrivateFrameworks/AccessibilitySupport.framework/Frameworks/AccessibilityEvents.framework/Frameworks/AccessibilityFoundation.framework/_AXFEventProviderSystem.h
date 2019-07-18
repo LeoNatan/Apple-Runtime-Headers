@@ -6,16 +6,27 @@
 
 #import <AccessibilityFoundation/_AXFEventProvider.h>
 
-@interface _AXFEventProviderSystem : _AXFEventProvider
+#import <AccessibilityFoundation/AXEEventTapListener-Protocol.h>
+
+@class NSString;
+
+@interface _AXFEventProviderSystem : _AXFEventProvider <AXEEventTapListener>
 {
-    id __localMonitor;
+    BOOL __didRegisterEventTap;
 }
 
-@property(retain, nonatomic, setter=_setLocalMonitor:) id _localMonitor; // @synthesize _localMonitor=__localMonitor;
-- (void).cxx_destruct;
+@property(nonatomic) BOOL _didRegisterEventTap; // @synthesize _didRegisterEventTap=__didRegisterEventTap;
+- (void)eventTapManager:(id)arg1 passivelyTappedEvent:(struct __CGEvent *)arg2 type:(unsigned int)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
 - (BOOL)_handleEvent:(struct __CGEvent *)arg1;
+- (void)dealloc;
 - (void)stop;
 - (void)start;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

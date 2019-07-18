@@ -28,6 +28,10 @@
     int _cachedFakeTodayIndex;
     int _displayableAccountErrorsCount;
     int _initialAccountSyncCount;
+    _Bool _showDayAsList;
+    _Bool _showMonthAsDivided;
+    _Bool _suspendSelectedDateChanges;
+    EKCalendarDate *_suspendedSelectedDate;
     _Bool _autoStartNotificationMonitor;
     NSSet *_selectedCalendars;
     NSString *_searchString;
@@ -67,6 +71,8 @@
 - (id)_notificationMonitor;
 - (void)startNotificationMonitor;
 - (_Bool)removeEvent:(id)arg1 withSpan:(int)arg2 error:(id *)arg3;
+@property(nonatomic) _Bool showMonthAsDivided;
+@property(nonatomic) _Bool showDayAsList;
 - (void)_systemWake;
 - (void)_timeZoneChanged:(id)arg1;
 - (void)_localeChanged:(id)arg1;
@@ -87,6 +93,7 @@
 @property(readonly, nonatomic) int accountsInInitialSyncCount;
 - (int)countSourcesWithErrors;
 @property(readonly, nonatomic) int displayableAccountErrorsCount;
+- (void)_checkSources;
 - (void)_processReloadForCacheOnly:(_Bool)arg1 includingCalendars:(_Bool)arg2 checkCalendarsValid:(_Bool)arg3 checkSources:(_Bool)arg4;
 - (void)_invalidateOccurrenceCacheDataSources;
 - (void)_invalidateCachedOccurrences;
@@ -111,6 +118,7 @@
 - (int)numberOfDaysWithCachedOccurrences;
 - (_Bool)cachedOccurrencesAreLoaded;
 - (_Bool)cachedOccurrencesAreBeingGenerated;
+@property(readonly, nonatomic) _Bool currentlyLocked;
 - (void)setPreferredReloadStartDate:(id)arg1 endDate:(id)arg2;
 - (void)setComponentForExpandingPadding:(unsigned int)arg1;
 - (void)setComponentForExpandingRequests:(unsigned int)arg1;
@@ -126,6 +134,7 @@
 - (void)addOccurrenceAwaitingRefresh:(id)arg1;
 - (void)updateSelectedDateTimeZone;
 @property(readonly, nonatomic) EKCalendarDate *selectedDay;
+- (void)setSelectedDateChangesDelayedUntilAfterTransition:(_Bool)arg1;
 - (id)refreshCalendarDataIfNeeded:(_Bool)arg1;
 - (id)refreshAccountListIfNeeded:(_Bool)arg1;
 - (id)defaultCalendarForNewEvents;

@@ -25,6 +25,7 @@
 - (void)handleServerDisconnect;
 - (void)handleServerReconnect;
 - (void)handleRoutesByUniqueIdentifierUpdated:(id)arg1;
+- (void)requeryRoutes;
 - (void)pickRouteWithUniqueIdentifier:(id)arg1;
 - (void)pickRoute:(id)arg1;
 - (void)removeDelegate:(id)arg1;

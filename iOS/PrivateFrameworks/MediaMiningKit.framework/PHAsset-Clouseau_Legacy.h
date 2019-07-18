@@ -27,6 +27,7 @@
 + (unsigned long long)clsPrefetchOptionsForIsUtility;
 + (_Bool)isUtilityForAsset:(id)arg1;
 + (_Bool)isUtilityForImageAsset:(id)arg1;
++ (_Bool)imageAssetIsJunkForMemoryFromSceneAndJunkClassifications:(id)arg1;
 + (_Bool)imageAssetIsJunkFromSceneAndJunkClassifications:(id)arg1;
 + (_Bool)isUtilityForVideoAsset:(id)arg1;
 + (id)contextForItems:(id)arg1;
@@ -36,6 +37,7 @@
 + (_Bool)asset:(id)arg1 isAestheticallyAwesomeWithContext:(id)arg2;
 + (float)interactionScoreForAsset:(id)arg1;
 + (short)uninterestingAudioClassifications;
++ (_Bool)clsAvoidIfPossibleForKeyAssetWithAsset:(id)arg1;
 + (double)clsSharpnessScoreThresholdToNotBeBlurry;
 + (_Bool)assetIsJunkWithSceneClassifications:(id)arg1 confidenceThresholdBySceneIdentifierForScenesPreventingJunking:(id)arg2 confidenceThresholdBySceneIdentifierForJunkingScenes:(id)arg3 confidenceThresholdBySceneIdentifierForScenesPreventingSceneBasedJunking:(id)arg4;
 + (_Bool)isJunkWithJunkIdentifier:(unsigned int)arg1 confidence:(double)arg2 isReliable:(_Bool *)arg3;
@@ -56,6 +58,7 @@
 @property(readonly, nonatomic) _Bool clsIsInterestingLivePhoto;
 @property(readonly, nonatomic) double clsAutoplaySuggestionScore;
 @property(readonly, nonatomic) double clsHighlightVisibilityScore;
+@property(readonly, nonatomic) _Bool clsIsLongExposure;
 @property(readonly, nonatomic) _Bool clsIsLoopOrBounce;
 @property(readonly, nonatomic) _Bool clsIsInterestingVideo;
 - (double)scoreWithContext:(id)arg1;
@@ -63,6 +66,7 @@
 @property(readonly, nonatomic) double clsContentScore;
 - (long long)highestSupportedScoringVersion;
 @property(readonly) _Bool clsHasInterestingScenes;
+@property(readonly) _Bool clsHasPoorResolution;
 @property(readonly) _Bool clsAvoidIfPossibleForKeyItem;
 @property(readonly) _Bool clsIsInhabited;
 @property(readonly, nonatomic) _Bool isBlurry;

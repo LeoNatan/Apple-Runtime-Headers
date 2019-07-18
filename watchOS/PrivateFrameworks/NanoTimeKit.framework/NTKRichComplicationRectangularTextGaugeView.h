@@ -30,6 +30,7 @@
 - (void)_editingDidEnd;
 - (void)_enumerateLabelsWithBlock:(CDUnknownBlockType)arg1;
 - (void)setPaused:(_Bool)arg1;
+- (void)_handleTemplateUpdateWithReason:(int)arg1 headerImageProvider:(id)arg2 headerTextProvider:(id)arg3 body1TextProvider:(id)arg4 gaugeProvider:(id)arg5;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
 - (void)layoutSubviews;
 - (id)init;

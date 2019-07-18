@@ -123,7 +123,7 @@
 - (void)_cacheMediaSelectionOption:(id)arg1 forMediaSelectionGroup:(id)arg2;
 - (void)_applyMediaSelectionOptions;
 - (void)_markAsReadyForInspectionOfMediaSelectionOptions;
-- (BOOL)_isReadyForInspectionOfMediaSelectionOptions;
+- (BOOL)_isReadyForInspectionOfMediaSelectionOptionsAndHasFigPlaybackItem;
 - (void)_removeMediaOptionsSelectedByClient;
 - (void)_setMediaOptionsSelectedByClient:(id)arg1 forKey:(id)arg2;
 - (id)_mediaOptionsSelectedByClientForKey:(id)arg1;

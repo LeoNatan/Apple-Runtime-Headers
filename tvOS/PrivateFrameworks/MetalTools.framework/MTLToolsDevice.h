@@ -63,7 +63,6 @@
 @property(readonly, nonatomic) _Bool supportsSIMDReduction;
 @property(readonly, nonatomic) _Bool supportsMirrorClampToEdgeSamplerMode;
 @property(readonly, nonatomic) _Bool supportsBlackOrWhiteSamplerBorderColors;
-@property(readonly, nonatomic) _Bool supportsShaderBarycentricCoordinates;
 @property(readonly, nonatomic) _Bool supportsSIMDShufflesAndBroadcast;
 @property(readonly, nonatomic) _Bool supportsShaderMinLODClamp;
 @property(readonly, nonatomic) _Bool supportsSIMDGroup;
@@ -301,6 +300,7 @@
 - (id)newCommandQueue;
 - (void)compilerPropagatesThreadPriority:(_Bool)arg1;
 - (void *)getShaderCacheKeys;
+- (_Bool)copyShaderCacheToPath:(id)arg1;
 - (CDStruct_c0454aff)pipelineCacheStats;
 - (CDStruct_c0454aff)libraryCacheStats;
 - (void)unloadShaderCaches;
@@ -341,6 +341,7 @@
 - (id)vendorName;
 @property(readonly) unsigned long long registryID;
 @property(readonly) NSString *name;
+- (id)reportLeaks;
 - (void)unmapShaderSampleBuffer;
 - (_Bool)mapShaderSampleBufferWithBuffer:(CDStruct_32a7f38a *)arg1 capacity:(unsigned long long)arg2 size:(unsigned long long)arg3;
 @property _Bool shaderDebugInfoCaching;

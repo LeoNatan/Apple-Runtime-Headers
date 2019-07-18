@@ -53,6 +53,7 @@
 + (id)supportedCountryCodes;
 + (_Bool)iMessageEnabled;
 + (_Bool)mmsEnabled;
++ (_Bool)_readMMSUserOverride;
 + (_Bool)smsEnabled;
 + (_Bool)iMessageEnabledForSenderLastAddressedHandle:(id)arg1 simID:(id)arg2 previousService:(id)arg3;
 + (_Bool)_iMessageEnabledForMultipleSubscriptionsForSenderLastAddressedHandle:(id)arg1 simID:(id)arg2 previousService:(id)arg3;

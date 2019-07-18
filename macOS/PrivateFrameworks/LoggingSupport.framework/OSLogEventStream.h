@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)activateStreamFromPosition:(id)arg1;
 - (void)activateStreamFromLastBoot;
+- (void)_activateStreamFromTimeIntervalSinceLastBoot:(double)arg1;
 - (void)activateStreamFromDate:(id)arg1;
 - (void)_activateStreamInRange:(struct os_timesync_range_s *)arg1;
 @property(copy, nonatomic) NSPredicate *filterPredicate; // @dynamic filterPredicate;

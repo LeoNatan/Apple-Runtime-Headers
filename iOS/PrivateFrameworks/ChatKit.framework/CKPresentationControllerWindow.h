@@ -11,6 +11,7 @@
 }
 
 - (id)initWithFrame:(struct CGRect)arg1 allowsRotation:(_Bool)arg2;
+- (id)initWithWindowScene:(id)arg1 allowsRotation:(_Bool)arg2;
 
 @end
 

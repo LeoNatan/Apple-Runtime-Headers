@@ -37,8 +37,6 @@
 + (id)mergedModelFromBundles:(id)arg1 forStoreMetadata:(id)arg2;
 + (id)modelByMergingModels:(id)arg1;
 + (id)mergedModelFromBundles:(id)arg1;
-+ (void)initialize;
-+ (id)canonical:(id)arg1;
 + (BOOL)versionHashes:(id)arg1 compatibleWithStoreMetadata:(id)arg2;
 + (id)versionsHashesForModelAtURL:(id)arg1 error:(id *)arg2;
 + (id)_modelPathsFromBundles:(id)arg1;

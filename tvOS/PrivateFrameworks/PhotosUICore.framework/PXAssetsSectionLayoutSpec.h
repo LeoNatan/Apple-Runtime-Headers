@@ -17,16 +17,15 @@
     _Bool _userInterfaceStyleAllowsShadow;
     NSShadow *_shadow;
     double _shadowCornerRadius;
-    long long _buttonStyle;
     struct UIEdgeInsets _padding;
 }
 
-@property(readonly, nonatomic) long long buttonStyle; // @synthesize buttonStyle=_buttonStyle;
 @property(readonly, nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(readonly, nonatomic) _Bool userInterfaceStyleAllowsShadow; // @synthesize userInterfaceStyleAllowsShadow=_userInterfaceStyleAllowsShadow;
 @property(readonly, nonatomic) double shadowCornerRadius; // @synthesize shadowCornerRadius=_shadowCornerRadius;
 @property(readonly, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;
 - (void).cxx_destruct;
+- (_Bool)allowsPositionDependentHeaderContentOpacityInZoomLevel:(long long)arg1;
 - (id)sectionConfiguratorForAssetCollection:(id)arg1 inZoomLevel:(long long)arg2;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
 

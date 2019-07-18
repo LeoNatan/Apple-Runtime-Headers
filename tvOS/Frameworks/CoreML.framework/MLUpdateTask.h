@@ -8,7 +8,7 @@
 
 #import <CoreML/MLTaskStateTransitionDelegate-Protocol.h>
 
-@class MLModel, MLUpdateProgressHandlers, NSDictionary, NSObject, NSString;
+@class MLModel, MLUpdateProgressHandlers, NSObject, NSString, NSURL;
 @protocol MLBatchProvider, MLUpdatable, OS_dispatch_queue;
 
 @interface MLUpdateTask : MLTask <MLTaskStateTransitionDelegate>
@@ -17,27 +17,27 @@
     MLModel<MLUpdatable> *_updatableModel;
     id <MLBatchProvider> _trainingData;
     MLUpdateProgressHandlers *_progressHandlers;
-    NSDictionary *_updateParameters;
     NSObject<OS_dispatch_queue> *_updateQueue;
+    NSURL *_updatableModelURL;
 }
 
 + (id)updateTaskForModelAtURL:(id)arg1 trainingData:(id)arg2 configuration:(id)arg3 progressHandlers:(id)arg4 error:(id *)arg5;
 + (id)updateTaskForModelAtURL:(id)arg1 trainingData:(id)arg2 configuration:(id)arg3 completionHandler:(CDUnknownBlockType)arg4 error:(id *)arg5;
 + (_Bool)updateModelAtURL:(id)arg1 trainingData:(id)arg2 configuration:(id)arg3 writeToURL:(id)arg4 error:(id *)arg5;
+@property(readonly, nonatomic) NSURL *updatableModelURL; // @synthesize updatableModelURL=_updatableModelURL;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *updateQueue; // @synthesize updateQueue=_updateQueue;
 @property(nonatomic) _Bool updateHasStarted; // @synthesize updateHasStarted=_updateHasStarted;
-@property(retain, nonatomic) NSDictionary *updateParameters; // @synthesize updateParameters=_updateParameters;
 @property(readonly, nonatomic) MLUpdateProgressHandlers *progressHandlers; // @synthesize progressHandlers=_progressHandlers;
 @property(readonly, nonatomic) id <MLBatchProvider> trainingData; // @synthesize trainingData=_trainingData;
 @property(readonly, nonatomic) MLModel<MLUpdatable> *updatableModel; // @synthesize updatableModel=_updatableModel;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (CDUnknownBlockType)_completionHandlerBlock;
 - (CDUnknownBlockType)_progressHandlerBlock;
 - (void)onFailureWithTaskContext:(id)arg1;
 - (void)onCompletionWithTaskContext:(id)arg1;
 - (void)onSuspensionWithTaskContext:(id)arg1;
 - (void)onResumptionWithTaskContext:(id)arg1;
-- (void)_resumeUpdateWithParameters:(id)arg1;
 - (void)onCancellation;
 - (void)_invokeProgressHandlerForContext:(id)arg1;
 - (void)resumeWithParameters:(id)arg1;
@@ -45,7 +45,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

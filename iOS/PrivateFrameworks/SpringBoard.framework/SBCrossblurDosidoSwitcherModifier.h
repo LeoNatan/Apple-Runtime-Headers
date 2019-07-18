@@ -32,6 +32,7 @@
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (double)scaleForIndex:(unsigned long long)arg1;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;
+- (id)transitionDidEnd;
 - (id)transitionWillUpdate;
 - (id)transitionWillBegin;
 - (_Bool)asynchronouslyRendersUntilDelay:(inout double *)arg1;

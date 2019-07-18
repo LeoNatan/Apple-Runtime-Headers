@@ -73,10 +73,15 @@
 @property(readonly, nonatomic, getter=isLowBattery) BOOL lowBattery;
 @property(nonatomic) long long sizeCategory;
 - (void)_unflipBoltIfNecessary;
+- (void)_updateTransform;
 - (void)_updatePercentage;
 - (void)_didFinishAnimatingBoltToVisible:(BOOL)arg1;
 - (void)_willBeginAnimatingBoltToVisible:(BOOL)arg1;
+- (void)_notifyDidFinishAnimatingBoltToVisible:(BOOL)arg1;
+- (void)_notifyWillBeginAnimatingBoltToVisible:(BOOL)arg1;
 - (void)_updateBolt;
+- (double)_batteryBoltSmallScaleFactor;
+- (double)_batteryBoltLargeScaleFactor;
 - (void)_fillLayerFrame:(struct CGRect *)arg1 cornerRadius:(double *)arg2;
 - (void)_updateFillLayer;
 - (void)__updateFillLayer;

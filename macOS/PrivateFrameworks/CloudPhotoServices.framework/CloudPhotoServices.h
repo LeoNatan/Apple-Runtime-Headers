@@ -30,6 +30,7 @@
 + (void)generateFullSizeJPEGIfNecessaryFromInputResource:(id)arg1 destinationDirectory:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)workQueue;
 + (void)generateDerivativeResourcesFromInputResource:(id)arg1 withAdjustments:(id)arg2 destinationDirectory:(id)arg3 derivativesFilter:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
++ (BOOL)canGenerateImageDerivativesFromUTI:(id)arg1;
 + (void)generateDerivativeResourcesFromInputResource:(id)arg1 withAdjustments:(id)arg2 destinationDirectory:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (BOOL)isUnsupportedOriginalFormatError:(id)arg1;
 + (id)transcodeVideoAtURL:(id)arg1 withAdjustments:(id)arg2 destinationURL:(id)arg3 options:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;

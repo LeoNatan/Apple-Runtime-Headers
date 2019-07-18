@@ -8,25 +8,23 @@
 
 #import <SpringBoard/CSExternalBehaviorProviding-Protocol.h>
 #import <SpringBoard/NCNotificationAlertDestination-Protocol.h>
+#import <SpringBoard/NCNotificationManagementContentProviderDelegate-Protocol.h>
 #import <SpringBoard/NCNotificationManagementViewPresenterDelegate-Protocol.h>
 #import <SpringBoard/NCNotificationViewControllerDelegate-Protocol.h>
 #import <SpringBoard/NCNotificationViewControllerDelegatePrivate-Protocol.h>
 #import <SpringBoard/NCNotificationViewControllerObserving-Protocol.h>
-#import <SpringBoard/SBAppPlatterDragSourceViewProviding-Protocol.h>
 #import <SpringBoard/SBAssistantObserver-Protocol.h>
 #import <SpringBoard/SBFIdleTimerBehaviorProviding-Protocol.h>
 #import <SpringBoard/SBFMotionGestureObserver-Protocol.h>
 #import <SpringBoard/SBFNotificationExtensionVisibilityProviding-Protocol.h>
-#import <SpringBoard/SBFNotificationManagementDelegate-Protocol.h>
 #import <SpringBoard/SBNotificationDestinationHomeButtonPressHandler-Protocol.h>
 #import <SpringBoard/SBNotificationHomeAffordanceControllerClient-Protocol.h>
 
 @class BSServiceConnectionEndpoint, BSSimpleAssertion, DNDEventBehaviorResolutionService, NCNotificationManagementViewPresenter, NCNotificationViewController, NSMutableArray, NSMutableSet, NSString, SBAppStatusBarSettingsAssertion, SBAssistantController, SBDashBoardLegibilityProvider, SBLockScreenManager, SBNotificationBannerWindow, SBNotificationLongLookBannerDestination, SBSetupManager, UIApplicationSceneDeactivationAssertion, UIView;
 @protocol BSInvalidatable, NCNotificationAlertDestinationDelegate, NCNotificationDestinationDelegate, OS_dispatch_queue, OS_dispatch_semaphore, OS_dispatch_source;
 
-@interface SBNotificationBannerDestination : NSObject <NCNotificationViewControllerDelegatePrivate, CSExternalBehaviorProviding, SBFIdleTimerBehaviorProviding, SBFMotionGestureObserver, SBAssistantObserver, SBNotificationHomeAffordanceControllerClient, SBFNotificationManagementDelegate, NCNotificationManagementViewPresenterDelegate, SBAppPlatterDragSourceViewProviding, NCNotificationAlertDestination, SBNotificationDestinationHomeButtonPressHandler, SBFNotificationExtensionVisibilityProviding, NCNotificationViewControllerDelegate, NCNotificationViewControllerObserving>
+@interface SBNotificationBannerDestination : NSObject <NCNotificationViewControllerDelegatePrivate, CSExternalBehaviorProviding, SBFIdleTimerBehaviorProviding, SBFMotionGestureObserver, SBAssistantObserver, SBNotificationHomeAffordanceControllerClient, NCNotificationManagementContentProviderDelegate, NCNotificationManagementViewPresenterDelegate, NCNotificationAlertDestination, SBNotificationDestinationHomeButtonPressHandler, SBFNotificationExtensionVisibilityProviding, NCNotificationViewControllerDelegate, NCNotificationViewControllerObserving>
 {
-    _Bool _dragging;
     _Bool _shouldPreemptSTAR;
     _Bool _userInteractionInProgress;
     id <NCNotificationAlertDestinationDelegate> _delegate;
@@ -83,7 +81,6 @@
 @property(retain, nonatomic) SBSetupManager *setupManager; // @synthesize setupManager=_setupManager;
 @property(retain, nonatomic) SBLockScreenManager *lockScreenManager; // @synthesize lockScreenManager=_lockScreenManager;
 @property(retain, nonatomic) SBAssistantController *assistantController; // @synthesize assistantController=_assistantController;
-@property(nonatomic, getter=isDragging) _Bool dragging; // @synthesize dragging=_dragging;
 @property(nonatomic) __weak id <NCNotificationDestinationDelegate> delegate;
 - (void).cxx_destruct;
 - (void)notificationManagementViewPresenterDidDismissManagementView:(id)arg1;
@@ -146,6 +143,7 @@
 - (_Bool)_isPresentingOrDismissingBannerForRequest:(id)arg1;
 - (_Bool)_isPresentingOrDismissingBanner;
 - (void)_publishDidPresentBannerForNotificationRequest:(id)arg1;
+- (_Bool)_shouldAllowDragInteraction;
 - (id)_notificationSectionSettingsForSectionIdentifier:(id)arg1;
 - (_Bool)_isContentSuppressedForNotificationRequest:(id)arg1;
 - (_Bool)_canReceiveNotificationRequestIfLocked:(id)arg1;
@@ -179,24 +177,17 @@
 - (id)notificationViewController:(id)arg1 keyboardAssertionForGestureWindow:(id)arg2;
 - (id)notificationViewController:(id)arg1 auxiliaryOptionsContentProviderForNotificationRequest:(id)arg2 withLongLook:(_Bool)arg3;
 - (void)notificationViewControllerIsReadyToBePresented:(id)arg1;
-- (void)notificationViewController:(id)arg1 shouldFinishLongLookTransitionWithCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)notificationViewController:(id)arg1 shouldFinishLongLookTransitionForTrigger:(long long)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (id)notificationViewController:(id)arg1 staticContentProviderForNotificationRequest:(id)arg2;
-- (id)notificationViewController:(id)arg1 platterPreviewForDragInteractionWithSourceView:(id)arg2 bundleIdentifier:(id)arg3;
 - (_Bool)notificationViewControllerShouldAllowDragInteraction:(id)arg1;
+- (_Bool)notificationViewControllerShouldSupportClickPresentationInteraction:(id)arg1;
 - (_Bool)notificationViewControllerShouldInterpretTapAsDefaultAction:(id)arg1;
 - (_Bool)notificationViewControllerShouldPan:(id)arg1;
-- (_Bool)notificationViewController:(id)arg1 suggestsDismissingShortLookWithSource:(id)arg2;
+- (_Bool)notificationViewController:(id)arg1 suggestsDismissingShortLookWithSourceGestureRecognizer:(id)arg2 animated:(_Bool)arg3;
 - (id)notificationUsageTrackingStateForNotificationViewController:(id)arg1;
 - (void)notificationViewControllerWillDismissForCancelAction:(id)arg1;
 - (void)notificationViewController:(id)arg1 executeAction:(id)arg2 withParameters:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)notificationViewController:(id)arg1 requestPermissionToExecuteAction:(id)arg2 withParameters:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (id)containerViewForBlurContentView;
-- (id)initialRimShadowFilters;
-- (id)initialDiffuseShadowFilters;
-- (struct SBDragPreviewShadowParameters)initialRimShadowParameters;
-- (struct SBDragPreviewShadowParameters)initialDiffuseShadowParameters;
-- (id)initialCornerRadiusConfiguration;
-- (id)sourceView;
 - (_Bool)isNotificationContentExtensionVisible:(id)arg1;
 - (void)prepareDestinationToReceiveCriticalNotificationRequest:(id)arg1;
 - (_Bool)handleHomeButtonPress;
@@ -216,7 +207,7 @@
 - (struct CGRect)presentedBannerScreenFrame;
 @property(readonly, nonatomic, getter=isPresentingBannerInLongLook) _Bool presentingBannerInLongLook;
 @property(readonly, nonatomic, getter=isPresentingBanner) _Bool presentingBanner;
-- (id)acquireWindowLevelAssertionWithPriority:(long long)arg1 windowLevel:(double)arg2 reason:(id)arg3 shouldAutomaticallyInvalidateWhenDismissed:(_Bool)arg4;
+- (id)acquireWindowLevelAssertionWithPriority:(long long)arg1 windowLevel:(double)arg2 reason:(id)arg3;
 - (void)dealloc;
 - (id)init;
 - (void)_runBannerPresentationTestWithBeginBlock:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

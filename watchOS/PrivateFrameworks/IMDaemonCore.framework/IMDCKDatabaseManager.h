@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) CKContainer *manateeContainer; // @synthesize manateeContainer=_manateeContainer;
 @property(readonly, nonatomic) CKContainer *stingRayContainer; // @synthesize stingRayContainer=_stingRayContainer;
 @property(nonatomic) _Bool useStingRay; // @synthesize useStingRay=_useStingRay;
+- (void)fetchCurrentUserForNicknameContainer:(CDUnknownBlockType)arg1;
 - (id)nickNamePublicDatabase;
 - (id)nonHSA2ManateeDatabase;
 - (id)manateeDataBase;
@@ -34,6 +35,8 @@
 - (id)truthDatabase;
 - (_Bool)_useMockCloudKit;
 - (id)_nickNameContainer;
+- (id)_nickNameContainerIdentifier;
+- (_Bool)_serverSaysToUseOldContainer;
 - (void)dealloc;
 - (id)init;
 

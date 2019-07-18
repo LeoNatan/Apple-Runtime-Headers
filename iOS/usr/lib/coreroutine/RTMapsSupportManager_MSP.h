@@ -15,12 +15,15 @@
     RTInvocationDispatcher *_favoritesDispatcher;
     RTInvocationDispatcher *_historyPlaceDisplaysDispatcher;
     RTInvocationDispatcher *_historyRoutesDispatcher;
+    RTInvocationDispatcher *_pinnedPlacesDispatcher;
     NewMSPQuery *_favoritesQuery;
     NewMSPQuery *_historyPlaceDisplaysQuery;
     NewMSPQuery *_historyRoutesQuery;
+    NewMSPQuery *_pinnedPlacesQuery;
     _Bool _favoritesContainerLoaded;
     _Bool _historyPlaceDisplaysContainerLoaded;
     _Bool _historyRoutesContainerLoaded;
+    _Bool _pinnedPlacesContainerLoaded;
 }
 
 - (void).cxx_destruct;
@@ -28,10 +31,12 @@
 - (void)queryContentsDidChange:(id)arg1 contentsVersion:(unsigned long long)arg2;
 - (void)_fetchHistoryEntryRoutesWithHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchHistoryEntryPlaceDisplaysWithHandler:(CDUnknownBlockType)arg1;
+- (void)_fetchPinnedPlacesWithHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchFavoritePlacesWithHandler:(CDUnknownBlockType)arg1;
 - (void)_clearParkedCarBulletin;
 - (void)_showParkedCarReplacementBulletinForEvent:(id)arg1 replacingEvent:(id)arg2;
 - (void)_showParkedCarBulletinForEvent:(id)arg1;
+- (id)pinnedPlacesContainer;
 - (id)historyContainer;
 - (id)favoritesContainer;
 - (id)initWithMapServiceManager:(id)arg1;

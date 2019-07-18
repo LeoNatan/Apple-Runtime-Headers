@@ -17,11 +17,13 @@
     struct {
         unsigned int visualCodeType:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _visualCodeType;
     _INPBIntentMetadata *_intentMetadata;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int visualCodeType; // @synthesize visualCodeType=_visualCodeType;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 - (void).cxx_destruct;

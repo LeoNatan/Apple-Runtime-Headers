@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)datePickerForSpecifier:(id)arg1;
 - (void)datePickerChanged:(id)arg1;
+- (void)_updateTimeSpecifierDetailTextLabelColors:(_Bool)arg1 selectedSpecifier:(id)arg2 unselectedSpecifier:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)_endTime:(id)arg1;

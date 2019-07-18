@@ -9,7 +9,7 @@
 #import <CFNetwork/NSCopying-Protocol.h>
 #import <CFNetwork/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage, NSURLSessionConfiguration;
+@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSNumber, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage, NSURLSessionConfiguration;
 @protocol NSURLSessionAppleIDContext;
 
 @interface __NSURLSessionEffectiveConfiguration_Base : NSObject <NSSecureCoding, NSCopying>
@@ -46,6 +46,7 @@
 @property(readonly) _Bool _allowsPowerNapScheduling; // @dynamic _allowsPowerNapScheduling;
 @property(readonly) _Bool _allowsResponseMonitoringDuringBodyTranmission; // @dynamic _allowsResponseMonitoringDuringBodyTranmission;
 @property(readonly) _Bool _allowsTCPFastOpen; // @dynamic _allowsTCPFastOpen;
+@property(readonly) _Bool _allowsTLSFalseStart; // @dynamic _allowsTLSFalseStart;
 @property(readonly) _Bool _allowsTLSSessionResumption; // @dynamic _allowsTLSSessionResumption;
 @property(readonly) _Bool _allowsTLSSessionTickets; // @dynamic _allowsTLSSessionTickets;
 @property(readonly) _Bool _allowsWCA; // @dynamic _allowsWCA;
@@ -62,6 +63,7 @@
 @property(readonly) long long _expiredDNSBehavior; // @dynamic _expiredDNSBehavior;
 @property(readonly) unsigned long long _forcedNetworkServiceType; // @dynamic _forcedNetworkServiceType;
 @property(readonly) _Bool _forcesNewConnections; // @dynamic _forcesNewConnections;
+@property(readonly, copy) NSNumber *_maximumWatchCellularTransferSize; // @dynamic _maximumWatchCellularTransferSize;
 @property(readonly) unsigned long long _multipathAlternatePort; // @dynamic _multipathAlternatePort;
 @property(readonly) _Bool _onBehalfOfPairedDevice; // @dynamic _onBehalfOfPairedDevice;
 @property(readonly) _Bool _preventsAppSSO; // @dynamic _preventsAppSSO;

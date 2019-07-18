@@ -11,6 +11,7 @@
 }
 
 + (id)remindersImage;
+- (long long)alarmProximity;
 - (BOOL)wantsExtendedDetailOnlyView;
 - (id)title;
 - (id)userActivity;

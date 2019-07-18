@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class PXMediaProvider;
+@class NSString, PXMediaProvider;
 @protocol PXDisplayAsset;
 
 @interface PXGridInlinePlaybackRecord : NSObject
 {
+    _Bool _isInvalid;
     float _videoScore;
     float _curationScore;
     id <PXDisplayAsset> _displayAsset;
@@ -19,9 +20,14 @@
     long long _desiredPlayState;
     long long _visibilityScore;
     double _distanceToCenterScore;
+    double _cellSizeScore;
+    NSString *_diagnosticLog;
     CDStruct_e83c9415 _bestVideoTimeRange;
 }
 
+@property(copy) NSString *diagnosticLog; // @synthesize diagnosticLog=_diagnosticLog;
+@property(nonatomic) _Bool isInvalid; // @synthesize isInvalid=_isInvalid;
+@property(nonatomic) double cellSizeScore; // @synthesize cellSizeScore=_cellSizeScore;
 @property(nonatomic) double distanceToCenterScore; // @synthesize distanceToCenterScore=_distanceToCenterScore;
 @property(nonatomic) long long visibilityScore; // @synthesize visibilityScore=_visibilityScore;
 @property(readonly, nonatomic) float curationScore; // @synthesize curationScore=_curationScore;
@@ -32,6 +38,8 @@
 @property(readonly, nonatomic) PXMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) id <PXDisplayAsset> displayAsset; // @synthesize displayAsset=_displayAsset;
 - (void).cxx_destruct;
+- (id)description;
+@property(readonly, copy) NSString *diagnosticScoresDescription;
 - (void)prepareForInactive;
 - (id)initWithDisplayAsset:(id)arg1 mediaProvider:(id)arg2 geometryReference:(id)arg3;
 

@@ -122,7 +122,7 @@
 + (_Bool)isVideoComplementVisibilityStatePlayable:(unsigned short)arg1 hasAdjustments:(_Bool)arg2;
 + (id)videoComplementVisibilityStatePlayablePredicate;
 + (_Bool)canPlayPhotoIrisWithPhotoIris:(_Bool)arg1 photoIrisPlaceholder:(_Bool)arg2 hasAdjustments:(_Bool)arg3 videoCpVisibilityState:(unsigned short)arg4;
-+ (_Bool)isPhotoIrisPlaceholderWithPhotoIris:(_Bool)arg1 videoCpDuration:(long long)arg2 isCloudShared:(_Bool)arg3 videoCpFilePath:(id)arg4;
++ (_Bool)isPhotoIrisPlaceholderWithPhotoIris:(_Bool)arg1 isSnowplow:(_Bool)arg2 videoCpDuration:(long long)arg3 isCloudShared:(_Bool)arg4 videoCpFilePath:(id)arg5 snowplowVideoCpFilePath:(id)arg6;
 + (id)cloudUUIDKeyForDeletion;
 + (long long)cloudDeletionTypeForTombstone:(id)arg1;
 + (id)_importAlbumIsolationQueue;
@@ -151,6 +151,7 @@
 + (id)newLocationDataFromLocation:(id)arg1;
 + (id)baseSearchIndexPredicate;
 + (id)assetsToConsiderForTypePromotionInContext:(id)arg1 withExtensions:(id)arg2 error:(id *)arg3;
++ (void)computePreCropThumbnailSize:(struct CGSize *)arg1 andPostCropSize:(struct CGSize *)arg2 forOrientedOriginalSize:(struct CGSize)arg3 andCroppedSize:(struct CGSize)arg4 isLargeThumbnail:(_Bool)arg5;
 + (void)createThumbnailImage:(struct NSObject **)arg1 previewImage:(struct NSObject **)arg2 withImageSource:(struct CGImageSource *)arg3;
 + (id)_newPathAndDateDictionariesByAssetUUIDFromFetchResults:(id)arg1 photoLibrary:(id)arg2;
 + (id)pathAndDateDictionariesForAllIncompleteAssetsInManagedObjectContext:(id)arg1;
@@ -201,7 +202,7 @@
 + (id)calculateImageRequestHintsFromSortedResources:(id)arg1 asset:(id)arg2;
 + (id)debugDescriptionForHintData:(id)arg1 assetWidth:(long long)arg2 assetHeight:(long long)arg3 assetID:(id)arg4;
 + (id)_persistedResourcesForManagedAsset:(id)arg1 resourceIdentity:(id)arg2 fetchConfigurationBlock:(CDUnknownBlockType)arg3 error:(id *)arg4;
-+ (id)_predicateToExcludeDerivatives;
++ (id)predicateFilteringForNonDerivativeRecipeIDs;
 @property(nonatomic) _Bool disableFileSystemPersistency; // @synthesize disableFileSystemPersistency=_disableFileSystemPersistency;
 @property(nonatomic) _Bool disableDupeAnalysis; // @synthesize disableDupeAnalysis=_disableDupeAnalysis;
 @property(nonatomic) _Bool needsMomentUpdate; // @synthesize needsMomentUpdate=_needsMomentUpdate;
@@ -283,6 +284,7 @@
 - (id)allFileExtensions;
 - (void)getFileURL:(id *)arg1 originalFilename:(id *)arg2 uti:(id *)arg3 fileSize:(unsigned long long *)arg4 forSidecarMatchingUTI:(id)arg5 requireExactMatch:(_Bool)arg6;
 @property(readonly, copy, nonatomic) NSString *pathForOriginalFile;
+@property(readonly, copy, nonatomic) NSURL *persistedFileSystemAttributesFileURL;
 @property(readonly, copy, nonatomic) NSURL *mainFileURL;
 - (id)pathForAdjustedSmallVideoFile;
 - (id)pathForNonAdjustedSmallVideoFile;
@@ -413,12 +415,12 @@
 @property(readonly, nonatomic) struct CLLocationCoordinate2D gpsCoordinate;
 - (id)managedAssetForPhotoLibrary:(id)arg1;
 @property(nonatomic) struct CGSize imageSize;
-- (id)_imageDataForThumbGeneration;
+- (id)imageDataForThumbGenerationAndIfNeededRAWUTI:(id *)arg1;
 - (void)setFaceRegionsFromImageMetadata:(struct CGImageMetadata *)arg1;
 - (void)setFaceRegionsFromCGImageProperties:(id)arg1;
 - (void)generateAndUpdateThumbnailsWithPreviewImage:(struct NSObject *)arg1 thumbnailImage:(struct NSObject *)arg2 fromImageSource:(struct CGImageSource *)arg3 imageData:(id)arg4 updateExistingLargePreview:(_Bool)arg5 forceSRGBConversion:(_Bool)arg6 saveCameraPreviewWellImage:(_Bool)arg7;
 - (void)generateAndUpdateThumbnailsWithPreviewImage:(struct NSObject *)arg1 thumbnailImage:(struct NSObject *)arg2 fromImageSource:(struct CGImageSource *)arg3 imageData:(id)arg4 updateExistingLargePreview:(_Bool)arg5 forceSRGBConversion:(_Bool)arg6;
-- (void)_createTHMFileWithPreviewImage:(struct NSObject *)arg1 thumbnailImage:(struct NSObject *)arg2;
+- (void)createTHMFileWithPreviewImage:(struct NSObject *)arg1 thumbnailImage:(struct NSObject *)arg2;
 - (_Bool)setVideoInfoFromFileAtURL:(id)arg1 fullSizeRenderURL:(id)arg2 overwriteOriginalProperties:(_Bool)arg3;
 - (void)updateVideoAttributesFromAVAsset:(id)arg1;
 - (void)updateVideoExtendedAttributesFromAVAsset:(id)arg1;
@@ -525,13 +527,14 @@
 - (void)_clearOverallAestheticScore;
 - (void)_clearAcceptableCropRect;
 - (void)_clearPreferredCropRect;
+- (void)_deleteMediaAnalysisAttributes;
 - (void)_deleteComputedAttributes;
 - (void)_removeAssetFromRelatedSuggestionsAndFixupSuggestions;
 - (void)fixupPersonsWithMissingKeyAsset;
 - (void)_fixupMemoriesWithMissingKeyAsset;
 - (_Bool)_hasBecomeNonVisibleToMemoriesAndPersonsAndSuggestions:(id)arg1;
 - (void)_updateOriginalResourceChoice;
-- (_Bool)_setTrashedState:(short)arg1 forResourceType:(unsigned long long)arg2;
+- (_Bool)setTrashedState:(short)arg1 forResourceType:(unsigned long long)arg2;
 - (_Bool)isSyncableChange;
 - (_Bool)_hasFFCDimensions;
 - (_Bool)updateKindSubtypeIfScreenshot;
@@ -637,7 +640,6 @@
 - (_Bool)promoteFromUnknownKind;
 - (_Bool)attemptPromoteFromUnknownKindUsingCloudMaster;
 - (void)generateThumbnailsWithImageSource:(struct CGImageSource *)arg1 imageData:(id)arg2 updateExistingLargePreview:(_Bool)arg3 allowMediumPreview:(_Bool)arg4 forceSRGBConversion:(_Bool)arg5 outSmallThumbnail:(struct NSObject **)arg6 outLargeThumbnail:(struct NSObject **)arg7;
-- (void)_computePreCropThumbnailSize:(struct CGSize *)arg1 andPostCropSize:(struct CGSize *)arg2 forOrientedOriginalSize:(struct CGSize)arg3 andCroppedSize:(struct CGSize)arg4 isLargeThumbnail:(_Bool)arg5;
 @property(retain, nonatomic) NSData *faceRegions;
 @property(retain, nonatomic) NSString *title;
 @property(retain, nonatomic) NSString *longDescription;
@@ -683,7 +685,6 @@
 - (void)deDupCMMAssetInLibrary:(id)arg1;
 - (void)_removeLocalFileForResource:(id)arg1;
 - (void)_removeAdjustmentDataResources;
-- (void)_cleanSubstandardFile;
 - (_Bool)_isResourceType:(unsigned long long)arg1 inResources:(id)arg2;
 - (void)markAsUnavailableCloudResourceOfType:(unsigned long long)arg1;
 - (long long)_plAdjustmentBaseVersionFromCPLAdjustmentSourceType:(unsigned long long)arg1;
@@ -702,7 +703,7 @@
 - (void)_updateAssetSubtypeFromCPLAssetSubtype:(unsigned long long)arg1;
 - (int)_avalancheTypeFromCplBurstFlags:(unsigned long long)arg1;
 - (unsigned long long)cplBurstFlagsFromPLAvalancheType:(int)arg1;
-- (void)_updateBurstFlagsForCPLAssetChange:(id)arg1;
+- (void)_updateBurstFlagsForCPLAssetChange:(id)arg1 photoLibrary:(id)arg2;
 - (void)_copyResourcesFromSouceAsset:(id)arg1 toCPLAsset:(id)arg2 inLibrary:(id)arg3;
 - (id)cplAssetChangeWithMasterScopedIdentifier:(id)arg1 withChangeType:(unsigned long long)arg2 shouldGenerateDerivatives:(_Bool)arg3 inLibrary:(id)arg4;
 - (id)cplFullRecord;
@@ -734,7 +735,6 @@
 - (id)cplMasterChangeInLibrary:(id)arg1 shouldGenerateDerivatives:(_Bool)arg2;
 - (id)createResourcesForMaster:(id)arg1 shouldGenerateDerivatives:(_Bool)arg2 inPhotoLibrary:(id)arg3;
 - (void)_copyResourceFileFrom:(id)arg1 to:(id)arg2;
-- (id)_insertResource:(id)arg1 forOtherDuplicatedAssetInMaster:(id)arg2 inPhotoLibrary:(id)arg3;
 - (id)_videoComplementDerivativeResourcesForMaster:(id)arg1;
 - (void)_createVideoResourcesForMaster:(id)arg1 intoMasterResources:(id)arg2 shouldGenerateDerivatives:(_Bool)arg3;
 - (void)_createPhotoResourcesForMaster:(id)arg1 withOriginalResource:(id)arg2 intoMasterResources:(id)arg3 shouldGenerateDerivatives:(_Bool)arg4;
@@ -802,7 +802,7 @@
 - (id)rm_applyResourcesFromAssetChange:(id)arg1 inLibrary:(id)arg2;
 - (void)rm_createAssetResourcesForCPLResources:(id)arg1 inLibrary:(id)arg2;
 - (id)rm_cplExpungeableMasterResourceStates;
-- (id)rm_cplMasterOriginalResourcesFromCloudMaster:(id)arg1;
+- (id)rm_cplMasterResourcesFromCloudMaster:(id)arg1;
 - (id)rm_cplMasterResourceForResourceType:(unsigned long long)arg1;
 - (id)rm_cplResourceForResourceType:(unsigned long long)arg1;
 - (void)_rm_insertResource:(id)arg1 forOtherDuplicatedAssetInMaster:(id)arg2 inPhotoLibrary:(id)arg3;
@@ -888,7 +888,6 @@
 @property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingAssets; // @dynamic dayGroupHighlightBeingAssets;
 @property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingExtendedAssets; // @dynamic dayGroupHighlightBeingExtendedAssets;
 @property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingKeyAsset; // @dynamic dayGroupHighlightBeingKeyAsset;
-@property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingOverviewAssets; // @dynamic dayGroupHighlightBeingOverviewAssets;
 @property(readonly, copy) NSString *debugDescription;
 @property(nonatomic) unsigned short deferredProcessingNeeded; // @dynamic deferredProcessingNeeded;
 @property(nonatomic) unsigned short depthStates; // @dynamic depthStates;
@@ -911,7 +910,6 @@
 @property(nonatomic) id <PLPhotosHighlightData> highlightBeingAssets; // @dynamic highlightBeingAssets;
 @property(nonatomic) id <PLPhotosHighlightData> highlightBeingExtendedAssets; // @dynamic highlightBeingExtendedAssets;
 @property(nonatomic) id <PLPhotosHighlightData> highlightBeingKeyAsset; // @dynamic highlightBeingKeyAsset;
-@property(nonatomic) id <PLPhotosHighlightData> highlightBeingOverviewAssets; // @dynamic highlightBeingOverviewAssets;
 @property(nonatomic) id <PLPhotosHighlightData> highlightBeingSummaryAssets; // @dynamic highlightBeingSummaryAssets;
 @property(nonatomic) double highlightPromotionScore; // @dynamic highlightPromotionScore;
 @property(nonatomic) double highlightVisibilityScore; // @dynamic highlightVisibilityScore;

@@ -5,6 +5,7 @@
 //
 
 @protocol BRItemSPIServiceV1
+- (void)fetchDocumentRecordIDWithCompletionHandler:(void (^)(CKRecordID *, NSError *))arg1;
 - (void)thumbnailChangedWithCompletion:(void (^)(NSError *))arg1;
 - (void)fetchLastEditorDeviceNameWithCompletionHandler:(void (^)(NSString *, NSError *))arg1;
 - (void)fetchAccountIdentifierWithCompletionHandler:(void (^)(NSString *, NSError *))arg1;

@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
     _Bool _inputDelegateCanSupportAnimoji;
     _Bool _hasShownAnimojiFirstTimeExperience;
     _Bool _shouldRetryFetchingAnimojiRecents;
+    _Bool _useWideAnimojiCell;
+    _Bool _hasShownAnimojiCell;
     CDUnknownBlockType _completionBlock;
     UIResponder<UIKBEmojiHitTestResponder> *_hitTestResponder;
 }
@@ -41,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)didMoveToWindow;
 - (long long)indexForPrettyCategoryDisplay:(id)arg1;
 - (double)snappedXOffsetForOffset:(double)arg1;
+- (double)_recentlyUsedMediaRoundedOffset:(double)arg1 recentlyUsedMediaCellWidth:(double)arg2;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (id)firstFullyVisibleHeader;
 - (id)itemInRect:(struct CGRect)arg1;
@@ -55,7 +58,6 @@ __attribute__((visibility("hidden")))
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
-- (_Bool)_showingAnimojiUnsupportedOverlayView;
 - (_Bool)_shouldShowRecentlyUsedMedia;
 - (void)willDisplayModalActionView:(id)arg1 withSubTreeKeyView:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)shouldDismissModalDisplayView:(id)arg1;

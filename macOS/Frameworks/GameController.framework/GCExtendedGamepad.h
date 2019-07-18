@@ -13,6 +13,9 @@
     BOOL _dpadFlippedY;
     BOOL _leftFlippedY;
     BOOL _rightFlippedY;
+    long long _buttonHomeUsage;
+    long long _buttonMenuUsage;
+    long long _buttonOptionsUsage;
     GCMotion *_motion;
     GCControllerButtonInput *_button0;
     GCControllerButtonInput *_button1;
@@ -73,8 +76,7 @@
 - (void)setDpad:(id)arg1 x:(double)arg2 y:(double)arg3;
 - (id)saveSnapshot;
 - (void)handleEvent:(struct __IOHIDEvent *)arg1;
-- (void)handleAncillaryButtonEvent:(struct __IOHIDEvent *)arg1;
-- (void)handleLegacyAncillaryButtonEvent:(struct __IOHIDEvent *)arg1;
+- (void)initAuxiliaryButtonsWithInitInfo:(const struct GCExtendedGamepadInitWithControllerInitInfo *)arg1;
 - (id)button3;
 - (id)button2;
 - (id)button1;

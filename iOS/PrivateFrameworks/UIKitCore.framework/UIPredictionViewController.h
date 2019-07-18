@@ -25,8 +25,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TUIPredictionView *predictionView; // @synthesize predictionView=_predictionView;
 - (void).cxx_destruct;
 - (void)predictionView:(id)arg1 didSelectCandidate:(id)arg2;
+- (void)autocorrectionControllerDidClearAutocorrections:(id)arg1;
 - (void)autocorrectionController:(id)arg1 didUpdateAutocorrectionList:(id)arg2;
 - (void)_updateAutocorrectionList:(id)arg1;
+- (_Bool)_autocorrectionListMayCausePredictionViewToReappear:(id)arg1;
 - (void)_registerAsAutocorrectionObserver;
 - (void)_throttledUpdateUIWithAutocorrectionList:(id)arg1;
 - (void)_performThrottledUpdateUIWithAutocorrectionList:(id)arg1;
@@ -40,7 +42,8 @@ __attribute__((visibility("hidden")))
 - (void)_registerForNotifications;
 - (id)_currentTextSuggestions;
 - (_Bool)hidesExpandableButton;
-- (_Bool)isVisibleForInputResponder:(id)arg1;
+- (_Bool)isVisibleForInputDelegate:(id)arg1 inputViews:(id)arg2;
+- (_Bool)_isVisibleForAutocorrectionType:(long long)arg1;
 - (_Bool)_canShowWhileLocked;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

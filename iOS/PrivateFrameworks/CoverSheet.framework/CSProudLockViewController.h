@@ -42,6 +42,7 @@
 @property(readonly, nonatomic) UIView *cameraCoveredView;
 @property(readonly, nonatomic) UIView *proudLockView;
 - (void)updateLockForBiometricMatchFailure;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;

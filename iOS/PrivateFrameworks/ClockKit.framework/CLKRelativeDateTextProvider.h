@@ -30,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (_Bool)_configureFormatter:(id)arg1 fallbackIndex:(unsigned long long)arg2 style:(long long)arg3;
 + (id)textProviderWithDate:(id)arg1 style:(long long)arg2 units:(unsigned long long)arg3;
 @property(nonatomic) _Bool pauseTimerAtZero; // @synthesize pauseTimerAtZero=_pauseTimerAtZero;
 @property(nonatomic) _Bool wantsSubseconds; // @synthesize wantsSubseconds=_wantsSubseconds;
@@ -52,7 +53,6 @@
 - (id)description;
 - (_Bool)_timerIsPausedAtZero;
 - (void)_configureFormatterForTimerStyle;
-- (_Bool)_configureFormatterForFallbackIndex:(unsigned long long)arg1;
 - (id)_componentsForDate:(id)arg1 visibleUnits:(unsigned long long *)arg2;
 - (long long)_updateFrequency;
 - (void)_validate;
@@ -61,6 +61,7 @@
 - (long long)_timePeriodForElapsedTime:(double)arg1;
 - (id)_sessionAttributedTextForIndex:(unsigned long long)arg1 withStyle:(id)arg2;
 - (id)_sessionCacheKey;
+- (void)finalize;
 - (void)_startSessionWithDate:(id)arg1;
 
 @end

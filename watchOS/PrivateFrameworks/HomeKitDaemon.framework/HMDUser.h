@@ -15,7 +15,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class AVOutputDeviceAuthorizedPeer, HAPPairingIdentity, HMDAccountHandle, HMDAccountIdentifier, HMDAssistantAccessControl, HMDHome, HMDSettingsControllerDependency, HMDUserDataController, HMDUserSettingsBackingStoreController, HMUserPresenceAuthorization, NSMutableArray, NSNumber, NSObject, NSSet, NSString, NSUUID;
+@class AVOutputDeviceAuthorizedPeer, HAPPairingIdentity, HMDAccountHandle, HMDAccountIdentifier, HMDAssistantAccessControl, HMDCloudShareMessenger, HMDHome, HMDSettingsControllerDependency, HMDUserDataController, HMDUserSettingsBackingStoreController, HMUserPresenceAuthorization, NSMutableArray, NSNumber, NSObject, NSSet, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HMDUser : HMFObject <HMFLogging, HMDSettingsControllerDelegate, HMDUserSettingsBackingStoreControllerDelegate, HMDUserDataControllerDelegate, HMFDumpState, HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver, NSSecureCoding>
@@ -38,6 +38,7 @@
     NSObject<OS_dispatch_queue> *_propertyQueue;
     HMDSettingsControllerDependency *_sharedSettingsControllerDependency;
     HMDUserSettingsBackingStoreController *_sharedBackingStoreController;
+    HMDCloudShareMessenger *_shareMessenger;
     HMDSettingsControllerDependency *_privateSettingsControllerDependency;
     HMDUserSettingsBackingStoreController *_privateBackingStoreController;
     HMDUserDataController *_userDataController;
@@ -54,19 +55,21 @@
 @property(retain) HMDUserDataController *userDataController; // @synthesize userDataController=_userDataController;
 @property(retain) HMDUserSettingsBackingStoreController *privateBackingStoreController; // @synthesize privateBackingStoreController=_privateBackingStoreController;
 @property(retain) HMDSettingsControllerDependency *privateSettingsControllerDependency; // @synthesize privateSettingsControllerDependency=_privateSettingsControllerDependency;
+@property(retain) HMDCloudShareMessenger *shareMessenger; // @synthesize shareMessenger=_shareMessenger;
 @property(retain) HMDUserSettingsBackingStoreController *sharedBackingStoreController; // @synthesize sharedBackingStoreController=_sharedBackingStoreController;
 @property(retain) HMDSettingsControllerDependency *sharedSettingsControllerDependency; // @synthesize sharedSettingsControllerDependency=_sharedSettingsControllerDependency;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(copy, setter=setUUID:) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
-@property(readonly) _Bool isMultiUserPreferenceEnabled;
+@property(readonly) _Bool isUserSettingsPrefEnabled;
 - (id)privateZoneControllerForUserDataController:(id)arg1;
 - (id)sharedZoneControllerForUserDataController:(id)arg1;
 - (id)userDataController:(id)arg1 participantManagerForCloudZone:(id)arg2;
 - (void)userDataControllerDidUpdateMediaContentProfile:(id)arg1;
 - (void)userDataControllerDidUpdateAssistantAccessControl:(id)arg1;
 - (_Bool)userDataController:(id)arg1 isMediaContentProfileCapableAccessoryID:(id)arg2;
+- (_Bool)userDataController:(id)arg1 isPersonalRequestCapableAccessoryID:(id)arg2;
 - (id)backingStoreController:(id)arg1 createParticipantManagerForCloudZone:(id)arg2;
 - (void)didStartBackingStoreController:(id)arg1;
 - (id)zoneNameForBackingStoreController:(id)arg1;
@@ -74,7 +77,7 @@
 @property(readonly) _Bool isRunningOnHomeOwnersDevice;
 - (void)settingsController:(id)arg1 didUpdateWithCompletion:(CDUnknownBlockType)arg2;
 - (id)dictionaryEncoding;
-- (void)removeUserDataFromCloud;
+- (void)removeUserData;
 - (id)modelObjectWithChangeType:(unsigned int)arg1 version:(int)arg2;
 - (id)modelObjectWithChangeType:(unsigned int)arg1;
 - (id)backingStoreObjects:(int)arg1;
@@ -147,7 +150,7 @@
 - (void)registerForMessages;
 - (id)messageDispatcher;
 - (void)unconfigure;
-- (void)initializeUserSettingsWithHomeUUID:(id)arg1;
+- (void)initializeUserSettingsWithHome:(id)arg1;
 - (void)configureWithHome:(id)arg1;
 - (id)dumpState;
 - (id)attributeDescriptions;

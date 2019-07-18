@@ -8,7 +8,6 @@
 
 @class ISImageCache, NSArray, NSData;
 
-__attribute__((visibility("hidden")))
 @interface ISIconMacOS : ISIcon
 {
     struct _LSBinding *_binding;
@@ -28,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)getImageForImageDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)imageForImageDescriptor:(id)arg1;
 - (void)prepareImagesForImageDescriptors:(id)arg1;
+- (id)_cachedImageForDescriptor:(id)arg1;
 - (id)requestForDescriptor:(id)arg1;
 - (void)generateImageForDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)imageFromStoreForDescriptor:(id)arg1;

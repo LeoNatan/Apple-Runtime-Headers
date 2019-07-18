@@ -21,8 +21,8 @@
 }
 
 + (id)featurize:(id)arg1;
-+ (id)modelForName:(id)arg1 language:(id)arg2 mode:(unsigned long long)arg3;
-+ (id)modelForEntity:(id)arg1 type:(id)arg2 mode:(unsigned long long)arg3 language:(id)arg4 class:(Class)arg5;
++ (id)modelForName:(id)arg1 language:(id)arg2;
++ (id)modelForEntity:(id)arg1 type:(id)arg2 language:(id)arg3 class:(Class)arg4;
 + (id)newTransformerInstanceForLanguage:(id)arg1;
 + (id)trainingFeaturesOf:(id)arg1 inLanguage:(id)arg2 withObjective:(unsigned long long)arg3;
 + (id)trainingFeaturesOf:(id)arg1 inLanguage:(id)arg2;

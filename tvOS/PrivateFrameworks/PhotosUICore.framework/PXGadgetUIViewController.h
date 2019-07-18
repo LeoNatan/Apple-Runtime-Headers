@@ -69,6 +69,7 @@
 @property(readonly, nonatomic) PXGadgetNavigationHelper *navigationHelper; // @synthesize navigationHelper=_navigationHelper;
 @property(readonly, nonatomic) PXGadgetDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 - (void).cxx_destruct;
+- (long long)scrollAnimationIdentifier;
 @property(readonly, nonatomic) NSObject<OS_os_log> *gadgetViewControllerLog;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)contentUnavailablePlaceholderManagerDidChange:(id)arg1;
@@ -133,6 +134,7 @@
 - (void)_clearTimerToHandleGadgetsSeen;
 - (void)_handleGadgetsSeen;
 - (void)_configureHeader:(id)arg1 withGadget:(id)arg2;
+- (void)configureSectionHeader:(id)arg1;
 - (id)_indexPathForGadget:(id)arg1;
 - (id)_gadgetAtIndexPath:(id)arg1;
 - (void)updateIfNeeded;
@@ -151,6 +153,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)rootGadgetControllerDidDisappear;
 - (void)rootGadgetControllerWillAppear;
 - (void)viewDidAppear:(_Bool)arg1;

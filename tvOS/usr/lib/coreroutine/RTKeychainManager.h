@@ -6,10 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@interface RTKeychainManager : NSObject
+#import <coreroutine/RTDiagnosticProvider-Protocol.h>
+
+@class NSString;
+
+@interface RTKeychainManager : NSObject <RTDiagnosticProvider>
 {
 }
 
++ (id)allocWithZone:(struct _NSZone *)arg1;
+- (void)sendDiagnosticsToURL:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)updateKeyWithIdentifier:(id)arg1 keyData:(id)arg2 keySize:(long long)arg3 error:(id *)arg4;
 - (id)encryptionKeyWithSize:(long long)arg1 identifier:(id)arg2 error:(id *)arg3;
 - (_Bool)removeEncryptionKeyWithIdentifier:(id)arg1 error:(id *)arg2;
@@ -24,6 +30,12 @@
 - (int)_addSecItemWithAttributes:(id)arg1 result:(id *)arg2;
 - (int)_updateSecItemMatchingQuery:(id)arg1 attributes:(id)arg2;
 - (int)_copySecItemMatchingQuery:(id)arg1 result:(id *)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

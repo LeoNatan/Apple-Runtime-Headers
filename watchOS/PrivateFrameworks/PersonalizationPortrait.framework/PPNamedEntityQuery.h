@@ -13,10 +13,8 @@
 
 @interface PPNamedEntityQuery : NSObject <NSCopying, NSSecureCoding>
 {
-    _Bool _overrideDecayRate;
     _Bool _matchCategory;
     _Bool _excludeWithoutSentiment;
-    _Bool _isMapsSearchQuery;
     _Bool _orderByName;
     unsigned int _limit;
     NSDate *_fromDate;
@@ -29,6 +27,7 @@
     NSSet *_matchingCategories;
     NSSet *_excludingAlgorithms;
     NSString *_matchingEntityTrie;
+    unsigned int _locationConsumer;
     double _decayRate;
 }
 
@@ -37,7 +36,7 @@
 + (id)_matchingCategoriesDescription:(id)arg1;
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool orderByName; // @synthesize orderByName=_orderByName;
-@property(nonatomic) _Bool isMapsSearchQuery; // @synthesize isMapsSearchQuery=_isMapsSearchQuery;
+@property(nonatomic) unsigned int locationConsumer; // @synthesize locationConsumer=_locationConsumer;
 @property(retain, nonatomic) NSString *matchingEntityTrie; // @synthesize matchingEntityTrie=_matchingEntityTrie;
 @property(nonatomic) _Bool excludeWithoutSentiment; // @synthesize excludeWithoutSentiment=_excludeWithoutSentiment;
 @property(retain, nonatomic) NSSet *excludingAlgorithms; // @synthesize excludingAlgorithms=_excludingAlgorithms;
@@ -45,7 +44,6 @@
 @property(nonatomic) _Bool matchCategory; // @synthesize matchCategory=_matchCategory;
 @property(copy, nonatomic) NSString *matchingName; // @synthesize matchingName=_matchingName;
 @property(nonatomic) double decayRate; // @synthesize decayRate=_decayRate;
-@property(nonatomic) _Bool overrideDecayRate; // @synthesize overrideDecayRate=_overrideDecayRate;
 @property(nonatomic) unsigned int deviceFilter; // @synthesize deviceFilter=_deviceFilter;
 @property(retain, nonatomic) NSSet *excludingSourceBundleIds; // @synthesize excludingSourceBundleIds=_excludingSourceBundleIds;
 @property(retain, nonatomic) NSSet *matchingSourceBundleIds; // @synthesize matchingSourceBundleIds=_matchingSourceBundleIds;
@@ -63,6 +61,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
+@property(nonatomic) _Bool overrideDecayRate;
 
 @end
 

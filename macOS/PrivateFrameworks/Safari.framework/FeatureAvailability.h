@@ -13,17 +13,17 @@
 {
     NSObject<OS_dispatch_queue> *_internalQueue;
     STManagementState *_managementState;
-    NSObject<OS_dispatch_queue> *_screenTimePasscodeQueue;
+    NSObject<OS_dispatch_queue> *_screenTimeUserStateQueue;
     BOOL _threadUnsafeUserSignedIntoICloud;
     BOOL _threadUnsafeSafariSyncEnabled;
     BOOL _threadUnsafeKeychainSyncEnabled;
     BOOL _threadUnsafeUserUsingManagedAppleID;
-    long long _cachedScreenTimePasscodeState;
+    long long _cachedScreenTimeUserState;
 }
 
-+ (void)executeBlockAfterScreenTimePasscodeStateDetermined:(CDUnknownBlockType)arg1;
-+ (void)determineIfScreenTimePasscodeIsSetWithCompletionHandler:(CDUnknownBlockType)arg1;
-+ (BOOL)isScreenTimePasscodeSet;
++ (void)executeBlockAfterScreenTimeUserStateDetermined:(CDUnknownBlockType)arg1;
++ (void)determineIfScreenTimeUserIsRestrictedWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (BOOL)isScreenTimeUserRestricted;
 + (BOOL)wantsAggressiveKeychainCredentialCaching;
 + (BOOL)_shouldShowRussianFeatures;
 + (BOOL)_shouldShowChineseFeatures;
@@ -52,13 +52,13 @@
 + (BOOL)isSafariSyncEnabled;
 + (BOOL)isUserSignedIntoICloud;
 + (void)startMonitoringForAvailabilityChanges;
-@property long long cachedScreenTimePasscodeState; // @synthesize cachedScreenTimePasscodeState=_cachedScreenTimePasscodeState;
+@property long long cachedScreenTimeUserState; // @synthesize cachedScreenTimeUserState=_cachedScreenTimeUserState;
 @property(getter=isUserUsingManagedAppleID) BOOL userUsingManagedAppleID; // @synthesize userUsingManagedAppleID=_threadUnsafeUserUsingManagedAppleID;
 @property(getter=isKeychainSyncEnabled) BOOL keychainSyncEnabled; // @synthesize keychainSyncEnabled=_threadUnsafeKeychainSyncEnabled;
 @property(getter=isUserSignedIntoICloud) BOOL userSignedIntoICloud; // @synthesize userSignedIntoICloud=_threadUnsafeUserSignedIntoICloud;
 - (void).cxx_destruct;
-- (void)_executeBlockAfterScreenTimePasscodeStateDetermined:(CDUnknownBlockType)arg1;
-- (void)isScreenTimePasscodeSetWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_executeBlockAfterScreenTimeUserStateDetermined:(CDUnknownBlockType)arg1;
+- (void)isScreenTimeUserRestrictedWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(getter=isSafariSyncEnabled) BOOL safariSyncEnabled; // @synthesize safariSyncEnabled=_threadUnsafeSafariSyncEnabled;
 - (void)_updateKeychainSyncingStatus;
 - (void)_iCloudServiceStatusChanged:(id)arg1;

@@ -6,17 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableDictionary, geo_isolater;
+#import <GeoServices/GEOConfigChangeListenerDelegate-Protocol.h>
+
+@class NSDictionary, NSMutableDictionary, NSString, geo_isolater;
 @protocol OS_dispatch_source;
 
-@interface GEODataRequestThrottler : NSObject
+@interface GEODataRequestThrottler : NSObject <GEOConfigChangeListenerDelegate>
 {
     geo_isolater *_isolation;
     NSDictionary *_defaultThrottlePolicy;
-    NSDictionary *_internalOverrideThrottlePolicy;
     NSDictionary *_globalThrottlePolicy;
     _Bool _throttlePoliciesCached;
-    id _throttlePolicyChangeListener;
     NSMutableDictionary *_throttlers;
     NSObject<OS_dispatch_source> *_updateStateTimer;
     int _defaultChangedNotification;
@@ -25,11 +25,12 @@
 
 + (id)sharedThrottler;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)_updateSavedState:(id)arg1;
 - (void)_pruneThrottlers;
 - (void)_reset;
 - (void)reset;
+- (void)valueChangedForGEOConfigKey:(CDStruct_065526f1)arg1;
 - (void)pruneThrottlers;
 - (id)throttlerForKeyPath:(id)arg1;
 - (void)_withThrottlersForKey:(struct GEOThrottleKey)arg1 auditToken:(id)arg2 do:(CDUnknownBlockType)arg3;
@@ -38,6 +39,11 @@
 - (void)dealloc;
 - (id)_init;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

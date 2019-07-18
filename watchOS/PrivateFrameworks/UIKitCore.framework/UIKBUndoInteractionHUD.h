@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
     int _mode;
     UIVisualEffectView *_backgroundEffectView;
     UIStackView *_undoItems;
-    UIView *_shadowView;
+    UIVisualEffectView *_shadowView;
     UIView *_containerView;
     UIView *_centerView;
     UIView *_grabber;
@@ -43,7 +43,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *grabber; // @synthesize grabber=_grabber;
 @property(retain, nonatomic) UIView *centerView; // @synthesize centerView=_centerView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
-@property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
+@property(retain, nonatomic) UIVisualEffectView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) UIStackView *undoItems; // @synthesize undoItems=_undoItems;
 @property(retain, nonatomic) UIVisualEffectView *backgroundEffectView; // @synthesize backgroundEffectView=_backgroundEffectView;
 @property(nonatomic) int mode; // @synthesize mode=_mode;
@@ -65,6 +65,8 @@ __attribute__((visibility("hidden")))
 - (void)updateHUDControlState;
 - (_Bool)availableOfControl:(id)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
+- (id)createSeparatorView;
 - (id)initWithKeyboardAppearance:(int)arg1 isRTL:(_Bool)arg2 mode:(int)arg3 sceneBounds:(struct CGRect)arg4;
 
 @end

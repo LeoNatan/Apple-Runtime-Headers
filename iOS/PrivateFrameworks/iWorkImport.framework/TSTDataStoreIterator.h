@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)iterateCellsUsingBlock:(CDUnknownBlockType)arg1;
 - (struct TSUCellCoord)advanceToCellID:(struct TSUCellCoord)arg1;
 - (struct TSUCellCoord)getNext;
+- (void)updateFormulaForCellData:(id)arg1;
 - (void)updateCellData:(id)arg1;
 - (void)p_setupTileAndRowAtCellID:(struct TSUCellCoord)arg1;
 - (void)dealloc;

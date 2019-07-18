@@ -10,7 +10,6 @@
 {
     // Error parsing type: , name: issueModelFactory
     // Error parsing type: , name: bundleSubscriptionManager
-    // Error parsing type: , name: offlineProvider
 }
 
 @end

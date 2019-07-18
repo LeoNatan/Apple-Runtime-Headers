@@ -55,7 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateBlockStoragePolicyIfNeeded;
 - (void)takeStoragePolicyFrom:(id)arg1;
 - (void)showWebsiteDataDetails:(id)arg1;
-- (id)helpAnchor;
+- (id)safariHelpAnchor;
 - (void)_setApplePaySubtextString;
 - (id)_applePayPreferencesConstraints;
 - (void)_removeApplePayPreferenceIfNecessary;

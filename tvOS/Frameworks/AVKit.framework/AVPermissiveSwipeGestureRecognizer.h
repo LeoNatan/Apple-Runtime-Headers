@@ -43,6 +43,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long direction;
 - (void)swipeGestureWasRecognized:(id)arg1;
 - (void)setState:(long long)arg1;
+- (_Bool)canPreventGestureRecognizer:(id)arg1;
+- (_Bool)canBePreventedByGestureRecognizer:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

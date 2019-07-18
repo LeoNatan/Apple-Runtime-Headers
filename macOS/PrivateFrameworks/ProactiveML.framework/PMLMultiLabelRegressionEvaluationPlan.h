@@ -25,7 +25,6 @@
     NSArray *_evaluationPoints;
     id <PMLMultiLabelEvaluationTrackerProtocol> _tracker;
     unsigned long long _evaluationLevel;
-    BOOL _isSynchronous;
     struct NSString *_planId;
 }
 
@@ -41,7 +40,6 @@
 @property(readonly, nonatomic) unsigned long long maxSessionsLimit; // @synthesize maxSessionsLimit=_maxSessionsLimit;
 @property(readonly, nonatomic) PMLSessionDescriptor *sessionDescriptor; // @synthesize sessionDescriptor=_sessionDescriptor;
 @property(readonly, nonatomic) PMLTrainingStore *store; // @synthesize store=_store;
-@property(readonly, nonatomic) BOOL isSynchronous; // @synthesize isSynchronous=_isSynchronous;
 @property(readonly, nonatomic) NSString *planId; // @synthesize planId=_planId;
 - (void).cxx_destruct;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;

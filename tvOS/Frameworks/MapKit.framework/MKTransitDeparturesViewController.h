@@ -9,12 +9,13 @@
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
 #import <MapKit/MKStackingViewControllerPreferredSizeUse-Protocol.h>
 #import <MapKit/MKTransitDeparturesDataSourceHosting-Protocol.h>
+#import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 
 @class MKMapItem, MKTransitDeparturesDataSource, NSString;
 @protocol MKTransitDepaturesViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface MKTransitDeparturesViewController : _MKTableViewController <MKTransitDeparturesDataSourceHosting, MKStackingViewControllerPreferredSizeUse, MKModuleViewControllerProtocol>
+@interface MKTransitDeparturesViewController : _MKTableViewController <MKTransitDeparturesDataSourceHosting, MKStackingViewControllerPreferredSizeUse, MKModuleViewControllerProtocol, _MKInfoCardChildViewControllerAnalyticsDelegate>
 {
     _Bool _allowTransitLineSelection;
     struct CGRect _lastMaxWidthBounds;
@@ -30,6 +31,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 - (void).cxx_destruct;
 - (int)currentTransitCategory;
+- (id)infoCardChildUnactionableUIElements;
+- (id)infoCardChildPossibleActions;
 @property(readonly, nonatomic) _Bool requiresPreferredContentSizeInStackingView;
 - (void)transitDeparturesDataSource:(id)arg1 didSelectConnectionInformation:(id)arg2;
 - (void)transitDeparturesDataSource:(id)arg1 didSelectDepartureSequence:(id)arg2 transitStationMapItem:(id)arg3 transitLine:(id)arg4 fromCell:(id)arg5;
@@ -50,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithMapItem:(id)arg1 allowTransitLineSelection:(_Bool)arg2;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

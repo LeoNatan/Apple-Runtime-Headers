@@ -50,6 +50,7 @@
 - (void)addReadRequests:(id)arg1 home:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)addMediaWriteRequests:(id)arg1 withRequestProperty:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)__handleAccessoryCharacteristicsChangedNotification:(id)arg1;
+- (void)_reportOperationStartedForAccessory:(id)arg1;
 - (void)_reportResponses;
 - (void)_reportResponsesForMediaRequests;
 - (void)timeoutAndReportResults;

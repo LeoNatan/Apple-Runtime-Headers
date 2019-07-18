@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)imageForSize:(struct CGSize)arg1 scale:(float)arg2;
+- (id)init;
 
 @end
 

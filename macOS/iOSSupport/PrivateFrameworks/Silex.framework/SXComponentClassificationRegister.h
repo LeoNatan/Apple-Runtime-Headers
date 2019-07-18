@@ -6,12 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@interface SXComponentClassificationRegister : NSObject
+#import <Silex/SXClassRegister-Protocol.h>
+
+@class NSString;
+
+@interface SXComponentClassificationRegister : NSObject <SXClassRegister>
 {
 }
 
 + (id)classifications;
-+ (void)load;
++ (void)registerClasses;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -19,10 +19,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _iter;
     BOOL _localFlowsDisabled;
     BOOL _localFlowsEnabled;
+    BOOL _premiumModeEnabled;
     NSString *_interfaceName;
     unsigned long long _tcpProgressScore;
 }
 
+@property(readonly, nonatomic) BOOL premiumModeEnabled; // @synthesize premiumModeEnabled=_premiumModeEnabled;
 @property(readonly, nonatomic) unsigned long long tcpProgressScore; // @synthesize tcpProgressScore=_tcpProgressScore;
 @property(readonly, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 - (void).cxx_destruct;
@@ -30,6 +32,8 @@ __attribute__((visibility("hidden")))
 - (void)_captureProgressWithInterval:(unsigned long long)arg1 capWindowTo:(unsigned long long)arg2;
 - (void)stopProgressProbeTimer;
 - (void)startProgressProbeTimerWithInterval:(unsigned long long)arg1 capWindowTo:(unsigned long long)arg2;
+- (void)disablePremiumMode;
+- (void)enablePremiumMode;
 - (BOOL)disableLocalFlowsTracking;
 - (BOOL)enableLocalFlowsTracking;
 - (BOOL)stopTracking;
@@ -39,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
+- (void)dealloc;
 - (id)initWithInterfaceName:(id)arg1;
 
 @end

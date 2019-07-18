@@ -13,11 +13,9 @@
     NSString *_input;
     NSString *_uuid;
     unsigned long long _triggerEvent;
-    unsigned long long _queryId;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) unsigned long long queryId; // @synthesize queryId=_queryId;
 @property(nonatomic) unsigned long long triggerEvent; // @synthesize triggerEvent=_triggerEvent;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) NSString *input; // @synthesize input=_input;

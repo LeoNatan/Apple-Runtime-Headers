@@ -12,19 +12,22 @@
 
 @interface ICAttachmentBrickMapAnnotationV2 : NSObject <MKAnnotation>
 {
+    NSString *_title;
+    NSString *_subtitle;
     struct CLLocationCoordinate2D _coordinate;
 }
 
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
+@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+- (void).cxx_destruct;
 - (id)initWithAttachment:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, copy, nonatomic) NSString *subtitle;
 @property(readonly) Class superclass;
-@property(readonly, copy, nonatomic) NSString *title;
 
 @end
 

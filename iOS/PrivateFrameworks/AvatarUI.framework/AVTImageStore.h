@@ -39,6 +39,7 @@
 - (id)imageForItem:(id)arg1 scope:(id)arg2 error:(id *)arg3;
 - (_Bool)copyImagesForPersistentIdentifierPrefix:(id)arg1 toPersistentIdentifierPrefix:(id)arg2 error:(id *)arg3;
 - (_Bool)deleteImagesForItemsWithPersistentIdentifierPrefix:(id)arg1 error:(id *)arg2;
+- (_Bool)saveImage:(id)arg1 withImageData:(id)arg2 forItem:(id)arg3 scope:(id)arg4 error:(id *)arg5;
 - (_Bool)saveImage:(id)arg1 forItem:(id)arg2 scope:(id)arg3 error:(id *)arg4;
 - (id)resourceURLForItem:(id)arg1 scope:(id)arg2;
 - (_Bool)createDirectoryIfNeeded:(id *)arg1;

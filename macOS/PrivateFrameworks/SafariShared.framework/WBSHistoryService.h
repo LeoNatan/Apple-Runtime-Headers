@@ -26,12 +26,12 @@
 @property(readonly, nonatomic) WBSHistoryDatabaseAccessBroker *databaseAccessBroker; // @synthesize databaseAccessBroker=_databaseAccessBroker;
 - (void).cxx_destruct;
 - (void)disconnectDatabase:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)connectWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)connectWithOptions:(id)arg1 connection:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_openOrReuseExistingDatabaseWithOptions:(id)arg1 error:(id *)arg2;
 - (id)_acquireLockForURL:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) NSURL *databaseURL;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (BOOL)_connectionIsEntitledToUseService:(id)arg1;
+- (BOOL)_connectionIsEntitledToUseUserDatabase:(id)arg1;
 - (void)_shutdown;
 - (void)_resume;
 - (id)init;

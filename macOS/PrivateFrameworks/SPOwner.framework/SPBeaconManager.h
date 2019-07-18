@@ -8,8 +8,8 @@
 
 #import <SPOwner/SPMonitorsWrapperDelegate-Protocol.h>
 
-@class FMXPCServiceDescription, FMXPCSession, FMXPCTimer, NSString, SPMonitorsWrapper;
-@protocol OS_dispatch_queue, SPBeaconManagerXPCProtocol;
+@class FMXPCServiceDescription, FMXPCSession, FMXPCTimer, NSString, SPMacBeaconConfig, SPMonitorsWrapper;
+@protocol OS_dispatch_queue, OS_dispatch_source, SPBeaconManagerXPCProtocol;
 
 @interface SPBeaconManager : NSObject <SPMonitorsWrapperDelegate>
 {
@@ -29,10 +29,12 @@
     FMXPCSession *_session;
     FMXPCServiceDescription *_userAgentServiceDescription;
     FMXPCSession *_userAgentSession;
+    SPMacBeaconConfig *_macBeaconConfig;
     id <SPBeaconManagerXPCProtocol> _proxy;
     id <SPBeaconManagerXPCProtocol> _userAgentProxy;
     NSObject<OS_dispatch_queue> *_queue;
-    FMXPCTimer *_timer;
+    FMXPCTimer *_periodicActionXpcTimer;
+    NSObject<OS_dispatch_source> *_periodicActionDispatchTimer;
     SPMonitorsWrapper *_monitorWrapper;
     long long _cachedLocalBeaconManagerState;
 }
@@ -45,10 +47,12 @@
 @property(nonatomic) BOOL forceBeaconingOff; // @synthesize forceBeaconingOff=_forceBeaconingOff;
 @property(nonatomic) BOOL currentBeaconingState; // @synthesize currentBeaconingState=_currentBeaconingState;
 @property(retain, nonatomic) SPMonitorsWrapper *monitorWrapper; // @synthesize monitorWrapper=_monitorWrapper;
-@property(retain, nonatomic) FMXPCTimer *timer; // @synthesize timer=_timer;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *periodicActionDispatchTimer; // @synthesize periodicActionDispatchTimer=_periodicActionDispatchTimer;
+@property(retain, nonatomic) FMXPCTimer *periodicActionXpcTimer; // @synthesize periodicActionXpcTimer=_periodicActionXpcTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <SPBeaconManagerXPCProtocol> userAgentProxy; // @synthesize userAgentProxy=_userAgentProxy;
 @property(retain, nonatomic) id <SPBeaconManagerXPCProtocol> proxy; // @synthesize proxy=_proxy;
+@property(retain, nonatomic) SPMacBeaconConfig *macBeaconConfig; // @synthesize macBeaconConfig=_macBeaconConfig;
 @property(retain, nonatomic) FMXPCSession *userAgentSession; // @synthesize userAgentSession=_userAgentSession;
 @property(retain, nonatomic) FMXPCServiceDescription *userAgentServiceDescription; // @synthesize userAgentServiceDescription=_userAgentServiceDescription;
 @property(retain, nonatomic) FMXPCSession *session; // @synthesize session=_session;
@@ -72,9 +76,10 @@
 - (void)notifyNearbyTokensChangedBlockWithCompletion:(CDUnknownBlockType)arg1;
 - (void)notifyBeaconingKeysChangedBlockWithCompletion:(CDUnknownBlockType)arg1;
 - (void)periodicActionWithCompletion:(CDUnknownBlockType)arg1;
-- (void)timerFired:(id)arg1;
-- (id)periodicActionTimer:(id)arg1;
-- (void)checkInPeriodicActionTimer;
+- (void)timerFired;
+- (void)setPeriodicActionDispatchTimerWithInterval:(double)arg1;
+- (void)setPeriodicActionXpcTimerWithDateInterval:(id)arg1;
+- (void)checkInPeriodicActionXpcTimer;
 - (void)invalidate;
 - (void)_invalidate;
 - (void)notifyStatusChange:(unsigned char)arg1;

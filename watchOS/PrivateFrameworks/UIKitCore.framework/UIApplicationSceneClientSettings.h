@@ -21,6 +21,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofOtherSetting:(unsigned int)arg3;
 - (id)keyDescriptionForOtherSetting:(unsigned int)arg1;
+@property(readonly, nonatomic) int sceneActivationBias;
 @property(readonly, nonatomic) NSData *activationConditionsData;
 @property(readonly, copy, nonatomic) NSString *canvasTitle;
 @property(readonly, nonatomic) _Bool disablesMirroring;

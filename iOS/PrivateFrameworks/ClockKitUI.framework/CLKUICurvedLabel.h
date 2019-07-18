@@ -83,7 +83,6 @@
 - (double)_extraWidthForImage;
 @property(readonly, nonatomic) double maxLinearTextWidth;
 @property(readonly, nonatomic) double maxLinearWidth;
-@property(readonly, nonatomic) double linearWidth;
 @property(readonly, nonatomic) double _lastLineBaseline;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

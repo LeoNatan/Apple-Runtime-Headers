@@ -6,17 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, PXVideoSession;
+@class AVAsset, AVVideoComposition, NSArray;
 
 @interface PUMergedLivePhotosVideo : NSObject
 {
     NSArray *_assets;
     NSArray *_startTimes;
     NSArray *_keyTimes;
-    PXVideoSession *_videoSession;
+    AVAsset *_mergedVideoAsset;
+    AVVideoComposition *_mergedVideoComposition;
+    double _videoAspectRatio;
 }
 
-@property(readonly, nonatomic) PXVideoSession *videoSession; // @synthesize videoSession=_videoSession;
+@property(readonly, nonatomic) double videoAspectRatio; // @synthesize videoAspectRatio=_videoAspectRatio;
+@property(readonly, nonatomic) AVVideoComposition *mergedVideoComposition; // @synthesize mergedVideoComposition=_mergedVideoComposition;
+@property(readonly, nonatomic) AVAsset *mergedVideoAsset; // @synthesize mergedVideoAsset=_mergedVideoAsset;
 @property(readonly, copy, nonatomic) NSArray *keyTimes; // @synthesize keyTimes=_keyTimes;
 @property(readonly, copy, nonatomic) NSArray *startTimes; // @synthesize startTimes=_startTimes;
 @property(readonly, copy, nonatomic) NSArray *assets; // @synthesize assets=_assets;
@@ -24,7 +28,7 @@
 - (id)debugDescription;
 - (long long)_assetIndexAtTime:(CDStruct_1b6d18a9)arg1;
 - (id)assetAtTime:(CDStruct_1b6d18a9)arg1 progress:(out double *)arg2;
-- (id)initWithAssets:(id)arg1 startTimes:(id)arg2 keyTimes:(id)arg3 videoSession:(id)arg4;
+- (id)initWithAssets:(id)arg1 startTimes:(id)arg2 keyTimes:(id)arg3 videoAsset:(id)arg4 videoComposition:(id)arg5 videoAspectRatio:(double)arg6;
 
 @end
 

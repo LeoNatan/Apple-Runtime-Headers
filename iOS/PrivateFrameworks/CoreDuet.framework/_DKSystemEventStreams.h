@@ -10,11 +10,13 @@
 {
 }
 
++ (id)appLaunchFeedbackStream;
 + (id)remoteDeviceInBedTimesStream;
 + (id)pairedDeviceForecastStream;
 + (id)internalQueryDataCollectionStream;
 + (id)tombstoneStream;
 + (id)safariHistoryStream;
++ (id)mapsShareEtaFeedbackStream;
 + (id)shareSheetFeedbackStream;
 + (id)searchFeedbackStream;
 + (id)homeKitAppViewStream;
@@ -54,6 +56,7 @@
 + (id)nextEventForTopOffProtectionStream;
 + (id)airplaneModeStream;
 + (id)doNotDisturbStream;
++ (id)standbyTimerStream;
 + (id)deviceActivityLevelStream;
 + (id)notificationUsageStream;
 + (id)widgetsViewedStream;

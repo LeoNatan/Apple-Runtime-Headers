@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)ancillaryEntityOffset;
 + (id)ancillaryModelNamespace;
 + (unsigned long long)ancillaryEntityCount;
++ (BOOL)addMigrationStatementsToDeleteDuplicateMirroredRelationshipsToContext:(id)arg1 withManagedObjectContext:(id)arg2 andSQLEntity:(id)arg3 error:(id *)arg4;
 + (BOOL)checkForCorruptedRecordMetadataInStore:(id)arg1 inManagedObjectContext:(id)arg2 error:(id *)arg3;
 + (BOOL)computeAncillaryEntityPrimaryKeyTableEntriesForStore:(id)arg1 error:(id *)arg2;
 + (BOOL)cleanUpAfterClientMigrationWithStore:(id)arg1 andContext:(id)arg2 error:(id *)arg3;

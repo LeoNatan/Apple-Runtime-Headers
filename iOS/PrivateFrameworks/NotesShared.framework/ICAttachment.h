@@ -139,11 +139,13 @@
 @property(nonatomic) short imageFilterType; // @dynamic imageFilterType;
 @property(retain, nonatomic) ICNote *note; // @dynamic note;
 - (id)defaultTitle;
+- (_Bool)preferLocalPreviewImages;
 - (_Bool)previewsSupportMultipleAppearances;
 - (_Bool)supportsRenaming;
 - (_Bool)isTable;
 - (_Bool)isChildOfDocumentGallery;
 - (_Bool)isNews;
+- (_Bool)isDrawing;
 - (_Bool)isAppStore;
 - (_Bool)isiTunes;
 - (_Bool)isMap;
@@ -165,7 +167,6 @@
 - (void)loadFromArchive:(const struct Attachment *)arg1 dataPersister:(id)arg2 withIdentifierMap:(id)arg3;
 - (void)resetUniqueIdentifier;
 - (void)updatePreviewsFromRecord:(id)arg1;
-- (_Bool)preferLocalPreviewImages;
 - (void)objectWasFetchedFromCloudWithRecord:(id)arg1 accountID:(id)arg2;
 - (void)updateParentReferenceIfNecessary;
 - (_Bool)supportsDeletionByTTL;
@@ -205,7 +206,8 @@
 - (id)inlineDrawingModel;
 - (id)galleryModel;
 - (id)drawingModel;
-- (id)attachmentPreviewImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 matchScaleAndAppearance:(_Bool)arg4;
+- (id)attachmentPreviewImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 matchScale:(_Bool)arg4 matchAppearance:(_Bool)arg5;
+- (id)attachmentPreviewImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 requireAppearance:(_Bool)arg4;
 - (id)attachmentPreviewImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3;
 - (id)attachmentPreviewImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2;
 - (id)attachmentPreviewImageCreatingIfNecessaryWithWidth:(double)arg1 height:(double)arg2 scale:(double)arg3 appearanceType:(unsigned long long)arg4 scaleWhenDrawing:(_Bool)arg5 metadata:(id)arg6;
@@ -222,6 +224,7 @@
 - (id)searchableTextContentWithoutTitle;
 - (id)searchableTextContent;
 - (id)searchableItemAttributeSet;
+- (id)userActivityContentAttributeSet;
 - (id)searchDomainIdentifier;
 - (id)searchIndexingIdentifier;
 - (id)contentIdentifier;

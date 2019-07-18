@@ -27,7 +27,7 @@
 - (id)_representativeDisplayTypeForStyle:(int)arg1;
 - (void)fetchCachedDataForTimeScope:(int)arg1 dateInterval:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)buildOverlayDisplayTypeForTimeScope:(int)arg1;
-- (id)buildContextItemWithValue:(id)arg1 forTimeScope:(int)arg2;
+- (id)buildContextItemWithValue:(id)arg1 valueContext:(id)arg2 forTimeScope:(int)arg3;
 - (id)representativeDisplayType;
 - (id)initWithStyle:(int)arg1 namedPredicate:(id)arg2 overlayChartController:(id)arg3 applicationItems:(id)arg4 options:(int)arg5 mode:(int)arg6;
 

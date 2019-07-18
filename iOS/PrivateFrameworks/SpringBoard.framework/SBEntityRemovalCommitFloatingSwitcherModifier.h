@@ -11,23 +11,26 @@
 @interface SBEntityRemovalCommitFloatingSwitcherModifier : SBTransitionSwitcherModifier
 {
     SBAppLayout *_fromAppLayout;
+    SBAppLayout *_toAppLayout;
     long long _floatingConfiguration;
-    _Bool _isSecondAndLastStage;
 }
 
 - (void).cxx_destruct;
+- (double)_toBeRemovedFinalScale;
+- (_Bool)_isIndexToAppLayout:(unsigned long long)arg1;
+- (_Bool)_isIndexFromAppLayout:(unsigned long long)arg1;
 - (id)layoutSettings;
 - (_Bool)isContentStatusBarVisible;
 - (double)shadowOpacityForIndex:(unsigned long long)arg1;
 - (double)opacityForIndex:(unsigned long long)arg1;
+- (id)topMostAppLayouts;
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (double)scaleForIndex:(unsigned long long)arg1;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;
 - (long long)layoutUpdateMode;
-- (id)handleTimerEvent:(id)arg1;
-- (id)transitionWillUpdate;
+- (id)transitionWillBegin;
 - (struct CGRect)containerViewBounds;
-- (id)initWithTransitionID:(id)arg1 appLayout:(id)arg2 floatingConfiguration:(long long)arg3;
+- (id)initWithTransitionID:(id)arg1 fromAppLayout:(id)arg2 toAppLayout:(id)arg3 floatingConfiguration:(long long)arg4;
 
 @end
 

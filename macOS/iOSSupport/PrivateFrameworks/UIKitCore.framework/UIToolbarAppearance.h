@@ -21,8 +21,6 @@
 @property(copy, nonatomic) UIBarButtonItemAppearance *buttonAppearance; // @synthesize buttonAppearance=_buttonAppearance;
 - (void).cxx_destruct;
 - (void)barButtonItemApperanceChangedItemData:(id)arg1 toItemData:(id)arg2 fromItemData:(id)arg3;
-- (void)setPlainButtonAppearance:(id)arg1;
-- (id)plainButtonAppearance;
 - (id)_doneButtonAppearance;
 - (id)_plainButtonAppearance;
 - (id)_doneButtonAppearanceData;

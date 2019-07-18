@@ -30,6 +30,8 @@
 - (void)_fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAppConfigurationIfNeeded;
+- (void)fetchAppConfigurationIfExpired;
+- (void)clearConfigCache;
 - (id)init;
 
 @end

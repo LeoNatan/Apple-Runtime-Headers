@@ -7,10 +7,7 @@
 #import <SPOwner/NSObject-Protocol.h>
 #import <SPOwner/SPLocalPairingManagerXPCProtocol-Protocol.h>
 
-@class NSUUID;
-
 @protocol SPPairingManagerXPCProtocol <NSObject, SPLocalPairingManagerXPCProtocol>
 - (oneway void)currentBeaconingKeyWithCompletion:(void (^)(SPBeaconingKey *))arg1;
-- (oneway void)unpairUUID:(NSUUID *)arg1 completion:(void (^)(BOOL))arg2;
 @end
 

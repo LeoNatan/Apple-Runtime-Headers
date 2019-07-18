@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)handleBulkNodesChanged:(const map_253f12d2 *)arg1 observedNodes:(const struct TFENodeVector *)arg2;
 @property(nonatomic) struct TFENode browserTargetNode;
 - (void)setValue:(id)arg1;
+- (id)qlPreviewView;
 - (void)setView:(id)arg1;
 - (struct TFENodeVector)previewNodes;
 - (void)aboutToTearDown;

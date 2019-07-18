@@ -13,6 +13,7 @@
 @property(readonly, nonatomic) NSNumber *maxQueryElements;
 @property(readonly, nonatomic) NSNumber *refreshInterval;
 @property(readonly, nonatomic) NSString *appVectorVersion;
+- (id)filename;
 @property(readonly, nonatomic) NSURL *fileURL;
 @end
 

@@ -11,8 +11,6 @@
 - (void)_lp_bringSubviewToFront:(id)arg1;
 - (void)_lp_setNonContinuousCornerRadius:(double)arg1;
 - (void)_lp_setCornerRadius:(double)arg1;
-- (void)_lp_setNonContinuousCornerRadius:(double)arg1 masksToBounds:(BOOL)arg2;
-- (void)_lp_setCornerRadius:(double)arg1 masksToBounds:(BOOL)arg2;
 - (BOOL)_lp_isLTR;
 - (double)_lp_backingScaleFactor;
 - (void)_lp_insertSubview:(id)arg1 belowSubview:(id)arg2;

@@ -33,12 +33,14 @@
     CDUnknownBlockType _screenOnChangedHandler;
     CDUnknownBlockType _screenSaverChangedHandler;
     CDUnknownBlockType _systemLockStateChangedHandler;
+    CDUnknownBlockType _systemNameChangedHandler;
     CDUnknownBlockType _firstUnlockHandler;
     CDUnknownBlockType _wifiStateChangedHandler;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType wifiStateChangedHandler; // @synthesize wifiStateChangedHandler=_wifiStateChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType firstUnlockHandler; // @synthesize firstUnlockHandler=_firstUnlockHandler;
+@property(copy) CDUnknownBlockType systemNameChangedHandler; // @synthesize systemNameChangedHandler=_systemNameChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType systemLockStateChangedHandler; // @synthesize systemLockStateChangedHandler=_systemLockStateChangedHandler;
 @property(copy) CDUnknownBlockType screenSaverChangedHandler; // @synthesize screenSaverChangedHandler=_screenSaverChangedHandler;
 @property(copy) CDUnknownBlockType screenOnChangedHandler; // @synthesize screenOnChangedHandler=_screenOnChangedHandler;
@@ -61,6 +63,7 @@
 @property(readonly, nonatomic) int wifiState;
 @property(readonly, nonatomic) unsigned int wifiFlags;
 @property(readonly, nonatomic) BOOL firstUnlocked;
+@property(readonly, copy) NSString *systemName;
 @property(readonly, nonatomic) int systemLockState;
 @property(readonly) BOOL screenSaverActive;
 @property(readonly) BOOL screenOn;
@@ -71,6 +74,7 @@
 @property(readonly, nonatomic) CDUnion_fab80606 primaryIPv6Addr;
 @property(readonly, nonatomic) CDUnion_fab80606 primaryIPv4Addr;
 @property(readonly) BOOL primaryAppleIDIsHSA2;
+@property(readonly, copy) NSString *primaryAppleID;
 @property(readonly) BOOL powerUnlimited;
 @property(readonly) unsigned int netFlags;
 @property(readonly) BOOL meDeviceValid;

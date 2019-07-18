@@ -10,7 +10,7 @@
 #import <iWorkImport/TSDScrollingAwareChangeSource-Protocol.h>
 #import <iWorkImport/TSKPencilAnnotationSupportedDocument-Protocol.h>
 
-@class NSArray, NSDictionary, NSMapTable, NSMutableDictionary, NSMutableSet, NSObject, NSSet, NSString, SFUCryptoKey, TSADocumentInfo, TSAFunctionBrowserState, TSAShortcutController, TSCECalculationEngine, TSDFreehandDrawingToolkitUIState, TSKCustomFormatList, TSKViewState, TSPDocumentRevision, TSPLazyReference, TSTCustomFormatList;
+@class NSArray, NSDictionary, NSMapTable, NSMutableDictionary, NSMutableSet, NSObject, NSSet, NSString, SFUCryptoKey, TSADocumentInfo, TSADrawableFactory, TSAFunctionBrowserState, TSAShortcutController, TSCECalculationEngine, TSDFreehandDrawingToolkitUIState, TSKCustomFormatList, TSKViewState, TSPLazyReference, TSTCustomFormatList;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -33,11 +33,11 @@ __attribute__((visibility("hidden")))
     _Bool _canUseHEVC;
     _Bool _isClosed;
     _Bool _documentLocaleWasUpdated;
-    TSPDocumentRevision *_lastSyncRevision;
+    _Bool _didPauseRecalculationForBackgroundDocument;
     NSString *_templateIdentifier;
     NSObject<OS_dispatch_queue> *_accessQueue;
     SFUCryptoKey *_accessQueue_documentCacheDecryptionKey;
-    _Bool _documentCurrentlyImporting;
+    NSObject<OS_dispatch_queue> *_fetchLatestRevisionQueue;
     _Bool _hasPreUFFVersion;
     _Bool _didLoadDocumentFromTemplate;
     _Bool _didLoadDocumentFromRevert;
@@ -63,12 +63,11 @@ __attribute__((visibility("hidden")))
 + (id)buildVersionHistoryPath;
 + (void)localizeChartInfo:(id)arg1 withTemplateBundle:(id)arg2 andLocale:(id)arg3;
 + (void)localizeTextStorage:(id)arg1 withTemplateBundle:(id)arg2 andLocale:(id)arg3;
-+ (void)localizeTableInfo:(id)arg1 withTemplateBundle:(id)arg2 andLocale:(id)arg3;
++ (void)localizeTableInfo:(id)arg1 templateBundle:(id)arg2 andLocale:(id)arg3;
 + (void)localizeModelObject:(id)arg1 withTemplateBundle:(id)arg2 andLocale:(id)arg3;
 @property(nonatomic) _Bool didLoadDocumentFromRevert; // @synthesize didLoadDocumentFromRevert=_didLoadDocumentFromRevert;
 @property(nonatomic) _Bool didLoadDocumentFromTemplate; // @synthesize didLoadDocumentFromTemplate=_didLoadDocumentFromTemplate;
 @property(nonatomic) _Bool hasPreUFFVersion; // @synthesize hasPreUFFVersion=_hasPreUFFVersion;
-@property(nonatomic, getter=isDocumentCurrentlyImporting) _Bool documentCurrentlyImporting; // @synthesize documentCurrentlyImporting=_documentCurrentlyImporting;
 @property(readonly, nonatomic) _Bool isLoaded; // @synthesize isLoaded=_didLoadControllers;
 @property(readonly, nonatomic) _Bool documentLocaleWasUpdated; // @synthesize documentLocaleWasUpdated=_documentLocaleWasUpdated;
 @property(readonly, nonatomic) _Bool isClosed; // @synthesize isClosed=_isClosed;
@@ -77,6 +76,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isMultiPageForQuickLook;
 - (_Bool)hasICloudConflict;
 - (id)commandForPropagatingPresetChangeCommand:(id)arg1 alwaysPreserveAppearance:(_Bool)arg2;
+@property(readonly, nonatomic) TSADrawableFactory *drawableFactory;
 - (id)readBuildVersionHistoryFromDiskHasPreUFFVersion:(_Bool)arg1;
 @property(readonly, nonatomic) NSString *defaultDraftName;
 @property(readonly, nonatomic) NSString *name;
@@ -101,6 +101,7 @@ __attribute__((visibility("hidden")))
 - (id)referencedStylesOfClass:(Class)arg1;
 - (_Bool)shouldAllowDrawableInGroups:(id)arg1 forImport:(_Bool)arg2;
 @property(readonly, nonatomic) TSDFreehandDrawingToolkitUIState *freehandDrawingToolkitUIState;
+- (void)p_upgradeRemainingOutlinedTextStylesWithFileFormatVersion:(unsigned long long)arg1;
 - (void)upgradeToFixNonVariationChildStylesWithFileFormatVersion:(unsigned long long)arg1;
 - (void)removeRedundantStyleOverridesAndEnsureReferencedStylesAreInStylesheet;
 - (void)upgradeToSingleStylesheet;
@@ -129,6 +130,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)exportToPath:(id)arg1 exporter:(id)arg2 error:(id *)arg3;
 - (id)newExporterForType:(id)arg1 options:(id)arg2 preferredType:(id *)arg3;
 - (void)importerDidFinish:(id)arg1;
+- (void)finalizeFromSageImport;
 - (void)p_registerAllFormulasAfterImport;
 - (void)didDownloadRemoteData:(id)arg1;
 - (void)didDownloadDocumentResources:(id)arg1;
@@ -189,6 +191,7 @@ __attribute__((visibility("hidden")))
 - (void)collectDocumentCloseAnalyticsWithLogger:(id)arg1;
 - (void)collectDocumentOpenAnalyticsWithLogger:(id)arg1;
 - (void)documentDidLoad;
+- (void)backgroundDocumentDidLoad;
 - (_Bool)objectsNeedToBeMigrated:(id)arg1;
 - (id)makeIsolatedStyleMapper;
 - (id)makeStyleMapper;
@@ -200,8 +203,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasFloatingLocale;
 - (void)p_upgradeDocumentCreationLocale;
 - (_Bool)p_updateDocumentLanguageToCurrentIfNeeded;
-- (void)p_updateBuildVersionHistoryWithVersionOfTemplateBundle:(id)arg1;
-- (void)prepareNewDocumentWithTemplateBundle:(id)arg1 documentLocale:(id)arg2;
+- (id)templatesMetadataBundle;
+- (void)p_updateBuildVersionHistoryWithVersionOfTemplateIdentifier:(id)arg1;
+- (void)prepareNewDocumentWithTemplateIdentifier:(id)arg1 bundle:(id)arg2 documentLocale:(id)arg3;
 - (void)commonInit;
 - (id)initWithContext:(id)arg1;
 @property(nonatomic) _Bool canUseHEVC;

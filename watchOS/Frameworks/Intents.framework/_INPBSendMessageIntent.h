@@ -18,6 +18,7 @@
         unsigned int effect:1;
         unsigned int messageType:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     NSArray *_attachments;
     _INPBString *_content;
     NSString *_conversationIdentifier;
@@ -34,6 +35,7 @@
 + (_Bool)supportsSecureCoding;
 + (Class)recipientType;
 + (Class)attachmentsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDataString *speakableGroupName; // @synthesize speakableGroupName=_speakableGroupName;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) _INPBContact *sender; // @synthesize sender=_sender;

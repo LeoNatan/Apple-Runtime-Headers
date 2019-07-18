@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 - (void)p_destroyDynamicCopies;
 - (void)p_createDynamicCopies;
 - (struct CGRect)computeAlignmentFrameInRoot:(_Bool)arg1;
+- (double)scaleForInlineClampingUnrotatedSize:(struct CGSize)arg1 withTransform:(struct CGAffineTransform)arg2;
 - (id)computeLayoutGeometry;
 - (struct CGRect)fullReflectionFrame;
 - (struct CGRect)fullReflectionBoundsForRect:(struct CGRect)arg1;

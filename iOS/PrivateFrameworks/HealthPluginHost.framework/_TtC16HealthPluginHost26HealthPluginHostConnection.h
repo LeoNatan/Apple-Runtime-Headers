@@ -8,7 +8,7 @@
 
 @interface _TtC16HealthPluginHost26HealthPluginHostConnection : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: $__lazy_storage_$_connection
+    // Error parsing type: , name: connection
 }
 
 @end

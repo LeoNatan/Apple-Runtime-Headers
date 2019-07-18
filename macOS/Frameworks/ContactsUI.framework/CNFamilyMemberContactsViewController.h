@@ -31,7 +31,7 @@
 @property(readonly, nonatomic) NSButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(readonly, nonatomic) CNContactPickerInProccessViewController *familyScopedContactPicker; // @synthesize familyScopedContactPicker=_familyScopedContactPicker;
 @property(readonly, nonatomic) id <CNUICoreFamilyMemberContactsDataSource> dataSource; // @synthesize dataSource=_dataSource;
-@property(readonly, nonatomic) id <CNFamilyMemberContactsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) __weak id <CNFamilyMemberContactsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) CNContactStore *familyMemberScopedContactStore; // @synthesize familyMemberScopedContactStore=_familyMemberScopedContactStore;
 @property(readonly, nonatomic) CNContactStore *localContactStore; // @synthesize localContactStore=_localContactStore;

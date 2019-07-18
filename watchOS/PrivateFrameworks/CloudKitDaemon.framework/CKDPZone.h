@@ -14,16 +14,16 @@ __attribute__((visibility("hidden")))
 @interface CKDPZone : PBCodable <NSCopying>
 {
     NSData *_encryptedZoneishLastRollDate;
-    NSMutableArray *_invitedKeysToRemoves;
     CKDPProtectionInfo *_protectionInfo;
+    NSMutableArray *_protectionInfoKeysToRemoves;
     CKDPProtectionInfo *_recordProtectionInfo;
     CKDPShareIdentifier *_shareId;
     CKDPRecordStableUrl *_stableUrl;
     CKDPRecordZoneIdentifier *_zoneIdentifier;
 }
 
-+ (Class)invitedKeysToRemoveType;
-@property(retain, nonatomic) NSMutableArray *invitedKeysToRemoves; // @synthesize invitedKeysToRemoves=_invitedKeysToRemoves;
++ (Class)protectionInfoKeysToRemoveType;
+@property(retain, nonatomic) NSMutableArray *protectionInfoKeysToRemoves; // @synthesize protectionInfoKeysToRemoves=_protectionInfoKeysToRemoves;
 @property(retain, nonatomic) CKDPShareIdentifier *shareId; // @synthesize shareId=_shareId;
 @property(retain, nonatomic) CKDPRecordStableUrl *stableUrl; // @synthesize stableUrl=_stableUrl;
 @property(retain, nonatomic) NSData *encryptedZoneishLastRollDate; // @synthesize encryptedZoneishLastRollDate=_encryptedZoneishLastRollDate;
@@ -40,10 +40,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-- (id)invitedKeysToRemoveAtIndex:(unsigned int)arg1;
-- (unsigned int)invitedKeysToRemovesCount;
-- (void)addInvitedKeysToRemove:(id)arg1;
-- (void)clearInvitedKeysToRemoves;
+- (id)protectionInfoKeysToRemoveAtIndex:(unsigned int)arg1;
+- (unsigned int)protectionInfoKeysToRemovesCount;
+- (void)addProtectionInfoKeysToRemove:(id)arg1;
+- (void)clearProtectionInfoKeysToRemoves;
 @property(readonly, nonatomic) _Bool hasShareId;
 @property(readonly, nonatomic) _Bool hasStableUrl;
 @property(readonly, nonatomic) _Bool hasEncryptedZoneishLastRollDate;

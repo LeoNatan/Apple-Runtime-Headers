@@ -17,6 +17,7 @@
     _UIStatusBarDataStringEntry *_shortTimeEntry;
     _UIStatusBarDataStringEntry *_dateEntry;
     _UIStatusBarDataStringEntry *_personNameEntry;
+    _UIStatusBarDataStringEntry *_deviceNameEntry;
     _UIStatusBarDataCellularEntry *_cellularEntry;
     _UIStatusBarDataCellularEntry *_secondaryCellularEntry;
     _UIStatusBarDataWifiEntry *_wifiEntry;
@@ -79,6 +80,7 @@
 @property(copy, nonatomic) _UIStatusBarDataWifiEntry *wifiEntry; // @synthesize wifiEntry=_wifiEntry;
 @property(copy, nonatomic) _UIStatusBarDataCellularEntry *secondaryCellularEntry; // @synthesize secondaryCellularEntry=_secondaryCellularEntry;
 @property(copy, nonatomic) _UIStatusBarDataCellularEntry *cellularEntry; // @synthesize cellularEntry=_cellularEntry;
+@property(copy, nonatomic) _UIStatusBarDataStringEntry *deviceNameEntry; // @synthesize deviceNameEntry=_deviceNameEntry;
 @property(copy, nonatomic) _UIStatusBarDataStringEntry *personNameEntry; // @synthesize personNameEntry=_personNameEntry;
 @property(copy, nonatomic) _UIStatusBarDataStringEntry *dateEntry; // @synthesize dateEntry=_dateEntry;
 @property(copy, nonatomic) _UIStatusBarDataStringEntry *shortTimeEntry; // @synthesize shortTimeEntry=_shortTimeEntry;

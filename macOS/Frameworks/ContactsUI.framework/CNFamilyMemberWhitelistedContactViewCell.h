@@ -8,7 +8,7 @@
 
 #import <ContactsUI/CNFamilyMemberEditControlsViewControllerDelegate-Protocol.h>
 
-@class CNContactCardViewController, CNUICoreFamilyMemberContactItem, NSButton, NSPopover, NSTextField, NSTrackingArea;
+@class CNContactCardViewController, CNUICoreFamilyMemberContactItem, NSButton, NSImageView, NSLayoutConstraint, NSPopover, NSTextField, NSTrackingArea;
 @protocol CNFamilyMemberWhitelistedContactViewCellDelegate;
 
 @interface CNFamilyMemberWhitelistedContactViewCell : NSTableCellView <CNFamilyMemberEditControlsViewControllerDelegate>
@@ -18,16 +18,20 @@
     NSTextField *_label;
     NSTextField *_detailLabel;
     NSButton *_discosureButton;
+    NSImageView *_warningImageView;
     NSTrackingArea *_discosureButtonTrackingArea;
     NSPopover *_discosurePopover;
     CNContactCardViewController *_contactViewController;
+    NSLayoutConstraint *_warningImageViewTrailingCostraint;
 }
 
 + (id)labelForContactType:(long long)arg1;
 + (id)localizedStringForString:(id)arg1;
+@property(retain, nonatomic) NSLayoutConstraint *warningImageViewTrailingCostraint; // @synthesize warningImageViewTrailingCostraint=_warningImageViewTrailingCostraint;
 @property(retain, nonatomic) CNContactCardViewController *contactViewController; // @synthesize contactViewController=_contactViewController;
 @property(retain, nonatomic) NSPopover *discosurePopover; // @synthesize discosurePopover=_discosurePopover;
 @property(retain, nonatomic) NSTrackingArea *discosureButtonTrackingArea; // @synthesize discosureButtonTrackingArea=_discosureButtonTrackingArea;
+@property(readonly, nonatomic) NSImageView *warningImageView; // @synthesize warningImageView=_warningImageView;
 @property(readonly, nonatomic) NSButton *discosureButton; // @synthesize discosureButton=_discosureButton;
 @property(readonly, nonatomic) NSTextField *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(readonly, nonatomic) NSTextField *label; // @synthesize label=_label;
@@ -39,9 +43,6 @@
 - (void)didPressCancelFamilyMemberEditControlsViewController:(id)arg1;
 - (void)didPressDoneFamilyMemberEditControlsViewController:(id)arg1;
 - (void)prepareForReuse;
-- (void)mouseExited:(id)arg1;
-- (void)mouseEntered:(id)arg1;
-- (void)updateTrackingAreas;
 - (void)discosurePressed:(id)arg1;
 - (void)presentContactViewController:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -14,6 +14,7 @@
     // Error parsing type: , name: blueprintProvider
     // Error parsing type: , name: pageBlueprintProvider
     // Error parsing type: , name: pageBlueprintFactory
+    // Error parsing type: , name: sharingIntentFactory
 }
 
 @end

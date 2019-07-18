@@ -15,7 +15,7 @@
 
 @property(retain, nonatomic) NSDate *keepOffUntilDate; // @synthesize keepOffUntilDate=_keepOffUntilDate;
 - (void).cxx_destruct;
-- (void)updateState;
+- (void)updateState:(_Bool)arg1;
 - (void)didEnterWithPreviousState:(id)arg1;
 - (_Bool)isEqualToState:(id)arg1;
 - (id)initWithKeepOffUntilDate:(id)arg1 stateMachine:(id)arg2;

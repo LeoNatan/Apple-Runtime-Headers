@@ -31,10 +31,10 @@
 + (id)_assetUUIDFromIncomingFilename:(id)arg1;
 + (id)_pathsByAssetUUIDFromIncomingCrashRecoveryPaths:(id)arg1;
 + (_Bool)setAdjustmentsForNewPhoto:(id)arg1 withEffectFilterName:(id)arg2 cameraAdjustmentData:(id)arg3 adjustmentDataPath:(id)arg4 filteredImagePath:(id)arg5 isSubstandardRender:(_Bool)arg6;
-+ (id)_assetAdjustmentsFromCameraAdjustmentData:(id)arg1 exportProperties:(id)arg2;
-+ (id)_assetAdjustmentsFromCameraAdjustments:(id)arg1 exportProperties:(id)arg2;
++ (id)assetAdjustmentsFromCameraAdjustmentData:(id)arg1 exportProperties:(id)arg2;
++ (id)assetAdjustmentsFromCameraAdjustments:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsFromCameraAdjustmentsFileAtPath:(id)arg1 exportProperties:(id)arg2;
-+ (id)_assetAdjustmentsFromCameraFilters:(id)arg1 portraitMetadata:(id)arg2 exportProperties:(id)arg3;
++ (id)assetAdjustmentsFromCameraFilters:(id)arg1 portraitMetadata:(id)arg2 exportProperties:(id)arg3;
 + (id)_assetAdjustmentsFromCompositionController:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsWithEffectFilterName:(id)arg1 exportProperties:(id)arg2;
 + (_Bool)_requiresIndicatorFileForJobType:(id)arg1;
@@ -45,7 +45,7 @@
 - (void)_processJob:(id)arg1;
 - (void)_processSyncedVideoSaveJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_processVideoSaveJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_setAdjustmentsForNewVideo:(id)arg1 withAdjustmentsDictionary:(id)arg2 renderedContentPath:(id)arg3;
+- (void)_setAdjustmentsForNewVideo:(id)arg1 withAdjustmentsDictionary:(id)arg2 cameraAdjustments:(id)arg3 renderedContentPath:(id)arg4;
 - (void)_processVideoJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_transferVideoFromIncomingPath:(id)arg1 toDestinationPath:(id)arg2 shouldRemoveIncoming:(_Bool *)arg3 error:(id *)arg4;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext *)arg2;
@@ -58,6 +58,7 @@
 - (void)_handleCameraAdjustments:(id)arg1 fullsizeRenders:(id)arg2;
 - (void)_handlePhotoIrisCrashRecoveryForVideos:(id)arg1;
 - (id)_fetchPhotoAssetForUUID:(id)arg1 moc:(id)arg2;
+- (void)_handleCameraMetadataCrashRecovery:(id)arg1;
 - (void)_handleAvalancheCrashRecovery:(id)arg1;
 - (void)_processIngestedSyncedAssetJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cleanupFilesInLibrary:(id)arg1 afteriTunesSyncBeforeDate:(id)arg2;

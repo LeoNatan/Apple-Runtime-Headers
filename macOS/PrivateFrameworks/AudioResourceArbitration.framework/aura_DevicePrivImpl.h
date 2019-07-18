@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (expected_24591dba)propertyValueForAddress:(const struct Address *)arg1;
 - (BOOL)isPropertySettable:(const struct Address *)arg1;
 - (BOOL)hasProperty:(const struct Address *)arg1;
+@property(readonly, nonatomic) unsigned int stockClassID;
 @property(readonly, nonatomic) unsigned int classID;
 @property(readonly, nonatomic) unsigned long long objectID;
 - (struct error_code)setSampleRate:(double)arg1;

@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     int mFunctionIndex;
 }
 
++ (_Bool)storageExceedsMaxFormulaLength:(id)arg1;
 @property(nonatomic) int functionIndex; // @synthesize functionIndex=mFunctionIndex;
 - (void)reparseWithStorage:(id)arg1 adjustExpressionTree:(CDUnknownBlockType)arg2;
 - (void)insertFormulaText:(id)arg1 includeWhitespace:(_Bool)arg2;

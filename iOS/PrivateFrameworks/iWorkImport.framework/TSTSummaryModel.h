@@ -43,8 +43,10 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)description;
-- (void)addPasteboardCustomFormatsToDocumentAndUpdateCells;
+- (void)copyPasteboardCustomFormatsFromTableModel:(id)arg1;
+- (void)makePasteboardCustomFormatList;
 - (void)reassignPasteboardCustomFormatKeys;
+- (void)addPasteboardCustomFormatsToDocumentAndUpdateCells;
 - (void)didChangeGroupByStructure;
 - (void)didRemoveRowUID:(const UUIDData_5fbc143e *)arg1 fromGroup:(id)arg2;
 - (void)didAddRowUID:(const UUIDData_5fbc143e *)arg1 toGroup:(id)arg2;
@@ -76,7 +78,7 @@ __attribute__((visibility("hidden")))
 - (id)textStyleForCellWithEmptyStyleAtCellCoord:(struct TSUModelCellCoord)arg1 isDefault:(out _Bool *)arg2;
 - (id)textStyleOfRowAtIndex:(struct TSUModelRowIndex)arg1 isDefault:(out _Bool *)arg2;
 - (id)cellStyleOfRowAtIndex:(struct TSUModelRowIndex)arg1 isDefault:(out _Bool *)arg2;
-- (id)fontColorAtCellCoord:(struct TSUModelCellCoord)arg1 optionalCell:(id)arg2;
+- (id)characterFillAtCellCoord:(struct TSUModelCellCoord)arg1 optionalCell:(id)arg2;
 - (id)textStyleAtBaseCellCoord:(struct TSUModelCellCoord)arg1 isDefault:(out _Bool *)arg2;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (void)enumerateDataStoreCellsWithBlock:(CDUnknownBlockType)arg1;

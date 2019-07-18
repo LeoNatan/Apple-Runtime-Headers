@@ -8,7 +8,7 @@
 
 #import <SafariShared/UABestAppSuggestionManagerDelegate-Protocol.h>
 
-@class CKContextClient, NSArray, NSString, UABestAppSuggestion, UABestAppSuggestionManager, WBSForYouDataSourceWeightManager, WBSForYouPerSitePreferenceManager, WBSForYouTopicManager, WBSFoundInRecommendationManager;
+@class CKContextClient, NSArray, NSCache, NSString, UABestAppSuggestion, UABestAppSuggestionManager, WBSForYouDataSourceWeightManager, WBSForYouPerSitePreferenceManager, WBSForYouTopicManager, WBSFoundInRecommendationManager;
 @protocol OS_dispatch_queue;
 
 @interface WBSForYouRecommendationMediator : NSObject <UABestAppSuggestionManagerDelegate>
@@ -20,6 +20,7 @@
     UABestAppSuggestionManager *_appSuggestionManager;
     UABestAppSuggestion *_currentAppSuggestion;
     NSObject<OS_dispatch_queue> *_internalQueue;
+    NSCache *_messagesMetadataCache;
     CKContextClient *_contextClient;
     CDUnknownBlockType _historyProvider;
     _Bool _ignoreMinimumNumberOfRecommendationsPerTopic;
@@ -28,20 +29,21 @@
 
 + (id)_adjustedTopicsWithTopics:(id)arg1;
 + (void)_rankRecommendationsInPlace:(id)arg1 history:(id)arg2 weightManager:(id)arg3 suppressHistoryDeduplication:(_Bool)arg4;
-+ (double)scoreForRecommendation:(id)arg1 weightManager:(id)arg2 history:(id)arg3;
++ (double)scoreForRecommendation:(id)arg1 weightManager:(id)arg2 simplifiedURLStringToLastVisitedDateMap:(id)arg3;
 + (id)_titleForRecommendationTopicSource:(unsigned long long)arg1;
 + (id)_titleForRecommendationSource:(unsigned long long)arg1;
 + (_Bool)areSiriSuggestionsEnabled;
 @property(nonatomic) _Bool suppressHistoryDeduplication; // @synthesize suppressHistoryDeduplication=_suppressHistoryDeduplication;
 @property(nonatomic) _Bool ignoreMinimumNumberOfRecommendationsPerTopic; // @synthesize ignoreMinimumNumberOfRecommendationsPerTopic=_ignoreMinimumNumberOfRecommendationsPerTopic;
 - (void).cxx_destruct;
-- (double)scoreForRecommendation:(id)arg1;
+- (id)recommendationFromDictionary:(id)arg1;
 - (id)analyticsMetadataForRecommendation:(id)arg1;
 - (void)fetchImageForRecommendation:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSArray *dataSources;
 - (void)bestAppSuggestionChanged:(id)arg1;
 - (id)_dataSourceWeightManager;
 - (void)clearDataSourceWeights;
+- (void)downvoteSource:(unsigned long long)arg1 postingChangeNotificationWhenDone:(_Bool)arg2;
 - (void)downvoteSource:(unsigned long long)arg1;
 - (void)stopListeningForURLSuggestionChanges;
 - (void)beginListeningForURLSuggestionChanges;
@@ -55,6 +57,7 @@
 - (void)loadLinkPresentationMetadataForMessageWithGUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updatedRecommendationsForTopics:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_createPreferenceManagerIfNecessary;
+- (void)banURLsOfSameDomainAsURL:(id)arg1 postingChangeNotificationWhenDone:(_Bool)arg2;
 - (void)banURLsOfSameDomainAsURL:(id)arg1;
 - (void)updatedTopicsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_didUpdateFoundInSuggestions:(id)arg1;

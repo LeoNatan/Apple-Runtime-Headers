@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSString, PSIGroup;
 @protocol OS_dispatch_queue;
 
 @interface PSIGroupAggregate : NSObject
@@ -15,10 +15,13 @@
     NSMutableArray *_groupAggregateItems;
     NSMutableArray *_aggregatedGroupIds;
     NSMutableArray *_aggregateItemPool;
+    unsigned int _filenameGroupCount;
     NSObject<OS_dispatch_queue> *_groupResultsQueue;
     NSString *_transientToken;
+    PSIGroup *_filenameGroupInAggregate;
 }
 
+@property(readonly, nonatomic) PSIGroup *filenameGroupInAggregate; // @synthesize filenameGroupInAggregate=_filenameGroupInAggregate;
 @property(copy, nonatomic) NSString *transientToken; // @synthesize transientToken=_transientToken;
 @property(readonly, nonatomic) NSArray *searchTokens; // @synthesize searchTokens=_searchTokens;
 - (void).cxx_destruct;

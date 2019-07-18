@@ -41,7 +41,10 @@
 - (void)invalidatePreferredRecipients;
 - (void)invalidateAddressTintColors;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (_Bool)recipientIsDisambiguationRecipient:(id)arg1;
 - (_Bool)recipientIsExpanded:(id)arg1;
+- (_Bool)recipientIsExpandedChild:(id)arg1;
+- (_Bool)recipientIsExpandedParent:(id)arg1;
 - (void)updateBackgroundAndSeparatorsForCell:(id)arg1 atIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewLayoutMarginsDidChange;

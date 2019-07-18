@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: uploadManager
     // Error parsing type: , name: currentSession
+    // Error parsing type: , name: isEnabled
 }
 
 @end

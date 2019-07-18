@@ -14,7 +14,7 @@
 }
 
 + (void)flushSharedNotifier;
-+ (id)sharedNotifierWithNotificationWrapper:(id)arg1 schedulerProvider:(id)arg2;
++ (id)sharedNotifierWithNotificationWrapper:(id)arg1 schedulerProvider:(id)arg2 loggerProvider:(id)arg3;
 + (id)sharedNotifier;
 @property(retain, nonatomic) CNChangesNotifierProxy *notifierProxy; // @synthesize notifierProxy=_notifierProxy;
 - (void).cxx_destruct;
@@ -26,8 +26,7 @@
 - (void)didSaveChangesSuccessfully:(_Bool)arg1 fromContactStore:(id)arg2 requestIdentifier:(id)arg3;
 - (void)willSaveChanges;
 - (void)dealloc;
-- (id)initWithNotificationWrapper:(id)arg1 schedulerProvider:(id)arg2;
-- (id)init;
+- (id)initWithNotificationWrapper:(id)arg1 schedulerProvider:(id)arg2 loggerProvider:(id)arg3;
 
 @end
 

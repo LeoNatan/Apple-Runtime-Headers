@@ -29,8 +29,8 @@
 - (void).cxx_destruct;
 - (void)_queue_startListening;
 - (id)_supplementaryServicesResponder;
-- (void)_queue_handleSupplementaryServicesDidEnd;
 - (void)_queue_handleUSSDEvent:(long long)arg1 responder:(id)arg2 userInfo:(id)arg3;
+- (void)_executeOnQueue:(CDUnknownBlockType)arg1;
 - (void)suppServicesError:(id)arg1 error:(id)arg2;
 - (void)suppServicesCompleted:(id)arg1;
 - (void)suppServicesEvent:(id)arg1 event:(int)arg2 settingsType:(int)arg3 data:(id)arg4;
@@ -39,7 +39,8 @@
 - (void)remoteAlertHandleDidDeactivate:(id)arg1;
 - (void)handleUSSDEvent:(long long)arg1 responder:(id)arg2 userInfo:(id)arg3;
 - (id)remoteAlertDescriptorForSession:(id)arg1;
-- (id)initWithEventQueue:(id)arg1 subscriptionMonitor:(id)arg2;
+- (void)_willPresentAlertHandle:(id)arg1;
+- (id)initWithSubscriptionMonitor:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

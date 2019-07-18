@@ -43,6 +43,9 @@
 - (id)_navigableGadgetForCollection:(id)arg1;
 - (void)navigateToCollection:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)canNavigateToCollection:(id)arg1;
+- (long long)scrollAnimationIdentifier;
+- (void)configureSectionHeader:(id)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithLayout:(id)arg1 dataSourceManager:(id)arg2;

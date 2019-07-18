@@ -54,7 +54,7 @@
     double _sidebarPinned;
     double _todayViewVisibilityProgress;
     double _pullDownSearchVisibilityProgress;
-    UIView *_sidebarGrabberView;
+    unsigned long long _sidebarAllowedOrientations;
     id <SBIconListViewIconLocationTransitioning> _firstListViewIconLocationTransitionHandler;
     double _scrollingAdjustment;
     SBHRootFolderSettings *_folderSettings;
@@ -68,7 +68,7 @@
 @property(nonatomic, getter=wasSidebarVisibleWhenScrollingBegan) _Bool sidebarVisibleWhenScrollingBegan; // @synthesize sidebarVisibleWhenScrollingBegan=_sidebarVisibleWhenScrollingBegan;
 @property(readonly, nonatomic) _Bool ignoresOverscrollOnFirstPage; // @synthesize ignoresOverscrollOnFirstPage=_ignoresOverscrollOnFirstPage;
 @property(retain, nonatomic) id <SBIconListViewIconLocationTransitioning> firstListViewIconLocationTransitionHandler; // @synthesize firstListViewIconLocationTransitionHandler=_firstListViewIconLocationTransitionHandler;
-@property(readonly, nonatomic) UIView *sidebarGrabberView; // @synthesize sidebarGrabberView=_sidebarGrabberView;
+@property(readonly, nonatomic) unsigned long long sidebarAllowedOrientations; // @synthesize sidebarAllowedOrientations=_sidebarAllowedOrientations;
 @property(nonatomic, getter=isSidebarSlideGestureActive) _Bool sidebarSlideGestureActive; // @synthesize sidebarSlideGestureActive=_sidebarSlideGestureActive;
 @property(nonatomic, getter=isSidebarHiddenForOrientation) _Bool sidebarHiddenForOrientation; // @synthesize sidebarHiddenForOrientation=_sidebarHiddenForOrientation;
 @property(nonatomic, getter=isDockViewBorrowed) _Bool dockViewBorrowed; // @synthesize dockViewBorrowed=_dockViewBorrowed;
@@ -113,6 +113,7 @@
 @property(readonly, nonatomic, getter=isOnTodayPage) _Bool onTodayPage;
 - (_Bool)shouldScrollPageControlDuringTransitionToTodayView;
 @property(readonly, nonatomic) _Bool shouldFadePageControlOutDuringTransitionToTodayView;
+- (_Bool)shouldScrollDockDuringTransitionToTodayView;
 @property(readonly, nonatomic) _Bool shouldFadeDockOutDuringTransitionToTodayView;
 - (void)_animateViewsForScrollingToTodayViewWithMetrics:(const struct SBRootFolderViewMetrics *)arg1;
 - (void)_animateViewsForScrollingToTodayView;
@@ -130,6 +131,8 @@
 - (void)noteSidebarIsAnimating;
 - (struct UIEdgeInsets)_statusBarInsetsForDockEdge:(unsigned long long)arg1 dockOffscreenPercentage:(double)arg2;
 @property(readonly, nonatomic) _Bool hidesOffscreenCustomPageViews;
+- (double)_scrollOffsetForPageAtIndex:(long long)arg1 pageWidth:(double)arg2;
+- (_Bool)isPageIndexCustomAndRightmost:(long long)arg1;
 - (double)sidebarWidthUsingPageWidth:(double)arg1;
 - (double)sidebarViewPageScrollOffsetUsingPageWidth:(double)arg1;
 - (double)_scrollOffsetForContentAtPageIndex:(long long)arg1;
@@ -147,6 +150,7 @@
 - (void)updateIconListIndexAndVisibility:(_Bool)arg1;
 - (_Bool)iconScrollView:(id)arg1 shouldSetAutoscrollContentOffset:(struct CGPoint)arg2;
 - (_Bool)iconScrollView:(id)arg1 shouldSetContentOffset:(struct CGPoint *)arg2 animated:(_Bool)arg3;
+- (_Bool)shouldPinScrollingToFirstIconPageScrollOffsetForProposedScrollOffset:(struct CGPoint)arg1;
 - (void)iconScrollViewDidCancelTouchTracking:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

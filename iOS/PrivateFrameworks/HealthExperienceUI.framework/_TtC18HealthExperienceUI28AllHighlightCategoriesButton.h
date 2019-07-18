@@ -4,25 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UICollectionViewCell.h>
+#import <HealthExperienceUI/_TtC18HealthExperienceUI28NavigationCollectionViewCell.h>
 
-@class UIImageView, UILabel;
-
-@interface _TtC18HealthExperienceUI28AllHighlightCategoriesButton : UICollectionViewCell
+@interface _TtC18HealthExperienceUI28AllHighlightCategoriesButton : _TtC18HealthExperienceUI28NavigationCollectionViewCell
 {
-    // Error parsing type: , name: mainTextLabel
-    // Error parsing type: , name: disclosure
-    // Error parsing type: , name: item
 }
 
-- (void).cxx_destruct;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (void)didTapCell;
-- (void)prepareForReuse;
-- (void)awakeFromNib;
 - (id)initWithCoder:(id)arg1;
-@property(nonatomic) __weak UIImageView *disclosure; // @synthesize disclosure;
-@property(nonatomic) __weak UILabel *mainTextLabel; // @synthesize mainTextLabel;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

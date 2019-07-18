@@ -18,5 +18,6 @@
 - (id)_stringByStrippingTrailingNoise:(id)arg1;
 - (id)_stringByStrippingLeadingNoise:(id)arg1;
 - (id)_stringByFixingNamePattern:(id)arg1;
+- (id)shortFormForUUID;
 @end
 

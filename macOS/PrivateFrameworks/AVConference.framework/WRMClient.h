@@ -15,14 +15,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_connectionQueue;
     id _wrmClientDelegate;
     int _mediaControlInfoVersion;
-    BOOL _reportImmediateWRMMetricEnabled;
-    BOOL _reportRtpErasureMetricsEnabled;
-    BOOL _allowPreWarmCellEnabled;
+    int _mode;
+    CDStruct_21a0265e _metricsConfig;
 }
 
-@property BOOL allowPreWarmCellEnabled; // @synthesize allowPreWarmCellEnabled=_allowPreWarmCellEnabled;
-@property BOOL reportRtpErasureMetricsEnabled; // @synthesize reportRtpErasureMetricsEnabled=_reportRtpErasureMetricsEnabled;
-@property BOOL reportImmediateWRMMetricEnabled; // @synthesize reportImmediateWRMMetricEnabled=_reportImmediateWRMMetricEnabled;
 @property int mediaControlInfoVersion; // @synthesize mediaControlInfoVersion=_mediaControlInfoVersion;
 - (void)setPreWarmState:(BOOL)arg1;
 - (void)processNotificationList:(id)arg1;
@@ -38,8 +34,9 @@ __attribute__((visibility("hidden")))
 - (void)sendUnsubscriptionInfoFaceTimeCalling;
 - (void)sendSubscriptionInfoFaceTimeCalling;
 - (void)sendProcessInfoWithProcessID:(unsigned long long)arg1;
+- (int)getWRMSubscribeVersion;
 - (void)stopWRMClient;
-- (void)startWRMClientWithMode:(int)arg1;
+- (void)startWRMClientWithMode:(int)arg1 metricsConfig:(CDStruct_21a0265e)arg2;
 - (void)releaseServiceConnection;
 - (BOOL)setupServiceConnection;
 @property id <WRMClientDelegate> delegate;

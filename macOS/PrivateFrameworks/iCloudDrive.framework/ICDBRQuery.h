@@ -9,6 +9,7 @@
 #import <iCloudDrive/ICDBRNotificationReceiverDelegate-Protocol.h>
 
 @class ICDBRNotificationReceiver, NSArray, NSMetadataQuery, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSPredicate, NSString;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface ICDBRQuery : NSObject <ICDBRNotificationReceiverDelegate>
@@ -46,6 +47,7 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_queryQueue;
     // Error parsing type: Ai, name: _disableCount
     int _receiverDisableCount;
+    NSObject<OS_dispatch_queue> *_receiverQueue;
 }
 
 + (void)initialize;

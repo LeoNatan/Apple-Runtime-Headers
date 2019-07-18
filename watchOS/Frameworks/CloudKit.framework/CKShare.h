@@ -13,7 +13,7 @@
 
 @interface CKShare : CKRecord <NSCopying, NSSecureCoding>
 {
-    _Bool _allowsReadOnlyParticipantsToSeeEachOther;
+    _Bool _encodeAllowsReadOnlyParticipantsToSeeEachOther;
     _Bool _allowsAnonymousPublicAccess;
     _Bool _serializePersonalInfo;
     int _publicPermission;
@@ -29,6 +29,7 @@
     NSData *_publicProtectionData;
     NSString *_publicProtectionEtag;
     NSString *_previousPublicProtectionEtag;
+    int _participantVisibility;
     NSArray *_invitedKeysToRemove;
     CKShareID *_shareID;
 }
@@ -38,7 +39,7 @@
 @property(nonatomic) _Bool serializePersonalInfo; // @synthesize serializePersonalInfo=_serializePersonalInfo;
 @property(retain, nonatomic) NSArray *invitedKeysToRemove; // @synthesize invitedKeysToRemove=_invitedKeysToRemove;
 @property(nonatomic) _Bool allowsAnonymousPublicAccess; // @synthesize allowsAnonymousPublicAccess=_allowsAnonymousPublicAccess;
-@property(nonatomic) _Bool allowsReadOnlyParticipantsToSeeEachOther; // @synthesize allowsReadOnlyParticipantsToSeeEachOther=_allowsReadOnlyParticipantsToSeeEachOther;
+@property(nonatomic) int participantVisibility; // @synthesize participantVisibility=_participantVisibility;
 @property(retain, nonatomic) NSString *previousPublicProtectionEtag; // @synthesize previousPublicProtectionEtag=_previousPublicProtectionEtag;
 @property(retain, nonatomic) NSString *publicProtectionEtag; // @synthesize publicProtectionEtag=_publicProtectionEtag;
 @property(retain, nonatomic) NSData *publicProtectionData; // @synthesize publicProtectionData=_publicProtectionData;
@@ -48,6 +49,7 @@
 @property(retain, nonatomic) NSMutableArray *allParticipants; // @synthesize allParticipants=_allParticipants;
 @property(copy, nonatomic) CKRecordID *rootRecordID; // @synthesize rootRecordID=_rootRecordID;
 @property(retain, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
+@property(nonatomic) _Bool encodeAllowsReadOnlyParticipantsToSeeEachOther; // @synthesize encodeAllowsReadOnlyParticipantsToSeeEachOther=_encodeAllowsReadOnlyParticipantsToSeeEachOther;
 @property(retain, nonatomic) NSMutableArray *lastFetchedParticipants; // @synthesize lastFetchedParticipants=_lastFetchedParticipants;
 @property(retain, nonatomic) NSMutableSet *removedParticipantIDs; // @synthesize removedParticipantIDs=_removedParticipantIDs;
 @property(retain, nonatomic) NSMutableSet *addedParticipantIDs; // @synthesize addedParticipantIDs=_addedParticipantIDs;
@@ -87,6 +89,7 @@
 - (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;
 - (id)copyWithOriginalValues;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(nonatomic) _Bool allowsReadOnlyParticipantsToSeeEachOther;
 - (void)_setPublicPermissionNoSideEffects:(int)arg1;
 - (void)_removeAllParticipants;
 - (void)_removePendingPrivateAndAdminParticipants;

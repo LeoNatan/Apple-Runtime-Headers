@@ -22,7 +22,7 @@
 #import <MapKit/VKMapViewCameraDelegate-Protocol.h>
 #import <MapKit/VKMapViewDelegate-Protocol.h>
 
-@class CLLocation, GEOMapRegion, MKAnnotationContainerView, MKAnnotationManager, MKAnnotationView, MKAppleLogoImageView, MKAttributionLabel, MKBasicMapView, MKCompassView, MKDebugLocationConsole, MKMapCamera, MKMapCameraBoundary, MKMapCameraZoomRange, MKMapGestureController, MKMapViewInternal, MKMapViewLabelMarkerState, MKOverlayContainerView, MKPointOfInterestFilter, MKRotationFilter, MKScaleView, MKUserLocation, NSArray, NSDictionary, NSLayoutConstraint, NSObject, NSString, NSTimer, UIGestureRecognizer, UIImageView, UILayoutGuide, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, UITextView, UITraitCollection, VKLabelMarker, VKMapView, VKNavContext, VKRouteContext, VKVenueBuildingFeatureMarker, VKVenueFeatureMarker, _MKCustomFeatureStore, _MKEnvironmentLabel;
+@class CLLocation, GEOMapRegion, MKAnnotationContainerView, MKAnnotationManager, MKAnnotationView, MKAttributionLabel, MKBasicMapView, MKCompassView, MKDebugLocationConsole, MKMapCamera, MKMapCameraBoundary, MKMapCameraZoomRange, MKMapGestureController, MKMapViewInternal, MKMapViewLabelMarkerState, MKOverlayContainerView, MKPointOfInterestFilter, MKRotationFilter, MKScaleView, MKUserLocation, NSArray, NSDictionary, NSLayoutConstraint, NSObject, NSString, NSTimer, UIGestureRecognizer, UIImageView, UILayoutGuide, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, UITextView, UITraitCollection, VKLabelMarker, VKMapView, VKNavContext, VKRouteContext, VKVenueBuildingFeatureMarker, VKVenueFeatureMarker, _MKCustomFeatureStore, _MKEnvironmentLabel;
 @protocol MKMapViewDelegate, MKMapViewDelegate><MKMapViewDelegatePrivate, OS_dispatch_group, OS_dispatch_queue;
 
 @interface MKMapView : UIView <MKLocationManagerObserver, MKOverlayContainerViewDelegate, MKMapGestureControllerDelegate, UIGestureRecognizerDelegate, MKVariableDelayTapRecognizerDelegate, VKMapViewDelegate, VKMapViewCameraDelegate, MKAnnotationMarkerContainer, MKAnnotationManagerDelegate, GEOLogContextDelegate, MKRotationFilterDelegate, GEOConfigChangeListenerDelegate, GEOResourceManifestTileGroupObserver, MKAnnotationContainerViewDelegate, NSCoding>
@@ -32,7 +32,6 @@
     MKAnnotationManager *_annotationManager;
     MKAnnotationContainerView *_annotationContainer;
     MKAttributionLabel *_attributionLabel;
-    MKAppleLogoImageView *_appleLogoImageView;
     CDUnknownBlockType _annotationRectTest;
     CDUnknownBlockType _annotationCoordinateTest;
     UIImageView *_attributionBadgeView;
@@ -116,7 +115,6 @@
         unsigned int isChangingViewSize:1;
         unsigned int isChangingEdgeInsets:1;
         unsigned int showsAttribution:1;
-        unsigned int showsAppleLogo:1;
         unsigned int canShowAttributionBadge:1;
         unsigned int showsVenues:1;
         unsigned int rotating:1;
@@ -185,6 +183,7 @@
     unsigned long long _compassInsetEdges;
     BOOL _explicitCompassInsetEdges;
     MKMapViewLabelMarkerState *_selectedLabelMarkerState;
+    BOOL _showsAppleLogo;
     BOOL _compassSuppressedForFloorPicker;
     BOOL _geodHealthConsoleEnabled;
     double _compassVisibleRotationThreshold;
@@ -205,6 +204,7 @@
 @property(copy, nonatomic, getter=_labelsDidLayoutCallback, setter=_setLabelsDidLayoutCallback:) CDUnknownBlockType labelsDidLayoutCallback; // @synthesize labelsDidLayoutCallback=_labelsDidLayoutCallback;
 @property(nonatomic, getter=_isGeodHealthConsoleEnabled, setter=_setGeodHealthConsoleEnabled:) BOOL geodHealthConsoleEnabled; // @synthesize geodHealthConsoleEnabled=_geodHealthConsoleEnabled;
 @property(nonatomic, getter=_isCompassSuppressedForFloorPicker, setter=_setCompassSuppressedForFloorPicker:) BOOL compassSuppressedForFloorPicker; // @synthesize compassSuppressedForFloorPicker=_compassSuppressedForFloorPicker;
+@property(nonatomic, getter=_showsAppleLogo, setter=_setShowsAppleLogo:) BOOL showsAppleLogo; // @synthesize showsAppleLogo=_showsAppleLogo;
 @property(nonatomic) int attributionCorner; // @synthesize attributionCorner=_attributionCorner;
 @property(copy, nonatomic) MKPointOfInterestFilter *pointOfInterestFilter; // @synthesize pointOfInterestFilter=_pointOfInterestFilter;
 @property(copy, nonatomic) MKMapCameraBoundary *cameraBoundary; // @synthesize cameraBoundary=_cameraBoundary;
@@ -418,7 +418,11 @@
 - (BOOL)annotationContainerIsRotated:(id)arg1;
 - (struct CGRect)visibleCenteringRectInView:(id)arg1;
 - (struct CGRect)visibleRectInView:(id)arg1;
+- (void)_sceneWillEnterForeground:(id)arg1;
+- (void)_unregisterSceneLifecycleNotifications;
+- (void)_registerSceneLifecycleNotifications;
 - (void)applicationWillTerminate:(id)arg1;
+- (void)applicationWillEnterForeground:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationDidFinishSuspensionSnapshot:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
@@ -464,7 +468,7 @@
 - (void)_updateZoomControlsVisiblility;
 - (id)compassVisibilityAnimation;
 - (BOOL)compassVisible;
-- (void)_setCompassVisible:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setCompassVisible:(BOOL)arg1 animated:(BOOL)arg2 force:(BOOL)arg3;
 - (void)_handleCompassTap:(id)arg1;
 - (void)_updateCompassPosition;
 - (void)_postDidUpdateYawNotification;
@@ -612,7 +616,6 @@
 - (void)_addCustomFeatureDataSource:(id)arg1;
 @property(nonatomic) BOOL showsTraffic;
 - (void)deviceOrientationDidChange:(id)arg1;
-- (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)valueChangedForGEOConfigKey:(CDStruct_35640fce)arg1;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
@@ -620,14 +623,12 @@
 - (id)mapAttributionWithStringAttributes:(id)arg1 allowMultiLine:(BOOL)arg2;
 - (id)mapAttributionWithStringAttributes:(id)arg1;
 - (struct CGRect)attributionFrame;
-- (void)_updateAppleLogo;
 - (void)_updateAttribution;
 @property(nonatomic, getter=_compassInsetEdges, setter=_setCompassInsetEdges:) unsigned long long compassInsetEdges;
 - (void)_layoutAttribution;
 @property(readonly, nonatomic) struct CGRect attributionBadgeBounds;
 @property(readonly, nonatomic, getter=_isShowingAttributionBadge) BOOL showingAttributionBadge;
 @property(nonatomic) BOOL canShowAttributionBadge;
-@property(nonatomic, getter=_showsAppleLogo, setter=_setShowsAppleLogo:) BOOL showsAppleLogo;
 @property(nonatomic) BOOL showsAttribution;
 @property(readonly, nonatomic, getter=_mapLayer) VKMapView *mapLayer;
 - (void)_forceManifestUpdateIfNecessary;

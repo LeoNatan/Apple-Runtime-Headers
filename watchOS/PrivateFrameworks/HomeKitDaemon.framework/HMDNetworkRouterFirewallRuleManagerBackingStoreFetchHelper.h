@@ -6,17 +6,17 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class CKOperationGroup, CKServerChangeToken, HMBProcessingOptions, HMFActivity, NAPromise, NSDate;
+#import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@interface HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper : HMFObject
+@class CKOperationGroup, HMBProcessingOptions, HMFActivity, NAPromise, NSDate, NSString;
+
+@interface HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper : HMFObject <HMFLogging>
 {
     NAPromise *_promise;
     _Bool _finished;
     HMFActivity *_activity;
     HMBProcessingOptions *_options;
-    CKServerChangeToken *_originalChangeToken;
     CKOperationGroup *_operationGroup;
-    CKServerChangeToken *_changeToken;
     unsigned int _retryCount;
     NSDate *_operationStartTime;
     double _retryIntervalSeconds;
@@ -25,13 +25,12 @@
 + (unsigned int)maxOperationDurationSeconds;
 + (unsigned int)maxRetryCount;
 + (unsigned int)__integerForPreferenceKey:(id)arg1 defaultValue:(unsigned int)arg2;
++ (id)logCategory;
 @property(readonly, nonatomic) _Bool finished; // @synthesize finished=_finished;
 @property(retain, nonatomic) NSDate *operationStartTime; // @synthesize operationStartTime=_operationStartTime;
 @property(nonatomic) unsigned int retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) double retryIntervalSeconds; // @synthesize retryIntervalSeconds=_retryIntervalSeconds;
-@property(retain, nonatomic) CKServerChangeToken *changeToken; // @synthesize changeToken=_changeToken;
 @property(readonly, nonatomic) CKOperationGroup *operationGroup; // @synthesize operationGroup=_operationGroup;
-@property(readonly, nonatomic) CKServerChangeToken *originalChangeToken; // @synthesize originalChangeToken=_originalChangeToken;
 @property(readonly, nonatomic) HMBProcessingOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
 - (void).cxx_destruct;
@@ -40,7 +39,13 @@
 - (void)finishWithResult:(id)arg1;
 @property(nonatomic) _Bool shouldRetry;
 - (void)dealloc;
-- (id)initWithActivity:(id)arg1 options:(id)arg2 container:(id)arg3 changeToken:(id)arg4 promise:(id)arg5;
+- (id)initWithActivity:(id)arg1 options:(id)arg2 container:(id)arg3 useAnonymousRequests:(_Bool)arg4 promise:(id)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

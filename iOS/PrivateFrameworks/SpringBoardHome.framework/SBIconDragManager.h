@@ -8,7 +8,7 @@
 
 #import <SpringBoardHome/SBIconListViewDragObserver-Protocol.h>
 
-@class NSHashTable, NSMapTable, NSMutableDictionary, NSString, NSTimer, SBHIconManager, SBIconDraggingEditContext;
+@class NSHashTable, NSMapTable, NSMutableDictionary, NSString, SBHIconManager, SBIconDraggingEditContext;
 
 @interface SBIconDragManager : NSObject <SBIconListViewDragObserver>
 {
@@ -19,13 +19,11 @@
     NSHashTable *_platterViews;
     SBHIconManager *_iconManager;
     SBIconDraggingEditContext *_draggingEditContext;
-    NSTimer *_editingLongPressTimer;
 }
 
 + (void)enumerateMedusaPlatterDragPreviewsInDragItems:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (void)enumerateAppDragContextsInDragItems:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (void)cancelAllDrags;
-@property(retain, nonatomic) NSTimer *editingLongPressTimer; // @synthesize editingLongPressTimer=_editingLongPressTimer;
 @property(retain, nonatomic) SBIconDraggingEditContext *draggingEditContext; // @synthesize draggingEditContext=_draggingEditContext;
 @property(nonatomic) __weak SBHIconManager *iconManager; // @synthesize iconManager=_iconManager;
 - (void).cxx_destruct;
@@ -51,10 +49,12 @@
 - (void)iconDropSessionWithIdentifier:(id)arg1 draggedIconIdentifiers:(id)arg2 didPauseAtLocation:(struct CGPoint)arg3 inIconListView:(id)arg4;
 - (void)iconDropSession:(id)arg1 didPauseAtLocation:(struct CGPoint)arg2 inIconListView:(id)arg3;
 - (id)iconDropSessionDidUpdate:(id)arg1 inIconListView:(id)arg2;
+- (void)informQuickActionPlatterDidFinishPresentation:(id)arg1;
 - (void)iconDropSessionDidEnter:(id)arg1 identifier:(id)arg2 draggedIconIdentifiers:(id)arg3 inIconListView:(id)arg4;
 - (void)iconDropSessionDidEnter:(id)arg1 inIconListView:(id)arg2;
 - (_Bool)canAcceptDropInSession:(id)arg1 inIconListView:(id)arg2;
 - (_Bool)canHandleIconDropSession:(id)arg1 inIconListView:(id)arg2;
+- (void)_updateDragPreviewsForEditingState;
 - (id)iconView:(id)arg1 dragPreviewForItem:(id)arg2 session:(id)arg3 previewParameters:(id)arg4;
 - (void)iconView:(id)arg1 item:(id)arg2 willAnimateDragCancelWithAnimator:(id)arg3;
 - (void)iconView:(id)arg1 willUsePreviewForCancelling:(id)arg2 targetIconView:(id)arg3;
@@ -97,16 +97,13 @@
 - (void)compactAndLayoutRootIconLists;
 - (void)compactAndLayoutRootIconListsWithDuration:(double)arg1;
 - (void)updateExistingIconPlaceholderForDragWithIdentifier:(id)arg1;
-- (void)swapTrackedIcon:(id)arg1 withIcon:(id)arg2;
+- (_Bool)swapTrackedIconWithIdentifier:(id)arg1 withIcon:(id)arg2;
 - (void)revertLocationForIcon:(id)arg1 toPath:(id)arg2;
 - (id)fullIndexPathForRevertingIcon:(id)arg1 context:(id)arg2;
 - (void)revertActiveDragChanges;
 - (void)revertDragChangesForDragWithIdentifier:(id)arg1;
 - (void)captureInitialIconStateToDragContext:(id)arg1;
 - (void)stopTrackingDragLocationForEditingForDragWithIdentifier:(id)arg1;
-- (void)editingLongPressTimerFired:(id)arg1;
-- (void)cancelEditingLongPressTimer;
-- (void)startEditingLongPressTimerForIconView:(id)arg1;
 - (void)startTrackingDragLocationForEditingFromDropSession:(id)arg1 orDragSession:(id)arg2;
 - (void)removeEmptyFoldersInFolder:(id)arg1;
 - (void)removeEmptyFolders;

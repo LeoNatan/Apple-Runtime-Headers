@@ -9,7 +9,7 @@
 #import <MediaMiningKit/CLSQueryPerformerProtocol-Protocol.h>
 
 @class NSArray, NSString;
-@protocol GEOMapServiceTicket;
+@protocol GEOMapServiceTicket, OS_os_log;
 
 @interface CLSLocationQueryPerformer : NSObject <CLSQueryPerformerProtocol>
 {
@@ -18,12 +18,14 @@
     id <GEOMapServiceTicket> _ticket;
     NSArray *_regions;
     double _precision;
+    NSObject<OS_os_log> *_loggingConnection;
     CDStruct_95c2efd7 _statistics;
 }
 
 + (double)defaultPrecision;
 + (unsigned long long)numberOfRegionsPerBatch;
 + (id)queryWithTemplate:(id)arg1 forRegions:(id)arg2;
+@property(nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 @property(nonatomic) double precision; // @synthesize precision=_precision;
 @property(nonatomic) CDStruct_95c2efd7 statistics; // @synthesize statistics=_statistics;
 @property(readonly, nonatomic) BOOL isCancelled; // @synthesize isCancelled=_isCancelled;

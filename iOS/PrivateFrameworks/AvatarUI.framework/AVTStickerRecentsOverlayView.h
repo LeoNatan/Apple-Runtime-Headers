@@ -6,31 +6,50 @@
 
 #import <UIKit/UIVisualEffectView.h>
 
-@class NSString, UIImage, UIImageView, UILabel, UIView;
+@class AVTCircularButton, AVTStickerRecentsOverlayViewLayout, NSString, UIButton, UIImage, UIImageView, UILabel, UITapGestureRecognizer, UIView;
+@protocol AVTStickerRecentsOverlayDelegate;
 
 @interface AVTStickerRecentsOverlayView : UIVisualEffectView
 {
     NSString *_title;
     NSString *_subtitle;
     UIImage *_image;
+    id <AVTStickerRecentsOverlayDelegate> _delegate;
     UIImageView *_imageView;
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
+    UITapGestureRecognizer *_tapGestureRecognizer;
+    UIButton *_continueButton;
+    AVTCircularButton *_closeButton;
+    AVTStickerRecentsOverlayViewLayout *_portraitLayout;
+    AVTStickerRecentsOverlayViewLayout *_landscapeLayout;
 }
 
-+ (id)subtitleFont;
-+ (id)titleFont;
++ (id)disclosureOverlayView;
++ (id)standardOverlayView;
++ (id)overlayViewForMemojiCreation;
++ (id)stickerButtonImage;
+@property(retain, nonatomic) AVTStickerRecentsOverlayViewLayout *landscapeLayout; // @synthesize landscapeLayout=_landscapeLayout;
+@property(retain, nonatomic) AVTStickerRecentsOverlayViewLayout *portraitLayout; // @synthesize portraitLayout=_portraitLayout;
+@property(retain, nonatomic) AVTCircularButton *closeButton; // @synthesize closeButton=_closeButton;
+@property(retain, nonatomic) UIButton *continueButton; // @synthesize continueButton=_continueButton;
+@property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
+@property(nonatomic) __weak id <AVTStickerRecentsOverlayDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (void)dismissAnimatedWithDuration:(double)arg1;
 - (void)layoutSubviews;
+- (id)appropriateLayout;
 @property(readonly, nonatomic) UIView *animatableView;
-- (id)initWithFrame:(struct CGRect)arg1 title:(id)arg2 subtitle:(id)arg3 image:(id)arg4;
+- (void)didTapCloseButton:(id)arg1;
+- (void)didTapContinueButton:(id)arg1;
+- (void)didTapContentView:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 title:(id)arg2 subtitle:(id)arg3 buttonTitle:(id)arg4 image:(id)arg5;
 
 @end
 

@@ -12,12 +12,14 @@
 
 @interface HFImageIconDescriptor : NSObject <HFIconDescriptor>
 {
+    _Bool _shouldForceLTR;
     _Bool _isDemoModeDescriptor;
     NSString *_imageIdentifier;
 }
 
 @property(nonatomic) _Bool isDemoModeDescriptor; // @synthesize isDemoModeDescriptor=_isDemoModeDescriptor;
 @property(readonly, nonatomic) NSString *imageIdentifier; // @synthesize imageIdentifier=_imageIdentifier;
+@property(readonly, nonatomic) _Bool shouldForceLTR; // @synthesize shouldForceLTR=_shouldForceLTR;
 - (void).cxx_destruct;
 - (id)iconDescriptorByMergingWithIconDescriptor:(id)arg1;
 @property(readonly, copy) NSString *description;

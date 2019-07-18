@@ -12,6 +12,7 @@
 - (void)suggestionsViewController:(WFActionDrawerSiriSuggestionsViewController *)arg1 didSelectCategoryForContentType:(NSString *)arg2;
 - (void)suggestionsViewControllerViewControllerDidSelectCategoryScripting:(WFActionDrawerSiriSuggestionsViewController *)arg1 title:(NSString *)arg2;
 - (void)suggestionsViewControllerDidSelectCategoryFavorites:(WFActionDrawerSiriSuggestionsViewController *)arg1 title:(NSString *)arg2;
+- (void)suggestionsViewControllerDidSelectCategoryApps:(WFActionDrawerSiriSuggestionsViewController *)arg1 title:(NSString *)arg2;
 - (void)suggestionsViewController:(WFActionDrawerSiriSuggestionsViewController *)arg1 didSelectAction:(WFAction *)arg2;
 - (void)suggestionsViewController:(WFActionDrawerSiriSuggestionsViewController *)arg1 didSelectDocumentationForAction:(WFAction *)arg2 fromView:(UIView *)arg3;
 @end

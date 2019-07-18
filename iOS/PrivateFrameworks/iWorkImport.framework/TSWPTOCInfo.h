@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     NSArray *_pageNumberRanges;
 }
 
-+ (_Bool)canPartition;
++ (_Bool)canPartitionInline;
 @property(retain, nonatomic) NSArray *pageNumberRanges; // @synthesize pageNumberRanges=_pageNumberRanges;
 @property(nonatomic) _Bool shouldSyncTOCSettingsWithTOCNavigator; // @synthesize shouldSyncTOCSettingsWithTOCNavigator=_shouldSyncTOCSettingsWithTOCNavigator;
 @property(retain, nonatomic, setter=setTOCSettings:) TSWPTOCSettings *tocSettings; // @synthesize tocSettings=_tocSettings;
@@ -37,10 +37,12 @@ __attribute__((visibility("hidden")))
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (void)regenerateStorageContent;
 - (_Bool)p_startingTOCIsRTLForEntries:(id)arg1;
+- (id)containedStorageFormattedUsingParagraphStyles;
 - (id)containedStorageFormattedUsingParagraphStyle:(id)arg1;
 @property(readonly, nonatomic) NSSet *paragraphStylesShownInTOC;
 @property(readonly, nonatomic) NSArray *visibleTOCEntries;
 - (id)partitioner;
+- (_Bool)textIsVertical;
 - (_Bool)wantsPositionFixedWhenCopying;
 - (int)elementKind;
 - (_Bool)isSelectable;

@@ -89,14 +89,14 @@
 - (void)_queue_enumerateObserversWithBlock:(CDUnknownBlockType)arg1;
 - (void)_updateCPUStatistics;
 - (void)_queue_sceneLifecycleStateChanged:(id)arg1;
-- (void)_queue_setVisibility:(int)arg1;
+- (void)_queue_setVisibility:(long long)arg1;
 - (void)_queue_launchComplete:(id)arg1;
 - (void)_queue_bootstrapAndExec;
 - (void)_queue_setDebugging:(_Bool)arg1;
-- (void)_queue_setTaskState:(int)arg1;
+- (void)_queue_setTaskState:(long long)arg1;
 - (void)_queue_setPid:(int)arg1;
 - (void)_queue_updateStateWithBlock:(CDUnknownBlockType)arg1;
-- (void)_notePendingExit;
+- (void)_notePendingExitForReason:(id)arg1;
 - (void)_executeBlockAfterLaunchCompletes:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool executableLivesOnSystemPartition;
 @property(readonly, nonatomic) FBSApplicationInfo *applicationInfo; // @synthesize applicationInfo=_applicationInfo;

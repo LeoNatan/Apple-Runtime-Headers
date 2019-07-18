@@ -15,10 +15,12 @@
 @interface _INPBCreateTaskListIntentResponse : PBCodable <_INPBCreateTaskListIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBTaskList *_createdTaskList;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBTaskList *createdTaskList; // @synthesize createdTaskList=_createdTaskList;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

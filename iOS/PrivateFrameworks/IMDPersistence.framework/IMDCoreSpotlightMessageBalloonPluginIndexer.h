@@ -14,6 +14,10 @@
 {
 }
 
++ (id)lpPluginPathsCustomKey;
++ (id)lpHasRichMediaCustomKey;
++ (_Bool)_richLinkPluginHasRichContentForItem:(id)arg1 attachmentPaths:(id)arg2;
++ (id)_pluginPayloadAttachmentPathsForItem:(id)arg1;
 + (id)_newSummaryTextForPayloadData:(id)arg1 item:(id)arg2;
 + (id)lpDescriptionCustomKey;
 + (void)indexItem:(id)arg1 withChat:(id)arg2 isReindexing:(_Bool)arg3 metadataToUpdate:(id)arg4;

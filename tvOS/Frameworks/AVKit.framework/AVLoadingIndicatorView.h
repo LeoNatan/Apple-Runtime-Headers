@@ -6,19 +6,17 @@
 
 #import <UIKit/UIView.h>
 
-@class UIActivityIndicatorView, UILabel;
+@class UIActivityIndicatorView;
 
 __attribute__((visibility("hidden")))
 @interface AVLoadingIndicatorView : UIView
 {
     UIActivityIndicatorView *_activityIndicatorView;
-    UILabel *_label;
 }
 
 - (void).cxx_destruct;
 - (void)tintColorDidChange;
 - (void)setHidden:(_Bool)arg1;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

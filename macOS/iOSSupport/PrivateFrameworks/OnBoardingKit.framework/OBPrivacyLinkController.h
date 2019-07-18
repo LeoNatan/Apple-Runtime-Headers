@@ -12,11 +12,13 @@
 {
     NSArray *_bundles;
     NSArray *_bundleIdentifiers;
+    BOOL _didOverrideShowUnifiedAbout;
     BOOL _presentedViewControllerShouldUseDarkMode;
     BOOL _displayIcon;
     BOOL _displayLargeIcon;
     BOOL _displayCaptionText;
     BOOL _allowsOpeningSafari;
+    BOOL _showsLinkToUnifiedAbout;
     NSString *_displayLanguage;
     unsigned long long _displayDeviceType;
 }
@@ -24,6 +26,7 @@
 + (id)linkWithBundleIdentifier:(id)arg1;
 + (id)linkWithBundleIdentifiers:(id)arg1;
 + (Class)_platformSpecificClass;
+@property(nonatomic) BOOL showsLinkToUnifiedAbout; // @synthesize showsLinkToUnifiedAbout=_showsLinkToUnifiedAbout;
 @property BOOL allowsOpeningSafari; // @synthesize allowsOpeningSafari=_allowsOpeningSafari;
 @property unsigned long long displayDeviceType; // @synthesize displayDeviceType=_displayDeviceType;
 @property(retain) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;

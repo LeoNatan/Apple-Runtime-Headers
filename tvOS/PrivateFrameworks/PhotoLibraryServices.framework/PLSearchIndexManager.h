@@ -31,6 +31,7 @@
     _Bool _hasValidSearchIndex;
     _Bool _hasValidSearchSupportingData;
     _Bool _shouldCheckLookupTableIsOutOfSync;
+    _Bool _shouldCheckDatabaseIntegrity;
     _Bool _isTrackingRebuild;
     long long _rebuildReason;
     long long _updateState;

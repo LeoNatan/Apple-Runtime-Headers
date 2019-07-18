@@ -25,12 +25,12 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUIProductUberBackgroundView *uberBackgroundView; // @synthesize uberBackgroundView=_uberBackgroundView;
 - (void).cxx_destruct;
 - (void)_configureViewSubviews;
+- (void)setTransitionBannerOpacity:(double)arg1;
 - (void)setBannerOpacity:(double)arg1;
 - (void)setWhiteBannerOpacity:(double)arg1;
 @property(readonly, nonatomic) struct CGSize size;
 @property(readonly, nonatomic) double topThreshold;
 - (void)setUberImageOffset:(double)arg1;
-@property(readonly, nonatomic) long long uberLayoutInterfaceStyle;
 @property(readonly, nonatomic) _Bool isUberLayoutActive;
 - (id)preferredFocusEnvironments;
 - (void)viewDidLayoutSubviews;

@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *contentTitle; // @synthesize contentTitle=_contentTitle;
 @property(retain, nonatomic) WLKChannelDetails *channelDetails; // @synthesize channelDetails=_channelDetails;
 - (void).cxx_destruct;
-- (_Bool)_appInstallationAllowed;
 - (void)_installAppWithChannel:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)installAppWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)isEqual:(id)arg1;

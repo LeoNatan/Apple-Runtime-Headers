@@ -11,9 +11,8 @@
 __attribute__((visibility("hidden")))
 @interface VNFaceAnalyzerCompoundRequestConfigurationGroups : NSObject
 {
-    NSMutableDictionary *_regionOfInterestConfigurations;
+    NSMutableDictionary *_generalConfigurations;
     NSMutableDictionary *_observationGroupConfigurations;
-    NSMutableDictionary *_observationGroupConfigurationsWithCollision;
 }
 
 - (void).cxx_destruct;

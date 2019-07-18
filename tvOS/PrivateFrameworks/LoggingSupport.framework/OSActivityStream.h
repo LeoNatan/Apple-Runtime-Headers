@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSCompoundPredicate, NSMutableDictionary, NSMutableSet, OSLogDevice, _OSLogStreamFilter;
+@class NSCompoundPredicate, NSMutableSet, OSLogDevice, _OSLogStreamFilter;
 @protocol OSActivityStreamDelegate, OSDeviceDelegate;
 
 @interface OSActivityStream : NSObject
@@ -25,11 +25,9 @@
     unsigned long long _eventFilter;
     NSCompoundPredicate *_predicate;
     OSLogDevice *_device;
-    NSMutableDictionary *_activityFilters;
 }
 
-@property(nonatomic) NSMutableDictionary *activityFilters; // @synthesize activityFilters=_activityFilters;
-@property(nonatomic) OSLogDevice *device; // @synthesize device=_device;
+@property(retain, nonatomic) OSLogDevice *device; // @synthesize device=_device;
 @property(copy, nonatomic) NSCompoundPredicate *predicate; // @synthesize predicate=_predicate;
 @property(nonatomic) unsigned long long eventFilter; // @synthesize eventFilter=_eventFilter;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
@@ -45,7 +43,6 @@
 - (void)startRemote;
 - (_Bool)streamEvent:(id)arg1 error:(id)arg2;
 - (void)start;
-- (void)addFilterForActivity:(id)arg1 andBinary:(id)arg2;
 - (void)addProcessID:(int)arg1;
 - (id)initWithDevice:(void *)arg1;
 @property(nonatomic) unsigned long long events;

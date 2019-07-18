@@ -64,6 +64,7 @@
 @property(readonly, nonatomic) NSString *translationMapResourceID;
 @property(readonly, nonatomic) BOOL enableBadgeInSpotlightTabBar;
 @property(readonly, nonatomic) NSString *description;
+@property(readonly, nonatomic) NSString *anfRenderingConfiguration;
 @property(readonly, nonatomic) NSString *webEmbedContentBlockers;
 @property(readonly, nonatomic) NSString *feedNavigationConfigJSON;
 @property(readonly, nonatomic) BOOL disableThumbnailsForArticleRecirculation;

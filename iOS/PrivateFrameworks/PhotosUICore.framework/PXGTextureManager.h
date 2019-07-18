@@ -17,7 +17,7 @@
     NSObject<OS_dispatch_queue> *_processQueue;
     NSObject<OS_dispatch_queue> *_deallocationsQueue;
     struct os_unfair_lock_s _lookupLock;
-    NSMapTable *_lookupLock_textureByKeyByPresentationType[2];
+    NSMapTable *_lookupLock_textureByKeyByPresentationType[3];
     struct unordered_map<int, PXGRequestDetails, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, PXGRequestDetails>>> _lookupLock_requestDetailsByRequestID;
     NSHashTable *_spriteTexturesInUse;
     NSDictionary *_textureConverterByPresentationType;
@@ -75,8 +75,8 @@
 - (void)_enumerateSpriteTextures:(CDUnknownBlockType)arg1;
 - (long long)_processTextureProviderResults;
 - (void)_lookupLock_requestTexturesForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 textureProvider:(id)arg2 mediaKind:(int)arg3 presentationType:(int)arg4 isAppearing:(_Bool)arg5 layout:(id)arg6 leafSpriteIndexRange:(struct _PXGSpriteIndexRange)arg7 sprites:(CDStruct_92550dd7)arg8 textureStreamInfos:(CDStruct_875be80f *)arg9;
-- (void)_blockOnThumbnailsIfNeededWithGeometries:(CDStruct_ac168a83 *)arg1 visibleRect:(struct CGRect)arg2 interactionState:(CDStruct_30adaef5)arg3 fences:(id)arg4;
-- (void)streamTexturesForSpritesInDataStore:(id)arg1 presentationDataStore:(id)arg2 changeDetails:(id)arg3 layout:(id)arg4 interactionState:(CDStruct_30adaef5)arg5;
+- (void)_blockOnThumbnailsIfNeededWithGeometries:(CDStruct_ac168a83 *)arg1 visibleRect:(struct CGRect)arg2 interactionState:(CDStruct_04522d6a)arg3 fences:(id)arg4;
+- (void)streamTexturesForSpritesInDataStore:(id)arg1 presentationDataStore:(id)arg2 changeDetails:(id)arg3 layout:(id)arg4 interactionState:(CDStruct_04522d6a)arg5;
 - (void)_resizeStorageIfNeededForSpriteCount:(long long)arg1;
 - (void)_requestQueue_scheduleUpdateIfAllowed;
 - (void)_requestQueue_setNeedsUpdate;

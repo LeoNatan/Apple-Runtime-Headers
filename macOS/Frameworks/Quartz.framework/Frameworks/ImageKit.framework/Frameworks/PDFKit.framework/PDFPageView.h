@@ -102,6 +102,8 @@ __attribute__((visibility("hidden")))
 - (long long)displayBox;
 - (void)setNeedsTilesUpdate;
 - (id)renderingProperties;
+- (void)viewDidEndLiveResize;
+- (void)viewWillStartLiveResize;
 - (void)viewDidMoveToSuperview;
 - (void)dealloc;
 - (id)initWithPage:(id)arg1 geometryInterface:(id)arg2 andRenderingProperties:(id)arg3;

@@ -11,6 +11,10 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)_commonInit;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithReuseIdentifier:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 
 @end

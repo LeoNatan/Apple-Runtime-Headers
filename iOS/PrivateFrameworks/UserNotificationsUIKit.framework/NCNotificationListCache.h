@@ -40,9 +40,9 @@
 - (id)coalescingControlsCellWithWidth:(double)arg1;
 - (void)recycleNotificationListCoalescingHeaderCell:(id)arg1;
 - (id)coalescingHeaderCellWithTitle:(id)arg1 width:(double)arg2;
-- (void)recycleNotificationListCell:(id)arg1;
+- (_Bool)recycleNotificationListCell:(id)arg1;
 - (id)listCellForNotificationRequest:(id)arg1 viewControllerDelegate:(id)arg2 createNewIfNecessary:(_Bool)arg3 shouldConfigure:(_Bool)arg4;
-- (double)heightForNotificationRequest:(id)arg1 withFrameWidth:(double)arg2 isContentRevealed:(_Bool)arg3 isShowingSummaryText:(_Bool)arg4;
+- (double)heightForNotificationRequest:(id)arg1 withFrameWidth:(double)arg2 isContentRevealed:(_Bool)arg3 isShowingSummaryText:(_Bool)arg4 shouldCalculateHeight:(_Bool)arg5;
 - (void)updateNotificationRequest:(id)arg1;
 - (void)removeNotificationRequest:(id)arg1;
 - (void)clearCachedHeightsForNotificationRequest:(id)arg1;

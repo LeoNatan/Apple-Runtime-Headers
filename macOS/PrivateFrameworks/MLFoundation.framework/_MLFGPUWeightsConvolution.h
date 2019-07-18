@@ -9,19 +9,22 @@
 #import <MLFoundation/MPSCNNConvolutionDataSource-Protocol.h>
 #import <MLFoundation/NSCopying-Protocol.h>
 
-@class MLFoundationConvolutionDescriptor, MLFoundationTensor, MPSCNNConvolutionDescriptor, NSString;
+@class MLFoundationConvolutionDescriptor, MLFoundationNeuronDescriptor, MLFoundationTensor, MPSCNNConvolutionDescriptor, NSString;
 
 @interface _MLFGPUWeightsConvolution : NSObject <NSCopying, MPSCNNConvolutionDataSource>
 {
     MPSCNNConvolutionDescriptor *_descMPS;
     MLFoundationConvolutionDescriptor *_desc;
+    MLFoundationNeuronDescriptor *_neuronDesc;
     MLFoundationTensor *_weight;
     MLFoundationTensor *_biasTerm;
 }
 
++ (id)weightWithDescriptor:(id)arg1 biasTerms:(id)arg2 weights:(id)arg3 neuronDescriptor:(id)arg4;
 + (id)weightWithDescriptor:(id)arg1 biasTerms:(id)arg2 weights:(id)arg3;
 @property(readonly, nonatomic) MLFoundationTensor *biasTerm; // @synthesize biasTerm=_biasTerm;
 @property(readonly, nonatomic) MLFoundationTensor *weight; // @synthesize weight=_weight;
+@property(readonly, nonatomic) MLFoundationNeuronDescriptor *neuronDesc; // @synthesize neuronDesc=_neuronDesc;
 @property(readonly, nonatomic) MLFoundationConvolutionDescriptor *desc; // @synthesize desc=_desc;
 @property(readonly, nonatomic) MPSCNNConvolutionDescriptor *descMPS; // @synthesize descMPS=_descMPS;
 - (void).cxx_destruct;
@@ -34,7 +37,7 @@
 - (unsigned int)dataType;
 - (float *)biasTerms;
 @property(readonly, copy) NSString *description;
-- (id)initWithDescriptor:(id)arg1 biasTerms:(id)arg2 weights:(id)arg3;
+- (id)initWithDescriptor:(id)arg1 biasTerms:(id)arg2 weights:(id)arg3 neuronDescriptor:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

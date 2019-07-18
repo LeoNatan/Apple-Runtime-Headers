@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)isAdministrativeGuardianFamilyMember:(id)arg1;
 + (BOOL)isDelegateChildFamilyMember:(id)arg1;
 
 @end

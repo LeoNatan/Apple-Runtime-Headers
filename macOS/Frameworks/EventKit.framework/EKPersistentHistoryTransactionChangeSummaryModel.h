@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class EKObjectPersistentChangesModel, NSArray, NSMutableArray;
+@class EKObjectPersistentChangesModel, NSMutableArray;
 
 @interface EKPersistentHistoryTransactionChangeSummaryModel : NSObject
 {
@@ -15,12 +15,12 @@
     EKObjectPersistentChangesModel *_accounts;
     EKObjectPersistentChangesModel *_notifications;
     EKObjectPersistentChangesModel *_attendees;
-    NSArray *_otherModifiedObjects;
+    EKObjectPersistentChangesModel *_comments;
     NSMutableArray *_updatedProperties;
 }
 
 @property(retain, nonatomic) NSMutableArray *updatedProperties; // @synthesize updatedProperties=_updatedProperties;
-@property(readonly, nonatomic) NSArray *otherModifiedObjects; // @synthesize otherModifiedObjects=_otherModifiedObjects;
+@property(readonly, nonatomic) EKObjectPersistentChangesModel *comments; // @synthesize comments=_comments;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *attendees; // @synthesize attendees=_attendees;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *notifications; // @synthesize notifications=_notifications;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *accounts; // @synthesize accounts=_accounts;

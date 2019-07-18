@@ -6,30 +6,30 @@
 
 #import <iTunesStore/ISOperation.h>
 
-#import <iTunesStoreUI/SUCardEnrollmentUpsellViewControllerDelegate-Protocol.h>
+#import <iTunesStoreUI/SUPaymentSetupViewControllerDelegate-Protocol.h>
 
-@class NSObject, NSString, PKPaymentSetupFeature, SUAccountViewController;
+@class NSObject, NSString, UIViewController;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
-@interface SUCardEnrollmentUpsellOperation : ISOperation <SUCardEnrollmentUpsellViewControllerDelegate>
+@interface SUCardEnrollmentUpsellOperation : ISOperation <SUPaymentSetupViewControllerDelegate>
 {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-    PKPaymentSetupFeature *_paymentSetupFeature;
     NSString *_referrerIdentifier;
+    long long _paymentSetupFeatureState;
     NSObject<OS_dispatch_semaphore> *_semaphore;
-    SUAccountViewController *_viewController;
+    UIViewController *_viewController;
 }
 
-@property(retain, nonatomic) SUAccountViewController *viewController; // @synthesize viewController=_viewController;
+@property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
+@property(nonatomic) long long paymentSetupFeatureState; // @synthesize paymentSetupFeatureState=_paymentSetupFeatureState;
 @property(copy, nonatomic) NSString *referrerIdentifier; // @synthesize referrerIdentifier=_referrerIdentifier;
 - (void).cxx_destruct;
+- (void)paymentSetupViewControllerDidDismiss;
 - (id)_paymentSetupFeature;
 - (void)run;
-- (void)upsellViewControllerDidComplete:(id)arg1;
-@property(readonly, nonatomic) PKPaymentSetupFeature *paymentSetupFeature; // @synthesize paymentSetupFeature=_paymentSetupFeature;
 @property(readonly, nonatomic) _Bool didSucceed;
-- (id)initWithAccountViewController:(id)arg1;
+- (id)initWithViewController:(id)arg1;
 
 @end
 

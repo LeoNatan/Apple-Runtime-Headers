@@ -10,8 +10,6 @@
 {
 }
 
-- (id)_secondTickInactiveCompositingFilter;
-- (id)_secondTickActiveCompositingFilter;
 - (id)_secondTickInactiveColorForColor:(unsigned int)arg1;
 - (id)_secondTickActiveColorForColor:(unsigned int)arg1;
 - (id)_digitalTimeLabelColorForColor:(unsigned int)arg1;
@@ -29,6 +27,7 @@
 - (id)_customDialBackgroundView;
 - (_Bool)shouldUseCustomDialBackground;
 - (void)_didFinishTimeViewSetup;
+- (void)_setupDigitalTimeViews;
 - (void)_setupAnalogHandsView;
 
 @end

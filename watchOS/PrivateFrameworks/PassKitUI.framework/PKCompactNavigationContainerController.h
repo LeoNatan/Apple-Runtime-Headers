@@ -16,6 +16,8 @@
 
 @interface PKCompactNavigationContainerController : UIViewController <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, PKContentContainerObserver>
 {
+    _Bool _hasExplicitlyDefinedSupportedInterfaceOrientations;
+    unsigned int _explicitlyDefinedSupportedInterfaceOrientations;
     UIViewController *_presentationContextVC;
     CDStruct_cd3a09b2 _topVCInfo;
     struct CGRect _statusBarFrame;
@@ -41,11 +43,8 @@
 @property(readonly, nonatomic) PKCompactNavigationContainedNavigationController *containedNavigationController; // @synthesize containedNavigationController=_containedNavigationController;
 - (void).cxx_destruct;
 - (void)statusBarFrameWillChange:(id)arg1;
-- (id)childViewControllerForWhitePointAdaptivityStyle;
-- (id)childViewControllerForScreenEdgesDeferringSystemGestures;
-- (id)childViewControllerForHomeIndicatorAutoHidden;
-- (id)childViewControllerForStatusBarStyle;
 - (id)childViewControllerForStatusBarHidden;
+- (id)childViewControllerForStatusBarStyle;
 - (void)tapGestureRecognized:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
@@ -61,12 +60,15 @@
 - (_Bool)updateChildViewControllerSizeAnimated:(_Bool)arg1;
 - (id)_backgroundColor;
 - (void)setExclusionRect:(struct CGRect)arg1 withCoordinateSpace:(id)arg2;
+- (void)setSupportedInterfaceOrientations:(unsigned int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (struct CGSize)modalPresentationSize;
 - (struct CGSize)childViewControllerSizeForNavigationControllerSize:(struct CGSize)arg1;
 - (struct CGSize)navigationControllerSizeForChildViewControllerPreferredContentSize:(struct CGSize)arg1 isRoot:(_Bool)arg2;
 - (struct CGSize)childViewControllerPreferredContentSizeForSize:(struct CGSize)arg1 isRoot:(_Bool)arg2;
 - (struct CGRect)_targetNavigationControllerFrameForInfo:(CDStruct_cd3a09b2)arg1;
 - (void)viewWillLayoutSubviews;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;

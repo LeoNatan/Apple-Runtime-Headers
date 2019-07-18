@@ -21,8 +21,14 @@ __attribute__((visibility("hidden")))
     long long _autocorrectionType;
     NSMutableAttributedString *_annotationString;
     NSTextCheckingController *_textCheckingController;
+    long long smartQuotesType;
+    long long smartDashesType;
+    long long textReplacementType;
 }
 
+@property long long textReplacementType; // @synthesize textReplacementType;
+@property long long smartDashesType; // @synthesize smartDashesType;
+@property long long smartQuotesType; // @synthesize smartQuotesType;
 @property(retain) NSTextCheckingController *textCheckingController; // @synthesize textCheckingController=_textCheckingController;
 @property(retain) NSMutableAttributedString *annotationString; // @synthesize annotationString=_annotationString;
 @property long long autocorrectionType; // @synthesize autocorrectionType=_autocorrectionType;
@@ -43,12 +49,9 @@ __attribute__((visibility("hidden")))
 - (id)annotatedSubstringForProposedRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
 - (BOOL)lacksAnnotatedString;
 @property long long textCompletionType;
-@property long long linkDetectionType;
 @property long long dataDetectionType;
-@property long long textReplacementType;
+@property long long linkDetectionType;
 @property long long smartInsertDeleteType;
-@property long long smartDashesType;
-@property long long smartQuotesType;
 @property long long grammarCheckingType;
 - (unsigned long long)characterIndexForPoint:(struct CGPoint)arg1;
 - (struct CGRect)firstRectForCharacterRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
@@ -59,6 +62,13 @@ __attribute__((visibility("hidden")))
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 replacementRange:(struct _NSRange)arg3;
 - (void)doCommandBySelector:(SEL)arg1;
 - (void)insertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
+- (void)prepareContextMenu:(id)arg1;
+- (void)toggleAutomaticTextReplacement:(id)arg1;
+- (void)toggleAutomaticDashSubstitution:(id)arg1;
+- (void)toggleAutomaticLinkDetection:(id)arg1;
+- (void)toggleAutomaticQuoteSubstitution:(id)arg1;
+@property(readonly, getter=isAutomaticDashSubstitutionEnabled) BOOL automaticDashSubstitutionEnabled;
+@property(readonly, getter=isAutomaticQuoteSubstitutionEnabled) BOOL automaticQuoteSubstitutionEnabled;
 @property(readonly) long long spellCheckerDocumentTag;
 - (void)toggleAutomaticSpellingCorrection:(id)arg1;
 - (BOOL)isAutomaticSpellingCorrectionEnabled;

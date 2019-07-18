@@ -64,6 +64,7 @@
 + (long long)hashedSessionsLogging;
 + (void)setOnlyShowSignificantNLEvents:(BOOL)arg1;
 + (BOOL)onlyShowSignificantNLEvents;
++ (void)setOnlyShowSignificantPseudoContactsForTests:(BOOL)arg1;
 + (void)setOnlyShowSignificantPseudoContacts:(BOOL)arg1;
 + (BOOL)onlyShowSignificantPseudoContacts;
 + (void)updateIntSettingKey:(id)arg1 withValue:(int)arg2;

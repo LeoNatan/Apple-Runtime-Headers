@@ -24,6 +24,7 @@
     _Bool _restricted;
     _Bool _daemonShouldReceiveBackgroundResponses;
     _Bool _daemonShouldReceiveNotificationSettingsUpdates;
+    _Bool _daemonShouldReceiveApplicationEvents;
     _Bool _allowUnlimitedPendingNotifications;
     NSString *_bundleIdentifier;
     NSString *_processBundleIdentifier;
@@ -60,6 +61,7 @@
 + (id)systemSourcePathExtension;
 + (id)descriptionWithBundleIdentifier:(id)arg1 path:(id)arg2;
 @property(nonatomic) _Bool allowUnlimitedPendingNotifications; // @synthesize allowUnlimitedPendingNotifications=_allowUnlimitedPendingNotifications;
+@property(nonatomic) _Bool daemonShouldReceiveApplicationEvents; // @synthesize daemonShouldReceiveApplicationEvents=_daemonShouldReceiveApplicationEvents;
 @property(nonatomic) _Bool daemonShouldReceiveNotificationSettingsUpdates; // @synthesize daemonShouldReceiveNotificationSettingsUpdates=_daemonShouldReceiveNotificationSettingsUpdates;
 @property(nonatomic) _Bool daemonShouldReceiveBackgroundResponses; // @synthesize daemonShouldReceiveBackgroundResponses=_daemonShouldReceiveBackgroundResponses;
 @property(nonatomic, getter=isRestricted) _Bool restricted; // @synthesize restricted=_restricted;

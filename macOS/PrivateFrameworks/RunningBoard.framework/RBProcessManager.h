@@ -9,8 +9,8 @@
 #import <RunningBoard/RBProcessManaging-Protocol.h>
 #import <RunningBoard/RBStateCapturing-Protocol.h>
 
-@class NSMutableDictionary, NSString, RBLaunchdJobRegistry, RBProcessIndex, RBProcessMap, RBSystemState;
-@protocol OS_dispatch_queue, RBBundlePropertiesManaging, RBEntitlementManaging, RBJetsamBandProviding, RBProcessManagerDelegate;
+@class NSMapTable, NSMutableDictionary, NSString, RBLaunchdJobRegistry, RBProcessIndex, RBProcessMap, RBSystemState;
+@protocol RBBundlePropertiesManaging, RBEntitlementManaging, RBJetsamBandProviding, RBProcessManagerDelegate;
 
 @interface RBProcessManager : NSObject <RBProcessManaging, RBStateCapturing>
 {
@@ -28,9 +28,9 @@
     RBSystemState *_systemState;
     RBProcessMap *_processState;
     NSMutableDictionary *_identityToPendingExitBlock;
-    NSMutableDictionary *_identityToProcessLifecycleQueueMap;
-    NSMutableDictionary *_identityToProcessLifecycleQueueTokensMap;
-    NSObject<OS_dispatch_queue> *_stateApplicationQueue;
+    NSMapTable *_identityToProcessLifecycleQueue;
+    void *_canary;
+    BOOL _systemPreventsIdleSleep;
 }
 
 + (id)stateApplicationQueue;
@@ -39,8 +39,7 @@
 - (id)_lifecycleQueue_addProcessInstance:(id)arg1 job:(id)arg2 properties:(id)arg3;
 - (id)_lifecycleQueue_addProcessWithInstance:(id)arg1 properties:(id)arg2;
 - (id)_lifecycleQueue_addProcessWithJob:(id)arg1;
-- (void)_removeProcessLifecycleQueueToken:(id)arg1 forIdentity:(id)arg2;
-- (id)_addProcessLifecycleQueueToken:(id)arg1 forIdentity:(id)arg2;
+- (id)_getLifecycleQueueForIdentity:(id)arg1;
 - (void)_executeLifecycleEventForIdentity:(id)arg1 sync:(BOOL)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (id)_resolveProcessWithIdentifier:(id)arg1 auditToken:(id)arg2 properties:(id *)arg3;
 - (id)_processForInstance:(id)arg1;
@@ -53,6 +52,7 @@
 - (id)busyExtensionInstancesFromSet:(id)arg1;
 - (BOOL)executeTerminateRequest:(id)arg1 withError:(out id *)arg2;
 - (id)executeLaunchRequest:(id)arg1 withError:(out id *)arg2;
+- (void)systemPreventIdleSleepStateDidChange:(BOOL)arg1;
 - (BOOL)isActiveProcess:(id)arg1;
 - (id)processesMatchingPredicate:(id)arg1;
 - (id)processForInstance:(id)arg1;
@@ -60,7 +60,6 @@
 - (id)_processForIdentifier:(id)arg1 withAuditToken:(id)arg2;
 - (id)processForIdentifier:(id)arg1;
 - (id)processForAuditToken:(id)arg1;
-- (id)processForConnection:(id)arg1;
 - (void)start;
 @property(readonly, copy) NSString *debugDescription;
 - (id)initWithBundlePropertiesManager:(id)arg1 entitlementManager:(id)arg2 jetsamBandProvider:(id)arg3 delegate:(id)arg4;

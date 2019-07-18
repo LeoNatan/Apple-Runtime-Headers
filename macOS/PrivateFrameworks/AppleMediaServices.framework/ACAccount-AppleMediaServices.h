@@ -60,6 +60,7 @@
 - (void)ams_setFirstName:(id)arg1;
 - (void)ams_setDSID:(id)arg1;
 - (void)ams_setCreditsString:(id)arg1;
+- (void)ams_setBiometricsState:(long long)arg1;
 - (void)ams_setAltDSID:(id)arg1;
 - (void)ams_setAgreedToTerms:(BOOL)arg1;
 - (void)ams_setAccountFlags:(id)arg1;
@@ -89,10 +90,12 @@
 - (BOOL)ams_didAgreeToTerms;
 @property(readonly) NSString *ams_creditsString;
 @property(readonly) NSArray *ams_cookies;
+- (long long)ams_biometricsState;
 @property(readonly) NSString *ams_altDSID;
 - (id)ams_accountFlags;
 
 // Remaining properties
+@property(readonly, getter=ams_isPrivateListeningEnabled) BOOL ams_privateListeningEnabled;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

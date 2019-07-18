@@ -6,10 +6,12 @@
 
 #import <iWorkImport/TSDStyledLayout.h>
 
+#import <iWorkImport/TSDMediaSizeResetting-Protocol.h>
+
 @class TSDMutableStroke;
 
 __attribute__((visibility("hidden")))
-@interface TSDMediaLayout : TSDStyledLayout
+@interface TSDMediaLayout : TSDStyledLayout <TSDMediaSizeResetting>
 {
     struct CGRect mCachedAlignmentFrame;
     struct {

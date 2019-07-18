@@ -14,6 +14,7 @@
 
 @interface UIImageConfiguration : NSObject <UIImageConfiguration, NSCopying, NSSecureCoding>
 {
+    BOOL _ignoresDynamicType;
     UITraitCollection *_traitCollection;
 }
 
@@ -21,6 +22,7 @@
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 - (void).cxx_destruct;
+- (id)_configurationIgnoringDynamicType;
 - (void)_applyConfigurationValuesTo:(id)arg1;
 - (BOOL)_shouldApplyConfiguration:(id)arg1;
 - (id)configurationByApplyingConfiguration:(id)arg1;

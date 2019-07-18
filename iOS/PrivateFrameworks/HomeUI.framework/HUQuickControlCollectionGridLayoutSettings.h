@@ -12,6 +12,7 @@
 {
     unsigned long long _sectionNumber;
     NSString *_sectionIdentifier;
+    NSString *_sectionHeader;
     unsigned long long _numberOfItems;
     unsigned long long _numberOfRows;
     unsigned long long _numberOfColumns;
@@ -21,8 +22,10 @@
     double _interitemSpacing;
     unsigned long long _preferredLayoutStyle;
     double _sectionTopPadding;
+    unsigned long long _titlePosition;
 }
 
+@property(nonatomic) unsigned long long titlePosition; // @synthesize titlePosition=_titlePosition;
 @property(nonatomic) double sectionTopPadding; // @synthesize sectionTopPadding=_sectionTopPadding;
 @property(nonatomic) unsigned long long preferredLayoutStyle; // @synthesize preferredLayoutStyle=_preferredLayoutStyle;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
@@ -32,6 +35,7 @@
 @property(nonatomic) unsigned long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(nonatomic) unsigned long long numberOfRows; // @synthesize numberOfRows=_numberOfRows;
 @property(nonatomic) unsigned long long numberOfItems; // @synthesize numberOfItems=_numberOfItems;
+@property(retain, nonatomic) NSString *sectionHeader; // @synthesize sectionHeader=_sectionHeader;
 @property(retain, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 @property(nonatomic) unsigned long long sectionNumber; // @synthesize sectionNumber=_sectionNumber;
 - (void).cxx_destruct;

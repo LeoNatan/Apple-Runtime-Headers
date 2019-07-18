@@ -6,7 +6,7 @@
 
 #import <AccessibilityKit/AXKElementController.h>
 
-@class AXKMenuController, NSMutableDictionary, NSMutableSet, NSOperationQueue;
+@class NSMutableDictionary, NSMutableSet, NSOperationQueue;
 @protocol AXKApplicationControllerDelegate;
 
 @interface AXKApplicationController : AXKElementController
@@ -22,7 +22,7 @@
     BOOL __didRegisterWindowDidMiniaturizeNotification;
     BOOL __didRegisterWindowDidDeminiaturizeNotification;
     id <AXKApplicationControllerDelegate> _delegate;
-    AXKMenuController *_activeMenuController;
+    AXKElementController *_activeMenuController;
     NSMutableDictionary *__elementCache;
     NSMutableSet *__openMenuControllers;
     AXKElementController *__previousFocusedElementController;
@@ -43,7 +43,7 @@
 @property(nonatomic) BOOL _didRegisterFocusedWindowNotification; // @synthesize _didRegisterFocusedWindowNotification=__didRegisterFocusedWindowNotification;
 @property(nonatomic) BOOL _didRegisterFocusedUIElementNotification; // @synthesize _didRegisterFocusedUIElementNotification=__didRegisterFocusedUIElementNotification;
 @property(readonly, nonatomic) NSMutableDictionary *_elementCache; // @synthesize _elementCache=__elementCache;
-@property(retain, nonatomic) AXKMenuController *activeMenuController; // @synthesize activeMenuController=_activeMenuController;
+@property(retain, nonatomic) AXKElementController *activeMenuController; // @synthesize activeMenuController=_activeMenuController;
 @property(nonatomic) BOOL hasOpenMenus; // @synthesize hasOpenMenus=_hasOpenMenus;
 @property(nonatomic) __weak id <AXKApplicationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

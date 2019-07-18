@@ -24,6 +24,7 @@
     unsigned int _dataPendingOffset;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableSet *_uniqueWriteErrors;
+    int _writeSourceState;
     NSFileHandle *_fileHandleForReading;
     NSFileHandle *_fileHandleForWriting;
 }

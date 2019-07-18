@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+@class BSAnimationSettings;
 @protocol _UIBasicAnimationFactory;
 
 @interface UIStatusBarAnimationParameters : NSObject
@@ -27,6 +28,7 @@
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double delay; // @synthesize delay=_delay;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BSAnimationSettings *bsAnimationSettings;
 - (BOOL)shouldAnimate;
 - (id)initWithEmptyParameters;
 - (id)initWithDefaultParameters;

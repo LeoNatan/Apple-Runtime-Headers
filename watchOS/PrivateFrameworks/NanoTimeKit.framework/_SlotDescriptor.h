@@ -6,33 +6,22 @@
 
 #import <objc/NSObject.h>
 
-#import <NanoTimeKit/NTKInstalledSystemApplicationsChangeObserver-Protocol.h>
+@class NSArray, NSIndexSet;
 
-@class NSArray, NSIndexSet, NSString;
-
-@interface _SlotDescriptor : NSObject <NTKInstalledSystemApplicationsChangeObserver>
+@interface _SlotDescriptor : NSObject
 {
     int _family;
     NSArray *_typesRankedList;
-    NSIndexSet *_allowedTypes;
     NSIndexSet *_possibleTypes;
 }
 
 + (id)descriptorWithComplicationFamily:(int)arg1 complicationTypesRankedList:(id)arg2 allowedComplicationTypes:(id)arg3;
 @property(readonly, nonatomic) NSIndexSet *possibleTypes; // @synthesize possibleTypes=_possibleTypes;
-@property(readonly, nonatomic) NSIndexSet *allowedTypes; // @synthesize allowedTypes=_allowedTypes;
 @property(readonly, nonatomic) NSArray *typesRankedList; // @synthesize typesRankedList=_typesRankedList;
 @property(readonly, nonatomic) int family; // @synthesize family=_family;
 - (void).cxx_destruct;
-- (void)installedSystemApplicationsDidChange;
 - (_Bool)supportsType:(unsigned int)arg1;
-- (_Bool)allowsType:(unsigned int)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+- (_Bool)allowsType:(unsigned int)arg1 inFace:(id)arg2;
 
 @end
 

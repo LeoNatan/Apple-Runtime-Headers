@@ -15,6 +15,7 @@
 @interface _INPBCustomObject : PBCodable <_INPBCustomObject, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     NSArray *_alternatives;
     NSString *_displayString;
     NSString *_identifier;
@@ -23,6 +24,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)alternativeType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *pronunciationHint; // @synthesize pronunciationHint=_pronunciationHint;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;

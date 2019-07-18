@@ -39,7 +39,6 @@
 - (void).cxx_destruct;
 - (unsigned long long)fieldType;
 - (void)updateWithConfiguration:(id)arg1;
-- (id)displayFormatPaddingPrefix;
 - (void)updateDisplayFormat:(id)arg1;
 - (id)displayFormatPaddingCharacters;
 - (id)stringByApplyingDisplayFormat:(id)arg1;

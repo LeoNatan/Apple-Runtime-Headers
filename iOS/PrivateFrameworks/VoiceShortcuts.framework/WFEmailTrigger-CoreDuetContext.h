@@ -7,7 +7,8 @@
 #import <WorkflowKit/WFEmailTrigger.h>
 
 @interface WFEmailTrigger (CoreDuetContext)
-- (id)predicateForContextStore;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

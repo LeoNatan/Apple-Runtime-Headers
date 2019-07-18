@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) AWAttentionSampler *attentionSampler; // @synthesize attentionSampler=_attentionSampler;
 @property(nonatomic) __weak id <AWSchedulerObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+- (void)reevaluate;
 - (void)armEvents;
 - (void)setSmartCoverClosed:(_Bool)arg1;
 - (void)processHIDEvent:(struct __IOHIDEvent *)arg1 mask:(unsigned long long)arg2 timestamp:(unsigned long long)arg3;

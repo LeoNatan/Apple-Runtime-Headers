@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (id)_interfaceActionGroupForDisplayedActions;
 - (id)_interfaceActionGroupForDisplayedActions:(id)arg1;
 - (void)setActions:(id)arg1 animated:(BOOL)arg2 alongsideAnimations:(CDUnknownBlockType)arg3;
+- (void)kickstartActionScrubbingWithGesture:(id)arg1;
 - (id)initWithActions:(id)arg1;
 
 @end

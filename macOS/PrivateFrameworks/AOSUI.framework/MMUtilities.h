@@ -10,6 +10,10 @@
 {
 }
 
++ (id)numberOfDaysSinceIMExit;
++ (void)setIMEnabled:(BOOL)arg1;
++ (BOOL)isIMChangingEnabledState;
++ (BOOL)isIMEnabled;
 + (void)selectFile:(id)arg1 inFolder:(id)arg2;
 + (BOOL)isCertificateTrustValid:(struct __SecTrust *)arg1;
 + (BOOL)isSetupServiceHost:(id)arg1;
@@ -22,6 +26,7 @@
 + (int)openApplicationWithURL:(struct __CFURL *)arg1;
 + (void)openPrefPane:(id)arg1 userInfo:(id)arg2;
 + (void)openApplicationWithBundleID:(id)arg1;
++ (void)openAppleIDPref;
 + (void)openNetworkPref;
 + (void)openUsersAndGroupsPref;
 + (void)openiCloudPref;

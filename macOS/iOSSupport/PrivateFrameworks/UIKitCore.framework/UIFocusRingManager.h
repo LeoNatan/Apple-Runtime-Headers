@@ -15,6 +15,8 @@
     NSMutableDictionary *_focusRingStateForClient;
 }
 
++ (void)_updateActiveFocusLayers;
++ (void)_removeActiveFocusLayers;
 + (void)updateRingForFocusItem:(id)arg1 forClient:(id)arg2;
 + (void)updateRingForFocusItem:(id)arg1;
 + (void)removeRingFromFocusItem:(id)arg1 forClient:(id)arg2;

@@ -12,7 +12,6 @@
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: subscriptionAccessMeter
     // Error parsing type: , name: paidAccessChecker
-    // Error parsing type: , name: deferedHardPaywallMinimumBodyTextLength
 }
 
 @end

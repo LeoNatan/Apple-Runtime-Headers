@@ -14,6 +14,5 @@
 - (id)cameraVideoPresetForVideoConfiguration:(long long)arg1 videoEncodingBehavior:(long long)arg2;
 - (id)cam_highestQualityFormatForConfiguration:(long long)arg1 colorSpace:(long long)arg2;
 - (id)cameraVideoFormatForVideoConfiguration:(long long)arg1 videoEncodingBehavior:(long long)arg2;
-- (id)cameraStillImageFormat;
 @end
 

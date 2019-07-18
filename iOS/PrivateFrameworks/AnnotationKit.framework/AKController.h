@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AKActionController, AKAttributeController, AKFormFeatureDetectorController, AKHighlightAnnotationController, AKLegacyDoodleController, AKMainEventHandler, AKModelController, AKPageController, AKPeripheralAvailabilityManager_iOS, AKSidecarController, AKSignatureModelController, AKStatistics, AKTextEditorController, AKToolController, AKToolbarView, AKToolbarViewController, AKUndoController, NSMapTable, NSMutableArray, NSString, UIView;
+@class AKActionController, AKAttributeController, AKFormFeatureDetectorController, AKHighlightAnnotationController, AKLegacyDoodleController, AKMainEventHandler, AKModelController, AKPageController, AKPageControllerArray, AKPeripheralAvailabilityManager_iOS, AKSidecarController, AKSignatureModelController, AKStatistics, AKTextEditorController, AKToolController, AKToolbarView, AKToolbarViewController, AKUndoController, NSMapTable, NSString, UIView;
 @protocol AKControllerDelegateProtocol, PKRulerHostingDelegate;
 
 @interface AKController : NSObject
@@ -31,7 +31,7 @@
     unsigned long long _currentPageIndex;
     id <PKRulerHostingDelegate> _rulerHostingDelegate;
     NSString *_author;
-    NSMutableArray *_pageControllers;
+    AKPageControllerArray *_pageControllers;
     NSMapTable *_pageModelControllersToPageControllers;
     AKActionController *_actionController;
     AKToolController *_toolController;
@@ -95,7 +95,7 @@
 @property(retain) AKToolController *toolController; // @synthesize toolController=_toolController;
 @property(retain) AKActionController *actionController; // @synthesize actionController=_actionController;
 @property(retain) NSMapTable *pageModelControllersToPageControllers; // @synthesize pageModelControllersToPageControllers=_pageModelControllersToPageControllers;
-@property(retain) NSMutableArray *pageControllers; // @synthesize pageControllers=_pageControllers;
+@property(retain) AKPageControllerArray *pageControllers; // @synthesize pageControllers=_pageControllers;
 @property _Bool isTestingInstance; // @synthesize isTestingInstance=_isTestingInstance;
 @property(copy) NSString *author; // @synthesize author=_author;
 @property(nonatomic) __weak id <PKRulerHostingDelegate> rulerHostingDelegate; // @synthesize rulerHostingDelegate=_rulerHostingDelegate;

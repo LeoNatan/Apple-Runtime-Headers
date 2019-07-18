@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) double decisionDelay;
 @property(readonly, nonatomic) BOOL hardVAD;
 - (float)softVAD;
 @property(readonly, nonatomic) struct Box *resultsBox;
@@ -27,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (id)sharedProcessorConfiguration;
 - (id)resultsFromBox:(struct Box *)arg1 renderedWithFrameCount:(int)arg2;
 @property(readonly, nonatomic) shared_ptr_f6ac7592 graph;
-- (void)updateGraph;
+- (shared_ptr_f6ac7592)createGraph;
 - (id)initWithRequestType:(long long)arg1;
 - (id)init;
 

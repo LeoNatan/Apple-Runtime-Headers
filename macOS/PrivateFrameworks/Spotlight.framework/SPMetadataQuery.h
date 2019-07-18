@@ -23,7 +23,7 @@
     _Bool _definiteLocalQuery;
     _Bool _highConfidenceNL;
     NSString *_correctedQuery;
-    NSArray *_bitMasksForNLPRankingTerms;
+    long long _nlpBitCount;
     NSArray *_prefetchedAttributes;
     NSArray *_sortingAttributes;
     NSArray *_queryTerms;
@@ -65,7 +65,7 @@
 @property(readonly) NSArray *prefetchedAttributes; // @synthesize prefetchedAttributes=_prefetchedAttributes;
 @property _Bool definiteLocalQuery; // @synthesize definiteLocalQuery=_definiteLocalQuery;
 @property(getter=isPersistent) BOOL persistent; // @synthesize persistent=_persistent;
-@property(retain) NSArray *bitMasksForNLPRankingTerms; // @synthesize bitMasksForNLPRankingTerms=_bitMasksForNLPRankingTerms;
+@property(readonly) long long nlpBitCount; // @synthesize nlpBitCount=_nlpBitCount;
 @property(retain) NSString *correctedQuery; // @synthesize correctedQuery=_correctedQuery;
 @property BOOL isRewrite; // @synthesize isRewrite=_isRewrite;
 - (void).cxx_destruct;
@@ -74,7 +74,9 @@
 - (void)updateWithQueryCorrection:(id)arg1;
 - (id)waitForQueryCorrection;
 - (void)sendResponseForCompletion:(BOOL)arg1;
+- (id)returnFoundInAppsSectionFromOthers:(id)arg1 contactsSection:(id)arg2;
 - (void)_prepareQuery;
+- (id)rankingQueriesAddingQueryTerms:(id)arg1 rankingQueries:(id)arg2;
 - (id)queryStringForUserQuery:(id)arg1 options:(unsigned long long)arg2;
 - (id)_basicTextContentQueryForUserQuery:(id)arg1;
 - (id)_scopesForOptions:(unsigned long long)arg1;

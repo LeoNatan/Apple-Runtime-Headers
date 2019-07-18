@@ -327,6 +327,7 @@
 - (_Bool)stylesheetIsDevResource;
 - (id)attributionsForCurrentRegion;
 @property(readonly, nonatomic) NSArray *visibleTileSets;
+- (void)forceCameraUpdateForFrameResize;
 - (void)forceLayout;
 - (void)forceFrame;
 - (void)_forceLayoutForSuspensionSnapShot;
@@ -351,7 +352,7 @@
 @property(readonly, nonatomic) VKMapCanvas *mapCanvas;
 - (void)debugHighlightFeatureMarker:(const shared_ptr_430519ce *)arg1;
 - (id)currentCanvas;
-- (id)iconForStyleAttributes:(id)arg1 contentScale:(double)arg2 size:(long long)arg3 coordinate:(CDStruct_c3b9c2ee)arg4 transparent:(_Bool)arg5;
+- (id)iconForStyleAttributes:(id)arg1 contentScale:(double)arg2 size:(long long)arg3 transparent:(_Bool)arg4;
 - (id)roadLabelTilesInScene;
 - (void)setARInterfaceOrientation:(long long)arg1;
 - (void)arController:(id)arg1 didChangeTrackingState:(unsigned long long)arg2 reason:(unsigned long long)arg3;

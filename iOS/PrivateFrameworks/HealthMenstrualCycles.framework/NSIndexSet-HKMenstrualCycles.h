@@ -7,6 +7,7 @@
 #import <Foundation/NSIndexSet.h>
 
 @interface NSIndexSet (HKMenstrualCycles)
++ (id)hkmc_indexSetWithArray:(id)arg1;
 + (id)hkmc_indexSetWithDayIndexRange:(CDStruct_ef5fcbe6)arg1;
 - (void)hkmc_enumerateDayIndexRangesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)hkmc_indexSetSubtractingIndexes:(id)arg1;

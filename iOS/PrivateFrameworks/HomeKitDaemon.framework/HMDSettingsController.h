@@ -40,7 +40,13 @@
 - (void)transactionSettingGroupModelUpdated:(id)arg1 previousModel:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)loadWithModels:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)makeOrMigrateSettings;
+- (void)migrateSettingsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)updateParentsInKeyPathToModel:(id)arg1 usingKeyPathToSetting:(id)arg2;
+- (id)_keyPathsFromGroup:(id)arg1 currentPath:(id)arg2;
+- (id)keyPathsInExistingSettings;
+- (id)_keyPathsToModelInModelIDToModelLookup:(id)arg1 parentIDToModelIDsLookup:(id)arg2 currentID:(id)arg3 currentPath:(id)arg4;
+- (id)keyPathsInModels:(id)arg1;
+- (id)modelsToMigrateSettings;
 - (id)modelsToMakeSettings;
 - (void)_updateRootGroup:(id)arg1;
 - (void)updateRootGroup:(id)arg1;

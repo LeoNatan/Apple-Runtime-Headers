@@ -6,15 +6,15 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class HMDCameraSessionID, HMDCameraStreamTracker;
+@class HMDCameraStreamSessionID, HMDCameraStreamTracker;
 
 @interface _HMDCameraStreamTrackerAssertion : HMFObject
 {
     HMDCameraStreamTracker *_streamTracker;
-    HMDCameraSessionID *_streamSessionID;
+    HMDCameraStreamSessionID *_streamSessionID;
 }
 
-@property(readonly, nonatomic) HMDCameraSessionID *streamSessionID; // @synthesize streamSessionID=_streamSessionID;
+@property(readonly, nonatomic) HMDCameraStreamSessionID *streamSessionID; // @synthesize streamSessionID=_streamSessionID;
 @property(readonly, nonatomic) __weak HMDCameraStreamTracker *streamTracker; // @synthesize streamTracker=_streamTracker;
 - (void).cxx_destruct;
 - (void)dealloc;

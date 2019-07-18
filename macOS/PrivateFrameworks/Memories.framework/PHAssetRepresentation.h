@@ -60,6 +60,8 @@ __attribute__((visibility("hidden")))
 - (int)requestMediaWithResultHandler:(CDUnknownBlockType)arg1 progressHandler:(CDUnknownBlockType)arg2;
 - (unsigned long long)estimatedFileSize;
 - (struct CGSize)imageSize;
+- (struct CGImage *)cgimageWithSize:(struct CGSize)arg1 imageManager:(id)arg2;
+- (struct CGImage *)cgimageWithSize:(struct CGSize)arg1;
 - (id)imageWithSize:(struct CGSize)arg1 imageManager:(id)arg2;
 - (id)imageWithSize:(struct CGSize)arg1;
 - (id)image;

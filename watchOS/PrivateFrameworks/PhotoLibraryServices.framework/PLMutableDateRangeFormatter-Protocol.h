@@ -9,6 +9,7 @@
 @class NSLocale;
 
 @protocol PLMutableDateRangeFormatter <NSObject>
+@property(nonatomic) _Bool shouldOmitYear;
 @property(retain, nonatomic) NSLocale *locale;
 @property(nonatomic) _Bool useLocalDates;
 @property(nonatomic) _Bool autoUpdateOnChanges;

@@ -11,6 +11,8 @@
 }
 
 + (void)showEnableHeySiriForWindow:(id)arg1 forBluetoothAudioDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (void)showEnableAskSiriWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (void)setLaunchAgentEnabled:(BOOL)arg1;
 
 @end
 

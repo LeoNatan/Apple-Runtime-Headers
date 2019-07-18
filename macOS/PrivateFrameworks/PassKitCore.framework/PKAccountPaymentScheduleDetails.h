@@ -8,13 +8,13 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSDateFormatter, NSString;
+@class NSDate, NSString, NSTimeZone;
 
 @interface PKAccountPaymentScheduleDetails : NSObject <NSSecureCoding>
 {
-    NSDateFormatter *_dateFormatter;
+    NSTimeZone *_productTimeZone;
     long long _frequency;
-    long long _frequencyDay;
+    long long _scheduledDay;
     long long _preset;
     NSDate *_scheduledDate;
     NSString *_paymentTermsIdentifier;
@@ -24,7 +24,7 @@
 @property(copy, nonatomic) NSString *paymentTermsIdentifier; // @synthesize paymentTermsIdentifier=_paymentTermsIdentifier;
 @property(copy, nonatomic) NSDate *scheduledDate; // @synthesize scheduledDate=_scheduledDate;
 @property(nonatomic) long long preset; // @synthesize preset=_preset;
-@property(nonatomic) long long frequencyDay; // @synthesize frequencyDay=_frequencyDay;
+@property(nonatomic) long long scheduledDay; // @synthesize scheduledDay=_scheduledDay;
 @property(nonatomic) long long frequency; // @synthesize frequency=_frequency;
 - (void).cxx_destruct;
 - (id)description;
@@ -36,8 +36,8 @@
 - (id)jsonDictionaryRepresentation;
 - (id)jsonString;
 - (void)setScheduleTimeZone:(id)arg1;
+- (id)initWithDictionary:(id)arg1 productTimeZone:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
-- (id)init;
 
 @end
 

@@ -55,7 +55,9 @@
 @property(readonly, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
+- (id)formattedName;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
+@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSPersonNameComponents *personNameComponents;
 @property(readonly) unsigned int hash;
@@ -69,7 +71,6 @@
 - (id)initShareeWithObjectID:(id)arg1 accountID:(id)arg2 listID:(id)arg3 displayName:(id)arg4 firstName:(id)arg5 middleName:(id)arg6 lastName:(id)arg7 namePrefix:(id)arg8 nameSuffix:(id)arg9 nickname:(id)arg10 address:(id)arg11 status:(int)arg12 accessLevel:(int)arg13;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly, nonatomic) NSString *externalIdentifierForMarkedForDeletionObject;
 @property(readonly) Class superclass;
 

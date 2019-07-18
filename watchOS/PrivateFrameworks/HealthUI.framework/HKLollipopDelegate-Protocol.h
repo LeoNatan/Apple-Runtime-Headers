@@ -15,6 +15,7 @@
 @optional
 - (float)lollipopExtensionWidth;
 - (float)lollipopExtensionLength;
+- (UIColor *)lollipopExtensionColor;
 - (UIColor *)lollipopAnnotationColor;
 - (UIColor *)lollipopFieldColor;
 @end

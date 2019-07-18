@@ -6,7 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
-@class SXWebContentViewController;
+@class SXWebContentDeveloperSettings, SXWebContentViewController;
 @protocol SXWebContentConfigurationManager, SXWebContentErrorProvider, SXWebContentInteractionProvider, SXWebContentPresentationManager;
 
 @interface SXWebContentContainerViewController : UIViewController
@@ -15,10 +15,12 @@
     id <SXWebContentErrorProvider> _errorProvider;
     id <SXWebContentConfigurationManager> _configurationManager;
     id <SXWebContentPresentationManager> _presentationManager;
+    SXWebContentDeveloperSettings *_developerSettings;
     SXWebContentViewController *_webContentViewController;
 }
 
 @property(readonly, nonatomic) SXWebContentViewController *webContentViewController; // @synthesize webContentViewController=_webContentViewController;
+@property(retain, nonatomic) SXWebContentDeveloperSettings *developerSettings; // @synthesize developerSettings=_developerSettings;
 @property(readonly, nonatomic) id <SXWebContentPresentationManager> presentationManager; // @synthesize presentationManager=_presentationManager;
 @property(readonly, nonatomic) id <SXWebContentConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(readonly, nonatomic) id <SXWebContentErrorProvider> errorProvider; // @synthesize errorProvider=_errorProvider;

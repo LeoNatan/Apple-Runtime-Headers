@@ -80,7 +80,6 @@ __attribute__((visibility("hidden")))
 - (void)removeFilePresenter;
 - (void)presentedItemDidMoveToURL:(id)arg1;
 - (void)relinquishPresentedItemToWriter:(CDUnknownBlockType)arg1;
-- (id)_prepareTemplate:(id)arg1;
 - (id)importErrorWithCode:(long long)arg1 description:(id)arg2 failureReason:(id)arg3 underlyingError:(id)arg4;
 @property(readonly, nonatomic) _Bool isBrowsingVersions;
 @property(readonly, nonatomic) _Bool isPasswordProtected;
@@ -92,15 +91,12 @@ __attribute__((visibility("hidden")))
 - (_Bool)_saveContextToTemporaryURL:(id)arg1 passphrase:(id)arg2 originalURL:(id)arg3 documentUUID:(id)arg4 error:(id *)arg5;
 - (long long)packageType;
 - (_Bool)needsFileCoordination;
-- (id)templateInfoWithName:(id)arg1 variantIndex:(unsigned long long)arg2;
-- (id)templateInfoWithName:(id)arg1;
-- (id)makeObjectContextWithTemplateInfo:(id)arg1 error:(id *)arg2;
+- (id)templateDocumentWithName:(id)arg1 variantIndex:(unsigned long long)arg2;
+- (id)makeObjectContextWithTemplateDocument:(id)arg1 error:(id *)arg2;
 - (void)_continueImportWithSuccess:(_Bool)arg1 error:(id)arg2 completedSteps:(int)arg3;
-- (void)_beginImport;
+- (void)_beginImportWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)showProgressIfNeededForURL:(id)arg1;
 - (void)retrievePassphraseForEncryptedDocumentWithImporter:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)progressTitleForDownloadingResourceAccessTypes:(long long)arg1;
-- (void)checkDownloadPermissionForMissingResourceAccessTypes:(long long)arg1 estimatedMissingResourcesSize:(unsigned long long)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) _Bool shouldUpdateAdditionalResourceRequestsAfterImport;
 - (Class)importerClass;
 - (void)beginImportAsync;
@@ -114,6 +110,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithPath:(id)arg1 delegate:(id)arg2;
 
 // Remaining properties
+@property(readonly, nonatomic) long long archiveValidationMode;
 @property(readonly, nonatomic) NSUUID *baseUUIDForObjectUUID;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

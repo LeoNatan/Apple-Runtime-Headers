@@ -32,7 +32,7 @@
     long long _orientation;
     _Bool _shouldClipContentView;
     _Bool _shouldScaleOverlayToFillBounds;
-    _Bool _needsDarkModeTreatment;
+    _Bool _needsBackgroundWallpaperTreatment;
     double _switcherCardScale;
     double _darkeningAlpha;
     double _killingDarkeningAlpha;
@@ -45,7 +45,7 @@
 
 @property(nonatomic) double lighteningAlpha; // @synthesize lighteningAlpha=_lighteningAlpha;
 @property(nonatomic) double wallpaperOverlayAlpha; // @synthesize wallpaperOverlayAlpha=_wallpaperOverlayAlpha;
-@property(nonatomic) _Bool needsDarkModeTreatment; // @synthesize needsDarkModeTreatment=_needsDarkModeTreatment;
+@property(nonatomic) _Bool needsBackgroundWallpaperTreatment; // @synthesize needsBackgroundWallpaperTreatment=_needsBackgroundWallpaperTreatment;
 @property(nonatomic) double killingDarkeningAlpha; // @synthesize killingDarkeningAlpha=_killingDarkeningAlpha;
 @property(nonatomic) double darkeningAlpha; // @synthesize darkeningAlpha=_darkeningAlpha;
 @property(readonly, nonatomic) SBAppSwitcherPageShadowView *_shadowView; // @synthesize _shadowView;
@@ -65,7 +65,6 @@
 @property(retain, nonatomic) UIView<SBAppSwitcherPageContentView> *view; // @synthesize view=_view;
 - (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
-- (_Bool)_shouldApplyDarkModeTreatment;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGRect)_viewFrame;
 - (void)_updateCornerRadius;

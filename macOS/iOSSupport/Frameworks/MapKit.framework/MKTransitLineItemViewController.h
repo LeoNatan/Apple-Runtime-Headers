@@ -66,7 +66,7 @@
 - (void)placeCardActionControllerDidSelectReportAProblemAddNewPlace:(id)arg1;
 - (void)placeCardActionControllerDidSelectRemoveFromFavorites:(id)arg1;
 - (void)placeCardActionControllerDidSelectAddToFavorites:(id)arg1;
-- (void)placeCardActionControllerDidSelectReportAProblem:(id)arg1;
+- (void)placeCardActionControllerDidSelectReportAProblem:(id)arg1 fromView:(id)arg2;
 - (int)mapTypeForETAProvider:(id)arg1;
 - (void)placeHeaderButtonsViewController:(id)arg1 didSelectPrimaryType:(unsigned long long)arg2 withView:(id)arg3;
 - (double)placeCardHeaderViewControllerTrailingConstantForTitle:(id)arg1;

@@ -11,6 +11,8 @@
 
 @interface NFDefinition : NSObject
 {
+    id <NFDefinitionContainer> _privateAccessContainer;
+    id <NFDefinitionContainer> _privateAccessWeakContainer;
     _Bool _canBeOverridden;
     _Bool _canBeNil;
     unsigned long long _source;
@@ -20,10 +22,8 @@
     unsigned long long _scope;
     CDUnknownBlockType _validationBlock;
     CDUnknownBlockType _configurationBlock;
-    id <NFDefinitionContainer> _privateAccessContainer;
 }
 
-@property(retain, nonatomic) id <NFDefinitionContainer> privateAccessContainer; // @synthesize privateAccessContainer=_privateAccessContainer;
 @property(copy, nonatomic) CDUnknownBlockType configurationBlock; // @synthesize configurationBlock=_configurationBlock;
 @property(copy, nonatomic) CDUnknownBlockType validationBlock; // @synthesize validationBlock=_validationBlock;
 @property(nonatomic) _Bool canBeNil; // @synthesize canBeNil=_canBeNil;
@@ -34,7 +34,9 @@
 @property(retain, nonatomic) Class cls; // @synthesize cls=_cls;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
 - (void).cxx_destruct;
+- (id)withPrivateAccessInWeakContainer:(id)arg1;
 - (id)withPrivateAccessInContainer:(id)arg1;
+- (id)privateAccessContainer;
 - (id)canBeNil:(_Bool)arg1;
 - (id)canBeOverridden:(_Bool)arg1;
 - (id)withConfiguration:(CDUnknownBlockType)arg1;

@@ -73,9 +73,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVCRateControlFeedbackController *feedbackController; // @synthesize feedbackController=_feedbackController;
 @property(retain, nonatomic) VCNWConnectionCongestionDetector *nwConnectionCongestionDetector; // @synthesize nwConnectionCongestionDetector=_nwConnectionCongestionDetector;
 @property(retain, nonatomic) AVCBasebandCongestionDetector *basebandCongestionDetector; // @synthesize basebandCongestionDetector=_basebandCongestionDetector;
-- (void)printNWConnectionStatistics:(CDStruct_b3eb8f4a)arg1;
-- (void)printBasebandNotificationStatistics:(CDStruct_b3eb8f4a)arg1;
-- (void)printFeedbackMessage:(CDStruct_b3eb8f4a)arg1;
+- (void)printNWConnectionStatistics:(CDStruct_b21f1e06)arg1;
+- (void)printBasebandNotificationStatistics:(CDStruct_b21f1e06)arg1;
+- (void)printFeedbackMessage:(CDStruct_b21f1e06)arg1;
 - (void)releaseLogDumpFiles;
 - (void)createNWConnectionLogDumpFile;
 - (void)createBasebandLogDumpFile;
@@ -85,10 +85,10 @@ __attribute__((visibility("hidden")))
 - (void)loadDefaultSettings;
 - (void)reportTargetBitrateChange:(unsigned int)arg1 rateChangeCounter:(unsigned int)arg2;
 - (void)reportNetworkStatistics;
-- (void)doRateControlWithNWConnectionStatistics:(CDStruct_b3eb8f4a)arg1;
-- (void)doRateControlWithBasebandStatistics:(CDStruct_b3eb8f4a)arg1;
+- (void)doRateControlWithNWConnectionStatistics:(CDStruct_b21f1e06)arg1;
+- (void)doRateControlWithBasebandStatistics:(CDStruct_b21f1e06)arg1;
 - (void)checkAndReportAbnormalSymptoms;
-- (void)doRateControlWithStatistics:(CDStruct_b3eb8f4a)arg1;
+- (void)doRateControlWithStatistics:(CDStruct_b21f1e06)arg1;
 - (void)createVCRateControlAlgorithmWithConfiguration:(struct VCRateControlAlgorithmConfig)arg1;
 - (void)configureAlgorithmWithRestart:(BOOL)arg1;
 - (void)setDefaultAlgorithmConfiguration:(struct VCRateControlAlgorithmConfig *)arg1;

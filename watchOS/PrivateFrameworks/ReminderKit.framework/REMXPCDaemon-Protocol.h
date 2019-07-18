@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class REMStoreContainerToken;
+@class NSString, REMStoreContainerToken;
 
 @protocol REMXPCDaemon
 - (void)indexingPerformerWithCompletion:(void (^)(id <REMXPCIndexingPerformer>, NSError *))arg1;
 - (void)syncInterfacePerformerWithCompletion:(void (^)(id <REMXPCSyncInterfacePerformer>, NSError *))arg1;
-- (void)storePerformerWithStoreContainerToken:(REMStoreContainerToken *)arg1 completion:(void (^)(id <REMXPCStorePerformer>, NSError *))arg2;
+- (void)storePerformerWithProcessName:(NSString *)arg1 storeContainerToken:(REMStoreContainerToken *)arg2 completion:(void (^)(id <REMXPCStorePerformer>, NSError *))arg3;
 - (void)debugPerformerWithCompletion:(void (^)(id <REMXPCDebugPerformer>, NSError *))arg1;
 - (void)changeTrackingPerformerWithStoreContainerToken:(REMStoreContainerToken *)arg1 completion:(void (^)(id <REMXPCChangeTrackingPerformer>, NSError *))arg2;
 @end

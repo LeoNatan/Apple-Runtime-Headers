@@ -34,6 +34,7 @@
     NSDictionary *_uuidsToAddActions;
     NSMutableDictionary *_URLToEtagMap;
     REMList *_rem_calCalendar;
+    NSArray *_rem_cachedFetchedRemindersForMergeSync;
 }
 
 + (id)rem_deletedCalendarsWithChangeTrackingHelper:(id)arg1 inPrincipal:(id)arg2;
@@ -46,6 +47,7 @@
 + (void)rem_cacheListObjectID:(id)arg1 forCalendarURLString:(id)arg2;
 + (id)_rem_calURLToREMObjectIDCache;
 + (id)calendarWithREMList:(id)arg1 principal:(id)arg2;
+@property(retain, nonatomic) NSArray *rem_cachedFetchedRemindersForMergeSync; // @synthesize rem_cachedFetchedRemindersForMergeSync=_rem_cachedFetchedRemindersForMergeSync;
 @property(retain, nonatomic) REMList *rem_calCalendar; // @synthesize rem_calCalendar=_rem_calCalendar;
 @property(retain, nonatomic) NSMutableDictionary *URLToEtagMap; // @synthesize URLToEtagMap=_URLToEtagMap;
 @property(retain, nonatomic) NSDictionary *uuidsToAddActions; // @synthesize uuidsToAddActions=_uuidsToAddActions;
@@ -67,7 +69,8 @@
 @property(retain, nonatomic) NSString *guid; // @synthesize guid=_guid;
 @property(retain, nonatomic) NSString *calendarURLString; // @synthesize calendarURLString=_calendarURLString;
 - (void).cxx_destruct;
-- (void)rem_invalidateCalCalendar;
+- (void)rem_invalidateCalCalendarWithReload:(_Bool)arg1;
+- (void)rem_reloadCalCalendar;
 - (_Bool)rem_setListPropertiesWithBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (Class)appSpecificCalendarItemClass;
 - (void)syncDidFinishWithError:(id)arg1;

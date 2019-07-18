@@ -6,26 +6,32 @@
 
 #import <objc/NSObject.h>
 
-#import <Intents/NSSecureCoding-Protocol.h>
+#import <Intents/INJSONSerializable-Protocol.h>
 
-@class NSArray, NSDictionary;
+@class NSDictionary, NSString;
 
-@interface INParameterContexts : NSObject <NSSecureCoding>
+@interface INParameterContexts : NSObject <INJSONSerializable>
 {
     NSDictionary *_suggestedValuesDictionary;
-    NSArray *_supportedSuggestedValuesClassNames;
+    NSDictionary *_typedSuggestedValuesDictionary;
 }
 
-+ (_Bool)supportsSecureCoding;
-@property(retain, nonatomic, setter=_setSupportedSuggestedValuesClassNames:) NSArray *_supportedSuggestedValuesClassNames; // @synthesize _supportedSuggestedValuesClassNames;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
+@property(retain, nonatomic, setter=_setTypedSuggestedValuesDictionary:) NSDictionary *_typedSuggestedValuesDictionary; // @synthesize _typedSuggestedValuesDictionary;
 @property(retain, nonatomic, setter=_setSuggestedValuesDictionary:) NSDictionary *_suggestedValuesDictionary; // @synthesize _suggestedValuesDictionary;
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
+- (void)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
-- (id)_supportedSuggestedValuesClasses;
+- (_Bool)_isEmpty;
 - (void)_updateSuggestedValuesForIntent:(id)arg1 decoder:(id)arg2 JSONDictionary:(id)arg3;
 - (id)_initWithIntent:(id)arg1 decoder:(id)arg2 JSONDictionary:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

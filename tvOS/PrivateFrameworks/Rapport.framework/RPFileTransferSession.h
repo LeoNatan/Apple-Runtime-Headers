@@ -9,24 +9,28 @@
 #import <Rapport/NSSecureCoding-Protocol.h>
 #import <Rapport/RPMessageable-Protocol.h>
 
-@class CUBonjourAdvertiser, CUBonjourBrowser, CUBonjourDevice, CUTCPServer, CUWiFiManager, NSData, NSMutableArray, NSString, NSURL, RPConnection, RPFileTransferProgress, RPIdentity;
-@protocol OS_dispatch_queue;
+@class CUBonjourAdvertiser, CUBonjourBrowser, CUBonjourDevice, CUCoalescer, CUTCPServer, CUWiFiManager, NSData, NSMutableArray, NSString, NSURL, RPConnection, RPFileTransferProgress, RPIdentity;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface RPFileTransferSession : NSObject <NSSecureCoding, RPMessageable>
 {
     _Bool _activateCalled;
     CUBonjourAdvertiser *_bonjourAdvertiser;
     CUBonjourBrowser *_bonjourBrowser;
+    CUCoalescer *_bonjourCoalescer;
     CUBonjourDevice *_bonjourDevice;
     unsigned int _cnxIDLast;
     struct NSMutableSet *_connections;
     RPConnection *_controlCnx;
+    NSObject<OS_dispatch_source> *_controlRetryTimer;
     int _controlState;
     int _debugNotifyToken;
     _Bool _finishPending;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
+    _Bool _lockedInterface;
     RPIdentity *_peerIdentity;
+    _Bool _peerInfraWiFiDisabled;
     struct NSMutableDictionary *_registeredEvents;
     struct NSMutableDictionary *_registeredRequests;
     RPIdentity *_selfIdentity;
@@ -34,6 +38,7 @@
     struct LogCategory *_ucat;
     CUWiFiManager *_wifiManager;
     struct NSMutableSet *_addedItems;
+    _Bool _compressionEnabled;
     unsigned long long _fileIDLastReceive;
     unsigned long long _fileIDLastSend;
     NSMutableArray *_ioQueues;
@@ -44,13 +49,19 @@
     struct NSMutableDictionary *_largeFileReceiveTasks;
     struct NSMutableSet *_largeFileSendTasks;
     unsigned int _fileWritesOutstanding;
+    _Bool _prefCompress;
     unsigned int _prefLargeFileBufferBytes;
     int _prefLargeFileMaxOutstanding;
     unsigned int _prefLargeFileMaxTasks;
     unsigned int _prefSmallFilesMaxBytes;
     unsigned int _prefSmallFilesMaxTasks;
+    unsigned long long _metricCompressedBytes;
+    unsigned long long _metricUncompressedBytes;
+    unsigned long long _metricCompressionErrors;
+    unsigned long long _metricUncompressibleChunks;
     unsigned int _metricDisconnects;
     unsigned long long _metricRetries;
+    unsigned long long _metricLastFileCompletionTicks;
     unsigned long long _metricFileSizeBuckets[8];
     unsigned int _metricLinkTypeCountAWDL;
     unsigned int _metricLinkTypeCountOther;
@@ -109,14 +120,19 @@
 - (int)_openReadPath:(const char *)arg1 error:(id *)arg2;
 - (void)_ioQueueEnqueue:(id)arg1;
 - (id)_ioQueueDequeue;
+- (id)_decompressAndDecodeData:(id)arg1 originalSize:(unsigned long long)arg2 error:(id *)arg3;
+- (id)_encodeAndCompressObject:(id)arg1 originalSize:(unsigned long long *)arg2 error:(id *)arg3;
+- (id)_decompressData:(id)arg1 originalSize:(unsigned long long)arg2 error:(id *)arg3;
+- (id)_compressData:(id)arg1 error:(id *)arg2;
 - (void)_largeFileReceiveTaskInvalidate:(id)arg1;
 - (void)_largeFileReceiveTaskRespond:(id)arg1 error:(id)arg2 complete:(_Bool)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)_largeFileReceiveTaskRun:(id)arg1 data:(id)arg2 sendFlags:(unsigned int)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)_largeFileReceiveRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)_largeFileSendTaskEnd:(id)arg1 error:(id)arg2;
-- (void)_largeFileSendTaskResponse:(id)arg1 error:(id)arg2 end:(_Bool)arg3;
-- (void)_largeFileSendTaskSend:(id)arg1 data:(id)arg2 end:(_Bool)arg3;
-- (void)_largeFileSendTaskNext:(id)arg1;
+- (void)_largeFileSendTaskResponse:(id)arg1 error:(id)arg2 end:(_Bool)arg3 xid:(unsigned int)arg4;
+- (void)_largeFileSendTaskFailed:(id)arg1 error:(id)arg2;
+- (void)_largeFileSendTaskSend:(id)arg1 data:(id)arg2 end:(_Bool)arg3 xid:(unsigned int)arg4;
+- (void)_largeFileSendTaskNext:(id)arg1 xid:(unsigned int)arg2;
 - (void)_largeFileSendTaskStart:(id)arg1;
 - (id)_largeFileSendTaskCreate;
 - (void)_smallFilesReceiveTaskComplete:(id)arg1 error:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
@@ -125,7 +141,7 @@
 - (void)_smallFilesReceiveRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)_smallFilesSendTaskEnd:(id)arg1 error:(id)arg2;
 - (id)_smallFilesSendTaskReadItem:(id)arg1 error:(id *)arg2;
-- (void)_smallFilesSendTaskStart:(id)arg1;
+- (void)_smallFilesSendTaskRun:(id)arg1;
 - (id)_smallFilesSendTaskCreate;
 - (void)_processFinish;
 - (void)finish;
@@ -141,6 +157,8 @@
 - (void)_handleIncomingConnectionStarted:(id)arg1;
 - (_Bool)_activateTargetAndReturnError:(id *)arg1;
 - (void)_controlCnxStartIfNeeded;
+- (void)_controlCnxRetryIfNeeded;
+- (void)_handleDevicesCoalesced;
 - (void)_handleDeviceLost:(id)arg1;
 - (void)_handleDeviceFound:(id)arg1;
 - (_Bool)_activateSourceAndReturnError:(id *)arg1;
@@ -149,6 +167,7 @@
 - (void)sendRequestID:(id)arg1 request:(id)arg2 options:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)deregisterRequestID:(id)arg1;
 - (void)registerRequestID:(id)arg1 options:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_receivedPeerUpdate:(id)arg1;
 - (void)_receivedEventID:(id)arg1 event:(id)arg2 options:(id)arg3;
 - (void)sendEventID:(id)arg1 event:(id)arg2 destinationID:(id)arg3 options:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)sendEventID:(id)arg1 event:(id)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -157,7 +176,7 @@
 - (void)_metricAddFileSize:(long long)arg1;
 - (void)_debugUpdate;
 - (void)_debugSetup;
-- (void)_updateWiFiInfraDisable;
+- (void)_updateWiFi;
 - (void)_updateIfNeededWithBlock:(CDUnknownBlockType)arg1;
 - (void)_reportProgressType:(int)arg1;
 - (void)_reportProgressControlState;

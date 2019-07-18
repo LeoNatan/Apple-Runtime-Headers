@@ -17,6 +17,7 @@
 }
 
 + (void)_setClassClient:(id)arg1;
++ (_Bool)isServerProcess;
 + (void)setPrefetchedKeys:(id)arg1;
 + (void)synchronizeWithCompletion:(CDUnknownBlockType)arg1;
 + (void)synchronize;

@@ -12,11 +12,13 @@
 __attribute__((visibility("hidden")))
 @interface RPFileTransferLargeFileSendTask : NSObject
 {
+    BOOL _failed;
     int _fileFD;
     int _outstandingSends;
     unsigned long long _remainingSize;
     unsigned int _sentFlags;
     struct CC_SHA256state_st _sha256Ctx;
+    unsigned int _xid;
     BOOL _needsRetry;
     RPFileTransferItem *_fileItem;
     NSObject<OS_dispatch_queue> *_queue;

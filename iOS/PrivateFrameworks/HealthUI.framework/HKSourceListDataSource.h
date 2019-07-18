@@ -20,12 +20,14 @@
     // Error parsing type: AB, name: _invalidated
     _Bool _shouldFetchAppInstallationStatus;
     _Bool _shouldFetchAppIcons;
+    _Bool _shouldIncludeSpecialSources;
     _Bool _deliverUpdates;
     HKHealthStore *_healthStore;
     HKSourceListDataModel *_sources;
 }
 
 @property(nonatomic) _Bool deliverUpdates; // @synthesize deliverUpdates=_deliverUpdates;
+@property(nonatomic) _Bool shouldIncludeSpecialSources; // @synthesize shouldIncludeSpecialSources=_shouldIncludeSpecialSources;
 @property(nonatomic) _Bool shouldFetchAppIcons; // @synthesize shouldFetchAppIcons=_shouldFetchAppIcons;
 @property(nonatomic) _Bool shouldFetchAppInstallationStatus; // @synthesize shouldFetchAppInstallationStatus=_shouldFetchAppInstallationStatus;
 @property(readonly, nonatomic) HKSourceListDataModel *sources; // @synthesize sources=_sources;

@@ -10,6 +10,7 @@
 {
 }
 
++ (id)_randomEmojiSet;
 + (id)_keyForFirstGlanceType:(unsigned int)arg1;
 + (id)localizedDescriptionForWorkoutFirstGlanceType:(unsigned int)arg1 firstName:(id)arg2;
 + (id)localizedDescriptionForRingsFirstGlanceType:(unsigned int)arg1 firstName:(id)arg2 date:(id)arg3 activitySummary:(id)arg4 isWheelchairUser:(_Bool)arg5;

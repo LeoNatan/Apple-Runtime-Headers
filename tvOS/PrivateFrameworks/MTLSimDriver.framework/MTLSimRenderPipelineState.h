@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
     unsigned int _pipelineRef;
 }
 
+- (unsigned int)getVertexShaderTelemetryID;
+- (unsigned int)getFragmentShaderTelemetryID;
 - (id)newVertexShaderDebugInfo;
 - (id)newFragmentShaderDebugInfo;
 - (unsigned int)pipelineRef;

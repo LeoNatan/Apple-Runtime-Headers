@@ -20,6 +20,7 @@
 + (id)serviceViewControllerInterface;
 @property(nonatomic) __weak id <SSDittoHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)dismiss;
 - (void)dismissScreenshotExperience;
 - (void)screenshotExperienceHasDismissed;

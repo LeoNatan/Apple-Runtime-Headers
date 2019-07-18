@@ -7,9 +7,9 @@
 #import <NewsUI2/TSAppDelegate.h>
 
 @interface TSAppDelegate (NewsUI23)
-- (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (id)validationForCommand:(id)arg1;
-- (void)buildCommandsWithBuilder:(id)arg1;
+- (void)validateCommand:(id)arg1;
+- (void)buildMenuWithBuilder:(id)arg1;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 @end
 

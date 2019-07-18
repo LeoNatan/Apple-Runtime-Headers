@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) BOOL requiresConstraintUpdate; // @synthesize requiresConstraintUpdate=_requiresConstraintUpdate;
-@property(readonly, retain, nonatomic) NSArray *allHostingItems; // @synthesize allHostingItems=_hostingItems;
 @property(nonatomic) int extraHostsRequired; // @synthesize extraHostsRequired=_extraHostsRequired;
 @property(nonatomic) __weak UIInputWindowController *owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
@@ -49,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (id)itemForPurpose:(unsigned long long)arg1;
 - (void)reloadForPlacement;
 - (void)unloadForPlacement;
+@property(readonly, retain, nonatomic) NSArray *allHostingItems;
 - (id)initWithHost:(id)arg1;
 
 @end

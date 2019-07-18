@@ -8,7 +8,7 @@
 
 #import <SafariServices/SFBrowserActionGroupDelegate-Protocol.h>
 
-@class NSString, NSTimer, SFBrowserActionGroup, WKWebsiteDataStore, _SFNavigationBarItem;
+@class NSString, NSTimer, NSURL, SFBrowserActionGroup, WKWebsiteDataStore, _SFNavigationBarItem;
 @protocol SFWatchWebViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     SFBrowserActionGroup *_actionGroup;
     int _blankingViewState;
     WKWebsiteDataStore *_websiteDataStore;
+    NSURL *_handoffURL;
     NSTimer *_unresponsiveWebProcessTimer;
     CDUnknownBlockType _unresponsiveWebProcessBlock;
     _SFNavigationBarItem *_navigationBarItem;
@@ -61,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (void)loadRequestAndResetState:(id)arg1;
 - (void)webViewControllerDidShowSafeBrowsingWarning:(id)arg1;
 - (void)_transitionFromBlankingViewState:(int)arg1 toState:(int)arg2;
+@property(copy, nonatomic) NSURL *handoffURL;
 - (void)loadView;
 - (void)dealloc;
 - (void)_clearWebSiteDataAndReload;

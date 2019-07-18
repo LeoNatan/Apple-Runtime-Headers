@@ -6,21 +6,28 @@
 
 #import <UIKit/UIView.h>
 
-@class CAGradientLayer, CLKDevice;
+@class CAGradientLayer, CLKDevice, UIImageView;
 
 @interface NTKSiderealSolarContainerView : UIView
 {
     CLKDevice *_device;
     UIView *_dayContainerView;
-    UIView *_dayDisk;
-    UIView *_dayDiskGlow;
+    UIImageView *_dayPathGlow;
+    UIImageView *_dayDiskGlow;
     CAGradientLayer *_dayDiskGnomon;
     UIView *_nightContainerView;
-    UIView *_nightDisk;
     CAGradientLayer *_nightDiskGnomon;
     float _orbitDiameter;
+    UIView *_dayDisk;
+    UIView *_dayAccessoryContainerView;
+    UIView *_nightDisk;
+    UIView *_nightAccessoryContainerView;
 }
 
+@property(retain, nonatomic) UIView *nightAccessoryContainerView; // @synthesize nightAccessoryContainerView=_nightAccessoryContainerView;
+@property(retain, nonatomic) UIView *nightDisk; // @synthesize nightDisk=_nightDisk;
+@property(retain, nonatomic) UIView *dayAccessoryContainerView; // @synthesize dayAccessoryContainerView=_dayAccessoryContainerView;
+@property(retain, nonatomic) UIView *dayDisk; // @synthesize dayDisk=_dayDisk;
 - (void).cxx_destruct;
 - (id)_newGnomonView;
 - (void)setSolarDayMaskPath:(id)arg1;

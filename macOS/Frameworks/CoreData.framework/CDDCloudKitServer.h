@@ -10,7 +10,7 @@
 #import <CoreData/NSXPCListenerDelegate-Protocol.h>
 #import <CoreData/_PFCoreDataCloudKitServer-Protocol.h>
 
-@class CDDCloudKitServerConfiguration, CKScheduler, NSError, NSPersistentContainer, NSString, NSXPCListener, PFCloudKitContainerProvider;
+@class CDDCloudKitServerConfiguration, NSError, NSPersistentContainer, NSString, NSXPCListener;
 @protocol OS_dispatch_group;
 
 __attribute__((visibility("hidden")))
@@ -22,13 +22,9 @@ __attribute__((visibility("hidden")))
     NSPersistentContainer *_metadataContainer;
     NSObject<OS_dispatch_group> *_initializationGroup;
     NSError *_lastInitializationError;
-    CKScheduler *_scheduler;
-    PFCloudKitContainerProvider *_containerProvider;
 }
 
 + (BOOL)checkAndCreateDirectoryAtURL:(id)arg1 wipeIfExists:(BOOL)arg2 error:(id *)arg3;
-@property(readonly, nonatomic) PFCloudKitContainerProvider *containerProvider; // @synthesize containerProvider=_containerProvider;
-@property(readonly, nonatomic) CKScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly, nonatomic) NSError *lastInitializationError; // @synthesize lastInitializationError=_lastInitializationError;
 @property(readonly, nonatomic) BOOL initialized; // @synthesize initialized=_initialized;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *initializationGroup; // @synthesize initializationGroup=_initializationGroup;

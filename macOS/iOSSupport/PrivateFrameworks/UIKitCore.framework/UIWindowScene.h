@@ -6,7 +6,6 @@
 
 #import <UIKitCore/UIScene.h>
 
-#import <UIKitCore/UICoordinateSpace-Protocol.h>
 #import <UIKitCore/_UIContextBinderContextCreationPolicyHolding-Protocol.h>
 #import <UIKitCore/_UIFallbackEnvironment-Protocol.h>
 #import <UIKitCore/_UISceneUIWindowHosting-Protocol.h>
@@ -14,13 +13,15 @@
 @class FBSDisplayConfigurationRequest, FBSScene, NSArray, NSPointerArray, NSString, UIAlertControllerStackManager, UIInputResponderController, UIScreen, UIScreenshotService, UIStatusBarManager, UITitlebar, UITraitCollection, UIWindow, _UIBannerManager, _UICanvasDefinition, _UIContextBinder, _UISystemAppearanceManager, _UIWindowSceneTouchBarCoordinator;
 @protocol UICoordinateSpace, _UIDisplayInfoProviding, _UISceneMetricsCalculating;
 
-@interface UIWindowScene : UIScene <_UIFallbackEnvironment, UICoordinateSpace, _UISceneUIWindowHosting, _UIContextBinderContextCreationPolicyHolding>
+@interface UIWindowScene : UIScene <_UIFallbackEnvironment, _UISceneUIWindowHosting, _UIContextBinderContextCreationPolicyHolding>
 {
     UIScreen *_screen;
     UITraitCollection *_traitCollection;
     _UIContextBinder *_contextBinder;
     NSPointerArray *_keyWindowHistory;
+    BOOL _isPerformingSystemSnapshot;
     id <_UIDisplayInfoProviding> _displayEdgeInfoProvider;
+    id <UICoordinateSpace> _coordinateSpace;
     struct {
         char valid;
         struct CGSize size;
@@ -32,7 +33,6 @@
     long long _avkitRequestedOverscanCompensation;
 }
 
-+ (void)_enumerateAllWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2 asCopy:(BOOL)arg3 withBlock:(CDUnknownBlockType)arg4;
 + (id)_keyWindowScene;
 + (id)_placeholderWindowSceneForScreen:(id)arg1 create:(BOOL)arg2;
 + (id)_keyboardWindowSceneForScreen:(id)arg1 create:(BOOL)arg2;
@@ -45,6 +45,7 @@
 @property(nonatomic) BOOL _isKeyWindowScene; // @synthesize _isKeyWindowScene=__isKeyWindowScene;
 @property(nonatomic, getter=_avkitRequestedOverscanCompensation, setter=_setAVKitRequestedOverscanCompensation:) long long _avkitRequestedOverscanCompensation; // @synthesize _avkitRequestedOverscanCompensation;
 @property(nonatomic, getter=_screenRequestedOverscanCompensation, setter=_setScreenRequestedOverscanCompensation:) long long _screenRequestedOverscanCompensation; // @synthesize _screenRequestedOverscanCompensation;
+@property(readonly, nonatomic) BOOL _isPerformingSystemSnapshot; // @synthesize _isPerformingSystemSnapshot;
 - (void).cxx_destruct;
 - (void)_showProgressWhenFetchingUserActivityForTypes:(id)arg1;
 - (id)_inheritingWindowsIncludingInvisible:(BOOL)arg1;
@@ -52,6 +53,7 @@
 @property(readonly, copy) NSString *description;
 - (id)_fixupEffectiveSettings:(id)arg1;
 - (BOOL)_permitContextCreationForBindingDescription:(CDStruct_2a214484)arg1;
+- (void)_applySnapshotSettings:(id)arg1 forActions:(CDUnknownBlockType)arg2;
 - (void)_invalidateScreen;
 @property(retain, nonatomic, getter=_displayConfigurationRequest, setter=_setDisplayConfigurationRequest:) FBSDisplayConfigurationRequest *_displayConfigurationRequest; // @dynamic _displayConfigurationRequest;
 - (void)_setAVKitRequestedRefreshRate:(double)arg1 HDRMode:(long long)arg2 overscanCompensation:(long long)arg3;
@@ -76,7 +78,6 @@
 - (void)_recycleAttachmentForWindow:(id)arg1;
 - (id)_fbsSceneLayerForWindow:(id)arg1;
 - (void)_enumerateWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2 asCopy:(BOOL)arg3 stopped:(char *)arg4 withBlock:(CDUnknownBlockType)arg5;
-- (void)_enumerateWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2 asCopy:(BOOL)arg3 withBlock:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) BOOL _canReceiveDeviceOrientationEvents;
 - (id)_allWindows;
 - (id)_visibleWindows;
@@ -97,13 +98,10 @@
 @property(readonly, nonatomic) id <UICoordinateSpace> _coordinateSpace;
 @property(readonly, nonatomic) long long _interfaceOrientation;
 @property(readonly, nonatomic) UIScreen *_screen;
+- (void)_setSystemVolumeHUDEnabled:(BOOL)arg1;
+- (void)_setSystemVolumeHUDEnabled:(BOOL)arg1 forAudioCategory:(id)arg2;
 @property(nonatomic, getter=_keepContextAssociationInBackground, setter=_setKeepContextAssociationInBackground:) BOOL keepContextAssociationInBackground;
 @property(nonatomic, setter=_setBackgroundStyle:) long long _backgroundStyle;
-@property(readonly, nonatomic) struct CGRect bounds;
-- (struct CGRect)convertRect:(struct CGRect)arg1 fromCoordinateSpace:(id)arg2;
-- (struct CGRect)convertRect:(struct CGRect)arg1 toCoordinateSpace:(id)arg2;
-- (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromCoordinateSpace:(id)arg2;
-- (struct CGPoint)convertPoint:(struct CGPoint)arg1 toCoordinateSpace:(id)arg2;
 @property(readonly, nonatomic) NSArray *windows;
 @property(readonly, nonatomic) UITraitCollection *traitCollection;
 @property(readonly, nonatomic) id <UICoordinateSpace> coordinateSpace;
@@ -112,6 +110,7 @@
 - (void)_invalidate;
 - (id)initWithSession:(id)arg1 connectionOptions:(id)arg2;
 @property(readonly, nonatomic) UIAlertControllerStackManager *_alertControllerStackManager;
+- (id)canvasToolbar;
 - (id)_componentForKey:(id)arg1;
 - (void)_unregisterComponentForKey:(id)arg1;
 - (void)_registerComponent:(id)arg1 forKey:(id)arg2;

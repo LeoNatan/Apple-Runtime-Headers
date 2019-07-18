@@ -16,6 +16,7 @@
 
 - (void)workflowPickerViewController:(id)arg1 didSelectWorkflowWithName:(id)arg2;
 - (void)workflowPickerViewController:(id)arg1 didSelectVariable:(id)arg2;
+- (void)workflowPickerViewControllerDidCancel:(id)arg1;
 - (void)buttonTapped:(id)arg1;
 - (void)parameterLayoutTapped:(id)arg1;
 

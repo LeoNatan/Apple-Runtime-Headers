@@ -8,7 +8,7 @@
 
 #import <GameCenterUI/_GKStateMachineDelegate-Protocol.h>
 
-@class GKPlaceholderContentStateMachine, GKPlaceholderView, NSArray, NSString, UIActivityIndicatorView;
+@class GKPlaceholderContentStateMachine, GKPlaceholderView, GKUIActivityIndicatorView, NSArray, NSString;
 
 @interface GKCollectionViewPlaceholderView : NSUICollectionReusableView <_GKStateMachineDelegate>
 {
@@ -21,14 +21,14 @@
     NSString *_errorTitle;
     NSString *_errorMessage;
     long long _alignment;
-    UIActivityIndicatorView *_loadingIndicatorView;
+    GKUIActivityIndicatorView *_loadingIndicatorView;
     GKPlaceholderContentStateMachine *_loadingMachine;
     NSArray *_cachedConstraints;
 }
 
 @property(retain, nonatomic) NSArray *cachedConstraints; // @synthesize cachedConstraints=_cachedConstraints;
 @property(retain, nonatomic) GKPlaceholderContentStateMachine *loadingMachine; // @synthesize loadingMachine=_loadingMachine;
-@property(retain, nonatomic) UIActivityIndicatorView *loadingIndicatorView; // @synthesize loadingIndicatorView=_loadingIndicatorView;
+@property(retain, nonatomic) GKUIActivityIndicatorView *loadingIndicatorView; // @synthesize loadingIndicatorView=_loadingIndicatorView;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(retain, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(retain, nonatomic) NSString *errorTitle; // @synthesize errorTitle=_errorTitle;

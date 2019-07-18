@@ -19,6 +19,7 @@
 - (void)_downloadAsset:(id)arg1 userInitiated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_executeQueries:(id)arg1 currentIndex:(unsigned long long)arg2 userInitiated:(_Bool)arg3 sortDescriptors:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_retrieveAssetWithQueries:(id)arg1 userInitiated:(_Bool)arg2 sortDescriptors:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)_compatibleVersionsWithMinimumVersion:(unsigned long long)arg1 maximumVersion:(unsigned long long)arg2;
 - (id)_queriesForCityCodeStationProvider:(id)arg1;
 - (id)_queriesForMarketIdentifer:(id)arg1;
 - (id)_queriesForEducationVideo;

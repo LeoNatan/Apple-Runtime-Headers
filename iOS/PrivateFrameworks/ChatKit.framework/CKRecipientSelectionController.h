@@ -137,7 +137,7 @@
 - (id)chatForIMHandle:(id)arg1;
 - (id)handleForRecipientNormalizedAddress:(id)arg1;
 - (id)preferredRecipientForExistingConversationOfRecipients:(id)arg1;
-- (id)preferredColorTypeForExistingConversationAndRecipient:(id)arg1;
+- (id)preferredColorTypeForExistingConversation:(id)arg1;
 - (void)colorTypeForRecipient:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)hasEmailRecipientsInAddresses:(id)arg1;
 - (_Bool)lastSentMessageWasNotDeliveredForConversation:(id)arg1;

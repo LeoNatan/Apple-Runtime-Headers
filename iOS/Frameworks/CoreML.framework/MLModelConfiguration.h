@@ -20,16 +20,14 @@
     _Bool _enableTestVectorMode;
     long long _computeUnits;
     id <MTLDevice> _preferredMetalDevice;
-    NSDictionary *_updateParameters;
-    NSDictionary *_modelParameters;
+    NSDictionary *_parameters;
     NSURL *_rootModelURL;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)defaultConfiguration;
 @property(retain) NSURL *rootModelURL; // @synthesize rootModelURL=_rootModelURL;
-@property(retain) NSDictionary *modelParameters; // @synthesize modelParameters=_modelParameters;
-@property(retain) NSDictionary *updateParameters; // @synthesize updateParameters=_updateParameters;
+@property(retain) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(nonatomic) _Bool enableTestVectorMode; // @synthesize enableTestVectorMode=_enableTestVectorMode;
 @property(retain, nonatomic) id <MTLDevice> preferredMetalDevice; // @synthesize preferredMetalDevice=_preferredMetalDevice;
 @property _Bool allowLowPrecisionAccumulationOnGPU; // @synthesize allowLowPrecisionAccumulationOnGPU=_allowLowPrecisionAccumulationOnGPU;
@@ -37,6 +35,9 @@
 @property _Bool allowBackgroundGPUComputeSetting; // @synthesize allowBackgroundGPUComputeSetting=_allowBackgroundGPUComputeSetting;
 @property long long computeUnits; // @synthesize computeUnits=_computeUnits;
 - (void).cxx_destruct;
+- (id)description;
+- (void)setModelParameters:(id)arg1;
+- (void)setUpdateParameters:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
@@ -48,6 +49,7 @@
 @property(nonatomic) _Bool allowFloat16AccumulationOnGPU;
 - (id)init;
 - (id)initWithComputeUnits:(long long)arg1;
+- (id)computeUnitsToString:(long long)arg1;
 
 @end
 

@@ -9,6 +9,7 @@
 @class EMObjectID, NSArray;
 
 @protocol EMContentItemRequestDelegate <NSObject>
+- (void)contentObjectID:(EMObjectID *)arg1 generateHTMLSnippetsForMailDropContentItems:(NSArray *)arg2 completionHandler:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)contentObjectID:(EMObjectID *)arg1 generateHTMLSnippetsForRelatedContentItems:(NSArray *)arg2 completionHandler:(void (^)(NSDictionary *, NSError *))arg3;
 @end
 

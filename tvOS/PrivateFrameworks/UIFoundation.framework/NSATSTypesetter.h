@@ -60,6 +60,8 @@
 - (_Bool)_usesScreenFonts;
 - (void)_flushCachedObjects;
 - (_Bool)_layoutLineFragmentStartingWithGlyphAtIndex:(unsigned long long *)arg1 characterIndex:(unsigned long long *)arg2 atPoint:(struct CGPoint *)arg3 renderingContext:(id *)arg4;
+- (id)_textStorageForAttachmentProtocol;
+- (id)_textContainerForAttachmentProtocol;
 - (void)_setForceWordWrapping:(_Bool)arg1;
 - (_Bool)_forceWordWrapping;
 - (void)_setBaselineRenderingMode:(_Bool)arg1;

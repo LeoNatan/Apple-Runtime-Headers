@@ -36,6 +36,7 @@
 @property(readonly, copy, nonatomic) NSUUID *modelParentIdentifier;
 @property(readonly, copy, nonatomic) NSUUID *modelIdentifier;
 @property(readonly) Class modelClass;
+@property(readonly) unsigned long long entitlementsForNotification;
 @property(readonly) _Bool requiresDeviceUnlock;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
 - (void)executeWithCompletionHandler:(CDUnknownBlockType)arg1;

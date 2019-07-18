@@ -27,6 +27,7 @@
 - (void)setAllowsEditing:(BOOL)arg1;
 - (double)customSpacingAfterWidget;
 - (void)mouseUp:(id)arg1;
+- (void)setPropertyKeysToDisplay:(id)arg1;
 - (void)clearContactImage;
 - (void)beginEditingContactImage;
 - (double)desiredHeight;

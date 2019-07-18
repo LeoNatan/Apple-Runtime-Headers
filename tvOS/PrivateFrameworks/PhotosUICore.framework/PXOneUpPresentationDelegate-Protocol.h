@@ -25,7 +25,7 @@
 - (void)oneUpPresentation:(PXOneUpPresentation *)arg1 scrollAssetReferenceToVisible:(PXAssetReference *)arg2;
 - (PXRegionOfInterest *)oneUpPresentation:(PXOneUpPresentation *)arg1 regionOfInterestForAssetReference:(PXAssetReference *)arg2;
 - (UIImage *)oneUpPresentation:(PXOneUpPresentation *)arg1 currentImageForAssetReference:(PXAssetReference *)arg2;
-- (_Bool)oneUpPresentationShouldPreventShowPhotosFromThisDayAction:(PXOneUpPresentation *)arg1;
+- (_Bool)oneUpPresentationShouldPreventShowInAllPhotosAction:(PXOneUpPresentation *)arg1;
 - (_Bool)oneUpPresentationShouldAutoPlay:(PXOneUpPresentation *)arg1;
 - (PXAssetReference *)oneUpPresentationInitialAssetReference:(PXOneUpPresentation *)arg1;
 - (PXPhotosDetailsContext *)oneUpPresentationPhotosDetailsContext:(PXOneUpPresentation *)arg1;

@@ -15,5 +15,6 @@
 - (void)passFooterContentViewDidChangeCoachingState:(PKPassFooterContentView *)arg1;
 - (void)passFooterContentViewDidChangeUserIntentRequirement:(PKPassFooterContentView *)arg1;
 - (void)passFooterContentViewRequestsSessionSuppression:(PKPassFooterContentView *)arg1;
+- (void)passFooterContentViewDidAuthenticate:(PKPassFooterContentView *)arg1;
 @end
 

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void)updateSelectionAnnotationDataSourceForContext:(id)arg1 displayType:(id)arg2 timeScope:(long long)arg3;
 - (id)makeAnnotationDataSourceWithMetrics:(id)arg1;
 - (id)makeAnnotationDataSource;
+- (id)makeStandardCurrentValueViewDataSource;
 
 @end
 

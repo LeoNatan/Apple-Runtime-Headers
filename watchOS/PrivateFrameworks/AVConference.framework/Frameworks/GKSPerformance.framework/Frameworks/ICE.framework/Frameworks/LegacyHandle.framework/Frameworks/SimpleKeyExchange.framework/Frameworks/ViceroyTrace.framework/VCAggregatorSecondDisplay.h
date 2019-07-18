@@ -6,7 +6,7 @@
 
 #import <ViceroyTrace/VCAggregator.h>
 
-@class VCHistogram, VCVideoFECStatsHolder;
+@class NSMutableDictionary, VCHistogram;
 
 __attribute__((visibility("hidden")))
 @interface VCAggregatorSecondDisplay : VCAggregator
@@ -44,9 +44,7 @@ __attribute__((visibility("hidden")))
     unsigned int _maxRoundTripTime;
     unsigned int _videoFrameNonFECTotalCounter;
     unsigned int _videoFrameNonFECCompleteCounter;
-    VCVideoFECStatsHolder *_videoFECStatsLevel1;
-    VCVideoFECStatsHolder *_videoFECStatsLevel2;
-    VCVideoFECStatsHolder *_videoFECStatsLevel3;
+    unsigned int _videoFrameDisplayedCounter;
     unsigned int _decodedVideoFrameEnqueueCounter;
     unsigned int _videoFrameReceivedCounter;
     unsigned int _videoFrameExpectedCounter;
@@ -60,13 +58,15 @@ __attribute__((visibility("hidden")))
     VCHistogram *_BWE;
     VCHistogram *_VJS;
     VCHistogram *_RTT;
+    NSMutableDictionary *_fecStatsDict;
 }
 
 - (void)processEventWithCategory:(unsigned short)arg1 type:(unsigned short)arg2 payload:(id)arg3;
-- (void)updateVideoStreamConfiguration:(id)arg1;
+- (void)updateReceiverVideoStreamConfiguration:(id)arg1;
+- (void)updateSenderVideoStreamConfiguration:(id)arg1;
 - (void)processRealtimeStats:(id)arg1;
 - (void)updateVideoFECStats:(id)arg1;
-- (void)updateVideoFramerate:(id)arg1;
+- (id)sessionFECReport;
 - (id)aggregatedSessionReport;
 - (id)aggregatedCallReports;
 - (void)saveCallSegmentHistory;

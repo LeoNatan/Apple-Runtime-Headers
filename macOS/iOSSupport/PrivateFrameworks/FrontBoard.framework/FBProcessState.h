@@ -17,13 +17,13 @@
     BOOL _foreground;
     BOOL _debugging;
     int _pid;
-    int _taskState;
-    int _visibility;
+    long long _taskState;
+    long long _visibility;
 }
 
 @property(nonatomic, getter=isDebugging) BOOL debugging; // @synthesize debugging=_debugging;
-@property(nonatomic) int visibility; // @synthesize visibility=_visibility;
-@property(nonatomic) int taskState; // @synthesize taskState=_taskState;
+@property(nonatomic) long long visibility; // @synthesize visibility=_visibility;
+@property(nonatomic) long long taskState; // @synthesize taskState=_taskState;
 @property(readonly, nonatomic, getter=isForeground) BOOL foreground; // @synthesize foreground=_foreground;
 @property(readonly, nonatomic, getter=isRunning) BOOL running; // @synthesize running=_running;
 @property(nonatomic) int pid; // @synthesize pid=_pid;

@@ -15,10 +15,12 @@
     UIColor *_backgroundColor;
     UIColor *_tintColor;
     UITraitCollection *_traitCollection;
+    long long _userInterfaceStyle;
     struct CGColor *_selectionHighlightColor;
 }
 
 @property(readonly, nonatomic) struct CGColor *selectionHighlightColor; // @synthesize selectionHighlightColor=_selectionHighlightColor;
+@property(readonly, nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;

@@ -12,7 +12,6 @@
 
 - (int)forward;
 - (int)readFromDisk:(struct __sFILE *)arg1 quantFactor:(short)arg2;
-- (int)initializeRest;
 
 @end
 

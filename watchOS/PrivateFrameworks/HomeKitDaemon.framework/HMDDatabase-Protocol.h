@@ -14,6 +14,8 @@
 - (NAFuture *)declineInvitation:(HMBShareInvitation *)arg1;
 - (NAFuture *)acceptInvitation:(HMBShareInvitation *)arg1;
 - (NAFuture *)removeLocalAndCloudDataForLocalZone:(HMBLocalZone *)arg1;
+- (NAFuture *)removeSharedZonesWithName:(NSString *)arg1;
+- (NAFuture *)removeOwnedZonesWithName:(NSString *)arg1;
 - (NAFuture *)fetchSharedZonesWithID:(HMBCloudZoneID *)arg1 delegate:(id <HMBLocalZoneDelegate><HMBCloudZoneDelegate>)arg2;
 - (NAFuture *)fetchExistingSharedZoneIDWithName:(NSString *)arg1;
 - (NAFuture *)fetchOwnedZonesWithName:(NSString *)arg1 delegate:(id <HMBLocalZoneDelegate><HMBCloudZoneDelegate>)arg2;

@@ -14,10 +14,10 @@
 {
 }
 
++ (id)groupEmitterIdentifier;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
-@property(readonly, copy, nonatomic) NSString *groupEmitterIdentifier;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
-- (_Bool)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
+- (_Bool)wantsToInsertGroupInContext:(id)arg1;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (_Bool)wantsToEmitGroupInContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 

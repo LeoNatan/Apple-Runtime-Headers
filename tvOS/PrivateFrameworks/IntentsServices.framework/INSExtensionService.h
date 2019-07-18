@@ -16,7 +16,9 @@
 @interface INSExtensionService : NSObject <INSAnalyticsObserver, INSAnalyticsDataSource, INSAppLaunchCommandDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_requestDelegateQueue;
     INCExtensionConnection *_currentConnection;
+    NSString *_currentBundleIdForDisplay;
     INExtensionContext *_extensionContext;
     NSDictionary *_options;
     id <INSExtensionServiceDelegate> _delegate;
@@ -29,6 +31,7 @@
 - (id)analytics:(id)arg1 contextDictionaryForError:(id)arg2;
 - (id)analytics:(id)arg1 contextDictionaryForCommand:(id)arg2;
 - (void)analytics:(id)arg1 needsToLogEventWithType:(long long)arg2 context:(id)arg3 contextNoCopy:(_Bool)arg4;
+- (_Bool)_shouldPrepareAudioSessionForCommand:(id)arg1 intent:(id)arg2;
 - (void)_requiresHandlingCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_shouldLoadNativeMessagesExtensionAsBundle;
 - (id)_siriLanguageCode;
@@ -38,6 +41,8 @@
 - (id)_connectionForIntent:(id)arg1;
 - (id)_updatedEventContextWithExtensionLoadType:(id)arg1 wasPrewarmed:(_Bool)arg2;
 - (id)_extensionInputItems;
+- (void)_extensionRequestDidFinishForIntent:(id)arg1 error:(id)arg2;
+- (void)_extensionRequestWillStartForIntent:(id)arg1;
 @property(copy, nonatomic) NSArray *airPlayRouteIdentifiers;
 @property(readonly, nonatomic) INExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void)resetExternalResources;

@@ -6,6 +6,8 @@
 
 #import <Foundation/NSOperation.h>
 
+@class NSString;
+
 @interface _TtC16HealthExperience21AsynchronousOperation : NSOperation
 {
     // Error parsing type: , name: autoFinishesOnCancel
@@ -15,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
+@property(nonatomic, readonly) NSString *description;
 - (void)main;
 - (void)cancel;
 - (void)start;

@@ -4,14 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ActionKit/WFDynamicEnumerationBaseDataSource-Protocol.h>
+#import <ActionKit/NSObject-Protocol.h>
 
-@class NSArray, WFEnumerationParameter;
+@class NSArray, NSString, UIColor, WFEnumerationParameter, WFVariableSubstitutableParameterState;
 
-@protocol WFDynamicEnumerationDataSource <WFDynamicEnumerationBaseDataSource>
-- (NSArray *)possibleStatesForEnumeration:(WFEnumerationParameter *)arg1;
+@protocol WFDynamicEnumerationDataSource <NSObject>
+- (NSString *)enumeration:(WFEnumerationParameter *)arg1 localizedLabelForPossibleState:(WFVariableSubstitutableParameterState *)arg2;
 
 @optional
+- (UIColor *)enumeration:(WFEnumerationParameter *)arg1 accessoryColorForPossibleState:(WFVariableSubstitutableParameterState *)arg2;
+- (BOOL)enumerationAllowsMultipleValues:(WFEnumerationParameter *)arg1;
+- (void)loadDefaultSerializedRepresentationForEnumeration:(WFEnumerationParameter *)arg1 completionHandler:(void (^)(id, NSError *))arg2;
 - (id)defaultSerializedRepresentationForEnumeration:(WFEnumerationParameter *)arg1;
+- (void)loadPossibleStatesForEnumeration:(WFEnumerationParameter *)arg1 completionHandler:(void (^)(NSArray *, NSError *))arg2;
+- (NSArray *)possibleStatesForEnumeration:(WFEnumerationParameter *)arg1;
 @end
 

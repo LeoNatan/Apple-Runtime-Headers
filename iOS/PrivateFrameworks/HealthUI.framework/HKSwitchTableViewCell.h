@@ -21,7 +21,7 @@
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
+@property(copy, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
 @property(nonatomic) _Bool centersIcon; // @synthesize centersIcon=_centersIcon;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) _Bool shouldHideSwitch; // @synthesize shouldHideSwitch=_shouldHideSwitch;

@@ -28,6 +28,7 @@
 @property(nonatomic) _Bool switchIsOccurring; // @synthesize switchIsOccurring=_switchIsOccurring;
 @property(nonatomic) __weak id <UMUserListUpdateObserver> userListUpdateObserver; // @synthesize userListUpdateObserver=_userListUpdateObserver;
 - (void).cxx_destruct;
+- (void)registerPersonaListUpdateObserver:(id)arg1 withMachService:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)registerPersonaListUpdateObserver:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)personaLogoutWithUserODuuid:(id)arg1 withUid:(unsigned int)arg2 WithError:(id *)arg3;
 - (_Bool)personaLoginWithUserODuuid:(id)arg1 withUid:(unsigned int)arg2 WithError:(id *)arg3;

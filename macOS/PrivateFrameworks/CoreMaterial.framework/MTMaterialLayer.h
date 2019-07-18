@@ -13,14 +13,13 @@
 {
     MTMaterialSettingsInterpolator *_settingsInterpolator;
     BOOL _needsConfiguring;
-    BOOL _highlighted;
     BOOL _blurEnabled;
     BOOL _zoomEnabled;
-    double _highlightAdditionalAlpha;
     CDUnknownBlockType _backdropScaleAdjustment;
     CDUnknownBlockType _defaultBackdropScaleAdjustment;
     BOOL _shouldCrossfadeIfNecessary;
     BOOL _forceCrossfadeIfNecessary;
+    BOOL _contentReplacedWithSnapshot;
     NSMutableDictionary *_pendingChange;
     NSMutableDictionary *_visualStyleCategoriesToProviders;
     struct {
@@ -34,6 +33,7 @@
 
 + (id)_unserializedAttributeKeys;
 + (id)_attributeKeys;
++ (void)_pruneMaterialLayerAtCompletionOfCurrentTransaction:(id)arg1;
 + (void)initialize;
 + (id)mt_implicitlyAnimatableKeys;
 + (id)mt_animatableKeys;
@@ -42,6 +42,7 @@
 @property(nonatomic, getter=isReduceMotionEnabled) BOOL reduceMotionEnabled; // @synthesize reduceMotionEnabled=_reduceMotionEnabled;
 @property(nonatomic, getter=isReduceTransparencyEnabled) BOOL reduceTransparencyEnabled; // @synthesize reduceTransparencyEnabled=_reduceTransparencyEnabled;
 - (void).cxx_destruct;
+- (BOOL)_needsPruning;
 - (BOOL)_didValueChangeForKey:(id)arg1 withPendingChange:(id)arg2;
 - (BOOL)_isDelegateManagingCustomOpacityTransition;
 - (BOOL)_isDelegateManagingOpacity;
@@ -49,13 +50,12 @@
 - (void)_updateVisualStylingProviders;
 - (BOOL)_isCrossfadeNecessary;
 - (void)_configureDelegateFlagsForDelegate:(id)arg1;
-- (BOOL)_adjustScaleOfBackdropLayer:(id)arg1 ifNecessaryWithSettingsInterpolator:(id)arg2;
+- (void)_adjustScaleOfBackdropLayer:(id)arg1 ifNecessaryWithSettingsInterpolator:(id)arg2;
 - (void)_configureBackdropLayer:(id)arg1 withSettingsInterpolator:(id)arg2 preservingFiltersIfIdentity:(BOOL)arg3;
 - (void)_configureBackdropLayerIfNecessaryWithSettingsInterpolator:(id)arg1;
 - (void)_configureIfNecessaryWithSettingsInterpolator:(id)arg1;
 - (void)_updateForChangeInWeighting;
 - (void)_updateForChangeInRecipeAndConfiguration;
-- (void)_setNeedsConfiguring;
 - (void)layoutSublayers;
 - (void)didChangeValueForKey:(id)arg1;
 - (void)willChangeValueForKey:(id)arg1;
@@ -68,16 +68,16 @@
 - (id)init;
 - (void)reevaluateShouldReduceCaptureBitDepth:(BOOL)arg1;
 - (void)setRecipeName:(id)arg1 fromBundle:(id)arg2;
+@property(nonatomic, getter=isContentReplacedWithSnapshot) BOOL contentReplacedWithSnapshot;
 @property(nonatomic) BOOL forceCrossfadeIfNecessary;
 @property(nonatomic) BOOL shouldCrossfadeIfNecessary;
 @property(copy, nonatomic) CDUnknownBlockType blurRadiusTransformer;
 @property(readonly, nonatomic, getter=_backdropScale) double backdropScale;
 @property(copy, nonatomic) CDUnknownBlockType backdropScaleAdjustment;
-@property(nonatomic) double highlightAdditionalAlpha;
-@property(nonatomic, getter=isHighlighted) BOOL highlighted;
 @property(nonatomic, getter=isZoomEnabled) BOOL zoomEnabled;
 @property(nonatomic, getter=isBlurEnabled) BOOL blurEnabled;
 @property(copy, nonatomic) NSString *recipeName;
+- (void)_setNeedsConfiguring;
 - (void)_setPrivateOpacity:(double)arg1 removingIfIdentity:(BOOL)arg2;
 @property(readonly, nonatomic, getter=_privateOpacity) double privateOpacity;
 

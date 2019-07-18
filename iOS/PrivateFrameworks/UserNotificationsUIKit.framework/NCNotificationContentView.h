@@ -22,7 +22,9 @@
     NSMutableDictionary *_widthToFontToStringToMeasuredNumLines;
     NSStringDrawingContext *_drawingContext;
     MTVisualStylingProvider *_visualStylingProvider;
+    _Bool _hasUpdatedContent;
     _Bool _adjustsFontForContentSizeCategory;
+    _Bool _useSmallTopMargin;
     UILabel *_secondaryLabel;
     UITextView *_secondaryTextView;
     NSString *_preferredContentSizeCategory;
@@ -42,6 +44,7 @@
 @property(retain, nonatomic, getter=_primarySubtitleLabel, setter=_setPrimarySubtitleLabel:) UILabel *primarySubtitleLabel; // @synthesize primarySubtitleLabel=_primarySubtitleLabel;
 @property(retain, nonatomic, getter=_primaryLabel, setter=_setPrimaryLabel:) UILabel *primaryLabel; // @synthesize primaryLabel=_primaryLabel;
 @property(retain, nonatomic, getter=_fontProvider, setter=_setFontProvider:) BSUIFontProvider *fontProvider; // @synthesize fontProvider=_fontProvider;
+@property(nonatomic) _Bool useSmallTopMargin; // @synthesize useSmallTopMargin=_useSmallTopMargin;
 @property(nonatomic) unsigned long long maximumNumberOfSecondaryLargeTextLines; // @synthesize maximumNumberOfSecondaryLargeTextLines=_maximumNumberOfSecondaryLargeTextLines;
 @property(nonatomic) unsigned long long maximumNumberOfSecondaryTextLines; // @synthesize maximumNumberOfSecondaryTextLines=_maximumNumberOfSecondaryTextLines;
 @property(nonatomic) unsigned long long maximumNumberOfPrimaryLargeTextLines; // @synthesize maximumNumberOfPrimaryLargeTextLines=_maximumNumberOfPrimaryLargeTextLines;
@@ -62,9 +65,11 @@
 - (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
 @property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
 - (id)visualStylingProviderForCategory:(long long)arg1;
+- (void)_layoutSubviews;
 - (void)layoutSubviews;
 - (struct CGRect)_frameForThumbnailInRect:(struct CGRect)arg1 withContentViewInsets:(struct UIEdgeInsets)arg2;
 - (void)_updateStyleForThumbnailImage:(id)arg1 withStyle:(long long)arg2;
+- (void)_updateContentModeForThumbnailImage:(id)arg1;
 @property(retain, nonatomic) UIImage *thumbnail;
 @property(retain, nonatomic) NSString *summaryText;
 - (id)_lazySummaryLabel;
@@ -90,6 +95,7 @@
 - (id)_newPrimaryLabel;
 - (void)_updateStyleForPrimaryLabel:(id)arg1 withStyle:(long long)arg2;
 - (void)_updateTextAttributesForPrimaryLabel:(id)arg1 withStyle:(long long)arg2;
+- (void)_updateContentInsets;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_sizeThatFits:(struct CGSize)arg1 withContentInsets:(struct UIEdgeInsets)arg2;
 - (unsigned long long)_numberOfMeasuredLinesForText:(id)arg1 withFont:(id)arg2 forSize:(struct CGSize)arg3;
@@ -125,7 +131,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 
 @end
 

@@ -9,7 +9,7 @@
 #import <PassKitCore/PKPaymentAuthorizationCoordinatorDelegate-Protocol.h>
 #import <PassKitCore/PKPaymentAuthorizationCoordinatorPrivateDelegate-Protocol.h>
 
-@class NSArray, NSDate, NSDecimalNumber, NSError, NSMutableSet, NSString, PKAccount, PKAccountEvent, PKAccountService, PKAccountWebServiceSchedulePaymentRequest, PKBankAccountInformation, PKPaymentAuthorizationCoordinator, PKPaymentPass, PKPaymentRequest, PKPaymentService, PKPaymentWebService;
+@class NSArray, NSDate, NSDecimalNumber, NSError, NSMutableSet, NSString, PKAccount, PKAccountEvent, PKAccountService, PKAccountWebServiceSchedulePaymentRequest, PKBankAccountInformation, PKPaymentAuthorizationCoordinator, PKPaymentPass, PKPaymentRequest, PKPaymentService, PKPaymentWebService, PKPeerPaymentAccount;
 @protocol PKAccountBillPaymentControllerDelegate;
 
 @interface PKAccountBillPaymentController : NSObject <PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate>
@@ -28,6 +28,7 @@
     NSDecimalNumber *_apcPaymentAmount;
     NSDecimalNumber *_peerPaymentBalance;
     PKPaymentRequest *_paymentRequest;
+    PKPeerPaymentAccount *_peerPaymentAccount;
     PKAccountEvent *_billPaymentSuggestedAmountDataEvent;
     NSDate *_scheduledDate;
     NSString *_peerPaymentPassUniqueId;

@@ -11,7 +11,7 @@
     // Error parsing type: , name: path
     // Error parsing type: , name: origin
     // Error parsing type: , name: paint
-    // Error parsing type: , name: paintSize
+    // Error parsing type: , name: paintBounds
     // Error parsing type: , name: fillStyle
 }
 

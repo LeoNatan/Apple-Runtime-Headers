@@ -20,7 +20,6 @@
     UIView *_digitalContainerView;
     CALayer *_digitalTicksContainer;
     NSArray *_digitalTicks;
-    NTKDigitalTimeLabel *_digitalTimeLabel;
     NTKDigitalTimeLabelStyle *_digitalStyle;
     _Bool _frozen;
     _Bool _editing;
@@ -31,12 +30,16 @@
     unsigned long long _color;
     UIView *_dialBackgroundView;
     NTKAnalogHandsView *_analogHandsView;
+    NTKDigitalTimeLabel *_digitalTimeLabel;
+    UIView *_dialContainerView;
     UIView *_analogContainerView;
     UIView *_analogTickContainerView;
 }
 
 @property(retain, nonatomic) UIView *analogTickContainerView; // @synthesize analogTickContainerView=_analogTickContainerView;
 @property(retain, nonatomic) UIView *analogContainerView; // @synthesize analogContainerView=_analogContainerView;
+@property(retain, nonatomic) UIView *dialContainerView; // @synthesize dialContainerView=_dialContainerView;
+@property(readonly, nonatomic) NTKDigitalTimeLabel *digitalTimeLabel; // @synthesize digitalTimeLabel=_digitalTimeLabel;
 @property(retain, nonatomic) NTKAnalogHandsView *analogHandsView; // @synthesize analogHandsView=_analogHandsView;
 @property(retain, nonatomic) UIView *dialBackgroundView; // @synthesize dialBackgroundView=_dialBackgroundView;
 @property(nonatomic) unsigned long long color; // @synthesize color=_color;
@@ -68,7 +71,7 @@
 - (id)_dialColorForColor:(unsigned long long)arg1;
 - (void)applyTransitionFraction:(double)arg1 fromStyle:(unsigned long long)arg2 toStyle:(unsigned long long)arg3;
 - (void)setSecondsHidden:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)applyTransitionFraction:(double)arg1 fromColor:(unsigned long long)arg2 toColor:(unsigned long long)arg3 ignoreHands:(_Bool)arg4;
+- (void)applyTransitionFraction:(double)arg1 fromColor:(unsigned long long)arg2 toColor:(unsigned long long)arg3 ignoreTimeView:(_Bool)arg4;
 - (void)applyTransitionFraction:(double)arg1 fromColor:(unsigned long long)arg2 toColor:(unsigned long long)arg3;
 - (id)_activeTimeView;
 - (id)_digitalLabelFont;

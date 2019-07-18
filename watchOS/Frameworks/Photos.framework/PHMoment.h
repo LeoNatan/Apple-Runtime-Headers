@@ -20,7 +20,9 @@
     double _approximateLongitude;
 }
 
-+ (id)fetchMomentUUIDGroupedByAssetUUIDForAssets:(id)arg1 options:(id)arg2;
++ (id)_fetchMomentUUIDByAssetUUIDForAssetUUIDs:(id)arg1 photoLibrary:(id)arg2;
++ (id)fetchMomentUUIDByAssetUUIDForAssetUUIDs:(id)arg1 options:(id)arg2;
++ (id)fetchMomentUUIDByAssetUUIDForAssets:(id)arg1 options:(id)arg2;
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyMap;
 + (id)identifierCode;

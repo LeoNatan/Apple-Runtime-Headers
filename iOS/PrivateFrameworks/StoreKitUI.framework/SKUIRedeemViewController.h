@@ -6,13 +6,14 @@
 
 #import <UIKit/UINavigationController.h>
 
-@class NSOperationQueue, NSString, SKUIClientContext, SKUIRedeemConfiguration, SUClientInterface, UIActivityIndicatorView;
+@class NSOperationQueue, NSString, SKUIClientContext, SKUIRedeemConfiguration, SUClientInterface, UIActivityIndicatorView, UIViewController;
 @protocol SKUIRedeemViewCameraOverrideDelegate;
 
 @interface SKUIRedeemViewController : UINavigationController
 {
     _Bool _attempsAutomaticRedeem;
     _Bool _cameraRedeemVisible;
+    _Bool _finishedLoading;
     _Bool _shouldPerformInitialOperationOnAppear;
     long long _category;
     id <SKUIRedeemViewCameraOverrideDelegate> _cameraDelegate;
@@ -21,12 +22,15 @@
     SUClientInterface *_clientInterface;
     NSOperationQueue *_operationQueue;
     UIActivityIndicatorView *_activityIndicator;
+    UIViewController *_embeddedViewController;
     SKUIRedeemConfiguration *_redeemConfiguration;
 }
 
 + (_Bool)redeemRequiresNationalId:(id)arg1;
 @property(nonatomic) _Bool shouldPerformInitialOperationOnAppear; // @synthesize shouldPerformInitialOperationOnAppear=_shouldPerformInitialOperationOnAppear;
 @property(retain, nonatomic) SKUIRedeemConfiguration *redeemConfiguration; // @synthesize redeemConfiguration=_redeemConfiguration;
+@property(nonatomic) _Bool finishedLoading; // @synthesize finishedLoading=_finishedLoading;
+@property(retain, nonatomic) UIViewController *embeddedViewController; // @synthesize embeddedViewController=_embeddedViewController;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(nonatomic) _Bool cameraRedeemVisible; // @synthesize cameraRedeemVisible=_cameraRedeemVisible;
@@ -40,6 +44,7 @@
 - (void)_stopActivityIndicator;
 - (void)_startActivityIndicator;
 - (void)_setChildViewController:(id)arg1;
+- (void)clientInterfaceDidFinishLoading:(id)arg1;
 - (void)_cancelButtonAction;
 - (void)_redeemURLWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_presentModernRedeemWithURL:(id)arg1;

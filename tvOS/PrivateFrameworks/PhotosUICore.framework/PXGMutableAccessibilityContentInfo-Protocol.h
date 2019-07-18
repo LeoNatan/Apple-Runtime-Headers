@@ -6,10 +6,15 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@class NSString;
-@protocol PXDisplayAsset;
+@class NSArray, NSObject, NSString;
+@protocol PXAccessibilityView, PXDisplayAsset;
 
 @protocol PXGMutableAccessibilityContentInfo <NSObject>
+@property(retain, nonatomic) NSArray *px_accessibilityChildren;
+@property(nonatomic) _Bool visible;
+@property(copy, nonatomic) NSArray *selectedContent;
+@property(nonatomic) _Bool selected;
+@property(retain, nonatomic) NSObject<PXAccessibilityView> *view;
 @property(retain, nonatomic) id <PXDisplayAsset> asset;
 @property(retain, nonatomic) NSString *imageName;
 @property(retain, nonatomic) NSString *subtitle;

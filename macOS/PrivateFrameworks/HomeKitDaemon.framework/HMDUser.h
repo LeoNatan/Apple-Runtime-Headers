@@ -69,6 +69,7 @@
 - (void)userDataControllerDidUpdateMediaContentProfile:(id)arg1;
 - (void)userDataControllerDidUpdateAssistantAccessControl:(id)arg1;
 - (BOOL)userDataController:(id)arg1 isMediaContentProfileCapableAccessoryID:(id)arg2;
+- (BOOL)userDataController:(id)arg1 isPersonalRequestCapableAccessoryID:(id)arg2;
 - (id)backingStoreController:(id)arg1 createParticipantManagerForCloudZone:(id)arg2;
 - (void)didStartBackingStoreController:(id)arg1;
 - (id)zoneNameForBackingStoreController:(id)arg1;
@@ -149,7 +150,7 @@
 - (void)registerForMessages;
 - (id)messageDispatcher;
 - (void)unconfigure;
-- (void)initializeUserSettingsWithHomeUUID:(id)arg1;
+- (void)initializeUserSettingsWithHome:(id)arg1;
 - (void)configureWithHome:(id)arg1;
 - (id)dumpState;
 - (id)attributeDescriptions;

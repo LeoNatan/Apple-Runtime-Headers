@@ -36,7 +36,6 @@
 - (void)trafficIncidentAlertUpdater:(id)arg1 invalidatedAlert:(id)arg2;
 - (void)trafficIncidentAlertUpdater:(id)arg1 receivedAlert:(id)arg2 responseCallback:(CDUnknownBlockType)arg3;
 - (id)userLocationForUpdateManager:(id)arg1;
-- (id)routeInfoForUpdateManager:(id)arg1;
 - (_Bool)wantsETAUpdates;
 - (void)didUpdateAlternateRoutes:(id)arg1 traffic:(id)arg2;
 - (void)updateManager:(id)arg1 didReceiveETAResponse:(id)arg2 toRequest:(id)arg3;

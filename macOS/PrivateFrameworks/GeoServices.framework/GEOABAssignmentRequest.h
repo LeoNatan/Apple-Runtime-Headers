@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;
+- (void)clearSensitiveFields;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)readAll:(BOOL)arg1;

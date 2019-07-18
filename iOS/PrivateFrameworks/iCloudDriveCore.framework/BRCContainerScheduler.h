@@ -47,6 +47,7 @@
 }
 
 @property(readonly, nonatomic) NSArray *customPushTopics; // @synthesize customPushTopics=_customPushTopics;
+@property(readonly, nonatomic) BRCContainerMetadataSyncPersistedState *containerMetadataPersistedState; // @synthesize containerMetadataPersistedState=_containerMetadataPersistedState;
 @property(readonly, nonatomic) BRCSideCarSyncPersistedState *sideCarSyncPersistedState; // @synthesize sideCarSyncPersistedState=_sideCarSyncPersistedState;
 @property(readonly, nonatomic) BRCZoneHealthSyncPersistedState *zoneHealthSyncPersistedState; // @synthesize zoneHealthSyncPersistedState=_zoneHealthPersistedState;
 @property(readonly, nonatomic) BRCDeadlineScheduler *syncScheduler; // @synthesize syncScheduler=_syncScheduler;

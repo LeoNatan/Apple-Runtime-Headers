@@ -6,8 +6,13 @@
 
 #import <NeutrinoCore/NUAutoCalculator.h>
 
-@interface PIPortraitAutoCalculator : NUAutoCalculator
+#import <PhotoImaging/PIFaceObservingAutoCalculator-Protocol.h>
+
+@class NSString, PIFaceObservationCache;
+
+@interface PIPortraitAutoCalculator : NUAutoCalculator <PIFaceObservingAutoCalculator>
 {
+    PIFaceObservationCache *_faceObservationCache;
 }
 
 + (id)portraitInfoDictionaryFromCameraMetadata:(id)arg1;
@@ -19,8 +24,16 @@
 + (BOOL)isStillImageDisparity:(id)arg1;
 + (id)focusRectDictionaryFromRect:(struct CGRect)arg1;
 + (id)focusRectDictionaryFromMetadata:(id)arg1;
+@property(retain, nonatomic) PIFaceObservationCache *faceObservationCache; // @synthesize faceObservationCache=_faceObservationCache;
+- (void).cxx_destruct;
 - (void)_calculateWithImageProperties:(id)arg1 valuesAtCapture:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)submit:(CDUnknownBlockType)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

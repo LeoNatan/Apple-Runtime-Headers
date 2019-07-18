@@ -18,6 +18,7 @@
 
 @interface AVTStickerViewController : UIViewController <AVTStickerPagingControllerDelegate, AVTAvatarPickerDelegate, AVTAvatarRecordDataSourceObserver, AVTPresenterDelegate, AVTPaddleViewDelegate, AVTObjectViewController>
 {
+    _Bool _allowEditing;
     _Bool _allowPeel;
     id <AVTPresenterDelegate> presenterDelegate;
     id <AVTStickerDisclosureValidationDelegate> _disclosureValidationDelegate;
@@ -25,7 +26,7 @@
     AVTAvatarRecordDataSource *_recordDataSource;
     AVTUIEnvironment *_environment;
     id <AVTUILogger> _logger;
-    AVTAvatarPickerDataSource *_avatarDataSource;
+    AVTAvatarPickerDataSource *_avatarPickerDataSource;
     AVTSimpleAvatarPicker *_avatarPicker;
     AVTStickerPagingController *_pagingController;
     NSString *_selectedRecordIdentifier;
@@ -34,13 +35,15 @@
 
 + (id)stickersAvatarsFetchRequest;
 + (double)headerHeightForWidth:(double)arg1 interitemSpacing:(double)arg2;
-+ (id)stickerViewControllerForStore:(id)arg1 allowPeel:(_Bool)arg2;
++ (unsigned long long)minimumNumberOfVisibleItemForWidth:(double)arg1;
++ (id)stickerViewControllerForStore:(id)arg1 allowEditing:(_Bool)arg2 allowPeel:(_Bool)arg3;
 @property(retain, nonatomic) AVTPaddleView *paddleView; // @synthesize paddleView=_paddleView;
 @property(retain, nonatomic) NSString *selectedRecordIdentifier; // @synthesize selectedRecordIdentifier=_selectedRecordIdentifier;
 @property(retain, nonatomic) AVTStickerPagingController *pagingController; // @synthesize pagingController=_pagingController;
 @property(retain, nonatomic) AVTSimpleAvatarPicker *avatarPicker; // @synthesize avatarPicker=_avatarPicker;
-@property(retain, nonatomic) AVTAvatarPickerDataSource *avatarDataSource; // @synthesize avatarDataSource=_avatarDataSource;
+@property(retain, nonatomic) AVTAvatarPickerDataSource *avatarPickerDataSource; // @synthesize avatarPickerDataSource=_avatarPickerDataSource;
 @property(readonly, nonatomic) _Bool allowPeel; // @synthesize allowPeel=_allowPeel;
+@property(readonly, nonatomic) _Bool allowEditing; // @synthesize allowEditing=_allowEditing;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) AVTAvatarRecordDataSource *recordDataSource; // @synthesize recordDataSource=_recordDataSource;
@@ -83,7 +86,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (_Bool)allowAvatarCreation;
-- (id)initWithStore:(id)arg1 selectedRecordIdentifier:(id)arg2 allowPeel:(_Bool)arg3 environment:(id)arg4;
+- (id)initWithStore:(id)arg1 selectedRecordIdentifier:(id)arg2 allowEditing:(_Bool)arg3 allowPeel:(_Bool)arg4 environment:(id)arg5;
 - (void)swipeLeftWithDelay:(long long)arg1 forCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)swipeRightWithDelay:(long long)arg1 forCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)editCurrentMemoji;

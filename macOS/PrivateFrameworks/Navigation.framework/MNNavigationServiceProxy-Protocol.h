@@ -6,10 +6,10 @@
 
 #import <Navigation/NSObject-Protocol.h>
 
-@class GEOComposedWaypoint, MNActiveRouteInfo, MNAudioOutputSetting, MNDirectionsRequestDetails, MNSettings, MNStartNavigationDetails, MNTrafficIncidentAlertDetails, NSArray, NSData, NSString, NSUUID;
+@class GEOComposedWaypoint, MNActiveRouteInfo, MNAudioOutputSetting, MNSettings, MNStartNavigationDetails, MNTrafficIncidentAlertDetails, NSArray, NSData, NSString, NSUUID;
 
 @protocol MNNavigationServiceProxy <NSObject>
-- (void)checkinForNavigationService;
+- (void)checkinForNavigationService:(void (^)(char *))arg1;
 - (void)resumeRealtimeUpdatesForSubscriber:(NSUUID *)arg1;
 - (void)pauseRealtimeUpdatesForSubscriber:(NSUUID *)arg1;
 - (void)updateGuidanceWithData:(NSData *)arg1 reply:(void (^)(BOOL))arg2;
@@ -42,7 +42,5 @@
 - (void)stopNavigation;
 - (void)startNavigationWithDetails:(MNStartNavigationDetails *)arg1 activeBlock:(void (^)(void))arg2;
 - (void)setRoutesForPreview:(NSArray *)arg1 selectedRouteIndex:(unsigned long long)arg2;
-- (void)cancelDirectionsRequestWithIdentifier:(NSUUID *)arg1;
-- (void)requestDirections:(MNDirectionsRequestDetails *)arg1 withIdentifier:(NSUUID *)arg2 handler:(void (^)(MNDirectionsResponseInfo *))arg3;
 @end
 

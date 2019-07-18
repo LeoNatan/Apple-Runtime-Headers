@@ -11,18 +11,18 @@
 #import <NanoTimeKitCompanion/REElementActionDelegate-Protocol.h>
 #import <NanoTimeKitCompanion/REUIElementIntentActionDelegate-Protocol.h>
 #import <NanoTimeKitCompanion/REUIRelevanceEngineControllerDelegate-Protocol.h>
-#import <NanoTimeKitCompanion/UICollectionViewDataSource-Protocol.h>
 #import <NanoTimeKitCompanion/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <NanoTimeKitCompanion/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSOrderedSet, NSSet, NSString, NSTimer, NTKDigitalTimeLabelStyle, NTKUpNextCollectionView, NTKUpNextCollectionViewFlowLayout, NTKUtilityComplicationFactory, REUIRelevanceEngineController, REUpNextScheduler, UIImage, UITapGestureRecognizer, UIView;
+@class NSArray, NSMutableArray, NSOrderedSet, NSSet, NSString, NSTimer, NTKDigitalTimeLabelStyle, NTKUpNextCollectionView, NTKUpNextCollectionViewFlowLayout, NTKUtilityComplicationFactory, REUIRelevanceEngineController, REUpNextScheduler, UIImage, UITapGestureRecognizer, UIView, _UICollectionViewDiffableDataSource;
 
-@interface NTKUpNextFaceView : NTKDigitalFaceView <REUIRelevanceEngineControllerDelegate, REElementActionDelegate, REUIElementIntentActionDelegate, NTKSensitiveUIStateObserver, CLKMonochromeFilterProvider, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate>
+@interface NTKUpNextFaceView : NTKDigitalFaceView <REUIRelevanceEngineControllerDelegate, REElementActionDelegate, REUIElementIntentActionDelegate, NTKSensitiveUIStateObserver, CLKMonochromeFilterProvider, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate>
 {
     NTKDigitalTimeLabelStyle *_timeLabelDefaultStyle;
     NTKDigitalTimeLabelStyle *_timeLabelSmallInUpperRightCornerStyle;
     NTKUtilityComplicationFactory *_utilityComplicationFactory;
     NTKUpNextCollectionView *_collectionView;
+    _UICollectionViewDiffableDataSource *_collectionViewDataSource;
     NTKUpNextCollectionViewFlowLayout *_layout;
     REUIRelevanceEngineController *_engineController;
     UITapGestureRecognizer *_viewModeTapGesture;
@@ -44,7 +44,7 @@
     _Bool _cancelInflightScroll;
     _Bool _isProgramaticScrollEvent;
     _Bool _crownInverted;
-    _Bool _suppressUpdates;
+    _Bool _suppressBatchUpdates;
     _Bool _suppressCrownEvents;
     _Bool _inBatchUpdate;
     _Bool _isBacklightOn;
@@ -66,6 +66,7 @@
 
 + (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
 + (id)_swatchColorForColorOption:(id)arg1 forDevice:(id)arg2;
++ (id)_reuseIdentifierForContent:(id)arg1;
 + (double)suggestedCellHeightForDevice:(id)arg1;
 - (void).cxx_destruct;
 - (void)_deviceOrientationInvertedDidChangeNotification:(id)arg1;
@@ -135,7 +136,8 @@
 - (void)collectionView:(id)arg1 didUnhighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didHighlightItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
-- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)_setupCell:(id)arg1 withContent:(id)arg2 representedIdentifier:(id)arg3;
+- (id)_contentAtIndexPath:(id)arg1;
 - (void)_postPositiveDwellEventsForTopElements;
 - (void)_stopPositiveDwellForTopElementsTimer;
 - (void)_startPositiveDwellForTopElementsTimerIfNeeded;
@@ -146,10 +148,14 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
-- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-- (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (long long)_numberOfItemsInCollectionViewSection:(long long)arg1;
+- (long long)_numberOfSectionsInCollectionView;
+- (void)_configureVisibleCell:(id)arg1;
+- (id)_configureSupplementaryViewForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (id)_configureCellForItemAtIndexPath:(id)arg1;
+- (void)_loadCollectionViewDataAnimated:(_Bool)arg1;
+- (void)_configureCollectionViewDataSource;
 - (_Bool)_dismissPresentedViewControllerIfNecessary:(_Bool)arg1;
 - (void)_stopViewResetTimer;
 - (void)_startViewResetTimer;

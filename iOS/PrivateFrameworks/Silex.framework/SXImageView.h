@@ -22,6 +22,7 @@
     _Bool _autoPlayEnabled;
     _Bool _shouldResume;
     _Bool _shouldResumeAfterLoad;
+    _Bool _paused;
     SXImageResource *_imageResource;
     id <SXImageViewDelegate> _delegate;
     SXAnimatedImage *_animatedImage;
@@ -46,6 +47,7 @@
     struct CGPoint _previousPoint;
 }
 
+@property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) struct CGPoint previousPoint; // @synthesize previousPoint=_previousPoint;
 @property(retain, nonatomic) UILongPressGestureRecognizer *scrubGesture; // @synthesize scrubGesture=_scrubGesture;
 @property(nonatomic) unsigned long long intendedFrameIndex; // @synthesize intendedFrameIndex=_intendedFrameIndex;
@@ -89,7 +91,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)resume;
 - (void)pause;
-@property(readonly, nonatomic) _Bool paused;
 - (void)setFrameIndex:(unsigned long long)arg1 allowNearest:(_Bool)arg2;
 - (void)showNextFrame;
 - (void)setAnimatedImage:(id)arg1;

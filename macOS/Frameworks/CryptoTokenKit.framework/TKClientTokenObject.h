@@ -10,6 +10,7 @@
 
 @interface TKClientTokenObject : NSObject
 {
+    id _accessControlRef;
     TKClientTokenSession *_session;
     NSData *_objectID;
     NSData *_accessControl;
@@ -25,6 +26,7 @@
 @property(readonly, nonatomic) NSData *objectID; // @synthesize objectID=_objectID;
 @property(readonly, nonatomic) TKClientTokenSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+- (BOOL)deleteWithError:(id *)arg1;
 - (BOOL)commitKeyWithError:(id *)arg1;
 - (BOOL)bumpKeyWithError:(id *)arg1;
 - (id)attestKey:(id)arg1 nonce:(id)arg2 error:(id *)arg3;
@@ -33,6 +35,7 @@
 - (id)sign:(id)arg1 algorithms:(id)arg2 parameters:(id)arg3 error:(id *)arg4;
 - (id)operationResult:(id)arg1 error:(id *)arg2;
 - (id)operation:(long long)arg1 data:(id)arg2 algorithms:(id)arg3 parameters:(id)arg4 error:(id *)arg5;
+@property(readonly, nonatomic) struct __SecAccessControl *accessControlRef;
 - (id)initWithSession:(id)arg1 objectID:(id)arg2 attributes:(id)arg3;
 
 @end

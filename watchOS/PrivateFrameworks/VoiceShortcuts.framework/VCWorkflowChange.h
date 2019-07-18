@@ -11,9 +11,9 @@
     unsigned int _syncHash;
 }
 
++ (unsigned int)syncHashForRecord:(id)arg1;
 + (Class)recordClass;
 + (int)messageType;
-- (id)record;
 @property(readonly, nonatomic) unsigned int syncHash; // @synthesize syncHash=_syncHash;
 
 @end

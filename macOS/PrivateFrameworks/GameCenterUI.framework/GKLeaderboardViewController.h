@@ -11,15 +11,17 @@
 
 @interface GKLeaderboardViewController : GKGameCenterViewController
 {
-    id <GKLeaderboardViewControllerDelegate> _leaderboardDelegate;
     NSString *_category;
     long long _timeScope;
+    id <GKLeaderboardViewControllerDelegate> _leaderboardDelegate;
 }
 
-@property id <GKLeaderboardViewControllerDelegate> leaderboardDelegate; // @synthesize leaderboardDelegate=_leaderboardDelegate;
+@property __weak id <GKLeaderboardViewControllerDelegate> leaderboardDelegate; // @synthesize leaderboardDelegate=_leaderboardDelegate;
+- (void).cxx_destruct;
 - (BOOL)remoteViewControllerRequestingDismiss:(id)arg1;
 @property long long timeScope; // @synthesize timeScope=_timeScope;
 @property(copy) NSString *category; // @synthesize category=_category;
+- (void)dealloc;
 - (id)init;
 
 @end

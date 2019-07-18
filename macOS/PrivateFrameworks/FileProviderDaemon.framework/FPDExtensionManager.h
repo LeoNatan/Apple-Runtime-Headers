@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (id)alternateContentsURLForItemID:(id)arg1;
 - (void)setAlternateContentsURL:(id)arg1 forItemID:(id)arg2;
 - (id)providerWithTopLevelBundleIdentifier:(id)arg1;
+- (id)domainForActionOperationLocator:(id)arg1;
 - (id)_domainForURL:(id)arg1;
 - (id)domainForURL:(id)arg1;
 - (id)domainFromItemID:(id)arg1;

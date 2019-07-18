@@ -185,6 +185,7 @@
 - (void)_reconfigureScrollingTiles;
 - (struct CGPoint)_contentOffsetForActualViewRange;
 - (void)_handleTilesInitialRender;
+- (_Bool)_tilesReconfigurableAfterInitialRender;
 - (_Bool)_tilesConfigurableAfterInitialRender;
 - (_Bool)_tilesAreEnabled;
 - (void)setAxesToShowSimultaneously:(id)arg1 stackOffset:(long long)arg2;

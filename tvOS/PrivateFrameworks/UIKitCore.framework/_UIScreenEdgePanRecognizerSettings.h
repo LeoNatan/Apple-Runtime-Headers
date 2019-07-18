@@ -8,6 +8,7 @@
 
 @class NSString, _UIScreenEdgePanRecognizerCornerSettings, _UIScreenEdgePanRecognizerDwellSettings, _UIScreenEdgePanRecognizerEdgeSettings;
 
+__attribute__((visibility("hidden")))
 @interface _UIScreenEdgePanRecognizerSettings : _UISettings
 {
     NSString *_multitaskingGestureMode;

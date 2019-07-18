@@ -11,7 +11,6 @@
 }
 
 + (id)alloc;
-+ (void)load;
 - (const void *)bytes;
 - (unsigned long long)length;
 - (void)dealloc;

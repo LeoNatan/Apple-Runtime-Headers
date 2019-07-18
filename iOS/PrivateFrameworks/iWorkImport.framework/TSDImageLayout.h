@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform mLayoutToImageTransform;
     struct CGAffineTransform mLayoutToMaskTransform;
     _Bool mMaskIntersectsImage;
+    struct CGSize mLastParentLimitedSize;
     unsigned long long mHasAlpha;
     TSDLayoutGeometry *mBaseImageLayoutGeometry;
     TSDInfoGeometry *mDynamicInfoGeometry;
@@ -53,7 +54,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSDImageInfo *imageInfo;
 - (struct CGRect)pathBoundsWithoutStroke;
 - (id)smartPathSource;
-- (void)p_calculateClampModelValuesAndPerformBlock:(CDUnknownBlockType)arg1;
+- (void)p_calculateClampModelValuesWithAdditionalTransform:(struct CGAffineTransform)arg1 andPerformBlock:(CDUnknownBlockType)arg2;
 - (void)transferLayoutGeometryToInfo:(id)arg1 withAdditionalTransform:(struct CGAffineTransform)arg2 assertIfInDocument:(_Bool)arg3;
 - (_Bool)isInvisible;
 - (_Bool)hasAlpha;
@@ -61,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (void)offsetGeometryBy:(struct CGPoint)arg1;
 - (struct CGRect)computeAlignmentFrameInRoot:(_Bool)arg1;
 - (void)updateChildrenFromInfo;
+- (double)scaleForInlineClampingUnrotatedSize:(struct CGSize)arg1 withTransform:(struct CGAffineTransform)arg2;
 - (id)computeLayoutGeometry;
 - (id)layoutGeometryFromInfo;
 @property(readonly, nonatomic) TSDInfoGeometry *currentInfoGeometry;

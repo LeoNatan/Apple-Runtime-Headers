@@ -11,6 +11,7 @@
 @class NSLayoutDimension, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSString;
 
 @interface UIView (AVAdditions) <AVKitLayoutItem>
+- (_Bool)avkit_hasFullScreenLayoutClass;
 - (void)avkit_makeSubtreeDisallowGroupBlending;
 - (_Bool)avkit_isDescendantOfNonPagingScrollView;
 - (_Bool)avkit_wantsAnimatedViewTransitions;

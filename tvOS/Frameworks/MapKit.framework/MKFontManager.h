@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) UIFont *sectionHeaderButtonFont;
 @property(readonly, nonatomic) UIFont *sectionHeaderFont;
 @property(readonly, nonatomic) UIFont *mediumBodyFont;
+@property(readonly, nonatomic) UIFont *mediumTitleFont;
 @property(readonly, nonatomic) UIFont *boldBodyFont;
 @property(readonly, nonatomic) UIFont *bodyFont;
 @property(readonly, nonatomic) UIFont *subtitleFont;

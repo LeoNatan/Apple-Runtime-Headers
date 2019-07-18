@@ -43,10 +43,10 @@
 - (id)makeCurrentValueView;
 - (id)descriptionForChartData:(id)arg1 timeScope:(long long)arg2;
 - (id)descriptionSeriesForGraphView:(id)arg1;
+- (id)lollipopExtensionColor;
 - (id)lollipopAnnotationColor;
 - (void)updateSelectionAnnotationDataSourceForContext:(id)arg1 displayType:(id)arg2 timeScope:(long long)arg3;
 - (id)makeAnnotationDataSource;
-- (_Bool)annotationViewUsesSeparators;
 - (void)configureDisplayTypes:(id)arg1 timeScope:(long long)arg2 stackOffset:(long long)arg3;
 - (void)didUpdateFromDateZoom:(long long)arg1 toDateZoom:(long long)arg2 newVisibleRange:(id)arg3;
 - (id)_generateActivityGoalLineSeriesWithColor:(id)arg1;
@@ -61,6 +61,7 @@
 - (id)_missedGoalFillStyleForActivityValue:(long long)arg1;
 - (id)_metGoalFillStyleForActivityValue:(long long)arg1;
 - (id)_lineColorForActivityValue:(long long)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithHealthStore:(id)arg1 unitPreferenceController:(id)arg2 dateCache:(id)arg3 chartDataCacheController:(id)arg4 selectedTimeScopeController:(id)arg5 wheelchairUseCharacteristicCache:(id)arg6 initialXValue:(id)arg7;
 
 // Remaining properties

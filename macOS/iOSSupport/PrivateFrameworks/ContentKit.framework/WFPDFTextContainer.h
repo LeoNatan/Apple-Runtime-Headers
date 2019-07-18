@@ -8,6 +8,7 @@
 
 @class NSMutableString, NSString;
 
+__attribute__((visibility("hidden")))
 @interface WFPDFTextContainer : NSObject
 {
     NSMutableString *_string;

@@ -28,12 +28,14 @@
     NSSet *_matchingCategories;
     NSSet *_matchingAlgorithms;
     NSSet *_excludingAlgorithms;
+    unsigned long long _consumer;
 }
 
 + (id)queryForMapsWithLimit:(unsigned long long)arg1 fromDate:(id)arg2 consumerType:(unsigned long long)arg3;
 + (id)_algorithmsDescription:(id)arg1;
 + (id)_matchingCategoriesDescription:(id)arg1;
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) unsigned long long consumer; // @synthesize consumer=_consumer;
 @property(nonatomic) BOOL excludingWithoutSentiment; // @synthesize excludingWithoutSentiment=_excludingWithoutSentiment;
 @property(retain, nonatomic) NSSet *excludingAlgorithms; // @synthesize excludingAlgorithms=_excludingAlgorithms;
 @property(retain, nonatomic) NSSet *matchingAlgorithms; // @synthesize matchingAlgorithms=_matchingAlgorithms;

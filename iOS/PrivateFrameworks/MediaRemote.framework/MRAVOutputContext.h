@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVOutputContext, MRAVOutputDeviceSourceInfo, NSArray, NSMutableArray, NSString;
+@class AVOutputContext, MRAVOutputDeviceSourceInfo, NSArray, NSString;
 @protocol OS_dispatch_queue;
 
 @interface MRAVOutputContext : NSObject
@@ -14,7 +14,6 @@
     NSArray *_outputDevices;
     NSArray *_outputDevicesSnapshot;
     MRAVOutputDeviceSourceInfo *_outputDeviceSourceInfo;
-    NSMutableArray *_pendingModifications;
     NSObject<OS_dispatch_queue> *_serialQueue;
     _Bool _isVolumeControlAvailable;
     _Bool _attemptingLogicalDeviceRecovery;
@@ -41,10 +40,6 @@
 - (void).cxx_destruct;
 - (void)_scheduleOutputContextDevicesDidChangeNotification;
 - (void)_scheduleOutputContextDeviceDidChangeNotification;
-- (_Bool)_contextSupportsMultipleDevices;
-- (void)_clearAnyCompletedModifications;
-- (void)_commitModification:(id)arg1;
-- (id)_pendingModifications;
 - (void)_reloadOutputDevicesForInitialLoad:(_Bool)arg1;
 - (void)_unregisterNotifications;
 - (void)_handleOutputDeviceSupportsVolumeDidChangeNotification:(id)arg1;
@@ -58,10 +53,14 @@
 @property(nonatomic) float volume;
 @property(readonly, nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable;
 @property(readonly, nonatomic) _Bool supportsVolumeControl;
-- (void)removeAllOutputDevicesWithCallbackQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)attemptLogicalDeviceRecovery;
+- (void)removeAllOutputDevicesWithCallbackQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void)removeOutputDevices:(id)arg1 initiator:(id)arg2 withCallbackQueue:(id)arg3 block:(CDUnknownBlockType)arg4;
 - (void)removeOutputDevices:(id)arg1 withCallbackQueue:(id)arg2 block:(CDUnknownBlockType)arg3;
+- (void)addOutputDevices:(id)arg1 initiator:(id)arg2 withCallbackQueue:(id)arg3 block:(CDUnknownBlockType)arg4;
 - (void)addOutputDevices:(id)arg1 withCallbackQueue:(id)arg2 block:(CDUnknownBlockType)arg3;
+- (void)setOutputDevices:(id)arg1 password:(id)arg2 initiator:(id)arg3 withCallbackQueue:(id)arg4 block:(CDUnknownBlockType)arg5;
+- (void)setOutputDevices:(id)arg1 initiator:(id)arg2 withCallbackQueue:(id)arg3 block:(CDUnknownBlockType)arg4;
 - (void)setOutputDevices:(id)arg1 withPassword:(id)arg2 callbackQueue:(id)arg3 block:(CDUnknownBlockType)arg4;
 - (void)setOutputDevices:(id)arg1 withCallbackQueue:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (id)localDevice;

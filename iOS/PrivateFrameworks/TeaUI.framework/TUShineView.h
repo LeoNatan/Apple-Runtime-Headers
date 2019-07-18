@@ -12,9 +12,8 @@
     // Error parsing type: , name: maskedCorners
     // Error parsing type: , name: identifier
     // Error parsing type: , name: context
-    // Error parsing type: , name: $__lazy_storage_$_imageView
+    // Error parsing type: , name: imageView
     // Error parsing type: , name: $__lazy_storage_$_shineMotionLayer
-    // Error parsing type: , name: $__lazy_storage_$_shineBlendLayer
     // Error parsing type: , name: shineImageRequest
     // Error parsing type: , name: shineOptions
 }

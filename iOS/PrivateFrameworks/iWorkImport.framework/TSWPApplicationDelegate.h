@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 - (id)stringForEquationChoiceUseEQKitButtonTitle;
 - (id)stringForEquationChoiceBody;
 - (id)stringForEquationChoiceTitle;
-- (_Bool)URLIsValidForImportedHyperlink:(id)arg1 targetDocumentRoot:(id)arg2;
+- (_Bool)URLIsValidForImportedHyperlink:(id)arg1 targetDocumentRoot:(id)arg2 forCrossDocumentPaste:(_Bool)arg3;
 - (id)invalidURLSchemes;
 
 @end

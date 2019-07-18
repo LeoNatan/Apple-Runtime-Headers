@@ -26,7 +26,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCumulativeWifiUploadMeasurement:(id)arg1 cumulativeWifiDownloadMeasurement:(id)arg2 cumulativeCellularUploadMeasurement:(id)arg3 cumulativeCellularDownloadMeasurement:(id)arg4;
-- (id)initWithCumulativeWifiUpload:(double)arg1 cumulativeWifiDownload:(double)arg2 cumulativeCellularUpload:(double)arg3 cumulativeCellularDownload:(double)arg4;
 
 @end
 

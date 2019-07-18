@@ -28,6 +28,7 @@
 - (id)_remoteInterfaceWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)_remoteInterface;
 - (void)setPasscodePolicy:(unsigned long long)arg1;
+- (void)downloadDidFinish;
 - (void)simulateComingFromOTAUpdate;
 - (void)reboot:(_Bool)arg1;
 - (void)toggleSettingsBadge:(_Bool)arg1;

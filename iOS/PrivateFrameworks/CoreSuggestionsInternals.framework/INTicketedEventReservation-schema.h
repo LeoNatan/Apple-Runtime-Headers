@@ -7,6 +7,8 @@
 #import <Intents/INTicketedEventReservation.h>
 
 @interface INTicketedEventReservation (schema)
++ (id)schemaFromMovieTicketedEventReservation:(id)arg1;
++ (id)schemaFromGenericTicketedEventReservation:(id)arg1;
 + (id)schemaFromTicketedEventReservation:(id)arg1;
 + (id)fromSchema:(id)arg1;
 - (id)schema;

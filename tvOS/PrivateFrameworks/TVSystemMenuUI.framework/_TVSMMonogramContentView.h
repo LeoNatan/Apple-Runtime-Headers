@@ -8,7 +8,7 @@
 
 #import <TVSystemMenuUI/TVLockupViewComponent-Protocol.h>
 
-@class NSPersonNameComponents, NSString, TVSUIOuterShadowView, UIImage, UIImageView, UILabel, _UIFloatingContentView;
+@class NSPersonNameComponents, NSString, TVSUIOuterShadowView, UIImage, UIImageView, UILabel, _TVSMHighContrastFocusView, _UIFloatingContentView;
 
 @interface _TVSMMonogramContentView : UIView <TVLockupViewComponent>
 {
@@ -19,11 +19,13 @@
     TVSUIOuterShadowView *_focusedShadowView;
     TVSUIOuterShadowView *_unfocusedShadowView;
     UILabel *_initialsLabel;
+    _TVSMHighContrastFocusView *_highContrastView;
     struct CGSize _imageSize;
 }
 
 + (void)_configureFloatingContentViewAppearance;
 @property(readonly, nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
+@property(readonly, nonatomic) _TVSMHighContrastFocusView *highContrastView; // @synthesize highContrastView=_highContrastView;
 @property(readonly, nonatomic) UILabel *initialsLabel; // @synthesize initialsLabel=_initialsLabel;
 @property(readonly, nonatomic) TVSUIOuterShadowView *unfocusedShadowView; // @synthesize unfocusedShadowView=_unfocusedShadowView;
 @property(readonly, nonatomic) TVSUIOuterShadowView *focusedShadowView; // @synthesize focusedShadowView=_focusedShadowView;

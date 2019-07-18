@@ -35,6 +35,15 @@
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *xpcObject;
 - (long long)avvcActivationMode:(long long)arg1;
 - (long long)recordTypeFromAVVCActivationMode:(long long)arg1;
+- (BOOL)isStarkTriggered;
+- (BOOL)isServerInvoked;
+- (BOOL)isJarvisVoiceTriggered;
+- (BOOL)isRTSTriggered;
+- (BOOL)isHearstDoubleTapTriggered;
+- (BOOL)isHearstVoiceTriggered;
+- (BOOL)isTriggeredFromHearst;
+- (BOOL)isBuiltInVoiceTriggered;
+- (BOOL)isVoiceTriggered;
 - (BOOL)isEqual:(id)arg1;
 - (id)_createAVVCContextWithType:(long long)arg1 deviceId:(id)arg2;
 - (id)avvcContext;

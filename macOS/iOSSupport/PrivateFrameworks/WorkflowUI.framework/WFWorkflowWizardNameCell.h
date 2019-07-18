@@ -8,7 +8,7 @@
 
 #import <WorkflowUI/UITextFieldDelegate-Protocol.h>
 
-@class NSArray, NSString, UITextField, WFWorkflowWizardNameCancelButton, WFWorkflowWizardNameIconButton, WFWorkflowWizardNameRecordButton;
+@class NSArray, NSString, UITextField, WFWorkflowWizardNameClearButton, WFWorkflowWizardNameIconButton, WFWorkflowWizardNameRecordButton;
 @protocol WFWorkflowWizardNameCellDelegate;
 
 @interface WFWorkflowWizardNameCell : UITableViewCell <UITextFieldDelegate>
@@ -19,7 +19,7 @@
     id <WFWorkflowWizardNameCellDelegate> _delegate;
     WFWorkflowWizardNameIconButton *_iconButton;
     WFWorkflowWizardNameRecordButton *_recordButton;
-    WFWorkflowWizardNameCancelButton *_cancelButton;
+    WFWorkflowWizardNameClearButton *_clearButton;
     UITextField *_shortcutNameTextField;
     NSArray *_horizontalConstraintsWithInset;
     NSArray *_horizontalConstraintsWithoutInset;
@@ -29,7 +29,7 @@
 @property(retain, nonatomic) NSArray *horizontalConstraintsWithoutInset; // @synthesize horizontalConstraintsWithoutInset=_horizontalConstraintsWithoutInset;
 @property(retain, nonatomic) NSArray *horizontalConstraintsWithInset; // @synthesize horizontalConstraintsWithInset=_horizontalConstraintsWithInset;
 @property(retain, nonatomic) UITextField *shortcutNameTextField; // @synthesize shortcutNameTextField=_shortcutNameTextField;
-@property(retain, nonatomic) WFWorkflowWizardNameCancelButton *cancelButton; // @synthesize cancelButton=_cancelButton;
+@property(retain, nonatomic) WFWorkflowWizardNameClearButton *clearButton; // @synthesize clearButton=_clearButton;
 @property(retain, nonatomic) WFWorkflowWizardNameRecordButton *recordButton; // @synthesize recordButton=_recordButton;
 @property(retain, nonatomic) WFWorkflowWizardNameIconButton *iconButton; // @synthesize iconButton=_iconButton;
 @property(nonatomic) BOOL useHorizontalInset; // @synthesize useHorizontalInset=_useHorizontalInset;
@@ -37,23 +37,22 @@
 @property(nonatomic) BOOL showsHeySiri; // @synthesize showsHeySiri=_showsHeySiri;
 @property(nonatomic) __weak id <WFWorkflowWizardNameCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)didTapCancelButton;
+- (void)didTapClearButton;
 - (void)didTapRecordButton;
 - (void)didTapIconButton;
-- (void)updateRecordButtonVisibility;
 - (void)updateViewForHorizontalConstraints;
 - (void)updateViewForDoneButton;
 - (void)updateButtonVisibility;
 - (void)textFieldDidChange;
-- (BOOL)shouldShowCancelButton;
-- (BOOL)shouldShowHeySiri;
+- (BOOL)shortcutNameIsEmpty;
 - (void)textFieldDidEndEditing:(id)arg1 reason:(long long)arg2;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
+- (void)configureWithName:(id)arg1 showsHeySiri:(BOOL)arg2 useHorizontalInset:(BOOL)arg3 icon:(id)arg4 customImageData:(id)arg5;
 - (void)configureWithName:(id)arg1 showsHeySiri:(BOOL)arg2 useHorizontalInset:(BOOL)arg3 icon:(id)arg4;
 - (void)configureWithName:(id)arg1 showsHeySiri:(BOOL)arg2 icon:(id)arg3;
-- (void)configureIcon:(id)arg1;
+- (void)setIcon:(id)arg1 customImageData:(id)arg2;
 - (void)setUseHorizontalContraints:(BOOL)arg1;
 - (void)setName:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *name;

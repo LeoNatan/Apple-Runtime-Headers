@@ -13,7 +13,6 @@
 + (id)uniqueIdentifierForREMObject:(id)arg1;
 + (BOOL)canCommitSelf;
 + (Class)meltedClass;
-- (id)mapKitHandle;
 - (id)routeType;
 - (id)abURLString;
 - (id)address;
@@ -23,6 +22,7 @@
 - (double)longitude;
 - (double)latitude;
 - (id)geoURLString;
+- (id)mapKitHandle;
 - (id)updateParentToCommitSelf:(id)arg1;
 - (id)title;
 - (id)uuid;

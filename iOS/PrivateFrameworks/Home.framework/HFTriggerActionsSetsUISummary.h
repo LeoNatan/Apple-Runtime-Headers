@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface HFTriggerActionsSetsUISummary : NSObject
 {
+    _Bool _needsIconSort;
     NSString *_uniqueServiceGroupName;
     unsigned long long _numberOfScenes;
     unsigned long long _numberOfStandaloneServices;
@@ -19,12 +20,15 @@
     NSString *_firstServiceName;
     NSString *_mediaAccessoryName;
     NSMutableArray *_icons;
+    NSMutableDictionary *_iconCounter;
     NSString *_summaryDescription;
     NSArray *_summaryIconNames;
 }
 
+@property(nonatomic) _Bool needsIconSort; // @synthesize needsIconSort=_needsIconSort;
 @property(readonly, nonatomic) NSArray *summaryIconNames; // @synthesize summaryIconNames=_summaryIconNames;
 @property(readonly, nonatomic) NSString *summaryDescription; // @synthesize summaryDescription=_summaryDescription;
+@property(retain, nonatomic) NSMutableDictionary *iconCounter; // @synthesize iconCounter=_iconCounter;
 @property(retain, nonatomic) NSMutableArray *icons; // @synthesize icons=_icons;
 @property(retain, nonatomic) NSString *mediaAccessoryName; // @synthesize mediaAccessoryName=_mediaAccessoryName;
 @property(retain, nonatomic) NSString *firstServiceName; // @synthesize firstServiceName=_firstServiceName;
@@ -36,6 +40,8 @@
 @property(retain, nonatomic) NSString *uniqueServiceGroupName; // @synthesize uniqueServiceGroupName=_uniqueServiceGroupName;
 - (void).cxx_destruct;
 - (void)addMediaAccessoryNamed:(id)arg1;
+- (void)_sortIconNames;
+- (void)_incrementiconCounter:(id)arg1;
 - (void)addIconNamed:(id)arg1;
 - (void)addServiceNamed:(id)arg1;
 - (void)addSceneNamed:(id)arg1;

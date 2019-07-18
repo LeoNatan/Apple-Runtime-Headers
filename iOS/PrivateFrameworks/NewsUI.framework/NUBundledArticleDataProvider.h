@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <NewsUI/NUArticleDataProvider-Protocol.h>
+#import <NewsUI/NUFontRegistrator-Protocol.h>
 #import <NewsUI/SXEmbedDataProvider-Protocol.h>
 #import <NewsUI/SXResourceDataSource-Protocol.h>
 
 @class FCArticle, NSString;
 
-@interface NUBundledArticleDataProvider : NSObject <SXResourceDataSource, SXEmbedDataProvider, NUArticleDataProvider>
+@interface NUBundledArticleDataProvider : NSObject <SXResourceDataSource, SXEmbedDataProvider, NUFontRegistrator, NUArticleDataProvider>
 {
     FCArticle *_article;
 }
@@ -24,10 +25,12 @@
 - (id)translateURL:(id)arg1;
 - (void)fileURLForURL:(id)arg1 onCompletion:(CDUnknownBlockType)arg2 onError:(CDUnknownBlockType)arg3;
 - (CDUnknownBlockType)loadImagesForImageRequest:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)registerFontsWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) NSString *articleID;
+- (void)cancelAssetPrefetch;
+- (void)prefetchAssets;
 - (void)loadContextWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)performBlockForFontsInBundle:(CDUnknownBlockType)arg1;
-- (void)load;
 - (id)initWithArticle:(id)arg1;
 
 // Remaining properties

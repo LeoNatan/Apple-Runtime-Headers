@@ -37,6 +37,7 @@
     struct CGSize _lastLayoutBoundsSize;
 }
 
++ (id)_defaultTextColor;
 @property(nonatomic) float labelScaleFactor; // @synthesize labelScaleFactor=_labelScaleFactor;
 @property(nonatomic) struct CGSize lastLayoutBoundsSize; // @synthesize lastLayoutBoundsSize=_lastLayoutBoundsSize;
 @property(nonatomic) _Bool isFirstKeyboardInput; // @synthesize isFirstKeyboardInput=_isFirstKeyboardInput;

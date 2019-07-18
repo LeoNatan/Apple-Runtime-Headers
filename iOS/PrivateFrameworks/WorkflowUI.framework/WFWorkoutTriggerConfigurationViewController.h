@@ -10,22 +10,16 @@
 #import <WorkflowUI/UITableViewDelegate-Protocol.h>
 #import <WorkflowUI/WFTriggerTableViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSMutableOrderedSet, NSString, UITableView;
+@class NSArray, NSString, UITableView;
 
 @interface WFWorkoutTriggerConfigurationViewController : WFTriggerConfigurationViewController <UITableViewDataSource, UITableViewDelegate, WFTriggerTableViewControllerDelegate>
 {
-    NSMutableOrderedSet *_selectedWorkoutTypesNames;
-    NSArray *_workoutTypes;
-    NSMutableOrderedSet *_workoutTypesNames;
     UITableView *_tableView;
     NSArray *_sections;
 }
 
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-@property(retain, nonatomic) NSMutableOrderedSet *workoutTypesNames; // @synthesize workoutTypesNames=_workoutTypesNames;
-@property(retain, nonatomic) NSArray *workoutTypes; // @synthesize workoutTypes=_workoutTypes;
-@property(retain, nonatomic) NSMutableOrderedSet *selectedWorkoutTypesNames; // @synthesize selectedWorkoutTypesNames=_selectedWorkoutTypesNames;
 - (void).cxx_destruct;
 - (void)triggerTableViewControllerDidCancel:(id)arg1;
 - (void)triggerTableViewController:(id)arg1 didSelectOptions:(id)arg2;

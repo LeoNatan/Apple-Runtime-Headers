@@ -15,6 +15,7 @@
 @interface TSSIMSetupPublicApiInstallFlow : TSSIMSetupFlow <TSSIMSetupFlowDelegate, TSCellularPlanManagerCacheDelegate>
 {
     _Bool _requireSetup;
+    _Bool _skipGeneralInstallConsent;
     NSError *_planInstallError;
     NSMutableArray *_danglingPlanItems;
     NSString *_carrierName;
@@ -38,7 +39,7 @@
 - (void)firstViewController:(CDUnknownBlockType)arg1;
 - (id)firstViewController;
 - (void)dealloc;
-- (id)initWithAppName:(id)arg1 requireSetup:(_Bool)arg2;
+- (id)initWithAppName:(id)arg1 requireSetup:(_Bool)arg2 skipGeneralInstallConsent:(_Bool)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

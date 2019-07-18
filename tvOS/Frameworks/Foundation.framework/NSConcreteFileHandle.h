@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 @interface NSConcreteFileHandle : NSFileHandle
 {
     struct os_unfair_lock_s _lock;
-    struct __CFRunLoopSource *_source;
     // Error parsing type: Ai, name: _error
     // Error parsing type: Ai, name: _resultSocket
     NSObject<OS_dispatch_source> *_dsrc;

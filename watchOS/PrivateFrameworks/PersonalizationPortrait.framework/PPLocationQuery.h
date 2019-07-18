@@ -13,7 +13,6 @@
 
 @interface PPLocationQuery : NSObject <NSCopying, NSSecureCoding>
 {
-    _Bool _overrideDecayRate;
     _Bool _excludingWithoutSentiment;
     unsigned int _limit;
     NSDate *_fromDate;
@@ -27,6 +26,8 @@
     NSSet *_matchingCategories;
     NSSet *_matchingAlgorithms;
     NSSet *_excludingAlgorithms;
+    unsigned int _consumer;
+    double _perRecordDecayRate;
     double _decayRate;
 }
 
@@ -34,6 +35,7 @@
 + (id)_algorithmsDescription:(id)arg1;
 + (id)_matchingCategoriesDescription:(id)arg1;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned int consumer; // @synthesize consumer=_consumer;
 @property(nonatomic) _Bool excludingWithoutSentiment; // @synthesize excludingWithoutSentiment=_excludingWithoutSentiment;
 @property(retain, nonatomic) NSSet *excludingAlgorithms; // @synthesize excludingAlgorithms=_excludingAlgorithms;
 @property(retain, nonatomic) NSSet *matchingAlgorithms; // @synthesize matchingAlgorithms=_matchingAlgorithms;
@@ -41,7 +43,7 @@
 @property(retain, nonatomic) NSSet *fuzzyMatchingFields; // @synthesize fuzzyMatchingFields=_fuzzyMatchingFields;
 @property(retain, nonatomic) NSString *fuzzyMatchingString; // @synthesize fuzzyMatchingString=_fuzzyMatchingString;
 @property(nonatomic) double decayRate; // @synthesize decayRate=_decayRate;
-@property(nonatomic) _Bool overrideDecayRate; // @synthesize overrideDecayRate=_overrideDecayRate;
+@property(nonatomic) double perRecordDecayRate; // @synthesize perRecordDecayRate=_perRecordDecayRate;
 @property(nonatomic) unsigned int deviceFilter; // @synthesize deviceFilter=_deviceFilter;
 @property(retain, nonatomic) NSSet *excludingSourceBundleIds; // @synthesize excludingSourceBundleIds=_excludingSourceBundleIds;
 @property(retain, nonatomic) NSSet *matchingSourceBundleIds; // @synthesize matchingSourceBundleIds=_matchingSourceBundleIds;

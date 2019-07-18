@@ -12,15 +12,15 @@
 @interface STKAlertSessionEventQueue : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
-    int _inCallAlertVisibleNotifyToken;
-    NSMutableArray *_eventQueue;
+    NSMutableArray *_queue_haltingAssertions;
+    NSMutableArray *_queue_eventQueue;
 }
 
 - (void).cxx_destruct;
+- (void)_queue_dequeueEventsIfPossible;
 - (void)_queue_enqueueEvent:(CDUnknownBlockType)arg1;
-- (void)_queue_dequeueEventsIfPossible:(_Bool)arg1;
-- (void)dequeueIfPossible:(_Bool)arg1;
 - (void)enqueue:(CDUnknownBlockType)arg1;
+- (id)acquireEventQueueHaltingAssertionForReason:(id)arg1;
 - (id)init;
 
 @end

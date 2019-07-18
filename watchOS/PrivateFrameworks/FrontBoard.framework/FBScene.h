@@ -60,9 +60,6 @@
 - (void)clientWillInvalidate:(id)arg1;
 - (void)client:(id)arg1 didReceiveActions:(id)arg2;
 - (void)client:(id)arg1 didUpdateClientSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4;
-- (void)client:(id)arg1 detachLayer:(id)arg2;
-- (void)client:(id)arg1 updateLayer:(id)arg2;
-- (void)client:(id)arg1 attachLayer:(id)arg2;
 @property(readonly, copy, nonatomic) FBSSceneSpecification *specification;
 - (void)_removeSceneGeometryObserver:(id)arg1;
 - (void)_addSceneGeometryObserver:(id)arg1;

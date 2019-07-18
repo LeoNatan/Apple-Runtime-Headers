@@ -149,6 +149,7 @@
 - (void)_setProtocolVersionForRemoteOSVersion:(id)arg1 build:(id)arg2 remoteIsWatch:(_Bool)arg3 switchingEngines:(_Bool)arg4;
 - (void)_setupPairingNotifications;
 - (void)dealloc;
+- (id)initWithService:(id)arg1 priority:(int)arg2 qos:(unsigned int)arg3 asMasterStore:(_Bool)arg4 options:(struct NSDictionary *)arg5;
 - (id)initWithService:(id)arg1 priority:(int)arg2 asMasterStore:(_Bool)arg3 options:(struct NSDictionary *)arg4;
 - (id)init;
 - (id)dataStreamWithMetadata:(id)arg1 options:(struct NSDictionary *)arg2 identifier:(id *)arg3 error:(id *)arg4;

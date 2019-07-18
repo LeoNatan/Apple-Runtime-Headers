@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 + (id)buildsForChunks:(id)arg1;
 + (id)chunksInBuilds:(id)arg1;
 + (_Bool)animationInfo:(id)arg1 onInfo:(id)arg2 canRunSimultaneouslyWithAnimationInfo:(id)arg3 onInfo:(id)arg4;
++ (long long)sharedAnimationTypeForBuilds:(id)arg1;
 + (long long)sharedAnimationTypeForBuildChunks:(id)arg1;
 
 @end

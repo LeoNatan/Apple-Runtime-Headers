@@ -39,6 +39,7 @@
 - (void)animateRingWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setWorkout:(id)arg1 fillRing:(_Bool)arg2;
 - (void)setWorkoutWithoutFillingRing:(id)arg1;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 ringsViewRenderer:(id)arg3;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

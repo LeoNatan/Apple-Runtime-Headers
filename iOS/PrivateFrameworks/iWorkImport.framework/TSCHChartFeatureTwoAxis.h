@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (id)defaultDataFileName;
 - (Class)presetImagerClass;
 - (unsigned long long)styleIndexForAxisID:(id)arg1;
-- (Class)valueAxisClassForID:(id)arg1 scale:(int)arg2;
+- (Class)valueAxisClassForID:(id)arg1 scale:(long long)arg2;
 - (void)p_initializeAxisIDs;
 
 @end

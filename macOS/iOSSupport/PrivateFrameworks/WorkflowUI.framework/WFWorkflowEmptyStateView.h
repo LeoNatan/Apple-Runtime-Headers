@@ -16,18 +16,12 @@
     id <WFWorkflowEmptyStateViewDelegate> _delegate;
     UILabel *_instructionLabel;
     UIButton *_tourButton;
-    UIButton *_faqButton;
     UIButton *_addButton;
     NSLayoutConstraint *_addButtonHeightConstraint;
-    NSLayoutConstraint *_faqToAddButtonConstraint;
-    NSLayoutConstraint *_faqToInstructionLabelConstraint;
 }
 
-@property(readonly, nonatomic) NSLayoutConstraint *faqToInstructionLabelConstraint; // @synthesize faqToInstructionLabelConstraint=_faqToInstructionLabelConstraint;
-@property(readonly, nonatomic) NSLayoutConstraint *faqToAddButtonConstraint; // @synthesize faqToAddButtonConstraint=_faqToAddButtonConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *addButtonHeightConstraint; // @synthesize addButtonHeightConstraint=_addButtonHeightConstraint;
 @property(readonly, nonatomic) UIButton *addButton; // @synthesize addButton=_addButton;
-@property(readonly, nonatomic) UIButton *faqButton; // @synthesize faqButton=_faqButton;
 @property(readonly, nonatomic) UIButton *tourButton; // @synthesize tourButton=_tourButton;
 @property(readonly, nonatomic) UILabel *instructionLabel; // @synthesize instructionLabel=_instructionLabel;
 @property(nonatomic) __weak id <WFWorkflowEmptyStateViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -36,8 +30,9 @@
 @property(copy, nonatomic) NSAttributedString *instructionText;
 @property(readonly, nonatomic) WFWorkflowSettingsLayoutMetrics *layoutMetrics; // @synthesize layoutMetrics=_layoutMetrics;
 - (void)showDrawer;
-- (void)showHelp;
 - (void)showTutorial;
+- (void)updateColors;
+- (void)tintColorDidChange;
 - (void)adoptTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateFontSizes;

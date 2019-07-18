@@ -7,8 +7,9 @@
 #import <Contacts/CNMultiValueUpdate-Protocol.h>
 
 @class CNMultiValuePropertyDescription;
+@protocol CNContactsLogger;
 
 @protocol CNMultiValueUpdate_iOSAB <CNMultiValueUpdate>
-- (_Bool)applyToABPerson:(void *)arg1 abmultivalue:(void *)arg2 propertyDescription:(CNMultiValuePropertyDescription *)arg3 error:(id *)arg4;
+- (_Bool)applyToABPerson:(void *)arg1 abmultivalue:(void *)arg2 propertyDescription:(CNMultiValuePropertyDescription *)arg3 logger:(id <CNContactsLogger>)arg4 error:(id *)arg5;
 @end
 

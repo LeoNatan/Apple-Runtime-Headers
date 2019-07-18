@@ -28,11 +28,13 @@
     double _customHeaderHeight;
     unsigned long long _columnsCount;
     double _singleSlottedCellMargin;
+    struct CGPoint _gridLineOffset;
     struct UIEdgeInsets _gridPadding;
     struct UIEdgeInsets _gridLinePadding;
 }
 
 @property(nonatomic) _Bool fillGridWithLines; // @synthesize fillGridWithLines=_fillGridWithLines;
+@property(nonatomic) struct CGPoint gridLineOffset; // @synthesize gridLineOffset=_gridLineOffset;
 @property(nonatomic) struct UIEdgeInsets gridLinePadding; // @synthesize gridLinePadding=_gridLinePadding;
 @property(nonatomic) struct UIEdgeInsets gridPadding; // @synthesize gridPadding=_gridPadding;
 @property(nonatomic) double singleSlottedCellMargin; // @synthesize singleSlottedCellMargin=_singleSlottedCellMargin;

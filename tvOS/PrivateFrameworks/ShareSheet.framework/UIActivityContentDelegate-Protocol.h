@@ -6,7 +6,7 @@
 
 #import <ShareSheet/NSObject-Protocol.h>
 
-@class NSArray, NSNumber, NSURL;
+@class NSArray, NSNumber, NSURL, NSUUID;
 
 @protocol UIActivityContentDelegate <NSObject>
 - (NSURL *)fallbackURLForLinkPresentation;
@@ -14,7 +14,7 @@
 - (void)showScreenTimeRestrictedAlert;
 - (void)selectedActionAtIndex:(unsigned long long)arg1;
 - (void)selectedAppAtIndex:(unsigned long long)arg1;
-- (void)selectedPersonAtIndex:(unsigned long long)arg1;
+- (void)selectedPersonWithIdentifier:(NSUUID *)arg1;
 - (void)nextButtonTappedWithPeopleProxies:(NSArray *)arg1 shareProxies:(NSArray *)arg2 actionProxies:(NSArray *)arg3 nearbyCountSlotID:(NSNumber *)arg4;
 - (void)optionsButtonTapped;
 - (void)closeButtonTapped;

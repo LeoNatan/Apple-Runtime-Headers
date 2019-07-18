@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface _TtC7SwiftUI23PlatformViewCoordinator : NSObject
 {
     // Error parsing type: , name: host

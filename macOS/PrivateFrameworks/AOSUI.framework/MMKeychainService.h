@@ -155,6 +155,7 @@
 - (void)showMoreInfo:(id)arg1;
 - (void)_completeEnable:(id)arg1 registerCredentials:(BOOL)arg2 usingPassword:(id)arg3 andPET:(id)arg4;
 - (void)handleEnable:(id)arg1 creating:(BOOL)arg2;
+- (void)_beginManateeUpgradeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
 - (id)icon;
 - (void)dealloc;

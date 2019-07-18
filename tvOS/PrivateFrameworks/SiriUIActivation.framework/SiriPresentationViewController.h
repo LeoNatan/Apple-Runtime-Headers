@@ -10,12 +10,13 @@
 #import <SiriUIActivation/AFUISiriSetupViewControllerDelegate-Protocol.h>
 #import <SiriUIActivation/AFUISiriViewControllerDataSource-Protocol.h>
 #import <SiriUIActivation/AFUISiriViewControllerDelegate-Protocol.h>
+#import <SiriUIActivation/SASStateChangeListener-Protocol.h>
 #import <SiriUIActivation/SiriPresentation-Protocol.h>
 
 @class AFConnection, AFQueue, AFRequestCompletionOptions, AFUISiriLanguage, AFUISiriSetupViewController, AFUISiriViewController, AFWatchdogTimer, BSServiceConnection, NSArray, NSDate, NSMutableDictionary, NSObject, NSString, NSTimer, UIScreen;
 @protocol OS_dispatch_queue, SiriPresentationControllerDelegate, SiriPresentationIntentUsageDelegate;
 
-@interface SiriPresentationViewController : UIViewController <AFUISiriViewControllerDelegate, AFUISiriViewControllerDataSource, AFUISiriSetupViewControllerDelegate, AFUISiriLanguageDelegate, SiriPresentation>
+@interface SiriPresentationViewController : UIViewController <SASStateChangeListener, AFUISiriLanguageDelegate, AFUISiriViewControllerDelegate, AFUISiriViewControllerDataSource, AFUISiriSetupViewControllerDelegate, SiriPresentation>
 {
     long long _identifier;
     _Bool _delaySessionEndForTTS;
@@ -26,6 +27,7 @@
     _Bool _inPreparingForActivation;
     _Bool _activationHandled;
     _Bool _preheated;
+    _Bool _isIdleAndQuiet;
     CDUnknownBlockType _buttonTrigger;
     _Bool _receivedIncomingPhoneCall;
     NSObject<OS_dispatch_queue> *_watchdogQueue;
@@ -85,20 +87,25 @@
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) id <SiriPresentationControllerDelegate> siriPresentationControllerDelegate; // @synthesize siriPresentationControllerDelegate;
 - (void).cxx_destruct;
+- (unsigned long long)supportedInterfaceOrientations;
+- (_Bool)shouldAutorotate;
 - (void)viewWillLayoutSubviews;
 - (void)_updateLanguageCode;
 - (void)siriLanguageSpokenLanguageCodeDidChange:(id)arg1;
-- (_Bool)stopActivationWatchdogTimerIfNeeded;
+- (void)_watchdogQueue_stopActivationWatchdogTimerIfNeededThen:(CDUnknownBlockType)arg1 onQueue:(id)arg2;
+- (void)stopActivationWatchdogTimerIfNeededThen:(CDUnknownBlockType)arg1 onQueue:(id)arg2;
+- (void)_watchdogQueue_startActivationWatchdogTimer;
 - (void)startActivationWatchdogTimer;
 - (void)siriSetupViewControllerDidChangeVisibility:(id)arg1;
 - (void)openSiriRequestedBySiriSetupViewController:(id)arg1;
 - (void)disableSiriActivationRequestedBySiriSetupViewController:(id)arg1;
 - (_Bool)siriSetupViewController:(id)arg1 openURL:(id)arg2;
 - (void)dismissSiriSetupViewController:(id)arg1;
+- (void)_removeSetupViewControllerIfNecessary;
 - (void)_setupSiriViewControllerPresentedSuccessHandler;
 - (void)_showSetupViewControllerIfNecessary;
 - (void)_updatePredictedRecordRouteIsZLL;
-- (void)isEnabledChanged:(_Bool)arg1;
+- (void)callStateChangedToIsActive:(_Bool)arg1 isOutgoing:(_Bool)arg2;
 - (_Bool)presentationHostedInSpringBoard;
 - (void)_ttsQueueDidEmpty:(id)arg1;
 - (void)_endDelayingSessionEndForTTS;
@@ -148,6 +155,8 @@
 - (void)_scheduleConnectionHouseKeepingAfterDelay:(double)arg1;
 - (id)_currentConnection;
 - (_Bool)siriViewControllerConfigured;
+- (void)siriSessionShouldEndExtendAudioSessionForImminentPhoneCall;
+- (void)siriSessionShouldExtendAudioSessionForImminentPhoneCall;
 - (void)bulletinManagerDidChangeBulletins;
 - (_Bool)_buttonIdentifierIsHoldToTalkTrigger:(long long)arg1;
 - (void)_cancelPendingActivationWithReason:(unsigned long long)arg1;
@@ -170,6 +179,7 @@
 - (void)_updateActivePresentationPropertiesForPresentationIdentifier:(id)arg1;
 - (id)_uiPresentationIdentifier;
 - (void)activateWithSource:(long long)arg1 requestOptions:(id)arg2;
+- (void)_setSiriViewModeForRequestOptions:(id)arg1;
 - (void)activateWithSource:(long long)arg1;
 - (void)activateWithRequestOptions:(id)arg1;
 - (oneway void)handleRequestWithOptions:(id)arg1;
@@ -179,6 +189,7 @@
 - (void)_updateHostedPresentationFrame;
 - (void)_presentationRequestedWithPresentationOptions:(id)arg1 requestOptions:(id)arg2;
 - (oneway void)presentationRequestedWithPresentationOptions:(id)arg1 requestOptions:(id)arg2;
+- (_Bool)presentationisIdleAndQuiet;
 - (void)animatedDisappearanceWithFactory:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)animatedAppearanceWithFactory:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)isEnabled;

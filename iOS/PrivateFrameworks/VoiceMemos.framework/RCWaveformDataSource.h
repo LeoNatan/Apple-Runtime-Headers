@@ -57,6 +57,7 @@
 @property(readonly, nonatomic) _Bool finished;
 - (_Bool)setPaused:(_Bool)arg1;
 - (_Bool)waitUntilFinished;
+- (void)cancelLoading;
 - (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)beginLoading;
 - (void)startLoading;

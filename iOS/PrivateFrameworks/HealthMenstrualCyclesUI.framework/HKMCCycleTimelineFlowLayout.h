@@ -13,6 +13,8 @@
     double _yOffset;
     NSArray *_pillConfigurations;
     HKMCCycleTimelinePillConfiguration *_introPillConfiguration;
+    double _pillAspectRatio;
+    double _centerPillHeight;
     struct CGSize _cellSize;
     double _totalZoomWidth;
     NSIndexPath *_centerIndexPath;
@@ -35,7 +37,8 @@
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1 withScrollingVelocity:(struct CGPoint)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
-- (id)initWithYOffset:(double)arg1 pillConfigurations:(id)arg2 introPillConfiguration:(id)arg3;
+@property(readonly, nonatomic) double configuredWidth;
+- (id)initWithYOffset:(double)arg1 pillConfigurations:(id)arg2 introPillConfiguration:(id)arg3 pillAspectRatio:(double)arg4;
 
 @end
 

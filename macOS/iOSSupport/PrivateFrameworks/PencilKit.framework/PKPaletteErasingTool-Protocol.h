@@ -8,6 +8,5 @@
 
 @protocol PKPaletteErasingTool <NSObject>
 @property(nonatomic, getter=isBitmapEraser) BOOL bitmapEraser;
-- (void)toggleErasingBehavior;
 @end
 

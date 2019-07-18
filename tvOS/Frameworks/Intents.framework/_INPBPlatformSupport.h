@@ -17,11 +17,13 @@
     struct {
         unsigned int supportedPlatform:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     int _supportedPlatform;
     NSString *_minimumOsVersion;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int supportedPlatform; // @synthesize supportedPlatform=_supportedPlatform;
 @property(copy, nonatomic) NSString *minimumOsVersion; // @synthesize minimumOsVersion=_minimumOsVersion;
 - (void).cxx_destruct;

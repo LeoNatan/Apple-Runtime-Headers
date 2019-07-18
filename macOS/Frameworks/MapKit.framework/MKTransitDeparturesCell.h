@@ -8,7 +8,7 @@
 
 #import <MapKit/MKMultiLineLabelContainer-Protocol.h>
 
-@class MKImageView, MKThemeMultiPartLabel, NSArray, NSButton, NSDate, NSLayoutConstraint, NSMutableDictionary, NSStackView, NSString, NSTimeZone, _MKUILabel;
+@class MKImageView, MKThemeMultiPartLabel, NSArray, NSButton, NSDate, NSLayoutConstraint, NSMapTable, NSMutableDictionary, NSStackView, NSString, NSTimeZone, _MKUILabel;
 @protocol MKTransitDeparturesCellDelegate;
 
 @interface MKTransitDeparturesCell : MKCustomSeparatorTableViewCell <MKMultiLineLabelContainer>
@@ -29,7 +29,7 @@
     NSLayoutConstraint *_labelLeadingMarginConstraint;
     BOOL _enforceMinimumDepartureLabelWidth;
     NSLayoutConstraint *_minimumDepartureLabelWidthConstraint;
-    NSArray *_departureDependentConstraints;
+    NSMapTable *_departureDependentConstraintsByView;
     double _lineImageCenteringValue;
     NSLayoutConstraint *_lineImageToContainerTrailingConstraint;
     NSLayoutConstraint *_lineImageViewTopConstraint;
@@ -102,6 +102,9 @@
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)_updateLabelFonts;
 - (void)infoCardThemeChanged;
+- (void)_updateDepartureDependentConstraintsForCurrentState;
+- (void)_getDepartureDependentConstraintsToActivate:(id *)arg1 toDeactivate:(id *)arg2;
+- (BOOL)_isDisplayingDepartureInfo;
 - (BOOL)_shouldEnforceMinimumDepartureLabelWidth;
 - (BOOL)_shouldEnforceDepartureDependentConstraints;
 - (void)_updateLineImageViewConstraintConstants;

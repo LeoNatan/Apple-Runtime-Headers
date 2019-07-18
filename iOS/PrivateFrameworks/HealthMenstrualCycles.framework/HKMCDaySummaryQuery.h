@@ -30,7 +30,7 @@
 - (void)queue_validate;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_populateConfiguration:(id)arg1;
-- (void)client_deliverDaySummaries:(id)arg1 clearPending:(_Bool)arg2 isFinalBatch:(_Bool)arg3 queryUUID:(id)arg4;
+- (void)client_deliverDaySummaries:(id)arg1 clearPending:(_Bool)arg2 isFinalBatch:(_Bool)arg3 analysisAnchor:(id)arg4 queryUUID:(id)arg5;
 - (id)initWithDayIndexRange:(CDStruct_ef5fcbe6)arg1 ascending:(_Bool)arg2 limit:(long long)arg3 resultsHandler:(CDUnknownBlockType)arg4;
 
 // Remaining properties

@@ -44,6 +44,7 @@
 - (BOOL)columnExists:(id)arg1 inTable:(id)arg2 type:(unsigned long long *)arg3;
 - (BOOL)tableExists:(id)arg1 inDatabase:(id)arg2;
 - (BOOL)tableExists:(id)arg1;
+- (BOOL)databaseIsAttached:(id)arg1;
 - (long long)_adjustedDatabaseTypeForType:(long long)arg1;
 - (id)_databasePathForFileName:(id)arg1;
 @property(readonly, nonatomic) NSString *fullPath;

@@ -101,6 +101,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) CDStruct_198678f7 videoKeyFrameSourceTime;
 
 @end
 

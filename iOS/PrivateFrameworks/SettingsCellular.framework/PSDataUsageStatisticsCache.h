@@ -7,11 +7,15 @@
 #import <objc/NSObject.h>
 
 @class CTDeviceDataUsage, CoreTelephonyClient, NSDictionary;
+@protocol OS_dispatch_queue;
 
 @interface PSDataUsageStatisticsCache : NSObject
 {
+    NSObject<OS_dispatch_queue> *_queue;
+    _Bool _refreshInProgress;
     CoreTelephonyClient *_client;
     CTDeviceDataUsage *_cachedDeviceDataUsage;
+    CDUnknownBlockType _refreshCompletionHandler;
     NSDictionary *_workspaceInfoDict;
     NSDictionary *_hotspotClientsUsage;
 }
@@ -19,6 +23,8 @@
 + (id)sharedInstance;
 @property(retain) NSDictionary *hotspotClientsUsage; // @synthesize hotspotClientsUsage=_hotspotClientsUsage;
 @property(retain) NSDictionary *workspaceInfoDict; // @synthesize workspaceInfoDict=_workspaceInfoDict;
+@property(copy) CDUnknownBlockType refreshCompletionHandler; // @synthesize refreshCompletionHandler=_refreshCompletionHandler;
+@property _Bool refreshInProgress; // @synthesize refreshInProgress=_refreshInProgress;
 @property(retain) CTDeviceDataUsage *cachedDeviceDataUsage; // @synthesize cachedDeviceDataUsage=_cachedDeviceDataUsage;
 @property(retain, nonatomic) CoreTelephonyClient *client; // @synthesize client=_client;
 - (void).cxx_destruct;
@@ -49,6 +55,7 @@
 - (id)displayNameForAppBundleID:(id)arg1;
 - (id)appBundleIDs;
 - (void)fetchHotspotClientsUsage;
+- (void)fetchDeviceDataUsageWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchDeviceDataUsage;
 - (void)_clearCache;
 - (void)willEnterForeground;

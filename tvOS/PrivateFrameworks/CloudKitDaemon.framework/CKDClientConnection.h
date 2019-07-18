@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)accountsDidRevokeAccessToBundleID:(id)arg1 sourceApplicationBundleID:(id)arg2 containerIdentifiers:(id)arg3;
 - (void)accountsDidGrantAccessToBundleID:(id)arg1 containerIdentifiers:(id)arg2;
 - (void)getBehaviorOptionForKey:(id)arg1 isContainerOption:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)getOutstandingOperationCountWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)clearPCSCachesForKnownContextsWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)wipeAllCachedLongLivedProxiesWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)clearCachesForZoneWithSetupInfo:(id)arg1 zoneID:(id)arg2 databaseScope:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;

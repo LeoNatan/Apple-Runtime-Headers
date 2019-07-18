@@ -10,9 +10,6 @@
 
 @interface PKSpendingSummaryChartBarView : UIView
 {
-    UIView *_container;
-    UIView *_barSubcontainer;
-    UIView *_placeholderSubcontainer;
     UIImageView *_bar;
     UIImageView *_placeholder;
     UIImage *_image;

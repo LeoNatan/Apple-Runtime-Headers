@@ -103,8 +103,10 @@
 - (void)setMaximumZoomScale:(double)arg1;
 - (id)_getDelegateZoomView;
 @property(nonatomic) __weak id <PKCanvasViewDelegate> delegate; // @dynamic delegate;
+- (void)_setChildrenBackgroundColor:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)_setContentViewOpaqueBackgroundColorIfApplicable;
+- (void)_setChildrenOpaque:(_Bool)arg1;
 - (void)setOpaque:(_Bool)arg1;
 - (void)setupDrawingWidth:(double)arg1 fixedPixelSizeScrollView:(id)arg2;
 - (void)awakeFromNib;

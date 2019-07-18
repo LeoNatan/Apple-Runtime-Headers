@@ -11,11 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)testSetLoggingOverride:(unsigned long long)arg1;
-+ (unsigned long long)testGetLoggingOverride;
-+ (void)testPointForLoggingMessage:(id)arg1 atLevel:(unsigned long long)arg2;
 + (void)setCatastrophicLoggingLevel;
-+ (void)initialize;
 - (void)dealloc;
 - (id)init;
 

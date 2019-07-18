@@ -24,6 +24,7 @@
 - (id)result;
 - (BOOL)complete:(out id *)arg1;
 - (BOOL)render:(out id *)arg1;
+- (id)cacheKey;
 - (BOOL)wantsOutputImage;
 - (BOOL)wantsOutputGeometry;
 - (id)histogramRequest;

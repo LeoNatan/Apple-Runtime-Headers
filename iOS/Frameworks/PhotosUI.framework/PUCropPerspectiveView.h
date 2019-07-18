@@ -42,6 +42,13 @@ __attribute__((visibility("hidden")))
     CAShapeLayer *_debugCropRectLayer;
     CAShapeLayer *_debugQuadLayer;
     NUCropModel *_cropModel;
+    double _lastPitchRadians;
+    double _lastYawRadians;
+    double _lastRollRadians;
+    double _lastImageZoomScale;
+    struct CGVector _lastPanRubberBandOffset;
+    struct CGPoint _lastModelCropCenter;
+    double _lastUICroppingRectToImageScale;
     struct CGRect _imageCropRect;
 }
 
@@ -52,7 +59,6 @@ __attribute__((visibility("hidden")))
 - (void)constrainedMoveCropRectBy:(struct CGVector)arg1 startRect:(struct CGRect)arg2 rubberband:(_Bool)arg3;
 - (struct CGRect)_modelCropRectUnorientedInUICoords;
 - (struct CGRect)_croppingRect;
-- (void)fitImageRegion:(struct CGRect)arg1 inCropRectAnimated:(_Bool)arg2;
 - (void)setImageCropRectFromViewCropRect:(struct CGRect)arg1 animated:(_Bool)arg2;
 - (struct CGRect)validateViewCropRectAgainstModelCropRect:(struct CGRect)arg1;
 - (struct CGPoint)imagePointForViewPoint:(struct CGPoint)arg1;
@@ -73,6 +79,7 @@ __attribute__((visibility("hidden")))
 - (void)mediaViewDidFinishRendering:(id)arg1;
 - (void)setImageModulationOptions:(CDStruct_910f5d27)arg1;
 - (void)_setupMediaWithComposition:(id)arg1;
+- (void)tearDownMediaViewAndLayers;
 - (void)setVideoComposition:(id)arg1 withSeekTime:(CDStruct_1b6d18a9)arg2;
 - (void)setAutoloopComposition:(id)arg1;
 - (void)_setLivePhotoView:(id)arg1;
@@ -88,7 +95,6 @@ __attribute__((visibility("hidden")))
 - (void)_setGestureType:(long long)arg1;
 - (void)layoutSubviews;
 - (void)setCanvasFrame:(struct CGRect)arg1;
-- (void)setCropRect:(struct CGRect)arg1;
 - (void)setMuted:(_Bool)arg1;
 - (_Bool)isMuted;
 - (void)setModelCropRect:(struct CGRect)arg1 viewCropRect:(struct CGRect)arg2;

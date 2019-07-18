@@ -15,6 +15,7 @@
 
 @property(readonly) __weak MAGraph *graph; // @synthesize graph=_graph;
 - (void).cxx_destruct;
+- (unsigned long long)hash;
 - (id)initWithGraph:(id)arg1;
 
 @end

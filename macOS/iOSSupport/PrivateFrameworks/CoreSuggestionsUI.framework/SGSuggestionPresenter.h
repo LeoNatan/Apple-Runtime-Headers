@@ -27,8 +27,8 @@
 @property(nonatomic) BOOL wantsToShowBanner; // @synthesize wantsToShowBanner=_wantsToShowBanner;
 @property(nonatomic) __weak id <SGSuggestionPresenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
-- (BOOL)popoverPresentationControllerShouldDismissPopover:(id)arg1;
+- (void)presentationControllerDidDismiss:(id)arg1;
+- (BOOL)presentationControllerShouldDismiss:(id)arg1;
 - (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(long long)arg2 transitionCoordinator:(id)arg3;
 - (void)_dismissPresentedViewController:(id)arg1;
 - (id)_presentedControllerCancelButtonItem;

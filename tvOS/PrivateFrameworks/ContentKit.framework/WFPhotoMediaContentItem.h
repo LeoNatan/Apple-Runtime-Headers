@@ -25,6 +25,7 @@
 + (id)ownedPasteboardTypes;
 + (id)ownedTypes;
 + (_Bool)supportedTypeMustBeDeterminedByInstance:(id)arg1;
++ (id)remoteItemWithAssetIdentifier:(id)arg1 named:(id)arg2;
 + (id)propertyBuilders;
 + (id)photoAlbums;
 + (void)runQuery:(id)arg1 withItems:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

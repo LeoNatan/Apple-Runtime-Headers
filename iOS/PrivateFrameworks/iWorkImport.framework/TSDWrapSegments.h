@@ -9,20 +9,21 @@
 __attribute__((visibility("hidden")))
 @interface TSDWrapSegments : NSObject
 {
-    struct vector<TSDWrapSegment, std::__1::allocator<TSDWrapSegment>> mSegments;
+    CDStruct_e3b9714e *mSegments;
+    long long mSegmentCount;
     struct CGRect mBounds;
 }
 
-+ (id)wrapSegmentsWithPath:(id)arg1;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)p_buildSegmentsForPath:(id)arg1;
-- (const CDStruct_e3b9714e *)segments;
-- (long long)segmentCount;
-- (struct CGRect)bounds;
 - (void)transformUsingAffineTransform:(struct CGAffineTransform)arg1;
+- (id)wrapSegmentsByApplyingAffineTransform:(struct CGAffineTransform)arg1;
+@property(readonly, nonatomic) const CDStruct_e3b9714e *segments;
+@property(readonly, nonatomic) long long segmentCount;
+@property(readonly, nonatomic) struct CGRect bounds;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)dealloc;
 - (id)initWithPath:(id)arg1;
+- (id)init;
 
 @end
 

@@ -4,23 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIImageView.h>
+#import <UIKit/UIView.h>
 
-@class CALayer, UIColor, UIImage, UILabel, WebBookmark;
+@class UIColor, UIImage, UIImageView, UILabel, WebBookmark, _SFHairlineBorderView;
 @protocol _SFSiteIconViewUpdateObserver;
 
-@interface _SFSiteIconView : UIImageView
+@interface _SFSiteIconView : UIView
 {
-    UIImageView *_glyphView;
+    UIImageView *_imageView;
+    UIView *_backgroundView;
     UILabel *_monogramLabel;
     long long _state;
     id _touchIconRequestToken;
-    CALayer *_imageLayer;
-    CALayer *_shadowLayer;
-    CALayer *_backgroundLayer;
-    CALayer *_borderLayer;
+    UIColor *_preferredBackgroundColor;
+    UIImageView *_shadowView;
+    _SFHairlineBorderView *_borderView;
     _Bool _modernImageIsTransparent;
-    UIColor *_internalBackgroundColor;
     _Bool _shouldUseModernStyling;
     _Bool _shouldShowDropShadow;
     WebBookmark *_bookmark;
@@ -34,8 +33,7 @@
 @property(retain, nonatomic) UIImage *leadingImage; // @synthesize leadingImage=_leadingImage;
 @property(retain, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
 - (void).cxx_destruct;
-- (void)_updateBackgroundLayerBackgroundColor;
-- (id)_shadowImage;
+- (id)_effectiveBackgroundColor;
 - (void)_setState:(long long)arg1;
 - (void)_setMonogramWithString:(id)arg1 backgroundColor:(id)arg2;
 - (long long)_inferredIconSize;
@@ -43,7 +41,6 @@
 - (double)_monogramFontSize;
 - (id)_tintedFolderImage;
 - (void)_setGlyph:(id)arg1 withBackgroundColor:(id)arg2;
-- (void)_clearGlyph;
 - (void)_setSiteIcon:(id)arg1 withBackgroundColor:(id)arg2;
 - (void)_setImage:(id)arg1 withBackgroundColor:(id)arg2;
 - (void)_cancelTouchIconRequest;
@@ -51,6 +48,7 @@
 - (void)_displayDefaultFolderIcon;
 - (void)updateBookmarkData;
 - (struct CGRect)_imageFrame;
+@property(readonly, nonatomic) UIImage *image;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;

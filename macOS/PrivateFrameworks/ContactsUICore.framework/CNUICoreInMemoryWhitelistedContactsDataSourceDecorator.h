@@ -35,7 +35,7 @@
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) id <CNUICoreContactStoreFacade> mainContactStore; // @synthesize mainContactStore=_mainContactStore;
 @property(readonly, nonatomic) id <CNUICoreFamilyMemberWhitelistedContactsDataSource> dataSource; // @synthesize dataSource=_dataSource;
-@property(retain, nonatomic) id <CNUICoreFamilyMemberContactsObserver> observer; // @synthesize observer=_observer;
+@property(nonatomic) __weak id <CNUICoreFamilyMemberContactsObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
 - (void)finishPersistenceOfInMemoryContactsWhitelistState;
 - (void)persistInMemoryContactsWhitelistState;
@@ -49,6 +49,7 @@
 - (id)familyMemberContactItemsFromDataSourceAugmentedWithInMemoryEdits;
 @property(readonly, nonatomic) NSArray *familyMemberContactItems;
 @property(readonly, nonatomic) long long fetchStatus;
+@property(readonly, nonatomic) BOOL familyMemberContainerIsEmpty;
 - (void)flushEditingSession;
 - (void)startEditingSessionIfNecessaryWithSnapshotOfItems:(id)arg1;
 - (void)startEditingSessionIfNecessary;

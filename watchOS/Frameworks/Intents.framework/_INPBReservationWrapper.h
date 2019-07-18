@@ -15,6 +15,7 @@
 @interface _INPBReservationWrapper : PBCodable <_INPBReservationWrapper, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     _INPBFlightReservation *_flightReservation;
     _INPBLodgingReservation *_lodgingReservation;
     _INPBRentalCarReservation *_rentalCarReservation;
@@ -24,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBTrainReservation *trainReservation; // @synthesize trainReservation=_trainReservation;
 @property(retain, nonatomic) _INPBTicketedEventReservation *ticketedEventReservation; // @synthesize ticketedEventReservation=_ticketedEventReservation;
 @property(retain, nonatomic) _INPBRestaurantReservation *restaurantReservation; // @synthesize restaurantReservation=_restaurantReservation;

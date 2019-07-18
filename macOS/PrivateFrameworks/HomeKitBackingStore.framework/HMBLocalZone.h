@@ -8,30 +8,33 @@
 
 #import <HomeKitBackingStore/HMFLogging-Protocol.h>
 
-@class HMBLocalDatabase, HMBLocalSQLContext, HMBModelContainer, HMFUnfairLock, NSMapTable, NSMutableArray, NSString;
+@class HMBLocalDatabase, HMBLocalSQLContext, HMBModelContainer, HMFUnfairLock, NSHashTable, NSMutableArray, NSMutableDictionary, NSString;
 @protocol HMBLocalZoneDelegate, HMBLocalZoneID, HMBMirrorProtocol;
 
 @interface HMBLocalZone : HMFObject <HMFLogging>
 {
+    BOOL _hasStartedUp;
     HMBLocalDatabase *_localDatabase;
     HMBModelContainer *_modelContainer;
     id <HMBLocalZoneID> _zoneID;
     id <HMBMirrorProtocol> _mirror;
     id <HMBLocalZoneDelegate> _delegate;
     HMFUnfairLock *_propertyLock;
-    NSMapTable *_objectLookup;
+    NSHashTable *_observersForAllModels;
+    NSMutableDictionary *_observersByModelID;
     unsigned long long _zoneRow;
     HMBLocalSQLContext *_sql;
     NSMutableArray *_shutdownFutures;
 }
 
-+ (id)shortDescription;
 + (id)logCategory;
 + (id)calculateUpdatedTokenFrom:(id)arg1 updates:(id)arg2;
 @property(retain, nonatomic) NSMutableArray *shutdownFutures; // @synthesize shutdownFutures=_shutdownFutures;
-@property(nonatomic) __weak HMBLocalSQLContext *sql; // @synthesize sql=_sql;
+@property(nonatomic) BOOL hasStartedUp; // @synthesize hasStartedUp=_hasStartedUp;
+@property(readonly, nonatomic) HMBLocalSQLContext *sql; // @synthesize sql=_sql;
 @property(readonly, nonatomic) unsigned long long zoneRow; // @synthesize zoneRow=_zoneRow;
-@property(readonly, nonatomic) NSMapTable *objectLookup; // @synthesize objectLookup=_objectLookup;
+@property(readonly, nonatomic) NSMutableDictionary *observersByModelID; // @synthesize observersByModelID=_observersByModelID;
+@property(readonly, nonatomic) NSHashTable *observersForAllModels; // @synthesize observersForAllModels=_observersForAllModels;
 @property(readonly, nonatomic) HMFUnfairLock *propertyLock; // @synthesize propertyLock=_propertyLock;
 @property(nonatomic) __weak id <HMBLocalZoneDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <HMBMirrorProtocol> mirror; // @synthesize mirror=_mirror;
@@ -51,22 +54,24 @@
 - (id)update:(id)arg1 remove:(id)arg2 options:(id)arg3;
 - (id)flush;
 - (id)destroy;
+- (void)startUp;
 - (id)setExternalData:(id)arg1 forExternalID:(id)arg2;
 - (id)setExternalData:(id)arg1 forModelID:(id)arg2;
 - (id)modelIDForExternalID:(id)arg1 error:(id *)arg2;
 - (id)externalIDForModelID:(id)arg1 error:(id *)arg2;
 - (id)externalDataForExternalID:(id)arg1 error:(id *)arg2;
 - (id)externalDataForModelID:(id)arg1 error:(id *)arg2;
+- (BOOL)fetchModelsOfType:(Class)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)fetchModelsOfType:(Class)arg1 error:(id *)arg2;
 - (id)fetchAllModelsWithError:(id *)arg1;
 - (id)fetchModelsWithParentModelID:(id)arg1 error:(id *)arg2;
 - (id)fetchModelsWithParentModelID:(id)arg1 ofType:(Class)arg2 error:(id *)arg3;
 - (id)fetchModelWithModelID:(id)arg1 ofType:(Class)arg2 error:(id *)arg3;
 - (id)fetchModelWithModelID:(id)arg1 error:(id *)arg2;
-- (id)findObjectToNotifyForModel:(id)arg1;
-- (id)findObjectToNotifyForModelID:(id)arg1;
-- (void)registerObject:(id)arg1 modelID:(id)arg2;
-- (void)unregisterObjectWithModelID:(id)arg1;
+- (void)removeObserver:(id)arg1 forModelWithID:(id)arg2;
+- (void)removeObserverForAllModels:(id)arg1;
+- (void)addObserver:(id)arg1 forModelWithID:(id)arg2;
+- (void)addObserverForAllModels:(id)arg1;
 - (void)dealloc;
 - (id)initWithLocalDatabase:(id)arg1 zoneID:(id)arg2 zoneRow:(unsigned long long)arg3 delegate:(id)arg4 modelContainer:(id)arg5 mirror:(id)arg6;
 - (void)updateReplicationToken:(id)arg1;
@@ -74,6 +79,7 @@
 - (id)notifyReplicationWithToken:(id)arg1 updates:(id)arg2;
 - (id)triggerProcessForBlockRow:(unsigned long long)arg1;
 - (id)queueIncompleteProcesses;
+- (id)observersForModelWithID:(id)arg1;
 - (id)inputContext:(id *)arg1;
 - (id)markTupleAsSent:(id)arg1;
 - (id)markGroupAsSentWithOutputBlock:(unsigned long long)arg1 tuples:(id)arg2;
@@ -90,7 +96,7 @@
 - (id)remove:(id)arg1;
 - (id)update:(id)arg1;
 - (id)update:(id)arg1 remove:(id)arg2;
-- (id)objectFromData:(id)arg1 encoding:(unsigned long long)arg2 recordRowID:(unsigned long long)arg3 logRowID:(unsigned long long)arg4 error:(id *)arg5;
+- (id)objectFromData:(id)arg1 encoding:(unsigned long long)arg2 recordRowID:(unsigned long long)arg3 error:(id *)arg4;
 - (id)fetchRecordRowsWithModelIDs:(id)arg1 error:(id *)arg2;
 - (id)fetchRecordRowWithExternalID:(id)arg1 returning:(unsigned long long)arg2 error:(id *)arg3;
 - (id)fetchRecordRowWithModelID:(id)arg1 returning:(unsigned long long)arg2 error:(id *)arg3;

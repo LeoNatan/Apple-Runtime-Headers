@@ -8,11 +8,12 @@
 
 #import <ControlCenterUIKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CCUICAPackageDescription, CCUICAPackageView, MTVisualStylingProvider, NSString, UIColor, UIImage, UIImageView, UIView;
+@class CCUICAPackageDescription, CCUICAPackageView, MTVisualStylingProvider, NSString, UIColor, UIImage, UIImageView, UILongPressGestureRecognizer, UIView;
 
 @interface CCUIRoundButton : UIControl <UIGestureRecognizerDelegate>
 {
     MTVisualStylingProvider *_visualStylingProvider;
+    UILongPressGestureRecognizer *_longPressGestureRecognizer;
     _Bool _useAlternateBackground;
     CCUICAPackageDescription *_glyphPackageDescription;
     UIImage *_glyphImage;
@@ -44,10 +45,8 @@
 - (void)_primaryActionPerformed:(id)arg1;
 - (void)_setCornerRadius:(double)arg1;
 - (double)_cornerRadius;
-- (void)_handlePressGesture:(id)arg1;
-- (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)didMoveToWindow;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

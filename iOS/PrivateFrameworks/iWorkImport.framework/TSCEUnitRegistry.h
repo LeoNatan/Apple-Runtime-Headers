@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)dimensionForUnit:(int)arg1;
-+ (double)convert:(double)arg1 fromUnit:(CDStruct_1ef3fb1f)arg2 toUnit:(CDStruct_1ef3fb1f)arg3;
++ (struct TSUDecimal)convert:(const struct TSUDecimal *)arg1 fromUnit:(CDStruct_1ef3fb1f)arg2 toUnit:(CDStruct_1ef3fb1f)arg3;
 + (_Bool)unitIsMetric:(int)arg1;
 + (CDStruct_1ef3fb1f)prefixedUnitForString:(id)arg1;
 + (int)binaryUnitPrefixForChars:(unsigned short)arg1:(unsigned short)arg2;

@@ -43,6 +43,7 @@
 - (void)_setZoomFraction:(double)arg1 iconDiameter:(double)arg2;
 - (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(double)arg2 maxDiameter:(double)arg3;
 - (_Bool)_usesCustomZoom;
+- (_Bool)_wantsConstantSpeedZoom;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
 - (void)_configureForEditMode:(long long)arg1;
 - (void)_cleanupAfterEditing;

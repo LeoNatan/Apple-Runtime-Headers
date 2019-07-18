@@ -9,8 +9,7 @@
 @interface _TtC10RealityKit11LoadManager : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: queue
-    // Error parsing type: , name: bundleLockQueue
-    // Error parsing type: , name: bundleCaches
+    // Error parsing type: , name: sceneResourceCache
 }
 
 @end

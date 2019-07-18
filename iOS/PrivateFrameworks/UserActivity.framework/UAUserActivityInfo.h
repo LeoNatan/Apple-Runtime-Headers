@@ -33,6 +33,7 @@
     NSString *_teamIdentifier;
     NSURL *_webpageURL;
     NSURL *_referrerURL;
+    NSString *_targetContentIdentifier;
     NSDictionary *_options;
     NSError *_encodedUserInfoError;
     NSSet *_requiredUserInfoKeys;
@@ -78,6 +79,7 @@
 @property(copy) NSSet *requiredUserInfoKeys; // @synthesize requiredUserInfoKeys=_requiredUserInfoKeys;
 @property(copy) NSError *encodedUserInfoError; // @synthesize encodedUserInfoError=_encodedUserInfoError;
 @property(copy) NSDictionary *options; // @synthesize options=_options;
+@property(copy) NSString *targetContentIdentifier; // @synthesize targetContentIdentifier=_targetContentIdentifier;
 @property(copy) NSURL *referrerURL; // @synthesize referrerURL=_referrerURL;
 @property(copy) NSURL *webpageURL; // @synthesize webpageURL=_webpageURL;
 @property(copy) NSString *teamIdentifier; // @synthesize teamIdentifier=_teamIdentifier;
@@ -104,7 +106,6 @@
 - (id)payloadForIdentifier:(id)arg1;
 - (id)payloadIdentifiers;
 @property(copy) NSDictionary *payloads;
-- (id)copyUserActivityInfoWithUUID:(_Bool)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

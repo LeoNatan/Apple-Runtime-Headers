@@ -32,7 +32,6 @@
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)init;
-@property(readonly, nonatomic) _Bool requiresQueryId;
 - (id)initWithError:(id)arg1;
 - (id)initWithFacade:(id)arg1;
 

@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 
 - (id)fillFromSageProperties:(id)arg1 context:(id)arg2;
 - (id)p_tspDataFromProperties:(id)arg1 context:(id)arg2;
-- (int)p_techniqueFromString:(id)arg1;
+- (unsigned long long)p_techniqueFromString:(id)arg1;
 
 @end
 

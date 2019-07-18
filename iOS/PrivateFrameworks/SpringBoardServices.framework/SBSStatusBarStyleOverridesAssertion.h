@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <SpringBoardServices/BSDescriptionProviding-Protocol.h>
+
 @class NSString, SBSStatusBarStyleOverridesAssertionData;
 
-@interface SBSStatusBarStyleOverridesAssertion : NSObject
+@interface SBSStatusBarStyleOverridesAssertion : NSObject <BSDescriptionProviding>
 {
     SBSStatusBarStyleOverridesAssertionData *_assertionData;
     CDUnknownBlockType _invalidationHandler;
@@ -19,6 +21,11 @@
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) SBSStatusBarStyleOverridesAssertionData *assertionData; // @synthesize assertionData=_assertionData;
 - (void).cxx_destruct;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+@property(readonly, copy) NSString *description;
 - (void)invalidate;
 - (void)acquireWithHandler:(CDUnknownBlockType)arg1 onQueue:(id)arg2;
 - (void)acquireWithHandler:(CDUnknownBlockType)arg1 invalidationHandler:(CDUnknownBlockType)arg2;
@@ -31,6 +38,11 @@
 - (void)dealloc;
 - (id)initWithStatusBarStyleOverridesAssertionData:(id)arg1;
 - (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(_Bool)arg3 showsWhenForeground:(_Bool)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

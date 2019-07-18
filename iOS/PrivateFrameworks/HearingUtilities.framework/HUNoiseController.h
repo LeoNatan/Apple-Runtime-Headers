@@ -7,11 +7,10 @@
 #import <objc/NSObject.h>
 
 @class AXDispatchTimer, NSDate, NSMutableArray, UNUserNotificationCenter;
+@protocol OS_dispatch_queue;
 
 @interface HUNoiseController : NSObject
 {
-    int _sensitiveUINotifyToken;
-    _Bool _shouldHideSensitiveUI;
     int _measurementSuspensionNotifyToken;
     _Bool _measurementEnabled;
     _Bool _notified;
@@ -23,8 +22,10 @@
     float _fastLeq;
     float _sampleDuration;
     AXDispatchTimer *_edDummyDataTimer;
+    AXDispatchTimer *_adamSuspendedTimer;
     NSMutableArray *_leqBufferAboveThreshold;
     NSMutableArray *_leqBufferBelowThreshold;
+    unsigned long long _thresholdLevel;
     NSDate *_timeNotified;
     NSMutableArray *_leqBufferAbove80Threshold;
     NSMutableArray *_leqBufferBelow80Threshold;
@@ -35,11 +36,13 @@
     NSDate *_timeNotified80;
     NSDate *_timeNotified85;
     NSDate *_timeNotified90;
+    NSObject<OS_dispatch_queue> *_dataQueue;
     UNUserNotificationCenter *_userNotificationCenter;
 }
 
 + (id)sharedController;
 @property(readonly, nonatomic) UNUserNotificationCenter *userNotificationCenter; // @synthesize userNotificationCenter=_userNotificationCenter;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *dataQueue; // @synthesize dataQueue=_dataQueue;
 @property(retain, nonatomic) NSDate *timeNotified90; // @synthesize timeNotified90=_timeNotified90;
 @property(retain, nonatomic) NSDate *timeNotified85; // @synthesize timeNotified85=_timeNotified85;
 @property(retain, nonatomic) NSDate *timeNotified80; // @synthesize timeNotified80=_timeNotified80;
@@ -56,11 +59,13 @@
 @property(nonatomic, getter=isNotified) _Bool notified; // @synthesize notified=_notified;
 @property(nonatomic) float sampleDuration; // @synthesize sampleDuration=_sampleDuration;
 @property(retain, nonatomic) NSDate *timeNotified; // @synthesize timeNotified=_timeNotified;
+@property(nonatomic) unsigned long long thresholdLevel; // @synthesize thresholdLevel=_thresholdLevel;
 @property(nonatomic, getter=isMeasurementEnabled) _Bool measurementEnabled; // @synthesize measurementEnabled=_measurementEnabled;
 @property(nonatomic) float fastLeq; // @synthesize fastLeq=_fastLeq;
 @property(nonatomic) float slowLeq; // @synthesize slowLeq=_slowLeq;
 @property(retain, nonatomic) NSMutableArray *leqBufferBelowThreshold; // @synthesize leqBufferBelowThreshold=_leqBufferBelowThreshold;
 @property(retain, nonatomic) NSMutableArray *leqBufferAboveThreshold; // @synthesize leqBufferAboveThreshold=_leqBufferAboveThreshold;
+@property(retain, nonatomic) AXDispatchTimer *adamSuspendedTimer; // @synthesize adamSuspendedTimer=_adamSuspendedTimer;
 @property(retain, nonatomic) AXDispatchTimer *edDummyDataTimer; // @synthesize edDummyDataTimer=_edDummyDataTimer;
 - (void).cxx_destruct;
 - (id)registerForEnvironmentalDosimetryUpdates:(id)arg1;
@@ -72,7 +77,11 @@
 - (void)checkToSurfaceNotificationForSPL:(float)arg1 withDuration:(float)arg2 andBuffer:(id)arg3 forTime:(float)arg4;
 - (void)checkToResetNotificationsForSPL:(float)arg1 withDuration:(float)arg2 andBuffer:(id)arg3 forTime:(float)arg4;
 - (void)applyNotificationLogicForSPL:(float)arg1 withDuration:(float)arg2;
+- (void)_stopReceivingAudioDosageSamples;
+- (void)_clearCachedValues;
+- (void)_sendUpdateMessageForCurrentValues;
 - (void)readEnvironmentalDosimetryLevels;
+- (void)restartADAMTimer;
 - (unsigned long long)alertTypeFromLevel:(float)arg1;
 - (void)showNotificationForAlertType:(unsigned long long)arg1;
 - (id)init;

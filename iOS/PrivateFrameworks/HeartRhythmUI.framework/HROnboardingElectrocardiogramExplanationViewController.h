@@ -28,7 +28,7 @@
 - (double)_videoViewBottomToBodyFirstBaseline;
 - (id)_bodyFont;
 - (id)_bodyFontTextStyle;
-- (double)_titleLastBaselineToVideoViewTop;
+- (double)_titleBottomToVideoViewTop;
 - (void)_adjustButtonFooterViewLocationForViewContentHeight;
 - (void)_setUpButtonFooterView;
 - (void)stackedButtonView:(id)arg1 didTapButtonAtIndex:(long long)arg2;

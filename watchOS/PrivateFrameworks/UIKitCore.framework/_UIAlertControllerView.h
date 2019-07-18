@@ -317,6 +317,7 @@ __attribute__((visibility("hidden")))
 - (void)updateConstraints;
 - (void)_prepareViewsAndAddConstraints;
 @property __weak UIAlertController *alertController;
+- (void)updateObservations:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

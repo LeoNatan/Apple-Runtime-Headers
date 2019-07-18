@@ -13,6 +13,7 @@
 
 @interface VCPProtoLivePhotoKeyFrameResult : PBCodable <VCPProtoResultLegacyConversionProtocol, NSCopying>
 {
+    double _timestamp;
     float _contentScore;
     float _exposureScore;
     NSMutableArray *_faceResults;
@@ -22,7 +23,6 @@
     float _qualityScoreForLivePhoto;
     float _sharpness;
     float _textureScore;
-    float _timestamp;
     float _visualPleasingScore;
     struct {
         unsigned int contentScore:1;
@@ -42,7 +42,7 @@
 @property(nonatomic) float overallFaceQualityScore; // @synthesize overallFaceQualityScore=_overallFaceQualityScore;
 @property(nonatomic) float visualPleasingScore; // @synthesize visualPleasingScore=_visualPleasingScore;
 @property(nonatomic) float qualityScoreForLivePhoto; // @synthesize qualityScoreForLivePhoto=_qualityScoreForLivePhoto;
-@property(nonatomic) float timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

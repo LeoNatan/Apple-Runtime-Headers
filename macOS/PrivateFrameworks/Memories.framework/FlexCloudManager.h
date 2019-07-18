@@ -28,6 +28,7 @@
 - (id)loadCachedSongs;
 - (void)cancelDownloadOfAllAssets;
 - (void)cancelDownloadOfAsset:(id)arg1;
+- (void)requestDownloadOfAsset:(id)arg1 withOptions:(id)arg2;
 - (void)requestDownloadOfAsset:(id)arg1;
 - (void)loadAssetWithID:(id)arg1 forSongID:(id)arg2;
 - (void)retryFetchAllSongs;

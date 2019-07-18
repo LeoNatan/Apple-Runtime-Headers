@@ -85,6 +85,7 @@
     long long _horizontalSizeClassStateRestorationOverride;
     UIAccessibilityHUDView *_accessibilityHUD;
     id <BSInvalidatable> _eventFocusDeferralToken;
+    BOOL _canResizeToFitContent;
     BOOL _shouldDisableTransformLayerScalingForSnapshotting;
     BOOL __shouldHitTestEntireScreen;
     BOOL __usesLegacySupportedOrientationChecks;
@@ -152,6 +153,7 @@
 + (void)_executeDeferredLaunchBlocks;
 + (BOOL)_allWindowsKeepContextInBackground;
 + (void)_setAllWindowsKeepContextInBackground:(BOOL)arg1;
++ (BOOL)_temporary_shouldSizeWindowsAutomaticallyPlistOverrideSet;
 + (Class)layerClass;
 + (void)adjustFocusForAccessibilityIfNeeded:(id)arg1;
 + (void)adjustForAccessibilityIfNeeded:(id)arg1;
@@ -162,6 +164,10 @@
 + (long long)_preferredStatusBarStyleInWindow:(id)arg1 withPartStyles:(id *)arg2 animationProvider:(id *)arg3;
 + (BOOL)_prefersStatusBarHiddenInWindow:(id)arg1 targetOrientation:(long long)arg2 animationProvider:(id *)arg3;
 + (BOOL)_prefersStatusBarHiddenInWindow:(id)arg1 animationProvider:(id *)arg2;
++ (void)setRestrictedSplashboardClasses:(id)arg1;
++ (id)restrictedSplashboardClasses;
++ (void)setShouldRestrictViewsForSplashboard:(BOOL)arg1;
++ (BOOL)shouldRestrictViewsForSplashboard;
 @property(nonatomic, setter=_setContainedGestureRecognizersShouldRespectGestureServerInstructions:) BOOL _containedGestureRecognizersShouldRespectGestureServerInstructions; // @synthesize _containedGestureRecognizersShouldRespectGestureServerInstructions=__containedGestureRecognizersShouldRespectGestureServerInstructions;
 @property(readonly, nonatomic, getter=_focusEventRecognizer) _UIFocusEventRecognizer *focusEventRecognizer; // @synthesize focusEventRecognizer=_focusEventRecognizer;
 @property(nonatomic, setter=__setHostViewUnderlapsStatusBar:) BOOL __hostViewUnderlapsStatusBar; // @synthesize __hostViewUnderlapsStatusBar=___hostViewUnderlapsStatusBar;
@@ -187,6 +193,8 @@
 @property(retain, nonatomic, getter=_rootPresentationController, setter=_setRootPresentationController:) _UIRootPresentationController *rootPresentationController; // @synthesize rootPresentationController=_rootPresentationController;
 @property(retain, nonatomic) UIViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
 - (void).cxx_destruct;
+- (void)_setCanResizeToFitContent:(BOOL)arg1;
+- (BOOL)_canResizeToFitContent;
 - (void)setRestorationIdentifier:(id)arg1;
 - (id)restorationIdentifier;
 - (id)_overridingPreferredFocusEnvironment;
@@ -313,7 +321,7 @@
 - (void)setBounds:(struct CGRect)arg1;
 - (void)_clearSizeClassesForStateRestoration;
 - (void)_setStateRestorationVerticalSizeClass:(long long)arg1 horizontalSizeClass:(long long)arg2;
-- (void)_propagateTraitCollectionChangedForStateRestoration;
+- (void)_propagateTraitCollectionChangedForStateRestorationWithTransitionCoordinator:(id)arg1;
 - (void)_willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_parentWillTransitionToTraitCollection:(id)arg1;
 - (BOOL)_shouldPropagateTraitCollectionChanges;
@@ -322,7 +330,7 @@
 - (void)_willChangeToSize:(struct CGSize)arg1 orientation:(long long)arg2 screen:(id)arg3 withTransitionCoordinator:(id)arg4;
 @property(readonly, nonatomic) CDStruct_d58201db __sizeClassPair;
 - (void)_updateWindowTraitsAndNotify:(BOOL)arg1;
-- (void)_localOverrideTraitCollectionDidChangeWithPreviousTraitCollection:(id)arg1;
+- (void)_localOverrideTraitCollectionDidChange;
 - (void)_localOverrideTraitCollectionWillChange:(id)arg1;
 - (id)_traitCollectionForSize:(struct CGSize)arg1 parentCollection:(id)arg2 localOverrideCollection:(id)arg3;
 - (id)_traitCollectionForSize:(struct CGSize)arg1 parentCollection:(id)arg2;
@@ -331,6 +339,7 @@
 - (void)_updateWindowTraits;
 - (id)traitCollection;
 - (BOOL)_cachedTraitCollectionIsValid;
+- (void)_didMoveFromScreen:(id)arg1 toScreen:(id)arg2;
 @property(retain, nonatomic) UIScreen *screen;
 - (BOOL)_shouldPrepareScreenForWindow;
 - (id)_screen;
@@ -459,6 +468,7 @@
 - (void)_noteOverlayInsetsDidChange;
 - (struct UIEdgeInsets)_overlayInsets;
 - (void)_removeAllViewControllersFromWindowHierarchy;
+- (void)_removeAllPresentationsFromWindowHierarchy;
 - (void)makeKey:(id)arg1;
 - (void)orderOut:(id)arg1;
 - (void)_orderFrontWithoutMakingKey;
@@ -483,6 +493,7 @@
 - (BOOL)_isVisible;
 - (double)_bindableLevel;
 - (id)_bindingLayer;
+- (id)_layerForTimeOffsetModification;
 - (id)_contextOptionsWithInitialOptions:(id)arg1;
 @property(readonly, nonatomic) CDStruct_2a214484 _bindingDescription;
 - (void)_didMoveFromScene:(id)arg1 toScene:(id)arg2;
@@ -538,6 +549,7 @@
 - (void)_updateInterfaceOrientationFromActiveInterfaceOrientationIfRotationEnabled:(BOOL)arg1;
 - (void)_updateInterfaceOrientationFromActiveInterfaceOrientation;
 - (BOOL)_isAlwaysKeyboardWindow;
+- (void)_traitCollectionDidChangeOnSubtreeInternal:(const struct _UITraitCollectionChangeDescription *)arg1;
 - (id)_keyboardSceneSettings;
 - (double)_classicOffset;
 - (void)matchDeviceOrientation:(id)arg1;

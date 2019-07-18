@@ -8,7 +8,7 @@
 
 #import <MLFoundation/MLFoundationLayerCompiling-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface MLFoundationConcatenationLayer : MLFoundationLayer <MLFoundationLayerCompiling>
 {
@@ -19,10 +19,15 @@
 + (id)new;
 @property(readonly, copy, nonatomic) NSArray *sources; // @synthesize sources=_sources;
 - (void).cxx_destruct;
-- (id)description;
-- (void)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
+@property(readonly, copy) NSString *description;
+- (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
 - (id)initLayer;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,27 +6,37 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class HMBLocalSQLContextInputBlock, HMBLocalZone, HMFActivity;
+#import <HomeKitBackingStore/HMFLogging-Protocol.h>
 
-@interface HMBMirrorInput : HMFObject
+@class HMBLocalSQLContextInputBlock, HMBLocalZone, HMFActivity, NSString;
+
+@interface HMBMirrorInput : HMFObject <HMFLogging>
 {
     HMBLocalZone *_localZone;
     HMBLocalSQLContextInputBlock *_block;
     HMFActivity *_activity;
 }
 
++ (id)logCategory;
 @property(readonly, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
 @property(readonly, nonatomic) HMBLocalSQLContextInputBlock *block; // @synthesize block=_block;
 @property(readonly, nonatomic) __weak HMBLocalZone *localZone; // @synthesize localZone=_localZone;
 - (void).cxx_destruct;
+- (id)logIdentifier;
 - (id)abort;
-- (_Bool)commit:(id)arg1 promise:(id)arg2 error:(id *)arg3;
+- (id)commitWithOptions:(id)arg1 error:(id *)arg2;
 - (id)removeModelWithExternalID:(id)arg1;
 - (id)removeModelWithModelID:(id)arg1;
 - (id)updateModelData:(id)arg1 modelEncoding:(unsigned int)arg2 externalID:(id)arg3 externalData:(id)arg4;
 - (id)updateModel:(id)arg1 externalID:(id)arg2 externalData:(id)arg3;
 - (void)dealloc;
 - (id)initWithLocalZone:(id)arg1 block:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -26,9 +26,9 @@
 @property(readonly) float sharpness; // @synthesize sharpness=_sharpness;
 - (void).cxx_destruct;
 - (int)analyzePixelBuffer:(struct __CVBuffer *)arg1 flags:(unsigned long long *)arg2 results:(id *)arg3 cancel:(CDUnknownBlockType)arg4;
-- (void)computeLocalSharpness:(struct __CVBuffer *)arg1;
+- (int)computeLocalSharpness:(struct __CVBuffer *)arg1;
 - (void)spatialPooling;
-- (float)computeFaceSharpness:(struct __CVBuffer *)arg1;
+- (int)computeSharpnessScore:(float *)arg1 forFacesInImage:(struct __CVBuffer *)arg2;
 - (void)setFaceResults:(id)arg1;
 - (id)initWithFaceResults:(id)arg1 sdof:(BOOL)arg2;
 

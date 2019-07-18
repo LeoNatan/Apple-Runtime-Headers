@@ -11,7 +11,6 @@
 }
 
 + (id)logCategory;
-- (id)_updateModelMetadata:(id)arg1 streamingAsset:(id)arg2;
 - (id)initWithClipModelID:(id)arg1 localZone:(id)arg2 encryptionManager:(id)arg3 segmentData:(id)arg4 segmentMetadata:(id)arg5 dataSource:(id)arg6;
 
 @end

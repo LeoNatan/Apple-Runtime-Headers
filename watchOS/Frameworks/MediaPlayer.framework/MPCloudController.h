@@ -6,40 +6,36 @@
 
 #import <objc/NSObject.h>
 
-@class ICCloudClient, MSVDistributedNotificationObserver;
-@protocol ICCloudAvailability, OS_dispatch_queue;
+@class ICCloudClient, ICUserIdentity, _MPCloudControllerImplementation;
+@protocol OS_dispatch_queue;
 
 @interface MPCloudController : NSObject
 {
-    NSObject<ICCloudAvailability> *_cloudAvailabilityController;
-    int _activeCount;
-    _Bool _isUpdateInProgress;
-    int _preferencesChangedNotifyToken;
-    _Bool _preferencesChangedNotifyTokenIsValid;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_cloudClientCallbackQueue;
-    MSVDistributedNotificationObserver *_addToPlaylistBehaviorChangedObserver;
-    _Bool _isCloudLibraryUpdateInProgress;
-    _Bool _isCloudLibraryInitialImport;
-    _Bool _isJaliscoUpdateInProgress;
-    _Bool _isJaliscoInitialImport;
     _Bool _isCloudEnabled;
     _Bool _jaliscoGeniusEnabled;
+    _MPCloudControllerImplementation *_implementation;
+    ICUserIdentity *_userIdentity;
     ICCloudClient *_cloudClient;
+    NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
-+ (_Bool)isEnablingCloudLibraryDestructive;
++ (void)_postNotificationName:(id)arg1 controller:(id)arg2 userInfo:(id)arg3;
++ (void)_postNotificationName:(id)arg1 controller:(id)arg2;
 + (void)migrateCellularDataPreferencesIfNeeded;
 + (_Bool)isMediaApplication;
++ (id)_controllerWithUserIdentity:(id)arg1 createIfRequired:(_Bool)arg2;
++ (id)controllerWithUserIdentity:(id)arg1;
 + (id)sharedCloudController;
++ (id)internalToExternalNotificationMapping;
++ (id)controllers;
++ (id)globalSerialQueue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(readonly, nonatomic, getter=isJaliscoGeniusEnabled) _Bool jaliscoGeniusEnabled; // @synthesize jaliscoGeniusEnabled=_jaliscoGeniusEnabled;
 @property(readonly, nonatomic) ICCloudClient *cloudClient; // @synthesize cloudClient=_cloudClient;
 @property(readonly, nonatomic) _Bool isCloudEnabled; // @synthesize isCloudEnabled=_isCloudEnabled;
+@property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
-- (id)_referralForModelObject:(id)arg1;
-- (void)_initializeUpdateInProgressState;
-- (void)_loadIsSagaAuthenticatedWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_loadIsJaliscoGeniusSupportedWithCompletion:(CDUnknownBlockType)arg1;
+@property(retain, nonatomic) _MPCloudControllerImplementation *implementation; // @synthesize implementation=_implementation;
 - (void)setLikedState:(int)arg1 forPlaylistWithGlobalID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setLikedState:(int)arg1 forPlaylistWithGlobalID:(id)arg2;
 - (void)setLikedState:(int)arg1 forAlbumWithStoreID:(long long)arg2 completion:(CDUnknownBlockType)arg3;
@@ -56,16 +52,17 @@
 - (void)disableCloudLibraryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)enableCloudLibraryWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)isCloudLibraryEnabled;
+@property(readonly, nonatomic, getter=isEnablingCloudLibraryDestructive) _Bool enablingCloudLibraryDestructive;
 - (void)resignActive;
 - (void)loadJaliscoLibraryUpdateProgressWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadCloudMusicLibraryUpdateProgressWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadUpdateProgressWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic) _Bool isJaliscoUpdateInProgress; // @synthesize isJaliscoUpdateInProgress=_isJaliscoUpdateInProgress;
-@property(readonly, nonatomic) _Bool isCloudLibraryUpdateInProgress; // @synthesize isCloudLibraryUpdateInProgress=_isCloudLibraryUpdateInProgress;
+@property(readonly, nonatomic) _Bool isJaliscoUpdateInProgress;
+@property(readonly, nonatomic) _Bool isCloudLibraryUpdateInProgress;
 @property(readonly, nonatomic) _Bool isUpdateInProgress;
-@property(readonly, nonatomic) _Bool isJaliscoInitialImport; // @synthesize isJaliscoInitialImport=_isJaliscoInitialImport;
-@property(readonly, nonatomic) _Bool isCloudLibraryInitialImport; // @synthesize isCloudLibraryInitialImport=_isCloudLibraryInitialImport;
+@property(readonly, nonatomic) _Bool isJaliscoInitialImport;
+@property(readonly, nonatomic) _Bool isCloudLibraryInitialImport;
 @property(readonly, nonatomic) _Bool isInitialImport;
 @property(readonly, nonatomic) _Bool isGeniusEnabled;
 @property(readonly, nonatomic) _Bool hasCloudLockerAccount;
@@ -110,12 +107,9 @@
 - (_Bool)isCellularDataRestrictedForMusic;
 - (_Bool)hasProperNetworkConditionsToShowCloudMedia;
 - (_Bool)hasProperNetworkConditionsToPlayMedia;
-- (void)authenticatedDidChangeNotification:(id)arg1;
-- (void)isCellularDataRestrictedDidChangeNotification:(id)arg1;
-- (void)hasProperNetworkConditionsToShowCloudMediaDidChangeNotification:(id)arg1;
-- (void)canShowCloudTracksDidChangeNotification:(id)arg1;
-- (void)canShowCloudDownloadButtonsDidChangeNotification:(id)arg1;
-- (void)dealloc;
+- (void)_receivedImplementationNotification:(id)arg1;
+- (void)_libraryPathDidChangeForSharedCloudController:(id)arg1;
+- (id)_initWithUserIdentity:(id)arg1;
 - (id)init;
 
 @end

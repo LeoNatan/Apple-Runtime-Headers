@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class WFLSMMap;
+@class WFLSMMap, WFSystemContentWhitelist;
 
 __attribute__((visibility("hidden")))
 @interface WFJudge : NSObject
 {
     WFLSMMap *map;
+    WFSystemContentWhitelist *whitelist;
 }
 
 + (id)defaultJudge;
@@ -20,6 +21,8 @@ __attribute__((visibility("hidden")))
 - (id)pronounceOnPageContent:(id)arg1 pageURL:(id)arg2 debugPage:(id *)arg3 pageTitle:(id *)arg4;
 - (id)_pronounceOnWebpage:(id)arg1;
 - (id)pronounceOnWebpage:(id)arg1;
+- (void)dealloc;
+- (id)initWithMap:(id)arg1 systemContentWhitelist:(id)arg2;
 - (id)initWithMap:(id)arg1;
 
 @end

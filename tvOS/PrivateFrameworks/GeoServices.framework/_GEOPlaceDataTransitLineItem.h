@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isBus;
 @property(readonly, nonatomic) id <GEOEncyclopedicInfo> encyclopedicInfo;
 @property(readonly, nonatomic) _Bool hasEncyclopedicInfo;
 @property(readonly, nonatomic) _Bool isIncidentsTTLExpired;

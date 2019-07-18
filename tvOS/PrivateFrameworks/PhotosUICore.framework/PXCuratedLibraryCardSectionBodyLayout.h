@@ -23,6 +23,7 @@
     _Bool _isSkimming;
     long long _section;
     PXAssetsDataSource *_dataSource;
+    long long _zoomLevel;
     PXCuratedLibraryCardSectionBodyLayoutSpec *_spec;
     long long _maxSkimmingIndex;
     long long _currentSkimmingIndex;
@@ -38,6 +39,7 @@
 @property(nonatomic) long long maxSkimmingIndex; // @synthesize maxSkimmingIndex=_maxSkimmingIndex;
 @property(nonatomic) _Bool isSkimming; // @synthesize isSkimming=_isSkimming;
 @property(retain, nonatomic) PXCuratedLibraryCardSectionBodyLayoutSpec *spec; // @synthesize spec=_spec;
+@property(nonatomic) long long zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 @property(readonly, nonatomic) PXAssetsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) long long section; // @synthesize section=_section;
 - (void).cxx_destruct;
@@ -46,7 +48,7 @@
 - (id)displayAssetRequestObserverForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (id)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (struct CGSize)minSpriteSizeForPresentationStyle:(unsigned long long)arg1;
-@property(readonly, nonatomic) unsigned long long supportedDisplayAssetPresentationStyles;
+- (unsigned long long)supportedDisplayAssetPresentationStylesInLayout:(id)arg1;
 - (id)objectReferenceForSpriteIndex:(unsigned int)arg1;
 - (void)enumerateVisibleAnchoringSpriteIndexesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)screenScaleDidChange;

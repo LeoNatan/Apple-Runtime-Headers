@@ -7,6 +7,7 @@
 #import <Foundation/NSNumberFormatter.h>
 
 @interface NSNumberFormatter (SiriUI)
++ (id)siriui_localizedSpellOutStringFromNumber:(id)arg1;
 + (id)siriui_localizedStringFromNumber:(id)arg1;
 @end
 

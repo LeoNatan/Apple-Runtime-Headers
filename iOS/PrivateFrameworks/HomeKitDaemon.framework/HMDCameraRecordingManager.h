@@ -14,19 +14,19 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDCameraProfile, HMDCameraRecordingBulkSendSessionInitiator, HMDCameraRecordingManagerFactory, HMDCameraRecordingResidentElector, HMDCameraRecordingSession, HMDCameraRecordingSessionNotificationTrigger, HMDCameraRecordingSettingsControl, HMDHAPAccessory, HMDStreamDataChunkAssembler, HMFMessageDispatcher, HMFTimer, NSDate, NSDictionary, NSMutableSet, NSObject, NSSet, NSString, NSUUID;
+@class HMDCameraProfile, HMDCameraRecordingBulkSendDataReadEvent, HMDCameraRecordingBulkSendSessionInitiator, HMDCameraRecordingManagerFactory, HMDCameraRecordingResidentElector, HMDCameraRecordingSession, HMDCameraRecordingSessionNotificationTrigger, HMDCameraRecordingSettingsControl, HMDHAPAccessory, HMDStreamDataChunkAssembler, HMFMessageDispatcher, HMFTimer, NSDictionary, NSMutableSet, NSObject, NSSet, NSString, NSUUID;
 @protocol HMDDataStreamBulkSendSession, OS_dispatch_queue;
 
 @interface HMDCameraRecordingManager : HMFObject <HMDCameraRecordingSessionNotificationTriggerDelegate, HMDCameraRecordingSettingsControlDelegate, HMFLogging, HMDCameraRecordingSessionDelegate, HMDHomeMessageReceiver, HMDCameraBackingStoreDelegate, HMFTimerDelegate>
 {
     _Bool _motionActive;
-    _Bool _doorbellActive;
-    _Bool _backingStoreAvailable;
     NSString *_logIdentifier;
     NSUUID *_messageTargetUUID;
     HMDStreamDataChunkAssembler *_dataChunkAssembler;
     HMDCameraRecordingResidentElector *_recordingResidentElector;
-    NSDate *_doorbellActiveDate;
+    unsigned long long _failedSessionRetryCount;
+    unsigned long long _failedSessionMaxRetryCount;
+    HMDCameraRecordingBulkSendDataReadEvent *_readEvent;
     NSObject<OS_dispatch_queue> *_workQueue;
     HMDCameraRecordingSessionNotificationTrigger *_notificationTrigger;
     HMDCameraRecordingSettingsControl *_recordingSettingsControl;
@@ -55,8 +55,10 @@
 @property(readonly) HMDCameraRecordingSettingsControl *recordingSettingsControl; // @synthesize recordingSettingsControl=_recordingSettingsControl;
 @property(readonly) HMDCameraRecordingSessionNotificationTrigger *notificationTrigger; // @synthesize notificationTrigger=_notificationTrigger;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(retain) NSDate *doorbellActiveDate; // @synthesize doorbellActiveDate=_doorbellActiveDate;
-@property(getter=isBackingStoreAvailable) _Bool backingStoreAvailable; // @synthesize backingStoreAvailable=_backingStoreAvailable;
+@property(retain) HMDCameraRecordingBulkSendDataReadEvent *readEvent; // @synthesize readEvent=_readEvent;
+@property(getter=isMotionActive) _Bool motionActive; // @synthesize motionActive=_motionActive;
+@property(readonly) unsigned long long failedSessionMaxRetryCount; // @synthesize failedSessionMaxRetryCount=_failedSessionMaxRetryCount;
+@property unsigned long long failedSessionRetryCount; // @synthesize failedSessionRetryCount=_failedSessionRetryCount;
 @property(readonly) HMDCameraRecordingResidentElector *recordingResidentElector; // @synthesize recordingResidentElector=_recordingResidentElector;
 @property(retain) HMDStreamDataChunkAssembler *dataChunkAssembler; // @synthesize dataChunkAssembler=_dataChunkAssembler;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID; // @synthesize messageTargetUUID=_messageTargetUUID;
@@ -64,24 +66,25 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 - (void)closeSession:(id)arg1 withError:(id)arg2;
-@property(readonly, getter=isDoorbellActive) _Bool doorbellActive; // @synthesize doorbellActive=_doorbellActive;
-@property(readonly, getter=isMotionActive) _Bool motionActive; // @synthesize motionActive=_motionActive;
-- (void)handleCameraSettingsDidUpdateNotification:(id)arg1;
-- (void)_closeCurrentSessionsWithStatus:(unsigned short)arg1;
-- (unsigned short)_translateObserverErrorToBulkSendStatus:(id)arg1;
+- (void)_closeCurrentSessionsWithReason:(unsigned short)arg1;
+- (unsigned short)_closeEventReasonForRecordingSessionError:(id)arg1;
 - (void)_handleDataReceived:(id)arg1;
 - (void)timerDidFire:(id)arg1;
 - (void)_readDataForCurrentSession;
 - (void)_handleBulkSendSessionCreated:(id)arg1;
-- (void)_startCameraRecordingSessionWithCompletionCallback:(CDUnknownBlockType)arg1;
+- (void)_submitReadEventWithStatus:(unsigned short)arg1;
+- (void)_bulkSendReadDidReceiveStreamDataChunk:(id)arg1;
+- (void)_startBulkSendDataReadEvent;
+- (void)_startRecordingSessionForTrigger:(unsigned long long)arg1 presenceByPairingIdentity:(id)arg2 completionCallback:(CDUnknownBlockType)arg3;
 - (void)_startCameraRecordingSession:(id)arg1;
-- (void)_startCameraRecordingSession;
+- (void)_startCameraRecordingSessionForTrigger:(unsigned long long)arg1;
 - (void)handleStartRecordingSessionRequest:(id)arg1;
-- (void)_createRecordingSession;
+- (void)_createRecordingSessionForTrigger:(unsigned long long)arg1 presenceByPairingIdentity:(id)arg2;
 - (void)_forwardRecordingSession:(unsigned long long)arg1 withSortedDevices:(id)arg2 withRetries:(long long)arg3;
 @property(readonly) NSDictionary *homePresenceByPairingIdentity;
 - (void)_coordinateRecordingSessionForAccessory:(unsigned long long)arg1;
 - (void)recordingSettingsControlDidConfigure:(id)arg1;
+- (void)handleCameraSettingsDidChangeNotification:(id)arg1;
 - (void)cameraBackingStoreDidStop:(id)arg1;
 - (void)cameraBackingStoreDidStart:(id)arg1;
 - (void)notificationTrigger:(id)arg1 didObserveTriggerType:(unsigned long long)arg2 changeToActive:(_Bool)arg3;

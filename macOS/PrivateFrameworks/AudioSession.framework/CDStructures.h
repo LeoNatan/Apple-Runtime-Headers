@@ -33,6 +33,8 @@ struct IOClient;
 
 struct IOController;
 
+struct KVOMutex;
+
 struct Port;
 
 struct SMPTETime {
@@ -54,6 +56,14 @@ struct SampleRateRange {
     double _field4;
 };
 
+struct SelectorControlItem {
+    CDUnknownFunctionPointerType *_vptr$Base;
+    unsigned int _has_bits[1];
+    struct xstring _name;
+    unsigned int _ID;
+    unsigned int _kind;
+};
+
 struct Session;
 
 struct SessionManager;
@@ -66,8 +76,6 @@ struct _AVAudioChannelRange {
 };
 
 struct __shared_weak_count;
-
-struct mutex;
 
 struct shared_ptr<as::client::DataSource> {
     struct DataSource *__ptr_;
@@ -87,6 +95,11 @@ struct shared_ptr<as::client::IOClient> {
 struct shared_ptr<as::client::IOController> {
     struct IOController *_field1;
     struct __shared_weak_count *_field2;
+};
+
+struct shared_ptr<as::client::KVOMutex> {
+    struct KVOMutex *__ptr_;
+    struct __shared_weak_count *__cntrl_;
 };
 
 struct shared_ptr<as::client::Port> {
@@ -109,53 +122,55 @@ struct shared_ptr<as::client::Stream> {
     struct __shared_weak_count *__cntrl_;
 };
 
-struct shared_ptr<std::__1::mutex> {
-    struct mutex *__ptr_;
-    struct __shared_weak_count *__cntrl_;
+struct shared_ptr_mutex<as::client::KVOMutex> {
+    struct shared_ptr<as::client::KVOMutex> mMutex;
 };
 
-struct shared_ptr_mutex<std::__1::mutex> {
-    struct shared_ptr<std::__1::mutex> mMutex;
-};
+struct string_storage;
 
-struct synchronized<std::__1::shared_ptr<as::client::DataSource>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::DataSource>>> {
-    struct shared_ptr_mutex<std::__1::mutex> mMutex;
+struct synchronized<std::__1::shared_ptr<as::client::DataSource>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::DataSource>>> {
+    struct shared_ptr_mutex<as::client::KVOMutex> mMutex;
     shared_ptr_29596208 mObject;
 };
 
-struct synchronized<std::__1::shared_ptr<as::client::HardwareObjectBase>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::HardwareObjectBase>>> {
-    struct shared_ptr_mutex<std::__1::mutex> mMutex;
+struct synchronized<std::__1::shared_ptr<as::client::HardwareObjectBase>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::HardwareObjectBase>>> {
+    struct shared_ptr_mutex<as::client::KVOMutex> mMutex;
     shared_ptr_b419fc97 mObject;
 };
 
-struct synchronized<std::__1::shared_ptr<as::client::Port>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::Port>>> {
-    struct shared_ptr_mutex<std::__1::mutex> mMutex;
+struct synchronized<std::__1::shared_ptr<as::client::Port>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::Port>>> {
+    struct shared_ptr_mutex<as::client::KVOMutex> mMutex;
     shared_ptr_7f50e664 mObject;
 };
 
-struct synchronized<std::__1::shared_ptr<as::client::Session>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::Session>>> {
-    struct shared_ptr_mutex<std::__1::mutex> mMutex;
+struct synchronized<std::__1::shared_ptr<as::client::Session>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::Session>>> {
+    struct shared_ptr_mutex<as::client::KVOMutex> mMutex;
     struct shared_ptr<as::client::Session> mObject;
 };
 
-struct synchronized<std::__1::shared_ptr<as::client::SessionManager>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::SessionManager>>> {
-    struct shared_ptr_mutex<std::__1::mutex> mMutex;
+struct synchronized<std::__1::shared_ptr<as::client::SessionManager>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::SessionManager>>> {
+    struct shared_ptr_mutex<as::client::KVOMutex> mMutex;
     shared_ptr_a346ac95 mObject;
 };
 
-struct synchronized<std::__1::shared_ptr<as::client::Stream>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::Stream>>> {
-    struct shared_ptr_mutex<std::__1::mutex> mMutex;
+struct synchronized<std::__1::shared_ptr<as::client::Stream>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::Stream>>> {
+    struct shared_ptr_mutex<as::client::KVOMutex> mMutex;
     shared_ptr_56b37834 mObject;
 };
 
-struct synchronized<std::__1::weak_ptr<as::client::IOController>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::weak_ptr<as::client::IOController>>> {
-    struct shared_ptr_mutex<std::__1::mutex> mMutex;
+struct synchronized<std::__1::weak_ptr<as::client::IOController>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::weak_ptr<as::client::IOController>>> {
+    struct shared_ptr_mutex<as::client::KVOMutex> mMutex;
     struct weak_ptr<as::client::IOController> mObject;
 };
 
 struct weak_ptr<as::client::IOController> {
     struct IOController *__ptr_;
     struct __shared_weak_count *__cntrl_;
+};
+
+struct xstring {
+    struct string_storage *mStorage;
+    struct __CFString *mCFString;
 };
 
 #pragma mark Typedef'd Structures

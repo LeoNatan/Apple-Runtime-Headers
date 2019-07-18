@@ -4,23 +4,33 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ActivityRingsUI/ARUIPrecompiledRenderState.h>
+#import <objc/NSObject.h>
 
+#import <ActivityRingsUI/ARUIPrecompiledRendering-Protocol.h>
+#import <ActivityRingsUI/ARUIRendering-Protocol.h>
 #import <ActivityRingsUI/ARUIRingsState-Protocol.h>
 
 @class NSString;
+@protocol MTLRenderPipelineState;
 
 __attribute__((visibility("hidden")))
-@interface ARUIRingsRenderState : ARUIPrecompiledRenderState <ARUIRingsState>
+@interface ARUIRingsRenderState : NSObject <ARUIRendering, ARUIPrecompiledRendering, ARUIRingsState>
 {
+    id <MTLRenderPipelineState> _renderPipelineState;
     unsigned int _renderArea;
     int _centeredAroundPercentSegmentDrawCount;
 }
 
 @property(nonatomic) int centeredAroundPercentSegmentDrawCount; // @synthesize centeredAroundPercentSegmentDrawCount=_centeredAroundPercentSegmentDrawCount;
 @property(nonatomic) unsigned int renderArea; // @synthesize renderArea=_renderArea;
+- (void).cxx_destruct;
 - (_Bool)shouldRunStateForRing:(id)arg1;
+- (void)didInitialize;
+- (id)name;
 - (id)initWithPipelineLibrary:(id)arg1;
+- (id)renderPipelineDescriptorFromLibrary:(id)arg1;
+@property(retain, nonatomic) id <MTLRenderPipelineState> renderPipelineState;
+- (id)initWithDevice:(id)arg1 library:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

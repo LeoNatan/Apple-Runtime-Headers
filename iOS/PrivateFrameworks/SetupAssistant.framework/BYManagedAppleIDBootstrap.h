@@ -19,6 +19,7 @@
 }
 
 + (_Bool)isSettingUpMultiUser;
++ (_Bool)isFirstTimeLogin;
 + (_Bool)isMultiUser;
 + (id)delegateBundleIDsForManagedAccount;
 + (id)sharedManager;

@@ -18,12 +18,12 @@
     ECHTMLStringAndMIMECharset *_htmlBody;
     MFPlainTextDocument *_plainTextAlternative;
     NSArray *_otherHTMLAndAttachments;
-    id <MFDeliveryDelegate> _delegate;
     MailAccount *_archiveAccount;
     DeliveryAccount *_deliveryAccount;
     NSDictionary *_compositionSpecification;
     MFMailDelivery *_currentDeliveryObject;
     _Bool _isUserRequested;
+    id <MFDeliveryDelegate> _delegate;
     MFAttachmentCompositionContext *_attachmentContext;
     unsigned long long _conversationFlags;
     long long _originalConversationId;
@@ -36,11 +36,11 @@
 @property(nonatomic) long long originalConversationId; // @synthesize originalConversationId=_originalConversationId;
 @property(nonatomic) unsigned long long conversationFlags; // @synthesize conversationFlags=_conversationFlags;
 @property(retain, nonatomic) MFAttachmentCompositionContext *attachmentContext; // @synthesize attachmentContext=_attachmentContext;
+@property(nonatomic) __weak id <MFDeliveryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDictionary *compositionSpecification; // @synthesize compositionSpecification=_compositionSpecification;
 - (void).cxx_destruct;
 - (void)setAccount:(id)arg1;
 - (void)setArchiveAccount:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (id)account;
 - (id)_deliveryAccountForInitializers;
 - (id)message;

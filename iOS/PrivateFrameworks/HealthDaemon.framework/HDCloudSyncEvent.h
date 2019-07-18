@@ -12,6 +12,7 @@
 {
     _Bool _cloudKitManateeEnabled;
     _Bool _internalSettingManateeEnabled;
+    unsigned int _pcsReportManateeStatus;
     long long _operation;
     long long _reason;
     unsigned long long _options;
@@ -26,6 +27,7 @@
 
 @property(readonly, copy, nonatomic) NSDate *eventTime; // @synthesize eventTime=_eventTime;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
+@property(readonly, nonatomic) unsigned int pcsReportManateeStatus; // @synthesize pcsReportManateeStatus=_pcsReportManateeStatus;
 @property(readonly, nonatomic) _Bool internalSettingManateeEnabled; // @synthesize internalSettingManateeEnabled=_internalSettingManateeEnabled;
 @property(readonly, nonatomic) _Bool cloudKitManateeEnabled; // @synthesize cloudKitManateeEnabled=_cloudKitManateeEnabled;
 @property(readonly, copy, nonatomic) NSString *cloudKitIdentifer; // @synthesize cloudKitIdentifer=_cloudKitIdentifer;

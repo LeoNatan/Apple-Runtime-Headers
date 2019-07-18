@@ -37,6 +37,7 @@
     DOCConcreteLocation *_defaultLocation;
     unsigned long long _interactionMode;
     NSArray *_excludedDocumentTypes;
+    NSArray *_recentDocumentsTypes;
     NSArray *_urls;
     NSString *_hostIdentifier;
     NSString *_hostBundleTitle;
@@ -89,6 +90,7 @@
 @property(copy, nonatomic) NSString *hostBundleTitle; // @synthesize hostBundleTitle=_hostBundleTitle;
 @property(copy, nonatomic) NSString *hostIdentifier; // @synthesize hostIdentifier=_hostIdentifier;
 @property(retain) NSArray *urls; // @synthesize urls=_urls;
+@property(copy, nonatomic) NSArray *recentDocumentsTypes; // @synthesize recentDocumentsTypes=_recentDocumentsTypes;
 @property(copy, nonatomic) NSArray *excludedDocumentTypes; // @synthesize excludedDocumentTypes=_excludedDocumentTypes;
 @property BOOL inProcess; // @synthesize inProcess=_inProcess;
 @property BOOL shouldIgnoreInteractionMode; // @synthesize shouldIgnoreInteractionMode=_shouldIgnoreInteractionMode;

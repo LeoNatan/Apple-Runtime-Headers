@@ -11,7 +11,6 @@
     // Error parsing type: , name: identifier
     // Error parsing type: , name: kind
     // Error parsing type: , name: startDate
-    // Error parsing type: , name: events
 }
 
 @end

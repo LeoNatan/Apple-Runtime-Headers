@@ -22,7 +22,6 @@
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSURL *broadcastURL; // @synthesize broadcastURL=_broadcastURL;
 - (void).cxx_destruct;
-- (oneway void)setMicrophoneEnabledPersistent:(_Bool)arg1;
 - (oneway void)setHasUserConsentForMicrophone:(_Bool)arg1;
 - (oneway void)setHasUserConsentForCamera:(_Bool)arg1;
 - (oneway void)synchronousIsBroadcastingWithPreferredExtension:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -34,14 +33,14 @@
 - (oneway void)captureHandlerWithSample:(id)arg1 timingData:(id)arg2;
 - (oneway void)updateBroadcastURL:(id)arg1;
 - (oneway void)updateBroadcastServiceInfo:(id)arg1;
+- (oneway void)recordingDidPause;
+- (oneway void)recordingShouldResume;
 - (oneway void)recordingDidStopWithError:(id)arg1 movieURL:(id)arg2;
 - (oneway void)updateScreenRecordingStateWithCurrentState:(id)arg1;
-- (oneway void)reportCameraUsage:(int)arg1;
+- (oneway void)reportCameraUsage:(long long)arg1;
 - (oneway void)updateProcessIDForAudioCaptureWithPID:(int)arg1;
 - (oneway void)setMicrophoneEnabled:(_Bool)arg1;
 - (oneway void)discardRecordingWithHandler:(CDUnknownBlockType)arg1;
-- (oneway void)clientDidResignActive;
-- (oneway void)clientDidBecomeActive;
 - (oneway void)resumeRecordingWithWindowLayerContextID:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (oneway void)pauseRecording;
 - (oneway void)getSystemBroadcastExtensionInfo:(CDUnknownBlockType)arg1;

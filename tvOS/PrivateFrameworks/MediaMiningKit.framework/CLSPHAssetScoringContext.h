@@ -21,8 +21,10 @@
     short _audioClassificationsToEmphasize;
     double _viewCountThreshold;
     double _playCountThreshold;
+    double _aestheticScoreThresholdToBeAwesome;
 }
 
+@property(nonatomic) double aestheticScoreThresholdToBeAwesome; // @synthesize aestheticScoreThresholdToBeAwesome=_aestheticScoreThresholdToBeAwesome;
 @property(nonatomic) short audioClassificationsToEmphasize; // @synthesize audioClassificationsToEmphasize=_audioClassificationsToEmphasize;
 @property(nonatomic) _Bool shouldEmphasizeSDOF; // @synthesize shouldEmphasizeSDOF=_shouldEmphasizeSDOF;
 @property(nonatomic) _Bool shouldEmphasizeBurst; // @synthesize shouldEmphasizeBurst=_shouldEmphasizeBurst;
@@ -32,6 +34,7 @@
 @property(nonatomic) _Bool shouldEmphasizeShared; // @synthesize shouldEmphasizeShared=_shouldEmphasizeShared;
 @property(nonatomic) double playCountThreshold; // @synthesize playCountThreshold=_playCountThreshold;
 @property(nonatomic) double viewCountThreshold; // @synthesize viewCountThreshold=_viewCountThreshold;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

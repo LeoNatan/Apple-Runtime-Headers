@@ -61,7 +61,7 @@
 + (id)_imageForAttributedTitle:(id)arg1 titleStyle:(long long)arg2 size:(struct CGSize)arg3 fillStyle:(long long)arg4 universal:(_Bool)arg5 tintColor:(id)arg6;
 + (id)_defaultTitleAttributes;
 + (_Bool)canOpenItemForItemState:(id)arg1 clientContext:(id)arg2;
-+ (id)_cachedImageForAttributedTitle:(id)arg1 titleStyle:(long long)arg2 size:(struct CGSize)arg3 fillStyle:(long long)arg4 universal:(_Bool)arg5 tintColor:(id)arg6;
++ (id)_cachedImageForAttributedTitle:(id)arg1 titleStyle:(long long)arg2 size:(struct CGSize)arg3 fillStyle:(long long)arg4 universal:(_Bool)arg5 tintColor:(id)arg6 interfaceStyle:(long long)arg7;
 + (id)localizedTitleForItemState:(id)arg1 clientContext:(id)arg2;
 + (id)itemOfferButtonWithAppearance:(id)arg1;
 + (id)cloudTintColorForBackgroundColor:(id)arg1;

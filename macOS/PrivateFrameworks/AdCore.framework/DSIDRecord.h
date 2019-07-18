@@ -20,6 +20,7 @@
     BOOL _accountAgeUnknown;
     BOOL _isActiveRecord;
     BOOL _isRestrictedByEU_GDPR;
+    BOOL _isDPIDManatee;
     BOOL _isPlaceholderAccount;
     BOOL _accountLimitAdTrackingEnabled;
     BOOL _lastSentLimitAdTrackingStatus;
@@ -53,6 +54,7 @@
 @property(nonatomic) int lastSentSegmentDataTimestamp; // @synthesize lastSentSegmentDataTimestamp=_lastSentSegmentDataTimestamp;
 @property(nonatomic) int segmentDataTimestamp; // @synthesize segmentDataTimestamp=_segmentDataTimestamp;
 @property(nonatomic) int limitAdTrackingTimestamp; // @synthesize limitAdTrackingTimestamp=_limitAdTrackingTimestamp;
+@property(nonatomic) BOOL isDPIDManatee; // @synthesize isDPIDManatee=_isDPIDManatee;
 @property(retain, nonatomic) NSString *iAdIDBeforeReset; // @synthesize iAdIDBeforeReset=_iAdIDBeforeReset;
 @property(readonly, nonatomic) BOOL isRestrictedByEU_GDPR; // @synthesize isRestrictedByEU_GDPR=_isRestrictedByEU_GDPR;
 @property(retain, nonatomic) NSString *IDFA; // @synthesize IDFA=_IDFA;

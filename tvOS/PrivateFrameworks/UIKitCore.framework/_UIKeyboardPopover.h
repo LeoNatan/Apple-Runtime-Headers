@@ -4,18 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/_UIPopoverView.h>
+#import <UIKitCore/UIView.h>
 
 #import <UIKitCore/UITextEffectsOrdering-Protocol.h>
 
+@class _UIPopoverView;
+
 __attribute__((visibility("hidden")))
-@interface _UIKeyboardPopover : _UIPopoverView <UITextEffectsOrdering>
+@interface _UIKeyboardPopover : UIView <UITextEffectsOrdering>
 {
+    _UIPopoverView *_popoverView;
 }
 
+- (void).cxx_destruct;
 - (void)_setRenderConfig:(id)arg1;
 - (int)textEffectsVisibilityLevelInKeyboardWindow;
 - (int)textEffectsVisibilityLevel;
+- (id)initWithPopoverView:(id)arg1;
 
 @end
 

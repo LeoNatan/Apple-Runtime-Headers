@@ -6,32 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSTimer;
+@class NSMutableDictionary, NSTimer;
 
 __attribute__((visibility("hidden")))
 @interface VUISportsScoreboardManager : NSObject
 {
+    _Bool _updateInProgress;
     NSMutableDictionary *_sportsEventsById;
     NSTimer *_scoreboardUpdateTimer;
-    NSArray *_scoreData;
-    NSMutableArray *_jsContextDictionaryArgument;
     long long _scoreboardUpdateInterval;
 }
 
 + (void)unregisterDelegate:(id)arg1 canonicalId:(id)arg2;
 + (void)registerDelegate:(id)arg1 canonicalId:(id)arg2;
 + (id)sharedInstance;
+@property(nonatomic) _Bool updateInProgress; // @synthesize updateInProgress=_updateInProgress;
 @property(nonatomic) long long scoreboardUpdateInterval; // @synthesize scoreboardUpdateInterval=_scoreboardUpdateInterval;
-@property(retain, nonatomic) NSMutableArray *jsContextDictionaryArgument; // @synthesize jsContextDictionaryArgument=_jsContextDictionaryArgument;
-@property(retain, nonatomic) NSArray *scoreData; // @synthesize scoreData=_scoreData;
 @property(retain, nonatomic) NSTimer *scoreboardUpdateTimer; // @synthesize scoreboardUpdateTimer=_scoreboardUpdateTimer;
 @property(retain, nonatomic) NSMutableDictionary *sportsEventsById; // @synthesize sportsEventsById=_sportsEventsById;
 - (void).cxx_destruct;
 - (void)_invalidateTimer;
 - (void)_resetTimer;
 - (void)_updateTimer;
-- (void)_updateScores;
-- (void)_prepareJSContextDictionaryArgument;
+- (void)_updateScores:(id)arg1;
+- (id)_prepareJSContextDictionaryArgument;
 - (void)_getScoreboardUpdates;
 - (id)init;
 

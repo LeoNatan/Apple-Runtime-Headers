@@ -9,9 +9,11 @@
 #import <SettingsCellularUI/CoreTelephonyClientSubscriberDelegate-Protocol.h>
 
 @class CoreTelephonyClient, NSMutableDictionary, NSString;
+@protocol OS_dispatch_queue;
 
 @interface PSUICoreTelephonySubscriberCache : NSObject <CoreTelephonyClientSubscriberDelegate>
 {
+    NSObject<OS_dispatch_queue> *_queue;
     CoreTelephonyClient *_client;
     NSMutableDictionary *_mobileEquipmentInfoDict;
     NSMutableDictionary *_isoCountryCodesDict;

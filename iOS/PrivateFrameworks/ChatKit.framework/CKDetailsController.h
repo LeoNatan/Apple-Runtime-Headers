@@ -89,7 +89,8 @@
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) __weak id <CKDetailsControllerDelegate> detailsControllerDelegate; // @synthesize detailsControllerDelegate=_detailsControllerDelegate;
 - (void).cxx_destruct;
-- (void)_didFetchAttachments:(id)arg1;
+- (void)_batchDownloadNotificationFired:(id)arg1;
+- (void)_updateDownloadButtonStateIfNeeded;
 @property(readonly, nonatomic) _Bool shouldShowDownloadMoreCell;
 - (void)_resetPurgedAttachmentCount;
 - (unsigned long long)_purgedAttachmentCount;

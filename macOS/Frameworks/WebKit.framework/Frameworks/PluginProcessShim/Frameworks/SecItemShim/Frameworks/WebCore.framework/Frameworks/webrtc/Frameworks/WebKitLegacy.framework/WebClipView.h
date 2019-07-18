@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
     struct CGRect _additionalClip;
 }
 
-- (void)scrollWheel:(id)arg1;
 - (struct CGRect)_focusRingVisibleRect;
 - (struct CGRect)additionalClip;
 - (BOOL)hasAdditionalClip;

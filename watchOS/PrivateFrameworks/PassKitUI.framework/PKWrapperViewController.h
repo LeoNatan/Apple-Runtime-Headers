@@ -8,21 +8,20 @@
 
 @interface PKWrapperViewController : UIViewController
 {
+    int _type;
     UIViewController *_wrappedViewController;
 }
 
 @property(readonly, nonatomic) UIViewController *wrappedViewController; // @synthesize wrappedViewController=_wrappedViewController;
 - (void).cxx_destruct;
-- (id)childViewControllerForWhitePointAdaptivityStyle;
-- (id)childViewControllerForScreenEdgesDeferringSystemGestures;
-- (id)childViewControllerForHomeIndicatorAutoHidden;
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;
 - (_Bool)extendedLayoutIncludesOpaqueBars;
 - (unsigned int)edgesForExtendedLayout;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
-- (id)initWithWrappedViewController:(id)arg1;
+- (id)initWithWrappedViewController:(id)arg1 type:(int)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end

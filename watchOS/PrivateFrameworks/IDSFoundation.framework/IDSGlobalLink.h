@@ -120,7 +120,7 @@
 - (void)_notifySessionInfoReceived:(id)arg1 relayGroupID:(id)arg2 relaySessionID:(id)arg3 success:(_Bool)arg4;
 - (void)_convergeSharedSessions:(id)arg1;
 - (void)_setupNewQRLinkIfNecessary:(id)arg1;
-- (void)_requestNewQRAllocation;
+- (void)_requestNewQRAllocationWithPreferredRemoteInterface:(int)arg1;
 - (_Bool)_qrLinkLimitExceededWithNewLinkType:(unsigned char)arg1 cellularRelayLinkCount:(unsigned short)arg2 wifiRelayLinkCount:(unsigned short)arg3;
 - (_Bool)link:(id)arg1 didReceivePacket:(CDStruct_05c4e9ef *)arg2 fromDeviceUniqueID:(id)arg3 cbuuid:(id)arg4;
 - (void)link:(id)arg1 didDisconnectForDeviceUniqueID:(id)arg2 cbuuid:(id)arg3;
@@ -156,8 +156,8 @@
 - (void)_setupRelayConnectionForNetworkAddressChanges;
 - (void)_processNewRemoteCandidates:(id)arg1;
 - (void)_processRemovedRemoteCandidates:(id)arg1;
-- (_Bool)_isInterfaceConstrainedWithAddress:(const struct sockaddr *)arg1 index:(unsigned int)arg2;
-- (_Bool)_isInterfaceExpensiveWithAddress:(const struct sockaddr *)arg1 index:(unsigned int)arg2;
+- (_Bool)_isInterfaceConstrainedWithInterfaceIndex:(unsigned int)arg1;
+- (_Bool)_isInterfaceExpensiveWithInterfaceIndex:(unsigned int)arg1;
 - (void)_processNewLocalAddressList:(id)arg1;
 - (void)_processRemovedLocalAddressList:(id)arg1;
 - (void)_updateInterfaceAddressesWithAddList:(id)arg1 removeList:(id)arg2;
@@ -178,10 +178,9 @@
 - (void)_handleSelfAllocationTimeout:(id)arg1;
 - (_Bool)_isExtIPDiscoveryDone;
 - (void)_handleCommnatResult:(int)arg1 reflextiveCandidate:(id)arg2;
-- (id)_createNetworkInterfaceArrayWithOptions:(unsigned int)arg1 wantsAWDL:(_Bool)arg2 wantsWiFi:(_Bool)arg3 wantsCellular:(_Bool)arg4 allowsLinkLocal:(_Bool)arg5 useDefaultInterfaceOnly:(_Bool)arg6 defaultPairedDevice:(_Bool)arg7 port:(unsigned short)arg8;
-- (void)_handleAllocbindFailoverTimer:(id)arg1;
+- (void)_handleAllocbindFailoverTimer:(id)arg1 onInterface:(int)arg2;
 - (void)_stopAllocbindFailoverTimer;
-- (void)_startAllocbindFailoverTimer:(id)arg1;
+- (void)_startAllocbindFailoverTimer:(id)arg1 onInterface:(int)arg2;
 - (_Bool)_addCandidate:(id)arg1 isRemoteCandidate:(_Bool)arg2;
 - (void)_addStunCheckPair:(id)arg1 isRemoteCandidate:(_Bool)arg2;
 - (void)_stopActivityTimer;
@@ -233,7 +232,7 @@
 - (void)_discardCandidatePairsWithOption:(_Bool)arg1;
 - (_Bool)_hasConnectingRelayCandidatePair;
 - (id)_nextConnectedCandidatePair;
-- (id)_getConnectingCandidatePairsWithSessionID:(id)arg1;
+- (id)_getCandidatePairsWithSessionID:(id)arg1 inState:(unsigned int)arg2;
 - (_Bool)_hasConnectedCandidatePair;
 - (void)_selectDefaultCandidatePair;
 - (void)_selectBetterDefaultCandidatePair:(id)arg1;

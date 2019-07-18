@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)load;
 - (unsigned long long)verticalAlignmentWithValue:(id)arg1 withType:(int)arg2;
 - (unsigned long long)horizontalAlignmentWithValue:(id)arg1 withType:(int)arg2;
 - (unsigned long long)fillModeWithValue:(id)arg1 withType:(int)arg2;

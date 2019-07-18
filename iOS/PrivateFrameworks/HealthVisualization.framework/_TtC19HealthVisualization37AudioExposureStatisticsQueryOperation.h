@@ -11,9 +11,10 @@
     // Error parsing type: , name: resultHandler
     // Error parsing type: , name: underlyingResult
     // Error parsing type: , name: quantityType
-    // Error parsing type: , name: healthStore
     // Error parsing type: , name: queryConfig
     // Error parsing type: , name: queryConfigOverrides
+    // Error parsing type: , name: queryQualityOfService
+    // Error parsing type: , name: healthStore
     // Error parsing type: , name: operationQueue
     // Error parsing type: , name: $__lazy_storage_$_statisticsQueryOperation
     // Error parsing type: , name: $__lazy_storage_$_resultDeliveryOperation

@@ -16,8 +16,10 @@
 - (NSArray *)statusBarDescribers;
 
 @optional
+- (struct CGRect)statusBarAvoidanceFrame;
 - (struct CGRect)frameForSceneIdentifier:(NSString *)arg1 inView:(UIView *)arg2;
 - (id <SBApplicationSceneStatusBarDescribing>)statusBarDescriberAtPoint:(struct CGPoint)arg1 inView:(UIView *)arg2 pointInSceneLayoutSpace:(struct CGPoint *)arg3;
+- (NSArray *)currentlyValidStatusBarPartIdentifiers;
 - (NSArray *)statusBarPartsForSceneWithIdentifier:(NSString *)arg1;
 @end
 

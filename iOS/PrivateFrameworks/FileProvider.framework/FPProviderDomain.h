@@ -32,7 +32,7 @@
     NSString *_identifier;
     NSString *_providerID;
     NSArray *_supportedFileTypes;
-    NSString *_containingBundleIdentifier;
+    NSString *_topLevelBundleIdentifier;
     NSURL *_extensionBundleURL;
     NSArray *_storageURLs;
     NSArray *_supportedSearchFilters;
@@ -70,7 +70,7 @@
 @property(nonatomic) _Bool isAvailableSystemWide; // @synthesize isAvailableSystemWide=_isAvailableSystemWide;
 @property(retain, nonatomic) NSArray *storageURLs; // @synthesize storageURLs=_storageURLs;
 @property(retain, nonatomic) NSURL *extensionBundleURL; // @synthesize extensionBundleURL=_extensionBundleURL;
-@property(retain, nonatomic) NSString *containingBundleIdentifier; // @synthesize containingBundleIdentifier=_containingBundleIdentifier;
+@property(retain, nonatomic) NSString *topLevelBundleIdentifier; // @synthesize topLevelBundleIdentifier=_topLevelBundleIdentifier;
 @property(nonatomic) _Bool supportsEnumeration; // @synthesize supportsEnumeration=_supportsEnumeration;
 @property(retain, nonatomic) NSArray *supportedFileTypes; // @synthesize supportedFileTypes=_supportedFileTypes;
 @property(nonatomic, getter=isReadOnly) _Bool readOnly; // @synthesize readOnly=_readOnly;
@@ -90,6 +90,7 @@
 @property(readonly, nonatomic) NSString *iCloudAccountIdentifier;
 @property(readonly, nonatomic) _Bool containsPhotos;
 @property(readonly, nonatomic) _Bool canDisconnect;
+@property(readonly, nonatomic) NSString *containingBundleIdentifier;
 @property(readonly, nonatomic) NSString *extensionBundleIdentifier;
 @property(readonly, nonatomic) NSString *domainFullDisplayName;
 @property(readonly, nonatomic) NSString *domainDisplayName;

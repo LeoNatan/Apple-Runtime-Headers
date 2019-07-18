@@ -26,6 +26,7 @@
     BOOL _loadingExtensions;
     BOOL _needsUpdateExtensions;
     BOOL _suppressCurrentPublicInputMode;
+    BOOL disableFloatingKeyboardFilter;
     BOOL _shouldRunContinuousDiscovery;
     UITextInputMode *_documentInputMode;
     NSArray *keyboardInputModes;
@@ -49,6 +50,7 @@
 
 + (id)ASCIICapableInputModeIdentifierForPreferredLanguages;
 + (id)inputModeIdentifierForPreferredLanguages:(id)arg1 passingTest:(CDUnknownBlockType)arg2;
++ (id)hardwareInputModeAutomaticHardwareLayout;
 + (id)sharedInputModeController;
 @property(retain, nonatomic) id extensionMatchingContext; // @synthesize extensionMatchingContext=_extensionMatchingContext;
 @property(retain, nonatomic) UIKeyboardInputMode *currentUsedInputMode; // @synthesize currentUsedInputMode=_currentUsedInputMode;
@@ -59,6 +61,7 @@
 @property(nonatomic) BOOL shouldRunContinuousDiscovery; // @synthesize shouldRunContinuousDiscovery=_shouldRunContinuousDiscovery;
 @property(copy, nonatomic) NSString *inputModeContextIdentifier; // @synthesize inputModeContextIdentifier=_inputModeContextIdentifier;
 @property(retain, nonatomic) UIKeyboardInputMode *lastUsedInputMode; // @synthesize lastUsedInputMode=_lastUsedInputMode;
+@property(nonatomic) BOOL disableFloatingKeyboardFilter; // @synthesize disableFloatingKeyboardFilter;
 @property(retain) NSArray *suggestedInputModesForSiriLanguage; // @synthesize suggestedInputModesForSiriLanguage;
 @property(readonly, nonatomic) NSArray *allowedExtensions; // @synthesize allowedExtensions=_allowedExtensions;
 @property(retain) NSArray *defaultNormalizedInputModes; // @synthesize defaultNormalizedInputModes;
@@ -92,6 +95,7 @@
 - (id)inputModeLastUsedForLanguage:(id)arg1;
 - (id)inputModeIdentifierLastUsedForLanguage:(id)arg1;
 - (id)nextInputModeInPreferenceListForTraits:(id)arg1;
+- (id)nextInputModeInPreferenceListForTraits:(id)arg1 updatePreference:(BOOL)arg2 skipEmoji:(BOOL)arg3;
 - (id)nextInputModeInPreferenceListForTraits:(id)arg1 updatePreference:(BOOL)arg2;
 - (id)nextInputModeToUseForTraits:(id)arg1;
 - (void)clearNextInputModeToUse;
@@ -115,6 +119,7 @@
 - (void)willEnterForeground:(id)arg1;
 - (void)loadSuggestedInputModesForSiriLanguage;
 - (id)suggestedInputModesForPreferredLanguages;
+- (id)suggestedInputModesForLocales:(id)arg1;
 - (id)suggestedInputModesForCurrentLocale;
 - (id)suggestedInputModesForCurrentHardwareKeyboardAndSuggestedInputModes:(id)arg1;
 - (id)suggestedInputModesForHardwareKeyboardLanguage:(id)arg1 countryCode:(id)arg2 inputModes:(id)arg3;
@@ -122,6 +127,10 @@
 - (id)defaultEnabledInputModesForCurrentLocale:(BOOL)arg1;
 - (id)appendPasscodeInputModes:(id)arg1;
 - (void)updateDefaultInputModesIfNecessaryForIdiom;
+- (id)fallbackCurrentInputModeForFilteredInputModeIdentifier:(id)arg1 fromInputModeIdentifiers:(id)arg2;
+- (id)fallbackCurrentInputModeForFilteredInputMode:(id)arg1 fromInputModes:(id)arg2;
+- (id)filteredPadInputModesFromInputModes:(id)arg1;
+- (id)inputModeByReplacingSoftwareLayoutWithSoftwareLayout:(id)arg1 inInputMode:(id)arg2;
 - (id)filteredTVInputModesFromInputModes:(id)arg1;
 - (id)filteredInputModesForSiriLanguageFromInputModes:(id)arg1;
 - (BOOL)currentLocaleRequiresExtendedSetup;

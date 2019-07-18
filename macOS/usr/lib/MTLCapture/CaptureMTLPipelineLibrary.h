@@ -18,9 +18,11 @@
     CaptureMTLDevice *_captureDevice;
     struct GTTraceContext *_traceContext;
     struct GTTraceStream *_traceStream;
+    BOOL _isBaseObjectDebugDevice;
 }
 
 - (void).cxx_destruct;
+- (void)dealloc;
 @property(readonly) NSArray *pipelineNames;
 @property(readonly, nonatomic) id <MTLPipelineCache> pipelineCache;
 @property(copy) NSString *label;
@@ -34,13 +36,12 @@
 @property(readonly) struct GTTraceStream *traceStream;
 @property(readonly) struct GTTraceContext *traceContext;
 - (void)touch;
-- (id)newRenderPipelineStateWithName:(id)arg1 options:(unsigned long long)arg2 reflection:(id *)arg3 error:(id *)arg4;
 - (id)newRenderPipelineDescriptorWithName:(id)arg1 error:(id *)arg2;
-- (id)newComputePipelineStateWithName:(id)arg1 options:(unsigned long long)arg2 reflection:(id *)arg3 error:(id *)arg4;
 - (id)newComputePipelineDescriptorWithName:(id)arg1 error:(id *)arg2;
-- (void)dealloc;
+- (id)newRenderPipelineStateWithName:(id)arg1 options:(unsigned long long)arg2 reflection:(id *)arg3 error:(id *)arg4;
+- (id)newComputePipelineStateWithName:(id)arg1 options:(unsigned long long)arg2 reflection:(id *)arg3 error:(id *)arg4;
 @property(readonly) id <MTLPipelineLibrary> baseObject;
-- (id)initWithBaseObject:(id)arg1 captureContext:(struct GTTraceContext *)arg2 captureDevice:(id)arg3;
+- (id)initWithBaseObject:(id)arg1 captureDevice:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

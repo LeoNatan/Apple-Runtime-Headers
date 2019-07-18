@@ -14,5 +14,9 @@
 - (void)readComponent:(TSPComponent *)arg1 completionQueue:(NSObject<OS_dispatch_queue> *)arg2 completion:(void (^)(_Bool, TSPObject *, NSMapTable *, NSError *))arg3;
 - (void)readRootObjectWithCompletionQueue:(NSObject<OS_dispatch_queue> *)arg1 completion:(void (^)(_Bool, TSPObject *, NSMapTable *, NSError *))arg2;
 - (_Bool)endReading;
+
+@optional
+@property(readonly, nonatomic) long long archiveValidationMode;
+- (void)validateArchiveWithCompletion:(void (^)(NSError *))arg1;
 @end
 

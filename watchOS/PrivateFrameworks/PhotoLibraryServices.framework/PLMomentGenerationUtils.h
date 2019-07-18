@@ -10,13 +10,14 @@
 {
 }
 
-+ (id)_dateRangeFormatterForCategory:(unsigned short)arg1;
-+ (id)dateRangeTitleWithStartDate:(id)arg1 endDate:(id)arg2 category:(unsigned short)arg3 kind:(unsigned short)arg4 forceUpdateLocale:(_Bool)arg5;
++ (id)_dateRangeFormatterForCategory:(unsigned short)arg1 kind:(unsigned short)arg2 options:(unsigned int)arg3;
++ (id)dateRangeTitleWithStartDate:(id)arg1 endDate:(id)arg2 category:(unsigned short)arg3 kind:(unsigned short)arg4 options:(unsigned int)arg5;
 + (id)dateRangeTitleWithStartDate:(id)arg1 endDate:(id)arg2 category:(unsigned short)arg3 kind:(unsigned short)arg4;
-+ (_Bool)isNearFrequentLocationForLocation:(id)arg1 frequentLocations:(id)arg2;
++ (_Bool)isNearFrequentLocationForMoment:(id)arg1 frequentLocations:(id)arg2;
++ (_Bool)isAtFrequentLocationForMoment:(id)arg1 frequentLocations:(id)arg2;
 + (id)frequentLocationsOverlappingStartDate:(id)arg1 endDate:(id)arg2 frequentLocations:(id)arg3;
 + (id)sortedOverlappingFrequentLocations:(id)arg1;
-+ (_Bool)isNearTopFrequentLocationForLocation:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 frequentLocations:(id)arg4;
++ (_Bool)isTopFrequentLocationForMoment:(id)arg1 frequentLocations:(id)arg2;
 + (unsigned short)locationTypeForLocation:(id)arg1 usingLocationsOfInterest:(id)arg2 routineIsAvailable:(_Bool)arg3;
 + (unsigned short)processedLocationTypeForMoment:(id)arg1 locationsOfInterest:(id)arg2 frequentLocations:(id)arg3 routineIsAvailable:(_Bool)arg4;
 + (void)processLocationIfNecessaryInMoment:(id)arg1 usingManager:(id)arg2 frequentLocations:(id)arg3 frequentLocationsDidChange:(_Bool)arg4;

@@ -6,7 +6,7 @@
 
 #import <FileProvider/NSObject-Protocol.h>
 
-@class FPItem, NSArray, NSMutableSet, NSString, NSURL;
+@class FPItem, NSArray, NSMutableSet, NSSet, NSString, NSURL;
 
 @protocol FPFrameworkOverriding <NSObject>
 
@@ -15,6 +15,7 @@
 - (void)FPUniversalBookmarkableStringFromDocumentURL:(NSURL *)arg1 completionHandler:(void (^)(NSString *, NSError *))arg2;
 - (void)FPValuesForAttributes:(NSArray *)arg1 forItemAtURL:(NSURL *)arg2 completionHandler:(void (^)(NSDictionary *, NSError *))arg3;
 - (BOOL)FPAreUTIsImportable:(NSArray *)arg1 toFolderItem:(FPItem *)arg2;
+- (NSSet *)FPServerPackageExtensions;
 - (BOOL)FPFilterActions:(NSMutableSet *)arg1 forDroppingItems:(NSArray *)arg2 underItem:(FPItem *)arg3;
 - (void)FPFileProviderServiceEndpointCreatingForItemAtURL:(NSURL *)arg1 synchronously:(BOOL)arg2 completionHandler:(void (^)(id <NSXPCProxyCreating><NSFileProviderServiceEndpointCreating>, NSArray *, void (^)(void), NSError *))arg3;
 - (void)FPFileProviderServiceEndpointCreatingForItemAtURL:(NSURL *)arg1 completionHandler:(void (^)(id <NSXPCProxyCreating><NSFileProviderServiceEndpointCreating>, NSArray *, void (^)(void), NSError *))arg2;

@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
     VUIAppDocumentUpdateEventDescriptor *_descriptor;
 }
 
++ (id)locationAuthorizationChanged;
++ (id)appRefresh;
 + (id)clearPlayHistory;
 + (id)playHistoryUpdated;
 + (id)appDidBecomeActive;

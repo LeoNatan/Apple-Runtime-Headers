@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)writeRenderAndEngagementInfo;
 - (void)fetchBundleRenderAndEngagementInfo;
+- (void)fetchBundleRenderAndEngagementInfo:(id)arg1;
 - (void)resultsWithRankingItemsDidBecomeVisible:(id)arg1 date:(id)arg2 protectionClassMapping:(id)arg3;
 - (void)didEngageResultWithRankingItem:(id)arg1 startDate:(id)arg2 protectionClass:(id)arg3;
 - (void)_indexItemWithIdentifier:(id)arg1 bundleID:(id)arg2 startDate:(id)arg3 pc:(id)arg4;

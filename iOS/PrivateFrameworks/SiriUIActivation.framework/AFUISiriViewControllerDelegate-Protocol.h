@@ -31,6 +31,8 @@
 - (void)siriViewController:(AFUISiriViewController *)arg1 didFinishTest:(NSString *)arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 willStartTest:(NSString *)arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 launchApplicationWithBundleIdentifier:(NSString *)arg2 withURL:(NSURL *)arg3 launchOptions:(long long)arg4 replyHandler:(void (^)(_Bool))arg5;
+- (void)siriSessionShouldEndExtendAudioSessionForImminentPhoneCall;
+- (void)siriSessionShouldExtendAudioSessionForImminentPhoneCall;
 - (void)siriViewController:(AFUISiriViewController *)arg1 didCompleteRequestWithError:(NSError *)arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 didEndSession:(AFUISiriSession *)arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 requestsDismissal:(void (^)(_Bool))arg2;

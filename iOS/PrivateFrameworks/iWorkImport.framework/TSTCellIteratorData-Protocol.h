@@ -6,7 +6,7 @@
 
 #import <iWorkImport/NSObject-Protocol.h>
 
-@class TSTCell;
+@class TSTCell, TSTCellFormulaSpec;
 
 @protocol TSTCellIteratorData <NSObject>
 @property(readonly, nonatomic) _Bool cellIsEmpty;
@@ -16,6 +16,7 @@
 @property(readonly, nonatomic) _Bool cellHasFormula;
 @property(readonly, nonatomic) int cellValueType;
 @property(readonly, nonatomic) struct TSUCellRect mergeRange;
+@property(readonly, nonatomic) TSTCellFormulaSpec *formulaSpec;
 @property(readonly, nonatomic) TSTCell *cell;
 @property(readonly, nonatomic) struct TSUCellCoord cellID;
 @end

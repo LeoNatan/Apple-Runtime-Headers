@@ -14,7 +14,7 @@
 
 @interface UITraitCollection : NSObject <_UIFallbackEnvironment, NSCopying, NSSecureCoding>
 {
-    CDStruct_f322b22e _builtinTraits;
+    CDStruct_28a09a45 _builtinTraits;
     NSDictionary *_clientDefinedTraits;
     NSObject *_environmentWrapper;
     int _accessibilityContrast;
@@ -31,7 +31,12 @@
 + (id)traitCollectionWithTextLegibility:(int)arg1;
 + (id)_traitCollectionWithEnvironmentWrapper:(id)arg1;
 + (id)traitCollectionWithPreferredContentSizeCategory:(id)arg1;
++ (id)_traitCollectionWithPresentationSemanticContext:(int)arg1;
 + (id)_traitCollectionWithSemanticContext:(int)arg1;
++ (id)traitCollectionWithArtworkSubtype:(unsigned int)arg1;
++ (id)traitCollectionWithPrimaryInteractionModel:(unsigned int)arg1;
++ (id)traitCollectionWithInteractionModel:(unsigned int)arg1;
++ (id)traitCollectionWithTouchLevel:(int)arg1;
 + (id)traitCollectionWithLegibilityWeight:(int)arg1;
 + (id)traitCollectionWithDisplayCornerRadius:(float)arg1;
 + (id)traitCollectionWithForceTouchCapability:(int)arg1;
@@ -41,10 +46,6 @@
 + (id)traitCollectionWithHorizontalSizeClass:(int)arg1;
 + (id)traitCollectionWithDisplayGamut:(int)arg1;
 + (id)traitCollectionWithDisplayScale:(float)arg1;
-+ (id)traitCollectionWithArtworkSubtype:(unsigned int)arg1;
-+ (id)traitCollectionWithPrimaryInteractionModel:(unsigned int)arg1;
-+ (id)traitCollectionWithInteractionModel:(unsigned int)arg1;
-+ (id)traitCollectionWithTouchLevel:(int)arg1;
 + (id)traitCollectionWithUserInterfaceIdiom:(int)arg1;
 + (id)traitCollectionWithTraitsFromCollections:(id)arg1;
 + (_Bool)supportsSecureCoding;
@@ -56,10 +57,15 @@
 - (id)_traitCollectionRelevantForImageConfiguration;
 - (id)_invertedTraitCollection;
 - (id)_traitCollectionByReplacingValue:(id)arg1 forTraitName:(id)arg2;
-- (id)_environmentWrapper;
 - (int)_textLegibility;
+- (id)_environmentWrapper;
 @property(readonly, copy, nonatomic) NSString *preferredContentSizeCategory;
+@property(readonly, nonatomic) int _presentationSemanticContext;
 @property(readonly, nonatomic) int _semanticContext;
+- (unsigned int)artworkSubtype;
+- (unsigned int)primaryInteractionModel;
+- (unsigned int)interactionModel;
+- (int)touchLevel;
 @property(readonly, nonatomic) int legibilityWeight;
 - (float)displayCornerRadius;
 @property(readonly, nonatomic) int forceTouchCapability;
@@ -69,10 +75,6 @@
 @property(readonly, nonatomic) int horizontalSizeClass;
 @property(readonly, nonatomic) int displayGamut;
 @property(readonly, nonatomic) float displayScale;
-- (unsigned int)artworkSubtype;
-- (unsigned int)primaryInteractionModel;
-- (unsigned int)interactionModel;
-- (int)touchLevel;
 @property(readonly, nonatomic) int userInterfaceIdiom;
 - (_Bool)_changedContentSizeCategoryFromTraitCollection:(id)arg1;
 - (id)_valueForTraitNamed:(id)arg1;
@@ -93,8 +95,8 @@
 @property(readonly) unsigned int hash;
 - (void)dealloc;
 - (id)init;
-- (id)_initWithBuiltinTraitStorage:(CDStruct_f322b22e *)arg1 clientDefinedTraits:(id)arg2 environmentWrapper:(id)arg3;
-- (id)_initWithBuiltinTraitStorage:(CDStruct_f322b22e *)arg1 clientDefinedTraits:(id)arg2;
+- (id)_initWithBuiltinTraitStorage:(CDStruct_28a09a45 *)arg1 clientDefinedTraits:(id)arg2 environmentWrapper:(id)arg3;
+- (id)_initWithBuiltinTraitStorage:(CDStruct_28a09a45 *)arg1 clientDefinedTraits:(id)arg2;
 - (id)_fallbackTraitCollection;
 - (id)_namedImageDescription;
 

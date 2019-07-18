@@ -6,7 +6,7 @@
 
 #import <Navigation/NSObject-Protocol.h>
 
-@class GEOComposedRouteTraffic, GEOComposedWaypoint, GEONameInfo, GEONavigationGuidanceState, GEOStep, MNActiveRouteInfo, MNGuidanceEventFeedback, MNGuidanceJunctionViewInfo, MNGuidanceLaneInfo, MNGuidanceSignInfo, MNLocation, MNNavigationSession, MNTrafficIncidentAlert, NSArray, NSDate, NSError, NSString, NSUUID;
+@class GEOComposedWaypoint, GEONameInfo, GEONavigationGuidanceState, GEOStep, MNActiveRouteInfo, MNGuidanceEventFeedback, MNGuidanceJunctionViewInfo, MNGuidanceLaneInfo, MNGuidanceSignInfo, MNLocation, MNNavigationSession, MNTrafficIncidentAlert, NSArray, NSDate, NSError, NSString, NSUUID;
 
 @protocol MNNavigationSessionObserver <NSObject>
 
@@ -46,7 +46,6 @@
 - (void)navigationSessionDidCancelReroute:(MNNavigationSession *)arg1;
 - (void)navigationSessionWillReroute:(MNNavigationSession *)arg1;
 - (void)navigationSession:(MNNavigationSession *)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
-- (void)navigationSession:(MNNavigationSession *)arg1 didUpdateTraffic:(GEOComposedRouteTraffic *)arg2;
 - (void)navigationSession:(MNNavigationSession *)arg1 didUpdateETAResponseForRoute:(MNActiveRouteInfo *)arg2;
 - (void)navigationSession:(MNNavigationSession *)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
 - (void)navigationSession:(MNNavigationSession *)arg1 didUpdateDisplayETA:(NSDate *)arg2 displayRemainingMinutes:(unsigned long long)arg3 forRoute:(MNActiveRouteInfo *)arg4;

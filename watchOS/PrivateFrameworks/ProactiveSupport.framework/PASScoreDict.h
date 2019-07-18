@@ -6,25 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NSSet;
+@class NSMutableDictionary, NSSharedKeySet;
 
 @interface PASScoreDict : NSObject
 {
-    struct __CFDictionary *_dict;
-    NSSet *_defaultKeys;
+    struct vector<float, std::__1::allocator<float>> *_mphtStorage;
+    NSSharedKeySet *_sharedKeySet;
+    NSMutableDictionary *_sideDict;
 }
 
 + (id)scoreDictFromDictionary:(id)arg1;
 - (void).cxx_destruct;
-- (void)getKeys:(id *)arg1 count:(unsigned int)arg2;
 - (id)description;
 - (id)toDictionary;
 @property(readonly, nonatomic) unsigned int count;
+- (double)scoreForSharedKeySetIndex:(unsigned int)arg1;
+- (void)setScore:(double)arg1 forSharedKeySetIndex:(unsigned int)arg2;
 - (double)scoreForKey:(id)arg1 found:(_Bool *)arg2;
 - (void)setScore:(double)arg1 forKey:(id)arg2;
 - (void)dealloc;
 - (id)initWithDefaultValueForScoreInputSetKeys:(id)arg1;
 - (id)initWithDefaultValueForKeys:(id)arg1;
+- (id)initWithDefaultValueForSharedKeySet:(id)arg1;
 - (id)init;
 
 @end

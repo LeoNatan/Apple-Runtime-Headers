@@ -19,7 +19,7 @@
 - (void)fetchVerifierTrustedDevicesWithCompletion:(void (^)(NSArray *, NSError *))arg1;
 - (void)kickVerificationForServiceIdentifier:(NSString *)arg1 localURI:(IDSURI *)arg2 remoteURI:(IDSURI *)arg3 completion:(void (^)(NSError *))arg4;
 - (void)performOutstandingKeyTransparencyVerificationWithCompletion:(void (^)(NSError *))arg1;
-- (void)fetchTransparentEndpointsForServiceIdentifier:(NSString *)arg1 localURI:(IDSURI *)arg2 remoteURI:(IDSURI *)arg3 completion:(void (^)(NSArray *, NSError *))arg4;
+- (void)fetchTransparentEndpointsForServiceIdentifier:(NSString *)arg1 localURI:(IDSURI *)arg2 remoteURI:(IDSURI *)arg3 verifyAgainstTrustCircle:(_Bool)arg4 completion:(void (^)(NSArray *, NSError *))arg5;
 - (void)fetchEndpointCacheStateForServiceIdentifier:(NSString *)arg1 localURI:(IDSURI *)arg2 remoteURI:(IDSURI *)arg3 completion:(void (^)(IDSQueryKeyTransparencyContext *, NSArray *, NSError *))arg4;
 - (void)autoBugCaptureWithCompletion:(void (^)(NSError *))arg1;
 - (void)tapToRadarWithTitle:(NSString *)arg1 message:(NSString *)arg2 completion:(void (^)(void))arg3;

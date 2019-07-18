@@ -30,11 +30,9 @@
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void).cxx_destruct;
 - (void)teardown;
-- (id)extraMenuItems;
 - (void)endUISession;
 - (_Bool)p_shouldLayoutAndRenderOnThreadForcePendingLayout:(_Bool)arg1;
 - (_Bool)p_currentlyScrolling;
-- (id)_gestureHitLink:(id)arg1 wpRep:(id *)arg2;
 - (id)hitRep:(struct CGPoint)arg1 withGesture:(id)arg2 passingTest:(CDUnknownBlockType)arg3;
 - (id)closestRepToPoint:(struct CGPoint)arg1 forStorage:(id)arg2;
 - (id)i_topLevelLayersForTiling;
@@ -46,10 +44,6 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (_Bool)tappedOnHyperlink:(id)arg1;
-- (_Bool)handleGesture:(id)arg1;
-- (_Bool)canHandleGesture:(id)arg1;
-- (id)gestureWithKind:(id)arg1;
 - (void)didBeginEditingText;
 - (void)setSelection:(id)arg1 onModel:(id)arg2 withFlags:(unsigned long long)arg3;
 

@@ -13,17 +13,13 @@
 @interface MPModelLibraryDefaultSectionedCollectionDataSource : NSObject <MPLazySectionedCollectionDataSource>
 {
     MPMediaLibraryEntityTranslationContext *_entityTranslationContext;
-    BOOL _contentItemIDPredetermined;
     MPModelLibraryRequest *_request;
-    NSDictionary *_indexPathToContentItemIDMap;
+    NSDictionary *_indexPathToContainerUniqueIDMap;
 }
 
-@property(retain, nonatomic) NSDictionary *indexPathToContentItemIDMap; // @synthesize indexPathToContentItemIDMap=_indexPathToContentItemIDMap;
-@property(nonatomic, getter=isContentItemIDPredetermined) BOOL contentItemIDPredetermined; // @synthesize contentItemIDPredetermined=_contentItemIDPredetermined;
+@property(retain, nonatomic) NSDictionary *indexPathToContainerUniqueIDMap; // @synthesize indexPathToContainerUniqueIDMap=_indexPathToContainerUniqueIDMap;
 @property(readonly, nonatomic) MPModelLibraryRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
-- (id)_contentItemIDForItemPersistentID:(long long)arg1 withOccurrenceCount:(long long)arg2;
-- (id)_contentItemIDForItemPersistentID:(long long)arg1 atIndexPath:(id)arg2;
 - (BOOL)_allowedEntityIdentifiersContainsAllPersistentIDs;
 - (unsigned long long)_adjustedGlobalIndexForIndexPath:(id)arg1;
 - (void)_populateIndexMap;

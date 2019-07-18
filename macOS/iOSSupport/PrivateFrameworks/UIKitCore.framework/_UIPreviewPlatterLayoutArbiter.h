@@ -12,18 +12,22 @@ __attribute__((visibility("hidden")))
 @interface _UIPreviewPlatterLayoutArbiter : NSObject
 {
     unsigned long long _attachmentEdge;
+    unsigned long long _alignmentEdge;
     UIView *_containerView;
     unsigned long long _currentLayout;
     struct CGSize _preferredPreviewSize;
     struct CGSize _preferredActionsSize;
     struct CGPoint _sourcePoint;
+    struct UIEdgeInsets _preferredEdgeInsets;
 }
 
 @property(nonatomic) unsigned long long currentLayout; // @synthesize currentLayout=_currentLayout;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) struct CGPoint sourcePoint; // @synthesize sourcePoint=_sourcePoint;
+@property(nonatomic) struct UIEdgeInsets preferredEdgeInsets; // @synthesize preferredEdgeInsets=_preferredEdgeInsets;
 @property(nonatomic) struct CGSize preferredActionsSize; // @synthesize preferredActionsSize=_preferredActionsSize;
 @property(nonatomic) struct CGSize preferredPreviewSize; // @synthesize preferredPreviewSize=_preferredPreviewSize;
+@property(readonly, nonatomic) unsigned long long alignmentEdge; // @synthesize alignmentEdge=_alignmentEdge;
 - (void).cxx_destruct;
 - (void)_drawContentBoundsDebugUI:(struct CGRect)arg1;
 - (struct CGRect)_computedActionsBoundsForContentBounds:(struct CGRect)arg1 predictedPlatterFrame:(struct CGRect)arg2;

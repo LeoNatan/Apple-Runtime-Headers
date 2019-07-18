@@ -40,11 +40,13 @@
     id _significantTimeChangeNotificationObserver;
     _Bool _autoUpdateOnChanges;
     _Bool _useLocalDates;
+    _Bool _shouldOmitYear;
     NSLocale *_locale;
     NSTimeZone *_timeZone;
 }
 
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
+@property(nonatomic) _Bool shouldOmitYear; // @synthesize shouldOmitYear=_shouldOmitYear;
 @property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(nonatomic) _Bool useLocalDates; // @synthesize useLocalDates=_useLocalDates;
 @property(nonatomic) _Bool autoUpdateOnChanges; // @synthesize autoUpdateOnChanges=_autoUpdateOnChanges;

@@ -11,7 +11,7 @@
 @interface AVAudioSessionDataSourceDescription_New : NSObject
 {
     void *_impl;
-    struct synchronized<std::__1::shared_ptr<as::client::DataSource>, caulk::shared_ptr_mutex<std::__1::mutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::DataSource>>> _guarded_impl;
+    struct synchronized<std::__1::shared_ptr<as::client::DataSource>, caulk::shared_ptr_mutex<as::client::KVOMutex>, as::client::unguarded_accessor<std::__1::shared_ptr<as::client::DataSource>>> _guarded_impl;
 }
 
 - (id).cxx_construct;

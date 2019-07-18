@@ -25,6 +25,7 @@
     double _pinchLastDate;
     _Bool _isUpdatingAllPhotosZoomState;
     _Bool _wasPinching;
+    _Bool _wasInteractiveZooming;
     long long _pendingZoomColumnIndex;
     _Bool _animatePendingZoom;
     PXNumberAnimator *_columnWidthAnimator;
@@ -38,10 +39,10 @@
     _Bool _viewBasedDecorationsEnabled;
     _Bool _isSelecting;
     _Bool _isPinching;
+    _Bool _isInteractiveZooming;
     _Bool _allPhotosAspectFit;
     _Bool _allPhotosLayoutIsAnimating;
     _Bool _isPerformingInitialChanges;
-    _Bool _isAnimatingChromeVisibility;
     PXCuratedLibraryLayoutSpecManager *_specManager;
     PXCuratedLibraryStyleGuide *_styleGuide;
     PXCuratedLibraryAssetsDataSourceManager *_assetsDataSourceManager;
@@ -49,8 +50,9 @@
     PXCuratedLibraryActionManager *_actionManager;
     NSSet *_allowedActions;
     long long _zoomLevelTransitionPhase;
-    double _distanceBetweenSafeAreaBottomAndSolidContent;
     PXSectionedSelectionManager *_selectionManager;
+    double _daysMarginScale;
+    double _interactiveZoomColumnIndex;
     NSArray *_allPhotosAllowedColumns;
     NSArray *_allPhotosAllowedColumnWidths;
     PXAssetReference *_allPhotosAnchorAssetReference;
@@ -64,12 +66,13 @@
     PXCuratedLibraryAnalysisStatus *_analysisStatus;
     PXUpdater *_updater;
     PXScrollViewSpeedometer *_scrollingSpeedometer;
+    long long _chromeVisibilityAnimationCount;
     struct CGPoint _lastScrollDirection;
     CDStruct_7c4e768e _pinchState;
-    CDStruct_eae77eb3 _allPhotosZoomState;
+    CDStruct_3a6a7d8f _allPhotosZoomState;
 }
 
-@property(nonatomic) _Bool isAnimatingChromeVisibility; // @synthesize isAnimatingChromeVisibility=_isAnimatingChromeVisibility;
+@property(nonatomic) long long chromeVisibilityAnimationCount; // @synthesize chromeVisibilityAnimationCount=_chromeVisibilityAnimationCount;
 @property(retain, nonatomic) PXScrollViewSpeedometer *scrollingSpeedometer; // @synthesize scrollingSpeedometer=_scrollingSpeedometer;
 @property(readonly, nonatomic) PXUpdater *updater; // @synthesize updater=_updater;
 @property(readonly, nonatomic) _Bool isPerformingInitialChanges; // @synthesize isPerformingInitialChanges=_isPerformingInitialChanges;
@@ -85,15 +88,17 @@
 @property(readonly, nonatomic) _Bool allPhotosLayoutIsAnimating; // @synthesize allPhotosLayoutIsAnimating=_allPhotosLayoutIsAnimating;
 @property(readonly, nonatomic) _Bool allPhotosAspectFit; // @synthesize allPhotosAspectFit=_allPhotosAspectFit;
 @property(readonly, nonatomic) PXAssetReference *allPhotosAnchorAssetReference; // @synthesize allPhotosAnchorAssetReference=_allPhotosAnchorAssetReference;
-@property(nonatomic) CDStruct_eae77eb3 allPhotosZoomState; // @synthesize allPhotosZoomState=_allPhotosZoomState;
+@property(nonatomic) CDStruct_3a6a7d8f allPhotosZoomState; // @synthesize allPhotosZoomState=_allPhotosZoomState;
 @property(readonly, nonatomic) NSArray *allPhotosAllowedColumnWidths; // @synthesize allPhotosAllowedColumnWidths=_allPhotosAllowedColumnWidths;
 @property(retain, nonatomic) NSArray *allPhotosAllowedColumns; // @synthesize allPhotosAllowedColumns=_allPhotosAllowedColumns;
+@property(readonly, nonatomic) double interactiveZoomColumnIndex; // @synthesize interactiveZoomColumnIndex=_interactiveZoomColumnIndex;
+@property(readonly, nonatomic) _Bool isInteractiveZooming; // @synthesize isInteractiveZooming=_isInteractiveZooming;
+@property(readonly, nonatomic) double daysMarginScale; // @synthesize daysMarginScale=_daysMarginScale;
 @property(readonly, nonatomic) CDStruct_7c4e768e pinchState; // @synthesize pinchState=_pinchState;
 @property(readonly, nonatomic) _Bool isPinching; // @synthesize isPinching=_isPinching;
 @property(readonly, nonatomic) PXSectionedSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
 @property(readonly, nonatomic) _Bool isSelecting; // @synthesize isSelecting=_isSelecting;
 @property(readonly, nonatomic) _Bool viewBasedDecorationsEnabled; // @synthesize viewBasedDecorationsEnabled=_viewBasedDecorationsEnabled;
-@property(readonly, nonatomic) double distanceBetweenSafeAreaBottomAndSolidContent; // @synthesize distanceBetweenSafeAreaBottomAndSolidContent=_distanceBetweenSafeAreaBottomAndSolidContent;
 @property(readonly, nonatomic) _Bool wantsDarkStatusBar; // @synthesize wantsDarkStatusBar=_wantsDarkStatusBar;
 @property(nonatomic) _Bool wantsSecondaryToolbarVisible; // @synthesize wantsSecondaryToolbarVisible=_wantsSecondaryToolbarVisible;
 @property(nonatomic) _Bool wantsToolbarVisible; // @synthesize wantsToolbarVisible=_wantsToolbarVisible;
@@ -114,10 +119,14 @@
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (long long)curatedLibraryAssetsDataSourceManager:(id)arg1 transitionTypeFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
 - (id)curatedLibraryAssetsDataSourceManager:(id)arg1 dominantAssetCollectionReferenceForZoomLevel:(long long)arg2;
+- (void)curatedLibraryAssetsDataSourceManager:(id)arg1 didTransitionFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
+- (void)curatedLibraryAssetsDataSourceManager:(id)arg1 willTransitionFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
 - (id)visibleAssetCollectionsFromCuratedLibraryAssetsDataSourceManager:(id)arg1;
 - (_Bool)isSelectingAssetsFromCuratedLibraryAssetsDataSourceManager:(id)arg1;
 - (void)_updateAllPhotosZoomState;
 - (void)_invalidateAllPhotosZoomState;
+- (void)_updateAllPhotosAlphaAnimator;
+- (void)_invalidateAllPhotosAlphaAnimator;
 - (void)_updatePinchVelocity;
 - (void)_invalidatePinchVelocity;
 - (void)_updateAllPhotosAllowedColumns;
@@ -129,6 +138,7 @@
 - (void)setAllowedActions:(id)arg1;
 - (void)_updateAllowedActions;
 - (void)_invalidateAllowedActions;
+@property(readonly, nonatomic) _Bool isAnimatingChromeVisibility;
 - (void)_updateChromeVisibility;
 - (void)_invalidateChromeVisibility;
 - (void)_updateDraggedAssetReferences;
@@ -144,10 +154,11 @@
 - (void)_setNeedsUpdate;
 - (void)didPerformChanges;
 - (void)setAllPhotosLayoutIsAnimating:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool allPhotosPresentingAspectFit;
 - (void)setAllPhotosAspectFit:(_Bool)arg1;
 - (double)_columnIndexForItemWidth:(double)arg1;
-- (long long)_columnIndexForColumnWidth:(double)arg1 currentColumnIndex:(long long)arg2 velocity:(double)arg3;
 - (void)resetAllPhotosColumns;
+- (double)_columnWidthForDesiredColumnIndex:(double)arg1;
 - (long long)_closestColumnIndexForColumnWidth:(double)arg1;
 - (long long)_closestColumnIndexForAnimatedValue:(double)arg1;
 - (long long)_nextColumnIndexForInitialColumnWidth:(double)arg1 currentColumnWidth:(double)arg2 velocity:(double)arg3;
@@ -176,11 +187,13 @@
 - (void)setDraggedAssetReferences:(id)arg1;
 - (void)setSkimmingInfo:(id)arg1;
 - (void)setLibraryState:(unsigned long long)arg1;
+- (void)setInteractiveZoomColumnIndex:(double)arg1 withAnchorAssetReference:(id)arg2;
+- (void)setIsInteractiveZooming:(_Bool)arg1;
+- (void)setDaysMarginScale:(double)arg1;
 - (void)setPinchState:(CDStruct_7c4e768e)arg1 withAnchorAssetReference:(id)arg2;
 - (void)setIsPinching:(_Bool)arg1;
 - (void)endAnimationToToggleChromeVisibility;
 - (void)startAnimationToToggleChromeVisibility;
-- (void)setDistanceBetweenSafeAreaBottomAndSolidContent:(double)arg1;
 - (void)setWantsDarkStatusBar:(_Bool)arg1;
 - (void)setIsSelecting:(_Bool)arg1;
 - (void)setViewBasedDecorationsEnabled:(_Bool)arg1;

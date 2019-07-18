@@ -45,7 +45,7 @@
 - (void)enableAllDomainsIfNoUserElection;
 - (void)setEnabled:(BOOL)arg1 forDomainIdentifier:(id)arg2 request:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) NSDictionary *nsDomainsByID;
-@property(readonly, nonatomic) NSDictionary *visibleDomainsByID;
+@property(readonly, nonatomic) NSDictionary *relevantDomainsByID;
 - (void)reloadDomain:(id)arg1 unableToStartup:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)removeDomain:(id)arg1 options:(unsigned long long)arg2 request:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)removeAllDomainsForRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

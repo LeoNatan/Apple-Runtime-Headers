@@ -39,10 +39,6 @@ struct CLLocationCoordinate2D {
     double _field2;
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     double _field1;
     double _field2;

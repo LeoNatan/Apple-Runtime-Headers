@@ -60,6 +60,7 @@
     BOOL _allowsDisplayModePickerActions;
     BOOL _allowsEditPhoto;
     BOOL _ignoresParentalRestrictions;
+    BOOL _editingProposedInformation;
     BOOL _hideCardActions;
     BOOL _saveWasAuthorized;
     BOOL _outOfProcessSetupComplete;
@@ -69,6 +70,7 @@
     BOOL _runningPPT;
     BOOL _allowsEditInApp;
     BOOL _shouldDrawNavigationBar;
+    BOOL _shouldIgnoreContactStoreDidChangeNotification;
     BOOL _showingMeContact;
     id <CNContactViewHostProtocol> _delegate;
     id <CNContactViewControllerPPTDelegate> _pptDelegate;
@@ -77,6 +79,7 @@
     CNContainer *_parentContainer;
     NSString *_alternateName;
     NSString *_message;
+    NSString *_warningMessage;
     NSString *_importantMessage;
     NSString *_primaryProperty;
     UIViewController *_personHeaderViewController;
@@ -122,6 +125,7 @@
     CNContactUpdateExistingContactAction *_updateExistingContactAction;
     CNContactSuggestionAction *_suggestedContactAction;
     CNContactClearRecentsDataAction *_clearRecentsDataAction;
+    CNContactAction *_stopSharingWithFamilyAction;
     CNContactActionProvider *_actionProvider;
     NSArray *_activatedConstraints;
     NSLayoutConstraint *_headerHeightConstraint;
@@ -161,6 +165,7 @@
     NSString *_initialPrompt;
     id <CNUIContactSaveExecutor> _saveContactExecutor;
     id <CNUIContactSaveExecutor> _saveLinkedContactsExecutor;
+    NSArray *_prohibitedPropertyKeys;
     CNContactRecentsReference *_recentsData;
     NSDictionary *_propertyGroups;
     CNCardFaceTimeGroup *_cardFaceTimeGroup;
@@ -183,6 +188,8 @@
 @property(retain, nonatomic) CNCardFaceTimeGroup *cardFaceTimeGroup; // @synthesize cardFaceTimeGroup=_cardFaceTimeGroup;
 @property(readonly, nonatomic) NSDictionary *propertyGroups; // @synthesize propertyGroups=_propertyGroups;
 @property(retain, nonatomic) CNContactRecentsReference *recentsData; // @synthesize recentsData=_recentsData;
+@property(retain, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
+@property(nonatomic) BOOL shouldIgnoreContactStoreDidChangeNotification; // @synthesize shouldIgnoreContactStoreDidChangeNotification=_shouldIgnoreContactStoreDidChangeNotification;
 @property(retain, nonatomic) id <CNUIContactSaveExecutor> saveLinkedContactsExecutor; // @synthesize saveLinkedContactsExecutor=_saveLinkedContactsExecutor;
 @property(retain, nonatomic) id <CNUIContactSaveExecutor> saveContactExecutor; // @synthesize saveContactExecutor=_saveContactExecutor;
 @property(retain, nonatomic) NSString *initialPrompt; // @synthesize initialPrompt=_initialPrompt;
@@ -230,6 +237,7 @@
 @property(retain, nonatomic) NSLayoutConstraint *headerHeightConstraint; // @synthesize headerHeightConstraint=_headerHeightConstraint;
 @property(retain, nonatomic) NSArray *activatedConstraints; // @synthesize activatedConstraints=_activatedConstraints;
 @property(retain, nonatomic) CNContactActionProvider *actionProvider; // @synthesize actionProvider=_actionProvider;
+@property(retain, nonatomic) CNContactAction *stopSharingWithFamilyAction; // @synthesize stopSharingWithFamilyAction=_stopSharingWithFamilyAction;
 @property(retain, nonatomic) CNContactClearRecentsDataAction *clearRecentsDataAction; // @synthesize clearRecentsDataAction=_clearRecentsDataAction;
 @property(retain, nonatomic) CNContactSuggestionAction *suggestedContactAction; // @synthesize suggestedContactAction=_suggestedContactAction;
 @property(retain, nonatomic) CNContactUpdateExistingContactAction *updateExistingContactAction; // @synthesize updateExistingContactAction=_updateExistingContactAction;
@@ -276,9 +284,11 @@
 @property(retain, nonatomic) UIViewController *personHeaderViewController; // @synthesize personHeaderViewController=_personHeaderViewController;
 @property(retain, nonatomic) NSString *primaryProperty; // @synthesize primaryProperty=_primaryProperty;
 @property(retain, nonatomic) NSString *importantMessage; // @synthesize importantMessage=_importantMessage;
+@property(retain, nonatomic) NSString *warningMessage; // @synthesize warningMessage=_warningMessage;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *alternateName; // @synthesize alternateName=_alternateName;
 @property(nonatomic) BOOL hideCardActions; // @synthesize hideCardActions=_hideCardActions;
+@property(nonatomic) BOOL editingProposedInformation; // @synthesize editingProposedInformation=_editingProposedInformation;
 @property(nonatomic) BOOL ignoresParentalRestrictions; // @synthesize ignoresParentalRestrictions=_ignoresParentalRestrictions;
 @property(nonatomic) BOOL allowsEditPhoto; // @synthesize allowsEditPhoto=_allowsEditPhoto;
 @property(nonatomic) BOOL allowsDisplayModePickerActions; // @synthesize allowsDisplayModePickerActions=_allowsDisplayModePickerActions;
@@ -426,6 +436,7 @@
 - (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(id)arg4;
 - (void)contactViewController:(id)arg1 didDeleteContact:(id)arg2;
 - (BOOL)shouldShowActionsForAvatarView:(id)arg1;
+- (BOOL)isNicknameProhibited;
 - (id)viewControllerForHeaderView:(id)arg1;
 - (void)headerPhotoDidSaveEditsForImageDrop;
 - (void)headerViewDidUpdateLabelSizes;
@@ -437,6 +448,7 @@
 - (void)propertyItem:(id)arg1 willChangeValue:(id)arg2;
 - (id)sharedActionsDataSource;
 - (void)propertyCellDidChangeLayout:(id)arg1;
+- (void)propertyCell:(id)arg1 didDeleteLabel:(id)arg2 forGroup:(id)arg3;
 - (void)propertyCell:(id)arg1 performActionForItem:(id)arg2 withTransportType:(long long)arg3;
 - (void)propertyCell:(id)arg1 didUpdateItem:(id)arg2 withNewValue:(id)arg3;
 - (void)propertyCell:(id)arg1 didUpdateItem:(id)arg2 withNewLabel:(id)arg3;
@@ -455,6 +467,9 @@
 - (void)sender:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)sender:(id)arg1 dismissViewController:(id)arg2;
 - (long long)_modalPresentationStyleForViewController:(id)arg1;
+- (void)performConfirmedCancel:(id)arg1;
+- (BOOL)isModalInPresentation;
+- (void)presentationControllerWillDismiss:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)updateOutOfProcessFullscreenPresentationIfNeeded;
 - (void)shouldPresentFullscreen:(BOOL)arg1;
@@ -466,12 +481,14 @@
 - (BOOL)tableView:(id)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (BOOL)tableView:(id)arg1 shouldShowMenuForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(long long)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
 - (BOOL)tableView:(id)arg1 shouldHaveFullLengthBottomSeparatorForSection:(long long)arg2;
 - (BOOL)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -489,6 +506,7 @@
 - (void)didChangeToEditMode:(BOOL)arg1;
 - (void)setupWithOptions:(id)arg1 readyBlock:(CDUnknownBlockType)arg2;
 - (BOOL)canBecomeFirstResponder;
+- (void)updateEditPhotoButtonIfNeeded;
 - (void)setupTableHeaderView;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
@@ -520,9 +538,14 @@
 - (void)saveModelChangesToContact;
 - (BOOL)saveChanges;
 - (void)clearMapsDataIfEdited;
+- (id)confirmCancelAlertControllerAnchoredAtButtonItem:(id)arg1;
+- (void)presentConfirmCancelAlertControllerAnchoredAtButtonItem:(id)arg1;
+- (void)presentConfirmCancelAlertController;
 - (void)editCancel:(id)arg1;
 - (void)cancelAsyncLookups;
+- (BOOL)hasPendingChanges;
 - (void)updateDoneButton;
+- (void)updateWindowTitleForAppearing:(BOOL)arg1;
 - (void)updateEditNavigationItemsAnimated:(BOOL)arg1;
 - (id)navigationItemController;
 - (id)contentScrollView;
@@ -551,11 +574,13 @@
 - (void)contentSizeCategoryDidChange:(id)arg1;
 @property(readonly, nonatomic) NSArray *cardActions;
 - (BOOL)isOutOfProcess;
+- (void)setAllowsEditPhoto:(BOOL)arg1 preservingChanges:(BOOL)arg2;
 @property(nonatomic) BOOL isMailVIP; // @synthesize isMailVIP=_isMailVIP;
 @property(readonly, nonatomic) CNContactHeaderView *contactHeaderView;
 @property(readonly, nonatomic) CNContactView *contactView;
 - (BOOL)_canShowWhileLocked;
 - (void)dealloc;
+- (id)initWithContact:(id)arg1 prohibitedPropertyKeys:(id)arg2;
 - (id)initWithContact:(id)arg1;
 - (id)initWithEnvironment:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

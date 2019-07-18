@@ -17,6 +17,7 @@
     unsigned char _rssiIndex;
     _Bool _insideBubble;
     _Bool _paired;
+    _Bool _tempPaired;
     _Bool _triggered;
     NSData *_advertisementData;
     NSDictionary *_advertisementFields;
@@ -43,6 +44,7 @@
 + (_Bool)supportsSecureCoding;
 + (void)setRSSIEstimatorInfo:(id)arg1;
 @property(nonatomic) _Bool triggered; // @synthesize triggered=_triggered;
+@property(nonatomic) _Bool tempPaired; // @synthesize tempPaired=_tempPaired;
 @property(retain, nonatomic) SFProximityEstimator *setupProximityEstimator; // @synthesize setupProximityEstimator=_setupProximityEstimator;
 @property(retain, nonatomic) SFProximityEstimator *proxPairProximityEstimator; // @synthesize proxPairProximityEstimator=_proxPairProximityEstimator;
 @property(nonatomic) unsigned int productID2; // @synthesize productID2=_productID2;

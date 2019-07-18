@@ -6,6 +6,8 @@
 
 #import <AppSupportUI/NUIContainerBoxView.h>
 
+@class UIView;
+
 __attribute__((visibility("hidden")))
 @interface _TtC19HealthVisualization24HighlightCalendarDayView : NUIContainerBoxView
 {
@@ -13,6 +15,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: $__lazy_storage_$_circleView
     // Error parsing type: , name: $__lazy_storage_$_todayIndicatorView
     // Error parsing type: , name: $__lazy_storage_$_dayLabel
+    // Error parsing type: , name: ringsRenderer
     // Error parsing type: , name: $__lazy_storage_$_activityRingsView
 }
 
@@ -21,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(nonatomic, retain) UIView *circleView;
 
 @end
 

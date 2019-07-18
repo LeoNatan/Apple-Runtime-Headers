@@ -13,6 +13,7 @@
 #import <UserNotificationsServer/UNSRemoteNotificationServerObserver-Protocol.h>
 
 @class BKSApplicationStateMonitor, NSSet, NSString, UNSApplicationLauncher, UNSApplicationService, UNSAttachmentsRepository, UNSAttachmentsService, UNSBundleLibrarian, UNSContentProtectionManager, UNSDaemonLauncher, UNSDefaultDataProviderFactory, UNSLocalizationService, UNSLocationMonitor, UNSNotificationAuthorizationService, UNSNotificationCategoryRepository, UNSNotificationRepository, UNSNotificationScheduleRepository, UNSNotificationSchedulingService, UNSNotificationSettingsService, UNSNotificationTopicRepository, UNSPendingNotificationRepository, UNSPushRegistrationRepository, UNSRemoteNotificationServer, UNSSettingsGateway, UNSUserNotificationServerConnectionListener, UNSUserNotificationServerRemoteNotificationConnectionListener, UNSUserNotificationServerSettingsConnectionListener;
+@protocol OS_dispatch_queue;
 
 @interface UNSUserNotificationServer : NSObject <LSApplicationWorkspaceObserverProtocol, UNSContentProtectionObserver, UNSDefaultDataProviderFactoryObserver, UNSNotificationRepositoryDelegate, UNSRemoteNotificationServerObserver>
 {
@@ -44,6 +45,7 @@
     NSString *_libraryDirectory;
     NSString *_directory;
     UNSSettingsGateway *_settingsGateway;
+    NSObject<OS_dispatch_queue> *_installedSourceQueue;
 }
 
 + (id)sharedInstanceIfExists;
@@ -52,8 +54,8 @@
 - (void).cxx_destruct;
 - (void)_removeBundleLibrarianMappingsForSourceDescriptions:(id)arg1;
 - (void)_removeNotificationSourceDirectories:(id)arg1;
-- (void)_notificationSourcesDidUninstall:(id)arg1;
-- (void)_notificationSourcesDidInstall:(id)arg1;
+- (void)_installedSourceQueue_notificationSourcesDidUninstall:(id)arg1;
+- (void)_installedSourceQueue_notificationSourcesDidInstall:(id)arg1;
 - (void)_didChangeApplicationState:(unsigned int)arg1 forBundleIdentifier:(id)arg2;
 - (void)_triggerLocationArrowForBundleIdentifier:(id)arg1;
 - (void)_registerLoggers;
@@ -90,6 +92,8 @@
 - (void)_applicationsDidInstall:(id)arg1;
 - (void)applicationStateDidChange:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
+- (void)initialApplicationsDidInstall:(id)arg1;
+- (void)initialSystemNotificationSourcesDidInstall:(id)arg1;
 - (id)_loadAllSystemNotificationSourceDescriptions;
 - (id)init;
 

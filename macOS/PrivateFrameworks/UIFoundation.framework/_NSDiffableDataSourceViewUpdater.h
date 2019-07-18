@@ -33,7 +33,7 @@
 - (void)_willPerformDiff:(BOOL)arg1;
 - (void)_reloadData;
 - (void)_deleteAllItems;
-- (void)_performUpdateWithCollectionViewUpdateItems:(id)arg1 dataSourceSnapshotter:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
+- (void)_performUpdateWithCollectionViewUpdateItems:(id)arg1 dataSourceSnapshotter:(id)arg2 updateHandler:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)initWithNSCollectionView:(id)arg1;
 - (id)initWithCollectionViewUpdatesSink:(id)arg1;
 - (id)initWithUpdatesSink:(id)arg1 nsCollectionView:(id)arg2 nsTableView:(id)arg3 uiCollectionView:(id)arg4 uiTableView:(id)arg5;

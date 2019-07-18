@@ -38,9 +38,12 @@
 @property(readonly, nonatomic) NSString *navigationTitle;
 - (id)_suggestionDumpURL;
 - (void)gadget:(id)arg1 didChange:(unsigned long long)arg2;
+- (long long)scrollAnimationIdentifier;
+- (void)configureSectionHeader:(id)arg1;
 - (void)rootGadgetControllerDidDisappear;
 - (void)rootGadgetControllerWillAppear;
 - (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;

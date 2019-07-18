@@ -10,6 +10,8 @@
 {
 }
 
++ (id)concurrentCachingRendererWithLikenessResolver:(id)arg1 capacity:(unsigned long long)arg2 schedulerProvider:(id)arg3;
++ (id)cachingRendererWithLikenessResolver:(id)arg1 capacity:(unsigned long long)arg2 schedulerProvider:(id)arg3;
 + (id)cachingRendererWithLikenessResolver:(id)arg1 schedulerProvider:(id)arg2;
 + (id)rendererWithLikenessResolver:(id)arg1 schedulerProvider:(id)arg2;
 + (id)descriptorForRequiredKeysForCaching;

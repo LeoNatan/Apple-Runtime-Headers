@@ -6,14 +6,11 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, NSMutableArray, NTKDotView, UIColor;
+@class NSArray, NSMutableArray, UIColor;
 
 @interface NTKRingsAndDotsView : UIView
 {
-    _Bool _showsDotOnRing;
-    _Bool _showsRingsBackground;
-    float _dotDiameter;
-    float _dotPositionFraction;
+    _Bool _hidesOverlapShadow;
     NSArray *_ringColors;
     NSMutableArray *_ringsFillFractions;
     UIColor *_foregroundColor;
@@ -21,39 +18,32 @@
     float _diameter;
     float _ringWidth;
     float _ringGapWidth;
-    float _radiusForDotViewRing;
     float _appearanceAnimationProgress;
     NSArray *_ringViews;
-    NTKDotView *_dotView;
+    NSArray *_overlapArcArray;
 }
 
-@property(retain, nonatomic) NTKDotView *dotView; // @synthesize dotView=_dotView;
++ (id)emptyFillFractions;
+@property(retain, nonatomic) NSArray *overlapArcArray; // @synthesize overlapArcArray=_overlapArcArray;
 @property(retain, nonatomic) NSArray *ringViews; // @synthesize ringViews=_ringViews;
-@property(nonatomic) _Bool showsRingsBackground; // @synthesize showsRingsBackground=_showsRingsBackground;
 @property(nonatomic) float appearanceAnimationProgress; // @synthesize appearanceAnimationProgress=_appearanceAnimationProgress;
-@property(nonatomic) float radiusForDotViewRing; // @synthesize radiusForDotViewRing=_radiusForDotViewRing;
 @property(nonatomic) float ringGapWidth; // @synthesize ringGapWidth=_ringGapWidth;
 @property(nonatomic) float ringWidth; // @synthesize ringWidth=_ringWidth;
 @property(nonatomic) float diameter; // @synthesize diameter=_diameter;
 @property(retain, nonatomic) UIColor *secondaryForegroundColor; // @synthesize secondaryForegroundColor=_secondaryForegroundColor;
 @property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
+@property(nonatomic) _Bool hidesOverlapShadow; // @synthesize hidesOverlapShadow=_hidesOverlapShadow;
 @property(retain, nonatomic) NSMutableArray *ringsFillFractions; // @synthesize ringsFillFractions=_ringsFillFractions;
 @property(retain, nonatomic) NSArray *ringColors; // @synthesize ringColors=_ringColors;
-@property(nonatomic) float dotPositionFraction; // @synthesize dotPositionFraction=_dotPositionFraction;
-@property(nonatomic) float dotDiameter; // @synthesize dotDiameter=_dotDiameter;
-@property(nonatomic) _Bool showsDotOnRing; // @synthesize showsDotOnRing=_showsDotOnRing;
 - (void).cxx_destruct;
 - (float)radiusForRingAtIndex:(int)arg1;
-- (void)_positionDotViewWithPositionFraction:(float)arg1;
 - (void)_setDiameter:(float)arg1;
-- (void)_update;
-- (float)_dotPositionFractionWithAnimationProgress:(float)arg1;
-- (void)cancelAppearanceAnimation;
-- (void)performAppearanceAnimation;
-- (void)prepareAppearanceAnimation;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
+- (void)setFilterProvider:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 diameter:(float)arg2 ringWidth:(float)arg3 ringGapWidth:(float)arg4 showsRingsBackground:(_Bool)arg5;
+- (id)initWithFrame:(struct CGRect)arg1 diameter:(float)arg2 ringWidth:(float)arg3 ringGapWidth:(float)arg4 overlapStrokeWidth:(float)arg5;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

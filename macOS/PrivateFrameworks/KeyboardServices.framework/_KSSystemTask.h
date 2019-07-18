@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSTimer;
+@class NSString;
 @protocol OS_dispatch_queue, OS_xpc_object;
 
 @interface _KSSystemTask : NSObject
@@ -15,14 +15,14 @@
     NSString *_name;
     CDUnknownBlockType _handler;
     double _maxRunTime;
+    double _checkInTime;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_xpc_object> *_executionCriteria;
-    NSTimer *_timer;
 }
 
-@property(retain) NSTimer *timer; // @synthesize timer=_timer;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *executionCriteria; // @synthesize executionCriteria=_executionCriteria;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(nonatomic) double checkInTime; // @synthesize checkInTime=_checkInTime;
 @property(nonatomic) double maxRunTime; // @synthesize maxRunTime=_maxRunTime;
 @property(readonly, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;

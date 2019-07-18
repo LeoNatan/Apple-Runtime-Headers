@@ -23,7 +23,7 @@
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (void)prepareForReuse;
-- (void)configureWitTitle:(id)arg1 appIconImage:(id)arg2;
+- (void)configureWithTitle:(id)arg1 appIconImage:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

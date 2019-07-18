@@ -15,8 +15,8 @@
     _Bool _acceptorWillSendInitialSyncCredentials;
     _Bool _testFailSOS;
     _Bool _testFailOctagon;
-    _Bool _doingSOS;
-    _Bool _doingOctagon;
+    _Bool _sessionSupportsSOS;
+    _Bool _sessionSupportsOctagon;
     KCPairingChannelContext *_peerVersionContext;
     unsigned int _counter;
     NSXPCConnection *_connection;
@@ -30,8 +30,8 @@
 + (_Bool)isSupportedPlatform;
 + (id)pairingChannelAcceptor:(id)arg1;
 + (id)pairingChannelInitiator:(id)arg1;
-@property _Bool doingOctagon; // @synthesize doingOctagon=_doingOctagon;
-@property _Bool doingSOS; // @synthesize doingSOS=_doingSOS;
+@property _Bool sessionSupportsOctagon; // @synthesize sessionSupportsOctagon=_sessionSupportsOctagon;
+@property _Bool sessionSupportsSOS; // @synthesize sessionSupportsSOS=_sessionSupportsSOS;
 @property(nonatomic) _Bool testFailOctagon; // @synthesize testFailOctagon=_testFailOctagon;
 @property(nonatomic) _Bool testFailSOS; // @synthesize testFailSOS=_testFailSOS;
 @property(retain, nonatomic) OTJoiningConfiguration *joiningConfiguration; // @synthesize joiningConfiguration=_joiningConfiguration;
@@ -46,6 +46,7 @@
 @property KCPairingChannelContext *peerVersionContext; // @synthesize peerVersionContext=_peerVersionContext;
 @property(readonly) _Bool needInitialSync; // @synthesize needInitialSync=_needInitialSync;
 - (void).cxx_destruct;
+- (void)setSessionSupportsOctagonForTesting:(_Bool)arg1;
 - (void)setOctagonMessageFailForTesting:(_Bool)arg1;
 - (void)setSOSMessageFailForTesting:(_Bool)arg1;
 - (void)setConfiguration:(id)arg1;
@@ -66,6 +67,7 @@
 - (void)initiatorCompleteSecondPacketWithSOS:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)initiatorSecondPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)initiatorFirstPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
+- (void)attemptSosUpgrade;
 - (id)decompressData:(id)arg1;
 - (id)compressData:(id)arg1;
 - (void)setNextStateError:(id)arg1 complete:(CDUnknownBlockType)arg2;

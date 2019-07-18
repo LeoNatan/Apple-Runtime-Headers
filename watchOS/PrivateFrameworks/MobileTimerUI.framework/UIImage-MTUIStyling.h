@@ -11,6 +11,7 @@
 + (id)mtui_imageWithSymbolName:(id)arg1 style:(id)arg2;
 + (id)mtui_wakeImage;
 + (id)mtui_sleepImage;
++ (id)mtui_imageWithSymbolName:(id)arg1 font:(id)arg2 andTintColor:(id)arg3;
 + (id)mtui_imageWithSymbolName:(id)arg1 pointSize:(float)arg2;
 @end
 

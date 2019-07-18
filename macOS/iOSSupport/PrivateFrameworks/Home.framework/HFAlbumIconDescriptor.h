@@ -12,11 +12,13 @@
 
 @interface HFAlbumIconDescriptor : NSObject <HFIconDescriptor>
 {
+    BOOL _shouldForceLTR;
     NSString *_imageIdentifier;
     NSData *_imageData;
 }
 
 @property(readonly, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
+@property(readonly, nonatomic) BOOL shouldForceLTR; // @synthesize shouldForceLTR=_shouldForceLTR;
 - (void).cxx_destruct;
 - (id)iconDescriptorByMergingWithIconDescriptor:(id)arg1;
 @property(readonly, copy) NSString *description;

@@ -336,6 +336,7 @@
         unsigned int dataSourceIsDiffableDataSource:1;
         unsigned int isApplyingDiffableUpdate:1;
         unsigned int isUpdatingVisibleCells:1;
+        unsigned int scrollFirstResponderCellVisibleAfterVisibleCellsUpdate:1;
         unsigned int ignoreCopyFilterForTableAnimations:1;
     } _tableFlags;
     id <UITableViewDragDelegate> _dragDelegate;
@@ -355,8 +356,6 @@
 + (void)initialize;
 + (void)_setupIdiom:(long long)arg1 forTableViewStyle:(long long)arg2 includingBackground:(BOOL)arg3;
 + (void)_initializeForIdiom:(long long)arg1;
-+ (id)_externalTableSeparatorColor;
-+ (id)_externalTableBackgroundColor;
 + (BOOL)_isInternalTableView;
 @property(nonatomic) __weak id <UITableViewDragDestinationDelegate> dragDestinationDelegate; // @synthesize dragDestinationDelegate=_dragDestinationDelegate;
 @property(nonatomic) __weak id <UITableViewDragSourceDelegate> dragSourceDelegate; // @synthesize dragSourceDelegate=_dragSourceDelegate;
@@ -532,6 +531,7 @@
 @property(readonly, nonatomic, getter=_backgroundInset) double backgroundInset;
 @property(readonly, nonatomic, getter=_rowSpacing) double rowSpacing;
 - (double)_heightForSeparator;
+- (id)_contextMenuInteraction:(id)arg1 interactionEffectForTargetedPreview:(id)arg2;
 - (void)contextMenuInteraction:(id)arg1 willCommitWithAnimator:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 previewForDismissingMenuWithConfiguration:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
@@ -735,6 +735,7 @@
 - (void)_macWindowChangedKey:(id)arg1;
 - (void)_observeNotificationsForSidebar;
 - (id)_sidebarVariantOfConstants:(id)arg1;
+- (void)_stopScrollingNotify:(BOOL)arg1 pin:(BOOL)arg2;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(BOOL)arg2;
 - (void)_nudgeScroll:(long long)arg1;
 - (void)_handleNudgeInDirection:(long long)arg1;
@@ -1074,6 +1075,7 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_setUsesStaticScrollBar:(BOOL)arg1;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
+- (void)_updateConstants;
 - (void)_updateConstantsForVisibleCellsAndHeaderFooterViews;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(readonly, nonatomic, getter=_wrapperView) UIScrollView *wrapperView;

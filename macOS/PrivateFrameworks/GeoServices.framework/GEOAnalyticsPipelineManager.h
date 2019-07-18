@@ -22,9 +22,13 @@
 - (void)initiateUploadOfType:(int)arg1;
 - (void)flushEvalData;
 - (void)setEvalMode:(BOOL)arg1;
+- (void)reportMapKitCountType:(int)arg1 appId:(id)arg2 completion:(CDUnknownBlockType)arg3 completionQueue:(id)arg4;
+- (void)reportMapKitCountType:(int)arg1;
 - (void)reportLogMsgType:(int)arg1 eventType:(int)arg2 logMsg:(id)arg3 completion:(CDUnknownBlockType)arg4 completionQueue:(id)arg5;
 - (void)logToDiagAndUsageUnderBugId:(id)arg1 filePrefix:(id)arg2 logData:(id)arg3;
+- (BOOL)PlatformDiagAndUsageOrAppleInternal;
 - (BOOL)PlatformDiagAndUsage;
+- (BOOL)AppleInternal;
 - (BOOL)GEOMapsLocationAuth;
 - (BOOL)GEOImproveMaps;
 - (void)setShortSessionValues:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

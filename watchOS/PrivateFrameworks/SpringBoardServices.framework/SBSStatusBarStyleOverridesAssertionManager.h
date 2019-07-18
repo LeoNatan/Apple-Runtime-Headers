@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <SpringBoardServices/BSDescriptionProviding-Protocol.h>
 #import <SpringBoardServices/SBSStatusBarStyleOverridesAssertionClient-Protocol.h>
 
 @class NSMapTable, NSString, NSXPCConnection, SBSStatusBarStyleOverridesCoordinator;
 @protocol OS_dispatch_queue;
 
-@interface SBSStatusBarStyleOverridesAssertionManager : NSObject <SBSStatusBarStyleOverridesAssertionClient>
+@interface SBSStatusBarStyleOverridesAssertionManager : NSObject <BSDescriptionProviding, SBSStatusBarStyleOverridesAssertionClient>
 {
     NSMapTable *_assertionsByIdentifier;
     NSXPCConnection *_sbXPCConnection;
@@ -34,6 +35,11 @@
 - (void)_internalQueue_updateRegistrationForCoordinator:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)updateRegistrationForCoordinator:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)_internalQueue_removeStatusBarStyleOverridesAssertionWithIdentifier:(id)arg1 invalidate:(_Bool)arg2;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+@property(readonly, copy) NSString *description;
 - (void)statusBarTappedWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)invalidateStatusBarStyleOverridesAssertionsWithIdentifiers:(id)arg1;
 - (void)updateStatusStringForAssertion:(id)arg1;
@@ -44,7 +50,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

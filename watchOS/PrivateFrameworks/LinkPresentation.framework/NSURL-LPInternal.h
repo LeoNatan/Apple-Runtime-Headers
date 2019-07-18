@@ -11,6 +11,8 @@
 - (id)_lp_pathComponentAtIndex:(unsigned int)arg1;
 - (id)_lp_componentsNoCopy;
 - (id)_lp_components;
+- (id)_lp_formattedTelephoneNumber;
+- (_Bool)_lp_isTelephoneURL;
 - (_Bool)_lp_isHTTPFamilyOrLinkPresentationTestingURL;
 - (_Bool)_lp_hasAllowedNonHTTPScheme;
 @end

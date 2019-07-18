@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
 - (double)customCellHeight;
 - (long long)cellStyle;
 - (id)sampleTypes;
-- (id)_minMaxHeartStringForHeartRates:(id)arg1;
 - (id)_heartEventType;
 
 @end

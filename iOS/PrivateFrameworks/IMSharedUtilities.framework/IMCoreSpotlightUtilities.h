@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)bypassIndexVersionCheck;
 + (unsigned long long)messageIndexBatchSize:(_Bool)arg1;
 + (unsigned long long)expectedIndexVersion;
 + (unsigned long long)currentIndexVersion;

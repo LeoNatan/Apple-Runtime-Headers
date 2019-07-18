@@ -11,16 +11,23 @@
 @interface CLSContactCache : CLSDBCache
 {
     NSPredicate *_entryPredicateWithContactIdentifier;
+    NSPredicate *_entryPredicateWithContactIdentifiers;
     NSPredicate *_entryPredicateWithUpdateTimestamp;
 }
 
 @property(retain, nonatomic) NSPredicate *entryPredicateWithUpdateTimestamp; // @synthesize entryPredicateWithUpdateTimestamp=_entryPredicateWithUpdateTimestamp;
+@property(retain, nonatomic) NSPredicate *entryPredicateWithContactIdentifiers; // @synthesize entryPredicateWithContactIdentifiers=_entryPredicateWithContactIdentifiers;
 @property(retain, nonatomic) NSPredicate *entryPredicateWithContactIdentifier; // @synthesize entryPredicateWithContactIdentifier=_entryPredicateWithContactIdentifier;
 - (void).cxx_destruct;
+- (_Bool)setLastHistoryToken:(id)arg1;
+- (id)lastHistoryToken;
 - (void)enumerateCachedEntriesUsingBlock:(CDUnknownBlockType)arg1;
+- (unsigned long long)numberOfCachedContacts;
 - (id)cachedContactForContactIdentifier:(id)arg1;
+- (_Bool)insertContactWithNoProfilePicture:(id)arg1;
 - (_Bool)insertFaceprintAnalysisResult:(id)arg1 forContactIdentifier:(id)arg2;
 - (void)invalidateCacheItemsBeforeDateWithTimestamp:(double)arg1;
+- (void)invalidateCacheItemsForContactIdentifiers:(id)arg1;
 - (void)invalidateCacheItemForContactIdentifier:(id)arg1;
 - (id)dataModelName;
 - (id)init;

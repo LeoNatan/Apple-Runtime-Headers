@@ -6,17 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class HKHealthStore, NSDictionary, NSHashTable, _HKDateRangeQuery;
+@class HKHealthStore, NSDictionary, NSHashTable, NSString, _HKDateRangeQuery;
 
 @interface HKSampleTypeDateRangeController : NSObject
 {
     HKHealthStore *_healthStore;
     _HKDateRangeQuery *_dateRangeQuery;
     NSHashTable *_observers;
+    NSString *_name;
     struct NSDictionary *_dateRangesBySampleType;
 }
 
 @property(readonly, nonatomic) NSDictionary *dateRangesBySampleType; // @synthesize dateRangesBySampleType=_dateRangesBySampleType;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)_updateHandlerDidReceiveError:(id)arg1 retryCount:(long long)arg2;
 - (void)_resultsDidUpdate:(struct NSDictionary *)arg1;

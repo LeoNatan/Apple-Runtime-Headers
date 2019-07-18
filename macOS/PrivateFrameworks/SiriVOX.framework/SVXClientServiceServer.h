@@ -38,7 +38,6 @@
 - (void)sessionManager:(id)arg1 didBecomeActiveWithActivationContext:(id)arg2;
 - (void)sessionManager:(id)arg1 willBecomeActiveWithActivationContext:(id)arg2;
 - (void)sessionManager:(id)arg1 didStopSoundWithID:(long long)arg2 error:(id)arg3;
-- (void)sessionManager:(id)arg1 didNotStartSoundWithID:(long long)arg2 error:(id)arg3;
 - (void)sessionManager:(id)arg1 didStartSoundWithID:(long long)arg2;
 - (void)sessionManager:(id)arg1 willStartSoundWithID:(long long)arg2;
 - (void)sessionManager:(id)arg1 willPresentFeedbackWithDialogIdentifier:(id)arg2;

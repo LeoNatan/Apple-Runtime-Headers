@@ -14,6 +14,7 @@
 {
 }
 
+- (void)submitOperationEvent:(id)arg1;
 - (id)timerWithTimeInterval:(double)arg1 options:(unsigned long long)arg2;
 - (void)appendData:(id)arg1 toStreamingAssetAppendContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)removeItemAtURL:(id)arg1 error:(id *)arg2;

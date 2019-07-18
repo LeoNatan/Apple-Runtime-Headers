@@ -16,12 +16,10 @@ __attribute__((visibility("hidden")))
     VUIProductUberBackgroundView *_uberBackgroundView;
     IKViewElement *_viewElement;
     VUIProductBannerView *_bannerView;
-    long long _overrideInterfaceStyle;
     UIView *_transitionBackgroundView;
 }
 
 @property(retain, nonatomic) UIView *transitionBackgroundView; // @synthesize transitionBackgroundView=_transitionBackgroundView;
-@property(nonatomic) long long overrideInterfaceStyle; // @synthesize overrideInterfaceStyle=_overrideInterfaceStyle;
 @property(retain, nonatomic) VUIProductBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) VUIProductUberBackgroundView *uberBackgroundView; // @synthesize uberBackgroundView=_uberBackgroundView;
@@ -32,9 +30,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGSize size;
 @property(readonly, nonatomic) double topThreshold;
 - (void)setUberImageOffset:(double)arg1;
-@property(readonly, nonatomic) long long uberLayoutInterfaceStyle;
 @property(readonly, nonatomic) _Bool isUberLayoutActive;
-- (id)traitCollection;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)loadView;

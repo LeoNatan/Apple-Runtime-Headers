@@ -6,10 +6,12 @@
 
 #import <UIKit/UINavigationController.h>
 
+#import <EventKitUI/UIAdaptivePresentationControllerDelegate-Protocol.h>
+
 @class EKEvent, EKEventEditor, EKEventStore, NSString, UIColor;
 @protocol EKEventEditViewDelegate;
 
-@interface EKEventEditViewController : UINavigationController
+@interface EKEventEditViewController : UINavigationController <UIAdaptivePresentationControllerDelegate>
 {
     EKEventStore *_store;
     EKEvent *_event;
@@ -30,7 +32,12 @@
 @property(retain, nonatomic) EKEventEditor *editor; // @synthesize editor=_editor;
 @property(nonatomic) __weak id <EKEventEditViewDelegate> editViewDelegate; // @synthesize editViewDelegate=_editViewDelegate;
 - (void).cxx_destruct;
+- (void)presentationControllerDidAttemptToDismiss:(id)arg1;
+- (id)confirmDismissAlertController;
+- (id)_confirmDismissAlertExplanationText;
+- (id)_leftBarButtonItem;
 - (id)_eventEditorForTestingOnly;
+@property(readonly, nonatomic) BOOL displayingRootView;
 @property(nonatomic) BOOL timeImplicitlySet;
 @property(nonatomic) double editorNavBarRightContentInset;
 @property(nonatomic) double editorNavBarLeftContentInset;
@@ -50,17 +57,26 @@
 - (void)_storeChanged:(id)arg1;
 - (void)editor:(id)arg1 prepareCalendarItemForEdit:(id)arg2;
 - (void)editor:(id)arg1 didCompleteWithAction:(long long)arg2;
+- (BOOL)editor:(id)arg1 shouldCompleteWithAction:(long long)arg2;
+- (void)cancelEditingWithDelegateNotification:(BOOL)arg1 forceCancel:(BOOL)arg2;
 - (void)cancelEditing;
 - (BOOL)saveWithSpan:(long long)arg1 animated:(BOOL)arg2;
 - (void)refreshStartAndEndDates;
 @property(retain, nonatomic) EKEvent *event;
 @property(retain, nonatomic) EKEventStore *eventStore;
 - (void)dealloc;
-- (BOOL)isModalInPopover;
+- (BOOL)isModalInPresentation;
 - (BOOL)shouldAutorotate;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

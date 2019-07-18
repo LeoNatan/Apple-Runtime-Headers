@@ -16,6 +16,7 @@
     AVAsset *_avAsset;
 }
 
++ (id)cacheDeletedOnWatchPredicate;
 + (id)playablePredicate;
 + (id)searchableItemIdentifierForSavedRecordingURI:(id)arg1;
 + (id)savedRecordingURIForSearchableItemIdentifier:(id)arg1;

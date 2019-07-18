@@ -50,6 +50,7 @@
 @property(nonatomic) __weak id <SBHIconModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <SBIconModelStore> store; // @synthesize store=_store;
 - (void).cxx_destruct;
+- (void)folder:(id)arg1 didReplaceIcon:(id)arg2 withIcon:(id)arg3;
 - (void)folder:(id)arg1 didAddIcons:(id)arg2 removedIcons:(id)arg3;
 - (void)folder:(id)arg1 didRemoveLists:(id)arg2 atIndexes:(id)arg3;
 - (void)folder:(id)arg1 didAddList:(id)arg2;

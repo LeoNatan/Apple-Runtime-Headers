@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     _Bool _saturated;
     _Bool _dimmed;
     _Bool _userActive;
-    float _previousPWMPercentage;
+    float _previousLevelPercentage;
     HIDDevice *_device;
     HIDElement *_levelElement;
     HIDElement *_levelFadeSpeedElement;
@@ -36,10 +36,12 @@ __attribute__((visibility("hidden")))
     float _ambientOffset;
     float _ambientHighThreshold;
     float _ambientLowThreshold;
-    float _pwmPercentage;
-    int _pwmMin;
-    int _pwmMax;
-    int _pwmOff;
+    float _levelPercentage;
+    float _levelMin;
+    float _levelMax;
+    float _levelOff;
+    unsigned int _levelUnit;
+    unsigned int _unitExponent;
     float _ambientSlope;
     float _currentLux;
     unsigned long long _keyboardID;
@@ -48,10 +50,12 @@ __attribute__((visibility("hidden")))
 
 @property float currentLux; // @synthesize currentLux=_currentLux;
 @property(readonly) float ambientSlope; // @synthesize ambientSlope=_ambientSlope;
-@property int pwmOff; // @synthesize pwmOff=_pwmOff;
-@property int pwmMax; // @synthesize pwmMax=_pwmMax;
-@property int pwmMin; // @synthesize pwmMin=_pwmMin;
-@property float pwmPercentage; // @synthesize pwmPercentage=_pwmPercentage;
+@property unsigned int unitExponent; // @synthesize unitExponent=_unitExponent;
+@property unsigned int levelUnit; // @synthesize levelUnit=_levelUnit;
+@property float levelOff; // @synthesize levelOff=_levelOff;
+@property float levelMax; // @synthesize levelMax=_levelMax;
+@property float levelMin; // @synthesize levelMin=_levelMin;
+@property float levelPercentage; // @synthesize levelPercentage=_levelPercentage;
 @property _Bool autoAdjust; // @synthesize autoAdjust=_autoAdjust;
 @property(retain) NSObject<OS_dispatch_source> *forceLuxUpdateTimer; // @synthesize forceLuxUpdateTimer=_forceLuxUpdateTimer;
 @property(readonly) float ambientLowThreshold; // @synthesize ambientLowThreshold=_ambientLowThreshold;
@@ -80,11 +84,11 @@ __attribute__((visibility("hidden")))
 - (void)handlePMUserActivityStateChanged:(unsigned long long)arg1;
 - (void)resetKeyDimTimeout;
 - (void)ALSPreferencesChanged:(id)arg1;
-- (void)calculatePwmPercentageAtAmbient:(float)arg1;
+- (void)calculateLevelPercentageAtAmbient:(float)arg1;
 - (float)currentLuxToAmbient;
 - (void)handleLuxUpdate:(float)arg1;
 - (void)getCurrentLux;
-- (int)pwm;
+- (float)level;
 - (void)updateAmbientOffset;
 @property float brightness;
 @property _Bool saturated;

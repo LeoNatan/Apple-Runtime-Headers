@@ -116,6 +116,7 @@
 @property(readonly, nonatomic, getter=_isStandaloneBrand) BOOL isStandAloneBrand;
 @property(readonly, nonatomic, getter=_isTransitDisplayFeature) BOOL isTransitDisplayFeature;
 @property(readonly, nonatomic, getter=_linkedServices) NSArray *linkedServices;
+@property(readonly, nonatomic, getter=_mapsCategoryId) NSString *mapsCategoryId;
 @property(readonly, nonatomic, getter=_messageLink) GEOMessageLink *messageLink;
 @property(readonly, nonatomic, getter=_needsAttribution) BOOL needsAttribution;
 @property(readonly, nonatomic, getter=_normalizedUserRatingScore) float normalizedUserRatingScore;

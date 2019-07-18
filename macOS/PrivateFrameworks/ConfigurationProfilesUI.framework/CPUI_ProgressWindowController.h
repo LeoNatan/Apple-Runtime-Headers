@@ -6,7 +6,7 @@
 
 #import <AppKit/NSWindowController.h>
 
-@class NSButton, NSDate, NSImage, NSImageView, NSProgressIndicator, NSTextField, NSWindow;
+@class NSButton, NSDate, NSImage, NSImageView, NSLayoutConstraint, NSProgressIndicator, NSTextField, NSWindow;
 
 @interface CPUI_ProgressWindowController : NSWindowController
 {
@@ -16,6 +16,11 @@
     NSTextField *_messageField;
     NSProgressIndicator *_progressIndicator;
     NSButton *_cancelButton;
+    NSLayoutConstraint *_layoutCancelTop;
+    NSLayoutConstraint *_layoutCancelBottom;
+    NSLayoutConstraint *_layoutCancelLeading;
+    NSLayoutConstraint *_layoutCancelTrailing;
+    NSLayoutConstraint *_layoutNoCancelProgressBottom;
     NSDate *_sheetShowDate;
     CDUnknownBlockType _responseHandler;
     NSWindow *_hostWindow;
@@ -28,7 +33,12 @@
 @property(copy) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(retain) NSDate *sheetShowDate; // @synthesize sheetShowDate=_sheetShowDate;
 @property(readonly) _Bool cancelled; // @synthesize cancelled=_cancelled;
-@property NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
+@property(retain) NSLayoutConstraint *layoutNoCancelProgressBottom; // @synthesize layoutNoCancelProgressBottom=_layoutNoCancelProgressBottom;
+@property(retain) NSLayoutConstraint *layoutCancelTrailing; // @synthesize layoutCancelTrailing=_layoutCancelTrailing;
+@property(retain) NSLayoutConstraint *layoutCancelLeading; // @synthesize layoutCancelLeading=_layoutCancelLeading;
+@property(retain) NSLayoutConstraint *layoutCancelBottom; // @synthesize layoutCancelBottom=_layoutCancelBottom;
+@property(retain) NSLayoutConstraint *layoutCancelTop; // @synthesize layoutCancelTop=_layoutCancelTop;
+@property(retain) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property NSTextField *messageField; // @synthesize messageField=_messageField;
 @property NSTextField *titleField; // @synthesize titleField=_titleField;

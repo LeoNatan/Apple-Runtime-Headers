@@ -6,15 +6,19 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class UISwitch;
+@class UISwitch, WGWidgetPinningTeachingAnimationView;
 
 @interface WGWidgetListEditViewPinTableViewCell : UITableViewCell
 {
+    WGWidgetPinningTeachingAnimationView *_pinImageView;
     UISwitch *_pinSwitch;
 }
 
 @property(readonly, nonatomic) UISwitch *pinSwitch; // @synthesize pinSwitch=_pinSwitch;
 - (void).cxx_destruct;
+- (void)stopAnimating;
+- (void)startAnimating;
+- (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

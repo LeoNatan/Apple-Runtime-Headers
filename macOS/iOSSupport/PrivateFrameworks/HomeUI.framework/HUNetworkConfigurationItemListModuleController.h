@@ -17,6 +17,7 @@
 - (BOOL)canSelectItem:(id)arg1;
 - (void)setupCell:(id)arg1 forItem:(id)arg2;
 - (Class)cellClassForItem:(id)arg1;
+- (id)presentNetworkConfigurationSettingsForItem:(id)arg1 animated:(BOOL)arg2;
 - (id)initWithModule:(id)arg1;
 - (id)initWithModule:(id)arg1 style:(unsigned long long)arg2;
 

@@ -17,12 +17,13 @@
 + (_Bool)handlesComplicationTemplate:(id)arg1;
 - (void).cxx_destruct;
 - (void)_updateColors;
-- (void)_setLayoutEmptyRingsNoDot;
+- (void)_setLayoutEmptyRings;
 - (void)_updateForTemplateChange;
 - (void)layoutSubviews;
 - (void)setSecondaryForegroundColor:(id)arg1;
 - (void)setUsesMultiColor:(_Bool)arg1;
 - (void)setForegroundColor:(id)arg1;
+- (float)_overlapStrokeWidth;
 - (float)_ringGapWidth;
 - (float)_ringStrokeWidth;
 - (float)_ringDiameter;

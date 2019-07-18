@@ -27,7 +27,7 @@
 - (int)streamDirection;
 - (void)setStreamDirection:(int)arg1;
 - (NSDictionary *)setLocalParticipantInfo:(NSDictionary *)arg1 networkSockets:(NSObject<OS_xpc_object> *)arg2 withError:(id *)arg3;
-- (NSDictionary *)setupRTPWithSockets:(NSObject<OS_xpc_object> *)arg1 error:(id *)arg2;
+- (NSDictionary *)setupRTPWithSocketDictionary:(NSObject<OS_xpc_object> *)arg1 error:(id *)arg2;
 - (NSDictionary *)setupRTPWithIDSDestination:(NSString *)arg1 error:(id *)arg2;
 @end
 

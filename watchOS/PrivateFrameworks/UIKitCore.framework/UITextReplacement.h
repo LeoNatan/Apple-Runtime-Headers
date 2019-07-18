@@ -15,16 +15,19 @@ __attribute__((visibility("hidden")))
     NSString *_originalText;
     NSString *_replacementText;
     NSString *_menuTitle;
+    CDUnknownBlockType _replacementCompletionBlock;
     unsigned int _usageTrackingMask;
 }
 
 + (id)replacementWithRange:(id)arg1 original:(id)arg2 replacement:(id)arg3 menuTitle:(id)arg4;
 @property(nonatomic) unsigned int usageTrackingMask; // @synthesize usageTrackingMask=_usageTrackingMask;
+@property(copy, nonatomic) CDUnknownBlockType replacementCompletionBlock; // @synthesize replacementCompletionBlock=_replacementCompletionBlock;
 @property(readonly, nonatomic) NSString *menuTitle; // @synthesize menuTitle=_menuTitle;
 @property(readonly, nonatomic) NSString *replacementText; // @synthesize replacementText=_replacementText;
 @property(readonly, nonatomic) NSString *originalText; // @synthesize originalText=_originalText;
 @property(readonly, nonatomic) UITextRange *range; // @synthesize range=_range;
 - (void).cxx_destruct;
+- (void)didReplaceTextWithTarget:(id)arg1;
 
 @end
 

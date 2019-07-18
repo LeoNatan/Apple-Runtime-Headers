@@ -35,6 +35,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (id)redactedDescription;
 - (id)description;
 - (id)descriptionWithNoScopeIndex;
 - (id)initWithScopeIdentifier:(id)arg1 identifier:(id)arg2 scopeIndex:(long long)arg3;

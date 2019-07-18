@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable, NSXPCConnection;
+#import <VoiceShortcutClient/INVCVoiceShortcutClient-Protocol.h>
+
+@class NSHashTable, NSString, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
-@interface VCVoiceShortcutClient : NSObject
+@interface VCVoiceShortcutClient : NSObject <INVCVoiceShortcutClient>
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSHashTable *_errorHandlers;
@@ -33,6 +35,7 @@
 - (id)asynchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1 synchronous:(_Bool)arg2;
 - (id)synchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)asynchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1;
+- (_Bool)hasRunEventsInTheLast30DaysWithError:(id *)arg1;
 - (void)runShortcutWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)runShortcutWithName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteTriggerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -45,9 +48,9 @@
 - (void)setInteger:(long long)arg1 forKey:(id)arg2 inDomain:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)unsubscribeFromVoiceShortcutDataUpdateNotifications;
 - (void)subscribeToVoiceShortcutDataUpdateNotifications;
+- (void)generateSingleUseTokenForWorkflowIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)generateSingleUseTokenForWorkflowReference:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)shareSheetWorkflowsForExtensionMatchingDictionaries:(id)arg1 hostBundleIdentifier:(id)arg2 error:(id *)arg3;
-- (id)shareSheetWorkflowsForTypeIdentifiers:(id)arg1 error:(id *)arg2;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setShortcutSuggestions:(id)arg1 forAppWithBundleIdentifier:(id)arg2;
@@ -68,6 +71,12 @@
 - (id)initWithMachServiceName:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithXPCConnectionCreationBlock:(CDUnknownBlockType)arg1;
 - (id)initWithXPCConnection:(id)arg1 XPCConnectionCreationBlock:(CDUnknownBlockType)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -15,7 +15,6 @@
 {
     _Bool _waitingForCSLSSessionCreation;
     _Bool _sessionDidStopCalled;
-    _Bool _sessionWasScheduled;
     id <WKExtendedRuntimeSessionDelegate> _delegate;
     int _state;
     NSDate *_expirationDate;
@@ -24,13 +23,15 @@
     NSError *_sessionCreationError;
     NSMutableArray *_cslsSessionCreationCompletions;
     NSDate *_scheduleDateRequested;
+    NSTimer *_playHapticTimer;
 }
 
 + (id)errorForWKExtendedRuntimeSessionErrorCode:(int)arg1;
++ (_Bool)cslsSessionWasCreatedInThisProcess:(id)arg1;
 + (_Bool)_currentRunningSessionWasScheduled;
 + (id)session;
-@property(nonatomic) _Bool sessionWasScheduled; // @synthesize sessionWasScheduled=_sessionWasScheduled;
 @property(nonatomic) _Bool sessionDidStopCalled; // @synthesize sessionDidStopCalled=_sessionDidStopCalled;
+@property(retain, nonatomic) NSTimer *playHapticTimer; // @synthesize playHapticTimer=_playHapticTimer;
 @property(retain, nonatomic) NSDate *scheduleDateRequested; // @synthesize scheduleDateRequested=_scheduleDateRequested;
 @property(retain, nonatomic) NSMutableArray *cslsSessionCreationCompletions; // @synthesize cslsSessionCreationCompletions=_cslsSessionCreationCompletions;
 @property(nonatomic) _Bool waitingForCSLSSessionCreation; // @synthesize waitingForCSLSSessionCreation=_waitingForCSLSSessionCreation;
@@ -45,6 +46,8 @@
 @property(readonly, copy) NSString *description;
 - (void)_sessionDidStopWithError:(id)arg1;
 - (void)sessionDidStop:(id)arg1 error:(id)arg2;
+- (void)_notifyUserWithHaptic:(int)arg1 repeatHandler:(CDUnknownBlockType)arg2;
+- (void)notifyUserWithHaptic:(int)arg1 repeatHandler:(CDUnknownBlockType)arg2;
 - (void)_invalidateWithError:(id)arg1;
 - (void)invalidate;
 - (void)_sessionDidStart;

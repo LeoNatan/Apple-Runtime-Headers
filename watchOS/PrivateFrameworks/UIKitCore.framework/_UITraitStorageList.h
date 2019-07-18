@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *traitStorages; // @synthesize traitStorages=_traitStorages;
 @property(readonly, nonatomic) __weak id topLevelObject; // @synthesize topLevelObject=_topLevelObject;
 - (void).cxx_destruct;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTopLevelObject:(id)arg1 traitStorages:(id)arg2 descendants:(id)arg3;

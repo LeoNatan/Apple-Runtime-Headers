@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (void)applyToMutableContact:(id)arg1 withIdentifierMap:(id)arg2;
 - (id)initWithProperty:(id)arg1 value:(id)arg2;
-- (_Bool)applyToABPerson:(void *)arg1 withPropertiesContext:(id)arg2 error:(id *)arg3;
+- (_Bool)applyToABPerson:(void *)arg1 withPropertiesContext:(id)arg2 logger:(id)arg3 error:(id *)arg4;
 
 @end
 

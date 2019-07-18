@@ -57,6 +57,7 @@
 - (_Bool)_canShowWhileLocked;
 - (void)viewDidLayoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)willMoveToParentViewController:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;

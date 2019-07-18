@@ -9,7 +9,7 @@
 @class _HMNetworkRouterProfile;
 
 @protocol _HMNetworkRouterProfileDelegate <NSObject>
-- (void)routerProfileDidUpdateSatellites:(_HMNetworkRouterProfile *)arg1;
+- (void)routerProfileDidUpdateIdentifiersForSatellites:(_HMNetworkRouterProfile *)arg1;
 - (void)routerProfileDidUpdateNetworkStatus:(_HMNetworkRouterProfile *)arg1;
 @end
 

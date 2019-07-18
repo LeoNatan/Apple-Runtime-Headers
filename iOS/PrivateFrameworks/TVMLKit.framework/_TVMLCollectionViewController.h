@@ -9,20 +9,19 @@
 #import <TVMLKit/TVAppTemplateImpressionable-Protocol.h>
 #import <TVMLKit/UICollectionViewDataSource-Protocol.h>
 #import <TVMLKit/_TVCollectionViewDelegate-Protocol.h>
-#import <TVMLKit/_TVConfirmationPreviewInteractionControllerDelegate-Protocol.h>
 #import <TVMLKit/_TVSubviewPreloading-Protocol.h>
 
 @class IKCollectionElement, IKViewElement, NSArray, NSDictionary, NSIndexPath, NSString, UICollectionView, _TVCollectionWrappingView, _TVNeedsMoreContentEvaluator, _TVShadowViewElement;
+@protocol TVPreviewInteractionController;
 
 __attribute__((visibility("hidden")))
-@interface _TVMLCollectionViewController : UIViewController <TVAppTemplateImpressionable, _TVConfirmationPreviewInteractionControllerDelegate, _TVCollectionViewDelegate, UICollectionViewDataSource, _TVSubviewPreloading>
+@interface _TVMLCollectionViewController : UIViewController <TVAppTemplateImpressionable, _TVCollectionViewDelegate, UICollectionViewDataSource, _TVSubviewPreloading>
 {
-    _Bool _ignoreNextSelect;
     _Bool _didAppear;
     _Bool _didUpdateFocus;
     double _impressionThreshold;
     _TVNeedsMoreContentEvaluator *_needsMoreContentEvaluator;
-    id _previewInteractionController;
+    id <TVPreviewInteractionController> _previewInteractionController;
     _Bool _indexDisplayEnabled;
     UICollectionView *_collectionView;
     UIViewController *_headerViewController;
@@ -58,12 +57,12 @@ __attribute__((visibility("hidden")))
 - (id)_closestIndexPathToIndexPath:(id)arg1;
 - (void)_registerCellClassesInCollectionView:(id)arg1;
 - (void)_updateFooterView;
+- (void)_registerPreviewInteractionController;
 - (void)_updateHeaderView;
 - (void)_doUpdateViewLayoutAnimated:(_Bool)arg1 relayout:(_Bool)arg2;
 - (void)adjustContentOffsetToDisplayIndexPath:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
-- (void)_confirmationPreviewInteractionControllerShouldBegin;
 - (void)preloadSubviewsInRect:(struct CGRect)arg1;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)_recordImpressionsForVisibleView;
@@ -77,7 +76,6 @@ __attribute__((visibility("hidden")))
 - (void)collectionView:(id)arg1 didReceiveLongPressForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didReceivePhysicalPlayForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 indexPathForIndexTitle:(id)arg2 atIndex:(long long)arg3;
@@ -90,6 +88,7 @@ __attribute__((visibility("hidden")))
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
+- (id)overrideTraitCollectionForChildViewController:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;

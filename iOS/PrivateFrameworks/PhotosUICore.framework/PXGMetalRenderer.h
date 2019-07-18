@@ -41,10 +41,12 @@
     id <PXGRendererDelegate> _delegate;
     id <PXGTextureConverter> _textureConverter;
     struct CGRect _visibleRect;
+    CDStruct_04522d6a _interactionState;
 }
 
 @property(nonatomic) _Bool isInvertColorsEnabled; // @synthesize isInvertColorsEnabled=_isInvertColorsEnabled;
 @property(readonly, nonatomic) MTKView *metalView; // @synthesize metalView=_metalView;
+@property(nonatomic) CDStruct_04522d6a interactionState; // @synthesize interactionState=_interactionState;
 @property(readonly, nonatomic) id <PXGTextureConverter> textureConverter; // @synthesize textureConverter=_textureConverter;
 @property(nonatomic) __weak id <PXGRendererDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType test_renderSnapshotHandler; // @synthesize test_renderSnapshotHandler=_test_renderSnapshotHandler;

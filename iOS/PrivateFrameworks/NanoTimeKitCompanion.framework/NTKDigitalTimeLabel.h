@@ -13,23 +13,23 @@
 
 @interface NTKDigitalTimeLabel : CLKUITimeLabel <NTKColoringView, NTKTimeView>
 {
+    UIColor *_shadowColor;
     _Bool _usesLegibility;
     _Bool _frozen;
-    UIColor *_color;
     UIColor *_overrideColor;
 }
 
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 @property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 @property(nonatomic) _Bool usesLegibility; // @synthesize usesLegibility=_usesLegibility;
-@property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setTimeOffset:(double)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 @property(readonly, nonatomic) UIColor *contentColor;
+- (void)setTextColor:(id)arg1;
+@property(retain, nonatomic) UIColor *color;
 - (id)_labelColorFromFaceColor:(unsigned long long)arg1 device:(id)arg2;
-- (void)_enumerateUnderlyingLabelsWithBlock:(CDUnknownBlockType)arg1;
 - (void)applyFaceFromColor:(unsigned long long)arg1 toColor:(unsigned long long)arg2 fraction:(float)arg3 device:(id)arg4;
 - (void)applyFaceColor:(unsigned long long)arg1 device:(id)arg2;
 - (void)setShadowColor:(id)arg1;
@@ -37,6 +37,7 @@
 @property(copy, nonatomic) NTKDigitalTimeLabelStyle *style; // @dynamic style;
 - (void)animateToStyle:(id)arg1 duration:(double)arg2 timingFunction:(id)arg3 additionalAnimation:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)setFrameUsingCurrentStyle;
+- (id)initWithTimeLabelOptions:(unsigned long long)arg1 forDevice:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

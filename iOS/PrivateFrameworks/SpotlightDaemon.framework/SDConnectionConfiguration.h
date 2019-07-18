@@ -17,6 +17,7 @@
     _Bool _searchInternal;
     _Bool _isExtension;
     _Bool _privateIndexNonSandboxAllowed;
+    _Bool _isPrivate;
     _Bool _quotaDisabled;
     int _pid;
     unsigned int _euid;
@@ -28,6 +29,7 @@
 }
 
 @property(readonly, nonatomic) _Bool quotaDisabled; // @synthesize quotaDisabled=_quotaDisabled;
+@property(readonly, nonatomic) _Bool isPrivate; // @synthesize isPrivate=_isPrivate;
 @property(readonly, nonatomic) _Bool privateIndexNonSandboxAllowed; // @synthesize privateIndexNonSandboxAllowed=_privateIndexNonSandboxAllowed;
 @property(readonly, nonatomic) _Bool isExtension; // @synthesize isExtension=_isExtension;
 @property(readonly, nonatomic) _Bool searchInternal; // @synthesize searchInternal=_searchInternal;
@@ -40,7 +42,7 @@
 @property(readonly, nonatomic) NSString *protectionClass; // @synthesize protectionClass=_protectionClass;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
-- (id)initWithConnection:(id)arg1;
+- (id)initWithConnection:(id)arg1 isPrivate:(_Bool)arg2;
 
 @end
 

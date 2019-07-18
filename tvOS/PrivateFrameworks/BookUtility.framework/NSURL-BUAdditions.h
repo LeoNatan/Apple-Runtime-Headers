@@ -8,13 +8,13 @@
 
 @interface NSURL (BUAdditions)
 + (id)bu_urlWithAssetID:(id)arg1;
-- (id)_assetIDFromURL:(_Bool)arg1;
+- (long long)bu_storeURLTypeFromHost:(id)arg1;
 - (id)bu_isbnForURI;
 - (unsigned long long)bu_fileAllocatedSizeWithError:(id *)arg1;
 - (void)bu_storeURLForISBNURNWithCompletion:(CDUnknownBlockType)arg1;
 - (id)bu_storeURLForISBNURN;
 - (id)bu_libraryIDFromURL;
-- (id)bu_storeIDFromURL;
 - (id)bu_assetIDFromURL;
+- (long long)bu_storeURLType;
 @end
 

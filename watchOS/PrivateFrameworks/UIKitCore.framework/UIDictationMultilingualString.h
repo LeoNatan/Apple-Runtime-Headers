@@ -6,15 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface UIDictationMultilingualString : NSObject
 {
     NSString *_text;
     NSString *_dominantLanguage;
+    id _correctionIdentifier;
+    NSArray *_phrases;
 }
 
+@property(copy, nonatomic) NSArray *phrases; // @synthesize phrases=_phrases;
+@property(retain, nonatomic) id correctionIdentifier; // @synthesize correctionIdentifier=_correctionIdentifier;
 @property(copy, nonatomic) NSString *dominantLanguage; // @synthesize dominantLanguage=_dominantLanguage;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
@@ -25,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
 - (id)initWithText:(id)arg1 forLanguage:(id)arg2;
 
 @end

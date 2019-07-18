@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)_notifyDelegateOfUpdatedWiFiReconfigurationSupport;
 - (void)_notifyDelegateOfUpdatedAccessViolation;
 - (void)_notifyDelegateOfUpdatedAllowedHosts;
-- (void)_notifyDelegateOfUpdatedProtectionMode;
+- (void)_notifyDelegateOfUpdatedProtectionModeWithAccessModeChanged:(BOOL)arg1;
 - (void)reconfigureWiFiWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateProtectionMode:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)__sendMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

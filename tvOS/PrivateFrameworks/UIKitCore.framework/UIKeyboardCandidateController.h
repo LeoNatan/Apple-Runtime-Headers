@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     id <UIKeyboardCandidateControllerDelegate> _delegate;
     TIKeyboardCandidateResultSet *_candidateResultSet;
     NSString *_inlineText;
+    double _splitGap;
     long long _activeCandidateViewType;
     UIKBScreenTraits *_screenTraits;
     id <UIKeyboardCandidateListDelegate> _candidateListDelegate;
@@ -71,6 +72,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <UIKeyboardCandidateListDelegate> candidateListDelegate; // @synthesize candidateListDelegate=_candidateListDelegate;
 @property(retain, nonatomic) UIKBScreenTraits *screenTraits; // @synthesize screenTraits=_screenTraits;
 @property(nonatomic) long long activeCandidateViewType; // @synthesize activeCandidateViewType=_activeCandidateViewType;
+@property(nonatomic) double splitGap; // @synthesize splitGap=_splitGap;
 @property(nonatomic) _Bool reuseArrowButtonToExpandAssistantBarItems; // @synthesize reuseArrowButtonToExpandAssistantBarItems=_reuseArrowButtonToExpandAssistantBarItems;
 @property(nonatomic) _Bool adjustForLeftHandBias; // @synthesize adjustForLeftHandBias=_adjustForLeftHandBias;
 @property(nonatomic) _Bool inlineRectIsVertical; // @synthesize inlineRectIsVertical=_inlineRectIsVertical;

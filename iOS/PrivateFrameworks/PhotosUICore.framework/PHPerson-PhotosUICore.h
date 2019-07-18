@@ -11,9 +11,11 @@
 @class NSDate, NSString;
 
 @interface PHPerson (PhotosUICore) <PXPerson>
++ (id)px_localizedNameFromContact:(id)arg1;
 + (void)px_loadRepresentativeFacesForPersons:(id)arg1;
 + (id)px_fetchPersonsForSuggestion:(id)arg1 options:(id)arg2;
 @property(readonly) NSString *px_displayName;
+@property(readonly) NSString *px_localizedName;
 @property(readonly) NSDate *px_keyPhotoDate;
 @property(readonly) _Bool isPersonModel;
 @property(readonly) NSString *px_localIdentifier;

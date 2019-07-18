@@ -15,11 +15,9 @@
 {
     NSObject<SFFeedbackListener> *_feedbackListener;
     NSObject<OS_dispatch_queue> *_feedbackQueue;
-    unsigned long long _lastQueryId;
 }
 
 + (id)sharedManager;
-@property(nonatomic) unsigned long long lastQueryId; // @synthesize lastQueryId=_lastQueryId;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *feedbackQueue; // @synthesize feedbackQueue=_feedbackQueue;
 @property(retain, nonatomic) NSObject<SFFeedbackListener> *feedbackListener; // @synthesize feedbackListener=_feedbackListener;
 - (void).cxx_destruct;

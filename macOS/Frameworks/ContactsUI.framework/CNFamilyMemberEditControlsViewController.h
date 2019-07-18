@@ -20,7 +20,7 @@
 }
 
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-@property(readonly, nonatomic) id <CNFamilyMemberEditControlsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) __weak id <CNFamilyMemberEditControlsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) NSButton *editControlButton; // @synthesize editControlButton=_editControlButton;
 @property(retain, nonatomic) NSStackView *stackView; // @synthesize stackView=_stackView;

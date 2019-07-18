@@ -25,8 +25,10 @@
     VSIdentityProviderRequestManager *_requestManager;
     UIBarButtonItem *_signInButtonItem;
     UIBarButtonItem *_cancelButtonItem;
+    UIViewController *_currentlyPresentedIdentityProviderAlert;
 }
 
+@property(retain, nonatomic) UIViewController *currentlyPresentedIdentityProviderAlert; // @synthesize currentlyPresentedIdentityProviderAlert=_currentlyPresentedIdentityProviderAlert;
 @property(retain, nonatomic) UIBarButtonItem *cancelButtonItem; // @synthesize cancelButtonItem=_cancelButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *signInButtonItem; // @synthesize signInButtonItem=_signInButtonItem;
 @property(retain, nonatomic) VSIdentityProviderRequestManager *requestManager; // @synthesize requestManager=_requestManager;
@@ -40,10 +42,12 @@
 @property(readonly, nonatomic) VSIdentityProvider *identityProvider; // @synthesize identityProvider=_identityProvider;
 - (void).cxx_destruct;
 - (void)viewDidLayoutSubviews;
+- (_Bool)identityProviderRequestManager:(id)arg1 requestsAlert:(id)arg2;
 - (void)identityProviderRequestManager:(id)arg1 didAuthenticateAccount:(id)arg2 forRequest:(id)arg3;
 - (void)identityProviderRequestManager:(id)arg1 finishedRequest:(id)arg2 withResult:(id)arg3;
 - (void)authenticationViewControllerDidCancel:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (_Bool)currentAuthenticationViewControllerSupportsPreAuth;
 - (void)enqueueRequest:(id)arg1;
 - (void)_didCancel;
 - (void)_dismiss;

@@ -6,7 +6,7 @@
 
 #import <GameCenterUI/GKDetailViewController.h>
 
-@class GKTurnBasedMatch, NSLayoutConstraint, NSTextField, NSView, UIButton;
+@class GKTurnBasedMatch, NSButton, NSLayoutConstraint, NSTextField, NSView;
 
 @interface GKDashboardTurnDetailViewController : GKDetailViewController
 {
@@ -17,14 +17,14 @@
     NSView *_turnDetailContentView;
     NSTextField *_playingWithLabel;
     NSTextField *_createdLabel;
-    UIButton *_firstButton;
-    UIButton *_secondButton;
+    NSButton *_firstButton;
+    NSButton *_secondButton;
     NSLayoutConstraint *_secondButtonCenteringConstraint;
 }
 
 @property(nonatomic) NSLayoutConstraint *secondButtonCenteringConstraint; // @synthesize secondButtonCenteringConstraint=_secondButtonCenteringConstraint;
-@property(nonatomic) UIButton *secondButton; // @synthesize secondButton=_secondButton;
-@property(nonatomic) UIButton *firstButton; // @synthesize firstButton=_firstButton;
+@property(nonatomic) NSButton *secondButton; // @synthesize secondButton=_secondButton;
+@property(nonatomic) NSButton *firstButton; // @synthesize firstButton=_firstButton;
 @property(nonatomic) NSTextField *createdLabel; // @synthesize createdLabel=_createdLabel;
 @property(nonatomic) NSTextField *playingWithLabel; // @synthesize playingWithLabel=_playingWithLabel;
 @property(nonatomic) NSView *turnDetailContentView; // @synthesize turnDetailContentView=_turnDetailContentView;

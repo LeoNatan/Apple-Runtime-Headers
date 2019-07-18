@@ -39,10 +39,6 @@ struct CLLocationCoordinate2D {
     double _field2;
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     double _field1;
     double _field2;
@@ -53,6 +49,10 @@ struct UIEdgeInsets {
 struct _WFContentSlice {
     unsigned long long startIndex;
     unsigned long long endIndex;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
 };
 
 #pragma mark Typedef'd Structures

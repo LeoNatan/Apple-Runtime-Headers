@@ -16,7 +16,15 @@
 
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSMutableArray *alertButtons;
+- (void)applyToAllCancelButtons:(CDUnknownBlockType)arg1;
+- (void)applyToAllVisibleButtons:(CDUnknownBlockType)arg1;
+- (unsigned long long)indexOfButton:(id)arg1;
+- (unsigned long long)indexOfFirstInitialSelectionButton;
+- (void)addButton:(id)arg1;
+- (void)addFirstButton:(id)arg1;
+- (id)alertButtonAtIndex:(unsigned long long)arg1;
+- (long long)alertButtonCount;
+- (id)init;
 
 @end
 

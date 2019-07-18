@@ -17,11 +17,13 @@
     struct {
         unsigned int mediaDestinationType:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _mediaDestinationType;
     _INPBString *_playlistName;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBString *playlistName; // @synthesize playlistName=_playlistName;
 @property(nonatomic) int mediaDestinationType; // @synthesize mediaDestinationType=_mediaDestinationType;
 - (void).cxx_destruct;

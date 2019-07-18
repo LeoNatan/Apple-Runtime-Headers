@@ -32,9 +32,6 @@
     IndicatorSecureTextField *mNewUserPassword;
     IndicatorSecureTextField *mNewUserPasswordVerify;
     NSTextField *mNewUserHint;
-    NSView *mICloudIDView;
-    NSTextField *mICloudIDField;
-    NSTextField *mICloudIDEmptyWarning;
     NSProgressIndicator *mNewUserProgressIndicator;
     NSProgressIndicator *mNewUserProgressIndicatorTM;
     NSWindow *mFVTMWarning;
@@ -77,7 +74,6 @@
 - (void)_setAccountTypePopupHidden:(BOOL)arg1;
 - (void)_addPasswordView;
 - (void)_addAccountNameView;
-- (void)_addICloudIDView;
 - (BOOL)_isStackViewHidden:(id)arg1;
 - (void)_loadBundle;
 - (id)_createGroup;

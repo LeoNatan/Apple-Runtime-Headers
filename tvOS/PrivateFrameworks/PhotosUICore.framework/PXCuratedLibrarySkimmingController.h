@@ -8,17 +8,18 @@
 
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@class NSArray, NSDate, NSString, NSTimer, PXAssetCollectionReference, PXCuratedLibraryAssetCollectionSkimmingModel;
+@class NSArray, NSString, NSTimer, PXAssetCollectionReference, PXCuratedLibraryAssetCollectionSkimmingModel;
 @protocol PXCuratedLibrarySkimmingControllerDelegate;
 
 @interface PXCuratedLibrarySkimmingController : NSObject <PXChangeObserver>
 {
+    double _slideshowTriggerDelay;
+    double _slideshowIntervalDelay;
     _Bool _skimmingSlideshowEnabled;
     PXCuratedLibraryAssetCollectionSkimmingModel *_skimmingModel;
     id <PXCuratedLibrarySkimmingControllerDelegate> _delegate;
-    PXAssetCollectionReference *_preSkimmedAssetCollectionReference;
-    NSDate *_skimTouchStartDate;
     long long _state;
+    PXAssetCollectionReference *_preSkimmedAssetCollectionReference;
     double _lastPanningTranslation;
     long long _currentSkimmingIndex;
     NSArray *_skimmingIndexes;
@@ -32,15 +33,15 @@
 @property(retain, nonatomic) NSArray *skimmingIndexes; // @synthesize skimmingIndexes=_skimmingIndexes;
 @property(nonatomic) long long currentSkimmingIndex; // @synthesize currentSkimmingIndex=_currentSkimmingIndex;
 @property(nonatomic) double lastPanningTranslation; // @synthesize lastPanningTranslation=_lastPanningTranslation;
-@property(nonatomic) long long state; // @synthesize state=_state;
-@property(retain, nonatomic) NSDate *skimTouchStartDate; // @synthesize skimTouchStartDate=_skimTouchStartDate;
 @property(retain, nonatomic) PXAssetCollectionReference *preSkimmedAssetCollectionReference; // @synthesize preSkimmedAssetCollectionReference=_preSkimmedAssetCollectionReference;
+@property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) _Bool skimmingSlideshowEnabled; // @synthesize skimmingSlideshowEnabled=_skimmingSlideshowEnabled;
 @property(nonatomic) __weak id <PXCuratedLibrarySkimmingControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PXCuratedLibraryAssetCollectionSkimmingModel *skimmingModel; // @synthesize skimmingModel=_skimmingModel;
 - (void).cxx_destruct;
 - (void)_enterIdleStatePersistSkimmingState:(_Bool)arg1;
 - (void)_adoptIndexesFromSkimmingModel;
+- (void)_cancelEnteringTouchingState;
 - (void)_enterTouchingStateForAssetCollectionReference:(id)arg1;
 - (void)_enterSlideshowStateForAssetCollectionReference:(id)arg1;
 - (void)_cleanupFeedbackGenerator;
@@ -53,6 +54,8 @@
 - (void)startPanningForAssetCollectionReference:(id)arg1;
 - (_Bool)endTouchingGestureEnded:(_Bool)arg1;
 - (void)startTouchingForAssetCollectionReference:(id)arg1;
+@property(readonly, nonatomic) _Bool isTouching;
+@property(readonly, nonatomic) _Bool canStartSkimming;
 - (void)_stopSlideshow;
 - (void)_slideshowTimerTick:(id)arg1;
 - (void)_startOrResumeSlideshowTouchesEnded:(_Bool)arg1;

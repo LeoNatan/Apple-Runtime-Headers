@@ -21,8 +21,10 @@
 + (id)sharedMediaSyncInfoUpdater;
 - (void).cxx_destruct;
 - (void)_setNeedsMediaSyncInfoUpdate;
+- (void)_handleSyncInfoRequestDateDidChangeNotification:(id)arg1;
 - (void)_handleMediaLibraryDidChangeNotification:(id)arg1;
 - (void)_handleMusicRecommendationsDidUpdateNotification:(id)arg1;
+- (void)_handleMediaPinningAudiobooksContentsInvalidatedNotification:(id)arg1;
 - (void)_handleMediaPinningPodcastsContentsInvalidatedNotification:(id)arg1;
 - (void)_handleMediaPinningMusicContentsInvalidatedNotification:(id)arg1;
 - (void)endUpdatingSyncInfo;

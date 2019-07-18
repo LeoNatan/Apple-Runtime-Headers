@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_updateButtonsWithTouch:(id)arg1;
 - (void)_reloadSelectedButton;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)_textFieldDidEndEditing:(id)arg1;
 - (void)_textFieldDidChange:(id)arg1;
 - (void)_textFieldDidBeginEditing:(id)arg1;

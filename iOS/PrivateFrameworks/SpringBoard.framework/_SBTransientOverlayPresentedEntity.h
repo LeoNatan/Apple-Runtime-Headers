@@ -6,21 +6,41 @@
 
 #import <objc/NSObject.h>
 
-@class SBTransientOverlayBackgroundWindow, SBTransientOverlayViewController, SBTransientOverlayWindow;
+@class SBFluidDismissalState, SBPresentationObservationToken, SBTransientOverlayBackgroundWindow, SBTransientOverlayViewController, SBTransientOverlayWindow, UIView;
 @protocol BSInvalidatable;
 
 @interface _SBTransientOverlayPresentedEntity : NSObject
 {
     _Bool _rotating;
     _Bool _dismissing;
+    _Bool _hasFinishedWindowInitialization;
     double _baseWindowLevel;
     SBTransientOverlayViewController *_viewController;
     SBTransientOverlayBackgroundWindow *_backgroundWindow;
     SBTransientOverlayWindow *_window;
+    id <BSInvalidatable> _disableAutoUnlockAssertion;
     id <BSInvalidatable> _proximityEnabledAssertion;
+    SBFluidDismissalState *_fluidDismissalState;
+    UIView *_fluidDismissalDimmingView;
+    SBPresentationObservationToken *_bannerLongLookPresentationObservationToken;
+    id <BSInvalidatable> _bannerLongLookWindowLevelAssertion;
+    SBPresentationObservationToken *_controlCenterPresentationObservationToken;
+    id <BSInvalidatable> _controlCenterWindowLevelAssertion;
+    SBPresentationObservationToken *_siriPresentationObservationToken;
+    id <BSInvalidatable> _siriWindowLevelAssertion;
 }
 
+@property(retain, nonatomic) id <BSInvalidatable> siriWindowLevelAssertion; // @synthesize siriWindowLevelAssertion=_siriWindowLevelAssertion;
+@property(retain, nonatomic) SBPresentationObservationToken *siriPresentationObservationToken; // @synthesize siriPresentationObservationToken=_siriPresentationObservationToken;
+@property(retain, nonatomic) id <BSInvalidatable> controlCenterWindowLevelAssertion; // @synthesize controlCenterWindowLevelAssertion=_controlCenterWindowLevelAssertion;
+@property(retain, nonatomic) SBPresentationObservationToken *controlCenterPresentationObservationToken; // @synthesize controlCenterPresentationObservationToken=_controlCenterPresentationObservationToken;
+@property(retain, nonatomic) id <BSInvalidatable> bannerLongLookWindowLevelAssertion; // @synthesize bannerLongLookWindowLevelAssertion=_bannerLongLookWindowLevelAssertion;
+@property(retain, nonatomic) SBPresentationObservationToken *bannerLongLookPresentationObservationToken; // @synthesize bannerLongLookPresentationObservationToken=_bannerLongLookPresentationObservationToken;
+@property(retain, nonatomic) UIView *fluidDismissalDimmingView; // @synthesize fluidDismissalDimmingView=_fluidDismissalDimmingView;
+@property(retain, nonatomic) SBFluidDismissalState *fluidDismissalState; // @synthesize fluidDismissalState=_fluidDismissalState;
 @property(retain, nonatomic) id <BSInvalidatable> proximityEnabledAssertion; // @synthesize proximityEnabledAssertion=_proximityEnabledAssertion;
+@property(retain, nonatomic) id <BSInvalidatable> disableAutoUnlockAssertion; // @synthesize disableAutoUnlockAssertion=_disableAutoUnlockAssertion;
+@property(nonatomic) _Bool hasFinishedWindowInitialization; // @synthesize hasFinishedWindowInitialization=_hasFinishedWindowInitialization;
 @property(nonatomic, getter=isDismissing) _Bool dismissing; // @synthesize dismissing=_dismissing;
 @property(readonly, nonatomic) SBTransientOverlayWindow *window; // @synthesize window=_window;
 @property(nonatomic, getter=isRotating) _Bool rotating; // @synthesize rotating=_rotating;

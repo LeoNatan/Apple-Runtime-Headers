@@ -6,13 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-@class LAUIPearlGlyphView, NSSet, SBUICAPackageView, SBUIFaceIDCameraGlyphView, SBUIFaceIDCoachingView, UIColor, _UILegibilitySettings;
+@class BSUICAPackageView, LAUIPearlGlyphView, NSSet, SBUIFaceIDCameraGlyphView, SBUIFaceIDCoachingView, UIColor, _UILegibilitySettings;
 
 @interface SBUIProudLockIconView : UIView
 {
     long long _state;
     UIView *_iconContainerView;
-    SBUICAPackageView *_lockView;
+    BSUICAPackageView *_lockView;
     NSSet *_imageLayers;
     NSSet *_shadowImageLayers;
     NSSet *_shadowFilterLayers;

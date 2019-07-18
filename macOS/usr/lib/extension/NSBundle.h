@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSString, NSURL;
+@class NSArray, NSDictionary, NSString, NSURL, _NSBundleODRTagManager;
 
 @interface NSBundle : NSObject
 {
@@ -18,6 +18,7 @@
     id _resolvedPath;
     NSString *_firstClassName;
     struct os_unfair_lock_s _lock;
+    _NSBundleODRTagManager *_odrTagManager;
 }
 
 + (id)preferredLocalizationsFromArray:(id)arg1 forPreferences:(id)arg2;
@@ -39,6 +40,7 @@
 + (id)pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;
 + (id)findBundleResourceURLsCallingMethod:(SEL)arg1 baseURL:(id)arg2 passingTest:(CDUnknownBlockType)arg3;
 + (id)findBundleResources:(id)arg1 callingMethod:(SEL)arg2 directory:(id)arg3 languages:(id)arg4 name:(id)arg5 types:(id)arg6 limit:(unsigned long long)arg7;
+- (id)_odrTagManager;
 @property(readonly, copy) NSArray *executableArchitectures;
 - (BOOL)preflightAndReturnError:(id *)arg1;
 @property(readonly, copy) NSString *developmentLocalization;

@@ -10,12 +10,13 @@
 #import <PepperUICore/UITextFieldDelegate-Protocol.h>
 #import <PepperUICore/UITextInputTraits-Protocol.h>
 
-@class NSAttributedString, NSSet, NSString, PUICQuickboardController, UIColor, UITextInputPasswordRules, _UITextField;
+@class NSAttributedString, NSNumber, NSSet, NSString, PUICQuickboardController, UIColor, UITextInputPasswordRules, _UITextField;
 @protocol PUICTextFieldDelegate;
 
 @interface PUICTextField : UIControl <PUICQuickboardControllerDelegate, UITextInputTraits, UITextFieldDelegate>
 {
     id <PUICTextFieldDelegate> delegate;
+    int _minimumLength;
     _UITextField *_textField;
     PUICQuickboardController *_quickboardController;
     PUICTextField *_secondaryTextField;
@@ -27,8 +28,10 @@
 @property(nonatomic) __weak PUICTextField *secondaryTextField; // @synthesize secondaryTextField=_secondaryTextField;
 @property(retain, nonatomic) PUICQuickboardController *quickboardController; // @synthesize quickboardController=_quickboardController;
 @property(retain, nonatomic) _UITextField *textField; // @synthesize textField=_textField;
+@property(nonatomic) int minimumLength; // @synthesize minimumLength=_minimumLength;
 @property(nonatomic) __weak id <PUICTextFieldDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;
+@property(nonatomic) int returnKeyType;
 @property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
 @property(copy, nonatomic) NSString *textContentType;
 @property(nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry;
@@ -61,6 +64,7 @@
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+@property(retain, nonatomic) NSNumber *indexPathTag;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
@@ -68,7 +72,6 @@
 @property(nonatomic) _Bool enablesReturnKeyAutomatically;
 @property(readonly) unsigned int hash;
 @property(nonatomic) int keyboardAppearance;
-@property(nonatomic) int returnKeyType;
 @property(readonly) Class superclass;
 
 @end

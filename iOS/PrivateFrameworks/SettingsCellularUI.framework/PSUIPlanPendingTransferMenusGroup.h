@@ -9,7 +9,7 @@
 #import <SettingsCellularUI/PSSpecifierGroup-Protocol.h>
 #import <SettingsCellularUI/TSSIMSetupDelegate-Protocol.h>
 
-@class CTCellularPlanManager, NSString, PSListController, PSSpecifier, TSSIMSetupFlow;
+@class CTCellularPlanManager, NSString, PSListController, PSSpecifier, TSSIMSetupFlow, UINavigationController;
 
 __attribute__((visibility("hidden")))
 @interface PSUIPlanPendingTransferMenusGroup : NSObject <TSSIMSetupDelegate, PSSpecifierGroup>
@@ -17,12 +17,14 @@ __attribute__((visibility("hidden")))
     PSSpecifier *_parentSpecifier;
     PSSpecifier *_groupSpecifier;
     PSListController *_listController;
+    UINavigationController *_navigationController;
     CTCellularPlanManager *_cellularPlanManager;
     TSSIMSetupFlow *_flow;
 }
 
 @property(retain) TSSIMSetupFlow *flow; // @synthesize flow=_flow;
 @property(retain, nonatomic) CTCellularPlanManager *cellularPlanManager; // @synthesize cellularPlanManager=_cellularPlanManager;
+@property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
 @property(nonatomic) __weak PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
 @property(retain, nonatomic) PSSpecifier *parentSpecifier; // @synthesize parentSpecifier=_parentSpecifier;

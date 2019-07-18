@@ -33,7 +33,7 @@
 - (_Bool)isArrivalStep;
 - (unsigned int)distance;
 - (id)transitStep;
-- (id)originalInstructions;
+- (id)instructions;
 - (CDStruct_39925896)endGeoCoordinate;
 - (CDStruct_39925896)startGeoCoordinate;
 - (void)_commonInitWithDecoderData:(id)arg1;

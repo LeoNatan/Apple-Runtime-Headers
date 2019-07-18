@@ -163,7 +163,6 @@
 - (void)_performToggleCommentsAction;
 - (void)_performMuteAction:(_Bool)arg1;
 - (void)_performPlayPauseAction:(long long)arg1;
-- (void)_performRewindAction;
 - (void)_performChangesWithCurrentVideoPlayer:(CDUnknownBlockType)arg1;
 - (void)_performToggleFavoriteAction;
 - (void)_performRestoreAction;
@@ -180,10 +179,6 @@
 - (void)_invalidateTitle;
 - (void)_invalidateScrubber;
 - (void)_updateScrubberViewIfNeeded;
-- (id)_newCustomButtonItem;
-- (id)_newBarButtonWithSystemItem:(long long)arg1 offset:(struct UIOffset)arg2 landscapeImagePhoneOffset:(struct UIOffset)arg3;
-- (id)_newBarButtonWithGlyph:(id)arg1;
-- (id)_newBarButtonItemWithImageName:(id)arg1 offset:(struct UIOffset)arg2 landscapeImagePhoneName:(id)arg3 offset:(struct UIOffset)arg4 location:(long long)arg5;
 - (id)_newBarButtonItemWithIdentifier:(long long)arg1 location:(long long)arg2;
 - (long long)_locationForBarButtonItemWithIdentifier:(long long)arg1;
 - (long long)_scrubberType;

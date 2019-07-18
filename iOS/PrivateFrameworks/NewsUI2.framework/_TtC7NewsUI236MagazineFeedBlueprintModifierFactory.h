@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: sectionFactory
     // Error parsing type: , name: issueModelFactory
+    // Error parsing type: , name: subscriptionService
 }
 
 @end

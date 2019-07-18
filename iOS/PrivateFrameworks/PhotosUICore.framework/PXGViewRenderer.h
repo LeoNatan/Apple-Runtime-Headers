@@ -25,15 +25,18 @@
     id <PXGTextureConverter> _textureConverter;
     PXScrollViewController *_scrollViewController;
     struct CGRect _visibleRect;
+    CDStruct_04522d6a _interactionState;
 }
 
 @property(retain, nonatomic) PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
+@property(nonatomic) CDStruct_04522d6a interactionState; // @synthesize interactionState=_interactionState;
 @property(readonly, nonatomic) id <PXGTextureConverter> textureConverter; // @synthesize textureConverter=_textureConverter;
 @property(nonatomic) __weak id <PXGRendererDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType test_renderSnapshotHandler; // @synthesize test_renderSnapshotHandler=_test_renderSnapshotHandler;
 @property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
 - (void).cxx_destruct;
 - (void)setNeedsRender;
+- (id)viewForSpriteIndex:(unsigned int)arg1;
 - (void)renderSpritesWithTextures:(id)arg1 dataStore:(id)arg2 presentationDataStore:(id)arg3 presentationMetadataStore:(id)arg4 layout:(id)arg5;
 - (void)updateWithChangeDetails:(id)arg1;
 @property(readonly, nonatomic) int presentationType;

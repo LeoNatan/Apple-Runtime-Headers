@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_generateNotificationFromPayload:(id)arg1 config:(id)arg2;
++ (id)_generateDialogRequestFromPayload:(id)arg1 config:(id)arg2;
++ (BOOL)_shouldPresentAlertForPayload:(id)arg1;
 + (void)handleNotificationPayload:(id)arg1 config:(id)arg2 bag:(id)arg3;
 
 // Remaining properties

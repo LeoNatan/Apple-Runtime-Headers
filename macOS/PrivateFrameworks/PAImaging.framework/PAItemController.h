@@ -18,6 +18,7 @@
     NSObject<OS_dispatch_group> *_commitGroup;
     PHContentEditingInput *_originalContentEditingInput;
     PHContentEditingInput *_currentContentEditingInput;
+    unsigned long long _currentContentEditingInputRequestID;
     PAEditSupport *_editSupport;
     PHContentEditingInput *_assetContentEditingInput;
     PHAdjustmentData *_assetAdjustmentData;
@@ -36,6 +37,7 @@
 - (void)resetEditingWithContentEditingInput:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)commitEditingToAsset:(id)arg1 contentEditingInput:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)beginEditingWithContentEditingInput:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+@property(readonly, getter=isAvailableForEditing) BOOL availableForEditing;
 - (BOOL)isEditing;
 - (BOOL)_isEditing;
 - (void)resetEditing;
@@ -51,6 +53,7 @@
 - (void)commitEditing:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)commitEditingMainThread:(CDUnknownBlockType)arg1;
 - (BOOL)commitEditing:(id *)arg1;
+- (void)cancelBeginEditing;
 - (void)whenContentEditingInputReady:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_beginEditing:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)beginEditing:(id)arg1 completion:(CDUnknownBlockType)arg2;

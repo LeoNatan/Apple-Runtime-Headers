@@ -12,23 +12,23 @@
 #import <EmailDaemon/EDMessageChangeHookResponder-Protocol.h>
 #import <EmailDaemon/EDPersistenceDatabaseSchemaProvider-Protocol.h>
 #import <EmailDaemon/EDProtectedDataReconciliationHookResponder-Protocol.h>
+#import <EmailDaemon/EDThreadScopeManagerDataSource-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDMessagePersistence, EDPersistenceDatabase, EDPersistenceHookRegistry, EFFuture, EMBlockedSenderManager, NSString;
+@class EDMessagePersistence, EDPersistenceDatabase, EDPersistenceHookRegistry, EDThreadScopeManager, EMBlockedSenderManager, NSString;
 @protocol EFScheduler, EMVIPManager;
 
-@interface EDThreadPersistence : NSObject <EDDatabaseChangeHookResponder, EDAccountChangeHookResponder, EDMailboxChangeHookResponder, EDMessageChangeHookResponder, EDProtectedDataReconciliationHookResponder, EFLoggable, EDPersistenceDatabaseSchemaProvider>
+@interface EDThreadPersistence : NSObject <EDDatabaseChangeHookResponder, EDAccountChangeHookResponder, EDMailboxChangeHookResponder, EDMessageChangeHookResponder, EDProtectedDataReconciliationHookResponder, EDThreadScopeManagerDataSource, EFLoggable, EDPersistenceDatabaseSchemaProvider>
 {
     EDMessagePersistence *_messagePersistence;
     EDPersistenceDatabase *_database;
     EDPersistenceHookRegistry *_hookRegistry;
     id <EMVIPManager> _vipManager;
     EMBlockedSenderManager *_blockedSenderManager;
-    EFFuture *_precomputedThreadScopesFuture;
+    EDThreadScopeManager *_threadScopeManager;
     id <EFScheduler> _reconciliationCleanupScheduler;
 }
 
-+ (id)mailboxTypesToPrecompute;
 + (id)threadRecipientsTableSchema;
 + (id)threadSendersTableSchema;
 + (id)threadMailboxesTableSchema;
@@ -37,13 +37,20 @@
 + (id)tablesAndForeignKeysToResolve:(id *)arg1 associationsToResolve:(id *)arg2;
 + (id)log;
 @property(retain, nonatomic) id <EFScheduler> reconciliationCleanupScheduler; // @synthesize reconciliationCleanupScheduler=_reconciliationCleanupScheduler;
-@property(retain) EFFuture *precomputedThreadScopesFuture; // @synthesize precomputedThreadScopesFuture=_precomputedThreadScopesFuture;
+@property(readonly, nonatomic) EDThreadScopeManager *threadScopeManager; // @synthesize threadScopeManager=_threadScopeManager;
 @property(readonly, nonatomic) EMBlockedSenderManager *blockedSenderManager; // @synthesize blockedSenderManager=_blockedSenderManager;
 @property(readonly, nonatomic) id <EMVIPManager> vipManager; // @synthesize vipManager=_vipManager;
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
 - (void).cxx_destruct;
+- (BOOL)threadScopeManager:(id)arg1 evictThreadScopesWithDatabaseIDs:(id)arg2;
+- (void)threadScopeManager:(id)arg1 gatherStatisticsForThreadScopes:(id)arg2 block:(CDUnknownBlockType)arg3;
+- (void)threadScopeManager:(id)arg1 populateThreadScopesWithBlock:(CDUnknownBlockType)arg2;
+- (BOOL)threadScopeManager:(id)arg1 isValidMailboxObjectID:(id)arg2;
+- (BOOL)threadScopeManager:(id)arg1 mailboxScopeExists:(id)arg2;
+- (id)_statementForOldestThreadInMailbox:(id)arg1 threadScope:(id)arg2;
+- (id)oldestThreadObjectIDForMailbox:(id)arg1 threadScope:(id)arg2;
 - (BOOL)deleteThreadsWithObjectIDs:(id)arg1;
 - (BOOL)addThreads:(id)arg1;
 - (BOOL)endMigratingThreadScope:(id)arg1;
@@ -58,7 +65,8 @@
 - (id)_upsertForThreadsWithThreadScopeDatabaseID:(long long)arg1 conversation:(long long)arg2;
 - (id)_threadExpressionForThreadScopeDatabaseID:(long long)arg1 conversation:(long long)arg2;
 - (id)_threadDatabaseIDExpressionForThreadScopeDatabaseID:(long long)arg1 conversation:(long long)arg2;
-- (BOOL)_recalculateDisplayMessageForThreadObjectID:(id)arg1 threadScopeDatabaseID:(long long)arg2;
+- (BOOL)_setPriorityForDisplayMessageSenderForThreadObjectID:(id)arg1;
+- (id)_recalculateDisplayMessageForThreadObjectID:(id)arg1 threadScopeDatabaseID:(long long)arg2;
 - (BOOL)_updateDisplayMessageWithUnreadWrappedMessages:(id)arg1 threadExpression:(id)arg2;
 - (BOOL)_recalculateNewestReadMessageForThreadObjectID:(id)arg1 threadScopeDatabaseID:(long long)arg2;
 - (BOOL)_updateNewestReadMessageWithWrappedMessage:(id)arg1 threadExpression:(id)arg2;
@@ -105,7 +113,7 @@
 - (id)_inactiveMailboxDatabaseIDsForMailboxScope:(id)arg1 forThreadScopeDatabaseID:(id)arg2;
 - (void)accountBecameInactive:(id)arg1;
 - (void)accountBecameActive:(id)arg1;
-- (BOOL)_addThreadScopeToDatabaseWithMailboxType:(id)arg1 needsUpdate:(BOOL)arg2 connection:(id)arg3;
+- (BOOL)_addThreadScopeToDatabaseWithMailboxType:(id)arg1 needsUpdate:(BOOL)arg2 lastViewedDate:(id)arg3 connection:(id)arg4;
 - (void)persistenceIsInitializingDatabaseWithConnection:(id)arg1;
 - (long long)_databaseIDForThreadObjectID:(id)arg1;
 - (id)_recipientDatabaseIDsAndDatesForMessages:(id)arg1 recipientType:(unsigned long long)arg2;
@@ -127,16 +135,7 @@
 - (void)threadObjectIDsForThreadScope:(id)arg1 sortDescriptors:(id)arg2 initialBatchSize:(unsigned long long)arg3 journaledObjectIDs:(id)arg4 batchBlock:(CDUnknownBlockType)arg5;
 - (void)resetThreadScopesForMailboxScope:(id)arg1;
 - (void)updateLastViewedDateForThreadScope:(id)arg1;
-- (BOOL)_shouldPrecomputeMailboxType:(id)arg1;
-- (BOOL)_shouldPrecomputeMailboxWithURL:(id)arg1;
-- (BOOL)_shouldPrecomputeThreadScope:(id)arg1;
-- (void)_setThreadScopeInfo:(id)arg1 forThreadScope:(id)arg2;
-- (long long)_databaseIDForThreadScope:(id)arg1;
-- (id)_threadScopesByDatabaseID;
-- (id)_threadScopesForMailboxScope:(id)arg1;
-- (id)_threadScopeInfoForThreadScope:(id)arg1;
 - (BOOL)isThreadScopePrecomputed:(id)arg1 shouldMigrate:(char *)arg2;
-- (id)_precomputedThreadScopesFuture;
 - (id)initWithMessagePersistence:(id)arg1 database:(id)arg2 hookRegistry:(id)arg3 vipManager:(id)arg4 blockedSenderManager:(id)arg5;
 
 // Remaining properties

@@ -22,7 +22,7 @@
 @property(readonly, nonatomic) long long configVersion;
 @property(readonly, nonatomic) SOConfiguration *configuration;
 - (_Bool)willHandleURL:(id)arg1 responseCode:(long long)arg2 callerBundleIdentifier:(id)arg3;
-- (id)profileForURL:(id)arg1;
+- (id)profileForURL:(id)arg1 responseCode:(long long)arg2;
 - (id)init;
 
 @end

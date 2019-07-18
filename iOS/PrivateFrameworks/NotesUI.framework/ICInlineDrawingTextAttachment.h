@@ -25,9 +25,11 @@
 - (struct CGRect)attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned long long)arg4;
 - (void)detachView:(struct UIView *)arg1 fromParentView:(struct UIView *)arg2;
 - (void)placeView:(struct UIView *)arg1 withFrame:(struct CGRect)arg2 inParentView:(struct UIView *)arg3 characterIndex:(unsigned long long)arg4 layoutManager:(id)arg5;
-- (id)printableTextContent;
+- (id)viewProviderForParentView:(id)arg1 characterIndex:(unsigned long long)arg2 layoutManager:(id)arg3;
+- (id)printableTextContentForAppearanceType:(unsigned long long)arg1;
 - (id)attachmentAsNSTextAttachment;
 - (id)contents;
+- (void)updatePaletteVisibility;
 - (void)detachView;
 - (void)saveIfNeeded;
 - (_Bool)canDragWithoutSelecting;

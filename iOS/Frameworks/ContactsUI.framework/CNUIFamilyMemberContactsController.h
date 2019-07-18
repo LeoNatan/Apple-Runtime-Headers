@@ -6,54 +6,54 @@
 
 #import <objc/NSObject.h>
 
-#import <ContactsUI/CNContactPickerDelegate-Protocol.h>
+#import <ContactsUI/CNContactPickerPrivateDelegate-Protocol.h>
 #import <ContactsUI/CNContactViewControllerDelegate-Protocol.h>
 #import <ContactsUI/CNFamilyMemberAddContactsOptionsSheetDelegate-Protocol.h>
+#import <ContactsUI/CNUICoreFamilyMemberContactsObserver-Protocol.h>
+#import <ContactsUI/CNUIFamilyMemberDowntimeContactPickerControllerDelegate-Protocol.h>
 
-@class CNContactStore, CNFuture, FAFamilyMember, NSString;
-@protocol CNSchedulerProvider, CNUICoreFamilyMemberContactsModelFetching, CNUICoreFamilyMemberContactsUpdating, CNUIFamilyMemberContactsControllerDelegate, CNUIFamilyMemberContactsPresentation;
+@class CNContactPickerViewController, CNContactStore, FAFamilyMember, NSString;
+@protocol CNSchedulerProvider, CNUICoreFamilyMemberContactsDataSource, CNUIFamilyMemberContactsControllerDelegate, CNUIFamilyMemberContactsPresentation;
 
-@interface CNUIFamilyMemberContactsController : NSObject <CNContactViewControllerDelegate, CNContactPickerDelegate, CNFamilyMemberAddContactsOptionsSheetDelegate>
+@interface CNUIFamilyMemberContactsController : NSObject <CNContactViewControllerDelegate, CNContactPickerPrivateDelegate, CNFamilyMemberAddContactsOptionsSheetDelegate, CNUIFamilyMemberDowntimeContactPickerControllerDelegate, CNUICoreFamilyMemberContactsObserver>
 {
     id <CNUIFamilyMemberContactsPresentation> _familyMemberContactsPresentation;
-    long long _countOfFamilyMemberContacts;
     FAFamilyMember *_familyMember;
     id <CNUIFamilyMemberContactsControllerDelegate> _delegate;
     CNContactStore *_familyMemberScopedContactStore;
-    id <CNUICoreFamilyMemberContactsModelFetching> _modelFetcher;
-    id <CNUICoreFamilyMemberContactsUpdating> _familyMemberContactsUpdator;
+    id <CNUICoreFamilyMemberContactsDataSource> _dataSource;
     id <CNSchedulerProvider> _schedulerProvider;
-    CNFuture *_countOfFamilyMemberContactsFuture;
-    CNFuture *_updateContactListByAddingContactsFuture;
+    CNContactPickerViewController *_contactPickerViewController;
 }
 
-@property(retain, nonatomic) CNFuture *updateContactListByAddingContactsFuture; // @synthesize updateContactListByAddingContactsFuture=_updateContactListByAddingContactsFuture;
-@property(retain, nonatomic) CNFuture *countOfFamilyMemberContactsFuture; // @synthesize countOfFamilyMemberContactsFuture=_countOfFamilyMemberContactsFuture;
++ (_Bool)isViewController:(id)arg1 presentedByContactPicker:(id)arg2;
+@property(nonatomic) __weak CNContactPickerViewController *contactPickerViewController; // @synthesize contactPickerViewController=_contactPickerViewController;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
-@property(readonly, nonatomic) id <CNUICoreFamilyMemberContactsUpdating> familyMemberContactsUpdator; // @synthesize familyMemberContactsUpdator=_familyMemberContactsUpdator;
-@property(readonly, nonatomic) id <CNUICoreFamilyMemberContactsModelFetching> modelFetcher; // @synthesize modelFetcher=_modelFetcher;
+@property(readonly, nonatomic) id <CNUICoreFamilyMemberContactsDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) CNContactStore *familyMemberScopedContactStore; // @synthesize familyMemberScopedContactStore=_familyMemberScopedContactStore;
 @property(nonatomic) __weak id <CNUIFamilyMemberContactsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 - (void).cxx_destruct;
-- (void)contactPicker:(id)arg1 didSelectContacts:(id)arg2;
+- (void)downtimePickerController:(id)arg1 didFinishWithContacts:(id)arg2;
+- (void)contactPickerDidCancel:(id)arg1;
+- (void)pickerDidSelectAddNewContact:(id)arg1;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
+- (void)cancelPresentationOfViewController:(id)arg1;
+- (void)dismissPresentedViewController:(id)arg1;
+- (void)presentViewController:(id)arg1;
 - (void)addContactsOptionsSheetViewControllerDidCancel:(id)arg1;
 - (void)addContactsOptionsSheetViewControllerDidSelectAddNewContact:(id)arg1;
 - (void)addContactsOptionsSheetViewControllerDidSelectAddFromLocalContacts:(id)arg1;
-- (void)performAddFromMainContactsInteraction;
 - (id)anchorViewForAddContactsInteraction;
 - (void)performAddContactsInteraction;
+- (void)performAddFromMainContactsInteraction;
 - (void)performDisplayContactsInteraction;
 - (void)performDefaultInteraction;
 - (void)performInteraction:(long long)arg1;
-- (void)setCountOfFamilyMemberContacts:(long long)arg1;
-- (id)familyMemberContactCountFutureFromModelFetcher;
-- (void)triggerCountOfFamilyMemberContactsFetch;
-@property(readonly, nonatomic) long long countOfFamilyMemberContacts; // @synthesize countOfFamilyMemberContacts=_countOfFamilyMemberContacts;
-@property(readonly, nonatomic) id <CNUIFamilyMemberContactsPresentation> familyMemberContactsPresentation; // @synthesize familyMemberContactsPresentation=_familyMemberContactsPresentation;
+- (void)familyMemberContactItemsDidChange;
+@property(readonly, nonatomic) long long countOfFamilyMemberContacts;
 @property(readonly, nonatomic) long long fetchStatus;
-- (void)dealloc;
+@property(readonly, nonatomic) id <CNUIFamilyMemberContactsPresentation> familyMemberContactsPresentation; // @synthesize familyMemberContactsPresentation=_familyMemberContactsPresentation;
 - (id)initWithFamilyMember:(id)arg1 familyMemberContactsPresentation:(id)arg2;
 - (id)init;
 

@@ -14,6 +14,7 @@
 @property(readonly, nonatomic) NSCollectionLayoutSupplementaryItem *supplementaryItem;
 @property(readonly, nonatomic) NSCollectionLayoutItem *item;
 @property(readonly, nonatomic) long long zIndex;
+@property(readonly, nonatomic) struct NSDirectionalEdgeInsets _effectiveContentInsets;
 @property(readonly, nonatomic) struct NSDirectionalEdgeInsets contentInsets;
 @property(readonly, nonatomic) NSCollectionLayoutAnchor *itemAnchor;
 @property(readonly, nonatomic) NSCollectionLayoutAnchor *containerAnchor;

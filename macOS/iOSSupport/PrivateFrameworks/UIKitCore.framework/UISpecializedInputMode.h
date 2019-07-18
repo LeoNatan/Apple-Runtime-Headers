@@ -12,6 +12,7 @@
 }
 
 @property(retain, nonatomic) Class viewControllerClass; // @synthesize viewControllerClass=_viewControllerClass;
+- (BOOL)isSpecializedInputMode;
 - (id)hardwareLayout;
 - (BOOL)includeBarHeight;
 - (void)dealloc;

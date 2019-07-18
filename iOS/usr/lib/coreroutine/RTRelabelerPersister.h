@@ -6,41 +6,64 @@
 
 #import <objc/NSObject.h>
 
-@class NSManagedObjectContext, RTDistanceCalculator, RTMapItemProviderReverseGeocode, RTRelabeler;
+@class NSManagedObjectContext, NSMutableDictionary, RTDistanceCalculator, RTMapItemProviderLearnedPlaceParameters, RTMapItemProviderReverseGeocode, RTRelabelerParameters, RTRelabelerPersisterMetrics, RTRelabelerPersisterParameters;
 
 @interface RTRelabelerPersister : NSObject
 {
+    RTRelabelerPersisterMetrics *_metrics;
     NSManagedObjectContext *_context;
     RTDistanceCalculator *_distanceCalculator;
-    double _reverseGeocodeCollapseDistanceThreshold;
     RTMapItemProviderReverseGeocode *_reverseGeocodeProvider;
-    double _reverseGeocodeLeewayDistance;
-    RTRelabeler *_relabeler;
+    RTMapItemProviderLearnedPlaceParameters *_learnedPlaceParameters;
+    NSMutableDictionary *_loiIdentifierToUnconcreteMap;
+    RTRelabelerParameters *_relabelerParameters;
+    RTRelabelerPersisterParameters *_relabelerPersisterParameters;
 }
 
 + (id)locationFromAggregateVisits:(id)arg1;
-@property(readonly, nonatomic) RTRelabeler *relabeler; // @synthesize relabeler=_relabeler;
-@property(readonly, nonatomic) double reverseGeocodeLeewayDistance; // @synthesize reverseGeocodeLeewayDistance=_reverseGeocodeLeewayDistance;
+@property(readonly, nonatomic) RTRelabelerPersisterParameters *relabelerPersisterParameters; // @synthesize relabelerPersisterParameters=_relabelerPersisterParameters;
+@property(readonly, nonatomic) RTRelabelerParameters *relabelerParameters; // @synthesize relabelerParameters=_relabelerParameters;
+@property(readonly, nonatomic) NSMutableDictionary *loiIdentifierToUnconcreteMap; // @synthesize loiIdentifierToUnconcreteMap=_loiIdentifierToUnconcreteMap;
+@property(readonly, nonatomic) RTMapItemProviderLearnedPlaceParameters *learnedPlaceParameters; // @synthesize learnedPlaceParameters=_learnedPlaceParameters;
 @property(readonly, nonatomic) RTMapItemProviderReverseGeocode *reverseGeocodeProvider; // @synthesize reverseGeocodeProvider=_reverseGeocodeProvider;
-@property(readonly, nonatomic) double reverseGeocodeCollapseDistanceThreshold; // @synthesize reverseGeocodeCollapseDistanceThreshold=_reverseGeocodeCollapseDistanceThreshold;
 @property(readonly, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 @property(retain, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
+@property(retain, nonatomic) RTRelabelerPersisterMetrics *metrics; // @synthesize metrics=_metrics;
 - (void).cxx_destruct;
+- (void)logLocalStoreWithReason:(id)arg1;
 - (_Bool)saveWithError:(id *)arg1;
+- (_Bool)fixUnconcreteLOIs:(id *)arg1;
+- (_Bool)combineSequentialVisitsWithError:(id *)arg1;
+- (_Bool)cleanUpCombinedPairs:(id)arg1 context:(id)arg2 error:(id *)arg3;
+- (_Bool)combineEarlierVisitMO:(id)arg1 withLaterVisitMO:(id)arg2 error:(id *)arg3;
+- (_Bool)iterativelyCollapseOverlappingRevGeoLOIsWithError:(id *)arg1;
 - (_Bool)cleanUpWithError:(id *)arg1;
+- (_Bool)combineOverlappingRevGeoLOIsStabilized:(_Bool *)arg1 error:(id *)arg2;
 - (_Bool)useRelabeledInferredMapItem:(id)arg1 oldCandidate:(struct RTPair *)arg2 associate:(_Bool)arg3 error:(id *)arg4;
 - (_Bool)associatePlaceholderRelabeledInferredMapItem:(id)arg1 oldCandidate:(struct RTPair *)arg2 error:(id *)arg3;
+- (_Bool)uuidConflicts:(id)arg1 context:(id)arg2 error:(id *)arg3;
+- (id)rollUUIDGivenUUID:(id)arg1;
+- (id)rollLOIIdentifier:(id)arg1 context:(id)arg2 error:(id *)arg3;
 - (_Bool)associateNonPlaceholderRelabeledInferredMapItem:(id)arg1 oldCandidate:(struct RTPair *)arg2 error:(id *)arg3;
 - (_Bool)unassociateOldCandidate:(struct RTPair *)arg1 error:(id *)arg2;
+- (_Bool)resnapVisitsWithError:(id *)arg1;
+- (double)scoreLOIMO:(id)arg1;
+- (double)scoreVisitMO:(id)arg1;
+- (_Bool)untrustedVisitMO:(id)arg1;
 - (_Bool)performBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (_Bool)restoreVisit:(id)arg1 transitions:(id)arg2 toOldCandidate:(struct RTPair *)arg3 error:(id *)arg4;
 - (id)learnedPlaceForVisit:(id)arg1 creationDate:(id)arg2 expirationDate:(id)arg3 error:(id *)arg4;
 - (id)fetchLearnedPlaceMOforMapItemIdentifier:(id)arg1 error:(id *)arg2;
 - (id)fetchLocationOfInterestMOforMapItemIdentifier:(id)arg1 error:(id *)arg2;
+- (id)fetchTransitionMOsEndingAtVisitIdentifier:(id)arg1 error:(id *)arg2;
 - (id)fetchTransitionMOsOriginatingFromVisitIdentifier:(id)arg1 error:(id *)arg2;
 - (id)fetchLearnedLocationOfInterestVisitMOForIdentifier:(id)arg1 error:(id *)arg2;
-- (id)fetchClosestRevGeoLocationOfInterestMOToLocation:(id)arg1 withinDistance:(double)arg2 distanceCalculator:(id)arg3 error:(id *)arg4;
-- (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 persistenceManager:(id)arg3 reverseGeocodeProvider:(id)arg4 reverseGeocodeLeewayDistance:(double)arg5;
+- (id)fetchOverlappingUnconcreteLocationOfInterestMOsForLOIMO:(id)arg1 distanceCalculator:(id)arg2 unusableIdentifiers:(id)arg3 error:(id *)arg4;
+- (id)fetchClosestUnconcreteLocationOfInterestMOToLocation:(id)arg1 withinDistance:(double)arg2 distanceCalculator:(id)arg3 error:(id *)arg4;
+- (id)fetchNearbyLocationOfInterestMOsAroundLocation:(id)arg1 withinDistance:(double)arg2 error:(id *)arg3;
+- (_Bool)unconcreteLOIMO:(id)arg1;
+- (id)initWithDistanceCalculator:(id)arg1 learnedPlaceParameters:(id)arg2 metrics:(id)arg3 persistenceManager:(id)arg4 relabelerParameters:(id)arg5 relabelerPersisterParameters:(id)arg6 reverseGeocodeProvider:(id)arg7;
+- (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 learnedPlaceParameters:(id)arg3 metrics:(id)arg4 persistenceManager:(id)arg5 relabelerParameters:(id)arg6 reverseGeocodeProvider:(id)arg7;
 - (id)init;
 
 @end

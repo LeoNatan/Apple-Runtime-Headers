@@ -11,7 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)setStateName:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)prepareForInterfaceBuilder;
+- (void)animateToStateName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)setStateName:(id)arg1;
 - (id)makeCAPackage;
 
 @end

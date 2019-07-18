@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class PLAssetsdClientXPCConnection, PLAssetsdCloudClient, PLAssetsdCloudInternalClient, PLAssetsdDebugClient, PLAssetsdDemoClient, PLAssetsdDiagnosticsClient, PLAssetsdLibraryClient, PLAssetsdLibraryInternalClient, PLAssetsdLibraryManagementClient, PLAssetsdMigrationClient, PLAssetsdNotificationClient, PLAssetsdPhotoKitClient, PLAssetsdResourceClient, PLAssetsdResourceInternalClient, PLAssetsdResourceWriteOnlyClient, PLAssetsdSyncClient, PLAutoBindingProxyFactory;
+@class PLAssetsdClientXPCConnection, PLAssetsdCloudClient, PLAssetsdCloudInternalClient, PLAssetsdDebugClient, PLAssetsdDemoClient, PLAssetsdDiagnosticsClient, PLAssetsdLibraryClient, PLAssetsdLibraryInternalClient, PLAssetsdLibraryManagementClient, PLAssetsdMigrationClient, PLAssetsdNotificationClient, PLAssetsdPhotoKitClient, PLAssetsdResourceClient, PLAssetsdResourceInternalClient, PLAssetsdResourceWriteOnlyClient, PLAssetsdSyncClient, PLAssetsdSystemLibraryURLReadOnlyClient, PLAutoBindingProxyFactory;
 @protocol OS_dispatch_queue;
 
 @interface PLAssetsdClient : NSObject
@@ -15,6 +15,7 @@
     PLAssetsdClientXPCConnection *_nonBindingProxyFactory;
     PLAutoBindingProxyFactory *_autoBindingProxyFactory;
     PLAssetsdLibraryClient *_libraryClient;
+    PLAssetsdSystemLibraryURLReadOnlyClient *_systemLibraryURLReadOnlyClient;
     PLAssetsdLibraryManagementClient *_libraryManagementClient;
     PLAssetsdLibraryInternalClient *_libraryInternalClient;
     PLAssetsdPhotoKitClient *_photoKitClient;
@@ -50,6 +51,7 @@
 @property(readonly) PLAssetsdResourceClient *resourceClient;
 @property(readonly) PLAssetsdPhotoKitClient *photoKitClient;
 @property(readonly) PLAssetsdLibraryManagementClient *libraryManagementClient;
+- (id)systemLibraryURLReadOnlyClient;
 @property(readonly) PLAssetsdLibraryInternalClient *libraryInternalClient;
 @property(readonly) PLAssetsdLibraryClient *libraryClient;
 - (id)_setupClientClass:(Class)arg1 proxyGetter:(SEL)arg2 autoBinding:(BOOL)arg3;

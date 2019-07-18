@@ -36,7 +36,7 @@
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)referenceToMembershipForMembershipID:(id)arg1;
-- (id)allKnownRecordNames;
+- (id)allKnownRecordNamesWithinRecordZoneWithID:(id)arg1;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
 - (void)_refreshPublicMembershipsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)refreshPublicMemberships;
@@ -45,6 +45,7 @@
 - (void)addItem:(id)arg1 toStore:(BOOL)arg2;
 - (void)loadLocalCachesFromStore;
 - (BOOL)shouldShowAllDraftContent;
+- (id)membershipChannelIDs;
 - (BOOL)hasMemberships;
 - (void)isAllowedToSeeIssueID:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)isAllowedToSeeArticleID:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

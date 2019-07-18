@@ -25,7 +25,6 @@
     HUGridServiceCellTextView *_serviceTextView;
     UILabel *_coloredDescriptionLabel;
     UIVisualEffectView *_descriptionLabelEffectView;
-    UIVisualEffectView *_primaryDescriptionEffectView;
     id <NACancelable> _showUpdatingStateAfterDelayToken;
     id <NACancelable> _showProgressIndicatorAfterDelayToken;
     UIView *_overrideAccessoryView;
@@ -43,7 +42,6 @@
 @property(retain, nonatomic) id <NACancelable> showUpdatingStateAfterDelayToken; // @synthesize showUpdatingStateAfterDelayToken=_showUpdatingStateAfterDelayToken;
 @property(nonatomic) _Bool showingUpdatingState; // @synthesize showingUpdatingState=_showingUpdatingState;
 @property(nonatomic) _Bool hasUpdatedUISinceLastReuse; // @synthesize hasUpdatedUISinceLastReuse=_hasUpdatedUISinceLastReuse;
-@property(retain, nonatomic) UIVisualEffectView *primaryDescriptionEffectView; // @synthesize primaryDescriptionEffectView=_primaryDescriptionEffectView;
 @property(retain, nonatomic) UIVisualEffectView *descriptionLabelEffectView; // @synthesize descriptionLabelEffectView=_descriptionLabelEffectView;
 @property(retain, nonatomic) UILabel *coloredDescriptionLabel; // @synthesize coloredDescriptionLabel=_coloredDescriptionLabel;
 @property(retain, nonatomic) HUGridServiceCellTextView *serviceTextView; // @synthesize serviceTextView=_serviceTextView;

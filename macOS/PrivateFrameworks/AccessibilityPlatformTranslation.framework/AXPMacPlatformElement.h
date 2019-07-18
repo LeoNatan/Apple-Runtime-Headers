@@ -44,6 +44,7 @@
 - (id)_convertTranslatorResponseForSubrole:(id)arg1;
 - (id)_convertTranslatorResponseForRole:(id)arg1;
 - (void)_cacheResultSelectively:(id)arg1 attribute:(unsigned long long)arg2;
+- (id)_postProcessAttributedString:(id)arg1;
 - (id)_postProcessResult:(id)arg1 attributeType:(unsigned long long)arg2;
 - (id)_accessibilityProcessAttribute:(id)arg1 parameter:(id)arg2;
 - (id)_accessibilityProcessAttribute:(id)arg1;

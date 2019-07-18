@@ -24,7 +24,6 @@
 - (void)service:(IDSService *)arg1 account:(IDSAccount *)arg2 identifier:(NSString *)arg3 sentBytes:(long long)arg4 totalBytes:(long long)arg5;
 - (void)service:(IDSService *)arg1 account:(IDSAccount *)arg2 identifier:(NSString *)arg3 didSendWithSuccess:(_Bool)arg4 error:(NSError *)arg5 context:(IDSMessageContext *)arg6;
 - (void)service:(IDSService *)arg1 account:(IDSAccount *)arg2 identifier:(NSString *)arg3 didSendWithSuccess:(_Bool)arg4 error:(NSError *)arg5;
-- (void)service:(IDSService *)arg1 linkedDevicesChanged:(NSArray *)arg2;
 - (void)service:(IDSService *)arg1 connectedDevicesChanged:(NSArray *)arg2;
 - (void)service:(IDSService *)arg1 nearbyDevicesChanged:(NSArray *)arg2;
 - (void)service:(IDSService *)arg1 devicesChanged:(NSArray *)arg2;

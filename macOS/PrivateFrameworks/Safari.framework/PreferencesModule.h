@@ -6,6 +6,8 @@
 
 #import <AppKit/NSPreferencesModule.h>
 
+@class NSString;
+
 __attribute__((visibility("hidden")))
 @interface PreferencesModule : NSPreferencesModule
 {
@@ -19,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)resizeWindowUsingAutoLayout;
 - (void)_layoutSubtreeIfNeededAndResizeWindowWithContainer:(id)arg1 originalContainerHeight:(double)arg2;
 - (BOOL)isResizable;
-- (id)helpAnchor;
+@property(readonly, nonatomic) NSString *safariHelpAnchor;
 - (void)openHelpPage:(id)arg1;
 - (id)imageForPreferenceNamed:(id)arg1;
 - (void)moduleWasInstalled;

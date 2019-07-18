@@ -15,7 +15,6 @@
     PXSectionedChangeDetailsRepository *_changeHistory;
 }
 
-+ (_Bool)_changeDetailsCoalescingEnabled;
 @property(readonly, nonatomic) PXSectionedChangeDetailsRepository *changeHistory; // @synthesize changeHistory=_changeHistory;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) PXSectionedDataSource *dataSource;

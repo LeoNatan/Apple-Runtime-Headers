@@ -41,7 +41,6 @@
 - (void)clearResults;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
-@property(readonly, nonatomic) BOOL requiresQueryId;
 @property(readonly, nonatomic) id feedbackJSON;
 
 // Remaining properties

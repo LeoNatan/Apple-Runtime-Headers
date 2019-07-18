@@ -15,11 +15,13 @@
 @interface _INPBPauseTimerIntentResponse : PBCodable <_INPBPauseTimerIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSArray *_pausedTimers;
 }
 
 + (BOOL)supportsSecureCoding;
 + (Class)pausedTimersType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *pausedTimers; // @synthesize pausedTimers=_pausedTimers;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

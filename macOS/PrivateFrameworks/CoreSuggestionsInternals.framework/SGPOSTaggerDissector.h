@@ -11,7 +11,7 @@
 }
 
 + (id)sharedInstance;
-- (id)tokenizeTextContent:(id)arg1;
+- (id)tokenizeTextContent:(id)arg1 languageHint:(id)arg2;
 - (void)dissectInternal:(id)arg1 inContext:(id)arg2;
 
 @end

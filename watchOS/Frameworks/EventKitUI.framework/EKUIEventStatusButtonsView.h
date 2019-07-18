@@ -28,6 +28,9 @@
     int _textSizeMode;
 }
 
++ (_Bool)isActionDestructive:(int)arg1;
++ (id)imageForAction:(int)arg1 selected:(_Bool)arg2;
++ (id)buttonTitleForAction:(int)arg1 orb:(_Bool)arg2;
 @property(nonatomic) _Bool shouldUseVerticalLayout; // @synthesize shouldUseVerticalLayout=_shouldUseVerticalLayout;
 @property(nonatomic) _Bool disableButtonHighlights; // @synthesize disableButtonHighlights=_disableButtonHighlights;
 @property(nonatomic) int textSizeMode; // @synthesize textSizeMode=_textSizeMode;
@@ -49,7 +52,6 @@
 - (void)_updateButtonFontsWithSize:(float)arg1;
 - (_Bool)_shouldCenterButton;
 @property(readonly, nonatomic) UIButton *centerButton;
-- (id)_buttonTitleForAction:(int)arg1;
 - (id)_buttonForAction:(int)arg1;
 - (int)_buttonIndexForAction:(int)arg1;
 - (int)_actionForButton:(id)arg1;

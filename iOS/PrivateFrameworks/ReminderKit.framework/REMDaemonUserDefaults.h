@@ -6,21 +6,23 @@
 
 #import <ReminderKit/REMUserDefaults.h>
 
-@class NSDate, NSDateComponents, NSNumber, NSString, REMObjectID, REMStore;
+@class NSData, NSDate, NSNumber, NSString, REMObjectID, REMStore;
 
 @interface REMDaemonUserDefaults : REMUserDefaults
 {
     REMStore *_store;
 }
 
-+ (id)storageNumberForTodayNotificationTime:(id)arg1;
-+ (id)todayNotificationFireTimeFromStorageNumber:(id)arg1;
 @property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool simulateMAIDAccount;
+@property(copy, nonatomic) NSData *userInteractionsData;
 @property(copy, nonatomic) NSDate *lastPresentAlarmDate;
 @property(copy, nonatomic) NSDate *nextScheduledAlarmDate;
 @property(copy, nonatomic) NSNumber *spotlightIndexVersion;
+@property(retain, nonatomic) NSString *acAccountIdentifierToMergeLocalDataIntoSyncData;
 @property(retain, nonatomic) REMObjectID *preferredDefaultListID;
+@property(retain, nonatomic) NSNumber *cloudKitMigrationSimulatedError;
 @property(retain, nonatomic) NSNumber *cloudKitMigrationObserverPollingInterval;
 @property(retain, nonatomic) NSNumber *cloudKitMigrationDelayAfterError;
 @property(retain, nonatomic) NSNumber *cloudKitMigrationMaxNumFailures;
@@ -29,14 +31,11 @@
 @property(nonatomic) _Bool databaseMigrationTimedOut;
 @property(nonatomic) _Bool isDatabaseMigrated;
 @property(nonatomic) _Bool databaseMigrationTestModeEnabled;
-- (id)streamTodayNotificationFireTime:(CDUnknownBlockType)arg1;
-@property(retain, nonatomic) NSDateComponents *todayNotificationFireTime;
 - (void)p_setValue:(id)arg1 inDefaultsForKey:(id)arg2;
 - (id)p_valueInDefaultsForKey:(id)arg1;
 @property(readonly, nonatomic) _Bool siriShouldRouteIntentsToNewRemindersApp;
 @property(readonly, nonatomic) _Bool dataaccessDaemonStopSyncingReminders;
 @property(readonly, nonatomic) _Bool newAppShouldTakeoverEKReminderNotifications;
-- (id)initWithStore:(id)arg1;
 
 @end
 

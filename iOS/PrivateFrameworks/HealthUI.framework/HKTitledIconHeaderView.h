@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, UIImage, UIImageView, UILabel;
+@class NSString, UIColor, UIImage, UIImageView, UILabel;
 
 @interface HKTitledIconHeaderView : UIView
 {
@@ -37,6 +37,7 @@
 - (void)_positionSubtitleLabel;
 - (void)layoutSubviews;
 - (void)setLayoutMarginsWithTableView:(id)arg1;
+@property(retain, nonatomic) UIColor *iconImageTint;
 - (void)_updateFont;
 - (id)initWithFrame:(struct CGRect)arg1;
 

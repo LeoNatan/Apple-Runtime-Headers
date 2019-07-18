@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (_Bool)includeValueLabelPositionOff;
+- (_Bool)supportsAxisLabelAngle;
 - (_Bool)shouldChangeExplosionWithPreviousChartType:(id)arg1 chartInfo:(id)arg2 seriesList:(id)arg3;
 - (id)animationDeliveryStylesForFilter:(id)arg1;
 - (_Bool)explosionAffectsChartBodyBounds;

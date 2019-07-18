@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *parsecDomainIdentifier; // @synthesize parsecDomainIdentifier=_parsecDomainIdentifier;
 - (void).cxx_destruct;
 - (void)invalidate;
+@property(readonly, nonatomic) long long parsecQueryID;
 - (unsigned long long)_determineEngagementDestination;
 - (BOOL)_isQuickWebsiteSearch;
 - (id)_determineSFSearchResultValue;

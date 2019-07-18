@@ -14,9 +14,11 @@
     BSProcessHandle *_sourceProcessHandle;
     id _annotation;
     BOOL _openInPlace;
+    BOOL _openAsDownload;
 }
 
 + (id)_optionsFromDictionary:(id)arg1;
+@property(readonly, nonatomic) BOOL _openAsDownload; // @synthesize _openAsDownload;
 @property(readonly, nonatomic) BOOL openInPlace; // @synthesize openInPlace=_openInPlace;
 @property(readonly, nonatomic) id annotation; // @synthesize annotation=_annotation;
 @property(readonly, nonatomic) BSProcessHandle *_sourceProcessHandle; // @synthesize _sourceProcessHandle;
@@ -25,6 +27,7 @@
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)_initWithSourceApplication:(id)arg1 processHandle:(id)arg2 annotation:(id)arg3 openInPlace:(BOOL)arg4 openAsDownload:(BOOL)arg5;
 - (id)_initWithSourceApplication:(id)arg1 processHandle:(id)arg2 annotation:(id)arg3 openInPlace:(BOOL)arg4;
 
 @end

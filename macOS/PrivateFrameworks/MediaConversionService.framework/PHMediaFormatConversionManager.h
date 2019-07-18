@@ -31,6 +31,7 @@
 @property unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSURL *directoryForTemporaryFiles; // @synthesize directoryForTemporaryFiles=_directoryForTemporaryFiles;
 - (void).cxx_destruct;
+- (id)ut_objectsToBeDeallocatedWithReceiver;
 - (void)invalidate;
 - (void)cancellationRequestedForJob:(id)arg1;
 - (id)jobForConversionRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

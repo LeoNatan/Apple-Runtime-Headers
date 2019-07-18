@@ -18,18 +18,21 @@
 
 @property __weak id <HMNetworkRouterProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)routerProfileDidUpdateSatellites:(id)arg1;
+- (void)routerProfileDidUpdateIdentifiersForSatellites:(id)arg1;
 - (void)routerProfileDidUpdateNetworkStatus:(id)arg1;
+- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 @property(readonly) NSArray *satelliteProfiles;
+- (void)setIdentifiersForSatelliteProfiles:(id)arg1;
+- (id)identifiersForSatelliteProfiles;
 @property(readonly, getter=isSatellite) BOOL satellite;
 @property(readonly) unsigned long long networkStatus;
+@property(readonly, copy) NSString *description;
 - (id)services;
 - (id)networkRouterProfile;
 - (id)initWithNetworkRouterProfile:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

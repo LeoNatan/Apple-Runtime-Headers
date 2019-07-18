@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Realm/RLMObject.h>
+#import <WorkflowKit/RLMObject.h>
 
 #import <WorkflowKit/WFRecordStorage-Protocol.h>
 
@@ -27,7 +27,7 @@
     RLMArray<WFWorkflowType> *_workflowTypeContainers;
     RLMArray<WFWorkflowInputClass> *_inputClassContainers;
     int _sortOrdering;
-    int _minimumClientVersion;
+    NSString *_minimumClientVersion;
     NSData *_actionsData;
     NSData *_importQuestionsData;
     NSString *_workflowSubtitle;
@@ -37,7 +37,7 @@
     RLMLinkingObjects *_conflictingWorkflows;
     NSString *_lastSavedOnDeviceName;
     int _lastSyncedHash;
-    int _lastMigratedClientVersion;
+    NSString *_lastMigratedClientVersion;
 }
 
 + (id)linkingObjectsProperties;
@@ -46,7 +46,7 @@
 + (id)defaultPropertyValues;
 + (id)primaryKey;
 + (id)className;
-@property int lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;
+@property(copy) NSString *lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;
 @property _Bool deleted; // @synthesize deleted=_deleted;
 @property int lastSyncedHash; // @synthesize lastSyncedHash=_lastSyncedHash;
 @property(copy) NSString *lastSavedOnDeviceName; // @synthesize lastSavedOnDeviceName=_lastSavedOnDeviceName;
@@ -57,7 +57,7 @@
 @property(copy) NSString *workflowSubtitle; // @synthesize workflowSubtitle=_workflowSubtitle;
 @property(copy) NSData *importQuestionsData; // @synthesize importQuestionsData=_importQuestionsData;
 @property(copy) NSData *actionsData; // @synthesize actionsData=_actionsData;
-@property int minimumClientVersion; // @synthesize minimumClientVersion=_minimumClientVersion;
+@property(copy) NSString *minimumClientVersion; // @synthesize minimumClientVersion=_minimumClientVersion;
 @property int sortOrdering; // @synthesize sortOrdering=_sortOrdering;
 @property(getter=isHiddenInComplication) _Bool hiddenInComplication; // @synthesize hiddenInComplication=_hiddenInComplication;
 @property(retain) RLMArray<WFWorkflowInputClass> *inputClassContainers; // @synthesize inputClassContainers=_inputClassContainers;

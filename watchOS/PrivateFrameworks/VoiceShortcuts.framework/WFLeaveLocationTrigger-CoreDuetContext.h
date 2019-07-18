@@ -7,7 +7,8 @@
 #import <WorkflowKit/WFLeaveLocationTrigger.h>
 
 @interface WFLeaveLocationTrigger (CoreDuetContext)
-- (id)predicateForContextStore;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

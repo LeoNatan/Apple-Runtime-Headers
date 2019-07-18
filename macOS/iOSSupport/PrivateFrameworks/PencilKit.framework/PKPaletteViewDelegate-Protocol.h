@@ -4,16 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PencilKit/NSObject-Protocol.h>
+#import <PencilKit/PKPaletteViewPositionObserving-Protocol.h>
 
 @class NSUndoManager, PKPaletteView;
 
-@protocol PKPaletteViewDelegate <NSObject>
+@protocol PKPaletteViewDelegate <PKPaletteViewPositionObserving>
 - (void)paletteViewDidToggleRuler:(PKPaletteView *)arg1;
 - (void)paletteViewSelectedToolInkDidChange:(PKPaletteView *)arg1;
 - (NSUndoManager *)paletteViewUndoManager:(PKPaletteView *)arg1;
-
-@optional
-- (void)paletteViewDidChangePosition:(PKPaletteView *)arg1;
 @end
 

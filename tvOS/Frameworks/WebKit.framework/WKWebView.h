@@ -248,6 +248,7 @@
 @property(readonly, nonatomic) _Bool _isBackground;
 - (void)_populateArchivedSubviews:(id)arg1;
 @property(nonatomic, setter=_setDragInteractionPolicy:) unsigned long long _dragInteractionPolicy;
+@property(readonly, nonatomic) _Bool _shouldAvoidResizingWhenInputViewBoundsChange;
 @property(readonly, nonatomic) _Bool _contentViewIsFirstResponder;
 - (void)_didInvalidateDataForAttachment:(struct Attachment *)arg1;
 - (void)_didRemoveAttachment:(struct Attachment *)arg1;
@@ -276,6 +277,7 @@
 @property(readonly, nonatomic) _Bool hasOnlySecureContent;
 @property(readonly, nonatomic) double estimatedProgress;
 @property(readonly, nonatomic, getter=isLoading) _Bool loading;
+@property(readonly, nonatomic) NSURL *_resourceDirectoryURL;
 @property(readonly, copy, nonatomic) NSURL *URL;
 @property(readonly, copy, nonatomic) NSString *title;
 - (id)goToBackForwardListItem:(id)arg1;
@@ -295,7 +297,7 @@
 - (id)initWithFrame:(struct CGRect)arg1 configuration:(id)arg2;
 - (void)_setUpSQLiteDatabaseTrackerClient;
 - (void)_initializeWithConfiguration:(id)arg1;
-- (_Bool)_effectiveAppearanceIsInactive;
+- (_Bool)_effectiveUserInterfaceLevelIsElevated;
 - (_Bool)_effectiveAppearanceIsDark;
 @property(readonly, nonatomic, getter=_isRetainingActiveFocusedState) _Bool _retainingActiveFocusedState;
 - (void)_resetFocusPreservationCount;
@@ -428,6 +430,7 @@
 - (void)_resumeAllMediaPlayback;
 - (void)_suspendAllMediaPlayback;
 - (void)_stopAllMediaPlayback;
+- (void)_closeAllMediaPresentations;
 - (void)_togglePictureInPicture;
 @property(readonly, nonatomic) _Bool _isPictureInPictureActive;
 @property(readonly, nonatomic) _Bool _canTogglePictureInPicture;
@@ -437,6 +440,8 @@
 @property(readonly, nonatomic) id _remoteObjectRegistry;
 - (void)_takeFindStringFromSelection:(id)arg1;
 @property(nonatomic, getter=_isEditable, setter=_setEditable:) _Bool _editable;
+- (id)inputView;
+- (id)inputAccessoryView;
 - (void)_setTextColor:(id)arg1 sender:(id)arg2;
 - (void)_setFontSize:(double)arg1 sender:(id)arg2;
 - (void)_setFont:(id)arg1 sender:(id)arg2;
@@ -481,6 +486,7 @@
 - (double)_pageScale;
 - (void)_setPageScale:(double)arg1 withOrigin:(struct CGPoint)arg2;
 - (void)_requestActiveNowPlayingSessionInfo:(CDUnknownBlockType)arg1;
+- (void)_doAfterReceivingEditDragSnapshotForTesting:(CDUnknownBlockType)arg1;
 - (id)_propertiesOfLayerWithID:(unsigned long long)arg1;
 - (void)_firePresentationUpdateForPendingStableStatePresentationCallbacks;
 - (void)_doAfterNextStablePresentationUpdate:(CDUnknownBlockType)arg1;

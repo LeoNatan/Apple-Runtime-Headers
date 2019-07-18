@@ -36,6 +36,7 @@
     _Bool _isItemGroup;
     _Bool _supportsCustomIconEditing;
     _Bool _shouldTrackProgrammableSwitchActivations;
+    _Bool _isPresentingRoomsList;
     id <HUPresentationDelegate> _presentationDelegate;
     HUNameItemModuleController *_nameItemModuleController;
     HUAccessorySettingsItemModuleController *_accessorySettingsItemModuleController;
@@ -57,6 +58,7 @@
 }
 
 + (id)acceptableItemClasses;
+@property(nonatomic) _Bool isPresentingRoomsList; // @synthesize isPresentingRoomsList=_isPresentingRoomsList;
 @property(nonatomic) _Bool shouldTrackProgrammableSwitchActivations; // @synthesize shouldTrackProgrammableSwitchActivations=_shouldTrackProgrammableSwitchActivations;
 @property(retain, nonatomic) HUQuickControlSummaryNavigationBarTitleView *navigationBarTitleView; // @synthesize navigationBarTitleView=_navigationBarTitleView;
 @property(retain, nonatomic) HFNamingComponents *namingComponent; // @synthesize namingComponent=_namingComponent;
@@ -106,6 +108,7 @@
 - (void)_presentRemoveRouterConfirmation;
 - (void)_presentRemoveConfirmation;
 - (void)_presentResetHomePodConfirmation;
+- (void)_restartGroupedHomePodAccessory;
 - (void)checkForAccessoriesNeedingReprovisioning;
 - (_Bool)_shouldShowAddButtonForOptionItem:(id)arg1;
 - (_Bool)_shouldShowDetailDisclosureForItem:(id)arg1;

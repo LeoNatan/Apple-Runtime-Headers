@@ -59,6 +59,7 @@
 + (id)_imageAssetURLsByCopyingFileURLs:(id)arg1 toManagedLocationAtURL:(id)arg2 error:(id *)arg3;
 + (id)migrateDocumentAtURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 + (int)dataModelVersionFromMetadata:(id)arg1;
++ (id)createConfiguredDocumentAtURL:(id)arg1 targetPlatform:(int)arg2 error:(id *)arg3;
 + (id)createConfiguredDocumentAtURL:(id)arg1 error:(id *)arg2;
 + (void)_addThemeDocument:(id)arg1;
 + (id)_sharedDocumentList;

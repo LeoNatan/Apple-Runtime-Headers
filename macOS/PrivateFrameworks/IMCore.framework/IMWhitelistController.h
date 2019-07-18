@@ -6,14 +6,40 @@
 
 #import <objc/NSObject.h>
 
-@interface IMWhitelistController : NSObject
+#import <IMCore/TUCallProviderManagerDelegate-Protocol.h>
+
+@class NSMutableDictionary, NSSet, NSString, TUCallProviderManager;
+@protocol OS_dispatch_queue;
+
+@interface IMWhitelistController : NSObject <TUCallProviderManagerDelegate>
 {
+    TUCallProviderManager *_callProviderManager;
+    NSObject<OS_dispatch_queue> *_screenTimeDispatchQueue;
+    NSMutableDictionary *_conversationContextCache;
+    NSSet *_emergencyNumbersSet;
 }
 
 + (id)STConversation;
-+ (BOOL)allowedToShowConversationWithHandles:(id)arg1;
-+ (BOOL)allowedToShowConversationWithHandleIDs:(id)arg1;
-+ (void)registerForScreenTimeNotifications;
++ (id)sharedInstance;
++ (void)__setSingleton__im:(id)arg1;
++ (id)__singleton__im;
+@property(retain, nonatomic) NSSet *emergencyNumbersSet; // @synthesize emergencyNumbersSet=_emergencyNumbersSet;
+@property(retain, nonatomic) NSMutableDictionary *conversationContextCache; // @synthesize conversationContextCache=_conversationContextCache;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *screenTimeDispatchQueue; // @synthesize screenTimeDispatchQueue=_screenTimeDispatchQueue;
+@property(retain, nonatomic) TUCallProviderManager *callProviderManager; // @synthesize callProviderManager=_callProviderManager;
+- (void).cxx_destruct;
+- (void)providersChangedForProviderManager:(id)arg1;
+- (void)registerForScreenTimeNotifications;
+- (BOOL)allowedToShowConversationWithHandles:(id)arg1;
+- (BOOL)allowedToShowConversationWithHandleIDs:(id)arg1;
+- (void)reloadEmergencyNumbersSet;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -12,5 +12,8 @@
 - (void)complicationDisplayWrapperView:(NTKComplicationDisplayWrapperView *)arg1 updateCustomDataAnimationFromEarlierView:(UIView *)arg2 laterView:(UIView *)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5 animationDuration:(double)arg6 animationFraction:(float)arg7;
 - (void)complicationDisplayWrapperView:(NTKComplicationDisplayWrapperView *)arg1 prepareCustomDataAnimation:(PUICClientSideAnimation *)arg2 fromEarlierView:(UIView *)arg3 laterView:(UIView *)arg4 isForward:(_Bool)arg5 animationType:(unsigned int)arg6;
 - (_Bool)complicationDisplayWrapperView:(NTKComplicationDisplayWrapperView *)arg1 shouldStartCustomDataAnimationFromEarlierView:(UIView *)arg2 laterView:(UIView *)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5;
+
+@optional
+- (void)complicationDisplayWrapperView:(NTKComplicationDisplayWrapperView *)arg1 didUpdateCustomDataAnimationFraction:(float)arg2 fromEarlierView:(UIView *)arg3 toLaterView:(UIView *)arg4 isForward:(_Bool)arg5 animationType:(unsigned int)arg6 animationDuration:(double)arg7;
 @end
 

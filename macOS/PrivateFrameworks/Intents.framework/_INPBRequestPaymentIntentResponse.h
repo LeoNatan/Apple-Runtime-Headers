@@ -15,10 +15,12 @@
 @interface _INPBRequestPaymentIntentResponse : PBCodable <_INPBRequestPaymentIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBPaymentRecord *_paymentRecord;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBPaymentRecord *paymentRecord; // @synthesize paymentRecord=_paymentRecord;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

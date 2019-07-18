@@ -12,7 +12,7 @@
 #import <TVMLKit/_TVAppDocumentControllerDelegate-Protocol.h>
 #import <TVMLKit/_TVApplicationInspectorDocumentProvider-Protocol.h>
 
-@class IKAppMenuBarDocument, IKViewElement, NSArray, NSString, _TVPlayer;
+@class IKAppMenuBarDocument, IKViewElement, NSArray, NSString, UIColor, UIView, _TVPlayer;
 
 __attribute__((visibility("hidden")))
 @interface _TVMenuBarController : UITabBarController <IKAppMenuBarDocumentDelegate, UITabBarControllerDelegate, UITabBarControllerDelegate_Private, _TVAppDocumentControllerDelegate, _TVApplicationInspectorDocumentProvider>
@@ -24,8 +24,14 @@ __attribute__((visibility("hidden")))
     IKViewElement *_nowPlayingMenuItemElement;
     long long _nowPlayingMenuItemInsertionIndex;
     _TVPlayer *_nowPlayingPlayer;
+    UIView *_leadingAccessory;
+    UIView *_trailingAccessory;
+    UIColor *_selectionTintColor;
 }
 
+@property(retain, nonatomic) UIColor *selectionTintColor; // @synthesize selectionTintColor=_selectionTintColor;
+@property(retain, nonatomic) UIView *trailingAccessory; // @synthesize trailingAccessory=_trailingAccessory;
+@property(retain, nonatomic) UIView *leadingAccessory; // @synthesize leadingAccessory=_leadingAccessory;
 @property(retain, nonatomic) _TVPlayer *nowPlayingPlayer; // @synthesize nowPlayingPlayer=_nowPlayingPlayer;
 @property(nonatomic) long long nowPlayingMenuItemInsertionIndex; // @synthesize nowPlayingMenuItemInsertionIndex=_nowPlayingMenuItemInsertionIndex;
 @property(retain, nonatomic) IKViewElement *nowPlayingMenuItemElement; // @synthesize nowPlayingMenuItemElement=_nowPlayingMenuItemElement;
@@ -41,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)_playbackViewControllerWillPresent:(id)arg1;
 - (_Bool)_shouldShowNowPlayingMenuItem;
 - (void)_configureTabBarItem:(id)arg1 forMenuItemElement:(id)arg2;
+- (void)_configureTabBarSelectionStyleFromElement:(id)arg1;
 - (void)_configureViewController:(id)arg1 forMenuItemElement:(id)arg2;
 - (id)_fontForTextElement:(id)arg1;
 - (void)updateWithViewElement:(id)arg1;

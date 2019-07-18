@@ -6,18 +6,25 @@
 
 #import <objc/NSObject.h>
 
+@class NSColor;
+
 @interface LPImagePresentationProperties : NSObject
 {
     BOOL _shouldApplyBackground;
     BOOL _requireFixedSize;
     long long _filter;
     long long _scalingMode;
+    NSColor *_backgroundColor;
+    NSColor *_maskColor;
 }
 
+@property(retain, nonatomic) NSColor *maskColor; // @synthesize maskColor=_maskColor;
+@property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) BOOL requireFixedSize; // @synthesize requireFixedSize=_requireFixedSize;
 @property(nonatomic) BOOL shouldApplyBackground; // @synthesize shouldApplyBackground=_shouldApplyBackground;
 @property(nonatomic) long long scalingMode; // @synthesize scalingMode=_scalingMode;
 @property(nonatomic) long long filter; // @synthesize filter=_filter;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

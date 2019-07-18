@@ -19,6 +19,7 @@
 @property(retain, nonatomic) NSDictionary *unitSymbolMap; // @synthesize unitSymbolMap=_unitSymbolMap;
 @property(retain, nonatomic) NSUnit *defaultUnit; // @synthesize defaultUnit=_defaultUnit;
 @property(copy, nonatomic) NSString *unitType; // @synthesize unitType=_unitType;
+- (void)setPossibleUnits:(id)arg1;
 - (id)possibleUnits;
 - (void).cxx_destruct;
 - (id)defaultSerializedRepresentation;

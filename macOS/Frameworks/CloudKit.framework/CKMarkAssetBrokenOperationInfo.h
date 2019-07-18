@@ -13,6 +13,7 @@
 @interface CKMarkAssetBrokenOperationInfo : CKDatabaseOperationInfo <NSSecureCoding>
 {
     BOOL _touchRepairZone;
+    BOOL _bypassPCSEncryptionForTouchRepairZone;
     BOOL _simulateCorruptAsset;
     BOOL _writeRepairRecord;
     CKUploadRequestConfiguration *_uploadRequestConfiguration;
@@ -24,6 +25,7 @@
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL writeRepairRecord; // @synthesize writeRepairRecord=_writeRepairRecord;
 @property(nonatomic) BOOL simulateCorruptAsset; // @synthesize simulateCorruptAsset=_simulateCorruptAsset;
+@property(nonatomic) BOOL bypassPCSEncryptionForTouchRepairZone; // @synthesize bypassPCSEncryptionForTouchRepairZone=_bypassPCSEncryptionForTouchRepairZone;
 @property(nonatomic) BOOL touchRepairZone; // @synthesize touchRepairZone=_touchRepairZone;
 @property(nonatomic) long long listIndex; // @synthesize listIndex=_listIndex;
 @property(retain, nonatomic) NSString *field; // @synthesize field=_field;

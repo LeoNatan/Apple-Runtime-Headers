@@ -151,6 +151,7 @@
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;
 - (BOOL)_canUseFocusRingMaskForText;
 - (BOOL)_wantsToUseFocusRingMask;
+- (BOOL)_focusRingMaskDependsOnTogglableContent;
 - (unsigned long long)_preferredFocusLocationMask;
 - (BOOL)_shouldShowFocus;
 - (void)drawFocusRingMaskWithFrame:(struct CGRect)arg1 inView:(id)arg2;

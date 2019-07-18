@@ -11,7 +11,7 @@
 @protocol UITextDropDelegate;
 
 @protocol UITextDroppable <UITextInput, UITextPasteConfigurationSupporting>
-@property(readonly, nonatomic, getter=isTextDropActive) _Bool textDropActive;
+@property(readonly, nonatomic, getter=isTextDropActive) BOOL textDropActive;
 @property(readonly, nonatomic) UIDropInteraction *textDropInteraction;
 @property(nonatomic) __weak id <UITextDropDelegate> textDropDelegate;
 @end

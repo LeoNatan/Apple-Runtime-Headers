@@ -10,12 +10,16 @@
 {
 }
 
++ (void)_reconcileAudiobookBookmarkForAsset:(id)arg1;
++ (id)_reconcileAudiobookDurationForAsset:(id)arg1;
+- (void)_reconcileAudiobookAllocatedSize;
 - (void)setBookmarkTime:(double)arg1 updatedDate:(id)arg2;
 - (void)replaceAggregatePart:(id)arg1 withMetadata:(id)arg2;
-- (void)removeAggregatePart:(id)arg1;
+- (id)removeAggregatePart:(id)arg1;
 - (void)removeAggregatePartAtIndex:(unsigned long long)arg1;
 - (void)addAggregatePart:(id)arg1;
 - (void)setAccountID:(id)arg1;
+- (void)setDiscNumber:(long long)arg1;
 - (void)setDuration:(id)arg1;
 - (void)setTrackTitle:(id)arg1;
 - (void)setTrackNumber:(long long)arg1;

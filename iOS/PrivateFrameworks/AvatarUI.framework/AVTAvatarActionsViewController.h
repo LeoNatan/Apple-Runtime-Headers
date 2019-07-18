@@ -8,14 +8,16 @@
 
 #import <AvatarUI/AVTAvatarActionsModelDelegate-Protocol.h>
 #import <AvatarUI/AVTFaceTrackingManagerDelegate-Protocol.h>
+#import <AvatarUI/AVTUIControllerPresentationDelegate-Protocol.h>
 #import <AvatarUI/UINavigationControllerDelegate-Protocol.h>
 
-@class AVTAvatarActionButton, AVTAvatarActionsModel, AVTImageTransitioningContainerView, AVTUIEnvironment, AVTViewSession, AVTViewSessionProvider, NSString, UIImageView, UIStackView, UITapGestureRecognizer;
+@class AVTAvatarActionButton, AVTAvatarActionsModel, AVTAvatarEditorViewController, AVTImageTransitioningContainerView, AVTUIEnvironment, AVTViewSession, AVTViewSessionProvider, NSString, UIImageView, UIStackView, UITapGestureRecognizer;
 @protocol AVTAvatarActionsViewControllerDelegate, AVTAvatarActionsViewControllerLayout;
 
-@interface AVTAvatarActionsViewController : UIViewController <AVTAvatarActionsModelDelegate, UINavigationControllerDelegate, AVTFaceTrackingManagerDelegate>
+@interface AVTAvatarActionsViewController : UIViewController <AVTAvatarActionsModelDelegate, UINavigationControllerDelegate, AVTFaceTrackingManagerDelegate, AVTUIControllerPresentationDelegate>
 {
     _Bool _isAnimating;
+    _Bool _allowFacetracking;
     id <AVTAvatarActionsViewControllerDelegate> _delegate;
     id <AVTAvatarActionsViewControllerLayout> _currentLayout;
     UIStackView *_buttonsView;
@@ -30,9 +32,12 @@
     UIImageView *_transitionImageView;
     UITapGestureRecognizer *_tapGestureRecognizer;
     AVTUIEnvironment *_environment;
+    AVTAvatarEditorViewController *_editorViewController;
 }
 
+@property(nonatomic) __weak AVTAvatarEditorViewController *editorViewController; // @synthesize editorViewController=_editorViewController;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
+@property(nonatomic) _Bool allowFacetracking; // @synthesize allowFacetracking=_allowFacetracking;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) UIImageView *transitionImageView; // @synthesize transitionImageView=_transitionImageView;
@@ -48,6 +53,7 @@
 @property(retain, nonatomic) id <AVTAvatarActionsViewControllerLayout> currentLayout; // @synthesize currentLayout=_currentLayout;
 @property(nonatomic) __weak id <AVTAvatarActionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)controllerPresentationWillObstructView:(id)arg1;
 - (long long)interfaceOrientationForFaceTrackingManager:(id)arg1;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)performTransitionAfterDeleteToRecord:(id)arg1 fromLeft:(_Bool)arg2 previousRecordImage:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
@@ -72,6 +78,7 @@
 - (void)didTapAvatarView:(id)arg1;
 - (void)createTransitionImageViewIfNeeded;
 - (void)applyLayout:(id)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)configureUserInfoLabel;
 - (void)beginUsingAVTViewFromSession:(id)arg1;

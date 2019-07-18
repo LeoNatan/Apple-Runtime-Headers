@@ -22,6 +22,7 @@
 - (void)setPropertiesByName:(id)arg1;
 - (id)propertiesByName;
 - (id)_dictionaryRepresentation;
+@property(nonatomic) long long confirmationReason;
 @property(copy, nonatomic) NSNumber *shouldDoEmergencyCountdown;
 - (long long)_codeWithName:(id)arg1;
 - (long long)_intentResponseCode;

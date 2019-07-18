@@ -18,6 +18,7 @@
     _Bool _hostingOverrideView;
     _Bool _paused;
     _Bool _inMonochromeMode;
+    _Bool _prefersFilterOverTransition;
     id <CLKMonochromeFilterProvider> _filterProvider;
     CLKDevice *_device;
     UIView *_richComplicationImageView;
@@ -26,6 +27,7 @@
     long long _monochromeFilterType;
 }
 
+@property(nonatomic) _Bool prefersFilterOverTransition; // @synthesize prefersFilterOverTransition=_prefersFilterOverTransition;
 @property(nonatomic) _Bool inMonochromeMode; // @synthesize inMonochromeMode=_inMonochromeMode;
 @property(nonatomic) long long monochromeFilterType; // @synthesize monochromeFilterType=_monochromeFilterType;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;

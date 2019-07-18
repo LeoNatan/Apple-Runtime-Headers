@@ -12,6 +12,7 @@
 {
     double _overallContrast;
     SBFColorBoxes *_colorBoxes;
+    _Bool _needsWallpaperDimmingTreatment;
     UIImage *_displayedImage;
     UIImage *_sampleImage;
     NSData *_displayedImageHashData;
@@ -20,7 +21,7 @@
 
 + (_Bool)_allowsRasterization;
 + (_Bool)_allowsParallax;
-+ (id)imageByScalingImage:(id)arg1 withScaleFactor:(double)arg2 needsLuminanceTreatment:(_Bool)arg3 needsDimmingTreatment:(_Bool)arg4;
++ (id)imageByScalingImage:(id)arg1 withDownsampleFactor:(double)arg2 needsLuminanceTreatment:(_Bool)arg3 needsDimmingTreatment:(_Bool)arg4;
 + (id)dimmingTreatmentFilters;
 + (id)luminanceTreatmentFilters;
 + (_Bool)_canDownscaleSampleImage;
@@ -56,7 +57,7 @@
 - (void)preheatImageData;
 - (id)initWithFrame:(struct CGRect)arg1 configuration:(id)arg2 variant:(long long)arg3 cacheGroup:(id)arg4 delegate:(id)arg5 options:(unsigned long long)arg6;
 - (id)cacheUniqueIdentifier;
-- (void)_generateImageForImage:(id)arg1 options:(unsigned long long)arg2 downsampleFactor:(double)arg3 generationHandler:(CDUnknownBlockType)arg4;
+- (void)_generateImageForImage:(id)arg1 options:(unsigned long long)arg2 downsampleFactor:(double)arg3 needsDimmingTreatment:(_Bool)arg4 generationHandler:(CDUnknownBlockType)arg5;
 - (void)_setupWallpaperImageFromConfiguration:(id)arg1 options:(unsigned long long)arg2;
 - (long long)wallpaperType;
 

@@ -11,28 +11,38 @@
 @interface PLPushAgent : PLAgent
 {
     PLXPCListenerOperatorComposition *_receivedPushListener;
+    PLXPCListenerOperatorComposition *_sentPushListener;
     PLXPCListenerOperatorComposition *_sentKeepAliveListener;
     PLTimer *_runTimeAggregatorTimer;
     unsigned long long _numKeepAlives;
+    PLXPCListenerOperatorComposition *_apsdConnectedListener;
     NSMutableDictionary *_pushUsageDict;
     NSDate *_detectionStartTime;
 }
 
 + (BOOL)isHighPriorityPushEntry:(id)arg1;
++ (id)replaceConnectionTypeWithEnum:(id)arg1;
 + (id)bundleIdFromTopic:(id)arg1;
++ (id)entryAggregateDefinitionAPSDConnected;
++ (id)entryAggregateDefinitionSentPushes;
++ (id)entryAggregateDefinitions;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventPointDefinitionsSentKeepAlive;
++ (id)entryEventPointDefinitionsAPSDConnectedEvent;
++ (id)entryEventPointDefinitionsSentPush;
 + (id)entryEventPointDefinitionsReceivedPush;
 + (id)entryEventPointDefinitions;
 + (void)load;
 + (id)defaults;
 @property(retain) NSDate *detectionStartTime; // @synthesize detectionStartTime=_detectionStartTime;
 @property(retain) NSMutableDictionary *pushUsageDict; // @synthesize pushUsageDict=_pushUsageDict;
+@property(retain) PLXPCListenerOperatorComposition *apsdConnectedListener; // @synthesize apsdConnectedListener=_apsdConnectedListener;
 @property unsigned long long numKeepAlives; // @synthesize numKeepAlives=_numKeepAlives;
 @property(retain) PLTimer *runTimeAggregatorTimer; // @synthesize runTimeAggregatorTimer=_runTimeAggregatorTimer;
 @property(retain) PLXPCListenerOperatorComposition *sentKeepAliveListener; // @synthesize sentKeepAliveListener=_sentKeepAliveListener;
+@property(retain) PLXPCListenerOperatorComposition *sentPushListener; // @synthesize sentPushListener=_sentPushListener;
 @property(retain) PLXPCListenerOperatorComposition *receivedPushListener; // @synthesize receivedPushListener=_receivedPushListener;
 - (void).cxx_destruct;
 - (void)checkPushUsage:(id)arg1 withPLEntry:(id)arg2;

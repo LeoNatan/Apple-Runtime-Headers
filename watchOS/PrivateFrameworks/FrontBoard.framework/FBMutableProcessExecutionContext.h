@@ -6,7 +6,7 @@
 
 #import <FrontBoard/FBProcessExecutionContext.h>
 
-@class NSArray, NSDictionary, NSURL;
+@class NSArray, NSDictionary, NSURL, RBSProcessIdentity;
 @protocol FBProcessWatchdogProviding;
 
 @interface FBMutableProcessExecutionContext : FBProcessExecutionContext
@@ -20,6 +20,7 @@
 @property(nonatomic) _Bool checkForLeaks; // @dynamic checkForLeaks;
 @property(nonatomic) _Bool disableASLR; // @dynamic disableASLR;
 @property(copy, nonatomic) NSDictionary *environment; // @dynamic environment;
+@property(copy, nonatomic) RBSProcessIdentity *identity; // @dynamic identity;
 @property(nonatomic) int launchIntent; // @dynamic launchIntent;
 @property(retain, nonatomic) NSURL *standardErrorURL; // @dynamic standardErrorURL;
 @property(retain, nonatomic) NSURL *standardOutputURL; // @dynamic standardOutputURL;

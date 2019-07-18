@@ -8,5 +8,6 @@
 
 @interface UIImageView (NUIContainerView)
 - (int)_nui_baselineViewType;
+- (_Bool)_nui_isImageView;
 @end
 

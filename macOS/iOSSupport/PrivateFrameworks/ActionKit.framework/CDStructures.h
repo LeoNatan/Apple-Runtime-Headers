@@ -24,6 +24,15 @@ struct CC_SHA1state_st {
     int num;
 };
 
+struct CGAffineTransform {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+    double _field5;
+    double _field6;
+};
+
 struct CGPoint {
     double x;
     double y;
@@ -41,23 +50,6 @@ struct CGSize {
 
 struct NSString {
     Class _field1;
-};
-
-struct UIEdgeInsets {
-    double top;
-    double left;
-    double bottom;
-    double right;
-};
-
-struct WFParameterComponentOptions {
-    char _field1;
-    char _field2;
-    char _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    char _field7;
 };
 
 struct _FileHashComputationContext {

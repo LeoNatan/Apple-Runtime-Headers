@@ -9,16 +9,17 @@
 #import <WorkflowUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 #import <WorkflowUI/WFActionDescriptionViewControllerDelegate-Protocol.h>
 #import <WorkflowUI/WFActionDrawerAppsDetailViewControllerDelegate-Protocol.h>
+#import <WorkflowUI/WFActionDrawerAppsViewControllerDelegate-Protocol.h>
 #import <WorkflowUI/WFActionDrawerResultsViewControllerDelegate-Protocol.h>
 #import <WorkflowUI/WFActionDrawerStateConfigurable-Protocol.h>
 #import <WorkflowUI/WFActionDrawerStateRepresentable-Protocol.h>
 #import <WorkflowUI/WFActionDrawerViewControllerDelegate-Protocol.h>
 #import <WorkflowUI/WFComponentNavigationContext-Protocol.h>
 
-@class NSHashTable, NSString, UINavigationController, UIViewController, WFActionDrawerResults, WFActionDrawerResultsController, WFActionDrawerSiriSuggestionsViewController, WFActionDrawerState, WFActionDrawerViewController, WFComposeViewController, WFDrawerController, WFWorkflow;
+@class NSHashTable, NSString, UINavigationController, UIViewController, WFActionDrawerAppsViewController, WFActionDrawerResults, WFActionDrawerResultsController, WFActionDrawerSiriSuggestionsViewController, WFActionDrawerState, WFActionDrawerViewController, WFComposeViewController, WFDrawerController, WFWorkflow;
 @protocol WFActionDrawerResultsControlling;
 
-@interface WFActionDrawerCoordinator : NSObject <UIPopoverPresentationControllerDelegate, WFActionDrawerAppsDetailViewControllerDelegate, WFActionDrawerViewControllerDelegate, WFActionDrawerResultsViewControllerDelegate, WFActionDescriptionViewControllerDelegate, WFComponentNavigationContext, WFActionDrawerStateConfigurable, WFActionDrawerStateRepresentable>
+@interface WFActionDrawerCoordinator : NSObject <UIPopoverPresentationControllerDelegate, WFActionDrawerAppsDetailViewControllerDelegate, WFActionDrawerAppsViewControllerDelegate, WFActionDrawerViewControllerDelegate, WFActionDrawerResultsViewControllerDelegate, WFActionDescriptionViewControllerDelegate, WFComponentNavigationContext, WFActionDrawerStateConfigurable, WFActionDrawerStateRepresentable>
 {
     WFComposeViewController *_composeViewController;
     WFActionDrawerViewController *_actionsViewController;
@@ -32,8 +33,10 @@
     id <WFActionDrawerResultsControlling> _actionDrawerResultsControllingDelegate;
     UIViewController *_documentationPopoverViewController;
     WFActionDrawerResultsController *_actionDrawerResultsController;
+    WFActionDrawerAppsViewController *_appsViewController;
 }
 
+@property(retain, nonatomic) WFActionDrawerAppsViewController *appsViewController; // @synthesize appsViewController=_appsViewController;
 @property(retain, nonatomic) WFActionDrawerResultsController *actionDrawerResultsController; // @synthesize actionDrawerResultsController=_actionDrawerResultsController;
 @property(nonatomic) __weak UIViewController *documentationPopoverViewController; // @synthesize documentationPopoverViewController=_documentationPopoverViewController;
 @property(nonatomic) __weak id <WFActionDrawerResultsControlling> actionDrawerResultsControllingDelegate; // @synthesize actionDrawerResultsControllingDelegate=_actionDrawerResultsControllingDelegate;
@@ -47,6 +50,8 @@
 @property(readonly, nonatomic) WFActionDrawerViewController *actionsViewController; // @synthesize actionsViewController=_actionsViewController;
 @property(readonly, nonatomic) __weak WFComposeViewController *composeViewController; // @synthesize composeViewController=_composeViewController;
 - (void).cxx_destruct;
+- (void)appViewController:(id)arg1 didSelectAppWithBundleIdentifier:(id)arg2;
+- (void)appDetailsViewController:(id)arg1 didSelectDocumentationForAction:(id)arg2 fromView:(id)arg3;
 - (void)appDetailsViewController:(id)arg1 didSelectAction:(id)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 @property(readonly, nonatomic) WFActionDrawerState *state;
@@ -66,12 +71,14 @@
 - (void)actionDrawerViewController:(id)arg1 didSelectCategoryForAppWithBundleIdentifier:(id)arg2 shouldLoadSuggestions:(BOOL)arg3;
 - (void)actionDrawerViewControllerDidSelectCategoryScripting:(id)arg1 title:(id)arg2;
 - (void)actionDrawerViewControllerDidSelectCategoryFavorites:(id)arg1 title:(id)arg2;
+- (void)actionDrawerViewControllerDidSelectCategoryApps:(id)arg1 title:(id)arg2;
 - (void)actionDrawerViewController:(id)arg1 didSelectDocumentationForAction:(id)arg2 fromView:(id)arg3;
 - (void)actionDrawerViewController:(id)arg1 didSelectAction:(id)arg2;
 - (void)responderDidBeginEditing:(id)arg1;
 - (void)subscribeForTextEditingNotifications;
 - (void)appendAction:(id)arg1;
 - (void)dismissDocumentationIfPresentedInPopoverAnimated:(BOOL)arg1;
+- (void)presentResultsForAppWithBundleIdentifier:(id)arg1;
 - (id)presentDescriptionForAction:(id)arg1 fromViewController:(id)arg2 view:(id)arg3 arrowDirections:(unsigned long long)arg4 animated:(BOOL)arg5;
 - (void)presentResultsViewController:(id)arg1 visibility:(unsigned long long)arg2 animated:(BOOL)arg3;
 - (id)presentResultsViewControllerWithTitle:(id)arg1 results:(id)arg2 visibility:(unsigned long long)arg3 animated:(BOOL)arg4;

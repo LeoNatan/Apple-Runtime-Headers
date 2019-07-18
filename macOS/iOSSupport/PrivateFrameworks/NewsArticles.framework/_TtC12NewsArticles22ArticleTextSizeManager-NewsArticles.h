@@ -6,9 +6,10 @@
 
 #import <NewsArticles/_TtC12NewsArticles22ArticleTextSizeManager.h>
 
-#import <NewsArticles/_TtP12NewsArticles27ChannelTextSizeObserverType_-Protocol.h>
+#import <NewsArticles/NUDynamicTypeProviding-Protocol.h>
 
-@interface _TtC12NewsArticles22ArticleTextSizeManager (NewsArticles) <_TtP12NewsArticles27ChannelTextSizeObserverType_>
-- (void)textSizeDidChangeTo:(id)arg1;
+@interface _TtC12NewsArticles22ArticleTextSizeManager (NewsArticles) <NUDynamicTypeProviding>
+- (void)addObserver:(id)arg1;
+- (id)prefferedContentSizeCategory;
 @end
 

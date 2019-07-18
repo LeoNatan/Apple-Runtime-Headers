@@ -9,6 +9,7 @@
 @interface _TtC12NewsArticles28ToolbarIssueCoverBarPageItem : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: issue
+    // Error parsing type: , name: presentationContext
     // Error parsing type: , name: renderer
     // Error parsing type: , name: layoutAttributesFactory
     // Error parsing type: , name: tableOfContentsModule

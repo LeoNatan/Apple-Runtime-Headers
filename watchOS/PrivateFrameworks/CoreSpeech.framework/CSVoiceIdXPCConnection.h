@@ -17,6 +17,7 @@
 @property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (void)_sendReplyMessageWithResult:(_Bool)arg1 error:(id)arg2 event:(id)arg3 client:(id)arg4;
 - (void)_handleClientError:(id)arg1 client:(id)arg2;
 - (void)_handleClientMessage:(id)arg1 client:(id)arg2;
 - (void)_handleClientEvent:(id)arg1 client:(id)arg2;

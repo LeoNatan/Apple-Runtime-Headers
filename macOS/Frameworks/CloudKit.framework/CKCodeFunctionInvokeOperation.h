@@ -6,7 +6,7 @@
 
 #import <CloudKit/CKDatabaseOperation.h>
 
-@class NSData, NSError, NSString;
+@class NSData, NSError, NSString, NSURL;
 
 @interface CKCodeFunctionInvokeOperation : CKDatabaseOperation
 {
@@ -17,6 +17,7 @@
     NSString *_serviceName;
     NSString *_functionName;
     NSData *_serializedRequest;
+    NSURL *_explicitBaseURL;
     NSData *_serializedResponse;
     NSError *_responseError;
 }
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) NSError *responseError; // @synthesize responseError=_responseError;
 @property(copy, nonatomic) NSData *serializedResponse; // @synthesize serializedResponse=_serializedResponse;
 @property(nonatomic) BOOL shouldFetchAssetContentInMemory; // @synthesize shouldFetchAssetContentInMemory=_shouldFetchAssetContentInMemory;
+@property(copy, nonatomic) NSURL *explicitBaseURL; // @synthesize explicitBaseURL=_explicitBaseURL;
 @property(nonatomic) BOOL local; // @synthesize local=_local;
 @property(copy, nonatomic) NSData *serializedRequest; // @synthesize serializedRequest=_serializedRequest;
 @property(copy, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;

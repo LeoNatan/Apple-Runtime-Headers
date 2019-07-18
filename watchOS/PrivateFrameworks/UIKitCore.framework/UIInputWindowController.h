@@ -7,13 +7,14 @@
 #import <UIKitCore/UIApplicationRotationFollowingControllerNoTouches.h>
 
 #import <UIKitCore/UIInputViewAnimationHost-Protocol.h>
+#import <UIKitCore/UIKeyboardFloatingTransitionControllerDelegate-Protocol.h>
 #import <UIKitCore/_UIInputHostController-Protocol.h>
 #import <UIKitCore/_UITextEffectsSceneObserver-Protocol.h>
 
-@class NSArray, NSDate, NSLayoutConstraint, NSMutableArray, NSString, UIInputViewController, UIInputViewPlacementTransition, UIInputViewSet, UIInputViewSetNotificationInfo, UIInputViewSetPlacement, UIInputWindowControllerHosting, UIKeyboardPathEffectView, UIView;
+@class NSArray, NSDate, NSLayoutConstraint, NSMutableArray, NSString, UIInputViewController, UIInputViewPlacementTransition, UIInputViewSet, UIInputViewSetNotificationInfo, UIInputViewSetPlacement, UIInputWindowControllerHosting, UIKeyboardFloatingTransitionController, UIKeyboardPathEffectView, UIView;
 
 __attribute__((visibility("hidden")))
-@interface UIInputWindowController : UIApplicationRotationFollowingControllerNoTouches <UIInputViewAnimationHost, _UITextEffectsSceneObserver, _UIInputHostController>
+@interface UIInputWindowController : UIApplicationRotationFollowingControllerNoTouches <UIInputViewAnimationHost, _UITextEffectsSceneObserver, UIKeyboardFloatingTransitionControllerDelegate, _UIInputHostController>
 {
     NSMutableArray *_animationStyleStack;
     int _suppressedCallbacks;
@@ -45,6 +46,7 @@ __attribute__((visibility("hidden")))
     NSString *_lastKeyboardID;
     NSDate *_keyboardShowTimestamp;
     _Bool _supportsDockViewController;
+    UIKeyboardFloatingTransitionController *_floatingTransitionController;
     _Bool _shouldNotifyRemoteKeyboards;
     _Bool _dontDismissKeyboardOnScrolling;
     _Bool _dontDismissReachability;
@@ -84,7 +86,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIInputViewController *_inputViewController; // @synthesize _inputViewController;
 @property(retain, nonatomic) UIInputViewSetPlacement *placement; // @synthesize placement=_placement;
 @property(retain, nonatomic) UIInputViewSet *inputViewSet; // @synthesize inputViewSet=_inputViewSet;
+- (void)beginFloatingTransitionFromPanGestureRecognizer:(id)arg1;
 @property(readonly, nonatomic) UIInputViewSetPlacement *expectedPlacement;
+@property(readonly, nonatomic) _Bool isTransitioningBetweenFloatingStates;
 @property(readonly, nonatomic) _Bool isTransitioningBetweenKeyboardStates;
 @property(readonly, nonatomic) _Bool isTransitionStarted;
 @property(readonly, nonatomic) _Bool isTransitioning;
@@ -139,6 +143,8 @@ __attribute__((visibility("hidden")))
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (_Bool)_useLiveRotation;
 - (void)_getRotationContentSettings:(CDStruct_3af65568 *)arg1;
+- (void)finishSplitTransition;
+- (void)prepareForSplitTransition;
 - (void)setInputViewsHidden:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isInputViewsHidden) _Bool inputViewsHidden;
 - (void)updateToPlacement:(id)arg1 withNormalAnimationsAndNotifications:(_Bool)arg2;
@@ -183,6 +189,11 @@ __attribute__((visibility("hidden")))
 - (void)_presentViewController:(id)arg1 modalSourceViewController:(id)arg2 presentationController:(id)arg3 animationController:(id)arg4 interactionController:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (_Bool)isViewLandscape;
 - (struct UIEdgeInsets)_viewSafeAreaInsetsFromScene;
+- (_Bool)shouldBeginTransitionForController:(id)arg1;
+- (void)didEndTransitionWithController:(id)arg1;
+- (void)willBeginTransitionWithController:(id)arg1;
+- (id)inputWindowControllerForController:(id)arg1;
+- (void)updateGestureRecognizers;
 - (void)dismissViewController:(id)arg1;
 - (void)presentViewController:(id)arg1;
 - (void)ignoreLayoutNotifications:(CDUnknownBlockType)arg1;

@@ -8,7 +8,7 @@
 
 @interface _TtC12NewsArticles12ColorPalette : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: userInterfaceStyle
+    // Error parsing type: , name: baseStyler
 }
 
 @end

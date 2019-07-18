@@ -129,6 +129,8 @@
 - (id)aliasSummaryString:(_Bool *)arg1;
 - (void)removeDeviceAlias:(id)arg1;
 - (void)addDeviceAlias:(id)arg1;
+- (long long)_phoneSubscriptionSlotMatchingLabel:(id)arg1;
+- (long long)_phoneSubscriptionSlotMatchingPhoneNumber:(id)arg1;
 - (_Bool)unvalidateAlias:(id)arg1;
 - (_Bool)validateAlias:(id)arg1;
 - (_Bool)setAliases:(id)arg1 onAccount:(id)arg2;
@@ -222,7 +224,6 @@
 - (void)_showNetworkAlertWithMessage:(id)arg1 andViewController:(id)arg2;
 - (id)networkSettingsURLAllowingCellular:(_Bool)arg1;
 - (_Bool)deviceCanTakeNetworkAction;
-- (_Bool)deviceHasNetworkEnabled;
 - (_Bool)deviceHasSaneNetworkConnection;
 - (void)openURL:(id)arg1;
 - (void)refreshSystemAccount;

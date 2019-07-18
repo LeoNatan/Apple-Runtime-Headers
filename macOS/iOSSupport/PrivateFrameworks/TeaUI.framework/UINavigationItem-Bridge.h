@@ -7,7 +7,6 @@
 #import <UIKit/UINavigationItem.h>
 
 @interface UINavigationItem (Bridge)
-- (void)ts_setCanvasView:(id)arg1;
 - (void)ts_setLargeTitleAccessoryView:(id)arg1 alignToBaseline:(BOOL)arg2;
 - (void)ts_setBackButtonTitle:(id)arg1;
 @end

@@ -13,10 +13,12 @@
     UIView *_topSeparatorView;
     UIView *_bottomSeparatorView;
     UIView *_clippingContentView;
+    UIView *_clippingMaskView;
     struct UIEdgeInsets _clippingInsets;
 }
 
 @property(nonatomic) struct UIEdgeInsets clippingInsets; // @synthesize clippingInsets=_clippingInsets;
+@property(retain, nonatomic) UIView *clippingMaskView; // @synthesize clippingMaskView=_clippingMaskView;
 @property(retain, nonatomic) UIView *clippingContentView; // @synthesize clippingContentView=_clippingContentView;
 @property(readonly, nonatomic) UIView *bottomSeparatorView; // @synthesize bottomSeparatorView=_bottomSeparatorView;
 @property(readonly, nonatomic) UIView *topSeparatorView; // @synthesize topSeparatorView=_topSeparatorView;
@@ -25,6 +27,8 @@
 - (void)_setShouldHaveFullLengthTopSeparator:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
+- (void)setAccessoryView:(id)arg1;
+- (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

@@ -6,6 +6,8 @@
 
 #import <UIKit/UITapGestureRecognizer.h>
 
+@class NSNumber, UIWebTouchEventsGestureRecognizer;
+
 __attribute__((visibility("hidden")))
 @interface WKSyntheticTapGestureRecognizer : UITapGestureRecognizer
 {
@@ -15,8 +17,14 @@ __attribute__((visibility("hidden")))
     SEL _gestureFailedAction;
     id _resetTarget;
     SEL _resetAction;
+    UIWebTouchEventsGestureRecognizer *_supportingWebTouchEventsGestureRecognizer;
+    NSNumber *_lastActiveTouchIdentifier;
 }
 
+@property(readonly, nonatomic) NSNumber *lastActiveTouchIdentifier; // @synthesize lastActiveTouchIdentifier=_lastActiveTouchIdentifier;
+@property(nonatomic) __weak UIWebTouchEventsGestureRecognizer *supportingWebTouchEventsGestureRecognizer; // @synthesize supportingWebTouchEventsGestureRecognizer=_supportingWebTouchEventsGestureRecognizer;
+- (void).cxx_destruct;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)reset;
 - (void)setState:(int)arg1;
 - (void)setResetTarget:(id)arg1 action:(SEL)arg2;

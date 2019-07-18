@@ -8,19 +8,17 @@
 
 #import <AMPDevices/DeviceClientProtocol-Protocol.h>
 
-@class DeviceViewConnection, NSXPCConnection;
+@class NSXPCConnection;
 
 @interface DeviceClient : NSObject <DeviceClientProtocol>
 {
     NSXPCConnection *_connectionToDiscoveryService;
-    DeviceViewConnection *_viewConnection;
 }
 
-@property(nonatomic) __weak DeviceViewConnection *viewConnection; // @synthesize viewConnection=_viewConnection;
 @property(nonatomic) __weak NSXPCConnection *connectionToDiscoveryService; // @synthesize connectionToDiscoveryService=_connectionToDiscoveryService;
 - (void).cxx_destruct;
 - (void)pairDeviceWithIdentifier:(id)arg1 withReply:(CDUnknownBlockType)arg2;
-- (id)initWithConnection:(id)arg1 andDeviceViewConnection:(id)arg2;
+- (id)initWithConnection:(id)arg1;
 
 @end
 

@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)customizedDescription;
 - (BOOL)isEqualToLocation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

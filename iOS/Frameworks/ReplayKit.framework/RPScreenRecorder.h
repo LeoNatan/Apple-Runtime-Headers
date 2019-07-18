@@ -10,7 +10,7 @@
 #import <ReplayKit/UINavigationControllerDelegate-Protocol.h>
 #import <ReplayKit/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class NSDate, NSString, NSURL, RPBroadcastController, RPPipViewController, UIView, UIWindow;
+@class NSString, NSURL, RPBroadcastController, RPPipViewController, UIView, UIWindow;
 @protocol RPScreenRecorderDelegate, RPScreenRecorderPrivateDelegate;
 
 @interface RPScreenRecorder : NSObject <RPPreviewViewControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate>
@@ -33,10 +33,6 @@
     UIWindow *_windowToRecord;
     RPPipViewController *_pipViewController;
     CDUnknownBlockType _saveVideoToCameraRollCompletionBlock;
-    NSDate *_systemRecordingControlCenterStartClipStartTime;
-    NSDate *_systemRecordingControlCenterStartClipEndTime;
-    NSDate *_systemRecordingControlCenterEndClipStartTime;
-    NSDate *_systemRecordingControlCenterEndClipEndTime;
     CDUnknownBlockType _captureHandler;
     RPBroadcastController *_activeBroadcastController;
     NSURL *_broadcastURL;
@@ -53,10 +49,6 @@
 @property(copy, nonatomic) CDUnknownBlockType captureHandler; // @synthesize captureHandler=_captureHandler;
 @property(nonatomic) _Bool hasUserConsentForMicrophone; // @synthesize hasUserConsentForMicrophone=_hasUserConsentForMicrophone;
 @property(nonatomic) _Bool hasUserConsentForCamera; // @synthesize hasUserConsentForCamera=_hasUserConsentForCamera;
-@property(retain, nonatomic) NSDate *systemRecordingControlCenterEndClipEndTime; // @synthesize systemRecordingControlCenterEndClipEndTime=_systemRecordingControlCenterEndClipEndTime;
-@property(retain, nonatomic) NSDate *systemRecordingControlCenterEndClipStartTime; // @synthesize systemRecordingControlCenterEndClipStartTime=_systemRecordingControlCenterEndClipStartTime;
-@property(retain, nonatomic) NSDate *systemRecordingControlCenterStartClipEndTime; // @synthesize systemRecordingControlCenterStartClipEndTime=_systemRecordingControlCenterStartClipEndTime;
-@property(retain, nonatomic) NSDate *systemRecordingControlCenterStartClipStartTime; // @synthesize systemRecordingControlCenterStartClipStartTime=_systemRecordingControlCenterStartClipStartTime;
 @property(copy, nonatomic) CDUnknownBlockType saveVideoToCameraRollCompletionBlock; // @synthesize saveVideoToCameraRollCompletionBlock=_saveVideoToCameraRollCompletionBlock;
 @property(retain, nonatomic) RPPipViewController *pipViewController; // @synthesize pipViewController=_pipViewController;
 @property(retain, nonatomic) UIWindow *windowToRecord; // @synthesize windowToRecord=_windowToRecord;
@@ -75,17 +67,19 @@
 - (void)controlCenterDidDismiss;
 - (void)controlCenterWillPresent;
 - (_Bool)screenRecordingSupportedOnDevice;
-- (void)updateRecordingAvailability;
+- (void)updateRecordingAvailabilityWithHandler:(CDUnknownBlockType)arg1;
+- (void)updateRecordingAvailability:(id)arg1;
 - (void)notifyDelegateOfUpdatedState;
 - (void)notifyDelegateOfRecorderAvailability;
 - (void)resumeRecording;
 - (void)pauseRecording;
-- (void)clientDidBecomeActive;
-- (void)clientWillResignActive;
+- (void)recordingShouldResume;
+- (void)recordingDidPause;
 - (void)discardRecordingWithHandler:(CDUnknownBlockType)arg1;
 - (void)recordingDidStopWithError:(id)arg1 movieURL:(id)arg2;
 - (void)updateScreenRecordingStateWithCurrentState:(id)arg1;
 - (void)recordingTimerDidUpdate:(id)arg1;
+- (void)recordingLockInterrupted:(id)arg1;
 - (void)didStopRecordingWithError:(id)arg1 previewViewController:(id)arg2;
 - (void)stopRecordingWithVideoURLHandler:(CDUnknownBlockType)arg1;
 - (void)stopRecordingAndSaveToCameraRoll:(CDUnknownBlockType)arg1;
@@ -100,15 +94,15 @@
 - (void)startCaptureWithHandler:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startRecordingWithHandler:(CDUnknownBlockType)arg1;
 - (void)startBroadcastWithHandler:(CDUnknownBlockType)arg1;
-- (void)startRecordingWithMicrophoneEnabled:(_Bool)arg1 windowToRecord:(id)arg2 systemRecording:(_Bool)arg3 handler:(CDUnknownBlockType)arg4;
+- (void)startSystemRecordingWithMicrophoneEnabled:(_Bool)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)setWindowRotationLocked:(_Bool)arg1;
 - (unsigned int)currentWindowLayerContextID;
 - (struct CGSize)currentWindowSize;
 - (id)applicationWindow;
 - (void)dealloc;
+- (id)processQueue;
 - (id)videoQueue;
 - (id)audioQueue;
-- (void)setMicrophoneEnabledPersistent:(_Bool)arg1;
 - (id)init;
 
 // Remaining properties

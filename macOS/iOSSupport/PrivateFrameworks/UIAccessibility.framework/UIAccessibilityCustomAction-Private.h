@@ -6,12 +6,14 @@
 
 #import <UIKit/UIAccessibilityCustomAction.h>
 
-@class NSString, UIImage;
+@class NSObject, NSString, UIImage;
 
 @interface UIAccessibilityCustomAction (Private)
 - (id)_accessibilityAXAttributedName;
 - (BOOL)_accessibilityMatchesCustomActionIdentifier:(id)arg1;
 - (id)_accessibilityCustomActionIdentifier;
+@property(nonatomic) unsigned long long sortPriority;
+@property(retain, nonatomic, getter=_targetedElement, setter=_setTargetedElement:) NSObject *targetedElement;
 @property(retain, nonatomic) NSString *localizedActionRotorCategory;
 @property(nonatomic) BOOL ignoreWhenVoiceOverTouches;
 @property(nonatomic) BOOL shouldSuppressActionHint;

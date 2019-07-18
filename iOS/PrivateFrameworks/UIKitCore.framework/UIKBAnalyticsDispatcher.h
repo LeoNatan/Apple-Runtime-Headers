@@ -11,6 +11,10 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (void)handwritingResized:(id)arg1;
++ (void)globeKeyLongPress;
++ (void)globeKeyEducationShown:(double)arg1;
++ (void)candidateViewExtended:(id)arg1 direction:(id)arg2;
 + (void)dispatchFloatingKeyboardEventOfType:(id)arg1 trigger:(id)arg2 pinnedToEdge:(id)arg3 position:(struct CGPoint)arg4 touchUpPosition:(struct CGPoint)arg5;
 + (void)floatingKeyboardMoved:(id)arg1 toPosition:(struct CGPoint)arg2 touchPosition:(struct CGPoint)arg3;
 + (void)floatingKeyboardSummonedEvent:(id)arg1 trigger:(id)arg2 finalPosition:(struct CGPoint)arg3;

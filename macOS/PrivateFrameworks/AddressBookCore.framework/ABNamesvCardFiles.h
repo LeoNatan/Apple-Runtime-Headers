@@ -24,10 +24,10 @@
 + (id)nameWithName:(id)arg1 conflicts:(unsigned long long)arg2;
 + (id)nameWithStrings:(id)arg1 conflicts:(unsigned long long)arg2;
 + (id)nameWithStrings:(id)arg1;
-+ (id)nameForPerson:(id)arg1 andOthers:(unsigned long long)arg2;
-+ (id)nameForPerson:(id)arg1 andPerson:(id)arg2;
-+ (id)nameForPersonAsCompany:(id)arg1;
-+ (id)nameForPersonAsPerson:(id)arg1;
++ (id)nameForContact:(id)arg1 andOthers:(unsigned long long)arg2;
++ (id)nameForContact:(id)arg1 andContact:(id)arg2;
++ (id)nameForContactAsOrganization:(id)arg1;
++ (id)nameForContactAsPerson:(id)arg1;
 + (id)nameForPerson:(id)arg1;
 + (id)nameForPeople:(id)arg1;
 

@@ -9,6 +9,7 @@
 @protocol _LSDModifyProtocol
 - (void)setPreferenceValue:(id)arg1 forKey:(NSString *)arg2 forApplicationAtURL:(NSURL *)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)garbageCollectDatabaseWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;
+- (void)unregisterApplicationAtURL:(NSURL *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)uninstallApplication:(NSString *)arg1 withOptions:(NSDictionary *)arg2 uninstallType:(unsigned long long)arg3 reply:(void (^)(NSArray *, NSError *))arg4;
 - (void)installApplication:(NSString *)arg1 atURL:(NSURL *)arg2 withOptions:(NSDictionary *)arg3 installType:(unsigned long long)arg4 reply:(void (^)(NSArray *, NSError *))arg5;
 - (void)synchronizeWithMobileInstallation;

@@ -24,6 +24,7 @@
     NSObject<OS_dispatch_group> *_group;
 }
 
++ (id)requiredIntentIDInNotificationCategory;
 + (id)sharedManager;
 - (void).cxx_destruct;
 - (void)pairedDevicesChanged:(id)arg1;

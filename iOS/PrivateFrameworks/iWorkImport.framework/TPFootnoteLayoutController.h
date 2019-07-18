@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (struct _NSRange)footnoteLayoutRangeForPageCharRange:(struct _NSRange)arg1;
 - (struct _NSRange)endnoteRangeForSectionCharRange:(struct _NSRange)arg1 isLastSection:(_Bool)arg2 sectionHint:(id)arg3;
 - (void)inflateFootnotesInRange:(struct _NSRange)arg1 intoFootnoteContainer:(id)arg2;
-- (struct _NSRange)layoutFootnotesFromIndex:(unsigned long long)arg1 intoFootnoteContainer:(id)arg2 maxBlockHeight:(double)arg3 pageCharRange:(struct _NSRange)arg4 sectionCharRange:(struct _NSRange)arg5 isLastSection:(_Bool)arg6 sectionHint:(id)arg7 pageHintIndex:(unsigned long long)arg8;
+- (struct _NSRange)layOutFootnotesFromIndex:(unsigned long long)arg1 intoFootnoteContainer:(id)arg2 maxBlockHeight:(double)arg3 pageCharRange:(struct _NSRange)arg4 sectionCharRange:(struct _NSRange)arg5 isLastSection:(_Bool)arg6 sectionHint:(id)arg7 pageHintIndex:(unsigned long long)arg8;
 @property(readonly, nonatomic) __weak id <TSWPFootnoteMarkProvider> footnoteMarkProvider;
 - (id)initWithDocumentRoot:(id)arg1;
 

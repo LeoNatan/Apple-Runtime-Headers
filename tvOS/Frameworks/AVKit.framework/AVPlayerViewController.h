@@ -8,12 +8,13 @@
 
 #import <AVKit/AVPictureInPictureContentSource-Protocol.h>
 #import <AVKit/AVPictureInPictureControllerDelegate-Protocol.h>
+#import <AVKit/PBSPictureInPicturePlaybackDelegate-Protocol.h>
 #import <AVKit/_AVFocusContainerDelegate-Protocol.h>
 
 @class AVBehaviorStorage, AVContentProposalViewController, AVContentRestrictionsViewController, AVControlItem, AVDelegateManager, AVDigitizerTouchGestureRecognizer, AVGestureRecognizerDelegate, AVInternalPlaybackOptions, AVKeyValueObserverCollection, AVNonDigitizerTapRecognizer, AVNowPlayingPlaybackControlsViewController, AVPermissiveSwipeGestureRecognizer, AVPictureInPictureController, AVPlayer, AVPlayerController, AVPlayerLayerView, AVPlayerViewControllerTransition, AVTransportBarViewController, AVxCustomOverlayHostViewController, NSArray, NSDictionary, NSLayoutConstraint, NSObject, NSString, NSTimer, NSURL, UIAlertController, UIDigitizerLongPressGestureRecognizer, UIDigitizerTapGestureRecognizer, UILayoutGuide, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, UIWindow;
 @protocol AVPlayerViewControllerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
-@interface AVPlayerViewController : UIViewController <AVPictureInPictureContentSource, AVPictureInPictureControllerDelegate, _AVFocusContainerDelegate>
+@interface AVPlayerViewController : UIViewController <AVPictureInPictureContentSource, AVPictureInPictureControllerDelegate, PBSPictureInPicturePlaybackDelegate, _AVFocusContainerDelegate>
 {
     _Bool _showsPlaybackControls;
     _Bool _playbackControlsViewControllerShouldShowLoadingIndicator;
@@ -29,6 +30,7 @@
     _Bool _startingContentProposalPresentation;
     _Bool _HDCPMonitoringActive;
     _Bool _shouldHidePlaybackControlsWhenMultipleTapGestureRecognized;
+    _Bool _haveShownCustomOverlayHint;
     unsigned int _deactivationReasons;
     long long _playControlsStateToRestoreWhenAppBecomesActive;
     NSString *_videoGravity;
@@ -98,6 +100,7 @@
 + (id)keyPathsForValuesAffectingVideoBounds;
 + (id)keyPathsForValuesAffectingReadyForDisplay;
 + (id)keyPathsForValuesAffectingVideoGravity;
++ (id)activePictureInPicturePlayerViewController;
 + (void)setActivePictureInPictureController:(id)arg1;
 + (id)activePictureInPictureController;
 + (id)keyPathsForValuesAffectingAlternateThumbnailStreamURL;
@@ -141,6 +144,7 @@
 - (_Bool)_handleTogglePlayPause;
 - (void)_updatePlaybackControlsViewVisibilityForAudioOnlyContent;
 - (void)_updatePlaybackControlsViewController;
+- (void)_installPlaybackControlsGestureRecognizers;
 - (void)viewWillLayoutSubviews;
 - (void)_updateUnobscuredContentGuide;
 - (void)_didResetMediaServices;
@@ -278,6 +282,7 @@
 - (void)_presentTransportBarViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_dismissTransportBarViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) AVTransportBarViewController *transportBarViewController;
+- (void)pictureInPictureController:(id)arg1 didSendPlaybackCommand:(unsigned long long)arg2;
 - (void)pictureInPictureController:(id)arg1 restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)pictureInPictureControllerDidStopPictureInPicture:(id)arg1;
 - (void)pictureInPictureControllerWillStopPictureInPicture:(id)arg1;

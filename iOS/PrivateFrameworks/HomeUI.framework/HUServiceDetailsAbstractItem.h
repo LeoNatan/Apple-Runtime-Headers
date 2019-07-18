@@ -18,6 +18,8 @@
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HFItem<HFServiceLikeItem> *sourceServiceItem; // @synthesize sourceServiceItem=_sourceServiceItem;
 - (void).cxx_destruct;
+- (_Bool)isNetworkRouterSatellite;
+- (_Bool)isNetworkRouter;
 - (_Bool)isContainedInAParent;
 - (_Bool)isBridge;
 - (_Bool)isNotificationSupportedCamera;

@@ -18,6 +18,7 @@
         unsigned int accountType:1;
         unsigned int requestedBalanceType:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     int _accountType;
     int _requestedBalanceType;
     _INPBDataString *_accountNickname;
@@ -26,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int requestedBalanceType; // @synthesize requestedBalanceType=_requestedBalanceType;
 @property(retain, nonatomic) _INPBDataString *organizationName; // @synthesize organizationName=_organizationName;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;

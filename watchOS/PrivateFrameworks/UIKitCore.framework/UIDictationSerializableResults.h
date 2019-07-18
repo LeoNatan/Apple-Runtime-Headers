@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (id)textArrayForAlternatives:(id)arg1;
 - (id)textArray;
 - (id)bestTextForMultilingualAlternatives;
+- (id)multilingualResultsByLanguageCode;
 - (id)secondBestText;
 - (id)bestText;
 - (id)text;

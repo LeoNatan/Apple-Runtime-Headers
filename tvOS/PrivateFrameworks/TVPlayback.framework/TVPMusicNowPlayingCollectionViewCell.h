@@ -6,13 +6,14 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class NSString, TVPMusicBarsView, UIImage, UIImageView, UILabel, UIView, _UIStackedImageConfiguration;
+@class NSString, TVPMusicBarsView, UIImage, UIImageView, UILabel, UIStackView, UIView, _UIStackedImageConfiguration;
 @protocol TVPMusicNowPlayingImage;
 
 @interface TVPMusicNowPlayingCollectionViewCell : UICollectionViewCell
 {
     UIView *_videoContainerView;
     id <TVPMusicNowPlayingImage> _image;
+    UIStackView *_titleStackView;
     UILabel *_songTitleLabel;
     UILabel *_artistNameLabel;
     UIView *_bottomAccessoryContainerView;
@@ -23,8 +24,8 @@
     long long _placeholderType;
     UIView *_videoView;
     NSString *_songTitle;
+    UILabel *_explicitIndicatorLabel;
     NSString *_artistName;
-    NSString *_detailTitle;
     NSString *_detailDescription;
     TVPMusicBarsView *_bottomAccessoryView;
     long long _musicBarStyle;
@@ -45,8 +46,8 @@
 @property(nonatomic) long long musicBarStyle; // @synthesize musicBarStyle=_musicBarStyle;
 @property(retain, nonatomic) TVPMusicBarsView *bottomAccessoryView; // @synthesize bottomAccessoryView=_bottomAccessoryView;
 @property(copy, nonatomic) NSString *detailDescription; // @synthesize detailDescription=_detailDescription;
-@property(copy, nonatomic) NSString *detailTitle; // @synthesize detailTitle=_detailTitle;
 @property(copy, nonatomic) NSString *artistName; // @synthesize artistName=_artistName;
+@property(readonly, nonatomic) UILabel *explicitIndicatorLabel; // @synthesize explicitIndicatorLabel=_explicitIndicatorLabel;
 @property(copy, nonatomic) NSString *songTitle; // @synthesize songTitle=_songTitle;
 @property(retain, nonatomic) UIView *videoView; // @synthesize videoView=_videoView;
 @property(nonatomic) long long placeholderType; // @synthesize placeholderType=_placeholderType;
@@ -67,6 +68,7 @@
 - (void)setImage:(id)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)_reduceTransparencyStatusDidChange;
 - (void)_updateLabelPositionWithAnimationCoordinator:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)applyLayoutAttributes:(id)arg1;

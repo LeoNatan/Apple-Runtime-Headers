@@ -35,9 +35,11 @@
 - (void)_loadCache;
 - (id)_clientConnection;
 - (void)_handleLibraryAuthServiceClientTokenDidChangeDistributedNotification:(id)arg1;
-- (void)_refreshTokenForDSID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_refreshTokensForDSIDs:(id)arg1 forExternalRequest:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_refreshTokenForDSID:(id)arg1 forExternalRequest:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)addTokenResult:(id)arg1 forDSID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)cachedTokenAndResetCache:(_Bool)arg1;
+- (void)getTokenResultsForDSIDs:(id)arg1 forceRefresh:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getTokenResultForDSID:(id)arg1 forceRefresh:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getTokenForDSID:(id)arg1 forceRefresh:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getAllTokensForAssistantForcingRefresh:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

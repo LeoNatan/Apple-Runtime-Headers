@@ -22,6 +22,7 @@
     double _deselectedKeylineVerticalInnerPadding;
     double _deselectedKeylineCircularInnerPadding;
     double _selectedKeylineSideInnerPadding;
+    double _selectedKeylineVerticalInnerContentSpacer;
     double _selectedKeylineHeight;
     double _foregroundAlpha;
     double _foregroundImageAlpha;
@@ -59,6 +60,7 @@
 @property(nonatomic) double foregroundImageAlpha; // @synthesize foregroundImageAlpha=_foregroundImageAlpha;
 @property(nonatomic) double foregroundAlpha; // @synthesize foregroundAlpha=_foregroundAlpha;
 @property(nonatomic) double selectedKeylineHeight; // @synthesize selectedKeylineHeight=_selectedKeylineHeight;
+@property(nonatomic) double selectedKeylineVerticalInnerContentSpacer; // @synthesize selectedKeylineVerticalInnerContentSpacer=_selectedKeylineVerticalInnerContentSpacer;
 @property(nonatomic) double selectedKeylineSideInnerPadding; // @synthesize selectedKeylineSideInnerPadding=_selectedKeylineSideInnerPadding;
 @property(nonatomic) double deselectedKeylineCircularInnerPadding; // @synthesize deselectedKeylineCircularInnerPadding=_deselectedKeylineCircularInnerPadding;
 @property(nonatomic) double deselectedKeylineVerticalInnerPadding; // @synthesize deselectedKeylineVerticalInnerPadding=_deselectedKeylineVerticalInnerPadding;
@@ -78,10 +80,11 @@
 - (long long)legacyLayoutOverrideforComplicationType:(unsigned long long)arg1 slot:(id)arg2;
 - (id)keylineViewForComplicationSlot:(id)arg1;
 - (unsigned long long)keylineLabelAlignmentForComplicationSlot:(id)arg1;
-- (id)curvedPickerMaskForSlot:(id)arg1;
+- (id)pickerMaskForSlot:(id)arg1;
 - (void)configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (long long)complicationPickerStyleForSlot:(id)arg1;
 - (double)_maxWidthForKeylineAndPadding;
+- (double)maxDateWidthLeavingRoomForKeylines;
 - (double)_maxDateWidthLeavingRoomForKeylines;
 - (double)_maxBottomCenterWidthLeavingRoomForKeylines:(struct CGRect)arg1;
 - (double)_maxBottomCornerWidthLeavingRoomForKeylines:(struct CGRect)arg1;

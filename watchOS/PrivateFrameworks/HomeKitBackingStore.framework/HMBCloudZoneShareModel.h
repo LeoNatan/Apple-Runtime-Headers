@@ -8,7 +8,6 @@
 
 @class CKShare;
 
-__attribute__((visibility("hidden")))
 @interface HMBCloudZoneShareModel : HMBModel
 {
 }

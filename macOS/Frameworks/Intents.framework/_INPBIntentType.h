@@ -15,10 +15,12 @@
 @interface _INPBIntentType : PBCodable <_INPBIntentType, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSString *_type;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

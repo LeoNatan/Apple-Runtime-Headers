@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 @interface TSWPRep : TSDContainerRep <CAAnimationDelegate>
 {
     CALayer *_textLayers[2];
-    CALayer *_caretLayer;
+    CAShapeLayer *_caretLayer;
     CAShapeLayer *_selectionLineLayers[2];
     CAShapeLayer *_selectionHighlightLayer;
     CAShapeLayer *_selectionParagraphBorderLayer;
@@ -44,15 +44,17 @@ __attribute__((visibility("hidden")))
     _Bool _tornDown;
     _Bool _searchHitsAreInvalid;
     _Bool _findIsShowing;
+    _Bool _dragAndDropCaretLayerIsForCaret;
     TSWPSearchReference *_primaryFindResultSearchReference;
     NSArray *_searchReferences;
-    CALayer *_floatingCaretLayer;
+    CAShapeLayer *_floatingCaretLayer;
     struct CGAffineTransform _transformToConvertNaturalToScaledRoot;
 }
 
 + (void)initialize;
 @property(copy, nonatomic) TSWPSelection *lastSelection; // @synthesize lastSelection=_lastSelection;
-@property(retain, nonatomic) CALayer *floatingCaretLayer; // @synthesize floatingCaretLayer=_floatingCaretLayer;
+@property(nonatomic) _Bool dragAndDropCaretLayerIsForCaret; // @synthesize dragAndDropCaretLayerIsForCaret=_dragAndDropCaretLayerIsForCaret;
+@property(retain, nonatomic) CAShapeLayer *floatingCaretLayer; // @synthesize floatingCaretLayer=_floatingCaretLayer;
 @property(retain, nonatomic) NSArray *searchReferences; // @synthesize searchReferences=_searchReferences;
 @property(readonly, nonatomic) struct CGAffineTransform transformToConvertNaturalToScaledRoot; // @synthesize transformToConvertNaturalToScaledRoot=_transformToConvertNaturalToScaledRoot;
 @property(nonatomic) _Bool useKeyboardWhenEditing; // @synthesize useKeyboardWhenEditing=_useKeyboardWhenEditing;
@@ -92,7 +94,8 @@ __attribute__((visibility("hidden")))
 - (id)rubyFieldAtPoint:(struct CGPoint)arg1;
 - (id)smartFieldAtPoint:(struct CGPoint)arg1;
 - (void)drawRubyInContext:(struct CGContext *)arg1 rubyFieldStart:(unsigned long long)arg2 rubyGlyphRange:(struct _NSRange)arg3;
-- (void)drawInContext:(struct CGContext *)arg1 limitSelection:(id)arg2 suppressInvisibles:(_Bool)arg3;
+- (void)recursivelyDrawInContext:(struct CGContext *)arg1 limitSelection:(id)arg2 suppressInvisibles:(_Bool)arg3;
+- (void)p_drawInContext:(struct CGContext *)arg1 limitSelection:(id)arg2 suppressInvisibles:(_Bool)arg3;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (void)drawInLayerContext:(struct CGContext *)arg1;
 - (id)textBackgroundLayer;
@@ -109,8 +112,8 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)p_caretRectForSelection:(id)arg1;
 - (struct CGRect)caretRectForSelection:(id)arg1;
 - (CDStruct_249a8bf0)wordMetricsAtCharIndex:(unsigned long long)arg1;
-- (CDStruct_8299b2ea)lineMetricsAtCharIndex:(unsigned long long)arg1;
-- (CDStruct_8299b2ea)lineMetricsAtPoint:(struct CGPoint)arg1;
+- (CDStruct_1af65ba2)lineMetricsAtCharIndex:(unsigned long long)arg1;
+- (CDStruct_1af65ba2)lineMetricsAtPoint:(struct CGPoint)arg1;
 - (struct CGRect)caretRectForCharIndex:(unsigned long long)arg1 leadingEdge:(_Bool)arg2 caretAffinity:(int)arg3;
 - (struct CGRect)caretRectForCharIndex:(unsigned long long)arg1 caretAffinity:(int)arg2;
 - (struct CGRect)naturalBoundsRectForHyperlinkField:(id)arg1;

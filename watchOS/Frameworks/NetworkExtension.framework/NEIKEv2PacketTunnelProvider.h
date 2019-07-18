@@ -6,8 +6,8 @@
 
 #import <NetworkExtension/NEPacketTunnelProvider.h>
 
-@class NEIKEv2MOBIKE, NEIKEv2Rekey, NEIKEv2Server, NEIKEv2Session, NSArray, NSDictionary, NSObject, NWPathEvaluator, NWResolver;
-@protocol OS_dispatch_queue, OS_dispatch_semaphore;
+@class NEIKEv2MOBIKE, NEIKEv2Rekey, NEIKEv2Server, NEIKEv2Session, NEUserNotification, NSArray, NSDictionary, NSObject, NWPath, NWPathEvaluator, NWResolver;
+@protocol OS_dispatch_queue, OS_dispatch_semaphore, OS_dispatch_source;
 
 @interface NEIKEv2PacketTunnelProvider : NEPacketTunnelProvider
 {
@@ -16,6 +16,7 @@
     _Bool _dispose;
     _Bool _sessionDidConnect;
     _Bool _mobikeCapable;
+    _Bool _authenticationPrompted;
     NSArray *_ikeConfig;
     NSArray *_localTrafficSelectors;
     NSArray *_remoteTrafficSelectors;
@@ -23,12 +24,15 @@
     struct NEVirtualInterface_s *_virtualInterface;
     NEIKEv2Server *_serverAddresses;
     NWResolver *_resolver;
+    NSObject<OS_dispatch_source> *_resolverWaitTimer;
     NEIKEv2Rekey *_rekey;
     NSObject<OS_dispatch_semaphore> *_getSocketSemaphore;
     NEIKEv2MOBIKE *_mobikeHandle;
     CDUnknownBlockType _startTunnelCompletionHandler;
     CDUnknownBlockType _dnsResolverCompletionHandler;
     int _tunnelKind;
+    NWPath *_path;
+    NEUserNotification *_g_notification;
     NEIKEv2Session *_session;
     unsigned int _ifIndex;
     int _pathStatus;
@@ -43,6 +47,9 @@
 @property int pathStatus; // @synthesize pathStatus=_pathStatus;
 @property unsigned int ifIndex; // @synthesize ifIndex=_ifIndex;
 @property(retain) NEIKEv2Session *session; // @synthesize session=_session;
+@property(retain) NEUserNotification *g_notification; // @synthesize g_notification=_g_notification;
+@property _Bool authenticationPrompted; // @synthesize authenticationPrompted=_authenticationPrompted;
+@property(retain) NWPath *path; // @synthesize path=_path;
 @property _Bool mobikeCapable; // @synthesize mobikeCapable=_mobikeCapable;
 @property _Bool sessionDidConnect; // @synthesize sessionDidConnect=_sessionDidConnect;
 @property int tunnelKind; // @synthesize tunnelKind=_tunnelKind;
@@ -52,6 +59,7 @@
 @property(retain) NEIKEv2MOBIKE *mobikeHandle; // @synthesize mobikeHandle=_mobikeHandle;
 @property(retain) NSObject<OS_dispatch_semaphore> *getSocketSemaphore; // @synthesize getSocketSemaphore=_getSocketSemaphore;
 @property(retain) NEIKEv2Rekey *rekey; // @synthesize rekey=_rekey;
+@property(retain) NSObject<OS_dispatch_source> *resolverWaitTimer; // @synthesize resolverWaitTimer=_resolverWaitTimer;
 @property(retain) NWResolver *resolver; // @synthesize resolver=_resolver;
 @property(retain) NEIKEv2Server *serverAddresses; // @synthesize serverAddresses=_serverAddresses;
 @property _Bool hasNAT; // @synthesize hasNAT=_hasNAT;
@@ -62,6 +70,7 @@
 @property(retain) NSArray *localTrafficSelectors; // @synthesize localTrafficSelectors=_localTrafficSelectors;
 @property(retain) NSArray *ikeConfig; // @synthesize ikeConfig=_ikeConfig;
 - (void).cxx_destruct;
+- (_Bool)NEIKEv2ProviderAuthenticate:(id)arg1;
 - (_Bool)tryAlternateServerAddresses;
 - (void)setTunnelNetworkSettings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startRekeyTimer:(_Bool)arg1;

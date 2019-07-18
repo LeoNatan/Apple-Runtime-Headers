@@ -16,6 +16,9 @@
 
 @property(nonatomic) __weak id <FPUIAuthenticationServerInfoDelegate> serverInfoDelegate; // @synthesize serverInfoDelegate=_serverInfoDelegate;
 - (void).cxx_destruct;
+- (void)tableView:(id)arg1 performAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
+- (_Bool)tableView:(id)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
+- (_Bool)tableView:(id)arg1 shouldShowMenuForRowAtIndexPath:(id)arg2;
 - (id)defaultLeftBarButtonItem;
 - (void)removeButtonTapped:(id)arg1;
 - (void)setupTableViewSections;

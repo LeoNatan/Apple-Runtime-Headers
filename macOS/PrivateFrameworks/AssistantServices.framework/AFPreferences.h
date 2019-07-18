@@ -75,6 +75,7 @@
 - (void)setValue:(id)arg1 forSessionContextKey:(id)arg2;
 - (id)valueForSessionContextPreferenceKey:(id)arg1;
 - (void)_registerForNavStatusIfNeeded;
+- (BOOL)isLanguageDetectorEnabledByServer;
 - (BOOL)isLanguageDetectorEnabled;
 - (void)setLanguageDetectorEnabled:(BOOL)arg1;
 - (void)setUseDeviceSpeakerForTTS:(long long)arg1;
@@ -181,6 +182,8 @@
 - (id)cloudSyncEnabledModificationDate;
 - (void)setCloudSyncEnabled:(BOOL)arg1;
 - (BOOL)cloudSyncEnabled;
+- (void)setListenAfterSpeakingDisabled:(BOOL)arg1;
+- (BOOL)listenAfterSpeakingDisabled;
 - (void)setCrownActivationEnabled:(BOOL)arg1;
 - (BOOL)crownActivationEnabled;
 - (void)_setSuppressDictationOptInLocal:(BOOL)arg1;

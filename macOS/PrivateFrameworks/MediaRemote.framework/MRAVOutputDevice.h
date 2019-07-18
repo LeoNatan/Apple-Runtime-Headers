@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MRAVEndpoint, MRAVOutputDeviceSourceInfo, NSData, NSDictionary, NSString, _MRAVOutputDeviceDescriptorProtobuf;
+@class MRAVEndpoint, MRAVOutputDeviceSourceInfo, NSArray, NSData, NSDictionary, NSString, _MRAVOutputDeviceDescriptorProtobuf;
 
 @interface MRAVOutputDevice : NSObject
 {
@@ -51,12 +51,16 @@
     NSString *_parentGroupIdentifier;
     MRAVOutputDeviceSourceInfo *_sourceInfo;
     NSString *_bluetoothID;
+    NSString *_currentBluetoothListeningMode;
+    NSArray *_availableBluetoothListeningModes;
     MRAVEndpoint *_endpoint;
 }
 
 + (id)localDeviceLocalizedName;
 + (id)localDeviceUID;
 @property(nonatomic) __weak MRAVEndpoint *endpoint; // @synthesize endpoint=_endpoint;
+@property(readonly, nonatomic) NSArray *availableBluetoothListeningModes; // @synthesize availableBluetoothListeningModes=_availableBluetoothListeningModes;
+@property(retain, nonatomic) NSString *currentBluetoothListeningMode; // @synthesize currentBluetoothListeningMode=_currentBluetoothListeningMode;
 @property(readonly, nonatomic) NSString *bluetoothID; // @synthesize bluetoothID=_bluetoothID;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
 @property(readonly, nonatomic) MRAVOutputDeviceSourceInfo *sourceInfo; // @synthesize sourceInfo=_sourceInfo;

@@ -6,20 +6,16 @@
 
 #import <HMFoundation/HMFMessageTransport.h>
 
-#import <HomeKit/HMXPCMessageTransport-Protocol.h>
-
-@class NSObject, NSString, NSXPCConnection;
-@protocol OS_dispatch_queue;
+@class NSXPCConnection;
 
 __attribute__((visibility("hidden")))
-@interface HMXPCClient : HMFMessageTransport <HMXPCMessageTransport>
+@interface HMXPCClient : HMFMessageTransport
 {
     _Bool _connectionValid;
     _Bool _requiresCheckin;
     _Bool _notifyRegistered;
     int _notifyRegisterToken;
-    NSXPCConnection *_xpcConnection;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
+    NSXPCConnection *_connection;
     CDUnknownBlockType _reconnectionHandler;
 }
 
@@ -28,23 +24,12 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int notifyRegisterToken; // @synthesize notifyRegisterToken=_notifyRegisterToken;
 @property(nonatomic) _Bool requiresCheckin; // @synthesize requiresCheckin=_requiresCheckin;
 @property(nonatomic) _Bool connectionValid; // @synthesize connectionValid=_connectionValid;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
-@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
+@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
-- (void)recheckinIfRequired:(id)arg1;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
 - (void)sendMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)registerReconnectionHandler:(CDUnknownBlockType)arg1;
-- (id)connection;
 - (void)dealloc;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

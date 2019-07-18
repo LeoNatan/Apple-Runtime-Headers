@@ -16,7 +16,9 @@
 {
     struct CGRect _rect;
     NSString *_bundleIdentifier;
+    NSString *_elementIdentifier;
     NSString *_identifier;
+    _Bool _hasKeyboardFocus;
     SSHarvestedApplicationMetadata *_metadata;
     SSHarvestedApplicationDocument *_document;
 }
@@ -26,6 +28,8 @@
 @property(retain, nonatomic) SSHarvestedApplicationMetadata *metadata; // @synthesize metadata=_metadata;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool supportsMetadataCapture;
+@property(readonly, nonatomic) _Bool hasKeyboardFocus;
+@property(readonly, nonatomic) NSString *elementIdentifier;
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) NSString *bundleIdentifier;
 @property(readonly, nonatomic) struct CGRect rect;

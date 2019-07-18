@@ -24,14 +24,11 @@ __attribute__((visibility("hidden")))
     double _scrubberVerticalOffset;
 }
 
-+ (id)AV_indicatorForegroundColor;
-+ (id)AV_indicatorBackgroundColor;
 @property double scrubberVerticalOffset; // @synthesize scrubberVerticalOffset=_scrubberVerticalOffset;
 @property _Bool scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(retain) UIView *scrubberContainer; // @synthesize scrubberContainer=_scrubberContainer;
 @property(retain) NSLayoutConstraint *topScrubber; // @synthesize topScrubber=_topScrubber;
 - (void).cxx_destruct;
-- (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (void)transitionDidFinish:(_Bool)arg1 didComplete:(_Bool)arg2;
 - (void)transitionDidStart:(_Bool)arg1;
 - (_Bool)canEnterFullScreen;

@@ -33,7 +33,6 @@
 @property(readonly, nonatomic) EDPersistenceDatabaseJournalManager *journalManager; // @synthesize journalManager=_journalManager;
 - (void).cxx_destruct;
 - (void)addAdditionalCriteriaToCleanupActivity:(id)arg1;
-- (BOOL)allowCleanupActivity;
 - (void)finishJournalReconciliation:(unsigned long long)arg1;
 @property(readonly, nonatomic) BOOL protectedDataAvailable;
 @property(readonly, nonatomic) BOOL supportsJournaling;
@@ -47,7 +46,7 @@
 - (BOOL)_removeExistingDatabaseIDs:(id)arg1 withColumn:(id)arg2 connection:(id)arg3;
 - (void)_deleteDatabaseIDs:(id)arg1 fromTable:(id)arg2;
 - (id)_databaseIDsToDeleteForTable:(id)arg1;
-- (void)_scheduleCleanup;
+- (void)scheduleRecurringActivity;
 - (unsigned long long)_mergeTable:(id)arg1 connection:(id)arg2;
 - (unsigned long long)_mergeSchema:(id)arg1 connection:(id)arg2;
 - (unsigned long long)_reconcileJournalsWithSchema:(id)arg1 connection:(id)arg2;

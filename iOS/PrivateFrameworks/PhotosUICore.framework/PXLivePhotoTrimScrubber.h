@@ -25,6 +25,7 @@
         _Bool respondsToDidChangeLoupeRect;
         _Bool respondsToDidZoomToMinimumValueMaximumValue;
         _Bool respondsToDidUnzoom;
+        _Bool respondsToDidLayoutSubviews;
         _Bool respondsToDebugStartRect;
         _Bool respondsToDebugEndRect;
         _Bool respondsToDebugStartOffset;

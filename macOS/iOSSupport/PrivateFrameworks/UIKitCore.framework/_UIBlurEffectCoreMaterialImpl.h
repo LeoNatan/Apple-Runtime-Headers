@@ -6,16 +6,18 @@
 
 #import <UIKitCore/_UIBlurEffectImpl.h>
 
-@class UIBlurEffect;
+@class NSBundle, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _UIBlurEffectCoreMaterialImpl : _UIBlurEffectImpl
 {
     long long _style;
-    UIBlurEffect *_effect;
+    NSString *_lightMaterial;
+    NSString *_darkMaterial;
+    NSBundle *_bundle;
 }
 
-@property(nonatomic) UIBlurEffect *effect; // @synthesize effect=_effect;
+- (void).cxx_destruct;
 - (void)appendDescriptionTo:(id)arg1;
 - (BOOL)_needsUpdateForTransitionFromEnvironment:(id)arg1 toEnvironment:(id)arg2 usage:(long long)arg3;
 - (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(long long)arg3;
@@ -27,7 +29,9 @@ __attribute__((visibility("hidden")))
 - (long long)style;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)initWithStyle:(long long)arg1 tintColor:(id)arg2 invertAutomaticStyle:(BOOL)arg3;
+- (id)initWithLightMaterial:(id)arg1 darkMaterial:(id)arg2 bundle:(id)arg3;
+- (id)initWithStyle:(long long)arg1;
+- (void)encodeWithCoder:(id)arg1;
 
 @end
 

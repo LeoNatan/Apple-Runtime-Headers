@@ -7,7 +7,6 @@
 #import <UIKitCore/UIFocusEnvironment-Protocol.h>
 
 @class NSArray;
-@protocol UIFocusEnvironment;
 
 @protocol _UIFocusEnvironmentPrivate <UIFocusEnvironment>
 
@@ -18,7 +17,6 @@
 @property(nonatomic) _Bool areChildrenFocused;
 - (_Bool)_reversesLinearFocusWrapping;
 - (void)_setNeedsNonDeferredFocusUpdate;
-- (id <UIFocusEnvironment>)_parentFocusEnvironment;
 - (_Bool)_allowsFocusToLeaveViaHeading:(unsigned long long)arg1;
 @end
 

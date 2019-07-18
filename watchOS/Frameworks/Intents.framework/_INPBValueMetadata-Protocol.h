@@ -6,7 +6,7 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSString;
+@class NSString, _INPBConfidenceScore;
 
 @protocol _INPBValueMetadata <NSObject>
 @property(readonly, nonatomic) _Bool hasUuid;
@@ -21,6 +21,8 @@
 @property(copy, nonatomic) NSString *input;
 @property(nonatomic) _Bool hasConfirmed;
 @property(nonatomic) _Bool confirmed;
+@property(readonly, nonatomic) _Bool hasConfidenceScore;
+@property(retain, nonatomic) _INPBConfidenceScore *confidenceScore;
 @property(readonly, nonatomic) _Bool hasCanonicalValue;
 @property(copy, nonatomic) NSString *canonicalValue;
 - (int)StringAsRequiredEntitlements:(NSString *)arg1;

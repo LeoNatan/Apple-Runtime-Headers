@@ -8,11 +8,12 @@
 
 #import <NeutrinoCore/NUImageProperties-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSString, NSURL;
 @protocol NURAWImageProperties;
 
 @interface _NUImageProperties : NSObject <NUImageProperties>
 {
+    NSURL *_url;
     NSDictionary *_metadata;
     struct CGColorSpace *_colorSpace;
     long long _orientation;
@@ -33,6 +34,7 @@
 @property CDStruct_912cb5d2 size; // @synthesize size=_size;
 @property struct CGColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(retain) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(retain) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 

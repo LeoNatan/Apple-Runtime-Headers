@@ -20,6 +20,7 @@
 + (id)contextProtocol;
 @property(nonatomic) long long state; // @synthesize state=_state;
 - (id)_forwardEventToChildren:(id)arg1;
+- (id)handleTapAppLayoutEvent:(id)arg1;
 - (id)handleTetheredRemovalEvent:(id)arg1;
 - (id)handleAppExposeEvent:(id)arg1;
 - (id)handleTapOutsideToDismissEvent:(id)arg1;
@@ -37,6 +38,7 @@
 - (id)handleEvent:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)init;
+- (double)distanceToLeadingEdgeOfLeadingCardFromTrailingEdgeOfScreenWithVisibleIndexToStartSearch:(unsigned long long)arg1 numberOfRows:(unsigned long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

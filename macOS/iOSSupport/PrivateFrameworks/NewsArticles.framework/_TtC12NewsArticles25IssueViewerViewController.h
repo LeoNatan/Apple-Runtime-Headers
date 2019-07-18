@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+@property(nonatomic, readonly) UIViewController *childViewControllerForStatusBarHidden;
 
 @end
 

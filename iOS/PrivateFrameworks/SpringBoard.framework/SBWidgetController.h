@@ -27,7 +27,8 @@
 - (void)sidebarWidgetLearningAdvisorDidUpdate:(id)arg1;
 - (void)launchExtensionWithBundleID:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)widgetDiscoveryController:(id)arg1 didEndUsingStatusBarAssertion:(id)arg2;
-- (id)whiteStatusBarAssertionForWidgetDiscoveryController:(id)arg1;
+- (void)widgetDiscoveryController:(id)arg1 updateStatusBarAssertion:(id)arg2 withLegibilityStyle:(long long)arg3;
+- (id)statusBarAssertionForWidgetDiscoveryController:(id)arg1 legibilityStyle:(long long)arg2;
 - (_Bool)didPurgeNonASTCSnapshotsForWidgetDiscoveryController:(id)arg1;
 - (_Bool)didPurgeNonCAMLSnapshotsForWidgetDiscoveryController:(id)arg1;
 - (_Bool)widgetDiscoveryController:(id)arg1 shouldPurgeArchivedSnapshotsForWidgetWithBundleIdentifier:(id)arg2;
@@ -42,7 +43,6 @@
 - (_Bool)widgetDiscoveryControllerShouldIncludeInternalWidgets:(id)arg1;
 - (void)widgetDiscoveryController:(id)arg1 widgetWithBundleIdentifier:(id)arg2 didEncounterProblematicSnapshotAtURL:(id)arg3;
 @property(nonatomic) _Bool bootstrapFavoriteWidgets;
-- (_Bool)isWidgetExtensionVisible:(id)arg1;
 - (id)newWidgetGroupViewControllerWithSettings:(struct WGWidgetListSettings)arg1;
 - (void)_reloadWidgetPreferences;
 - (id)init;

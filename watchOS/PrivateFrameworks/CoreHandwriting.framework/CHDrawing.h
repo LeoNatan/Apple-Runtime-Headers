@@ -45,6 +45,7 @@
 - (void)addPoint:(struct CGPoint)arg1;
 - (struct CGRect)bounds;
 - (struct CGRect)strokeBoundsAtIndex:(unsigned int)arg1;
+- (id)drawingWithStrokesFromIndexSet:(id)arg1;
 - (id)indexesOfStrokesSmallerThanSize:(struct CGSize)arg1;
 - (unsigned int)strokeCount;
 - (struct CGPoint)pointForStrokeIndex:(unsigned int)arg1 pointIndex:(unsigned int)arg2;

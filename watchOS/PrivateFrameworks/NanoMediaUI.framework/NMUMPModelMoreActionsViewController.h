@@ -6,20 +6,23 @@
 
 #import <PepperUICore/PUICActionSheetController.h>
 
-@class MPModelObject, NMROrigin, NMUNowPlayingTitlesView, NMUTitlesActionSheetHeaderView, NSArray;
+@class MPModelObject, NMROrigin, NMUNowPlayingTitlesView, NMUTitlesActionSheetHeaderView, NSArray, UIViewController;
 
 @interface NMUMPModelMoreActionsViewController : PUICActionSheetController
 {
     NMUTitlesActionSheetHeaderView *_headerView;
     MPModelObject *_modelObject;
     NMROrigin *_origin;
+    UIViewController *_presentingContainerViewController;
     NSArray *_items;
 }
 
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
+@property(nonatomic) __weak UIViewController *presentingContainerViewController; // @synthesize presentingContainerViewController=_presentingContainerViewController;
 @property(readonly, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 @property(readonly, nonatomic) MPModelObject *modelObject; // @synthesize modelObject=_modelObject;
 - (void).cxx_destruct;
+- (void)_removePresentingContainerViewFromViewHierarchyIfNecessary;
 - (id)_headerView;
 - (id)groups;
 - (void)viewDidDisappear:(_Bool)arg1;

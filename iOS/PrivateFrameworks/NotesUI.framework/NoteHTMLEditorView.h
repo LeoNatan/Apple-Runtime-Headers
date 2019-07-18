@@ -21,7 +21,6 @@
     _Bool _hasAttachments;
     _Bool _editable;
     _Bool _editing;
-    _Bool _startEditingWhenViewLoads;
     _Bool _updatingContent;
     unsigned short _listStyle;
     id <NoteHTMLEditorViewDelegate> _delegate;
@@ -41,11 +40,11 @@
     ICSelectorDelayer *_updateContentDelayer;
 }
 
++ (id)baseHTMLString;
 @property(nonatomic) _Bool updatingContent; // @synthesize updatingContent=_updatingContent;
 @property(retain, nonatomic) ICSelectorDelayer *updateContentDelayer; // @synthesize updateContentDelayer=_updateContentDelayer;
 @property(copy, nonatomic) NSArray *attachmentsToLoad; // @synthesize attachmentsToLoad=_attachmentsToLoad;
 @property(copy, nonatomic) NSString *htmlStringToLoad; // @synthesize htmlStringToLoad=_htmlStringToLoad;
-@property(nonatomic) _Bool startEditingWhenViewLoads; // @synthesize startEditingWhenViewLoads=_startEditingWhenViewLoads;
 @property(nonatomic) unsigned short listStyle; // @synthesize listStyle=_listStyle;
 @property(nonatomic) long long selectionLength; // @synthesize selectionLength=_selectionLength;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
@@ -66,19 +65,19 @@
 - (void)webView:(id)arg1 stopURLSchemeTask:(id)arg2;
 - (void)webView:(id)arg1 startURLSchemeTask:(id)arg2;
 - (void)userContentController:(id)arg1 didReceiveScriptMessage:(id)arg2;
+- (void)webViewWebContentProcessDidTerminate:(id)arg1;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
-- (void)_webView:(id)arg1 dataInteractionOperationWasHandled:(_Bool)arg2 forSession:(id)arg3 itemProviders:(id)arg4;
+- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)_webView:(id)arg1 performDataInteractionOperationWithItemProviders:(id)arg2;
+- (long long)_webView:(id)arg1 dataOwnerForDropSession:(id)arg2;
+- (long long)_webView:(id)arg1 dataOwnerForDragSession:(id)arg2;
 - (void)_webView:(id)arg1 didStartInputSession:(id)arg2;
 - (_Bool)_webView:(id)arg1 focusShouldStartInputSession:(id)arg2;
 - (void)menuControllerDidHide:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (_Bool)isFirstResponder;
-- (_Bool)resignFirstResponder;
-- (_Bool)canResignFirstResponder;
-- (_Bool)becomeFirstResponder;
-- (_Bool)canBecomeFirstResponder;
-- (void)setSelectedRange:(struct _NSRange)arg1;
 - (void)setSelectionToEnd;
 - (void)setSelectionToStart;
 - (struct CGRect)rectForSelection;
@@ -91,6 +90,8 @@
 - (void)updateContent;
 - (void)stopEditing;
 - (void)startEditing;
+- (void)adoptEditableState;
+- (void)updateDataDetectors;
 - (void)updateMenuController;
 - (void)replaceSelectionWithHTMLString:(id)arg1;
 - (void)undoablyRemoveAttachmentPresentations:(id)arg1 undoManager:(id)arg2;
@@ -98,11 +99,15 @@
 - (void)replaceSelectionWithAttachmentPresentation:(id)arg1;
 - (id)attachmentInfoDictionaryForAttachmentPresentation:(id)arg1;
 - (id)contentAsPasteboardItems;
+- (void)insertLinkWithURL:(id)arg1 title:(id)arg2;
+- (void)setEnableShiftNewlinesInSmartLists:(_Bool)arg1;
+- (void)setEnableSmartLists:(_Bool)arg1;
 - (void)setHtmlString:(id)arg1 attachments:(id)arg2;
 @property(nonatomic) double textZoomFactor;
 @property(readonly, nonatomic) WebArchive *webArchive;
 @property(readonly, nonatomic) UIViewPrintFormatter *viewPrintFormatter;
 - (id)webViewConfiguration;
+- (void)layoutSubviews;
 - (void)setupWebView;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

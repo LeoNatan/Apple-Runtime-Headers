@@ -169,6 +169,7 @@
 - (id)_layoutInfoForCurrentKeyboardState;
 - (id)_layoutInfoForCurrentKeyboardStateAndHostingWindow:(id)arg1;
 - (id)_layoutInfoFromLayoutInfo:(id)arg1 forCurrentKeyboardStateAndHostingWindow:(id)arg2;
+- (struct UIEdgeInsets)_effectivePopoverLayoutMargins;
 - (BOOL)_attemptsToAvoidKeyboard;
 - (void)_setGesturesEnabled:(BOOL)arg1;
 - (void)dimmingViewWasTapped:(id)arg1 withDismissCompletion:(CDUnknownBlockType)arg2;

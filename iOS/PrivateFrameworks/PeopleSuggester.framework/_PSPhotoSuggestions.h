@@ -11,11 +11,9 @@
 }
 
 + (id)photoSuggestedPeopleFromAttachments:(id)arg1;
-+ (id)partitionPeopleSuggestionsFromPhotosByAssetPresenceInAttachments:(id)arg1 photoSuggestedPeople:(id)arg2;
-+ (id)suggestionForPhotoContact:(id)arg1 cdInteraction:(id)arg2 reason:(id)arg3;
-+ (id)candidateContactsFromPhotoSuggestedPeople:(id)arg1;
-+ (id)singlePersonInPhoto:(id)arg1;
-+ (_Bool)peoplePresentInPhotos:(id)arg1;
++ (id)partitionPeopleSuggestionProxiesFromPhotosByAssetPresenceInAttachments:(id)arg1 photoSuggestedPeople:(id)arg2 contactIDsInAssets:(id)arg3;
++ (id)suggestionTemplateForPhotoContactId:(id)arg1 cdInteraction:(id)arg2 reason:(id)arg3 reasonType:(id)arg4;
++ (id)contactIDsByAssetPresenceInAttachments:(id)arg1;
 
 @end
 

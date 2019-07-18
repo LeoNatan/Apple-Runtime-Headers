@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)slideNodeWillBeRemovedFromDocument:(id)arg1;
 - (void)slideNodeWasAddedToDocument:(id)arg1;
 - (id)eventTrackByReplacingSegmentAfterTime:(double)arg1 withEventTrack:(id)arg2;
-- (id)initWithContext:(id)arg1;
+- (id)description;
 - (id)initWithContext:(id)arg1 type:(id)arg2 events:(id)arg3;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;

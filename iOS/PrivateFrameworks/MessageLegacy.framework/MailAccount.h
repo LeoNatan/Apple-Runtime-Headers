@@ -101,7 +101,6 @@
 + (id)mailAccountsWithError:(id *)arg1;
 + (id)mailAccounts;
 + (void)reloadAccounts;
-+ (id)_loadDataAccessAccountsWithError:(id *)arg1;
 + (id)_loadAllAccountsWithOptions:(unsigned long long)arg1 error:(id *)arg2;
 + (void)setMailAccountLoadOptions:(unsigned long long)arg1;
 + (id)existingAccountForUniqueID:(id)arg1;

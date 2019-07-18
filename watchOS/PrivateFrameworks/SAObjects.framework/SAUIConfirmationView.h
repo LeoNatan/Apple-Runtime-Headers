@@ -14,6 +14,9 @@
 
 + (id)confirmationViewWithDictionary:(id)arg1 context:(id)arg2;
 + (id)confirmationView;
+@property(copy, nonatomic) NSString *title;
+@property(copy, nonatomic) NSString *subtitle;
+@property(copy, nonatomic) NSString *style;
 @property(copy, nonatomic) NSString *denyText;
 @property(copy, nonatomic) NSArray *denyCommands;
 @property(copy, nonatomic) NSString *confirmText;

@@ -10,15 +10,17 @@
 
 @interface HMDCameraProfileSettingsModel : HMBModel
 {
+    unsigned long long _currentAccessMode;
 }
 
 + (id)hmbProperties;
+@property unsigned long long currentAccessMode; // @synthesize currentAccessMode=_currentAccessMode;
 @property(retain) HMDBulletinBoardNotification *smartBulletinBoardNotification;
+@property BOOL periodicSnapshotsAllowed;
 @property BOOL snapshotsAllowed;
 @property BOOL nightVisionModeEnabled;
 @property BOOL accessModeIndicatorEnabled;
 @property unsigned long long recordingEventTriggers;
-@property unsigned long long currentAccessMode;
 @property unsigned long long accessModeNotAtHome;
 @property unsigned long long accessModeAtHome;
 
@@ -26,8 +28,8 @@
 @property(copy) NSNumber *accessModeAtHomeField; // @dynamic accessModeAtHomeField;
 @property(copy) NSNumber *accessModeIndicatorEnabledField; // @dynamic accessModeIndicatorEnabledField;
 @property(copy) NSNumber *accessModeNotAtHomeField; // @dynamic accessModeNotAtHomeField;
-@property(copy) NSNumber *currentAccessModeField; // @dynamic currentAccessModeField;
 @property(copy) NSNumber *nightVisionModeEnabledField; // @dynamic nightVisionModeEnabledField;
+@property(copy) NSNumber *periodicSnapshotsAllowedField; // @dynamic periodicSnapshotsAllowedField;
 @property(copy) NSNumber *recordingEventTriggersField; // @dynamic recordingEventTriggersField;
 @property(copy) NSData *smartBulletinBoardNotificationDataField; // @dynamic smartBulletinBoardNotificationDataField;
 @property(copy) NSNumber *snapshotsAllowedField; // @dynamic snapshotsAllowedField;

@@ -17,23 +17,27 @@
     NSMutableArray *_alightNotificationFeedbacks;
     NSData *_directionResponseID;
     NSMutableArray *_guidanceFeedbacks;
+    NSMutableArray *_modalitys;
     NSMutableArray *_stepFeedbacks;
     NSMutableArray *_trafficRerouteFeedbacks;
     struct {
         unsigned int read_alightNotificationFeedbacks:1;
         unsigned int read_directionResponseID:1;
         unsigned int read_guidanceFeedbacks:1;
+        unsigned int read_modalitys:1;
         unsigned int read_stepFeedbacks:1;
         unsigned int read_trafficRerouteFeedbacks:1;
         unsigned int wrote_alightNotificationFeedbacks:1;
         unsigned int wrote_directionResponseID:1;
         unsigned int wrote_guidanceFeedbacks:1;
+        unsigned int wrote_modalitys:1;
         unsigned int wrote_stepFeedbacks:1;
         unsigned int wrote_trafficRerouteFeedbacks:1;
     } _flags;
 }
 
 + (_Bool)isValid:(id)arg1;
++ (Class)modalityType;
 + (Class)guidanceFeedbackType;
 + (Class)alightNotificationFeedbackType;
 + (Class)trafficRerouteFeedbackType;
@@ -49,6 +53,13 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)modalityAtIndex:(unsigned int)arg1;
+- (unsigned int)modalitysCount;
+- (void)_addNoFlagsModality:(id)arg1;
+- (void)addModality:(id)arg1;
+- (void)clearModalitys;
+@property(retain, nonatomic) NSMutableArray *modalitys;
+- (void)_readModalitys;
 - (id)guidanceFeedbackAtIndex:(unsigned int)arg1;
 - (unsigned int)guidanceFeedbacksCount;
 - (void)_addNoFlagsGuidanceFeedback:(id)arg1;

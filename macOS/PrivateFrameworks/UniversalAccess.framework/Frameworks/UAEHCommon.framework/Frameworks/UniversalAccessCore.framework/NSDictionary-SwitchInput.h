@@ -25,6 +25,7 @@
 - (id)uaSwitch_locationID;
 - (unsigned long long)uaSwitch_modifiers;
 - (unsigned short)uaSwitch_keyCode;
+- (unsigned long long)uaSwitch_buttonNumber;
 - (id)uaSwitch_switchValue;
 - (id)uaSwitch_triggerType;
 - (id)uaSwitch_UUID;

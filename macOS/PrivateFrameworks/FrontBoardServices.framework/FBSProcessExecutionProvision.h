@@ -16,10 +16,10 @@
 {
     id <FBSProcessInternal> _process;
     BOOL _activated;
-    NSError *_error;
     NSObject<OS_dispatch_queue> *_delegateCalloutQueue;
     BOOL _monitoring;
     BOOL _violated;
+    NSError *_error;
     id <FBSProcessExecutionProvisionDelegate> _delegate;
 }
 

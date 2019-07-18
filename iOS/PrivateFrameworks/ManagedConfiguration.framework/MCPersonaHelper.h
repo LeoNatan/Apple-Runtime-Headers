@@ -10,6 +10,10 @@
 {
 }
 
++ (id)fetchDirtyPersonaIDs;
++ (void)untrackAllDirtyPersonas;
++ (void)untrackDirtyPersona:(id)arg1;
++ (void)trackDirtyPersona:(id)arg1;
 + (_Bool)personaWithUniqueIdentifierExists:(id)arg1;
 + (id)currentPersonaID;
 + (id)performBlockUnderPersona:(id)arg1 block:(CDUnknownBlockType)arg2;

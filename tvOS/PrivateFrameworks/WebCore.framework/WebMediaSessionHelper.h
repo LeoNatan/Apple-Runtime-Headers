@@ -17,6 +17,8 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)carPlayIsConnectedDidChange:(id)arg1;
+- (void)carPlayServerDied:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)wirelessRoutesAvailableDidChange:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;

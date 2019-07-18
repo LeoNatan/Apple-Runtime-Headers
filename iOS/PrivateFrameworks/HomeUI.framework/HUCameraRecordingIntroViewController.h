@@ -25,6 +25,7 @@
 @property(nonatomic) unsigned long long variant; // @synthesize variant=_variant;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)viewDidLoad;
 - (id)hu_preloadContent;
 - (void)_buttonTwo:(id)arg1;
 - (void)_buttonOne:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSData, NSString;
 
 @interface CSSpIdVTTextDependentSpeakerRecognizer : NSObject
 {
@@ -14,13 +14,15 @@
     float _lastRequestSatScore;
     NSString *_tdSATModelFilePath;
     long long _getSATVectorCount;
+    NSData *_speakerVector;
 }
 
 + (_Bool)psrTdAssetExistsAtResourcePath:(id)arg1;
+@property(retain, nonatomic) NSData *speakerVector; // @synthesize speakerVector=_speakerVector;
 @property(readonly, nonatomic) float lastRequestSatScore; // @synthesize lastRequestSatScore=_lastRequestSatScore;
-@property(readonly, nonatomic) _Bool tdPsrCanProcessRequest; // @synthesize tdPsrCanProcessRequest=_tdPsrCanProcessRequest;
 @property(readonly, nonatomic) long long getSATVectorCount; // @synthesize getSATVectorCount=_getSATVectorCount;
 @property(readonly, nonatomic) NSString *tdSATModelFilePath; // @synthesize tdSATModelFilePath=_tdSATModelFilePath;
+@property(readonly, nonatomic) _Bool tdPsrCanProcessRequest; // @synthesize tdPsrCanProcessRequest=_tdPsrCanProcessRequest;
 - (void).cxx_destruct;
 - (void)logWithAudioFilepath:(id)arg1;
 - (void)deleteVectorAtIndex:(int)arg1;

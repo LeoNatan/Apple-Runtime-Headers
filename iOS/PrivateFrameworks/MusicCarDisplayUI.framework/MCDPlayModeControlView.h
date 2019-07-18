@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class MCDPlayModeButton, MCDRepeatButton, NSArray;
+@class MCDPlayModeButton, MCDRepeatButton, NSArray, UILayoutGuide;
 
 @interface MCDPlayModeControlView : UIView
 {
@@ -17,8 +17,12 @@
     MCDPlayModeButton *_addToLibraryButton;
     MCDPlayModeButton *_playbackRateButton;
     NSArray *_activeButtonLayoutConstraints;
+    UILayoutGuide *_leadingGuide;
+    UILayoutGuide *_trailingGuide;
 }
 
+@property(retain, nonatomic) UILayoutGuide *trailingGuide; // @synthesize trailingGuide=_trailingGuide;
+@property(retain, nonatomic) UILayoutGuide *leadingGuide; // @synthesize leadingGuide=_leadingGuide;
 @property(retain, nonatomic) NSArray *activeButtonLayoutConstraints; // @synthesize activeButtonLayoutConstraints=_activeButtonLayoutConstraints;
 @property(nonatomic) _Bool fuseSubscriberLayout; // @synthesize fuseSubscriberLayout=_fuseSubscriberLayout;
 @property(readonly, nonatomic) MCDPlayModeButton *playbackRateButton; // @synthesize playbackRateButton=_playbackRateButton;

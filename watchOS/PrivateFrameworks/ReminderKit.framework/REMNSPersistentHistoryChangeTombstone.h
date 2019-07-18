@@ -22,6 +22,7 @@
 - (id)shareeAddress;
 - (id)shareeDisplayName;
 - (id)shareeOwningListIdentifier;
+- (id)daIsEventOnlyContainer;
 - (id)externalIdentifier;
 - (id)objectIdentifier;
 - (id)initWithDictionary:(id)arg1;

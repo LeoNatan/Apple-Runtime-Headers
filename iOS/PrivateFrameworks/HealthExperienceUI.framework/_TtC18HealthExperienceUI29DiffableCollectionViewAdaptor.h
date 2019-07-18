@@ -11,7 +11,7 @@
     // Error parsing type: , name: backingDataSource
     // Error parsing type: , name: collectionView
     // Error parsing type: , name: diffableDataSource
-    // Error parsing type: , name: placeholderReloader
+    // Error parsing type: , name: loaded
 }
 
 @end

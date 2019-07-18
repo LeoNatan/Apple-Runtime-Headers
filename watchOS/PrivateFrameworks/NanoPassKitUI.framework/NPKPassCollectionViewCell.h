@@ -11,7 +11,7 @@
 #import <NanoPassKitUI/NPKStandardPassViewDelegate-Protocol.h>
 #import <NanoPassKitUI/UIScrollViewDelegate-Protocol.h>
 
-@class NPKActivatingUIAssertion, NPKGenericPassView, NPKPassView, NPKPaymentStatusView, NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator, NSMutableArray, NSString, PKPass, UIImageView, UIScrollView, UITapGestureRecognizer;
+@class NPKActivatingUIAssertion, NPKGenericPassView, NPKPassView, NPKPaymentStatusView, NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator, NSMutableArray, NSString, PKPass, UIImageView, UIScrollView, UITapGestureRecognizer, UIView;
 @protocol NPKPassActionControllerProtocol, NPKPassCollectionViewCellDelegate;
 
 @interface NPKPassCollectionViewCell : UICollectionViewCell <UIScrollViewDelegate, NPKPassViewDelegate, NPKScrollOverFixedContentFadeAndScaleAnimationCoordinatorDelegate, NPKStandardPassViewDelegate>
@@ -23,6 +23,7 @@
     _Bool _showShadow;
     _Bool _shrinkCardView;
     _Bool _isHelperCardCell;
+    _Bool _passHasForeignReferences;
     id <NPKPassCollectionViewCellDelegate> _delegate;
     id <NPKPassActionControllerProtocol> _actionControllerDelegate;
     PKPass *_pass;
@@ -34,11 +35,14 @@
     float _contentHeight;
     UITapGestureRecognizer *_tapGestureRecognizer;
     UIImageView *_rasterizedPassImageView;
+    UIView *_opaqueBackgroundView;
     NSMutableArray *_scrollViewDidEndScrollingAnimationBlocks;
 }
 
 + (Class)_contentViewClass;
 @property(retain, nonatomic) NSMutableArray *scrollViewDidEndScrollingAnimationBlocks; // @synthesize scrollViewDidEndScrollingAnimationBlocks=_scrollViewDidEndScrollingAnimationBlocks;
+@property(nonatomic) _Bool passHasForeignReferences; // @synthesize passHasForeignReferences=_passHasForeignReferences;
+@property(retain, nonatomic) UIView *opaqueBackgroundView; // @synthesize opaqueBackgroundView=_opaqueBackgroundView;
 @property(retain, nonatomic) UIImageView *rasterizedPassImageView; // @synthesize rasterizedPassImageView=_rasterizedPassImageView;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(nonatomic) float contentHeight; // @synthesize contentHeight=_contentHeight;
@@ -65,8 +69,10 @@
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
+@property(nonatomic) _Bool showOpaqueBackgroundView;
 - (void)showStatusBarAnimated:(_Bool)arg1;
 - (void)didSelectPass;
+- (void)willSelectPass;
 - (void)didScrollToPass;
 - (void)didScrollAwayFromPass;
 - (void)scrollToBarcode;

@@ -16,7 +16,8 @@
     UILabel *_estimatedChargeLabel;
     UITextView *_cancellationView;
     UILabel *_interestLabel;
-    NSDateFormatter *_dateFormatter;
+    NSDateFormatter *_productDateFormatter;
+    NSDateFormatter *_localDateFormatter;
     NSDateFormatter *_localTimeFormatter;
     PKAccount *_account;
     NSNumberFormatter *_amountFormatter;

@@ -23,9 +23,11 @@
     unsigned long long _mmcsEncryptionSupport;
     NSString *_encryptionServiceName;
     CKUploadRequestConfiguration *_uploadRequestConfiguration;
+    NSString *_personaIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) NSString *personaIdentifier; // @synthesize personaIdentifier=_personaIdentifier;
 @property(retain, nonatomic) CKUploadRequestConfiguration *uploadRequestConfiguration; // @synthesize uploadRequestConfiguration=_uploadRequestConfiguration;
 @property(nonatomic) BOOL forceEnableReadOnlyManatee; // @synthesize forceEnableReadOnlyManatee=_forceEnableReadOnlyManatee;
 @property(nonatomic) BOOL enforceNamedOperationGroups; // @synthesize enforceNamedOperationGroups=_enforceNamedOperationGroups;

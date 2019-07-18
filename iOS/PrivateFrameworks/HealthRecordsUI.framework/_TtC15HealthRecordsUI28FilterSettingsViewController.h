@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithStyle:(long long)arg1;
+- (id)initWithUsingInsetStyling:(_Bool)arg1;
 - (void)doneButtonTapped;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;

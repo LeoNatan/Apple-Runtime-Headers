@@ -24,6 +24,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)jsonDictionaryRepresentation;
 - (id)initWithDictionary:(id)arg1;
 
 @end

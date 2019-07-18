@@ -42,6 +42,9 @@
 - (float)batteryLevel;
 - (unsigned int)deviceSubtype;
 - (unsigned int)deviceType;
+- (id)availableBluetoothListeningModes;
+- (void)setCurrentBluetoothListeningMode:(id)arg1;
+- (id)currentBluetoothListeningMode;
 - (_Bool)isPickedOnPairedDevice;
 - (_Bool)isDeviceGroupable;
 - (_Bool)isProxyGroupPlayer;

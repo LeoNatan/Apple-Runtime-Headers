@@ -6,41 +6,33 @@
 
 #import <objc/NSObject.h>
 
-@class CAMeshTransform, NSArray, UIColor, UIKBTree, UIKeyboardKeyplaneSnapshotView;
+@class UIColor, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIKeyboardFloatingTransitionState : NSObject
 {
-    UIKBTree *_keyplane;
-    NSArray *_geometries;
-    UIKeyboardKeyplaneSnapshotView *_keyplaneView;
+    UIView *_inputView;
     float _borderWidth;
     UIColor *_borderColor;
     float _cornerRadius;
-    CAMeshTransform *_initialMesh;
-    CAMeshTransform *_finalMesh;
     struct CGPoint _scale;
-    struct CGRect _keyplaneViewFrame;
+    struct CGRect _inputViewFrame;
     struct CGRect _platterViewFrame;
-    struct UIEdgeInsets _contentInsets;
-    struct CGAffineTransform _initialKeyplaneViewTransform;
-    struct CGAffineTransform _finalKeyplaneViewTransform;
+    struct UIEdgeInsets _platterInsets;
+    struct CGAffineTransform _initialInputViewTransform;
+    struct CGAffineTransform _finalInputViewTransform;
 }
 
-@property(retain, nonatomic) CAMeshTransform *finalMesh; // @synthesize finalMesh=_finalMesh;
-@property(retain, nonatomic) CAMeshTransform *initialMesh; // @synthesize initialMesh=_initialMesh;
 @property(nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(copy, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(nonatomic) float borderWidth; // @synthesize borderWidth=_borderWidth;
-@property(nonatomic) struct CGAffineTransform finalKeyplaneViewTransform; // @synthesize finalKeyplaneViewTransform=_finalKeyplaneViewTransform;
-@property(nonatomic) struct CGAffineTransform initialKeyplaneViewTransform; // @synthesize initialKeyplaneViewTransform=_initialKeyplaneViewTransform;
+@property(nonatomic) struct CGAffineTransform finalInputViewTransform; // @synthesize finalInputViewTransform=_finalInputViewTransform;
+@property(nonatomic) struct CGAffineTransform initialInputViewTransform; // @synthesize initialInputViewTransform=_initialInputViewTransform;
 @property(nonatomic) struct CGPoint scale; // @synthesize scale=_scale;
-@property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
+@property(nonatomic) struct UIEdgeInsets platterInsets; // @synthesize platterInsets=_platterInsets;
 @property(nonatomic) struct CGRect platterViewFrame; // @synthesize platterViewFrame=_platterViewFrame;
-@property(nonatomic) struct CGRect keyplaneViewFrame; // @synthesize keyplaneViewFrame=_keyplaneViewFrame;
-@property(retain, nonatomic) UIKeyboardKeyplaneSnapshotView *keyplaneView; // @synthesize keyplaneView=_keyplaneView;
-@property(retain, nonatomic) NSArray *geometries; // @synthesize geometries=_geometries;
-@property(copy, nonatomic) UIKBTree *keyplane; // @synthesize keyplane=_keyplane;
+@property(nonatomic) struct CGRect inputViewFrame; // @synthesize inputViewFrame=_inputViewFrame;
+@property(retain, nonatomic) UIView *inputView; // @synthesize inputView=_inputView;
 - (void).cxx_destruct;
 
 @end

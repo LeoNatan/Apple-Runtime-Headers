@@ -35,12 +35,14 @@
 @property(nonatomic) _Bool shouldResizeImageToFit; // @synthesize shouldResizeImageToFit=_shouldResizeImageToFit;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (void)_updateCheckmarkColor;
 - (id)_subtitleFont;
 - (id)_titleFont;
 - (void)_updateAccessoryViews;
 - (void)_updateFonts;
 - (_Bool)_hasAccessibilityLargeText;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)tintColorDidChange;
 - (void)layoutSubviews;
 - (struct CGSize)_sizeThatFitsExcludingImage:(struct CGSize)arg1;

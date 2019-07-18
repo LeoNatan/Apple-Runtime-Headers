@@ -12,11 +12,15 @@
 {
     _Bool _shouldInsetAllPhotoDetailsContent;
     _Bool __shouldUseMiniMargins;
+    unsigned long long _options;
     long long _sizeClass;
+    long long _sizeSubclass;
     long long _layoutOrientation;
+    long long _layoutDirection;
     long long _userInterfaceIdiom;
     long long _userInterfaceFeature;
     long long _userInterfaceStyle;
+    long long _userInterfaceLevel;
     long long _contentSizeCategory;
     double _displayScale;
     NSArray *_collectionTileImageOverlaySpecs;
@@ -40,12 +44,16 @@
 @property(readonly, nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsets; // @synthesize safeAreaInsets=_safeAreaInsets;
 @property(readonly, nonatomic) long long contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
+@property(readonly, nonatomic) long long userInterfaceLevel; // @synthesize userInterfaceLevel=_userInterfaceLevel;
 @property(readonly, nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(readonly, nonatomic) long long userInterfaceFeature; // @synthesize userInterfaceFeature=_userInterfaceFeature;
 @property(readonly, nonatomic) long long userInterfaceIdiom; // @synthesize userInterfaceIdiom=_userInterfaceIdiom;
 @property(readonly, nonatomic) struct CGSize layoutReferenceSize; // @synthesize layoutReferenceSize=_layoutReferenceSize;
+@property(readonly, nonatomic) long long layoutDirection; // @synthesize layoutDirection=_layoutDirection;
 @property(readonly, nonatomic) long long layoutOrientation; // @synthesize layoutOrientation=_layoutOrientation;
+@property(readonly, nonatomic) long long sizeSubclass; // @synthesize sizeSubclass=_sizeSubclass;
 @property(readonly, nonatomic) long long sizeClass; // @synthesize sizeClass=_sizeClass;
+@property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 - (void).cxx_destruct;
 - (id)_textAttributesForFontName:(id)arg1 fontSize:(double)arg2 lineHeight:(double)arg3 tracking:(double)arg4 stroke:(double)arg5;
 - (long long)_capitalizationStyleFromTextAttributes:(id)arg1 defaultCapitalizationStyle:(long long)arg2;

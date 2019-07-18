@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
 @property(readonly, nonatomic) __weak id <IKAppMediaItem> appMediaItem; // @synthesize appMediaItem=_appMediaItem;
 - (void).cxx_destruct;
+- (void)_evaluateDelegateBlockSync:(CDUnknownBlockType)arg1;
 - (void)_resolveArtworkImageURL;
 - (void)loadKeyDataForURL:(id)arg1 keyRequestData:(id)arg2 withCallback:(CDUnknownBlockType)arg3;
 - (void)loadContentIdentifierDataForURL:(id)arg1 withCallback:(CDUnknownBlockType)arg2;

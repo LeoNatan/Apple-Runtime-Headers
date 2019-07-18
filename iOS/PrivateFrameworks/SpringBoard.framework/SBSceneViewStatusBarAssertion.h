@@ -13,8 +13,8 @@
 @interface SBSceneViewStatusBarAssertion : NSObject <BSInvalidatable>
 {
     NSHashTable *_observers;
-    _Bool _nubViewHidden;
     _Bool _shouldDrawStatusBarInsideSceneView;
+    long long _nubViewHidden;
     SBAppStatusBarSettings *_settings;
     unsigned long long _level;
 }
@@ -22,7 +22,7 @@
 @property(readonly, nonatomic) unsigned long long level; // @synthesize level=_level;
 @property(nonatomic) _Bool shouldDrawStatusBarInsideSceneView; // @synthesize shouldDrawStatusBarInsideSceneView=_shouldDrawStatusBarInsideSceneView;
 @property(copy, nonatomic) SBAppStatusBarSettings *settings; // @synthesize settings=_settings;
-@property(nonatomic, getter=isNubViewHidden) _Bool nubViewHidden; // @synthesize nubViewHidden=_nubViewHidden;
+@property(nonatomic) long long nubViewHidden; // @synthesize nubViewHidden=_nubViewHidden;
 - (void).cxx_destruct;
 - (void)_notifyObserversDidInvalidate;
 - (void)_notifyObserversDidUpdate;
@@ -31,8 +31,8 @@
 - (void)invalidate;
 @property(nonatomic, getter=isStatusBarHidden) _Bool statusBarHidden;
 - (void)dealloc;
-- (id)initWithStatusBarSettings:(id)arg1 nubViewHidden:(_Bool)arg2 atLevel:(unsigned long long)arg3;
-- (id)initWithStatusBarHidden:(_Bool)arg1 nubViewHidden:(_Bool)arg2 atLevel:(unsigned long long)arg3;
+- (id)initWithStatusBarSettings:(id)arg1 nubViewHidden:(long long)arg2 atLevel:(unsigned long long)arg3;
+- (id)initWithStatusBarHidden:(_Bool)arg1 nubViewHidden:(long long)arg2 atLevel:(unsigned long long)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

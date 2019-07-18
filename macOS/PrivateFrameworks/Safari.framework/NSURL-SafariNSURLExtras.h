@@ -43,6 +43,7 @@
 - (BOOL)safari_isReaderURL;
 - (BOOL)safari_isHistoryURL;
 - (BOOL)safari_isBookmarksURL;
+- (BOOL)safari_isNativeContentURL;
 - (BOOL)safari_isMailToURL;
 - (BOOL)safari_isJavaScriptURL;
 - (BOOL)safari_isErrorPageResourcesURL;

@@ -62,8 +62,6 @@
 - (void)_configureForEditMode:(int)arg1;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (_Bool)_curtainViewVisible;
-- (void)_fadeFromCurtainViewWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_fadeToCurtainViewWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_hideCurtainView;
 - (void)_showCurtainView;
 - (void)handleScreenBlanked;

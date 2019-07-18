@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HealthExperienceUI/_TtC18HealthExperienceUI25DataTypeMutableDataSource.h>
+#import "_$s16HealthExperience22MutableArrayDataSourceCN.h"
 
-@interface _TtCE18HealthExperienceUICSo21HKActivitySummaryType36ShowOtherActivitySummariesDataSource : _TtC18HealthExperienceUI25DataTypeMutableDataSource
+@interface _TtCE18HealthExperienceUICSo21HKActivitySummaryType36ShowOtherActivitySummariesDataSource : _$s16HealthExperience22MutableArrayDataSourceCN
 {
 }
 

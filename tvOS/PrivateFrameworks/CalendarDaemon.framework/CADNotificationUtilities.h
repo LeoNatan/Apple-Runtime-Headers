@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
 + (id)_stringForNotificationType:(int)arg1;
 + (_Bool)_storeIsDelegate:(const void *)arg1;
 + (void)_logNotificationCountsForNotificationTypes:(id)arg1;
-+     // Error parsing type: B40@0:8r^v16d24^{CalDatabase={__CFRuntimeBase=QAQ}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=q[56c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=q[56c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}32, name: _event:hasOccurrenceEndingAfterDate:database:
++     // Error parsing type: B40@0:8r^v16d24^{CalDatabase={__CFRuntimeBase=QAQ}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=q[56c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=q[56c]}B^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}32, name: _event:hasOccurrenceEndingAfterDate:database:
 + (_Bool)_shouldSkipNotificationForStore:(const void *)arg1 forSourceWithExternalIdentifier:(id)arg2 excludingDelegateSources:(_Bool)arg3 filteredByShowsNotificationsFlag:(_Bool)arg4;
 + (_Bool)storeIsReadOnlyDelegate:(const void *)arg1;
-+     // Error parsing type: v48@0:8^{CalDatabase={__CFRuntimeBase=QAQ}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=q[56c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=q[56c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}16@24B32B36@?40, name: CADDatabaseGetEventNotificationItemsWithDatabase:forSourceWithExternalIdentifier:excludingDelegateSources:filteredByShowsNotificationsFlag:reply:
++     // Error parsing type: v48@0:8^{CalDatabase={__CFRuntimeBase=QAQ}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=q[56c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=q[56c]}B^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}16@24B32B36@?40, name: CADDatabaseGetEventNotificationItemsWithDatabase:forSourceWithExternalIdentifier:excludingDelegateSources:filteredByShowsNotificationsFlag:reply:
 
 @end
 

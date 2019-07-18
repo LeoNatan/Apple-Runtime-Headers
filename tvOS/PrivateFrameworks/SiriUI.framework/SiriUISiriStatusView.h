@@ -42,6 +42,7 @@
     id <SiriUISiriStatusViewAnimationDelegate> _animationDelegate;
 }
 
++ (double)glyphHeightForScreen:(id)arg1;
 + (struct CGRect)activeFrameForScreen:(id)arg1 frame:(struct CGRect)arg2 safeAreaInsets:(struct UIEdgeInsets)arg3;
 @property(nonatomic) __weak id <SiriUISiriStatusViewAnimationDelegate> animationDelegate; // @synthesize animationDelegate=_animationDelegate;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;

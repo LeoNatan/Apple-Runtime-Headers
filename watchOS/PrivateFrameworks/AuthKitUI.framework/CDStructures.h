@@ -11,8 +11,8 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 #pragma mark Named Structures
 
 struct CGPoint {
-    float _field1;
-    float _field2;
+    float x;
+    float y;
 };
 
 struct CGRect {
@@ -25,6 +25,11 @@ struct CGSize {
     float height;
 };
 
+struct CLLocationCoordinate2D {
+    double latitude;
+    double longitude;
+};
+
 struct UIEdgeInsets {
     float _field1;
     float _field2;
@@ -35,5 +40,10 @@ struct UIEdgeInsets {
 struct _NSRange {
     unsigned int _field1;
     unsigned int _field2;
+};
+
+struct mach_timebase_info {
+    unsigned int numer;
+    unsigned int denom;
 };
 

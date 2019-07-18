@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 + (id)selectionPathWithType:(id)arg1 name:(id)arg2 arguments:(id)arg3;
 + (id)seriesValueLabelSelectionPathWithSeriesIndex:(unsigned long long)arg1;
 + (id)seriesSelectionPathWithSeriesIndex:(unsigned long long)arg1;
++ (id)seriesEditModeSelectionPath;
 + (id)seriesSymbolsSelectionPathWithSeriesIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) TSCHSelectionPath *subSelection; // @synthesize subSelection=mSubSelection;
 @property(readonly, nonatomic) TSCHSelectionPathType *pathType; // @synthesize pathType=mPathType;

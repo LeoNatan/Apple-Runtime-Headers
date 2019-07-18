@@ -26,6 +26,7 @@
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemModulesForHome:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
+- (id)networkRouterItemForProfile:(id)arg1;
 - (_Bool)isItemNetworkRouterItem:(id)arg1;
 - (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2;
 - (id)initWithHome:(id)arg1 delegate:(id)arg2;

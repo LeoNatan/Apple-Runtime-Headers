@@ -54,6 +54,7 @@
     _Bool _keepImageAccessUntilExpiration;
     _Bool _keepImageAccessForPreHeat;
     _Bool _hasProtectedContent;
+    struct os_unfair_lock_s _loadImageLock;
     CDUnknownBlockType _imageGenerator;
     struct CGAffineTransform _imageTransform;
 }
@@ -61,6 +62,7 @@
 + (_Bool)supportsSecureCoding;
 + (struct CGImage *)_createCGImageWithPreferredOptions:(id)arg1 fromCGImage:(struct CGImage *)arg2;
 + (id)dataForImage:(id)arg1 withFormat:(int)arg2;
++ (_Bool)isValidImageFileExtension:(id)arg1;
 + (id)_allSecureCodingClassesIncludingDefaultAndClientSpecified;
 + (void)setSecureCodableCustomExtendedDataClasses:(id)arg1;
 + (id)secureCodableCustomExtendedDataClasses;

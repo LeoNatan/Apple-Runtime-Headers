@@ -34,7 +34,7 @@
 @property(readonly, nonatomic) NSArray *orderedProperties;
 - (_Bool)_sendCurrentCollectionWithAnchor:(long long)arg1 final:(_Bool)arg2 error:(id *)arg3;
 - (int)addEntity:(id)arg1 properties:(id)arg2 row:(struct HDSQLiteRow *)arg3 anchor:(long long)arg4 index:(unsigned int)arg5 error:(id *)arg6;
-- (id)_provenanceForID:(long long)arg1 error:(id *)arg2;
+- (id)_provenanceForID:(id)arg1 error:(id *)arg2;
 - (id)initWithProfile:(id)arg1 database:(id)arg2 entityClass:(Class)arg3 bytesPerMessage:(int)arg4 syncSession:(id)arg5 messageHandler:(id)arg6;
 
 @end

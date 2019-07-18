@@ -12,6 +12,7 @@
 {
 }
 
+- (id)valueKeys;
 @property(readonly, nonatomic) NSArray *availableValues;
 - (BOOL)setActiveValues:(id)arg1 controller:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) NSArray *activeValues;

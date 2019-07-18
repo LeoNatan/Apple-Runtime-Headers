@@ -67,6 +67,7 @@
 - (void)queue_setLastEventSource:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)updateLastEventSource:(long long)arg1;
 - (void)userSelectedSceneWithToken:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
+- (void)userSelectedProcessIdentifier:(int)arg1 sceneDeferringToken:(id)arg2 onCompletion:(CDUnknownBlockType)arg3;
 - (void)userSelectedApp:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
 - (void)forceKeyboardAway;
 - (void)queue_setKeyboardDisabled:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -97,14 +98,17 @@
 - (void)completeMoveKeyboardForWindow:(id)arg1;
 - (id)viewHostForWindow:(id)arg1;
 - (void)prepareToMoveKeyboard:(struct CGRect)arg1 withIAV:(struct CGRect)arg2 isIAVRelevant:(BOOL)arg3 showing:(BOOL)arg4 forScene:(id)arg5;
+- (BOOL)wantsToShowKeyboardForViewServiceHostWindow:(id)arg1;
 - (BOOL)wantsToShowKeyboardForWindow:(id)arg1;
 - (BOOL)isOnScreenRotating;
 - (BOOL)allowedToShowKeyboard;
+- (BOOL)needsToShowKeyboardForViewServiceHostWindow:(id)arg1;
 - (BOOL)needsToShowKeyboardForWindow:(id)arg1;
 - (void)applicationResume:(id)arg1;
 - (void)willResume:(id)arg1;
 - (void)didSuspend:(id)arg1;
 - (void)_lostWindow:(id)arg1;
+- (void)setWindowEnabled:(BOOL)arg1 force:(BOOL)arg2;
 - (void)setWindowEnabled:(BOOL)arg1;
 @property(readonly, retain) FBSScene *requiredScene;
 @property(readonly) BOOL oldPathForSnapshot;
@@ -121,6 +125,7 @@
 - (void)queue_keyboardIAVChanged:(double)arg1 onComplete:(CDUnknownBlockType)arg2;
 - (void)queue_keyboardChangedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)queue_keyboardChanged:(id)arg1 onComplete:(CDUnknownBlockType)arg2;
+- (BOOL)isKeyboardExtension;
 - (void)keyboardChangedCompleted;
 - (BOOL)didHandleKeyboardChange:(id)arg1 shouldConsiderSnapshottingKeyboard:(BOOL)arg2 isLocalEvent:(BOOL)arg3;
 - (void)resetSnapshotWithWindowCheck:(BOOL)arg1;

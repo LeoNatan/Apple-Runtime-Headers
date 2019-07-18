@@ -27,13 +27,14 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <MKTransitLineIncidentsViewControllerDelegate> incidentsDelegate; // @synthesize incidentsDelegate=_incidentsDelegate;
 - (void).cxx_destruct;
 - (void)transitItemReferenceDateUpdater:(id)arg1 didUpdateToReferenceDate:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)_dismissTransitIncidents;
-- (void)_moreIncidentDetailsSelected;
+- (void)_showIncidentDetails;
 - (id)_incidentCellForRow:(long long)arg1;
 - (id)_incidents;
 @property(readonly, copy, nonatomic) NSDate *referenceDate; // @synthesize referenceDate=_referenceDate;

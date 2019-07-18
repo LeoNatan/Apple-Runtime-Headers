@@ -100,7 +100,7 @@ __attribute__((visibility("hidden")))
 - (void)i_setCanvasIsWideGamut:(_Bool)arg1;
 @property(readonly, nonatomic) double contentsScale;
 - (void)i_setContentsScale:(double)arg1;
-- (_Bool)isExportingFixedLayoutEPUB;
+- (_Bool)textLayoutMustIncludeAdornments;
 - (_Bool)isRenderingForKPF;
 - (_Bool)isDrawingIntoPDF;
 - (_Bool)shouldSuppressBackgrounds;

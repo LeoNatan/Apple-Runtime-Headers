@@ -46,11 +46,14 @@ __attribute__((visibility("hidden")))
 + (id)regionFromCellRangeVector:(const vector_e87daf7b *)arg1;
 + (id)regionFromCellUIDVector:(const vector_7670e6f2 *)arg1 withTableInfo:(id)arg2;
 + (id)regionFromCellIDVector:(const vector_38b190b0 *)arg1;
++ (id)regionFromConcurrentCellMap:(id)arg1 withTableInfo:(id)arg2;
 + (id)regionFromCellDiffMap:(id)arg1 withTableInfo:(id)arg2;
 + (id)regionFromCellMap:(id)arg1 withTableInfo:(id)arg2 passingTest:(CDUnknownBlockType)arg3;
 + (id)regionFromCellMap:(id)arg1 withTableInfo:(id)arg2;
 + (id)regionFromRange:(struct TSUCellRect)arg1;
 + (id)regionFromModelCellRect:(struct TSUModelCellRect)arg1;
++ (id)regionFromViewCellRectVector:(const vector_1235e7c3 *)arg1;
++ (id)regionFromViewCellRect:(struct TSUViewCellRect)arg1;
 @property(retain, nonatomic) NSIndexSet *intersectingRowsIndexSet; // @synthesize intersectingRowsIndexSet=_intersectingRowsIndexSet;
 @property(retain, nonatomic) NSIndexSet *intersectingColumnsIndexSet; // @synthesize intersectingColumnsIndexSet=_intersectingColumnsIndexSet;
 @property(nonatomic) struct TSUCellCoord lastCellID; // @synthesize lastCellID=_lastCellID;
@@ -66,6 +69,7 @@ __attribute__((visibility("hidden")))
 - (void)p_calculateIntersectingColumns;
 - (void)p_calculateAncillaryInformation;
 - (void)p_insertRangeIntoRegion:(struct TSUCellRect)arg1;
+- (vector_e87daf7b)subRangesOfCellCount:(unsigned long long)arg1;
 - (void)enumerateGridRowsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateGridColumnsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateMissingColumnsIntersectingCellRange:(struct TSUCellRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
@@ -93,6 +97,7 @@ __attribute__((visibility("hidden")))
 - (id)intersectingColumnsInRow:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int numberOfIntersectingRows;
 @property(readonly, nonatomic) unsigned int numberOfIntersectingColumns;
+- (id)isSingleCellWideOrHigh:(id)arg1;
 - (_Bool)intersectsRow:(unsigned int)arg1;
 - (_Bool)intersectsColumn:(unsigned short)arg1;
 - (_Bool)intersectsCellRegion:(id)arg1;

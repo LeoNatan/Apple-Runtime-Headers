@@ -13,13 +13,16 @@
 @interface PXGAccessibilityContentInfoManager : PXObservable <PXGMutableAccessibilityContentInfoManager>
 {
     NSArray *_visibleAccessibilityContentInfos;
+    NSArray *_extendedAccessibilityContentInfos;
     NSArray *_extendedAccessibilityGroupContentInfos;
 }
 
 @property(readonly, nonatomic) NSArray *extendedAccessibilityGroupContentInfos; // @synthesize extendedAccessibilityGroupContentInfos=_extendedAccessibilityGroupContentInfos;
+@property(readonly, nonatomic) NSArray *extendedAccessibilityContentInfos; // @synthesize extendedAccessibilityContentInfos=_extendedAccessibilityContentInfos;
 @property(readonly, nonatomic) NSArray *visibleAccessibilityContentInfos; // @synthesize visibleAccessibilityContentInfos=_visibleAccessibilityContentInfos;
 - (void).cxx_destruct;
 - (void)setExtendedAccessibilityGroupContentInfos:(id)arg1;
+- (void)setExtendedAccessibilityContentInfos:(id)arg1;
 - (void)setVisibleAccessibilityContentInfos:(id)arg1;
 - (void)performChanges:(CDUnknownBlockType)arg1;
 - (id)init;

@@ -8,15 +8,11 @@
 
 @interface _TtC18HealthExperienceUI18ChromeHostViewCell : _TtC18HealthExperienceUI12HostViewCell
 {
-    // Error parsing type: , name: highlightStateView
 }
 
-- (void).cxx_destruct;
-@property(nonatomic) _Bool highlighted;
-- (_Bool)isHighlighted;
-- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 
 @end
 

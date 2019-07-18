@@ -59,7 +59,8 @@ struct statfs {
     char _field13[16];
     char _field14[1024];
     char _field15[1024];
-    unsigned int _field16[8];
+    unsigned int _field16;
+    unsigned int _field17[7];
 };
 
 struct timespec {

@@ -37,7 +37,6 @@
 @property(readonly, nonatomic) NSDictionary *tags; // @synthesize tags=_tags;
 - (void).cxx_destruct;
 - (void)rebuildSpecializationSettings;
-- (id)cacheWithRenderer:(id)arg1;
 - (id)cache;
 - (void)applyPresetOnAvatar:(id)arg1;
 - (id)colorPresets;
@@ -45,7 +44,6 @@
 - (void)enumeratePresetDependencies:(CDUnknownBlockType)arg1;
 - (_Bool)hasDependency;
 - (float)intensity;
-- (id)componentPaths;
 - (id)assets;
 @property(readonly, nonatomic) _Bool hasComponent;
 - (struct UIImage *)maskImage;

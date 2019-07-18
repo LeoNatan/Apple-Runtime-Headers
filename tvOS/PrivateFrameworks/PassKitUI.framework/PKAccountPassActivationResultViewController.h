@@ -20,19 +20,20 @@
     UIViewController *_nextViewController;
     CLLocationManager *_locationManager;
     UIView *_topBackgroundView;
+    _Bool _didAddToAmp;
     _Bool _didMakeAccountPassDefault;
     _Bool _showingLoadingIndicator;
 }
 
 @property(nonatomic) _Bool showingLoadingIndicator; // @synthesize showingLoadingIndicator=_showingLoadingIndicator;
 @property(nonatomic) _Bool didMakeAccountPassDefault; // @synthesize didMakeAccountPassDefault=_didMakeAccountPassDefault;
+@property(nonatomic) _Bool didAddToAmp; // @synthesize didAddToAmp=_didAddToAmp;
 - (void).cxx_destruct;
 - (id)_setupLaterBodyString;
+- (id)_localizedStringKeyForPerformedOperations;
 - (void)_terminateSetupFlow;
 - (void)_presentDisplayableError:(id)arg1;
 - (void)_presentViewController:(id)arg1;
-- (void)_promptForPhysicalCardLocationAuthorization;
-- (_Bool)_shouldPromptForPhysicalCardLocationAccess;
 - (_Bool)_willPerformProvisioningActions;
 - (void)_handleNextStep;
 - (void)_showActivationSpinner:(_Bool)arg1;

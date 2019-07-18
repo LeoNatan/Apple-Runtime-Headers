@@ -16,11 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)peopleForPredicate:(id)arg1 sortOrder:(unsigned int)arg2 addressBook:(void *)arg3;
-+ (id)peopleForPhoneNumbers:(id)arg1 sortOrder:(unsigned int)arg2 addressBook:(void *)arg3;
-+ (id)peopleForEmailAddresses:(id)arg1 sortOrder:(unsigned int)arg2 addressBook:(void *)arg3;
 - (id)cn_cursorForEncodedPeopleFromAddressBook:(void *)arg1 fetchRequest:(id)arg2 environment:(id)arg3 error:(id *)arg4;
+- (id)handlesPredicateWithMap:(id)arg1;
 - (struct __CFArray *)cn_copyPeopleInAddressBook:(void *)arg1 fetchRequest:(id)arg2 matchInfos:(id *)arg3 environment:(id)arg4 error:(struct __CFError **)arg5;
-- (_Bool)_inputsAreValid;
 - (_Bool)cn_supportsEncodedFetching;
 - (_Bool)cn_supportsNativeBatchFetch;
 - (_Bool)cn_supportsNativeSorting;

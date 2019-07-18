@@ -32,6 +32,7 @@
     WFRunWorkflowToolbar *_toolbar;
     NSLayoutConstraint *_toolbarBottomAnchor;
     WFWorkflowSettingsLayoutMetrics *_layoutMetrics;
+    NSLayoutConstraint *_constraintToWorkflowViewController;
     WFActionDrawerCoordinator *_drawerCoordinator;
     UINavigationController *_drawerNavigationController;
     WFDrawerController *_drawerController;
@@ -46,6 +47,7 @@
 @property(retain, nonatomic) WFDrawerController *drawerController; // @synthesize drawerController=_drawerController;
 @property(retain, nonatomic) UINavigationController *drawerNavigationController; // @synthesize drawerNavigationController=_drawerNavigationController;
 @property(retain, nonatomic) WFActionDrawerCoordinator *drawerCoordinator; // @synthesize drawerCoordinator=_drawerCoordinator;
+@property(retain, nonatomic) NSLayoutConstraint *constraintToWorkflowViewController; // @synthesize constraintToWorkflowViewController=_constraintToWorkflowViewController;
 @property(retain, nonatomic) WFWorkflowSettingsLayoutMetrics *layoutMetrics; // @synthesize layoutMetrics=_layoutMetrics;
 @property(nonatomic) _Bool shouldShowShareButton; // @synthesize shouldShowShareButton=_shouldShowShareButton;
 @property(nonatomic) _Bool shouldProvideNavigationBar; // @synthesize shouldProvideNavigationBar=_shouldProvideNavigationBar;
@@ -106,7 +108,7 @@
 - (void)popEditingState:(unsigned long long)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)pushEditingState:(unsigned long long)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) unsigned long long editingState;
-- (void)didTapCancel;
+- (void)didTapCancel:(id)arg1;
 - (void)dismissForTutorial:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)finishEditingAndDismissForTutorial:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)finishEditing;

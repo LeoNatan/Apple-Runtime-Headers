@@ -10,7 +10,6 @@
 
 @class ISColor, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ISBorderEffect : NSObject <ISEffect>
 {
     ISColor *_color;
@@ -20,7 +19,7 @@ __attribute__((visibility("hidden")))
 @property double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain) ISColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
-- (id)filterWithBackgroundFilter:(id)arg1 inputFilter:(id)arg2;
+- (id)filterWithBackgroundImage:(id)arg1 inputImage:(id)arg2;
 - (id)initWithLineWidth:(double)arg1 color:(id)arg2;
 
 // Remaining properties

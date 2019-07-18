@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MessageUI/MFComposeRecipient.h>
+#import <ContactsAutocompleteUI/CNComposeRecipient.h>
 
 @class WFContact;
 
-@interface WFContactComposeRecipient : MFComposeRecipient
+@interface WFContactComposeRecipient : CNComposeRecipient
 {
     WFContact *_wfContact;
 }
@@ -16,6 +16,7 @@
 @property(readonly, nonatomic) WFContact *wfContact; // @synthesize wfContact=_wfContact;
 - (void).cxx_destruct;
 - (id)wf_contactFieldEntry;
+- (id)displayString;
 - (id)initWithWFContact:(id)arg1;
 
 @end

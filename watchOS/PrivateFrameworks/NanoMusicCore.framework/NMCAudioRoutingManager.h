@@ -56,6 +56,7 @@
 - (void)routingController:(id)arg1 didFailToPickRouteWithError:(id)arg2;
 - (void)routingController:(id)arg1 pickedRoutesDidChange:(id)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
+- (void)_hearingDevicesDidChange;
 - (void)_postVirtualAudioRoutesChangedNotification;
 - (_Bool)_createOrUpdateVirtualAudioRouteForBluetoothAudioDevice:(id)arg1;
 - (id)_existingVirtualAudioRouteForBluetoothAudioDevice:(id)arg1;

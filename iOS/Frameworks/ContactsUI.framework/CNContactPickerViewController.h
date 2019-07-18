@@ -7,11 +7,12 @@
 #import <UIKit/UIViewController.h>
 
 #import <ContactsUI/CNContactPickerContentDelegate-Protocol.h>
+#import <ContactsUI/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class CNContact, FAFamilyMember, NSArray, NSPredicate, NSString, UINavigationController;
+@class CNContact, FAFamilyMember, NSArray, NSPredicate, NSString, UINavigationController, _UIRemoteViewController;
 @protocol CNContactPickerContentViewController, CNContactPickerDelegate;
 
-@interface CNContactPickerViewController : UIViewController <CNContactPickerContentDelegate>
+@interface CNContactPickerViewController : UIViewController <CNContactPickerContentDelegate, _UIRemoteViewControllerContaining>
 {
     _Bool _ignoreViewWillBePresented;
     _Bool _hidesSearchableSources;
@@ -34,6 +35,7 @@
     long long _mode;
     long long _behavior;
     long long _cardActions;
+    NSArray *_prohibitedPropertyKeys;
     NSString *_prompt;
     NSString *_bannerTitle;
     NSString *_bannerValue;
@@ -48,6 +50,7 @@
 @property(nonatomic) _Bool allowsDeletion; // @synthesize allowsDeletion=_allowsDeletion;
 @property(nonatomic) _Bool allowsCancel; // @synthesize allowsCancel=_allowsCancel;
 @property(nonatomic) _Bool allowsEditing; // @synthesize allowsEditing=_allowsEditing;
+@property(retain, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
 @property(nonatomic) _Bool ignoresParentalRestrictions; // @synthesize ignoresParentalRestrictions=_ignoresParentalRestrictions;
 @property(nonatomic) _Bool onlyRealContacts; // @synthesize onlyRealContacts=_onlyRealContacts;
 @property(nonatomic) _Bool hidesSearchableSources; // @synthesize hidesSearchableSources=_hidesSearchableSources;
@@ -66,6 +69,8 @@
 - (void)pickerDidCancel;
 - (void)pickerDidSelectContacts:(id)arg1 properties:(id)arg2;
 - (void)pickerDidSelectContact:(id)arg1 property:(id)arg2;
+- (void)pickerDidSelectAddNewContact;
+@property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)popToDefaultViewController:(_Bool)arg1;
 @property(readonly, nonatomic) UINavigationController *navigationController;
 - (void)closePickerIfNeeded;

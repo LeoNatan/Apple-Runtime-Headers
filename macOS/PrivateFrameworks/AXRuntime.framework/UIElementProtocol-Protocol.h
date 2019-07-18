@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <AXRuntime/NSCopying-Protocol.h>
 #import <AXRuntime/NSObject-Protocol.h>
 
 @class NSArray, NSMutableDictionary, NSNumber, NSObject, NSString;
 @protocol UIElementProtocol;
 
-@protocol UIElementProtocol <NSObject>
+@protocol UIElementProtocol <NSObject, NSCopying>
 + (id)uiElementAtCoordinate:(struct CGPoint)arg1 forApplication:(struct __AXUIElement *)arg2 contextId:(unsigned int)arg3;
 + (id)uiElementAtCoordinate:(struct CGPoint)arg1;
 + (void)applyElementAttributeCacheScheme:(unsigned long long)arg1;

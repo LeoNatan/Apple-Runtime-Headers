@@ -6,7 +6,7 @@
 
 #import <HomeKitBackingStore/HMBModel.h>
 
-@class NSArray;
+@class NSArray, NSNumber;
 
 @interface HMDAssistantAccessControlModelV2 : HMBModel
 {
@@ -16,6 +16,7 @@
 
 // Remaining properties
 @property(copy, nonatomic) NSArray *accessoryUUIDs; // @dynamic accessoryUUIDs;
+@property(copy, nonatomic) NSNumber *requiresAuthenticationForSecureRequests; // @dynamic requiresAuthenticationForSecureRequests;
 
 @end
 

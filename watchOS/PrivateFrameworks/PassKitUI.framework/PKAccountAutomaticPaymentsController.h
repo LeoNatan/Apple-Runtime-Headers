@@ -38,7 +38,7 @@
     unsigned int _featureIdentifier;
     int _paymentSetupContext;
     int _paymentFrequency;
-    int _frequencyDay;
+    int _scheduledDay;
     int _paymentPreset;
     PKCurrencyAmount *_amount;
     NSArray *_automaticPayments;
@@ -50,7 +50,7 @@
 @property(retain, nonatomic) NSArray *fundingSources; // @synthesize fundingSources=_fundingSources;
 @property(retain, nonatomic) PKCurrencyAmount *amount; // @synthesize amount=_amount;
 @property(nonatomic) int paymentPreset; // @synthesize paymentPreset=_paymentPreset;
-@property(nonatomic) int frequencyDay; // @synthesize frequencyDay=_frequencyDay;
+@property(nonatomic) int scheduledDay; // @synthesize scheduledDay=_scheduledDay;
 @property(nonatomic) int paymentFrequency; // @synthesize paymentFrequency=_paymentFrequency;
 @property(retain, nonatomic) NSDate *paymentDate; // @synthesize paymentDate=_paymentDate;
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;

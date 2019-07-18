@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString, NSURL;
+@class NSDictionary, NSSet, NSString, NSURL;
 
 @interface SMNAction : NSObject
 {
@@ -44,6 +44,7 @@
 - (BOOL)setResultFromDict:(id)arg1;
 - (BOOL)setResultFromData:(id)arg1;
 @property(readonly) NSObject *requestPayload;
+@property(readonly) NSSet *setOfClassesToDecodeInTheResult;
 @property(readonly) BOOL expectsAResult;
 - (void)processResultsOverStream:(id)arg1;
 - (void)sendSuccessResponseOnStream:(id)arg1;

@@ -60,6 +60,7 @@
     NSArray *_originalImageFilters;
     NSArray *_processedImageFilters;
     float _simulatedAperture;
+    float _portraitLightingEffectStrength;
     _Bool _providesOriginalImage;
     NSArray *_bravoConstituentImageDeliveryDeviceTypes;
     int _qualityPrioritization;
@@ -103,6 +104,7 @@
 @property(nonatomic) int qualityPrioritization; // @synthesize qualityPrioritization=_qualityPrioritization;
 @property(copy, nonatomic) NSArray *bravoConstituentImageDeliveryDeviceTypes; // @synthesize bravoConstituentImageDeliveryDeviceTypes=_bravoConstituentImageDeliveryDeviceTypes;
 @property(nonatomic) _Bool providesOriginalImage; // @synthesize providesOriginalImage=_providesOriginalImage;
+@property(nonatomic) float portraitLightingEffectStrength; // @synthesize portraitLightingEffectStrength=_portraitLightingEffectStrength;
 @property(nonatomic) float simulatedAperture; // @synthesize simulatedAperture=_simulatedAperture;
 @property(copy, nonatomic) NSArray *processedImageFilters; // @synthesize processedImageFilters=_processedImageFilters;
 @property(copy, nonatomic) NSArray *originalImageFilters; // @synthesize originalImageFilters=_originalImageFilters;

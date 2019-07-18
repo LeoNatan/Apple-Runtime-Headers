@@ -32,9 +32,6 @@
 + (void)setAuthorizationStatus:(BOOL)arg1 forBundleIdentifier:(id)arg2;
 + (int)authorizationStatus;
 + (int)_authorizationStatus;
-+ (int)regionMonitoringAuthorizationStatusForBundle:(id)arg1;
-+ (int)regionMonitoringAuthorizationStatusForBundleIdentifier:(id)arg1;
-+ (int)_regionMonitoringAuthorizationStatusForBundleIdentifier:(id)arg1 bundle:(id)arg2;
 + (int)authorizationStatusForBundle:(id)arg1;
 + (int)authorizationStatusForBundleIdentifier:(id)arg1;
 + (int)_authorizationStatusForBundleIdentifier:(id)arg1 bundle:(id)arg2;
@@ -43,6 +40,8 @@
 + (id)appsUsingLocationWithInfo;
 + (BOOL)isPeerRangingAvailable;
 + (BOOL)deferredLocationUpdatesAvailable;
++ (BOOL)_checkAndExerciseAuthorizationForBundle:(id)arg1 error:(id *)arg2;
++ (BOOL)_checkAndExerciseAuthorizationForBundleID:(id)arg1 error:(id *)arg2;
 + (BOOL)mapCorrectionAvailable;
 + (BOOL)isRangingAvailable;
 + (BOOL)regionMonitoringEnabled;

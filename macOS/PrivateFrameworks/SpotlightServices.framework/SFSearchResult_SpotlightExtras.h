@@ -25,8 +25,14 @@
     BOOL _isUsed;
     float _l2score;
     PRSRankingItem *_rankingItem;
+    NSString *_relatedIdentifier;
+    NSString *_uniqueIdentifier;
+    NSNumber *_documentIdentifier;
     NSString *_displayName;
     NSURL *_fastLaunchURL;
+    NSArray *_otherTypes;
+    NSArray *_otherNames;
+    NSDate *_lastUsedDate;
     NSString *_distinguishPathString;
     NSURL *_altPath;
     long long _dpos;
@@ -56,6 +62,9 @@
 
 @property(retain) NSString *distinguishPathString; // @synthesize distinguishPathString=_distinguishPathString;
 @property BOOL isFolderQuery; // @synthesize isFolderQuery=_isFolderQuery;
+@property(readonly) NSDate *lastUsedDate; // @synthesize lastUsedDate=_lastUsedDate;
+@property(readonly) NSArray *otherNames; // @synthesize otherNames=_otherNames;
+@property(readonly) NSArray *otherTypes; // @synthesize otherTypes=_otherTypes;
 @property(nonatomic) BOOL isSynthetic; // @synthesize isSynthetic=_isSynthetic;
 @property(nonatomic) BOOL isShowAllInFinder; // @synthesize isShowAllInFinder=_isShowAllInFinder;
 @property(nonatomic) BOOL isAnyTopHit; // @synthesize isAnyTopHit=_isAnyTopHit;
@@ -63,11 +72,11 @@
 @property(getter=isAutoLaunch) BOOL autoLaunch; // @synthesize autoLaunch=_autoLaunch;
 @property(readonly) NSURL *fastLaunchURL; // @synthesize fastLaunchURL=_fastLaunchURL;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
+@property(readonly) NSNumber *documentIdentifier; // @synthesize documentIdentifier=_documentIdentifier;
+@property(readonly) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property(readonly) NSString *relatedIdentifier; // @synthesize relatedIdentifier=_relatedIdentifier;
 @property(retain, nonatomic) PRSRankingItem *rankingItem; // @synthesize rankingItem=_rankingItem;
 - (void).cxx_destruct;
-@property(readonly) NSNumber *documentIdentifier;
-@property(readonly) NSString *uniqueIdentifier;
-@property(readonly) NSString *relatedIdentifier;
 - (void)prepareIcons;
 - (void)setCategory:(id)arg1;
 @property(readonly) NSString *category;
@@ -78,11 +87,7 @@
 - (unsigned long long)matchQuality;
 - (BOOL)isExactMatch;
 - (BOOL)isPrefixMatch;
-@property(readonly) NSDate *lastUsedDate;
-@property(readonly, nonatomic) NSURL *URL;
 - (void)updateRenderOrEngagementCountsForKey:(id)arg1 date:(id)arg2;
-@property(readonly) NSArray *otherNames;
-@property(readonly) NSArray *otherTypes;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToResult:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -95,6 +100,7 @@
 - (id)initWithResult:(id)arg1 groupId:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) id <NSPasteboardWriting> pasteboardObject;
+@property(readonly, nonatomic) NSURL *URL;
 - (id)fastURL;
 @property(readonly) NSString *filePath;
 @property(readonly) LSApplicationProxy *appProxy;

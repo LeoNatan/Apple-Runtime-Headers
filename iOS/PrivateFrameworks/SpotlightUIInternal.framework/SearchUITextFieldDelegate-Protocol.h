@@ -7,6 +7,7 @@
 #import <SpotlightUIInternal/UITextFieldDelegate-Protocol.h>
 
 @protocol SearchUITextFieldDelegate <UITextFieldDelegate>
+- (void)escapeKeyPressed;
 - (void)returnKeyPressed;
 @end
 

@@ -17,6 +17,7 @@
     struct {
         unsigned int billType:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _billType;
     _INPBBillPayeeValue *_billPayee;
     _INPBDateTimeRange *_dueDate;
@@ -28,6 +29,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDateTimeRange *transactionScheduledDate; // @synthesize transactionScheduledDate=_transactionScheduledDate;
 @property(retain, nonatomic) _INPBString *transactionNote; // @synthesize transactionNote=_transactionNote;
 @property(retain, nonatomic) _INPBPaymentAmountValue *transactionAmount; // @synthesize transactionAmount=_transactionAmount;

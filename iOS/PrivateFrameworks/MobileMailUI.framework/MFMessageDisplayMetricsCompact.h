@@ -13,7 +13,6 @@
 - (double)statusIndicatorVerticalSpacing;
 - (double)headerBottomPadding;
 - (double)firstSeparatorToSubjectBaseline;
-- (double)recipientBaselineToFirstSeparatorInConversation;
 - (double)recipientBaselineToFirstSeparator;
 - (double)baselineToBaselineSpacing;
 - (double)topToSenderBaseline;

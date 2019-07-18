@@ -8,7 +8,6 @@
 
 @class NSNumber;
 
-__attribute__((visibility("hidden")))
 @interface ISDefaults : NSObject
 {
     struct os_unfair_lock_s _lock;

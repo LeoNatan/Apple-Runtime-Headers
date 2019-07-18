@@ -8,6 +8,7 @@
 
 @interface UIColor (DOCExtensions)
 + (id)_doc_safeTintColor:(id)arg1;
+- (id)doc_readableFromColor:(id)arg1 fallbackColor:(id)arg2;
 - (id)_doc_invertedColor;
 @end
 

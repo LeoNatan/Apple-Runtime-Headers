@@ -15,12 +15,14 @@
 @interface _INPBTicketedEventReservation : PBCodable <_INPBTicketedEventReservation, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBTicketedEvent *_event;
     _INPBReservation *_reservation;
     _INPBSeat *_reservedSeat;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBSeat *reservedSeat; // @synthesize reservedSeat=_reservedSeat;
 @property(retain, nonatomic) _INPBReservation *reservation; // @synthesize reservation=_reservation;
 @property(retain, nonatomic) _INPBTicketedEvent *event; // @synthesize event=_event;

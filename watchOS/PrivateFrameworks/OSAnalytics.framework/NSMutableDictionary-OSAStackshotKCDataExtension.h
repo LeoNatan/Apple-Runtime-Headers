@@ -8,6 +8,7 @@
 
 @interface NSMutableDictionary (OSAStackshotKCDataExtension)
 - (void)addWaitInfoDesc:(struct stackshot_thread_waitinfo *)arg1 count:(unsigned int)arg2;
+- (void)addTurnstileInfoDesc:(struct stackshot_thread_turnstileinfo *)arg1 count:(unsigned int)arg2;
 - (_Bool)osa_logCounter_isLog:(id)arg1 byKey:(id)arg2 count:(unsigned int *)arg3 withinLimit:(unsigned int *)arg4 withOptions:(id)arg5;
 - (void)osa_logCounter_recordNixedDuplicate:(const char *)arg1;
 - (unsigned int)osa_logCounter_getForSubtype:(id)arg1 forOwner:(id)arg2;

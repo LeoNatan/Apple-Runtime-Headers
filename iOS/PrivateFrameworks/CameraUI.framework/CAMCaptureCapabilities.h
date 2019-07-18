@@ -24,6 +24,7 @@
     _Bool _previewSupportedDuringHDR;
     _Bool _modernHDRSupported;
     _Bool _smartHDRSupported;
+    _Bool _HDREV0CaptureSupported;
     _Bool _backLivePhotoSupported;
     _Bool _frontLivePhotoSupported;
     _Bool _liveFilteringSupported;
@@ -74,6 +75,7 @@
     _Bool _backPearlSupported;
     _Bool _frontPearlSupported;
     _Bool _depthEffectApertureSupported;
+    _Bool _portraitEffectIntensitySupported;
     _Bool _neuralEngineSupported;
     _Bool _internalInstall;
     _Bool _lockButtonAppropriateForShutter;
@@ -126,6 +128,7 @@
 @property(readonly, nonatomic, getter=isInternalInstall) _Bool internalInstall; // @synthesize internalInstall=_internalInstall;
 @property(readonly, nonatomic) long long hostProcess; // @synthesize hostProcess=_hostProcess;
 @property(readonly, nonatomic, getter=isNeuralEngineSupported) _Bool neuralEngineSupported; // @synthesize neuralEngineSupported=_neuralEngineSupported;
+@property(readonly, nonatomic, getter=isPortraitEffectIntensitySupported) _Bool portraitEffectIntensitySupported; // @synthesize portraitEffectIntensitySupported=_portraitEffectIntensitySupported;
 @property(readonly, nonatomic, getter=isDepthEffectApertureSupported) _Bool depthEffectApertureSupported; // @synthesize depthEffectApertureSupported=_depthEffectApertureSupported;
 @property(readonly, nonatomic, getter=isFrontPearlSupported) _Bool frontPearlSupported; // @synthesize frontPearlSupported=_frontPearlSupported;
 @property(readonly, nonatomic, getter=isBackPearlSupported) _Bool backPearlSupported; // @synthesize backPearlSupported=_backPearlSupported;
@@ -183,6 +186,7 @@
 @property(readonly, nonatomic, getter=isLiveFilteringSupported) _Bool liveFilteringSupported; // @synthesize liveFilteringSupported=_liveFilteringSupported;
 @property(readonly, nonatomic, getter=isFrontLivePhotoSupported) _Bool frontLivePhotoSupported; // @synthesize frontLivePhotoSupported=_frontLivePhotoSupported;
 @property(readonly, nonatomic, getter=isBackLivePhotoSupported) _Bool backLivePhotoSupported; // @synthesize backLivePhotoSupported=_backLivePhotoSupported;
+@property(readonly, nonatomic, getter=isHDREV0CaptureSupported) _Bool HDREV0CaptureSupported; // @synthesize HDREV0CaptureSupported=_HDREV0CaptureSupported;
 @property(readonly, nonatomic, getter=isSmartHDRSupported) _Bool smartHDRSupported; // @synthesize smartHDRSupported=_smartHDRSupported;
 @property(readonly, nonatomic, getter=isModernHDRSupported) _Bool modernHDRSupported; // @synthesize modernHDRSupported=_modernHDRSupported;
 @property(readonly, nonatomic, getter=isPreviewDuringHDRSupported) _Bool previewSupportedDuringHDR; // @synthesize previewSupportedDuringHDR=_previewSupportedDuringHDR;
@@ -205,7 +209,11 @@
 - (double)defaultZoomFactorForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3;
 - (double)maximumZoomFactorForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3;
 - (_Bool)isZoomAllowedForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3;
-- (double)defaultDepthEffectApertureForDevicePosition:(long long)arg1;
+- (_Bool)isPortraitEffectIntensitySupportedForLightingType:(long long)arg1;
+@property(readonly, nonatomic) double defaultPortraitEffectIntensity;
+@property(readonly, nonatomic) double maximumPortraitEffectIntensity;
+@property(readonly, nonatomic) double minimumPortraitEffectIntensity;
+- (double)defaultDepthEffectApertureForDevice:(long long)arg1;
 - (double)maximumDepthEffectApertureForDevicePosition:(long long)arg1;
 - (double)minimumDepthEffectApertureForDevicePosition:(long long)arg1;
 - (_Bool)isPearlSupportedForMode:(long long)arg1 devicePosition:(long long)arg2;
@@ -217,7 +225,10 @@
 @property(readonly, nonatomic, getter=isDualSupported) _Bool dualSupported;
 - (_Bool)shouldAllowCameraToggleForMode:(long long)arg1 devicePosition:(long long)arg2 videoConfiguration:(long long)arg3;
 - (_Bool)shouldAllowTelephotoToggleForMode:(long long)arg1 devicePosition:(long long)arg2 videoConfiguration:(long long)arg3;
+- (_Bool)_isTelephotoSupportedForMode:(long long)arg1 devicePosition:(long long)arg2 videoConfiguration:(long long)arg3;
 - (_Bool)isTelephotoSupportedForDevicePosition:(long long)arg1;
+- (_Bool)_isWideSupportedForMode:(long long)arg1 devicePosition:(long long)arg2 videoConfiguration:(long long)arg3;
+- (_Bool)_isWideSupportedForDevicePosition:(long long)arg1;
 - (_Bool)isStereoAudioRecordingSupportedForMode:(long long)arg1;
 - (_Bool)isAutoLowLightVideoSupportedForMode:(long long)arg1 videoConfiguration:(long long)arg2;
 - (_Bool)isFlashOrTorchSupportedForMode:(long long)arg1 devicePosition:(long long)arg2;

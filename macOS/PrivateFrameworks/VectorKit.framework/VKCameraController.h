@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL isPitchEnabled; // @synthesize isPitchEnabled=_isPitchEnabled;
 @property(nonatomic) BOOL staysCenteredDuringRotation; // @synthesize staysCenteredDuringRotation=_staysCenteredDuringRotation;
 @property(nonatomic) BOOL staysCenteredDuringPinch; // @synthesize staysCenteredDuringPinch=_staysCenteredDuringPinch;
+- (void)populateDebugNode:(struct DebugTreeNode *)arg1 withOptions:(const bitset_dc343b9a *)arg2;
 - (BOOL)centerCoordinate:(CDStruct_c3b9c2ee *)arg1 andDistanceFromCenter:(double *)arg2 forMapRegion:(id)arg3;
 - (void)updateWithTimestamp:(double)arg1;
 - (BOOL)wantsTimerTick;

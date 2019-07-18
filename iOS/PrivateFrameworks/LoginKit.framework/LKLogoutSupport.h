@@ -14,6 +14,7 @@
 - (void)logoutToLoginUserWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)logoutToLoginSessionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_canLogoutToLoginSession;
+- (id)init;
 
 @end
 

@@ -20,6 +20,7 @@
         unsigned int startCalendar:1;
     } _has;
     BOOL _allDay;
+    BOOL __encodeLegacyGloryData;
     long long _endCalendar;
     _INPBDateTime *_endDateTime;
     _INPBRecurrenceValue *_recurrence;
@@ -29,6 +30,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(retain, nonatomic) _INPBDateTime *startDateTime; // @synthesize startDateTime=_startDateTime;
 @property(nonatomic) long long startCalendar; // @synthesize startCalendar=_startCalendar;

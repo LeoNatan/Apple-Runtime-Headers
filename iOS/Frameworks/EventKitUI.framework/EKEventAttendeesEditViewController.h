@@ -31,6 +31,7 @@
 - (_Bool)validateAllowingAlert:(_Bool)arg1;
 - (id)_firstInvalidRecipientAddress;
 - (_Bool)validateEmailWithString:(id)arg1;
+- (_Bool)isModalInPresentation;
 - (void)viewDidLoad;
 - (void)_doneTapped:(id)arg1;
 - (void)_cancelTapped:(id)arg1;

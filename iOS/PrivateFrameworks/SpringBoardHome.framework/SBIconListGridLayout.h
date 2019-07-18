@@ -9,15 +9,17 @@
 #import <SpringBoardHome/BSDescriptionProviding-Protocol.h>
 #import <SpringBoardHome/SBIconListLayout-Protocol.h>
 
-@class NSMutableDictionary, NSString, UIFont;
+@class NSMutableDictionary, NSString, SBHClockIconVisualConfiguration, SBHFloatyFolderVisualConfiguration, SBHFolderIconVisualConfiguration, SBHIconAccessoryVisualConfiguration, SBHSidebarVisualConfiguration, SBIconListGridLayoutConfiguration, UIFont;
 
 @interface SBIconListGridLayout : NSObject <SBIconListLayout, BSDescriptionProviding>
 {
     NSMutableDictionary *_labelFonts;
     UIFont *_accessoryFont;
-    struct SBIconListGridLayoutInfo _layoutInfo;
+    UIFont *_accessoryBoldFont;
+    SBIconListGridLayoutConfiguration *_layoutConfiguration;
 }
 
+@property(readonly, copy, nonatomic) SBIconListGridLayoutConfiguration *layoutConfiguration; // @synthesize layoutConfiguration=_layoutConfiguration;
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
@@ -25,31 +27,25 @@
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
 - (struct SBIconCoordinate)iconCoordinateForIndex:(unsigned long long)arg1 forOrientation:(long long)arg2 inList:(id)arg3;
-@property(readonly, nonatomic) double sidebarWidth;
-@property(readonly, nonatomic) struct SBHFolderMetrics folderMetrics;
-@property(readonly, nonatomic) struct SBHClockIconMetrics clockIconMetrics;
-- (id)accessoryFontForContentSizeCategory:(id)arg1;
-- (double)labelVerticalOffsetForContentSizeCategory:(id)arg1;
-- (id)labelFontForContentSizeCategory:(id)arg1;
+@property(readonly, copy, nonatomic) SBHSidebarVisualConfiguration *sidebarVisualConfiguration;
+@property(readonly, copy, nonatomic) SBHFloatyFolderVisualConfiguration *floatyFolderVisualConfiguration;
+@property(readonly, copy, nonatomic) SBHClockIconVisualConfiguration *clockIconVisualConfiguration;
+@property(readonly, copy, nonatomic) SBHFolderIconVisualConfiguration *folderIconVisualConfiguration;
+- (id)accessoryBoldFont;
+- (id)accessoryFont;
+- (id)accessoryFontForContentSizeCategory:(id)arg1 options:(unsigned long long)arg2;
+@property(readonly, copy, nonatomic) SBHIconAccessoryVisualConfiguration *iconAccessoryVisualConfiguration;
+- (id)labelVisualConfigurationForContentSizeCategory:(id)arg1 options:(unsigned long long)arg2;
+- (id)labelFontForContentSizeCategory:(id)arg1 options:(unsigned long long)arg2;
 - (void)noteIcons:(id)arg1 didDropAtCoordinate:(struct SBIconCoordinate)arg2 inList:(id)arg3;
 @property(readonly, nonatomic) _Bool usesAlternateLayout;
 - (struct UIEdgeInsets)layoutInsetsForOrientation:(long long)arg1;
 @property(readonly, nonatomic) unsigned long long maximumIconCount;
 - (unsigned long long)numberOfRowsForOrientation:(long long)arg1;
 - (unsigned long long)numberOfColumnsForOrientation:(long long)arg1;
-@property(readonly, nonatomic) struct CGPoint accessoryOffset;
-@property(readonly, nonatomic) struct CGSize accessorySize;
-@property(readonly, nonatomic) double accessoryFontSize;
-@property(readonly, nonatomic) struct SBIconListGridLayoutDynamicLabelFontInfo labelFontInfo;
 @property(readonly, nonatomic) struct SBIconImageInfo iconImageInfo;
-@property(readonly, nonatomic) struct CGSize folderIconGridCellSpacing;
-@property(readonly, nonatomic) struct CGSize folderIconGridCellSize;
-@property(readonly, nonatomic) struct UIEdgeInsets landscapeLayoutInsets;
-@property(readonly, nonatomic) struct UIEdgeInsets portraitLayoutInsets;
-@property(readonly, nonatomic) unsigned long long numberOfPortraitColumns;
-@property(readonly, nonatomic) unsigned long long numberOfPortraitRows;
-- (void)getLayoutInfo:(out struct SBIconListGridLayoutInfo *)arg1;
 - (id)init;
+- (id)initWithLayoutConfiguration:(id)arg1;
 - (id)initWithLayoutInfo:(const in struct SBIconListGridLayoutInfo *)arg1;
 
 // Remaining properties

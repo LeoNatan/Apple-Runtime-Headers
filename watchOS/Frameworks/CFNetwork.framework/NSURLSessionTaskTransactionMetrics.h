@@ -15,14 +15,15 @@
     _Bool __connectionTimingCached;
     _Bool __forCache;
     __CFN_TransactionMetrics *__metrics;
-    CDStruct_2e8cb519 __connectionTiming;
+    CDStruct_c0a2f610 __connectionTiming;
 }
 
++ (id)new;
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) _Bool _forCache; // @synthesize _forCache=__forCache;
 @property(readonly, nonatomic) __CFN_TransactionMetrics *_metrics; // @synthesize _metrics=__metrics;
 @property(nonatomic) _Bool _connectionTimingCached; // @synthesize _connectionTimingCached=__connectionTimingCached;
-@property(nonatomic) CDStruct_2e8cb519 _connectionTiming; // @synthesize _connectionTiming=__connectionTiming;
+@property(nonatomic) CDStruct_c0a2f610 _connectionTiming; // @synthesize _connectionTiming=__connectionTiming;
 - (void).cxx_destruct;
 - (id)description;
 @property(readonly, getter=isMultipath) _Bool multipath;

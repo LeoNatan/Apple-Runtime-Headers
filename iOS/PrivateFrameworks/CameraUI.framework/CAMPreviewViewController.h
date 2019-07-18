@@ -79,7 +79,7 @@
 @property(readonly, nonatomic) CAMFocusIndicatorView *_continuousIndicator; // @synthesize _continuousIndicator=__continuousIndicator;
 @property(readonly, nonatomic) CAMBurstIndicatorView *_burstIndicator; // @synthesize _burstIndicator=__burstIndicator;
 @property(nonatomic, getter=_isChangingGraphConfiguration, setter=_setChangingGraphConfiguration:) _Bool _changingGraphConfiguration; // @synthesize _changingGraphConfiguration=__changingGraphConfiguration;
-@property(nonatomic, setter=_setGraphConfiguration:) CAMCaptureGraphConfiguration *_graphConfiguration; // @synthesize _graphConfiguration=__graphConfiguration;
+@property(retain, nonatomic, setter=_setGraphConfiguration:) CAMCaptureGraphConfiguration *_graphConfiguration; // @synthesize _graphConfiguration=__graphConfiguration;
 @property(readonly, nonatomic) __weak CAMTimelapseController *_timelapseController; // @synthesize _timelapseController=__timelapseController;
 @property(readonly, nonatomic) CUCaptureController *_captureController; // @synthesize _captureController=__captureController;
 @property(nonatomic) long long lightingType; // @synthesize lightingType=_lightingType;
@@ -179,6 +179,7 @@
 - (void)_fadeOutAndRemoveIndicatorView:(id)arg1 forType:(id)arg2 identifier:(id)arg3 withDuration:(double)arg4;
 - (void)_removeIndicatorViewForType:(id)arg1 identifier:(id)arg2;
 - (void)_addIndicatorView:(id)arg1 forType:(id)arg2 identifier:(id)arg3;
+- (void)_updatePreviewIndicatorClippingStyleForGraphConfiguration:(id)arg1;
 - (void)_animateView:(id)arg1 withCenter:(struct CGPoint)arg2 bounds:(struct CGRect)arg3;
 - (void)_fadeOutView:(id)arg1 withDuration:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_fadeInView:(id)arg1 withDuration:(double)arg2;

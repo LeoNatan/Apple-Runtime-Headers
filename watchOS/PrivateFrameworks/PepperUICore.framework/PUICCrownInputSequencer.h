@@ -48,7 +48,6 @@
     struct {
         unsigned int previousDetentNextDetentAfterOffset:1;
     } _dataSourceRespondsTo;
-    _Bool _useFakeDetents;
     _Bool _playNextLimitHaptic;
     _Bool _shouldEnableMinorDetents;
     _Bool _useWideIdleCheck;
@@ -96,6 +95,7 @@
 @property(nonatomic) double end; // @synthesize end=_end;
 @property(nonatomic) double start; // @synthesize start=_start;
 - (void).cxx_destruct;
+- (void)enumerateDebugDescriptionOfNotches:(CDUnknownBlockType)arg1;
 - (id)debugDescriptionOfNotches;
 - (void)_uiInvertedDidChangeNotification:(id)arg1;
 - (void)_updateUIInvertedSetting;

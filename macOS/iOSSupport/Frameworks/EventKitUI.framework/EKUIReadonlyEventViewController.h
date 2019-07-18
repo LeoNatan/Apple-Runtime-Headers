@@ -10,6 +10,7 @@
 {
 }
 
+- (BOOL)shouldAutorotate;
 - (void)willCommitPreview;
 - (id)initWithEvent:(id)arg1;
 

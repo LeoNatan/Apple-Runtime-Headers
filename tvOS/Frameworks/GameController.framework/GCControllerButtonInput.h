@@ -11,6 +11,7 @@
 @interface GCControllerButtonInput : GCControllerElement
 {
     NSString *_descriptionName;
+    int _pressCounter;
     _Bool _nonAnalog;
     float _value;
     CDUnknownBlockType _valueChangedHandler;
@@ -25,6 +26,7 @@
 - (void)setValue:(float)arg1;
 - (id)description;
 @property(readonly, nonatomic, getter=isPressed) _Bool pressed;
+- (int)getAndResetTimesPressed;
 - (_Bool)_setValue:(float)arg1 queue:(id)arg2;
 - (_Bool)_setValue:(float)arg1;
 - (_Bool)isAnalog;

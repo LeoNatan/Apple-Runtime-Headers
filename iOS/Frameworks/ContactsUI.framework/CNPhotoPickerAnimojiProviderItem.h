@@ -6,7 +6,7 @@
 
 #import <ContactsUI/CNPhotoPickerProviderItem.h>
 
-@class AVTAvatarRecordImageProvider, AVTRenderingScope, AVTStickerConfiguration, CNAvatarStickerGeneratorProvider, CNPhotoPickerColorVariant, NSData;
+@class AVTAvatarRecordImageProvider, AVTRenderingScope, AVTStickerConfiguration, CNAvatarStickerGeneratorProvider, CNPhotoPickerColorVariant, NSData, UIImage;
 @protocol AVTAvatarRecord;
 
 __attribute__((visibility("hidden")))
@@ -14,9 +14,10 @@ __attribute__((visibility("hidden")))
 {
     id <AVTAvatarRecord> _avatarRecord;
     AVTStickerConfiguration *_poseConfiguration;
-    NSData *_originalImageData;
-    NSData *__generatedImageData;
     CNPhotoPickerColorVariant *_backgroundColorVariant;
+    NSData *__originalImageData;
+    NSData *__generatedImageData;
+    UIImage *_loadingPlaceholderImage;
     CNAvatarStickerGeneratorProvider *_stickerGeneratorProvider;
     AVTRenderingScope *_renderingScope;
     AVTAvatarRecordImageProvider *_imageProvider;
@@ -25,9 +26,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVTAvatarRecordImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 @property(retain, nonatomic) AVTRenderingScope *renderingScope; // @synthesize renderingScope=_renderingScope;
 @property(retain, nonatomic) CNAvatarStickerGeneratorProvider *stickerGeneratorProvider; // @synthesize stickerGeneratorProvider=_stickerGeneratorProvider;
-@property(retain, nonatomic) CNPhotoPickerColorVariant *backgroundColorVariant; // @synthesize backgroundColorVariant=_backgroundColorVariant;
+@property(retain, nonatomic) UIImage *loadingPlaceholderImage; // @synthesize loadingPlaceholderImage=_loadingPlaceholderImage;
 @property(retain, nonatomic) NSData *_generatedImageData; // @synthesize _generatedImageData=__generatedImageData;
-@property(retain, nonatomic) NSData *originalImageData; // @synthesize originalImageData=_originalImageData;
+@property(retain, nonatomic) NSData *_originalImageData; // @synthesize _originalImageData=__originalImageData;
+@property(retain, nonatomic) CNPhotoPickerColorVariant *backgroundColorVariant; // @synthesize backgroundColorVariant=_backgroundColorVariant;
 @property(retain, nonatomic) AVTStickerConfiguration *poseConfiguration; // @synthesize poseConfiguration=_poseConfiguration;
 @property(retain, nonatomic) id <AVTAvatarRecord> avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 - (void).cxx_destruct;
@@ -35,12 +37,12 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (id)contactImageForMetadataStore;
 - (id)createVariantsItemsWithVariantsManager:(id)arg1;
-- (void)applyVariantEffectToFullsizeImage;
+- (void)applyVariantEffectToFullsizeImageWithCompletion:(CDUnknownBlockType)arg1;
 - (id)generateThumbnailImageDataIfNeeded;
 - (id)generateImageDataIfNeeded;
 - (id)renderAvatarWithBackgroundWithImage:(id)arg1;
 - (id)renderAvatarWithBackgroundWithImageData:(id)arg1;
-- (id)renderAvatarWithPose;
+- (id)renderAvatarWithPoseWithSize:(double)arg1;
 - (id)renderDefaultAvatarImage;
 - (id)copyWithPoseConfiguration:(id)arg1 generatorProvider:(id)arg2;
 - (id)copyWithColor:(id)arg1;
@@ -48,11 +50,13 @@ __attribute__((visibility("hidden")))
 - (id)initWithOriginalImageData:(id)arg1 cropRect:(struct CGRect)arg2;
 - (id)initWithOriginalImageData:(id)arg1 cropRect:(struct CGRect)arg2 backgroundColorVariant:(id)arg3;
 - (void)updateContact:(id)arg1;
+- (id)originalImageData;
 - (id)imageData;
 - (_Bool)shouldShowCaption;
-- (_Bool)allowsEditing;
+- (_Bool)allowsMoveAndScale;
 - (id)localizedVariantsTitle;
 - (_Bool)allowsVariants;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties
 @property(retain, nonatomic) NSData *thumbnailImageData;

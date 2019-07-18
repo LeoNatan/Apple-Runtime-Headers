@@ -14,7 +14,7 @@
 #import <iWorkImport/TSSStyleClient-Protocol.h>
 #import <iWorkImport/TSSStyleObject-Protocol.h>
 
-@class NSString, TSSPropertyMap, TSSStylesheet, TSURetainedPointerSet;
+@class NSString, TSSPropertyMap, TSSStylesheet, TSUColor, TSURetainedPointerSet;
 
 __attribute__((visibility("hidden")))
 @interface TSSStyle : TSPObject <NSCopying, TSSPropertyValueValidator, TSSStyleObject, TSSPropertySource, TSSStyleClient, TSKModel, TSKTransformableObject>
@@ -48,6 +48,10 @@ __attribute__((visibility("hidden")))
 + (id)description;
 + (id)properties;
 + (int)muxDefaultPropertyForSpecificProperty:(int)arg1;
++ (_Bool)p_isFillAdvanced:(id)arg1;
++ (void)addIgnoreAndPreserveRulesAndDocumentWarningsForPropertyMap:(id)arg1 withArchiver:(id)arg2;
++ (id)adjustPropertyMapForFontColorArchiving:(id)arg1 fallbackColor:(id)arg2;
++ (void)upgradeFontColorToIncludeCharacterFillInPropertyMap:(id)arg1 forOwningTSPObject:(id)arg2;
 + (id)validateFontInPropertyMap:(id)arg1 parentStyle:(id)arg2 checkedFontMap:(id)arg3;
 + (id)validateFontName:(id)arg1 size:(double)arg2 bold:(_Bool)arg3 italic:(_Bool)arg4 checkedFontMap:(id)arg5 newFontName:(id *)arg6 newBold:(_Bool *)arg7 newItalic:(_Bool *)arg8;
 + (struct __CTFont *)pCreateFontWithName:(id)arg1 fontSize:(double)arg2;
@@ -158,11 +162,17 @@ __attribute__((visibility("hidden")))
 - (_Bool)allowsImplicitComponentOwnership;
 - (id)componentRootObject;
 -     // Error parsing type: v32@0:8^{ParagraphStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Color}^{LineSpacingArchive}^{Point}^{TabsArchive}^{StrokeArchive}^{Reference}^{Reference}ifBBBBffBBBBiffffIBBBBiBBBBBBi{CachedSize={atomic<int>=Ai}}}16@24, name: saveParagraphStylePropertiesToArchive:archiver:
--     // Error parsing type: v32@0:8^{CharacterStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{RepeatedPtrField<TSWP::FontFeatureArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Color}^{Color}^{ShadowArchive}^{Color}^{Color}^{Color}fBBBBiiiiffiBBBBfffBBBBfBBBBBBi{CachedSize={atomic<int>=Ai}}}16@24, name: saveCharacterStylePropertiesToArchive:archiver:
+-     // Error parsing type: v36@0:8^{CharacterStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{RepeatedPtrField<TSWP::FontFeatureArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Color}^{Color}^{ShadowArchive}^{Color}^{Color}^{Color}^{StrokeArchive}^{FillArchive}fBBBBiiiiffiBBBBfffBBBBfBBBBBBBBBi{CachedSize={atomic<int>=Ai}}}16@24B32, name: saveCharacterStylePropertiesToArchive:archiver:archivingForCommand:
+@property(readonly, nonatomic) TSUColor *fallbackFontColorWhenUnableToReadCharacterFillColor;
 -     // Error parsing type: v40@0:8@16r^{ParagraphStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Color}^{LineSpacingArchive}^{Point}^{TabsArchive}^{StrokeArchive}^{Reference}^{Reference}ifBBBBffBBBBiffffIBBBBiBBBBBBi{CachedSize={atomic<int>=Ai}}}24@32, name: loadParagraphStylePropertiesIntoPropertyMap:fromArchive:unarchiver:
--     // Error parsing type: v40@0:8@16r^{CharacterStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{RepeatedPtrField<TSWP::FontFeatureArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Color}^{Color}^{ShadowArchive}^{Color}^{Color}^{Color}fBBBBiiiiffiBBBBfffBBBBfBBBBBBi{CachedSize={atomic<int>=Ai}}}24@32, name: loadCharacterStylePropertiesIntoPropertyMap:fromArchive:unarchiver:
+- (void)p_removeFontColorPropertyInPropertyMap:(id)arg1;
+-     // Error parsing type: v40@0:8@16r^{CharacterStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{RepeatedPtrField<TSWP::FontFeatureArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Color}^{Color}^{ShadowArchive}^{Color}^{Color}^{Color}^{StrokeArchive}^{FillArchive}fBBBBiiiiffiBBBBfffBBBBfBBBBBBBBBi{CachedSize={atomic<int>=Ai}}}24@32, name: loadCharacterStylePropertiesIntoPropertyMap:fromArchive:unarchiver:
+- (void)upgradeOutlinesToStrokesForcingUpgradeForUnderspecifiedCharacterStyles:(_Bool)arg1;
+- (void)p_upgradeOutlinesToStrokesInPropertyMap:(id)arg1 forcingUpgradeForUnderspecifiedCharacterStyles:(_Bool)arg2;
 - (void)setBoolValue:(_Bool)arg1 forProperty:(int)arg2;
 - (_Bool)boolValueForProperty:(int)arg1 defaultValue:(_Bool)arg2;
+- (id)resolvedValueForProperty:(int)arg1 inStyles:(id)arg2;
+- (_Bool)wantsCustomResolveLogicForProperty:(int)arg1 forStyles:(id)arg2;
 - (id)validateFontWithCheckedFontMap:(id)arg1;
 - (_Bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 

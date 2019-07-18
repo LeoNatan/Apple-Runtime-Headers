@@ -55,6 +55,7 @@
     struct sqlite3_stmt *selectRecordsParentUUID;
     struct sqlite3_stmt *selectRecordsParentUUIDType;
     struct sqlite3_stmt *selectRecordsOfType;
+    struct sqlite3_stmt *selectRecordsOfTypeOrderedByID;
     struct sqlite3_stmt *selectRecords;
 }
 
@@ -65,6 +66,7 @@
 - (id)flush:(BOOL)arg1;
 - (id)_selectRecordsWithBlockRow:(unsigned long long)arg1 returning:(unsigned long long)arg2 error:(id *)arg3;
 - (id)_selectRecordsWithZoneRow:(unsigned long long)arg1 returning:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)_selectRecordsWithZoneRow:(unsigned long long)arg1 modelType:(id)arg2 returning:(unsigned long long)arg3 error:(id *)arg4 handler:(CDUnknownBlockType)arg5;
 - (id)_selectRecordsWithZoneRow:(unsigned long long)arg1 modelType:(id)arg2 returning:(unsigned long long)arg3 error:(id *)arg4;
 - (id)_selectRecordWithZoneRow:(unsigned long long)arg1 parentModelID:(id)arg2 modelType:(id)arg3 returning:(unsigned long long)arg4 error:(id *)arg5;
 - (id)_selectRecordWithZoneRow:(unsigned long long)arg1 parentModelID:(id)arg2 returning:(unsigned long long)arg3 error:(id *)arg4;

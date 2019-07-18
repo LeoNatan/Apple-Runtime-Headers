@@ -6,17 +6,12 @@
 
 #import <WorkflowKit/WFQuantityFieldParameter.h>
 
-@class NSArray;
-
 @interface WFDurationQuantityFieldParameter : WFQuantityFieldParameter
 {
-    NSArray *_possibleUnits;
 }
 
 + (unsigned long long)calendarUnitFromUnitString:(id)arg1;
 + (BOOL)unitStringIsDurationUnit:(id)arg1;
-- (id)possibleUnits;
-- (void).cxx_destruct;
 - (id)defaultSerializedRepresentation;
 - (id)localizedLabelForPossibleUnit:(id)arg1 magnitude:(id)arg2 style:(unsigned long long)arg3;
 - (BOOL)parameterStateIsValid:(id)arg1;

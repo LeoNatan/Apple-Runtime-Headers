@@ -15,19 +15,15 @@
     unsigned int _audioSessionID;
     CDUnknownBlockType _stoppedHandler;
     CDUnknownBlockType _resetHandler;
-    double _runTimeout;
     AVAudioSession *_avAudioSession;
-    CDUnknownBlockType _timeoutHandler;
 }
 
 + (_Bool)supports1stPartyHaptics;
 + (id)capabilitiesForHardware;
-@property(copy) CDUnknownBlockType timeoutHandler; // @synthesize timeoutHandler=_timeoutHandler;
 @property(nonatomic, getter=isAutoShutdownEnabled) _Bool autoShutdownEnabled; // @synthesize autoShutdownEnabled=_autoShutdownEnabled;
 @property _Bool running; // @synthesize running=_running;
 @property(readonly) unsigned int audioSessionID; // @synthesize audioSessionID=_audioSessionID;
 @property(readonly) AVAudioSession *avAudioSession; // @synthesize avAudioSession=_avAudioSession;
-@property double runTimeout; // @synthesize runTimeout=_runTimeout;
 @property(copy) CDUnknownBlockType resetHandler; // @synthesize resetHandler=_resetHandler;
 @property(copy) CDUnknownBlockType stoppedHandler; // @synthesize stoppedHandler=_stoppedHandler;
 - (void).cxx_destruct;

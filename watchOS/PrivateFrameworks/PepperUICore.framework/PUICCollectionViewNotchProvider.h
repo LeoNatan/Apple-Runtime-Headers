@@ -6,9 +6,11 @@
 
 #import <PepperUICore/PUICScrollViewNotchProvider.h>
 
-@class NSMutableSet, PUICCollectionView;
+#import <PepperUICore/PUICCollectionViewItemNotchProviderDelegate-Protocol.h>
 
-@interface PUICCollectionViewNotchProvider : PUICScrollViewNotchProvider
+@class NSMutableSet, NSString, PUICCollectionView;
+
+@interface PUICCollectionViewNotchProvider : PUICScrollViewNotchProvider <PUICCollectionViewItemNotchProviderDelegate>
 {
     struct {
         unsigned int respondsToCollectionViewLayoutNotchBehaviorForItemAtIndexPath:1;
@@ -33,19 +35,23 @@
 - (id)_previousIndexPathThatParticipatesInNotchesFromIndexPath:(id)arg1;
 - (id)_nextIndexPathThatParticipatesInNotchesAfterIndexPath:(id)arg1;
 - (_Bool)_itemAtIndexPathParticipatesInNothces:(id)arg1;
-- (_Bool)_attributesPrescribeAddingNotch:(id)arg1;
-- (_Bool)_attributesPrescribeNotchCenter:(id)arg1;
 - (unsigned int)_notchBehaviorFromAttributes:(id)arg1 indexPath:(id)arg2;
 - (void)_createEdgeNotchesIfNecessary;
 - (void)_checkCollectionViewDelegateSupportForNotches;
 - (void)_resetNochCaches;
+- (float)firstValidNotchOffsetForCollectionViewItemNotchProvider:(id)arg1;
 - (void)resetNotches;
 - (void)reloadData;
-- (_Bool)shouldAddNotchFrom:(float)arg1 to:(float)arg2 viewMaxY:(float)arg3;
 - (void)processCellAtIndexPath:(id)arg1 notches:(id)arg2;
 - (void)generateNotches;
 - (float)calculateFirstValidOffsetForNotches;
 - (id)initWithCollectionView:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

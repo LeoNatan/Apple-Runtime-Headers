@@ -16,6 +16,9 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *heroImageProviderName;
+- (id)bestHeroImageForSize:(struct CGSize)arg1 allowSmaller:(_Bool)arg2;
+- (_Bool)_validHeroImageForPhoto:(id)arg1;
 @property(readonly, nonatomic) MKMapItem *mapItem;
 @property(readonly, nonatomic) NSString *walletCategoryIdentifier;
 @property(readonly, nonatomic) NSString *mapsCategoryIdentifier;

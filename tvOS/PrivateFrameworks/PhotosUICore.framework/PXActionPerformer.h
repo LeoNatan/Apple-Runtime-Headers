@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <PhotosUICore/PXActivityActionDelegate-Protocol.h>
+
 @class NSString;
 @protocol PXActionPerformerDelegate, PXAnonymousViewController;
 
-@interface PXActionPerformer : NSObject
+@interface PXActionPerformer : NSObject <PXActivityActionDelegate>
 {
     CDUnknownBlockType _completionHandler;
     _Bool _success;
@@ -46,14 +48,24 @@
 - (void)_completeUnlockTaskWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_performUnlockIfNeeded;
 - (_Bool)requiresUnlockedDevice;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (_Bool)performerResetsAfterCompletion;
 - (void)cancelActionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performActionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)localizedTitleForUseCase:(unsigned long long)arg1;
 - (id)initWithActionType:(id)arg1;
 - (id)init;
+- (void)performActivity:(id)arg1;
+- (_Bool)canPerformWithActivityItems:(id)arg1 forActivity:(id)arg2;
+@property(readonly, nonatomic) NSString *activitySystemImageName;
+@property(readonly, nonatomic) NSString *activityType;
+- (id)activity;
 - (id)alertAction;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

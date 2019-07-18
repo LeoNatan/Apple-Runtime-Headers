@@ -12,21 +12,25 @@
 
 @interface BYBackupMetadata : PBCodable <NSCopying>
 {
+    long long _userInterfaceStyleMode;
     unsigned int _appAnalyticsOptIn;
     unsigned int _deviceAnalyticsOptIn;
     unsigned int _homeButtonHapticKind;
     NSData *_nanoRegistryData;
     unsigned int _version;
     _Bool _autoUpdateEnabled;
+    _Bool _didSeeTrueTonePane;
     _Bool _findMyiPhoneOptIn;
     _Bool _locationServicesOptIn;
     _Bool _screenTimeEnabled;
     _Bool _siriOptIn;
     struct {
+        unsigned int userInterfaceStyleMode:1;
         unsigned int appAnalyticsOptIn:1;
         unsigned int deviceAnalyticsOptIn:1;
         unsigned int homeButtonHapticKind:1;
         unsigned int autoUpdateEnabled:1;
+        unsigned int didSeeTrueTonePane:1;
         unsigned int findMyiPhoneOptIn:1;
         unsigned int locationServicesOptIn:1;
         unsigned int screenTimeEnabled:1;
@@ -34,6 +38,8 @@
     } _has;
 }
 
+@property(nonatomic) long long userInterfaceStyleMode; // @synthesize userInterfaceStyleMode=_userInterfaceStyleMode;
+@property(nonatomic) _Bool didSeeTrueTonePane; // @synthesize didSeeTrueTonePane=_didSeeTrueTonePane;
 @property(nonatomic) _Bool autoUpdateEnabled; // @synthesize autoUpdateEnabled=_autoUpdateEnabled;
 @property(nonatomic) _Bool screenTimeEnabled; // @synthesize screenTimeEnabled=_screenTimeEnabled;
 @property(nonatomic) _Bool siriOptIn; // @synthesize siriOptIn=_siriOptIn;
@@ -54,6 +60,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasUserInterfaceStyleMode;
+@property(nonatomic) _Bool hasDidSeeTrueTonePane;
 @property(nonatomic) _Bool hasAutoUpdateEnabled;
 @property(nonatomic) _Bool hasScreenTimeEnabled;
 @property(nonatomic) _Bool hasSiriOptIn;

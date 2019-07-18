@@ -25,6 +25,7 @@
         unsigned int implementsIndexPathVisibility:1;
         unsigned int implementsBeginRelevanceUpdate:1;
         unsigned int implementsFinishedRelevanceUpdate:1;
+        unsigned int implementsIdentifierBasedReloadElement:1;
     } _delegateCallbacks;
     NSArray *_hiddenIndices;
     NSMutableSet *_hiddenBundleIdentifiers;

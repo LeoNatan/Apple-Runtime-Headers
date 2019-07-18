@@ -57,6 +57,7 @@
 + (id)ic_notesAppYellowColor;
 - (id)ic_colorString;
 @property(readonly, nonatomic) UIColor *ic_resolvedColor;
+@property(readonly, nonatomic) _Bool ic_isWhite;
 @property(readonly, nonatomic) _Bool ic_isBlack;
 - (id)_icaxLightnessSaturationHueFormatString;
 - (id)_icaxSaturationHueFormatString;

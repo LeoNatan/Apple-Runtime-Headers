@@ -58,6 +58,8 @@
 - (BOOL)_filteringSettingConfirmed;
 - (id)_displayNameForBusinessChatAddress:(id)arg1;
 - (id)_suggestedDisplayNameForAddress:(id)arg1;
+- (id)_nicknameDisplayNameForID:(id)arg1;
+- (id)_nicknameInfoForAddress:(id)arg1;
 - (void)_setUpSuggestionService;
 - (id)_displayNameForHandle:(struct _IMDHandleRecordStruct *)arg1 andContact:(id)arg2;
 - (BOOL)_handleIsWhitelisted:(struct _IMDHandleRecordStruct *)arg1;
@@ -82,7 +84,7 @@
 - (void)_populateSubtitleForNotificationContent:(id)arg1 chatDictionary:(id)arg2 messageDictionary:(id)arg3;
 - (void)_populateBodyForNotificationContent:(id)arg1 messageDictionary:(id)arg2 onlyPopulateWasMentionedString:(BOOL)arg3;
 - (void)_populateBodyForNotificationContent:(id)arg1 messageDictionary:(id)arg2;
-- (void)_populateBasicNotificationIdentifyingContent:(id)arg1 chatDictionary:(id)arg2 messageDictionary:(id)arg3;
+- (void)_populateBasicNotificationIdentifyingContent:(id)arg1 chatDictionary:(id)arg2 messageDictionary:(id)arg3 isCarouselUITriggered:(BOOL)arg4;
 - (BOOL)_isRaiseGestureEnabled;
 - (void)postFirstUnlockMessage:(id)arg1 forIdentifier:(id)arg2;
 - (void)postUrgentNotificationForMessages:(id)arg1;

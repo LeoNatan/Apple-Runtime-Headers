@@ -14,7 +14,7 @@
     QLExtensionManagerCache *_previewExtensionCache;
 }
 
-+ (id)supportedContentTypesForExtension:(id)arg1;
++ (BOOL)extension:(id)arg1 supportsExactType:(id)arg2;
 + (void)_resetSharedManager;
 + (void)_setSharedManager:(id)arg1;
 + (id)sharedManager;

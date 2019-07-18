@@ -31,6 +31,7 @@
     NSArray *_pendingGroupsFromOtherSessions;
     NSHashTable *_groupsFromPage;
     FCFeedRefreshSession *_refreshSession;
+    NSHashTable *_insertedGroupsFromPage;
     FCFeedEdition *_followingEdition;
     NSArray *_emitters;
     NSArray *_remainingEmitters;
@@ -45,6 +46,7 @@
 @property(retain, nonatomic) NSArray *remainingEmitters; // @synthesize remainingEmitters=_remainingEmitters;
 @property(retain, nonatomic) NSArray *emitters; // @synthesize emitters=_emitters;
 @property(retain, nonatomic) FCFeedEdition *followingEdition; // @synthesize followingEdition=_followingEdition;
+@property(retain, nonatomic) NSHashTable *insertedGroupsFromPage; // @synthesize insertedGroupsFromPage=_insertedGroupsFromPage;
 @property(retain, nonatomic) FCFeedRefreshSession *refreshSession; // @synthesize refreshSession=_refreshSession;
 @property(readonly, nonatomic) _Bool isOffline; // @synthesize isOffline=_isOffline;
 @property(retain, nonatomic) NSHashTable *groupsFromPage; // @synthesize groupsFromPage=_groupsFromPage;
@@ -81,15 +83,13 @@
 - (id)creationDateOfFollowingGroupWithType:(long long)arg1;
 - (id)precedingNewFavoriteTagIDs;
 - (_Bool)pageHasPrecedingGroupWithSourceIdentifier:(id)arg1;
+- (_Bool)pageWillHaveGroupWithSourceIdentifier:(id)arg1;
+- (_Bool)pageIsWaitingForFirstGroupFromSourceIdentifier:(id)arg1;
 - (_Bool)pageHasExhaustedGroupsWithTypes:(id)arg1;
-- (_Bool)pageWillContainHeadlineCount:(unsigned long long)arg1 fromGroupTypes:(id)arg2;
 - (_Bool)pageWillContainExpandedNewGroupWithType:(long long)arg1;
-- (_Bool)pageWillContainGroupWithType:(long long)arg1;
 - (unsigned long long)countOfPrecedingAdjacentGroupsWithTypes:(id)arg1;
-- (_Bool)hasPrecedingGroupsWithType:(long long)arg1;
 - (id)followingAdjacentHeadlinesFromGroupType:(long long)arg1;
 - (id)precedingAdjacentHeadlinesFromGroupType:(long long)arg1;
-@property(readonly, nonatomic) unsigned long long countOfArticlesInPrecedingGroup;
 @property(readonly, nonatomic) long long precedingGroupType;
 - (unsigned long long)countOfGroupsFromPageWithType:(long long)arg1;
 - (id)groupFromPageWithType:(long long)arg1;

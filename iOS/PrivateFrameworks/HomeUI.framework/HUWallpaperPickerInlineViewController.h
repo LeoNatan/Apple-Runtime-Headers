@@ -42,7 +42,7 @@
 @property(retain, nonatomic) UIImagePickerController *imagePicker; // @synthesize imagePicker=_imagePicker;
 @property(retain, nonatomic) NSMutableDictionary *imageCache; // @synthesize imageCache=_imageCache;
 @property(nonatomic) __weak id <HUWallpaperPickerInlineViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) UIImage *originalCustomImage; // @synthesize originalCustomImage=_originalCustomImage;
+@property(retain, nonatomic) UIImage *originalCustomImage; // @synthesize originalCustomImage=_originalCustomImage;
 @property(readonly, nonatomic) double preferedHeight; // @synthesize preferedHeight=_preferedHeight;
 @property(retain, nonatomic) NSArray *namedWallpapers; // @synthesize namedWallpapers=_namedWallpapers;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;

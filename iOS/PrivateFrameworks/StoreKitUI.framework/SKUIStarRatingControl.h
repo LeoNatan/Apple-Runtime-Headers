@@ -26,6 +26,10 @@ __attribute__((visibility("hidden")))
 - (void)_updateUserRatingWithTouch:(id)arg1;
 - (double)_unfilledStarsMinX;
 - (double)_unfilledStarsWidth;
+- (unsigned long long)_ratingForUIDirection:(unsigned long long)arg1;
+- (unsigned long long)_firstStar;
+- (unsigned long long)_lastStar;
+- (_Bool)_isRTL;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;

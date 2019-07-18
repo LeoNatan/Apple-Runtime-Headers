@@ -16,7 +16,9 @@ __attribute__((visibility("hidden")))
 @interface AVPictureInPictureControllerMacHelper : NSObject <AVPictureInPictureControllerMacHelper, PIPSafariViewControllerDelegate>
 {
     BOOL _playing;
+    BOOL _muted;
     BOOL _active;
+    BOOL _showsMuteUnmuteControls;
     id <AVPictureInPictureControllerMacHelperDelegate> _delegate;
     UINSPIPViewController *_pipViewController;
     NSWindow *_appNSWindow;
@@ -26,18 +28,23 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak NSWindow *appNSWindow; // @synthesize appNSWindow=_appNSWindow;
 @property(retain, nonatomic) UINSPIPViewController *pipViewController; // @synthesize pipViewController=_pipViewController;
+@property(nonatomic) BOOL showsMuteUnmuteControls; // @synthesize showsMuteUnmuteControls=_showsMuteUnmuteControls;
 @property(nonatomic) struct CGRect normalizedSourceRectInWindow; // @synthesize normalizedSourceRectInWindow=_normalizedSourceRectInWindow;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 @property(nonatomic) struct CGSize contentAspectRatio; // @synthesize contentAspectRatio=_contentAspectRatio;
+@property(nonatomic, getter=isMuted) BOOL muted; // @synthesize muted=_muted;
 @property(nonatomic, getter=isPlaying) BOOL playing; // @synthesize playing=_playing;
 @property(nonatomic) __weak id <AVPictureInPictureControllerMacHelperDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_updatePIPControls;
 - (void)_stopImmediatelyIfActive;
 - (void)_unsetReplacementRect;
 - (struct CGRect)_sourceRectInWindow;
 - (BOOL)pipShouldClose:(id)arg1;
 - (void)pipActionStop:(id)arg1;
 - (void)pipActionPause:(id)arg1;
+- (void)pipActionUnmute:(id)arg1;
+- (void)pipActionMute:(id)arg1;
 - (void)pipActionPlay:(id)arg1;
 - (void)pipDidClose:(id)arg1;
 - (void)stopPictureInPictureAnimatingBackToSource:(BOOL)arg1;

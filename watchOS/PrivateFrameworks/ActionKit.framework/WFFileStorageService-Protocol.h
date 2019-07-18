@@ -22,9 +22,11 @@
 - (void)createFolderAtPath:(NSString *)arg1 completionHandler:(void (^)(WFContentCollection *, NSError *))arg2;
 - (void)deleteFiles:(WFContentCollection *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)getSharingURLsForFiles:(WFContentCollection *)arg1 usePublicURLs:(_Bool)arg2 completionHandler:(void (^)(NSArray *, NSError *))arg3;
-- (id <WFFileStorageServiceOperation>)saveFiles:(WFContentCollection *)arg1 withUserInterface:(id <WFUserInterface>)arg2 options:(unsigned int)arg3 progress:(NSProgress *)arg4 completionHandler:(void (^)(WFContentCollection *, NSError *))arg5;
 - (id <WFFileStorageServiceOperation>)saveFiles:(WFContentCollection *)arg1 toPath:(NSString *)arg2 options:(unsigned int)arg3 progress:(NSProgress *)arg4 completionHandler:(void (^)(WFContentCollection *, NSError *))arg5;
-- (void)retrieveFilesWithUserInterface:(id <WFUserInterface>)arg1 initialDirectoryPath:(NSString *)arg2 options:(unsigned int)arg3 progress:(NSProgress *)arg4 completionHandler:(void (^)(WFContentCollection *, NSError *))arg5;
 - (void)retrieveFilesAtPath:(NSString *)arg1 options:(unsigned int)arg2 progress:(NSProgress *)arg3 completionHandler:(void (^)(WFContentCollection *, NSError *))arg4;
+
+@optional
+- (id <WFFileStorageServiceOperation>)saveFiles:(WFContentCollection *)arg1 withUserInterface:(id <WFUserInterface>)arg2 options:(unsigned int)arg3 progress:(NSProgress *)arg4 completionHandler:(void (^)(WFContentCollection *, NSError *))arg5;
+- (void)retrieveFilesWithUserInterface:(id <WFUserInterface>)arg1 initialDirectoryPath:(NSString *)arg2 options:(unsigned int)arg3 progress:(NSProgress *)arg4 completionHandler:(void (^)(WFContentCollection *, NSError *))arg5;
 @end
 

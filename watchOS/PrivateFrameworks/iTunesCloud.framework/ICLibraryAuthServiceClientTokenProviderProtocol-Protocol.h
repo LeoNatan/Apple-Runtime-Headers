@@ -6,10 +6,11 @@
 
 #import <iTunesCloud/NSObject-Protocol.h>
 
-@class ICLibraryAuthServiceClientTokenResult, NSNumber;
+@class ICLibraryAuthServiceClientTokenResult, NSNumber, NSSet;
 
 @protocol ICLibraryAuthServiceClientTokenProviderProtocol <NSObject>
 - (void)addTokenResult:(ICLibraryAuthServiceClientTokenResult *)arg1 forDSID:(NSNumber *)arg2 completion:(void (^)(NSError *))arg3;
+- (void)getTokenResultsForDSIDs:(NSSet *)arg1 forceRefresh:(_Bool)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)getTokenResultForDSID:(NSNumber *)arg1 forceRefresh:(_Bool)arg2 completion:(void (^)(ICLibraryAuthServiceClientTokenResult *, NSError *))arg3;
 @end
 

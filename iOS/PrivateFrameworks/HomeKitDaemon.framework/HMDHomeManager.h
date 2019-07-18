@@ -16,7 +16,7 @@
 #import <HomeKitDaemon/HMFMessageReceiver-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDAWDLogEventObserver, HMDAccessoryBrowser, HMDAccountRegistry, HMDApplicationData, HMDApplicationRegistry, HMDAssistantGather, HMDBackingStore, HMDCameraClipCollectionManager, HMDCameraRecordingResidentElector, HMDClientConnection, HMDCloudAccount, HMDCloudDataSyncStateFilter, HMDCloudManager, HMDCompanionManager, HMDDevice, HMDFMFHandler, HMDHomeManagerObjectChangeHandler, HMDHomeManagerObjectLookup, HMDIdentityRegistry, HMDKeyTransferAgent, HMDLocation, HMDMessageDispatcher, HMDMessageFilterChain, HMDMobileAssetManager, HMDNameValidator, HMDPairedSync, HMDPendingCloudSyncTransactions, HMDPowerManager, HMDResidentMesh, HMDSoftwareUpdateManager, HMDSyncOperationManager, HMDTimeInformationMonitor, HMDUserCloudShareManager, HMDWatchManager, HMFDumpCategory, HMFMessageDispatcher, HMFTimer, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, NSUUID;
+@class HMDAWDLogEventObserver, HMDAccessoryBrowser, HMDAccountRegistry, HMDApplicationData, HMDAssistantGather, HMDBackingStore, HMDCameraClipCollectionManager, HMDCameraRecordingResidentElector, HMDClientConnection, HMDCloudAccount, HMDCloudDataSyncStateFilter, HMDCloudManager, HMDCompanionManager, HMDDevice, HMDFMFHandler, HMDHomeManagerObjectChangeHandler, HMDHomeManagerObjectLookup, HMDIdentityRegistry, HMDKeyTransferAgent, HMDLocation, HMDMessageDispatcher, HMDMessageFilterChain, HMDMobileAssetManager, HMDNameValidator, HMDPairedSync, HMDPendingCloudSyncTransactions, HMDPowerManager, HMDResidentMesh, HMDSoftwareUpdateManager, HMDSyncOperationManager, HMDTimeInformationMonitor, HMDUserCloudShareManager, HMDWatchManager, HMFDumpCategory, HMFMessageDispatcher, HMFTimer, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, NSUUID;
 @protocol HMDAccessoryBrowserProtocol, OS_dispatch_queue, OS_dispatch_source;
 
 @interface HMDHomeManager : HMFObject <HMDDeviceSetupSessionDelegate, HMDMobileAssetManagerDelegate, HMFMessageReceiver, HMDAccessoryBrowserManagerDelegate, HMFTimerDelegate, HAPFragmentationStreamDelegate, HMDPairedSyncDelegate, HMDUserManagementOperationDelegate, HMDBackingStoreObjectProtocol>
@@ -103,7 +103,6 @@
     HMDCloudDataSyncStateFilter *_cloudDataSyncStateFilter;
     HMDLocation *_locationHandler;
     HMDFMFHandler *_fmfHandler;
-    HMDApplicationRegistry *_appRegistry;
     HMDAccountRegistry *_accountRegistry;
     HMFDumpCategory *_dumpCategory;
     NSMutableArray *_incomingInvitations;
@@ -165,7 +164,6 @@
 @property(retain, nonatomic) NSMutableArray *incomingInvitations; // @synthesize incomingInvitations=_incomingInvitations;
 @property(readonly, nonatomic) HMFDumpCategory *dumpCategory; // @synthesize dumpCategory=_dumpCategory;
 @property(readonly, nonatomic) HMDAccountRegistry *accountRegistry; // @synthesize accountRegistry=_accountRegistry;
-@property(retain, nonatomic) HMDApplicationRegistry *appRegistry; // @synthesize appRegistry=_appRegistry;
 @property(retain, nonatomic) HMDFMFHandler *fmfHandler; // @synthesize fmfHandler=_fmfHandler;
 @property(retain, nonatomic) HMDLocation *locationHandler; // @synthesize locationHandler=_locationHandler;
 @property(nonatomic) _Bool uploadMetadataToCloud; // @synthesize uploadMetadataToCloud=_uploadMetadataToCloud;
@@ -241,6 +239,7 @@
 @property(readonly, nonatomic) HMDSoftwareUpdateManager *softwareUpdateManager; // @synthesize softwareUpdateManager=_softwareUpdateManager;
 @property(readonly, nonatomic) HMDKeyTransferAgent *keyTransferAgent; // @synthesize keyTransferAgent=_keyTransferAgent;
 - (void).cxx_destruct;
+- (void)handleRemoteUserClientCloudShareRequest:(id)arg1;
 - (void)_cleanChangesIfNoAddChangeObjectID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)emptyModelObjectWithChangeType:(unsigned long long)arg1;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
@@ -297,13 +296,16 @@
 - (void)_handleRequestToUpdateHomeInvitationFromInviter:(id)arg1;
 - (long long)numberOfPendingIncomingInvitation;
 - (void)_handleNetworkFirewallFetchCloudChangesRequest:(id)arg1;
+- (void)_handleNetworkFirewallRemoveLocalRulesRequest:(id)arg1;
 - (void)_handleNetworkFirewallDumpLocalRulesRequest:(id)arg1;
 - (void)_handleNetworkFirewallRemoveOverridesRequest:(id)arg1;
 - (void)_handleNetworkFirewallAddOverridesRequest:(id)arg1;
 - (void)_handleNetworkFirewallDumpCloudRecordsRequest:(id)arg1;
+- (void)__startupFirewallRuleManagerForMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_logState:(id)arg1 key:(id)arg2 indent:(id)arg3;
 - (void)_dumpToLog:(id)arg1 withState:(id)arg2;
 - (void)registerStateHandler;
+- (void)_handleTestModeConfigRequest:(id)arg1;
 - (void)_handleSysdiagnoseRequest:(id)arg1;
 - (id)_dumpHomeManagerData;
 - (void)_handleDumpState:(id)arg1;
@@ -424,7 +426,6 @@
 - (void)_processUserManagementOperationModel:(id)arg1 message:(id)arg2;
 - (void)reprocessUserManagementModels;
 - (void)handleVendorInfoUpdated:(id)arg1;
-- (void)_handleRetrieveAddInformationForActivity:(id)arg1;
 - (void)_handleRequestIsUserUsingHomeKit:(id)arg1;
 - (void)processCloudZoneModelRemoved:(id)arg1 message:(id)arg2;
 - (void)processCloudZoneModelAdd:(id)arg1 message:(id)arg2;
@@ -456,15 +457,20 @@
 - (id)nominateCurrentHomeUUID;
 - (void)notifyPrimaryHomeUpdated;
 - (void)_extractVendorIdentifierFor:(id)arg1 andRun:(CDUnknownBlockType)arg2;
+- (void)_handleConnectivityInfoRequest:(id)arg1;
 - (void)_handleRequestMediaAccessoryControl:(id)arg1;
 - (void)_handlePairingIdentityRequest:(id)arg1;
 - (void)sendPairingIdentity:(id)arg1 includePrivateKey:(_Bool)arg2 requestMessage:(id)arg3;
 - (void)_handleRequestRuntimeStateUpdate:(id)arg1;
-- (void)_getRuntimeStateUpdateForHomeManager:(_Bool)arg1 includeMediaAccessoryState:(_Bool)arg2 includeHAPAccessoryState:(_Bool)arg3 includeResidentDeviceState:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_getRuntimeStateUpdateForHomeManager:(_Bool)arg1 includeMediaAccessoryState:(_Bool)arg2 options:(unsigned long long)arg3 includeResidentDeviceState:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)_runtimeState;
+- (void)notifyAboutAddAccessoryRequest;
+- (void)_handleFetchAddAccessoryRequests:(id)arg1;
+- (id)_addAccessoryRequestsForMessage:(id)arg1;
 - (void)_handleRequestFetchHomeConfiguration:(id)arg1;
 - (void)_retryCloudOperationWithName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_startTimerToResetCloudOperationRetryCounter;
+- (void)_submitAccessoryNetworkProtectionReportsToAWD:(id)arg1;
 - (void)registerQueriableAwdMetrics;
 - (void)_monitorReachability;
 - (void)_registerForMessages;
@@ -591,6 +597,7 @@
 - (void)_runUploadHomeConfigToCloud:(id)arg1 rowIDs:(id)arg2 forcePush:(_Bool)arg3 syncCompletion:(CDUnknownBlockType)arg4;
 - (void)_runUploadHomeConfigToCloudForcePush:(_Bool)arg1 syncCompletion:(CDUnknownBlockType)arg2;
 - (void)_uploadHomeConfigToCloud:(_Bool)arg1 withDelay:(double)arg2;
+- (void)uploadHomeConfigToCloud:(_Bool)arg1 withDelay:(double)arg2;
 - (void)_pushChangesToCloud:(_Bool)arg1 withDelay:(double)arg2;
 - (void)_removePendingDataSyncAcksForUser:(id)arg1 forHome:(id)arg2;
 - (void)_addPendingDataSyncAcksForUser:(id)arg1 forHome:(id)arg2;
@@ -644,8 +651,8 @@
 - (void)_reloadHomeDataFromLocalStore:(_Bool)arg1;
 - (void)reloadHomeDataFromLocalStore:(_Bool)arg1;
 @property(readonly, nonatomic) id <HMDAccessoryBrowserProtocol> accessoryBrowser;
-- (void)_loadMessageDispatcher:(id)arg1 remoteMessageDispatcher:(id)arg2 accessoryBrowser:(id)arg3 messageFilterChain:(id)arg4 homeData:(id)arg5 localDataDecryptionFailed:(_Bool)arg6 identityRegistry:(id)arg7 appRegistry:(id)arg8 accountRegistry:(id)arg9 reloadData:(_Bool)arg10;
-- (id)initWithMessageDispatcher:(id)arg1 remoteMessageDispatcher:(id)arg2 accessoryBrowser:(id)arg3 messageFilterChain:(id)arg4 homeData:(id)arg5 localDataDecryptionFailed:(_Bool)arg6 identityRegistry:(id)arg7 appRegistry:(id)arg8 accountRegistry:(id)arg9;
+- (void)_loadMessageDispatcher:(id)arg1 remoteMessageDispatcher:(id)arg2 accessoryBrowser:(id)arg3 messageFilterChain:(id)arg4 homeData:(id)arg5 localDataDecryptionFailed:(_Bool)arg6 identityRegistry:(id)arg7 accountRegistry:(id)arg8 reloadData:(_Bool)arg9;
+- (id)initWithMessageDispatcher:(id)arg1 remoteMessageDispatcher:(id)arg2 accessoryBrowser:(id)arg3 messageFilterChain:(id)arg4 homeData:(id)arg5 localDataDecryptionFailed:(_Bool)arg6 identityRegistry:(id)arg7 accountRegistry:(id)arg8;
 - (void)_sendFragmentedMessage:(id)arg1 messageIndex:(unsigned long long)arg2 messageIdentity:(id)arg3 userID:(id)arg4 destination:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)_fragmentationStream:(id)arg1 didReceiveData:(id)arg2 transactionIdentifier:(unsigned short)arg3 error:(id)arg4;
 - (void)_fragmentationStream:(id)arg1 didCloseWithError:(id)arg2;

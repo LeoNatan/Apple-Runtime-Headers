@@ -30,6 +30,9 @@
 - (void).cxx_destruct;
 - (void)assetResourceRequestDidFinish:(id)arg1;
 - (void)assetResourceRequest:(id)arg1 didFindFileURL:(id)arg2;
+- (void)_finishWithError:(id)arg1;
+- (void)_receiveAssetResourceDataPart:(id)arg1;
+- (void)_reportProgress:(double)arg1;
 - (void)handleAvailabilityChangeForResource:(id)arg1 url:(id)arg2 info:(id)arg3 error:(id)arg4;
 @property(readonly, copy) NSString *description;
 - (void)cancel;

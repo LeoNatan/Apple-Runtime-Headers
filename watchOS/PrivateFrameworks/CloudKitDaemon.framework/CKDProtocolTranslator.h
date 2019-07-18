@@ -31,7 +31,6 @@
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) _Bool dontCreateValidatingParentReferences; // @synthesize dontCreateValidatingParentReferences=_dontCreateValidatingParentReferences;
 - (void).cxx_destruct;
-- (id)ancestorFromPAncestor:(id)arg1 error:(id *)arg2;
 - (id)identityFromPUser:(id)arg1;
 - (id)pAliasWithUserRecordID:(id)arg1;
 - (id)pAliasWithHashedStringID:(id)arg1 type:(int)arg2;

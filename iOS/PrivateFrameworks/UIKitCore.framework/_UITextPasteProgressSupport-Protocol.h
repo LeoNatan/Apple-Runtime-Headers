@@ -11,7 +11,5 @@
 @protocol _UITextPasteProgressSupport <NSObject>
 - (UITextRange *)_textPasteSelectableRangeForResult:(NSAttributedString *)arg1 fromRange:(UITextRange *)arg2;
 - (long long)_textPasteRangeBehavior;
-- (_Bool)_textPasteShouldBlockPasting;
-- (double)_textPasteBlockingTimeout;
 @end
 

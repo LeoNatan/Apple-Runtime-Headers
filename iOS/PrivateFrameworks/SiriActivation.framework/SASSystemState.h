@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet, SASLockStateMonitor, SUICApplicationStateHelper;
+@class NSHashTable, SASLockStateMonitor, SUICApplicationStateHelper;
 
 @interface SASSystemState : NSObject
 {
@@ -16,11 +16,11 @@
     int _carPlayConnectionState;
     SASLockStateMonitor *_lockStateMonitor;
     SUICApplicationStateHelper *_applicationStateHelper;
-    NSMutableSet *_listeners;
+    NSHashTable *_listeners;
 }
 
 + (id)sharedSystemState;
-@property(retain, nonatomic) NSMutableSet *listeners; // @synthesize listeners=_listeners;
+@property(retain, nonatomic) NSHashTable *listeners; // @synthesize listeners=_listeners;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) SUICApplicationStateHelper *applicationStateHelper; // @synthesize applicationStateHelper=_applicationStateHelper;
 @property(nonatomic) _Bool accessibilityShortcutEnabled; // @synthesize accessibilityShortcutEnabled=_accessibilityShortcutEnabled;
@@ -28,7 +28,6 @@
 @property(nonatomic) _Bool pocketStateShouldPreventVoiceTrigger; // @synthesize pocketStateShouldPreventVoiceTrigger=_pocketStateShouldPreventVoiceTrigger;
 @property(retain, nonatomic) SASLockStateMonitor *lockStateMonitor; // @synthesize lockStateMonitor=_lockStateMonitor;
 - (void).cxx_destruct;
-- (void)_preferencesDidUpdate;
 - (_Bool)siriIsSupported;
 - (_Bool)siriIsRestricted;
 - (_Bool)siriIsEnabled;
@@ -39,6 +38,7 @@
 - (_Bool)isConnectedToCarPlay;
 - (void)monitorCarSessions;
 - (_Bool)carDNDActive;
+- (_Bool)isInActiveCall;
 - (id)foregroundAppInfosForPresentationIdentifier:(long long)arg1;
 - (_Bool)deviceIsPasscodeLocked;
 - (_Bool)deviceIsBlocked;

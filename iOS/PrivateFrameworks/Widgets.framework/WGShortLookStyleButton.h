@@ -15,19 +15,22 @@
     MTMaterialView *_backgroundView;
     UILabel *_titleLabel;
     BSUIFontProvider *_fontProvider;
-    double _dimension;
+    struct CGSize _size;
     _Bool _backgroundBlurred;
 }
 
 @property(nonatomic, getter=isBackgroundBlurred) _Bool backgroundBlurred; // @synthesize backgroundBlurred=_backgroundBlurred;
 - (void).cxx_destruct;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 @property(copy, nonatomic) NSString *materialGroupNameBase;
 - (void)traitCollectionDidChange:(id)arg1;
+- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)_updateTouchInsetsIfNecessary;
 - (void)layoutSubviews;
 - (void)_layoutTitleLabel;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)invalidateCachedGeometry;
-- (double)_dimension;
+- (struct CGSize)_size;
 @property(copy, nonatomic) NSString *title;
 - (void)_configureMaskIfNecessary;
 - (void)_setBackgroundViewCornerRadius:(double)arg1;
@@ -35,9 +38,11 @@
 - (void)_configureTitleLabelIfNecessary;
 - (void)_updateTitleLabelFont;
 - (void)_configureBackgroundViewIfNecessary;
-- (double)_minimumScaleFactorForFont:(id)arg1;
+- (id)fontForTitle:(id)arg1;
 - (id)_fontProvider;
+- (void)_updateHighlight;
 - (void)setHighlighted:(_Bool)arg1;
+- (struct CGSize)intrinsicContentSize;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -9,7 +9,7 @@
 #import <CoverSheet/CSAdjunctItemHosting-Protocol.h>
 #import <CoverSheet/MRPlatterViewControllerDelegate-Protocol.h>
 
-@class MRPlatterViewController, MTVisualStylingProvider, NSArray, NSString;
+@class MRPlatterViewController, NSArray, NSString;
 
 @interface CSMediaControlsViewController : CSCoverSheetViewControllerBase <MRPlatterViewControllerDelegate, CSAdjunctItemHosting>
 {
@@ -42,7 +42,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 
 @end
 

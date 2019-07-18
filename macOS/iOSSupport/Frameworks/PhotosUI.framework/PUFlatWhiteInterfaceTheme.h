@@ -145,6 +145,7 @@
 @property(readonly, nonatomic) UIColor *playbackTimeLabelBackgroundColor;
 @property(readonly, nonatomic) UIColor *videoScrubberTileBackgroundColor;
 @property(readonly, nonatomic) UIColor *playheadBackgroundColor;
+@property(readonly, nonatomic) UIColor *playheadOutlineColor;
 @property(readonly, nonatomic) UIColor *playheadColor;
 - (void)configureProgressIndicatorMessageLabel:(id)arg1;
 @property(readonly, nonatomic) UIFont *photoBrowserTimeTitleFont;

@@ -14,7 +14,6 @@
 + (id)protectedDatabaseName;
 - (void)addAdditionalCriteriaToCleanupActivity:(id)arg1;
 - (void)finishJournalReconciliation:(unsigned long long)arg1;
-- (_Bool)allowCleanupActivity;
 - (_Bool)protectedDataAvailable;
 - (_Bool)supportsJournaling;
 

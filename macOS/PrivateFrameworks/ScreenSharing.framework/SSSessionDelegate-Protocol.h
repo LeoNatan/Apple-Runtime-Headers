@@ -25,6 +25,7 @@
 - (void)ssSessionRequestToResume:(SSSession *)arg1 result:(int)arg2;
 - (void)ssSessionResumed:(SSSession *)arg1;
 - (void)ssSessionPaused:(SSSession *)arg1;
+- (void)ssSession:(SSSession *)arg1 didSetLocalWindowUIResolution:(NSNumber *)arg2;
 - (void)ssSession:(SSSession *)arg1 allowsControl:(BOOL)arg2;
 - (void)ssSession:(SSSession *)arg1 canToggleCurtainModeChanged:(BOOL)arg2;
 - (void)ssSession:(SSSession *)arg1 onConsoleChanged:(BOOL)arg2;

@@ -50,6 +50,7 @@
 - (void)_initStores;
 - (void)_prepareForUseIfNeeded;
 - (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
+- (void)saveWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)cacheCoordinator:(id)arg1 flushKeysWithWriteLock:(id)arg2;
 - (unsigned long long)cacheCoordinatorCurrentSizeWithReadLock:(id)arg1;
 - (void)_fetchDataProviderForAssetHandle:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -16,6 +16,7 @@
     NSData *_imageData;
     NSData *_largeImageData;
     NSData *_cropRectHash;
+    NSString *_imageReference;
     NSString *_actionName;
     struct CGRect _cropRect;
 }
@@ -26,6 +27,7 @@
 @property(nonatomic) BOOL done; // @synthesize done=_done;
 @property(retain, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
 @property(nonatomic) BOOL shouldSave; // @synthesize shouldSave=_shouldSave;
+@property(retain, nonatomic) NSString *imageReference; // @synthesize imageReference=_imageReference;
 @property(retain, nonatomic) NSData *cropRectHash; // @synthesize cropRectHash=_cropRectHash;
 @property(nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
 @property(retain, nonatomic) NSData *largeImageData; // @synthesize largeImageData=_largeImageData;

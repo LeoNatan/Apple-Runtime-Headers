@@ -33,13 +33,11 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)invalidateIntrinsicContentSize;
 - (void)invalidatePhoto;
 - (void)refreshImageWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setContactOnAvatarViewController:(id)arg1;
 - (void)setPlayer:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) _Bool hasImage;
-- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)commonInit;

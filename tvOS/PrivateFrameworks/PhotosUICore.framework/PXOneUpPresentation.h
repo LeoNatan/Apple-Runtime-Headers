@@ -19,7 +19,7 @@
         _Bool respondsToScrollAssetReferenceToVisible;
         _Bool respondsToSetHiddenAssetReferences;
         _Bool respondsToShouldAutoPlay;
-        _Bool respondsToPreventShowPhotosFromThisDay;
+        _Bool respondsToPreventShowInAllPhotos;
         _Bool respondsToActionManager;
         _Bool respondsToActionManagerForPreviewing;
         _Bool respondsToActionContext;
@@ -59,7 +59,7 @@
 - (void)scrollAssetReferenceToVisible:(id)arg1;
 - (id)regionOfInterestForAssetReference:(id)arg1;
 - (id)currentImageForAssetReference:(id)arg1;
-@property(readonly, nonatomic) _Bool preventShowPhotosFromThisDayAction;
+@property(readonly, nonatomic) _Bool preventShowInAllPhotosAction;
 @property(readonly, nonatomic) _Bool shouldAutoPlay;
 @property(readonly, nonatomic) id <PXAssetImportStatusManager> importStatusManager;
 @property(readonly, nonatomic) long long actionContext;

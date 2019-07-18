@@ -7,6 +7,6 @@
 #import <WorkflowKit/WFEmailTrigger.h>
 
 @interface WFEmailTrigger (CoreDuetContext)
-+ (id)triggerTypeIconName;
++ (id)triggerTypeIcon;
 @end
 

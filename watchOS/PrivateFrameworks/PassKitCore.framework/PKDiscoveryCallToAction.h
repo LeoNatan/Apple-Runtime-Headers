@@ -16,6 +16,7 @@
     NSString *_transitNetworkIdentifier;
     NSString *_referrerIdentifier;
     _Bool _foregroundContentModeIsSet;
+    _Bool _roundIcon;
     NSString *_titleKey;
     NSString *_subtitleKey;
     NSString *_buttonTextKey;
@@ -35,6 +36,7 @@
 @property(retain, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(nonatomic) int foregroundContentMode; // @synthesize foregroundContentMode=_foregroundContentMode;
 @property(readonly, nonatomic) PKColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(nonatomic, getter=shouldRoundIcon) _Bool roundIcon; // @synthesize roundIcon=_roundIcon;
 @property(readonly, nonatomic) PKDiscoveryMedia *icon; // @synthesize icon=_icon;
 @property(readonly, nonatomic) NSDictionary *actionInfo; // @synthesize actionInfo=_actionInfo;
 @property(readonly, nonatomic) int action; // @synthesize action=_action;

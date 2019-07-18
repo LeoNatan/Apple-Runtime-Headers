@@ -68,8 +68,6 @@
 - (id)loadMeetingMetadataForMessage:(id)arg1;
 - (id)loadMeetingDataForMessage:(id)arg1;
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
-- (id)metadataForMessage:(id)arg1 ofClass:(Class)arg2 key:(id)arg3;
-- (oneway void)updateMessage:(id)arg1 withMetadata:(CDUnknownBlockType)arg2;
 - (void)setSummary:(id)arg1 forMessage:(id)arg2;
 - (void)setData:(id)arg1 forMessage:(id)arg2 isPartial:(_Bool)arg3;
 - (id)dataConsumerForMessage:(id)arg1;
@@ -103,8 +101,7 @@
 - (id)oldestMessageInMailbox:(id)arg1;
 - (void)setMostRecentStatusCount:(unsigned int)arg1 forMailbox:(id)arg2;
 - (unsigned int)mostRecentStatusCountForMailbox:(id)arg1;
-- (void)adjustLastSyncAndMostRecentStatusCount:(int)arg1 forMailbox:(id)arg2;
-- (void)setLastSyncAndMostRecentStatusCount:(unsigned int)arg1 forMailbox:(id)arg2;
+- (void)setLastSyncAndMostRecentStatusCount:(int)arg1 forMailbox:(id)arg2;
 - (int)statusCountDeltaForMailbox:(id)arg1;
 - (void)setServerUnreadOnlyOnServerCount:(unsigned int)arg1 forMailbox:(id)arg2;
 - (unsigned int)serverUnreadOnlyOnServerCountForMailbox:(id)arg1;

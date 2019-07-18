@@ -39,7 +39,7 @@
 - (id)__wrapperAroundCacheDeletePurgeableCallback:(id)arg1 urgency:(int)arg2;
 - (long long)_deleteAttachmentsAndReturnBytesDeleted:(int)arg1;
 - (long long)_purgeableSpaceGivenUrgency:(int)arg1;
-- (struct _IMDAttachmentRecordStruct *)getRecordRef:(id)arg1;
+- (struct _IMDAttachmentRecordStruct *)_copyRecordRef:(id)arg1;
 - (id)createDictionaryForNotDeletingAnyAttachments:(id)arg1 urgency:(int)arg2;
 - (id)deleteAttachmentsAndReturnBytesDeleted:(id)arg1 urgency:(int)arg2;
 - (id)reportAvailableSpaceToBeDeleted:(id)arg1 urgency:(int)arg2;

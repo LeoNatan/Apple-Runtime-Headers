@@ -180,7 +180,7 @@
 - (void)_promptForPairingPasswordForServer:(id)arg1 reason:(id)arg2;
 - (void)_pairAccessory:(id)arg1 configuration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_pairAccessoryWithDescription:(id)arg1 configuration:(id)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)_checkDelegatesOfAccessoryWithSetupID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_checkDelegatesOfAccessoryWithSetupID:(id)arg1 serverIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)cancelPairingWithAccessoryDescription:(id)arg1 error:(id)arg2;
 - (id)findAccessoryServerForAccessoryDescription:(id)arg1;
 - (void)_cancelPairingWithAccessory:(id)arg1 error:(id)arg2;

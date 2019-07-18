@@ -9,7 +9,7 @@
 #import <TextInputCore/NSSecureCoding-Protocol.h>
 #import <TextInputCore/TIKeyboardInteractionProtocol-Protocol.h>
 
-@class NSDate, NSLocale, NSMutableArray, NSString, TIKeyboardInput, TIKeyboardState, TIKeyboardTouchEvent, TIWordEntry;
+@class NSDate, NSLocale, NSMutableArray, NSMutableDictionary, NSString, TIKeyboardInput, TIKeyboardState, TIKeyboardTouchEvent, TIWordEntry;
 
 @interface TITypingSession : NSObject <NSSecureCoding, TIKeyboardInteractionProtocol>
 {
@@ -30,9 +30,13 @@
     TIWordEntry *_lastWord;
     TIKeyboardTouchEvent *_timeCalibrationTouch;
     double _calibratedTimeBase;
+    NSMutableDictionary *_touchesHistory;
+    long long _lastActivePathIndex;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) long long lastActivePathIndex; // @synthesize lastActivePathIndex=_lastActivePathIndex;
+@property(retain, nonatomic) NSMutableDictionary *touchesHistory; // @synthesize touchesHistory=_touchesHistory;
 @property double calibratedTimeBase; // @synthesize calibratedTimeBase=_calibratedTimeBase;
 @property(retain) TIKeyboardTouchEvent *timeCalibrationTouch; // @synthesize timeCalibrationTouch=_timeCalibrationTouch;
 @property(nonatomic) _Bool includeInputToLastWord; // @synthesize includeInputToLastWord=_includeInputToLastWord;
@@ -60,6 +64,7 @@
 - (void)addDrawInputWithSyllableCount:(unsigned long long)arg1 keyboardState:(id)arg2;
 - (void)addKeyInput:(id)arg1 keyboardState:(id)arg2;
 - (_Bool)testForRapidDeleteContextChange:(id)arg1;
+- (_Bool)isCurrentWordEmpty;
 - (double)calibratedCurrentTimestamp;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;

@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <SpringBoardServices/BSInvalidatable-Protocol.h>
+
 @class BSMachPortReceiveRight, NSString;
 
-@interface SBSAssertion : NSObject
+@interface SBSAssertion : NSObject <BSInvalidatable>
 {
     NSString *_assertionName;
     NSString *_reason;
@@ -23,6 +25,12 @@
 - (id)init;
 - (id)initWithAssertionName:(id)arg1 reason:(id)arg2 receiveRight:(id)arg3;
 - (id)initWithAssertionName:(id)arg1 reason:(id)arg2 port:(unsigned int)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -30,6 +30,7 @@
 - (id)_snapshotTexture:(id)arg1 scale:(double)arg2;
 - (id)_snapshotInRect:(struct CGRect)arg1 scale:(double)arg2 time:(double)arg3;
 - (void)_handleQuadArrayChange:(id)arg1;
+- (void)setOpaque:(_Bool)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 options:(unsigned long long)arg2 colorSpace:(long long)arg3;
 

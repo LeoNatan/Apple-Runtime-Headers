@@ -106,6 +106,7 @@ __attribute__((visibility("hidden")))
 - (id)_shim_contentView;
 - (id)_accessibility_controlToActivateForHUDGestureLiftAtPoint:(struct CGPoint)arg1;
 - (id)_accessibility_HUDItemForPoint:(struct CGPoint)arg1;
+- (BOOL)_accessibility_shouldBeginHUDGestureAtPoint:(struct CGPoint)arg1;
 
 @end
 

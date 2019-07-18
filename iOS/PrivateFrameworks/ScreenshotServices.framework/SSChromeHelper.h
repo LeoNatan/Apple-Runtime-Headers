@@ -12,12 +12,14 @@
 
 + (long long)backgroundBlurEffectStyle;
 + (long long)statusBarStyle;
-+ (int)statusBarVisibilityForTraitCollection:(id)arg1;
++ (int)statusBarVisibilityForTraitCollection:(id)arg1 isPortrait:(_Bool)arg2;
 + (double)contentSwitcherPadding;
 + (double)barButtonItemsLeftOfOpacitySlider;
 + (double)widthForOpacityControlInView:(id)arg1 withContentSwitcher:(id)arg2;
 + (double)widthForContentSwitcher:(id)arg1 forView:(id)arg2;
-+ (double)screenshotTopBottomMargin;
++ (double)screenshotTopBottomMarginPhone;
++ (double)screenshotTopBottomMarginPad;
++ (double)screenshotTopBottomMargin:(long long)arg1;
 + (double)countIndicatorOffset;
 + (struct CGRect)availableRectForFullscreenContent:(struct CGRect)arg1 layoutBounds:(struct CGRect)arg2 bleedToBottom:(_Bool)arg3 topBarHeight:(double)arg4 bottomBarHeight:(double)arg5 userInterfaceIdiom:(long long)arg6 multipleScreenshots:(_Bool)arg7;
 + (double)cropsHandleOutset;

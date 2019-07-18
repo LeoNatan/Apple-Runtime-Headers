@@ -11,7 +11,7 @@
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 #import <HomeKitDaemon/IDSServiceDelegate-Protocol.h>
 
-@class HMDCameraSessionID, HMFTimer, IDSDevice, IDSDeviceConnection, IDSService, NSObject, NSString;
+@class HMDCameraStreamSessionID, HMFTimer, IDSDevice, IDSDeviceConnection, IDSService, NSObject, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface HMDCameraIDSDeviceConnection : HMFObject <IDSServiceDelegate, HMDCameraRemoteStreamProtocol, HMFTimerDelegate, HMFLogging>
@@ -19,7 +19,7 @@
     unsigned char _keepAliveCounter;
     NSObject<OS_dispatch_queue> *_workQueue;
     NSObject<OS_dispatch_queue> *_highPriorityQueue;
-    HMDCameraSessionID *_sessionID;
+    HMDCameraStreamSessionID *_sessionID;
     IDSService *_idsProxyStreamService;
     IDSDevice *_device;
     IDSDeviceConnection *_watchVideoConnection;
@@ -40,7 +40,7 @@
 @property(retain, nonatomic) IDSDeviceConnection *watchVideoConnection; // @synthesize watchVideoConnection=_watchVideoConnection;
 @property(retain, nonatomic) IDSDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) IDSService *idsProxyStreamService; // @synthesize idsProxyStreamService=_idsProxyStreamService;
-@property(readonly, nonatomic) HMDCameraSessionID *sessionID; // @synthesize sessionID=_sessionID;
+@property(readonly, nonatomic) HMDCameraStreamSessionID *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *highPriorityQueue; // @synthesize highPriorityQueue=_highPriorityQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;

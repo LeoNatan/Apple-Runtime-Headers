@@ -6,12 +6,13 @@
 
 #import <ScreenTimeUI/STPINListViewController.h>
 
-@class NSLayoutConstraint, STAllowanceProgressGroupSpecifierProvider, STDatePickerBar, STDevicePickupsUsageGroupSpecifierProvider, STMostUsedGroupSpecifierProvider, STNoUsageDataView, STNotificationsUsageGroupSpecifierProvider, STScreenTimeUsageGroupSpecifierProvider, STTestGroupSpecifierProvider;
+@class NSLayoutConstraint, STAllowanceProgressGroupSpecifierProvider, STDatePickerBar, STDevicePickupsUsageGroupSpecifierProvider, STMostUsedGroupSpecifierProvider, STNoUsageDataView, STNotificationsUsageGroupSpecifierProvider, STScreenTimeUsageGroupSpecifierProvider, STSegmentedControlGroupSpecifierProvider, STTestGroupSpecifierProvider;
 
 __attribute__((visibility("hidden")))
 @interface STUsageDetailListController : STPINListViewController
 {
     STTestGroupSpecifierProvider *_testProvider;
+    STSegmentedControlGroupSpecifierProvider *_segmentedControlProvider;
     STScreenTimeUsageGroupSpecifierProvider *_screenTimeProvider;
     STAllowanceProgressGroupSpecifierProvider *_allowancesProvider;
     STMostUsedGroupSpecifierProvider *_mostUsedProvider;
@@ -27,12 +28,13 @@ __attribute__((visibility("hidden")))
 @property(retain) NSLayoutConstraint *datePickerTopConstraint; // @synthesize datePickerTopConstraint=_datePickerTopConstraint;
 @property(retain) STDatePickerBar *datePickerBar; // @synthesize datePickerBar=_datePickerBar;
 @property(retain) STNoUsageDataView *noUsageDataView; // @synthesize noUsageDataView=_noUsageDataView;
-@property(retain, nonatomic) STDevicePickupsUsageGroupSpecifierProvider *pickupsProvider; // @synthesize pickupsProvider=_pickupsProvider;
-@property(retain, nonatomic) STNotificationsUsageGroupSpecifierProvider *notificationsProvider; // @synthesize notificationsProvider=_notificationsProvider;
-@property(retain, nonatomic) STMostUsedGroupSpecifierProvider *mostUsedProvider; // @synthesize mostUsedProvider=_mostUsedProvider;
-@property(retain, nonatomic) STAllowanceProgressGroupSpecifierProvider *allowancesProvider; // @synthesize allowancesProvider=_allowancesProvider;
-@property(retain, nonatomic) STScreenTimeUsageGroupSpecifierProvider *screenTimeProvider; // @synthesize screenTimeProvider=_screenTimeProvider;
-@property(retain, nonatomic) STTestGroupSpecifierProvider *testProvider; // @synthesize testProvider=_testProvider;
+@property(retain) STDevicePickupsUsageGroupSpecifierProvider *pickupsProvider; // @synthesize pickupsProvider=_pickupsProvider;
+@property(retain) STNotificationsUsageGroupSpecifierProvider *notificationsProvider; // @synthesize notificationsProvider=_notificationsProvider;
+@property(retain) STMostUsedGroupSpecifierProvider *mostUsedProvider; // @synthesize mostUsedProvider=_mostUsedProvider;
+@property(retain) STAllowanceProgressGroupSpecifierProvider *allowancesProvider; // @synthesize allowancesProvider=_allowancesProvider;
+@property(retain) STScreenTimeUsageGroupSpecifierProvider *screenTimeProvider; // @synthesize screenTimeProvider=_screenTimeProvider;
+@property(retain) STSegmentedControlGroupSpecifierProvider *segmentedControlProvider; // @synthesize segmentedControlProvider=_segmentedControlProvider;
+@property(retain) STTestGroupSpecifierProvider *testProvider; // @synthesize testProvider=_testProvider;
 - (void).cxx_destruct;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)_rightDatePickerBarButtonTapped:(id)arg1;

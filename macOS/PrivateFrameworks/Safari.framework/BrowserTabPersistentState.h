@@ -9,15 +9,18 @@
 #import <Safari/BrowserPersistentState-Protocol.h>
 #import <Safari/WBSClosedTab-Protocol.h>
 
-@class NSArray, NSData, NSDate, NSDictionary, NSString, NSURL, NSUUID;
+@class BrowserViewController, NSArray, NSData, NSDate, NSDictionary, NSString, NSURL, NSUUID;
 @protocol EncryptionProvider;
 
 __attribute__((visibility("hidden")))
 @interface BrowserTabPersistentState : NSObject <BrowserPersistentState, WBSClosedTab>
 {
+    BrowserViewController *_browserViewController;
     Vector_81153489 _ancestorTabIdentifiers;
     id <EncryptionProvider> _encryptionProvider;
     int _processIdentifier;
+    BOOL _supportsSafeToLoadWebPage;
+    BOOL _safeToLoadWebPage;
     BOOL _disposable;
     BOOL _pinned;
     BOOL _restoredFromPersistentData;
@@ -60,9 +63,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long closedItemType;
 @property(readonly, nonatomic) unsigned long long numberOfTabs;
 @property(readonly, copy, nonatomic) NSArray *tabUUIDs;
-- (id)dictionaryRepresentationIncludingSessionState:(BOOL)arg1;
+- (id)dictionaryRepresentationIncludingSessionState:(BOOL)arg1 forCleanExit:(BOOL)arg2;
 - (void)_setTitleAndURLFromBrowserTabViewItem:(id)arg1;
 @property(readonly, nonatomic) BOOL shouldDeferRestorationUntilSelected;
+- (BOOL)_safeToLoadWebPageFromCurrentLoadingState;
+@property(readonly, nonatomic, getter=isSafeToLoadWebPage) BOOL safeToLoadWebPage; // @synthesize safeToLoadWebPage=_safeToLoadWebPage;
 @property(readonly, copy, nonatomic) NSString *titleForMenu;
 - (id)browserTabPersistentStateForRegisteringWithUndoForClosingBrowserTabViewItem:(id)arg1;
 - (void)clearSessionState;

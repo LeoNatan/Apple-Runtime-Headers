@@ -31,6 +31,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)_wantsConstraintsForAttribute:(long long)arg1;
 - (_Bool)_wantsAmbiguitySuppressionConstraints;
 - (_Bool)_wantsConstraintsUsingAttributesForAxis:(long long)arg1;
+- (id)_baselineDependentConstraints;
+- (_Bool)_requiresNotificationForHasBaselinePropertyChanges;
 - (void)_updateConfigurationHistory;
 - (_Bool)_hasStaleConfiguration;
 - (id)_alignmentPropertySource;
@@ -54,6 +56,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSSet *invalidBaselineConstraints;
 @property(readonly) Class superclass;
 
 @end

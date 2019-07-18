@@ -6,23 +6,21 @@
 
 #import <HomeKitDaemon/HMDAccessoryProfile.h>
 
-@class HMDService;
-
 @interface HMDNetworkRouterProfile : HMDAccessoryProfile
 {
     unsigned long long _networkStatus;
-    HMDService *_wifiRouterService;
     long long _routerStatus;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)logCategory;
 @property(nonatomic) long long routerStatus; // @synthesize routerStatus=_routerStatus;
-@property(readonly, nonatomic) __weak HMDService *wifiRouterService; // @synthesize wifiRouterService=_wifiRouterService;
 @property(nonatomic) unsigned long long networkStatus; // @synthesize networkStatus=_networkStatus;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
+- (void)handleNetworkRouterSatelliteAddedOrRemoved:(id)arg1;
 - (void)handleAccessoryIsReachable:(id)arg1;
+- (void)__notifyClientsOfUpdatedSatelliteProfiles;
+- (id)idenfifiersForSatelliteProfiles;
 - (void)__handleAccessoryIsReachable;
 - (void)handleCharacteristicValuesChanged:(id)arg1;
 - (void)_handleCharacteristicChanges:(id)arg1;
@@ -38,14 +36,11 @@
 - (void)registerForMessages;
 - (void)_registerForNotifications;
 - (id)runtimeState;
-- (id)dumpState;
 - (void)dealloc;
 - (void)unconfigure;
 - (id)description;
-- (id)logIdentifier;
-- (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithAccessory:(id)arg1 wifiRouterService:(id)arg2 msgDispatcher:(id)arg3;
+- (id)initWithRouterService:(id)arg1 msgDispatcher:(id)arg2;
 
 @end
 

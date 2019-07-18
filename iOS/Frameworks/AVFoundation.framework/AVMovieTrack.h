@@ -13,6 +13,7 @@
     AVMovieTrackInternal *_movieTrackInternal;
 }
 
++ (_Bool)expectsPropertyRevisedNotifications;
 - (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) long long alternateGroupID;

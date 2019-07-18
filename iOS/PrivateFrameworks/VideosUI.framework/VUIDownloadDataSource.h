@@ -29,8 +29,10 @@ __attribute__((visibility("hidden")))
     NSArray *_activelyDownloadingAdamIds;
     NSArray *_activelyDownloadingMediaItems;
     NSMutableDictionary *_episodesDownloadingForShow;
+    NSMutableDictionary *_groupingByShowIdentifier;
 }
 
+@property(retain, nonatomic) NSMutableDictionary *groupingByShowIdentifier; // @synthesize groupingByShowIdentifier=_groupingByShowIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *episodesDownloadingForShow; // @synthesize episodesDownloadingForShow=_episodesDownloadingForShow;
 @property(retain, nonatomic) NSArray *activelyDownloadingMediaItems; // @synthesize activelyDownloadingMediaItems=_activelyDownloadingMediaItems;
 @property(retain, nonatomic) NSArray *activelyDownloadingAdamIds; // @synthesize activelyDownloadingAdamIds=_activelyDownloadingAdamIds;
@@ -45,6 +47,18 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *downloadEntities; // @synthesize downloadEntities=_downloadEntities;
 @property(nonatomic) __weak id <VUIDownloadDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)_doesEpisodeSet:(id)arg1 containMediaEntity:(id)arg2;
+- (void)_notifyDelegatesDownloadsFetchCompletedWithChanges:(_Bool)arg1;
+- (void)_sortDownloadEntitiesByTitle;
+- (void)_updateDownloadEntity:(id *)arg1 withLatestMediaEntity:(id)arg2;
+- (id)_createDownloadEntitiesFromLatestDownloads:(id)arg1;
+- (id)_createGroupingByShowIdentifierWithLatestMediaEntityGroups:(id)arg1;
+- (void)_upsertDownloadEntitiesFromLatestMediaEntities:(id)arg1;
+- (void)_upsertDownloadEntitiesWithEpisodesDownloadingForShow;
+- (void)_upsertEpisodesDownloadingForShowWithMediaEntity:(id)arg1;
+- (id)_getDownloadEntityInDownloadEntities:(id)arg1 containingMediaEntity:(id)arg2;
+- (id)_createSSDownloadManager;
+- (void)_handleDownloadingStateDidChange;
 - (id)_getActivelyDownloadingAdamIDs;
 - (void)_rentalsDidExpire;
 - (void)_removeNotifcationObservers;

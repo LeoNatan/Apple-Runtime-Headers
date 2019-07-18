@@ -24,7 +24,7 @@
 - (double)projectedDayDuration;
 - (id)workoutsCompletedDuringInterval:(id)arg1;
 - (id)allActivitySharingFriends;
-- (id)activitySummariesDuringInterval:(id)arg1 calendar:(id)arg2;
+- (_Bool)enumerateActivitySummariesDuringInterval:(id)arg1 calendar:(id)arg2 error:(id *)arg3 handler:(CDUnknownBlockType)arg4;
 - (id)yesterdayActivitySummary;
 - (double)recommendedGoalForDate:(id)arg1;
 - (id)weeklySummaryInfoForDate:(id)arg1;

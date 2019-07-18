@@ -19,13 +19,14 @@
 
 - (void).cxx_destruct;
 - (void)sectionInfoObserver:(id)arg1 removedSectionWithSectionID:(id)arg2;
-- (void)sectionInfoObserver:(id)arg1 updatedSectionInfo:(id)arg2 withUniversalSectionID:(id)arg3 displayName:(id)arg4;
-- (void)_addListItemWithSectionInfo:(id)arg1 withUniversalSectionID:(id)arg2 displayName:(id)arg3;
+- (void)sectionInfoObserver:(id)arg1 updatedSectionInfoForSectionIDs:(id)arg2;
+- (void)_addListItemsWithSectionIDs:(id)arg1;
 @property(readonly, nonatomic) NSArray *originalSettings;
 @property(readonly, nonatomic) NSArray *sectionIDs;
-- (id)displayNameWithSectionID:(id)arg1;
 - (id)universalSectionIDWithSectionID:(id)arg1;
 - (id)sectionInfoWithSectionID:(id)arg1;
+- (id)_sectionInfoFromListItem:(id)arg1 sectionID:(id)arg2 displayName:(id *)arg3;
+- (id)_sectionInfoFromSectionID:(id)arg1 displayName:(id *)arg2;
 - (void)reloadWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithSettingsGateway:(id)arg1;

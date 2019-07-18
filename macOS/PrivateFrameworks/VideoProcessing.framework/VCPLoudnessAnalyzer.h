@@ -29,7 +29,7 @@
 - (int)finalizeAnalysisAtTime:(const CDStruct_1b6d18a9 *)arg1;
 - (int)processAudioSamples:(struct AudioBufferList *)arg1 timestamp:(struct AudioTimeStamp)arg2;
 - (void)dealloc;
-- (int)initialize:(struct opaqueCMSampleBuffer *)arg1 sampleBatchSize:(int)arg2;
+- (int)setupWithSample:(struct opaqueCMSampleBuffer *)arg1 andSampleBatchSize:(int)arg2;
 - (id)init;
 
 @end

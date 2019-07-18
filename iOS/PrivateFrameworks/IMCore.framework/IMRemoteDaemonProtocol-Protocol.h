@@ -11,17 +11,16 @@
 @protocol IMRemoteDaemonProtocol <NSObject>
 - (void)requestScreenTimeAvailability;
 - (void)preWarm;
-- (void)simulateMessageReceive:(NSString *)arg1 serviceName:(NSString *)arg2 handles:(NSArray *)arg3 sender:(NSString *)arg4;
+- (void)simulateMessageReceive:(NSString *)arg1 serviceName:(NSString *)arg2 groupID:(NSString *)arg3 handles:(NSArray *)arg4 sender:(NSString *)arg5;
 - (void)userNicknameForRecordID:(NSString *)arg1 decryptionKey:(NSData *)arg2 requestID:(NSString *)arg3;
 - (void)setNewPersonalNickname:(IMNickname *)arg1;
 - (void)fetchPersonalNickname;
 - (void)nicknamePreferencesDidChange;
 - (void)blacklistHandleIDsForNicknameSharing:(NSSet *)arg1;
-- (void)whitelistHandleIDsForNicknameSharing:(NSSet *)arg1;
+- (void)whitelistHandleIDsForNicknameSharing:(NSSet *)arg1 onChatGUIDs:(NSArray *)arg2;
 - (void)clearPendingNicknameUpdatesForHandleIDs:(NSArray *)arg1;
 - (void)fetchHandleSharingState;
 - (void)fetchNicknames;
-- (void)currentSelfNicknameForChat:(NSString *)arg1 requestID:(NSString *)arg2;
 - (void)simulateOneTimeCodeArriving:(NSDictionary *)arg1;
 - (void)consumeCodeWithMessageGUID:(NSString *)arg1;
 - (void)requestOneTimeCodeStatus;
@@ -38,7 +37,6 @@
 - (void)reportMetricToCK:(NSString *)arg1 withDict:(NSDictionary *)arg2;
 - (void)writeCloudKitSyncCounts:(NSDictionary *)arg1;
 - (void)fetchSyncStateStatistics;
-- (void)fetchSyncStateStats;
 - (void)updateAttachmentFileSizes;
 - (void)metricAttachments:(long long)arg1;
 - (void)purgeAttachments:(long long)arg1;

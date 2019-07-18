@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: configurationManager
     // Error parsing type: , name: tagService
     // Error parsing type: , name: bundleSubscriptionManager
-    // Error parsing type: , name: purchaseController
+    // Error parsing type: , name: purchaseProvider
 }
 
 - (void).cxx_destruct;

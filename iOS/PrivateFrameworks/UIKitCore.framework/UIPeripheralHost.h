@@ -72,7 +72,6 @@
     double _ambiguousControlCenterActivationMargin;
     UIResponder *_responderWithoutAutomaticAppearanceEnabled;
     int _hostedAnimationToggleCount;
-    _Bool _dontNeedAssistantBar;
     CDUnknownBlockType _deferredTransitionTask;
     double _lastKeyplaneResize;
     _Bool _preservingInputViews;
@@ -172,12 +171,10 @@
 - (id)_renderConfigForCurrentResponder;
 - (struct CGSize)sizeOfInputViewForInputViewSet:(id)arg1 withInterfaceOrientation:(long long)arg2;
 - (void)textEffectsWindowDidRotate:(id)arg1;
-- (void)peripheralHostDidEnterBackground:(id)arg1;
 - (void)peripheralHostWillResume:(id)arg1;
 - (_Bool)hasDictationKeyboard;
 - (void)dealloc;
 - (id)init;
-- (void)setListeningToSpringBoardKeyboardNotifications:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool automaticAppearanceReallyEnabled;
 - (void)setInputViewsHidden:(_Bool)arg1;
 - (void)updateToPlacement:(id)arg1 withNormalAnimationsAndNotifications:(_Bool)arg2;
@@ -287,7 +284,6 @@
 - (void)performWithoutDeactivation:(CDUnknownBlockType)arg1;
 - (int)_isKeyboardDeactivated;
 - (void)setDeactivatedKeyboard:(_Bool)arg1 forScene:(id)arg2;
-- (void)_dismissOverlayedUI;
 - (void)forceReloadInputViews;
 - (void)_reloadInputViewsForResponder:(id)arg1;
 - (void)setTextEffectsWindowLevelForInputView:(id)arg1 responder:(id)arg2;

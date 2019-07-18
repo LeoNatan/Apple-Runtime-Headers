@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class UITextMagnifierTimeWeightedPoint, UITextSelectionWindowAveragedValue;
+@protocol UICoordinateSpace;
 
 __attribute__((visibility("hidden")))
 @interface UITextGestureTuning : NSObject
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
     _Bool _shouldIncludeConstantOffset;
     _Bool _includeTipProjection;
     _Bool _strongerBiasAgainstUp;
+    NSObject<UICoordinateSpace> *_coordinateSpace;
 }
 
 @property(nonatomic) _Bool strongerBiasAgainstUp; // @synthesize strongerBiasAgainstUp=_strongerBiasAgainstUp;
@@ -30,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldIncludeConstantOffset; // @synthesize shouldIncludeConstantOffset=_shouldIncludeConstantOffset;
 @property(readonly, nonatomic) double visibilityOffset; // @synthesize visibilityOffset=_visibilityOffset;
 @property(nonatomic) _Bool shouldUseLineThreshold; // @synthesize shouldUseLineThreshold=_shouldUseLineThreshold;
+@property(nonatomic) __weak NSObject<UICoordinateSpace> *coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
 - (void).cxx_destruct;
 - (struct CGPoint)pointIfPlacedCarefully:(struct CGPoint)arg1;
 - (void)updateWeightedPointWithGestureState:(long long)arg1 location:(struct CGPoint)arg2;

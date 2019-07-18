@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) unsigned int numberOfFirstPartyWorkoutsOver5MinutesWithType; // @synthesize numberOfFirstPartyWorkoutsOver5MinutesWithType=_numberOfFirstPartyWorkoutsOver5MinutesWithType;
 @property(readonly, nonatomic) ACHWorkoutEvaluationWorkoutProperties *workout; // @synthesize workout=_workout;
 - (void).cxx_destruct;
+- (id)valueForUndefinedKey:(id)arg1;
 - (id)initWithWorkout:(id)arg1 numberOfFirstPartyWorkoutsOver5MinutesWithType:(unsigned int)arg2 numberOfFirstPartyWorkoutsOver15MinutesDuringCurrentFitnessWeek:(unsigned int)arg3 bestKilocaloriesForType:(double)arg4;
 
 @end

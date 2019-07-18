@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 @interface VUIAppInstallConfirmationViewController : VUIAppLoadingViewController
 {
     id <WLKInstallable> _installable;
-    VUIAppInstallConfirmationView *_confirmationView;
     SSLookupItemOffer *_itemOffer;
     NSString *_updateTitle;
     NSString *_updateMessage;
@@ -23,8 +22,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _secondaryLinkHandler;
     unsigned long long _state;
     UIBarButtonItem *_barButtonItem;
+    VUIAppInstallConfirmationView *_confirmationView;
 }
 
+@property(retain, nonatomic) VUIAppInstallConfirmationView *confirmationView; // @synthesize confirmationView=_confirmationView;
 @property(retain, nonatomic) UIBarButtonItem *barButtonItem; // @synthesize barButtonItem=_barButtonItem;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(copy, nonatomic) CDUnknownBlockType secondaryLinkHandler; // @synthesize secondaryLinkHandler=_secondaryLinkHandler;

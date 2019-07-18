@@ -56,6 +56,8 @@
 - (void).cxx_destruct;
 - (id)customizedDescription;
 - (id)description;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToTopicQuery:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

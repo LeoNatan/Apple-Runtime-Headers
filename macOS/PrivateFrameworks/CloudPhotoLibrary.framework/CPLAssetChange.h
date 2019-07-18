@@ -104,6 +104,7 @@
 @property(copy, nonatomic) NSDate *lastSharedDate; // @synthesize lastSharedDate=_lastSharedDate;
 @property(copy, nonatomic) NSString *masterIdentifier; // @synthesize masterIdentifier=_masterIdentifier;
 - (void).cxx_destruct;
+- (BOOL)isAssetChange;
 - (id)scopeIdentifiersForQuarantine;
 - (unsigned long long)fullChangeTypeForFullRecord;
 - (BOOL)_canLowerQuota;

@@ -14,13 +14,11 @@
 @interface PSUIAppDataUsageGroup : NSObject <PSAppCellularUsageSpecifierDelegate, PSSpecifierGroup>
 {
     NSArray *_specifiers;
-    _Bool _loading;
     PSListController *_hostController;
     PSSpecifier *_groupSpecifier;
     CTUIListLoadingGroup *_loadingGroup;
 }
 
-@property _Bool loading; // @synthesize loading=_loading;
 @property(retain, nonatomic) CTUIListLoadingGroup *loadingGroup; // @synthesize loadingGroup=_loadingGroup;
 @property(nonatomic) __weak PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
 @property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;

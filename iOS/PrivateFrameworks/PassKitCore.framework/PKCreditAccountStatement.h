@@ -26,6 +26,8 @@
     NSDecimalNumber *_interestCharged;
     NSDecimalNumber *_balanceTransfers;
     NSDecimalNumber *_paymentsAndCredits;
+    NSDecimalNumber *_payments;
+    NSDecimalNumber *_credits;
     NSDecimalNumber *_rewardsBalance;
     NSDecimalNumber *_rewardsEarned;
     NSDecimalNumber *_rewardsRedeemed;
@@ -41,6 +43,8 @@
 @property(copy, nonatomic) NSDecimalNumber *rewardsRedeemed; // @synthesize rewardsRedeemed=_rewardsRedeemed;
 @property(copy, nonatomic) NSDecimalNumber *rewardsEarned; // @synthesize rewardsEarned=_rewardsEarned;
 @property(copy, nonatomic) NSDecimalNumber *rewardsBalance; // @synthesize rewardsBalance=_rewardsBalance;
+@property(copy, nonatomic) NSDecimalNumber *credits; // @synthesize credits=_credits;
+@property(copy, nonatomic) NSDecimalNumber *payments; // @synthesize payments=_payments;
 @property(copy, nonatomic) NSDecimalNumber *paymentsAndCredits; // @synthesize paymentsAndCredits=_paymentsAndCredits;
 @property(copy, nonatomic) NSDecimalNumber *balanceTransfers; // @synthesize balanceTransfers=_balanceTransfers;
 @property(copy, nonatomic) NSDecimalNumber *interestCharged; // @synthesize interestCharged=_interestCharged;

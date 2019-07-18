@@ -33,8 +33,6 @@
     PSIStatement *_inqIdsOfAllGroupsMatchedByCollectionsStatement;
     PSIStatement *_inqRemoveUnmatchedGroupsFromGroupsStatement;
     PSIStatement *_inqIdsOfAllGroupsInPrefixStatement;
-    PSIStatement *_inqRemoveGroupsFromPrefixStatement;
-    PSIStatement *_inqRemoveUnmatchedGroupsFromPrefixStatement;
     PSIStatement *_inqIdsOfAllGroupsInLookupStatement;
     PSIStatement *_inqRemoveGroupsFromLookupStatement;
     PSIStatement *_inqRemoveUnmatchedGroupsFromLookupStatement;
@@ -54,7 +52,7 @@
 
 + (id)searchDatabaseLog;
 + (struct sqlite3 *)_openDatabaseAtPath:(id)arg1 options:(long long)arg2;
-+ (BOOL)integrityCheckDatabase:(struct sqlite3 *)arg1;
++ (BOOL)_integrityCheckDatabase:(struct sqlite3 *)arg1;
 + (void)_dropDatabase:(struct sqlite3 *)arg1 withCompletion:(CDUnknownBlockType)arg2;
 + (void)dropDatabaseAtPath:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) long long options; // @synthesize options=_options;
@@ -84,8 +82,8 @@
 - (id)_inqGroupWithMatchingGroupId:(unsigned long long)arg1 dateFilter:(id)arg2;
 - (void)_inqUpdateGCTableWithGroupId:(unsigned long long)arg1 collectionId:(unsigned long long)arg2;
 - (void)_inqUpdateGATableWithGroupId:(unsigned long long)arg1 assetId:(unsigned long long)arg2;
-- (void)_inqDeleteFromSearchTableWithGroupId:(unsigned long long)arg1 textIsSearchable:(BOOL)arg2;
-- (void)_inqAddToSearchTableWithGroupId:(unsigned long long)arg1 text:(id)arg2 category:(short)arg3 textIsSearchable:(BOOL)arg4;
+- (void)_inqDeleteFromLookupTableWithGroupId:(unsigned long long)arg1;
+- (void)_inqAddToLookupTableWithGroupId:(unsigned long long)arg1 text:(id)arg2 category:(short)arg3;
 - (unsigned long long)_inqGroupIdForCategory:(short)arg1 owningGroupId:(unsigned long long)arg2 contentString:(id)arg3 normalizedString:(id)arg4 identifier:(id)arg5 insertIfNeeded:(BOOL)arg6 tokenOutput:(const struct tokenOutput_t *)arg7 shouldUpdateOwningGroupId:(BOOL)arg8 didUpdateGroup:(out char *)arg9;
 - (unsigned long long)_inqCollectionIdWithCollection:(id)arg1;
 - (unsigned long long)_inqCollectionIdForUUID:(id)arg1;
@@ -96,8 +94,6 @@
 - (void)_inqUpdateSearchTermsWithSearchableTermsByGroupIds:(id)arg1;
 - (void)_inqRemoveUnusedGroups;
 - (void)_inqRemoveUUID:(id)arg1 objectType:(unsigned long long)arg2 isInBatch:(BOOL)arg3;
-- (void)_inqInsertToSearchTablesWithGroupId:(unsigned long long)arg1 normalizedText:(id)arg2 identifier:(id)arg3 category:(short)arg4;
-- (void)_inqInsertToSearchTablesWithGroupId:(unsigned long long)arg1 text:(id)arg2 identifier:(id)arg3 category:(short)arg4;
 - (unsigned long long)_inqUpdateGroupForText:(id)arg1 normalizedText:(id)arg2 identifier:(id)arg3 category:(short)arg4 owningGroupId:(unsigned long long)arg5 shouldUpdateOwningGroupId:(BOOL)arg6 didUpdateGroup:(out char *)arg7;
 - (unsigned long long)_inqUpdateGroupForText:(id)arg1 identifier:(id)arg2 category:(short)arg3 owningGroupId:(unsigned long long)arg4 didUpdateGroup:(out char *)arg5;
 - (void)_inqGetTokensFromString:(id)arg1 category:(short)arg2 tokenOutput:(struct tokenOutput_t *)arg3;
@@ -145,6 +141,8 @@
 - (void)addCollection:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)addAssets:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)addAsset:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_ingRebuildPrefixTableIfNeeded;
+- (BOOL)isDatabaseCorrupted;
 - (void)dropDatabaseWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateSearchMetadata:(id)arg1;
 - (void)_inSearchQueueAsync:(CDUnknownBlockType)arg1;

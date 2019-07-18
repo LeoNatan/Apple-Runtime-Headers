@@ -16,11 +16,14 @@
     CKBrowserSwitcherFooterView *_appStrip;
     CKBrowserSwitcherFooterViewDataSource *_appStripDataSource;
     IMAAppPresenter *_appPresenter;
+    _Bool _showIconBorders;
     id <IMADockViewControllerDelegate> _delegate;
 }
 
+@property(nonatomic) _Bool showIconBorders; // @synthesize showIconBorders=_showIconBorders;
 @property(nonatomic) __weak id <IMADockViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)appStrip;
 - (void)switcherView:(id)arg1 didMagnify:(_Bool)arg2;
 - (void)switcherView:(id)arg1 didSelectPluginAtIndex:(id)arg2;
 - (void)updateAppStripFrame;

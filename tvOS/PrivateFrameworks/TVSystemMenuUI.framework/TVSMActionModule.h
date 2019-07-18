@@ -19,11 +19,13 @@
     long long _type;
     NSString *_displayName;
     UIImage *_icon;
+    NSString *_iconSymbolName;
     NSBundle *_bundle;
 }
 
 + (long long)buttonStyle;
 @property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
+@property(readonly, nonatomic) NSString *iconSymbolName; // @synthesize iconSymbolName=_iconSymbolName;
 @property(readonly, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;

@@ -30,6 +30,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isExpired;
+- (id)_initWithPredictedBundleId:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 confidence:(float)arg4;
 - (id)initWithPredictedBundleId:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 confidence:(float)arg4;
 - (id)init;
 

@@ -7,6 +7,6 @@
 #import <WebInspector/RWIProtocolCSSPseudoIdMatches.h>
 
 @interface RWIProtocolCSSPseudoIdMatches (IKJSDependency)
-+ (id)safe_initWithPseudoId:(int)arg1 matches:(id)arg2;
++ (id)safe_initWithPseudoId:(long long)arg1 matches:(id)arg2;
 @end
 

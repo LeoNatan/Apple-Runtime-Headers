@@ -16,6 +16,7 @@
     PDFAnnotationPrivateVars *_private;
 }
 
++ (id)PDFAnnotationKeysWithStringValues;
 + (id)PDFMarkupStyleLabels;
 + (id)PDFTextBorderColors;
 + (id)PDFTextColors;

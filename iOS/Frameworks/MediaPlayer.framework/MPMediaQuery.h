@@ -124,6 +124,7 @@
 - (id)init;
 - (id)initWithEntities:(id)arg1 entityType:(long long)arg2;
 - (id)initWithCriteria:(id)arg1 library:(id)arg2;
+- (id)initWithFilterPredicates:(id)arg1 library:(id)arg2;
 - (id)initWithFilterPredicates:(id)arg1;
 @property(readonly, nonatomic) MPMediaItemCollection *collectionByJoiningCollections;
 - (_Bool)_updatePredicateForProperty:(id)arg1 withPropertyPredicate:(id)arg2;

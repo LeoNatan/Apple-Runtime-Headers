@@ -6,18 +6,17 @@
 
 #import <UIKit/UIView.h>
 
-@class UILabel;
+@class UISegmentedControl;
 
 @interface PKPaletteErasingAttributesView : UIView
 {
-    long long _eraserType;
-    UILabel *_eraserTypeLabel;
+    UISegmentedControl *_segmentedControl;
 }
 
-@property(retain, nonatomic) UILabel *eraserTypeLabel; // @synthesize eraserTypeLabel=_eraserTypeLabel;
-@property(nonatomic) long long eraserType; // @synthesize eraserType=_eraserType;
+@property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 - (void).cxx_destruct;
-- (void)layoutSubviews;
+- (struct CGSize)intrinsicContentSize;
+@property(nonatomic) long long eraserType;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -27,21 +27,23 @@
     struct CGRect _frame;
     struct UIEdgeInsets _contentInsets;
     struct UIEdgeInsets _layoutMargins;
+    struct UIEdgeInsets _borderInsets;
     struct CGRect _absoluteFrame;
     struct CGRect _componentViewFrame;
     struct CGRect _contentViewFrame;
     struct CGRect _contentFrame;
-    struct CGRect _backgroundFrame;
+    struct CGRect _backgroundViewFrame;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSDictionary *infoFromLayouting; // @synthesize infoFromLayouting=_infoFromLayouting;
 @property(nonatomic) struct CGSize suggestedSizeAfterInvalidation; // @synthesize suggestedSizeAfterInvalidation=_suggestedSizeAfterInvalidation;
-@property(nonatomic) struct CGRect backgroundFrame; // @synthesize backgroundFrame=_backgroundFrame;
+@property(nonatomic) struct CGRect backgroundViewFrame; // @synthesize backgroundViewFrame=_backgroundViewFrame;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
 @property(nonatomic) struct CGRect contentViewFrame; // @synthesize contentViewFrame=_contentViewFrame;
 @property(nonatomic) struct CGRect componentViewFrame; // @synthesize componentViewFrame=_componentViewFrame;
 @property(nonatomic) struct CGRect absoluteFrame; // @synthesize absoluteFrame=_absoluteFrame;
+@property(nonatomic) struct UIEdgeInsets borderInsets; // @synthesize borderInsets=_borderInsets;
 @property(nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;

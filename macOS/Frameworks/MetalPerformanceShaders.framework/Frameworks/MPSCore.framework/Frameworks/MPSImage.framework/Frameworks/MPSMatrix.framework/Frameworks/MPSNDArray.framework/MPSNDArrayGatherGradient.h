@@ -11,6 +11,7 @@
 }
 
 + (const struct MPSLibraryInfo *)libraryInfo;
+-     // Error parsing type: 16@0:8, name: dimensionsNotToBeBroadcast
 - (void)encodeToCommandBuffer:(id)arg1 primarySourceArray:(id)arg2 secondarySourceArray:(id)arg3 sourceGradient:(id)arg4 gradientState:(id)arg5 destinationArray:(id)arg6;
 - (id)initWithDevice:(id)arg1;
 - (unsigned long long)kernelDimensionalityForSourceArrays:(id)arg1;

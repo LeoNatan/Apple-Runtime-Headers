@@ -13,10 +13,11 @@
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
 @class HMDApplicationData, HMDBulletinBoardNotification, HMDHAPAccessory, HMDHome, HMFMessageDispatcher, NSArray, NSMutableDictionary, NSNumber, NSObject, NSSet, NSString, NSUUID;
-@protocol HMDServiceOwner, OS_dispatch_queue;
+@protocol HMDServiceOwner, HMFLocking, OS_dispatch_queue;
 
 @interface HMDService : HMFObject <HMDBulletinIdentifiers, NSSecureCoding, HMFDumpState, HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver>
 {
+    id <HMFLocking> _lock;
     BOOL _hidden;
     BOOL _primary;
     HMDApplicationData *_appData;
@@ -36,7 +37,6 @@
     HMDBulletinBoardNotification *_bulletinBoardNotification;
     NSNumber *_mediaSourceIdentifier;
     NSArray *_mediaSourceDisplayOrder;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     HMFMessageDispatcher *_messageDispatcher;
     NSUUID *_cachedAccessoryUUID;
     id <HMDServiceOwner> _owner;
@@ -65,7 +65,6 @@
 @property(nonatomic) __weak id <HMDServiceOwner> owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) NSUUID *cachedAccessoryUUID; // @synthesize cachedAccessoryUUID=_cachedAccessoryUUID;
 @property(readonly, nonatomic) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(retain, nonatomic) NSArray *mediaSourceDisplayOrder; // @synthesize mediaSourceDisplayOrder=_mediaSourceDisplayOrder;
 @property(retain, nonatomic) NSNumber *mediaSourceIdentifier; // @synthesize mediaSourceIdentifier=_mediaSourceIdentifier;
 @property(getter=isPrimary) BOOL primary; // @synthesize primary=_primary;
@@ -127,7 +126,6 @@
 - (id)getConfiguredName;
 - (BOOL)updateAssociatedServiceType:(id)arg1 error:(id *)arg2;
 - (id)messagesForUpdatedRoom:(id)arg1;
-- (id)configuredNameChangedMessage;
 - (id)nameChangedMessage;
 - (id)_checkIfDefaultNameChanged;
 - (void)_updateDefaultName;

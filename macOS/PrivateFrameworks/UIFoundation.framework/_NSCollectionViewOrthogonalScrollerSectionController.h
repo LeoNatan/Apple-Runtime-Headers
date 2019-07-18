@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable, NSIndexSet, NSMapTable, _NSCollectionViewCore;
+#import <UIFoundation/NSScrollViewDelegate-Protocol.h>
 
-@interface _NSCollectionViewOrthogonalScrollerSectionController : NSObject
+@class NSHashTable, NSIndexSet, NSMapTable, NSString, _NSCollectionViewCore;
+
+@interface _NSCollectionViewOrthogonalScrollerSectionController : NSObject <NSScrollViewDelegate>
 {
     _NSCollectionViewCore *_collectionView;
     NSMapTable *_scrollViewMap;
@@ -26,8 +28,11 @@
 - (void)_forceElementsOnTopAsNeeded;
 - (struct CGSize)_contentSizeForSection:(long long)arg1 layout:(id)arg2;
 - (void)_configureScrollView:(id)arg1 forSection:(long long)arg2 baseContentInsets:(struct NSEdgeInsets)arg3;
+- (double)scrollView:(id)arg1 pageAlignedOriginOnAxis:(long long)arg2 forProposedDestination:(double)arg3 currentOrigin:(double)arg4 initialOrigin:(double)arg5 velocity:(double)arg6;
+- (void)scrollViewBeganMomentum:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)removeEmptyScrollViews;
 - (void)adjustElementHierarchyOrderingForOrthogonalElementIfNeeded:(id)arg1 layoutAttributes:(id)arg2;
+- (void)contentViewDidScroll:(id)arg1;
 - (void)_deleteSectionScrollView:(id)arg1 forSection:(long long)arg2;
 - (id)_addSectionScrollViewForSection:(long long)arg1;
 - (id)_addSectionScrollViewForIndexPath:(id)arg1;
@@ -38,6 +43,14 @@
 - (void)addElementIfNeeded:(id)arg1;
 - (BOOL)isElementInOrthogonalScrollingSection:(id)arg1;
 - (id)initWithCollectionView:(id)arg1;
+
+// Remaining properties
+@property(setter=_setWantsPageAlignedHorizontalAxis:) BOOL _wantsPageAlignedHorizontalAxis;
+@property(setter=_setWantsPageAlignedVerticalAxis:) BOOL _wantsPageAlignedVerticalAxis;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

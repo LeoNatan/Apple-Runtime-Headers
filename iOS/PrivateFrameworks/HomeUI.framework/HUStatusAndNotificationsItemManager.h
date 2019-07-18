@@ -17,6 +17,7 @@
     _Bool _showsTriggerConditionSection;
     _Bool _showsDoorbellSection;
     _Bool _showsSmartActivitySection;
+    _Bool _serviceItemBelongsToCamera;
     HFStaticItem *_includeInStatusItem;
     HFStaticItem *_allowNotificationsItem;
     HFStaticItem *_allowCameraSnapshotsItem;
@@ -27,6 +28,7 @@
     HUCameraSmartDetectionSettingsModule *_cameraSmartDetectionSettingsModule;
 }
 
+@property(nonatomic) _Bool serviceItemBelongsToCamera; // @synthesize serviceItemBelongsToCamera=_serviceItemBelongsToCamera;
 @property(nonatomic) _Bool showsSmartActivitySection; // @synthesize showsSmartActivitySection=_showsSmartActivitySection;
 @property(nonatomic) _Bool showsDoorbellSection; // @synthesize showsDoorbellSection=_showsDoorbellSection;
 @property(nonatomic) _Bool showsTriggerConditionSection; // @synthesize showsTriggerConditionSection=_showsTriggerConditionSection;

@@ -23,6 +23,7 @@
     _Bool _whitelistedRichLinkSender;
 }
 
++ (_Bool)isSiriEnabled;
 + (id)_messageItemWithPartsDeleted:(id)arg1 fromMessageItem:(id)arg2;
 + (_Bool)_shouldAggregateForTransferType:(id)arg1;
 + (id)_newMessagePartsForMessageItem:(id)arg1 shouldDisplayLink:(_Bool)arg2 isBusiness:(_Bool)arg3 parentChatIsSpam:(_Bool)arg4 hasKnownParticipants:(_Bool)arg5;
@@ -30,7 +31,6 @@
 + (id)_richLinkRangesForMessageText:(id)arg1 sender:(id)arg2 isWhitelistedRichLinkSender:(_Bool)arg3;
 + (id)_additionalSupportedRichLinkSchemesForWhitelistedSender:(id)arg1;
 + (_Bool)_isWhitelistedRichLinkSender:(id)arg1 isBusiness:(_Bool)arg2;
-+ (id)_defaultRichLinkSenderWhitelist;
 + (_Bool)_isWhiteListedURL:(id)arg1;
 + (id)_defaultRichLinkWhiteList;
 + (id)_newMessagePartsForMessageItem:(id)arg1;

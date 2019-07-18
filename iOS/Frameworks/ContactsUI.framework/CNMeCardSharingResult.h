@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 @property(readonly, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
 - (void).cxx_destruct;
+- (id)description;
 - (id)initWithGivenName:(id)arg1 familyName:(id)arg2 contactImage:(id)arg3 didSaveImageToMeCard:(_Bool)arg4;
 
 @end

@@ -7,7 +7,6 @@
 #import <objc/NSObject.h>
 
 @class NSArray, NSDictionary, NSMutableDictionary;
-@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface FPStitchingSession : NSObject
@@ -19,7 +18,6 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_deletedItems;
     BOOL _started;
     BOOL _finished;
-    NSObject<OS_dispatch_queue> *_queue;
     CDUnknownBlockType _placeholdersCreationBlock;
 }
 
@@ -35,16 +33,14 @@ __attribute__((visibility("hidden")))
 - (void)associateItem:(id)arg1 withPlaceholderID:(id)arg2;
 - (void)finishWithItem:(id)arg1 error:(id)arg2;
 - (void)finishWithItems:(id)arg1 error:(id)arg2;
-- (void)_finishWithItems:(id)arg1 error:(id)arg2;
 - (void)deleteItems:(id)arg1;
 - (void)transformItems:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)flush;
+@property(readonly, nonatomic) BOOL isActive;
 - (void)finish;
-- (void)_finish;
 - (void)start;
 @property(readonly, nonatomic) NSDictionary *stitchedFieldsAndItemsByItemIDs;
 @property(readonly, nonatomic) NSArray *placeholderItems;
-- (void)_clear;
 - (void)dealloc;
 - (id)init;
 

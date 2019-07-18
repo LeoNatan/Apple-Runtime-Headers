@@ -34,6 +34,8 @@
 - (void)_ejectDeviceNames:(id)arg1;
 - (void)eject;
 - (int)attachWithMountSpec:(id)arg1;
+- (unsigned int)encryptionState;
+- (unsigned int)_encryptionStateForDrive:(unsigned int)arg1;
 - (BOOL)backupDiskIsAPFS;
 - (BOOL)backupDiskIsHFS;
 - (BOOL)backupDiskIsMountable;

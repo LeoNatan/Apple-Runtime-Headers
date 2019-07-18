@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (id)stateForVariable:(id)arg1;
 - (id)stateForEnteredText:(id)arg1;
-- (id)initialVariableInNumberField;
+- (id)variableStateForVariablePicker;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)beginEditingSlotWithIdentifier:(id)arg1 fromLongPressGesture:(_Bool)arg2 sourceViewController:(id)arg3 sourceView:(id)arg4 sourceRect:(struct CGRect)arg5;
 

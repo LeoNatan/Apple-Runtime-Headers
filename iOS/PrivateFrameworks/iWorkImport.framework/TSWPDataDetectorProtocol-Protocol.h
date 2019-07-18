@@ -9,6 +9,7 @@
 @class NSArray, NSString;
 
 @protocol TSWPDataDetectorProtocol <NSObject>
++ (_Bool)detectedDataInString:(NSString *)arg1 scanRange:(struct _NSRange)arg2;
 + (NSArray *)scanString:(NSString *)arg1 scanRange:(struct _NSRange)arg2;
 + (struct _NSRange)calculateScanRangeForString:(NSString *)arg1 changedRange:(struct _NSRange)arg2;
 + (NSString *)detectorIdentifier;

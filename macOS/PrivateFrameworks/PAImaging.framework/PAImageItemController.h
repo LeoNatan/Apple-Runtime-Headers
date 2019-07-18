@@ -16,6 +16,7 @@
 {
     NSMutableArray *_renderDescriptionStack;
     PADescriptionEditController *_descriptionEditController;
+    BOOL _subscribedToDescriptionEditController;
     id <DGDescriptionCompositionProvider> _assetCompositionProvider;
     id <DGDescriptionCompositionProvider> _unadjustedCompositionProvider;
     unsigned short _originalVideoComplementVisibility;
@@ -68,7 +69,7 @@
 - (void)rawContentEditingInput:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestOriginalContentEditingInputWithChoice:(unsigned long long)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)assetDidChange:(id)arg1;
-@property(readonly, nonatomic) BOOL isOriginal;
+@property(readonly, nonatomic) BOOL isEditingOriginal;
 @property(readonly, nonatomic) PAImageItem *imageItem;
 - (void)_setCurrentVideoComplementHideStateForAsset:(id)arg1;
 - (id)init;

@@ -10,14 +10,17 @@
 
 @interface WBSSavedPasswordAuditor : NSObject
 {
-    WBSAutoFillQuirksManager *_autoFillQuirksManager;
     WBSSavedPasswordStore *_savedPasswordStore;
+    WBSAutoFillQuirksManager *_autoFillQuirksManager;
 }
 
+@property(readonly, nonatomic) WBSAutoFillQuirksManager *autoFillQuirksManager; // @synthesize autoFillQuirksManager=_autoFillQuirksManager;
+@property(readonly, nonatomic) WBSSavedPasswordStore *savedPasswordStore; // @synthesize savedPasswordStore=_savedPasswordStore;
 - (void).cxx_destruct;
+- (id)duplicatePasswordsInPasswords:(id)arg1;
 - (id)savedPasswordsWithDuplicatedPassword:(id)arg1;
 - (_Bool)savedPasswordIsReused:(id)arg1;
-- (_Bool)passwordStoreHasDuplicatedPasswords;
+@property(readonly, nonatomic) _Bool passwordStoreHasDuplicatedPasswords;
 - (_Bool)_passwordIsReused:(id)arg1 byOtherSavedPassword:(id)arg2;
 - (_Bool)_savedPasswordQualifiesForReuseAuditing:(id)arg1;
 - (id)initWithSavedPasswordStore:(id)arg1 autoFillQuirksManager:(id)arg2;

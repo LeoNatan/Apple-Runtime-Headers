@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)partitionedAttachmentStartsAtCharIndex:(unsigned long long)arg1 withColumns:(id)arg2;
++ (struct CGRect)labelRectForCharIndex:(unsigned long long)arg1 withColumns:(id)arg2;
 + (struct CGRect)columnRectForRange:(struct _NSRange)arg1 withColumns:(id)arg2;
 + (struct CGPoint)pinPoint:(struct CGPoint)arg1 toBottomOfLineFragmentInColumns:(id)arg2;
 + (struct CGSize)layoutSizeForParagraphEnumerator:(const struct TSWPParagraphEnumerator *)arg1 inColumns:(id)arg2 lineCount:(out unsigned long long *)arg3 nextLineOffset:(out double *)arg4;
@@ -61,7 +62,7 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)charIndexForPoint:(struct CGPoint)arg1 inColumnsArray:(id)arg2 allowPastBreak:(_Bool)arg3 allowNotFound:(_Bool)arg4 pastCenterGoesToNextChar:(_Bool)arg5 constrainToAscentAndDescent:(_Bool)arg6 ignoreEmptyColumns:(_Bool)arg7 isAtEndOfLine:(_Bool *)arg8 leadingEdge:(_Bool *)arg9;
 + (unsigned long long)charIndexForPoint:(struct CGPoint)arg1 inColumnsArray:(id)arg2 allowPastBreak:(_Bool)arg3 allowNotFound:(_Bool)arg4 pastCenterGoesToNextChar:(_Bool)arg5 ignoreEmptyColumns:(_Bool)arg6 isAtEndOfLine:(_Bool *)arg7 leadingEdge:(_Bool *)arg8;
 + (unsigned long long)charIndexForPoint:(struct CGPoint)arg1 inColumnsArray:(id)arg2 allowPastBreak:(_Bool)arg3 allowNotFound:(_Bool)arg4 ignoreEmptyColumns:(_Bool)arg5 isAtEndOfLine:(_Bool *)arg6 leadingEdge:(_Bool *)arg7;
-+ (struct _NSRange)charRangeOnSingleLineFragmentFromPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2 inLayoutTarget:(id)arg3;
++ (struct _NSRange)charRangeForPencilAnnotationStartPoint:(struct CGPoint)arg1 toEndPoint:(struct CGPoint)arg2 inLayoutTarget:(id)arg3 onSingleLineFragment:(_Bool)arg4;
 + (id)closestColumnInColumnsArray:(id)arg1 forPoint:(struct CGPoint)arg2 ignoreEmptyColumns:(_Bool)arg3 ignoreDrawableOnlyColumns:(_Bool)arg4;
 + (struct CGPoint)connectionLinePointForChangeRange:(struct _NSRange)arg1 withColumns:(id)arg2 layoutTarget:(id)arg3;
 + (id)commentKnobBaseOriginForHighlightAtTextRange:(struct _NSRange)arg1 withColumns:(id)arg2;
@@ -69,9 +70,10 @@ __attribute__((visibility("hidden")))
 + (struct CGRect)rectForSelection:(id)arg1 withColumns:(id)arg2 useParagraphModeRects:(_Bool)arg3;
 + (struct CGRect)rectForSelection:(id)arg1 withColumns:(id)arg2;
 + (struct CGRect)caretRectForInsertionPoint:(id)arg1 withColumns:(id)arg2;
-+ (id)unscaledAnchorRectsForPencilAnnotationAtTextSelection:(id)arg1 withType:(long long)arg2 inLayout:(id)arg3;
-+ (CDStruct_8299b2ea)pencilAnnotationLineMetricsAtCharIndex:(unsigned long long)arg1 withColumns:(id)arg2;
++ (id)pageAnchorDetailsForPencilAnnotationAtTextSelection:(id)arg1 withType:(long long)arg2 inLayout:(id)arg3;
++ (CDStruct_1af65ba2)pencilAnnotationLineMetricsAtCharIndex:(unsigned long long)arg1 withColumns:(id)arg2;
 + (id)pencilAnnotationRectsForSelection:(id)arg1 withColumns:(id)arg2 outRanges:(id *)arg3;
++ (id)contentRectsToAvoidPencilAnnotationOverlapWithColumns:(id)arg1;
 @property(nonatomic) unsigned long long storageChangeCount; // @synthesize storageChangeCount=_storageChangeCount;
 @property(nonatomic) _Bool textIsVertical; // @synthesize textIsVertical=_textIsVertical;
 @property(nonatomic) __weak id <TSWPStyleProvider> styleProvider; // @synthesize styleProvider=_styleProvider;
@@ -133,9 +135,10 @@ __attribute__((visibility("hidden")))
 - (void)pInfoForCharIndex:(unsigned long long)arg1 isAtStart:(out _Bool *)arg2 isAtEnd:(out _Bool *)arg3;
 - (const struct TSWPLineFragment *)nearestLineFragmentWithSameVerticalPositionAs:(unsigned long long)arg1 xPos:(double)arg2;
 - (double)horizontalOffsetForCharIndex:(unsigned long long)arg1 lineFragmentIndex:(unsigned long long)arg2 bumpPastHyphen:(_Bool)arg3 allowPastLineBounds:(_Bool)arg4;
-- (CDStruct_8299b2ea)lineMetricsAtCharIndex:(unsigned long long)arg1 allowEndOfLine:(_Bool)arg2;
+- (CDStruct_1af65ba2)lineMetricsAtCharIndex:(unsigned long long)arg1 allowEndOfLine:(_Bool)arg2;
 - (unsigned int)hyphenCharOfLineFragmentAtIndex:(unsigned long long)arg1;
 - (struct _NSRange)rangeOfLineFragmentAtIndex:(unsigned long long)arg1;
+- (double)baselineOfLineFragmentAtIndex:(unsigned long long)arg1;
 - (struct CGRect)boundsOfLineFragmentAtIndex:(unsigned long long)arg1;
 - (void)makeEmpty:(unsigned long long)arg1 anchoredRange:(struct _NSRange)arg2 layoutResultFlags:(unsigned long long)arg3;
 - (unsigned long long)lineFragmentCountForBaseline:(double)arg1;
@@ -167,6 +170,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initForTestingWithStorage:(id)arg1 frameBounds:(struct CGRect)arg2;
 - (id)initWithStorage:(id)arg1 frameBounds:(struct CGRect)arg2;
+@property(readonly, nonatomic) _Bool terminatedByBreak;
 @property(readonly, nonatomic) _Bool lastLineIsEmptyAndHasListLabel;
 
 // Remaining properties

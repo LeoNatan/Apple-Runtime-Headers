@@ -51,6 +51,8 @@ __attribute__((visibility("hidden")))
     unsigned int _tilesPerFrame;
     AVCRateController *_vcrcRateController;
     VCRedundancyControllerVideo *_redundancyController;
+    int _lastDisplayedFromImageQueueCount;
+    int _lastDroppedFromImageQueueCount;
 }
 
 + (id)capabilities;
@@ -108,6 +110,7 @@ __attribute__((visibility("hidden")))
 - (void)onStopWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)onStartWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setupReportingAgent;
+- (void)collectImageQueuePerformanceMetrics:(struct __CFDictionary *)arg1;
 - (void)registerForVideoCapture;
 - (void)deregisterForVideoCapture;
 - (BOOL)onConfigureStreamWithConfiguration:(id)arg1 error:(id *)arg2;

@@ -6,7 +6,6 @@
 
 #import <UIKit/UIView.h>
 
-#import <PhotosUICore/PXAssetTile-Protocol.h>
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXOverlayBadgeTile-Protocol.h>
 #import <PhotosUICore/PXReusableObject-Protocol.h>
@@ -14,13 +13,13 @@
 
 @class NSString, PXAssetBadgeManager, PXImageRequester, PXUIAssetBadgeView;
 
-@interface PXOverlayBadgeUIViewTile : UIView <PXChangeObserver, PXReusableObject, PXAssetTile, PXOverlayBadgeTile, PXUIViewBasicTile>
+@interface PXOverlayBadgeUIViewTile : UIView <PXChangeObserver, PXReusableObject, PXOverlayBadgeTile, PXUIViewBasicTile>
 {
     struct {
         _Bool badgeView;
     } _needsUpdateFlags;
-    PXImageRequester *_imageRequester;
     PXAssetBadgeManager *_badgeManager;
+    PXImageRequester *_imageRequester;
     unsigned long long __badgeOptions;
     PXUIAssetBadgeView *__badgeView;
 }
@@ -28,8 +27,8 @@
 + (void)preloadResources;
 @property(readonly, nonatomic) PXUIAssetBadgeView *_badgeView; // @synthesize _badgeView=__badgeView;
 @property(nonatomic, setter=_setBadgeOptions:) unsigned long long _badgeOptions; // @synthesize _badgeOptions=__badgeOptions;
-@property(retain, nonatomic) PXAssetBadgeManager *badgeManager; // @synthesize badgeManager=_badgeManager;
 @property(retain, nonatomic) PXImageRequester *imageRequester; // @synthesize imageRequester=_imageRequester;
+@property(retain, nonatomic) PXAssetBadgeManager *badgeManager; // @synthesize badgeManager=_badgeManager;
 - (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateBadgeViewIfNeeded;

@@ -9,7 +9,7 @@
 #import <AMPDevices/NSCopying-Protocol.h>
 #import <AMPDevices/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDictionary, NSSet, NSURL;
+@class NSArray, NSData, NSDictionary, NSSet;
 
 @interface AMPPhotoSyncPrefs : NSObject <NSCopying, NSSecureCoding>
 {
@@ -38,7 +38,7 @@
     int _photosFolderCustomAlbumOrder;
     NSArray *_photosAppAlbums;
     NSSet *_photosAppSelectedAlbums;
-    NSURL *_photosFolderURL;
+    NSData *_photosFolderBookmark;
     NSArray *_photosFolderNames;
     NSSet *_photosFolderSelectedNames;
     NSDictionary *_photoSharingSettings;
@@ -48,7 +48,7 @@
 @property(retain, nonatomic) NSDictionary *photoSharingSettings; // @synthesize photoSharingSettings=_photoSharingSettings;
 @property(retain, nonatomic) NSSet *photosFolderSelectedNames; // @synthesize photosFolderSelectedNames=_photosFolderSelectedNames;
 @property(retain, nonatomic) NSArray *photosFolderNames; // @synthesize photosFolderNames=_photosFolderNames;
-@property(retain, nonatomic) NSURL *photosFolderURL; // @synthesize photosFolderURL=_photosFolderURL;
+@property(retain, nonatomic) NSData *photosFolderBookmark; // @synthesize photosFolderBookmark=_photosFolderBookmark;
 @property(nonatomic) int photosFolderCustomAlbumOrder; // @synthesize photosFolderCustomAlbumOrder=_photosFolderCustomAlbumOrder;
 @property(nonatomic) BOOL photosFolderSyncPhotoVideos; // @synthesize photosFolderSyncPhotoVideos=_photosFolderSyncPhotoVideos;
 @property(nonatomic) BOOL photosFolderCopyOriginalPhotos; // @synthesize photosFolderCopyOriginalPhotos=_photosFolderCopyOriginalPhotos;

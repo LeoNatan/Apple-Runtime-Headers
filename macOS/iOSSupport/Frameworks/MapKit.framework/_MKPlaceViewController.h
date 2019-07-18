@@ -135,7 +135,7 @@
 - (void)placeCardActionControllerDidSelectAddToCollection:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)placeCardActionControllerDidSelectReportAProblemAddNewPlace:(id)arg1;
 - (void)placeCardActionControllerDidSelectAddToContacts:(id)arg1 fromView:(id)arg2;
-- (void)placeCardActionControllerDidSelectReportAProblem:(id)arg1;
+- (void)placeCardActionControllerDidSelectReportAProblem:(id)arg1 fromView:(id)arg2;
 - (void)_updateViewControllerStatesForOffline;
 - (void)updateAirplaneModeNetworkUnreachable;
 - (void)networkReachableChanged:(id)arg1;
@@ -176,7 +176,7 @@
 - (void)placeCardReviewsControllerDidSelectViewAllReviews:(id)arg1;
 - (void)placeQuickLinksViewController:(id)arg1 urlStringSelected:(id)arg2;
 - (id)placeRelatedViewController:(id)arg1 viewsForMapItems:(id)arg2 prefersAddressOverCategory:(BOOL)arg3;
-- (void)placeRelatedViewController:(id)arg1 showMapItems:(id)arg2;
+- (void)placeRelatedViewController:(id)arg1 showRelatedMapItems:(id)arg2 originalMapItem:(id)arg3 analyticsDelegate:(id)arg4;
 - (void)placeRelatedViewController:(id)arg1 itemSelected:(id)arg2;
 - (void)placeActionManager:(id)arg1 didSelectShareFromView:(id)arg2;
 - (void)placeCardPhotosControllerDidCloseFullscreenPhotos:(id)arg1;

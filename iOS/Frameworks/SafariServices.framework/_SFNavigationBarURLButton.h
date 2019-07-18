@@ -8,7 +8,7 @@
 
 #import <SafariServices/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSString, UIGestureRecognizer, UIVibrancyEffect, UIVisualEffectView;
+@class NSString, UIGestureRecognizer, UIVibrancyEffect, UIView, UIVisualEffectView, _SFNavigationBarTheme;
 @protocol _SFNavigationBarURLButtonDelegate;
 
 __attribute__((visibility("hidden")))
@@ -17,16 +17,17 @@ __attribute__((visibility("hidden")))
     UIVibrancyEffect *_highlightedVibrancyEffect;
     UIVibrancyEffect *_vibrancyEffect;
     UIVisualEffectView *_effectView;
+    UIView *_effectMask;
     UIGestureRecognizer *_longPressGestureRecognizer;
     double _backgroundAlphaFactor;
-    unsigned long long _tintStyle;
+    _SFNavigationBarTheme *_theme;
     id <_SFNavigationBarURLButtonDelegate> _delegate;
     double _urlOutlineCornerRadius;
 }
 
 @property(nonatomic, setter=setURLOutlineCornerRadius:) double urlOutlineCornerRadius; // @synthesize urlOutlineCornerRadius=_urlOutlineCornerRadius;
 @property(nonatomic) __weak id <_SFNavigationBarURLButtonDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) unsigned long long tintStyle; // @synthesize tintStyle=_tintStyle;
+@property(retain, nonatomic) _SFNavigationBarTheme *theme; // @synthesize theme=_theme;
 @property(nonatomic) double backgroundAlphaFactor; // @synthesize backgroundAlphaFactor=_backgroundAlphaFactor;
 - (void).cxx_destruct;
 - (id)_accessibilityQuickSpeakContent;

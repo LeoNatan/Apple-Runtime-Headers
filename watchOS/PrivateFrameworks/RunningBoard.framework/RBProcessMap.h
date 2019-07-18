@@ -10,7 +10,6 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface RBProcessMap : NSObject <NSCopying>
 {
     struct os_unfair_lock_s _lock;

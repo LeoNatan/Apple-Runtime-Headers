@@ -27,6 +27,8 @@
 + (id)iconArticleMarkingLike;
 + (id)iconSubscriptionButtonLikeSelectedHeart;
 + (id)iconSubscriptionButtonLikeHeart;
++ (id)iconSubscriptionButtonLikeSelectedOpaque;
++ (id)iconSubscriptionButtonLikeOpaque;
 + (id)iconSubscriptionButtonLikeSelected;
 + (id)iconSubscriptionButtonLike;
 + (id)iconFollowingDislikeSelected;

@@ -6,13 +6,18 @@
 
 #import <UIKit/UIView.h>
 
+@class UIColor;
+
 __attribute__((visibility("hidden")))
 @interface _MKBezierPathView : UIView
 {
+    UIColor *_fillColor;
+    UIColor *_strokeColor;
 }
 
 + (id)_pathForBalloonRadius:(float)arg1 tailLength:(float)arg2;
 + (Class)layerClass;
+- (void).cxx_destruct;
 - (void)setStrokeColor:(id)arg1 width:(float)arg2;
 - (void)setFillColor:(id)arg1;
 - (void)setPath:(id)arg1;

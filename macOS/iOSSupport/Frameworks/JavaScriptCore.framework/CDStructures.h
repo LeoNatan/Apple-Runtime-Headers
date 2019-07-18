@@ -146,6 +146,10 @@ struct WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id>>;
 
 struct WeakImpl;
 
+struct WeakObjCPtr<JSVirtualMachine> {
+    id m_weakReference;
+};
+
 struct WeakObjCPtr<id<JSModuleLoaderDelegate>> {
     id m_weakReference;
 };

@@ -48,6 +48,7 @@
 @property(readonly, nonatomic) BOOL wantsFollowingNewLine;
 @property(readonly, nonatomic) BOOL preferSingleLine;
 @property(readonly, nonatomic) BOOL isHeader;
+@property(readonly, nonatomic) BOOL isRTL;
 @property(readonly, nonatomic) BOOL isList;
 @property(readonly, nonatomic) BOOL canIndent;
 - (BOOL)isUnknownStyle;

@@ -16,11 +16,13 @@ __attribute__((visibility("hidden")))
     NSString *_tokenIDMapPath;
 }
 
++ (unsigned long long)defaultMaxSequenceLength;
 + (void)initialize;
 @property(copy, nonatomic) NSString *tokenIDMapPath; // @synthesize tokenIDMapPath=_tokenIDMapPath;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addResource:(id)arg1;
+- (id)getEvaluationDataPoint;
 - (id)getTrainingDataBatch:(unsigned long long)arg1;
 - (_Bool)loadFromCoreDuet:(id)arg1;
 - (id)initWithLocale:(id)arg1;

@@ -11,6 +11,6 @@
 @protocol EKUIEventStatusButtonsViewDelegate <NSObject>
 - (void)eventStatusButtonsView:(EKUIEventStatusButtonsView *)arg1 calculatedFontSizeToFit:(float)arg2;
 - (float)eventStatusButtonsViewButtonFontSize:(EKUIEventStatusButtonsView *)arg1;
-- (void)eventStatusButtonsView:(EKUIEventStatusButtonsView *)arg1 didSelectAction:(int)arg2;
+- (void)eventStatusButtonsView:(EKUIEventStatusButtonsView *)arg1 didSelectAction:(int)arg2 ifCancelled:(void (^)(void))arg3;
 @end
 

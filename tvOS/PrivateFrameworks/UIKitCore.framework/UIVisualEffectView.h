@@ -65,6 +65,7 @@
 - (id)_traitCollectionForChildEnvironment:(id)arg1;
 - (void)_addSubview:(id)arg1 positioned:(long long)arg2 relativeTo:(id)arg3;
 - (void)layoutSubviews;
+@property(nonatomic, setter=_setAllowsGroupFiltering:) _Bool _allowsGroupFiltering;
 @property(retain, nonatomic, setter=_setMaskImage:) UIImage *_maskImage;
 - (id)_maskView;
 - (void)_setMaskView:(id)arg1;

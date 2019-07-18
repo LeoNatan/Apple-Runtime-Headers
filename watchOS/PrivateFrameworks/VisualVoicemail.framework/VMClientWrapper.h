@@ -11,20 +11,18 @@
 
 @interface VMClientWrapper : NSObject
 {
-    id <VMClientXPCProtocol> _manager;
     NSXPCConnection *_clientConnection;
+    id <VMClientXPCProtocol> _manager;
 }
 
 + (_Bool)isVMXPCAvailable;
 + (id)voicemailClientXPCInterface;
 + (id)voicemailServerXPCInterface;
-@property(retain, nonatomic) NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
 @property(nonatomic) __weak id <VMClientXPCProtocol> manager; // @synthesize manager=_manager;
 - (void).cxx_destruct;
-- (void)_handleXPCConnectionEstablished:(id)arg1;
-- (void)_handleXPCDisconnectNotification:(id)arg1;
 - (void)dealloc;
 - (id)init;
+@property(retain, nonatomic) NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
 
 @end
 

@@ -15,6 +15,7 @@
 {
     NSArray *_metadata;
     int _setupContext;
+    int _cellStyle;
 }
 
 - (void).cxx_destruct;
@@ -25,7 +26,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)initWithMetadata:(id)arg1 setupContext:(int)arg2;
+- (id)initWithMetadata:(id)arg1 setupContext:(int)arg2 cellStyle:(int)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

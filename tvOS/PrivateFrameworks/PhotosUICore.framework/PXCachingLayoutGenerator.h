@@ -11,9 +11,11 @@
     _Bool _isValid;
     struct CGSize _contentSize;
     struct CGRect *_itemRects;
-    long long _itemRectsCapacity;
+    long long *_itemKinds;
+    long long _itemCapacity;
 }
 
+- (void)updateContentSize:(out struct CGSize *)arg1 itemRects:(out struct CGRect *)arg2 itemKinds:(out long long *)arg3;
 - (void)updateContentSize:(out struct CGSize *)arg1 itemRects:(out struct CGRect *)arg2;
 - (void)_updateIfNeeded;
 - (void)invalidate;

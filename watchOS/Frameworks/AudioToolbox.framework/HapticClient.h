@@ -10,6 +10,7 @@
 #import <AudioToolbox/NSXPCListenerDelegate-Protocol.h>
 
 @class NSArray, NSString, NSXPCConnection;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface HapticClient : NSObject <NSXPCListenerDelegate, CHHapticClientInterface>
@@ -22,6 +23,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _connectionCallback;
     struct mutex _mapMutex;
     struct map<unsigned int, SequenceEntry *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, SequenceEntry *>>> _sequenceEntryMap;
+    NSObject<OS_dispatch_queue> *_completionQueue;
     _Bool _prewarmed;
     _Bool _running;
     _Bool _connected;
@@ -42,7 +44,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned int clientID; // @synthesize clientID=_clientID;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)clientStoppedWithError:(id)arg1;
+- (void)clientStoppedForReason:(unsigned int)arg1 error:(id)arg2;
 - (void)clientCompletedWithError:(id)arg1;
 - (void)sequenceFinished:(unsigned int)arg1 error:(id)arg2;
 - (void)destroySharedMemory;
@@ -77,6 +79,7 @@ __attribute__((visibility("hidden")))
 - (void)setRunStateForSequenceEntryWithID:(unsigned int)arg1 running:(_Bool)arg2;
 - (CDUnknownBlockType)getSequenceFinishedHandlerForID:(unsigned int)arg1;
 - (void)setSequenceFinishedHandlerForID:(unsigned int)arg1 finishedHandler:(CDUnknownBlockType)arg2;
+- (_Bool)setSequenceEventBehavior:(unsigned int)arg1 behavior:(unsigned int)arg2 channel:(unsigned int)arg3;
 - (_Bool)loadAndPrepareHapticSequenceFromVibePattern:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)loadAndPrepareHapticSequenceFromEvents:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)loadAndPrepareHapticSequenceFromData:(id)arg1 reply:(CDUnknownBlockType)arg2;
@@ -85,11 +88,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)clearEventsFromTime:(double)arg1 channel:(unsigned int)arg2;
 - (_Bool)stopEventWithToken:(unsigned int)arg1 atTime:(double)arg2 channel:(unsigned int)arg3;
 - (_Bool)sendEvents:(id)arg1 atTime:(double)arg2 channel:(unsigned int)arg3 outToken:(unsigned int *)arg4 error:(id *)arg5;
-- (_Bool)doScheduleParamCurveWithMemoryReserve:(unsigned int)arg1 atTime:(double)arg2 curveRelativeTime:(double)arg3 channel:(unsigned int)arg4 memoryReserve:(struct AddressReserve *)arg5 paramCurve:(id)arg6 error:(id *)arg7;
+- (_Bool)doScheduleParamCurveWithMemoryReserve:(unsigned int)arg1 atTime:(double)arg2 channel:(unsigned int)arg3 memoryReserve:(struct AddressReserve *)arg4 paramCurve:(id)arg5 error:(id *)arg6;
 - (_Bool)doScheduleParamCurve:(unsigned int)arg1 atTime:(double)arg2 channel:(unsigned int)arg3 paramCurve:(id)arg4 error:(id *)arg5;
 - (_Bool)doSendEvents:(id)arg1 atTime:(double)arg2 channel:(unsigned int)arg3 outToken:(unsigned int *)arg4 error:(id *)arg5;
 - (_Bool)startEventAndReturnToken:(unsigned int)arg1 type:(unsigned int)arg2 atTime:(double)arg3 channel:(unsigned int)arg4 eventToken:(unsigned int *)arg5;
+- (_Bool)resetChannel:(unsigned int)arg1 atTime:(double)arg2;
 - (_Bool)setChannelEventBehavior:(unsigned int)arg1 channel:(unsigned int)arg2;
+- (void)expectNotifyAfter:(double)arg1;
 - (_Bool)finish:(CDUnknownBlockType)arg1;
 - (void)stopRunning:(CDUnknownBlockType)arg1;
 - (void)stopRunning;

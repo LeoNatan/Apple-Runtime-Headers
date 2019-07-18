@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <AppKit/NSCopying-Protocol.h>
-
 @class NSBitmapImageRep;
 
 __attribute__((visibility("hidden")))
-@interface NSAnimationInfo : NSObject <NSCopying>
+@interface NSAnimationInfo : NSObject
 {
     struct CGRect _startFrame;
     struct CGRect _endFrame;
@@ -21,7 +19,6 @@ __attribute__((visibility("hidden")))
     struct CGRect _viewImageAlignmentRect;
 }
 
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 
 @end

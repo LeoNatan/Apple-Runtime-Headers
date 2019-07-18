@@ -45,11 +45,12 @@
 - (BOOL)deleteAllMomentListsWithError:(id *)arg1;
 - (BOOL)deleteAllHighlightsWithError:(id *)arg1;
 - (BOOL)deleteAllMomentsWithError:(id *)arg1;
-- (NSArray *)allPhotosHighlightsWithPredicate:(NSPredicate *)arg1 error:(id *)arg2;
 - (NSArray *)allEmptyPhotosHighlightsOfKind:(unsigned short)arg1 error:(id *)arg2;
 - (NSArray *)allInvalidPhotosHighlightsOfAllKindsWithError:(id *)arg1;
-- (NSArray *)allPhotosHighlightsOfAllKindsWithError:(id *)arg1;
+- (NSArray *)allPhotosHighlightsWithPredicate:(NSPredicate *)arg1 error:(id *)arg2;
+- (NSArray *)allPhotosHighlightsOfKind:(unsigned short)arg1 withPredicate:(NSPredicate *)arg2 error:(id *)arg3;
 - (NSArray *)allPhotosHighlightsOfKind:(unsigned short)arg1 error:(id *)arg2;
+- (NSArray *)allPhotosHighlightsOfAllKindsWithError:(id *)arg1;
 - (NSArray *)highlightsIntersectingDateInterval:(NSDateInterval *)arg1 ofKind:(unsigned short)arg2;
 - (NSArray *)allAssetIDsToBeIncludedInMomentsWithError:(id *)arg1;
 - (NSArray *)allInvalidAssetsWithError:(id *)arg1;

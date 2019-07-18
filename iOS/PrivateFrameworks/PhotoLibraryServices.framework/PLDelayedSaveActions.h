@@ -43,6 +43,7 @@
 - (void)recordAlbumForSearchIndexUpdate:(id)arg1;
 - (void)recordAssetForSearchIndexUpdate:(id)arg1;
 - (void)recordAdditionalAssetAttributesForSearchIndexUpdate:(id)arg1;
+- (void)recordAssetDescriptionForSearchIndexUpdate:(id)arg1;
 - (void)recordDetectedFaceForSearchIndexUpdate:(id)arg1;
 - (void)recordPersonForSearchIndexUpdate:(id)arg1;
 - (void)_recordAssetForSearchIndexUpdate:(id)arg1;

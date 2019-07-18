@@ -22,30 +22,32 @@
     SBLayoutState *_layoutState;
     SBLayoutState *_previousLayoutState;
     NSMutableDictionary *_requestedWorkspaceEntityForLayoutRoleMutableDictionary;
+    _Bool _suspendsInlineAppExposeCancellation;
     _Bool __alreadyPopulatedRequestedWorkspaceEntities;
     id <SBWorkspaceApplicationSceneTransitionContextDelegate> _delegate;
     long long _interfaceOrientation;
     long long _preferredInterfaceOrientation;
+    SBWorkspaceEntity *_deactivatingEntity;
     long long _requestedSpaceConfiguration;
     long long _requestedFloatingConfiguration;
     long long _requestedUnlockedEnvironmentMode;
     long long _requestedFloatingSwitcherVisible;
     NSString *_requestedAppExposeBundleID;
     SBApplicationSceneEntityDestructionIntent *_intentForEntityRemoval;
-    unsigned long long _requestedInlineAppExposeLayoutRoles;
 }
 
 @property(nonatomic, setter=_setAlreadyPopulatedRequestedWorkspaceEntities:) _Bool _alreadyPopulatedRequestedWorkspaceEntities; // @synthesize _alreadyPopulatedRequestedWorkspaceEntities=__alreadyPopulatedRequestedWorkspaceEntities;
-@property(nonatomic) unsigned long long requestedInlineAppExposeLayoutRoles; // @synthesize requestedInlineAppExposeLayoutRoles=_requestedInlineAppExposeLayoutRoles;
 @property(retain, nonatomic) SBApplicationSceneEntityDestructionIntent *intentForEntityRemoval; // @synthesize intentForEntityRemoval=_intentForEntityRemoval;
 @property(copy, nonatomic) NSString *requestedAppExposeBundleID; // @synthesize requestedAppExposeBundleID=_requestedAppExposeBundleID;
 @property(nonatomic) long long requestedFloatingSwitcherVisible; // @synthesize requestedFloatingSwitcherVisible=_requestedFloatingSwitcherVisible;
 @property(nonatomic) long long requestedUnlockedEnvironmentMode; // @synthesize requestedUnlockedEnvironmentMode=_requestedUnlockedEnvironmentMode;
 @property(nonatomic) long long requestedFloatingConfiguration; // @synthesize requestedFloatingConfiguration=_requestedFloatingConfiguration;
 @property(nonatomic) long long requestedSpaceConfiguration; // @synthesize requestedSpaceConfiguration=_requestedSpaceConfiguration;
+@property(retain, nonatomic) SBWorkspaceEntity *deactivatingEntity; // @synthesize deactivatingEntity=_deactivatingEntity;
 @property(nonatomic) long long preferredInterfaceOrientation; // @synthesize preferredInterfaceOrientation=_preferredInterfaceOrientation;
 @property(nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(nonatomic) __weak id <SBWorkspaceApplicationSceneTransitionContextDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool suspendsInlineAppExposeCancellation; // @synthesize suspendsInlineAppExposeCancellation=_suspendsInlineAppExposeCancellation;
 @property(copy, nonatomic) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
 @property(nonatomic) _Bool waitsForSceneUpdates; // @synthesize waitsForSceneUpdates=_waitsForSceneUpdates;
 @property(nonatomic) _Bool alwaysRunsWatchdog; // @synthesize alwaysRunsWatchdog=_alwaysRunsWatchdog;

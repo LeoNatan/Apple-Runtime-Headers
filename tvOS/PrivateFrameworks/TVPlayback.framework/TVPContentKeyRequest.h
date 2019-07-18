@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVContentKeyRequest, NSData, NSDate, NSDictionary, NSError, NSNumber, NSString, NSURL, TVPContentKeySession;
+@class AVContentKeyRequest, NSArray, NSData, NSDate, NSDictionary, NSError, NSNumber, NSString, NSURL, TVPContentKeySession;
 
 @interface TVPContentKeyRequest : NSObject
 {
@@ -23,6 +23,7 @@
     NSData *_keyRequestData;
     NSDictionary *_additionalRequestParams;
     NSDate *_serverRequestStartDate;
+    NSArray *_keyFormatVersions;
     NSData *_offlineKeyData;
     NSData *_secureInvalidationNonceData;
     id _context;
@@ -55,6 +56,7 @@
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(retain, nonatomic) NSData *secureInvalidationNonceData; // @synthesize secureInvalidationNonceData=_secureInvalidationNonceData;
 @property(retain, nonatomic) NSData *offlineKeyData; // @synthesize offlineKeyData=_offlineKeyData;
+@property(retain, nonatomic) NSArray *keyFormatVersions; // @synthesize keyFormatVersions=_keyFormatVersions;
 @property(retain, nonatomic) NSDate *serverRequestStartDate; // @synthesize serverRequestStartDate=_serverRequestStartDate;
 @property(retain, nonatomic) NSDictionary *additionalRequestParams; // @synthesize additionalRequestParams=_additionalRequestParams;
 @property(retain, nonatomic) NSData *keyRequestData; // @synthesize keyRequestData=_keyRequestData;

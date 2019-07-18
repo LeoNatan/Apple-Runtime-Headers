@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (id)_fontForFontNotification:(id)arg1;
 - (_Bool)_fontIsImmediatelyAvailable:(id)arg1;
 - (id)_attributedStringForReaderFont:(id)arg1;
+- (id)textStyleForValue:(id)arg1;
 - (id)attributedStringForValue:(id)arg1;
 - (void)prepareItem:(id)arg1 forValue:(id)arg2;
 - (void)setSelectedValue:(id)arg1;

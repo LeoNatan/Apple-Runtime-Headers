@@ -6,9 +6,10 @@
 
 #import <iWorkImport/NSObject-Protocol.h>
 
-@class NSURL;
+@class NSURL, TSUSandboxedURL;
 
 @protocol TSUURLWrapper <NSObject>
+@property(readonly) TSUSandboxedURL *sandboxedURL;
 @property(readonly) NSURL *URL;
 @end
 

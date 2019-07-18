@@ -11,6 +11,8 @@
 - (id)vui_fpsCertificateURL;
 - (id)vui_scrubVideoURL;
 - (_Bool)vui_disableResumeMenu;
+- (id)vui_persistentID;
+- (_Bool)vui_disableLocalAsset;
 - (id)vui_resumeTime;
 - (id)vui_contentRatingRank;
 - (id)vui_hlsPlaylistURL;

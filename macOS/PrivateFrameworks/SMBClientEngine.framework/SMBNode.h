@@ -22,7 +22,6 @@
     NSString *_name;
     NSString *_streamName;
     unsigned long long _cmpdNextCmdOffset;
-    struct mdchain *_cmpdMdp;
     CDStruct_9808ab94 _fid;
 }
 
@@ -30,7 +29,6 @@
 + (void)nodeForCmpd:(id)arg1 onShareID:(unsigned int)arg2 callBack:(CDUnknownBlockType)arg3;
 @property unsigned int onEncryptedShare; // @synthesize onEncryptedShare=_onEncryptedShare;
 @property unsigned int treeID; // @synthesize treeID=_treeID;
-@property struct mdchain *cmpdMdp; // @synthesize cmpdMdp=_cmpdMdp;
 @property unsigned long long cmpdNextCmdOffset; // @synthesize cmpdNextCmdOffset=_cmpdNextCmdOffset;
 @property unsigned int parsePos; // @synthesize parsePos=_parsePos;
 @property unsigned int marshallPos; // @synthesize marshallPos=_marshallPos;
@@ -44,7 +42,7 @@
 - (void).cxx_destruct;
 - (int)resetCmpdRequest;
 - (void)sendCmpdRequest:(CDUnknownBlockType)arg1;
-- (int)parseNextHeader:(unsigned short)arg1 retNTStatus:(unsigned int *)arg2;
+- (int)parseNextHeader:(unsigned short)arg1 retNTStatus:(unsigned int *)arg2 retMdpp:(struct mdchain **)arg3;
 - (int)updateCmpdHdr;
 - (int)cmpdParseSetInformation:(struct smb_setinfo *)arg1;
 - (int)cmpdAddSetInformation:(struct smb_setinfo *)arg1 withInputBuffer:(id)arg2 withRenameTarget:(id)arg3;

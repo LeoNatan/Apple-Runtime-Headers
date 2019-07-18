@@ -8,7 +8,6 @@
 
 @class CNGroup, NSString;
 
-__attribute__((visibility("hidden")))
 @interface CNChangeHistoryAddGroupEvent : CNChangeHistoryEvent
 {
     CNGroup *_group;

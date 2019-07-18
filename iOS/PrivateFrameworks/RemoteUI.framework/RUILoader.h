@@ -19,8 +19,10 @@
     _Bool _allowNonSecureHTTP;
     id <RUIParserDelegate> _parserDelegate;
     RUIStyle *_style;
+    long long _userInterfaceStyle;
 }
 
+@property(nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(retain, nonatomic) RUIStyle *style; // @synthesize style=_style;
 @property(nonatomic) __weak id <RUIParserDelegate> parserDelegate; // @synthesize parserDelegate=_parserDelegate;
 @property(nonatomic) _Bool allowNonSecureHTTP; // @synthesize allowNonSecureHTTP=_allowNonSecureHTTP;

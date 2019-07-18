@@ -8,20 +8,19 @@
 
 #import <SpringBoardHome/_SBUIPopoverExtensionHostDelegate-Protocol.h>
 
-@class NSExtension, NSString, SBHHomeScreenSettings, SBUIPopoverExtensionHostViewController, _SBHRecentsDocumentExtensionWrappingViewController;
+@class NSExtension, NSString, SBUIPopoverExtensionHostViewController, _SBHRecentsDocumentExtensionWrappingViewController;
 @protocol SBHRecentsDocumentExtensionProviderDelegate, _SBUIPopoverExtensionRemoteInterface;
 
 @interface SBHRecentsDocumentExtensionProvider : NSObject <_SBUIPopoverExtensionHostDelegate>
 {
+    struct CGSize _compactPreferredContentSize;
     id <SBHRecentsDocumentExtensionProviderDelegate> _delegate;
     _SBHRecentsDocumentExtensionWrappingViewController *_wrappingViewController;
     SBUIPopoverExtensionHostViewController *_hostViewController;
     NSExtension *_extension;
     id <_SBUIPopoverExtensionRemoteInterface> _remoteService;
-    SBHHomeScreenSettings *_homescreenSettings;
 }
 
-@property(retain, nonatomic) SBHHomeScreenSettings *homescreenSettings; // @synthesize homescreenSettings=_homescreenSettings;
 @property(retain, nonatomic) id <_SBUIPopoverExtensionRemoteInterface> remoteService; // @synthesize remoteService=_remoteService;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(readonly, nonatomic) SBUIPopoverExtensionHostViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
@@ -37,7 +36,6 @@
 - (void)popoverHostExtensionRequestsDismiss:(id)arg1;
 - (id)recentsDocumentViewControllerForBundleIdentifier:(id)arg1;
 - (_Bool)canShowRecentsDocumentExtensionProviderForBundleIdentifier:(id)arg1;
-- (id)initWithHomeScreenSettings:(id)arg1;
 - (id)init;
 
 // Remaining properties

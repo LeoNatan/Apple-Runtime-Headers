@@ -27,10 +27,10 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSNumber *menstruationLengthUpperPercentile; // @synthesize menstruationLengthUpperPercentile=_menstruationLengthUpperPercentile;
 @property(readonly, copy, nonatomic) NSNumber *menstruationLengthLowerPercentile; // @synthesize menstruationLengthLowerPercentile=_menstruationLengthLowerPercentile;
-@property(readonly, copy, nonatomic) NSNumber *menstruationLengthMedian; // @synthesize menstruationLengthMedian=_menstruationLengthMedian;
+@property(copy, nonatomic) NSNumber *menstruationLengthMedian; // @synthesize menstruationLengthMedian=_menstruationLengthMedian;
 @property(readonly, copy, nonatomic) NSNumber *cycleLengthUpperPercentile; // @synthesize cycleLengthUpperPercentile=_cycleLengthUpperPercentile;
 @property(readonly, copy, nonatomic) NSNumber *cycleLengthLowerPercentile; // @synthesize cycleLengthLowerPercentile=_cycleLengthLowerPercentile;
-@property(readonly, copy, nonatomic) NSNumber *cycleLengthMedian; // @synthesize cycleLengthMedian=_cycleLengthMedian;
+@property(copy, nonatomic) NSNumber *cycleLengthMedian; // @synthesize cycleLengthMedian=_cycleLengthMedian;
 @property(readonly, copy, nonatomic) NSNumber *lastMenstruationStartDayIndex; // @synthesize lastMenstruationStartDayIndex=_lastMenstruationStartDayIndex;
 @property(readonly, copy, nonatomic) NSNumber *firstMenstruationStartDayIndex; // @synthesize firstMenstruationStartDayIndex=_firstMenstruationStartDayIndex;
 @property(readonly, nonatomic) int numberOfCycles; // @synthesize numberOfCycles=_numberOfCycles;

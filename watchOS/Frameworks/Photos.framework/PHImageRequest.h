@@ -6,16 +6,15 @@
 
 #import <Photos/PHMediaRequest.h>
 
-@class NSObject, NSString, NSURL, PHImageDecoder, PHImageDisplaySpec, PHImageRequestBehaviorSpec, PHImageResourceChooser, PHImageResult;
+@class NSObject, NSString, NSURL, PHImageDecoderAsyncDecodeRequestHandle, PHImageDisplaySpec, PHImageRequestBehaviorSpec, PHImageResourceChooser, PHImageResult;
 @protocol OS_dispatch_semaphore, PHImageRequestDelegate;
 
 @interface PHImageRequest : PHMediaRequest
 {
     struct os_unfair_lock_s _lock;
-    unsigned long long _decodeRequestID;
-    PHImageDecoder *_chosenDecoder;
-    PHImageResourceChooser *_chooser;
+    PHImageDecoderAsyncDecodeRequestHandle *_asyncDecodeRequestHandle;
     PHImageResult *_imageResult;
+    PHImageResourceChooser *_chooser;
     struct CGSize _desiredImageSize;
     _Bool _forceIgnoreCache;
     NSObject<OS_dispatch_semaphore> *_syncDownloadWaitSemaphore;

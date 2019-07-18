@@ -17,11 +17,14 @@
 @property(retain) NSMutableDictionary *uiStateMap; // @synthesize uiStateMap=_uiStateMap;
 - (void).cxx_destruct;
 - (id)docUserDefaults;
+- (id)_sortedInterfaceStateKeys;
 - (void)_pruneOldState;
-- (void)_writeUserInterfaceState:(id)arg1 toDefaultsForConfiguration:(id)arg2;
+- (void)_writeMostRecentUserInterfaceStateToDefaultsForConfiguration:(id)arg1;
+- (void)_writeUserInterfaceStateToDefaultsForConfiguration:(id)arg1;
 - (id)_loadUserInterfaceStateFromDefaultsForConfiguration:(id)arg1;
+- (void)purgeStateForConfiguration:(id)arg1;
 - (void)updateInterfaceState:(id)arg1 forConfiguration:(id)arg2;
-- (id)mostRecentInterfaceState;
+- (id)mostRecentInterfaceStateForConfiguration:(id)arg1;
 - (id)interfaceStateForConfiguration:(id)arg1;
 - (id)init;
 

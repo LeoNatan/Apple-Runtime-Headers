@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 @interface BRCApplyScheduler : BRCFSSchedulerBase <BRCModule, BRCSuspendable>
 {
     NSMutableSet *_appLibrariesWaitingForInsert;
-    NSMutableSet *_forceApplyGreedinessIDs;
     _Bool _applyCountReachedMax;
 }
 
@@ -34,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (void)schedule;
 - (_Bool)canScheduleMoreJobs;
 - (void)repopulateJobsForZone:(id)arg1;
-- (void)overrideApplyGreedinessOfItemID:(id)arg1 rank:(unsigned long long)arg2;
 - (void)rescheduleItemsRecursivelyUnderFolder:(id)arg1;
 - (void)rescheduleItemsParentedToItemGlobalID:(id)arg1;
 - (_Bool)_rescheduleItemsParentedToItemGlobalID:(id)arg1 flags:(unsigned int)arg2;

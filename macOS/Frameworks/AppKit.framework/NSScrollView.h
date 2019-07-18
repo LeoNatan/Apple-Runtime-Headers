@@ -376,8 +376,7 @@
 @property double verticalScrollDecelerationFactor;
 @property double horizontalScrollDecelerationFactor;
 @property double decelerationRate;
-- (BOOL)_isStuntedForIB;
-- (void)_setStuntedForIB:(BOOL)arg1;
+@property(nonatomic, getter=_isStuntedForIB, setter=_setStuntedForIB:) BOOL _stuntedForIB;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)_synchronizedSiblingsForAxis:(long long)arg1;
@@ -396,8 +395,7 @@
 - (void)_lockOverlayScrollerState:(unsigned long long)arg1;
 - (void)_hideOverlayScrollers;
 - (struct CGRect)_boundsInsetForBorder;
-- (void)setAutoforwardsScrollWheelEvents:(BOOL)arg1;
-- (BOOL)autoforwardsScrollWheelEvents;
+@property(nonatomic) BOOL autoforwardsScrollWheelEvents;
 @property(retain, nonatomic, setter=_setLineBorderColor:) NSColor *_lineBorderColor;
 - (void)scrollerImpPair:(id)arg1 updateScrollerStyleForNewRecommendedScrollerStyle:(long long)arg2;
 - (void)scrollerImpPair:(id)arg1 setContentAreaNeedsDisplayInRect:(struct CGRect)arg2;
@@ -408,8 +406,7 @@
 - (struct CGRect)contentAreaRectForScrollerImpPair:(id)arg1;
 - (id)scrollerImpPair;
 @property BOOL hasHorizontalMoreContentIndicators;
-- (void)setDrawsContentShadow:(BOOL)arg1;
-- (BOOL)drawsContentShadow;
+@property(nonatomic) BOOL drawsContentShadow;
 - (void)_unregisterNonInterferingAccessoryView:(id)arg1;
 - (void)_registerNonInterferingAccessoryView:(id)arg1;
 - (BOOL)_accessoryViewMightInterfereWithOverlayScrollers:(id)arg1;

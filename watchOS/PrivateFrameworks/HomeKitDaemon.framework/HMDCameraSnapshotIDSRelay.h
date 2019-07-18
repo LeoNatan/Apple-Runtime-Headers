@@ -9,13 +9,13 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/IDSServiceDelegate-Protocol.h>
 
-@class HMDCameraSessionID, HMFOSTransaction, IDSService, NSObject, NSString;
+@class HMDCameraSnapshotSessionID, HMFOSTransaction, IDSService, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 @interface HMDCameraSnapshotIDSRelay : HMFObject <IDSServiceDelegate, HMFLogging>
 {
     NSObject<OS_dispatch_queue> *_workQueue;
-    HMDCameraSessionID *_sessionID;
+    HMDCameraSnapshotSessionID *_sessionID;
     IDSService *_idsStreamService;
     HMFOSTransaction *_snapshotRelayTransaction;
 }
@@ -23,7 +23,7 @@
 + (id)logCategory;
 @property(retain, nonatomic) HMFOSTransaction *snapshotRelayTransaction; // @synthesize snapshotRelayTransaction=_snapshotRelayTransaction;
 @property(readonly, nonatomic) IDSService *idsStreamService; // @synthesize idsStreamService=_idsStreamService;
-@property(readonly, nonatomic) HMDCameraSessionID *sessionID; // @synthesize sessionID=_sessionID;
+@property(readonly, nonatomic) HMDCameraSnapshotSessionID *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
 - (void)dealloc;

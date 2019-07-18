@@ -118,7 +118,6 @@
 @property(readonly, nonatomic) int type;
 - (id)initWithCodable:(id)arg1;
 - (id)initWithFeedback:(id)arg1;
-- (_Bool)requiresQueryId;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

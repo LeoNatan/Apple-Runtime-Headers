@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     SEL _resetAction;
 }
 
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)reset;
 - (void)setState:(long long)arg1;
 - (void)setResetTarget:(id)arg1 action:(SEL)arg2;

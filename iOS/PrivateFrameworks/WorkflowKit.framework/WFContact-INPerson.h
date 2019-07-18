@@ -7,6 +7,8 @@
 #import <ContentKit/WFContact.h>
 
 @interface WFContact (INPerson)
++ (id)cnContactWithINPerson:(id)arg1;
++ (id)labelFromINPersonHandleLabel:(id)arg1;
 - (id)inPerson;
 @end
 

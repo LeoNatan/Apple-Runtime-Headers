@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     unsigned int _language;
     unsigned int _script;
+    _Bool _shouldEnableCachingIfAvailable;
     int _mode;
     NSLocale *_locale;
     int _contentType;
@@ -31,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (id)_stringForRecognitionLanguage:(unsigned int)arg1;
 + (id)stringForRecognitionContentType:(int)arg1;
 + (id)stringForRecognitionMode:(int)arg1;
+@property(readonly, nonatomic) _Bool shouldEnableCachingIfAvailable; // @synthesize shouldEnableCachingIfAvailable=_shouldEnableCachingIfAvailable;
 @property(readonly, nonatomic) int contentType; // @synthesize contentType=_contentType;
 @property(readonly, copy, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(readonly, nonatomic) int mode; // @synthesize mode=_mode;
@@ -64,7 +66,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)shouldReplaceInvalidTokenIDs;
 - (_Bool)shouldUseTokenPrecedingSpaces;
 - (_Bool)shouldPreserveLegacyTranscriptionPaths;
-- (_Bool)shouldSkipDrawingCaching;
+- (_Bool)shouldUseCaching;
 - (_Bool)shouldTransliterateSentences;
 - (_Bool)shouldTransliterateAndSynthetizeCandidates;
 - (_Bool)shouldApplyCharacterLMRescoring;
@@ -99,7 +101,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqualToRecognizerConfiguration:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (id)initWithMode:(int)arg1 locale:(id)arg2 contentType:(int)arg3;
+- (id)initWithMode:(int)arg1 locale:(id)arg2 contentType:(int)arg3 shouldEnableCachingIfAvailable:(_Bool)arg4;
 
 @end
 

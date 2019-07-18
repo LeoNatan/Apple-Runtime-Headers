@@ -11,27 +11,22 @@
 
 @interface TVPMusicNowPlayingSnapshotBackgroundView : UIView
 {
-    double _lastSnapshot;
-    double _updateRate;
-    double _fadeDuration;
     id <TVPMusicNowPlayingSnapshotBackgroundViewDelegate> _delegate;
     UIView *_targetView;
     CADisplayLink *_displayLink;
     UIView *_currentSnapshot;
-    UIView *_capturedSnapshot;
 }
 
-@property(retain, nonatomic) UIView *capturedSnapshot; // @synthesize capturedSnapshot=_capturedSnapshot;
 @property(retain, nonatomic) UIView *currentSnapshot; // @synthesize currentSnapshot=_currentSnapshot;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) UIView *targetView; // @synthesize targetView=_targetView;
 @property(nonatomic) __weak id <TVPMusicNowPlayingSnapshotBackgroundViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_updateSnapshot;
 - (void)_updateSnapshot:(id)arg1;
 - (void)didMoveToWindow;
 - (void)_updateSnapshotTimer;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

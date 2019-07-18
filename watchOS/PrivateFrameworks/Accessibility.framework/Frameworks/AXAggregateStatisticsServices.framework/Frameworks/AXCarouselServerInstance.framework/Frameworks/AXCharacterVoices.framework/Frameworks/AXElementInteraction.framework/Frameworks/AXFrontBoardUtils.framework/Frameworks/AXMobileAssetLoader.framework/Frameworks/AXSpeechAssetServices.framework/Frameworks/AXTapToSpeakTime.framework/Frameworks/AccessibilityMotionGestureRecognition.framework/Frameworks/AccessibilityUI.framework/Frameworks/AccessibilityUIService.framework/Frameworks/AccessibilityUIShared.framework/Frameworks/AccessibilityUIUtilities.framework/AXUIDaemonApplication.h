@@ -14,7 +14,6 @@
 + (id)_systemUIServiceIdentifier;
 + (id)_systemUIServiceClientSettings;
 + (_Bool)_isSystemUIService;
-- (_Bool)isStatusBarHidden;
 
 @end
 

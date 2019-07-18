@@ -13,13 +13,18 @@
 
 @interface PXGridInlinePlaybackController : NSObject <PXPreferencesObserver>
 {
-    NSMapTable *_records_queue_recordsByDisplayAsset;
-    NSObject<OS_dispatch_queue> *_records_queue;
+    NSObject<OS_dispatch_queue> *_recordsQueue;
+    struct os_unfair_lock_s _lookupLock;
+    NSMapTable *_lookupLock_recordsByDisplayAsset;
     NSMutableArray *_currentlyPlayingRecords;
+    NSMutableArray *_visibleRecords;
     PXUpdater *_updater;
     _Bool _isContentViewVisible;
     _Bool _isOneUpVisible;
+    _Bool _isContextMenuInteractionActive;
+    _Bool _isDragSessionActive;
     _Bool _active;
+    _Bool _canCreateRecords;
     _Bool _playbackEnabled;
     _Bool _applicationActive;
     _Bool _lowPowerModeEnabled;
@@ -30,17 +35,22 @@
 @property(nonatomic) _Bool lowPowerModeEnabled; // @synthesize lowPowerModeEnabled=_lowPowerModeEnabled;
 @property(nonatomic) _Bool applicationActive; // @synthesize applicationActive=_applicationActive;
 @property(nonatomic) _Bool playbackEnabled; // @synthesize playbackEnabled=_playbackEnabled;
+@property(nonatomic) _Bool canCreateRecords; // @synthesize canCreateRecords=_canCreateRecords;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
+@property(nonatomic) _Bool isDragSessionActive; // @synthesize isDragSessionActive=_isDragSessionActive;
+@property(nonatomic) _Bool isContextMenuInteractionActive; // @synthesize isContextMenuInteractionActive=_isContextMenuInteractionActive;
 @property(nonatomic) _Bool isOneUpVisible; // @synthesize isOneUpVisible=_isOneUpVisible;
 @property(nonatomic) _Bool isContentViewVisible; // @synthesize isContentViewVisible=_isContentViewVisible;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *currentRecords;
+- (_Bool)_hasAnyPlaybackRecords;
 - (_Bool)_isDisplayAssetEligibleForAutoPlayback:(id)arg1;
 - (void)_prepareForInactiveWithRecords:(id)arg1;
 - (void)_stopPlaybackForRecords:(id)arg1;
 - (void)_startPlaybackForRecords:(id)arg1;
 - (void)_updatePlayingRecords;
 - (void)_updatePlaybackEnabled;
+- (void)_updateCanCreateRecords;
 - (void)_updateLowPowerModeEnabled;
 - (void)_updateActive;
 - (void)setNeedsUpdate;
@@ -62,6 +72,7 @@
 - (void)visibleRectDidChange;
 - (void)checkInPlaybackRecordForDisplayAssets:(id)arg1;
 - (void)checkInPlaybackRecordForDisplayAsset:(id)arg1;
+- (void)willCheckInPlaybackRecordForDisplayAsset:(id)arg1;
 - (id)checkOutPlaybackRecordForDisplayAsset:(id)arg1 mediaProvider:(id)arg2 geometryReference:(id)arg3 configurationBlock:(CDUnknownBlockType)arg4;
 - (id)checkOutPlaybackRecordForDisplayAsset:(id)arg1 mediaProvider:(id)arg2 geometryReference:(id)arg3;
 - (void)dealloc;

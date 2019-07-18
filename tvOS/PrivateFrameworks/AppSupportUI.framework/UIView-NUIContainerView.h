@@ -25,6 +25,7 @@
 - (_Bool)supportsAsynchronousMeasurement;
 - (double)effectiveFirstBaselineOffsetFromTop;
 - (double)effectiveBaselineOffsetFromBottom;
+- (CDStruct_c3b9c2ee)_nui_additionalInsetsForBaselines;
 - (long long)_nui_baselineViewType;
 - (struct CGSize)effectiveLayoutSizeFittingSize:(struct CGSize)arg1;
 - (void)nukeContentLayoutSizeCacheFromOrbit;
@@ -40,6 +41,7 @@
 - (struct CGSize)effectiveMinimumLayoutContentSize;
 - (struct CGSize)calculateLayoutSizeFittingSize:(struct CGSize)arg1;
 - (id)contentLayoutSizeCacheDescription;
+- (_Bool)_nui_isImageView;
 - (_Bool)_isContainerView;
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
 

@@ -8,5 +8,6 @@
 
 @interface NSString (HostName)
 - (id)hostName;
+- (id)SHA1Base62String;
 @end
 

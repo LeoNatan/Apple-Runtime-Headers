@@ -6,11 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <MapsSupport/NSSecureCoding-Protocol.h>
+
 @class NSDate;
 
 __attribute__((visibility("hidden")))
-@interface MSPSharedTripNotificationRules : NSObject
+@interface MSPSharedTripNotificationRules : NSObject <NSSecureCoding>
 {
+    _Bool _hasMadeFinalPush;
     unsigned int _maxPostedNotifications;
     unsigned int _postedNotifcations;
     NSDate *_lastPostedETADate;
@@ -21,6 +24,9 @@ __attribute__((visibility("hidden")))
     double _minimumNotificationInterval;
 }
 
++ (_Bool)supportsSecureCoding;
++ (id)unarchivingObjectsSet;
+@property(nonatomic) _Bool hasMadeFinalPush; // @synthesize hasMadeFinalPush=_hasMadeFinalPush;
 @property(retain, nonatomic) NSDate *currentETADate; // @synthesize currentETADate=_currentETADate;
 @property(retain, nonatomic) NSDate *lastUpdatedDate; // @synthesize lastUpdatedDate=_lastUpdatedDate;
 @property(retain, nonatomic) NSDate *lastPostedNotificationDate; // @synthesize lastPostedNotificationDate=_lastPostedNotificationDate;
@@ -33,11 +39,13 @@ __attribute__((visibility("hidden")))
 - (double)minimumETADifferenceIncrement;
 - (void)incrementMinimumETADiffernce;
 - (void)didReceiveUpdateWithETA:(double)arg1 lastUpdated:(double)arg2;
-@property(readonly, nonatomic) _Bool shouldPostNotification;
+@property(readonly, nonatomic) unsigned int currentlyNecessaryNotificationType;
 - (void)didPostNotification;
 - (id)initWithMaximumNumberOfNotifications:(unsigned int)arg1 minimumNotificationInterval:(double)arg2;
 - (id)initWithMaximumNumberOfNotifications:(unsigned int)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 
 @end
 

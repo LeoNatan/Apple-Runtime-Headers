@@ -13,7 +13,7 @@
 #import <Silex/WKScriptMessageHandler-Protocol.h>
 #import <Silex/WKUIDelegate-Protocol.h>
 
-@class NFMultiDelegate, NSMutableSet, NSString, SXEmbedResource, SXWebCrashRetryThrottler, UIActivityIndicatorView, UILabel, WKNavigation, WKWebView;
+@class NFMultiDelegate, NSMutableSet, NSString, SXEmbedResource, SXRelatedWebViewCache, SXWebCrashRetryThrottler, UIActivityIndicatorView, UILabel, WKNavigation, WKWebView, WKWebsiteDataStore;
 @protocol SXComponentActionHandler, SXEmbedService, SXEmbedType, SXLayoutInvalidator, SXReachabilityProvider;
 
 @interface SXEmbedComponentView : SXComponentView <WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler, UIGestureRecognizerDelegate, UIScrollViewDelegate, SXViewportChangeListener>
@@ -37,11 +37,15 @@
     UIActivityIndicatorView *_activityIndicator;
     WKNavigation *_initialNavigation;
     NFMultiDelegate *_scriptMessageHandler;
+    WKWebsiteDataStore *_dataStore;
+    SXRelatedWebViewCache *_relatedWebViewCache;
     struct CGSize _currentlyLayoutingForSize;
     struct CGSize _currentLayoutSize;
     struct CGSize _currentViewportSize;
 }
 
+@property(readonly, nonatomic) SXRelatedWebViewCache *relatedWebViewCache; // @synthesize relatedWebViewCache=_relatedWebViewCache;
+@property(readonly, nonatomic) WKWebsiteDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(readonly, nonatomic) NFMultiDelegate *scriptMessageHandler; // @synthesize scriptMessageHandler=_scriptMessageHandler;
 @property(nonatomic) BOOL hasRegisteredScriptMessageHandlers; // @synthesize hasRegisteredScriptMessageHandlers=_hasRegisteredScriptMessageHandlers;
 @property(retain, nonatomic) WKNavigation *initialNavigation; // @synthesize initialNavigation=_initialNavigation;
@@ -103,7 +107,7 @@
 - (void)discardContents;
 - (void)renderContents;
 - (void)dealloc;
-- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 reachabilityProvider:(id)arg5 embedService:(id)arg6 actionHandler:(id)arg7 layoutInvalidator:(id)arg8;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 reachabilityProvider:(id)arg5 embedService:(id)arg6 actionHandler:(id)arg7 layoutInvalidator:(id)arg8 websiteDataStore:(id)arg9 relatedWebViewCache:(id)arg10;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

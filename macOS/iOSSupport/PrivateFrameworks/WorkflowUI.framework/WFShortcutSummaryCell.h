@@ -6,20 +6,22 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class UILabel, WFRowOfIconsView, WFWorkflow;
+@class UILabel, UIStackView, WFRowOfIconsView;
 
 @interface WFShortcutSummaryCell : UITableViewCell
 {
-    WFWorkflow *_workflow;
     WFRowOfIconsView *_actionIconsView;
     UILabel *_summaryLabel;
+    UIStackView *_mainStackView;
 }
 
+@property(retain, nonatomic) UIStackView *mainStackView; // @synthesize mainStackView=_mainStackView;
 @property(retain, nonatomic) UILabel *summaryLabel; // @synthesize summaryLabel=_summaryLabel;
 @property(retain, nonatomic) WFRowOfIconsView *actionIconsView; // @synthesize actionIconsView=_actionIconsView;
-@property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 - (void).cxx_destruct;
-- (void)updateUI;
+- (void)addActionViewIfNeeded;
+- (void)removeActionViewIfNeeded;
+- (void)configureWithTitle:(id)arg1 actionIcons:(id)arg2;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)uiWindowsForSceneWithIdentifier:(id)arg1;
 - (BOOL)shouldCloseHostWindowForSceneIdentifier:(id)arg1 persistentIdentifier:(id)arg2;
 - (BOOL)shouldHideHostWindowForSceneIdentifier:(id)arg1;
 

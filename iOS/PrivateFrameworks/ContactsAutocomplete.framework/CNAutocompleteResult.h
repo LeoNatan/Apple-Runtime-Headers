@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CNAutocompleteNameComponents, CNAutocompleteResultValue, NSArray, NSDictionary, NSString;
+@class CNAutocompleteNameComponents, CNAutocompleteResultValue, NSArray, NSDictionary, NSNumber, NSString;
 
 @interface CNAutocompleteResult : NSObject
 {
@@ -25,6 +25,7 @@
     NSArray *_diagnosticLogs;
     CDUnknownBlockType _ignoreResultBlock;
     long long _resultType;
+    NSNumber *_recentsIdentifier;
 }
 
 + (_Bool)isSourceTypeConsideredSuggestion:(unsigned long long)arg1;
@@ -40,6 +41,7 @@
 + (id)messagesResultWithAddress:(id)arg1 displayName:(id)arg2 nameComponents:(id)arg3 resultType:(long long)arg4 groupMembersProvider:(CDUnknownBlockType)arg5 userInfo:(id)arg6;
 + (id)calDAVResultWithAddress:(id)arg1 displayName:(id)arg2 nameComponents:(id)arg3 resultType:(long long)arg4 groupMembersProvider:(CDUnknownBlockType)arg5;
 + (id)calDAVResultWithAddress:(id)arg1 displayName:(id)arg2 nameComponents:(id)arg3;
+@property(retain, nonatomic) NSNumber *recentsIdentifier; // @synthesize recentsIdentifier=_recentsIdentifier;
 @property long long resultType; // @synthesize resultType=_resultType;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy) NSString *lastSendingAddress; // @synthesize lastSendingAddress=_lastSendingAddress;

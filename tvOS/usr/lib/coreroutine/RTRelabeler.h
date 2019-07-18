@@ -18,6 +18,7 @@
     NSArray *_hallucinatedUUIDs;
 }
 
++ (_Bool)placeholderCandidate:(struct RTPair *)arg1 knownPlaceTypeThreshold:(double)arg2;
 @property(nonatomic) _Bool loggingEnabled; // @synthesize loggingEnabled=_loggingEnabled;
 @property(readonly, nonatomic) NSArray *hallucinatedUUIDs; // @synthesize hallucinatedUUIDs=_hallucinatedUUIDs;
 @property(readonly, nonatomic) NSUUID *placeholderUUID; // @synthesize placeholderUUID=_placeholderUUID;
@@ -25,7 +26,7 @@
 @property(retain, nonatomic) RTInferredMapItemDeduper *deduper; // @synthesize deduper=_deduper;
 @property(readonly, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 - (void).cxx_destruct;
-- (id)relabelCandidate:(struct RTPair *)arg1 usingContextCandidates:(id)arg2 outPriorVector:(id *)arg3 outObservationVector:(id *)arg4 outPosteriorVector:(id *)arg5 error:(id *)arg6;
+- (id)relabelCandidate:(struct RTPair *)arg1 usingContextCandidates:(id)arg2 metrics:(id)arg3 outPriorVector:(id *)arg4 outObservationVector:(id *)arg5 outPosteriorVector:(id *)arg6 error:(id *)arg7;
 - (id)relabeledInferredMapItemFromProbVector:(id)arg1 error:(id *)arg2;
 - (id)relabeledProbVectorForCandidate:(struct RTPair *)arg1 usingContextNonRevGeoCandidates:(id)arg2 contextRevGeoCandidates:(id)arg3 inferredMapItemDeduperState:(id)arg4 referenceLocation:(id)arg5 outPriorVector:(id *)arg6 outObservationVector:(id *)arg7 outPosteriorVector:(id *)arg8 error:(id *)arg9;
 - (id)generateRelabeledInferredMapItemsFromProbMap:(id)arg1 inferredMapItemDeduperState:(id)arg2 hallucinatedUUIDs:(id)arg3 originalCandidate:(struct RTPair *)arg4 referenceLocation:(id)arg5 error:(id *)arg6;
@@ -42,7 +43,7 @@
 - (id)filterFarCandidates:(id)arg1 referenceLocation:(id)arg2 error:(id *)arg3;
 - (id)filterAoiCandidates:(id)arg1 error:(id *)arg2;
 - (id)filterOldCandidates:(id)arg1 error:(id *)arg2;
-- (_Bool)candidateIsRevGeoOrLearnedPlaceNonHomeWork:(struct RTPair *)arg1;
+- (_Bool)placeholderCandidate:(struct RTPair *)arg1;
 - (void)enableLogging:(_Bool)arg1;
 - (double)contextDistanceThreshold;
 - (id)initWithDistanceCalculator:(id)arg1 parameters:(id)arg2;

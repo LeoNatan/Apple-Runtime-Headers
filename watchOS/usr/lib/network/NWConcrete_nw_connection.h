@@ -28,8 +28,8 @@ __attribute__((visibility("hidden")))
     unsigned int hit_max_timestamps:1;
     unsigned int should_report_activities:1;
     unsigned int initial_writes_are_non_idempotent:1;
-    unsigned int has_batched_sends:1;
-    unsigned int has_batched_receives:1;
+    NSObject<OS_nw_write_request> *batched_sends;
+    NSObject<OS_nw_read_request> *batched_receives;
     _Bool cancelled;
     _Bool prohibit_set_queue;
     _Bool batching;

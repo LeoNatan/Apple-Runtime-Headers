@@ -7,7 +7,6 @@
 #import <Foundation/NSMutableArray.h>
 
 @interface NSMutableArray (IntentsFoundation)
-- (id)_inf_objectsPassingTest:(CDUnknownBlockType)arg1;
-- (void)_inf_addObjectIfNonNil:(id)arg1;
+- (void)if_addObjectIfNonNil:(id)arg1;
 @end
 

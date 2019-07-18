@@ -12,6 +12,8 @@
 @interface HMICameraVideoAnalyzerConfiguration : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _transcodeFragment;
+    _Bool _useScheduler;
+    _Bool _inMediaAnalysis;
     unsigned long long _posterFrameGenerationInterval;
     unsigned long long _posterFrameHeight;
     double _maxFragmentAnalysisDuration;
@@ -21,6 +23,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property _Bool inMediaAnalysis; // @synthesize inMediaAnalysis=_inMediaAnalysis;
+@property _Bool useScheduler; // @synthesize useScheduler=_useScheduler;
 @property _Bool transcodeFragment; // @synthesize transcodeFragment=_transcodeFragment;
 @property unsigned long long startingMediaIntegritySequenceNumber; // @synthesize startingMediaIntegritySequenceNumber=_startingMediaIntegritySequenceNumber;
 @property unsigned long long serviceType; // @synthesize serviceType=_serviceType;

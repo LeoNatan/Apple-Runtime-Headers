@@ -23,6 +23,8 @@
 - (void)traitCollectionDidChange:(id)arg1;
 @property(nonatomic, copy) NSArray *viewControllers;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithCoder:(id)arg1;
 

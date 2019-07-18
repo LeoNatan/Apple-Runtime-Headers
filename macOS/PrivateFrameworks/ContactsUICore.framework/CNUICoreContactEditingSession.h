@@ -21,7 +21,14 @@
 @property(retain, nonatomic) CNUICoreContactScratchpad *contactsAdded; // @synthesize contactsAdded=_contactsAdded;
 - (void).cxx_destruct;
 - (id)description;
+- (id)applyChangesToContacts:(id)arg1;
 - (id)generateSaveRequest;
+- (id)removedContactsMatchingContacts:(id)arg1;
+- (id)updatedContactsMatchingContacts:(id)arg1;
+- (id)addedContactsMatchingContacts:(id)arg1;
+- (BOOL)containsRemovedContactMatchingContact:(id)arg1;
+- (BOOL)containsUpdatedContactMatchingContact:(id)arg1;
+- (BOOL)containsAddedContactMatchingContact:(id)arg1;
 @property(readonly, nonatomic) NSArray *removedContacts;
 @property(readonly, nonatomic) NSArray *updatedContacts;
 @property(readonly, nonatomic) NSArray *addedContacts;

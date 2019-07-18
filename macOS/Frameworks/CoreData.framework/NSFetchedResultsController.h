@@ -74,6 +74,7 @@
 - (void)_managedObjectContextDidSave:(id)arg1;
 - (BOOL)_updateCachedStoreInfo;
 - (void)_appendAffectedStoreInfoToData:(id)arg1 adjustedOffset:(long long *)arg2;
+- (void)_conditionallyDispatchSnapshotToDelegate:(id)arg1;
 - (void)_managedObjectContextDidChange:(id)arg1;
 - (void)_managedObjectContextDidMutateObjectIDs:(id)arg1;
 - (void)_managedObjectContextDidChangeObjectIDs:(id)arg1;

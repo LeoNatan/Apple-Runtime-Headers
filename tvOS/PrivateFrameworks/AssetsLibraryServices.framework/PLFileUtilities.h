@@ -15,6 +15,7 @@
 + (_Bool)filePath:(id)arg1 hasPrefix:(id)arg2;
 + (id)realPathForPath:(id)arg1 error:(id *)arg2;
 + (_Bool)fileURL:(id)arg1 isEqualToFileURL:(id)arg2;
++ (long long)fileLengthForFilePath:(id)arg1;
 + (id)_mobileOwnerAttributes;
 + (_Bool)changeFileOwnerToMobileAtPath:(id)arg1 error:(id *)arg2;
 + (_Bool)changeFileOwnerToMobileAtPath:(id)arg1 error:(id *)arg2 usingFileManager:(id)arg3;
@@ -32,7 +33,7 @@
 + (id)fileManager;
 + (_Bool)isAPFSForFileSystemAtURL:(id)arg1;
 + (_Bool)canEnableCloudPhotoLibraryForFileSystemAtURL:(id)arg1 isLocal:(out _Bool *)arg2;
-+ (_Bool)isExternalVolumeAtURL:(id)arg1;
++ (_Bool)isInternalVolumeAtURL:(id)arg1;
 + (_Bool)isLocalFileSystemAtURL:(id)arg1;
 + (_Bool)_getFileSystemType:(unsigned int *)arg1 subType:(unsigned int *)arg2 typeName:(id *)arg3 forURL:(id)arg4;
 + (_Bool)supportsClone;

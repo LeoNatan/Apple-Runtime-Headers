@@ -37,9 +37,12 @@
 @property(readonly, nonatomic) NSString *fullName;
 @property(readonly, nonatomic) NSString *detailedName;
 @property(readonly, nonatomic) NSString *name;
+- (id)_canonicalRegion;
+@property(readonly, nonatomic) BOOL containsFakeRegion;
 - (id)viewForProcess:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)calculateSizes;
+- (void)finalizeUsingRegionDirtySize:(BOOL)arg1;
+- (void)finalize;
 - (void)_addRegion:(id)arg1 pageSize:(unsigned long long)arg2 forProcess:(id)arg3;
 - (void)addRegion:(id)arg1 pageSize:(unsigned long long)arg2;
 - (void)addRegion:(id)arg1 forProcess:(id)arg2;

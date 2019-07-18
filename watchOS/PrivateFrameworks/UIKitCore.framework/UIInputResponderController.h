@@ -58,8 +58,8 @@
 @property(retain, nonatomic) UIKBRenderConfig *restorableRenderConfig; // @synthesize restorableRenderConfig=_restorableRenderConfig;
 @property(readonly, nonatomic) int currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) _Bool hideSystemInputAssistantView; // @synthesize hideSystemInputAssistantView=_hideSystemInputAssistantView;
-@property(nonatomic) _Bool automaticAppearanceEnabled; // @synthesize automaticAppearanceEnabled=_automaticAppearanceEnabled;
 @property(readonly, nonatomic) UIResponder *responder; // @synthesize responder=_responder;
+@property(nonatomic) _Bool automaticAppearanceEnabled; // @synthesize automaticAppearanceEnabled=_automaticAppearanceEnabled;
 @property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) UITextFormattingCoordinator *textFormattingCoordinator;
@@ -120,7 +120,7 @@
 - (void)disableInterfaceAutorotation:(_Bool)arg1;
 - (void)updateRenderConfigForResponder:(id)arg1;
 - (void)updateRenderConfigForCurrentResponder;
-- (void)traitCollectionDidChange:(id)arg1;
+- (void)traitCollectionDidChange;
 - (id)_renderConfigForResponder:(id)arg1;
 - (void)setTextEffectsWindowLevelForInputView:(id)arg1 responder:(id)arg2;
 - (void)_updateContainerWindowLevel;
@@ -151,6 +151,8 @@
 @property(nonatomic) _Bool useHostedInstance;
 @property(readonly, nonatomic) UIWindowScene *scene;
 @property(readonly, nonatomic) _Bool deactivated;
+- (void)inputResponderControllerWillResume:(id)arg1;
+- (void)inputModeChangedForRenderConfig:(id)arg1;
 - (void)dealloc;
 - (void)_scene:(id)arg1 willTransitionToActivationState:(int)arg2 withReasonsMask:(unsigned int)arg3;
 - (id)initWithScene:(id)arg1;

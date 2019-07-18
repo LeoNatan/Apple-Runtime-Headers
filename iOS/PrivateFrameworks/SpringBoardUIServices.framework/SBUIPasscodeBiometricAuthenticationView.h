@@ -62,8 +62,8 @@
 - (void)_cancelButtonHit;
 - (void)_usePasscodeButtonHit;
 - (void)_setFaceIDReasonLine2:(id)arg1;
-- (void)_createConstraints;
-- (void)_createSubviews;
+- (void)_updateConstraints;
+- (void)_updateSubviews;
 - (void)setGlyphViewState:(long long)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setGlyphViewState:(long long)arg1;
 - (void)setAncillaryButtonsVisible:(_Bool)arg1 animated:(_Bool)arg2;

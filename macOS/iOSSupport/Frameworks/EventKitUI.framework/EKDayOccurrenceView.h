@@ -65,7 +65,6 @@
     double _bottomPinningProximity;
     double _topYBoundaryForText;
     struct UIEdgeInsets _margin;
-    struct CGRect _contentRect;
 }
 
 + (struct UIEdgeInsets)defaultPadding;
@@ -103,7 +102,6 @@
 @property(nonatomic, getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic, getter=isDeclined) BOOL declined; // @synthesize declined=_declined;
 @property(nonatomic, getter=isTentative) BOOL tentative; // @synthesize tentative=_tentative;
-@property(readonly, nonatomic) struct CGRect contentRect; // @synthesize contentRect=_contentRect;
 @property(nonatomic) BOOL isProposedTime; // @synthesize isProposedTime=_isProposedTime;
 @property(nonatomic) double travelTimeSubviewHeightInPoints; // @synthesize travelTimeSubviewHeightInPoints=_travelTimeSubviewHeightInPoints;
 @property(nonatomic) BOOL isSelectedCopyView; // @synthesize isSelectedCopyView=_isSelectedCopyView;
@@ -143,6 +141,7 @@
 - (void)bringResizeHandlesToFront;
 - (id)arrayOfResizeHandles;
 - (int)dragTypeFromPoint:(struct CGPoint)arg1;
+- (void)updateAlpha;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
@@ -159,7 +158,6 @@
 - (void)layoutSubviews;
 - (struct CGRect)frameOfOpaqueContent;
 - (struct CGRect)_frameMutatedForProximityToHourLine:(struct CGRect)arg1;
-- (struct CGRect)contentRectForPreview;
 - (struct CGRect)_computeTravelTimeContentRect;
 - (id)_newResizeHandleView;
 - (void)animateToFrame:(struct CGRect)arg1 isAllDay:(BOOL)arg2 beginFromCurrentState:(BOOL)arg3 whenFinished:(CDUnknownBlockType)arg4;

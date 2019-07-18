@@ -177,6 +177,8 @@
 - (struct _NSRange)_visibleRangeWithLayout:(_Bool)arg1;
 - (_Bool)isTextDropActive;
 - (_Bool)isTextDragActive;
+- (void)removeInvisibleRange:(id)arg1;
+- (void)addInvisibleRange:(id)arg1;
 - (void)removeAllGhostedRanges;
 - (void)addGhostedRange:(id)arg1;
 - (void)_updateSelectionGestures;
@@ -187,6 +189,7 @@
 - (void)_updateLabelAppearance;
 - (void)_tvUpdateTextColor;
 - (_Bool)_shouldDetermineInterfaceStyleTextColor;
+- (void)_didSetFont:(id)arg1;
 - (long long)_blurEffectStyleForAppearance;
 - (void)_applyRoundedRectBackgroundCornerRadiusToBackgroundViewWithWarning:(_Bool)arg1;
 - (double)_roundedRectBackgroundCornerRadius;
@@ -383,6 +386,7 @@
 - (float)paddingLeft;
 - (void)setPaddingLeft:(float)arg1;
 - (void)setPaddingTop:(float)arg1 paddingLeft:(float)arg2;
+- (id)accessibilityPath;
 - (void)drawBorder:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (_Bool)_canDrawContent;
@@ -710,10 +714,12 @@
 @property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically; // @dynamic enablesReturnKeyAutomatically;
 @property(nonatomic) _Bool enablesReturnKeyOnNonWhiteSpaceContent;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
 @property(nonatomic) _Bool forceDefaultDictationInfo;
 @property(nonatomic) long long forceDictationKeyboardType;
 @property(nonatomic) _Bool forceDisableDictation;
 @property(nonatomic) _Bool forceEnableDictation;
+@property(nonatomic) _Bool forceFloatingKeyboard;
 @property(nonatomic) _Bool hasDefaultContents;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) _Bool hidePrediction;

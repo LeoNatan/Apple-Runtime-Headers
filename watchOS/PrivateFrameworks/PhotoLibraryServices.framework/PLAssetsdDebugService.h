@@ -26,11 +26,11 @@
 - (void)updateHighlightTitlesWithReply:(CDUnknownBlockType)arg1;
 - (void)processUnprocessedMomentLocationsWithReply:(CDUnknownBlockType)arg1;
 - (void)processRecentHighlightsWithReply:(CDUnknownBlockType)arg1;
+- (void)prefetchResourcesWithMode:(int)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)prefetchResourcesForHighlights:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)prefetchResourcesForMemories:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)pruneAssetsWithUUID:(id)arg1 resourceTypes:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)debugSidecarURLsWithObjectURI:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)computeFingerPrintsOfAssetWithObjectURI:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)revertToOriginalWithObjectURI:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getCPLStateWithReply:(CDUnknownBlockType)arg1;
 - (void)getXPCTransactionStatusWithReply:(CDUnknownBlockType)arg1;

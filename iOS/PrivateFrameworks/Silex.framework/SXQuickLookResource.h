@@ -14,7 +14,6 @@
 {
 }
 
-+ (void)load;
 
 // Remaining properties
 @property(readonly, nonatomic) NSURL *URL;
@@ -23,6 +22,5 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly) Class superclass;
-
 @end
 

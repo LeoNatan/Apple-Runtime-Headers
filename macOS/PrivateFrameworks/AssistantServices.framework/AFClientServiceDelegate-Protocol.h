@@ -15,7 +15,6 @@
 - (oneway void)startPlaybackDidFail:(long long)arg1;
 - (oneway void)willProcessStartPlayback:(long long)arg1 intent:(INIntent *)arg2 completion:(void (^)(BOOL, BOOL))arg3;
 - (oneway void)audioPlaybackRequestDidStop:(AFAudioPlaybackRequest *)arg1 error:(NSError *)arg2;
-- (oneway void)audioPlaybackRequestDidNotStart:(AFAudioPlaybackRequest *)arg1 error:(NSError *)arg2;
 - (oneway void)audioPlaybackRequestDidStart:(AFAudioPlaybackRequest *)arg1;
 - (oneway void)audioPlaybackRequestWillStart:(AFAudioPlaybackRequest *)arg1;
 - (oneway void)audioSessionDidEndInterruption:(BOOL)arg1;
@@ -51,7 +50,6 @@
 - (oneway void)requestRequestedOpenURL:(NSURL *)arg1 reply:(void (^)(BOOL))arg2;
 - (oneway void)requestRequestedOpenApplicationWithBundleID:(NSString *)arg1 URL:(NSURL *)arg2 reply:(void (^)(BOOL))arg3;
 - (oneway void)requestHandleCommand:(AceObject<SAAceCommand> *)arg1 reply:(void (^)(AceObject<SAAceCommand> *, NSError *))arg2;
-- (oneway void)requestDidReceiveCommand:(AceObject<SAAceCommand> *)arg1 reply:(void (^)(AceObject<SAAceCommand> *))arg2;
 - (oneway void)shouldSpeakChanged:(BOOL)arg1;
 @end
 

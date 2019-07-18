@@ -27,6 +27,7 @@
     CDUnknownBlockType _onWillSpeakRangeCallback;
     CDUnknownBlockType _onSpeechStartCallback;
     _Bool _ignoreCustomSubstitutions;
+    _Bool _synthesizeSilently;
     _Bool _useMonarchStyleSpeechRate;
     NSString *_voiceIdentifier;
     int _state;
@@ -60,6 +61,7 @@
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain, nonatomic) NSString *voiceIdentifier; // @synthesize voiceIdentifier=_voiceIdentifier;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
+@property(nonatomic) _Bool synthesizeSilently; // @synthesize synthesizeSilently=_synthesizeSilently;
 @property(nonatomic) _Bool ignoreCustomSubstitutions; // @synthesize ignoreCustomSubstitutions=_ignoreCustomSubstitutions;
 @property(nonatomic) _Bool shouldPrecomposeString; // @synthesize shouldPrecomposeString=_shouldPrecomposeString;
 @property(nonatomic) _Bool shouldProcessEmoticons; // @synthesize shouldProcessEmoticons=_shouldProcessEmoticons;

@@ -10,6 +10,7 @@
 #import <WebKit/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSString, WKPreferences, WKProcessPool, WKUserContentController, WKWebView, WKWebViewContentProviderRegistry, WKWebpagePreferences, WKWebsiteDataStore, _WKApplicationManifest, _WKVisitedLinkStore, _WKWebsiteDataStore;
+@protocol _UIClickInteractionDriving;
 
 @interface WKWebViewConfiguration : NSObject <NSSecureCoding, NSCopying>
 {
@@ -23,7 +24,7 @@
     struct WeakObjCPtr<WKWebView> _relatedWebView;
     struct WeakObjCPtr<WKWebView> _alternateWebViewForNavigationGestures;
     struct RetainPtr<NSString> _groupIdentifier;
-    struct LazyInitialized<WTF::RetainPtr<NSString>> _applicationNameForUserAgent;
+    struct Optional<WTF::RetainPtr<NSString>> _applicationNameForUserAgent;
     double _incrementalRenderingSuppressionTimeout;
     _Bool _respectsImageOrientation;
     _Bool _printsBackgrounds;
@@ -86,6 +87,7 @@
 - (void)setURLSchemeHandler:(id)arg1 forURLScheme:(id)arg2;
 @property(retain, nonatomic, setter=_setVisitedLinkStore:) _WKVisitedLinkStore *_visitedLinkStore;
 @property(copy, nonatomic) NSString *applicationNameForUserAgent;
+@property(readonly, nonatomic) NSString *_applicationNameForDesktopUserAgent;
 @property(copy, nonatomic) WKWebpagePreferences *defaultWebpagePreferences;
 @property(retain, nonatomic) WKWebsiteDataStore *websiteDataStore;
 @property(retain, nonatomic) WKUserContentController *userContentController;
@@ -120,6 +122,7 @@
 @property(nonatomic, setter=_setAttachmentElementEnabled:) _Bool _attachmentElementEnabled;
 @property(nonatomic, setter=_setMediaDataLoadsAutomatically:) _Bool _mediaDataLoadsAutomatically;
 @property(nonatomic, setter=_setInvisibleAutoplayNotPermitted:) _Bool _invisibleAutoplayNotPermitted;
+@property(nonatomic, setter=_setClickInteractionDriverForTesting:) id <_UIClickInteractionDriving> _clickInteractionDriverForTesting;
 @property(nonatomic, setter=_setCanShowWhileLocked:) _Bool _canShowWhileLocked;
 @property(nonatomic, setter=_setShouldDecidePolicyBeforeLoadingQuickLookPreview:) _Bool _shouldDecidePolicyBeforeLoadingQuickLookPreview;
 @property(nonatomic, setter=_setSystemPreviewEnabled:) _Bool _systemPreviewEnabled;

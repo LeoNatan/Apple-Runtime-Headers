@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class GEOFeatureStyleAttributes, NSData, NSMutableArray, NSMutableData, NSMutableDictionary, NSMutableOrderedSet;
+@class GEOFeatureStyleAttributes, NSData, NSMutableArray, NSMutableData, NSMutableDictionary, NSMutableOrderedSet, NSString;
 
 @interface GEOVectorTile : NSObject
 {
@@ -85,6 +85,7 @@
     } *_labelPoolLanguages;
     unsigned long long _labelPoolLanguagesLength;
     NSData *_localizedLabelPool;
+    NSString *_preferredLocalizedLabelLanguage;
     char *_localizedLabelsLanguage;
     NSData *_dualLanguageLabelPool;
     CDStruct_29923528 *_labelIndex;
@@ -94,6 +95,7 @@
     struct {
         unsigned long long _field1;
         unsigned long long _field2;
+        char *_field3;
         unsigned int :1;
     } *_localizationTable;
     unsigned long long _localizationTableCount;

@@ -40,7 +40,7 @@
 - (void)_endFieldPropertiesLookup;
 - (void)_endLookupAndNotifyForFieldProperties:(id)arg1;
 - (void)_startLookupForFieldProperties:(id)arg1;
-- (void)loyaltyAndPaymentSession:(id)arg1 didExpressModeStateChange:(unsigned int)arg2;
+- (void)loyaltyAndPaymentSession:(id)arg1 didExpressModeStateChange:(unsigned int)arg2 withObject:(id)arg3;
 - (void)loyaltyAndPaymentSession:(id)arg1 didFelicaStateChange:(id)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didFailDeferredAuthorization:(BOOL)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didSelectValueAddedService:(BOOL)arg2;

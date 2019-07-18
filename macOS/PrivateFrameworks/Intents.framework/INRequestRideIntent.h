@@ -14,6 +14,7 @@
 {
 }
 
++ (id)_ignoredParameters;
 - (void)setParametersByName:(id)arg1;
 - (id)parametersByName;
 - (void)setVerb:(id)arg1;

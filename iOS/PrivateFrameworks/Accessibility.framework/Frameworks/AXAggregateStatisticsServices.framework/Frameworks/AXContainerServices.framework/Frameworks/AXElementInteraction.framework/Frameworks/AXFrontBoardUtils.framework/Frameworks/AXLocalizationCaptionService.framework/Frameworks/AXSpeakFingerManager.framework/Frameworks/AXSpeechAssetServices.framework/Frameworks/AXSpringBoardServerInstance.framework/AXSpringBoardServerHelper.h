@@ -126,6 +126,8 @@
 - (void)launchMagnifierAppWithServerInstance:(id)arg1;
 - (void)reactivateInCallServiceWithServerInstance:(id)arg1;
 - (void)forceLoadGAXBundleWithServerInstance:(id)arg1;
+- (_Bool)isSpotlightVisibleWithServerInstance:(id)arg1;
+- (_Bool)isGuidedAccessActiveWithServerInstance:(id)arg1;
 - (void)revealSpotlightWithServerInstance:(id)arg1;
 - (void)toggleSpotlightWithServerInstance:(id)arg1;
 - (id)medusaBundleIDsToLayoutRoles;
@@ -160,6 +162,7 @@
 - (_Bool)isDockVisibleWithServerInstance:(id)arg1;
 - (id)_axFloatingDockController;
 - (_Bool)isSiriVisibleWithServerInstance:(id)arg1;
+- (_Bool)isStatusBarNativeFocusableWithServerInstance:(id)arg1;
 - (void)toggleDockWithServerInstance:(id)arg1;
 - (_Bool)isControlCenterVisibleWithServerInstance:(id)arg1;
 - (_Bool)serverInstance:(id)arg1 showControlCenter:(_Bool)arg2;
@@ -183,6 +186,7 @@
 - (_Bool)isScreenLockedWithServerInstance:(id)arg1;
 - (void)openCommandAndControlVocabularyWithServerInstance:(id)arg1;
 - (void)openCommandAndControlCommandsWithServerInstance:(id)arg1;
+- (void)openCommandAndControlSettingsWithServerInstance:(id)arg1;
 - (void)openCustomGestureCreationForSCATWithServerInstance:(id)arg1;
 - (void)openCustomGestureCreationForASTWithServerInstance:(id)arg1;
 - (void)serverInstance:(id)arg1 setOrientationLocked:(_Bool)arg2;

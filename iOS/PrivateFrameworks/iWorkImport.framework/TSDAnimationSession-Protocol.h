@@ -8,6 +8,7 @@
 
 @protocol TSDAnimationSession <NSObject>
 @property(readonly, nonatomic) double showScale;
+@property(nonatomic) _Bool shouldAllowBackgroundAlpha;
 @property(nonatomic) _Bool shouldForceTextureGeneration;
 @property(nonatomic) _Bool shouldUseSourceImage;
 @property(nonatomic) _Bool shouldDrawTexturesAsynchronously;

@@ -33,6 +33,7 @@
 @property(readonly, nonatomic) NSURL *irisVideoPersistenceURL;
 @property(readonly, nonatomic, getter=isExpectingPairedVideo) _Bool expectingPairedVideo;
 @property(readonly, nonatomic) NSString *irisStillImageUUID;
+@property(readonly, nonatomic) struct CGSize finalExpectedPixelSize;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 duration;
 @property(readonly, nonatomic) unsigned long long numberOfRepresentedAssets;
 @property(readonly, copy, nonatomic) NSString *burstIdentifier;

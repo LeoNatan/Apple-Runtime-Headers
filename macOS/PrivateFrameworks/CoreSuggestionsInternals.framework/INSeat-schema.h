@@ -8,5 +8,6 @@
 
 @interface INSeat (schema)
 + (id)fromSchema:(id)arg1;
+- (id)schema;
 @end
 

@@ -16,6 +16,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)phoneSubscriptionWithSubscriptionSlot:(long long)arg1;
++ (id)phoneSubscriptionWithSIM:(id)arg1;
++ (id)phoneSubscriptionsFromCTSIMs:(id)arg1;
++ (id)CTSIMSFromPhoneSubscriptions:(id)arg1;
 @property(readonly, nonatomic) long long subscriptionSlot; // @synthesize subscriptionSlot=_subscriptionSlot;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -25,6 +28,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithSubscriptionSlot:(long long)arg1;
+- (id)matchingSim;
 
 @end
 

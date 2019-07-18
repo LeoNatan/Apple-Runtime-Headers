@@ -52,6 +52,7 @@
 @property(readonly, nonatomic) _Bool hasLineColorString;
 @property(readonly, nonatomic) _Bool hasName;
 @property(nonatomic) _Bool hasMuid;
+@property(readonly, nonatomic) _Bool isBus;
 @property(readonly, nonatomic) _Bool departuresAreVehicleSpecific;
 @property(readonly, nonatomic) _Bool showVehicleNumber;
 @property(readonly, nonatomic) NSArray *operatingHours;

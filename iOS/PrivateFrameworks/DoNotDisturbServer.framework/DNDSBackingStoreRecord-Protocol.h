@@ -4,12 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DoNotDisturbServer/NSCopying-Protocol.h>
 #import <DoNotDisturbServer/NSObject-Protocol.h>
 
 @class NSDictionary;
 
-@protocol DNDSBackingStoreRecord <NSObject, NSCopying>
+@protocol DNDSBackingStoreRecord <NSObject>
 + (id)newWithDictionaryRepresentation:(NSDictionary *)arg1;
 - (NSDictionary *)dictionaryRepresentation;
 @end

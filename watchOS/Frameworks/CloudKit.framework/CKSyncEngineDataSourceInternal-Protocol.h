@@ -11,7 +11,7 @@
 @protocol CKSyncEngineDataSourceInternal <CKSyncEngineDataSource>
 
 @optional
-- (void)syncEngine:(CKSyncEngine *)arg1 didEnqueueOperation:(NSOperation *)arg2;
+- (void)syncEngine:(CKSyncEngine *)arg1 willEnqueueOperation:(NSOperation *)arg2;
 - (void)syncEngine:(CKSyncEngine *)arg1 didUpdateAccountStatus:(int)arg2;
 - (void)syncEngine:(CKSyncEngine *)arg1 didSaveSubscriptionWithError:(NSError *)arg2;
 - (void)syncEngineDidScheduleInitialWork:(CKSyncEngine *)arg1;

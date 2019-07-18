@@ -10,6 +10,7 @@
 
 @interface _TtC13HealthProfile19MeContactAvatarView : UIView <CNAvatarViewControllerDelegate>
 {
+    // Error parsing type: , name: defaultAvatarImageSymbolConfiguration
     // Error parsing type: , name: contactsAvatarViewController
     // Error parsing type: , name: defaultAvatarImageView
 }

@@ -34,6 +34,7 @@
     _Bool _configuredStereoPair;
     _Bool _personalRequestsDone;
     _Bool _hasHomePod;
+    _Bool _hasMultipleUsers;
     _Bool _keyExchangeOnly;
     _Bool _pauseAfterUserInput;
     _Bool _personalRequestsEnabled;
@@ -71,13 +72,14 @@
 @property(copy, nonatomic) NSString *iTunesAccountID; // @synthesize iTunesAccountID=_iTunesAccountID;
 @property(readonly, copy, nonatomic) NSString *homeKitSelectedRoomName; // @synthesize homeKitSelectedRoomName=_homeKitSelectedRoomName;
 @property(readonly, nonatomic) HMHome *homeKitSelectedHome; // @synthesize homeKitSelectedHome=_homeKitSelectedHome;
+@property(readonly, nonatomic) _Bool hasMultipleUsers; // @synthesize hasMultipleUsers=_hasMultipleUsers;
 @property(readonly, nonatomic) _Bool hasHomePod; // @synthesize hasHomePod=_hasHomePod;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) NSDictionary *appDataSelf; // @synthesize appDataSelf=_appDataSelf;
 - (void).cxx_destruct;
 - (void)_updateAccount;
-- (void)_updateHomeHasHomePod;
+- (void)_updateHomeStats;
 - (void)_restoreHomeApp;
 - (void)_removeSimilarRoomNames:(id)arg1 home:(id)arg2;
 - (id)_normalizedString:(id)arg1;

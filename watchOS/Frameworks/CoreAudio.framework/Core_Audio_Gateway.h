@@ -10,6 +10,7 @@
 
 @class NSString, NSXPCListener, NSXPCListenerEndpoint;
 
+__attribute__((visibility("hidden")))
 @interface Core_Audio_Gateway : NSObject <NSXPCListenerDelegate>
 {
     NSXPCListener *_listener;

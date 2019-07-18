@@ -32,6 +32,7 @@
 - (oneway void)sendToConnection:(id)arg1;
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic) RBSXPCMessageReply *reply;
+@property(readonly, nonatomic) _Bool isEmpty;
 - (id)_initWithMessage:(id)arg1;
 - (id)init;
 

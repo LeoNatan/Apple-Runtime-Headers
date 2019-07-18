@@ -114,12 +114,11 @@
     _Bool _preventsIdleSystemSleep;
     _Bool _preconnect;
     _Bool _authenticatorConfiguredViaTaskProperty;
-    _Bool _forceDirectNoCellular;
+    _Bool _forceWatchNoCellular;
     _Bool _seenFirstResume;
     struct __CFDictionary *_atsStateCache;
     struct os_unfair_lock_s _unfair_lock;
     _Bool _connectionIsCompanionLink;
-    _Bool __forceDirectNoCellular;
     _Bool _extractorPreparedForExtraction;
 }
 
@@ -148,8 +147,6 @@
 - (void)set_extractorFinishedDecoding:(_Bool)arg1;
 - (_Bool)_extractorFinishedDecoding;
 - (id)_extractor;
-- (void)set_forceDirectNoCellular:(_Bool)arg1;
-- (_Bool)_forceDirectNoCellular;
 - (void)set_discretionaryOverride:(int)arg1;
 - (int)_discretionaryOverride;
 - (void)set_allowsQUIC:(_Bool)arg1;
@@ -328,6 +325,8 @@
 - (void)set_allowsConstrainedOverride:(int)arg1;
 - (int)_allowsExpensiveOverride;
 - (void)set_allowsExpensiveOverride:(int)arg1;
+- (_Bool)_forceWatchNoCellular;
+- (void)set_forceWatchNoCellular:(_Bool)arg1;
 - (_Bool)_disallowCellular;
 - (void)set_disallowCellular:(_Bool)arg1;
 - (id)_boundInterfaceIdentifier;

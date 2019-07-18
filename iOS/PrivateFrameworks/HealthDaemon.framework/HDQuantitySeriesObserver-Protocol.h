@@ -6,11 +6,10 @@
 
 #import <HealthDaemon/NSObject-Protocol.h>
 
-@class HDProfile, HKQuantity, HKQuantitySample, HKQuantityType, NSDateInterval, NSNumber;
+@class HDProfile, HKQuantityType;
 
 @protocol HDQuantitySeriesObserver <NSObject>
+- (void (^)(HKQuantity *, HKQuantityType *, NSDateInterval *, HKQuantitySample *, NSNumber *, _Bool))transactionalQuantityInsertHandlerForProfile:(HDProfile *)arg1 journaled:(_Bool)arg2 count:(long long)arg3;
 - (void)profile:(HDProfile *)arg1 didDiscardSeriesOfType:(HKQuantityType *)arg2;
-- (void)profile:(HDProfile *)arg1 didJournalInsertOfQuantity:(HKQuantity *)arg2 type:(HKQuantityType *)arg3 dateInterval:(NSDateInterval *)arg4 series:(HKQuantitySample *)arg5;
-- (void)profile:(HDProfile *)arg1 didInsertQuantity:(HKQuantity *)arg2 type:(HKQuantityType *)arg3 dateInterval:(NSDateInterval *)arg4 series:(HKQuantitySample *)arg5 anchor:(NSNumber *)arg6;
 @end
 

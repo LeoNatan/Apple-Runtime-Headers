@@ -27,13 +27,15 @@ __attribute__((visibility("hidden")))
 + (id)drawablesToInsertForGroup:(id)arg1 filteredWithBlock:(CDUnknownBlockType)arg2;
 + (id)groupGeometryFromChildrenInfos:(id)arg1 currentlyLaidOutWithLayoutController:(id)arg2;
 + (id)groupGeometryFromChildrenInfos:(id)arg1;
-+ (_Bool)canEditGroupsInCollaborativeDocuments;
 + (Class)classForUnarchiver:(id)arg1;
 - (void).cxx_destruct;
+- (_Bool)shouldShowInPrint;
+- (void)p_didUpdateChildInfos;
 - (void)processSelectedStoragesWithStatisticsController:(id)arg1;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
+- (_Bool)canCopyData;
 - (_Bool)needsDownload;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
@@ -48,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)replaceChildInfo:(id)arg1 with:(id)arg2;
 - (void)removeChildInfo:(id)arg1;
 - (void)makeChildGeometriesRelativeAndComputeOwnAbsoluteGeometry;
+- (id)p_ungroupedGeometryForInfo:(id)arg1;
 - (id)ungroupedGeometryForChildInfo:(id)arg1;
 - (id)groupedGeometryForChildInfo:(id)arg1;
 - (void)removeAllChildrenInDocument:(_Bool)arg1;
@@ -56,31 +59,31 @@ __attribute__((visibility("hidden")))
 - (void)insertChildInfo:(id)arg1 below:(id)arg2;
 - (void)insertChildInfo:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)addChildInfo:(id)arg1;
-- (void)setChildInfos:(id)arg1;
-@property(readonly, nonatomic) _Bool supportsCollaborativeEditing;
+@property(copy, nonatomic) NSArray *childInfos;
 - (void)moveModel:(id)arg1 toIndex:(unsigned long long)arg2;
 - (void)removeContainedModel:(id)arg1;
 - (void)insertContainedModel:(id)arg1 atIndex:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSArray *containedModels;
 @property(readonly, nonatomic) NSSet *infosToObserveForAttachedInfo;
 - (id)infoForSelectionPath:(id)arg1;
-@property(readonly, nonatomic) NSArray *childInfos;
 @property(readonly, nonatomic) NSArray *allNestedChildrenInfosIncludingGroups;
 @property(readonly, nonatomic) NSArray *allNestedChildrenInfosForWrap;
 @property(readonly, nonatomic) NSArray *allNestedChildrenInfos;
 - (id)copyWithContext:(id)arg1;
+@property(readonly, nonatomic) _Bool isEffectivelyEmpty;
 @property(readonly, nonatomic) _Bool isFreehandDrawing;
 - (Class)repClass;
 - (Class)layoutClass;
 @property(copy, nonatomic) TSDInfoGeometry *geometry;
+- (_Bool)shouldBeIgnoredWhenCopying;
 - (_Bool)supportsParentRotation;
 - (_Bool)allowsParentGroupToBeResizedWithoutAspectRatioLock;
 @property(readonly, nonatomic) _Bool canAspectRatioLockBeChangedByUser;
 - (void)dealloc;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
--     // Error parsing type: v32@0:8^{GroupArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{DrawableArchive}}16@24, name: saveToArchive:archiver:
--     // Error parsing type: v36@0:8r^{GroupArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{DrawableArchive}}16@24B32, name: loadFromArchive:unarchiver:upgradeDOLC:
+-     // Error parsing type: v32@0:8^{GroupArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{DrawableArchive}^{Reference}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v36@0:8r^{GroupArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{DrawableArchive}^{Reference}}16@24B32, name: loadFromArchive:unarchiver:upgradeDOLC:
 - (void)loadFromUnarchiver:(id)arg1;
 - (_Bool)containsDisallowedElementKind:(unsigned int)arg1;
 - (_Bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
@@ -93,6 +96,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isFloatingAboveText) _Bool floatingAboveText; // @dynamic floatingAboveText;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic, getter=isInlineWithText) _Bool inlineWithText; // @dynamic inlineWithText;
+@property(readonly, nonatomic) _Bool isMaster;
 @property(nonatomic) _Bool matchesObjectPlaceholderGeometry;
 @property(nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment; // @dynamic owningAttachment;
 @property(readonly, nonatomic) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse; // @dynamic owningAttachmentNoRecurse;

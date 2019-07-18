@@ -45,6 +45,7 @@
 @property(readonly, copy, nonatomic) NSString *inferredUTI;
 - (void)_deleteSavedPathWithProperExtensionIfNecessary;
 - (void)_deleteSavedPathIfNecessary;
+@property(readonly, nonatomic) unsigned long long fileSize;
 - (void)setFileNameForPDFDocument:(id)arg1;
 - (void)dealloc;
 - (id)initWithFileName:(id)arg1 mimeType:(id)arg2 uti:(id)arg3 needsQuickLookDocumentView:(_Bool)arg4;

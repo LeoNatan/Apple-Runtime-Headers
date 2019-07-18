@@ -6,17 +6,15 @@
 
 #import <UIKit/UIView.h>
 
-#import <SpringBoard/MTVisualStylingProviderObserving-Protocol.h>
+@class BSUICAPackageView, MTMaterialShadowView, MTVisualStylingProvider, NSArray, SBRingerVolumeSliderView, UIColor, UILabel;
 
-@class MTMaterialShadowView, MTVisualStylingProvider, NSArray, NSString, SBRingerVolumeSliderView, SBUICAPackageView, UIColor, UILabel;
-
-@interface SBRingerPillView : UIView <MTVisualStylingProviderObserving>
+@interface SBRingerPillView : UIView
 {
     float _sliderValue;
     unsigned long long _state;
     MTMaterialShadowView *_materialView;
     MTVisualStylingProvider *_stylingProvider;
-    SBUICAPackageView *_glyphView;
+    BSUICAPackageView *_glyphView;
     UILabel *_silentModeLabel;
     UILabel *_ringerLabel;
     UILabel *_onLabel;
@@ -35,7 +33,7 @@
 @property(retain, nonatomic) UILabel *onLabel; // @synthesize onLabel=_onLabel;
 @property(retain, nonatomic) UILabel *ringerLabel; // @synthesize ringerLabel=_ringerLabel;
 @property(retain, nonatomic) UILabel *silentModeLabel; // @synthesize silentModeLabel=_silentModeLabel;
-@property(retain, nonatomic) SBUICAPackageView *glyphView; // @synthesize glyphView=_glyphView;
+@property(retain, nonatomic) BSUICAPackageView *glyphView; // @synthesize glyphView=_glyphView;
 @property(retain, nonatomic) MTVisualStylingProvider *stylingProvider; // @synthesize stylingProvider=_stylingProvider;
 @property(retain, nonatomic) MTMaterialShadowView *materialView; // @synthesize materialView=_materialView;
 @property(nonatomic) float sliderValue; // @synthesize sliderValue=_sliderValue;
@@ -48,12 +46,6 @@
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

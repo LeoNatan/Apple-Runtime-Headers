@@ -73,6 +73,7 @@
 - (void)_forceSetView:(id)arg1;
 - (void)_updateViewRepresentation;
 - (BOOL)_subitemsContainCustomViews;
+- (void)setBordered:(BOOL)arg1;
 @property(copy) NSArray *subitems;
 - (void)_itemViewMinSize:(struct CGSize *)arg1 maxSize:(struct CGSize *)arg2 stretchesContent:(BOOL)arg3;
 - (BOOL)_mouseDownInSurroundingRegionShouldMoveWindow;

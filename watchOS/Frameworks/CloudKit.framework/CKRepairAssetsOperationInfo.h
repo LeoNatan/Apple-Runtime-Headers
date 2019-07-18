@@ -8,29 +8,27 @@
 
 #import <CloudKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString;
+@class CKUploadRequestConfiguration, NSArray;
 
 @interface CKRepairAssetsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding>
 {
+    CKUploadRequestConfiguration *_uploadRequestConfiguration;
     NSArray *_assets;
     NSArray *_packages;
     NSArray *_assetMetadata;
     NSArray *_packageMetadata;
     NSArray *_unavailableAssets;
     NSArray *_unavailablePackages;
-    NSString *_repairContainerIdentifier;
-    NSString *_repairSourceApplicationBundleIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSString *repairSourceApplicationBundleIdentifier; // @synthesize repairSourceApplicationBundleIdentifier=_repairSourceApplicationBundleIdentifier;
-@property(retain, nonatomic) NSString *repairContainerIdentifier; // @synthesize repairContainerIdentifier=_repairContainerIdentifier;
 @property(retain, nonatomic) NSArray *unavailablePackages; // @synthesize unavailablePackages=_unavailablePackages;
 @property(retain, nonatomic) NSArray *unavailableAssets; // @synthesize unavailableAssets=_unavailableAssets;
 @property(retain, nonatomic) NSArray *packageMetadata; // @synthesize packageMetadata=_packageMetadata;
 @property(retain, nonatomic) NSArray *assetMetadata; // @synthesize assetMetadata=_assetMetadata;
 @property(retain, nonatomic) NSArray *packages; // @synthesize packages=_packages;
 @property(retain, nonatomic) NSArray *assets; // @synthesize assets=_assets;
+@property(retain, nonatomic) CKUploadRequestConfiguration *uploadRequestConfiguration; // @synthesize uploadRequestConfiguration=_uploadRequestConfiguration;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -6,19 +6,27 @@
 
 #import <WorkflowKit/WFActionProvider.h>
 
+@class NSDictionary;
+
 @interface WFIntentActionProvider : WFActionProvider
 {
     BOOL _observingInstalledApplicationsChanges;
+    NSDictionary *_cachedSchemasByBundleIdentifier;
 }
 
 + (void)initialize;
+@property(copy, nonatomic) NSDictionary *cachedSchemasByBundleIdentifier; // @synthesize cachedSchemasByBundleIdentifier=_cachedSchemasByBundleIdentifier;
 @property(nonatomic, getter=isObservingInstalledApplicationsChanges) BOOL observingInstalledApplicationsChanges; // @synthesize observingInstalledApplicationsChanges=_observingInstalledApplicationsChanges;
-- (void)observeInstalledApplicationsChangesIfNeeded;
+- (void).cxx_destruct;
 - (void)installedApplicationsDidChange:(id)arg1;
+- (void)observeInstalledApplicationsChangesIfNeeded;
+- (BOOL)shouldCreateActionForIntentClassName:(id)arg1 actionIdentifier:(id)arg2 bundleIdentifier:(id)arg3 inSchema:(id)arg4;
+- (id)actionIdentifiersForBundleIdentifier:(id)arg1 schema:(id)arg2;
+- (id)schemaForBundleIdentifier:(id)arg1 ignoreCache:(BOOL)arg2;
+- (id)schemasByBundleIdentifier;
 - (void)createActionsForRequests:(id)arg1;
 - (id)availableActionIdentifiers;
 - (id)createAllAvailableActions;
-- (BOOL)shouldCreateActionForIntentClassName:(id)arg1 actionIdentifier:(id)arg2 bundleIdentifier:(id)arg3 inSchema:(id)arg4;
 
 @end
 

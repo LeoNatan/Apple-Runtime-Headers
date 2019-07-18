@@ -17,10 +17,12 @@
     struct {
         unsigned int hungUpCallType:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _hungUpCallType;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int hungUpCallType; // @synthesize hungUpCallType=_hungUpCallType;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;

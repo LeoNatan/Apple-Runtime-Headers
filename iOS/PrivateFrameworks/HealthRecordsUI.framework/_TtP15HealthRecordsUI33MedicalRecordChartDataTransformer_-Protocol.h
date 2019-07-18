@@ -10,6 +10,6 @@
 @protocol _TtP15HealthRecordsUI33MedicalRecordChartDataTransformer_
 - (HKInteractiveChartDisplayType *)chartDisplayTypeWith:(HKGraphSeries *)arg1 displayName:(NSString *)arg2 unitName:(NSString *)arg3;
 - (HKGraphSeries *)graphSeriesWith:(HKUIMetricColors *)arg1;
-- (id <HKChartPoint>)chartPointFor:(HKChartableCodedQuantitySet *)arg1 in:(HKUnit *)arg2 with:(long long)arg3;
+- (id <HKChartPoint>)chartPointFor:(HKChartableCodedQuantitySet *)arg1 in:(HKUnit *)arg2 with:(long long)arg3 dataSourceType:(long long)arg4;
 @end
 

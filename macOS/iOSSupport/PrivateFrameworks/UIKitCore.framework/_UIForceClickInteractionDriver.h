@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)_handleGestureRecognizer:(id)arg1;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;
 - (void)cancelInteraction;
+@property(readonly, nonatomic) BOOL isCurrentlyAcceleratedByForce;
 @property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;
 @property(readonly, nonatomic) double touchDuration;
 - (void)_prepareStateMachine;

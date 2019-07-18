@@ -29,6 +29,7 @@
 + (void)initialize;
 + (BOOL)isVoiceAssistantEnabled;
 - (void).cxx_destruct;
+- (BOOL)isAuthorizedToLogLocation;
 - (void)_clearTestSettings;
 - (void)deregisterQueryPlanLoggingChangeHandlerWithToken:(int)arg1;
 - (int)registerQueryPlanLoggingChangeHandler:(CDUnknownBlockType)arg1;

@@ -31,6 +31,7 @@
 - (_Bool)startObservingChangesForResult:(id)arg1;
 - (id)descriptorsForResult:(id)arg1 error:(id *)arg2;
 - (void)accessStorageForDescriptor:(id)arg1 usingBlock:(CDUnknownBlockType)arg2 withError:(id *)arg3;
+- (id)latestRunEvent;
 - (id)sortedRunEventsForTriggerID:(id)arg1;
 - (id)sortedRunEventsWithSource:(id)arg1;
 - (id)allConfiguredTriggers;

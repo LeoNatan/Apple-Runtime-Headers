@@ -25,8 +25,6 @@
 + (id)downgradeDictionaryRepresentation:(id)arg1 fromVersionNumber:(unsigned long long)arg2 toVersionNumber:(unsigned long long)arg3 migrationDelegate:(id)arg4;
 + (id)upgradeDictionaryRepresentation:(id)arg1 fromVersionNumber:(unsigned long long)arg2 toVersionNumber:(unsigned long long)arg3;
 + (id)newWithDictionaryRepresentation:(id)arg1;
-+ (unsigned long long)recordVersionNumberIOS12;
-+ (unsigned long long)recordVersionNumber;
 @property(readonly, copy, nonatomic) NSDate *lastUpdateDate; // @synthesize lastUpdateDate=_lastUpdateDate;
 @property(readonly, copy, nonatomic) DNDModeAssertionSource *lastCompleteInvalidationSource; // @synthesize lastCompleteInvalidationSource=_lastCompleteInvalidationSource;
 @property(readonly, nonatomic) unsigned long long lastCompleteInvalidationReason; // @synthesize lastCompleteInvalidationReason=_lastCompleteInvalidationReason;

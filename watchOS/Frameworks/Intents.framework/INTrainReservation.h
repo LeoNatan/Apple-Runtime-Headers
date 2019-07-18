@@ -27,7 +27,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)initWithItemReference:(id)arg1 reservationNumber:(id)arg2 bookingTime:(id)arg3 reservationStatus:(int)arg4 reservationHolderName:(id)arg5 actions:(id)arg6;
 - (id)initWithItemReference:(id)arg1 reservationNumber:(id)arg2 bookingTime:(id)arg3 reservationStatus:(int)arg4 reservationHolderName:(id)arg5 actions:(id)arg6 reservedSeat:(id)arg7 trainTrip:(id)arg8;
 
 @end

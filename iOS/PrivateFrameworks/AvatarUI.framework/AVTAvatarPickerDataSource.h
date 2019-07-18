@@ -6,23 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class AVTAvatarListImageItem, AVTAvatarRecordDataSource, AVTUIEnvironment, NSArray;
-@protocol AVTAvatarStore;
+@class AVTAvatarRecordDataSource, AVTUIEnvironment, NSArray;
+@protocol AVTAvatarListItem, AVTAvatarStore;
 
 @interface AVTAvatarPickerDataSource : NSObject
 {
     _Bool _allowAddItem;
     AVTUIEnvironment *_environment;
-    NSArray *_items;
     AVTAvatarRecordDataSource *_recordDataSource;
-    AVTAvatarListImageItem *_addItem;
+    NSArray *_items;
+    id <AVTAvatarListItem> _addItem;
 }
 
-+ (id)addItemImage;
-@property(retain, nonatomic) AVTAvatarListImageItem *addItem; // @synthesize addItem=_addItem;
+@property(retain, nonatomic) id <AVTAvatarListItem> addItem; // @synthesize addItem=_addItem;
 @property(nonatomic) _Bool allowAddItem; // @synthesize allowAddItem=_allowAddItem;
-@property(readonly, nonatomic) AVTAvatarRecordDataSource *recordDataSource; // @synthesize recordDataSource=_recordDataSource;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
+@property(readonly, nonatomic) AVTAvatarRecordDataSource *recordDataSource; // @synthesize recordDataSource=_recordDataSource;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 - (void).cxx_destruct;
 - (long long)indexOfAddItem;

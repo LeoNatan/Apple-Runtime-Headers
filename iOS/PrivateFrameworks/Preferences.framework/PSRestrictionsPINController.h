@@ -21,7 +21,6 @@
 - (_Bool)pinIsAcceptable:(id)arg1 outError:(id *)arg2;
 - (void)setPIN:(id)arg1;
 - (id)stringsBundle;
-- (id)stringsTable;
 - (_Bool)validatePIN:(id)arg1;
 - (int)pinLength;
 - (id)init;

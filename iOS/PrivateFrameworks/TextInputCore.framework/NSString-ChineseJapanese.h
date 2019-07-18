@@ -13,6 +13,5 @@
 - (_Bool)TI_hasTruePrefix:(id)arg1;
 - (id)longestCommonSubstring:(id)arg1 backwards:(_Bool)arg2;
 - (unsigned short *)characters;
-- (id)stringByRemovingPunctuationAndExplicitWhitespaces:(unsigned long long)arg1;
 @end
 

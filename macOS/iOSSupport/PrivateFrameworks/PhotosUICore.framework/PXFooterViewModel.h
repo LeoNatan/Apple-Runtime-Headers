@@ -13,6 +13,7 @@
     BOOL _isPaused;
     float _progress;
     NSString *_title;
+    NSString *_extendedTitle;
     NSString *_subtitle1;
     NSString *_subtitle2;
     long long _actionStyle;
@@ -35,6 +36,7 @@
 @property(readonly, nonatomic) BOOL isPaused; // @synthesize isPaused=_isPaused;
 @property(readonly, nonatomic) NSString *subtitle2; // @synthesize subtitle2=_subtitle2;
 @property(readonly, nonatomic) NSString *subtitle1; // @synthesize subtitle1=_subtitle1;
+@property(readonly, nonatomic) NSString *extendedTitle; // @synthesize extendedTitle=_extendedTitle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (void)setAccessoryView:(id)arg1;
@@ -47,6 +49,7 @@
 - (void)setIsPaused:(BOOL)arg1;
 - (void)setSubtitle2:(id)arg1;
 - (void)setSubtitle1:(id)arg1;
+- (void)setExtendedTitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)mutableChangeObject;
 - (void)performChanges:(CDUnknownBlockType)arg1;

@@ -28,6 +28,7 @@
 - (void).cxx_destruct;
 - (void)performWork:(CDUnknownBlockType)arg1;
 - (void)_onQueue_doWorkIfNecessary;
+- (void)dealloc;
 - (id)initWithQueue:(id)arg1 takeOutTransactions:(_Bool)arg2;
 - (id)initWithQueue:(id)arg1;
 - (id)init;

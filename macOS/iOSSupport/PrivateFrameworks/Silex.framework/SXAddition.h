@@ -10,10 +10,8 @@
 {
 }
 
-+ (void)load;
 
 // Remaining properties
 @property(readonly, nonatomic) struct _NSRange range; // @dynamic range;
-
 @end
 

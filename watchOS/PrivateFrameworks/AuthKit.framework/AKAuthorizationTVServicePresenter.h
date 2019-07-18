@@ -10,11 +10,13 @@
 {
 }
 
+- (id)_filterDeprecatedType:(id)arg1;
 - (id)_stringForType:(int)arg1;
 - (int)_typeFromString:(id)arg1;
 - (id)buildFetchAppIconReplyWithImageData:(id)arg1 imageScale:(id)arg2;
 - (id)buildFetchAppIconMessage;
-- (id)buildStartProgressAnimationMessage;
+- (id)buildDidStartServerAuthorizationMessage;
+- (id)buildDidTapNotificationMessage;
 - (int)typeOfMessage:(id)arg1;
 
 @end

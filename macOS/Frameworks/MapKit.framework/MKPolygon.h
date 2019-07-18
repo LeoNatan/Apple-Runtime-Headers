@@ -17,8 +17,8 @@
     struct CLLocationCoordinate2D _centroid;
     NSArray *_interiorPolygons;
     BOOL _isDefinitelyConvex;
-    BOOL _colinear;
-    BOOL _selfIntersecting;
+    struct GEOOnce_s _determinedSimple;
+    BOOL _simple;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -28,12 +28,11 @@
 + (id)polygonWithCoordinates:(const struct CLLocationCoordinate2D *)arg1 count:(unsigned long long)arg2;
 + (id)polygonWithPoints:(const CDStruct_c3b9c2ee *)arg1 count:(unsigned long long)arg2 interiorPolygons:(id)arg3;
 + (id)polygonWithPoints:(const CDStruct_c3b9c2ee *)arg1 count:(unsigned long long)arg2;
-@property(readonly, nonatomic, getter=_isSelfIntersecting) BOOL selfIntersecting; // @synthesize selfIntersecting=_selfIntersecting;
-@property(readonly, nonatomic, getter=_isColinear) BOOL colinear; // @synthesize colinear=_colinear;
 @property(nonatomic) BOOL _isDefinitelyConvex; // @synthesize _isDefinitelyConvex;
 @property(readonly) NSArray *interiorPolygons; // @synthesize interiorPolygons=_interiorPolygons;
 - (void).cxx_destruct;
-- (void)_pointsDidChange;
+- (void)_determineSimple;
+@property(readonly, nonatomic, getter=_isSimple) BOOL simple; // @synthesize simple=_simple;
 - (void)_calculateBounds;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -8,7 +8,7 @@
 
 #import <MediaPlayer/NSSecureCoding-Protocol.h>
 
-@class ML3MusicLibrary, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSNumber, NSPointerArray, NSString, NSURL, QueryCriteriaResultsCache;
+@class ICUserIdentity, ML3MusicLibrary, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSNumber, NSPointerArray, NSString, NSURL, QueryCriteriaResultsCache;
 @protocol MPMediaLibraryDataProviderPrivate, OS_dispatch_queue;
 
 @interface MPMediaLibrary : NSObject <NSSecureCoding>
@@ -81,6 +81,7 @@
     unsigned char _originalWiFiNetworkFlags;
     id __MLCoreStorage;
     NSObject<OS_dispatch_queue> *_accessQueue;
+    ICUserIdentity *_userIdentity;
 }
 
 + (_Bool)companionDeviceActiveStoreAccountIsSubscriber;
@@ -110,11 +111,16 @@
 + (int)authorizationStatus;
 + (void)endDiscoveringMediaLibraries;
 + (void)beginDiscoveringMediaLibraries;
++ (void)_postNotificationName:(id)arg1 library:(id)arg2 userInfo:(id)arg3;
++ (void)_postNotificationName:(id)arg1 library:(id)arg2;
 + (_Bool)supportsSecureCoding;
++ (id)_deviceMediaLibraryWithUserIdentity:(id)arg1 isSingletonLibrary:(_Bool)arg2 createIfRequired:(_Bool)arg3;
++ (id)deviceMediaLibraryWithUserIdentity:(id)arg1;
 + (id)deviceMediaLibrary;
 + (void)setDefaultMediaLibrary:(id)arg1;
 + (id)defaultMediaLibrary;
 + (void)initialize;
+@property(readonly, copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
 - (_Bool)recordPlayEventForPlaylistPersistentID:(long long)arg1;
 - (_Bool)recordPlayEventForAlbumPersistentID:(long long)arg1;
@@ -253,6 +259,8 @@
 - (id)additionalLibraryFilterPredicates;
 - (int)status;
 - (_Bool)writable;
+- (_Bool)isHomeSharingLibrary;
+- (_Bool)isDeviceLibrary;
 - (long long)playlistGeneration;
 - (unsigned long long)syncGenerationID;
 - (unsigned long long)currentEntityRevision;
@@ -279,6 +287,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)_initWithUserIdentity:(id)arg1 isSingletonLibrary:(_Bool)arg2;
 - (id)init;
 @property(readonly, nonatomic) shared_ptr_0f3dbfb3 _MediaLibrary_coreLibrary;
 @property(readonly, nonatomic) NSURL *protectedContentSupportStorageURL;

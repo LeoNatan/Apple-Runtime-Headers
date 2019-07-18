@@ -8,7 +8,7 @@
 
 #import <CoreWLANKit/NSTextFieldDelegate-Protocol.h>
 
-@class CWInterface, NSButton, NSGridView, NSImageView, NSLayoutConstraint, NSPopUpButton, NSProgressIndicator, NSString, NSTextField, NSView, SFAuthorization;
+@class CWInterface, NSButton, NSGridView, NSImageView, NSLayoutConstraint, NSPopUpButton, NSProgressIndicator, NSSecureTextField, NSString, NSTextField, NSView, SFAuthorization;
 
 @interface CWHostAPDialog_SL : NSWindowController <NSTextFieldDelegate>
 {
@@ -29,7 +29,11 @@
     NSView *networkNameView;
     NSTextField *networkNameField;
     NSView *passwordView;
-    NSTextField *passwordField;
+    NSSecureTextField *passwordField;
+    NSTextField *revealedPasswordField;
+    NSView *showPasswordView;
+    NSButton *showPasswordCheckboxButton;
+    NSView *securityHintView;
     NSTextField *securityText;
     NSTextField *statusMessageLabel;
     NSButton *warningButton;
@@ -46,6 +50,7 @@
 @property(retain) CWInterface *interface; // @synthesize interface=interface_;
 - (id)_getGeneratedDefaultPassword;
 - (BOOL)validateEntries;
+- (void)resetSecurityEntries;
 - (id)errorStringForErrorCode:(long long)arg1;
 - (void)setSecurityTypeViewForTag:(long long)arg1;
 - (void)populateHostAPChannels;
@@ -54,6 +59,7 @@
 - (void)_applyDefaultPassword;
 - (void)populateWiFiOptions;
 - (void)controlTextDidChange:(id)arg1;
+- (void)onShowPasswordCheckboxButton:(id)arg1;
 - (void)onSecurityTypePopupButton:(id)arg1;
 - (void)onCancelButton:(id)arg1;
 - (void)onOKButton:(id)arg1;

@@ -6,16 +6,21 @@
 
 #import <objc/NSObject.h>
 
+@class NSDate;
+
 @interface _EDThreadScopeInfo : NSObject
 {
     BOOL _needsUpdate;
     long long _databaseID;
+    NSDate *_lastViewedDate;
 }
 
-@property(readonly, nonatomic) BOOL needsUpdate; // @synthesize needsUpdate=_needsUpdate;
+@property(retain, nonatomic) NSDate *lastViewedDate; // @synthesize lastViewedDate=_lastViewedDate;
+@property(nonatomic) BOOL needsUpdate; // @synthesize needsUpdate=_needsUpdate;
 @property(readonly, nonatomic) long long databaseID; // @synthesize databaseID=_databaseID;
+- (void).cxx_destruct;
 - (id)description;
-- (id)initWithDatabaseID:(long long)arg1 needsUpdate:(BOOL)arg2;
+- (id)initWithDatabaseID:(long long)arg1 needsUpdate:(BOOL)arg2 lastViewedDate:(id)arg3;
 
 @end
 

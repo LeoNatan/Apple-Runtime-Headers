@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     FigVideoContainerLayer *videoLayer;
     FigSubtitleCALayer *subtitleLayer;
     FigBaseCALayer *closedCaptionLayer;
+    _Bool isPartOfForegroundScene;
     _Bool isReadyForDisplay;
     AVPlayer *playerBeingObserved;
     NSSet *KVOInvokers;

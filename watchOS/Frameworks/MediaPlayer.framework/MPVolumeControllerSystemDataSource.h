@@ -8,7 +8,7 @@
 
 #import <MediaPlayer/MPVolumeControllerDataSource-Protocol.h>
 
-@class NSString;
+@class AVSystemController, NSString;
 @protocol MPVolumeControllerDataSourceDelegate;
 
 @interface MPVolumeControllerSystemDataSource : NSObject <MPVolumeControllerDataSource>
@@ -16,6 +16,7 @@
     _Bool _debugVolumeWarning;
     _Bool _volumeInitialized;
     _Bool _volumeControlCapabilitiesInitialized;
+    AVSystemController *_avSystemController;
     _Bool _volumeControlAvailable;
     _Bool _muted;
     _Bool _volumeWarningEnabled;

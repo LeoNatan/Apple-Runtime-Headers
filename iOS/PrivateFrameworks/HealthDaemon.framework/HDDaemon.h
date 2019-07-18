@@ -11,7 +11,7 @@
 #import <HealthDaemon/HDTaskServerClassProvider-Protocol.h>
 #import <HealthDaemon/HDXPCListenerDelegate-Protocol.h>
 
-@class HDAnalyticsSubmissionCoordinator, HDBackgroundTaskScheduler, HDCloudSyncCoordinator, HDContentProtectionManager, HDDevicePowerMonitor, HDFeatureAvailabilityAssetManager, HDMaintenanceWorkCoordinator, HDOntologyAssetManager, HDPeriodicActivity, HDPluginManager, HDPrimaryProfile, HDProcessStateManager, HDProfileManager, HDQueryManager, HDTaskServerRegistry, HDWorkoutPluginDaemonExtension, HDXPCAlarmScheduler, HDXPCListener, NSDictionary, NSMutableArray, NSMutableSet, NSString, NSURL, _HKBehavior;
+@class HDAnalyticsSubmissionCoordinator, HDBackgroundTaskScheduler, HDCloudSyncCoordinator, HDContentProtectionManager, HDDevicePowerMonitor, HDFeatureAvailabilityAssetManager, HDMaintenanceWorkCoordinator, HDPeriodicActivity, HDPluginManager, HDPrimaryProfile, HDProcessStateManager, HDProfileManager, HDQueryManager, HDTaskServerRegistry, HDWorkoutPluginDaemonExtension, HDXPCAlarmScheduler, HDXPCListener, NSDictionary, NSMutableArray, NSMutableSet, NSString, NSURL, _HKBehavior;
 @protocol HDDaemonTester, HDNanoAlertSuppressionService, OS_dispatch_queue;
 
 @interface HDDaemon : NSObject <HDTaskServerClassProvider, HDDiagnosticObject, HDXPCListenerDelegate, HDHealthDaemon>
@@ -20,7 +20,7 @@
     NSString *_healthDirectoryPath;
     struct os_unfair_lock_s _endpointLock;
     NSMutableSet *_endpoints;
-    NSObject<OS_dispatch_queue> *_mainQueue;
+    NSObject<OS_dispatch_queue> *_queue;
     int _languageChangeNotifyToken;
     HDBackgroundTaskScheduler *_backgroundTaskScheduler;
     HDContentProtectionManager *_contentProtectionManager;
@@ -43,7 +43,6 @@
     id <HDNanoAlertSuppressionService> _alertSuppressionService;
     HDFeatureAvailabilityAssetManager *_featureAvailabilityAssetManager;
     HDMaintenanceWorkCoordinator *_maintenanceWorkCoordinator;
-    HDOntologyAssetManager *_ontologyAssetManager;
     HDQueryManager *_queryManager;
     HDXPCListener *_serviceListener;
     HDTaskServerRegistry *_taskServerRegistry;
@@ -59,7 +58,6 @@
 @property(readonly, nonatomic) HDXPCListener *serviceListener; // @synthesize serviceListener=_serviceListener;
 @property(readonly, nonatomic) HDQueryManager *queryManager; // @synthesize queryManager=_queryManager;
 @property(readonly, nonatomic) HDPrimaryProfile *primaryProfile; // @synthesize primaryProfile=_primaryProfile;
-@property(readonly, nonatomic) HDOntologyAssetManager *ontologyAssetManager; // @synthesize ontologyAssetManager=_ontologyAssetManager;
 @property(readonly, nonatomic) HDMaintenanceWorkCoordinator *maintenanceWorkCoordinator; // @synthesize maintenanceWorkCoordinator=_maintenanceWorkCoordinator;
 @property(readonly, nonatomic) HDFeatureAvailabilityAssetManager *featureAvailabilityAssetManager; // @synthesize featureAvailabilityAssetManager=_featureAvailabilityAssetManager;
 @property(readonly, nonatomic) HDCloudSyncCoordinator *cloudSyncCoordinator; // @synthesize cloudSyncCoordinator=_cloudSyncCoordinator;
@@ -77,10 +75,8 @@
 - (id)_newProcessStateManager;
 - (id)_newPrimaryProfile;
 - (id)_newAnalyticsSubmissionCoordinator;
-- (id)_newOntologyAssetManager;
 - (id)_newCloudSyncCoordinator;
 - (id)_newContentProtectionManager;
-- (id)_newMainQueue;
 - (id)_newBehavior;
 - (id)diagnosticDescription;
 @property(readonly, nonatomic) HDWorkoutPluginDaemonExtension *workoutPluginExtension;

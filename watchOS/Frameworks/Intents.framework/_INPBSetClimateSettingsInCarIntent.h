@@ -28,6 +28,7 @@
     _Bool _enableAutoMode;
     _Bool _enableClimateControl;
     _Bool _enableFan;
+    _Bool __encodeLegacyGloryData;
     int _airCirculationMode;
     _INPBDataString *_carName;
     int _climateZone;
@@ -40,6 +41,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBTemperature *temperature; // @synthesize temperature=_temperature;
 @property(nonatomic) int relativeTemperatureSetting; // @synthesize relativeTemperatureSetting=_relativeTemperatureSetting;
 @property(nonatomic) int relativeFanSpeedSetting; // @synthesize relativeFanSpeedSetting=_relativeFanSpeedSetting;

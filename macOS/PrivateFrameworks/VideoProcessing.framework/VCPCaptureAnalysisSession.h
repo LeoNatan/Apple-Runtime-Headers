@@ -30,6 +30,7 @@
     int _rotationAngleForFacePose;
     int _preferredAngle;
     NSObject<OS_dispatch_queue> *_analysisQueue;
+    BOOL _preWarmed;
 }
 
 + (id)aggregateAnalysisForTypes:(unsigned long long)arg1 withFramesMeta:(id)arg2 properties:(id)arg3;
@@ -47,7 +48,8 @@
 - (struct CGAffineTransform)flipTransform:(struct CGAffineTransform)arg1;
 - (void)dealloc;
 - (BOOL)updatePreferredTransform:(const struct CGAffineTransform *)arg1 properties:(id)arg2;
-- (id)initWithAnalysisTypes:(unsigned long long)arg1 withPreferredTransform:(struct CGAffineTransform)arg2 withFocalLengthInPixels:(float)arg3 withAnalysisQueue:(id)arg4;
+- (int)prewarmWithProperties:(id)arg1;
+- (id)initWithAnalysisTypes:(unsigned long long)arg1 withPreferredTransform:(struct CGAffineTransform)arg2 withFocalLengthInPixels:(float)arg3 withAnalysisQueue:(id)arg4 withTurbo:(BOOL)arg5;
 - (id)init;
 
 @end

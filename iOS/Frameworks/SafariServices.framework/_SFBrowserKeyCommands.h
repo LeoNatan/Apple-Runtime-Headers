@@ -10,6 +10,7 @@
 {
 }
 
++ (id)_placeholderKeyCommandForCommand:(id)arg1;
 + (id)unlocalizedKeyCommandWithSelector:(SEL)arg1 input:(id)arg2 modifierFlags:(long long)arg3 discoverabilityTitle:(id)arg4 webInterceptable:(_Bool)arg5;
 + (id)unlocalizedKeyCommandWithSelector:(SEL)arg1 input:(id)arg2 modifierFlags:(long long)arg3 webInterceptable:(_Bool)arg4;
 + (long long)_modifierFlagsForSelectorString:(id)arg1 bundle:(id)arg2 table:(id)arg3;

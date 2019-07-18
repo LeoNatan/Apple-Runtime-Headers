@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)owner;
 - (void)_processGestureForCustomHighlighter:(id)arg1;
+- (void)didMoveToView:(id)arg1;
 - (void)_createGestureTuningIfNecessary;
 - (void)dealloc;
 

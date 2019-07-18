@@ -6,9 +6,11 @@
 
 #import <MapsSupport/NSObject-Protocol.h>
 
-@class MSPSharedTripService, NSError;
+@class MSPSharedTripService, NSError, NSString;
 
 @protocol MSPSharedTripServiceSendingObserver <NSObject>
+- (void)sharedTripService:(MSPSharedTripService *)arg1 sendMessage:(NSString *)arg2 toGroup:(NSString *)arg3;
+- (void)sharedTripService:(MSPSharedTripService *)arg1 sendMessage:(NSString *)arg2 toParticipant:(NSString *)arg3;
 - (void)sharedTripService:(MSPSharedTripService *)arg1 sharingDidInvalidateWithHandler:(NSError *)arg2;
 @end
 

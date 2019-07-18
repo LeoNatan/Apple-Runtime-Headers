@@ -8,15 +8,14 @@
 
 #import <MaterialKit/MTCoreMaterialVisualStylingProviderObserving-Protocol.h>
 
-@class MTCoreMaterialVisualStylingProvider, MTVibrantStylingProvider, NSMapTable, NSMutableDictionary, NSPointerArray, NSString;
+@class MTCoreMaterialVisualStylingProvider, NSMapTable, NSMutableDictionary, NSPointerArray, NSString;
 
 @interface MTVisualStylingProvider : NSObject <MTCoreMaterialVisualStylingProviderObserving>
 {
-    MTVibrantStylingProvider *_vibrantStylingProvider;
     MTCoreMaterialVisualStylingProvider *_coreMaterialVisualStylingProvider;
     NSMutableDictionary *_styleNamesToVisualStylings;
-    NSMapTable *_viewsToCoreMaterialVisualStyles;
-    NSMapTable *_viewsToObservers;
+    NSMapTable *_viewsAndLayersToCoreMaterialVisualStyles;
+    NSMapTable *_viewsAndLayersToObserverBlocks;
     NSPointerArray *_privateObservers;
 }
 
@@ -25,27 +24,29 @@
 + (id)_visualStylingProviderForRecipe:(long long)arg1 andCategory:(long long)arg2;
 + (id)_visualStylingProviderForRecipe:(long long)arg1 category:(long long)arg2 andUserInterfaceStyle:(long long)arg3;
 + (Class)_visualStylingClass;
-+ (id)_visualStylingProviderForRecipeNamed:(id)arg1;
-+ (id)_visualStylingProviderForRecipe:(long long)arg1;
 @property(retain, nonatomic, getter=_privateObservers) NSPointerArray *privateObservers; // @synthesize privateObservers=_privateObservers;
-@property(retain, nonatomic, getter=_viewsToObservers) NSMapTable *viewsToObservers; // @synthesize viewsToObservers=_viewsToObservers;
-@property(retain, nonatomic, getter=_viewsToCoreMaterialVisualStyles) NSMapTable *viewsToCoreMaterialVisualStyles; // @synthesize viewsToCoreMaterialVisualStyles=_viewsToCoreMaterialVisualStyles;
+@property(retain, nonatomic, getter=_viewsAndLayersToObserverBlocks) NSMapTable *viewsAndLayersToObserverBlocks; // @synthesize viewsAndLayersToObserverBlocks=_viewsAndLayersToObserverBlocks;
+@property(retain, nonatomic, getter=_viewsAndLayersToCoreMaterialVisualStyles) NSMapTable *viewsAndLayersToCoreMaterialVisualStyles; // @synthesize viewsAndLayersToCoreMaterialVisualStyles=_viewsAndLayersToCoreMaterialVisualStyles;
 @property(retain, nonatomic, getter=_styleNamesToVisualStylings) NSMutableDictionary *styleNamesToVisualStylings; // @synthesize styleNamesToVisualStylings=_styleNamesToVisualStylings;
 @property(retain, nonatomic, getter=_coreMaterialVisualStylingProvider) MTCoreMaterialVisualStylingProvider *coreMaterialVisualStylingProvider; // @synthesize coreMaterialVisualStylingProvider=_coreMaterialVisualStylingProvider;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
-- (void)_updateVisualStyleOfView:(id)arg1;
+- (void)_updateVisualStyleOfViewOrLayer:(id)arg1;
+- (void)_stopAutomaticallyUpdatingViewOrLayer:(id)arg1;
+- (void)_automaticallyUpdateViewOrLayer:(id)arg1 withStyleNamed:(id)arg2 andObserverBlock:(CDUnknownBlockType)arg3;
 - (void)providedStylesDidChangeForProvider:(id)arg1;
+- (void)stopAutomaticallyUpdatingLayer:(id)arg1;
+- (void)automaticallyUpdateLayer:(id)arg1 withStyle:(long long)arg2 andObserverBlock:(CDUnknownBlockType)arg3;
+- (void)automaticallyUpdateLayer:(id)arg1 withStyle:(long long)arg2;
 - (void)stopAutomaticallyUpdatingView:(id)arg1;
-- (void)automaticallyUpdateView:(id)arg1 withStyle:(long long)arg2 andObserver:(id)arg3;
+- (void)automaticallyUpdateView:(id)arg1 withStyle:(long long)arg2 andObserverBlock:(CDUnknownBlockType)arg3;
 - (void)automaticallyUpdateView:(id)arg1 withStyle:(long long)arg2;
 - (void)_removeObserver:(id)arg1;
 - (void)_addObserver:(id)arg1;
-- (void)_automaticallyUpdateView:(id)arg1 withStyleNamed:(id)arg2 andObserver:(id)arg3;
+- (void)_automaticallyUpdateView:(id)arg1 withStyleNamed:(id)arg2 andObserverBlock:(CDUnknownBlockType)arg3;
 - (id)_visualStylingForContinuallyUpdatedView:(id)arg1;
 - (id)_visualStylingForStyleNamed:(id)arg1;
 - (id)_visualStylingForStyle:(long long)arg1;
-@property(readonly, nonatomic, getter=_vibrantStylingProvider) MTVibrantStylingProvider *vibrantStylingProvider;
 - (id)initWithCoreMaterialVisualStylingProvider:(id)arg1;
 
 // Remaining properties

@@ -17,7 +17,7 @@
     _MKUILabel *_lastUpdatedLabel;
     MKTransitIncidentItemCellBackgroundView *_backgroundView;
     BOOL _incidentIsBlocking;
-    BOOL _usingAccessibilityConstraints;
+    BOOL _useCondensedWidthLayout;
     NSLayoutConstraint *_titleLabelToTopConstraint;
     NSLayoutConstraint *_bottomToLabelConstraint;
     NSLayoutConstraint *_lastUpdatedToTitleBaselineConstraint;
@@ -44,6 +44,8 @@
 - (void)setTrailingSeparatorInset:(double)arg1;
 - (void)setLeadingSeparatorInset:(double)arg1;
 - (void)infoCardThemeChanged;
+- (void)_configureWithMessage:(id)arg1 referenceDate:(id)arg2 lastUpdated:(id)arg3 incidentIsBlocking:(BOOL)arg4 shouldShowImage:(BOOL)arg5 inSiri:(BOOL)arg6;
+- (void)configureWithIncidentMessage:(id)arg1 referenceDate:(id)arg2 shouldShowImage:(BOOL)arg3 inSiri:(BOOL)arg4;
 - (void)configureWithIncident:(id)arg1 referenceDate:(id)arg2 shouldShowImage:(BOOL)arg3 inSiri:(BOOL)arg4;
 - (void)configureViews;
 - (id)initWithReuseIdentifier:(id)arg1;

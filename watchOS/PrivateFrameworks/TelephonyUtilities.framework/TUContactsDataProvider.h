@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+@class TUContactsDataProviderIgnoredHandles;
 @protocol TUContactsDataSource;
 
 @interface TUContactsDataProvider : NSObject
@@ -13,6 +14,7 @@
     _Bool _useAsianNameFormat;
     CDUnknownBlockType _localeSupportsPrefixHintForFetchRequest;
     id <TUContactsDataSource> _contactsDataSource;
+    TUContactsDataProviderIgnoredHandles *_ignoredHandles;
 }
 
 + (id)asianLocaleCountryCodes;
@@ -20,6 +22,7 @@
 + (id)defaultContactKeyDescriptors;
 + (id)numberFormatter;
 + (id)keysByCombiningDefaultKeysWithKeysToFetch:(id)arg1;
+@property(copy, nonatomic) TUContactsDataProviderIgnoredHandles *ignoredHandles; // @synthesize ignoredHandles=_ignoredHandles;
 @property(readonly, nonatomic) id <TUContactsDataSource> contactsDataSource; // @synthesize contactsDataSource=_contactsDataSource;
 @property(copy, nonatomic) CDUnknownBlockType localeSupportsPrefixHintForFetchRequest; // @synthesize localeSupportsPrefixHintForFetchRequest=_localeSupportsPrefixHintForFetchRequest;
 @property(nonatomic) _Bool useAsianNameFormat; // @synthesize useAsianNameFormat=_useAsianNameFormat;

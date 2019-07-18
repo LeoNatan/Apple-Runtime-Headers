@@ -15,24 +15,26 @@
     FBSDisplayConfiguration *_displayConfigruation;
     _Bool _foreground;
     _Bool _takeAssertionsWhenInBackground;
-    _Bool _terminateCanvasOnDeactivation;
-    _Bool _deferHIDEventsFromForegroundCanvasApp;
+    _Bool _terminateWindowSceneOnDeactivation;
+    _Bool _deferHIDEventsFromForegroundWindowSceneApp;
     _Bool _cancelSceneLoadingAfterTimeout;
     long long _launchIntent;
     double _sceneLoadingTimeOutDuration;
     FBSSceneParameters *_sceneParameters;
+    long long _userInterfaceStyle;
     struct CGRect _initialBounds;
     struct CGRect _bounds;
 }
 
 + (id)defaultSiriSceneConfigurationWithInitialBounds:(struct CGRect)arg1 onDisplay:(id)arg2;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
+@property(nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(copy, nonatomic) FBSSceneParameters *sceneParameters; // @synthesize sceneParameters=_sceneParameters;
 @property(readonly, nonatomic) struct CGRect initialBounds; // @synthesize initialBounds=_initialBounds;
 @property(nonatomic) double sceneLoadingTimeOutDuration; // @synthesize sceneLoadingTimeOutDuration=_sceneLoadingTimeOutDuration;
 @property(nonatomic) _Bool cancelSceneLoadingAfterTimeout; // @synthesize cancelSceneLoadingAfterTimeout=_cancelSceneLoadingAfterTimeout;
-@property(nonatomic) _Bool deferHIDEventsFromForegroundCanvasApp; // @synthesize deferHIDEventsFromForegroundCanvasApp=_deferHIDEventsFromForegroundCanvasApp;
-@property(nonatomic) _Bool terminateCanvasOnDeactivation; // @synthesize terminateCanvasOnDeactivation=_terminateCanvasOnDeactivation;
+@property(nonatomic) _Bool deferHIDEventsFromForegroundWindowSceneApp; // @synthesize deferHIDEventsFromForegroundWindowSceneApp=_deferHIDEventsFromForegroundWindowSceneApp;
+@property(nonatomic) _Bool terminateWindowSceneOnDeactivation; // @synthesize terminateWindowSceneOnDeactivation=_terminateWindowSceneOnDeactivation;
 @property(nonatomic) _Bool takeAssertionsWhenInBackground; // @synthesize takeAssertionsWhenInBackground=_takeAssertionsWhenInBackground;
 @property(nonatomic) long long launchIntent; // @synthesize launchIntent=_launchIntent;
 @property(nonatomic) _Bool foreground; // @synthesize foreground=_foreground;

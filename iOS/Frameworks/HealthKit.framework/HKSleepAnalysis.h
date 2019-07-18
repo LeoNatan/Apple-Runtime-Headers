@@ -10,8 +10,8 @@
 
 @interface HKSleepAnalysis : NSObject
 {
-    _Bool _containsAsleepSamples;
     NSArray *_sleepDays;
+    long long _numberOfAsleepSamples;
     long long _consistencyCount;
     double _averageEfficiency;
     double _averageTimeInBed;
@@ -25,10 +25,10 @@
 @property(readonly, nonatomic) double averageTimeInBed; // @synthesize averageTimeInBed=_averageTimeInBed;
 @property(readonly, nonatomic) double averageEfficiency; // @synthesize averageEfficiency=_averageEfficiency;
 @property(readonly, nonatomic) long long consistencyCount; // @synthesize consistencyCount=_consistencyCount;
-@property(readonly, nonatomic) _Bool containsAsleepSamples; // @synthesize containsAsleepSamples=_containsAsleepSamples;
+@property(readonly, nonatomic) long long numberOfAsleepSamples; // @synthesize numberOfAsleepSamples=_numberOfAsleepSamples;
 @property(readonly, copy, nonatomic) NSArray *sleepDays; // @synthesize sleepDays=_sleepDays;
 - (void).cxx_destruct;
-- (id)initWithSleepDays:(id)arg1 containsAsleepSamples:(_Bool)arg2 consistencyCount:(long long)arg3 averageEfficiency:(double)arg4 averageTimeInBed:(double)arg5 averageTimeAlseep:(double)arg6 averageNumberOfInterruptions:(long long)arg7;
+- (id)initWithSleepDays:(id)arg1 numberOfAsleepSamples:(long long)arg2 consistencyCount:(long long)arg3 averageEfficiency:(double)arg4 averageTimeInBed:(double)arg5 averageTimeAlseep:(double)arg6 averageNumberOfInterruptions:(long long)arg7;
 
 @end
 

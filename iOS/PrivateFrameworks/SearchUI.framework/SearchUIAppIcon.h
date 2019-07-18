@@ -26,6 +26,7 @@
 @property(retain, nonatomic) SearchUIAppIconImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(readonly, nonatomic) SFSearchResult *searchResult; // @synthesize searchResult=_searchResult;
 - (void).cxx_destruct;
+- (id)uniqueIdentifier;
 - (id)initWithSearchResult:(id)arg1;
 
 @end

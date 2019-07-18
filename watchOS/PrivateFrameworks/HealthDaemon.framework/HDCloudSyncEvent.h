@@ -20,12 +20,14 @@
     NSUUID *_syncID;
     NSUUID *_operationID;
     NSString *_cloudKitIdentifer;
+    unsigned int _pcsReportManateeStatus;
     HDProfile *_profile;
     NSDate *_eventTime;
 }
 
 @property(readonly, copy, nonatomic) NSDate *eventTime; // @synthesize eventTime=_eventTime;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
+@property(readonly, nonatomic) unsigned int pcsReportManateeStatus; // @synthesize pcsReportManateeStatus=_pcsReportManateeStatus;
 @property(readonly, nonatomic) _Bool internalSettingManateeEnabled; // @synthesize internalSettingManateeEnabled=_internalSettingManateeEnabled;
 @property(readonly, nonatomic) _Bool cloudKitManateeEnabled; // @synthesize cloudKitManateeEnabled=_cloudKitManateeEnabled;
 @property(readonly, copy, nonatomic) NSString *cloudKitIdentifer; // @synthesize cloudKitIdentifer=_cloudKitIdentifer;

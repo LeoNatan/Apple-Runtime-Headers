@@ -7,20 +7,31 @@
 #import <objc/NSObject.h>
 
 #import <CoreML/NSCopying-Protocol.h>
+#import <CoreML/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface MLKey : NSObject <NSCopying>
+@interface MLKey : NSObject <NSCopying, NSSecureCoding>
 {
     NSString *_name;
+    NSString *_scope;
 }
 
++ (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) NSString *scope; // @synthesize scope=_scope;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)description;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (_Bool)hasGlobalScope;
+- (id)deletingPrefixingScope:(id)arg1;
+- (id)scopedTo:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithKeyName:(id)arg1;
+- (id)initWithKeyName:(id)arg1 scope:(id)arg2;
 
 @end
 

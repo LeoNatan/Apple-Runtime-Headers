@@ -53,7 +53,7 @@
 - (void)associateWithTable:(id)arg1;
 - (void)setAsForeignKeyForString:(id)arg1 onDelete:(unsigned int)arg2 onUpdate:(unsigned int)arg3;
 - (void)setAsForeignKeyForTable:(id)arg1 onDelete:(unsigned int)arg2 onUpdate:(unsigned int)arg3;
-- (id)fullNameWithDatabase:(id)arg1;
+- (id)fullNameWithDatabaseName:(id)arg1;
 - (void)setTable:(id)arg1;
 @property(readonly, nonatomic) __weak EFSQLTableSchema *table;
 - (id)_stringForForeignKeyAction:(unsigned int)arg1;

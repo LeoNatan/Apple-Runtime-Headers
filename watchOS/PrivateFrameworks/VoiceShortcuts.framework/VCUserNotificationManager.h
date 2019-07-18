@@ -8,26 +8,24 @@
 
 #import <VoiceShortcuts/UNUserNotificationCenterDelegate-Protocol.h>
 
-@class NSString, UNUserNotificationCenter, WFDatabase;
+@class NSString, UNUserNotificationCenter;
 @protocol VCUserNotificationManagerDelegate;
 
 @interface VCUserNotificationManager : NSObject <UNUserNotificationCenterDelegate>
 {
     id <VCUserNotificationManagerDelegate> _delegate;
-    WFDatabase *_database;
     UNUserNotificationCenter *_daemonNotificationCenter;
     UNUserNotificationCenter *_appNotificationCenter;
 }
 
 @property(readonly, nonatomic) UNUserNotificationCenter *appNotificationCenter; // @synthesize appNotificationCenter=_appNotificationCenter;
 @property(readonly, nonatomic) UNUserNotificationCenter *daemonNotificationCenter; // @synthesize daemonNotificationCenter=_daemonNotificationCenter;
-@property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 @property(nonatomic) __weak id <VCUserNotificationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)showNotificationWithTitle:(id)arg1 body:(id)arg2 category:(id)arg3 triggerID:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)postNotificationOfType:(unsigned int)arg1 forTrigger:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)initWithDatabase:(id)arg1;
+- (void)postNotificationOfType:(unsigned int)arg1 forTrigger:(id)arg2 workflowReference:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

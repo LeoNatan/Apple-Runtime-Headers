@@ -6,12 +6,15 @@
 
 #import <SpringBoard/SBDeviceApplicationSceneOverlayViewProvider.h>
 
-@class NSMutableSet, UIViewController;
+#import <SpringBoard/SBTransientOverlayViewControllerDelegate-Protocol.h>
 
-@interface SBDeviceApplicationRemoteTransientOverlayViewProvider : SBDeviceApplicationSceneOverlayViewProvider
+@class NSMapTable, NSMutableArray, NSString, SBDeviceApplicationRemoteTransientOverlayContainerViewController;
+
+@interface SBDeviceApplicationRemoteTransientOverlayViewProvider : SBDeviceApplicationSceneOverlayViewProvider <SBTransientOverlayViewControllerDelegate>
 {
-    NSMutableSet *_presentedVCs;
-    UIViewController *_containerVC;
+    NSMutableArray *_presentedVCs;
+    SBDeviceApplicationRemoteTransientOverlayContainerViewController *_containerVC;
+    NSMapTable *_keyboardFocusRedirectionsByRemoteVC;
     _Bool _needsDeactivationWithNoActiveTransientOverlays;
 }
 
@@ -20,11 +23,34 @@
 - (id)_realOverlayViewController;
 - (void)_deactivateIfPossible;
 - (void)_activateIfPossible;
+- (void)transientOverlayViewControllerDidEndRotation:(id)arg1;
+- (void)transientOverlayViewControllerWillBeginRotation:(id)arg1 toInterfaceOrientation:(long long)arg2;
+- (void)transientOverlayViewControllerNeedsWhitePointAdaptivityStyleUpdate:(id)arg1;
+- (void)transientOverlayViewControllerNeedsStatusBarAppearanceUpdate:(id)arg1;
+- (void)transientOverlayViewControllerNeedsSceneDeactivationUpdate:(id)arg1;
+- (void)transientOverlayViewControllerNeedsProximityDetectionUpdate:(id)arg1;
+- (void)transientOverlayViewControllerNeedsOrientationUpdatesDisabledUpdate:(id)arg1;
+- (void)transientOverlayViewControllerNeedsGestureDismissalStyleUpdate:(id)arg1;
+- (void)transientOverlayViewControllerNeedsFeaturePolicyUpdate:(id)arg1;
+- (void)transientOverlayViewControllerNeedsContentOpaqueUpdate:(id)arg1;
+- (_Bool)defaultShouldAutorotateForTransientOverlayViewController:(id)arg1;
+- (long long)defaultPreferredInterfaceOrientationForPresentationForTransientOverlayViewController:(id)arg1;
+- (unsigned long long)defaultSupportedInterfaceOrientationsForTransientOverlayViewController:(id)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
+- (long long)preferredInterfaceOrientationForPresentation;
+- (_Bool)shouldFollowSceneOrientation;
+- (long long)preferredStatusBarStyle;
 - (_Bool)isPresentingTransientOverlay:(id)arg1;
 - (void)dismissRemoteTransientOverlayViewController:(id)arg1;
 - (void)presentRemoteTransientOverlayViewController:(id)arg1;
 - (void)dealloc;
 - (id)initWithSceneHandle:(id)arg1 delegate:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

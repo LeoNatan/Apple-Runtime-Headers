@@ -6,18 +6,23 @@
 
 #import <AppKit/NSButton.h>
 
-@class NSString;
+@class NSString, NSTextField;
 
 __attribute__((visibility("hidden")))
 @interface NSKeyedRadioButton : NSButton
 {
     NSString *_keyPath;
     id _valueToSet;
+    NSString *_description;
+    NSTextField *_descriptionField;
 }
 
 @property(retain) id valueToSet; // @synthesize valueToSet=_valueToSet;
 @property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
+- (void)setState:(long long)arg1;
 - (void)activateRadioAction:(id)arg1;
+- (void)_updateDescriptionIfNecessary;
+- (void)useDescription:(id)arg1 displayedOn:(id)arg2;
 - (void)dealloc;
 
 @end

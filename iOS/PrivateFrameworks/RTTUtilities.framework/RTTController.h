@@ -46,6 +46,7 @@
 - (void)handleUpdatedCalls:(id)arg1;
 - (void)callDidConnect:(id)arg1;
 - (void)didChangeTelephonyCallingSupport;
+- (void)invalidateServerCaches:(id)arg1;
 - (id)init;
 
 // Remaining properties

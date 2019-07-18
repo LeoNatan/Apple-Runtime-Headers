@@ -56,6 +56,8 @@
 @property(nonatomic) __weak id <_TVAppDocumentControllerDelegate> appDelegate; // @synthesize appDelegate=_appDelegate;
 @property(retain, nonatomic) IKAppDocument *appDocument; // @synthesize appDocument=_appDocument;
 - (void).cxx_destruct;
+- (void)snapshotImpressions;
+- (id)currentImpressionableElements;
 - (id)activeDocument;
 - (_Bool)ppt_isLoading;
 - (void)pagePerformanceController:(id)arg1 didUpdateMetrics:(id)arg2;

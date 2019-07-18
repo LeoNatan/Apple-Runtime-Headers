@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 - (id)folderMatchingPath:(id)arg1;
 - (id)itemMatchingName:(id)arg1 fsSN:(unsigned long long)arg2 fsCreationTime:(struct timespec *)arg3 fsSize:(long long)arg4;
 - (_Bool)deleteItemFromCamera:(id)arg1;
-- (void)enumerateContent_posix;
 - (void)enumerateContent;
+- (void)enumerateContent_filemanager;
 - (void)flushNotifications:(id)arg1;
 - (void)dealloc;
 - (id)initWithFSURL:(id)arg1 name:(id)arg2 parentFolder:(id)arg3 device:(id)arg4;

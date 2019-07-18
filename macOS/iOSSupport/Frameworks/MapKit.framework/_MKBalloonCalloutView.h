@@ -54,6 +54,8 @@
 - (struct CGRect)_centerFrame;
 - (struct CGSize)intrinsicContentSize;
 - (void)_handleTapOnCallout:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)_updateStyle;
 - (void)_commonInit;
 - (id)initWithStyle:(long long)arg1;
 - (id)initWithAnnotationView:(id)arg1;

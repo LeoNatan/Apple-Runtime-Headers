@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSUserActivity;
+@class NSString, NSUserActivity;
 
 @interface SGEventActivity : NSObject
 {
     unsigned char _type;
+    NSString *_teamIdentifier;
     NSUserActivity *_userActivity;
     double _validStartDate;
     double _validEndDate;
@@ -22,10 +23,11 @@
 @property(readonly, nonatomic) double validStartDate; // @synthesize validStartDate=_validStartDate;
 @property(readonly, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 @property(readonly, nonatomic) unsigned char type; // @synthesize type=_type;
+@property(readonly, nonatomic) NSString *teamIdentifier; // @synthesize teamIdentifier=_teamIdentifier;
 - (void).cxx_destruct;
 - (id)jsonObject;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithType:(unsigned char)arg1 userActivity:(id)arg2 validStartDate:(double)arg3 validEndDate:(double)arg4;
+- (id)initWithTeamIdentifier:(id)arg1 type:(unsigned char)arg2 userActivity:(id)arg3 validStartDate:(double)arg4 validEndDate:(double)arg5;
 
 @end
 

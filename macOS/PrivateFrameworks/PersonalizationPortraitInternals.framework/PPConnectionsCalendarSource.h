@@ -15,9 +15,9 @@
     PPLocalEventStore *_localEventStore;
 }
 
-+ (id)locationValueFromEKEvent:(id)arg1;
-+ (id)locationLabelFromEKEvent:(id)arg1;
-+ (id)locationNameFromEKEvent:(id)arg1;
++ (id)locationValueFromEvent:(id)arg1;
++ (id)locationLabelFromEvent:(id)arg1;
++ (id)locationNameFromEvent:(id)arg1;
 + (id)identifier;
 + (id)sharedInstance;
 - (void).cxx_destruct;

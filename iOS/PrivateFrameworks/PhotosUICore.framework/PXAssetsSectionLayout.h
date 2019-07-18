@@ -14,7 +14,7 @@
 #import <PhotosUICore/PXGShadowSource-Protocol.h>
 #import <PhotosUICore/PXGViewSource-Protocol.h>
 
-@class NSSet, NSString, PXAssetCollectionReference, PXAssetsDataSource, PXAssetsSectionConfigurator, PXAssetsSectionLayoutSpec, PXCuratedLibraryActionManager, PXCuratedLibraryAssetDecorationSource, PXCuratedLibraryOverlayButtonConfiguration, PXCuratedLibrarySectionHeaderLayout, PXCuratedLibraryShowAllActionPerformer, PXGLayout, PXGLayoutGuide, PXSelectionSnapshot;
+@class NSSet, NSString, PXAssetCollectionReference, PXAssetsDataSource, PXAssetsSectionConfigurator, PXAssetsSectionLayoutSpec, PXCuratedLibraryActionManager, PXCuratedLibraryActionPerformer, PXCuratedLibraryAssetDecorationSource, PXCuratedLibraryOverlayButtonConfiguration, PXCuratedLibrarySectionHeaderLayout, PXCuratedLibraryShowAllActionPerformer, PXGLayout, PXGLayoutGuide, PXSelectionSnapshot;
 @protocol PXDisplayAssetCollection, PXDisplayAssetFetchResult;
 
 @interface PXAssetsSectionLayout : PXGSplitLayout <PXChangeObserver, PXGShadowSource, PXGViewSource, PXGDisplayAssetSource, PXGGeneratedLayoutDelegate, PXGItemsLayoutDelegate, PXCuratedLibraryRowBasedLayout>
@@ -26,11 +26,15 @@
     unsigned int _showAllButtonSpriteIndex;
     unsigned short _showAllButtonVersion;
     struct CGSize _cachedShowAllButtonConfigurationSize;
+    unsigned int _selectAllButtonSpriteIndex;
+    unsigned short _selectAllButtonVersion;
+    struct CGSize _cachedSelectAllButtonConfigurationSize;
     PXCuratedLibrarySectionHeaderLayout *_sectionHeaderLayout;
     _Bool _isLastSection;
     _Bool _isUpdatingLocalSprites;
     PXCuratedLibraryAssetDecorationSource *_assetDecorationSource;
     _Bool _showAllButtonConfigurationIsValid;
+    _Bool _selectAllButtonConfigurationIsValid;
     PXAssetCollectionReference *_assetCollectionReference;
     _Bool _isSelecting;
     _Bool _canStartSelecting;
@@ -38,9 +42,11 @@
     _Bool _showsSkimmingHints;
     _Bool _showsSkimmingSlideshow;
     _Bool _showsSkimmingInteraction;
+    _Bool _allowsPositionDependentHeaderContentOpacity;
     _Bool _viewBasedDecorationsEnabled;
     _Bool _presentedSkimming;
     PXCuratedLibraryOverlayButtonConfiguration *_showAllButtonConfiguration;
+    PXCuratedLibraryOverlayButtonConfiguration *_selectAllButtonConfiguration;
     long long _zoomLevel;
     long long _targetZoomLevel;
     PXAssetsSectionLayoutSpec *_spec;
@@ -49,6 +55,8 @@
     PXCuratedLibraryActionManager *_actionManager;
     long long _numberOfPrecedingAssets;
     PXCuratedLibraryShowAllActionPerformer *_showAllActionPerformer;
+    PXCuratedLibraryActionPerformer *_selectAllActionPerformer;
+    NSString *_selectAllButtonTitle;
     PXGLayoutGuide *_headerLayoutGuide;
     long long _maxSkimmingIndex;
     long long _currentSkimmingIndex;
@@ -71,6 +79,7 @@
 @property(readonly, nonatomic) _Bool viewBasedDecorationsEnabled; // @synthesize viewBasedDecorationsEnabled=_viewBasedDecorationsEnabled;
 @property(nonatomic) double distanceBetweenHeaderTopAndNextBodyTop; // @synthesize distanceBetweenHeaderTopAndNextBodyTop=_distanceBetweenHeaderTopAndNextBodyTop;
 @property(nonatomic) double distanceBetweenTitleTopAndBodyBottom; // @synthesize distanceBetweenTitleTopAndBodyBottom=_distanceBetweenTitleTopAndBodyBottom;
+@property(nonatomic) _Bool allowsPositionDependentHeaderContentOpacity; // @synthesize allowsPositionDependentHeaderContentOpacity=_allowsPositionDependentHeaderContentOpacity;
 @property(retain, nonatomic) PXGLayout *bodyContainerLayout; // @synthesize bodyContainerLayout=_bodyContainerLayout;
 @property(retain, nonatomic) PXAssetsSectionConfigurator *configurator; // @synthesize configurator=_configurator;
 @property(readonly, nonatomic) PXGLayout *bodyContentLayout; // @synthesize bodyContentLayout=_bodyContentLayout;
@@ -81,6 +90,8 @@
 @property(nonatomic) _Bool showsSkimmingSlideshow; // @synthesize showsSkimmingSlideshow=_showsSkimmingSlideshow;
 @property(nonatomic) _Bool showsSkimmingHints; // @synthesize showsSkimmingHints=_showsSkimmingHints;
 @property(retain, nonatomic) PXGLayoutGuide *headerLayoutGuide; // @synthesize headerLayoutGuide=_headerLayoutGuide;
+@property(retain, nonatomic) NSString *selectAllButtonTitle; // @synthesize selectAllButtonTitle=_selectAllButtonTitle;
+@property(retain, nonatomic) PXCuratedLibraryActionPerformer *selectAllActionPerformer; // @synthesize selectAllActionPerformer=_selectAllActionPerformer;
 @property(retain, nonatomic) PXCuratedLibraryShowAllActionPerformer *showAllActionPerformer; // @synthesize showAllActionPerformer=_showAllActionPerformer;
 @property(nonatomic) _Bool wantsShadow; // @synthesize wantsShadow=_wantsShadow;
 @property(nonatomic) long long numberOfPrecedingAssets; // @synthesize numberOfPrecedingAssets=_numberOfPrecedingAssets;
@@ -93,6 +104,11 @@
 @property(nonatomic) long long targetZoomLevel; // @synthesize targetZoomLevel=_targetZoomLevel;
 @property(nonatomic) long long zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 - (void).cxx_destruct;
+- (id)accessibilityLabel;
+- (_Bool)canSelectAccessibilityGroupElementsChildren;
+- (_Bool)canSelectAccessibilityGroupElements;
+- (_Bool)hasBodyContent;
+- (_Bool)canCreateAccessibilityGroupElement;
 - (id)diagnosticDescription;
 - (struct CGRect)generatedLayout:(id)arg1 bestCropRectForInputItemAtIndex:(unsigned int)arg2 withAspectRatio:(double)arg3;
 - (id)generatedLayout:(id)arg1 inputItemAtIndex:(unsigned int)arg2;
@@ -108,7 +124,7 @@
 - (id)displayAssetRequestObserverForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (id)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (struct CGSize)minSpriteSizeForPresentationStyle:(unsigned long long)arg1;
-@property(readonly, nonatomic) unsigned long long supportedDisplayAssetPresentationStyles;
+- (unsigned long long)supportedDisplayAssetPresentationStylesInLayout:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)screenScaleDidChange;
 - (void)contentSizeDidChange;
@@ -135,6 +151,10 @@
 @property(readonly, nonatomic) struct PXSimpleIndexPath sectionIndexPath;
 - (void)_updateAssetsWithCoveredBottomTrailingCorner;
 - (void)_invalidateAssetsWithCoveredBottomTrailingCorner;
+@property(readonly, nonatomic) PXCuratedLibraryOverlayButtonConfiguration *selectAllButtonConfiguration; // @synthesize selectAllButtonConfiguration=_selectAllButtonConfiguration;
+- (void)_updateSelectAllButtonPosition;
+- (void)_invalidateSelectAllButtonPosition;
+- (void)_invalidateSelectAllButton;
 @property(readonly, nonatomic) PXCuratedLibraryOverlayButtonConfiguration *showAllButtonConfiguration; // @synthesize showAllButtonConfiguration=_showAllButtonConfiguration;
 - (void)_updateShowAllButtonPosition;
 - (void)_invalidateShowAllButtonPosition;

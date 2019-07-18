@@ -10,12 +10,9 @@
 {
 }
 
-+ (_Bool)isLabPanelGroupingEnabled;
-+ (_Bool)shouldUseAlternateFonts;
++ (_Bool)shouldUseConsumerFriendlyName;
 + (void)setHideCategoryNameFromHeader:(_Bool)arg1;
 + (_Bool)hideCategoryNameFromHeader;
-+ (void)setShouldTintConceptNameInHeader:(_Bool)arg1;
-+ (_Bool)shouldTintConceptNameInHeader;
 - (id)init;
 
 @end

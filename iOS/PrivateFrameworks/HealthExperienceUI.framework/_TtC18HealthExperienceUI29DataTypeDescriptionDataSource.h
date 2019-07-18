@@ -9,6 +9,7 @@
 @interface _TtC18HealthExperienceUI29DataTypeDescriptionDataSource : _TtC18HealthExperienceUI25DataTypeMutableDataSource
 {
     // Error parsing type: , name: objectType
+    // Error parsing type: , name: titleText
 }
 
 @end

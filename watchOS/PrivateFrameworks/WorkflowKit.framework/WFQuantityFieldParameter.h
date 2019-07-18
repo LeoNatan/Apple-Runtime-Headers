@@ -10,12 +10,12 @@
 
 @interface WFQuantityFieldParameter : WFNumberFieldParameter
 {
-    _Bool _allowsDecimalNumbers;
     NSArray *_possibleUnits;
 }
 
-@property(readonly, nonatomic) NSArray *possibleUnits; // @synthesize possibleUnits=_possibleUnits;
-@property(readonly, nonatomic) _Bool allowsDecimalNumbers; // @synthesize allowsDecimalNumbers=_allowsDecimalNumbers;
++ (_Bool)defaultAllowsNegativeNumbers;
++ (_Bool)defaultAllowsDecimalNumbers;
+@property(copy, nonatomic) NSArray *possibleUnits; // @synthesize possibleUnits=_possibleUnits;
 - (void).cxx_destruct;
 - (id)localizedLabelForPossibleUnit:(id)arg1 magnitude:(id)arg2 style:(unsigned int)arg3;
 - (id)initWithDefinition:(id)arg1;

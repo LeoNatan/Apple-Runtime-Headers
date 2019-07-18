@@ -31,6 +31,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_clientQueue;
     _HKFilter *_filter;
+    long long _qualityOfService;
 }
 
 + (id)_cachedInterfaceForProtocol:(id)arg1 configurationHandler:(CDUnknownBlockType)arg2;
@@ -66,6 +67,7 @@
 + (id)predicateForObjectsWithNoCorrelation;
 + (id)predicateForObjectsWithUUIDs:(id)arg1;
 + (id)predicateForObjectWithUUID:(id)arg1;
++ (id)_predicateForObjectsWithMinOSBuildVersion:(id)arg1 maxOSBuildVersion:(id)arg2;
 + (id)_predicateForObjectsFromAppleWatches;
 + (id)predicateForObjectsWithDeviceProperty:(id)arg1 allowedValues:(id)arg2;
 + (id)predicateForObjectsFromDevices:(id)arg1;
@@ -80,6 +82,7 @@
 + (id)predicateForObjectsWithMetadataKey:(id)arg1 allowedValues:(id)arg2;
 + (id)predicateForObjectsWithMetadataKey:(id)arg1;
 + (id)predicateForActivityCachesBetweenStartDateComponents:(id)arg1 endDateComponents:(id)arg2;
+@property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(readonly, nonatomic, getter=_filter) _HKFilter *filter; // @synthesize filter=_filter;
 @property(readonly, nonatomic) unsigned int applicationSDKVersion; // @synthesize applicationSDKVersion=_applicationSDKVersion;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
@@ -87,13 +90,14 @@
 @property(copy, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 @property(nonatomic) _Bool shouldSuppressDataCollection; // @synthesize shouldSuppressDataCollection=_shouldSuppressDataCollection;
 @property(copy) NSUUID *activationUUID; // @synthesize activationUUID=_activationUUID;
-@property(retain) NSPredicate *predicate; // @synthesize predicate=_predicate;
-@property(retain) HKObjectType *objectType; // @synthesize objectType=_objectType;
+@property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
+@property(retain, nonatomic) HKObjectType *objectType; // @synthesize objectType=_objectType;
 - (void).cxx_destruct;
 - (void)connectionInterrupted;
 - (void)connectionInvalidated;
 - (id)remoteInterface;
 - (id)exportedInterface;
+- (id)_filterForPredicate:(id)arg1 objectType:(id)arg2;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) __weak id <HKQueryDelegate> delegate;
 @property(readonly) HKSampleType *sampleType;

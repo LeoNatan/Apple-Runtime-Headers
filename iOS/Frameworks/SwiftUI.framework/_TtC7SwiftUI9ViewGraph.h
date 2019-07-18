@@ -9,9 +9,11 @@
 @interface _TtC7SwiftUI9ViewGraph : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: storage
+    // Error parsing type: , name: globalSubgraph
     // Error parsing type: , name: rootSubgraph
     // Error parsing type: , name: rootViewType
     // Error parsing type: , name: makeRootView
+    // Error parsing type: , name: viewRendererHost
     // Error parsing type: , name: inputs
     // Error parsing type: , name: rootView
     // Error parsing type: , name: time
@@ -38,6 +40,7 @@
     // Error parsing type: , name: defaultLayoutComputer
     // Error parsing type: , name: defaultViewListTraits
     // Error parsing type: , name: rootResponders
+    // Error parsing type: , name: rootAccessibilityNodes
     // Error parsing type: , name: rootLayoutComputer
     // Error parsing type: , name: rootDisplayList
     // Error parsing type: , name: rootPlatformItemList
@@ -49,7 +52,7 @@
     // Error parsing type: , name: outputs
     // Error parsing type: , name: needsFocusUpdate
     // Error parsing type: , name: nextUpdate
-    // Error parsing type: , name: pendingTransaction
+    // Error parsing type: , name: pendingTransactions
     // Error parsing type: , name: preferenceBridge
     // Error parsing type: , name: observedPreferenceKeys
     // Error parsing type: , name: observedPreferenceValues

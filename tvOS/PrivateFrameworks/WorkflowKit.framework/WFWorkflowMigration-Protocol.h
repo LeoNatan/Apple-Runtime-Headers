@@ -6,10 +6,10 @@
 
 #import <WorkflowKit/NSObject-Protocol.h>
 
-@class NSDictionary, NSMutableDictionary;
+@class NSDictionary, NSMutableDictionary, NSString;
 
 @protocol WFWorkflowMigration <NSObject>
-+ (_Bool)workflowNeedsMigration:(NSDictionary *)arg1 fromClientVersion:(long long)arg2;
++ (_Bool)workflowNeedsMigration:(NSDictionary *)arg1 fromClientVersion:(NSString *)arg2;
 - (void)migrateWorkflowIfNeeded:(NSMutableDictionary *)arg1 completion:(void (^)(NSSet *))arg2;
 @end
 

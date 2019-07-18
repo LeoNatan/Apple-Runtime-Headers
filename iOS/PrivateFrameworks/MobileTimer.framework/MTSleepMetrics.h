@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class HKHealthStore, HKObserverQuery, NSMutableSet;
+@class HKHealthStore, HKObserverQuery, MTObserverStore;
 @protocol NAScheduler;
 
 @interface MTSleepMetrics : NSObject
@@ -14,10 +14,10 @@
     id <NAScheduler> _serializer;
     HKHealthStore *_healthStore;
     HKObserverQuery *_healthObserver;
-    NSMutableSet *_sleepDataObservers;
+    MTObserverStore *_sleepDataObservers;
 }
 
-+ (id)_queryForQuery:(id)arg1 withDataSource:(unsigned long long)arg2;
++ (id)_sourcePredicate:(unsigned long long)arg1;
 + (id)sleepDaysForRange:(id)arg1 requestAuthorization:(_Bool)arg2 dataSource:(unsigned long long)arg3;
 + (id)sleepDaysForRange:(id)arg1 requestAuthorization:(_Bool)arg2;
 + (id)sleepDaysForRange:(id)arg1;
@@ -31,7 +31,7 @@
 + (void)unregisterSleepDataObserver:(id)arg1;
 + (void)registerSleepDataObserver:(id)arg1;
 + (id)_sharedPublicMetrics;
-@property(retain, nonatomic) NSMutableSet *sleepDataObservers; // @synthesize sleepDataObservers=_sleepDataObservers;
+@property(retain, nonatomic) MTObserverStore *sleepDataObservers; // @synthesize sleepDataObservers=_sleepDataObservers;
 @property(retain, nonatomic) HKObserverQuery *healthObserver; // @synthesize healthObserver=_healthObserver;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;

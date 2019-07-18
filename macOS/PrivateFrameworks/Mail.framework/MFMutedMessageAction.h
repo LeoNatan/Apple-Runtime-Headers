@@ -6,20 +6,34 @@
 
 #import <objc/NSObject.h>
 
-@class MFMessageStore, NSArray;
+#import <Mail/EFLoggable-Protocol.h>
 
-@interface MFMutedMessageAction : NSObject
+@class EDMessageChangeManager, MFMessageStore, NSArray, NSString;
+
+@interface MFMutedMessageAction : NSObject <EFLoggable>
 {
-    MFMessageStore *_store;
     NSArray *_mutedMessages;
+    MFMessageStore *_store;
+    EDMessageChangeManager *_changeManager;
 }
 
-@property(retain, nonatomic) NSArray *mutedMessages; // @synthesize mutedMessages=_mutedMessages;
++ (id)log;
+@property(readonly, nonatomic) EDMessageChangeManager *changeManager; // @synthesize changeManager=_changeManager;
 @property(readonly, nonatomic) MFMessageStore *store; // @synthesize store=_store;
+@property(retain, nonatomic) NSArray *mutedMessages; // @synthesize mutedMessages=_mutedMessages;
 - (void).cxx_destruct;
 - (void)_setMutedMessagesFromMessages:(id)arg1;
+- (void)performActionWithChangeManager:(id)arg1;
+- (void)performActionWithStore:(id)arg1;
 - (void)performAction;
+- (id)initWithMessages:(id)arg1 changeManager:(id)arg2;
 - (id)initWithMessages:(id)arg1 store:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

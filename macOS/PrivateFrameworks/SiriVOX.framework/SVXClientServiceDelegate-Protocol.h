@@ -18,7 +18,6 @@
 - (oneway void)notifySessionDidBecomeActiveWithActivationContext:(SVXActivationContext *)arg1;
 - (oneway void)notifySessionWillBecomeActiveWithActivationContext:(SVXActivationContext *)arg1;
 - (oneway void)notifySessionDidStopSoundWithID:(long long)arg1 error:(NSError *)arg2;
-- (oneway void)notifySessionDidNotStartSoundWithID:(long long)arg1 error:(NSError *)arg2;
 - (oneway void)notifySessionDidStartSoundWithID:(long long)arg1;
 - (oneway void)notifySessionWillStartSoundWithID:(long long)arg1;
 - (oneway void)notifySessionWillPresentFeedbackWithDialogIdentifier:(NSString *)arg1;

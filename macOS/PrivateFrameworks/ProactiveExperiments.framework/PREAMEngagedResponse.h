@@ -14,6 +14,7 @@
 {
     int _ageGroup;
     NSString *_experimentId;
+    int _generationStatus;
     NSString *_hostProcess;
     int _inputMethod;
     NSString *_lang;
@@ -28,6 +29,7 @@
     BOOL _isApricotDevice;
     struct {
         unsigned int ageGroup:1;
+        unsigned int generationStatus:1;
         unsigned int inputMethod:1;
         unsigned int modelId:1;
         unsigned int position:1;
@@ -72,6 +74,10 @@
 @property(readonly, nonatomic) BOOL hasTreatmentModelName;
 @property(readonly, nonatomic) BOOL hasTreatmentId;
 @property(readonly, nonatomic) BOOL hasExperimentId;
+- (int)StringAsGenerationStatus:(id)arg1;
+- (id)generationStatusAsString:(int)arg1;
+@property(nonatomic) BOOL hasGenerationStatus;
+@property(nonatomic) int generationStatus; // @synthesize generationStatus=_generationStatus;
 - (int)StringAsInputMethod:(id)arg1;
 - (id)inputMethodAsString:(int)arg1;
 @property(nonatomic) BOOL hasInputMethod;

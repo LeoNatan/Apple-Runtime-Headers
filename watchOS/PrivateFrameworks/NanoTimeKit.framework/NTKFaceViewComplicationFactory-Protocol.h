@@ -21,7 +21,7 @@
 - (UIView<NTKEditOptionContainerView> *)customEditOptionContainerViewForSlot:(NSString *)arg1;
 - (_Bool)slotSupportsCurvedText:(NSString *)arg1;
 - (void)curvedComplicationCircleRadius:(float *)arg1 centerAngle:(float *)arg2 maxAngularWidth:(float *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(NSString *)arg6;
-- (UIImage *)curvedPickerMaskForSlot:(NSString *)arg1;
+- (UIImage *)pickerMaskForSlot:(NSString *)arg1;
 - (int)complicationPickerStyleForSlot:(NSString *)arg1;
 @end
 

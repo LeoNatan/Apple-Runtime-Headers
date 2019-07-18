@@ -8,7 +8,6 @@
 
 @class NSArray, NSMutableSet;
 
-__attribute__((visibility("hidden")))
 @interface WDDeviceSourcesListTableViewSection : WDSourcesListTableViewSection
 {
     NSArray *_list;

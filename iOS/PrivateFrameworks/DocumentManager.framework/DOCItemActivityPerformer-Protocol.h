@@ -9,6 +9,6 @@
 @class NSArray, NSString;
 
 @protocol DOCItemActivityPerformer <NSObject>
-- (void)performAction:(NSString *)arg1 withURLs:(NSArray *)arg2;
+- (void)performAction:(NSString *)arg1 withURLs:(NSArray *)arg2 completionHandler:(void (^)(_Bool))arg3;
 @end
 

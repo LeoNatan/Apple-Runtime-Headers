@@ -31,6 +31,9 @@ __attribute__((visibility("hidden")))
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (long long)preferredStatusBarStyle;
 - (BOOL)prefersStatusBarHidden;
+- (BOOL)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
+- (long long)preferredInterfaceOrientationForPresentation;
 - (BOOL)modalPresentationCapturesStatusBarAppearance;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)attachContentView;

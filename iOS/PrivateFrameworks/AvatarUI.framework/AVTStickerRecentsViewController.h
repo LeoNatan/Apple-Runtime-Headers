@@ -7,18 +7,21 @@
 #import <UIKit/UIViewController.h>
 
 #import <AvatarUI/AVTStickerBackendDelegate-Protocol.h>
+#import <AvatarUI/AVTStickerRecentsOverlayDelegate-Protocol.h>
 #import <AvatarUI/UICollectionViewDataSource-Protocol.h>
 #import <AvatarUI/UICollectionViewDelegate-Protocol.h>
 
-@class AVTImageStore, AVTSerialTaskScheduler, AVTStickerConfigurationProvider, AVTStickerGenerator, AVTStickerRecentsLayout, AVTStickerRecentsMigrator, AVTStickerRecentsOverlayView, AVTUIEnvironment, AVTUIStickerGeneratorPool, CALayer, NSArray, NSObject, NSString, UICollectionView, UICollectionViewFlowLayout, UIImage;
-@protocol AVTAvatarStoreInternal, AVTResourceCache, AVTStickerRecentsItem, AVTStickerRecentsViewControllerDelegate, NSObject, OS_dispatch_queue;
+@class AVTImageStore, AVTSerialTaskScheduler, AVTStickerConfigurationProvider, AVTStickerGenerator, AVTStickerRecentsLayout, AVTStickerRecentsMigrator, AVTStickerRecentsOverlayView, AVTUIEnvironment, AVTUIStickerGeneratorPool, CALayer, NSArray, NSObject, NSString, UICollectionView, UICollectionViewFlowLayout;
+@protocol AVTAvatarRecord, AVTAvatarStoreInternal, AVTResourceCache, AVTStickerRecentsItem, AVTStickerRecentsViewControllerDelegate, NSObject, OS_dispatch_queue;
 
-@interface AVTStickerRecentsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, AVTStickerBackendDelegate>
+@interface AVTStickerRecentsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, AVTStickerBackendDelegate, AVTStickerRecentsOverlayDelegate>
 {
+    _Bool _hasFetchedDefaultMemoji;
     id <AVTStickerRecentsViewControllerDelegate> _delegate;
     AVTStickerRecentsMigrator *_stickerRecentsMigrator;
     AVTStickerRecentsOverlayView *_overlayView;
     id <NSObject> _avatarStoreChangeObserver;
+    id <AVTAvatarRecord> _defaultMemoji;
     AVTImageStore *_imageStore;
     UICollectionViewFlowLayout *_collectionViewLayout;
     UICollectionView *_collectionView;
@@ -26,8 +29,7 @@
     AVTUIEnvironment *_environment;
     id <AVTResourceCache> _cache;
     AVTStickerGenerator *_stickerGenerator;
-    NSObject<OS_dispatch_queue> *_recentsBuildingQueue;
-    NSObject<OS_dispatch_queue> *_avatarStoreObservationQueue;
+    NSObject<OS_dispatch_queue> *_recentsWorkQueue;
     NSObject<OS_dispatch_queue> *_renderingQueue;
     NSObject<OS_dispatch_queue> *_encodingQueue;
     AVTStickerConfigurationProvider *_configurationProvider;
@@ -38,7 +40,6 @@
     NSArray *_stickerItems;
     NSArray *_displayItems;
     CALayer *_edgeMaskLayer;
-    UIImage *_stickersButtonImage;
 }
 
 + (id)stickerRecentsControllerForStore:(id)arg1;
@@ -47,7 +48,6 @@
 + (id)stickerCacheWithEnvironment:(id)arg1;
 + (id)stickerForRecentItem:(id)arg1;
 + (id)layoutForSize:(struct CGSize)arg1;
-@property(retain, nonatomic) UIImage *stickersButtonImage; // @synthesize stickersButtonImage=_stickersButtonImage;
 @property(retain, nonatomic) CALayer *edgeMaskLayer; // @synthesize edgeMaskLayer=_edgeMaskLayer;
 @property(retain, nonatomic) NSArray *displayItems; // @synthesize displayItems=_displayItems;
 @property(retain, nonatomic) NSArray *stickerItems; // @synthesize stickerItems=_stickerItems;
@@ -58,8 +58,7 @@
 @property(retain, nonatomic) AVTStickerConfigurationProvider *configurationProvider; // @synthesize configurationProvider=_configurationProvider;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *encodingQueue; // @synthesize encodingQueue=_encodingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *renderingQueue; // @synthesize renderingQueue=_renderingQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *avatarStoreObservationQueue; // @synthesize avatarStoreObservationQueue=_avatarStoreObservationQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *recentsBuildingQueue; // @synthesize recentsBuildingQueue=_recentsBuildingQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *recentsWorkQueue; // @synthesize recentsWorkQueue=_recentsWorkQueue;
 @property(readonly, nonatomic) AVTStickerGenerator *stickerGenerator; // @synthesize stickerGenerator=_stickerGenerator;
 @property(readonly, nonatomic) id <AVTResourceCache> cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
@@ -67,30 +66,37 @@
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) UICollectionViewFlowLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
 @property(retain, nonatomic) AVTImageStore *imageStore; // @synthesize imageStore=_imageStore;
+@property(retain, nonatomic) id <AVTAvatarRecord> defaultMemoji; // @synthesize defaultMemoji=_defaultMemoji;
+@property(nonatomic) _Bool hasFetchedDefaultMemoji; // @synthesize hasFetchedDefaultMemoji=_hasFetchedDefaultMemoji;
 @property(retain, nonatomic) id <NSObject> avatarStoreChangeObserver; // @synthesize avatarStoreChangeObserver=_avatarStoreChangeObserver;
 @property(retain, nonatomic) AVTStickerRecentsOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) AVTStickerRecentsMigrator *stickerRecentsMigrator; // @synthesize stickerRecentsMigrator=_stickerRecentsMigrator;
 @property(nonatomic) __weak id <AVTStickerRecentsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)overlayDidTapContinueButton:(id)arg1;
+- (void)overlayDidTapCloseButton:(id)arg1;
+- (void)overlayDidTapContentView:(id)arg1;
 - (void)recentStickersDidChange:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (struct UIEdgeInsets)edgeInsetsForContainerSize:(struct CGSize)arg1;
 - (void)updateItemSizeForContainerSize:(struct CGSize)arg1;
-- (void)didTapOverlayView:(id)arg1;
-- (void)viewDidAppear:(_Bool)arg1;
-- (void)viewDidLoad;
+- (void)dismissOverlayViewAnimated:(_Bool)arg1;
 - (id)recentStickersWithCount:(long long)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)updateDisplayItems;
 - (void)buildRecentsItemsWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)loadRecentItems;
 - (id)placeholderItems;
+- (void)determineOverlayTypeWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)fetchDefaultMemojiIfNeeded;
+- (void)endObservingAvatarStoreChanges;
+- (void)beginObservingAvatarStoreChanges;
 - (void)setupRenderingDependentPieces;
-- (void)setupObservableAvatarStoreWithStore:(id)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithAvatarStore:(id)arg1 environment:(id)arg2;
 

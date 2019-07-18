@@ -9,16 +9,20 @@
 @class ACAccount, ASDAppEvent, NSNumber;
 
 @protocol ASDOcelotServiceProtocol <NSObject>
+- (void)topAppsForAccount:(ACAccount *)arg1 completionBlock:(void (^)(NSArray *, NSError *))arg2;
 - (void)subscriptionStateWithCompletionBlock:(void (^)(_Bool, NSError *))arg1;
 - (void)sbsyncWithDuration:(NSNumber *)arg1 completionBlock:(void (^)(_Bool, NSError *))arg2;
 - (void)sbsyncWithCompletionBlock:(void (^)(_Bool, NSError *))arg1;
 - (void)sbsyncIfSubscribedWithAccount:(ACAccount *)arg1 completionBlock:(void (^)(_Bool, NSError *))arg2;
-- (void)sendMetricsWithCompletionBlock:(void (^)(_Bool, NSError *))arg1;
+- (void)sendSummaryMetricsWithCompletionBlock:(void (^)(_Bool, NSError *))arg1;
+- (void)sendPayoutMetricsWithCompletionBlock:(void (^)(_Bool, NSError *))arg1;
+- (void)resetPayoutWithCompletionBlock:(void (^)(_Bool, NSError *))arg1;
 - (void)resetMetricsWithCompletionBlock:(void (^)(_Bool, NSError *))arg1;
 - (void)reportAppEvent:(ASDAppEvent *)arg1 completionBlock:(void (^)(_Bool, NSError *))arg2;
 - (void)recordMetricsWithCompletionBlock:(void (^)(_Bool, NSError *))arg1;
 - (void)recordLaunchesWithCompletionBlock:(void (^)(_Bool, NSError *))arg1;
-- (void)getAppEventsWithCompletionBlock:(void (^)(NSArray *, NSError *))arg1;
+- (void)getAppSummaryEventsWithCompletionBlock:(void (^)(NSArray *, NSError *))arg1;
+- (void)getAppPayoutEventsWithCompletionBlock:(void (^)(NSArray *, NSError *))arg1;
 - (void)flushMetricsWithCompletionBlock:(void (^)(_Bool, NSError *))arg1;
 @end
 

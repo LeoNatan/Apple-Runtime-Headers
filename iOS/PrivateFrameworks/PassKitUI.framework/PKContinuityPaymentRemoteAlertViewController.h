@@ -39,8 +39,10 @@
 - (void)didReceivePaymentClientUpdate:(id)arg1 forRemotePaymentRequest:(id)arg2;
 - (void)didReceivePaymentResult:(id)arg1 forRemotePaymentRequest:(id)arg2;
 - (void)_dismiss;
+- (void)_invalidate;
 - (void)handleButtonActions:(id)arg1;
 - (void)configureWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)didInvalidateForRemoteAlert;
 - (unsigned long long)supportedInterfaceOrientations;
 - (long long)preferredStatusBarStyle;
 - (_Bool)prefersStatusBarHidden;

@@ -25,8 +25,12 @@
 @property(readonly, nonatomic) int routeType; // @synthesize routeType=_routeType;
 - (void).cxx_destruct;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
+- (void)findHandoffRoutesMatchingDescriptors:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)findHandoffRouteMatchingDescriptor:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)handOffFromEndpoint:(id)arg1 toEndpoint:(id)arg2 timeout:(double)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)establishConnectionToEndpoints:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)selectRoute:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)routeMatchingDescriptor:(id)arg1 inRoutes:(id)arg2;
+- (void)findRoutesMatchingDescriptors:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)findRouteMatchingDescriptor:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) NSArray *availableRoutes;
 - (void)removeAvailableRoutesObserver:(id)arg1;

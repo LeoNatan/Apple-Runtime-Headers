@@ -26,6 +26,7 @@
 - (id)managedObjectModelName;
 - (void)storesWillChange:(id)arg1;
 - (void)setupDatabase;
+- (id)apsConnectionMachServiceName;
 - (void)dealloc;
 - (id)init;
 

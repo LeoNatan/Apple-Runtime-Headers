@@ -37,7 +37,6 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
-@property(readonly, nonatomic) _Bool requiresQueryId;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

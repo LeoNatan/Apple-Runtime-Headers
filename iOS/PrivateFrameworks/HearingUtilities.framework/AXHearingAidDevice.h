@@ -199,7 +199,6 @@
 - (void)selectProgram:(id)arg1 forEar:(int)arg2;
 - (void)readProperty:(unsigned long long)arg1 fromPeripheral:(id)arg2;
 - (void)readValueForCharacteristic:(id)arg1 fromPeripheral:(id)arg2;
-- (void)_writeAllProgramSelectionsToPeripheral;
 - (void)writeSignedInt:(BOOL)arg1 toEar:(int)arg2 forProperty:(unsigned long long)arg3;
 - (void)writeInt:(unsigned char)arg1 toEar:(int)arg2 forProperty:(unsigned long long)arg3;
 - (void)delayWriteProperty:(unsigned long long)arg1 forPeripheral:(id)arg2;
@@ -227,6 +226,7 @@
 - (void)mateWithDevice:(id)arg1;
 - (_Bool)didLoadRequiredProperties;
 - (_Bool)didLoadBasicProperties;
+- (_Bool)didLoadOptionalBasicProperties;
 - (_Bool)didLoadPersistentProperties;
 - (_Bool)peripheral:(id)arg1 didLoadProperty:(unsigned long long)arg2;
 @property(readonly, retain, nonatomic) NSString *deviceUUID;

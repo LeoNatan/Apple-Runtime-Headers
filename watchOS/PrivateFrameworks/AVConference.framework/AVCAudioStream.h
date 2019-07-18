@@ -19,6 +19,7 @@
     AVCMediaStreamConfig *_configuration;
     NSDictionary *_capabilities;
     NSObject<OS_dispatch_queue> *_callbackQueue;
+    int _streamToken;
 }
 
 + (id)capabilities;
@@ -62,6 +63,7 @@
 - (void)dealloc;
 - (void)terminateSession;
 - (void)refreshLoggingParameters;
+- (id)validateInitializeConnectionResult:(id)arg1;
 - (id)initWithLocalAddress:(id)arg1 networkSockets:(id)arg2 IDSDestination:(id)arg3 isOriginator:(_Bool)arg4 callID:(id)arg5 error:(id *)arg6;
 - (id)initWithIDSDestination:(id)arg1 isOriginator:(_Bool)arg2 callID:(id)arg3 error:(id *)arg4;
 - (id)initWithIDSDestination:(id)arg1 isOriginator:(_Bool)arg2 error:(id *)arg3;

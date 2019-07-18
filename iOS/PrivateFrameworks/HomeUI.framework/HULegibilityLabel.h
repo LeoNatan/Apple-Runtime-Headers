@@ -42,7 +42,6 @@
 - (void)setFrame:(struct CGRect)arg1;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
-- (void)updateConstraints;
 @property(readonly, nonatomic) double lastBaselineOffsetFromBottom;
 @property(readonly, nonatomic) double firstBaselineOffsetFromBottom;
 - (void)setOptions:(long long)arg1;

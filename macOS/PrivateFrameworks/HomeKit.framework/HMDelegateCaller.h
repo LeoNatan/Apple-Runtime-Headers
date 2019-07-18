@@ -28,7 +28,6 @@
 - (void)callCompletion:(CDUnknownBlockType)arg1 home:(id)arg2 error:(id)arg3;
 - (void)callCompletion:(CDUnknownBlockType)arg1 isUsingHomeKit:(BOOL)arg2 isUsingCloudServices:(BOOL)arg3 error:(id)arg4;
 - (void)callCompletion:(CDUnknownBlockType)arg1 error:(id)arg2 dictionary:(id)arg3;
-- (void)callCompletion:(CDUnknownBlockType)arg1 errorString:(id)arg2 error:(id)arg3;
 - (void)callCompletion:(CDUnknownBlockType)arg1 errorString:(id)arg2;
 - (void)callCompletion:(CDUnknownBlockType)arg1 value:(BOOL)arg2 error:(id)arg3;
 - (void)callCompletion:(CDUnknownBlockType)arg1 obj:(id)arg2 error:(id)arg3;

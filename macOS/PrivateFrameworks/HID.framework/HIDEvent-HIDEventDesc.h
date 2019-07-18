@@ -19,6 +19,9 @@
 + (id)forceEvent:(unsigned long long)arg1 behavior:(unsigned int)arg2 progress:(double)arg3 stage:(unsigned int)arg4 stageProgress:(double)arg5 options:(unsigned int)arg6;
 + (id)motionGestureEvent:(unsigned long long)arg1 gestureType:(unsigned int)arg2 progress:(double)arg3 options:(unsigned int)arg4;
 + (id)gameControllerEvent:(unsigned long long)arg1 controllerType:(unsigned int)arg2 options:(unsigned int)arg3;
++ (id)qualityDigitizerEvent:(unsigned long long)arg1 quality:(double)arg2 density:(double)arg3 irregularity:(double)arg4 majorRadius:(double)arg5 minorRadius:(double)arg6 accuracy:(double)arg7 options:(unsigned int)arg8;
++ (id)polarDigitizerEvent:(unsigned long long)arg1 altitude:(double)arg2 azimuth:(double)arg3 quality:(double)arg4 density:(double)arg5 majorRadius:(double)arg6 minorRadius:(double)arg7 options:(unsigned int)arg8;
++ (id)tiltDigitizerEvent:(unsigned long long)arg1 x:(double)arg2 y:(double)arg3 options:(unsigned int)arg4;
 + (id)digitizerEvent:(unsigned long long)arg1 transducerType:(unsigned int)arg2 x:(double)arg3 y:(double)arg4 z:(double)arg5 options:(unsigned int)arg6;
 + (id)compassEvent:(unsigned long long)arg1 x:(double)arg2 y:(double)arg3 z:(double)arg4 options:(unsigned int)arg5;
 + (id)motionActivityEvent:(unsigned long long)arg1 activityType:(unsigned int)arg2 confidence:(double)arg3 options:(unsigned int)arg4;

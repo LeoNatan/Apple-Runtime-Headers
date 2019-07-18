@@ -8,11 +8,7 @@
 
 @interface NTKActivitySignificantRingChangeModel : NSObject
 {
-    struct {
-        float movePercentage;
-        float exercisePercentage;
-        float standPercentage;
-    } _lastSignificantRingPercentage;
+    CDStruct_06f44955 _lastSignificantRingPercentage;
 }
 
 - (void)updateSignificantRingValuesWithMovePercentage:(float)arg1 exercisePercentage:(float)arg2 standPercentage:(float)arg3;

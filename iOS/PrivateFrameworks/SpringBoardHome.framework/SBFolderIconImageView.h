@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) unsigned long long currentPageIndex; // @synthesize currentPageIndex=_currentPageIndex;
 @property(nonatomic) unsigned long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 - (void).cxx_destruct;
+- (void)fulfillGridImageForPageElement:(id)arg1;
 - (id)representedListLayout;
 - (void)_showRightMinigrid;
 - (void)_showLeftMinigrid;
@@ -53,7 +54,7 @@
 - (void)_setAnimating:(_Bool)arg1;
 - (void)_updateCurrentBackgroundStyle;
 @property(readonly, nonatomic) unsigned long long concreteBackgroundStyle;
-- (void)folderIconImageCache:(id)arg1 didUpdateImages:(id)arg2 forFolderIcon:(id)arg3;
+- (void)folderIconImageCache:(id)arg1 didUpdateImagesForFolderIcon:(id)arg2;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (void)iconViewLegibilitySettingsDidChange;
 - (void)enableImageUpdates;

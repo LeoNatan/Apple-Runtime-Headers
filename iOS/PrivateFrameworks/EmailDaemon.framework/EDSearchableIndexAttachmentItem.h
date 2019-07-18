@@ -18,6 +18,7 @@
     NSString *_identifier;
     NSData *_underlyingData;
     long long _indexingType;
+    unsigned long long _itemInstantiationTime;
     NSString *_attachmentPersistentID;
     NSString *_messagePersistentID;
     EDSearchableIndexAttachmentItemMetadatum *_metadatum;
@@ -34,6 +35,7 @@
 @property(retain, nonatomic) EDSearchableIndexAttachmentItemMetadatum *metadatum; // @synthesize metadatum=_metadatum;
 @property(copy, nonatomic) NSString *messagePersistentID; // @synthesize messagePersistentID=_messagePersistentID;
 @property(copy, nonatomic) NSString *attachmentPersistentID; // @synthesize attachmentPersistentID=_attachmentPersistentID;
+@property(readonly, nonatomic) unsigned long long itemInstantiationTime; // @synthesize itemInstantiationTime=_itemInstantiationTime;
 @property(retain, nonatomic) NSData *underlyingData; // @synthesize underlyingData=_underlyingData;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;

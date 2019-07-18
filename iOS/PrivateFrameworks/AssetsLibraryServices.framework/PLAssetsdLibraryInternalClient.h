@@ -12,6 +12,7 @@
 
 - (_Bool)invalidateBehavioralScoreOnAllAssetsWithError:(id *)arg1;
 - (void)deleteiTunesSyncedContentWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (_Bool)backgroundJobServiceRemoveAllBundleRecordsFromProcessingSet:(id *)arg1;
 - (id)getBackgroundJobServiceBundlesInQueueDictionaryWithError:(id *)arg1;
 - (unsigned long long)getBackgroundJobServiceStateWithError:(id *)arg1;
 - (_Bool)registerBackgroundJobServiceIfNecessaryOnLibraryPath:(id)arg1 error:(id *)arg2;

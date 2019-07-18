@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIAtomTextViewAtomLayout-Protocol.h>
 
-@class NSArray, NSLayoutConstraint, NSString, UIColor, UIImageView, UILabel, _UISearchAtomBackgroundView;
+@class NSArray, NSLayoutConstraint, NSString, UIColor, UIFont, UIImageView, UILabel, _UISearchAtomBackgroundView;
 
 __attribute__((visibility("hidden")))
 @interface _UISearchAtomView : UIView <_UIAtomTextViewAtomLayout>
@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (id)viewForLastBaselineLayout;
 - (void)_updateColors;
 - (void)updateConstraints;
+@property(retain, nonatomic) UIFont *atomFont;
 - (float)_bottomMargin;
 - (float)_topToBaselineDelta;
 - (id)_font;

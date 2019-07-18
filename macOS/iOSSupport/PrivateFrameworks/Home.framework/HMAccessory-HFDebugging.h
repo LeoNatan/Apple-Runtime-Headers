@@ -65,12 +65,12 @@
 @property(readonly, copy, nonatomic) NSSet *hf_visibleServices;
 @property(readonly, copy, nonatomic) NSSet *hf_standardServices;
 @property(readonly, nonatomic) HMResidentDevice *hf_linkedResidentDevice;
-@property(readonly, nonatomic) BOOL hf_isNetworkRouter;
 @property(readonly, nonatomic) BOOL hf_isMultiServiceAccessory;
 @property(readonly, nonatomic) BOOL hf_areAllServicesInGroups;
 @property(readonly, nonatomic) BOOL hf_isRemoteControl;
 @property(readonly, nonatomic) BOOL hf_isProgrammableSwitch;
 @property(readonly, nonatomic) BOOL hf_isNotificationSupportedCamera;
+@property(readonly, nonatomic) BOOL hf_isNetworkRouter;
 @property(readonly, nonatomic) BOOL hf_isCamera;
 @property(readonly, nonatomic) BOOL hf_isVisibleAsBridge;
 @property(readonly, nonatomic) BOOL hf_isBridge;

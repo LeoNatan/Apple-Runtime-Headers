@@ -6,21 +6,22 @@
 
 #import <HomeKitDaemon/NSObject-Protocol.h>
 
-@class HMDNetworkRouterFirewallRuleAccessoryIdentifier, HMFVersion, NSArray, NSDictionary, NSString;
-@protocol HMDNetworkRouterFirewallRuleCloudNetworkDeclarations, HMDNetworkRouterFirewallRuleConfiguration, HMDNetworkRouterFirewallRuleManager;
+@class HMDNetworkRouterFirewallRuleAccessoryIdentifier, HMDNetworkRouterFirewallRuleCloudNetworkDeclarations, HMDNetworkRouterFirewallRuleConfiguration, HMFVersion, NSDictionary, NSSet, NSString;
+@protocol HMDNetworkRouterFirewallRuleManager;
 
 @protocol HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinator <NSObject>
 @property(readonly, nonatomic) __weak id <HMDNetworkRouterFirewallRuleManager> firewallRuleManager;
-- (id <HMDNetworkRouterFirewallRuleConfiguration>)ruleConfigurationForAccessory:(HMDNetworkRouterFirewallRuleAccessoryIdentifier *)arg1 declarations:(id <HMDNetworkRouterFirewallRuleCloudNetworkDeclarations>)arg2;
+- (HMDNetworkRouterFirewallRuleConfiguration *)ruleConfigurationForAccessory:(HMDNetworkRouterFirewallRuleAccessoryIdentifier *)arg1 declarations:(HMDNetworkRouterFirewallRuleCloudNetworkDeclarations *)arg2;
 - (_Bool)removeOverridesForProductGroup:(NSString *)arg1 productNumber:(NSString *)arg2 error:(id *)arg3;
 - (_Bool)removeAllOverridesWithError:(id *)arg1;
 - (_Bool)addOverrides:(NSDictionary *)arg1 replace:(_Bool)arg2 error:(id *)arg3;
+- (_Bool)removeAllLocalRulesWithError:(id *)arg1;
 - (NSString *)dumpLocalRulesForProductGroup:(NSString *)arg1 productNumber:(NSString *)arg2 firmwareVersion:(HMFVersion *)arg3 ignoreOverrides:(_Bool)arg4 rawOutput:(_Bool)arg5 error:(id *)arg6;
-- (void)dumpCloudRecordsForProductGroup:(NSString *)arg1 productNumber:(NSString *)arg2 rawOutput:(_Bool)arg3 listOnly:(_Bool)arg4 completion:(void (^)(NSError *, NSString *))arg5;
-- (NSArray *)fetchRulesForAccessories:(NSArray *)arg1 qualityOfService:(int)arg2 ignoreOverrides:(_Bool)arg3 error:(id *)arg4;
-- (void)fetchCloudChangesWithQualityOfService:(int)arg1 forceChangeNotifications:(_Bool)arg2 completion:(void (^)(NSError *))arg3;
-- (void)stopWatchingAccessories:(NSArray *)arg1;
-- (void)startWatchingAccessories:(NSArray *)arg1;
+- (void)dumpCloudRecordsForProductGroup:(NSString *)arg1 productNumber:(NSString *)arg2 rawOutput:(_Bool)arg3 listOnly:(_Bool)arg4 completion:(void (^)(NSString *, NSError *))arg5;
+- (NSSet *)fetchRulesForAccessories:(NSSet *)arg1 qualityOfService:(int)arg2 ignoreOverrides:(_Bool)arg3 error:(id *)arg4;
+- (void)fetchCloudChangesWithQualityOfService:(int)arg1 forceChangeNotifications:(_Bool)arg2 completion:(void (^)(NSSet *, NSError *))arg3;
+- (void)stopWatchingAccessories:(NSSet *)arg1;
+- (void)startWatchingAccessories:(NSSet *)arg1;
 - (void)shutdownWithCompletion:(void (^)(NSError *))arg1;
 - (void)startupWithCompletion:(void (^)(NSError *))arg1;
 @end

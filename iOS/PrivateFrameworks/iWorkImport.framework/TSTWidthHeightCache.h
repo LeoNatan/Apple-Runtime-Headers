@@ -23,7 +23,6 @@ __attribute__((visibility("hidden")))
 - (id)validateChangeDescriptors:(id)arg1 numberOfRows:(unsigned int)arg2 numberOfColumns:(unsigned short)arg3;
 - (void)logInternalState;
 - (_Bool)verifyDims:(struct CGSize)arg1 forCellID:(struct TSUCellCoord)arg2;
-- (void)resetFittingHeightsFromCollection:(id)arg1;
 - (void)p_resetFittingWidthsHeightsForRange:(struct TSUCellRect)arg1;
 - (void)resetAllFittingColumnWidths;
 - (void)resetFittingColumnWidthsStartingWith:(unsigned short)arg1 upToColumn:(unsigned short)arg2;
@@ -43,7 +42,12 @@ __attribute__((visibility("hidden")))
 - (void)resetModelCache;
 - (void)setModelHeight:(double)arg1 forRow:(unsigned int)arg2;
 - (void)setModelWidth:(double)arg1 forColumn:(unsigned short)arg2;
+- (void)setFittingWidthsFromCollectionArray:(id)arg1;
+- (void)setFittingWidthsFromCollection:(id)arg1;
+- (void)p_setFittingWidthsFromCollectionWithLock:(id)arg1;
+- (void)setFittingHeightsFromCollectionArray:(id)arg1;
 - (void)setFittingHeightsFromCollection:(id)arg1;
+- (void)p_setFittingHeightsFromCollectionWithLock:(id)arg1;
 - (void)setFitHeight:(double)arg1 forCellID:(struct TSUCellCoord)arg2;
 - (void)setFitWidth:(double)arg1 forCellID:(struct TSUCellCoord)arg2;
 - (void)setFitDims:(struct CGSize)arg1 forCellID:(struct TSUCellCoord)arg2;

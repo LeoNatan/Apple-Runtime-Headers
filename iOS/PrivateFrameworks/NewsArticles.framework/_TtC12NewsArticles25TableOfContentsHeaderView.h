@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface _TtC12NewsArticles25TableOfContentsHeaderView : UIView
 {
-    // Error parsing type: , name: coverView
+    // Error parsing type: , name: coverViewButton
     // Error parsing type: , name: subscribeButton
     // Error parsing type: , name: dateLabel
     // Error parsing type: , name: descriptionLabel

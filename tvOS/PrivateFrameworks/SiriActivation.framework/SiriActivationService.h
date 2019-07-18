@@ -11,11 +11,12 @@
 #import <SiriActivation/SASHeaterDelegate-Protocol.h>
 #import <SiriActivation/SASLockStateMonitorDelegate-Protocol.h>
 #import <SiriActivation/SASRequestOptionsBuilderDataSource-Protocol.h>
+#import <SiriActivation/SASStateChangeListener-Protocol.h>
 
-@class AFMyriadCoordinator, AFPreferences, AFSiriTether, AFWatchdogTimer, NSMutableDictionary, NSMutableSet, NSString, SASBulletinManager, SASHeater, SASLockStateMonitor, SASRemoteRequestManager, SASSystemState, SASTestingInputController;
+@class AFMyriadCoordinator, AFPreferences, AFSiriTether, AFWatchdogTimer, NSMutableDictionary, NSMutableSet, NSString, NSTimer, SASBulletinManager, SASHeater, SASLockStateMonitor, SASRemoteRequestManager, SASSystemState, SASTestingInputController;
 @protocol OS_dispatch_queue;
 
-@interface SiriActivationService : NSObject <SASRequestOptionsBuilderDataSource, SASHeaterDelegate, AFMyriadDelegate, SASLockStateMonitorDelegate, SASBulletinManagerDelegate>
+@interface SiriActivationService : NSObject <SASRequestOptionsBuilderDataSource, SASHeaterDelegate, AFMyriadDelegate, SASLockStateMonitorDelegate, SASBulletinManagerDelegate, SASStateChangeListener>
 {
     CDUnknownBlockType _buttonTrigger;
     _Bool _activationHandled;
@@ -23,10 +24,13 @@
     AFMyriadCoordinator *_myriad;
     NSObject<OS_dispatch_queue> *_voiceTriggerDispatchQueue;
     NSObject<OS_dispatch_queue> *_watchdogQueue;
+    NSTimer *_B188ActivationTimer;
     _Bool _xcTestingActive;
     _Bool _siriTetherIsAttached;
     _Bool _preheated;
     _Bool _voiceTriggerNotifyTokenIsValid;
+    _Bool _buttonDownHasOccurredSinceActivation;
+    _Bool _canActivateFromDirectActionSource;
     SASSystemState *_systemState;
     AFPreferences *_afPreferences;
     SASLockStateMonitor *_lockStateMonitor;
@@ -34,6 +38,7 @@
     NSMutableSet *_activePresentations;
     NSMutableDictionary *_preparingPresentations;
     long long _requestState;
+    NSMutableDictionary *_sources;
     SASHeater *_heater;
     AFSiriTether *_siriTether;
     double _preparationTimestamp;
@@ -48,6 +53,8 @@
 
 + (id)new;
 + (id)service;
+@property(nonatomic) _Bool canActivateFromDirectActionSource; // @synthesize canActivateFromDirectActionSource=_canActivateFromDirectActionSource;
+@property(nonatomic) _Bool buttonDownHasOccurredSinceActivation; // @synthesize buttonDownHasOccurredSinceActivation=_buttonDownHasOccurredSinceActivation;
 @property(retain, nonatomic) NSMutableDictionary *avExternalButtonEvents; // @synthesize avExternalButtonEvents=_avExternalButtonEvents;
 @property(retain, nonatomic) AFWatchdogTimer *dismissalTimer; // @synthesize dismissalTimer=_dismissalTimer;
 @property(retain, nonatomic) AFWatchdogTimer *activationTimer; // @synthesize activationTimer=_activationTimer;
@@ -61,6 +68,7 @@
 @property(nonatomic) _Bool siriTetherIsAttached; // @synthesize siriTetherIsAttached=_siriTetherIsAttached;
 @property(retain, nonatomic) AFSiriTether *siriTether; // @synthesize siriTether=_siriTether;
 @property(retain, nonatomic) SASHeater *heater; // @synthesize heater=_heater;
+@property(retain, nonatomic) NSMutableDictionary *sources; // @synthesize sources=_sources;
 @property(nonatomic) long long requestState; // @synthesize requestState=_requestState;
 @property(retain, nonatomic) NSMutableDictionary *preparingPresentations; // @synthesize preparingPresentations=_preparingPresentations;
 @property(retain, nonatomic) NSMutableSet *activePresentations; // @synthesize activePresentations=_activePresentations;
@@ -70,14 +78,19 @@
 @property(retain, nonatomic) AFPreferences *afPreferences; // @synthesize afPreferences=_afPreferences;
 @property(retain, nonatomic) SASSystemState *systemState; // @synthesize systemState=_systemState;
 - (void).cxx_destruct;
+- (void)callStateChangedToIsActive:(_Bool)arg1 isOutgoing:(_Bool)arg2;
 - (void)bulletinManagerDidChangeBulletins:(id)arg1;
 - (void)markBulletinWithIdentifier:(id)arg1 asRead:(_Bool)arg2;
 - (id)bulletinForIdentifier:(id)arg1;
 - (id)bulletinsOnLockScreen;
 - (id)allBulletins;
+- (void)_watchdogQueue_stopDismissalWatchdogTimerIfNeeded;
 - (void)stopDismissalWatchdogTimerIfNeeded;
+- (void)_watchdogQueue_startDismissalWatchdogTimer;
 - (void)startDismissalWatchdogTimer;
+- (void)_watchdogQueue_stopActivationWatchdogTimerIfNeeded;
 - (void)stopActivationWatchdogTimerIfNeeded;
+- (void)_watchdogQueue_startActivationWatchdogTimerForPresentationServer:(id)arg1;
 - (void)startActivationWatchdogTimerForPresentationServer:(id)arg1;
 - (void)didChangeLockState:(unsigned long long)arg1;
 - (void)shouldContinue:(id)arg1;
@@ -89,7 +102,6 @@
 - (void)heaterSuggestsDefrosting:(id)arg1;
 - (_Bool)_isInitialRequest;
 - (unsigned long long)requestOptionsBuilder:(id)arg1 currentLockStateForActivation:(id)arg2;
-- (id)requestOptionsBuilder:(id)arg1 overriddenPresentationIdentifierForCurrentPresentationIdentifier:(long long)arg2 withActivation:(id)arg3;
 - (id)requestOptionsBuilder:(id)arg1 optionsForOverriding:(id)arg2 withActiviation:(id)arg3;
 - (id)requestOptionsBuilder:(id)arg1 uiPresentationIdentifierWithActivation:(id)arg2 activationPresentation:(long long)arg3;
 - (_Bool)requestOptionsBuilder:(id)arg1 isAcousticIdAllowedWithActiviation:(id)arg2;
@@ -113,8 +125,9 @@
 - (void)activationRequestFromSpotlightWithContext:(id)arg1;
 - (void)activationRequestFromSimpleActivation:(long long)arg1;
 - (void)activationRequestFromBreadcrumb;
+- (void)activationRequestFromVoiceTriggerWithContext:(id)arg1;
 - (void)activationRequestFromContinuityWithContext:(id)arg1;
-- (void)activationRequestFromDirectActionEvent:(long long)arg1 context:(id)arg2;
+- (void)activationRequestFromDirectActionEvent:(long long)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_buttonIsAVExternalButton:(long long)arg1;
 - (void)_recordTimeIfNeededForButtonIdentifier:(long long)arg1 buttonDownTimestamp:(double)arg2;
 - (void)_handleTapSynthesisIfNeededForButtonIdentifier:(long long)arg1 buttonUpTimestamp:(double)arg2;
@@ -125,12 +138,23 @@
 - (void)_performOrEnqueueButtonAction:(CDUnknownBlockType)arg1;
 - (void)cancelPrewarmFromButtonIdentifier:(long long)arg1;
 - (void)prewarmFromButtonIdentifier:(long long)arg1 longPressInterval:(double)arg2;
+- (void)deactivationRequestFromButtonIdentifier:(long long)arg1 context:(id)arg2 options:(id)arg3;
 - (void)activationRequestFromButtonIdentifier:(long long)arg1 context:(id)arg2;
+- (void)_B188ActivationEvent:(long long)arg1 context:(id)arg2 options:(id)arg3;
+- (_Bool)isConnectedTo188;
+- (_Bool)presentationsAreIdleAndQuiet;
+- (void)unregisterActivationSourceIdentifier:(id)arg1;
+- (void)registerActivationSource:(id)arg1 withIdentifier:(id)arg2;
 - (void)siriPresentationFailureWithIdentifier:(long long)arg1 error:(id)arg2;
 - (void)siriPresentationDismissedWithIdentifier:(long long)arg1;
 - (void)siriPresentationDisplayedWithIdentifier:(long long)arg1;
 - (void)unregisterSiriPresentationIdentifier:(long long)arg1;
 - (void)registerSiriPresentation:(id)arg1 withIdentifier:(long long)arg2;
+- (void)_notifySourcesOfCanActivateFromDirectActionSourceChange:(_Bool)arg1;
+- (void)_updateCanActivateFromDirectActionSource;
+- (void)_notifySourcesOfActiveChange:(_Bool)arg1;
+- (_Bool)_shouldTreatAsActive:(long long)arg1;
+- (void)dealloc;
 - (id)init;
 - (id)_init;
 

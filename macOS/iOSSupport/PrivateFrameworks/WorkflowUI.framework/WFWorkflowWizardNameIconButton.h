@@ -6,18 +6,21 @@
 
 #import <UIKit/UIButton.h>
 
-@class UIImageView, WFWorkflowIcon;
+@class NSData, UIImageView, WFWorkflowIcon;
 
 @interface WFWorkflowWizardNameIconButton : UIButton
 {
     WFWorkflowIcon *_icon;
+    NSData *_customImageData;
     UIImageView *_backgroundImageView;
 }
 
-@property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
-@property(retain, nonatomic) WFWorkflowIcon *icon; // @synthesize icon=_icon;
+@property(nonatomic) __weak UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
+@property(readonly, nonatomic) NSData *customImageData; // @synthesize customImageData=_customImageData;
+@property(readonly, nonatomic) WFWorkflowIcon *icon; // @synthesize icon=_icon;
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
+- (void)setIcon:(id)arg1 customImageData:(id)arg2;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

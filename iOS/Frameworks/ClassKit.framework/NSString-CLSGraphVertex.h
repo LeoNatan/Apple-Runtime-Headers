@@ -10,5 +10,6 @@
 
 @interface NSString (CLSGraphVertex) <CLSGraphVertex>
 @property(readonly, nonatomic) id vertexID;
+@property(readonly, nonatomic) NSString *sha224;
 @end
 

@@ -13,6 +13,7 @@
 + (double)timeIntervalForAutomaticTabClosingInterval:(unsigned long long)arg1;
 + (id)promptTitleForAutomaticTabClosingInterval:(unsigned long long)arg1;
 + (id)settingsTitleForAutomaticTabClosingInterval:(unsigned long long)arg1;
++ (id)analyticsTitleForAutomaticTabClosingInterval:(unsigned long long)arg1;
 + (void)resetAutomaticTabClosingIntervalPreference;
 + (void)setAutomaticTabClosingInterval:(unsigned long long)arg1;
 + (unsigned long long)automaticTabClosingInterval;

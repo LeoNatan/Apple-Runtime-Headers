@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     NSString *_excelFormatString;
     NSString *_baseICUFormatString;
     _Bool _isNegativeRed;
-    unsigned short _currencySymbol;
+    _Bool _hasLocales;
     int _formatType;
 }
 

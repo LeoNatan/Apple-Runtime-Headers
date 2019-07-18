@@ -11,8 +11,8 @@
 @protocol WFSiriUserInterface <WFUserInterface>
 @property(readonly, nonatomic) long long executionContext;
 @property(readonly, copy, nonatomic) NSArray *airPlayRouteIDs;
+- (void)configureIntent:(INIntent *)arg1;
 - (BOOL)executeIntent:(INIntent *)arg1 completionHandler:(void (^)(INInteraction *, NSError *))arg2;
-- (void)setAirPlayAudioRoutesIfNecessaryWithCompletionHandler:(void (^)(void))arg1;
 - (void)openURL:(NSURL *)arg1 completionHandler:(void (^)(BOOL))arg2;
 - (void)openInteractionInApp:(INInteraction *)arg1 completionHandler:(void (^)(BOOL, NSError *))arg2;
 - (void)showInteractionIfNeeded:(INInteraction *)arg1 requiringConfirmation:(BOOL)arg2 requiringAuthentication:(BOOL)arg3 executionStage:(long long)arg4 completionHandler:(void (^)(BOOL, NSError *))arg5;

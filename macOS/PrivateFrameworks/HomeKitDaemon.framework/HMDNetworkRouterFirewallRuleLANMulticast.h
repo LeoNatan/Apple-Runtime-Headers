@@ -6,35 +6,21 @@
 
 #import <HomeKitDaemon/HMDNetworkRouterFirewallRuleLAN.h>
 
-#import <HomeKitDaemon/HMDNetworkRouterFirewallRuleLANMulticast-Protocol.h>
+@class HMFNetAddress;
 
-@class HMFNetAddress, NSDictionary, NSString;
-
-@interface HMDNetworkRouterFirewallRuleLANMulticast : HMDNetworkRouterFirewallRuleLAN <HMDNetworkRouterFirewallRuleLANMulticast>
+@interface HMDNetworkRouterFirewallRuleLANMulticast : HMDNetworkRouterFirewallRuleLAN
 {
     unsigned short _port;
     HMFNetAddress *_ipAddress;
 }
 
++ (id)createWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(BOOL)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(BOOL)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(BOOL)arg7 ruleDictionary:(struct NSDictionary *)arg8;
 @property(readonly, nonatomic) unsigned short port; // @synthesize port=_port;
 @property(readonly, nonatomic) HMFNetAddress *ipAddress; // @synthesize ipAddress=_ipAddress;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSDictionary *prettyJSONDictionary;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(BOOL)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(BOOL)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(BOOL)arg7;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(BOOL)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(BOOL)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(BOOL)arg7 ruleDictionary:(struct NSDictionary *)arg8;
+- (struct NSDictionary *)prettyJSONDictionary;
+- (id)attributeDescriptions;
 - (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(BOOL)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(BOOL)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(BOOL)arg7 ipAddress:(id)arg8 port:(unsigned short)arg9;
-
-// Remaining properties
-@property(readonly, nonatomic, getter=areConnectionsWithOtherAccessoriesAllowed) BOOL allowInterAccessoryConnections;
-@property(readonly, nonatomic, getter=isCritical) BOOL critical;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) unsigned char direction;
-@property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) NSString *name;
-@property(readonly, nonatomic) unsigned long long purpose;
-@property(readonly, nonatomic, getter=isRequiredForHAPFunctionality) BOOL requiredForHAPFunctionality;
-@property(readonly) Class superclass;
 
 @end
 

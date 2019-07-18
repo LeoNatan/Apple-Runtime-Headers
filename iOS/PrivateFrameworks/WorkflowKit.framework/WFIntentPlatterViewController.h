@@ -66,6 +66,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) struct CGRect finalPresentedFrameOfViewForPreview;
 @property(readonly) unsigned long long hash;
+@property(nonatomic, getter=isHighlighted) _Bool highlighted;
 @property(readonly) Class superclass;
 
 @end

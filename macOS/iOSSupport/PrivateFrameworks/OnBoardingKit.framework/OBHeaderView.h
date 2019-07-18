@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, OBHeaderAccessoryButton, OBImageView, OBTemplateHeaderDetailLabel, OBTemplateLabel;
+@class NSArray, OBHeaderAccessoryButton, OBImageView, OBTemplateHeaderDetailLabel, OBTemplateLabel, UIImage;
 
 @interface OBHeaderView : UIView
 {
@@ -18,8 +18,10 @@
     NSArray *_detailLabelConstraints;
     OBHeaderAccessoryButton *_accessoryButton;
     unsigned long long _templateType;
+    UIImage *_originalIconImage;
 }
 
+@property(retain, nonatomic) UIImage *originalIconImage; // @synthesize originalIconImage=_originalIconImage;
 @property(nonatomic) unsigned long long templateType; // @synthesize templateType=_templateType;
 @property(retain, nonatomic) OBHeaderAccessoryButton *accessoryButton; // @synthesize accessoryButton=_accessoryButton;
 @property(retain, nonatomic) NSArray *detailLabelConstraints; // @synthesize detailLabelConstraints=_detailLabelConstraints;
@@ -47,6 +49,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)addAccessoryButton:(id)arg1;
 - (void)setDetailedTextHeader:(id)arg1 detailedTextBody:(id)arg2;
+- (void)setLanguage:(id)arg1;
 - (void)setDetailText:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setIcon:(id)arg1 accessibilityLabel:(id)arg2;

@@ -19,10 +19,12 @@
         unsigned int isHomePodInUltimateMode:1;
     } _has;
     BOOL _isHomePodInUltimateMode;
+    BOOL __encodeLegacyGloryData;
     int _deviceIdiom;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) BOOL isHomePodInUltimateMode; // @synthesize isHomePodInUltimateMode=_isHomePodInUltimateMode;
 @property(nonatomic) int deviceIdiom; // @synthesize deviceIdiom=_deviceIdiom;
 - (id)dictionaryRepresentation;

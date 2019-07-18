@@ -6,18 +6,19 @@
 
 #import <PassKitUI/PKPeerPaymentActionViewController.h>
 
+#import <PassKitUI/PKEnterCurrencyAmountPassViewDelegate-Protocol.h>
 #import <PassKitUI/PKEnterCurrencyAmountViewDelegate-Protocol.h>
 #import <PassKitUI/PKNumberPadSuggestionsViewDelegate-Protocol.h>
 #import <PassKitUI/PKPeerPaymentActionControllerDelegate-Protocol.h>
 
-@class NSString, PKEnterCurrencyAmountView, PKEnterValueNewBalanceView, PKNumberPadSuggestionsView, PKNumericSuggestionsEnterValueAlgorithm;
+@class NSString, PKEnterCurrencyAmountPassView, PKNumberPadSuggestionsView, PKNumericSuggestionsEnterValueAlgorithm, UIScrollView;
 
-@interface PKPeerPaymentActionAddMoneyViewController : PKPeerPaymentActionViewController <PKEnterCurrencyAmountViewDelegate, PKNumberPadSuggestionsViewDelegate, PKPeerPaymentActionControllerDelegate>
+@interface PKPeerPaymentActionAddMoneyViewController : PKPeerPaymentActionViewController <PKEnterCurrencyAmountViewDelegate, PKNumberPadSuggestionsViewDelegate, PKPeerPaymentActionControllerDelegate, PKEnterCurrencyAmountPassViewDelegate>
 {
     PKNumericSuggestionsEnterValueAlgorithm *_suggestionGenerator;
-    PKEnterCurrencyAmountView *_enterCurrencyAmountView;
-    PKEnterValueNewBalanceView *_newBalanceView;
     PKNumberPadSuggestionsView *_suggestionView;
+    UIScrollView *_scrollView;
+    PKEnterCurrencyAmountPassView *_amountPassView;
 }
 
 - (void).cxx_destruct;
@@ -38,6 +39,7 @@
 - (void)enterCurrencyAmountViewDidChangeAmount:(id)arg1;
 - (_Bool)enterCurrencyAmountView:(id)arg1 shouldChangeAmountFrom:(id)arg2 to:(id)arg3;
 - (void)numberPadSuggestionsView:(id)arg1 didSelectSuggestion:(id)arg2;
+- (void)enterCurrencyAmountPassViewDidLoadPassSnapshot:(id)arg1;
 - (void)updateAccountValues;
 - (void)updateFirstResponder;
 - (void)willDismissViewController;

@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)_context;
 - (void)_drawWithoutEffectInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2;
-- (struct CGImage *)createCGImage;
+- (void)_prepareforDrawingInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

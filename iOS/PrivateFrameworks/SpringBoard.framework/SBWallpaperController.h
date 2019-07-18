@@ -18,7 +18,7 @@
 #import <SpringBoard/UIWindowDelegate-Protocol.h>
 #import <SpringBoard/_UISettingsKeyObserver-Protocol.h>
 
-@class NSHashTable, NSMapTable, NSMutableSet, NSString, PTSingleTestRecipe, SBFWallpaperConfigurationManager, SBFWallpaperView, SBRootSettings, SBWallpaperAggdLogger, SBWallpaperStyleInfo, UIGestureRecognizer, UIScreen, UIView, UIWindow;
+@class NSHashTable, NSMapTable, NSMutableSet, NSString, PTSingleTestRecipe, SBFWallpaperConfigurationManager, SBFWallpaperView, SBRootSettings, SBWallpaperAggdLogger, SBWallpaperStyleInfo, UIGestureRecognizer, UIScreen, UITraitCollection, UIView, UIWindow;
 @protocol SBFIrisWallpaperView, SBUIWallpaperOverlay;
 
 @interface SBWallpaperController : NSObject <SBFLegibilitySettingsProviderDelegate, SBFWallpaperViewInternalObserver, SBUIActiveOrientationObserver, _UISettingsKeyObserver, SBFWallpaperConfigurationManagerDelegate, BSDescriptionProviding, SBWallpaperServerDelegate, SBFWallpaperViewDelegate, SBWallpaperWindowDelegate, UIWindowDelegate, CSWallpaperOverlayHosting>
@@ -60,11 +60,13 @@
     SBWallpaperStyleInfo *_lockscreenStyleInfo;
     SBWallpaperAggdLogger *_wallpaperAggdLogger;
     SBRootSettings *_rootSettings;
+    UITraitCollection *_fakeBlurViewOverrideTraitCollection;
 }
 
 + (id)substitutionFlatColorForWallpaperName:(id)arg1;
 + (id)accessAuthenticator;
 + (id)sharedInstance;
+@property(retain, nonatomic) UITraitCollection *fakeBlurViewOverrideTraitCollection; // @synthesize fakeBlurViewOverrideTraitCollection=_fakeBlurViewOverrideTraitCollection;
 @property(retain, nonatomic) SBRootSettings *rootSettings; // @synthesize rootSettings=_rootSettings;
 @property(retain, nonatomic) SBWallpaperAggdLogger *wallpaperAggdLogger; // @synthesize wallpaperAggdLogger=_wallpaperAggdLogger;
 @property(readonly, nonatomic) SBWallpaperStyleInfo *lockscreenStyleInfo; // @synthesize lockscreenStyleInfo=_lockscreenStyleInfo;
@@ -89,7 +91,6 @@
 - (void)wallpaperServer:(id)arg1 fetchThumbnailDataForVariant:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updateWallpaper:(id)arg1 forWallpaperDimming:(_Bool)arg2;
 - (void)updateWallpaper:(id)arg1 forWallpaperMode:(long long)arg2;
-- (_Bool)needsWallpaperDimmingTreatment;
 - (id)wallpaperView:(id)arg1 wallpaperConfigurationIncludingValueTypes:(unsigned long long)arg2;
 - (void)_updateAndPrewarmWallpapers;
 - (void)wallpaperConfigurationManager:(id)arg1 didChangeWallpaperConfigurationForVariants:(long long)arg2;
@@ -156,7 +157,7 @@
 - (void)_clearWallpaperView:(id)arg1;
 - (id)_makeWallpaperViewWithConfiguration:(id)arg1 forVariant:(long long)arg2 shared:(_Bool)arg3 options:(unsigned long long)arg4;
 - (void)_updateSeparateWallpaperForVariants:(long long)arg1 options:(unsigned long long)arg2 wallpaperMode:(long long)arg3;
-- (void)_precacheStyles:(id)arg1;
+- (void)_precacheStyles:(id)arg1 usingTraitCollection:(id)arg2;
 - (void)_updateSharedWallpaperWithOptions:(unsigned long long)arg1 wallpaperMode:(long long)arg2;
 - (_Bool)_isWallpaperView:(id)arg1 displayingWallpaperWithConfiguration:(id)arg2 forVariant:(long long)arg3;
 - (void)_updateWallpaperForLocations:(long long)arg1 options:(unsigned long long)arg2 wallpaperMode:(long long)arg3 withCompletion:(CDUnknownBlockType)arg4;

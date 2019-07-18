@@ -9,6 +9,7 @@
 @class NSDictionary, NSSet, NSString, TUHandle;
 
 @protocol TUCallFilterControllerActions <NSObject>
+- (BOOL)isUnknownAddress:(NSString *)arg1 normalizedAddress:(NSString *)arg2 forBundleIdentifier:(NSString *)arg3;
 - (BOOL)willRestrictAddresses:(NSSet *)arg1 forBundleIdentifier:(NSString *)arg2;
 - (NSDictionary *)policyForAddresses:(NSSet *)arg1 forBundleIdentifier:(NSString *)arg2;
 - (BOOL)shouldRestrictAddresses:(NSSet *)arg1 forBundleIdentifier:(NSString *)arg2;

@@ -22,7 +22,7 @@
 @property(retain, nonatomic) NSMutableArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UITextView *messageView; // @synthesize messageView=_messageView;
 @property(nonatomic) struct UIEdgeInsets messageInsets; // @synthesize messageInsets=_messageInsets;
-@property(nonatomic) id <HUAboutResidentDeviceFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <HUAboutResidentDeviceFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)_linkTextAttributes;
 - (id)_textAttributes;

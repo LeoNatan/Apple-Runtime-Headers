@@ -6,17 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class MPModelObject;
+@class ICUserIdentity, MPCloudController, MPCloudServiceStatusController, MPModelObject;
 
 @interface MPLibraryAddStatusObserver : NSObject
 {
     _Bool _needsStatusUpdate;
+    MPCloudController *_cloudController;
+    MPCloudServiceStatusController *_cloudServiceStatusController;
     struct MPLibraryAddStatusObserverConfiguration _configuration;
     unsigned long long _currentStatus;
     CDUnknownBlockType _statusBlock;
     MPModelObject *_identifyingModelObject;
+    ICUserIdentity *_userIdentity;
 }
 
+@property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 @property(readonly, nonatomic) MPModelObject *identifyingModelObject; // @synthesize identifyingModelObject=_identifyingModelObject;
 @property(readonly, nonatomic) struct MPLibraryAddStatusObserverConfiguration configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) CDUnknownBlockType statusBlock; // @synthesize statusBlock=_statusBlock;
@@ -32,6 +36,7 @@
 - (void)setConfiguration:(struct MPLibraryAddStatusObserverConfiguration)arg1 identifyingModelObject:(id)arg2;
 - (void)configureWithModelObject:(id)arg1;
 - (void)dealloc;
+- (id)initWithUserIdentity:(id)arg1;
 - (id)init;
 
 @end

@@ -29,7 +29,7 @@
 - (void)faceDidChange;
 - (void)didSelectRow:(long long)arg1;
 - (_Bool)_canSelectRow:(long long)arg1;
-- (id)initWithTableView:(id)arg1 face:(id)arg2 inGallery:(_Bool)arg3 editOptionCollection:(id)arg4 faceView:(id)arg5;
+- (id)initWithTableViewController:(id)arg1 face:(id)arg2 inGallery:(_Bool)arg3 editOptionCollection:(id)arg4 faceView:(id)arg5;
 
 // Remaining properties
 @property(retain, nonatomic) NSMutableArray *rows; // @dynamic rows;

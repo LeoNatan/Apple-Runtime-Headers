@@ -22,7 +22,6 @@
 - (int)readWeightsBias:(struct __sFILE *)arg1 weights:(float *)arg2 bias:(float *)arg3 inputDim:(int)arg4 outputDim:(int)arg5 quantFactor:(int)arg6;
 - (int)constructBlock:(id)arg1 context:(id)arg2;
 - (void)dealloc;
-- (int)initializeRest;
 - (id)initWithParameters:(int)arg1 NeuronType:(int)arg2;
 
 @end

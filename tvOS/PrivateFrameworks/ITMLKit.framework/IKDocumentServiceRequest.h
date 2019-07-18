@@ -17,12 +17,12 @@
         _Bool hasResponseDictionaryDidChange;
         _Bool hasDocumentDidChange;
     } _dsrDelegateFlags;
-    NSDictionary *_respondeDictionary;
+    NSDictionary *_responseDictionary;
     IKAppDocument *_appDocument;
 }
 
 @property(readonly) IKAppDocument *appDocument; // @synthesize appDocument=_appDocument;
-@property(readonly, copy) NSDictionary *respondeDictionary; // @synthesize respondeDictionary=_respondeDictionary;
+@property(readonly, copy) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 - (void).cxx_destruct;
 - (void)didCloseViewModelLink:(id)arg1 withErrorDictionary:(id)arg2;
 - (void)documentDidChangeForViewModelLink:(id)arg1;

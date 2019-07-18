@@ -8,12 +8,17 @@
 
 @interface DMFFetchCertificatesRequest : DMFTaskRequest
 {
+    _Bool _managedOnly;
 }
 
++ (_Bool)supportsSecureCoding;
 + (_Bool)isPermittedOnUserConnection;
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
+@property(nonatomic) _Bool managedOnly; // @synthesize managedOnly=_managedOnly;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

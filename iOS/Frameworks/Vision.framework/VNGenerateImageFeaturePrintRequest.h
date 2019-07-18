@@ -10,6 +10,7 @@
 {
 }
 
++ (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
 + (Class)configurationClass;
 - (CDUnknownBlockType)resultsSortingComparator;
 - (_Bool)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;

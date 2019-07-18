@@ -18,9 +18,9 @@
     WFDatabase *_database;
 }
 
++ (id)recordProperties;
 + (Class)recordClass;
 + (int)messageType;
-+ (void)initialize;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 @property(copy, nonatomic) WFRecord *record; // @synthesize record=_record;
 @property(readonly, nonatomic) long long changeType;

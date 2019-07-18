@@ -86,6 +86,7 @@
 - (_Bool)_validateDatesAndRecurrencesGivenSpan:(long long)arg1 error:(id *)arg2;
 - (_Bool)validateRecurrenceRule:(id)arg1 error:(id *)arg2;
 @property(copy, nonatomic) NSString *recurrenceSet;
+- (unsigned long long)countOfAttendeeProposedTimes;
 - (_Bool)hasAttendeeProposedTimes;
 - (id)_dateForNextOccurrence;
 - (void)rollback;
@@ -213,6 +214,7 @@
 - (id)lunarCalendarString;
 - (void)setLunarCalendarString:(id)arg1;
 - (void)setBirthdayContact:(id)arg1;
+- (id)birthdayContactName;
 @property(readonly, nonatomic) NSString *birthdayContactIdentifier;
 @property(readonly, nonatomic) long long birthdayPersonID;
 - (long long)_parentParticipationStatus;

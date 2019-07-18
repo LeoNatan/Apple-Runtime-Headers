@@ -8,7 +8,7 @@
 
 #import <CameraUI/NSSecureCoding-Protocol.h>
 
-@class NSData, NSDate, NSError, NSString, NSURL;
+@class CAMCaptureCoordinationInfo, NSData, NSDate, NSError, NSString, NSURL;
 
 @interface CAMVideoLocalPersistenceResult : NSObject <NSSecureCoding>
 {
@@ -17,9 +17,11 @@
     NSURL *_linkedDestinationURL;
     NSURL *_filteredLinkedDestinationURL;
     NSString *_localPersistenceUUID;
+    CDStruct_79c71658 _dimensions;
     NSString *_stillPersistenceUUID;
     NSDate *_creationDate;
     NSData *_adjustmentsData;
+    CAMCaptureCoordinationInfo *_coordinationInfo;
     NSError *_error;
     CDStruct_1b6d18a9 _duration;
     CDStruct_1b6d18a9 _stillDisplayTime;
@@ -27,10 +29,12 @@
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
+@property(readonly, nonatomic) CAMCaptureCoordinationInfo *coordinationInfo; // @synthesize coordinationInfo=_coordinationInfo;
 @property(readonly, nonatomic) NSData *adjustmentsData; // @synthesize adjustmentsData=_adjustmentsData;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 stillDisplayTime; // @synthesize stillDisplayTime=_stillDisplayTime;
 @property(readonly, copy, nonatomic) NSString *stillPersistenceUUID; // @synthesize stillPersistenceUUID=_stillPersistenceUUID;
+@property(readonly, nonatomic) CDStruct_79c71658 dimensions; // @synthesize dimensions=_dimensions;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 duration; // @synthesize duration=_duration;
 @property(readonly, copy, nonatomic) NSString *localPersistenceUUID; // @synthesize localPersistenceUUID=_localPersistenceUUID;
 @property(readonly, copy, nonatomic) NSURL *filteredLinkedDestinationURL; // @synthesize filteredLinkedDestinationURL=_filteredLinkedDestinationURL;
@@ -40,7 +44,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 filteredLocalDestinationURL:(id)arg2 linkedURL:(id)arg3 filteredLinkedURL:(id)arg4 UUID:(id)arg5 duration:(CDStruct_1b6d18a9)arg6 stillPersistenceUUID:(id)arg7 stillDisplayTime:(CDStruct_1b6d18a9)arg8 creationDate:(id)arg9 adjustmentsData:(id)arg10 error:(id)arg11;
+- (id)initWithURL:(id)arg1 filteredLocalDestinationURL:(id)arg2 linkedURL:(id)arg3 filteredLinkedURL:(id)arg4 UUID:(id)arg5 duration:(CDStruct_1b6d18a9)arg6 dimensions:(CDStruct_79c71658)arg7 stillPersistenceUUID:(id)arg8 stillDisplayTime:(CDStruct_1b6d18a9)arg9 creationDate:(id)arg10 adjustmentsData:(id)arg11 coordinationInfo:(id)arg12 error:(id)arg13;
 
 @end
 

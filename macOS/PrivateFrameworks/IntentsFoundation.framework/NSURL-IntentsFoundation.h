@@ -7,6 +7,6 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (IntentsFoundation)
-- (BOOL)_inf_isContainedByDirectoryAtURL:(id)arg1;
+- (BOOL)if_isContainedByDirectoryAtURL:(id)arg1;
 @end
 

@@ -36,8 +36,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) VNMetalContext *metalContext; // @synthesize metalContext=_metalContext;
 @property(readonly, nonatomic) unsigned long long requestRevision; // @synthesize requestRevision=_requestRevision;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
-@property(readonly, copy, nonatomic) NSDictionary *configurationOptions; // @synthesize configurationOptions=_configurationOptions;
+@property(readonly, copy) NSDictionary *configurationOptions; // @synthesize configurationOptions=_configurationOptions;
 - (void).cxx_destruct;
+- (void)updateConfigurationOptionsWithObject:(id)arg1 forKey:(id)arg2;
 - (id)validatedProcessingDeviceInOptions:(id)arg1 error:(id *)arg2;
 - (_Bool)supportsProcessingDevice:(id)arg1;
 - (id)requiredCancellerInOptions:(id)arg1 error:(id *)arg2;

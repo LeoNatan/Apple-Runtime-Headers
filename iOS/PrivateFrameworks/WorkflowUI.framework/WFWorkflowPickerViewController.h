@@ -4,24 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <UIKit/UITableViewController.h>
 
-#import <WorkflowUI/UISearchBarDelegate-Protocol.h>
-#import <WorkflowUI/UITableViewDataSource-Protocol.h>
-#import <WorkflowUI/UITableViewDelegate-Protocol.h>
+#import <WorkflowUI/UISearchResultsUpdating-Protocol.h>
 
-@class NSArray, NSString, UISearchBar, UITableView, WFVariable;
+@class NSArray, NSString, WFVariable;
 @protocol WFVariableProvider, WFWorkflowPickerViewControllerDelegate;
 
-@interface WFWorkflowPickerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface WFWorkflowPickerViewController : UITableViewController <UISearchResultsUpdating>
 {
     id <WFWorkflowPickerViewControllerDelegate> _delegate;
     NSArray *_workflowNames;
     id <WFVariableProvider> _variableProvider;
     WFVariable *_selectedVariable;
-    unsigned long long _selectedWorkflowIndex;
-    UITableView *_tableView;
-    UISearchBar *_searchBar;
+    NSString *_selectedWorkflowName;
     NSArray *_workflows;
     NSArray *_variables;
     NSArray *_filteredWorkflows;
@@ -32,28 +28,22 @@
 @property(retain, nonatomic) NSArray *filteredWorkflows; // @synthesize filteredWorkflows=_filteredWorkflows;
 @property(retain, nonatomic) NSArray *variables; // @synthesize variables=_variables;
 @property(retain, nonatomic) NSArray *workflows; // @synthesize workflows=_workflows;
-@property(retain, nonatomic) UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
-@property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-@property(nonatomic) unsigned long long selectedWorkflowIndex; // @synthesize selectedWorkflowIndex=_selectedWorkflowIndex;
+@property(copy, nonatomic) NSString *selectedWorkflowName; // @synthesize selectedWorkflowName=_selectedWorkflowName;
 @property(retain, nonatomic) WFVariable *selectedVariable; // @synthesize selectedVariable=_selectedVariable;
 @property(readonly, nonatomic) id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
 @property(readonly, copy, nonatomic) NSArray *workflowNames; // @synthesize workflowNames=_workflowNames;
 @property(nonatomic) __weak id <WFWorkflowPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)keyboardWillHide:(id)arg1;
-- (void)keyboardWillShow:(id)arg1;
+- (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)reloadSearchResults;
 - (id)workflowIconForWorkflow:(id)arg1;
 - (void)cancel;
-- (void)searchBarSearchButtonClicked:(id)arg1;
-- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
-- (void)viewDidLoad;
-- (void)dealloc;
+- (void)loadView;
 - (id)initWithWorkflowNames:(id)arg1 variableProvider:(id)arg2 allowedVariableTypes:(id)arg3;
 
 // Remaining properties

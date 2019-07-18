@@ -127,7 +127,8 @@
 - (void)_eventQueue_setAggregatedStatus:(id)arg1;
 - (id)aggregatedStatus;
 - (void)setAggregatedStatus:(id)arg1;
-- (void)_eventQueue_setMainAttributedString:(id)arg1 shouldDisplay:(_Bool)arg2;
+- (void)_eventQueue_setMainAttributedString:(id)arg1 shouldDisplay:(_Bool)arg2 forceUpdate:(_Bool)arg3;
+- (id)_eventQueue_mainAttributedString;
 - (id)mainAttributedString;
 - (void)setMainAttributedString:(id)arg1 forceUpdate:(_Bool)arg2;
 - (void)setMainAttributedString:(id)arg1;
@@ -182,6 +183,7 @@
 - (void)_deviceConnectedHandler:(id)arg1;
 - (void)_disableAutoDetect;
 - (void)_enableAutoDetect;
+- (void)_eventQueue_refreshEightDotEnabledOnDisplays;
 - (void)_refreshEightDotEnabledOnDisplays;
 - (void)tokenizeString:(id)arg1 intoFormatter:(id)arg2 selection:(struct _NSRange *)arg3;
 - (_Bool)isValid;

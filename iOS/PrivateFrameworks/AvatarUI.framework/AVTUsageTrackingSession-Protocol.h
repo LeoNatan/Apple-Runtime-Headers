@@ -4,14 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSString;
 @protocol AVTAvatarRecord, AVTAvatarStore;
 
 @protocol AVTUsageTrackingSession
-- (void)didResumeFaceTracking;
-- (void)didPauseFaceTracking;
+- (void)didOpenStickersAppFromRecents;
+- (void)didTapStickerFromRecents:(NSString *)arg1;
+- (void)didChangeCurrentAvatarInStickers:(id <AVTAvatarRecord>)arg1;
+- (void)didTapStickerFromStickersApp:(NSString *)arg1 withAvatar:(id <AVTAvatarRecord>)arg2;
+- (void)didPeelOffStickerFromStickersApp:(NSString *)arg1 withAvatar:(id <AVTAvatarRecord>)arg2;
 - (void)didStopFaceTrackingInCarousel;
 - (void)didChangeCurrentAvatarInCarousel:(id <AVTAvatarRecord>)arg1;
 - (void)didStartFaceTrackingInCarouselWithAvatar:(id <AVTAvatarRecord>)arg1;
+- (void)didSendStickerWithAvatar:(id <AVTAvatarRecord>)arg1;
+- (void)didSendImageWithAvatar:(id <AVTAvatarRecord>)arg1;
+- (void)didReplayVideo;
+- (void)didDiscardVideoWithDuration:(double)arg1;
+- (void)didSendVideoWithAvatar:(id <AVTAvatarRecord>)arg1 duration:(double)arg2;
+- (void)didRecordVideo;
+- (void)didResumeFaceTracking;
+- (void)didPauseFaceTracking;
 - (void)didLeaveEditor;
 - (void)didEnterEditor;
 - (void)didDeleteAvatar:(id <AVTAvatarRecord>)arg1;
@@ -19,12 +31,6 @@
 - (void)didEditAvatar:(id <AVTAvatarRecord>)arg1;
 - (void)didCreateAvatar:(id <AVTAvatarRecord>)arg1;
 - (void)didShowExpandedMode;
-- (void)didSendStickerWithAvatar:(id <AVTAvatarRecord>)arg1;
-- (void)didSendImageWithAvatar:(id <AVTAvatarRecord>)arg1;
-- (void)didReplayVideo;
-- (void)didDiscardVideoWithDuration:(double)arg1;
-- (void)didSendVideoWithAvatar:(id <AVTAvatarRecord>)arg1 duration:(double)arg2;
-- (void)didRecordVideo;
 - (void)end;
 - (void)beginWithStore:(id <AVTAvatarStore>)arg1;
 @end

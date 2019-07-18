@@ -14,6 +14,7 @@
     // Error parsing type: , name: date
     // Error parsing type: , name: dateFormat
     // Error parsing type: , name: hasTime
+    // Error parsing type: , name: partOfOutOfRangeSeries
 }
 
 - (void).cxx_destruct;

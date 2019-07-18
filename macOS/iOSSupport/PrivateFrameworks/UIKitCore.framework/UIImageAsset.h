@@ -9,12 +9,12 @@
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 #import <UIKitCore/NSUIImageAsset-Protocol.h>
 
-@class CUINamedLayerStack, NSBundle, NSString, UITraitCollection, _UIAssetManager;
+@class CUINamedLayerStack, NSString, UITraitCollection, _UIAssetBundle, _UIAssetManager;
 
 @interface UIImageAsset : NSObject <NSUIImageAsset, NSSecureCoding>
 {
     _UIAssetManager *_assetManager;
-    NSBundle *_containingBundle;
+    _UIAssetBundle *_containingBundle;
     BOOL _cacheContents;
     UITraitCollection *_defaultTraitCollection;
     struct {
@@ -34,6 +34,9 @@
 @property(copy, nonatomic) CDUnknownBlockType creationBlock; // @synthesize creationBlock=_creationBlock;
 @property(readonly, nonatomic) __weak _UIAssetManager *_assetManager; // @synthesize _assetManager;
 - (void).cxx_destruct;
+- (id)_cachedRenditionWithSize:(struct CGSize)arg1 tintColor:(id)arg2 traitCollection:(id)arg3 bold:(BOOL)arg4 letterpress:(BOOL)arg5;
+- (void)_cacheRendition:(id)arg1 forSize:(struct CGSize)arg2 tintColor:(id)arg3 traitCollection:(id)arg4 bold:(BOOL)arg5 letterpress:(BOOL)arg6;
+- (id)_renditionCache:(BOOL)arg1;
 - (id)_registeredAppearanceNames;
 - (id)_lookUpRegisteredObjectForTraitCollection:(id)arg1 withAccessorWithAppearanceName:(CDUnknownBlockType)arg2;
 - (void)_disconnectFromAssetManager;

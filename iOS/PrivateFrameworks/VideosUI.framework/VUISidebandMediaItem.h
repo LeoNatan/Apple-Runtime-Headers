@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUISidebandMediaItemAssetController *assetController; // @synthesize assetController=_assetController;
 @property(retain, nonatomic) VUIVideoManagedObject *videoManagedObject; // @synthesize videoManagedObject=_videoManagedObject;
 - (void).cxx_destruct;
+- (void)_videoManagedObjectPlaybackExpirationWillChange:(id)arg1;
 - (id)imageLoadParamsWithImageType:(unsigned long long)arg1;
 - (id)downloadExpirationDate;
 - (id)episodeNumber;
@@ -39,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (id)duration;
 - (id)title;
 - (id)canonicalID;
+- (void)dealloc;
 - (id)initWithMediaLibrary:(id)arg1 videoManagedObject:(id)arg2 requestedProperties:(id)arg3;
 
 @end

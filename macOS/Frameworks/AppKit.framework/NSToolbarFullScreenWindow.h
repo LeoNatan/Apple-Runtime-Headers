@@ -71,6 +71,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_canBeSnappingTarget;
 - (BOOL)_allowsSnapping;
 - (BOOL)_shouldSnapWindowsClientSide;
+- (void)_cgsMoveWindow:(struct CGRect)arg1 moveGroup:(BOOL)arg2;
 
 @end
 

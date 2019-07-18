@@ -47,6 +47,7 @@
 - (void)clearAllOngoingPurchaseEntries;
 - (id)ongoingPurchaseEntryForProductID:(id)arg1;
 - (id)_ongoingPurchaseEntryIDForProductID:(id)arg1;
+- (_Bool)anyOngoingPurchases;
 - (_Bool)isPurchaseOngoingForTagID:(id)arg1;
 - (void)authenticateAppleIDWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)signInDetected;

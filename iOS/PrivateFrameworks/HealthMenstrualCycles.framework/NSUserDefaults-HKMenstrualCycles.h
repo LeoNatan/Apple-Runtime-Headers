@@ -10,6 +10,9 @@
 + (id)hkmc_menstrualCyclesDefaults;
 - (long long)hkmc_integerForKey:(id)arg1 defaultValue:(long long)arg2;
 @property(readonly, nonatomic) _Bool hkmc_useDemoCycles;
-@property(readonly, nonatomic) _Bool hkmc_timelineTapToLogEnabled;
+@property(readonly, nonatomic) _Bool hkmc_timelineTapToLogDisabled;
+@property(readonly, nonatomic) _Bool hkmc_timelineLogAdjacentDaysEnabled;
+@property(readonly, nonatomic) _Bool hkmc_calendarLogAdjacentDaysDisabled;
+@property(readonly, nonatomic) _Bool hkmc_analyticsDebugModeEnabled;
 @end
 

@@ -8,10 +8,12 @@
 
 #import <IntentsCore/NSCopying-Protocol.h>
 
-@class NSDictionary, NSString, NSURL, NSUserActivity;
+@class INWatchdogTimer, NSDictionary, NSString, NSURL, NSUserActivity;
 
 @interface INCAppLaunchRequest : NSObject <NSCopying>
 {
+    INWatchdogTimer *_requestTimer;
+    BOOL _supportedInCarPlay;
     NSString *_bundleIdentifier;
     NSDictionary *_options;
     NSURL *_URL;
@@ -19,11 +21,13 @@
 }
 
 + (void)initialize;
+@property(readonly, nonatomic, getter=isSupportedInCarPlay) BOOL supportedInCarPlay; // @synthesize supportedInCarPlay=_supportedInCarPlay;
 @property(readonly, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
+- (void)observeForAppLaunchWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -32,7 +36,7 @@
 - (id)initWithBundleIdentifier:(id)arg1 options:(id)arg2 URL:(id)arg3 userActivity:(id)arg4;
 - (id)initWithSockPuppetApplicationProxy:(id)arg1 userActivity:(id)arg2;
 - (id)initWithURL:(id)arg1 error:(id *)arg2;
-- (id)initWithAudioCallIntentForCarousel:(id)arg1 error:(id *)arg2;
+- (id)initWithCallIntentForCarousel:(id)arg1 error:(id *)arg2;
 - (id)initWithIntent:(id)arg1 userActivity:(id)arg2 inBackground:(BOOL)arg3 error:(id *)arg4;
 - (id)initWithInteraction:(id)arg1 userActivity:(id)arg2 inBackground:(BOOL)arg3 error:(id *)arg4;
 

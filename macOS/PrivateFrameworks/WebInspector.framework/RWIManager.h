@@ -65,6 +65,7 @@
 - (void)powerNotification:(unsigned int)arg1 argument:(void *)arg2;
 - (void)_resubscribeForDeviceNotifications;
 - (void)_removeDevices;
+- (id)_deviceForAMDeviceRef:(struct _AMDevice *)arg1;
 - (void)deviceNotification:(struct _AMDeviceNotificationInfo *)arg1;
 - (void)targetHasBasicInformation:(id)arg1;
 - (void)_addDeviceRef:(struct _AMDevice *)arg1;

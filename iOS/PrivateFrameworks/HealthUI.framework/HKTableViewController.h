@@ -8,8 +8,11 @@
 
 @interface HKTableViewController : UITableViewController
 {
+    _Bool _useInsetStyling;
 }
 
+- (void)viewDidLoad;
+- (id)initWithUsingInsetStyling:(_Bool)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
 
 @end

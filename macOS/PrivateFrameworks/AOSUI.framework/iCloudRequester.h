@@ -42,6 +42,7 @@
 - (void)__unsafe_callHandler;
 - (void)_callHandler;
 - (void)_kickOffRequest:(id)arg1;
+- (void)generateiCloudRequestHeadersForAccountID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)start;
 - (void)cancel;
 - (id)initWithRequest:(id)arg1 signForAccountID:(id)arg2 handler:(CDUnknownBlockType)arg3;

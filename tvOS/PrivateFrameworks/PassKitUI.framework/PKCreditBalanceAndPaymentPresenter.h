@@ -27,9 +27,9 @@
 }
 
 - (void).cxx_destruct;
-- (void)accountServiceAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(_Bool)arg2;
 - (void)accountServiceAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)paymentButtonTappedForItem:(id)arg1;
+- (id)_accountServiceResoultionControllerWithItem:(id)arg1;
 - (_Bool)_useAccessibilityLayoutForCollectionView:(id)arg1;
 - (void)_configureActivityCell:(id)arg1 forItem:(id)arg2 inCollectionView:(id)arg3 forIndexPath:(id)arg4;
 - (void)_configureBalanceCell:(id)arg1 forItem:(id)arg2 inCollectionView:(id)arg3 forIndexPath:(id)arg4;

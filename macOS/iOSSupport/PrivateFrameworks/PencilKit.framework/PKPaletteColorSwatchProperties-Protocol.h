@@ -6,10 +6,11 @@
 
 #import <PencilKit/NSObject-Protocol.h>
 
-@class UIColor;
+@class PKSwatchColor;
 
 @protocol PKPaletteColorSwatchProperties <NSObject>
-@property(readonly, nonatomic) UIColor *color;
+@property(retain, nonatomic) PKSwatchColor *swatchColor;
+@property(nonatomic) BOOL showsSelectionHighlight;
 @property(nonatomic, getter=isSelected) BOOL selected;
 @end
 

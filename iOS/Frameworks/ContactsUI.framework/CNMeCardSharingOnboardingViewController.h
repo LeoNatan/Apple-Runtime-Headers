@@ -10,22 +10,22 @@
 
 @interface CNMeCardSharingOnboardingViewController : OBTableWelcomeController
 {
+    OBBoldTrayButton *_confirmButton;
     CNContactStore *_contactStore;
     CNContact *_contact;
     NSLayoutConstraint *_tableViewHeightConstraint;
-    OBBoldTrayButton *_confirmButton;
 }
 
 + (id)headerText;
-@property(retain, nonatomic) OBBoldTrayButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) NSLayoutConstraint *tableViewHeightConstraint; // @synthesize tableViewHeightConstraint=_tableViewHeightConstraint;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
+@property(retain, nonatomic) OBBoldTrayButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 - (void).cxx_destruct;
 - (void)handleConfirmButtonTapped;
 - (void)didTapDoneButton:(id)arg1;
 - (id)confirmButtonTitle;
-- (void)viewDidAppear:(_Bool)arg1;
+- (void)updateForContentSizeCategoryChange;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

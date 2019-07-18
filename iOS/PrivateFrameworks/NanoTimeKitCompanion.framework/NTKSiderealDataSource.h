@@ -6,41 +6,61 @@
 
 #import <objc/NSObject.h>
 
-@class CLLocation, NSArray, NSDictionary, NTKSolarTimeModel;
+@class CLKUIAlmanacTransitInfo, CLLocation, NSArray, NSDate, NSOrderedSet;
 @protocol NTKSiderealDataSourceDelegate;
 
 @interface NTKSiderealDataSource : NSObject
 {
-    CLLocation *_location;
-    struct NSString *_locationManagerToken;
     float _altitudes[361];
-    _Bool _usePlaceholder;
-    NSDictionary *_placeholderSolarIntervals;
-    NSArray *_placeholderWaypoints;
+    NSDate *_startOfDayForReferenceDate;
+    NSDate *_endOfDayForReferenceDate;
+    NSOrderedSet *_daytimeEvents;
+    struct NSString *_locationManagerToken;
+    _Bool _isConstantSunUpOrDown;
     id <NTKSiderealDataSourceDelegate> _delegate;
-    NTKSolarTimeModel *_solarTimeModel;
-    double _solarNoonAltitude;
-    NSDictionary *_solarIntervals;
+    CLKUIAlmanacTransitInfo *_sunriseSunsetInfo;
+    NSDate *_referenceDate;
+    CLLocation *_referenceLocation;
+    NSOrderedSet *_solarEvents;
+    NSOrderedSet *_sectors;
     NSArray *_waypoints;
 }
 
++ (double)reverseInterpolateBetweenCalendricalMidnights:(id)arg1;
+@property(nonatomic) _Bool isConstantSunUpOrDown; // @synthesize isConstantSunUpOrDown=_isConstantSunUpOrDown;
 @property(retain, nonatomic) NSArray *waypoints; // @synthesize waypoints=_waypoints;
-@property(retain, nonatomic) NSDictionary *solarIntervals; // @synthesize solarIntervals=_solarIntervals;
-@property(nonatomic) double solarNoonAltitude; // @synthesize solarNoonAltitude=_solarNoonAltitude;
-@property(retain, nonatomic) NTKSolarTimeModel *solarTimeModel; // @synthesize solarTimeModel=_solarTimeModel;
+@property(retain, nonatomic) NSOrderedSet *sectors; // @synthesize sectors=_sectors;
+@property(retain, nonatomic) NSOrderedSet *solarEvents; // @synthesize solarEvents=_solarEvents;
+@property(retain, nonatomic) CLLocation *referenceLocation; // @synthesize referenceLocation=_referenceLocation;
+@property(retain, nonatomic) NSDate *referenceDate; // @synthesize referenceDate=_referenceDate;
+@property(retain, nonatomic) CLKUIAlmanacTransitInfo *sunriseSunsetInfo; // @synthesize sunriseSunsetInfo=_sunriseSunsetInfo;
 @property(nonatomic) __weak id <NTKSiderealDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)setupPlaceholders;
-- (CDStruct_3da3c8f8)altitudeForProgress:(double)arg1;
-- (void)_notifyDidUpdate;
+- (_Bool)date:(id)arg1 isBetweenDate:(id)arg2 andDate:(id)arg3;
+- (long long)_endOfDayEventFollowingSolarEvent:(long long)arg1;
+- (long long)_startOfDayEventPreceedingFirstSolarEvent:(long long)arg1;
+- (id)interpolateBetweenCalendricalMidnights:(double)arg1;
+- (_Bool)isDateInReferenceDate:(id)arg1;
+- (CDStruct_869f9c67)altitudeForProgress:(double)arg1;
 - (_Bool)_didLocationChangeSignificantlyFromOldLocation:(id)arg1 toNewLocation:(id)arg2;
 - (void)_locationManagerUpdatedLocation:(id)arg1 error:(id)arg2;
+- (void)ensureLocation:(id)arg1;
 - (void)stopLocationUpdates;
 - (void)startLocationUpdates;
-- (void)_updateSolarIntervalsAndWaypoints;
-- (_Bool)_hasValidSunriseOrSunset:(id)arg1;
+- (id)_placeholderSolarEvents;
+- (id)_allAvailableSolarEvents;
+- (void)_notifyDidUpdate;
+- (void)_updateData;
+- (void)_updateWaypoints;
+- (void)_updateSolarSectors;
+- (void)_updateDayEvents;
+- (void)_updateSolarEvents;
+- (void)updateForTimeZoneChange;
+- (void)updateModelWithDate:(id)arg1;
+- (CDStruct_c3b9c2ee)_geoLocationForReferenceLocation;
+- (void)_loadStartEndDates;
+- (id)daytimeEvents;
 - (double)_solarPercentageToDegree:(double)arg1;
-- (id)_solarIntervalWithType:(unsigned long long)arg1 fromAlmanac:(id)arg2;
 - (id)init;
 
 @end

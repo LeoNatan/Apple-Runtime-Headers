@@ -6,32 +6,32 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class HAPSecuritySessionEncryption, NSData, NSObject;
-@protocol HAPSecuritySessionDelegate, OS_dispatch_queue;
+#import <CoreHAP/HMFLogging-Protocol.h>
 
-@interface HAPSecuritySession : HMFObject
+@class HAPSecuritySessionEncryption, NSData, NSObject, NSString;
+@protocol HAPSecuritySessionDelegate, HMFLocking, OS_dispatch_queue;
+
+@interface HAPSecuritySession : HMFObject <HMFLogging>
 {
+    id <HMFLocking> _lock;
     unsigned long long _state;
+    unsigned long long _resumeSessionID;
     NSData *_broadcastKey;
     id <HAPSecuritySessionDelegate> _delegate;
     unsigned long long _role;
-    unsigned long long _resumeSessionID;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
+    NSObject<OS_dispatch_queue> *_queue;
     struct PairingSessionPrivate *_pairingSession;
     HAPSecuritySessionEncryption *_encryption;
 }
 
++ (id)logCategory;
 @property(retain, nonatomic) HAPSecuritySessionEncryption *encryption; // @synthesize encryption=_encryption;
 @property(nonatomic) struct PairingSessionPrivate *pairingSession; // @synthesize pairingSession=_pairingSession;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-@property(readonly, nonatomic) unsigned long long resumeSessionID; // @synthesize resumeSessionID=_resumeSessionID;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) unsigned long long role; // @synthesize role=_role;
 @property(readonly) __weak id <HAPSecuritySessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)decryptData:(id)arg1 additionalAuthenticatedData:(id)arg2 error:(id *)arg3;
-- (id)getBroadcastEncryptionKey;
 - (id)encryptData:(id)arg1 additionalAuthenticatedData:(id)arg2 error:(id *)arg3;
 - (void)_closeWithError:(id)arg1;
 - (void)closeWithError:(id)arg1;
@@ -50,16 +50,21 @@
 - (id)_handlePeerPairingIdentityRequestWithIdentifier:(id)arg1 status:(int *)arg2;
 - (id)_handleLocalPairingIdentityRequestWithStatus:(int *)arg1;
 - (_Bool)_initializeSetupSession:(unsigned long long)arg1;
-- (id)description;
-- (id)debugDescription;
-- (void)_invalidate;
-- (void)setResumeSessionID:(unsigned long long)arg1;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *debugDescription;
 @property(readonly, getter=isOpening) _Bool opening;
 @property(readonly, getter=isOpen) _Bool open;
-@property(retain, nonatomic) NSData *broadcastKey; // @synthesize broadcastKey=_broadcastKey;
+- (void)setResumeSessionID:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long resumeSessionID; // @synthesize resumeSessionID=_resumeSessionID;
+- (void)setBroadcastKey:(id)arg1;
+@property(readonly) NSData *broadcastKey; // @synthesize broadcastKey=_broadcastKey;
 @property unsigned long long state; // @synthesize state=_state;
 - (void)dealloc;
 - (id)initWithRole:(unsigned long long)arg1 resumeSessionID:(unsigned long long)arg2 delegate:(id)arg3;
+
+// Remaining properties
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -8,16 +8,20 @@
 
 #import <MediaPlayer/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSString;
+@class ICUserIdentity, NSDictionary, NSString;
 
 @interface MPRemotePlaybackQueue : NSObject <NSSecureCoding>
 {
     struct _MRSystemAppPlaybackQueue *_mediaRemotePlaybackQueue;
+    ICUserIdentity *_userIdentity;
 }
 
 + (_Bool)supportsSecureCoding;
 + (void)registerRemotePlaybackQueueClass:(Class)arg1 forPlaybackQueueType:(int)arg2;
++ (id)queueWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue *)arg1 options:(id)arg2;
 + (id)queueWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue *)arg1;
+@property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
+- (void).cxx_destruct;
 - (struct _MRSystemAppPlaybackQueue *)_mediaRemotePlaybackQueue;
 - (_Bool)verifyWithError:(id *)arg1;
 @property(copy, nonatomic) NSDictionary *userInfo;
@@ -31,7 +35,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue *)arg1;
+- (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue *)arg1 options:(id)arg2;
 
 @end
 

@@ -7,6 +7,7 @@
 @class NSArray, NSDictionary, NSString, NSURL, NSURLCredential;
 
 @protocol SUHelperDProtocol
+- (unsigned long long)attemptToReclaimSpaceUsingCacheDeleteWithSpaceRequired:(unsigned long long)arg1;
 - (BOOL)rebootForPostLogoutUpdatesAfterSuccess:(BOOL)arg1 nightInstall:(BOOL)arg2 shouldShutDown:(BOOL)arg3;
 - (NSURLCredential *)lookupURLCredentialInSystemKeychainForHost:(NSString *)arg1 port:(long long)arg2;
 - (BOOL)configureProgressPhasesAll:(NSDictionary *)arg1;

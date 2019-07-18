@@ -41,7 +41,6 @@ __attribute__((visibility("hidden")))
 - (id)persistentStore;
 - (id)entityName;
 - (id)entity;
-- (void)finalize;
 - (oneway void)release;
 - (id)retain;
 

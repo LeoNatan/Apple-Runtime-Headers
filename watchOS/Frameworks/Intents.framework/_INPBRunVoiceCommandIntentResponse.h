@@ -26,6 +26,7 @@
     _Bool _customResponsesDisabled;
     _Bool _interstitialDisabled;
     _Bool _prefersExecutionOnCompanion;
+    _Bool __encodeLegacyGloryData;
     NSString *_appBundleId;
     int _intentCategory;
     NSString *_localizedAppName;
@@ -41,6 +42,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)stepType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *verb; // @synthesize verb=_verb;
 @property(copy, nonatomic) NSString *underlyingIntentTitle; // @synthesize underlyingIntentTitle=_underlyingIntentTitle;
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntentResponse; // @synthesize underlyingIntentResponse=_underlyingIntentResponse;

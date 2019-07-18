@@ -38,6 +38,7 @@
 @property(readonly, copy) NSNumber *chargeStoreFrontID;
 @property(readonly, copy) NSString *chargeCurrencyCode;
 @property(readonly, copy) NSString *chargeCountryCode;
+@property(readonly) BOOL autoRenewEnabled;
 @property(readonly, copy) NSNumber *appVersion;
 @property(readonly, copy) NSNumber *appAdamID;
 - (id)initWithDictionary:(id)arg1 forAppAdamID:(id)arg2 segment:(unsigned long long)arg3;

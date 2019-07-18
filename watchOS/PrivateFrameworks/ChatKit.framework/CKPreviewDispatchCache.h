@@ -21,6 +21,7 @@
 + (id)snapshotCache;
 + (id)detailsPreviewCache;
 + (id)transcriptPreviewCache;
++ (id)previewPrewarmQueue;
 + (id)mapThumbnailQueue;
 @property(retain, nonatomic) CKMultiDict *pendingBlocks; // @synthesize pendingBlocks=_pendingBlocks;
 @property(retain, nonatomic) CKDispatchCache *dispatchCache; // @synthesize dispatchCache=_dispatchCache;

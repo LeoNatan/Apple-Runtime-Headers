@@ -328,6 +328,7 @@ struct ToneCurve_Control {
     float maxEDRValue;
     float EDRFactor;
     float AmbientLight;
+    float contrastRatio;
     float sdrMaxBrightnessInNits;
     _Bool HDRProcessingFullAmbientAdaptation;
     struct __CFString *targetColorPrimaries;
@@ -357,11 +358,11 @@ struct _HDR10AmbAdaptationParam {
 struct _HDR10AuxData {
     unsigned int processingType;
     unsigned int tm_preset;
-    unsigned int tm_mode;
-    unsigned int tm_curve_type;
+    int tm_mode;
+    int tm_curve_type;
     float EDRFactor;
     float maxEDRValue;
-    unsigned int amb_adaptation_mode;
+    int amb_adaptation_mode;
     float amb_adaptation_lux2nits_ratio;
     float ambientNits;
     float target_display_contrast_ratio;
@@ -372,6 +373,8 @@ struct _HDR10AuxData {
     float Smax_nits;
     float Tmin_nits;
     float targetMaxLinear;
+    float Send_nits;
+    float tm_Send_nits;
 };
 
 struct _HDR10DpcParam {
@@ -383,22 +386,26 @@ struct _HDR10DpcParam {
 struct _HDR10TMParam {
     float tm_Smin_nits;
     float tm_Smax_nits;
+    float tm_Send_nits;
     float tm_Tmin_nits;
     float tm_Tmax_nits;
+    float tm_Tend_nits;
     float tm_Smin_C;
     float tm_Smax_C;
+    float tm_Send_C;
     float tm_Tmin_C;
     float tm_Tmax_C;
+    float tm_Tend_C;
     int tm_curve_type;
     unsigned short numPs;
-    float AsC[3];
-    float PsC[3];
-    float MsC[3];
+    float AsC[4];
+    float PsC[4];
+    float MsC[4];
     unsigned short n;
-    float XsC[3];
-    float YsC[3];
-    unsigned short ms[2];
-    float arrPsC[2][14];
+    float XsC[4];
+    float YsC[4];
+    unsigned short ms[3];
+    float arrPsC[3][14];
 };
 
 struct __CFString;
@@ -831,7 +838,7 @@ typedef struct {
     struct ToneCurve_Control tcControl;
     CDStruct_d76a58a8 hdrControl;
     CDStruct_52986d3b infoFrameData;
-} CDStruct_2f89d71e;
+} CDStruct_f41792b7;
 
 typedef struct {
     int version;

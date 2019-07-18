@@ -6,24 +6,16 @@
 
 #import <DataDetectorsUI/DDRemoteAction.h>
 
-@class NSString;
-
 __attribute__((visibility("hidden")))
 @interface DDFlightPreviewAction : DDRemoteAction
 {
     _Bool _previewModeSet;
-    NSString *_platerTitle;
 }
 
 + (id)viewControllerProviderClass;
-@property(retain) NSString *platerTitle; // @synthesize platerTitle=_platerTitle;
-- (void).cxx_destruct;
 - (void)setPreviewMode:(_Bool)arg1;
 - (id)menuActionClasses;
 - (id)previewActions;
-- (_Bool)wantsSeamlessCommit;
-- (id)platterTitle;
-- (id)initWithURL:(id)arg1 result:(struct __DDResult *)arg2 context:(id)arg3;
 
 @end
 

@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isIndexHidden:(unsigned long long)arg1;
 - (id)visibleIndices;
 - (void)setHidden:(_Bool)arg1 inRange:(struct _NSRange)arg2;
+- (void)setHidden:(_Bool)arg1 atIndexes:(id)arg2;
 - (void)setHidden:(_Bool)arg1 atIndex:(unsigned long long)arg2;
 - (void)setCount:(unsigned long long)arg1;
 - (void)dealloc;

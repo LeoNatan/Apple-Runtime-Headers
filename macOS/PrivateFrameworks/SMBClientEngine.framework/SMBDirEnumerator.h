@@ -20,7 +20,6 @@
     NSString *f_lookupName;
     NSString *f_createName;
     SMBNode *f_node;
-    struct smb_create f_create_inp;
     struct smb_query_dir f_query_inp;
     unsigned int f_query_buffer_len;
     unsigned char f_NetworkNameBuffer[1020];

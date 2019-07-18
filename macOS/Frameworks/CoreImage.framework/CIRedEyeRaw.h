@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
     CIVector *inputAxisLongRight;
     CIVector *inputPupilCenterLeft;
     CIVector *inputPupilCenterRight;
-    NSNumber *inputImageOrientation;
     NSNumber *inputOrientationHint;
     NSNumber *inputOrientationScale;
     NSNumber *inputRepairSource;
@@ -203,7 +202,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *inputRepairSource; // @synthesize inputRepairSource;
 @property(retain, nonatomic) NSNumber *inputOrientationScale; // @synthesize inputOrientationScale;
 @property(retain, nonatomic) NSNumber *inputOrientationHint; // @synthesize inputOrientationHint;
-@property(retain, nonatomic) NSNumber *inputImageOrientation; // @synthesize inputImageOrientation;
 @property(retain, nonatomic) CIVector *inputPupilCenterRight; // @synthesize inputPupilCenterRight;
 @property(retain, nonatomic) CIVector *inputPupilCenterLeft; // @synthesize inputPupilCenterLeft;
 @property(retain, nonatomic) CIVector *inputAxisLongRight; // @synthesize inputAxisLongRight;

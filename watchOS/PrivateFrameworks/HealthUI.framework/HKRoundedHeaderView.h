@@ -10,6 +10,7 @@
 
 @interface HKRoundedHeaderView : UIView
 {
+    _Bool _textLabelTruncated;
     HKGradient *_gradient;
     UIColor *_color;
     UIImage *_image;
@@ -30,6 +31,7 @@
     NSLayoutConstraint *_detailTextLabelFirstBaselineConstraint;
     NSLayoutConstraint *_detailTextLabelWidthConstraint;
     NSLayoutConstraint *_detailTextLabelBottomConstraint;
+    NSLayoutConstraint *_largeTextChevronCenterYConstraint;
     NSArray *_regularConstraints;
     NSArray *_largeTextConstraints;
 }
@@ -41,8 +43,10 @@
 + (id)_textFont;
 + (id)_accessibilityContentSizeCategory;
 + (float)estimatedHeight;
+@property(nonatomic) _Bool textLabelTruncated; // @synthesize textLabelTruncated=_textLabelTruncated;
 @property(retain, nonatomic) NSArray *largeTextConstraints; // @synthesize largeTextConstraints=_largeTextConstraints;
 @property(retain, nonatomic) NSArray *regularConstraints; // @synthesize regularConstraints=_regularConstraints;
+@property(retain, nonatomic) NSLayoutConstraint *largeTextChevronCenterYConstraint; // @synthesize largeTextChevronCenterYConstraint=_largeTextChevronCenterYConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *detailTextLabelBottomConstraint; // @synthesize detailTextLabelBottomConstraint=_detailTextLabelBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *detailTextLabelWidthConstraint; // @synthesize detailTextLabelWidthConstraint=_detailTextLabelWidthConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *detailTextLabelFirstBaselineConstraint; // @synthesize detailTextLabelFirstBaselineConstraint=_detailTextLabelFirstBaselineConstraint;
@@ -71,6 +75,8 @@
 - (void)_updateUI;
 - (void)_setupConstraints;
 - (void)_setupUI;
+- (_Bool)_isTextLabelTruncated;
+- (void)layoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(readonly, nonatomic) float textHorizontalInset;
 @property(copy, nonatomic) NSString *detailText;

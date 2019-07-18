@@ -10,6 +10,8 @@
 {
 }
 
++ (unsigned int)syncHashForRecord:(id)arg1;
++ (id)recordProperties;
 + (int)messageType;
 - (_Bool)readFrom:(id)arg1 error:(id *)arg2;
 - (_Bool)writeTo:(id)arg1 error:(id *)arg2;

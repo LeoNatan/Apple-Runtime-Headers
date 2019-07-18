@@ -9,10 +9,11 @@
 #import <Silex/SXDOMModifying-Protocol.h>
 
 @class NSString, SXConditionalObjectResolver;
-@protocol SXConditionValidationContextFactory;
+@protocol SXConditionValidationContextFactory, SXConditionalResolverModifierInstructions;
 
 @interface SXDOMConditionResolverModifier : NSObject <SXDOMModifying>
 {
+    BOOL _hasCheckedInstructions;
     BOOL _resolveComponents;
     BOOL _resolveComponentStyles;
     BOOL _resolveComponentLayouts;
@@ -29,6 +30,7 @@
     SXConditionalObjectResolver *_advertisementAutoPlacementResolver;
     SXConditionalObjectResolver *_suggestedArticlesAutoPlacementResolver;
     SXConditionalObjectResolver *_documentStyleResolver;
+    id <SXConditionalResolverModifierInstructions> _instructions;
 }
 
 @property(readonly, nonatomic) BOOL resolveDocumentStyle; // @synthesize resolveDocumentStyle=_resolveDocumentStyle;
@@ -38,6 +40,8 @@
 @property(readonly, nonatomic) BOOL resolveComponentLayouts; // @synthesize resolveComponentLayouts=_resolveComponentLayouts;
 @property(readonly, nonatomic) BOOL resolveComponentStyles; // @synthesize resolveComponentStyles=_resolveComponentStyles;
 @property(readonly, nonatomic) BOOL resolveComponents; // @synthesize resolveComponents=_resolveComponents;
+@property(readonly, nonatomic) BOOL hasCheckedInstructions; // @synthesize hasCheckedInstructions=_hasCheckedInstructions;
+@property(readonly, nonatomic) id <SXConditionalResolverModifierInstructions> instructions; // @synthesize instructions=_instructions;
 @property(readonly, nonatomic) SXConditionalObjectResolver *documentStyleResolver; // @synthesize documentStyleResolver=_documentStyleResolver;
 @property(readonly, nonatomic) SXConditionalObjectResolver *suggestedArticlesAutoPlacementResolver; // @synthesize suggestedArticlesAutoPlacementResolver=_suggestedArticlesAutoPlacementResolver;
 @property(readonly, nonatomic) SXConditionalObjectResolver *advertisementAutoPlacementResolver; // @synthesize advertisementAutoPlacementResolver=_advertisementAutoPlacementResolver;
@@ -56,7 +60,7 @@
 - (BOOL)resolveTextStyles:(id)arg1 validationContext:(id)arg2;
 - (BOOL)resolveComponents:(id)arg1 validationContext:(id)arg2;
 - (void)modifyDOM:(id)arg1 context:(id)arg2;
-- (id)initWithValidationContextFactory:(id)arg1 componentResolver:(id)arg2 textStyleResolver:(id)arg3 componentStyleResolver:(id)arg4 componentLayoutResolver:(id)arg5 componentTextStyleResolver:(id)arg6 advertisementAutoPlacementResolver:(id)arg7 suggestedArticlesAutoPlacementResolver:(id)arg8 documentStyleResolver:(id)arg9;
+- (id)initWithValidationContextFactory:(id)arg1 componentResolver:(id)arg2 textStyleResolver:(id)arg3 componentStyleResolver:(id)arg4 componentLayoutResolver:(id)arg5 componentTextStyleResolver:(id)arg6 advertisementAutoPlacementResolver:(id)arg7 suggestedArticlesAutoPlacementResolver:(id)arg8 documentStyleResolver:(id)arg9 instructions:(id)arg10;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

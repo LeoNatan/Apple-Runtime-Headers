@@ -11,6 +11,7 @@
 @interface MKMuninEntryPoint : NSObject
 {
     _Bool _wantsCloseUpView;
+    int _triggerAction;
     unsigned long long _type;
     MKMapItem *_mapItem;
     VKMuninMarker *_muninMarker;
@@ -18,10 +19,14 @@
     GEOMuninViewState *_muninViewState;
 }
 
++ (id)entryPointWithMapItem:(id)arg1 wantsCloseUpView:(_Bool)arg2 triggerAction:(int)arg3;
++ (id)entryPointWithMuninViewState:(id)arg1 triggerAction:(int)arg2;
++ (id)entryPointWithMapItem:(id)arg1 triggerAction:(int)arg2;
 + (id)entryPointWithMuninViewState:(id)arg1;
 + (id)entryPointWithMuninMarker:(id)arg1 heading:(double)arg2;
 + (id)entryPointWithMapItem:(id)arg1 wantsCloseUpView:(_Bool)arg2;
 + (id)entryPointWithMapItem:(id)arg1;
+@property(nonatomic) int triggerAction; // @synthesize triggerAction=_triggerAction;
 @property(retain, nonatomic) GEOMuninViewState *muninViewState; // @synthesize muninViewState=_muninViewState;
 @property(nonatomic) double heading; // @synthesize heading=_heading;
 @property(retain, nonatomic) VKMuninMarker *muninMarker; // @synthesize muninMarker=_muninMarker;
@@ -29,6 +34,7 @@
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (id)init;
 
 @end
 

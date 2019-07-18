@@ -75,8 +75,8 @@
 - (void)_enumerateSpriteTextures:(CDUnknownBlockType)arg1;
 - (long long)_processTextureProviderResults;
 - (void)_lookupLock_requestTexturesForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 textureProvider:(id)arg2 mediaKind:(int)arg3 presentationType:(int)arg4 isAppearing:(BOOL)arg5 layout:(id)arg6 leafSpriteIndexRange:(struct _PXGSpriteIndexRange)arg7 sprites:(CDStruct_92550dd7)arg8 textureStreamInfos:(CDStruct_875be80f *)arg9;
-- (void)_blockOnThumbnailsIfNeededWithGeometries:(CDStruct_ac168a83 *)arg1 visibleRect:(struct CGRect)arg2 interactionState:(CDStruct_1ca42d13)arg3 fences:(id)arg4;
-- (void)streamTexturesForSpritesInDataStore:(id)arg1 presentationDataStore:(id)arg2 changeDetails:(id)arg3 layout:(id)arg4 interactionState:(CDStruct_1ca42d13)arg5;
+- (void)_blockOnThumbnailsIfNeededWithGeometries:(CDStruct_ac168a83 *)arg1 visibleRect:(struct CGRect)arg2 interactionState:(CDStruct_73ead4b7)arg3 fences:(id)arg4;
+- (void)streamTexturesForSpritesInDataStore:(id)arg1 presentationDataStore:(id)arg2 changeDetails:(id)arg3 layout:(id)arg4 interactionState:(CDStruct_73ead4b7)arg5;
 - (void)_resizeStorageIfNeededForSpriteCount:(long long)arg1;
 - (void)_requestQueue_scheduleUpdateIfAllowed;
 - (void)_requestQueue_setNeedsUpdate;

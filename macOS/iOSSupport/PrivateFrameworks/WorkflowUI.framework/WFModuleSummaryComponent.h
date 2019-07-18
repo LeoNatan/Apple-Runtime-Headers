@@ -22,14 +22,16 @@
     id <WFVariableProvider> _variableProvider;
     id <WFVariableUIDelegate> _variableUIDelegate;
     id <WFComponentNavigationContext> _navigationContext;
+    NSString *_firstResponderParameterKey;
     double _horizontalPadding;
     long long _textAlignment;
 }
 
-+ (id)newWithSummaryFormatString:(id)arg1 parameters:(id)arg2 editableParameters:(id)arg3 states:(id)arg4 processing:(BOOL)arg5 stateWriter:(id)arg6 variableProvider:(id)arg7 variableUIDelegate:(id)arg8 navigationContext:(id)arg9 horizontalPadding:(double)arg10 textAlignment:(long long)arg11 extendSlotBackgroundOffEdges:(BOOL)arg12;
++ (id)newWithSummaryFormatString:(id)arg1 parameters:(id)arg2 editableParameters:(id)arg3 states:(id)arg4 processing:(BOOL)arg5 stateWriter:(id)arg6 variableProvider:(id)arg7 variableUIDelegate:(id)arg8 navigationContext:(id)arg9 firstResponderParameterKey:(id)arg10 horizontalPadding:(double)arg11 textAlignment:(long long)arg12 extendSlotBackgroundOffEdges:(BOOL)arg13;
 @property(readonly, nonatomic) BOOL extendSlotBackgroundOffEdges; // @synthesize extendSlotBackgroundOffEdges=_extendSlotBackgroundOffEdges;
 @property(readonly, nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(readonly, nonatomic) double horizontalPadding; // @synthesize horizontalPadding=_horizontalPadding;
+@property(readonly, nonatomic) NSString *firstResponderParameterKey; // @synthesize firstResponderParameterKey=_firstResponderParameterKey;
 @property(readonly, nonatomic) __weak id <WFComponentNavigationContext> navigationContext; // @synthesize navigationContext=_navigationContext;
 @property(readonly, nonatomic) __weak id <WFVariableUIDelegate> variableUIDelegate; // @synthesize variableUIDelegate=_variableUIDelegate;
 @property(readonly, nonatomic) __weak id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;

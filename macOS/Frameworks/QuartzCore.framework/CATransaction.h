@@ -31,6 +31,8 @@
 + (BOOL)lowLatency;
 + (void)setBeginTime:(double)arg1;
 + (double)beginTime;
++ (void)setRemoteInputMachTime:(unsigned long long)arg1;
++ (unsigned long long)remoteInputMachTime;
 + (void)setInputTime:(double)arg1;
 + (double)inputTime;
 + (void)setDisableRunLoopObserverCommits:(BOOL)arg1;

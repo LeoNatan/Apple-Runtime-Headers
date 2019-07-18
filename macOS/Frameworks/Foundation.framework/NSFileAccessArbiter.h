@@ -30,7 +30,7 @@
     NSObject<OS_dispatch_source> *_debugSignalSource;
 }
 
-+ (void)ensureProvidersIfNecessaryForClaim:(id)arg1 user:(unsigned int)arg2 atLocation:(id)arg3 queue:(id)arg4 thenContinue:(CDUnknownBlockType)arg5;
++ (void)ensureProvidersIfNecessaryForClaim:(id)arg1 user:(unsigned int)arg2 atLocations:(id)arg3 queue:(id)arg4 thenContinue:(CDUnknownBlockType)arg5;
 + (void)_wakeUpFileProviderWithUID:(unsigned int)arg1 urls:(id)arg2 queue:(id)arg3 thenContinue:(CDUnknownBlockType)arg4;
 - (oneway void)tiePresenterForID:(id)arg1 toItemAtURL:(id)arg2;
 - (oneway void)writerWithPurposeID:(id)arg1 didVersionChangeOfKind:(id)arg2 toItemAtURL:(id)arg3 withClientID:(id)arg4 name:(id)arg5;

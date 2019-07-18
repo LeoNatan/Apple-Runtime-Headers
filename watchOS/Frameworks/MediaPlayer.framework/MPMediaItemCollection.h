@@ -38,7 +38,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
-- (id)initWithMultiverseIdentifier:(id)arg1;
+- (id)initWithMultiverseIdentifier:(id)arg1 library:(id)arg2;
 - (id)initWithItemsQuery:(id)arg1;
 - (id)initWithItems:(id)arg1;
 - (id)_artworkCatalogRepresentativeItem;

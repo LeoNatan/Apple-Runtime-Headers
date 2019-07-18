@@ -11,6 +11,8 @@
 }
 
 + (_Bool)_isCanceledError:(id)arg1;
++ (unsigned long long)_ekAccountErrorFromURLError:(id)arg1;
++ (unsigned long long)_ekAccountErrorFromCoreDAVHTTPError:(id)arg1;
 + (unsigned long long)_ekAccountErrorFromSubCalErrorCode:(long long)arg1;
 + (unsigned long long)_ekAccountErrorFromDAValidationErrorCode:(unsigned long long)arg1;
 + (unsigned long long)_ekAccountErrorFromDAErrorCode:(long long)arg1;

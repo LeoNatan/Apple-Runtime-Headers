@@ -21,6 +21,7 @@
     AFUIStarkGradientView *_carPlayGradientView;
     _UIVisualEffectBackdropView *_carPlayGatekeeperBackdropView;
     _Bool _carPlayGatekeeperBackdropViewVisible;
+    UIView *_carPlaySystemBackgroundView;
     struct UIEdgeInsets _suspendedSafeAreaInsets;
     _Bool _safeAreaInsetsSuspended;
     UIView *_dimmingAndLockContainer;

@@ -119,6 +119,7 @@
 + (void)enableMailboxListingNotifications:(_Bool)arg1;
 + (void)disableMailboxListingNotifications;
 + (_Bool)mailboxListingNotificationAreEnabled;
++ (struct os_unfair_recursive_lock_s *)lock;
 + (void)initialize;
 @property(readonly, nonatomic) MFLocalActionReplayHandler *replayHandler; // @synthesize replayHandler=_replayHandler;
 @property(retain, nonatomic) id <EFScheduler> mailboxCacheWriteScheduler; // @synthesize mailboxCacheWriteScheduler=_mailboxCacheWriteScheduler;

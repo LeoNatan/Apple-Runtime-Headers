@@ -31,7 +31,6 @@
 - (unsigned long long)valuesCount;
 - (void)addValues:(id)arg1;
 - (void)clearValues;
-- (_Bool)requiresQueryId;
 @property(readonly, nonatomic) id feedbackJSON;
 - (id)initWithFacade:(id)arg1;
 

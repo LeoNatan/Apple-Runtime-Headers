@@ -212,9 +212,9 @@ __attribute__((visibility("hidden")))
 - (void)p_setChildInfosAsOrderedSet:(id)arg1 usingDOLC:(_Bool)arg2 dolcContext:(id)arg3;
 - (void)p_checkChildInfosForDuplicates:(id)arg1;
 - (void)setChildInfosWithoutDOLC:(id)arg1;
-- (void)setChildInfos:(id)arg1;
-@property(readonly, nonatomic) NSArray *childInfos;
+@property(copy, nonatomic) NSArray *childInfos;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
+@property(readonly, nonatomic) _Bool hasBackgroundAlpha;
 @property(readonly, nonatomic) TSDFill *backgroundFill;
 - (id)objectUUIDPath;
 - (void)didInitFromSOS;
@@ -226,9 +226,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool isMaster;
+@property(readonly, nonatomic) _Bool isTopmostContainerInfo;
 @property(nonatomic) _Bool matchesObjectPlaceholderGeometry;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsCollaborativeEditing;
 
 @end
 

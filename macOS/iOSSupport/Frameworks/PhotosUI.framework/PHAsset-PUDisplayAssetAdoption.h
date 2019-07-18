@@ -7,6 +7,7 @@
 #import <Photos/PHAsset.h>
 
 @interface PHAsset (PUDisplayAssetAdoption)
+- (CDStruct_1b6d18a9)videoKeyFrameSourceTime;
 - (unsigned long long)deferredLogInfo;
 - (BOOL)isAnimatedImage;
 - (CDStruct_1b6d18a9)photoIrisVideoDuration;

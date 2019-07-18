@@ -6,9 +6,6 @@
 
 #import <SPOwner/NSObject-Protocol.h>
 
-@class SPWildStaticPayload;
-
 @protocol SPTrackingAvoidanceServiceProtocol <NSObject>
-- (void)didDetectInitialWildStaticPayload:(SPWildStaticPayload *)arg1 finalWildStaticPayload:(SPWildStaticPayload *)arg2 completion:(void (^)(NSError *))arg3;
 @end
 

@@ -7,16 +7,16 @@
 #import <OnBoardingKit/OBWelcomeController.h>
 
 #import <HomeUI/HUConfigurationViewController-Protocol.h>
+#import <HomeUI/HUOnboardingWarningPresenter-Protocol.h>
 #import <HomeUI/HUPreloadableViewController-Protocol.h>
 
 @class HUPersonalRequestsEditorItemManager, NSArray, NSString, OBLinkTrayButton, OBTrayButton;
 @protocol HUConfigurationViewControllerDelegate;
 
-@interface HUHomeAssistantDeviceLanguageSetupViewController : OBWelcomeController <HUConfigurationViewController, HUPreloadableViewController>
+@interface HUHomeAssistantDeviceLanguageSetupViewController : OBWelcomeController <HUOnboardingWarningPresenter, HUConfigurationViewController, HUPreloadableViewController>
 {
     BOOL _maxNumberOfVoicesReached;
     BOOL _shouldSetMultiUserIsEnabled;
-    BOOL _hasPresentedTurnOffPersonalRequestsAlert;
     id <HUConfigurationViewControllerDelegate> _delegate;
     OBTrayButton *_continueButton;
     OBLinkTrayButton *_customizeButton;
@@ -25,7 +25,6 @@
     NSArray *_homeAssistantDevicesHavingLanguageMismatch;
 }
 
-@property(nonatomic) BOOL hasPresentedTurnOffPersonalRequestsAlert; // @synthesize hasPresentedTurnOffPersonalRequestsAlert=_hasPresentedTurnOffPersonalRequestsAlert;
 @property(nonatomic) BOOL shouldSetMultiUserIsEnabled; // @synthesize shouldSetMultiUserIsEnabled=_shouldSetMultiUserIsEnabled;
 @property(nonatomic) BOOL maxNumberOfVoicesReached; // @synthesize maxNumberOfVoicesReached=_maxNumberOfVoicesReached;
 @property(retain, nonatomic) NSArray *homeAssistantDevicesHavingLanguageMismatch; // @synthesize homeAssistantDevicesHavingLanguageMismatch=_homeAssistantDevicesHavingLanguageMismatch;
@@ -37,10 +36,11 @@
 - (void).cxx_destruct;
 - (void)viewDidLoad;
 - (void)_turnOffPersonalRequests;
-- (void)_presentAlertConfirmingTurningOffPersonalRequests;
+- (void)userTappedContinueFromWarning;
 - (void)_setupPersonalRequestsItemInfrastructure;
 - (void)_changeLanguage;
 - (void)_completeLanguageSetup;
+- (void)_cancelLanguageSetupWithoutWarningUser;
 - (void)_cancelLanguageSetup;
 - (id)hu_preloadContent;
 - (id)init;

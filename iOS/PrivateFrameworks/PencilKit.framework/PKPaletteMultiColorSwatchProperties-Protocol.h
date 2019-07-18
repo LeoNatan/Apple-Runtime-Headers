@@ -6,9 +6,6 @@
 
 #import <PencilKit/PKPaletteColorSwatchProperties-Protocol.h>
 
-@class UIColor;
-
 @protocol PKPaletteMultiColorSwatchProperties <PKPaletteColorSwatchProperties>
-@property(retain, nonatomic) UIColor *color;
 @end
 

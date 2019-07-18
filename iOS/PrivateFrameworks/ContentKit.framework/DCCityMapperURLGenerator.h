@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface DCCityMapperURLGenerator : DCMapsURLGenerator
 {
     NSString *_startCoordinate;

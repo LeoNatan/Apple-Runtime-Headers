@@ -19,7 +19,7 @@
 @property(readonly, nonatomic) NSString *authDescription;
 @property(readonly, nonatomic) unsigned long long authMask;
 @property(readonly, nonatomic) NSString *SSID;
-@property(readonly, nonatomic) NSString *identifier;
+@property(readonly, nonatomic) NSString *remoteIdentifier;
 - (NSDictionary *)dictionaryRepresentation;
 
 @optional

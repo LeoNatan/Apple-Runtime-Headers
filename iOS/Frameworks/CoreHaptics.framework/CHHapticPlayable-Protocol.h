@@ -9,6 +9,7 @@
 @class CHHapticEngine, NSArray;
 
 @protocol CHHapticPlayable <NSObject>
+@property(readonly) double duration;
 @property(readonly) NSArray *parameterCurves;
 @property(readonly) NSArray *parameters;
 @property(readonly) NSArray *events;

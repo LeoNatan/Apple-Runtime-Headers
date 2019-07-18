@@ -57,6 +57,7 @@
 - (void)reloadData;
 - (void)_enqueueReusableItemView:(id)arg1 withIdentifier:(id)arg2;
 - (id)dequeueReusableItemView;
+- (void)setTintColor:(id)arg1;
 - (Class)_classForStyle:(int)arg1;
 - (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;

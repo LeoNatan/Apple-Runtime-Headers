@@ -14,6 +14,7 @@
 
 + (id)timeZoneFromTimeZoneName:(id)arg1 withFloatingTimeZone:(id)arg2;
 + (id)timeZoneNameFromTimeZone:(id)arg1;
++ (_Bool)_shouldDeleteAndAddForMoveFromCalendar:(id)arg1 toCalendar:(id)arg2;
 + (id)knownRelationshipWeakKeys;
 + (id)knownRelationshipMultiValueKeys;
 + (id)knownRelationshipSingleValueKeys;

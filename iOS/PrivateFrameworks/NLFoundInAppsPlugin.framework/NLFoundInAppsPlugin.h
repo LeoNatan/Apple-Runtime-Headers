@@ -8,11 +8,11 @@
 
 #import <NLFoundInAppsPlugin/FIAPPlugin-Protocol.h>
 
-@class DESRecordStore, NSBundle, NSString;
+@class NSArray, NSBundle, NSString;
 
 @interface NLFoundInAppsPlugin : NSObject <FIAPPlugin>
 {
-    DESRecordStore *_recordStore;
+    NSArray *_delegates;
     NSBundle *_FIAPBundle;
     Class _FIAPResult;
 }
@@ -22,8 +22,6 @@
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(id)arg1 domainIdentifiers:(id)arg2;
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(id)arg1 uniqueIdentifiers:(id)arg2;
 - (id)processSearchableItem:(id)arg1;
-- (id)languageForText:(id)arg1;
-- (_Bool)isSentMessage:(id)arg1;
 @property(readonly, nonatomic) NSString *identifier;
 - (id)init;
 

@@ -9,12 +9,9 @@
 @interface NSDate (HKMenstrualCycles)
 + (id)hkmc_latestPossibleDateWithDayIndex:(long long)arg1;
 + (id)hkmc_earliestPossibleDateWithDayIndex:(long long)arg1;
-+ (id)hkmc_noonCurrentTimezoneDateWithDayIndex:(long long)arg1;
-+ (id)hkmc_noonUTCDateWithDayIndex:(long long)arg1;
++ (id)hkmc_noonWithDayIndex:(long long)arg1 calendar:(id)arg2;
 - (long long)hkmc_latestPossibleDayIndex;
 - (long long)hkmc_earliestPossibleDayIndex;
-- (long long)hkmc_dayIndexWithTimeZone:(id)arg1;
-- (long long)hkmc_dayIndexWithCurrentTimeZone;
-- (long long)hkmc_dayIndexWithGMTTimeZone;
+- (long long)hkmc_dayIndexWithCalendar:(id)arg1;
 @end
 

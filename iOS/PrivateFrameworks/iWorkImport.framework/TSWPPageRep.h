@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)parentRepForMagnification;
 - (void)updateFromLayout;
 
 // Remaining properties

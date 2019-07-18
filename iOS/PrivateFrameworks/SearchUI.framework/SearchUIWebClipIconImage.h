@@ -15,6 +15,7 @@
 
 @property(retain, nonatomic) UIWebClip *webClip; // @synthesize webClip=_webClip;
 - (void).cxx_destruct;
+- (id)uniqueIdentifier;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)generateImageWithFormat:(int)arg1;

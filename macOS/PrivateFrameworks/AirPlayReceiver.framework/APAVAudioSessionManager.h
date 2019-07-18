@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 @interface APAVAudioSessionManager : NSObject
 {
     struct OpaqueFigSimpleMutex *_mutex;
-    unsigned long long _activeCount;
     AVAudioSession *_session;
     NSString *_name;
 }
@@ -20,10 +19,7 @@ __attribute__((visibility("hidden")))
 + (id)ambientSessionManager;
 + (id)mediaSessionManager;
 @property(readonly, nonatomic) AVAudioSession *session; // @synthesize session=_session;
-- (BOOL)releaseActiveWithError:(id *)arg1;
-- (BOOL)retainActiveWithError:(id *)arg1;
 - (BOOL)setSessionMode:(id)arg1 error:(id *)arg2;
-@property(readonly) unsigned long long activeCount;
 - (void)dealloc;
 - (id)initWithSession:(id)arg1 name:(id)arg2;
 

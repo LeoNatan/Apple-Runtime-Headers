@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)_symbolConfigurationForFont:(id)arg1;
 + (struct UIEdgeInsets)_edgeInsets;
 - (void)setTitle:(id)arg1 resultCount:(unsigned long long)arg2 categoryImage:(id)arg3;
 - (void)setAttributedTitle:(id)arg1 resultCount:(unsigned long long)arg2 categoryImage:(id)arg3;

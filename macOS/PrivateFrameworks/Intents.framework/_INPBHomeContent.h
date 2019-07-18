@@ -15,12 +15,14 @@
 @interface _INPBHomeContent : PBCodable <_INPBHomeContent, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSArray *_actions;
     _INPBHomeFilter *_filter;
 }
 
 + (BOOL)supportsSecureCoding;
 + (Class)actionsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBHomeFilter *filter; // @synthesize filter=_filter;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 - (void).cxx_destruct;

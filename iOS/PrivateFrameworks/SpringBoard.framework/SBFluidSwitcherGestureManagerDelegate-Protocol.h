@@ -9,7 +9,7 @@
 @class NSString, SBFluidSwitcherGesture, SBFluidSwitcherGestureManager;
 
 @protocol SBFluidSwitcherGestureManagerDelegate <NSObject>
-- (void)fluidSwitcherGestureManager:(SBFluidSwitcherGestureManager *)arg1 didEndDraggingWindowWithSceneIdentifier:(NSString *)arg2;
+- (void)fluidSwitcherGestureManager:(SBFluidSwitcherGestureManager *)arg1 willEndDraggingWindowWithSceneIdentifier:(NSString *)arg2;
 - (void)fluidSwitcherGestureManager:(SBFluidSwitcherGestureManager *)arg1 didBeginDraggingWindowWithSceneIdentifier:(NSString *)arg2;
 - (void)fluidSwitcherGestureManager:(SBFluidSwitcherGestureManager *)arg1 didEndGesture:(SBFluidSwitcherGesture *)arg2;
 - (void)fluidSwitcherGestureManager:(SBFluidSwitcherGestureManager *)arg1 didUpdateGesture:(SBFluidSwitcherGesture *)arg2;

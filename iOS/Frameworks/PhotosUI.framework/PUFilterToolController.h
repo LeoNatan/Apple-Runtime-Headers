@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_filterBadgeViewConstraints;
     NSLayoutConstraint *_filterBadgeWidthConstraint;
     NSLayoutConstraint *_filterBadgeHeightConstraint;
-    NSNumberFormatter *_percentageFormatter;
+    NSNumberFormatter *_formatter;
     CIContext *_context;
     CDStruct_1b6d18a9 _thumbnailTime;
     CDUnknownBlockType _willLoadFilterThumbnails;

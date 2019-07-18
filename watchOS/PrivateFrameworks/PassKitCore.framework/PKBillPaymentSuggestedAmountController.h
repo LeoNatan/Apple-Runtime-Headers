@@ -16,18 +16,19 @@
     NSDecimalNumber *_previousStatementPaymentsSum;
     NSDecimalNumber *_statementPurchasesSum;
     NSMutableDictionary *_merchantCategoryTransactionSums;
-    _Bool _isOnPlanCompletion;
     _Bool _currentStatementIsLastMonthsStatement;
     _Bool _isMonthZero;
     _Bool _isMonthOne;
     PKAccount *_account;
     NSArray *_currentStatementSelectedSuggestedAmountEvents;
+    NSArray *_previousStatementSelectedSuggestedAmountEvents;
     NSArray *_approvedTransactionsPurchasesSinceStatement;
     NSArray *_approvedTransactionsBillPaymentSinceStatement;
     NSArray *_approvedTransactionsPurchasesForPreviousStatement;
     NSArray *_approvedTransactionsBillPaymentForPreviousStatement;
 }
 
++ (void)previousStatementSelectedSuggestedAmountEventsForAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)currentStatementSelectedSuggestedAmountEventsForAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)_approvedTransactionsForPreviousStatementForAccount:(id)arg1 transactionType:(int)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)_approvedTransactionsSinceStatementForAccount:(id)arg1 transactionType:(int)arg2 completion:(CDUnknownBlockType)arg3;
@@ -40,20 +41,21 @@
 @property(readonly, nonatomic) NSArray *approvedTransactionsPurchasesForPreviousStatement; // @synthesize approvedTransactionsPurchasesForPreviousStatement=_approvedTransactionsPurchasesForPreviousStatement;
 @property(readonly, nonatomic) NSArray *approvedTransactionsBillPaymentSinceStatement; // @synthesize approvedTransactionsBillPaymentSinceStatement=_approvedTransactionsBillPaymentSinceStatement;
 @property(readonly, nonatomic) NSArray *approvedTransactionsPurchasesSinceStatement; // @synthesize approvedTransactionsPurchasesSinceStatement=_approvedTransactionsPurchasesSinceStatement;
+@property(readonly, nonatomic) NSArray *previousStatementSelectedSuggestedAmountEvents; // @synthesize previousStatementSelectedSuggestedAmountEvents=_previousStatementSelectedSuggestedAmountEvents;
 @property(readonly, nonatomic) NSArray *currentStatementSelectedSuggestedAmountEvents; // @synthesize currentStatementSelectedSuggestedAmountEvents=_currentStatementSelectedSuggestedAmountEvents;
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 - (_Bool)_calculateCurrentStatementIsLastMonthsStatement;
 - (id)_filterSuggestions:(id)arg1 belowThreshold:(id)arg2;
 - (id)_remainingStatementBalanceGapDescriptionText;
+- (id)_remainingStatementBalanceGapTitleText;
 - (id)_remainingStatementBalanceMessageString;
 - (id)_remainingStatementBalanceTitleString;
 - (id)_messageForSuggestion:(id)arg1;
 - (id)_titleForSuggestion:(id)arg1;
+- (_Bool)_categoryIsCurrentBalanceType:(unsigned int)arg1;
 - (_Bool)_categoryIsPaymentPlan:(unsigned int)arg1;
 - (_Bool)_suggestedAmountListIsValidAfterPurgeIfNecessary:(id)arg1;
-- (id)_calculateThresholdForLastPaymentCategory:(unsigned int)arg1 statementBalance:(id)arg2 suggestedAmountWithSameCategory:(id)arg3;
-- (id)_suggestedAmountsForPayOffDateForStatementBalance:(id)arg1 creditUtilization:(id)arg2;
 - (void)_minimumMerchcantCategoriesAboveMinimumAmount:(id)arg1 minMerchantCategory1:(int *)arg2 minMerchantCategory2:(int *)arg3 minMerchantCategorySum1:(id *)arg4 minMerchantCategorySum2:(id *)arg5;
 - (_Bool)_allMandatoryValuesAreSameAmount;
 - (void)_populateStringValuesForList:(id)arg1;
@@ -61,7 +63,7 @@
 - (void)_generateAmountSuggestionListUsingTransactionHistoryForList:(id)arg1;
 - (id)generateAmountSuggestionList;
 - (id)_createDefaultAmountSuggestionListFromAccount;
-- (id)initWithAccount:(id)arg1 currentStatementSelectedSuggestedAmountEvents:(id)arg2 approvedTransactionsPurchasesSinceStatement:(id)arg3 approvedTransactionsPurchasesForPreviousStatement:(id)arg4 approvedTransactionsBillPaymentSinceStatement:(id)arg5 approvedTransactionsBillPaymentForPreviousStatement:(id)arg6;
+- (id)initWithAccount:(id)arg1 currentStatementSelectedSuggestedAmountEvents:(id)arg2 previousStatementSelectedSuggestedAmountEvents:(id)arg3 approvedTransactionsPurchasesSinceStatement:(id)arg4 approvedTransactionsPurchasesForPreviousStatement:(id)arg5 approvedTransactionsBillPaymentSinceStatement:(id)arg6 approvedTransactionsBillPaymentForPreviousStatement:(id)arg7;
 
 @end
 

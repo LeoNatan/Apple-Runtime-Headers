@@ -33,15 +33,16 @@
 @property struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(retain) NSArray *suggestions; // @synthesize suggestions=_suggestions;
 - (void).cxx_destruct;
+- (void)escapeKeyCommand;
+- (id)keyCommands;
 - (void)_handleKeyUIEvent:(id)arg1;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)updateWithColor:(id)arg1;
+- (void)updateWithPrimaryColor:(id)arg1 secondaryColor:(id)arg2 isOnDarkBackground:(_Bool)arg3;
 @property(readonly) SPSearchEntity *searchEntity;
 - (void)updateTextRange:(id)arg1;
 - (void)updateToken:(id)arg1;
 - (void)clearAllTokens;
 - (id)textIncludingTokens;
-- (void)updateContentSizeCategory;
 - (_Bool)needsLandscapeHeight;
 - (struct CGRect)editingRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)textRectForBounds:(struct CGRect)arg1;
@@ -52,6 +53,7 @@
 - (struct CGRect)_microphoneRectForBounds:(struct CGRect)arg1;
 - (_Bool)_shouldSendContentChangedNotificationsIfOnlyMarkedTextChanged;
 - (struct CGSize)intrinsicContentSize;
+- (_Bool)resignFirstResponder;
 - (id)init;
 
 // Remaining properties

@@ -12,6 +12,7 @@
 @interface TLAlert : NSObject
 {
     long long _instanceIndex;
+    _Bool _hasSynchronizedVibrationUnmatchedWithTone;
     id <TLAlertPlaybackObserver> _playbackObserver;
     TLAlertConfiguration *_configuration;
     long long _type;
@@ -32,6 +33,7 @@
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) TLAlertConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <TLAlertPlaybackObserver> playbackObserver; // @synthesize playbackObserver=_playbackObserver;
+@property(readonly, nonatomic) _Bool _hasSynchronizedVibrationUnmatchedWithTone; // @synthesize _hasSynchronizedVibrationUnmatchedWithTone;
 - (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
@@ -41,7 +43,7 @@
 - (void)stop;
 - (void)playWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)play;
-- (id)_initWithConfiguration:(id)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
+- (id)_initWithConfiguration:(id)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3 hasSynchronizedVibrationUnmatchedWithTone:(_Bool)arg4;
 - (_Bool)playWithCompletionHandler:(CDUnknownBlockType)arg1 targetQueue:(id)arg2;
 - (id)initWithType:(long long)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
 - (id)initWithType:(long long)arg1 accountIdentifier:(id)arg2;

@@ -8,17 +8,18 @@
 
 #import <RunningBoard/RBBundleProperties-Protocol.h>
 
-@class NSDictionary, NSString, NSURL;
-@protocol OS_xpc_object;
+@class NSCache, NSDictionary, NSString, NSURL;
 
 @interface RBXPCBundleProperties : NSObject <RBBundleProperties>
 {
-    NSObject<OS_xpc_object> *_bundle;
-    NSDictionary *_plistValues;
+    int _pid;
+    NSCache *_plistValues;
+    _Bool _canFetchBundle;
     _Bool _backgroundRefreshEnabled;
     _Bool _hasPreferredJetsamBand;
     _Bool _supportsBackgroundContentFetching;
     _Bool _supportsBackgroundNetworkAuthentication;
+    _Bool _supportsBackgroundAudio;
     _Bool _supportsUnboundedTaskCompletion;
     _Bool _usesSocketMonitoring;
     _Bool _isExtension;
@@ -34,6 +35,7 @@
 @property(readonly, nonatomic) _Bool isExtension; // @synthesize isExtension=_isExtension;
 @property(readonly, nonatomic) _Bool usesSocketMonitoring; // @synthesize usesSocketMonitoring=_usesSocketMonitoring;
 @property(readonly, nonatomic) _Bool supportsUnboundedTaskCompletion; // @synthesize supportsUnboundedTaskCompletion=_supportsUnboundedTaskCompletion;
+@property(readonly, nonatomic) _Bool supportsBackgroundAudio; // @synthesize supportsBackgroundAudio=_supportsBackgroundAudio;
 @property(readonly, nonatomic) _Bool supportsBackgroundNetworkAuthentication; // @synthesize supportsBackgroundNetworkAuthentication=_supportsBackgroundNetworkAuthentication;
 @property(readonly, nonatomic) _Bool supportsBackgroundContentFetching; // @synthesize supportsBackgroundContentFetching=_supportsBackgroundContentFetching;
 @property(readonly, nonatomic) int preferredJetsamBand; // @synthesize preferredJetsamBand=_preferredJetsamBand;
@@ -47,7 +49,7 @@
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier;
 - (void).cxx_destruct;
 - (id)bundleInfoValuesForKeys:(id)arg1;
-- (id)initWithXPCBundle:(id)arg1;
+- (id)initWithPID:(int)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

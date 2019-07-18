@@ -15,12 +15,14 @@
 @interface _INPBAirport : PBCodable <_INPBAirport, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     NSString *_iataCode;
     NSString *_icaoCode;
     NSString *_name;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *icaoCode; // @synthesize icaoCode=_icaoCode;
 @property(copy, nonatomic) NSString *iataCode; // @synthesize iataCode=_iataCode;

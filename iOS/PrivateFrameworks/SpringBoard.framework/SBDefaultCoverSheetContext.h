@@ -19,14 +19,14 @@
 #import <SpringBoard/CSUserSessionControlling-Protocol.h>
 #import <SpringBoard/CSWallpaperLogging-Protocol.h>
 
-@class NSArray, NSString, SBDashBoardNotificationContentProviderVendor, SBSyncController, SBWallpaperAggdLogger;
-@protocol CSApplicationInforming, CSAuthenticationManaging, CSCarPlayStatusProviding, CSHomeAffordanceControlling, CSLegibilityProviding, CSMediaControlling, CSModalHomeAffordanceControlling, CSNotificationContentProviderVending, CSNotificationPresenting, CSPowerStatusProviding, CSReachabilityControlling, CSResetRestoreStatusProviding, CSScreenStateProviding, CSStatusBarControlling, CSTelephonyStatusProviding, CSThermalStatusProviding, CSTodayOverlayProviding, CSTouchEnvironmentStatusProviding, CSUnlockRequesting, CSUserSessionControlling, CSWallpaperLogging, CSWallpaperViewProviding, SBFActionProviding, SBFAuthenticationAssertionProviding, SBFAuthenticationStatusProvider, SBFDateProviding, SBFLockOutStatusProvider, SBFPasscodeFieldChangeObserver, SBFScreenWakeAnimationControlling, SBUIBiometricResource;
+@class NSArray, NSString, SBDashBoardNotificationPresenter, SBSyncController, SBWallpaperAggdLogger;
+@protocol CSApplicationInforming, CSAuthenticationManaging, CSCarPlayStatusProviding, CSHomeAffordanceControlling, CSLegibilityProviding, CSMediaControlling, CSModalHomeAffordanceControlling, CSNotificationPresenting, CSPowerStatusProviding, CSReachabilityControlling, CSResetRestoreStatusProviding, CSScreenStateProviding, CSStatusBarControlling, CSTelephonyStatusProviding, CSThermalStatusProviding, CSTodayOverlayProviding, CSTouchEnvironmentStatusProviding, CSUnlockRequesting, CSUserSessionControlling, CSWallpaperLogging, CSWallpaperViewProviding, SBFActionProviding, SBFAuthenticationAssertionProviding, SBFAuthenticationStatusProvider, SBFDateProviding, SBFLockOutStatusProvider, SBFPasscodeFieldChangeObserver, SBFScreenWakeAnimationControlling, SBUIBiometricResource;
 
 @interface SBDefaultCoverSheetContext : NSObject <CSAuthenticationManaging, CSCarPlayStatusProviding, CSMediaControlling, CSReachabilityControlling, CSResetRestoreStatusProviding, CSTelephonyStatusProviding, CSTouchEnvironmentStatusProviding, CSUnlockRequesting, CSUserSessionControlling, CSWallpaperLogging, CSTodayOverlayProviding, CSCoverSheetContextProviding>
 {
     SBSyncController *_syncController;
     SBWallpaperAggdLogger *_wallpaperAggdLogger;
-    SBDashBoardNotificationContentProviderVendor *_notificationController;
+    SBDashBoardNotificationPresenter *_notificationPresenter;
     id <SBFAuthenticationAssertionProviding> _authenticationAssertionProvider;
     id <SBFAuthenticationStatusProvider> _authenticationStatusProvider;
     id <SBFPasscodeFieldChangeObserver> _passcodeFieldChangeObserver;
@@ -92,7 +92,6 @@
 @property(readonly, nonatomic) id <CSUserSessionControlling> userSessionController;
 @property(readonly, nonatomic) id <CSTouchEnvironmentStatusProviding> touchEnvironmentStatusProvider;
 @property(readonly, nonatomic) id <CSNotificationPresenting> notificationPresenter;
-@property(readonly, nonatomic) id <CSNotificationContentProviderVending> notificationContentProviderVendor;
 @property(readonly, nonatomic) id <CSWallpaperLogging> wallpaperLogger;
 @property(readonly, nonatomic) id <CSUnlockRequesting> unlockRequester;
 @property(readonly, nonatomic) id <CSMediaControlling> mediaController;

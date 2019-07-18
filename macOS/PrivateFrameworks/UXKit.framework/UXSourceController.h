@@ -104,7 +104,7 @@
 - (void)_setStyle:(long long)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_didChangeCollapsed;
 - (void)_setStyle:(long long)arg1;
-@property(readonly, nonatomic) BOOL isSourceListCollapsed;
+@property(readonly, nonatomic, getter=isSourceListCollapsed) BOOL sourceListCollapsed;
 @property(readonly, nonatomic) BOOL wantsSourceListCollapsed;
 - (void)_setWantsSourceListCollapsed:(BOOL)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setWantsSourceListCollapsed:(BOOL)arg1;

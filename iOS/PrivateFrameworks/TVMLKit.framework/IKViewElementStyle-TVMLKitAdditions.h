@@ -11,6 +11,7 @@
 @interface IKViewElementStyle (TVMLKitAdditions)
 - (id)tv_group;
 - (unsigned long long)tv_maxLines;
+- (id)tv_layerFlipMode;
 - (struct UIEdgeInsets)tv_scrollableBoundsInset;
 - (id)tv_scrollMode;
 - (id)tv_highlightStyle;

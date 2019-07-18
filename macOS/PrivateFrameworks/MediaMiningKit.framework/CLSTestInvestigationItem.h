@@ -27,9 +27,11 @@
     BOOL _clsIsAestheticallyPrettyGood;
     BOOL _clsIsInhabited;
     BOOL _clsAvoidIfPossibleForKeyItem;
+    BOOL _clsHasPoorResolution;
     BOOL _clsHasInterestingScenes;
     BOOL _clsIsNonMemorable;
     BOOL _clsIsLoopOrBounce;
+    BOOL _clsIsLongExposure;
     NSString *_clsIdentifier;
     CLLocation *_clsLocation;
     NSArray *_clsPeopleNames;
@@ -54,6 +56,7 @@
 + (id)contextForItems:(id)arg1;
 + (id)itemWithUniversalDate:(id)arg1 sceneClassifications:(id)arg2;
 + (id)itemWithPeopleNames:(id)arg1 universalDate:(id)arg2 coordinate:(struct CLLocationCoordinate2D)arg3;
+@property(readonly, nonatomic) BOOL clsIsLongExposure; // @synthesize clsIsLongExposure=_clsIsLongExposure;
 @property(readonly, nonatomic) BOOL clsIsLoopOrBounce; // @synthesize clsIsLoopOrBounce=_clsIsLoopOrBounce;
 @property(readonly, nonatomic) BOOL clsIsNonMemorable; // @synthesize clsIsNonMemorable=_clsIsNonMemorable;
 @property(readonly, nonatomic) double clsDuration; // @synthesize clsDuration=_clsDuration;
@@ -61,6 +64,7 @@
 @property(readonly, nonatomic) double clsHighlightVisibilityScore; // @synthesize clsHighlightVisibilityScore=_clsHighlightVisibilityScore;
 @property(retain, nonatomic) NSDate *cls_universalDate; // @synthesize cls_universalDate=_cls_universalDate;
 @property(readonly) BOOL clsHasInterestingScenes; // @synthesize clsHasInterestingScenes=_clsHasInterestingScenes;
+@property(readonly) BOOL clsHasPoorResolution; // @synthesize clsHasPoorResolution=_clsHasPoorResolution;
 @property(readonly) BOOL clsAvoidIfPossibleForKeyItem; // @synthesize clsAvoidIfPossibleForKeyItem=_clsAvoidIfPossibleForKeyItem;
 @property(readonly) BOOL clsIsInhabited; // @synthesize clsIsInhabited=_clsIsInhabited;
 @property(readonly, nonatomic) double clsFaceScore; // @synthesize clsFaceScore=_clsFaceScore;

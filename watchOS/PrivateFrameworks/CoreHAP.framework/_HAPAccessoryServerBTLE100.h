@@ -183,7 +183,7 @@
 - (_Bool)tryPairingPassword:(id)arg1 error:(id *)arg2;
 - (void)_checkForAuthPrompt;
 - (void)continuePairingAfterAuthPrompt;
-- (void)startPairingWithConsentRequired:(_Bool)arg1 config:(id)arg2 ownershipProof:(id)arg3;
+- (void)startPairingWithConsentRequired:(_Bool)arg1 config:(id)arg2 ownershipToken:(id)arg3;
 - (void)configureCharacteristics:(id)arg1 queue:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)generateBroadcastKey:(unsigned char)arg1 queue:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_createPrimaryAccessoryFromAdvertisementData;

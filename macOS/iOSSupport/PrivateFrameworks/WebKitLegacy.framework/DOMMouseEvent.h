@@ -21,7 +21,7 @@
 @property(readonly) int offsetY;
 @property(readonly) int offsetX;
 @property(readonly) id <DOMEventTarget> relatedTarget;
-@property(readonly) unsigned short button;
+@property(readonly) short button;
 @property(readonly) BOOL metaKey;
 @property(readonly) BOOL altKey;
 @property(readonly) BOOL shiftKey;

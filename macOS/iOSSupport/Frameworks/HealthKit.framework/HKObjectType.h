@@ -97,6 +97,7 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithCode:(long long)arg1;
+- (BOOL)isHealthRecordsType;
 - (id)init;
 - (id)hk_localizedNameForAuthSheet;
 - (id)hk_localizedNameForLocale:(id)arg1;

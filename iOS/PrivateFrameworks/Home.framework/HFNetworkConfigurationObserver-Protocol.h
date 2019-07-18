@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Home/HMNetworkConfigurationProfileDelegate-Protocol.h>
+#import <Home/HMNetworkConfigurationProfileDelegatePrivate-Protocol.h>
 
 @class NSSet;
 
-@protocol HFNetworkConfigurationObserver <HMNetworkConfigurationProfileDelegate>
+@protocol HFNetworkConfigurationObserver <HMNetworkConfigurationProfileDelegatePrivate>
 
 @optional
 - (void)profilesDidUpdateAllowedHosts:(NSSet *)arg1;

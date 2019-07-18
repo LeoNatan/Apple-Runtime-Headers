@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     long long _itemCount;
     NSBulkPointerArray *_itemPointers;
     NSMutableIndexSet *_invalidIndexes;
+    NSMutableIndexSet *_queuedDeletedItemIndexes;
 }
 
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
@@ -22,6 +23,8 @@ __attribute__((visibility("hidden")))
 - (void)enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)replaceItemPointersFromArray:(id)arg1 range:(struct _NSRange)arg2;
 - (void)appendItemPointersTo:(id)arg1;
+- (void)deleteQueuedItems;
+- (void)queueDeleteItemsAtIndexes:(id)arg1;
 - (void)reloadItemsAtIndexes:(id)arg1;
 - (void)moveItemFromIndex:(long long)arg1 toIndex:(long long)arg2;
 - (void)deleteItemsAtIndexes:(id)arg1;

@@ -25,7 +25,6 @@
 - (id)combinedMessageFlags;
 - (id)combinedMailboxes;
 - (void)addMessage:(id)arg1;
-- (id)mailboxObjectIDs;
 - (id)initWithMailboxProvider:(id)arg1;
 
 @end

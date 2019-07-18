@@ -10,6 +10,7 @@
 {
 }
 
++ (void)logScriptLoadType:(long long)arg1 scriptIdentifier:(id)arg2 startLoadTime:(double)arg3 endLoadTime:(double)arg4 scriptSize:(id)arg5;
 + (id)memoryUsageStatsWithEvent:(id)arg1;
 
 @end

@@ -13,6 +13,7 @@
 {
     NSMutableDictionary *_assetsByImportIdentifier;
     NSMutableDictionary *_representationsByImportIdentifier;
+    NSMutableDictionary *_audioByImportIdentifier;
     NSHashTable *_observers;
     struct os_unfair_lock_s _observersLock;
     BOOL _ejecting;

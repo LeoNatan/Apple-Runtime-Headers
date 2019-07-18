@@ -10,7 +10,8 @@
 {
 }
 
-+ (id)cleanupInvalidSATEntriesAtSATRoot:(id)arg1 payloadUtteranceLifeTimeInDays:(long long)arg2 dryRun:(BOOL)arg3;
+- (id)cleanupInvalidSATEntriesAtSATRoot:(id)arg1 payloadUtteranceLifeTimeInDays:(long long)arg2 dryRun:(BOOL)arg3;
+- (void)sanitizeSATFilesWithAsset:(id)arg1;
 
 @end
 

@@ -45,7 +45,7 @@
 @property(readonly) _Bool is64bit;
 - (id)symbolicatedBacktraceForFrames:(unsigned long long *)arg1 frameCount:(int)arg2 options:(unsigned int)arg3;
 - (id)identifierForBinaryImagePath:(id)arg1;
-- (id)symbolicatedBacktraceForStackID:(unsigned long long)arg1 isLiteZone:(_Bool)arg2 options:(unsigned int)arg3;
+- (id)symbolicatedBacktraceForStackID:(unsigned long long)arg1 options:(unsigned int)arg2;
 - (id)symbolicatedBacktraceForNode:(unsigned int)arg1 nodeDetails:(CDStruct_599faf0f)arg2 isLiteZone:(_Bool)arg3 options:(unsigned int)arg4;
 
 // Remaining properties

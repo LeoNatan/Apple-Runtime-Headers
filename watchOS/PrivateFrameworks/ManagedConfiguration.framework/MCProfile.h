@@ -82,6 +82,7 @@
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, retain, nonatomic) NSString *profileDescription; // @synthesize profileDescription=_profileDescription;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isManagedByMDM;
 - (void)replacePayloadWithUUID:(id)arg1 withPayload:(id)arg2;
 @property(readonly, nonatomic) _Bool shouldHaveFullSSLTrust;
 - (id)appAccessibilityParameters;

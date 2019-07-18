@@ -8,14 +8,17 @@
 
 #import <HMFoundation/NSCopying-Protocol.h>
 #import <HMFoundation/NSMutableCopying-Protocol.h>
+#import <HMFoundation/NSSecureCoding-Protocol.h>
 
 @class HMFActivity, HMFMessageDestination, HMFMessageInternal, HMFMessageTransport, NSDictionary, NSString, NSUUID;
 
-@interface HMFMessage : HMFObject <NSCopying, NSMutableCopying>
+@interface HMFMessage : HMFObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
     HMFMessageInternal *_internal;
 }
 
++ (id)supportedClasses;
++ (_Bool)supportsSecureCoding;
 + (id)shortDescription;
 + (id)messageWithName:(id)arg1 qualityOfService:(long long)arg2 destination:(id)arg3 payload:(id)arg4;
 + (id)messageWithName:(id)arg1 destination:(id)arg2 payload:(id)arg3;
@@ -27,6 +30,8 @@
 + (id)messageWithName:(id)arg1 messagePayload:(id)arg2;
 @property(readonly, nonatomic) HMFMessageInternal *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)respondWithPayload:(id)arg1 error:(id)arg2;

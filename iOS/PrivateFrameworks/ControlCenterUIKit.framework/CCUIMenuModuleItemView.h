@@ -21,6 +21,7 @@
     _Bool _separatorVisible;
     _Bool _useTallLayout;
     _Bool _useTrailingCheckmarkLayout;
+    _Bool _useTrailingInset;
     double _preferredMaxLayoutWidth;
     unsigned long long _indentation;
 }
@@ -34,6 +35,7 @@
 @property(retain, nonatomic) UIView *leadingView; // @synthesize leadingView=_leadingView;
 @property(retain, nonatomic) CCUIMenuModuleItem *menuItem; // @synthesize menuItem=_menuItem;
 @property(nonatomic) unsigned long long indentation; // @synthesize indentation=_indentation;
+@property(nonatomic) _Bool useTrailingInset; // @synthesize useTrailingInset=_useTrailingInset;
 @property(nonatomic) _Bool useTrailingCheckmarkLayout; // @synthesize useTrailingCheckmarkLayout=_useTrailingCheckmarkLayout;
 @property(nonatomic) _Bool useTallLayout; // @synthesize useTallLayout=_useTallLayout;
 @property(nonatomic) double preferredMaxLayoutWidth; // @synthesize preferredMaxLayoutWidth=_preferredMaxLayoutWidth;

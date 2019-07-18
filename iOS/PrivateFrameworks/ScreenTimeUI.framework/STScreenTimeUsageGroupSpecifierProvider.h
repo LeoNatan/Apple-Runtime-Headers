@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PSSpecifier *usageSummaryGraphSpecifier; // @synthesize usageSummaryGraphSpecifier=_usageSummaryGraphSpecifier;
 - (void).cxx_destruct;
 - (void)_specifierIdentifierDidChange:(id)arg1;
+- (void)_headerButtonPressed:(id)arg1;
 - (id)_weeklyTotal:(id)arg1;
 - (id)_usageDetailsCoordinator:(id)arg1;
 - (void)_refreshingDidChange:(_Bool)arg1;

@@ -11,11 +11,10 @@
 #import <SpringBoardFoundation/NSSecureCoding-Protocol.h>
 
 @class NSData, NSDictionary, NSString, NSURL, SBFGradient, SBFWallpaperOptions, SBWallpaperImage, UIColor, UIImage;
-@protocol SBFProceduralWallpaper;
 
 @interface SBFWallpaperConfiguration : NSObject <NSCopying, BSDescriptionProviding, NSSecureCoding>
 {
-    id <SBFProceduralWallpaper> _proceduralWallpaper;
+    _Bool _needsWallpaperDimmingTreatment;
     long long _wallpaperType;
     SBWallpaperImage *_wallpaperImage;
     UIImage *_wallpaperOriginalImage;
@@ -40,13 +39,13 @@
 @property(copy, nonatomic) NSURL *originalVideoURL; // @synthesize originalVideoURL=_originalVideoURL;
 @property(copy, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 @property(copy, nonatomic) NSDictionary *proceduralWallpaperInfo; // @synthesize proceduralWallpaperInfo=_proceduralWallpaperInfo;
-@property(retain, nonatomic) id <SBFProceduralWallpaper> proceduralWallpaper; // @synthesize proceduralWallpaper=_proceduralWallpaper;
 @property(copy, nonatomic) SBFWallpaperOptions *wallpaperOptions; // @synthesize wallpaperOptions=_wallpaperOptions;
 @property(copy, nonatomic) NSData *wallpaperImageHashData; // @synthesize wallpaperImageHashData=_wallpaperImageHashData;
 @property(copy, nonatomic) NSData *wallpaperThumbnailImageData; // @synthesize wallpaperThumbnailImageData=_wallpaperThumbnailImageData;
 @property(retain, nonatomic) UIImage *wallpaperThumbnailImage; // @synthesize wallpaperThumbnailImage=_wallpaperThumbnailImage;
 @property(retain, nonatomic) UIImage *wallpaperOriginalImage; // @synthesize wallpaperOriginalImage=_wallpaperOriginalImage;
 @property(retain, nonatomic) SBWallpaperImage *wallpaperImage; // @synthesize wallpaperImage=_wallpaperImage;
+@property(nonatomic) _Bool needsWallpaperDimmingTreatment; // @synthesize needsWallpaperDimmingTreatment=_needsWallpaperDimmingTreatment;
 @property(readonly, nonatomic) long long wallpaperType; // @synthesize wallpaperType=_wallpaperType;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;

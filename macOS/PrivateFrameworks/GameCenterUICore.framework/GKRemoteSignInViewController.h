@@ -19,7 +19,7 @@
     id <GKRemoteSignInViewControllerDelegate> _delegate;
     unsigned long long _signInViewControllerMode;
     NSString *_lastPersonalizationVersionDisplayed;
-    NSString *_lastPrivacyNoticeVersionDisplayed;
+    unsigned long long _lastPrivacyNoticeVersionDisplayed;
     id <GKRemoteViewController> _remoteViewController;
     GKLocalPlayer *_localPlayer;
 }
@@ -27,7 +27,7 @@
 @property(retain) GKLocalPlayer *localPlayer; // @synthesize localPlayer=_localPlayer;
 @property BOOL didRequestRemoteViewController; // @synthesize didRequestRemoteViewController=_didRequestRemoteViewController;
 @property(retain, nonatomic) id <GKRemoteViewController> remoteViewController; // @synthesize remoteViewController=_remoteViewController;
-@property(retain) NSString *lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
+@property unsigned long long lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
 @property(retain) NSString *lastPersonalizationVersionDisplayed; // @synthesize lastPersonalizationVersionDisplayed=_lastPersonalizationVersionDisplayed;
 @property unsigned long long signInViewControllerMode; // @synthesize signInViewControllerMode=_signInViewControllerMode;
 @property __weak id <GKRemoteSignInViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

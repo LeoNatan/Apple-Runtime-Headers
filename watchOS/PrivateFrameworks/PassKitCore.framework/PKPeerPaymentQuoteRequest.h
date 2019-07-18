@@ -56,7 +56,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2 deviceIdentifier:(id)arg3;
+- (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2 deviceIdentifier:(id)arg3 deviceScore:(id)arg4 deviceMetadata:(id)arg5;
 - (id)init;
 - (void)updateWithPaymentPass:(id)arg1 externalFundingSource:(unsigned int)arg2;
 - (void)updateWithPaymentPass:(id)arg1;

@@ -13,16 +13,20 @@
 @interface MLLinkedModel : MLModel <MLModelSpecificationLoader>
 {
     MLModel *_linkedModel;
+    NSString *_modelFileName;
+    NSString *_modelSearchPath;
 }
 
 + (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(id)arg2 error:(id *)arg3;
 + (_Bool)areFeaturesIn:(id)arg1 modelNamed:(id)arg2 aSubsetOf:(id)arg3 error:(id *)arg4;
 + (id)findFile:(id)arg1 inSearchPath:(id)arg2 basePath:(id)arg3;
+@property(retain) NSString *modelSearchPath; // @synthesize modelSearchPath=_modelSearchPath;
+@property(retain) NSString *modelFileName; // @synthesize modelFileName=_modelFileName;
 @property(retain) MLModel *linkedModel; // @synthesize linkedModel=_linkedModel;
 - (void).cxx_destruct;
 - (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
-- (id)initWithLinkedModel:(id)arg1 configuration:(id)arg2;
+- (id)initWithLinkedModel:(id)arg1 modelFileName:(id)arg2 modelSearchPath:(id)arg3 configuration:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

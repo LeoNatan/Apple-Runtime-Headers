@@ -32,6 +32,7 @@
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)didMoveToWindow;
 - (void)_dynamicUserInterfaceTraitDidChange;
+@property(nonatomic) _Bool adjustsFontSizeToFitWidth;
 - (void)observedPropertiesChanged;
 - (void)setText:(id)arg1 font:(id)arg2 customInsets:(struct UIEdgeInsets)arg3 badge:(_Bool)arg4;
 - (id)init;

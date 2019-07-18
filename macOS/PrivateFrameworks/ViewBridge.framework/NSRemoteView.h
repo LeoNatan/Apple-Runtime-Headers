@@ -12,12 +12,13 @@
 #import <ViewBridge/NSXPCListenerDelegate-Protocol.h>
 #import <ViewBridge/_NSAlertSensitiveView-Protocol.h>
 
-@class NSAccessibilityRemoteUIElement, NSObject, NSRemoteViewMarshal, NSString, NSXPCConnection, NSXPCInterface, NSXPCListenerEndpoint;
+@class NSAccessibilityRemoteUIElement, NSObject, NSRemoteViewMarshal, NSString, NSUUID, NSXPCConnection, NSXPCInterface, NSXPCListenerEndpoint;
 @protocol NSRemoteViewDelegate;
 
 @interface NSRemoteView : NSView <NSXPCListenerDelegate, NSVBXPCConnectionClient, HasAuxiliaryConnection, AuxiliaryCallsHost, _NSAlertSensitiveView>
 {
     NSRemoteViewMarshal *_rvm;
+    NSUUID *_serviceInstanceIdentifier;
 }
 
 + (BOOL)isFakeEvent:(id)arg1;
@@ -34,6 +35,7 @@
 + (id)_remoteViewForIdentifier:(id)arg1;
 + (void)initialize;
 + (BOOL)automaticallyNotifiesObserversOfTouchBar;
+@property(retain, nonatomic) NSUUID *serviceInstanceIdentifier; // @synthesize serviceInstanceIdentifier=_serviceInstanceIdentifier;
 - (BOOL)_viewServiceMaySetHostWindowLevel;
 - (BOOL)_windowGeometryChangingAtRequestOfService;
 - (void)constraintsDidChangeInAccessoryWindow;
@@ -249,14 +251,14 @@
 - (BOOL)_serviceHasDebuggerAttached;
 - (void)_advanceToRunPhase:(CDUnknownBlockType)arg1;
 - (void)serviceWindowOrderedWithMode:(long long)arg1 relativeTo:(unsigned int)arg2;
-- (void)wrappedAddSubview:(id)arg1;
 - (BOOL)_shouldConstrainChildWindowGeometry;
 - (void)replaceSubview:(id)arg1 with:(id)arg2;
 - (void)setSubviews:(id)arg1;
 - (void)addSubview:(id)arg1 positioned:(long long)arg2 relativeTo:(id)arg3;
 - (void)addSubview:(id)arg1;
-- (void)_hardenAgainstSubviewMutation;
+- (void)_announceSubviewMutationDisallowed;
 - (void)maintainAppWideNotifications:(BOOL)arg1;
+- (void)_automaticFocusRingChanged:(id)arg1;
 - (void)_maintainWindowNotifications:(BOOL)arg1;
 - (void)maintainContainingWindowNotifications:(BOOL)arg1;
 - (void)maintainKeyTestWindowNotifications:(BOOL)arg1;

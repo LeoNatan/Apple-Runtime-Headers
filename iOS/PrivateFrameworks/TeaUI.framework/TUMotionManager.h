@@ -15,6 +15,8 @@
 
 + (id)shared;
 - (void).cxx_destruct;
+- (void)applicationDidBecomeActive;
+- (void)applicationDidEnterBackground;
 - (void)handleReduceMotionChanged;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

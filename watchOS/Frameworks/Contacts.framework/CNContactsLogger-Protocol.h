@@ -9,6 +9,7 @@
 @class CNContact, NSArray, NSData, NSError, NSPredicate, NSString;
 
 @protocol CNContactsLogger <NSObject>
+- (void)postingNotificationWithName:(NSString *)arg1;
 - (void)XPCConnectionWasInterrupted;
 - (void)XPCConnectionWasInvalidated;
 - (void)errorWhenQueryingTetheredSyncData:(NSError *)arg1;
@@ -16,6 +17,11 @@
 - (void)SPIUsageLackingEntitlementRejectedForPID:(int)arg1;
 - (void)SPIUsageLackingEntitlementGrantedForPID:(int)arg1;
 - (void)serviceError:(NSError *)arg1;
+- (void)setContactImageDataZeroCropRect:(NSData *)arg1 format:(const char *)arg2;
+- (void)setContactImageData:(NSData *)arg1 format:(const char *)arg2 cropRect:(struct CGRect)arg3;
+- (void)removeContactImageData;
+- (void)setContactImageData:(NSData *)arg1;
+- (void)applyContactUpdateOfKind:(const char *)arg1 value:(id)arg2 property:(NSString *)arg3;
 - (void)changedMeContact:(CNContact *)arg1;
 - (void)updatingContact:(CNContact *)arg1;
 - (void)deletingContact:(CNContact *)arg1;
@@ -31,6 +37,7 @@
 - (void)contactsAccessWasGranted:(_Bool)arg1;
 - (void)tccAccessRequestWasDenied;
 - (void)tccAccessPreflightWasDenied;
+- (void)postingNotification:(void (^)(void (^)(void)))arg1;
 - (void)settingDefaultAccount:(void (^)(void (^)(void)))arg1;
 - (void)resettingSortDataIfNeeded:(void (^)(void (^)(void)))arg1;
 - (void)servicingContactsRequest:(void (^)(void (^)(void)))arg1;

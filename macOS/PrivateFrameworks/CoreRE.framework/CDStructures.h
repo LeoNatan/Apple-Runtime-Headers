@@ -173,14 +173,20 @@ struct Subscription;
 
 struct SubscriptionLegacy;
 
+struct _opaque_pthread_mutex_t {
+    long long __sig;
+    char __opaque[56];
+};
+
 struct mutex {
-    struct _opaque_pthread_mutex_t {
-        long long __sig;
-        char __opaque[56];
-    } __m_;
+    struct _opaque_pthread_mutex_t __m_;
 };
 
 struct queue<GainRampCommand>;
+
+struct recursive_mutex {
+    struct _opaque_pthread_mutex_t __m_;
+};
 
 struct shared_ptr<AudioStreamRecordingManager::StreamWriter> {
     struct StreamWriter *__ptr_;

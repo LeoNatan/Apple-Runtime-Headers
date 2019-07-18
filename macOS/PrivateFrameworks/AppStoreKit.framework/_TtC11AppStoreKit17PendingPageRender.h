@@ -28,6 +28,7 @@
     // Error parsing type: , name: isLayoutReady
     // Error parsing type: , name: hasViewModelPresentTime
     // Error parsing type: , name: rootViewModelPresentTime
+    // Error parsing type: , name: isLowDataMode
     // Error parsing type: , name: assetLoaderIsIdle
     // Error parsing type: , name: assetLoader
     // Error parsing type: , name: hasInitialRequestEndTime

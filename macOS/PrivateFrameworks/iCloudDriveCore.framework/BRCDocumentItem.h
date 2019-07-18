@@ -51,6 +51,7 @@
 - (void)markForceUpload;
 - (void)reImportFromFileProvider;
 - (void)handleUnknownItemError;
+- (void)updateWithLogicalName:(id)arg1 newParent:(id)arg2;
 - (BOOL)markLatestSyncRequestAcknowledgedInZone:(id)arg1;
 - (void)markLatestSyncRequestRejectedInZone:(id)arg1;
 - (void)markDead;

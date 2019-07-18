@@ -34,6 +34,7 @@
 - (void)setSubtitle:(id)arg1 animated:(_Bool)arg2;
 - (void)setTitle:(id)arg1 animated:(_Bool)arg2;
 - (void)updateConstraints;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

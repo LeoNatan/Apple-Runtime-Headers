@@ -15,12 +15,12 @@
     id <PGPersonResult> _person;
     double _weight;
     double _sourceWeight;
-    NSArray *_sourceDescriptions;
+    NSArray *_sourceNames;
 }
 
-+ (id)suggestionResultWithPerson:(id)arg1 weight:(double)arg2 sourceWeight:(double)arg3 sourceDescription:(id)arg4;
++ (id)suggestionResultWithPerson:(id)arg1 weight:(double)arg2 sourceWeight:(double)arg3 sourceName:(id)arg4;
 @property(nonatomic) _Bool useContactSuggestion; // @synthesize useContactSuggestion=_useContactSuggestion;
-@property(readonly, nonatomic) NSArray *sourceDescriptions; // @synthesize sourceDescriptions=_sourceDescriptions;
+@property(readonly, nonatomic) NSArray *sourceNames; // @synthesize sourceNames=_sourceNames;
 @property(readonly, nonatomic) double sourceWeight; // @synthesize sourceWeight=_sourceWeight;
 @property(readonly, nonatomic) double weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) id <PGPersonResult> person; // @synthesize person=_person;
@@ -29,7 +29,7 @@
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 @property(readonly, nonatomic) double score;
 - (void)mergeWithSuggestionResult:(id)arg1;
-- (id)initWithPerson:(id)arg1 weight:(double)arg2 sourceWeight:(double)arg3 sourceDescription:(id)arg4;
+- (id)initWithPerson:(id)arg1 weight:(double)arg2 sourceWeight:(double)arg3 sourceName:(id)arg4;
 
 @end
 

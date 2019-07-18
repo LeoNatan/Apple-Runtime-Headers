@@ -17,6 +17,8 @@
 - (void).cxx_destruct;
 - (void)_invalidationHandler;
 - (id)_connection;
+- (void)endPlaybackSession:(id)arg1;
+- (void)reportPlayback:(id)arg1 sessionID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)reportPlayback:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)init;
 

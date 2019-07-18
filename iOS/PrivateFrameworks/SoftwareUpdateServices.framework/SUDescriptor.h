@@ -42,6 +42,8 @@
     NSDictionary *_systemPartitionPadding;
     NSData *_sepDigest;
     NSData *_rsepDigest;
+    NSData *_sepTBMDigest;
+    NSData *_rsepTBMDigest;
     NSDate *_releaseDate;
     unsigned long long _mdmDelayInterval;
     NSString *_assetID;
@@ -54,6 +56,8 @@
 @property(retain, nonatomic) NSString *assetID; // @synthesize assetID=_assetID;
 @property(nonatomic) unsigned long long mdmDelayInterval; // @synthesize mdmDelayInterval=_mdmDelayInterval;
 @property(retain, nonatomic) NSDate *releaseDate; // @synthesize releaseDate=_releaseDate;
+@property(retain, nonatomic, setter=setRSEPTBMDigest:) NSData *rsepTBMDigest; // @synthesize rsepTBMDigest=_rsepTBMDigest;
+@property(retain, nonatomic, setter=setSEPTBMDigest:) NSData *sepTBMDigest; // @synthesize sepTBMDigest=_sepTBMDigest;
 @property(retain, nonatomic, setter=setRSEPDigest:) NSData *rsepDigest; // @synthesize rsepDigest=_rsepDigest;
 @property(retain, nonatomic, setter=setSEPDigest:) NSData *sepDigest; // @synthesize sepDigest=_sepDigest;
 @property(retain, nonatomic) NSDictionary *systemPartitionPadding; // @synthesize systemPartitionPadding=_systemPartitionPadding;

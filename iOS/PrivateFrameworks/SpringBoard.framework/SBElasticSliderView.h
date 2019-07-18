@@ -6,20 +6,22 @@
 
 #import <MediaControls/MediaControlsVolumeSliderView.h>
 
-@class CCUICAPackageDescription, MTMaterialView, UIImpactFeedbackGenerator;
+@class CCUICAPackageDescription, MTMaterialView;
 
 @interface SBElasticSliderView : MediaControlsVolumeSliderView
 {
-    UIImpactFeedbackGenerator *_impactFeedbackGenerator;
     MTMaterialView *_darkMaterialView;
     CCUICAPackageDescription *_packageDescription;
+    double _expandedWidthForVerticalGlyphLayout;
 }
 
+@property(nonatomic) double expandedWidthForVerticalGlyphLayout; // @synthesize expandedWidthForVerticalGlyphLayout=_expandedWidthForVerticalGlyphLayout;
 - (void).cxx_destruct;
 - (void)_configureForContentModuleGroupRenderingIfNecessary;
 - (void)setContinuousSliderCornerRadius:(double)arg1;
 - (void)layoutSubviews;
 - (void)_setupDarkMaterialView;
+- (struct CGPoint)glyphCenter;
 - (void)setGlyphVisible:(_Bool)arg1;
 - (id)glyphPackageDescription;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -34,9 +34,9 @@ __attribute__((visibility("hidden")))
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)_removeFinishedSession:(id)arg1;
-- (void)_handleIncomingMessage:(id)arg1 info:(id)arg2 fromID:(id)arg3;
+- (void)_handleIncomingMessage:(id)arg1 info:(id)arg2 fromID:(id)arg3 receivingHandle:(id)arg4 receivingAccountIdentifier:(id)arg5;
 - (void)_handleCommand:(id)arg1 fromID:(id)arg2;
-- (void)_handleChunk:(id)arg1 fromID:(id)arg2;
+- (void)_handleChunk:(id)arg1 fromID:(id)arg2 receivingHandle:(id)arg3 receivingAccountIdentifier:(id)arg4;
 - (id)groupSessionForIdentifier:(id)arg1;
 - (void)stopSharing;
 - (id)removeSharingWith:(id)arg1;

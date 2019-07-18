@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <WorkflowUI/HUServiceGridViewControllerDelegate-Protocol.h>
 #import <WorkflowUI/NSObject-Protocol.h>
 
 @class HFTriggerBuilder, UIViewController;
 
-@protocol HUTriggerEditorDelegate <NSObject>
+@protocol HUTriggerEditorDelegate <NSObject, HUServiceGridViewControllerDelegate>
 - (void)triggerEditor:(UIViewController *)arg1 didFinishWithTriggerBuilder:(HFTriggerBuilder *)arg2;
 
 @optional

@@ -8,13 +8,13 @@
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDAccessory, HMDCameraResidentMessageHandler, HMDCameraSessionID, HMDCameraSnapshotMetrics, HMDSnapshotFile, HMDSnapshotRequestHandler, NSDictionary, NSObject, NSString, NSUUID;
+@class HMDAccessory, HMDCameraResidentMessageHandler, HMDCameraSnapshotMetrics, HMDCameraSnapshotSessionID, HMDSnapshotFile, HMDSnapshotRequestHandler, NSDictionary, NSObject, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HMDCameraSnapshotReceiver : HMFObject <HMFLogging>
 {
     NSUUID *_uniqueIdentifier;
-    HMDCameraSessionID *_sessionID;
+    HMDCameraSnapshotSessionID *_sessionID;
     NSObject<OS_dispatch_queue> *_workQueue;
     HMDAccessory *_accessory;
     NSDictionary *_options;
@@ -34,7 +34,7 @@
 @property(readonly, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, nonatomic) __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(readonly, nonatomic) HMDCameraSessionID *sessionID; // @synthesize sessionID=_sessionID;
+@property(readonly, nonatomic) HMDCameraSnapshotSessionID *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (void).cxx_destruct;
 - (void)_sendConfirmationToResident:(CDUnknownBlockType)arg1;

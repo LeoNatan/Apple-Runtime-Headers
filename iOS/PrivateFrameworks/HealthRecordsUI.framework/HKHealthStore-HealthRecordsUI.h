@@ -7,7 +7,7 @@
 #import <HealthKit/HKHealthStore.h>
 
 @interface HKHealthStore (HealthRecordsUI)
++ (id)sharedInstance;
 - (void)fetchRecordsForConceptId:(id)arg1 keyPath:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)fetchGrouperConceptsWithCompletion:(CDUnknownBlockType)arg1;
 @end
 

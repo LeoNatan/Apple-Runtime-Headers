@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) __weak MKAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) int anchorPosition;
+@property(readonly, nonatomic) _Bool hasPendingVisibility;
 @property(readonly, nonatomic, getter=isVisible) _Bool visible;
 - (void)dismissAnimated:(_Bool)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)showAnimated:(_Bool)arg1 completionBlock:(CDUnknownBlockType)arg2;

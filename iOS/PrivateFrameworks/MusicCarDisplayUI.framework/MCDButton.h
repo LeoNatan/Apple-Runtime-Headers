@@ -30,6 +30,7 @@
 - (void)_updateButtonStyle;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
+- (double)focusLayerCornerRadius;
 - (id)_buttonBackGroundColorTouch;
 - (id)tintColorForUnhighlightedTextLabel;
 - (void)setHidden:(_Bool)arg1;

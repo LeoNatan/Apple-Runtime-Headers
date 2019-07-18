@@ -8,14 +8,19 @@
 
 @class ISColor, ISImage, NSData;
 
-__attribute__((visibility("hidden")))
 @interface ISGraphicsContext : NSObject
 {
     struct CGContext *_cgContext;
+    unsigned long long _preset;
 }
 
 + (id)bitmapContextWithSize:(struct CGSize)arg1 scale:(double)arg2 preset:(unsigned long long)arg3;
+@property(readonly, nonatomic) unsigned long long preset; // @synthesize preset=_preset;
 @property(readonly, nonatomic) struct CGContext *cgContext; // @synthesize cgContext=_cgContext;
+- (void)popState;
+- (void)pushState;
+@property(nonatomic) struct CGAffineTransform transform;
+- (void)clipToMaskCGImage:(struct CGImage *)arg1 inRect:(struct CGRect)arg2;
 @property(readonly, nonatomic) struct CGRect bounds;
 - (void)clear;
 - (void)fillPath:(struct CGPath *)arg1;
@@ -30,7 +35,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) ISImage *image;
 @property(readonly, nonatomic) double scale;
 - (void)dealloc;
-- (id)initWithCGContext:(struct CGContext *)arg1;
+- (id)initWithCGContext:(struct CGContext *)arg1 preset:(unsigned long long)arg2;
 
 @end
 

@@ -12,6 +12,7 @@
     struct __CVBuffer *_sourceCVPixelBuffer;
 }
 
++ (id)_sharedCIContext;
 - (void)getTextureInfos:(CDStruct_183601bc *)arg1 forSpriteIndexes:(unsigned int *)arg2 geometries:(const CDStruct_ac168a83 *)arg3 spriteStyles:(const CDStruct_506f5052 *)arg4 spriteInfos:(const CDStruct_9d1ebe49 *)arg5 screenScale:(double)arg6 count:(unsigned int)arg7;
 - (struct CGImage *)imageRepresentation;
 // Error parsing type for property orientationTransform:

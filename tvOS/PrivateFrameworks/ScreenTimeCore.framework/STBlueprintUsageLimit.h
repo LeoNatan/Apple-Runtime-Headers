@@ -24,11 +24,15 @@
 @property(retain, nonatomic) STBlueprintUsageLimitScheduleRepresentation *budgetLimitScheduleRepresentation;
 - (void)setBudgetLimit:(double)arg1 forDay:(unsigned long long)arg2;
 - (void)setBudgetLimit:(double)arg1;
+- (void)_usageLimitDidChangeFromOldApplicationIdentifiers:(id)arg1 oldCategoryIdentifiers:(id)arg2 oldWebDomains:(id)arg3 oldItemIdentifiers:(id)arg4 oldItemType:(id)arg5 toNewApplicationIdentifiers:(id)arg6 newCategoryIdentifiers:(id)arg7 newWebDomains:(id)arg8 newItemIdentifiers:(id)arg9 newItemType:(id)arg10;
+@property(copy, nonatomic) NSString *usageItemType; // @dynamic usageItemType;
+@property(copy, nonatomic) NSArray *itemIdentifiers; // @dynamic itemIdentifiers;
+@property(copy, nonatomic) NSArray *websiteIdentifiers; // @dynamic websiteIdentifiers;
+@property(copy, nonatomic) NSArray *categoryIdentifiers; // @dynamic categoryIdentifiers;
+@property(copy, nonatomic) NSArray *applicationIdentifiers; // @dynamic applicationIdentifiers;
 
 // Remaining properties
-@property(copy, nonatomic) NSArray *applicationIdentifiers; // @dynamic applicationIdentifiers;
 @property(readonly, nonatomic) STBlueprint *blueprint; // @dynamic blueprint;
-@property(copy, nonatomic) NSArray *categoryIdentifiers; // @dynamic categoryIdentifiers;
 @property(nonatomic) double day0Limit; // @dynamic day0Limit;
 @property(nonatomic) double day1Limit; // @dynamic day1Limit;
 @property(nonatomic) double day2Limit; // @dynamic day2Limit;
@@ -39,11 +43,8 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(copy, nonatomic) NSArray *itemIdentifiers; // @dynamic itemIdentifiers;
 @property(retain, nonatomic) NSNumber *notificationTimeInterval; // @dynamic notificationTimeInterval;
 @property(readonly) Class superclass;
-@property(copy, nonatomic) NSString *usageItemType; // @dynamic usageItemType;
-@property(copy, nonatomic) NSArray *websiteIdentifiers; // @dynamic websiteIdentifiers;
 
 @end
 

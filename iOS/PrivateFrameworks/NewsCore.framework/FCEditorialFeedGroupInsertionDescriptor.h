@@ -8,22 +8,24 @@
 
 #import <NewsCore/FCFeedGroupInsertionDescriptor-Protocol.h>
 
-@class NSSet;
+@class NSSet, NSString;
 
 @interface FCEditorialFeedGroupInsertionDescriptor : NSObject <FCFeedGroupInsertionDescriptor>
 {
-    NSSet *_groupTypesToExhaust;
+    NSString *_sourceIdentifier;
+    NSSet *_precedingSourceIdentifiers;
     unsigned long long _firstGroupMinPrecedingTopicGroups;
     unsigned long long _minPrecedingTopicGroups;
 }
 
 @property(readonly, nonatomic) unsigned long long minPrecedingTopicGroups; // @synthesize minPrecedingTopicGroups=_minPrecedingTopicGroups;
 @property(readonly, nonatomic) unsigned long long firstGroupMinPrecedingTopicGroups; // @synthesize firstGroupMinPrecedingTopicGroups=_firstGroupMinPrecedingTopicGroups;
-@property(readonly, copy, nonatomic) NSSet *groupTypesToExhaust; // @synthesize groupTypesToExhaust=_groupTypesToExhaust;
+@property(readonly, copy, nonatomic) NSSet *precedingSourceIdentifiers; // @synthesize precedingSourceIdentifiers=_precedingSourceIdentifiers;
+@property(readonly, copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
 - (void).cxx_destruct;
-- (_Bool)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
+- (_Bool)wantsToInsertGroupInContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithGroupTypesToExhaust:(id)arg1 firstGroupMinPrecedingTopicGroups:(unsigned long long)arg2 minPrecedingTopicGroups:(unsigned long long)arg3;
+- (id)initWithSourceIdentifier:(id)arg1 precedingSourceIdentifiers:(id)arg2 firstGroupMinPrecedingTopicGroups:(unsigned long long)arg3 minPrecedingTopicGroups:(unsigned long long)arg4;
 - (id)init;
 
 @end

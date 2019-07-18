@@ -8,6 +8,7 @@
 
 @class NBPhoneMetaData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NBMetadataHelper : NSObject
 {
     NBPhoneMetaData *_cachedMetaData;

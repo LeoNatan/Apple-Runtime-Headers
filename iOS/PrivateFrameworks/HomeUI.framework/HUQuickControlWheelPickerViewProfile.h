@@ -12,6 +12,7 @@
 {
     _Bool _sizeToFitTextWidth;
     _Bool _uppercaseRowTitles;
+    _Bool _showOffState;
     double _borderWidth;
     UIColor *_borderColor;
     double _cornerRadius;
@@ -21,6 +22,7 @@
 }
 
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
+@property(nonatomic) _Bool showOffState; // @synthesize showOffState=_showOffState;
 @property(nonatomic) double selectedRowCornerRadius; // @synthesize selectedRowCornerRadius=_selectedRowCornerRadius;
 @property(nonatomic) double selectedRowBorderWidth; // @synthesize selectedRowBorderWidth=_selectedRowBorderWidth;
 @property(nonatomic) _Bool uppercaseRowTitles; // @synthesize uppercaseRowTitles=_uppercaseRowTitles;

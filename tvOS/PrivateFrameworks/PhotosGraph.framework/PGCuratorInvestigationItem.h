@@ -35,6 +35,7 @@
     NSNumber *_clsFaceScore;
     NSNumber *_clsIsInhabited;
     NSNumber *_clsAvoidIfPossibleForKeyItem;
+    NSNumber *_clsHasPoorResolution;
     NSNumber *_clsHasInterestingScenes;
     NSNumber *_clsLikabilityScore;
     NSNumber *_clsInteractionScore;
@@ -42,6 +43,10 @@
     NSNumber *_clsAutoplaySuggestionScore;
     NSNumber *_isShinyGem;
     NSNumber *_isRegularGem;
+    NSNumber *_clsDuration;
+    NSNumber *_clsIsNonMemorable;
+    NSNumber *_clsIsLoopOrBounce;
+    NSNumber *_clsIsLongExposure;
     NSString *_clsIdentifier;
     NSDate *_cls_universalDate;
     NSDate *_cls_localDate;
@@ -69,6 +74,10 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D pl_coordinate;
 @property(readonly, nonatomic) NSDate *pl_date;
+@property(readonly, nonatomic) _Bool clsIsLongExposure;
+@property(readonly, nonatomic) _Bool clsIsLoopOrBounce;
+@property(readonly, nonatomic) _Bool clsIsNonMemorable;
+@property(readonly, nonatomic) double clsDuration;
 - (_Bool)isRegularGem;
 - (_Bool)isShinyGem;
 @property(readonly, nonatomic) double clsAutoplaySuggestionScore;
@@ -76,6 +85,7 @@
 - (double)clsInteractionScore;
 - (double)clsLikabilityScore;
 @property(readonly) _Bool clsHasInterestingScenes;
+@property(readonly) _Bool clsHasPoorResolution;
 @property(readonly) _Bool clsAvoidIfPossibleForKeyItem;
 @property(readonly) _Bool clsIsInhabited;
 @property(readonly, nonatomic) double clsFaceScore;

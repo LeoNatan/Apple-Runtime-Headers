@@ -8,8 +8,12 @@
 
 @interface _TtC12AppAnalytics13UploadDropbox : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: baseURL
+    // Error parsing type: , name: config
     // Error parsing type: , name: debugging
+    // Error parsing type: , name: files
+    // Error parsing type: , name: pathProvider
+    // Error parsing type: , name: fileManager
+    // Error parsing type: , name: lock
 }
 
 @end

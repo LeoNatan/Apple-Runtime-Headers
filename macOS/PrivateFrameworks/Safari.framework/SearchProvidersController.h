@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 + (struct URLRequest)redirectToSafeSearchIfNeeded:(const struct URLRequest *)arg1;
 + (id)_internetServicesRegion;
-+ (void)_getProviders:(id *)arg1 newDefaultProvider:(id *)arg2;
++ (void)_getAllProviders:(id *)arg1 userVisibleProviders:(id *)arg2 newDefaultProvider:(id *)arg3;
 + (void)_getSortedSearchProviderList:(id *)arg1 andDefaultProvider:(id *)arg2 fromProviderList:(id)arg3;
 + (void)_sortSearchProviders:(id)arg1;
 + (id)sharedController;

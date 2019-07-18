@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSString, NSURL, NSURLRequest;
+@class NSData, NSString, NSURL, NSURLRequest, NSUUID;
 @protocol __NSURLSessionTaskGroupForConfiguration;
 
 @interface __NSCFTaskForClass : NSObject
 {
     Class cl;
     NSURLRequest *request;
+    NSUUID *uniqueIdentifier;
     NSURL *uploadFile;
     NSData *bodyData;
     CDUnknownBlockType completion;
@@ -29,6 +30,7 @@
 @property(copy) CDUnknownBlockType completion; // @synthesize completion;
 @property(retain) NSData *bodyData; // @synthesize bodyData;
 @property(retain) NSURL *uploadFile; // @synthesize uploadFile;
+@property(retain) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier;
 @property(retain) NSURLRequest *request; // @synthesize request;
 @property(retain) Class cl; // @synthesize cl;
 - (void)dealloc;

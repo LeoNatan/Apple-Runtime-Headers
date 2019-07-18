@@ -10,7 +10,7 @@
 #import <GameCenterUI/NSTextFieldDelegate-Protocol.h>
 #import <GameCenterUI/UISearchBarDelegate-Protocol.h>
 
-@class GKComposeController, GKDashboardMultiplayerPickerDataSource, NSArray, NSLayoutConstraint, NSSegmentedControl, NSString, NSTextField, NSView, UIButton;
+@class GKComposeController, GKDashboardMultiplayerPickerDataSource, NSArray, NSButton, NSLayoutConstraint, NSSegmentedControl, NSString, NSTextField, NSView;
 @protocol GKDashboardNearbyBrowserDelegate;
 
 @interface GKDashboardMultiplayerPickerViewController : GKDashboardCollectionViewController <NSTextFieldDelegate, UISearchBarDelegate, GKComposeControllerDelegate>
@@ -24,8 +24,8 @@
     id <GKDashboardNearbyBrowserDelegate> _nearbyDelegate;
     NSArray *_initiallySelectedPlayers;
     NSTextField *_descriptionLabel;
-    UIButton *_sendButton;
-    UIButton *_customizeMessageButton;
+    NSButton *_sendButton;
+    NSButton *_customizeMessageButton;
     NSTextField *_messageField;
     NSView *_scrollingHeader;
     NSLayoutConstraint *_scrollingHeaderTopConstraint;
@@ -50,8 +50,8 @@
 @property(retain, nonatomic) NSLayoutConstraint *scrollingHeaderTopConstraint; // @synthesize scrollingHeaderTopConstraint=_scrollingHeaderTopConstraint;
 @property(retain, nonatomic) NSView *scrollingHeader; // @synthesize scrollingHeader=_scrollingHeader;
 @property(retain, nonatomic) NSTextField *messageField; // @synthesize messageField=_messageField;
-@property(retain, nonatomic) UIButton *customizeMessageButton; // @synthesize customizeMessageButton=_customizeMessageButton;
-@property(retain, nonatomic) UIButton *sendButton; // @synthesize sendButton=_sendButton;
+@property(retain, nonatomic) NSButton *customizeMessageButton; // @synthesize customizeMessageButton=_customizeMessageButton;
+@property(retain, nonatomic) NSButton *sendButton; // @synthesize sendButton=_sendButton;
 @property(retain, nonatomic) NSTextField *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(nonatomic) BOOL shouldIgnoreClearSelection; // @synthesize shouldIgnoreClearSelection=_shouldIgnoreClearSelection;
 @property(retain, nonatomic) NSArray *initiallySelectedPlayers; // @synthesize initiallySelectedPlayers=_initiallySelectedPlayers;

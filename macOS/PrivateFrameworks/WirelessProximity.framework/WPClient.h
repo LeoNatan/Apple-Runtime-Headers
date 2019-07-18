@@ -64,8 +64,6 @@
 - (void)enableTestMode;
 - (void)checkAllowDuplicates:(CDUnknownBlockType)arg1;
 - (void)receivedTestResponse:(id)arg1;
-- (void)scannerStateDidChange:(long long)arg1;
-- (void)advertiserStateDidChange:(long long)arg1;
 - (void)stateDidChange:(long long)arg1;
 - (void)listenToBandwidthNotifications;
 - (void)isRangingEnabledReply:(CDUnknownBlockType)arg1;

@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)uniqueIdentifier;
 - (id)generateImageWithFormat:(int)arg1;
 - (void)setUiImage:(id)arg1;
 - (id)loadImage;

@@ -14,6 +14,7 @@
 - (void)showReportWithParameters:(NSDictionary *)arg1 withReply:(void (^)(long long))arg2;
 - (void)promptForPasswordWithParameters:(NSDictionary *)arg1 inParentWindow:(NSWindow *)arg2 withReply:(void (^)(long long, NSString *, NSString *, BOOL))arg3;
 - (void)askUserWithParameters:(NSDictionary *)arg1 withReply:(void (^)(long long, BOOL))arg2;
+- (void)canShowUserInteractionForDeviceWithIdentifier:(NSString *)arg1 withReply:(void (^)(BOOL))arg2;
 - (void)updateAvailableWithSoftwareInfo:(AMPDeviceSoftwareInfo *)arg1 forDeviceWithIdentifier:(NSString *)arg2;
 - (void)didRemoveDeviceWithIdentifier:(NSString *)arg1;
 - (void)didCompleteSoftwareUpdateRestoreForDeviceWithIdentifier:(NSString *)arg1 withError:(NSError *)arg2;

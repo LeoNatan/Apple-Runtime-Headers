@@ -19,5 +19,6 @@
 @property(readonly) long long priorityIndex;
 @property(readonly) struct CGSize contentClippingSize;
 @property(readonly) struct CGSize preferredSize;
+- (struct CGSize)sizeThatFitsProposedLayoutSize:(struct CGSize)arg1;
 @end
 

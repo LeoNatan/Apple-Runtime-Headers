@@ -11,7 +11,6 @@
     // Error parsing type: , name: sessionProvider
     // Error parsing type: , name: accessQueue
     // Error parsing type: , name: eventProcessors
-    // Error parsing type: , name: deferredbackgroundResuming
 }
 
 @end

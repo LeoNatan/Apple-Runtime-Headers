@@ -20,8 +20,9 @@
 
 - (void).cxx_destruct;
 - (void)_handleContentTasteControllerDidChangeNotification:(id)arg1;
-- (void)_toggleContentTasteTypeForType:(int)arg1;
+- (void)_setContentTasteType:(int)arg1;
 - (int)_contentTasteType;
+- (_Bool)isVisible;
 - (id)actionSheetItem;
 - (void)dealloc;
 - (id)initWithType:(unsigned int)arg1 modelObject:(id)arg2 origin:(id)arg3 actionSheetController:(id)arg4;

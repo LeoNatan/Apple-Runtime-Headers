@@ -42,6 +42,7 @@
 - (NSString *)_detailTextForHeaderInSection:(long long)arg1;
 - (NSString *)_titleForFooterInSection:(long long)arg1;
 - (NSString *)_titleForHeaderInSection:(long long)arg1;
+- (void)_applyContentSizeDeltaImmediately:(double)arg1;
 - (void)_coalesceContentSizeUpdateWithDelta:(double)arg1;
 - (double)_dataSourceHeightForFooterInSection:(long long)arg1;
 - (double)_dataSourceHeightForHeaderInSection:(long long)arg1;

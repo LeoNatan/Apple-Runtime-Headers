@@ -62,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)numberOfSubitems;
 - (_Bool)shouldAppearWithVisibility:(int)arg1;
 - (void)applicationDidResume;
+- (void)prepareForReload;
 - (_Bool)forceRefreshLocationItemOnSave;
 - (_Bool)forceRefreshInviteesItemOnSave;
 - (_Bool)forceRefreshStartAndEndDatesOnSave;

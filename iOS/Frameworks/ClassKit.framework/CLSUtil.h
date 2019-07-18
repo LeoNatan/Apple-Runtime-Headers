@@ -10,12 +10,13 @@
 {
 }
 
++ (id)hashArrayOfStrings:(id)arg1 lastHash:(id)arg2;
 + (id)hashData:(id)arg1 lastHashData:(id)arg2;
 + (id)hashData:(id)arg1 lastHash:(id)arg2;
 + (id)errorFromData:(id)arg1;
 + (id)dataFromError:(id)arg1;
 + (id)pathFromData:(id)arg1;
-+ (id)dataFromPath:(id)arg1;
++ (id)dataFromPath:(id)arg1 makeBackwardCompatible:(_Bool)arg2;
 + (id)mediumDateFormatter;
 + (id)stringFromTimeInterval:(double)arg1;
 + (id)mediumStringFromDate:(id)arg1;

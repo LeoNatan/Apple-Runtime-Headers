@@ -32,6 +32,8 @@
 - (void)_incrementOrDecreaseZoomStep:(BOOL)arg1 forURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_getZoomStepForDomain:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_getDefaultZoomStep:(CDUnknownBlockType)arg1;
+- (void)removeAllPageZoomPreferences;
+- (void)removePageZoomPreferencesForHostnames:(id)arg1;
 - (void)getAvailableActionsForURL:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)resetZoomLevelOnURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)zoomOutOnURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -7,6 +7,7 @@
 #import <HealthAlgorithms/HAMenstrualAlgorithmsDayInput.h>
 
 @interface HAMenstrualAlgorithmsDayInput (HKMenstrualCycles)
++ (id)hkmc_emptyDayInputWithDayIndex:(int)arg1;
 + (id)hkmc_dayInputWithDaySummary:(id)arg1;
 @end
 

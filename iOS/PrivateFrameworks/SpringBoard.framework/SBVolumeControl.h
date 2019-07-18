@@ -69,6 +69,7 @@
 - (float)getMediaVolume;
 - (void)setMediaVolume:(float)arg1;
 - (_Bool)userHasAcknowledgedEUVolumeLimit;
+- (id)acquireVolumeHUDHiddenAssertionForReason:(id)arg1;
 - (void)hideVolumeHUDIfVisible;
 - (id)onscreenSuperGreatVolumeHUDViewController;
 - (void)clearAlwaysHiddenCategories;

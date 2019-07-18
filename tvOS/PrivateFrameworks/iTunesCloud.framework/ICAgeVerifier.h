@@ -16,7 +16,7 @@
     NSDate *_verificationExpirationDate;
 }
 
-@property(copy, nonatomic) NSDate *verificationExpirationDate; // @synthesize verificationExpirationDate=_verificationExpirationDate;
+@property(readonly, nonatomic) NSDate *verificationExpirationDate; // @synthesize verificationExpirationDate=_verificationExpirationDate;
 @property(nonatomic) long long status; // @synthesize status=_status;
 - (void).cxx_destruct;
 - (id)description;
@@ -24,7 +24,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic, getter=isExplicitContentAllowed) _Bool explicitContentAllowed;
 - (void)runAgeVerification;
-- (id)initWithUserProperties:(id)arg1;
+- (id)initWithExpirationDate:(id)arg1;
 
 @end
 

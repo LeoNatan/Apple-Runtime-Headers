@@ -41,6 +41,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool canEditAnimations;
 @property(readonly, nonatomic) NSSet *inspectableAttributes;
 @property(readonly, nonatomic) NSString *title;
+- (id)localizedNameForEventTrigger:(unsigned long long)arg1 includeLineBreaks:(_Bool)arg2;
+@property(readonly, nonatomic) KNBuildChunk *previousActiveChunkWithReferentRelativeToEnd;
 - (id)p_stringRepresentationWithNotAvailableForIndex:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
 - (id)p_stringForReferent:(unsigned long long)arg1;

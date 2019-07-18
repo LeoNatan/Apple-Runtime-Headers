@@ -90,7 +90,7 @@
 - (void)enumerateSourceIconViewsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)addSourceIconView:(id)arg1;
 - (_Bool)hasSourceIconView:(id)arg1;
-- (void)swapSourceIcon:(id)arg1 withIcon:(id)arg2;
+- (void)swapSourceIconWithIdentifier:(id)arg1 withIcon:(id)arg2;
 - (void)addSourceIcons:(id)arg1;
 - (void)addSourceIcon:(id)arg1;
 - (void)addGrabbedIconView:(id)arg1;

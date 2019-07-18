@@ -13,6 +13,7 @@
 + (id)_accountInfoSettingsURLForAccount:(id)arg1 preferenceURLType:(long long)arg2;
 + (id)_pathComponentsForAccount:(id)arg1 preferenceURLType:(long long)arg2;
 + (id)_urlForRoot:(id)arg1 pathComponents:(id)arg2;
++ (id)blockedSenderURL;
 + (id)vipSenderListURL;
 + (id)storageManagementURL;
 + (id)addAccountURL;

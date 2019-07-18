@@ -27,8 +27,16 @@
 - (void)invalidateRemoteProxyTargetDevice;
 - (void)archiveBackgroundContext:(id)arg1;
 - (void)archiveContext:(id)arg1;
+- (void)passOwnershipTokenWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)storePassOwnershipToken:(id)arg1 withIdentifier:(id)arg2;
+- (void)performDeviceCheckInWithCompletion:(CDUnknownBlockType)arg1;
+- (void)endRequiringUpgradedPasscodeIfNecessary;
+- (void)startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(_Bool)arg1;
+- (void)enforceUpgradedPasscodePolicyWithCompletion:(CDUnknownBlockType)arg1;
+- (void)notePasscodeUpgradeFlowDidEnd;
+- (void)notePasscodeUpgradeFlowWillBeginWithCompletion:(CDUnknownBlockType)arg1;
 - (void)appleAccountInformationWithCompletion:(CDUnknownBlockType)arg1;
-- (void)renewAppleAccountWithCompletion:(CDUnknownBlockType)arg1;
+- (void)renewAppleAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setDefaultPaymentPassUniqueIdentifier:(id)arg1;
 - (void)updateAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deviceMetadataWithFields:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
@@ -60,7 +68,6 @@
 - (void)getProvisioningDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)signData:(id)arg1 signatureEntanglementMode:(unsigned int)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)getTrustedDeviceEnrollmentInfoWithCompletion:(CDUnknownBlockType)arg1;
-- (void)getRegistrationDataWithAuthToken:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getRegistrationDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getConfigurationDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)queueConnectionToTrustedServiceManagerForPushTopic:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

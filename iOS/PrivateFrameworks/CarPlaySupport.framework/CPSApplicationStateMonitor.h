@@ -6,19 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable, NSString, UIWindowScene;
+@class CARObserverHashTable, NSString, UIWindowScene;
 @protocol OS_dispatch_queue;
 
 @interface CPSApplicationStateMonitor : NSObject
 {
     NSObject<OS_dispatch_queue> *_stateObserverQueue;
     NSString *_bundleIdentifier;
-    NSHashTable *_stateObservers;
+    CARObserverHashTable *_stateObservers;
     UIWindowScene *_windowScene;
 }
 
 @property(nonatomic) __weak UIWindowScene *windowScene; // @synthesize windowScene=_windowScene;
-@property(retain, nonatomic) NSHashTable *stateObservers; // @synthesize stateObservers=_stateObservers;
+@property(retain, nonatomic) CARObserverHashTable *stateObservers; // @synthesize stateObservers=_stateObservers;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
 - (void)_sceneDidEnterBackground:(id)arg1;
@@ -27,7 +27,6 @@
 @property(readonly, nonatomic, getter=isApplicationActive) _Bool applicationActive;
 - (void)removeApplicationStateObserver:(id)arg1;
 - (void)addApplicationStateObserver:(id)arg1;
-- (void)removeAllObservers;
 - (void)dealloc;
 - (id)initWithWindowScene:(id)arg1;
 

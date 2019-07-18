@@ -30,11 +30,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int lineFocus; // @synthesize lineFocus=_lineFocus;
 @property(nonatomic) BOOL focusThrough; // @synthesize focusThrough=_focusThrough;
 - (void).cxx_destruct;
-- (void)_addDescriptionForElement:(id)arg1 request:(id)arg2 focused:(BOOL)arg3 onlyElementInLine:(BOOL)arg4;
+- (void)_addDescriptionForElement:(id)arg1 request:(id)arg2 focused:(BOOL)arg3 useTextLine:(BOOL)arg4;
 - (id)_deepestFocusedThroughElement;
 - (id)_focusedElement;
 - (BOOL)isLineEqualToUIElements:(id)arg1;
-- (id)brailleLineRequest;
+- (id)buildBrailleLineRequestAndUpdateFocusedLine;
 - (void)setBrailleLineNeedsRebuild;
 - (BOOL)setFocusedElement:(id)arg1;
 - (BOOL)isLineValid;

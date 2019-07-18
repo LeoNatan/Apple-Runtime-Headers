@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isFamilyEligible) BOOL familyEligible;
 @property(readonly, nonatomic, getter=hasOptionalTerms) BOOL optionalTerms;
 @property(readonly, nonatomic, getter=isCloudDocsMigrated) BOOL cloudDocsMigrated;
 @property(readonly, nonatomic, getter=isSandboxAccount) BOOL sandboxAccount;

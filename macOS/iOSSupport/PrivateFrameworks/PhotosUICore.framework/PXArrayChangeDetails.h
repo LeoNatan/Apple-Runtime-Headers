@@ -52,6 +52,7 @@
 @property(readonly, nonatomic) BOOL hasAnyChanges;
 - (void)dealloc;
 - (void)enumerateMovedIndexesUsingBlock:(CDUnknownBlockType)arg1;
+- (void)enumerateMovedRangesUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL hasIncrementalChanges;
 - (id)changeDetailsByAddingChangedIndexes:(id)arg1;
 - (id)changeDetailsShiftedBy:(long long)arg1;

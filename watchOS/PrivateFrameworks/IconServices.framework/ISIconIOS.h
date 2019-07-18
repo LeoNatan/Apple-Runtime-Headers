@@ -22,10 +22,11 @@ __attribute__((visibility("hidden")))
 - (void)getCGImageForImageDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (struct CGImage *)CGImageForImageDescriptor:(id)arg1;
 - (float)_aspectRatio;
-- (_Bool)_shouldInvalidate;
 - (void)getImageForImageDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)imageForDescriptor:(id)arg1;
 - (id)imageForImageDescriptor:(id)arg1;
 - (void)prepareImagesForImageDescriptors:(id)arg1;
+- (void)prepareImagesForDescriptors:(id)arg1;
 - (id)_prepareImageForImageDescriptor:(id)arg1;
 - (int)variantForSize:(struct CGSize)arg1 scale:(float)arg2 options:(unsigned int)arg3;
 - (unsigned int)hash;

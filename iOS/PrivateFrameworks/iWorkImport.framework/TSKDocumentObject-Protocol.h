@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <iWorkImport/NSObject-Protocol.h>
+
 @class TSKAddedToDocumentContext, TSKDocumentRoot;
 
-@protocol TSKDocumentObject
+@protocol TSKDocumentObject <NSObject>
 - (void)wasRemovedFromDocumentRoot:(TSKDocumentRoot *)arg1;
 - (void)willBeRemovedFromDocumentRoot:(TSKDocumentRoot *)arg1;
 - (void)wasAddedToDocumentRoot:(TSKDocumentRoot *)arg1 dolcContext:(TSKAddedToDocumentContext *)arg2;

@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class AMSProcessInfo, AMSUserAgentBundleInfo, NSString;
+@class AMSMappedBundleInfo, AMSProcessInfo, NSString;
 
 @interface AMSUserAgent : NSObject
 {
-    AMSUserAgentBundleInfo *_bundleInfo;
+    AMSMappedBundleInfo *_bundleInfo;
     AMSProcessInfo *_processInfo;
 }
 
@@ -19,7 +19,7 @@
 + (id)cachedUserAgentForBundleIdentifier:(id)arg1;
 + (id)_sharedCache;
 @property(readonly, nonatomic) AMSProcessInfo *processInfo; // @synthesize processInfo=_processInfo;
-@property(readonly, nonatomic) AMSUserAgentBundleInfo *bundleInfo; // @synthesize bundleInfo=_bundleInfo;
+@property(readonly, nonatomic) AMSMappedBundleInfo *bundleInfo; // @synthesize bundleInfo=_bundleInfo;
 - (void).cxx_destruct;
 - (id)_sharedComponentParentheticalWithFairPlayDeviceType:(id)arg1;
 - (id)_sharedComponentFrameworkVersion;

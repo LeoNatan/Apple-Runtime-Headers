@@ -29,7 +29,6 @@
 - (void).cxx_destruct;
 - (void)_runCleanup;
 - (void)_startCleanupTimer;
-- (void)systemDidEnterMemoryPressure;
 - (void)closeDatabase;
 - (void)_setDatabaseCloseTimerOnIvarQueue;
 - (void)_performInitialHousekeeping;
@@ -37,7 +36,6 @@
 - (void)updateCreationDateForHash:(id)arg1;
 - (void)addMessageHash:(id)arg1;
 - (_Bool)containsMessageHash:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

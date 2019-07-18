@@ -83,6 +83,8 @@
 - (id)_handleLaunchMagnifierApp:(id)arg1;
 - (id)_handleReactivateInCallService:(id)arg1;
 - (id)_handleLoadGAXBundleForUnmanagedASAM:(id)arg1;
+- (id)_isSpotlightVisible:(id)arg1;
+- (id)_isGuidedAccessActive:(id)arg1;
 - (id)_handleRevealSpotlight:(id)arg1;
 - (id)_handleToggleSpotlight:(id)arg1;
 - (id)_handleCancelReachabilityTimer:(id)arg1;
@@ -91,6 +93,7 @@
 - (id)_cancelGestureActivation:(id)arg1;
 - (id)_openCommandAndControlVocabulary:(id)arg1;
 - (id)_openCommandAndControlCommands:(id)arg1;
+- (id)_openCommandAndControlSettings:(id)arg1;
 - (id)_openCustomGestureCreationForSCAT:(id)arg1;
 - (id)_openCustomGestureCreationForAST:(id)arg1;
 - (id)_reachabilityHandling:(id)arg1;

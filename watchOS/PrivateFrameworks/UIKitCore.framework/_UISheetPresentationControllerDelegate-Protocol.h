@@ -11,7 +11,6 @@
 @protocol _UISheetPresentationControllerDelegate <UIAdaptivePresentationControllerDelegate>
 
 @optional
-- (void)_sheetPresentationController:(_UISheetPresentationController *)arg1 didChangeDepthLevel:(float)arg2;
 - (void)_sheetPresentationController:(_UISheetPresentationController *)arg1 didChangeIndexOfCurrentDetent:(int)arg2;
 @end
 

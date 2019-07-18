@@ -10,17 +10,19 @@
 #import <HomeKit/NSMutableCopying-Protocol.h>
 #import <HomeKit/NSSecureCoding-Protocol.h>
 
-@class CLRegion;
+@class CLRegion, HMFLocationAuthorization;
 
 @interface HMLocationEvent : HMEvent <NSSecureCoding, NSCopying, NSMutableCopying>
 {
     int _locationAuthorization;
     CLRegion *_region;
+    HMFLocationAuthorization *_authorization;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)createWithDictionary:(id)arg1 home:(id)arg2;
 @property(nonatomic) int locationAuthorization; // @synthesize locationAuthorization=_locationAuthorization;
+@property(readonly) HMFLocationAuthorization *authorization; // @synthesize authorization=_authorization;
 - (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -30,9 +30,10 @@
 - (void).cxx_destruct;
 - (void)_updatePreviewingWithViewController:(id)arg1;
 - (void)animatorDidCompleteTransition:(id)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
+- (void)animatorWillBeginTransition:(id)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
 - (void)animator:(id)arg1 transitionToPreview:(id)arg2 animated:(_Bool)arg3;
 - (id)animator:(id)arg1 previewViewControllerForViewController:(id)arg2;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
+- (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)previewing:(id)arg1 needsUpdateForItemAtIndexPath:(id)arg2;
 - (void)setPreviewViewController:(id)arg1 animated:(_Bool)arg2;

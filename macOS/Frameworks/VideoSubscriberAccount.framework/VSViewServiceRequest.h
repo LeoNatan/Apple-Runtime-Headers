@@ -32,6 +32,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL requiresPrivacyUI; // @synthesize requiresPrivacyUI=_requiresPrivacyUI;
 @property(nonatomic) BOOL allowsPrivacyUI; // @synthesize allowsPrivacyUI=_allowsPrivacyUI;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isPreAuthRequest) BOOL preAuthRequest;
+@property(readonly, copy, nonatomic) NSString *accountProviderAuthenticationToken;
 @property(readonly, copy, nonatomic) NSString *localizedVideoTitle;
 @property(readonly, copy, nonatomic) NSArray *supportedAccountProviderAuthenticationSchemes;
 @property(readonly, copy, nonatomic) NSArray *featuredIdentityProviderIdentifiers;

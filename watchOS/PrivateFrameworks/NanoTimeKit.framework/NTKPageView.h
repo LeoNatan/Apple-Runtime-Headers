@@ -17,6 +17,7 @@
     UITapGestureRecognizer *_tapGesture;
     struct CGPoint _zeroOffset;
     UIView *_outlineView;
+    UIView *_outlineInnerView;
     UIView *_outlineBackingView;
     UIView *_overlayView;
     _Bool _swipingToDelete;

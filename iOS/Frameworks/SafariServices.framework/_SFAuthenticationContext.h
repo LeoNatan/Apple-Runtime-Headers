@@ -52,7 +52,7 @@
 - (_Bool)_contextShouldAllowPasscodeFallback;
 - (_Bool)_contextRequiresSessionBasedAuthentication;
 @property(readonly, nonatomic) _Bool needsAuthentication;
-- (_Bool)_hasAuthenticationCapability;
+- (_Bool)_hasAuthenticationCapability:(id *)arg1;
 - (_Bool)_monotonicTimeIsWithinAuthenticationGracePeriod:(double)arg1;
 - (id)_authenticationContext;
 - (void)dealloc;

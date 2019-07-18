@@ -9,7 +9,7 @@
 #import <AppleMediaServices/NSCopying-Protocol.h>
 #import <AppleMediaServices/NSSecureCoding-Protocol.h>
 
-@class NSData, NSString;
+@class AMSMappedBundleInfo, NSData, NSString, NSURL;
 @protocol OS_dispatch_queue;
 
 @interface AMSProcessInfo : NSObject <NSCopying, NSSecureCoding>
@@ -19,9 +19,12 @@
     NSString *_accountMediaType;
     NSData *_auditTokenData;
     NSString *_bundleIdentifier;
+    NSURL *_bundleURL;
     NSString *_clientVersion;
     NSString *_executableName;
+    NSString *_localizedName;
     NSString *_proxyAppBundleID;
+    AMSMappedBundleInfo *_mappedBundleInfo;
 }
 
 + (id)_currentProcessBundleIdentifier;
@@ -40,9 +43,12 @@
 + (_Bool)boolForEntitlement:(id)arg1;
 + (_Bool)isBuddyRunning;
 + (id)currentProcess;
+@property(readonly, nonatomic) AMSMappedBundleInfo *mappedBundleInfo; // @synthesize mappedBundleInfo=_mappedBundleInfo;
 @property(retain, nonatomic) NSString *proxyAppBundleID; // @synthesize proxyAppBundleID=_proxyAppBundleID;
+@property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(retain, nonatomic) NSString *executableName; // @synthesize executableName=_executableName;
 @property(retain, nonatomic) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
+@property(retain, nonatomic) NSURL *bundleURL; // @synthesize bundleURL=_bundleURL;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSData *auditTokenData; // @synthesize auditTokenData=_auditTokenData;
 @property(retain, nonatomic) NSString *accountMediaType; // @synthesize accountMediaType=_accountMediaType;
@@ -53,6 +59,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)description;
 @property(retain, nonatomic) NSString *partnerHeader;
 - (id)initWithBundleIdentifier:(id)arg1;

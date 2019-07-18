@@ -6,7 +6,9 @@
 
 #import <CloudKit/CKContainerID.h>
 
+@class NSString;
+
 @interface CKContainerID (HMB)
-- (id)hmbDescription;
+@property(readonly, copy) NSString *hmbDescription;
 @end
 

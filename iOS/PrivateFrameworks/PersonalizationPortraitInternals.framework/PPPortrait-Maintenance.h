@@ -7,9 +7,9 @@
 #import <PersonalizationPortrait/PPPortrait.h>
 
 @interface PPPortrait (Maintenance)
-+ (id)runPortraitMusicDataCollectionWithTopicStore:(id)arg1 namedEntityStore:(id)arg2 collectIntents:(_Bool)arg3 error:(id *)arg4;
++ (id)runPortraitMusicDataCollectionWithTopicStore:(id)arg1 namedEntityStore:(id)arg2 collectIntents:(_Bool)arg3 error:(id *)arg4 shouldContinueBlock:(CDUnknownBlockType)arg5;
 + (void)_addMediaItem:(id)arg1 ofType:(int)arg2 withBundleId:(id)arg3 dateInterval:(id)arg4 to:(id)arg5;
-+ (_Bool)_runPortraitMusicDataCollectionWithError:(id *)arg1;
++ (_Bool)_runPortraitMusicDataCollectionWithError:(id *)arg1 shouldContinueBlock:(CDUnknownBlockType)arg2;
 + (id)_quantizeTopics:(id)arg1;
 + (id)_quantizeAndFilterEntities:(id)arg1 withLimit:(unsigned int)arg2;
 + (_Bool)_logPerplexityWithError:(id *)arg1;
@@ -20,12 +20,15 @@
 + (void)_registerDailyMetricsLogging;
 + (void)_registerDataCollection;
 + (_Bool)_logDailyMetricsWithError:(id *)arg1 shouldContinueBlock:(CDUnknownBlockType)arg2;
++ (void)processPendingFeedbackWithShouldContinueBlock:(CDUnknownBlockType)arg1;
++ (void)_registerProcessPendingFeedback;
 + (void)_registerEntityBackfilling;
 + (void)_registerRTCSendLogs;
 + (void)_registerNowPlayingMPRequestResponseController;
 + (void)_registerPeriodicMetrics;
 + (_Bool)_checkDeferralAndAvoidDuetRateLimitWithBatchInterval:(double)arg1 lastSyncDate:(id)arg2 activity:(id)arg3;
 + (void)_registerKnowledgeStoreSync;
++ (void)_registerRemotelyDonatedRecordCleanup;
 + (void)_setDateOfLastTopicDKSyncViaCTSToDate:(id)arg1;
 + (id)_dateOfLastTopicDKSyncViaCTS;
 + (void)_setDateOfLastNamedEntityDKSyncViaCTSToDate:(id)arg1;

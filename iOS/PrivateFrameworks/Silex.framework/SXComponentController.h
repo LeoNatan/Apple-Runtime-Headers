@@ -43,6 +43,8 @@
 @property(readonly, nonatomic) _Bool isPresented; // @synthesize isPresented=_isPresented;
 @property(readonly, nonatomic) SXLayoutBlueprint *presentedBlueprint; // @synthesize presentedBlueprint=_presentedBlueprint;
 - (void).cxx_destruct;
+- (void)updatePresentationStateForNestedComponentView:(id)arg1 presentationState:(long long)arg2;
+- (void)updatePresentationStateForNestedComponentViews:(id)arg1 presentationState:(long long)arg2;
 - (void)assistiveTechnologyStatusDidChange;
 - (void)updateVisibilityStatesForComponentViews:(id)arg1 parentComponent:(id)arg2 withOffset:(struct CGPoint)arg3;
 - (void)updateVisibilityStatesForComponentViews:(id)arg1;

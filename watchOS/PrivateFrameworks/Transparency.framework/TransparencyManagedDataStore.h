@@ -10,6 +10,7 @@
 
 @interface TransparencyManagedDataStore : NSObject
 {
+    struct os_unfair_lock_s contextLock;
     NSManagedObjectContext *_context;
     NSPersistentContainer *_persistentContainer;
     // Error parsing type: Aq, name: _sequenceId

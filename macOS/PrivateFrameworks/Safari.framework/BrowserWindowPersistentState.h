@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSArray *closedTabs;
 @property(readonly, nonatomic) long long closedItemType;
 @property(readonly, copy, nonatomic) NSArray *tabUUIDs;
-- (id)dictionaryRepresentationIncludingSessionState:(BOOL)arg1;
+- (id)dictionaryRepresentationIncludingSessionState:(BOOL)arg1 forCleanExit:(BOOL)arg2;
 - (void)restoreWindowContents:(id)arg1;
 - (void)restoreBrowserWindowWithLaunchTimePerformanceMonitor:(id)arg1;
 - (id)_tabStatesToRestore;

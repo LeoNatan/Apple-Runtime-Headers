@@ -13,12 +13,14 @@
 
 @interface PKDiscoveryItem : PKDiscoveryObject <NSSecureCoding, NSCopying>
 {
+    _Bool _shouldBadge;
     long long _type;
     NSURL *_layoutBundleURL;
     NSArray *_supportedLocalizations;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool shouldBadge; // @synthesize shouldBadge=_shouldBadge;
 @property(retain, nonatomic) NSArray *supportedLocalizations; // @synthesize supportedLocalizations=_supportedLocalizations;
 @property(copy, nonatomic) NSURL *layoutBundleURL; // @synthesize layoutBundleURL=_layoutBundleURL;
 @property(nonatomic) long long type; // @synthesize type=_type;

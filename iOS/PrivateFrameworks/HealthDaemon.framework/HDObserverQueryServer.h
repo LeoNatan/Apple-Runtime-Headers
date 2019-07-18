@@ -25,9 +25,9 @@
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
 - (_Bool)_shouldExecuteWhenProtectedDataIsUnavailable;
 - (_Bool)_shouldListenForUpdates;
-- (void)profile:(id)arg1 didJournalInsertOfQuantity:(id)arg2 type:(id)arg3 dateInterval:(id)arg4 series:(id)arg5;
 - (void)profile:(id)arg1 didDiscardSeriesOfType:(id)arg2;
 - (void)profile:(id)arg1 didInsertQuantity:(id)arg2 type:(id)arg3 dateInterval:(id)arg4 series:(id)arg5 anchor:(id)arg6;
+- (CDUnknownBlockType)transactionalQuantityInsertHandlerForProfile:(id)arg1 journaled:(_Bool)arg2 count:(long long)arg3;
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)_queue_stop;

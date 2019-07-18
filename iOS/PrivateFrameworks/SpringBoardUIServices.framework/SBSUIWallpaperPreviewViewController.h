@@ -63,7 +63,7 @@
 - (id)_colorWallpaperViewWithFrame:(struct CGRect)arg1 variant:(long long)arg2 configuration:(id)arg3;
 - (id)_proceduralWallpaperViewWithFrame:(struct CGRect)arg1 variant:(long long)arg2 configuration:(id)arg3;
 - (id)_wallpaperViewWithFrame:(struct CGRect)arg1 variant:(long long)arg2 options:(id)arg3;
-- (id)_wallpaperViewWithFrame:(struct CGRect)arg1 image:(id)arg2 video:(id)arg3 videoURL:(id)arg4 stillTimeInVideo:(double)arg5 supportsCropping:(_Bool)arg6 variant:(long long)arg7;
+- (id)_wallpaperViewWithFrame:(struct CGRect)arg1 image:(id)arg2 video:(id)arg3 videoURL:(id)arg4 stillTimeInVideo:(double)arg5 supportsCropping:(_Bool)arg6 variant:(long long)arg7 needsWallpaperDimming:(_Bool)arg8;
 - (id)_wallpaperViewWithFrame:(struct CGRect)arg1;
 - (void)userDidTapOnSetButton:(id)arg1;
 - (void)userDidTapOnCancelButton:(id)arg1;
@@ -80,6 +80,7 @@
 - (long long)_wallpaperType;
 - (id)_wallpaperTypeDescription;
 - (id)wallpaperConfigurationManager;
+- (_Bool)prefersStatusBarHidden;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

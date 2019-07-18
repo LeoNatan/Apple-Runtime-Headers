@@ -81,6 +81,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)doneButtonPressed:(id)arg1;
 - (void)addButtonPressed:(id)arg1;
+- (id)presentNetworkSettings:(BOOL)arg1;
 - (id)showNotificationSettingsForHomeKitObject:(id)arg1 animated:(BOOL)arg2;
 - (void)scrollToNotificationTopicsAnimated:(BOOL)arg1;
 @property(readonly, nonatomic) HUHomeUsersCollectionViewController *usersViewController; // @synthesize usersViewController=_usersViewController;

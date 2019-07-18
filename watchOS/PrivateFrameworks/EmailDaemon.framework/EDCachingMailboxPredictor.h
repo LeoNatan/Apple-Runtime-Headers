@@ -18,7 +18,6 @@
     NSMutableDictionary *_cacheKeysByProperty;
 }
 
-+ (id)log;
 @property(retain, nonatomic) NSMutableDictionary *cacheKeysByProperty; // @synthesize cacheKeysByProperty=_cacheKeysByProperty;
 @property(retain, nonatomic) NSCache *cache; // @synthesize cache=_cache;
 @property(retain, nonatomic) id <EDMailboxPredictor> predictor; // @synthesize predictor=_predictor;
@@ -27,7 +26,7 @@
 - (void)_trackCacheKey:(id)arg1 forPropertyKey:(id)arg2;
 - (id)_cacheKeyForMessages:(id)arg1;
 - (void)removeAllPredictions;
-- (void)invalidatePredictionsAffectedByMessages:(id)arg1;
+- (void)invalidatePredictionsAffectedByMessage:(id)arg1;
 - (id)predictMailboxIDsForMessages:(id)arg1 limit:(unsigned int)arg2 diagnostics:(id *)arg3;
 - (id)initWithPredictor:(id)arg1;
 

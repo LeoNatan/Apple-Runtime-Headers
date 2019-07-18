@@ -6,10 +6,12 @@
 
 #import <PhotosUICore/PXActivity.h>
 
-@class UIViewController;
+#import <PhotosUI/SBSUIWallpaperPreviewViewControllerDelegate-Protocol.h>
+
+@class NSString, UIViewController;
 
 __attribute__((visibility("hidden")))
-@interface PUWallpaperActivity : PXActivity
+@interface PUWallpaperActivity : PXActivity <SBSUIWallpaperPreviewViewControllerDelegate>
 {
     UIViewController *_wallpaperActivityViewController;
     _Bool __wallpaperModificationAllowed;
@@ -19,11 +21,12 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setNeedsUpdateWallpaperModificationAllowed:) _Bool _needsUpdateWallpaperModificationAllowed; // @synthesize _needsUpdateWallpaperModificationAllowed=__needsUpdateWallpaperModificationAllowed;
 @property(nonatomic, getter=_isWallpaperModificationAllowed, setter=_setWallpaperModificationAllowed:) _Bool _wallpaperModificationAllowed; // @synthesize _wallpaperModificationAllowed=__wallpaperModificationAllowed;
 - (void).cxx_destruct;
-- (void)wallpaperImageViewControllerDidCancel:(id)arg1;
-- (void)wallpaperImageViewControllerDidFinishSaving:(id)arg1;
-- (void)wallpaperImageViewController:(id)arg1 didSetWallpaperWithOptions:(id)arg2;
+- (void)wallpaperPreviewViewControllerSetButtonPressed:(id)arg1;
+- (void)wallpaperPreviewViewControllerCancelButtonPressed:(id)arg1;
 - (void)_updateWallpaperModificationAllowedIfNeeded;
 - (void)_restrictionsChanged:(id)arg1;
+- (void)_handleSetWallpaperActionWithController:(id)arg1 locations:(long long)arg2;
+- (void)_fetchImageForWallPaperAsset:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (id)activityViewController;
 - (void)prepareWithActivityItems:(id)arg1;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
@@ -33,6 +36,12 @@ __attribute__((visibility("hidden")))
 - (id)activityType;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

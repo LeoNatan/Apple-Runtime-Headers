@@ -29,6 +29,7 @@
 + (void)invalidateThreadCache;
 + (id)uiElementAtCoordinate:(struct CGPoint)arg1 forApplication:(id)arg2;
 + (id)uiElementAtCoordinate:(struct CGPoint)arg1;
++ (id)uiElementWithAXFElement:(id)arg1;
 + (id)uiElementWithAXElement:(struct __AXUIElement *)arg1;
 + (void)initialize;
 @property(retain, nonatomic) NSString *_lastKnownRole; // @synthesize _lastKnownRole=__lastKnownRole;
@@ -227,6 +228,7 @@
 @property(readonly, nonatomic, getter=isAccessibilityHidden) BOOL accessibilityHidden;
 @property(readonly, nonatomic) SCRUIElement *accessibilityMainWindow;
 @property(readonly, nonatomic) SCRUIElement *accessibilityApplicationFocusedUIElement;
+@property(readonly, copy, nonatomic) NSArray *imageData;
 @property(readonly, copy, nonatomic) NSString *accessibilityLanguage;
 @property(readonly, copy, nonatomic) NSArray *accessibilitySharedFocusElements;
 @property(readonly, nonatomic, getter=isAccessibilityAlternateUIVisible) BOOL accessibilityAlternateUIVisible;
@@ -383,9 +385,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithAXElement:(struct __AXUIElement *)arg1;
 - (id)_uiElementArrayFromAXUIElementRefArray:(struct __CFArray *)arg1;
-- (BOOL)accessibilitySupportsSearch;
-- (BOOL)__supportsCustomRotors;
-- (BOOL)__supportsUIElementsForSearchPredicate;
+- (BOOL)accessibilitySupportsUIElementsForSearchPredicate;
 - (id)_collectionSelectedChildAtIndex:(long long)arg1;
 - (void)_collectionSetSelectedChildren:(id)arg1;
 - (id)_collectionSelectedChildren;

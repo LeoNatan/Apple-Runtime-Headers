@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (struct CGImage *)CGImageForProposedRect:(struct CGRect *)arg1 context:(id)arg2 hints:(id)arg3;
 - (struct CGImage *)_snapshotRep_CGImageForProposedRect:(struct CGRect *)arg1 context:(id)arg2 hints:(id)arg3;
 - (BOOL)isApplicableForRect:(struct CGRect)arg1 context:(id)arg2 hints:(id)arg3;
-- (id)fullDescription;
+- (id)debugDescription;
 - (id)description;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;

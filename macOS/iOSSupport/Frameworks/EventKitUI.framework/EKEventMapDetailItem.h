@@ -6,14 +6,12 @@
 
 #import <EventKitUI/EKEventDetailItem.h>
 
-@class CLLocation, EKEventMapCell, MKMapItemView, UIView;
+@class CLLocation, EKEventMapCell, MKMapItemView;
 
 @interface EKEventMapDetailItem : EKEventDetailItem
 {
     EKEventMapCell *_cell;
     MKMapItemView *_mapView;
-    UIView *_overlayView;
-    UIView *_loadingView;
     CLLocation *_location;
     EKEventMapCell *_oldCell;
     BOOL _animationHasRan;
@@ -22,8 +20,7 @@
 
 @property(nonatomic) BOOL hasMapItemLaunchOptionFromTimeToLeaveNotification; // @synthesize hasMapItemLaunchOptionFromTimeToLeaveNotification=_hasMapItemLaunchOptionFromTimeToLeaveNotification;
 - (void).cxx_destruct;
-- (void)eventViewController:(id)arg1 didUnhighlightSubitem:(unsigned long long)arg2;
-- (void)eventViewController:(id)arg1 didHighlightSubitem:(unsigned long long)arg2;
+- (void)_animateMapIfNeededWithPresentingController:(id)arg1 presentingView:(id)arg2;
 - (double)_mapHeight;
 - (void)_loadMapItem:(id)arg1 withCoordinateSpan:(CDStruct_c3b9c2ee)arg2;
 - (void)setupMapView;

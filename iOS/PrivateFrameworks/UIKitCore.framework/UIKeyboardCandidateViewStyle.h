@@ -61,6 +61,7 @@ __attribute__((visibility("hidden")))
     double _minimumCellWidth;
     double _singleSlottedCellMargin;
     long long _cellTextAlignment;
+    struct CGPoint _gridLineOffset;
     struct UIEdgeInsets _extraCellPadding;
     struct UIEdgeInsets _arrowButtonPadding;
     struct UIEdgeInsets _gridPadding;
@@ -82,6 +83,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool darkBackdrop; // @synthesize darkBackdrop=_darkBackdrop;
 @property(nonatomic) long long cellTextAlignment; // @synthesize cellTextAlignment=_cellTextAlignment;
 @property(nonatomic) struct UIEdgeInsets sortControlPadding; // @synthesize sortControlPadding=_sortControlPadding;
+@property(nonatomic) struct CGPoint gridLineOffset; // @synthesize gridLineOffset=_gridLineOffset;
 @property(nonatomic) struct UIEdgeInsets gridLinePadding; // @synthesize gridLinePadding=_gridLinePadding;
 @property(nonatomic) struct UIEdgeInsets gridPadding; // @synthesize gridPadding=_gridPadding;
 @property(nonatomic) struct UIEdgeInsets arrowButtonPadding; // @synthesize arrowButtonPadding=_arrowButtonPadding;

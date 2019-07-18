@@ -7,10 +7,10 @@
 #import <PhotosUICore/PXGLayoutContentSource-Protocol.h>
 
 @class PXGLayout;
-@protocol NSCopying;
+@protocol PXGViewUserData;
 
 @protocol PXGViewSource <PXGLayoutContentSource>
-- (id <NSCopying>)viewUserDataForSpriteAtIndex:(unsigned int)arg1 inLayout:(PXGLayout *)arg2;
+- (id <PXGViewUserData>)viewUserDataForSpriteAtIndex:(unsigned int)arg1 inLayout:(PXGLayout *)arg2;
 - (Class)viewClassForSpriteAtIndex:(unsigned int)arg1 inLayout:(PXGLayout *)arg2;
 @end
 

@@ -6,15 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSError;
+@class CSLSBacklightAssertion, NSError;
 
 @interface TLAlertPlaybackCompletionContext : NSObject
 {
     CDUnknownBlockType _completionHandler;
     int _playbackCompletionType;
     NSError *_error;
+    CSLSBacklightAssertion *_backlightAssertion;
 }
 
+@property(retain, nonatomic) CSLSBacklightAssertion *backlightAssertion; // @synthesize backlightAssertion=_backlightAssertion;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) int playbackCompletionType; // @synthesize playbackCompletionType=_playbackCompletionType;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;

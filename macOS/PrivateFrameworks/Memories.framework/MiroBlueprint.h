@@ -32,16 +32,19 @@ __attribute__((visibility("hidden")))
     unsigned long long _iCloudMusicAccountID;
     NSString *_projectFilterID;
     NSString *_songID;
+    NSArray *_requestedKeywords;
+    NSDictionary *_requestedMusicGenreDistribution;
 }
 
 + (id)blueprintFromSerializedDictionaryRepresentation:(id)arg1;
-+ (id)blueprintFromFontName:(id)arg1;
 + (id)blueprintWithMood:(id)arg1;
 + (id)blueprint;
 + (id)nominalBlueprint;
 + (id)emptyBlueprint;
 + (BOOL)supportsSecureCoding;
 + (id)keysAffectingAutoEdit;
+@property(copy, nonatomic) NSDictionary *requestedMusicGenreDistribution; // @synthesize requestedMusicGenreDistribution=_requestedMusicGenreDistribution;
+@property(copy, nonatomic) NSArray *requestedKeywords; // @synthesize requestedKeywords=_requestedKeywords;
 @property(retain, nonatomic) NSString *songID; // @synthesize songID=_songID;
 @property(copy, nonatomic) NSString *projectFilterID; // @synthesize projectFilterID=_projectFilterID;
 @property(nonatomic) unsigned int randomizerSeed; // @synthesize randomizerSeed=_randomizerSeed;

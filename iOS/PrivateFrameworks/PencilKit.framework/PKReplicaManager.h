@@ -15,20 +15,27 @@
     NSMutableOrderedSet *_replicaUUIDs;
     NSMutableDictionary *_replicaEntries;
     NSMutableArray *_replicaManagerErrors;
+    CDUnknownBlockType _saveStateBlock;
+    _Bool _dirtyTokenSet;
+    _Bool _shouldPersist;
     _Bool _testMode;
 }
 
 + (id)sharedReplicaManager;
 @property(nonatomic) _Bool testMode; // @synthesize testMode=_testMode;
 - (void).cxx_destruct;
-- (void)resetAllReplicaUUIDs;
+- (void)_resetAllReplicaUUIDs;
 - (id)description;
-- (void)_saveState;
+- (void)_saveStateImmediately;
+- (void)_scheduleSaveState;
+- (void)_setReplicasDirtyToken;
 - (void)_loadState;
+- (_Bool)isValidBundleIDForSaving:(id)arg1;
 - (void)returnReplicaForDrawing:(id)arg1;
-- (void)updateVersionForDrawing:(id)arg1 persist:(_Bool)arg2;
+- (void)persistIfNeeded;
+- (void)updateVersionForDrawing:(id)arg1;
 - (id)checkoutReplicaUUIDForDrawing:(id)arg1;
-- (void)dealloc;
+- (void)_applicationWillTerminate;
 - (id)init;
 @property(readonly, nonatomic) NSArray *replicaManagerErrors;
 

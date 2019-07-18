@@ -64,6 +64,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool componentRequiresCurrentVersion;
 @property(readonly, nonatomic) _Bool isComponentRoot;
 @property(readonly, nonatomic) NSString *packageLocator;
+@property(readonly, nonatomic) _Bool canModify;
 - (void)willModifyForUpgrade;
 - (void)willModify;
 - (void)performBlockIgnoringModifications:(CDUnknownBlockType)arg1;

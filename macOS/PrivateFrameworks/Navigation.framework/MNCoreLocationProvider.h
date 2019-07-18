@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
 @property(readonly, nonatomic) double timeScale;
+@property(readonly, nonatomic) unsigned long long traceVersion;
 @property(readonly, nonatomic) BOOL isTracePlayer;
 @property(readonly, nonatomic) BOOL isSimulation;
 @property(readonly, nonatomic) int authorizationStatus;

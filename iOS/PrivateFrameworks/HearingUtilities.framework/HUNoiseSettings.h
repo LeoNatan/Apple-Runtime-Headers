@@ -14,12 +14,9 @@
     NSMutableSet *_synchronizePreferences;
     NSMutableDictionary *_updateBlocks;
     NPSDomainAccessor *_domainAccessor;
-    NPSDomainAccessor *_globalDomainAccessor;
 }
 
 + (id)sharedInstance;
-+ (void)initialize;
-@property(retain, nonatomic) NPSDomainAccessor *globalDomainAccessor; // @synthesize globalDomainAccessor=_globalDomainAccessor;
 @property(retain, nonatomic) NPSDomainAccessor *domainAccessor; // @synthesize domainAccessor=_domainAccessor;
 @property(retain, nonatomic) NSMutableDictionary *updateBlocks; // @synthesize updateBlocks=_updateBlocks;
 @property(retain, nonatomic) NSMutableSet *synchronizePreferences; // @synthesize synchronizePreferences=_synchronizePreferences;

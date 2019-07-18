@@ -80,6 +80,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)_itemAtIndexPath:(id)arg1 isPlaceholder:(char *)arg2;
 - (unsigned long long)_indexForCustomItemAtIndexPath:(id)arg1;
+- (void)picker:(id)arg1 didDeleteItem:(id)arg2;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
@@ -106,6 +107,7 @@ __attribute__((visibility("hidden")))
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)isSupplementalDisclosureItemIndexPath:(id)arg1;
 - (BOOL)isAddCustomItemIndexPath:(id)arg1;
+- (void)pickedItem:(id)arg1;
 - (void)removeCustomItem:(id)arg1;
 - (void)customLabelUpdated:(id)arg1;
 - (void)presentExtendedPicker;

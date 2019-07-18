@@ -26,8 +26,8 @@
 @property(retain, nonatomic) RTTUtterance *utterance; // @synthesize utterance=_utterance;
 - (void).cxx_destruct;
 - (id)accessibilityLabel;
-- (id)accessibilityRole;
 - (BOOL)isAccessibilityElement;
+- (id)accessibilityRole;
 - (void)updateLayout;
 - (void)viewDidMoveToSuperview;
 - (void)viewDidEndLiveResize;
@@ -38,6 +38,7 @@
 - (void)dealloc;
 - (void)setSendProgressIndex:(unsigned long long)arg1;
 - (void)updateUtterance:(id)arg1;
+- (void)updateUtterance:(id)arg1 postNotifications:(BOOL)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

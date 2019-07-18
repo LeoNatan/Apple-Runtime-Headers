@@ -6,7 +6,7 @@
 
 #import <HomeKit/_HMAccessoryProfile.h>
 
-@class NSArray;
+@class NSSet;
 @protocol _HMNetworkRouterProfileDelegate;
 
 __attribute__((visibility("hidden")))
@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 {
     _Bool _satellite;
     unsigned long long _networkStatus;
-    NSArray *_satelliteProfiles;
+    NSSet *_identifiersForSatelliteProfiles;
     id <_HMNetworkRouterProfileDelegate> _delegate;
 }
 
@@ -22,18 +22,17 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <_HMNetworkRouterProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
-- (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)handleRuntimeStateUpdate:(id)arg1;
 - (void)_handleNetworkStatusUpdated:(id)arg1;
 - (void)__handleNetworkStatusUpdated:(id)arg1;
 - (void)_handleSatelliteProfilesUpdated:(id)arg1;
-- (void)_notifyDelegateOfUpdatedNetworkStatus:(unsigned long long)arg1;
-- (void)_notifyDelegateOfUpdatedSatellites:(id)arg1;
+- (_Bool)checkForUpdatedNetworkStatus:(unsigned long long)arg1;
+- (_Bool)checkForUpdatedIdentifiersForSatellites:(id)arg1;
 - (id)messageReceiveQueue;
 - (id)messageDestination;
 - (id)messageTargetUUID;
-- (void)setSatelliteProfiles:(id)arg1;
-@property(readonly) NSArray *satelliteProfiles; // @synthesize satelliteProfiles=_satelliteProfiles;
+- (void)setIdentifiersForSatelliteProfiles:(id)arg1;
+@property(readonly) NSSet *identifiersForSatelliteProfiles; // @synthesize identifiersForSatelliteProfiles=_identifiersForSatelliteProfiles;
 - (void)setSatellite:(_Bool)arg1;
 @property(readonly, getter=isSatellite) _Bool satellite; // @synthesize satellite=_satellite;
 - (void)setNetworkStatus:(unsigned long long)arg1;

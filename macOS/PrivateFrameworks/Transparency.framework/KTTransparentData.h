@@ -42,6 +42,8 @@
 - (id)initWithUriVRFOutput:(id)arg1 mapLeaf:(id)arg2 pendingSMTs:(id)arg3 error:(id *)arg4;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)description;
+- (id)debugDescription;
 
 @end
 

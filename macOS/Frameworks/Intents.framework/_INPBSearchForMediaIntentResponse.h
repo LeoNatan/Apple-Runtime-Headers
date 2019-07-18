@@ -15,11 +15,13 @@
 @interface _INPBSearchForMediaIntentResponse : PBCodable <_INPBSearchForMediaIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSArray *_mediaItems;
 }
 
 + (BOOL)supportsSecureCoding;
 + (Class)mediaItemsType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *mediaItems; // @synthesize mediaItems=_mediaItems;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

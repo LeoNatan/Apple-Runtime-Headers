@@ -4,11 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSNumber, NSString;
 @protocol WLKNotificationCenterDelegate;
 
 @protocol WLKNotificationsImpl
 @property(nonatomic) __weak id <WLKNotificationCenterDelegate> delegate;
+- (void)setBadgeString:(NSString *)arg1 withCompletionHandler:(void (^)(NSError *))arg2;
+- (void)setBadgeNumber:(NSNumber *)arg1 withCompletionHandler:(void (^)(NSError *))arg2;
 - (void)post:(NSString *)arg1 title:(NSString *)arg2 body:(NSString *)arg3 options:(NSDictionary *)arg4;
 @end
 

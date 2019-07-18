@@ -45,6 +45,7 @@
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
+@property(readonly, copy) NSUUID *applicationDataIdentifier;
 - (void)_registerNotificationHandlers;
 - (void)_handleActionSetExecutedNotification:(id)arg1;
 - (void)_handleActionSetStartExecutionNotification:(id)arg1;

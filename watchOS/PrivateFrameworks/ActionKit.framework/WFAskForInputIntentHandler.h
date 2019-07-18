@@ -12,8 +12,10 @@
 
 @interface WFAskForInputIntentHandler : NSObject <WFAskForInputIntentHandling>
 {
+    _Bool _resolvedValue;
 }
 
+@property(nonatomic) _Bool resolvedValue; // @synthesize resolvedValue=_resolvedValue;
 - (void)handleAskForInput:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resolveDateAndTimeAnswerForAskForInput:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveTimeAnswerForAskForInput:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -21,6 +23,8 @@
 - (void)resolveUrlAnswerForAskForInput:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveNumberAnswerForAskForInput:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveStringAnswerForAskForInput:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)resolveTypeForAskForInput:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)resolveQuestionForAskForInput:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

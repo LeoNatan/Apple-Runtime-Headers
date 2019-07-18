@@ -15,11 +15,13 @@
 @interface _INPBControlHomeIntentResponse : PBCodable <_INPBControlHomeIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _Bool __encodeLegacyGloryData;
     NSArray *_entityResponses;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)entityResponsesType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *entityResponses; // @synthesize entityResponses=_entityResponses;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

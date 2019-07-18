@@ -27,6 +27,7 @@
 - (id)containerDisplayName;
 - (id)typeIdentifier;
 - (id)parentItemIdentifier;
+- (_Bool)isHidden;
 - (_Bool)fp_isContainerPristine;
 - (_Bool)fp_isContainer;
 - (id)fp_cloudContainerClientBundleIdentifiers;
@@ -37,7 +38,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithQueryItem:(id)arg1 container:(id)arg2 zoneRowID:(id)arg3 isDataScope:(_Bool)arg4;
+- (id)initWithQueryItem:(id)arg1 container:(id)arg2 zoneRowID:(id)arg3 accountID:(id)arg4 isDataScope:(_Bool)arg5;
 
 @end
 

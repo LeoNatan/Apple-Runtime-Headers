@@ -123,7 +123,7 @@ __attribute__((visibility("hidden")))
 - (void)windowDidResize:(id)arg1;
 - (void)windowDidResignKey:(id)arg1;
 - (void)windowDidBecomeKey:(id)arg1;
-- (id)helpAnchor;
+- (id)safariHelpAnchor;
 - (void)homepageHostViewController:(id)arg1 tryApplyingHomepageURL:(id)arg2 sandboxExtensionToken:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)moduleWillBeRemoved;
 - (void)moduleWasInstalled;

@@ -13,11 +13,12 @@
 #import <SpringBoard/SBSwitcherContentViewControllerDataSource-Protocol.h>
 #import <SpringBoard/SBSwitcherContentViewControllerDelegate-Protocol.h>
 #import <SpringBoard/SBSwitcherDemoFilteringControllerObserver-Protocol.h>
+#import <SpringBoard/SBWorkspaceKeyboardFocusControllerObserver-Protocol.h>
 
-@class BSAnimationSettings, FBDisplayLayoutElement, NSArray, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, SBAppLayout, SBAppStatusBarSettingsAssertion, SBAppSwitcherModel, SBAppSwitcherServiceSet, SBAppSwitcherSettings, SBApplicationUserQuitMonitorServer, SBFluidSwitcherGestureManager, SBHomeScreenBackdropViewBase, SBMainDisplaySceneLayoutViewController, SBOrientationTransformWrapperView, SBSwitcherDemoCommandsServer, SBSwitcherDemoFilteringController, SBWindow, SiriContinuitySource, UIApplicationSceneDeactivationAssertion, UIPanGestureRecognizer, UIView;
+@class BSAnimationSettings, FBDisplayLayoutElement, NSArray, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, SBAppLayout, SBAppStatusBarSettingsAssertion, SBAppSwitcherModel, SBAppSwitcherServiceSet, SBAppSwitcherSettings, SBApplicationUserQuitMonitorServer, SBFluidSwitcherGestureManager, SBHomeScreenBackdropViewBase, SBMainDisplaySceneLayoutViewController, SBOrientationTransformWrapperView, SBSwitcherDemoCommandsServer, SBSwitcherDemoFilteringController, SBWindow, SBWorkspaceKeyboardFocusController, SiriContinuitySource, UIApplicationSceneDeactivationAssertion, UIPanGestureRecognizer, UIView;
 @protocol BSInvalidatable, SBSwitcherContentViewControlling;
 
-@interface SBMainSwitcherViewController : UIViewController <SBSwitcherContentViewControllerDataSource, SBSwitcherContentViewControllerDelegate, SBSwitcherDemoFilteringControllerObserver, PTSettingsKeyObserver, SBLayoutStateTransitionObserver, SBLayoutStateTransitionSceneEntityFrameProvider, SBFluidSwitcherGestureManagerDelegate>
+@interface SBMainSwitcherViewController : UIViewController <SBSwitcherContentViewControllerDataSource, SBSwitcherContentViewControllerDelegate, SBSwitcherDemoFilteringControllerObserver, PTSettingsKeyObserver, SBLayoutStateTransitionObserver, SBLayoutStateTransitionSceneEntityFrameProvider, SBFluidSwitcherGestureManagerDelegate, SBWorkspaceKeyboardFocusControllerObserver>
 {
     NSArray *_mainAppLayouts;
     NSArray *_floatingAppLayouts;
@@ -34,13 +35,14 @@
     UIView *_floatingSwitcherDimmingView;
     SBFluidSwitcherGestureManager *_gestureManager;
     NSMutableSet *_windowDragSceneIdentifiers;
-    SBAppLayout *_activeAppLayoutWhenActivatingSwitcher;
+    SBAppLayout *_activeAppLayoutWhenActivatingMainSwitcher;
     SBAppSwitcherSettings *_settings;
     Class _mainContentViewControllerClass;
     NSMutableArray *_servicesRemovedWhileAwayFromSwitcher;
     NSMutableDictionary *_liveAppsBeingTerminated;
     _Bool _ignoreModelUpdates;
     id <BSInvalidatable> _deferRotationForAppSwitcherAssertion;
+    id <BSInvalidatable> _lockKeyboardFocusAssertion;
     SBMainDisplaySceneLayoutViewController *_sceneLayoutViewController;
     FBDisplayLayoutElement *_displayLayoutElement;
     SBAppLayout *_testItemForInsertion;
@@ -51,10 +53,13 @@
     NSArray *_demoFilteringHiddenAppLayouts;
     SBApplicationUserQuitMonitorServer *_userQuitMonitorServer;
     SiriContinuitySource *_siriSource;
-    SBAppStatusBarSettingsAssertion *_mainStatusBarAssertion;
-    SBAppStatusBarSettingsAssertion *_floatingStatusBarAssertion;
+    SBWorkspaceKeyboardFocusController *_keyboardFocusController;
     UIApplicationSceneDeactivationAssertion *_deactivatingScenesResignActiveAssertion;
     UIPanGestureRecognizer *_mainContentBorrowedScrollViewPanGestureRecognizer;
+    SBAppStatusBarSettingsAssertion *_mainStatusBarAssertion;
+    SBAppStatusBarSettingsAssertion *_floatingStatusBarAssertion;
+    NSMutableSet *_asynchronousRenderingAssertions;
+    NSHashTable *_asynchronousRenderingCachedSurfacesReasons;
     NSHashTable *__hideStatusBarAssertions;
 }
 
@@ -63,10 +68,16 @@
 @property(retain, nonatomic, setter=_setHideStatusBarAssertions:) NSHashTable *_hideStatusBarAssertions; // @synthesize _hideStatusBarAssertions=__hideStatusBarAssertions;
 @property(readonly, nonatomic) UIViewController<SBSwitcherContentViewControlling> *contentViewController; // @synthesize contentViewController=_mainContentViewController;
 - (void).cxx_destruct;
+- (void)_setAsynchronousRenderingEnabled:(_Bool)arg1 withMinificationFilter:(_Bool)arg2 forLayerTarget:(id)arg3 presentationManager:(id)arg4;
+- (void)_evaluateAsynchronousRenderingEnablement;
+- (void)_reqlinquishAssertion:(id)arg1;
+- (void)_updateAssertion:(id)arg1;
+- (void)_acquireAssertion:(id)arg1;
 - (void)_removeCardForDisplayIdentifier:(id)arg1;
 - (void)_insertCardForDisplayIdentifier:(id)arg1 atIndex:(unsigned long long)arg2;
 - (long long)_overrideWindowActiveInterfaceOrientation;
 - (long long)_overrideInterfaceOrientationMechanics;
+- (void)keyboardFocusController:(id)arg1 didUpdateFocusToPID:(int)arg2 sceneID:(id)arg3;
 - (id)_persistenceIdentifiersForBundleIdentifier:(id)arg1;
 - (id)_recentAppLayoutsController;
 - (void)_destroyApplicationSceneEntity:(id)arg1;
@@ -93,17 +104,20 @@
 - (id)_currentFloatingAppLayout;
 - (id)_currentAppLayout;
 - (long long)_currentUnlockedEnvironmentMode;
+- (void)_applicationDidExit:(id)arg1;
 - (void)_warmAppInfoForAppsInList;
 - (void)_switcherModelChanged:(id)arg1;
 - (void)_updateDisplayLayoutElementForLayoutState:(id)arg1;
 - (void)_releaseSwitcherOrientationLock;
 - (void)_lockOrientationForSwitcherWithLayoutState:(id)arg1;
+- (void)_releaseKeyboardFocus;
+- (void)_lockKeyboardFocus;
 - (void)_backgroundContrastDidChange:(id)arg1;
 - (void)_reduceMotionStatusDidChange:(id)arg1;
 - (void)_createFloatingSwitcherBackdropView;
 - (void)_loadContentViewControllerIfNecessary;
 - (void)switcherDemoFilteringControllerDidChangeHiddenApplicationBundleIDs:(id)arg1;
-- (void)fluidSwitcherGestureManager:(id)arg1 didEndDraggingWindowWithSceneIdentifier:(id)arg2;
+- (void)fluidSwitcherGestureManager:(id)arg1 willEndDraggingWindowWithSceneIdentifier:(id)arg2;
 - (void)fluidSwitcherGestureManager:(id)arg1 didBeginDraggingWindowWithSceneIdentifier:(id)arg2;
 - (void)fluidSwitcherGestureManager:(id)arg1 didEndGesture:(id)arg2;
 - (void)fluidSwitcherGestureManager:(id)arg1 didUpdateGesture:(id)arg2;
@@ -115,6 +129,8 @@
 - (void)switcherContentController:(id)arg1 setDimmingAlpha:(double)arg2 withAnimationMode:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)switcherContentController:(id)arg1 setHomeScreenAlpha:(double)arg2 withAnimationMode:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)switcherContentController:(id)arg1 setHomeScreenScale:(double)arg2 withAnimationMode:(long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)cancelActiveGestureForSwitcherContentController:(id)arg1;
+- (void)switcherContentController:(id)arg1 setCacheAsynchronousRenderingSurfaces:(_Bool)arg2;
 - (_Bool)switcherContentController:(id)arg1 shouldResignActiveForStartOfTransition:(id)arg2;
 - (void)switcherContentController:(id)arg1 setContainerStatusBarHidden:(_Bool)arg2 animationDuration:(double)arg3;
 - (void)switcherContentControllerEndTethering:(id)arg1;
@@ -151,8 +167,8 @@
 - (id)_appForDisplayItem:(id)arg1;
 - (id)_appLayoutFromPrimaryLayoutItem:(id)arg1 sideLayoutElement:(id)arg2 configuration:(long long)arg3;
 - (void)_configureRequest:(id)arg1 forSwitcherTransitionRequest:(id)arg2 withEventLabel:(id)arg3;
-- (CDUnknownBlockType)_dismissSwitcherValidatorToAppLayout:(id)arg1 withEventLabel:(id)arg2;
-- (_Bool)_dismissSwitcherNoninteractivelyToAppLayout:(id)arg1;
+- (CDUnknownBlockType)_dismissSwitcherValidatorToAppLayout:(id)arg1 dismissFloatingSwitcher:(_Bool)arg2 withEventLabel:(id)arg3;
+- (_Bool)_dismissSwitcherNoninteractivelyToAppLayout:(id)arg1 dismissFloatingSwitcher:(_Bool)arg2;
 - (CDUnknownBlockType)_activateSwitcherValidatorWithEventLabel:(id)arg1;
 - (CDUnknownBlockType)_toggleSwitcherTransitionValidator;
 - (void)_doUglySiriActivationThingsIfNecessary:(id)arg1;
@@ -176,11 +192,13 @@
 @property(readonly, copy, nonatomic) BSAnimationSettings *defaultTransitionAnimationSettings;
 @property(readonly, nonatomic) _Bool canInterruptActiveTransition;
 - (_Bool)shouldAcceleratedHomeButtonPressBegin;
-- (_Bool)isVisible;
+- (_Bool)isAnySwitcherVisible;
+- (_Bool)isMainSwitcherVisible;
 - (_Bool)handleHomeButtonSinglePressUp;
-- (_Bool)toggleSwitcherNoninteractivelyWithSource:(long long)arg1;
-- (_Bool)dismissSwitcherNoninteractively;
-- (_Bool)activateSwitcherNoninteractivelyWithSource:(long long)arg1;
+- (_Bool)toggleMainSwitcherNoninteractivelyWithSource:(long long)arg1;
+- (_Bool)dismissAllSwitchersNoninteractively;
+- (_Bool)dismissMainSwitcherNoninteractively;
+- (_Bool)activateMainSwitcherNoninteractivelyWithSource:(long long)arg1;
 - (double)scaleForDownscaledSnapshotGenerationForSceneHandle:(id)arg1;
 - (struct CGRect)applicationSceneSettingsFrameForInterfaceOrientation:(long long)arg1 floatingConfiguration:(long long)arg2;
 - (struct CGRect)sceneEntityFrameForWorkspaceEntity:(id)arg1 inLayoutState:(id)arg2;

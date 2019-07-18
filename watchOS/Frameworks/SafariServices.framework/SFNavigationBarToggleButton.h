@@ -16,17 +16,18 @@ __attribute__((visibility("hidden")))
     UIView *_selectedStateView;
     _Bool _useStandaloneAppearance;
     _Bool _drawsLightGlyph;
+    _Bool _usesInsetFromBackground;
     _Bool _highlightsBackground;
     UIImage *_image;
     float _resizableBackgroundCornerRadius;
     UIColor *_glyphTintColor;
 }
 
-+ (id)readerImage;
-+ (id)formatMenuImage;
++ (id)readerImageForInputMode:(unsigned int)arg1;
 + (struct CGSize)glyphSize;
 @property(nonatomic) _Bool highlightsBackground; // @synthesize highlightsBackground=_highlightsBackground;
 @property(retain, nonatomic) UIColor *glyphTintColor; // @synthesize glyphTintColor=_glyphTintColor;
+@property(nonatomic) _Bool usesInsetFromBackground; // @synthesize usesInsetFromBackground=_usesInsetFromBackground;
 @property(nonatomic) float resizableBackgroundCornerRadius; // @synthesize resizableBackgroundCornerRadius=_resizableBackgroundCornerRadius;
 @property(nonatomic) _Bool drawsLightGlyph; // @synthesize drawsLightGlyph=_drawsLightGlyph;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;

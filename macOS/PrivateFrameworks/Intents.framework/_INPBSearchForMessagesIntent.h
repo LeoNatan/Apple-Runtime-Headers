@@ -16,6 +16,7 @@
 {
     CDStruct_95bda58d _attributes;
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBStringList *_content;
     _INPBStringList *_conversationIdentifier;
     _INPBDateTimeRange *_dateTimeRange;
@@ -30,6 +31,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDataStringList *speakableGroupName; // @synthesize speakableGroupName=_speakableGroupName;
 @property(retain, nonatomic) _INPBContactList *sender; // @synthesize sender=_sender;
 @property(retain, nonatomic) _INPBStringList *searchTerm; // @synthesize searchTerm=_searchTerm;

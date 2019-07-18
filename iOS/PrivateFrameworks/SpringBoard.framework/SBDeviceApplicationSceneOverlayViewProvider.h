@@ -22,6 +22,9 @@
 - (id)_realOverlayViewController;
 - (void)_deactivateIfPossible;
 - (void)_activateIfPossible;
+- (unsigned long long)supportedInterfaceOrientations;
+- (long long)preferredInterfaceOrientationForPresentation;
+- (_Bool)shouldFollowSceneOrientation;
 @property(readonly, nonatomic) long long preferredStatusBarStyle;
 @property(readonly, nonatomic) UIViewController *overlayViewController;
 - (void)dealloc;

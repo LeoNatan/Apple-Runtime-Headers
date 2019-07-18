@@ -24,6 +24,7 @@
     NSString *_fullPath;
 }
 
++ (id)log;
 @property _Bool setupIsComplete; // @synthesize setupIsComplete=_setupIsComplete;
 @property(readonly, nonatomic) NSString *fullPath; // @synthesize fullPath=_fullPath;
 @property(readonly, nonatomic) NSString *databaseName; // @synthesize databaseName=_databaseName;
@@ -35,6 +36,7 @@
 @property(readonly, nonatomic) EFSQLSchema *schema; // @synthesize schema=_schema;
 - (void).cxx_destruct;
 - (id)urlForDatabasePath:(id)arg1 type:(long long)arg2;
+- (void)scheduleRecurringActivity;
 @property(readonly, nonatomic) _Bool enforceDataProtection;
 - (void)reconcileJournalWithCompletionBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool databaseIsCorrupt;

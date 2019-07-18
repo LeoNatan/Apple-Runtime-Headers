@@ -6,11 +6,12 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
+#import <GeoServices/GEOServerCondition-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, PBUnknownFields;
+@class NSArray, NSDate, NSMutableArray, NSString, PBUnknownFields;
 
-@interface GEOCondition : PBCodable <NSCopying>
+@interface GEOCondition : PBCodable <GEOServerCondition, NSCopying>
 {
     PBUnknownFields *_unknownFields;
     NSMutableArray *_conditions;
@@ -28,7 +29,7 @@
 - (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
@@ -36,7 +37,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)conditionAtIndex:(unsigned long long)arg1;
 - (unsigned long long)conditionsCount;
 - (void)addCondition:(id)arg1;
@@ -48,6 +49,13 @@
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
 @property(nonatomic) int type;
+@property(readonly, nonatomic) NSDate *expirationDate;
+@property(readonly, nonatomic) NSArray *subconditions;
+@property(readonly, nonatomic) long long conditionType;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

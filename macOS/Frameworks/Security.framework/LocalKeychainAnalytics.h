@@ -6,7 +6,7 @@
 
 #import <Security/SFAnalytics.h>
 
-@class NSMutableArray, NSObject;
+@class NSDate, NSMutableArray, NSObject;
 @protocol OS_dispatch_queue;
 
 @interface LocalKeychainAnalytics : SFAnalytics
@@ -15,10 +15,14 @@
     NSMutableArray *_pendingReports;
     NSObject<OS_dispatch_queue> *_queue;
     int _notificationToken;
+    NSDate *_backupStartTime;
+    int _backupType;
 }
 
 + (id)databasePath;
 - (void).cxx_destruct;
+- (void)reportKeychainBackupEnd:(_Bool)arg1 error:(id)arg2;
+- (void)reportKeychainBackupStartWithType:(int)arg1;
 - (void)reportKeychainUpgradeOutcome:(int)arg1 attributes:(id)arg2;
 - (void)reportKeychainUpgradeFrom:(int)arg1 to:(int)arg2 outcome:(int)arg3 error:(id)arg4;
 - (void)processPendingMessages;

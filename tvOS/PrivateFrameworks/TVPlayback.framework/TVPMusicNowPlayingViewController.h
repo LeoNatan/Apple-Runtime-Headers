@@ -18,7 +18,7 @@
 #import <TVPlayback/UIGestureRecognizerDelegate-Protocol.h>
 #import <TVPlayback/UIScrollViewDelegate-Protocol.h>
 
-@class MPAVRoute, NSArray, NSDate, NSIndexPath, NSObject, NSOperationQueue, NSString, NSTimer, TVPAudioTransportBarView, TVPB239FingerRestGestureRecognizer, TVPB39TapGestureRecognizer, TVPChapter, TVPDefiniteDurationPlaybackProgress, TVPHardwareButtonEventManager, TVPMusicBarsView, TVPMusicNowPlayingView, TVPMusicVideoPlayerViewController, TVPPlaybackProgressAnimator, TVPScrubbingConfiguration, TVPStateMachine, UIDigitizerLongPressGestureRecognizer, UIDigitizerTapGestureRecognizer, UILongPressGestureRecognizer, UIScrollView, UITapGestureRecognizer, _TVPMusicNowPlayingInvalidationContext, _TVPMusicNowPlayingSelectedItemCoordinator, _TVPRoutePickerButton;
+@class MPAVRoute, NSArray, NSDate, NSIndexPath, NSObject, NSOperationQueue, NSString, NSTimer, TVPAudioTransportBarView, TVPB239FingerRestGestureRecognizer, TVPB39TapGestureRecognizer, TVPChapter, TVPDefiniteDurationPlaybackProgress, TVPHardwareButtonEventManager, TVPMusicBarsView, TVPMusicNowPlayingView, TVPMusicVideoPlayerViewController, TVPPlaybackProgressAnimator, TVPScrubbingConfiguration, TVPStateMachine, UIDigitizerLongPressGestureRecognizer, UILongPressGestureRecognizer, UIScrollView, UITapGestureRecognizer, _TVPMusicNowPlayingIdleViewControllerContext, _TVPMusicNowPlayingInvalidationContext, _TVPMusicNowPlayingSelectedItemCoordinator, _TVPRoutePickerButton;
 @protocol TVPMediaItem, TVPPlayback, TVPPlaybackViewControllerDelegate;
 
 @interface TVPMusicNowPlayingViewController : UIViewController <TVPCollectionViewDelegate, TVPMusicNowPlayingViewDelegate, TVPPlaybackProgressAnimatorDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, UIScrollViewDelegate, AVPlayerViewControllerDelegate, AVRoutePickerViewDelegate, TVPMusicVideoPlayerViewControllerDelegate, TVPMusicNowPlayingSnapshotBackgroundViewDelegate>
@@ -31,7 +31,6 @@
     _Bool _ignorePlaylistChanges;
     NSIndexPath *_focusToIndexPath;
     UITapGestureRecognizer *_b239TapGestureRecognizer;
-    UIDigitizerTapGestureRecognizer *_selectGestureRecognizer;
     UIDigitizerLongPressGestureRecognizer *_longClickGestureRecognizer;
     TVPB39TapGestureRecognizer *_leftTapGestureRecognizer;
     TVPB39TapGestureRecognizer *_rightTapGestureRecognizer;
@@ -92,9 +91,11 @@
     TVPHardwareButtonEventManager *_buttonEventManager;
     _TVPMusicNowPlayingSelectedItemCoordinator *_selectedItemCoordinator;
     UIViewController *_idleViewController;
+    _TVPMusicNowPlayingIdleViewControllerContext *_idleViewControllerContext;
 }
 
 + (void)initialize;
+@property(retain, nonatomic) _TVPMusicNowPlayingIdleViewControllerContext *idleViewControllerContext; // @synthesize idleViewControllerContext=_idleViewControllerContext;
 @property(retain, nonatomic) UIViewController *idleViewController; // @synthesize idleViewController=_idleViewController;
 @property(nonatomic) _Bool needsInitializationInViewDidAppear; // @synthesize needsInitializationInViewDidAppear=_needsInitializationInViewDidAppear;
 @property(nonatomic) _Bool keepTransportBarVisible; // @synthesize keepTransportBarVisible=_keepTransportBarVisible;
@@ -170,6 +171,7 @@
 - (_Bool)_shouldRestrictExplicitTracks;
 - (_Bool)_restrictionsEnabled;
 - (void)_updateIdleViewControllerIfNeeded;
+- (id)_currentMediaItemForIdleViewController;
 - (void)_removeIdleViewControllerAndRestoreLayout:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_setIdleViewController:(id)arg1 forMediaItem:(id)arg2;
 - (void)updateIdleViewControllerIfNeeded;
@@ -260,12 +262,14 @@
 - (_Bool)_isScrubberActive;
 - (void)_focusCurrentPlayingItemAnimated:(_Bool)arg1;
 - (void)_focusCurrentPlayingItem;
+- (_Bool)_shouldShowControls;
 - (void)_startPlaylistExitTimeout:(long long)arg1;
 - (_Bool)_isStreamingLive;
 - (_Bool)_isStreamingRadioPlayback;
 - (void)_timerTick:(id)arg1;
 - (void)_updateFullscreenViewControllerForMediaItem:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setBackdropForMediaItem:(id)arg1;
+- (_Bool)_tvTabBarShouldAutohide;
 @property(readonly, nonatomic) _Bool isShowingVideoPlayer;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)reloadCurrentControls;

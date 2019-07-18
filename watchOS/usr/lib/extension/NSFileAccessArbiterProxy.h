@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_providers;
     NSMapTable *_providerMessengersByID;
     NSMutableArray *_providerListeners;
+    _Bool _disableFileProviderReregistration;
 }
 
 + (id)_fileReactorDebuggingInformation;
@@ -34,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)handleCanceledServer;
 - (void)performBarrierAsync:(CDUnknownBlockType)arg1;
 - (void)performBarrier;
+- (void)setAutomaticFileProviderReregistrationDisabled:(_Bool)arg1;
 - (_Bool)itemHasPresentersAtURL:(id)arg1;
 - (void)getDebugInfoWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)idForFileReactor:(id)arg1;

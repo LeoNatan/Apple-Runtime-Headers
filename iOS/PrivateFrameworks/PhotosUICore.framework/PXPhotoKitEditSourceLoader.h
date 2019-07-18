@@ -8,16 +8,12 @@
 
 #import <PhotosUICore/PXEditSourceLoader-Protocol.h>
 
-@class NSDate, NSError, NSNumber, NSProgress, NSString, NSURL, PHAsset, PICompositionController, PLEditSource;
+@class NSDate, NSError, NSNumber, NSProgress, NSString, PHAsset, PICompositionController, PLEditSource;
 @protocol OS_dispatch_queue;
 
 @interface PXPhotoKitEditSourceLoader : NSObject <PXEditSourceLoader>
 {
-    int _imageRequestID;
-    int _videoRequestID;
-    int _adjustmentDataRequestID;
-    NSURL *_imageURL;
-    NSURL *_videoURL;
+    unsigned long long _imageRequestID;
     _Bool _didBeginLoading;
     NSDate *_loadingStartDate;
     NSProgress *_editSourceCreationProgress;
@@ -41,10 +37,8 @@
 @property(readonly, copy, nonatomic) PICompositionController *compositionController; // @synthesize compositionController=_compositionController;
 @property(readonly, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
 - (void).cxx_destruct;
-- (void)_createEditSourceIfPossible;
-- (void)_handleAdjustmentDataInfo:(id)arg1;
-- (void)_handleVideoURLResult:(id)arg1 info:(id)arg2;
-- (void)_handleImageURLResultWithInfo:(id)arg1;
+@property(readonly, nonatomic) PLEditSource *activeEditSource;
+- (void)_handleContentEditingInputRequestCompletion:(id)arg1 info:(id)arg2 asset:(id)arg3;
 - (void)_handleCancellation;
 - (void)beginLoading;
 @property(readonly, copy, nonatomic) NSString *contentIdentifier;

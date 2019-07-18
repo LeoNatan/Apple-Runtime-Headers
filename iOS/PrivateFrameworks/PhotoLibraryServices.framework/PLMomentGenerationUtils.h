@@ -10,8 +10,8 @@
 {
 }
 
-+ (id)_dateRangeFormatterForCategory:(unsigned short)arg1;
-+ (id)dateRangeTitleWithStartDate:(id)arg1 endDate:(id)arg2 category:(unsigned short)arg3 kind:(unsigned short)arg4 forceUpdateLocale:(_Bool)arg5;
++ (id)_dateRangeFormatterForCategory:(unsigned short)arg1 kind:(unsigned short)arg2 options:(unsigned long long)arg3;
++ (id)dateRangeTitleWithStartDate:(id)arg1 endDate:(id)arg2 category:(unsigned short)arg3 kind:(unsigned short)arg4 options:(unsigned long long)arg5;
 + (id)dateRangeTitleWithStartDate:(id)arg1 endDate:(id)arg2 category:(unsigned short)arg3 kind:(unsigned short)arg4;
 + (_Bool)isNearFrequentLocationForMoment:(id)arg1 frequentLocations:(id)arg2;
 + (_Bool)isAtFrequentLocationForMoment:(id)arg1 frequentLocations:(id)arg2;

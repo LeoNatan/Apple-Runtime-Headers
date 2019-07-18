@@ -12,9 +12,11 @@ __attribute__((visibility("hidden")))
 @interface WDMedicalRecordTimelineValueCell : WDMedicalRecordGroupableCell
 {
     NSString *_titleString;
+    NSString *_subtitleString;
     NSString *_valueString;
     NSString *_unitString;
     UILabel *_titleLabel;
+    UILabel *_subtitleLabel;
     UILabel *_valueLabel;
     NSLayoutConstraint *_titleWidthConstraint;
     NSLayoutConstraint *_valueWidthConstraint;
@@ -23,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_titleValueGapConstraint;
     NSLayoutConstraint *_valueLeftAlignConstraint;
     NSLayoutConstraint *_valueRightAlignConstraint;
+    NSLayoutConstraint *_subtitleBottomConstraint;
 }
 
 + (id)_unitLabelFontMultipleLines;
@@ -31,6 +34,7 @@ __attribute__((visibility("hidden")))
 + (id)_valueLabelFontSingleLine;
 + (double)_titleLabelTopToFirstBaseline;
 + (id)_titleLabelFont;
+@property(retain, nonatomic) NSLayoutConstraint *subtitleBottomConstraint; // @synthesize subtitleBottomConstraint=_subtitleBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *valueRightAlignConstraint; // @synthesize valueRightAlignConstraint=_valueRightAlignConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *valueLeftAlignConstraint; // @synthesize valueLeftAlignConstraint=_valueLeftAlignConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titleValueGapConstraint; // @synthesize titleValueGapConstraint=_titleValueGapConstraint;
@@ -39,6 +43,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSLayoutConstraint *valueWidthConstraint; // @synthesize valueWidthConstraint=_valueWidthConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titleWidthConstraint; // @synthesize titleWidthConstraint=_titleWidthConstraint;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
+@property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
 - (id)_generateValueDisplayAttributedStringWithValueFont:(id)arg1 unitFont:(id)arg2;
@@ -46,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)setValue:(id)arg1 unit:(id)arg2;
 - (id)unit;
 - (id)value;
+@property(copy, nonatomic) NSString *subtitle;
 @property(copy, nonatomic) NSString *title;
 - (void)updateConstraints;
 - (void)setupSubviews;

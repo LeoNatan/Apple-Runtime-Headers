@@ -11,18 +11,16 @@
 @interface TVPMusicVideoTitleCardView : UIView
 {
     TVPFloatingButton *_addButton;
-    _Bool _isFingerResting;
     _Bool _showAddButton;
     NSString *_title;
     NSString *_subtitle;
 }
 
++ (void)_limitMaxX:(double)arg1 forView:(id)arg2;
 @property(nonatomic) _Bool showAddButton; // @synthesize showAddButton=_showAddButton;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-@property(nonatomic) _Bool isFingerResting; // @synthesize isFingerResting=_isFingerResting;
 - (void).cxx_destruct;
-- (void)_fingerRestRecognized:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)canBecomeFocused;
 - (id)preferredFocusEnvironments;

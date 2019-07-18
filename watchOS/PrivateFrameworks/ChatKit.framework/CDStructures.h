@@ -76,7 +76,7 @@ struct CKBalloonDescriptor_t {
     unsigned int _field5;
     char _field6;
     int _field7;
-    char _field8;
+    int _field8;
     _Bool _field9;
     _Bool _field10;
     _Bool _field11;

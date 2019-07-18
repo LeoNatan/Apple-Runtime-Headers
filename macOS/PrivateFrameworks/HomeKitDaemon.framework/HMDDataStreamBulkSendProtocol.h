@@ -8,11 +8,12 @@
 
 #import <HomeKitDaemon/HMDDataStreamProtocol-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
+#import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class NSMapTable, NSString;
+@class NSMapTable, NSMutableDictionary, NSString;
 @protocol HMDDataStreamProtocolDelegate, OS_dispatch_queue;
 
-@interface HMDDataStreamBulkSendProtocol : NSObject <HMFLogging, HMDDataStreamProtocol>
+@interface HMDDataStreamBulkSendProtocol : NSObject <HMFLogging, HMDDataStreamProtocol, HMFTimerDelegate>
 {
     BOOL _isConnected;
     unsigned int _nextSessionIdentifier;
@@ -21,18 +22,23 @@
     id _accessory;
     NSMapTable *_listeners;
     NSMapTable *_activeBulkSendSessions;
+    NSMutableDictionary *_pendingBulkSendSessionContextBySessionIdentifier;
+    CDUnknownBlockType _bulkSendSessionContextFactory;
 }
 
 + (id)logCategory;
 + (id)protocolName;
-@property(retain, nonatomic) NSMapTable *activeBulkSendSessions; // @synthesize activeBulkSendSessions=_activeBulkSendSessions;
-@property(nonatomic) unsigned int nextSessionIdentifier; // @synthesize nextSessionIdentifier=_nextSessionIdentifier;
+@property(readonly) CDUnknownBlockType bulkSendSessionContextFactory; // @synthesize bulkSendSessionContextFactory=_bulkSendSessionContextFactory;
+@property(readonly) NSMutableDictionary *pendingBulkSendSessionContextBySessionIdentifier; // @synthesize pendingBulkSendSessionContextBySessionIdentifier=_pendingBulkSendSessionContextBySessionIdentifier;
+@property(readonly) NSMapTable *activeBulkSendSessions; // @synthesize activeBulkSendSessions=_activeBulkSendSessions;
+@property unsigned int nextSessionIdentifier; // @synthesize nextSessionIdentifier=_nextSessionIdentifier;
 @property(nonatomic) BOOL isConnected; // @synthesize isConnected=_isConnected;
 @property(retain, nonatomic) NSMapTable *listeners; // @synthesize listeners=_listeners;
 @property(nonatomic) __weak id accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <HMDDataStreamProtocolDelegate> dataStream; // @synthesize dataStream=_dataStream;
 - (void).cxx_destruct;
+- (void)timerDidFire:(id)arg1;
 - (void)_startSessionForFileType:(id)arg1 queue:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (void)startSessionForFileType:(id)arg1 queue:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (void)_sendAckMessageWithIdentifier:(id)arg1;
@@ -45,7 +51,7 @@
 - (void)_handleOpenWithRequestHeader:(id)arg1 payload:(id)arg2;
 - (void)_removeBulkSendSessionForSessionIdentifier:(id)arg1;
 - (id)_getBulkSendSessionForSessionIdentifier:(id)arg1;
-- (void)_rejectSessionCandidate:(id)arg1 reason:(unsigned short)arg2;
+- (void)_rejectSessionCandidate:(id)arg1 status:(unsigned short)arg2;
 - (void)_startSessionCandidate:(id)arg1 queue:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (id)_createSessionIdentifier;
 - (void)_sendOpenResponseWithRequestHeader:(id)arg1 status:(unsigned short)arg2;
@@ -54,7 +60,7 @@
 - (id)_createSessionFromCandidate:(id)arg1 queue:(id)arg2;
 - (id)_createSessionCandidateWithRequestHeader:(id)arg1;
 - (void)asyncBulkSendSessionDidCancelSessionWithIdentifier:(id)arg1 reason:(unsigned short)arg2 hadReceivedEof:(BOOL)arg3;
-- (void)asyncBulkSendSessionCandidate:(id)arg1 didRejectWithReason:(unsigned short)arg2;
+- (void)asyncBulkSendSessionCandidate:(id)arg1 didRejectWithStatus:(unsigned short)arg2;
 - (void)asyncBulkSendSessionCandidate:(id)arg1 didAcceptOnQueue:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (void)dataStream:(id)arg1 didReceiveResponse:(id)arg2 header:(id)arg3 payload:(id)arg4;
 - (void)dataStream:(id)arg1 didReceiveRequest:(id)arg2 header:(id)arg3 payload:(id)arg4;
@@ -65,6 +71,7 @@
 - (void)_closeAllSessionsWithError:(id)arg1;
 - (void)removeListener:(id)arg1;
 - (void)addListener:(id)arg1 fileType:(id)arg2;
+- (id)initWithQueue:(id)arg1 accessory:(id)arg2 bulkSendSessionContextFactory:(CDUnknownBlockType)arg3;
 - (id)initWithQueue:(id)arg1 accessory:(id)arg2;
 
 // Remaining properties

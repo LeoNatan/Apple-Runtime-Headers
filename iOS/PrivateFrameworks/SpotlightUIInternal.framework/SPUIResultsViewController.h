@@ -33,7 +33,7 @@
 - (void)_pushSectionsUpdate;
 - (_Bool)_hasRealSuggestions;
 - (void)clearSuggestionSection;
-- (void)searchStringUpdated:(id)arg1 wantsCompletions:(_Bool)arg2;
+- (void)searchStringUpdated:(id)arg1 wantsCompletions:(_Bool)arg2 withQueryId:(unsigned long long)arg3;
 @property(readonly) SFSearchResult *actualSearchSuggestionResult;
 - (void)searchAgentClearedResults:(id)arg1;
 - (void)_truncateResultsSectionToFit;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ML3MusicLibrary, MPMediaLibraryArtwork, NSNumber, NSString;
+@class ICUserIdentity, ML3MusicLibrary, MPMediaLibraryArtwork, NSNumber, NSString;
 @protocol OS_dispatch_queue;
 
 @interface MPMediaLibraryArtworkRequest : NSObject
@@ -21,10 +21,12 @@
     int _artworkType;
     ML3MusicLibrary *_library;
     MPMediaLibraryArtwork *_libraryArtwork;
+    ICUserIdentity *_userIdentity;
     double _retrievalTime;
     unsigned long long _libraryID;
 }
 
+@property(readonly, copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
 - (void)_onQueue_updateTokens;
 - (void)promoteFetchableArtworkTokenIfNeeded;

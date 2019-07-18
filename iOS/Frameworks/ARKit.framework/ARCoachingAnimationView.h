@@ -9,15 +9,12 @@
 #import <ARKit/ARCoachingUpdateManagerDelegate-Protocol.h>
 
 @class ARCoachingGlyphRenderer, ARCoachingUpdateManager, CAMetalLayer, NSString;
-@protocol MTLDevice;
 
 @interface ARCoachingAnimationView : UIView <ARCoachingUpdateManagerDelegate>
 {
-    id <MTLDevice> _device;
     CAMetalLayer *_metalLayer;
     ARCoachingUpdateManager *_updateManager;
     ARCoachingGlyphRenderer *_renderer;
-    long long _lastState;
     // Error parsing type: , name: _lastCameraRight
     // Error parsing type: , name: _lastCameraTranslation
     // Error parsing type: , name: _rotationStartCameraRight
@@ -40,6 +37,7 @@
 - (void)loopAlternatingPlanesWithInitialDelay:(double)arg1;
 - (void)killAlternatingPlanesLoop;
 - (void)clampCubeToQuarterRotation;
+- (void)updateCubeRotation:(id)arg1 motionTracker:(id)arg2;
 - (void)updateWithFrame:(id)arg1 motionTracker:(id)arg2;
 - (void)killCoachingAnimation;
 - (void)startCoachingAnimation;

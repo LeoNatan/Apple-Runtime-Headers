@@ -6,7 +6,7 @@
 
 #import <Preferences/PSTableCell.h>
 
-@class NSLayoutConstraint, NSMutableArray, NSString, UIImage, UIImageView, UILabel, UIView;
+@class NSLayoutConstraint, NSMutableArray, NSString, UIActivityIndicatorView, UIImage, UIImageView, UILabel, UIView;
 
 @interface STStorageTableCell : PSTableCell
 {
@@ -22,9 +22,11 @@
     UILabel *_infoLabel;
     UILabel *_sizeLabel;
     long long _size;
+    UIActivityIndicatorView *_spinner;
 }
 
 + (double)defaultCellHeight;
+@property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 - (void).cxx_destruct;
 @property(nonatomic) long long size;
 @property(retain, nonatomic) NSString *sizeString;

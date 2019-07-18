@@ -55,6 +55,8 @@
 - (id)_bodyText;
 - (void)_createViews;
 - (void)_setupViews;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)init;
 

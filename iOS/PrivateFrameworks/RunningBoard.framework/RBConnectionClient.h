@@ -65,7 +65,7 @@ __attribute__((visibility("hidden")))
 - (id)limitationsForInstance:(id)arg1 error:(out id *)arg2;
 - (id)lastExitContextForInstance:(id)arg1 error:(out id *)arg2;
 - (_Bool)intendToExit:(id)arg1 withStatus:(id)arg2 error:(out id *)arg3;
-- (id)statesForPredicate:(id)arg1 error:(out id *)arg2;
+- (void)statesForPredicate:(id)arg1 withDescriptor:(id)arg2 withReply:(id)arg3;
 - (void)unsubscribeFromProcessStateChangesWithIdentifier:(unsigned long long)arg1;
 - (_Bool)subscribeToProcessStateChangesWithConfiguration:(id)arg1 error:(out id *)arg2;
 - (id)subscribeToProcessDeath:(id)arg1 error:(out id *)arg2;
@@ -83,7 +83,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasEntitlement:(id)arg1;
 - (void)invalidate;
 - (void)handleMessage:(id)arg1;
-- (id)initWithContext:(id)arg1 process:(id)arg2;
+- (id)initWithContext:(id)arg1 process:(id)arg2 connection:(id)arg3;
 - (id)init;
 
 // Remaining properties

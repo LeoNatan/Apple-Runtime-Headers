@@ -25,7 +25,7 @@
 - (void)fetchLocallyAvailableWatchAppBundleIDsWithCompletion:(void (^)(NSArray *, NSError *))arg1;
 - (void)cancelUpdatePendingForCompanionApp:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)setUpdatePendingForCompanionApp:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
-- (void)updatePreferencesForApplicationWithIdentifier:(NSString *)arg1 preferences:(NSDictionary *)arg2 writingToPreferencesLocation:(unsigned long long)arg3 forDeviceWithPairingID:(NSUUID *)arg4 completion:(void (^)(NSError *))arg5;
+- (void)updatePreferencesForApplicationWithIdentifier:(NSString *)arg1 preferences:(NSDictionary *)arg2 writingToPreferencesLocation:(unsigned long long)arg3 forDeviceWithPairingID:(NSUUID *)arg4 options:(unsigned long long)arg5 completion:(void (^)(NSError *))arg6;
 - (void)fetchProvisioningProfilesForApplicationWithBundleID:(NSString *)arg1 forDeviceWithPairingID:(NSUUID *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)fetchProvisioningProfilesForDeviceWithPairingID:(NSUUID *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)removeProvisioningProfileWithID:(NSString *)arg1 fromDeviceWithPairingID:(NSUUID *)arg2 completion:(void (^)(_Bool, NSError *))arg3;

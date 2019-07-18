@@ -22,6 +22,8 @@
 - (id)createLPDFShellAt:(id)arg1;
 - (void)generateSummaryDocument:(id)arg1 withErrors:(id)arg2;
 - (void)generateSummaryDocumentWithErrors:(id)arg1;
+- (void)clearSecurityFromQuarantineAtRoot:(id)arg1;
+- (void)moveAsideExistingQuarantineAtRoot:(id)arg1;
 - (id)quarantineLocationForReason:(unsigned long long)arg1;
 - (id)init;
 

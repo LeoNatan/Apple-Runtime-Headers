@@ -15,8 +15,8 @@
 }
 
 + (id)sharedManager;
-@property BOOL currentHardwareHasBridgeOS; // @synthesize currentHardwareHasBridgeOS=_currentHardwareHasBridgeOS;
 @property(retain) BridgeOSInstallController *controller; // @synthesize controller=_controller;
+@property BOOL currentHardwareHasBridgeOS; // @synthesize currentHardwareHasBridgeOS=_currentHardwareHasBridgeOS;
 - (BOOL)_prepareProduct:(id)arg1 error:(id *)arg2 apply:(BOOL)arg3 inForeground:(BOOL)arg4 progressHandler:(CDUnknownBlockType)arg5;
 - (id)_localPackageSpecifiersForProduct:(id)arg1;
 - (BOOL)updateIsPrepared;

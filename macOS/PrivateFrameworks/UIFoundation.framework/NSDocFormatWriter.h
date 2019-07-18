@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <UIFoundation/DocFormatAddressValidation-Protocol.h>
+
 @class NSAttributedString, NSDictionary, NSMutableArray, NSMutableData, NSRunStorage;
 
-@interface NSDocFormatWriter : NSObject
+@interface NSDocFormatWriter : NSObject <DocFormatAddressValidation>
 {
     NSAttributedString *_attrStr;
     NSDictionary *_documentAttrs;
@@ -37,6 +39,7 @@
 - (void)_writeDocumentData;
 - (void)_writeParagraphData;
 - (void)_writeCharacterData;
+- (BOOL)validateAddress:(const char *)arg1 numberOfBytes:(unsigned long long)arg2;
 
 @end
 

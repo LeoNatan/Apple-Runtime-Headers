@@ -8,24 +8,26 @@
 
 #import <NanoMedicalID/HKNanoMedicalIDCell-Protocol.h>
 
-@class NSLayoutConstraint, NSString, UILabel;
+@class NSLayoutConstraint, NSString, UIImageView, UILabel;
 
 __attribute__((visibility("hidden")))
 @interface HKNanoMedicalIDEmergencyContactCell : PUICTableViewCell <HKNanoMedicalIDCell>
 {
     UILabel *_nameLabel;
     UILabel *_relationshipHeaderLabel;
+    UIImageView *_phoneGlyphView;
     UILabel *_phoneNumberLabel;
     NSLayoutConstraint *_relationshipHeaderLabelBaselineConstraint;
-    NSLayoutConstraint *_nameLabelBaselineConstraint;
     NSLayoutConstraint *_phoneNumberLabelBaselineConstraint;
 }
 
 + (id)identifier;
 - (void).cxx_destruct;
+- (id)phoneGlyphView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)_addPhoneNumberLabelConstraints;
+- (void)_addPhoneGlyphConstraints;
 - (void)_addRelationshipHeaderLabelConstraints;
 - (void)_addNameLabelConstraints;
 - (void)emergencyContactTapped:(id)arg1;

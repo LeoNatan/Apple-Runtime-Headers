@@ -30,7 +30,7 @@
     NSTimer *_timer;
     PUICCrownInputSequencer *_crownInputSequencer;
     unsigned int _viewState;
-    _Bool _beganAdjustingFromEUVolumeLimit;
+    float _lastIdleVolumeValue;
     id <NMUVolumeIndicatorControlDelegate> _delegate;
     id <NACVolumeController> _volumeController;
     float _minimumVolume;

@@ -38,7 +38,7 @@
 - (void)_runAsyncAssetDownloadQuery:(id)arg1 existingSong:(id)arg2 cloudAsset:(id)arg3;
 - (void)_runNextAsyncAssetDownloadQuery;
 - (id)_newQueryDictForQuery:(id)arg1 songUID:(id)arg2 existingSong:(id)arg3 asset:(id)arg4;
-- (void)requestDownloadOfAsset:(id)arg1;
+- (void)requestDownloadOfAsset:(id)arg1 withOptions:(id)arg2;
 - (void)loadAssetWithID:(id)arg1 forSongID:(id)arg2;
 - (void)_processResults:(id)arg1 metadataMapping:(id)arg2;
 - (id)_metadataMappingForUUIDSet:(id)arg1;

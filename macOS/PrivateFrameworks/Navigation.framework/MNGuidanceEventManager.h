@@ -34,6 +34,7 @@
     NSMutableArray *_startSignGuidanceEvents;
     GEOComposedGuidanceEvent *_preArrivalSignGuidanceEvent;
     GEOComposedGuidanceEvent *_endSignGuidanceEvent;
+    GEOComposedGuidanceEvent *_previousArrivalSignGuidanceEvent;
     GEOComposedGuidanceEvent *_returnToRouteSignGuidanceEvent;
     BOOL _hasBeenOnRouteOnce;
     BOOL _canSpeakReturnToRouteAnnouncement;

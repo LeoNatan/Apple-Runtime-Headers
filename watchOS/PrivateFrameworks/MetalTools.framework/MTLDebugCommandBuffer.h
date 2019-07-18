@@ -16,6 +16,9 @@
     NSMutableSet *_unsignaledResources;
     struct unique_ptr<ILayerLockingPolicy, std::__1::default_delete<ILayerLockingPolicy>> _boundForWriteLockingPolicy;
     struct vector<std::__1::pair<MTLDebugSharedEvent *, unsigned long long>, std::__1::allocator<std::__1::pair<MTLDebugSharedEvent *, unsigned long long>>> _waitEvents;
+    struct unordered_multiset<AttachmentDescriptorSimple, AttachmentDescriptorSimple::hash_t, AttachmentDescriptorSimple::equal_t, std::__1::allocator<AttachmentDescriptorSimple>> _attachmentSet;
+    struct array<AttachmentDescriptorSimple, 8> _prevAttachments;
+    struct array<AttachmentDescriptorSimple, 8> _currAttachments;
 }
 
 - (id).cxx_construct;
@@ -31,6 +34,7 @@
 - (id)sampledComputeCommandEncoderWithDispatchType:(unsigned int)arg1 programInfoBuffer:(CDStruct_4af8c268 *)arg2 capacity:(unsigned int)arg3;
 - (id)sampledComputeCommandEncoderWithProgramInfoBuffer:(CDStruct_4af8c268 *)arg1 capacity:(unsigned int)arg2;
 - (id)sampledRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(CDStruct_4af8c268 *)arg2 capacity:(unsigned int)arg3;
+- (void)validateStoreLoadTransition:(id)arg1 atIndex:(unsigned int)arg2 renderTargetArrayLength:(unsigned int)arg3;
 - (void)onParallelRenderCommanderEndEncoding;
 - (id)parallelRenderCommandEncoderWithDescriptor:(id)arg1;
 - (id)computeCommandEncoderWithDispatchType:(unsigned int)arg1;

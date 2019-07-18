@@ -16,12 +16,10 @@
     SORemoteExtensionViewController *_remoteViewController;
     NSExtension *_extension;
     NSArray *_associatedDomains;
-    NSString *_requestedOperation;
     id <SOExtensionDelegate> _extensionDelegate;
 }
 
 @property(nonatomic) __weak id <SOExtensionDelegate> extensionDelegate; // @synthesize extensionDelegate=_extensionDelegate;
-@property(retain, nonatomic) NSString *requestedOperation; // @synthesize requestedOperation=_requestedOperation;
 @property(retain, nonatomic) NSArray *associatedDomains; // @synthesize associatedDomains=_associatedDomains;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 - (void).cxx_destruct;
@@ -32,7 +30,7 @@
 - (void)checkAssociatedDomains;
 @property(readonly, nonatomic) NSString *extensionBundleIdentifier;
 @property(readonly, nonatomic) NSString *containerAppBundleIdentifier;
-@property(readonly, nonatomic) NSString *extensionName;
+@property(readonly, nonatomic) NSString *localizedExtensionDisplayName;
 @property(readonly, nonatomic) NSString *containerAppPath;
 - (void)unload;
 - (CDStruct_6ad76789)auditTokenForSession;

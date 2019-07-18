@@ -13,6 +13,7 @@
 + (id)bestAccountForAddress:(id)arg1;
 + (Class)contextClass;
 - (id)descriptionForPurpose:(int)arg1 isGroupMessage:(_Bool)arg2 messageDataSource:(CDUnknownBlockType)arg3 attachmentDataSource:(CDUnknownBlockType)arg4;
+- (id)descriptionForPurpose:(int)arg1 isGroupMessage:(_Bool)arg2 senderDisplayName:(id)arg3 messageDataSource:(CDUnknownBlockType)arg4 attachmentDataSource:(CDUnknownBlockType)arg5;
 - (id)_copyWithFlags:(unsigned long long)arg1;
 - (id)_copy;
 - (_Bool)_isInvitation;

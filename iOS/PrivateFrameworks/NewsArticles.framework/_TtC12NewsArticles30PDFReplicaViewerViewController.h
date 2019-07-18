@@ -34,6 +34,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 @property(nonatomic, readonly) _Bool prefersHomeIndicatorAutoHidden;
+@property(nonatomic, readonly) long long preferredStatusBarUpdateAnimation;
+@property(nonatomic, readonly) _Bool prefersStatusBarHidden;
 
 @end
 

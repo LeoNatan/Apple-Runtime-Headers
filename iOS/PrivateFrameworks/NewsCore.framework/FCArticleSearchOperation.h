@@ -11,6 +11,8 @@
 @interface FCArticleSearchOperation : FCOperation
 {
     NSString *_query;
+    NSString *_keyboardInputMode;
+    double _scale;
     unsigned long long _resultsLimit;
     FCCloudContext *_cloudContext;
     CDUnknownBlockType _articleSearchCompletion;
@@ -25,6 +27,8 @@
 @property(copy) CDUnknownBlockType articleSearchCompletion; // @synthesize articleSearchCompletion=_articleSearchCompletion;
 @property(retain, nonatomic) FCCloudContext *cloudContext; // @synthesize cloudContext=_cloudContext;
 @property(nonatomic) unsigned long long resultsLimit; // @synthesize resultsLimit=_resultsLimit;
+@property(nonatomic) double scale; // @synthesize scale=_scale;
+@property(nonatomic) NSString *keyboardInputMode; // @synthesize keyboardInputMode=_keyboardInputMode;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 - (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;

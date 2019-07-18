@@ -11,10 +11,10 @@
 @class NSString;
 
 @interface DNDModeAssertionInvalidation (BackingRecord) <DNDSBackingStoreRecord>
++ (id)downgradeDictionaryRepresentation:(id)arg1 fromVersionNumber:(unsigned long long)arg2 toVersionNumber:(unsigned long long)arg3 migrationDelegate:(id)arg4;
 + (id)newWithDictionaryRepresentation:(id)arg1;
 + (id)predicateForModeAssertionInvalidationsWithAssertionClientIdentifiers:(id)arg1;
 - (id)dictionaryRepresentation;
-- (id)_resolveWithExpectedRemoteDeviceIdentifier:(id)arg1 localDeviceIdentifier:(id)arg2 remoteDeviceIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

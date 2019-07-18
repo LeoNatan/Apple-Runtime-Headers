@@ -48,6 +48,11 @@ struct GEOJunctionElement {
     CDStruct_81fb2dc1 _field4;
 };
 
+struct GEOOnce_s {
+    struct os_unfair_lock_s lock;
+    char didRun;
+};
+
 struct NSArray {
     Class _field1;
 };

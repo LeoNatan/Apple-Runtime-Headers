@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKContainerOptions, CKNotificationListener, CKScheduler, NSNumber, NSString, PFCloudKitContainerProvider;
+@class CKContainerOptions, CKNotificationListener, CKScheduler, NSNumber, NSString, PFCloudKitContainerProvider, PFCloudKitStoreMonitorProvider;
 
 @interface NSCloudKitMirroringDelegateOptions : NSObject
 {
@@ -22,6 +22,7 @@
     CKNotificationListener *_notificationListener;
     BOOL _skipCloudKitSetup;
     PFCloudKitContainerProvider *_containerProvider;
+    PFCloudKitStoreMonitorProvider *_storeMonitorProvider;
     NSString *_apsConnectionMachServiceName;
     BOOL _useDaemon;
     BOOL _useTestDaemon;
@@ -32,6 +33,7 @@
 @property(nonatomic) BOOL preserveLegacyRecordMetadataBehavior; // @synthesize preserveLegacyRecordMetadataBehavior=_preserveLegacyRecordMetadataBehavior;
 @property(nonatomic) BOOL useTestDaemon; // @synthesize useTestDaemon=_useTestDaemon;
 @property(nonatomic) BOOL useDaemon; // @synthesize useDaemon=_useDaemon;
+@property(retain, nonatomic) PFCloudKitStoreMonitorProvider *storeMonitorProvider; // @synthesize storeMonitorProvider=_storeMonitorProvider;
 @property(retain, nonatomic) PFCloudKitContainerProvider *containerProvider; // @synthesize containerProvider=_containerProvider;
 @property(nonatomic) BOOL skipCloudKitSetup; // @synthesize skipCloudKitSetup=_skipCloudKitSetup;
 @property(retain, nonatomic) CKNotificationListener *notificationListener; // @synthesize notificationListener=_notificationListener;

@@ -6,13 +6,13 @@
 
 #import <UIKitCore/UIView.h>
 
-@class _UIPlatterSoftShadowView, _UIPortalView, _UITargetedPreview;
+@class UITargetedPreview, _UIPlatterSoftShadowView, _UIPortalView;
 
 __attribute__((visibility("hidden")))
 @interface _UIClickHighlightEffectPlatter : UIView
 {
     UIView *_anchorView;
-    _UITargetedPreview *_targetedPreview;
+    UITargetedPreview *_targetedPreview;
     _UIPortalView *_portalView;
     UIView *_platterBackgroundView;
     _UIPlatterSoftShadowView *_shadowView;
@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIPlatterSoftShadowView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) UIView *platterBackgroundView; // @synthesize platterBackgroundView=_platterBackgroundView;
 @property(retain, nonatomic) _UIPortalView *portalView; // @synthesize portalView=_portalView;
-@property(retain, nonatomic) _UITargetedPreview *targetedPreview; // @synthesize targetedPreview=_targetedPreview;
+@property(retain, nonatomic) UITargetedPreview *targetedPreview; // @synthesize targetedPreview=_targetedPreview;
 @property(nonatomic) __weak UIView *anchorView; // @synthesize anchorView=_anchorView;
 - (void).cxx_destruct;
 - (void)deAnchor;

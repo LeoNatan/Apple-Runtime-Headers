@@ -9,6 +9,8 @@
 @class NSIndexPath;
 
 @interface UICollectionView (HeadBoardUI)
+- (id)hbui_indexPathForItemAfterIndexPath:(id)arg1;
+@property(readonly, nonatomic) NSIndexPath *hbui_indexPathForFirstItem;
 @property(readonly, nonatomic) NSIndexPath *hbui_indexPathForFocusedItem;
 - (id)hbui_indexPathsForItemsInSection:(long long)arg1;
 - (void)hbui_enumerateIndexPathsForItemsInSection:(long long)arg1 usingBlock:(CDUnknownBlockType)arg2;

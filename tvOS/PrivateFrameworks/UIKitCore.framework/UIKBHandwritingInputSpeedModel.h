@@ -6,26 +6,36 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSMutableArray;
+@class NSMutableArray;
 
 __attribute__((visibility("hidden")))
 @interface UIKBHandwritingInputSpeedModel : NSObject
 {
     NSMutableArray *_recordedIntervals;
-    NSDate *_lastStrokeEndDate;
+    NSMutableArray *_recordedSpeeds;
+    double _lastStrokeTimeStamp;
+    double _lastTouchTimeStamp;
+    struct CGPoint _lastTouchLocation;
+    NSMutableArray *_pointsCurrentStroke;
+    _Bool _duringStroke;
     _Bool _autoConfirmationEnabled;
     double _minTimeout;
     double _maxTimeout;
+    struct CGRect _handwritingFrame;
 }
 
+@property(nonatomic) struct CGRect handwritingFrame; // @synthesize handwritingFrame=_handwritingFrame;
 @property(readonly, nonatomic) double maxTimeout; // @synthesize maxTimeout=_maxTimeout;
 @property(readonly, nonatomic) double minTimeout; // @synthesize minTimeout=_minTimeout;
 @property(readonly, nonatomic) _Bool autoConfirmationEnabled; // @synthesize autoConfirmationEnabled=_autoConfirmationEnabled;
 - (void).cxx_destruct;
 - (void)updatePreferences;
 - (double)timeoutForNextPage;
+- (double)smoothValueFromArray:(id)arg1;
+- (double)speedForCurrentStroke;
 - (void)endCharacter;
 - (void)endStroke;
+- (void)addPoint:(struct CGPoint)arg1 timestamp:(double)arg2;
 - (void)beginStroke;
 - (id)init;
 

@@ -12,7 +12,7 @@
 {
     unsigned char _nearbyActivityLevel;
     unsigned char _objectDiscoveryBatteryState;
-    unsigned char _objectSetupBatteryLevel;
+    unsigned char _objectSetupBatteryState;
     unsigned char _objectSetupColorCode;
     unsigned short _objectDiscoveryProductID;
     unsigned short _proximityPairingProductID;
@@ -26,11 +26,11 @@
     int _nearbyActionType;
     NSData *_nearbyAuthTag;
     unsigned int _nearbyFlags;
-    int _objectDiscoveryAlarmState;
     int _objectDiscoveryMode;
     NSData *_objectDiscoveryNearOwnerID;
     NSData *_objectDiscoveryPublicKeyData;
     int _objectDiscoveryType;
+    int _objectSetupBatteryPerformance;
     unsigned int _objectSetupFlags;
     int _proximityPairingSubType;
     int _rawRSSI;
@@ -43,14 +43,14 @@
 @property(readonly, nonatomic) unsigned short proximityPairingProductID; // @synthesize proximityPairingProductID=_proximityPairingProductID;
 @property(readonly, nonatomic) unsigned int objectSetupFlags; // @synthesize objectSetupFlags=_objectSetupFlags;
 @property(readonly, nonatomic) unsigned char objectSetupColorCode; // @synthesize objectSetupColorCode=_objectSetupColorCode;
-@property(readonly, nonatomic) unsigned char objectSetupBatteryLevel; // @synthesize objectSetupBatteryLevel=_objectSetupBatteryLevel;
+@property(readonly, nonatomic) unsigned char objectSetupBatteryState; // @synthesize objectSetupBatteryState=_objectSetupBatteryState;
+@property(readonly, nonatomic) int objectSetupBatteryPerformance; // @synthesize objectSetupBatteryPerformance=_objectSetupBatteryPerformance;
 @property(readonly, nonatomic) int objectDiscoveryType; // @synthesize objectDiscoveryType=_objectDiscoveryType;
 @property(readonly, copy, nonatomic) NSData *objectDiscoveryPublicKeyData; // @synthesize objectDiscoveryPublicKeyData=_objectDiscoveryPublicKeyData;
 @property(readonly, nonatomic) unsigned short objectDiscoveryProductID; // @synthesize objectDiscoveryProductID=_objectDiscoveryProductID;
 @property(readonly, copy, nonatomic) NSData *objectDiscoveryNearOwnerID; // @synthesize objectDiscoveryNearOwnerID=_objectDiscoveryNearOwnerID;
 @property(readonly, nonatomic) int objectDiscoveryMode; // @synthesize objectDiscoveryMode=_objectDiscoveryMode;
 @property(readonly, nonatomic) unsigned char objectDiscoveryBatteryState; // @synthesize objectDiscoveryBatteryState=_objectDiscoveryBatteryState;
-@property(readonly, nonatomic) int objectDiscoveryAlarmState; // @synthesize objectDiscoveryAlarmState=_objectDiscoveryAlarmState;
 @property(readonly, nonatomic) unsigned int nearbyFlags; // @synthesize nearbyFlags=_nearbyFlags;
 @property(readonly, copy, nonatomic) NSData *nearbyAuthTag; // @synthesize nearbyAuthTag=_nearbyAuthTag;
 @property(readonly, nonatomic) int nearbyActionType; // @synthesize nearbyActionType=_nearbyActionType;

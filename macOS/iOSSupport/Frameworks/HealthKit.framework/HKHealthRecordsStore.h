@@ -28,6 +28,7 @@
 - (CDUnknownBlockType)_actionCompletionWithObjectOnClientQueue:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_actionCompletionOnClientQueue:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_objectCompletionOnClientQueue:(CDUnknownBlockType)arg1;
+- (void)_getSynchronousHealthRecordsPluginServerProxyWithHandler:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (void)_fetchHealthRecordsPluginServerProxyWithHandler:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (void)deregisterAppSourceFromClinicalUnlimitedAuthorizationModeConfirmation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)registerAppSourceForClinicalUnlimitedAuthorizationModeConfirmation:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -75,9 +76,11 @@
 - (void)invalidateCredentialForAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)accountWithIdentifier:(id)arg1 error:(id *)arg2;
 - (void)fetchAccountForSource:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAccountsForGateways:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAllAccountsWithCompletion:(CDUnknownBlockType)arg1;
+- (id)allAccountsWithError:(id *)arg1;
 @property(readonly, nonatomic) HKHealthStore *healthStore;
 - (id)initWithHealthStore:(id)arg1;
 - (void)_hk_shouldPromptForOptInClinicalDataCollection:(CDUnknownBlockType)arg1;

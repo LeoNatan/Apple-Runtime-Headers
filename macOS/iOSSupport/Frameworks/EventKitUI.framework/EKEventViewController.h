@@ -27,7 +27,7 @@
     EKEventDetailItem *_selectedEditItem;
     long long _disclosedTableSection;
     struct _NSRange _disclosedTableRange;
-    int _pendingStatus;
+    long long _pendingStatus;
     EKEventEditViewController *_activeEventEditor;
     EKUIRecurrenceAlertController *_recurrenceAlertController;
     EKUIEventStatusButtonsView *_statusButtonsView;
@@ -83,6 +83,7 @@
 }
 
 + (void)adjustLayoutForCell:(id)arg1 tableViewWidth:(double)arg2 numRowsInSection:(unsigned long long)arg3 cellRow:(unsigned long long)arg4 forceLayout:(BOOL)arg5;
++ (id)_orderedActionsForMask:(long long)arg1;
 + (void)setDefaultDatesForEvent:(id)arg1;
 @property(retain, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
@@ -140,6 +141,8 @@
 - (void)eventStatusButtonsView:(id)arg1 didSelectAction:(long long)arg2 ifCancelled:(CDUnknownBlockType)arg3;
 - (id)previewActionsWithPresentationController:(id)arg1;
 - (id)_statusButtonsForOrb:(BOOL)arg1;
+- (long long)_actionsMaskForOrb:(BOOL)arg1;
+- (id)_organizerContact;
 - (id)_statusButtons;
 - (BOOL)_shouldDisplayStatusButtons;
 - (void)_updateResponse;
@@ -148,6 +151,15 @@
 - (void)_addToCalendarClicked:(id)arg1;
 - (void)_deleteClicked:(id)arg1;
 - (void)_saveStatus:(long long)arg1;
+- (void)_joinMeeting;
+- (void)_emailOrganizer;
+- (void)_contactOrganizer;
+- (void)_openInMaps;
+- (BOOL)_canEmailOrganizer;
+- (void)_cancelProposedTime;
+- (void)_rejectProposedTime;
+- (void)_acceptProposedTime;
+- (id)_proposedDate;
 - (void)invokeAction:(long long)arg1;
 - (void)_prepareEventForEdit;
 - (void)eventEditViewController:(id)arg1 didCompleteWithAction:(long long)arg2;
@@ -179,6 +191,7 @@
 - (id)_footerLabelContainingText:(id)arg1;
 - (void)_updateHeaderAndFooterIfNeeded;
 - (BOOL)_shouldDisplayDelegateOrOutOfDateMessage;
+- (BOOL)_isDisplayingSelfOrganizedInvitation;
 - (BOOL)_isDisplayingInvitation;
 - (BOOL)_isDisplayingDeletableEvent;
 - (BOOL)_isDisplayingSuggestion;
@@ -190,6 +203,7 @@
 - (void)_storeChanged:(id)arg1;
 - (void)_refreshEventAndReload;
 - (void)_setObservesKeyboardNotifications:(BOOL)arg1;
+@property(readonly, nonatomic) UIViewController *eventDetailsViewController;
 @property(readonly, nonatomic) UIScrollView *eventDetailsScrollView;
 - (double)topInset;
 - (void)setTopInset:(double)arg1;

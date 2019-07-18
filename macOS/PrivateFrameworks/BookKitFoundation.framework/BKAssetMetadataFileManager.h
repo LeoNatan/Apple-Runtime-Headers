@@ -39,7 +39,7 @@
 - (id)inflateAsset:(id)arg1 temporaryDirectory:(id)arg2 error:(id *)arg3;
 - (void)persistMetadata:(id)arg1;
 - (void)persistXattrMetadata:(id)arg1;
-- (id)applyUpdate:(id)arg1 onExistingAsset:(id)arg2 targetDirectory:(id)arg3 error:(id *)arg4;
+- (id)applyUpdate:(id)arg1 onExistingAsset:(id)arg2 error:(id *)arg3;
 - (id)normalizeNamingForAsset:(id)arg1 error:(id *)arg2;
 - (id)updateAsset:(id)arg1 withUpdates:(id)arg2 temporaryDirectory:(id)arg3 inflateIfNeeded:(BOOL)arg4 error:(id *)arg5;
 - (id)taskToInstallAsset:(id)arg1;

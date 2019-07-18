@@ -10,6 +10,7 @@
 
 @interface GKNotificationBannerView : UIView
 {
+    _Bool _canTransitionToPlayerAvatar;
     UIImageView *_imageView;
     UILabel *_titleLabel;
     UILabel *_messageLabel;
@@ -30,6 +31,7 @@
 @property(retain, nonatomic) UIView *centeringView; // @synthesize centeringView=_centeringView;
 @property(retain, nonatomic) UILabel *actionLabel; // @synthesize actionLabel=_actionLabel;
 @property(retain, nonatomic) UILabel *messageLabel2; // @synthesize messageLabel2=_messageLabel2;
+@property(nonatomic) _Bool canTransitionToPlayerAvatar; // @synthesize canTransitionToPlayerAvatar=_canTransitionToPlayerAvatar;
 @property(retain, nonatomic) GKDashboardPlayerPhotoView *playerAvatarView; // @synthesize playerAvatarView=_playerAvatarView;
 @property(copy, nonatomic) CDUnknownBlockType touchHandler; // @synthesize touchHandler=_touchHandler;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;

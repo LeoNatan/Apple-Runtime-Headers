@@ -59,7 +59,7 @@
 - (id)processPredicate;
 - (_Bool)matchesProcess:(id)arg1;
 - (int)rbs_pid;
-- (id)observeForImminentAssertionsExpiration:(CDUnknownBlockType)arg1;
+- (void)plugInHandshakeComplete;
 - (id)legacyHandle;
 @property(readonly, copy, nonatomic) BSAuditToken *auditToken;
 - (void)fullEncode:(id)arg1 forKey:(id)arg2;

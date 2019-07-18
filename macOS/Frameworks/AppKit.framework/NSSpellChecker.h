@@ -226,7 +226,11 @@
 - (BOOL)_launchSpellChecker:(long long)arg1 error:(id *)arg2;
 - (long long)_tagForSelectedItem;
 - (id)_titleForSelectedItem;
+- (void)_addSpellServer:(id)arg1 withName:(id)arg2;
+- (void)_removeSpellServerWithName:(id)arg1;
+- (id)_spellServerWithName:(id)arg1;
 - (id)_spellServers;
+- (id)_findServerWithSelectedIndex;
 @property(retain) NSView *accessoryView;
 - (void)_replaceAccessoryView:(id)arg1 with:(id)arg2 topView:(id)arg3;
 @property(readonly) NSPanel *spellingPanel;
@@ -270,6 +274,10 @@
 - (BOOL)_usePerAppLanguageIdentification;
 - (BOOL)_fillSpellCheckerPopupButton:(id)arg1;
 - (id)_defaultServerURL;
+- (long long)_guessLanguageIndex;
+- (void)_setGuessLanguageIndex:(long long)arg1;
+- (long long)_selectedLanguageIndex;
+- (void)_setSelectedLanguageIndex:(long long)arg1;
 - (void)_setPreferredOrthographyIndexes;
 - (id)_userDictionariesBySettingLanguageDictionaryName:(id)arg1 documentDictionaryName:(id)arg2;
 - (id)_nameOfDictionaryForDocumentTag:(long long)arg1;

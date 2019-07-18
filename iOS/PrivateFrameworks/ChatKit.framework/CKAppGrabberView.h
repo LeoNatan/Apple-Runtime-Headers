@@ -38,8 +38,8 @@
 - (double)visualOriginYInView:(id)arg1;
 @property(readonly, nonatomic) double chevronMaxYOffset;
 @property(readonly, nonatomic) double visualOriginYOffset;
-@property(nonatomic) _Bool showsHairlineSeperator;
 @property(nonatomic) _Bool showsGrabberPill;
+- (void)updateIconImageView:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -6,7 +6,7 @@
 
 #import <MessageUI/NSObject-Protocol.h>
 
-@class MFComposeStyleSelectorViewController, MFComposeTextStyle, UIColor, UIFont;
+@class MFComposeStyleSelectorViewController, MFComposeTextStyle, UIColor, UIFont, UIViewController;
 
 @protocol MFComposeStyleSelectorViewControllerDelegate <NSObject>
 - (void)composeStyleSelectorDidCancel:(MFComposeStyleSelectorViewController *)arg1;
@@ -16,6 +16,7 @@
 - (void)composeStyleSelector:(MFComposeStyleSelectorViewController *)arg1 didSelectStyle:(MFComposeTextStyle *)arg2;
 
 @optional
+- (UIViewController *)composeStyleSelectorPresentationContext:(MFComposeStyleSelectorViewController *)arg1;
 - (void)composeStyleSelectorDidPresentColorPicker:(MFComposeStyleSelectorViewController *)arg1;
 - (void)composeStyleSelectorDidDismissFontPicker:(MFComposeStyleSelectorViewController *)arg1;
 @end

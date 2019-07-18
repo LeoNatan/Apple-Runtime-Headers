@@ -9,7 +9,8 @@
 #import <TextInputCore/TILanguageSelectionControllerDelegate-Protocol.h>
 #import <TextInputCore/TIRevisionHistoryDelegate-Protocol.h>
 
-@class NSArray, NSCharacterSet, NSMutableDictionary, NSMutableSet, NSMutableString, NSString, TIAutoshiftRegularExpressionLoader, TICharacterSetDescription, TIEmojiCandidateGenerator, TIInputContextHistory, TIKeyboardCandidate, TIKeyboardFeatureSpecialization, TIKeyboardInputManagerConfig, TIKeyboardInputManagerState, TIKeyboardLayout, TIKeyboardLayoutState, TIKeyboardState, TILRUDictionary, TILanguageSelectionController, TIRevisionHistory, TISKMetricCollector, TISmartSelector, TITextCheckerExemptions, TITypingSessionMonitor, TIUserModel;
+@class NSArray, NSCharacterSet, NSMutableDictionary, NSMutableSet, NSMutableString, NSString, TIAutocorrectionList, TIAutoshiftRegularExpressionLoader, TICharacterSetDescription, TIEmojiCandidateGenerator, TIInputContextHistory, TIKeyboardCandidate, TIKeyboardFeatureSpecialization, TIKeyboardInputManagerConfig, TIKeyboardInputManagerState, TIKeyboardLayout, TIKeyboardLayoutState, TIKeyboardState, TILRUDictionary, TILanguageSelectionController, TIRevisionHistory, TISKMetricCollector, TISmartPunctuationOptions, TISmartSelector, TITextCheckerExemptions, TITypingSessionMonitor, TIUserModel;
+@protocol TICandidateHandler;
 
 @interface TIKeyboardInputManager : TIKeyboardInputManagerBase <TIRevisionHistoryDelegate, TILanguageSelectionControllerDelegate>
 {
@@ -28,7 +29,11 @@
     TIEmojiCandidateGenerator *_emojiCandidateGenerator;
     TIInputContextHistory *_synchronizedInputContextHistory;
     TICharacterSetDescription *_wordCharacters;
+    TICharacterSetDescription *_closingQuotes;
+    TICharacterSetDescription *_openingQuotes;
+    TISmartPunctuationOptions *_smartOptions;
     int _lastHitTestKeycode;
+    _Bool _didInitialSync;
     BOOL _wordLearningEnabled;
     BOOL _isEditingWordPrefix;
     TIKeyboardState *_keyboardState;
@@ -55,6 +60,10 @@
     TIUserModel *_userModel;
     TISmartSelector *_smartSelector;
     TISKMetricCollector *_skMetricCollector;
+    CDUnknownBlockType _proactiveSuggestionsGenerationBlock;
+    TIAutocorrectionList *_lastContinuousPathAutocorrection;
+    id <TICandidateHandler> _candidateHandlerForOpenRequest;
+    unsigned long long _lastNumCandidatesRequest;
     struct _NSRange _candidateRange;
 }
 
@@ -68,6 +77,10 @@
 + (id)userDictionaryWordKeyPairsFilePath;
 + (id)keyboardUserDirectory;
 + (void)resetResponseKit;
+@property(nonatomic) unsigned long long lastNumCandidatesRequest; // @synthesize lastNumCandidatesRequest=_lastNumCandidatesRequest;
+@property(retain, nonatomic) id <TICandidateHandler> candidateHandlerForOpenRequest; // @synthesize candidateHandlerForOpenRequest=_candidateHandlerForOpenRequest;
+@property(retain, nonatomic) TIAutocorrectionList *lastContinuousPathAutocorrection; // @synthesize lastContinuousPathAutocorrection=_lastContinuousPathAutocorrection;
+@property(copy, nonatomic) CDUnknownBlockType proactiveSuggestionsGenerationBlock; // @synthesize proactiveSuggestionsGenerationBlock=_proactiveSuggestionsGenerationBlock;
 @property(retain, nonatomic) TISKMetricCollector *skMetricCollector; // @synthesize skMetricCollector=_skMetricCollector;
 @property(retain, nonatomic) TISmartSelector *smartSelector; // @synthesize smartSelector=_smartSelector;
 @property(retain, nonatomic) TIUserModel *userModel; // @synthesize userModel=_userModel;
@@ -118,7 +131,7 @@
 - (id)autocorrectionListForEmptyInputWithDesiredCandidateCount:(unsigned long long)arg1;
 - (id)indexesOfDuplicatesInCandidates:(id)arg1;
 - (id)continuousPathCandidates:(unsigned long long)arg1;
-- (id)predictionCandidates:(unsigned long long)arg1;
+- (id)predictionCandidates:(unsigned long long)arg1 predictionType:(int)arg2;
 - (BOOL)shouldInsertSpaceBeforePredictions;
 - (BOOL)stringEndsWithClosingQuote:(id)arg1;
 - (struct _NSRange)rangeOfUnclosedQuoteMatchingQuote:(id)arg1 inString:(id)arg2 range:(struct _NSRange)arg3;
@@ -321,6 +334,7 @@
 - (void)syncMarkedTextForKeyboardState:(id)arg1 afterContextChange:(BOOL)arg2;
 - (void)syncToLayoutState:(id)arg1;
 - (void)incrementUsageTrackingKeysForDeleteFromInput;
+- (void)incrementUsageTrackingKeyForAppWithIsSentence:(BOOL)arg1;
 - (void)incrementUsageTrackingKey:(id)arg1;
 - (void)incrementUsageTrackingKeyForAutocorrectionStatistic:(id)arg1 autocorrectionTypes:(unsigned int)arg2;
 - (id)usageTrackingKeyForStatistic:(id)arg1;
@@ -333,6 +347,7 @@
 - (void)scheduleLinguisticResourceUpdateWithReason:(id)arg1;
 - (void)scheduleLinguisticResourceUpdate;
 - (void)refreshInputManagerState;
+@property(readonly, nonatomic) TISmartPunctuationOptions *smartOptions;
 @property(readonly, nonatomic) TIKeyboardInputManagerState *currentState;
 - (id)newInputManagerState;
 @property(readonly, nonatomic) TIKeyboardFeatureSpecialization *keyboardFeatureSpecialization;
@@ -347,6 +362,8 @@
 - (BOOL)alwaysShowExtensionCandidatesForSortingMethod:(id)arg1;
 - (id)titleForSortingMethod:(id)arg1;
 - (id)sortingMethods;
+- (id)openingQuotes;
+- (id)closingQuotes;
 - (id)terminatorsPrecedingAutospace;
 - (id)terminatorsDeletingAutospace;
 - (id)terminatorsPreventingAutocorrection;

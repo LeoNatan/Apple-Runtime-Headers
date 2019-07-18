@@ -22,12 +22,16 @@
 @property(retain, nonatomic) NoteObject *note; // @synthesize note=_note;
 @property(retain, nonatomic) NoteContentLayer *contentLayer; // @synthesize contentLayer=_contentLayer;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateForceLightContentIfNecessary;
+- (void)applicationDidBecomeActive:(id)arg1;
 @property(readonly, nonatomic) NotesBackgroundView *backgroundView;
 - (id)attachmentContentIDs;
 - (void)setupPreviewWithInitialFrame:(struct CGRect)arg1;
 - (void)setupPreview;
 - (id)initWithNote:(id)arg1;
 - (id)initWithNote:(id)arg1 searchResult:(id)arg2;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

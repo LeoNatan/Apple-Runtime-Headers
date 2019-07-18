@@ -13,14 +13,15 @@
 @interface HKMultiTypeSampleQuery : HKQuery <HKMultiTypeSampleQueryClientInterface>
 {
     NSMutableArray *_samplesPendingDelivery;
-    CDUnknownBlockType _resultsHandler;
     HKMultiTypeQueryCursor *_queryCursor;
     unsigned long long _limit;
+    CDUnknownBlockType _resultsHandler;
 }
 
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
+@property(readonly, copy, nonatomic) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler=_resultsHandler;
 @property(nonatomic) unsigned long long limit; // @synthesize limit=_limit;
 @property(copy, nonatomic) HKMultiTypeQueryCursor *queryCursor; // @synthesize queryCursor=_queryCursor;
 - (void).cxx_destruct;

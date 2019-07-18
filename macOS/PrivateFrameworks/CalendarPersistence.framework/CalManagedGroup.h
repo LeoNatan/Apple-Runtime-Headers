@@ -17,6 +17,7 @@
 + (id)otherGroupLocalizedTitle;
 + (id)entityName;
 - (id)enclosingSource;
+@property(readonly, nonatomic) BOOL requiresOpeningAttachmentAsLink;
 - (BOOL)supportsEmailValidation;
 - (BOOL)supportsTaskCalendarCreation;
 @property(readonly, nonatomic) BOOL supportsSharingScheduling;

@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSString *_previousIdentifier;
     unsigned int _tableNameCounter;
     NSArray *_children;
+    _Bool _hasBackgroundAlpha;
     NSMutableDictionary *_slideSpecificHyperlinkMap;
     _Bool _hasExplicitBuilds;
     _Bool _hasExplicitBuildsIsUpToDate;
@@ -47,13 +48,13 @@ __attribute__((visibility("hidden")))
 + (_Bool)needsObjectUUID;
 + (id)slideNodeUUIDForObsoleteUniqueIDString:(id)arg1 inSlideNodes:(id)arg2;
 @property(readonly, nonatomic) NSDictionary *slideSpecificHyperlinkMap; // @synthesize slideSpecificHyperlinkMap=_slideSpecificHyperlinkMap;
+@property(readonly, nonatomic) _Bool hasBackgroundAlpha; // @synthesize hasBackgroundAlpha=_hasBackgroundAlpha;
 @property(nonatomic) _Bool hasBodyInOutlineView; // @synthesize hasBodyInOutlineView=_hasBodyInOutlineView;
 @property(nonatomic, getter=isCollapsedInOutlineView) _Bool collapsedInOutlineView; // @synthesize collapsedInOutlineView=_collapsedInOutlineView;
 @property(nonatomic, getter=isCollapsed) _Bool collapsed; // @synthesize collapsed=_collapsed;
 @property(copy, nonatomic) NSSet *digestsForDatasThatNeedDownloadForThumbnail; // @synthesize digestsForDatasThatNeedDownloadForThumbnail=_digestsForDatasThatNeedDownloadForThumbnail;
 @property(readonly, nonatomic) NSDictionary *thumbnails; // @synthesize thumbnails=_thumbnails;
 @property(nonatomic) __weak KNSlideTree *slideTree; // @synthesize slideTree=_slideTree;
-@property(retain, nonatomic) NSString *previousIdentifier; // @synthesize previousIdentifier=_previousIdentifier;
 - (void).cxx_destruct;
 - (void)p_commonInit;
 - (void)purgeU15ModelIfNeeded;
@@ -105,6 +106,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasBuildEvents;
 - (void)p_updateHasExplicitBuilds;
 @property(readonly, nonatomic) _Bool hasExplicitBuilds;
+- (void)updateHasBackgroundAlpha;
 @property(readonly, nonatomic) NSArray *children;
 @property(readonly, nonatomic) _Bool hasChildren;
 @property(readonly, nonatomic) KNSlideNode *previousSkippingHidden;
@@ -113,6 +115,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) KNSlideNode *nextSkippingCollapsed;
 @property(readonly, nonatomic) KNSlideNode *previous;
 @property(readonly, nonatomic) KNSlideNode *next;
+@property(copy, nonatomic) NSString *previousIdentifier;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
 - (void)dealloc;
 - (id)initWithContext:(id)arg1;
@@ -123,9 +126,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool thumbnailsAreDirty;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
--     // Error parsing type: v32@0:8^{SlideNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Size>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::DataReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::SlideNodeArchive_SlideSpecificHyperlinkMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}BBBBBBBBIIBBBBIII}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8^{SlideNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Size>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::DataReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::SlideNodeArchive_SlideSpecificHyperlinkMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}BBBBBBBBIIBBBBIIBI}16@24, name: saveToArchive:archiver:
 - (id)p_mappingFromString:(id)arg1;
--     // Error parsing type: v32@0:8r^{SlideNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Size>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::DataReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::SlideNodeArchive_SlideSpecificHyperlinkMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}BBBBBBBBIIBBBBIII}16@24, name: loadFromArchive:unarchiver:
+-     // Error parsing type: v32@0:8r^{SlideNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Size>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::DataReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::SlideNodeArchive_SlideSpecificHyperlinkMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}BBBBBBBBIIBBBBIIBI}16@24, name: loadFromArchive:unarchiver:
+- (id)objectUUIDPath;
 - (void)didLoadSlide:(id)arg1;
 - (void)removeObsoleteFieldsFor20Upgrade;
 - (void)removeInvalidSlideSpecificHyperlinksWithSlideNodeUUIDStrings:(id)arg1;

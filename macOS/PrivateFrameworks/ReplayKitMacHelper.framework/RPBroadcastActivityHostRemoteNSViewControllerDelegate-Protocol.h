@@ -4,10 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSData, NSDictionary, NSString, NSURL;
+@class NSString, NSURL;
 
 @protocol RPBroadcastActivityHostRemoteNSViewControllerDelegate
-- (void)extensionDidFinishWithLaunchURL:(NSURL *)arg1 broadcastURL:(NSURL *)arg2 extensionBundleID:(NSString *)arg3 broadcastConfigurationData:(NSData *)arg4 userInfo:(NSDictionary *)arg5 cancelled:(BOOL)arg6;
 - (void)extensionDidFinishWithLaunchURL:(NSURL *)arg1 broadcastURL:(NSURL *)arg2 extensionBundleID:(NSString *)arg3 cancelled:(BOOL)arg4;
 - (void)presentBroadcastActivitySheet;
 @end

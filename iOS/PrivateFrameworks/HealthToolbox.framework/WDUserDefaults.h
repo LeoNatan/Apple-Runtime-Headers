@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class HKHealthStore;
+@class HKKeyValueDomain;
 
 @interface WDUserDefaults : NSObject
 {
-    HKHealthStore *_healthStore;
+    HKKeyValueDomain *_keyValueDomain;
 }
 
-@property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
+@property(retain, nonatomic) HKKeyValueDomain *keyValueDomain; // @synthesize keyValueDomain=_keyValueDomain;
 - (void).cxx_destruct;
 - (void)valueForKey:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;

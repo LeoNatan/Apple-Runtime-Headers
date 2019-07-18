@@ -28,8 +28,16 @@
     SXRepeatableImageFillView *_repeatableImageFillView;
     CALayer *_shadowLayer;
     CAShapeLayer *_borderLayer;
+    CAShapeLayer *_topBorderLayer;
+    CAShapeLayer *_rightBorderLayer;
+    CAShapeLayer *_bottomBorderLayer;
+    CAShapeLayer *_leftBorderLayer;
 }
 
+@property(retain, nonatomic) CAShapeLayer *leftBorderLayer; // @synthesize leftBorderLayer=_leftBorderLayer;
+@property(retain, nonatomic) CAShapeLayer *bottomBorderLayer; // @synthesize bottomBorderLayer=_bottomBorderLayer;
+@property(retain, nonatomic) CAShapeLayer *rightBorderLayer; // @synthesize rightBorderLayer=_rightBorderLayer;
+@property(retain, nonatomic) CAShapeLayer *topBorderLayer; // @synthesize topBorderLayer=_topBorderLayer;
 @property(retain, nonatomic) CAShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
 @property(retain, nonatomic) CALayer *shadowLayer; // @synthesize shadowLayer=_shadowLayer;
 @property(nonatomic) BOOL didRegisterForDynamicBounds; // @synthesize didRegisterForDynamicBounds=_didRegisterForDynamicBounds;
@@ -56,6 +64,7 @@
 - (void)componentVisiblityStateDidChange:(long long)arg1;
 - (void)applyShadow:(id)arg1;
 - (void)applyMask:(id)arg1;
+- (void)applyStrokeStyle:(id)arg1 borderLayer:(id)arg2 path:(id)arg3 lineWidth:(double)arg4;
 - (void)applyBorder:(id)arg1;
 - (void)applyOpacity:(double)arg1;
 - (void)applyFill:(id)arg1;

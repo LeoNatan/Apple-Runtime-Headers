@@ -31,6 +31,7 @@
     NSObject<OS_dispatch_semaphore> *timer_semaphore;
     CDUnknownBlockType event_handler_callback;
     unsigned short _port;
+    unsigned int _connectTimeOut;
     NSObject<OS_nw_connection> *_connection;
     NSObject<OS_dispatch_queue> *_recv_queue;
     NSObject<OS_dispatch_queue> *_signing_queue;
@@ -42,6 +43,7 @@
 
 @property struct timespec last_echo; // @synthesize last_echo=_last_echo;
 @property struct timespec last_recv; // @synthesize last_recv=_last_recv;
+@property unsigned int connectTimeOut; // @synthesize connectTimeOut=_connectTimeOut;
 @property unsigned short port; // @synthesize port=_port;
 @property(retain) NSString *serverName; // @synthesize serverName=_serverName;
 @property(retain) NSString *netBiosName; // @synthesize netBiosName=_netBiosName;
@@ -65,6 +67,7 @@
 - (CDUnknownBlockType)getEventHandler;
 - (void)callEventHandler:(unsigned int)arg1 contextPtr:(id)arg2 returnValue:(unsigned int)arg3;
 - (void)closeSocket;
+- (int)connectSocket;
 - (int)openSocket:(id)arg1;
 
 @end

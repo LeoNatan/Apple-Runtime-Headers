@@ -66,7 +66,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)supportsCalloutLines;
 - (float)defaultLabelExplosionPercentage;
 - (_Bool)editableFormatForValueStrings;
-- (_Bool)includeValueLabelPositionOff;
 - (id)localizedActionStringForWedgeExplosion;
 - (id)localizedWedgeDragLabelWithPercent:(unsigned long long)arg1;
 - (id)localizedTitleForDeliveryTypeWedge;
@@ -92,6 +91,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)rendersBackgroundAxis;
 - (_Bool)hasFixedFrameRatio;
 - (_Bool)isHorizontal;
+- (_Bool)supportsAxisLabelAngle;
 - (_Bool)supportsCategoryAxisPlotToEdgesOption;
 - (_Bool)supportsConnectingLines;
 - (_Bool)supportsCategoryAxisSeriesNames;
@@ -131,7 +131,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)reverseSingleColumnLegendOrder;
 - (id)defaultDataFileName;
 - (unsigned long long)styleIndexForAxisID:(id)arg1;
-- (Class)valueAxisClassForID:(id)arg1 scale:(int)arg2;
+- (Class)valueAxisClassForID:(id)arg1 scale:(long long)arg2;
 - (_Bool)supportsEditingForAxisID:(id)arg1;
 - (id)categoryAxisIDs;
 - (id)valueAxisIDs;

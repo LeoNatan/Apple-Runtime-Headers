@@ -23,7 +23,8 @@
 - (float)computeOverallFaceQualityScore:(id)arg1;
 - (float)computeScoreForPhoto:(float)arg1 withRefKeyFrame:(id)arg2;
 - (void)fetchAndComputeScoreForKeyFrame:(id)arg1 withResult:(id)arg2;
-- (int)analyzeLivePhotoKeyFrame:(id)arg1 irisPhotoOffsetSec:(float)arg2 photoTextureScore:(float)arg3 hadFlash:(BOOL)arg4 cancel:(CDUnknownBlockType)arg5;
+- (int)reportLivePhotoKeyFrameAnalysisResults:(BOOL)arg1 selectedKeyFrame:(id)arg2 originalStillKeyFrame:(id)arg3 stillScore:(float)arg4 stillFQScore:(float)arg5 stillTimestamp:(float)arg6 useSemanticOnly:(BOOL)arg7 isKeyFrameSuggested:(BOOL)arg8;
+- (int)analyzeLivePhotoKeyFrame:(id)arg1 irisPhotoOffsetSec:(float)arg2 originalIrisPhotoOffsetSec:(float)arg3 photoTextureScore:(float)arg4 hadFlash:(BOOL)arg5 cancel:(CDUnknownBlockType)arg6;
 - (CDStruct_e83c9415)selectKeyFrameRangeWithMotion:(id)arg1 stillTimestamp:(float)arg2 isMetaMotion:(_Bool)arg3;
 - (void)dealloc;
 - (id)initWithWidth:(int)arg1 height:(int)arg2;

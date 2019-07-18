@@ -25,6 +25,7 @@
 - (double)desiredPinnedTopPadding;
 - (double)desiredTopPaddingBelowController:(id <SiriUIViewController>)arg1;
 - (void)siriDidScrollVisible:(_Bool)arg1;
+- (void)siriWillBeginScrolling;
 - (void)handleAceCommand:(AceObject *)arg1;
 - (void)endEditingAndCorrectByTouchPoint:(struct CGPoint)arg1;
 - (void)endEditingAndCorrect:(_Bool)arg1;

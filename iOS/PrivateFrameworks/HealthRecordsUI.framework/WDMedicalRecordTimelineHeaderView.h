@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)setFloating:(_Bool)arg1;
 - (double)_subtitleLastBaselineToBottom;
 - (double)_titleLastBaselineToSubtitleFirstBaseline;

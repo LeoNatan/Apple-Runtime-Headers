@@ -16,6 +16,7 @@
 @interface PUBrowsingVideoPlayer : PUViewModel <ISChangeObserver, PXChangeObserver, PXVideoSessionDelegate>
 {
     PXUpdater *_updater;
+    NSMutableSet *_pauseReasons;
     BOOL _isPlayingAllowed;
     BOOL _alwaysRespectsMuteSwitch;
     BOOL _isMuted;
@@ -86,6 +87,9 @@
 @property(readonly, nonatomic) BOOL isPlayable;
 @property(readonly, nonatomic) BOOL isAtEnd;
 @property(readonly, nonatomic) BOOL isAtBeginning;
+@property(readonly, nonatomic) BOOL isPlaybackDesired;
+- (void)endPauseForReason:(id)arg1;
+- (void)beginPauseForReason:(id)arg1;
 - (void)_updatePlayerLoadingAllowedWithUpdateID:(unsigned long long)arg1;
 - (void)setPlayerLoadingDisabled:(BOOL)arg1 forReason:(id)arg2;
 @property(readonly, nonatomic) ISWrappedAVPlayer *avPlayer;

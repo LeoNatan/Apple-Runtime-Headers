@@ -54,7 +54,7 @@
 - (void)setSelected:(BOOL)arg1;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)setDefaultBackgroundStyle:(long long)arg1;
-- (void)updateViewModelForIconView:(id)arg1 contact:(id)arg2 likeness:(id)arg3 style:(unsigned long long)arg4;
+- (void)updateViewModelForIconView:(id)arg1 contact:(id)arg2 likeness:(id)arg3 style:(unsigned long long)arg4 monogramOnly:(BOOL)arg5;
 - (void)viewModelDidUpdate:(id)arg1;
 - (void)_commonInit;
 - (id)initWithViewModel:(id)arg1;

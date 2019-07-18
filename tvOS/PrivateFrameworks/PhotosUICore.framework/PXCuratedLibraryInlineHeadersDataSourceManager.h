@@ -34,7 +34,7 @@
 - (void)setNeedsUpdate;
 - (void)didPerformChanges;
 - (void)_resizeStorageIfNeededForNumberOfSections:(long long)arg1 level:(unsigned long long)arg2;
-- (CDStruct_2ec95fd7 *)_addSectionInfoForLevel:(unsigned long long)arg1;
+- (CDStruct_68723fc0 *)_addSectionInfoForLevel:(unsigned long long)arg1;
 - (void)_resetSectionInfos;
 - (id)_createDataSourceForLevel:(unsigned long long)arg1;
 - (void)_updateLevel:(unsigned long long)arg1 withDataSourceBeforeChanges:(id)arg2 afterChanges:(id)arg3 changeDetails:(id)arg4;

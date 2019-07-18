@@ -29,6 +29,8 @@
     _Bool _hasAccessToEvents;
     _Bool _hasAccessToReminders;
     _Bool _accessDetermined;
+    _Bool _needsCommitForRemoteChanges;
+    _Bool _inboxRepliedSectionHasContent;
     unsigned int _flags;
     NSTimeZone *_timeZone;
     NSMutableSet *_insertedObjects;
@@ -64,6 +66,7 @@
 + (CDUnknownBlockType)reminderStoreContainerTokenProvider;
 + (Class)classForEntityName:(id)arg1;
 @property(readonly, nonatomic) id <CalCalendarDataContainerProvider> calendarDataContainerProvider; // @synthesize calendarDataContainerProvider=_calendarDataContainerProvider;
+@property(readonly, nonatomic) _Bool inboxRepliedSectionHasContent; // @synthesize inboxRepliedSectionHasContent=_inboxRepliedSectionHasContent;
 @property(retain, nonatomic) NSMutableDictionary *registeredObjects; // @synthesize registeredObjects=_registeredObjects;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *reminderSourceMapLock; // @synthesize reminderSourceMapLock=_reminderSourceMapLock;
 @property(retain, nonatomic) NSDictionary *eventSourceIDToReminderSourceIDMapping; // @synthesize eventSourceIDToReminderSourceIDMapping=_eventSourceIDToReminderSourceIDMapping;
@@ -81,6 +84,7 @@
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(nonatomic) double lastDatabaseNotificationTimestamp; // @synthesize lastDatabaseNotificationTimestamp=_lastDatabaseNotificationTimestamp;
 @property(retain, nonatomic) EKDaemonConnection *database; // @synthesize database=_database;
+@property(nonatomic) _Bool needsCommitForRemoteChanges; // @synthesize needsCommitForRemoteChanges=_needsCommitForRemoteChanges;
 @property(retain, nonatomic) NSMutableSet *objectsPendingCommit; // @synthesize objectsPendingCommit=_objectsPendingCommit;
 @property(retain, nonatomic) NSMutableSet *updatedObjects; // @synthesize updatedObjects=_updatedObjects;
 @property(retain, nonatomic) NSMutableSet *deletedObjects; // @synthesize deletedObjects=_deletedObjects;
@@ -156,6 +160,7 @@
 - (void)_deleteObject:(id)arg1;
 - (void)_insertObject:(id)arg1;
 - (void)_trackModifiedObject:(id)arg1;
+- (void)_setNeedsCommitForRemoteChanges;
 - (id)publicObjectWithFetchedObjectID:(id)arg1;
 - (id)publicObjectWithObjectID:(id)arg1;
 - (id)publicObjectWithPersistentObject:(id)arg1;
@@ -264,7 +269,6 @@
 - (_Bool)_removeReminder:(id)arg1 commit:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)removeReminder:(id)arg1 commit:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)removeReminder:(id)arg1 error:(id *)arg2;
-- (_Bool)_saveReminder:(id)arg1 commit:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)saveReminder:(id)arg1 commit:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)saveReminder:(id)arg1 error:(id *)arg2;
 - (void)_removeCachedCalendarWithID:(id)arg1;
@@ -304,6 +308,7 @@
 - (_Bool)removeCalendar:(id)arg1 commit:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)_saveCalendar:(id)arg1 commit:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)saveCalendar:(id)arg1 commit:(_Bool)arg2 error:(id *)arg3;
+- (_Bool)removeAllItemsInCalendar:(id)arg1 error:(id *)arg2;
 - (_Bool)removeCalendar:(id)arg1 error:(id *)arg2;
 - (_Bool)saveCalendar:(id)arg1 error:(id *)arg2;
 - (void)_addObjectToPendingCommits:(id)arg1;
@@ -345,8 +350,8 @@
 - (void)daemonRestarted;
 - (void)_defaultAlarmChangedExternally;
 - (void)_defaultCalendarChangedExternally;
-- (void)_postEventStoreChangedNotificationWithChangedObjectIDs:(id)arg1;
-- (void)_databaseChangedExternally;
+- (void)_postEventStoreChangedNotificationWithChangeType:(unsigned long long)arg1 changedObjectIDs:(id)arg2;
+- (void)_databaseChangedExternally:(unsigned long long)arg1;
 - (void)reminderStoreChanged;
 - (void)_validateObjectIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)changesSinceSequenceNumber:(int)arg1;

@@ -14,8 +14,12 @@
     WPDObjectDiscoveryManager *_objectDiscoveryManager;
     WPDSearchPartyAgent *_spAgent;
     WPDObjectDiscoveryData *_keyAddressAndPayload;
+    unsigned long long _keyRequestID;
+    unsigned long long _tokenRequestID;
 }
 
+@property unsigned long long tokenRequestID; // @synthesize tokenRequestID=_tokenRequestID;
+@property unsigned long long keyRequestID; // @synthesize keyRequestID=_keyRequestID;
 @property(readonly) WPDObjectDiscoveryData *keyAddressAndPayload; // @synthesize keyAddressAndPayload=_keyAddressAndPayload;
 @property(retain) WPDSearchPartyAgent *spAgent; // @synthesize spAgent=_spAgent;
 @property __weak WPDObjectDiscoveryManager *objectDiscoveryManager; // @synthesize objectDiscoveryManager=_objectDiscoveryManager;
@@ -23,12 +27,10 @@
 - (void).cxx_destruct;
 - (void)sendTestRequest:(id)arg1;
 - (void)notifyClientObjectDiscoveryStateChange:(long long)arg1;
-- (void)notifyClientPipeStateChange:(long long)arg1;
-- (void)notifyClientScannerStateChange:(long long)arg1;
-- (void)notifyClientAdvertiserStateChange:(long long)arg1;
 - (void)notifyClientStateChange:(long long)arg1 Restricted:(BOOL)arg2;
 - (void)stopAdvertising:(id)arg1;
 - (void)startAdvertising:(id)arg1;
+- (void)completeSPBeaconingWithSuccess:(BOOL)arg1;
 - (void)stopSPBeaconing;
 - (void)startSPBeaconing;
 - (void)updateSPBeaconing;

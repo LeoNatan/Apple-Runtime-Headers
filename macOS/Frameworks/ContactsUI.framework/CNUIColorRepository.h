@@ -12,7 +12,7 @@
 
 + (id)downtimeSharingEnabledWarningTextColor;
 + (id)downtimeWhitelistContactTypeTextColor;
-+ (id)downtimeWhitelistUnrachableContactTextColor;
++ (id)downtimeWhitelistUnreachableContactGlyphColor;
 + (id)downtimeWhitelistNotPersistedContactTextColor;
 + (id)downtimeWhitelistPersistedContactTextColor;
 + (id)bundle;

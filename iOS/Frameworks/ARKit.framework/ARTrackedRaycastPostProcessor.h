@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ARSession;
+@class ARSession, NSArray;
 
 @interface ARTrackedRaycastPostProcessor : NSObject
 {
@@ -26,6 +26,7 @@
 - (void)invalidateAllRaycasts;
 - (void)removeTrackedRaycastWithIdentifier:(id)arg1;
 - (void)addTrackedRaycast:(id)arg1 andProcessInitialResults:(id)arg2;
+@property(readonly, nonatomic) NSArray *trackedRaycasts;
 - (void)dealloc;
 - (id)initWithSession:(id)arg1;
 

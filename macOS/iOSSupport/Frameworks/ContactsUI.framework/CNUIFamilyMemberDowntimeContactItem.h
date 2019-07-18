@@ -11,10 +11,12 @@
 __attribute__((visibility("hidden")))
 @interface CNUIFamilyMemberDowntimeContactItem : NSObject
 {
+    BOOL _selected;
     CNContact *_contact;
     NSString *_label;
 }
 
+@property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;

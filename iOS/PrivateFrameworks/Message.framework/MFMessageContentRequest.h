@@ -8,13 +8,14 @@
 
 #import <Message/EFLoggable-Protocol.h>
 
-@class EDMailDropMetadataGenerator, EMContentRequestOptions, EMMessageObjectID, MFMailMessage, MFMessageTransformer, NSString;
+@class EDMailDropMetadataGenerator, EDMessagePersistence, EMContentRequestOptions, EMMessageObjectID, MFMailMessage, MFMessageTransformer, NSString;
 @protocol EFScheduler, EMContentItemRequestDelegate;
 
 @interface MFMessageContentRequest : NSObject <EFLoggable>
 {
     id <EFScheduler> _scheduler;
     EMMessageObjectID *_objectID;
+    EDMessagePersistence *_messagePersistence;
     MFMailMessage *_legacyMessage;
     MFMessageTransformer *_messageTransformer;
     NSString *_clientIdentifier;
@@ -24,16 +25,17 @@
 }
 
 + (id)metadataWithDictionary:(id)arg1;
-+ (id)onScheduler:(id)arg1 requestContentForObjectID:(id)arg2 legacyMessage:(id)arg3 messageTransformer:(id)arg4 mailDropAttachmentGenerator:(id)arg5 clientIdentifier:(id)arg6 options:(id)arg7 delegate:(id)arg8 completionHandler:(CDUnknownBlockType)arg9;
++ (id)onScheduler:(id)arg1 requestContentForObjectID:(id)arg2 messagePersistence:(id)arg3 legacyMessage:(id)arg4 messageTransformer:(id)arg5 mailDropAttachmentGenerator:(id)arg6 clientIdentifier:(id)arg7 options:(id)arg8 delegate:(id)arg9 completionHandler:(CDUnknownBlockType)arg10;
 + (id)log;
-@property(retain, nonatomic) id <EMContentItemRequestDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) EDMailDropMetadataGenerator *mailDropAttachmentGenerator; // @synthesize mailDropAttachmentGenerator=_mailDropAttachmentGenerator;
-@property(retain, nonatomic) EMContentRequestOptions *options; // @synthesize options=_options;
-@property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-@property(retain, nonatomic) MFMessageTransformer *messageTransformer; // @synthesize messageTransformer=_messageTransformer;
-@property(retain, nonatomic) MFMailMessage *legacyMessage; // @synthesize legacyMessage=_legacyMessage;
-@property(retain, nonatomic) EMMessageObjectID *objectID; // @synthesize objectID=_objectID;
-@property(retain, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
+@property(readonly, nonatomic) id <EMContentItemRequestDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) EDMailDropMetadataGenerator *mailDropAttachmentGenerator; // @synthesize mailDropAttachmentGenerator=_mailDropAttachmentGenerator;
+@property(readonly, nonatomic) EMContentRequestOptions *options; // @synthesize options=_options;
+@property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
+@property(readonly, nonatomic) MFMessageTransformer *messageTransformer; // @synthesize messageTransformer=_messageTransformer;
+@property(readonly, nonatomic) MFMailMessage *legacyMessage; // @synthesize legacyMessage=_legacyMessage;
+@property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
+@property(readonly, nonatomic) EMMessageObjectID *objectID; // @synthesize objectID=_objectID;
+@property(readonly, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
 - (void).cxx_destruct;
 - (id)_attachmentForMailDropMetaData:(id)arg1 context:(id)arg2;
 - (id)_maildropMetadataFromContext:(id)arg1;

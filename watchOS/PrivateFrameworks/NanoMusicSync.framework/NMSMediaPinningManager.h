@@ -66,6 +66,7 @@
 - (_Bool)_isAlbumPinned:(id)arg1;
 - (void)_invalidateMediaCacheForAppIdentifiers:(unsigned int)arg1;
 - (void)_invalidateAddedItemsCache;
+- (_Bool)_shouldSkipQuotaManagerEvaluation;
 - (id)_newAudiobooksGroupIteratorWithDownloadedItemsOnly:(_Bool)arg1;
 - (id)_newPodcastsGroupIteratorWithDownloadedItemsOnly:(_Bool)arg1;
 - (id)_newMusicGroupIteratorWithDownloadedItemsOnly:(_Bool)arg1;

@@ -10,7 +10,8 @@
 
 @protocol CKDContextInfoProvider <NSObject>
 @property(readonly, nonatomic) NSString *processName;
-@property(readonly, nonatomic) NSString *pushBundleIdentifier;
+@property(readonly, nonatomic) NSString *applicationBundleIDForServer;
+@property(readonly, nonatomic) NSString *applicationBundleIDForPush;
 @property(readonly, nonatomic) NSString *apsEnvironmentString;
 @property(readonly, nonatomic) _Bool hasSystemServiceEntitlement;
 @property(readonly, nonatomic) _Bool canAuthWithCloudKit;
@@ -23,7 +24,8 @@
 @property(readonly, nonatomic) NSString *hardwareID;
 @property(readonly, nonatomic) NSString *personaID;
 @property(readonly, nonatomic) NSString *sourceApplicationBundleID;
-@property(readonly, nonatomic) NSString *bundleID;
+@property(readonly, nonatomic) NSString *associatedApplicationBundleID;
+@property(readonly, nonatomic) NSString *applicationBundleID;
 @property(readonly, nonatomic) CKContainerID *containerID;
 @property(readonly, copy) NSString *containerScopedUserID;
 @property(readonly, nonatomic) CKDZoneGatekeeper *backgroundZoneGatekeeper;

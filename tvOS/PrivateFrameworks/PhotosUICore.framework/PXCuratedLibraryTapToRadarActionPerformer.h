@@ -16,6 +16,9 @@
 @property(readonly, nonatomic) __weak PXGLayout *layoutForDiagnosticDescription; // @synthesize layoutForDiagnosticDescription=_layoutForDiagnosticDescription;
 - (void).cxx_destruct;
 - (void)performUserInteractionTask;
+- (_Bool)canPerformWithActivityItems:(id)arg1 forActivity:(id)arg2;
+- (id)activitySystemImageName;
+- (id)activityType;
 - (id)initWithViewModel:(id)arg1 assetCollectionReference:(id)arg2 diagnosticLayout:(id)arg3;
 
 @end

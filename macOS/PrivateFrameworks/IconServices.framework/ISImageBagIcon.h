@@ -8,7 +8,6 @@
 
 @class ISImageCache, NSArray;
 
-__attribute__((visibility("hidden")))
 @interface ISImageBagIcon : ISIcon
 {
     NSArray *_images;

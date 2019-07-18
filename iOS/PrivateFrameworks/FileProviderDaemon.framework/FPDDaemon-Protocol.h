@@ -24,12 +24,14 @@
 - (void)fetchAlternateContentsURLForDocumentURL:(NSURL *)arg1 completionHandler:(void (^)(NSURL *, NSError *))arg2;
 - (void)setAlternateContentsURL:(FPSandboxingURLWrapper *)arg1 onDocumentURL:(NSURL *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)updateBlacklistedProcessNamesForProvider:(NSString *)arg1 processNames:(NSArray *)arg2 completionHandler:(void (^)(NSError *))arg3;
-- (void)reimportItemsBelowItemWithID:(FPItemID *)arg1 removeCachedItems:(_Bool)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)reimportItemsBelowItemWithID:(FPItemID *)arg1 removeCachedItems:(_Bool)arg2 markItemDataless:(_Bool)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)setEnabled:(_Bool)arg1 forDomainIdentifier:(NSString *)arg2 providerIdentifier:(NSString *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)getDomainsForProviderIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSArray *, NSError *))arg2;
 - (void)removeAllDomainsForProviderIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)removeDomain:(NSFileProviderDomain *)arg1 forProviderIdentifier:(NSString *)arg2 options:(unsigned long long)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)addDomain:(NSFileProviderDomain *)arg1 forProviderIdentifier:(NSString *)arg2 byImportingDirectoryAtURL:(FPSandboxingURLWrapper *)arg3 completionHandler:(void (^)(NSError *))arg4;
+- (void)restoreUserURL:(NSURL *)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;
+- (void)backUpUserURL:(NSURL *)arg1 outputUserURL:(NSURL *)arg2 completionHandler:(void (^)(NSURL *, NSError *))arg3;
 - (void)reindexAllSearchableItemsForBundleIDs:(NSArray *)arg1 acknowledgementHandler:(void (^)(void))arg2;
 - (void)reindexAllSearchableItemsWithAcknowledgementHandler:(void (^)(void))arg1;
 - (void)providerDomainForURL:(NSURL *)arg1 completionHandler:(void (^)(FPProviderDomain *, NSError *))arg2;
@@ -61,7 +63,7 @@
 - (void)providerDomainsCompletionHandler:(void (^)(NSError *, NSDictionary *))arg1;
 - (void)unpinItemWithID:(FPItemID *)arg1 completionHandler:(void (^)(FPItem *, NSError *))arg2;
 - (void)pinItemWithID:(FPItemID *)arg1 completionHandler:(void (^)(FPItem *, NSError *))arg2;
-- (void)downloadItemWithID:(FPItemID *)arg1 downloadPolicy:(unsigned long long)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)setDownloadPolicy:(unsigned long long)arg1 forItemWithID:(FPItemID *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)evictItemWithID:(FPItemID *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (NSProgress *)evictItemAtURL:(NSURL *)arg1 evenIfEnumeratingFP:(_Bool)arg2 andClearACLForConsumer:(NSString *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)startProvidingItemAtURL:(NSURL *)arg1 fromProviderID:(NSString *)arg2 forConsumerID:(NSString *)arg3 completionHandler:(void (^)(NSError *))arg4;

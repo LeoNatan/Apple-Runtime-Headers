@@ -7,7 +7,8 @@
 #import <WorkflowKit/WFLowPowerModeTrigger.h>
 
 @interface WFLowPowerModeTrigger (CoreDuetContext)
-- (id)predicateForContextStore;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

@@ -6,11 +6,10 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class STScrollView, UIEvent;
+@class STScrollView;
 
 @protocol STScrollViewDelegate <NSObject>
 - (_Bool)shouldPreventDraggingForScrollView:(STScrollView *)arg1;
-- (void)didTouchScrollView:(STScrollView *)arg1 withEvent:(UIEvent *)arg2;
 
 @optional
 - (_Bool)accessibilityShouldScrollForScrollView:(STScrollView *)arg1;

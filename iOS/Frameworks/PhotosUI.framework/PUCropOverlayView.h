@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray;
+@class NSArray, PUCropMaskView;
 
 __attribute__((visibility("hidden")))
 @interface PUCropOverlayView : UIView
@@ -18,9 +18,19 @@ __attribute__((visibility("hidden")))
     NSArray *__oneNinthCropLines;
     NSArray *__maskViews;
     UIView *__cropWindowView;
+    PUCropMaskView *_topMask;
+    PUCropMaskView *_bottomMask;
+    PUCropMaskView *_leftMask;
+    PUCropMaskView *_rightMask;
     struct CGRect _cropRect;
+    struct CGRect _cropRectInLocalCoordinateSpace;
 }
 
+@property(retain, nonatomic) PUCropMaskView *rightMask; // @synthesize rightMask=_rightMask;
+@property(retain, nonatomic) PUCropMaskView *leftMask; // @synthesize leftMask=_leftMask;
+@property(retain, nonatomic) PUCropMaskView *bottomMask; // @synthesize bottomMask=_bottomMask;
+@property(retain, nonatomic) PUCropMaskView *topMask; // @synthesize topMask=_topMask;
+@property(nonatomic) struct CGRect cropRectInLocalCoordinateSpace; // @synthesize cropRectInLocalCoordinateSpace=_cropRectInLocalCoordinateSpace;
 @property(retain, nonatomic, setter=_setCropWindowView:) UIView *_cropWindowView; // @synthesize _cropWindowView=__cropWindowView;
 @property(retain, nonatomic, setter=_setMaskViews:) NSArray *_maskViews; // @synthesize _maskViews=__maskViews;
 @property(retain, nonatomic, setter=_setOneNinethLines:) NSArray *_oneNinthCropLines; // @synthesize _oneNinthCropLines=__oneNinthCropLines;
@@ -38,6 +48,8 @@ __attribute__((visibility("hidden")))
 - (void)_setGridViews:(id)arg1 visible:(_Bool)arg2 iVarVisibilePtr:(_Bool *)arg3 animated:(_Bool)arg4;
 - (void)setStraightenGridVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setCropGridVisible:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)layoutSubviews;
+- (void)_updateCropRectInLocalCoordinateSpace;
 - (void)setMaskedContentVisible:(_Bool)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) id layoutReferenceItem;
 - (id)initWithFrame:(struct CGRect)arg1;

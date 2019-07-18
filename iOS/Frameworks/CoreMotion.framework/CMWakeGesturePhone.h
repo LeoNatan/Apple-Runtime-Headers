@@ -51,6 +51,7 @@
 - (void)playAlert;
 - (void)loadPreferences;
 - (void)invokeDelegateWithState:(long long)arg1;
+- (void)forceDetected;
 - (void)simulateGesture:(long long)arg1 after:(double)arg2;
 - (_Bool)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
 - (void)stopWakeGestureUpdates;

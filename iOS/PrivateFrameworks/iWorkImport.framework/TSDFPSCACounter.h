@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) _Bool shouldRunTimer; // @synthesize shouldRunTimer=_shouldRunTimer;
+- (void).cxx_destruct;
 - (void)stopLoggingFPS;
 - (void)startLoggingFPS;
 - (void)p_updateFrameCount;

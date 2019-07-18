@@ -32,7 +32,6 @@
 - (void)updateStatusLabelBounds;
 - (void)setBadgeStatus:(unsigned long long)arg1;
 - (void)updateStatusForCameraProfile:(id)arg1;
-- (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

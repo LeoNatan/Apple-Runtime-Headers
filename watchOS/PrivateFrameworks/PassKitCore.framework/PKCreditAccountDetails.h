@@ -53,6 +53,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)addOrUpdatePhysicalCard:(id)arg1;
+- (id)virtualCardWithIdentifier:(id)arg1;
 - (void)removeVirtualCard:(id)arg1;
 - (void)addOrUpdateVirtualCard:(id)arg1;
 - (void)ingestExtendedAccountDetails:(id)arg1;

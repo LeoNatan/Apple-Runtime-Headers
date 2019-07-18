@@ -10,7 +10,7 @@
 #import <FileProviderDaemon/FPDFileCoordinationProviderDelegate-Protocol.h>
 
 @class FPDDomainIndexer, FPDProvider, FPPacer, FPProviderDomain, NSArray, NSData, NSDictionary, NSFileProviderDomain, NSMutableDictionary, NSNumber, NSOperationQueue, NSString, NSURL;
-@protocol FPDDomainBackend, FPDDomainIndexChangeDelegate, FPDExtensionSessionProtocol, OS_dispatch_queue, OS_os_log;
+@protocol FPDDomainBackend, FPDDomainIndexChangeDelegate, FPDExtensionSessionProtocol, OS_dispatch_queue, OS_dispatch_source, OS_os_log;
 
 @interface FPDDomain : NSObject <FPDFileCoordinationProviderDelegate, FPDDomainIndexerDelegate>
 {
@@ -23,6 +23,7 @@
     _Bool _isObservingRoot;
     _Bool _indexerStarted;
     _Bool _isUsingFPFS;
+    NSObject<OS_dispatch_source> *_timer;
     NSURL *_previouslyAccessedSecurityScopedURL;
     FPPacer *_rootCreationPacer;
     _Bool _started;
@@ -101,7 +102,7 @@
 - (id)_physicalURLForURL:(id)arg1;
 - (id)_providedItemsOperationQueue;
 - (id)_fileReactorID;
-- (void)extensionIndexer:(id)arg1 didIndexOneBatchWithError:(id)arg2 updatedItems:(id)arg3 deletedIDs:(id)arg4 anchor:(id)arg5;
+- (void)extensionIndexer:(id)arg1 didIndexOneBatchWithError:(id)arg2 updatedItems:(id)arg3 deletedIDs:(id)arg4 anchor:(id)arg5 anchorPersisted:(CDUnknownBlockType)arg6;
 - (void)extensionIndexer:(id)arg1 didChangeNeedsAuthentification:(_Bool)arg2;
 - (void)cleanupDomainKeepingArchiveFolder:(_Bool)arg1;
 - (void)invalidateSession;
@@ -125,6 +126,9 @@
 - (_Bool)isUsingFPFS;
 - (_Bool)supportsFPFS;
 - (_Bool)isHiddenDefaultDomain;
+- (_Bool)_shouldDisconnectDueToLowDiskSpace;
+- (void)_setupRecoveryTimer;
+- (_Bool)_shouldDisconnect;
 @property(readonly, nonatomic) _Bool isConnectedToAppExtension;
 - (id)initWithIdentifier:(id)arg1 nsDomain:(id)arg2 extensionStorageURLs:(id)arg3 purposeIdentifier:(id)arg4 fpfsClass:(Class)arg5 provider:(id)arg6;
 

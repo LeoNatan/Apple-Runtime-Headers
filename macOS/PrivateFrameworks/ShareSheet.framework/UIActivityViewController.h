@@ -78,6 +78,7 @@
 @property(copy, nonatomic) CDUnknownBlockType completionWithItemsHandler; // @synthesize completionWithItemsHandler=_completionWithItemsHandler;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
+- (void)_updateActivityItems:(id)arg1 applicationActivities:(id)arg2;
 - (id)_titleForActivity:(id)arg1;
 - (BOOL)_shouldShowSystemActivityType:(id)arg1;
 - (void)_updateActivityItems:(id)arg1;
@@ -93,7 +94,7 @@
 - (id)initWithUserDefaults:(id)arg1 userDefaultsIdentifier:(id)arg2 applicationActivities:(id)arg3;
 - (id)initWithAssetIdentifiers:(id)arg1 activityItems:(id)arg2 applicationActivities:(id)arg3;
 - (id)initWithActivityItems:(id)arg1 applicationActivities:(id)arg2;
-- (id)_macActivitiesForiOSActivities:(id)arg1 activityItems:(id)arg2;
+- (id)_proxyActivitiesForActivities:(id)arg1 activityItems:(id)arg2;
 
 @end
 

@@ -6,9 +6,11 @@
 
 #import <WorkflowKit/WFDatabaseObjectDescriptor.h>
 
+#import <WorkflowKit/WFNaming-Protocol.h>
+
 @class NSString, WFWorkflowIcon;
 
-@interface WFWorkflowReference : WFDatabaseObjectDescriptor
+@interface WFWorkflowReference : WFDatabaseObjectDescriptor <WFNaming>
 {
     _Bool _isDeleted;
     NSString *_name;
@@ -33,6 +35,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 subtitle:(id)arg3 actionsDescription:(id)arg4 associatedAppBundleIdentifier:(id)arg5 icon:(id)arg6 isDeleted:(_Bool)arg7;
 - (id)generateSingleUseToken;
+@property(readonly, copy, nonatomic) NSString *wfName;
 - (id)eventDictionary;
 - (void)deleteAssociatedInteractions;
 - (void)donateRunInteraction;

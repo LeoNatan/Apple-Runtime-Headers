@@ -7,46 +7,34 @@
 #import <UIKit/UIViewController.h>
 
 #import <HearingUI/CCUIContentModuleContentViewController-Protocol.h>
-#import <HearingUI/HACCListViewControllerDelegate-Protocol.h>
 #import <HearingUI/UIGestureRecognizerDelegate-Protocol.h>
-#import <HearingUI/_UIContextMenuInteractionDelegate-Protocol.h>
 
-@class NSString, UITapGestureRecognizer, UIView, UIViewPropertyAnimator, _UIContextMenuInteraction;
+@class CCUIContentModuleDetailTransitioningDelegate, NSString, UITapGestureRecognizer, UIView, UIViewPropertyAnimator;
 @protocol CCUIContentModuleContentViewController, HACCContentModule;
 
-@interface HACCContentViewController : UIViewController <UIGestureRecognizerDelegate, _UIContextMenuInteractionDelegate, HACCListViewControllerDelegate, CCUIContentModuleContentViewController>
+@interface HACCContentViewController : UIViewController <UIGestureRecognizerDelegate, CCUIContentModuleContentViewController>
 {
     unsigned long long _controlType;
     UIView<HACCContentModule> *_contentView;
-    UIView *_expandedView;
-    _Bool _expanded;
+    CCUIContentModuleDetailTransitioningDelegate *_detailTransitioningDelegate;
     UIViewController<CCUIContentModuleContentViewController> *_expandedViewController;
     UITapGestureRecognizer *_tapRecognizer;
-    _UIContextMenuInteraction *_contextMenuInteraction;
     struct CGRect _collapsedFrame;
 }
 
-@property(retain, nonatomic) _UIContextMenuInteraction *contextMenuInteraction; // @synthesize contextMenuInteraction=_contextMenuInteraction;
 @property(retain, nonatomic) UITapGestureRecognizer *tapRecognizer; // @synthesize tapRecognizer=_tapRecognizer;
 @property(retain, nonatomic) UIViewController<CCUIContentModuleContentViewController> *expandedViewController; // @synthesize expandedViewController=_expandedViewController;
 @property(nonatomic) struct CGRect collapsedFrame; // @synthesize collapsedFrame=_collapsedFrame;
 - (void).cxx_destruct;
-- (id)contextMenuInteraction:(id)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(id)arg3;
-- (void)contextMenuInteractionWillPresent:(id)arg1;
-- (id)contextMenuInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
-- (_Bool)previewInteractionShouldBegin:(id)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (_Bool)supportsExpanding;
 - (void)_handleTapGestureRecognizer:(id)arg1;
-- (void)controllerWillDismiss;
-- (id)transitionToExpanded:(_Bool)arg1;
 - (id)viewControllerForExpandedView;
-- (id)expandedViewControllerForProgramModule:(unsigned long long)arg1;
+- (void)_updateMenuItemsForViewController:(id)arg1;
+- (void)_updatePresentedMenuViewControllerIfNecessary;
+- (id)menuModuleViewControllerForProgramModule:(unsigned long long)arg1;
 - (long long)layoutRequirement;
 @property(readonly, nonatomic) double preferredExpandedContentHeight;
-- (struct CGSize)expandedContentSize;
 - (struct CGSize)collapsedContentSize;
-- (struct CGSize)expandedContentUnitSize;
 - (struct CGSize)collapsedContentUnitSize;
 - (unsigned long long)controlTypeForModule:(unsigned long long)arg1;
 - (void)updateViewConstraints;

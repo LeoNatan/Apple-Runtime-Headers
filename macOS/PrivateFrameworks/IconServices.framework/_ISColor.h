@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface _ISColor : NSObject
 {
     struct CGColor *_color;

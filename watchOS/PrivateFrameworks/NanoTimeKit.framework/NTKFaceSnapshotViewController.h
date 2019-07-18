@@ -13,18 +13,16 @@
 @interface NTKFaceSnapshotViewController : UIViewController <NTKFaceObserver>
 {
     NTKFace *_face;
-    UIImageView *_appleImageView;
     UIImageView *_imageView;
     UIImage *_snapshotImage;
 }
 
-+ (id)_appleImage;
 @property(retain, nonatomic) UIImage *snapshotImage; // @synthesize snapshotImage=_snapshotImage;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-@property(retain, nonatomic) UIImageView *appleImageView; // @synthesize appleImageView=_appleImageView;
 @property(readonly, nonatomic) NTKFace *face; // @synthesize face=_face;
 - (void).cxx_destruct;
 - (void)faceResourceDirectoryDidChange:(id)arg1;
+- (void)faceConfigurationDidChange:(id)arg1;
 - (void)snapshotCacheCleared;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;

@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
     struct OpaqueFigThread *_thread;
     _Bool _isThreadRunning;
     _Bool _shouldBlockWhenFull;
-    CDStruct_b3eb8f4a _messageQueue[100];
+    CDStruct_b21f1e06 _messageQueue[100];
     int _firstMessageIndex;
     int _nextMessageIndex;
     int _maxQueueSize;
@@ -33,13 +33,13 @@ __attribute__((visibility("hidden")))
 - (void)waitBeforeProcessingQueue;
 - (void)cancelWait;
 - (void)stopThread;
-- (void)processMessage:(CDStruct_b3eb8f4a)arg1;
-- (_Bool)dequeue:(CDStruct_b3eb8f4a *)arg1;
+- (void)processMessage:(CDStruct_b21f1e06)arg1;
+- (_Bool)dequeue:(CDStruct_b21f1e06 *)arg1;
 - (int)queueSize;
 - (_Bool)isQueueFull;
-- (_Bool)enqueue:(CDStruct_b3eb8f4a)arg1;
+- (_Bool)enqueue:(CDStruct_b21f1e06)arg1;
 - (void)drainAndProcessAllStatistics;
-- (_Bool)addStatisticsMessage:(CDStruct_b3eb8f4a)arg1;
+- (_Bool)addStatisticsMessage:(CDStruct_b21f1e06)arg1;
 - (void)stop;
 - (void)start;
 - (void)dealloc;

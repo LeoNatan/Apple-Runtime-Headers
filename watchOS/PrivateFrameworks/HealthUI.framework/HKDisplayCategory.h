@@ -10,7 +10,7 @@
 
 @interface HKDisplayCategory : NSObject
 {
-    UIColor *_keyColor;
+    CDUnknownBlockType _keyColor;
     int _categoryID;
     NSString *_categoryName;
     NSString *_displayName;

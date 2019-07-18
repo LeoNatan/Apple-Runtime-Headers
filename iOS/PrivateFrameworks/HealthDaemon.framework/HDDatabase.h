@@ -8,6 +8,7 @@
 
 #import <HealthDaemon/HDAssertionObserver-Protocol.h>
 #import <HealthDaemon/HDContentProtectionObserver-Protocol.h>
+#import <HealthDaemon/HDDatabaseJournalDelegate-Protocol.h>
 #import <HealthDaemon/HDDiagnosticObject-Protocol.h>
 #import <HealthDaemon/HDHealthDatabase-Protocol.h>
 #import <HealthDaemon/HDSQLiteDatabaseDelegate-Protocol.h>
@@ -17,7 +18,7 @@
 @class HDAssertionManager, HDContentProtectionManager, HDDatabaseJournal, HDProfile, HKObserverSet, NSConditionLock, NSDate, NSDictionary, NSHashTable, NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString;
 @protocol OS_dispatch_group, OS_dispatch_queue, OS_dispatch_source;
 
-@interface HDDatabase : NSObject <HDAssertionObserver, HDContentProtectionObserver, HDDiagnosticObject, HDSQLiteDatabaseDelegate, HDSQLiteDatabasePoolDelegate, HDSQLiteDatabaseProvider, HDHealthDatabase>
+@interface HDDatabase : NSObject <HDAssertionObserver, HDContentProtectionObserver, HDDiagnosticObject, HDSQLiteDatabaseDelegate, HDSQLiteDatabasePoolDelegate, HDSQLiteDatabaseProvider, HDDatabaseJournalDelegate, HDHealthDatabase>
 {
     // Error parsing type: AB, name: _invalidated
     NSObject<OS_dispatch_queue> *_serialAsynchronousQueue;
@@ -34,6 +35,7 @@
     NSDate *_protectedDataFlushDeadlineDate;
     NSObject<OS_dispatch_source> *_protectedDataFlushDeadlineTimer;
     _Bool _hasFlushedProtectedData;
+    NSMutableDictionary *_databaseJournalMergeObserverSetByType;
     _Bool _didRunPostMigrationUpdates;
     HDDatabaseJournal *_journal;
     HDDatabaseJournal *_cloudSyncJournal;
@@ -98,12 +100,16 @@
 - (void)obliterateWithReason:(id)arg1 preserveCopy:(_Bool)arg2;
 - (void)invalidateAndWait;
 @property(readonly) _Bool invalidated;
+- (void)databaseJournalMergeDidComplete:(id)arg1;
+- (void)removeDatabaseJournalMergeObserver:(id)arg1 journalType:(long long)arg2;
+- (void)addDatabaseJournalMergeObserver:(id)arg1 journalType:(long long)arg2 queue:(id)arg3;
 - (id)virtualFilesystemModuleForDatabase:(id)arg1;
 - (id)diagnosticDescription;
 - (_Bool)accessHighFrequencyDataStoreWithError:(id *)arg1 block:(CDUnknownBlockType)arg2;
 - (id)highFrequencyDataStoreURL;
 - (shared_ptr_88ae0538)_highFrequencyDataStoreWithError:(id *)arg1;
 - (_Bool)discardHighFrequencyDataStoreWithError:(id *)arg1;
+- (unsigned long long)journalFileCountForType:(long long)arg1;
 - (void)_mergeSecondaryJournals;
 - (_Bool)_journalQueue_performJournalMergeAndCleanup;
 - (id)_currentDatabaseJournal;

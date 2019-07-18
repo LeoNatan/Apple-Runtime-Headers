@@ -10,7 +10,8 @@
 {
 }
 
-- (id)serializedParametersForDonatedIntent:(id)arg1;
+- (id)serializedParametersForDonatedIntent:(id)arg1 allowDroppingUnconfigurableValues:(_Bool)arg2;
+- (id)localizedKeyParameterDisplayName;
 - (id)errorPlayingPodcast:(unsigned int)arg1;
 - (id)genericPlayPodcastFailedError;
 - (id)contentNotFoundError;

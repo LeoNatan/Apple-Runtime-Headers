@@ -6,7 +6,7 @@
 
 #import <PassKitCore/PKPaymentCredential.h>
 
-@class PKAccount, PKAccountWebServicePassDetailsResponse, PKPaymentPass;
+@class NSString, PKAccount, PKAccountWebServicePassDetailsResponse, PKPaymentPass;
 
 @interface PKAccountCredential : PKPaymentCredential
 {
@@ -19,6 +19,7 @@
 @property(retain, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *ownershipTokenIdentifier;
 - (id)longDescription;
 - (unsigned int)hash;
 - (_Bool)_isEqualToCredential:(id)arg1;

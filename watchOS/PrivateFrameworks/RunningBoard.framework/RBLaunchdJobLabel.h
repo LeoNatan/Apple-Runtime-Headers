@@ -10,7 +10,6 @@
 
 @class NSString, RBSProcessIdentity;
 
-__attribute__((visibility("hidden")))
 @interface RBLaunchdJobLabel : NSObject <NSCopying>
 {
     NSString *_prefix;

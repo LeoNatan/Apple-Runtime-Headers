@@ -16,6 +16,7 @@
     PKPaymentProvisioningController *_provisioningController;
     _Bool _makeDefaultInAMP;
     NSObject<OS_dispatch_source> *_activationTimer;
+    _Bool _didAddToAMP;
     double _passActivationTimeout;
     id <PKAccountProvisioningControllerDelegate> _delegate;
     NSString *_provisionedPassUniqueID;
@@ -23,7 +24,6 @@
     unsigned long long _localPassActivationState;
     unsigned long long _provisionWatchPassState;
     unsigned long long _addToIDMSState;
-    unsigned long long _addToVPANState;
     unsigned long long _makeAccountPassDefaultOnLocalDeviceState;
     unsigned long long _addToAMPState;
 }
@@ -31,11 +31,11 @@
 + (_Bool)_isPaymentPassActivated:(id)arg1 forAccountCredential:(id)arg2;
 @property(readonly, nonatomic) unsigned long long addToAMPState; // @synthesize addToAMPState=_addToAMPState;
 @property(readonly, nonatomic) unsigned long long makeAccountPassDefaultOnLocalDeviceState; // @synthesize makeAccountPassDefaultOnLocalDeviceState=_makeAccountPassDefaultOnLocalDeviceState;
-@property(readonly, nonatomic) unsigned long long addToVPANState; // @synthesize addToVPANState=_addToVPANState;
 @property(readonly, nonatomic) unsigned long long addToIDMSState; // @synthesize addToIDMSState=_addToIDMSState;
 @property(readonly, nonatomic) unsigned long long provisionWatchPassState; // @synthesize provisionWatchPassState=_provisionWatchPassState;
 @property(readonly, nonatomic) unsigned long long localPassActivationState; // @synthesize localPassActivationState=_localPassActivationState;
 @property(readonly, nonatomic) unsigned long long provisionLocalPassState; // @synthesize provisionLocalPassState=_provisionLocalPassState;
+@property(nonatomic) _Bool didAddToAMP; // @synthesize didAddToAMP=_didAddToAMP;
 @property(copy, nonatomic) NSString *provisionedPassUniqueID; // @synthesize provisionedPassUniqueID=_provisionedPassUniqueID;
 @property(nonatomic) __weak id <PKAccountProvisioningControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double passActivationTimeout; // @synthesize passActivationTimeout=_passActivationTimeout;
@@ -48,7 +48,6 @@
 - (void)_startPassActivationObserver;
 - (void)_provisionAccountCredenital:(id)arg1 provisoningController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_processRemainingTasks;
-- (void)addVPAN;
 - (void)provisionAccountPassToWatchAsDefault:(_Bool)arg1;
 - (void)addToIDMS;
 - (void)addToAMPAsDefault:(_Bool)arg1;

@@ -40,6 +40,7 @@
 - (void)dealloc;
 - (void)setSendProgressIndex:(unsigned int)arg1;
 - (void)updateUtterance:(id)arg1;
+- (void)updateUtterance:(id)arg1 postNotifications:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

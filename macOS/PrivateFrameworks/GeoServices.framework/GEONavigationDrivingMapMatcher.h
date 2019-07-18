@@ -12,7 +12,6 @@
 
 - (id)_routeMatcherForRoute:(id)arg1;
 - (double)_approximateMaxSpeedForRoad:(CDStruct_f2d78687 *)arg1;
-- (BOOL)_isParkingLotFormOfWay:(int)arg1;
 - (BOOL)_shouldConsiderRoadMatch:(id)arg1 overRouteMatch:(id)arg2 forLocation:(id)arg3;
 - (BOOL)_locationMeetsSpeedThresholdForRoadMatch:(id)arg1 distanceFromRoute:(double)arg2;
 - (int)transportType;

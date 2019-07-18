@@ -21,6 +21,8 @@
 - (void *)_copyAttribute:(struct __CFString *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
+- (BOOL)_isProxySession;
+- (id)disposition;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)initWithTarget:(id)arg1;
 

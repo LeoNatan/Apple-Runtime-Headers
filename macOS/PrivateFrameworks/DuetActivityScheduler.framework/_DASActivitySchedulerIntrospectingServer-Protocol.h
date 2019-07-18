@@ -21,6 +21,7 @@
 - (void)forceRunActivities:(NSArray *)arg1;
 - (void)activityRunStatisticsWithHandler:(void (^)(NSDictionary *))arg1;
 - (void)scoresForActivityWithName:(NSString *)arg1 withHandler:(void (^)(NSArray *))arg2;
+- (void)deferActivities:(NSArray *)arg1 withHandler:(void (^)(BOOL))arg2;
 - (void)runningGroupActivitiesWithHandler:(void (^)(NSArray *))arg1;
 - (void)runningActivitiesWithHandler:(void (^)(NSArray *))arg1;
 - (void)delayedRunningActivitiesWithHandler:(void (^)(NSArray *))arg1;

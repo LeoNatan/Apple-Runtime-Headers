@@ -28,6 +28,7 @@
 - (void)reregister;
 - (void)activeDevicesUpdated;
 - (void)refreshRegistration;
+- (void)resetCallerIDForIDSAccount:(id)arg1;
 - (void)validateProfileWithAccount:(id)arg1;
 - (void)unvalidateAliases:(id)arg1 account:(id)arg2;
 - (void)validateAliases:(id)arg1 account:(id)arg2;

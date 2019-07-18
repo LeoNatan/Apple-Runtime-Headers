@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class HFCameraPlaybackPosition, HMCameraClipCollection, HMCameraProfile, HMHome;
+@class HFCameraPlaybackPosition, HMCameraClipCollection, HMCameraProfile, HMHome, NSArray;
 @protocol HFCameraClipScrubbing, HFCameraLiveStreamControlling;
 
 @interface HFCameraPlaybackEngineConfiguration : NSObject
@@ -14,6 +14,7 @@
     HMHome *_home;
     HMCameraProfile *_cameraProfile;
     HMCameraClipCollection *_clipCollection;
+    NSArray *_clips;
     HFCameraPlaybackPosition *_playbackPosition;
     id <HFCameraClipScrubbing> _clipScrubber;
     CDUnknownBlockType _clipPlayerBuilder;
@@ -24,6 +25,7 @@
 @property(copy, nonatomic) CDUnknownBlockType clipPlayerBuilder; // @synthesize clipPlayerBuilder=_clipPlayerBuilder;
 @property(nonatomic) __weak id <HFCameraClipScrubbing> clipScrubber; // @synthesize clipScrubber=_clipScrubber;
 @property(retain, nonatomic) HFCameraPlaybackPosition *playbackPosition; // @synthesize playbackPosition=_playbackPosition;
+@property(retain, nonatomic) NSArray *clips; // @synthesize clips=_clips;
 @property(retain, nonatomic) HMCameraClipCollection *clipCollection; // @synthesize clipCollection=_clipCollection;
 @property(readonly, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;

@@ -13,6 +13,7 @@
 @interface PXGadgetSectionHeader : PXObservable <PXMutableGadgetSectionHeader>
 {
     _Bool _isFirstSection;
+    _Bool _shouldShowDividerOnFirstSection;
     unsigned long long _headerStyle;
     NSString *_headerTitle;
     NSString *_customButtonTitle;
@@ -27,6 +28,7 @@
 + (id)buttonFontForButtonType:(unsigned long long)arg1;
 + (id)titleFontForHeaderStyle:(unsigned long long)arg1;
 @property(copy, nonatomic) CDUnknownBlockType accessoryButtonPressed; // @synthesize accessoryButtonPressed=_accessoryButtonPressed;
+@property(nonatomic) _Bool shouldShowDividerOnFirstSection; // @synthesize shouldShowDividerOnFirstSection=_shouldShowDividerOnFirstSection;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
 @property(nonatomic) _Bool isFirstSection; // @synthesize isFirstSection=_isFirstSection;
 @property(nonatomic) unsigned long long buttonType; // @synthesize buttonType=_buttonType;

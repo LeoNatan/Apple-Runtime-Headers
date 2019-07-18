@@ -6,12 +6,10 @@
 
 #import <UIKit/UIView.h>
 
-#import <Widgets/MTVisualStylingProviderObserving-Protocol.h>
-
-@class NSLayoutConstraint, NSString, UIButton, UIImageView, UILabel;
+@class NSLayoutConstraint, UIButton, UILabel, WGWidgetPinningTeachingAnimationView;
 @protocol WGWidgetPinningTeachingViewDelegate;
 
-@interface WGWidgetPinningTeachingView : UIView <MTVisualStylingProviderObserving>
+@interface WGWidgetPinningTeachingView : UIView
 {
     UIView *_contentView;
     id <WGWidgetPinningTeachingViewDelegate> _delegate;
@@ -19,14 +17,14 @@
     UILabel *_bodyLabel;
     UIButton *_yesButton;
     UIButton *_noButton;
-    UIImageView *_iconImageView;
+    WGWidgetPinningTeachingAnimationView *_iconImageView;
     NSLayoutConstraint *_titleLabelTopConstraint;
     NSLayoutConstraint *_titleLabelToBodyLabelConstraint;
 }
 
 @property(retain, nonatomic) NSLayoutConstraint *titleLabelToBodyLabelConstraint; // @synthesize titleLabelToBodyLabelConstraint=_titleLabelToBodyLabelConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titleLabelTopConstraint; // @synthesize titleLabelTopConstraint=_titleLabelTopConstraint;
-@property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
+@property(retain, nonatomic) WGWidgetPinningTeachingAnimationView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) UIButton *noButton; // @synthesize noButton=_noButton;
 @property(retain, nonatomic) UIButton *yesButton; // @synthesize yesButton=_yesButton;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
@@ -48,12 +46,6 @@
 - (void)startAnimating;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

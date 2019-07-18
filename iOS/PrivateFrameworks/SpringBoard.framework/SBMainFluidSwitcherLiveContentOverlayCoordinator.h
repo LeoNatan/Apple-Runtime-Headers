@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (_Bool)_layoutStateContainsElementBlockedForScreenTimeExpiration:(id)arg1;
 - (_Bool)_shouldAnimateAddingSceneLayoutLiveContentOverlayForTransitionContext:(id)arg1;
+- (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
 - (id)animationControllerForTransitionRequest:(id)arg1;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidBeginWithTransitionContext:(id)arg2;

@@ -48,7 +48,6 @@
 - (void)originObserver:(id)arg1 didUpdatePlaybackStateForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdateNowPlayingApplicationBundleIdentifierForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdateNowPlayingInfoForOrigin:(id)arg2;
-- (void)prepareLocalOriginObserverForNewPlaybackIntent;
 - (void)setOriginCommandHandler:(id)arg1 forOrigin:(id)arg2;
 - (void)setOriginObserver:(id)arg1 forOrigin:(id)arg2;
 @property(nonatomic) _Bool shouldObserveLibraryAddStatus;

@@ -23,15 +23,17 @@
 - (void)setMapMatchingRouteHint:(CDStruct_b7b5e951 *)arg1 count:(int)arg2 routingType:(int)arg3;
 - (unsigned char)isLocationServicesCapable;
 - (unsigned char)getLocationForBundleID:(const struct __CFString *)arg1 orBundlePath:(const struct __CFString *)arg2 dynamicAccuracyReductionEnabled:(unsigned char)arg3 allowsAlteredAccessoryLocations:(unsigned char)arg4 location:(CDStruct_88736aa7 *)arg5;
+- (BOOL)checkAndExerciseAuthorizationForBundleID:(id)arg1 orBundlePath:(id)arg2 services:(unsigned long long)arg3 error:(id *)arg4;
 - (const struct __CFDictionary *)copyMonitoredRegionsForBundleIdentifier:(const struct __CFString *)arg1 orBundlePath:(const struct __CFString *)arg2;
 - (unsigned char)dumpLogs:(const struct __CFString *)arg1;
 - (unsigned char)displayStatistics;
 - (unsigned char)shutdownDaemon;
 - (unsigned char)performMigration;
-- (unsigned char)getAuthorizationStatusForService:(int *)arg1 forBundleID:(const struct __CFString *)arg2 orBundlePath:(const struct __CFString *)arg3 serviceMask:(unsigned long long)arg4;
 - (unsigned char)getAuthorizationStatus:(int *)arg1 forBundleID:(const struct __CFString *)arg2 orBundlePath:(const struct __CFString *)arg3;
 - (unsigned char)getGestureServiceEnabled:(char *)arg1;
 - (void)setGestureServiceEnabled:(unsigned char)arg1;
+- (unsigned char)getAuthorizationPromptMapDisplayEnabled:(char *)arg1;
+- (id)setAuthorizationPromptMapDisplayEnabled:(unsigned char)arg1;
 - (unsigned char)getLocationServicesEnabled:(char *)arg1;
 - (void)setLocationServicesEnabled:(unsigned char)arg1;
 - (unsigned char)pingDaemon;

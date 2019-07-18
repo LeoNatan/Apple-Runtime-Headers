@@ -6,18 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray;
+@class MSPJournal, NSArray;
 
 __attribute__((visibility("hidden")))
 @interface MSPCloudMigrator : NSObject
 {
     BOOL _shouldMergeFavoritesCollection;
+    MSPJournal *_journal;
     NSArray *_containers;
 }
 
 @property(nonatomic) BOOL shouldMergeFavoritesCollection; // @synthesize shouldMergeFavoritesCollection=_shouldMergeFavoritesCollection;
 @property(retain, nonatomic) NSArray *containers; // @synthesize containers=_containers;
+@property(retain, nonatomic) MSPJournal *journal; // @synthesize journal=_journal;
 - (void).cxx_destruct;
+- (void)_performMigrationsForPinnedPlacesContainerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performMigrationsForCollectionsContainerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performMigrationsForHistoryContainerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performMigrationsForFavoritesContainerWithCompletion:(CDUnknownBlockType)arg1;

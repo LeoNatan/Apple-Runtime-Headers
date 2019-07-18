@@ -7,31 +7,25 @@
 #import <objc/NSObject.h>
 
 #import <WorkflowUI/UICollectionViewDataSource-Protocol.h>
-#import <WorkflowUI/UICollectionViewDelegate-Protocol.h>
+#import <WorkflowUI/UICollectionViewDelegateFlowLayout-Protocol.h>
 
-@class NSArray, NSOrderedSet, NSString, UICollectionView;
-@protocol WFActionDrawerAppsCollectionViewManagerDelegate;
+@class NSOrderedSet, NSString, UICollectionView;
 
-@interface WFActionDrawerAppsCollectionViewManager : NSObject <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface WFActionDrawerAppsCollectionViewManager : NSObject <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 {
-    id <WFActionDrawerAppsCollectionViewManagerDelegate> _delegate;
-    NSOrderedSet *_appBundleIds;
     UICollectionView *_collectionView;
-    NSArray *_sections;
+    NSOrderedSet *_appBundleIds;
 }
 
-@property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
+@property(copy) NSOrderedSet *appBundleIds; // @synthesize appBundleIds=_appBundleIds;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-@property(copy, nonatomic) NSOrderedSet *appBundleIds; // @synthesize appBundleIds=_appBundleIds;
-@property(nonatomic) __weak id <WFActionDrawerAppsCollectionViewManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)appBundleIdsFromSections:(id)arg1;
 - (void)_configureCell:(id)arg1 withAppBundleIdentifier:(id)arg2;
-- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (id)initWithCollectionView:(id)arg1 sections:(id)arg2;
+- (id)initWithCollectionView:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

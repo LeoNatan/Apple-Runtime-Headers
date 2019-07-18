@@ -13,6 +13,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
+- (long long)accessibilityIndex;
+- (id)accessibilityLabel;
+- (id)accessibilityRole;
 - (BOOL)acceptsFirstResponder;
 @property(readonly) BOOL arrowFacesLeft;
 - (id)initWithArrowFacesLeft:(BOOL)arg1;

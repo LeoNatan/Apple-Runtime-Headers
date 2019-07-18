@@ -6,16 +6,21 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
+
 @interface CUWiFiTrafficPeer : NSObject
 {
     BOOL _active;
     unsigned int _trafficFlags;
+    NSString *_sessionID;
     CDUnion_fab80606 _peerIP;
 }
 
 @property(nonatomic) BOOL active; // @synthesize active=_active;
 @property(nonatomic) unsigned int trafficFlags; // @synthesize trafficFlags=_trafficFlags;
+@property(copy, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) CDUnion_fab80606 peerIP; // @synthesize peerIP=_peerIP;
+- (void).cxx_destruct;
 - (id)peerMACAddressData;
 
 @end

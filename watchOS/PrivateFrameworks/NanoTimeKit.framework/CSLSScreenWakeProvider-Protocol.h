@@ -15,5 +15,7 @@
 
 @optional
 @property(nonatomic) __weak id <CSLSScreenWakeProviderDelegate> delegate;
+- (void)didChangeActiveProvider:(_Bool)arg1 completion:(void (^)(void))arg2;
+- (void)willBecomeInactiveProvider:(void (^)(void))arg1;
 @end
 

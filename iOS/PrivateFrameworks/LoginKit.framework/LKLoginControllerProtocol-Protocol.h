@@ -7,10 +7,8 @@
 @class LKClassConfiguration, NSNumber, NSString;
 
 @protocol LKLoginControllerProtocol
-- (void)isReadyToLoginWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)saveClassConfiguration:(LKClassConfiguration *)arg1 withCompletionHandler:(void (^)(NSError *))arg2;
 - (void)loginAppleID:(NSString *)arg1 password:(NSString *)arg2 withCompletionHandler:(void (^)(NSError *))arg3;
 - (void)chooseUserWithIdentifier:(NSString *)arg1 inClassWithID:(NSNumber *)arg2 password:(NSString *)arg3 withCompletionHandler:(void (^)(NSError *))arg4;
-- (void)logoutWithLogoutType:(unsigned long long)arg1 completionHandler:(void (^)(NSError *))arg2;
 @end
 

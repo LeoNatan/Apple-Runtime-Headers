@@ -15,7 +15,7 @@
 
 + (id)sharedThrottlerFormatter;
 - (void).cxx_destruct;
-- (void)captureThrottledReqsForKeyPath:(id)arg1 maxReqCount:(id)arg2 policyTimeUntilReset:(double)arg3;
+- (void)captureThrottledReqsForKeyPath:(id)arg1 maxReqCount:(id)arg2 policyTimeWindow:(double)arg3;
 - (BOOL)hasInitialInfoForKeyPath:(id)arg1;
 - (BOOL)hasThrottledInfoForKeyPath:(id)arg1;
 - (void)addThrottledReqForKeyPath:(id)arg1 at:(id)arg2;

@@ -11,7 +11,7 @@
 #import <PhotoAnalysis/PLPhotoAnalysisGraphServiceProtocol-Protocol.h>
 
 @class NSDate, NSDictionary, NSHashTable, NSMutableDictionary, NSObject, NSProgress, NSString, PGManager, PHAPredicateValidator;
-@protocol OS_dispatch_queue, OS_os_transaction;
+@protocol OS_dispatch_queue, OS_os_transaction, PGGraphHealthRecording;
 
 @interface PHAGraphServiceWorker : PHAWorker <PHAGraphRegistration, PGGraphDataModelEnrichmentManagerDelegate, PLPhotoAnalysisGraphServiceProtocol>
 {
@@ -20,7 +20,7 @@
     NSDate *_lastTodayWidgetMemoryCreationDate;
     NSDictionary *_snapshotFilenameLookup;
     unsigned long long _pendingGraphRequests;
-    NSDate *_graphUpdateAllowedDate;
+    id <PGGraphHealthRecording> _graphHealthRecorder;
     NSProgress *_currentGraphRebuildProgress;
     PGManager *_graphManager;
     NSMutableDictionary *_pendingGraphReadyCallbacks;
@@ -176,6 +176,7 @@
 - (void)reportMetricsWithOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)reportMetricsWithOptions:(id)arg1 context:(id)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)metricReportingJobWithScenario:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)enrichmentManager:(id)arg1 didCancelProcessor:(id)arg2;
 - (void)enrichmentManager:(id)arg1 didRunProcessor:(id)arg2;
 - (_Bool)enrichmentManager:(id)arg1 shouldRunProcessor:(id)arg2;
 - (void)enrichDataModelWithOptions:(id)arg1 isBackgroundEnrichmentJob:(_Bool)arg2 context:(id)arg3 progressHandler:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
@@ -196,6 +197,8 @@
 - (void)startup;
 - (_Bool)isQuiescent;
 - (_Bool)isEnabled;
+@property(readonly, nonatomic) NSDate *dateOfLastGraphRebuild;
+- (void)markLastBackgroundGraphConsistencyUpdateJobDate;
 - (void)markLastBackgroundGraphRebuildJobDate;
 - (id)nextAdditionalJobWithScenario:(unsigned long long)arg1 requestReason:(unsigned long long)arg2;
 - (_Bool)didExceedtimeInterval:(double)arg1 forBackgroundJobUserDefaultsKey:(id)arg2;

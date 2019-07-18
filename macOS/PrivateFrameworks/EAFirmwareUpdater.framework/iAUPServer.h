@@ -18,6 +18,7 @@
     int _parserState;
     BOOL _escapeInProgress;
     BOOL _byteEscape;
+    BOOL _ackAppReentry;
     FirmwareBundle *_firmwareBundle;
     HSModel *_hsModel;
     unsigned int _telegramLength;
@@ -28,6 +29,9 @@
     unsigned short _accessoryCapabilities;
     unsigned int _totalBytesDownloadedInCurrentSession;
     BOOL _startEventSent;
+    BOOL _restartRequired;
+    BOOL _sleepWakeRequired;
+    BOOL _urgentUpdate;
     unsigned char _iAUPVersion;
     unsigned char _currentAsset;
     NSObject<OS_dispatch_queue> *_dispatchQ;
@@ -36,6 +40,10 @@
 @property(nonatomic) unsigned char currentAsset; // @synthesize currentAsset=_currentAsset;
 @property(nonatomic) unsigned char iAUPVersion; // @synthesize iAUPVersion=_iAUPVersion;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQ; // @synthesize dispatchQ=_dispatchQ;
+@property(nonatomic) BOOL ackAppReentry; // @synthesize ackAppReentry=_ackAppReentry;
+@property(readonly, nonatomic) BOOL urgentUpdate; // @synthesize urgentUpdate=_urgentUpdate;
+@property(readonly, nonatomic) BOOL sleepWakeRequired; // @synthesize sleepWakeRequired=_sleepWakeRequired;
+@property(readonly, nonatomic) BOOL restartRequired; // @synthesize restartRequired=_restartRequired;
 @property(nonatomic) int parserState; // @synthesize parserState=_parserState;
 @property(nonatomic) int serverState; // @synthesize serverState=_serverState;
 @property(nonatomic) BOOL byteEscape; // @synthesize byteEscape=_byteEscape;

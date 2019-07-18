@@ -22,7 +22,6 @@
 - (id)bookIDForProductName:(id)arg1;
 - (id)ddmConfigForBookID:(id)arg1;
 @property(readonly) NSString *serviceName;
-- (id)mappedURL:(id)arg1;
 @property(readonly) NSString *serverURLString;
 @property(readonly) NSArray *ddmPreloadedBookIDs;
 @property(readonly) NSDictionary *ddmBooks;

@@ -10,7 +10,7 @@
 {
     // Error parsing type: , name: loader
     // Error parsing type: , name: traits
-    // Error parsing type: , name: assetHandleFactory
+    // Error parsing type: , name: variantFactory
     // Error parsing type: , name: cache
 }
 

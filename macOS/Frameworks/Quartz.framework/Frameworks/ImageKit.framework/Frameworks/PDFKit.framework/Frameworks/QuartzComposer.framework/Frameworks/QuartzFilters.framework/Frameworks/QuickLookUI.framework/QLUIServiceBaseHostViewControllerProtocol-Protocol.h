@@ -5,6 +5,7 @@
 //
 
 @protocol QLUIServiceBaseHostViewControllerProtocol
+- (void)updateFullScreenFromMagnification:(double)arg1;
 - (void)doubleClickOnPreviewContent;
 @end
 

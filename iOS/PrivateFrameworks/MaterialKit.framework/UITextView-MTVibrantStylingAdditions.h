@@ -7,7 +7,6 @@
 #import <UIKit/UITextView.h>
 
 @interface UITextView (MTVibrantStylingAdditions)
-- (void)mt_applyVibrantStyling:(id)arg1;
 - (void)_mt_applyVisualStyling:(id)arg1;
 @end
 

@@ -23,6 +23,7 @@
     unsigned int _euid;
     NSString *_executablePath;
     NSString *_picoDesc;
+    NSString *_description;
     NSString *_embeddedApplicationIdentifier;
     NSString *_daemonJobLabel;
 }
@@ -42,6 +43,7 @@
 + (id)identityOfCurrentProcess;
 @property(readonly, copy, nonatomic) NSString *daemonJobLabel; // @synthesize daemonJobLabel=_daemonJobLabel;
 @property(readonly, copy, nonatomic) NSString *embeddedApplicationIdentifier; // @synthesize embeddedApplicationIdentifier=_embeddedApplicationIdentifier;
+@property(readonly, copy) NSString *description; // @synthesize description=_description;
 @property(readonly, nonatomic) NSString *picoDesc; // @synthesize picoDesc=_picoDesc;
 @property(readonly, copy, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
 - (void).cxx_destruct;
@@ -55,7 +57,6 @@
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 - (BOOL)isEqualToIdentity:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

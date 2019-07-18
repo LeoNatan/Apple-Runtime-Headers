@@ -8,6 +8,7 @@
 
 @class WFFileRepresentation;
 
+__attribute__((visibility("hidden")))
 @interface WFFileWebResource : WFWebResource
 {
     WFFileRepresentation *_file;

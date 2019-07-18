@@ -50,6 +50,7 @@
 - (void)_handleRecipeResponse:(id)arg1 recipeId:(id)arg2 matchingRecordSet:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_fetchRecipe:(id)arg1 matchingRecordSet:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_attemptRecipeMatchWithRecipes:(id)arg1 keepGoing:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)isPFLPlugin;
 - (void)_handleTelemetry:(id)arg1;
 - (id)telemetryResponse;
 - (void)_fetchPolicyWithCompletion:(CDUnknownBlockType)arg1;

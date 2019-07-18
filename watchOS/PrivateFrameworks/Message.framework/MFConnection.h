@@ -9,14 +9,14 @@
 #import <Message/ECAuthenticatableConnection-Protocol.h>
 #import <Message/MFDiagnosticsGenerator-Protocol.h>
 
-@class ECNWConnectionWrapper, MFConnectionSettings, NSArray, NSString;
-@protocol ECSASLSecurityLayer;
+@class MFConnectionSettings, NSArray, NSString;
+@protocol ECNWConnectionWrapper, ECSASLSecurityLayer;
 
 @interface MFConnection : NSObject <ECAuthenticatableConnection, MFDiagnosticsGenerator>
 {
     id <ECSASLSecurityLayer> _securityLayer;
     MFConnectionSettings *_connectionSettings;
-    ECNWConnectionWrapper *_socket;
+    id <ECNWConnectionWrapper> _socket;
     double _lastUsedTime;
     char *_buffer;
     int _bufferRemainingBytes;

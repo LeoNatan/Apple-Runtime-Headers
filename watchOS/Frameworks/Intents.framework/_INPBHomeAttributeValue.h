@@ -23,6 +23,7 @@
         unsigned int valueType:1;
     } _has;
     _Bool _booleanValue;
+    _Bool __encodeLegacyGloryData;
     int _integerValue;
     int _limitValue;
     NSString *_stringValue;
@@ -32,6 +33,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int valueType; // @synthesize valueType=_valueType;
 @property(nonatomic) int unit; // @synthesize unit=_unit;
 @property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;

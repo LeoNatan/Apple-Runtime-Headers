@@ -42,14 +42,10 @@
     NSArray *_services;
     NSHashTable *_l2capChannels;
     NSString *_BDAddress;
-    long long _PID;
-    long long _VID;
 }
 
 @property(readonly, nonatomic, getter=isConnectedToSystem) BOOL connectedToSystem; // @synthesize connectedToSystem=_connectedToSystem;
 @property(readonly) BOOL visibleInSettings; // @synthesize visibleInSettings=_visibleInSettings;
-@property long long VID; // @synthesize VID=_VID;
-@property long long PID; // @synthesize PID=_PID;
 @property(retain) NSString *BDAddress; // @synthesize BDAddress=_BDAddress;
 @property(readonly, retain, nonatomic) NSHashTable *l2capChannels; // @synthesize l2capChannels=_l2capChannels;
 @property unsigned int writesPending; // @synthesize writesPending=_writesPending;

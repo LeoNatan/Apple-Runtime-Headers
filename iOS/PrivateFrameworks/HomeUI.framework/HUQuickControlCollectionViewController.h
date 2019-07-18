@@ -39,6 +39,7 @@
 @property(readonly, copy, nonatomic) NSSet *affectedCharacteristics;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
 - (void)quickControlItemHost:(id)arg1 didUpdateVisibility:(_Bool)arg2;
+- (double)heightForSupplementaryViewAtIndexPath:(id)arg1;
 - (id)intrinsicSizeDescriptorForItemAtIndexPath:(id)arg1 itemSize:(unsigned long long)arg2;
 - (id)_allContentViewControllers;
 - (id)_allViewControllers;
@@ -48,6 +49,7 @@
 - (unsigned long long)_titlePositionForItem:(id)arg1;
 - (void)_reconfigureLayoutOptions;
 - (id)_controlItemsForItem:(id)arg1;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)itemManager:(id)arg1 didRemoveItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)itemManager:(id)arg1 didUpdateResultsForItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)configureCell:(id)arg1 forItem:(id)arg2;

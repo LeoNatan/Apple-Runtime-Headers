@@ -6,7 +6,7 @@
 
 #import <DeviceManagement/DMFInstallAppRequest.h>
 
-@class NSArray, NSDictionary, NSNumber, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface DMFMDMv1InstallAppRequest : DMFInstallAppRequest
 {
@@ -18,7 +18,6 @@
     NSArray *_associatedDomains;
     NSDictionary *_configuration;
     NSString *_personaID;
-    NSNumber *_accountIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -26,7 +25,6 @@
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
-@property(copy, nonatomic) NSNumber *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(copy, nonatomic) NSString *personaID; // @synthesize personaID=_personaID;
 @property(copy, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) NSArray *associatedDomains; // @synthesize associatedDomains=_associatedDomains;

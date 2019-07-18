@@ -13,6 +13,7 @@
     AVMutableMovieInternal *_mutableMovieInternal;
 }
 
++ (_Bool)expectsPropertyRevisedNotifications;
 + (id)movieWithSettingsFromMovie:(id)arg1 options:(id)arg2 error:(id *)arg3;
 + (id)movieWithData:(id)arg1 options:(id)arg2 error:(id *)arg3;
 + (id)movieWithURL:(id)arg1 options:(id)arg2 error:(id *)arg3;

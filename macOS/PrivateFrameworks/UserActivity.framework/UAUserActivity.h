@@ -98,6 +98,9 @@
 + (id)_encodeKeyAndValueIntoString:(id)arg1 value:(id)arg2;
 + (id)_encodeToString:(id)arg1;
 + (BOOL)registerAsProxyForApplication:(int)arg1 options:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
++ (void)deleteAllSavedUserActivitiesWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (void)deleteSavedUserActivitiesWithPersistentIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (id)mainBundleIdentifier;
 @property(readonly, retain) NSObject<OS_dispatch_queue> *willCallSaveSerializationQueue; // @synthesize willCallSaveSerializationQueue=_willCallSaveSerializationQueue;
 @property(retain) NSMutableSet *dirtyPayloadIdentifiers; // @synthesize dirtyPayloadIdentifiers=_dirtyPayloadIdentifiers;
 @property(retain) NSMutableDictionary *payloadDataCache; // @synthesize payloadDataCache=_payloadDataCache;
@@ -211,6 +214,7 @@
 - (void)updateForwardToCoreSpotlightIndexer:(BOOL)arg1;
 @property(readonly) BOOL forwardToCoreSpotlightIndexer;
 @property(copy) CSSearchableItemAttributeSet *contentAttributeSet; // @dynamic contentAttributeSet;
+@property(copy) NSString *persistentIdentifier;
 - (void)setDirty:(BOOL)arg1 identifier:(id)arg2;
 - (BOOL)isPayloadDirty:(id)arg1;
 - (CDUnknownBlockType)payloadUpdateBlockForIdentifier:(id)arg1;
@@ -222,6 +226,7 @@
 - (id)payloadIdentifiers;
 
 // Remaining properties
+@property(getter=isEligibleForPrediction) BOOL eligibleForPrediction;
 @property(readonly) Class superclass;
 
 @end

@@ -16,6 +16,8 @@
 @interface REMListStorage : NSObject <NSCopying, NSSecureCoding, REMObjectIDProviding, REMExternalSyncMetadataWritableProviding>
 {
     _Bool _hasDeserializedReminderIDsMergeableOrdering;
+    unsigned long long _storeGeneration;
+    unsigned long long _copyGeneration;
     _Bool _isGroup;
     _Bool _showingLargeAttachments;
     _Bool _remindersICSDisplayOrderChanged;
@@ -23,6 +25,7 @@
     _Bool _daIsReadOnly;
     _Bool _daIsImmutable;
     _Bool _daIsNotificationsCollection;
+    _Bool _isPlaceholder;
     NSString *externalIdentifier;
     NSString *externalModificationTag;
     NSString *daSyncToken;
@@ -55,6 +58,7 @@
 + (id)objectIDWithUUID:(id)arg1;
 + (id)newObjectID;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool isPlaceholder; // @synthesize isPlaceholder=_isPlaceholder;
 @property(nonatomic) _Bool daIsNotificationsCollection; // @synthesize daIsNotificationsCollection=_daIsNotificationsCollection;
 @property(nonatomic) _Bool daIsImmutable; // @synthesize daIsImmutable=_daIsImmutable;
 @property(nonatomic) _Bool daIsReadOnly; // @synthesize daIsReadOnly=_daIsReadOnly;
@@ -88,12 +92,16 @@
 @property(copy, nonatomic) NSString *externalIdentifier; // @synthesize externalIdentifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
+@property(readonly, nonatomic) NSString *displayName;
 - (id)reminderIDsMergeableOrdering;
 - (id)ekColor;
+- (id)debugDescription;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)setStoreGenerationIfNeeded:(unsigned long long)arg1;
+- (unsigned long long)storeGeneration;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithObjectID:(id)arg1 accountID:(id)arg2 name:(id)arg3 isGroup:(_Bool)arg4 reminderIDsMergeableOrderingData:(id)arg5;

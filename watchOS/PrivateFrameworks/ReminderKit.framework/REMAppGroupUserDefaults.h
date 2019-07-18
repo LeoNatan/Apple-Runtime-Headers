@@ -6,10 +6,18 @@
 
 #import <ReminderKit/REMUserDefaults.h>
 
+@class NSDateComponents, REMObjectID;
+
 @interface REMAppGroupUserDefaults : REMUserDefaults
 {
 }
 
++ (id)storageNumberForTodayNotificationTime:(id)arg1;
++ (id)todayNotificationFireTimeFromStorageNumber:(id)arg1;
+- (id)streamTodayNotificationFireTime:(CDUnknownBlockType)arg1;
+@property(retain, nonatomic) NSDateComponents *todayNotificationFireTime;
+@property(retain, nonatomic) REMObjectID *preferredDefaultListID;
+@property(nonatomic) _Bool forceShowWelcomeScreen;
 @property(nonatomic) _Bool enableWelcomeScreen;
 - (id)observeShowRemindersAsOverdueWithBlock:(CDUnknownBlockType)arg1;
 @property(nonatomic) _Bool showRemindersAsOverdue;

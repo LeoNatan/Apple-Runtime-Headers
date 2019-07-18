@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 @interface VCControlChannel : VCObject
 {
     id _messageReceivedDelegate;
+    id _dataReceivedDelegate;
     int _bytesSent;
     int _lastProcessedBytesSent;
     int _bytesSentToReport;
@@ -37,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)throwNotSupportedExceptionForMethod:(id)arg1;
 - (void)flushActiveMessages;
 - (void)dealloc;
+@property(nonatomic) id dataReceivedDelegate;
 @property(nonatomic) id messageReceivedDelegate; // @synthesize messageReceivedDelegate=_messageReceivedDelegate;
 - (id)init;
 

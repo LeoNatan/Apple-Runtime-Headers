@@ -63,7 +63,6 @@
 - (void)setUsesAudioOnlyModeForExternalPlayback:(BOOL)arg1 shouldIgnorePlaybackQueueTransactions:(BOOL)arg2;
 @property(nonatomic) float rate;
 - (void)setMediaSelectionCriteria:(id)arg1 forMediaCharacteristic:(id)arg2;
-@property(nonatomic) BOOL limitsBandwidthForCellularAccess;
 - (void)setAllowsExternalPlayback:(BOOL)arg1 shouldIgnorePlaybackQueueTransactions:(BOOL)arg2;
 @property(nonatomic) long long actionAtItemEnd;
 - (void)seekToTime:(CDStruct_1b6d18a9)arg1 toleranceBefore:(CDStruct_1b6d18a9)arg2 toleranceAfter:(CDStruct_1b6d18a9)arg3 completionHandler:(CDUnknownBlockType)arg4;

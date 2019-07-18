@@ -20,7 +20,9 @@
     NSString *_identifier;
     NSString *_name;
     NSMutableArray *_qualities;
+    long long _uniqueIdentifier;
     struct {
+        unsigned int has_uniqueIdentifier:1;
         unsigned int read_attributes:1;
         unsigned int read_authTraits:1;
         unsigned int read_bss:1;
@@ -33,6 +35,7 @@
         unsigned int wrote_identifier:1;
         unsigned int wrote_name:1;
         unsigned int wrote_qualities:1;
+        unsigned int wrote_uniqueIdentifier:1;
     } _flags;
 }
 
@@ -50,6 +53,8 @@
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasUniqueIdentifier;
+@property(nonatomic) long long uniqueIdentifier;
 - (int)StringAsAttributes:(id)arg1;
 - (id)attributesAsString:(int)arg1;
 - (void)setAttributes:(int *)arg1 count:(unsigned long long)arg2;

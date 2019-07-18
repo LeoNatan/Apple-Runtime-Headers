@@ -9,8 +9,8 @@
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
 #import <MapKit/MKQuickLinkItemViewDelegate-Protocol.h>
 
-@class MKMapItem, NSArray, NSLayoutConstraint, NSString, UIView;
-@protocol MKPlaceQuickLinksViewControllerDelegate;
+@class MKMapItem, NSArray, NSString, UIView;
+@protocol MKPlaceQuickLinksViewControllerDelegate, _MKInfoCardAnalyticsDelegate;
 
 __attribute__((visibility("hidden")))
 @interface MKPlaceQuickLinksViewController : MKPlaceSectionViewController <MKQuickLinkItemViewDelegate, MKModuleViewControllerProtocol>
@@ -20,15 +20,17 @@ __attribute__((visibility("hidden")))
     UIView *_contentView;
     unsigned long long _maxButtonsPerRow;
     NSArray *_constraints;
-    NSLayoutConstraint *_heightConstraint;
     MKMapItem *_mapItem;
     id <MKPlaceQuickLinksViewControllerDelegate> _delegate;
+    id <_MKInfoCardAnalyticsDelegate> _analyticsDelegate;
 }
 
 + (id)placeQuickLinksViewControllerFor:(id)arg1;
+@property(nonatomic) __weak id <_MKInfoCardAnalyticsDelegate> analyticsDelegate; // @synthesize analyticsDelegate=_analyticsDelegate;
 @property(nonatomic) __weak id <MKPlaceQuickLinksViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 - (void).cxx_destruct;
+- (void)_captureTapActionWithQuickLink:(id)arg1;
 - (void)quickLinkItemViewSelected:(id)arg1;
 - (void)infoCardThemeChanged;
 - (void)viewDidLayoutSubviews;
@@ -37,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)createActionViews;
 - (unsigned long long)maxButtonsPerRow;
 - (void)viewDidLoad;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

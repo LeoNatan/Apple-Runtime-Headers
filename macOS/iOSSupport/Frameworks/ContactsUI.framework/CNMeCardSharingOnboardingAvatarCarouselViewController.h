@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (void)scrollViewDidScroll:(id)arg1;
 @property(readonly, nonatomic) CNMeCardSharingOnboardingAvatarCarouselItem *selectedItem;
 - (id)monogramImageItemWithContact:(id)arg1;
 - (id)contactImageItemWithContact:(id)arg1;
@@ -52,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (id)itemsForNoAnimojiAndNoPhoto;
 - (void)buildItems;
 - (void)viewWillLayoutSubviews;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)initWithContact:(id)arg1 avatarRecord:(id)arg2 logger:(id)arg3;
 

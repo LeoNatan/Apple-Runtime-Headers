@@ -72,6 +72,7 @@
 + (id)hexagonalPixellateFilter;
 + (id)heightFieldFromMaskFilter;
 + (id)gloomFilter;
++ (id)gaborGradientsFilter;
 + (id)edgeWorkFilter;
 + (id)edgesFilter;
 + (id)depthOfFieldFilter;
@@ -92,6 +93,7 @@
 + (id)sunbeamsGeneratorFilter;
 + (id)stripesGeneratorFilter;
 + (id)starShineGeneratorFilter;
++ (id)roundedRectangleGeneratorFilter;
 + (id)randomGeneratorFilter;
 + (id)QRCodeGenerator;
 + (id)PDF417BarcodeGenerator;
@@ -206,8 +208,12 @@
 + (id)straightenFilter;
 + (id)perspectiveTransformWithExtentFilter;
 + (id)perspectiveTransformFilter;
++ (id)perspectiveRotateFilter;
 + (id)perspectiveCorrectionFilter;
 + (id)lanczosScaleTransformFilter;
++ (id)keystoneCorrectionVerticalFilter;
++ (id)keystoneCorrectionHorizontalFilter;
++ (id)keystoneCorrectionCombinedFilter;
 + (id)edgePreserveUpsampleFilter;
 + (id)bicubicScaleTransformFilter;
 + (id)lineScreenFilter;
@@ -224,6 +230,7 @@
 + (id)gaussianGradientFilter;
 + (id)metalFilterWithName:(id)arg1;
 + (id)metalFilterWithName:(id)arg1 withInputParameters:(id)arg2;
++ (int)getMinMaxSimulatedApertureFrom:(struct __CFData *)arg1 minValue:(float *)arg2 maxValue:(float *)arg3 version:(int *)arg4;
 @property(getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *name;
 - (id)apply:(id)arg1;

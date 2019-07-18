@@ -31,7 +31,7 @@
     NSNumber *_includeExpiredMomentSharesNumber;
     NSNumber *_includeFavoriteMemoriesCollectionListNumber;
     NSNumber *_includePlacesSmartAlbumNumber;
-    NSNumber *_includeRecentlySavedSmartAlbumNumber;
+    NSNumber *_includeRecentsSmartAlbumNumber;
     NSNumber *_includeRecentlyEditedSmartAlbumNumber;
     NSNumber *_includeScreenRecordingsSmartAlbumNumber;
     NSNumber *_includeRootFolderNumber;
@@ -91,7 +91,7 @@
 @property(nonatomic) BOOL includeRootFolder;
 @property(nonatomic) BOOL includeScreenRecordingsSmartAlbum;
 @property(nonatomic) BOOL includeRecentlyEditedSmartAlbum;
-@property(nonatomic) BOOL includeRecentlySavedSmartAlbum;
+@property(nonatomic) BOOL includeRecentsSmartAlbum;
 @property(nonatomic) BOOL includePlacesSmartAlbum;
 @property(nonatomic) BOOL includeFavoriteMemoriesCollectionList;
 @property(nonatomic) BOOL includeExpiredMomentShares;

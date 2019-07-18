@@ -6,12 +6,12 @@
 
 #import <SpringBoard/SBToAppsWorkspaceTransaction.h>
 
-@class SBDismissOverlaysAnimationController, SBTransientOverlayDismissToAppsWorkspaceTransaction;
+@class SBDismissOverlaysAnimationController, SBTransientOverlayDismissAllWorkspaceTransaction;
 
 @interface SBCoverSheetToAppsWorkspaceTransaction : SBToAppsWorkspaceTransaction
 {
     SBDismissOverlaysAnimationController *_dismissOverlaysAnimationController;
-    SBTransientOverlayDismissToAppsWorkspaceTransaction *_transientOverlayTransaction;
+    SBTransientOverlayDismissAllWorkspaceTransaction *_transientOverlayTransaction;
     _Bool _preservesBanners;
 }
 

@@ -15,8 +15,10 @@
     id _uuid;
     NSDate *_startTime;
     NSDate *_endTime;
+    unsigned long long _signpostId;
 }
 
+@property unsigned long long signpostId; // @synthesize signpostId=_signpostId;
 @property unsigned char subtype; // @synthesize subtype=_subtype;
 @property unsigned char type; // @synthesize type=_type;
 @property(retain) NSDate *endTime; // @synthesize endTime=_endTime;

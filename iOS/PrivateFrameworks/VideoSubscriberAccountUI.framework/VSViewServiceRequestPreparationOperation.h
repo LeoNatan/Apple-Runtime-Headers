@@ -46,7 +46,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
-- (void)_promptForPrivacyWithDisplayNameIfRequired:(id)arg1 providerID:(id)arg2 allowUI:(_Bool)arg3;
+- (void)_promptForPrivacyWithDisplayNameIfRequired:(id)arg1 providerID:(id)arg2 providerIsSupported:(_Bool)arg3 allowUI:(_Bool)arg4;
 - (void)_determineProviderDisplayNameWithUI:(_Bool)arg1;
 - (void)_checkSupportedProviders;
 - (void)_finishWithSupportedProviders:(id)arg1;

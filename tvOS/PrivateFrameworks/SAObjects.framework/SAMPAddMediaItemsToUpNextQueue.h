@@ -15,6 +15,8 @@
 + (id)addMediaItemsToUpNextQueueWithDictionary:(id)arg1 context:(id)arg2;
 + (id)addMediaItemsToUpNextQueue;
 - (_Bool)requiresResponse;
+@property(copy, nonatomic) NSString *speakerSharedUserId;
+@property(copy, nonatomic) NSString *musicAccountSharedUserId;
 @property(retain, nonatomic) SAMPCollection *mediaCollection;
 @property(copy, nonatomic) NSString *insertLocation;
 @property(copy, nonatomic) NSArray *hashedRouteUIDs;

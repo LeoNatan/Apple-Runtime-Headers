@@ -17,6 +17,7 @@
 }
 
 + (id)initWithActivationCodeOnlyFlow;
++ (id)initWithAppName:(id)arg1 requireSetup:(_Bool)arg2 skipGeneralInstallConsent:(_Bool)arg3;
 + (id)initWithAppName:(id)arg1 requireSetup:(_Bool)arg2;
 + (id)initActivationCodeRequireSetup:(_Bool)arg1;
 + (id)initWithSetupFlowWithIccid:(id)arg1 showAddPlan:(_Bool)arg2;

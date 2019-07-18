@@ -14,6 +14,7 @@
 @interface BiometricKitXPCServer : NSObject <NSXPCListenerDelegate>
 {
     unsigned long long _osStateHandle;
+    NSObject<OS_dispatch_queue> *_xpcConnectionQueue;
     NSMutableSet *_exportedObjects;
     BKCatacomb *_catacomb;
     unsigned int _maxTemplatesPerUser;

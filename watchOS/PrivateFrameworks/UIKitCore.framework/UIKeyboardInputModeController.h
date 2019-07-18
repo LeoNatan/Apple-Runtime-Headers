@@ -26,6 +26,7 @@
     _Bool _loadingExtensions;
     _Bool _needsUpdateExtensions;
     _Bool _suppressCurrentPublicInputMode;
+    _Bool disableFloatingKeyboardFilter;
     _Bool _shouldRunContinuousDiscovery;
     UITextInputMode *_documentInputMode;
     NSArray *keyboardInputModes;
@@ -40,6 +41,8 @@
     UIKeyboardInputMode *_lastUsedInputMode;
     NSString *_inputModeContextIdentifier;
     id <UIKeyboardInputModeControllerDelegate> _delegate;
+    NSArray *_userSelectableKeyboardInputModes;
+    NSArray *_userSelectableKeyboardInputModeIdentifiers;
     UIKeyboardInputMode *_nextInputModeToUse;
     UIKeyboardInputMode *_currentUsedInputMode;
     id _extensionMatchingContext;
@@ -47,14 +50,18 @@
 
 + (id)ASCIICapableInputModeIdentifierForPreferredLanguages;
 + (id)inputModeIdentifierForPreferredLanguages:(id)arg1 passingTest:(CDUnknownBlockType)arg2;
++ (id)hardwareInputModeAutomaticHardwareLayout;
 + (id)sharedInputModeController;
 @property(retain, nonatomic) id extensionMatchingContext; // @synthesize extensionMatchingContext=_extensionMatchingContext;
 @property(retain, nonatomic) UIKeyboardInputMode *currentUsedInputMode; // @synthesize currentUsedInputMode=_currentUsedInputMode;
 @property(retain, nonatomic) UIKeyboardInputMode *nextInputModeToUse; // @synthesize nextInputModeToUse=_nextInputModeToUse;
+@property(retain) NSArray *userSelectableKeyboardInputModeIdentifiers; // @synthesize userSelectableKeyboardInputModeIdentifiers=_userSelectableKeyboardInputModeIdentifiers;
+@property(retain) NSArray *userSelectableKeyboardInputModes; // @synthesize userSelectableKeyboardInputModes=_userSelectableKeyboardInputModes;
 @property(nonatomic) id <UIKeyboardInputModeControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool shouldRunContinuousDiscovery; // @synthesize shouldRunContinuousDiscovery=_shouldRunContinuousDiscovery;
 @property(copy, nonatomic) NSString *inputModeContextIdentifier; // @synthesize inputModeContextIdentifier=_inputModeContextIdentifier;
 @property(retain, nonatomic) UIKeyboardInputMode *lastUsedInputMode; // @synthesize lastUsedInputMode=_lastUsedInputMode;
+@property(nonatomic) _Bool disableFloatingKeyboardFilter; // @synthesize disableFloatingKeyboardFilter;
 @property(retain) NSArray *suggestedInputModesForSiriLanguage; // @synthesize suggestedInputModesForSiriLanguage;
 @property(readonly, nonatomic) NSArray *allowedExtensions; // @synthesize allowedExtensions=_allowedExtensions;
 @property(retain) NSArray *defaultNormalizedInputModes; // @synthesize defaultNormalizedInputModes;
@@ -88,6 +95,7 @@
 - (id)inputModeLastUsedForLanguage:(id)arg1;
 - (id)inputModeIdentifierLastUsedForLanguage:(id)arg1;
 - (id)nextInputModeInPreferenceListForTraits:(id)arg1;
+- (id)nextInputModeInPreferenceListForTraits:(id)arg1 updatePreference:(_Bool)arg2 skipEmoji:(_Bool)arg3;
 - (id)nextInputModeInPreferenceListForTraits:(id)arg1 updatePreference:(_Bool)arg2;
 - (id)nextInputModeToUseForTraits:(id)arg1;
 - (void)clearNextInputModeToUse;
@@ -111,6 +119,7 @@
 - (void)willEnterForeground:(id)arg1;
 - (void)loadSuggestedInputModesForSiriLanguage;
 - (id)suggestedInputModesForPreferredLanguages;
+- (id)suggestedInputModesForLocales:(id)arg1;
 - (id)suggestedInputModesForCurrentLocale;
 - (id)suggestedInputModesForCurrentHardwareKeyboardAndSuggestedInputModes:(id)arg1;
 - (id)suggestedInputModesForHardwareKeyboardLanguage:(id)arg1 countryCode:(id)arg2 inputModes:(id)arg3;
@@ -118,6 +127,10 @@
 - (id)defaultEnabledInputModesForCurrentLocale:(_Bool)arg1;
 - (id)appendPasscodeInputModes:(id)arg1;
 - (void)updateDefaultInputModesIfNecessaryForIdiom;
+- (id)fallbackCurrentInputModeForFilteredInputModeIdentifier:(id)arg1 fromInputModeIdentifiers:(id)arg2;
+- (id)fallbackCurrentInputModeForFilteredInputMode:(id)arg1 fromInputModes:(id)arg2;
+- (id)filteredPadInputModesFromInputModes:(id)arg1;
+- (id)inputModeByReplacingSoftwareLayoutWithSoftwareLayout:(id)arg1 inInputMode:(id)arg2;
 - (id)filteredTVInputModesFromInputModes:(id)arg1;
 - (id)filteredInputModesForSiriLanguageFromInputModes:(id)arg1;
 - (_Bool)currentLocaleRequiresExtendedSetup;
@@ -145,6 +158,8 @@
 - (id)_systemInputModePassingLanguageTest:(CDUnknownBlockType)arg1;
 - (id)_systemInputModePassingTest:(CDUnknownBlockType)arg1;
 @property(nonatomic) UIKeyboardInputMode *currentInputModeInPreference;
+@property(readonly) NSArray *activeUserSelectableInputModeIdentifiers;
+- (id)activeUserSelectableInputModes;
 @property(readonly) NSArray *activeInputModeIdentifiers;
 - (id)activeInputModes;
 - (id)inputModeWithIdentifier:(id)arg1;
@@ -156,6 +171,9 @@
 @property(readonly) NSArray *enabledInputModeLanguages;
 @property(readonly) NSArray *normalizedEnabledInputModeIdentifiers;
 @property(readonly) NSArray *enabledInputModeIdentifiers;
+- (void)updateUserSelectableInputModes;
+- (id)userSelectableInputModeIdentifiersFromInputModeIdentifiers:(id)arg1;
+- (id)userSelectableInputModesFromInputModes:(id)arg1;
 - (id)enabledInputModeIdentifiers:(_Bool)arg1;
 - (void)saveDeviceUnlockPasscodeInputModes;
 @property(readonly) NSArray *inputModesWithoutHardwareSupport;

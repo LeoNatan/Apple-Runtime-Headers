@@ -31,6 +31,7 @@
 - (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2;
 - (void)getSectionInfoForActiveSectionsWithCompletion:(CDUnknownBlockType)arg1;
+- (id)allSectionIDs;
 - (id)activeSectionInfo;
 - (void)getEffectiveSectionInfoForSectionID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)getSectionInfoForSectionID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

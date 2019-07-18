@@ -11,8 +11,8 @@
 }
 
 + (id)sharedDecoder;
-- (void)cancelDecodeRequestForID:(unsigned long long)arg1;
-- (unsigned long long)decodeImageFromData:(id)arg1 orFileURL:(id)arg2 maxSideLength:(long long)arg3 resizeMode:(long long)arg4 applyOrientationTransform:(_Bool)arg5 optimizeForDrawing:(_Bool)arg6 highPriority:(_Bool)arg7 waitUntilComplete:(_Bool)arg8 completion:(CDUnknownBlockType)arg9;
+- (void)cancelInFlightAsyncDecodeForRequestHandle:(id)arg1;
+- (id)decodeImageFromData:(id)arg1 orFileURL:(id)arg2 maxSideLength:(long long)arg3 resizeMode:(long long)arg4 applyOrientationTransform:(_Bool)arg5 optimizeForDrawing:(_Bool)arg6 highPriority:(_Bool)arg7 waitUntilComplete:(_Bool)arg8 completion:(CDUnknownBlockType)arg9;
 - (id)init;
 
 @end

@@ -27,6 +27,7 @@
 - (_Bool)setFireAllEnabled:(_Bool)arg1;
 - (void)setDetectedStateEnabled:(_Bool)arg1;
 - (_Bool)setNightStandMode:(_Bool)arg1 withConfiguration:(int)arg2;
+- (void)forceDetected;
 - (void)simulateGesture:(int)arg1 after:(double)arg2;
 - (_Bool)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
 - (void)stopWakeGestureUpdates;

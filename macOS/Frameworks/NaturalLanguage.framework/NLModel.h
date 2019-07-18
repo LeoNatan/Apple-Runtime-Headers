@@ -35,7 +35,9 @@
 - (id)gazetteer;
 - (id)documentFrequencyMap;
 - (id)vocabularyMap;
+- (id)labelArray;
 - (id)labelMap;
+- (unsigned long long)systemVersion;
 - (id)mlModel;
 @property(readonly, copy) NLModelConfiguration *configuration;
 - (BOOL)writeMLModelToURL:(id)arg1 atomically:(BOOL)arg2 error:(id *)arg3;

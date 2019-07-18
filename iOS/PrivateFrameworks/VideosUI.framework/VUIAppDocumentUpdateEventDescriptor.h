@@ -14,6 +14,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _type;
 }
 
++ (id)locationAuthorizationChanged;
++ (id)appRefresh;
 + (id)clearPlayHistory;
 + (id)playHistoryUpdated;
 + (id)appDidBecomeActive;

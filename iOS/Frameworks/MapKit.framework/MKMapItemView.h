@@ -6,12 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-@class MKMapItem, MKMapSnapshotView, MKMuninContainerView, NSError, NSLayoutConstraint, NSMutableArray, NSObject, NSTimer;
+#import <MapKit/MKInfoCardThemeListener-Protocol.h>
+
+@class MKMapItem, MKMapSnapshotView, MKMuninContainerView, NSError, NSLayoutConstraint, NSMutableArray, NSObject, NSString, NSTimer;
 @protocol OS_dispatch_group;
 
-@interface MKMapItemView : UIView
+@interface MKMapItemView : UIView <MKInfoCardThemeListener>
 {
-    NSObject<OS_dispatch_group> *_muninSnapshotDispatchGroup;
+    NSObject<OS_dispatch_group> *_renderDispatchGroup;
     MKMuninContainerView *_muninContainerView;
     NSMutableArray *_muninConstraints;
     MKMapSnapshotView *_snapshotView;
@@ -23,10 +25,14 @@
     NSTimer *_loadTimeoutTimer;
     struct CGSize _sizeWhenLastLoaded;
     _Bool _loadCalledOnce;
+    unsigned long long _signpostID;
+    _Bool _loadingMuninView;
     _Bool _shouldResolveMapItem;
+    _Bool _shouldShowBorders;
     MKMapItem *_mapItem;
 }
 
+@property(nonatomic) _Bool shouldShowBorders; // @synthesize shouldShowBorders=_shouldShowBorders;
 @property(readonly, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) _Bool shouldResolveMapItem; // @synthesize shouldResolveMapItem=_shouldResolveMapItem;
 - (void).cxx_destruct;
@@ -35,6 +41,7 @@
 - (void)_resetMuninContainerViewState;
 - (void)_resetState;
 - (void)cancel;
+- (void)cancelSnapshot;
 - (void)_cropImage;
 - (void)_callCompletionHandler;
 - (void)_renderMapItem;
@@ -58,7 +65,15 @@
 - (void)_getParentItem;
 - (CDStruct_c3b9c2ee)_clampCoordinateSpan:(CDStruct_c3b9c2ee)arg1;
 - (void)loadMapItem:(id)arg1 coordinateSpan:(CDStruct_c3b9c2ee)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_updateBorders;
+- (void)infoCardThemeChanged;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

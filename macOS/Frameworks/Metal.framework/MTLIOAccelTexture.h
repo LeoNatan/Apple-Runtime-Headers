@@ -16,6 +16,7 @@
     unsigned long long _parentRelativeSlice;
     MTLIOAccelBuffer *_buffer;
     unsigned int _swizzle;
+    BOOL _writeSwizzleEnabled;
     MTLIOAccelBuffer *_masterBuffer;
     struct __IOSurface *_iosurface;
     unsigned long long _iosurfacePlane;

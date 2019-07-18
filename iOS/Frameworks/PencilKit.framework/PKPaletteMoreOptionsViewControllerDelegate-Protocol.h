@@ -9,8 +9,6 @@
 @class PKPaletteMoreOptionsViewController;
 
 @protocol PKPaletteMoreOptionsViewControllerDelegate <NSObject>
-- (void)moreOptionsViewController:(PKPaletteMoreOptionsViewController *)arg1 didSelectShapeWithType:(long long)arg2;
-- (void)moreOptionsViewControllerDidTapOpacityOption:(PKPaletteMoreOptionsViewController *)arg1;
 - (void)moreOptionsViewControllerDidToggleAutoHide:(PKPaletteMoreOptionsViewController *)arg1;
 @end
 

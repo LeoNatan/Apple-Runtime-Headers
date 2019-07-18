@@ -12,7 +12,6 @@
 
 @interface FCPaidBundleConfiguration : NSObject <NSCopying>
 {
-    int _minimumReadIssuesInMyMagazines;
     NSDictionary *_configDict;
     NSString *_storefrontID;
     NSString *_localizedStorefrontID;
@@ -38,13 +37,16 @@
 @property(readonly, copy, nonatomic) NSString *localizedStorefrontID; // @synthesize localizedStorefrontID=_localizedStorefrontID;
 @property(readonly, copy, nonatomic) NSString *storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(retain, nonatomic) NSDictionary *configDict; // @synthesize configDict=_configDict;
-@property(readonly, nonatomic) int minimumReadIssuesInMyMagazines; // @synthesize minimumReadIssuesInMyMagazines=_minimumReadIssuesInMyMagazines;
 - (void).cxx_destruct;
 - (id)defaultMagazineGenres;
 - (id)defaultSubscriptionButtonConfigs;
 - (id)defaultPaywallConfigs;
+@property(readonly, nonatomic) long long minimumPagesInPDFIssueBeforeRead;
+@property(readonly, nonatomic) long long minimumArticlesInANFIssueBeforeRead;
+@property(readonly, nonatomic) long long minimumReadIssuesInMyMagazines;
 @property(readonly, nonatomic) long long recentIssuesMaxAge;
 @property(readonly, nonatomic, getter=isCategoriesDownloadButtonEnabled) BOOL categoriesDownloadButtonEnabled;
+@property(readonly, nonatomic) long long entitlementsCacheExpiredGracePeriodInSeconds;
 @property(readonly, nonatomic) long long entitlementsGracePeriodInSeconds;
 @property(readonly, nonatomic) NSArray *groupWhitelistedTagIds;
 @property(readonly, nonatomic) long long criticalStorageAutomaticIssueDownloadTTL;
@@ -81,6 +83,7 @@
 @property(readonly, nonatomic) NSString *endOfPurchaseFamilySharingSetupArticleID;
 @property(readonly, nonatomic) NSString *familySharingLandingPageArticleID;
 @property(readonly, nonatomic) NSString *defaultLandingPageArticleID;
+@property(readonly, nonatomic, getter=isFamilySharingSetupEnabled) BOOL familySharingSetupEnabled;
 @property(readonly, nonatomic, getter=isSharingIssuesEnabled) BOOL sharingIssuesEnabled;
 @property(readonly, nonatomic, getter=isTemporaryAccessEnabled) BOOL temporaryAccessEnabled;
 @property(readonly, nonatomic, getter=isPaidBundleVisible) BOOL paidBundleVisible;

@@ -215,6 +215,7 @@
 @property(readonly, nonatomic) float dividerHeight;
 @property(readonly, nonatomic) _Bool detailsSeperatorsFollowLayoutMargins;
 @property(readonly, nonatomic) _Bool shouldAnimateGifsInPhotoGrid;
+@property(readonly, nonatomic) NSString *entryViewAppButtonName;
 @property(readonly, nonatomic) NSString *entryViewPhotoButtonName;
 @property(readonly, nonatomic) NSString *entryViewArrowButtonName;
 @property(readonly, nonatomic) NSString *entryViewAudioButtonName;
@@ -527,6 +528,7 @@
 @property(readonly, nonatomic) float conversationListCellRightMargin;
 @property(readonly, nonatomic) float conversationListCellLargeTextLeftMargin;
 @property(readonly, nonatomic) float conversationListCellLeftMargin;
+@property(readonly, nonatomic) float conversationListComposeButtonSpacing;
 @property(readonly, nonatomic) struct UIEdgeInsets conversationListFilterSegmentInset;
 @property(readonly, nonatomic) float conversationListEditingTableMarginWidth;
 @property(readonly, nonatomic) float conversationListTableMarginWidth;
@@ -579,7 +581,6 @@
 - (float)navigationBarCollapsedHeightValue;
 @property(readonly, nonatomic) float navigationBarMaxHeight;
 - (_Bool)_isVerticallyCompact;
-- (id)disabledNavigationBarImageWithGlyph:(id)arg1;
 @property(readonly, nonatomic) UIImage *disabledFacetimeVideoImage;
 @property(readonly, nonatomic) UIImage *disabledFacetimeAudioImage;
 - (id)imageNamed:(id)arg1 pointSize:(float)arg2 insets:(struct UIEdgeInsets)arg3;
@@ -629,6 +630,8 @@
 @property(readonly, nonatomic) double muteEightHourTimeInterval;
 @property(readonly, nonatomic) double muteOneHourTimeInterval;
 @property(readonly, nonatomic) CKUITheme *theme;
+- (float)adjustedLeadingMargin:(float)arg1 isRTL:(_Bool)arg2;
+- (_Bool)shouldShowAvatarForWidth:(float)arg1;
 
 @end
 

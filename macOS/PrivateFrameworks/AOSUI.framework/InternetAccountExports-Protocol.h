@@ -6,14 +6,18 @@
 
 #import <AOSUI/JSExport-Protocol.h>
 
-@class JSValue, NSArray, NSDictionary, NSString;
+@class JSValue, NSArray, NSDictionary, NSNumber, NSString;
 
 @protocol InternetAccountExports <JSExport>
+@property(readonly, nonatomic) NSString *numberOfDaysSinceIMExit;
+@property(readonly, nonatomic) NSNumber *isIMChangingEnabledState;
+@property(readonly, nonatomic) NSNumber *isIMEnabled;
 @property(readonly, nonatomic) NSDictionary *workflow;
 @property(retain, nonatomic, getter=icaButtonBar, setter=icaSetButtonBar:) JSValue *buttonBar;
 @property(readonly, nonatomic) NSDictionary *account;
 @property(readonly, nonatomic) NSDictionary *environment;
 @property(readonly, nonatomic) unsigned long long protocolVersion;
+- (void)setIMEnabled:(BOOL)arg1;
 - (void)refreshFamilyCircle;
 - (void)refreshPage;
 - (void)getIcon:(NSString *)arg1 bundleIconName:(NSString *)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 callback:(JSValue *)arg5;
@@ -76,6 +80,7 @@
 - (void)log:(NSString *)arg1 message:(NSString *)arg2;
 
 @optional
+- (void)setIMEnabled:(BOOL)arg1 __JS_EXPORT_AS__setIMEnabled:(id)arg2;
 - (void)getIcon:(NSString *)arg1 bundleIconName:(NSString *)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 callback:(JSValue *)arg5 __JS_EXPORT_AS__getIcon:(id)arg6;
 - (void)selectFile:(NSString *)arg1 inFolder:(NSString *)arg2 __JS_EXPORT_AS__selectFile:(id)arg3;
 - (void)openPrefPane:(NSString *)arg1 userInfo:(NSDictionary *)arg2 __JS_EXPORT_AS__openPrefPane:(id)arg3;

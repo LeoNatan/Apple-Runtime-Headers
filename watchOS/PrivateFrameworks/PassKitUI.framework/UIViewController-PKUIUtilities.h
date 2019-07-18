@@ -10,6 +10,9 @@
 - (void)pkui_setNeedsNavigationBarUpdate;
 - (_Bool)pkui_disablesAutomaticDismissalUponEnteringBackground;
 - (id)pkui_frontMostViewController;
+- (void)_pk_presentViewController:(id)arg1 animated:(_Bool)arg2 transition:(int)arg3 popToViewControllerAfterPresentation:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)pk_presentViewController:(id)arg1 transition:(int)arg2 popToViewControllerAfterPresentation:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)pk_presentViewController:(id)arg1 animated:(_Bool)arg2 popToViewControllerAfterPresentation:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)pk_paymentSetupPreflight:(CDUnknownBlockType)arg1;
 - (void)pk_paymentSetupSetHideSetupLaterButton:(_Bool)arg1;
 - (void)pk_applyAppearance:(id)arg1;

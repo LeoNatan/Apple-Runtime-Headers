@@ -8,16 +8,17 @@
 
 @interface AVAudioHardwareAddress : NSObject
 {
+    unsigned int _scope;
     unsigned long long _selector;
-    unsigned long long _scope;
     unsigned long long _element;
 }
 
 @property(readonly, nonatomic) unsigned long long element; // @synthesize element=_element;
-@property(readonly, nonatomic) unsigned long long scope; // @synthesize scope=_scope;
+@property(readonly, nonatomic) unsigned int scope; // @synthesize scope=_scope;
 @property(readonly, nonatomic) unsigned long long selector; // @synthesize selector=_selector;
-- (id)initWithSelector:(unsigned long long)arg1 scope:(unsigned long long)arg2 element:(unsigned long long)arg3;
-- (id)initWithSelector:(unsigned long long)arg1 scope:(unsigned long long)arg2;
+- (id)description;
+- (id)initWithSelector:(unsigned long long)arg1 scope:(unsigned int)arg2 element:(unsigned long long)arg3;
+- (id)initWithSelector:(unsigned long long)arg1 scope:(unsigned int)arg2;
 - (id)initWithSelector:(unsigned long long)arg1;
 - (id)init;
 

@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
 - (unsigned long long)autosizeFlagsForTextLayout:(id)arg1;
+- (_Bool)descendersCannotClip;
 - (_Bool)shouldProvideSizingGuides;
 - (Class)repClassOverride;
 - (id)computeLayoutGeometry;

@@ -8,7 +8,7 @@
 
 #import <MLFoundation/MLFoundationLayerCompiling-Protocol.h>
 
-@class MLFoundationTensor;
+@class MLFoundationTensor, NSString;
 
 @interface MLFoundationBatchNormalizationLayer : MLFoundationLayer <MLFoundationLayerCompiling>
 {
@@ -26,14 +26,18 @@
 @property(readonly, nonatomic) MLFoundationTensor *beta; // @synthesize beta=_beta;
 @property(readonly, nonatomic) MLFoundationTensor *variance; // @synthesize variance=_variance;
 @property(readonly, nonatomic) MLFoundationTensor *mean; // @synthesize mean=_mean;
-@property(readonly, nonatomic) unsigned long long featureChannelCount; // @synthesize featureChannelCount=_featureChannelCount;
 @property(readonly, nonatomic) float varianceEpsilon; // @synthesize varianceEpsilon=_varianceEpsilon;
+@property(readonly, nonatomic) unsigned long long featureChannelCount; // @synthesize featureChannelCount=_featureChannelCount;
 - (void).cxx_destruct;
-- (id)description;
-- (void)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
-- (void)fuseWithNeuronLayer:(id)arg1;
+@property(readonly, copy) NSString *description;
+- (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
 - (id)initWithFeatureChannelCount:(unsigned long long)arg1 mean:(id)arg2 variance:(id)arg3 beta:(id)arg4 gamma:(id)arg5 variance_epsilon:(float)arg6;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

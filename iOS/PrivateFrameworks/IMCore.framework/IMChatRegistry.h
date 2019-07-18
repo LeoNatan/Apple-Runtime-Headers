@@ -102,10 +102,11 @@
 - (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(_Bool)arg2 groupID:(id)arg3 displayName:(id)arg4 ignoresDisplayName:(_Bool)arg5 joinedChatsOnly:(_Bool)arg6;
 - (id)existingChatForAddresses:(id)arg1 allowRetargeting:(_Bool)arg2 bestHandles:(id *)arg3;
 - (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(_Bool)arg2 groupID:(id)arg3;
+- (id)existingChatForIMHandle:(id)arg1 allowRetargeting:(_Bool)arg2 fixChatHandle:(_Bool)arg3;
 - (id)existingChatForIMHandle:(id)arg1 allowRetargeting:(_Bool)arg2;
 - (id)_existingChatFromSiblingsForIMHandle:(id)arg1;
 - (id)_existingChatForIMHandleUsingPersonID:(id)arg1;
-- (id)_existingChatForIMHandle:(id)arg1;
+- (id)_existingChatForIMHandle:(id)arg1 fixChatHandle:(_Bool)arg2;
 - (id)existingConversationForTUConversationUUID:(id)arg1;
 - (id)existingChatForEngramID:(id)arg1;
 - (id)exisitingChatForGroupID:(id)arg1;

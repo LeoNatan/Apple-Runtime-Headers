@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HeartRhythmUI/HROnboardingLeadingAlignedExplanationViewController.h>
+#import <HeartRhythmUI/HROnboardingHeroExplanationViewController.h>
 
 @class HRVideoPlayerView;
 
-@interface HROnboardingAtrialFibrillationWhatIsViewController : HROnboardingLeadingAlignedExplanationViewController
+@interface HROnboardingAtrialFibrillationWhatIsViewController : HROnboardingHeroExplanationViewController
 {
     HRVideoPlayerView *_videoPlayerView;
 }
@@ -20,6 +20,7 @@
 - (id)bodyString;
 - (id)titleString;
 - (id)createHeroView;
+- (void)setUpUI;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (id)initForOnboarding:(_Bool)arg1;

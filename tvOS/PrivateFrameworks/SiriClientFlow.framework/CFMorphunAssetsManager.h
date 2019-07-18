@@ -13,14 +13,17 @@
     NSObject<OS_dispatch_queue> *queue;
 }
 
-+ (void)registerPath:(id)arg1 withLanguage:(id)arg2;
++ (id)sharedMorphunAssetsManager;
 - (void).cxx_destruct;
+- (void)registerPath:(id)arg1 withLanguage:(id)arg2;
 - (id)replaceLanguageCodeFormat:(id)arg1;
+- (void)cancelDownload:(id)arg1;
 - (void)downloadAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)downloadAssets:(id)arg1 language:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)downloadedLocalAsset:(id)arg1 forLanguage:(id)arg2 error:(id *)arg3;
 - (void)downloadMorphunAssetsForAssetType:(id)arg1 forLanguage:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)morphunAssetVersion:(id)arg1 forLanguage:(id)arg2;
+- (id)morphunAssetsPathForLanguage:(id)arg1;
+- (id)morphunAssetsVersion:(id)arg1 forLanguage:(id)arg2;
 - (id)init;
 
 @end

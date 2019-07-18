@@ -6,30 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMapTable, NSTimer, _UISunriseSunsetProvider;
+@class GEOAlmanac, NSMapTable, NSTimer;
 
 __attribute__((visibility("hidden")))
 @interface _UISunScheduleController : NSObject
 {
     NSMapTable *_observers;
-    _UISunriseSunsetProvider *_sunriseSunsetProvider;
-    struct __CFTimeZone *_currentTimeZone;
+    GEOAlmanac *_almanac;
+    _Bool _hasTimeZoneLocation;
+    struct {
+        double latitude;
+        double longitude;
+    } _timeZoneLocation;
     _Bool _inScheduleTime;
     NSTimer *_nextEventTimer;
-    NSDictionary *_sunriseSunsetInfo;
-    _Bool _permitted;
-    _Bool _isDaylight;
     double _sunsetAbsolute;
     double _sunriseAbsolute;
-    CDStruct_cfb9664d _backupSchedule;
 }
 
 - (void).cxx_destruct;
-- (void)_retrieveSunriseSunsetTimesFromBackup:(double)arg1;
-- (void)_updateSunriseSunsetBackup;
-- (void)_updateTransitionTimesFromSunriseSunsetInfoOrBackup;
-- (void)_setSunInfoPermitted:(_Bool)arg1;
-- (void)_updateSunriseSunsetInfo:(id)arg1;
+- (void)_updateSunriseSunsetTimesRelativeTo:(double)arg1;
+- (void)_updateGeoCity;
+- (void)_timeZoneChange;
 - (void)_significantTimeChange;
 - (void)_setNextEventTimerToAbsoluteTime:(double)arg1;
 - (void)_invalidateNextEventTimer;

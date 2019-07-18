@@ -21,6 +21,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)description;
 - (id)initWithIdentifier:(id)arg1 recordClass:(Class)arg2;
 
 @end

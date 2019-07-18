@@ -65,6 +65,7 @@
 + (id)itemWithPreviewItem:(id)arg1;
 + (_Bool)shouldUseRemoteCollection:(id)arg1;
 + (id)contentTypesToPreviewTypes;
++ (_Bool)contentTypeConformsToRTFD:(id)arg1;
 + (id)rtfContentTypes;
 + (id)webContentTypes;
 + (id)supportedContentTypes;

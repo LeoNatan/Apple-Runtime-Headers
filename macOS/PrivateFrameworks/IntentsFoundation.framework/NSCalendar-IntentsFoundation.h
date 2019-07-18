@@ -7,6 +7,6 @@
 #import <Foundation/NSCalendar.h>
 
 @interface NSCalendar (IntentsFoundation)
-+ (id)_inf_currentCalendarWithLanguageCode:(id)arg1;
++ (id)if_currentCalendarWithLanguageCode:(id)arg1;
 @end
 

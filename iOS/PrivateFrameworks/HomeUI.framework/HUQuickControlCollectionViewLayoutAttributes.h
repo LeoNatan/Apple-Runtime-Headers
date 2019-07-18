@@ -9,8 +9,10 @@
 @interface HUQuickControlCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes
 {
     unsigned long long _itemSize;
+    unsigned long long _titlePosition;
 }
 
+@property(nonatomic) unsigned long long titlePosition; // @synthesize titlePosition=_titlePosition;
 @property(nonatomic) unsigned long long itemSize; // @synthesize itemSize=_itemSize;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

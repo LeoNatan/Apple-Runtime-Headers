@@ -8,32 +8,35 @@
 
 #import <VoiceShortcuts/HMHomeManagerDelegate-Protocol.h>
 
-@class HMHomeManager, NSPersistentStoreDescription, NSString, VCCoreDataStore, VCRealmDataStore;
+@class HMHomeManager, NSPersistentStoreDescription, NSString, VCCoreDataStore, VCRealmDataStore, WFDatabase;
 
 @interface VCVoiceShortcutManager : NSObject <HMHomeManagerDelegate>
 {
     VCCoreDataStore *_coreDataStore;
     HMHomeManager *_homeManager;
+    WFDatabase *_database;
     NSPersistentStoreDescription *_storeDescription;
     VCRealmDataStore *_realmDataStore;
 }
 
-+ (void)initialize;
 @property(readonly, nonatomic) VCRealmDataStore *realmDataStore; // @synthesize realmDataStore=_realmDataStore;
 @property(readonly, copy, nonatomic) NSPersistentStoreDescription *storeDescription; // @synthesize storeDescription=_storeDescription;
+@property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
 - (void)requestDataMigrationWithCompletion:(CDUnknownBlockType)arg1;
-- (void)populateBlacklistStatusOnVoiceShortcut:(id)arg1 withAccessSpecifier:(id)arg2;
 - (id)addExtraVocabForDemoIfAppropriate:(id)arg1;
 - (void)requestShortcutsSpotlightFullReindex;
 - (void)updateShortcutsVocabularyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handleAssistantPreferencesChangedNotification;
-- (id)generateSingleUseTokenForWorkflowReference:(id)arg1;
+- (id)generateSingleUseTokenForWorkflowIdentifier:(id)arg1;
 - (void)getShareSheetWorkflowsForTypeIdentifiers:(id)arg1 hostBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateLSDatabaseAnchors;
 - (_Bool)lsDatabaseChangedSinceLastCheck;
 - (void)deleteSuggestionsFromApps:(id)arg1;
 - (void)deleteStaleSuggestions;
+- (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned long long)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)getShortcutSuggestionsForAppWithBundleIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)setShortcutSuggestions:(id)arg1 forAppWithBundleIdentifier:(id)arg2 accessSpecifier:(id)arg3;
 @property(readonly, nonatomic) HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 - (_Bool)phraseHasHomeKitConflict:(id)arg1;
 - (id)sanitizePhrase:(id)arg1;
@@ -47,7 +50,6 @@
 - (void)getVoiceShortcutWithPhrase:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getVoiceShortcutWithIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getNumberOfVoiceShortcutsWithAccessSpecifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)migrateCoreDataVoiceShortcut:(id)arg1 intoDatabase:(id)arg2 error:(id *)arg3;
 - (void)migrateVoiceShortcutsToBeShortcuts;
 @property(readonly, nonatomic) VCCoreDataStore *coreDataStore; // @synthesize coreDataStore=_coreDataStore;
 - (id)coreDataStoreWithError:(id *)arg1;

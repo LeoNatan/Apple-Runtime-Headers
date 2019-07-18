@@ -11,6 +11,7 @@
 }
 
 + (id)logoForMapType:(unsigned long long)arg1 forDarkMode:(BOOL)arg2;
+- (void)setImage:(id)arg1;
 - (id)initForMapType:(unsigned long long)arg1 forDarkMode:(BOOL)arg2;
 
 @end

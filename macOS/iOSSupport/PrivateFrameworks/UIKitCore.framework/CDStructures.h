@@ -35,22 +35,6 @@ struct CAColorMatrix {
     float m45;
 };
 
-struct CAMeshFace {
-    unsigned int _field1[4];
-    float _field2[4];
-};
-
-struct CAMeshVertex {
-    struct CGPoint _field1;
-    struct CAPoint3D _field2;
-};
-
-struct CAPoint3D {
-    double _field1;
-    double _field2;
-    double _field3;
-};
-
 struct CATransform3D {
     double m11;
     double m12;
@@ -282,11 +266,12 @@ struct work_interval_instance {
 
 typedef struct {
     NSMutableSet *keyCommands;
-    NSMutableSet *commandMenus;
+    NSMutableSet *menus;
+    NSMutableDictionary *actions;
     _UICommandIdentifierDictionary *commands;
     NSMutableDictionary *parentMenuIdentifiers;
     _UICommandIdentifierDictionary *commandParentMenuIdentifiers;
-} CDStruct_1628dbfe;
+} CDStruct_5ddd6656;
 
 typedef struct {
     id _field1;
@@ -486,11 +471,12 @@ typedef struct {
     double displayCornerRadius;
     long long legibilityWeight;
     long long semanticContext;
+    long long presentationSemanticContext;
     long long accessibilityContrast;
     long long userInterfaceLevel;
     long long vibrancy;
     long long debugHighlight;
-} CDStruct_8ff49dc2;
+} CDStruct_3a910e36;
 
 typedef struct {
     long long width;

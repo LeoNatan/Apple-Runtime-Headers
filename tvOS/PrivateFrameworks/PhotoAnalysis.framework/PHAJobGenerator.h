@@ -29,7 +29,6 @@
 - (void).cxx_destruct;
 - (id)generateJobWithCurrentConstraints:(id)arg1 workersByType:(id)arg2;
 - (id)initWithHealthMonitor:(id)arg1 library:(id)arg2;
-- (id)_produceAcknowledgeDeletesJobForWorkerType:(short)arg1 scenario:(unsigned long long)arg2 defaultsDisabledKey:(id)arg3 failureReason:(id *)arg4;
 - (id)_produceAssetAnalysisOrAdditionalJobWithForWorkerType:(id)arg1 workInfoReaderMode:(id)arg2 scenario:(unsigned long long)arg3 allowLoadBalanceSkip:(_Bool)arg4 additionalStatesToExclude:(id)arg5 askAboutAdditionalJobs:(_Bool)arg6 canUseNetwork:(_Bool)arg7 defaultsDisabledKey:(id)arg8 failureReason:(id *)arg9;
 - (_Bool)_workerUnavailableForWorkerType:(short)arg1 defaultsDisabledKey:(id)arg2 unavailableReason:(id *)arg3;
 - (id)_transformWorkInfoByUUIDToWorkInfoByLocalIdentifier:(id)arg1;

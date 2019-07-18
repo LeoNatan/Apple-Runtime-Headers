@@ -32,6 +32,8 @@ __attribute__((visibility("hidden")))
 - (id)contentPrivacyDetailText;
 - (void)_showCommunicationLimitsViewController:(id)arg1;
 - (id)_communicationLimitsDetailText;
+- (void)_resetCommunicationLimitsDetailText;
+- (void)_communicationLimitsDidChangeFrom:(id)arg1 to:(id)arg2;
 - (void)_isRemoteUserDidChangeFrom:(_Bool)arg1 to:(_Bool)arg2;
 - (void)_userTypeDidChange:(unsigned long long)arg1;
 - (void)alwaysAllowListController:(id)arg1 didFinishEditingAlwaysAllowList:(id)arg2;

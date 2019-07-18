@@ -15,9 +15,11 @@ __attribute__((visibility("hidden")))
 {
     Class _configuratorClass;
     UIDelayedAction *_delayedLoupeAction;
+    UIDelayedAction *_delayedSelectionAction;
     _Bool _isShiftKeyBeingHeld;
     UITextGestureTuning *_gestureTuning;
     _Bool _hasPerformedInteraction;
+    _Bool _didChangeSelection;
     struct CGPoint _initialPointFromPreviousInteraction;
     _UITextLoupeResponderProxy *_responderProxy;
 }
@@ -27,15 +29,19 @@ __attribute__((visibility("hidden")))
 - (void)_performGestureType:(int)arg1 state:(int)arg2 location:(struct CGPoint)arg3;
 - (void)canBeginDragCursor:(id)arg1;
 - (void)delayedDisplayLoupe:(id)arg1;
+- (void)delayedSelectionAction:(id)arg1;
 - (void)delayedLoupeAction:(id)arg1;
+- (void)cancelDelayedLoupeActionIfNecessary;
 - (void)updateOrCancelDelayedLoupeActionWithPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
+- (_Bool)translationIsWithinAllowableMovement:(struct CGPoint)arg1;
 - (void)setupDelayedLoupeActionWithInitialPoint:(struct CGPoint)arg1;
 - (struct CGPoint)touchAlignedPointForPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
 - (void)updateVisibilityOffsetForGesture:(id)arg1;
 @property(nonatomic) _Bool shouldUseLineThreshold;
-- (void)assertInitialVerticalOffset:(float)arg1;
+- (void)assertInitialVerticalOffset:(float)arg1 fromTopOfCaret:(float)arg2;
 - (void)_createGestureTuningIfNecessary;
 - (struct CGPoint)pointIfPlacedCarefully:(struct CGPoint)arg1;
+- (void)willBeginExternalGesture;
 - (void)loupeGestureWithState:(int)arg1 location:(CDUnknownBlockType)arg2 translation:(CDUnknownBlockType)arg3 velocity:(CDUnknownBlockType)arg4 modifierFlags:(int)arg5 shouldCancel:(_Bool *)arg6;
 - (void)_processGestureForCustomHighlighter:(id)arg1;
 - (void)loupeGesture:(id)arg1;
@@ -45,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)updateInitialPoint:(struct CGPoint)arg1;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 @property(readonly, nonatomic) UIResponder *responder;
+- (void)didMoveToView:(id)arg1;
 - (id)initWithConfigurator:(Class)arg1;
 
 @end

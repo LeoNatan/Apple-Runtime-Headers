@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)adjustBackgroundIfNecessary;
 - (void)disableVibrancyDidChange:(id)arg1;
+@property(nonatomic) BOOL clear;
 - (BOOL)wantsDefaultClipping;
 - (BOOL)wantsLayer;
 - (id)initWithFrame:(struct CGRect)arg1;

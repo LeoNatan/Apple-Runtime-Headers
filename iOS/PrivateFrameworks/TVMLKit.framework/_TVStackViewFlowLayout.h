@@ -15,10 +15,12 @@
     struct {
         _Bool hasShowcaseFactorDidChange;
     } _stackViewDelegateFlowLayoutFlags;
+    NSArray *_oldSectionCellLayoutAttributes;
     IKChangeSet *_changeSet;
     NSIndexSet *_indexesAddedAtEnd;
     struct CGPoint _initialContentOffset;
     _Bool _isFullReplace;
+    double _lastLayoutWidth;
     long long _supplementaryCellSection;
     NSArray *_supplementaryCellLayoutAttributes;
     CDUnknownBlockType _onPrepareLayout;
@@ -40,6 +42,7 @@
 - (void).cxx_destruct;
 - (double)_computeShowcaseFactorForContentOffset:(struct CGPoint)arg1;
 - (void)_prepareSectionMetrics;
+- (id)_oldLayoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (id)initialLayoutAttributesForAppearingItemAtIndexPath:(id)arg1;
 - (void)finalizeCollectionViewUpdates;

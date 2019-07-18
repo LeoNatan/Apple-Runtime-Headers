@@ -77,6 +77,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)_isForSelf:(id)arg1;
 - (void)startTransition:(id)arg1 withInfo:(id)arg2;
 - (void)placementNeedsUpdate:(id)arg1;
+- (void)finishSplitTransition;
+- (void)prepareForSplitTransition;
 - (void)_fillInNotificationInfo:(id)arg1 forDismissMode:(unsigned int)arg2;
 - (id)constructNotificationInfoForScrollWithMode:(unsigned int)arg1;
 - (void)setInterfaceAutorotationDisabled:(_Bool)arg1;

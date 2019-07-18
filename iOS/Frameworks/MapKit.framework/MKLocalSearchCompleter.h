@@ -6,8 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class CLLocation, GEOClientRankingModel, GEOMapServiceTraits, GEORetainedSearchMetadata, GEOSearchCategory, GEOSortPriorityMapping, MKLocalSearchCompletion, MKPointOfInterestFilter, NSArray, NSString, NSTimer;
-@protocol GEOMapServiceCompletionTicket, MKAutocompleteAnalyticsProvider, MKLocalSearchCompleterDelegate, MKLocationManagerOperation;
+@class CLLocation, GEOClientRankingModel, GEOMapServiceTraits, GEORetainedSearchMetadata, GEOSearchCategory, GEOSortPriorityMapping, MKLocalSearchCompletion, MKPointOfInterestFilter, NSArray, NSMutableArray, NSString, NSTimer;
+@protocol MKAutocompleteAnalyticsProvider, MKLocalSearchCompleterDelegate, MKLocationManagerOperation;
 
 @interface MKLocalSearchCompleter : NSObject
 {
@@ -31,10 +31,12 @@
     GEOClientRankingModel *_clientRankingModel;
     GEOSortPriorityMapping *_sortPriorityMapping;
     NSTimer *_timer;
-    id <GEOMapServiceCompletionTicket> _ticket;
     int _source;
     id <MKLocationManagerOperation> _singleLocationUpdate;
     GEOMapServiceTraits *_traits;
+    unsigned long long _maxNumberOfConcurrentRequests;
+    NSMutableArray *_inFlightTickets;
+    NSMutableArray *_pendingTickets;
     _Bool _shouldDisplayNoResults;
     _Bool _autocompleteTopSectionIsQuerySuggestions;
     _Bool _showAutocompleteClientSource;

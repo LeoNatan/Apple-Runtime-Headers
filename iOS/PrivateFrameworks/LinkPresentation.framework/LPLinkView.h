@@ -9,12 +9,13 @@
 #import <LinkPresentation/CAAnimationDelegate-Protocol.h>
 #import <LinkPresentation/LPTapToLoadViewDelegate-Protocol.h>
 #import <LinkPresentation/LPThemeClient-Protocol.h>
+#import <LinkPresentation/UIContextMenuInteractionDelegate-Protocol.h>
 #import <LinkPresentation/UIGestureRecognizerDelegate-Protocol.h>
 
-@class LPAnimationMaskView, LPCaptionBarPresentationProperties, LPCaptionButtonPresentationProperties, LPImage, LPImagePresentationProperties, LPInlineMediaPlaybackInformation, LPLinkMetadata, LPLinkViewComponents, LPTheme, LPVideo, NSArray, NSHashTable, NSMutableArray, NSString, NSURL, UIColor;
+@class LPAnimationMaskView, LPCaptionBarPresentationProperties, LPCaptionButtonPresentationProperties, LPImage, LPImagePresentationProperties, LPInlineMediaPlaybackInformation, LPLinkMetadata, LPLinkViewComponents, LPTheme, LPVideo, NSArray, NSHashTable, NSMutableArray, NSString, NSURL, UIColor, UIContextMenuInteraction;
 @protocol LPLinkViewDelegate;
 
-@interface LPLinkView : UIView <UIGestureRecognizerDelegate, CAAnimationDelegate, LPTapToLoadViewDelegate, LPThemeClient>
+@interface LPLinkView : UIView <UIContextMenuInteractionDelegate, UIGestureRecognizerDelegate, CAAnimationDelegate, LPTapToLoadViewDelegate, LPThemeClient>
 {
     unsigned int _loggingID;
     NSHashTable *_pendingMetadataProviders;
@@ -45,12 +46,14 @@
     UIView *_contentView;
     UIView *_animationView;
     LPAnimationMaskView *_animationMaskView;
+    UIContextMenuInteraction *_contextMenuInteraction;
     _Bool _hasEverBuilt;
     _Bool _needsRebuild;
     _Bool _usesDeferredLayout;
     _Bool _shouldAnimateDuringNextBuild;
     _Bool _hasValidPresentationProperties;
     _Bool _hasSetDisableHighlightGesture;
+    _Bool _hasSetDisablePreviewGesture;
     _Bool _mayReceiveAdditionalMetadata;
     _Bool _usesComputedPresentationProperties;
     _Bool _asynchronouslyLoadingMetadataFields;
@@ -59,6 +62,7 @@
     _Bool _needsMessagesTranscriptPushCounterAnimation;
     _Bool _disableTapGesture;
     _Bool _disableHighlightGesture;
+    _Bool _disablePreviewGesture;
     _Bool _disableAutoPlay;
     _Bool _disablePlayback;
     _Bool _disablePlaybackControls;
@@ -92,10 +96,14 @@
 @property(nonatomic, setter=_setNeedsMessagesTranscriptPushCounterAnimation:) _Bool _needsMessagesTranscriptPushCounterAnimation; // @synthesize _needsMessagesTranscriptPushCounterAnimation;
 @property(nonatomic, setter=_setDisableAnimations:) _Bool _disableAnimations; // @synthesize _disableAnimations;
 - (void).cxx_destruct;
-- (void)_setupInteraction;
+- (void)contextMenuInteractionWillPresent:(id)arg1;
+- (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
+- (void)_uninstallPreviewGestureRecognizer;
+- (void)_installPreviewGestureRecognizer;
 - (void)tapToLoadViewWasTapped:(id)arg1;
 - (void)_tapRecognized:(id)arg1;
 - (void)_highlightRecognized:(id)arg1;
+- (void)_cancelActiveHighlight;
 - (void)_didScroll;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
@@ -103,6 +111,7 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_addHighlightRecognizerToView:(id)arg1;
 - (void)_addTapRecognizerToView:(id)arg1;
+@property(nonatomic, setter=_setDisablePreviewGesture:) _Bool _disablePreviewGesture; // @synthesize _disablePreviewGesture;
 @property(nonatomic, setter=_setDisableHighlightGesture:) _Bool _disableHighlightGesture; // @synthesize _disableHighlightGesture;
 - (void)_rebuildGestureRecognizersIfNeeded;
 - (void)_uninstallTapGestureRecognizers;

@@ -20,6 +20,7 @@
 @interface WFActionDrawerViewController : UIViewController <UISearchBarDelegate, WFActionDrawerResultsViewControllerDelegate, WFActionDrawerSuggestionsViewControllerDelegate, WFActionDrawerSearchResultsViewControllerDelegate, WFActionDrawerStateRepresentable, WFActionDrawerStateConfigurable, WFDragControllerDelegate>
 {
     BOOL _scrollsToTop;
+    BOOL _requiresOpaqueBackground;
     WFActionDrawerSearchResultsViewController *_searchResultsViewController;
     WFActionDrawerResultsController *_actionDrawerResultsController;
     id <WFActionDrawerViewControllerDelegate> _delegate;
@@ -45,6 +46,7 @@
 @property(nonatomic) __weak UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) __weak UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
 @property(nonatomic) double bottomContentInset; // @synthesize bottomContentInset=_bottomContentInset;
+@property(nonatomic) BOOL requiresOpaqueBackground; // @synthesize requiresOpaqueBackground=_requiresOpaqueBackground;
 @property(nonatomic) BOOL scrollsToTop; // @synthesize scrollsToTop=_scrollsToTop;
 @property(copy, nonatomic) NSSet *siriSuggestionBundleIdentifiers; // @synthesize siriSuggestionBundleIdentifiers=_siriSuggestionBundleIdentifiers;
 @property(retain, nonatomic) WFActionDrawerResults *siriSuggestionResults; // @synthesize siriSuggestionResults=_siriSuggestionResults;
@@ -57,6 +59,7 @@
 - (void)suggestionsViewController:(id)arg1 didSelectCategoryForContentType:(id)arg2;
 - (void)suggestionsViewControllerViewControllerDidSelectCategoryScripting:(id)arg1 title:(id)arg2;
 - (void)suggestionsViewControllerDidSelectCategoryFavorites:(id)arg1 title:(id)arg2;
+- (void)suggestionsViewControllerDidSelectCategoryApps:(id)arg1 title:(id)arg2;
 - (void)suggestionsViewController:(id)arg1 didSelectDocumentationForAction:(id)arg2 fromView:(id)arg3;
 - (void)suggestionsViewController:(id)arg1 didSelectAction:(id)arg2;
 - (void)searchResultsViewController:(id)arg1 didSelectDocumentationForAction:(id)arg2 fromView:(id)arg3;
@@ -80,6 +83,7 @@
 - (void)updateForActionAdded;
 - (void)startSearching;
 - (void)populateSuggestionsUsingWorkflow:(id)arg1;
+- (void)updateBackgroundColor;
 - (void)transitionToChildViewController:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

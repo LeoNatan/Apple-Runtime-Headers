@@ -6,11 +6,12 @@
 
 #import <Widgets/NSObject-Protocol.h>
 
-@class WGWidgetListEditViewController;
+@class UITraitCollection, WGWidgetListEditViewController;
 
 @protocol WGWidgetListEditViewControllerDelegate <NSObject>
 
 @optional
+- (void)widgetEditListViewController:(WGWidgetListEditViewController *)arg1 traitCollectionDidChange:(UITraitCollection *)arg2;
 - (void)dismissWidgetListEditViewController:(WGWidgetListEditViewController *)arg1 animated:(_Bool)arg2 withCompletion:(void (^)(void))arg3;
 @end
 

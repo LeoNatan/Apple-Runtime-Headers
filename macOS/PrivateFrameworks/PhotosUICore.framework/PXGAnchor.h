@@ -20,6 +20,7 @@
     BOOL _needsUpdate;
     BOOL _autoInvalidated;
     id <PXGAnchorDelegate> _delegate;
+    id _context;
     PXGLayout *_layout;
     long long _type;
     long long _priority;
@@ -52,6 +53,7 @@
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) __weak PXGLayout *layout; // @synthesize layout=_layout;
+@property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(nonatomic) __weak id <PXGAnchorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;

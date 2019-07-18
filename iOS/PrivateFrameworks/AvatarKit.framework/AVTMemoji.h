@@ -10,7 +10,6 @@
 
 @interface AVTMemoji : AVTAvatar
 {
-    struct UIColor *_lipsColor;
     struct UIColor *_backgroundColor;
     _Bool _ignoreRigsDidChange;
     _Bool _needsUpdate;
@@ -20,13 +19,13 @@
     SCNNode *_eyesAndMouth;
     SCNMaterial *_eyeMaterial;
     NSDictionary *_eyesAndMouthSpecializationSettings;
-    AVTComponent *_components[27];
+    AVTComponent *_components[28];
     AVTRig *_rigs[15];
     NSString *_faceMorphVariants[7];
-    AVTPreset *_presets[31];
-    AVTPreset *_resolvedPresets[31];
-    _Bool _hasPresetDependency[31];
-    AVTColorPreset *_colorPresets[31][3];
+    AVTPreset *_presets[32];
+    AVTPreset *_resolvedPresets[32];
+    _Bool _hasPresetDependency[32];
+    AVTColorPreset *_colorPresets[32][3];
     double _browsThickness;
     double _upperLipThickness;
     double _lowerLipThickness;
@@ -42,7 +41,7 @@
     _Bool _hairPhysicsDisabled;
     NSString *_currentHatVariant;
     AVTMemojiSkeleton *_skeleton;
-    AVTComponentInstance *_componentInstances[27];
+    AVTComponentInstance *_componentInstances[28];
     NSDictionary *_specializationSettings;
 }
 
@@ -106,8 +105,6 @@
 - (double)browsThickness;
 - (void)setMorphVariant:(id)arg1 forFacialFeature:(long long)arg2;
 - (id)morphVariantForFacialFeature:(long long)arg1;
-- (id)morphVariantsForFacialFeature:(long long)arg1;
-- (id)_morphVariantsWithComponentType:(long long)arg1 containingName:(id)arg2;
 - (id)rigWithType:(long long)arg1;
 - (id)rigs;
 - (_Bool)usesSkinningForEyeOrientation;
@@ -131,9 +128,8 @@
 - (void)_applyColorPreset:(long long)arg1;
 - (void)setBackgroundColor:(struct UIColor *)arg1;
 - (struct UIColor *)backgroundColor;
-- (void)setLipsColor:(struct UIColor *)arg1;
-- (struct UIColor *)lipsColor;
 - (void)_invalidateAOImage;
+- (struct UIColor *)lipsColor;
 - (struct UIColor *)facialhairColor;
 - (struct UIColor *)eyebrowsColor;
 - (struct UIColor *)hairColor;

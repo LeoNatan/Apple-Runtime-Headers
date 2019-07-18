@@ -12,7 +12,7 @@
 #import <ContactsUI/UITableViewDataSource-Protocol.h>
 #import <ContactsUI/UITableViewDelegate-Protocol.h>
 
-@class CNContact, CNContactImage, CNContactStore, CNMeCardSharingAudienceDataSource, CNMeCardSharingAvatarViewController, CNMeCardSharingEnabledDataSource, CNMeCardSharingHeaderViewController, CNMeCardSharingNameDataSource, CNMeCardSharingPickerLayoutAttributes, CNMutableContact, CNPhotoPickerViewController, NSArray, NSString, OBBoldTrayButton, OBLinkTrayButton, UISwitch, UITableView, UIView;
+@class CNContact, CNContactImage, CNContactStore, CNMeCardSharingAudienceDataSource, CNMeCardSharingAvatarViewController, CNMeCardSharingEnabledDataSource, CNMeCardSharingHeaderViewController, CNMeCardSharingPickerLayoutAttributes, CNMutableContact, CNPhotoPickerViewController, NSArray, NSString, OBBoldTrayButton, OBLinkTrayButton, UISwitch, UITableView, UIView;
 @protocol CNMeCardSharingAvatarProvider, CNMeCardSharingPickerViewControllerDelegate;
 
 @interface CNMeCardSharingPickerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CNMeCardSharingAvatarViewControllerDelegate, CNMeCardSharingEnabledDelegate, CNPhotoPickerViewControllerDelegate>
@@ -30,7 +30,6 @@
     CNMeCardSharingAvatarViewController *_avatarViewController;
     CNMeCardSharingEnabledDataSource *_enabledDataSource;
     CNMeCardSharingAudienceDataSource *_sharingAudienceDataSource;
-    CNMeCardSharingNameDataSource *_nameDataSource;
     CNMeCardSharingPickerLayoutAttributes *_layoutAttributes;
     CNPhotoPickerViewController *_photoPicker;
     NSArray *_sectionDataSources;
@@ -50,7 +49,6 @@
 @property(retain, nonatomic) NSArray *sectionDataSources; // @synthesize sectionDataSources=_sectionDataSources;
 @property(retain, nonatomic) CNPhotoPickerViewController *photoPicker; // @synthesize photoPicker=_photoPicker;
 @property(retain, nonatomic) CNMeCardSharingPickerLayoutAttributes *layoutAttributes; // @synthesize layoutAttributes=_layoutAttributes;
-@property(retain, nonatomic) CNMeCardSharingNameDataSource *nameDataSource; // @synthesize nameDataSource=_nameDataSource;
 @property(retain, nonatomic) CNMeCardSharingAudienceDataSource *sharingAudienceDataSource; // @synthesize sharingAudienceDataSource=_sharingAudienceDataSource;
 @property(retain, nonatomic) CNMeCardSharingEnabledDataSource *enabledDataSource; // @synthesize enabledDataSource=_enabledDataSource;
 @property(retain, nonatomic) CNMeCardSharingAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;

@@ -18,7 +18,6 @@
     unsigned long long _ignoreEntitlementViolationsCount;
     unsigned long long _ignoreTargetPropertyViolationsCount;
     BOOL _targetIsSystem;
-    BOOL _unitTesting;
     RBAssertionDescriptorValidator *_assertionDescriptionValidator;
     RBSAssertionDescriptor *_assertionDescriptor;
     RBProcess *_originatorProcess;
@@ -35,7 +34,6 @@
 }
 
 + (id)context;
-@property(readonly, nonatomic) BOOL unitTesting; // @synthesize unitTesting=_unitTesting;
 @property(readonly, nonatomic) BOOL targetIsSystem; // @synthesize targetIsSystem=_targetIsSystem;
 @property(retain, nonatomic) id <RBDomainAttributeManaging> domainAttributeManager; // @synthesize domainAttributeManager=_domainAttributeManager;
 @property(retain, nonatomic) id <RBBundlePropertiesManaging> bundlePropertiesManager; // @synthesize bundlePropertiesManager=_bundlePropertiesManager;

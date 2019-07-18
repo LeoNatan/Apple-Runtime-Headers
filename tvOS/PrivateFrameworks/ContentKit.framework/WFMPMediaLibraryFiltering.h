@@ -6,6 +6,7 @@
 
 #import <ContentKit/WFContentLibraryFiltering.h>
 
+__attribute__((visibility("hidden")))
 @interface WFMPMediaLibraryFiltering : WFContentLibraryFiltering
 {
 }

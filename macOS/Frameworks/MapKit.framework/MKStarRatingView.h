@@ -14,15 +14,15 @@
     unsigned long long _numLevels;
     double _padding;
     BOOL _highlighted;
+    NSMutableArray *_ratingViews;
+    long long _numReviews;
+    long long _starStyle;
     NSImage *_fullStarImage;
     NSImage *_halfStarImage;
     NSImage *_emptyStarImage;
     NSImage *_fullStarHighlightedImage;
     NSImage *_halfStarHighlightedImage;
     NSImage *_emptyStarHighlightedImage;
-    NSMutableArray *_ratingViews;
-    long long _numReviews;
-    long long _starStyle;
 }
 
 + (id)ratingAsAttributedString:(double)arg1 baseFont:(id)arg2 style:(long long)arg3 theme:(id)arg4;

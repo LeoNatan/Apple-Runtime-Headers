@@ -18,10 +18,11 @@
     NSString *_country;
     NSString *_device;
     NSString *_language;
-    NSString *_pesudoDeviceId;
     NSString *_platform;
+    NSString *_pseudoDeviceId;
     _Bool _isGm;
     _Bool _isInternal;
+    _Bool _isInternalCarry;
     _Bool _isSeed;
     _Bool _isTestingData;
     _Bool _isTrialUpload;
@@ -30,14 +31,16 @@
         unsigned int configVersion:1;
         unsigned int isGm:1;
         unsigned int isInternal:1;
+        unsigned int isInternalCarry:1;
         unsigned int isSeed:1;
         unsigned int isTestingData:1;
         unsigned int isTrialUpload:1;
     } _has;
 }
 
+@property(nonatomic) _Bool isInternalCarry; // @synthesize isInternalCarry=_isInternalCarry;
 @property(nonatomic) _Bool isTrialUpload; // @synthesize isTrialUpload=_isTrialUpload;
-@property(retain, nonatomic) NSString *pesudoDeviceId; // @synthesize pesudoDeviceId=_pesudoDeviceId;
+@property(retain, nonatomic) NSString *pseudoDeviceId; // @synthesize pseudoDeviceId=_pseudoDeviceId;
 @property(nonatomic) _Bool isTestingData; // @synthesize isTestingData=_isTestingData;
 @property(nonatomic) unsigned int configVersion; // @synthesize configVersion=_configVersion;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
@@ -59,8 +62,9 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsInternalCarry;
 @property(nonatomic) _Bool hasIsTrialUpload;
-@property(readonly, nonatomic) _Bool hasPesudoDeviceId;
+@property(readonly, nonatomic) _Bool hasPseudoDeviceId;
 @property(nonatomic) _Bool hasIsTestingData;
 @property(nonatomic) _Bool hasConfigVersion;
 @property(readonly, nonatomic) _Bool hasLanguage;

@@ -32,6 +32,7 @@
 - (id)outputTypes;
 - (id)intermediaryTypesForCoercionToItemClass:(Class)arg1;
 - (BOOL)canGenerateRepresentationForType:(id)arg1;
+- (void)generateObjectRepresentationForPrintHandler:(CDUnknownBlockType)arg1;
 - (void)generateObjectRepresentations:(CDUnknownBlockType)arg1 options:(id)arg2 forClass:(Class)arg3;
 @property(readonly, nonatomic) NSURL *URL;
 - (void)getPreferredFileExtension:(CDUnknownBlockType)arg1;

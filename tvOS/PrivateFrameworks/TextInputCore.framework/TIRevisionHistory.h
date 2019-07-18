@@ -73,6 +73,7 @@
 - (struct _TIRevisionHistoryTokenIterator)nextTokenIterator:(struct _TIRevisionHistoryTokenIterator)arg1;
 - (struct _NSRange)documentRangeOfTokenAtIterator:(struct _TIRevisionHistoryTokenIterator)arg1;
 - (id)tokenAtIterator:(struct _TIRevisionHistoryTokenIterator)arg1;
+- (void)collectPFLTelemetryForTokenAtIndex:(unsigned long long)arg1;
 - (void)migrateUserTypingFromDeletedTokens:(id)arg1 toInsertedTokens:(id)arg2 withUsageLearningMask:(unsigned int)arg3 usageTrackingMask:(unsigned int)arg4;
 - (void)rejectTokensInRange:(struct _NSRange)arg1 negativeLearningHint:(int)arg2 newRevision:(id)arg3;
 - (void)acceptTokensInRange:(struct _NSRange)arg1;

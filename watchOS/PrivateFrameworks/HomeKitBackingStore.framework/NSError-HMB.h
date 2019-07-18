@@ -14,9 +14,11 @@
 + (id)hmbErrorWithSQLContext:(id)arg1 statement:(const char *)arg2;
 + (id)hmbErrorWithSQLContext:(id)arg1;
 - (id)hmbConciseCKError;
-@property(readonly) _Bool hmbIsChangeTokenExpiredError;
-@property(readonly) _Bool hmbIsZoneDeletedError;
-- (double)hmbCloudKitRetryTimeSeconds;
+@property(readonly) _Bool hmbIsCKNetworkFailureError;
+@property(readonly) _Bool hmbIsCKPartialFailureError;
+@property(readonly) _Bool hmbIsCKChangeTokenExpiredError;
+@property(readonly) _Bool hmbIsCKZoneDeletedError;
+@property(readonly) double hmbCloudKitRetryDelay;
 @property(readonly) _Bool hmbIsCloudKitError;
 @property(readonly) _Bool hmbIsSQLiteConstraintError;
 @end

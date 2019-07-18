@@ -13,7 +13,7 @@
     _Bool _overrideCollapsed;
     _Bool _showSharedFoldersOnly;
     _Bool _showFoldersThatCanMoveAddOrDeleteContentsOnly;
-    NSMutableSet *_collapsedFolderIdentifiers;
+    NSMutableSet *_expandedFolderIdentifiers;
     NSMutableSet *_collapsedAccountIdentifiers;
     NSMutableSet *_collapsedLegacyAccountIdentifiers;
     NSString *_overrideCollapsedFolder;
@@ -31,7 +31,7 @@
 @property(nonatomic) _Bool overrideCollapsed; // @synthesize overrideCollapsed=_overrideCollapsed;
 @property(retain, nonatomic) NSMutableSet *collapsedLegacyAccountIdentifiers; // @synthesize collapsedLegacyAccountIdentifiers=_collapsedLegacyAccountIdentifiers;
 @property(retain, nonatomic) NSMutableSet *collapsedAccountIdentifiers; // @synthesize collapsedAccountIdentifiers=_collapsedAccountIdentifiers;
-@property(retain, nonatomic) NSMutableSet *collapsedFolderIdentifiers; // @synthesize collapsedFolderIdentifiers=_collapsedFolderIdentifiers;
+@property(retain, nonatomic) NSMutableSet *expandedFolderIdentifiers; // @synthesize expandedFolderIdentifiers=_expandedFolderIdentifiers;
 - (void).cxx_destruct;
 - (void)invalidateDerivedFolderState;
 @property(readonly, nonatomic) _Bool customFoldersExist;

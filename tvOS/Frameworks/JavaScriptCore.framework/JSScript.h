@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-@class JSVirtualMachine;
-
 @interface JSScript : NSObject
 {
-    JSVirtualMachine *m_virtualMachine;
+    struct WeakObjCPtr<JSVirtualMachine> m_virtualMachine;
     long long m_type;
     struct MappedFileData m_mappedSource;
     struct String m_source;

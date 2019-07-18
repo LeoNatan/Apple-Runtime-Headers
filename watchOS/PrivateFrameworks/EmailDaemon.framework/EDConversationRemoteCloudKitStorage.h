@@ -10,8 +10,8 @@
 #import <EmailDaemon/EFLoggable-Protocol.h>
 #import <EmailDaemon/NSFetchedResultsControllerDelegate-Protocol.h>
 
-@class EDCloudMirroringPersistentStore, EDTransactionService, NSFetchedResultsController, NSManagedObjectContext, NSPersistentHistoryToken, NSString;
-@protocol EDConversationRemoteStorageDelegate, OS_dispatch_queue;
+@class EDCloudMirroringPersistentStore, EDTransactionService, NSFetchedResultsController, NSPersistentHistoryToken, NSString;
+@protocol EDConversationRemoteStorageDelegate;
 
 @interface EDConversationRemoteCloudKitStorage : NSObject <NSFetchedResultsControllerDelegate, EDConversationRemoteStorage, EFLoggable>
 {
@@ -19,8 +19,6 @@
     EDCloudMirroringPersistentStore *_mirroringPersistentStore;
     id <EDConversationRemoteStorageDelegate> _delegate;
     NSFetchedResultsController *_fetchedResultsController;
-    NSManagedObjectContext *_managedObjectContext;
-    NSObject<OS_dispatch_queue> *_privateQueue;
     NSPersistentHistoryToken *_historyToken;
     EDTransactionService *_exportTransaction;
     EDTransactionService *_importTransaction;
@@ -31,45 +29,43 @@
 @property(retain, nonatomic) EDTransactionService *importTransaction; // @synthesize importTransaction=_importTransaction;
 @property(retain, nonatomic) EDTransactionService *exportTransaction; // @synthesize exportTransaction=_exportTransaction;
 @property(retain, nonatomic) NSPersistentHistoryToken *historyToken; // @synthesize historyToken=_historyToken;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *privateQueue; // @synthesize privateQueue=_privateQueue;
 @property(nonatomic, getter=isInitialized) _Bool initialized; // @synthesize initialized=_initialized;
-@property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(readonly, nonatomic) NSFetchedResultsController *fetchedResultsController; // @synthesize fetchedResultsController=_fetchedResultsController;
 @property(nonatomic) __weak id <EDConversationRemoteStorageDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) EDCloudMirroringPersistentStore *mirroringPersistentStore; // @synthesize mirroringPersistentStore=_mirroringPersistentStore;
+@property(readonly, nonatomic) EDCloudMirroringPersistentStore *mirroringPersistentStore; // @synthesize mirroringPersistentStore=_mirroringPersistentStore;
 - (void).cxx_destruct;
-- (id)conversationInfoWithObjectId:(id)arg1;
-- (id)_transactionHistorySinceToken:(id)arg1 error:(id *)arg2;
-- (id)enumerateChangeHistorySinceToken:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (void)_retrieveChangesSinceLastRequest;
+- (id)_conversationInfoWithObjectId:(id)arg1 managedObjectContext:(id)arg2;
+- (id)_transactionHistorySinceToken:(id)arg1 managedObjectContext:(id)arg2 error:(id *)arg3;
+- (id)enumerateChangeHistorySinceToken:(id)arg1 managedObjectContext:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (void)_retrieveChangesSinceLastRequestInManagedObjectContext:(id)arg1;
 - (void)_handleDidResetSyncDataNotification:(id)arg1;
 - (void)_handleWillResetSyncDataNotification:(id)arg1;
-- (id)control;
-- (id)allConversationInfos;
-- (void)removeConversationInfoWithObjectId:(id)arg1 save:(_Bool)arg2;
-- (void)removeConversationInfoWithId:(id)arg1;
+- (id)_controlInManagedObjectContext:(id)arg1;
+- (id)allConversationInfosInManagedObjectContext:(id)arg1;
+- (void)_removeConversationInfoWithObjectId:(id)arg1 save:(_Bool)arg2 managedObjectContext:(id)arg3;
+- (void)_removeConversationInfoWithId:(id)arg1 managedObjectContext:(id)arg2;
 - (void)_updateConversationInfo:(id)arg1 withAnotherConversationInfo:(id)arg2;
-- (void)addOrUpdateConversationInfo:(id)arg1;
-- (id)conversationInfosWithUUID:(id)arg1;
-- (id)conversationInfoWithUUID:(id)arg1;
-- (void)_handleDuplicationsForConversationUUIDs:(id)arg1;
+- (void)_addOrUpdateConversationInfo:(id)arg1 managedObjectContext:(id)arg2;
+- (id)_conversationInfosWithUUID:(id)arg1 managedObjectContext:(id)arg2;
+- (id)_conversationInfoWithUUID:(id)arg1 managedObjectContext:(id)arg2;
+- (void)_handleDuplicationsForConversationUUIDs:(id)arg1 managedObjectContext:(id)arg2;
 - (void)_recoverHistoryToken;
 - (void)persistHistoryToken;
 - (id)dictionaryForConversationInfo:(id)arg1;
-- (id)entityForConversationDictionary:(id)arg1 key:(id)arg2;
+- (id)entityForConversationDictionary:(id)arg1 key:(id)arg2 managedObjectContext:(id)arg3;
 @property(nonatomic, getter=isMigratedFromKVSStorage) _Bool migratedFromKVSStorage; // @dynamic migratedFromKVSStorage;
 - (id)storageName;
 - (void)_handlePushNotification:(id)arg1;
-- (void)_requestFirstSync;
-- (void)_requestImport;
-- (void)_requestExport;
+- (void)_requestFirstSyncWithManagedObjectContext:(id)arg1;
+- (void)_requestImportWithManagedObjectContext:(id)arg1;
+- (void)_requestExportWithManagedObjectContext:(id)arg1;
 - (void)refresh;
 - (_Bool)synchronize;
 - (id)dictionaryRepresentation;
 - (id)dictionaryForKey:(id)arg1;
 - (void)removeDictionaryForKey:(id)arg1;
 - (void)setDictionary:(id)arg1 forKey:(id)arg2;
-- (void)intialSetup;
+- (void)_initialSetup;
 - (id)initWithDelegate:(id)arg1;
 
 // Remaining properties

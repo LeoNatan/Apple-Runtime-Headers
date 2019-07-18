@@ -4,25 +4,51 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIButton.h>
+#import <UIKit/UIControl.h>
 
-@class UIView;
+@class MTVisualStylingProvider, NSString, UIButton, UIColor, UIImage, UILabel, UIView;
 
 __attribute__((visibility("hidden")))
-@interface MediaControlsRoundButton : UIButton
+@interface MediaControlsRoundButton : UIControl
 {
-    UIView *_highlightStateBackgroundView;
-    UIView *_selectedStateBackgroundView;
-    struct UIEdgeInsets _backgroundContentInsets;
+    _Bool _shouldInsetOnHighlight;
+    NSString *_title;
+    NSString *_selectedTitle;
+    NSString *_subtitle;
+    UIImage *_image;
+    UIColor *_selectedBackgroundColor;
+    MTVisualStylingProvider *_visualStylingProvider;
+    long long _axis;
+    UIButton *_button;
+    UILabel *_titleLabel;
+    UILabel *_selectedTitleLabel;
+    UILabel *_subtitleLabel;
+    UIView *_highlightView;
+    UIView *_selectedView;
 }
 
-@property(nonatomic) struct UIEdgeInsets backgroundContentInsets; // @synthesize backgroundContentInsets=_backgroundContentInsets;
-@property(retain, nonatomic) UIView *selectedStateBackgroundView; // @synthesize selectedStateBackgroundView=_selectedStateBackgroundView;
-@property(retain, nonatomic) UIView *highlightStateBackgroundView; // @synthesize highlightStateBackgroundView=_highlightStateBackgroundView;
+@property(retain, nonatomic) UIView *selectedView; // @synthesize selectedView=_selectedView;
+@property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
+@property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
+@property(retain, nonatomic) UILabel *selectedTitleLabel; // @synthesize selectedTitleLabel=_selectedTitleLabel;
+@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
+@property(nonatomic) _Bool shouldInsetOnHighlight; // @synthesize shouldInsetOnHighlight=_shouldInsetOnHighlight;
+@property(nonatomic) long long axis; // @synthesize axis=_axis;
+@property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
+@property(retain, nonatomic) UIColor *selectedBackgroundColor; // @synthesize selectedBackgroundColor=_selectedBackgroundColor;
+@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
+@property(copy, nonatomic) NSString *selectedTitle; // @synthesize selectedTitle=_selectedTitle;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
-- (void)_updateBackground;
-- (void)setHighlighted:(_Bool)arg1;
+- (void)didTapButton;
+- (void)_contentSizeCategoryDidChange;
+- (void)_endHighlight;
+- (void)_startHighlight;
+- (void)_updateBackgroundFrames;
 - (void)setSelected:(_Bool)arg1;
+@property(readonly, nonatomic) struct CGRect imageFrame;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

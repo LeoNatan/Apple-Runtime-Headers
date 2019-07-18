@@ -7,6 +7,9 @@
 #import <UIKit/UIFont.h>
 
 @interface UIFont (AvatarUI)
++ (id)avt_keyboardRecentsSplashContinueButtonFont;
++ (id)avt_keyboardRecentsSplashSubtitleFont;
++ (id)avt_keyboardRecentsSplashTitleFont;
 + (id)avt_funCamItemTitleFont;
 + (id)avt_groupDialBoldLabelFont;
 + (id)avt_groupDialLabelFont;

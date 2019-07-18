@@ -10,7 +10,7 @@
 {
     // Error parsing type: , name: userInfo
     // Error parsing type: , name: readingHistory
-    // Error parsing type: , name: purchaseController
+    // Error parsing type: , name: purchaseProvider
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: offeredBundlePurchaseIDs
     // Error parsing type: , name: aLaCarteSubscriptionMeteredCountMaxLimit

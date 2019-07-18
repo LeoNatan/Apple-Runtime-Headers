@@ -67,6 +67,11 @@ struct GEOJunctionElement {
     CDStruct_81fb2dc1 _field4;
 };
 
+struct GEOOnce_s {
+    struct os_unfair_lock_s lock;
+    _Bool didRun;
+};
+
 struct Matrix<double, 2, 1> {
     double _e[2];
 };
@@ -308,7 +313,8 @@ typedef struct {
     _Bool spoken;
     _Bool dropTimestampAMPM;
     _Bool rightToLeft;
-} CDStruct_c28249a0;
+    double referenceDate;
+} CDStruct_57af2063;
 
 typedef struct {
     _Bool _field1;

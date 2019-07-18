@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSData *_boundaryKeyData;
     NSObject<OS_dispatch_source> *_pcsUpdateSource;
     NSObject<OS_dispatch_queue> *_synchronizeQueue;
+    NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
 + (id)allProtectionIdentifiersFromShareProtection:(struct _OpaquePCSShareProtection *)arg1;
@@ -38,6 +39,7 @@ __attribute__((visibility("hidden")))
 + (id)publicKeyIDFromIdentity:(struct _OpaquePCSShareProtection *)arg1;
 + (id)noMatchingIdentityErrorForPCSError:(struct __CFError *)arg1 withErrorCode:(long long)arg2 description:(id)arg3;
 + (id)_legacyServiceNameForContainerIDMapping:(id)arg1;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *synchronizeQueue; // @synthesize synchronizeQueue=_synchronizeQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *pcsUpdateSource; // @synthesize pcsUpdateSource=_pcsUpdateSource;
 @property(retain, nonatomic) NSData *boundaryKeyData; // @synthesize boundaryKeyData=_boundaryKeyData;
@@ -85,11 +87,12 @@ __attribute__((visibility("hidden")))
 - (id)addPublicIdentity:(struct _PCSPublicIdentityData *)arg1 toSharePCS:(struct _OpaquePCSShareProtection *)arg2 permission:(unsigned long long)arg3;
 - (id)etagFromSharePCS:(struct _OpaquePCSShareProtection *)arg1 error:(id *)arg2;
 - (id)createNewSharePCSDataForShareWithID:(id)arg1 withPublicSharingKey:(id)arg2 addDebugIdentity:(BOOL)arg3 error:(id *)arg4;
+- (void)_locked_pcsDataFromFetchedShare:(id)arg1 withPublicSharingKey:(id)arg2 withServiceType:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)pcsDataFromFetchedShare:(id)arg1 withPublicSharingKey:(id)arg2 withServiceType:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)pcsDataFromFetchedShare:(id)arg1 withServiceType:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)pcsDataFromFetchedShare:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)decryptPCSDataOnSharePCS:(id)arg1 withPublicSharingKey:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)decryptCurrentPerParticipantPCSDataOnSharePCS:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_locked_decryptPCSDataOnSharePCS:(id)arg1 withPublicSharingKey:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_locked_decryptCurrentPerParticipantPCSDataOnSharePCS:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)decryptPCSDataOnSharePCS:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)publicKeyDataFromPCS:(struct _OpaquePCSShareProtection *)arg1 error:(id *)arg2;
 - (struct _OpaquePCSShareProtection *)createSharePCSFromEncryptedData:(id)arg1 error:(id *)arg2;
@@ -145,7 +148,7 @@ __attribute__((visibility("hidden")))
 - (void)createZonePCSWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)createZonePCSWithSyncKeyRegistryRetry:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_locked_createZonePCSWithSyncKeyRegistryRetry:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)markMissingIdentitiesFromFailedDecryptError:(struct __CFError *)arg1 serviceName:(id)arg2;
+- (void)_locked_markMissingIdentitiesFromFailedDecryptError:(struct __CFError *)arg1 serviceName:(id)arg2;
 - (BOOL)sharingFingerprintsContainPublicKeyWithData:(id)arg1 error:(id *)arg2;
 - (id)addIdentityForService:(unsigned long long)arg1 toPCS:(struct _OpaquePCSShareProtection *)arg2;
 - (id)_addIdentity:(struct _PCSIdentitySetData *)arg1 withService:(unsigned long long)arg2 toPCS:(struct _OpaquePCSShareProtection *)arg3;

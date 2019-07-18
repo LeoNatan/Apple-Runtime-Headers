@@ -7,13 +7,12 @@
 #import <MIME/MFMessage.h>
 
 #import <Message/EDIndexableMessage-Protocol.h>
-#import <Message/EFPubliclyDescribable-Protocol.h>
 #import <Message/MFBaseMessage-Protocol.h>
 
 @class ECAngleBracketIDHash, ECMessageFlags, ECSubject, EMMessageObjectID, MFMailboxUid, MFMessageHeaders, MFMessageInfo, MailAccount, NSArray, NSDate, NSDictionary, NSSet, NSString, NSURL;
 @protocol ECMimePart;
 
-@interface MFMailMessage : MFMessage <EFPubliclyDescribable, EDIndexableMessage, MFBaseMessage>
+@interface MFMailMessage : MFMessage <EDIndexableMessage, MFBaseMessage>
 {
     unsigned long long _messageFlags;
     unsigned long long _modSequenceNumber;
@@ -67,9 +66,6 @@
 - (id)remoteMailboxURL;
 @property(nonatomic) _Bool sourceIsManaged;
 @property(readonly, nonatomic) MailAccount *account;
-@property(readonly, copy, nonatomic) NSString *ef_publicDescription;
-@property(readonly, copy) NSString *description;
-- (id)_privacySafeDescription;
 - (id)loadMeetingMetadata;
 - (id)loadMeetingData;
 - (id)loadMeetingExternalID;
@@ -101,6 +97,7 @@
 @property(readonly, nonatomic) NSDate *dateSent;
 @property(readonly, nonatomic) unsigned int dateSentInterval; // @dynamic dateSentInterval;
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) unsigned int fileSize;
 @property(readonly) unsigned int hash;
 @property(readonly, nonatomic) MFMessageHeaders *headers; // @dynamic headers;

@@ -10,7 +10,7 @@
 #import <FrontBoardServices/FBSSceneHandle-Protocol.h>
 #import <FrontBoardServices/FBSSceneSnapshotRequestDelegate-Protocol.h>
 
-@class FBSSceneClientSettings, FBSSceneIdentityToken, FBSSceneSettings, FBSSceneSpecification, FBSSerialQueue, NSMutableArray, NSObject, NSString;
+@class FBSSceneClientSettings, FBSSceneIdentityToken, FBSSceneSettings, FBSSceneSpecification, FBSSerialQueue, NSMutableArray, NSObject, NSOrderedSet, NSString;
 @protocol FBSSceneClientAgent, FBSSceneDelegate, FBSSceneUpdater, OS_dispatch_queue;
 
 @interface FBSSceneImpl : FBSScene <FBSSceneSnapshotRequestDelegate, FBSSceneHandle, FBSSceneAgentProxy>
@@ -27,7 +27,7 @@
     id <FBSSceneUpdater> _lock_updater;
     FBSSceneSettings *_lock_settings;
     FBSSceneClientSettings *_lock_clientSettings;
-    NSMutableArray *_lock_layers;
+    NSOrderedSet *_lock_layers;
     id <FBSSceneDelegate> _lock_delegate;
     FBSSceneIdentityToken *_identityToken;
     NSObject<OS_dispatch_queue> *_sendQueue;
@@ -36,8 +36,6 @@
 - (void).cxx_destruct;
 - (BOOL)snapshotRequest:(id)arg1 performWithContext:(id)arg2;
 - (BOOL)snapshotRequestAllowSnapshot:(id)arg1;
-- (void)sceneLayerDidInvalidate:(id)arg1;
-- (void)sceneLayerDidUpdate:(id)arg1;
 - (void)agent:(id)arg1 sendMessage:(id)arg2 withResponse:(CDUnknownBlockType)arg3;
 - (void)agent:(id)arg1 registerMessageHandler:(CDUnknownBlockType)arg2;
 - (void)closeSession:(id)arg1;
@@ -62,7 +60,7 @@
 - (void)_callOutQueue_agent_didCreateWithTransitionContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)_hasAgent;
 - (void)_configureReceivedActions:(id)arg1;
-- (void)_sendQueue_updateLayer:(id)arg1;
+- (void)_sendQueue_comsumeLock_updateClientSettings:(id)arg1 withTransitionContext:(id)arg2;
 - (id)identityToken;
 - (BOOL)invalidateSnapshotWithContext:(id)arg1;
 - (BOOL)performSnapshotWithContext:(id)arg1;
@@ -83,7 +81,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)identifier;
-- (void)dealloc;
 - (void)_callOutQueue_invalidate;
 - (id)_initWithUpdater:(id)arg1 identifier:(id)arg2 specification:(id)arg3 settings:(id)arg4 clientSettings:(id)arg5;
 - (id)initWithQueue:(id)arg1 identifier:(id)arg2 display:(id)arg3 settings:(id)arg4 clientSettings:(id)arg5;

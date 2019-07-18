@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)load;
 - (Class)handlerClass;
 
 @end

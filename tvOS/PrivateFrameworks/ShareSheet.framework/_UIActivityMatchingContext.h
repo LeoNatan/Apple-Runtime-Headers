@@ -65,6 +65,7 @@
 @property(nonatomic) const CDStruct_6ad76789 *hostAuditToken; // @dynamic hostAuditToken;
 - (id)activitiesByFilteringExcludedActivities:(id)arg1;
 - (_Bool)shouldExcludeActivity:(id)arg1;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithActivityItems:(id)arg1 itemValues:(id)arg2;
 

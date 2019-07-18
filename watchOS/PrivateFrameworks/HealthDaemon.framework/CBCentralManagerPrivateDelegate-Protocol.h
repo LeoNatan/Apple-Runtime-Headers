@@ -12,6 +12,7 @@
 
 @optional
 - (void)centralManager:(CBCentralManager *)arg1 connectionEventDidOccur:(int)arg2 forPeripheral:(CBPeripheral *)arg3;
+- (void)centralManager:(CBCentralManager *)arg1 canSendDataToPeripheral:(CBPeripheral *)arg2;
 - (void)centralManager:(CBCentralManager *)arg1 didDiscoverMultiplePeripherals:(NSArray *)arg2;
 - (void)centralManager:(CBCentralManager *)arg1 didReceiveData:(NSData *)arg2 fromPeripheral:(CBPeripheral *)arg3;
 - (void)centralManager:(CBCentralManager *)arg1 didSendBytes:(NSNumber *)arg2 toPeripheral:(CBPeripheral *)arg3 withError:(NSError *)arg4;

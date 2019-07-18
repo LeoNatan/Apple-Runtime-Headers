@@ -36,7 +36,7 @@
 + (id)photosDetailsContextForAsset:(id)arg1 parentContext:(id)arg2;
 + (id)photosDetailsContextForMemory:(id)arg1 enableCuration:(_Bool)arg2 enableKeyAssets:(_Bool)arg3;
 + (id)photosDetailsContextForMemory:(id)arg1;
-+ (id)photosDetailsContextForAssetCollection:(id)arg1 assets:(id)arg2 keyAssets:(id)arg3 enableCuration:(_Bool)arg4 enableKeyAssets:(_Bool)arg5 viewSourceOrigin:(unsigned long long)arg6;
++ (id)photosDetailsContextForAssetCollection:(id)arg1 assets:(id)arg2 keyAssets:(id)arg3 enableCuration:(_Bool)arg4 enableKeyAssets:(_Bool)arg5 useVerboseSmartDescription:(_Bool)arg6 viewSourceOrigin:(unsigned long long)arg7;
 + (id)photosDetailsContextForAssetCollection:(id)arg1 assets:(id)arg2 viewSourceOrigin:(unsigned long long)arg3;
 @property(readonly, nonatomic) _Bool shouldUseKeyFace; // @synthesize shouldUseKeyFace=_shouldUseKeyFace;
 @property(readonly, nonatomic) _Bool hasLocation; // @synthesize hasLocation=_hasLocation;

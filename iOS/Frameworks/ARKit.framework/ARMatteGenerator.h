@@ -19,7 +19,7 @@
 - (id)generateDilatedDepthFromFrame:(id)arg1 commandBuffer:(id)arg2;
 - (id)generateMatteFromFrame:(id)arg1 commandBuffer:(id)arg2;
 - (id)initWithDevice:(id)arg1 matteResolution:(long long)arg2;
-- (id)initWithDevice:(id)arg1 useSmoothing:(_Bool)arg2;
+- (id)initWithDevice:(id)arg1 matteResolution:(long long)arg2 useSmoothing:(_Bool)arg3;
 
 @end
 

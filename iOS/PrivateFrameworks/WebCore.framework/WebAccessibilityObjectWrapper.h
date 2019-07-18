@@ -68,6 +68,7 @@ __attribute__((visibility("hidden")))
 - (id)selectedTextMarker;
 - (id)selectionRangeString;
 - (id)elementsForRange:(struct _NSRange)arg1;
+- (_Bool)accessibilityReplaceRange:(struct _NSRange)arg1 withText:(id)arg2;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange)arg1;
 - (struct _NSRange)_accessibilitySelectedTextRange;
 - (id)attributedStringForElement;
@@ -188,6 +189,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_accessibilityIsLandmarkRole:(int)arg1;
 - (_Bool)accessibilityIsDialog;
 - (id)accessibilityLanguage;
+- (id)accessibilityPopupValue;
 - (_Bool)accessibilityHasPopup;
 - (struct CGPath *)_accessibilityPath;
 - (long long)indexOfAccessibilityElement:(id)arg1;

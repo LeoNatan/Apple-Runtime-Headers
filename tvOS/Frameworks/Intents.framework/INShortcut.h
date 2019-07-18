@@ -7,11 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <Intents/NSCopying-Protocol.h>
+#import <Intents/NSItemProviderReading-Protocol.h>
+#import <Intents/NSItemProviderWriting-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class INImage, INIntent, NSData, NSString, NSUserActivity;
+@class INImage, INIntent, NSArray, NSData, NSString, NSUserActivity;
 
-@interface INShortcut : NSObject <NSSecureCoding, NSCopying>
+@interface INShortcut : NSObject <NSItemProviderReading, NSItemProviderWriting, NSSecureCoding, NSCopying>
 {
     NSData *_activityData;
     INIntent *_intent;
@@ -22,6 +24,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (long long)itemProviderVisibilityForRepresentationWithTypeIdentifier:(id)arg1;
++ (id)writableTypeIdentifiersForItemProvider;
++ (id)readableTypeIdentifiersForItemProvider;
++ (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
 @property(readonly, copy, nonatomic) NSString *activityBundleIdentifier; // @synthesize activityBundleIdentifier=_activityBundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *activitySubtitle; // @synthesize activitySubtitle=_activitySubtitle;
 @property(readonly, copy, nonatomic) INImage *activityImage; // @synthesize activityImage=_activityImage;
@@ -32,7 +38,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSString *_associatedAppBundleIdentifier;
 @property(readonly, nonatomic) NSString *_subtitle;
 @property(readonly, nonatomic) NSString *_title;
@@ -44,6 +50,13 @@
 - (id)initWithUserActivity:(id)arg1;
 - (id)_initWithIntent:(id)arg1;
 - (id)initWithIntent:(id)arg1;
+- (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(readonly, copy, nonatomic) NSArray *writableTypeIdentifiersForItemProvider;
 
 @end
 

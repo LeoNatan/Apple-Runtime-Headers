@@ -12,6 +12,7 @@
     // Error parsing type: , name: personalizer
     // Error parsing type: , name: featureAvailability
     // Error parsing type: , name: subscriptionController
+    // Error parsing type: , name: subscriptionService
 }
 
 @end

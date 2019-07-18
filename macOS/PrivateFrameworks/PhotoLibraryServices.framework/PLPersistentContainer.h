@@ -34,14 +34,14 @@
 @property(retain) id <PLXPCPhotoLibraryStorePolicy> xpcStorePolicy; // @synthesize xpcStorePolicy=_xpcStorePolicy;
 @property(readonly) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
 - (void).cxx_destruct;
-- (BOOL)_configurePersistentStoreCoordinator:(id)arg1 overrideCurrentModelVersionInStore:(BOOL)arg2;
-- (BOOL)_configureXPCPersistentStoreCoordinator:(id)arg1;
+- (BOOL)_configurePersistentStoreCoordinator:(id)arg1 overrideCurrentModelVersionInStore:(BOOL)arg2 error:(id *)arg3;
+- (BOOL)_configureXPCPersistentStoreCoordinator:(id)arg1 error:(id *)arg2;
 - (BOOL)shouldUseXPCPhotoLibraryStore;
 - (long long)configureSharedPersistentStoreCoordinatorAndMigrateOrRebuildIfNecessaryWithModelMigrator:(id)arg1 migrationPolicy:(unsigned int)arg2 error:(id *)arg3;
 - (void)removeSharedPersistentStoreCoordinator;
 - (id)newSharedPersistentStoreCoordinator;
 @property(readonly) NSPersistentStoreCoordinator *sharedPersistentStoreCoordinator;
-- (id)newPersistentStoreCoordinatorForMigration;
+- (id)newPersistentStoreCoordinatorForMigration:(id *)arg1;
 - (id)initWithLibraryURL:(id)arg1 lazyAssetsdClient:(id)arg2;
 
 @end

@@ -10,10 +10,7 @@
 
 @interface NSData (EvernoteSDK)
 + (id)endataWithHexDigits:(id)arg1;
-+ (id)mco_dataWithMCData:(struct Data *)arg1;
-+ (id)mco_objectWithMCObject:(struct Object *)arg1;
 @property(readonly, nonatomic) NSString *enlowercaseHexDigits;
 @property(readonly, nonatomic) NSData *enmd5;
-- (struct Data *)mco_mcData;
 @end
 

@@ -12,6 +12,7 @@
 {
     long long _style;
     UIImage *_image;
+    NSString *_imageSymbolName;
     NSString *_titleText;
     NSString *_secondaryText;
     UIView *_moduleContentView;
@@ -20,6 +21,7 @@
 @property(readonly, nonatomic) UIView *moduleContentView; // @synthesize moduleContentView=_moduleContentView;
 @property(retain, nonatomic) NSString *secondaryText; // @synthesize secondaryText=_secondaryText;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
+@property(retain, nonatomic) NSString *imageSymbolName; // @synthesize imageSymbolName=_imageSymbolName;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;

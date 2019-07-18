@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSQLCore, NSSQLEntity, NSSQLitePrefetchRequestCache, NSSQLiteStatement, NSString, NSURL;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSQLCore, NSSQLEntity, NSSQLSaveChangesRequestContext, NSSQLitePrefetchRequestCache, NSSQLiteStatement, NSString, NSURL;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -36,6 +36,9 @@ __attribute__((visibility("hidden")))
     struct __CFDictionary *_vmCachedStatements;
     NSMutableDictionary *_pragmaSettings;
     NSMutableSet *_mObjectIDsUpdatedByTriggers;
+    NSMutableSet *_mObjectIDsInsertedByDATriggers;
+    NSMutableSet *_mObjectIDsUpdatededByDATriggers;
+    NSSQLSaveChangesRequestContext *_saveRequest;
     struct __CFDictionary *_statementCachesByEntity;
     NSSQLitePrefetchRequestCache *_prefetchRequestCache;
     struct __CFDictionary *_cachedEntityUpdateStatements;
@@ -61,6 +64,7 @@ __attribute__((visibility("hidden")))
     } _sqliteConnectionFlags;
     unsigned long long _debugInode;
     NSMutableArray *_activeGenerations;
+    NSMutableDictionary *_transactionStringName;
 }
 
 + (BOOL)_rekeyPersistentStoreAtURL:(id)arg1 options:(id)arg2 withKey:(id)arg3 error:(id *)arg4;
@@ -74,6 +78,12 @@ __attribute__((visibility("hidden")))
 + (void)_setDebugFlags:(int)arg1;
 - (void)_unregisterWithBackupd;
 - (void)_registerWithBackupd;
+- (void)derivedAttributeUpdatedRowInTable:(const char *)arg1 withEntityID:(long long)arg2 primaryKey:(long long)arg3 columnName:(const char *)arg4 newValue:(id)arg5;
+- (void)clearObjectIDsUpdatededByDATriggers;
+- (id)createSetOfObjectIDsUpdatedByDATriggers;
+- (void)derivedAttributeUpdatedInsertedRowInTable:(const char *)arg1 withEntityID:(long long)arg2 primaryKey:(long long)arg3 columnName:(const char *)arg4 newValue:(id)arg5;
+- (void)clearObjectIDsInsertUpdatededByDATriggers;
+- (id)createSetOfObjectIDsInsertUpdatedByDATriggers;
 - (void)triggerUpdatedRowInTable:(const char *)arg1 withEntityID:(long long)arg2 primaryKey:(long long)arg3 columnName:(const char *)arg4 newValue:(long long)arg5;
 - (void)clearObjectIDsUpdatedByTriggers;
 - (id)createSetOfObjectIDsUpdatedByTriggers;
@@ -97,12 +107,12 @@ __attribute__((visibility("hidden")))
 - (long long)_countOfRowsInTable:(id)arg1;
 - (void)insertUpdates:(id)arg1 transactionID:(long long)arg2 updatedAttributes:(id)arg3;
 - (void)insertChanges:(id)arg1 type:(long long)arg2 transactionID:(long long)arg3 context:(id)arg4;
-- (unsigned long long)insertManagedObjectBlock:(CDUnknownBlockType)arg1 forEntity:(id)arg2;
-- (unsigned long long)insertDictionaryBlock:(CDUnknownBlockType)arg1 forEntity:(id)arg2;
+- (unsigned long long)insertManagedObjectBlock:(CDUnknownBlockType)arg1 forEntity:(id)arg2 includeOnConflict:(BOOL)arg3;
+- (unsigned long long)insertDictionaryBlock:(CDUnknownBlockType)arg1 forEntity:(id)arg2 includeOnConflict:(BOOL)arg3;
 - (void)_validateProperty:(id)arg1 withValue:(id)arg2;
 - (void)_batchInsertThrowWithErrorCode:(int)arg1 andMessage:(id)arg2 forKey:(id)arg3 andValue:(id)arg4 additionalDetail:(id)arg5;
-- (unsigned long long)insertArray:(id)arg1 forEntity:(id)arg2;
-- (void)prepareInsertStatementForEntity:(id)arg1;
+- (unsigned long long)insertArray:(id)arg1 forEntity:(id)arg2 includeOnConflict:(BOOL)arg3;
+- (void)prepareInsertStatementForEntity:(id)arg1 includeConstraints:(BOOL)arg2 includeOnConflict:(BOOL)arg3;
 - (void)prepareInsertStatementForAncillaryEntity:(id)arg1;
 - (long long)_insertTransactionForRequestContext:(id)arg1 andStrings:(id)arg2;
 - (id)_insertTransactionStringsForRequestContext:(id)arg1;
@@ -171,6 +181,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasMetadataTable;
 - (id)fetchMetadata;
 - (id)metadataColumns;
+- (void)_clearSaveRequest;
+- (void)_setSaveRequest:(id)arg1;
 - (void)saveMetadata:(id)arg1;
 - (BOOL)_hasTableWithName:(id)arg1 isTemp:(BOOL)arg2;
 - (BOOL)_hasTempTableWithName:(id)arg1;

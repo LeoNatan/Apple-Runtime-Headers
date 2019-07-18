@@ -14,15 +14,10 @@
 - (BOOL)ts_setAppearanceTransitionsAreDisabled:(BOOL)arg1;
 @property(readonly, nonatomic) UIViewController *ts_parentVC;
 @property(nonatomic, readonly) TSTransitionContainerViewController *ts_transitionContainerViewController;
+- (void)removeCommand:(id)arg1 forContextProvider:(id)arg2;
+- (void)removeCommands:(id)arg1 forContextProvider:(id)arg2;
 - (void)removeContextProvider:(id)arg1;
 - (void)addContextProvider:(id)arg1 forCommand:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)removeToolbarItemHandlerProviders;
-- (void)addToolbarItemHandlerProvider:(id)arg1;
-- (void)addToolbarItemHandler:(id)arg1;
-- (void)enableToolbarInteraction;
-- (void)disableToolbarInteraction;
-- (void)removeMenuBarItemHandlerProviders;
-- (void)addMenuBarItemHandlerProvider:(id)arg1;
-- (void)addMenuBarItemHandler:(id)arg1;
+- (id)tabBarSplitViewFousable;
 @end
 

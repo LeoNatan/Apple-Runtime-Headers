@@ -138,8 +138,7 @@
 - (void)setMyriadDecisionResult:(_Bool)arg1;
 - (void)setShouldWaitForMyriad:(_Bool)arg1;
 - (void)setDeviceRingerSwitchState:(long long)arg1;
-- (void)setIsAccessibilityVibrationDisabled:(_Bool)arg1;
-- (void)setIsAccessibilityVoiceOverTouchEnabled:(_Bool)arg1;
+- (void)setAccessibilityState:(id)arg1;
 - (void)setCarDNDActive:(_Bool)arg1;
 - (void)setIsDeviceInStarkMode:(_Bool)arg1;
 - (void)setLockState:(_Bool)arg1 screenLocked:(_Bool)arg2;
@@ -180,8 +179,7 @@
 - (void)_connectionFailedWithError:(id)arg1;
 - (void)interstitialProvider:(id)arg1 handlePhase:(long long)arg2 displayText:(id)arg3 speakableText:(id)arg4 context:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)deviceRingerObserver:(id)arg1 didChangeState:(long long)arg2;
-- (void)accessibilityObserver:(id)arg1 didChangeVibrationDisabledPreference:(_Bool)arg2;
-- (void)accessibilityObserver:(id)arg1 didChangeVoiceOverTouchEnabledPreference:(_Bool)arg2;
+- (void)accessibilityObserver:(id)arg1 stateDidChangeFrom:(id)arg2 to:(id)arg3;
 - (void)audioPowerUpdaterDidUpdate:(id)arg1 averagePower:(float)arg2 peakPower:(float)arg3;
 - (void)_tellSpeechDelegateRecognitionDidFail:(id)arg1;
 - (void)_tellSpeechDelegateSpeechRecognizedPartialResult:(id)arg1;
@@ -201,9 +199,8 @@
 - (void)_tellDelegateAudioSessionDidBecomeActive:(_Bool)arg1;
 - (void)_tellDelegateAudioSessionWillBecomeActive:(_Bool)arg1;
 - (void)_tellDelegateStartPlaybackDidFail:(long long)arg1;
-- (void)_tellDelegateWillProcessStartPlayback:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_tellDelegateWillProcessStartPlayback:(long long)arg1 intent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_tellDelegateAudioPlaybackRequestDidStop:(id)arg1 error:(id)arg2;
-- (void)_tellDelegateAudioPlaybackRequestDidNotStart:(id)arg1 error:(id)arg2;
 - (void)_tellDelegateAudioPlaybackRequestDidStart:(id)arg1;
 - (void)_tellDelegateAudioPlaybackRequestWillStart:(id)arg1;
 - (void)_tellDelegateAudioSessionDidEndInterruption:(_Bool)arg1;

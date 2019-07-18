@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <GEOTransitArtworkDataSource> alternateArtwork;
 @property(readonly, nonatomic) id <GEOTransitArtworkDataSource> modeArtwork;
 @property(readonly, nonatomic) id <GEOTransitArtworkDataSource> artwork;
+@property(readonly, nonatomic) _Bool isBus;
 @property(readonly, nonatomic) _Bool departuresAreVehicleSpecific;
 @property(readonly, nonatomic) unsigned long long departureTimeDisplayStyle;
 @property(readonly, nonatomic) id <GEOTransitSystem> system;

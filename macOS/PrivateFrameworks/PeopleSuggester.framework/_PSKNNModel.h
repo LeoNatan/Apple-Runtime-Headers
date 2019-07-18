@@ -28,6 +28,9 @@
 @property(readonly, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 @property(readonly, nonatomic) unsigned long long k; // @synthesize k=_k;
 - (void).cxx_destruct;
+- (id)extractNearestNeighborsForMapsQueryResult:(id)arg1 andNeighbors:(id)arg2 frequencyOnly:(BOOL)arg3;
+- (id)featuresFromMapsFeedbackEvents:(id)arg1;
+- (id)rankedMapsShareEtaSuggestions:(id)arg1 maxSuggestions:(unsigned long long)arg2;
 - (unsigned long long)indexToInsertNeighbor:(id)arg1 array:(id)arg2;
 - (id)neighborsFromTrainingData:(id)arg1 k:(unsigned long long)arg2 queryPoint:(id)arg3;
 - (id)sliceStart:(unsigned long long)arg1 end:(unsigned long long)arg2 ofArray:(id)arg3;
@@ -40,8 +43,10 @@
 - (id)featureVectorFromPredictionDate:(id)arg1 bundleId:(id)arg2;
 - (id)targetBundleIdsForFilterBundlesIds:(id)arg1;
 - (id)filterShareInteractions:(id)arg1 minimumOccurences:(unsigned long long)arg2;
+- (id)splitShareLabels:(id)arg1 filterOnRecency:(unsigned long long)arg2 suggestionDate:(id)arg3;
 - (id)interactionLabelsForQueryResult:(id)arg1 queryPoint:(id)arg2 rankerType:(long long)arg3 frequencyOnly:(BOOL)arg4 contactsOnly:(BOOL)arg5;
 - (id)predictWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2;
+- (id)suggestionProxiesWithPredictionContext:(id)arg1;
 - (id)rankedGlobalSuggestionsWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2 contactsOnly:(BOOL)arg3 interactions:(id)arg4;
 - (id)normalizedStringFromString:(id)arg1;
 - (id)rankedNameSuggestionsWithPredictionContext:(id)arg1 forName:(id)arg2;
@@ -53,8 +58,7 @@
 - (id)filterSuggestionsFrom:(id)arg1 byFilteringOutSeedRecipients:(id)arg2;
 - (id)rankedMessagesAutocompleteSuggestionsWithPredictionContext:(id)arg1 bundleId:(id)arg2 candidates:(id)arg3;
 - (id)rankedAutocompleteSuggestionsWithPredictionContext:(id)arg1 candidates:(id)arg2;
-- (void)populateInteractionCaches;
-- (id)initWithK:(unsigned long long)arg1 interactionStore:(id)arg2 filterByBundleIds:(id)arg3 knowledgeStore:(id)arg4 contactResolver:(id)arg5;
+- (id)initWithK:(unsigned long long)arg1 interactionStore:(id)arg2 filterByBundleIds:(id)arg3 knowledgeStore:(id)arg4 contactResolver:(id)arg5 messageInteractionCache:(id)arg6 shareInteractionCache:(id)arg7;
 
 @end
 

@@ -12,16 +12,24 @@
 {
     struct __IOHIDEventSystemClient *_iohidEventSystemClient;
     NSString *__cachedDisplayThemeStringFromPreferences;
+    NSString *__cachedVirtualKeyboardDisplayThemeStringFromPreferences;
+    NSString *__cachedSwitchControlDisplayThemeStringFromPreferences;
 }
 
 + (id)shared;
 + (id)userDefaultsPreferencesSource;
+@property(copy, nonatomic) NSString *_cachedSwitchControlDisplayThemeStringFromPreferences; // @synthesize _cachedSwitchControlDisplayThemeStringFromPreferences=__cachedSwitchControlDisplayThemeStringFromPreferences;
+@property(copy, nonatomic) NSString *_cachedVirtualKeyboardDisplayThemeStringFromPreferences; // @synthesize _cachedVirtualKeyboardDisplayThemeStringFromPreferences=__cachedVirtualKeyboardDisplayThemeStringFromPreferences;
 @property(copy, nonatomic) NSString *_cachedDisplayThemeStringFromPreferences; // @synthesize _cachedDisplayThemeStringFromPreferences=__cachedDisplayThemeStringFromPreferences;
 - (void).cxx_destruct;
 - (void)preferencesChanged:(id)arg1;
 - (void)_preferencesChanged:(id)arg1;
 - (void)_updateDisplayThemeStringFromPreferences;
-@property(readonly, copy, nonatomic) NSString *_displayThemeStringFromPreferences;
+- (void)_setDisplayTheme:(unsigned long long)arg1 forAssistiveControlType:(long long)arg2;
+- (id)_displayThemeStringFromPreferencesForAssistiveControlType:(long long)arg1;
+@property(readonly, nonatomic) unsigned long long switchControlDisplayTheme;
+@property(readonly, nonatomic) unsigned long long virtualKeyboardDisplayTheme;
+- (unsigned long long)displayThemeForProductSupportType:(unsigned long long)arg1;
 @property(nonatomic) unsigned long long displayTheme;
 @property(nonatomic) BOOL autoHideEnabled;
 @property(readonly, nonatomic) double hotCornerDwellTime;

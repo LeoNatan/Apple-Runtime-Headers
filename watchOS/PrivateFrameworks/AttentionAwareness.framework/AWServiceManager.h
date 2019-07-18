@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSXPCConnection;
+@class NSMutableSet, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -14,11 +14,16 @@ __attribute__((visibility("hidden")))
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSXPCConnection *_connection;
+    NSMutableSet *_serviceObservers;
 }
 
++ (void)removeObserver:(id)arg1;
++ (void)addObserver:(id)arg1;
 + (id)invokeWithService:(CDUnknownBlockType)arg1;
 + (id)sharedManager;
 - (void).cxx_destruct;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 - (id)invokeWithService:(CDUnknownBlockType)arg1;
 - (id)init;
 

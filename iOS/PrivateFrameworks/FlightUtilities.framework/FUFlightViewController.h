@@ -21,7 +21,7 @@
     _Bool _requiresDataLoad;
     _Bool _viewLoaded;
     FUFlightView *_regularFlightView;
-    FUFlightView *_compactFlightView;
+    FUFlightView *_previewFlightView;
     _Bool _highlightCurrentFlightLeg;
     _Bool _showInfoPanel;
     NSArray *_flights;
@@ -31,7 +31,7 @@
 
 @property(retain) NSString *airlineCode; // @synthesize airlineCode=_airlineCode;
 @property(retain) NSNumber *flightCode; // @synthesize flightCode=_flightCode;
-@property(retain) FUFlightView *compactFlightView; // @synthesize compactFlightView=_compactFlightView;
+@property(retain) FUFlightView *previewFlightView; // @synthesize previewFlightView=_previewFlightView;
 @property(retain) FUFlightView *regularFlightView; // @synthesize regularFlightView=_regularFlightView;
 @property(nonatomic) _Bool showInfoPanel; // @synthesize showInfoPanel=_showInfoPanel;
 @property(nonatomic) _Bool highlightCurrentFlightLeg; // @synthesize highlightCurrentFlightLeg=_highlightCurrentFlightLeg;

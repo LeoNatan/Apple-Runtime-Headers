@@ -34,6 +34,7 @@
 }
 
 + (id)matchNothingCriterion;
++ (id)matchEverythingCriterion;
 + (id)orCompoundCriterionWithCriteria:(id)arg1;
 + (id)andCompoundCriterionWithCriteria:(id)arg1;
 + (id)notCriterionWithCriterion:(id)arg1;
@@ -152,6 +153,7 @@
 - (id)SQLExpressionWithContext:(id)arg1 depth:(unsigned int)arg2;
 - (id)fixOnce;
 - (id)_spotlightQueryString;
+- (id)criteriaForSpotlightCriteria:(id)arg1;
 - (id)_queryWithAttributes:(id)arg1 matchingValue:(id)arg2 qualifier:(int)arg3;
 - (id)_queryWithAttributes:(id)arg1 matchingValue:(id)arg2;
 - (id)_wordQueryWithAttributes:(id)arg1 languages:(id)arg2 expression:(id)arg3;

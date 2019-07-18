@@ -28,6 +28,7 @@
 + (id)_currentClaimPurposeIdentifier;
 + (id)_currentFileCoordinator;
 + (_Bool)_itemHasPresentersAtURL:(id)arg1;
++ (void)_setAutomaticFileProviderReregistrationDisabled:(_Bool)arg1;
 + (id)_fileProviders;
 + (void)_removeFileProvider:(id)arg1;
 + (void)_addFileProvider:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -46,6 +47,8 @@
 + (_Bool)_skipCoordinationWork;
 + (void)_performBarrierAsync:(CDUnknownBlockType)arg1;
 + (void)_performBarrier;
++ (id)_endpointForInProcessFileCoordinationServer;
++ (void)_adoptFCDEndpointForTest:(id)arg1;
 + (id)_createConnectionToProgressRegistrar;
 + (id)_createConnectionToFileAccessArbiterForQueue:(id)arg1;
 + (void)_stopInProcessFileCoordinationAndProgressServers;

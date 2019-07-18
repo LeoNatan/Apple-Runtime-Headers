@@ -45,9 +45,9 @@
 - (BOOL)_updateAlpha;
 - (BOOL)_updateStyleForWindow:(id)arg1 animationParameters:(id *)arg2;
 - (BOOL)_updateVisibilityForWindow:(id)arg1 targetOrientation:(long long)arg2 animationParameters:(id *)arg3;
-- (void)_visibilityChangedWithTargetOrientation:(long long)arg1 animationParameters:(id)arg2;
-- (void)_updateStatusBarAppearanceWithClientSettings:(id)arg1 animationParameters:(id)arg2;
-- (void)updateStatusBarAppearanceWithClientSettings:(id)arg1 animationDuration:(double)arg2;
+- (void)_visibilityChangedWithOriginalOrientation:(long long)arg1 targetOrientation:(long long)arg2 animationParameters:(id)arg3;
+- (CDUnknownBlockType)_updateStatusBarAppearanceWithClientSettings:(id)arg1 transitionContext:(id)arg2 animationParameters:(id)arg3;
+- (CDUnknownBlockType)updateStatusBarAppearanceWithClientSettings:(id)arg1 transitionContext:(id)arg2;
 - (void)updateStatusBarAppearanceWithAnimationParameters:(id)arg1;
 - (void)updateStatusBarAppearance;
 - (double)defaultStatusBarHeightInOrientation:(long long)arg1;

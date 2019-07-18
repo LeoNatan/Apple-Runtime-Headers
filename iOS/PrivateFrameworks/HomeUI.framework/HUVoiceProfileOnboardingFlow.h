@@ -14,18 +14,21 @@
 @interface HUVoiceProfileOnboardingFlow : NSObject <HUFeatureOnboardingFlow>
 {
     _Bool _shouldAbortThisOnboardingFlowGroup;
+    _Bool _shouldAbortAllOnboarding;
     NAFuture *_onboardingFuture;
     UIViewController<HUConfigurationViewController> *_initialViewController;
     HFUserItem *_userItem;
 }
 
 @property(retain, nonatomic) HFUserItem *userItem; // @synthesize userItem=_userItem;
+@property(nonatomic) _Bool shouldAbortAllOnboarding; // @synthesize shouldAbortAllOnboarding=_shouldAbortAllOnboarding;
 @property(nonatomic) _Bool shouldAbortThisOnboardingFlowGroup; // @synthesize shouldAbortThisOnboardingFlowGroup=_shouldAbortThisOnboardingFlowGroup;
 @property(retain, nonatomic) UIViewController<HUConfigurationViewController> *initialViewController; // @synthesize initialViewController=_initialViewController;
 @property(retain, nonatomic) NAFuture *onboardingFuture; // @synthesize onboardingFuture=_onboardingFuture;
 - (void).cxx_destruct;
 - (id)processUserInput:(id)arg1;
 @property(readonly, copy) NSString *description;
+- (void)checkIfStillRequiredFromCurrentResults:(id)arg1;
 - (id)initWithUsageOptions:(id)arg1;
 
 // Remaining properties

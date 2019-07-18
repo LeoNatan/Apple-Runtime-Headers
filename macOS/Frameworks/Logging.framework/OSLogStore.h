@@ -18,7 +18,6 @@
 - (void).cxx_destruct;
 - (id)positionWithTimeIntervalSinceLatestBoot:(double)arg1;
 - (id)positionWithTimeIntervalSinceEnd:(double)arg1;
-- (id)positionsWithDate:(id)arg1;
 - (id)positionWithDate:(id)arg1;
 - (id)entriesEnumeratorAndReturnError:(id *)arg1;
 - (id)entriesEnumeratorWithOptions:(unsigned long long)arg1 position:(id)arg2 predicate:(id)arg3 error:(id *)arg4;

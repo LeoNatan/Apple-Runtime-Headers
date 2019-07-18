@@ -64,6 +64,7 @@
 - (id)iconWithSession:(id)arg1;
 @property(readonly, nonatomic) WBSParsecImageRepresentation *completionIcon;
 @property(readonly, nonatomic) WBSParsecImageRepresentation *icon;
+@property(readonly, nonatomic) long long parsecQueryID;
 @property(readonly, copy, nonatomic) NSString *sectionBundleIdentifier;
 @property(readonly, nonatomic) SFSearchResult *sfSearchResultValue;
 - (BOOL)canBecomeTopHitForQuery:(id)arg1;

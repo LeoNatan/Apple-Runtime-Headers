@@ -10,8 +10,6 @@
 {
 }
 
-- (id)_publicEventsForAppleEvents;
-- (id)_appleEventsMatchingTimeLocationTuple:(id)arg1;
 - (unsigned long long)numberOftimeLocationTuplesForTimeLocationTuple:(id)arg1;
 - (_Bool)hasTimeLocationTuple:(id)arg1;
 - (id)publicEventFromManagedObject:(id)arg1;

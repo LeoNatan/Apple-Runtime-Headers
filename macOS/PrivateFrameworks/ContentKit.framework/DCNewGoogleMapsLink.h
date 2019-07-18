@@ -8,6 +8,7 @@
 
 @class NSArray, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface DCNewGoogleMapsLink : DCMapsLink
 {
     BOOL _showsTransit;

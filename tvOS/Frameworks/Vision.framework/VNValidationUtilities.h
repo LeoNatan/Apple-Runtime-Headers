@@ -31,6 +31,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)getDoubleValue:(double *)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id *)arg4;
 + (_Bool)getNSUIntegerValue:(unsigned long long *)arg1 forKey:(id)arg2 inOptions:(id)arg3 withDefaultValue:(unsigned long long)arg4 error:(id *)arg5;
 + (_Bool)getNSUIntegerValue:(unsigned long long *)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id *)arg4;
++ (_Bool)getBOOLValue:(_Bool *)arg1 forKey:(id)arg2 inOptions:(id)arg3 withDefaultValue:(_Bool)arg4 error:(id *)arg5;
++ (_Bool)getBOOLValue:(_Bool *)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id *)arg4;
 + (id)requiredObjectOfClass:(Class)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id *)arg4;
 + (_Bool)getOptionalObject:(id *)arg1 ofClass:(Class)arg2 forKey:(id)arg3 inOptions:(id)arg4 error:(id *)arg5;
 + (_Bool)validateRequiredClusterIDs:(id)arg1 error:(id *)arg2;

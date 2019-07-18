@@ -15,12 +15,15 @@
 
 + (void)_addBlurToEffectDescriptor:(id)arg1 blurRadius:(double)arg2 scale:(double)arg3 environment:(id)arg4;
 + (BOOL)supportsSecureCoding;
++ (id)_effectWithInfiniteRadius;
++ (id)_effectForLightMaterial:(id)arg1 darkMaterial:(id)arg2 bundle:(id)arg3;
 + (id)_effectWithBlurRadius:(double)arg1 scale:(double)arg2;
 + (id)effectWithBlurRadius:(double)arg1;
 + (id)_effectWithStyle:(long long)arg1 tintColor:(id)arg2 invertAutomaticStyle:(BOOL)arg3;
 + (id)_effectWithStyle:(long long)arg1 invertAutomaticStyle:(BOOL)arg2;
 + (id)_effectWithTintColor:(id)arg1;
 + (id)effectWithStyle:(long long)arg1;
++ (id)_coreUIImplementationForStyle:(long long)arg1;
 - (void).cxx_destruct;
 - (BOOL)_indicatesMacSidebarBackground;
 - (id)effectSettings;

@@ -9,5 +9,8 @@
 
 @protocol TSArticleRecirculationViewControllerDelegate
 - (void)shouldPresentRecirculationController:(UIViewController<TSArticleRecirculationViewControllerType> *)arg1;
+
+@optional
+- (void)deferArticleRecirculationWork:(void (^)(void))arg1;
 @end
 

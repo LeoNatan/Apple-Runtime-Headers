@@ -14,6 +14,7 @@
 - (id)modelFunctionStringForParameters:(double *)arg1 significantFigures:(int)arg2;
 - (id)partialDerivatives;
 - (void)getInitialParams:(double *)arg1;
+- (void)disqualifyModelIfNecessary;
 - (int)modelParameterCount;
 - (CDUnknownBlockType)modelFunction;
 - (id)modelDescription;

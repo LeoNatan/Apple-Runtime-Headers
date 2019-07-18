@@ -20,6 +20,7 @@
     BOOL _isAwaitingSaveResponseFromEditingContext;
     BOOL _canResizeWindow;
     BOOL _skipUpdatingUIBecauseWeAreAttemptingToClose;
+    BOOL _definitelyUpdateUIBecauseWeDontClose;
     EKObject *_object;
     EKEventStore *_eventStore;
     id <EKHidePopover> _presentingPopoverController;
@@ -58,6 +59,7 @@
 + (id)strokeColor;
 + (id)placeholderTextColor;
 + (void)initialize;
+@property BOOL definitelyUpdateUIBecauseWeDontClose; // @synthesize definitelyUpdateUIBecauseWeDontClose=_definitelyUpdateUIBecauseWeDontClose;
 @property BOOL skipUpdatingUIBecauseWeAreAttemptingToClose; // @synthesize skipUpdatingUIBecauseWeAreAttemptingToClose=_skipUpdatingUIBecauseWeAreAttemptingToClose;
 @property(retain) NSAttributedString *longestAttributedLabel; // @synthesize longestAttributedLabel=_longestAttributedLabel;
 @property(retain) NSArray *registeredDragTypes; // @synthesize registeredDragTypes=_registeredDragTypes;

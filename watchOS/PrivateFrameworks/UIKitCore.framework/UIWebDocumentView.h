@@ -373,7 +373,6 @@
 - (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2;
 - (_Bool)handleKeyAppCommandForCurrentEvent;
 - (_Bool)handleKeyTextCommandForCurrentEvent;
-- (_Bool)handleKeyCommandForCurrentEvent;
 - (id)delegate;
 - (void)setContinuousSpellCheckingEnabled:(_Bool)arg1;
 - (void)_setParentTextView:(id)arg1;
@@ -750,10 +749,12 @@
 @property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically; // @dynamic enablesReturnKeyAutomatically;
 @property(nonatomic) _Bool enablesReturnKeyOnNonWhiteSpaceContent;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
 @property(nonatomic) _Bool forceDefaultDictationInfo;
 @property(nonatomic) int forceDictationKeyboardType;
 @property(nonatomic) _Bool forceDisableDictation;
 @property(nonatomic) _Bool forceEnableDictation;
+@property(nonatomic) _Bool forceFloatingKeyboard;
 @property(nonatomic) _Bool hasDefaultContents;
 @property(readonly) unsigned int hash;
 @property(nonatomic) _Bool hidePrediction;

@@ -10,5 +10,8 @@
 {
 }
 
++ (id)identityKind;
+- (id)humanDescription;
+
 @end
 

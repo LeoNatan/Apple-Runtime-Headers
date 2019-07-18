@@ -69,9 +69,11 @@
     unsigned int _dontDismissOnUnlock:1;
     unsigned int _behavesSuperModally:1;
     unsigned int _allowMenuButtonDismissal:1;
+    unsigned int _undimsScreen:1;
     unsigned int _forcesModalAlertAppearance:1;
     unsigned int _dismissesOverlaysOnLockScreen:1;
     unsigned int _disableIdleSleepWhileVisible:1;
+    unsigned int _hideOnClonedDisplay:1;
     unsigned int _configuredLocked:1;
     unsigned int _configuredNeedsPasscode:1;
     unsigned int _defaultResponseAppLaunchWaitingForPasscode:1;
@@ -128,6 +130,7 @@
 - (void)_noteVolumeOrLockPressed;
 - (_Bool)reappearsAfterUnlock;
 - (_Bool)reappearsAfterLock;
+- (_Bool)hideOnClonedDisplay;
 - (_Bool)dismissesOverlaysOnLockScreen;
 - (_Bool)forcesModalAlertAppearance;
 - (_Bool)behavesSuperModally;
@@ -149,6 +152,7 @@
 - (id)sound;
 - (void)willActivate;
 - (_Bool)_displayActionButtonOnLockScreen;
+- (_Bool)undimsScreen;
 - (_Bool)allowMenuButtonDismissal;
 - (_Bool)dismissOnLock;
 - (_Bool)shouldShowInLockScreen;
@@ -157,7 +161,6 @@
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (void)updateWithMessage:(id)arg1 requestFlags:(int)arg2;
-- (_Bool)undimsScreen;
 - (id)initWithMessage:(id)arg1 replyPort:(unsigned int)arg2 requestFlags:(int)arg3 auditToken:(CDStruct_6ad76789)arg4;
 - (id)_safeLocalizedValue:(id)arg1 withBundle:(id)arg2;
 - (id)iconImage;

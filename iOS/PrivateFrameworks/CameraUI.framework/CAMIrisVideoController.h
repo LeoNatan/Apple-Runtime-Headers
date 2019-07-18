@@ -32,6 +32,7 @@
 - (void)_submitJob:(id)arg1;
 - (void)stillImageRequestDidCompleteCapture:(id)arg1 error:(id)arg2;
 - (void)stillImageRequest:(id)arg1 didCompleteVideoCaptureWithResult:(id)arg2;
+- (_Bool)shouldHandleLivePhotoRenderingForRequest:(id)arg1;
 - (id)initWithNebulaDaemonProxyManager:(id)arg1 delegate:(id)arg2;
 
 // Remaining properties

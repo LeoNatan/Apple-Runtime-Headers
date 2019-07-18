@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (void)_handleDisplayConnectIfPossible;
 - (void)_appProcessStateDidChange:(id)arg1;
+- (void)_authenicationStateDidChange:(id)arg1;
 - (void)_runRootUpdateTransactionWithLabel:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_createUpdateTransactionWithLabel:(id)arg1;
 - (void)_runRootTransaction:(id)arg1 withLabel:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -42,7 +43,7 @@
 - (void)updateWithConfiguration:(id)arg1;
 - (_Bool)isConnected;
 - (void)dealloc;
-- (id)initWithMainWorkspace:(id)arg1 userAuthenticationProvider:(id)arg2 mainDisplaySceneManager:(id)arg3 displayConfiguration:(id)arg4;
+- (id)initWithMainWorkspace:(id)arg1 userAuthenticationProvider:(id)arg2 mainDisplaySceneManager:(id)arg3 layoutPublisher:(id)arg4 displayConfiguration:(id)arg5;
 - (id)init;
 
 // Remaining properties

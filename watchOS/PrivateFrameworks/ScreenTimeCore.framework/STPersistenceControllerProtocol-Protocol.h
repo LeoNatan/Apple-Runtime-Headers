@@ -6,10 +6,13 @@
 
 #import <ScreenTimeCore/NSObject-Protocol.h>
 
-@class NSManagedObjectContext, NSString;
+@class NSManagedObjectContext, NSPersistentStore, NSString;
 
 @protocol STPersistenceControllerProtocol <NSObject>
-@property(readonly) NSManagedObjectContext *viewContext;
+@property(readonly) NSPersistentStore *cloudStore;
+@property(readonly) NSPersistentStore *localStore;
+@property(readonly, nonatomic) _Bool hasStoreLoaded;
+@property(readonly, nonatomic) NSManagedObjectContext *viewContext;
 - (void)setLocalPersistentStoreValue:(id)arg1 forKey:(NSString *)arg2;
 - (id)localPersistentStoreMetadataValueForKey:(NSString *)arg1;
 - (NSManagedObjectContext *)newBackgroundContext;

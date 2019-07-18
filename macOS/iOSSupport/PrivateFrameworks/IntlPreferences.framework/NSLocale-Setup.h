@@ -21,7 +21,6 @@
 + (id)languageArrayAfterSettingLanguage:(id)arg1 fallback:(id)arg2 toLanguageArray:(id)arg3;
 + (BOOL)shouldShowPreferredLanguages;
 + (void)updateShouldShowPreferredLanguages:(BOOL)arg1;
-+ (BOOL)localeLanguageMatchesPrimaryLanguage;
 + (id)canonicalLocaleIdentifierWithValidCalendarForComponents:(id)arg1;
 + (void)setLocaleAfterRegionChange:(id)arg1;
 + (void)setLocaleAfterLanguageChange:(id)arg1;

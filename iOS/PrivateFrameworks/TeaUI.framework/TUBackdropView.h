@@ -6,14 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-@class _UIBackdropView;
+@class UIVisualEffectView;
 
 @interface TUBackdropView : UIView
 {
-    _UIBackdropView *_backdropView;
+    UIVisualEffectView *_backdropView;
 }
 
-@property(readonly, nonatomic) _UIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
+@property(readonly, nonatomic) UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) UIView *contentView;

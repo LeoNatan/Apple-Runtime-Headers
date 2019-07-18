@@ -65,6 +65,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)wantsHighContrastBackgroundForDarkMode:(id)arg1;
 - (_Bool)requiresOutlineOnBackgroundWithAppearance:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool isNearlyWhite;
+@property(readonly, nonatomic) _Bool isClear;
 @property(readonly, nonatomic) _Bool isOpaque;
 @property(readonly, nonatomic) double luminance;
 - (id)colorWithAlphaComponent:(double)arg1;

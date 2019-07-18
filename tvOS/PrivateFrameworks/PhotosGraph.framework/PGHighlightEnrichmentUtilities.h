@@ -10,6 +10,7 @@
 {
 }
 
++ (id)requiredAssetsInAssets:(id)arg1 withContext:(id)arg2;
 + (id)headKeyAssetWithExtendedCuration:(id)arg1;
 + (id)firstKeyAssetWithTripHighlight:(id)arg1;
 + (id)keyAssetForDayGroupHighlightWithContext:(id)arg1 photoLibrary:(id)arg2;

@@ -12,6 +12,7 @@
 - (void)categoriesCollectionViewManager:(WFActionDrawerCategoriesCollectionViewManager *)arg1 didSelectCategoryForContentType:(NSString *)arg2;
 - (void)categoriesCollectionViewManagerDidSelectCategoryScripting:(WFActionDrawerCategoriesCollectionViewManager *)arg1 title:(NSString *)arg2;
 - (void)categoriesCollectionViewManagerDidSelectCategoryFavorites:(WFActionDrawerCategoriesCollectionViewManager *)arg1 title:(NSString *)arg2;
+- (void)categoriesCollectionViewManagerDidSelectCategoryApps:(WFActionDrawerCategoriesCollectionViewManager *)arg1 title:(NSString *)arg2;
 - (void)categoriesCollectionViewManager:(WFActionDrawerCategoriesCollectionViewManager *)arg1 didSelectDocumentationForAction:(WFAction *)arg2 fromView:(UIView *)arg3;
 - (void)categoriesCollectionViewManager:(WFActionDrawerCategoriesCollectionViewManager *)arg1 didSelectAction:(WFAction *)arg2;
 @end

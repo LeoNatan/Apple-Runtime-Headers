@@ -12,6 +12,8 @@
 
 @interface NFAccount (ICLegacyAccount) <ICLegacyAccount>
 - (id)localizedAttachmentsNotSupportedReason;
+- (BOOL)preventMovingNotesToOtherAccounts;
+- (BOOL)isManaged;
 - (BOOL)supportsAttachments;
 - (id)folders;
 - (id)accountIdentifier;

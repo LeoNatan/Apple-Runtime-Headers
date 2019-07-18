@@ -45,9 +45,7 @@
 - (void).cxx_destruct;
 - (void)_updateScrollViewContentInsetAndOffsetIfNecessary;
 - (void)_statusBarHeightDidChange:(id)arg1;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets)arg1;
 - (void)_updateLegibilitySettings;
-- (double)_totalDistanceForBlurTransition;
 - (void)_relinquishStatusBarContentAssertion;
 - (void)_takeStatusBarContentAssertion;
 - (id)_majorScrollView;
@@ -89,7 +87,6 @@
 - (void)_coverSheetDidPresent:(id)arg1;
 - (void)_setRequestDisableRootFolderParallax:(_Bool)arg1 reason:(id)arg2;
 - (void)_setRequestDisableRootFolderScrolling:(_Bool)arg1 reason:(id)arg2;
-- (_Bool)isWidgetExtensionWithIdentifierVisible:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)setDisplayLayoutElementActive:(_Bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;

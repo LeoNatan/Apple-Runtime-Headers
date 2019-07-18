@@ -21,8 +21,10 @@
     NSData *_onsetDate;
     HDCodableAllergyReactionList *_reactions;
     NSData *_recordedDate;
+    HDCodableMedicalCoding *_statusCoding;
 }
 
+@property(retain, nonatomic) HDCodableMedicalCoding *statusCoding; // @synthesize statusCoding=_statusCoding;
 @property(retain, nonatomic) NSData *recordedDate; // @synthesize recordedDate=_recordedDate;
 @property(retain, nonatomic) NSData *lastOccurenceDate; // @synthesize lastOccurenceDate=_lastOccurenceDate;
 @property(retain, nonatomic) HDCodableMedicalCoding *criticalityCoding; // @synthesize criticalityCoding=_criticalityCoding;
@@ -41,6 +43,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) _Bool hasStatusCoding;
 @property(readonly, nonatomic) _Bool hasRecordedDate;
 @property(readonly, nonatomic) _Bool hasLastOccurenceDate;
 @property(readonly, nonatomic) _Bool hasCriticalityCoding;

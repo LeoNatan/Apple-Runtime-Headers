@@ -23,6 +23,7 @@
 - (long long)_migrateLegacyVisitWithItemID:(long long)arg1 visitTime:(double)arg2 title:(id)arg3 score:(unsigned long long)arg4 loadSuccessful:(BOOL)arg5 httpNonGet:(BOOL)arg6 synthesized:(BOOL)arg7;
 - (long long)_migrateLegacyItem:(id)arg1 dailyVisitCounts:(Vector_3b5d2a9f *)arg2 weeklyVisitCounts:(Vector_3b5d2a9f *)arg3;
 @property(readonly, nonatomic) NSDictionary *legacyDatabase;
+- (int)_migrateToSchemaVersion_15;
 - (int)_migrateToSchemaVersion_14;
 - (int)_migrateToSchemaVersion_13;
 - (int)_migrateToSchemaVersion_12;

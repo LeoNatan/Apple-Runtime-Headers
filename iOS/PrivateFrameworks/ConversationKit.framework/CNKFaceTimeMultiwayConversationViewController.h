@@ -40,6 +40,7 @@
 - (void)restartAutoHideInCallControlsDrawerTimer;
 - (void)updateViewConstraints;
 - (_Bool)_canShowWhileLocked;
+- (void)willMoveToParentViewController:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

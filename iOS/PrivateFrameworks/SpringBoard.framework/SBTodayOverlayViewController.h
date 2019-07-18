@@ -28,7 +28,6 @@
 - (void).cxx_destruct;
 - (void)widgetGroupViewControllerDidChangeHeaderVisibility:(id)arg1;
 @property(readonly, nonatomic, getter=isHeaderVisible) _Bool headerVisible;
-- (_Bool)isWidgetExtensionWithIdentifierVisible:(id)arg1;
 - (void)viewDidLoad;
 @property(readonly, nonatomic) struct CGRect contentRect;
 @property(readonly, nonatomic) double contentWidth;

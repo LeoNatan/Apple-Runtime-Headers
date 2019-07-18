@@ -47,6 +47,7 @@
 - (_Bool)isHEVCPreferred;
 - (_Bool)isHEVCSupported;
 - (_Bool)isHEVCRelaxedAverageBitRateTargetSupported;
+- (_Bool)isHEVCMemoryUsageMinimizationSupported;
 - (_Bool)hevcAllowBFramesForHighCTUCount;
 - (int)hevcTurboModeVersion;
 - (_Bool)usesQuantizationScalingMatrix_H264_Steep_16_48;
@@ -73,6 +74,7 @@
 - (_Bool)isLowLightBoostEnabled;
 - (_Bool)isLowLightBoostSupported;
 - (_Bool)isRawStillImageCaptureSupported;
+- (_Bool)isConstituentPhotoCalibrationDataSupported;
 - (_Bool)isBuiltInStereoAudioCaptureSupported;
 - (_Bool)isCameraIntrinsicMatrixDeliverySupported;
 - (_Bool)isVideoStabilizationSupported;
@@ -184,8 +186,8 @@
 - (void)_setActiveVideoMaxFrameDuration:(CDStruct_1b6d18a9)arg1;
 - (_Bool)appliesSessionPresetMaxIntegrationTimeOverrideToActiveFormat;
 - (CDStruct_1b6d18a9)activeMaxExposureDurationClientOverride;
-- (void)setVideoMinFrameDurationOverride:(CDStruct_1b6d18a9)arg1;
-- (CDStruct_1b6d18a9)videoMinFrameDurationOverride;
+- (void)resetVideoMinFrameDurationOverrideForOwner:(id)arg1;
+- (void)setVideoMinFrameDurationOverride:(CDStruct_1b6d18a9)arg1 forOwner:(id)arg2;
 - (_Bool)isActiveVideoMaxFrameDurationSet;
 - (_Bool)isActiveVideoMinFrameDurationSet;
 @property(nonatomic) CDStruct_1b6d18a9 activeVideoMaxFrameDuration;

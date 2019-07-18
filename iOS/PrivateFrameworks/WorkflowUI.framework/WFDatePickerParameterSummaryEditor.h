@@ -31,8 +31,8 @@
 - (void)revealAction:(id)arg1 fromSourceView:(id)arg2 preScrollHandler:(CDUnknownBlockType)arg3 goBackHandler:(CDUnknownBlockType)arg4 scrolledAwayHandler:(CDUnknownBlockType)arg5;
 - (void)showActionOutputPickerFromSourceResponder:(id)arg1 allowExtensionInput:(_Bool)arg2 variableProvider:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)responderWillResign:(id)arg1;
-- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
-- (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
+- (void)presentationControllerDidDismiss:(id)arg1;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (void)datePickerValueChanged:(id)arg1;
 - (void)setVariableUIDelegate:(id)arg1;

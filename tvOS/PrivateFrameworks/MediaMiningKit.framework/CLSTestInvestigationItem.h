@@ -27,7 +27,11 @@
     _Bool _clsIsAestheticallyPrettyGood;
     _Bool _clsIsInhabited;
     _Bool _clsAvoidIfPossibleForKeyItem;
+    _Bool _clsHasPoorResolution;
     _Bool _clsHasInterestingScenes;
+    _Bool _clsIsNonMemorable;
+    _Bool _clsIsLoopOrBounce;
+    _Bool _clsIsLongExposure;
     NSString *_clsIdentifier;
     CLLocation *_clsLocation;
     NSArray *_clsPeopleNames;
@@ -46,15 +50,21 @@
     NSDate *_cls_universalDate;
     double _clsHighlightVisibilityScore;
     double _clsAutoplaySuggestionScore;
+    double _clsDuration;
 }
 
 + (id)contextForItems:(id)arg1;
 + (id)itemWithUniversalDate:(id)arg1 sceneClassifications:(id)arg2;
 + (id)itemWithPeopleNames:(id)arg1 universalDate:(id)arg2 coordinate:(struct CLLocationCoordinate2D)arg3;
+@property(readonly, nonatomic) _Bool clsIsLongExposure; // @synthesize clsIsLongExposure=_clsIsLongExposure;
+@property(readonly, nonatomic) _Bool clsIsLoopOrBounce; // @synthesize clsIsLoopOrBounce=_clsIsLoopOrBounce;
+@property(readonly, nonatomic) _Bool clsIsNonMemorable; // @synthesize clsIsNonMemorable=_clsIsNonMemorable;
+@property(readonly, nonatomic) double clsDuration; // @synthesize clsDuration=_clsDuration;
 @property(readonly, nonatomic) double clsAutoplaySuggestionScore; // @synthesize clsAutoplaySuggestionScore=_clsAutoplaySuggestionScore;
 @property(readonly, nonatomic) double clsHighlightVisibilityScore; // @synthesize clsHighlightVisibilityScore=_clsHighlightVisibilityScore;
 @property(retain, nonatomic) NSDate *cls_universalDate; // @synthesize cls_universalDate=_cls_universalDate;
 @property(readonly) _Bool clsHasInterestingScenes; // @synthesize clsHasInterestingScenes=_clsHasInterestingScenes;
+@property(readonly) _Bool clsHasPoorResolution; // @synthesize clsHasPoorResolution=_clsHasPoorResolution;
 @property(readonly) _Bool clsAvoidIfPossibleForKeyItem; // @synthesize clsAvoidIfPossibleForKeyItem=_clsAvoidIfPossibleForKeyItem;
 @property(readonly) _Bool clsIsInhabited; // @synthesize clsIsInhabited=_clsIsInhabited;
 @property(readonly, nonatomic) double clsFaceScore; // @synthesize clsFaceScore=_clsFaceScore;

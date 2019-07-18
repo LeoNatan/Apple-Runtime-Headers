@@ -6,11 +6,12 @@
 
 #import <TSReading/NSObject-Protocol.h>
 
-@class TSDiOSCanvasViewController, UIGestureRecognizer, UITouch, UIView, UIViewController;
+@class TSDiOSCanvasViewController, UIColor, UIGestureRecognizer, UITouch, UIView, UIViewController;
 
 @protocol TSDiOSCanvasViewControllerDelegate <NSObject>
 
 @optional
+- (UIColor *)backgroundColorForDragUIPlatter;
 - (_Bool)canvasViewController:(TSDiOSCanvasViewController *)arg1 enableSwipeGestureWithNumberOfTouches:(unsigned long long)arg2;
 - (UIViewController *)viewControllerForPresentingAnnotationAuthorUI;
 - (void)handleFindTapAtPoint:(struct CGPoint)arg1;

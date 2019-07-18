@@ -6,32 +6,48 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSString;
-@protocol OS_dispatch_queue;
+#import <HealthDaemon/HDDiagnosticObject-Protocol.h>
 
-@interface HDDatabaseValueCache : NSObject
+@class NSMutableDictionary, NSString;
+
+@interface HDDatabaseValueCache : NSObject <HDDiagnosticObject>
 {
-    long long _cacheScope;
     NSMutableDictionary *_cache;
-    NSObject<OS_dispatch_queue> *_resourceQueue;
     NSString *_threadLocalKey;
+    long long _cacheScope;
+    struct os_unfair_lock_s _lock;
+    struct {
+        long long faultCount;
+        long long lookupCount;
+        long long resetCount;
+    } _statistics;
+    NSString *_name;
 }
 
-@property(copy, nonatomic) NSString *threadLocalKey; // @synthesize threadLocalKey=_threadLocalKey;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *resourceQueue; // @synthesize resourceQueue=_resourceQueue;
-@property(retain, nonatomic) NSMutableDictionary *cache; // @synthesize cache=_cache;
+@property(readonly, copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)diagnosticDescription;
 - (void)_commitTransactionStorage:(id)arg1;
 - (id)_transactionStorageWithDatabase:(id)arg1 createIfNecessary:(_Bool)arg2;
 - (void)removeAllObjectsWithDatabase:(id)arg1;
 - (void)removeObjectForKey:(id)arg1 database:(id)arg2;
-- (void)_resourceQueue_removeAllObjectsWithDatabase:(id)arg1;
-- (void)_resourceQueue_storeObject:(id)arg1 forKey:(id)arg2 database:(id)arg3;
-- (id)_resourceQueue_objectForKey:(id)arg1 database:(id)arg2;
+- (void)_lock_removeAllObjectsWithDatabase:(id)arg1;
+- (void)_lock_storeObject:(id)arg1 forKey:(id)arg2 database:(id)arg3;
+- (id)_lock_objectForKey:(id)arg1 database:(id)arg2;
 - (id)objectForKey:(id)arg1;
 - (id)fetchObjectForKey:(id)arg1 database:(id)arg2 error:(id *)arg3 faultHandler:(CDUnknownBlockType)arg4;
-- (id)initWithCacheScope:(long long)arg1;
+@property(readonly) CDStruct_2ec95fd7 statistics;
+@property(readonly) long long cacheScope;
+- (void)dealloc;
+- (id)initWithName:(id)arg1 cacheScope:(long long)arg2;
+- (id)initWithName:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

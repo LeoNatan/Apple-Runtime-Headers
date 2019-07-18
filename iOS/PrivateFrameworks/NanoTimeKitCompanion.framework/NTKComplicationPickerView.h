@@ -41,13 +41,14 @@
 - (void)_willDisplaySideView:(id)arg1;
 - (Class)_sideViewClass;
 - (id)_newContainerView;
+- (void)layoutSubviews;
 - (void)stealSelectedComplicationDisplay:(id *)arg1 controller:(id *)arg2;
 @property(readonly, nonatomic) NTKComplicationDisplayWrapperView *selectedComplicationDisplay;
 - (id)complicationAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) NTKComplication *selectedComplication;
 - (void)reloadIfNeeded;
 - (void)setNeedsReload;
-@property(retain, nonatomic) UIImage *curvedMask;
+@property(retain, nonatomic) UIImage *maskImage;
 - (void)setCurvedRadius:(double)arg1 curvedAngle:(double)arg2 curvedCenter:(struct CGPoint)arg3 curvedInterior:(_Bool)arg4;
 - (void)dealloc;
 - (id)initWithAllowedComplications:(id)arg1 selectedComplication:(id)arg2 complicationSlot:(id)arg3;

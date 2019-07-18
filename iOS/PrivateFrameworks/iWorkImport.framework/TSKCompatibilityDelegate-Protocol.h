@@ -12,6 +12,7 @@
 - (NSString *)nestedDocumentFilename;
 - (NSString *)needNewerVersionIndexXmlContentString;
 - (NSString *)indexXmlFilename;
+- (_Bool)isTextOnlyType:(NSString *)arg1;
 - (_Bool)isSageDocumentType:(NSString *)arg1;
 - (_Bool)isTCMessageExceptionErrorDomain:(NSString *)arg1;
 - (NSArray *)exportableTypes;

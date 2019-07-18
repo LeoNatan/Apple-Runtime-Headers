@@ -6,6 +6,8 @@
 
 #import <UIFoundation/NSATSTypesetter.h>
 
+@class __NSImmutableTextStorage;
+
 @interface NSSingleLineTypesetter : NSATSTypesetter
 {
     float _lineWidth;
@@ -14,6 +16,7 @@
     int *_props;
     unsigned int *_charIndexes;
     CDStruct_1f053566 _slFlags;
+    __NSImmutableTextStorage *_textStorage;
 }
 
 + (_Bool)_validateAttributes:(id)arg1 measuringOnly:(_Bool)arg2;
@@ -41,10 +44,13 @@
 - (id)createRenderingContextForCharacterRange:(struct _NSRange)arg1 typesetterBehavior:(int)arg2 usesScreenFonts:(_Bool)arg3 hasStrongRight:(_Bool)arg4 syncDirection:(_Bool)arg5 mirrorsTextAlignment:(_Bool)arg6 maximumWidth:(float)arg7;
 - (id)createRenderingContextForCharacterRange:(struct _NSRange)arg1 typesetterBehavior:(int)arg2 usesScreenFonts:(_Bool)arg3 hasStrongRight:(_Bool)arg4 maximumWidth:(float)arg5;
 - (id)init;
+- (id)_textStorageForAttachmentProtocol;
+- (id)_textContainerForAttachmentProtocol;
 - (_Bool)synchronizesAlignmentToDirection;
 - (_Bool)_mirrorsTextAlignment;
 - (_Bool)_allowsEllipsisGlyphSubstitution;
 - (_Bool)_usesScreenFonts;
+- (void)dealloc;
 - (void)done;
 
 @end

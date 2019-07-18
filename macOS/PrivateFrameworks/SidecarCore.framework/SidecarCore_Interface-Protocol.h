@@ -7,8 +7,9 @@
 @class NSData, NSError, NSString;
 
 @protocol SidecarCore_Interface
+- (void)relayTerminateService;
 - (void)relayPresenterLaunchService:(NSString *)arg1 results:(void (^)(_Bool, NSError *))arg2;
 - (void)relaySession:(long long)arg1 invalidatedWithError:(NSError *)arg2;
-- (void)relaySession:(long long)arg1 receivedOPACKData:(NSData *)arg2;
+- (void)relaySession:(long long)arg1 receivedOPACKData:(NSData *)arg2 transport:(long long)arg3;
 @end
 

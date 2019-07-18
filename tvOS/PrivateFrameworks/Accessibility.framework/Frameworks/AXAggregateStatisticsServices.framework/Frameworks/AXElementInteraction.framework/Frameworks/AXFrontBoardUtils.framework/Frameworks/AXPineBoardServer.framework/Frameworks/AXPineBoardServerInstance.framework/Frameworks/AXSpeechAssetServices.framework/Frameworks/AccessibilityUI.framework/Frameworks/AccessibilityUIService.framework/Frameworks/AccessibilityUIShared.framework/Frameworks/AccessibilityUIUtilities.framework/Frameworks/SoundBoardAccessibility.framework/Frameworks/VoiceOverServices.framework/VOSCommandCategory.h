@@ -27,6 +27,7 @@
 + (id)output;
 + (id)speechAndAudio;
 + (id)advancedNavigation;
++ (id)editing;
 + (id)textNavigation;
 + (id)basicNavigation;
 + (id)interaction;

@@ -34,6 +34,7 @@
 }
 
 + (id)matchNothingCriterion;
++ (id)matchEverythingCriterion;
 + (id)orCompoundCriterionWithCriteria:(id)arg1;
 + (id)andCompoundCriterionWithCriteria:(id)arg1;
 + (id)notCriterionWithCriterion:(id)arg1;
@@ -75,6 +76,7 @@
 + (id)defaultsArrayFromCriteria:(id)arg1;
 + (id)criteriaFromDefaultsArray:(id)arg1 removingRecognizedKeys:(_Bool)arg2;
 + (id)criteriaFromDefaultsArray:(id)arg1;
++ (id)criterionForMailboxPredictionMessageQuery:(unsigned int)arg1 variable:(id)arg2;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) _Bool includeRemoteBodyContent; // @synthesize includeRemoteBodyContent=_includeRemoteBodyContent;
 @property(nonatomic) _Bool expressionIsSanitized; // @synthesize expressionIsSanitized=_expressionIsSanitized;
@@ -151,6 +153,7 @@
 - (id)SQLExpressionWithContext:(id)arg1 depth:(unsigned int)arg2;
 - (id)fixOnce;
 - (id)_spotlightQueryString;
+- (id)criteriaForSpotlightCriteria:(id)arg1;
 - (id)_queryWithAttributes:(id)arg1 matchingValue:(id)arg2 qualifier:(int)arg3;
 - (id)_queryWithAttributes:(id)arg1 matchingValue:(id)arg2;
 - (id)_wordQueryWithAttributes:(id)arg1 languages:(id)arg2 expression:(id)arg3;

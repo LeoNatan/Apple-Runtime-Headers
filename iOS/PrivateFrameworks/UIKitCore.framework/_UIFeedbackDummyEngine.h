@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (id)_stats_key;
 - (void)_internal_stopFeedbackData:(id)arg1 forFeedback:(id)arg2;
 - (void)_stopFeedback:(id)arg1;
-- (void)_internal_playFeedbackData:(id)arg1 forFeedback:(id)arg2 atTime:(double)arg3;
+- (_Bool)_internal_playFeedbackData:(id)arg1 forFeedback:(id)arg2 atTime:(double)arg3;
 - (void)_playFeedback:(id)arg1 atTime:(double)arg2;
 - (void)_updateValueForParameters:(id)arg1 withKey:(id)arg2;
 - (void)_internal_dequeueReusableFeedbackPlayerWithCompletionBlock:(CDUnknownBlockType)arg1;

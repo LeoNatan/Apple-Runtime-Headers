@@ -36,10 +36,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (void)_updateForActiveGestureRecognizer;
+- (void)_asyncGestureBegan;
 - (void)_handleGestureRecognizer:(id)arg1;
 @property(readonly, nonatomic) double clickTimeoutDuration;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;
 - (void)cancelInteraction;
+@property(readonly, nonatomic) _Bool isCurrentlyAcceleratedByForce;
 @property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;
 @property(readonly, nonatomic) double touchDuration;
 - (_Bool)_clicksUpAutomaticallyAfterTimeout;

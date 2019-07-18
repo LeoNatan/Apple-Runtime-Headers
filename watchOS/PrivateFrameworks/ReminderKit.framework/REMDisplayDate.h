@@ -6,20 +6,32 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate;
+#import <ReminderKit/NSCopying-Protocol.h>
+#import <ReminderKit/NSSecureCoding-Protocol.h>
 
-@interface REMDisplayDate : NSObject
+@class NSDate, NSTimeZone;
+
+@interface REMDisplayDate : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _allDay;
     NSDate *_date;
+    NSTimeZone *_timeZone;
 }
 
-@property(readonly, nonatomic) _Bool allDay; // @synthesize allDay=_allDay;
-@property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
++ (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
+@property(readonly, nonatomic, getter=isAllDay) _Bool allDay; // @synthesize allDay=_allDay;
+@property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithDate:(id)arg1 allDay:(_Bool)arg2;
+- (id)description;
+- (id)initWithDueDateComponents:(id)arg1 alarms:(id)arg2;
+- (id)initWithFloatingDateComponents:(id)arg1 nonFloatingDateComponents:(id)arg2;
+- (id)initWithDate:(id)arg1 allDay:(_Bool)arg2 timeZone:(id)arg3;
 
 @end
 

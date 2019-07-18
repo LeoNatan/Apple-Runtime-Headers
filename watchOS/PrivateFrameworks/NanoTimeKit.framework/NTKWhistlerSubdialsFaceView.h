@@ -21,9 +21,6 @@
 - (void).cxx_destruct;
 - (void)rectangularViewDidEndInteractive:(id)arg1;
 - (void)rectangularViewDidBecomeInteractive:(id)arg1;
-- (void)complicationDisplayWrapperView:(id)arg1 updateCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5 animationDuration:(double)arg6 animationFraction:(float)arg7;
-- (void)complicationDisplayWrapperView:(id)arg1 prepareCustomDataAnimation:(id)arg2 fromEarlierView:(id)arg3 laterView:(id)arg4 isForward:(_Bool)arg5 animationType:(unsigned int)arg6;
-- (_Bool)complicationDisplayWrapperView:(id)arg1 shouldStartCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5;
 - (_Bool)_shouldShowEditingPageDotsOnBottom;
 - (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
@@ -40,6 +37,7 @@
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_cleanupAfterEditing;
 - (void)_prepareForEditing;
+- (id)complicationPickerViewForSlot:(id)arg1;
 - (float)_minimumBreathingScaleForComplicationSlot:(id)arg1;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
 - (float)_horizontalPaddingForStatusBar;

@@ -36,13 +36,20 @@ struct CGSize {
     double height;
 };
 
+struct NSDirectionalEdgeInsets {
+    double top;
+    double leading;
+    double bottom;
+    double trailing;
+};
+
 struct SBHClockIconMetrics {
-    struct CGSize hourHandSize;
-    struct CGSize minuteHandSize;
-    struct CGSize secondHandSize;
-    double secondHandTailLength;
-    double hourMinuteHandCenterRadius;
-    double secondHandCenterRadius;
+    struct CGSize _field1;
+    struct CGSize _field2;
+    struct CGSize _field3;
+    double _field4;
+    double _field5;
+    double _field6;
 };
 
 struct SBHFloatRange {
@@ -51,12 +58,18 @@ struct SBHFloatRange {
 };
 
 struct SBHFolderMetrics {
-    struct CGSize contentBackgroundSize;
-    double continuousCornerRadius;
-    struct CGPoint contentBackgroundOffsetFromCenterInPortrait;
-    struct CGPoint contentBackgroundOffsetFromCenterInLandscape;
-    double titleFontSizeInPortrait;
-    double titleFontSizeInLandscape;
+    struct CGSize _field1;
+    double _field2;
+    struct CGPoint _field3;
+    struct CGPoint _field4;
+    double _field5;
+    double _field6;
+};
+
+struct SBHIconLabelMetrics {
+    double _field1;
+    double _field2;
+    double _field3;
 };
 
 struct SBHIconManagerStatistics {
@@ -72,6 +85,17 @@ struct SBHIconManagerStatistics {
     unsigned long long _field10;
     unsigned long long _field11;
     unsigned long long _field12;
+    unsigned long long _field13;
+    unsigned long long _field14;
+    unsigned long long _field15;
+    unsigned long long _field16;
+    unsigned long long _field17;
+    unsigned long long _field18;
+};
+
+struct SBHSidebarMetrics {
+    double _field1;
+    struct NSDirectionalEdgeInsets _field2;
 };
 
 struct SBIconCoordinate {
@@ -85,41 +109,37 @@ struct SBIconImageInfo {
     double continuousCornerRadius;
 };
 
-struct SBIconLabelImageMetrics {
-    struct CGRect _field1;
-    double _field2;
-};
-
 struct SBIconListGridLayoutDynamicLabelFontInfo {
-    struct SBIconListGridLayoutDynamicLabelFontSizeCategoryInfo defaultCategory;
-    struct SBIconListGridLayoutDynamicLabelFontSizeCategoryInfo XLCategory;
-    struct SBIconListGridLayoutDynamicLabelFontSizeCategoryInfo XXLCategory;
-    struct SBIconListGridLayoutDynamicLabelFontSizeCategoryInfo XXXLCategory;
-    struct SBIconListGridLayoutDynamicLabelFontSizeCategoryInfo XXXXLCategory;
+    struct SBIconListGridLayoutDynamicLabelFontSizeCategoryInfo _field1;
+    struct SBIconListGridLayoutDynamicLabelFontSizeCategoryInfo _field2;
+    struct SBIconListGridLayoutDynamicLabelFontSizeCategoryInfo _field3;
+    struct SBIconListGridLayoutDynamicLabelFontSizeCategoryInfo _field4;
+    struct SBIconListGridLayoutDynamicLabelFontSizeCategoryInfo _field5;
 };
 
 struct SBIconListGridLayoutDynamicLabelFontSizeCategoryInfo {
-    double fontSize;
-    double verticalOffset;
+    double _field1;
+    struct SBHIconLabelMetrics _field2;
 };
 
 struct SBIconListGridLayoutInfo {
-    unsigned long long numberOfPortraitColumns;
-    unsigned long long numberOfPortraitRows;
-    unsigned long long numberOfLandscapeColumns;
-    unsigned long long numberOfLandscapeRows;
-    struct UIEdgeInsets portraitLayoutInsets;
-    struct UIEdgeInsets landscapeLayoutInsets;
-    struct CGSize folderIconGridCellSize;
-    struct CGSize folderIconGridCellSpacing;
-    struct SBIconImageInfo iconImageInfo;
-    struct SBIconListGridLayoutDynamicLabelFontInfo labelFontInfo;
-    double accessoryFontSize;
-    struct CGSize accessorySize;
-    struct CGPoint accessoryOffset;
-    struct SBHClockIconMetrics clockIconMetrics;
-    struct SBHFolderMetrics folderMetrics;
-    double sidebarWidth;
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    struct UIEdgeInsets _field5;
+    struct UIEdgeInsets _field6;
+    struct CGSize _field7;
+    struct CGSize _field8;
+    struct SBIconImageInfo _field9;
+    unsigned char _field10[80];
+    double _field11;
+    struct CGSize _field12;
+    struct CGPoint _field13;
+    struct SBIconListGridLayoutDynamicLabelFontInfo _field14;
+    struct SBHClockIconMetrics _field15;
+    struct SBHFolderMetrics _field16;
+    struct SBHSidebarMetrics _field17;
 };
 
 struct SBIconListLayoutMetrics {
@@ -147,9 +167,10 @@ struct SBRootFolderViewMetrics {
     struct CGRect _field5;
     struct CGRect _field6;
     struct CGRect _field7;
-    struct CGRect _field8;
+    double _field8;
     struct CGRect _field9;
     struct CGRect _field10;
+    struct CGRect _field11;
 };
 
 struct SBVisibleColumnRange {
@@ -170,6 +191,16 @@ struct _NSRange {
 };
 
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    _Bool _field1;
+    _Bool _field2;
+    _Bool _field3;
+    _Bool _field4;
+    _Bool _field5;
+    double _field6;
+    int _field7;
+} CDStruct_e950349b;
 
 typedef struct {
     unsigned long long _field1;

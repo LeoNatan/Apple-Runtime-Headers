@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (id)leftMarginViewWithOrientation:(long long)arg1;
 - (id)dateViewWithOrientation:(long long)arg1;
+- (_Bool)showSeparators;
 - (id)valueViewForColumnAtIndex:(long long)arg1 orientation:(long long)arg2;
 - (long long)numberOfValuesForAnnotationView:(id)arg1;
 - (id)init;

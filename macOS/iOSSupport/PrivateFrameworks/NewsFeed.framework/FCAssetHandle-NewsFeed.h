@@ -12,9 +12,9 @@
 @protocol TSAssetDataProviderType;
 
 @interface FCAssetHandle (NewsFeed) <TSAssetDataProviderType>
+@property(nonatomic, readonly) id <TSAssetDataProviderType> assetDataProvider;
 - (void)downloadWithGroup:(id)arg1;
 @property(nonatomic, readonly) UIImage *fallbackImage;
-@property(nonatomic, readonly) id <TSAssetDataProviderType> assetDataProvider;
 @property(nonatomic, readonly) BOOL isRawFileConsumable;
 @property(nonatomic, readonly) NSData *data;
 @end

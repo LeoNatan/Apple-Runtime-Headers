@@ -11,12 +11,12 @@
 @interface AXKSearchManager : NSObject
 {
     unsigned long long _searchStyle;
-    id <AXKElementFilterStrategy> __elementFilterStrategy;
+    id <AXKElementFilterStrategy> _elementFilterStrategy;
     id <AXKElementTraversalStrategy> __elementTraversalStrategy;
 }
 
 @property(retain, nonatomic) id <AXKElementTraversalStrategy> _elementTraversalStrategy; // @synthesize _elementTraversalStrategy=__elementTraversalStrategy;
-@property(retain, nonatomic) id <AXKElementFilterStrategy> _elementFilterStrategy; // @synthesize _elementFilterStrategy=__elementFilterStrategy;
+@property(readonly, nonatomic) id <AXKElementFilterStrategy> elementFilterStrategy; // @synthesize elementFilterStrategy=_elementFilterStrategy;
 @property(nonatomic) unsigned long long searchStyle; // @synthesize searchStyle=_searchStyle;
 - (void).cxx_destruct;
 - (BOOL)_meetsCriteriaForSearchType:(unsigned long long)arg1 element:(id)arg2;

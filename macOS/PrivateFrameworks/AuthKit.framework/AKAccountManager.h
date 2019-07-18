@@ -93,6 +93,8 @@
 - (id)reachableEmailAddressesForAccount:(id)arg1;
 - (void)setAuthorizationUsed:(BOOL)arg1 forAccount:(id)arg2;
 - (BOOL)authorizationUsedForAccount:(id)arg1;
+- (void)setAgeOfMajority:(id)arg1 forAccount:(id)arg2;
+- (id)ageOfMajorityForAccount:(id)arg1;
 - (void)setUserUnderage:(BOOL)arg1 forAccount:(id)arg2;
 - (BOOL)userUnderAgeForAccount:(id)arg1;
 - (void)setPhoneAsAppleID:(BOOL)arg1 forAccount:(id)arg2;

@@ -33,7 +33,8 @@
 - (id)getNextViewControllerForOnboardingInput:(id)arg1;
 - (void)configuratorDidFinish:(id)arg1;
 - (void)configuratorDidUpdateViewController:(id)arg1;
-- (id)_findFirstUnfinishedFlowOfNextGroup:(id)arg1;
+- (void)_skipAnyFlowsNoLongerRequired;
+- (id)_findNextAppropriateFlow:(id)arg1;
 - (void)startOnboardingWithPresentingViewController:(id)arg1;
 - (id)getPostProcessingFlowsForResults:(id)arg1;
 - (id)_subclass_buildAllFlowGroupsFromFeatureGroups:(id)arg1 usageOptions:(id)arg2;

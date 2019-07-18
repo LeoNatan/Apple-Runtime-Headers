@@ -17,8 +17,10 @@
     NSArray *_eventParams;
     double _time;
     double _duration;
+    double _fullDuration;
 }
 
+@property(readonly) double fullDuration; // @synthesize fullDuration=_fullDuration;
 @property(readonly) NSString *type; // @synthesize type=_type;
 @property double duration; // @synthesize duration=_duration;
 @property double relativeTime; // @synthesize relativeTime=_time;

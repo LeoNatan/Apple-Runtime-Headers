@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (id)description;
 - (void)updateBlockedListFromStore:(id)arg1;
 - (void)_loadIdentifiers;
 - (void)_storeIdentifiers;

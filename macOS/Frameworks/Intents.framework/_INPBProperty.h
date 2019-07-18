@@ -15,11 +15,13 @@
 @interface _INPBProperty : PBCodable <_INPBProperty, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBIntentSlotValue *_payload;
     NSString *_role;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *role; // @synthesize role=_role;
 @property(retain, nonatomic) _INPBIntentSlotValue *payload; // @synthesize payload=_payload;
 - (void).cxx_destruct;

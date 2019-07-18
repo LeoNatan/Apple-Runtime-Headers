@@ -19,12 +19,13 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (id)description;
 - (void)updateBlockedListFromStore:(id)arg1;
 - (void)_loadIdentifiers;
 - (void)_storeIdentifiers;
 - (void)clearList;
 - (void)unblockIdentifiers:(id)arg1;
-- (void)blockIdentifiers:(id)arg1;
+- (void)blockIdentifier:(id)arg1;
 - (_Bool)containsIdentifier:(id)arg1;
 - (_Bool)containsAnyIdentifiersInArray:(id)arg1;
 - (id)init;

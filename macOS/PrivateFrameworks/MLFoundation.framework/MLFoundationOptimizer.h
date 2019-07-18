@@ -24,20 +24,21 @@
 }
 
 + (id)new;
-@property(readonly, nonatomic) MLFoundationDevice *device; // @synthesize device=_device;
-@property(readonly, copy, nonatomic) NSArray *deviceOps; // @synthesize deviceOps=_deviceOps;
+@property(retain, nonatomic) MLFoundationDevice *device; // @synthesize device=_device;
+@property(copy, nonatomic) NSArray *deviceOps; // @synthesize deviceOps=_deviceOps;
 @property(readonly, nonatomic) int regularizationType; // @synthesize regularizationType=_regularizationType;
 @property(readonly, nonatomic) float regularizationScale; // @synthesize regularizationScale=_regularizationScale;
 @property(readonly, nonatomic) float gradientClipMin; // @synthesize gradientClipMin=_gradientClipMin;
 @property(readonly, nonatomic) float gradientClipMax; // @synthesize gradientClipMax=_gradientClipMax;
 @property(nonatomic) BOOL applyGradientClipping; // @synthesize applyGradientClipping=_applyGradientClipping;
 @property(readonly, nonatomic) float gradientRescale; // @synthesize gradientRescale=_gradientRescale;
-@property(readonly, nonatomic) float learningRate; // @synthesize learningRate=_learningRate;
+@property(nonatomic) float learningRate; // @synthesize learningRate=_learningRate;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
-- (id)initWithDevice:(id)arg1 learningRate:(float)arg2 gradientRescale:(float)arg3 applyGradientClipping:(BOOL)arg4 gradientClipMax:(float)arg5 gradientClipMin:(float)arg6 regularizationScale:(float)arg7 regularizationType:(int)arg8 deviceOps:(id)arg9;
-- (id)initWithDevice:(id)arg1 optimizerDescriptor:(id)arg2 deviceOps:(id)arg3;
+- (void)bindDevice:(id)arg1 deviceOps:(id)arg2;
+- (id)initWithLearningRate:(float)arg1 gradientRescale:(float)arg2 applyGradientClipping:(BOOL)arg3 gradientClipMax:(float)arg4 gradientClipMin:(float)arg5 regularizationScale:(float)arg6 regularizationType:(int)arg7;
+- (id)initWithDescriptor:(id)arg1;
 - (id)init;
 
 @end

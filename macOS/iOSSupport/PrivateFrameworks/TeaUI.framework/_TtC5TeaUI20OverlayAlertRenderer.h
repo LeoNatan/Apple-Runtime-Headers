@@ -9,7 +9,6 @@
 @interface _TtC5TeaUI20OverlayAlertRenderer : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: styler
-    // Error parsing type: , name: maskImageGenerator
 }
 
 @end

@@ -129,6 +129,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)shouldUseRenderer:(id)arg1;
 - (void)clearRenderers;
 - (id)renderers;
+@property(readonly, nonatomic) struct CGColor *subSelectionKnobStrokeColor;
+@property(readonly, nonatomic) struct CGColor *subSelectionKnobFillColor;
+@property(readonly, nonatomic) double subSelectionKnobRadius;
 @property(readonly, nonatomic) _Bool isCorrectRepClassForInfo;
 - (_Bool)canDrawInParallel;
 @property(readonly, nonatomic) _Bool forceRenderBlankBackground;

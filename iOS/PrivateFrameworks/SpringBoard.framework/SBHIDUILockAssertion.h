@@ -15,6 +15,7 @@
     _Bool _suspendProximitySensor;
     _Bool _suspendMultitouch;
     _Bool _pocketTouchesExpected;
+    _Bool _disableTapToWake;
     long long _source;
     SBHIDInterface *_HIDInterface;
     NSString *_reason;
@@ -23,6 +24,7 @@
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(nonatomic) __weak SBHIDInterface *HIDInterface; // @synthesize HIDInterface=_HIDInterface;
 @property(nonatomic) long long source; // @synthesize source=_source;
+@property(nonatomic) _Bool disableTapToWake; // @synthesize disableTapToWake=_disableTapToWake;
 @property(nonatomic) _Bool pocketTouchesExpected; // @synthesize pocketTouchesExpected=_pocketTouchesExpected;
 @property(nonatomic) _Bool suspendMultitouch; // @synthesize suspendMultitouch=_suspendMultitouch;
 @property(nonatomic) _Bool suspendProximitySensor; // @synthesize suspendProximitySensor=_suspendProximitySensor;

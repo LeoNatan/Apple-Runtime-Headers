@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (int)dynamicForward:(id)arg1 paramFileUrl:(id)arg2 cancel:(CDUnknownBlockType)arg3;
 - (int)forward:(id)arg1;
-- (int)initializeNetwork:(id)arg1 paramFileUrl:(id)arg2;
+- (int)prepareNetworkFromURL:(id)arg1 withInputSize:(id)arg2;
 - (int)add:(id)arg1;
 - (id)getGPUContext;
 - (int)size;

@@ -12,10 +12,12 @@
 {
     // Error parsing type: , name: patternView
     // Error parsing type: , name: gradientView
+    // Error parsing type: , name: currentAsset
 }
 
 - (void).cxx_destruct;
 - (void)gutterViewBoundsDidChange;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)didMoveToSuperview;
 - (void)willMoveToSuperview:(id)arg1;

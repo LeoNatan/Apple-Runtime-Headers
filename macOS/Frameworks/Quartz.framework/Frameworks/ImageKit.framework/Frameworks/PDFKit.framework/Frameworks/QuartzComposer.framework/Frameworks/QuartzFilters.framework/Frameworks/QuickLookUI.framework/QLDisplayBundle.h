@@ -12,7 +12,7 @@
 #import <QuickLookUI/QLPreviewPageNavigationDataSource-Protocol.h>
 #import <QuickLookUI/QLTimeSliderDataSource-Protocol.h>
 
-@class CALayer, DMFApplicationPolicyMonitor, NSArray, NSDictionary, NSMutableArray, NSResponder, NSString, NSTouchBar, NSURL, NSUUID, NSView, QLDisplayBundleViewController, QLPreview;
+@class CALayer, DMFApplicationPolicyMonitor, DMFCategoryPolicyMonitor, NSArray, NSDictionary, NSMutableArray, NSResponder, NSString, NSTouchBar, NSURL, NSUUID, NSView, QLDisplayBundleViewController, QLPreview;
 @protocol QLDisplayBundleOwner, QLPreviewItem;
 
 @interface QLDisplayBundle : NSObject <QLAccessibilityUIElementDelegate, QLPreviewPageNavigationDataSource, QLTimeSliderDataSource, QLDisplayable, NSPasteboardWriting>
@@ -30,7 +30,8 @@
     BOOL _inMarkup;
     BOOL _documentDirty;
     long long _currentScreentimePolicy;
-    DMFApplicationPolicyMonitor *_screentimePolicyMonitor;
+    DMFCategoryPolicyMonitor *_screentimeCategoryPolicyMonitor;
+    DMFApplicationPolicyMonitor *_screentimeApplicationPolicyMonitor;
 }
 
 + (id)newPreviewDocumentDisplayBundleForPreview:(id)arg1;
@@ -51,7 +52,8 @@
 + (id)keyPathsForValuesAffectingIsWindowKey;
 + (id)keyPathsForValuesAffectingHidePlayControl;
 + (id)keyPathsForValuesAffectingNeedsVolumeControl;
-@property(retain) DMFApplicationPolicyMonitor *screentimePolicyMonitor; // @synthesize screentimePolicyMonitor=_screentimePolicyMonitor;
+@property(retain) DMFApplicationPolicyMonitor *screentimeApplicationPolicyMonitor; // @synthesize screentimeApplicationPolicyMonitor=_screentimeApplicationPolicyMonitor;
+@property(retain) DMFCategoryPolicyMonitor *screentimeCategoryPolicyMonitor; // @synthesize screentimeCategoryPolicyMonitor=_screentimeCategoryPolicyMonitor;
 @property long long currentScreentimePolicy; // @synthesize currentScreentimePolicy=_currentScreentimePolicy;
 @property(retain) NSArray *invalidModes; // @synthesize invalidModes=_invalidModes;
 @property(retain) QLPreview *preview; // @synthesize preview=_preview;
@@ -180,8 +182,9 @@
 @property(readonly) BOOL hasTime;
 @property(readonly) BOOL showCompactPlayControl;
 @property(readonly) BOOL delegatesControls;
+- (id)categoryForScreentime;
 - (id)bundleIDForScreentime;
-- (void)presentScreenTimeLockout:(BOOL)arg1 withBundleID:(id)arg2;
+- (void)presentScreenTimeLockout:(BOOL)arg1 withScreentimeID:(id)arg2;
 - (void)checkScreenTimePolicy;
 - (void)endWatchingScreenTimePolicy;
 - (void)startWatchingScreenTimePolicy;

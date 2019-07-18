@@ -16,15 +16,15 @@
 
 - (void).cxx_destruct;
 - (_Bool)_performAfterAttemptingUnlockForAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)_foregroundSceneIdentifiersForBundleIdentifiers:(id)arg1;
-- (id)_allSceneIdentifiersForBundleIdentifiers:(id)arg1;
+- (id)_foregroundApplicationDestinationsForApplications:(id)arg1;
+- (id)_allApplicationDestinationsForApplications:(id)arg1;
 - (_Bool)_isUILocked;
 - (id)_workspace;
 - (void)_resetRecentlyTappedSceneIdentifiersForStyleOverrides:(int)arg1;
-- (id)_recentlyTappedSceneIdentifiersForStyleOverrides:(int)arg1;
+- (id)_recentlyTappedApplicationDestinationsForStyleOverrides:(int)arg1;
 - (void)_scheduleResetRecentlyTappedSceneIdentifiersForStyleOverrides:(int)arg1;
-- (void)_addRecentlyTappedSceneIdentifiers:(id)arg1 forStyleOverrides:(int)arg2;
-- (id)_sceneIdentifierForNextSceneToVisitForApps:(id)arg1 styleOverrides:(int)arg2 outApplication:(id *)arg3;
+- (void)_addRecentlyTappedApplicationDestinations:(id)arg1 forStyleOverrides:(int)arg2;
+- (id)_appDestinationForNextSceneToVisitForApps:(id)arg1 styleOverrides:(int)arg2;
 - (id)_handlerForStyleOverrides:(int)arg1 orOutApplications:(id *)arg2;
 - (id)_handlerForStyleOverrides:(int)arg1;
 - (_Bool)canHandleTapForStatusBarStyleOverrides:(int)arg1;

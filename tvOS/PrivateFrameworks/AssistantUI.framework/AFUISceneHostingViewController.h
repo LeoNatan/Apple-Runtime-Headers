@@ -13,10 +13,10 @@
 
 @interface AFUISceneHostingViewController : UIViewController <AFUISceneControllerDelegate>
 {
-    _Bool _shouldDeferHIDEventsToCanvas;
+    _Bool _shouldDeferHIDEventsToWindowScene;
     AFUISceneConfiguration *_configuration;
     AFUISceneController *_sceneController;
-    UIView *_canvasHostingView;
+    UIView *_windowSceneHostingView;
     id <UIScenePresenter> _presentation;
     FBSceneClientProviderInvalidationAction *_invalidationAction;
     id <FBSceneHost> _sceneHost;
@@ -29,10 +29,10 @@
 @property(nonatomic) id <FBSceneHost> sceneHost; // @synthesize sceneHost=_sceneHost;
 @property(retain, nonatomic) FBSceneClientProviderInvalidationAction *invalidationAction; // @synthesize invalidationAction=_invalidationAction;
 @property(retain, nonatomic) id <UIScenePresenter> presentation; // @synthesize presentation=_presentation;
-@property(retain, nonatomic) UIView *canvasHostingView; // @synthesize canvasHostingView=_canvasHostingView;
+@property(retain, nonatomic) UIView *windowSceneHostingView; // @synthesize windowSceneHostingView=_windowSceneHostingView;
 @property(retain, nonatomic) AFUISceneController *sceneController; // @synthesize sceneController=_sceneController;
 @property(readonly, nonatomic) AFUISceneConfiguration *configuration; // @synthesize configuration=_configuration;
-@property(nonatomic) _Bool shouldDeferHIDEventsToCanvas; // @synthesize shouldDeferHIDEventsToCanvas=_shouldDeferHIDEventsToCanvas;
+@property(readonly, nonatomic) _Bool shouldDeferHIDEventsToWindowScene; // @synthesize shouldDeferHIDEventsToWindowScene=_shouldDeferHIDEventsToWindowScene;
 - (void).cxx_destruct;
 - (_Bool)_hasScene;
 - (void)sceneController:(id)arg1 sceneDidUpdateClientSettings:(id)arg2;

@@ -9,6 +9,7 @@
 @class NSArray;
 
 @interface _TtC12NewsArticles27ArticleViewerViewController (NewsArticles2)
+- (void)showTableOfContentsKeyCommand;
 - (void)closeStoryKeyCommand;
 - (void)nextStoryKeyCommand;
 - (void)previousStoryKeyCommand;

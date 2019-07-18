@@ -122,6 +122,7 @@
 - (id)_accessibilityAccessKey;
 - (void)_setAccessibilityEnhancedUserInterface:(BOOL)arg1;
 - (BOOL)_isAccessibilityEnhancedUserInterface;
+- (void)postNotification:(id)arg1 info:(id)arg2;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)accessibilityHitTest:(struct CGPoint)arg1 includeIgnored:(BOOL)arg2;
 @property(readonly, nonatomic) BOOL isAccessibilityEnabledAttributeSet;
@@ -316,6 +317,7 @@
 @property(readonly, nonatomic) struct CGRect visibleBounds;
 @property(readonly, nonatomic) BOOL isKeyboardFocusable;
 - (id)screenshotData;
+- (const struct __AXUIElement *)elementRef;
 - (id)transportRepresentation;
 - (id)compactArchiveRepresentation;
 @property(readonly, nonatomic) struct ProcessSerialNumber realApplicationProcessSerialNumber;

@@ -22,7 +22,6 @@
 - (id)_solarTemplate;
 - (id)_siriTemplate;
 - (id)_newsTemplate;
-- (id)_messagesTemplate;
 - (id)_breathingTemplate;
 - (id)_reminderTemplate;
 - (id)_workoutTemplate;

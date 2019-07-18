@@ -15,6 +15,7 @@
 @interface _INPBSearchForMessagesIntentResponse : PBCodable <_INPBSearchForMessagesIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSArray *_messages;
     NSArray *_searchResults;
 }
@@ -22,6 +23,7 @@
 + (BOOL)supportsSecureCoding;
 + (Class)searchResultsType;
 + (Class)messagesType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *searchResults; // @synthesize searchResults=_searchResults;
 @property(copy, nonatomic) NSArray *messages; // @synthesize messages=_messages;
 - (void).cxx_destruct;

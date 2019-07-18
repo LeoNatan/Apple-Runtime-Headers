@@ -17,6 +17,7 @@
 - (void)observeUserInterfaceStyleWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeWantsExclusiveForegroundWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeActivationConditionsDataWithBlock:(CDUnknownBlockType)arg1;
+- (void)observeSceneActivationBiasWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeCanvasTitleWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeReachabilitySupportedWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeWhitePointAdaptivityStyleWithBlock:(CDUnknownBlockType)arg1;

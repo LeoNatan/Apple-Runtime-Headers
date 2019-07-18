@@ -9,6 +9,7 @@
 @class NSArray, NSData, NSString, NSURL;
 
 @protocol GKUtilityService <NSObject>
+- (oneway void)openGameCenterSettings;
 - (oneway void)deleteCachedImageDataFromSubdirectory:(NSString *)arg1 withFileName:(NSString *)arg2 handler:(void (^)(void))arg3;
 - (oneway void)loadCachedImageDataFromSubdirectory:(NSString *)arg1 withFileName:(NSString *)arg2 handler:(void (^)(NSData *))arg3;
 - (oneway void)cacheImageData:(NSData *)arg1 inSubdirectory:(NSString *)arg2 withFileName:(NSString *)arg3 handler:(void (^)(void))arg4;

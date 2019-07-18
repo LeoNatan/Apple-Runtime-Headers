@@ -6,7 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
-@class AKAuthorizationTTSUContentView, LSApplicationProxy, NSString, OBPrivacyLinkController, UIImage;
+@class AKAuthorizationTTSUContentView, LSApplicationProxy, NSString, NSTimer, UIImage;
 @protocol AKAuthorizationTTSUViewControllerDelegate;
 
 @interface AKAuthorizationTTSUViewController : UIViewController
@@ -15,21 +15,21 @@
     NSString *_bundleID;
     UIImage *_appIconImage;
     AKAuthorizationTTSUContentView *_contentView;
-    OBPrivacyLinkController *_privacyLink;
+    NSTimer *_footerTimer;
     LSApplicationProxy *_applicationProxy;
 }
 
-+ (SEL)privacyButtonAction;
 + (void)initialize;
 @property(retain, nonatomic) LSApplicationProxy *applicationProxy; // @synthesize applicationProxy=_applicationProxy;
-@property(retain, nonatomic) OBPrivacyLinkController *privacyLink; // @synthesize privacyLink=_privacyLink;
+@property(retain, nonatomic) NSTimer *footerTimer; // @synthesize footerTimer=_footerTimer;
 @property(retain, nonatomic) AKAuthorizationTTSUContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIImage *appIconImage; // @synthesize appIconImage=_appIconImage;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic) __weak id <AKAuthorizationTTSUViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_privacyButtonPressed:(id)arg1;
-- (void)startAuthorizationInProgressAnimation;
+- (void)_startAuthorizationInProgressAnimation;
+- (void)authorizationInProgress;
+- (void)userInteractedWithEndorsingDevice;
 - (void)_menuPressed:(id)arg1;
 @property(readonly, nonatomic) double appIconCornerRadius;
 - (void)viewDidAppear:(_Bool)arg1;

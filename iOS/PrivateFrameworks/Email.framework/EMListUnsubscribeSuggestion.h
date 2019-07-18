@@ -21,6 +21,7 @@
 
 + (id)unsubscribeMessageAlertString;
 + (id)unsubscribeTitleAlertString;
++ (id)suggestionDismissActionTitle;
 + (id)suggestionPrimaryActionString;
 @property(nonatomic) __weak SGSuggestionPresenter *suggestionPresenter; // @synthesize suggestionPresenter=_suggestionPresenter;
 @property(retain, nonatomic) EMListUnsubscribeCommand *listUnsubscribeCommand; // @synthesize listUnsubscribeCommand=_listUnsubscribeCommand;

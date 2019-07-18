@@ -14,7 +14,6 @@
 - (void)noteHTMLEditorView:(NoteHTMLEditorView *)arg1 handleLongPressOnElement:(DOMHTMLElement *)arg2 atPoint:(struct CGPoint)arg3;
 - (_Bool)noteHTMLEditorView:(NoteHTMLEditorView *)arg1 canHandleLongPressOnElement:(DOMHTMLElement *)arg2;
 - (_Bool)noteHTMLEditorView:(NoteHTMLEditorView *)arg1 acceptContentsFromPasteboard:(UIPasteboard *)arg2;
-- (_Bool)allowsAttachmentsInNoteHTMLEditorView:(NoteHTMLEditorView *)arg1;
 - (_Bool)canInsertImagesInNoteHTMLEditorView:(NoteHTMLEditorView *)arg1;
 @end
 

@@ -19,7 +19,9 @@
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 - (void).cxx_destruct;
-- (void)forceConfigUpdate;
+- (void)copyApplicationState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)forceApplicationKeysDownload:(CDUnknownBlockType)arg1;
+- (void)forceConfigUpdate:(CDUnknownBlockType)arg1;
 - (void)clearState:(CDUnknownBlockType)arg1;
 - (void)forceValidateUUID:(id)arg1 uri:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)convertToSelfRequest:(id)arg1 serverDatas:(id)arg2 syncedDatas:(id)arg3 queryResponse:(id)arg4 updateCompletionBlock:(CDUnknownBlockType)arg5;

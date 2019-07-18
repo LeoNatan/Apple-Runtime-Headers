@@ -6,10 +6,12 @@
 
 #import <UIKit/UIButton.h>
 
-@class CAFilter, INShortcut, INVoiceShortcut, NSLayoutConstraint, UIImageView, UILabel;
+#import <IntentsUI/UIDragInteractionDelegate-Protocol.h>
+
+@class CAFilter, INShortcut, INVoiceShortcut, NSLayoutConstraint, NSString, UIImageView, UILabel;
 @protocol INUIAddVoiceShortcutButtonDelegate;
 
-@interface INUIAddVoiceShortcutButton : UIButton
+@interface INUIAddVoiceShortcutButton : UIButton <UIDragInteractionDelegate>
 {
     unsigned long long _style;
     id <INUIAddVoiceShortcutButtonDelegate> _delegate;
@@ -40,6 +42,7 @@
 @property(nonatomic) __weak id <INUIAddVoiceShortcutButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
 - (void)prepareForInterfaceBuilder;
 - (id)accessibilityLabel;
 - (void)_handleVoiceShortcutUpdateNotification:(id)arg1;
@@ -72,6 +75,12 @@
 - (void)_configureWithStyle:(unsigned long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStyle:(unsigned long long)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

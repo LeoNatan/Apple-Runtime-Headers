@@ -58,7 +58,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)startPointForPath:(id)arg1 andBounds:(struct CGRect)arg2;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
-- (int)fillType;
+- (long long)fillType;
 @property(readonly, nonatomic) _Bool hasAlpha;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

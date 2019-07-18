@@ -8,6 +8,8 @@
 
 @protocol SearchUIKeyboardableNavigationProtocol <NSObject>
 - (void)removeKeyboardHandler;
+- (_Bool)navigateKeyboardDown;
+- (_Bool)navigateKeyboardUp;
 - (_Bool)navigateKeyboardLeft;
 - (void)returnKeyPressed;
 - (_Bool)navigateKeyboardRight;

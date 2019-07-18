@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)reloadData;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
+- (long long)_personTypeForSection:(long long)arg1;
 - (id)createInitialDataSource;
 - (id)initWithPhotoLibrary:(id)arg1;
 

@@ -10,13 +10,11 @@
 {
 }
 
-+ (void)load;
 
 // Remaining properties
 @property(readonly, nonatomic) struct _SXConvertibleValue maximumHeight; // @dynamic maximumHeight;
 @property(readonly, nonatomic) struct _SXConvertibleValue maximumWidth; // @dynamic maximumWidth;
 @property(readonly, nonatomic) struct _SXConvertibleValue minimumHeight; // @dynamic minimumHeight;
 @property(readonly, nonatomic) struct _SXConvertibleValue minimumWidth; // @dynamic minimumWidth;
-
 @end
 

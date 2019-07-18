@@ -14,7 +14,7 @@
 #import <PhotosUI/UIActivityItemImageDataProvider-Protocol.h>
 #import <PhotosUI/UIActivityItemSource-Protocol.h>
 
-@class NSDictionary, NSMutableDictionary, NSMutableSet, NSObject, NSProgress, NSString, NSURL, PHAsset, PHAssetExportRequest, PUActivityItemSourceAnchorOperation, PUActivityItemSourceConfiguration, PUActivityItemSourceOperation;
+@class NSDictionary, NSError, NSMutableDictionary, NSMutableSet, NSObject, NSProgress, NSString, NSURL, PHAsset, PHAssetExportRequest, PUActivityItemSourceAnchorOperation, PUActivityItemSourceConfiguration, PUActivityItemSourceOperation;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
 @interface PUActivityItemSource : PXObservable <PHAssetExportRequestDelegate, PUActivityItemSourceOperationDelegate, PUMutableActivityItemSource, UIActivityItemDeferredSource, UIActivityItemApplicationExtensionSource, UIActivityItemImageDataProvider, UIActivityItemSource>
@@ -25,7 +25,7 @@
     NSMutableSet *_onDemandExports;
     NSMutableDictionary *_sharingURLs;
     NSString *_sharingUUID;
-    NSString *_assetOriginalFilename;
+    NSString *_assetOriginalFilenameBase;
     PUActivityItemSourceOperation *_currentOperation;
     PUActivityItemSourceAnchorOperation *_anchorOperation;
     _Bool _shouldSkipPreparation;
@@ -35,6 +35,7 @@
     CDUnknownBlockType _progressHandler;
     CDUnknownBlockType _completionHandler;
     CDUnknownBlockType _postCompletionHandler;
+    NSError *_lastPreparationError;
     PUActivityItemSourceConfiguration *_exportConfiguration;
     PHAssetExportRequest *__assetExportRequest;
     NSProgress *__exportProgress;
@@ -45,6 +46,7 @@
 }
 
 + (id)activityItemSourceLog;
++ (unsigned short)assetBundleVideoComplementVisibilityStateFromPHVideoComplementVisibilityState:(unsigned short)arg1;
 + (unsigned long long)assetBundlePlaybackVariationFromPHAssetPlaybackVariation:(unsigned short)arg1;
 + (long long)assetBundlePlaybackStyleFromPHAssetPlaybackStyle:(long long)arg1;
 + (unsigned long long)assetBundleMediaSubtypesFromPHAssetMediaSubtypes:(unsigned long long)arg1;
@@ -61,6 +63,7 @@
 @property(retain, nonatomic) PUActivityItemSourceConfiguration *exportConfiguration; // @synthesize exportConfiguration=_exportConfiguration;
 @property(nonatomic) _Bool shouldAnchorPreparation; // @synthesize shouldAnchorPreparation=_shouldAnchorPreparation;
 @property(nonatomic) _Bool shouldSkipPreparation; // @synthesize shouldSkipPreparation=_shouldSkipPreparation;
+@property(retain, nonatomic) NSError *lastPreparationError; // @synthesize lastPreparationError=_lastPreparationError;
 @property(copy) CDUnknownBlockType postCompletionHandler; // @synthesize postCompletionHandler=_postCompletionHandler;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
@@ -111,6 +114,7 @@
 - (void)runWithActivityType:(id)arg1;
 - (id)_activityOperationQueue;
 - (void)dealloc;
+@property(readonly, nonatomic) NSString *sharingUUID;
 - (id)initWithAsset:(id)arg1 sharingPreferences:(CDStruct_2a4d9400)arg2;
 
 // Remaining properties

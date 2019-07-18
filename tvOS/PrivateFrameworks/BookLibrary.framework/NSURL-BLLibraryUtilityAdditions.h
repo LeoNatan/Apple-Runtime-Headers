@@ -8,12 +8,14 @@
 
 @interface NSURL (BLLibraryUtilityAdditions)
 - (id)identifierFromPermlink;
-- (_Bool)isUbiquitousPromise;
+- (_Bool)bl_isDownloadedWithResourceValue:(id)arg1;
+- (_Bool)bl_boolFromResourceValue:(id)arg1;
+- (_Bool)bl_isUbiquitousPromise;
 - (_Bool)isUploading;
 - (_Bool)isUploaded;
-- (_Bool)isDownloading;
-- (_Bool)isDownloaded;
+- (_Bool)bl_isDownloading;
+- (_Bool)bl_isDownloaded;
 - (_Bool)hasUnresolvedConflicts;
-- (_Bool)isUbiquitous;
+- (_Bool)bl_isUbiquitous;
 @end
 

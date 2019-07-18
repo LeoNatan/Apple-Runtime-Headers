@@ -7,11 +7,11 @@
 #import <WorkflowUI/WFModuleSummaryEditor.h>
 
 #import <WorkflowUI/HUServicePickerViewControllerDelegate-Protocol.h>
-#import <WorkflowUI/UIPresentationControllerDelegatePrivate-Protocol.h>
+#import <WorkflowUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 
 @class HMHome, NSString, UIViewController, WFTextTokenChooser;
 
-@interface WFConditionalSubjectParameterSummaryEditor : WFModuleSummaryEditor <HUServicePickerViewControllerDelegate, UIPresentationControllerDelegatePrivate>
+@interface WFConditionalSubjectParameterSummaryEditor : WFModuleSummaryEditor <HUServicePickerViewControllerDelegate, UIPopoverPresentationControllerDelegate>
 {
     WFTextTokenChooser *_chooser;
     UIViewController *_presentedViewController;
@@ -23,11 +23,12 @@
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 @property(retain, nonatomic) WFTextTokenChooser *chooser; // @synthesize chooser=_chooser;
 - (void).cxx_destruct;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (id)contextHome;
 - (void)presentCharacteristicPickerFromSourceViewController:(id)arg1 sourceView:(id)arg2 sourceRect:(struct CGRect)arg3;
-- (void)presentServicePickerFromSourceViewController:(id)arg1 home:(id)arg2;
-- (void)presentHomePickerFromSourceViewController:(id)arg1;
+- (void)presentServicePickerFromSourceViewController:(id)arg1 home:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
+- (void)presentHomePickerFromSourceViewController:(id)arg1 sourceView:(id)arg2 sourceRect:(struct CGRect)arg3;
 - (void)servicePickerDidCancel:(id)arg1;
 - (void)servicePickerDidFinish:(id)arg1 selectedServices:(id)arg2;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;

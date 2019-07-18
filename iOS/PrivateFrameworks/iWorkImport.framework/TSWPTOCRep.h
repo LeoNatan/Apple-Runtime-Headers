@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)i_indexOfHitTOCEntryAtPoint:(struct CGPoint)arg1;
 - (id)i_paragraphStyleAtPoint:(struct CGPoint)arg1;
 - (id)hyperlinkRegions;
-- (void)showTableOfContentsEditingCollaborationHUDAtPoint:(struct CGPoint)arg1;
 - (_Bool)canMakePathEditable;
 - (_Bool)shouldShowKnobs;
 - (_Bool)shouldCreateKnobs;

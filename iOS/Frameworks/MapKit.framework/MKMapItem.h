@@ -11,7 +11,7 @@
 #import <MapKit/NSItemProviderWriting-Protocol.h>
 #import <MapKit/NSSecureCoding-Protocol.h>
 
-@class GEOAddress, GEOBusinessHours, GEOFeatureStyleAttributes, GEOMapItemDetourInfo, GEOMapItemStorage, GEOMapItemStorageUserValues, GEOMapRegion, GEOModuleLayoutEntry, GEOPDBusinessClaim, GEOPDFlyover, GEOPlace, GEORelatedPlaceList, MKMapItemIdentifier, MKMapItemMetadata, MKPlacemark, NSArray, NSData, NSDate, NSNumber, NSNumberFormatter, NSString, NSTimeZone, NSURL, UIColor, _MKMapItemPhotosAttribution, _MKMapItemPlaceAttribution, _MKMapItemReviewsAttribution, _MKPlaceReservationInfo;
+@class GEOAddress, GEOBusinessHours, GEOFeatureStyleAttributes, GEOMapItemDetourInfo, GEOMapItemStorage, GEOMapItemStorageUserValues, GEOMapRegion, GEOModuleLayoutEntry, GEOMuninViewState, GEOPDBusinessClaim, GEOPDFlyover, GEOPlace, GEORelatedPlaceList, MKMapItemIdentifier, MKMapItemMetadata, MKPlacemark, NSArray, NSData, NSDate, NSNumber, NSNumberFormatter, NSString, NSTimeZone, NSURL, UIColor, _MKMapItemPhotosAttribution, _MKMapItemPlaceAttribution, _MKMapItemReviewsAttribution, _MKPlaceReservationInfo;
 @protocol GEOAnnotatedItemList, GEOEncyclopedicInfo, GEOMapItem, GEOMapItemPrivate, GEOMapItemTransitInfo, GEOMapItemVenueInfo, GEOTransitAttribution, MKTransitInfoPreload, NSObject;
 
 @interface MKMapItem : NSObject <NSSecureCoding, NSItemProviderReading, NSItemProviderWriting, GEOURLSerializable>
@@ -158,6 +158,7 @@
 - (id)_bestBrandIconURLForSize:(struct CGSize)arg1 allowSmaller:(_Bool)arg2;
 - (_Bool)_canGetDirections;
 - (id)_urlExtraStorage;
+- (id)_activityURLUsingWebPlaceCard:(_Bool)arg1 muninViewState:(id)arg2;
 - (id)_activityURLUsingWebPlaceCard:(_Bool)arg1;
 - (id)_activityURL;
 - (id)_weatherDisplayName;
@@ -206,6 +207,8 @@
 @property(readonly, nonatomic, getter=_muid) unsigned long long muid;
 @property(readonly, nonatomic, getter=_hasMUID) _Bool hasMUID;
 @property(readonly, nonatomic, getter=_identifier) MKMapItemIdentifier *identifier;
+@property(readonly, nonatomic, getter=_muninViewState) GEOMuninViewState *muninViewState;
+@property(readonly, nonatomic, getter=_hasMuninViewState) _Bool hasMuninViewState;
 @property(readonly, nonatomic, getter=_annotatedItemList) id <GEOAnnotatedItemList> annotatedItemList;
 @property(readonly, nonatomic, getter=_placeDisplayStyle) int placeDisplayStyle;
 @property(readonly, nonatomic, getter=_browseCategories) NSArray *browseCategories;

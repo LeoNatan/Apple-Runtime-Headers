@@ -44,7 +44,6 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
-- (unsigned long long)edgesForExtendedLayout;
 - (void)_preflightWithCompletion:(CDUnknownBlockType)arg1;
 - (void)viewDidLoad;
 - (void)loadView;

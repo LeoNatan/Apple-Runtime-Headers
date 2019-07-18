@@ -14,11 +14,13 @@
     NSDictionary *_configurationValues;
     NSDictionary *_identityValues;
     NSDictionary *_requestedValues;
+    BOOL _disableInPlaceFiltering;
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)colorEffectForAverageColor;
-+ (id)colorEffectLuminanceCurvePoint1:(double)arg1 point2:(double)arg2 point3:(double)arg3 point4:(double)arg4 blendingAmount:(double)arg5;
++ (id)colorEffectAverageColor;
++ (id)colorEffectCurvesRed:(id)arg1 green:(id)arg2 blue:(id)arg3 alpha:(id)arg4;
++ (id)colorEffectLuminanceCurveMap:(id)arg1 blendingAmount:(double)arg2;
 + (id)colorEffectLuminanceMap:(id)arg1 blendingAmount:(double)arg2;
 + (id)colorEffectMonochromeTint:(id)arg1 blendingAmount:(double)arg2 brightnessAdjustment:(double)arg3;
 + (id)colorEffectInvert;

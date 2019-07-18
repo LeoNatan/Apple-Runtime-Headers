@@ -24,6 +24,7 @@
         unsigned int taskPriority:1;
     } _has;
     _Bool _includeAllNoteContents;
+    _Bool __encodeLegacyGloryData;
     int _dateSearchType;
     int _itemType;
     int _locationSearchType;
@@ -39,6 +40,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDataString *title; // @synthesize title=_title;
 @property(nonatomic) int taskPriority; // @synthesize taskPriority=_taskPriority;
 @property(nonatomic) int status; // @synthesize status=_status;

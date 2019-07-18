@@ -6,23 +6,13 @@
 
 #import <Foundation/NSExtensionContext.h>
 
-#import <ReplayKit/RPExtensionHostProtocol-Protocol.h>
-
-@class NSString;
-
-@interface RPExtensionHostContext : NSExtensionContext <RPExtensionHostProtocol>
+@interface RPExtensionHostContext : NSExtensionContext
 {
 }
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
 - (void)didConnectToVendor:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

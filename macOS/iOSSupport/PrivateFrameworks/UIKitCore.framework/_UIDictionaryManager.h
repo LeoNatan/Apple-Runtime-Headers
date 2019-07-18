@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSArray *availableDefinitionDictionaries; // @synthesize availableDefinitionDictionaries=_availableDefinitionDictionaries;
 - (void).cxx_destruct;
 - (BOOL)_isTTYEnabled;
-- (id)_currentlyAvailableDefinitionDictionaries;
-- (id)_allAvailableDefinitionDictionariesUsingRemoteInfo:(BOOL)arg1;
+- (id)_allAvailableDefinitionDictionaries;
 - (id)_availableDictionaryAssets;
-- (id)_availableDictionaryAssetsUsingRemoteInfo:(BOOL)arg1;
+- (void)_downloadDictionaryAssetCatalog:(CDUnknownBlockType)arg1;
+- (id)_dictionaryAssetType;
 - (id)_definitionValuesForTerm:(id)arg1;
 - (BOOL)_hasDefinitionForTerm:(id)arg1;
 - (id)init;

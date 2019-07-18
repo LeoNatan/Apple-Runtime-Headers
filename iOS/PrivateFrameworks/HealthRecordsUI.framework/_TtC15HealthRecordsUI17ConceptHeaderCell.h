@@ -10,22 +10,24 @@
 
 @interface _TtC15HealthRecordsUI17ConceptHeaderCell : WDMedicalRecordGroupableCell
 {
-    // Error parsing type: , name: headerImageView
-    // Error parsing type: , name: disclosureIndicatorView
+    // Error parsing type: , name: iconView
     // Error parsing type: , name: titleLabel
-    // Error parsing type: , name: categoryColor
+    // Error parsing type: , name: chevronView
+    // Error parsing type: , name: $__lazy_storage_$_hideIconConstraint
+    // Error parsing type: , name: headerImage
 }
 
 + (id)defaultReuseIdentifier;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateForCurrentSizeCategory;
 - (void)setUpConstraints;
 - (void)setupSubviews;
-@property(nonatomic, retain) UIColor *categoryColor; // @synthesize categoryColor;
+@property(nonatomic, retain) UIColor *categoryColor;
 @property(nonatomic, copy) NSString *title;
-@property(nonatomic, retain) UIImage *headerImage;
+@property(nonatomic, retain) UIImage *headerImage; // @synthesize headerImage;
 
 @end
 

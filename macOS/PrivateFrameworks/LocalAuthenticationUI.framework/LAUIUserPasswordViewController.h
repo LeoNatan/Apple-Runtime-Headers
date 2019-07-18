@@ -37,6 +37,7 @@
 - (void)setPINAuthentication:(BOOL)arg1;
 - (void)setCanAuthenticateAsAnyAdmin:(BOOL)arg1;
 - (void)setExtractablePassword:(BOOL)arg1;
+- (void)orderOut;
 - (void)clearPasswordField;
 - (void)setUsername:(id)arg1;
 - (void)setPasswordFieldEnabled:(BOOL)arg1;

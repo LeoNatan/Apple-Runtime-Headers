@@ -43,7 +43,6 @@
 - (BOOL)useDeviceResourceTableForType:(unsigned long long)arg1;
 - (void)unmapShaderSampleBuffer;
 - (void)unloadShaderCaches;
-- (BOOL)supportsVersion:(long long)arg1;
 - (BOOL)supportsTextureSampleCount:(unsigned long long)arg1;
 - (BOOL)supportsSampleCount:(unsigned long long)arg1;
 - (BOOL)supportsFeatureSet:(unsigned long long)arg1;
@@ -350,6 +349,7 @@
 @property(readonly, nonatomic) BOOL supportsNonSquareTileShaders;
 @property(readonly, nonatomic) BOOL supportsNonUniformThreadgroupSize;
 @property(readonly, nonatomic) BOOL supportsNorm16BCubicFiltering;
+@property(readonly, nonatomic) BOOL supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) BOOL supportsPacked32TextureBufferWrites;
 @property(readonly, nonatomic) BOOL supportsPipelineLibraries;
 @property(readonly, nonatomic) BOOL supportsPlacementHeaps;

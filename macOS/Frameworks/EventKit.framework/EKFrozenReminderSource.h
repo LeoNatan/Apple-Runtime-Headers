@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) NSURL *serverURL;
 @property(readonly, nonatomic) NSString *dropBoxPathString;
 @property(readonly, nonatomic) int displayOrder;
+@property(readonly, nonatomic) BOOL requiresOpeningAttachmentAsLink;
 @property(readonly, nonatomic) BOOL supportsSharingScheduling;
 @property(readonly, nonatomic) BOOL supportsPrivateEvents;
 @property(readonly, nonatomic) BOOL supportsPhoneNumbers;

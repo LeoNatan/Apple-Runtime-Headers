@@ -15,9 +15,12 @@
 
 - (void)applyToContentCollection:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)processedContentClasses:(id)arg1;
+@property(readonly, nonatomic) NSString *negativePropertyName;
+@property(readonly, nonatomic) _Bool negativeProperty;
 @property(readonly, nonatomic) id <WFPropertyListObject> propertyUserInfo;
 @property(readonly, nonatomic) NSString *propertyName;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithPropertyName:(id)arg1 propertyUserInfo:(id)arg2 negativeProperty:(_Bool)arg3 negativePropertyName:(id)arg4;
 - (id)initWithPropertyName:(id)arg1 propertyUserInfo:(id)arg2;
 
 @end

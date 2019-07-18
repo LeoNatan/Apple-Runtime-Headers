@@ -48,7 +48,6 @@
 - (void)statusMenuStop:(id)arg1;
 - (void)setupSystemStatusItem;
 - (void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 cancelled:(BOOL)arg4;
-- (void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 broadcastConfigurationData:(id)arg4 userInfo:(id)arg5 cancelled:(BOOL)arg6;
 - (void)presentBroadcastActivitySheet;
 - (void)presentBroadcastPickerAsContextMenu:(id)arg1 sourceWindowSize:(struct CGSize)arg2 sourceViewFrame:(struct CGRect)arg3 hostInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (struct CGRect)CGRectCenteredInFrame:(struct CGRect)arg1 size:(struct CGSize)arg2;

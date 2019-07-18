@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSHashTable *_clients;
     NSMutableArray *_interruptionDates;
     BOOL _isReconnecting;
+    long long _sandboxHandle;
     id <MNNavigationServiceClientInterface> _delegate;
 }
 
@@ -30,7 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)navigationServiceProxy:(id)arg1 willChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (void)resumeRealtimeUpdatesForSubscriber:(id)arg1;
 - (void)pauseRealtimeUpdatesForSubscriber:(id)arg1;
-- (void)checkinForNavigationService;
+- (void)checkinForNavigationService:(CDUnknownBlockType)arg1;
 - (void)updateGuidanceWithData:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)interfaceHashesWithHandler:(CDUnknownBlockType)arg1;
 - (void)recordPedestrianTracePath:(id)arg1;
@@ -61,12 +62,10 @@ __attribute__((visibility("hidden")))
 - (void)stopNavigation;
 - (void)startNavigationWithDetails:(id)arg1 activeBlock:(CDUnknownBlockType)arg2;
 - (void)setRoutesForPreview:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
-- (void)cancelDirectionsRequestWithIdentifier:(id)arg1;
-- (void)requestDirections:(id)arg1 withIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)_emptyMethod;
-- (id)_methodSignatureForEmptyMethod;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
+- (void)_releaseSandboxExtension;
+- (void)_consumeSandboxExtension:(char *)arg1;
 - (id)_remoteObjectProxy;
 - (void)_closeConnection;
 - (BOOL)_shouldReconnectWithInterruptionOnDate:(id)arg1;

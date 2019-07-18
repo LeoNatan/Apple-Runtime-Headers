@@ -5,10 +5,11 @@
 //
 
 #import <AnnotationKit/PKPalettePopoverDismissing-Protocol.h>
+#import <AnnotationKit/PKPaletteViewPositionObserving-Protocol.h>
 
 @class PKPaletteView, UIColor;
 
-@protocol PKPaletteViewAnnotationDelegate <PKPalettePopoverDismissing>
+@protocol PKPaletteViewAnnotationDelegate <PKPalettePopoverDismissing, PKPaletteViewPositionObserving>
 - (UIColor *)paletteViewSelectedAnnotationColor:(PKPaletteView *)arg1;
 - (void)paletteViewDidSelectOpacityOption:(PKPaletteView *)arg1;
 - (void)paletteViewDidSelectPlusButton:(PKPaletteView *)arg1;

@@ -11,33 +11,26 @@
 @interface DALocalDBWatcher : NSObject
 {
     int _lastSavedCalSequenceNumber;
-    int _lastSavedABSequenceNumber;
-    void *_abWatcher;
-    // Error parsing type: ^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}, name: _calWatcher
+    // Error parsing type: ^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}, name: _calWatcher
     NoteContext *_noteWatcher;
     NSMapTable *_concernedABPartyToBlockMap;
     NSMapTable *_concernedCalPartyToBlockMap;
     NSMapTable *_concernedNotePartyToBlockMap;
 }
 
-+ (void)noteTestABDDirChanged;
 + (id)sharedDBWatcher;
 @property(nonatomic) int lastSavedCalSequenceNumber; // @synthesize lastSavedCalSequenceNumber=_lastSavedCalSequenceNumber;
-@property(nonatomic) int lastSavedABSequenceNumber; // @synthesize lastSavedABSequenceNumber=_lastSavedABSequenceNumber;
 - (void).cxx_destruct;
 - (void)didReceiveDarwinNotification:(id)arg1;
-- (void)noteTestCalDBDirChanged;
+- (void)noteCalDBDirChanged;
 - (void)removeConcernedNoteParty:(id)arg1;
 - (void)registerConcernedNoteParty:(id)arg1 withChangedBlock:(CDUnknownBlockType)arg2;
 - (void)_notesChangedExternally;
 - (void)removeConcernedCalParty:(id)arg1;
 - (void)registerConcernedCalParty:(id)arg1 withChangedBlock:(CDUnknownBlockType)arg2;
 - (void)_handleCalChangeNotification;
-- (void)removeConcernedABParty:(id)arg1;
-- (void)registerConcernedABParty:(id)arg1 withChangedBlock:(CDUnknownBlockType)arg2;
-- (void)_handleABChangeNotificationWithInfo:(id)arg1;
 - (void)dealloc;
-- (id)initWithAddressBook:(void *)arg1;
+- (id)init;
 
 @end
 

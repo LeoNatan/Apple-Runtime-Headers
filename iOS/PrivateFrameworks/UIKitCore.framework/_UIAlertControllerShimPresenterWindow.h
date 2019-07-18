@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, retain, nonatomic) UIAlertController *alertController;
 - (void)presentAlertController:(id)arg1 animated:(_Bool)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)_presentationViewController;
+- (id)initWithWindowScene:(id)arg1;
 - (id)init;
 
 @end

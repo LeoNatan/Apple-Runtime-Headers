@@ -8,36 +8,46 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBDataReader;
+@class NSMutableArray, NSString, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOTrafficSnapshotMetaData : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
     CDStruct_30d0674c _readerMark;
+    NSString *_basemapId;
     NSString *_branchId;
     NSString *_environment;
     NSString *_feedId;
     NSString *_isoCountryCode;
     unsigned long long _publishTime;
+    NSMutableArray *_regions;
     NSString *_snapshotId;
+    int _vendor;
     struct {
         unsigned int has_publishTime:1;
+        unsigned int has_vendor:1;
+        unsigned int read_basemapId:1;
         unsigned int read_branchId:1;
         unsigned int read_environment:1;
         unsigned int read_feedId:1;
         unsigned int read_isoCountryCode:1;
+        unsigned int read_regions:1;
         unsigned int read_snapshotId:1;
+        unsigned int wrote_basemapId:1;
         unsigned int wrote_branchId:1;
         unsigned int wrote_environment:1;
         unsigned int wrote_feedId:1;
         unsigned int wrote_isoCountryCode:1;
         unsigned int wrote_publishTime:1;
+        unsigned int wrote_regions:1;
         unsigned int wrote_snapshotId:1;
+        unsigned int wrote_vendor:1;
     } _flags;
 }
 
 + (_Bool)isValid:(id)arg1;
++ (Class)regionsType;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -49,6 +59,20 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *basemapId;
+@property(readonly, nonatomic) _Bool hasBasemapId;
+- (void)_readBasemapId;
+- (id)regionsAtIndex:(unsigned int)arg1;
+- (unsigned int)regionsCount;
+- (void)_addNoFlagsRegions:(id)arg1;
+- (void)addRegions:(id)arg1;
+- (void)clearRegions;
+@property(retain, nonatomic) NSMutableArray *regions;
+- (void)_readRegions;
+- (int)StringAsVendor:(id)arg1;
+- (id)vendorAsString:(int)arg1;
+@property(nonatomic) _Bool hasVendor;
+@property(nonatomic) int vendor;
 @property(retain, nonatomic) NSString *snapshotId;
 @property(readonly, nonatomic) _Bool hasSnapshotId;
 - (void)_readSnapshotId;

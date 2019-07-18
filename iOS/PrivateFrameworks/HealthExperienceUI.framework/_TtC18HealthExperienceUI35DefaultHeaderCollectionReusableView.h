@@ -6,22 +6,20 @@
 
 #import <UIKit/UICollectionReusableView.h>
 
-@class UIButton, _TtC18HealthExperienceUI16DynamicFontLabel;
-
 @interface _TtC18HealthExperienceUI35DefaultHeaderCollectionReusableView : UICollectionReusableView
 {
-    // Error parsing type: , name: rightButton
-    // Error parsing type: , name: titleLabel
+    // Error parsing type: , name: $__lazy_storage_$_detailButton
+    // Error parsing type: , name: $__lazy_storage_$_titleLabel
+    // Error parsing type: , name: customConstraints
+    // Error parsing type: , name: $__lazy_storage_$_detailButtonHeightConstraint
     // Error parsing type: , name: item
 }
 
 - (void).cxx_destruct;
+- (void)detailButtonTapped:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)rightButtonTapped:(id)arg1;
-- (void)awakeFromNib;
-@property(nonatomic) __weak _TtC18HealthExperienceUI16DynamicFontLabel *titleLabel; // @synthesize titleLabel;
-@property(nonatomic) __weak UIButton *rightButton; // @synthesize rightButton;
 
 @end
 

@@ -22,8 +22,10 @@
 @property(retain, nonatomic) HFItemManager<HUQuickControlCollectionItemManaging> *itemManager; // @synthesize itemManager=_itemManager;
 @property(retain, nonatomic) HUQuickControlCollectionViewControllerLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 - (void).cxx_destruct;
+- (id)_viewProfilesForSection:(unsigned long long)arg1;
 - (unsigned long long)_mostImportantItemTypeForSection:(unsigned long long)arg1;
 @property(readonly, nonatomic) long long viewSizeSubclass;
+- (unsigned long long)titlePositionForSection:(unsigned long long)arg1;
 - (unsigned long long)numberOfColumnsInSection:(unsigned long long)arg1;
 - (double)sectionTopPaddingInSection:(unsigned long long)arg1 withLayoutOptions:(id)arg2;
 - (double)interItemSpacingForItemSize:(unsigned long long)arg1 layoutOptions:(id)arg2;

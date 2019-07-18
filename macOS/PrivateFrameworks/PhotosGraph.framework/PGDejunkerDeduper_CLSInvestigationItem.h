@@ -18,7 +18,9 @@
 
 @property(retain, nonatomic) NSSet *verifiedPersonLocalIdentifiers; // @synthesize verifiedPersonLocalIdentifiers=_verifiedPersonLocalIdentifiers;
 - (void).cxx_destruct;
-- (id)requiredItemsInItems:(id)arg1 options:(id)arg2;
+- (id)requiredItemsInItems:(id)arg1 options:(id)arg2 containStronglyRequiredItems:(char *)arg3;
+- (BOOL)item:(id)arg1 isWeaklyRequiredWithOptions:(id)arg2;
+- (BOOL)item:(id)arg1 isStrongRequiredWithOptions:(id)arg2;
 - (id)itemsSortedByScoreWithItems:(id)arg1 options:(id)arg2;
 - (id)featureWithItem:(id)arg1;
 - (id)faceprintByPersonLocalIdentifierByItemIdentifierWithItems:(id)arg1;

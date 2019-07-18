@@ -7,6 +7,7 @@
 #import <UIKit/UITextView.h>
 
 @interface UITextView (NUIContainerView)
+- (CDStruct_c3b9c2ee)_nui_additionalInsetsForBaselines;
 - (_Bool)isLayoutSizeDependentOnPerpendicularAxis;
 @end
 

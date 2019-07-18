@@ -9,6 +9,7 @@
 @class NSArray, NSDate, NSNumber, NSString;
 
 @protocol VSJSResponsePayload <JSExport>
+@property(copy, nonatomic) NSString *appBundleIdentifier;
 @property(copy, nonatomic) NSArray *clearSubscriptions;
 @property(copy, nonatomic) NSArray *subscriptions;
 @property(copy, nonatomic) NSNumber *expectedAction;

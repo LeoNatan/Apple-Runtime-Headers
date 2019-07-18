@@ -26,7 +26,6 @@
 - (id)_remainingMomentClustersWithMomentsSortedByDate:(id)arg1;
 - (id)_aggregationHighlightClustersForMoments:(id)arg1;
 - (id)_tripHighlightClustersForMoments:(id)arg1 tripType:(unsigned int)arg2;
-- (id)_tripHighlightClustersWithTrips:(id)arg1 intersectingMoments:(id)arg2 includeAllTripHighlightClusters:(_Bool)arg3;
 - (id)_aggregationsInMoments:(id)arg1 unavailableMoments:(id)arg2 intersectingMoments:(id)arg3;
 - (id)_tripsInMoments:(id)arg1;
 - (id)_recentHighlightClusterWithMoments:(id)arg1 intersectingMoments:(id)arg2;

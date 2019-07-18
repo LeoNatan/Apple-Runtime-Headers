@@ -20,6 +20,7 @@
         unsigned int month:1;
         unsigned int year:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _dayOfWeek;
     long long _dayOfMonth;
     long long _month;
@@ -27,6 +28,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) long long year; // @synthesize year=_year;
 @property(nonatomic) long long month; // @synthesize month=_month;
 @property(nonatomic) int dayOfWeek; // @synthesize dayOfWeek=_dayOfWeek;

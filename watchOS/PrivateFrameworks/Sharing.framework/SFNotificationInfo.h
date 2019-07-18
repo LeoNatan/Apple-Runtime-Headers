@@ -9,14 +9,16 @@
 #import <Sharing/NSCopying-Protocol.h>
 #import <Sharing/NSSecureCoding-Protocol.h>
 
-@class NSString, NSURL;
+@class NSString, NSURL, SFNotificationError;
 
 @interface SFNotificationInfo : NSObject <NSSecureCoding, NSCopying>
 {
     unsigned char _deviceClass;
+    unsigned char _interactionBehavior;
     unsigned char _interactionDirection;
     NSURL *_attachmentURL;
     NSString *_body;
+    SFNotificationError *_error;
     NSString *_header;
     NSString *_title;
     unsigned int _notificationType;
@@ -26,7 +28,9 @@
 @property(nonatomic) unsigned int notificationType; // @synthesize notificationType=_notificationType;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned char interactionDirection; // @synthesize interactionDirection=_interactionDirection;
+@property(nonatomic) unsigned char interactionBehavior; // @synthesize interactionBehavior=_interactionBehavior;
 @property(retain, nonatomic) NSString *header; // @synthesize header=_header;
+@property(retain, nonatomic) SFNotificationError *error; // @synthesize error=_error;
 @property(nonatomic) unsigned char deviceClass; // @synthesize deviceClass=_deviceClass;
 @property(retain, nonatomic) NSString *body; // @synthesize body=_body;
 @property(retain, nonatomic) NSURL *attachmentURL; // @synthesize attachmentURL=_attachmentURL;

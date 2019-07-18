@@ -15,10 +15,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)kindWithEpisodeKind:(id)arg1;
++ (id)identityKind;
 @property(readonly, nonatomic) MPModelTVEpisodeKind *episodeKind; // @synthesize episodeKind=_episodeKind;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)humanDescription;
 
 @end

@@ -10,8 +10,6 @@
 {
 }
 
-- (double)_offsetForPushingCardsOffscreenAtIndex:(unsigned long long)arg1;
-- (double)_effectiveHorizontalSpacing;
 - (id)topMostAppLayouts;
 - (id)opacitySettings;
 - (id)layoutSettings;

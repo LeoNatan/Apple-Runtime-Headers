@@ -22,7 +22,7 @@
 - (id)predictWithFeatures:(id)arg1;
 - (void)trainModelWithFeatureMap:(id)arg1 positiveEvent:(id)arg2;
 - (void)enumerateModels:(CDUnknownBlockType)arg1;
-- (id)initWithFeatureSet:(id)arg1 priorMean:(float)arg2 biasFeature:(id)arg3;
+- (id)initWithFeatureSet:(id)arg1 priorMean:(float)arg2 biasFeature:(id)arg3 modelVarianceEpsilon:(float)arg4;
 
 @end
 

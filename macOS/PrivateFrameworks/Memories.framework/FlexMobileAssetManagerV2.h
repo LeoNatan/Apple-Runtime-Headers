@@ -6,7 +6,7 @@
 
 #import <Memories/FlexCloudManager.h>
 
-@class NSMutableOrderedSet, NSMutableSet, NSObject, NSString;
+@class NSMapTable, NSMutableOrderedSet, NSMutableSet, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 @interface FlexMobileAssetManagerV2 : FlexCloudManager
@@ -17,9 +17,11 @@
     NSObject *_mobileAssetCacheLock;
     NSMutableOrderedSet *_pendingDownloadSet;
     NSMutableSet *_processingDownloadSet;
+    NSMapTable *_dowloadOptionsMapping;
     NSMutableOrderedSet *_pendingPurgeSet;
     NSMutableSet *_processingPurgeSet;
     BOOL _includeArtworkInQueries;
+    BOOL _XMLPresent;
     NSObject<OS_dispatch_queue> *_purgeQueue;
     NSObject<OS_dispatch_queue> *_triggerDownloadAndPurgeQueue;
 }
@@ -27,6 +29,7 @@
 + (id)_assetURLForMobileAsset:(id)arg1;
 + (id)compatibilityFilterPredicate;
 + (id)assetWithNewestContentVersionInAssets:(id)arg1 preferInstalled:(BOOL)arg2;
+@property(nonatomic) BOOL XMLPresent; // @synthesize XMLPresent=_XMLPresent;
 @property(nonatomic) BOOL includeArtworkInQueries; // @synthesize includeArtworkInQueries=_includeArtworkInQueries;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *triggerDownloadAndPurgeQueue; // @synthesize triggerDownloadAndPurgeQueue=_triggerDownloadAndPurgeQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *purgeQueue; // @synthesize purgeQueue=_purgeQueue;
@@ -42,7 +45,8 @@
 - (void)cancelDownloadOfAllAssets;
 - (void)cancelDownloadOfAsset:(id)arg1;
 - (void)_runAsyncAssetDownloadForMobileAsset:(id)arg1;
-- (void)requestDownloadOfAsset:(id)arg1;
+- (id)_mobileAssetDownloadOptionsForClientOptions:(id)arg1;
+- (void)requestDownloadOfAsset:(id)arg1 withOptions:(id)arg2;
 - (BOOL)_mobileAssetIsPurging:(id)arg1;
 - (BOOL)_mobileAssetIsDownloading:(id)arg1;
 - (void)_runNextAsyncAssetDownloadAndPurge;

@@ -37,6 +37,7 @@
 - (id)_detailsForAsset:(id)arg1 simpleOnly:(BOOL)arg2;
 - (BOOL)_writeDetails:(id)arg1 toFilepath:(id)arg2 withDefaultFilename:(id)arg3;
 - (id)momentGenerationStatus;
+- (void)invalidateHighlightSubtitlesAndRegenerateHighlightTitlesWithForceUpdateLocale:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)invalidateHighlightSubtitlesAndRegenerateHighlightTitlesWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)cleanupEmptyHighlightsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)updateHighlightTitlesWithCompletionBlock:(CDUnknownBlockType)arg1;
@@ -52,6 +53,7 @@
 - (BOOL)_isAsset:(id)arg1 identicalToAssetForMoments:(id)arg2;
 - (id)_newPublicGlobalUUIDsToAssetsMappingWithAssets:(id)arg1;
 - (void)_updateIncrementalMomentGeneration;
+- (BOOL)isGenerationPassInProgress;
 - (id)initWithMomentGenerationDataManager:(id)arg1;
 - (BOOL)rebuildAllMomentsWithManager:(id)arg1 error:(id *)arg2;
 

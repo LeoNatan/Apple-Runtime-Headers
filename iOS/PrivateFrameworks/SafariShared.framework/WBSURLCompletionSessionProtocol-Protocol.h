@@ -7,6 +7,6 @@
 @class NSString;
 
 @protocol WBSURLCompletionSessionProtocol
-- (void)getBestMatchesForTypedString:(NSString *)arg1 limit:(unsigned long long)arg2 completionHandler:(void (^)(NSArray *, NSArray *, NSError *))arg3;
+- (void)getBestMatchesForTypedString:(NSString *)arg1 limit:(unsigned long long)arg2 forQueryID:(long long)arg3 completionHandler:(void (^)(NSArray *, NSArray *, NSError *))arg4;
 @end
 

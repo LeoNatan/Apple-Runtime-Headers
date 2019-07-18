@@ -22,6 +22,7 @@
     SBTouchHistory *_touchHistory;
 }
 
++ (id)homeGesturePanGestureRecognizerWithTarget:(id)arg1 action:(SEL)arg2;
 @property(retain, nonatomic) SBTouchHistory *touchHistory; // @synthesize touchHistory=_touchHistory;
 @property(retain, nonatomic) SBFluidSwitcherGestureExclusionTrapezoid *landscapeExclusionTrapezoid; // @synthesize landscapeExclusionTrapezoid=_landscapeExclusionTrapezoid;
 @property(retain, nonatomic) SBFluidSwitcherGestureExclusionTrapezoid *portraitExclusionTrapezoid; // @synthesize portraitExclusionTrapezoid=_portraitExclusionTrapezoid;
@@ -37,7 +38,6 @@
 - (id)_currentKeyboardExclusionCompositeShape;
 - (void)_setUpExclusionTrapezoids;
 - (_Bool)_shouldBegin;
-- (struct CGPoint)_locationForTouch:(id)arg1;
 - (double)peakSpeed;
 - (double)averageTouchPathAngleOverTimeDuration:(double)arg1;
 - (struct CGPoint)averageTouchVelocityOverTimeDuration:(double)arg1;
@@ -47,10 +47,7 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 @property(readonly, nonatomic) __weak UIView *viewForTouchHistory;
 - (void)sb_commonInitHomeGesturePanGestureRecognizer;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2 type:(long long)arg3 maxTouches:(unsigned long long)arg4;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2 type:(long long)arg3;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (id)init;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2 type:(long long)arg3 options:(unsigned long long)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

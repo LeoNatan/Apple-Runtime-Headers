@@ -10,6 +10,7 @@
 
 @interface SignpostCAInstrumentationProcessor : NSObject
 {
+    _Bool _isConciseFormat;
     CDUnknownBlockType _commitIntervalBlock;
     CDUnknownBlockType _transactionLifetimeBlock;
     CDUnknownBlockType _frameLatencyBlock;
@@ -25,6 +26,7 @@
 
 + (void)addNeededSCToWhitelist:(id)arg1;
 + (_Bool)filterPassesRequiredSCForCAInstrumentation:(id)arg1;
+@property(nonatomic) _Bool isConciseFormat; // @synthesize isConciseFormat=_isConciseFormat;
 @property(nonatomic) unsigned int curFrameSeed; // @synthesize curFrameSeed=_curFrameSeed;
 @property(retain, nonatomic) SignpostEvent *curFrameLifetimeBegin; // @synthesize curFrameLifetimeBegin=_curFrameLifetimeBegin;
 @property(retain, nonatomic) SignpostEvent *curLongFrameLifetimeBegin; // @synthesize curLongFrameLifetimeBegin=_curLongFrameLifetimeBegin;

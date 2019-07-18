@@ -6,8 +6,6 @@
 
 #import <TimerSupport/UIFocusEnvironment-Protocol.h>
 
-@protocol UIFocusEnvironment;
-
 @protocol _UIFocusEnvironmentPrivate <UIFocusEnvironment>
 
 @optional
@@ -15,7 +13,6 @@
 - (void)_setNeedsNonDeferredFocusUpdate;
 - (long long)_preferredFocusMovementStyle;
 - (_Bool)_isEligibleForFocusInteraction;
-- (id <UIFocusEnvironment>)_parentFocusEnvironment;
 - (_Bool)_allowsFocusToLeaveViaHeading:(unsigned long long)arg1;
 @property(nonatomic) _Bool areChildrenFocused;
 

@@ -19,8 +19,6 @@
 @property(retain, nonatomic) UNUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_sendMessageResponse:(id)arg1 toMessage:(id)arg2 inChat:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
-- (void)_openAppWithMessage:(id)arg1 inChat:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)_openURL:(id)arg1;
 - (void)_markMessageAsRead:(id)arg1 inChat:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_setupNotificationCenter;
 - (void)dealloc;

@@ -14,12 +14,13 @@
 #import <ManagedConfigurationUI/MCProfileViewControllerDelegate-Protocol.h>
 #import <ManagedConfigurationUI/MCUISignInViewControllerDelegate-Protocol.h>
 #import <ManagedConfigurationUI/PSStateRestoration-Protocol.h>
+#import <ManagedConfigurationUI/UIAdaptivePresentationControllerDelegate-Protocol.h>
 #import <ManagedConfigurationUI/UIAlertViewDelegate-Protocol.h>
 
 @class MCInstallProfileQuestionViewController, MCProfile, MCProfileViewController, NSArray, NSData, NSSManager, NSString, UIAlertController;
 @protocol MCInstallProfileDelegate;
 
-@interface MCInstallProfileViewController : UIViewController <MCUISignInViewControllerDelegate, MCInstallationConsentDelegate, MCInstallationWarningDelegate, MCProfileQuestionsControllerDelegate, PSStateRestoration, UIAlertViewDelegate, DevicePINControllerDelegate, MCProfileViewControllerDelegate, MCInteractionDelegate>
+@interface MCInstallProfileViewController : UIViewController <MCUISignInViewControllerDelegate, UIAdaptivePresentationControllerDelegate, MCInstallationConsentDelegate, MCInstallationWarningDelegate, MCProfileQuestionsControllerDelegate, PSStateRestoration, UIAlertViewDelegate, DevicePINControllerDelegate, MCProfileViewControllerDelegate, MCInteractionDelegate>
 {
     MCInstallProfileQuestionViewController *_questionsController;
     CDUnknownBlockType _didAppearBlock;
@@ -49,7 +50,6 @@
 }
 
 + (void)_showRebootAlert;
-+ (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 @property(retain, nonatomic) NSSManager *nssManager; // @synthesize nssManager=_nssManager;
 @property(nonatomic) int installState; // @synthesize installState=_installState;
 @property(retain, nonatomic) id profileListChangedObserver; // @synthesize profileListChangedObserver=_profileListChangedObserver;
@@ -137,6 +137,8 @@
 - (void)setInstallState:(int)arg1 animated:(_Bool)arg2;
 - (void)updateBarButtonItemsForProfileInstallationState:(int)arg1 animated:(_Bool)arg2;
 - (void)updateTitleForProfileInstallationState:(int)arg1;
+- (void)_cancelInstallationWithProperRequest;
+- (void)presentationControllerDidAttemptToDismiss:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (_Bool)canBeShownFromSuspendedState;
 - (void)viewWillDisappear:(_Bool)arg1;

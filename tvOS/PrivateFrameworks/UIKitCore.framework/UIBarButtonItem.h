@@ -167,6 +167,8 @@
 - (_Bool)_showsChevron;
 - (void)_setActsAsFakeBackButton:(_Bool)arg1;
 - (_Bool)_actsAsFakeBackButton;
+- (_Bool)_resizesBackgroundImage;
+- (id)_backgroundImageForState:(unsigned long long)arg1 compact:(_Bool)arg2 type:(long long)arg3;
 - (id)_imageForState:(unsigned long long)arg1 compact:(_Bool)arg2 type:(long long)arg3;
 - (_Bool)hasImage;
 - (_Bool)hasTitle;

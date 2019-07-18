@@ -28,7 +28,6 @@
 - (void)setDeselectedCalendars:(id)arg1;
 @property(readonly) _Bool bypassSplashScreen;
 @property(nonatomic) unsigned int lastConfirmedSplashScreenVersion;
-@property(nonatomic) _Bool remindMeAboutThisInCalendarWidgetEnabled;
 @property(nonatomic) _Bool alwaysSetArrivedAndSettledForReminders;
 @property(nonatomic) _Bool useShortReminderRefireInterval;
 @property(nonatomic) _Bool useShortReminderSnoozeInterval;

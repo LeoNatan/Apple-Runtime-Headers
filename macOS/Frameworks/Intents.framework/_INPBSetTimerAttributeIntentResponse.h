@@ -15,10 +15,12 @@
 @interface _INPBSetTimerAttributeIntentResponse : PBCodable <_INPBSetTimerAttributeIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBTimer *_updatedTimer;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBTimer *updatedTimer; // @synthesize updatedTimer=_updatedTimer;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;

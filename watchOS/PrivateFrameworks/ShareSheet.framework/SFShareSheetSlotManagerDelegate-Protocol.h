@@ -9,7 +9,7 @@
 @class NSArray, NSNumber, NSString, NSUUID, UISDShareSheetSessionConfiguration, UISUIActivityExtensionItemDataRequest;
 
 @protocol SFShareSheetSlotManagerDelegate <NSObject>
-- (void)setProgress:(NSNumber *)arg1 withText:(NSNumber *)arg2 forNodeWithIdentifier:(NSUUID *)arg3 shouldPulse:(NSNumber *)arg4 animated:(_Bool)arg5;
+- (void)setProgress:(NSNumber *)arg1 withTopText:(NSNumber *)arg2 bottomText:(NSNumber *)arg3 forNodeWithIdentifier:(NSUUID *)arg4 shouldPulse:(NSNumber *)arg5 animated:(_Bool)arg6;
 - (void)performMailActivityInHostWitRecipients:(NSArray *)arg1 activityUUID:(NSUUID *)arg2;
 - (void)performMessageActivityInHostWithGUID:(NSString *)arg1 groupName:(NSString *)arg2 recipients:(NSArray *)arg3 activityUUID:(NSUUID *)arg4;
 - (void)performUserDefaultsWithFavoritesProxies:(NSArray *)arg1 suggestionProxies:(NSArray *)arg2 activityCategory:(int)arg3;

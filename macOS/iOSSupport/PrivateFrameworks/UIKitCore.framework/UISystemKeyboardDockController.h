@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
     BOOL _dictationHasUsedServerManualEndpointing;
     BOOL _dictationUsingServerManualEndpointing;
+    BOOL _isSuppressingDockItemTouch;
     UIKeyboardDockItem *_globeDockItem;
     UIKeyboardDockItem *_dictationDockItem;
     UIKeyboardDockItem *_keyboardDockItem;

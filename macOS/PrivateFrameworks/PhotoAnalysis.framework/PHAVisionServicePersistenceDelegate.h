@@ -36,7 +36,7 @@
 - (BOOL)updateKeyFacesOfPersonsWithLocalIdentifiers:(id)arg1 forceUpdate:(BOOL)arg2 canceler:(id)arg3 error:(id *)arg4;
 - (BOOL)_cleanupMergeCandidatesForVerifiedPersons:(id)arg1 inLibrary:(id)arg2 minimumFaceGroupSize:(unsigned long long)arg3 canceler:(id)arg4 error:(id *)arg5;
 - (BOOL)cleanupMergeCandidatesWithMinimumFaceGroupSize:(unsigned long long)arg1 canceler:(id)arg2 error:(id *)arg3;
-- (void)buildPersonsWithFaceClusterer:(id)arg1 keyFaceUpdateBlock:(CDUnknownBlockType)arg2 canceler:(id)arg3 context:(id)arg4;
+- (void)buildPersonsWithFaceClusterer:(id)arg1 keyFaceUpdateBlock:(CDUnknownBlockType)arg2 canceler:(id)arg3 context:(id)arg4 extendTimeoutBlock:(CDUnknownBlockType)arg5;
 - (void)collectPersonBuilderMetrics;
 - (void)_buildPersonsFromUpdatedFaceGroups:(id)arg1 faceClusterer:(id)arg2 keyFaceUpdateBlock:(CDUnknownBlockType)arg3 canceler:(id)arg4 context:(id)arg5;
 - (void)_updateFaceCSNsToAddByPerson:(id)arg1 faceCSNsToRemoveByPerson:(id)arg2 faceInFaceGroupByCSN:(id)arg3 faceCSNsByPersonLocalIdentifier:(id)arg4 faceCSNsByMigratedPersonLocalIdentifier:(id)arg5 personsToUpdate:(id)arg6;

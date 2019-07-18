@@ -6,10 +6,12 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <Widgets/PLContentSizeCategoryAdjusting-Protocol.h>
+
 @class NSString, WGWidgetHostingViewController, WGWidgetPlatterView;
 @protocol WGWidgetHostingViewControllerDelegate><WGWidgetListItemViewControllerDelegate;
 
-@interface WGWidgetListItemViewController : UIViewController
+@interface WGWidgetListItemViewController : UIViewController <PLContentSizeCategoryAdjusting>
 {
     NSString *_widgetIdentifier;
     id <WGWidgetHostingViewControllerDelegate><WGWidgetListItemViewControllerDelegate> _delegate;
@@ -22,10 +24,12 @@
 @property(nonatomic) __weak id <WGWidgetHostingViewControllerDelegate><WGWidgetListItemViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *widgetIdentifier; // @synthesize widgetIdentifier=_widgetIdentifier;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)_addWidgetHostIfNecessary;
 - (id)_platterViewIfLoaded;
 - (id)_platterViewLoadingIfNecessary:(_Bool)arg1;
+- (_Bool)adjustForContentSizeCategoryChange;
+@property(nonatomic) _Bool adjustsFontForContentSizeCategory;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (struct CGSize)sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;
@@ -44,6 +48,12 @@
 - (struct CGSize)preferredContentSizeForContentOfSize:(struct CGSize)arg1;
 @property(readonly, nonatomic) WGWidgetPlatterView *platterView;
 - (id)initWithWidgetIdentifier:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(copy, nonatomic) NSString *preferredContentSizeCategory;
+@property(readonly) Class superclass;
 
 @end
 

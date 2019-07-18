@@ -7,34 +7,43 @@
 #import <AccountsUI/ACUIViewController.h>
 
 #import <VideoSubscriberAccountUI/VSCredentialEntryViewController-Protocol.h>
+#import <VideoSubscriberAccountUI/VSPSPickerTableViewCellDelegate-Protocol.h>
 
-@class NSString, PSTextFieldSpecifier, UIButton, VSCredentialEntryViewModel, VSIdentityProviderLogoView, VSViewModel;
+@class NSArray, NSString, PSSpecifier, UIButton, UIView, VSCredentialEntryPicker, VSCredentialEntryViewModel, VSIdentityProviderLogoView, VSViewModel;
 @protocol VSAuthenticationViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface VSCredentialEntryViewController_iOS : ACUIViewController <VSCredentialEntryViewController>
+@interface VSCredentialEntryViewController_iOS : ACUIViewController <VSCredentialEntryViewController, VSPSPickerTableViewCellDelegate>
 {
     _Bool _cancellationAllowed;
     VSCredentialEntryViewModel *_viewModel;
     id <VSAuthenticationViewControllerDelegate> _delegate;
     VSIdentityProviderLogoView *_logoView;
     UIButton *_linkButton;
-    PSTextFieldSpecifier *_usernameFieldSpecifier;
-    PSTextFieldSpecifier *_passwordFieldSpecifier;
+    NSArray *_buttons;
+    UIView *_buttonView;
+    NSArray *_fieldSpecifiers;
     double _keyboardHeight;
     id _textFieldTextDidChangeObserver;
     id _keyboardWillShowObserver;
     id _keyboardWillHideObserver;
     id _weakTarget;
+    PSSpecifier *_pickerButtonSpecifier;
+    PSSpecifier *_pickerSpecifier;
+    VSCredentialEntryPicker *_picker;
 }
 
+@property(retain, nonatomic) VSCredentialEntryPicker *picker; // @synthesize picker=_picker;
+@property(retain, nonatomic) PSSpecifier *pickerSpecifier; // @synthesize pickerSpecifier=_pickerSpecifier;
+@property(retain, nonatomic) PSSpecifier *pickerButtonSpecifier; // @synthesize pickerButtonSpecifier=_pickerButtonSpecifier;
 @property(retain, nonatomic) id weakTarget; // @synthesize weakTarget=_weakTarget;
 @property(nonatomic) __weak id keyboardWillHideObserver; // @synthesize keyboardWillHideObserver=_keyboardWillHideObserver;
 @property(nonatomic) __weak id keyboardWillShowObserver; // @synthesize keyboardWillShowObserver=_keyboardWillShowObserver;
 @property(nonatomic) __weak id textFieldTextDidChangeObserver; // @synthesize textFieldTextDidChangeObserver=_textFieldTextDidChangeObserver;
 @property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
-@property(retain, nonatomic) PSTextFieldSpecifier *passwordFieldSpecifier; // @synthesize passwordFieldSpecifier=_passwordFieldSpecifier;
-@property(retain, nonatomic) PSTextFieldSpecifier *usernameFieldSpecifier; // @synthesize usernameFieldSpecifier=_usernameFieldSpecifier;
+@property(retain, nonatomic) NSArray *fieldSpecifiers; // @synthesize fieldSpecifiers=_fieldSpecifiers;
+@property(retain, nonatomic) UIView *buttonView; // @synthesize buttonView=_buttonView;
+@property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(retain, nonatomic) UIButton *linkButton; // @synthesize linkButton=_linkButton;
 @property(retain, nonatomic) VSIdentityProviderLogoView *logoView; // @synthesize logoView=_logoView;
 @property(nonatomic) __weak id <VSAuthenticationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -53,11 +62,17 @@ __attribute__((visibility("hidden")))
 - (void)cancelButtonTapped:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly, nonatomic) struct CGSize preferredLogoSize;
+- (void)pickerViewCell:(id)arg1 didSelectRow:(long long)arg2;
+- (long long)pickerViewCellNumberOfRows:(id)arg1;
+- (long long)pickerViewCellInitialSelectedRow:(id)arg1;
+- (id)pickerViewCell:(id)arg1 titleForRow:(long long)arg2;
+- (void)pickerButtonSelected;
 - (void)setViewModel:(id)arg1;
 - (id)_createSpecifierForField:(id)arg1;
 - (void)_stopObservingViewModel:(id)arg1;
 - (void)_startObservingViewModel:(id)arg1;
 - (void)_startValidation;
+- (void)_jsButtonTapped:(id)arg1;
 - (void)_linkButtonTapped:(id)arg1;
 - (id)_linkURL;
 - (void)_setText:(id)arg1 forSpecifier:(id)arg2;

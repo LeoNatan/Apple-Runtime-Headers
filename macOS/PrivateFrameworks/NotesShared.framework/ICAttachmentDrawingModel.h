@@ -29,6 +29,7 @@
 - (BOOL)supportsQuickLook;
 - (BOOL)canSaveURL;
 - (id)saveURL;
+- (BOOL)previewsSupportMultipleAppearances;
 - (BOOL)hasPreviews;
 - (void)writeMergeableData;
 - (BOOL)mergeWithMergeableData:(id)arg1;

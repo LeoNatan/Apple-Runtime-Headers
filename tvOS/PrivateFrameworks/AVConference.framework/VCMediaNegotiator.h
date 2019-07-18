@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 + (int)videoCodecBlobSettingsFromSet:(id)arg1;
 + (id)newCompressedBlob:(id)arg1;
 + (id)newDecompressedBlob:(id)arg1;
++ (void)dumpBlob:(id)arg1 prefix:(id)arg2 force:(_Bool)arg3;
 + (_Bool)validateLocalConfiguration:(id)arg1;
 + (_Bool)validateMultiwayAudioStreamConfigurations:(id)arg1;
 + (_Bool)validateMultiwayVideoStreamConfigurations:(id)arg1;
@@ -89,7 +90,6 @@ __attribute__((visibility("hidden")))
 - (void)saveRemoteBandwidthSettingsWithMediaBlob:(id)arg1;
 - (_Bool)setupBandwidthSettingsForMediaBlob:(id)arg1;
 - (_Bool)addBandwidthSettingsForMediaBlob:(id)arg1 operatingMode:(int)arg2 connectionType:(int)arg3 maxBitrate:(unsigned int)arg4;
-- (void)dumpBlob:(id)arg1 prefix:(id)arg2;
 - (id)negotiatedFeaturesStringWithLocalFeaturesString:(id)arg1 remoteFeaturesString:(id)arg2;
 - (unsigned int)remoteMaxBandwidthForOperatingMode:(int)arg1 connectionType:(int)arg2;
 - (_Bool)processResponseBlob:(id)arg1;

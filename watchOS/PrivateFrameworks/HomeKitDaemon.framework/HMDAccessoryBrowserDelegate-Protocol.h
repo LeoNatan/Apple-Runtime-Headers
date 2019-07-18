@@ -16,7 +16,7 @@
 - (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 accessoryServer:(HAPAccessoryServer *)arg2 didUpdateHasPairings:(_Bool)arg3;
 - (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 accessoryServer:(HAPAccessoryServer *)arg2 didUpdateValuesForCharacteristics:(NSArray *)arg3 stateNumber:(NSNumber *)arg4 broadcast:(_Bool)arg5;
 - (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 identifier:(NSString *)arg2 reachable:(_Bool)arg3;
-- (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 setupID:(NSString *)arg2 isPairedWithCompletionHandler:(void (^)(_Bool))arg3;
+- (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 setupID:(NSString *)arg2 serverIdentifier:(NSString *)arg3 isPairedWithCompletionHandler:(void (^)(_Bool))arg4;
 - (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 accessoryServer:(HAPAccessoryServer *)arg2 isBlockedWithCompletionHandler:(void (^)(_Bool))arg3;
 - (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 accessoryServer:(HAPAccessoryServer *)arg2 didDiscoverAccessories:(NSArray *)arg3 transaction:(HMFOSTransaction *)arg4 error:(NSError *)arg5;
 - (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 accessoryServer:(HAPAccessoryServer *)arg2 didStopPairingWithError:(NSError *)arg3;

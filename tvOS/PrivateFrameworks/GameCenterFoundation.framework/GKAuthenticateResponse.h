@@ -18,11 +18,11 @@
     NSString *_alertTitle;
     NSString *_alertMessage;
     NSString *_lastPersonalizationVersionDisplayed;
-    NSString *_lastPrivacyNoticeVersionDisplayed;
+    unsigned long long _lastPrivacyNoticeVersionDisplayed;
 }
 
 + (id)secureCodedPropertyKeys;
-@property(retain, nonatomic) NSString *lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
+@property(nonatomic) unsigned long long lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
 @property(retain, nonatomic) NSString *lastPersonalizationVersionDisplayed; // @synthesize lastPersonalizationVersionDisplayed=_lastPersonalizationVersionDisplayed;
 @property(retain, nonatomic) NSString *alertMessage; // @synthesize alertMessage=_alertMessage;
 @property(retain, nonatomic) NSString *alertTitle; // @synthesize alertTitle=_alertTitle;

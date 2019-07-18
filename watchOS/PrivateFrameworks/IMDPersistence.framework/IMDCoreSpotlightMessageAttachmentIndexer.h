@@ -18,10 +18,10 @@
 + (id)copyGUIDFromAttachment:(struct _IMDAttachmentRecordStruct *)arg1;
 + (id)copyPathFromAttachment:(struct _IMDAttachmentRecordStruct *)arg1;
 + (id)copyAttachmentsForMessageID:(long long)arg1;
-+ (id)attachmentIndexTypeForPath:(id)arg1 filename:(id)arg2;
++ (_Bool)_attachmentIsSticker:(struct _IMDAttachmentRecordStruct *)arg1;
++ (id)attachmentIndexTypeForPath:(id)arg1 filename:(id)arg2 attachmentRecord:(struct _IMDAttachmentRecordStruct *)arg3;
 + (id)auxiliaryItemsForPrimaryAttributes:(id)arg1 withItem:(id)arg2 chat:(id)arg3 isReindexing:(_Bool)arg4;
 + (void)indexItem:(id)arg1 withChat:(id)arg2 isReindexing:(_Bool)arg3 metadataToUpdate:(id)arg4;
-+ (_Bool)cancelIndexingForItem:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

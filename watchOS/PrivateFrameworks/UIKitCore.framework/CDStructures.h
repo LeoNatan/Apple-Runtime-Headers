@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSMutableDictionary, NSMutableSet, NSTimer, UIWebPDFView, _UISelectorDictionary;
+@class NSMutableDictionary, NSMutableSet, NSTimer, UIWebPDFView, _UICommandIdentifierDictionary;
 
 #pragma mark Blocks
 
@@ -38,22 +38,6 @@ struct CAColorMatrix {
 struct CADoublePoint {
     double x;
     double y;
-};
-
-struct CAMeshFace {
-    unsigned int _field1[4];
-    float _field2[4];
-};
-
-struct CAMeshVertex {
-    struct CGPoint _field1;
-    struct CAPoint3D _field2;
-};
-
-struct CAPoint3D {
-    float _field1;
-    float _field2;
-    float _field3;
 };
 
 struct CATransform3D {
@@ -298,11 +282,12 @@ struct work_interval_instance {
 
 typedef struct {
     NSMutableSet *keyCommands;
-    NSMutableSet *commandMenus;
-    _UISelectorDictionary *actionCommands;
-    NSMutableDictionary *actionPropertyListCommands;
+    NSMutableSet *menus;
+    NSMutableDictionary *actions;
+    _UICommandIdentifierDictionary *commands;
     NSMutableDictionary *parentMenuIdentifiers;
-} CDStruct_3b3a7b20;
+    _UICommandIdentifierDictionary *commandParentMenuIdentifiers;
+} CDStruct_5ddd6656;
 
 typedef struct {
     UIWebPDFView *view;
@@ -508,7 +493,8 @@ typedef struct {
     float displayCornerRadius;
     int legibilityWeight;
     int semanticContext;
-} CDStruct_f322b22e;
+    int presentationSemanticContext;
+} CDStruct_28a09a45;
 
 typedef struct {
     int commonRowHorizontalAlignment;

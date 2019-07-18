@@ -31,6 +31,7 @@
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(long long)arg2;
 - (id)activityViewController;
 - (void)prepareWithActivityItems:(id)arg1;
+- (void)prepareWithActivityItems:(id)arg1 sessionID:(id)arg2 linkMetadata:(id)arg3;
 - (void)prepareWithActivityItems:(id)arg1 GUID:(id)arg2 groupName:(id)arg3 recipients:(id)arg4 linkMetadata:(id)arg5;
 - (void)prepareWithActivityItems:(id)arg1 recipients:(id)arg2;
 - (CDUnknownBlockType)_backgroundPreheatBlock;

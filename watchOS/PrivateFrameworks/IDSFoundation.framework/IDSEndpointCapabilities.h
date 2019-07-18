@@ -34,6 +34,8 @@
     BOOL _supportsAnimojiV2;
     BOOL _supportsCertifiedDeliveryV1;
     BOOL _supportsOriginalTimestampOrderingV1;
+    BOOL _nicknamesVersion;
+    BOOL _ecVersion;
 }
 
 + (_Bool)supportsSecureCoding;

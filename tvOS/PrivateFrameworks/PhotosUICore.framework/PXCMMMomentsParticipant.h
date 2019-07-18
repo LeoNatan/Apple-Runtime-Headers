@@ -10,15 +10,15 @@
 
 @interface PXCMMMomentsParticipant : PXRecipient
 {
-    NSString *_additionalDisplayName;
+    NSString *_additionalLocalizedName;
     PHPerson *_person;
 }
 
 @property(readonly, nonatomic) PHPerson *person; // @synthesize person=_person;
 - (void).cxx_destruct;
-- (id)displayName;
+- (id)localizedName;
 - (id)initWithPerson:(id)arg1;
-- (id)initWithEmailAddress:(id)arg1 phoneNumber:(id)arg2 displayName:(id)arg3;
+- (id)initWithEmailAddress:(id)arg1 phoneNumber:(id)arg2 localizedName:(id)arg3;
 
 @end
 

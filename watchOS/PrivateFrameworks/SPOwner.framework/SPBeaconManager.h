@@ -9,7 +9,7 @@
 #import <SPOwner/SPMonitorsWrapperDelegate-Protocol.h>
 
 @class FMXPCServiceDescription, FMXPCSession, FMXPCTimer, NSString, SPMonitorsWrapper;
-@protocol OS_dispatch_queue, SPBeaconManagerXPCProtocol;
+@protocol OS_dispatch_queue, OS_dispatch_source, SPBeaconManagerXPCProtocol;
 
 @interface SPBeaconManager : NSObject <SPMonitorsWrapperDelegate>
 {
@@ -18,34 +18,46 @@
     unsigned char _currentStatus;
     _Bool _initialStateChangeSent;
     CDUnknownBlockType _stateChangedBlock;
+    CDUnknownBlockType _stateChangedBlockWithCompletion;
     CDUnknownBlockType _statusChangedBlock;
+    CDUnknownBlockType _statusChangedBlockWithCompletion;
     CDUnknownBlockType _beaconingKeyChangedBlock;
+    CDUnknownBlockType _beaconingKeyChangedBlockWithCompletion;
     CDUnknownBlockType _nearbyTokensChangedBlock;
+    CDUnknownBlockType _nearbyTokensChangedBlockWithCompletion;
     FMXPCServiceDescription *_serviceDescription;
     FMXPCSession *_session;
     id <SPBeaconManagerXPCProtocol> _proxy;
     id <SPBeaconManagerXPCProtocol> _userAgentProxy;
     NSObject<OS_dispatch_queue> *_queue;
-    FMXPCTimer *_timer;
+    FMXPCTimer *_periodicActionXpcTimer;
+    NSObject<OS_dispatch_source> *_periodicActionDispatchTimer;
     SPMonitorsWrapper *_monitorWrapper;
+    int _cachedLocalBeaconManagerState;
 }
 
 + (id)scheduleDateInterval:(id)arg1;
 + (void)afterFirstUnlock:(CDUnknownBlockType)arg1;
 @property(nonatomic) _Bool initialStateChangeSent; // @synthesize initialStateChangeSent=_initialStateChangeSent;
+@property(nonatomic) int cachedLocalBeaconManagerState; // @synthesize cachedLocalBeaconManagerState=_cachedLocalBeaconManagerState;
 @property(nonatomic) unsigned char currentStatus; // @synthesize currentStatus=_currentStatus;
 @property(nonatomic) _Bool forceBeaconingOff; // @synthesize forceBeaconingOff=_forceBeaconingOff;
 @property(nonatomic) _Bool currentBeaconingState; // @synthesize currentBeaconingState=_currentBeaconingState;
 @property(retain, nonatomic) SPMonitorsWrapper *monitorWrapper; // @synthesize monitorWrapper=_monitorWrapper;
-@property(retain, nonatomic) FMXPCTimer *timer; // @synthesize timer=_timer;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *periodicActionDispatchTimer; // @synthesize periodicActionDispatchTimer=_periodicActionDispatchTimer;
+@property(retain, nonatomic) FMXPCTimer *periodicActionXpcTimer; // @synthesize periodicActionXpcTimer=_periodicActionXpcTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <SPBeaconManagerXPCProtocol> userAgentProxy; // @synthesize userAgentProxy=_userAgentProxy;
 @property(retain, nonatomic) id <SPBeaconManagerXPCProtocol> proxy; // @synthesize proxy=_proxy;
 @property(retain, nonatomic) FMXPCSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) FMXPCServiceDescription *serviceDescription; // @synthesize serviceDescription=_serviceDescription;
+@property(copy, nonatomic) CDUnknownBlockType nearbyTokensChangedBlockWithCompletion; // @synthesize nearbyTokensChangedBlockWithCompletion=_nearbyTokensChangedBlockWithCompletion;
 @property(copy, nonatomic) CDUnknownBlockType nearbyTokensChangedBlock; // @synthesize nearbyTokensChangedBlock=_nearbyTokensChangedBlock;
+@property(copy, nonatomic) CDUnknownBlockType beaconingKeyChangedBlockWithCompletion; // @synthesize beaconingKeyChangedBlockWithCompletion=_beaconingKeyChangedBlockWithCompletion;
 @property(copy, nonatomic) CDUnknownBlockType beaconingKeyChangedBlock; // @synthesize beaconingKeyChangedBlock=_beaconingKeyChangedBlock;
+@property(copy, nonatomic) CDUnknownBlockType statusChangedBlockWithCompletion; // @synthesize statusChangedBlockWithCompletion=_statusChangedBlockWithCompletion;
 @property(copy, nonatomic) CDUnknownBlockType statusChangedBlock; // @synthesize statusChangedBlock=_statusChangedBlock;
+@property(copy, nonatomic) CDUnknownBlockType stateChangedBlockWithCompletion; // @synthesize stateChangedBlockWithCompletion=_stateChangedBlockWithCompletion;
 @property(copy, nonatomic) CDUnknownBlockType stateChangedBlock; // @synthesize stateChangedBlock=_stateChangedBlock;
 - (void).cxx_destruct;
 - (void)stateDidChange:(_Bool)arg1 powerState:(unsigned int)arg2;
@@ -58,11 +70,14 @@
 - (void)notifyNearbyTokensChangedBlockWithCompletion:(CDUnknownBlockType)arg1;
 - (void)notifyBeaconingKeysChangedBlockWithCompletion:(CDUnknownBlockType)arg1;
 - (void)periodicActionWithCompletion:(CDUnknownBlockType)arg1;
-- (void)timerFired:(id)arg1;
-- (id)periodicActionTimer:(id)arg1;
-- (void)checkInPeriodicActionTimer;
+- (void)timerFired;
+- (void)setPeriodicActionDispatchTimerWithInterval:(double)arg1;
+- (void)setPeriodicActionXpcTimerWithDateInterval:(id)arg1;
+- (void)checkInPeriodicActionXpcTimer;
 - (void)invalidate;
 - (void)_invalidate;
+- (void)notifyStatusChange:(unsigned char)arg1;
+- (void)notifyStateChange:(_Bool)arg1;
 - (void)beaconingStateChanged:(int)arg1;
 - (void)beaconsChanged:(id)arg1;
 - (void)beaconingStateChangedNotification:(id)arg1;

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     float apertureFocalRatio;
     float minimumApertureFocalRatio;
     float maximumApertureFocalRatio;
+    float portraitLightingEffectStrength;
     float luminanceNoiseAmplitude;
     int faceOrientation;
     NSData *faceObservationsData;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSData *faceObservationsData; // @synthesize faceObservationsData;
 @property(nonatomic) int faceOrientation; // @synthesize faceOrientation;
 @property(nonatomic) float luminanceNoiseAmplitude; // @synthesize luminanceNoiseAmplitude;
+@property(nonatomic) float portraitLightingEffectStrength; // @synthesize portraitLightingEffectStrength;
 @property(nonatomic) float maximumApertureFocalRatio; // @synthesize maximumApertureFocalRatio;
 @property(nonatomic) float minimumApertureFocalRatio; // @synthesize minimumApertureFocalRatio;
 @property(nonatomic) float apertureFocalRatio; // @synthesize apertureFocalRatio;

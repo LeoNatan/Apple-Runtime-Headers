@@ -12,10 +12,12 @@ __attribute__((visibility("hidden")))
     double _lux;
     double _CCT;
     unsigned long long _mode;
+    unsigned long long _type;
     CDStruct_34734122 _xy;
     CDStruct_6f955ef8 _XYZ;
 }
 
+@property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) double CCT; // @synthesize CCT=_CCT;
 @property(readonly, nonatomic) CDStruct_6f955ef8 XYZ; // @synthesize XYZ=_XYZ;
@@ -23,6 +25,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double lux; // @synthesize lux=_lux;
 - (id)description;
 - (id)copyDataInDictionary;
+@property(readonly, nonatomic) long long colorBin;
+- (double)LuxDifferenceWith:(id)arg1;
+- (double)CCTDifferenceWith:(id)arg1;
+- (double)colorDeltaEWith:(id)arg1;
+@property(readonly, nonatomic) CDStruct_6f955ef8 Lab;
 - (void)fillInTristimulus;
 - (void)fillInChromaticity;
 - (void)setXYZ:(CDStruct_6f955ef8)arg1;

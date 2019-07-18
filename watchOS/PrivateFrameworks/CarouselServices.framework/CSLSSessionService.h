@@ -25,8 +25,8 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (void)sessionStarted:(id)arg1 error:(id)arg2;
-- (void)sessionWithUUIDEnded:(id)arg1 bundleID:(id)arg2 startWasScheduled:(_Bool)arg3 error:(id)arg4;
+- (void)sessionStarted:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)sessionWithUUIDEnded:(id)arg1 bundleID:(id)arg2 startWasScheduled:(_Bool)arg3 error:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)fetchStickyCapableApps:(CDUnknownBlockType)arg1;
 - (void)defaultSession:(CDUnknownBlockType)arg1;
 - (void)removeSessionServiceObserver:(id)arg1 bundleID:(id)arg2 completion:(CDUnknownBlockType)arg3;

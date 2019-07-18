@@ -14,7 +14,6 @@
 @interface DKInkView : UIView <DKInkRendererDelegate>
 {
     DKDrawing *_currentDrawing;
-    struct CGColor *_cgColor;
     struct CGPoint _lastPoint;
     double _lastTouchTime;
     struct CGPoint _velocityInWindow;

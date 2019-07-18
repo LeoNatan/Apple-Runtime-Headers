@@ -28,6 +28,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *clickDownAudioFeedback; // @synthesize clickDownAudioFeedback=_clickDownAudioFeedback;
 - (void)setclickDownFeedback:(id)arg1;
 - (id)feedbackKeyPaths;
+@property(readonly, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *clickUpPattern;
+@property(readonly, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *clickDownPattern;
 - (long long)requiredSupportLevel;
 
 @end

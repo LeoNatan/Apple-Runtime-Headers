@@ -17,6 +17,8 @@
 
 + (id)sharedRequester;
 - (void).cxx_destruct;
+- (unsigned long long)shrinkDiskCacheToSize:(unsigned long long)arg1;
+- (unsigned long long)calculateFreeableSize;
 - (_Bool)_finishRequest:(id)arg1;
 - (void)cancelImageServiceRequest:(id)arg1;
 - (void)startImageServiceRequest:(id)arg1 auditToken:(id)arg2 throttleToken:(id)arg3 queue:(id)arg4 finished:(CDUnknownBlockType)arg5 networkActivity:(CDUnknownBlockType)arg6 error:(CDUnknownBlockType)arg7;

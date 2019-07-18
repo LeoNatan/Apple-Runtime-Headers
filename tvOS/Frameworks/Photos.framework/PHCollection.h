@@ -55,6 +55,7 @@
 @property(readonly, nonatomic) _Bool canContainCollections;
 @property(readonly, nonatomic) _Bool canContainAssets;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
+- (id)objectReference;
 
 @end
 

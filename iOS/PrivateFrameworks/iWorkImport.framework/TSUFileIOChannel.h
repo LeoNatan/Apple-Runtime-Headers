@@ -33,14 +33,14 @@ __attribute__((visibility("hidden")))
 - (void)readWithHandler:(CDUnknownBlockType)arg1;
 - (void)readFromOffset:(long long)arg1 length:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
-- (id)initWithType:(unsigned long long)arg1 descriptor:(int)arg2 queue:(id)arg3 cleanupHandler:(CDUnknownBlockType)arg4;
+- (id)initWithType:(unsigned long long)arg1 descriptor:(int)arg2 cleanupHandler:(CDUnknownBlockType)arg3;
 - (id)initForRandomReadingWritingURL:(id)arg1 error:(id *)arg2 cleanupHandler:(CDUnknownBlockType)arg3;
 - (id)initForRandomReadingWritingURL:(id)arg1 error:(id *)arg2;
 - (id)initForRandomWritingURL:(id)arg1 error:(id *)arg2 cleanupHandler:(CDUnknownBlockType)arg3;
 - (id)initForRandomWritingURL:(id)arg1 error:(id *)arg2;
 - (id)initForStreamWritingURL:(id)arg1 error:(id *)arg2 cleanupHandler:(CDUnknownBlockType)arg3;
 - (id)initForStreamWritingURL:(id)arg1 error:(id *)arg2;
-- (id)initForReadingDescriptor:(int)arg1 queue:(id)arg2 cleanupHandler:(CDUnknownBlockType)arg3;
+- (id)initForReadingDescriptor:(int)arg1 cleanupHandler:(CDUnknownBlockType)arg2;
 - (id)initForReadingURL:(id)arg1 error:(id *)arg2 cleanupHandler:(CDUnknownBlockType)arg3;
 - (id)initForReadingURL:(id)arg1 error:(id *)arg2;
 - (id)initWithType:(unsigned long long)arg1 URL:(id)arg2 oflag:(int)arg3 mode:(unsigned short)arg4 error:(id *)arg5 cleanupHandler:(CDUnknownBlockType)arg6;

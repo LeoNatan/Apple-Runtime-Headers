@@ -8,20 +8,19 @@
 
 #import <PhotoLibraryServices/PLHighlightItemClustererRule-Protocol.h>
 
-@class NSCalendar, NSString, PLDateRangeFormatter;
+@class NSCalendar, NSString;
 
 @interface PLYearGroupingRule : NSObject <PLHighlightItemClustererRule>
 {
     NSCalendar *_calendar;
-    PLDateRangeFormatter *_yearDateFormatter;
 }
 
-@property(readonly, nonatomic) PLDateRangeFormatter *yearDateFormatter; // @synthesize yearDateFormatter=_yearDateFormatter;
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (void).cxx_destruct;
 - (BOOL)highlightItemList:(id)arg1 canBeMergedWithOtherHighlightItemList:(id)arg2;
 - (BOOL)highlightItem:(id)arg1 belongsToHighlightItemList:(id)arg2;
 - (unsigned long long)dominantYearForStartDate:(id)arg1 endDate:(id)arg2;
+- (void)titlesForHighlightItemList:(id)arg1 forceUpdateLocale:(BOOL)arg2 resultBlock:(CDUnknownBlockType)arg3;
 - (void)titlesForHighlightItemList:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
 - (id)init;
 

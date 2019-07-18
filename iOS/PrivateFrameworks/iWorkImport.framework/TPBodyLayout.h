@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     TPFootnoteHeightMeasurer *_footnoteHeightMeasurer;
     NSMutableArray *_anchoredDrawablesForRelayout;
     NSMutableSet *_inlineDrawableLayouts;
+    NSMutableSet *_markedHiddenInlineDrawableLayouts;
 }
 
 + (struct CGSize)minimumBodySize;
@@ -44,7 +45,11 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)calculatePointFromSearchReference:(id)arg1;
 - (void)addAttachmentLayout:(id)arg1;
 - (id)existingAttachmentLayoutForInfo:(id)arg1;
+- (void)markHiddenInlineDrawableLayout:(id)arg1;
+- (void)clearHiddenInlineDrawableLayoutMarks;
+- (_Bool)canHaveFootnotesFromPreviousTarget:(id)arg1;
 - (_Bool)isFootnoteContainerOnSamePageAsTarget:(id)arg1;
+- (id)interiorClippingPath;
 @property(readonly, nonatomic) _Bool shouldWrapAroundExternalDrawables;
 @property(readonly, nonatomic) _Bool layoutIsValid;
 @property(readonly, nonatomic) TSDLayout *parentLayoutForInlineAttachments;
@@ -73,7 +78,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <TSWPOffscreenColumn> previousTargetLastColumn;
 @property(readonly, nonatomic) TSWPStorage *storage;
 @property(readonly, nonatomic) _Bool marginsAreMirrored;
+- (double)textScaleForChild:(id)arg1;
 - (id)columnMetricsForCharIndex:(unsigned long long)arg1 outRange:(struct _NSRange *)arg2;
+- (void)unregisterFromLayoutController;
 - (_Bool)shouldProvideSizingGuides;
 - (void)p_addLayoutIfAttached:(id)arg1;
 - (void)setChildren:(id)arg1;
@@ -84,6 +91,7 @@ __attribute__((visibility("hidden")))
 - (void)validate;
 - (struct CGPoint)capturedInfoPositionForAttachment;
 - (id)computeLayoutGeometry;
+- (_Bool)childLayoutIsCurrentlyHiddenWhileManipulating:(id)arg1;
 - (struct CGSize)maximumFrameSizeForChild:(id)arg1;
 - (double)contentBlockHeight;
 - (_Bool)processWidowAndInflation;
@@ -93,8 +101,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)needsInflation;
 - (struct CGRect)p_rectForSelection:(id)arg1 useParagraphModeRects:(_Bool)arg2;
 - (struct CGRect)rectForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
+- (_Bool)containsStartOfRange:(struct _NSRange)arg1;
 - (_Bool)containsStartOfPencilAnnotation:(id)arg1;
-- (id)unscaledAnchorRectsForPencilAnnotationSelectionPath:(id)arg1 attachedType:(long long)arg2;
+- (id)pageAnchorDetailsForPencilAnnotationAtSelectionPath:(id)arg1 attachedType:(long long)arg2;
+- (id)unscaledContentRectsToAvoidPencilAnnotationOverlap;
 - (id)containedPencilAnnotations;
 - (struct CGRect)rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect)rectForSelection:(id)arg1;
@@ -102,6 +112,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)rectInRootForSelectionPath:(id)arg1;
 - (struct CGRect)rectInRootOfAutoZoomContextOfSelectionPath:(id)arg1;
 - (double)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(double)arg2;
+- (_Bool)descendersCannotClip;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

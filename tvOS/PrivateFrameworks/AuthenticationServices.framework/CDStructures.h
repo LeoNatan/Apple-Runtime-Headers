@@ -25,3 +25,7 @@ struct CGSize {
     double _field2;
 };
 
+struct UIView {
+    Class _field1;
+};
+

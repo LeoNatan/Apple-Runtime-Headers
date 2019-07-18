@@ -75,7 +75,6 @@ __attribute__((visibility("hidden")))
 - (id)nodePriorToNode:(id)arg1;
 - (void)removeLastNode;
 - (void)addNode:(id)arg1;
-- (void)adjustGeometryForAlignToOrigin:(id)arg1;
 - (void)alignToOrigin;
 - (void)transformUsingAffineTransform:(struct CGAffineTransform)arg1;
 - (void)setNaturalSize:(struct CGSize)arg1;

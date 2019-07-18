@@ -17,6 +17,8 @@
 - (_Bool)mutatingCommand;
 - (_Bool)requiresResponse;
 @property(nonatomic) _Bool startPlaying;
+@property(copy, nonatomic) NSString *sharedUserIdFromPlayableITunesAccount;
+@property(copy, nonatomic) NSString *requesterSharedUserId;
 @property(retain, nonatomic) SAMPPodcast *podcastEpisode;
 @property(copy, nonatomic) NSArray *hashedRouteUIDs;
 @property(copy, nonatomic) NSString *assetInfo;

@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <PencilKit/PKPaletteViewDelegate-Protocol.h>
+#import <PencilKit/UIInputResponderControllerVisibilityObserver-Protocol.h>
 
 @class NSHashTable, NSString, PKPaletteViewInteraction, PKTool, UIResponder;
 
-@interface PKToolPicker : NSObject <PKPaletteViewDelegate>
+@interface PKToolPicker : NSObject <PKPaletteViewDelegate, UIInputResponderControllerVisibilityObserver>
 {
     BOOL __paletteWasCompact;
     NSHashTable *__observers;
@@ -20,6 +21,7 @@
 }
 
 + (id)sharedToolPickerForWindow:(id)arg1;
++ (id)activeToolPickerForWindow:(id)arg1;
 @property(nonatomic) __weak UIResponder *_previousFirstResponder; // @synthesize _previousFirstResponder=__previousFirstResponder;
 @property(nonatomic) BOOL _paletteWasCompact; // @synthesize _paletteWasCompact=__paletteWasCompact;
 @property(retain, nonatomic) PKPaletteViewInteraction *_interaction; // @synthesize _interaction=__interaction;
@@ -30,6 +32,9 @@
 - (id)_internalClassesAcceptingFirstResponder;
 - (void)_updatePaletteTraitCollection:(id)arg1;
 - (id)_paletteHostView;
+- (void)_setBackgroundMaterialUpdatingPaused:(BOOL)arg1;
+- (BOOL)_isBackgroundMaterialUpdatingPaused;
+- (BOOL)_wantsPaletteToStayVisibleForPopovers;
 - (void)inputResponderController:(id)arg1 inputViewSetVisibilityDidChange:(BOOL)arg2 includedReset:(BOOL)arg3;
 - (void)visibilityDidChange:(BOOL)arg1;
 - (void)paletteViewDidChangePosition:(id)arg1;
@@ -38,13 +43,18 @@
 - (id)paletteViewUndoManager:(id)arg1;
 - (id)initWithInteraction:(id)arg1;
 - (struct CGRect)frameObscuredInView:(id)arg1;
+@property(nonatomic) long long colorUserInterfaceStyle;
+@property(nonatomic) long long overrideUserInterfaceStyle;
 - (void)_setVisible:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL isVisible;
 @property(nonatomic, getter=isRulerActive) BOOL rulerActive;
 @property(retain, nonatomic) PKTool *selectedTool;
+- (long long)_colorUserInterfaceStyle;
+- (id)_convertTool:(id)arg1 from:(long long)arg2 to:(long long)arg3;
 - (id)_paletteView;
 - (void)_updateVisibilityForFirstResponder;
 - (void)setVisible:(BOOL)arg1 forFirstResponder:(id)arg2;
+- (void)_saveStateIfNecessary;
 - (void)_forceSetVisible:(BOOL)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

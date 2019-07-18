@@ -6,7 +6,8 @@
 
 #import <UIKit/UITextField.h>
 
-@interface UITextField (NUICOntainerView)
+@interface UITextField (NUIContainerView)
+- (CDStruct_c3b9c2ee)_nui_additionalInsetsForBaselines;
 - (long long)_nui_baselineViewType;
 @end
 

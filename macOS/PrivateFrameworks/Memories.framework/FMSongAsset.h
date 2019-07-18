@@ -34,6 +34,7 @@
 - (BOOL)localURLExists;
 - (void)purgeLocalCache;
 - (void)cancelDownload;
+- (void)requestDownloadWithOptions:(id)arg1;
 - (void)requestDownload;
 - (BOOL)isCloudBacked;
 - (id)initWithAssetID:(id)arg1 assetStatus:(unsigned long long)arg2 localURL:(id)arg3 contentVersion:(long long)arg4 compatibilityVersion:(long long)arg5;

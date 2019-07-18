@@ -9,6 +9,5 @@
 @interface NSCharacterSet (TextInputAdditions)
 + (id)pinyinInputCharacterSet;
 + (id)punctuationAndWhitespaceCharacterSet;
-+ (id)sentenceDelimiterCharacterSet;
 @end
 

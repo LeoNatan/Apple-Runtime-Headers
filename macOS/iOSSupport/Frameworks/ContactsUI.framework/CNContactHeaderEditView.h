@@ -16,9 +16,9 @@
     struct CGSize _maxButtonSize;
 }
 
-+ (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(BOOL)arg2 shouldAllowImageDrops:(BOOL)arg3;
-+ (id)contactHeaderViewWithContact:(id)arg1 shouldAllowTakePhotoAction:(BOOL)arg2 showingNavBar:(BOOL)arg3 delegate:(id)arg4;
-+ (id)contactHeaderViewWithContact:(id)arg1 shouldAllowTakePhotoAction:(BOOL)arg2 delegate:(id)arg3;
++ (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(BOOL)arg2 shouldAllowImageDrops:(BOOL)arg3 monogramOnly:(BOOL)arg4;
++ (id)contactHeaderViewWithContact:(id)arg1 shouldAllowTakePhotoAction:(BOOL)arg2 showingNavBar:(BOOL)arg3 monogramOnly:(BOOL)arg4 delegate:(id)arg5;
++ (id)contactHeaderViewWithContact:(id)arg1 shouldAllowTakePhotoAction:(BOOL)arg2 monogramOnly:(BOOL)arg3 delegate:(id)arg4;
 @property(retain, nonatomic) NSLayoutConstraint *editButtonHeightConstraint; // @synthesize editButtonHeightConstraint=_editButtonHeightConstraint;
 @property(retain, nonatomic) UIButton *editButton; // @synthesize editButton=_editButton;
 @property(nonatomic) struct CGSize maxButtonSize; // @synthesize maxButtonSize=_maxButtonSize;
@@ -36,8 +36,9 @@
 - (void)updateFontSizes;
 - (void)calculateLabelSizesIfNeeded;
 - (double)maxHeight;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 shouldAllowTakePhotoAction:(BOOL)arg3 delegate:(id)arg4;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 shouldAllowTakePhotoAction:(BOOL)arg3 delegate:(id)arg4 showingNavBar:(BOOL)arg5;
+- (void)setAllowsEditPhoto:(BOOL)arg1 preservingChanges:(BOOL)arg2;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 shouldAllowTakePhotoAction:(BOOL)arg3 delegate:(id)arg4 showingNavBar:(BOOL)arg5 monogramOnly:(BOOL)arg6;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 shouldAllowTakePhotoAction:(BOOL)arg3 monogramOnly:(BOOL)arg4 delegate:(id)arg5;
 
 @end
 

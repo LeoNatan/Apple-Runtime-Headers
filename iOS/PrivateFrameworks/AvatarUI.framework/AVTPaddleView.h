@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class AVPlayer, AVPlayerLooper, AVPlayerViewController, AVTTouchDownGestureRecognizer, AVTUILogger, NSArray, UIImage, UIImageView;
+@class AVPlayer, AVPlayerLooper, AVPlayerViewController, AVTCircularButton, AVTTouchDownGestureRecognizer, AVTUILogger, NSArray;
 @protocol AVTPaddleViewDelegate;
 
 @interface AVTPaddleView : UIView
@@ -16,8 +16,7 @@
     id <AVTPaddleViewDelegate> _delegate;
     UIView *_videoViewContainer;
     UIView *_addButtonViewContainer;
-    UIImageView *_addButton;
-    UIImage *_addButtonImage;
+    AVTCircularButton *_addButton;
     AVPlayer *_player;
     AVPlayerLooper *_looper;
     AVPlayerViewController *_videoController;
@@ -30,7 +29,6 @@
 }
 
 + (double)defaultPadding;
-+ (id)plusButtonImage;
 + (id)videoItem;
 @property(copy, nonatomic) CDUnknownBlockType preCommitBlock; // @synthesize preCommitBlock=_preCommitBlock;
 @property(retain, nonatomic) AVTUILogger *logger; // @synthesize logger=_logger;
@@ -41,8 +39,7 @@
 @property(retain, nonatomic) AVPlayerViewController *videoController; // @synthesize videoController=_videoController;
 @property(retain, nonatomic) AVPlayerLooper *looper; // @synthesize looper=_looper;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
-@property(retain, nonatomic) UIImage *addButtonImage; // @synthesize addButtonImage=_addButtonImage;
-@property(retain, nonatomic) UIImageView *addButton; // @synthesize addButton=_addButton;
+@property(retain, nonatomic) AVTCircularButton *addButton; // @synthesize addButton=_addButton;
 @property(retain, nonatomic) UIView *addButtonViewContainer; // @synthesize addButtonViewContainer=_addButtonViewContainer;
 @property(retain, nonatomic) UIView *videoViewContainer; // @synthesize videoViewContainer=_videoViewContainer;
 @property(nonatomic) __weak id <AVTPaddleViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -67,12 +64,13 @@
 - (struct CGRect)frameForAddButtonInCoordinateSpace:(id)arg1;
 - (void)updateLayoutFromPlusButtonView:(id)arg1 videoView:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)_configure;
+- (void)_configureWithSymbolConfiguration:(id)arg1;
 - (_Bool)isRTL;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
-- (id)initWithLayoutDirection:(long long)arg1 plusButtonImage:(id)arg2;
+- (id)initWithLayoutDirection:(long long)arg1 symbolConfiguration:(id)arg2;
+- (id)initWithLayoutDirection:(long long)arg1;
 
 @end
 

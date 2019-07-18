@@ -16,11 +16,7 @@ __attribute__((visibility("hidden")))
     int mLayoutState;
     struct CGPoint mBaseAlignmentFrameOriginForFixingInterimPosition;
     struct CGRect mDirtyRect;
-    struct {
-        unsigned int position:1;
-        unsigned int size:1;
-        unsigned int inlineSize:1;
-    } mInvalidFlags;
+    CDStruct_6196388c mInvalidFlags;
     TSDLayoutGeometry *mBaseGeometry;
     struct CGRect mInitialBoundsForStandardKnobs;
     struct CGPoint mCapturedInfoGeometryPositionForAttached;
@@ -48,7 +44,8 @@ __attribute__((visibility("hidden")))
 - (double)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(double)arg2;
 - (id)containedPencilAnnotationsIncludingChildren:(_Bool)arg1;
 - (id)containedPencilAnnotations;
-- (id)unscaledAnchorRectsForPencilAnnotationSelectionPath:(id)arg1 attachedType:(long long)arg2;
+- (id)pageAnchorDetailsForPencilAnnotationAtSelectionPath:(id)arg1 attachedType:(long long)arg2;
+- (id)unscaledContentRectsToAvoidPencilAnnotationOverlap;
 - (double)percentOfUnscaledRectContainedInParentRep:(struct CGRect)arg1;
 - (struct CGRect)rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect)rectInRootForZoomingToSelectionPath:(id)arg1;
@@ -61,9 +58,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSUBezierPath *pathForClippingConnectionLines;
 - (id)i_wrapPath;
 - (struct CGRect)i_takeDirtyRect;
-- (void)i_accumulateLayoutsIntoSet:(id)arg1;
+- (void)recursivelyAddLayoutAndChildrenToSet:(id)arg1;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
 - (void)setNeedsDisplay;
+@property(readonly, nonatomic) _Bool needsToValidateChildrenForInlineLayout;
 @property(readonly, nonatomic) double inlineCenteredAlignmentHorizontalOffset;
 @property(readonly, nonatomic) double descentForInlineLayout;
 @property(readonly, nonatomic) NSSet *additionalGuides;
@@ -83,7 +81,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)rectInRootForCalculatingActivityLineEndpoint;
 - (id)additionalDependenciesForChildLayout:(id)arg1;
 - (void)processChangedProperty:(int)arg1;
-- (double)scaleForInlineClampingUnrotatedSize:(struct CGSize)arg1 withGeometry:(id)arg2;
+- (double)scaleForInlineClampingUnrotatedSize:(struct CGSize)arg1 withTransform:(struct CGAffineTransform)arg2;
 - (id)computeLayoutGeometry;
 - (id)computeInfoGeometryDuringResize;
 @property(readonly, nonatomic) struct CGPoint centerForConnecting;
@@ -92,13 +90,16 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isDraggable) _Bool draggable;
 @property(readonly, nonatomic, getter=isSelectable) _Bool selectable;
 - (void)validateFromLastInterimPosition;
-- (void)p_calculateClampModelValuesAndPerformBlock:(CDUnknownBlockType)arg1;
+- (void)p_calculateClampModelValuesWithAdditionalTransform:(struct CGAffineTransform)arg1 andPerformBlock:(CDUnknownBlockType)arg2;
 - (void)transferLayoutGeometryToInfo:(id)arg1 withAdditionalTransform:(struct CGAffineTransform)arg2 assertIfInDocument:(_Bool)arg3;
+- (void)dynamicOverrideDidChange;
+@property(readonly, nonatomic) NSObject *dynamicOverride;
 @property(readonly, nonatomic) _Bool canFlip;
 @property(readonly, nonatomic) struct CGAffineTransform originalPureTransformInRoot;
 @property(readonly, nonatomic) struct CGAffineTransform pureTransformInRoot;
 @property(readonly, nonatomic) _Bool canInspectGeometry;
 @property(readonly, nonatomic) TSDLayoutGeometry *inspectorGeometry;
+- (struct CGAffineTransform)p_additionalTransformForInlineRoot;
 @property(readonly, nonatomic) TSDLayoutGeometry *pureGeometryInParent;
 @property(readonly, nonatomic) TSDLayoutGeometry *pureGeometryInRoot;
 @property(readonly, nonatomic) TSDLayoutGeometry *pureGeometry;
@@ -159,7 +160,9 @@ __attribute__((visibility("hidden")))
 - (void)invalidateChildren;
 - (id)wrapInvalidationParent;
 - (void)invalidateExteriorWrap;
+- (_Bool)childLayoutIsCurrentlyHiddenWhileManipulating:(id)arg1;
 - (void)updateMaximumInlineFrameSize;
+- (void)invalidateTextScalePercent;
 - (void)invalidateInlineSize;
 - (void)invalidateFrame;
 - (void)invalidateSize;

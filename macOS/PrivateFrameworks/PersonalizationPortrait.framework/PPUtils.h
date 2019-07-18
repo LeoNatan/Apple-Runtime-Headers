@@ -10,7 +10,7 @@
 {
 }
 
-+ (struct tm)localizedTimeStructForDate:(id)arg1;
++ (BOOL)localizedTimeStructForDate:(id)arg1 tm:(struct tm *)arg2;
 + (BOOL)isFirstPartyApp:(id)arg1;
 + (id)sqliteGlobEscape:(id)arg1;
 + (id)reduceSpotlightDomainIdentifiers:(id)arg1;

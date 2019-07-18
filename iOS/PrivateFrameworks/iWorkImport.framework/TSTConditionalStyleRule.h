@@ -42,7 +42,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)evaluateFormulaAtCellID:(struct TSUCellCoord)arg1 withCalcEngine:(id)arg2 onSubOwnerID:(const struct TSCESubFormulaOwnerID *)arg3;
 @property(readonly, nonatomic) struct TSCEFormula *formula;
 @property(readonly, copy, nonatomic) TSTFormulaPredicate *predicate;
+- (void)setCellStyle:(id)arg1 textStyle:(id)arg2;
+- (id)privateTextStyle;
 @property(readonly, copy, nonatomic) TSWPParagraphStyle *textStyle;
+- (id)privateCellStyle;
 @property(readonly, copy, nonatomic) TSTCellStyle *cellStyle;
 - (_Bool)isEqualForInspector:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

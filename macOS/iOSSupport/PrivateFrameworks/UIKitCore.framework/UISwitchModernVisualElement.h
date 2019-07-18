@@ -52,6 +52,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
 - (void).cxx_destruct;
 - (id)_settings;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (BOOL)_acceptsActivatingTouch;
 - (void)setSemanticContentAttribute:(long long)arg1;
 - (void)_setPressed:(BOOL)arg1 on:(BOOL)arg2 animated:(BOOL)arg3 shouldAnimateLabels:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_updateDisplayAnimated:(BOOL)arg1;

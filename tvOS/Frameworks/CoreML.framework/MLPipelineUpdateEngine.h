@@ -28,7 +28,7 @@
 - (void)cancelUpdate;
 - (void)resumeUpdateWithParameters:(id)arg1;
 - (void)resumeUpdate;
-- (void)updateModelWithData:(id)arg1 parameters:(id)arg2;
+- (void)updateModelWithData:(id)arg1;
 - (void)setUpdateProgressHandlers:(id)arg1 dispatchQueue:(id)arg2;
 - (id)initFromCompiledArchive:(struct _MLModelInputArchiver *)arg1 modelVersionInfo:(id)arg2 compilerVersionInfo:(id)arg3 configuration:(id)arg4 error:(id *)arg5;
 

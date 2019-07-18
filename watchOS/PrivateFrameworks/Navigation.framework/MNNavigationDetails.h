@@ -104,7 +104,7 @@ __attribute__((visibility("hidden")))
 - (id)routeInfoForRoute:(id)arg1;
 - (id)routeInfoForID:(id)arg1;
 - (void)updateLocationFromDetails:(id)arg1;
-- (void)updateETAResponseForRoute:(id)arg1;
+- (void)updateETATrafficForRoute:(id)arg1;
 - (void)setAlternateRoutes:(id)arg1;
 - (void)setCurrentRoute:(id)arg1 withAlternateRoutes:(id)arg2;
 - (void)setPreviewRoutes:(id)arg1 withSelectedRouteIndex:(unsigned int)arg2;

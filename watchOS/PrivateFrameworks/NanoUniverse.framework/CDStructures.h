@@ -21,13 +21,8 @@ struct CGRect {
 };
 
 struct CGSize {
-    float _field1;
-    float _field2;
-};
-
-struct CLKUIQuadSize {
-    int _field1;
-    int _field2;
+    float width;
+    float height;
 };
 
 struct CLLocationCoordinate2D {
@@ -35,15 +30,10 @@ struct CLLocationCoordinate2D {
     double longitude;
 };
 
-struct NUProgram {
-    unsigned int program;
-    int uniforms[13];
-};
-
 struct NURendererResources {
-    struct NUProgram programs[3];
-    unsigned int vertexBuffer;
-    unsigned int indexBuffer;
+    id pipelines[3];
+    id vertexBuffer;
+    id indexBuffer;
 };
 
 struct NUViewport {
@@ -56,14 +46,5 @@ struct NUViewport {
 struct _NUGeometryRange {
     int start;
     int count;
-};
-
-struct _NUVertex {
-    short _field1;
-    short _field2;
-    short _field3;
-    short _field4;
-    short _field5;
-    short _field6;
 };
 

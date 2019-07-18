@@ -17,6 +17,7 @@
     ACAccountStore *_accountStore;
 }
 
++ (void)configureChildAccount:(id)arg1 withSettingsFromDelegateInfo:(id)arg2 parent:(id)arg3;
 + (id)os_log;
 @property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(readonly, nonatomic) ACAccount *parentAccount; // @synthesize parentAccount=_parentAccount;

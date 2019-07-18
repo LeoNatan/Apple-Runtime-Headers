@@ -40,6 +40,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) NSString *localizedDetectedIconHint;
 @property(readonly, nonatomic) NSString *localizedDetectedTextHint;
 @property(readonly, nonatomic) AXMLanguage *detectedTextLanguage;
 @property(readonly, nonatomic) AXMVisionFeature *assetMetadataFeature;

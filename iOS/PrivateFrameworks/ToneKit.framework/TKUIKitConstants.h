@@ -10,7 +10,8 @@
 {
 }
 
-+ (id)tableCellGroupedBackgroundColor;
++ (id)groupedTableHeaderFooterTextColor;
++ (id)groupedTableCellBackgroundColor;
 + (id)defaultTableViewCellTextColor;
 + (long long)defaultStyleForTableViewCellsWithDetailText;
 

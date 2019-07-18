@@ -7,15 +7,12 @@
 #import <objc/NSObject.h>
 
 @class IDSXPCDaemonController;
-@protocol IDSXPCRegistration;
 
 @interface IDSPhoneSubscriptionSelector : NSObject
 {
     id _syncDaemonController;
-    id _syncRegistrationCollaborator;
 }
 
-@property(retain, nonatomic) id <IDSXPCRegistration> syncRegistrationCollaborator; // @synthesize syncRegistrationCollaborator=_syncRegistrationCollaborator;
 @property(retain, nonatomic) IDSXPCDaemonController *syncDaemonController; // @synthesize syncDaemonController=_syncDaemonController;
 - (void).cxx_destruct;
 - (void)_performSyncAction:(CDUnknownBlockType)arg1;

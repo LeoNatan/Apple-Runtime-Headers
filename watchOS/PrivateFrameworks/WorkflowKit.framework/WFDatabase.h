@@ -29,7 +29,6 @@
 - (id)suggestedWorkflowNameForName:(id)arg1;
 - (void)deleteAllAccessResourceStateDataForReference:(id)arg1;
 - (id)accessResourcesForReference:(id)arg1;
-- (id)logRunOfWorkflow:(id)arg1 withSource:(id)arg2 triggerID:(id)arg3;
 - (id)renameReference:(id)arg1 to:(id)arg2 error:(id *)arg3;
 - (id)duplicateReference:(id)arg1 error:(id *)arg2;
 - (id)createWorkflowWithRecord:(id)arg1 identifier:(id)arg2 error:(id *)arg3;

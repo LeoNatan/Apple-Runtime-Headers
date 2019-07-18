@@ -201,11 +201,13 @@
 - (id)willGenerateCancelPreview;
 - (void)draggingFinished:(id)arg1;
 - (void)draggingStarted;
-@property(readonly, nonatomic, getter=isTextDropActive) _Bool textDropActive;
+@property(readonly, nonatomic, getter=isTextDropActive) BOOL textDropActive;
 @property(readonly, nonatomic, getter=isTextDragActive) BOOL textDragActive;
 - (void)invalidateDropCaret;
 @property(readonly, nonatomic) UIDropInteraction *textDropInteraction;
 @property(readonly, nonatomic) UIDragInteraction *textDragInteraction;
+- (void)removeInvisibleRange:(id)arg1;
+- (void)addInvisibleRange:(id)arg1;
 - (void)removeAllGhostedRanges;
 - (void)addGhostedRange:(id)arg1;
 - (void)_updateSelectionGestures;
@@ -216,6 +218,7 @@
 - (void)_updateLabelAppearance;
 - (void)_tvUpdateTextColor;
 - (BOOL)_shouldDetermineInterfaceStyleTextColor;
+- (void)_didSetFont:(id)arg1;
 - (long long)_blurEffectStyleForAppearance;
 - (void)_applyRoundedRectBackgroundCornerRadiusToBackgroundViewWithWarning:(BOOL)arg1;
 - (double)_roundedRectBackgroundCornerRadius;
@@ -412,6 +415,7 @@
 - (float)paddingLeft;
 - (void)setPaddingLeft:(float)arg1;
 - (void)setPaddingTop:(float)arg1 paddingLeft:(float)arg2;
+- (id)accessibilityPath;
 - (void)drawBorder:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)_canDrawContent;
@@ -722,6 +726,7 @@
 - (id)largeContentTitle;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
+- (BOOL)_accessibilityIsFKARunningForFocusItem;
 - (void)_drawFocusRingMask;
 - (unsigned long long)_defaultFocusRingType;
 

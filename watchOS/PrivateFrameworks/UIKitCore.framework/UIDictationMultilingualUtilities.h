@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)textReplacementFromMultilingualString:(id)arg1 replacementRange:(id)arg2 stringToReplace:(id)arg3;
 + (id)multilingualAttributesForAttributedString:(id)arg1;
 + (_Bool)hasMultilingualAttributesForAttributedString:(id)arg1;
 

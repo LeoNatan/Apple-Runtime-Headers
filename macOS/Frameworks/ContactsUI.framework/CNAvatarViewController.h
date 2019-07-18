@@ -16,6 +16,7 @@
 
 @interface CNAvatarViewController : NSViewController <CNAvatarEditorDelegate, CNAvatarEditorViewControllerSettings, NSImmediateActionGestureRecognizerDelegate, QLPreviewMenuItemDelegate>
 {
+    BOOL _monogramOnly;
     BOOL _isFullAvatar;
     BOOL _overrideIsMe;
     BOOL _shouldInvalidateCache;
@@ -74,6 +75,7 @@
 @property(retain, nonatomic) NSLayoutConstraint *topMarginConstraint; // @synthesize topMarginConstraint=_topMarginConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *avatarHeightConstraint; // @synthesize avatarHeightConstraint=_avatarHeightConstraint;
 @property(retain) CNAvatarView<CNAvatarUpdating> *avatarView; // @synthesize avatarView=_avatarView;
+@property(nonatomic) BOOL monogramOnly; // @synthesize monogramOnly=_monogramOnly;
 - (void).cxx_destruct;
 - (double)desiredHeight;
 - (double)topMargin;

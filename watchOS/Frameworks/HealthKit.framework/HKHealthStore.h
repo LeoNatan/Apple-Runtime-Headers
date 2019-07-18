@@ -70,9 +70,6 @@
 - (void)fetchServerURLForAssetType:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getHealthLiteValueForKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setHealthLiteValue:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)removeDefaultForKey:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)getDefaultValueForKey:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
-- (void)setDefaultValue:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (CDUnknownBlockType)_selectCompletionOnClientQueue:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_progressHandlerOnClientQueue:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_objectCompletionOnClientQueue:(CDUnknownBlockType)arg1;
@@ -260,6 +257,7 @@
 - (void)disableCloudSyncAndDeleteAllCloudDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchCloudSyncStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchCloudSyncRequiredWithCompletion:(CDUnknownBlockType)arg1;
+- (void)forceCloudSyncDataUploadForProfileWithCompletion:(CDUnknownBlockType)arg1;
 - (void)forceCloudSyncWithOptions:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)forceCloudSyncWithOptions:(unsigned int)arg1 reason:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)runStaticSyncImportWithOptions:(unsigned int)arg1 storeIdentifier:(id)arg2 URL:(id)arg3 progressHandler:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
@@ -270,6 +268,7 @@
 - (void)createProfileOfType:(int)arg1 displayName:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setDisplayFirstName:(id)arg1 lastName:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchDisplayName:(CDUnknownBlockType)arg1;
+@property(readonly, copy, nonatomic) NSString *firstName;
 - (void)waitForLastChanceSyncWithDevicePairingID:(id)arg1 timeout:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)resetNanoSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)forceLastChanceNanoSyncWithCompletion:(CDUnknownBlockType)arg1;

@@ -17,6 +17,9 @@
     NSString *_name;
     long long _version;
     long long _number;
+    NSString *_portraitGlyphPrefix;
+    NSString *_portraitV1Name;
+    NSString *_portraitV2Name;
 }
 
 + (id)effectWithNumber:(long long)arg1 version:(long long)arg2;
@@ -32,8 +35,12 @@
 + (id)portraitEffects;
 + (id)allEffects;
 + (id)supportedEffects;
++ (id)_createPortraitWithName:(id)arg1;
 + (id)_createEffectWithName:(id)arg1;
 + (void)initialize;
+@property(readonly, nonatomic) NSString *portraitV2Name; // @synthesize portraitV2Name=_portraitV2Name;
+@property(readonly, nonatomic) NSString *portraitV1Name; // @synthesize portraitV1Name=_portraitV1Name;
+@property(readonly, nonatomic) NSString *portraitGlyphPrefix; // @synthesize portraitGlyphPrefix=_portraitGlyphPrefix;
 @property(readonly, nonatomic) BOOL isLegacy; // @synthesize isLegacy=_isLegacy;
 @property(readonly, nonatomic) BOOL isPortrait; // @synthesize isPortrait=_isPortrait;
 @property(readonly, nonatomic) BOOL is3D; // @synthesize is3D=_is3D;

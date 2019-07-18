@@ -14,7 +14,9 @@
 + (int)actionID;
 - (BOOL)success;
 - (BOOL)returnsData;
+- (id)setOfClassesToDecodeInTheResult;
 - (BOOL)expectsAResult;
+- (BOOL)setResultFromDict:(id)arg1;
 - (id)resultData;
 - (id)description;
 - (id)requestPayload;

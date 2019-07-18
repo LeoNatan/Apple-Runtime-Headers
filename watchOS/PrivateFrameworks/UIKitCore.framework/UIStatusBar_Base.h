@@ -24,8 +24,8 @@
     _Bool _disablesRasterization;
     id <UIStatusBarStyleDelegate> _styleDelegate;
     id <UIStatusBarCarPlayDockDataProviding> _dockDataProvider;
-    UIStatusBarWindow *_statusBarWindow;
     int _styleOverrides;
+    UIStatusBarWindow *_statusBarWindow;
     int _orientation;
     UIStatusBarServer *_statusBarServer;
     id <UIStatusBarStateProvider> _inProcessStateProvider;
@@ -71,9 +71,9 @@
 @property(nonatomic) _Bool foreground; // @synthesize foreground=_foreground;
 @property(retain, nonatomic) UIStatusBarServer *statusBarServer; // @synthesize statusBarServer=_statusBarServer;
 @property(nonatomic) int orientation; // @synthesize orientation=_orientation;
+@property(readonly, nonatomic) __weak UIStatusBarWindow *statusBarWindow; // @synthesize statusBarWindow=_statusBarWindow;
 @property(nonatomic) _Bool persistentAnimationsEnabled; // @synthesize persistentAnimationsEnabled=_persistentAnimationsEnabled;
 @property(readonly, nonatomic) int styleOverrides; // @synthesize styleOverrides=_styleOverrides;
-@property(nonatomic) __weak UIStatusBarWindow *statusBarWindow; // @synthesize statusBarWindow=_statusBarWindow;
 @property(nonatomic) __weak id <UIStatusBarCarPlayDockDataProviding> dockDataProvider; // @synthesize dockDataProvider=_dockDataProvider;
 @property(nonatomic) __weak id <UIStatusBarStyleDelegate> styleDelegate; // @synthesize styleDelegate=_styleDelegate;
 - (void).cxx_destruct;

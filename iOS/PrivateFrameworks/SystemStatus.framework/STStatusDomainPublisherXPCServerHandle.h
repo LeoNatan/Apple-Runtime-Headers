@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <SystemStatus/BSDescriptionProviding-Protocol.h>
 #import <SystemStatus/STStatusDomainPublisherServerHandle-Protocol.h>
 
 @class BSMutableIntegerMap, NSString, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
-@interface STStatusDomainPublisherXPCServerHandle : NSObject <STStatusDomainPublisherServerHandle>
+@interface STStatusDomainPublisherXPCServerHandle : NSObject <BSDescriptionProviding, STStatusDomainPublisherServerHandle>
 {
     BSMutableIntegerMap *_dataByDomain;
     BSMutableIntegerMap *_hasSentDataByDomain;
@@ -32,13 +33,17 @@
 - (id)_internalQueue_dataForDomainCreatingIfNecessary:(unsigned long long)arg1;
 - (void)_internalQueue_publishData:(id)arg1 forDomain:(unsigned long long)arg2 dataSendBlock:(CDUnknownBlockType)arg3 diffSendBlock:(CDUnknownBlockType)arg4;
 - (void)_internalQueue_publishData:(id)arg1 forDomain:(unsigned long long)arg2;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+@property(readonly, copy) NSString *description;
 - (void)publishData:(id)arg1 forDomain:(unsigned long long)arg2;
 - (id)publishedDataForDomain:(unsigned long long)arg1;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

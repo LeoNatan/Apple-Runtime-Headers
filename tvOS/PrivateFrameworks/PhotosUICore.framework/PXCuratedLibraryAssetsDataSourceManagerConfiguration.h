@@ -12,8 +12,6 @@
 
 + (id)configurationWithYearsAssetsDataSourceManager:(id)arg1 monthsAssetsDataSourceManager:(id)arg2 daysAssetsDataSourceManager:(id)arg3;
 + (id)configurationWithPhotoLibrary:(id)arg1;
-- (id)assetCollectionWithKeyAsset:(id)arg1 inZoomLevel:(long long)arg2;
-- (id)childAssetCollectionsOfAssetCollection:(id)arg1;
 - (id)keyAssetCollectionReferenceInDataSource:(id)arg1 zoomLevel:(long long)arg2 matchingAssetCollectionReference:(id)arg3 fromDataSource:(id)arg4 zoomLevel:(long long)arg5;
 - (id)configurationForZoomLevel:(long long)arg1;
 

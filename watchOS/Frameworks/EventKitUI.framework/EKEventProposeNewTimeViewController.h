@@ -75,7 +75,7 @@
 - (void)_dismiss:(id)arg1;
 - (void)eventStatusButtonsView:(id)arg1 calculatedFontSizeToFit:(float)arg2;
 - (float)eventStatusButtonsViewButtonFontSize:(id)arg1;
-- (void)eventStatusButtonsView:(id)arg1 didSelectAction:(int)arg2;
+- (void)eventStatusButtonsView:(id)arg1 didSelectAction:(int)arg2 ifCancelled:(CDUnknownBlockType)arg3;
 - (_Bool)editItemViewControllerShouldShowDetachAlert;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;

@@ -6,7 +6,7 @@
 
 #import <WorkflowKit/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSOrderedSet, NSString, NSURL, WFCloudKitSyncToken, WFConfiguredTrigger, WFConfiguredTriggerRecord, WFDatabaseObjectDescriptor, WFDatabaseResult, WFWorkflowRecord, WFWorkflowReference, WFWorkflowRunEventReference;
+@class NSArray, NSData, NSOrderedSet, NSString, NSURL, WFCloudKitSyncToken, WFConfiguredTrigger, WFConfiguredTriggerRecord, WFDatabaseObjectDescriptor, WFDatabaseResult, WFWorkflowRecord, WFWorkflowReference, WFWorkflowRunEvent;
 
 @protocol WFDatabaseBackingStore <NSObject>
 @property(readonly, nonatomic) NSURL *fileURL;
@@ -16,8 +16,9 @@
 - (void)setSyncToken:(WFCloudKitSyncToken *)arg1;
 - (WFCloudKitSyncToken *)syncToken;
 - (void)clearTombstonesAndSyncState;
-- (WFDatabaseResult *)sortedRunEventsForTriggerID:(NSString *)arg1;
-- (WFDatabaseResult *)sortedRunEventsWithSource:(NSString *)arg1;
+- (WFWorkflowRunEvent *)latestRunEvent;
+- (NSArray *)sortedRunEventsForTriggerID:(NSString *)arg1;
+- (NSArray *)sortedRunEventsWithSource:(NSString *)arg1;
 - (WFDatabaseResult *)allConfiguredTriggers;
 - (WFDatabaseResult *)sortedVisibleWorkflowsWithAssociatedAppBundleIdentifier:(NSString *)arg1;
 - (WFDatabaseResult *)sortedVisibleWorkflowsByName;
@@ -32,8 +33,8 @@
 - (NSData *)currentStateDataForAccessResourceWithIdentifier:(NSString *)arg1 forReference:(WFWorkflowReference *)arg2;
 - (_Bool)isReference:(WFWorkflowReference *)arg1 allowedToRunOnDomain:(NSString *)arg2;
 - (void)setTrustedToRunScripts:(_Bool)arg1 forReference:(WFWorkflowReference *)arg2 onDomain:(NSString *)arg3;
-- (void)setOutcome:(int)arg1 forRunEvent:(WFWorkflowRunEventReference *)arg2;
-- (WFWorkflowRunEventReference *)logRunOfWorkflow:(WFWorkflowReference *)arg1 withSource:(NSString *)arg2 triggerID:(NSString *)arg3;
+- (void)setOutcome:(int)arg1 forRunEvent:(WFWorkflowRunEvent *)arg2;
+- (WFWorkflowRunEvent *)logRunOfWorkflow:(WFWorkflowReference *)arg1 withSource:(NSString *)arg2 triggerID:(NSString *)arg3;
 - (void)setConflictingReference:(WFWorkflowReference *)arg1 forReference:(WFWorkflowReference *)arg2;
 - (WFWorkflowReference *)conflictingReferenceForReference:(WFWorkflowReference *)arg1;
 - (WFWorkflowReference *)duplicateReference:(WFWorkflowReference *)arg1 newName:(NSString *)arg2 error:(id *)arg3;

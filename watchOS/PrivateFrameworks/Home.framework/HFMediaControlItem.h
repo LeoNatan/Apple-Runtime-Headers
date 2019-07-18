@@ -8,16 +8,18 @@
 
 #import <Home/HFTogglableControlItem-Protocol.h>
 
-@class NSString;
+@class HFMediaActionSetting, NSString;
 @protocol HFMediaProfileContainer, HFMediaValueSource;
 
 @interface HFMediaControlItem : HFControlItem <HFTogglableControlItem>
 {
     id <HFMediaValueSource> _mediaValueSource;
     id <HFMediaProfileContainer> _mediaProfileContainer;
+    HFMediaActionSetting *_mediaActionSetting;
 }
 
 + (Class)valueClass;
+@property(retain, nonatomic) HFMediaActionSetting *mediaActionSetting; // @synthesize mediaActionSetting=_mediaActionSetting;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
 @property(readonly, nonatomic) id <HFMediaValueSource> mediaValueSource; // @synthesize mediaValueSource=_mediaValueSource;
 - (void).cxx_destruct;
@@ -26,6 +28,7 @@
 - (id)togglePrimaryState;
 - (id)writePrimaryState:(int)arg1;
 - (int)mapToHMMediaPlaybackState:(int)arg1;
+- (int)toggledSceneStateFromPrimaryState:(int)arg1;
 - (id)writeValue:(id)arg1;
 - (id)normalizedValueForValue:(id)arg1;
 - (id)valueForCharacteristicValues:(id)arg1;

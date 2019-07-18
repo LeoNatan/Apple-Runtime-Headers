@@ -6,6 +6,8 @@
 
 #pragma mark Named Structures
 
+struct CnAlgs;
+
 struct _NSRange {
     unsigned int location;
     unsigned int length;
@@ -14,6 +16,20 @@ struct _NSRange {
 struct ngt_DayStreamProcessor;
 
 struct ngt_HistoricalAnalyzer;
+
+struct optional<unsigned int> {
+    union {
+        char __null_state_;
+        unsigned int __val_;
+    } ;
+    _Bool __engaged_;
+};
+
+struct unique_ptr<CinnAlgs::CnAlgs, std::__1::default_delete<CinnAlgs::CnAlgs>> {
+    struct __compressed_pair<CinnAlgs::CnAlgs *, std::__1::default_delete<CinnAlgs::CnAlgs>> {
+        struct CnAlgs *__value_;
+    } __ptr_;
+};
 
 struct unique_ptr<Nightingale::ngt_DayStreamProcessor, std::__1::default_delete<Nightingale::ngt_DayStreamProcessor>> {
     struct __compressed_pair<Nightingale::ngt_DayStreamProcessor *, std::__1::default_delete<Nightingale::ngt_DayStreamProcessor>> {

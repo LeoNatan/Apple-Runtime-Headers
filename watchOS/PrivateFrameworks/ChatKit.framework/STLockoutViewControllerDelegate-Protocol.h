@@ -6,12 +6,11 @@
 
 #import <ChatKit/NSObject-Protocol.h>
 
-@class NSDictionary, STLockoutViewController;
+@class STLockoutViewController;
 
 @protocol STLockoutViewControllerDelegate <NSObject>
 
 @optional
-- (_Bool)sender:(id)arg1 requestsAction:(int)arg2 withParameters:(NSDictionary *)arg3;
 - (void)lockoutViewControllerDidFinishDismissing:(STLockoutViewController *)arg1;
 @end
 

@@ -9,10 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface RCXPCStoreServer : NSXPCStoreServer
 {
-    CDUnknownBlockType _didCreateDatabaseConnection;
+    CDUnknownBlockType _shouldAcceptDatabaseConnection;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType didCreateDatabaseConnection; // @synthesize didCreateDatabaseConnection=_didCreateDatabaseConnection;
+@property(copy, nonatomic) CDUnknownBlockType shouldAcceptDatabaseConnection; // @synthesize shouldAcceptDatabaseConnection=_shouldAcceptDatabaseConnection;
 - (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 

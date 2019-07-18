@@ -47,7 +47,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)initialize;
 @property BOOL sentID; // @synthesize sentID=_sentID;
-@property(nonatomic) BOOL canStartIdle; // @synthesize canStartIdle=_canStartIdle;
+@property BOOL canStartIdle; // @synthesize canStartIdle=_canStartIdle;
 - (void).cxx_destruct;
 - (BOOL)_recordMailboxResponse:(id)arg1 forOperation:(id)arg2 exists:(unsigned long long *)arg3 fromIDLE:(BOOL)arg4;
 - (BOOL)_recordMailboxResponse:(id)arg1 forOperation:(id)arg2;

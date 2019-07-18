@@ -12,7 +12,6 @@
 @interface WFSlotTemplateTextStorage : NSTextStorage
 {
     BOOL _enabled;
-    BOOL _extendSlotBackgroundOffEdges;
     UIFont *_font;
     UIFont *_unpopulatedFont;
     UIColor *_textColor;
@@ -22,16 +21,18 @@
     NSMutableSet *_mutableHighlightedSlots;
     NSMutableSet *_mutableSelectedSlots;
     NSMutableSet *_mutableTypingSlots;
+    unsigned long long _editingLevel;
 }
 
+@property(nonatomic) unsigned long long editingLevel; // @synthesize editingLevel=_editingLevel;
 @property(readonly, nonatomic) NSMutableSet *mutableTypingSlots; // @synthesize mutableTypingSlots=_mutableTypingSlots;
 @property(readonly, nonatomic) NSMutableSet *mutableSelectedSlots; // @synthesize mutableSelectedSlots=_mutableSelectedSlots;
 @property(readonly, nonatomic) NSMutableSet *mutableHighlightedSlots; // @synthesize mutableHighlightedSlots=_mutableHighlightedSlots;
 @property(readonly, nonatomic) NSTextStorage *textStorage; // @synthesize textStorage=_textStorage;
 @property(copy, nonatomic) NSArray *contents; // @synthesize contents=_contents;
-@property(nonatomic) BOOL extendSlotBackgroundOffEdges; // @synthesize extendSlotBackgroundOffEdges=_extendSlotBackgroundOffEdges;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
+- (void)enumerateContentInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)slotAtCharacterIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2;
 - (struct _NSRange)characterRangeForSlot:(id)arg1 includingInsideSpacingOpportunities:(BOOL)arg2;
 - (unsigned long long)slotSpacingOpportunityAtCharacterIndex:(unsigned long long)arg1;
@@ -57,6 +58,8 @@
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) UIFont *unpopulatedFont; // @synthesize unpopulatedFont=_unpopulatedFont;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
+- (void)endEditing;
+- (void)beginEditing;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange)arg2;
 - (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2;
 - (id)attributesAtIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2;

@@ -25,6 +25,7 @@
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
+- (void)service:(id)arg1 linkedDevicesChanged:(id)arg2;
 - (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (void)service:(id)arg1 connectedDevicesChanged:(id)arg2;
 - (void)service:(id)arg1 nearbyDevicesChanged:(id)arg2;

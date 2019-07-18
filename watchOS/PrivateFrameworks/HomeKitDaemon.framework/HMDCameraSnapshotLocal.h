@@ -9,12 +9,12 @@
 #import <HomeKitDaemon/HMDCameraGetSnapshotProtocol-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDAccessory, HMDCameraSessionID, HMDSnapshotFile, NSDictionary, NSObject, NSString;
+@class HMDAccessory, HMDCameraSnapshotSessionID, HMDSnapshotFile, NSDictionary, NSObject, NSString;
 @protocol HMDCameraSnapshotLocalDelegate, HMDSnapshotRequestHandlerProtocol, OS_dispatch_queue;
 
 @interface HMDCameraSnapshotLocal : HMFObject <HMDCameraGetSnapshotProtocol, HMFLogging>
 {
-    HMDCameraSessionID *_sessionID;
+    HMDCameraSnapshotSessionID *_sessionID;
     NSObject<OS_dispatch_queue> *_workQueue;
     HMDAccessory *_accessory;
     NSDictionary *_options;
@@ -32,7 +32,7 @@
 @property(readonly, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, nonatomic) __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(readonly, nonatomic) HMDCameraSessionID *sessionID; // @synthesize sessionID=_sessionID;
+@property(readonly, nonatomic) HMDCameraSnapshotSessionID *sessionID; // @synthesize sessionID=_sessionID;
 - (void).cxx_destruct;
 - (void)_callDelegate:(id)arg1 error:(id)arg2;
 - (void)_handleSnapshotFile:(id)arg1 error:(id)arg2;

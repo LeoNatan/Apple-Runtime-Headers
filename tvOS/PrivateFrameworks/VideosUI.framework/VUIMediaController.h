@@ -52,8 +52,10 @@
     NSTimer *_pauseStateTimeoutTimer;
     unsigned long long _vpafPlaybackStartReason;
     unsigned long long _vpafPlaybackStopReason;
+    NSString *_titleForLogging;
 }
 
+@property(copy, nonatomic) NSString *titleForLogging; // @synthesize titleForLogging=_titleForLogging;
 @property(nonatomic) _Bool didWeCreatePlayer; // @synthesize didWeCreatePlayer=_didWeCreatePlayer;
 @property(nonatomic) _Bool shouldPlayAfterAppBecomesActive; // @synthesize shouldPlayAfterAppBecomesActive=_shouldPlayAfterAppBecomesActive;
 @property(nonatomic) unsigned long long vpafPlaybackStopReason; // @synthesize vpafPlaybackStopReason=_vpafPlaybackStopReason;

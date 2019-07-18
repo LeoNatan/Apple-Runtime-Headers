@@ -8,7 +8,7 @@
 
 #import <PhotoLibraryServices/NSSecureCoding-Protocol.h>
 
-@class NSXPCConnection, PLAssetsdClient, PLLibraryServicesManager, PLXPCTransaction;
+@class NSString, NSXPCConnection, PLAssetsdClient, PLLibraryServicesManager, PLXPCTransaction;
 @protocol OS_xpc_object;
 
 @interface PLDaemonJob : NSObject <NSSecureCoding>
@@ -27,6 +27,7 @@
 @property(readonly, nonatomic) PLAssetsdClient *assetsdClient; // @synthesize assetsdClient=_assetsdClient;
 @property(retain, nonatomic) NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *jobDescription;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcReply;
 - (void)run;
 - (id)initWithAssetsdClient:(id)arg1;

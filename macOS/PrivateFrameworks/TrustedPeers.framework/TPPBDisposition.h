@@ -8,15 +8,19 @@
 
 #import <TrustedPeers/NSCopying-Protocol.h>
 
-@class TPPBAncientEpoch, TPPBPolicyProhibits, TPPBUnknownMachineID;
+@class TPPBAncientEpoch, TPPBDispositionDisallowedMachineID, TPPBDispositionDuplicateMachineID, TPPBPolicyProhibits, TPPBUnknownMachineID;
 
 @interface TPPBDisposition : PBCodable <NSCopying>
 {
     TPPBAncientEpoch *_ancientEpoch;
+    TPPBDispositionDisallowedMachineID *_disallowedMachineID;
+    TPPBDispositionDuplicateMachineID *_duplicateMachineID;
     TPPBPolicyProhibits *_policyProhibits;
     TPPBUnknownMachineID *_unknownMachineID;
 }
 
+@property(retain, nonatomic) TPPBDispositionDisallowedMachineID *disallowedMachineID; // @synthesize disallowedMachineID=_disallowedMachineID;
+@property(retain, nonatomic) TPPBDispositionDuplicateMachineID *duplicateMachineID; // @synthesize duplicateMachineID=_duplicateMachineID;
 @property(retain, nonatomic) TPPBUnknownMachineID *unknownMachineID; // @synthesize unknownMachineID=_unknownMachineID;
 @property(retain, nonatomic) TPPBPolicyProhibits *policyProhibits; // @synthesize policyProhibits=_policyProhibits;
 @property(retain, nonatomic) TPPBAncientEpoch *ancientEpoch; // @synthesize ancientEpoch=_ancientEpoch;
@@ -30,6 +34,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasDisallowedMachineID;
+@property(readonly, nonatomic) BOOL hasDuplicateMachineID;
 @property(readonly, nonatomic) BOOL hasUnknownMachineID;
 @property(readonly, nonatomic) BOOL hasPolicyProhibits;
 @property(readonly, nonatomic) BOOL hasAncientEpoch;

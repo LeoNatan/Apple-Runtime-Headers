@@ -6,7 +6,7 @@
 
 #import <MemoryResourceException/FPProcess.h>
 
-@class FPMemoryRegion, NSMutableArray;
+@class FPMemoryRegion, NSMutableArray, NSMutableDictionary;
 
 @interface FPUserProcess : FPProcess
 {
@@ -17,6 +17,7 @@
     unsigned long long _phys_footprint;
     unsigned long long _phys_footprint_peak;
     NSMutableArray *_images;
+    NSMutableDictionary *_ownedVmObjects;
     unsigned long long _cachedDispositionAddress;
     int _cachedDisposition;
     FPMemoryRegion *_pendingUnusedSharedRegion;
@@ -39,6 +40,7 @@
 - (unsigned long long)_lastNonSharedCacheRegion;
 - (BOOL)_addRegionsToArray:(id)arg1 forRegionInSharedRegionStartingAt:(unsigned long long)arg2 withSize:(unsigned long long)arg3 withRegionInfo:(struct vm_region_submap_info_64 *)arg4 imageEnumerator:(id)arg5;
 - (BOOL)_populateMemoryRegionWithPageQueries:(id)arg1 regionInfo:(struct vm_region_submap_info_64 *)arg2;
+- (id)_gatherOwnedVmObjects;
 - (void)gatherData;
 - (id)initWithBsdInfo:(struct proc_bsdinfo *)arg1;
 

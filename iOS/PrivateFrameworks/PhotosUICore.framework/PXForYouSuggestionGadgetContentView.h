@@ -67,6 +67,7 @@
 - (void)_updateTitleFont;
 - (void)_updateAssetViewPlaceholderFilters;
 - (id)previewAssetView;
+- (void)_updateAssetViewAnimatedContentEnabled;
 - (void)_updateAssetView;
 - (void)_updateBadgeViews;
 - (void)_updateRoundedCornerOverlayView;

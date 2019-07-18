@@ -26,6 +26,8 @@
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(nonatomic, copy) NSArray *viewControllers;
 @property(nonatomic, readonly) UIViewController *childViewControllerForHomeIndicatorAutoHidden;

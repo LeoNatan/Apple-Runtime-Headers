@@ -15,6 +15,8 @@
 
 + (id)longFormVideoRoutingSessionManager;
 + (void)initialize;
+- (BOOL)stopSuppressingLikelyDestinationsAndReturnError:(id *)arg1;
+- (BOOL)startSuppressingLikelyDestinationsUntilNextPlayEventAndReturnError:(id *)arg1;
 - (BOOL)startRoutingSessionWithOutputDeviceDescriptions:(id)arg1 error:(id *)arg2;
 - (void)startRoutingSessionForHighConfidenceExternalDestinationIfPresentWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)updateCurrentRoutingSessionFromLikelyDestinationsWithCompletionHandler:(CDUnknownBlockType)arg1;

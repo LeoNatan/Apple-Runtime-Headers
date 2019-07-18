@@ -17,10 +17,12 @@
     // Error parsing type: , name: respectPhysics
     // Error parsing type: , name: physicsAngularCoefficient
     // Error parsing type: , name: physicsLinearCoefficient
-    // Error parsing type: , name: subHandle
-    // Error parsing type: , name: startTime
-    // Error parsing type: , name: localTargetTransform
-    // Error parsing type: , name: currentGoal
+    // Error parsing type: , name: updateSubscription
+    // Error parsing type: , name: deadline
+    // Error parsing type: , name: currentAnimation
+    // Error parsing type: , name: targetEntityParent
+    // Error parsing type: , name: ghostPivotEntity
+    // Error parsing type: , name: originalPose
 }
 
 - (id)copyWithZone:(void *)arg1;

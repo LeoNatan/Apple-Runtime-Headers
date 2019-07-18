@@ -17,7 +17,7 @@
 - (void)logPVWarningMessage:(NSString *)arg1;
 - (void)logPVErrorMessage:(NSString *)arg1;
 - (NSString *)suggestedPersonLocalIdentifierForPersonLocalIdentifier:(NSString *)arg1 faceClusterer:(id <PVFaceClusteringProtocol>)arg2 canceler:(PVCanceler *)arg3 context:(PVContext *)arg4 error:(id *)arg5;
-- (void)buildPersonsWithFaceClusterer:(id <PVFaceClusteringProtocol>)arg1 keyFaceUpdateBlock:(void (^)(NSArray *))arg2 canceler:(PVCanceler *)arg3 context:(PVContext *)arg4;
+- (void)buildPersonsWithFaceClusterer:(id <PVFaceClusteringProtocol>)arg1 keyFaceUpdateBlock:(void (^)(NSArray *))arg2 canceler:(PVCanceler *)arg3 context:(PVContext *)arg4 extendTimeoutBlock:(void (^)(void))arg5;
 - (BOOL)needsPersonBuilding;
 - (BOOL)recordNeedToPersonBuildOnFaceGroupContainingFace:(PVFace *)arg1 error:(id *)arg2;
 - (BOOL)deleteEmptyGroupsAndReturnError:(id *)arg1;

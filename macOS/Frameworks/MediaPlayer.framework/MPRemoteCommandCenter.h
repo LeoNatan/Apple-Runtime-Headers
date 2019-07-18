@@ -20,6 +20,7 @@
     BOOL _canBeNowPlayingApplication;
     BOOL _handlingPlaybackQueueCommands;
     MPMRNowPlayingPlayerPathWrapper *_playerPath;
+    BOOL _disableAutomaticCanBeNowPlaying;
     MPRemoteCommand *_pauseCommand;
     MPRemoteCommand *_playCommand;
     MPRemoteCommand *_stopCommand;
@@ -55,6 +56,7 @@
     MPFeedbackCommand *_addItemToLibraryCommand;
     MPChangePlaybackProgressCommand *_changePlaybackProgressCommand;
     MPSetPlaybackSessionCommand *_setPlaybackSessionCommand;
+    MPRemoteCommand *_reshuffleCommand;
     NSString *_playerID;
 }
 
@@ -62,6 +64,7 @@
 + (id)commandCenterForPlayerID:(id)arg1;
 + (id)sharedCommandCenter;
 + (void)updateLaunchCommandsWithConfigurationHandler:(CDUnknownBlockType)arg1;
+@property(nonatomic) BOOL disableAutomaticCanBeNowPlaying; // @synthesize disableAutomaticCanBeNowPlaying=_disableAutomaticCanBeNowPlaying;
 @property(readonly, copy, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;
 - (void).cxx_destruct;
 - (void)_stopMediaRemoteSync;
@@ -70,6 +73,7 @@
 - (void)_commandTargetsDidChangeNotification:(id)arg1;
 - (id)_createRemoteCommandWithConcreteClass:(Class)arg1 mediaRemoteType:(unsigned int)arg2;
 - (id)_activeCommands;
+@property(readonly, nonatomic) MPRemoteCommand *reshuffleCommand; // @synthesize reshuffleCommand=_reshuffleCommand;
 @property(readonly, nonatomic) MPSetPlaybackSessionCommand *setPlaybackSessionCommand; // @synthesize setPlaybackSessionCommand=_setPlaybackSessionCommand;
 @property(readonly, nonatomic) MPChangePlaybackProgressCommand *changePlaybackProgressCommand; // @synthesize changePlaybackProgressCommand=_changePlaybackProgressCommand;
 @property(readonly, nonatomic) MPFeedbackCommand *addItemToLibraryCommand; // @synthesize addItemToLibraryCommand=_addItemToLibraryCommand;

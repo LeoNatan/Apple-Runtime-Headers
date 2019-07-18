@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (id)childEnumerator;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
+- (void)willBeRemovedFromDocumentRoot:(id)arg1 storage:(id)arg2;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (id)objectsForStyleMigrating;
@@ -45,6 +46,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)isPartitioned;
 - (_Bool)isDrawable;
 - (_Bool)isHTMLWrap;
+- (_Bool)isVerticallyCentered;
+- (_Bool)isHorizontallyCentered;
 - (void)clearParentStorageForDealloc;
 - (void)setParentStorage:(id)arg1;
 - (void)attachDrawable:(id)arg1;

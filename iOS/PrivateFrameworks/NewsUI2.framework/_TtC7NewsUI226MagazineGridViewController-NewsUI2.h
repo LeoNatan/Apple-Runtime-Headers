@@ -8,10 +8,8 @@
 
 @interface _TtC7NewsUI226MagazineGridViewController (NewsUI2)
 - (id)contentScrollView;
-- (void)viewDidDisappear:(_Bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 @end
 

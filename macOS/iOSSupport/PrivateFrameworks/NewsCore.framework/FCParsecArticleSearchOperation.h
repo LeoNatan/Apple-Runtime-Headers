@@ -12,6 +12,8 @@
 @interface FCParsecArticleSearchOperation : FCOperation
 {
     NSString *_query;
+    NSString *_keyboardInputMode;
+    double _scale;
     id <FCContentContext> _contentContext;
     SFRankingFeedback *_previousRankingFeedback;
     CDUnknownBlockType _articleSearchCompletionHandler;
@@ -28,6 +30,8 @@
 @property(copy) CDUnknownBlockType articleSearchCompletionHandler; // @synthesize articleSearchCompletionHandler=_articleSearchCompletionHandler;
 @property(retain, nonatomic) SFRankingFeedback *previousRankingFeedback; // @synthesize previousRankingFeedback=_previousRankingFeedback;
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
+@property(nonatomic) double scale; // @synthesize scale=_scale;
+@property(copy, nonatomic) NSString *keyboardInputMode; // @synthesize keyboardInputMode=_keyboardInputMode;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 - (void).cxx_destruct;
 - (id)_rankingFeedbackWithSection:(id)arg1;

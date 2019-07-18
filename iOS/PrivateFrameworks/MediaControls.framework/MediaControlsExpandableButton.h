@@ -6,51 +6,34 @@
 
 #import <UIKit/UIControl.h>
 
-@class MTVisualStylingProvider, MediaControlsRoundButton, NSArray, UILabel, UIView;
+@class MTVisualStylingProvider, MediaControlsExpandableButtonOption, NSArray, NSMutableArray, UIView;
 
 __attribute__((visibility("hidden")))
 @interface MediaControlsExpandableButton : UIControl
 {
     _Bool _expanded;
-    unsigned long long _value;
-    double _maximumExpandedSize;
+    _Bool _toggleEnabled;
+    NSArray *_options;
+    MediaControlsExpandableButtonOption *_selectedOption;
     long long _axis;
     MTVisualStylingProvider *_visualStylingProvider;
-    MediaControlsRoundButton *_leftButton;
-    MediaControlsRoundButton *_centerButton;
-    MediaControlsRoundButton *_rightButton;
-    UILabel *_leftLabel;
-    UILabel *_centerLabel;
-    UILabel *_rightLabel;
-    UILabel *_statusTitleLabel;
-    UILabel *_statusSubtitleLabel;
+    NSMutableArray *_buttons;
     UIView *_materialView;
-    NSArray *_horizontalContraints;
-    NSArray *_verticalContraints;
 }
 
-@property(retain, nonatomic) NSArray *verticalContraints; // @synthesize verticalContraints=_verticalContraints;
-@property(retain, nonatomic) NSArray *horizontalContraints; // @synthesize horizontalContraints=_horizontalContraints;
+@property(nonatomic) _Bool toggleEnabled; // @synthesize toggleEnabled=_toggleEnabled;
 @property(retain, nonatomic) UIView *materialView; // @synthesize materialView=_materialView;
-@property(retain, nonatomic) UILabel *statusSubtitleLabel; // @synthesize statusSubtitleLabel=_statusSubtitleLabel;
-@property(retain, nonatomic) UILabel *statusTitleLabel; // @synthesize statusTitleLabel=_statusTitleLabel;
-@property(retain, nonatomic) UILabel *rightLabel; // @synthesize rightLabel=_rightLabel;
-@property(retain, nonatomic) UILabel *centerLabel; // @synthesize centerLabel=_centerLabel;
-@property(retain, nonatomic) UILabel *leftLabel; // @synthesize leftLabel=_leftLabel;
-@property(retain, nonatomic) MediaControlsRoundButton *rightButton; // @synthesize rightButton=_rightButton;
-@property(retain, nonatomic) MediaControlsRoundButton *centerButton; // @synthesize centerButton=_centerButton;
-@property(retain, nonatomic) MediaControlsRoundButton *leftButton; // @synthesize leftButton=_leftButton;
+@property(retain, nonatomic) NSMutableArray *buttons; // @synthesize buttons=_buttons;
 @property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
-@property(nonatomic) long long axis; // @synthesize axis=_axis;
-@property(nonatomic) double maximumExpandedSize; // @synthesize maximumExpandedSize=_maximumExpandedSize;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
-@property(nonatomic) unsigned long long value; // @synthesize value=_value;
+@property(nonatomic) long long axis; // @synthesize axis=_axis;
+@property(retain, nonatomic) MediaControlsExpandableButtonOption *selectedOption; // @synthesize selectedOption=_selectedOption;
+@property(retain, nonatomic) NSArray *options; // @synthesize options=_options;
 - (void).cxx_destruct;
-- (void)didTapRightButton:(id)arg1;
-- (void)didTapCenterButton:(id)arg1;
-- (void)didTapLeftButton:(id)arg1;
+- (void)didTapButton:(id)arg1;
+- (long long)_buttonLayoutAxis;
 - (void)_updateVisiblity;
-- (void)traitCollectionDidChange:(id)arg1;
+- (void)_updateSelection;
 - (void)didMoveToWindow;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

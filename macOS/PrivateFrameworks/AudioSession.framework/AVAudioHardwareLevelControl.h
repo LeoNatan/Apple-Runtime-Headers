@@ -12,8 +12,9 @@
 {
 }
 
+- (id)valueKeys;
 - (float)scalarValueFromDecibel:(float)arg1;
-- (float)dBValueFromScalar:(float)arg1;
+- (float)decibelValueFromScalar:(float)arg1;
 - (BOOL)setDecibelValue:(float)arg1 controller:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) float decibelValue;
 - (BOOL)setScalarValue:(float)arg1 controller:(id)arg2 error:(id *)arg3;

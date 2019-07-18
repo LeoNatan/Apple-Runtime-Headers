@@ -59,13 +59,13 @@
 @property(readonly, nonatomic) BOOL ignoreAlarms;
 - (id)color;
 @property(readonly, copy, nonatomic) NSString *symbolicColorName;
-- (int)displayOrder;
 @property(readonly, nonatomic) BOOL allowReminders;
 @property(readonly, nonatomic) BOOL allowEvents;
 - (BOOL)isEditable;
 @property(readonly, nonatomic) BOOL isSubscribed;
 @property(readonly, nonatomic) BOOL allowsContentModifications;
 @property(readonly, copy, nonatomic) id <CalendarSourceModelProtocol> containerSource;
+- (int)displayOrder;
 - (id)updateListWithSaveRequest:(id)arg1 error:(id *)arg2;
 - (id)frozenReminderSource;
 - (BOOL)_applyChangesToSaveRequest:(id)arg1 error:(id *)arg2;
@@ -75,6 +75,9 @@
 @property(readonly, nonatomic) NSString *calendarIdentifier;
 - (id)hexColorStringFromREMColor:(id)arg1;
 - (id)REMColorFromEKHexColorString:(id)arg1;
+- (id)publishedURL;
+- (unsigned long long)ekSharingStatusFromREMSharingStatus:(long long)arg1;
+- (unsigned long long)sharingStatus;
 @property(readonly, copy, nonatomic) NSString *colorString;
 - (id)title;
 - (id)remObjectID;

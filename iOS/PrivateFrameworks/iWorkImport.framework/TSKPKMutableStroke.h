@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PKMutableStroke *yukonMutableStroke; // @synthesize yukonMutableStroke=_yukonMutableStroke;
 - (void).cxx_destruct;
 - (id)internalPencilKitStroke;
+- (struct CGPoint)locationAtIndex:(unsigned long long)arg1;
 - (void)setLocation:(struct CGPoint)arg1 atIndex:(unsigned long long)arg2;
 - (void)transformWithTransform:(struct CGAffineTransform)arg1;
 - (id)initWithPKStroke:(id)arg1 pencilAnnotationDrawingScale:(double)arg2;

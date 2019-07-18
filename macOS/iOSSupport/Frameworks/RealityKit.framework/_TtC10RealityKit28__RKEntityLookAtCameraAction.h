@@ -11,7 +11,8 @@
     // Error parsing type: , name: duration
     // Error parsing type: , name: direction
     // Error parsing type: , name: upVector
-    // Error parsing type: , name: subHandle
+    // Error parsing type: , name: updateSubscription
+    // Error parsing type: , name: deadline
 }
 
 - (id)copyWithZone:(void *)arg1;

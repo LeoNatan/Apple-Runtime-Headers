@@ -17,8 +17,10 @@ __attribute__((visibility("hidden")))
     _Bool mLayoutSpacesInvalidateTableOffsets;
     _Bool mLayoutInvalidateChildren;
     _Bool mLayoutUpdateChildren;
+    struct TSUCellCoord _editingCellIDForInvalidation;
 }
 
+@property(nonatomic) struct TSUCellCoord editingCellIDForInvalidation; // @synthesize editingCellIDForInvalidation=_editingCellIDForInvalidation;
 @property(nonatomic) _Bool layoutUpdateChildren; // @synthesize layoutUpdateChildren=mLayoutUpdateChildren;
 @property(nonatomic) _Bool layoutInvalidateChildren; // @synthesize layoutInvalidateChildren=mLayoutInvalidateChildren;
 @property(nonatomic) _Bool layoutSpacesInvalidateTableOffsets; // @synthesize layoutSpacesInvalidateTableOffsets=mLayoutSpacesInvalidateTableOffsets;
@@ -27,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool layoutInvalidateSize; // @synthesize layoutInvalidateSize=mLayoutInvalidateSize;
 @property(nonatomic) _Bool layoutInvalidateProvider; // @synthesize layoutInvalidateProvider=mLayoutInvalidateProvider;
 @property(nonatomic) _Bool layoutInvalidate; // @synthesize layoutInvalidate=mLayoutInvalidate;
+- (id)init;
 
 @end
 

@@ -26,6 +26,7 @@
 - (void)disconnectCall:(id)arg1;
 - (void)setUplinkMuted:(_Bool)arg1 for:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)applicationWillEnterForeground;
+- (void)logEntryForCallWithUniqueProxyIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)queryIsTinCannable:(id)arg1;
 - (void)sessionViewControllerViewDidAppear;
 - (id)endingCall;

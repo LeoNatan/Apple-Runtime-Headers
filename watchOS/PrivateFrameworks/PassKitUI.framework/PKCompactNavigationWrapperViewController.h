@@ -15,10 +15,12 @@
 @property(nonatomic) float targetNavigationHeight; // @synthesize targetNavigationHeight=_targetNavigationHeight;
 @property(readonly, nonatomic) _Bool hasExplicitTargetNavigationHeight; // @synthesize hasExplicitTargetNavigationHeight=_hasExplicitTargetNavigationHeight;
 - (struct CGRect)_wrappedViewControllerFrameForBounds:(struct CGRect)arg1;
-- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)viewWillLayoutSubviews;
+- (_Bool)_canShowWhileLocked;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets)arg1;
+- (id)initWithWrappedViewController:(id)arg1;
+- (id)initWithWrappedViewController:(id)arg1 type:(int)arg2;
 
 @end
 

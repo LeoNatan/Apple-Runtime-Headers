@@ -53,6 +53,7 @@
 - (void)_scheduleETATimerWithInterval:(double)arg1;
 - (void)resumeUpdateRequestsForSubscriber:(id)arg1;
 - (void)pauseUpdateRequestsForSubscriber:(id)arg1;
+- (void)restartUpdateTimer;
 - (void)stopUpdateRequests;
 - (void)startUpdateRequestsForRoutes:(id)arg1 andNavigationType:(int)arg2;
 - (void)dealloc;

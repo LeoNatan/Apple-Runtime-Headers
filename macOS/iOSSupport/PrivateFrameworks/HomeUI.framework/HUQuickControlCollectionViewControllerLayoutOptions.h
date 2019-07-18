@@ -11,7 +11,6 @@
 @interface HUQuickControlCollectionViewControllerLayoutOptions : NSObject
 {
     double _rowSpacing;
-    double _columnSpacing;
     double _interitemSpacingForExtraSmallControlSize;
     double _interitemSpacingForSmallControlSize;
     double _interitemSpacingForRegularControlSize;
@@ -28,7 +27,7 @@
 
 + (id)defaultOptionsForViewSize:(struct CGSize)arg1;
 + (id)defaultOptions;
-@property(nonatomic) NSNumber *overrideSizeSubclass; // @synthesize overrideSizeSubclass=_overrideSizeSubclass;
+@property(retain, nonatomic) NSNumber *overrideSizeSubclass; // @synthesize overrideSizeSubclass=_overrideSizeSubclass;
 @property(readonly, nonatomic) struct CGSize viewSize; // @synthesize viewSize=_viewSize;
 @property(nonatomic) unsigned long long titlePosition; // @synthesize titlePosition=_titlePosition;
 @property(nonatomic) unsigned long long preferredLayoutStyle; // @synthesize preferredLayoutStyle=_preferredLayoutStyle;
@@ -40,8 +39,8 @@
 @property(nonatomic) double interitemSpacingForRegularControlSize; // @synthesize interitemSpacingForRegularControlSize=_interitemSpacingForRegularControlSize;
 @property(nonatomic) double interitemSpacingForSmallControlSize; // @synthesize interitemSpacingForSmallControlSize=_interitemSpacingForSmallControlSize;
 @property(nonatomic) double interitemSpacingForExtraSmallControlSize; // @synthesize interitemSpacingForExtraSmallControlSize=_interitemSpacingForExtraSmallControlSize;
-@property(nonatomic) double columnSpacing; // @synthesize columnSpacing=_columnSpacing;
 @property(nonatomic) double rowSpacing; // @synthesize rowSpacing=_rowSpacing;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long viewSizeSubclass;
 - (id)initWithViewSize:(struct CGSize)arg1;
 

@@ -587,6 +587,14 @@ struct vector<BinarySearchTree<int>::Node, std::__1::allocator<BinarySearchTree<
 
 struct vector<BreakPoint, std::__1::allocator<BreakPoint>>;
 
+struct vector<CGPoint, std::__1::allocator<CGPoint>> {
+    struct CGPoint *_field1;
+    struct CGPoint *_field2;
+    struct __compressed_pair<CGPoint *, std::__1::allocator<CGPoint>> {
+        struct CGPoint *_field1;
+    } _field3;
+};
+
 struct vector<CRCHNetworkNode, std::__1::allocator<CRCHNetworkNode>> {
     struct CRCHNetworkNode *_field1;
     struct CRCHNetworkNode *_field2;
@@ -849,6 +857,14 @@ typedef struct valarray<float> {
     float *_field1;
     float *_field2;
 } valarray_6968ec29;
+
+typedef struct vector<CGPoint, std::__1::allocator<CGPoint>> {
+    struct CGPoint *_field1;
+    struct CGPoint *_field2;
+    struct __compressed_pair<CGPoint *, std::__1::allocator<CGPoint>> {
+        struct CGPoint *_field1;
+    } _field3;
+} vector_e1abc270;
 
 typedef struct vector<CRCtcCandidate, std::__1::allocator<CRCtcCandidate>> {
     struct CRCtcCandidate *_field1;

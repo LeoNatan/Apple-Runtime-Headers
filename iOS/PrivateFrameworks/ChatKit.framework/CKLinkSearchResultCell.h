@@ -12,6 +12,7 @@
 
 @interface CKLinkSearchResultCell : UICollectionViewCell <CKSearchResultCell>
 {
+    NSString *_identifier;
     LPLinkView *_linkView;
     LPLinkMetadata *_linkMetadata;
     struct UIEdgeInsets marginInsets;
@@ -20,12 +21,17 @@
 + (id)reuseIdentifier;
 @property(retain, nonatomic) LPLinkMetadata *linkMetadata; // @synthesize linkMetadata=_linkMetadata;
 @property(retain, nonatomic) LPLinkView *linkView; // @synthesize linkView=_linkView;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets;
 - (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
+- (void)didMoveToWindow;
+- (void)_metadataGenerated:(id)arg1;
 - (void)refreshForSearchTextIfNeeded:(id)arg1;
+- (void)_updateForLinkMetadataWithResult:(id)arg1;
 - (void)configureWithQueryResult:(id)arg1 searchText:(id)arg2 mode:(unsigned long long)arg3;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

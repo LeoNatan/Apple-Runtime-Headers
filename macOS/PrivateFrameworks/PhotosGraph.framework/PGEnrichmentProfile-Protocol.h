@@ -6,10 +6,11 @@
 
 #import <PhotosGraph/NSObject-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, PGCurationCriteria, PGCurationOptions, PGHighlightTailorContext, PGTitleTuple, PHAsset;
+@class NSArray, NSDictionary, NSString, PGCurationCriteria, PGCurationOptions, PGDejunkerDeduperOptions, PGHighlightTailorContext, PGTitleTuple, PHAsset;
 @protocol PGHighlightModel;
 
 @protocol PGEnrichmentProfile <NSObject>
+@property(retain, nonatomic) PGDejunkerDeduperOptions *extendedCurationOptions;
 @property(readonly) NSDictionary *debugInfos;
 @property(nonatomic) BOOL collectsDebugInfo;
 @property(readonly, nonatomic) NSString *identifier;

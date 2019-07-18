@@ -8,6 +8,7 @@
 
 @class NBPhoneMetaData, NBPhoneNumberUtil, NSMutableArray, NSMutableString, NSRegularExpression, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NBAsYouTypeFormatter : NSObject
 {
     _Bool _isSuccessfulFormatting;

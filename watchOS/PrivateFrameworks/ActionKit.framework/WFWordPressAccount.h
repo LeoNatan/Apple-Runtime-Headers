@@ -16,7 +16,6 @@
 + (id)accountWithUsername:(id)arg1 password:(id)arg2 endpointURL:(id)arg3;
 + (unsigned int)modelVersion;
 + (_Bool)allowsMultipleAccounts;
-+ (Class)loginViewControllerClass;
 + (id)localizedServiceName;
 + (id)serviceID;
 @property(copy, nonatomic) NSURL *endpointURL; // @synthesize endpointURL=_endpointURL;

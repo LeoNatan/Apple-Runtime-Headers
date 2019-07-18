@@ -10,6 +10,9 @@
 {
 }
 
++ (_Bool)canPerformActivityWithItemClasses:(id)arg1;
++ (id)classesForClassNames:(id)arg1;
++ (id)classNamesForItems:(id)arg1;
 + (long long)activityCategory;
 + (unsigned long long)_xpcAttributes;
 - (struct CGSize)_thumbnailSize;

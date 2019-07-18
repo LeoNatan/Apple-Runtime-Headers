@@ -7,17 +7,18 @@
 #import <WorkflowUI/WFModuleSummaryEditor.h>
 
 #import <WorkflowUI/HUTriggerActionBuilderEditorDelegate-Protocol.h>
-#import <WorkflowUI/UIPresentationControllerDelegatePrivate-Protocol.h>
+#import <WorkflowUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 
 @class NSString, UIViewController;
 
-@interface WFHomeAccessoryPickerParameterSummaryEditor : WFModuleSummaryEditor <HUTriggerActionBuilderEditorDelegate, UIPresentationControllerDelegatePrivate>
+@interface WFHomeAccessoryPickerParameterSummaryEditor : WFModuleSummaryEditor <HUTriggerActionBuilderEditorDelegate, UIPopoverPresentationControllerDelegate>
 {
     UIViewController *_presentedViewController;
 }
 
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 - (void).cxx_destruct;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (void)actionBuilderEditor:(id)arg1 didFinishWithTriggerActionSetBuilder:(id)arg2;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;

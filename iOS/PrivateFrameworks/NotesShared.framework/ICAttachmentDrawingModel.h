@@ -25,10 +25,12 @@
 - (long long)previewImageOrientation;
 - (struct CGAffineTransform)previewImageOrientationTransform;
 - (void)drawingPreviewIsUpToDate;
+- (_Bool)preferLocalPreviewImages;
 - (_Bool)showThumbnailInNoteList;
 - (_Bool)supportsQuickLook;
 - (_Bool)canSaveURL;
 - (id)saveURL;
+- (_Bool)previewsSupportMultipleAppearances;
 - (_Bool)hasPreviews;
 - (void)writeMergeableData;
 - (_Bool)mergeWithMergeableData:(id)arg1;

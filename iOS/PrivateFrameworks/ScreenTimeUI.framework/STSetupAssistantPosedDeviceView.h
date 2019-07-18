@@ -11,7 +11,6 @@
 __attribute__((visibility("hidden")))
 @interface STSetupAssistantPosedDeviceView : UIView
 {
-    _Bool _requestsBackgroundBleed;
     _Bool _isiPad;
     long long _deviceSize;
     STSetupAssistantUsageDetailsCoordinator *_coordinator;
@@ -28,7 +27,6 @@ __attribute__((visibility("hidden")))
 @property(retain) STSetupAssistantUsageDetailsCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property long long deviceSize; // @synthesize deviceSize=_deviceSize;
 @property _Bool isiPad; // @synthesize isiPad=_isiPad;
-@property _Bool requestsBackgroundBleed; // @synthesize requestsBackgroundBleed=_requestsBackgroundBleed;
 - (void).cxx_destruct;
 - (_Bool)_isRTL;
 - (double)_notificationTopOffset;
@@ -37,9 +35,11 @@ __attribute__((visibility("hidden")))
 - (double)_screenTimeTopOffset;
 - (double)_screenTimeTrailingOffset;
 - (double)_screenTimeLeadingOffset;
+- (id)_deviceWithScreenImage;
 - (void)_setUpContentView;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -6,41 +6,26 @@
 
 #import <objc/NSObject.h>
 
-#import <SidecarCore/NSProgressReporting-Protocol.h>
-
-@class NSArray, NSProgress, NSString, SidecarSession;
+@class SidecarSession;
 @protocol SidecarTransferDelegate;
 
 __attribute__((visibility("hidden")))
-@interface SidecarTransfer : NSObject <NSProgressReporting>
+@interface SidecarTransfer : NSObject
 {
     id <SidecarTransferDelegate> _delegate;
-    NSProgress *_progress;
+    struct os_unfair_lock_s _lock;
     long long _requestID;
     SidecarSession *_session;
     long long _transferID;
-    long long _type;
-    NSArray *_items;
 }
 
-@property(nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) long long transferID; // @synthesize transferID=_transferID;
 @property(readonly, nonatomic) long long requestID; // @synthesize requestID=_requestID;
-@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
-@property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) __weak id <SidecarTransferDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)setItems:(id)arg1;
 - (id)dataForType:(id)arg1;
 @property(readonly, nonatomic) SidecarSession *session;
-- (id)initWithSession:(id)arg1 requestID:(long long)arg2;
 - (id)initWithSession:(id)arg1 requestID:(long long)arg2 transferID:(long long)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

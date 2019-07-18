@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSNumber, NSString, NSURL;
+@class ADBackgroundTaskRequest, NSArray, NSDate, NSNumber, NSString, NSURL;
 @protocol OS_dispatch_queue_global;
 
 @interface ADMobileAssets : NSObject
@@ -17,11 +17,15 @@
     NSURL *_assetPath;
     NSNumber *_maxQueryElements;
     NSArray *_lookbackPeriods;
+    ADBackgroundTaskRequest *_task;
+    NSDate *_creationTime;
     NSObject<OS_dispatch_queue_global> *_assetQueue;
 }
 
 @property(retain, nonatomic) NSObject<OS_dispatch_queue_global> *assetQueue; // @synthesize assetQueue=_assetQueue;
 @property _Bool operationInProgress; // @synthesize operationInProgress=_operationInProgress;
+@property(retain, nonatomic) NSDate *creationTime; // @synthesize creationTime=_creationTime;
+@property(retain, nonatomic) ADBackgroundTaskRequest *task; // @synthesize task=_task;
 @property(retain, nonatomic) NSArray *lookbackPeriods; // @synthesize lookbackPeriods=_lookbackPeriods;
 @property(retain, nonatomic) NSNumber *maxQueryElements; // @synthesize maxQueryElements=_maxQueryElements;
 @property(retain, nonatomic) NSURL *assetPath; // @synthesize assetPath=_assetPath;
@@ -34,7 +38,7 @@
 - (void)createAppUsageVectors:(CDUnknownBlockType)arg1;
 - (void)queryAssetData:(CDUnknownBlockType)arg1;
 - (void)downloadAssetCatalog:(CDUnknownBlockType)arg1;
-- (id)initWithAsset:(id)arg1;
+- (id)initWithAsset:(id)arg1 andTask:(id)arg2;
 
 @end
 

@@ -10,7 +10,7 @@
 #import <SpringBoard/SBUIAnimationControllerObserver-Protocol.h>
 #import <SpringBoard/SBWorkspaceApplicationSceneTransitionContextDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, NSTimer, SBAppLayout, SBAutoPiPWorkspaceTransaction, SBFluidSwitcherViewController, SBMainDisplayLayoutState, SBMainWorkspaceTransaction, SBSceneLayoutWorkspaceTransaction, SBTransientOverlayViewController, SBUISwitcherAnimationController, UIApplicationSceneDeactivationAssertion;
+@class NSMutableArray, NSString, NSTimer, NSUUID, SBAppLayout, SBAutoPiPWorkspaceTransaction, SBFluidSwitcherViewController, SBMainDisplayLayoutState, SBMainWorkspaceTransaction, SBSceneLayoutWorkspaceTransaction, SBTransientOverlayViewController, SBUISwitcherAnimationController, UIApplicationSceneDeactivationAssertion;
 @protocol BSInvalidatable, SBFluidSwitcherGestureWorkspaceTransactionDelegate;
 
 @interface SBFluidSwitcherGestureWorkspaceTransaction : SBSystemGestureWorkspaceTransaction <SBUIAnimationControllerObserver, SBSceneLayoutWorkspaceTransactionDelegate, SBWorkspaceApplicationSceneTransitionContextDelegate>
@@ -34,10 +34,12 @@
     NSTimer *_activateScenesTimer;
     NSMutableArray *_iconForceTouchWindowHostWrappers;
     SBTransientOverlayViewController *_switcherTransitioningTransientOverlayViewController;
+    NSUUID *_gestureID;
     SBAppLayout *_selectedAppLayout;
 }
 
 @property(retain, nonatomic) SBAppLayout *selectedAppLayout; // @synthesize selectedAppLayout=_selectedAppLayout;
+@property(readonly, nonatomic) NSUUID *gestureID; // @synthesize gestureID=_gestureID;
 @property(readonly, nonatomic) _Bool hasCompletedAtLeastOneGesture; // @synthesize hasCompletedAtLeastOneGesture=_hasCompletedAtLeastOneGesture;
 @property(retain, nonatomic) SBTransientOverlayViewController *switcherTransitioningTransientOverlayViewController; // @synthesize switcherTransitioningTransientOverlayViewController=_switcherTransitioningTransientOverlayViewController;
 @property(retain, nonatomic) NSMutableArray *iconForceTouchWindowHostWrappers; // @synthesize iconForceTouchWindowHostWrappers=_iconForceTouchWindowHostWrappers;
@@ -57,6 +59,7 @@
 - (void)_updatePPTsForAnimationEndedWithFinalLayoutState:(id)arg1;
 - (void)_updatePPTsForGestureEnded;
 - (void)_updatePPTsForGestureTransactionBegan;
+- (void)_addWaitForSceneLayoutTransitionTransaction:(id)arg1 forLeafAnimationControllers:(id)arg2;
 - (id)_transitionRequestForApplicationTransitionContext:(id)arg1 eventLabel:(id)arg2;
 - (id)_createWorkspaceTransientOverlayForAppLayout:(id)arg1;
 - (id)_copiedTransitionRequestFromTransitionRequest:(id)arg1;
@@ -86,6 +89,7 @@
 - (void)_didInterruptWithReason:(id)arg1;
 - (void)_willInterruptWithReason:(id)arg1;
 - (_Bool)shouldSuppressMedusaKeyboardDuringGesture;
+- (id)_currentGestureEventForGesture:(id)arg1;
 - (long long)_gestureType;
 - (void)dealloc;
 - (id)initWithTransitionRequest:(id)arg1 fluidSwitcherViewController:(id)arg2 delegate:(id)arg3;

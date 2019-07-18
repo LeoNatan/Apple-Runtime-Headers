@@ -13,6 +13,7 @@
 }
 
 + (id)enumeratorForAllExtensionPoints;
++ (id)enumeratorForPlugInKitProxiesWithExtensionPoint:(id)arg1 options:(unsigned long long)arg2 filter:(CDUnknownBlockType)arg3;
 + (id)enumeratorForPlugInKitProxiesWithExtensionPoint:(id)arg1 options:(unsigned long long)arg2;
 + (id)enumeratorForPlugInKitProxiesWithOptions:(unsigned long long)arg1;
 + (id)enumeratorForApplicationProxiesOnVolume:(id)arg1 options:(unsigned long long)arg2;

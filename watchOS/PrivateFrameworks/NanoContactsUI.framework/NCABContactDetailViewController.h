@@ -62,9 +62,9 @@
 - (void).cxx_destruct;
 - (id)initWithPerson:(void *)arg1 withFilter:(unsigned int)arg2;
 - (id)initWithPerson:(void *)arg1;
+- (_Bool)_shouldShowLocationSection;
 - (void)_checkIfFollowingFriendAndBecomeObserver:(_Bool)arg1;
-- (void)_handleEmergencyContactResult:(_Bool)arg1;
-- (void)_checkForEmergencyContact;
+- (_Bool)isEmergencyContactCheck;
 - (void)_checkForDowntimeContact;
 - (id)_senderIdentity;
 - (_Bool)_isEnableCallIconSetForDemo;

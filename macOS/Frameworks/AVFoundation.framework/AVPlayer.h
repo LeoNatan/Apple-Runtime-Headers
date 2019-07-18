@@ -55,6 +55,7 @@
 - (id)_performanceDictionary;
 - (void)_updatePixelBufferAttributesForLayer:(id)arg1;
 - (void)_pixelBufferAttributesDidChangeForLayer:(id)arg1;
+- (BOOL)_hasForegroundLayers;
 - (void)_addLayer:(id)arg1;
 - (void)_removeLayer:(id)arg1;
 - (void)_detachClosedCaptionLayersFromFigPlayer:(struct OpaqueFigPlayer *)arg1;
@@ -198,9 +199,9 @@
 - (id)initWithPlayerItem:(id)arg1;
 @property(nonatomic) BOOL preventsDisplaySleepDuringVideoPlayback;
 - (BOOL)outputObscuredDueToInsufficientExternalProtection;
-- (BOOL)_outputObscuredDueToInsufficientExternalProtection;
 - (long long)_extractFPExternalProtectionStatus:(id)arg1;
 @property(readonly, nonatomic) long long _externalProtectionStatus;
+- (long long)_externalProtectionStatusCopiedFromFig;
 @property(copy, nonatomic, setter=_setDisplaysUsedForPlayback:) NSArray *_displaysUsedForPlayback;
 - (id)_playbackDisplaysForFigPlayer;
 @property(readonly, nonatomic, getter=_isPIPModePossible) BOOL PIPModePossible;
@@ -208,11 +209,16 @@
 @property float minRateForAudioPlayback;
 @property(readonly, nonatomic, getter=isAudioPlaybackEnabledAtAllRates) BOOL audioPlaybackEnabledAtAllRates;
 - (void)removeAudioPlaybackRateLimits;
+- (void)_restoreVideoLayersForForeground;
 - (void)_willEnterForeground:(id)arg1;
+- (void)_detachVideoLayersForSuspension;
 - (void)_didFinishSuspension:(id)arg1;
 - (void)_didEnterBackground:(id)arg1;
+- (void)_layerVisibilityChanged:(id)arg1;
 - (BOOL)_shouldDetachVideoLayersFromFigPlayer;
 - (long long)_itemOkayToPlayWhileTransitioningToBackground:(id)arg1;
+- (void)_setHostApplicationInForeground:(BOOL)arg1;
+- (BOOL)_hostApplicationInForeground;
 - (BOOL)_carplayIsActive;
 - (BOOL)_isIAPDExtendedModeActive;
 - (BOOL)_hasAssociatedOnscreenAVPlayerLayer;

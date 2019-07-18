@@ -9,7 +9,7 @@
 #import <PlatterKit/MTVisualStylingProviderObservingPrivate-Protocol.h>
 #import <PlatterKit/MTVisualStylingRequiring-Protocol.h>
 
-@class MTVisualStylingProvider, NSArray, NSMutableDictionary, NSString, UIInterfaceActionGroupView;
+@class NSArray, NSMutableDictionary, NSString, UIInterfaceActionGroupView;
 
 @interface PLInterfaceActionGroupView : UIView <MTVisualStylingProviderObservingPrivate, MTVisualStylingRequiring>
 {
@@ -38,7 +38,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 
 @end
 

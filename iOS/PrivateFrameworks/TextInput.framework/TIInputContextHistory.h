@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) NSSet *recipientIdentifiers; // @synthesize recipientIdentifiers=_recipientIdentifiers;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *senderIdentifier; // @dynamic senderIdentifier;
+- (id)mostRecentTextEntries:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool mostRecentTextEntryIsByMe;
 @property(readonly, nonatomic) NSString *mostRecentTextEntryLogString;
 @property(readonly, nonatomic) NSString *mostRecentNonSenderTextEntry;

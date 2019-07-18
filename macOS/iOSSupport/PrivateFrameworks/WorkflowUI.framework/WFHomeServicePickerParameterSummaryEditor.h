@@ -7,17 +7,20 @@
 #import <WorkflowUI/WFModuleSummaryEditor.h>
 
 #import <WorkflowUI/HUServicePickerViewControllerDelegate-Protocol.h>
-#import <WorkflowUI/UIPresentationControllerDelegatePrivate-Protocol.h>
+#import <WorkflowUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class NSString, UIViewController;
+@class HMHome, NSString, UIViewController;
 
-@interface WFHomeServicePickerParameterSummaryEditor : WFModuleSummaryEditor <HUServicePickerViewControllerDelegate, UIPresentationControllerDelegatePrivate>
+@interface WFHomeServicePickerParameterSummaryEditor : WFModuleSummaryEditor <HUServicePickerViewControllerDelegate, UIPopoverPresentationControllerDelegate>
 {
     UIViewController *_presentedViewController;
+    HMHome *_home;
 }
 
+@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 - (void).cxx_destruct;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (void)servicePickerDidCancel:(id)arg1;
 - (void)servicePickerDidFinish:(id)arg1 selectedServices:(id)arg2;

@@ -9,47 +9,49 @@
 #import <PencilKit/PKEdgeLocatable-Protocol.h>
 #import <PencilKit/PKPalettePopoverDismissing-Protocol.h>
 #import <PencilKit/PKPaletteViewSizeScaling-Protocol.h>
+#import <PencilKit/PKPaletteViewStateObserving-Protocol.h>
 #import <PencilKit/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, NSTimer, PKInk, PKPaletteToolPickerOverlayView, PKPaletteToolView, UIScrollView, UIStackView, UIViewController;
-@protocol PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate;
+@class NSArray, NSLayoutConstraint, NSMutableArray, NSString, PKInk, PKPaletteToolPickerOverlayView, PKPaletteToolView, UIScrollView, UIStackView, UIViewController;
+@protocol PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate, PKPaletteViewStateObservable;
 
-@interface PKPaletteToolPickerView : UIView <UIPopoverPresentationControllerDelegate, PKEdgeLocatable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling>
+@interface PKPaletteToolPickerView : UIView <UIPopoverPresentationControllerDelegate, PKEdgeLocatable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling, PKPaletteViewStateObserving>
 {
     BOOL _isRulerActive;
-    BOOL _presentingErasingToolAttributesPopover;
     unsigned long long _edgeLocation;
     double _scalingFactor;
     id <PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate> _delegate;
+    id <PKPaletteViewStateObservable> _paletteViewState;
     UIScrollView *_scrollView;
     UIStackView *_stackView;
     PKPaletteToolPickerOverlayView *_overlayView;
     NSArray *_tools;
+    NSLayoutConstraint *_stackViewWidthConstraint;
     NSMutableArray *_toolsWidthConstraints;
     NSMutableArray *_toolsHeightConstraints;
     NSMutableArray *_toolsWidthCompactConstraints;
     PKPaletteToolView *_lastSelectedTool;
     UIViewController *_presentedAttributePickerPopover;
-    NSTimer *_autodismissEraserAttributesPopoverTimer;
 }
 
 + (id)defaultToolIdentifiers;
-@property(nonatomic, getter=isPresentingErasingToolAttributesPopover) BOOL presentingErasingToolAttributesPopover; // @synthesize presentingErasingToolAttributesPopover=_presentingErasingToolAttributesPopover;
-@property(retain, nonatomic) NSTimer *autodismissEraserAttributesPopoverTimer; // @synthesize autodismissEraserAttributesPopoverTimer=_autodismissEraserAttributesPopoverTimer;
 @property(retain, nonatomic) UIViewController *presentedAttributePickerPopover; // @synthesize presentedAttributePickerPopover=_presentedAttributePickerPopover;
 @property(retain, nonatomic) PKPaletteToolView *lastSelectedTool; // @synthesize lastSelectedTool=_lastSelectedTool;
 @property(retain, nonatomic) NSMutableArray *toolsWidthCompactConstraints; // @synthesize toolsWidthCompactConstraints=_toolsWidthCompactConstraints;
 @property(retain, nonatomic) NSMutableArray *toolsHeightConstraints; // @synthesize toolsHeightConstraints=_toolsHeightConstraints;
 @property(retain, nonatomic) NSMutableArray *toolsWidthConstraints; // @synthesize toolsWidthConstraints=_toolsWidthConstraints;
+@property(retain, nonatomic) NSLayoutConstraint *stackViewWidthConstraint; // @synthesize stackViewWidthConstraint=_stackViewWidthConstraint;
 @property(retain, nonatomic) NSArray *tools; // @synthesize tools=_tools;
 @property(retain, nonatomic) PKPaletteToolPickerOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(nonatomic) __weak id <PKPaletteViewStateObservable> paletteViewState; // @synthesize paletteViewState=_paletteViewState;
 @property(nonatomic) BOOL isRulerActive; // @synthesize isRulerActive=_isRulerActive;
 @property(nonatomic) __weak id <PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
 - (void).cxx_destruct;
+- (void)didChangeAnnotationSupport:(id)arg1;
 - (void)toggleBetweenLastSelectedToolAndCurrentlySelectedTool;
 - (void)toggleBetweenLastSelectedToolAndEraser;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
@@ -62,6 +64,8 @@
 - (id)sourceViewForPopoverPresentationForTool:(id)arg1;
 - (struct CGRect)sourceRectForPopoverPresentationForTool:(id)arg1;
 - (void)_showToolAttributesPopover;
+@property(readonly, nonatomic) BOOL selectedToolSupportsChangingColor;
+@property(readonly, nonatomic) BOOL selectedToolSupportsDisplayingSelectedColor;
 - (id)eraserTool;
 - (id)_selectedTool;
 - (id)selectedToolIdentifier;
@@ -72,7 +76,6 @@
 - (void)_toolTapGestureRecognizer:(id)arg1;
 - (void)layoutSubviews;
 - (void)updateConstraints;
-- (double)_stackViewSpacing;
 - (void)_installOverlayView;
 - (void)_installTools;
 - (void)_installStackView;
@@ -80,7 +83,7 @@
 @property(copy, nonatomic) NSArray *toolProperties;
 @property(copy, nonatomic) NSArray *toolIdentifiers;
 - (id)toolsFromToolIdentifiers:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithPaletteViewStateObservable:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -9,6 +9,7 @@
 @class NSArray, NSData, NSDictionary, NSString;
 
 @protocol UMXPCServer <NSObject>
+- (void)registerUserPersonaObserverForPID:(int)arg1 withMachServiceName:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)registerUserPersonaStakeholderForPID:(int)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)personaLogoutWithPid:(int)arg1 WithUserODuuid:(NSString *)arg2 withUid:(unsigned int)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)personaLoginWithPid:(int)arg1 WithUserODuuid:(NSString *)arg2 withUid:(unsigned int)arg3 completionHandler:(void (^)(NSError *))arg4;

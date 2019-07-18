@@ -25,6 +25,7 @@
 @property(readonly, copy, nonatomic) SFAcousticFeature *shimmer; // @synthesize shimmer=_shimmer;
 @property(readonly, copy, nonatomic) SFAcousticFeature *jitter; // @synthesize jitter=_jitter;
 - (void).cxx_destruct;
+- (id)description;
 - (id)_initWithJitter:(id)arg1 shimmer:(id)arg2 pitch:(id)arg3 voicing:(id)arg4;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

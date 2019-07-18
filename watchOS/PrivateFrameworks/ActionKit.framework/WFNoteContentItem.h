@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)hasLibrary;
 + (id)countDescription;
 + (id)pluralTypeDescription;
 + (id)typeDescription;

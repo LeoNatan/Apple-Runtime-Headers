@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) long long dataProtectionClass; // @synthesize dataProtectionClass=_dataProtectionClass;
 @property(readonly, copy, nonatomic) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+- (BOOL)checkpointWriteAheadLogWithError:(id *)arg1;
 - (BOOL)executeQueryString:(id)arg1 error:(id *)arg2;
 - (BOOL)executeQuery:(id)arg1 error:(id *)arg2;
 - (id)executeQuery:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <TinCanShared/NSObject-Protocol.h>
 
-@class CNContact, TCSCall;
+@class CNContact, NSString, TCSCall;
 
 @protocol TCSServerXPC <NSObject>
 - (void)queryIsTinCannable:(CNContact *)arg1;
@@ -14,6 +14,7 @@
 - (void)setClientRecordingInProgress:(_Bool)arg1;
 - (void)disconnectCall:(TCSCall *)arg1;
 - (void)setUplinkMuted:(_Bool)arg1 for:(TCSCall *)arg2 completion:(void (^)(void))arg3;
+- (void)getLogEntryForCallWithUniqueProxyIdentifier:(NSString *)arg1 completion:(void (^)(TCSCall *))arg2;
 - (void)getCall:(void (^)(TCSCall *))arg1;
 - (void)sessionViewControllerViewDidAppear;
 @end

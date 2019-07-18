@@ -33,7 +33,7 @@
 - (_Bool)shouldTruncateAnimationsUponTransitionCompletion;
 - (_Bool)shouldFireTransitionCompletionInDefaultRunLoopMode;
 - (_Bool)shouldWaitForLayoutAndStyleUpdatesForTransactionCompletion;
-- (_Bool)acceleratedHomeButtonPressShouldBegin;
+- (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)shouldAcceleratedHomeButtonPressBegin;
 - (id)appLayoutToScrollToBeforeTransitioning;
 - (id)topMostAppLayouts;

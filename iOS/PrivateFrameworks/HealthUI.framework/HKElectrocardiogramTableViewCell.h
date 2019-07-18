@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (void)_setupConstraints;
 - (void)_setupUIWithSample:(id)arg1 dateCache:(id)arg2 onboarding:(_Bool)arg3;
+- (void)prepareForReuse;
 @property(retain, nonatomic) HKElectrocardiogram *sample;
 - (id)initWithSample:(id)arg1 dateCache:(id)arg2 onboarding:(_Bool)arg3;
 

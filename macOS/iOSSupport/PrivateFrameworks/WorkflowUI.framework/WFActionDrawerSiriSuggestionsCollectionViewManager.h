@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+#import <WorkflowUI/MPMediaPickerControllerDelegate-Protocol.h>
 #import <WorkflowUI/UICollectionViewDataSource-Protocol.h>
 #import <WorkflowUI/UICollectionViewDelegate-Protocol.h>
 #import <WorkflowUI/UICollectionViewDelegateFlowLayout-Protocol.h>
@@ -13,7 +14,7 @@
 @class INIntent, NSArray, NSString, UICollectionView, UIViewController, WFAction;
 @protocol WFActionDrawerSiriSuggestionsCollectionViewManagerDelegate;
 
-@interface WFActionDrawerSiriSuggestionsCollectionViewManager : NSObject <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface WFActionDrawerSiriSuggestionsCollectionViewManager : NSObject <UICollectionViewDelegateFlowLayout, MPMediaPickerControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 {
     BOOL _configuredForDailyRoutines;
     id <WFActionDrawerSiriSuggestionsCollectionViewManagerDelegate> _delegate;
@@ -40,8 +41,11 @@
 - (void).cxx_destruct;
 - (void)_configureCell:(id)arg1 withGenericIntent:(id)arg2 cellType:(long long)arg3 genericParameterTitle:(id)arg4;
 - (void)_configureCell:(id)arg1 withDonation:(id)arg2 cellType:(long long)arg3;
+- (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (void)showPodcastPicker;
+- (void)showMusicPicker;
 - (double)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(long long)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

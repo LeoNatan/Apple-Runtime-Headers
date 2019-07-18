@@ -14,7 +14,7 @@
 #import <PhotosUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <PhotosUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class CEKBadgeTextView, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject, NSString, NSTimer, NUComposition, NUCropModel, PFCoalescer, PFSerialQueue, PFSlowMotionTimeRangeMapper, PLImageGeometry, PLPhotoEditRenderer, PUAdjustmentsViewController, PUCropAspect, PUCropAspectFlipperView, PUCropAspectViewController, PUCropHandleView, PUCropOverlayView, PUCropPerspectiveAdjustmentsDataSource, PUCropPerspectiveView, PUCropToolControllerSpec, PUCropVideoScrubberView, UIButton, UIImage, UILongPressGestureRecognizer, UIView;
+@class CEKBadgeTextView, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject, NSString, NSTimer, NUComposition, NUCropModel, PFCoalescer, PFSerialQueue, PLImageGeometry, PLPhotoEditRenderer, PUAdjustmentsViewController, PUCropAspect, PUCropAspectFlipperView, PUCropAspectViewController, PUCropHandleView, PUCropOverlayView, PUCropPerspectiveAdjustmentsDataSource, PUCropPerspectiveView, PUCropToolControllerSpec, PUCropVideoScrubberView, UIButton, UIImage, UILongPressGestureRecognizer, UIView;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     _Bool __ignoreTrackingUpdates;
     _Bool _trackingAdjustmentControl;
     _Bool _toolBadgeDoesHide;
+    _Bool _modelLoadingSuspended;
     _Bool __needsImageLoad;
     _Bool _initialImageLoaded;
     _Bool __needsLivePhotoLoad;
@@ -81,7 +82,6 @@ __attribute__((visibility("hidden")))
     PUCropVideoScrubberView *_videoScrubberView;
     PFCoalescer *_videoScrubberCoalescer;
     double _screenScale;
-    PFSlowMotionTimeRangeMapper *_slowMotionTimeMapper;
     PFSerialQueue *_imageLoadingQueue;
     NSMutableArray *_imageLoadingQueueCompletionBlocks;
     UILongPressGestureRecognizer *__accessibilityLongPressGestureRecognizer;
@@ -100,7 +100,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setAccessibilityLongPressGestureRecognizer:) UILongPressGestureRecognizer *_accessibilityLongPressGestureRecognizer; // @synthesize _accessibilityLongPressGestureRecognizer=__accessibilityLongPressGestureRecognizer;
 @property(retain, nonatomic) NSMutableArray *imageLoadingQueueCompletionBlocks; // @synthesize imageLoadingQueueCompletionBlocks=_imageLoadingQueueCompletionBlocks;
 @property(retain, nonatomic) PFSerialQueue *imageLoadingQueue; // @synthesize imageLoadingQueue=_imageLoadingQueue;
-@property(retain, nonatomic) PFSlowMotionTimeRangeMapper *slowMotionTimeMapper; // @synthesize slowMotionTimeMapper=_slowMotionTimeMapper;
 @property(nonatomic) double screenScale; // @synthesize screenScale=_screenScale;
 @property(nonatomic) struct CGSize screenSize; // @synthesize screenSize=_screenSize;
 @property(nonatomic) _Bool videoScrubberIsInteracting; // @synthesize videoScrubberIsInteracting=_videoScrubberIsInteracting;
@@ -138,6 +137,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setNeedsLivePhotoLoad:) _Bool _needsLivePhotoLoad; // @synthesize _needsLivePhotoLoad=__needsLivePhotoLoad;
 @property(nonatomic) _Bool initialImageLoaded; // @synthesize initialImageLoaded=_initialImageLoaded;
 @property(nonatomic, setter=_setNeedsImageLoad:) _Bool _needsImageLoad; // @synthesize _needsImageLoad=__needsImageLoad;
+@property(nonatomic) _Bool modelLoadingSuspended; // @synthesize modelLoadingSuspended=_modelLoadingSuspended;
 @property(nonatomic) _Bool toolBadgeDoesHide; // @synthesize toolBadgeDoesHide=_toolBadgeDoesHide;
 @property(retain, nonatomic) NSTimer *badgeShowingExpirationTimer; // @synthesize badgeShowingExpirationTimer=_badgeShowingExpirationTimer;
 @property(nonatomic, getter=_isTrackingAdjustmentControl, setter=_setTrackingAdjustmentControl:) _Bool trackingAdjustmentControl; // @synthesize trackingAdjustmentControl=_trackingAdjustmentControl;
@@ -191,7 +191,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)wantsSecondaryToolbarVisible;
 - (void)didResignActiveTool;
 - (void)handleResigningCropTool;
-- (void)prepareForSave;
+- (void)prepareForSave:(_Bool)arg1;
 - (void)willResignActiveTool;
 - (void)didBecomeActiveTool;
 - (void)_installRenderedImageAndDisplayIfNeeded;
@@ -219,7 +219,6 @@ __attribute__((visibility("hidden")))
 - (void)videoScrubberViewDidScrubTo:(CDStruct_1b6d18a9)arg1;
 - (void)showBadgeView:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)createVideoScrubber;
-- (id)newTimeMapper;
 - (void)_recomposeCropRectAnimated:(_Bool)arg1;
 - (struct CGRect)_suggestedCropRectForImageRect:(struct CGRect)arg1;
 - (struct CGRect)_cropCanvasFrame;
@@ -246,6 +245,7 @@ __attribute__((visibility("hidden")))
 - (void)_showGridAndCancelDelayedHide;
 - (void)_hideGridDelayed;
 - (void)_hideGrid;
+- (void)updateViewOrdering;
 - (void)_updateCropViewsForInteraction;
 - (void)_updateCropToggleButton;
 - (void)_updateCropActionButtons;
@@ -254,6 +254,7 @@ __attribute__((visibility("hidden")))
 - (void)_toggleCropAndPerspective;
 - (_Bool)_hasCropSuggestion;
 - (void)_applyCropAndPerspectiveSuggestion;
+- (void)_applyCropRect:(struct CGRect)arg1 straightenAngle:(double)arg2 pitchAngle:(double)arg3 yawAngle:(double)arg4 isAutoCrop:(_Bool)arg5;
 - (void)_autoApplyCropAndPerspectiveSuggestionIfNeeded;
 - (void)_loadCropSuggestionIfNeeded;
 - (void)basePhotoInvalidated;
@@ -294,7 +295,6 @@ __attribute__((visibility("hidden")))
 - (void)_updateCropCanvasConstraintsIfNeeded;
 - (_Bool)_hasConstraintsForKey:(id)arg1;
 - (void)_invalidateConstraintsForKey:(id)arg1;
-- (unsigned long long)preferredScreenEdgesDeferringSystemGestures;
 - (void)_updateBadgeTextWithInfo:(id)arg1;
 - (void)adjustmentsViewControllerSliderDidEndScrubbing:(id)arg1;
 - (void)adjustmentsViewControllerSliderWillBeginScrubbing:(id)arg1;

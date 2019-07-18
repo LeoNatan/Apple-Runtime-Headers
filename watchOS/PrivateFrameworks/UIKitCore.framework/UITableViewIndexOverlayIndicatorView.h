@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *currentText;
 - (void)layoutSubviews;
 - (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
-- (void)_invalidateTable;
 - (void)_tapGestureChanged:(id)arg1;
 - (id)initWithTable:(id)arg1;
 

@@ -20,7 +20,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)attachmentWithFile:(id)arg1;
 + (id)attachmentWithCurrentLocation;
-+ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 @property(readonly, copy, nonatomic) INFile *file; // @synthesize file=_file;
 @property(readonly, nonatomic) _Bool currentLocation; // @synthesize currentLocation=_currentLocation;
 - (void).cxx_destruct;
@@ -31,7 +31,7 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)_initWithCurrentLocation:(_Bool)arg1 file:(id)arg2;
-- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 - (void)_enumerateFileURLsWithMutatingBlock:(CDUnknownBlockType)arg1;
 
 // Remaining properties

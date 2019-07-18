@@ -16,7 +16,9 @@
 }
 
 + (id)sharedInstance;
-+ (id)sharedDomain;
++ (_Bool)sharedDomainUsesDefaultShellEndpoint;
++ (id)sharedDomainIdentifier;
++ (id)_sharedDomain;
 - (void).cxx_destruct;
 - (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;
 @property(readonly, copy, nonatomic) BSServiceConnectionEndpoint *endpoint;

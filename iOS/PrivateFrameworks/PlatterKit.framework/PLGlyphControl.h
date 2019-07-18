@@ -7,42 +7,48 @@
 #import <UIKit/UIControl.h>
 
 #import <PlatterKit/MTMaterialGrouping-Protocol.h>
-#import <PlatterKit/MTVisualStylingProviderObserving-Protocol.h>
+#import <PlatterKit/MTVisualStylingRequiring-Protocol.h>
 
-@class MTMaterialView, NSString, UIImage, UIImageView, UIView;
+@class MTMaterialView, MTVisualStylingProvider, NSArray, NSString, UIImage, UIImageView;
 
-@interface PLGlyphControl : UIControl <MTVisualStylingProviderObserving, MTMaterialGrouping>
+@interface PLGlyphControl : UIControl <MTMaterialGrouping, MTVisualStylingRequiring>
 {
+    MTVisualStylingProvider *_visualStylingProvider;
     _Bool _blurEnabled;
     long long _materialRecipe;
+    long long _visualStyle;
     UIImageView *_glyphView;
     MTMaterialView *_backgroundMaterialView;
-    UIView *_highlightView;
 }
 
 + (id)dismissControlWithMaterialRecipe:(long long)arg1;
-@property(retain, nonatomic, getter=_hightlightView) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic, getter=_backgroundMaterialView) MTMaterialView *backgroundMaterialView; // @synthesize backgroundMaterialView=_backgroundMaterialView;
 @property(retain, nonatomic, getter=_glyphView) UIImageView *glyphView; // @synthesize glyphView=_glyphView;
 @property(nonatomic, getter=isBlurEnabled) _Bool blurEnabled; // @synthesize blurEnabled=_blurEnabled;
+@property(nonatomic) long long visualStyle; // @synthesize visualStyle=_visualStyle;
 @property(readonly, nonatomic) long long materialRecipe; // @synthesize materialRecipe=_materialRecipe;
 - (void).cxx_destruct;
 - (void)_configureBackgroundMaterialViewIfNecessary;
 - (void)_configureMaterialView:(id *)arg1 ifNecessaryWithConfiguration:(long long)arg2 positioningAtIndex:(unsigned long long)arg3;
 - (void)_configureGlyphViewIfNecessaryWithImage:(id)arg1;
 - (void)_updateGlyphViewVisualStyling;
-- (CDUnknownBlockType)visualStylingProvider:(id)arg1 willReplaceStylingOfView:(id)arg2;
+- (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
+@property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
+- (id)visualStylingProviderForCategory:(long long)arg1;
+@property(copy, nonatomic) NSString *materialGroupNameBase;
 - (void)layoutSubviews;
 - (double)_cornerRadius;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_sendActionsForEvents:(unsigned long long)arg1 withEvent:(id)arg2;
 - (void)setHighlighted:(_Bool)arg1;
-@property(copy, nonatomic) NSString *materialGroupNameBase;
 @property(copy, nonatomic) UIImage *glyph;
 - (id)initWithMaterialRecipe:(long long)arg1;
+- (void)_removeVisualStylingOfView:(id)arg1;
 - (void)_updateVisualStylingOfView:(id)arg1;
 - (void)_handleTouchUpInsideWithEvent:(id)arg1;
+- (void)_removeAllVisualStyling;
+- (void)_updateAllVisualStyling;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

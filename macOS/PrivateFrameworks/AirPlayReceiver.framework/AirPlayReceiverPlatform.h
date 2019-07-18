@@ -22,7 +22,14 @@ __attribute__((visibility("hidden")))
     unsigned char _voiceForTelephony;
     unsigned char _isMuted;
     float _volumeSliderValueBeforeMute;
+    unsigned char _isAmbientAudioPlaying;
+    unsigned char _isMediaAudioPlaying;
+    unsigned char _isVideoPlaying;
 }
+
+@property(nonatomic) unsigned char isVideoPlaying; // @synthesize isVideoPlaying=_isVideoPlaying;
+@property(nonatomic) unsigned char isMediaAudioPlaying; // @synthesize isMediaAudioPlaying=_isMediaAudioPlaying;
+@property(nonatomic) unsigned char isAmbientAudioPlaying; // @synthesize isAmbientAudioPlaying=_isAmbientAudioPlaying;
 
 @end
 

@@ -6,7 +6,8 @@
 
 #import <UIKit/UIView.h>
 
-#import <MobileMailUI/ECSignpostable-Protocol.h>
+#import <MobileMailUI/EFSignpostable-Protocol.h>
+#import <MobileMailUI/MFBlockedSenderBannerViewDelegate-Protocol.h>
 #import <MobileMailUI/MFLoadBestAlternativeBannerViewDelegate-Protocol.h>
 #import <MobileMailUI/MFLoadBlockedContentBannerViewDelegate-Protocol.h>
 #import <MobileMailUI/MFMailDropBannerDelegate-Protocol.h>
@@ -20,10 +21,10 @@
 #import <MobileMailUI/WKNavigationDelegatePrivate-Protocol.h>
 #import <MobileMailUI/WKUIDelegatePrivate-Protocol.h>
 
-@class EFCancelationToken, EMContentRepresentation, EMDaemonInterface, MFAddressAtomStatusManager, MFAttachmentManager, MFConversationItemFooterView, MFLoadBestAlternativeBannerView, MFLoadBlockedContentBannerView, MFMailDropBannerView, MFMailboxProvider, MFMessageContentAttachments, MFMessageContentLoadingView, MFMessageDisplayMetrics, MFMessageHeaderView, MFMessageLoadingContext, MFWebViewDictionary, MFWebViewLoadingController, MessageContentItemsHelper, MessageContentRepresentationRequest, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PartialMessageIndicator, UIBarButtonItem, UIScrollView, WKWebView, _MFMessageContentResizeWrapperView;
+@class EFCancelationToken, EMContentRepresentation, EMDaemonInterface, MFAddressAtomStatusManager, MFAttachmentManager, MFBlockedSenderBannerView, MFConversationItemFooterView, MFLoadBestAlternativeBannerView, MFLoadBlockedContentBannerView, MFMailDropBannerView, MFMailboxProvider, MFMessageContentAttachments, MFMessageContentLoadingView, MFMessageDisplayMetrics, MFMessageHeaderView, MFMessageLoadingContext, MFWebViewDictionary, MFWebViewLoadingController, MessageContentItemsHelper, MessageContentRepresentationRequest, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PartialMessageIndicator, UIBarButtonItem, UIScrollView, WKWebView, _MFMessageContentResizeWrapperView;
 @protocol EFCancelable, EFScheduler, MFMessageContentViewDataSource, MFMessageContentViewDelegate;
 
-@interface MFMessageContentView : UIView <UIPopoverPresentationControllerDelegate, WKNavigationDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, MFLoadBestAlternativeBannerViewDelegate, MFLoadBlockedContentBannerViewDelegate, MFMessageHeaderViewDelegate, MFMessageFooterViewDelegate, MFMailDropBannerDelegate, UIScrollViewDelegate, ECSignpostable, MFMailWebProcessDelegate, MFReusable>
+@interface MFMessageContentView : UIView <UIPopoverPresentationControllerDelegate, WKNavigationDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, MFLoadBestAlternativeBannerViewDelegate, MFLoadBlockedContentBannerViewDelegate, MFBlockedSenderBannerViewDelegate, MFMessageHeaderViewDelegate, MFMessageFooterViewDelegate, MFMailDropBannerDelegate, UIScrollViewDelegate, EFSignpostable, MFMailWebProcessDelegate, MFReusable>
 {
     EFCancelationToken *_loadingCancelable;
     MessageContentItemsHelper *_relatedItemsHelper;
@@ -33,14 +34,15 @@
     MFMailDropBannerView *_mailDropBanner;
     MFLoadBestAlternativeBannerView *_loadBestAlternativePartBanner;
     MFLoadBlockedContentBannerView *_loadImagesHeaderBlock;
+    MFBlockedSenderBannerView *_blockedSenderBanner;
     PartialMessageIndicator *_partialMessageIndicator;
     UIView *_previousContentSnapshotWrapperView;
-    UIView *_backgroundView;
     id <EFScheduler> _attachmentsScheduler;
     NSMutableArray *_scriptHandlers;
     UIBarButtonItem *_presentedControllerDoneButtonItem;
     id <EFCancelable> _contentSizeObservation;
     _Bool _suppressContentSizeNotifications;
+    _Bool _suppressContentSizeNotificationsUntilFirstPaint;
     struct UIEdgeInsets _originalZoomInsets;
     _Bool _paddingConstantsNeedUpdate;
     MFConversationItemFooterView *_footerView;
@@ -62,7 +64,6 @@
     } _flags;
     _Bool _automaticallyCollapseQuotedContent;
     _Bool _showMessageFooter;
-    _Bool _configuredForLastMessageDisplay;
     _Bool _shouldArchiveByDefault;
     _Bool _initiallyZoomsToShowAllContent;
     _Bool _suppressScrolling;
@@ -77,6 +78,7 @@
     MessageContentRepresentationRequest *_contentRequest;
     MFMessageLoadingContext *_loadingContext;
     NSString *_selectedHTML;
+    UIView *_headerViewSubjectBlock;
     long long _messageBlockingReason;
     unsigned long long _blockedContentTypes;
     UIView *_previousContentSnapshot;
@@ -117,9 +119,9 @@
 @property(nonatomic) unsigned long long blockedContentTypes; // @synthesize blockedContentTypes=_blockedContentTypes;
 @property(nonatomic) long long messageBlockingReason; // @synthesize messageBlockingReason=_messageBlockingReason;
 @property(nonatomic) _Bool shouldArchiveByDefault; // @synthesize shouldArchiveByDefault=_shouldArchiveByDefault;
-@property(nonatomic) _Bool configuredForLastMessageDisplay; // @synthesize configuredForLastMessageDisplay=_configuredForLastMessageDisplay;
 @property(nonatomic) _Bool showMessageFooter; // @synthesize showMessageFooter=_showMessageFooter;
 @property(nonatomic) _Bool automaticallyCollapseQuotedContent; // @synthesize automaticallyCollapseQuotedContent=_automaticallyCollapseQuotedContent;
+@property(retain, nonatomic) UIView *headerViewSubjectBlock; // @synthesize headerViewSubjectBlock=_headerViewSubjectBlock;
 @property(readonly, nonatomic) MFMessageHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(copy, nonatomic) NSString *selectedHTML; // @synthesize selectedHTML=_selectedHTML;
 @property(nonatomic) struct CGPoint initialContentOffset; // @synthesize initialContentOffset=_initialContentOffset;
@@ -128,6 +130,12 @@
 @property(nonatomic) __weak id <MFMessageContentViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <MFMessageContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_handleBlockSenderListChanged:(id)arg1;
+- (void)_observeBlockedSenderListChangedNotification;
+- (void)didDismissBlockedSenderBannerView:(id)arg1;
+- (void)didTapBlockedSenderBannerView:(id)arg1;
+- (void)_clearBlockedSenderBannerAnimated:(_Bool)arg1;
+- (void)_addBlockedSenderBannerIfNeeded;
 - (void)prepareForReuse;
 - (void)_logRequestFinishWithSuccess:(_Bool)arg1;
 - (void)scrollViewDidZoom:(id)arg1;
@@ -176,7 +184,11 @@
 - (unsigned long long)indexOfPreviewableAttachment:(id)arg1;
 @property(readonly) NSArray *previewableAttachments;
 - (id)_previewableAttachmentsExcludingBanner;
+- (void)_webView:(id)arg1 contextMenuConfigurationForElement:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)_contextMenuConfigurationForAttachment:(id)arg1;
+- (_Bool)_isAllowedToSaveAttachmentsToPhotos;
 - (_Bool)_webView:(id)arg1 showCustomSheetForElement:(id)arg2;
+- (void)_updateFileWrapperForAttachment:(id)arg1 contentID:(id)arg2;
 - (void)_webView:(id)arg1 didInsertAttachment:(id)arg2 withSource:(id)arg3;
 - (long long)_webView:(id)arg1 dataOwnerForDragSession:(id)arg2;
 - (id)_dataDetectionContextForWebView:(id)arg1;
@@ -226,9 +238,12 @@
 @property(copy) NSArray *attachments;
 - (void)addAttachments:(id)arg1;
 @property(readonly, nonatomic) MFAttachmentManager *attachmentManager;
+@property(readonly) NSArray *contentItems;
 - (void)_foundImageCIDAttachments:(id)arg1;
-- (id)metadataValueOfClass:(Class)arg1 forKey:(id)arg2;
-- (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
+- (void)setCachedMetadataBool:(_Bool)arg1 forKey:(id)arg2;
+- (_Bool)cachedMetadataBoolForKey:(id)arg1;
+- (void)setCachedMetadata:(id)arg1 forKey:(id)arg2;
+- (id)cachedMetadataOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)_libraryMessage;
 - (void)endResizing;
 - (void)prepareContentViewForResizingWithSnapshotRect:(struct CGRect)arg1;
@@ -267,7 +282,6 @@
 - (void)setFrame:(struct CGRect)arg1;
 - (double)_viewportWidth;
 - (void)_layoutLoadingView;
-- (void)_layoutBackgroundView;
 - (void)_layoutFooterView;
 - (void)layoutSubviews;
 - (void)_setupWebProcessLocalizedStrings;
@@ -275,6 +289,7 @@
 @property(readonly) EMContentRepresentation *contentRepresentation;
 @property(readonly) EMContentRepresentation *contentRepresentationIfAvailable;
 @property(readonly, nonatomic) _Bool sourceIsManaged;
+- (id)_mailboxForBanner:(id)arg1;
 @property(readonly, nonatomic) MFWebViewDictionary *webViewConstants;
 @property(readonly, nonatomic) WKWebView *webView;
 - (void)_commonInit;

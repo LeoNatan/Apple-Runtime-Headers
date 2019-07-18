@@ -6,7 +6,7 @@
 
 #import <NeutrinoCore/NSObject-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSString, NSURL;
 @protocol NURAWImageProperties;
 
 @protocol NUImageProperties <NSObject>
@@ -19,5 +19,6 @@
 @property(readonly) CDStruct_912cb5d2 size;
 @property(readonly) struct CGColorSpace *colorSpace;
 @property(readonly) NSDictionary *metadata;
+@property(readonly) NSURL *url;
 @end
 

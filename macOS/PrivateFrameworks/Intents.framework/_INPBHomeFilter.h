@@ -23,6 +23,7 @@
         unsigned int subServiceType:1;
     } _has;
     BOOL _isExcludeFilter;
+    BOOL __encodeLegacyGloryData;
     int _deviceType;
     int _entityType;
     int _outerDeviceType;
@@ -41,6 +42,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDataString *zone; // @synthesize zone=_zone;
 @property(nonatomic) int subServiceType; // @synthesize subServiceType=_subServiceType;
 @property(nonatomic) int serviceType; // @synthesize serviceType=_serviceType;

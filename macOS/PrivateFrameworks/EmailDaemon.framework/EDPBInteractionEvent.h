@@ -34,12 +34,10 @@
     EDPBInteractionEventReplyDraftStarted *_replyDraftStarted;
     EDPBInteractionEventReplySent *_replySent;
     unsigned int _sequenceNumber;
-    int _timezoneOffset;
     struct {
         unsigned int timestamp:1;
         unsigned int eventName:1;
         unsigned int sequenceNumber:1;
-        unsigned int timezoneOffset:1;
     } _has;
 }
 
@@ -60,7 +58,6 @@
 @property(retain, nonatomic) EDPBInteractionEventMessageMoved *messageMoved; // @synthesize messageMoved=_messageMoved;
 @property(retain, nonatomic) EDPBInteractionEventMessageSent *messageSent; // @synthesize messageSent=_messageSent;
 @property(retain, nonatomic) EDPBInteractionEventMessageFetched *messageFetched; // @synthesize messageFetched=_messageFetched;
-@property(nonatomic) int timezoneOffset; // @synthesize timezoneOffset=_timezoneOffset;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 - (void).cxx_destruct;
@@ -94,7 +91,6 @@
 - (id)eventNameAsString:(int)arg1;
 @property(nonatomic) BOOL hasEventName;
 @property(nonatomic) int eventName; // @synthesize eventName=_eventName;
-@property(nonatomic) BOOL hasTimezoneOffset;
 @property(nonatomic) BOOL hasTimestamp;
 @property(nonatomic) BOOL hasSequenceNumber;
 - (void)forwardInvocation:(id)arg1;

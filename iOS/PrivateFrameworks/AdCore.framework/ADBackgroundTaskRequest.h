@@ -6,15 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSDate, NSString;
 @protocol OS_xpc_object;
 
 @interface ADBackgroundTaskRequest : NSObject
 {
-    NSObject<OS_xpc_object> *_criteria;
+    _Bool _performDeferralCheck;
     NSString *_requestIdentifier;
+    NSObject<OS_xpc_object> *_activity;
+    NSObject<OS_xpc_object> *_criteria;
+    NSDate *_startDate;
 }
 
+@property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(nonatomic) _Bool performDeferralCheck; // @synthesize performDeferralCheck=_performDeferralCheck;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *criteria; // @synthesize criteria=_criteria;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *activity; // @synthesize activity=_activity;
 @property(readonly, copy, nonatomic) NSString *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 - (void).cxx_destruct;
 - (id)getPropertyAsDate:(id)arg1;
@@ -27,16 +34,29 @@
 - (void)setPropertyAsString:(id)arg1 value:(id)arg2;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (void)endBackgroundDeferralCheck;
+- (_Bool)taskCanContinueForTime:(id)arg1;
+- (void)startBackgroundDeferralCheckForTime:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_backgroundDeferralCheck:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)taskIsDeferred;
+- (_Bool)deferTask;
+@property(readonly, nonatomic) _Bool shouldDefer;
+- (_Bool)finishTask;
+- (_Bool)taskIsContinuing;
+- (_Bool)continueTask;
 - (id)copyBackgroundTaskAgentCriteria;
 @property(nonatomic) long long delay;
 @property(retain, nonatomic) NSString *priority;
 @property(nonatomic) long long gracePeriod;
 @property(nonatomic) long long backgroundTaskRetryCount;
 @property(nonatomic) _Bool requiresNetworkConnectivity;
+@property(nonatomic) _Bool requireClassCData;
+@property(nonatomic) _Bool requireBuddyComplete;
+@property(nonatomic) _Bool isCPUIntensive;
 @property(nonatomic) _Bool isRepeating;
 @property(nonatomic) _Bool requireSleep;
 @property(nonatomic) _Bool allowBattery;
-- (id)initWithCriteria:(id)arg1 andID:(id)arg2;
+- (id)initWithCriteria:(id)arg1 ID:(id)arg2 activity:(id)arg3;
 - (id)initWithID:(id)arg1;
 
 @end

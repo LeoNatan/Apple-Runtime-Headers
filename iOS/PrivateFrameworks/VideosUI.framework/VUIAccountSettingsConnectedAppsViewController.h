@@ -6,18 +6,13 @@
 
 #import <Preferences/PSListController.h>
 
-@class NSArray, PSSpecifier, VideosSettingsController;
+@class NSArray, PSSpecifier;
 
 __attribute__((visibility("hidden")))
 @interface VUIAccountSettingsConnectedAppsViewController : PSListController
 {
-    int _didChangeNotificationToken;
-    _Bool _ignoreChanges;
     PSSpecifier *_appGroup;
-    NSArray *_permissionsSpecifiers;
     NSArray *_appSpecifiers;
-    VideosSettingsController *_coreSettingsController;
-    _Bool _didCheckBags;
 }
 
 - (void).cxx_destruct;
@@ -33,9 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)_loadAppGroup;
 - (void)_addPrivacyFooterToGroup:(id)arg1;
 - (id)_appGroupSpecifier;
-- (void)_checkSettingsAndReload;
 - (id)specifiers;
-- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 
 @end

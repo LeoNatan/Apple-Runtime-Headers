@@ -22,11 +22,11 @@
     ICAttachmentInsertionController *_attachmentInsertionController;
     NSMutableDictionary *_trackedToDoParagraphs;
     NSMutableArray *_trackedRangesForAddedExtraNewlines;
+    unsigned long long _overrideAppearanceType;
     unsigned long long _pauseMergeForScrollingCounter;
 }
 
 + (id)attributedStringToPasteWithAdaptedParagraphStyles:(id)arg1 pasteRange:(struct _NSRange)arg2 textStorage:(id)arg3;
-+ (void)filterAttachmentsForPrintingInAttributedString:(id)arg1;
 + (double)extraBulletWidthForNumberedListWithMaxItemNumber:(id)arg1 textFont:(struct UIFont *)arg2;
 + (double)indentForStyle:(id)arg1 range:(struct _NSRange)arg2 attributedString:(id)arg3 textView:(struct UITextView *)arg4;
 + (double)extraWidthNeededForStyle:(id)arg1 range:(struct _NSRange)arg2 attributedString:(id)arg3 textView:(struct UITextView *)arg4;
@@ -36,6 +36,7 @@
 @property(nonatomic) _Bool isAutoListInsertionDisabled; // @synthesize isAutoListInsertionDisabled=_isAutoListInsertionDisabled;
 @property(nonatomic) _Bool shouldMergeNoteAfterScrolling; // @synthesize shouldMergeNoteAfterScrolling=_shouldMergeNoteAfterScrolling;
 @property(nonatomic) unsigned long long pauseMergeForScrollingCounter; // @synthesize pauseMergeForScrollingCounter=_pauseMergeForScrollingCounter;
+@property(nonatomic) unsigned long long overrideAppearanceType; // @synthesize overrideAppearanceType=_overrideAppearanceType;
 @property(nonatomic) _Bool isConvertingTables; // @synthesize isConvertingTables=_isConvertingTables;
 @property(nonatomic) _Bool alwaysHighlightAuthorEdits; // @synthesize alwaysHighlightAuthorEdits=_alwaysHighlightAuthorEdits;
 @property(nonatomic) _Bool trackAddedExtraNewlineRanges; // @synthesize trackAddedExtraNewlineRanges=_trackAddedExtraNewlineRanges;
@@ -53,6 +54,7 @@
 - (_Bool)shouldHighlightStyleAsLink:(unsigned int)arg1;
 - (void)styleDataDetectorTypesForPreviewInTextStorage:(id)arg1;
 - (void)styleListsAndIndentsInAttributedString:(id)arg1 inRange:(struct _NSRange)arg2;
+- (void)filterAttachmentsForPrintingInAttributedString:(id)arg1;
 - (void)updateTrackedToDoParagraphsAfterIndex:(unsigned long long)arg1 byDelta:(long long)arg2 excludingSeenParagraphs:(id)arg3;
 - (void)createToDoItemForCharacterRange:(struct _NSRange)arg1 paragraphStyle:(id)arg2 textStorage:(id)arg3;
 - (void)resetTrackedToDoParagraphs;
@@ -122,24 +124,6 @@
 - (id)addTableAttachmentWithNSTextTable:(id)arg1 attributedString:(id)arg2 filterPastedAttributes:(_Bool)arg3 isReadingSelectionFromPasteboard:(_Bool)arg4;
 - (void)workAroundSageTables:(id)arg1;
 - (void)convertNSTablesToICTables:(id)arg1 pasteboardTypes:(id)arg2 filterPastedAttributes:(_Bool)arg3 isReadingSelectionFromPasteboard:(_Bool)arg4;
-- (id)analyticsInfoForChecklistAtIndex:(unsigned long long)arg1 textView:(struct UITextView *)arg2;
-- (id)paragraphInfoForCharacterAtIndex:(unsigned long long)arg1 includeChildren:(_Bool)arg2 textStorage:(id)arg3;
-- (_Bool)containsAnyTodoItemMarkedCompleted:(_Bool)arg1 inRange:(struct _NSRange)arg2 textStorage:(id)arg3;
-- (id)rangeForChecklistItemInRange:(struct _NSRange)arg1 textStorage:(id)arg2;
-- (id)trackedParagraphsForTodosInRange:(struct _NSRange)arg1 textStorage:(id)arg2;
-- (id)rangesForTodosInRange:(struct _NSRange)arg1 markedCompleted:(_Bool)arg2 textStorage:(id)arg3;
-- (struct _NSRange)expandedRangeForContiguousTodosForRange:(struct _NSRange)arg1 textView:(struct UITextView *)arg2;
-- (id)sortTrackedParagraphsMovingCheckedItemsToBottom:(id)arg1;
-- (id)createTreeFromTrackedParagraphs:(id)arg1;
-- (_Bool)moveCheckedChecklistsToBottomInTextView:(struct UITextView *)arg1 forRange:(struct _NSRange)arg2;
-- (_Bool)canMoveCheckedChecklistsToBottomInTextView:(struct UITextView *)arg1 forRange:(struct _NSRange)arg2;
-- (id)validAdjacentParagraphInfoFromParagraphInfo:(id)arg1 inDirection:(unsigned long long)arg2 inTextView:(struct UITextView *)arg3;
-- (id)adjacentTrackedParagraphFromTrackedParagraph:(id)arg1 inDirection:(unsigned long long)arg2 inTextView:(struct UITextView *)arg3;
-- (_Bool)canMoveListItemInDirection:(unsigned long long)arg1 inTextView:(struct UITextView *)arg2 forRange:(struct _NSRange)arg3;
-- (_Bool)moveListItemInDirection:(unsigned long long)arg1 inTextView:(struct UITextView *)arg2 forRange:(struct _NSRange)arg3;
-- (void)removeChecklistItemsMarkedCompleted:(_Bool)arg1 inTextView:(struct UITextView *)arg2 forRanges:(id)arg3;
-- (_Bool)checklistItemExistsMarkedCompleted:(_Bool)arg1 inTextView:(struct UITextView *)arg2 forRanges:(id)arg3;
-- (void)markAllChecklistItemsCompleted:(_Bool)arg1 inTextview:(struct UITextView *)arg2 forSelectedRanges:(id)arg3;
 
 @end
 

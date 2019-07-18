@@ -16,7 +16,6 @@
     _Bool _stopReloadButtonShowsStop;
     _Bool _textHasEVCertificateTint;
     _Bool _lockIconHasEVCertificateTint;
-    _Bool _showsPageFormatButton;
     _Bool _readerButtonSelected;
     _Bool _showsReaderButton;
     _Bool _showsReaderAvailabilityText;
@@ -41,7 +40,6 @@
 @property(readonly, nonatomic) _Bool showsReaderAvailabilityText; // @synthesize showsReaderAvailabilityText=_showsReaderAvailabilityText;
 @property(nonatomic) _Bool showsReaderButton; // @synthesize showsReaderButton=_showsReaderButton;
 @property(nonatomic) _Bool readerButtonSelected; // @synthesize readerButtonSelected=_readerButtonSelected;
-@property(nonatomic) _Bool showsPageFormatButton; // @synthesize showsPageFormatButton=_showsPageFormatButton;
 @property(nonatomic) _Bool lockIconHasEVCertificateTint; // @synthesize lockIconHasEVCertificateTint=_lockIconHasEVCertificateTint;
 @property(nonatomic) _Bool textHasEVCertificateTint; // @synthesize textHasEVCertificateTint=_textHasEVCertificateTint;
 @property(nonatomic) _Bool stopReloadButtonShowsStop; // @synthesize stopReloadButtonShowsStop=_stopReloadButtonShowsStop;

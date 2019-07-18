@@ -38,7 +38,6 @@ __attribute__((visibility("hidden")))
     NSNumber *inputSubjectDistanceOffset;
 }
 
-+ (id)_kernel;
 @property(copy, nonatomic) NSNumber *inputSubjectDistanceOffset; // @synthesize inputSubjectDistanceOffset;
 @property(copy, nonatomic) NSNumber *inputSubjectDistanceScalingFactor; // @synthesize inputSubjectDistanceScalingFactor;
 @property(copy, nonatomic) NSNumber *inputSubjectDistanceMaximumFocusDistance; // @synthesize inputSubjectDistanceMaximumFocusDistance;
@@ -65,6 +64,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CIImage *inputParameterImage; // @synthesize inputParameterImage;
 @property(retain, nonatomic) CIVector *inputImageSize; // @synthesize inputImageSize;
 - (id)outputImage;
+- (float)distanceToAdd;
 - (unsigned int)findMostProminentFace;
 - (_Bool)_isValidFace:(unsigned int)arg1;
 - (double)_landmarksToDist:(unsigned int)arg1 minimumDistance:(float)arg2 maximumDistance:(float)arg3 scalingFactor:(float)arg4 offset:(float)arg5;

@@ -11,10 +11,10 @@
 
 @protocol HMDCameraRecordingUploaderFactory <NSObject>
 @property(readonly) id <HMDCameraRecordingUploaderDataSource> dataSource;
-- (HMDCameraClipFinalizeOperation *)createFinalizeOperationForModelID:(NSUUID *)arg1 localZone:(HMBLocalZone *)arg2 encryptionManager:(HMCameraClipEncryptionManager *)arg3;
-- (HMDCameraSignificantEventNotificationOperation *)createSignificantEventOperationForModelID:(NSUUID *)arg1 localZone:(HMBLocalZone *)arg2 encryptionManager:(HMCameraClipEncryptionManager *)arg3 dateOfOccurence:(NSDate *)arg4 significantEventType:(unsigned long long)arg5 heroFrameData:(NSData *)arg6 offset:(double)arg7 homePresenceByPairingIdentity:(NSDictionary *)arg8 dataSource:(id <HMDCameraRecordingUploaderDataSource>)arg9;
+- (HMDCameraClipFinalizeOperation *)createFinalizeOperationForModelID:(NSUUID *)arg1 localZone:(HMBLocalZone *)arg2 encryptionManager:(HMCameraClipEncryptionManager *)arg3 dataSource:(id <HMDCameraRecordingUploaderDataSource>)arg4;
+- (HMDCameraSignificantEventNotificationOperation *)createSignificantEventOperationForModelID:(NSUUID *)arg1 localZone:(HMBLocalZone *)arg2 encryptionManager:(HMCameraClipEncryptionManager *)arg3 dateOfOccurrence:(NSDate *)arg4 significantEventType:(unsigned long long)arg5 heroFrameData:(NSData *)arg6 offset:(double)arg7 homePresenceByPairingIdentity:(NSDictionary *)arg8 dataSource:(id <HMDCameraRecordingUploaderDataSource>)arg9;
 - (HMDCameraClipPosterFrameUploadOperation *)createPosterFrameUploadOperationForModelID:(NSUUID *)arg1 localZone:(HMBLocalZone *)arg2 encryptionManager:(HMCameraClipEncryptionManager *)arg3 segmentData:(NSData *)arg4 segmentMetadata:(HMDCameraClipSegmentMetadata *)arg5 dataSource:(id <HMDCameraRecordingUploaderDataSource>)arg6;
 - (HMDCameraClipVideoSegmentUploadOperation *)createVideoSegmentUploadOperationForModelID:(NSUUID *)arg1 localZone:(HMBLocalZone *)arg2 encryptionManager:(HMCameraClipEncryptionManager *)arg3 segmentData:(NSData *)arg4 segmentMetadata:(HMDCameraClipSegmentMetadata *)arg5 dataSource:(id <HMDCameraRecordingUploaderDataSource>)arg6;
-- (HMDCameraClipCreateOperation *)createClipOperationForLocalZone:(HMBLocalZone *)arg1 targetFragmentDuration:(double)arg2 startDate:(NSDate *)arg3;
+- (HMDCameraClipCreateOperation *)createClipOperationForLocalZone:(HMBLocalZone *)arg1 targetFragmentDuration:(double)arg2 startDate:(NSDate *)arg3 dataSource:(id <HMDCameraRecordingUploaderDataSource>)arg4;
 @end
 

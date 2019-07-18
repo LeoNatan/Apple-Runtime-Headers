@@ -17,6 +17,7 @@
     _Bool _shouldSkipAuthorizationUI;
     _Bool _shouldForcePrivateEmail;
     _Bool _requirePassword;
+    _Bool _isWebLogin;
     _Bool _isFirstPartyLogin;
     _Bool _isRapportLogin;
     NSString *_informativeText;
@@ -28,6 +29,8 @@
     NSString *_proxiedClientAppID;
     NSString *_proxiedClientTeamID;
     NSArray *_proxiedAssociatedDomains;
+    NSString *_proxiedDeviceName;
+    NSString *_proxiedDeviceClass;
     NSUUID *_requestIdentifier;
     AKAuthorizationRequest *_authorizationRequest;
     AKPasswordRequest *_passwordRequest;
@@ -37,8 +40,11 @@
 @property(retain, nonatomic) AKPasswordRequest *passwordRequest; // @synthesize passwordRequest=_passwordRequest;
 @property(retain, nonatomic) AKAuthorizationRequest *authorizationRequest; // @synthesize authorizationRequest=_authorizationRequest;
 @property(readonly, copy, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
+@property(retain, nonatomic) NSString *_proxiedDeviceClass; // @synthesize _proxiedDeviceClass;
+@property(retain, nonatomic) NSString *_proxiedDeviceName; // @synthesize _proxiedDeviceName;
 @property(nonatomic) _Bool _isRapportLogin; // @synthesize _isRapportLogin;
 @property(nonatomic) _Bool _isFirstPartyLogin; // @synthesize _isFirstPartyLogin;
+@property(nonatomic) _Bool _isWebLogin; // @synthesize _isWebLogin;
 @property(nonatomic) _Bool _requirePassword; // @synthesize _requirePassword;
 @property(retain, nonatomic) NSArray *_proxiedAssociatedDomains; // @synthesize _proxiedAssociatedDomains;
 @property(retain, nonatomic) NSString *_proxiedClientTeamID; // @synthesize _proxiedClientTeamID;

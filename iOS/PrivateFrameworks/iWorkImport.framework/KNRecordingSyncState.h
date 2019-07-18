@@ -24,7 +24,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isRecordingOutOfSync) _Bool recordingOutOfSync;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
-- (id)init;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)initWithOutOfSyncToken:(id)arg1 canClearOutOfSyncToken:(_Bool)arg2;
 -     // Error parsing type: v32@0:8^{RecordingSyncState=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}B}16@24, name: saveToArchive:archiver:
 -     // Error parsing type: @32@0:8r^{RecordingSyncState=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}B}16@24, name: initWithArchive:unarchiver:

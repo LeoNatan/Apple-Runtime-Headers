@@ -14,7 +14,6 @@
 {
     PMLTrainingStore *_store;
     _Bool _returnValue;
-    _Bool _isSynchronous;
     _Bool _didRun;
     struct NSString *_planId;
     unsigned long long _version;
@@ -26,7 +25,6 @@
 + (id)lastDeserializedPlanWithId:(struct NSString *)arg1;
 @property(readonly, nonatomic) _Bool didRun; // @synthesize didRun=_didRun;
 @property unsigned long long version; // @synthesize version=_version;
-@property(readonly, nonatomic) _Bool isSynchronous; // @synthesize isSynchronous=_isSynchronous;
 @property(readonly, nonatomic) NSString *planId; // @synthesize planId=_planId;
 - (void).cxx_destruct;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
@@ -37,7 +35,7 @@
 - (id)initWithVersion:(unsigned long long)arg1;
 - (id)initWithPlanId:(struct NSString *)arg1 version:(unsigned long long)arg2;
 - (id)initWithPlanId:(struct NSString *)arg1 version:(unsigned long long)arg2 returningAfterRunning:(_Bool)arg3;
-- (id)initWithPlanId:(struct NSString *)arg1 store:(id)arg2 version:(unsigned long long)arg3 returningAfterRunning:(_Bool)arg4 isSynchronous:(_Bool)arg5;
+- (id)initWithPlanId:(struct NSString *)arg1 store:(id)arg2 version:(unsigned long long)arg3 returningAfterRunning:(_Bool)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

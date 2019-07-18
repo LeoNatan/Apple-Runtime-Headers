@@ -17,6 +17,7 @@
     struct {
         unsigned int originDevice:1;
     } _has;
+    BOOL __encodeLegacyGloryData;
     int _originDevice;
     NSArray *_appTitles;
     _INPBIntentMetadata *_intentMetadata;
@@ -24,6 +25,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)appTitleType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int originDevice; // @synthesize originDevice=_originDevice;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 @property(copy, nonatomic) NSArray *appTitles; // @synthesize appTitles=_appTitles;

@@ -6,9 +6,9 @@
 
 #import <SpringBoardHome/NSObject-Protocol.h>
 
-@class NSArray, SBFolderIcon, SBFolderIconImageCache;
+@class SBFolderIcon, SBFolderIconImageCache;
 
 @protocol SBFolderIconImageCacheObserver <NSObject>
-- (void)folderIconImageCache:(SBFolderIconImageCache *)arg1 didUpdateImages:(NSArray *)arg2 forFolderIcon:(SBFolderIcon *)arg3;
+- (void)folderIconImageCache:(SBFolderIconImageCache *)arg1 didUpdateImagesForFolderIcon:(SBFolderIcon *)arg2;
 @end
 

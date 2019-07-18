@@ -79,7 +79,7 @@
 - (_Bool)topSuggestionsForSink:(id)arg1 count:(unsigned long long)arg2 transportType:(int)arg3 callback:(CDUnknownBlockType)arg4 onQueue:(id)arg5;
 - (void)_wipeStaleETAs;
 - (_Bool)detachSink:(id)arg1;
-- (_Bool)attachSink:(id)arg1;
+- (void)attachSink:(id)arg1;
 - (_Bool)detachSource:(id)arg1;
 - (_Bool)attachSource:(id)arg1;
 - (_Bool)_updateResult;

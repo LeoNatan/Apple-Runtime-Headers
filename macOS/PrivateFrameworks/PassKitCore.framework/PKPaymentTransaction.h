@@ -15,6 +15,7 @@
 {
     BOOL _enRoute;
     BOOL _shouldSuppressDate;
+    BOOL _suppressNotifications;
     BOOL _deviceScoreIdentifiersRequired;
     BOOL _deviceScoreIdentifiersSubmitted;
     BOOL _isCloudKitArchived;
@@ -96,6 +97,7 @@
     PKAccountEvent *_redemptionEvent;
     NSDictionary *_metadata;
     NSDate *_lastMerchantReprocessingDate;
+    NSString *_issueReportIdentifier;
     long long _transactionStatus;
     long long _transactionType;
     long long _technologyType;
@@ -115,6 +117,7 @@
 @property(nonatomic) long long technologyType; // @synthesize technologyType=_technologyType;
 @property(nonatomic) long long transactionType; // @synthesize transactionType=_transactionType;
 @property(nonatomic) long long transactionStatus; // @synthesize transactionStatus=_transactionStatus;
+@property(copy, nonatomic) NSString *issueReportIdentifier; // @synthesize issueReportIdentifier=_issueReportIdentifier;
 @property(nonatomic) BOOL originatedByDevice; // @synthesize originatedByDevice=_originatedByDevice;
 @property(nonatomic) BOOL hasNotificationServiceData; // @synthesize hasNotificationServiceData=_hasNotificationServiceData;
 @property(nonatomic) BOOL hasAssociatedPaymentApplication; // @synthesize hasAssociatedPaymentApplication=_hasAssociatedPaymentApplication;
@@ -165,6 +168,7 @@
 @property(nonatomic) long long peerPaymentType; // @synthesize peerPaymentType=_peerPaymentType;
 @property(nonatomic) long long adjustmentTypeReason; // @synthesize adjustmentTypeReason=_adjustmentTypeReason;
 @property(nonatomic) long long adjustmentType; // @synthesize adjustmentType=_adjustmentType;
+@property(nonatomic) BOOL suppressNotifications; // @synthesize suppressNotifications=_suppressNotifications;
 @property(nonatomic) BOOL shouldSuppressDate; // @synthesize shouldSuppressDate=_shouldSuppressDate;
 @property(nonatomic) double endStationLongitude; // @synthesize endStationLongitude=_endStationLongitude;
 @property(nonatomic) double endStationLatitude; // @synthesize endStationLatitude=_endStationLatitude;
@@ -224,6 +228,7 @@
 - (id)updateReasonsDescription;
 - (void)addUpdateReasons:(unsigned long long)arg1;
 @property(readonly, nonatomic) BOOL updateReasonIsInitialDownload;
+@property(readonly, nonatomic) BOOL fullyProcessed;
 @property(readonly, nonatomic) BOOL supportsFuzzyMatching;
 @property(readonly, nonatomic) BOOL hasBackingData;
 @property(readonly, nonatomic) BOOL hasEffectiveTransactionSource;

@@ -18,6 +18,7 @@
     unsigned int _length;
     BOOL _hasLength;
     unsigned char _compressedFlag;
+    unsigned int _logSequenceNumber;
 }
 
 - (void).cxx_destruct;

@@ -16,8 +16,13 @@
     id <CNUILikenessRendering> _likenessRenderer;
 }
 
++ (id)settingsWithContactStore:(id)arg1 cacheSize:(unsigned long long)arg2 schedulerProvider:(id)arg3 concurrentCaches:(BOOL)arg4;
++ (id)settingsWithContactStore:(id)arg1 cacheSize:(unsigned long long)arg2 schedulerProvider:(id)arg3;
 + (id)settingsWithContactStore:(id)arg1 schedulerProvider:(id)arg2;
++ (id)settingsWithContactStore:(id)arg1 cacheSize:(unsigned long long)arg2;
 + (id)settingsWithContactStore:(id)arg1;
++ (id)offMainThreadSynchronousRenderingOnlySettingsWithCacheSize:(unsigned long long)arg1;
++ (id)defaultSettingsWithCacheSize:(unsigned long long)arg1;
 + (id)defaultSettings;
 @property(readonly, nonatomic) id <CNUILikenessRendering> likenessRenderer; // @synthesize likenessRenderer=_likenessRenderer;
 @property(readonly, nonatomic) id <CNUIPRLikenessResolver> likenessResolver; // @synthesize likenessResolver=_likenessResolver;

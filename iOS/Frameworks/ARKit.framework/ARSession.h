@@ -19,6 +19,7 @@
     ARTechnique *_renderingTechnique;
     ARWorldTrackingTechnique *_worldTrackingTechnique;
     AREnvironmentTexturingTechnique *_environmentTexturingTechnique;
+    _Bool _forceEnvironmentTexturingToManualMode;
     ARRecordingTechniquePublic *_recordingTechnique;
     _Bool _configuredForWorldTracking;
     _Bool _vioFusionEnabled;
@@ -74,8 +75,8 @@
 }
 
 + (id)_applySessionOverrides:(id)arg1 outError:(id *)arg2;
-+ (_Bool)presentationForceEnabled;
-+ (void)setPresentationForceEnabled:(_Bool)arg1;
++ (_Bool)_supportsConfiguration:(id)arg1;
++ (void)forceEnvironmentTexturingTechniqueToManualMode:(id)arg1;
 + (void)initialize;
 @property _Bool relocalizing; // @synthesize relocalizing=_relocalizing;
 @property _Bool wantsPredictedAnchorTracking; // @synthesize wantsPredictedAnchorTracking=_wantsPredictedAnchorTracking;
@@ -100,6 +101,7 @@
 - (void)deviceConditionMonitor:(id)arg1 deviceConditionChanged:(id)arg2;
 - (void)_enforceThermalMitigationPolicyForDeviceCondition:(id)arg1;
 - (void)_updateTechniquesWithPerformanceLevel:(id)arg1;
+- (void)_configureInitialThermalPolicy;
 - (void)technique:(id)arg1 didOutputCollaborationData:(id)arg2;
 - (void)technique:(id)arg1 didChangeState:(long long)arg2;
 - (void)_sessionDidOutputCollaborationData:(id)arg1;
@@ -150,7 +152,9 @@
 -     // Error parsing type: {?=[4]}24@0:8d16, name: predictedAppPointTransformAtTimestamp:
 - (id)_currentFrameContext;
 - (id)_stateQueue;
+- (void)_changePowerUsage:(unsigned long long)arg1 forced:(_Bool)arg2;
 - (void)_changePowerUsage:(unsigned long long)arg1;
+- (void)_updatePowerUsageForced:(_Bool)arg1;
 - (void)_updatePowerUsage;
 - (void)_updateThermalState:(id)arg1;
 - (void)_endInterruption;
@@ -161,9 +165,9 @@
 
 -     // Error parsing type: v80@0:8{?=[4]}16, name: setOriginTransform:
 -     // Error parsing type: {?=[4]}16@0:8, name: originTransform
-- (void)_commonInitWithCreatePresentation:(_Bool)arg1;
 -     // Error parsing type: v120@0:8{?=[4]}168096@?112, name: createReferenceObjectWithTransform:center:extent:completionHandler:
 - (void)getCurrentWorldMapWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)forceEnvironmentTexturingToManualMode:(_Bool)arg1;
 -     // Error parsing type: v80@0:8{?=[4]}16, name: setWorldOrigin:
 - (void)removeAnchor:(id)arg1;
 - (void)addAnchor:(id)arg1;
@@ -173,7 +177,6 @@
 @property(readonly, copy, nonatomic) ARConfiguration *configuration;
 @property(readonly, copy, nonatomic) ARFrame *currentFrame;
 - (void)dealloc;
-- (id)initWithPresentation;
 - (id)init;
 
 // Remaining properties

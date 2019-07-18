@@ -17,7 +17,7 @@
     _Bool _importInProgress;
     ICDeviceBrowser *_deviceBrowser;
     NSMutableDictionary *_importDeviceSources;
-    NSHashTable *_importSourceObservers;
+    NSHashTable *_observers;
     id _processInfoActivityToken;
 }
 
@@ -25,23 +25,23 @@
 + (id)sharedInstance;
 @property(retain, nonatomic) id processInfoActivityToken; // @synthesize processInfoActivityToken=_processInfoActivityToken;
 @property(nonatomic) _Bool importInProgress; // @synthesize importInProgress=_importInProgress;
-@property(retain, nonatomic) NSHashTable *importSourceObservers; // @synthesize importSourceObservers=_importSourceObservers;
+@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSMutableDictionary *importDeviceSources; // @synthesize importDeviceSources=_importDeviceSources;
 @property(retain, nonatomic) ICDeviceBrowser *deviceBrowser; // @synthesize deviceBrowser=_deviceBrowser;
 - (void).cxx_destruct;
 - (void)deviceBrowser:(id)arg1 didRemoveDevice:(id)arg2 moreGoing:(_Bool)arg3;
 - (void)deviceBrowser:(id)arg1 didAddDevice:(id)arg2 moreComing:(_Bool)arg3;
-- (id)importAssets:(id)arg1 fromImportSource:(id)arg2 intoLibrary:(id)arg3 withOptions:(id)arg4 delegate:(id)arg5 performanceDelegate:(id)arg6 atEnd:(CDUnknownBlockType)arg7;
-- (id)importAssets:(id)arg1 fromImportSource:(id)arg2 withOptions:(id)arg3 delegate:(id)arg4 atEnd:(CDUnknownBlockType)arg5;
+- (void)importAssets:(id)arg1 fromImportSource:(id)arg2 intoLibrary:(id)arg3 withOptions:(id)arg4 progress:(id *)arg5 delegate:(id)arg6 performanceDelegate:(id)arg7 atEnd:(CDUnknownBlockType)arg8;
+- (void)importAssets:(id)arg1 fromImportSource:(id)arg2 withOptions:(id)arg3 progress:(id *)arg4 delegate:(id)arg5 atEnd:(CDUnknownBlockType)arg6;
 - (id)importUrls:(id)arg1 intoLibrary:(id)arg2 withOptions:(id)arg3 delegate:(id)arg4 performanceDelegate:(id)arg5 atEnd:(CDUnknownBlockType)arg6;
 - (void)importEnding;
 - (void)importStarting;
 - (id)filterDuplicates:(id)arg1 onSource:(id)arg2 library:(id)arg3 options:(id)arg4 delegate:(id)arg5;
 - (void)accessSourceList:(CDUnknownBlockType)arg1;
-- (id)importAssets:(id)arg1 fromImportSource:(id)arg2 intoLibraryAtURL:(id)arg3 withOptions:(id)arg4 delegate:(id)arg5 performanceDelegate:(id)arg6 atEnd:(CDUnknownBlockType)arg7;
+- (void)importAssets:(id)arg1 fromImportSource:(id)arg2 intoLibraryAtURL:(id)arg3 withOptions:(id)arg4 progress:(id *)arg5 delegate:(id)arg6 performanceDelegate:(id)arg7 atEnd:(CDUnknownBlockType)arg8;
 - (id)importUrls:(id)arg1 withOptions:(id)arg2 delegate:(id)arg3 atEnd:(CDUnknownBlockType)arg4;
 - (_Bool)sourceIsConnected:(id)arg1;
-- (void)addImportSourceObserver:(id)arg1;
+- (void)addImportControllerObserver:(id)arg1;
 - (id)init;
 
 // Remaining properties

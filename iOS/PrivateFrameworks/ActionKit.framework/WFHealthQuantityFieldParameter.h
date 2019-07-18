@@ -18,6 +18,7 @@
 }
 
 @property(nonatomic) __weak WFAction *action; // @synthesize action=_action;
+- (void)setPossibleUnits:(id)arg1;
 - (id)possibleUnits;
 - (void).cxx_destruct;
 - (void)action:(id)arg1 parameterStateDidChangeForKey:(id)arg2;

@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TelephonyPreferences/NSObject-Protocol.h>
+#import <TelephonyPreferences/TPSControllerDelegate-Protocol.h>
 
 @class NSOrderedSet, TPSTelephonyController;
 
-@protocol TPSTelephonyControllerDelegate <NSObject>
+@protocol TPSTelephonyControllerDelegate <TPSControllerDelegate>
 
 @optional
 - (void)telephonyController:(TPSTelephonyController *)arg1 didChangeSubscriptions:(NSOrderedSet *)arg2;
+- (void)telephonyController:(TPSTelephonyController *)arg1 didChangeActiveSubscriptions:(NSOrderedSet *)arg2;
 @end
 

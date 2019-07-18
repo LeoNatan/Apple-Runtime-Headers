@@ -7,12 +7,12 @@
 #import <PassKitUI/PKPortraitNavigationController.h>
 
 #import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
-#import <PassKitUI/PKPaymentSetupRequiresPreflightProtocol-Protocol.h>
+#import <PassKitUI/PKViewControllerPreflightable-Protocol.h>
 
 @class NSData, NSString;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKFeatureTermsAndConditionsViewController : PKPortraitNavigationController <PKPaymentSetupPresentationProtocol, PKPaymentSetupRequiresPreflightProtocol>
+@interface PKFeatureTermsAndConditionsViewController : PKPortraitNavigationController <PKPaymentSetupPresentationProtocol, PKViewControllerPreflightable>
 {
     _Bool _isIpad;
     NSData *_pdfData;

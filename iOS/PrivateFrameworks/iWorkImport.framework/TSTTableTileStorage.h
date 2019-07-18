@@ -20,11 +20,13 @@ __attribute__((visibility("hidden")))
 + (unsigned int)tileSize;
 @property(readonly, nonatomic) _Bool upgradeRepairedTiles; // @synthesize upgradeRepairedTiles=_upgradeRepairedTiles;
 - (void).cxx_destruct;
+- (void)prepareToApplyConcurrentCellMap:(id)arg1;
 - (multimap_0345fd13)makeStorageMap;
 - (void)reset;
 - (_Bool)auditTilesForRowOverlapAndExtensionPastTableBounds:(struct TSUCellCoord)arg1 withDataStore:(id)arg2 result:(id *)arg3;
 - (_Bool)auditRowInfoCellCountsReturningResult:(id *)arg1;
 @property(readonly, nonatomic) _Bool needToUpgradeCellStorage;
+- (void)pruneTileForRowIndex:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int lastPopulatedRowIndex;
 @property(readonly, nonatomic) NSIndexSet *populatedRows;
 @property(readonly, nonatomic) NSIndexSet *populatedTiles;
@@ -48,7 +50,6 @@ __attribute__((visibility("hidden")))
 - (void)_yankRowsFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2 count:(unsigned int)arg3;
 - (id)_yankRowRange:(struct _NSRange)arg1;
 - (id)_yankRowAtIndex:(unsigned int)arg1;
-- (void)_swapRowsAtIndex:(unsigned int)arg1 andIndex:(unsigned int)arg2;
 - (void)_removeRowsAtIndex:(unsigned int)arg1 count:(unsigned int)arg2;
 - (void)_insertRowsAtIndex:(unsigned int)arg1 count:(unsigned int)arg2;
 - (void)_shiftRowsDownAtIndex:(unsigned int)arg1 count:(unsigned int)arg2;

@@ -196,6 +196,7 @@
 - (id)newDefaultLibrary;
 - (CDStruct_c0454aff)pipelineCacheStats;
 - (CDStruct_c0454aff)libraryCacheStats;
+- (_Bool)copyShaderCacheToPath:(id)arg1;
 - (void)unloadShaderCaches;
 - (id)productName;
 - (id)familyName;
@@ -210,6 +211,7 @@
 - (id)_deviceWrapper;
 - (void)_setDeviceWrapper:(id)arg1;
 @property(readonly) NSString *name;
+- (id)reportLeaks;
 - (_Bool)isQuadDataSharingSupported;
 @property(readonly, getter=areRasterOrderGroupsSupported) _Bool rasterOrderGroupsSupported;
 @property(readonly) unsigned long long argumentBuffersSupport;
@@ -226,6 +228,7 @@
 - (id)newFunctionWithGLIR:(void *)arg1 functionType:(unsigned long long)arg2;
 - (id)description;
 - (id)formattedDescription:(unsigned long long)arg1;
+- (_Bool)areProgrammableSamplePositionsSupported;
 - (_Bool)supportsVersion:(long long)arg1;
 - (_Bool)supportsFamily:(long long)arg1;
 - (void)initGPUFamilySupport;
@@ -240,7 +243,6 @@
 @property(readonly, nonatomic) _Bool supportsSIMDReduction;
 @property(readonly, nonatomic) _Bool supportsMirrorClampToEdgeSamplerMode;
 @property(readonly, nonatomic) _Bool supportsBlackOrWhiteSamplerBorderColors;
-@property(readonly, nonatomic) _Bool supportsShaderBarycentricCoordinates;
 @property(readonly, nonatomic) _Bool supportsSIMDShufflesAndBroadcast;
 @property(readonly, nonatomic) _Bool supportsShaderMinLODClamp;
 @property(readonly, nonatomic) _Bool supportsSIMDGroup;

@@ -8,7 +8,9 @@
 
 @protocol SiriUISetupXPCProtocol
 - (void)enableVoiceTriggerWithCompletionHandler:(void (^)(void))arg1;
+- (void)disableAskSiriWithCompletionHandler:(void (^)(void))arg1;
 - (void)enableAskSiriWithLanguageCode:(NSString *)arg1 completionHandler:(void (^)(void))arg2;
+- (void)setLaunchAgentEnabled:(BOOL)arg1;
 - (void)getSiriStateWithReply:(void (^)(BOOL, BOOL, BOOL, BOOL))arg1;
 @end
 

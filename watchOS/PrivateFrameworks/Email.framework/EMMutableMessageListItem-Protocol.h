@@ -11,6 +11,7 @@
 
 @protocol EMMutableMessageListItem <EMMessageListItem>
 @property(retain) id <EMCollectionItemID> displayMessageItemID;
+@property(copy) NSArray *mailboxes;
 @property(copy) NSArray *mailboxObjectIDs;
 @property long long conversationID;
 @property unsigned int count;

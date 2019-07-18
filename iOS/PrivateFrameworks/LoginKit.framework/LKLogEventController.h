@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class LKSwitchOperation, NSDate, NSMutableArray;
+@class LKSwitchOperation, NSDate, NSMutableArray, NSMutableDictionary;
 @protocol OS_dispatch_semaphore;
 
 @interface LKLogEventController : NSObject
 {
     _Bool _streamingLogs;
     NSMutableArray *_switchOperationsMutableArray;
+    NSMutableDictionary *_mutableKeychainItemsAddedByActivityID;
     LKSwitchOperation *_switchOperation;
     NSObject<OS_dispatch_semaphore> *_dynamicdsema;
     NSDate *_logEnumarationEndTime;
@@ -25,6 +26,7 @@
 @property(retain, nonatomic) NSDate *logEnumarationEndTime; // @synthesize logEnumarationEndTime=_logEnumarationEndTime;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *dynamicdsema; // @synthesize dynamicdsema=_dynamicdsema;
 @property(retain, nonatomic) LKSwitchOperation *switchOperation; // @synthesize switchOperation=_switchOperation;
+@property(retain, nonatomic) NSMutableDictionary *mutableKeychainItemsAddedByActivityID; // @synthesize mutableKeychainItemsAddedByActivityID=_mutableKeychainItemsAddedByActivityID;
 @property(retain, nonatomic) NSMutableArray *switchOperationsMutableArray; // @synthesize switchOperationsMutableArray=_switchOperationsMutableArray;
 - (void).cxx_destruct;
 - (id)loginDetailsWithStartDate:(id)arg1 logArchivePath:(id)arg2;

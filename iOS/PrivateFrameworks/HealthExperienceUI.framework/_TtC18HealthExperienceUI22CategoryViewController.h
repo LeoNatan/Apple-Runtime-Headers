@@ -16,6 +16,7 @@
 - (id)initWithCollectionViewLayout:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
+- (id)init;
 
 @end
 

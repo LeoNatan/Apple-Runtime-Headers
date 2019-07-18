@@ -71,7 +71,6 @@
 - (void)remote_splitTotalCalories:(double)arg1 timeInterval:(double)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)conceptIndexManagerDidChangeExecutionState:(unsigned int)arg1;
 - (void)conceptIndexManagerDidBecomeQuiescent:(id)arg1 samplesProcessedCount:(int)arg2;
-- (_Bool)_clientHasHealthRecordsPermissionsWithError:(id *)arg1;
 - (void)unitPreferencesManagerDidUpdateUnitPreferences:(id)arg1;
 - (void)remote_fetchUnitPreferencesForTypes:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)remote_setPreferredUnit:(id)arg1 forType:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -92,9 +91,6 @@
 - (void)remote_fetchServerURLForAssetType:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_getHealthLiteValueForKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_setHealthLiteValue:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)remote_removeDefaultForKey:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)remote_setDefaultValue:(id)arg1 forKey:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
-- (void)remote_getDefaultForKey:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)remote_setCharacteristic:(id)arg1 forDataType:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)remote_fetchCharacteristicWithDataType:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)remote_deleteObjectsWithUUIDs:(id)arg1 options:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;

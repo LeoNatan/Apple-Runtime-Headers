@@ -11,7 +11,7 @@
 #import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 
 @class MKMapItem, MKPlaceSectionRowView, NSLayoutConstraint, NSString, UIButton, UILabel, UIStackView;
-@protocol MKPlaceParentInfoViewControllerDelegate;
+@protocol MKPlaceParentInfoViewControllerDelegate, _MKInfoCardAnalyticsDelegate;
 
 __attribute__((visibility("hidden")))
 @interface MKPlaceParentInfoViewController : MKPlaceSectionViewController <MKModuleViewControllerProtocol, _MKInfoCardChildViewControllerAnalyticsDelegate, MKStackingViewControllerFixedHeightAware>
@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     UIStackView *_stackView;
     BOOL _resizableViewsDisabled;
     id <MKPlaceParentInfoViewControllerDelegate> _delegate;
+    id <_MKInfoCardAnalyticsDelegate> _analyticsDelegate;
     NSLayoutConstraint *_topToBaselineConstraint;
     NSLayoutConstraint *_baselineToBottomConstraint;
     MKMapItem *_childMapItem;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MKMapItem *childMapItem; // @synthesize childMapItem=_childMapItem;
 @property(retain, nonatomic) NSLayoutConstraint *baselineToBottomConstraint; // @synthesize baselineToBottomConstraint=_baselineToBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *topToBaselineConstraint; // @synthesize topToBaselineConstraint=_topToBaselineConstraint;
+@property(nonatomic) __weak id <_MKInfoCardAnalyticsDelegate> analyticsDelegate; // @synthesize analyticsDelegate=_analyticsDelegate;
 @property(nonatomic) __weak id <MKPlaceParentInfoViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL resizableViewsDisabled; // @synthesize resizableViewsDisabled=_resizableViewsDisabled;
 - (void).cxx_destruct;

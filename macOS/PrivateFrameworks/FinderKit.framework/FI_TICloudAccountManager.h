@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
     struct TriStateBool fIsOverQuota;
     struct TriStateBool fAppSynchingDocuments;
     struct TNSRef<BRContainer, void> fDefaultContainer;
-    struct TNSRef<NSImage, void> fSharedFolderImage;
     struct TFENode _providersContainer;
     struct TFENode _desktopInHome;
     struct TFENode _documentsInHome;
@@ -51,8 +50,6 @@ __attribute__((visibility("hidden")))
 + (void)checkForFileProviderChanges;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)copySharedFolderImage;
-- (void)setSharedFolderImageIfNonNil:(id)arg1;
 - (_Bool)appIsSyncingDocuments;
 - (_Bool)documentsInTheCloud;
 - (_Bool)desktopInTheCloud;
@@ -66,7 +63,10 @@ __attribute__((visibility("hidden")))
 - (void)computeIsOverQuota;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesDeleted:(const struct TFENodeVector *)arg2 fromObservedNode:(const struct TFENode *)arg3;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesChanged:(const vector_614ab7ad *)arg2 inObservedNode:(const struct TFENode *)arg3;
+- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 openSyncCompleted:(const struct TFENode *)arg2;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesAdded:(const struct TFENodeVector *)arg2 toObservedNode:(const struct TFENode *)arg3;
+- (void)providerRemoved:(const struct TFENode *)arg1;
+- (void)providerAdded:(const struct TFENode *)arg1;
 - (void)postFPProviderChange;
 - (void)invalidate;
 - (void)dealloc;

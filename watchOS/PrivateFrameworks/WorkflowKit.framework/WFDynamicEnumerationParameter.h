@@ -6,25 +6,23 @@
 
 #import <WorkflowKit/WFEnumerationParameter.h>
 
-@class NSArray, NSError, NSObject;
-@protocol OS_dispatch_group, WFDynamicEnumerationBaseDataSource;
+@class NSArray, NSError;
+@protocol WFDynamicEnumerationDataSource;
 
 @interface WFDynamicEnumerationParameter : WFEnumerationParameter
 {
     NSArray *_possibleStates;
     id _defaultSerializedRepresentation;
-    id <WFDynamicEnumerationBaseDataSource> _dataSource;
+    id <WFDynamicEnumerationDataSource> _dataSource;
     unsigned int _possibleStatesLoadingState;
     unsigned int _defaultValueLoadingState;
-    NSObject<OS_dispatch_group> *_possibleStatesLoadingGroup;
     NSError *_possibleStatesLoadingError;
 }
 
 @property(retain, nonatomic) NSError *possibleStatesLoadingError; // @synthesize possibleStatesLoadingError=_possibleStatesLoadingError;
-@property(retain, nonatomic) NSObject<OS_dispatch_group> *possibleStatesLoadingGroup; // @synthesize possibleStatesLoadingGroup=_possibleStatesLoadingGroup;
 @property(nonatomic) unsigned int defaultValueLoadingState; // @synthesize defaultValueLoadingState=_defaultValueLoadingState;
 @property(nonatomic) unsigned int possibleStatesLoadingState; // @synthesize possibleStatesLoadingState=_possibleStatesLoadingState;
-@property(nonatomic) __weak id <WFDynamicEnumerationBaseDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(nonatomic) __weak id <WFDynamicEnumerationDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (_Bool)isAsynchronous;
 - (void)defaultSerializedRepresentationDidChange;

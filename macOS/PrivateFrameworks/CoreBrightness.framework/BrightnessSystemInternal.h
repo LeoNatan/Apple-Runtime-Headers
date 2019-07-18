@@ -21,9 +21,14 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_clients;
     NSMutableDictionary *_clientsProps;
     NSMutableDictionary *_ownedProps;
+    NSMutableDictionary *_combinableProps;
     NSObject<OS_os_log> *_logHandle;
 }
 
+- (void)undoCombinablePropertiesForClient:(id)arg1;
+- (id)newAggregatedPropertyForCombinablePropertiesForKey:(id)arg1;
+- (BOOL)setCombinableProperty:(id)arg1 forKey:(id)arg2 client:(id)arg3;
+- (BOOL)isACombinableProperty:(id)arg1;
 - (void)undoOwnedPropertiesForClient:(id)arg1;
 - (void)setOwnedProperty:(id)arg1 forKey:(id)arg2 client:(id)arg3;
 - (void)registerNotificationBlock:(CDUnknownBlockType)arg1;

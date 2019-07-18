@@ -9,6 +9,7 @@
 @class UIDelayedAction, _UIScreenEdgePanRecognizerSettings;
 @protocol _UIScreenEdgePanRecognizerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface _UIScreenEdgePanRecognizer : NSObject
 {
     struct CGRect _screenBounds;
@@ -28,15 +29,13 @@
     _Bool _simulatorWantsEdgeSwipes;
     _Bool _requiresFlatThumb;
     _Bool _recognizeAlongEdge;
+    _UIScreenEdgePanRecognizerSettings *_settings;
     unsigned int _targetEdges;
     int _state;
     unsigned int _recognizedRegion;
     id <_UIScreenEdgePanRecognizerDelegate> _delegate;
-    _UIScreenEdgePanRecognizerSettings *_settings;
 }
 
-@property(retain, nonatomic) _UIScreenEdgePanRecognizerSettings *settings; // @synthesize settings=_settings;
-@property(nonatomic) _Bool simulatorWantsEdgeSwipes; // @synthesize simulatorWantsEdgeSwipes=_simulatorWantsEdgeSwipes;
 @property id <_UIScreenEdgePanRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned int recognizedRegion; // @synthesize recognizedRegion=_recognizedRegion;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
@@ -44,6 +43,8 @@
 @property(nonatomic) _Bool requiresFlatThumb; // @synthesize requiresFlatThumb=_requiresFlatThumb;
 @property(nonatomic) unsigned int targetEdges; // @synthesize targetEdges=_targetEdges;
 @property(nonatomic) struct CGRect screenBounds; // @synthesize screenBounds=_screenBounds;
+@property(nonatomic) _Bool simulatorWantsEdgeSwipes; // @synthesize simulatorWantsEdgeSwipes=_simulatorWantsEdgeSwipes;
+@property(retain, nonatomic) _UIScreenEdgePanRecognizerSettings *settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) struct CGPoint _lastTouchLocation; // @synthesize _lastTouchLocation;
 @property(readonly, nonatomic) _Bool hasRecordedData; // @synthesize hasRecordedData=_hasRecordedData;
 @property(nonatomic) _Bool shouldUseGrapeFlags; // @synthesize shouldUseGrapeFlags=_shouldUseGrapeFlags;

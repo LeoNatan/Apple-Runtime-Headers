@@ -11,6 +11,8 @@
 @class NSString;
 
 @interface NoteAccountObject (ICLegacyAccount) <ICLegacyAccount>
+- (id)localizedAttachmentsNotSupportedReason;
+- (_Bool)isManaged;
 - (_Bool)supportsAttachments;
 - (id)defaultFolder;
 - (id)folders;

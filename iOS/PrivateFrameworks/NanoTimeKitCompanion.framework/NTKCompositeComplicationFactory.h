@@ -24,7 +24,7 @@
 - (id)keylineViewForComplicationSlot:(id)arg1;
 - (unsigned long long)keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (id)customEditOptionContainerViewForSlot:(id)arg1;
-- (id)curvedPickerMaskForSlot:(id)arg1;
+- (id)pickerMaskForSlot:(id)arg1;
 - (void)curvedComplicationCircleRadius:(double *)arg1 centerAngle:(double *)arg2 maxAngularWidth:(double *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(id)arg6;
 - (void)configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (long long)complicationPickerStyleForSlot:(id)arg1;

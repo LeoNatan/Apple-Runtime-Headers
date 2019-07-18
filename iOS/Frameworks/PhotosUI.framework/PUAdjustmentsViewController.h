@@ -12,7 +12,7 @@
 #import <PhotosUI/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <PhotosUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CEKSlider, NSIndexPath, NSString, PUAdjustmentInfo, PUAdjustmentsViewFlowLayout, PUPhotoEditSelectionRingView, PUSelectionFeedbackGenerator, PXUISnappingController, UICollectionView, UIImage, UIView;
+@class CEKSlider, NSIndexPath, NSString, PUAdjustmentInfo, PUAdjustmentsViewFlowLayout, PUSelectionFeedbackGenerator, PXUISnappingController, UICollectionView, UIImage;
 @protocol PUAdjustmentViewControllerDelegate, PUAdjustmentsViewDataSource;
 
 __attribute__((visibility("hidden")))
@@ -36,8 +36,6 @@ __attribute__((visibility("hidden")))
     UICollectionView *_collectionView;
     PUAdjustmentsViewFlowLayout *_collectionViewLayout;
     CEKSlider *_slider;
-    UIView *_dotView;
-    PUPhotoEditSelectionRingView *_selectionRingView;
     NSIndexPath *_selectedIndexPath;
     PUSelectionFeedbackGenerator *_selectionFeedbackGenerator;
     struct CGSize _controlSize;
@@ -49,8 +47,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool didSetupControls; // @synthesize didSetupControls=_didSetupControls;
 @property(nonatomic) struct CGSize controlSize; // @synthesize controlSize=_controlSize;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
-@property(retain, nonatomic) PUPhotoEditSelectionRingView *selectionRingView; // @synthesize selectionRingView=_selectionRingView;
-@property(retain, nonatomic) UIView *dotView; // @synthesize dotView=_dotView;
 @property(retain, nonatomic) CEKSlider *slider; // @synthesize slider=_slider;
 @property(retain, nonatomic) PUAdjustmentsViewFlowLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
@@ -73,13 +69,13 @@ __attribute__((visibility("hidden")))
 - (void)slider:(id)arg1 willUpdateValue:(double *)arg2 withVelocity:(double)arg3;
 - (void)sliderWillBeginScrolling:(id)arg1;
 - (void)sliderValueChanged:(id)arg1;
-- (void)_showSelectionRing:(_Bool)arg1 shouldAnimate:(_Bool)arg2;
 - (void)resetControls;
 - (void)updateControls;
 - (void)_updateCell:(id)arg1 withInfo:(id)arg2;
 - (id)_backgroundImageForItemAtIndexPath:(id)arg1;
 - (void)_setupCellBackgroundImagesIfNeeded;
 - (id)_circularImageWithSize:(struct CGSize)arg1 color:(id)arg2;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

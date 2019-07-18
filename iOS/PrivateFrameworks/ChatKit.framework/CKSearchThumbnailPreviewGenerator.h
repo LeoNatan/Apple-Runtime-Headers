@@ -11,7 +11,13 @@
 @interface CKSearchThumbnailPreviewGenerator : NSObject
 {
     NSCache *_thumbnailCache;
+    NSCache *_livePhotoStatusCache;
+    NSCache *_videoDurationCache;
+    NSCache *_lpLinkMetadataCache;
     NSMutableSet *_keysWithInFlightGeneration;
+    NSMutableSet *_keysWithInFlightLivePhotoStatus;
+    NSMutableSet *_keysWithInFlightVideoDurationCalculation;
+    NSMutableSet *_keysWithInFlightLPLinkMetadataGeneration;
     UIImage *_mapHashes;
 }
 
@@ -19,14 +25,34 @@
 + (void)__setSingleton__im:(id)arg1;
 + (id)__singleton__im;
 @property(retain, nonatomic) UIImage *mapHashes; // @synthesize mapHashes=_mapHashes;
+@property(retain, nonatomic) NSMutableSet *keysWithInFlightLPLinkMetadataGeneration; // @synthesize keysWithInFlightLPLinkMetadataGeneration=_keysWithInFlightLPLinkMetadataGeneration;
+@property(retain, nonatomic) NSMutableSet *keysWithInFlightVideoDurationCalculation; // @synthesize keysWithInFlightVideoDurationCalculation=_keysWithInFlightVideoDurationCalculation;
+@property(retain, nonatomic) NSMutableSet *keysWithInFlightLivePhotoStatus; // @synthesize keysWithInFlightLivePhotoStatus=_keysWithInFlightLivePhotoStatus;
 @property(retain, nonatomic) NSMutableSet *keysWithInFlightGeneration; // @synthesize keysWithInFlightGeneration=_keysWithInFlightGeneration;
+@property(retain, nonatomic) NSCache *lpLinkMetadataCache; // @synthesize lpLinkMetadataCache=_lpLinkMetadataCache;
+@property(retain, nonatomic) NSCache *videoDurationCache; // @synthesize videoDurationCache=_videoDurationCache;
+@property(retain, nonatomic) NSCache *livePhotoStatusCache; // @synthesize livePhotoStatusCache=_livePhotoStatusCache;
 @property(retain, nonatomic) NSCache *thumbnailCache; // @synthesize thumbnailCache=_thumbnailCache;
 - (void).cxx_destruct;
+- (void)_IMSPIQueryMessageItemsWithGUIDs:(id)arg1 results:(CDUnknownBlockType)arg2;
+- (id)linkMetadataForQueryResult:(id)arg1;
+- (void)_markFileAsPurgeable:(id)arg1;
+- (void)_persistPreview:(id)arg1 atURL:(id)arg2;
+- (id)_previewURLForKey:(id)arg1;
 - (id)mapPlaceholderImage;
+- (void)_generateMapThumbnailForKey:(id)arg1 attributes:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)mapPreviewForQueryResult:(id)arg1;
 - (Class)_qlThumbnailGenerationRequestClass;
 - (id)_qlThumbnailGeneratorSharedGenerator;
-- (void)generateAndCacheThumbnailWithRequest:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_asyncLoadCachedDiskPreviewForKeyIfAvailable:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)generateAndCachePassWithURL:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)generateAndCacheIconWithURL:(id)arg1 key:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)generateAndCacheThumbnailWithURL:(id)arg1 request:(id)arg2 key:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (CDStruct_1b6d18a9)_calculateDurationForVideoResult:(id)arg1;
+- (CDStruct_1b6d18a9)durationForVideoResult:(id)arg1;
+- (_Bool)queryResultIsVideo:(id)arg1;
+- (_Bool)_checkResultForLivePhotoComplement:(id)arg1;
+- (_Bool)queryResultHasLivePhoto:(id)arg1;
 - (id)previewForQueryResult:(id)arg1;
 - (id)init;
 

@@ -30,6 +30,7 @@
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic, getter=isOnboarding) _Bool onboarding; // @synthesize onboarding=_onboarding;
 - (void).cxx_destruct;
+- (double)contentTop;
 - (double)titleTopToFirstBaseline;
 - (double)_titleTopToFirstBaselineLeading;
 - (id)titleFont;

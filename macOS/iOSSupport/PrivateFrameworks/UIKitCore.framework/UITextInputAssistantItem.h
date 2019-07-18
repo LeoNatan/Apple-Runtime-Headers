@@ -6,11 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, UIBlurEffect, UIColor, UIKeyboardAssistantBar;
+@class NSArray, UIBlurEffect, UIColor;
 
 @interface UITextInputAssistantItem : NSObject
 {
-    UIKeyboardAssistantBar *_owner;
     BOOL _allowsHidingShortcuts;
     BOOL _showsBarButtonItemsInline;
     BOOL _independentGroupSizes;
@@ -37,7 +36,6 @@
 - (id)description;
 @property(readonly, nonatomic, getter=_requiresPredictionDisabled) BOOL requiresPredictionDisabled;
 @property(readonly, nonatomic, getter=_hasItemsToDisplay) BOOL hasItemsToDisplay;
-@property(nonatomic, getter=_owner, setter=_setOwner:) __weak UIKeyboardAssistantBar *owner;
 - (void)dealloc;
 - (id)init;
 

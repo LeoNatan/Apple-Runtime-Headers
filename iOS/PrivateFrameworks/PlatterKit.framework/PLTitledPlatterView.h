@@ -15,7 +15,6 @@
 @interface PLTitledPlatterView : PLPlatterView <PLPlatterInternal, PLTitled, PLContentSizeCategoryAdjusting>
 {
     PLPlatterHeaderContentView *_headerContentView;
-    _Bool _didSetInitialCustomContentViewFrame;
     _Bool _largerHeaderMarginEnabled;
 }
 

@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 
 - (void)concurrentDispatchThreadgroups:(CDStruct_32a7f38a)arg1 threadsPerThreadgroup:(CDStruct_32a7f38a)arg2;
 - (void)concurrentDispatchThreads:(CDStruct_32a7f38a)arg1 threadsPerThreadgroup:(CDStruct_32a7f38a)arg2;
-- (void)dispatchThreadgroups:(CDStruct_32a7f38a)arg1 threadsPerThreadgroup:(CDStruct_32a7f38a)arg2;
 - (void)setKernelBuffer:(id)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)onDispatch;
 - (id)initWithIndirectComputeCommand:(id)arg1 commandIndex:(unsigned int)arg2 indirectCommandBuffer:(id)arg3;

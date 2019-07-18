@@ -78,6 +78,7 @@
 - (void)getSupportDynamicDataSimSwitchOnBBCall:(CDUnknownBlockType)arg1;
 - (id)setSupportDynamicDataSimSwitch:(_Bool)arg1;
 - (id)setSupportDynamicDataSimSwitchOnBBCall:(_Bool)arg1;
+- (void)setSupportDynamicDataSimSwitch:(_Bool)arg1 forIccid:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setSupportDynamicDataSimSwitch:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setSupportDynamicDataSimSwitchOnBBCall:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)getInternationalDataAccessStatusSync:(id *)arg1;
@@ -139,7 +140,6 @@
 - (id)userEnteredMonthlyBudget:(id)arg1 error:(id *)arg2;
 - (void)userEnteredMonthlyBudget:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)billingCycleEndDatesForLastPeriods:(unsigned int)arg1 error:(id *)arg2;
-- (id)dataUsageForLastPeriods:(unsigned int)arg1 error:(id *)arg2;
 - (void)dataUsageForLastPeriods:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)copyBundleIdentifier:(id)arg1 bundleType:(id)arg2 error:(id *)arg3;
 - (void)copyBundleIdentifier:(id)arg1 bundleType:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -167,6 +167,7 @@
 - (void)copyCarrierBundleValue:(id)arg1 key:(id)arg2 bundleType:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)checkRadioBootHealth:(CDUnknownBlockType)arg1;
 - (void)setVoLTEAudioCodec:(id)arg1 codecInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)getUserDefaultVoiceSubscriptionContext:(id *)arg1;
 - (void)refreshUserAuthToken:(id)arg1 error:(id *)arg2;
 - (id)getUserAuthToken:(id)arg1 error:(id *)arg2;
 - (void)authenticate:(id)arg1 request:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -251,6 +252,8 @@
 - (void)getRemoteDeviceOfType:(unsigned int)arg1 withEID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)getRemoteDevicesOfType:(unsigned int)arg1 error:(id *)arg2;
 - (void)getRemoteDevicesOfType:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)context:(id)arg1 getPhoneNumberSignature:(id *)arg2;
+- (void)context:(id)arg1 getPhoneNumberSignatureWithCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)isPhoneNumberCredentialValid:(id)arg1 outError:(id *)arg2;
 - (id)getPNRContext:(id)arg1 outError:(id *)arg2;
 - (void)getPNRContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -276,6 +279,7 @@
 - (void)context:(id)arg1 canSetCapability:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)getPublicSignalStrength:(id)arg1 error:(id *)arg2;
 - (id)getDataMode:(id)arg1 error:(id *)arg2;
+- (id)getSignalStrengthMeasurements:(id)arg1 error:(id *)arg2;
 - (id)getEncryptionStatus:(id)arg1 error:(id *)arg2;
 - (void)isNetworkReselectionNeeded:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)copyNetworkSelectionInfo:(id)arg1 error:(id *)arg2;
@@ -341,7 +345,7 @@
 - (id)getUIConfiguredApns:(id)arg1 error:(id *)arg2;
 - (void)getUIConfiguredApns:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setUIConfiguredApns:(id)arg1 apns:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)endPlanTransfer;
+- (id)endPlanTransferForEndPoint:(unsigned int)arg1;
 - (void)isAnyPlanOfTransferCapability:(unsigned int)arg1 availableForThisDeviceWithCompletion:(CDUnknownBlockType)arg2;
 - (id)bootstrapPlanTransferForEndpoint:(unsigned int)arg1 usingMessageSession:(id)arg2;
 - (id)bootstrapPlanTransferForEndpoint:(unsigned int)arg1;
@@ -389,9 +393,11 @@
 - (void)getCurrentIMessageIccidsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)transferPlans:(id)arg1 fromDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)transferPlan:(id)arg1 fromDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)getTransferPlansWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getTransferPlanListWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getCameraScanInfoForCardData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)supportsPlanProvisioning:(id)arg1 carrierDescriptors:(id)arg2 smdpUrl:(id)arg3 iccidPrefix:(id)arg4;
+- (void)addPlanWith:(id)arg1 appName:(id)arg2 appType:(unsigned int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)addPlanWith:(id)arg1 request:(id)arg2 appName:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 @end

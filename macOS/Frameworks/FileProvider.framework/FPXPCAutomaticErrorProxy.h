@@ -17,7 +17,6 @@
     Protocol *_protocol;
     NSError *_error;
     CDUnknownBlockType _requestWillBeginBlock;
-    CDUnknownBlockType _requestDidFinishBlock;
     NSString *_name;
     id _retainSelfWhileMessageIsPending;
     BOOL _isSynchronous;
@@ -36,10 +35,11 @@
 - (id)synchronousRemoteObjectProxy;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
-- (void)_requestDidFinish:(id)arg1;
-- (void)_requestWillBegin:(SEL)arg1 requestID:(id)arg2;
-- (id)initWithRemoteObjectProxy:(id)arg1 protocol:(id)arg2 orError:(id)arg3 name:(id)arg4 requestPid:(int)arg5 requestWillBegin:(CDUnknownBlockType)arg6 requestDidFinish:(CDUnknownBlockType)arg7;
+- (void)_requestDidFinish:(id)arg1 requestDidFinishBlock:(CDUnknownBlockType)arg2;
+- (CDUnknownBlockType)_requestWillBegin:(SEL)arg1 requestID:(id)arg2;
+- (id)initWithRemoteObjectProxy:(id)arg1 protocol:(id)arg2 orError:(id)arg3 name:(id)arg4 requestPid:(int)arg5 requestWillBegin:(CDUnknownBlockType)arg6;
 - (id)initWithConnection:(id)arg1 protocol:(id)arg2 orError:(id)arg3 name:(id)arg4 requestPid:(int)arg5 requestWillBegin:(CDUnknownBlockType)arg6 requestDidFinish:(CDUnknownBlockType)arg7;
+- (id)initWithConnection:(id)arg1 protocol:(id)arg2 orError:(id)arg3 name:(id)arg4 requestPid:(int)arg5 requestWillBegin:(CDUnknownBlockType)arg6;
 - (id)initWithConnection:(id)arg1 protocol:(id)arg2 orError:(id)arg3 name:(id)arg4 requestPid:(int)arg5;
 
 @end

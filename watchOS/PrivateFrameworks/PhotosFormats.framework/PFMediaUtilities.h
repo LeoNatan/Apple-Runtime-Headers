@@ -23,13 +23,15 @@
 + (_Bool)isImageUTI:(id)arg1;
 + (_Bool)isMovieUTI:(id)arg1;
 + (_Bool)isAudioUTI:(id)arg1;
++ (int)defaultRasterizationDPI;
 + (_Bool)UTIRequiresRasterizationDPI:(id)arg1;
 + (_Bool)isValidExtension:(id)arg1 forUTI:(id)arg2;
-+ (id)UTIForURL:(id)arg1;
++ (id)UTIForURL:(id)arg1 error:(id *)arg2;
 + (id)UTIForHFSType:(unsigned long)arg1;
 + (id)resourceModelUTIForExtension:(id)arg1;
 + (id)UTIForExtension:(id)arg1;
 + (id)preferredExtensionForUTI:(id)arg1;
++ (_Bool)canGenerateImageDerivativesFromUTI:(id)arg1;
 
 @end
 

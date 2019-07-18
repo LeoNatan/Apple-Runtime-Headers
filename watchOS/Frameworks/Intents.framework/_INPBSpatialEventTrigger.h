@@ -18,6 +18,7 @@
         unsigned int event:1;
         unsigned int mobileSpace:1;
     } _has;
+    _Bool __encodeLegacyGloryData;
     int _event;
     _INPBLocationValue *_location;
     int _mobileSpace;
@@ -26,6 +27,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)suggestedValuesType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *suggestedValues; // @synthesize suggestedValues=_suggestedValues;
 @property(nonatomic) int mobileSpace; // @synthesize mobileSpace=_mobileSpace;
 @property(retain, nonatomic) _INPBLocationValue *location; // @synthesize location=_location;

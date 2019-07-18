@@ -9,6 +9,8 @@
 @interface NSArray (SafariCoreExtras)
 + (id)safari_arrayWithPropertyListData:(id)arg1 options:(unsigned int)arg2;
 + (id)safari_arrayFromDictionaryOfObjectsByIndex:(id)arg1;
+- (id)safari_flattenedArray;
+- (id)safari_arrayByAddingObjectsFromArrayIfNotDuplicates:(id)arg1;
 - (_Bool)safari_containsObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)safari_firstObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)_safari_generateDiffWithLongestCommonSubsequenceLengths:(id)arg1 array:(id)arg2 indexIntoSelf:(unsigned int)arg3 indexIntoArray:(unsigned int)arg4;

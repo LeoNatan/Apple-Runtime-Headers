@@ -22,10 +22,10 @@
 - (void).cxx_destruct;
 - (long long)complicationPickerStyleForSlot:(id)arg1;
 - (unsigned long long)keylineLabelAlignmentForComplicationSlot:(id)arg1;
+- (id)pickerMaskForSlot:(id)arg1;
 - (id)keylineViewForComplicationSlot:(id)arg1;
 - (void)configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
-- (struct UIEdgeInsets)_keylinePadding;
 - (struct CGRect)_referenceFrame;
 - (void)loadLayoutRules;
 - (id)init;

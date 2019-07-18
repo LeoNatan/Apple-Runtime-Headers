@@ -6,7 +6,7 @@
 
 #import <CloudKitDaemon/CKDDatabaseOperation.h>
 
-@class NSArray, NSMutableArray, NSMutableDictionary;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet;
 
 __attribute__((visibility("hidden")))
 @interface CKDFetchRecordZonesOperation : CKDDatabaseOperation
@@ -21,9 +21,11 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_zoneIDsNeedingPCSUpdateRetry;
     NSMutableDictionary *_pcsUpdateErrorsByZoneID;
     int _numZoneSaveAttempts;
+    NSMutableSet *_zoneIDsNeedingDugongKeyRoll;
 }
 
 @property(nonatomic) _Bool ignorePCSFailures; // @synthesize ignorePCSFailures=_ignorePCSFailures;
+@property(retain, nonatomic) NSMutableSet *zoneIDsNeedingDugongKeyRoll; // @synthesize zoneIDsNeedingDugongKeyRoll=_zoneIDsNeedingDugongKeyRoll;
 @property(nonatomic) _Bool onlyFetchPCSInfo; // @synthesize onlyFetchPCSInfo=_onlyFetchPCSInfo;
 @property(nonatomic) int numZoneSaveAttempts; // @synthesize numZoneSaveAttempts=_numZoneSaveAttempts;
 @property(retain, nonatomic) NSMutableDictionary *pcsUpdateErrorsByZoneID; // @synthesize pcsUpdateErrorsByZoneID=_pcsUpdateErrorsByZoneID;
@@ -43,7 +45,8 @@ __attribute__((visibility("hidden")))
 - (void)_handleRecordZoneFetch:(id)arg1 zoneID:(id)arg2 responseCode:(id)arg3;
 - (void)saveZonesWithUpdatedZonePCS;
 - (void)_handleRecordZoneSaved:(id)arg1 error:(id)arg2;
-- (_Bool)_checkAndUpdateZonePCSIfNeededForZone:(id)arg1 error:(id *)arg2;
+- (_Bool)_locked_checkAndUpdateZonePCSIfNeededForZone:(id)arg1 error:(id *)arg2;
+- (void)_locked_callbackForRecordZone:(id)arg1 zoneID:(id)arg2 error:(id)arg3;
 - (void)_sendErrorForFailedZones;
 - (id)activityCreate;
 - (id)nameForState:(unsigned int)arg1;

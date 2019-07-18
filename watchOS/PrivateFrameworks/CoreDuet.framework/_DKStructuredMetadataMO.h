@@ -68,6 +68,8 @@
 @property(nonatomic) _Bool _DKDeviceBatteryPercentageMetadataKey__fullyCharged; // @dynamic _DKDeviceBatteryPercentageMetadataKey__fullyCharged;
 @property(copy, nonatomic) NSString *_DKDeviceIdMetadataKey__deviceIdentifier; // @dynamic _DKDeviceIdMetadataKey__deviceIdentifier;
 @property(copy, nonatomic) NSNumber *_DKDeviceIsPluggedInMetadataKey__adapterType; // @dynamic _DKDeviceIsPluggedInMetadataKey__adapterType;
+@property(copy, nonatomic) NSString *_DKDeviceStandbyTimerMetadataKey__delay; // @dynamic _DKDeviceStandbyTimerMetadataKey__delay;
+@property(copy, nonatomic) NSString *_DKDeviceStandbyTimerMetadataKey__timerType; // @dynamic _DKDeviceStandbyTimerMetadataKey__timerType;
 @property(copy, nonatomic) NSNumber *_DKDigitalHealthMetadataKey__usageType; // @dynamic _DKDigitalHealthMetadataKey__usageType;
 @property(copy, nonatomic) NSString *_DKDigitalHealthMetadataKey__webDomain; // @dynamic _DKDigitalHealthMetadataKey__webDomain;
 @property(copy, nonatomic) NSURL *_DKDigitalHealthMetadataKey__webpageURL; // @dynamic _DKDigitalHealthMetadataKey__webpageURL;
@@ -106,6 +108,9 @@
 @property(copy, nonatomic) NSString *_DKLocationMetadataKey__identifier; // @dynamic _DKLocationMetadataKey__identifier;
 @property(copy, nonatomic) NSNumber *_DKLocationMetadataKey__latitude; // @dynamic _DKLocationMetadataKey__latitude;
 @property(copy, nonatomic) NSNumber *_DKLocationMetadataKey__longitude; // @dynamic _DKLocationMetadataKey__longitude;
+@property(copy, nonatomic) NSString *_DKMapsShareEtaFeedbackMetadataKey__contactId; // @dynamic _DKMapsShareEtaFeedbackMetadataKey__contactId;
+@property(copy, nonatomic) NSString *_DKMapsShareEtaFeedbackMetadataKey__navigationEndLocationIdentifier; // @dynamic _DKMapsShareEtaFeedbackMetadataKey__navigationEndLocationIdentifier;
+@property(copy, nonatomic) NSString *_DKMapsShareEtaFeedbackMetadataKey__navigationStartLocationIdentifier; // @dynamic _DKMapsShareEtaFeedbackMetadataKey__navigationStartLocationIdentifier;
 @property(copy, nonatomic) NSString *_DKMetadataHomeAppView__homeUUID; // @dynamic _DKMetadataHomeAppView__homeUUID;
 @property(copy, nonatomic) NSString *_DKMetadataHomeAppView__viewInformation; // @dynamic _DKMetadataHomeAppView__viewInformation;
 @property(copy, nonatomic) NSString *_DKMetadataHomeAppView__viewName; // @dynamic _DKMetadataHomeAppView__viewName;

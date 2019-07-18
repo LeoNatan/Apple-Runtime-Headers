@@ -58,9 +58,9 @@
 - (id)_newSceneIdentifierForBundleIdentifier:(id)arg1;
 - (id)_identifierForApplication:(id)arg1;
 - (id)newSceneIdentityForApplication:(id)arg1;
-- (id)_sceneIdentityForApplication:(id)arg1 uniqueIdentifier:(id)arg2 targetContentIdentifier:(id)arg3 excludingIdentifiers:(id)arg4;
+- (id)_sceneIdentityForApplication:(id)arg1 uniqueIdentifier:(id)arg2 targetContentIdentifier:(id)arg3 allowCanMatches:(_Bool)arg4 preferNewScene:(_Bool)arg5 visibleIdentifiers:(id)arg6 excludingIdentifiers:(id)arg7;
 - (id)sceneIdentityForApplication:(id)arg1 uniqueIdentifier:(id)arg2 targetContentIdentifier:(id)arg3;
-- (id)sceneIdentityForApplication:(id)arg1 targetContentIdentifier:(id)arg2 excludingIdentifiers:(id)arg3;
+- (id)sceneIdentityForApplication:(id)arg1 targetContentIdentifier:(id)arg2 allowCanMatches:(_Bool)arg3 preferNewScene:(_Bool)arg4 visibleIdentifiers:(id)arg5;
 - (id)sceneIdentityForApplication:(id)arg1 targetContentIdentifier:(id)arg2;
 - (id)sceneIdentityForApplication:(id)arg1 excludingIdentifiers:(id)arg2;
 - (id)sceneIdentityForApplication:(id)arg1 uniqueIdentifier:(id)arg2;

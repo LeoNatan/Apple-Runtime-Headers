@@ -17,7 +17,7 @@
 }
 
 + (double)scaledFontSize:(double)arg1 withMaximumFontSizeCategory:(id)arg2;
-+ (CDStruct_d2b197d1)labelFontMetrics;
++ (CDStruct_91d2e2b9)labelFontMetrics;
 + (id)labelFont;
 @property(nonatomic) double strength; // @synthesize strength=_strength;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;

@@ -13,6 +13,8 @@
 @optional
 - (long long)curatedLibraryAssetsDataSourceManager:(PXCuratedLibraryAssetsDataSourceManager *)arg1 transitionTypeFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
 - (PXAssetCollectionReference *)curatedLibraryAssetsDataSourceManager:(PXCuratedLibraryAssetsDataSourceManager *)arg1 dominantAssetCollectionReferenceForZoomLevel:(long long)arg2;
+- (void)curatedLibraryAssetsDataSourceManager:(PXCuratedLibraryAssetsDataSourceManager *)arg1 didTransitionFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
+- (void)curatedLibraryAssetsDataSourceManager:(PXCuratedLibraryAssetsDataSourceManager *)arg1 willTransitionFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
 - (NSSet *)visibleAssetCollectionsFromCuratedLibraryAssetsDataSourceManager:(PXCuratedLibraryAssetsDataSourceManager *)arg1;
 - (BOOL)isSelectingAssetsFromCuratedLibraryAssetsDataSourceManager:(PXCuratedLibraryAssetsDataSourceManager *)arg1;
 @end

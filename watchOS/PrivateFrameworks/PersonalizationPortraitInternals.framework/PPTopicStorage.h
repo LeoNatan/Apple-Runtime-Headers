@@ -26,6 +26,7 @@
 - (void)disableSyncForBundleIds:(id)arg1;
 - (struct _PASDBIterAction_)_populateEvents:(id)arg1 statement:(id)arg2 txnWitness:(id)arg3;
 - (void)fixupTopicDKEventsWithBatchSize:(unsigned int)arg1 isComplete:(_Bool *)arg2;
+- (void)clearRemotelyGeneratedTopicRecordsMissingInDuet;
 - (void)_exportNamedEntityRecordsToDKWithLimit:(unsigned int)arg1 isComplete:(_Bool *)arg2 txnWitness:(id)arg3;
 - (void)exportLocallyGeneratedTopicRecordsToDKWithLimit:(unsigned int)arg1 isComplete:(_Bool *)arg2;
 - (void)_dkEventImportToDatabaseWithEvent:(id)arg1 eventUUIDBlob:(id)arg2 txnWitness:(id)arg3;

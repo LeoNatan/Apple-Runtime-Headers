@@ -35,6 +35,7 @@
 
 + (struct UIEdgeInsets)defaultPadding;
 + (_Bool)shouldShowTimeStringForOccurrence:(id)arg1;
++ (id)languageAwareInsetsCache;
 + (id)locationCache;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) struct CGRect textRect; // @synthesize textRect=_textRect;

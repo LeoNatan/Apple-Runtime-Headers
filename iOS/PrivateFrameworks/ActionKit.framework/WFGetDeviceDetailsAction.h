@@ -10,6 +10,9 @@
 {
 }
 
+- (id)outputContentClasses;
+- (id)localizedDefaultOutputName;
+- (_Bool)setParameterState:(id)arg1 forKey:(id)arg2;
 - (void)runWithInput:(id)arg1 error:(id *)arg2;
 
 @end

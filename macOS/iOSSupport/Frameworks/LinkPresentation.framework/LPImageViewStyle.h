@@ -9,7 +9,7 @@
 #import <LinkPresentation/LPEmailCompatibleCaptionBarItemChild-Protocol.h>
 #import <LinkPresentation/NSCopying-Protocol.h>
 
-@class LPBorderStyle, LPPadding, LPPointUnit, LPSize, UIColor;
+@class LPPadding, LPPointUnit, LPShadowStyle, LPSize, UIColor;
 
 __attribute__((visibility("hidden")))
 @interface LPImageViewStyle : NSObject <LPEmailCompatibleCaptionBarItemChild, NSCopying>
@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
     long long _scalingMode;
     long long _filter;
     long long _verticalAlignment;
-    LPBorderStyle *_border;
+    LPShadowStyle *_shadow;
     UIColor *_maskColor;
     UIColor *_backgroundColor;
     LPPointUnit *_backgroundInset;
@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) LPPointUnit *backgroundInset; // @synthesize backgroundInset=_backgroundInset;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) UIColor *maskColor; // @synthesize maskColor=_maskColor;
-@property(retain, nonatomic) LPBorderStyle *border; // @synthesize border=_border;
+@property(retain, nonatomic) LPShadowStyle *shadow; // @synthesize shadow=_shadow;
 @property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic) long long filter; // @synthesize filter=_filter;
 @property(nonatomic) long long scalingMode; // @synthesize scalingMode=_scalingMode;

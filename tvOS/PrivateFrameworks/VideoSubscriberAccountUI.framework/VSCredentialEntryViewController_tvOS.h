@@ -8,13 +8,14 @@
 
 #import <VideoSubscriberAccountUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <VideoSubscriberAccountUI/VSCredentialEntryFieldViewControllerDelegate-Protocol.h>
+#import <VideoSubscriberAccountUI/VSCredentialEntryPickerViewControllerDelegate-Protocol.h>
 #import <VideoSubscriberAccountUI/VSCredentialEntryViewController-Protocol.h>
 
 @class NSString, VSCredentialEntryViewModel, VSViewModel;
 @protocol VSAuthenticationViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface VSCredentialEntryViewController_tvOS : UIViewController <UIGestureRecognizerDelegate, VSCredentialEntryFieldViewControllerDelegate, VSCredentialEntryViewController>
+@interface VSCredentialEntryViewController_tvOS : UIViewController <UIGestureRecognizerDelegate, VSCredentialEntryFieldViewControllerDelegate, VSCredentialEntryPickerViewControllerDelegate, VSCredentialEntryViewController>
 {
     _Bool _cancellationAllowed;
     _Bool _hasAppeared;
@@ -30,8 +31,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isCancellationAllowed) _Bool cancellationAllowed; // @synthesize cancellationAllowed=_cancellationAllowed;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)credentialEntryPickerViewControllerDidCancel:(id)arg1;
+- (void)credentialEntryPickerViewController:(id)arg1 pickerDidSelectRow:(unsigned long long)arg2;
 - (void)credentialEntryFieldViewControllerDidCancel:(id)arg1;
 - (void)credentialEntryFieldViewControllerDidFinish:(id)arg1;
+- (void)_updateChildViewControllerForPicker:(id)arg1;
 - (id)_credentialEntryFieldViewControllerForField:(id)arg1;
 - (id)_currentCredentialEntryFieldViewController;
 - (void)_updateChildViewControllerForCredentialEntryField:(id)arg1;

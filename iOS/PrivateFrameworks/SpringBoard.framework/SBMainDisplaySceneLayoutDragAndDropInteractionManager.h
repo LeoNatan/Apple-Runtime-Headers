@@ -8,6 +8,7 @@
 
 #import <SpringBoard/BSTransactionObserver-Protocol.h>
 #import <SpringBoard/SBApplicationDropSessionSceneProviding-Protocol.h>
+#import <SpringBoard/SBDragAndDropAppActivationWorkspaceTransactionDelegate-Protocol.h>
 #import <SpringBoard/SBDraggingSystemManagerDelegate-Protocol.h>
 #import <SpringBoard/UIDragInteractionDelegate_ForWebKitOnly-Protocol.h>
 #import <SpringBoard/UIDragInteractionDelegate_Private-Protocol.h>
@@ -16,7 +17,7 @@
 @class NSMapTable, NSString, SBDragAndDropAppActivationWorkspaceTransaction, SBFluidSwitcherViewController, SBMainDisplaySceneLayoutViewController, SBWindowDragInteraction, UIDropInteraction;
 @protocol SBMainDisplaySceneLayoutDragAndDropInteractionManagerDelegate, UIDragSession;
 
-@interface SBMainDisplaySceneLayoutDragAndDropInteractionManager : NSObject <BSTransactionObserver, SBApplicationDropSessionSceneProviding, UIDropInteractionDelegate, SBDraggingSystemManagerDelegate, UIDragInteractionDelegate_Private, UIDragInteractionDelegate_ForWebKitOnly>
+@interface SBMainDisplaySceneLayoutDragAndDropInteractionManager : NSObject <BSTransactionObserver, SBApplicationDropSessionSceneProviding, UIDropInteractionDelegate, SBDraggingSystemManagerDelegate, UIDragInteractionDelegate_Private, UIDragInteractionDelegate_ForWebKitOnly, SBDragAndDropAppActivationWorkspaceTransactionDelegate>
 {
     _Bool _windowDragHandledByDruid;
     SBFluidSwitcherViewController *_mainSwitcherContentController;
@@ -47,6 +48,7 @@
 - (void).cxx_destruct;
 - (void)transactionDidComplete:(id)arg1;
 - (_Bool)_workspaceWouldAllowTransitionToApplication:(id)arg1;
+- (void)_dismissInlineAppExposeIfNeeded;
 - (void)_beginTrackingDropSessionIfNeeded:(id)arg1;
 - (_Bool)_anyActiveAndVisibleSceneEntityMatches:(CDUnknownBlockType)arg1;
 - (id)_activeAndVisibleSceneIdentifiersForApplication:(id)arg1;
@@ -74,10 +76,13 @@
 - (id)_requiredContextIDsForDragSessionInView:(id)arg1;
 - (void)_dragInteraction:(id)arg1 prepareForSession:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)touchRoutingPolicyForBeginningDragSessionWithInfo:(id)arg1;
-- (id)nonVisibleSceneIdentityForApplication:(id)arg1 targetContentIdentifier:(id)arg2;
+- (id)preferredSceneIdentityForApplication:(id)arg1 targetContentIdentifier:(id)arg2 preferNewScene:(_Bool)arg3;
 - (id)mostRecentSceneIdentityExcludingLiveScenesForApplication:(id)arg1;
 - (id)newSceneIdentityForApplication:(id)arg1;
 - (_Bool)isApplicationActiveAndVisible:(id)arg1;
+- (void)dragAndDropTransaction:(id)arg1 didEndGesture:(id)arg2;
+- (void)dragAndDropTransaction:(id)arg1 didUpdateGesture:(id)arg2;
+- (void)dragAndDropTransaction:(id)arg1 didBeginGesture:(id)arg2;
 - (void)handleWindowDragGestureRecognizer:(id)arg1;
 - (void)dealloc;
 - (id)initWithMainSwitcherContentController:(id)arg1 floatingSwitcherContentController:(id)arg2 sceneLayoutViewController:(id)arg3 delegate:(id)arg4;

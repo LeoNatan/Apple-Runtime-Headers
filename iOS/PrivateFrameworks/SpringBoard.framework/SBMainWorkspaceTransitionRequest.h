@@ -12,8 +12,12 @@
 {
     long long _source;
     CDUnknownBlockType _transactionProvider;
+    CDUnknownBlockType _transactionConfigurator;
+    CDUnknownBlockType _completionBlock;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
+@property(copy, nonatomic) CDUnknownBlockType transactionConfigurator; // @synthesize transactionConfigurator=_transactionConfigurator;
 @property(copy, nonatomic) CDUnknownBlockType transactionProvider; // @synthesize transactionProvider=_transactionProvider;
 @property(nonatomic) long long source; // @synthesize source=_source;
 - (void).cxx_destruct;

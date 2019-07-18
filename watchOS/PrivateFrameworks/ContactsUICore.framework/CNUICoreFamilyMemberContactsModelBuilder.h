@@ -20,6 +20,10 @@
 
 + (id)itemsBySortingItems:(id)arg1;
 + (id)uniqueFamilyMemberContactItems:(id)arg1;
++ (id)firstDisplayablePhoneNumberForContact:(id)arg1;
++ (id)firstDisplayableEmailAddressForContact:(id)arg1;
++ (id)placeholderNameForNamelessContact:(id)arg1;
++ (id)formattedNameOfContact:(id)arg1 contactFormatterStyle:(int)arg2;
 + (id)familyMemberContactItemFromContact:(id)arg1 contactFormatterStyle:(int)arg2 contactTypeAssessor:(id)arg3 itemHasBeenPersisted:(_Bool)arg4;
 + (_Bool)shouldIncludeContact:(id)arg1 givenIncludeWhitelistedContactsOnlySetting:(_Bool)arg2;
 @property(readonly, nonatomic) _Bool markItemsAsPersisted; // @synthesize markItemsAsPersisted=_markItemsAsPersisted;

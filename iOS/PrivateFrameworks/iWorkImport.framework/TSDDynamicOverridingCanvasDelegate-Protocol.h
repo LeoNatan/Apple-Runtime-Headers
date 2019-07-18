@@ -5,8 +5,8 @@
 //
 
 #import <iWorkImport/TSDCanvasDelegate-Protocol.h>
-#import <iWorkImport/TSDRepDynamicOverrideProvider-Protocol.h>
+#import <iWorkImport/TSDDynamicOverrideProvider-Protocol.h>
 
-@protocol TSDDynamicOverridingCanvasDelegate <TSDCanvasDelegate, TSDRepDynamicOverrideProvider>
+@protocol TSDDynamicOverridingCanvasDelegate <TSDCanvasDelegate, TSDDynamicOverrideProvider>
 @end
 

@@ -10,6 +10,7 @@
 @protocol UICoordinateSpace, _UIClickInteractionDriverDelegate;
 
 @protocol _UIClickInteractionDriving <NSObject>
+@property(readonly, nonatomic) _Bool isCurrentlyAcceleratedByForce;
 @property(readonly, nonatomic) double touchDuration;
 @property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;
 @property(nonatomic) double allowableMovement;

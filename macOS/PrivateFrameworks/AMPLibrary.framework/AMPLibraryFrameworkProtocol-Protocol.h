@@ -7,18 +7,19 @@
 @class NSArray, NSNumber, NSString, NSURL;
 
 @protocol AMPLibraryFrameworkProtocol
-- (void)migratedPodcastDefaultFeedSettingsWithReply:(void (^)(NSDictionary *, NSError *))arg1;
+- (void)migratedPodcastSettingsWithReply:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)migratedPodcastStationsWithReply:(void (^)(NSArray *, NSError *))arg1;
 - (void)migratedPodcastFeedsWithReply:(void (^)(NSArray *, NSError *))arg1;
 - (void)removeDownloadForTracks:(NSArray *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)artworkForMediaFile:(NSURL *)arg1 withReply:(void (^)(NSData *, NSError *))arg2;
 - (void)readWriteURLForMediaItem:(NSNumber *)arg1 withReply:(void (^)(NSURL *, NSData *, NSError *))arg2;
-- (void)genresForDomains:(unsigned long long)arg1 withMediaKinds:(unsigned long long)arg2 withReply:(void (^)(NSArray *, NSError *))arg3;
-- (void)albumsForDomains:(unsigned long long)arg1 withMediaKinds:(unsigned long long)arg2 withReply:(void (^)(NSArray *, NSError *))arg3;
-- (void)artistsForDomains:(unsigned long long)arg1 withMediaKinds:(unsigned long long)arg2 includingCompilationArtists:(BOOL)arg3 withReply:(void (^)(NSArray *, NSError *))arg4;
+- (void)genresForDomains:(unsigned long long)arg1 withMediaKinds:(unsigned long long)arg2 withDeviceCapabilities:(unsigned long long)arg3 withReply:(void (^)(NSArray *, NSError *))arg4;
+- (void)albumsForDomains:(unsigned long long)arg1 withMediaKinds:(unsigned long long)arg2 withDeviceCapabilities:(unsigned long long)arg3 withReply:(void (^)(NSArray *, NSError *))arg4;
+- (void)artistsForDomains:(unsigned long long)arg1 withMediaKinds:(unsigned long long)arg2 withDeviceCapabilities:(unsigned long long)arg3 withReply:(void (^)(NSArray *, NSError *))arg4;
 - (void)tracksForPlaylist:(unsigned long long)arg1 withReply:(void (^)(NSArray *, NSError *))arg2;
-- (void)playlistsForDomains:(unsigned long long)arg1 withMediaKinds:(unsigned long long)arg2 withItems:(BOOL)arg3 withReply:(void (^)(NSArray *, NSError *))arg4;
-- (void)mediaItemsForDomains:(unsigned long long)arg1 withMediaKinds:(unsigned long long)arg2 withReply:(void (^)(NSArray *, NSError *))arg3;
+- (void)distinguishedPlaylistForDomains:(unsigned long long)arg1 withDistinguishedKind:(unsigned long long)arg2 withItems:(BOOL)arg3 withReply:(void (^)(NSDictionary *, NSError *))arg4;
+- (void)playlistsForDomains:(unsigned long long)arg1 withMediaKinds:(unsigned long long)arg2 withDeviceCapabilities:(unsigned long long)arg3 withItems:(BOOL)arg4 withReply:(void (^)(NSArray *, NSError *))arg5;
+- (void)mediaItemsForDomains:(unsigned long long)arg1 withMediaKinds:(unsigned long long)arg2 withDeviceCapabilities:(unsigned long long)arg3 withReply:(void (^)(NSArray *, NSError *))arg4;
 - (void)closeDomainsForClientID:(unsigned int)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)registerClientName:(NSString *)arg1 withReply:(void (^)(NSError *, unsigned int))arg2;
 

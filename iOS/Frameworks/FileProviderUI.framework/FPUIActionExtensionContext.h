@@ -20,7 +20,6 @@
 @property(copy) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
 - (void).cxx_destruct;
 - (id)_remoteContext;
-- (id)_performActionWithIdentifier:(id)arg1 items:(id)arg2 domainIdentifier:(id)arg3;
 - (void)openURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)didEncounterError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cancelRequestWithError:(id)arg1;

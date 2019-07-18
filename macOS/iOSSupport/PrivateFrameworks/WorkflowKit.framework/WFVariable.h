@@ -52,6 +52,8 @@
 @property(readonly, nonatomic) NSString *type;
 - (id)initWithDictionary:(id)arg1 variableProvider:(id)arg2;
 - (id)init;
+- (unsigned long long)wf_lengthInVariableString;
+- (void)wf_getContentItemsWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSString *nameIncludingPropertyName;
 @property(readonly, nonatomic) NSString *propertyName;
 

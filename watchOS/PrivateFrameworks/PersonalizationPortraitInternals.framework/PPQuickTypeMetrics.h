@@ -15,8 +15,6 @@
 
 + (void)eventsMatches:(unsigned int)arg1;
 + (void)contactMatchesWithContactsCount:(unsigned int)arg1 foundInAppsCount:(unsigned int)arg2;
-+ (void)initializationLatency:(unsigned long long)arg1 servant:(id)arg2;
-+ (void)quickTypeMetricsWithLatency:(unsigned long long)arg1 servant:(id)arg2 hasResults:(_Bool)arg3;
 + (void)frameworkError:(id)arg1 errorCode:(int)arg2;
 + (id)instance;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;

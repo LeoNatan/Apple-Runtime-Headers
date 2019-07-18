@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UICollectionReusableView.h>
+#import <UIKit/UIView.h>
 
 #import <UserNotificationsUIKit/NCLegibilitySettingsAdjusting-Protocol.h>
 #import <UserNotificationsUIKit/NCToggleControlDelegate-Protocol.h>
@@ -13,20 +13,17 @@
 @class NCNotificationListHeaderTitleView, NCToggleControl, NSString, UIControl, _UILegibilitySettings;
 @protocol NCNotificationListSectionHeaderViewDelegate;
 
-@interface NCNotificationListSectionHeaderView : UICollectionReusableView <NCToggleControlDelegate, NCLegibilitySettingsAdjusting, PLContentSizeCategoryAdjusting>
+@interface NCNotificationListSectionHeaderView : UIView <NCToggleControlDelegate, NCLegibilitySettingsAdjusting, PLContentSizeCategoryAdjusting>
 {
     NCToggleControl *_clearButton;
     _Bool _adjustsFontForContentSizeCategory;
-    _Bool _shouldOverrideForReveal;
     NSString *_preferredContentSizeCategory;
     id <NCNotificationListSectionHeaderViewDelegate> _delegate;
     NSString *_sectionIdentifier;
     NSString *_title;
     NSString *_materialGroupNameBase;
-    double _overrideAlpha;
     NCNotificationListHeaderTitleView *_headerTitleView;
     _UILegibilitySettings *_legibilitySettings;
-    struct CGPoint _overrideCenter;
 }
 
 + (double)headerHeightWithWidth:(double)arg1 title:(id)arg2;
@@ -35,9 +32,6 @@
 + (void)initialize;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) NCNotificationListHeaderTitleView *headerTitleView; // @synthesize headerTitleView=_headerTitleView;
-@property(nonatomic) struct CGPoint overrideCenter; // @synthesize overrideCenter=_overrideCenter;
-@property(nonatomic) double overrideAlpha; // @synthesize overrideAlpha=_overrideAlpha;
-@property(nonatomic) _Bool shouldOverrideForReveal; // @synthesize shouldOverrideForReveal=_shouldOverrideForReveal;
 @property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
@@ -52,20 +46,17 @@
 - (void)_layoutClearButton;
 - (void)_configureHeaderTitleViewIfNecessary;
 - (void)_configureClearButtonIfNecessary;
-- (void)_resetRevealOverrides;
 - (void)_resetClearButtonStateAnimated:(_Bool)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
 - (void)_updateHeaderTitleViewWithLegibilitySettings:(id)arg1;
 - (void)adjustForLegibilitySettingsChange:(id)arg1;
 - (id)_legibilitySettings;
-- (void)toggleControlDidDismssPreviewInteractionPresentedContent:(id)arg1;
-- (void)toggleControlDidPresentPreviewInteractionPresentedContent:(id)arg1;
-- (void)toggleControlDidBeginPreviewInteraction:(id)arg1;
-- (id)containerViewForToggleControlPreviewInteractionPresentedContent:(id)arg1;
-- (void)applyLayoutAttributes:(id)arg1;
+- (void)toggleControlDidDismssClickInteractionPresentedContent:(id)arg1;
+- (void)toggleControlDidPresentClickInteractionPresentedContent:(id)arg1;
+- (void)toggleControlDidBeginClickInteraction:(id)arg1;
+- (id)containerViewForToggleControlClickInteractionPresentedContent:(id)arg1;
 - (_Bool)dismissModalFullScreenIfNeeded;
 - (void)resetClearButtonStateAnimated:(_Bool)arg1;
-- (void)prepareForReuse;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) UIControl *clearButton;
 - (id)initWithFrame:(struct CGRect)arg1;

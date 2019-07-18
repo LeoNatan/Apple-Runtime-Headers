@@ -22,6 +22,7 @@
 + (id)stringForType:(long long)arg1;
 + (id)handleWithDictionaryRepresentation:(id)arg1;
 + (id)handleWithDestinationID:(id)arg1;
++ (id)handleForCHHandle:(id)arg1;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;

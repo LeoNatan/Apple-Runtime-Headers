@@ -41,7 +41,7 @@
 - (void).cxx_destruct;
 - (void)_presentAlertWithTitle:(id)arg1 message:(id)arg2 dismissAfter:(_Bool)arg3;
 - (void)_reportIssueToMaps;
-- (void)_resetMapsMerchantAndBrandCompletion:(CDUnknownBlockType)arg1;
+- (void)_resetMapsMerchantAndBrandWithIssueReportIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_disputeTransactionInBusinessChat;
 - (void)_submitButtonTapped:(id)arg1;
 - (void)_cancelButtonTapped:(id)arg1;

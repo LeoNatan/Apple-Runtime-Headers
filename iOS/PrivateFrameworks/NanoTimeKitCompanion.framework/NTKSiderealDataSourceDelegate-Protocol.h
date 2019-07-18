@@ -6,9 +6,7 @@
 
 #import <NanoTimeKitCompanion/NSObject-Protocol.h>
 
-@class NSArray, NSDictionary;
-
 @protocol NTKSiderealDataSourceDelegate <NSObject>
-- (void)didUpdateSolarIntervals:(NSDictionary *)arg1 andWaypoints:(NSArray *)arg2;
+- (void)dataSourceDidUpdateSolarData;
 @end
 

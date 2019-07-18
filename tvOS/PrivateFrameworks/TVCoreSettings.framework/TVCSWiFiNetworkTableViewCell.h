@@ -32,6 +32,7 @@
 - (void)setSecure:(_Bool)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)didMoveToSuperview;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

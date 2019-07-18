@@ -13,9 +13,9 @@
 + (_Bool)includesRelationshipChanges;
 + (id)entityClassName;
 - (id)_momentChangesForFaceLocalIdentifiers:(id)arg1;
-- (id)graphChangesForChangedPropertyNamesByLocalIdentifier:(id)arg1 change:(id)arg2;
-- (id)graphChangesForDeletedIdentifiers:(id)arg1;
-- (id)graphChangesForInsertedIdentifiers:(id)arg1;
+- (id)graphChangesForChangedPropertyNamesByLocalIdentifier:(id)arg1 change:(id)arg2 progressBlock:(CDUnknownBlockType)arg3;
+- (id)graphChangesForDeletedIdentifiers:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;
+- (id)graphChangesForInsertedIdentifiers:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;
 
 @end
 

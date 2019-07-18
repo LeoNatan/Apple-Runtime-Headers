@@ -13,6 +13,8 @@ __attribute__((visibility("hidden")))
 @interface MSPSharedTripGroupSession : NSObject
 {
     _Bool _joined;
+    NSString *_joinedFromHandle;
+    NSString *_joinedFromAccountIdentifier;
     _Bool _initiator;
     NSString *_groupID;
     unsigned int _nbClients;
@@ -31,8 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)participantDidJoin:(id)arg1;
 - (_Bool)_validParticipant:(id)arg1;
 - (id)_currentRoutePath;
-- (void)sendURLMessage:(id)arg1 to:(id)arg2;
-- (void)sendCommand:(id)arg1;
+- (void)sendCommand:(id)arg1 fromHandle:(id)arg2 fromAccountID:(id)arg3;
 - (void)sendChunkedMessage:(id)arg1 to:(id)arg2;
 - (void)_sendChunkMessage:(id)arg1 to:(id)arg2 packet:(id)arg3;
 - (void)_sharingEndedWithError:(id)arg1;
@@ -41,10 +42,10 @@ __attribute__((visibility("hidden")))
 - (void)addSharingWith:(id)arg1;
 @property(readonly, nonatomic) _Bool inLiveMode;
 - (void)_leaveLivemode;
-- (void)_joinLiveMode;
+- (void)_joinLiveModeFromHandle:(id)arg1 fromAccountID:(id)arg2;
 - (void)leaveLiveModeForced;
 - (_Bool)leaveLiveModeIfNeeded;
-- (void)joinLiveMode;
+- (void)joinLiveModeFromHandle:(id)arg1 fromAccountID:(id)arg2;
 @property(readonly, nonatomic) NSArray *accountIdentifiers;
 @property(readonly, nonatomic) NSString *identifier;
 - (void)dealloc;

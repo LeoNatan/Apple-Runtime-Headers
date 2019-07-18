@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class GEOQuickLink, MKVibrantView, NSArray, UIImageView, _MKUILabel;
+@class GEOQuickLink, MKVibrantView, NSArray, NSLayoutConstraint, UIImageView, _MKUILabel;
 @protocol MKQuickLinkItemViewDelegate;
 
 __attribute__((visibility("hidden")))
@@ -17,6 +17,9 @@ __attribute__((visibility("hidden")))
     MKVibrantView *_vibrantView;
     UIImageView *_appImageView;
     NSArray *_constraints;
+    NSLayoutConstraint *_topToFirstBaseline;
+    NSLayoutConstraint *_lastToFirstBaseline;
+    NSLayoutConstraint *_lastToBotomBaseline;
     BOOL _touched;
     id <MKQuickLinkItemViewDelegate> _delegate;
     GEOQuickLink *_quickLink;
@@ -39,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)updateColor;
 - (void)infoCardThemeChanged;
 - (void)didMoveToWindow;
+- (void)preferredContentSizeChanged:(id)arg1;
 - (void)_createConstraints;
 - (void)_contentSizeDidChange;
 - (id)initWithQuickLink:(id)arg1;

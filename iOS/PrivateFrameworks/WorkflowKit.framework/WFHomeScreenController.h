@@ -10,11 +10,11 @@
 {
 }
 
-+ (id)launchImageForWorkflow:(id)arg1 inLandscape:(_Bool)arg2;
-+ (void)drawWorkflow:(id)arg1 maxSize:(double)arg2 inRect:(struct CGRect)arg3;
-+ (id)iconImageForWorkflow:(id)arg1;
++ (id)launchImageForIcon:(id)arg1 inLandscape:(_Bool)arg2;
++ (void)drawIcon:(id)arg1 maxSize:(double)arg2 inRect:(struct CGRect)arg3;
++ (id)iconImageForIcon:(id)arg1;
 + (void)migrateWebClipsIfNeeded;
-+ (_Bool)addWorkflowToHomescreen:(id)arg1 withName:(id)arg2 error:(id *)arg3;
++ (_Bool)addWorkflowToHomeScreen:(id)arg1 withName:(id)arg2 icon:(id)arg3 error:(id *)arg4;
 
 @end
 

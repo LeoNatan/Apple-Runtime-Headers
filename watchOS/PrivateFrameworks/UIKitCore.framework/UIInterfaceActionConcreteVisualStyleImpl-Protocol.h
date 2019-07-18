@@ -14,6 +14,7 @@
 - (UIView<UIInterfaceActionVisualBackgroundDisplaying> *)newActionBackgroundViewForViewState:(UIInterfaceActionViewState *)arg1;
 - (UIColor *)actionTitleLabelColorForViewState:(UIInterfaceActionViewState *)arg1;
 - (UIFont *)actionTitleLabelFontForViewState:(UIInterfaceActionViewState *)arg1;
+- (float)minimumImageGapWidth;
 - (float)verticalImageContentSpacing;
 - (float)horizontalImageContentSpacing;
 - (struct UIEdgeInsets)contentMargin;

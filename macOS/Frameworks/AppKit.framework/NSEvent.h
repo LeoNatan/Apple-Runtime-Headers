@@ -9,7 +9,7 @@
 #import <AppKit/NSCoding-Protocol.h>
 #import <AppKit/NSCopying-Protocol.h>
 
-@class NSGraphicsContext, NSString, NSTrackingArea, NSWindow;
+@class NSDictionary, NSGraphicsContext, NSSet, NSString, NSTouchDevice, NSTrackingArea, NSWindow;
 
 @interface NSEvent : NSObject <NSCopying, NSCoding>
 {
@@ -81,6 +81,11 @@
     void *_eventRef;
     void *reserved1;
     void *reserved2;
+    struct __CGEvent *_cgEventRef;
+    NSSet *_touches;
+    long long _touchContextId;
+    NSTouchDevice *_touchDevice;
+    NSDictionary *_previousCoalescedTouches;
 }
 
 + (id)_touchesFromSet:(id)arg1 matchingPhase:(unsigned long long)arg2 inView:(id)arg3 includeResting:(BOOL)arg4;
@@ -256,7 +261,6 @@
 - (void)_initDigitizerTouchesFromIOHidEvent:(struct __IOHIDEvent *)arg1 window:(id)arg2 contextID:(long long)arg3;
 - (id)_initCoalescingTouchEvents:(id)arg1;
 - (void)_initMTTouchesFromIOHidEvent:(struct __IOHIDEvent *)arg1;
-- (void)_initAuxiliaryData;
 @property(readonly) struct __CGEvent *CGEvent;
 @property(readonly) const void *eventRef;
 - (const void *)_eventRefInternal;

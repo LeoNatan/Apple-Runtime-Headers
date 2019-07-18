@@ -21,7 +21,6 @@
 - (long long)pruneResources:(id)arg1 inPhotoLibrary:(id)arg2;
 - (id)_identifierForResource:(id)arg1;
 - (id)_predicateForPruneWithUrgency:(int)arg1;
-- (id)_predicateForCPLResourceTypes:(id)arg1 withUrgency:(int)arg2;
 - (long long)diskSpaceToPrune;
 - (long long)_localResourcesSize;
 - (void)_updateLocalStateForPrunedResources:(id)arg1 inPhotoLibrary:(id)arg2;

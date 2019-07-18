@@ -85,6 +85,7 @@
 - (void)unloadVideoPlayerIfShowingAd;
 - (void)playButtonTapped;
 - (void)loadPosterFrameImage;
+- (void)showPosterFrame;
 - (void)discardContents;
 - (void)renderContents;
 - (void)presentComponentWithChanges:(CDStruct_74be42e1)arg1;

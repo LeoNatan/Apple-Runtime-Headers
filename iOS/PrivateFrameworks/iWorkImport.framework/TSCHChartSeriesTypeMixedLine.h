@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)userInterfaceName;
 - (_Bool)supportsSymbolFillForSymbolType:(int)arg1;
 - (_Bool)supportsSymbolDrawing;
 - (id)genericToSpecificPropertyMap;

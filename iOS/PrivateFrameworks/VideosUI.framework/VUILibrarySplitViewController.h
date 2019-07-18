@@ -6,6 +6,7 @@
 
 #import <UIKit/UISplitViewController.h>
 
+#import <VideosUI/UISplitViewControllerDelegate-Protocol.h>
 #import <VideosUI/VUICategoryMenuViewControllerDelegate-Protocol.h>
 #import <VideosUI/VUIHomeShareViewControllerDelegate-Protocol.h>
 #import <VideosUI/VUILibraryCategoryMenuViewModelDelegate-Protocol.h>
@@ -15,7 +16,7 @@
 @protocol VUILibrarySplitViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface VUILibrarySplitViewController : UISplitViewController <VUILibraryCategoryMenuViewModelDelegate, VUICategoryMenuViewControllerDelegate, VUILibraryGridCollectionViewControllerDelegate, VUIHomeShareViewControllerDelegate>
+@interface VUILibrarySplitViewController : UISplitViewController <VUILibraryCategoryMenuViewModelDelegate, VUICategoryMenuViewControllerDelegate, VUILibraryGridCollectionViewControllerDelegate, VUIHomeShareViewControllerDelegate, UISplitViewControllerDelegate>
 {
     _Bool _shouldShowBackButton;
     _Bool _hasLoaded;
@@ -47,6 +48,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <VUILibrarySplitViewControllerDelegate> librarySplitViewControllerDelegate; // @synthesize librarySplitViewControllerDelegate=_librarySplitViewControllerDelegate;
 - (void).cxx_destruct;
 - (_Bool)vui_ppt_isLoading;
+- (void)showDetailViewController:(id)arg1 sender:(id)arg2;
+- (id)splitViewController:(id)arg1 separateSecondaryViewControllerFromPrimaryViewController:(id)arg2;
+- (_Bool)splitViewController:(id)arg1 collapseSecondaryViewController:(id)arg2 ontoPrimaryViewController:(id)arg3;
 - (void)setPageMetricsForCategory:(id)arg1 onLibraryGridCollectionViewController:(id)arg2;
 - (id)_deviceMediaLibrary;
 - (void)_removeRentalsUpdateNotificationObserver;
@@ -65,6 +69,7 @@ __attribute__((visibility("hidden")))
 - (void)gridCollectionViewController:(id)arg1 didSelectMediaEntity:(id)arg2;
 - (void)categoryMenuViewControllerShouldDismiss:(id)arg1;
 - (void)categoryMenuViewController:(id)arg1 didSelectMenuItemAtIndexPath:(id)arg2;
+- (id)_viewControllerForIndexPath:(id)arg1;
 - (void)categoryViewModel:(id)arg1 categoriesDidChange:(id)arg2;
 - (void)categoryViewModel:(id)arg1 fetchDidCompleteWithCategories:(id)arg2 error:(id)arg3;
 - (void)viewDidLoad;

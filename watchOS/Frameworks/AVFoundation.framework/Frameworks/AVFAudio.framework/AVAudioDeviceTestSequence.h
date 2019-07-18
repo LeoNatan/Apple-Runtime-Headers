@@ -8,19 +8,23 @@
 
 #import <AVFAudio/NSSecureCoding-Protocol.h>
 
-@class AVAudioDeviceTestProcessingChain, NSURL;
+@class AVAudioDeviceTestProcessingChain, NSString, NSURL;
 
 @interface AVAudioDeviceTestSequence : NSObject <NSSecureCoding>
 {
+    _Bool _calculateCrossCorrelationPeak;
     int _outputID;
     float _volume;
     NSURL *_stimulusURL;
     AVAudioDeviceTestProcessingChain *_inputProcessingChain;
     AVAudioDeviceTestProcessingChain *_outputProcessingChain;
     int _outputMode;
+    NSString *_mode;
 }
 
 + (_Bool)supportsSecureCoding;
+@property _Bool calculateCrossCorrelationPeak; // @synthesize calculateCrossCorrelationPeak=_calculateCrossCorrelationPeak;
+@property(retain) NSString *mode; // @synthesize mode=_mode;
 @property(nonatomic) int outputMode; // @synthesize outputMode=_outputMode;
 @property(retain, nonatomic) AVAudioDeviceTestProcessingChain *outputProcessingChain; // @synthesize outputProcessingChain=_outputProcessingChain;
 @property(retain, nonatomic) AVAudioDeviceTestProcessingChain *inputProcessingChain; // @synthesize inputProcessingChain=_inputProcessingChain;
@@ -30,6 +34,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 
 @end
 

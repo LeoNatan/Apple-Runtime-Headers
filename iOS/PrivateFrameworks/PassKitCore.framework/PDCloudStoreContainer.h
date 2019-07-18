@@ -56,6 +56,7 @@
 - (void)_markEndCloudStoreDatabaseSetupWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (id)_cannotPerformActionErrorWithFailureReason:(id)arg1;
 - (void)_resetContainerValues;
+- (void)_resetCachedZoneDataForZoneID:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)performScheduledActivityWithIdentifier:(id)arg1 activityCriteria:(id)arg2;
 - (void)_cancelCloudStoreInitializationTimer;

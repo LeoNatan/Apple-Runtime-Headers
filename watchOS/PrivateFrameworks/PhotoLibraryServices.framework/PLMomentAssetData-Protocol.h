@@ -21,13 +21,12 @@
 @property(nonatomic) double curationScore;
 @property(nonatomic) _Bool favorite;
 @property(nonatomic) id <PLPhotosHighlightData> yearHighlightBeingKeyAsset;
+@property(nonatomic) id <PLPhotosHighlightData> monthHighlightBeingFirstAsset;
 @property(nonatomic) id <PLPhotosHighlightData> monthHighlightBeingKeyAsset;
 @property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingExtendedAssets;
-@property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingOverviewAssets;
 @property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingKeyAsset;
 @property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingAssets;
 @property(nonatomic) id <PLPhotosHighlightData> highlightBeingExtendedAssets;
-@property(nonatomic) id <PLPhotosHighlightData> highlightBeingOverviewAssets;
 @property(nonatomic) id <PLPhotosHighlightData> highlightBeingSummaryAssets;
 @property(nonatomic) id <PLPhotosHighlightData> highlightBeingKeyAsset;
 @property(nonatomic) id <PLPhotosHighlightData> highlightBeingAssets;

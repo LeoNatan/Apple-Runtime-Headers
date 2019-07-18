@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CUBluetoothClient, CUNetInterfaceMonitor, CUSystemMonitor, CUWiFiManager, NSArray, NSData, NSString;
+@class CUBluetoothClient, CUNetInterfaceMonitor, CUSystemMonitor, CUWiFiManager, NSArray, NSData, NSMutableArray, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSString *_primaryNetworkSignature;
     int _powerSourceToken;
     _Bool _powerUnlimited;
+    NSString *_primaryAppleID;
     _Bool _primaryAppleIDActive;
     _Bool _primaryAppleIDIsHSA2;
     int _primaryAppleIDNotifyToken;
@@ -44,6 +45,12 @@ __attribute__((visibility("hidden")))
     int _screenBlankedToken;
     int _screenSaverToken;
     _Bool _screenSaverActive;
+    _Bool _scChangesPending;
+    struct __SCDynamicStore *_scDynamicStore;
+    NSMutableArray *_scInitialKeys;
+    NSString *_scKeySystemName;
+    NSArray *_scNotificationKeys;
+    NSString *_systemName;
     CUWiFiManager *_wifiManager;
     unsigned int _wifiFlags;
     int _wifiState;
@@ -55,6 +62,10 @@ __attribute__((visibility("hidden")))
 - (void)_wifiMonitorStart;
 - (void)_firstUnlockMonitorStop;
 - (void)_firstUnlockMonitorStart;
+- (void)_systemConfigSystemNameChanged:(_Bool)arg1;
+- (void)_systemConfigChanged:(id)arg1 initial:(_Bool)arg2;
+- (void)_systemConfigUpdateNotifications;
+- (void)_systemConfigUpdateKeyPtr:(id *)arg1 name:(id)arg2 enabled:(_Bool)arg3 creator:(CDUnknownBlockType)arg4;
 - (void)_screenSaverMonitorStop;
 - (void)_screenSaverMonitorStart;
 - (void)_screenChanged:(_Bool)arg1;

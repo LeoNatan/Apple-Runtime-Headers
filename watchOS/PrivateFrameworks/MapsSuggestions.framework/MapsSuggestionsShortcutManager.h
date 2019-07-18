@@ -24,6 +24,7 @@
 - (id)routine;
 - (id)suggestor;
 - (id)storage;
+- (void)setChangeHandler:(CDUnknownBlockType)arg1;
 - (_Bool)proposeAdditionalShortcutsOfType:(int)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)moveShortcut:(id)arg1 toIndex:(int)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)removeShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;

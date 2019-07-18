@@ -18,6 +18,7 @@
 
 @interface EMMessage : EMRepositoryObject <EFLoggable, EMMessageBuilder, EMExtendedContentItem, EMMutableMessageListItem, EMMessageListItem, EMContentItem>
 {
+    unsigned long long _isEditable;
     NSArray *_mailboxes;
     NSArray *_mailboxObjectIDs;
     struct os_unfair_lock_s _mailboxesLock;
@@ -105,6 +106,7 @@
 @property(readonly, copy, nonatomic) NSString *UTType;
 - (void)setAvailableRepresentations:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *availableRepresentations;
+@property(readonly) BOOL isEditable;
 @property(readonly) BOOL shouldArchiveByDefault;
 @property(readonly) BOOL supportsArchiving;
 @property(readonly) BOOL deleteMovesToTrash;

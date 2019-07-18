@@ -13,6 +13,7 @@
 + (id)hk_chartActivityValueFont;
 + (id)hk_chartCurrentValueValueFont;
 + (id)hk_chartCurrentValueKindFont;
++ (id)hk_chartLollipopValueFontSmaller;
 + (id)hk_chartLollipopValueFont;
 + (id)hk_chartLollipopKeyFont;
 + (id)hk_scalableFontForTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2;

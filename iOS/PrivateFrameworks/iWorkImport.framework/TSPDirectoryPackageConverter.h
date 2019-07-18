@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (_Bool)isValid;
-- (_Bool)enumeratePackageEntriesWithZipArchive:(id)arg1 accessor:(CDUnknownBlockType)arg2;
+- (_Bool)enumeratePackageEntriesWithZipArchive:(id)arg1 needsReadChannel:(_Bool)arg2 accessor:(CDUnknownBlockType)arg3;
 - (unsigned long long)progressTotalUnitCountWithZipArchive:(id)arg1;
 
 @end

@@ -17,16 +17,14 @@
 }
 
 + (id)_lessSaturatedColorWithColor:(id)arg1;
-+ (id)_asleepGradientColors;
-+ (id)_inbedGradientColors;
 + (id)_asleepColor;
 + (id)_inBedColor;
 + (id)_goalLineStrokeStyle;
 + (id)_generateDailyTimePeriodSeries;
 + (void)_titlesAndValuesWithSleepDay:(id)arg1 sleepPeriod:(id)arg2 context:(id)arg3 result:(CDUnknownBlockType)arg4;
 + (id)_buildSleepAnalysisDataSourceWithHealthStore:(id)arg1 displayTypeController:(id)arg2;
-+ (id)_buildSleepChartCacheWithHealthStore:(id)arg1 displayTypeController:(id)arg2;
-+ (id)consistencyDisplayTypesWithHealthStore:(id)arg1 unitController:(id)arg2 displayTypeController:(id)arg3;
++ (id)_buildSleepChartCacheWithHealthStore:(id)arg1 representativeDisplayType:(id)arg2 displayTypeController:(id)arg3 chartCacheController:(id)arg4;
++ (id)consistencyDisplayTypesWithHealthStore:(id)arg1 unitController:(id)arg2 displayTypeController:(id)arg3 chartCacheController:(id)arg4;
 @property(retain, nonatomic) HKSleepAnnotationViewDataSource *annotationViewDataSource; // @synthesize annotationViewDataSource=_annotationViewDataSource;
 @property(nonatomic) _Bool disableXAxisAndInteraction; // @synthesize disableXAxisAndInteraction=_disableXAxisAndInteraction;
 - (void).cxx_destruct;

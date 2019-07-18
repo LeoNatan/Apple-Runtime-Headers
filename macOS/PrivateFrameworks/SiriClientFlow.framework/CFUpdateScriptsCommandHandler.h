@@ -39,7 +39,6 @@
 - (void)_updateScripts:(id)arg1 remaningAttempts:(long long)arg2;
 - (void)_updateScriptsCompletedForScriptIdentifier:(id)arg1 success:(BOOL)arg2;
 - (void)_updateScriptCacheForScriptArchiveAtPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_removeArchiveAtPath:(id)arg1;
 - (void)_updateScriptCacheForScript:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)_shouldRetryForError:(id)arg1;
 

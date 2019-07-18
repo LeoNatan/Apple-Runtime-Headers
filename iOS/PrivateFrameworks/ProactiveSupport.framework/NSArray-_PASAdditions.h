@@ -7,6 +7,7 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (_PASAdditions)
+- (void)_pas_enumerateChunksOfSize:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)_pas_shuffledArrayUsingRng:(id)arg1;
 - (id)_pas_rightFoldWithInitialObject:(id)arg1 accumulate:(CDUnknownBlockType)arg2;
 - (id)_pas_rightFoldWithInitialObject:(id)arg1 indexedAccumulate:(CDUnknownBlockType)arg2;

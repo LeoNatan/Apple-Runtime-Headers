@@ -87,6 +87,8 @@
     id _rulerAccViewLists;
     struct _NSRange _newlyFilledGlyphRange;
     id _extraData;
+    NSTextContainer *_cachedTextContainer;
+    BOOL _cachedTextContainerIsVertical;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -176,6 +178,8 @@
 - (void)setLocation:(struct CGPoint)arg1 forStartOfGlyphRange:(struct _NSRange)arg2 coalesceRuns:(BOOL)arg3;
 - (void)setExtraLineFragmentRect:(struct CGRect)arg1 usedRect:(struct CGRect)arg2 textContainer:(id)arg3;
 - (void)setLineFragmentRect:(struct CGRect)arg1 forGlyphRange:(struct _NSRange)arg2 usedRect:(struct CGRect)arg3;
+- (void)_resetCachedTextContainer;
+- (void)_setCachedTextContainer:(id)arg1 isVertical:(BOOL)arg2;
 - (void)setTextContainer:(id)arg1 forGlyphRange:(struct _NSRange)arg2;
 - (unsigned long long)getGlyphs:(unsigned int *)arg1 range:(struct _NSRange)arg2;
 - (unsigned long long)getGlyphsInRange:(struct _NSRange)arg1 glyphs:(unsigned int *)arg2 characterIndexes:(unsigned long long *)arg3 glyphInscriptions:(unsigned long long *)arg4 elasticBits:(char *)arg5 bidiLevels:(char *)arg6;

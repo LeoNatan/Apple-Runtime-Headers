@@ -53,12 +53,12 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
+- (void)_handleRemoteNotification:(id)arg1;
+- (void)handleRemoteNotificationGenerated:(id)arg1;
 - (void)handleCameraSettingsDidUpdateNotification:(id)arg1;
 - (void)handleAccessoryReachable:(id)arg1;
 @property(readonly) HMDCameraProfileSettingsModel *currentCameraSettings;
 - (void)_sendReleaseSnapshot:(id)arg1;
-- (void)_handleRemoteNotification:(id)arg1;
-- (void)handleRemoteNotificationGenerated:(id)arg1;
 - (void)_removeBulletins:(id)arg1 sessionID:(id)arg2;
 - (void)processPostedBulletin:(id)arg1 responseTimer:(id)arg2;
 - (void)timerDidFire:(id)arg1;

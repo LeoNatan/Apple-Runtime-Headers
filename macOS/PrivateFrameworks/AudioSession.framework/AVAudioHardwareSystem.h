@@ -19,8 +19,8 @@
 - (id)lookupRouteTopology:(id)arg1;
 - (BOOL)unpublishRouteTopology:(id)arg1 controller:(id)arg2 error:(id *)arg3;
 - (BOOL)publishRouteTopology:(id)arg1 controller:(id)arg2 error:(id *)arg3;
-- (BOOL)setUserRoutePreference:(unsigned long long)arg1 routeTopology:(id)arg2 controller:(id)arg3 error:(id *)arg4;
-- (id)getUserRoutePreference:(unsigned long long)arg1;
+- (BOOL)setUserRoutePreference:(unsigned int)arg1 routeTopology:(id)arg2 controller:(id)arg3 error:(id *)arg4;
+- (id)getUserRoutePreference:(unsigned int)arg1;
 @property(readonly, nonatomic) NSArray *routeTopologies;
 @property(readonly, nonatomic) NSArray *outputPorts;
 @property(readonly, nonatomic) NSArray *inputPorts;

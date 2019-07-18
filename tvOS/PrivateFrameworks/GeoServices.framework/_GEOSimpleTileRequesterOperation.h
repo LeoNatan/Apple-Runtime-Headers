@@ -8,7 +8,7 @@
 
 #import <GeoServices/GEODataSessionTaskDelegate-Protocol.h>
 
-@class GEOClientMetrics, GEODataRequest, GEODataSession, GEODataSessionTask, NSData, NSString, NSURL;
+@class GEODataRequest, GEODataSession, GEODataSessionTask, NSData, NSString, NSURL;
 @protocol GEOSimpleTileRequesterOperationDelegate, OS_dispatch_queue, OS_os_activity;
 
 __attribute__((visibility("hidden")))
@@ -28,21 +28,26 @@ __attribute__((visibility("hidden")))
     NSObject<OS_os_activity> *_parentTileActivity;
     double _timeout;
     double _startTime;
-    GEOClientMetrics *_clientMetrics;
+    double _endTime;
+    GEODataSession *_dataSession;
+    unsigned long long _signpostID;
     int _attempts;
     int _checksumMethod;
     unsigned int _tileEdition;
+    // Error parsing type: AI, name: _priority
     _Bool _finished;
     _Bool _existingCachedDataCurrent;
-    // Error parsing type: AI, name: _priority
-    GEODataSession *_dataSession;
-    unsigned long long _signpostID;
+    _Bool _shouldReportAnalytics;
+    NSString *_requestingBundleId;
+    double _tileLoaderCreateTime;
     _Bool _shouldDownloadToDisk;
 }
 
+@property(nonatomic) double tileLoaderCreateTime; // @synthesize tileLoaderCreateTime=_tileLoaderCreateTime;
+@property(retain, nonatomic) NSString *requestingBundleId; // @synthesize requestingBundleId=_requestingBundleId;
+@property(nonatomic) _Bool shouldReportAnalytics; // @synthesize shouldReportAnalytics=_shouldReportAnalytics;
 @property(nonatomic) _Bool shouldDownloadToDisk; // @synthesize shouldDownloadToDisk=_shouldDownloadToDisk;
 @property(readonly, nonatomic, getter=isExistingCachedDataCurrent) _Bool existingCachedDataCurrent; // @synthesize existingCachedDataCurrent=_existingCachedDataCurrent;
-@property(retain, nonatomic) GEOClientMetrics *clientMetrics; // @synthesize clientMetrics=_clientMetrics;
 @property(retain, nonatomic) NSString *responseEtag; // @synthesize responseEtag=_responseEtag;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
@@ -61,7 +66,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) GEODataRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) GEODataSession *dataSession; // @synthesize dataSession=_dataSession;
 - (void).cxx_destruct;
-- (void)_reportNetworkError:(id)arg1;
+- (void)_recordAnalyticsWithError:(id)arg1;
 - (void)taskFailed:(id)arg1 withError:(id)arg2;
 - (_Bool)validateTileIntegrityForTask:(id)arg1;
 - (void)dataSession:(id)arg1 didCompleteTask:(id)arg2;

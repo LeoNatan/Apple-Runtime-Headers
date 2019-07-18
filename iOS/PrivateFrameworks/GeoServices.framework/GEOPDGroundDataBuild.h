@@ -8,15 +8,21 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class PBDataReader;
+
 __attribute__((visibility("hidden")))
 @interface GEOPDGroundDataBuild : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     CDStruct_95bda58d _capabilitys;
+    CDStruct_9f2792e4 _lodWithTextures;
     unsigned int _bucketId;
     unsigned int _buildId;
     unsigned int _dataFormatVersion;
     float _heightAboveGroundM;
     unsigned int _index;
+    unsigned int _metricsVersion;
     int _type;
     int _urlFormat;
     struct {
@@ -25,12 +31,26 @@ __attribute__((visibility("hidden")))
         unsigned int has_dataFormatVersion:1;
         unsigned int has_heightAboveGroundM:1;
         unsigned int has_index:1;
+        unsigned int has_metricsVersion:1;
         unsigned int has_type:1;
         unsigned int has_urlFormat:1;
+        unsigned int read_capabilitys:1;
+        unsigned int read_lodWithTextures:1;
+        unsigned int wrote_capabilitys:1;
+        unsigned int wrote_lodWithTextures:1;
+        unsigned int wrote_bucketId:1;
+        unsigned int wrote_buildId:1;
+        unsigned int wrote_dataFormatVersion:1;
+        unsigned int wrote_heightAboveGroundM:1;
+        unsigned int wrote_index:1;
+        unsigned int wrote_metricsVersion:1;
+        unsigned int wrote_type:1;
+        unsigned int wrote_urlFormat:1;
     } _flags;
 }
 
 + (_Bool)isValid:(id)arg1;
+- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -41,16 +61,28 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasMetricsVersion;
+@property(nonatomic) unsigned int metricsVersion;
+- (void)setLodWithTextures:(unsigned int *)arg1 count:(unsigned long long)arg2;
+- (unsigned int)lodWithTexturesAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsLodWithTextures:(unsigned int)arg1;
+- (void)addLodWithTextures:(unsigned int)arg1;
+- (void)clearLodWithTextures;
+@property(readonly, nonatomic) unsigned int *lodWithTextures;
+@property(readonly, nonatomic) unsigned long long lodWithTexturesCount;
+- (void)_readLodWithTextures;
 @property(nonatomic) _Bool hasBucketId;
 @property(nonatomic) unsigned int bucketId;
 - (int)StringAsCapabilitys:(id)arg1;
 - (id)capabilitysAsString:(int)arg1;
 - (void)setCapabilitys:(int *)arg1 count:(unsigned long long)arg2;
 - (int)capabilityAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsCapability:(int)arg1;
 - (void)addCapability:(int)arg1;
 - (void)clearCapabilitys;
 @property(readonly, nonatomic) int *capabilitys;
 @property(readonly, nonatomic) unsigned long long capabilitysCount;
+- (void)_readCapabilitys;
 @property(nonatomic) _Bool hasHeightAboveGroundM;
 @property(nonatomic) float heightAboveGroundM;
 - (int)StringAsType:(id)arg1;

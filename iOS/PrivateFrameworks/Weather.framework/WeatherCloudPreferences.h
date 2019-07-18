@@ -35,11 +35,8 @@ __attribute__((visibility("hidden")))
 - (void)cloudCitiesChangedExternally:(id)arg1;
 - (_Bool)areCloudCities:(id)arg1 equalToLocalCities:(id)arg2;
 - (id)citiesByEnforcingSizeLimitOnResults:(id)arg1;
-- (id)cloudCityRepresentationsFromLegacyRepresentations;
-- (id)cloudCitiesFromLegacyCloudCities:(id)arg1;
-- (id)cloudCityFromALCity:(id)arg1 name:(id)arg2;
-- (_Bool)legacyCloudCity:(id)arg1 isEqualToALCity:(id)arg2;
 - (id)cloudRepresentationFromCities:(id)arg1;
+- (void)purgeLegacyCloudCities;
 - (id)initWithLocalPreferences:(id)arg1 persistence:(id)arg2;
 - (id)initWithLocalPreferences:(id)arg1;
 

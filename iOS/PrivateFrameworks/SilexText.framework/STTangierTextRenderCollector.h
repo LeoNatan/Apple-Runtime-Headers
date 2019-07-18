@@ -28,7 +28,7 @@
 - (id)infoForStorage:(id)arg1 selection:(id)arg2;
 - (void)buildFlowsAndUpdateInfosWithICC:(id)arg1;
 - (void)buildFlowsAndUpdateInfosWithICC:(id)arg1 updateBlock:(CDUnknownBlockType)arg2;
-- (id)itemWithIdentifier:(id)arg1 storage:(id)arg2 inItems:(id)arg3;
+- (id)itemWithIdentifier:(id)arg1 storage:(id)arg2 directLayerHost:(id)arg3 inItems:(id)arg4;
 - (void)addTextStorage:(id)arg1 withLayout:(id)arg2 forNamedFlow:(id)arg3 directLayerHostView:(id)arg4 selectable:(_Bool)arg5 componentIdentifier:(id)arg6;
 - (id)init;
 

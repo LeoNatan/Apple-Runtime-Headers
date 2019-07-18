@@ -27,6 +27,7 @@
     MPMediaItem *_pendingNowPlayingItem;
     NSObject<OS_dispatch_queue> *_pendingPrepareCalloutQueue;
     _Bool _legacyClient;
+    NSString *_clientIdentifier;
     MPMusicPlayerQueueDescriptor *_queueDescriptor;
     MPVolumeController *_volumeController;
     MPRequestResponseController *_requestController;
@@ -43,6 +44,7 @@
 @property(retain, nonatomic) MPVolumeController *volumeController; // @synthesize volumeController=_volumeController;
 @property(retain, nonatomic) MPMusicPlayerQueueDescriptor *queueDescriptor; // @synthesize queueDescriptor=_queueDescriptor;
 @property(readonly, nonatomic, getter=isLegacyClient) _Bool legacyClient; // @synthesize legacyClient=_legacyClient;
+@property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
 - (void)_preflightRequestIfNeeded;
 - (id)_mediaItemFromSong:(id)arg1;
@@ -101,7 +103,8 @@
 @property(nonatomic) int shuffleMode;
 @property(nonatomic) int repeatMode;
 @property(readonly, nonatomic) int playbackState;
-- (id)_init;
+- (id)_initWithClientIdentifier:(id)arg1;
+- (id)initWithClientIdentifier:(id)arg1;
 - (void)_queueDidChangeWithResponse:(id)arg1;
 
 // Remaining properties

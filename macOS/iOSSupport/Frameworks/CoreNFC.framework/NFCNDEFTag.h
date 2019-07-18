@@ -9,7 +9,7 @@
 #import <CoreNFC/NFCNDEFTag-Protocol.h>
 
 @class NSNumber, NSString;
-@protocol NFTag;
+@protocol NFTag, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface NFCNDEFTag : NSObject <NFCNDEFTag>
@@ -17,15 +17,17 @@ __attribute__((visibility("hidden")))
     id <NFTag> _tag;
     NSNumber *_sessionKey;
     BOOL _writeLocked;
+    NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
 + (BOOL)supportsSecureCoding;
-- (void)dispatchBlockOnQueueAsync:(CDUnknownBlockType)arg1;
+- (void)dispatchBlockOnDelegateQueueAsync:(CDUnknownBlockType)arg1;
 - (BOOL)isMatchingSession:(id)arg1;
 - (BOOL)_disconnectWithError:(id *)arg1;
 - (void)_connectWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_connectWithError:(id *)arg1;
 - (id)_getInternalReaderSession;
+- (void)_setDelegateQueue:(id)arg1;
 - (void)_setSession:(id)arg1;
 - (void)_setTag:(id)arg1;
 - (void)writeNDEF:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

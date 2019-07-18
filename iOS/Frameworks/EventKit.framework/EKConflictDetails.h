@@ -25,7 +25,7 @@
 + (id)_dateRangeToScanForConflictsForEvent:(id)arg1 dateForNow:(id)arg2;
 + (id)dateRangeToScanForConflictsForEvent:(id)arg1;
 + (id)infoWithConflicts:(long long)arg1 needsAction:(long long)arg2 event:(id)arg3;
-+ (id)infoWithConflictsInSeries:(long long)arg1 outOf:(long long)arg2 withPeriod:(id)arg3;
++ (id)infoWithConflictsInSeries:(long long)arg1 outOf:(long long)arg2 withPeriod:(id)arg3 conflictingDates:(id)arg4;
 @property(retain) CalDateRange *conflictPeriodForSeries; // @synthesize conflictPeriodForSeries=_conflictPeriodForSeries;
 @property unsigned long long totalNeedsActionEvents; // @synthesize totalNeedsActionEvents=_totalNeedsActionEvents;
 @property unsigned long long totalConflictingEvents; // @synthesize totalConflictingEvents=_totalConflictingEvents;

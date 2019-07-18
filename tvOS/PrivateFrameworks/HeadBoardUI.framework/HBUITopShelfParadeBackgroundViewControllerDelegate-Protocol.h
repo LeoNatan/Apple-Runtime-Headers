@@ -10,5 +10,8 @@
 
 @protocol HBUITopShelfParadeBackgroundViewControllerDelegate <NSObject>
 - (void)paradeBackgroundViewControllerDidFinish:(id <HBUITopShelfParadeBackgroundViewController>)arg1;
+
+@optional
+- (void)paradeBackgroundViewControllerContentStateDidChange:(id <HBUITopShelfParadeBackgroundViewController>)arg1;
 @end
 

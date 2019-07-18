@@ -10,6 +10,7 @@
 
 @protocol IDSCTSIM <NSObject>
 @property(readonly, nonatomic) unsigned int slot;
+@property(readonly, nonatomic) NSString *label;
 @property(readonly, nonatomic) NSString *phoneNumber;
 @property(readonly, nonatomic) NSString *SIMIdentifier;
 @end

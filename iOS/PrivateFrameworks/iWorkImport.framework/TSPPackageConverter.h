@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSPPackage *package; // @synthesize package=_package;
 - (void).cxx_destruct;
 - (id)newWriteChannelAtPath:(id)arg1 lastModificationDate:(id)arg2 size:(unsigned long long)arg3 CRC:(unsigned int)arg4 packageWriter:(id)arg5 error:(id *)arg6;
-- (_Bool)enumeratePackageEntriesWithZipArchive:(id)arg1 accessor:(CDUnknownBlockType)arg2;
+- (_Bool)enumeratePackageEntriesWithZipArchive:(id)arg1 needsReadChannel:(_Bool)arg2 accessor:(CDUnknownBlockType)arg3;
 - (unsigned long long)progressTotalUnitCountWithZipArchive:(id)arg1;
 - (_Bool)isObjectArchivePath:(id)arg1;
 - (_Bool)isDocumentPropertiesPath:(id)arg1;

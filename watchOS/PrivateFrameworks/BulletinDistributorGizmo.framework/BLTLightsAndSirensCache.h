@@ -34,14 +34,14 @@
 - (void)_removeExpiredReplyInfosFromStore;
 - (void)_addReplyInfo:(id)arg1 forSectionID:(id)arg2 matchID:(id)arg3;
 - (id)_keyForSectionID:(id)arg1 matchID:(id)arg2;
-- (id)_firstReplyInfoWithNoReplyWithSectionID:(id)arg1 universalSectionID:(id)arg2 matchID:(id)arg3;
+- (id)_firstReplyInfoWithNoReplyWithSectionID:(id)arg1 universalSectionID:(id)arg2 matchID:(id)arg3 transmissionDate:(id)arg4;
 - (id)_firstReplyInfoWithNoStateWithSectionID:(id)arg1 matchID:(id)arg2;
 - (void)_purgeReplyInfo:(id)arg1;
 - (id)_cacheShouldPlayLightsAndSirensInSectionID:(id)arg1 universalSectionID:(id)arg2 matchID:(id)arg3 singleNotificationExpected:(_Bool)arg4;
-- (void)_storeReplyInfo:(id)arg1 shouldPlayLightsAndSirens:(unsigned int)arg2 transmissionDate:(id)arg3 singleNotificationExpected:(_Bool)arg4;
+- (void)_storeReplyInfo:(id)arg1 shouldPlayLightsAndSirens:(unsigned int)arg2 transmissionDate:(id)arg3;
 - (_Bool)hasReceivedReplyBlockForBulletinMatchID:(id)arg1 sectionIDs:(id)arg2 universalSectionID:(id)arg3 companionInfo:(id)arg4;
 - (id)handleCompanionShouldPlayLightsAndSirens:(unsigned int)arg1 sectionID:(id)arg2 universalSectionID:(id)arg3 matchID:(id)arg4 transmissionDate:(id)arg5 isTrafficRestricted:(_Bool)arg6 turnsOnDisplay:(_Bool)arg7 overridesDND:(_Bool)arg8 contactIdentifier:(id)arg9 singleNotificationExpected:(_Bool)arg10;
-- (id)lightsAndSirensForBulletinMatchID:(id)arg1 sectionID:(id)arg2 universalSectionID:(id)arg3 overridesDND:(_Bool)arg4 contactIdentifier:(id)arg5 universalComplete:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;
+- (id)lightsAndSirensForBulletinMatchID:(id)arg1 sectionID:(id)arg2 universalSectionID:(id)arg3 overridesDND:(_Bool)arg4 contactIdentifier:(id)arg5 universalComplete:(_Bool)arg6 transmissionDate:(id)arg7 completion:(CDUnknownBlockType)arg8;
 - (void)sendReplyNow:(id)arg1 sectionID:(id)arg2;
 - (void)_sendReplyInfo:(id)arg1 sectionID:(id)arg2;
 - (void)loadItemsFromStore:(id)arg1;

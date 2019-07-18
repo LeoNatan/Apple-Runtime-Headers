@@ -6,14 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class CKContainer, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSSet;
+@class CKContainer, CKUploadRequestConfiguration, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSSet, NSURL;
 @protocol CKAssetRepairSchedulerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
 @interface CKAssetRepairScheduler : NSObject
 {
     id <CKAssetRepairSchedulerDelegate> _delegate;
     CKContainer *_container;
-    CKContainer *_repairContainer;
+    CKUploadRequestConfiguration *_repairContainerOverrides;
+    NSURL *_temporaryAssetDirectory;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSOperationQueue *_requestOperationQueue;
@@ -39,8 +40,8 @@
 + (long long)assetSizeEstimate;
 + (long long)cacheSizeLimit;
 + (long long)cacheCountLimit;
-+ (long long)batchCountLimit;
-+ (long long)batchSizeLimit;
++ (long long)repairBatchCountLimit;
++ (long long)repairBatchSizeLimit;
 + (double)requestTimeout;
 @property(retain, nonatomic) NSMutableDictionary *retryCountForAssets; // @synthesize retryCountForAssets=_retryCountForAssets;
 @property(retain, nonatomic) NSMutableSet *assetsBeingUploaded; // @synthesize assetsBeingUploaded=_assetsBeingUploaded;
@@ -54,11 +55,11 @@
 @property(retain, nonatomic) NSOperationQueue *requestOperationQueue; // @synthesize requestOperationQueue=_requestOperationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
-@property(nonatomic) __weak CKContainer *repairContainer; // @synthesize repairContainer=_repairContainer;
+@property(copy, nonatomic) NSURL *temporaryAssetDirectory; // @synthesize temporaryAssetDirectory=_temporaryAssetDirectory;
+@property(copy, nonatomic) CKUploadRequestConfiguration *repairContainerOverrides; // @synthesize repairContainerOverrides=_repairContainerOverrides;
 @property(nonatomic) __weak CKContainer *container; // @synthesize container=_container;
 @property __weak id <CKAssetRepairSchedulerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)temporaryAssetDirectory;
 - (unsigned long long)cacheCount;
 - (unsigned long long)cacheSize;
 - (id)allRemainingUploadableAssets;
@@ -78,7 +79,7 @@
 @property(readonly, nonatomic) NSSet *remainingAssets;
 - (void)removeUploadRequestWithRecordID:(id)arg1;
 - (void)addUploadRequestsWithMetadata:(id)arg1 requestBlocks:(id)arg2;
-- (id)initWithContainer:(id)arg1 repairContainer:(id)arg2;
+- (id)initWithContainer:(id)arg1 repairContainerOverrides:(id)arg2;
 - (void)dealloc;
 
 @end

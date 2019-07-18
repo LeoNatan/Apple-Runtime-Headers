@@ -146,6 +146,7 @@ __attribute__((visibility("hidden")))
 - (void)didOpen;
 - (void)willOpen;
 - (void)refreshQuickLookFrame;
+- (void)didShowScreentimeLockout:(BOOL)arg1;
 - (void)didLoad;
 - (void)discard;
 - (void)deactivate;

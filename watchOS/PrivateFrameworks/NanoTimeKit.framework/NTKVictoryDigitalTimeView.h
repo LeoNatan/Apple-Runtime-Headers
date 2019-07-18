@@ -10,6 +10,7 @@
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
 
 @class CLKDevice, CLKTimeFormatter, NSString, NTKVictoryDigitsView;
+@protocol NTKVictoryDigitalTimeViewDelegate;
 
 @interface NTKVictoryDigitalTimeView : UIView <CLKTimeFormatterObserver, NTKTimeView>
 {
@@ -23,9 +24,11 @@
     _Bool _invertedColors;
     unsigned int _style;
     unsigned int _color;
+    id <NTKVictoryDigitalTimeViewDelegate> _delegate;
 }
 
 + (id)transitionTimingFunction;
+@property(nonatomic) __weak id <NTKVictoryDigitalTimeViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int color; // @synthesize color=_color;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 @property(nonatomic) _Bool invertedColors; // @synthesize invertedColors=_invertedColors;

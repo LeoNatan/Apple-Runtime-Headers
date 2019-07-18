@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MapsSupport/MSPReplicaEdit.h>
+#import <MapsSupport/MSPReplicaEditRemoveTombstone.h>
 
 @class NSDate;
 
-@interface MSPHistoryReplicaEditUpdateModificationDate : MSPReplicaEdit
+@interface MSPHistoryReplicaEditUpdateModificationDate : MSPReplicaEditRemoveTombstone
 {
     NSDate *_modificationDate;
 }

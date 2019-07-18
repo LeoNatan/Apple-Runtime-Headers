@@ -48,7 +48,7 @@
 - (struct NSArray *)topSuggestionsForSink:(id)arg1 count:(unsigned long)arg2 transportType:(int)arg3;
 - (_Bool)topSuggestionsForSink:(id)arg1 count:(unsigned long)arg2 transportType:(int)arg3 callback:(CDUnknownBlockType)arg4 onQueue:(id)arg5;
 - (_Bool)detachSink:(id)arg1;
-- (_Bool)attachSink:(id)arg1;
+- (void)attachSink:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;
 - (id)initWithEntryManager:(id)arg1 shortcutManager:(id)arg2;
 

@@ -10,7 +10,7 @@
 #import <iWorkImport/TSKModel-Protocol.h>
 #import <iWorkImport/TSWPSection-Protocol.h>
 
-@class NSArray, NSString, TPPageMaster, TPPageTemplate, TSDFill, TSWPStorage;
+@class NSArray, NSString, NSURL, NSUUID, TPPageMaster, TPPageTemplate, TSDFill, TSWPStorage;
 
 __attribute__((visibility("hidden")))
 @interface TPSection : TSPObject <TSKDocumentObject, TSKModel, TSWPSection>
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     TPPageMaster *_pageMasters[3];
     TSWPStorage *_parentStorage;
     NSString *_name;
+    NSUUID *_sectionHyperlinkUUID;
     _Bool _inheritPreviousHeaderFooter;
     _Bool _pageMasterFirstPageDifferent;
     _Bool _pageMasterFirstPageHidesHeaderFooter;
@@ -33,13 +34,12 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)allDrawables;
 - (void)p_addAllDrawablesFromInfo:(id)arg1 toMutableArray:(id)arg2;
-@property(readonly, copy) NSString *description;
 - (id)pageMasterOwningModel:(id)arg1;
 - (id)pageMasterForType:(long long)arg1;
 @property(readonly, nonatomic) NSArray *pageMasters;
 - (void)p_makeUserGuideStorage;
--     // Error parsing type: v24@0:8r^{SectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}^{Reference}^{Reference}^{FillArchive}ffffBBBBffffffIIBBBI}16, name: p_upgradePageSizeAndMarginsFromParsedArchive:
--     // Error parsing type: v32@0:8@16r^{SectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}^{Reference}^{Reference}^{FillArchive}ffffBBBBffffffIIBBBI}24, name: p_unarchiveAndUpgrade:archive:
+-     // Error parsing type: v24@0:8r^{SectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}^{Reference}^{Reference}^{FillArchive}^{UUID}ffffBBBBffffffIIBBBI}16, name: p_upgradePageSizeAndMarginsFromParsedArchive:
+-     // Error parsing type: v32@0:8@16r^{SectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}^{Reference}^{Reference}^{FillArchive}^{UUID}ffffBBBBffffffIIBBBI}24, name: p_unarchiveAndUpgrade:archive:
 - (void)i_clearPropertiesToDefaults;
 - (void)i_copyHeadersAndFootersFrom:(id)arg1 dolcContext:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)i_ensureHeaderFooterStoragesExistWithStylesheet:(id)arg1;
@@ -53,6 +53,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak TSWPStorage *parentStorage;
 - (void)setPageMasterForFirstPage:(id)arg1;
 - (id)copyWithContext:(id)arg1;
+@property(readonly, nonatomic) NSURL *url;
+@property(readonly, nonatomic) NSString *localizedPrettyDisplayStringLong;
+@property(readonly, nonatomic) NSString *localizedPrettyDisplayStringShort;
+@property(copy, nonatomic) NSUUID *sectionHyperlinkUUID;
 - (_Bool)isHeaderFooterEmpty:(long long)arg1;
 - (_Bool)isHeaderFooterVisible:(long long)arg1;
 - (void)saveToArchiver:(id)arg1;
@@ -73,6 +77,7 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

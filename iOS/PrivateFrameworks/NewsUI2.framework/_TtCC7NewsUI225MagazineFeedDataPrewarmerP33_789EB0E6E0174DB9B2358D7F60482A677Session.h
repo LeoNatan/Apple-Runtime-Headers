@@ -10,14 +10,17 @@
 {
     // Error parsing type: , name: state
     // Error parsing type: , name: loadedOffline
+    // Error parsing type: , name: $__lazy_storage_$_name
     // Error parsing type: , name: identifier
     // Error parsing type: , name: feedRules
+    // Error parsing type: , name: feedServiceConfigFetcher
     // Error parsing type: , name: feedService
     // Error parsing type: , name: feedConfigurationService
     // Error parsing type: , name: paidBundleConfiguration
     // Error parsing type: , name: offlineManager
     // Error parsing type: , name: deferredPromise
     // Error parsing type: , name: startDate
+    // Error parsing type: , name: fetchResults
 }
 
 @end

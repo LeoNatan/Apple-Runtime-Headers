@@ -10,6 +10,6 @@
 - (void)wakeup;
 - (void)sleepWithCompletionHandler:(void (^)(void))arg1;
 - (void)updateConfiguration:(NEConfiguration *)arg1;
-- (void)startWithConfiguration:(NEConfiguration *)arg1 completionHandler:(void (^)(_Bool, int, NSArray *))arg2;
+- (void)startWithConfiguration:(NEConfiguration *)arg1 completionHandler:(void (^)(_Bool, int, NSArray *, NSArray *))arg2;
 @end
 

@@ -6,11 +6,12 @@
 
 #import <UIKit/UIControl.h>
 
+#import <PhotosUICore/PXAccessibilityView-Protocol.h>
 #import <PhotosUICore/PXGReusableView-Protocol.h>
 
-@class PXCuratedLibraryOverlayButtonConfiguration, UIImageView, UILabel, UIView, UIVisualEffectView;
+@class NSString, PXCuratedLibraryOverlayButtonConfiguration, UIImageView, UILabel, UIView, UIVisualEffectView;
 
-@interface PXCuratedLibraryOverlayButton : UIControl <PXGReusableView>
+@interface PXCuratedLibraryOverlayButton : UIControl <PXGReusableView, PXAccessibilityView>
 {
     PXCuratedLibraryOverlayButtonConfiguration *_userData;
     UIVisualEffectView *_effectView;
@@ -23,6 +24,7 @@
 + (void)_getSize:(out struct CGSize *)arg1 titleFrame:(out struct CGRect *)arg2 iconFrame:(out struct CGRect *)arg3 forConfiguration:(id)arg4 title:(id)arg5;
 + (struct CGSize)sizeWithConfiguration:(id)arg1;
 + (struct CGSize)_sizeOfTitle:(id)arg1 withFont:(struct UIFont *)arg2;
++ (id)roundedCornerMaskImage:(CDStruct_2bd92d94)arg1 size:(struct CGSize)arg2;
 + (id)buttonSizeCache;
 + (id)titleSizeCache;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -39,12 +41,20 @@
 - (void)_performAction:(id)arg1;
 - (void)_updateButtonWithConfiguration:(id)arg1;
 - (void)_setupViews;
+@property(readonly, copy, nonatomic) NSString *accessibilityLabel;
+@property(readonly, nonatomic) _Bool isContainedInAsset;
+@property(readonly, nonatomic) _Bool isAccessible;
 - (void)prepareForReuse;
 - (void)becomeReusable;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)layoutSubviews;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

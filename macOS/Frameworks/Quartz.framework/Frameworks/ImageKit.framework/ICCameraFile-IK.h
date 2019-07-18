@@ -24,12 +24,15 @@
 - (id)imageRepresentation;
 - (struct CGImage *)thumbnail;
 - (void)setImage:(id)arg1;
+- (void)rotateOrientation:(char *)arg1;
 - (void)rotateRight;
 - (void)rotateLeft;
 - (void)didDownloadMetadata;
 - (void)didDownloadThumbnail;
 - (unsigned char)metadataState;
 - (void)setMetadataState:(unsigned char)arg1;
+- (void)setThumbnailOrientation:(unsigned char)arg1;
+- (unsigned char)thumbnailOrientation;
 - (unsigned char)thumbnailState;
 - (void)setThumbnailState:(unsigned char)arg1;
 - (BOOL)alreadyDownloaded;

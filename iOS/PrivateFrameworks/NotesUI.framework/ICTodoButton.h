@@ -11,14 +11,12 @@
 @interface ICTodoButton : UIButton
 {
     _Bool _done;
-    _Bool _isRTL;
     ICTrackedParagraph *_trackedParagraph;
     struct CGSize _defaultSize;
     struct CGSize _defaultImageSize;
 }
 
 @property(nonatomic) struct CGSize defaultImageSize; // @synthesize defaultImageSize=_defaultImageSize;
-@property(nonatomic) _Bool isRTL; // @synthesize isRTL=_isRTL;
 @property(nonatomic) struct CGSize defaultSize; // @synthesize defaultSize=_defaultSize;
 @property(nonatomic) __weak ICTrackedParagraph *trackedParagraph; // @synthesize trackedParagraph=_trackedParagraph;
 @property(nonatomic, getter=isDone) _Bool done; // @synthesize done=_done;
@@ -32,6 +30,7 @@
 - (void)wasPressed;
 - (void)setHighlighted:(_Bool)arg1;
 - (struct CGRect)imageRectForContentRect:(struct CGRect)arg1;
+- (void)trackedParagraphDidChange;
 - (id)initWithDragDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

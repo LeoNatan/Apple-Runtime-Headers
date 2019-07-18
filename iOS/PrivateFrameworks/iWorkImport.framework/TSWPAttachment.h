@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     TSWPStorage *_parentStorage;
 }
 
++ (id)mostSpecificAttachmentFromInfo:(id)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (unsigned long long)attributeArrayKind;
 @property(nonatomic) __weak TSWPStorage *parentStorage; // @synthesize parentStorage=_parentStorage;
@@ -30,8 +31,11 @@ __attribute__((visibility("hidden")))
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
+- (void)invalidateSize;
 - (void)infoChanged;
 @property(readonly, nonatomic) _Bool specifiesEnabledKnobMask;
+@property(readonly, nonatomic) _Bool isVerticallyCentered;
+@property(readonly, nonatomic) _Bool isHorizontallyCentered;
 @property(readonly, nonatomic) _Bool isSearchable;
 @property(readonly, nonatomic) Class positionerClass;
 @property(readonly, nonatomic) _Bool isAttachedToBodyText;

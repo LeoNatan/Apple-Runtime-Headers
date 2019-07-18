@@ -10,7 +10,6 @@
 @protocol PXCuratedLibraryViewModelPresenter;
 
 @protocol PXMutablePhotosLibraryViewModel <NSObject>
-@property(nonatomic) double distanceBetweenSafeAreaBottomAndSolidContent;
 @property(nonatomic) BOOL wantsDarkStatusBar;
 @property(retain, nonatomic) UXBarButtonItem *navigationDisplayModeButtonItem;
 @property(nonatomic) long long zoomLevel;
@@ -21,6 +20,7 @@
 @property(nonatomic) BOOL allPhotosLayoutIsAnimating;
 @property(nonatomic) BOOL allPhotosAspectFit;
 @property(nonatomic) BOOL isInteractiveZooming;
+@property(nonatomic) double daysMarginScale;
 @property(nonatomic) BOOL isPinching;
 @property(nonatomic) BOOL isSelecting;
 @property(nonatomic) BOOL viewBasedDecorationsEnabled;

@@ -10,10 +10,8 @@
 {
 }
 
-+ (void)load;
 
 // Remaining properties
 @property(readonly, nonatomic) double angle; // @dynamic angle;
-
 @end
 

@@ -6,19 +6,20 @@
 
 #import <objc/NSObject.h>
 
+#import <DoNotDisturbServer/DNDSSyncService-Protocol.h>
 #import <DoNotDisturbServer/IDSServiceDelegate-Protocol.h>
 
 @class IDSService, NSString;
-@protocol DNDSIDSSyncServiceDelegate, OS_dispatch_queue;
+@protocol DNDSSyncServiceDelegate, OS_dispatch_queue;
 
-@interface DNDSIDSSyncService : NSObject <IDSServiceDelegate>
+@interface DNDSIDSSyncService : NSObject <IDSServiceDelegate, DNDSSyncService>
 {
     NSObject<OS_dispatch_queue> *_queue;
     IDSService *_syncService;
-    id <DNDSIDSSyncServiceDelegate> _delegate;
+    id <DNDSSyncServiceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <DNDSIDSSyncServiceDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <DNDSSyncServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_queue_handleIncomingMessage:(id)arg1 deviceIdentifier:(id)arg2;
 - (_Bool)_queue_sendMessage:(id)arg1 withVersionNumber:(unsigned long long)arg2 error:(id *)arg3;

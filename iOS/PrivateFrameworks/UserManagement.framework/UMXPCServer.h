@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     _Bool _didBroadcastWillSwitchToUser;
     _Bool _didSendTasks;
     _Bool _didBroadcastUploadContent;
-    _Bool _didRegisterPersonaStakeholder;
+    _Bool _didRegisterPersonaCalbackStakeholder;
     unsigned int _interruptionRetryCount;
     id _stakeholder;
     unsigned long long _stakeholderType;
@@ -48,10 +48,12 @@ __attribute__((visibility("hidden")))
     NSXPCListener *_xpcListener;
     id _personaStakeholder;
     CDUnknownBlockType _personaRegistrationCompletionHandler;
+    id _personaUpdateCallbackStakeholder;
 }
 
 + (id)sharedServer;
-@property(nonatomic) _Bool didRegisterPersonaStakeholder; // @synthesize didRegisterPersonaStakeholder=_didRegisterPersonaStakeholder;
+@property(nonatomic) _Bool didRegisterPersonaCalbackStakeholder; // @synthesize didRegisterPersonaCalbackStakeholder=_didRegisterPersonaCalbackStakeholder;
+@property(nonatomic) __weak id personaUpdateCallbackStakeholder; // @synthesize personaUpdateCallbackStakeholder=_personaUpdateCallbackStakeholder;
 @property(copy, nonatomic) CDUnknownBlockType personaRegistrationCompletionHandler; // @synthesize personaRegistrationCompletionHandler=_personaRegistrationCompletionHandler;
 @property(nonatomic) __weak id personaStakeholder; // @synthesize personaStakeholder=_personaStakeholder;
 @property(nonatomic) unsigned int interruptionRetryCount; // @synthesize interruptionRetryCount=_interruptionRetryCount;
@@ -85,8 +87,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long stakeholderType; // @synthesize stakeholderType=_stakeholderType;
 @property(nonatomic) __weak id stakeholder; // @synthesize stakeholder=_stakeholder;
 - (void).cxx_destruct;
+- (void)registerPersonaListUpdateObserver:(id)arg1 withMachService:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)registerPersonaListUpdateObserver:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_registerPersonaListObserver:(id)arg1;
+- (id)_registerPersonaListObserver:(id)arg1 withMachService:(id)arg2;
+- (void)launchPersonaCallback;
+- (id)registerPersonaUpdateCallbackWithMachService:(id)arg1;
 - (void)personaLogoutWithUserODuuid:(id)arg1 withUid:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)personaLoginWithUserODuuid:(id)arg1 withUid:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)fetchMultiPersonaBundleIdentifierWithcompletionHandler:(CDUnknownBlockType)arg1;
@@ -100,6 +105,7 @@ __attribute__((visibility("hidden")))
 - (void)deleteUserPersona:(id)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)createUserPersona:(id)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)personaUpdateCallbackForMachServiceCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)personaListDidUpdateCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_broadcastpersonaListDidUpdate;
 - (void)bubbleDidPop;

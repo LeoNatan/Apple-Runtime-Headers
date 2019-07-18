@@ -10,11 +10,11 @@
 
 @interface CRImage : NSObject
 {
+    struct __CVBuffer *_pixelBuffer;
     BOOL _isFullRange;
     BOOL _vImageDataIsCopy;
     int _colorSpace;
     CIImage *_ciImage;
-    struct __CVBuffer *_pixelBuffer;
     struct CGImage *_cgImage;
     struct vImage_Buffer _vImage;
 }

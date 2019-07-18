@@ -34,6 +34,7 @@
 - (void)setNotificationTopics:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)invalidateAndUnregister;
 - (void)willPresentNotification:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)didOpenApplicationForResponse:(id)arg1;
 - (void)didChangeSettings:(id)arg1;
 - (void)didReceiveNotificationResponse:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)setBadgeString:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

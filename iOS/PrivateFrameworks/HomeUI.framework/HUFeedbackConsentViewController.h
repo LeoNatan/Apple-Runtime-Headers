@@ -6,27 +6,29 @@
 
 #import <UIKit/UIViewController.h>
 
-@class NSString, UITextView;
+@class WKWebView;
 @protocol HUFeedbackConsentViewControllerDelegate;
 
 @interface HUFeedbackConsentViewController : UIViewController
 {
     _Bool _isFamilyAndFriendsConsent;
-    UITextView *_consentView;
-    NSString *_consentFormName;
+    WKWebView *_consentView;
     id <HUFeedbackConsentViewControllerDelegate> _consentDelegate;
 }
 
-+ (id)consentFormName;
 @property(retain, nonatomic) id <HUFeedbackConsentViewControllerDelegate> consentDelegate; // @synthesize consentDelegate=_consentDelegate;
 @property(nonatomic) _Bool isFamilyAndFriendsConsent; // @synthesize isFamilyAndFriendsConsent=_isFamilyAndFriendsConsent;
-@property(retain, nonatomic) NSString *consentFormName; // @synthesize consentFormName=_consentFormName;
-@property(retain, nonatomic) UITextView *consentView; // @synthesize consentView=_consentView;
+@property(retain, nonatomic) WKWebView *consentView; // @synthesize consentView=_consentView;
 - (void).cxx_destruct;
+- (id)consentFormFilePath;
+- (void)dealloc;
+- (id)htmlString;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)didDeclineConsent;
 - (void)didAcceptConsent;
-- (void)_addConstraints;
+- (void)updateViewConstraints;
 - (void)viewDidLoad;
+- (void)loadView;
 - (id)initWithConsentDelegate:(id)arg1;
 
 @end

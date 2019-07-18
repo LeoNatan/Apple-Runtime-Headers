@@ -32,6 +32,8 @@
 + (void)purgeOCRInContext:(id)arg1;
 + (void)purgeImageClassificationsInContext:(id)arg1;
 + (void)setImageClassificationTemporarilyDisabled:(_Bool)arg1;
++ (_Bool)imageClassificationEnabled;
++ (_Bool)ocrGenerationEnabled;
 + (id)sharedGenerator;
 // Error parsing type for property shouldGenerateAttachmentsWhenReachable:
 // Property attributes: TAB,N,V_shouldGenerateAttachmentsWhenReachable
@@ -79,8 +81,6 @@
 - (id)missingOrOutdatedMetaDataAttachmentsInContext:(id)arg1;
 - (id)missingOrOutdatedOCRSummaryAttachmentsInContext:(id)arg1;
 - (id)missingOrOutdatedImageClassificationSummaryAttachmentsInContext:(id)arg1;
-@property(readonly, nonatomic) _Bool imageClassificationEnabled;
-@property(readonly, nonatomic) _Bool ocrGenerationEnabled;
 - (void)generatePreviewsIfNeeded;
 @property(readonly, nonatomic) _Bool previewOperationsIdle;
 - (_Bool)isPreviewGenerationSupported;

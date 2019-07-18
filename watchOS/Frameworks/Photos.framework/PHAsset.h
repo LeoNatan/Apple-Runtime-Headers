@@ -7,11 +7,12 @@
 #import <Photos/PHObject.h>
 
 #import <Photos/PHResourceChooserAsset-Protocol.h>
+#import <Photos/PHThumbnailAsset-Protocol.h>
 #import <Photos/_PLImageLoadingAsset-Protocol.h>
 
-@class CLLocation, NSArray, NSData, NSDate, NSManagedObjectContext, NSManagedObjectID, NSSet, NSString, NSURL;
+@class CLLocation, NSArray, NSData, NSDate, NSManagedObjectContext, NSManagedObjectID, NSSet, NSString, NSURL, PHPhotoLibrary;
 
-@interface PHAsset : PHObject <_PLImageLoadingAsset, PHResourceChooserAsset>
+@interface PHAsset : PHObject <PHThumbnailAsset, _PLImageLoadingAsset, PHResourceChooserAsset>
 {
     CLLocation *_cachedLocation;
     NSString *_cloudAssetGUID;
@@ -88,6 +89,7 @@
 + (id)fetchFirstAssetInEachMonthHighlightWithOptions:(id)arg1;
 + (id)fetchReferencedAssetsWithOptions:(id)arg1;
 + (id)fetchAssetsForKeywords:(id)arg1 options:(id)arg2;
++ (id)fetchAssetsInAssetCollections:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsWithObjectIDs:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsAllowedForSceneProcessingWithOptions:(id)arg1;
 + (id)fetchAssetsNeedingSceneProcessingWithOptions:(id)arg1;
@@ -116,7 +118,7 @@
 + (id)propertySetAccessorsByPropertySet;
 + (Class)propertySetClassForPropertySet:(id)arg1;
 + (id)identifierCode;
-+ (id)_transformMediaSubtypeComparisonPredicate:(id)arg1 options:(id)arg2;
++ (id)_transformMediaSubtypeReferences:(id)arg1 inComparisonPredicate:(id)arg2 options:(id)arg3;
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyMap;
 + (_Bool)managedObjectSupportsMontage;
@@ -150,13 +152,14 @@
 + (id)fetchMovieCuratedAssetsInMemory:(id)arg1;
 + (id)fetchCuratedAssetsInAssetCollection:(id)arg1 referencePersons:(id)arg2;
 + (id)fetchExtendedCuratedAssetsInAssetCollection:(id)arg1;
-+ (id)fetchOverviewCuratedAssetsInAssetCollection:(id)arg1;
 + (id)fetchCuratedAssetsInAssetCollection:(id)arg1;
 + (id)fetchKeyCuratedAssetInAssetCollection:(id)arg1 referencePersons:(id)arg2;
++ (id)fetchKeyCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2 options:(id)arg3;
 + (id)fetchKeyCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2;
 + (id)_fetchRepresentativeAssetInAssetCollection:(id)arg1;
 + (id)_fetchCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2 referencePersons:(id)arg3 fetchOptions:(id)arg4 onlyKey:(_Bool)arg5;
 + (id)_requestResultInfoForImageInfo:(id)arg1 videoInfo:(id)arg2 adjustmentInfo:(id)arg3 renderingError:(id)arg4;
++ (id)fetchAssetsForReferences:(id)arg1 photoLibrary:(id)arg2;
 + (void)_inq_trimToMostRecentImageManagerMessages;
 + (id)_currentTimestampString;
 + (void)_inq_recordRequestID:(int)arg1;
@@ -229,6 +232,7 @@
 - (id)descriptionForMediaAnalysisWithManagedAsset:(id)arg1;
 - (id)detailedDebugDescriptionInLibrary:(id)arg1;
 - (id)adjustmentsDebugMetadata;
+- (id)evaluationDebugMetadata;
 - (id)gatingDebugMetadata;
 - (id)__dictionaryWithContentsOfData:(id)arg1;
 @property(readonly, copy) NSString *description;
@@ -257,6 +261,7 @@
 @property(readonly, nonatomic) _Bool isReferencedAsset;
 @property(readonly, nonatomic) _Bool isMomentSharedAsset;
 @property(readonly, nonatomic) _Bool isCloudSharedAsset;
+@property(readonly, nonatomic) _Bool hasPhotoStreamTagID;
 @property(readonly, nonatomic) _Bool isPhotoStreamPhoto;
 @property(readonly, nonatomic) _Bool isAudio;
 @property(readonly, nonatomic) _Bool isPhoto;
@@ -375,6 +380,7 @@
 - (_Bool)shouldUseRAWResourceWithOriginalResourceChoice:(unsigned int)arg1;
 - (_Bool)shouldUseRAWResourceAsUnadjustedEditBase;
 - (unsigned int)originalChoiceToFallbackForUnsupportRAW;
+- (id)objectReference;
 - (id)messagesForRecentImageManagerRequests;
 - (void)recordImageManagerMessageForRequestID:(int)arg1 message:(id)arg2;
 
@@ -382,6 +388,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned int hash;
 @property(readonly, nonatomic) NSManagedObjectID *objectID;
+@property(readonly, nonatomic) PHPhotoLibrary *photoLibrary;
 @property(readonly) Class superclass;
 
 @end

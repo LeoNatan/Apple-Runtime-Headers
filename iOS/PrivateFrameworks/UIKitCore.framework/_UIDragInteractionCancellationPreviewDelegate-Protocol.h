@@ -10,6 +10,7 @@
 @protocol UIDragAnimating;
 
 @protocol _UIDragInteractionCancellationPreviewDelegate <NSObject>
+- (void)_dragInteractionDidCancelWithoutBeginning:(UIDragInteraction *)arg1;
 - (void)_dragInteractionCancellation:(UIDragInteraction *)arg1 item:(UIDragItem *)arg2 willAnimateCancelWithAnimator:(id <UIDragAnimating>)arg3;
 - (UITargetedDragPreview *)_dragInteractionCancellation:(UIDragInteraction *)arg1 previewForCancellingItem:(UIDragItem *)arg2 defaultPreview:(UITargetedDragPreview *)arg3 proposedPreview:(UITargetedDragPreview *)arg4;
 @end

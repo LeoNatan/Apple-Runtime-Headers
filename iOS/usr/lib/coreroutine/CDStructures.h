@@ -38,6 +38,28 @@ struct _NSRange {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    char *_field1;
+} CDStruct_b8464340;
+
+typedef struct {
+    void *data;
+    void *reserved;
+    unsigned long long dim[4];
+    unsigned long long stride[4];
+    unsigned long long width;
+    unsigned long long height;
+    unsigned long long channels;
+    unsigned long long batch_number;
+    unsigned long long sequence_length;
+    unsigned long long stride_width;
+    unsigned long long stride_height;
+    unsigned long long stride_channels;
+    unsigned long long stride_batch_number;
+    unsigned long long stride_sequence_length;
+    int storage_type;
+} CDStruct_0a65202a;
+
+typedef struct {
     double _field1;
     double _field2;
 } CDStruct_c3b9c2ee;

@@ -6,25 +6,33 @@
 
 #import <objc/NSObject.h>
 
-#import <SpringBoard/SBSystemServiceServerHomeScreenDelegate-Protocol.h>
+#import <SpringBoard/BSServiceConnectionListenerDelegate-Protocol.h>
+#import <SpringBoard/SBSHomeScreenServiceClientToServerInterface-Protocol.h>
 
-@class FBServiceClientAuthenticator, NSString, SBIconController;
+@class BSServiceConnectionListener, FBServiceClientAuthenticator, NSMutableSet, NSString, SBIconController;
 
-@interface SBHomeScreenService : NSObject <SBSystemServiceServerHomeScreenDelegate>
+@interface SBHomeScreenService : NSObject <BSServiceConnectionListenerDelegate, SBSHomeScreenServiceClientToServerInterface>
 {
+    struct os_unfair_lock_s _lock;
     SBIconController *_iconController;
     FBServiceClientAuthenticator *_resetHomeScreenLayoutAuthenticator;
     FBServiceClientAuthenticator *_requestSuggestedAppAuthenticator;
+    FBServiceClientAuthenticator *_iconFolderPathLookupAuthenticator;
+    NSMutableSet *_activeConnections;
+    BSServiceConnectionListener *_connectionListener;
 }
 
+@property(readonly, nonatomic) BSServiceConnectionListener *connectionListener; // @synthesize connectionListener=_connectionListener;
+@property(readonly, nonatomic) NSMutableSet *activeConnections; // @synthesize activeConnections=_activeConnections;
+@property(readonly, nonatomic) FBServiceClientAuthenticator *iconFolderPathLookupAuthenticator; // @synthesize iconFolderPathLookupAuthenticator=_iconFolderPathLookupAuthenticator;
 @property(readonly, nonatomic) FBServiceClientAuthenticator *requestSuggestedAppAuthenticator; // @synthesize requestSuggestedAppAuthenticator=_requestSuggestedAppAuthenticator;
 @property(readonly, nonatomic) FBServiceClientAuthenticator *resetHomeScreenLayoutAuthenticator; // @synthesize resetHomeScreenLayoutAuthenticator=_resetHomeScreenLayoutAuthenticator;
 @property(readonly, nonatomic) SBIconController *iconController; // @synthesize iconController=_iconController;
 - (void).cxx_destruct;
-- (void)systemServiceServer:(id)arg1 requestSuggestedApplicationWithBundleIdentifier:(id)arg2 assertionPort:(id)arg3 forClient:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
-- (void)systemServiceServer:(id)arg1 resetHomeScreenLayoutForClient:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
-- (void)requestSuggestedApplicationForClient:(id)arg1 bundleIdentifier:(id)arg2 assertionPort:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)resetHomeScreenLayoutForClient:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;
+- (id)folderPathToIconWithBundleIdentifier:(id)arg1;
+- (oneway void)requestSuggestedApplicationWithBundleIdentifier:(id)arg1 assertionPort:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (oneway void)resetHomeScreenLayoutWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithIconController:(id)arg1;
 
 // Remaining properties

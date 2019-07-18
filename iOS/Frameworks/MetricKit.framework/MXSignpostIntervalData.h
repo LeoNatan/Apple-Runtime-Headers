@@ -8,7 +8,7 @@
 
 #import <MetricKit/NSSecureCoding-Protocol.h>
 
-@class MXAverage, MXCPUMetric, MXDiskIOMetric, MXHistogram, MXMemoryMetric, NSMeasurement, NSMeasurementFormatter;
+@class MXAverage, MXHistogram, NSMeasurement, NSMeasurementFormatter;
 
 @interface MXSignpostIntervalData : NSObject <NSSecureCoding>
 {
@@ -17,17 +17,11 @@
     MXAverage *_averageMemory;
     NSMeasurement *_cumulativeLogicalWrites;
     NSMeasurementFormatter *_measurementFormatter;
-    MXCPUMetric *_signpostCPUMetrics;
-    MXMemoryMetric *_signpostMemoryMetrics;
-    MXDiskIOMetric *_signpostDiskIOMetrics;
     NSMeasurement *_peakMemory;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly) NSMeasurement *peakMemory; // @synthesize peakMemory=_peakMemory;
-@property(readonly) MXDiskIOMetric *signpostDiskIOMetrics; // @synthesize signpostDiskIOMetrics=_signpostDiskIOMetrics;
-@property(readonly) MXMemoryMetric *signpostMemoryMetrics; // @synthesize signpostMemoryMetrics=_signpostMemoryMetrics;
-@property(readonly) MXCPUMetric *signpostCPUMetrics; // @synthesize signpostCPUMetrics=_signpostCPUMetrics;
 @property(retain) NSMeasurementFormatter *measurementFormatter; // @synthesize measurementFormatter=_measurementFormatter;
 @property(readonly) NSMeasurement *cumulativeLogicalWrites; // @synthesize cumulativeLogicalWrites=_cumulativeLogicalWrites;
 @property(readonly) MXAverage *averageMemory; // @synthesize averageMemory=_averageMemory;
@@ -38,7 +32,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithHistogramDurationData:(id)arg1 withCumulativeCPUTime:(id)arg2 withPeakMemory:(id)arg3 withAverageMemory:(id)arg4 withCumulativeLogicalWrites:(id)arg5;
-- (id)initWithHistogramDurationData:(id)arg1 withCPUMetrics:(id)arg2 withMemoryMetrics:(id)arg3 withDiskIOMetrics:(id)arg4;
 - (id)initWithHistogramDurationData:(id)arg1 withCumulativeCPUTime:(id)arg2 withAverageMemory:(id)arg3 withCumulativeLogicalWrites:(id)arg4;
 
 @end

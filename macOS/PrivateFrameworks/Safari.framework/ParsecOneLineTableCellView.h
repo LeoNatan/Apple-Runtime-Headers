@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (id)identifier;
 - (void)configureUsingCompletionListItem:(struct CompletionListItem *)arg1 session:(id)arg2;
 - (void)_updateImageView:(id)arg1;
-- (void)_updateImageView:(id)arg1 withSize:(struct CGSize)arg2;
+- (void)_updateImageView:(id)arg1 withSize:(struct CGSize)arg2 isTemplate:(BOOL)arg3;
 
 @end
 

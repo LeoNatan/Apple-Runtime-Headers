@@ -17,12 +17,15 @@
     struct os_unfair_lock_s _inflightRequestsLock;
     NSMutableSet *_inflightRequests;
     NSTimer *_updateTimer;
-    double _requestInterval;
     unsigned long long _maxRetries;
     unsigned long long _numRetries;
+    double _initialDelay;
+    double _requestInterval;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) double requestInterval; // @synthesize requestInterval=_requestInterval;
+@property(nonatomic) double initialDelay; // @synthesize initialDelay=_initialDelay;
 @property(readonly, nonatomic) NSMutableSet *processedRequests; // @synthesize processedRequests=_processedRequests;
 @property(readonly, nonatomic) NSHashTable *updaters; // @synthesize updaters=_updaters;
 - (void).cxx_destruct;

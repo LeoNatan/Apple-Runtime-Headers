@@ -18,6 +18,10 @@
 
 @interface EMMessage : EMRepositoryObject <EFLoggable, EMMessageBuilder, EMExtendedContentItem, EMMutableMessageListItem, EMMessageListItem, EMContentItem>
 {
+    unsigned int _isEditable;
+    NSArray *_mailboxes;
+    NSArray *_mailboxObjectIDs;
+    struct os_unfair_lock_s _mailboxesLock;
     _Bool _isVIP;
     _Bool _isBlocked;
     _Bool _hasAttachments;
@@ -29,14 +33,12 @@
     NSString *_summary;
     ECMessageFlags *_flags;
     int _conversationNotificationLevel;
-    NSArray *_mailboxObjectIDs;
     NSArray *_toList;
     NSArray *_ccList;
     NSDate *_expiryDate;
     CDUnknownBlockType _loaderBlock;
     id <ECEmailAddressConvertible> _senderAddress;
     NSArray *_bccList;
-    NSString *_mailbox;
     long long _conversationID;
     long long _dataTransferByteCount;
     long long _storageByteCount;
@@ -56,7 +58,6 @@
 + (id)predicateForMessagesWithObjectIDs:(id)arg1;
 + (id)predicateForMessageWithObjectID:(id)arg1;
 + (id)predicateForMessageWithItemID:(id)arg1 mailboxPredicate:(id)arg2 mailboxTypeResolver:(id)arg3;
-@property(copy, nonatomic) NSString *mailbox; // @synthesize mailbox=_mailbox;
 @property(copy, nonatomic) NSArray *bccList; // @synthesize bccList=_bccList;
 @property(retain, nonatomic) id <ECEmailAddressConvertible> senderAddress; // @synthesize senderAddress=_senderAddress;
 @property(copy, nonatomic) CDUnknownBlockType loaderBlock; // @synthesize loaderBlock=_loaderBlock;
@@ -76,8 +77,6 @@
 @property(readonly, copy) NSArray *ccList;
 - (void)setToList:(id)arg1;
 @property(readonly, copy) NSArray *toList;
-- (void)setMailboxObjectIDs:(id)arg1;
-@property(readonly, copy) NSArray *mailboxObjectIDs;
 - (void)setConversationID:(long long)arg1;
 @property(readonly) long long conversationID;
 - (void)setConversationNotificationLevel:(int)arg1;
@@ -107,6 +106,7 @@
 @property(readonly, copy, nonatomic) NSString *UTType;
 - (void)setAvailableRepresentations:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *availableRepresentations;
+@property(readonly) _Bool isEditable;
 @property(readonly) _Bool shouldArchiveByDefault;
 @property(readonly) _Bool supportsArchiving;
 @property(readonly) _Bool deleteMovesToTrash;
@@ -120,8 +120,11 @@
 @property(readonly, copy) NSIndexSet *flagColors;
 - (void)setHasUnflagged:(_Bool)arg1;
 @property(readonly) _Bool hasUnflagged;
-- (void)setCount:(unsigned int)arg1;
+- (void)setMailboxes:(id)arg1;
 @property(readonly, copy) NSArray *mailboxes;
+- (void)setMailboxObjectIDs:(id)arg1;
+@property(readonly, copy) NSArray *mailboxObjectIDs;
+- (void)setCount:(unsigned int)arg1;
 @property(readonly) unsigned int count;
 @property(readonly, nonatomic) id <EMCollectionItemID> itemID;
 - (void)encodeWithCoder:(id)arg1;
@@ -129,9 +132,12 @@
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
+- (id)cachedMetadataOfClass:(Class)arg1 forKey:(id)arg2;
+- (void)setCachedMetadata:(id)arg1 forKey:(id)arg2;
 - (void)_commonInitWithBuilder:(CDUnknownBlockType)arg1;
 - (id)initWithObjectID:(id)arg1 builder:(CDUnknownBlockType)arg2;
 - (id)initWithObjectID:(id)arg1;
+@property(nonatomic) _Bool isSinglePagePDF; // @dynamic isSinglePagePDF;
 - (void)setRepository:(id)arg1;
 @property(readonly, nonatomic) EMMessageRepository *repository;
 - (_Bool)isInManagedAccountWithSourceMailboxScope:(id)arg1;

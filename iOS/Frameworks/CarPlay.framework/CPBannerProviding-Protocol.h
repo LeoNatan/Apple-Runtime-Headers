@@ -6,9 +6,10 @@
 
 #import <CarPlay/NSObject-Protocol.h>
 
-@class CPManeuver, CPNavigationAlert, CPTravelEstimates;
+@class CPManeuver, CPNavigationAlert, CPTravelEstimates, NSNumber;
 
 @protocol CPBannerProviding <NSObject>
+- (void)sceneActivationStateChangedTo:(NSNumber *)arg1;
 - (void)postBannerForNavigationAlert:(CPNavigationAlert *)arg1;
 - (void)postBannerForManeuver:(CPManeuver *)arg1 travelEstimates:(CPTravelEstimates *)arg2;
 @end

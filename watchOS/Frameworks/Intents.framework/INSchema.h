@@ -23,6 +23,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)_supportedTypesDictionary;
++ (void)_resetCache;
++ (id)_cache;
 + (id)_defaultSchemaForBundle:(id)arg1;
 + (id)_defaultSchemaForBundle:(id)arg1 contentOptions:(unsigned int)arg2;
 + (id)systemSchema;

@@ -18,5 +18,9 @@
 - (BOOL)hasChangesPending;
 - (NSImage *)imageForPreferenceNamed:(NSString *)arg1;
 - (NSBox *)viewForPreferenceNamed:(NSString *)arg1;
+
+@optional
+- (NSString *)helpBook;
+- (NSString *)helpAnchor;
 @end
 

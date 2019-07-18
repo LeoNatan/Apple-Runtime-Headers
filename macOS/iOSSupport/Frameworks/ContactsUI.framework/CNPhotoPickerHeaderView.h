@@ -12,6 +12,7 @@
 __attribute__((visibility("hidden")))
 @interface CNPhotoPickerHeaderView : UIView
 {
+    BOOL _allowsEditing;
     CNContactPhotoView *_photoView;
     id <CNPhotoPickerHeaderViewDelegate> _delegate;
     UIView *_headerDropShadowView;
@@ -22,6 +23,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIButton *editButton; // @synthesize editButton=_editButton;
 @property(retain, nonatomic) NSArray *subviewsConstraints; // @synthesize subviewsConstraints=_subviewsConstraints;
 @property(retain, nonatomic) UIView *headerDropShadowView; // @synthesize headerDropShadowView=_headerDropShadowView;
+@property(nonatomic) BOOL allowsEditing; // @synthesize allowsEditing=_allowsEditing;
 @property(nonatomic) __weak id <CNPhotoPickerHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNContactPhotoView *photoView; // @synthesize photoView=_photoView;
 - (void).cxx_destruct;

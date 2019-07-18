@@ -23,8 +23,8 @@
 }
 
 + (id)_primaryAssetResource:(id)arg1;
-+ (_Bool)supportsAssetResourceTypes:(id)arg1 mediaType:(int *)arg2;
-+ (_Bool)_supportsAssetResourceTypes:(id)arg1 mediaType:(int *)arg2 mediaSubtype:(unsigned int *)arg3;
++ (_Bool)supportsAssetResourceTypes:(id)arg1 mediaType:(int *)arg2 importedBy:(short)arg3;
++ (_Bool)_supportsAssetResourceTypes:(id)arg1 mediaType:(int *)arg2 mediaSubtype:(unsigned int *)arg3 importedBy:(short)arg4;
 @property(readonly, nonatomic) PHExternalAssetResource *primaryResource; // @synthesize primaryResource=_primaryResource;
 @property(readonly, nonatomic) unsigned int mediaSubtype; // @synthesize mediaSubtype=_mediaSubtype;
 @property(readonly, nonatomic) int mediaType; // @synthesize mediaType=_mediaType;

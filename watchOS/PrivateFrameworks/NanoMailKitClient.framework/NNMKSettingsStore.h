@@ -14,7 +14,6 @@
     _Bool _loadRemoteImages;
     _Bool _organizeByThread;
     unsigned int _linesOfPreview;
-    unsigned int _flagStyle;
     NSString *_swipeRightAction;
     NSString *_signature;
     NPSDomainAccessor *_domainAccessor;
@@ -27,7 +26,6 @@
 @property(nonatomic) _Bool organizeByThread; // @synthesize organizeByThread=_organizeByThread;
 @property(nonatomic) _Bool loadRemoteImages; // @synthesize loadRemoteImages=_loadRemoteImages;
 @property(nonatomic) _Bool askBeforeDeleting; // @synthesize askBeforeDeleting=_askBeforeDeleting;
-@property(nonatomic) unsigned int flagStyle; // @synthesize flagStyle=_flagStyle;
 @property(nonatomic) unsigned int linesOfPreview; // @synthesize linesOfPreview=_linesOfPreview;
 - (void).cxx_destruct;
 - (void)_setValue:(id)arg1 forKey:(id)arg2;
@@ -37,7 +35,6 @@
 - (_Bool)_organizeByThread;
 - (_Bool)_loadRemoteImages;
 - (_Bool)_askBeforeDeleting;
-- (unsigned int)_flagStyle;
 - (unsigned int)_linesOfPreview;
 - (void)dealloc;
 - (id)init;

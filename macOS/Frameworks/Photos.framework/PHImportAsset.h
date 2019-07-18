@@ -16,7 +16,7 @@
     PHImportSource *_source;
     PHImportSource *_strongSource;
     struct os_unfair_lock_s _metadataLock;
-    NSDictionary *_userMetdata;
+    NSDictionary *_userMetadata;
     NSDictionary *_userInfo;
     NSString *_basenameForOriginalAdjustment;
     unsigned char _duplicateStateConfidence;
@@ -128,6 +128,8 @@
 @property(readonly) id sizeKey;
 @property(readonly) NSDate *dateKey;
 @property(readonly) id nameKey;
+@property(readonly, nonatomic) NSString *assetDescription;
+@property(readonly, nonatomic) NSString *title;
 @property(readonly, nonatomic) NSTimeZone *exifTimeZone;
 - (id)timezoneCorrectedExifImageDate;
 @property(readonly) id originatingAssetID;

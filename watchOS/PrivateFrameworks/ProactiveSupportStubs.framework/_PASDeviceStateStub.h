@@ -11,7 +11,6 @@
 }
 
 + (void)setCurrentOsBuild:(id)arg1;
-+ (void)setIsConstrainedDevice:(_Bool)arg1;
 + (void)setDeviceFormattedForProtection:(_Bool)arg1;
 + (void)setClassCLocked:(_Bool)arg1;
 + (void)setLockState:(int)arg1;

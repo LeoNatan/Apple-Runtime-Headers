@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (void)recomputeUrgency;
 - (void)ageUrgencies;
+- (id)allUrgencies;
 - (unsigned int)urgencyForClient:(id)arg1;
 - (unsigned int)currentUrgency;
 - (void)updateUrgency:(unsigned int)arg1 forClient:(id)arg2;

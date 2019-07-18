@@ -6,7 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
-@class BPSMultipleWatchMigrationView, BPSRemoteWatchView, NSArray;
+@class BPSMultipleWatchMigrationView, BPSRemoteWatchView, NSArray, NSString;
 @protocol BPSWatchMigrationControllerDelegate;
 
 @interface BPSWatchMigrationController : UIViewController
@@ -15,11 +15,13 @@
     id <BPSWatchMigrationControllerDelegate> _migrationDelegate;
     BPSRemoteWatchView *_watchView;
     BPSMultipleWatchMigrationView *_multipleWatchView;
+    NSString *_sourceDeviceName;
     NSArray *_migratableDevices;
 }
 
 @property(nonatomic) _Bool iTunes; // @synthesize iTunes=_iTunes;
 @property(retain, nonatomic) NSArray *migratableDevices; // @synthesize migratableDevices=_migratableDevices;
+@property(retain, nonatomic) NSString *sourceDeviceName; // @synthesize sourceDeviceName=_sourceDeviceName;
 @property(retain, nonatomic) BPSMultipleWatchMigrationView *multipleWatchView; // @synthesize multipleWatchView=_multipleWatchView;
 @property(retain, nonatomic) BPSRemoteWatchView *watchView; // @synthesize watchView=_watchView;
 @property(nonatomic) __weak id <BPSWatchMigrationControllerDelegate> migrationDelegate; // @synthesize migrationDelegate=_migrationDelegate;
@@ -30,6 +32,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (_Bool)shouldBeDisplayedGivenMigrationData:(id)arg1;
 - (id)initWithSnapshot:(id)arg1;
+- (id)initWithSourceDeviceName:(id)arg1;
 
 @end
 

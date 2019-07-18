@@ -13,7 +13,7 @@
 #import <MapKit/_MKNanoPlaceCardSectionProviding-Protocol.h>
 #import <MapKit/_MKTransitConnectionCellDelegate-Protocol.h>
 
-@class MKArtworkDataSourceCache, MKMapItem, MKTransitDeparturesDataProvider, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, UITableView;
+@class MKArtworkDataSourceCache, MKMapItem, MKTransitDeparturesDataProvider, NSMapTable, NSMutableDictionary, NSString, UITableView;
 @protocol MKTransitDeparturesDataSourceHosting, _MKInfoCardAnalyticsDelegate, _MKNanoPlaceCardSectionProvidingDelegate;
 
 @interface MKTransitDeparturesDataSource : NSObject <_MKTransitConnectionCellDelegate, MKTransitDeparturesCellDelegate, MKTransitDeparturesDataProviderDelegate, UITableViewDelegate, UITableViewDataSource, _MKNanoPlaceCardSectionProviding>
@@ -27,7 +27,7 @@
     struct CGSize _newSize;
     _Bool _animatingRowInsertion;
     struct CGRect _lastMaxWidthBounds;
-    NSMutableArray *_shownIncidentTitles;
+    _Bool _showingIncidents;
     _Bool _limitInteraction;
     _Bool _allowTransitLineSelection;
     _Bool _supportSystemSectionCollapsing;
@@ -53,7 +53,8 @@
 - (int)transitCategoryForFrequencyType:(int)arg1;
 - (int)_transitCategoryForSection:(int)arg1;
 - (int)currentTransitCategory;
-- (void)recordIncidentShown:(id)arg1 system:(id)arg2;
+- (id)possibleActions;
+- (void)recordIncidentsShowing:(_Bool)arg1;
 - (void)notifyDelegateForActionAtIndexPath:(id)arg1;
 - (_Bool)canHighlightRowAtIndexPath:(id)arg1;
 - (id)cellForRowAtIndexPath:(id)arg1 inTableView:(id)arg2;
@@ -90,7 +91,7 @@
 - (id)_departureSequenceForIndexPath:(id)arg1;
 - (id)_indexPathWithHeader:(id)arg1;
 - (id)_indexPathWithoutHeader:(id)arg1;
-- (void)_incidentDetailsButtonSelected;
+- (void)_showIncidentDetails;
 - (id)_incidentCellForRow:(int)arg1 inSection:(int)arg2;
 - (void)infoButtonSelectedInConnectionCell:(id)arg1;
 - (id)_connectionCellForRow:(int)arg1;

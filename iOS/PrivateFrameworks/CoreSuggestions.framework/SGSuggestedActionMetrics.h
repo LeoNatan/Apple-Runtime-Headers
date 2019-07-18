@@ -24,7 +24,7 @@
     SGMContactDetailConversationTurn *_contactDetailConversationTurn;
 }
 
-+ (void)recordConversationTurnWithContact:(id)arg1 received:(_Bool)arg2 curated:(_Bool)arg3 throughApp:(id)arg4 withDetailName:(id)arg5;
++ (void)recordConversationTurnWithContact:(id)arg1 received:(_Bool)arg2 curated:(_Bool)arg3 throughApp:(id)arg4 withDetailName:(id)arg5 withDetailExtraction:(id)arg6;
 + (void)recordContactDetailUsage:(id)arg1 withApp:(id)arg2;
 + (void)recordContactDetailEngagementWithResolution:(long long)arg1 detailType:(struct SGMContactDetailType_)arg2 extractionType:(unsigned long long)arg3 modelVersion:(id)arg4;
 + (void)recordBannerRejectedWithEvent:(id)arg1 inApp:(struct SGMBannerDisplayApp_)arg2;

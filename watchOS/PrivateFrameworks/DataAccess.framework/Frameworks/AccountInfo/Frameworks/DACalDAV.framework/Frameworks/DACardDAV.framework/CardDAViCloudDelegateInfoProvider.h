@@ -22,8 +22,8 @@
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 - (void).cxx_destruct;
 - (void)retryFamilyCircleFetch;
-- (id)familyMembersByAppleID;
-- (id)appleIDsOfNonParentsInFamily;
+- (_Bool)isGuardianAccount:(id)arg1;
+- (id)nonParentsInFamily;
 - (id)appleIDsOfExistingDelegates:(id)arg1;
 - (id)familyMembersPromise;
 - (id)cardDAVAccounts;

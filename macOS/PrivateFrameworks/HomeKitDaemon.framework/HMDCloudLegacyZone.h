@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)setServerChangeToken:(id)arg1;
 - (id)createCloudZoneChangeTemporaryCache:(BOOL)arg1;
+- (void)dropCachedRecords;
 - (id)createCloudRecordWithObjectID:(id)arg1 recordName:(id)arg2;
 - (id)homeDataV3ModelWithPushDataPush:(id)arg1;
 - (id)homeDataModelWithPushDataPush:(id)arg1;

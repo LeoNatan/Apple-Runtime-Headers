@@ -12,6 +12,7 @@
 {
 }
 
+- (id)valueKeys;
 @property(readonly, nonatomic) NSIndexSet *channelIDs;
 - (BOOL)setValue:(float)arg1 controller:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) float value;

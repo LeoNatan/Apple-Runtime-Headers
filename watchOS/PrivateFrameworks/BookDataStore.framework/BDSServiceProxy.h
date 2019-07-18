@@ -24,7 +24,9 @@
 @property(readonly, nonatomic) id <BDSServiceProtocol><NSXPCProxyCreating> remoteObjectProxy; // @synthesize remoteObjectProxy=_remoteObjectProxy;
 - (void).cxx_destruct;
 - (void)updateBitrateForItemWithAdamID:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)updateWantToReadAndReadingNowWithCompletion:(CDUnknownBlockType)arg1;
+- (id)updateReadingNowWithCompletion:(CDUnknownBlockType)arg1;
+- (id)updateWantToReadWithCompletion:(CDUnknownBlockType)arg1;
+- (id)updateWantToReadAndReadingNowWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchMostRecentAudiobookWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchMaxSortOrderInCollectionID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setCollectionMembers:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -10,6 +10,7 @@
 + (id)_accessibilityHigherContrastTintColorForColorIfNeeded:(id)arg1;
 + (id)_accessibilityColorView;
 + (id)hk_randomColor;
++ (id)hk_colorNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3;
 + (id)hk_lightGrayTextColor;
 + (id)hk_unknownCategoryClinicalKeyColor;
 + (id)hk_vitalsClinicalKeyColor;
@@ -67,7 +68,6 @@
 + (id)hk_chartLightGrayTextColor;
 + (id)hk_chartGrayGraphColor;
 + (id)hk_chartGrayTextColor;
-+ (id)hk_chartDefaultCurrentValueColor;
 + (id)hk_chartAxisMinorGridColor;
 + (id)hk_chartAxisMajorGridColor;
 + (id)hk_chartAxisLabelColor;
@@ -90,10 +90,8 @@
 + (id)hk_workoutKeyColor;
 + (id)hk_otherKeyColor;
 + (id)hk_respiratoryKeyColor;
-+ (id)hk_sleepAsleepGradientBottomColor;
-+ (id)hk_sleepAsleepGradientTopColor;
-+ (id)hk_sleepGradientBottomColor;
-+ (id)hk_sleepGradientTopColor;
++ (id)hk_sleepAsleepColor;
++ (id)hk_sleepInBedColor;
 + (id)hk_sleepKeyColor;
 + (id)hk_reproductiveHealthStartOfCycleColor;
 + (id)hk_reproductiveHealthKeyColor;

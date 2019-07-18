@@ -11,6 +11,19 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (_Bool)useOutsideParagraphStyleIndexForSeries:(id)arg1 chartType:(id)arg2 layout:(id)arg3;
++ (double)uiSliderAngleForPropertyAngle:(double)arg1;
++ (double)propertyAngleForUISliderAngle:(double)arg1;
++ (double)uiSliderAngleMax;
++ (double)uiSliderAngleMin;
++ (id)fillForSeries:(id)arg1 chartType:(id)arg2;
++ (id)p_referenceColorForObject:(id)arg1;
++ (id)lineEndForSegmentIndex:(long long)arg1;
++ (unsigned long long)segmentIndexForLineEnd:(id)arg1;
++ (id)uiStringForLabelFormatType:(int)arg1 useShortString:(_Bool)arg2;
++ (id)uiStringForLabelFormatType:(int)arg1;
++ (id)availableStrokes;
++ (void)updateParagraphStylePropertyMapsForMutationLookup:(id)arg1 mutationDictionary:(id)arg2 styleOwner:(id)arg3 indexProperty:(int)arg4 paragraphStyleProperty:(int)arg5 value:(id)arg6;
 + (_Bool)allSeriesInList:(id)arg1 haveExplosionValue:(double)arg2;
 + (void)breakUpFontName:(id)arg1 isBold:(_Bool *)arg2 isItalic:(_Bool *)arg3;
 + (id)stylesheetOfStyles:(id)arg1 nilAllowed:(_Bool)arg2;
@@ -22,6 +35,7 @@ __attribute__((visibility("hidden")))
 + (void)updateStyleState:(id)arg1 forMutationsPerStyleOwner:(id)arg2;
 + (id)chartsNullShadowToDefaultDisabledShadow:(id)arg1;
 + (id)shadowToChartsNullShadow:(id)arg1;
++ (id)defaultShadow;
 + (id)nullShadow;
 + (_Bool)hasShadow:(id)arg1;
 + (id)upgradedShadowPropertyForParagraphStyle:(id)arg1;
@@ -44,7 +58,7 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)bodySizeWithMinimumWedgeExplosionWithChartModel:(id)arg1 bodySize:(struct CGSize)arg2;
 + (float)defaultPieLabelExplosionPercentage;
 + (float)pre2_4DefaultPieLabelExplosionPercentageForCalloutLineCalculation;
-+ (_Bool)shouldAnchorLabelsForSeries:(id)arg1 innerRadius:(double)arg2 calloutLineType:(int)arg3 defaultLabelExplosion:(double)arg4;
++ (_Bool)shouldAnchorLabelsForSeries:(id)arg1 innerRadius:(double)arg2 calloutLineType:(long long)arg3 defaultLabelExplosion:(double)arg4;
 + (_Bool)labelExplosionIsCenteredInWedgeWithInnerRadius:(double)arg1 labelExplosion:(double)arg2;
 + (float)defaultDonutLabelExplosionPercentage;
 + (float)centeredDonutLabelExplosionPercentageWithInnerRadius:(double)arg1;

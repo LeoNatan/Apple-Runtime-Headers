@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <MapsSupport/NSSecureCoding-Protocol.h>
+
 @class NSDate;
 
 __attribute__((visibility("hidden")))
-@interface MSPSharedTripNotificationRules : NSObject
+@interface MSPSharedTripNotificationRules : NSObject <NSSecureCoding>
 {
     BOOL _hasMadeFinalPush;
     unsigned long long _maxPostedNotifications;
@@ -22,6 +24,8 @@ __attribute__((visibility("hidden")))
     NSDate *_currentETADate;
 }
 
++ (BOOL)supportsSecureCoding;
++ (id)unarchivingObjectsSet;
 @property(nonatomic) BOOL hasMadeFinalPush; // @synthesize hasMadeFinalPush=_hasMadeFinalPush;
 @property(retain, nonatomic) NSDate *currentETADate; // @synthesize currentETADate=_currentETADate;
 @property(retain, nonatomic) NSDate *lastUpdatedDate; // @synthesize lastUpdatedDate=_lastUpdatedDate;
@@ -40,6 +44,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithMaximumNumberOfNotifications:(unsigned long long)arg1 minimumNotificationInterval:(double)arg2;
 - (id)initWithMaximumNumberOfNotifications:(unsigned long long)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 
 @end
 

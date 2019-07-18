@@ -9,7 +9,7 @@
 #import <AVKit/AVPlaybackContentContainer-Protocol.h>
 #import <AVKit/UIScrollViewDelegate-Protocol.h>
 
-@class AVPlaybackContentContainerView, NSString;
+@class AVPlaybackContentContainerView, NSString, UIWindow;
 
 __attribute__((visibility("hidden")))
 @interface AVPlaybackContentZoomingView : UIScrollView <UIScrollViewDelegate, AVPlaybackContentContainer>
@@ -18,11 +18,13 @@ __attribute__((visibility("hidden")))
     _Bool _zoomingEnabled;
     _Bool _fullScreen;
     AVPlaybackContentContainerView *_activeContentView;
+    UIWindow *_lastKnownWindow;
     struct CGSize _contentAspectRatio;
     struct CGRect _videoContentFrame;
     struct CGRect _previousBounds;
 }
 
+@property(nonatomic) __weak UIWindow *lastKnownWindow; // @synthesize lastKnownWindow=_lastKnownWindow;
 @property(nonatomic) struct CGRect previousBounds; // @synthesize previousBounds=_previousBounds;
 @property(nonatomic, getter=isFullScreen) _Bool fullScreen; // @synthesize fullScreen=_fullScreen;
 @property(nonatomic) struct CGSize contentAspectRatio; // @synthesize contentAspectRatio=_contentAspectRatio;
@@ -37,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)_contentRectForScale:(double)arg1;
 - (struct CGSize)_contentSizeForScale:(double)arg1;
 - (void)layoutSubviews;
+- (void)willMoveToWindow:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (struct CGSize)scrollView:(id)arg1 contentSizeForZoomScale:(double)arg2 withProposedSize:(struct CGSize)arg3;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

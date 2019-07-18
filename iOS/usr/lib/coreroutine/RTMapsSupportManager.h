@@ -21,12 +21,14 @@
 - (void).cxx_destruct;
 - (void)_fetchHistoryEntryRoutesWithHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchHistoryEntryPlaceDisplaysWithHandler:(CDUnknownBlockType)arg1;
+- (void)_fetchPinnedPlacesWithHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchFavoritePlacesWithHandler:(CDUnknownBlockType)arg1;
 - (void)_clearParkedCarBulletin;
 - (void)_showParkedCarReplacementBulletinForEvent:(id)arg1 replacingEvent:(id)arg2;
 - (void)_showParkedCarBulletinForEvent:(id)arg1;
 - (void)fetchHistoryEntryRoutesWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchHistoryEntryPlaceDisplaysWithHandler:(CDUnknownBlockType)arg1;
+- (void)fetchPinnedPlacesWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchFavoritePlacesWithHandler:(CDUnknownBlockType)arg1;
 - (void)clearParkedCarBulletin;
 - (void)showParkedCarReplacementBulletinForEvent:(id)arg1 replacingEvent:(id)arg2;

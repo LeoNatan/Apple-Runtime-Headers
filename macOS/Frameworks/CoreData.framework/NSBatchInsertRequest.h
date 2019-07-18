@@ -12,8 +12,8 @@
 {
     id _entity;
     NSArray *_objectsToInsert;
-    CDUnknownBlockType _insertDictionaryBlock;
-    CDUnknownBlockType _insertManagedObjectBlock;
+    CDUnknownBlockType _insertDictionaryHandler;
+    CDUnknownBlockType _insertManagedObjectHandler;
     struct _insertRequestFlags {
         unsigned int resultType:2;
         unsigned int entityIsName:1;
@@ -24,13 +24,11 @@
 
 + (id)stringForResultType:(unsigned long long)arg1;
 + (id)shortStringForResultType:(unsigned long long)arg1;
-+ (id)batchInsertRequestWithEntityName:(id)arg1 andManagedObjectBlock:(CDUnknownBlockType)arg2;
-+ (id)batchInsertRequestWithEntityName:(id)arg1 andDictionaryBlock:(CDUnknownBlockType)arg2;
-+ (id)batchInsertRequestWithEntityName:(id)arg1 andObjects:(id)arg2;
++ (id)batchInsertRequestWithEntityName:(id)arg1 objects:(id)arg2;
++ (id)batchInsertRequestWithEntityName:(id)arg1 managedObjectHandler:(CDUnknownBlockType)arg2;
++ (id)batchInsertRequestWithEntityName:(id)arg1 dictionaryHandler:(CDUnknownBlockType)arg2;
 + (id)decodeFromXPCArchive:(id)arg1 withContext:(id)arg2;
 @property(copy) NSArray *objectsToInsert; // @synthesize objectsToInsert=_objectsToInsert;
-@property(copy) CDUnknownBlockType insertManagedObjectBlock; // @synthesize insertManagedObjectBlock=_insertManagedObjectBlock;
-@property(copy) CDUnknownBlockType insertDictionaryBlock; // @synthesize insertDictionaryBlock=_insertDictionaryBlock;
 - (void)_resolveEntityWithSQLCore:(id)arg1;
 @property unsigned long long resultType;
 - (unsigned long long)requestType;
@@ -38,13 +36,15 @@
 @property(readonly, copy) NSString *entityName;
 - (id)description;
 - (void)dealloc;
-- (id)initWithEntity:(id)arg1 andManagedObjectBlock:(CDUnknownBlockType)arg2;
-- (id)initWithEntityName:(id)arg1 andManagedObjectBlock:(CDUnknownBlockType)arg2;
-- (id)initWithEntity:(id)arg1 andDictionaryBlock:(CDUnknownBlockType)arg2;
-- (id)initWithEntityName:(id)arg1 andDictionaryBlock:(CDUnknownBlockType)arg2;
-- (id)initWithEntity:(id)arg1 andObjects:(id)arg2;
-- (id)initWithEntityName:(id)arg1 andObjects:(id)arg2;
+- (id)initWithEntity:(id)arg1 objects:(id)arg2;
+- (id)initWithEntityName:(id)arg1 objects:(id)arg2;
 - (id)init;
+- (id)initWithEntity:(id)arg1 managedObjectHandler:(CDUnknownBlockType)arg2;
+- (id)initWithEntityName:(id)arg1 managedObjectHandler:(CDUnknownBlockType)arg2;
+- (id)initWithEntity:(id)arg1 dictionaryHandler:(CDUnknownBlockType)arg2;
+- (id)initWithEntityName:(id)arg1 dictionaryHandler:(CDUnknownBlockType)arg2;
+@property(copy) CDUnknownBlockType insertManagedObjectHandler;
+@property(copy) CDUnknownBlockType insertDictionaryHandler;
 - (id)encodeForXPC;
 
 @end

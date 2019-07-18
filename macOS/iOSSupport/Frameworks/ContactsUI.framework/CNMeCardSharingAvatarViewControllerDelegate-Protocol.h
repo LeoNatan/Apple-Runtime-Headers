@@ -10,5 +10,6 @@
 
 @protocol CNMeCardSharingAvatarViewControllerDelegate <NSObject>
 - (void)avatarViewControllerWasTapped:(CNMeCardSharingAvatarViewController *)arg1;
+- (void)avatarViewControllerDidUpdateImage:(CNMeCardSharingAvatarViewController *)arg1;
 @end
 

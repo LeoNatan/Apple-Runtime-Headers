@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGRect alignmentFrameForProvidingGuidesInRoot;
 @property(readonly, nonatomic) struct CGRect alignmentFrameInRoot;
 @property(readonly, nonatomic) struct CGRect alignmentFrame;
+@property(readonly, nonatomic) _Bool shouldBeIncludedInParentFrameForCulling;
 @property(readonly, nonatomic) struct CGRect frameForCulling;
 - (void)addLayoutsInRect:(struct CGRect)arg1 toArray:(id)arg2 deep:(_Bool)arg3;
 - (void)exchangeChildAtIndex:(unsigned long long)arg1 withChildAtIndex:(unsigned long long)arg2;
@@ -56,10 +57,12 @@ __attribute__((visibility("hidden")))
 - (void)removeFromParent;
 @property(readonly, nonatomic) TSDAbstractLayout *root;
 - (id)additionalDependenciesForChildLayout:(id)arg1;
+- (void)p_clearParentPointerForDealloc;
 @property(readonly, nonatomic) NSArray *layoutsForProvidingGuidesForChildLayouts;
 @property(readonly, nonatomic) TSDAbstractLayout *parentLayoutForProvidingGuides;
 @property(readonly, nonatomic) _Bool exclusivelyProvidesGuidesForChildLayouts;
 @property(readonly, nonatomic) _Bool providesGuidesForChildLayouts;
+@property(readonly, nonatomic) _Bool isRootLevelForInlineGeometry;
 @property(readonly, nonatomic) _Bool isRootLayoutForInspectorGeometry;
 @property(readonly, nonatomic) _Bool isAxisAlignedUnflippedInRoot;
 - (struct CGRect)clippedRectInRoot:(struct CGRect)arg1;

@@ -142,6 +142,7 @@
 - (id)serializedClientMetadataForSiri;
 - (id)serializedClientMetadataForParsec;
 - (id)serializedClientMetadataForTraits:(id)arg1;
+- (double)wiFiQualitySmallSearchRadiusMeters;
 - (long long)wiFiQualitySearchZoomLevel;
 - (double)wiFiQualitySearchRadiusMeters;
 - (id)ticketForWiFiQualityTileLoadForKey:(id)arg1 eTag:(id)arg2;

@@ -6,11 +6,26 @@
 
 #import <SpringBoard/SBUIBlockAnimationController.h>
 
-@interface SBFluidSwitcherAnimationController : SBUIBlockAnimationController
+#import <SpringBoard/SBUIAnimationControllerObserver-Protocol.h>
+
+@class NSString;
+
+@interface SBFluidSwitcherAnimationController : SBUIBlockAnimationController <SBUIAnimationControllerObserver>
 {
+    CDUnknownBlockType _animationCompletion;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType animationCompletion; // @synthesize animationCompletion=_animationCompletion;
+- (void).cxx_destruct;
+- (void)animationControllerDidFinishAnimation:(id)arg1;
 - (_Bool)isFluidSwitcherAnimationController;
+- (id)initWithWorkspaceTransitionRequest:(id)arg1 animationSettings:(id)arg2 animationBlock:(CDUnknownBlockType)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSString, UIPanGestureRecognizer, UIView, _UIVelocityIntegrator;
+@class NSArray, NSString, UIBezierPath, UIPanGestureRecognizer, UIView, _UIVelocityIntegrator;
 @protocol _UIPreviewPlatterPanControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -16,14 +16,15 @@ __attribute__((visibility("hidden")))
 {
     unsigned long long _currentDetentIndex;
     double _initialYTranslation;
+    UIBezierPath *_actionScrubPath;
     BOOL _enabled;
     id <_UIPreviewPlatterPanControllerDelegate> _delegate;
     UIPanGestureRecognizer *_panGestureRecognizer;
     NSArray *_detents;
     unsigned long long _initialDetentIndex;
     unsigned long long _attachmentEdge;
+    unsigned long long _alignmentEdge;
     unsigned long long _rubberbandingEdges;
-    double _spacing;
     UIView *_containerView;
     UIView *_platterView;
     UIView *_actionsView;
@@ -36,8 +37,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIView *actionsView; // @synthesize actionsView=_actionsView;
 @property(nonatomic) __weak UIView *platterView; // @synthesize platterView=_platterView;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
-@property(nonatomic) double spacing; // @synthesize spacing=_spacing;
 @property(nonatomic) unsigned long long rubberbandingEdges; // @synthesize rubberbandingEdges=_rubberbandingEdges;
+@property(nonatomic) unsigned long long alignmentEdge; // @synthesize alignmentEdge=_alignmentEdge;
 @property(nonatomic) unsigned long long attachmentEdge; // @synthesize attachmentEdge=_attachmentEdge;
 @property(nonatomic) struct CGPoint originalActionsCenter; // @synthesize originalActionsCenter=_originalActionsCenter;
 @property(nonatomic) struct CGPoint originalPlatterCenter; // @synthesize originalPlatterCenter=_originalPlatterCenter;
@@ -49,8 +50,16 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_updatePlatterGestureDebugUIWithGesture:(id)arg1;
 - (struct CGPoint)_rubberBandedTranslationForGestureTranslation:(struct CGPoint)arg1;
-- (void)_updateViewPositionsWithTranslation:(struct CGPoint)arg1 endedWithVelocity:(BOOL)arg2;
+- (void)_animationsForActionsStyleWithTranslation:(struct CGPoint)arg1 location:(struct CGPoint)arg2 endedWithVelocity:(BOOL)arg3;
+- (void)_animationsForPreviewPlusActionsStyleWithTranslation:(struct CGPoint)arg1 endedWithVelocity:(BOOL)arg2;
+- (void)_updateViewPositionsWithTranslation:(struct CGPoint)arg1 location:(struct CGPoint)arg2 endedWithVelocity:(BOOL)arg3;
+- (BOOL)_canBeginDraggingWithTranslation:(struct CGPoint)arg1 location:(struct CGPoint)arg2;
+- (id)_actionScrubPathWithInitialLocation:(struct CGPoint)arg1;
 - (void)_handlePanGesture:(id)arg1;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (double)_dragTearOffThreshold;
+- (BOOL)_canSwipeDownToDismiss;
 - (int)_nearestDetentWithTranslation:(struct CGPoint)arg1;
 - (double)_rangeOfMotion;
 - (struct CGVector)_currentPlatterVelocity;

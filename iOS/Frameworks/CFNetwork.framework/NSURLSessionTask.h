@@ -21,6 +21,7 @@
     id <__NSURLSessionTaskGroupForConfiguration> __taskGroup;
 }
 
++ (id)new;
 @property(readonly, retain) id <__NSURLSessionTaskGroupForConfiguration> _taskGroup; // @synthesize _taskGroup=__taskGroup;
 @property(retain) NSObject<OS_nw_activity> *_private_nw_activity; // @synthesize _private_nw_activity;
 @property(retain) NSObject<OS_nw_activity> *_nw_activity; // @synthesize _nw_activity=_nw_activity_ivar;

@@ -11,6 +11,7 @@
 
 @protocol SecEscrowRequestable <NSObject>
 + (id <SecEscrowRequestable>)request:(id *)arg1;
+- (_Bool)pendingEscrowUpload:(id *)arg1;
 - (NSDictionary *)fetchStatuses:(id *)arg1;
 - (BOOL)triggerEscrowUpdate:(NSString *)arg1 error:(id *)arg2;
 @end

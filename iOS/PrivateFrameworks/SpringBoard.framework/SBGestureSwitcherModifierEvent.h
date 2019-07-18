@@ -33,7 +33,7 @@
 @property(nonatomic) struct CGPoint locationInContainerView; // @synthesize locationInContainerView=_locationInContainerView;
 @property(nonatomic) double lastTouchTimestamp; // @synthesize lastTouchTimestamp=_lastTouchTimestamp;
 @property(nonatomic, getter=isCanceled) _Bool canceled; // @synthesize canceled=_canceled;
-@property(readonly, nonatomic) unsigned long long phase; // @synthesize phase=_phase;
+@property(nonatomic) unsigned long long phase; // @synthesize phase=_phase;
 @property(readonly, nonatomic) long long gestureType; // @synthesize gestureType=_gestureType;
 @property(readonly, nonatomic) SBAppLayout *selectedAppLayout; // @synthesize selectedAppLayout=_selectedAppLayout;
 @property(readonly, nonatomic) NSUUID *gestureID; // @synthesize gestureID=_gestureID;

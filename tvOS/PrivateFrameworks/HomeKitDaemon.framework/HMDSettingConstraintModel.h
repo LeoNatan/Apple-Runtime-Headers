@@ -15,6 +15,8 @@
 }
 
 + (id)hmbProperties;
+- (id)copyWithNewParentModelID:(id)arg1;
+@property(readonly, nonatomic) NSString *nameForKeyPath;
 
 // Remaining properties
 @property(copy, nonatomic) NSData *dataValue; // @dynamic dataValue;

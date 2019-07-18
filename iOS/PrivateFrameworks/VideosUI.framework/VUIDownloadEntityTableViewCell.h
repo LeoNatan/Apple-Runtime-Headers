@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_entityPlaceholderImageForDownloadEntity:(id)arg1;
-+ (id)_episodePlaceholderImage;
 + (void)configureVUIDownloadEntityTableViewCell:(id)arg1 withDownloadEntity:(id)arg2;
 @property(retain, nonatomic) VUIDownloadEntity *downloadEntity; // @synthesize downloadEntity=_downloadEntity;
 @property(retain, nonatomic) _TVImageView *episodeImageView; // @synthesize episodeImageView=_episodeImageView;
@@ -45,8 +44,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUISeparatorView *topSeparatorView; // @synthesize topSeparatorView=_topSeparatorView;
 @property(nonatomic) __weak id <VUIDownloadEntityTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (double)_verticalPaddingForCurrentSizeClass;
 - (double)_imageHeightForCurrentSizeClass;
+- (id)_episodePlaceholderImage;
 - (id)_expirationLabelWithMediaEntity:(id)arg1;
 - (void)_removeDownloadButtonIfRequired;
 - (void)_addDownloadButtonIfRequired:(id)arg1;

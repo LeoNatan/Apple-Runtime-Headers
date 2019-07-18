@@ -9,7 +9,7 @@
 #import <Email/EFFutureDelegate-Protocol.h>
 #import <Email/EFLoggable-Protocol.h>
 
-@class EMMailboxRepository, EMRemoteConnection, NSArray, NSHashTable, NSMapTable, NSString;
+@class EMMailboxRepository, EMRemoteConnection, NSArray, NSCache, NSHashTable, NSMapTable, NSString;
 @protocol EMVIPManager;
 
 @interface EMMessageRepository : EMRepository <EFFutureDelegate, EFLoggable>
@@ -22,20 +22,28 @@
     struct os_unfair_lock_s _observersLock;
     EMRemoteConnection *_connection;
     id <EMVIPManager> _vipManager;
+    NSCache *_queryCountCache;
     EMMailboxRepository *_mailboxRepository;
 }
 
 + (id)remoteInterface;
 + (id)log;
 @property(readonly, nonatomic) EMMailboxRepository *mailboxRepository; // @synthesize mailboxRepository=_mailboxRepository;
+@property(retain, nonatomic) NSCache *queryCountCache; // @synthesize queryCountCache=_queryCountCache;
 @property(readonly, nonatomic) id <EMVIPManager> vipManager; // @synthesize vipManager=_vipManager;
 @property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (void)_broadcastMessageListItemChangesToObservers:(CDUnknownBlockType)arg1;
 - (void)_vipsDidChange:(id)arg1;
 - (void)_blockedSendersDidChange:(id)arg1;
-- (void)_detectChangesForMatchedAddedObjectIDs:(id)arg1 matchedChangesHandler:(CDUnknownBlockType)arg2;
+- (void)_updateAlternateIDForObjectID:(id)arg1 alternateID:(id)arg2;
+- (void)_detectChangesForMatchedAddedObjectIDs:(id)arg1 observerationIdentifier:(id)arg2 matchedChangesHandler:(CDUnknownBlockType)arg3;
 - (void)_applyChangesToCachedObjects:(id)arg1;
+- (void)loadOlderMessagesForMailboxes:(id)arg1;
+- (void)_predictMailboxForMovingMessagesWithIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)predictMailboxForMovingMessages:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)cachedMetadataJSONForKey:(id)arg1 messageID:(id)arg2;
+- (void)setCachedMetadataJSON:(id)arg1 forKey:(id)arg2 messageID:(id)arg3;
 - (void)resetAllPrecomputedThreadScopes;
 - (void)resetPrecomputedThreadScopesForMailboxObjectID:(id)arg1;
 - (void)resetPrecomputedThreadScopesForMailboxType:(int)arg1;
@@ -43,6 +51,7 @@
 - (id)performMessageChangeActionReturningUndoAction:(id)arg1;
 - (void)performMessageChangeAction:(id)arg1;
 - (id)requestRepresentationForMessageWithID:(id)arg1 options:(id)arg2 delegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)setQueryCount:(id)arg1 forQueryIdentifier:(id)arg2;
 - (id)startCountingQuery:(id)arg1 includingServerCountsForMailboxScope:(id)arg2 withObserver:(id)arg3;
 - (id)performQuery:(id)arg1 withObserver:(id)arg2;
 @property(readonly, copy) NSArray *currentObservers;
@@ -50,6 +59,7 @@
 - (id)_existingObservedItemForObjectID:(id)arg1;
 - (id)_cachedItemForItem:(id)arg1 observers:(id)arg2 validationBlock:(CDUnknownBlockType)arg3;
 - (id)messageForObjectID:(id)arg1;
+- (id)messageListItemsForObjectIDs:(id)arg1 observationIdentifier:(id)arg2;
 - (id)messageListItemsForObjectIDs:(id)arg1;
 - (void)performCountQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performQuery:(id)arg1 limit:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;

@@ -22,8 +22,6 @@
 - (id)localizedAccessPermissionPromptTitle;
 - (id)localizedInsufficientPermissionsMessage;
 - (unsigned long long)globalLevelStatus;
-- (id)icon;
-- (id)name;
 - (id)initWithBundleIdentifierForDisplay:(id)arg1;
 - (id)initWithDefinition:(id)arg1 persistentIdentifier:(id)arg2;
 

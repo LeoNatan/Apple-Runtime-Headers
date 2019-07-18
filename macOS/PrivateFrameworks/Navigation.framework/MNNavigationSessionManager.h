@@ -74,7 +74,6 @@
 - (void)navigationSessionDidCancelReroute:(id)arg1;
 - (void)navigationSessionWillReroute:(id)arg1;
 - (void)navigationSession:(id)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
-- (void)navigationSession:(id)arg1 didUpdateTraffic:(id)arg2;
 - (void)navigationSession:(id)arg1 didUpdateETAResponseForRoute:(id)arg2;
 - (void)navigationSession:(id)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
 - (void)navigationSession:(id)arg1 didUpdateDisplayETA:(id)arg2 displayRemainingMinutes:(unsigned long long)arg3 forRoute:(id)arg4;

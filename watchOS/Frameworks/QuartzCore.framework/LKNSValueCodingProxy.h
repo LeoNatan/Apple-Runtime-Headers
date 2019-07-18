@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
         struct CADoubleSize dsize;
         struct CADoubleRect drect;
         struct CAColorMatrix color_matrix;
+        struct CGAffineTransform affine_transform;
     } _u;
 }
 

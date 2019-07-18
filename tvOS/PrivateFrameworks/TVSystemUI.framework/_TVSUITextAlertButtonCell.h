@@ -10,7 +10,7 @@
 {
 }
 
-- (void)setButton:(id)arg1;
+- (void)setSubContentView:(id)arg1;
 - (id)preferredFocusEnvironments;
 
 @end

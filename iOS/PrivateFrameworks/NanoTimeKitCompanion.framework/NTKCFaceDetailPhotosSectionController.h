@@ -32,7 +32,6 @@
 @property(nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 - (void).cxx_destruct;
 - (void)customPhotosControllerDidFinish:(id)arg1;
-- (void)photoAlbumChanged:(id)arg1;
 - (id)_overrideTextForOption:(id)arg1;
 - (void)saveChangesWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool hasChanges;
@@ -48,7 +47,7 @@
 - (void)faceDidChangeResourceDirectory;
 - (void)faceDidChange;
 - (_Bool)canAddFace;
-- (id)initWithTableView:(id)arg1 face:(id)arg2 inGallery:(_Bool)arg3 editOptionCollection:(id)arg4 faceView:(id)arg5 externalAssets:(id)arg6;
+- (id)initWithTableViewController:(id)arg1 face:(id)arg2 inGallery:(_Bool)arg3 editOptionCollection:(id)arg4 faceView:(id)arg5 externalAssets:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

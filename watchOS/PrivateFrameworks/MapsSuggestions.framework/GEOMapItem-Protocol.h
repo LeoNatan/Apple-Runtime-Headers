@@ -61,6 +61,7 @@
 @property(readonly, nonatomic, getter=_businessClaim) GEOPDBusinessClaim *businessClaim;
 @property(readonly, nonatomic, getter=_hasBusinessClaim) _Bool hasBusinessClaim;
 @property(readonly, nonatomic, getter=_additionalPlaceInfos) NSArray *additionalPlaceInfos;
+@property(readonly, nonatomic, getter=_mapsCategoryId) NSString *mapsCategoryId;
 @property(readonly, nonatomic, getter=_customIconID) unsigned long long customIconID;
 @property(readonly, nonatomic, getter=_styleAttributes) GEOFeatureStyleAttributes *styleAttributes;
 @property(readonly, nonatomic, getter=_poiCategory) NSString *poiCategory;
@@ -151,6 +152,7 @@
 @property(readonly, nonatomic) NSString *secondaryName;
 @property(readonly, nonatomic) NSString *name;
 - (_Bool)isEqualToMapItem:(id <GEOMapItem>)arg1;
+- (NSURL *)_bestHeroBrandIconURLForSize:(struct CGSize)arg1 allowSmaller:(_Bool)arg2;
 - (NSURL *)_bestNavbarBrandIconURLForSize:(struct CGSize)arg1 allowSmaller:(_Bool)arg2;
 - (NSURL *)_bestAvatarBrandIconURLForSize:(struct CGSize)arg1 allowSmaller:(_Bool)arg2;
 - (NSString *)weatherDisplayName;

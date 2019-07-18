@@ -41,7 +41,7 @@
 - (vector_90d4f7ff)MLCorePropertiesForPropertySet:(id)arg1;
 - (shared_ptr_889ae36a)propertiesQueryForPropertySet:(id)arg1 scopedContainers:(id)arg2 allowedItemIdentifiers:(id)arg3 view:(id)arg4;
 - (shared_ptr_e8455ceb)entityQueryForPropertySet:(id)arg1 sortDescriptors:(id)arg2 context:(id)arg3 view:(id)arg4;
-- (id)identifiersForEntity:(shared_ptr_27513921)arg1;
+- (id)identifiersForEntity:(shared_ptr_27513921)arg1 context:(id)arg2;
 - (id)objectForPropertySet:(id)arg1 entity:(shared_ptr_27513921)arg2 context:(id)arg3;
 - (void)mapRelationshipKey:(id)arg1 toModelClass:(Class)arg2 transient:(_Bool)arg3 usingForeignPropertyBase:(struct ModelPropertyBase *)arg4 relationshipValidationProperties:(const map_b31fefcb *)arg5 isValidRelationshipHandler:(CDUnknownBlockType)arg6;
 - (void)mapRelationshipKey:(id)arg1 toModelClass:(Class)arg2 transient:(_Bool)arg3 usingForeignPropertyBase:(struct ModelPropertyBase *)arg4;

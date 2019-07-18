@@ -6,10 +6,11 @@
 
 #import <PassKitUI/PKSectionTableViewController.h>
 
+#import <PassKitUI/PKAMPEnrollmentManagerObserver-Protocol.h>
 #import <PassKitUI/PKAccountAutomaticPaymentsControllerDelegate-Protocol.h>
+#import <PassKitUI/PKAccountBillPaymentObserver-Protocol.h>
 #import <PassKitUI/PKAccountServiceAccountResolutionControllerDelegate-Protocol.h>
 #import <PassKitUI/PKAccountServiceObserver-Protocol.h>
-#import <PassKitUI/PKAccountServicePerformActionViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKBalanceDetailsViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKCreditAccountPaymentDetailsViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPassHeaderViewDelegate-Protocol.h>
@@ -22,15 +23,14 @@
 #import <PassKitUI/PKPeerPaymentContactResolverDelegate-Protocol.h>
 #import <PassKitUI/PKPerformActionViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPhysicalCardActionControllerDelegate-Protocol.h>
-#import <PassKitUI/PKPhysicalCardControllerDelegate-Protocol.h>
 #import <PassKitUI/PSStateRestoration-Protocol.h>
 #import <PassKitUI/UITableViewDataSource-Protocol.h>
 #import <PassKitUI/UITableViewDelegate-Protocol.h>
 
-@class CLInUseAssertion, CNContact, NSArray, NSDateFormatter, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSNumberFormatter, NSObject, NSString, PKAccount, PKAccountService, PKAccountServiceAccountResolutionController, PKAccountServicePerformActionViewController, PKAnimatedNavigationBarTitleView, PKBusinessChatController, PKDashboardTransactionFetcher, PKExpressPassController, PKLinkedApplication, PKPassFaceViewRendererState, PKPassHeaderView, PKPassPresentationContext, PKPaymentApplication, PKPaymentBalanceReminder, PKPaymentPass, PKPaymentPassDetailActivationFooterView, PKPaymentTransactionCellController, PKPaymentTransactionDetailsFactory, PKPaymentVerificationController, PKPaymentWebService, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentActionViewController, PKPeerPaymentContactResolver, PKPeerPaymentController, PKPeerPaymentPreferences, PKPeerPaymentWebService, PKPhysicalCardActionController, PKPhysicalCardController, PKSettingTableCell, PKSpinnerHeaderView, PKTransitBalanceModel, PKTransitPassProperties, UIColor, UIImageView, UISegmentedControl, UITableViewHeaderFooterView, UIView;
+@class CLInUseAssertion, CNContact, NSArray, NSDateFormatter, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSNumberFormatter, NSObject, NSString, PKAccount, PKAccountService, PKAccountServiceAccountResolutionController, PKAnimatedNavigationBarTitleView, PKBusinessChatController, PKDashboardTransactionFetcher, PKExpressPassController, PKLinkedApplication, PKPassFaceViewRendererState, PKPassHeaderView, PKPassPresentationContext, PKPaymentApplication, PKPaymentBalanceReminder, PKPaymentPass, PKPaymentPassDetailActivationFooterView, PKPaymentTransactionCellController, PKPaymentTransactionDetailsFactory, PKPaymentVerificationController, PKPaymentWebService, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentActionViewController, PKPeerPaymentContactResolver, PKPeerPaymentController, PKPeerPaymentPreferences, PKPeerPaymentWebService, PKPhysicalCardActionController, PKPhysicalCardController, PKSettingTableCell, PKSpinnerHeaderView, PKTransitBalanceModel, PKTransitPassProperties, UIColor, UIImageView, UISegmentedControl, UITableViewHeaderFooterView, UIView;
 @protocol OS_dispatch_group, OS_dispatch_source, PKPassDeleteHandler, PKPassLibraryDataProvider, PKPaymentDataProvider;
 
-@interface PKPaymentPassDetailViewController : PKSectionTableViewController <PKPeerPaymentContactResolverDelegate, PKPeerPaymentActionViewControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKAccountServicePerformActionViewControllerDelegate, PKPhysicalCardControllerDelegate, PKPhysicalCardActionControllerDelegate, PKCreditAccountPaymentDetailsViewControllerDelegate, PKAccountAutomaticPaymentsControllerDelegate, PKAccountServiceAccountResolutionControllerDelegate, PKAccountServiceObserver, PKPaymentDataProviderDelegate, PKPaymentVerificationControllerDelegate, PKPassHeaderViewDelegate, PKBalanceDetailsViewControllerDelegate, PKPaymentPassActionWidgetViewDelegate, PKPerformActionViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, PSStateRestoration, PKPaymentSetupDelegate>
+@interface PKPaymentPassDetailViewController : PKSectionTableViewController <PKPeerPaymentContactResolverDelegate, PKPeerPaymentActionViewControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPhysicalCardActionControllerDelegate, PKCreditAccountPaymentDetailsViewControllerDelegate, PKAccountAutomaticPaymentsControllerDelegate, PKAccountServiceAccountResolutionControllerDelegate, PKAccountBillPaymentObserver, PKAccountServiceObserver, PKPaymentDataProviderDelegate, PKPaymentVerificationControllerDelegate, PKPassHeaderViewDelegate, PKBalanceDetailsViewControllerDelegate, PKPaymentPassActionWidgetViewDelegate, PKPerformActionViewControllerDelegate, PKAMPEnrollmentManagerObserver, UITableViewDataSource, UITableViewDelegate, PSStateRestoration, PKPaymentSetupDelegate>
 {
     id <PKPassLibraryDataProvider> _passLibraryDataProvider;
     id <PKPaymentDataProvider> _paymentServiceDataProvider;
@@ -46,6 +46,7 @@
     NSObject<OS_dispatch_source> *_refreshTimeout;
     PKSettingTableCell *_messagesSwitch;
     PKSettingTableCell *_transactionsSwitch;
+    PKSettingTableCell *_dailyCashSwitch;
     PKSettingTableCell *_notificationsSwitch;
     PKSettingTableCell *_automaticPresentationSwitch;
     PKSettingTableCell *_expressAccessSwitch;
@@ -97,8 +98,9 @@
     PKSpinnerHeaderView *_peerPaymentPreferencesHeaderView;
     PKPeerPaymentActionViewController *_peerPaymentActionViewController;
     PKPaymentTransactionDetailsFactory *_transactionDetailsFactory;
+    _Bool _loadingAMPEligibility;
+    _Bool _isAmpEligible;
     PKAccountServiceAccountResolutionController *_resolutionController;
-    PKAccountServicePerformActionViewController *_accountServiceActionViewController;
     PKAccountService *_accountService;
     PKAccount *_account;
     unsigned long long _accountFeatureIdentifier;
@@ -115,7 +117,7 @@
     _Bool _loadingAccountTermsAndConditions;
     _Bool _allowStatementCreditRedemption;
     unsigned long long _cashbackResolution;
-    _Bool _hadReceivedRewards;
+    unsigned long long _redemptionStatus;
     NSArray *_recurringPayments;
     NSArray *_scheduledPayments;
     PKPeerPaymentAccountResolutionController *_peerPaymentAccountResolutionControllerForAccountService;
@@ -125,6 +127,8 @@
     unsigned long long _peerPaymentAccountResolution;
     _Bool _requestingStatement;
     _Bool _redeemingRewards;
+    NSDateFormatter *_dueDateFormatter;
+    NSDateFormatter *_dueTimeFormatter;
     _Bool _isAppleAccess;
     NSObject<OS_dispatch_group> *_initialLoadGroup;
     _Bool _initialLoadTimedout;
@@ -156,7 +160,6 @@
 - (_Bool)shouldAllowRefresh;
 - (void)_refreshFinished:(_Bool)arg1;
 - (_Bool)canBeShownFromSuspendedState;
-- (void)physicalCardControllerDidUpdatePhysicalCards:(id)arg1;
 - (void)physicalCardActionController:(id)arg1 didChangeToState:(long long)arg2 withError:(id)arg3;
 - (void)_presentMerchantDetailsViewWithTransaction:(id)arg1 forCell:(id)arg2;
 - (void)presentVerificationViewController:(id)arg1 animated:(_Bool)arg2;
@@ -179,6 +182,7 @@
 - (void)_passSettingsChanged:(id)arg1;
 - (void)_done:(id)arg1;
 - (void)_activationFooterPressed:(id)arg1;
+- (void)_dailyCashSwitchChanged:(id)arg1;
 - (void)_notificationSwitchChanged:(id)arg1;
 - (void)_transactionsSwitchChanged:(id)arg1;
 - (void)_messagesSwitchChanged:(id)arg1;
@@ -199,6 +203,7 @@
 - (unsigned long long)_passStateSectionGenerateCellWithOutput:(id *)arg1 forRowIndex:(long long)arg2 tableView:(id)arg3;
 - (long long)_rowIndexForExpressTransitSettingsCell;
 - (_Bool)_canSelectBalanceOrCommutePlanCellAtRowIndex:(long long)arg1;
+- (_Bool)_canDeletePass;
 - (void)_didSelectDeleteCard;
 - (_Bool)_isJapaneseRegion;
 - (void)_handleProvisioningError:(id)arg1;
@@ -223,6 +228,7 @@
 - (_Bool)_shouldShowTermsCell;
 - (_Bool)_shouldShowBillingAddressCell;
 - (_Bool)_shouldShowAutomaticPresentation;
+- (_Bool)_accountInGoodStateForAMPEligbilityCheck;
 - (_Bool)_shouldShowServicingSection;
 - (_Bool)_shouldShowWidgets;
 - (unsigned long long)_rowIndexForPeerPaymentBalanceActionRow:(unsigned long long)arg1;
@@ -246,12 +252,12 @@
 - (void)accountAutomaticPaymentsController:(id)arg1 didSchedulePayment:(id)arg2;
 - (void)paymentDetailsViewController:(id)arg1 didCancelPayment:(id)arg2;
 - (void)_handleAccountServiceAccountDidChangeNotification:(id)arg1;
-- (void)accountServicePerformActionViewController:(id)arg1 didSchedulePayments:(id)arg2;
-- (void)accountServicePerformActionViewControllerDidPerformAction:(id)arg1;
-- (void)accountServicePerformActionViewControllerDidCancel:(id)arg1;
-- (void)accountServiceAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(_Bool)arg2;
+- (void)accountBillPaymentViewController:(id)arg1 didSchedulePayments:(id)arg2;
 - (void)accountServiceAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)_handlePeerPaymentAccountDidChangeNotification:(id)arg1;
+- (void)_ampEligbilityUpdated:(_Bool)arg1;
+- (void)ampEnrollmentManager:(id)arg1 didEnrollPaymentPass:(id)arg2 success:(_Bool)arg3;
+- (void)_updateAmpEligibility;
 - (void)_updatePeerPaymentPreferences;
 - (void)_updatePeerPaymentAccount;
 - (void)peerPaymentActionViewControllerDidPerformAction:(id)arg1;
@@ -261,7 +267,6 @@
 - (void)_didSelectCreditDetailsCell:(id)arg1;
 - (void)_didSelectNetworkBenefitsCell;
 - (_Bool)_shouldShowNetworkBenefitsCell;
-- (void)_showAccountServiceActionViewControllerForAction:(unsigned long long)arg1;
 - (void)_didSelectRedeemAtIndexPath:(id)arg1;
 - (void)_didSelectFixPeerPaymentAtIndexPath:(id)arg1;
 - (void)_showSpinner:(_Bool)arg1 inCell:(id)arg2;
@@ -282,6 +287,7 @@
 - (void)_didSelectAccountServiceRewardsDetailsAtIndexPath:(id)arg1;
 - (void)_didSelectAccountServiceMakeDefaultAtIndexPath:(id)arg1;
 - (void)_didSelectAccountServiceBankAccountsAtIndexPath:(id)arg1;
+- (id)_settingsExpressTransitURL;
 - (void)_didSelectCardInfoCellAtIndexPath:(id)arg1;
 - (void)_didSelectCommutePlanAtRowIndex:(long long)arg1;
 - (void)_didSelectBalanceAtRowIndex:(long long)arg1;
@@ -300,6 +306,8 @@
 - (id)_transactionCountByPeriodCellForIndexPath:(id)arg1 tableView:(id)arg2;
 - (id)_transactionCountFormatter;
 - (id)_transactionYearFormatter;
+- (id)_dueTimeFormatter;
+- (id)_dueDateFormatter;
 - (id)_indexPathForAccountServiceScheduledPaymentsSetUpRecurringPaymentsRow;
 - (id)_titleForScheduledPaymentsSection;
 - (unsigned long long)_accountServiceScheduledPaymentsRowTypeForRowIndex:(long long)arg1;
@@ -339,6 +347,7 @@
 - (id)_contactKeysToFetch;
 - (id)_transactionCellForIndexPath:(id)arg1 tableView:(id)arg2;
 - (id)_transactionsSwitchCellForIndexPath:(id)arg1 tableView:(id)arg2;
+- (id)_peerPaymentNotificationsSwitchCellForIndexPath:(id)arg1 tableView:(id)arg2;
 - (id)_messagesSwitchCellForTableView:(id)arg1;
 - (id)_expressAccessCellForTableView:(id)arg1;
 - (id)_automaticPresentationCellForTableView:(id)arg1;
@@ -364,6 +373,7 @@
 - (id)_linkedAppCellForTableView:(id)arg1;
 - (id)_widgetCellForTableView:(id)arg1;
 - (id)_scheduledPaymentCellForPayment:(id)arg1 tableView:(id)arg2;
+- (id)_stackedInfoCellWithPrimaryText:(id)arg1 detailText:(id)arg2 cellStyle:(long long)arg3 forTableView:(id)arg4;
 - (id)_infoCellWithPrimaryText:(id)arg1 detailText:(id)arg2 cellStyle:(long long)arg3 reuseIdentifier:(id)arg4 forTableView:(id)arg5;
 - (id)_infoCellWithPrimaryText:(id)arg1 detailText:(id)arg2 cellStyle:(long long)arg3 forTableView:(id)arg4;
 - (id)_infoCellWithDescription:(id)arg1 forTableView:(id)arg2;

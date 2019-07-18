@@ -14,7 +14,7 @@
 #import <CoreSuggestions/SGSuggestionsServiceMailProtocol-Protocol.h>
 #import <CoreSuggestions/SGSuggestionsServiceRemindersProtocol-Protocol.h>
 
-@class NSString, SGDaemonConnection, _PASLock;
+@class NSString, SGDaemonConnection;
 @protocol SGDSuggestManagerAllProtocol;
 
 @interface SGSuggestionsService : NSObject <SGSuggestionsServiceContactsProtocol, SGSuggestionsServiceEventsProtocol, SGSuggestionsServiceIpsosProtocol, SGSuggestionsServiceInternalProtocol, SGSuggestionsServiceMailProtocol, SGSuggestionsServiceFidesProtocol, SGSuggestionsServiceRemindersProtocol>
@@ -24,7 +24,8 @@
     _Bool _keepDirty;
     NSString *_machServiceName;
     _Bool _queuesRequestsIfBusy;
-    _PASLock *_cacheLock;
+    double _syncTimeout;
+    struct _opaque_pthread_mutex_t _syncTimeoutLock;
 }
 
 + (id)wantedSearchableItemsFromItems:(id)arg1;
@@ -154,9 +155,11 @@
 - (id)contactMatchesOrLookupIdByEmailAddress:(id)arg1 error:(id *)arg2;
 - (void)contactMatchesOrLookupIdByPhoneNumber:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)contactMatchesOrLookupIdByPhoneNumber:(id)arg1 error:(id *)arg2;
+- (void)namesForDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 onlySignificant:(_Bool)arg4 withCompletion:(CDUnknownBlockType)arg5;
+- (id)namesForDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 onlySignificant:(_Bool)arg4 error:(id *)arg5;
 - (void)namesForDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (id)namesForDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 error:(id *)arg4;
-- (void)refreshCacheSnapshot;
+- (id)cacheSnapshotFuture;
 - (void)contactMatchesByEmailAddress:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)contactMatchesByEmailAddress:(id)arg1 error:(id *)arg2;
 - (id)contactMatchesByEmailAddress:(id)arg1;
@@ -228,6 +231,8 @@
 - (_Bool)isEnabledWithError:(id *)arg1;
 - (void)setManagerForTesting:(id)arg1;
 - (id)_remoteSuggestionManager;
+- (void)setSyncTimeout:(double)arg1;
+- (double)syncTimeout;
 - (id)initWithMachServiceName:(id)arg1 protocol:(id)arg2 useCache:(_Bool)arg3;
 - (id)initWithMachServiceName:(id)arg1 protocol:(id)arg2;
 

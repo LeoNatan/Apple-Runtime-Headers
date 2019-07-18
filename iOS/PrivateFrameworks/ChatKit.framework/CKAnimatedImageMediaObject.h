@@ -23,6 +23,7 @@
 - (id)savedAnimatedPreviewFromURL:(id)arg1 forOrientation:(BOOL)arg2;
 - (id)notificationCenter;
 - (id)generateAndPersistAnimatedPreviewFromImageData:(id)arg1 forWidth:(double)arg2 withTransferGUID:(id)arg3 isSticker:(_Bool)arg4;
+- (void)prewarmPreviewForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)previewForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)animatedImageForWidth:(double)arg1;
 

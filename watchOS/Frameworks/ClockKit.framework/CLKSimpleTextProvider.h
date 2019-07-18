@@ -14,7 +14,6 @@
     _Bool _useAllSmallCaps;
     NSString *_text;
     NSString *_shortText;
-    NSString *_accessibilityLabel;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -25,7 +24,6 @@
 + (id)textProviderWithText:(id)arg1;
 @property(nonatomic) _Bool useAllSmallCaps; // @synthesize useAllSmallCaps=_useAllSmallCaps;
 @property(nonatomic) _Bool useNoContentDashFormatting; // @synthesize useNoContentDashFormatting=_useNoContentDashFormatting;
-@property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(copy, nonatomic) NSString *shortText; // @synthesize shortText=_shortText;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;

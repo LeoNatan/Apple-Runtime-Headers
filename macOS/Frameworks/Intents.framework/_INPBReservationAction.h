@@ -15,12 +15,14 @@
 @interface _INPBReservationAction : PBCodable <_INPBReservationAction, NSSecureCoding, NSCopying>
 {
     CDStruct_f953fb60 _has;
+    BOOL __encodeLegacyGloryData;
     int _type;
     _INPBUserActivity *_userActivity;
     _INPBDateTimeRange *_validDuration;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDateTimeRange *validDuration; // @synthesize validDuration=_validDuration;
 @property(retain, nonatomic) _INPBUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 @property(nonatomic) int type; // @synthesize type=_type;

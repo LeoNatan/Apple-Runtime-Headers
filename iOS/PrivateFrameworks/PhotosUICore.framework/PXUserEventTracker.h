@@ -24,6 +24,8 @@
 - (void)_aggdJumpCountLoggingDryrun:(unsigned long long)arg1 totalJumpCount:(unsigned long long)arg2;
 - (void)_aggdDurationLoggingDryrun:(unsigned long long)arg1 duration:(double)arg2;
 - (void)_aggdDurationLoggingDryrunForSubState:(unsigned long long)arg1 duration:(double)arg2;
+- (struct __CFString *)_aggdKeyForFirstTimeExperienceIsReady:(_Bool)arg1 librarySize:(long long)arg2;
+- (void)logFirstTimeExpericeReadiness:(_Bool)arg1 forLibrarySize:(long long)arg2;
 - (void)livePhotoEffectShared;
 - (void)livePhotoEffectSuggestionApplied;
 - (void)livePhotoEffectSuggested:(long long)arg1;
@@ -83,11 +85,16 @@
 - (void)logPeopleDetailCount;
 - (void)logPeopleHomeCount;
 - (void)_logAggdRelatedJumpStatistics:(unsigned long long)arg1 totalJumpCount:(unsigned long long)arg2;
-- (void)_logAggdDurationCounterForLogState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)_logAggdDurationCounterForLogSubSubState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)_logAggdDurationCounterForLogSubState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)_logAggdDurationCounterForLogState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)_logAggdAddValueForScalarKey:(struct __CFString *)arg1 value:(long long)arg2;
-- (void)logCounterValuesForLogState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)logImpressionCountForEventSource:(unsigned long long)arg1;
+- (void)logCounterValuesForLogSubSubState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)logCounterValuesForLogSubState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)logCounterValuesForLogState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)logViewCountForLogSubSubState:(unsigned long long)arg1;
+- (void)logViewCountForLogSubState:(unsigned long long)arg1;
 - (void)logViewCountForLogState:(unsigned long long)arg1;
 - (_Bool)isEventSourceSenderAppearingForTheFirstTime:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;

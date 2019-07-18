@@ -15,12 +15,14 @@
 @interface _INPBWellnessMetadataPair : PBCodable <_INPBWellnessMetadataPair, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     _INPBString *_key;
     _INPBWellnessMetadataValue *_value;
     _INPBValueMetadata *_valueMetadata;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(retain, nonatomic) _INPBWellnessMetadataValue *value; // @synthesize value=_value;
 @property(retain, nonatomic) _INPBString *key; // @synthesize key=_key;

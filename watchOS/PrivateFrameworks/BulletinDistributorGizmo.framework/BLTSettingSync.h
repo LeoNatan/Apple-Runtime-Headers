@@ -15,14 +15,15 @@
 {
     BLTSectionIdentifierMapper *_sectionIdentifierMapper;
     NSMutableArray *_incomingSectionInfoQueue;
-    NSObject<OS_dispatch_queue> *_queue;
     BLTWatchKitAppList *_watchKitAppList;
     NSMutableDictionary *_savedOverrides;
     id <BLTSettingSyncDelegate> _delegate;
     BLTSectionInfoStore *_sectionInfoStore;
     BLTSectionInfoList *_sectionInfoList;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) BLTSectionInfoList *sectionInfoList; // @synthesize sectionInfoList=_sectionInfoList;
 @property(readonly, nonatomic) BLTSectionInfoStore *sectionInfoStore; // @synthesize sectionInfoStore=_sectionInfoStore;
 @property(nonatomic) __weak id <BLTSettingSyncDelegate> delegate; // @synthesize delegate=_delegate;

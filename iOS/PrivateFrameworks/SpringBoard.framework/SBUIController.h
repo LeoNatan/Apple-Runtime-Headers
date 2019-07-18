@@ -87,7 +87,6 @@
 - (void)disableAnimationForNextIconRotation;
 - (void)setAllowIconRotation:(_Bool)arg1 forReason:(id)arg2;
 @property(nonatomic) _Bool homeScreenAutorotatesEvenWhenIconIsDragging;
-- (void)useExtraLargeHammerForNextPossibleIconRotation;
 - (void)nudgeIconInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 @property(readonly, copy) NSString *description;
 - (void)statusBarOverridesDidChange:(id)arg1;
@@ -109,8 +108,6 @@
 - (void)updateBatteryState:(id)arg1;
 - (void)cancelVolumeEvent;
 - (void)handleVolumeButtonWithType:(long long)arg1 down:(_Bool)arg2;
-- (_Bool)_allowSwitcherGesture;
-- (_Bool)isAppSwitcherShowing;
 - (_Bool)handleHomeButtonDoublePressDown;
 - (void)_backgroundContrastDidChange:(id)arg1;
 - (void)_reduceMotionStatusDidChange:(id)arg1;

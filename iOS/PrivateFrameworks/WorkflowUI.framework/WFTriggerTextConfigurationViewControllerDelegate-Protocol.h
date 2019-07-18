@@ -9,6 +9,7 @@
 @class NSString, WFTriggerTextConfigurationViewController;
 
 @protocol WFTriggerTextConfigurationViewControllerDelegate <NSObject>
+- (void)triggerTextConfigurationViewControllerDidCancel:(WFTriggerTextConfigurationViewController *)arg1;
 - (void)triggerTextConfigurationViewController:(WFTriggerTextConfigurationViewController *)arg1 didSelectText:(NSString *)arg2;
 @end
 

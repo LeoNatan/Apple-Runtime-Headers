@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak TSTMasterLayout *masterLayout; // @synthesize masterLayout=_masterLayout;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)writeToMasterLayoutCaches;
+- (void)writeToMasterLayoutCaches:(id)arg1;
 - (void)enumerateCellStatesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)clear;
 - (void)addCellState:(id)arg1;

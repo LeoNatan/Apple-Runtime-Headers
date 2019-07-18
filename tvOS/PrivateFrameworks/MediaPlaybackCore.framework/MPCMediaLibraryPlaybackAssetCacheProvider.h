@@ -15,9 +15,9 @@
     MPMediaLibrary *_mediaLibrary;
 }
 
-+ (id)_lowQualityCachedAssetDestinationDirectory;
-+ (id)_highQualityCachedAssetDestinationDirectory;
-+ (id)deviceLibraryProvider;
++ (id)_lowQualityCachedAssetDestinationDirectoryForMediaLibrary:(id)arg1;
++ (id)_highQualityCachedAssetDestinationDirectoryForMediaLibrary:(id)arg1;
++ (id)deviceLibraryProviderWithUserIdentity:(id)arg1;
 - (void).cxx_destruct;
 - (void)setPlaybackAssetCacheFileAsset:(id)arg1 forGenericObject:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)getPlaybackAssetCacheDestinationURL:(id *)arg1 purchaseBundleDestinationURL:(id *)arg2 forGenericObject:(id)arg3 assetQualityType:(long long)arg4 pathExtension:(id)arg5;

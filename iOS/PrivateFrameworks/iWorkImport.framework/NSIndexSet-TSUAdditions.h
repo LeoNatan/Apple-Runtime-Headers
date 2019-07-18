@@ -8,6 +8,9 @@
 
 @interface NSIndexSet (TSUAdditions)
 + (id)tsu_indexSetWithIndices:(unsigned long long *)arg1 count:(unsigned long long)arg2;
+- (void)tsu_enumerateRangesConcurrentlyUsingBeginBlock:(CDUnknownBlockType)arg1 concurrentBlock:(CDUnknownBlockType)arg2 finalBlock:(CDUnknownBlockType)arg3;
+- (id)tsu_indexSetChunkIndex:(unsigned long long)arg1 ofChunkCount:(unsigned long long)arg2;
+- (void)tsu_enumerateUniquePermutationsUsingBlock:(CDUnknownBlockType)arg1;
 - (struct _NSRange)tsu_boundingRange;
 - (id)tsu_localizedDescription;
 - (unsigned long long)tsu_firstCommonIndexWithIndexes:(id)arg1;

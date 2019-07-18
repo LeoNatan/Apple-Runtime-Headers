@@ -25,6 +25,7 @@
 @property(retain, nonatomic) HIDEventSystemClient *_hidEventSystemClient; // @synthesize _hidEventSystemClient=__hidEventSystemClient;
 @property(readonly, nonatomic) BOOL isFnDown; // @synthesize isFnDown=_isFnDown;
 - (void).cxx_destruct;
+- (void)_signalUsage:(unsigned long long)arg1 page:(unsigned long long)arg2 stateChanged:(BOOL)arg3 serviceClient:(id)arg4;
 - (void)_signalKey:(unsigned long long)arg1 stateChanged:(BOOL)arg2 serviceClient:(id)arg3;
 - (id)attachedKeyboardIDs;
 - (void)_handleHIDEvent:(id)arg1;

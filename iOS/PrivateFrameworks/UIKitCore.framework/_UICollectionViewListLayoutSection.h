@@ -9,12 +9,15 @@
 #import <UIKitCore/_UICollectionLayoutSectionCallback-Protocol.h>
 
 @class NSString, _UICollectionViewListLayoutSectionConfiguration;
+@protocol NSCollectionLayoutEnvironment_Private;
 
 @interface _UICollectionViewListLayoutSection : NSCollectionLayoutSection <_UICollectionLayoutSectionCallback>
 {
     _UICollectionViewListLayoutSectionConfiguration *_configuration;
+    id <NSCollectionLayoutEnvironment_Private> _layoutEnvironment;
 }
 
+@property(readonly, nonatomic, getter=_layoutEnvironment) id <NSCollectionLayoutEnvironment_Private> layoutEnvironment; // @synthesize layoutEnvironment=_layoutEnvironment;
 - (void).cxx_destruct;
 - (void)_enrichLayoutAttributes:(id)arg1;
 - (id)_callback;
@@ -23,8 +26,8 @@
 - (_Bool)_requiresFullLengthSeparatorAtIndexPath:(id)arg1;
 - (_Bool)_shouldHideSeparatorAtIndexPath:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithConfiguration:(id)arg1 layoutEnvironment:(id)arg2;
 - (id)initWithConfiguration:(id)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

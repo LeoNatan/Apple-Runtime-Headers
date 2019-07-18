@@ -15,6 +15,7 @@
 - (id)init;
 - (void)pushSessionData:(id)arg1 traits:(id)arg2 submitEventQueues:(_Bool)arg3;
 - (void)pushSessionData:(id)arg1 submitEventQueues:(_Bool)arg2;
+- (void)pushSessionData:(id)arg1 traits:(id)arg2;
 - (void)pushSessionData:(id)arg1;
 @property(nonatomic, readonly) _Bool isActive;
 

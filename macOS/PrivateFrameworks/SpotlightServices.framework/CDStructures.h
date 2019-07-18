@@ -44,6 +44,11 @@ struct PRSL2FeatureScoreSmallCache {
     unsigned short count;
 };
 
+struct _NSRange {
+    unsigned long long _field1;
+    unsigned long long _field2;
+};
+
 struct __CFArray;
 
 struct __CFDictionary;

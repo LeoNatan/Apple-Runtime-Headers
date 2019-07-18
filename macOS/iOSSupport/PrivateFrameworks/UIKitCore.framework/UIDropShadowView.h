@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSArray, UIImageView, _UIGrabber;
+@class NSArray, UIDropShadowRimPartView, _UIGrabber;
 
 __attribute__((visibility("hidden")))
 @interface UIDropShadowView : UIView
@@ -19,11 +19,25 @@ __attribute__((visibility("hidden")))
     UIView *_firstCornerClippingDescendant;
     NSArray *_cornerClippingDescendants;
     _UIGrabber *_grabber;
-    UIImageView *__rimTreatment;
+    UIDropShadowRimPartView *_topLeft;
+    UIDropShadowRimPartView *_topEdge;
+    UIDropShadowRimPartView *_topRight;
+    UIDropShadowRimPartView *_leftEdge;
+    UIDropShadowRimPartView *_rightEdge;
+    UIDropShadowRimPartView *_bottomLeft;
+    UIDropShadowRimPartView *_bottomEdge;
+    UIDropShadowRimPartView *_bottomRight;
     struct UIRectCornerRadii _environmentMatchingCornerRadii;
 }
 
-@property(retain, nonatomic) UIImageView *_rimTreatment; // @synthesize _rimTreatment=__rimTreatment;
+@property(retain, nonatomic) UIDropShadowRimPartView *bottomRight; // @synthesize bottomRight=_bottomRight;
+@property(retain, nonatomic) UIDropShadowRimPartView *bottomEdge; // @synthesize bottomEdge=_bottomEdge;
+@property(retain, nonatomic) UIDropShadowRimPartView *bottomLeft; // @synthesize bottomLeft=_bottomLeft;
+@property(retain, nonatomic) UIDropShadowRimPartView *rightEdge; // @synthesize rightEdge=_rightEdge;
+@property(retain, nonatomic) UIDropShadowRimPartView *leftEdge; // @synthesize leftEdge=_leftEdge;
+@property(retain, nonatomic) UIDropShadowRimPartView *topRight; // @synthesize topRight=_topRight;
+@property(retain, nonatomic) UIDropShadowRimPartView *topEdge; // @synthesize topEdge=_topEdge;
+@property(retain, nonatomic) UIDropShadowRimPartView *topLeft; // @synthesize topLeft=_topLeft;
 @property(readonly, nonatomic) _UIGrabber *grabber; // @synthesize grabber=_grabber;
 @property(readonly, nonatomic) NSArray *cornerClippingDescendants; // @synthesize cornerClippingDescendants=_cornerClippingDescendants;
 @property(readonly, nonatomic) __weak UIView *firstCornerClippingDescendant; // @synthesize firstCornerClippingDescendant=_firstCornerClippingDescendant;
@@ -39,6 +53,8 @@ __attribute__((visibility("hidden")))
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)setGrabberAlpha:(double)arg1;
 @property(readonly, nonatomic) UIView *deepestClippingView;
+- (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
+- (void)setFrame:(struct CGRect)arg1;
 - (void)_updateRimTreatment;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 independentCorners:(long long)arg2 supportsShadowAndGrabber:(BOOL)arg3;

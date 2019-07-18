@@ -41,8 +41,16 @@
 @property(nonatomic) float completionScore; // @synthesize completionScore=_completionScore;
 @property(nonatomic) BOOL finished; // @synthesize finished=_finished;
 - (void).cxx_destruct;
+- (void)additionalWorkAfterUpdate;
+- (long long)executionContext;
+- (void)prepareProcessingForWorker:(id)arg1;
+- (void)markJobFinishWorkForCancellation;
+- (void)_resetGraphManager;
+- (void)_transitionWorkerStateToWorking;
+- (void)_makeWorkerAvailable;
 - (void)_restoreGraphUpdateManagerExecutionContext;
 - (void)onGraphUpdateComplete;
+@property(readonly, nonatomic) BOOL isRebuildJob;
 - (void)graphUpdateDidStop;
 - (void)graphUpdateIsConsistent;
 - (void)graphUpdateMadeProgress:(double)arg1;
@@ -55,7 +63,6 @@
 @property(readonly, copy) NSString *description;
 - (BOOL)stopProcessingOnWorker:(id)arg1 withError:(id *)arg2;
 - (BOOL)startProcessingOnWorker:(id)arg1 withError:(id *)arg2;
-- (void)_makeWorkerAvailable;
 - (id)initWithWorkerType:(short)arg1 scenario:(unsigned long long)arg2 label:(id)arg3 library:(id)arg4;
 
 // Remaining properties

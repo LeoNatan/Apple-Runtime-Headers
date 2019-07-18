@@ -7,6 +7,6 @@
 @class NSArray, _PSPredictionContext;
 
 @protocol _PSModel
-- (NSArray *)predictWithPredictionContext:(_PSPredictionContext *)arg1 maxSuggestions:(unsigned long long)arg2 filterByBundleIds:(NSArray *)arg3;
+- (NSArray *)predictWithPredictionContext:(_PSPredictionContext *)arg1 maxSuggestions:(unsigned long long)arg2;
 @end
 

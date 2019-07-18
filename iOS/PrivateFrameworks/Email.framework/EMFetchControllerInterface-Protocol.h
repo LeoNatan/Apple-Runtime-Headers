@@ -13,8 +13,8 @@
 - (void)resetPushStateWithCompletion:(void (^)(_Bool, _Bool, int, NSError *))arg1;
 - (void)downloadMessageBodiesWithCompletion:(void (^)(NSError *))arg1;
 - (void)performFetchOfType:(int)arg1 mailboxName:(NSString *)arg2 completion:(void (^)(unsigned long long, NSError *))arg3;
-- (void)performFetchOfType:(int)arg1 mailboxObjectIds:(NSArray *)arg2 completion:(void (^)(NSError *))arg3;
-- (void)performFetchOfType:(int)arg1 accountIds:(NSArray *)arg2 completion:(void (^)(NSError *))arg3;
-- (void)performFetchOfType:(int)arg1 completion:(void (^)(NSError *))arg2;
+- (void)performFetchOfType:(int)arg1 mailboxObjectIds:(NSArray *)arg2;
+- (void)performFetchOfType:(int)arg1 accountIds:(NSArray *)arg2;
+- (void)performFetchOfType:(int)arg1;
 @end
 

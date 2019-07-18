@@ -26,7 +26,6 @@
 - (void)removeAllPreventIdleSleepIdentifiers;
 - (void)removePreventIdleSleepIdentifier:(id)arg1;
 - (void)addPreventIdleSleepIdentifier:(id)arg1;
-- (void)setMaxMemory:(unsigned long long)arg1;
 - (void)setLegacyFinishTaskReason:(unsigned long long)arg1;
 - (void)setJetsamLenientMode:(_Bool)arg1;
 - (void)setJetsamBand:(unsigned char)arg1;

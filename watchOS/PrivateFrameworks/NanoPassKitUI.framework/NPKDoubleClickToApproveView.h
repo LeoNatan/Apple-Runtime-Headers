@@ -31,7 +31,9 @@
 @property(retain, nonatomic) UILayoutGuide *topAscenderLayoutGuide; // @synthesize topAscenderLayoutGuide=_topAscenderLayoutGuide;
 - (void).cxx_destruct;
 - (int)_stackViewAlignmentFromContentAlignment:(unsigned int)arg1;
-- (void)_startBounceAnimation;
+- (void)stopBounceAnimationIfNecessary;
+- (void)stopBounceAnimation;
+- (void)startBounceAnimation;
 - (void)_setUpTopAscenderLayoutGuide;
 @property(copy, nonatomic) NSString *instructionText;
 - (id)viewForLastBaselineLayout;

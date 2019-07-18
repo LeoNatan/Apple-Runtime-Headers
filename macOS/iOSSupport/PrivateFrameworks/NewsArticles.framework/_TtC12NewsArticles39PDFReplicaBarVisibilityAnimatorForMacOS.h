@@ -9,6 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface _TtC12NewsArticles39PDFReplicaBarVisibilityAnimatorForMacOS : NSObject
 {
+    // Error parsing type: , name: shouldHideStatusBar
     // Error parsing type: , name: delegate
     // Error parsing type: , name: navigationController
     // Error parsing type: , name: hoverGestureRecognizer

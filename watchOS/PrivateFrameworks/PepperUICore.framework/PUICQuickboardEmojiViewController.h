@@ -17,7 +17,6 @@
 
 @interface PUICQuickboardEmojiViewController : PUICQuickboardModalNavigationContainerController <PUICAnimojiStickerViewDelegate, PUICRecentEmojiViewDelegate, PUICRecentsViewDelegate, PUICQuickboardPickerViewDelegate, PUICQuickboardController>
 {
-    _Bool _shouldShowAnimojiStickersAlertSheet;
     _Bool _supportsRecentItemPayloads;
     unsigned int _quickboardType;
     id <PUICQuickboardEmojiViewControllerDelegate> _emojiViewControllerDelegate;
@@ -42,7 +41,6 @@
 @property(nonatomic) unsigned int quickboardType; // @synthesize quickboardType=_quickboardType;
 @property(nonatomic) _Bool supportsRecentItemPayloads; // @synthesize supportsRecentItemPayloads=_supportsRecentItemPayloads;
 - (void).cxx_destruct;
-- (void)disableAnimojiStickerDisclosureAlert;
 - (void)selectEmojiForTesting;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) _Bool animatesSelectionToDestinationView;
@@ -59,6 +57,7 @@
 - (void)pickerViewDidSelectItem:(id)arg1 preview:(id)arg2;
 - (void)recentStickersView:(id)arg1 didSelectSticker:(id)arg2 preview:(id)arg3;
 - (void)activate;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithDelegate:(id)arg1;
 

@@ -20,6 +20,7 @@
     NSMutableDictionary *_trackedBTPeers;
     NSMutableDictionary *_trackedBTPeersDevice;
     PRProximityEstimator *_btProxEstimator;
+    _Bool _needToRestart;
     NSMutableDictionary *_scores;
     struct SharingImportanceMeasurements _measurements;
     struct unique_ptr<SharingImportanceManager, std::__1::default_delete<SharingImportanceManager>> _estimator;
@@ -30,6 +31,9 @@
     id <PRSharingSessionDelegate> _delegate;
 }
 
++ (id)reverseNSData:(id)arg1;
++ (id)convertMacStringToNSData:(const basic_string_a1f69cfb *)arg1;
++ (unsigned long long)NSDataToUInt64:(id)arg1;
 + (basic_string_a1f69cfb)UIntToHexString:(unsigned long long)arg1 len:(unsigned long long)arg2;
 + (id)HexStringToNSDataMac:(const basic_string_a1f69cfb *)arg1;
 + (id)UUIDStringToNSDataMac:(const basic_string_a1f69cfb *)arg1 len:(unsigned long long)arg2;
@@ -40,12 +44,12 @@
 - (void).cxx_destruct;
 - (void)invokeDelegateBlock:(CDUnknownBlockType)arg1;
 - (long long)CoarseRangeToProx:(int)arg1;
+- (id)ProxToString:(long long)arg1;
 - (int)ProxToCoarseRange:(long long)arg1;
 - (void)didFailWithError:(id)arg1;
 - (void)estimator:(id)arg1 didEstimateProximity:(long long)arg2 toPeer:(id)arg3;
 - (void)logScores:(id)arg1;
 - (void)updateScoresWithNewMeasurement:(const struct NeighborMeasurements *)arg1;
-- (id)convertStringToNSData:(basic_string_a1f69cfb)arg1;
 - (void)stopProx;
 - (_Bool)trackNewBTPeer:(id)arg1 withDviceModel:(id)arg2 error:(id *)arg3;
 - (_Bool)addRssiSample:(double)arg1 channel:(unsigned int)arg2 forPeer:(id)arg3 peerDeviceModel:(id)arg4 withError:(id *)arg5;

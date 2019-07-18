@@ -116,6 +116,7 @@
 - (void)_setNeedsSizeUpdate;
 @property __weak id <NSPathCellDelegate> delegate;
 @property(copy) NSArray *allowedTypes;
+- (void)setAlignment:(long long)arg1;
 - (void)setBaseWritingDirection:(long long)arg1;
 - (void)setUserInterfaceLayoutDirection:(long long)arg1;
 - (id)initWithCoder:(id)arg1;

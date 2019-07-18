@@ -11,8 +11,8 @@
 }
 
 + (_Bool)insertSyncIdentifierWithProfile:(id)arg1 database:(id)arg2 objectID:(long long)arg3 localSourceID:(long long)arg4 externalSyncObjectCode:(int)arg5 syncIdentifier:(id)arg6 syncVersion:(id)arg7 deleted:(_Bool)arg8 errorOut:(id *)arg9;
-+ (_Bool)populateSyncInfoForProfile:(id)arg1 objectID:(long long)arg2 localSourceIDOut:(long long *)arg3 externalSyncObjectCodeOut:(int *)arg4 syncIdentifierOut:(id *)arg5 syncVersionOut:(id *)arg6 deletedOut:(_Bool *)arg7 errorOut:(id *)arg8;
-+ (_Bool)populateSyncInfoForProfile:(id)arg1 localSourceID:(long long)arg2 externalSyncObjectCode:(int)arg3 syncIdentifier:(id)arg4 deleted:(_Bool)arg5 objectIDOut:(id *)arg6 errorOut:(id *)arg7;
++ (_Bool)populateSyncInfoForObjectID:(long long)arg1 database:(id)arg2 localSourceIDOut:(long long *)arg3 externalSyncObjectCodeOut:(int *)arg4 syncIdentifierOut:(id *)arg5 syncVersionOut:(id *)arg6 deletedOut:(_Bool *)arg7 errorOut:(id *)arg8;
++ (_Bool)populateSyncInfoForLocalSourceID:(long long)arg1 externalSyncObjectCode:(int)arg2 syncIdentifier:(id)arg3 deleted:(_Bool)arg4 database:(id)arg5 objectIDOut:(id *)arg6 errorOut:(id *)arg7;
 + (int)protectionClass;
 + (id)indices;
 + (id)foreignKeys;

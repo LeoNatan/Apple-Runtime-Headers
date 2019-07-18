@@ -15,11 +15,13 @@
 @interface _INPBResetTimerIntentResponse : PBCodable <_INPBResetTimerIntentResponse, NSSecureCoding, NSCopying>
 {
     struct _has;
+    BOOL __encodeLegacyGloryData;
     NSArray *_resetTimers;
 }
 
 + (BOOL)supportsSecureCoding;
 + (Class)resetTimersType;
+@property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *resetTimers; // @synthesize resetTimers=_resetTimers;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
